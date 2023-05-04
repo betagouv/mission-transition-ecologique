@@ -1,0 +1,64 @@
+{
+  "programs": [
+    {
+      "title": "test",
+      "resume": "test resume",
+      "description": "...,",
+      "program_type": "aap",
+      "program_conditions": {
+        "project_status": [
+          "status.economies",
+          "status.carbon",
+          "status.improve"
+        ],
+        "project_needs": [
+          "needs.starting",
+          "needs.advices",
+          "needs.financing"
+        ],
+        "structure_activities": [
+          "sectors.artisanat",
+          "sectors.industriel",
+          "sectors.tourisme",
+          "sectors.tertiaire",
+          "sectors.agricole"
+        ],
+        "structure_sizes": [
+          "sizes.tpe",
+          "sizes.pme",
+          "sizes.eti"
+        ]
+      }
+    },
+    {
+      "title": "...,",
+      "resume": "...,",
+      "description": "...,",
+      "program_type": "...,",
+      "program_conditions": {
+        "project_status": [
+          "je débute",
+          "j'ai besoin de conseil",
+          "j'ai un projet"
+        ],
+        "project_needs": [
+          "je veux faire des économies",
+          "j'ai besoin de connaître et réduire ses émissions carbone",
+          "j'ai besoin d'améliorer mon produit/service"
+        ],
+        "structure_activities": [
+          "Activité artisanale",
+          "Activité industrielle, fabrication, production",
+          "Activité tertiaire, services",
+          "Activité agricole",
+          "Activité touristique"
+        ],
+        "structure_sizes": [
+          "TPE",
+          "PME",
+          "ETI"
+        ]
+      }
+    }
+  ]
+}
