@@ -1,7 +1,9 @@
 <template>
   <div id="tee-app-ce">
     <!-- <HelloWorld msg="You did it!" /> -->
-    <p class="fr-pb-5v">
+    <p 
+      v-if="showHeader === 'true'"
+      class="fr-pb-5v">
       <DsfrHeader
         logo-text="ADEME"
         service-title="Transition écologique des entreprises"
@@ -12,6 +14,12 @@
       {{ msg }}
     </h3>
     <p>
+      <DsfrStepper
+        :steps="tracks.tracksStepsArray"
+        :current-step="1"
+      />
+    </p>
+    <p>
       <!-- <DsfrBreadcrumb
         :links='[{"to":"/lien-1","text":"Lien 1"},{"to":"/lien-2","text":"Lien deux"},{"text":"Lien 3 avec plein de texte et patati et patata"}]'
       /> -->
@@ -20,10 +28,12 @@
         current-language="fr"
         :languages='[{"label":"Français","codeIso":"fr"},{"label":"English","codeIso":"en"},{"label":"Deutsch","codeIso":"de"},{"label":"Dutch","codeIso":"nl"}]'
       /> -->
-      <!-- <DsfrStpper
-        :steps="userChoices.stepsArr"
-        :current-step="userChoices.step"
-      /> -->
+      <p>
+        tracks.nextTrack : {{ tracks.nextTrack }}
+      </p>
+      <p>
+        tracks.tracksStepsArray : {{ tracks.tracksStepsArray }}
+      </p>
     </p>
     <p>
       <!-- <DsfrButton 
@@ -47,28 +57,37 @@
     </p>
     <p class="fr-py-4v">
       <RadioChoices
-        :choices="tracks.currentTrackConfig.choices"
+        behavior="radio"
+        :track-id="tracks.currentTrackId"
+        :choices-array="tracks.currentTrackConfig.choices"
       />
     </p>
 
     <p class="fr-py-5v">
       <h4>
-        debug / userChoices :
+        TeeApp debug / choices.userChoices :
       </h4>
-      <code><pre>{{ tracks.userChoices  }}</pre></code>
+      <code><pre>{{ choices.userChoices  }}</pre></code>
     </p>
     <p class="fr-py-5v">
       <h4>
-        debug / seed : {{ seed }} / tracks.maxDepth : {{ tracks.maxDepth }} 
+        TeeApp debug / seed : 
+        <code>
+          {{ seed }} 
+        </code>
+        / tracks.maxDepth : 
+        <code>
+          {{ tracks.maxDepth }} 
+        </code>
       </h4>
       <h4>
-        debug / currentTrackConfig :
+        TeeApp debug / currentTrackConfig :
       </h4>
       <!-- <code><pre>{{ tracks.seedTrack  }}</pre></code> -->
       <code><pre>{{ tracks.currentTrackConfig  }}</pre></code>
       <hr>
       <h4>
-        debug programs :
+        TeeApp debug / programs :
       </h4>
       <code><pre>{{ programsArray  }}</pre></code>
     </p>
@@ -79,7 +98,9 @@
 // cf : https://stackoverflow.com/questions/71163741/vuejs-script-setup-cannot-contain-es-module-exports
 
 import { onBeforeMount } from 'vue'
+
 import { tracksStore } from './stores/tracks'
+import { choicesStore } from '@/stores/choices'
 import { programsStore } from './stores/programs'
 
 import RadioChoices from './components/RadioChoices.vue'
@@ -88,12 +109,14 @@ import RadioChoices from './components/RadioChoices.vue'
 
 interface Props {
   msg?: string,
+  showHeader: string,
   seed: string,
-  maxDepth?: number
+  maxDepth?: string
 }
 const props = defineProps<Props>()
 
 const tracks = tracksStore()
+const choices = choicesStore()
 const programsArray = programsStore()
 
 // @ts-ignore
@@ -102,16 +125,20 @@ window.stores = { tracks, programsArray }
 onBeforeMount(() => {
   console.log('TeeApp > props.seed :', props.seed)
   console.log('TeeApp > props.maxDepth :', props.maxDepth)
-  if (props.maxDepth) { tracks.setMaxDepth(props.maxDepth) }
+  if (props.maxDepth) {
+    const maxDepthNum = Number(props.maxDepth)
+    tracks.setMaxDepth(maxDepthNum)
+  }
   tracks.setSeedTrack(props.seed)
+  choices.initiateUserChoice(props.seed)
 })
 
 </script>
 
 <style>
-  /* .red-color {
-    color: teal !important;
-  } */
+  code {
+    color: red !important;
+  }
 </style>
 
 <style lang="scss">

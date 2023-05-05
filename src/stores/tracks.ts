@@ -4,10 +4,10 @@ import { defineStore } from 'pinia'
 import { tracks } from '../utils'
 
 export const tracksStore = defineStore('tracks', () => {
-  const lang = ref('fr')
   console.log('store > tracks > tracks : ', tracks)
   
   const maxDepth = ref(4)
+  const stepsLog = ref({})
 
   const allTracks = ref(tracks)
   const seedTrack = ref()
@@ -16,9 +16,20 @@ export const tracksStore = defineStore('tracks', () => {
   const userChoices = ref()
 
   // computed
+  const currentTrackId = computed(() => currentTrack.value.id)
   const currentTrackConfig = computed(() => currentTrack.value.config)
+  const nextTrack = computed(() => {
+    const nextTrackId = currentTrack.value.next.default
+    return tracks.find(t => t.id === nextTrackId)
+  })
   // TO DO
-  // stepsArray = 
+  const tracksStepsArray = computed(() => {
+    return [
+      currentTrack.value.id,
+      currentTrack.value.next.default,
+      'results'
+    ]
+  })
 
   // methods
   function setMaxDepth(depth: number) { maxDepth.value = depth }
@@ -34,12 +45,15 @@ export const tracksStore = defineStore('tracks', () => {
   }
 
   return { 
-    lang,
     maxDepth,
+    stepsLog,
     setMaxDepth,
     allTracks,
     seedTrack,
+    currentTrackId,
     currentTrackConfig,
+    nextTrack,
+    tracksStepsArray,
     setSeedTrack,
     userChoices,
     // step,
