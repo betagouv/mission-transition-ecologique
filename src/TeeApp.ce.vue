@@ -1,8 +1,11 @@
 <template>
-  <div id="tee-app-ce">
-    <!-- <HelloWorld msg="You did it!" /> -->
+  <div 
+    id="tee-app-ce"
+    class="fr-container">
+
+    <!-- HEADER -->
     <p 
-      v-if="showHeader === 'true'"
+      v-if="showHeaderBool"
       class="fr-pb-5v">
       <DsfrHeader
         logo-text="ADEME"
@@ -10,108 +13,120 @@
         service-description="Vos aides en quelques clics"
       />
     </p>
-    <h3 class="red-color">
-      {{ msg }}
-    </h3>
+
+    <!-- MESSAGE -->
+    <div class="fr-grid-row fr-grid-row-gutters">
+      <div class="fr-col-9">
+        <h3
+          v-if="msg"
+          class="red-color">
+          {{ msg }}
+        </h3>
+      </div>
+      <div
+        v-if="debugSwitchBool" 
+        class="fr-col-3">
+        <DsfrToggleSwitch 
+          label="Debug mode" 
+          hint="Switch to activate / deactivate debugging mode"
+          :modelValue="debugBool"
+          @update:modelValue="changeDebug"
+          />
+      </div>
+    </div>
+
+    <!-- STEPPER -->
     <p>
-      <DsfrStepper
-        :steps="tracks.tracksStepsArray"
-        :current-step="1"
-      />
-    </p>
-    <p>
-      <!-- <DsfrBreadcrumb
-        :links='[{"to":"/lien-1","text":"Lien 1"},{"to":"/lien-2","text":"Lien deux"},{"text":"Lien 3 avec plein de texte et patati et patata"}]'
-      /> -->
-      <!-- <DsefrLanguageSelector
-        id="translate-1"
-        current-language="fr"
-        :languages='[{"label":"Français","codeIso":"fr"},{"label":"English","codeIso":"en"},{"label":"Deutsch","codeIso":"de"},{"label":"Dutch","codeIso":"nl"}]'
-      /> -->
-      <p>
-        tracks.nextTrack : {{ tracks.nextTrack }}
-      </p>
-      <p>
-        tracks.tracksStepsArray : {{ tracks.tracksStepsArray }}
-      </p>
-    </p>
-    <p>
-      <!-- <DsfrButton 
-        label="Remove step"
-        class="fr-mr-2v"
-        icon="ri-subtract-line"
-        :disabled="userChoices.step < 2"
-        @click="userChoices.changeStep(userChoices.step - 1)"
-        />
-      <DsfrButton 
-        label="Add step"
-        class="fr-mr-2v"
-        icon="ri-add-line"
-        :disabled="userChoices.step > 3"
-        @click="userChoices.changeStep(userChoices.step + 1)"
-      /> -->
-      <!-- <DsfrRadioButton
-        model-value="3"
-        :options='[{"label":"Valeur 1","value":"1","hint":"Description 1","name":"Choix"},{"label":"Valeur 2","value":"2","disabled":true,"hint":"Description 2","name":"Choix"},{"label":"Valeur 3","value":"3","name":"Choix"}]'
-      /> -->
-    </p>
-    <p class="fr-py-4v">
-      <RadioChoices
-        behavior="radio"
-        :track-id="tracks.currentTrackId"
-        :choices-array="tracks.currentTrackConfig.choices"
+      <Stepper
+        :steps-array="tracks.tracksStepsArray"
+        :current-step="tracks.currentStep"
+        :debug="debugBool"
       />
     </p>
 
-    <p class="fr-py-5v">
-      <h4>
-        TeeApp debug / choices.userChoices :
-      </h4>
-      <code><pre>{{ choices.userChoices  }}</pre></code>
-    </p>
-    <p class="fr-py-5v">
-      <h4>
-        TeeApp debug / seed : 
-        <code>
-          {{ seed }} 
-        </code>
-        / tracks.maxDepth : 
-        <code>
-          {{ tracks.maxDepth }} 
-        </code>
-      </h4>
-      <h4>
-        TeeApp debug / currentTrackConfig :
-      </h4>
-      <!-- <code><pre>{{ tracks.seedTrack  }}</pre></code> -->
-      <code><pre>{{ tracks.currentTrackConfig  }}</pre></code>
-      <hr>
-      <h4>
-        TeeApp debug / programs :
-      </h4>
-      <code><pre>{{ programsArray  }}</pre></code>
-    </p>
+    <!-- TRACKS INTERFACES -->
+    <div class="fr-grid-row fr-grid-row-gutters">
+
+      <div
+        v-if="debugBool"
+        class="fr-col-4">
+        <h3>DEBUG - TeeApp</h3>
+        <div class="fr-grid-row fr-grid-row--gutters">
+          <div class="fr-col-12">
+            <h5 class="fr-mb-1v"> seed : <code>{{ seed }} </code></h5>
+            <h5 class="fr-mb-1v"> debug : <code>{{ debug }} </code></h5>
+            <h5 class="fr-mb-1v"> debugBool : <code>{{ debugBool }} </code></h5>
+            <h5 class="fr-mb-1v"> showHeader : <code>{{ showHeader }} </code></h5>
+            <h5 class="fr-mb-1v"> choices.lang : <code>{{ choices.lang }} </code></h5>
+            <h5 class="fr-mb-1v"> tracks.maxDepth : <code>{{ tracks.maxDepth }} </code></h5>
+            <h5 class="fr-mb-1v"> tracks.seedTrack : <code>{{ tracks.seedTrack }} </code></h5>
+          </div>
+          
+          <div class="fr-col-12">
+            <h5 class="fr-mb-1v"> tracks.currentStep : <code>{{ tracks.currentStep }} </code></h5>
+            <h5>
+              tracks.tracksStepsArray :
+            </h5>
+            <code><pre>{{ tracks.tracksStepsArray  }}</pre></code>
+          </div>
+
+          <div class="fr-col-12">
+            <h5>
+              tracks.usedTracks :
+            </h5>
+            <code><pre>{{ tracks.usedTracks  }}</pre></code>
+          </div>
+    
+          <!-- <h4>
+            TeeApp debug / programs :
+          </h4>
+          <code><pre>{{ programsArray  }}</pre></code> -->
+        </div>
+      </div>
+
+      <div
+        v-if="!debugBool"
+        class="fr-col-2">
+      </div>
+
+      <div class="fr-col-8">
+        <p
+          v-for="(track, index) in tracks.usedTracks"
+          :key="track.id"
+          :class="`fr-py-0 fr-mb-${ debugBool ? '12v' : '0'}`">
+          <RadioChoices
+            :step="index + 1"
+            :track-id="track.id"
+            :debug="debugBool"
+          />
+        </p>
+      </div>
+
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 // cf : https://stackoverflow.com/questions/71163741/vuejs-script-setup-cannot-contain-es-module-exports
 
-import { onBeforeMount } from 'vue'
+import { ref, reactive, onBeforeMount } from 'vue'
 
 import { tracksStore } from './stores/tracks'
-import { choicesStore } from '@/stores/choices'
+import { choicesStore } from './stores/choices'
 import { programsStore } from './stores/programs'
 
+// @ts-ignore
 import RadioChoices from './components/RadioChoices.vue'
-
-// import HelloWorld from './components/HelloWorld.vue'
+// @ts-ignore
+import Stepper from './components/Stepper.vue'
 
 interface Props {
   msg?: string,
   showHeader: string,
   seed: string,
   maxDepth?: string
+  debugSwitch?: string,
+  debug?: string,
 }
 const props = defineProps<Props>()
 
@@ -119,18 +134,37 @@ const tracks = tracksStore()
 const choices = choicesStore()
 const programsArray = programsStore()
 
+let debugSwitchBool = ref(false)
+let debugBool = ref(false)
+let showHeaderBool = ref(false)
+
 // @ts-ignore
-window.stores = { tracks, programsArray }
+window.stores = { tracks, choicesStore, programsArray }
+
+const changeDebug = (ev: any) => {
+  debugBool.value = ev
+}
 
 onBeforeMount(() => {
-  console.log('TeeApp > props.seed :', props.seed)
-  console.log('TeeApp > props.maxDepth :', props.maxDepth)
+  // console.log('TeeApp > props.seed :', props.seed)
+  // console.log('TeeApp > props.maxDepth :', props.maxDepth)
+
+  // set max depth at mount
   if (props.maxDepth) {
     const maxDepthNum = Number(props.maxDepth)
     tracks.setMaxDepth(maxDepthNum)
   }
+
+  showHeaderBool.value = props.showHeader === 'true'
+  debugSwitchBool.value = props.debugSwitch === 'true'
+
+  if (debugSwitchBool.value && props.debug) {
+    debugBool.value = props.debug === 'true'
+  }
+
+  // set first track at mount
   tracks.setSeedTrack(props.seed)
-  choices.initiateUserChoice(props.seed)
+  tracks.addToUsedTracks(props.seed, props.seed)
 })
 
 </script>

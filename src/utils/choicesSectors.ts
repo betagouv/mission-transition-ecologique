@@ -1,41 +1,44 @@
 export const sectors = {
   interface: {
-    component: 'radioChoices',
+    component: 'buttons',
   },
-  choices: [
+  behavior: {
+    multipleChoices: false,
+  },
+  options: [
     {
       value: 'sectors.artisanat',
       label: { fr: "J’ai une activité artisanale" },
       next: {
-        default: 'results'
+        default: 'contact_form'
       }
     },
     {
       value: 'sectors.industriel',
       label: { fr: "J’ai une activité industrielle, fabrication, production" },
       next: {
-        default: 'results'
+        default: 'sizes'
       }
     },
     {
       value: 'sectors.tourisme',
       label: { fr: "j’ai une activité de tourisme" },
       next: {
-        default: 'results'
+        default: 'sizes'
       }
     },
     {
       value: 'sectors.tertiaire',
       label: { fr: "j’ai une activité tertiaire, de services" },
       next: {
-        default: 'results'
+        default: 'sizes'
       }
     },
     {
       value: 'sectors.agricole',
-      label: "J’ai une activité agricole",
+      label: { fr: "J’ai une activité agricole" },
       next: {
-        default: 'results'
+        default: 'sizes'
       }
     }
   ]

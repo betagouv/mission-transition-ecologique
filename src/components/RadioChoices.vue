@@ -1,79 +1,132 @@
 <template>
-  <!-- <DsfrRadioButtonSet
-    :options="choices"
-    >
-    <template #legend>"Légende des champs"</template>
-  </DsfrRadioButtonSet> -->
+  <!-- <h3>DEBUG - RadioChoices</h3> -->
+  <div 
+    v-if="debug"
+    class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
+    <div class="fr-col-4">
+      <h5 class="fr-mb-1v"> step : <code>{{ step }} </code></h5>
+      <h5 class="fr-mb-1v"> trackId : <code>{{ trackId }} </code></h5>
+      <h5 class="fr-mb-1v"> isCompleted : <code>{{ isCompleted }} </code></h5>
+    </div>
+    <div class="fr-col-4">
+      <h5 class="fr-mb-1v"> renderAs : <code>{{ renderAs }} </code></h5>
+      <h5 class="fr-mb-1v"> allowMultiple : <code>{{ allowMultiple }} </code></h5>
+    </div>
+    <div class="fr-col-4">
+      <h5 class="fr-mb-1v"> selection : </h5>
+      <code>{{ selection }} </code>
+    </div>
+
+    <div
+      v-if="false" 
+      class="fr-col-4">
+      <h4>
+        optionsArray :
+      </h4>
+      <code><pre>{{ optionsArray }}</pre></code>
+    </div>
+  </div>
+
+  <!-- TRACK CHOICES -->
   <p
-    v-for="btn in choicesArray"
-    :key="btn.value"
+    v-for="option in optionsArray"
+    :key="option.value"
+    class="fr-mb-2v"
     >
-    <DsfrButton
-      :label="btn.label[choices.lang]" 
-      :icon="`ri-${isActiveChoice(btn.value) ? 'check' : 'add'}-line`"
-      :secondary="isActiveChoice(btn.value)"
-      @click="updateChoice(btn.value)"
-    />
+    <div 
+      v-show="isCompleted ? isActiveChoice(option.value) : true"
+      class="fr-grid-row fr-grid-row--gutters">
+      <div class="fr-col-9">
+        <DsfrButton
+          style="width: -moz-available !important;"
+          :label="option.label[choices.lang]" 
+          :icon="`ri-${isActiveChoice(option.value) ? 'check' : 'add'}-line`"
+          :secondary="isActiveChoice(option.value)"
+          @click="updateSelection(option)"
+        />
+      </div>
+      <div
+        v-if="isActiveChoice(option.value)"
+        class="fr-col-3"
+        style="display: flex; align-items: center">
+        <p class="fr-mb-0">
+          <span class="fr-icon-arrow-left-line" aria-hidden="true"></span>
+          {{ dict[choices.lang].modify }}
+        </p>
+      </div>
+    </div>
   </p>
 
-  <hr>
-
-  <p class="fr-py-2v">
-    <h4>
-      RadioChoices debug / choices.lang : 
-      <code>
-        {{ choices.lang }}
-      </code>
-      - trackId : 
-      <code>
-        {{ trackId }}
-      </code>
-      - behavior : 
-      <code>
-        {{ behavior }}
-      </code>
-    </h4>
-  </p>
-  <p class="fr-py-2v">
-    <h4>
-      RadioChoices debug / choices.userChoices : 
-    </h4>
-    <code>
-      {{ choices.userChoices }}
-    </code>
-  </p>
-  <p class="fr-py-2v">
-    <h4>
-      RadioChoices debug / choicesArr : 
-    </h4>
-    <code><pre>{{ choicesArray  }}</pre></code>
-  </p>
 </template>
 
 <script setup lang="ts">
 
-import { tracksStore } from '@/stores/tracks'
-import { choicesStore } from '@/stores/choices'
+import { ref, computed } from 'vue'
+
+import { tracksStore } from '../stores/tracks'
+import { choicesStore } from '../stores/choices'
 
 interface Props {
-  behavior: string,
+  step: number,
   trackId: string,
-  choicesArray: object,
+  debug?: boolean,
 }
 const props = defineProps<Props>()
+
+const dictInternational: any = {
+  fr: {
+    modify: 'modifier'
+  }
+}
+const dict = ref(dictInternational)
 
 const tracks = tracksStore()
 const choices = choicesStore()
 
-const isActiveChoice = (val: any) => {
-  return choices.isActiveChoice(props.trackId, val)
+const selection = ref([])
+
+const track = tracks.getTrack(props.trackId)
+const renderAs: string = track?.config.interface.component
+// console.log('RadioChoices > track :', track)
+const allowMultiple: boolean = !!track?.config.behavior.multipleChoices
+const optionsArray: any[] = track?.config.options
+
+const isCompleted = computed(() => !!selection.value.length)
+
+const isActiveChoice = (value: string | number) => {
+  // @ts-ignore
+  return selection.value.includes(value)
 }
-const updateChoice = (val: any) => {
+
+const updateSelection = (option: any) => {
+  const val: string | number = option.value
   const isActive = isActiveChoice(val)
+  let needRemove = false
   if (!isActive) {
-    choices.updateUserChoice(props.trackId, val, false)
+    if (allowMultiple) {
+      // @ts-ignore
+      selection.value.push(val)
+    } else {
+      // @ts-ignore
+      selection.value = [val]
+    }
   } else {
-    choices.updateUserChoice(props.trackId, val, true)
+    const newArray = selection.value.filter(i => i !== val)
+    selection.value = newArray
+    needRemove = !newArray.length
+  }
+
+  tracks.updateUsedTracks(props.trackId, props.step, option, selection.value)
+  
+  // console.log('RadioChoices > updateSelection > needRemove :', needRemove)
+  if (!needRemove) {
+    // console.log('RadioChoices > updateSelection > addToUsedTracks...')
+    const canAddTrack = !tracks.trackExistsInUsed(option.next.default)
+    canAddTrack && tracks.addToUsedTracks(props.trackId, option.next.default)
+  } else {
+    // console.log('RadioChoices > updateSelection > removeFromUsedTracks...')
+    // tracks.removeFromUsedTracks(props.trackId, option.next.default)
+    tracks.removeFurtherUsedTracks(props.trackId)
   }
 }
 </script>

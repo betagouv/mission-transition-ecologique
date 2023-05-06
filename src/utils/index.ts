@@ -2,34 +2,38 @@ import { status } from './choicesStatus'
 import { needs } from './choicesNeeds'
 import { sectors } from './choicesSectors'
 import { sizes } from './choicesStructureSizes'
+import { contactForm } from './choicesContactForm'
+import { results } from './choicesResults'
 
 export const tracks = [
   { 
+    id: 'needs',
+    label: { fr: 'Votre besoin' },
+    config: needs
+  },
+  { 
     id: 'status',
-    config: status,
-    next: {
-      default: 'sectors'
-    }
+    label: { fr: 'Statut de votre projet' },
+    config: status
   },
   { 
     id: 'sectors',
-    config: sectors,
-    next: {
-      default: 'needs'
-    }
-  },
-  { 
-    id: 'needs',
-    config: needs,
-    next: {
-      default: 'sizes'
-    }
+    label: { fr: "Secteur d'activité" },
+    config: sectors
   },
   { 
     id: 'sizes',
-    config: sizes,
-    next: {
-      default: 'results'
-    }
+    label: { fr: 'Taille de votre structure' },
+    config: sizes
+  },
+  { 
+    id: 'contact_form',
+    label: { fr: 'Formulaire' },
+    config: contactForm
+  },
+  {
+    id: 'results',
+    label: { fr: 'Résultats'},
+    config: results
   }
 ]

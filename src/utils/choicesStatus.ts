@@ -1,13 +1,16 @@
 export const status = {
   interface: {
-    component: 'radioChoices',
+    component: 'buttons',
   },
-  choices: [
+  behavior: {
+    multipleChoices: false,
+  },
+  options: [
     {
       value: 'status.economies',
       label: { fr: 'je veux faire des économies' },
       next: {
-        default: 'needs'
+        default: 'sectors'
       }
     },
     {
@@ -21,7 +24,7 @@ export const status = {
       value: 'status.improve',
       label: { fr: "j'ai besoin d'améliorer mon produit/service" },
       next: {
-        default: 'needs'
+        default: 'sectors'
       }
     }
   ]

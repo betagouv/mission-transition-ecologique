@@ -1,8 +1,11 @@
 export const sizes = {
   interface: {
-    component: 'radioChoices',
+    component: 'buttons',
   },
-  choices: [
+  behavior: {
+    multipleChoices: false,
+  },
+  options: [
     {
       value: 'sizes.tpe',
       label: { fr: "TPE" },
@@ -14,7 +17,7 @@ export const sizes = {
       value: 'sizes.pme',
       label: { fr: "PME" },
       next: {
-        default: 'results'
+        default: 'contact_form'
       }
     },
     {
