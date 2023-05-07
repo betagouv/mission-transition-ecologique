@@ -1,9 +1,12 @@
-# GOV-AID-TREE $\to$ a web component to find public aid programs
+# <img src="./images/logos/logo-gov-aid-tree-cropped.png" height="30px"> GOV-AID-TREE 
 
+**Decision tree interfaces + fit with a database** 
 
 ![](https://img.shields.io/gitlab/license/45341092)
 
-**`WARNING : work in progress`**
+---
+
+## `WARNING : work in progress`
 
 ---
 
