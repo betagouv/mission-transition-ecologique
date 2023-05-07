@@ -207,7 +207,7 @@ graph TD;
 ```json 
 // Target data model for aid programs
 {
-  "programs": [                     // Réutilisation des codes des tables existantes 
+  "programs": [                        // Réutilisation des codes des tables existantes 
     {   
       "id": "...",
       "title" : "...",
@@ -224,23 +224,23 @@ graph TD;
       "program_type": "...",           // TypeAide
       "program_recurrence": "...",     // RecurrenceAide
       "funding_amount": "...",         // !!! à préciser selon variété des cas rencontrés
-      "program_conditions": {        // conditions d'octroi de l'aide
-        "structure_sizes": [         // TPE, PME, ETI, GE
+      "program_conditions": {          // conditions d'octroi de l'aide
+        "structure_sizes": [           // TPE, PME, ETI, GE
           "TPE", 
           "PME", 
           "*",
-          ...
+          "..."
         ],
-        "activity_types": [       // Activité artisanale, industrielle, fabrication, production, tertiaire, services, agricole
+        "activity_types": [ 
           "Activité artisanale", 
           "Activité industrielle, fabrication, production", 
           "Activité tertiaire, services", 
           "Activité agricole", 
           "Activité touristique"
-          ...
+          "...",
         ],
         "structure_naf": [         // conditions par code naf / filière / activité
-          ...
+          "...",
         ],
         "project_status" : [       // EtatAvancementProjet
           "...",
@@ -273,7 +273,7 @@ graph TD;
         }
       },
       "program_url":" ...",           // link to the program source
-      "program_providers": [        // IDs ou objets ?
+      "program_providers": [          // IDs ou objets ?
         "ANCT",
         "ADEME",
         "...",
@@ -290,7 +290,7 @@ graph TD;
         "..."
       ],
       "meta": {                        // meta données sur le dispositif d'aide 
-        "source_url": "...",             // API url
+        "source_url": "...",           // API url
         "source_id": "...",
         "languages": [
           "fr"
