@@ -209,21 +209,21 @@ graph TD;
 {
   "programs": [                     // Réutilisation des codes des tables existantes 
     {   
-      "id": ...,
-      "title" : ...,
-      "title_slug" : ...,            // URI transformer
-      "date_start" : ...,
-      "date_end" : ...,        
-      "resume" : ...,           
-      "description" : ...,           // long texte ou objet ?
+      "id": "...",
+      "title" : "...",
+      "title_slug" : "...",            // URI transformer
+      "date_start" : "...",
+      "date_end" : "...",        
+      "resume" : "...",           
+      "description" : "...",           // long texte ou objet ?
       "resume_texts": {
-        "accompagnement" : ...,
-        "financing" : ...,
-        "process": ...,
+        "accompagnement" : "...",
+        "financing" : "...",
+        "process": "...",
       },
-      "program_type": ...,           // TypeAide
-      "program_recurrence": ...,     // RecurrenceAide
-      "funding_amount": ...,         // !!! à préciser selon variété des cas rencontrés
+      "program_type": "...",           // TypeAide
+      "program_recurrence": "...",     // RecurrenceAide
+      "funding_amount": "...",         // !!! à préciser selon variété des cas rencontrés
       "program_conditions": {        // conditions d'octroi de l'aide
         "structure_sizes": [         // TPE, PME, ETI, GE
           "TPE", 
@@ -243,21 +243,21 @@ graph TD;
           ...
         ],
         "project_status" : [       // EtatAvancementProjet
-          ...,
+          "...",
         ],
         "expenses_types": [        // TypeDepense
-          ...,
+          "...",
         ],
         "geo_zones": [             // conditions par zone geo
-          ...
+          "...",
         ]
       },
       "categories": [              // Thematique
         "tourism",
-        ...
+        "..."
       ],
       "sub_categories": [          // SousThematique
-        ...  
+        "..."  
       ],
       "cover_geo": {
         "fr": {                    // entries by country code
@@ -268,35 +268,35 @@ graph TD;
             "04",
             "06",
             "11",
-            ...
+            "..."
           ],   
         }
       },
-      "program_url": ...,           // link to the program source
+      "program_url":" ...",           // link to the program source
       "program_providers": [        // IDs ou objets ?
         "ANCT",
         "ADEME",
-        ...
+        "...",
       ],
       "program_keywords": [
         "tourisme",
-        ...
+        "...",
       ],
       "program_application": {
-        "process" : ...,             // 
-        "templates" : ...,           // modèle du dossier à remplir / url...
+        "process" : "...",             // 
+        "templates" : "...",           // modèle du dossier à remplir / url...
       },
       "program_contacts": [
-        ...
+        "..."
       ],
       "meta": {                        // meta données sur le dispositif d'aide 
-        "source_url": ...,             // API url
-        "source_id": ...,
+        "source_url": "...",             // API url
+        "source_id": "...",
         "languages": [
           "fr"
         ],
-        "last_modif": ...,
-        "last_import": ...,
+        "last_modif": "...",
+        "last_import": "...",
       }
     }
   ]
