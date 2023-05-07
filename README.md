@@ -92,7 +92,7 @@ graph TD;
   tracks[Questionnaire slides : config files] --> widget[GOV-AID-TREE - VUEJS WEB COMPONENT];
   datamodel[Aid programs data model] -- available for widget --- widget;
   questions[Questionnaire slides : interfaces] --> choices[User choices data];
-  widget -- selects from database --> results[Aid programs fitting user choices];
+  widget -- selects from database --> results[Aid programs subset fitting user choices];
   widget --> questions;
   choices --> widget;
   datasets -- available for widget --- widget;
