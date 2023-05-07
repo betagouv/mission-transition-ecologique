@@ -13,10 +13,12 @@ A project from the `transition-ecologique-entreprises` SE team.
 
 ---
 
-<img src="./images/logos/republique_francaise_rvb-1536x1392.webp" height="100px">
-<img src="./images/logos/logoademe2020_gb_rvb.webp" height="100px">
-<img src="./images/logos/95886_289860.webp" height="100px">
-<img src="./images/logos/logo_twitter_image-2019.jpg" height="75px">
+<div style="display: flex; flex-direction: row;">
+  <img src="./images/logos/republique_francaise_rvb-1536x1392.webp" height="100px">
+  <img src="./images/logos/logoademe2020_gb_rvb.webp" height="100px">
+  <img src="./images/logos/95886_289860.webp" height="100px">
+  <img src="./images/logos/logo_twitter_image-2019.jpg" height="75px">
+</div>
 
 ---
 
