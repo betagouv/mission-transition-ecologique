@@ -120,13 +120,13 @@ graph TD;
 
 - [x] Set up a vue3 environment for custom element
 - [x] Develop interfaces for several dynamic research paths
-- [ ] Dynamic fit between aid programs and user choices
+- [ ] Dynamic fit between aid programs and user choices
 - [ ] Retrieve pertinent public data from the entreprise SIRET number
 
 ### Data
 - [ ] Develop a schema for the aid programs provided by several sources
 - [ ] Develop a simple way to store and expose the aid programs dataset
-- [ ] Get and update aid programs dataset
+- [ ] Get and update aid programs dataset
 
 ---
 
