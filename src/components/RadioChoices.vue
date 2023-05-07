@@ -1,29 +1,30 @@
 <template>
-  <!-- <h3>DEBUG - RadioChoices</h3> -->
   <div 
-    v-if="debug"
-    class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
-    <div class="fr-col-4">
-      <h5 class="fr-mb-1v"> step : <code>{{ step }} </code></h5>
-      <h5 class="fr-mb-1v"> trackId : <code>{{ trackId }} </code></h5>
-      <h5 class="fr-mb-1v"> isCompleted : <code>{{ isCompleted }} </code></h5>
-    </div>
-    <div class="fr-col-4">
-      <h5 class="fr-mb-1v"> renderAs : <code>{{ renderAs }} </code></h5>
-      <h5 class="fr-mb-1v"> allowMultiple : <code>{{ allowMultiple }} </code></h5>
-    </div>
-    <div class="fr-col-4">
-      <h5 class="fr-mb-1v"> selection : </h5>
-      <code>{{ selection }} </code>
-    </div>
+    v-if="debug">
+    <h5>DEBUG - RadioChoices</h5>
+    <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
+      <div class="fr-col-4">
+        <h6 class="fr-mb-1v"> step : <code>{{ step }} </code></h6>
+        <h6 class="fr-mb-1v"> trackId : <code>{{ trackId }} </code></h6>
+        <h6 class="fr-mb-1v"> isCompleted : <code>{{ isCompleted }} </code></h6>
+      </div>
+      <div class="fr-col-4">
+        <h6 class="fr-mb-1v"> renderAs : <code>{{ renderAs }} </code></h6>
+        <h6 class="fr-mb-1v"> allowMultiple : <code>{{ allowMultiple }} </code></h6>
+      </div>
+      <div class="fr-col-4">
+        <h6 class="fr-mb-1v"> selection : </h6>
+        <code>{{ selection }} </code>
+      </div>
 
-    <div
-      v-if="false" 
-      class="fr-col-4">
-      <h4>
-        optionsArray :
-      </h4>
-      <code><pre>{{ optionsArray }}</pre></code>
+      <div
+        v-if="false" 
+        class="fr-col-4">
+        <h4>
+          optionsArray :
+        </h4>
+        <code><pre>{{ optionsArray }}</pre></code>
+      </div>
     </div>
   </div>
 
@@ -86,10 +87,11 @@ const choices = choicesStore()
 const selection = ref([])
 
 const track = tracks.getTrack(props.trackId)
-const renderAs: string = track?.config.interface.component
+const renderAs: string = track?.config.interface.component || 'buttons'
 // console.log('RadioChoices > track :', track)
-const allowMultiple: boolean = !!track?.config.behavior.multipleChoices
-const optionsArray: any[] = track?.config.options
+// @ts-ignore
+const allowMultiple: boolean = !!track?.config.behavior?.multipleChoices
+const optionsArray: any[] | undefined = track?.config.options
 
 const isCompleted = computed(() => !!selection.value.length)
 

@@ -1,7 +1,8 @@
 {
   "name": "ademe-tee-poc",
   "version": "0.0.1",
-  "private": true,
+  "private": false,
+  "author": "Julien Paris - multi.coop",
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check build-only",

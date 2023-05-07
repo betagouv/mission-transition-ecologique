@@ -6,7 +6,13 @@ export const choicesStore = defineStore('choices', () => {
   // language selection
   const lang = ref('fr')
 
+  // actions
+  function setLocale(loc: string) {
+    lang.value = loc
+  }
+
   return {
-    lang
+    lang,
+    setLocale
   }
 })

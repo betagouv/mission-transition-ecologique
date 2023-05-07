@@ -18,9 +18,9 @@
     <div class="fr-grid-row fr-grid-row-gutters">
       <div class="fr-col-9">
         <h3
-          v-if="msg"
+          v-if="message"
           class="red-color">
-          {{ msg }}
+          <span v-html="message[choices.lang]"/>
         </h3>
       </div>
       <div
@@ -49,31 +49,31 @@
 
       <div
         v-if="debugBool"
-        class="fr-col-4">
-        <h3>DEBUG - TeeApp</h3>
+        class="fr-col-3">
+        <h5>DEBUG - TeeApp</h5>
         <div class="fr-grid-row fr-grid-row--gutters">
           <div class="fr-col-12">
-            <h5 class="fr-mb-1v"> seed : <code>{{ seed }} </code></h5>
-            <h5 class="fr-mb-1v"> debug : <code>{{ debug }} </code></h5>
-            <h5 class="fr-mb-1v"> debugBool : <code>{{ debugBool }} </code></h5>
-            <h5 class="fr-mb-1v"> showHeader : <code>{{ showHeader }} </code></h5>
-            <h5 class="fr-mb-1v"> choices.lang : <code>{{ choices.lang }} </code></h5>
-            <h5 class="fr-mb-1v"> tracks.maxDepth : <code>{{ tracks.maxDepth }} </code></h5>
-            <h5 class="fr-mb-1v"> tracks.seedTrack : <code>{{ tracks.seedTrack }} </code></h5>
+            <h6 class="fr-mb-1v"> seed : <code>{{ seed }} </code></h6>
+            <h6 class="fr-mb-1v"> debug : <code>{{ debug }} </code></h6>
+            <h6 class="fr-mb-1v"> debugBool : <code>{{ debugBool }} </code></h6>
+            <h6 class="fr-mb-1v"> showHeader : <code>{{ showHeader }} </code></h6>
+            <h6 class="fr-mb-1v"> choices.lang : <code>{{ choices.lang }} </code></h6>
+            <h6 class="fr-mb-1v"> tracks.maxDepth : <code>{{ tracks.maxDepth }} </code></h6>
+            <h6 class="fr-mb-1v"> tracks.seedTrack : <code>{{ tracks.seedTrack }} </code></h6>
           </div>
           
           <div class="fr-col-12">
-            <h5 class="fr-mb-1v"> tracks.currentStep : <code>{{ tracks.currentStep }} </code></h5>
-            <h5>
+            <h6 class="fr-mb-1v"> tracks.currentStep : <code>{{ tracks.currentStep }} </code></h6>
+            <h6>
               tracks.tracksStepsArray :
-            </h5>
+            </h6>
             <code><pre>{{ tracks.tracksStepsArray  }}</pre></code>
           </div>
 
           <div class="fr-col-12">
-            <h5>
+            <h6>
               tracks.usedTracks :
-            </h5>
+            </h6>
             <code><pre>{{ tracks.usedTracks  }}</pre></code>
           </div>
     
@@ -86,10 +86,10 @@
 
       <div
         v-if="!debugBool"
-        class="fr-col-2">
+        class="fr-col-3">
       </div>
 
-      <div class="fr-col-8">
+      <div class="fr-col-9">
         <p
           v-for="(track, index) in tracks.usedTracks"
           :key="track.id"
@@ -121,9 +121,11 @@ import RadioChoices from './components/RadioChoices.vue'
 import Stepper from './components/Stepper.vue'
 
 interface Props {
-  msg?: string,
   showHeader: string,
+  locale?: string,
+  msg?: string,
   seed: string,
+  dataset: string,
   maxDepth?: string
   debugSwitch?: string,
   debug?: string,
@@ -134,6 +136,7 @@ const tracks = tracksStore()
 const choices = choicesStore()
 const programsArray = programsStore()
 
+let message = ref()
 let debugSwitchBool = ref(false)
 let debugBool = ref(false)
 let showHeaderBool = ref(false)
@@ -149,15 +152,31 @@ onBeforeMount(() => {
   // console.log('TeeApp > props.seed :', props.seed)
   // console.log('TeeApp > props.maxDepth :', props.maxDepth)
 
+  // set header
+  showHeaderBool.value = props.showHeader === 'true'
+
+  // set locale and message
+  const locale = props.locale || 'fr'
+  choices.setLocale(locale)
+  const messageObj = {}
+  if (props.msg) {
+    props.msg.split(',').forEach((s: string) => {
+      const strObj = s.split('|').map((i: string) => i.trim())
+      // @ts-ignore
+      messageObj[strObj[0]] = strObj[1]
+    })
+    // console.log('TeeApp > messageObj :', messageObj)
+    message.value = messageObj
+  }
+
   // set max depth at mount
   if (props.maxDepth) {
     const maxDepthNum = Number(props.maxDepth)
     tracks.setMaxDepth(maxDepthNum)
   }
 
-  showHeaderBool.value = props.showHeader === 'true'
+  // set debug mode
   debugSwitchBool.value = props.debugSwitch === 'true'
-
   if (debugSwitchBool.value && props.debug) {
     debugBool.value = props.debug === 'true'
   }

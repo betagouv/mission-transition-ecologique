@@ -11,7 +11,7 @@ export const needs = {
       label: { fr: "Je débute, je visite, je fais mes premiers pas" },
       hint: { fr: "Obtenez rapidement des premiers conseils, à travers notre outil ou avec un conseiller, afin d’initier votre transition écologique" },
       next: {
-        default: 'results'
+        default: 'sectors'
       }
     },
     {

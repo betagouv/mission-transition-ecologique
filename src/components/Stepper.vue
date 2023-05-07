@@ -1,21 +1,24 @@
 <template>
   <!-- DEBUGGING -->
   <div v-if="debug">
-    <h3>DEBUG - Stepper</h3>
+    <h5>DEBUG - Stepper</h5>
     <div 
       v-if="true"
       class="fr-grid-row fr-grid-row--gutters">
       <div class="fr-col-3">
-        <h5 class="fr-mb-1v"> choices.lang : <code>{{ choices.lang }} </code></h5>
-        <h5 class="fr-mb-1v"> currentStep : <code>{{ currentStep }} </code></h5>
-        <h5 class="fr-mb-1v"> stepsLen : <code>{{ stepsLen }} </code></h5>
-        <h5 class="fr-mb-1v"> isLastStep : <code>{{ isLastStep }} </code></h5>
+        <h6 class="fr-mb-1v"> choices.lang : <code>{{ choices.lang }} </code></h6>
+        <h6 class="fr-mb-1v"> currentStep : <code>{{ currentStep }} </code></h6>
       </div>
   
-      <div class="fr-col-9">
-        <h5 class="fr-mb-1v">
+      <div class="fr-col-3">
+        <h6 class="fr-mb-1v"> stepsLen : <code>{{ stepsLen }} </code></h6>
+        <h6 class="fr-mb-1v"> isLastStep : <code>{{ isLastStep }} </code></h6>
+      </div>
+
+      <div class="fr-col-6">
+        <h6 class="fr-mb-1v">
           stepsArrayTranslated :
-        </h5>
+        </h6>
         <code>{{ stepsArrayTranslated  }}</code>
       </div>
     </div>

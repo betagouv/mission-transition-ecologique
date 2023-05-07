@@ -19,9 +19,9 @@ export default defineConfig({
   build: {
     lib: {
       entry: './src/main.ce.ts',
-      name: 'ademe-tee-app',
+      name: 'gov-aid-tree-app',
       // the proper extensions will be added
-      fileName: 'ademe-tee-app'
+      fileName: 'gov-aid-tree-app'
     }
   },
   define: {

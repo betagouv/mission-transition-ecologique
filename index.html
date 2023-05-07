@@ -8,16 +8,18 @@
   </head>
   <body>
     <div style="margin: 3em;">
-      <ademe-tee-app
+      <gov-aid-tree-app
         id="main-widget"
         show-header="true"
         seed="needs"
+        locale="fr"
+        dataset="eco-aids.json"
         max-depth=3
-        msg="POC - VUE3 + DSFR as web component !!"
-        debug-switch="false"
+        msg="fr | Le widget GOV-AID-TREE <br>pour aider les entreprises dans leur transition !, en | The GOV-AID-TREE widget to find your aid program !"
+        debug-switch="true"
         debug="false"
         >
-      </ademe-tee-app>
+      </gov-aid-tree-app>
       <script type="module" src="/src/main.ce.ts"></script>
     </div>
   </body>

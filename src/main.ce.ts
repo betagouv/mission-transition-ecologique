@@ -37,7 +37,7 @@ const TeeAppComponent = defineCustomElement(TeeApp, {
   ]
 })
 
-customElements.define('ademe-tee-app', TeeAppComponent)
+customElements.define('gov-aid-tree-app', TeeAppComponent)
 
 // const app = createApp(SimpleSample)
 // app.use(createPinia())
