@@ -116,6 +116,8 @@ graph TD;
 
 ## Roadmap for the POC
 
+Check : https://github.com/orgs/betagouv/projects/54/views/1
+
 ### Frontend
 
 - [x] Set up a vue3 environment for custom element
