@@ -431,6 +431,7 @@ Check : https://github.com/orgs/betagouv/projects/54/views/1
 
 - create vue app + vite : https://github.com/vuejs/create-vue
 - vue3 + typescript : https://blog.logrocket.com/how-to-use-vue-3-typescript/
+- issues templates : https://github.com/stevemao/github-issue-templates/tree/master 
 
 ---
 
