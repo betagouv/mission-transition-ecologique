@@ -183,10 +183,14 @@ onBeforeMount(() => {
   // console.log('TeeApp > href :', href)
   let needStyle = true
   // avoid duplicates
-  for(let i = 0; i < document.styleSheets.length; i++){
-    if(document.styleSheets[i].href == href){
-      needStyle = false
-      return
+  const styleSheets = document.styleSheets.length
+  // console.log('TeeApp > href :', href)
+  if (styleSheets) {
+    for(let i = 0; i < styleSheets; i++){
+      if(document.styleSheets[i].href == href){
+        needStyle = false
+        return
+      }
     }
   }
   if (needStyle) {
