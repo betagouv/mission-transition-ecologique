@@ -116,7 +116,7 @@
 <script setup lang="ts">
 // cf : https://stackoverflow.com/questions/71163741/vuejs-script-setup-cannot-contain-es-module-exports
 
-// import '@gouvfr/dsfr/dist/core/core.main.min.css'               // Le CSS minimal du DSFR
+import '@gouvfr/dsfr/dist/core/core.main.min.css'               // Le CSS minimal du DSFR
 // import '@gouvfr/dsfr/dist/component/component.main.min.css'  // Styles de tous les composants du DSFR
 // import '@gouvfr/dsfr/dist/utility/utility.main.min.css'      // Classes utilitaires : les composants de VueDsfr en ont besoin
 // import '@gouvminint/vue-dsfr/styles'                         // Les styles propres aux composants de VueDsfr
@@ -179,7 +179,7 @@ onBeforeMount(() => {
   // console.log('TeeApp > document.styleSheets :', document.styleSheets)
 
   // inject style link in html head if not present
-  const href = metaEnv.MODE != 'development' ? `${metaEnv.VITE_DEPLOY_URL}/style.css` : '../public/css/core.main.min.css'
+  const href = metaEnv.MODE != 'development' ? `${metaEnv.VITE_DEPLOY_URL}/style.css` : ''
   // console.log('TeeApp > href :', href)
   let needStyle = true
   // avoid duplicates
