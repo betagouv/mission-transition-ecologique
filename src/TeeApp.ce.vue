@@ -1,6 +1,6 @@
 <template>
   <div 
-    id="tee-app-ce"
+    :id="appId"
     class="fr-container">
     
     <!-- HEADER -->
@@ -116,7 +116,7 @@
 <script setup lang="ts">
 // cf : https://stackoverflow.com/questions/71163741/vuejs-script-setup-cannot-contain-es-module-exports
 
-import '@gouvfr/dsfr/dist/core/core.main.min.css'               // Le CSS minimal du DSFR
+// import '@gouvfr/dsfr/dist/core/core.main.min.css'               // Le CSS minimal du DSFR
 // import '@gouvfr/dsfr/dist/component/component.main.min.css'  // Styles de tous les composants du DSFR
 // import '@gouvfr/dsfr/dist/utility/utility.main.min.css'      // Classes utilitaires : les composants de VueDsfr en ont besoin
 // import '@gouvminint/vue-dsfr/styles'                         // Les styles propres aux composants de VueDsfr
@@ -134,11 +134,14 @@ import TeeTrack from './components/TeeTrack.vue'
 // @ts-ignore
 import TeeStepper from './components/TeeStepper.vue'
 
+const appId = 'gov-aid-tree-app'
+
 // const env = process.env
 // console.log('TeeApp - env :', env)
 
 // @ts-ignore
-const metaEnv = ref(import.meta.env)
+// const metaEnv = ref(import.meta.env)
+const metaEnv = import.meta.env
 // console.log('TeeApp - metaEnv :', metaEnv)
 
 interface Props {
@@ -172,6 +175,29 @@ const changeDebug = (ev: any) => {
 onBeforeMount(() => {
   // console.log('TeeApp > props.seed :', props.seed)
   // console.log('TeeApp > props.maxDepth :', props.maxDepth)
+
+  // console.log('TeeApp > document.styleSheets :', document.styleSheets)
+
+  // inject style link in html head if not present
+  const href = metaEnv.MODE != 'development' ? `${metaEnv.VITE_DEPLOY_URL}/style.css` : '../public/css/core.main.min.css'
+  // console.log('TeeApp > href :', href)
+  let needStyle = true
+  // avoid duplicates
+  for(let i = 0; i < document.styleSheets.length; i++){
+    if(document.styleSheets[i].href == href){
+      needStyle = false
+      return
+    }
+  }
+  if (needStyle) {
+    const head = document.head
+    // console.log('TeeApp > head :', head)
+    const link = document.createElement('link')
+    link.type = "text/css"
+    link.rel = "stylesheet"
+    link.href = href
+    head.appendChild(link)
+  }
 
   // set header
   showHeaderBool.value = props.showHeader === 'true'
