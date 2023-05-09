@@ -138,9 +138,8 @@ import TeeStepper from './components/TeeStepper.vue'
 // console.log('TeeApp > env :', env)
 
 // @ts-ignore
-console.log('TeeApp > import.meta.env :', import.meta.env)
-// @ts-ignore
 const metaEnv = ref(import.meta.env)
+console.log('TeeApp > metaEnv :', metaEnv)
 
 interface Props {
   showHeader: string,
