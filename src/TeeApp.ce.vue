@@ -176,15 +176,15 @@ onBeforeMount(() => {
   // console.log('TeeApp > props.seed :', props.seed)
   // console.log('TeeApp > props.maxDepth :', props.maxDepth)
 
-  // console.log('TeeApp > document.styleSheets :', document.styleSheets)
-
+  
   // inject style link in html head if not present
-  const href = metaEnv.MODE != 'development' ? `${metaEnv.VITE_DEPLOY_URL}/style.css` : ''
+  const deployMode = metaEnv.MODE != 'development'
+  const href = deployMode ? `${metaEnv.VITE_DEPLOY_URL}/style.css` : ''
   // console.log('TeeApp > href :', href)
   let needStyle = true
   // avoid duplicates
   const styleSheets = document.styleSheets.length
-  // console.log('TeeApp > href :', href)
+  // console.log('TeeApp > document.styleSheets :', document.styleSheets)
   if (styleSheets) {
     for(let i = 0; i < styleSheets; i++){
       if(document.styleSheets[i].href == href){
@@ -193,7 +193,7 @@ onBeforeMount(() => {
       }
     }
   }
-  if (needStyle) {
+  if (deployMode && needStyle) {
     const head = document.head
     // console.log('TeeApp > head :', head)
     const link = document.createElement('link')
@@ -203,7 +203,7 @@ onBeforeMount(() => {
     head.appendChild(link)
   }
 
-  // set header
+  // set header component
   showHeaderBool.value = props.showHeader === 'true'
 
   // set locale and message
