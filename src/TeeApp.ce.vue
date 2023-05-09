@@ -2,7 +2,7 @@
   <div 
     id="tee-app-ce"
     class="fr-container">
-
+    
     <!-- HEADER -->
     <p 
       v-if="showHeaderBool"
@@ -61,7 +61,7 @@
             <h6 class="fr-mb-1v"> tracks.maxDepth : <code>{{ tracks.maxDepth }} </code></h6>
             <h6 class="fr-mb-1v"> tracks.seedTrack : <code>{{ tracks.seedTrack }} </code></h6>
           </div>
-          
+
           <div class="fr-col-12">
             <h6 class="fr-mb-1v"> tracks.currentStep : <code>{{ tracks.currentStep }} </code></h6>
             <h6>
@@ -76,7 +76,14 @@
             </h6>
             <code><pre>{{ tracks.usedTracks  }}</pre></code>
           </div>
-    
+
+          <div class="fr-col-12">
+            <h6>
+              metaEnv :
+            </h6>
+            <code><pre>{{ metaEnv }}</pre></code>
+          </div>
+
           <!-- <h4>
             TeeApp debug / programs :
           </h4>
@@ -126,6 +133,14 @@ import { programsStore } from './stores/programs'
 import TeeTrack from './components/TeeTrack.vue'
 // @ts-ignore
 import TeeStepper from './components/TeeStepper.vue'
+
+// const env = process.env
+// console.log('TeeApp > env :', env)
+
+// @ts-ignore
+console.log('TeeApp > import.meta.env :', import.meta.env)
+// @ts-ignore
+const metaEnv = ref(import.meta.env)
 
 interface Props {
   showHeader: string,
@@ -205,6 +220,8 @@ onBeforeMount(() => {
 </style> -->
 
 <style>
+  @import '~@gouvfr/dsfr/dist/dsfr.min.css';
+
   code {
     color: red !important;
   }
