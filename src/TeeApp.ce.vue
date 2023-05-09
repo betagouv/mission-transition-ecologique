@@ -109,7 +109,7 @@
 <script setup lang="ts">
 // cf : https://stackoverflow.com/questions/71163741/vuejs-script-setup-cannot-contain-es-module-exports
 
-import '@gouvfr/dsfr/dist/core/core.main.min.css'            // Le CSS minimal du DSFR
+import '@gouvfr/dsfr/dist/core/core.main.min.css'               // Le CSS minimal du DSFR
 // import '@gouvfr/dsfr/dist/component/component.main.min.css'  // Styles de tous les composants du DSFR
 // import '@gouvfr/dsfr/dist/utility/utility.main.min.css'      // Classes utilitaires : les composants de VueDsfr en ont besoin
 // import '@gouvminint/vue-dsfr/styles'                         // Les styles propres aux composants de VueDsfr
@@ -195,12 +195,6 @@ onBeforeMount(() => {
 
 </script>
 
-<style>
-  code {
-    color: red !important;
-  }
-</style>
-
 <!-- <style lang="scss">
   @import '~@gouvfr/dsfr/dist/core/core.main.min.css';
   @import '~@gouvfr/dsfr/dist/component/component.main.min.css';
@@ -211,10 +205,10 @@ onBeforeMount(() => {
 </style> -->
 
 <style lang="scss">
+  @import '~@gouvfr/dsfr/dist/dsfr.min.css'; // ok
+  
   // @import '../public/core.main.css';
   // @import '~@gouvfr/dsfr/dist/core/core.main.min.css';
-
-  @import '~@gouvfr/dsfr/dist/dsfr.min.css'; // ok
 
   // @import '~@gouvfr/dsfr/dist/dsfr.legacy.min.css';
   // @import '~@gouvfr/dsfr/dist/dsfr.main.min.css';
@@ -227,4 +221,10 @@ onBeforeMount(() => {
 
   // @import '~@gouvminint/vue-dsfr/styles';
   @import '~@gouvminint/vue-dsfr/dist/vue-dsfr.css'; // ok
+</style>
+
+<style>
+  code {
+    color: red !important;
+  }
 </style>
