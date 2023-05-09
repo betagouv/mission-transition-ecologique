@@ -204,6 +204,12 @@ onBeforeMount(() => {
   @import '~@gouvminint/vue-dsfr/dist/vue-dsfr.css';
 </style> -->
 
+<style>
+  code {
+    color: red !important;
+  }
+</style>
+
 <style lang="scss">
   @import '~@gouvfr/dsfr/dist/dsfr.min.css'; // ok
   
@@ -223,8 +229,3 @@ onBeforeMount(() => {
   @import '~@gouvminint/vue-dsfr/dist/vue-dsfr.css'; // ok
 </style>
 
-<style>
-  code {
-    color: red !important;
-  }
-</style>
