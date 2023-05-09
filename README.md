@@ -2,6 +2,8 @@
 
 **Decision tree interfaces + fit with a database** 
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/965eef15-8fbd-4ba0-8ee9-f50258d04d8f/deploy-status)](https://app.netlify.com/sites/gov-aid-tree-poc/deploys)
+
 ![](https://img.shields.io/gitlab/license/45341092)
 
 ---
