@@ -135,11 +135,11 @@ import TeeTrack from './components/TeeTrack.vue'
 import TeeStepper from './components/TeeStepper.vue'
 
 // const env = process.env
-// console.log('TeeApp > env :', env)
+// console.log('TeeApp - env :', env)
 
 // @ts-ignore
 const metaEnv = ref(import.meta.env)
-console.log('TeeApp > metaEnv :', metaEnv)
+// console.log('TeeApp - metaEnv :', metaEnv)
 
 interface Props {
   showHeader: string,
