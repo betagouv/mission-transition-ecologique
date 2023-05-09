@@ -1,7 +1,7 @@
 <template>
   <div 
     v-if="debug">
-    <h5>DEBUG - RadioChoices</h5>
+    <h5>DEBUG - TeeTrack</h5>
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
       <div class="fr-col-4">
         <h6 class="fr-mb-1v"> step : <code>{{ step }} </code></h6>
@@ -29,7 +29,7 @@
   </div>
 
   <!-- TRACK CHOICES -->
-  <p
+  <div
     v-for="option in optionsArray"
     :key="option.value"
     class="fr-mb-2v"
@@ -56,8 +56,7 @@
         </p>
       </div>
     </div>
-  </p>
-
+  </div>
 </template>
 
 <script setup lang="ts">

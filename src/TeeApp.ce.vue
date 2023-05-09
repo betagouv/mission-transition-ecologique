@@ -37,7 +37,7 @@
 
     <!-- STEPPER -->
     <p>
-      <Stepper
+      <TeeStepper
         :steps-array="tracks.tracksStepsArray"
         :current-step="tracks.currentStep"
         :debug="debugBool"
@@ -94,7 +94,7 @@
           v-for="(track, index) in tracks.usedTracks"
           :key="track.id"
           :class="`fr-py-0 fr-mb-${ debugBool ? '12v' : '0'}`">
-          <RadioChoices
+          <TeeTrack
             :step="index + 1"
             :track-id="track.id"
             :debug="debugBool"
@@ -109,16 +109,16 @@
 <script setup lang="ts">
 // cf : https://stackoverflow.com/questions/71163741/vuejs-script-setup-cannot-contain-es-module-exports
 
-import { ref, reactive, onBeforeMount } from 'vue'
+import { ref, onBeforeMount } from 'vue'
 
 import { tracksStore } from './stores/tracks'
 import { choicesStore } from './stores/choices'
 import { programsStore } from './stores/programs'
 
 // @ts-ignore
-import RadioChoices from './components/RadioChoices.vue'
+import TeeTrack from './components/TeeTrack.vue'
 // @ts-ignore
-import Stepper from './components/Stepper.vue'
+import TeeStepper from './components/TeeStepper.vue'
 
 interface Props {
   showHeader: string,

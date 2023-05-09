@@ -1,7 +1,7 @@
 <template>
   <!-- DEBUGGING -->
   <div v-if="debug">
-    <h5>DEBUG - Stepper</h5>
+    <h5>DEBUG - TeeStepper</h5>
     <div 
       v-if="true"
       class="fr-grid-row fr-grid-row--gutters">

@@ -430,7 +430,13 @@ Check : https://github.com/orgs/betagouv/projects/54/views/1
 ### Technical references / tutorials
 
 - create vue app + vite : https://github.com/vuejs/create-vue
-- vue3 + typescript : https://blog.logrocket.com/how-to-use-vue-3-typescript/
+- vue3 + typescript : 
+  - https://blog.logrocket.com/how-to-use-vue-3-typescript/
+  - https://dev.to/nurlan_tl/tips-to-create-web-components-using-vue-3-ts-vite-3a7a
+- vue + vite + nuxt + dsfr : https://github.com/laruiss/create-vue-dsfr
+- vue3 composition API : 
+  - https://vuejs.org/guide/extras/composition-api-faq.html
+  - https://vuejs.org/guide/reusability/composables.html
 - issues templates : https://github.com/stevemao/github-issue-templates/tree/master 
 
 ---

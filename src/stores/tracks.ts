@@ -19,7 +19,7 @@ export const tracksStore = defineStore('tracks', () => {
     values: any[],
     next: any
   }
-  const usedTracks = ref([])
+  const usedTracks = ref<UsedTrack[]>([])
 
   // computed
   const tracksStepsArrayDict = computed(() => {

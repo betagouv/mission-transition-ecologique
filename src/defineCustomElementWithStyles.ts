@@ -3,7 +3,7 @@ import { defineCustomElement as VueDefineCustomElement, h, createApp, getCurrent
 // cf : https://stackblitz.com/edit/vue3-custom-elements-with-plugins?file=src%2FdefineCustomElementWithStyles.js,src%2Fmain.js
 // cf: https://stackblitz.com/edit/vue3-custom-elements-with-plugins?file=src%2Fmain.js,src%2FdefineCustomElementWithStyles.js,src%2FApp.ce.vue
 
-const getNearestElementParent = (el) => {
+const getNearestElementParent = (el: any) => {
   // console.log('getNearestElementParent > el (1):', el)
   while (el?.nodeType !== 1 /* ELEMENT */) {
     // console.log('getNearestElementParent > el (2a):', el)
@@ -15,10 +15,11 @@ const getNearestElementParent = (el) => {
   return el
 }
 
-export const defineCustomElement = (component, { plugins = [] }) =>
+export const defineCustomElement = (component: any, { plugins = [] }) =>
   VueDefineCustomElement({
     render: () => h(component),
     setup() {
+      // @ts-ignore
       const app = createApp()
 
       // install plugins
@@ -26,7 +27,7 @@ export const defineCustomElement = (component, { plugins = [] }) =>
 
       app.mixin({
         mounted() {
-          const insertStyles = (styles) => {
+          const insertStyles = (styles: any) => {
             if (styles && styles.length) {
               this.__style = document.createElement('style')
               this.__style.innerText = styles.join().replace(/\n/g, '')
@@ -47,6 +48,7 @@ export const defineCustomElement = (component, { plugins = [] }) =>
             // console.log('mounted > this.$options.components', this.$options.components)
             for (const comp of Object.values(this.$options.components)) {
               // console.log('mounted > comp', comp)
+              // @ts-ignore
               insertStyles(comp.styles)
             }
           }
@@ -56,8 +58,10 @@ export const defineCustomElement = (component, { plugins = [] }) =>
         },
       })
 
-      const inst = getCurrentInstance()
+      const inst = <any>getCurrentInstance()
       Object.assign(inst.appContext, app._context)
       Object.assign(inst.provides, app._context.provides)
     },
   })
+
+// export default defineCustomElement
