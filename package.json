@@ -5,7 +5,7 @@
   "author": "Julien Paris - multi.coop",
   "scripts": {
     "dev": "vite",
-    "build": "run-p type-check build-only",
+    "build": "cp -a ./node_modules/@gouvfr/dsfr/dist/fonts/. ./public/fonts && run-p type-check build-only",
     "preview": "vite preview",
     "test:unit": "vitest",
     "test:e2e": "start-server-and-test preview http://localhost:4173 'cypress run --e2e'",
