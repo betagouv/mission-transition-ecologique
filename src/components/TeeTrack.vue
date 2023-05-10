@@ -11,6 +11,7 @@
       <div class="fr-col-4">
         <h6 class="fr-mb-1v"> renderAs : <code>{{ renderAs }} </code></h6>
         <h6 class="fr-mb-1v"> allowMultiple : <code>{{ allowMultiple }} </code></h6>
+        <h6 class="fr-mb-1v"> colsWidth : <code>{{ colsWidth }} </code></h6>
       </div>
       <div class="fr-col-4">
         <h6 class="fr-mb-1v"> selection : </h6>
@@ -30,14 +31,37 @@
 
   <!-- TRACK CHOICES -->
   <div
-    v-for="option in optionsArray"
-    :key="option.value"
-    class="fr-mb-2v"
-    >
-    <div 
-      v-show="isCompleted ? isActiveChoice(option.value) : true"
-      class="fr-grid-row fr-grid-row--gutters">
-      <div class="fr-col-9">
+    class="fr-grid-row fr-grid-row--gutters">
+
+    <!-- v-if="renderAs !== 'cards' || isCompleted" -->
+    <!-- <div 
+      class="fr-col-1"
+      >
+    </div> -->
+
+    <div
+      v-for="option in optionsArrayDynamic"
+      :key="option.value"
+      :class="`fr-col-${colsWidth}`"
+      >
+
+      <!-- AS CARDS -->
+      <div
+        v-if="!isCompleted && renderAs === 'cards'"
+        >
+        <DsfrCard
+          :detail="''"
+          :title="option.label[choices.lang]"
+          :description="option.hint[choices.lang]"
+          :horizontal="true"
+          @click="updateSelection(option)"
+        />
+      </div>
+      
+      <!-- AS BUTTONS -->
+      <div 
+        v-if="!isCompleted && renderAs === 'buttons'"
+        >
         <DsfrButton
           style="width: -moz-available !important;"
           :label="option.label[choices.lang]" 
@@ -46,20 +70,48 @@
           @click="updateSelection(option)"
         />
       </div>
-      <div
-        v-if="isActiveChoice(option.value)"
-        class="fr-col-3"
-        style="display: flex; align-items: center">
-        <DsfrButton
-          :label="dict[choices.lang].modify"
-          icon="ri-arrow-left-line"
-          tertiary
-          no-outline
-          @click="updateSelection(option)"
-        />
+
+      <!-- AS FORM -->
+      <div 
+        v-if="!isCompleted && renderAs === 'form'"
+        class="fr-center fr-pt-5v"
+        >
+        <TeeForm
+          :form-options="option"
+          :debug="debug"/>
+      </div>
+
+      <!-- SELECTION && COMPLETED-->
+      <div 
+        v-if="isCompleted && isActiveChoice(option.value)"
+        class="fr-grid-row fr-grid-row--gutters fr-mb-0"
+        >
+        <div
+          :class="`fr-col-${colsOptions.buttons}`"
+          >
+          <DsfrButton
+            style="width: -moz-available !important;"
+            :label="option.label[choices.lang]" 
+            :icon="`${isActiveChoice(option.value) ? 'md-radiobuttonchecked' : 'md-radiobuttonunchecked'}`"
+            :secondary="isActiveChoice(option.value)"
+            @click="updateSelection(option)"
+          />
+        </div>
+        <div
+          :class="`fr-col-${colsOptions.modify}`"
+          style="display: flex; align-items: center">
+          <DsfrButton
+            :label="dict[choices.lang].modify"
+            icon="ri-arrow-left-line"
+            tertiary
+            no-outline
+            @click="updateSelection(option)"
+          />
+        </div>
       </div>
     </div>
   </div>
+
 </template>
 
 <script setup lang="ts">
@@ -68,7 +120,10 @@ import { ref, computed } from 'vue'
 
 import { tracksStore } from '../stores/tracks'
 import { choicesStore } from '../stores/choices'
-import type { DsfrButton } from '@gouvminint/vue-dsfr/types'
+// import type { DsfrButton } from '@gouvminint/vue-dsfr/types'
+
+// @ts-ignore
+import TeeForm from './TeeForm.vue'
 
 interface Props {
   step: number,
@@ -77,12 +132,23 @@ interface Props {
 }
 const props = defineProps<Props>()
 
-const dictInternational: any = {
+// internationalization
+const dict: any = {
   fr: {
     modify: 'modifier'
   }
 }
-const dict = ref(dictInternational)
+// const dict = ref(dictInternational)
+
+interface ColsOptions {
+  [name: string]: number
+}
+const colsOptions: ColsOptions = {
+  buttons: 8,
+  cards: 4,
+  form: 8,
+  modify: 2,
+}
 
 const tracks = tracksStore()
 const choices = choicesStore()
@@ -91,12 +157,30 @@ const selection = ref([])
 
 const track = tracks.getTrack(props.trackId)
 const renderAs: string = track?.config.interface.component || 'buttons'
-// console.log('RadioChoices > track :', track)
+// console.log('TeeTrack > track :', track)
 // @ts-ignore
 const allowMultiple: boolean = !!track?.config.behavior?.multipleChoices
-const optionsArray: any[] | undefined = track?.config.options
+
+interface TrackOptions {
+  value: string,
+  [name: string]: any
+}
+const optionsArray: any[] = track?.config.options || []
+const optionsArrayDynamic = computed(() => {
+  return isCompleted.value ? optionsArray.filter((v: TrackOptions) => selection.value.includes(v.value)) : optionsArray
+})
 
 const isCompleted = computed(() => !!selection.value.length)
+
+// Getters
+
+const colsWidth = computed(() => {
+  if (isCompleted.value) {
+    return 12
+  } else {
+    return colsOptions[renderAs]
+  }
+})
 
 const isActiveChoice = (value: string | number) => {
   // @ts-ignore

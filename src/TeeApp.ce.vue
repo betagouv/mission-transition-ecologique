@@ -47,9 +47,24 @@
     <!-- TRACKS INTERFACES -->
     <div class="fr-grid-row fr-grid-row-gutters">
 
+      <div 
+        :class="`fr-col-${debugBool ? 9 : 12} ${debugBool ? '' : 'fr-pl-24v'}`">
+        <p
+          v-for="(track, index) in tracks.usedTracks"
+          :key="track.id"
+          :class="`fr-py-0 fr-mb-${ debugBool ? '12v' : '0'}`">
+          <TeeTrack
+            :step="index + 1"
+            :track-id="track.id"
+            :debug="debugBool"
+          />
+        </p>
+      </div>
+
+      <!-- DEBUGGING -->
       <div
         v-if="debugBool"
-        class="fr-col-3">
+        class="fr-col-3 fr-pl-3v">
         <h5>DEBUG - TeeApp</h5>
         <div class="fr-grid-row fr-grid-row--gutters">
           <div class="fr-col-12">
@@ -89,24 +104,6 @@
           </h4>
           <code><pre>{{ programsArray  }}</pre></code> -->
         </div>
-      </div>
-
-      <div
-        v-if="!debugBool"
-        class="fr-col-3">
-      </div>
-
-      <div class="fr-col-9">
-        <p
-          v-for="(track, index) in tracks.usedTracks"
-          :key="track.id"
-          :class="`fr-py-0 fr-mb-${ debugBool ? '12v' : '0'}`">
-          <TeeTrack
-            :step="index + 1"
-            :track-id="track.id"
-            :debug="debugBool"
-          />
-        </p>
       </div>
 
     </div>
