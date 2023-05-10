@@ -50,10 +50,13 @@
         v-if="isActiveChoice(option.value)"
         class="fr-col-3"
         style="display: flex; align-items: center">
-        <p class="fr-mb-0">
-          <span class="fr-icon-arrow-left-line" aria-hidden="true"></span>
-          {{ dict[choices.lang].modify }}
-        </p>
+        <DsfrButton
+          :label="dict[choices.lang].modify"
+          icon="ri-arrow-left-line"
+          tertiary
+          no-outline
+          @click="updateSelection(option)"
+        />
       </div>
     </div>
   </div>
@@ -65,6 +68,7 @@ import { ref, computed } from 'vue'
 
 import { tracksStore } from '../stores/tracks'
 import { choicesStore } from '../stores/choices'
+import type { DsfrButton } from '@gouvminint/vue-dsfr/types'
 
 interface Props {
   step: number,
