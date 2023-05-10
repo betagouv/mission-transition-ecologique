@@ -48,6 +48,7 @@
       <!-- AS CARDS -->
       <div
         v-if="!isCompleted && renderAs === 'cards'"
+        style="height: 100%;"
         >
         <DsfrCard
           :detail="''"

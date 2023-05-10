@@ -3,7 +3,7 @@ export const status = {
     component: 'buttons',
   },
   behavior: {
-    multipleChoices: false,
+    multipleChoices: true,
   },
   options: [
     {
