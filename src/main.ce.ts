@@ -13,6 +13,25 @@ import TeeApp from './TeeApp.ce.vue'
 // cf : https://vue-dsfr.netlify.app/?path=/docs/docs-2-guide-d-utilisation--docs#vue3
 import VueDsfr from '@gouvminint/vue-dsfr'   // Import (par défaut) de la bibliothèque
 
+// import more icons
+// cf: https://oh-vue-icons.js.org/docs
+import { OhVueIcon, addIcons } from 'oh-vue-icons'
+import * as RiIcons from 'oh-vue-icons/icons/ri' // all remix icons
+import {
+  // LaCircle,
+  // LaDotCircle,
+  MdRadiobuttonchecked,
+  MdRadiobuttonunchecked,
+} from 'oh-vue-icons/icons'
+const Ri = Object.values({ ...RiIcons })
+addIcons(
+  ...Ri, 
+  // LaCircle, 
+  // LaDotCircle,
+  MdRadiobuttonchecked,
+  MdRadiobuttonunchecked,
+)
+
 // import '@gouvfr/dsfr/dist/core/core.main.min.css'            // Le CSS minimal du DSFR
 // import '@gouvfr/dsfr/dist/component/component.main.min.css'  // Styles de tous les composants du DSFR
 // import '@gouvfr/dsfr/dist/utility/utility.main.min.css'      // Classes utilitaires : les composants de VueDsfr en ont besoin
@@ -33,9 +52,13 @@ const store = createPinia()
 const TeeAppComponent = defineCustomElement(TeeApp, {
   plugins: [
     // @ts-ignore
-    VueDsfr,
+    { plugin: VueDsfr },
+    // { plugin: VueDsfr, options: { icons: Object.values(icons) }},
     // @ts-ignore
-    store
+    { plugin: store }
+  ],
+  comps: [
+    { name: 'v-icon', comp: OhVueIcon }
   ]
 })
 

@@ -41,7 +41,7 @@
         <DsfrButton
           style="width: -moz-available !important;"
           :label="option.label[choices.lang]" 
-          :icon="`ri-${isActiveChoice(option.value) ? 'check' : 'add'}-line`"
+          :icon="`${isActiveChoice(option.value) ? 'md-radiobuttonchecked' : 'md-radiobuttonunchecked'}`"
           :secondary="isActiveChoice(option.value)"
           @click="updateSelection(option)"
         />

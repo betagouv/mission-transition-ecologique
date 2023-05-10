@@ -147,7 +147,7 @@ Check : https://github.com/orgs/betagouv/projects/54/views/1
   show-header="true"       
   msg="fr | The GOV-AID-TREE widget to find your aid program !"
   seed="needs"
-  dataset="eco-aids.json"
+  dataset-url="data/eco-aides.json"
   max-depth=3
   debug-switch="false"
   debug="false"
@@ -476,6 +476,8 @@ cp .env.example .env
 ```sh
 npm run dev
 ```
+
+Should run on `http://localhost:4242`
 
 ### Type-Check, Compile and Minify for Production
 

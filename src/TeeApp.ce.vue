@@ -149,7 +149,7 @@ interface Props {
   locale?: string,
   msg?: string,
   seed: string,
-  dataset: string,
+  datasetUrl: string,
   maxDepth?: string
   debugSwitch?: string,
   debug?: string,
@@ -158,7 +158,7 @@ const props = defineProps<Props>()
 
 const tracks = tracksStore()
 const choices = choicesStore()
-const programsArray = programsStore()
+const programs = programsStore()
 
 let message = ref()
 let debugSwitchBool = ref(false)
@@ -166,7 +166,7 @@ let debugBool = ref(false)
 let showHeaderBool = ref(false)
 
 // @ts-ignore
-window.stores = { tracks, choicesStore, programsArray }
+window.stores = { tracks, choices, programs }
 
 const changeDebug = (ev: any) => {
   debugBool.value = ev
@@ -176,10 +176,14 @@ onBeforeMount(() => {
   // console.log('TeeApp > props.seed :', props.seed)
   // console.log('TeeApp > props.maxDepth :', props.maxDepth)
 
-  
-  // inject style link in html head if not present
   const deployMode = metaEnv.MODE != 'development'
-  const href = deployMode ? `${metaEnv.VITE_DEPLOY_URL}/style.css` : ''
+  const deployUrl = metaEnv.VITE_DEPLOY_URL
+
+  // load dataset to pinia store
+  programs.setDataset(props.datasetUrl, deployMode, deployUrl)
+
+  // inject style link in html head if not present
+  const href = deployMode ? `${deployUrl}/style.css` : ''
   // console.log('TeeApp > href :', href)
   let needStyle = true
   // avoid duplicates
@@ -249,7 +253,7 @@ onBeforeMount(() => {
 </style> -->
 
 <style>
-  @import '~@gouvfr/dsfr/dist/dsfr.min.css';
+  /* @import '~@gouvfr/dsfr/dist/dsfr.min.css'; */
 
   code {
     color: red !important;

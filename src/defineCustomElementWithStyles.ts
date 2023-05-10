@@ -15,7 +15,16 @@ const getNearestElementParent = (el: any) => {
   return el
 }
 
-export const defineCustomElement = (component: any, { plugins = [] }) =>
+interface Plugin {
+  plugin: any,
+  options?: object | null
+}
+interface Comp {
+  name: string,
+  comp: object
+}
+
+export const defineCustomElement = (component: any, { plugins = <Plugin[]>[], comps = <Comp[]>[] }) =>
   VueDefineCustomElement({
     render: () => h(component),
     setup() {
@@ -23,7 +32,13 @@ export const defineCustomElement = (component: any, { plugins = [] }) =>
       const app = createApp()
 
       // install plugins
-      plugins.forEach(app.use)
+      plugins.forEach((obj) => {
+        app.use(obj.plugin, obj.options)
+      })
+
+      comps.forEach((obj) => {
+        app.component(obj.name, obj.comp)
+      })
 
       app.mixin({
         mounted() {

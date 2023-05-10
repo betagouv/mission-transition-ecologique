@@ -14,6 +14,12 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  server: {
+    host: 'localhost',
+    port: 4242,
+    open: '/index.html',
+    // open: '/public/index.html', // test other index file
+  },
   plugins: [
     // postcssLit(),
     vue({
@@ -25,6 +31,9 @@ export default defineConfig({
     })
   ],
   build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    copyPublicDir: true,
     lib: {
       entry: './src/main.ce.ts',
       name: 'gov-aid-tree-app',
@@ -40,7 +49,8 @@ export default defineConfig({
       // cf: https://stackoverflow.com/questions/72660014/how-to-make-vue-and-vite-work-with-web-components
       '~@gouvfr': fileURLToPath(new URL('./node_modules/@gouvfr', import.meta.url)),    
       '~@gouvminint': fileURLToPath(new URL('./node_modules/@gouvminint', import.meta.url)),    
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+      '@icons': fileURLToPath(new URL('./node_modules/oh-vue-icons', import.meta.url)),    
     }
   }
 })
