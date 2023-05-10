@@ -16,7 +16,9 @@
     v-for="field in formOptions.fields"
     :key="field.id"
     >
-    <div v-if="debug">
+    <div 
+      v-if="debug"
+      class="vue-debug">
       Field.id: 
       <code>
         {{ field.id }} 
@@ -56,7 +58,7 @@
   <!-- DEBUGGING -->
   <div 
     v-if="debug"
-    class="fr-mt-5v">
+    class="vue-debug fr-mt-5v">
     <h5>DEBUG - TeeForm</h5>
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
       <div

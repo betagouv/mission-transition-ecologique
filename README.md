@@ -192,6 +192,12 @@ Check : https://github.com/orgs/betagouv/projects/54/views/1
 - API - Aides-territoires : https://aides-territoires.beta.gouv.fr/api/swagger/
   - https://github.com/MTES-MCT/aides-territoires/wiki/Comment-publier-vos-donn%C3%A9es-pour-une-reprise-sur-Aides-territoires
   - https://aides-territoires.beta.gouv.fr/api/swagger/?version=1.4
+- API - Aides 1 jeune 1 solution :
+  - https://mes-aides.1jeune1solution.beta.gouv.fr/api/benefits
+  - https://github.com/betagouv/aides-jeunes/blob/master/contribuer/public/admin/config.yml
+  - https://github.com/betagouv/aides-jeunes/tree/master/data/benefits/javascript
+  - https://contribuer-aides-jeunes.netlify.app/admin/#/
+  - (contribution w/ Netlify CMS) https://github.com/betagouv/aides-jeunes/tree/master/data/benefits/javascript
 
 ### Links and references
 

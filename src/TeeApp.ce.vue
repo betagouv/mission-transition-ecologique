@@ -64,7 +64,7 @@
       <!-- DEBUGGING -->
       <div
         v-if="debugBool"
-        class="fr-col-3 fr-pl-3v">
+        class="vue-debug fr-col-3 fr-pl-3v">
         <h5>DEBUG - TeeApp</h5>
         <div class="fr-grid-row fr-grid-row--gutters">
           <div class="fr-col-12">
@@ -254,6 +254,20 @@ onBeforeMount(() => {
 
   code {
     color: red !important;
+  }
+  .vue-debug {
+    font-size: 0.75em !important;
+    border: red dashed 1px;
+    padding: .5em;
+    margin-bottom: .5em;
+  }
+  .vue-debug h6, .vue-debug h5{
+    font-size: 1em !important;
+    line-height: 1.2em !important;
+    margin-bottom: .8em;
+  }
+  .vue-debug pre{
+    line-height: 1.4em !important;
   }
 </style>
 

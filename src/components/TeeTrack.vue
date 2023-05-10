@@ -1,5 +1,6 @@
 <template>
-  <div 
+  <div
+    class="vue-debug"
     v-if="debug">
     <h5>DEBUG - TeeTrack</h5>
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
@@ -94,7 +95,9 @@
         <h4>
           {{ dict[choices.lang].results }}
         </h4>
-        <p v-if="true">
+        <p 
+          v-if="true"
+          class="vue-debug">
           <h6>tracks.tracksResults</h6>
           <code><pre>{{ tracks.tracksResults }}</pre></code>
         </p>
@@ -168,6 +171,7 @@ const colsOptions: ColsOptions = {
   cards: 4,
   form: 8,
   modify: 2,
+  results: 10,
 }
 
 const tracks = tracksStore()

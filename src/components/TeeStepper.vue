@@ -1,6 +1,9 @@
 <template>
   <!-- DEBUGGING -->
-  <div v-if="debug">
+  <div
+    v-if="debug"
+    class="vue-debug" 
+    >
     <h5>DEBUG - TeeStepper</h5>
     <div 
       v-if="true"
