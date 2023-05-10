@@ -167,6 +167,7 @@ interface TrackOptions {
 }
 const optionsArray: any[] = track?.config.options || []
 const optionsArrayDynamic = computed(() => {
+  // @ts-ignore
   return isCompleted.value ? optionsArray.filter((v: TrackOptions) => selection.value.includes(v.value)) : optionsArray
 })
 
