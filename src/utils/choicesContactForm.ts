@@ -24,31 +24,36 @@ export const contactForm = {
           id: 'name',
           label: { fr: 'Prénom et Nom'},
           hint: { fr: 'Camille Dujardin' },
-          type: 'simple'
+          required: true,
+          type: 'text'
         },
         {
           id: 'tel',
           label: { fr: 'Téléphone'},
           hint: { fr: '06 05 04 03 02' },
-          type: 'simple'
+          required: true,
+          type: 'text'
         },
         {
           id: 'email',
           label: { fr: 'Email'},
           hint: { fr: 'camille@dujardin.fr' },
-          type: 'simple'
+          required: false,
+          type: 'email'
         },
         {
           id: 'siret',
           label: { fr: 'SIRET de votre entreprise'},
           hint: { fr: '385 290 309 00454' },
-          type: 'simple'
+          required: false,
+          type: 'text'
         },
         {
           id: 'needs',
           label: { fr: 'Quel est votre besoin ?'},
           hint: { fr: 'Je sais pas...' },
-          type: 'longtext'
+          required: false,
+          type: 'textarea'
         },
       ],
       next: {

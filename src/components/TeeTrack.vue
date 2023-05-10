@@ -16,6 +16,9 @@
       <div class="fr-col-4">
         <h6 class="fr-mb-1v"> selection : </h6>
         <code>{{ selection }} </code>
+
+        <h6 class="fr-mb-1v"> selectionData : </h6>
+        <code>{{ selectionData }} </code>
       </div>
 
       <div
@@ -74,12 +77,27 @@
 
       <!-- AS FORM -->
       <div 
-        v-if="!isCompleted && renderAs === 'form'"
+        v-show="!isCompleted && renderAs === 'form'"
         class="fr-center fr-pt-5v"
         >
         <TeeForm
           :form-options="option"
-          :debug="debug"/>
+          :debug="debug"
+          @saveData="updateSelectionFromForm"/>
+      </div>
+
+      <!-- AS RESULT -->
+      <div 
+        v-if="!isCompleted && trackId === 'results'"
+        class="fr-center fr-pt-5v"
+        >
+        <h4>
+          {{ dict[choices.lang].results }}
+        </h4>
+        <p v-if="true">
+          <h6>tracks.tracksResults</h6>
+          <code><pre>{{ tracks.tracksResults }}</pre></code>
+        </p>
       </div>
 
       <!-- SELECTION && COMPLETED-->
@@ -136,7 +154,8 @@ const props = defineProps<Props>()
 // internationalization
 const dict: any = {
   fr: {
-    modify: 'modifier'
+    modify: 'modifier',
+    results: 'Vos résultats'
   }
 }
 // const dict = ref(dictInternational)
@@ -155,6 +174,7 @@ const tracks = tracksStore()
 const choices = choicesStore()
 
 const selection = ref([])
+const selectionData = ref({})
 
 const track = tracks.getTrack(props.trackId)
 const renderAs: string = track?.config.interface.component || 'buttons'
@@ -189,9 +209,24 @@ const isActiveChoice = (value: string | number) => {
   return selection.value.includes(value)
 }
 
+interface FormDataResp {
+  value: string,
+  next: string,
+  data: any
+}
+const updateSelectionFromForm = (form: FormDataResp) => {
+  // console.log('TeeTrack > updateSelectionFromForm > form :', form)
+  selectionData.value = form.data
+  updateSelection(form)
+}
+
 const updateSelection = (option: any) => {
+  // console.log()
+  // console.log('TeeTrack > updateSelection > option :', option)
+  // console.log('TeeTrack > updateSelection > dataAsVal :', dataAsVal)
+
   const val: string | number = option.value
-  const isActive = isActiveChoice(val)
+  const isActive = isActiveChoice(option.value)
   let needRemove = false
   if (!isActive) {
     if (allowMultiple) {
@@ -207,15 +242,15 @@ const updateSelection = (option: any) => {
     needRemove = !newArray.length
   }
 
-  tracks.updateUsedTracks(props.trackId, props.step, option, selection.value)
+  tracks.updateUsedTracks(props.trackId, props.step, option, selection.value, option.data)
   
-  // console.log('RadioChoices > updateSelection > needRemove :', needRemove)
+  // console.log('TeeTrack > updateSelection > needRemove :', needRemove)
   if (!needRemove) {
-    // console.log('RadioChoices > updateSelection > addToUsedTracks...')
+    // console.log('TeeTrack > updateSelection > addToUsedTracks...')
     const canAddTrack = !tracks.trackExistsInUsed(option.next.default)
     canAddTrack && tracks.addToUsedTracks(props.trackId, option.next.default)
   } else {
-    // console.log('RadioChoices > updateSelection > removeFromUsedTracks...')
+    // console.log('TeeTrack > updateSelection > removeFromUsedTracks...')
     // tracks.removeFromUsedTracks(props.trackId, option.next.default)
     tracks.removeFurtherUsedTracks(props.trackId)
   }

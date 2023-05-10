@@ -15,8 +15,10 @@ export const tracksStore = defineStore('tracks', () => {
     id: string | any,
     final?: boolean,
     completed: boolean,
+    updating: boolean,
     step: number,
     values: any[],
+    data: object,
     next: any
   }
   const usedTracks = ref<UsedTrack[]>([])
@@ -44,6 +46,19 @@ export const tracksStore = defineStore('tracks', () => {
     const track: UsedTrack = tracksArray[0]
     const stepNumber = track.step
     return stepNumber
+  })
+  const tracksResults = computed(() => {
+    const results = usedTracks.value
+      .filter(track => track.id !== 'results')
+      .map(track => {
+        return {
+          id: track.id,
+          step: track.step,
+          values: track.values,
+          data: track.data
+        }
+      })
+    return results
   })
 
   // getters
@@ -79,15 +94,17 @@ export const tracksStore = defineStore('tracks', () => {
     const trackInfos: UsedTrack = {
       id: newTrackId,
       completed: false,
+      updating: false,
       step: usedTracks.value.length + 1,
       values: [],
+      data: {},
       next: null,
     }
     // @ts-ignore
     usedTracks.value.push(trackInfos)
   }
 
-  function updateUsedTracks(trackId: string, step: number, option: any, values: any[]) {
+  function updateUsedTracks(trackId: string, step: number, option: any, values: any[], data: object) {
     // console.log()
     // console.log('store.tracks > updateUsedTracks > trackId : ', trackId)
     // console.log('store.tracks > updateUsedTracks > step : ', step)
@@ -99,6 +116,7 @@ export const tracksStore = defineStore('tracks', () => {
         const hasValues = Boolean(values.length)
         const nextTrack = option.next
         trackInfo.values = values
+        trackInfo.data = data
         trackInfo.completed = hasValues
         trackInfo.next = hasValues ? nextTrack : null
       }
@@ -122,6 +140,7 @@ export const tracksStore = defineStore('tracks', () => {
     usedTracks,
     tracksStepsArray,
     currentStep,
+    tracksResults,
     setMaxDepth,
     getTrack,
     trackExistsInUsed,

@@ -3,8 +3,6 @@ import { defineStore } from 'pinia'
 
 // import { tracksStore } from './tracks'
 
-// import programsData from '../assets/data/eco-aides.json'
-
 export const programsStore = defineStore('programs', () => {
 
   // import from tracks
@@ -15,13 +13,13 @@ export const programsStore = defineStore('programs', () => {
 
   async function setDataset (path: string, deployMode: boolean, deployUrl: string) {
     console.log()
-    console.log('store.programs > setDataset > path : ', path)
-    console.log('store.programs > setDataset > deployMode : ', deployMode)
-    console.log('store.programs > setDataset > deployUrl : ', deployUrl)
+    // console.log('store.programs > setDataset > path : ', path)
+    // console.log('store.programs > setDataset > deployMode : ', deployMode)
+    // console.log('store.programs > setDataset > deployUrl : ', deployUrl)
 
     let pathTrimmed = path.trim().startsWith('.') ? path.substring(1) : path
     pathTrimmed = pathTrimmed.trim().startsWith('/') ? pathTrimmed.substring(1) : pathTrimmed
-    console.log('store.programs > setDataset > pathTrimmed : ', pathTrimmed)
+    // console.log('store.programs > setDataset > pathTrimmed : ', pathTrimmed)
 
     const publicDir = 'public/'
     let url: string
@@ -43,16 +41,16 @@ export const programsStore = defineStore('programs', () => {
       // in local dev mode
       url = `./${pathTrimmed}`
     }
-    console.log('store.programs > setDataset > url : ', url )
+    // console.log('store.programs > setDataset > url : ', url )
     
     // fetch url
     try {
       response = await fetch(url)
       dataset = await response.json()
-      console.log('store.programs > setDataset > dataset : ', dataset)
+      // console.log('store.programs > setDataset > dataset : ', dataset)
       programs.value = dataset
     } catch (error) {
-      console.log('store.programs > setDataset > error : ', error)
+      // console.log('store.programs > setDataset > error : ', error)
       errors = [error]
       console.log('store.programs > setDataset > errors : ', errors)
     }

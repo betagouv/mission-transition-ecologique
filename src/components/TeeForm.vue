@@ -16,13 +16,27 @@
     v-for="field in formOptions.fields"
     :key="field.id"
     >
+    <div v-if="debug">
+      Field.id: 
+      <code>
+        {{ field.id }} 
+      </code >
+      --- formData[field.id] : 
+      <code >
+        {{ formData[field.id] }}
+      </code>
+    </div>
     <DsfrInputGroup>
       <DsfrInput
-        type="text"
+        :type="field.type"
+        :model-value="formData[field.id]"
         label-visible
+        :required="field.required"
         :label="field.label[choices.lang]"
         :placeholder="field.hint[choices.lang]"
-      />
+        @update:modelValue="updateFormData($event, field.id)"
+        >
+      </DsfrInput>
     </DsfrInputGroup>
   </p>
 
@@ -46,11 +60,18 @@
     <h5>DEBUG - TeeForm</h5>
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
       <div
+        v-if="false"
         class="fr-col-12">
         <h4>
           formOptions :
         </h4>
         <code><pre>{{ formOptions }}</pre></code>
+      </div>
+      <div class="fr-col-12">
+        <h4>
+          formData :
+        </h4>
+        <code><pre>{{ formData }}</pre></code>
       </div>
     </div>
   </div>
@@ -58,7 +79,7 @@
 
 <script setup lang="ts">
 
-import { ref } from 'vue'
+import { onBeforeMount, ref, defineEmits } from 'vue'
 
 import { choicesStore } from '../stores/choices'
 const choices = choicesStore()
@@ -70,8 +91,13 @@ const dict: any = {
   }
 }
 
+interface FormValues {
+  [name: string]: any,
+}
+
 interface FormField {
-  id: string | number,
+  id: string,
+  required: boolean,
   label?: any,
   hint?: any,
   type?: string
@@ -91,10 +117,34 @@ interface Props {
 }
 const props = defineProps<Props>()
 
-const formData = ref()
+
+let formData = ref()
+
+const emit = defineEmits(['saveData'])
 
 const saveFormData = () => {
-  console.log('TeeForm > saveFormData >  formData :', formData.value)
+  // console.log('TeeForm > saveFormData >  props.formOptions :', props.formOptions)
+  // console.log('TeeForm > saveFormData >  formData.value :', formData.value)
+  emit('saveData', {
+    value: props.formOptions.value,
+    next: props.formOptions.next,
+    data: formData.value
+  })
 }
+
+const updateFormData = (ev: string, id: string) => {
+  // console.log(`TeeForm > saveFormData >  id : ${id} > ev : ${ev}`)
+  formData.value[id] = ev
+}
+
+onBeforeMount(() => {
+  // console.log('TeeForm > saveFormData >  props.formOptions :', props.formOptions)
+  const initValues = <FormValues>{}
+  props.formOptions.fields?.forEach((field: FormField) => {
+    initValues[field.id] = ''
+  })
+  // formData = reactive(initValues)
+  formData = ref(initValues)
+})
 
 </script>
