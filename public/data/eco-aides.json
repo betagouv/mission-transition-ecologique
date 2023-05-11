@@ -6,27 +6,27 @@
       "description": "...,",
       "program_type": "aap",
       "program_conditions": {
-        "project_status": [
-          "status.economies",
-          "status.carbon",
-          "status.improve"
-        ],
         "project_needs": [
-          "needs.starting",
-          "needs.advices",
-          "needs.financing"
+          "starting",
+          "advices",
+          "financing"
         ],
-        "structure_activities": [
-          "sectors.artisanat",
-          "sectors.industriel",
-          "sectors.tourisme",
-          "sectors.tertiaire",
-          "sectors.agricole"
+        "project_status": [
+          "economies",
+          "carbon",
+          "improve"
+        ],
+        "project_sectors": [
+          "artisanat",
+          "industry",
+          "tourism",
+          "tertiary",
+          "agriculture"
         ],
         "structure_sizes": [
-          "sizes.tpe",
-          "sizes.pme",
-          "sizes.eti"
+          "tpe",
+          "pme",
+          "eti"
         ]
       }
     },
@@ -46,7 +46,7 @@
           "j'ai besoin de connaître et réduire ses émissions carbone",
           "j'ai besoin d'améliorer mon produit/service"
         ],
-        "structure_activities": [
+        "project_sectors": [
           "Activité artisanale",
           "Activité industrielle, fabrication, production",
           "Activité tertiaire, services",

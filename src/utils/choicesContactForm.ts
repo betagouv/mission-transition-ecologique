@@ -1,4 +1,6 @@
 export const contactForm = {
+  id: 'contact_form',
+  label: { fr: 'Formulaire' },
   interface: {
     component: 'form',
   },

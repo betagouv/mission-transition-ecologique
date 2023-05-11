@@ -1,6 +1,8 @@
 export const results = {
+  id: 'results',
+  label: { fr: 'Résultats'},
   interface: {
-    component: 'card',
+    component: 'results',
   },
   behavior: {
     static: true,
@@ -13,7 +15,7 @@ export const results = {
 
       ],
       next: {
-        default: 'results'
+        default: false
       }
     }
   ]

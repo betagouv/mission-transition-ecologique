@@ -1,4 +1,6 @@
 export const sizes = {
+  id: 'structure_sizes',
+  label: { fr: 'Taille de votre structure' },
   interface: {
     component: 'buttons',
   },
@@ -7,21 +9,21 @@ export const sizes = {
   },
   options: [
     {
-      value: 'sizes.tpe',
+      value: 'structure_sizes.tpe',
       label: { fr: "TPE" },
       next: {
         default: 'results'
       }
     },
     {
-      value: 'sizes.pme',
+      value: 'structure_sizes.pme',
       label: { fr: "PME" },
       next: {
         default: 'contact_form'
       }
     },
     {
-      value: 'sizes.eti',
+      value: 'structure_sizes.eti',
       label: { fr: "ETI" },
       next: {
         default: 'results'

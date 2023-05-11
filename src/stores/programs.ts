@@ -1,4 +1,4 @@
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
 // import { tracksStore } from './tracks'
@@ -11,6 +11,12 @@ export const programsStore = defineStore('programs', () => {
   // const programs = ref(programsData)
   const programs = ref()
 
+  // getters
+  const progs = computed(() => {
+    return programs.value
+  })
+
+  // actions
   async function setDataset (path: string, deployMode: boolean, deployUrl: string) {
     console.log()
     // console.log('store.programs > setDataset > path : ', path)
@@ -58,6 +64,7 @@ export const programsStore = defineStore('programs', () => {
 
   return { 
     programs,
+    progs,
     setDataset
   }
 })

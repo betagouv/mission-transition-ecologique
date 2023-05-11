@@ -1,4 +1,6 @@
 export const sectors = {
+  id: 'project_sectors',
+  label: { fr: "Secteur d'activité" },
   interface: {
     component: 'buttons',
   },
@@ -7,38 +9,38 @@ export const sectors = {
   },
   options: [
     {
-      value: 'sectors.artisanat',
+      value: 'project_sectors.artisanat',
       label: { fr: "J’ai une activité artisanale" },
       next: {
         default: 'contact_form'
       }
     },
     {
-      value: 'sectors.industriel',
+      value: 'project_sectors.industriel',
       label: { fr: "J’ai une activité industrielle, fabrication, production" },
       next: {
-        default: 'sizes'
+        default: 'structure_sizes'
       }
     },
     {
-      value: 'sectors.tourisme',
+      value: 'project_sectors.tourisme',
       label: { fr: "j’ai une activité de tourisme" },
       next: {
-        default: 'sizes'
+        default: 'structure_sizes'
       }
     },
     {
-      value: 'sectors.tertiaire',
+      value: 'project_sectors.tertiaire',
       label: { fr: "j’ai une activité tertiaire, de services" },
       next: {
-        default: 'sizes'
+        default: 'structure_sizes'
       }
     },
     {
-      value: 'sectors.agricole',
+      value: 'project_sectors.agricole',
       label: { fr: "J’ai une activité agricole" },
       next: {
-        default: 'sizes'
+        default: 'structure_sizes'
       }
     }
   ]

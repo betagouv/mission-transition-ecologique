@@ -38,7 +38,7 @@
     v-if="!isCompleted"
     class="fr-grid-row fr-grid-row--gutters"
     >
-  
+
     <!-- TRACK CHOICES -->
     <div
       v-for="option in optionsArrayDynamic"
@@ -99,17 +99,11 @@
       <div 
         v-if="trackId === 'results'"
         >
-        <h4>
-          {{ choices.dict[choices.lang].results }}
-        </h4>
-        <p 
-          v-if="true"
-          class="vue-debug">
-          <h6>tracks.tracksResults</h6>
-          <code><pre>{{ tracks.tracksResults }}</pre></code>
-        </p>
+        <TeeResults
+          :tracks-results="tracks.tracksResults"
+          :debug="debug"
+        />
       </div>
-
     </div>
 
   </div>
@@ -181,6 +175,8 @@ import { choicesStore } from '../stores/choices'
 
 // @ts-ignore
 import TeeForm from './TeeForm.vue'
+// @ts-ignore
+import TeeResults from './TeeResults.vue'
 
 interface Props {
   step: number,
@@ -197,7 +193,7 @@ const colsOptions: ColsOptions = {
   cards: 4,
   form: 8,
   modify: 2,
-  results: 10,
+  results: 8,
 }
 
 const tracks = tracksStore()
@@ -207,16 +203,16 @@ const selection = ref([])
 const selectionData = ref({})
 
 const track = tracks.getTrack(props.trackId)
-const renderAs: string = track?.config.interface.component || 'buttons'
-// console.log('TeeTrack > track :', track)
+const renderAs: string = track?.interface.component || 'buttons'
+console.log('TeeTrack > track :', track)
 // @ts-ignore
-const allowMultiple: boolean = !!track?.config.behavior?.multipleChoices
+const allowMultiple: boolean = !!track?.behavior?.multipleChoices
 
 interface TrackOptions {
   value: string,
   [name: string]: any
 }
-const optionsArray: any[] = track?.config.options || []
+const optionsArray: any[] = track?.options || []
 const optionsArrayDynamic = computed(() => {
   // @ts-ignore
   return isCompleted.value ? optionsArray.filter((v: TrackOptions) => selection.value.includes(v.value)) : optionsArray
@@ -305,7 +301,7 @@ const updateStore = (option: any, needRemove: boolean) => {
   // console.log('TeeTrack > updateStore > option :', option)
 
   // @ts-ignore
-  const next = allowMultiple ? track?.config.next : option.next
+  const next = allowMultiple ? track?.next : option.next
 
   tracks.updateUsedTracks(props.trackId, props.step, option, selection.value, option.data)
   

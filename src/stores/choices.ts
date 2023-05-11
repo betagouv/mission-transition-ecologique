@@ -8,7 +8,13 @@ export const choicesStore = defineStore('choices', () => {
     fr: {
       next: 'Suivant',
       modify: 'modifier',
-      results: 'Vos résultats',
+      results: {
+        alertTitle: "Merci, c'est fini",
+        alertDescription: "Vous recevrez prochainement un mail d'accusé de récéption",
+        alertMessage: "Vous recevrez prochainement un mail d'accusé de réception",
+        yourResults: 'Vos résultats',
+        fittingPrograms: 'Aides correspondant à vos choix',
+      },
     }
   }
 
@@ -20,9 +26,21 @@ export const choicesStore = defineStore('choices', () => {
     lang.value = loc
   }
 
+  function resolve(path: string, obj=self, separator='.') {
+    const props = Array.isArray(path) ? path : path.split(separator)
+    // @ts-ignore
+    return props.reduce((prev, curr) => prev?.[curr], obj)
+  }
+
+  function t (path: string) {
+    const locDict = dict[lang.value]
+    return resolve(path, locDict)
+  }
+
   return {
     dict,
     lang,
-    setLocale
+    setLocale,
+    t,
   }
 })
