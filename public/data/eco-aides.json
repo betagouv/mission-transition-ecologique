@@ -139,57 +139,6 @@
           "pme"
         ]
       }
-    },
-    {
-      "title": "Test aid program",
-      "resume": "The aid program resume text",
-      "description": "Test paragrpah",
-      "program_type": "aap",
-      "program_conditions": {
-        "project_needs": [
-          "starting",
-          "advices",
-          "financing"
-        ],
-        "project_status": [
-          "economies",
-          "carbon",
-          "improve"
-        ],
-        "project_sectors": [
-          "artisanat",
-          "industry",
-          "tourism",
-          "tertiary",
-          "agriculture"
-        ],
-        "structure_sizes": [
-          "tpe",
-          "pme",
-          "eti"
-        ]
-      }
-    },
-    {
-      "title": "Another aid program",
-      "resume": "Test resume",
-      "description": "Test description",
-      "program_type": "Test program type",
-      "program_conditions": {
-        "project_needs": [
-          "financing"
-        ],
-        "project_status": [
-          "economies"
-        ],
-        "project_sectors": [
-          "artisanat"
-        ],
-        "structure_sizes": [
-          "tpe",
-          "pme"
-        ]
-      }
     }
   ]
 }
