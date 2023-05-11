@@ -102,28 +102,11 @@
 
 import { onBeforeMount, ref, computed, defineEmits } from 'vue'
 
+// @ts-ignore
+import type { FormValues, FormField, FormOptions } from '@/types/index'
+
 import { choicesStore } from '../stores/choices'
 const choices = choicesStore()
-
-interface FormValues {
-  [name: string]: any,
-}
-
-interface FormField {
-  id: string,
-  required: boolean,
-  label?: any,
-  hint?: any,
-  type?: string
-}
-
-interface FormOptions {
-  value: string | number,
-  label?: any | null,
-  intro?: any | null,
-  fields?: FormField[],
-  next?: string
-}
 
 interface Props {
   formOptions: FormOptions,

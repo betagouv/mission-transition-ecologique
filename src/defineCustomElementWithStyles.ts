@@ -1,5 +1,8 @@
 import { defineCustomElement as VueDefineCustomElement, h, createApp, getCurrentInstance } from 'vue'
 
+// @ts-ignore
+import type { Plugin, Comp } from '@/types/index'
+
 // cf : https://stackblitz.com/edit/vue3-custom-elements-with-plugins?file=src%2FdefineCustomElementWithStyles.js,src%2Fmain.js
 // cf: https://stackblitz.com/edit/vue3-custom-elements-with-plugins?file=src%2Fmain.js,src%2FdefineCustomElementWithStyles.js,src%2FApp.ce.vue
 
@@ -13,15 +16,6 @@ const getNearestElementParent = (el: any) => {
   }
   // console.log('getNearestElementParent > el (3):', el)
   return el
-}
-
-interface Plugin {
-  plugin: any,
-  options?: object | null
-}
-interface Comp {
-  name: string,
-  comp: object
 }
 
 export const defineCustomElement = (component: any, { plugins = <Plugin[]>[], comps = <Comp[]>[] }) =>

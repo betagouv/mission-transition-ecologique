@@ -76,34 +76,19 @@ import { ref, computed } from 'vue'
 import { choicesStore } from '../stores/choices'
 import { programsStore } from '../stores/programs'
 
+// @ts-ignore
+import type { TrackChoice } from '@/types/index'
+
 const choices = choicesStore()
 const programs = programsStore()
 
-interface trackChoice {
-  id: string | number,
-  step: number,
-  values: string[] | object[],
-  data?: object | object[]
-}
-
 interface Props {
-  tracksResults: trackChoice[],
+  tracksResults: TrackChoice[],
   debug?: boolean,
 }
 const props = defineProps<Props>()
 
 const resultsProgs = programs.filterPrograms(props.tracksResults)
-
-// interface Prog {
-//   index: number | string,
-//   title: string,
-//   description?: string,
-//   program_conditions?: any,
-// }
-
-// const resultsProgsList: Prog[] = computed(() => {
-//   return resultsProgs.value.programs
-// })
 
 const resultsProgsLen = computed(() => {
   return resultsProgs.length

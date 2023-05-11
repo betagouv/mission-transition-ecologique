@@ -133,11 +133,7 @@ import TeeStepper from './components/TeeStepper.vue'
 
 const appId = 'gov-aid-tree-app'
 
-// const env = process.env
-// console.log('TeeApp - env :', env)
-
 // @ts-ignore
-// const metaEnv = ref(import.meta.env)
 const metaEnv = import.meta.env
 // console.log('TeeApp - metaEnv :', metaEnv)
 
