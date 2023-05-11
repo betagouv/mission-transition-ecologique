@@ -33,6 +33,9 @@
         "project_status": [
           "economies"
         ],
+        "project_sectors": [
+          "*"
+        ],
         "structure_sizes": [
           "pme"
         ]
@@ -49,6 +52,9 @@
         ],
         "project_status": [
           "economies"
+        ],
+        "project_sectors": [
+          "*"
         ],
         "structure_sizes": [
           "tpe"
@@ -67,6 +73,9 @@
         "project_status": [
           "carbon"
         ],
+        "project_sectors": [
+          "*"
+        ],
         "structure_sizes": [
           "pme"
         ]
@@ -83,6 +92,9 @@
         ],
         "project_status": [
           "improve"
+        ],
+        "project_sectors": [
+          "*"
         ],
         "structure_sizes": [
           "pme"
