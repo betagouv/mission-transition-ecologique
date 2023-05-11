@@ -10,9 +10,11 @@
     ({{ resultsProgsLen }})
   </h4>
 
-  <DsfrAccordionsGroup>
+  <DsfrAccordionsGroup
+    v-if="resultsProgsLen"
+    >
     <li
-      v-for="prog in resultsProgs.programs"
+      v-for="(prog, i) in resultsProgs"
       :key="prog.index"
       >
       <DsfrAccordion
@@ -22,12 +24,21 @@
         >
         <template #title>
           <h6>
-            {{ prog.title }}
+            {{ i + 1 }}/ {{ prog.title }}
           </h6>
         </template>
         <template #default>
-          <p v-html="prog.resume"></p>
-          <p v-html="prog.description"></p>
+          <!-- AID TITLE -->
+          <p 
+            v-if="prog.resume"
+            v-html="prog.resume">
+          </p>
+
+          <!-- AID DESCRIPTION -->
+          <p 
+            v-if="prog.description"
+            v-html="prog.description">
+          </p>
         </template>
       </DsfrAccordion>
     </li>
@@ -81,12 +92,21 @@ interface Props {
 }
 const props = defineProps<Props>()
 
-const resultsProgs = computed(() => {
-  return programs.filterPrograms(props.tracksResults)
-})
+const resultsProgs = programs.filterPrograms(props.tracksResults)
+
+// interface Prog {
+//   index: number | string,
+//   title: string,
+//   description?: string,
+//   program_conditions?: any,
+// }
+
+// const resultsProgsList: Prog[] = computed(() => {
+//   return resultsProgs.value.programs
+// })
 
 const resultsProgsLen = computed(() => {
-  return resultsProgs.value.programs.length
+  return resultsProgs.length
 })
 
 const expandedId = ref()

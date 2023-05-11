@@ -2,6 +2,20 @@ import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
 // import { tracksStore } from './tracks'
+interface ProgramConditions {
+  project_needs?: string[],
+  project_status?: string[],
+  project_sectors?: string[],
+  structure_sizes?: string[],
+}
+interface ProgramData {
+  index?: string | number,
+  title: string,
+  resume?: string,
+  description?: string,
+  program_type?: string
+  program_conditions?: ProgramConditions
+}
 
 export const programsStore = defineStore('programs', () => {
 
@@ -13,20 +27,14 @@ export const programsStore = defineStore('programs', () => {
 
   // getters
   const progs = computed(() => {
-    const progsIndexed = programs.value.programs.map((p: any, i: number) => {
+    const progsIndexed = programs.value.programs.map((p: object | any, i: number) => {
       return {
-        index: i,
+        index: i.toString(),
         ...p
       }
     })
     return { programs: progsIndexed }
   })
-
-  // const progs = computed(() => {
-  //   return programs.value.programs.map((prog: any, idx: number) => {
-  //     return { idx: idx, ...prog }
-  //   })
-  // })
 
   function filterPrograms (tracksResults: any[]) {
     console.log()
@@ -82,10 +90,12 @@ export const programsStore = defineStore('programs', () => {
     }) 
     console.log('store.programs > filterPrograms > progsFiltered : ', progsFiltered)
 
-    return {
-      conditions: conditions,
-      programs: progsFiltered
-    }
+    // return {
+    //   conditions: conditions,
+    //   programs: progsFiltered
+    // }
+
+    return <ProgramData[]>progsFiltered
   }
 
   // actions
