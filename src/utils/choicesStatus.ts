@@ -5,7 +5,7 @@ export const status = {
     component: 'buttons',
   },
   behavior: {
-    multipleChoices: true,
+    multipleChoices: false,
     operator: 'or',
   },
   next: {
