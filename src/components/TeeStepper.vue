@@ -39,6 +39,9 @@
 
 import { computed } from 'vue'
 
+// @ts-ignore
+import type { Dict } from '@/types/index'
+
 import { tracksStore } from '../stores/tracks'
 import { choicesStore } from '../stores/choices'
 
@@ -51,11 +54,6 @@ const props = defineProps<Props>()
 
 const tracks = tracksStore()
 const choices = choicesStore()
-
-interface Dict {
-  id: string,
-  label: any,
-}
 
 const stepsArrayTranslated = computed(() => {
   const translated = props.stepsArray.map((id: string) => {

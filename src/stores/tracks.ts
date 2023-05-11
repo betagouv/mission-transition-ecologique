@@ -3,58 +3,11 @@ import { defineStore } from 'pinia'
 
 import { tracks } from '../utils'
 
-interface Translations {
-  fr: string,
-  [name: string]: string
-}
-interface TrackInterface {
-  component: string,
-}
-interface TrackBehavior {
-  multipleChoices: boolean,
-  operator?: string,
-}
-interface TrackOptionsField {
-  id: string,
-  label: Translations,
-  hint?: Translations,
-  required?: boolean,
-  type: string
-}
-interface TrackNext {
-  default: string,
-  [name: string]: any
-}
-interface TrackOptions {
-  value: string | number,
-  label: Translations,
-  intro?: Translations,
-  fields?: TrackOptionsField,
-  hint?: Translations,
-  next?: TrackNext
-}
-interface Track {
-  id: string,
-  label: Translations,
-  interface?: TrackInterface,
-  behavior?: TrackBehavior,
-  next?: TrackNext,
-  options?: TrackOptions,
-}
+// @ts-ignore
+import type { UsedTrack } from '@/types/index'
 
 const allTracks = ref(tracks)
 const seedTrack = ref()
-
-interface UsedTrack {
-  id: string | any,
-  final?: boolean,
-  completed: boolean,
-  updating: boolean,
-  step: number,
-  values: any[],
-  data: object,
-  next: any
-}
 
 export const tracksStore = defineStore('tracks', () => {
   // console.log('store.tracks > defineStore > tracks : ', tracks)

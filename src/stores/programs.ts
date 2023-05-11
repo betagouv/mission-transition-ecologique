@@ -1,28 +1,10 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
-// import { tracksStore } from './tracks'
-interface ProgramConditions {
-  project_needs?: string[],
-  project_status?: string[],
-  project_sectors?: string[],
-  structure_sizes?: string[],
-}
-interface ProgramData {
-  index?: string | number,
-  title: string,
-  resume?: string,
-  description?: string,
-  program_type?: string
-  program_conditions?: ProgramConditions
-}
+import type { ProgramData } from '@/types/index'
 
 export const programsStore = defineStore('programs', () => {
 
-  // import from tracks
-  // const tracks = tracksStore()
-
-  // const programs = ref(programsData)
   const programs = ref()
 
   // getters
@@ -37,8 +19,8 @@ export const programsStore = defineStore('programs', () => {
   })
 
   function filterPrograms (tracksResults: any[]) {
-    console.log()
-    console.log('store.programs > filterPrograms > tracksResults : ', tracksResults)
+    // console.log()
+    // console.log('store.programs > filterPrograms > tracksResults : ', tracksResults)
 
     // retrieve and organize user's conditions
     const conditions: {[k: string]: any} = {}
@@ -54,15 +36,15 @@ export const programsStore = defineStore('programs', () => {
     // filter out programs
     const progsFiltered = progs.value.programs.filter((prog: any) => {
       const boolArray = [true]
-      console.log()
-      console.log('store.programs > filterPrograms > conditions : ', conditions)
-      console.log('store.programs > filterPrograms > conditionsKeys : ', conditionsKeys)
+      // console.log()
+      // console.log('store.programs > filterPrograms > conditions : ', conditions)
+      // console.log('store.programs > filterPrograms > conditionsKeys : ', conditionsKeys)
 
       // retrieve program's conditions
       const progConditions = prog.program_conditions
       const progConditionsKeys = Object.keys(progConditions)
       // console.log('store.programs > filterPrograms > progCondition : ', progConditions)
-      console.log('store.programs > filterPrograms > progConditionsKeys : ', progConditionsKeys)
+      // console.log('store.programs > filterPrograms > progConditionsKeys : ', progConditionsKeys)
 
       // loop user conditions keys to set a filter
       conditionsKeys.forEach(cond => {
@@ -70,15 +52,15 @@ export const programsStore = defineStore('programs', () => {
           // if the program contains one of user's condition
           // ... get condition's options 
           const progConditionsOpts = progConditions[cond]
-          console.log('store.programs > filterPrograms > progConditionsOpts : ', progConditionsOpts)
+          // console.log('store.programs > filterPrograms > progConditionsOpts : ', progConditionsOpts)
 
           // ... get user choices
           const userChoices = conditions[cond]
-          console.log('store.programs > filterPrograms > userChoices : ', userChoices)
+          // console.log('store.programs > filterPrograms > userChoices : ', userChoices)
 
           // ... make the intersection between user list of condition and program's conditions
           const intersection = progConditionsOpts.filter((v: any) => userChoices.includes(v));
-          console.log('store.programs > filterPrograms > intersection : ', intersection)
+          // console.log('store.programs > filterPrograms > intersection : ', intersection)
 
           const condBool = intersection.length
           boolArray.push(condBool)
@@ -89,11 +71,6 @@ export const programsStore = defineStore('programs', () => {
       return boolArray.every(b => !!b)
     }) 
     console.log('store.programs > filterPrograms > progsFiltered : ', progsFiltered)
-
-    // return {
-    //   conditions: conditions,
-    //   programs: progsFiltered
-    // }
 
     return <ProgramData[]>progsFiltered
   }

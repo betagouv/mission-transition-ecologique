@@ -175,6 +175,9 @@ import { choicesStore } from '../stores/choices'
 // import type { DsfrButton } from '@gouvminint/vue-dsfr/types'
 
 // @ts-ignore
+import type { ColsOptions,TrackOpt, FormDataResp } from '@/types/index'
+
+// @ts-ignore
 import TeeForm from './TeeForm.vue'
 // @ts-ignore
 import TeeResults from './TeeResults.vue'
@@ -186,9 +189,6 @@ interface Props {
 }
 const props = defineProps<Props>()
 
-interface ColsOptions {
-  [name: string]: number | string
-}
 const colsOptions: ColsOptions = {
   buttons: 8,
   cards: 4,
@@ -211,15 +211,10 @@ const allowMultiple: boolean = !!track?.behavior?.multipleChoices
 
 // @ts-ignore
 const trackOperator: boolean = track?.behavior?.operator || false
-
-interface TrackOptions {
-  value: string,
-  [name: string]: any
-}
 const optionsArray: any[] = track?.options || []
 const optionsArrayDynamic = computed(() => {
   // @ts-ignore
-  return isCompleted.value ? optionsArray.filter((v: TrackOptions) => selection.value.includes(v.value)) : optionsArray
+  return isCompleted.value ? optionsArray.filter((v: TrackOpt) => selection.value.includes(v.value)) : optionsArray
 })
 
 // const isCompleted = computed(() => !!selection.value.length)
@@ -239,11 +234,6 @@ const isActiveChoice = (value: string | number) => {
   return selection.value.includes(value)
 }
 
-interface FormDataResp {
-  value: string,
-  next: string,
-  data: any
-}
 const updateSelectionFromForm = (form: FormDataResp) => {
   // console.log('TeeTrack > updateSelectionFromForm > form :', form)
   selectionData.value = form.data
