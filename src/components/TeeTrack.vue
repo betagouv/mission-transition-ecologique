@@ -204,7 +204,7 @@ const selectionData = ref({})
 
 const track = tracks.getTrack(props.trackId)
 const renderAs: string = track?.interface.component || 'buttons'
-console.log('TeeTrack > track :', track)
+// console.log('TeeTrack > track :', track)
 // @ts-ignore
 const allowMultiple: boolean = !!track?.behavior?.multipleChoices
 

@@ -15,10 +15,12 @@
     class="vue-debug">
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
       <div class="fr-col-6">
-        <h6>tracksResults</h6>
-        <code><pre>{{ tracksResults }}</pre></code>
+        <h6>programs.filterPrograms(tracksResults)</h6>
+        <code><pre>{{ programs.filterPrograms(tracksResults) }}</pre></code>
       </div>
       <div class="fr-col-6">
+        <h6>tracksResults</h6>
+        <code><pre>{{ tracksResults }}</pre></code>
         <h6>programs.progs</h6>
         <code><pre>{{ programs.progs }}</pre></code>
       </div>

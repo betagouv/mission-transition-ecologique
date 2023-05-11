@@ -16,9 +16,29 @@ export const programsStore = defineStore('programs', () => {
     return programs.value
   })
 
+  function filterPrograms (tracksResults: any[]) {
+    console.log()
+    console.log('store.programs > filterPrograms > tracksResults : ', tracksResults)
+
+    const conditions = <string[]>[]
+    tracksResults.forEach(t => conditions.push(...t.values))
+
+    const progsFiltered = programs.value.programs.map((prog: object, i: number) => {
+      return {
+        i: i,
+        conditions: prog?.program_conditions
+      }
+    })
+    console.log('store.programs > filterPrograms > progsFiltered : ', progsFiltered)
+    return {
+      tracksConditions: conditions,
+      programs: progsFiltered
+    }
+  }
+
   // actions
   async function setDataset (path: string, deployMode: boolean, deployUrl: string) {
-    console.log()
+    // console.log()
     // console.log('store.programs > setDataset > path : ', path)
     // console.log('store.programs > setDataset > deployMode : ', deployMode)
     // console.log('store.programs > setDataset > deployUrl : ', deployUrl)
@@ -65,6 +85,7 @@ export const programsStore = defineStore('programs', () => {
   return { 
     programs,
     progs,
+    filterPrograms,
     setDataset
   }
 })

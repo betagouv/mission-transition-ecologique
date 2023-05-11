@@ -6,18 +6,18 @@
       "description": "<ul><li>Un état des lieux gratuit pour évaluer l'impact de l’activité sur l'environnement et détecter de nouvelles sources d'économies (énergie, isolation des locaux, consommations d’eau, déchets, matières premières, achats, mobilité, etc.)</li><li>La restitution d'un diagnostic complet et la proposition d'un plan d'actions prioritaires pour maîtriser sa consommation énergétique et optimiser ses coûts.</li></ul>",
       "program_type": "aap",
       "program_conditions": {
-        "project_status": [
-          "status.economies"
-        ],
         "project_needs": [
-          "needs.starting"
+          "starting"
         ],
-        "structure_activities": [
-          "sectors.artisanat"
+        "project_status": [
+          "economies"
+        ],
+        "project_sectors": [
+          "artisanat"
         ],
         "structure_sizes": [
-          "sizes.tpe",
-          "sizes.pme"
+          "tpe",
+          "pme"
         ]
       }
     },
