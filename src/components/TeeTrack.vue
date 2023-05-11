@@ -282,17 +282,17 @@ const updateSelection = (option: any) => {
 }
 
 const updateMultipleSelection = (option: any) => {
-  console.log()
-  console.log('TeeTrack > updateMultipleSelection > option :', option)
+  // console.log()
+  // console.log('TeeTrack > updateMultipleSelection > option :', option)
 
-  const needRemove = updateSelectionAndCompleted(option)
-  console.log('TeeTrack > updateMultipleSelection > selection.value :', selection.value)
-  console.log('TeeTrack > updateMultipleSelection > needRemove :', needRemove)
+  updateSelectionAndCompleted(option)
+  // console.log('TeeTrack > updateMultipleSelection > selection.value :', selection.value)
+  // console.log('TeeTrack > updateMultipleSelection > needRemove :', needRemove)
 }
 
 const saveMultipleSelection = () => {
   console.log()
-  console.log('TeeTrack > saveMultipleSelection > ')
+  // console.log('TeeTrack > saveMultipleSelection > ')
   isCompleted.value = true
 
   // update the pinia store
@@ -302,13 +302,14 @@ const saveMultipleSelection = () => {
 
 const updateStore = (option: any, needRemove: boolean) => {
   console.log()
-  console.log('TeeTrack > updateStore > option :', option)
+  // console.log('TeeTrack > updateStore > option :', option)
 
+  // @ts-ignore
   const next = allowMultiple ? track?.config.next : option.next
 
   tracks.updateUsedTracks(props.trackId, props.step, option, selection.value, option.data)
   
-  console.log('TeeTrack > updateStore > needRemove :', needRemove)
+  // console.log('TeeTrack > updateStore > needRemove :', needRemove)
   if (!needRemove) {
     // console.log('TeeTrack > updateStore > addToUsedTracks...')
     const canAddTrack = !tracks.trackExistsInUsed(next.default)

@@ -162,6 +162,7 @@ onBeforeMount(() => {
   const initValues = <FormValues>{}
   props.formOptions.fields?.forEach((field: FormField) => {
     initValues[field.id] = ''
+    // @ts-ignore
     if (field.required) { requiredFields.value.push(field.id) }
   })
   // formData = reactive(initValues)
