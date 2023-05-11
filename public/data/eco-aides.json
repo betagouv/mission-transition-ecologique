@@ -4,7 +4,7 @@
       "title": "Performa Environnement",
       "resume": "Diagnostic pour mesurer sa maturité écologique assorti d’un plan d’actions personnalisé proposé par CMA France",
       "description": "<ul><li>Un état des lieux gratuit pour évaluer l'impact de l’activité sur l'environnement et détecter de nouvelles sources d'économies (énergie, isolation des locaux, consommations d’eau, déchets, matières premières, achats, mobilité, etc.)</li><li>La restitution d'un diagnostic complet et la proposition d'un plan d'actions prioritaires pour maîtriser sa consommation énergétique et optimiser ses coûts.</li></ul>",
-      "program_type": "aap",
+      "program_type": "diag",
       "program_conditions": {
         "project_needs": [
           "starting"
@@ -14,6 +14,113 @@
         ],
         "project_sectors": [
           "artisanat"
+        ],
+        "structure_sizes": [
+          "tpe",
+          "pme"
+        ]
+      }
+    },
+    {
+      "title": "Diag Eco-flux",
+      "resume": "Faites des économies en gérant durablement vos dépenses",
+      "description": "<ul><li>Faites un état des lieux de vos flux et identifiez les axes prioritaires d’économies.</li><li>Mettez en place un plan d'actions simple pour réduire vos déchets et votre consommation d'énergie, de matières et d'eau.</li><li>Lancez vos premières actions.</li><li>Réalisez en moyenne 45 000 € d'économies par an et par site de production ou établissement (sur la base des missions restituées).</li></ul>",
+      "program_type": "diag",
+      "program_conditions": {
+        "project_needs": [
+          "advices"
+        ],
+        "project_status": [
+          "economies"
+        ],
+        "structure_sizes": [
+          "pme"
+        ]
+      }
+    },
+    {
+      "title": "TPE Gagnantes",
+      "resume": "Faites des économies en gérant durablement vos dépenses",
+      "description": "<ul><li>Faites un état des lieux de vos flux et identifiez les axes prioritaires d’économies.</li><li>Mettez en place un plan d'actions simple pour réduire vos déchets et votre consommation d'énergie, de matières et d'eau.</li><li>Lancez vos premières actions.</li><li>Réalisez en moyenne 45 000 € d'économies par an et par site de production ou établissement (sur la base des missions restituées).</li></ul>",
+      "program_type": "diag",
+      "program_conditions": {
+        "project_needs": [
+          "advices"
+        ],
+        "project_status": [
+          "economies"
+        ],
+        "structure_sizes": [
+          "tpe"
+        ]
+      }
+    },
+    {
+      "title": "Diag Decarbon'Action",
+      "resume": "Réduisez durablement vos émissions carbone",
+      "description": "<ul><li>Mesurez les émissions de Gaz à effet de serre de votre entreprise.</li><li>Elaborez votre plan d'actions pour décarboner votre activité.</li><li>Embarquez votre écosystème en valorisant votre engagement dans la décarbonation.</li></ul>",
+      "program_type": "diag",
+      "program_conditions": {
+        "project_needs": [
+          "advices"
+        ],
+        "project_status": [
+          "carbon"
+        ],
+        "structure_sizes": [
+          "pme"
+        ]
+      }
+    },
+    {
+      "title": "Diag Ecoconception",
+      "resume": "Faites des économies en gérant durablement vos dépenses",
+      "description": "<ul><li>Sensibilisez les équipes internes à l’écoconception et formez un référent écoconception dans votre entreprise</li><li>Réalisez une évaluation environnementale basée sur l’Analyse du Cycle de Vie du produit, service ou procédé concerné</li><li>Identifiez, formalisez et chiffrez les leviers d’écoconception, en maîtrisant le risque de transfert de pollution</li><li>Préparez la mise en œuvre d'un plan d’actions incluant un premier dimensionnement technico-économique</li></ul>",
+      "program_type": "diag",
+      "program_conditions": {
+        "project_needs": [
+          "advices"
+        ],
+        "project_status": [
+          "improve"
+        ],
+        "structure_sizes": [
+          "pme"
+        ]
+      }
+    },
+    {
+      "title": "Tremplin",
+      "resume": "Financez vos petits projets d’études ou d’investissement écologique",
+      "description": "Subventionnez la ou les projets écologique de votre entreprise suivant une liste d’action prédéfinie par l’ADEME (entre 5k€ et 200k€).",
+      "program_type": "aap",
+      "program_conditions": {
+        "project_needs": [
+          "financing"
+        ],
+        "project_sectors": [
+          "artisanat",
+          "industry",
+          "tertiary",
+          "agriculture"
+        ],
+        "structure_sizes": [
+          "tpe",
+          "pme"
+        ]
+      }
+    },
+    {
+      "title": "Fond Tourisme Durable",
+      "resume": "Obtenez un accompagnement pour votre activité touristique",
+      "description": "Obtenez un diagnostic, un plan d’action puis des subventions pour les investissements de votre activité touristique (entre 5k€ et 200k€).",
+      "program_type": "aap",
+      "program_conditions": {
+        "project_needs": [
+          "financing"
+        ],
+        "project_sectors": [
+          "tourism"
         ],
         "structure_sizes": [
           "tpe",
