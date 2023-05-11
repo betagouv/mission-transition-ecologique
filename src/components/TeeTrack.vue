@@ -36,7 +36,7 @@
 
   <!-- UNCOMPLETED QUESTIONNAIRE -->
   <div
-    v-if="!isCompleted"
+    v-show="!isCompleted"
     class="fr-grid-row fr-grid-row--gutters"
     >
 

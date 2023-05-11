@@ -46,8 +46,8 @@
 
     <!-- TRACKS INTERFACES -->
     <div class="fr-grid-row fr-grid-row-gutters fr-p-1v">
+      
       <!-- TRACKS -->
-
       <div 
         :class="`fr-col-${debugBool ? 9 : 12} ${debugBool ? '' : 'fr-grid-row--center'}`">
         <p

@@ -1,18 +1,20 @@
 <template>
 
   <!-- DEBUGGING -->
-  <p 
+  <div 
     v-if="debug"
     class="vue-debug">
     <h5>DEBUG - TeeResults</h5>
-  </p>
+  </div>
 
+  <!-- RESULTS ALERT -->
   <DsfrAlert
     :title="choices.t('results.alertTitle')"
     :description="choices.t(`results.${resultsProgsLen ? 'alertDescription' : 'alertNoResult'}`)"
     :type="resultsProgsLen ? 'success' : 'warning'">
   </DsfrAlert>
   
+  <!-- DEBUGGING -->
   <h4
     v-if="resultsProgsLen"
     class="fr-pt-12v">
@@ -20,39 +22,43 @@
     ({{ resultsProgsLen }})
   </h4>
 
-  <DsfrAccordionsGroup
+  <!-- PROGRAMS AS LIST IN ACCORDIONS -->
+  <div 
     v-if="resultsProgsLen"
-    >
-    <li
-      v-for="(prog, i) in resultsProgs"
-      :key="prog.index"
-      >
-      <DsfrAccordion
-        :id="`accordion-results-${prog.index}`"
-        :expanded-id="expandedId"
-        @expand="updateExpandedId"
-        >
-        <template #title>
-          <h6>
-            {{ i + 1 }}/ {{ prog.title }}
-          </h6>
-        </template>
-        <template #default>
-          <!-- AID TITLE -->
-          <p 
-            v-if="prog.resume"
-            v-html="prog.resume">
-          </p>
+    class="fr-container">
 
-          <!-- AID DESCRIPTION -->
-          <p 
-            v-if="prog.description"
-            v-html="prog.description">
-          </p>
-        </template>
-      </DsfrAccordion>
-    </li>
-  </DsfrAccordionsGroup>
+    <DsfrAccordionsGroup>
+      <li
+        v-for="(prog, i) in resultsProgs"
+        :key="prog.index"
+        >
+        <DsfrAccordion
+          :id="`accordion-results-${prog.index}`"
+          :expanded-id="expandedId"
+          @expand="updateExpandedId"
+          >
+          <template #title>
+            <h6>
+              {{ i + 1 }}/ {{ prog.title }}
+            </h6>
+          </template>
+          <template #default>
+            <!-- AID TITLE -->
+            <p 
+              v-if="prog.resume"
+              v-html="prog.resume">
+            </p>
+  
+            <!-- AID DESCRIPTION -->
+            <p 
+              v-if="prog.description"
+              v-html="prog.description">
+            </p>
+          </template>
+        </DsfrAccordion>
+      </li>
+    </DsfrAccordionsGroup>
+  </div>
 
   <!-- <h4 class="fr-pt-10v">
     {{ choices.t('results.fittingPrograms') }} 
@@ -60,7 +66,7 @@
   </h4> -->
 
   <!-- DEBUGGING -->
-  <p 
+  <div 
     v-if="debug"
     class="vue-debug">
     <h5>DEBUG - TeeResults</h5>
@@ -76,7 +82,7 @@
         <code><pre>{{ programs.progs }}</pre></code>
       </div>
     </div>
-  </p>
+  </div>
 
 
 </template>

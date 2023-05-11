@@ -8,6 +8,9 @@ export const choicesStore = defineStore('choices', () => {
     fr: {
       next: 'Suivant',
       modify: 'modifier',
+      form: {
+        mandatory: "Champs obligatoires",
+      },
       results: {
         alertTitle: "Merci, ce questionnaire est terminé",
         alertNoResult: "Désolé, nous n'avons pas trouvé d'aides correspondant à vos choix",

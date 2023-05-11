@@ -12,6 +12,7 @@
     v-html="formOptions.intro[choices.lang]">
   </div>
 
+  <!-- DEBUGGING -->
   <div 
     v-if="debug"
     class="vue-debug">
@@ -29,10 +30,13 @@
     </p>
   </div>
 
+  <!-- FIELDS -->
   <div
     v-for="field in formOptions.fields"
     :key="field.id"
+    class="fr-mb-4v"
     >
+    <!-- DEBUGGING -->
     <div 
       v-if="debug"
       class="vue-debug">
@@ -45,6 +49,7 @@
         {{ formData[field.id] }}
       </code>
     </div>
+    <!-- INPUT GROUP -->
     <DsfrInputGroup>
       <DsfrInput
         :type="field.type"
@@ -59,6 +64,14 @@
       </DsfrInput>
     </DsfrInputGroup>
   </div>
+
+  <h6
+    class="fr-mb-0" 
+    style="font-size: 0.7em;">
+    <code>*</code>
+    &nbsp;
+    {{ choices.t('form.mandatory')}}
+  </h6>
 
   <!-- SEND / NEXT BUTTON -->
   <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-mt-5v">
