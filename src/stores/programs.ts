@@ -58,11 +58,15 @@ export const programsStore = defineStore('programs', () => {
           const userChoices = conditions[cond]
           // console.log('store.programs > filterPrograms > userChoices : ', userChoices)
 
-          // ... make the intersection between user list of condition and program's conditions
-          const intersection = progConditionsOpts.filter((v: any) => userChoices.includes(v));
-          // console.log('store.programs > filterPrograms > intersection : ', intersection)
+          let condBool = userChoices.includes('*') || progConditionsOpts.includes('*')
 
-          const condBool = userChoices.includes('*') || intersection.length
+          if (!condBool) {
+            // ... make the intersection between user list of condition and program's conditions
+            const intersection = progConditionsOpts.filter((v: any) => userChoices.includes(v));
+            // console.log('store.programs > filterPrograms > intersection : ', intersection)
+            condBool = userChoices.includes('*') || intersection.length
+          }
+
           boolArray.push(condBool)
         }
       })

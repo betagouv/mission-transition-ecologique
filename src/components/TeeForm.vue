@@ -61,7 +61,7 @@
   </div>
 
   <!-- SEND / NEXT BUTTON -->
-  <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
+  <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-mt-5v">
     <div
       class="fr-col-12"
       style="display: grid; justify-content: center;">

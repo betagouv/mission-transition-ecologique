@@ -9,7 +9,8 @@ export const choicesStore = defineStore('choices', () => {
       next: 'Suivant',
       modify: 'modifier',
       results: {
-        alertTitle: "Merci, c'est fini",
+        alertTitle: "Merci, ce questionnaire est terminé",
+        alertNoResult: "Désolé, nous n'avons pas trouvé d'aides correspondant à vos choix",
         alertDescription: "Vous recevrez prochainement un mail d'accusé de réception (si vous avez laissé vos coordonnées)",
         yourResults: 'Vos résultats',
         fittingPrograms: 'Les aides correspondant à vos choix',

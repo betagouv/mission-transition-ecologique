@@ -9,11 +9,13 @@
 
   <DsfrAlert
     :title="choices.t('results.alertTitle')"
-    :description="choices.t('results.alertDescription')"
-    type="success">
+    :description="choices.t(`results.${resultsProgsLen ? 'alertDescription' : 'alertNoResult'}`)"
+    :type="resultsProgsLen ? 'success' : 'warning'">
   </DsfrAlert>
   
-  <h4 class="fr-pt-12v">
+  <h4
+    v-if="resultsProgsLen"
+    class="fr-pt-12v">
     {{ choices.t('results.fittingPrograms') }}
     ({{ resultsProgsLen }})
   </h4>
