@@ -33,25 +33,22 @@
     </div>
   </div>
 
-  <!-- TRACK CHOICES -->
+  <!-- UNCOMPLETED QUESTIONNAIRE -->
   <div
-    class="fr-grid-row fr-grid-row--gutters">
-
-    <!-- v-if="renderAs !== 'cards' || isCompleted" -->
-    <!-- <div 
-      class="fr-col-1"
-      >
-    </div> -->
-
+  v-if="!isCompleted"
+  class="fr-grid-row fr-grid-row--gutters"
+  >
+  
+    <!-- TRACK CHOICES -->
     <div
       v-for="option in optionsArrayDynamic"
       :key="option.value"
-      :class="`fr-col-${colsWidth} ${!isCompleted && renderAs === 'cards' ? '' : 'fr-col-offset-2'}`"
+      :class="`fr-col-${colsWidth} ${renderAs !== 'cards' ? 'fr-col-offset-2' : ''}`"
       >
-
+      
       <!-- AS CARDS -->
       <div
-        v-if="!isCompleted && renderAs === 'cards'"
+        v-if="renderAs === 'cards'"
         style="height: 100%;"
         >
         <DsfrCard
@@ -65,7 +62,7 @@
       
       <!-- AS BUTTONS -->
       <div 
-        v-if="!isCompleted && renderAs === 'buttons'"
+        v-if="renderAs === 'buttons'"
         >
         <DsfrButton
           style="width: -moz-available !important;"
@@ -78,8 +75,7 @@
 
       <!-- AS FORM -->
       <div 
-        v-show="!isCompleted && renderAs === 'form'"
-        class="fr-center fr-pt-5v"
+        v-show="renderAs === 'form'"
         >
         <TeeForm
           :form-options="option"
@@ -89,8 +85,7 @@
 
       <!-- AS RESULT -->
       <div 
-        v-if="!isCompleted && trackId === 'results'"
-        class="fr-center fr-pt-5v"
+        v-if="trackId === 'results'"
         >
         <h4>
           {{ dict[choices.lang].results }}
@@ -103,33 +98,47 @@
         </p>
       </div>
 
-      <!-- SELECTION && COMPLETED-->
-      <div 
-        v-if="isCompleted && isActiveChoice(option.value)"
-        class="fr-grid-row fr-grid-row--gutters fr-mb-0"
+    </div>
+  </div>
+
+
+  <!-- COMPLETED QUESTIONNAIRE -->
+  <div
+    v-if="isCompleted"
+    >
+    
+    <!-- TRACK CHOICES -->
+    <div
+      v-for="option in optionsArrayDynamic"
+      :key="option.value"
+      class="fr-grid-row fr-grid-row--gutters fr-mb-2v"
+      >
+
+      <!-- ACTIVE CHOICE(S) -->
+      <div
+        v-if="isActiveChoice(option.value)"
+        :class="`fr-col-${colsOptions.buttons} fr-col-offset-2`"
         >
-        <div
-          :class="`fr-col-${colsOptions.buttons}`"
-          >
-          <DsfrButton
-            style="width: -moz-available !important;"
-            :label="option.label[choices.lang]" 
-            :icon="`${isActiveChoice(option.value) ? 'md-radiobuttonchecked' : 'md-radiobuttonunchecked'}`"
-            :secondary="isActiveChoice(option.value)"
-            @click="updateSelection(option)"
-          />
-        </div>
-        <div
-          :class="`fr-col-${colsOptions.modify}`"
-          style="display: flex; align-items: center">
-          <DsfrButton
-            :label="dict[choices.lang].modify"
-            icon="ri-arrow-left-line"
-            tertiary
-            no-outline
-            @click="updateSelection(option)"
-          />
-        </div>
+        <DsfrButton
+          style="width: -moz-available !important;"
+          :label="option.label[choices.lang]" 
+          :icon="`md-radiobuttonchecked`"
+          :secondary="true"
+          @click="updateSelection(option)"
+        />
+      </div>
+
+      <!-- MODIFY BUTTTON -->
+      <div
+        v-if="isActiveChoice(option.value)"
+        :class="`fr-col-${colsOptions.modify}`">
+        <DsfrButton
+          :label="dict[choices.lang].modify"
+          icon="ri-arrow-left-line"
+          tertiary
+          no-outline
+          @click="updateSelection(option)"
+        />
       </div>
     </div>
   </div>
@@ -202,7 +211,7 @@ const isCompleted = computed(() => !!selection.value.length)
 
 const colsWidth = computed(() => {
   if (isCompleted.value) {
-    return 12
+    return 10
   } else {
     return colsOptions[renderAs]
   }
