@@ -12,6 +12,23 @@
     v-html="formOptions.intro[choices.lang]">
   </div>
 
+  <div 
+    v-if="debug"
+    class="vue-debug">
+    <p>
+      requiredFields: 
+      <code>
+        {{ requiredFields }}
+      </code>
+    </p>
+    <p>
+      canSaveFrom: 
+      <code>
+        {{ canSaveFrom }}
+      </code>
+    </p>
+  </div>
+
   <p
     v-for="field in formOptions.fields"
     :key="field.id"
@@ -31,6 +48,7 @@
     <DsfrInputGroup>
       <DsfrInput
         :type="field.type"
+        :is-textarea="field.type === 'textarea'"
         :model-value="formData[field.id]"
         label-visible
         :required="field.required"
@@ -48,6 +66,7 @@
       <DsfrButton
         style="width: -moz-available !important;"
         :label="choices.dict[choices.lang].next" 
+        :disabled="!canSaveFrom"
         icon="ri-arrow-right-line"
         @click="saveFormData()"
       />
@@ -81,7 +100,7 @@
 
 <script setup lang="ts">
 
-import { onBeforeMount, ref, defineEmits } from 'vue'
+import { onBeforeMount, ref, computed, defineEmits } from 'vue'
 
 import { choicesStore } from '../stores/choices'
 const choices = choicesStore()
@@ -112,10 +131,16 @@ interface Props {
 }
 const props = defineProps<Props>()
 
-
 let formData = ref()
+const requiredFields = ref([])
 
 const emit = defineEmits(['saveData'])
+
+const canSaveFrom = computed(() => {
+  // @ts-ignore
+  const boolArr = requiredFields.value.map((f: string) => formData.value[f])
+  return boolArr.every(v => (!!v && v !== ''))
+})
 
 const saveFormData = () => {
   // console.log('TeeForm > saveFormData >  props.formOptions :', props.formOptions)
@@ -125,7 +150,7 @@ const saveFormData = () => {
     next: props.formOptions.next,
     data: formData.value
   })
-}
+}     
 
 const updateFormData = (ev: string, id: string) => {
   // console.log(`TeeForm > saveFormData >  id : ${id} > ev : ${ev}`)
@@ -137,6 +162,7 @@ onBeforeMount(() => {
   const initValues = <FormValues>{}
   props.formOptions.fields?.forEach((field: FormField) => {
     initValues[field.id] = ''
+    if (field.required) { requiredFields.value.push(field.id) }
   })
   // formData = reactive(initValues)
   formData = ref(initValues)

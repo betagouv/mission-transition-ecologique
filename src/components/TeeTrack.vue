@@ -226,7 +226,6 @@ const optionsArrayDynamic = computed(() => {
 const isCompleted = ref(false)
 
 // Getters
-
 const colsWidth = computed(() => {
   if (isCompleted.value) {
     return 10
