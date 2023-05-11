@@ -10,7 +10,7 @@ export const choicesStore = defineStore('choices', () => {
       modify: 'modifier',
       results: {
         alertTitle: "Merci, c'est fini",
-        alertDescription: "Vous recevrez prochainement un mail d'accusé de réception",
+        alertDescription: "Vous recevrez prochainement un mail d'accusé de réception (si vous avez laissé vos coordonnées)",
         yourResults: 'Vos résultats',
         fittingPrograms: 'Les aides correspondant à vos choix',
       },
