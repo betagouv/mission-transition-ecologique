@@ -32,13 +32,13 @@ export const programsStore = defineStore('programs', () => {
       })
     })
     const conditionsKeys = Object.keys(conditions)
+    console.log()
+    console.log('store.programs > filterPrograms > conditions : ', conditions)
+    console.log('store.programs > filterPrograms > conditionsKeys : ', conditionsKeys)
 
     // filter out programs
     const progsFiltered = progs.value.programs.filter((prog: any) => {
       const boolArray = [true]
-      // console.log()
-      // console.log('store.programs > filterPrograms > conditions : ', conditions)
-      // console.log('store.programs > filterPrograms > conditionsKeys : ', conditionsKeys)
 
       // retrieve program's conditions
       const progConditions = prog.program_conditions
@@ -56,13 +56,13 @@ export const programsStore = defineStore('programs', () => {
 
           // ... get user choices
           const userChoices = conditions[cond]
-          // console.log('store.programs > filterPrograms > userChoices : ', userChoices)
+          console.log('store.programs > filterPrograms > userChoices : ', userChoices)
 
           // ... make the intersection between user list of condition and program's conditions
           const intersection = progConditionsOpts.filter((v: any) => userChoices.includes(v));
           // console.log('store.programs > filterPrograms > intersection : ', intersection)
 
-          const condBool = intersection.length
+          const condBool = userChoices.includes('*') || intersection.length
           boolArray.push(condBool)
         }
       })

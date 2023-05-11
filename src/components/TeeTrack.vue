@@ -204,8 +204,11 @@ const selection = ref([])
 const selectionData = ref({})
 
 const track = tracks.getTrack(props.trackId)
-const renderAs: string = track?.interface.component || 'buttons'
 // console.log('TeeTrack > track :', track)
+const renderAs: string = track?.interface.component || 'buttons'
+const customColWidth: number = track?.interface.columnWidth || 0
+// console.log('TeeTrack > track :', track)
+
 // @ts-ignore
 const allowMultiple: boolean = !!track?.behavior?.multipleChoices
 
@@ -225,7 +228,11 @@ const colsWidth = computed(() => {
   if (isCompleted.value) {
     return 10
   } else {
-    return colsOptions[renderAs]
+    if (customColWidth) {
+      return customColWidth
+    } else {
+      return colsOptions[renderAs]
+    }
   }
 })
 

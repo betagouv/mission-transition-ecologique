@@ -1,4 +1,12 @@
 <template>
+
+  <!-- DEBUGGING -->
+  <p 
+    v-if="debug"
+    class="vue-debug">
+    <h5>DEBUG - TeeResults</h5>
+  </p>
+
   <DsfrAlert
     :title="choices.t('results.alertTitle')"
     :description="choices.t('results.alertDescription')"
@@ -53,6 +61,7 @@
   <p 
     v-if="debug"
     class="vue-debug">
+    <h5>DEBUG - TeeResults</h5>
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
       <div class="fr-col-6">
         <h6>resultsProgs</h6>
