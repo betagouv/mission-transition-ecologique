@@ -12,6 +12,7 @@
       <div class="fr-col-4">
         <h6 class="fr-mb-1v"> renderAs : <code>{{ renderAs }} </code></h6>
         <h6 class="fr-mb-1v"> allowMultiple : <code>{{ allowMultiple }} </code></h6>
+        <h6 class="fr-mb-1v"> trackOperator : <code>{{ trackOperator }} </code></h6>
         <h6 class="fr-mb-1v"> colsWidth : <code>{{ colsWidth }} </code></h6>
       </div>
       <div class="fr-col-4">
@@ -97,7 +98,7 @@
 
       <!-- AS RESULT -->
       <div 
-        v-if="trackId === 'results'"
+        v-if="trackId === 'track_results'"
         >
         <TeeResults
           :tracks-results="tracks.tracksResults"
@@ -208,6 +209,9 @@ const renderAs: string = track?.interface.component || 'buttons'
 // @ts-ignore
 const allowMultiple: boolean = !!track?.behavior?.multipleChoices
 
+// @ts-ignore
+const trackOperator: boolean = track?.behavior?.operator || false
+
 interface TrackOptions {
   value: string,
   [name: string]: any
@@ -287,7 +291,7 @@ const updateMultipleSelection = (option: any) => {
 }
 
 const saveMultipleSelection = () => {
-  console.log()
+  // console.log()
   // console.log('TeeTrack > saveMultipleSelection > ')
   isCompleted.value = true
 
@@ -297,7 +301,7 @@ const saveMultipleSelection = () => {
 
 
 const updateStore = (option: any, needRemove: boolean) => {
-  console.log()
+  // console.log()
   // console.log('TeeTrack > updateStore > option :', option)
 
   // @ts-ignore

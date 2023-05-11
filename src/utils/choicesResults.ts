@@ -1,5 +1,5 @@
 export const results = {
-  id: 'results',
+  id: 'track_results',
   label: { fr: 'Résultats'},
   interface: {
     component: 'results',

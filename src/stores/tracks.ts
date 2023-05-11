@@ -8,6 +8,45 @@ export const tracksStore = defineStore('tracks', () => {
   
   const maxDepth = ref(4)
 
+  interface Translations {
+    fr: string,
+    [name: string]: string
+  }
+  interface TrackInterface {
+    component: string,
+  }
+  interface TrackBehavior {
+    multipleChoices: boolean,
+    operator?: string,
+  }
+  interface TrackOptionsField {
+    id: string,
+    label: Translations,
+    hint?: Translations,
+    required?: boolean,
+    type: string
+  }
+  interface TrackNext {
+    default: string,
+    [name: string]: any
+  }
+  interface TrackOptions {
+    value: string | number,
+    label: Translations,
+    intro?: Translations,
+    fields?: TrackOptionsField,
+    hint?: Translations,
+    next?: TrackNext
+  }
+  interface Track {
+    id: string,
+    label: Translations,
+    interface?: TrackInterface,
+    behavior?: TrackBehavior,
+    next?: TrackNext,
+    options?: TrackOptions,
+  }
+
   const allTracks = ref(tracks)
   const seedTrack = ref()
 
@@ -25,10 +64,10 @@ export const tracksStore = defineStore('tracks', () => {
 
   // computed
   const tracksStepsArrayDict = computed(() => {
-    const dict = allTracks.value.map((t: any) => {
+    const dict = allTracks.value.map((track: any) => {
       return {
-        id: t.id,
-        label: t.label
+        id: track.id,
+        label: track.label
       }
     })
     return dict
@@ -63,7 +102,7 @@ export const tracksStore = defineStore('tracks', () => {
 
   // getters
   function getTrack(trackId: string) {
-    const track = tracks.find(track => track.id === trackId)
+    const track = allTracks.value.find(track => track.id === trackId)
     return track
   }
   function trackExistsInUsed(trackId: string) {

@@ -1,5 +1,5 @@
 export const sizes = {
-  id: 'structure_sizes',
+  id: 'track_structure_sizes',
   label: { fr: 'Taille de votre structure' },
   interface: {
     component: 'buttons',
@@ -12,21 +12,21 @@ export const sizes = {
       value: 'structure_sizes.tpe',
       label: { fr: "TPE" },
       next: {
-        default: 'results'
+        default: 'track_results'
       }
     },
     {
       value: 'structure_sizes.pme',
       label: { fr: "PME" },
       next: {
-        default: 'contact_form'
+        default: 'track_form'
       }
     },
     {
       value: 'structure_sizes.eti',
       label: { fr: "ETI" },
       next: {
-        default: 'results'
+        default: 'track_results'
       }
     }
   ]

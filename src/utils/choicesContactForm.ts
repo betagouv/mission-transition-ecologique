@@ -1,5 +1,5 @@
 export const contactForm = {
-  id: 'contact_form',
+  id: 'track_form',
   label: { fr: 'Formulaire' },
   interface: {
     component: 'form',
@@ -59,7 +59,7 @@ export const contactForm = {
         },
       ],
       next: {
-        default: 'results'
+        default: 'track_results'
       }
     }
   ]

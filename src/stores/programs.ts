@@ -13,25 +13,77 @@ export const programsStore = defineStore('programs', () => {
 
   // getters
   const progs = computed(() => {
-    return programs.value
+    const progsIndexed = programs.value.programs.map((p: any, i: number) => {
+      return {
+        index: i,
+        ...p
+      }
+    })
+    return { programs: progsIndexed }
   })
+
+  // const progs = computed(() => {
+  //   return programs.value.programs.map((prog: any, idx: number) => {
+  //     return { idx: idx, ...prog }
+  //   })
+  // })
 
   function filterPrograms (tracksResults: any[]) {
     console.log()
     console.log('store.programs > filterPrograms > tracksResults : ', tracksResults)
 
-    const conditions = <string[]>[]
-    tracksResults.forEach(t => conditions.push(...t.values))
-
-    const progsFiltered = programs.value.programs.map((prog: any, i: number) => {
-      return {
-        i: i,
-        conditions: prog?.program_conditions
-      }
+    // retrieve and organize user's conditions
+    const conditions: {[k: string]: any} = {}
+    tracksResults.forEach(tr => {
+      tr.values.forEach((v: string) => {
+        const vAsArr = v.split('.')
+        const k = vAsArr[0]
+        conditions[k] = vAsArr.slice(1)
+      })
     })
+    const conditionsKeys = Object.keys(conditions)
+
+    // filter out programs
+    const progsFiltered = progs.value.programs.filter((prog: any) => {
+      const boolArray = [true]
+      console.log()
+      console.log('store.programs > filterPrograms > conditions : ', conditions)
+      console.log('store.programs > filterPrograms > conditionsKeys : ', conditionsKeys)
+
+      // retrieve program's conditions
+      const progConditions = prog.program_conditions
+      const progConditionsKeys = Object.keys(progConditions)
+      // console.log('store.programs > filterPrograms > progCondition : ', progConditions)
+      console.log('store.programs > filterPrograms > progConditionsKeys : ', progConditionsKeys)
+
+      // loop user conditions keys to set a filter
+      conditionsKeys.forEach(cond => {
+        if (progConditionsKeys.includes(cond)) {
+          // if the program contains one of user's condition
+          // ... get condition's options 
+          const progConditionsOpts = progConditions[cond]
+          console.log('store.programs > filterPrograms > progConditionsOpts : ', progConditionsOpts)
+
+          // ... get user choices
+          const userChoices = conditions[cond]
+          console.log('store.programs > filterPrograms > userChoices : ', userChoices)
+
+          // ... make the intersection between user list of condition and program's conditions
+          const intersection = progConditionsOpts.filter((v: any) => userChoices.includes(v));
+          console.log('store.programs > filterPrograms > intersection : ', intersection)
+
+          const condBool = intersection.length
+          boolArray.push(condBool)
+        }
+      })
+
+      // by default all of user's conditions must be met
+      return boolArray.every(b => !!b)
+    }) 
     console.log('store.programs > filterPrograms > progsFiltered : ', progsFiltered)
+
     return {
-      tracksConditions: conditions,
+      conditions: conditions,
       programs: progsFiltered
     }
   }

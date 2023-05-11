@@ -22,9 +22,9 @@
       }
     },
     {
-      "title": "test",
-      "resume": "test resume",
-      "description": "...,",
+      "title": "Test aid program",
+      "resume": "The aid program resume text",
+      "description": "Test paragrpah",
       "program_type": "aap",
       "program_conditions": {
         "project_needs": [
@@ -52,32 +52,23 @@
       }
     },
     {
-      "title": "...,",
-      "resume": "...,",
-      "description": "...,",
-      "program_type": "...,",
+      "title": "Another aid program",
+      "resume": "Test resume",
+      "description": "Test description",
+      "program_type": "Test program type",
       "program_conditions": {
-        "project_status": [
-          "je débute",
-          "j'ai besoin de conseil",
-          "j'ai un projet"
-        ],
         "project_needs": [
-          "je veux faire des économies",
-          "j'ai besoin de connaître et réduire ses émissions carbone",
-          "j'ai besoin d'améliorer mon produit/service"
+          "financing"
+        ],
+        "project_status": [
+          "economies"
         ],
         "project_sectors": [
-          "Activité artisanale",
-          "Activité industrielle, fabrication, production",
-          "Activité tertiaire, services",
-          "Activité agricole",
-          "Activité touristique"
+          "artisanat"
         ],
         "structure_sizes": [
-          "TPE",
-          "PME",
-          "ETI"
+          "tpe",
+          "pme"
         ]
       }
     }
