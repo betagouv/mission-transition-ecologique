@@ -25,7 +25,7 @@ export interface Translations {
 }
 export interface TrackInterface {
   component: string,
-  columnWidth?: number,
+  columnwidth?: number,
 }
 export interface TrackBehavior {
   multipleChoices: boolean,

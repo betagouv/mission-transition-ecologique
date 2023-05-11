@@ -175,7 +175,7 @@ import { choicesStore } from '../stores/choices'
 // import type { DsfrButton } from '@gouvminint/vue-dsfr/types'
 
 // @ts-ignore
-import type { ColsOptions,TrackOpt, FormDataResp } from '@/types/index'
+import type { Track, ColsOptions,TrackOpt, FormDataResp } from '@/types/index'
 
 // @ts-ignore
 import TeeForm from './TeeForm.vue'
@@ -203,8 +203,8 @@ const choices = choicesStore()
 const selection = ref([])
 const selectionData = ref({})
 
-const track = tracks.getTrack(props.trackId)
-// console.log('TeeTrack > track :', track)
+const track: any = tracks.getTrack(props.trackId)
+console.log('TeeTrack > track :', track)
 const renderAs: string = track?.interface.component || 'buttons'
 const customColWidth: number = track?.interface.columnWidth || 0
 // console.log('TeeTrack > track :', track)
