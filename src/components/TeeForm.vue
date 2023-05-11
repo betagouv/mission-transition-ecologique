@@ -47,7 +47,7 @@
     <div class="fr-col-3">
       <DsfrButton
         style="width: -moz-available !important;"
-        :label="dict[choices.lang].next" 
+        :label="choices.dict[choices.lang].next" 
         icon="ri-arrow-right-line"
         @click="saveFormData()"
       />
@@ -85,13 +85,6 @@ import { onBeforeMount, ref, defineEmits } from 'vue'
 
 import { choicesStore } from '../stores/choices'
 const choices = choicesStore()
-
-// internationalization
-const dict: any = {
-  fr: {
-    next: 'Suivant'
-  }
-}
 
 interface FormValues {
   [name: string]: any,

@@ -22,6 +22,8 @@ import {
   // LaDotCircle,
   MdRadiobuttonchecked,
   MdRadiobuttonunchecked,
+  MdCheckboxoutlineblank,
+  MdCheckboxOutlined,
 } from 'oh-vue-icons/icons'
 const Ri = Object.values({ ...RiIcons })
 addIcons(
@@ -30,6 +32,8 @@ addIcons(
   // LaDotCircle,
   MdRadiobuttonchecked,
   MdRadiobuttonunchecked,
+  MdCheckboxoutlineblank,
+  MdCheckboxOutlined,
 )
 
 // import '@gouvfr/dsfr/dist/core/core.main.min.css'            // Le CSS minimal du DSFR

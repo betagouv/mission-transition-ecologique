@@ -35,9 +35,9 @@
 
   <!-- UNCOMPLETED QUESTIONNAIRE -->
   <div
-  v-if="!isCompleted"
-  class="fr-grid-row fr-grid-row--gutters"
-  >
+    v-if="!isCompleted"
+    class="fr-grid-row fr-grid-row--gutters"
+    >
   
     <!-- TRACK CHOICES -->
     <div
@@ -62,7 +62,7 @@
       
       <!-- AS BUTTONS -->
       <div 
-        v-if="renderAs === 'buttons'"
+        v-if="renderAs === 'buttons' && !allowMultiple"
         >
         <DsfrButton
           style="width: -moz-available !important;"
@@ -72,6 +72,18 @@
           @click="updateSelection(option)"
         />
       </div>
+      <div 
+        v-if="renderAs === 'buttons' && allowMultiple"
+        >
+        <DsfrButton
+          style="width: -moz-available !important;"
+          :label="option.label[choices.lang]" 
+          :icon="`${isActiveChoice(option.value) ? 'ri-checkbox-line' : 'ri-checkbox-blank-line'}`"
+          :secondary="isActiveChoice(option.value)"
+          @click="updateMultipleSelection(option)"
+        />
+      </div>
+
 
       <!-- AS FORM -->
       <div 
@@ -88,7 +100,7 @@
         v-if="trackId === 'results'"
         >
         <h4>
-          {{ dict[choices.lang].results }}
+          {{ choices.dict[choices.lang].results }}
         </h4>
         <p 
           v-if="true"
@@ -99,8 +111,22 @@
       </div>
 
     </div>
-  </div>
 
+  </div>
+  
+  <!-- SEND / NEXT BUTTON -->
+  <div 
+    v-if="!isCompleted && allowMultiple"
+    class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-pt-3v">
+    <div class="fr-col-2">
+      <DsfrButton
+        :label="choices.dict[choices.lang].next"
+        :disabled="!selection.length"
+        icon="ri-arrow-right-line"
+        @click="saveMultipleSelection"
+      />
+    </div>
+  </div>
 
   <!-- COMPLETED QUESTIONNAIRE -->
   <div
@@ -122,7 +148,7 @@
         <DsfrButton
           style="width: -moz-available !important;"
           :label="option.label[choices.lang]" 
-          :icon="`md-radiobuttonchecked`"
+          :icon="allowMultiple ? 'ri-checkbox-line' : 'md-radiobuttonchecked'"
           :secondary="true"
           @click="updateSelection(option)"
         />
@@ -133,7 +159,7 @@
         v-if="isActiveChoice(option.value)"
         :class="`fr-col-${colsOptions.modify}`">
         <DsfrButton
-          :label="dict[choices.lang].modify"
+          :label="choices.dict[choices.lang].modify"
           icon="ri-arrow-left-line"
           tertiary
           no-outline
@@ -162,15 +188,6 @@ interface Props {
   debug?: boolean,
 }
 const props = defineProps<Props>()
-
-// internationalization
-const dict: any = {
-  fr: {
-    modify: 'modifier',
-    results: 'Vos résultats'
-  }
-}
-// const dict = ref(dictInternational)
 
 interface ColsOptions {
   [name: string]: number | string
@@ -205,7 +222,8 @@ const optionsArrayDynamic = computed(() => {
   return isCompleted.value ? optionsArray.filter((v: TrackOptions) => selection.value.includes(v.value)) : optionsArray
 })
 
-const isCompleted = computed(() => !!selection.value.length)
+// const isCompleted = computed(() => !!selection.value.length)
+const isCompleted = ref(false)
 
 // Getters
 
@@ -233,11 +251,7 @@ const updateSelectionFromForm = (form: FormDataResp) => {
   updateSelection(form)
 }
 
-const updateSelection = (option: any) => {
-  // console.log()
-  // console.log('TeeTrack > updateSelection > option :', option)
-  // console.log('TeeTrack > updateSelection > dataAsVal :', dataAsVal)
-
+const updateSelectionAndCompleted = (option: any) => {
   const val: string | number = option.value
   const isActive = isActiveChoice(option.value)
   let needRemove = false
@@ -254,17 +268,55 @@ const updateSelection = (option: any) => {
     selection.value = newArray
     needRemove = !newArray.length
   }
+  return needRemove
+}
+
+const updateSelection = (option: any) => {
+  // console.log()
+  // console.log('TeeTrack > updateSelection > option :', option)
+
+  const needRemove = updateSelectionAndCompleted(option)
+  isCompleted.value = !!selection.value.length
+
+  // update the pinia store
+  updateStore(option, needRemove)
+}
+
+const updateMultipleSelection = (option: any) => {
+  console.log()
+  console.log('TeeTrack > updateMultipleSelection > option :', option)
+
+  const needRemove = updateSelectionAndCompleted(option)
+  console.log('TeeTrack > updateMultipleSelection > selection.value :', selection.value)
+  console.log('TeeTrack > updateMultipleSelection > needRemove :', needRemove)
+}
+
+const saveMultipleSelection = () => {
+  console.log()
+  console.log('TeeTrack > saveMultipleSelection > ')
+  isCompleted.value = true
+
+  // update the pinia store
+  updateStore({}, false)
+}
+
+
+const updateStore = (option: any, needRemove: boolean) => {
+  console.log()
+  console.log('TeeTrack > updateStore > option :', option)
+
+  const next = allowMultiple ? track?.config.next : option.next
 
   tracks.updateUsedTracks(props.trackId, props.step, option, selection.value, option.data)
   
-  // console.log('TeeTrack > updateSelection > needRemove :', needRemove)
+  console.log('TeeTrack > updateStore > needRemove :', needRemove)
   if (!needRemove) {
-    // console.log('TeeTrack > updateSelection > addToUsedTracks...')
-    const canAddTrack = !tracks.trackExistsInUsed(option.next.default)
-    canAddTrack && tracks.addToUsedTracks(props.trackId, option.next.default)
+    // console.log('TeeTrack > updateStore > addToUsedTracks...')
+    const canAddTrack = !tracks.trackExistsInUsed(next.default)
+    canAddTrack && tracks.addToUsedTracks(props.trackId, next.default)
   } else {
-    // console.log('TeeTrack > updateSelection > removeFromUsedTracks...')
-    // tracks.removeFromUsedTracks(props.trackId, option.next.default)
+    // console.log('TeeTrack > updateStore > removeFromUsedTracks...')
+    // tracks.removeFromUsedTracks(props.trackId, next.default)
     tracks.removeFurtherUsedTracks(props.trackId)
   }
 }
