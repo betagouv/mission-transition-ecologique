@@ -23,7 +23,7 @@ export const programsStore = defineStore('programs', () => {
     const conditions = <string[]>[]
     tracksResults.forEach(t => conditions.push(...t.values))
 
-    const progsFiltered = programs.value.programs.map((prog: object, i: number) => {
+    const progsFiltered = programs.value.programs.map((prog: any, i: number) => {
       return {
         i: i,
         conditions: prog?.program_conditions
