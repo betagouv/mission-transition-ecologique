@@ -18,7 +18,14 @@
         <h6 class="fr-mb-1v"> isLastStep : <code>{{ isLastStep }} </code></h6>
       </div>
 
-      <div class="fr-col-6">
+      <div class="fr-col-3">
+        <h6 class="fr-mb-1v">
+          stepsArray :
+        </h6>
+        <code>{{ stepsArray  }}</code>
+      </div>
+
+      <div class="fr-col-3">
         <h6 class="fr-mb-1v">
           stepsArrayTranslated :
         </h6>
@@ -57,6 +64,9 @@ const choices = choicesStore()
 
 const stepsArrayTranslated = computed(() => {
   const translated = props.stepsArray.map((id: string) => {
+    // console.log('TeeStepper > id :', id)
+    // console.log('TeeStepper > tracks.tracksStepsArrayDict :', tracks.tracksStepsArrayDict)
+
     const strTranslated = tracks.tracksStepsArrayDict.find((i: Dict) => i.id === id)
     return strTranslated?.label[choices.lang]
   })

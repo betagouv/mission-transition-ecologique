@@ -204,7 +204,7 @@ const selection = ref([])
 const selectionData = ref({})
 
 const track: any = tracks.getTrack(props.trackId)
-console.log('TeeTrack > track :', track)
+// console.log('TeeTrack > track :', track)
 const renderAs: string = track?.interface.component || 'buttons'
 const customColWidth: number = track?.interface.columnWidth || 0
 // console.log('TeeTrack > track :', track)

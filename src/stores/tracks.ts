@@ -12,6 +12,8 @@ const seedTrack = ref()
 export const tracksStore = defineStore('tracks', () => {
   // console.log('store.tracks > defineStore > tracks : ', tracks)
   
+  const trackResultString = 'track_results'
+  
   const maxDepth = ref(4)
 
   const usedTracks = ref<UsedTrack[]>([])
@@ -29,8 +31,8 @@ export const tracksStore = defineStore('tracks', () => {
   const tracksStepsArray = computed(() => {
     const tracksArray = usedTracks.value.map((t: UsedTrack) => t.id)
     const lastTrack = tracksArray[tracksArray.length - 1]
-    if (lastTrack !== 'results') {
-      tracksArray.push('results')
+    if (lastTrack !== trackResultString) {
+      tracksArray.push(trackResultString)
     }
     return tracksArray
   })
@@ -42,7 +44,7 @@ export const tracksStore = defineStore('tracks', () => {
   })
   const tracksResults = computed(() => {
     const results = usedTracks.value
-      .filter(track => track.id !== 'results')
+      .filter(track => track.id !== trackResultString)
       .map(track => {
         return {
           id: track.id,

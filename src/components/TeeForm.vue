@@ -29,7 +29,7 @@
     </p>
   </div>
 
-  <p
+  <div
     v-for="field in formOptions.fields"
     :key="field.id"
     >
@@ -58,7 +58,7 @@
         >
       </DsfrInput>
     </DsfrInputGroup>
-  </p>
+  </div>
 
   <!-- SEND / NEXT BUTTON -->
   <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
