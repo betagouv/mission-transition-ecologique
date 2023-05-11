@@ -62,9 +62,10 @@
 
   <!-- SEND / NEXT BUTTON -->
   <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
-    <div class="fr-col-3">
+    <div
+      class="fr-col-12"
+      style="display: grid; justify-content: center;">
       <DsfrButton
-        style="width: -moz-available !important;"
         :label="choices.dict[choices.lang].next" 
         :disabled="!canSaveFrom"
         icon="ri-arrow-right-line"
