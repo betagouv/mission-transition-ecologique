@@ -46,7 +46,7 @@
     <div
       v-for="option in optionsArrayDynamic"
       :key="option.value"
-      :class="`fr-col-${colsWidth}`"
+      :class="`fr-col-${colsWidth} ${!isCompleted && renderAs === 'cards' ? '' : 'fr-col-offset-2'}`"
       >
 
       <!-- AS CARDS -->
@@ -164,7 +164,7 @@ const dict: any = {
 // const dict = ref(dictInternational)
 
 interface ColsOptions {
-  [name: string]: number
+  [name: string]: number | string
 }
 const colsOptions: ColsOptions = {
   buttons: 8,

@@ -48,7 +48,7 @@
     <div class="fr-grid-row fr-grid-row-gutters">
 
       <div 
-        :class="`fr-col-${debugBool ? 9 : 12} ${debugBool ? '' : 'fr-pl-24v'}`">
+        :class="`fr-col-${debugBool ? 9 : 12} ${debugBool ? '' : 'fr-grid-row--center'}`">
         <p
           v-for="(track, index) in tracks.usedTracks"
           :key="track.id"
