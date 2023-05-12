@@ -9,13 +9,15 @@ export const choicesStore = defineStore('choices', () => {
       next: 'Suivant',
       send: 'Envoyer',
       modify: 'modifier',
+      licence: 'Ce widget et son code source sont sous licence',
       form: {
         mandatory: "Champs obligatoires",
       },
       results: {
-        alertTitle: "Merci, ce questionnaire est terminé",
+        alertTitle: "Merci, voici vos résultats",
+        alertTitleNoResult: "Pas de résultats",
         alertNoResult: "Désolé, nous n'avons pas trouvé d'aides correspondant à vos choix",
-        alertDescription: "Vous recevrez prochainement un mail d'accusé de réception (si vous avez laissé vos coordonnées)",
+        alertDescription: "Vous pouvez également nous envoyer un mail via le formulaire ci-après pour être mis en contact avec des conseillers",
         yourResults: 'Vos résultats',
         fittingPrograms: 'Les aides correspondant à vos choix',
       },

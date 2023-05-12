@@ -16,7 +16,7 @@
 
   <!-- RESULTS ALERT -->
   <DsfrAlert
-    :title="choices.t('results.alertTitle')"
+    :title="choices.t(`results.${resultsProgsLen ? 'alertTitle' : 'alertTitleNoResult'}`)"
     :description="choices.t(`results.${resultsProgsLen ? 'alertDescription' : 'alertNoResult'}`)"
     :type="resultsProgsLen ? 'success' : 'warning'">
   </DsfrAlert>

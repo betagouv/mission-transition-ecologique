@@ -108,6 +108,10 @@
       </div>
 
     </div>
+
+    <div class="fr-mt-10v">
+      <TeeCredits/>
+    </div>
   </div>
 </template>
 
@@ -131,6 +135,8 @@ import { programsStore } from './stores/programs'
 import TeeTrack from './components/TeeTrack.vue'
 // @ts-ignore
 import TeeStepper from './components/TeeStepper.vue'
+// @ts-ignore
+import TeeCredits from './components/TeeCredits.vue'
 
 const appId = 'gov-aid-tree-app'
 
