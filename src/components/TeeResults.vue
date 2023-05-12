@@ -5,7 +5,14 @@
     v-if="debug"
     class="vue-debug">
     <h5>DEBUG - TeeResults</h5>
+    <h6>
+      expandedId : 
+      <code>
+        {{ expandedId || 'undefined' }}
+      </code>
+    </h6>
   </div>
+
 
   <!-- RESULTS ALERT -->
   <DsfrAlert
@@ -33,7 +40,7 @@
         :key="prog.index"
         >
         <DsfrAccordion
-          :id="`accordion-results-${prog.index}`"
+          :id="`${prefix}${prog.index}`"
           :expanded-id="expandedId"
           @expand="updateExpandedId"
           >
@@ -89,7 +96,7 @@
 
 <script setup lang="ts">
 
-import { ref, computed } from 'vue'
+import { ref, onBeforeMount, computed, watch } from 'vue'
 import { choicesStore } from '../stores/choices'
 import { programsStore } from '../stores/programs'
 
@@ -111,10 +118,24 @@ const resultsProgsLen = computed(() => {
   return resultsProgs.length
 })
 
+const prefix = 'accordion-results-'
 const expandedId = ref()
 
 const updateExpandedId = (id: string) => {
   // console.log(`TeeForm > saveFormData >  id : ${id} > ev : ${ev}`)
   expandedId.value = id
 }
+
+// watch(resultsProgs, async( newProgs ) => {
+//   console.log('TeeForm > watch > resultsProgs :', resultsProgs )
+//   console.log('TeeForm > watch > newProgs :', newProgs )
+// })
+
+onBeforeMount(() => {
+  console.log('TeeForm > onBeforeMount > resultsProgs :', resultsProgs )
+  const firstProg = resultsProgs && resultsProgs[0]
+  if (firstProg) {
+    updateExpandedId(`${prefix}${firstProg.index}`)
+  }
+})
 </script>
