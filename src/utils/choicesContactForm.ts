@@ -7,6 +7,9 @@ export const contactForm = {
   behavior: {
     multipleChoices: false,
   },
+  next: {
+    default: 'track_results'
+  },
   options: [
     {
       value: 'contact_form.email',

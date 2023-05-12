@@ -7,6 +7,9 @@ export const sizes = {
   behavior: {
     multipleChoices: false,
   },
+  next: {
+    default: 'track_results'
+  },
   options: [
     {
       value: 'structure_sizes.tpe',

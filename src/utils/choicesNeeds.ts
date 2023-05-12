@@ -8,6 +8,9 @@ export const needs = {
   behavior: {
     multipleChoices: false,
   },
+  next: {
+    default: 'track_sectors'
+  },
   options: [
     {
       value: 'project_needs.*',

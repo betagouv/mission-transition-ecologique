@@ -203,7 +203,7 @@ const choices = choicesStore()
 const selection = ref([])
 const selectionData = ref({})
 
-const track: any = tracks.getTrack(props.trackId)
+const track: Track | any = tracks.getTrack(props.trackId)
 // console.log('TeeTrack > track :', track)
 const renderAs: string = track?.interface.component || 'buttons'
 const customColWidth: number = track?.interface.columnWidth || 0
@@ -301,8 +301,11 @@ const updateStore = (option: any, needRemove: boolean) => {
   // console.log()
   // console.log('TeeTrack > updateStore > option :', option)
 
+  const optionNext = option.next
+  const defaultNext = track?.next
+
   // @ts-ignore
-  const next = allowMultiple ? track?.next : option.next
+  const next = !optionNext || allowMultiple ? defaultNext : optionNext
 
   tracks.updateUsedTracks(props.trackId, props.step, option, selection.value, option.data)
   

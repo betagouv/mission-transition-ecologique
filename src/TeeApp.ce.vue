@@ -265,6 +265,7 @@ onBeforeMount(() => {
   }
   .vue-debug pre{
     line-height: 1.4em !important;
+    overflow: auto;
   }
 </style>
 

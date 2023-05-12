@@ -7,6 +7,9 @@ export const sectors = {
   behavior: {
     multipleChoices: false,
   },
+  next: {
+    default: 'track_structure_sizes'
+  },
   options: [
     {
       value: 'project_sectors.artisanat',
