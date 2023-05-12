@@ -24,7 +24,8 @@
       <div 
         class="fr-footer__content fr-ml-0 fr-mt-5v"
         style="justify-content: center;">
-        <ul class="fr-footer__content-list">
+        <ul 
+          class="fr-footer__content-list">
           <li
             v-for="link in ecosystemLinks"
             :key="link.href"
@@ -40,8 +41,12 @@
       </div>
 
       <!-- SOURCES LINKS -->
-      <div class="fr-footer__bottom fr-mt-5v">
-        <ul class="fr-footer__bottom-list">
+      <div 
+        class="fr-footer__bottom fr-mt-5v"
+        style="justify-content: center;">
+        <ul 
+          class="fr-footer__bottom-list"
+          style="display: flex; justify-content: center;">
           <li
             v-for="link in projectLinks"
             :key="link.href"
@@ -53,19 +58,19 @@
             </a>
           </li>
         </ul>
+        <!-- LICENCE LINKS -->
+        <div class="fr-footer__bottom-copy">
+          <p>
+            {{ choices.t('licence') }}
+            <a
+              :href="licenceHref"
+              class="fr-link-licence no-content-after">
+              {{ licenceName }}
+            </a>
+          </p>
+        </div>
       </div>
       
-      <!-- LICENCE LINKS -->
-      <div class="fr-footer__bottom-copy">
-        <p>
-          {{ choices.t('licence') }}
-          <a
-            :href="licenceHref"
-            class="fr-link-licence no-content-after">
-            {{ licenceName }}
-          </a>
-        </p>
-      </div>
     </div>
   </div>
 
