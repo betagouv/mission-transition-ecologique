@@ -10,10 +10,33 @@
           "starting"
         ],
         "project_status": [
-          "economies"
+          "*"
         ],
         "project_sectors": [
           "artisanat"
+        ],
+        "structure_sizes": [
+          "tpe",
+          "pme"
+        ]
+      }
+    },
+    {
+      "title": "Visite Energie",
+      "resume": "Diagnostic pour mesurer sa maturité energétique assorti d’un plan d’actions personnalisé proposé par votre CCI",
+      "description": "<ul><li>Un état des lieux gratuit pour évaluer l'impact de l’activité sur l'environnement et détecter de nouvelles sources d'économies (énergie, isolation des locaux, consommations d’eau, déchets, matières premières, achats, mobilité, etc.)</li><li>La restitution d'un diagnostic complet et la proposition d'un plan d'actions prioritaires pour maîtriser sa consommation énergétique et optimiser ses coûts.</li></ul>",
+      "program_type": "diag",
+      "program_conditions": {
+        "project_needs": [
+          "starting"
+        ],
+        "project_status": [
+          "*"
+        ],
+        "project_sectors": [
+          "industry",
+          "tertiary",
+          "agriculture"
         ],
         "structure_sizes": [
           "tpe",
