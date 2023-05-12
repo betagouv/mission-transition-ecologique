@@ -19,7 +19,7 @@ export const sectors = {
       }
     },
     {
-      value: 'project_sectors.industriel',
+      value: 'project_sectors.industry',
       label: { fr: "J’ai une activité industrielle, fabrication, production" },
       next: {
         default: 'track_form'
@@ -33,14 +33,14 @@ export const sectors = {
       }
     },
     {
-      value: 'project_sectors.tertiaire',
+      value: 'project_sectors.tertiary',
       label: { fr: "j’ai une activité tertiaire, de services" },
       next: {
         default: 'track_form'
       }
     },
     {
-      value: 'project_sectors.agricole',
+      value: 'project_sectors.agriculture',
       label: { fr: "J’ai une activité agricole" },
       next: {
         default: 'track_form'
