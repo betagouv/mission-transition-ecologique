@@ -109,7 +109,10 @@
 
     </div>
 
-    <div class="fr-mt-10v">
+    <!-- FOOTER -->
+    <div
+      v-if="showFooterBool"
+      class="fr-mt-10v">
       <TeeCredits/>
     </div>
   </div>
@@ -145,7 +148,8 @@ const metaEnv = import.meta.env
 // console.log('TeeApp - metaEnv :', metaEnv)
 
 interface Props {
-  showHeader: string,
+  showHeader?: string,
+  showFooter?: string,
   locale?: string,
   msg?: string,
   seed: string,
@@ -160,10 +164,11 @@ const tracks = tracksStore()
 const choices = choicesStore()
 const programs = programsStore()
 
+let showHeaderBool = ref(false)
+let showFooterBool = ref(false)
 let message = ref()
 let debugSwitchBool = ref(false)
 let debugBool = ref(false)
-let showHeaderBool = ref(false)
 
 // @ts-ignore
 window.stores = { tracks, choices, programs }
@@ -207,8 +212,9 @@ onBeforeMount(() => {
     head.appendChild(link)
   }
 
-  // set header component
+  // set header / footer components
   showHeaderBool.value = props.showHeader === 'true'
+  showFooterBool.value = props.showFooter === 'true'
 
   // set locale and message
   const locale = props.locale || 'fr'

@@ -144,7 +144,8 @@ Check : https://github.com/orgs/betagouv/projects/54/views/1
 <gov-aid-tree-app
   id="main-widget"
   locale="fr"
-  show-header="true"       
+  show-header="true"
+  show-footer="true"
   msg="fr | The GOV-AID-TREE widget to find your aid program !"
   seed="track_needs"
   dataset-url="data/eco-aides.json"
@@ -160,13 +161,14 @@ Check : https://github.com/orgs/betagouv/projects/54/views/1
 
 | Parameter      | Status | Type      | Default | Definition |
 | :-------:      | :----: | :---:     | :-----: | ---------- |
-| `show-header`  | R&D    | `boolean` | `true`   | Show / hide header on top of the widget  | 
-| `msg`          | R&D    | `string`  | `...`    | Locale `|` Message on the top of the widget  | 
-| `seed`         | R&D    | `string`  | `needs`  | Questionnaire seed question       | 
-| `dataset`      | x      | `string`  | `*.json` | Dataset file / url to select from to find results | 
-| `max-depth`    | x      | `number`  | `4`      | Maximum number of questions before results  | 
-| `locale`       | x      | `string`  | `fr`     | Default language  | 
-| `debug-switch` | ok     | `boolean` | `false`  | Show / hide the debug switch | 
+| `show-header`  | R&D    | `boolean` | `true`   | Show / hide header on top of the widget  |
+| `show-footer`  | R&D    | `boolean` | `false`  | Show / hide footer on top of the widget  |
+| `msg`          | R&D    | `string`  | `...`    | Locale `|` Message on the top of the widget  |
+| `seed`         | R&D    | `string`  | `needs`  | Questionnaire seed question       |
+| `dataset`      | x      | `string`  | `*.json` | Dataset file / url to select from to find results |
+| `max-depth`    | x      | `number`  | `4`      | Maximum number of questions before results  |
+| `locale`       | x      | `string`  | `fr`     | Default language  |
+| `debug-switch` | ok     | `boolean` | `false`  | Show / hide the debug switch |
 | `debug`        | ok     | `boolean` | `false`  | Debug mode on / off     |
 
 
