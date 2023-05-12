@@ -62,6 +62,7 @@
         <div class="fr-footer__bottom-copy">
           <p>
             {{ choices.t('licence') }}
+            &nbsp;
             <a
               :href="licenceHref"
               class="fr-link-licence no-content-after">
