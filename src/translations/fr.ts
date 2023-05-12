@@ -23,8 +23,12 @@ export const frDict = {
     programDescription: "Présentation général du dispositif",
     programProviders: "Porteur(s) du dispositif",
     programType: "Type(s) de dispositif",
-    programGeoZone: "Région(s) concernée(s)",
+    programGeoZones: "Région(s) concernée(s)",
     programStartDate: "Date de début du dispositif",
     programEndDate: "Date de clôture",
+  },
+  programTypes: {
+    aap: 'Appel à projets',
+    diag: 'Diagnostic'
   }
 }

@@ -305,7 +305,11 @@ Check : https://github.com/orgs/betagouv/projects/54/views/1
       "program_url":" ...",           // link to the program source
       "program_providers": [          // IDs ou objets ?
         "ANCT",
-        "ADEME",
+        {
+          "code": "ADEME",
+          "href": "https://ademe.fr/",
+          "SIREN": "385 290 309"
+        },
         "...",
       ],
       "program_keywords": [

@@ -19,7 +19,10 @@
           "tpe",
           "pme"
         ]
-      }
+      },
+      "program_providers": [
+        "CMA"
+      ]
     },
     {
       "title": "Visite Energie",
@@ -42,7 +45,10 @@
           "tpe",
           "pme"
         ]
-      }
+      },
+      "program_providers": [
+        "CCI"
+      ]
     },
     {
       "title": "Diag Eco-flux",
@@ -148,6 +154,7 @@
       "program_providers": [
         {
           "code": "ADEME",
+          "href": "https://ademe.fr/",
           "SIREN": "385 290 309"
         }
       ],

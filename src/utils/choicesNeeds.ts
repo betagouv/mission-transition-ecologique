@@ -3,7 +3,7 @@ export const needs = {
   label: { fr: 'Votre besoin' },
   interface: {
     component: 'cards',
-    columnWidth: 4,
+    columnWidth: 3,
   },
   behavior: {
     multipleChoices: false,
@@ -12,14 +12,14 @@ export const needs = {
     default: 'track_sectors'
   },
   options: [
-    // {
-    //   value: 'project_needs.*',
-    //   label: { fr: "Je souhaite tout voir d'un coup même si j'y connais rien" },
-    //   hint: { fr: "Oui, des fois on est juste très curieux... En vrai c'est pour tester mais faudra pas laisser ce bloc traîner quand on mettra en prod sinon les gens vont se foutre de notre gueule" },
-    //   next: {
-    //     default: 'track_results'
-    //   }
-    // },
+    {
+      value: 'project_needs.*',
+      label: { fr: "Je souhaite tout voir d'un coup même si je n'y connais rien" },
+      hint: { fr: "Oui, des fois on est juste très curieux... En vrai c'est pour tester mais faudra pas laisser ce bloc traîner quand on mettra en prod sinon les gens vont se foutre de notre gueule" },
+      next: {
+        default: 'track_results'
+      }
+    },
     {
       value: 'project_needs.starting',
       label: { fr: "Je débute, je visite, je fais mes premiers pas" },
