@@ -23,7 +23,7 @@
       <!-- PARTNERS LINKS -->
       <div 
         class="fr-footer__content fr-ml-0 fr-mt-5v"
-        style="justify-content: center;">
+        style="justify-content: center; flex-basis: 100%">
         <ul 
           class="fr-footer__content-list">
           <li
@@ -88,16 +88,28 @@ const licenceName = 'GNU AGPL v.3'
 
 const ecosystemLinks = [
   {
-    label: 'ademe.fr',
+    label: 'ADEME',
     href: 'https://ademe.fr'
   },
   {
-    label: 'dinum.gouv.fr',
-    href: "https://www.numerique.gouv.fr/dinum/"
+    label: "BPI",
+    href: "https://www.bpifrance.fr/"
   },
   {
-    label: "bpifrance.fr",
-    href: "https://www.bpifrance.fr/"
+    label: 'CGDD',
+    href: 'https://www.ecologie.gouv.fr/commissariat-general-au-developpement-durable-cgdd'
+  },
+  {
+    label: 'DGE',
+    href: 'https://www.economie.gouv.fr/direction-generale-des-entreprises-dge'
+  },
+  {
+    label: 'DILA',
+    href: 'https://www.dila.premier-ministre.gouv.fr/'
+  },
+  {
+    label: 'DINUM',
+    href: "https://www.numerique.gouv.fr/dinum/"
   },
 ]
 
