@@ -64,7 +64,7 @@ export const results = {
       {
         id: 'needs',
         label: { fr: 'Quel est votre besoin ?'},
-        hint: { fr: 'Je sais pas...' },
+        hint: { fr: 'Je ne sais pas...' },
         required: false,
         type: 'textarea'
       },
