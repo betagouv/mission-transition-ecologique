@@ -78,8 +78,9 @@
     <div
       class="fr-col-12"
       style="display: grid; justify-content: center;">
+      <!-- :label="choices.t('next')"  -->
       <DsfrButton
-        :label="choices.dict[choices.lang].next" 
+        :label="choices.t('send')" 
         :disabled="!canSaveFrom"
         icon="ri-arrow-right-line"
         @click="saveFormData()"

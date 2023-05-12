@@ -14,16 +14,16 @@ export const contactForm = {
     {
       value: 'contact_form.email',
       label: { fr: 'Formulaire de contact' },
-      intro: { fr: '<h4>Accompagnements proposés:</h4>\
-        <p>\
-          <ul>\
-            <li>identifier les actions ayant un impact environnemental</li>\
-            <li>échanger avec un conseiller dans la transition écologique</li>\
-            <li>élaborer un plan d&lsquo;action pour vos activités quotidiennes</li>\
-          </ul>\
-        </p>\
-        <h5>Déposez votre demande, vous serez recontacté rapidement</h5>\
-      ' },
+      // intro: { fr: '<h4>Accompagnements proposés:</h4>\
+      //   <p>\
+      //     <ul>\
+      //       <li>identifier les actions ayant un impact environnemental</li>\
+      //       <li>échanger avec un conseiller dans la transition écologique</li>\
+      //       <li>élaborer un plan d&lsquo;action pour vos activités quotidiennes</li>\
+      //     </ul>\
+      //   </p>\
+      //   <h5>Déposez votre demande, vous serez recontacté rapidement</h5>\
+      // ' },
       fields: [
         {
           id: 'name',

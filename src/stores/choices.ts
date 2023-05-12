@@ -7,6 +7,7 @@ export const choicesStore = defineStore('choices', () => {
   const dict: any = {
     fr: {
       next: 'Suivant',
+      send: 'Envoyer',
       modify: 'modifier',
       form: {
         mandatory: "Champs obligatoires",
