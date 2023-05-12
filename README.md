@@ -209,6 +209,9 @@ Check : https://github.com/orgs/betagouv/projects/54/views/1
   - https://schema.data.gouv.fr/etalab/schema-dispositif-aide/0.0.2/documentation.html#propriete-condition-eligibilite
   - https://github.com/MTES-MCT/aides-territoires/wiki/Format-des-donn%C3%A9es-publi%C3%A9es-sur-Aides-territoires
   - https://www.insee.fr/fr/information/2406147
+  - https://publi.codes/
+  - cf "open fisca"
+  - cf "mon entreprise"
 - Autres
   - https://www.entreprises.gouv.fr/files/files/secteurs-d-activite/industrie/decarbonation/transition-ecologique-guidedes-aides-pour-les-tpe-pme.pdf
   - https://www.gouvernement.fr/france-nation-verte
