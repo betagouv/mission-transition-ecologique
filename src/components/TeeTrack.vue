@@ -87,20 +87,21 @@
 
 
       <!-- AS FORM -->
-      <div 
+      <!-- <div 
         v-show="renderAs === 'form'"
         >
         <TeeForm
           :form-options="option"
           :debug="debug"
           @saveData="updateSelectionFromForm"/>
-      </div>
+      </div> -->
 
       <!-- AS RESULT -->
       <div 
         v-if="trackId === 'track_results'"
         >
         <TeeResults
+          :track-form="track.form"
           :tracks-results="tracks.tracksResults"
           :debug="debug"
         />
@@ -115,7 +116,7 @@
     class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-pt-3v">
     <div class="fr-col-2">
       <DsfrButton
-        :label="choices.dict[choices.lang].next"
+        :label="choices.t('next')"
         :disabled="!selection.length"
         icon="ri-arrow-right-line"
         @click="saveMultipleSelection"
@@ -124,9 +125,7 @@
   </div>
 
   <!-- COMPLETED QUESTIONNAIRE -->
-  <div
-    v-if="isCompleted"
-    >
+  <div v-if="isCompleted">
     
     <!-- TRACK CHOICES -->
     <div
@@ -177,8 +176,8 @@ import { choicesStore } from '../stores/choices'
 // @ts-ignore
 import type { Track, ColsOptions,TrackOpt, FormDataResp } from '@/types/index'
 
-// @ts-ignore
-import TeeForm from './TeeForm.vue'
+// // @ts-ignore
+// import TeeForm from './TeeForm.vue'
 // @ts-ignore
 import TeeResults from './TeeResults.vue'
 
@@ -241,11 +240,11 @@ const isActiveChoice = (value: string | number) => {
   return selection.value.includes(value)
 }
 
-const updateSelectionFromForm = (form: FormDataResp) => {
-  // console.log('TeeTrack > updateSelectionFromForm > form :', form)
-  selectionData.value = form.data
-  updateSelection(form)
-}
+// const updateSelectionFromForm = (form: FormDataResp) => {
+//   // console.log('TeeTrack > updateSelectionFromForm > form :', form)
+//   selectionData.value = form.data
+//   updateSelection(form)
+// }
 
 const updateSelectionAndCompleted = (option: any) => {
   const val: string | number = option.value

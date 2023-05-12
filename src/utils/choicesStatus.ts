@@ -23,14 +23,14 @@ export const status = {
       value: 'project_status.carbon',
       label: { fr: "J'ai besoin de connaître et réduire mes émissions carbone" },
       next: {
-        default: 'track_form'
+        default: 'track_results'
       },
     },
     {
       value: 'project_status.improve',
       label: { fr: "J'ai besoin d'améliorer mon produit/service" },
       next: {
-        default: 'track_form'
+        default: 'track_results'
       },
     }
   ]

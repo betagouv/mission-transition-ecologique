@@ -15,35 +15,35 @@ export const sectors = {
       value: 'project_sectors.artisanat',
       label: { fr: "J’ai une activité artisanale" },
       next: {
-        default: 'track_form'
+        default: 'track_results'
       }
     },
     {
       value: 'project_sectors.industry',
       label: { fr: "J’ai une activité industrielle, fabrication, production" },
       next: {
-        default: 'track_form'
+        default: 'track_results'
       }
     },
     {
       value: 'project_sectors.tourism',
       label: { fr: "j’ai une activité de tourisme" },
       next: {
-        default: 'track_form'
+        default: 'track_results'
       }
     },
     {
       value: 'project_sectors.tertiary',
       label: { fr: "j’ai une activité tertiaire, de services" },
       next: {
-        default: 'track_form'
+        default: 'track_results'
       }
     },
     {
       value: 'project_sectors.agriculture',
       label: { fr: "J’ai une activité agricole" },
       next: {
-        default: 'track_form'
+        default: 'track_results'
       }
     }
   ]

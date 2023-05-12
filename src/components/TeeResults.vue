@@ -32,7 +32,7 @@
   <!-- PROGRAMS AS LIST IN ACCORDIONS -->
   <div 
     v-if="resultsProgsLen"
-    class="fr-container">
+    class="fr-container fr-px-0">
 
     <DsfrAccordionsGroup>
       <li
@@ -66,6 +66,14 @@
       </li>
     </DsfrAccordionsGroup>
   </div>
+
+  <div class="fr-mt-10v">
+    <!-- {{ tracksResults }} -->
+    <TeeForm
+      :form-options="trackForm"
+      :debug="debug"/>
+  </div>
+  <!-- @saveData="updateSelectionFromForm"/> -->
 
   <!-- <h4 class="fr-pt-10v">
     {{ choices.t('results.fittingPrograms') }} 
@@ -101,12 +109,15 @@ import { choicesStore } from '../stores/choices'
 import { programsStore } from '../stores/programs'
 
 // @ts-ignore
+import TeeForm from './TeeForm.vue'
+// @ts-ignore
 import type { TrackChoice } from '@/types/index'
 
 const choices = choicesStore()
 const programs = programsStore()
 
 interface Props {
+  trackForm: any,
   tracksResults: TrackChoice[],
   debug?: boolean,
 }

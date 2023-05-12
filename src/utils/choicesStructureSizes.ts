@@ -22,7 +22,7 @@ export const sizes = {
       value: 'structure_sizes.pme',
       label: { fr: "PME" },
       next: {
-        default: 'track_form'
+        default: 'track_results'
       }
     },
     {
