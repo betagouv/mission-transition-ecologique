@@ -44,14 +44,14 @@ export const results = {
         id: 'tel',
         label: { fr: 'Téléphone'},
         hint: { fr: '06 05 04 03 02' },
-        required: true,
+        required: false,
         type: 'text'
       },
       {
         id: 'email',
         label: { fr: 'Email'},
         hint: { fr: 'camille@dujardin.fr' },
-        required: false,
+        required: true,
         type: 'email'
       },
       {

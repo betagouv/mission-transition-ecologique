@@ -5,89 +5,115 @@
     class="fr-center">
     {{ formOptions.label[choices.lang] }}
   </h4>
+
+  <!-- FORM -->
+  <div v-show="!formIsSent">
+    <!-- FORM INTRODUCTION -->
+    <div 
+      v-if="formOptions.intro"
+      v-html="formOptions.intro[choices.lang]">
+    </div>
   
-  <!-- FORM INTRODUCTION -->
-  <div 
-    v-if="formOptions.intro"
-    v-html="formOptions.intro[choices.lang]">
-  </div>
-
-  <!-- DEBUGGING -->
-  <div 
-    v-if="debug"
-    class="vue-debug">
-    <p>
-      requiredFields: 
-      <code>
-        {{ requiredFields }}
-      </code>
-    </p>
-    <p>
-      canSaveFrom: 
-      <code>
-        {{ canSaveFrom }}
-      </code>
-    </p>
-  </div>
-
-  <!-- FIELDS -->
-  <div
-    v-for="field in formOptions.fields"
-    :key="field.id"
-    class="fr-mb-4v"
-    >
     <!-- DEBUGGING -->
     <div 
       v-if="debug"
       class="vue-debug">
-      Field.id: 
-      <code>
-        {{ field.id }} 
-      </code >
-      --- formData[field.id] : 
-      <code >
-        {{ formData[field.id] }}
-      </code>
+      <p>
+        requiredFields: 
+        <code>
+          {{ requiredFields }}
+        </code>
+      </p>
+      <p>
+        canSaveFrom: 
+        <code>
+          {{ canSaveFrom }}
+        </code>
+      </p>
     </div>
-    <!-- INPUT GROUP -->
-    <DsfrInputGroup>
-      <DsfrInput
-        :type="field.type"
-        :is-textarea="field.type === 'textarea'"
-        :model-value="formData[field.id]"
-        label-visible
-        :required="field.required"
-        :label="field.label[choices.lang]"
-        :placeholder="field.hint[choices.lang]"
-        @update:modelValue="updateFormData($event, field.id)"
-        >
-      </DsfrInput>
-    </DsfrInputGroup>
-  </div>
-
-  <h6
-    class="fr-mb-0" 
-    style="font-size: 0.7em;">
-    <code>*</code>
-    &nbsp;
-    {{ choices.t('form.mandatory')}}
-  </h6>
-
-  <!-- SEND / NEXT BUTTON -->
-  <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-mt-5v">
+  
+    <!-- FIELDS -->
     <div
-      class="fr-col-12"
-      style="display: grid; justify-content: center;">
-      <!-- :label="choices.t('next')"  -->
-      <DsfrButton
-        :label="choices.t('send')" 
-        :disabled="!canSaveFrom"
-        icon="ri-arrow-right-line"
-        @click="saveFormData()"
-      />
+      v-for="field in formOptions.fields"
+      :key="field.id"
+      class="fr-mb-4v"
+      >
+      <!-- DEBUGGING -->
+      <div 
+        v-if="debug"
+        class="vue-debug">
+        Field.id: 
+        <code>
+          {{ field.id }} 
+        </code >
+        --- formData[field.id] : 
+        <code >
+          {{ formData[field.id] }}
+        </code>
+      </div>
+      <!-- INPUT GROUP -->
+      <DsfrInputGroup>
+        <DsfrInput
+          :type="field.type"
+          :is-textarea="field.type === 'textarea'"
+          :model-value="formData[field.id]"
+          label-visible
+          :required="field.required"
+          :label="field.label[choices.lang]"
+          :placeholder="field.hint[choices.lang]"
+          @update:modelValue="updateFormData($event, field.id)"
+          >
+        </DsfrInput>
+      </DsfrInputGroup>
+    </div>
+  
+    <h6
+      class="fr-mb-0" 
+      style="font-size: 0.7em;">
+      <code>*</code>
+      &nbsp;
+      {{ choices.t('form.mandatory')}}
+    </h6>
+  
+    <!-- SEND / NEXT BUTTON -->
+    <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-mt-5v">
+      <div
+        class="fr-col-12"
+        style="display: grid; justify-content: center;">
+        <!-- :label="choices.t('next')"  -->
+        <DsfrButton
+          :label="choices.t('send')" 
+          :disabled="!canSaveFrom"
+          icon="ri-arrow-right-line"
+          @click="saveFormData()"
+        />
+      </div>
     </div>
   </div>
+  
+  <!-- FORM CALLBACK -->
+  <div
+    v-if="formIsSent"
+    class="fr-mt-5v">
+    <!-- FORM ALERT AFTER SENDING-->
+    <DsfrAlert
+      :title="choices.t(`form.sent`)"
+      :type="'success'">
+    </DsfrAlert>
 
+    <!-- NOW WHAT -->
+    <h6 class="fr-mt-10v">
+      {{ choices.t('form.nowWhat')}}
+    </h6>
+    <p class="fr-mt-10v fr-mb-3v">
+      <span class="fr-icon-arrow-right-line fr-mr-3v" aria-hidden="true"></span>
+      <span v-html="choices.t('form.advisors')"></span>
+    </p>
+    <p class="fr-mb-3v">
+      <span class="fr-icon-arrow-right-line fr-mr-3v" aria-hidden="true"></span>
+      <span v-html="choices.t('form.phoneContact')"></span>
+    </p>
+  </div>
 
   <!-- DEBUGGING -->
   <div 
@@ -131,6 +157,7 @@ const props = defineProps<Props>()
 
 let formData = ref()
 const requiredFields = ref([])
+const formIsSent = ref(false)
 
 const emit = defineEmits(['saveData'])
 
@@ -143,11 +170,12 @@ const canSaveFrom = computed(() => {
 const saveFormData = () => {
   // console.log('TeeForm > saveFormData >  props.formOptions :', props.formOptions)
   // console.log('TeeForm > saveFormData >  formData.value :', formData.value)
-  emit('saveData', {
-    value: props.formOptions.value,
-    next: props.formOptions.next,
-    data: formData.value
-  })
+  // emit('saveData', {
+  //   value: props.formOptions.value,
+  //   next: props.formOptions.next,
+  //   data: formData.value
+  // })
+  formIsSent.value = true
 }     
 
 const updateFormData = (ev: string, id: string) => {

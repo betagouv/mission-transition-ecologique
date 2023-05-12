@@ -5,6 +5,10 @@ export const frDict = {
   licence: 'Ce widget et son code source sont sous licence',
   form: {
     mandatory: "Champs obligatoires",
+    sent: "Formulaire envoyé",
+    nowWhat: "Et maintenant ?",
+    advisors: "Nous allons <b>identifier le bon conseiller</b> près de chez vous",
+    phoneContact: "Le conseiller vous <b>contactera par téléphone</b> dans les 5 jours (délai moyen de prise en charge)",
   },
   results: {
     alertTitle: "Merci, voici vos résultats",
