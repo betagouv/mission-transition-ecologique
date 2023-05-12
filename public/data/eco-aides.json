@@ -136,6 +136,7 @@
       "program_type": "aap",
       "program_conditions": {
         "project_needs": [
+          "starting",
           "financing"
         ],
         "project_sectors": [

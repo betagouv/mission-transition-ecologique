@@ -22,28 +22,28 @@ export const sectors = {
       value: 'project_sectors.industriel',
       label: { fr: "J’ai une activité industrielle, fabrication, production" },
       next: {
-        default: 'track_structure_sizes'
+        default: 'track_form'
       }
     },
     {
-      value: 'project_sectors.tourisme',
+      value: 'project_sectors.tourism',
       label: { fr: "j’ai une activité de tourisme" },
       next: {
-        default: 'track_structure_sizes'
+        default: 'track_form'
       }
     },
     {
       value: 'project_sectors.tertiaire',
       label: { fr: "j’ai une activité tertiaire, de services" },
       next: {
-        default: 'track_structure_sizes'
+        default: 'track_form'
       }
     },
     {
       value: 'project_sectors.agricole',
       label: { fr: "J’ai une activité agricole" },
       next: {
-        default: 'track_structure_sizes'
+        default: 'track_form'
       }
     }
   ]
