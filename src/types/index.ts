@@ -7,13 +7,25 @@ export interface ProgramConditions {
   project_sectors?: string[],
   structure_sizes?: string[],
 }
+
+export interface ProgramProvider {
+  code: string,
+  href?: string,
+  SIREN?: string | number,
+}
+
 export interface ProgramData {
   index?: string | number,
   title: string,
   resume?: string,
   description?: string,
-  program_type?: string
-  program_conditions?: ProgramConditions
+  program_type?: string,
+  program_conditions?: ProgramConditions,
+  program_providers?: string[] | ProgramProvider[] | any[],
+  program_application?: any,
+  geo_zones?: any,
+  date_start?: any,
+  date_end?: any,
 }
 
 

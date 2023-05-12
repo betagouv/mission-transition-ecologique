@@ -93,6 +93,9 @@
 <script setup lang="ts">
 
 // @ts-ignore
+import type { ProgramData } from '@/types/index'
+
+// @ts-ignore
 import TeeTile from './TeeTile.vue'
 
 import { choicesStore } from '../stores/choices'
@@ -101,7 +104,7 @@ const choices = choicesStore()
 const blockColor= 'var(--text-default-info)'
 
 defineProps<{
-  program: any,
+  program: ProgramData,
   debug?: boolean,
 }>()
 

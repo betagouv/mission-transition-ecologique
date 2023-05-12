@@ -18,7 +18,7 @@
 
 defineProps<{
   title: string,
-  description: string,
+  description?: string,
   debug?: boolean,
 }>()
 
