@@ -159,14 +159,13 @@ let formData = ref()
 const requiredFields = ref([])
 const formIsSent = ref(false)
 
-const emit = defineEmits(['saveData'])
-
 const canSaveFrom = computed(() => {
   // @ts-ignore
   const boolArr = requiredFields.value.map((f: string) => formData.value[f])
   return boolArr.every(v => (!!v && v !== ''))
 })
 
+// const emit = defineEmits(['saveData'])
 const saveFormData = () => {
   // console.log('TeeForm > saveFormData >  props.formOptions :', props.formOptions)
   // console.log('TeeForm > saveFormData >  formData.value :', formData.value)
@@ -191,7 +190,6 @@ onBeforeMount(() => {
     // @ts-ignore
     if (field.required) { requiredFields.value.push(field.id) }
   })
-  // formData = reactive(initValues)
   formData = ref(initValues)
 })
 
