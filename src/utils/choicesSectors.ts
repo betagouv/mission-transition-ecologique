@@ -12,7 +12,7 @@ export const sectors = {
   },
   options: [
     {
-      value: 'project_sectors.artisanat',
+      value: 'project_sectors.craft',
       label: { fr: "J’ai une activité artisanale" },
       next: {
         default: 'track_results'

@@ -46,21 +46,13 @@
           >
           <template #title>
             <h6>
-              {{ i + 1 }}/ {{ prog.title }}
+              {{ i + 1 }}) &nbsp; {{ prog.title }}
             </h6>
           </template>
           <template #default>
-            <!-- AID TITLE -->
-            <p 
-              v-if="prog.resume"
-              v-html="prog.resume">
-            </p>
-  
-            <!-- AID DESCRIPTION -->
-            <p 
-              v-if="prog.description"
-              v-html="prog.description">
-            </p>
+            <TeeProgram
+              :program="prog"
+              :debug="debug"/>
           </template>
         </DsfrAccordion>
       </li>
@@ -108,6 +100,8 @@ import { ref, onBeforeMount, computed, watch } from 'vue'
 import { choicesStore } from '../stores/choices'
 import { programsStore } from '../stores/programs'
 
+// @ts-ignore
+import TeeProgram from './TeeProgram.vue'
 // @ts-ignore
 import TeeForm from './TeeForm.vue'
 // @ts-ignore

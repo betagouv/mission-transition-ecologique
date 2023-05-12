@@ -13,7 +13,7 @@
           "*"
         ],
         "project_sectors": [
-          "artisanat"
+          "craft"
         ],
         "structure_sizes": [
           "tpe",
@@ -134,7 +134,7 @@
           "financing"
         ],
         "project_sectors": [
-          "artisanat",
+          "craft",
           "industry",
           "tertiary",
           "agriculture"
@@ -149,6 +149,20 @@
         {
           "code": "ADEME",
           "SIREN": "385 290 309"
+        }
+      ],
+      "program_contacts": [
+        { 
+          "title": "Qui contacter ?",
+          "text": "Les points de contacts se font sur la page du dispositif de la plateforme Agir pour la transition.",
+          "url": "https://agirpourlatransition.ademe.fr/entreprises/tremplin-transition-ecologique-pme"
+        }
+      ],
+      "program_application": [
+        {
+          "title": "Continuer vers la candidature",
+          "text": "Financer vos projets de transition écologique avec le guichet \"Tremplin\"",
+          "url": "https://agirpourlatransition.ademe.fr/entreprises/dispositif-aide/tremplin-transition-ecologique-pme"
         }
       ]
     },

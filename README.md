@@ -243,24 +243,36 @@ Check : https://github.com/orgs/betagouv/projects/54/views/1
       "program_recurrence": "...",     // RecurrenceAide
       "funding_amount": "...",         // !!! à préciser selon variété des cas rencontrés
       "program_conditions": {          // conditions d'octroi de l'aide
-        "structure_sizes": [           // TPE, PME, ETI, GE
-          "TPE", 
-          "PME", 
+        "project_needs": [
+          "starting",
+          "advices",
+          "financing",
           "*",
           "..."
         ],
-        "activity_types": [ 
-          "Activité artisanale", 
-          "Activité industrielle, fabrication, production", 
-          "Activité tertiaire, services", 
-          "Activité agricole", 
-          "Activité touristique"
+        "project_status" : [       // EtatAvancementProjet
+          "economies",
+          "carbon",
+          "improve",
+          "*",
+          "..."
+        ],
+        "project_sectors": [ 
+          "craft", 
+          "industry", 
+          "tertiary", 
+          "tourism",
+          "agriculture", 
+          "*",
           "...",
+        ],
+        "structure_sizes": [           // TPE, PME, ETI, GE
+          "tpe", 
+          "pme", 
+          "*",
+          "..."
         ],
         "structure_naf": [         // conditions par code naf / filière / activité
-          "...",
-        ],
-        "project_status" : [       // EtatAvancementProjet
           "...",
         ],
         "expenses_types": [        // TypeDepense
