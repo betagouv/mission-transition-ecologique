@@ -23,30 +23,33 @@ import * as fs  from 'fs'
 import * as yaml from 'js-yaml'
 const programsArray = <any[]>[]
 // joining path of directory 
-const dataDiryPathTemp = rawEnv.VITE_DATA_DIR_PATH || './public/data/programs'
-const dataDiryPath = path.join( __dirname, dataDiryPathTemp)
+const dataDirPathTemp = rawEnv.VITE_DATA_DIR_PATH || './public/data/programs'
+const dataDirPath = path.join( __dirname, dataDirPathTemp)
 // console.log('vite.config > __dirname :', __dirname)
-console.log('vite.config > dataDiryPath :', dataDiryPath)
+console.log('vite.config > dataDirPath :', dataDirPath)
+
 // passsing dataDiryPath and callback function
-fs.readdir(dataDiryPath, function (err, files) {
-  //handling error
-  if (err) {
-    return console.log('vite.config > main.ce.ts > err > Unable to scan directory: ' + err)
-  } 
-  //listing all files using forEach
-  files.forEach(file => {
-    // Do whatever you want to do with the file
-    // console.log()
-    console.log('vite.config > file :', file)
-    const yamlFilePath = `${dataDiryPath}/${file}`
-    const yamlFile = fs.readFileSync(yamlFilePath, 'utf8')
-    const yamlObj = yaml.load(yamlFile) || {}
-    // yamlObj.file = file
-    // @ts-ignore
-    console.log('vite.config > yamlObj.title :', yamlObj.title)
-    programsArray.push(yamlObj)
-  })
+const filesNames = fs.readdirSync(dataDirPath)
+console.log('vite.config > filesNames :', filesNames)
+filesNames.forEach(file => {
+  // Do whatever you want to do with the file
+  console.log()
+  console.log('vite.config > file :', file)
+  const yamlFilePath = `${dataDirPath}/${file}`
+  const yamlFile = fs.readFileSync(yamlFilePath, 'utf8')
+  const yamlObj = yaml.load(yamlFile) || {}
+  // yamlObj.file = file
+  // @ts-ignore
+  console.log('vite.config > yamlObj.title :', yamlObj.title)
+  programsArray.push(yamlObj)
 })
+console.log('vite.config > programsArray :', programsArray)
+
+// build output json
+const dataAsJson = JSON.stringify(programsArray)
+const dataBuiltOutput = './public/data/output/dataset_out.json'
+const dataOutPath = path.join( __dirname, dataBuiltOutput)
+fs.writeFileSync(dataOutPath, dataAsJson, 'utf-8')
 
 // https://vitejs.dev/config/
 export default defineConfig({
