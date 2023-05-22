@@ -49,7 +49,7 @@ filesNames.forEach(file => {
 const dataAsJson = JSON.stringify(programsArray)
 const dataBuiltOutput = './public/data/output/dataset_out.json'
 const dataOutPath = path.join( __dirname, dataBuiltOutput)
-fs.writeFileSync(dataOutPath, dataAsJson, 'utf-8')
+fs.writeFileSync(dataOutPath, dataAsJson)
 console.log('vite.config > finished writing output json...')
 
 // https://vitejs.dev/config/
