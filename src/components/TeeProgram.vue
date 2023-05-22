@@ -2,7 +2,9 @@
   <div>
 
     <!-- PROGRAM INFOS -->
-    <div class="fr-grid-row fr-grid-row--gutters fr-mb-5v">
+    <div
+      v-if="program && config?.showProgramInfos" 
+      class="fr-grid-row fr-grid-row--gutters fr-mb-5v">
       <!-- PROGRAM PROVIDERS -->
       <div
         v-if="program.program_providers" 
@@ -70,7 +72,9 @@
     </div>
 
     <!-- PROGRAM RESUME -->
-    <h6 :style="`color: ${blockColor}`">
+    <h6
+      v-if="config?.showProgramSubtitles"
+      :style="`color: ${blockColor}`">
       {{ choices.t('program.programResume') }}
     </h6>
     <p
@@ -79,7 +83,9 @@
     </p>
 
     <!-- PROGRAM DESCRIPTION -->
-    <h6 :style="`color: ${blockColor}`">
+    <h6
+      v-if="config?.showProgramSubtitles"
+      :style="`color: ${blockColor}`">
       {{ choices.t('program.programDescription') }}
     </h6>
     <p 
@@ -93,7 +99,7 @@
 <script setup lang="ts">
 
 // @ts-ignore
-import type { ProgramData } from '@/types/index'
+import type { ProgramData, TrackResultsConfig } from '@/types/index'
 
 // @ts-ignore
 import TeeTile from './TeeTile.vue'
@@ -101,10 +107,12 @@ import TeeTile from './TeeTile.vue'
 import { choicesStore } from '../stores/choices'
 const choices = choicesStore()
 
-const blockColor= 'var(--text-default-info)'
+const blockColor = 'var(--text-default-info)'
 
 defineProps<{
   program: ProgramData,
+  config?: TrackResultsConfig,
+  options?: object,
   debug?: boolean,
 }>()
 

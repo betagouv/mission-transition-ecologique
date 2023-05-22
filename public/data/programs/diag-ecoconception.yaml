@@ -1,0 +1,48 @@
+title: Diag Ecoconception
+resume: Faites des économies en gérant durablement vos dépenses
+description: |
+  <ul>
+    <li>
+      Sensibilisez les équipes internes à l’écoconception et formez un référent écoconception dans votre entreprise
+    </li>
+    <li>
+      Réalisez une évaluation environnementale basée sur l’Analyse du Cycle de Vie du produit, service ou procédé concerné
+    </li>
+    <li>
+      Identifiez, formalisez et chiffrez les leviers d’écoconception, en maîtrisant le risque de transfert de pollution
+    </li>
+    <li>
+      Préparez la mise en œuvre d'un plan d’actions incluant un premier dimensionnement technico-économique
+    </li>
+  </ul>
+program_types: 
+  - diag
+# program_conditions:
+#   project_needs:
+#     - advices
+#   project_status:
+#     - improve
+#   project_sectors:
+#     - "*"
+#   structure_sizes:
+#     - pme
+# Equivalent of program_conditions
+conditions:
+  - type: project_needs
+    operator: "or"
+    value: 
+      - advices
+  - type: project_status
+    operator: "or"
+    value: 
+      - improve
+  - type: project_sectors
+    operator: "or"
+    value: 
+      - "*"
+  - type: structure_sizes
+    operator: "or"
+    value: 
+      - pme
+program_providers: 
+  - code: '???'

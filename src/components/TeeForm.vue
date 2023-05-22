@@ -46,13 +46,19 @@
         <code>
           {{ field.id }} 
         </code >
+        --- field.type : 
+        <code >
+          {{ field.type }}
+        </code>
         --- formData[field.id] : 
         <code >
           {{ formData[field.id] }}
         </code>
       </div>
+      
       <!-- INPUT GROUP -->
-      <DsfrInputGroup>
+      <DsfrInputGroup
+        v-if="field.type !== 'checkbox'">
         <DsfrInput
           :type="field.type"
           :is-textarea="field.type === 'textarea'"
@@ -65,6 +71,21 @@
           >
         </DsfrInput>
       </DsfrInputGroup>
+      
+      <!-- CHECKBOXES -->
+      <DsfrCheckbox
+        v-if="field.type == 'checkbox'"
+        :model-value="formData[field.id]"
+        :name="field.id" 
+        :required="field.required"
+        :hint="field.hint[choices.lang]"
+        @update:modelValue="updateFormData($event, field.id)">
+        <template #label>
+          <span>
+            {{ field.label[choices.lang] }}
+          </span>
+        </template>
+      </DsfrCheckbox>
     </div>
   
     <h6
@@ -186,7 +207,7 @@ onBeforeMount(() => {
   // console.log('TeeForm > saveFormData >  props.formOptions :', props.formOptions)
   const initValues = <FormValues>{}
   props.formOptions.fields?.forEach((field: FormField) => {
-    initValues[field.id] = ''
+    initValues[field.id] = field.type === 'checkbox' ? false : ''
     // @ts-ignore
     if (field.required) { requiredFields.value.push(field.id) }
   })

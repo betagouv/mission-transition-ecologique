@@ -1,6 +1,6 @@
 {
   "name": "ademe-gov-aid-tree-poc",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": false,
   "author": "Julien Paris - multi.coop",
   "scripts": {
@@ -19,15 +19,19 @@
   },
   "dependencies": {
     "@gouvminint/vue-dsfr": "^3.6.0",
+    "fs": "^0.0.1-security",
+    "js-yaml": "^4.1.0",
     "lit": "^2.7.3",
+    "path": "^0.12.7",
     "pinia": "^2.0.32",
     "vue": "^3.2.47",
     "vuex": "^4.1.0"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.2.0",
+    "@types/js-yaml": "^4.0.5",
     "@types/jsdom": "^21.1.0",
-    "@types/node": "^18.14.2",
+    "@types/node": "^18.16.12",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vue/eslint-config-prettier": "^7.1.0",
     "@vue/eslint-config-typescript": "^11.0.2",

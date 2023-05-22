@@ -87,34 +87,81 @@ This project is built to respond to those challenges. We made gov-aid-tree as :
 
 ### Functional diagram
 
+```mermaid 
+graph TD;
+    
+    subgraph "Questionnaire"
+    tracksModel[Questionnaire model] -- organizes --- tracks;
+    tracks[Questionnaire slides : config files] --> widget[GOV-AID-TREE - VUEJS WEB COMPONENT];
+    datamodel[Aid programs data model] -- available for widget --- widget;
+    questions[Questionnaire slides : interfaces] --> choices[User choices data];
+    widget -- selects from database --> results[Aid programs subset fitting user choices];
+    widget --> questions;
+    choices --> widget;
+    datasets -- available for widget --- widget;
+    datamodel -- respects --- datasets;
+    end
+
+    subgraph "Data : automated scrapping"
+    parser[API parsers script] -- uses --> datamodel;
+    parser -- generates --> datasets[Aid programs database];
+    end
+
+    subgraph "Data : manual production"
+    adminsExt[Admins ext] -- protected : edit / add --> editor;
+    admins[Admins] -- protected : edit / add --> editor;
+    editor[Editor : Forms] -- uses --> datamodel;
+    editor -- generates / PR --> datasets[Aid programs database];
+    end
+
+    subgraph "Sources"
+    sources[Aid programs providers] -- request via APIs + cron --- parser;
+    end 
+
+    
+    subgraph "End users : entreprises"
+    results -- displayed for user --> user[Users : individual or entreprise];
+    user -- interacts with --> questions;
+    end
+
+    style widget fill:blue
+    style widget color:white
+    style editor fill:blue
+    style editor color:white
+    
+    style datasets fill:teal
+    style datasets color:white
+    style datamodel fill:teal
+    style datamodel color:white
+    style parser fill:teal
+    style parser color:white
+
+    style admins fill:orange
+    style admins color:white
+    style adminsExt fill:orange
+    style adminsExt color:white
+    style user fill:orange
+    style user color:white
+```
+
 ```mermaid
 graph TD;
-  subgraph "Web component"
-  tracksModel[Questionnaire model] -- organizes --- tracks;
-  tracks[Questionnaire slides : config files] --> widget[GOV-AID-TREE - VUEJS WEB COMPONENT];
-  datamodel[Aid programs data model] -- available for widget --- widget;
-  questions[Questionnaire slides : interfaces] --> choices[User choices data];
-  widget -- selects from database --> results[Aid programs subset fitting user choices];
-  widget --> questions;
-  choices --> widget;
-  datasets -- available for widget --- widget;
-  datamodel -- respects --- datasets;
-  end
+    subgraph "Legend"
+    users[Users]
+    data[Data dev]
+    web[Web dev]
+    other[Interactions]
+    end
 
-  subgraph "Data scrapping"
-  parser[API parsers script] -- uses --> datamodel;
-  parser -- generates --> datasets[Aid programs database];
-  end
+    style users fill:orange
+    style users color:white
+    
+    style data fill:teal
+    style data color:white
 
-  subgraph "Sources"
-  sources[Aid programs providers] -- request via APIs + cron --- parser;
-  end 
-
-  subgraph "Users"
-  results -- displayed for user --> user[Users : individual or entreprise];
-  user -- interacts with --> questions;
-  end
-
+    style web fill:blue
+    style web color:white
+    
 ```
 
 ---

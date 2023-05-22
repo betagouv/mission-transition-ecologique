@@ -1,0 +1,374 @@
+[
+  {
+    "title": "Diag Decarbon'Action",
+    "resume": "Réduisez durablement vos émissions carbone",
+    "description": "<ul>\n  <li>\n    Mesurez les émissions de Gaz à effet de serre de votre entreprise.\n  </li>\n  <li>\n    Elaborez votre plan d'actions pour décarboner votre activité.\n  </li>\n  <li>\n    Embarquez votre écosystème en valorisant votre engagement dans la décarbonation.\n  </li>\n</ul>\n",
+    "program_types": [
+      "diag"
+    ],
+    "conditions": [
+      {
+        "type": "project_needs",
+        "operator": "or",
+        "value": [
+          "advices"
+        ]
+      },
+      {
+        "type": "project_status",
+        "operator": "or",
+        "value": [
+          "carbon"
+        ]
+      },
+      {
+        "type": "project_sectors",
+        "operator": "or",
+        "value": [
+          "*"
+        ]
+      },
+      {
+        "type": "structure_sizes",
+        "operator": "or",
+        "value": [
+          "pme"
+        ]
+      }
+    ],
+    "program_providers": [
+      {
+        "code": "???"
+      }
+    ]
+  },
+  {
+    "title": "Diag Eco-flux",
+    "resume": "Faites des économies en gérant durablement vos dépenses",
+    "description": "<ul>\n  <li>\n    Faites un état des lieux de vos flux et identifiez les axes prioritaires d’économies.\n  </li>\n  <li>\n    Mettez en place un plan d'actions simple pour réduire vos déchets et votre consommation d'énergie, de matières et d'eau.\n  </li>\n  <li>\n    Lancez vos premières actions.\n  </li>\n  <li>\n    Réalisez en moyenne 45 000 € d'économies par an et par site de production ou établissement (sur la base des missions restituées).\n  </li>\n</ul>\n",
+    "program_types": [
+      "diag"
+    ],
+    "conditions": [
+      {
+        "type": "project_needs",
+        "operator": "or",
+        "value": [
+          "advices"
+        ]
+      },
+      {
+        "type": "project_status",
+        "operator": "or",
+        "value": [
+          "economies"
+        ]
+      },
+      {
+        "type": "project_sectors",
+        "operator": "or",
+        "value": [
+          "*"
+        ]
+      },
+      {
+        "type": "structure_sizes",
+        "operator": "or",
+        "value": [
+          "pme"
+        ]
+      }
+    ],
+    "program_providers": [
+      {
+        "code": "???"
+      }
+    ]
+  },
+  {
+    "title": "Diag Ecoconception",
+    "resume": "Faites des économies en gérant durablement vos dépenses",
+    "description": "<ul>\n  <li>\n    Sensibilisez les équipes internes à l’écoconception et formez un référent écoconception dans votre entreprise\n  </li>\n  <li>\n    Réalisez une évaluation environnementale basée sur l’Analyse du Cycle de Vie du produit, service ou procédé concerné\n  </li>\n  <li>\n    Identifiez, formalisez et chiffrez les leviers d’écoconception, en maîtrisant le risque de transfert de pollution\n  </li>\n  <li>\n    Préparez la mise en œuvre d'un plan d’actions incluant un premier dimensionnement technico-économique\n  </li>\n</ul>\n",
+    "program_types": [
+      "diag"
+    ],
+    "conditions": [
+      {
+        "type": "project_needs",
+        "operator": "or",
+        "value": [
+          "advices"
+        ]
+      },
+      {
+        "type": "project_status",
+        "operator": "or",
+        "value": [
+          "improve"
+        ]
+      },
+      {
+        "type": "project_sectors",
+        "operator": "or",
+        "value": [
+          "*"
+        ]
+      },
+      {
+        "type": "structure_sizes",
+        "operator": "or",
+        "value": [
+          "pme"
+        ]
+      }
+    ],
+    "program_providers": [
+      {
+        "code": "???"
+      }
+    ]
+  },
+  {
+    "title": "Fonds Tourisme Durable",
+    "resume": "Obtenez un accompagnement pour votre activité touristique",
+    "description": "Obtenez un diagnostic, un plan d’action puis des subventions pour les investissements de votre activité touristique (entre 5k€ et 200k€).\n",
+    "program_types": [
+      "aap"
+    ],
+    "conditions": [
+      {
+        "type": "project_needs",
+        "operator": "or",
+        "value": [
+          "starting",
+          "financing"
+        ]
+      },
+      {
+        "type": "project_status",
+        "operator": "or",
+        "value": [
+          "*"
+        ]
+      },
+      {
+        "type": "project_sectors",
+        "operator": "or",
+        "value": [
+          "tourism"
+        ]
+      },
+      {
+        "type": "structure_sizes",
+        "operator": "or",
+        "value": [
+          "tpe",
+          "pme"
+        ]
+      }
+    ],
+    "program_providers": [
+      {
+        "code": "???"
+      }
+    ]
+  },
+  {
+    "title": "Performa Environnement",
+    "resume": "Diagnostic pour mesurer sa maturité écologique assorti d’un plan d’actions personnalisé proposé par CMA France",
+    "description": "<ul>\n  <li>\n    Un état des lieux gratuit pour évaluer l'impact de l’activité \n    sur l'environnement et détecter de nouvelles sources d'économies \n    (énergie, isolation des locaux, consommations d’eau, \n    déchets, matières premières, achats, mobilité, etc.)\n  </li>\n  <li>\n    La restitution d'un diagnostic complet et \n    la proposition d'un plan d'actions prioritaires \n    pour maîtriser sa consommation énergétique et \n    optimiser ses coûts.\n  </li>\n</ul>\n",
+    "program_types": [
+      "diag"
+    ],
+    "conditions": [
+      {
+        "type": "project_needs",
+        "operator": "or",
+        "value": [
+          "starting"
+        ]
+      },
+      {
+        "type": "project_status",
+        "operator": "or",
+        "value": [
+          "*"
+        ]
+      },
+      {
+        "type": "project_sectors",
+        "operator": "or",
+        "value": [
+          "craft"
+        ]
+      },
+      {
+        "type": "structure_sizes",
+        "operator": "or",
+        "value": [
+          "tpe",
+          "pme"
+        ]
+      }
+    ],
+    "program_providers": [
+      {
+        "code": "CMA",
+        "siren": 123456789
+      }
+    ]
+  },
+  {
+    "title": "TPE Gagnantes",
+    "resume": "Faites des économies en gérant durablement vos dépenses",
+    "description": "<ul>\n  <li>\n    Faites un état des lieux de vos flux et identifiez les axes prioritaires d’économies.\n  </li>\n  <li>\n    Mettez en place un plan d'actions simple pour réduire vos déchets et votre consommation d'énergie, de matières et d'eau.\n  </li>\n  <li>\n    Lancez vos premières actions.\n  </li>\n  <li>\n    Réalisez en moyenne 45 000 € d'économies par an et par site de production ou établissement (sur la base des missions restituées).\n  </li>\n</ul>\n",
+    "program_types": [
+      "diag"
+    ],
+    "conditions": [
+      {
+        "type": "project_needs",
+        "operator": "or",
+        "value": [
+          "advices"
+        ]
+      },
+      {
+        "type": "project_status",
+        "operator": "or",
+        "value": [
+          "economies"
+        ]
+      },
+      {
+        "type": "project_sectors",
+        "operator": "or",
+        "value": [
+          "*"
+        ]
+      },
+      {
+        "type": "structure_sizes",
+        "operator": "or",
+        "value": [
+          "tpe"
+        ]
+      }
+    ],
+    "program_providers": [
+      {
+        "code": "???"
+      }
+    ]
+  },
+  {
+    "title": "Tremplin",
+    "resume": "Financez vos petits projets d’études ou d’investissement écologique",
+    "description": "Subventionnez la ou les projets écologique de votre entreprise suivant une liste d’action prédéfinie par l’ADEME (entre 5k€ et 200k€).\n",
+    "program_types": [
+      "aap"
+    ],
+    "conditions": [
+      {
+        "type": "project_needs",
+        "operator": "or",
+        "value": [
+          "financing"
+        ]
+      },
+      {
+        "type": "project_status",
+        "operator": "or",
+        "value": [
+          "*"
+        ]
+      },
+      {
+        "type": "project_sectors",
+        "operator": "or",
+        "value": [
+          "craft",
+          "industry",
+          "tertiary",
+          "agriculture"
+        ]
+      },
+      {
+        "type": "structure_sizes",
+        "operator": "or",
+        "value": [
+          "tpe",
+          "pme"
+        ]
+      }
+    ],
+    "program_providers": [
+      {
+        "code": "ADEME",
+        "href": "https://ademe.fr/",
+        "SIREN": "385 290 309"
+      }
+    ],
+    "program_url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/tremplin-transition-ecologique-pme",
+    "program_contacts": [
+      {
+        "title": "Qui contacter ?",
+        "text": "Les points de contacts se font sur la page du dispositif de la plateforme Agir pour la transition.",
+        "url": "https://agirpourlatransition.ademe.fr/entreprises/tremplin-transition-ecologique-pme"
+      }
+    ],
+    "program_application": [
+      {
+        "title": "Continuer vers la candidature",
+        "text": "Financer vos projets de transition écologique avec le guichet \\\"Tremplin\\\"",
+        "url": "https://agirpourlatransition.ademe.fr/entreprises/dispositif-aide/tremplin-transition-ecologique-pme"
+      }
+    ]
+  },
+  {
+    "title": "Visite Energie",
+    "resume": "Diagnostic pour mesurer sa maturité energétique assorti d’un plan d’actions personnalisé proposé par votre CCI",
+    "description": "<ul>\n  <li>\n    Un état des lieux gratuit pour évaluer l'impact de l’activité \n    sur l'environnement et détecter de nouvelles sources d'économies \n    (énergie, isolation des locaux, consommations d’eau, déchets, \n    matières premières, achats, mobilité, etc.)\n  </li>\n  <li>\n    La restitution d'un diagnostic complet et la proposition \n    d'un plan d'actions prioritaires pour maîtriser sa consommation \n    énergétique et optimiser ses coûts.\n  </li>\n</ul>\n",
+    "program_types": [
+      "diag"
+    ],
+    "conditions": [
+      {
+        "type": "project_needs",
+        "operator": "or",
+        "value": [
+          "starting"
+        ]
+      },
+      {
+        "type": "project_status",
+        "operator": "or",
+        "value": [
+          "*"
+        ]
+      },
+      {
+        "type": "project_sectors",
+        "operator": "or",
+        "value": [
+          "industry",
+          "tertiary",
+          "agriculture"
+        ]
+      },
+      {
+        "type": "structure_sizes",
+        "operator": "or",
+        "value": [
+          "tpe",
+          "pme"
+        ]
+      }
+    ],
+    "program_providers": [
+      {
+        "code": "CCI"
+      }
+    ]
+  }
+]

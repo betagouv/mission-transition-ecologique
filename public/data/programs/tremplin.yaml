@@ -1,0 +1,54 @@
+title: Tremplin
+resume: Financez vos petits projets d’études ou d’investissement écologique
+description: |
+  Subventionnez la ou les projets écologique de votre entreprise suivant une liste d’action prédéfinie par l’ADEME (entre 5k€ et 200k€).
+program_types: 
+  - aap
+# program_conditions:
+#   project_needs:
+#     - financing
+#   project_status:
+#     - "*"
+#   project_sectors:
+#     - craft
+#     - industry
+#     - tertiary
+#     - agriculture
+#   structure_sizes:
+#     - tpe
+#     - pme
+# Equivalent of program_conditions
+conditions:
+  - type: project_needs
+    operator: "or"
+    value: 
+      - financing
+  - type: project_status
+    operator: "or"
+    value: 
+      - "*"
+  - type: project_sectors
+    operator: "or"
+    value: 
+      - craft
+      - industry
+      - tertiary
+      - agriculture
+  - type: structure_sizes
+    operator: "or"
+    value: 
+      - tpe
+      - pme
+program_providers: 
+  - code: ADEME
+    href: https://ademe.fr/
+    SIREN: 385 290 309
+program_url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/tremplin-transition-ecologique-pme
+program_contacts:
+  - title: Qui contacter ?
+    text: Les points de contacts se font sur la page du dispositif de la plateforme Agir pour la transition.
+    url: https://agirpourlatransition.ademe.fr/entreprises/tremplin-transition-ecologique-pme
+program_application:
+  - title: Continuer vers la candidature
+    text: Financer vos projets de transition écologique avec le guichet \"Tremplin\"
+    url: https://agirpourlatransition.ademe.fr/entreprises/dispositif-aide/tremplin-transition-ecologique-pme

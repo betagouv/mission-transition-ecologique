@@ -7,6 +7,12 @@ export const results = {
   behavior: {
     static: true,
   },
+  config: {
+    showAlert: false,
+    showResultsTitle: false,
+    showProgramInfos: false,
+    showProgramSubtitles: false
+  },
   options: [
     {
       value: 'results.summary',
@@ -67,6 +73,13 @@ export const results = {
         hint: { fr: 'Je ne sais pas...' },
         required: false,
         type: 'textarea'
+      },
+      {
+        id: 'cgu',
+        label: { fr: "J'accepte les CGU *"},
+        hint: { fr: "Voir les Conditions Générales d'Utilisation" },
+        required: true,
+        type: 'checkbox'
       },
     ],
     // next: {

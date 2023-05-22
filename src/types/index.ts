@@ -7,6 +7,11 @@ export interface ProgramConditions {
   project_sectors?: string[],
   structure_sizes?: string[],
 }
+export interface Condition {
+  type?: string,
+  operator?: string, // or | and | > | >= | < | <= 
+  value?: any | any[],
+}
 
 export interface ProgramProvider {
   code: string,
@@ -20,6 +25,7 @@ export interface ProgramData {
   resume?: string,
   description?: string,
   program_type?: string,
+  conditions?: Condition[],
   program_conditions?: ProgramConditions,
   program_providers?: string[] | ProgramProvider[] | any[],
   program_application?: any,
@@ -100,6 +106,15 @@ export interface TrackChoice {
   data?: object | object[]
 }
 
+// FOR TRACK RESULTS
+
+export interface TrackResultsConfig {
+  showAlert: boolean,
+  showResultsTitle: boolean,
+  showProgramInfos: boolean,
+  showProgramSubtitles: boolean
+}
+
 // FOR FORMS
 
 export interface FormValues {
@@ -143,7 +158,8 @@ export interface ColsOptions {
 
 export interface Plugin {
   plugin: any,
-  options?: object | null
+  options?: object | null,
+  icons?: any[] | null
 }
 export interface Comp {
   name: string,

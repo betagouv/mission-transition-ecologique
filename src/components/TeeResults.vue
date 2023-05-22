@@ -13,9 +13,9 @@
     </h6>
   </div>
 
-
   <!-- RESULTS ALERT -->
   <DsfrAlert
+    v-if="trackConfig && trackConfig.showAlert"
     :title="choices.t(`results.${resultsProgsLen ? 'alertTitle' : 'alertTitleNoResult'}`)"
     :description="choices.t(`results.${resultsProgsLen ? 'alertDescription' : 'alertNoResult'}`)"
     :type="resultsProgsLen ? 'success' : 'warning'">
@@ -23,7 +23,7 @@
   
   <!-- DEBUGGING -->
   <h4
-    v-if="resultsProgsLen"
+    v-if="trackConfig && trackConfig.showResultsTitle && resultsProgsLen"
     class="fr-pt-12v">
     {{ choices.t('results.fittingPrograms') }}
     ({{ resultsProgsLen }})
@@ -32,11 +32,11 @@
   <!-- PROGRAMS AS LIST IN ACCORDIONS -->
   <div 
     v-if="resultsProgsLen"
-    class="fr-container fr-px-0">
+    class="fr-container fr-px-0 fr-pt-6v">
 
     <DsfrAccordionsGroup>
       <li
-        v-for="(prog, i) in resultsProgs"
+        v-for="prog in resultsProgs"
         :key="prog.index"
         >
         <DsfrAccordion
@@ -45,13 +45,20 @@
           @expand="updateExpandedId"
           >
           <template #title>
-            <h6>
-              {{ i + 1 }}) &nbsp; {{ prog.title }}
+            <h6
+              :style="expandedId === `${prefix}${prog.index}` ? `color: ${blockColor}` : ''">
+              <!-- {{ i + 1 }}) &nbsp;  -->
+              <v-icon
+                class="fr-pt-2v fr-pb-0"
+                name="ri-record-circle-fill"/>
+              {{ prog.title }}
             </h6>
           </template>
           <template #default>
             <TeeProgram
               :program="prog"
+              :config="trackConfig"
+              :options="trackOptions"
               :debug="debug"/>
           </template>
         </DsfrAccordion>
@@ -59,7 +66,7 @@
     </DsfrAccordionsGroup>
   </div>
 
-  <div class="fr-mt-10v">
+  <div class="fr-mt-18v">
     <!-- {{ tracksResults }} -->
     <TeeForm
       :form-options="trackForm"
@@ -96,7 +103,7 @@
 
 <script setup lang="ts">
 
-import { ref, onBeforeMount, computed, watch } from 'vue'
+import { ref, onBeforeMount, computed } from 'vue'
 import { choicesStore } from '../stores/choices'
 import { programsStore } from '../stores/programs'
 
@@ -105,17 +112,21 @@ import TeeProgram from './TeeProgram.vue'
 // @ts-ignore
 import TeeForm from './TeeForm.vue'
 // @ts-ignore
-import type { TrackChoice } from '@/types/index'
+import type { TrackChoice, TrackResultsConfig } from '@/types/index'
 
 const choices = choicesStore()
 const programs = programsStore()
 
 interface Props {
-  trackForm: any,
+  trackConfig?: TrackResultsConfig,
+  trackOptions?: any,
+  trackForm?: any,
   tracksResults: TrackChoice[],
   debug?: boolean,
 }
 const props = defineProps<Props>()
+
+const blockColor= 'var(--text-default-info)'
 
 const resultsProgs = programs.filterPrograms(props.tracksResults)
 
@@ -127,17 +138,17 @@ const prefix = 'accordion-results-'
 const expandedId = ref()
 
 const updateExpandedId = (id: string) => {
-  // console.log(`TeeForm > saveFormData >  id : ${id} > ev : ${ev}`)
+  // console.log(`TeeResults > saveFormData >  id : ${id} > ev : ${ev}`)
   expandedId.value = id
 }
 
 // watch(resultsProgs, async( newProgs ) => {
-//   console.log('TeeForm > watch > resultsProgs :', resultsProgs )
-//   console.log('TeeForm > watch > newProgs :', newProgs )
+//   console.log('TeeResults > watch > resultsProgs :', resultsProgs )
+//   console.log('TeeResults > watch > newProgs :', newProgs )
 // })
 
 onBeforeMount(() => {
-  console.log('TeeForm > onBeforeMount > resultsProgs :', resultsProgs )
+  // console.log('TeeResults > onBeforeMount > resultsProgs :', resultsProgs )
   const firstProg = resultsProgs && resultsProgs[0]
   if (firstProg) {
     updateExpandedId(`${prefix}${firstProg.index}`)

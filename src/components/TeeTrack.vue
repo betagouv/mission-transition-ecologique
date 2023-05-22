@@ -101,6 +101,8 @@
         v-if="trackId === 'track_results'"
         >
         <TeeResults
+          :track-config="track.config"
+          :track-options="track.options"
           :track-form="track.form"
           :tracks-results="tracks.tracksResults"
           :debug="debug"
