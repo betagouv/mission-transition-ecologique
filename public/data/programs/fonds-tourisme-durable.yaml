@@ -4,17 +4,17 @@ description: |
   Obtenez un diagnostic, un plan d’action puis des subventions pour les investissements de votre activité touristique (entre 5k€ et 200k€).
 program_types: 
   - aap
-program_conditions:
-  project_needs:
-    - starting
-    - financing
-  project_status:
-    - "*"
-  project_sectors:
-    - tourism
-  structure_sizes:
-    - pme
-    - tpe
+# program_conditions:
+#   project_needs:
+#     - starting
+#     - financing
+#   project_status:
+#     - "*"
+#   project_sectors:
+#     - tourism
+#   structure_sizes:
+#     - pme
+#     - tpe
 # Equivalent of program_conditions
 conditions:
   - type: project_needs

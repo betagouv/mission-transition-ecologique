@@ -4,19 +4,19 @@ description: |
   Subventionnez la ou les projets écologique de votre entreprise suivant une liste d’action prédéfinie par l’ADEME (entre 5k€ et 200k€).
 program_types: 
   - aap
-program_conditions:
-  project_needs:
-    - financing
-  project_status:
-    - "*"
-  project_sectors:
-    - craft
-    - industry
-    - tertiary
-    - agriculture
-  structure_sizes:
-    - tpe
-    - pme
+# program_conditions:
+#   project_needs:
+#     - financing
+#   project_status:
+#     - "*"
+#   project_sectors:
+#     - craft
+#     - industry
+#     - tertiary
+#     - agriculture
+#   structure_sizes:
+#     - tpe
+#     - pme
 # Equivalent of program_conditions
 conditions:
   - type: project_needs

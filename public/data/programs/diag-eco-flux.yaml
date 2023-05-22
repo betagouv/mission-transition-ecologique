@@ -17,15 +17,15 @@ description: |
   </ul>
 program_types: 
   - diag
-program_conditions:
-  project_needs:
-    - advices
-  project_status:
-    - economies
-  project_sectors:
-    - "*"
-  structure_sizes:
-    - pme
+# program_conditions:
+#   project_needs:
+#     - advices
+#   project_status:
+#     - economies
+#   project_sectors:
+#     - "*"
+#   structure_sizes:
+#     - pme
 # Equivalent of program_conditions
 conditions:
   - type: project_needs
