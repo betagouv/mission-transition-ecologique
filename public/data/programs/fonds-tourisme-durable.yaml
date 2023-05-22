@@ -1,0 +1,38 @@
+title: Fonds Tourisme Durable
+resume: Obtenez un accompagnement pour votre activité touristique
+description: |
+  Obtenez un diagnostic, un plan d’action puis des subventions pour les investissements de votre activité touristique (entre 5k€ et 200k€).
+program_types: 
+  - diag
+program_conditions:
+  project_needs:
+    - starting
+    - financing
+  project_status:
+    - "*"
+  project_sectors:
+    - tourism
+structure_sizes:
+    - pme
+    - tpe
+# Equivalent of program_conditions
+# conditions:
+#   - type: program_needs
+#     operator: "or"
+#     value: 
+#       - advices
+#   - type: project_status
+#     operator: "or"
+#     value: 
+#       - "*"
+#   - type: project_sectors
+#     operator: "or"
+#     value: 
+#       - craft
+#   - type: structure_sizes
+#     operator: "or"
+#     value: 
+#       - tpe
+#       - pme
+program_providers: 
+  - name: '???'

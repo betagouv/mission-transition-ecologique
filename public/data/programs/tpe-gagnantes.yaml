@@ -1,0 +1,49 @@
+title: TPE Gagnantes
+resume: Faites des économies en gérant durablement vos dépenses
+description: |
+  <ul>
+    <li>
+      Faites un état des lieux de vos flux et identifiez les axes prioritaires d’économies.
+    </li>
+    <li>
+      Mettez en place un plan d'actions simple pour réduire vos déchets et votre consommation d'énergie, de matières et d'eau.
+    </li>
+    <li>
+      Lancez vos premières actions.
+    </li>
+    <li>
+      Réalisez en moyenne 45 000 € d'économies par an et par site de production ou établissement (sur la base des missions restituées).
+    </li>
+  </ul>
+program_types: 
+  - diag
+program_conditions:
+  project_needs:
+    - advices
+  project_status:
+    - economies
+  project_sectors:
+    - "*"
+structure_sizes:
+    - tpe
+# Equivalent of program_conditions
+# conditions:
+#   - type: program_needs
+#     operator: "or"
+#     value: 
+#       - advices
+#   - type: project_status
+#     operator: "or"
+#     value: 
+#       - "*"
+#   - type: project_sectors
+#     operator: "or"
+#     value: 
+#       - craft
+#   - type: structure_sizes
+#     operator: "or"
+#     value: 
+#       - tpe
+#       - pme
+program_providers: 
+  - name: '???'

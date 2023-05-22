@@ -1,0 +1,46 @@
+title: Diag Decarbon'Action
+resume: Réduisez durablement vos émissions carbone
+description: |
+  <ul>
+    <li>
+      Mesurez les émissions de Gaz à effet de serre de votre entreprise.
+    </li>
+    <li>
+      Elaborez votre plan d'actions pour décarboner votre activité.
+    </li>
+    <li>
+      Embarquez votre écosystème en valorisant votre engagement dans la décarbonation.
+    </li>
+  </ul>
+program_types: 
+  - diag
+program_conditions:
+  project_needs:
+    - advices
+  project_status:
+    - carbon
+  project_sectors:
+    - "*"
+structure_sizes:
+    - pme
+# Equivalent of program_conditions
+# conditions:
+#   - type: program_needs
+#     operator: "or"
+#     value: 
+#       - advices
+#   - type: project_status
+#     operator: "or"
+#     value: 
+#       - "*"
+#   - type: project_sectors
+#     operator: "or"
+#     value: 
+#       - craft
+#   - type: structure_sizes
+#     operator: "or"
+#     value: 
+#       - tpe
+#       - pme
+program_providers: 
+  - name: '???'

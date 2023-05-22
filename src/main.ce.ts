@@ -6,9 +6,7 @@ import { defineCustomElement } from './defineCustomElementWithStyles'
 import TeeApp from './TeeApp.ce.vue'
 // console.log('TeeApp.styles :', TeeApp.styles) // ["/* inlined css */"]
 
-// import './assets/main.css'
-
-// about dsfr
+// Import dsfr
 // cf : https://vue-dsfr.netlify.app/?path=/docs/composants-tuile-dsfrtile--docs
 // cf : https://vue-dsfr.netlify.app/?path=/docs/docs-2-guide-d-utilisation--docs#vue3
 import VueDsfr from '@gouvminint/vue-dsfr'   // Import (par défaut) de la bibliothèque
@@ -26,6 +24,7 @@ import {
   MdCheckboxOutlined,
 } from 'oh-vue-icons/icons'
 const Ri = Object.values({ ...RiIcons })
+// console.log('TeeApp > main.ce.ts > Ri :', Ri)
 addIcons(
   ...Ri, 
   // LaCircle, 
@@ -35,6 +34,10 @@ addIcons(
   MdCheckboxoutlineblank,
   MdCheckboxOutlined,
 )
+
+
+// Styles imports
+// import './assets/main.css'
 
 // import '@gouvfr/dsfr/dist/core/core.main.min.css'            // Le CSS minimal du DSFR
 // import '@gouvfr/dsfr/dist/component/component.main.min.css'  // Styles de tous les composants du DSFR

@@ -3,6 +3,15 @@ import { defineStore } from 'pinia'
 
 import type { ProgramData } from '@/types/index'
 
+/* 
+// TO DO ...
+
+// Parse data folder to build list of programs
+// Each program must must written as a distinct yaml file
+// cf : https://stackoverflow.com/questions/10049557/reading-all-files-in-a-directory-store-them-in-objects-and-send-the-object
+
+*/ 
+
 export const programsStore = defineStore('programs', () => {
 
   const programs = ref()

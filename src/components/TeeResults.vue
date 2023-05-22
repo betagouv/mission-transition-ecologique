@@ -45,8 +45,13 @@
           @expand="updateExpandedId"
           >
           <template #title>
-            <h6>
-              {{ i + 1 }}) &nbsp; {{ prog.title }}
+            <h6
+              :style="expandedId === `${prefix}${prog.index}` ? `color: ${blockColor}` : ''">
+              <!-- {{ i + 1 }}) &nbsp;  -->
+              <v-icon
+                class="fr-pt-2v fr-pb-0"
+                name="ri-record-circle-fill"/>
+              {{ prog.title }}
             </h6>
           </template>
           <template #default>
@@ -116,6 +121,8 @@ interface Props {
   debug?: boolean,
 }
 const props = defineProps<Props>()
+
+const blockColor= 'var(--text-default-info)'
 
 const resultsProgs = programs.filterPrograms(props.tracksResults)
 

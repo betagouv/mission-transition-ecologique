@@ -1,0 +1,51 @@
+title: Performa Environnement
+resume: Diagnostic pour mesurer sa maturité écologique assorti d’un plan d’actions personnalisé proposé par CMA France
+description: |
+  <ul>
+    <li>
+      Un état des lieux gratuit pour évaluer l'impact de l’activité 
+      sur l'environnement et détecter de nouvelles sources d'économies 
+      (énergie, isolation des locaux, consommations d’eau, 
+      déchets, matières premières, achats, mobilité, etc.)
+    </li>
+    <li>
+      La restitution d'un diagnostic complet et 
+      la proposition d'un plan d'actions prioritaires 
+      pour maîtriser sa consommation énergétique et 
+      optimiser ses coûts.
+    </li>
+  </ul>
+program_types: 
+  - diag
+program_conditions:
+  project_needs:
+    - starting
+  project_status:
+    - "*"
+  project_sectors:
+    - craft
+  structure_sizes:
+    - tpe
+    - pme
+# Equivalent of program_conditions
+# conditions:
+#   - type: program_needs
+#     operator: "or"
+#     value: 
+#       - starting
+#   - type: project_status
+#     operator: "or"
+#     value: 
+#       - "*"
+#   - type: project_sectors
+#     operator: "or"
+#     value: 
+#       - craft
+#   - type: structure_sizes
+#     operator: "or"
+#     value: 
+#       - tpe
+#       - pme
+program_providers: 
+  - name: CMA
+    siren: 123456789

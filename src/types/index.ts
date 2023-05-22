@@ -143,7 +143,8 @@ export interface ColsOptions {
 
 export interface Plugin {
   plugin: any,
-  options?: object | null
+  options?: object | null,
+  icons?: any[] | null
 }
 export interface Comp {
   name: string,
