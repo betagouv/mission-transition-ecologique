@@ -38,8 +38,10 @@ fs.readdir(dataDiryPath, function (err, files) {
     // Do whatever you want to do with the file
     // console.log()
     console.log('vite.config > file :', file)
-    const yamlFile = fs.readFileSync(`${dataDiryPath}/${file}`, "utf8");
-    const yamlObj = yaml.load(yamlFile)
+    const yamlFilePath = `${dataDiryPath}/${file}`
+    const yamlFile = fs.readFileSync(yamlFilePath, 'utf8')
+    const yamlObj = yaml.load(yamlFile) || {}
+    // yamlObj.file = file
     // console.log('vite.config > yamlObj :', yamlObj)
     programsArray.push(yamlObj)
   })
