@@ -3,15 +3,6 @@ import { defineStore } from 'pinia'
 
 import type { ProgramData, Condition } from '@/types/index'
 
-/* 
-// TO DO ...
-
-// Parse data folder to build list of programs
-// Each program must must written as a distinct yaml file
-// cf : https://stackoverflow.com/questions/10049557/reading-all-files-in-a-directory-store-them-in-objects-and-send-the-object
-
-*/ 
-
 export const programsStore = defineStore('programs', () => {
 
   const programs = ref()
@@ -120,6 +111,51 @@ export const programsStore = defineStore('programs', () => {
   }
 
   // actions
+  // async function setDataset (path: string, deployMode: boolean, deployUrl: string) {
+  //   // console.log()
+  //   // console.log('store.programs > setDataset > path : ', path)
+  //   // console.log('store.programs > setDataset > deployMode : ', deployMode)
+  //   // console.log('store.programs > setDataset > deployUrl : ', deployUrl)
+
+  //   let pathTrimmed = path.trim().startsWith('.') ? path.substring(1) : path
+  //   pathTrimmed = pathTrimmed.trim().startsWith('/') ? pathTrimmed.substring(1) : pathTrimmed
+  //   // console.log('store.programs > setDataset > pathTrimmed : ', pathTrimmed)
+
+  //   const publicDir = 'public/'
+  //   let url: string
+  //   let dataset: object
+  //   let response: any
+  //   let errors: any[]
+
+  //   const isExternalSource = pathTrimmed.startsWith('http')
+
+  //   if (deployMode) {
+  //     // in deployment mode
+  //     if (isExternalSource) {
+  //       url = pathTrimmed
+  //     } else {
+  //       pathTrimmed = pathTrimmed.startsWith(publicDir) ?  pathTrimmed.replace(publicDir, '') : pathTrimmed
+  //       url = `${deployUrl}/${pathTrimmed}`
+  //     }
+  //   } else {
+  //     // in local dev mode
+  //     url = `./${pathTrimmed}`
+  //   }
+  //   // console.log('store.programs > setDataset > url : ', url )
+
+  //   // fetch url
+  //   try {
+  //     response = await fetch(url)
+  //     dataset = await response.json()
+  //     // console.log('store.programs > setDataset > dataset : ', dataset)
+  //     programs.value = dataset
+  //   } catch (error) {
+  //     // console.log('store.programs > setDataset > error : ', error)
+  //     errors = [error]
+  //     console.log('store.programs > setDataset > errors : ', errors)
+  //   }
+  // }
+
   function setYamlDataset (dataset: any) {
     programs.value = dataset
   }

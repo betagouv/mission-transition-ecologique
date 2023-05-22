@@ -108,8 +108,11 @@ export interface TrackChoice {
 
 // FOR TRACK RESULTS
 
-export interface TrackResultsconfig {
-  showInfos: boolean
+export interface TrackResultsConfig {
+  showAlert: boolean,
+  showResultsTitle: boolean,
+  showProgramInfos: boolean,
+  showProgramSubtitles: boolean
 }
 
 // FOR FORMS

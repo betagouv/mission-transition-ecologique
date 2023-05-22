@@ -16,7 +16,12 @@ const mode = process.env.NODE_ENV || 'development'
 const rawEnv = loadEnv(mode, process.cwd())
 // console.log('vite.config > rawEnv : ', rawEnv)
 
+/* 
 // Build programs dataset from folder and yaml files
+// Parse data folder to build list of programs
+// Each program must must written as a distinct yaml file
+// cf : https://stackoverflow.com/questions/10049557/reading-all-files-in-a-directory-store-them-in-objects-and-send-the-object
+*/ 
 // requiring path and fs modules
 import * as path from 'path'
 import * as fs  from 'fs'
@@ -46,12 +51,13 @@ filesNames.forEach(file => {
 // console.log('vite.config > programsArray :', programsArray)
 
 // build output json
-const dataAsJson = JSON.stringify(programsArray)
+const dataAsJson = JSON.stringify(programsArray, null, 2)
 const dataBuiltOutput = './public/data/output/dataset_out.json'
 const dataOutPath = path.join( __dirname, dataBuiltOutput)
 fs.writeFileSync(dataOutPath, dataAsJson)
 console.log('vite.config > finished writing output json...')
 
+// Set Vite config
 // https://vitejs.dev/config/
 export default defineConfig({
   server: {
@@ -91,6 +97,7 @@ export default defineConfig({
       '~@gouvfr': fileURLToPath(new URL('./node_modules/@gouvfr', import.meta.url)),    
       '~@gouvminint': fileURLToPath(new URL('./node_modules/@gouvminint', import.meta.url)),    
       '@': fileURLToPath(new URL('./src', import.meta.url)),
+      '@public': fileURLToPath(new URL('./public', import.meta.url)),
       '@icons': fileURLToPath(new URL('./node_modules/oh-vue-icons', import.meta.url)),    
     }
   }

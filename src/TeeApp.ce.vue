@@ -128,6 +128,10 @@ import '@gouvfr/dsfr/dist/core/core.main.min.css'               // Le CSS minima
 // import '@gouvfr/dsfr/dist/scheme/scheme.min.css'             // Facultatif : Si les thèmes sont utilisés (thème sombre, thème clair)
 // import '@gouvfr/dsfr/dist/utility/icons/icons.min.css'       // Facultatif : Si des icônes sont utilisées avec les classes "fr-icon-..."
 
+// @ts-ignore
+import jsonDataset from '@public/data/output/dataset_out.json'
+console.log('TeeResults > jsonDataset :', jsonDataset)
+
 import { ref, onBeforeMount } from 'vue'
 
 import { tracksStore } from './stores/tracks'
@@ -146,11 +150,13 @@ const appId = 'gov-aid-tree-app'
 // @ts-ignore
 const metaEnv = import.meta.env
 console.log('TeeApp - metaEnv :', metaEnv)
+const deployMode = metaEnv.MODE != 'development'
+const deployUrl = metaEnv.VITE_DEPLOY_URL
 
 // @ts-ignore
 // console.log('TeeApp - process.env :', process.env)
 // @ts-ignore
-const yamlPrograms = process.env.programs
+const yamlPrograms = deployMode ? jsonDataset : process.env.programs
 console.log('TeeApp - yamlPrograms :', yamlPrograms)
 
 interface Props {
@@ -186,9 +192,6 @@ const changeDebug = (ev: any) => {
 onBeforeMount(() => {
   // console.log('TeeApp > props.seed :', props.seed)
   // console.log('TeeApp > props.maxDepth :', props.maxDepth)
-
-  const deployMode = metaEnv.MODE != 'development'
-  const deployUrl = metaEnv.VITE_DEPLOY_URL
 
   // load dataset to pinia store
   // programs.setDataset(props.datasetUrl, deployMode, deployUrl)

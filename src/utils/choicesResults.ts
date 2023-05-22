@@ -8,7 +8,10 @@ export const results = {
     static: true,
   },
   config: {
-    showInfos: false
+    showAlert: false,
+    showResultsTitle: false,
+    showProgramInfos: false,
+    showProgramSubtitles: false
   },
   options: [
     {
@@ -70,6 +73,13 @@ export const results = {
         hint: { fr: 'Je ne sais pas...' },
         required: false,
         type: 'textarea'
+      },
+      {
+        id: 'cgu',
+        label: { fr: 'CGU'},
+        hint: { fr: 'cgu' },
+        required: true,
+        type: 'checkbox'
       },
     ],
     // next: {

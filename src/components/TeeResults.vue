@@ -15,6 +15,7 @@
 
   <!-- RESULTS ALERT -->
   <DsfrAlert
+    v-if="trackConfig && trackConfig.showAlert"
     :title="choices.t(`results.${resultsProgsLen ? 'alertTitle' : 'alertTitleNoResult'}`)"
     :description="choices.t(`results.${resultsProgsLen ? 'alertDescription' : 'alertNoResult'}`)"
     :type="resultsProgsLen ? 'success' : 'warning'">
@@ -22,7 +23,7 @@
   
   <!-- DEBUGGING -->
   <h4
-    v-if="resultsProgsLen"
+    v-if="trackConfig && trackConfig.showResultsTitle && resultsProgsLen"
     class="fr-pt-12v">
     {{ choices.t('results.fittingPrograms') }}
     ({{ resultsProgsLen }})
@@ -31,7 +32,7 @@
   <!-- PROGRAMS AS LIST IN ACCORDIONS -->
   <div 
     v-if="resultsProgsLen"
-    class="fr-container fr-px-0">
+    class="fr-container fr-px-0 fr-pt-6v">
 
     <DsfrAccordionsGroup>
       <li
@@ -65,7 +66,7 @@
     </DsfrAccordionsGroup>
   </div>
 
-  <div class="fr-mt-10v">
+  <div class="fr-mt-18v">
     <!-- {{ tracksResults }} -->
     <TeeForm
       :form-options="trackForm"
@@ -111,13 +112,13 @@ import TeeProgram from './TeeProgram.vue'
 // @ts-ignore
 import TeeForm from './TeeForm.vue'
 // @ts-ignore
-import type { TrackChoice } from '@/types/index'
+import type { TrackChoice, TrackResultsConfig } from '@/types/index'
 
 const choices = choicesStore()
 const programs = programsStore()
 
 interface Props {
-  trackConfig?: any,
+  trackConfig?: TrackResultsConfig,
   trackOptions?: any,
   trackForm?: any,
   tracksResults: TrackChoice[],
