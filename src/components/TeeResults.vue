@@ -13,7 +13,6 @@
     </h6>
   </div>
 
-
   <!-- RESULTS ALERT -->
   <DsfrAlert
     :title="choices.t(`results.${resultsProgsLen ? 'alertTitle' : 'alertTitleNoResult'}`)"
@@ -36,7 +35,7 @@
 
     <DsfrAccordionsGroup>
       <li
-        v-for="(prog, i) in resultsProgs"
+        v-for="prog in resultsProgs"
         :key="prog.index"
         >
         <DsfrAccordion
@@ -57,6 +56,8 @@
           <template #default>
             <TeeProgram
               :program="prog"
+              :config="trackConfig"
+              :options="trackOptions"
               :debug="debug"/>
           </template>
         </DsfrAccordion>
@@ -101,7 +102,7 @@
 
 <script setup lang="ts">
 
-import { ref, onBeforeMount, computed, watch } from 'vue'
+import { ref, onBeforeMount, computed } from 'vue'
 import { choicesStore } from '../stores/choices'
 import { programsStore } from '../stores/programs'
 
@@ -116,7 +117,9 @@ const choices = choicesStore()
 const programs = programsStore()
 
 interface Props {
-  trackForm: any,
+  trackConfig?: any,
+  trackOptions?: any,
+  trackForm?: any,
   tracksResults: TrackChoice[],
   debug?: boolean,
 }

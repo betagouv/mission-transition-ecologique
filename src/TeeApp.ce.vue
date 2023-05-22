@@ -151,7 +151,7 @@ const metaEnv = import.meta.env
 // console.log('TeeApp - process.env :', process.env)
 // @ts-ignore
 const yamlPrograms = process.env.programs
-console.log('TeeApp - yamlPrograms :', yamlPrograms)
+// console.log('TeeApp - yamlPrograms :', yamlPrograms)
 
 interface Props {
   showHeader?: string,

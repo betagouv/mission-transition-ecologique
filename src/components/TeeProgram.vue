@@ -3,7 +3,7 @@
 
     <!-- PROGRAM INFOS -->
     <div
-      v-show="true" 
+      v-if="program && config?.showInfos" 
       class="fr-grid-row fr-grid-row--gutters fr-mb-5v">
       <!-- PROGRAM PROVIDERS -->
       <div
@@ -95,7 +95,7 @@
 <script setup lang="ts">
 
 // @ts-ignore
-import type { ProgramData } from '@/types/index'
+import type { ProgramData, TrackResultsconfig } from '@/types/index'
 
 // @ts-ignore
 import TeeTile from './TeeTile.vue'
@@ -103,10 +103,12 @@ import TeeTile from './TeeTile.vue'
 import { choicesStore } from '../stores/choices'
 const choices = choicesStore()
 
-const blockColor= 'var(--text-default-info)'
+const blockColor = 'var(--text-default-info)'
 
 defineProps<{
   program: ProgramData,
+  config?: TrackResultsconfig,
+  options?: object,
   debug?: boolean,
 }>()
 

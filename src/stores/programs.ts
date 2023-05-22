@@ -42,7 +42,7 @@ export const programsStore = defineStore('programs', () => {
     })
     // const conditionsKeys = Object.keys(conditions)
     // console.log()
-    console.log('store.programs > filterPrograms > conditions : ', conditions)
+    // console.log('store.programs > filterPrograms > conditions : ', conditions)
     // console.log('store.programs > filterPrograms > conditionsKeys : ', conditionsKeys)
 
     // filter out programs
@@ -53,6 +53,7 @@ export const programsStore = defineStore('programs', () => {
       // retrieve program's conditions
       const progConditionsAlt = prog.conditions
       // console.log('store.programs > filterPrograms > progConditionsAlt : ', progConditionsAlt)
+      // loop program conditions keys to set a filter
       progConditionsAlt.forEach((cond: Condition) => {
         console.log()
         const condField: string = cond.type || ''

@@ -7,6 +7,9 @@ export const results = {
   behavior: {
     static: true,
   },
+  config: {
+    showInfos: false
+  },
   options: [
     {
       value: 'results.summary',

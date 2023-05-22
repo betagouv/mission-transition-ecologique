@@ -106,6 +106,12 @@ export interface TrackChoice {
   data?: object | object[]
 }
 
+// FOR TRACK RESULTS
+
+export interface TrackResultsconfig {
+  showInfos: boolean
+}
+
 // FOR FORMS
 
 export interface FormValues {
