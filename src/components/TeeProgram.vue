@@ -2,7 +2,9 @@
   <div>
 
     <!-- PROGRAM INFOS -->
-    <div class="fr-grid-row fr-grid-row--gutters fr-mb-5v">
+    <div
+      v-show="true" 
+      class="fr-grid-row fr-grid-row--gutters fr-mb-5v">
       <!-- PROGRAM PROVIDERS -->
       <div
         v-if="program.program_providers" 

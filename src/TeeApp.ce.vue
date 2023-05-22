@@ -147,6 +147,12 @@ const appId = 'gov-aid-tree-app'
 const metaEnv = import.meta.env
 // console.log('TeeApp - metaEnv :', metaEnv)
 
+// @ts-ignore
+// console.log('TeeApp - process.env :', process.env)
+// @ts-ignore
+const yamlPrograms = process.env.programs
+console.log('TeeApp - yamlPrograms :', yamlPrograms)
+
 interface Props {
   showHeader?: string,
   showFooter?: string,
@@ -185,7 +191,8 @@ onBeforeMount(() => {
   const deployUrl = metaEnv.VITE_DEPLOY_URL
 
   // load dataset to pinia store
-  programs.setDataset(props.datasetUrl, deployMode, deployUrl)
+  // programs.setDataset(props.datasetUrl, deployMode, deployUrl)
+  programs.setYamlDataset(yamlPrograms)
 
   // inject style link in html head if not present
   const href = deployMode ? `${deployUrl}/style.css` : ''

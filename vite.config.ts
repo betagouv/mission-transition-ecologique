@@ -1,40 +1,46 @@
 import { fileURLToPath, URL } from 'node:url'
 // import postcssLit from 'rollup-plugin-postcss-lit';
 
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
+
+console.log()
+console.log('Starting ...') 
+console.log('vite.config ...')
 
 // console.log('process.env', process.env)
 // console.log('process.env.NODE_ENV : ', process.env.NODE_ENV)
-// @ts-ignore
-// console.log('import.meta.env.VITE_APP_TITLE : ', import.meta.env.VITE_APP_TITLE)
-// console.log('process.env.VITE_APP_TITLE : ', process.env.VITE_APP_TITLE)
-// console.log('process.env.VITE_DEPLOY_URL : ', process.env.VITE_DEPLOY_URL)
-// console.log('process.env.VUE_APP_DEPLOY_URL : ', process.env.VUE_APP_DEPLOY_URL)
 
+const mode = process.env.NODE_ENV || 'development'
+// console.log('vite.config > mode : ', mode)
+const rawEnv = loadEnv(mode, process.cwd())
+// console.log('vite.config > rawEnv : ', rawEnv)
 
+// Build programs dataset from folder and yaml files
 // requiring path and fs modules
 import * as path from 'path'
 import * as fs  from 'fs'
 import * as yaml from 'js-yaml'
 const programsArray = <any[]>[]
 // joining path of directory 
-const directoryPath = path.join( __dirname, './public/data/programs')
-console.log('TeeApp > main.ce.ts > __dirname :', __dirname)
-console.log('TeeApp > main.ce.ts > directoryPath :', directoryPath)
-//passsing directoryPath and callback function
-fs.readdir(directoryPath, function (err, files) {
+const dataDiryPathTemp = rawEnv.VITE_DATA_DIR_PATH || './public/data/programs'
+const dataDiryPath = path.join( __dirname, dataDiryPathTemp)
+// console.log('vite.config > __dirname :', __dirname)
+console.log('vite.config > dataDiryPath :', dataDiryPath)
+// passsing dataDiryPath and callback function
+fs.readdir(dataDiryPath, function (err, files) {
   //handling error
   if (err) {
-    return console.log('TeeApp > main.ce.ts > err > Unable to scan directory: ' + err)
+    return console.log('vite.config > main.ce.ts > err > Unable to scan directory: ' + err)
   } 
   //listing all files using forEach
-  files.forEach(function (file) {
+  files.forEach(file => {
     // Do whatever you want to do with the file
-    console.log('\nTeeApp > main.ce.ts > file :', file)
-    const yamlFile = fs.readFileSync(`${directoryPath}/${file}`, "utf8");
+    // console.log()
+    console.log('vite.config > file :', file)
+    const yamlFile = fs.readFileSync(`${dataDiryPath}/${file}`, "utf8");
     const yamlObj = yaml.load(yamlFile)
-    console.log('TeeApp > main.ce.ts > yamlObj :', yamlObj)
+    // console.log('vite.config > yamlObj :', yamlObj)
     programsArray.push(yamlObj)
   })
 })
@@ -44,7 +50,7 @@ export default defineConfig({
   server: {
     host: 'localhost',
     port: 4242,
-    open: '/index.html',
+    // open: '/index.html',
     // open: '/public/index.html', // test other index file
   },
   plugins: [

@@ -134,17 +134,17 @@ const prefix = 'accordion-results-'
 const expandedId = ref()
 
 const updateExpandedId = (id: string) => {
-  // console.log(`TeeForm > saveFormData >  id : ${id} > ev : ${ev}`)
+  // console.log(`TeeResults > saveFormData >  id : ${id} > ev : ${ev}`)
   expandedId.value = id
 }
 
 // watch(resultsProgs, async( newProgs ) => {
-//   console.log('TeeForm > watch > resultsProgs :', resultsProgs )
-//   console.log('TeeForm > watch > newProgs :', newProgs )
+//   console.log('TeeResults > watch > resultsProgs :', resultsProgs )
+//   console.log('TeeResults > watch > newProgs :', newProgs )
 // })
 
 onBeforeMount(() => {
-  console.log('TeeForm > onBeforeMount > resultsProgs :', resultsProgs )
+  // console.log('TeeResults > onBeforeMount > resultsProgs :', resultsProgs )
   const firstProg = resultsProgs && resultsProgs[0]
   if (firstProg) {
     updateExpandedId(`${prefix}${firstProg.index}`)

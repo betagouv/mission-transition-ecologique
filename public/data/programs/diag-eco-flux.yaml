@@ -24,26 +24,25 @@ program_conditions:
     - economies
   project_sectors:
     - "*"
-structure_sizes:
+  structure_sizes:
     - pme
 # Equivalent of program_conditions
-# conditions:
-#   - type: program_needs
-#     operator: "or"
-#     value: 
-#       - advices
-#   - type: project_status
-#     operator: "or"
-#     value: 
-#       - "*"
-#   - type: project_sectors
-#     operator: "or"
-#     value: 
-#       - craft
-#   - type: structure_sizes
-#     operator: "or"
-#     value: 
-#       - tpe
-#       - pme
+conditions:
+  - type: project_needs
+    operator: "or"
+    value: 
+      - advices
+  - type: project_status
+    operator: "or"
+    value: 
+      - economies
+  - type: project_sectors
+    operator: "or"
+    value: 
+      - "*"
+  - type: structure_sizes
+    operator: "or"
+    value: 
+      - pme
 program_providers: 
-  - name: '???'
+  - code: '???'

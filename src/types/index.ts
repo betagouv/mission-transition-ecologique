@@ -7,6 +7,11 @@ export interface ProgramConditions {
   project_sectors?: string[],
   structure_sizes?: string[],
 }
+export interface Condition {
+  type?: string,
+  operator?: string, // or | and | > | >= | < | <= 
+  value?: any | any[],
+}
 
 export interface ProgramProvider {
   code: string,
@@ -20,6 +25,7 @@ export interface ProgramData {
   resume?: string,
   description?: string,
   program_type?: string,
+  conditions?: Condition[],
   program_conditions?: ProgramConditions,
   program_providers?: string[] | ProgramProvider[] | any[],
   program_application?: any,

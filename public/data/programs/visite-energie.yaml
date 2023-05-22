@@ -25,27 +25,29 @@ program_conditions:
     - industry
     - tertiary
     - agriculture
-structure_sizes:
+  structure_sizes:
     - tpe
     - pme
 # Equivalent of program_conditions
-# conditions:
-#   - type: program_needs
-#     operator: "or"
-#     value: 
-#       - starting
-#   - type: project_status
-#     operator: "or"
-#     value: 
-#       - "*"
-#   - type: project_sectors
-#     operator: "or"
-#     value: 
-#       - craft
-#   - type: structure_sizes
-#     operator: "or"
-#     value: 
-#       - tpe
-#       - pme
+conditions:
+  - type: project_needs
+    operator: "or"
+    value: 
+      - starting
+  - type: project_status
+    operator: "or"
+    value: 
+      - "*"
+  - type: project_sectors
+    operator: "or"
+    value: 
+      - industry
+      - tertiary
+      - agriculture
+  - type: structure_sizes
+    operator: "or"
+    value: 
+      - tpe
+      - pme
 program_providers: 
-  - name: CCI
+  - code: CCI
