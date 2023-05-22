@@ -42,7 +42,7 @@ fs.readdir(dataDiryPath, function (err, files) {
     const yamlFile = fs.readFileSync(yamlFilePath, 'utf8')
     const yamlObj = yaml.load(yamlFile) || {}
     // yamlObj.file = file
-    // console.log('vite.config > yamlObj :', yamlObj)
+    console.log('vite.config > yamlObj :', yamlObj)
     programsArray.push(yamlObj)
   })
 })
