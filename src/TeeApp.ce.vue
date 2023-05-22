@@ -145,7 +145,7 @@ const appId = 'gov-aid-tree-app'
 
 // @ts-ignore
 const metaEnv = import.meta.env
-// console.log('TeeApp - metaEnv :', metaEnv)
+console.log('TeeApp - metaEnv :', metaEnv)
 
 // @ts-ignore
 // console.log('TeeApp - process.env :', process.env)
