@@ -43,13 +43,14 @@ filesNames.forEach(file => {
   console.log('vite.config > yamlObj.title :', yamlObj.title)
   programsArray.push(yamlObj)
 })
-console.log('vite.config > programsArray :', programsArray)
+// console.log('vite.config > programsArray :', programsArray)
 
 // build output json
 const dataAsJson = JSON.stringify(programsArray)
 const dataBuiltOutput = './public/data/output/dataset_out.json'
 const dataOutPath = path.join( __dirname, dataBuiltOutput)
 fs.writeFileSync(dataOutPath, dataAsJson, 'utf-8')
+console.log('vite.config > finished writing output json...')
 
 // https://vitejs.dev/config/
 export default defineConfig({
