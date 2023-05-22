@@ -77,7 +77,7 @@ export const results = {
       {
         id: 'cgu',
         label: { fr: "J'accepte les CGU *"},
-        hint: { fr: "Voir les Conditions Générales d'utilisation" },
+        hint: { fr: "Voir les Conditions Générales d'Utilisation" },
         required: true,
         type: 'checkbox'
       },
