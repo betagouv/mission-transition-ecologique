@@ -15,7 +15,7 @@
     </p>
 
     <!-- MESSAGE -->
-    <div class="fr-grid-row fr-grid-row-gutters">
+    <div class="fr-grid-row fr-grid-row--gutters">
       <div class="fr-col-9">
         <h3
           v-if="message"
@@ -130,7 +130,7 @@ import '@gouvfr/dsfr/dist/core/core.main.min.css'               // Le CSS minima
 
 // @ts-ignore
 import jsonDataset from '@public/data/output/dataset_out.json'
-console.log('TeeResults > jsonDataset :', jsonDataset)
+// console.log('TeeApp > jsonDataset :', jsonDataset)
 
 import { ref, onBeforeMount } from 'vue'
 
@@ -149,7 +149,7 @@ const appId = 'gov-aid-tree-app'
 
 // @ts-ignore
 const metaEnv = import.meta.env
-console.log('TeeApp - metaEnv :', metaEnv)
+// console.log('TeeApp - metaEnv :', metaEnv)
 const deployMode = metaEnv.MODE != 'development'
 const deployUrl = metaEnv.VITE_DEPLOY_URL
 
@@ -157,7 +157,7 @@ const deployUrl = metaEnv.VITE_DEPLOY_URL
 // console.log('TeeApp - process.env :', process.env)
 // @ts-ignore
 const yamlPrograms = deployMode ? jsonDataset : process.env.programs
-console.log('TeeApp - yamlPrograms :', yamlPrograms)
+// console.log('TeeApp - yamlPrograms :', yamlPrograms)
 
 interface Props {
   showHeader?: string,

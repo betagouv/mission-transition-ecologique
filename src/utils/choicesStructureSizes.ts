@@ -12,21 +12,24 @@ export const sizes = {
   },
   options: [
     {
-      value: 'structure_sizes.tpe',
+      // value: 'structure_sizes.tpe',
+      value: { structure_sizes: 'tpe' },
       label: { fr: "TPE" },
       next: {
         default: 'track_results'
       }
     },
     {
-      value: 'structure_sizes.pme',
+      // value: 'structure_sizes.pme',
+      value: { structure_sizes: 'pme' },
       label: { fr: "PME" },
       next: {
         default: 'track_results'
       }
     },
     {
-      value: 'structure_sizes.eti',
+      // value: 'structure_sizes.eti',
+      value: { structure_sizes: 'eti' },
       label: { fr: "ETI" },
       next: {
         default: 'track_results'

@@ -20,16 +20,24 @@ export const programsStore = defineStore('programs', () => {
 
   function filterPrograms (tracksResults: any[]) {
     // console.log()
-    // console.log('store.programs > filterPrograms > tracksResults : ', tracksResults)
+    console.log('store.programs > filterPrograms > tracksResults : ', tracksResults)
 
     // retrieve and organize user's conditions
     const conditions: {[k: string]: any} = {}
     tracksResults.forEach(tr => {
-      tr.values.forEach((v: string) => {
-        const vAsArr = v.split('.')
-        const k = vAsArr[0]
-        conditions[k] = vAsArr.slice(1)
+      // tr.values.forEach((v: string) => {
+      //   const vAsArr = v.split('.')
+      //   const k = vAsArr[0]
+      //   conditions[k] = vAsArr.slice(1)
+      // })
+
+      tr.values.forEach((v: object) => {
+        for (const [key, value] of Object.entries(v)) {
+          console.log(`${key}: ${value}`);
+          conditions[key] = value
+        }
       })
+
     })
     // const conditionsKeys = Object.keys(conditions)
     // console.log()

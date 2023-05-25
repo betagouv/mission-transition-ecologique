@@ -33,61 +33,65 @@
     </div>
   
     <!-- FIELDS -->
-    <div
-      v-for="field in formOptions.fields"
-      :key="field.id"
-      class="fr-mb-4v"
-      >
-      <!-- DEBUGGING -->
-      <div 
-        v-if="debug"
-        class="vue-debug">
-        Field.id: 
-        <code>
-          {{ field.id }} 
-        </code >
-        --- field.type : 
-        <code >
-          {{ field.type }}
-        </code>
-        --- formData[field.id] : 
-        <code >
-          {{ formData[field.id] }}
-        </code>
-      </div>
-      
-      <!-- INPUT GROUP -->
-      <DsfrInputGroup
-        v-if="field.type !== 'checkbox'">
-        <DsfrInput
-          :type="field.type"
-          :is-textarea="field.type === 'textarea'"
+    <div class="fr-grid-row fr-grid-row--gutters fr-mb-4v">
+
+      <div
+        v-for="field in formOptions.fields"
+        :key="field.id"
+        :class="`fr-col-${ field.cols ? field.cols : 12 }`"
+        >
+        <!-- DEBUGGING -->
+        <div 
+          v-if="debug"
+          class="vue-debug">
+          Field.id: 
+          <code>
+            {{ field.id }} 
+          </code >
+          --- field.type : 
+          <code >
+            {{ field.type }}
+          </code>
+          --- formData[field.id] : 
+          <code >
+            {{ formData[field.id] }}
+          </code>
+        </div>
+        
+        <!-- INPUT GROUP -->
+        <DsfrInputGroup
+          v-if="field.type !== 'checkbox'">
+          <DsfrInput
+            :type="field.type"
+            :is-textarea="field.type === 'textarea'"
+            :model-value="formData[field.id]"
+            label-visible
+            :required="field.required"
+            :label="field.label[choices.lang]"
+            :placeholder="field.hint[choices.lang]"
+            @update:modelValue="updateFormData($event, field.id)"
+            >
+          </DsfrInput>
+        </DsfrInputGroup>
+        
+        <!-- CHECKBOXES -->
+        <DsfrCheckbox
+          v-if="field.type == 'checkbox'"
           :model-value="formData[field.id]"
-          label-visible
+          :name="field.id" 
           :required="field.required"
-          :label="field.label[choices.lang]"
-          :placeholder="field.hint[choices.lang]"
-          @update:modelValue="updateFormData($event, field.id)"
-          >
-        </DsfrInput>
-      </DsfrInputGroup>
-      
-      <!-- CHECKBOXES -->
-      <DsfrCheckbox
-        v-if="field.type == 'checkbox'"
-        :model-value="formData[field.id]"
-        :name="field.id" 
-        :required="field.required"
-        :hint="field.hint[choices.lang]"
-        @update:modelValue="updateFormData($event, field.id)">
-        <template #label>
-          <span>
-            {{ field.label[choices.lang] }}
-          </span>
-        </template>
-      </DsfrCheckbox>
+          :hint="field.hint[choices.lang]"
+          @update:modelValue="updateFormData($event, field.id)">
+          <template #label>
+            <span>
+              {{ field.label[choices.lang] }}
+            </span>
+          </template>
+        </DsfrCheckbox>
+      </div>
+
     </div>
-  
+
     <h6
       class="fr-mb-0" 
       style="font-size: 0.7em;">
@@ -165,10 +169,12 @@
 import { onBeforeMount, ref, computed, defineEmits } from 'vue'
 
 // @ts-ignore
-import type { FormValues, FormField, FormOptions } from '@/types/index'
+import type { FormValues, FormField, FormOptions, UsedTrack } from '@/types/index'
 
+import { tracksStore } from '../stores/tracks'
 import { choicesStore } from '../stores/choices'
 const choices = choicesStore()
+const tracks = tracksStore()
 
 interface Props {
   formOptions: FormOptions,
@@ -188,14 +194,24 @@ const canSaveFrom = computed(() => {
 
 // const emit = defineEmits(['saveData'])
 const saveFormData = () => {
-  // console.log('TeeForm > saveFormData >  props.formOptions :', props.formOptions)
-  // console.log('TeeForm > saveFormData >  formData.value :', formData.value)
+  console.log('TeeForm > saveFormData >  props.formOptions :', props.formOptions)
+  console.log('TeeForm > saveFormData >  formData.value :', formData.value)
+  
+  const usedTracks = tracks.getAllUsedTracks
+  console.log('TeeForm > saveFormData >  usedTracks :', usedTracks)
+  // const usedTracksValues = []
+  // usedTracks.map((i: UsedTrack | any) => {
+  //   i.values && usedTracksValues.push(...i.values)
+  // })
+  // console.log('TeeForm > saveFormData >  usedTracksValues :', usedTracksValues)
+  
+  // Launch call backs if any
   // emit('saveData', {
   //   value: props.formOptions.value,
   //   next: props.formOptions.next,
   //   data: formData.value
   // })
-  formIsSent.value = true
+  // formIsSent.value = true
 }     
 
 const updateFormData = (ev: string, id: string) => {

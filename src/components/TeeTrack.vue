@@ -19,8 +19,8 @@
         <h6 class="fr-mb-1v"> selection : </h6>
         <code>{{ selection }} </code>
 
-        <h6 class="fr-mb-1v"> selectionData : </h6>
-        <code>{{ selectionData }} </code>
+        <!-- <h6 class="fr-mb-1v"> selectionData : </h6>
+        <code>{{ selectionData }} </code> -->
       </div>
 
       <div
@@ -201,8 +201,8 @@ const colsOptions: ColsOptions = {
 const tracks = tracksStore()
 const choices = choicesStore()
 
-const selection = ref([])
-const selectionData = ref({})
+const selection = ref<any[]>([])
+// const selectionData = ref<any[]>([])
 
 const track: Track | any = tracks.getTrack(props.trackId)
 // console.log('TeeTrack > track :', track)
@@ -242,14 +242,9 @@ const isActiveChoice = (value: string | number) => {
   return selection.value.includes(value)
 }
 
-// const updateSelectionFromForm = (form: FormDataResp) => {
-//   // console.log('TeeTrack > updateSelectionFromForm > form :', form)
-//   selectionData.value = form.data
-//   updateSelection(form)
-// }
-
 const updateSelectionAndCompleted = (option: any) => {
-  const val: string | number = option.value
+  const val: object = option.value
+  // const val: string | number = option.value
   const isActive = isActiveChoice(option.value)
   let needRemove = false
   if (!isActive) {

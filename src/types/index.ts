@@ -87,7 +87,8 @@ export interface UsedTrack {
   completed: boolean,
   updating: boolean,
   step: number,
-  values: any[],
+  values: any[] | null,
+  // val: any[] | null,
   data: object,
   next: any
 }
@@ -103,6 +104,7 @@ export interface TrackChoice {
   id: string | number,
   step: number,
   values: string[] | object[],
+  // val: object[],
   data?: object | object[]
 }
 
@@ -126,6 +128,7 @@ export interface FormField {
   required: boolean,
   label?: any,
   hint?: any,
+  cols?: number,
   type?: string
 }
 

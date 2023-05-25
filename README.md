@@ -87,61 +87,79 @@ This project is built to respond to those challenges. We made gov-aid-tree as :
 
 ### Functional diagram
 
+
 ```mermaid 
 graph TD;
     
     subgraph "Questionnaire"
     tracksModel[Questionnaire model] -- organizes --- tracks;
     tracks[Questionnaire slides : config files] --> widget[GOV-AID-TREE - VUEJS WEB COMPONENT];
-    datamodel[Aid programs data model] -- available for widget --- widget;
+    datamodel[Aid programs data model] -- is available for the widget --- widget;
     questions[Questionnaire slides : interfaces] --> choices[User choices data];
-    widget -- selects from database --> results[Aid programs subset fitting user choices];
+    widget -- selects from aid programs database --> results[Aid programs subset fitting user choices];
     widget --> questions;
     choices --> widget;
     datasets -- available for widget --- widget;
     datamodel -- respects --- datasets;
     end
-
+    
+    
     subgraph "Data : automated scrapping"
-    parser[API parsers script] -- uses --> datamodel;
+    parser[* API parsers script] -- uses --> datamodel;
     parser -- generates --> datasets[Aid programs database];
     end
 
     subgraph "Data : manual production"
     adminsExt[Admins ext] -- protected : edit / add --> editor;
     admins[Admins] -- protected : edit / add --> editor;
-    editor[Editor : Forms] -- uses --> datamodel;
+    editor[* Editor : Forms] -- uses --> datamodel;
     editor -- generates / PR --> datasets[Aid programs database];
     end
-
+    
+    
     subgraph "Sources"
+    dgaln[DGALN] --> sources
+    aidesterr[Aides Territoires] --> sources
+    ademe[ADEME] --> sources
+    dge[DGE] --> sources
+    cma[CMA] --> sources
+    clicagil[Clic'agil] --> sources
+    bpi[BPI] --> sources
+    edf[EDF] --> sources
+    cci[CCI] --> sources
+    other[Autres sources ...] --> sources
     sources[Aid programs providers] -- request via APIs + cron --- parser;
     end 
 
+    sources --> adminsExt
     
     subgraph "End users : entreprises"
     results -- displayed for user --> user[Users : individual or entreprise];
     user -- interacts with --> questions;
     end
 
-    style widget fill:blue
-    style widget color:white
-    style editor fill:blue
-    style editor color:white
+    %% STYLES APPS
+    style widget fill:#ccccff
+    style editor fill:#ccccff
     
-    style datasets fill:teal
-    style datasets color:white
-    style datamodel fill:teal
-    style datamodel color:white
-    style parser fill:teal
-    style parser color:white
+    %% STYLES DATA
+    style datasets fill:#b2d8d8
+    style datamodel fill:#b2d8d8
+    style parser fill:#b2d8d8
 
+    %% STYLES USERS
     style admins fill:orange
     style admins color:white
     style adminsExt fill:orange
     style adminsExt color:white
     style user fill:orange
     style user color:white
+    
+    /*TO_DO*/
+    style editor color:red
+    style editor stroke:red
+    style parser stroke:red
+    style parser color:red
 ```
 
 ```mermaid
@@ -150,19 +168,18 @@ graph TD;
     users[Users]
     data[Data dev]
     web[Web dev]
+    todo[* To develop]
     other[Interactions]
     end
 
-    style users fill:orange
-    style users color:white
-    
-    style data fill:teal
-    style data color:white
+    style users fill:orange    
+    style data fill:#b2d8d8
+    style web fill:#ccccff
 
-    style web fill:blue
-    style web color:white
-    
+    style todo color:red
+    style todo stroke:red
 ```
+
 
 ---
 
@@ -174,12 +191,21 @@ Check : https://github.com/orgs/betagouv/projects/54/views/1
 
 - [x] Set up a vue3 environment for custom element
 - [x] Develop interfaces for several dynamic research paths
-- [ ] Dynamic fit between aid programs and user choices
-- [ ] Retrieve pertinent public data from the entreprise SIRET number
+- [x] Dynamic fit between aid programs and user choices
+- [ ] Send the form at the end of questionnaire to create / update contact on Brevo
 
 ### Data
+
 - [ ] Develop a schema for the aid programs provided by several sources
 - [ ] Develop a simple way to store and expose the aid programs dataset
+
+---
+
+## Backlog
+
+### Data
+
+- [ ] Retrieve pertinent public data from the entreprise SIRET number
 - [ ] Get and update aid programs dataset
 
 ---
@@ -269,121 +295,42 @@ Check : https://github.com/orgs/betagouv/projects/54/views/1
 
 ---
 
-## Data models - (R&D)
+## Data models - (R&D) - example
 
-```json 
+```yaml
 // Target data model for aid programs
-{
-  "programs": [                        // Réutilisation des codes des tables existantes 
-    {   
-      "id": "...",
-      "title" : "...",
-      "title_slug" : "...",            // URI transformer
-      "date_start" : "...",
-      "date_end" : "...",        
-      "resume" : "...",           
-      "description" : "...",           // long texte ou objet ?
-      "resume_texts": {
-        "accompagnement" : "...",
-        "financing" : "...",
-        "process": "...",
-      },
-      "program_type": "...",           // TypeAide
-      "program_recurrence": "...",     // RecurrenceAide
-      "funding_amount": "...",         // !!! à préciser selon variété des cas rencontrés
-      "program_conditions": {          // conditions d'octroi de l'aide
-        "project_needs": [
-          "starting",
-          "advices",
-          "financing",
-          "*",
-          "..."
-        ],
-        "project_status" : [       // EtatAvancementProjet
-          "economies",
-          "carbon",
-          "improve",
-          "*",
-          "..."
-        ],
-        "project_sectors": [ 
-          "craft", 
-          "industry", 
-          "tertiary", 
-          "tourism",
-          "agriculture", 
-          "*",
-          "...",
-        ],
-        "structure_sizes": [           // TPE, PME, ETI, GE
-          "tpe", 
-          "pme", 
-          "*",
-          "..."
-        ],
-        "structure_naf": [         // conditions par code naf / filière / activité
-          "...",
-        ],
-        "expenses_types": [        // TypeDepense
-          "...",
-        ],
-        "geo_zones": [             // conditions par zone geo
-          "...",
-        ]
-      },
-      "categories": [              // Thematique
-        "tourism",
-        "..."
-      ],
-      "sub_categories": [          // SousThematique
-        "..."  
-      ],
-      "cover_geo": {
-        "fr": {                    // entries by country code
-          "code": "4",             // ZoneGeographique
-          "label": "regional"
-          "region_codes": [
-            "03",
-            "04",
-            "06",
-            "11",
-            "..."
-          ],   
-        }
-      },
-      "program_url":" ...",           // link to the program source
-      "program_providers": [          // IDs ou objets ?
-        "ANCT",
-        {
-          "code": "ADEME",
-          "href": "https://ademe.fr/",
-          "SIREN": "385 290 309"
-        },
-        "...",
-      ],
-      "program_keywords": [
-        "tourisme",
-        "...",
-      ],
-      "program_application": {
-        "process" : "...",             // 
-        "templates" : "...",           // modèle du dossier à remplir / url...
-      },
-      "program_contacts": [
-        "..."
-      ],
-      "meta": {                        // meta données sur le dispositif d'aide 
-        "source_url": "...",           // API url
-        "source_id": "...",
-        "languages": [
-          "fr"
-        ],
-        "last_modif": "...",
-        "last_import": "...",
-      }
-    }
-  ]
-}
+
+title: Diag Eco-flux
+resume: Faites des économies en gérant durablement vos dépenses
+description: |
+  <ul>
+    <li>
+      Faites un état des lieux de vos flux et identifiez les axes prioritaires d’économies.
+    </li>
+    ...
+  </ul>
+program_types: 
+  - diag
+conditions:
+  - type: project_needs
+    operator: "or"
+    value: 
+      - advices
+  - type: project_status
+    operator: "or"
+    value: 
+      - economies
+  - type: project_sectors
+    operator: "or"
+    value: 
+      - "*"
+  - type: structure_sizes
+    operator: "or"
+    value: 
+      - pme
+program_providers: 
+  - code: BPI
+
 ```
 
 ### From legacy app : 

@@ -13,21 +13,24 @@ export const status = {
   },
   options: [
     {
-      value: 'project_status.economies',
+      // value: 'project_status.economies',
+      value: { project_status: 'economies' },
       label: { fr: 'Je veux faire des économies' },
       next: {
         default: 'track_structure_sizes'
       },
     },
     {
-      value: 'project_status.carbon',
+      // value: 'project_status.carbon',
+      value: { project_status: 'carbon' },
       label: { fr: "J'ai besoin de connaître et réduire mes émissions carbone" },
       next: {
         default: 'track_results'
       },
     },
     {
-      value: 'project_status.improve',
+      // value: 'project_status.improve',
+      value: { project_status: 'improve' },
       label: { fr: "J'ai besoin d'améliorer mon produit/service" },
       next: {
         default: 'track_results'

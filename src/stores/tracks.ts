@@ -1,4 +1,5 @@
-import { ref, computed } from 'vue'
+import { ref, computed, toRaw } from 'vue'
+// cf : https://stackoverflow.com/questions/64917686/vue-array-converted-to-proxy-object
 import { defineStore } from 'pinia'
 
 import { tracks } from '../utils'
@@ -43,17 +44,23 @@ export const tracksStore = defineStore('tracks', () => {
     return stepNumber
   })
   const tracksResults = computed(() => {
-    const results = usedTracks.value
+    let results = usedTracks.value
       .filter(track => track.id !== trackResultString)
       .map(track => {
         return {
           id: track.id,
           step: track.step,
           values: track.values,
+          // val: track.val,
           data: track.data
         }
       })
+    if (!results.length) { results = [] } 
     return results
+  })
+  const getAllUsedTracks = computed(() => {
+    const res = usedTracks.value.map((i: object) => toRaw(i))
+    return res
   })
 
   // getters
@@ -92,6 +99,7 @@ export const tracksStore = defineStore('tracks', () => {
       updating: false,
       step: usedTracks.value.length + 1,
       values: [],
+      // val: [],
       data: {},
       next: null,
     }
@@ -111,6 +119,7 @@ export const tracksStore = defineStore('tracks', () => {
         const hasValues = Boolean(values.length)
         const nextTrack = option.next
         trackInfo.values = values
+        // trackInfo.val = val
         trackInfo.data = data
         trackInfo.completed = hasValues
         trackInfo.next = hasValues ? nextTrack : null
@@ -138,6 +147,7 @@ export const tracksStore = defineStore('tracks', () => {
     tracksResults,
     setMaxDepth,
     getTrack,
+    getAllUsedTracks,
     trackExistsInUsed,
     setSeedTrack,
     addToUsedTracks,
