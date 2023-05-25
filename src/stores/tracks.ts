@@ -2,7 +2,7 @@ import { ref, computed, toRaw } from 'vue'
 // cf : https://stackoverflow.com/questions/64917686/vue-array-converted-to-proxy-object
 import { defineStore } from 'pinia'
 
-import { tracks } from '../utils'
+import { tracks } from '../questionnaire'
 
 // @ts-ignore
 import type { UsedTrack } from '@/types/index'

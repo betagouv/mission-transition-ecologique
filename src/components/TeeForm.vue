@@ -166,10 +166,12 @@
 
 <script setup lang="ts">
 
-import { onBeforeMount, ref, computed, defineEmits } from 'vue'
+import { onBeforeMount, ref, computed, toRaw, defineEmits } from 'vue'
 
 // @ts-ignore
 import type { FormValues, FormField, FormOptions, UsedTrack } from '@/types/index'
+
+import { sendEmail } from '../utils/emailing'
 
 import { tracksStore } from '../stores/tracks'
 import { choicesStore } from '../stores/choices'
@@ -190,44 +192,42 @@ const canSaveFrom = computed(() => {
   // @ts-ignore
   const boolArr = requiredFields.value.map((f: string) => formData.value[f])
   return boolArr.every(v => (!!v && v !== ''))
-})
-
-// const emit = defineEmits(['saveData'])
-const saveFormData = () => {
-  console.log('TeeForm > saveFormData >  props.formOptions :', props.formOptions)
-  console.log('TeeForm > saveFormData >  formData.value :', formData.value)
-  
-  const usedTracks = tracks.getAllUsedTracks
-  console.log('TeeForm > saveFormData >  usedTracks :', usedTracks)
-  // const usedTracksValues = []
-  // usedTracks.map((i: UsedTrack | any) => {
-  //   i.values && usedTracksValues.push(...i.values)
-  // })
-  // console.log('TeeForm > saveFormData >  usedTracksValues :', usedTracksValues)
-  
-  // Launch call backs if any
-  // emit('saveData', {
-  //   value: props.formOptions.value,
-  //   next: props.formOptions.next,
-  //   data: formData.value
-  // })
-  // formIsSent.value = true
-}     
-
-const updateFormData = (ev: string, id: string) => {
-  // console.log(`TeeForm > saveFormData >  id : ${id} > ev : ${ev}`)
-  formData.value[id] = ev
-}
+})   
 
 onBeforeMount(() => {
   // console.log('TeeForm > saveFormData >  props.formOptions :', props.formOptions)
   const initValues = <FormValues>{}
   props.formOptions.fields?.forEach((field: FormField) => {
     initValues[field.id] = field.type === 'checkbox' ? false : ''
+    if (field.defaultValue) { initValues[field.id] = field.defaultValue }
     // @ts-ignore
     if (field.required) { requiredFields.value.push(field.id) }
   })
   formData = ref(initValues)
 })
+
+const updateFormData = (ev: string, id: string) => {
+  // console.log(`TeeForm > saveFormData >  id : ${id} > ev : ${ev}`)
+  formData.value[id] = ev
+}
+
+// const emit = defineEmits(['saveData'])
+const saveFormData = () => {
+  console.log('TeeForm > saveFormData >  props.formOptions :', props.formOptions)
+  console.log('TeeForm > saveFormData >  formData.value :', formData.value)
+  
+  const usedTracks: UsedTrack[] | any[] = tracks.getAllUsedTracks
+  console.log('TeeForm > saveFormData >  usedTracks :', usedTracks)
+  
+  // Launch call backs if any
+  sendEmail(toRaw(props.formOptions.callbacks), toRaw(formData.value), usedTracks)
+  
+  // emit('saveData', {
+  //   value: props.formOptions.value,
+  //   next: props.formOptions.next,
+  //   data: formData.value
+  // })
+  // formIsSent.value = true
+}  
 
 </script>

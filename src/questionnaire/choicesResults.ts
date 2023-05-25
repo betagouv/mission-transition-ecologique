@@ -47,52 +47,68 @@ export const results = {
         id: 'surname',
         label: { fr: 'Prénom'},
         hint: { fr: 'Camille' },
-        required: true,
+        required: false,
         type: 'text',
-        cols: 6
+        cols: 6,
+        // for debugging purposes
+        defaultValue: 'Julien'
       },
       {
         id: 'name',
         label: { fr: 'Nom'},
         hint: { fr: 'Dujardin' },
-        required: true,
-        type: 'text',
-        cols: 6
-      },
-      {
-        id: 'tel',
-        label: { fr: 'Téléphone'},
-        hint: { fr: '06 05 04 03 02' },
         required: false,
-        type: 'text'
+        type: 'text',
+        cols: 6,
+        // for debugging purposes
+        defaultValue: 'Paris'
       },
       {
         id: 'email',
         label: { fr: 'Email'},
         hint: { fr: 'camille@dujardin.fr' },
         required: true,
-        type: 'email'
+        type: 'email',
+        // for debugging purposes
+        defaultValue: 'julien.paris@beta.gouv.fr'
       },
       {
         id: 'siret',
         label: { fr: 'SIRET de votre entreprise'},
         hint: { fr: '385 290 309 00454' },
         required: false,
-        type: 'text'
+        type: 'text',
+        cols: 12,
+        // for debugging purposes
+        defaultValue: '83014132100034'
+      },
+      {
+        id: 'tel',
+        label: { fr: 'Téléphone'},
+        hint: { fr: '06 05 04 03 02' },
+        required: false,
+        type: 'text',
+        cols: 12,
+        // for debugging purposes
+        defaultValue: '06 05 04 03 02'
       },
       {
         id: 'needs',
         label: { fr: 'Quel est votre besoin ?'},
-        hint: { fr: 'Je ne sais pas...' },
+        hint: { fr: 'Je souhaite connaître les aides pour installer des éoliennes sur mon immeuble' },
         required: false,
-        type: 'textarea'
+        type: 'textarea',
+        // for debugging purposes
+        defaultValue: 'Just some tests'
       },
       {
         id: 'cgu',
         label: { fr: "J'accepte les CGU *"},
         hint: { fr: "Voir les Conditions Générales d'Utilisation" },
         required: true,
-        type: 'checkbox'
+        type: 'checkbox',
+        // for debugging purposes
+        defaultValue: true
       },
     ],
     callbacks: [
@@ -101,68 +117,87 @@ export const results = {
         helpDocumentation: 'https://developers.brevo.com/reference/createcontact',
         action: 'fetch',
         url: 'https://api.brevo.com/v3/contacts',
-        token: 'VITE_BREVO_TOKEN',
         method: 'POST',
+        headers: {
+          accept: 'application/json',
+          'content-type': 'application/json',
+          'api-key': ''
+        },
+        headerApiKey: 'api-key',
+        envApiKey: 'VITE_BREVO_TOKEN',
         dataMapping: [
+          {
+            from: 'formData',
+            id: 'email',
+            dataField: 'email',
+          },
           {
             from: 'env',
             id: 'VITE_BREVO_LIST_IDS',
-            dataField: 'listIds'
+            dataField: 'listIds',
+            asArray: true,
+            sep: ',',
+            type: 'integer'
           },
           {
             from: 'formData',
             id: 'surname',
-            dataField: 'NOM'
+            dataField: 'NOM',
+            subKey: 'attributes'
           },
           {
             from: 'formData',
             id: 'name',
-            dataField: 'PRENOM'
+            dataField: 'PRENOM',
+            subKey: 'attributes'
           },
           {
             from: 'formData',
             id: 'tel',
-            dataField: 'TEL'
-          },
-          {
-            from: 'formData',
-            id: 'email',
-            dataField: 'EMAIL'
+            dataField: 'TEL',
+            subKey: 'attributes'
           },
           {
             from: 'formData',
             id: 'siret',
-            dataField: 'SIRET'
+            dataField: 'SIRET',
+            subKey: 'attributes'
           },
           {
             from: 'formData',
             id: 'needs',
-            dataField: 'FORM_NEEDS'
+            dataField: 'FORM_NEEDS',
+            subKey: 'attributes'
           },
           {
             from: 'formData',
             id: 'cgu',
-            dataField: 'OPT_IN'
+            dataField: 'OPT_IN',
+            subKey: 'attributes'
           },
           {
             from: 'store',
             id: 'project_needs',
-            dataField: 'PROJECT_NEEDS'
+            dataField: 'PROJECT_NEEDS',
+            subKey: 'attributes'
           },
           {
             from: 'store',
             id: 'project_sectors',
-            dataField: 'PROJECT_SECTORS'
+            dataField: 'PROJECT_SECTORS',
+            subKey: 'attributes'
           },
           {
             from: 'store',
             id: 'project_status',
-            dataField: 'PROJECT_STATUS'
+            dataField: 'PROJECT_STATUS',
+            subKey: 'attributes'
           },
           {
             from: 'store',
             id: 'structure_sizes',
-            dataField: 'STRUCTURE_SIZE'
+            dataField: 'STRUCTURE_SIZE',
+            subKey: 'attributes'
           },
         ]
       }

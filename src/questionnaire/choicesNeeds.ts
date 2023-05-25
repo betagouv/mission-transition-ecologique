@@ -3,7 +3,7 @@ export const needs = {
   label: { fr: 'Votre besoin' },
   interface: {
     component: 'cards',
-    columnWidth: 3,
+    columnWidth: 'auto',
   },
   behavior: {
     multipleChoices: false,

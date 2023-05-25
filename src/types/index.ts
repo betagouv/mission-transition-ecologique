@@ -61,6 +61,7 @@ export interface TrackNext {
   [name: string]: any
 }
 export interface TrackOptions {
+  disabled?: Boolean,
   value: string | number,
   label: Translations,
   intro?: Translations,
@@ -129,7 +130,8 @@ export interface FormField {
   label?: any,
   hint?: any,
   cols?: number,
-  type?: string
+  type?: string,
+  defaultValue?: boolean | string
 }
 
 export interface FormOptions {
@@ -137,7 +139,8 @@ export interface FormOptions {
   label?: any | null,
   intro?: any | null,
   fields?: FormField[],
-  next?: string
+  next?: string,
+  callbacks: FormCallback[]
 }
 
 export interface FormDataResp {
@@ -167,4 +170,28 @@ export interface Plugin {
 export interface Comp {
   name: string,
   comp: object
+}
+
+// FOR EMAILING
+
+export interface FormCallbackDataMapping {
+  from: string,
+  id: string,
+  dataField: string,
+  asArray?: boolean
+  sep?: string
+  type?: string,
+  subKey?: string
+}
+
+export interface FormCallback {
+  help?: string,
+  helpDocumentation?: string,
+  action: string,
+  url: string,
+  headers: object,
+  headerApiKey: string,
+  envApiKey: string,
+  method: string,
+  dataMapping: FormCallbackDataMapping[]
 }
