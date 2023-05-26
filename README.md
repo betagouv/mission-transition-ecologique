@@ -88,7 +88,7 @@ This project is built to respond to those challenges. We made gov-aid-tree as :
 ### Functional diagram
 
 
-```mermaid 
+```mermaid
 graph TD;
     
     subgraph "Questionnaire"
@@ -99,23 +99,27 @@ graph TD;
     widget -- selects from aid programs database --> results[Aid programs subset fitting user choices];
     widget --> questions;
     choices --> widget;
-    datasets -- available for widget --- widget;
+    datasets[Aid programs database] -- available for widget --- widget;
+    datamodel -- respects --- datafiles;
     datamodel -- respects --- datasets;
+    datafiles[Aid program yaml files] --> datasets;
     end
     
     
     subgraph "Data : automated scrapping"
-    parser[* API parsers script] -- uses --> datamodel;
-    parser -- generates --> datasets[Aid programs database];
+    connectors[* API connectors] --> parser;
+    parser[* API parsers scripts] -- uses --> datamodel;
+    parser -- generates --> datafiles;
+    %% parser -- generates --> datasets;
     end
 
     subgraph "Data : manual production"
     adminsExt[Admins ext] -- protected : edit / add --> editor;
     admins[Admins] -- protected : edit / add --> editor;
     editor[* Editor : Forms] -- uses --> datamodel;
-    editor -- generates / PR --> datasets[Aid programs database];
+    editor -- generates / PR --> datafiles;
     end
-    
+
     
     subgraph "Sources"
     dgaln[DGALN] --> sources
@@ -128,21 +132,31 @@ graph TD;
     edf[EDF] --> sources
     cci[CCI] --> sources
     other[Autres sources ...] --> sources
-    sources[Aid programs providers] -- request via APIs + cron --- parser;
+    sources[Aid programs providers] -- request via APIs + cron --- connectors;
     end 
 
     sources --> adminsExt
     
     subgraph "End users : entreprises"
-    results -- displayed for user --> user[Users : individual or entreprise];
-    user -- interacts with --> questions;
+    user[Users : individual or entreprise];
+    user -- displayed for user --> results;
+    user -- interacts with --> questions ;
     end
-
+    
+    subgraph "Third party services"
+    services[External services]
+    widget --> services
+    services -- API calls --> Matomo[Matomo, analytics]
+    services -- API calls --> Brevo[Brevo, emailing]
+    end
+    
     %% STYLES APPS
     style widget fill:#ccccff
     style editor fill:#ccccff
     
     %% STYLES DATA
+    style connectors fill:#b2d8d8
+    style datafiles fill:#b2d8d8
     style datasets fill:#b2d8d8
     style datamodel fill:#b2d8d8
     style parser fill:#b2d8d8
@@ -155,9 +169,11 @@ graph TD;
     style user fill:orange
     style user color:white
     
-    /*TO_DO*/
+    %% TO_DO
     style editor color:red
     style editor stroke:red
+    style connectors stroke:red
+    style connectors color:red
     style parser stroke:red
     style parser color:red
 ```
@@ -179,7 +195,6 @@ graph TD;
     style todo color:red
     style todo stroke:red
 ```
-
 
 ---
 

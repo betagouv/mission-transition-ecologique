@@ -124,7 +124,7 @@
     <!-- FORM ALERT AFTER SENDING-->
     <DsfrAlert
       :title="choices.t(`form.sent`)"
-      :description="requestResponse"
+      :description="requestResponses"
       :type="'success'">
     </DsfrAlert>
 
@@ -173,7 +173,7 @@ import { onBeforeMount, ref, computed, toRaw, defineEmits } from 'vue'
 // @ts-ignore
 import type { FormValues, FormField, FormOptions, FormCallback, UsedTrack } from '@/types/index'
 
-import { createContact, sendTransactionalEmail } from '../utils/emailing'
+import { sendApiRequest } from '../utils/emailing'
 
 import { tracksStore } from '../stores/tracks'
 import { choicesStore } from '../stores/choices'
@@ -189,7 +189,7 @@ const props = defineProps<Props>()
 let formData = ref()
 const requiredFields = ref([])
 const formIsSent = ref(false)
-const requestResponse = ref()
+const requestResponses = ref()
 
 const canSaveFrom = computed(() => {
   // @ts-ignore
@@ -223,6 +223,7 @@ const saveFormData = async () => {
   console.log('TeeForm > saveFormData >  usedTracks :', usedTracks)
   
   // Launch call backs if any
+  const responses = []
   // loop callbacks (only active ones)
   const activeCallbacks = toRaw(props.formOptions.callbacks).filter((cb: FormCallback) => !cb.disabled)
   for (const callback of activeCallbacks) {
@@ -231,15 +232,16 @@ const saveFormData = async () => {
     let resp
     switch (callback.action) {
       case 'createContact':
-        resp = await createContact(callback, toRaw(formData.value), usedTracks)
+        resp = await sendApiRequest(callback, toRaw(formData.value), usedTracks)
         break
       case 'sendTransactionalEmail':
-        resp = await sendTransactionalEmail(callback, toRaw(formData.value))
+        resp = await sendApiRequest(callback, toRaw(formData.value))
         break
     }
-    requestResponse.value = resp
+    responses.push(resp)
     console.log('TeeForm > saveFormData >  resp :', resp)
   }
+  requestResponses.value = responses
   // emit('saveData', {
   //   value: props.formOptions.value,
   //   next: props.formOptions.next,

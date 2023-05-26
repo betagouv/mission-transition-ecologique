@@ -1,5 +1,6 @@
 import type { MetaEnv, UsedTrack, FormCallback } from '@/types/index'
 import { toRaw } from 'vue'
+import { setProperty  } from './helpers'
 
 export const buildHeaders = (metaEnv: MetaEnv | any, callback: FormCallback) => {
   console.log()
@@ -39,35 +40,38 @@ export const findInTracksArray = (tracksArray: object[], id: string) => {
   return value
 }
 
-export const createContact = async (callback: FormCallback, formData: object | any, usedTrack: UsedTrack[]) => {
+export const sendApiRequest = async (callback: FormCallback, formData: object | any, usedTrack: UsedTrack[] = []) => {
   console.log()
-  // console.log('utils > emailing > createContact >  callback :', callback)
-  console.log('utils > emailing > createContact >  formData :', formData)
-  console.log('utils > emailing > createContact >  usedTrack :', usedTrack)
+  console.log('utils > emailing > sendApiRequest >  callback.action :', callback.action)
+  console.log('utils > emailing > sendApiRequest >  formData :', formData)
+  console.log('utils > emailing > sendApiRequest >  usedTrack :', usedTrack)
   
   const metaEnv = import.meta.env
-  // console.log('utils > emailing > createContact >  metaEnv :', metaEnv)
+  // console.log('utils > emailing > sendApiRequest >  metaEnv :', metaEnv)
   const url = callback.url
   const method = callback.method
   const headers = buildHeaders(metaEnv, callback)
+  console.log('utils > emailing > sendApiRequest >  url :', url)
+  console.log('utils > emailing > sendApiRequest >  method :', method)
+  console.log('utils > emailing > sendApiRequest >  headers :', headers)
 
   const usedTrackValues = usedTrack.map(usedTrack => {
     return toRaw(usedTrack.values?.map(i => toRaw(i)))
   }).filter(i => i?.length)
-  console.log('utils > emailing > createContact >  usedTrackValues :', usedTrackValues)
+  console.log('utils > emailing > sendApiRequest >  usedTrackValues :', usedTrackValues)
 
   const trackValues: object[] = usedTrackValues.flat(1)
-  console.log('utils > emailing > createContact >  trackValues :', trackValues)
+  console.log('utils > emailing > sendApiRequest >  trackValues :', trackValues)
 
-  const data: any = callback.dataStructure || {}
+  let data: any = callback.dataStructure || {}
 
   const dataMapping = callback.dataMapping
   // const listIds = metaEnv[callback.envListIds].split(',').map((id: string) => parseInt(id))
-  console.log('utils > emailing > createContact >  dataMapping :', dataMapping)
-  // console.log('utils > emailing > createContact >  listIds :', listIds)
+  console.log('utils > emailing > sendApiRequest >  dataMapping :', dataMapping)
+  // console.log('utils > emailing > sendApiRequest >  listIds :', listIds)
 
   dataMapping.forEach(dm => {
-    const subKey = dm.subKey
+    // const subKey = dm.subKey
     let value: any = ''
     switch (dm.from) {
       case 'env':
@@ -90,49 +94,17 @@ export const createContact = async (callback: FormCallback, formData: object | a
     if (!dm.asArray && dm.type === 'integer') {
       value = parseInt(value)
     }
-    // build data's subKey
-    if (subKey && !data[subKey]) {
-      data[subKey] = {}
-    }
-    if (subKey) {
-      data[subKey][dm.dataField] = value
-    } else {
-      data[dm.dataField] = value
-    }
+    // set in data body
+    data = setProperty(data, dm.dataField, value)
+    // data = setFromPath(data, dm.dataField, value)
   })
-  console.log('utils > emailing > createContact >  data :', data)
+  console.log('utils > emailing > sendApiRequest >  data :', data)
   const body = JSON.stringify(data)
-  console.log('utils > emailing > createContact >  body :', body)
+  console.log('utils > emailing > sendApiRequest >  body :', body)
 
   // fetch and return
   const respJson = await sendRequest(url, method, headers, body)
   return respJson
-}
-
-
-export const sendTransactionalEmail = async (callback: FormCallback, formData: object | any) => {
-  console.log()
-  // console.log('utils > emailing > sendTransactionalEmail >  callback :', callback)
-  console.log('utils > emailing > sendTransactionalEmail >  formData :', formData)
-  
-  const metaEnv = import.meta.env
-  // console.log('utils > emailing > sendTransactionalEmail >  metaEnv :', metaEnv)
-  const url = callback.url
-  const method = callback.method
-  const headers = buildHeaders(metaEnv, callback)
-  console.log('utils > emailing > sendTransactionalEmail >  url :', url)
-  console.log('utils > emailing > sendTransactionalEmail >  method :', method)
-  console.log('utils > emailing > sendTransactionalEmail >  headers :', headers)
-
-  const data: any = callback.dataStructure || {}
-  console.log('utils > emailing > sendTransactionalEmail >  data :', data)
-
-  const body = JSON.stringify(data)
-  console.log('utils > emailing > sendTransactionalEmail >  body :', body)
-
-  // fetch and return
-  // const respJson = await sendRequest(url, method, headers, body)
-  // return respJson
 }
 
 export const sendRequest = async (url: string, method: string, headers: any, body: any) => {

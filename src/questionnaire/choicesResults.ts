@@ -63,7 +63,7 @@ export const results = {
         required: true,
         type: 'email',
         // for debugging purposes
-        defaultValue: 'julien.paris@beta.gouv.fr'
+        defaultValue: 'julien.paris@gmail.com'
       },
       {
         id: 'siret',
@@ -106,7 +106,7 @@ export const results = {
     ],
     callbacks: [
       {
-        disabled: true,
+        disabled: false,
         help: 'First action to trigger when the user clicks on the send button / create a contact in Brevo',
         helpDocumentation: 'https://developers.brevo.com/reference/createcontact',
         action: 'createContact',
@@ -141,62 +141,52 @@ export const results = {
           {
             from: 'formData',
             id: 'surname',
-            dataField: 'NOM',
-            subKey: 'attributes'
+            dataField: 'attributes.NOM',
           },
           {
             from: 'formData',
             id: 'name',
-            dataField: 'PRENOM',
-            subKey: 'attributes'
+            dataField: 'attributes.PRENOM',
           },
           {
             from: 'formData',
             id: 'tel',
-            dataField: 'TEL',
-            subKey: 'attributes'
+            dataField: 'attributes.TEL',
           },
           {
             from: 'formData',
             id: 'siret',
-            dataField: 'SIRET',
-            subKey: 'attributes'
+            dataField: 'attributes.SIRET',
           },
           {
             from: 'formData',
             id: 'needs',
-            dataField: 'FORM_NEEDS',
-            subKey: 'attributes'
+            dataField: 'attributes.FORM_NEEDS',
           },
           {
             from: 'formData',
             id: 'cgu',
-            dataField: 'OPT_IN',
-            subKey: 'attributes'
+            dataField: 'attributes.OPT_IN',
           },
           {
             from: 'usedTracks',
             id: 'project_needs',
-            dataField: 'PROJECT_NEEDS',
-            subKey: 'attributes'
+            dataField: 'attributes.PROJECT_NEEDS',
           },
           {
             from: 'usedTracks',
             id: 'project_sectors',
-            dataField: 'PROJECT_SECTORS',
-            subKey: 'attributes'
+            dataField: 'attributes.PROJECT_SECTORS',
           },
           {
             from: 'usedTracks',
             id: 'project_status',
-            dataField: 'PROJECT_STATUS',
-            subKey: 'attributes'
+            dataField: 'attributes.PROJECT_STATUS',
           },
           {
             from: 'usedTracks',
             id: 'structure_sizes',
-            dataField: 'STRUCTURE_SIZE',
-            subKey: 'attributes'
+            dataField: 'attributes.STRUCTURE_SIZE',
           },
         ]
       },
@@ -216,13 +206,47 @@ export const results = {
         envApiKey: 'VITE_BREVO_TOKEN',
         dataStructure: {
           sender: {
-            name: '',
+            name: 'Transition Ecologique des Entreprises',
             email: ''
           },
-          to: [],
-          subject: '',
-          htmlContent: ''
+          to: [
+            {
+              name: '',
+              email: ''
+            }
+          ],
+          subject: 'Test transactional email',
+          htmlContent: `
+            <html>
+              <head></head>
+              <body>
+                <p>
+                  Hello,
+                </p>
+                <p>
+                  This is my first transactional
+                  email sent from Brevo.
+                </p>
+              </body>
+            </html>`
         },
+        dataMapping: [
+          {
+            from: 'env',
+            id: 'VITE_BREVO_SENDER_EMAIL',
+            dataField: 'sender.email',
+          },
+          {
+            from: 'formData',
+            id: 'email',
+            dataField: 'to.0.email',
+          },
+          {
+            from: 'formData',
+            id: 'name',
+            dataField: 'to.0.name',
+          },
+        ]
       }
     ],
     // next: {
