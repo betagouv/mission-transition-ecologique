@@ -39,7 +39,7 @@ export const needs = {
     {
       value: 'project_needs.financing',
       label: { fr: "J’ai un projet, un besoin de financement" },
-      hint: { fr: "Obtenez un aide technique ou financière pour vos investissements ou un projet ayant un impact environnemental" },
+      hint: { fr: "Obtenez une aide technique ou financière pour vos investissements ou un projet ayant un impact environnemental" },
       next: {
         default: 'track_sectors'
       }
