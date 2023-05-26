@@ -12,7 +12,6 @@ export const sectors = {
   },
   options: [
     {
-      // value: 'project_sectors.craft',
       value: { project_sectors: 'craft' },
       label: { fr: "J’ai une activité artisanale" },
       next: {
@@ -20,7 +19,6 @@ export const sectors = {
       }
     },
     {
-      // value: 'project_sectors.industry',
       value: { project_sectors: 'industry' },
       label: { fr: "J’ai une activité industrielle, fabrication, production" },
       next: {
@@ -28,7 +26,6 @@ export const sectors = {
       }
     },
     {
-      // value: 'project_sectors.tourism',
       value: { project_sectors: 'tourism' },
       label: { fr: "j’ai une activité de tourisme" },
       next: {
@@ -36,7 +33,6 @@ export const sectors = {
       }
     },
     {
-      // value: 'project_sectors.tertiary',
       value: { project_sectors: 'tertiary' },
       label: { fr: "j’ai une activité tertiaire, de services" },
       next: {
@@ -44,7 +40,6 @@ export const sectors = {
       }
     },
     {
-      // value: 'project_sectors.agriculture',
       value: { project_sectors: 'agriculture' },
       label: { fr: "J’ai une activité agricole" },
       next: {
