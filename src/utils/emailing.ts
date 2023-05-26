@@ -71,7 +71,7 @@ export const sendApiRequest = async (callback: FormCallback, formData: object | 
   // console.log('utils > emailing > sendApiRequest >  listIds :', listIds)
 
   dataMapping.forEach(dm => {
-    // const subKey = dm.subKey
+    console.log('utils > emailing > sendApiRequest >  dm :', dm)
     let value: any = ''
     switch (dm.from) {
       case 'env':
@@ -82,8 +82,9 @@ export const sendApiRequest = async (callback: FormCallback, formData: object | 
         break
       case 'usedTracks':
         value = findInTracksArray(trackValues, dm.id)
-        // value = usedTrackValues
         break
+      default:
+        value = ''
     }
     // parse as array
     if (dm.asArray) {
@@ -94,9 +95,12 @@ export const sendApiRequest = async (callback: FormCallback, formData: object | 
     if (!dm.asArray && dm.type === 'integer') {
       value = parseInt(value)
     }
+    console.log('utils > emailing > sendApiRequest >  value :', value)
+
     // set in data body
     data = setProperty(data, dm.dataField, value)
     // data = setFromPath(data, dm.dataField, value)
+    console.log('utils > emailing > sendApiRequest >  data :', data)
   })
   console.log('utils > emailing > sendApiRequest >  data :', data)
   const body = JSON.stringify(data)
