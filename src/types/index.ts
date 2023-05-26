@@ -1,4 +1,14 @@
 
+// FOR ENV 
+
+export interface MetaEnv {
+  VITE_DATA_DIR_PATH: string,
+  VITE_DEPLOY_URL: string,
+  VITE_BREVO_TOKEN: string,
+  VITE_BREVO_LIST_IDS: string,
+  VITE_BREVO_SENDER_EMAIL: string,
+}
+
 // FOR AID PROGRAMS 
 
 export interface ProgramConditions {
@@ -174,6 +184,11 @@ export interface Comp {
 
 // FOR EMAILING
 
+export interface EmailData {
+  name: string,
+  email: string,
+}
+
 export interface FormCallbackDataMapping {
   from: string,
   id: string,
@@ -185,6 +200,7 @@ export interface FormCallbackDataMapping {
 }
 
 export interface FormCallback {
+  disabled?: boolean,
   help?: string,
   helpDocumentation?: string,
   action: string,
@@ -193,5 +209,6 @@ export interface FormCallback {
   headerApiKey: string,
   envApiKey: string,
   method: string,
+  dataStructure: object | object[],
   dataMapping: FormCallbackDataMapping[]
 }

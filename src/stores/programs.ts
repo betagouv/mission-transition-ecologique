@@ -33,7 +33,7 @@ export const programsStore = defineStore('programs', () => {
 
       tr.values.forEach((v: object) => {
         for (const [key, value] of Object.entries(v)) {
-          console.log(`${key}: ${value}`);
+          console.log(`store.programs > filterPrograms > key : ${key} / value : ${value}`)
           conditions[key] = value
         }
       })

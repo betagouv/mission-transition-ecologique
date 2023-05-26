@@ -92,6 +92,7 @@
 
     </div>
 
+    <!-- FORM HELPER -->
     <h6
       class="fr-mb-0" 
       style="font-size: 0.7em;">
@@ -123,6 +124,7 @@
     <!-- FORM ALERT AFTER SENDING-->
     <DsfrAlert
       :title="choices.t(`form.sent`)"
+      :description="requestResponse"
       :type="'success'">
     </DsfrAlert>
 
@@ -169,9 +171,9 @@
 import { onBeforeMount, ref, computed, toRaw, defineEmits } from 'vue'
 
 // @ts-ignore
-import type { FormValues, FormField, FormOptions, UsedTrack } from '@/types/index'
+import type { FormValues, FormField, FormOptions, FormCallback, UsedTrack } from '@/types/index'
 
-import { sendEmail } from '../utils/emailing'
+import { createContact, sendTransactionalEmail } from '../utils/emailing'
 
 import { tracksStore } from '../stores/tracks'
 import { choicesStore } from '../stores/choices'
@@ -187,6 +189,7 @@ const props = defineProps<Props>()
 let formData = ref()
 const requiredFields = ref([])
 const formIsSent = ref(false)
+const requestResponse = ref()
 
 const canSaveFrom = computed(() => {
   // @ts-ignore
@@ -196,7 +199,7 @@ const canSaveFrom = computed(() => {
 
 onBeforeMount(() => {
   // console.log('TeeForm > saveFormData >  props.formOptions :', props.formOptions)
-  const initValues = <FormValues>{}
+  const initValues: FormValues = {}
   props.formOptions.fields?.forEach((field: FormField) => {
     initValues[field.id] = field.type === 'checkbox' ? false : ''
     if (field.defaultValue) { initValues[field.id] = field.defaultValue }
@@ -212,7 +215,7 @@ const updateFormData = (ev: string, id: string) => {
 }
 
 // const emit = defineEmits(['saveData'])
-const saveFormData = () => {
+const saveFormData = async () => {
   console.log('TeeForm > saveFormData >  props.formOptions :', props.formOptions)
   console.log('TeeForm > saveFormData >  formData.value :', formData.value)
   
@@ -220,14 +223,29 @@ const saveFormData = () => {
   console.log('TeeForm > saveFormData >  usedTracks :', usedTracks)
   
   // Launch call backs if any
-  sendEmail(toRaw(props.formOptions.callbacks), toRaw(formData.value), usedTracks)
-  
+  // loop callbacks (only active ones)
+  const activeCallbacks = toRaw(props.formOptions.callbacks).filter((cb: FormCallback) => !cb.disabled)
+  for (const callback of activeCallbacks) {
+    console.log()
+    console.log('TeeForm > saveFormData >  callback.action :', callback.action)
+    let resp
+    switch (callback.action) {
+      case 'createContact':
+        resp = await createContact(callback, toRaw(formData.value), usedTracks)
+        break
+      case 'sendTransactionalEmail':
+        resp = await sendTransactionalEmail(callback, toRaw(formData.value))
+        break
+    }
+    requestResponse.value = resp
+    console.log('TeeForm > saveFormData >  resp :', resp)
+  }
   // emit('saveData', {
   //   value: props.formOptions.value,
   //   next: props.formOptions.next,
   //   data: formData.value
   // })
-  // formIsSent.value = true
+  formIsSent.value = true
 }  
 
 </script>

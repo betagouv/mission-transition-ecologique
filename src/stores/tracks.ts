@@ -59,7 +59,9 @@ export const tracksStore = defineStore('tracks', () => {
     return results
   })
   const getAllUsedTracks = computed(() => {
-    const res = usedTracks.value.map((i: object) => toRaw(i))
+    const res = usedTracks.value
+      .filter((i: UsedTrack) => i?.completed)
+      .map((i: UsedTrack) => toRaw(i))
     return res
   })
 

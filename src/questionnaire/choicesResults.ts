@@ -29,14 +29,7 @@ export const results = {
   form: {
     value: 'contact_form.email',
     // label: { fr: 'Formulaire de contact' },
-    intro: { fr: '<h4>Accompagnements proposés :</h4>\
-      <p>\
-        <ul>\
-          <li>Identifier les actions ayant un impact environnemental</li>\
-          <li>Échanger avec un conseiller dans la transition écologique</li>\
-          <li>Élaborer un plan d&lsquo;action pour vos activités quotidiennes</li>\
-        </ul>\
-      </p>\
+    intro: { fr: '\
       <h5>\
         <span class="fr-icon-phone-fill" aria-hidden="true"></span>\
         Déposez votre demande, vous serez recontacté rapidement\
@@ -113,9 +106,10 @@ export const results = {
     ],
     callbacks: [
       {
+        disabled: true,
         help: 'First action to trigger when the user clicks on the send button / create a contact in Brevo',
         helpDocumentation: 'https://developers.brevo.com/reference/createcontact',
-        action: 'fetch',
+        action: 'createContact',
         url: 'https://api.brevo.com/v3/contacts',
         method: 'POST',
         headers: {
@@ -125,6 +119,11 @@ export const results = {
         },
         headerApiKey: 'api-key',
         envApiKey: 'VITE_BREVO_TOKEN',
+        dataStructure: {
+          email: '',
+          listIds: [],
+          attributes: {}
+        },
         dataMapping: [
           {
             from: 'formData',
@@ -176,30 +175,54 @@ export const results = {
             subKey: 'attributes'
           },
           {
-            from: 'store',
+            from: 'usedTracks',
             id: 'project_needs',
             dataField: 'PROJECT_NEEDS',
             subKey: 'attributes'
           },
           {
-            from: 'store',
+            from: 'usedTracks',
             id: 'project_sectors',
             dataField: 'PROJECT_SECTORS',
             subKey: 'attributes'
           },
           {
-            from: 'store',
+            from: 'usedTracks',
             id: 'project_status',
             dataField: 'PROJECT_STATUS',
             subKey: 'attributes'
           },
           {
-            from: 'store',
+            from: 'usedTracks',
             id: 'structure_sizes',
             dataField: 'STRUCTURE_SIZE',
             subKey: 'attributes'
           },
         ]
+      },
+      {
+        disabled: false,
+        help: 'Second action send a transactional email',
+        helpDocumentation: 'https://developers.brevo.com/docs/send-a-transactional-email',
+        action: 'sendTransactionalEmail',
+        url: 'https://api.brevo.com/v3/smtp/email',
+        method: 'POST',
+        headers: {
+          accept: 'application/json',
+          'content-type': 'application/json',
+          'api-key': ''
+        },
+        headerApiKey: 'api-key',
+        envApiKey: 'VITE_BREVO_TOKEN',
+        dataStructure: {
+          sender: {
+            name: '',
+            email: ''
+          },
+          to: [],
+          subject: '',
+          htmlContent: ''
+        },
       }
     ],
     // next: {
