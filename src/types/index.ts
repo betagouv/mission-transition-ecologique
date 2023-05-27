@@ -17,9 +17,17 @@ export interface ProgramConditions {
   project_sectors?: string[],
   structure_sizes?: string[],
 }
+enum ConditionOperators {
+  or = 'or',
+  and = 'and',
+  superior = '>',
+  superiorOrEqual = '>=',
+  inferior = '>',
+  inferiorOrEqual = '>=',
+}
 export interface Condition {
   type?: string,
-  operator?: string, // or | and | > | >= | < | <= 
+  operator?: ConditionOperators,
   value?: any | any[],
 }
 
@@ -51,13 +59,21 @@ export interface Translations {
   fr: string,
   [name: string]: string
 }
+
+enum TrackComponents {
+  cards = 'cards',
+  buttons = 'buttons'
+}
 export interface TrackInterface {
-  component: string,
-  columnWidth?: number,
+  component: TrackComponents,
+  columnWidth?: number | string,
+}
+enum TrackBehaviorOperators {
+  or = 'or'
 }
 export interface TrackBehavior {
   multipleChoices: boolean,
-  operator?: string,
+  operator?: TrackBehaviorOperators,
 }
 export interface TrackOptionsField {
   id: string,
@@ -134,14 +150,20 @@ export interface FormValues {
   [name: string]: any,
 }
 
+enum FormFieldTypes {
+  text = 'text',
+  email = 'email',
+  textarea = 'textarea',
+  checkbox = 'checkbox',
+}
 export interface FormField {
   id: string,
   required: boolean,
   label?: any,
   hint?: any,
   cols?: number,
-  type?: string,
-  defaultValue?: boolean | string
+  type?: FormFieldTypes,
+  defaultValue?: boolean | string | number
 }
 
 export interface FormOptions {
@@ -206,16 +228,25 @@ export interface FormCallbackDataMapping {
   subKey?: string
 }
 
+enum CallbackMethods {
+  get = 'GET',
+  post = 'POST',
+  put = 'PUT',
+}
+enum CallbackActions {
+  createContact = 'createContact',
+  sendTransactionalEmail = 'sendTransactionalEmail'
+}
 export interface FormCallback {
   disabled?: boolean,
   help?: string,
   helpDocumentation?: string,
-  action: string,
+  action: CallbackActions,
   url: string,
   headers: object,
   headerApiKey: string,
   envApiKey: string,
-  method: string,
+  method: CallbackMethods,
   dataStructure: object | object[],
   dataMapping: FormCallbackDataMapping[]
 }

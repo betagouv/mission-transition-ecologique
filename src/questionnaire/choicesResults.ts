@@ -18,9 +18,7 @@ export const results = {
     {
       value: 'results.summary',
       label: { fr: "Vos résultats" },
-      fields: [
-
-      ],
+      // fields: [],
       next: {
         default: false
       }
