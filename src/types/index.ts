@@ -182,6 +182,13 @@ export interface Comp {
   comp: object
 }
 
+// FOR REQUESTS
+
+export interface ReqResp {
+  code?: string,
+  message?: string,
+}
+
 // FOR EMAILING
 
 export interface EmailData {

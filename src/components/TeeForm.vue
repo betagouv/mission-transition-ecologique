@@ -188,7 +188,7 @@
 import { onBeforeMount, ref, computed, toRaw, defineEmits } from 'vue'
 
 // @ts-ignore
-import type { FormValues, FormField, FormOptions, FormCallback, UsedTrack } from '@/types/index'
+import type { FormValues, FormField, FormOptions, FormCallback, UsedTrack, ReqResp } from '@/types/index'
 
 import { sendApiRequest } from '../utils/emailing'
 
@@ -205,8 +205,8 @@ const props = defineProps<Props>()
 
 let formData = ref()
 const requiredFields = ref([])
-const formIsSent = ref(false)
-const requestResponses = ref()
+const formIsSent = ref<boolean>(false)
+const requestResponses = ref<ReqResp[]>()
 
 const canSaveFrom = computed(() => {
   // @ts-ignore
@@ -240,13 +240,13 @@ const saveFormData = async () => {
   console.log('TeeForm > saveFormData >  usedTracks :', usedTracks)
   
   // Launch call backs if any
-  const responses = []
+  const responses: ReqResp[] = []
   // loop callbacks (only active ones)
   const activeCallbacks = toRaw(props.formOptions.callbacks).filter((cb: FormCallback) => !cb.disabled)
   for (const callback of activeCallbacks) {
     console.log()
     console.log('TeeForm > saveFormData >  callback.action :', callback.action)
-    let resp
+    let resp: ReqResp = {}
     switch (callback.action) {
       case 'createContact':
         resp = await sendApiRequest(callback, toRaw(formData.value), usedTracks)
