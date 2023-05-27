@@ -4,22 +4,22 @@ import { setProperty  } from './helpers'
 
 export const buildHeaders = (metaEnv: MetaEnv | any, callback: FormCallback) => {
   console.log()
-  console.log('utils > emailing > buildHeaders >  metaEnv :', metaEnv)
-  const mode = 'cors'
-  console.log('utils > emailing > buildHeaders >  mode :', mode)
+  // console.log('utils > emailing > buildHeaders >  metaEnv :', metaEnv)
+  // const mode = 'cors'
+  // console.log('utils > emailing > buildHeaders >  mode :', mode)
 
-  const method = callback.method
+  // const method = callback.method
   const headerApiKey = callback.headerApiKey
   const headers = {...callback.headers}
   // @ts-ignore
   const apiKey = metaEnv[callback.envApiKey]
-  console.log('utils > emailing > buildHeaders >  method :', method)
+  // console.log('utils > emailing > buildHeaders >  method :', method)
   // console.log('utils > emailing > buildHeaders >  headerApiKey :', headerApiKey)
   // console.log('utils > emailing > buildHeaders >  apiKey :', apiKey)
   
   // @ts-ignore
   headers[headerApiKey] = apiKey
-  console.log('utils > emailing > buildHeaders >  headers :', headers)
+  // console.log('utils > emailing > buildHeaders >  headers :', headers)
 
   return headers
 }
@@ -44,34 +44,34 @@ export const sendApiRequest = async (callback: FormCallback, formData: object | 
   console.log()
   console.log('utils > emailing > sendApiRequest >  callback.action :', callback.action)
   console.log('utils > emailing > sendApiRequest >  formData :', formData)
-  console.log('utils > emailing > sendApiRequest >  usedTrack :', usedTrack)
+  // console.log('utils > emailing > sendApiRequest >  usedTrack :', usedTrack)
   
   const metaEnv = import.meta.env
   // console.log('utils > emailing > sendApiRequest >  metaEnv :', metaEnv)
   const url = callback.url
   const method = callback.method
   const headers = buildHeaders(metaEnv, callback)
-  console.log('utils > emailing > sendApiRequest >  url :', url)
-  console.log('utils > emailing > sendApiRequest >  method :', method)
-  console.log('utils > emailing > sendApiRequest >  headers :', headers)
+  // console.log('utils > emailing > sendApiRequest >  url :', url)
+  // console.log('utils > emailing > sendApiRequest >  method :', method)
+  // console.log('utils > emailing > sendApiRequest >  headers :', headers)
 
   const usedTrackValues = usedTrack.map(usedTrack => {
     return toRaw(usedTrack.values?.map(i => toRaw(i)))
   }).filter(i => i?.length)
-  console.log('utils > emailing > sendApiRequest >  usedTrackValues :', usedTrackValues)
+  // console.log('utils > emailing > sendApiRequest >  usedTrackValues :', usedTrackValues)
 
   const trackValues: object[] = usedTrackValues.flat(1)
-  console.log('utils > emailing > sendApiRequest >  trackValues :', trackValues)
+  // console.log('utils > emailing > sendApiRequest >  trackValues :', trackValues)
 
   let data: any = callback.dataStructure || {}
 
   const dataMapping = callback.dataMapping
   // const listIds = metaEnv[callback.envListIds].split(',').map((id: string) => parseInt(id))
-  console.log('utils > emailing > sendApiRequest >  dataMapping :', dataMapping)
+  // console.log('utils > emailing > sendApiRequest >  dataMapping :', dataMapping)
   // console.log('utils > emailing > sendApiRequest >  listIds :', listIds)
 
   dataMapping.forEach(dm => {
-    console.log('utils > emailing > sendApiRequest >  dm :', dm)
+    // console.log('utils > emailing > sendApiRequest >  dm :', dm)
     let value: any = ''
     switch (dm.from) {
       case 'env':
@@ -95,15 +95,15 @@ export const sendApiRequest = async (callback: FormCallback, formData: object | 
     if (!dm.asArray && dm.type === 'integer') {
       value = parseInt(value)
     }
-    console.log('utils > emailing > sendApiRequest >  value :', value)
+    // console.log('utils > emailing > sendApiRequest >  value :', value)
 
     // set in data body
     data = setProperty(data, dm.dataField, value)
-    console.log('utils > emailing > sendApiRequest >  data :', data)
+    // console.log('utils > emailing > sendApiRequest >  data :', data)
   })
   console.log('utils > emailing > sendApiRequest >  data :', data)
   const body = JSON.stringify(data)
-  console.log('utils > emailing > sendApiRequest >  body :', body)
+  // console.log('utils > emailing > sendApiRequest >  body :', body)
 
   // fetch and return
   const respJson = await sendRequest(url, method, headers, body)
@@ -111,18 +111,20 @@ export const sendApiRequest = async (callback: FormCallback, formData: object | 
 }
 
 export const sendRequest = async (url: string, method: string, headers: any, body: any) => {
-  console.log()
-  console.log('utils > emailing > sendTransactionalEmail >  url :', url)
-  console.log('utils > emailing > sendTransactionalEmail >  method :', method)
-  console.log('utils > emailing > sendTransactionalEmail >  headers :', headers)
+  // console.log()
+  // console.log('utils > emailing > sendRequest >  url :', url)
+  // console.log('utils > emailing > sendRequest >  method :', method)
+  // console.log('utils > emailing > sendRequest >  headers :', headers)
   // send request
   const response = await fetch(url, {
     method: method,
     headers: headers,
     body: body
   })
+  console.log('utils > emailing > sendRequest >  response :', response)
   const respJson = await response.json()
-  console.log('utils > emailing > sendTransactionalEmail >  respJson :', respJson)
+  respJson.status = response.status
+  console.log('utils > emailing > sendRequest >  respJson :', respJson)
   
   return respJson
 }

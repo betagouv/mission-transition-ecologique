@@ -207,6 +207,7 @@ export interface Comp {
 // FOR REQUESTS
 
 export interface ReqResp {
+  status?: number,
   code?: string,
   message?: string,
 }
@@ -218,8 +219,13 @@ export interface EmailData {
   email: string,
 }
 
+enum DataMappingFroms {
+  env = 'env',
+  formData = 'formData',
+  usedTracks = 'usedTracks',
+}
 export interface FormCallbackDataMapping {
-  from: string,
+  from: DataMappingFroms,
   id: string,
   dataField: string,
   asArray?: boolean
