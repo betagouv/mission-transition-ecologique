@@ -99,7 +99,6 @@ export const sendApiRequest = async (callback: FormCallback, formData: object | 
 
     // set in data body
     data = setProperty(data, dm.dataField, value)
-    // data = setFromPath(data, dm.dataField, value)
     console.log('utils > emailing > sendApiRequest >  data :', data)
   })
   console.log('utils > emailing > sendApiRequest >  data :', data)
