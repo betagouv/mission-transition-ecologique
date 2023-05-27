@@ -122,27 +122,23 @@
     v-if="formIsSent"
     class="fr-mt-5v">
     <!-- FORM ALERT AFTER SENDING-->
-    <!-- <DsfrAlert
-      :title="choices.t(`form.sent`)"
-      :type="'success'">
-    </DsfrAlert> -->
     <div class="fr-alert fr-alert--success">
-        <h3 class="fr-alert__title">
-          {{ choices.t(`form.sent`) }}
-        </h3>
-        <div
-          class="fr-mt-5v fr-highlight"
-          v-if="requestResponses">
-          <p
-            v-for="(resp, i) in requestResponses"
-            :key="`resp-${i}`">
-            <b>
-              {{ resp.code }} :
-            </b>
-            &nbsp;
-            {{ resp.message }}
-          </p>
-        </div>
+      <h3 class="fr-alert__title">
+        {{ choices.t(`form.sent`) }}
+      </h3>
+      <div
+        class="fr-mt-5v fr-highlight"
+        v-if="requestResponses">
+        <p
+          v-for="(resp, i) in requestResponses"
+          :key="`resp-${i}`">
+          <b>
+            {{ resp.code }} :
+          </b>
+          &nbsp;
+          {{ resp.message }}
+        </p>
+      </div>
     </div>
 
     <!-- NOW WHAT -->
