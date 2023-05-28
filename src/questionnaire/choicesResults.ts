@@ -94,12 +94,22 @@ export const results = {
       },
       {
         id: 'cgu',
-        label: { fr: "J'accepte les CGU *"},
-        hint: { fr: "Voir les Conditions Générales d'Utilisation" },
+        help: 'https://aidantsconnect.beta.gouv.fr/cgu/',
+        label: { fr: "J'accepte d'être recontacté par l'équipe de Transition Ecologique des Entreprises *"},
+        hint: { fr: `
+          Vos données à caractère personnel seront uniquement utilisées à des fins légitimes et nécessaires
+          par l'équipe de Transition Ecologique des Entreprises dans le respect du RGPD, 
+          c'est-à-dire afin pour vous recontacter par email ou par téléphone 
+          afin de vous aider à vous orienter et à vous conseiller 
+          dans votre recherche d'aides
+          à la transition écologique de votre entreprise.
+          Voir les Conditions Générales d'Utilisation (page en cours de rédaction).
+          Pour toute question vous pouvez nous contacter à "france-transition(at)beta.gouv.fr"
+        ` },
         required: true,
         type: 'checkbox',
         // for debugging purposes
-        defaultValue: true
+        defaultValue: false
       },
     ],
     callbacks: [
@@ -219,11 +229,13 @@ export const results = {
               <head></head>
               <body>
                 <p>
-                  Hello,
+                  Bonjour,
                 </p>
                 <p>
-                  This is my first transactional
-                  email sent from Brevo.
+                  Merci d'avoir contacté l'équipe de Transition Ecologique des Entreprises.
+                </p>
+                <p>
+                  Nous revenons vers vous au plus vite
                 </p>
               </body>
             </html>`

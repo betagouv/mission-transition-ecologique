@@ -124,7 +124,7 @@ export const sendRequest = async (url: string, method: string, headers: any, bod
   console.log('utils > emailing > sendRequest >  response :', response)
   const respJson = await response.json()
   respJson.status = response.status
-  console.log('utils > emailing > sendRequest >  respJson :', respJson)
+  // console.log('utils > emailing > sendRequest >  respJson :', respJson)
   
   return respJson
 }

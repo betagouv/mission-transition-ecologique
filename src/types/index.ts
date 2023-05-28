@@ -158,6 +158,7 @@ enum FormFieldTypes {
 }
 export interface FormField {
   id: string,
+  help?: string,
   required: boolean,
   label?: any,
   hint?: any,
