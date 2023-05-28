@@ -99,7 +99,7 @@ export const results = {
         hint: { fr: `
           Vos données à caractère personnel seront uniquement utilisées à des fins légitimes et nécessaires
           par l'équipe de Transition Ecologique des Entreprises dans le respect du RGPD, 
-          c'est-à-dire afin pour vous recontacter par email ou par téléphone 
+          c'est-à-dire pour vous recontacter par email ou par téléphone 
           afin de vous aider à vous orienter et à vous conseiller 
           dans votre recherche d'aides
           à la transition écologique de votre entreprise.
