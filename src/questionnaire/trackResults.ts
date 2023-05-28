@@ -119,6 +119,7 @@ export const results = {
         helpDocumentation: 'https://developers.brevo.com/reference/createcontact',
         action: 'createContact',
         url: 'https://api.brevo.com/v3/contacts',
+        // url: 'https://api.brevo.com/v3/contacts/doubleOptinConfirmation', // for double opt-in
         method: 'POST',
         headers: {
           accept: 'application/json',
@@ -130,7 +131,9 @@ export const results = {
         dataStructure: {
           email: '',
           listIds: [],
-          attributes: {}
+          attributes: {},
+          // templateId: 1,  // for double opt-in
+          // redirectionUrl: ''  // for double opt-in
         },
         dataMapping: [
           {
@@ -199,9 +202,12 @@ export const results = {
         ]
       },
       {
-        disabled: false,
+        disabled: true,
         help: 'Second action send a transactional email',
-        helpDocumentation: 'https://developers.brevo.com/docs/send-a-transactional-email',
+        helpDocumentation: [
+          'https://developers.brevo.com/docs/send-a-transactional-email',
+          'https://developers.brevo.com/reference/sendtransacemail'
+        ],
         action: 'sendTransactionalEmail',
         url: 'https://api.brevo.com/v3/smtp/email',
         method: 'POST',
@@ -223,6 +229,10 @@ export const results = {
               email: ''
             }
           ],
+          replyTo: {
+            name: 'Mission Transition Ecologique des Entreprises',
+            email: 'france-transition@beta.gouv.fr'
+          },
           subject: 'Test transactional email',
           htmlContent: `
             <html>

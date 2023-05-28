@@ -247,7 +247,7 @@ enum CallbackActions {
 }
 export interface FormCallback {
   disabled?: boolean,
-  help?: string,
+  help?: string | string[],
   helpDocumentation?: string,
   action: CallbackActions,
   url: string,

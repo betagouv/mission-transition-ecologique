@@ -128,7 +128,7 @@
       </h3>
       <div
         class="fr-mt-5v fr-highlight"
-        v-if="requestResponses?.filter(resp => resp.status !== 200)">
+        v-if="requestResponses?.filter(resp => resp.status && ![200, 201].includes(resp.status))">
         <p
           v-for="(resp, i) in requestResponses"
           :key="`resp-${i}`">
