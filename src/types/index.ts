@@ -208,6 +208,7 @@ export interface Comp {
 // FOR REQUESTS
 
 export interface ReqResp {
+  action?: CallbackActions,
   status?: number,
   code?: string,
   message?: string,

@@ -106,11 +106,11 @@ export const sendApiRequest = async (callback: FormCallback, formData: object | 
   // console.log('utils > emailing > sendApiRequest >  body :', body)
 
   // fetch and return
-  const respJson = await sendRequest(url, method, headers, body)
+  const respJson = await sendRequest(url, method, headers, body, callback.action)
   return respJson
 }
 
-export const sendRequest = async (url: string, method: string, headers: any, body: any) => {
+export const sendRequest = async (url: string, method: string, headers: any, body: any, action: string) => {
   // console.log()
   // console.log('utils > emailing > sendRequest >  url :', url)
   // console.log('utils > emailing > sendRequest >  method :', method)
@@ -123,6 +123,7 @@ export const sendRequest = async (url: string, method: string, headers: any, bod
   })
   console.log('utils > emailing > sendRequest >  response :', response)
   const respJson = await response.json()
+  respJson.action = action
   respJson.status = response.status
   // console.log('utils > emailing > sendRequest >  respJson :', respJson)
   

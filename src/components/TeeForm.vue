@@ -122,7 +122,7 @@
     v-if="formIsSent"
     class="fr-mt-5v">
     <!-- FORM ALERT AFTER SENDING-->
-    <div :class="`fr-alert fr-alert--${!requestResponses || requestResponses?.map(r => r.status).every(s => s === 200) ? 'success' : 'error'}`">
+    <div :class="`fr-alert fr-alert--${!requestResponses || requestResponses?.map(r => r.status).every(s => s === 200 || s === 201) ? 'success' : 'error'}`">
       <h3 class="fr-alert__title">
         {{ choices.t(`form.sent`) }}
       </h3>
@@ -132,6 +132,9 @@
         <p
           v-for="(resp, i) in requestResponses"
           :key="`resp-${i}`">
+          <b>
+            {{ resp.action }} :  
+          </b>
           <b>
             status {{ resp.status }} :  
           </b>
