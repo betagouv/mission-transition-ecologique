@@ -1,7 +1,17 @@
 title: Fonds Tourisme Durable
-resume: Obtenez un accompagnement pour votre activité touristique
+resume: Obtenez un diagnostic et des subventions dans votre activité touristique 
 description: |
-  Obtenez un diagnostic, un plan d’action puis des subventions pour les investissements de votre activité touristique (entre 5k€ et 200k€).
+  <ul>
+    <li>
+      Faites un état des lieux gratuitement afin d'identifier les axes prioritaires d’économies
+    </li>
+    <li>
+      Réduisez et maîtrisez vos coûts fixes (énergie, eau, déchets, gaspillage alimentaire, transport)
+    </li>
+    <li>
+      Accédez à des aides forfaitaires dans tous les domaines de la transition écologique (entre 5k€ et 200k€)
+    </li>
+  </ul>
 program_types: 
   - aap
 conditions:
@@ -24,4 +34,6 @@ conditions:
       - tpe
       - pme
 program_providers: 
-  - code: '???'
+  - code: ADEME
+    href: https://ademe.fr/
+    SIREN: 385 290 309
