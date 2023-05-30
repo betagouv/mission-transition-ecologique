@@ -118,8 +118,8 @@ export const results = {
         help: 'First action to trigger when the user clicks on the send button / create a contact in Brevo',
         helpDocumentation: 'https://developers.brevo.com/reference/createcontact',
         action: 'createContact',
-        url: 'https://api.brevo.com/v3/contacts',
-        // url: 'https://api.brevo.com/v3/contacts/doubleOptinConfirmation', // for double opt-in
+        // url: 'https://api.brevo.com/v3/contacts',
+        url: 'https://api.brevo.com/v3/contacts/doubleOptinConfirmation', // for double opt-in
         method: 'POST',
         headers: {
           accept: 'application/json',
@@ -130,10 +130,11 @@ export const results = {
         envApiKey: 'VITE_BREVO_TOKEN',
         dataStructure: {
           email: '',
-          listIds: [],
+          // listIds: [],
+          includeListIds: [],
           attributes: {},
-          // templateId: 1,  // for double opt-in
-          // redirectionUrl: ''  // for double opt-in
+          templateId: 1,  // for double opt-in
+          redirectionUrl: 'https://gov-aid-tree-poc.netlify.app'  // for double opt-in
         },
         dataMapping: [
           {
@@ -144,7 +145,8 @@ export const results = {
           {
             from: 'env',
             id: 'VITE_BREVO_LIST_IDS',
-            dataField: 'listIds',
+            // dataField: 'listIds',
+            dataField: 'includeListIds',
             asArray: true,
             sep: ',',
             type: 'integer'
@@ -201,73 +203,73 @@ export const results = {
           },
         ]
       },
-      {
-        disabled: true,
-        help: 'Second action send a transactional email',
-        helpDocumentation: [
-          'https://developers.brevo.com/docs/send-a-transactional-email',
-          'https://developers.brevo.com/reference/sendtransacemail'
-        ],
-        action: 'sendTransactionalEmail',
-        url: 'https://api.brevo.com/v3/smtp/email',
-        method: 'POST',
-        headers: {
-          accept: 'application/json',
-          'content-type': 'application/json',
-          'api-key': ''
-        },
-        headerApiKey: 'api-key',
-        envApiKey: 'VITE_BREVO_TOKEN',
-        dataStructure: {
-          sender: {
-            name: 'Transition Ecologique des Entreprises',
-            email: ''
-          },
-          to: [
-            {
-              name: '',
-              email: ''
-            }
-          ],
-          replyTo: {
-            name: 'Mission Transition Ecologique des Entreprises',
-            email: 'france-transition@beta.gouv.fr'
-          },
-          subject: 'Test transactional email',
-          htmlContent: `
-            <html>
-              <head></head>
-              <body>
-                <p>
-                  Bonjour,
-                </p>
-                <p>
-                  Merci d'avoir contacté l'équipe de Transition Ecologique des Entreprises.
-                </p>
-                <p>
-                  Nous revenons vers vous au plus vite
-                </p>
-              </body>
-            </html>`
-        },
-        dataMapping: [
-          {
-            from: 'env',
-            id: 'VITE_BREVO_SENDER_EMAIL',
-            dataField: 'sender.email',
-          },
-          {
-            from: 'formData',
-            id: 'email',
-            dataField: 'to.0.email',
-          },
-          {
-            from: 'formData',
-            id: 'name',
-            dataField: 'to.0.name',
-          },
-        ]
-      }
+      // {
+      //   disabled: true,
+      //   help: 'Second action send a transactional email',
+      //   helpDocumentation: [
+      //     'https://developers.brevo.com/docs/send-a-transactional-email',
+      //     'https://developers.brevo.com/reference/sendtransacemail'
+      //   ],
+      //   action: 'sendTransactionalEmail',
+      //   url: 'https://api.brevo.com/v3/smtp/email',
+      //   method: 'POST',
+      //   headers: {
+      //     accept: 'application/json',
+      //     'content-type': 'application/json',
+      //     'api-key': ''
+      //   },
+      //   headerApiKey: 'api-key',
+      //   envApiKey: 'VITE_BREVO_TOKEN',
+      //   dataStructure: {
+      //     sender: {
+      //       name: 'Transition Ecologique des Entreprises',
+      //       email: ''
+      //     },
+      //     to: [
+      //       {
+      //         name: '',
+      //         email: ''
+      //       }
+      //     ],
+      //     replyTo: {
+      //       name: 'Mission Transition Ecologique des Entreprises',
+      //       email: 'france-transition@beta.gouv.fr'
+      //     },
+      //     subject: 'Test transactional email',
+      //     htmlContent: `
+      //       <html>
+      //         <head></head>
+      //         <body>
+      //           <p>
+      //             Bonjour,
+      //           </p>
+      //           <p>
+      //             Merci d'avoir contacté l'équipe de Transition Ecologique des Entreprises.
+      //           </p>
+      //           <p>
+      //             Nous revenons vers vous au plus vite
+      //           </p>
+      //         </body>
+      //       </html>`
+      //   },
+      //   dataMapping: [
+      //     {
+      //       from: 'env',
+      //       id: 'VITE_BREVO_SENDER_EMAIL',
+      //       dataField: 'sender.email',
+      //     },
+      //     {
+      //       from: 'formData',
+      //       id: 'email',
+      //       dataField: 'to.0.email',
+      //     },
+      //     {
+      //       from: 'formData',
+      //       id: 'name',
+      //       dataField: 'to.0.name',
+      //     },
+      //   ]
+      // }
     ],
     // next: {
     //   default: 'track_results'
