@@ -126,9 +126,10 @@
       <h3 class="fr-alert__title">
         {{ choices.t(`form.sent`) }}
       </h3>
+      <!-- DEBUGGING -->
       <div
         class="fr-mt-5v fr-highlight"
-        v-if="requestResponses?.filter(resp => resp.status && ![200, 201].includes(resp.status))">
+        v-if="debug && requestResponses?.filter(resp => resp.status && ![200, 201].includes(resp.status))">
         <p
           v-for="(resp, i) in requestResponses"
           :key="`resp-${i}`">
