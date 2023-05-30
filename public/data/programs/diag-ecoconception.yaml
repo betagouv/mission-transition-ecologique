@@ -1,6 +1,7 @@
 title: Diag Ecoconception
-resume: Faites des économies en gérant durablement vos dépenses
+resume: Améliorez l'impact environnementale de vos produits et services
 description: |
+  <b>Une démarche simple :</b>
   <ul>
     <li>
       Sensibilisez les équipes internes à l’écoconception et formez un référent écoconception dans votre entreprise
@@ -35,4 +36,5 @@ conditions:
     value: 
       - pme
 program_providers: 
-  - code: '???'
+  - code: BPIFRANCE
+    siren : 320 252 489
