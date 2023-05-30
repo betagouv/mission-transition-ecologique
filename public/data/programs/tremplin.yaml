@@ -1,7 +1,20 @@
 title: Tremplin
-resume: Financez vos petits projets d’études ou d’investissement écologique
+resume: Financez vos projets d’études ou d’investissement écologique avec une ou plusieurs aides forfaitaires
 description: |
-  Subventionnez la ou les projets écologique de votre entreprise suivant une liste d’action prédéfinie par l’ADEME (entre 5k€ et 200k€).
+  <ul>
+    <li>
+      Accédez à des aides forfaitaires dans plusieurs domaines de la transition 
+      écologique (décarbonation, éco-conception,économie circulaire, gestion 
+      des déchets, chaleur et froid renouvelable...)
+    </li>
+    <li>
+      Subventionnez la ou les projets écologique de votre entreprise suivant 
+      une liste d’action prédéfinie par l’ADEME (entre 5k€ et 200k€)
+    </li>
+    <li>
+      Demandez une aide financière sur une ou plusieurs actions en même temps
+    </li>
+  </ul>
 program_types: 
   - aap
 conditions:
