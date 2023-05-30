@@ -35,7 +35,7 @@ export const results = {
     ' },
     fields: [
       {
-        id: 'surname',
+        id: 'name',
         label: { fr: 'Prénom'},
         hint: { fr: 'Camille' },
         required: false,
@@ -45,7 +45,7 @@ export const results = {
         defaultValue: 'Julien'
       },
       {
-        id: 'name',
+        id: 'surname',
         label: { fr: 'Nom'},
         hint: { fr: 'Dujardin' },
         required: false,
@@ -61,7 +61,7 @@ export const results = {
         required: true,
         type: 'email',
         // for debugging purposes
-        defaultValue: 'julien.paris@gmail.com'
+        defaultValue: 'julien.paris@beta.gouv.fr'
       },
       {
         id: 'siret',
