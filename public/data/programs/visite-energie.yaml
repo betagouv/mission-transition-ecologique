@@ -1,17 +1,18 @@
 title: Visite Energie
-resume: Diagnostic pour mesurer sa maturité energétique assorti d’un plan d’actions personnalisé proposé par votre CCI
+resume: Mesurer votre maturité energétique et créer d’un plan d’actions personnalisé avec un conseiller
 description: |
   <ul>
     <li>
-      Un état des lieux gratuit pour évaluer l'impact de l’activité 
-      sur l'environnement et détecter de nouvelles sources d'économies 
-      (énergie, isolation des locaux, consommations d’eau, déchets, 
-      matières premières, achats, mobilité, etc.)
+      Mettez en œuvre une démarche structurée d’économies d’énergie
     </li>
     <li>
-      La restitution d'un diagnostic complet et la proposition 
-      d'un plan d'actions prioritaires pour maîtriser sa consommation 
-      énergétique et optimiser ses coûts.
+      Montez en compétences sur la thématique Energie de votre entreprise
+    </li>
+    <li>
+      Construisez et réalisez un plan d’actions grâce à un expert de l'énergie
+    </li>
+    <li>
+      Réduisez la consommation d’énergie de votre entreprise
     </li>
   </ul>
 program_types: 
@@ -38,3 +39,4 @@ conditions:
       - pme
 program_providers: 
   - code: CCI
+    siret : 187 500 020 00073
