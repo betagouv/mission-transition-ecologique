@@ -14,15 +14,21 @@
       />
     </p>
 
-    <!-- MESSAGE -->
-    <div class="fr-grid-row fr-grid-row--gutters">
-      <div class="fr-col-9">
+    <!-- MESSAGE & DEBUG SWITCH-->
+    <div 
+      v-if="showMessageBool || debugSwitchBool"
+      class="fr-grid-row fr-grid-row--gutters">
+      <!-- MESSAGE-->
+      <div 
+        v-if="showMessageBool"
+        class="fr-col-9">
         <h3
           v-if="message"
           class="red-color">
           <span v-html="message[choices.lang]"/>
         </h3>
       </div>
+      <!-- DEBUG SWITCH-->
       <div
         v-if="debugSwitchBool" 
         class="fr-col-3">
@@ -161,6 +167,7 @@ const yamlPrograms = deployMode ? jsonDataset : process.env.programs
 
 interface Props {
   showHeader?: string,
+  showMessage?: string,
   showFooter?: string,
   locale?: string,
   msg?: string,
@@ -177,6 +184,7 @@ const choices = choicesStore()
 const programs = programsStore()
 
 let showHeaderBool = ref(false)
+let showMessageBool = ref(false)
 let showFooterBool = ref(false)
 let message = ref()
 let debugSwitchBool = ref(false)
@@ -224,6 +232,7 @@ onBeforeMount(() => {
 
   // set header / footer components
   showHeaderBool.value = props.showHeader === 'true'
+  showMessageBool.value = props.showMessage === 'true'
   showFooterBool.value = props.showFooter === 'true'
 
   // set locale and message
