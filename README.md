@@ -234,6 +234,7 @@ Check : https://github.com/orgs/betagouv/projects/54/views/1
   locale="fr"
   show-header="true"
   show-footer="true"
+  show-stepper="true"
   show-message="true"
   msg="fr | The GOV-AID-TREE widget to find your aid program !"
   seed="track_needs"
@@ -252,6 +253,8 @@ Check : https://github.com/orgs/betagouv/projects/54/views/1
 | :-------:      | :----: | :---:     | :-----: | ---------- |
 | `show-header`  | R&D    | `boolean` | `true`   | Show / hide header on top of the widget  |
 | `show-footer`  | R&D    | `boolean` | `false`  | Show / hide footer on top of the widget  |
+| `show-stepper` | R&D    | `boolean` | `false`  | Show / hide stepper on top of the widget  |
+| `show-message` | R&D    | `boolean` | `false`  | Show / hide message on top of the widget  |
 | `msg`          | R&D    | `string`  | `...`    | Locale `|` Message on the top of the widget  |
 | `seed`         | R&D    | `string`  | `needs`  | Questionnaire seed question       |
 | `dataset`      | x      | `string`  | `*.json` | Dataset file / url to select from to find results |

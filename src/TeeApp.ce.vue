@@ -42,7 +42,9 @@
     </div>
 
     <!-- STEPPER -->
-    <p>
+    <p
+      v-if="showStepperBool" 
+      >
       <TeeStepper
         :steps-array="tracks.tracksStepsArray"
         :current-step="tracks.currentStep"
@@ -168,6 +170,7 @@ const yamlPrograms = deployMode ? jsonDataset : process.env.programs
 interface Props {
   showHeader?: string,
   showMessage?: string,
+  showStepper?: string,
   showFooter?: string,
   locale?: string,
   msg?: string,
@@ -185,6 +188,7 @@ const programs = programsStore()
 
 let showHeaderBool = ref(false)
 let showMessageBool = ref(false)
+let showStepperBool = ref(false)
 let showFooterBool = ref(false)
 let message = ref()
 let debugSwitchBool = ref(false)
@@ -232,6 +236,7 @@ onBeforeMount(() => {
 
   // set header / footer components
   showHeaderBool.value = props.showHeader === 'true'
+  showStepperBool.value = props.showStepper === 'true'
   showMessageBool.value = props.showMessage === 'true'
   showFooterBool.value = props.showFooter === 'true'
 
