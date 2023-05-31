@@ -42,7 +42,7 @@ export const results = {
         type: 'text',
         cols: 6,
         // for debugging purposes
-        defaultValue: 'Julien'
+        // defaultValue: 'Camille'
       },
       {
         id: 'surname',
@@ -52,7 +52,7 @@ export const results = {
         type: 'text',
         cols: 6,
         // for debugging purposes
-        defaultValue: 'Paris'
+        // defaultValue: 'Dujardin'
       },
       {
         id: 'email',
@@ -61,7 +61,7 @@ export const results = {
         required: true,
         type: 'email',
         // for debugging purposes
-        defaultValue: 'julien.paris@beta.gouv.fr'
+        // defaultValue: 'france-transition@beta.gouv.fr'
       },
       {
         id: 'siret',
@@ -71,7 +71,7 @@ export const results = {
         type: 'text',
         cols: 12,
         // for debugging purposes
-        defaultValue: '83014132100034'
+        // defaultValue: '83014132100034'
       },
       {
         id: 'tel',
@@ -81,7 +81,7 @@ export const results = {
         type: 'text',
         cols: 12,
         // for debugging purposes
-        defaultValue: '06 05 04 03 02'
+        // defaultValue: '06 05 04 03 02'
       },
       {
         id: 'needs',
@@ -90,7 +90,7 @@ export const results = {
         required: false,
         type: 'textarea',
         // for debugging purposes
-        defaultValue: 'Just some tests'
+        // defaultValue: 'Just some tests'
       },
       {
         id: 'cgu',
@@ -109,7 +109,7 @@ export const results = {
         required: true,
         type: 'checkbox',
         // for debugging purposes
-        defaultValue: false
+        // defaultValue: false
       },
     ],
     callbacks: [

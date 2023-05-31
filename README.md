@@ -234,15 +234,16 @@ Check : https://github.com/orgs/betagouv/projects/54/views/1
   locale="fr"
   show-header="true"
   show-footer="true"
+  show-message="true"
   msg="fr | The GOV-AID-TREE widget to find your aid program !"
   seed="track_needs"
-  dataset-url="data/eco-aides.json"
+  dataset-url="/public/data/eco-aides.json"
   max-depth=3
   debug-switch="false"
   debug="false"
   >
 </gov-aid-tree-app>
-<script type="module" src="<DEPLOYMENT_URL>/src/main.ce.ts"></script>
+<script type="module" defer src="<DEPLOYMENT_URL>/gov-aid-tree-app.umd.js"></script>
 ```
 
 ### Widget parameters
