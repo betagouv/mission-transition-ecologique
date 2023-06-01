@@ -151,8 +151,8 @@ export const results = {
           {
             from: 'env',
             id: 'VITE_BREVO_LIST_IDS',
-            // dataField: 'listIds',
-            dataField: 'includeListIds',
+            dataField: 'listIds',
+            // dataField: 'includeListIds',
             asArray: true,
             sep: ',',
             type: 'integer'
