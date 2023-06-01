@@ -124,6 +124,10 @@ const projectLinks = [
     href: 'https://beta.gouv.fr/startups/transition-ecologique-des-entreprises.html'
   },
   {
+    label: 'Conditions Générales',
+    href: 'http://mission-transition.beta.gouv.fr/mentions-legales'
+  },
+  {
     label: 'Code source Mission Transition',
     href: 'https://github.com/MTES-MCT/mission-transition'
   },

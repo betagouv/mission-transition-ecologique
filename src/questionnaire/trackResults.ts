@@ -27,12 +27,18 @@ export const results = {
   form: {
     value: 'contact_form.email',
     // label: { fr: 'Formulaire de contact' },
-    intro: { fr: '\
-      <h5>\
-        <span class="fr-icon-phone-fill" aria-hidden="true"></span>\
-        Déposez votre demande, vous serez recontacté rapidement\
-      </h5>\
-    ' },
+    intro: { fr: `
+      <h2>
+        <span
+          class="fr-icon-phone-fill" 
+          aria-hidden="true"></span>
+        Vous avez une question ?
+      </h2>
+      <h5>
+        N'hésitez pas à nous laisser un message, 
+        nous nous ferons un plaisir de répondre à vos questions. 
+      </h5>
+    ` },
     fields: [
       {
         id: 'name',
@@ -77,7 +83,7 @@ export const results = {
         id: 'tel',
         label: { fr: 'Téléphone'},
         hint: { fr: '06 05 04 03 02' },
-        required: false,
+        required: true,
         type: 'text',
         cols: 12,
         // for debugging purposes
@@ -118,8 +124,8 @@ export const results = {
         help: 'First action to trigger when the user clicks on the send button / create a contact in Brevo',
         helpDocumentation: 'https://developers.brevo.com/reference/createcontact',
         action: 'createContact',
-        // url: 'https://api.brevo.com/v3/contacts',
-        url: 'https://api.brevo.com/v3/contacts/doubleOptinConfirmation', // for double opt-in
+        url: 'https://api.brevo.com/v3/contacts',
+        // url: 'https://api.brevo.com/v3/contacts/doubleOptinConfirmation', // for double opt-in
         method: 'POST',
         headers: {
           accept: 'application/json',
@@ -130,11 +136,11 @@ export const results = {
         envApiKey: 'VITE_BREVO_TOKEN',
         dataStructure: {
           email: '',
-          // listIds: [],
-          includeListIds: [],
+          listIds: [],
+          // includeListIds: [],
           attributes: {},
-          templateId: 1,  // for double opt-in
-          redirectionUrl: 'https://gov-aid-tree-poc.netlify.app'  // for double opt-in
+          // templateId: 1,  // for double opt-in
+          // redirectionUrl: 'https://gov-aid-tree-poc.netlify.app'  // for double opt-in
         },
         dataMapping: [
           {
