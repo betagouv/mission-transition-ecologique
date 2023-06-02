@@ -234,7 +234,7 @@ graph TD;
 
 ## Focus on the questionnaire mecanism
 
-The mecanism is freely inspired by `choose-your-own-adventure` books. You enter a chapter (here a `track`), a when the user clicks on a choice they are led to another chapter, and it goes on...
+**Disclaimer** : _The mecanism is freely inspired by `choose-your-own-adventure` books. You enter a chapter (here a `track`), a when the user clicks on a choice they are led to another chapter, and it goes on..._
 
 All the questions for the questionnaire are splited into several files. Each file (or `track*.ts`) corresponds to a questionnaire's `track` ; a `track` presents several choices to the user.
 
@@ -262,6 +262,7 @@ The `index.ts` file (in the `./src/questionnaire` directory) builds up all the t
 ├── ...
 └── README.md
 ```
+
 Each `track` file is structured as follows : 
 
 ```js
@@ -315,6 +316,107 @@ export const needs = {
 The widget's html contains a `seed` parameter : you need to specify here a track `id` (for instance `track_needs`) to tell the widget which track it should display first.
 
 The user will see the questionnaire beginning with this first track, and its journey begins...
+
+---
+
+## Focus on the dataset
+
+**Disclaimer** : _This strategy for building a dataset of aid programs is freely inspired from other projects, especially by the way [aides-jeunes](https://github.com/betagouv/aides-jeunes/tree/master/data/benefits/javascript) is building a collaborative dataset of aids from a set of yaml files._
+
+
+The aid programs dataset is rebuilt as a unique `dataset_out.json` file at each deployment, based on a list of `yaml` files. All of these files are exposed in the `./public` directory.
+
+All the aids are described one by one in the `./public/data/programs` directory in distinct `yaml` files.
+
+```
+.
+├── ...
+├── public
+|   ├── css
+|   └── data
+|   |   ├── output               
+|   |   |   └── dataset_out.json  <-- the json file used as a "database"
+|   |   ├── programs              <-- all the aid described in a yaml format
+|   |   |   ├── diag-decarbon-action.yaml
+|   |   |   ├── diag-eco-flux.yaml
+|   |   |   ├── diag-ecoconception.yaml
+|   |   |   └── ...
+|   |   └── references
+|   ├── ufontstils
+|   └── ...
+├── ...
+└── README.md
+```
+
+When the app is built some functions in the `./vite.config.ts` are triggered :
+
+- All yaml files in the `./public/data/programs` are read and transformed into `js` objects ;
+- All objects are then pushed into an array ;
+- This array of objects (all the data from all yaml files) is exported and written as `dataset_out.json` file (the output) in `./public/data/output`.
+
+Doing so any new build (for instance triggered by a push/MR on the repo) will automatically keep updated the aid dataset. 
+
+This startegy for building the dataset has several advantages : 
+
+- No need for a database technology (no use for a PostGreSQL / SQL / MongoDB...), we keep it simple in a json ;
+- Any member of the team (especially not developpers) can add new yaml files to the repo, and the "database" will be updated without any need of a developer.
+
+The `TeeApp` widget can the import the json file as a static, and they are then stored in the global Pinia store (`./src/stores/programs.ts`) for later uses :
+
+```js
+// ./src/TeeApp.ce.vue
+
+<script>
+  import jsonDataset from '@public/data/output/dataset_out.json'
+  const yamlPrograms = deployMode ? jsonDataset : process.env.programs
+  
+  import { programsStore } from './stores/programs'
+  const programs = programsStore()
+
+  ...
+
+  onBeforeMount(() => {
+    ...
+    programs.setYamlDataset(yamlPrograms)
+    ...
+  })
+
+  ...
+</script>
+
+```
+
+Once in the store, programs can be filtered (cf `filterPrograms` function in `./src/stores/program.ts` ) depending on the choices made by the user during the questionnaire.
+
+In order to filter aid programs corresponding to the user's choices, an aid program yaml file must contain a block of `conditions` - following more or less the [open fisca](https://fr.openfisca.org/) / [Publicodes](https://publi.codes/) syntax - such as :
+
+```yaml
+# ex. ./public/data/programs/diag-eco-flux.yaml
+
+title: Diag Eco-flux
+resume: Faites des économies en gérant durablement vos dépenses
+description: ...
+...
+conditions:
+  - type: project_needs
+    operator: "or"
+    value: 
+      - advices
+  - type: project_status
+    operator: "or"
+    value: 
+      - economies
+  - type: project_sectors
+    operator: "or"
+    value: 
+      - "*"
+  - type: structure_sizes
+    operator: "or"
+    value: 
+      - pme
+...
+````
+
 
 ---
 
