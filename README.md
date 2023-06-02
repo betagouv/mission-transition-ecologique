@@ -234,11 +234,11 @@ graph TD;
 
 ## Focus on the questionnaire mecanism
 
-The mecanism is freely inspired by `choose-your-own-adventure` books. You enter a chapter (here a `track`), a when the user clicks on a choice they are lead to another chapter, and it goes on...
+The mecanism is freely inspired by `choose-your-own-adventure` books. You enter a chapter (here a `track`), a when the user clicks on a choice they are led to another chapter, and it goes on...
 
-All the questions for the questionnaire are splited into several files. Each file (or `track*.ts`) corresponds to a questionnaire's `track`.
+All the questions for the questionnaire are splited into several files. Each file (or `track*.ts`) corresponds to a questionnaire's `track` ; a `track` presents several choices to the user.
 
-The `index.ts` file (in the `./src/questionnaire` directory) builds up all the tracks into an array that could be used further by the main widget component `TeeApp`.
+The `index.ts` file (in the `./src/questionnaire` directory) builds up all the tracks into an array, array that could be used further by the main widget component `TeeApp`.
 
 ```
 .
@@ -314,7 +314,7 @@ export const needs = {
 
 The widget's html contains a `seed` parameter : you need to specify here a track `id` (for instance `track_needs`) to tell the widget which track it should display first.
 
-The user will see the questionnaire beginning with this first track, and 
+The user will see the questionnaire beginning with this first track, and its journey begins...
 
 ---
 
