@@ -32,11 +32,11 @@ export const results = {
         <span
           class="fr-icon-phone-fill" 
           aria-hidden="true"></span>
-        Vous avez une question ?
+        Vous souhaitez en connaitre d'avantage ?
       </h2>
       <h5>
-        N'hésitez pas à nous laisser un message, 
-        nous nous ferons un plaisir de répondre à vos questions. 
+        N'hésitez pas à nous laisser vos coordonnées, 
+        nous nous ferons un plaisir de vous aider. 
       </h5>
     ` },
     fields: [
