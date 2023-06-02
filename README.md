@@ -423,6 +423,7 @@ Check : https://github.com/orgs/betagouv/projects/54/views/1
 ### Frontend
 
 - [x] Set up a vue3 environment for custom element
+- [x] Use the DSFR (Design System de l'Etat)
 - [x] Develop interfaces for several dynamic research paths
 - [x] Dynamic fit between aid programs and user choices
 - [x] Send the form at the end of questionnaire to create / update contact on Brevo
