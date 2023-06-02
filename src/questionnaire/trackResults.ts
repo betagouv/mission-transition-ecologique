@@ -111,7 +111,7 @@ export const results = {
           à la transition écologique de votre entreprise.
           <br>
           Voir également nos 
-          <a href=http://mission-transition.beta.gouv.fr/donnee-personnelles-et-cookies">
+          <a href="http://mission-transition.beta.gouv.fr/donnee-personnelles-et-cookies">
             Conditions Générales d'Utilisation
           </a>.
           <br>
