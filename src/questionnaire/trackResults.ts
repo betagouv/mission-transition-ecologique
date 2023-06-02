@@ -100,7 +100,7 @@ export const results = {
       },
       {
         id: 'cgu',
-        help: 'https://aidantsconnect.beta.gouv.fr/cgu/',
+        help: 'http://mission-transition.beta.gouv.fr/donnee-personnelles-et-cookies',
         label: { fr: "J'accepte d'être recontacté par l'équipe de Transition Ecologique des Entreprises *"},
         hint: { fr: `
           Vos données à caractère personnel seront uniquement utilisées à des fins légitimes et nécessaires
