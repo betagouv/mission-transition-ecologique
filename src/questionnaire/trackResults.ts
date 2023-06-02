@@ -108,8 +108,11 @@ export const results = {
           c'est-à-dire pour vous recontacter par email ou par téléphone 
           afin de vous aider à vous orienter et à vous conseiller 
           dans votre recherche d'aides
-          à la transition écologique de votre entreprise.
-          Voir les Conditions Générales d'Utilisation (page en cours de rédaction).
+          à la transition écologique de votre entreprise.<br>
+          Voir également nos 
+          <a href="https://aidantsconnect.beta.gouv.fr/cgu/">Conditions Générales d'Utilisation</a>.
+          <br>
+          <br>
           Pour toute question vous pouvez nous contacter à "france-transition(at)beta.gouv.fr"
         ` },
         required: true,
