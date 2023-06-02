@@ -246,14 +246,14 @@ The `index.ts` file (in the `./src/questionnaire` directory) builds up all the t
 ├── src
 |   ├── assets
 |   ├── components
-|   └── questionnaire
-|       ├── index.ts
-|       ├── trackNeeds.ts
-|       ├── trackSectors.ts
-|       ├── trackStatus.ts
-|       ├── trackResults.ts
-|       ├── (any other track files)
-|       └── ...
+|   ├── questionnaire
+|   |   ├── index.ts
+|   |   ├── trackNeeds.ts
+|   |   ├── trackSectors.ts
+|   |   ├── trackStatus.ts
+|   |   ├── trackResults.ts
+|   |   ├── (other track files)
+|   |   └── ...
 |   ├── store
 |   ├── translations
 |   ├── types
@@ -340,6 +340,7 @@ All the aids are described one by one in the `./public/data/programs` directory 
 |   |   |   ├── diag-decarbon-action.yaml
 |   |   |   ├── diag-eco-flux.yaml
 |   |   |   ├── diag-ecoconception.yaml
+|   |   |   ├── (other yaml files)
 |   |   |   └── ...
 |   |   └── references
 |   └── fonts
