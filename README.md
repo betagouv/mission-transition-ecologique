@@ -1,6 +1,6 @@
 # <img src="./images/logos/logo-gov-aid-tree-cropped.png" height="30px"> GOV-AID-TREE 
 
-**Decision tree interfaces + fit with a database** 
+**Decision tree interfaces + fit user's decision with a database** 
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/965eef15-8fbd-4ba0-8ee9-f50258d04d8f/deploy-status)](https://app.netlify.com/sites/gov-aid-tree-poc/deploys)
 
@@ -29,7 +29,7 @@ A project from the `transition-ecologique-entreprises` SE team.
 
 ## Screenshots
 
-![](./images/screenshots/screenshot-230506-a.png)
+![](./images/screenshots/screenshot-230602-a.png)
 
 ---
 
@@ -91,83 +91,117 @@ This project is built to respond to those challenges. We made gov-aid-tree as :
 ```mermaid
 graph TD;
     
-    subgraph "Questionnaire"
-    tracksModel[Questionnaire model] -- organizes --- tracks;
-    tracks[Questionnaire slides : config files] --> widget[GOV-AID-TREE - VUEJS WEB COMPONENT];
-    datamodel[Aid programs data model] -- is available for the widget --- widget;
-    questions[Questionnaire slides : interfaces] --> choices[User choices data];
-    widget -- selects from aid programs database --> results[Aid programs subset fitting user choices];
-    widget --> questions;
-    choices --> widget;
-    datasets[Aid programs database] -- available for widget --- widget;
-    datamodel -- respects --- datafiles;
-    datamodel -- respects --- datasets;
-    datafiles[Aid program yaml files] --> datasets;
+    subgraph "Widget / Questionnaire"
+	    tracksModel[Questionnaire model] -- organizes --- tracks
+	    tracks[Questionnaire slides : config files] --> widget[GOV-AID-TREE - VUEJS WEB COMPONENT]
+	    datamodel[Aid programs data model] -- is available for the widget --- widget
+	    questions[Questionnaire slides : interfaces] --> choices[User choices data]
+	    widget -. generates .- questions
+	    widget -- selects from aid programs database --> results[Aid programs subset fitting user choices]
+	    choices --> widget
+	    dataset[Aid programs database / JSON or REST API] -- available for widget --- widget
+	    datamodel -. respects .- dataset
+	    datamodel -. respects .- datafiles
+	    datafiles[Aid program yaml files] -- are built into --> dataset
     end
     
-    
     subgraph "Data : automated scrapping"
-    connectors[* API connectors] --> parser;
-    parser[* API parsers scripts] -- uses --> datamodel;
-    parser -- generates --> datafiles;
-    %% parser -- generates --> datasets;
+	    connectors[* API connectors] --> parser
+	    parser[* API parsers scripts] -- uses --> datamodel
+	    parser -- generates --> datafiles
+	    %% parser -- generates --> dataset
     end
 
     subgraph "Data : manual production"
-    adminsExt[Admins ext] -- protected : edit / add --> editor;
-    admins[Admins] -- protected : edit / add --> editor;
-    editor[* Editor : Forms] -- uses --> datamodel;
-    editor -- generates / PR --> datafiles;
+	    adminsExt[Admins ext] -- protected : edit / add --> editor
+	    admins[Admins] -- protected : edit / add --> editor
+	    editor[* Editor : Forms] -- uses --> datamodel
+	    editor -- generates / PR --> datafiles
+			%% adminsExt -.- admins
     end
 
-    
-    subgraph "Sources"
-    dgaln[DGALN] --> sources
-    aidesterr[Aides Territoires] --> sources
-    ademe[ADEME] --> sources
-    dge[DGE] --> sources
-    cma[CMA] --> sources
-    clicagil[Clic'agil] --> sources
-    bpi[BPI] --> sources
-    edf[EDF] --> sources
-    cci[CCI] --> sources
-    other[Autres sources ...] --> sources
-    sources[Aid programs providers] -- request via APIs + cron --- connectors;
+    subgraph "Data sources"
+			subgraph "Operators"
+				dgaln[DGALN]
+				aidesterr[Aides Territoires]
+				ademe[ADEME]
+				dge[DGE]
+				cma[CMA]
+				clicagil[Clic'agil]
+				bpi[BPI]
+				edf[EDF]
+				cci[CCI]
+				others[Other sources ...]
+			end
+			subgraph "API sources"
+				bpi --> maReco[API Ma Reco]
+				cma --> aidesEntr[API aides-entreprises]
+				ademe --> ademeApi[API ADEME]
+				cci --> lesAides[API les-aides]
+				aidesterr --> aidesterrApi[API aides-territoires]
+				maReco --> connectors
+				aidesEntr --> connectors
+				ademeApi --> connectors
+				lesAides --> connectors
+				aidesterrApi --> connectors
+			end
+			subgraph "Undefined / manual sources"
+		    sources[MANUAL Aid programs providers]
+			end
+    dgaln --> sources
+    dge --> sources
+    clicagil --> sources
+    edf --> sources
+    others --> sources
     end 
 
     sources --> adminsExt
     
     subgraph "End users : entreprises"
-    user[Users : individual or entreprise];
-    user -- displayed for user --> results;
-    user -- interacts with --> questions ;
+	    user[Users : individual or entreprise]
+	    user -- displayed for user --> results
+	    user -- interacts with --> questions
     end
-    
+ 
+		subgraph "Integrations"
+			integrations[Widget integrations]
+	    integrations --> teeDomain[TEE domain]
+	    integrations --> partner01[Ext domain 01]
+	    integrations --> partner02[Ext domain 02]
+	    integrations --> partner03[Ext domain 03]
+		end
+
     subgraph "Third party services"
-    services[External services]
-    widget --> services
-    services -- API calls --> Matomo[Matomo, analytics]
-    services -- API calls --> Brevo[Brevo, emailing]
+	    services[External services]
+	    services -- API calls --> Matomo[Matomo, analytics]
+	    services -- API calls --> Brevo[Brevo, emailing]
     end
-    
+		
+		user -.- integrations
+		widget -.- integrations
+    widget --> services
+
     %% STYLES APPS
     style widget fill:#ccccff
     style editor fill:#ccccff
     
     %% STYLES DATA
+    style maReco fill:#b2d8d8
+    style aidesEntr fill:#b2d8d8
+    style ademeApi fill:#b2d8d8
+    style lesAides fill:#b2d8d8
+    style aidesterrApi fill:#b2d8d8
+    style sources fill:#b2d8d8
     style connectors fill:#b2d8d8
     style datafiles fill:#b2d8d8
-    style datasets fill:#b2d8d8
+    style dataset fill:#b2d8d8
     style datamodel fill:#b2d8d8
     style parser fill:#b2d8d8
 
     %% STYLES USERS
     style admins fill:orange
-    style admins color:white
     style adminsExt fill:orange
-    style adminsExt color:white
     style user fill:orange
-    style user color:white
     
     %% TO_DO
     style editor color:red
@@ -207,12 +241,12 @@ Check : https://github.com/orgs/betagouv/projects/54/views/1
 - [x] Set up a vue3 environment for custom element
 - [x] Develop interfaces for several dynamic research paths
 - [x] Dynamic fit between aid programs and user choices
-- [ ] Send the form at the end of questionnaire to create / update contact on Brevo
+- [x] Send the form at the end of questionnaire to create / update contact on Brevo
 
 ### Data
 
-- [ ] Develop a schema for the aid programs provided by several sources
-- [ ] Develop a simple way to store and expose the aid programs dataset
+- [x] Develop a schema for the aid programs provided by several sources
+- [x] Develop a simple way to store and expose the aid programs dataset
 
 ---
 
@@ -314,151 +348,9 @@ Check : https://github.com/orgs/betagouv/projects/54/views/1
 
 ---
 
-## Data models - (R&D) - example
+## Data models - (R&D)
 
-```yaml
-// Target data model for aid programs
-
-title: Diag Eco-flux
-resume: Faites des économies en gérant durablement vos dépenses
-description: |
-  <ul>
-    <li>
-      Faites un état des lieux de vos flux et identifiez les axes prioritaires d’économies.
-    </li>
-    ...
-  </ul>
-program_types: 
-  - diag
-conditions:
-  - type: project_needs
-    operator: "or"
-    value: 
-      - advices
-  - type: project_status
-    operator: "or"
-    value: 
-      - economies
-  - type: project_sectors
-    operator: "or"
-    value: 
-      - "*"
-  - type: structure_sizes
-    operator: "or"
-    value: 
-      - pme
-program_providers: 
-  - code: BPI
-
-```
-
-### From legacy app : 
-
-#### EtatAvancementProjet
-	
-| ID | Nom | 
-| ---| --- | 
-| 1  | Réflexion - conception        |
-| 2  | Mise en oeuvre - réalisation  |
-| 3  | Usage - valorisation          |
-    
-#### TypeAide
-
-| ID  | Nom | Categorie |
-|-----|----------------------------------------|----------------------|
-| 9   | Subvention                             | Aides financières    |
-| 10  | Prêt                                   | Aides financières    |
-| 11  | Avance récupérable                     | Aides financières    |
-| 12  | Autre aide financière                  | Aides financières    |
-| 13  | Ingénierie technique                   | Aides en ingénierie  |
-| 14  | Ingénierie financière                  | Aides en ingénierie  |
-| 15  | Ingénierie Juridique / administrative  | Aides en ingénierie  |
-
-
-#### RecurrenceAide
-
-| ID | Nom        |
-|----|------------|
-| 4  | Permanente |
-| 5  | Ponctuelle |
-| 6  | Récurrente |
-
-#### Thematique
-	
-| ID  | Nom                                  | Description |
-|-----|--------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 13  | Production & distribution d'énergie  |  Exemples de projets : Développement des énergies renouvelables, récupération de chaleurs, biomasse, diagnostic sur le marché hydrogène, étude de faisabilité (énergie renouvelable)                                                        |
-| 14  | Gestion des bâtiments                |  Exemples de projets : Construction/rénovation de bâtiments énergétiquement exemplaires, bilan énergétique des bâtiments, amélioration de la qualité de l’air.                                                                              |
-| 15  | Mobilité des employés                |  Exemples de projets : Aide à l’acquisition de véhicules propres, soutien à la conversion d’un véhicule thermique vers un véhicule propre, soutien au covoiturage, investissement pour les PME/ETI du secteur ferroviaire.                  |
-| 16  | Evolution des procédés industriels   |  Exemples de projets : Efficacité énergétique des procédés industriels, audit énergétique pour l’industrie, réduction des pollutions industrielles, décarbonation des outils industriels.                                                   |
-| 17  | Innovation produits & services       |  Exemples de projets : Eco-conception, accompagnement aux levées de fonds, financement des investissements, démarche d’innovation, passer à une phase d’industrialisation, innovation sociale, crédit d’impôt recherche French Tech.        |
-| 18  | Gestion des déchets                  |  Exemples de projets : Aide à l’investissement d’équipements de recyclage, économie circulaire, aide à l’investissement pour le réemploi de déchets, financement de diagnostic à la réparation / substitution d’emballage.                  |
-| 19  | Ressources humaines                  |  Exemples de projets : Aide au recrutement sur le thème environnement (VTE Vert), sensibilisation, formation, structuration de démarche RSE                                                                                                 |
-| 20  | Secteur Agriculture & Zones rurales  |  Exemples de projets : Accompagnement créateurs d’activités en milieu rural, soutien à l’innovation agricole, investissement en agroéquipements, soutien aux circuits courts / alimentation durable, réduction de produits phytosanitaires  |
-| 21  | Secteur Ville durable                |  Exemples de projets : Formation architecture/urbanisme/environnement, digitalisation des commerces de proximité, soutien des entreprises locales, aide à la création de TPE                                                                |
-| 22  | Secteur Bois                         |  Exemples de projets : Soutien au plateforme de stockage, soutien à l’investissement de la filière bois, atténuation du changement climatique sur la forêt                                                                                  |
-| 23  | Secteur Eau & écosystèmes            |  Exemples de projets : Acquisition foncière, études aux travaux d’aménagement, réhabilitation de réserve d’eau, sensibilisation, aide à l’interdiction de l’épandage des boues (agriculture), restauration écologique des milieux humides   |
-| 24  | Secteur Infrastructure & Déchèterie  |  Exemples de projets : Soutien à l’innovation logistique, modernisation des déchèteries, adaptation des structures routières/ferroviaires                                                                                                   |
-#### SousThematique
-
-| ID  | Nom                                                           |
-|-----|---------------------------------------------------------------|
-| 41  | Recherche, Développement & Innovation                         |
-| 42  | Réduction de la consommation d'énergie                        |
-| 43  | Bilan énergétique & Rénovation                                |
-| 44  | Réduction du gaspillage                                       |
-| 45  | Tri, recyclage, réemploi & réparation                         |
-| 46  | Performance environnementale de l'alimentation                |
-| 47  | Adapation au changement climatique                            |
-| 48  | Infrastructures de transport & logistique                     |
-| 49  | Aménagement d'ouvrages & Equipements                          |
-| 50  | Digitalisation des commerces & artisans                       |
-| 51  | Formation & Accompagnement                                    |
-| 52  | Formation & animation des acteurs locaux                      |
-| 53  | Développement du ferroviaire                                  |
-| 54  | Développement du covoiturage & autopartage                    |
-| 55  | Sensibilisation sur les consommations                         |
-| 56  | Aide au développement de la filière                           |
-| 57  | Formation & animation des acteurs locaux Secteur Eau &…       |
-| 58  | Réduction des Pesticides                                      |
-| 59  | Acquisition foncière                                          |
-| 60  | Aide aux investissements & financements                       |
-| 62  | Restauration d'infrastructures                                |
-| 63  | Réseaux de chaleur & Récupération de chaleur                  |
-| 64  | Stockage de l'énergie                                         |
-| 66  | Traitement & valorisation des biodéchets                      |
-| 67  | Gestion de l'eau                                              |
-| 74  | Animation & développement économique et social                |
-| 75  | Développement de filières recyclage                           |
-| 76  | Restauration écologique & adapation au changement climatique  |
-| 78  | Agriculture urbaine                                           |
-
-
-#### ZoneGeographique
-
-| ID  | Nom                         | Couverture |
-|-----|-----------------------------|------------|
-| 14  | Auvergne-Rhône-Alpes        | REGIONAL   |
-| 15  | Bourgogne-Franche-Comté     | REGIONAL   |
-| 16  | Bretagne                    | REGIONAL   |
-| 17  | Centre-Val de Loire         | REGIONAL   |
-| 18  | Corse                       | REGIONAL   |
-| 19  | Grand Est                   | REGIONAL   |
-| 20  | Hauts-de-France             | REGIONAL   |
-| 21  | Île-de-France               | REGIONAL   |
-| 22  | Normandie                   | REGIONAL   |
-| 23  | Occitanie                   | REGIONAL   |
-| 24  | Pays de la Loire            | REGIONAL   |
-| 25  | Provence-Alpes-Côte d'Azur  | REGIONAL   |
-| 26  | DOM-TOM                     | REGIONAL   |
-
-#### TypeDepense
-
-| ID | Nom             |
-|----|-----------------|
-| 5  | Fonctionnement  |
-| 6  | Investissement  |
-
+All documentation about data models and references are on our [SE Notion space](https://www.notion.so/Accueil-93eb32ce96dc464cbdbe2154e13c8eea?pvs=4)
 
 ---
 
