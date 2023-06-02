@@ -232,6 +232,92 @@ graph TD;
 
 ---
 
+## Focus on the questionnaire mecanism
+
+The mecanism is freely inspired by `choose-your-own-adventure` books. You enter a chapter (here a `track`), a when the user clicks on a choice they are lead to another chapter, and it goes on...
+
+All the questions for the questionnaire are splited into several files. Each file (or `track*.ts`) corresponds to a questionnaire's `track`.
+
+The `index.ts` file (in the `./src/questionnaire` directory) builds up all the tracks into an array that could be used further by the main widget component `TeeApp`.
+
+```
+.
+├── ...
+├── src
+|   ├── assets
+|   ├── components
+|   └── questionnaire
+|       ├── index.ts
+|       ├── trackNeeds.ts
+|       ├── trackSectors.ts
+|       ├── trackStatus.ts
+|       ├── trackResults.ts
+|       ├── (any other track files)
+|       └── ...
+|   ├── store
+|   ├── translations
+|   ├── types
+|   ├── utils
+|   └── ...
+├── ...
+└── README.md
+```
+Each `track` file is structured as follows : 
+
+```js
+// .src/questionnaire/trackNeeds.sj
+
+export const needs = {
+  
+  // track id
+  id: 'track_needs',
+
+  label: { fr: 'Votre besoin' },
+  
+  // UI options
+  interface: {
+    component: 'cards',
+    columnWidth: 'auto',
+  },
+  
+  // selection options
+  behavior: {
+    multipleChoices: false,
+  },
+
+  // next track (id) to display by default
+  next: {
+    default: 'track_sectors'
+  },
+
+  // choices array that could be used within this track 
+  options: [ 
+    {
+      disabled: true,
+
+      // value to store if user selects this choice
+      value: { project_needs: '*' },
+      
+      // content to display
+      label: { fr: "Je souhaite tout voir d'un coup même si je n'y connais rien" },
+      hint: { fr: "Oui, des fois on est juste très curieux... En vrai c'est pour tester mais faudra pas laisser ce bloc traîner quand on mettra en prod sinon les gens vont se foutre de notre gueule" },
+      
+      // next track (id) to display after this choice
+      next: {
+        default: 'track_results'
+      }
+    },
+    ...
+  ]
+}
+```
+
+The widget's html contains a `seed` parameter : you need to specify here a track `id` (for instance `track_needs`) to tell the widget which track it should display first.
+
+The user will see the questionnaire beginning with this first track, and 
+
+---
+
 ## Roadmap for the POC
 
 Check : https://github.com/orgs/betagouv/projects/54/views/1
