@@ -415,18 +415,18 @@ Check : https://github.com/orgs/betagouv/projects/54/views/1
 
 ### Links and references
 
-- Modèles inspirants de parcours 
+- Questionnaires
   - https://diag.bpifrance.fr/
   - https://clic-agil.climaxion.fr/
   - https://entreprendre.service-public.fr/vosdroits/N31906
-- Schémas / données aides
+- Schemas / aid data models
   - https://schema.data.gouv.fr/etalab/schema-dispositif-aide/0.0.2/documentation.html#propriete-condition-eligibilite
   - https://github.com/MTES-MCT/aides-territoires/wiki/Format-des-donn%C3%A9es-publi%C3%A9es-sur-Aides-territoires
   - https://www.insee.fr/fr/information/2406147
   - https://publi.codes/
   - cf "open fisca"
   - cf "mon entreprise"
-- Autres
+- Others
   - https://www.entreprises.gouv.fr/files/files/secteurs-d-activite/industrie/decarbonation/transition-ecologique-guidedes-aides-pour-les-tpe-pme.pdf
   - https://www.gouvernement.fr/france-nation-verte
   - https://place-des-entreprises.beta.gouv.fr/aide-entreprise/accueil/theme/environnement-transition-ecologique
