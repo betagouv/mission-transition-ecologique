@@ -108,9 +108,12 @@ export const results = {
           c'est-à-dire pour vous recontacter par email ou par téléphone 
           afin de vous aider à vous orienter et à vous conseiller 
           dans votre recherche d'aides
-          à la transition écologique de votre entreprise.<br>
+          à la transition écologique de votre entreprise.
+          <br>
           Voir également nos 
-          <a href=http://mission-transition.beta.gouv.fr/donnee-personnelles-et-cookies">Conditions Générales d'Utilisation</a>.
+          <a href=http://mission-transition.beta.gouv.fr/donnee-personnelles-et-cookies">
+            Conditions Générales d'Utilisation
+          </a>.
           <br>
           <br>
           Pour toute question vous pouvez nous contacter à "france-transition(at)beta.gouv.fr"
