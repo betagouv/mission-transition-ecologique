@@ -342,8 +342,7 @@ All the aids are described one by one in the `./public/data/programs` directory 
 |   |   |   ├── diag-ecoconception.yaml
 |   |   |   └── ...
 |   |   └── references
-|   ├── ufontstils
-|   └── ...
+|   └── fonts
 ├── ...
 └── README.md
 ```
