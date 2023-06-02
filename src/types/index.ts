@@ -1,4 +1,14 @@
 
+// FOR ENV 
+
+export interface MetaEnv {
+  VITE_DATA_DIR_PATH: string,
+  VITE_DEPLOY_URL: string,
+  VITE_BREVO_TOKEN: string,
+  VITE_BREVO_LIST_IDS: string,
+  VITE_BREVO_SENDER_EMAIL: string,
+}
+
 // FOR AID PROGRAMS 
 
 export interface ProgramConditions {
@@ -7,9 +17,17 @@ export interface ProgramConditions {
   project_sectors?: string[],
   structure_sizes?: string[],
 }
+enum ConditionOperators {
+  or = 'or',
+  and = 'and',
+  superior = '>',
+  superiorOrEqual = '>=',
+  inferior = '>',
+  inferiorOrEqual = '>=',
+}
 export interface Condition {
   type?: string,
-  operator?: string, // or | and | > | >= | < | <= 
+  operator?: ConditionOperators,
   value?: any | any[],
 }
 
@@ -41,13 +59,21 @@ export interface Translations {
   fr: string,
   [name: string]: string
 }
+
+enum TrackComponents {
+  cards = 'cards',
+  buttons = 'buttons'
+}
 export interface TrackInterface {
-  component: string,
-  columnWidth?: number,
+  component: TrackComponents,
+  columnWidth?: number | string,
+}
+enum TrackBehaviorOperators {
+  or = 'or'
 }
 export interface TrackBehavior {
   multipleChoices: boolean,
-  operator?: string,
+  operator?: TrackBehaviorOperators,
 }
 export interface TrackOptionsField {
   id: string,
@@ -61,6 +87,7 @@ export interface TrackNext {
   [name: string]: any
 }
 export interface TrackOptions {
+  disabled?: Boolean,
   value: string | number,
   label: Translations,
   intro?: Translations,
@@ -87,7 +114,8 @@ export interface UsedTrack {
   completed: boolean,
   updating: boolean,
   step: number,
-  values: any[],
+  values: any[] | null,
+  // val: any[] | null,
   data: object,
   next: any
 }
@@ -103,6 +131,7 @@ export interface TrackChoice {
   id: string | number,
   step: number,
   values: string[] | object[],
+  // val: object[],
   data?: object | object[]
 }
 
@@ -121,12 +150,21 @@ export interface FormValues {
   [name: string]: any,
 }
 
+enum FormFieldTypes {
+  text = 'text',
+  email = 'email',
+  textarea = 'textarea',
+  checkbox = 'checkbox',
+}
 export interface FormField {
   id: string,
+  help?: string,
   required: boolean,
   label?: any,
   hint?: any,
-  type?: string
+  cols?: number,
+  type?: FormFieldTypes,
+  defaultValue?: boolean | string | number
 }
 
 export interface FormOptions {
@@ -134,7 +172,8 @@ export interface FormOptions {
   label?: any | null,
   intro?: any | null,
   fields?: FormField[],
-  next?: string
+  next?: string,
+  callbacks: FormCallback[]
 }
 
 export interface FormDataResp {
@@ -164,4 +203,58 @@ export interface Plugin {
 export interface Comp {
   name: string,
   comp: object
+}
+
+// FOR REQUESTS
+
+export interface ReqResp {
+  action?: CallbackActions,
+  status?: number,
+  code?: string,
+  message?: string,
+}
+
+// FOR EMAILING
+
+export interface EmailData {
+  name: string,
+  email: string,
+}
+
+enum DataMappingFroms {
+  env = 'env',
+  formData = 'formData',
+  usedTracks = 'usedTracks',
+}
+export interface FormCallbackDataMapping {
+  from: DataMappingFroms,
+  id: string,
+  dataField: string,
+  asArray?: boolean
+  sep?: string
+  type?: string,
+  subKey?: string
+}
+
+enum CallbackMethods {
+  get = 'GET',
+  post = 'POST',
+  put = 'PUT',
+}
+enum CallbackActions {
+  createContact = 'createContact',
+  sendTransactionalEmail = 'sendTransactionalEmail'
+}
+export interface FormCallback {
+  disabled?: boolean,
+  help?: string | string[],
+  helpDocumentation?: string,
+  action: CallbackActions,
+  url: string,
+  headers: object,
+  headerApiKey: string,
+  envApiKey: string,
+  method: CallbackMethods,
+  dataStructure: object | object[],
+  dataMapping: FormCallbackDataMapping[]
 }

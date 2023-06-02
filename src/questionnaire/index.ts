@@ -1,9 +1,9 @@
-import { status } from './choicesStatus'
-import { needs } from './choicesNeeds'
-import { sectors } from './choicesSectors'
-import { sizes } from './choicesStructureSizes'
-import { contactForm } from './choicesContactForm'
-import { results } from './choicesResults'
+import { status } from './trackStatus'
+import { needs } from './trackNeeds'
+import { sectors } from './trackSectors'
+import { sizes } from './trackStructureSizes'
+import { contactForm } from './trackContactForm'
+import { results } from './trackResults'
 
 export const tracks = [
   needs,          // project_needs

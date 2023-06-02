@@ -1,4 +1,5 @@
 <template>
+  <!-- DEBUGGING -->
   <div
     class="vue-debug"
     v-if="debug">
@@ -19,8 +20,8 @@
         <h6 class="fr-mb-1v"> selection : </h6>
         <code>{{ selection }} </code>
 
-        <h6 class="fr-mb-1v"> selectionData : </h6>
-        <code>{{ selectionData }} </code>
+        <!-- <h6 class="fr-mb-1v"> selectionData : </h6>
+        <code>{{ selectionData }} </code> -->
       </div>
 
       <div
@@ -176,7 +177,7 @@ import { choicesStore } from '../stores/choices'
 // import type { DsfrButton } from '@gouvminint/vue-dsfr/types'
 
 // @ts-ignore
-import type { Track, ColsOptions,TrackOpt, FormDataResp } from '@/types/index'
+import type { Track, TrackOptions, ColsOptions, TrackOpt, FormDataResp } from '@/types/index'
 
 // // @ts-ignore
 // import TeeForm from './TeeForm.vue'
@@ -201,13 +202,13 @@ const colsOptions: ColsOptions = {
 const tracks = tracksStore()
 const choices = choicesStore()
 
-const selection = ref([])
-const selectionData = ref({})
+const selection = ref<any[]>([])
+// const selectionData = ref<any[]>([])
 
 const track: Track | any = tracks.getTrack(props.trackId)
 // console.log('TeeTrack > track :', track)
 const renderAs: string = track?.interface.component || 'buttons'
-const customColWidth: number = track?.interface.columnWidth || 0
+const customColWidth: number | string = track?.interface.columnWidth || 0
 // console.log('TeeTrack > track :', track)
 
 // @ts-ignore
@@ -215,7 +216,7 @@ const allowMultiple: boolean = !!track?.behavior?.multipleChoices
 
 // @ts-ignore
 const trackOperator: boolean = track?.behavior?.operator || false
-const optionsArray: any[] = track?.options || []
+const optionsArray: any[] = track?.options.filter( (o: TrackOptions) => !o.disabled) || []
 const optionsArrayDynamic = computed(() => {
   // @ts-ignore
   return isCompleted.value ? optionsArray.filter((v: TrackOpt) => selection.value.includes(v.value)) : optionsArray
@@ -227,11 +228,18 @@ const isCompleted = ref(false)
 // Getters
 const colsWidth = computed(() => {
   if (isCompleted.value) {
+    // full width of 10 if completed track
     return 10
+  } else if (customColWidth === 'auto') {
+    // auto columns width
+    const rawDiv = Math.round(12 / optionsArray.length)
+    return rawDiv < 2 ? 3 : rawDiv
   } else {
     if (customColWidth) {
+      // if defined in choices*.ts
       return customColWidth
     } else {
+      // default values hard written 
       return colsOptions[renderAs]
     }
   }
@@ -242,14 +250,9 @@ const isActiveChoice = (value: string | number) => {
   return selection.value.includes(value)
 }
 
-// const updateSelectionFromForm = (form: FormDataResp) => {
-//   // console.log('TeeTrack > updateSelectionFromForm > form :', form)
-//   selectionData.value = form.data
-//   updateSelection(form)
-// }
-
 const updateSelectionAndCompleted = (option: any) => {
-  const val: string | number = option.value
+  const val: object = option.value
+  // const val: string | number = option.value
   const isActive = isActiveChoice(option.value)
   let needRemove = false
   if (!isActive) {

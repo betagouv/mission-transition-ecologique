@@ -14,15 +14,21 @@
       />
     </p>
 
-    <!-- MESSAGE -->
-    <div class="fr-grid-row fr-grid-row-gutters">
-      <div class="fr-col-9">
+    <!-- MESSAGE & DEBUG SWITCH-->
+    <div 
+      v-if="showMessageBool || debugSwitchBool"
+      class="fr-grid-row fr-grid-row--gutters">
+      <!-- MESSAGE-->
+      <div 
+        v-if="showMessageBool"
+        class="fr-col-9">
         <h3
           v-if="message"
           class="red-color">
           <span v-html="message[choices.lang]"/>
         </h3>
       </div>
+      <!-- DEBUG SWITCH-->
       <div
         v-if="debugSwitchBool" 
         class="fr-col-3">
@@ -36,7 +42,9 @@
     </div>
 
     <!-- STEPPER -->
-    <p>
+    <p
+      v-if="showStepperBool" 
+      >
       <TeeStepper
         :steps-array="tracks.tracksStepsArray"
         :current-step="tracks.currentStep"
@@ -130,7 +138,7 @@ import '@gouvfr/dsfr/dist/core/core.main.min.css'               // Le CSS minima
 
 // @ts-ignore
 import jsonDataset from '@public/data/output/dataset_out.json'
-console.log('TeeResults > jsonDataset :', jsonDataset)
+// console.log('TeeApp > jsonDataset :', jsonDataset)
 
 import { ref, onBeforeMount } from 'vue'
 
@@ -149,7 +157,7 @@ const appId = 'gov-aid-tree-app'
 
 // @ts-ignore
 const metaEnv = import.meta.env
-console.log('TeeApp - metaEnv :', metaEnv)
+// console.log('TeeApp - metaEnv :', metaEnv)
 const deployMode = metaEnv.MODE != 'development'
 const deployUrl = metaEnv.VITE_DEPLOY_URL
 
@@ -157,10 +165,12 @@ const deployUrl = metaEnv.VITE_DEPLOY_URL
 // console.log('TeeApp - process.env :', process.env)
 // @ts-ignore
 const yamlPrograms = deployMode ? jsonDataset : process.env.programs
-console.log('TeeApp - yamlPrograms :', yamlPrograms)
+// console.log('TeeApp - yamlPrograms :', yamlPrograms)
 
 interface Props {
   showHeader?: string,
+  showMessage?: string,
+  showStepper?: string,
   showFooter?: string,
   locale?: string,
   msg?: string,
@@ -177,6 +187,8 @@ const choices = choicesStore()
 const programs = programsStore()
 
 let showHeaderBool = ref(false)
+let showMessageBool = ref(false)
+let showStepperBool = ref(false)
 let showFooterBool = ref(false)
 let message = ref()
 let debugSwitchBool = ref(false)
@@ -224,6 +236,8 @@ onBeforeMount(() => {
 
   // set header / footer components
   showHeaderBool.value = props.showHeader === 'true'
+  showStepperBool.value = props.showStepper === 'true'
+  showMessageBool.value = props.showMessage === 'true'
   showFooterBool.value = props.showFooter === 'true'
 
   // set locale and message
