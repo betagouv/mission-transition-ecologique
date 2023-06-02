@@ -351,11 +351,11 @@ When the app is built some functions in the `./vite.config.ts` are triggered :
 
 - All yaml files in the `./public/data/programs` are read and transformed into `js` objects ;
 - All objects are then pushed into an array ;
-- This array of objects (all the data from all yaml files) is exported and written as `dataset_out.json` file (the output) in `./public/data/output`.
+- This array of objects (all the data from all yaml files) is exported and written as `dataset_out.json` file (the output) in the `./public/data/output` directory.
 
 Doing so any new build (for instance triggered by a push/MR on the repo) will automatically keep updated the aid dataset. 
 
-This startegy for building the dataset has several advantages : 
+This strategy for building the dataset has several advantages : 
 
 - No need for a database technology (no use for a PostGreSQL / SQL / MongoDB...), we keep it simple in a json ;
 - Any member of the team (especially not developpers) can add new yaml files to the repo, and the "database" will be updated without any need of a developer.
@@ -368,18 +368,14 @@ The `TeeApp` widget can the import the json file as a static, and they are then 
 <script>
   import jsonDataset from '@public/data/output/dataset_out.json'
   const yamlPrograms = deployMode ? jsonDataset : process.env.programs
-  
   import { programsStore } from './stores/programs'
   const programs = programsStore()
-
   ...
-
   onBeforeMount(() => {
     ...
     programs.setYamlDataset(yamlPrograms)
     ...
   })
-
   ...
 </script>
 
