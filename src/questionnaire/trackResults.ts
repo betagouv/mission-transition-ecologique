@@ -110,7 +110,7 @@ export const results = {
           dans votre recherche d'aides
           à la transition écologique de votre entreprise.<br>
           Voir également nos 
-          <a href="https://aidantsconnect.beta.gouv.fr/cgu/">Conditions Générales d'Utilisation</a>.
+          <a href=http://mission-transition.beta.gouv.fr/donnee-personnelles-et-cookies">Conditions Générales d'Utilisation</a>.
           <br>
           <br>
           Pour toute question vous pouvez nous contacter à "france-transition(at)beta.gouv.fr"
