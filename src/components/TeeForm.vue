@@ -80,14 +80,21 @@
           :model-value="formData[field.id]"
           :name="field.id" 
           :required="field.required"
-          :hint="field.hint[choices.lang]"
           @update:modelValue="updateFormData($event, field.id)">
+          <!-- :hint="field.hint[choices.lang]" -->
           <template #label>
             <span>
               {{ field.label[choices.lang] }}
             </span>
           </template>
         </DsfrCheckbox>
+        <!-- CHECKBOX HINT -->
+        <div v-if="field.type == 'checkbox'">
+          <span
+            class="fr-hint-text fr-mt-5v"
+            v-html="field.hint[choices.lang]">
+          </span>
+        </div>
       </div>
 
     </div>

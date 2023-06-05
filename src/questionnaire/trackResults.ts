@@ -100,7 +100,7 @@ export const results = {
       },
       {
         id: 'cgu',
-        help: 'https://aidantsconnect.beta.gouv.fr/cgu/',
+        help: 'http://mission-transition.beta.gouv.fr/donnee-personnelles-et-cookies',
         label: { fr: "J'accepte d'être recontacté par l'équipe de Transition Ecologique des Entreprises *"},
         hint: { fr: `
           Vos données à caractère personnel seront uniquement utilisées à des fins légitimes et nécessaires
@@ -109,7 +109,12 @@ export const results = {
           afin de vous aider à vous orienter et à vous conseiller 
           dans votre recherche d'aides
           à la transition écologique de votre entreprise.
-          Voir les Conditions Générales d'Utilisation (page en cours de rédaction).
+          Voir également nos 
+          <a href="http://mission-transition.beta.gouv.fr/donnee-personnelles-et-cookies" target="_blank">
+            Conditions Générales d'Utilisation
+          </a>.
+          <br>
+          <br>
           Pour toute question vous pouvez nous contacter à "france-transition(at)beta.gouv.fr"
         ` },
         required: true,
