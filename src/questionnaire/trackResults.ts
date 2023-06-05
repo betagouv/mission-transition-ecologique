@@ -109,9 +109,8 @@ export const results = {
           afin de vous aider à vous orienter et à vous conseiller 
           dans votre recherche d'aides
           à la transition écologique de votre entreprise.
-          <br>
           Voir également nos 
-          <a href="http://mission-transition.beta.gouv.fr/donnee-personnelles-et-cookies">
+          <a href="http://mission-transition.beta.gouv.fr/donnee-personnelles-et-cookies" target="_blank">
             Conditions Générales d'Utilisation
           </a>.
           <br>
