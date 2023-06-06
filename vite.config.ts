@@ -8,11 +8,11 @@ console.log()
 console.log('Starting ...') 
 console.log('vite.config ...')
 
-// console.log('process.env', process.env)
-// console.log('process.env.NODE_ENV : ', process.env.NODE_ENV)
+console.log('process.env', process.env)
+console.log('process.env.NODE_ENV : ', process.env.NODE_ENV)
 
 const mode = process.env.NODE_ENV || 'development'
-// console.log('vite.config > mode : ', mode)
+console.log('vite.config > mode : ', mode)
 const rawEnv = loadEnv(mode, process.cwd())
 // console.log('vite.config > rawEnv : ', rawEnv)
 
@@ -57,15 +57,18 @@ const dataOutPath = path.join( __dirname, dataBuiltOutput)
 fs.writeFileSync(dataOutPath, dataAsJson)
 console.log('vite.config > finished writing output json...')
 
+const viteServer = {
+  // host: 'localhost',
+  host: '0.0.0.0',
+  // port: 4242,
+  // open: '/index.html',
+  // open: '/public/index.html', // test other index file
+}
+
 // Set Vite config
 // https://vitejs.dev/config/
 export default defineConfig({
-  server: {
-    host: 'localhost',
-    port: 4242,
-    // open: '/index.html',
-    // open: '/public/index.html', // test other index file
-  },
+  server: viteServer,
   plugins: [
     // postcssLit(),
     vue({
