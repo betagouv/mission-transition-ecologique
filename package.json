@@ -31,7 +31,7 @@
     "pinia": "^2.0.32",
     "vite": "^4.1.4",
     "vue": "^3.2.47",
-    "vuex": "^4.1.0",
+    "vuex": "^4.1.0"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.2.0",
