@@ -174,6 +174,7 @@ import { ref, computed } from 'vue'
 
 import { tracksStore } from '../stores/tracks'
 import { choicesStore } from '../stores/choices'
+import { analyticsStore } from '../stores/analytics'
 // import type { DsfrButton } from '@gouvminint/vue-dsfr/types'
 
 // @ts-ignore
@@ -201,6 +202,7 @@ const colsOptions: ColsOptions = {
 
 const tracks = tracksStore()
 const choices = choicesStore()
+const analytics = analyticsStore()
 
 const selection = ref<any[]>([])
 // const selectionData = ref<any[]>([])
@@ -262,6 +264,12 @@ const updateSelectionAndCompleted = (option: any) => {
     } else {
       // @ts-ignore
       selection.value = [val]
+    }
+
+    // analytics / track event / only if positive choice
+    // @ts-ignore
+    for(const [key, val] of Object.entries(option.value)) {
+      analytics.sendEvent(props.trackId, key, val)
     }
   } else {
     const newArray = selection.value.filter(i => i !== val)
