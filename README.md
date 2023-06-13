@@ -489,7 +489,7 @@ The `env` variables you can use for deployment are listed in the `.env.example` 
 
 ```env
 # To hide the "debug" switch
-# If this variable is set to 'false' 
+# If this variable is set to 'true' 
 # it overrides the `debug-switch` parameters to prohibit debug mode
 VITE_NO_DEBUG_SWITCH = false
 
