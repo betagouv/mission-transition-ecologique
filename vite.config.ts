@@ -14,7 +14,7 @@ console.log('process.env.NODE_ENV : ', process.env.NODE_ENV)
 const mode = process.env.NODE_ENV || 'development'
 console.log('vite.config > mode : ', mode)
 const rawEnv = loadEnv(mode, process.cwd())
-// console.log('vite.config > rawEnv : ', rawEnv)
+console.log('vite.config > rawEnv : ', rawEnv)
 
 /* 
 // Build programs dataset from folder and yaml files

@@ -206,10 +206,14 @@ import { sendApiRequest } from '../utils/emailing'
 
 import { tracksStore } from '../stores/tracks'
 import { choicesStore } from '../stores/choices'
+import { analyticsStore } from '../stores/analytics'
+
 const choices = choicesStore()
 const tracks = tracksStore()
+const analytics = analyticsStore()
 
 interface Props {
+  trackId: string,
   formOptions: FormOptions,
   debug?: boolean,
 }
@@ -277,6 +281,10 @@ const saveFormData = async () => {
   //   data: formData.value
   // })
   formIsSent.value = true
+
+  // analytics / send event
+  analytics.sendEvent(props.trackId, 'send_form')
+
 }  
 
 </script>
