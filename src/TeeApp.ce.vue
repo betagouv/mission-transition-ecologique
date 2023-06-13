@@ -2,7 +2,7 @@
   <div 
     :id="appId"
     class="fr-container--fluid">
-    
+  
     <!-- HEADER -->
     <p 
       v-if="showHeaderBool"
@@ -40,6 +40,11 @@
           />
       </div>
     </div>
+
+    <!-- MATOMO -->
+    <TeeMatomo
+      :debug="debugBool"
+      />
 
     <!-- STEPPER -->
     <p
@@ -147,6 +152,8 @@ import { choicesStore } from './stores/choices'
 import { programsStore } from './stores/programs'
 
 // @ts-ignore
+import TeeMatomo from './components/TeeMatomo.vue'
+// @ts-ignore
 import TeeTrack from './components/TeeTrack.vue'
 // @ts-ignore
 import TeeStepper from './components/TeeStepper.vue'
@@ -157,9 +164,10 @@ const appId = 'gov-aid-tree-app'
 
 // @ts-ignore
 const metaEnv = import.meta.env
-// console.log('TeeApp - metaEnv :', metaEnv)
+console.log('TeeApp - metaEnv :', metaEnv)
 const deployMode = metaEnv.MODE != 'development'
 const deployUrl = metaEnv.VITE_DEPLOY_URL
+const noDebugSwitch = metaEnv.VITE_NO_DEBUG_SWITCH === 'true'
 
 // @ts-ignore
 // console.log('TeeApp - process.env :', process.env)
@@ -261,7 +269,9 @@ onBeforeMount(() => {
   }
 
   // set debug mode
-  debugSwitchBool.value = props.debugSwitch === 'true'
+  // no switch for production deployment
+
+  debugSwitchBool.value = !noDebugSwitch && props.debugSwitch === 'true'
   if (debugSwitchBool.value && props.debug) {
     debugBool.value = props.debug === 'true'
   }
