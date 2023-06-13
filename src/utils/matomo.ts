@@ -57,11 +57,11 @@ ${hasTrackAllOutlinks ? "_paq.push(['enableLinkTracking']);" : ''}
 export const trackEvent = (evCategory: string, evAction: string, evName: string, EvValue: any = undefined) => {
   // @ts-ignore
   const _paq = window._paq || []
-  console.log('Matomo > trackEvent >  _paq :', _paq)
-  console.log('Matomo > trackEvent > domain (evCategory) :', evCategory)
-  console.log('Matomo > trackEvent > evAction :', evAction)
-  console.log('Matomo > trackEvent > evName :', evName)
-  console.log('Matomo > trackEvent > EvValue :', EvValue)
+  // console.log('Matomo > trackEvent >  _paq :', _paq)
+  // console.log('Matomo > trackEvent > domain (evCategory) :', evCategory)
+  // console.log('Matomo > trackEvent > evAction :', evAction)
+  // console.log('Matomo > trackEvent > evName :', evName)
+  // console.log('Matomo > trackEvent > EvValue :', EvValue)
   if (_paq) {
     _paq.push(['trackEvent', evCategory, evAction, evName, EvValue])
   }

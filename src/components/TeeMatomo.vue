@@ -75,10 +75,10 @@ onBeforeMount(() => {
 
 onMounted(() => {
   // console.log()
-  console.log('TeeMatomo > onMounted >  analytics.matomoServer :', analytics.matomoServer)
-  console.log('TeeMatomo > onMounted >  analytics.matomoSiteId :', analytics.matomoSiteId)
-  console.log('TeeMatomo > onMounted >  analytics.domain :', analytics.domain)
-  console.log('TeeMatomo > onMounted >  analytics.allowAnalytics :', analytics.allowAnalytics)
+  // console.log('TeeMatomo > onMounted >  analytics.matomoServer :', analytics.matomoServer)
+  // console.log('TeeMatomo > onMounted >  analytics.matomoSiteId :', analytics.matomoSiteId)
+  // console.log('TeeMatomo > onMounted >  analytics.domain :', analytics.domain)
+  // console.log('TeeMatomo > onMounted >  analytics.allowAnalytics :', analytics.allowAnalytics)
   if (!matomoScriptElem && analytics.allowAnalytics) {
 
     // console.log('TeeMatomo > onMounted >  hasTrackAllOutlinks :', hasTrackAllOutlinks)
@@ -87,7 +87,7 @@ onMounted(() => {
     matomoScriptElem.setAttribute('type', 'text/javascript')
 
     const scriptText = matomoScript(analytics.matomoServer, analytics.matomoSiteId, analytics.domain, analytics.hasTrackAllOutlinks)
-    console.log('TeeMatomo > onMounted >  scriptText :', scriptText)
+    // console.log('TeeMatomo > onMounted >  scriptText :', scriptText)
     matomoScriptElem.innerHTML = scriptText
     document.head.appendChild(matomoScriptElem)
     analytics.setMatomoIsSet(true)
