@@ -87,7 +87,6 @@ This project is built to respond to those challenges. We made gov-aid-tree as :
 
 ### Functional diagram
 
-
 ```mermaid
 graph TD;
     

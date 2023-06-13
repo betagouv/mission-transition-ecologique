@@ -73,10 +73,9 @@ onBeforeMount(() => {
 
 onMounted(() => {
   // console.log()
-  // console.log('TeeMatomo > onMounted >  analytics.matomoServer :', analytics.matomoServer)
-  // console.log('TeeMatomo > onMounted >  analytics.matomoSiteId :', analytics.matomoSiteId)
-  // console.log('TeeMatomo > onMounted >  analytics.domain :', analytics.domain)
-  // console.log('TeeMatomo > onMounted >  notDevEnv :', notDevEnv)
+  console.log('TeeMatomo > onMounted >  analytics.matomoServer :', analytics.matomoServer)
+  console.log('TeeMatomo > onMounted >  analytics.matomoSiteId :', analytics.matomoSiteId)
+  console.log('TeeMatomo > onMounted >  analytics.domain :', analytics.domain)
   if (!matomoScriptElem && analytics.allowAnalytics) {
 
     // console.log('TeeMatomo > onMounted >  hasTrackAllOutlinks :', hasTrackAllOutlinks)
@@ -87,7 +86,7 @@ onMounted(() => {
     const scriptText = matomoScript(analytics.matomoServer, analytics.matomoSiteId, analytics.domain, analytics.hasTrackAllOutlinks)
     console.log('TeeMatomo > onMounted >  scriptText :', scriptText)
     matomoScriptElem.innerHTML = scriptText
-    // document.head.appendChild(matomoScriptElem)
+    document.head.appendChild(matomoScriptElem)
     analytics.setMatomoIsSet()
   }
 })

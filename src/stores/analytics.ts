@@ -30,18 +30,18 @@ export const analyticsStore = defineStore('analytics', () => {
   }
 
   function sendEvent (action: any, name: any = null, value: any = null) {
-    console.log()
-    console.log('analytics > sendEvent > action :', action)
-    console.log('analytics > sendEvent > name :', name)
-    console.log('analytics > sendEvent > value :', value)
-    // if (matomoIsSet.value) {
-    //   trackEvent(
-    //     domain.value,
-    //     action,
-    //     name,
-    //     value
-    //   )
-    // }
+    // console.log()
+    // console.log('analytics > sendEvent > action :', action)
+    // console.log('analytics > sendEvent > name :', name)
+    // console.log('analytics > sendEvent > value :', value)
+    if (matomoIsSet.value) {
+      trackEvent(
+        domain.value,
+        action,
+        name,
+        value
+      )
+    }
   }
 
   return {
