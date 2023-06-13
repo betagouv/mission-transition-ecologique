@@ -15,11 +15,11 @@ export const analyticsStore = defineStore('analytics', () => {
   const matomoIsSet = ref(false)
 
   // actions
-  function setAnalyticsServer(server: string, appId: string, trackAllOutlinks: boolean = false) {
+  function setAnalyticsServer(server: string, appId: string, deactivate: boolean = false, trackAllOutlinks: boolean = false) {
     matomoServer.value = server
     matomoSiteId.value = appId
     hasTrackAllOutlinks.value = trackAllOutlinks
-    allowAnalytics.value = !!(matomoServer.value && matomoSiteId.value)
+    allowAnalytics.value = !!(!deactivate && matomoServer.value && matomoSiteId.value)
   }
 
   function setAppDomain(appDomain: string) {

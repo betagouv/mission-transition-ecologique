@@ -54,18 +54,20 @@ const analytics = analyticsStore()
 
 // @ts-ignore
 const metaEnv = import.meta.env
+// const matomoDeactivate = ref(metaEnv.VITE_MATOMO_DEACTIVATE === 'true')
+const matomoDeactivate = metaEnv.VITE_MATOMO_DEACTIVATE === 'true'
 // const matomoServer = ref(metaEnv.VITE_MATOMO_URL)
 // const matomoSiteId = ref(metaEnv.VITE_MATOMO_APP_ID)
-// const domain = ref(location.hostname)
-// const notDevEnv = analytics.domain.value !== 'localhost'
 // const hasTrackAllOutlinks = false
 
 let matomoScriptElem = document.getElementById(analytics.scriptUniqueId)
 
 onBeforeMount(() => {
   console.log()
+  // console.log('TeeMatomo > onBeforeMount >  matomoDeactivate :', matomoDeactivate)
+  // console.log('TeeMatomo > onBeforeMount >  matomoDeactivate :', typeof(matomoDeactivate))
   analytics.setAppDomain(location.hostname)
-  analytics.setAnalyticsServer(metaEnv.VITE_MATOMO_URL, metaEnv.VITE_MATOMO_APP_ID)
+  analytics.setAnalyticsServer(metaEnv.VITE_MATOMO_URL, metaEnv.VITE_MATOMO_APP_ID, matomoDeactivate)
   // console.log('TeeMatomo > onBeforeMount >  analytics.matomoServer :', analytics.matomoServer)
   // console.log('TeeMatomo > onBeforeMount >  analytics.matomoSiteId :', analytics.matomoSiteId)
   // console.log('TeeMatomo > onBeforeMount >  analytics.domain :', analytics.domain)
@@ -76,6 +78,7 @@ onMounted(() => {
   console.log('TeeMatomo > onMounted >  analytics.matomoServer :', analytics.matomoServer)
   console.log('TeeMatomo > onMounted >  analytics.matomoSiteId :', analytics.matomoSiteId)
   console.log('TeeMatomo > onMounted >  analytics.domain :', analytics.domain)
+  console.log('TeeMatomo > onMounted >  analytics.allowAnalytics :', analytics.allowAnalytics)
   if (!matomoScriptElem && analytics.allowAnalytics) {
 
     // console.log('TeeMatomo > onMounted >  hasTrackAllOutlinks :', hasTrackAllOutlinks)
@@ -87,7 +90,7 @@ onMounted(() => {
     console.log('TeeMatomo > onMounted >  scriptText :', scriptText)
     matomoScriptElem.innerHTML = scriptText
     document.head.appendChild(matomoScriptElem)
-    analytics.setMatomoIsSet()
+    analytics.setMatomoIsSet(true)
   }
 })
 
