@@ -481,6 +481,37 @@ Check : https://github.com/orgs/betagouv/projects/54/views/1
 | `debug-switch` | ok     | `boolean` | `false`  | Show / hide the debug switch |
 | `debug`        | ok     | `boolean` | `false`  | Debug mode on / off     |
 
+---
+
+### Environment variables
+
+The `env` variables you can use for deployment are listed in the `.env.example` file.
+
+```env
+# To hide the "debug" switch
+# If this variable is set to 'false' 
+# it overrides the `debug-switch` parameters to prohibit debug mode
+VITE_NO_DEBUG_SWITCH = false
+
+# Path of the dataset
+# Default : ./public/data/programs
+VITE_DATA_DIR_PATH = ./public/data/programs
+
+# To indicate built source while copying the widget
+VITE_DEPLOY_URL = https://gov-aid-tree.osc-fr1.scalingo.io
+
+# To set up Brevo services 
+VITE_BREVO_TOKEN = 123456789
+VITE_BREVO_LIST_IDS = 1,2
+VITE_BREVO_SENDER_EMAIL = france-transition@beta.gouv.fr
+
+# To set up Matomo analytics
+# Note : if VITE_MATOMO_DEACTIVATE is set to 'true' it prohibits the tracking
+# even if VITE_MATOMO_URL and VITE_MATOMO_APP_ID are correctly set
+VITE_MATOMO_DEACTIVATE = true
+VITE_MATOMO_URL = https://stats.beta.gouv.fr
+VITE_MATOMO_APP_ID = 42
+```
 
 ---
 
