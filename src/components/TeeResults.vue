@@ -152,7 +152,7 @@ const updateExpandedId = (id: string) => {
 // })
 
 onBeforeMount(() => {
-  console.log('TeeResults > onBeforeMount > resultsProgs :', resultsProgs )
+  // console.log('TeeResults > onBeforeMount > resultsProgs :', resultsProgs )
   const firstProg = resultsProgs && resultsProgs[0]
   if (firstProg) {
     updateExpandedId(`${prefix}${firstProg.index}`)
