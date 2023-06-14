@@ -69,7 +69,7 @@
   <div class="fr-mt-18v">
     <!-- {{ tracksResults }} -->
     <TeeForm
-      :trackId="'track_results'"
+      :track-id="trackId"
       :form-options="trackForm"
       :debug="debug"/>
   </div>
@@ -107,6 +107,7 @@
 import { ref, onBeforeMount, computed } from 'vue'
 import { choicesStore } from '../stores/choices'
 import { programsStore } from '../stores/programs'
+import { analyticsStore } from '../stores/analytics'
 
 // @ts-ignore
 import TeeProgram from './TeeProgram.vue'
@@ -117,8 +118,10 @@ import type { TrackChoice, TrackResultsConfig } from '@/types/index'
 
 const choices = choicesStore()
 const programs = programsStore()
+const analytics = analyticsStore()
 
 interface Props {
+  trackId: string,
   trackConfig?: TrackResultsConfig,
   trackOptions?: any,
   trackForm?: any,
@@ -149,10 +152,12 @@ const updateExpandedId = (id: string) => {
 // })
 
 onBeforeMount(() => {
-  // console.log('TeeResults > onBeforeMount > resultsProgs :', resultsProgs )
+  console.log('TeeResults > onBeforeMount > resultsProgs :', resultsProgs )
   const firstProg = resultsProgs && resultsProgs[0]
   if (firstProg) {
     updateExpandedId(`${prefix}${firstProg.index}`)
   }
+  // analytics / send event
+  analytics.sendEvent(props.trackId, 'show_results')
 })
 </script>
