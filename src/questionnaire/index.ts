@@ -1,15 +1,19 @@
-import { status } from './trackStatus'
 import { needs } from './trackNeeds'
-import { sectors } from './trackSectors'
 import { sizes } from './trackStructureSizes'
+import { sectors } from './trackSectors'
+import { roles } from './trackRoles'
+import { goals } from './trackGoals'
+import { status } from './trackStatus'
 import { contactForm } from './trackContactForm'
 import { results } from './trackResults'
 
 export const tracks = [
   needs,          // project_needs
-  status,         // project_status
-  sectors,        // project_sectors  
   sizes,          // project_sizes
+  status,         // project_status
+  roles,          // project_roles
+  goals,          // project_goals
+  sectors,        // project_sectors  
   contactForm,    // contact_form
   results         // results
 ]

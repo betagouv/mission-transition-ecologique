@@ -8,9 +8,6 @@ export const needs = {
   behavior: {
     multipleChoices: false,
   },
-  next: {
-    default: 'track_sectors'
-  },
   options: [
     {
       disabled: true,
@@ -22,6 +19,7 @@ export const needs = {
       }
     },
     {
+      disabled: true,
       value: { project_needs: 'starting' },
       label: { fr: "Je débute, je visite, je fais mes premiers pas" },
       hint: { fr: "Obtenez rapidement des premiers conseils, à travers notre outil ou avec un conseiller, afin d’initier votre transition écologique" },
@@ -31,18 +29,26 @@ export const needs = {
     },
     {
       value: { project_needs: 'advices' },
-      label: { fr: "Je veux un conseil, une étude, un audit" },
+      label: { fr: "Je souhaite être conseillé pour réduire mon impact environnemental" },
       hint: { fr: "Faites des économies, cadrez un projet avec un accompagnement, un expert, un diagnostic adapté à votre situation" },
       next: {
-        default: 'track_status'
+        default: 'track_structure_sizes'
       }
     },
     {
       value: { project_needs: 'financing' },
-      label: { fr: "J’ai un projet, un besoin de financement" },
+      label: { fr: "J’ai un projet de transition écologique et je cherche un financement" },
       hint: { fr: "Obtenez une aide technique ou financière pour vos investissements ou un projet ayant un impact environnemental" },
       next: {
-        default: 'track_sectors'
+        default: 'track_structure_sizes'
+      }
+    },
+    {
+      value: { project_needs: '*' },
+      label: { fr: "Je cherche juste à m'informer" },
+      hint: { fr: "Faites une première recherche et découvrez les différentes offres" },
+      next: {
+        default: 'track_structure_sizes'
       }
     }
   ]

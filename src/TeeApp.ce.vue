@@ -141,6 +141,9 @@ import '@gouvfr/dsfr/dist/core/core.main.min.css'               // Le CSS minima
 // import '@gouvfr/dsfr/dist/scheme/scheme.min.css'             // Facultatif : Si les thèmes sont utilisés (thème sombre, thème clair)
 // import '@gouvfr/dsfr/dist/utility/icons/icons.min.css'       // Facultatif : Si des icônes sont utilisées avec les classes "fr-icon-..."
 
+// import '@public/css/core.main.min.css'
+// import '@public/css/custom.css'
+
 // @ts-ignore
 import jsonDataset from '@public/data/output/dataset_out.json'
 // console.log('TeeApp > jsonDataset :', jsonDataset)
@@ -223,7 +226,7 @@ onBeforeMount(() => {
   let needStyle = true
   // avoid duplicates
   const styleSheets = document.styleSheets.length
-  // console.log('TeeApp > document.styleSheets :', document.styleSheets)
+  console.log('TeeApp > document.styleSheets :', document.styleSheets)
   if (styleSheets) {
     for(let i = 0; i < styleSheets; i++){
       if(document.styleSheets[i].href == href){
@@ -234,7 +237,7 @@ onBeforeMount(() => {
   }
   if (deployMode && needStyle) {
     const head = document.head
-    // console.log('TeeApp > head :', head)
+    console.log('TeeApp > head :', head)
     const link = document.createElement('link')
     link.type = "text/css"
     link.rel = "stylesheet"
@@ -292,31 +295,9 @@ onBeforeMount(() => {
   @import '~@gouvminint/vue-dsfr/dist/vue-dsfr.css';
 </style> -->
 
-<style>
-  /* @import '~@gouvfr/dsfr/dist/dsfr.min.css'; */
-
-  code {
-    color: red !important;
-  }
-  .vue-debug {
-    font-size: 0.75em !important;
-    border: red dashed 1px;
-    padding: .5em;
-    margin-bottom: .5em;
-  }
-  .vue-debug h6, .vue-debug h5{
-    font-size: 1em !important;
-    line-height: 1.2em !important;
-    margin-bottom: .8em;
-  }
-  .vue-debug pre{
-    line-height: 1.4em !important;
-    overflow: auto;
-  }
-</style>
-
 <style lang="scss">
   @import '~@gouvfr/dsfr/dist/dsfr.min.css'; // ok
+  @import '@public/css/custom.css';
   
   // @import '../public/core.main.css';
   // @import '~@gouvfr/dsfr/dist/core/core.main.min.css';

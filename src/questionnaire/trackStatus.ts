@@ -8,9 +8,6 @@ export const status = {
     multipleChoices: false,
     operator: 'or',
   },
-  next: {
-    default: 'track_sectors'
-  },
   options: [
     {
       value: { project_status: 'economies' },

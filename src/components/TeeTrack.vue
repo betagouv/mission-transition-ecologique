@@ -35,12 +35,18 @@
     </div>
   </div>
 
+  
   <!-- UNCOMPLETED QUESTIONNAIRE -->
   <div
-    v-show="!isCompleted"
-    class="fr-grid-row fr-grid-row--gutters"
-    >
-
+  v-show="!isCompleted"
+  class="fr-grid-row fr-grid-row--gutters"
+  >
+  
+    <!-- <div class="fr-container fr-px-0">
+      <h4>
+        {{ track.label[choices.lang]}}
+      </h4>
+    </div> -->
     <!-- TRACK CHOICES -->
     <div
       v-for="option in optionsArrayDynamic"
@@ -53,13 +59,38 @@
         v-if="renderAs === 'cards'"
         style="height: 100%;"
         >
-        <DsfrCard
+        <!-- <DsfrCard
           :detail="''"
+          :img-src="''"
           :title="option.label[choices.lang]"
           :description="option.hint[choices.lang]"
           :horizontal="true"
           @click="updateSelection(option)"
-        />
+        /> -->
+        <div 
+          class="fr-card fr-enlarge-link"
+          @click="updateSelection(option)">
+          <div class="fr-card__body">
+            <div class="fr-card__content">
+              <h3 class="fr-card__title">
+                <!-- <a href="#"> -->
+                  {{ option.label[choices.lang] }}
+                <!-- </a> -->
+              </h3>
+              <p class="fr-card__desc">
+                {{ option.hint[choices.lang] }}
+              </p>
+            </div>
+          </div>
+          <!-- <div class="fr-card__header">
+            <div class="fr-card__img">
+              <img 
+                class="fr-responsive-img" 
+                src="/img/placeholder.16x9.png" 
+                alt="[À MODIFIER - vide ou texte alternatif de l’image]">
+            </div>
+          </div> -->
+        </div>
       </div>
       
       <!-- AS BUTTONS -->
