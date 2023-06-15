@@ -9,28 +9,28 @@ export const roles = {
   },
   options: [
     {
-      value: { project_sectors: 'manager' },
+      value: { user_roles: 'manager' },
       label: { fr: "🧑‍💼 Je suis gérant.e de cette entreprise" },
       next: {
         default: 'track_goals'
       }
     },
     {
-      value: { project_sectors: 'employee' },
+      value: { user_roles: 'employee' },
       label: { fr: "👩‍🎤 Je suis salarié.e de cette entreprise" },
       next: {
         default: 'track_goals'
       }
     },
     {
-      value: { project_sectors: 'consultant' },
+      value: { user_roles: 'consultant' },
       label: { fr: "🧑‍💻 Je suis un.e consultant.e extérieur.e" },
       next: {
         default: 'track_goals'
       }
     },
     {
-      value: { project_sectors: '*' },
+      value: { user_roles: '*' },
       label: { fr: "💁 J'ai un autre rôle" },
       next: {
         default: 'track_goals'

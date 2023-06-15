@@ -9,56 +9,56 @@ export const goals = {
   },
   options: [
     {
-      value: { project_sectors: 'impact' },
+      value: { user_goals: 'impact' },
       label: { fr: "🔍 Connaître et améliorer l’impact environnemental de mon entreprise" },
       next: {
         default: 'track_results'
       }
     },
     {
-      value: { project_sectors: 'energy' },
+      value: { user_goals: 'energy' },
       label: { fr: "⚡️ Mieux gérer l’énergie dans mon entreprise" },
       next: {
         default: 'track_results'
       }
     },
     {
-      value: { project_sectors: 'trash' },
+      value: { user_goals: 'trash' },
       label: { fr: "🗑 Mieux gérer mes déchets" },
       next: {
         default: 'track_results'
       }
     },
     {
-      value: { project_sectors: 'economies' },
+      value: { user_goals: 'economies' },
       label: { fr: "💦 Faire des économies rapides en réduisant nos pertes en énergie, matière, déchets et eau" },
       next: {
         default: 'track_results'
       }
     },
     {
-      value: { project_sectors: 'mobility' },
+      value: { user_goals: 'mobility' },
       label: { fr: "🚲 Engager une démarche de mobilité durable" },
       next: {
         default: 'track_results'
       }
     },
     {
-      value: { project_sectors: 'renovation' },
+      value: { user_goals: 'renovation' },
       label: { fr: "👷 Rénover mon bâtiment" },
       next: {
         default: 'track_results'
       }
     },
     {
-      value: { project_sectors: 'consolidation' },
+      value: { user_goals: 'consolidation' },
       label: { fr: "📂 Consolider mon projet d'investissement durable" },
       next: {
         default: 'track_results'
       }
     },
     {
-      value: { project_sectors: '*' },
+      value: { user_goals: '*' },
       label: { fr: "💁 Je ne sais pas encore" },
       next: {
         default: 'track_results'
