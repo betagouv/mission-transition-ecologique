@@ -97,6 +97,7 @@ export interface TrackOptions {
 }
 export interface Track {
   id: string,
+  title: Translations,
   label: Translations,
   interface?: TrackInterface,
   behavior?: TrackBehavior,

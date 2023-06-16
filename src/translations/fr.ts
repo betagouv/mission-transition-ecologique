@@ -1,8 +1,12 @@
 export const frDict = {
   next: 'Suivant',
+  previous: 'Précédent',
   send: 'Envoyer',
   modify: 'modifier',
   licence: 'Ce widget et son code source sont sous licence',
+  selection: {
+    selected: 'Ma sélection'
+  },
   form: {
     mandatory: "Champs obligatoires",
     sent: "Formulaire envoyé",

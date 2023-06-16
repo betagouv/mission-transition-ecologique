@@ -1,11 +1,15 @@
 export const goals = {
   id: 'track_goals',
+  title: { fr: 'Mes objectifs' },
   label: { fr: "Dites-nous en plus sur votre objectif" },
   interface: {
     component: 'buttons',
   },
   behavior: {
-    multipleChoices: false,
+    multipleChoices: true,
+  },
+  next: {
+    default: 'track_results'
   },
   options: [
     {

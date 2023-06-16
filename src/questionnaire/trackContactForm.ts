@@ -1,6 +1,7 @@
 export const contactForm = {
   id: 'track_form',
-  label: { fr: 'Formulaire' },
+  title: { fr: 'Formulaire' },
+  label: { fr: 'Je prends contact' },
   interface: {
     component: 'form',
   },

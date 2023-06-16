@@ -1,5 +1,6 @@
 export const roles = {
   id: 'track_roles',
+  title: { fr: 'Mon rôle' },
   label: { fr: "Quel est votre rôle ?" },
   interface: {
     component: 'buttons',

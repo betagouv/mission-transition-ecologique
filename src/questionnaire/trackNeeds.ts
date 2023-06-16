@@ -1,5 +1,6 @@
 export const needs = {
   id: 'track_needs',
+  title: { fr: 'Mon besoin' },
   label: { fr: 'Votre besoin' },
   interface: {
     component: 'cards',

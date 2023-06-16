@@ -1,5 +1,6 @@
 export const sectors = {
   id: 'track_sectors',
+  title: { fr: 'Mon activité' },
   label: { fr: "Quel est votre activité ?" },
   interface: {
     component: 'buttons',

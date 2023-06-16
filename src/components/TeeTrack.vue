@@ -5,32 +5,43 @@
     v-if="debug">
     <h5>DEBUG - TeeTrack</h5>
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
-      <div class="fr-col-4">
+      <div class="fr-col-3">
         <h6 class="fr-mb-1v"> step : <code>{{ step }} </code></h6>
         <h6 class="fr-mb-1v"> trackId : <code>{{ trackId }} </code></h6>
         <h6 class="fr-mb-1v"> isCompleted : <code>{{ isCompleted }} </code></h6>
+        <h6 class="fr-mb-1v"> needRemove : <code>{{ needRemove }} </code></h6>
       </div>
-      <div class="fr-col-4">
+      <div class="fr-col-3">
         <h6 class="fr-mb-1v"> renderAs : <code>{{ renderAs }} </code></h6>
         <h6 class="fr-mb-1v"> allowMultiple : <code>{{ allowMultiple }} </code></h6>
         <h6 class="fr-mb-1v"> trackOperator : <code>{{ trackOperator }} </code></h6>
         <h6 class="fr-mb-1v"> colsWidth : <code>{{ colsWidth }} </code></h6>
       </div>
-      <div class="fr-col-4">
+      <div class="fr-col-3">
         <h6 class="fr-mb-1v"> selection : </h6>
         <code>{{ selection }} </code>
-
-        <!-- <h6 class="fr-mb-1v"> selectionData : </h6>
-        <code>{{ selectionData }} </code> -->
+      </div>
+      <div class="fr-col-3">
+        <h6 class="fr-mb-1v"> selectedOption : </h6>
+        <code>{{ selectedOption }} </code>
       </div>
 
       <div
         v-if="false" 
-        class="fr-col-4">
+        class="fr-col-6">
         <h4>
-          optionsArray :
+          optionsArray (values) :
         </h4>
-        <code><pre>{{ optionsArray }}</pre></code>
+        <code><pre>{{ optionsArray.map(o => o.value) }}</pre></code>
+      </div>
+
+      <div
+        v-if="false" 
+        class="fr-col-6">
+        <h4>
+          optionsArrayDynamic (values) :
+        </h4>
+        <code><pre>{{ optionsArrayDynamic.map(o => o.value) }}</pre></code>
       </div>
     </div>
   </div>
@@ -38,20 +49,26 @@
   
   <!-- UNCOMPLETED QUESTIONNAIRE -->
   <div
-  v-show="!isCompleted"
-  class="fr-grid-row fr-grid-row--gutters"
-  >
+    v-show="!isCompleted"
+    class="fr-grid-row fr-grid-row--gutters"
+    >
   
-    <!-- <div class="fr-container fr-px-0">
-      <h4>
-        {{ track.label[choices.lang]}}
-      </h4>
-    </div> -->
+    <!-- TRACK LABEL -->
+    <div
+      v-if="step !== 1"
+      :class="`${isTrackResults ? 'fr-col-10 fr-col-offset-2' : 'fr-col-12'}`">
+      <h3
+        v-show="!isCompleted"
+        >
+        {{ tracks.getTrackTitle(trackId, choices.lang) }}
+      </h3>
+    </div>
+
     <!-- TRACK CHOICES -->
     <div
-      v-for="option in optionsArrayDynamic"
+      v-for="option in optionsArray"
       :key="option.value"
-      :class="`fr-col-${colsWidth} ${renderAs !== 'cards' ? 'fr-col-offset-2' : ''}`"
+      :class="`fr-col-${colsWidth} ${isTrackResults ? 'fr-col-offset-2' : ''}`"
       >
       
       <!-- AS CARDS -->
@@ -59,14 +76,6 @@
         v-if="renderAs === 'cards'"
         style="height: 100%;"
         >
-        <!-- <DsfrCard
-          :detail="''"
-          :img-src="''"
-          :title="option.label[choices.lang]"
-          :description="option.hint[choices.lang]"
-          :horizontal="true"
-          @click="updateSelection(option)"
-        /> -->
         <div 
           class="fr-card fr-enlarge-link"
           @click="updateSelection(option)">
@@ -77,6 +86,22 @@
                   {{ option.label[choices.lang] }}
                 <!-- </a> -->
               </h3>
+              <div
+                v-if="isActiveChoice(option.value)" 
+                class="fr-card__start">
+                <p>
+                  <DsfrBadge 
+                    type="success" 
+                    :label="choices.t('selection.selected')" />
+                </p>
+                <!-- <ul class="fr-tags-group">
+                  <li>
+                    <p class="fr-tag">
+                      {{ choices.t('selection.selected') }}
+                    </p>
+                  </li>
+                </ul> -->
+            </div>
               <p class="fr-card__desc">
                 {{ option.hint[choices.lang] }}
               </p>
@@ -101,7 +126,7 @@
           style="width: -moz-available !important;"
           :label="option.label[choices.lang]" 
           :icon="`${isActiveChoice(option.value) ? 'md-radiobuttonchecked' : 'md-radiobuttonunchecked'}`"
-          :secondary="isActiveChoice(option.value)"
+          :secondary="!isActiveChoice(option.value)"
           @click="updateSelection(option)"
         />
       </div>
@@ -112,11 +137,10 @@
           style="width: -moz-available !important;"
           :label="option.label[choices.lang]" 
           :icon="`${isActiveChoice(option.value) ? 'ri-checkbox-line' : 'ri-checkbox-blank-line'}`"
-          :secondary="isActiveChoice(option.value)"
-          @click="updateMultipleSelection(option)"
+          :secondary="!isActiveChoice(option.value)"
+          @click="updateSelection(option)"
         />
       </div>
-
 
       <!-- AS FORM -->
       <!-- <div 
@@ -130,7 +154,7 @@
 
       <!-- AS RESULT -->
       <div 
-        v-if="trackId === 'track_results'"
+        v-if="isTrackResults"
         >
         <TeeResults
           :track-id="trackId"
@@ -147,32 +171,46 @@
   
   <!-- SEND / NEXT BUTTON -->
   <div 
-    v-if="!isCompleted && allowMultiple"
-    class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-pt-3v">
-    <div class="fr-col-2">
+    v-if="!isCompleted"
+    class="fr-grid-row fr-grid-row--gutters fr-pt-12v">
+    <div
+      v-if="step > 1"
+      class="fr-col-3 fr-col-offset-6">
       <DsfrButton
+        style="width: -moz-available !important;"
+        :label="choices.t('previous')"
+        icon="ri-arrow-left-line"
+        secondary
+        @click="backToPreviousTrack"
+      />
+    </div>
+    <div 
+      :class="`fr-col-3 ${step === 1 ? 'fr-col-offset-9' : ''}`">
+      <DsfrButton
+        style="width: -moz-available !important;"
         :label="choices.t('next')"
         :disabled="!selection.length"
         icon="ri-arrow-right-line"
-        @click="saveMultipleSelection"
+        @click="saveSelection"
       />
     </div>
   </div>
 
+  <!-- DEPRECATED !!!! -->
   <!-- COMPLETED QUESTIONNAIRE -->
-  <div v-if="isCompleted">
+  <div v-show="false && isCompleted">
     
     <!-- TRACK CHOICES -->
     <div
       v-for="option in optionsArrayDynamic"
       :key="option.value"
-      class="fr-grid-row fr-grid-row--gutters fr-mb-2v"
+      class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-mb-2v"
       >
 
       <!-- ACTIVE CHOICE(S) -->
       <div
         v-if="isActiveChoice(option.value)"
-        :class="`fr-col-${colsOptions.buttons} fr-col-offset-2`"
+        :class="`fr-col-${colsOptions.buttons} fr-col-offset-0`"
         >
         <DsfrButton
           style="width: -moz-available !important;"
@@ -184,7 +222,7 @@
       </div>
 
       <!-- MODIFY BUTTTON -->
-      <div
+      <!-- <div
         v-if="isActiveChoice(option.value)"
         :class="`fr-col-${colsOptions.modify}`">
         <DsfrButton
@@ -194,7 +232,7 @@
           no-outline
           @click="updateSelection(option)"
         />
-      </div>
+      </div> -->
     </div>
   </div>
 
@@ -225,7 +263,7 @@ interface Props {
 const props = defineProps<Props>()
 
 const colsOptions: ColsOptions = {
-  buttons: 8,
+  buttons: 12,
   cards: 4,
   form: 8,
   modify: 2,
@@ -236,8 +274,9 @@ const tracks = tracksStore()
 const choices = choicesStore()
 const analytics = analyticsStore()
 
+const selectedOption = ref<any>()
 const selection = ref<any[]>([])
-// const selectionData = ref<any[]>([])
+const needRemove = ref<boolean>(false)
 
 const track: Track | any = tracks.getTrack(props.trackId)
 // console.log('TeeTrack > track :', track)
@@ -251,19 +290,23 @@ const allowMultiple: boolean = !!track?.behavior?.multipleChoices
 // @ts-ignore
 const trackOperator: boolean = track?.behavior?.operator || false
 const optionsArray: any[] = track?.options.filter( (o: TrackOptions) => !o.disabled) || []
+
+// Computed
+const isTrackResults = computed(() => {
+  return props.trackId === 'track_results'
+})
+const isCompleted = computed(() => {
+  return tracks.isTrackCompleted(props.trackId)
+})
 const optionsArrayDynamic = computed(() => {
   // @ts-ignore
   return isCompleted.value ? optionsArray.filter((v: TrackOpt) => selection.value.includes(v.value)) : optionsArray
 })
 
-// const isCompleted = computed(() => !!selection.value.length)
-const isCompleted = ref(false)
-
-// Getters
 const colsWidth = computed(() => {
   if (isCompleted.value) {
     // full width of 10 if completed track
-    return 10
+    return colsOptions[renderAs]
   } else if (customColWidth === 'auto') {
     // auto columns width
     const rawDiv = Math.round(12 / optionsArray.length)
@@ -279,16 +322,16 @@ const colsWidth = computed(() => {
   }
 })
 
+// Getters
 const isActiveChoice = (value: string | number) => {
   // @ts-ignore
   return selection.value.includes(value)
 }
 
-const updateSelectionAndCompleted = (option: any) => {
+const updateSelection = (option: any) => {
   const val: object = option.value
-  // const val: string | number = option.value
   const isActive = isActiveChoice(option.value)
-  let needRemove = false
+  let remove = false
   if (!isActive) {
     if (allowMultiple) {
       // @ts-ignore
@@ -306,46 +349,42 @@ const updateSelectionAndCompleted = (option: any) => {
   } else {
     const newArray = selection.value.filter(i => i !== val)
     selection.value = newArray
-    needRemove = !newArray.length
+    remove = !newArray.length
   }
-  return needRemove
+  needRemove.value = remove
+  selectedOption.value = option
 }
 
-const updateSelection = (option: any) => {
-  // console.log()
-  // console.log('TeeTrack > updateSelection > option :', option)
+// const updateSelection = (option: any) => {
+//   // console.log()
+//   // console.log('TeeTrack > updateSelection > option :', option)
 
-  const needRemove = updateSelectionAndCompleted(option)
-  isCompleted.value = !!selection.value.length
+//   // const needRemove = updateSelectionAndCompleted(option)
+//   updateSelectionAndCompleted(option)
+// }
 
-  // update the pinia store
-  updateStore(option, needRemove)
-}
+// const updateMultipleSelection = (option: any) => {
+//   // console.log()
+//   // console.log('TeeTrack > updateMultipleSelection > option :', option)
 
-const updateMultipleSelection = (option: any) => {
-  // console.log()
-  // console.log('TeeTrack > updateMultipleSelection > option :', option)
+//   updateSelectionAndCompleted(option)
+//   // console.log('TeeTrack > updateMultipleSelection > selection.value :', selection.value)
+//   // console.log('TeeTrack > updateMultipleSelection > needRemove :', needRemove)
+// }
 
-  updateSelectionAndCompleted(option)
-  // console.log('TeeTrack > updateMultipleSelection > selection.value :', selection.value)
-  // console.log('TeeTrack > updateMultipleSelection > needRemove :', needRemove)
-}
-
-const saveMultipleSelection = () => {
-  // console.log()
-  // console.log('TeeTrack > saveMultipleSelection > ')
-  isCompleted.value = true
-
-  // update the pinia store
-  updateStore({}, false)
+const saveSelection = () => {
+  console.log()
+  console.log('TeeTrack > saveSelection > ')
+  updateStore()
 }
 
 
-const updateStore = (option: any, needRemove: boolean) => {
-  // console.log()
+const updateStore = () => {
+  console.log()
+  const option = selectedOption.value || {}
   // console.log('TeeTrack > updateStore > option :', option)
 
-  const optionNext = option.next
+  const optionNext = option?.next
   const defaultNext = track?.next
 
   // @ts-ignore
@@ -353,15 +392,25 @@ const updateStore = (option: any, needRemove: boolean) => {
 
   tracks.updateUsedTracks(props.trackId, props.step, option, selection.value, option.data)
   
-  // console.log('TeeTrack > updateStore > needRemove :', needRemove)
-  if (!needRemove) {
-    // console.log('TeeTrack > updateStore > addToUsedTracks...')
+  console.log('TeeTrack > updateStore > needRemove.value :', needRemove.value)
+  if (!needRemove.value) {
+    console.log('TeeTrack > updateStore > addToUsedTracks...')
     const canAddTrack = !tracks.trackExistsInUsed(next.default)
     canAddTrack && tracks.addToUsedTracks(props.trackId, next.default)
   } else {
     // console.log('TeeTrack > updateStore > removeFromUsedTracks...')
-    // tracks.removeFromUsedTracks(props.trackId, next.default)
     tracks.removeFurtherUsedTracks(props.trackId)
   }
+}
+
+const backToPreviousTrack = () => {
+  console.log()
+  console.log('TeeTrack > backToTrack > props.trackId :', props.trackId)
+  const indexOfTrack = tracks.tracksStepsArray.indexOf(props.trackId)
+  console.log('TeeTrack > backToTrack > indexOfTrack :', indexOfTrack)
+  const TrackToGoBackTo = tracks.tracksStepsArray[indexOfTrack - 1]
+  console.log('TeeTrack > backToTrack > TrackToGoBackTo :', TrackToGoBackTo)
+  tracks.setUsedTracksAsNotCompleted(TrackToGoBackTo)
+  tracks.removeFurtherUsedTracks(TrackToGoBackTo)
 }
 </script>

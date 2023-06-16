@@ -14,6 +14,18 @@
       />
     </p>
 
+    <!-- DEBUGGING -->
+    <div
+      class="vue-debug"
+      v-if="debugBool">
+      <h5>DEBUG - TeeApp</h5>
+      <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
+        <div class="fr-col-4">
+          <h6 class="fr-mb-1v"> tracks.currentStep : <code>{{ tracks.currentStep }} </code></h6>
+        </div>
+      </div>
+    </div>
+    
     <!-- MESSAGE & DEBUG SWITCH-->
     <div 
       v-if="showMessageBool || debugSwitchBool"
@@ -60,10 +72,19 @@
     <!-- TRACKS INTERFACES -->
     <div class="fr-grid-row fr-grid-row-gutters fr-p-1v">
       
+      <!-- SIDEBAR MENU -->
+      <!-- v-show="tracks.currentStep > 1" -->
+      <div
+        class="fr-col-3">
+        <TeeChoices
+          :debug="debugBool"
+        />
+      </div>
+
       <!-- TRACKS -->
       <div 
-        :class="`fr-col-${debugBool ? 9 : 12} ${debugBool ? '' : 'fr-grid-row--center'}`">
-        <p
+        :class="`fr-col-${debugBool ? 7 : 8} ${debugBool ? '' : 'fr-grid-row--center'}`">
+        <div
           v-for="(track, index) in tracks.usedTracks"
           :key="track.id"
           :class="`fr-py-0 fr-mb-${ debugBool ? '12v' : '0'}`">
@@ -72,7 +93,7 @@
             :track-id="track.id"
             :debug="debugBool"
           />
-        </p>
+        </div>
       </div>
 
       <!-- DEBUGGING -->
@@ -106,7 +127,9 @@
             <code><pre>{{ tracks.usedTracks  }}</pre></code>
           </div>
 
-          <div class="fr-col-12">
+          <div
+            v-if="false"
+            class="fr-col-12">
             <h6>
               metaEnv :
             </h6>
@@ -160,6 +183,8 @@ import TeeMatomo from './components/TeeMatomo.vue'
 import TeeTrack from './components/TeeTrack.vue'
 // @ts-ignore
 import TeeStepper from './components/TeeStepper.vue'
+// @ts-ignore
+import TeeChoices from './components/TeeChoices.vue'
 // @ts-ignore
 import TeeCredits from './components/TeeCredits.vue'
 

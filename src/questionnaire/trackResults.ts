@@ -1,5 +1,6 @@
 export const results = {
   id: 'track_results',
+  title: { fr: 'Mes résultats' },
   label: { fr: 'Résultats'},
   intro: { fr: 'Résultats'},
   interface: {
@@ -32,7 +33,7 @@ export const results = {
         <span
           class="fr-icon-phone-fill" 
           aria-hidden="true"></span>
-        Vous souhaitez en connaitre d'avantage ?
+        Vous souhaitez en connaître d'avantage ?
       </h2>
       <h5>
         N'hésitez pas à nous laisser vos coordonnées, 
@@ -201,6 +202,16 @@ export const results = {
             from: 'usedTracks',
             id: 'project_sectors',
             dataField: 'attributes.PROJECT_SECTORS',
+          },
+          {
+            from: 'usedTracks',
+            id: 'user_roles',
+            dataField: 'attributes.USER_ROLES',
+          },
+          {
+            from: 'usedTracks',
+            id: 'user_goals',
+            dataField: 'attributes.USER_GOALS',
           },
           {
             from: 'usedTracks',
