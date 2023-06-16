@@ -77,6 +77,13 @@ export const tracksStore = defineStore('tracks', () => {
     const titleString: string = trackTitle && trackTitle[lang]
     return titleString
   }
+  const getTrackLabel = (trackId: string, lang: string) => {
+    const track = getTrack(trackId)
+    // @ts-ignore
+    const trackTitle: Translations = track?.label
+    const titleString: string = trackTitle && trackTitle[lang]
+    return titleString
+  }
   function trackExistsInUsed(trackId: string) {
     // @ts-ignore
     const exists = usedTracks.value.find(t => t.id === trackId)
@@ -175,6 +182,7 @@ export const tracksStore = defineStore('tracks', () => {
     setMaxDepth,
     getTrack,
     getTrackTitle,
+    getTrackLabel,
     isTrackCompleted,
     getAllUsedTracks,
     trackExistsInUsed,

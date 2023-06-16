@@ -60,7 +60,7 @@
       <h3
         v-show="!isCompleted"
         >
-        {{ tracks.getTrackTitle(trackId, choices.lang) }}
+        {{ tracks.getTrackLabel(trackId, choices.lang) }}
       </h3>
     </div>
 
