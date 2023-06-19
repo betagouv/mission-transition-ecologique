@@ -118,7 +118,7 @@ export interface UsedTrack {
   id: string | any,
   final?: boolean,
   completed: boolean,
-  updating: boolean,
+  // updating: boolean,
   step: number,
   // values: any[] | null,
   // titles?: Translations[],

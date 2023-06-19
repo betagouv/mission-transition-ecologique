@@ -9,6 +9,7 @@
         <h6 class="fr-mb-1v"> step : <code>{{ step }} </code></h6>
         <h6 class="fr-mb-1v"> trackId : <code>{{ trackId }} </code></h6>
         <h6 class="fr-mb-1v"> isCompleted : <code>{{ isCompleted }} </code></h6>
+        <!-- <h6 class="fr-mb-1v"> tracks.isTrackCompleted(trackId) : <code>{{ tracks.isTrackCompleted(trackId) }} </code></h6> -->
         <h6 class="fr-mb-1v"> needRemove : <code>{{ needRemove }} </code></h6>
       </div>
       <div class="fr-col-4">
@@ -33,7 +34,7 @@
       </div>
 
       <div
-        v-if="true" 
+        v-if="false" 
         class="fr-col-6">
         <h4>optionsArray (values) :</h4>
         <code><pre>{{ optionsArray.map(o => o.value) }}</pre></code>
@@ -43,7 +44,7 @@
 
   <!-- UNCOMPLETED QUESTIONNAIRE -->
   <div
-    v-if="!isCompleted"
+    v-show="!isCompleted"
     class="fr-grid-row fr-grid-row--gutters"
     >
   
@@ -251,7 +252,9 @@ const isTrackResults = computed(() => {
 })
 const isCompleted = computed(() => {
   console.log('TeeTrack > isCompleted > props.trackId :', props.trackId)
-  return tracks.isTrackCompleted(props.trackId)
+  const bool = tracks.isTrackCompleted(props.trackId)
+  console.log('TeeTrack > isCompleted > bool :', bool)
+  return bool
 })
 const selectionValues = computed(() => {
   console.log('TeeTrack > selectionValues > selectedOptions.value :', selectedOptions.value)
@@ -336,14 +339,14 @@ const saveSelection = () => {
   }
 }
 
-const backToPreviousTrack = () => {
+const backToPreviousTrack = async () => {
   console.log()
   console.log('TeeTrack > backToTrack > props.trackId :', props.trackId)
   const indexOfTrack = tracks.tracksStepsArray.indexOf(props.trackId)
   console.log('TeeTrack > backToTrack > indexOfTrack :', indexOfTrack)
   const TrackToGoBackTo = tracks.tracksStepsArray[indexOfTrack - 1]
   console.log('TeeTrack > backToTrack > TrackToGoBackTo :', TrackToGoBackTo)
+  await tracks.setUsedTracksAsNotCompleted(TrackToGoBackTo)
   tracks.removeFurtherUsedTracks(TrackToGoBackTo)
-  tracks.setUsedTracksAsNotCompleted(TrackToGoBackTo)
 }
 </script>

@@ -76,7 +76,6 @@ export const tracksStore = defineStore('tracks', () => {
   }
   const isTrackCompleted = (trackId: string) => {
     const track = usedTracks.value.find(t => t.id === trackId)
-    // @ts-ignore
     return track?.completed
   }
 
@@ -102,7 +101,6 @@ export const tracksStore = defineStore('tracks', () => {
     const trackInfos: UsedTrack = {
       id: newTrackId,
       completed: false,
-      updating: false,
       step: usedTracks.value.length + 1,
       selected: [],
       next: null,
@@ -115,6 +113,8 @@ export const tracksStore = defineStore('tracks', () => {
     console.log()
     console.log('store.tracks > updateUsedTracks > trackId : ', trackId)
     console.log('store.tracks > updateUsedTracks > step : ', step)
+    console.log('store.tracks > updateUsedTracks > next : ', next)
+    console.log('store.tracks > updateUsedTracks > selectedOptions : ', selectedOptions)
     usedTracks.value.map((trackInfo: UsedTrack) => {
       if (trackInfo.id === trackId) {
         console.log('store.tracks > updateUsedTracks > trackInfo : ', trackInfo)
@@ -128,7 +128,7 @@ export const tracksStore = defineStore('tracks', () => {
     })
   }
 
-  function setUsedTracksAsNotCompleted(trackId: string) {
+  async function setUsedTracksAsNotCompleted(trackId: string) {
     console.log()
     console.log('store.tracks > setUsedTracksAsNotCompleted > trackId : ', trackId)
     usedTracks.value.map((trackInfo: UsedTrack) => {

@@ -61,10 +61,10 @@ const choices = choicesStore()
 //   return completedTracks
 // })
 
-const backToTrack = (trackId: string) => {
+const backToTrack = async (trackId: string) => {
   console.log()
   console.log('TeeSidebar > backToTrack > trackId :', trackId)
+  await tracks.setUsedTracksAsNotCompleted(trackId)
   tracks.removeFurtherUsedTracks(trackId)
-  tracks.setUsedTracksAsNotCompleted(trackId)
 }
 </script>

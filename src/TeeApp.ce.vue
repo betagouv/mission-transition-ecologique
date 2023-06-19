@@ -190,7 +190,7 @@ const appId = 'gov-aid-tree-app'
 
 // @ts-ignore
 const metaEnv = import.meta.env
-console.log('TeeApp - metaEnv :', metaEnv)
+// console.log('TeeApp - metaEnv :', metaEnv)
 const deployMode = metaEnv.MODE != 'development'
 const deployUrl = metaEnv.VITE_DEPLOY_URL
 const noDebugSwitch = metaEnv.VITE_NO_DEBUG_SWITCH === 'true'

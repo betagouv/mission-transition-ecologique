@@ -56,7 +56,8 @@ export const sendApiRequest = async (callback: FormCallback, formData: object | 
   // console.log('utils > emailing > sendApiRequest >  headers :', headers)
 
   const usedTrackValues = usedTrack.map(usedTrack => {
-    return toRaw(usedTrack.values?.map(i => toRaw(i)))
+    const values = usedTrack.selected?.map(s => s.value)
+    return toRaw(values?.map(i => toRaw(i)))
   }).filter(i => i?.length)
   // console.log('utils > emailing > sendApiRequest >  usedTrackValues :', usedTrackValues)
 
