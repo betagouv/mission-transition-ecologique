@@ -49,7 +49,7 @@ export const needs = {
       label: { fr: "Je cherche juste à m'informer" },
       hint: { fr: "Faites une première recherche et découvrez les différentes offres" },
       next: {
-        default: 'track_structure_sizes'
+        default: 'track_results'
       }
     }
   ]

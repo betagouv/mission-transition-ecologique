@@ -1,7 +1,7 @@
 export const results = {
   id: 'track_results',
   title: { fr: 'Mes résultats' },
-  label: { fr: 'Résultats'},
+  label: { fr: 'Vos résultats'},
   intro: { fr: 'Résultats'},
   interface: {
     component: 'results',

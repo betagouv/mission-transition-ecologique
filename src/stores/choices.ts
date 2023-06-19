@@ -5,6 +5,8 @@ import { frDict } from '@/translations/fr'
 
 export const choicesStore = defineStore('choices', () => {
   
+  const publicPath = ref<string>()
+
   // internationalization
   const dict: any = {
     fr: frDict
@@ -14,6 +16,9 @@ export const choicesStore = defineStore('choices', () => {
   const lang = ref('fr')
 
   // actions
+  function setPublicPath(path: string) {
+    publicPath.value = path
+  }
   function setLocale(loc: string) {
     lang.value = loc
   }
@@ -30,8 +35,10 @@ export const choicesStore = defineStore('choices', () => {
   }
 
   return {
+    publicPath,
     dict,
     lang,
+    setPublicPath,
     setLocale,
     t,
   }

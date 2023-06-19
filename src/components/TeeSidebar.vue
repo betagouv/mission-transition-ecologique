@@ -4,7 +4,7 @@
     v-if="debug"
     class="vue-debug" 
     >
-    <h5>DEBUG - TeeChoices</h5>
+    <h5>DEBUG - TeeSidebar</h5>
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
       <div class="fr-col-12">
         <h6 class="fr-mb-1v"> tracks.usedTracks :</h6>
@@ -53,7 +53,7 @@ const choices = choicesStore()
 
 const backToTrack = (trackId: string) => {
   console.log()
-  console.log('TeeChoices > backToTrack > trackId :', trackId)
+  console.log('TeeSidebar > backToTrack > trackId :', trackId)
   tracks.setUsedTracksAsNotCompleted(trackId)
   tracks.removeFurtherUsedTracks(trackId)
 }

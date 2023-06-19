@@ -34,7 +34,69 @@
     v-if="resultsProgsLen"
     class="fr-container fr-px-0 fr-pt-6v">
 
-    <DsfrAccordionsGroup>
+    <div
+      v-for="prog in resultsProgs"
+      :key="prog.index"
+      class="fr-card fr-enlarge-link fr-card--horizontal-half fr-mb-6v">
+      <div class="fr-card__body">
+        <div class="fr-card__content">
+          <h3 class="fr-card__title">
+            <a href="#">
+              {{ prog.title }} 
+            </a>
+          </h3>
+          <p class="fr-card__desc">
+            {{ prog.resume }}
+          </p>
+          <p
+            v-if="debug"
+            class="fr-card__desc">
+            <br> choices.publicPath : <code>{{ choices.publicPath }}</code>
+            <br> prog.cover : <code>{{ prog.cover }}</code>
+          </p>
+          <div class="fr-card__start">
+            <ul class="fr-tags-group">
+              <li
+                v-for="provider in prog.program_providers"
+                :key="provider.code || provider"
+                >
+                <p class="fr-tag">
+                  {{ provider.code }}
+                </p>
+              </li>
+            </ul>
+          </div>
+          <!-- <div class="fr-card__end">
+            <p class="fr-card__detail fr-icon-warning-fill">
+              détail (optionnel)
+            </p>
+          </div> -->
+        </div>
+      </div>
+      <div
+        v-if="prog.cover"
+        class="fr-card__header">
+        <div class="fr-card__img">
+          <img 
+            class="fr-responsive-img"
+            :src="`${choices.publicPath}${prog.cover}`"
+            alt="[À MODIFIER - vide ou texte alternatif de l’image]"
+            />
+          <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+        </div>
+        <ul class="fr-badges-group">
+          <li>
+            <p class="fr-badge">
+              label badge
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+    <DsfrAccordionsGroup
+      v-if="false">
       <li
         v-for="prog in resultsProgs"
         :key="prog.index"
@@ -66,19 +128,14 @@
     </DsfrAccordionsGroup>
   </div>
 
-  <div class="fr-mt-18v">
-    <!-- {{ tracksResults }} -->
+  <div
+    v-if="false" 
+    class="fr-mt-18v">
     <TeeForm
       :track-id="trackId"
       :form-options="trackForm"
       :debug="debug"/>
   </div>
-  <!-- @saveData="updateSelectionFromForm"/> -->
-
-  <!-- <h4 class="fr-pt-10v">
-    {{ choices.t('results.fittingPrograms') }} 
-    ({{ resultsProgsLen }})
-  </h4> -->
 
   <!-- DEBUGGING -->
   <div 

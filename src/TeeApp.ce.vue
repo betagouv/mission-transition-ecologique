@@ -76,7 +76,7 @@
       <!-- v-show="tracks.currentStep > 1" -->
       <div
         class="fr-col-3">
-        <TeeChoices
+        <TeeSidebar
           :debug="debugBool"
         />
       </div>
@@ -184,7 +184,7 @@ import TeeTrack from './components/TeeTrack.vue'
 // @ts-ignore
 import TeeStepper from './components/TeeStepper.vue'
 // @ts-ignore
-import TeeChoices from './components/TeeChoices.vue'
+import TeeSidebar from './components/TeeSidebar.vue'
 // @ts-ignore
 import TeeCredits from './components/TeeCredits.vue'
 
@@ -192,10 +192,11 @@ const appId = 'gov-aid-tree-app'
 
 // @ts-ignore
 const metaEnv = import.meta.env
-// console.log('TeeApp - metaEnv :', metaEnv)
+console.log('TeeApp - metaEnv :', metaEnv)
 const deployMode = metaEnv.MODE != 'development'
 const deployUrl = metaEnv.VITE_DEPLOY_URL
 const noDebugSwitch = metaEnv.VITE_NO_DEBUG_SWITCH === 'true'
+const publicPath = metaEnv.BASE_URL
 
 // @ts-ignore
 // console.log('TeeApp - process.env :', process.env)
@@ -240,6 +241,8 @@ const changeDebug = (ev: any) => {
 onBeforeMount(() => {
   // console.log('TeeApp > props.seed :', props.seed)
   // console.log('TeeApp > props.maxDepth :', props.maxDepth)
+
+  choices.setPublicPath(publicPath)
 
   // load dataset to pinia store
   // programs.setDataset(props.datasetUrl, deployMode, deployUrl)

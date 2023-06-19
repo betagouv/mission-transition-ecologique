@@ -56,7 +56,7 @@
     <!-- TRACK LABEL -->
     <div
       v-if="step !== 1"
-      :class="`${isTrackResults ? 'fr-col-10 fr-col-offset-2' : 'fr-col-12'}`">
+      :class="`${isTrackResults ? 'fr-col-10 fr-col-offset-1' : 'fr-col-12'}`">
       <h3
         v-show="!isCompleted"
         >
@@ -68,7 +68,7 @@
     <div
       v-for="option in optionsArray"
       :key="option.value"
-      :class="`fr-col-${colsWidth} ${isTrackResults ? 'fr-col-offset-2' : ''}`"
+      :class="`fr-col-${colsWidth} ${isTrackResults ? 'fr-col-offset-1' : ''}`"
       >
       
       <!-- AS CARDS -->
@@ -91,7 +91,7 @@
                 class="fr-card__start">
                 <p>
                   <DsfrBadge 
-                    type="success" 
+                    type="info" 
                     :label="choices.t('selection.selected')" />
                 </p>
                 <!-- <ul class="fr-tags-group">
@@ -171,7 +171,7 @@
   
   <!-- SEND / NEXT BUTTON -->
   <div 
-    v-if="!isCompleted"
+    v-if="!isCompleted && !isTrackResults"
     class="fr-grid-row fr-grid-row--gutters fr-pt-12v">
     <div
       v-if="step > 1"
@@ -267,7 +267,7 @@ const colsOptions: ColsOptions = {
   cards: 4,
   form: 8,
   modify: 2,
-  results: 8,
+  results: 10,
 }
 
 const tracks = tracksStore()
@@ -293,7 +293,8 @@ const optionsArray: any[] = track?.options.filter( (o: TrackOptions) => !o.disab
 
 // Computed
 const isTrackResults = computed(() => {
-  return props.trackId === 'track_results'
+  // return props.trackId === 'track_results'
+  return track?.interface.component === 'results'
 })
 const isCompleted = computed(() => {
   return tracks.isTrackCompleted(props.trackId)
