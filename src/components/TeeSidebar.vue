@@ -21,7 +21,7 @@
     class="fr-mb-1v">
     <DsfrButton
       :label="tracks.getTrackTitle(usedTrack.id, choices.lang)"
-      :icon="`${ usedTrack.completed ? false : 'ri-arrow-right-line'}`"
+      :icon="`${ usedTrack.completed ? '' : 'ri-arrow-right-line'}`"
       :disabled="!usedTrack.completed"
       tertiary
       no-outline
