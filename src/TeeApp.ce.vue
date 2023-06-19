@@ -91,6 +91,7 @@
           <TeeTrack
             :step="index + 1"
             :track-id="track.id"
+            :is-completed="!!tracks.isTrackCompleted(track.id)"
             :debug="debugBool"
           />
         </div>

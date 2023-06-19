@@ -44,7 +44,7 @@
 
   <!-- UNCOMPLETED QUESTIONNAIRE -->
   <div
-    v-show="!isCompleted"
+    v-if="!isCompleted"
     class="fr-grid-row fr-grid-row--gutters"
     >
   
@@ -167,7 +167,7 @@
   
   <!-- SEND / NEXT BUTTON -->
   <div 
-    v-if="!isCompleted && !isTrackResults"
+    v-if="!isCompleted && allowMultiple && !isTrackResults"
     class="fr-grid-row fr-grid-row--gutters fr-pt-8v">
     <div
       v-if="step > 1"
@@ -214,6 +214,7 @@ import TeeResults from './TeeResults.vue'
 interface Props {
   step: number,
   trackId: string,
+  isCompleted: Boolean,
   debug?: boolean,
 }
 const props = defineProps<Props>()
@@ -250,12 +251,6 @@ const optionsArray: any[] = track?.options.filter( (o: TrackOptions) => !o.disab
 const isTrackResults = computed(() => {
   return track?.interface.component === 'results'
 })
-const isCompleted = computed(() => {
-  console.log('TeeTrack > isCompleted > props.trackId :', props.trackId)
-  const bool = tracks.isTrackCompleted(props.trackId)
-  console.log('TeeTrack > isCompleted > bool :', bool)
-  return bool
-})
 const selectionValues = computed(() => {
   console.log('TeeTrack > selectionValues > selectedOptions.value :', selectedOptions.value)
   const values = selectedOptions.value.length && selectedOptions.value.map(o => o?.value)
@@ -264,7 +259,7 @@ const selectionValues = computed(() => {
 })
 
 const colsWidth = computed(() => {
-  if (isCompleted.value) {
+  if (props.isCompleted) {
     // full width of 10 if completed track
     return colsOptions[renderAs]
   } else if (customColWidth === 'auto') {
@@ -313,6 +308,10 @@ const updateSelection = (option: any) => {
   }
   needRemove.value = remove
   // selectedOptions.value = option
+
+  if (!allowMultiple) {
+    saveSelection()
+  }
 }
 
 const saveSelection = () => {
