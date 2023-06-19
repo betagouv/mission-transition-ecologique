@@ -59,7 +59,7 @@
           <div class="fr-card__start">
             <ul class="fr-badges-group">
               <li>
-                <p class="fr-badge">
+                <p class="fr-badge fr-badge--info fr-badge--no-icon">
                   {{ prog.title }}
                 </p>
               </li>
