@@ -61,7 +61,7 @@
     <div
       v-for="option in optionsArray"
       :key="option.value"
-      :class="`fr-col-${colsWidth} ${isTrackResults ? 'fr-col-offset-1' : ''}`"
+      :class="`fr-col-${colsWidth} ${isTrackResults ? 'fr-col-offset-1' : ''} fr-py-1v`"
       >
       
       <!-- AS CARDS -->

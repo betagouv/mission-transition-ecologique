@@ -38,9 +38,9 @@
     <div
       v-for="prog in resultsProgs"
       :key="prog.index"
-      class="fr-card fr-enlarge-link fr-card--horizontal-half fr-mb-6v">
+      class="fr-card fr-enlarge-link fr-card--horizontal-half fr-mb-10v">
       <div class="fr-card__body">
-        <div class="fr-card__content">
+        <div class="fr-card__content fr-pb-10v">
           <h3 class="fr-card__title">
             <a href="#">
               {{ prog.resume }} 
@@ -91,8 +91,7 @@
       </div>
     </div>
 
-
-    <DsfrAccordionsGroup
+    <!-- <DsfrAccordionsGroup
       v-if="false">
       <li
         v-for="prog in resultsProgs"
@@ -106,7 +105,6 @@
           <template #title>
             <h6
               :style="expandedId === `${prefix}${prog.index}` ? `color: ${blockColor}` : ''">
-              <!-- {{ i + 1 }}) &nbsp;  -->
               <v-icon
                 class="fr-pt-2v fr-pb-0"
                 name="ri-record-circle-fill"/>
@@ -122,7 +120,7 @@
           </template>
         </DsfrAccordion>
       </li>
-    </DsfrAccordionsGroup>
+    </DsfrAccordionsGroup> -->
   </div>
 
   <div
@@ -164,7 +162,7 @@ import { programsStore } from '../stores/programs'
 import { analyticsStore } from '../stores/analytics'
 
 // @ts-ignore
-import TeeProgram from './TeeProgram.vue'
+// import TeeProgram from './TeeProgram.vue'
 // @ts-ignore
 import TeeForm from './TeeForm.vue'
 // @ts-ignore
@@ -184,7 +182,7 @@ interface Props {
 }
 const props = defineProps<Props>()
 
-const blockColor= 'var(--text-default-info)'
+// const blockColor = 'var(--text-default-info)'
 
 const resultsProgs = programs.filterPrograms(props.tracksResults)
 
