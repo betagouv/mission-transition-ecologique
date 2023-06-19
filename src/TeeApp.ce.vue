@@ -99,7 +99,7 @@
       <!-- DEBUGGING -->
       <div
         v-if="debugBool"
-        class="vue-debug fr-col-3 fr-pl-3v">
+        class="vue-debug fr-col-2 fr-pl-3v">
         <h5>DEBUG - TeeApp</h5>
         <div class="fr-grid-row fr-grid-row--gutters">
           <div class="fr-col-12">
@@ -121,18 +121,16 @@
           </div>
 
           <div class="fr-col-12">
-            <h6>
-              tracks.usedTracks :
-            </h6>
+            <h6>tracks.usedTracks :</h6>
             <code><pre>{{ tracks.usedTracks  }}</pre></code>
+            <!-- <h6>tracks.tracksResults :</h6>
+            <code><pre>{{ tracks.tracksResults  }}</pre></code> -->
           </div>
 
           <div
             v-if="false"
             class="fr-col-12">
-            <h6>
-              metaEnv :
-            </h6>
+            <h6>metaEnv :</h6>
             <code><pre>{{ metaEnv }}</pre></code>
           </div>
 

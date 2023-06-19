@@ -52,7 +52,7 @@
           </p> -->
           <p
             v-if="debug"
-            class="fr-card__desc">
+            class="vue-debug fr-card__desc">
             <br> choices.publicPath : <code>{{ choices.publicPath }}</code>
             <br> prog.cover : <code>{{ prog.cover }}</code>
           </p>
@@ -65,11 +65,6 @@
               </li>
             </ul>
           </div>
-          <!-- <div class="fr-card__end">
-            <p class="fr-card__detail fr-icon-warning-fill">
-              détail (optionnel)
-            </p>
-          </div> -->
         </div>
       </div>
       <div
@@ -79,7 +74,7 @@
           <img 
             class="fr-responsive-img"
             :src="`${choices.publicPath}${prog.cover}`"
-            alt="[À MODIFIER - vide ou texte alternatif de l’image]"
+            :alt="`image / ${prog.title}`"
             />
           <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
         </div>

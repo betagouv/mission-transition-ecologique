@@ -8,6 +8,7 @@ export const needs = {
   },
   behavior: {
     multipleChoices: false,
+    singleChoice: true,
   },
   options: [
     {

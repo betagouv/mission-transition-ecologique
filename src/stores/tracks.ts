@@ -43,21 +43,6 @@ export const tracksStore = defineStore('tracks', () => {
     const stepNumber = track.step
     return stepNumber
   })
-  const tracksResults = computed(() => {
-    let results = usedTracks.value
-      .filter(track => track.id !== trackResultString)
-      .map(track => {
-        return {
-          id: track.id,
-          step: track.step,
-          values: track.values,
-          // val: track.val,
-          data: track.data
-        }
-      })
-    if (!results.length) { results = [] } 
-    return results
-  })
   const getAllUsedTracks = computed(() => {
     const res = usedTracks.value
       .filter((i: UsedTrack) => i?.completed)
@@ -100,7 +85,7 @@ export const tracksStore = defineStore('tracks', () => {
 
   function setSeedTrack(seed: string) {
     // console.log()
-    // console.log('store.tracks > addToUsedTracks > seed : ', seed)
+    // console.log('store.tracks > setSeedTrack > seed : ', seed)
     const track = getTrack(seed)
     // console.log('store.tracks > setSeedTrack > track : ', track)
     seedTrack.value = track?.id
@@ -119,32 +104,24 @@ export const tracksStore = defineStore('tracks', () => {
       completed: false,
       updating: false,
       step: usedTracks.value.length + 1,
-      values: [],
-      // val: [],
-      data: {},
+      selected: [],
       next: null,
     }
     // @ts-ignore
     usedTracks.value.push(trackInfos)
   }
 
-  function updateUsedTracks(trackId: string, step: number, option: any, values: any[], data: object, selectionTitles: Translations[]) {
+  function updateUsedTracks(trackId: string, step: number, next: any, selectedOptions: any[]) {
     console.log()
     console.log('store.tracks > updateUsedTracks > trackId : ', trackId)
     console.log('store.tracks > updateUsedTracks > step : ', step)
-    console.log('store.tracks > updateUsedTracks > values : ', values)
-    console.log('store.tracks > updateUsedTracks > selectionTitles : ', selectionTitles)
     usedTracks.value.map((trackInfo: UsedTrack) => {
       if (trackInfo.id === trackId) {
-        // console.log('store.tracks > updateUsedTracks > trackInfo : ', trackInfo)
-        // console.log('store.tracks > updateUsedTracks > trackInfo : ', trackInfo)
-        const hasValues = Boolean(values.length)
-        const nextTrack = option.next
-        trackInfo.values = values
-        trackInfo.titles = selectionTitles
-        // trackInfo.val = val
-        trackInfo.completed = !!values.length
-        trackInfo.data = data
+        console.log('store.tracks > updateUsedTracks > trackInfo : ', trackInfo)
+        console.log('store.tracks > updateUsedTracks > trackInfo : ', trackInfo)
+        const hasValues = Boolean(selectedOptions.length)
+        const nextTrack = next
+        trackInfo.selected = selectedOptions
         trackInfo.completed = hasValues
         trackInfo.next = hasValues ? nextTrack : null
       }
@@ -159,6 +136,7 @@ export const tracksStore = defineStore('tracks', () => {
         trackInfo.completed = false
       }
     })
+    console.log('store.tracks > setUsedTracksAsNotCompleted > usedTracks.value : ', usedTracks.value)
   }
 
   function removeFurtherUsedTracks(srcTrackId: string) {
@@ -180,7 +158,6 @@ export const tracksStore = defineStore('tracks', () => {
     usedTracks,
     tracksStepsArray,
     currentStep,
-    tracksResults,
     setMaxDepth,
     getTrack,
     getTrackTitle,

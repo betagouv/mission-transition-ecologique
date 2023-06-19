@@ -74,7 +74,8 @@ enum TrackBehaviorOperators {
   or = 'or'
 }
 export interface TrackBehavior {
-  multipleChoices: boolean,
+  multipleChoices?: boolean,
+  singleChoice?: boolean,
   operator?: TrackBehaviorOperators,
 }
 export interface TrackOptionsField {
@@ -89,6 +90,7 @@ export interface TrackNext {
   [name: string]: any
 }
 export interface TrackOptions {
+  id?: string,
   disabled?: Boolean,
   value: string | number,
   title?: Translations,
@@ -118,10 +120,11 @@ export interface UsedTrack {
   completed: boolean,
   updating: boolean,
   step: number,
-  values: any[] | null,
-  titles?: Translations[],
+  // values: any[] | null,
+  // titles?: Translations[],
   // val: any[] | null,
-  data: object,
+  // data: object,
+  selected?: TrackOptions[] | any[],
   next: any
 }
 

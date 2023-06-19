@@ -11,47 +11,39 @@
         <h6 class="fr-mb-1v"> isCompleted : <code>{{ isCompleted }} </code></h6>
         <h6 class="fr-mb-1v"> needRemove : <code>{{ needRemove }} </code></h6>
       </div>
-      <div class="fr-col-3">
+      <div class="fr-col-4">
         <h6 class="fr-mb-1v"> renderAs : <code>{{ renderAs }} </code></h6>
         <h6 class="fr-mb-1v"> allowMultiple : <code>{{ allowMultiple }} </code></h6>
         <h6 class="fr-mb-1v"> trackOperator : <code>{{ trackOperator }} </code></h6>
         <h6 class="fr-mb-1v"> colsWidth : <code>{{ colsWidth }} </code></h6>
+        <h6 class="fr-mb-1v"> selectionValues : </h6>
+        <code><pre>{{ selectionValues }}</pre> </code>
       </div>
-      <div class="fr-col-3">
-        <h6 class="fr-mb-1v"> selection : </h6>
-        <code>{{ selection }} </code>
-        <h6 class="fr-mb-1v"> selectionTitles : </h6>
-        <code>{{ selectionTitles }} </code>
-      </div>
-      <div class="fr-col-3">
-        <h6 class="fr-mb-1v"> selectedOption : </h6>
-        <code>{{ selectedOption }} </code>
+      <!-- <div class="fr-col-3"> -->
+        <!-- <h6 class="fr-mb-1v"> selection : </h6>
+        <code>{{ selection }} </code> -->
+        <!-- <h6 class="fr-mb-1v"> selectionTitles : </h6>
+        <code>{{ selectionTitles }} </code> -->
+      <!-- </div> -->
+      <div class="fr-col-5">
+        <!-- <h6 class="fr-mb-1v"> selectedOption : </h6>
+        <code>{{ selectedOption }} </code> -->
+        <h6 class="fr-mb-1v"> selectedOptions : </h6>
+        <code><pre>{{ selectedOptions }}</pre></code>
       </div>
 
       <div
-        v-if="false" 
+        v-if="true" 
         class="fr-col-6">
-        <h4>
-          optionsArray (values) :
-        </h4>
+        <h4>optionsArray (values) :</h4>
         <code><pre>{{ optionsArray.map(o => o.value) }}</pre></code>
-      </div>
-
-      <div
-        v-if="false" 
-        class="fr-col-6">
-        <h4>
-          optionsArrayDynamic (values) :
-        </h4>
-        <code><pre>{{ optionsArrayDynamic.map(o => o.value) }}</pre></code>
       </div>
     </div>
   </div>
 
-  
   <!-- UNCOMPLETED QUESTIONNAIRE -->
   <div
-    v-show="!isCompleted"
+    v-if="!isCompleted"
     class="fr-grid-row fr-grid-row--gutters"
     >
   
@@ -59,9 +51,7 @@
     <div
       v-if="step !== 1"
       :class="`${isTrackResults ? 'fr-col-10 fr-col-offset-1' : 'fr-col-12'}`">
-      <h3
-        v-show="!isCompleted"
-        >
+      <h3>
         {{ tracks.getTrackLabel(trackId, choices.lang) }}
       </h3>
     </div>
@@ -91,10 +81,13 @@
               <div
                 v-if="isActiveChoice(option.value)" 
                 class="fr-card__start">
-                <p>
+                <!-- <p>
                   <DsfrBadge 
                     type="info" 
                     :label="choices.t('selection.selected')" />
+                </p> -->
+                <p class="fr-badge fr-badge--info fr-badge--no-icon fr-mb-4v">
+                  {{ choices.t('selection.selected') }}
                 </p>
                 <!-- <ul class="fr-tags-group">
                   <li>
@@ -163,7 +156,7 @@
           :track-config="track.config"
           :track-options="track.options"
           :track-form="track.form"
-          :tracks-results="tracks.tracksResults"
+          :tracks-results="tracks.usedTracks"
           :debug="debug"
         />
       </div>
@@ -174,7 +167,7 @@
   <!-- SEND / NEXT BUTTON -->
   <div 
     v-if="!isCompleted && !isTrackResults"
-    class="fr-grid-row fr-grid-row--gutters fr-pt-12v">
+    class="fr-grid-row fr-grid-row--gutters fr-pt-8v">
     <div
       v-if="step > 1"
       class="fr-col-3 fr-col-offset-6">
@@ -191,50 +184,10 @@
       <DsfrButton
         style="width: -moz-available !important;"
         :label="choices.t('next')"
-        :disabled="!selection.length"
+        :disabled="!selectedOptions.length"
         icon="ri-arrow-right-line"
         @click="saveSelection"
       />
-    </div>
-  </div>
-
-  <!-- DEPRECATED !!!! -->
-  <!-- COMPLETED QUESTIONNAIRE -->
-  <div v-show="false && isCompleted">
-    
-    <!-- TRACK CHOICES -->
-    <div
-      v-for="option in optionsArrayDynamic"
-      :key="option.value"
-      class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-mb-2v"
-      >
-
-      <!-- ACTIVE CHOICE(S) -->
-      <div
-        v-if="isActiveChoice(option.value)"
-        :class="`fr-col-${colsOptions.buttons} fr-col-offset-0`"
-        >
-        <DsfrButton
-          style="width: -moz-available !important;"
-          :label="option.label[choices.lang]" 
-          :icon="allowMultiple ? 'ri-checkbox-line' : 'md-radiobuttonchecked'"
-          :secondary="true"
-          @click="updateSelection(option)"
-        />
-      </div>
-
-      <!-- MODIFY BUTTTON -->
-      <!-- <div
-        v-if="isActiveChoice(option.value)"
-        :class="`fr-col-${colsOptions.modify}`">
-        <DsfrButton
-          :label="choices.dict[choices.lang].modify"
-          icon="ri-arrow-left-line"
-          tertiary
-          no-outline
-          @click="updateSelection(option)"
-        />
-      </div> -->
     </div>
   </div>
 
@@ -250,7 +203,7 @@ import { analyticsStore } from '../stores/analytics'
 // import type { DsfrButton } from '@gouvminint/vue-dsfr/types'
 
 // @ts-ignore
-import type { Track, TrackOptions, ColsOptions, TrackOpt, Translations, FormDataResp } from '@/types/index'
+import type { Track, TrackOptions, ColsOptions, TrackOpt } from '@/types/index'
 
 // // @ts-ignore
 // import TeeForm from './TeeForm.vue'
@@ -276,9 +229,7 @@ const tracks = tracksStore()
 const choices = choicesStore()
 const analytics = analyticsStore()
 
-const selectedOption = ref<any>()
-const selection = ref<any[]>([])
-const selectionTitles = ref<Translations[]>([])
+const selectedOptions = ref<any[]>([])
 const needRemove = ref<boolean>(false)
 
 const track: Track | any = tracks.getTrack(props.trackId)
@@ -296,15 +247,17 @@ const optionsArray: any[] = track?.options.filter( (o: TrackOptions) => !o.disab
 
 // Computed
 const isTrackResults = computed(() => {
-  // return props.trackId === 'track_results'
   return track?.interface.component === 'results'
 })
 const isCompleted = computed(() => {
+  console.log('TeeTrack > isCompleted > props.trackId :', props.trackId)
   return tracks.isTrackCompleted(props.trackId)
 })
-const optionsArrayDynamic = computed(() => {
-  // @ts-ignore
-  return isCompleted.value ? optionsArray.filter((v: TrackOpt) => selection.value.includes(v.value)) : optionsArray
+const selectionValues = computed(() => {
+  console.log('TeeTrack > selectionValues > selectedOptions.value :', selectedOptions.value)
+  const values = selectedOptions.value.length && selectedOptions.value.map(o => o?.value)
+  console.log('TeeTrack > selectionValues > values :', values)
+  return values || []
 })
 
 const colsWidth = computed(() => {
@@ -328,24 +281,22 @@ const colsWidth = computed(() => {
 
 // Getters
 const isActiveChoice = (value: string | number) => {
-  // @ts-ignore
-  return selection.value.includes(value)
+  // console.log('TeeTrack > isActiveChoice > selectionValues :', selectionValues)
+  return selectionValues.value.includes(value)
 }
 
 const updateSelection = (option: any) => {
-  const val: object = option.value
-  const valTitle: Translations = option.title
+  // console.log('TeeTrack > updateSelection > option :', option)
+  // console.log('TeeTrack > updateSelection > selectedOptions.value :', selectedOptions.value)
+  // const val: object = option.value
+  // const valTitle: Translations = option.title
   const isActive = isActiveChoice(option.value)
   let remove = false
   if (!isActive) {
     if (allowMultiple) {
-      // @ts-ignore
-      selection.value.push(val)
-      selectionTitles.value.push(valTitle)
+      selectedOptions.value.push(option)
     } else {
-      // @ts-ignore
-      selection.value = [val]
-      selectionTitles.value = [valTitle]
+      selectedOptions.value = [option]
     }
 
     // analytics / track event / only if positive choice
@@ -354,33 +305,25 @@ const updateSelection = (option: any) => {
       analytics.sendEvent(props.trackId, key, val)
     }
   } else {
-    const newArray = selection.value.filter(i => i !== val)
-    selection.value = newArray
-    remove = !newArray.length
+    selectedOptions.value = selectedOptions.value.filter(i => i.value !== option.value)
+    remove = !selectedOptions.value.length
   }
   needRemove.value = remove
-  selectedOption.value = option
+  // selectedOptions.value = option
 }
 
 const saveSelection = () => {
   console.log()
-  console.log('TeeTrack > saveSelection > ')
-  updateStore()
-}
-
-
-const updateStore = () => {
-  console.log()
-  const option = selectedOption.value || {}
+  // const option = selectedOption.value || {}
   // console.log('TeeTrack > updateStore > option :', option)
 
-  const optionNext = option?.next
+  const optionNext = selectedOptions.value[0].next
   const defaultNext = track?.next
 
   // @ts-ignore
   const next = !optionNext || allowMultiple ? defaultNext : optionNext
 
-  tracks.updateUsedTracks(props.trackId, props.step, option, selection.value, option.data, selectionTitles.value)
+  tracks.updateUsedTracks(props.trackId, props.step, next, selectedOptions.value)
   
   console.log('TeeTrack > updateStore > needRemove.value :', needRemove.value)
   if (!needRemove.value) {
@@ -400,7 +343,7 @@ const backToPreviousTrack = () => {
   console.log('TeeTrack > backToTrack > indexOfTrack :', indexOfTrack)
   const TrackToGoBackTo = tracks.tracksStepsArray[indexOfTrack - 1]
   console.log('TeeTrack > backToTrack > TrackToGoBackTo :', TrackToGoBackTo)
-  tracks.setUsedTracksAsNotCompleted(TrackToGoBackTo)
   tracks.removeFurtherUsedTracks(TrackToGoBackTo)
+  tracks.setUsedTracksAsNotCompleted(TrackToGoBackTo)
 }
 </script>
