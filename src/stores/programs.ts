@@ -20,13 +20,16 @@ export const programsStore = defineStore('programs', () => {
 
   function filterPrograms (tracksResults: any[]) {
     // console.log()
-    // console.log('store.programs > filterPrograms > tracksResults : ', tracksResults)
+    console.log('store.programs > filterPrograms > tracksResults : ', tracksResults)
 
     // retrieve and organize user's conditions
     const conditions: {[k: string]: any} = {}
     tracksResults.map(tr => {
       tr.selected.map((v: object) => {
-        for (const [key, value] of Object.entries(v)) {
+        // @ts-ignore
+        const val = v.value || {} 
+        // console.log('store.programs > filterPrograms > val : ', val)
+        for (const [key, value] of Object.entries(val)) {
           // console.log(`store.programs > filterPrograms > key : ${key} / value : ${value}`)
           conditions[key] = value
         }
@@ -34,7 +37,7 @@ export const programsStore = defineStore('programs', () => {
     })
     // const conditionsKeys = Object.keys(conditions)
     // console.log()
-    // console.log('store.programs > filterPrograms > conditions : ', conditions)
+    console.log('store.programs > filterPrograms > conditions : ', conditions)
     // console.log('store.programs > filterPrograms > conditionsKeys : ', conditionsKeys)
 
     // filter out programs
