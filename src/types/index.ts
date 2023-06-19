@@ -119,7 +119,7 @@ export interface UsedTrack {
   updating: boolean,
   step: number,
   values: any[] | null,
-  titles: Translations[],
+  titles?: Translations[],
   // val: any[] | null,
   data: object,
   next: any
