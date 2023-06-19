@@ -20,6 +20,8 @@
       <div class="fr-col-3">
         <h6 class="fr-mb-1v"> selection : </h6>
         <code>{{ selection }} </code>
+        <h6 class="fr-mb-1v"> selectionTitles : </h6>
+        <code>{{ selectionTitles }} </code>
       </div>
       <div class="fr-col-3">
         <h6 class="fr-mb-1v"> selectedOption : </h6>
@@ -248,7 +250,7 @@ import { analyticsStore } from '../stores/analytics'
 // import type { DsfrButton } from '@gouvminint/vue-dsfr/types'
 
 // @ts-ignore
-import type { Track, TrackOptions, ColsOptions, TrackOpt, FormDataResp } from '@/types/index'
+import type { Track, TrackOptions, ColsOptions, TrackOpt, Translations, FormDataResp } from '@/types/index'
 
 // // @ts-ignore
 // import TeeForm from './TeeForm.vue'
@@ -276,6 +278,7 @@ const analytics = analyticsStore()
 
 const selectedOption = ref<any>()
 const selection = ref<any[]>([])
+const selectionTitles = ref<Translations[]>([])
 const needRemove = ref<boolean>(false)
 
 const track: Track | any = tracks.getTrack(props.trackId)
@@ -331,15 +334,18 @@ const isActiveChoice = (value: string | number) => {
 
 const updateSelection = (option: any) => {
   const val: object = option.value
+  const valTitle: Translations = option.title
   const isActive = isActiveChoice(option.value)
   let remove = false
   if (!isActive) {
     if (allowMultiple) {
       // @ts-ignore
       selection.value.push(val)
+      selectionTitles.value.push(valTitle)
     } else {
       // @ts-ignore
       selection.value = [val]
+      selectionTitles.value = [valTitle]
     }
 
     // analytics / track event / only if positive choice
@@ -355,23 +361,6 @@ const updateSelection = (option: any) => {
   needRemove.value = remove
   selectedOption.value = option
 }
-
-// const updateSelection = (option: any) => {
-//   // console.log()
-//   // console.log('TeeTrack > updateSelection > option :', option)
-
-//   // const needRemove = updateSelectionAndCompleted(option)
-//   updateSelectionAndCompleted(option)
-// }
-
-// const updateMultipleSelection = (option: any) => {
-//   // console.log()
-//   // console.log('TeeTrack > updateMultipleSelection > option :', option)
-
-//   updateSelectionAndCompleted(option)
-//   // console.log('TeeTrack > updateMultipleSelection > selection.value :', selection.value)
-//   // console.log('TeeTrack > updateMultipleSelection > needRemove :', needRemove)
-// }
 
 const saveSelection = () => {
   console.log()
@@ -391,7 +380,7 @@ const updateStore = () => {
   // @ts-ignore
   const next = !optionNext || allowMultiple ? defaultNext : optionNext
 
-  tracks.updateUsedTracks(props.trackId, props.step, option, selection.value, option.data)
+  tracks.updateUsedTracks(props.trackId, props.step, option, selection.value, option.data, selectionTitles.value)
   
   console.log('TeeTrack > updateStore > needRemove.value :', needRemove.value)
   if (!needRemove.value) {

@@ -128,11 +128,12 @@ export const tracksStore = defineStore('tracks', () => {
     usedTracks.value.push(trackInfos)
   }
 
-  function updateUsedTracks(trackId: string, step: number, option: any, values: any[], data: object) {
+  function updateUsedTracks(trackId: string, step: number, option: any, values: any[], data: object, selectionTitles: Translations[]) {
     console.log()
     console.log('store.tracks > updateUsedTracks > trackId : ', trackId)
     console.log('store.tracks > updateUsedTracks > step : ', step)
     console.log('store.tracks > updateUsedTracks > values : ', values)
+    console.log('store.tracks > updateUsedTracks > selectionTitles : ', selectionTitles)
     usedTracks.value.map((trackInfo: UsedTrack) => {
       if (trackInfo.id === trackId) {
         // console.log('store.tracks > updateUsedTracks > trackInfo : ', trackInfo)
@@ -140,6 +141,7 @@ export const tracksStore = defineStore('tracks', () => {
         const hasValues = Boolean(values.length)
         const nextTrack = option.next
         trackInfo.values = values
+        trackInfo.titles = selectionTitles
         // trackInfo.val = val
         trackInfo.completed = !!values.length
         trackInfo.data = data

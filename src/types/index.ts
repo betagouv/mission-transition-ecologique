@@ -91,6 +91,7 @@ export interface TrackNext {
 export interface TrackOptions {
   disabled?: Boolean,
   value: string | number,
+  title?: Translations,
   label: Translations,
   intro?: Translations,
   fields?: TrackOptionsField,
@@ -118,6 +119,7 @@ export interface UsedTrack {
   updating: boolean,
   step: number,
   values: any[] | null,
+  titles: Translations[],
   // val: any[] | null,
   data: object,
   next: any
