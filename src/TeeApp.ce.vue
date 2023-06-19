@@ -77,6 +77,7 @@
       <div
         class="fr-col-3">
         <TeeSidebar
+          :used-tracks="tracks.usedTracks"
           :debug="debugBool"
         />
       </div>

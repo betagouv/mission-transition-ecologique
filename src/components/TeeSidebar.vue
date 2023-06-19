@@ -7,8 +7,8 @@
     <h5>DEBUG - TeeSidebar</h5>
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
       <div class="fr-col-12">
-        <h6 class="fr-mb-1v"> tracks.usedTracks :</h6>
-        <pre><code>{{ tracks.usedTracks }} </code></pre>
+        <h6 class="fr-mb-1v"> usedTracks :</h6>
+        <pre><code>{{ usedTracks }} </code></pre>
       </div>
     </div>
   </div>
@@ -16,7 +16,7 @@
   <!-- LIST OF USED TRACKS + MODIFY CHOICE -->
   <!-- fr-ri-check-fill -->
   <p
-    v-for="usedTrack in tracks.usedTracks"
+    v-for="usedTrack in usedTracks"
     :key="usedTrack.id"
     class="fr-mb-1v">
     <DsfrButton
@@ -49,6 +49,7 @@ import { choicesStore } from '../stores/choices'
 // import type { Track, Translations } from '@/types/index'
 
 interface Props {
+  usedTracks: any[],
   debug?: boolean,
 }
 const props = defineProps<Props>()

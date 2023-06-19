@@ -214,7 +214,7 @@ import TeeResults from './TeeResults.vue'
 interface Props {
   step: number,
   trackId: string,
-  isCompleted: Boolean,
+  isCompleted: boolean,
   debug?: boolean,
 }
 const props = defineProps<Props>()
@@ -308,7 +308,7 @@ const updateSelection = (option: any) => {
   }
   needRemove.value = remove
   // selectedOptions.value = option
-
+  
   if (!allowMultiple) {
     saveSelection()
   }
