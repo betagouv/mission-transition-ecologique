@@ -200,11 +200,6 @@ const updateExpandedId = (id: string) => {
   expandedId.value = id
 }
 
-// watch(resultsProgs, async( newProgs ) => {
-//   console.log('TeeResults > watch > resultsProgs :', resultsProgs )
-//   console.log('TeeResults > watch > newProgs :', newProgs )
-// })
-
 onBeforeMount(() => {
   // console.log('TeeResults > onBeforeMount > resultsProgs :', resultsProgs )
   const firstProg = resultsProgs && resultsProgs[0]

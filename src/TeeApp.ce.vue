@@ -254,7 +254,7 @@ onBeforeMount(() => {
   let needStyle = true
   // avoid duplicates
   const styleSheets = document.styleSheets.length
-  console.log('TeeApp > document.styleSheets :', document.styleSheets)
+  // console.log('TeeApp > document.styleSheets :', document.styleSheets)
   if (styleSheets) {
     for(let i = 0; i < styleSheets; i++){
       if(document.styleSheets[i].href == href){

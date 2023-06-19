@@ -20,7 +20,7 @@ export const programsStore = defineStore('programs', () => {
 
   function filterPrograms (tracksResults: any[]) {
     // console.log()
-    console.log('store.programs > filterPrograms > tracksResults : ', tracksResults)
+    // console.log('store.programs > filterPrograms > tracksResults : ', tracksResults)
 
     // retrieve and organize user's conditions
     const conditions: {[k: string]: any} = {}
@@ -37,7 +37,7 @@ export const programsStore = defineStore('programs', () => {
     })
     // const conditionsKeys = Object.keys(conditions)
     // console.log()
-    console.log('store.programs > filterPrograms > conditions : ', conditions)
+    // console.log('store.programs > filterPrograms > conditions : ', conditions)
     // console.log('store.programs > filterPrograms > conditionsKeys : ', conditionsKeys)
 
     // filter out programs
@@ -50,10 +50,10 @@ export const programsStore = defineStore('programs', () => {
       // console.log('store.programs > filterPrograms > progConditionsAlt : ', progConditionsAlt)
       // loop program conditions keys to set a filter
       progConditionsAlt.forEach((cond: Condition) => {
-        console.log()
         const condField: string = cond.type || ''
         const condVal = cond.value
         const userChoice = conditions[condField]
+        // console.log()
         // console.log('store.programs > filterPrograms > condField : ', condField)
         // console.log('store.programs > filterPrograms > condVal : ', condVal)
         // console.log('store.programs > filterPrograms > userChoice : ', userChoice)
@@ -74,38 +74,6 @@ export const programsStore = defineStore('programs', () => {
         boolArray.push(condBool)
       })
 
-      // ---> START --- TO COMMENT AND DELETE
-      // const progConditions = prog.program_conditions
-      // const progConditionsKeys = Object.keys(progConditions)
-      // console.log('store.programs > filterPrograms > progCondition : ', progConditions)
-      // console.log('store.programs > filterPrograms > progConditionsKeys : ', progConditionsKeys)
-
-      // loop user conditions keys to set a filter
-      // conditionsKeys.forEach(cond => {
-      //   if (progConditionsKeys.includes(cond)) {
-      //     // if the program contains one of user's condition
-      //     // ... get condition's options 
-      //     const progConditionsOpts = progConditions[cond]
-      //     // console.log('store.programs > filterPrograms > progConditionsOpts : ', progConditionsOpts)
-
-      //     // ... get user choices
-      //     const userChoices = conditions[cond]
-      //     // console.log('store.programs > filterPrograms > userChoices : ', userChoices)
-
-      //     let condBool = userChoices.includes('*') || progConditionsOpts.includes('*')
-
-      //     if (!condBool) {
-      //       // ... make the intersection between user list of condition and program's conditions
-      //       const intersection = progConditionsOpts.filter((v: any) => userChoices.includes(v));
-      //       // console.log('store.programs > filterPrograms > intersection : ', intersection)
-      //       condBool = userChoices.includes('*') || intersection.length
-      //     }
-
-      //     boolArray.push(condBool)
-      //   }
-      // })
-      // <-- END --- TO COMMENT AND DELETE
-
       // by default all of user's conditions must be met
       return boolArray.every(b => !!b)
     }) 
@@ -113,52 +81,6 @@ export const programsStore = defineStore('programs', () => {
 
     return <ProgramData[]>progsFiltered
   }
-
-  // actions
-  // async function setDataset (path: string, deployMode: boolean, deployUrl: string) {
-  //   // console.log()
-  //   // console.log('store.programs > setDataset > path : ', path)
-  //   // console.log('store.programs > setDataset > deployMode : ', deployMode)
-  //   // console.log('store.programs > setDataset > deployUrl : ', deployUrl)
-
-  //   let pathTrimmed = path.trim().startsWith('.') ? path.substring(1) : path
-  //   pathTrimmed = pathTrimmed.trim().startsWith('/') ? pathTrimmed.substring(1) : pathTrimmed
-  //   // console.log('store.programs > setDataset > pathTrimmed : ', pathTrimmed)
-
-  //   const publicDir = 'public/'
-  //   let url: string
-  //   let dataset: object
-  //   let response: any
-  //   let errors: any[]
-
-  //   const isExternalSource = pathTrimmed.startsWith('http')
-
-  //   if (deployMode) {
-  //     // in deployment mode
-  //     if (isExternalSource) {
-  //       url = pathTrimmed
-  //     } else {
-  //       pathTrimmed = pathTrimmed.startsWith(publicDir) ?  pathTrimmed.replace(publicDir, '') : pathTrimmed
-  //       url = `${deployUrl}/${pathTrimmed}`
-  //     }
-  //   } else {
-  //     // in local dev mode
-  //     url = `./${pathTrimmed}`
-  //   }
-  //   // console.log('store.programs > setDataset > url : ', url )
-
-  //   // fetch url
-  //   try {
-  //     response = await fetch(url)
-  //     dataset = await response.json()
-  //     // console.log('store.programs > setDataset > dataset : ', dataset)
-  //     programs.value = dataset
-  //   } catch (error) {
-  //     // console.log('store.programs > setDataset > error : ', error)
-  //     errors = [error]
-  //     console.log('store.programs > setDataset > errors : ', errors)
-  //   }
-  // }
 
   function setYamlDataset (dataset: any) {
     programs.value = dataset

@@ -49,10 +49,6 @@ export const tracksStore = defineStore('tracks', () => {
       .map((i: UsedTrack) => toRaw(i))
     return res
   })
-  // const getAllUsedTracksValues = computed(() => {
-  //   const values = getAllUsedTracks
-  //   return values
-  // })
 
   // getters
   function getTrack(trackId: string) {
@@ -95,9 +91,9 @@ export const tracksStore = defineStore('tracks', () => {
   }
 
   function addToUsedTracks(srcTrackId: string, newTrackId: string) {
-    console.log()
-    console.log('store.tracks > addToUsedTracks > srcTrackId : ', srcTrackId)
-    console.log('store.tracks > addToUsedTracks > newTrackId : ', newTrackId)
+    // console.log()
+    // console.log('store.tracks > addToUsedTracks > srcTrackId : ', srcTrackId)
+    // console.log('store.tracks > addToUsedTracks > newTrackId : ', newTrackId)
 
     removeFurtherUsedTracks(srcTrackId)
 
@@ -114,15 +110,15 @@ export const tracksStore = defineStore('tracks', () => {
   }
 
   function updateUsedTracks(trackId: string, step: number, next: any, selectedOptions: any[]) {
-    console.log()
-    console.log('store.tracks > updateUsedTracks > trackId : ', trackId)
-    console.log('store.tracks > updateUsedTracks > step : ', step)
-    console.log('store.tracks > updateUsedTracks > next : ', next)
-    console.log('store.tracks > updateUsedTracks > selectedOptions : ', selectedOptions)
+    // console.log()
+    // console.log('store.tracks > updateUsedTracks > trackId : ', trackId)
+    // console.log('store.tracks > updateUsedTracks > step : ', step)
+    // console.log('store.tracks > updateUsedTracks > next : ', next)
+    // console.log('store.tracks > updateUsedTracks > selectedOptions : ', selectedOptions)
     usedTracks.value.map((trackInfo: UsedTrack) => {
       if (trackInfo.id === trackId) {
-        console.log('store.tracks > updateUsedTracks > trackInfo : ', trackInfo)
-        console.log('store.tracks > updateUsedTracks > trackInfo : ', trackInfo)
+        // console.log('store.tracks > updateUsedTracks > trackInfo : ', trackInfo)
+        // console.log('store.tracks > updateUsedTracks > trackInfo : ', trackInfo)
         const hasValues = Boolean(selectedOptions.length)
         const nextTrack = next
         trackInfo.selected = selectedOptions
@@ -133,24 +129,24 @@ export const tracksStore = defineStore('tracks', () => {
   }
 
   async function setUsedTracksAsNotCompleted(trackId: string) {
-    console.log()
-    console.log('store.tracks > setUsedTracksAsNotCompleted > trackId : ', trackId)
+    // console.log()
+    // console.log('store.tracks > setUsedTracksAsNotCompleted > trackId : ', trackId)
     usedTracks.value.map((trackInfo: UsedTrack) => {
       if (trackInfo.id === trackId) {
         trackInfo.completed = false
       }
     })
-    console.log('store.tracks > setUsedTracksAsNotCompleted > usedTracks.value : ', usedTracks.value)
+    // console.log('store.tracks > setUsedTracksAsNotCompleted > usedTracks.value : ', usedTracks.value)
   }
 
   function removeFurtherUsedTracks(srcTrackId: string) {
-    console.log()
-    console.log('store.tracks > removeFurtherUsedTracks > srcTrackId : ', srcTrackId)
+    // console.log()
+    // console.log('store.tracks > removeFurtherUsedTracks > srcTrackId : ', srcTrackId)
     const lastTrack: UsedTrack | undefined = usedTracks.value.find((t: UsedTrack) => t.id === srcTrackId)
-    console.log('store.tracks > removeFurtherUsedTracks > lastTrack : ', lastTrack)
+    // console.log('store.tracks > removeFurtherUsedTracks > lastTrack : ', lastTrack)
     // @ts-ignore
     const newArray = usedTracks.value.filter((t: UsedTrack) => t.step <= lastTrack?.step)
-    console.log('store.tracks > removeFurtherUsedTracks > newArray : ', newArray)
+    // console.log('store.tracks > removeFurtherUsedTracks > newArray : ', newArray)
     usedTracks.value = newArray
   }
 

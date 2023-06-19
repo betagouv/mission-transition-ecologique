@@ -93,7 +93,7 @@ export interface TrackOptions {
   id?: string,
   disabled?: Boolean,
   value: string | number,
-  title?: Translations,
+  title: Translations,
   label: Translations,
   intro?: Translations,
   fields?: TrackOptionsField,
@@ -124,7 +124,7 @@ export interface UsedTrack {
   // titles?: Translations[],
   // val: any[] | null,
   // data: object,
-  selected?: TrackOptions[] | any[],
+  selected: TrackOptions[],
   next: any
 }
 

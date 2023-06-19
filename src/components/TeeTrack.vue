@@ -196,7 +196,7 @@
 
 <script setup lang="ts">
 
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 
 import { tracksStore } from '../stores/tracks'
 import { choicesStore } from '../stores/choices'
@@ -204,7 +204,7 @@ import { analyticsStore } from '../stores/analytics'
 // import type { DsfrButton } from '@gouvminint/vue-dsfr/types'
 
 // @ts-ignore
-import type { Track, TrackOptions, ColsOptions, TrackOpt } from '@/types/index'
+import type { Track, TrackOptions, ColsOptions } from '@/types/index'
 
 // // @ts-ignore
 // import TeeForm from './TeeForm.vue'
@@ -252,9 +252,9 @@ const isTrackResults = computed(() => {
   return track?.interface.component === 'results'
 })
 const selectionValues = computed(() => {
-  console.log('TeeTrack > selectionValues > selectedOptions.value :', selectedOptions.value)
+  // console.log('TeeTrack > selectionValues > selectedOptions.value :', selectedOptions.value)
   const values = selectedOptions.value.length && selectedOptions.value.map(o => o?.value)
-  console.log('TeeTrack > selectionValues > values :', values)
+  // console.log('TeeTrack > selectionValues > values :', values)
   return values || []
 })
 
@@ -285,9 +285,6 @@ const isActiveChoice = (value: string | number) => {
 
 const updateSelection = (option: any) => {
   // console.log('TeeTrack > updateSelection > option :', option)
-  // console.log('TeeTrack > updateSelection > selectedOptions.value :', selectedOptions.value)
-  // const val: object = option.value
-  // const valTitle: Translations = option.title
   const isActive = isActiveChoice(option.value)
   let remove = false
   if (!isActive) {
@@ -314,9 +311,18 @@ const updateSelection = (option: any) => {
   }
 }
 
+// watchers
+watch(() => props.isCompleted, ( next ) => {
+  // console.log('TeeTrack > watch > isCompleted :', next )
+  if (!next) {
+    selectedOptions.value = []
+    tracks.updateUsedTracks(props.trackId, props.step, next, selectedOptions.value)
+  }
+})
+
+// Actions
 const saveSelection = () => {
-  console.log()
-  // const option = selectedOption.value || {}
+  // console.log()
   // console.log('TeeTrack > updateStore > option :', option)
 
   const optionNext = selectedOptions.value[0].next
@@ -327,9 +333,9 @@ const saveSelection = () => {
 
   tracks.updateUsedTracks(props.trackId, props.step, next, selectedOptions.value)
   
-  console.log('TeeTrack > updateStore > needRemove.value :', needRemove.value)
+  // console.log('TeeTrack > updateStore > needRemove.value :', needRemove.value)
   if (!needRemove.value) {
-    console.log('TeeTrack > updateStore > addToUsedTracks...')
+    // console.log('TeeTrack > updateStore > addToUsedTracks...')
     const canAddTrack = !tracks.trackExistsInUsed(next.default)
     canAddTrack && tracks.addToUsedTracks(props.trackId, next.default)
   } else {
@@ -340,11 +346,11 @@ const saveSelection = () => {
 
 const backToPreviousTrack = async () => {
   console.log()
-  console.log('TeeTrack > backToTrack > props.trackId :', props.trackId)
+  // console.log('TeeTrack > backToTrack > props.trackId :', props.trackId)
   const indexOfTrack = tracks.tracksStepsArray.indexOf(props.trackId)
-  console.log('TeeTrack > backToTrack > indexOfTrack :', indexOfTrack)
+  // console.log('TeeTrack > backToTrack > indexOfTrack :', indexOfTrack)
   const TrackToGoBackTo = tracks.tracksStepsArray[indexOfTrack - 1]
-  console.log('TeeTrack > backToTrack > TrackToGoBackTo :', TrackToGoBackTo)
+  // console.log('TeeTrack > backToTrack > TrackToGoBackTo :', TrackToGoBackTo)
   await tracks.setUsedTracksAsNotCompleted(TrackToGoBackTo)
   tracks.removeFurtherUsedTracks(TrackToGoBackTo)
 }
