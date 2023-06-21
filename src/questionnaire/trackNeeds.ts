@@ -53,7 +53,7 @@ export const needs = {
       disabled: false,
       value: { project_needs: '*' },
       title: { fr: "M'informer" },
-      label: { fr: "Je cherche juste à m'informer" },
+      label: { fr: "(QUESTION TEST) Je cherche juste à m'informer" },
       hint: { fr: "Faites une première recherche et découvrez les différentes offres" },
       next: {
         default: 'track_results'
