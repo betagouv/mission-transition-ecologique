@@ -48,7 +48,7 @@ export interface ProgramData {
   program_type?: string,
   conditions?: Condition[],
   program_conditions?: ProgramConditions,
-  program_providers?: string[] | ProgramProvider[] | any[],
+  program_providers?: ProgramProvider[],
   program_application?: any,
   geo_zones?: any,
   date_start?: any,

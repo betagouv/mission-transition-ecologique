@@ -77,8 +77,8 @@
         </div>
         <ul class="fr-badges-group">
           <li
-            v-for="provider in prog.program_providers"
-            :key="provider.code || provider"
+            v-for="(provider, i) in prog.program_providers"
+            :key="`provider-${i}`"
             >
             <p class="fr-badge">
               {{ provider.code }}
@@ -119,7 +119,7 @@ import { programsStore } from '../stores/programs'
 import { analyticsStore } from '../stores/analytics'
 
 // @ts-ignore
-import type { TrackChoice, TrackResultsConfig, backToResults } from '@/types/index'
+import type { TrackChoice, TrackResultsConfig, ProgramData } from '@/types/index'
 
 const choices = choicesStore()
 const programs = programsStore()
@@ -137,13 +137,13 @@ const props = defineProps<Props>()
 
 // const blockColor = 'var(--text-default-info)'
 
-const resultsProgs: backToResults[] = programs.filterPrograms(props.tracksResults)
+const resultsProgs: ProgramData[] = programs.filterPrograms(props.tracksResults)
 
 const resultsProgsLen = computed(() => {
   return resultsProgs.length
 })
 
-const updateDetailResult = (id: string) => {
+const updateDetailResult = (id: string | number) => {
   console.log(`TeeResults > updateDetailResult >  id : ${id}`)
   programs.setDetailResult(id, props.trackId)
 }

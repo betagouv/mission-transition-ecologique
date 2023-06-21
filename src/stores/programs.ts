@@ -99,7 +99,7 @@ export const programsStore = defineStore('programs', () => {
   }
 
   function getProgramById (id: string | number ) {
-    const prog = progs.value.find(p => p.id === id)
+    const prog = progs.value.find((p: ProgramData) => p.id === id)
     return prog
   }
 
