@@ -1,5 +1,6 @@
 [
   {
+    "id": "diag-decarbon-action",
     "title": "Diag Decarbon'Action",
     "resume": "Réduisez durablement vos émissions carbone",
     "origin_url": "https://diag.bpifrance.fr/produit/diag-decarbon-action",
@@ -48,6 +49,7 @@
     ]
   },
   {
+    "id": "diag-ecoflux",
     "title": "Diag Eco-flux",
     "resume": "Faites des économies en gérant durablement vos dépenses",
     "origin_url": "https://diag.bpifrance.fr/produit/diag-eco-flux",
@@ -93,6 +95,7 @@
     ]
   },
   {
+    "id": "diag-ecoconception",
     "title": "Diag Ecoconception",
     "resume": "Améliorez l'impact environnementale de vos produits et services",
     "origin_url": "https://diag.bpifrance.fr/produit/diag-eco-conception",
@@ -139,6 +142,7 @@
     ]
   },
   {
+    "id": "fonds-tourisme-durable",
     "title": "Fonds Tourisme Durable",
     "resume": "Obtenez un diagnostic et des subventions dans votre activité touristique",
     "origin_url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/fonds-tourisme-durable-restaurateurs-hebergeurs-accelerez-transition-0",
@@ -188,6 +192,7 @@
     ]
   },
   {
+    "id": "performa-environnement",
     "title": "Performa Environnement",
     "resume": "Mesurer votre maturité écologique et créer un plan d’actions personnalisé avec à un conseiller",
     "origin_url": "https://www.economie.gouv.fr/entreprises/entreprises-aides-transition-ecologique",
@@ -235,6 +240,7 @@
     ]
   },
   {
+    "id": "tpe-gagnantes",
     "title": "TPE Gagnantes",
     "resume": "Faites des économies en gérant durablement vos dépenses",
     "origin_url": "https://agirpourlatransition.ademe.fr/entreprises/optimisez-tpe-pme/diagnostic-global-personnalise",
@@ -280,6 +286,7 @@
     ]
   },
   {
+    "id": "tremplin",
     "title": "Tremplin",
     "resume": "Financez vos projets d’études ou d’investissement écologique avec une ou plusieurs aides forfaitaires",
     "origin_url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/tremplin-transition-ecologique-pme",
@@ -346,6 +353,7 @@
     ]
   },
   {
+    "id": "visite-energie",
     "title": "Visite Energie",
     "resume": "Mesurer votre maturité energétique et créer d’un plan d’actions personnalisé avec un conseiller",
     "origin_url": "https://www.cci.fr/",

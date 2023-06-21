@@ -23,6 +23,9 @@
         <div class="fr-col-4">
           <h6 class="fr-mb-1v"> tracks.currentStep : <code>{{ tracks.currentStep }} </code></h6>
         </div>
+        <div class="fr-col-4">
+          <h6 class="fr-mb-1v"> programs.programDetail : <code>{{ programs.programDetail }} </code></h6>
+        </div>
       </div>
     </div>
     
@@ -58,91 +61,108 @@
       :debug="debugBool"
       />
 
-    <!-- STEPPER -->
-    <p
-      v-if="showStepperBool" 
-      >
-      <TeeStepper
-        :steps-array="tracks.tracksStepsArray"
-        :current-step="tracks.currentStep"
-        :debug="debugBool"
-      />
-    </p>
-
-    <!-- TRACKS INTERFACES -->
-    <div class="fr-grid-row fr-grid-row-gutters fr-p-1v">
-      
-      <!-- SIDEBAR MENU -->
-      <div
-        v-show="tracks.currentStep > 1"
-        class="fr-col-3">
-        <TeeSidebar
-          :used-tracks="tracks.usedTracks"
+    <!-- QUESTIONNAIRE -->
+    <div
+      v-show="!programs.programDetail">
+      <!-- STEPPER -->
+      <p
+        v-if="showStepperBool" 
+        >
+        <TeeStepper
+          :steps-array="tracks.tracksStepsArray"
+          :current-step="tracks.currentStep"
           :debug="debugBool"
         />
-      </div>
+      </p>
 
-      <!-- TRACKS -->
-      <div 
-        :class="`fr-col-${debugBool ? 7 : tracks.currentStep > 1 ? 8 : 12 } ${debugBool ? '' : 'fr-grid-row--center'}`">
+      <!-- TRACKS INTERFACES -->
+      <div class="fr-grid-row fr-grid-row-gutters fr-p-1v">
+        
+        <!-- SIDEBAR MENU -->
         <div
-          v-for="(track, index) in tracks.usedTracks"
-          :key="track.id"
-          :class="`fr-py-0 fr-mb-${ debugBool ? '12v' : '0'}`">
-          <TeeTrack
-            :step="index + 1"
-            :track-id="track.id"
-            :is-completed="!!tracks.isTrackCompleted(track.id)"
+          v-show="tracks.currentStep > 1"
+          class="fr-col-3">
+          <TeeSidebar
+            :used-tracks="tracks.usedTracks"
             :debug="debugBool"
           />
         </div>
-      </div>
 
-      <!-- DEBUGGING -->
-      <div
-        v-if="debugBool"
-        class="vue-debug fr-col-2 fr-pl-3v">
-        <h5>DEBUG - TeeApp</h5>
-        <div class="fr-grid-row fr-grid-row--gutters">
-          <div class="fr-col-12">
-            <h6 class="fr-mb-1v"> seed : <code>{{ seed }} </code></h6>
-            <h6 class="fr-mb-1v"> debug : <code>{{ debug }} </code></h6>
-            <h6 class="fr-mb-1v"> debugBool : <code>{{ debugBool }} </code></h6>
-            <h6 class="fr-mb-1v"> showHeader : <code>{{ showHeader }} </code></h6>
-            <h6 class="fr-mb-1v"> choices.lang : <code>{{ choices.lang }} </code></h6>
-            <h6 class="fr-mb-1v"> tracks.maxDepth : <code>{{ tracks.maxDepth }} </code></h6>
-            <h6 class="fr-mb-1v"> tracks.seedTrack : <code>{{ tracks.seedTrack }} </code></h6>
-          </div>
-
-          <div class="fr-col-12">
-            <h6 class="fr-mb-1v"> tracks.currentStep : <code>{{ tracks.currentStep }} </code></h6>
-            <h6>
-              tracks.tracksStepsArray :
-            </h6>
-            <code><pre>{{ tracks.tracksStepsArray  }}</pre></code>
-          </div>
-
-          <div class="fr-col-12">
-            <h6>tracks.usedTracks :</h6>
-            <code><pre>{{ tracks.usedTracks  }}</pre></code>
-            <!-- <h6>tracks.tracksResults :</h6>
-            <code><pre>{{ tracks.tracksResults  }}</pre></code> -->
-          </div>
-
+        <!-- TRACKS -->
+        <div 
+          :class="`fr-col-${debugBool ? 7 : tracks.currentStep > 1 ? 8 : 12 } ${debugBool ? '' : 'fr-grid-row--center'}`">
           <div
-            v-if="false"
-            class="fr-col-12">
-            <h6>metaEnv :</h6>
-            <code><pre>{{ metaEnv }}</pre></code>
+            v-for="(track, index) in tracks.usedTracks"
+            :key="track.id"
+            :class="`fr-py-0 fr-mb-${ debugBool ? '12v' : '0'}`">
+            <TeeTrack
+              :step="index + 1"
+              :track-id="track.id"
+              :is-completed="!!tracks.isTrackCompleted(track.id)"
+              :debug="debugBool"
+            />
           </div>
-
-          <!-- <h4>
-            TeeApp debug / programs :
-          </h4>
-          <code><pre>{{ programsArray  }}</pre></code> -->
         </div>
-      </div>
 
+        <!-- DEBUGGING -->
+        <div
+          v-if="debugBool"
+          class="vue-debug fr-col-2 fr-pl-3v">
+          <h5>DEBUG - TeeApp</h5>
+          <div class="fr-grid-row fr-grid-row--gutters">
+            <div class="fr-col-12">
+              <h6 class="fr-mb-1v"> seed : <code>{{ seed }} </code></h6>
+              <h6 class="fr-mb-1v"> debug : <code>{{ debug }} </code></h6>
+              <h6 class="fr-mb-1v"> debugBool : <code>{{ debugBool }} </code></h6>
+              <h6 class="fr-mb-1v"> showHeader : <code>{{ showHeader }} </code></h6>
+              <h6 class="fr-mb-1v"> choices.lang : <code>{{ choices.lang }} </code></h6>
+              <h6 class="fr-mb-1v"> tracks.maxDepth : <code>{{ tracks.maxDepth }} </code></h6>
+              <h6 class="fr-mb-1v"> tracks.seedTrack : <code>{{ tracks.seedTrack }} </code></h6>
+            </div>
+
+            <div class="fr-col-12">
+              <h6 class="fr-mb-1v"> tracks.currentStep : <code>{{ tracks.currentStep }} </code></h6>
+              <h6>
+                tracks.tracksStepsArray :
+              </h6>
+              <code><pre>{{ tracks.tracksStepsArray  }}</pre></code>
+            </div>
+
+            <div class="fr-col-12">
+              <h6>tracks.usedTracks :</h6>
+              <code><pre>{{ tracks.usedTracks  }}</pre></code>
+              <!-- <h6>tracks.tracksResults :</h6>
+              <code><pre>{{ tracks.tracksResults  }}</pre></code> -->
+            </div>
+
+            <div
+              v-if="false"
+              class="fr-col-12">
+              <h6>metaEnv :</h6>
+              <code><pre>{{ metaEnv }}</pre></code>
+            </div>
+
+            <!-- <h4>
+              TeeApp debug / programs :
+            </h4>
+            <code><pre>{{ programsArray  }}</pre></code> -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- DETAIL RESULT CARD -->
+    <div
+      v-if="programs.programDetail"
+      class="fr-grid-row fr-grid-row-gutters">
+      <div class="fr-col-8 fr-col-offset-2">
+        <TeeProgramDetail
+          :program="programs.getProgramById(programs.programDetail)"
+          :track-config="tracks.getTrack(programs.programDetailConfig)"
+          :debug="debugBool"
+        />
+      </div>
     </div>
 
     <!-- FOOTER -->
@@ -185,6 +205,8 @@ import TeeTrack from './components/TeeTrack.vue'
 import TeeStepper from './components/TeeStepper.vue'
 // @ts-ignore
 import TeeSidebar from './components/TeeSidebar.vue'
+// @ts-ignore
+import TeeProgramDetail from './components/TeeProgramDetail.vue'
 // @ts-ignore
 import TeeCredits from './components/TeeCredits.vue'
 

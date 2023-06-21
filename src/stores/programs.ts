@@ -6,6 +6,8 @@ import type { ProgramData, Condition } from '@/types/index'
 export const programsStore = defineStore('programs', () => {
 
   const programs = ref()
+  const programDetail = ref<string | number>()
+  const programDetailConfig = ref()
 
   // getters
   const progs = computed(() => {
@@ -86,10 +88,30 @@ export const programsStore = defineStore('programs', () => {
     programs.value = dataset
   }
 
+  function setDetailResult (programeId: string | number, detailConfig: any) {
+    programDetail.value = programeId
+    programDetailConfig.value = detailConfig
+  }
+
+  function resetDetailResult () {
+    programDetail.value = undefined
+    programDetailConfig.value = undefined
+  }
+
+  function getProgramById (id: string | number ) {
+    const prog = progs.value.find(p => p.id === id)
+    return prog
+  }
+
   return { 
     programs,
+    programDetail,
+    programDetailConfig,
     progs,
     filterPrograms,
-    setYamlDataset
+    setYamlDataset,
+    setDetailResult,
+    resetDetailResult,
+    getProgramById
   }
 })

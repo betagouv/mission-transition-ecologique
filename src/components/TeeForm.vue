@@ -1,18 +1,6 @@
 <template>
-  <!-- FORM LABEL -->
-  <h4
-    v-if="formOptions.label"
-    class="fr-center">
-    {{ formOptions.label[choices.lang] }}
-  </h4>
-
   <!-- FORM -->
   <div v-show="!formIsSent">
-    <!-- FORM INTRODUCTION -->
-    <div 
-      v-if="formOptions.intro"
-      v-html="formOptions.intro[choices.lang]">
-    </div>
   
     <!-- DEBUGGING -->
     <div 
@@ -33,7 +21,7 @@
     </div>
   
     <!-- FIELDS -->
-    <div class="fr-grid-row fr-grid-row--gutters fr-mb-4v">
+    <div class="fr-grid-row fr-grid-row--gutters fr-mb-2v">
 
       <div
         v-for="field in formOptions.fields"
@@ -112,7 +100,7 @@
     <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-mt-5v">
       <div
         class="fr-col-12"
-        style="display: grid; justify-content: center;">
+        style="display: grid; justify-content: right;">
         <!-- :label="choices.t('next')"  -->
         <DsfrButton
           :label="choices.t('send')" 

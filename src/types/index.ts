@@ -38,6 +38,7 @@ export interface ProgramProvider {
 }
 
 export interface ProgramData {
+  id: string | number,
   index?: string | number,
   title: string,
   resume?: string,
@@ -108,6 +109,7 @@ export interface Track {
   behavior?: TrackBehavior,
   next?: TrackNext,
   options?: TrackOptions,
+  form?: FormOptions,
 }
 
 export interface TracksList {
@@ -177,8 +179,9 @@ export interface FormField {
 
 export interface FormOptions {
   value: string | number,
-  label?: any | null,
-  intro?: any | null,
+  label?: Translations,
+  hint?: Translations,
+  intro?: Translations,
   fields?: FormField[],
   next?: string,
   callbacks: FormCallback[]

@@ -6,7 +6,7 @@ export const goals = {
     component: 'buttons',
   },
   behavior: {
-    multipleChoices: true,
+    multipleChoices: false,
   },
   next: {
     default: 'track_results'
@@ -69,6 +69,7 @@ export const goals = {
       }
     },
     {
+      disabled: true,
       value: { user_goals: '*' },
       title: { fr: 'Autre' },
       label: { fr: "💁 Je ne sais pas encore" },

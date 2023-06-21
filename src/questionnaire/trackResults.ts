@@ -27,7 +27,8 @@ export const results = {
   ],
   form: {
     value: 'contact_form.email',
-    // label: { fr: 'Formulaire de contact' },
+    label: { fr: 'Vous êtes intéressé.e pour réaliser un diagnostic environnement ?' },
+    hint: { fr: "Déposez votre demande, un conseiller vous rappelle dans les 5 jours."},
     intro: { fr: `
       <h2>
         <span

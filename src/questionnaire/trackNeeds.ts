@@ -50,6 +50,7 @@ export const needs = {
       }
     },
     {
+      disabled: false,
       value: { project_needs: '*' },
       title: { fr: "M'informer" },
       label: { fr: "Je cherche juste à m'informer" },

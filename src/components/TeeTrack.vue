@@ -167,7 +167,7 @@
   
   <!-- SEND / NEXT BUTTON -->
   <div 
-    v-if="!isCompleted && allowMultiple && !isTrackResults"
+    v-if="renderAs !== 'cards' && !isCompleted && !isTrackResults"
     class="fr-grid-row fr-grid-row--gutters fr-pt-8v">
     <div
       v-if="step > 1"
@@ -306,7 +306,8 @@ const updateSelection = (option: any) => {
   needRemove.value = remove
   // selectedOptions.value = option
   
-  if (!allowMultiple) {
+  // Direc
+  if (!allowMultiple && renderAs !== 'buttons'  ) {
     saveSelection()
   }
 }

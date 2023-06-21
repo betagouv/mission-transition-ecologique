@@ -1,0 +1,245 @@
+<template>
+  <!-- PROGRAM INFOS -->
+  <div class="">
+
+    <!-- BACK TO RESULTS BTN -->
+    <DsfrButton
+      class="fr-mb-3v fr-link"
+      :label="choices.t('results.backToResults')" 
+      icon="ri-arrow-left-line"
+      tertiary
+      noOutline
+      @click="resetDetailResult"
+    />
+    <div class="fr-grid-row fr-grid-row--gutters fr-mb-10v">
+      <!-- IMAGE -->
+      <div class="fr-col-4">
+        <img 
+          class="fr-responsive-img"
+          :src="`${choices.publicPath}images/TEE_illustration.png`"
+          :alt="`image / ${program.title}`"
+          />
+      </div>
+      
+      <!-- TITLE & RESUME -->
+      <div class="fr-col-7 fr-col-offset-1">
+        <!-- PROGRAM TITLE -->
+        <!-- <h1>
+          {{ program.title }}
+        </h1> -->
+        <p class="fr-badge fr-badge--info fr-badge--no-icon fr-mb-5v">
+          {{ program.title }}
+        </p>
+
+        <!-- PROGRAM RESUME -->
+        <h6
+          v-if="trackConfig.config?.showProgramSubtitles"
+          :style="`color: ${blockColor}`">
+          {{ choices.t('program.programResume') }}
+        </h6>
+        <h2
+          v-if="program.resume"
+          :style="`color: ${blockColor}`"
+          v-html="program.resume">
+        </h2>
+
+        <!-- PROGRAM DESCRIPTION -->
+        <h6
+          v-if="trackConfig.config?.showProgramSubtitles"
+          :style="`color: ${blockColor}`">
+          {{ choices.t('program.programDescription') }}
+        </h6>
+        <p 
+          v-if="program.description"
+          v-html="program.description">
+        </p>
+
+        <!-- OPEN MODAL -> FORM -->
+        <!-- <DsfrButton
+          class="fr-mb-3v"
+          :label="choices.t('results.showForm')" 
+          icon=""
+          secondary
+          @click="toggleShowForm"
+        />  -->
+
+        <DsfrButton 
+          class="fr-mb-3v"
+          :label="choices.t('results.showForm')"
+          secondary
+          @click="toggleShowForm"
+          ref="modalOrigin"/>
+      </div>
+    </div>
+
+    <!-- PROGRAM INFOS : PROVIDERS / TYPE / START / END -->
+    <div
+      v-if="trackConfig.config?.showProgramInfos" 
+      class="fr-grid-row fr-grid-row--gutters fr-mb-5v">
+      <!-- PROGRAM PROVIDERS -->
+      <div
+        v-if="program.program_providers" 
+        class="fr-col-3">
+        <TeeTile
+          :title="choices.t('program.programProviders')">
+          <template #description>
+            <ul style="list-style-type: none; margin: 0 ; padding: 0;">
+              <li
+                v-for="(provider, index) in program.program_providers"
+                :key="`provider-${index}-${provider.code || provider}`">
+                <a 
+                  v-if="provider.href"
+                  :href="provider.href">
+                  {{ provider.code || provider }}
+                </a>
+                <span v-else>
+                  {{ provider.code || provider }}
+                </span>
+              </li>
+            </ul>
+          </template>
+        </TeeTile>
+      </div>
+
+      <!-- PROGRAM TYPE -->
+      <div
+        v-if="program.program_type" 
+        class="fr-col-3">
+        <TeeTile
+          :title="choices.t('program.programType')"
+          :description="choices.t(`programTypes.${program.program_type}`)"
+        />
+      </div>
+
+      <!-- PROGRAM GEO ZONES -->
+      <div
+        v-if="program.geo_zones" 
+        class="fr-col-3">
+        <TeeTile
+          :title="choices.t('program.programGeoZones')"
+          :description="'...'"
+        />
+      </div>
+
+      <!-- PROGRAM START -->
+      <div
+        v-if="program.date_start" 
+        class="fr-col-3">
+        <TeeTile
+          :title="choices.t('program.programStartDate')"
+          :description="'...'"
+        />
+      </div>
+
+      <!-- PROGRAM END -->
+      <div
+        v-if="program.date_end" 
+        class="fr-col-3">
+        <TeeTile
+          :title="choices.t('program.programEndDate')"
+          :description="'...'"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL DIALOG -->
+  <dialog 
+    aria-labelledby="fr-modal-title-modal-1" 
+    role="dialog" 
+    id="fr-modal-1" 
+    :class="`fr-modal ${showForm ? 'fr-modal--opened' : ''}`">
+    <div class="fr-container fr-container--fluid fr-container-md">
+      <div class="fr-grid-row fr-grid-row--center">
+        <div class="fr-col-12 fr-col-md-11 fr-col-lg-10">
+          <div 
+            class="fr-modal__body"
+            >
+            <div class="fr-modal__header">
+              <button 
+                class="fr-link--close fr-link" 
+                aria-controls="fr-modal-1"
+                @click="toggleShowForm"
+                >
+                {{ choices.t('close') }}
+              </button>
+            </div>
+            <div class="fr-modal__content">
+              <!-- <h1 id="fr-modal-title-modal-1" class="fr-modal__title">
+                <span class="fr-fi-arrow-right-line fr-fi--lg"></span>
+                Titre de la modale
+              </h1> -->
+              <div class="fr-grid-row fr-grid-row--gutters">
+                <div class="fr-col-5 align">
+                  <h4 
+                    class=""
+                    style="text-align: center;">
+                    {{ trackConfig?.form.label[choices.lang] || '' }}
+                  </h4>
+                  <p
+                    class=""
+                    style="text-align: center;">
+                    {{ trackConfig?.form.hint[choices.lang] || '' }}
+                  </p>
+                  <img 
+                    class="fr-responsive-img"
+                    :src="`${choices.publicPath}images/TEE_illustration.png`"
+                    :alt="`image / ${program.title}`"
+                    />
+                </div>
+                <div class="fr-col-7">
+                  <TeeForm
+                    :track-id="trackConfig.id"
+                    :form-options="trackConfig.form"
+                    :debug="debug"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+</template>
+
+
+<script setup lang="ts">
+
+import { ref } from 'vue'
+
+// @ts-ignore
+import type { ProgramData, Track } from '@/types/index'
+
+// @ts-ignore
+import TeeTile from './TeeTile.vue'
+// @ts-ignore
+import TeeForm from './TeeForm.vue'
+
+import { choicesStore } from '../stores/choices'
+import { programsStore } from '../stores/programs'
+const choices = choicesStore()
+const programs = programsStore()
+
+const blockColor = 'var(--text-default-info)'
+
+const showForm = ref<boolean>(false)
+
+interface Props {
+  program: ProgramData,
+  trackConfig: Track | any,
+  debug?: boolean,
+}
+const props = defineProps<Props>()
+
+// functions
+const resetDetailResult = () => {
+  console.log('TeeProgramConfig > resetDetailResult > trackConfig : ', props.trackConfig )
+  programs.resetDetailResult()
+}
+const toggleShowForm = () => {
+  console.log('TeeProgramConfig > toggleShowForm > trackConfig : ', props.trackConfig )
+  showForm.value = !showForm.value
+}
+
+</script>
