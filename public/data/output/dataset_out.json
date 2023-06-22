@@ -366,10 +366,7 @@
         "type": "project_sectors",
         "operator": "or",
         "value": [
-          "craft",
-          "industry",
-          "tertiary",
-          "agriculture"
+          "*"
         ]
       },
       {
