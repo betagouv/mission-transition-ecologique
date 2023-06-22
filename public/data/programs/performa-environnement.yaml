@@ -1,5 +1,6 @@
 id: performa-environnement
 title: Performa Environnement
+subtitle: Réaliser un plan d'action
 resume: Mesurer votre maturité écologique et créer un plan d’actions personnalisé avec à un conseiller
 origin_url: https://www.economie.gouv.fr/entreprises/entreprises-aides-transition-ecologique
 cover: images/programs/performa-environnement.jpeg
@@ -34,7 +35,7 @@ conditions:
   - type: project_needs
     operator: "or"
     value: 
-      - starting
+      - advices
   - type: project_status
     operator: "or"
     value: 
@@ -48,6 +49,10 @@ conditions:
     value: 
       - tpe
       - pme
+  - type: user_goals
+    operator: "or"
+    value: 
+      - impact
 program_providers: 
   - code: CMA
     siren: 187 500 046 00011
