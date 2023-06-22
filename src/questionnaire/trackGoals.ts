@@ -61,6 +61,14 @@ export const goals = {
       }
     },
     {
+      value: { user_goals: 'ecoconception' },
+      title: { fr: 'Eco-conception' },
+      label: { fr: "♻️ Améliorer mon produit ou service dans une logique d'éco-conception" },
+      next: {
+        default: 'track_results'
+      }
+    },
+    {
       value: { user_goals: 'consolidation' },
       title: { fr: 'Consolider mon projet' },
       label: { fr: "📂 Consolider mon projet d'investissement durable" },

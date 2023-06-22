@@ -206,7 +206,7 @@
 
 <script setup lang="ts">
 
-import { ref } from 'vue'
+import { ref, onBeforeMount } from 'vue'
 
 // @ts-ignore
 import type { ProgramData, Track } from '@/types/index'
@@ -218,8 +218,11 @@ import TeeForm from './TeeForm.vue'
 
 import { choicesStore } from '../stores/choices'
 import { programsStore } from '../stores/programs'
+import { analyticsStore } from '../stores/analytics'
+
 const choices = choicesStore()
 const programs = programsStore()
+const analytics = analyticsStore()
 
 const blockColor = 'var(--text-default-info)'
 
@@ -234,12 +237,20 @@ const props = defineProps<Props>()
 
 // functions
 const resetDetailResult = () => {
-  console.log('TeeProgramConfig > resetDetailResult > trackConfig : ', props.trackConfig )
+  // console.log('TeeProgramDetail > resetDetailResult > trackConfig : ', props.trackConfig )
   programs.resetDetailResult()
 }
 const toggleShowForm = () => {
-  console.log('TeeProgramConfig > toggleShowForm > trackConfig : ', props.trackConfig )
+  // console.log('TeeProgramDetail > toggleShowForm > trackConfig : ', props.trackConfig )
   showForm.value = !showForm.value
+  if (showForm.value) {
+    analytics.sendEvent('result_detail', 'show_form', props.program.id)
+  }
 }
 
+onBeforeMount(() => {
+  // console.log('TeeProgramDetail > onBeforeMount > resultsProgs :', resultsProgs )
+  // analytics / send event
+  analytics.sendEvent('result_detail', 'show_detail', props.program.id)
+})
 </script>

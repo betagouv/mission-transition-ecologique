@@ -119,7 +119,7 @@
         v-if="renderAs === 'buttons' && !allowMultiple"
         >
         <DsfrButton
-          style="width: -moz-available !important;"
+          style="width: -moz-available !important; width: 100%;"
           :label="option.label[choices.lang]" 
           :icon="`${isActiveChoice(option.value) ? 'md-radiobuttonchecked' : 'md-radiobuttonunchecked'}`"
           :secondary="!isActiveChoice(option.value)"
@@ -173,7 +173,7 @@
       v-if="step > 1"
       class="fr-col-3 fr-col-offset-6">
       <DsfrButton
-        style="width: -moz-available !important;"
+        style="width: -moz-available !important; width: 100%"
         :label="choices.t('previous')"
         icon="ri-arrow-left-line"
         secondary
@@ -183,7 +183,7 @@
     <div 
       :class="`fr-col-3 ${step === 1 ? 'fr-col-offset-9' : ''}`">
       <DsfrButton
-        style="width: -moz-available !important;"
+        style="width: -moz-available !important; width: 100%"
         :label="choices.t('next')"
         :disabled="!selectedOptions.length"
         icon="ri-arrow-right-line"

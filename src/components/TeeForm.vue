@@ -185,7 +185,7 @@
 
 <script setup lang="ts">
 
-import { onBeforeMount, ref, computed, toRaw, defineEmits } from 'vue'
+import { onBeforeMount, ref, computed, toRaw } from 'vue'
 
 // @ts-ignore
 import type { FormValues, FormField, FormOptions, FormCallback, UsedTrack, ReqResp } from '@/types/index'

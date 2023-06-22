@@ -144,7 +144,7 @@ const resultsProgsLen = computed(() => {
 })
 
 const updateDetailResult = (id: string | number) => {
-  console.log(`TeeResults > updateDetailResult >  id : ${id}`)
+  // console.log(`TeeResults > updateDetailResult >  id : ${id}`)
   programs.setDetailResult(id, props.trackId)
 }
 

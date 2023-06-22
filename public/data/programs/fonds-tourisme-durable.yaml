@@ -21,7 +21,7 @@ conditions:
   - type: project_needs
     operator: "or"
     value: 
-      - starting
+      - advices
       - financing
   - type: project_status
     operator: "or"
@@ -36,6 +36,11 @@ conditions:
     value: 
       - tpe
       - pme
+  - type: user_goals
+    operator: "or"
+    value: 
+      - impact
+      - consolidation
 program_providers: 
   - code: ADEME
     href: https://ademe.fr/

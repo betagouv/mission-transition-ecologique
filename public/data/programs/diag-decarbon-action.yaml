@@ -22,6 +22,7 @@ conditions:
     operator: "or"
     value: 
       - advices
+      - financing
   - type: project_status
     operator: "or"
     value: 
@@ -34,6 +35,12 @@ conditions:
     operator: "or"
     value: 
       - pme
+  - type: user_goals
+    operator: "or"
+    value:
+      - impact
+      - energy
+      - ecoconception
 program_providers: 
   - code: BPI
   - code: ADEME

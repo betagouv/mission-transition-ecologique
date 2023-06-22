@@ -14,7 +14,8 @@
         "type": "project_needs",
         "operator": "or",
         "value": [
-          "advices"
+          "advices",
+          "financing"
         ]
       },
       {
@@ -36,6 +37,15 @@
         "operator": "or",
         "value": [
           "pme"
+        ]
+      },
+      {
+        "type": "user_goals",
+        "operator": "or",
+        "value": [
+          "impact",
+          "energy",
+          "ecoconception"
         ]
       }
     ],
@@ -63,7 +73,8 @@
         "type": "project_needs",
         "operator": "or",
         "value": [
-          "advices"
+          "advices",
+          "financing"
         ]
       },
       {
@@ -85,6 +96,13 @@
         "operator": "or",
         "value": [
           "pme"
+        ]
+      },
+      {
+        "type": "user_goals",
+        "operator": "or",
+        "value": [
+          "economies"
         ]
       }
     ],
@@ -109,7 +127,8 @@
         "type": "project_needs",
         "operator": "or",
         "value": [
-          "advices"
+          "advices",
+          "financing"
         ]
       },
       {
@@ -130,7 +149,15 @@
         "type": "structure_sizes",
         "operator": "or",
         "value": [
+          "tpe",
           "pme"
+        ]
+      },
+      {
+        "type": "user_goals",
+        "operator": "or",
+        "value": [
+          "ecoconception"
         ]
       }
     ],
@@ -156,7 +183,7 @@
         "type": "project_needs",
         "operator": "or",
         "value": [
-          "starting",
+          "advices",
           "financing"
         ]
       },
@@ -180,6 +207,14 @@
         "value": [
           "tpe",
           "pme"
+        ]
+      },
+      {
+        "type": "user_goals",
+        "operator": "or",
+        "value": [
+          "impact",
+          "consolidation"
         ]
       }
     ],
@@ -206,7 +241,8 @@
         "type": "project_needs",
         "operator": "or",
         "value": [
-          "starting"
+          "advices",
+          "financing"
         ]
       },
       {
@@ -229,6 +265,13 @@
         "value": [
           "tpe",
           "pme"
+        ]
+      },
+      {
+        "type": "user_goals",
+        "operator": "or",
+        "value": [
+          "impact"
         ]
       }
     ],
@@ -254,7 +297,8 @@
         "type": "project_needs",
         "operator": "or",
         "value": [
-          "advices"
+          "advices",
+          "financing"
         ]
       },
       {
@@ -276,6 +320,13 @@
         "operator": "or",
         "value": [
           "tpe"
+        ]
+      },
+      {
+        "type": "user_goals",
+        "operator": "or",
+        "value": [
+          "economies"
         ]
       }
     ],
@@ -300,6 +351,7 @@
         "type": "project_needs",
         "operator": "or",
         "value": [
+          "advices",
           "financing"
         ]
       },
@@ -326,6 +378,16 @@
         "value": [
           "tpe",
           "pme"
+        ]
+      },
+      {
+        "type": "user_goals",
+        "operator": "or",
+        "value": [
+          "trash",
+          "ecoconception",
+          "mobility",
+          "consolidation"
         ]
       }
     ],
@@ -367,7 +429,8 @@
         "type": "project_needs",
         "operator": "or",
         "value": [
-          "starting"
+          "advices",
+          "financing"
         ]
       },
       {
@@ -392,6 +455,15 @@
         "value": [
           "tpe",
           "pme"
+        ]
+      },
+      {
+        "type": "user_goals",
+        "operator": "or",
+        "value": [
+          "impact",
+          "energy",
+          "renovation"
         ]
       }
     ],

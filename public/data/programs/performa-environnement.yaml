@@ -34,7 +34,8 @@ conditions:
   - type: project_needs
     operator: "or"
     value: 
-      - starting
+      - advices
+      - financing
   - type: project_status
     operator: "or"
     value: 
@@ -48,6 +49,10 @@ conditions:
     value: 
       - tpe
       - pme
+  - type: user_goals
+    operator: "or"
+    value: 
+      - impact
 program_providers: 
   - code: CMA
     siren: 187 500 046 00011

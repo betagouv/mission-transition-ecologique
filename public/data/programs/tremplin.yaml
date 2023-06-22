@@ -23,7 +23,8 @@ program_types:
 conditions:
   - type: project_needs
     operator: "or"
-    value: 
+    value:
+      - advices
       - financing
   - type: project_status
     operator: "or"
@@ -41,6 +42,13 @@ conditions:
     value: 
       - tpe
       - pme
+  - type: user_goals
+    operator: "or"
+    value: 
+      - trash
+      - ecoconception
+      - mobility
+      - consolidation
 program_providers: 
   - code: ADEME
     href: https://ademe.fr/

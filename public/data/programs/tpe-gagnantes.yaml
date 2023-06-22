@@ -25,6 +25,7 @@ conditions:
     operator: "or"
     value: 
       - advices
+      - financing
   - type: project_status
     operator: "or"
     value: 
@@ -37,5 +38,9 @@ conditions:
     operator: "or"
     value: 
       - tpe
+  - type: user_goals
+    operator: "or"
+    value: 
+      - economies
 program_providers: 
   - code: ADEME
