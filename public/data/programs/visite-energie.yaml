@@ -34,6 +34,11 @@ conditions:
     operator: "or"
     value: 
       - "*"
+      # - industry
+      # - tertiary
+      # - agriculture
+      # - tourism
+      # - craft
   - type: structure_sizes
     operator: "or"
     value: 
@@ -42,7 +47,7 @@ conditions:
   - type: user_goals
     operator: "or"
     value: 
-      - impact
+      # - impact
       - energy
       - renovation
 program_providers: 

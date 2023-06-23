@@ -36,7 +36,8 @@
         "type": "structure_sizes",
         "operator": "or",
         "value": [
-          "pme"
+          "pme",
+          "tpe"
         ]
       },
       {
@@ -441,9 +442,7 @@
         "type": "project_sectors",
         "operator": "or",
         "value": [
-          "industry",
-          "tertiary",
-          "agriculture"
+          "*"
         ]
       },
       {
@@ -458,7 +457,6 @@
         "type": "user_goals",
         "operator": "or",
         "value": [
-          "impact",
           "energy",
           "renovation"
         ]

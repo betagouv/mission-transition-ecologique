@@ -35,6 +35,7 @@ conditions:
     operator: "or"
     value: 
       - pme
+      - tpe
   - type: user_goals
     operator: "or"
     value:
