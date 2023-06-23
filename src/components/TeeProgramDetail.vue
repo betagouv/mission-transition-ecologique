@@ -65,7 +65,7 @@
 
         <DsfrButton 
           class="fr-mb-3v"
-          :label="choices.t('results.showForm')"
+          :label="choices.t('results.showForm', {title: program.title})"
           secondary
           @click="toggleShowForm"
           ref="modalOrigin"/>
@@ -174,7 +174,7 @@
                   <h4 
                     class=""
                     style="text-align: center;">
-                    {{ trackConfig?.form.label[choices.lang] || '' }}
+                    {{ choices.ti(trackConfig?.form.label[choices.lang], { title: program.title }) || '' }}
                   </h4>
                   <p
                     class=""
@@ -191,6 +191,7 @@
                   <TeeForm
                     :track-id="trackConfig.id"
                     :form-options="trackConfig.form"
+                    :data-props="{ programId: program.id }"
                     :debug="debug"/>
                 </div>
               </div>

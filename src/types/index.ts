@@ -236,6 +236,7 @@ enum DataMappingFroms {
   env = 'env',
   formData = 'formData',
   usedTracks = 'usedTracks',
+  props = 'props',
 }
 export interface FormCallbackDataMapping {
   from: DataMappingFroms,

@@ -29,9 +29,24 @@ export const choicesStore = defineStore('choices', () => {
     return props.reduce((prev, curr) => prev?.[curr], obj)
   }
 
-  function t (path: string) {
+  function ti(translation: string, params: any = undefined) {
+    let translated = translation
+    if (params) {
+      for (const key in params) {
+        const reg = new RegExp(`{${key}}`, 'g')
+        translated = translated.replace(reg, params[key])
+      }
+    }
+    return translated
+  }
+
+  function t(path: string, params: any = undefined) {
     const locDict = dict[lang.value]
-    return resolve(path, locDict)
+    let translated = resolve(path, locDict) || path
+    if (params) {
+      translated = ti(translated, params)
+    }
+    return translated
   }
 
   return {
@@ -41,5 +56,6 @@ export const choicesStore = defineStore('choices', () => {
     setPublicPath,
     setLocale,
     t,
+    ti
   }
 })
