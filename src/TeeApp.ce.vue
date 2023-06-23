@@ -287,7 +287,7 @@ onBeforeMount(() => {
   }
   if (deployMode && needStyle) {
     const head = document.head
-    console.log('TeeApp > head :', head)
+    // console.log('TeeApp > head :', head)
     const link = document.createElement('link')
     link.type = "text/css"
     link.rel = "stylesheet"
