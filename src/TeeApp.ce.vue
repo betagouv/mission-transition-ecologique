@@ -218,7 +218,8 @@ const metaEnv = import.meta.env
 const deployMode = metaEnv.MODE != 'development'
 const deployUrl = metaEnv.VITE_DEPLOY_URL
 const noDebugSwitch = metaEnv.VITE_NO_DEBUG_SWITCH === 'true'
-const publicPath = metaEnv.BASE_URL
+const publicPath = `${deployUrl}${metaEnv.BASE_URL}`
+// console.log('TeeApp - publicPath :', publicPath)
 
 // @ts-ignore
 // console.log('TeeApp - process.env :', process.env)
