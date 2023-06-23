@@ -1,8 +1,13 @@
 export const frDict = {
   next: 'Suivant',
+  previous: 'Précédent',
+  close: 'Fermer',
   send: 'Envoyer',
   modify: 'modifier',
   licence: 'Ce widget et son code source sont sous licence',
+  selection: {
+    selected: 'Ma sélection'
+  },
   form: {
     mandatory: "Champs obligatoires",
     sent: "Formulaire envoyé",
@@ -11,6 +16,8 @@ export const frDict = {
     phoneContact: "Le conseiller vous <b>contactera par téléphone</b> dans les 5 jours (délai moyen de prise en charge)",
   },
   results: {
+    backToResults: "Retour aux résultats",
+    showForm: "Candidatez pour le dispositif {title}",
     alertTitle: "Merci, voici vos résultats",
     alertTitleNoResult: "Pas de résultats",
     alertNoResult: "Désolé, nous n'avons pas trouvé d'aides correspondant à vos choix",

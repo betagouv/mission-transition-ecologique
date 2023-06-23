@@ -1,5 +1,8 @@
+id: tpe-gagnantes
 title: TPE Gagnantes
 resume: Faites des économies en gérant durablement vos dépenses
+origin_url: https://agirpourlatransition.ademe.fr/entreprises/optimisez-tpe-pme/diagnostic-global-personnalise
+cover: images/programs/tpe-pme-gagnantes.jpg
 description: |
   <ul>
     <li>
@@ -22,6 +25,7 @@ conditions:
     operator: "or"
     value: 
       - advices
+      - financing
   - type: project_status
     operator: "or"
     value: 
@@ -34,5 +38,9 @@ conditions:
     operator: "or"
     value: 
       - tpe
+  - type: user_goals
+    operator: "or"
+    value: 
+      - economies
 program_providers: 
-  - code: '???'
+  - code: ADEME

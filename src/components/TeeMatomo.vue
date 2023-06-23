@@ -37,7 +37,7 @@
 
 <script setup lang="ts">
 
-import { ref, onMounted, onBeforeMount } from 'vue'
+import { onMounted, onBeforeMount } from 'vue'
 
 import { analyticsStore } from '../stores/analytics'
 
@@ -63,7 +63,7 @@ const matomoDeactivate = metaEnv.VITE_MATOMO_DEACTIVATE === 'true'
 let matomoScriptElem = document.getElementById(analytics.scriptUniqueId)
 
 onBeforeMount(() => {
-  console.log()
+  // console.log()
   // console.log('TeeMatomo > onBeforeMount >  matomoDeactivate :', matomoDeactivate)
   // console.log('TeeMatomo > onBeforeMount >  matomoDeactivate :', typeof(matomoDeactivate))
   analytics.setAppDomain(location.hostname)

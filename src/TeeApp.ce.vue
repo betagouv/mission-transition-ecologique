@@ -14,6 +14,21 @@
       />
     </p>
 
+    <!-- DEBUGGING -->
+    <div
+      class="vue-debug"
+      v-if="debugBool">
+      <h5>DEBUG - TeeApp</h5>
+      <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
+        <div class="fr-col-4">
+          <h6 class="fr-mb-1v"> tracks.currentStep : <code>{{ tracks.currentStep }} </code></h6>
+        </div>
+        <div class="fr-col-4">
+          <h6 class="fr-mb-1v"> programs.programDetail : <code>{{ programs.programDetail }} </code></h6>
+        </div>
+      </div>
+    </div>
+    
     <!-- MESSAGE & DEBUG SWITCH-->
     <div 
       v-if="showMessageBool || debugSwitchBool"
@@ -46,80 +61,108 @@
       :debug="debugBool"
       />
 
-    <!-- STEPPER -->
-    <p
-      v-if="showStepperBool" 
-      >
-      <TeeStepper
-        :steps-array="tracks.tracksStepsArray"
-        :current-step="tracks.currentStep"
-        :debug="debugBool"
-      />
-    </p>
+    <!-- QUESTIONNAIRE -->
+    <div
+      v-show="!programs.programDetail">
+      <!-- STEPPER -->
+      <p
+        v-if="showStepperBool" 
+        >
+        <TeeStepper
+          :steps-array="tracks.tracksStepsArray"
+          :current-step="tracks.currentStep"
+          :debug="debugBool"
+        />
+      </p>
 
-    <!-- TRACKS INTERFACES -->
-    <div class="fr-grid-row fr-grid-row-gutters fr-p-1v">
-      
-      <!-- TRACKS -->
-      <div 
-        :class="`fr-col-${debugBool ? 9 : 12} ${debugBool ? '' : 'fr-grid-row--center'}`">
-        <p
-          v-for="(track, index) in tracks.usedTracks"
-          :key="track.id"
-          :class="`fr-py-0 fr-mb-${ debugBool ? '12v' : '0'}`">
-          <TeeTrack
-            :step="index + 1"
-            :track-id="track.id"
+      <!-- TRACKS INTERFACES -->
+      <div class="fr-grid-row fr-grid-row-gutters fr-p-1v">
+        
+        <!-- SIDEBAR MENU -->
+        <div
+          v-show="tracks.currentStep > 1"
+          class="fr-col-3">
+          <TeeSidebar
+            :used-tracks="tracks.usedTracks"
             :debug="debugBool"
           />
-        </p>
-      </div>
-
-      <!-- DEBUGGING -->
-      <div
-        v-if="debugBool"
-        class="vue-debug fr-col-3 fr-pl-3v">
-        <h5>DEBUG - TeeApp</h5>
-        <div class="fr-grid-row fr-grid-row--gutters">
-          <div class="fr-col-12">
-            <h6 class="fr-mb-1v"> seed : <code>{{ seed }} </code></h6>
-            <h6 class="fr-mb-1v"> debug : <code>{{ debug }} </code></h6>
-            <h6 class="fr-mb-1v"> debugBool : <code>{{ debugBool }} </code></h6>
-            <h6 class="fr-mb-1v"> showHeader : <code>{{ showHeader }} </code></h6>
-            <h6 class="fr-mb-1v"> choices.lang : <code>{{ choices.lang }} </code></h6>
-            <h6 class="fr-mb-1v"> tracks.maxDepth : <code>{{ tracks.maxDepth }} </code></h6>
-            <h6 class="fr-mb-1v"> tracks.seedTrack : <code>{{ tracks.seedTrack }} </code></h6>
-          </div>
-
-          <div class="fr-col-12">
-            <h6 class="fr-mb-1v"> tracks.currentStep : <code>{{ tracks.currentStep }} </code></h6>
-            <h6>
-              tracks.tracksStepsArray :
-            </h6>
-            <code><pre>{{ tracks.tracksStepsArray  }}</pre></code>
-          </div>
-
-          <div class="fr-col-12">
-            <h6>
-              tracks.usedTracks :
-            </h6>
-            <code><pre>{{ tracks.usedTracks  }}</pre></code>
-          </div>
-
-          <div class="fr-col-12">
-            <h6>
-              metaEnv :
-            </h6>
-            <code><pre>{{ metaEnv }}</pre></code>
-          </div>
-
-          <!-- <h4>
-            TeeApp debug / programs :
-          </h4>
-          <code><pre>{{ programsArray  }}</pre></code> -->
         </div>
-      </div>
 
+        <!-- TRACKS -->
+        <div 
+          :class="`fr-col-${debugBool ? 7 : tracks.currentStep > 1 ? 8 : 12 } ${debugBool ? '' : 'fr-grid-row--center'}`">
+          <div
+            v-for="(track, index) in tracks.usedTracks"
+            :key="track.id"
+            :class="`fr-py-0 fr-mb-${ debugBool ? '12v' : '0'}`">
+            <TeeTrack
+              :step="index + 1"
+              :track-id="track.id"
+              :is-completed="!!tracks.isTrackCompleted(track.id)"
+              :debug="debugBool"
+            />
+          </div>
+        </div>
+
+        <!-- DEBUGGING -->
+        <div
+          v-if="debugBool"
+          class="vue-debug fr-col-2 fr-pl-3v">
+          <h5>DEBUG - TeeApp</h5>
+          <div class="fr-grid-row fr-grid-row--gutters">
+            <div class="fr-col-12">
+              <h6 class="fr-mb-1v"> seed : <code>{{ seed }} </code></h6>
+              <h6 class="fr-mb-1v"> debug : <code>{{ debug }} </code></h6>
+              <h6 class="fr-mb-1v"> debugBool : <code>{{ debugBool }} </code></h6>
+              <h6 class="fr-mb-1v"> showHeader : <code>{{ showHeader }} </code></h6>
+              <h6 class="fr-mb-1v"> choices.lang : <code>{{ choices.lang }} </code></h6>
+              <h6 class="fr-mb-1v"> tracks.maxDepth : <code>{{ tracks.maxDepth }} </code></h6>
+              <h6 class="fr-mb-1v"> tracks.seedTrack : <code>{{ tracks.seedTrack }} </code></h6>
+            </div>
+
+            <div class="fr-col-12">
+              <h6 class="fr-mb-1v"> tracks.currentStep : <code>{{ tracks.currentStep }} </code></h6>
+              <h6>
+                tracks.tracksStepsArray :
+              </h6>
+              <code><pre>{{ tracks.tracksStepsArray  }}</pre></code>
+            </div>
+
+            <div class="fr-col-12">
+              <h6>tracks.usedTracks :</h6>
+              <code><pre>{{ tracks.usedTracks  }}</pre></code>
+              <!-- <h6>tracks.tracksResults :</h6>
+              <code><pre>{{ tracks.tracksResults  }}</pre></code> -->
+            </div>
+
+            <div
+              v-if="false"
+              class="fr-col-12">
+              <h6>metaEnv :</h6>
+              <code><pre>{{ metaEnv }}</pre></code>
+            </div>
+
+            <!-- <h4>
+              TeeApp debug / programs :
+            </h4>
+            <code><pre>{{ programsArray  }}</pre></code> -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- DETAIL RESULT CARD -->
+    <div
+      v-if="programs.programDetail"
+      class="fr-grid-row fr-grid-row-gutters">
+      <div class="fr-col-8 fr-col-offset-2">
+        <TeeProgramDetail
+          :program="programs.getProgramById(programs.programDetail)"
+          :track-config="tracks.getTrack(programs.programDetailConfig)"
+          :debug="debugBool"
+        />
+      </div>
     </div>
 
     <!-- FOOTER -->
@@ -141,6 +184,9 @@ import '@gouvfr/dsfr/dist/core/core.main.min.css'               // Le CSS minima
 // import '@gouvfr/dsfr/dist/scheme/scheme.min.css'             // Facultatif : Si les thèmes sont utilisés (thème sombre, thème clair)
 // import '@gouvfr/dsfr/dist/utility/icons/icons.min.css'       // Facultatif : Si des icônes sont utilisées avec les classes "fr-icon-..."
 
+// import '@public/css/core.main.min.css'
+// import '@public/css/custom.css'
+
 // @ts-ignore
 import jsonDataset from '@public/data/output/dataset_out.json'
 // console.log('TeeApp > jsonDataset :', jsonDataset)
@@ -158,6 +204,10 @@ import TeeTrack from './components/TeeTrack.vue'
 // @ts-ignore
 import TeeStepper from './components/TeeStepper.vue'
 // @ts-ignore
+import TeeSidebar from './components/TeeSidebar.vue'
+// @ts-ignore
+import TeeProgramDetail from './components/TeeProgramDetail.vue'
+// @ts-ignore
 import TeeCredits from './components/TeeCredits.vue'
 
 const appId = 'gov-aid-tree-app'
@@ -168,6 +218,7 @@ const metaEnv = import.meta.env
 const deployMode = metaEnv.MODE != 'development'
 const deployUrl = metaEnv.VITE_DEPLOY_URL
 const noDebugSwitch = metaEnv.VITE_NO_DEBUG_SWITCH === 'true'
+const publicPath = metaEnv.BASE_URL
 
 // @ts-ignore
 // console.log('TeeApp - process.env :', process.env)
@@ -213,6 +264,8 @@ onBeforeMount(() => {
   // console.log('TeeApp > props.seed :', props.seed)
   // console.log('TeeApp > props.maxDepth :', props.maxDepth)
 
+  choices.setPublicPath(publicPath)
+
   // load dataset to pinia store
   // programs.setDataset(props.datasetUrl, deployMode, deployUrl)
   programs.setYamlDataset(yamlPrograms)
@@ -234,7 +287,7 @@ onBeforeMount(() => {
   }
   if (deployMode && needStyle) {
     const head = document.head
-    // console.log('TeeApp > head :', head)
+    console.log('TeeApp > head :', head)
     const link = document.createElement('link')
     link.type = "text/css"
     link.rel = "stylesheet"
@@ -292,31 +345,9 @@ onBeforeMount(() => {
   @import '~@gouvminint/vue-dsfr/dist/vue-dsfr.css';
 </style> -->
 
-<style>
-  /* @import '~@gouvfr/dsfr/dist/dsfr.min.css'; */
-
-  code {
-    color: red !important;
-  }
-  .vue-debug {
-    font-size: 0.75em !important;
-    border: red dashed 1px;
-    padding: .5em;
-    margin-bottom: .5em;
-  }
-  .vue-debug h6, .vue-debug h5{
-    font-size: 1em !important;
-    line-height: 1.2em !important;
-    margin-bottom: .8em;
-  }
-  .vue-debug pre{
-    line-height: 1.4em !important;
-    overflow: auto;
-  }
-</style>
-
 <style lang="scss">
   @import '~@gouvfr/dsfr/dist/dsfr.min.css'; // ok
+  @import '@public/css/custom.css';
   
   // @import '../public/core.main.css';
   // @import '~@gouvfr/dsfr/dist/core/core.main.min.css';

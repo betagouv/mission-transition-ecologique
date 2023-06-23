@@ -35,11 +35,19 @@
   </div>
 
   <!-- STEPPER -->
-  <DsfrStepper
+  <!-- <hr>
+  <div class="fr-grid-row fr-grid-row--gutters">
+    <div class="fr-col-9 fr-col-offset-3">
+      <h3 class="">
+        {{ stepsArrayTranslated[currentStep - 1]  }}
+      </h3>
+    </div>
+  </div> -->
+  <!-- <DsfrStepper
     :steps="stepsArrayTranslated"
     :current-step="currentStep"
     :class="`fr-mb-${ isLastStep ? '14v' : '0'}`"
-  />
+  /> -->
 </template>
 
 <script setup lang="ts">

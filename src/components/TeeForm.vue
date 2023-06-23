@@ -1,18 +1,6 @@
 <template>
-  <!-- FORM LABEL -->
-  <h4
-    v-if="formOptions.label"
-    class="fr-center">
-    {{ formOptions.label[choices.lang] }}
-  </h4>
-
   <!-- FORM -->
   <div v-show="!formIsSent">
-    <!-- FORM INTRODUCTION -->
-    <div 
-      v-if="formOptions.intro"
-      v-html="formOptions.intro[choices.lang]">
-    </div>
   
     <!-- DEBUGGING -->
     <div 
@@ -33,7 +21,7 @@
     </div>
   
     <!-- FIELDS -->
-    <div class="fr-grid-row fr-grid-row--gutters fr-mb-4v">
+    <div class="fr-grid-row fr-grid-row--gutters fr-mb-2v">
 
       <div
         v-for="field in formOptions.fields"
@@ -112,7 +100,7 @@
     <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-mt-5v">
       <div
         class="fr-col-12"
-        style="display: grid; justify-content: center;">
+        style="display: grid; justify-content: right;">
         <!-- :label="choices.t('next')"  -->
         <DsfrButton
           :label="choices.t('send')" 
@@ -197,7 +185,7 @@
 
 <script setup lang="ts">
 
-import { onBeforeMount, ref, computed, toRaw, defineEmits } from 'vue'
+import { onBeforeMount, ref, computed, toRaw } from 'vue'
 
 // @ts-ignore
 import type { FormValues, FormField, FormOptions, FormCallback, UsedTrack, ReqResp } from '@/types/index'
@@ -215,6 +203,7 @@ const analytics = analyticsStore()
 interface Props {
   trackId: string,
   formOptions: FormOptions,
+  dataProps?: object,
   debug?: boolean,
 }
 const props = defineProps<Props>()
@@ -249,8 +238,9 @@ const updateFormData = (ev: string, id: string) => {
 
 // const emit = defineEmits(['saveData'])
 const saveFormData = async () => {
-  console.log('TeeForm > saveFormData >  props.formOptions :', props.formOptions)
-  console.log('TeeForm > saveFormData >  formData.value :', formData.value)
+  // console.log('TeeForm > saveFormData >  props.formOptions :', props.formOptions)
+  // console.log('TeeForm > saveFormData >  props.dataProps :', props.dataProps)
+  // console.log('TeeForm > saveFormData >  formData.value :', formData.value)
   
   const usedTracks: UsedTrack[] | any[] = tracks.getAllUsedTracks
   console.log('TeeForm > saveFormData >  usedTracks :', usedTracks)
@@ -261,25 +251,20 @@ const saveFormData = async () => {
   const activeCallbacks = toRaw(props.formOptions.callbacks).filter((cb: FormCallback) => !cb.disabled)
   for (const callback of activeCallbacks) {
     console.log()
-    console.log('TeeForm > saveFormData >  callback.action :', callback.action)
+    // console.log('TeeForm > saveFormData >  callback.action :', callback.action)
     let resp: ReqResp = {}
     switch (callback.action) {
       case 'createContact':
-        resp = await sendApiRequest(callback, toRaw(formData.value), usedTracks)
+        resp = await sendApiRequest(callback, toRaw(formData.value), usedTracks, props.dataProps)
         break
       case 'sendTransactionalEmail':
         resp = await sendApiRequest(callback, toRaw(formData.value))
         break
     }
     responses.push(resp)
-    console.log('TeeForm > saveFormData >  resp :', resp)
+    // console.log('TeeForm > saveFormData >  resp :', resp)
   }
   requestResponses.value = responses
-  // emit('saveData', {
-  //   value: props.formOptions.value,
-  //   next: props.formOptions.next,
-  //   data: formData.value
-  // })
   formIsSent.value = true
 
   // analytics / send event

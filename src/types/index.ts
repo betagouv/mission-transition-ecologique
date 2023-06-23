@@ -38,14 +38,17 @@ export interface ProgramProvider {
 }
 
 export interface ProgramData {
+  id: string | number,
   index?: string | number,
   title: string,
   resume?: string,
+  cover?: string,
+  origin_url? : string,
   description?: string,
   program_type?: string,
   conditions?: Condition[],
   program_conditions?: ProgramConditions,
-  program_providers?: string[] | ProgramProvider[] | any[],
+  program_providers?: ProgramProvider[],
   program_application?: any,
   geo_zones?: any,
   date_start?: any,
@@ -72,7 +75,8 @@ enum TrackBehaviorOperators {
   or = 'or'
 }
 export interface TrackBehavior {
-  multipleChoices: boolean,
+  multipleChoices?: boolean,
+  singleChoice?: boolean,
   operator?: TrackBehaviorOperators,
 }
 export interface TrackOptionsField {
@@ -87,8 +91,10 @@ export interface TrackNext {
   [name: string]: any
 }
 export interface TrackOptions {
+  id?: string,
   disabled?: Boolean,
   value: string | number,
+  title: Translations,
   label: Translations,
   intro?: Translations,
   fields?: TrackOptionsField,
@@ -97,11 +103,13 @@ export interface TrackOptions {
 }
 export interface Track {
   id: string,
+  title: Translations,
   label: Translations,
   interface?: TrackInterface,
   behavior?: TrackBehavior,
   next?: TrackNext,
   options?: TrackOptions,
+  form?: FormOptions,
 }
 
 export interface TracksList {
@@ -112,11 +120,13 @@ export interface UsedTrack {
   id: string | any,
   final?: boolean,
   completed: boolean,
-  updating: boolean,
+  // updating: boolean,
   step: number,
-  values: any[] | null,
+  // values: any[] | null,
+  // titles?: Translations[],
   // val: any[] | null,
-  data: object,
+  // data: object,
+  selected: TrackOptions[],
   next: any
 }
 
@@ -169,8 +179,9 @@ export interface FormField {
 
 export interface FormOptions {
   value: string | number,
-  label?: any | null,
-  intro?: any | null,
+  label?: Translations,
+  hint?: Translations,
+  intro?: Translations,
   fields?: FormField[],
   next?: string,
   callbacks: FormCallback[]
@@ -225,6 +236,7 @@ enum DataMappingFroms {
   env = 'env',
   formData = 'formData',
   usedTracks = 'usedTracks',
+  props = 'props',
 }
 export interface FormCallbackDataMapping {
   from: DataMappingFroms,

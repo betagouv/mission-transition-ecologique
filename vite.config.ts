@@ -57,6 +57,7 @@ const dataOutPath = path.join( __dirname, dataBuiltOutput)
 fs.writeFileSync(dataOutPath, dataAsJson)
 console.log('vite.config > finished writing output json...')
 
+// VITE CONFIG 
 const viteServer = {
   // host: 'localhost',
   host: '0.0.0.0',
