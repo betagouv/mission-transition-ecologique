@@ -40,8 +40,6 @@ conditions:
     operator: "or"
     value:
       - impact
-      - energy
-      - ecoconception
 program_providers: 
   - code: BPI
   - code: ADEME

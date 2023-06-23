@@ -44,9 +44,7 @@
         "type": "user_goals",
         "operator": "or",
         "value": [
-          "impact",
-          "energy",
-          "ecoconception"
+          "impact"
         ]
       }
     ],
