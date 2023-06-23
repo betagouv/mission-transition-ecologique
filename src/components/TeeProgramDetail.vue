@@ -159,6 +159,7 @@
               <button 
                 class="fr-link--close fr-link" 
                 aria-controls="fr-modal-1"
+                style="align-items: center;"
                 @click="toggleShowForm"
                 >
                 {{ choices.t('close') }}
