@@ -33,9 +33,7 @@ conditions:
   - type: project_sectors
     operator: "or"
     value: 
-      - industry
-      - tertiary
-      - agriculture
+      - "*"
   - type: structure_sizes
     operator: "or"
     value: 
