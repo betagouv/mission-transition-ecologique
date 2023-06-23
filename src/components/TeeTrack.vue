@@ -346,7 +346,7 @@ const saveSelection = () => {
 }
 
 const backToPreviousTrack = async () => {
-  console.log()
+  // console.log()
   // console.log('TeeTrack > backToTrack > props.trackId :', props.trackId)
   const indexOfTrack = tracks.tracksStepsArray.indexOf(props.trackId)
   // console.log('TeeTrack > backToTrack > indexOfTrack :', indexOfTrack)
