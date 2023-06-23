@@ -1,7 +1,7 @@
 <template>
   <div 
     :id="appId"
-    class="fr-container--fluid">
+    class="fr-container--fluid fr-py-2v">
   
     <!-- HEADER -->
     <p 
