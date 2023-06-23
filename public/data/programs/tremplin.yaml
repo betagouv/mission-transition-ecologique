@@ -1,5 +1,8 @@
+id: tremplin
 title: Tremplin
 resume: Financez vos projets d’études ou d’investissement écologique avec une ou plusieurs aides forfaitaires
+origin_url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/tremplin-transition-ecologique-pme
+cover: images/programs/tremplin.jpg
 description: |
   <ul>
     <li>
@@ -20,7 +23,8 @@ program_types:
 conditions:
   - type: project_needs
     operator: "or"
-    value: 
+    value:
+      - advices
       - financing
   - type: project_status
     operator: "or"
@@ -29,15 +33,19 @@ conditions:
   - type: project_sectors
     operator: "or"
     value: 
-      - craft
-      - industry
-      - tertiary
-      - agriculture
+      - "*"
   - type: structure_sizes
     operator: "or"
     value: 
       - tpe
       - pme
+  - type: user_goals
+    operator: "or"
+    value: 
+      - trash
+      - ecoconception
+      - mobility
+      - consolidation
 program_providers: 
   - code: ADEME
     href: https://ademe.fr/

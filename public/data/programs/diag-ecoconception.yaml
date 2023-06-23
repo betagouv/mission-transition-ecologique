@@ -1,5 +1,8 @@
+id: diag-ecoconception
 title: Diag Ecoconception
 resume: Améliorez l'impact environnementale de vos produits et services
+origin_url: https://diag.bpifrance.fr/produit/diag-eco-conception
+cover: images/programs/diag-ecoconception.png
 description: |
   <b>Une démarche simple :</b>
   <ul>
@@ -23,6 +26,7 @@ conditions:
     operator: "or"
     value: 
       - advices
+      - financing
   - type: project_status
     operator: "or"
     value: 
@@ -33,8 +37,13 @@ conditions:
       - "*"
   - type: structure_sizes
     operator: "or"
-    value: 
+    value:
+      - tpe
       - pme
+  - type: user_goals
+    operator: "or"
+    value: 
+      - ecoconception
 program_providers: 
   - code: BPIFRANCE
     siren : 320 252 489

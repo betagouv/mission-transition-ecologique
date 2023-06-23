@@ -1,0 +1,30 @@
+/* 
+WARNING : 
+WHEN CHANGING THIS FILE PLEASE RE-RUN 
+npm run dev 
+*/
+
+/* CUSTOM STYLES - OVERIDES DSFR */
+.fr-card:hover {
+  cursor: pointer !important;
+}
+
+/* DEBUGGING STYLES */
+code {
+  color: red !important;
+}
+.vue-debug {
+  font-size: 0.75em !important;
+  border: red dashed 1px;
+  padding: .5em;
+  margin-bottom: .5em;
+}
+.vue-debug h6, .vue-debug h5{
+  font-size: 1em !important;
+  line-height: 1.2em !important;
+  margin-bottom: .8em;
+}
+.vue-debug pre{
+  line-height: 1.4em !important;
+  overflow: auto;
+}

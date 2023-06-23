@@ -1,6 +1,7 @@
 export const results = {
   id: 'track_results',
-  label: { fr: 'Résultats'},
+  title: { fr: 'Mes résultats' },
+  label: { fr: 'Vos résultats'},
   intro: { fr: 'Résultats'},
   interface: {
     component: 'results',
@@ -26,13 +27,14 @@ export const results = {
   ],
   form: {
     value: 'contact_form.email',
-    // label: { fr: 'Formulaire de contact' },
+    label: { fr: 'Vous êtes intéressé.e par le dispositif {title} ?' },
+    hint: { fr: "Déposez votre demande, un conseiller vous rappelle dans les 5 jours."},
     intro: { fr: `
       <h2>
         <span
           class="fr-icon-phone-fill" 
           aria-hidden="true"></span>
-        Vous souhaitez en connaitre d'avantage ?
+        Vous souhaitez en connaître d'avantage ?
       </h2>
       <h5>
         N'hésitez pas à nous laisser vos coordonnées, 
@@ -204,6 +206,16 @@ export const results = {
           },
           {
             from: 'usedTracks',
+            id: 'user_roles',
+            dataField: 'attributes.USER_ROLES',
+          },
+          {
+            from: 'usedTracks',
+            id: 'user_goals',
+            dataField: 'attributes.USER_GOALS',
+          },
+          {
+            from: 'usedTracks',
             id: 'project_status',
             dataField: 'attributes.PROJECT_STATUS',
           },
@@ -211,6 +223,11 @@ export const results = {
             from: 'usedTracks',
             id: 'structure_sizes',
             dataField: 'attributes.STRUCTURE_SIZE',
+          },
+          {
+            from: 'props',
+            id: 'programId',
+            dataField: 'attributes.PROGRAM_ID',
           },
         ]
       },

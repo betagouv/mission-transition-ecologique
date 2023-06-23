@@ -1,5 +1,8 @@
+id: fonds-tourisme-durable
 title: Fonds Tourisme Durable
 resume: Obtenez un diagnostic et des subventions dans votre activité touristique 
+origin_url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/fonds-tourisme-durable-restaurateurs-hebergeurs-accelerez-transition-0
+cover: images/programs/fonds-tourisme-durable.jpg
 description: |
   <ul>
     <li>
@@ -18,7 +21,7 @@ conditions:
   - type: project_needs
     operator: "or"
     value: 
-      - starting
+      - advices
       - financing
   - type: project_status
     operator: "or"
@@ -33,6 +36,11 @@ conditions:
     value: 
       - tpe
       - pme
+  - type: user_goals
+    operator: "or"
+    value: 
+      - impact
+      - consolidation
 program_providers: 
   - code: ADEME
     href: https://ademe.fr/

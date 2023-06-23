@@ -1,5 +1,8 @@
+id: diag-ecoflux
 title: Diag Eco-flux
 resume: Faites des économies en gérant durablement vos dépenses
+origin_url: https://diag.bpifrance.fr/produit/diag-eco-flux
+cover: images/programs/diag-ecoflux.png
 description: |
   <ul>
     <li>
@@ -22,6 +25,7 @@ conditions:
     operator: "or"
     value: 
       - advices
+      - financing
   - type: project_status
     operator: "or"
     value: 
@@ -34,5 +38,9 @@ conditions:
     operator: "or"
     value: 
       - pme
+  - type: user_goals
+    operator: "or"
+    value: 
+      - economies
 program_providers: 
-  - code: '???'
+  - code: BPI

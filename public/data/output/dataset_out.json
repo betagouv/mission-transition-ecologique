@@ -1,7 +1,10 @@
 [
   {
+    "id": "diag-decarbon-action",
     "title": "Diag Decarbon'Action",
     "resume": "Réduisez durablement vos émissions carbone",
+    "origin_url": "https://diag.bpifrance.fr/produit/diag-decarbon-action",
+    "cover": "images/programs/decarbon-action.png",
     "description": "<ul>\n  <li>\n    Mesurez les émissions de Gaz à effet de serre de votre entreprise.\n  </li>\n  <li>\n    Elaborez votre plan d'actions pour décarboner votre activité.\n  </li>\n  <li>\n    Embarquez votre écosystème en valorisant votre engagement dans la décarbonation.\n  </li>\n</ul>\n",
     "program_types": [
       "diag"
@@ -11,7 +14,8 @@
         "type": "project_needs",
         "operator": "or",
         "value": [
-          "advices"
+          "advices",
+          "financing"
         ]
       },
       {
@@ -32,7 +36,15 @@
         "type": "structure_sizes",
         "operator": "or",
         "value": [
-          "pme"
+          "pme",
+          "tpe"
+        ]
+      },
+      {
+        "type": "user_goals",
+        "operator": "or",
+        "value": [
+          "impact"
         ]
       }
     ],
@@ -46,8 +58,11 @@
     ]
   },
   {
+    "id": "diag-ecoflux",
     "title": "Diag Eco-flux",
     "resume": "Faites des économies en gérant durablement vos dépenses",
+    "origin_url": "https://diag.bpifrance.fr/produit/diag-eco-flux",
+    "cover": "images/programs/diag-ecoflux.png",
     "description": "<ul>\n  <li>\n    Faites un état des lieux de vos flux et identifiez les axes prioritaires d’économies.\n  </li>\n  <li>\n    Mettez en place un plan d'actions simple pour réduire vos déchets et votre consommation d'énergie, de matières et d'eau.\n  </li>\n  <li>\n    Lancez vos premières actions.\n  </li>\n  <li>\n    Réalisez en moyenne 45 000 € d'économies par an et par site de production ou établissement (sur la base des missions restituées).\n  </li>\n</ul>\n",
     "program_types": [
       "diag"
@@ -57,7 +72,8 @@
         "type": "project_needs",
         "operator": "or",
         "value": [
-          "advices"
+          "advices",
+          "financing"
         ]
       },
       {
@@ -80,17 +96,27 @@
         "value": [
           "pme"
         ]
+      },
+      {
+        "type": "user_goals",
+        "operator": "or",
+        "value": [
+          "economies"
+        ]
       }
     ],
     "program_providers": [
       {
-        "code": "???"
+        "code": "BPI"
       }
     ]
   },
   {
+    "id": "diag-ecoconception",
     "title": "Diag Ecoconception",
     "resume": "Améliorez l'impact environnementale de vos produits et services",
+    "origin_url": "https://diag.bpifrance.fr/produit/diag-eco-conception",
+    "cover": "images/programs/diag-ecoconception.png",
     "description": "<b>Une démarche simple :</b>\n<ul>\n  <li>\n    Sensibilisez les équipes internes à l’écoconception et formez un référent écoconception dans votre entreprise\n  </li>\n  <li>\n    Réalisez une évaluation environnementale basée sur l’Analyse du Cycle de Vie du produit, service ou procédé concerné\n  </li>\n  <li>\n    Identifiez, formalisez et chiffrez les leviers d’écoconception, en maîtrisant le risque de transfert de pollution\n  </li>\n  <li>\n    Préparez la mise en œuvre d'un plan d’actions incluant un premier dimensionnement technico-économique\n  </li>\n</ul>\n",
     "program_types": [
       "diag"
@@ -100,7 +126,8 @@
         "type": "project_needs",
         "operator": "or",
         "value": [
-          "advices"
+          "advices",
+          "financing"
         ]
       },
       {
@@ -121,7 +148,15 @@
         "type": "structure_sizes",
         "operator": "or",
         "value": [
+          "tpe",
           "pme"
+        ]
+      },
+      {
+        "type": "user_goals",
+        "operator": "or",
+        "value": [
+          "ecoconception"
         ]
       }
     ],
@@ -133,8 +168,11 @@
     ]
   },
   {
+    "id": "fonds-tourisme-durable",
     "title": "Fonds Tourisme Durable",
     "resume": "Obtenez un diagnostic et des subventions dans votre activité touristique",
+    "origin_url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/fonds-tourisme-durable-restaurateurs-hebergeurs-accelerez-transition-0",
+    "cover": "images/programs/fonds-tourisme-durable.jpg",
     "description": "<ul>\n  <li>\n    Faites un état des lieux gratuitement afin d'identifier les axes prioritaires d’économies\n  </li>\n  <li>\n    Réduisez et maîtrisez vos coûts fixes (énergie, eau, déchets, gaspillage alimentaire, transport)\n  </li>\n  <li>\n    Accédez à des aides forfaitaires dans tous les domaines de la transition écologique (entre 5k€ et 200k€)\n  </li>\n</ul>\n",
     "program_types": [
       "aap"
@@ -144,7 +182,7 @@
         "type": "project_needs",
         "operator": "or",
         "value": [
-          "starting",
+          "advices",
           "financing"
         ]
       },
@@ -169,6 +207,14 @@
           "tpe",
           "pme"
         ]
+      },
+      {
+        "type": "user_goals",
+        "operator": "or",
+        "value": [
+          "impact",
+          "consolidation"
+        ]
       }
     ],
     "program_providers": [
@@ -180,8 +226,11 @@
     ]
   },
   {
+    "id": "performa-environnement",
     "title": "Performa Environnement",
     "resume": "Mesurer votre maturité écologique et créer un plan d’actions personnalisé avec à un conseiller",
+    "origin_url": "https://www.economie.gouv.fr/entreprises/entreprises-aides-transition-ecologique",
+    "cover": "images/programs/performa-environnement.jpeg",
     "description": "<ul>\n  <li>\n    Réalisez un état des lieux gratuit pour évaluer l'impact \n    de votre activité sur l'environnement et détecter de \n    nouvelles sources d'économies (énergie, isolation des \n    locaux, consommations d’eau, déchets, matières premières, \n    mobilité...)\n  </li>\n  <li>\n    Obtenez un diagnostic complet et la proposition \n    d'un plan d'actions prioritaires pour maîtriser \n    sa consommation énergétique et optimiser ses coûts\n  </li>\n  <li>\n    Valorisez votre démarche environnementale par l'obtention \n    d'un label, une reconnaissance environnementale, \n    individuelle ou collective\n  </li>\n  <li>\n    Identifiez et sélectionnez une solution d'investissement, \n    d'étude ou de formation, et soyez assisté dans le montage \n    d'une demande de financement\n  </li>\n</ul>\n",
     "program_types": [
       "diag"
@@ -191,7 +240,8 @@
         "type": "project_needs",
         "operator": "or",
         "value": [
-          "starting"
+          "advices",
+          "financing"
         ]
       },
       {
@@ -215,6 +265,13 @@
           "tpe",
           "pme"
         ]
+      },
+      {
+        "type": "user_goals",
+        "operator": "or",
+        "value": [
+          "impact"
+        ]
       }
     ],
     "program_providers": [
@@ -225,8 +282,11 @@
     ]
   },
   {
+    "id": "tpe-gagnantes",
     "title": "TPE Gagnantes",
     "resume": "Faites des économies en gérant durablement vos dépenses",
+    "origin_url": "https://agirpourlatransition.ademe.fr/entreprises/optimisez-tpe-pme/diagnostic-global-personnalise",
+    "cover": "images/programs/tpe-pme-gagnantes.jpg",
     "description": "<ul>\n  <li>\n    Faites un état des lieux de vos flux et identifiez les axes prioritaires d’économies.\n  </li>\n  <li>\n    Mettez en place un plan d'actions simple pour réduire vos déchets et votre consommation d'énergie, de matières et d'eau.\n  </li>\n  <li>\n    Lancez vos premières actions.\n  </li>\n  <li>\n    Réalisez en moyenne 45 000 € d'économies par an et par site de production ou établissement (sur la base des missions restituées).\n  </li>\n</ul>\n",
     "program_types": [
       "diag"
@@ -236,7 +296,8 @@
         "type": "project_needs",
         "operator": "or",
         "value": [
-          "advices"
+          "advices",
+          "financing"
         ]
       },
       {
@@ -259,17 +320,27 @@
         "value": [
           "tpe"
         ]
+      },
+      {
+        "type": "user_goals",
+        "operator": "or",
+        "value": [
+          "economies"
+        ]
       }
     ],
     "program_providers": [
       {
-        "code": "???"
+        "code": "ADEME"
       }
     ]
   },
   {
+    "id": "tremplin",
     "title": "Tremplin",
     "resume": "Financez vos projets d’études ou d’investissement écologique avec une ou plusieurs aides forfaitaires",
+    "origin_url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/tremplin-transition-ecologique-pme",
+    "cover": "images/programs/tremplin.jpg",
     "description": "<ul>\n  <li>\n    Accédez à des aides forfaitaires dans plusieurs domaines de la transition \n    écologique (décarbonation, éco-conception,économie circulaire, gestion \n    des déchets, chaleur et froid renouvelable...)\n  </li>\n  <li>\n    Subventionnez la ou les projets écologique de votre entreprise suivant \n    une liste d’action prédéfinie par l’ADEME (entre 5k€ et 200k€)\n  </li>\n  <li>\n    Demandez une aide financière sur une ou plusieurs actions en même temps\n  </li>\n</ul>\n",
     "program_types": [
       "aap"
@@ -279,6 +350,7 @@
         "type": "project_needs",
         "operator": "or",
         "value": [
+          "advices",
           "financing"
         ]
       },
@@ -293,10 +365,7 @@
         "type": "project_sectors",
         "operator": "or",
         "value": [
-          "craft",
-          "industry",
-          "tertiary",
-          "agriculture"
+          "*"
         ]
       },
       {
@@ -305,6 +374,16 @@
         "value": [
           "tpe",
           "pme"
+        ]
+      },
+      {
+        "type": "user_goals",
+        "operator": "or",
+        "value": [
+          "trash",
+          "ecoconception",
+          "mobility",
+          "consolidation"
         ]
       }
     ],
@@ -332,8 +411,11 @@
     ]
   },
   {
+    "id": "visite-energie",
     "title": "Visite Energie",
-    "resume": "Mesurer votre maturité energétique et créer d’un plan d’actions personnalisé avec un conseiller",
+    "resume": "Mesurer votre maturité energétique et créer un plan d’actions personnalisé avec un conseiller",
+    "origin_url": "https://www.cci.fr/",
+    "cover": "images/programs/visite-energie.jpg",
     "description": "<ul>\n  <li>\n    Mettez en œuvre une démarche structurée d’économies d’énergie\n  </li>\n  <li>\n    Montez en compétences sur la thématique Energie de votre entreprise\n  </li>\n  <li>\n    Construisez et réalisez un plan d’actions grâce à un expert de l'énergie\n  </li>\n  <li>\n    Réduisez la consommation d’énergie de votre entreprise\n  </li>\n</ul>\n",
     "program_types": [
       "diag"
@@ -343,7 +425,8 @@
         "type": "project_needs",
         "operator": "or",
         "value": [
-          "starting"
+          "advices",
+          "financing"
         ]
       },
       {
@@ -357,9 +440,7 @@
         "type": "project_sectors",
         "operator": "or",
         "value": [
-          "industry",
-          "tertiary",
-          "agriculture"
+          "*"
         ]
       },
       {
@@ -369,9 +450,20 @@
           "tpe",
           "pme"
         ]
+      },
+      {
+        "type": "user_goals",
+        "operator": "or",
+        "value": [
+          "energy",
+          "renovation"
+        ]
       }
     ],
     "program_providers": [
+      {
+        "code": "ADEME"
+      },
       {
         "code": "CCI",
         "siret": "187 500 020 00073"
