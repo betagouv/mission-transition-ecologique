@@ -41,7 +41,7 @@ export const findInTracksArray = (tracksArray: object[], id: string) => {
 }
 
 export const sendApiRequest = async (callback: FormCallback, formData: object | any, usedTrack: UsedTrack[] = [], props: object | any = undefined) => {
-  console.log()
+  // console.log()
   // console.log('utils > emailing > sendApiRequest >  callback.action :', callback.action)
   // console.log('utils > emailing > sendApiRequest >  formData :', formData)
   // console.log('utils > emailing > sendApiRequest >  usedTrack :', usedTrack)
