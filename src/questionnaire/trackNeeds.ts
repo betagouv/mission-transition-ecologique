@@ -1,5 +1,6 @@
 export const needs = {
   id: 'track_needs',
+  category: 'needs',
   title: { fr: 'Mon besoin' },
   label: { fr: 'Votre besoin' },
   interface: {
@@ -37,7 +38,7 @@ export const needs = {
       label: { fr: "Je souhaite être conseillé pour réduire mon impact environnemental" },
       hint: { fr: "Faites des économies, cadrez un projet avec un accompagnement, un expert, un diagnostic adapté à votre situation" },
       next: {
-        default: 'track_structure_sizes'
+        default: 'track_siret'
       }
     },
     {
@@ -46,7 +47,7 @@ export const needs = {
       label: { fr: "J’ai un projet de transition écologique et je cherche un financement" },
       hint: { fr: "Obtenez une aide technique ou financière pour vos investissements ou un projet ayant un impact environnemental" },
       next: {
-        default: 'track_structure_sizes'
+        default: 'track_siret'
       }
     },
     {

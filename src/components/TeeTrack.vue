@@ -52,9 +52,20 @@
     <div
       v-if="step !== 1"
       :class="`${isTrackResults ? 'fr-col-10 fr-col-offset-1' : 'fr-col-12'}`">
-      <h3>
+      <h3
+        :class="track.info ? 'fr-mb-0' : ''">
         {{ tracks.getTrackLabel(trackId, choices.lang) }}
       </h3>
+    </div>
+
+    <!-- TRACK INFOS -->
+    <div 
+      v-if="track.info"
+      class="fr-col-12">
+      <p>
+        <span class="fr-icon-info-fill" aria-hidden="true"></span>
+        {{ track.info[choices.lang] }}
+      </p>
     </div>
 
     <!-- TRACK CHOICES -->
@@ -82,21 +93,9 @@
               <div
                 v-if="isActiveChoice(option.value)" 
                 class="fr-card__start">
-                <!-- <p>
-                  <DsfrBadge 
-                    type="info" 
-                    :label="choices.t('selection.selected')" />
-                </p> -->
                 <p class="fr-badge fr-badge--info fr-badge--no-icon fr-mb-4v">
                   {{ choices.t('selection.selected') }}
                 </p>
-                <!-- <ul class="fr-tags-group">
-                  <li>
-                    <p class="fr-tag">
-                      {{ choices.t('selection.selected') }}
-                    </p>
-                  </li>
-                </ul> -->
             </div>
               <p class="fr-card__desc">
                 {{ option.hint[choices.lang] }}
@@ -116,26 +115,26 @@
       
       <!-- AS BUTTONS -->
       <div 
-        v-if="renderAs === 'buttons' && !allowMultiple"
+        v-if="renderAs === 'buttons'"
         >
         <DsfrButton
           style="width: -moz-available !important; width: 100%;"
           :label="option.label[choices.lang]" 
-          :icon="`${isActiveChoice(option.value) ? 'md-radiobuttonchecked' : 'md-radiobuttonunchecked'}`"
+          :icon="getButtonIcon(option.value)"
           :secondary="!isActiveChoice(option.value)"
           @click="updateSelection(option)"
         />
       </div>
+
+      <!-- AS INPUT -->
       <div 
-        v-if="renderAs === 'buttons' && allowMultiple"
+        v-if="renderAs === 'input'"
         >
-        <DsfrButton
-          style="width: -moz-available !important;"
-          :label="option.label[choices.lang]" 
-          :icon="`${isActiveChoice(option.value) ? 'ri-checkbox-line' : 'ri-checkbox-blank-line'}`"
-          :secondary="!isActiveChoice(option.value)"
-          @click="updateSelection(option)"
-        />
+        <TeeTrackInput
+          :track-id="trackId"
+          :option="option"
+          :debug="debug"
+          />
       </div>
 
       <!-- AS FORM -->
@@ -196,7 +195,7 @@
 
 <script setup lang="ts">
 
-import { ref, computed, watch } from 'vue'
+import { onBeforeMount, ref, computed, watch } from 'vue'
 
 import { tracksStore } from '../stores/tracks'
 import { choicesStore } from '../stores/choices'
@@ -206,6 +205,8 @@ import { analyticsStore } from '../stores/analytics'
 // @ts-ignore
 import type { Track, TrackOptions, ColsOptions } from '@/types/index'
 
+// @ts-ignore
+import TeeTrackInput from './TeeTrackInput.vue'
 // // @ts-ignore
 // import TeeForm from './TeeForm.vue'
 // @ts-ignore
@@ -221,6 +222,7 @@ const props = defineProps<Props>()
 
 const colsOptions: ColsOptions = {
   buttons: 12,
+  input: 12,
   cards: 4,
   form: 8,
   modify: 2,
@@ -246,6 +248,10 @@ const allowMultiple: boolean = !!track?.behavior?.multipleChoices
 // @ts-ignore
 const trackOperator: boolean = track?.behavior?.operator || false
 const optionsArray: any[] = track?.options.filter( (o: TrackOptions) => !o.disabled) || []
+
+onBeforeMount(() => {
+  // if track.component
+})
 
 // Computed
 const isTrackResults = computed(() => {
@@ -310,6 +316,18 @@ const updateSelection = (option: any) => {
   if (!allowMultiple && renderAs !== 'buttons'  ) {
     saveSelection()
   }
+}
+
+const getButtonIcon = (optionValue: any) => {
+  const isActive = isActiveChoice(optionValue)
+  // console.log('TeeTrack > getButtonIcon > isActive :', isActive)
+  let icon = ''
+  if (allowMultiple) {
+    icon = isActive ? 'ri-checkbox-line' : 'ri-checkbox-blank-line'
+  } else {
+    icon = isActive ? 'md-radiobuttonchecked' : 'md-radiobuttonunchecked'
+  }
+  return icon 
 }
 
 // watchers

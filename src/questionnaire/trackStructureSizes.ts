@@ -1,5 +1,6 @@
 export const sizes = {
   id: 'track_structure_sizes',
+  category: 'entreprise',
   title: { fr: 'Mon entreprise' },
   label: { fr: 'Quelle est la taille de votre entreprise ?' },
   interface: {

@@ -15,6 +15,10 @@ export const frDict = {
     advisors: "Nous allons <b>identifier le bon conseiller</b> près de chez vous",
     phoneContact: "Le conseiller vous <b>contactera par téléphone</b> dans les 5 jours (délai moyen de prise en charge)",
   },
+  input: {
+    research: 'Recherche',
+    search: 'Rechercher'
+  },
   results: {
     backToResults: "Retour aux résultats",
     showForm: "Candidatez pour le dispositif {title}",

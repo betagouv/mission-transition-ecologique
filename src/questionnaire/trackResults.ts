@@ -1,5 +1,6 @@
 export const results = {
   id: 'track_results',
+  category: 'results',
   title: { fr: 'Mes résultats' },
   label: { fr: 'Vos résultats'},
   intro: { fr: 'Résultats'},

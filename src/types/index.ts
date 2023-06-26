@@ -94,15 +94,24 @@ export interface TrackOptions {
   id?: string,
   disabled?: Boolean,
   value: string | number,
+  required?: Boolean,
   title: Translations,
   label: Translations,
+  info?: Translations,
+  placeholder?: Translations,
   intro?: Translations,
   fields?: TrackOptionsField,
   hint?: Translations,
   next?: TrackNext
 }
+
+export interface TrackOptionsInput extends TrackOptions {
+  placeholder: Translations,
+}
+
 export interface Track {
   id: string,
+  category?: string,
   title: Translations,
   label: Translations,
   interface?: TrackInterface,

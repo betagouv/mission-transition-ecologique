@@ -1,5 +1,6 @@
 export const goals = {
   id: 'track_goals',
+  category: 'goals',
   title: { fr: 'Mes objectifs' },
   label: { fr: "Dites-nous en plus sur votre objectif" },
   interface: {
