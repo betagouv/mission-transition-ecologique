@@ -41,5 +41,8 @@ export const frDict = {
   programTypes: {
     aap: 'Appel à projets',
     diag: 'Diagnostic'
+  },
+  enterprise: {
+    select: 'Sélectionnez votre entreprise'
   }
 }

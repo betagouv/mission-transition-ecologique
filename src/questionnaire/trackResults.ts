@@ -185,11 +185,11 @@ export const results = {
             id: 'siret',
             dataField: 'attributes.SIRET',
           },
-          {
-            from: 'formData',
-            id: 'needs',
-            dataField: 'attributes.FORM_NEEDS',
-          },
+          // {
+          //   from: 'formData',
+          //   id: 'needs',
+          //   dataField: 'attributes.FORM_NEEDS',
+          // },
           {
             from: 'formData',
             id: 'cgu',
@@ -215,11 +215,11 @@ export const results = {
             id: 'user_goals',
             dataField: 'attributes.USER_GOALS',
           },
-          {
-            from: 'usedTracks',
-            id: 'project_status',
-            dataField: 'attributes.PROJECT_STATUS',
-          },
+          // {
+          //   from: 'usedTracks',
+          //   id: 'project_status',
+          //   dataField: 'attributes.PROJECT_STATUS',
+          // },
           {
             from: 'usedTracks',
             id: 'structure_sizes',

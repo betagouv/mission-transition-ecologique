@@ -107,6 +107,7 @@ export interface TrackOptions {
 
 export interface TrackOptionsInput extends TrackOptions {
   placeholder: Translations,
+  callbacks? : any,
 }
 
 export interface Track {
@@ -232,6 +233,8 @@ export interface ReqResp {
   status?: number,
   code?: string,
   message?: string,
+  data?: any,
+  resultsMapping?: any
 }
 
 // FOR EMAILING
@@ -263,6 +266,7 @@ enum CallbackMethods {
   put = 'PUT',
 }
 enum CallbackActions {
+  getSiretInfos = 'getSiretInfos',
   createContact = 'createContact',
   sendTransactionalEmail = 'sendTransactionalEmail'
 }
@@ -278,4 +282,5 @@ export interface FormCallback {
   method: CallbackMethods,
   dataStructure: object | object[],
   dataMapping: FormCallbackDataMapping[]
+  resultsMapping?: any[] // TO DO
 }

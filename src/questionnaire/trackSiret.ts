@@ -7,9 +7,9 @@ export const siret = {
   interface: {
     component: 'input',
   },
-  behavior: {
-    multipleChoices: false,
-  },
+  // behavior: {
+  //   multipleChoices: false,
+  // },
   next: {
     default: 'track_structure_sizes'
   },
@@ -20,7 +20,85 @@ export const siret = {
       title: { fr: 'SIRET' },
       label: { fr: "Indiquez votre numéro de SIRET" },
       placeholder: { fr: 'Nom, adresse, SIRET/SIREN...' },
-      required: false,
+      // required: false,
+      callbacks: [
+        {
+          disabled: false,
+          help: 'Get entreprise data from its SIRET number',
+          helpDocumentation: 'https://tee-backend-test.osc-fr1.scalingo.io/api/docs',
+          action: 'getSiretInfos',
+          url: 'https://tee-backend-test.osc-fr1.scalingo.io/api/insee/get_by_siret',
+          method: 'POST',
+          headers: {
+            accept: 'application/json',
+            'Content-Type': 'application/json'
+          },
+          dataStructure: {
+            siret: ''
+          },
+          dataMapping: [
+            {
+              from: 'formData',
+              id: 'inputValue',
+              dataField: 'siret',
+            }
+          ],
+          resultsMapping: [
+            {
+              respFields: [
+                'data.etablissement.uniteLegale.denominationUniteLegale',
+                'data.etablissement.siret'
+              ],
+              // label: 'entité',
+              class: 'fr-mb-3v',
+              sep: ' - SIRET ',
+              style: 'font-weight: bold;'
+            },
+            {
+              respFields: [
+                'data.etablissement.adresseEtablissement.numeroVoieEtablissement',
+                'data.etablissement.adresseEtablissement.typeVoieEtablissement',
+                'data.etablissement.adresseEtablissement.libelleVoieEtablissement',
+                'data.etablissement.adresseEtablissement.codePostalEtablissement',
+                'data.etablissement.adresseEtablissement.libelleCommuneEtablissement',
+              ],
+              // label: 'Adresse',
+              icon: 'fr-icon-map-pin-2-line'
+            },
+            {
+              respFields: ['data.etablissement.uniteLegale.categorieEntreprise'],
+              label: 'Catégorie',
+              icon: 'fr-icon-parent-line'
+            },
+            {
+              respFields: ['data.etablissement.uniteLegale.dateCreationUniteLegale'],
+              label: 'Date de création',
+              prefix: 'Création le ',
+              icon: 'fr-icon-time-line'
+            },
+            {
+              respFields: ['data.etablissement.uniteLegale.activitePrincipaleUniteLegale'],
+              label: 'Code NAF',
+              icon: 'fr-icon-briefcase-line'
+            },
+            // {
+            //   respFields: ['data.etablissement.siret'],
+            //   label: 'SIRET',
+            //   icon: 'fr-icon-building-fill'
+            // },
+            // {
+            //   respFields: ['data.etablissement.siren'],
+            //   label: 'SIRET',
+            //   icon: 'fr-icon-building-fill'
+            // },
+            // {
+            //   respFields: ['data.etablissement.nic'],
+            //   label: 'NIC',
+            //   icon: 'fr-icon-building-fill'
+            // },
+          ]
+        }
+      ],
       next: {
         default: 'track_structure_sizes'
       }

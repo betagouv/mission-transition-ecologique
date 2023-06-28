@@ -1,3 +1,13 @@
+export const getFrom = (from: any, selectors: string[]) =>
+  // console.log('utils > helpers > getFrom >  selectors :', selectors)
+  selectors.map((s: string) =>
+  // @ts-ignore
+  s.replace(/\[([^[\]]*)\]/g, '.$1.')
+  .split('.')
+  .filter((t: any) => t !== '')
+  .reduce((prev: any, cur: any) => prev && prev[cur], from)
+  )
+
 const setIn = (obj: any, [head, ...rest]: string[], value: any) => {
   // console.log('utils > helpers > setIn >  obj :', obj)
   const newObj: any = Array.isArray(obj) ? [...obj] : {...obj}

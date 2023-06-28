@@ -190,7 +190,7 @@ import { onBeforeMount, ref, computed, toRaw } from 'vue'
 // @ts-ignore
 import type { FormValues, FormField, FormOptions, FormCallback, UsedTrack, ReqResp } from '@/types/index'
 
-import { sendApiRequest } from '../utils/emailing'
+import { sendApiRequest } from '../utils/requests'
 
 import { tracksStore } from '../stores/tracks'
 import { choicesStore } from '../stores/choices'
