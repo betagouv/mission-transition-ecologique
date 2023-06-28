@@ -4,6 +4,7 @@ export const siret = {
   title: { fr: 'Mon SIRET' },
   label: { fr: 'Quelle est votre entreprise ?' },
   info: { fr: "Cette information permet de filtrer les accompagnements en fonction de la taille de votre entreprise, de votre secteur d’activité et de votre zone géographique." },
+  postInput: { fr: 'Vous ne retrouvez pas votre SIRET ? <a href="https://annuaire-entreprises.data.gouv.fr/">Cliquez ici</a>' },
   interface: {
     component: 'input',
   },

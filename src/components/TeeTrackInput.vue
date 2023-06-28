@@ -140,7 +140,7 @@ const choices = choicesStore()
 
 const inputValue = ref<string>('83014132100034')
 const isLoading = ref<boolean>(false)
-const requestResponses = ref<any[]>([])
+const requestResponses = ref<ReqResp[]>([])
 const selection = ref<any>()
 
 const track: Track | any = tracks.getTrack(props.trackId)

@@ -228,13 +228,22 @@ export interface Comp {
 
 // FOR REQUESTS
 
+
+export interface ResultsMapping {
+  respFields: string[],
+  label?: string,
+  icon?: string,
+  class?: string,
+  sep?: string,
+  style?: string
+}
 export interface ReqResp {
   action?: CallbackActions,
   status?: number,
   code?: string,
   message?: string,
   data?: any,
-  resultsMapping?: any
+  resultsMapping?: ResultsMapping[]
 }
 
 // FOR EMAILING
@@ -270,6 +279,7 @@ enum CallbackActions {
   createContact = 'createContact',
   sendTransactionalEmail = 'sendTransactionalEmail'
 }
+
 export interface FormCallback {
   disabled?: boolean,
   help?: string | string[],
@@ -282,5 +292,5 @@ export interface FormCallback {
   method: CallbackMethods,
   dataStructure: object | object[],
   dataMapping: FormCallbackDataMapping[]
-  resultsMapping?: any[] // TO DO
+  resultsMapping?: ResultsMapping[]
 }
