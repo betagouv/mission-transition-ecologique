@@ -99,6 +99,7 @@ export interface TrackOptions {
   label: Translations,
   info?: Translations,
   placeholder?: Translations,
+  postInput?: Translations,
   intro?: Translations,
   fields?: TrackOptionsField,
   hint?: Translations,

@@ -8,6 +8,10 @@
       <div class="fr-col-3">
         <h6 class="fr-mb-1v"> inputValue : <code>{{ inputValue }} </code></h6>
       </div>
+      <div class="fr-col-9">
+        <h6 class="fr-mb-1v"> option :</h6>
+        <pre><code>{{ option }} </code></pre>
+      </div>
     </div>
   </div>
 
@@ -37,6 +41,12 @@
       {{ choices.t('input.search') }}
     </button>
   </div>
+
+  <p 
+    v-if="option.postInput"
+    class="fr-mt-4v fr-hint-text"
+    v-html="option.postInput[choices.lang]">
+  </p>
 
   <!-- RESPONSE -->
   <div

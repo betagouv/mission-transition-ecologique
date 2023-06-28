@@ -4,7 +4,6 @@ export const siret = {
   title: { fr: 'Mon SIRET' },
   label: { fr: 'Quelle est votre entreprise ?' },
   info: { fr: "Cette information permet de filtrer les accompagnements en fonction de la taille de votre entreprise, de votre secteur d’activité et de votre zone géographique." },
-  postInput: { fr: 'Vous ne retrouvez pas votre SIRET ? <a href="https://annuaire-entreprises.data.gouv.fr/">Cliquez ici</a>' },
   interface: {
     component: 'input',
   },
@@ -21,6 +20,7 @@ export const siret = {
       title: { fr: 'SIRET' },
       label: { fr: "Indiquez votre numéro de SIRET" },
       placeholder: { fr: 'Nom, adresse, SIRET/SIREN...' },
+      postInput: { fr: 'Vous ne retrouvez pas votre SIRET ? <a href="https://annuaire-entreprises.data.gouv.fr/" target="_blank">Cliquez ici</a>' },
       // required: false,
       callbacks: [
         {
