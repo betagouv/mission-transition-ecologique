@@ -109,10 +109,12 @@ export interface TrackOptions {
 export interface TrackOptionsInput extends TrackOptions {
   placeholder: Translations,
   callbacks? : any,
+  wildcard?: any
 }
 
 export interface Track {
   id: string,
+  help?: string,
   category?: string,
   title: Translations,
   label: Translations,
@@ -195,7 +197,7 @@ export interface FormOptions {
   intro?: Translations,
   fields?: FormField[],
   next?: string,
-  callbacks: FormCallback[]
+  callbacks: FormCallback[],
 }
 
 export interface FormDataResp {

@@ -11,7 +11,7 @@ export const sizes = {
   },
   options: [
     {
-      value: { structure_sizes: 'tpe' },
+      value: { structure_sizes: 'TPE' },
       title: { fr: 'TPE' },
       label: { fr: "TPE (moins de 20 salariés)" },
       next: {
@@ -19,7 +19,7 @@ export const sizes = {
       }
     },
     {
-      value: { structure_sizes: 'pme' },
+      value: { structure_sizes: 'PME' },
       title: { fr: 'PME' },
       label: { fr: "PME (entre 20 et 249 salariés)" },
       next: {
@@ -28,7 +28,7 @@ export const sizes = {
     },
     {
       disabled: true,
-      value: { structure_sizes: 'eti' },
+      value: { structure_sizes: 'ETI' },
       title: { fr: 'ETI' },
       label: { fr: "ETI" },
       next: {

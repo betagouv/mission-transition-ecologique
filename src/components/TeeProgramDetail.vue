@@ -55,14 +55,6 @@
         </p>
 
         <!-- OPEN MODAL -> FORM -->
-        <!-- <DsfrButton
-          class="fr-mb-3v"
-          :label="choices.t('results.showForm')" 
-          icon=""
-          secondary
-          @click="toggleShowForm"
-        />  -->
-
         <DsfrButton 
           class="fr-mb-3v"
           :label="choices.t('results.showForm', {title: program.title})"

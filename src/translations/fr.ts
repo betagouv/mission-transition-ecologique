@@ -21,7 +21,8 @@ export const frDict = {
   },
   results: {
     backToResults: "Retour aux résultats",
-    showForm: "Candidatez pour le dispositif {title}",
+    // showForm: "Candidatez pour le dispositif {title}",
+    showForm: "En savoir plus sur {title}",
     alertTitle: "Merci, voici vos résultats",
     alertTitleNoResult: "Pas de résultats",
     alertNoResult: "Désolé, nous n'avons pas trouvé d'aides correspondant à vos choix",

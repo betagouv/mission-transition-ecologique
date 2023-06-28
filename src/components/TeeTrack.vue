@@ -62,7 +62,7 @@
     <div 
       v-if="track.info"
       class="fr-col-12">
-      <p>
+      <p class="fr-mb-2v">
         <span class="fr-icon-info-fill" aria-hidden="true"></span>
         {{ track.info[choices.lang] }}
       </p>
@@ -134,6 +134,8 @@
           :track-id="trackId"
           :option="option"
           :debug="debug"
+          @update-selection="updateSelectionFromSignal"
+          @go-to-next-track="saveSelectionFromSignal"
           />
       </div>
 
@@ -289,9 +291,9 @@ const isActiveChoice = (value: string | number) => {
   return selectionValues.value.includes(value)
 }
 
-const updateSelection = (option: any) => {
-  // console.log('TeeTrack > updateSelection > option :', option)
-  const isActive = isActiveChoice(option.value)
+const updateSelection = (option: any, forceRemove: boolean = false) => {
+  console.log('TeeTrack > updateSelection > option :', option)
+  const isActive = !forceRemove && isActiveChoice(option.value)
   let remove = false
   if (!isActive) {
     if (allowMultiple) {
@@ -306,17 +308,30 @@ const updateSelection = (option: any) => {
       analytics.sendEvent(props.trackId, key, val)
     }
   } else {
+    // remove from selection because is already active
     selectedOptions.value = selectedOptions.value.filter(i => i.value !== option.value)
     remove = !selectedOptions.value.length
   }
   needRemove.value = remove
   // selectedOptions.value = option
   
-  // Direc
-  if (!allowMultiple && renderAs !== 'buttons'  ) {
+  // Direct to next track
+  const directToNext: string[] = ['cards']
+  if (!allowMultiple && directToNext.includes(renderAs)  ) {
     saveSelection()
   }
 }
+
+const updateSelectionFromSignal = (ev: any) => {
+  console.log('TeeTrack > updateSelectionFromSignal > ev :', ev)
+  updateSelection(ev.option, ev.remove)
+}
+
+const saveSelectionFromSignal = (ev: any) => {
+  console.log('TeeTrack > saveSelectionFromSignal > ev :', ev)
+
+}
+
 
 const getButtonIcon = (optionValue: any) => {
   const isActive = isActiveChoice(optionValue)

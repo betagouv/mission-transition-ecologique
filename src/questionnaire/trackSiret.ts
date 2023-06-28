@@ -101,7 +101,14 @@ export const siret = {
         }
       ],
       next: {
-        default: 'track_structure_sizes'
+        // default: 'track_structure_sizes',
+        default: 'track_roles'
+      },
+      wildcard: {
+        label: { fr: "Je préfère compléter mes informations manuellement" },
+        next: {
+          default: 'track_structure_sizes',
+        }
       }
     }
   ]
