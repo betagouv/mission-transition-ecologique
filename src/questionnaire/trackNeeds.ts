@@ -38,8 +38,8 @@ export const needs = {
       label: { fr: "Je souhaite être conseillé pour réduire mon impact environnemental" },
       hint: { fr: "Faites des économies, cadrez un projet avec un accompagnement, un expert, un diagnostic adapté à votre situation" },
       next: {
-        default: 'track_structure_sizes'
-        // default: 'track_siret'
+        // default: 'track_structure_sizes'
+        default: 'track_siret'
       }
     },
     {
@@ -52,7 +52,7 @@ export const needs = {
       }
     },
     {
-      disabled: false,
+      disabled: true,
       value: { project_needs: '*' },
       title: { fr: "M'informer" },
       label: { fr: "(QUESTION TEST) Je cherche juste à m'informer" },

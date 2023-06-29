@@ -285,9 +285,9 @@ const processInput = async (ev: any) => {
     console.log()
     // console.log('TeeTrackInput > processInput >  callback :', callback)
     let value = inputValue.value
-    // Clean value
-    if (callback.dataCleaning) {
-      callback.dataCleaning.forEach((cleaner: any) => {
+    // Clean input value
+    if (callback.inputCleaning) {
+      callback.inputCleaning.forEach((cleaner: any) => {
         // console.log('TeeTrackInput > processInput >  cleaner :', cleaner)
         switch (cleaner.operation) {
           case 'replaceAll':
@@ -345,9 +345,12 @@ const processInput = async (ev: any) => {
 
 const goToNextTrack = () => {
   console.log
-  const wildcard = props.option.wildcard
-  console.log('TeeTrackInput > goToNextTrack > wildcard :', wildcard)
-  emit('goToNextTrack', wildcard)
+  const data = {
+    option: { ...props.option },
+  }
+  data.option.next = props.option.wildcard.next
+  console.log('TeeTrackInput > goToNextTrack > data :', data)
+  emit('goToNextTrack', data)
 }
 
 const selectItem = (item: any) => {

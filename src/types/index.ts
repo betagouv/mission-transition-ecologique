@@ -306,6 +306,6 @@ export interface FormCallback {
   method: CallbackMethods,
   dataStructure: object | object[],
   dataMapping: FormCallbackDataMapping[]
-  dataCleaning?: any[],
+  inputCleaning?: any[],
   resultsMapping?: ResultsMapping[]
 }

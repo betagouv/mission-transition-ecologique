@@ -326,7 +326,8 @@ const updateSelectionFromSignal = (ev: any) => {
 
 const saveSelectionFromSignal = (ev: any) => {
   console.log('TeeTrack > saveSelectionFromSignal > ev :', ev)
-
+  updateSelection(ev.option)
+  saveSelection()
 }
 
 

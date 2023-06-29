@@ -1,3 +1,12 @@
+const dataTarget = {
+  siret: '',
+  codeNaf: '',
+  ville: '',
+  codePostal: '',
+  structure_sizes: '',
+  project_sectors: undefined
+}
+
 export const siret = {
   id: 'track_siret',
   category: 'entreprise',
@@ -16,7 +25,7 @@ export const siret = {
   options: [
     {
       id: 'search-siret',
-      value: { structure_siret: undefined },
+      value: { ...dataTarget },
       title: { fr: 'SIRET' },
       label: { fr: "Renseignez le SIRET de votre entreprise" },
       placeholder: { fr: 'ex : 830 141 321 00034' },
@@ -36,12 +45,7 @@ export const siret = {
             accept: 'application/json',
             'Content-Type': 'application/json'
           },
-          dataStructure: {
-            siret: '',
-            codeNaf: '',
-            ville: '',
-            codePostal: '',
-          },
+          dataStructure: { ...dataTarget },
           dataMapping: [
             {
               from: 'formData',
@@ -69,8 +73,15 @@ export const siret = {
               dataField: 'codePostal',
               onlyRemap: true
             },
+            {
+              from: 'rawData',
+              id: 'size',
+              path: 'etablissement.uniteLegale.categorieEntreprise',
+              dataField: 'structure_sizes',
+              onlyRemap: true
+            },
           ],
-          dataCleaning: [
+          inputCleaning: [
             {
               operation: 'replaceAll',
               stringToReplace: ' ',
