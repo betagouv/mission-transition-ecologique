@@ -53,7 +53,7 @@
       v-if="step !== 1"
       :class="`${isTrackResults ? 'fr-col-10 fr-col-offset-1' : 'fr-col-12'}`">
       <h3
-        :class="track.info ? 'fr-mb-0' : ''">
+        :class="track.info ? 'fr-mb-0' : 'fr-mb-2v'">
         {{ tracks.getTrackLabel(trackId, choices.lang) }}
       </h3>
     </div>
@@ -197,7 +197,7 @@
 
 <script setup lang="ts">
 
-import { onBeforeMount, ref, computed, watch } from 'vue'
+import { ref, computed, watch } from 'vue'
 
 import { tracksStore } from '../stores/tracks'
 import { choicesStore } from '../stores/choices'
@@ -251,11 +251,7 @@ const allowMultiple: boolean = !!track?.behavior?.multipleChoices
 const trackOperator: boolean = track?.behavior?.operator || false
 const optionsArray: any[] = track?.options.filter( (o: TrackOptions) => !o.disabled) || []
 
-onBeforeMount(() => {
-  // if track.component
-})
-
-// Computed
+// computed
 const isTrackResults = computed(() => {
   return track?.interface.component === 'results'
 })
@@ -285,17 +281,18 @@ const colsWidth = computed(() => {
   }
 })
 
-// Getters
-const isActiveChoice = (value: string | number) => {
+// getters
+const isActiveChoice = (value: string | number | undefined) => {
+  // console.log('TeeTrack > isActiveChoice > value :', value)
   // console.log('TeeTrack > isActiveChoice > selectionValues :', selectionValues)
   return selectionValues.value.includes(value)
 }
 
 const updateSelection = (option: any, forceRemove: boolean = false) => {
-  console.log('TeeTrack > updateSelection > option :', option)
-  const isActive = !forceRemove && isActiveChoice(option.value)
+  // console.log('TeeTrack > updateSelection > option :', option)
+  const isActive = isActiveChoice(option.value)
   let remove = false
-  if (!isActive) {
+  if (!isActive && !forceRemove) {
     if (allowMultiple) {
       selectedOptions.value.push(option)
     } else {
@@ -354,7 +351,7 @@ watch(() => props.isCompleted, ( next ) => {
   }
 })
 
-// Actions
+// functions
 const saveSelection = () => {
   // console.log()
   // console.log('TeeTrack > updateStore > option :', option)

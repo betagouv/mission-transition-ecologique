@@ -99,7 +99,7 @@ export interface TrackOptions {
   label: Translations,
   info?: Translations,
   placeholder?: Translations,
-  postInput?: Translations,
+  postResponses?: Translations,
   intro?: Translations,
   fields?: TrackOptionsField,
   hint?: Translations,
@@ -108,6 +108,7 @@ export interface TrackOptions {
 
 export interface TrackOptionsInput extends TrackOptions {
   placeholder: Translations,
+  defaultInput?: string | number,
   callbacks? : any,
   wildcard?: any
 }
@@ -231,23 +232,30 @@ export interface Comp {
 
 // FOR REQUESTS
 
-
 export interface ResultsMapping {
   respFields: string[],
+  position?: string,
   label?: string,
   icon?: string,
   class?: string,
   sep?: string,
   style?: string
 }
-export interface ReqResp {
-  action?: CallbackActions,
+
+export interface ReqError {
+  ok?: boolean,
   status?: number,
+  statusText?: string,
+}
+export interface ReqResp extends ReqError {
+  action?: CallbackActions,
   code?: string,
   message?: string,
   data?: any,
+  raw?: any,
   resultsMapping?: ResultsMapping[]
 }
+
 
 // FOR EMAILING
 
@@ -261,15 +269,18 @@ enum DataMappingFroms {
   formData = 'formData',
   usedTracks = 'usedTracks',
   props = 'props',
+  rawData = 'rawData',
 }
 export interface FormCallbackDataMapping {
   from: DataMappingFroms,
   id: string,
+  path?: string,
   dataField: string,
   asArray?: boolean
   sep?: string
   type?: string,
-  subKey?: string
+  subKey?: string,
+  onlyRemap?: boolean
 }
 
 enum CallbackMethods {
@@ -295,5 +306,6 @@ export interface FormCallback {
   method: CallbackMethods,
   dataStructure: object | object[],
   dataMapping: FormCallbackDataMapping[]
+  dataCleaning?: any[],
   resultsMapping?: ResultsMapping[]
 }

@@ -6,7 +6,8 @@ export const frDict = {
   modify: 'modifier',
   licence: 'Ce widget et son code source sont sous licence',
   selection: {
-    selected: 'Ma sélection'
+    mySelection: 'Ma sélection',
+    selected: 'Sélectionné'
   },
   form: {
     mandatory: "Champs obligatoires",
@@ -29,6 +30,9 @@ export const frDict = {
     alertDescription: "Vous pouvez également nous envoyer un mail via le formulaire ci-après pour être mis en contact avec des conseillers",
     yourResults: 'Vos résultats',
     fittingPrograms: 'Les aides correspondant à vos choix',
+  },
+  errors: {
+    error: "Erreur"
   },
   program: {
     programResume: "Le dispositif en deux mots",

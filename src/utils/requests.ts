@@ -1,6 +1,6 @@
 import type { MetaEnv, UsedTrack, FormCallback } from '@/types/index'
 import { toRaw } from 'vue'
-import { setProperty  } from './helpers'
+import { remapItem  } from './helpers'
 
 export const buildHeaders = (metaEnv: MetaEnv | any, callback: FormCallback) => {
   // console.log()
@@ -22,22 +22,6 @@ export const buildHeaders = (metaEnv: MetaEnv | any, callback: FormCallback) => 
   // console.log('utils > emailing > buildHeaders >  headers :', headers)
 
   return headers
-}
-
-export const findInTracksArray = (tracksArray: object[], id: string) => {
-  // console.log()
-  // console.log('utils > emailing > findInTracksArray >  tracksArray :', tracksArray)
-  // console.log('utils > emailing > findInTracksArray >  id :', id)
-
-  let value = undefined
-  const valObj: any = tracksArray.find((v: object) => {
-    // console.log('utils > emailing > findInTracksArray >  v :', v)
-    return Object.keys(v).includes(id)
-  })
-  // console.log('utils > emailing > findInTracksArray >  valObj :', valObj)
-  value =  typeof valObj === 'object' ? valObj[id] : ''
-  // console.log('utils > emailing > findInTracksArray >  value :', value)
-  return value
 }
 
 export const sendApiRequest = async (callback: FormCallback, formData: object | any, usedTrack: UsedTrack[] = [], props: object | any = undefined) => {
@@ -67,45 +51,12 @@ export const sendApiRequest = async (callback: FormCallback, formData: object | 
 
   let data: any = callback.dataStructure || {}
 
-  const dataMapping = callback.dataMapping
+  const dataMapping = callback.dataMapping.filter(dm => !dm.onlyRemap)
   // const listIds = metaEnv[callback.envListIds].split(',').map((id: string) => parseInt(id))
   // console.log('utils > emailing > sendApiRequest >  dataMapping :', dataMapping)
   // console.log('utils > emailing > sendApiRequest >  listIds :', listIds)
 
-  dataMapping.forEach(dm => {
-    // console.log('utils > emailing > sendApiRequest >  dm :', dm)
-    let value: any = ''
-    switch (dm.from) {
-      case 'env':
-        value = metaEnv[dm.id]
-        break
-      case 'formData':
-        value = formData[dm.id]
-        break
-      case 'usedTracks':
-        value = findInTracksArray(trackValues, dm.id)
-        break
-      case 'props':
-        value = props && props[dm.id]
-        break
-      default:
-        value = ''
-    }
-    // parse as array
-    if (dm.asArray) {
-      value = value.split( dm.sep || ',')
-      if (dm.type === 'integer') { value = value.map((v: string) => parseInt(v)) }
-    }
-    // as integer
-    if (!dm.asArray && dm.type === 'integer') {
-      value = parseInt(value)
-    }
-    // console.log('utils > emailing > sendApiRequest >  value :', value)
-
-    // set in data body
-    data = setProperty(data, dm.dataField, value)
-    // console.log('utils > emailing > sendApiRequest >  data :', data)
-  })
+  data = remapItem(data, dataMapping, formData, trackValues, props)
   // console.log('utils > emailing > sendApiRequest >  data :', data)
   const body = JSON.stringify(data)
   // console.log('utils > emailing > sendApiRequest >  body :', body)
@@ -127,10 +78,13 @@ export const sendRequest = async (url: string, method: string, headers: any, bod
     headers: headers,
     body: body
   })
-  // console.log('utils > emailing > sendRequest >  response :', response)
+  console.log('utils > emailing > sendRequest >  response :', response)
   const respJson = await response.json()
   respJson.action = action
+  respJson.ok = response.ok
   respJson.status = response.status
+  respJson.statusText = response.statusText
+  respJson.url = response.url
   // console.log('utils > emailing > sendRequest >  respJson :', respJson)
   
   return respJson

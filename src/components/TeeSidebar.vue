@@ -15,7 +15,7 @@
 
   <!-- LIST OF USED TRACKS + MODIFY CHOICE -->
   <!-- fr-ri-check-fill -->
-  <p
+  <div
     v-for="usedTrack in usedTracks"
     :key="usedTrack.id"
     class="fr-mb-1v">
@@ -25,9 +25,9 @@
       :disabled="!usedTrack.completed"
       tertiary
       no-outline
-      @click="backToTrack(usedTrack.id)">
-    </DsfrButton>
-    <div v-if="usedTrack.completed && usedTrack.selected.length">
+      @click="backToTrack(usedTrack.id)"/>
+    <template
+      v-if="usedTrack.completed && usedTrack.selected.length">
       <p
         v-for="(vt, idx) in usedTrack.selected"
         :key="`${usedTrack.id}-${idx}`"
@@ -35,8 +35,8 @@
         <span class="fr-icon-check-line fr-icon--sm" aria-hidden="true"></span>
         {{ vt.title[choices.lang] }}
       </p>
-    </div>
-  </p>
+    </template>
+  </div>
 </template>
 
 <script setup lang="ts">
