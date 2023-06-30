@@ -48,6 +48,7 @@ export const frDict = {
     diag: 'Diagnostic'
   },
   enterprise: {
-    select: 'Sélectionnez votre entreprise'
+    select: 'Sélectionnez votre entreprise',
+    noStructureFound: "Aucune structure n'a été trouvée."
   }
 }

@@ -1,5 +1,34 @@
-import type { FormCallbackDataMapping } from '@/types/index'
+// @ts-ignore
+import nafCodesJson from '@public/data/references/naf_codes_flat.json'
 
+enum NafCodeFields {
+  tags = 'tags',
+  NIV5 = 'NIV5',
+  NIV4 = 'NIV4',
+  NIV3 = 'NIV3',
+  NIV2 = 'NIV2',
+  NIV1 = 'NIV1',
+  label_vf = 'label_vf',
+}
+interface NafCode {
+  tags: string[],
+  NIV5: string,
+  NIV4: string,
+  NIV3: string,
+  NIV2: string,
+  NIV1: string,
+  label_vf: string,
+}
+interface Refs {
+  nafCodes: NafCode[]
+}
+const refs: Refs = {
+  nafCodes: nafCodesJson
+}
+
+import type { FormCallbackDataMapping, CleanerReplaceAll, CleanerFromJson, FindInRefs } from '@/types/index'
+
+// GENERIC HELPERS
 
 export const getFrom = (from: any, selectors: string[]) =>
   // console.log('utils > helpers > getFrom >  selectors :', selectors)
@@ -47,6 +76,52 @@ export const findInTracksArray = (tracksArray: object[], id: string) => {
   return value
 }
 
+// HELPERS FOR CLEANING AND REMAP
+
+export const replaceAll = (value: any, cleaner: CleanerReplaceAll) => {
+  const re = new RegExp(cleaner.stringToReplace, 'g')
+  const val = String(value).replace(re, cleaner.replaceBy)
+  return val
+}
+
+export const findFromRefs = (value: string, cleaner: CleanerFromJson) => {
+  let val = value
+  console.log('utils > helpers > findFromJson >  cleaner :', cleaner)
+
+  const findInRef = cleaner.findInRef
+  const fromField = cleaner.findFromField
+  const targetField = cleaner.retrieveFromField
+  const json = refs[findInRef]
+  // @ts-ignore
+  const obj: object = json.find(item => item[fromField] === value)
+
+  console.log('utils > helpers > findFromJson >  json :', json)
+  console.log('utils > helpers > findFromJson >  obj :', obj)
+  
+  // @ts-ignore
+  val = obj && obj[targetField]
+
+  return val
+}
+
+export const cleanValue = (value: any, cleaners: CleanerReplaceAll[] | CleanerFromJson[]) => {
+  console.log('utils > helpers > cleanValue > value :', value)
+  let val = value
+  cleaners.forEach((cleaner: CleanerReplaceAll | CleanerFromJson) => {
+    console.log('utils > helpers > cleanValue > cleaner :', cleaner)
+    switch (cleaner.operation) {
+      case 'replaceAll':
+        val = replaceAll(val, <CleanerReplaceAll>cleaner)
+        break
+      case 'findFromRefs':
+        val = findFromRefs(val, <CleanerFromJson>cleaner)
+        break 
+    }
+  })
+  console.log('utils > helpers > cleanValue > val :', val)
+  return val
+}
+
 export const remapItem = (
   dataStructure: object,
   dataMapping: FormCallbackDataMapping[],
@@ -56,12 +131,14 @@ export const remapItem = (
   rawData: object | any = undefined
   ) => {
   
+  console.log()
   console.log('utils > helpers > remapItem >  dataStructure :', dataStructure)
   let data = { ...dataStructure }
   const metaEnv = import.meta.env
   // console.log('utils > helpers > remapItem >  metaEnv :', metaEnv)
   
   dataMapping.forEach(dm => {
+    console.log()
     console.log('utils > helpers > remapItem >  dm :', dm)
     let value: any = ''
     switch (dm.from) {
@@ -78,11 +155,19 @@ export const remapItem = (
         value = props && props[dm.id]
         break
       case 'rawData':
+        console.log('utils > helpers > remapItem >  rawData :', rawData)
         value = dm.path && getFromOnePath(rawData, dm.path )
         break
       default:
         value = ''
     }
+
+    // clean value if necessary
+    if (dm.cleaning) {
+      value = cleanValue(value, dm.cleaning)
+    }
+    // console.log('utils > helpers > remapItem >  value :', value)
+
     // parse as array
     if (dm.asArray) {
       value = value.split( dm.sep || ',')

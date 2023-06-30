@@ -239,7 +239,8 @@ export interface ResultsMapping {
   icon?: string,
   class?: string,
   sep?: string,
-  style?: string
+  style?: string,
+  cleaning?: CleanerReplaceAll[] | CleanerFromJson[]
 }
 
 export interface ReqError {
@@ -280,7 +281,8 @@ export interface FormCallbackDataMapping {
   sep?: string
   type?: string,
   subKey?: string,
-  onlyRemap?: boolean
+  onlyRemap?: boolean,
+  cleaning?: CleanerReplaceAll[] | CleanerFromJson[]
 }
 
 enum CallbackMethods {
@@ -289,9 +291,30 @@ enum CallbackMethods {
   put = 'PUT',
 }
 enum CallbackActions {
-  getSiretInfos = 'getSiretInfos',
+  requestAPI = 'requestAPI',
   createContact = 'createContact',
   sendTransactionalEmail = 'sendTransactionalEmail'
+}
+enum CleanerOperations {
+  replaceAll = 'replaceAll',
+  findFromRefs = 'findFromRefs',
+}
+
+export interface Cleaner {
+  operation: CleanerOperations,
+}
+export interface CleanerReplaceAll extends Cleaner {
+  stringToReplace: string,
+  replaceBy: string, 
+}
+
+export enum FindInRefs {
+  nafCodes= 'nafCodes'
+}
+export interface CleanerFromJson extends Cleaner {
+  findInRef: FindInRefs,
+  findFromField: string,
+  retrieveFromField: string,
 }
 
 export interface FormCallback {
@@ -306,6 +329,6 @@ export interface FormCallback {
   method: CallbackMethods,
   dataStructure: object | object[],
   dataMapping: FormCallbackDataMapping[]
-  inputCleaning?: any[],
+  inputCleaning?: CleanerReplaceAll[] | CleanerFromJson[],
   resultsMapping?: ResultsMapping[]
 }

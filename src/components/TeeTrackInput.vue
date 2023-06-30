@@ -16,18 +16,13 @@
       </div>
     </div>
   </div>
+
   <!-- INPUT -->
   <label 
     class="fr-label fr-mb-2v"
     :for="`input-${option.id}`">
     {{ option.label[choices.lang] }}
   </label>
-  <!-- <p>
-    inputValue : 
-    <code>
-      {{ inputValue }}
-    </code>
-  </p> -->
   <div
     class="fr-search-bar" 
     id="header-search"
@@ -50,22 +45,26 @@
     </button>
   </div>
 
-  <!-- WILDCARD -->
-  <DsfrButton 
-    v-if="option.wildcard && !requestResponses.length"
-    class="fr-mt-4v fr-hint-text"
-    icon="ri-ball-pen-fill"
-    tertiary
-    no-outline
-    @click="goToNextTrack">
-    {{ option.wildcard.label[choices.lang] }}
-  </DsfrButton>
-
   <!-- RESPONSE ERRORS -->
   <div
     v-if="requestErrors.length"
-    class="fr-mt-4v">
-    <div 
+    class="fr-mt-6v">
+    <p class="fr-mb-0 fr-error-text">
+      {{ choices.t('enterprise.noStructureFound') }}
+      (
+      <span
+        v-for="(err, i) in requestErrors"
+        :key="`resp-error-${i}`">
+        {{ choices.t('errors.error') }} {{ err.status }}
+      </span>
+      )
+      &nbsp;
+      <span 
+        v-if="option.postResponses"
+        v-html="option.postResponses[choices.lang]">
+      </span>
+    </p>
+    <!-- <div 
       v-for="(err, i) in requestErrors"
       :key="`resp-error-${i}`"
       class="fr-alert fr-alert--warning">
@@ -79,8 +78,20 @@
           {{ err.statusText }}
         </code>
       </p>
-    </div>
+    </div> -->
+    <!-- PostInput -->
   </div>
+  
+  <!-- WILDCARD -->
+  <DsfrButton 
+    v-if="option.wildcard && !requestResponses.length"
+    class="fr-mt-4v fr-hint-text fr-pl-0"
+    icon="ri-ball-pen-fill"
+    tertiary
+    no-outline
+    @click="goToNextTrack">
+    {{ option.wildcard.label[choices.lang] }}
+  </DsfrButton>
 
   <!-- RESPONSES -->
   <div
@@ -175,7 +186,7 @@
   <template
     v-if="option.postResponses">
     <p 
-      v-if="requestErrors.length || (requestResponses.length && !hasSelection)"
+      v-if="!requestErrors.length && requestResponses.length && !hasSelection"
       class="fr-mt-3v fr-hint-text"
       v-html="option.postResponses[choices.lang]">
     </p>
@@ -188,8 +199,12 @@
     <h5>DEBUG - TeeTrackInput</h5>
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
       <div class="fr-col-6">
-        <h6 class="fr-mb-1v"> selection :</h6>
-        <code><pre>{{ selection }}</pre></code>
+        <h6 class="fr-mb-1v"> selection.data :</h6>
+        <code><pre>{{ selection.data }}</pre></code>
+      </div>
+      <div class="fr-col-6">
+        <h6 class="fr-mb-1v"> selection.raw :</h6>
+        <code><pre>{{ selection.raw }}</pre></code>
       </div>
     </div>
   </div>
@@ -207,7 +222,7 @@ import { analyticsStore } from '../stores/analytics'
 import type { TrackOptionsInput, UsedTrack, ReqResp, ReqError, FormCallback, ResultsMapping } from '@/types/index'
 
 import { sendApiRequest } from '../utils/requests'
-import { getFrom, remapItem } from '../utils/helpers'
+import { getFrom, remapItem, cleanValue } from '../utils/helpers'
 
 interface Props {
   trackId: string,
@@ -266,8 +281,7 @@ const resetSelection = () => {
   hasSelection.value = false
 }
 
-const processInput = async (ev: any) => {
-  console.log('TeeTrackInput > processInput > ev :', ev)
+const processInput = async () => {
   // console.log('TeeTrackInput > processInput > track :', track)
   // console.log('TeeTrackInput > processInput > props.option :', props.option)
   
@@ -287,20 +301,12 @@ const processInput = async (ev: any) => {
     let value = inputValue.value
     // Clean input value
     if (callback.inputCleaning) {
-      callback.inputCleaning.forEach((cleaner: any) => {
-        // console.log('TeeTrackInput > processInput >  cleaner :', cleaner)
-        switch (cleaner.operation) {
-          case 'replaceAll':
-            var re = new RegExp(cleaner.stringToReplace, 'g')
-            value = String(value).replace(re, cleaner.replaceBy)
-            break 
-        }
-      })
+      value = cleanValue(value, callback.inputCleaning)
     }
     // console.log('TeeTrackInput > processInput > value :', value)
     let resp: ReqResp = {}
     switch (callback.action) {
-      case 'getSiretInfos':
+      case 'requestAPI':
         resp = await sendApiRequest(callback, {inputValue: value}, usedTracks, props)
         break
     }
@@ -354,16 +360,15 @@ const goToNextTrack = () => {
 }
 
 const selectItem = (item: any) => {
-  console.log()
-  console.log('TeeTrackInput > selectItem > hasSelection.value (A) :', hasSelection.value)
-  
-  console.log('TeeTrackInput > selectItem > item :', item)
+  // console.log()
+  // console.log('TeeTrackInput > selectItem > hasSelection.value (A) :', hasSelection.value)
+  // console.log('TeeTrackInput > selectItem > item :', item)
 
   selection.value = hasSelection.value ? undefined : item
-  console.log('TeeTrackInput > selectItem > hasSelection.value (B) :', hasSelection.value)
+  // console.log('TeeTrackInput > selectItem > hasSelection.value (B) :', hasSelection.value)
   
   hasSelection.value = !hasSelection.value
-  console.log('TeeTrackInput > selectItem > selection.value (C) :', selection.value)
+  // console.log('TeeTrackInput > selectItem > selection.value (C) :', selection.value)
   const data = {
     option: {
       ...props.option,

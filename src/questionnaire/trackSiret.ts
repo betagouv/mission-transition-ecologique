@@ -4,6 +4,8 @@ const dataTarget = {
   ville: '',
   codePostal: '',
   structure_sizes: '',
+  denomination: '',
+  label_sectors: undefined,
   project_sectors: undefined
 }
 
@@ -30,14 +32,14 @@ export const siret = {
       label: { fr: "Renseignez le SIRET de votre entreprise" },
       placeholder: { fr: 'ex : 830 141 321 00034' },
       defaultInput: '830 141 321 00034',
-      postResponses: { fr: 'Vous ne retrouvez pas votre SIRET ? <a href="https://annuaire-entreprises.data.gouv.fr/" target="_blank">Cliquez ici</a>' },
+      postResponses: { fr: 'Vous ne retrouvez pas votre SIRET ?&nbsp;<a href="https://annuaire-entreprises.data.gouv.fr/" target="_blank">Cliquez ici</a>' },
       // required: false,
       callbacks: [
         {
           disabled: false,
           help: 'Get entreprise data from its SIRET number',
           helpDocumentation: 'https://tee-backend-test.osc-fr1.scalingo.io/api/docs',
-          action: 'getSiretInfos',
+          action: 'requestAPI',
           url: 'https://tee-backend-test.osc-fr1.scalingo.io/api/insee/get_by_siret',
           urlLocal: 'https://tee-backend-test.osc-fr1.scalingo.io/api/insee/get_by_siret',
           method: 'POST',
@@ -55,8 +57,46 @@ export const siret = {
             {
               from: 'rawData',
               id: 'naf',
+              help: 'https://www.insee.fr/fr/information/2120875',
               path: 'etablissement.uniteLegale.activitePrincipaleUniteLegale',
               dataField: 'codeNaf',
+              onlyRemap: true
+            },
+            {
+              from: 'rawData',
+              id: 'sector',
+              path: 'etablissement.uniteLegale.activitePrincipaleUniteLegale',
+              dataField: 'project_sectors',
+              onlyRemap: true,
+              cleaning: [
+                {
+                  operation: 'findFromRefs',
+                  findInRef: 'nafCodes',
+                  findFromField: 'NIV5',
+                  retrieveFromField: 'tags'
+                }
+              ]
+            },
+            {
+              from: 'rawData',
+              id: 'sectorLabel',
+              path: 'etablissement.uniteLegale.activitePrincipaleUniteLegale',
+              dataField: 'label_sectors',
+              onlyRemap: true,
+              cleaning: [
+                {
+                  operation: 'findFromRefs',
+                  findInRef: 'nafCodes',
+                  findFromField: 'NIV5',
+                  retrieveFromField: 'label_vf'
+                }
+              ]
+            },
+            {
+              from: 'rawData',
+              id: 'denomination',
+              path: 'etablissement.uniteLegale.denominationUniteLegale',
+              dataField: 'denomination',
               onlyRemap: true
             },
             {
@@ -91,8 +131,8 @@ export const siret = {
           resultsMapping: [
             {
               respFields: [
-                'raw.etablissement.uniteLegale.denominationUniteLegale',
-                'raw.etablissement.siret'
+                'data.denomination',
+                'data.siret'
               ],
               position: 'title',
               // label: 'entité',
@@ -105,14 +145,14 @@ export const siret = {
                 'raw.etablissement.adresseEtablissement.numeroVoieEtablissement',
                 'raw.etablissement.adresseEtablissement.typeVoieEtablissement',
                 'raw.etablissement.adresseEtablissement.libelleVoieEtablissement',
-                'raw.etablissement.adresseEtablissement.codePostalEtablissement',
-                'raw.etablissement.adresseEtablissement.libelleCommuneEtablissement',
+                'data.codePostal',
+                'data.ville',
               ],
               // label: 'Adresse',
               icon: 'fr-icon-map-pin-2-line'
             },
             {
-              respFields: ['raw.etablissement.uniteLegale.categorieEntreprise'],
+              respFields: ['data.structure_sizes'],
               label: 'Catégorie',
               icon: 'fr-icon-parent-line'
             },
@@ -123,8 +163,13 @@ export const siret = {
               icon: 'fr-icon-time-line'
             },
             {
-              respFields: ['raw.etablissement.uniteLegale.activitePrincipaleUniteLegale'],
+              respFields: ['data.codeNaf'],
               label: 'Code NAF',
+              icon: 'fr-icon-briefcase-line'
+            },
+            {
+              respFields: ['data.label_sectors'],
+              label: "Secteur d'activité",
               icon: 'fr-icon-briefcase-line'
             },
             // {

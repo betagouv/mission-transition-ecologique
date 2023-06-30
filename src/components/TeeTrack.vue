@@ -116,9 +116,10 @@
       <!-- AS BUTTONS -->
       <div 
         v-if="renderAs === 'buttons'"
+        style="height: 100%;"
         >
         <DsfrButton
-          style="width: -moz-available !important; width: 100%;"
+          style="width: 100% !important;"
           :label="option.label[choices.lang]" 
           :icon="getButtonIcon(option.value)"
           :secondary="!isActiveChoice(option.value)"
@@ -129,6 +130,7 @@
       <!-- AS INPUT -->
       <div 
         v-if="renderAs === 'input'"
+        style="height: 100%;"
         >
         <TeeTrackInput
           :track-id="trackId"
@@ -320,12 +322,12 @@ const updateSelection = (option: any, forceRemove: boolean = false) => {
 }
 
 const updateSelectionFromSignal = (ev: any) => {
-  console.log('TeeTrack > updateSelectionFromSignal > ev :', ev)
+  // console.log('TeeTrack > updateSelectionFromSignal > ev :', ev)
   updateSelection(ev.option, ev.remove)
 }
 
 const saveSelectionFromSignal = (ev: any) => {
-  console.log('TeeTrack > saveSelectionFromSignal > ev :', ev)
+  // console.log('TeeTrack > saveSelectionFromSignal > ev :', ev)
   updateSelection(ev.option)
   saveSelection()
 }
