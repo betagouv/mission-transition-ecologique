@@ -49,16 +49,25 @@
   <div
     v-if="requestErrors.length"
     class="fr-mt-6v">
-    <p class="fr-mb-0 fr-error-text">
+    <p class="fr-mb-0 fr-error-text" style="display: block;">
+      <!-- <span class="fr-icon-error-line" aria-hidden="true"></span> -->
       {{ choices.t('enterprise.noStructureFound') }}
-      (
-      <span
-        v-for="(err, i) in requestErrors"
-        :key="`resp-error-${i}`">
-        {{ choices.t('errors.error') }} {{ err.status }}
+      
+      <!-- DEBUGGING / ERROR CODE -->
+      <span v-if="debug">
+        (
+        <span
+          v-for="(err, i) in requestErrors"
+          :key="`resp-error-${i}`">
+          {{ choices.t('errors.error') }} {{ err.status }}
+        </span>
+        )
       </span>
-      )
+      
       &nbsp;
+      <br>
+    <!-- </p>
+    <p class="fr-mb-0 fr-error-text"> -->
       <span 
         v-if="option.postResponses"
         v-html="option.postResponses[choices.lang]">
@@ -79,30 +88,9 @@
         </code>
       </p>
     </div> -->
-    <!-- PostInput -->
   </div>
   
-  <!-- WILDCARD -->
-  <!-- icon="ri-ball-pen-fill" -->
-  <!-- <DsfrButton 
-    v-if="option.wildcard && !requestResponses.length"
-    class="fr-mt-4v fr-hint-text fr-pl-0"
-    tertiary
-    no-outline
-    @click="goToNextTrack">
-    {{ option.wildcard.label[choices.lang] }}
-  </DsfrButton> -->
-  <p
-    v-if="option.wildcard && !requestResponses.length"
-    class="fr-mt-6v">
-    {{ choices.t('or') }}
-    <a
-      class="fr-link"
-      href="#"
-      @click="goToNextTrack">
-      {{ option.wildcard.label[choices.lang] }}
-    </a>
-  </p>
+
 
   <!-- RESPONSES -->
   <div
@@ -116,7 +104,7 @@
     <div
       v-for="(resp, i) in requestResponses"
       :key="`resp-input-${i}`"
-      class="fr-card fr-enlarge-link"
+      class="fr-card fr-card--shadow fr-enlarge-link"
       @click="selectItem(resp)">
       <div class="fr-card__body">
         <div class="fr-card__content fr-py-4v fr-px-4v">
@@ -192,7 +180,29 @@
     </div>
 
   </div>
-  
+
+  <!-- WILDCARD -->
+  <!-- icon="ri-ball-pen-fill" -->
+  <!-- <DsfrButton 
+    v-if="option.wildcard && !requestResponses.length"
+    class="fr-mt-4v fr-hint-text fr-pl-0"
+    tertiary
+    no-outline
+    @click="goToNextTrack">
+    {{ option.wildcard.label[choices.lang] }}
+  </DsfrButton> -->
+  <p
+    v-if="option.wildcard && !hasSelection"
+    class="fr-mt-6v">
+    {{ choices.t('or') }}
+    <a
+      class="fr-link"
+      href="#"
+      @click="goToNextTrack">
+      {{ option.wildcard.label[choices.lang] }}
+    </a>
+  </p>
+
   <!-- PostInput -->
   <template
     v-if="option.postResponses">
@@ -279,7 +289,11 @@ watch(() => inputValue.value, (next) => {
 
 // getters
 const getFromField = (resp: any, resMap: ResultsMapping) => {
-  const val = getFrom(resp, resMap.respFields).join( resMap.sep || ' ')
+  let val = getFrom(resp, resMap.respFields).join( resMap.sep || ' ')
+  if (resMap.cleaning) {
+    // console.log('TeeTrackInput > getFromField > resMap.cleaning :', resMap.cleaning)
+    val = cleanValue(val, resMap.cleaning)
+  }
   return val
 } 
 

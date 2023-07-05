@@ -282,7 +282,7 @@ export interface FormCallbackDataMapping {
   type?: string,
   subKey?: string,
   onlyRemap?: boolean,
-  cleaning?: CleanerReplaceAll[] | CleanerFromJson[]
+  cleaning?: CleanerReplaceAll[] | CleanerFromJson[] | CleanerFromDict[]
 }
 
 enum CallbackMethods {
@@ -298,6 +298,7 @@ enum CallbackActions {
 enum CleanerOperations {
   replaceAll = 'replaceAll',
   findFromRefs = 'findFromRefs',
+  findFromDict = 'findFromDict',
 }
 
 export interface Cleaner {
@@ -317,6 +318,9 @@ export interface CleanerFromJson extends Cleaner {
   retrieveFromField: string,
 }
 
+export interface CleanerFromDict extends Cleaner {
+  dict: any, 
+}
 export interface FormCallback {
   disabled?: boolean,
   help?: string | string[],
@@ -329,6 +333,6 @@ export interface FormCallback {
   method: CallbackMethods,
   dataStructure: object | object[],
   dataMapping: FormCallbackDataMapping[]
-  inputCleaning?: CleanerReplaceAll[] | CleanerFromJson[],
+  inputCleaning?: CleanerReplaceAll[] | CleanerFromJson[] | CleanerFromDict[],
   resultsMapping?: ResultsMapping[]
 }

@@ -26,7 +26,7 @@ const refs: Refs = {
   nafCodes: nafCodesJson
 }
 
-import type { FormCallbackDataMapping, CleanerReplaceAll, CleanerFromJson, FindInRefs } from '@/types/index'
+import type { FormCallbackDataMapping, CleanerReplaceAll, CleanerFromJson, CleanerFromDict, FindInRefs } from '@/types/index'
 
 // GENERIC HELPERS
 
@@ -104,10 +104,16 @@ export const findFromRefs = (value: string, cleaner: CleanerFromJson) => {
   return val
 }
 
-export const cleanValue = (value: any, cleaners: CleanerReplaceAll[] | CleanerFromJson[]) => {
+export const findFromDict = (value: string, cleaner: CleanerFromDict) => {
+  const dict = cleaner.dict
+  const val = dict[value] || value
+  return val
+}
+
+export const cleanValue = (value: any, cleaners: CleanerReplaceAll[] | CleanerFromJson[] | CleanerFromDict[]) => {
   console.log('utils > helpers > cleanValue > value :', value)
   let val = value
-  cleaners.forEach((cleaner: CleanerReplaceAll | CleanerFromJson) => {
+  cleaners.forEach((cleaner: CleanerReplaceAll | CleanerFromJson | CleanerFromDict) => {
     console.log('utils > helpers > cleanValue > cleaner :', cleaner)
     switch (cleaner.operation) {
       case 'replaceAll':
@@ -115,6 +121,9 @@ export const cleanValue = (value: any, cleaners: CleanerReplaceAll[] | CleanerFr
         break
       case 'findFromRefs':
         val = findFromRefs(val, <CleanerFromJson>cleaner)
+        break
+      case 'findFromDict':
+        val = findFromDict(val, <CleanerFromDict>cleaner)
         break 
     }
   })

@@ -154,7 +154,16 @@ export const siret = {
             {
               respFields: ['data.structure_sizes'],
               label: 'Catégorie',
-              icon: 'fr-icon-parent-line'
+              icon: 'fr-icon-parent-line',
+              cleaning: [
+                {
+                  operation: 'findFromDict',
+                  dict: {
+                    PME: 'PME (entre 20 et 250 salarié.e.s)',
+                    TPE: 'TPE (entre 1 et 19 salarié.e.s)'
+                  }
+                }
+              ]
             },
             {
               respFields: ['raw.etablissement.uniteLegale.dateCreationUniteLegale'],
