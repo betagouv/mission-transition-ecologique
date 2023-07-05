@@ -63,11 +63,8 @@
         </span>
         )
       </span>
-      
-      &nbsp;
-      <br>
-    <!-- </p>
-    <p class="fr-mb-0 fr-error-text"> -->
+      <!-- postResponses -->
+      <br v-if="option.postResponses">
       <span 
         v-if="option.postResponses"
         v-html="option.postResponses[choices.lang]">
@@ -104,7 +101,8 @@
     <div
       v-for="(resp, i) in requestResponses"
       :key="`resp-input-${i}`"
-      class="fr-card fr-card--shadow fr-enlarge-link"
+      :class="`fr-card fr-enlarge-link ${isSelected(resp) ? 'fr-card--shadow' : ''}`"
+      :style="`border: ${isSelected(resp) ? 'solid thin #000091;' : 'solid thin #C4C4C4'};`"
       @click="selectItem(resp)">
       <div class="fr-card__body">
         <div class="fr-card__content fr-py-4v fr-px-4v">
@@ -115,7 +113,8 @@
             :key="`resp-input-${i}-field-title-${idx}`">
             <h3 
               v-if="resMap.position === 'title'"
-              :class="`fr-card__title ${resMap.class || 'fr-mb-2v'}`">
+              :class="`fr-card__title ${resMap.class || 'fr-mb-2v'}`"
+              :style="`${isSelected(resp) ? 'color: #000091;' : ''}`">
               <!-- IF SELECTED -->
               <!-- <span 
                 v-if="hasSelection"
@@ -125,11 +124,11 @@
               <span>
                 {{ getFromField(resp, resMap) }}
               </span>
-              <DsfrBadge 
-                v-if="hasSelection"
+              <!-- <DsfrBadge 
+                v-if="isSelected(resp)"
                 class="fr-ml-4v"
                 type="success"
-                :label="choices.t('selection.selected')"/>
+                :label="choices.t('selection.selected')"/> -->
             </h3>
           </template>
           
@@ -203,15 +202,15 @@
     </a>
   </p>
 
-  <!-- PostInput -->
-  <template
-    v-if="option.postResponses">
+  <!-- postResponses -->
+  <!-- <template
+    v-if="option.postResponses && !requestResponses.length">
     <p 
-      v-if="!requestErrors.length && requestResponses.length && !hasSelection"
+      v-if="!requestErrors.length && !hasSelection"
       class="fr-mt-3v fr-hint-text"
       v-html="option.postResponses[choices.lang]">
     </p>
-  </template>
+  </template> -->
 
   <!-- DEBUGGING -->
   <div
@@ -295,7 +294,12 @@ const getFromField = (resp: any, resMap: ResultsMapping) => {
     val = cleanValue(val, resMap.cleaning)
   }
   return val
-} 
+}
+
+const isSelected = (resp: any) => {
+  const bool = Boolean(resp === selection.value)
+  return bool
+}
 
 // functions
 const resetSelection = () => {
