@@ -31,7 +31,7 @@ export const siret = {
       title: { fr: 'SIRET' },
       label: { fr: "Renseignez le SIRET de votre entreprise" },
       placeholder: { fr: 'ex : 830 141 321 00034' },
-      defaultInput: '830 141 321 00034',
+      // defaultInput: '830 141 321 00034',
       postResponses: { fr: 'Vous ne retrouvez pas votre SIRET ?&nbsp;<a href="https://annuaire-entreprises.data.gouv.fr/" target="_blank">Cliquez ici</a>' },
       // required: false,
       callbacks: [
