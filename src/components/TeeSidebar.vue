@@ -19,7 +19,7 @@
     v-for="usedTrack in usedTracks"
     :key="usedTrack.id">
     <div
-      v-show="usedTrack.step > 0"
+      v-show="usedTrack.step > 1"
       class="fr-mb-1v">
       <DsfrButton
         :label="tracks.getTrackTitle(usedTrack.id, choices.lang)"
