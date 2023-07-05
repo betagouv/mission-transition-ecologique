@@ -4,6 +4,7 @@ export const frDict = {
   close: 'Fermer',
   send: 'Envoyer',
   modify: 'modifier',
+  or: 'Ou',
   licence: 'Ce widget et son code source sont sous licence',
   selection: {
     mySelection: 'Ma sélection',

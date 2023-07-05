@@ -83,15 +83,26 @@
   </div>
   
   <!-- WILDCARD -->
-  <DsfrButton 
+  <!-- icon="ri-ball-pen-fill" -->
+  <!-- <DsfrButton 
     v-if="option.wildcard && !requestResponses.length"
     class="fr-mt-4v fr-hint-text fr-pl-0"
-    icon="ri-ball-pen-fill"
     tertiary
     no-outline
     @click="goToNextTrack">
     {{ option.wildcard.label[choices.lang] }}
-  </DsfrButton>
+  </DsfrButton> -->
+  <p
+    v-if="option.wildcard && !requestResponses.length"
+    class="fr-mt-6v">
+    {{ choices.t('or') }}
+    <a
+      class="fr-link"
+      href="#"
+      @click="goToNextTrack">
+      {{ option.wildcard.label[choices.lang] }}
+    </a>
+  </p>
 
   <!-- RESPONSES -->
   <div

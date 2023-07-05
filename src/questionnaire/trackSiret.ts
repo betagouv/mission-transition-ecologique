@@ -41,7 +41,7 @@ export const siret = {
           helpDocumentation: 'https://tee-backend-test.osc-fr1.scalingo.io/api/docs',
           action: 'requestAPI',
           url: 'https://tee-backend-test.osc-fr1.scalingo.io/api/insee/get_by_siret',
-          urlLocal: 'https://tee-backend-test.osc-fr1.scalingo.io/api/insee/get_by_siret',
+          // url: 'http://localhost:8001/api/insee/get_by_siret',
           method: 'POST',
           headers: {
             accept: 'application/json',
@@ -195,7 +195,7 @@ export const siret = {
         default: 'track_roles'
       },
       wildcard: {
-        label: { fr: "Je préfère compléter mes informations manuellement" },
+        label: { fr: "je préfère compléter mes informations manuellement" },
         next: {
           default: 'track_structure_sizes',
         }
