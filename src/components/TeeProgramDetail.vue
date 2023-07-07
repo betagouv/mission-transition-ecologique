@@ -55,9 +55,10 @@
         </p>
 
         <!-- OPEN MODAL -> FORM -->
+        <!-- :label="choices.t('results.showForm', {title: program.title})" -->
         <DsfrButton 
           class="fr-mb-3v"
-          :label="choices.t('results.showForm', {title: program.title})"
+          :label="choices.t('results.knowMore')"
           secondary
           @click="toggleShowForm"
           ref="modalOrigin"/>

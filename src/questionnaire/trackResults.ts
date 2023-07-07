@@ -29,7 +29,7 @@ export const results = {
   form: {
     value: 'contact_form.email',
     label: { fr: 'Vous êtes intéressé.e par le dispositif {title} ?' },
-    hint: { fr: "Déposez votre demande, un conseiller vous rappelle dans les 5 jours."},
+    hint: { fr: "Posez votre question, un conseiller vous contactera dans les 5 jours"},
     intro: { fr: `
       <h2>
         <span

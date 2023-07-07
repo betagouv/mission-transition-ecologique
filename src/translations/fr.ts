@@ -24,6 +24,7 @@ export const frDict = {
   results: {
     backToResults: "Retour aux résultats",
     // showForm: "Candidatez pour le dispositif {title}",
+    knowMore: "En savoir plus",
     showForm: "En savoir plus sur {title}",
     alertTitle: "Merci, voici vos résultats",
     alertTitleNoResult: "Pas de résultats",
