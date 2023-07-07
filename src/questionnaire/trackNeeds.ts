@@ -3,8 +3,14 @@ export const needs = {
   category: 'needs',
   title: { fr: 'Mon besoin' },
   label: { fr: 'Votre besoin' },
+  callout: {
+    header: { fr: 'TPE, PME' },
+    title: { fr: 'Trouvez comment faire rimer écologie avec économies' },
+    bigTitle: true,
+    description: { fr: "Je complète mon profil en moins de 2 minutes, et je découvre comment faire des économies en réduisant mon impact environnemental." },
+  },
   interface: {
-    component: 'cards',
+    component: 'simpleButtons',
     columnWidth: 'auto',
   },
   behavior: {
@@ -13,13 +19,12 @@ export const needs = {
   },
   options: [
     {
-      disabled: true,
+      disabled: false,
       value: { project_needs: '*' },
-      title: { fr: 'Tout voir' },
-      label: { fr: "Je souhaite tout voir d'un coup même si je n'y connais rien" },
-      hint: { fr: "Oui, des fois on est juste très curieux... En vrai c'est pour tester mais faudra pas laisser ce bloc traîner quand on mettra en prod sinon les gens vont se foutre de notre gueule" },
+      title: { fr: '' },
+      label: { fr: "Je me lance !" },
       next: {
-        default: 'track_results'
+        default: 'track_goals'
       }
     },
     {
@@ -33,6 +38,7 @@ export const needs = {
       }
     },
     {
+      disabled: true,
       value: { project_needs: 'advices' },
       title: { fr: 'Conseils' },
       label: { fr: "Je souhaite être conseillé pour réduire mon impact environnemental" },
@@ -43,6 +49,7 @@ export const needs = {
       }
     },
     {
+      disabled: true,
       value: { project_needs: 'financing' },
       title: { fr: 'Financements' },
       label: { fr: "J’ai un projet de transition écologique et je cherche un financement" },

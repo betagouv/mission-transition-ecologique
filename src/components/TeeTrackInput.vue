@@ -191,7 +191,7 @@
     {{ option.wildcard.label[choices.lang] }}
   </DsfrButton> -->
   <p
-    v-if="option.wildcard && !hasSelection"
+    v-if="option.wildcard"
     class="fr-mt-6v">
     {{ choices.t('or') }}
     <a

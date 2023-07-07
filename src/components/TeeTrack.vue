@@ -47,11 +47,25 @@
     v-if="!isCompleted"
     class="fr-grid-row fr-grid-row--gutters"
     >
-  
+
+    <!-- CALLOUT -->
     <div 
       v-if="track.callout"
-      class="fr-callout fr-callout--green-emeraude">
-        <h3 class="fr-callout__title">
+      :class="`${track.callout.bigTitle ? 'fr-mb-10v fr-mx-0 fr-px-4v fr-container' : 'fr-callout'} ${track.callout.color || 'fr--grey-1000'}`">
+        <h2
+          v-if="track.callout.header"
+          style="color: var(--text-default-info);"
+          class="">
+          {{ track.callout.header[choices.lang]}}
+        </h2>
+        <h1
+          v-if="track.callout.bigTitle"
+          class="">
+          {{ track.callout.title[choices.lang]}}
+        </h1>
+        <h3
+          v-else
+          class="fr-callout__title">
           {{ track.callout.title[choices.lang]}}
         </h3>
         <p class="fr-callout__text">
@@ -162,6 +176,18 @@
         />
       </div>
 
+      <!-- AS SIMPLE BUTTONS -->
+      <div 
+        v-if="renderAs === 'simpleButtons'"
+        >
+        <DsfrButton
+          :label="option.label[choices.lang]" 
+          size="large"
+          style="font-weight: 1000;"
+          @click="updateSelection(option); saveSelection()"
+        />
+      </div>
+
       <!-- AS INPUT -->
       <div 
         v-if="renderAs === 'input'"
@@ -205,7 +231,7 @@
   
   <!-- SEND / NEXT BUTTON -->
   <div 
-    v-if="renderAs !== 'cards' && !isCompleted && !isTrackResults"
+    v-if="!noNeedForNext.includes(renderAs) && !isCompleted && !isTrackResults"
     class="fr-grid-row fr-grid-row--gutters fr-pt-8v">
     <div
       v-if="step > 1"
@@ -267,6 +293,11 @@ const colsOptions: ColsOptions = {
   modify: 2,
   results: 10,
 }
+
+const noNeedForNext = [
+  'cards',
+  'simpleButtons'
+]
 
 const tracks = tracksStore()
 const choices = choicesStore()

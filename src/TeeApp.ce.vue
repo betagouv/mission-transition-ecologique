@@ -78,7 +78,7 @@
       <!-- TRACKS INTERFACES -->
       <div class="fr-grid-row fr-grid-row-gutters fr-p-1v">
         
-        <!-- SIDEBAR MENU -->
+        <!-- SIDEBAR MENU (FIL D'ARIANE)-->
         <div
           v-if="tracks.currentStep > 1"
           class="fr-col-3"

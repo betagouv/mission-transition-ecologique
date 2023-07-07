@@ -5,7 +5,7 @@ import { defineStore } from 'pinia'
 import { tracks } from '../questionnaire'
 
 // @ts-ignore
-import type { Track, Translations, UsedTrack } from '@/types/index'
+import type { Translations, UsedTrack } from '@/types/index'
 
 const allTracks = ref(tracks)
 const seedTrack = ref()

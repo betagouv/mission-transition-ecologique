@@ -68,8 +68,11 @@ enum TrackCalloutType {
   info = 'info'
 }
 export interface TrackCallout {
+  header?: Translations,
   title: Translations,
+  bigTitle: boolean,
   description: Translations,
+  color?: string,
   type?: TrackCalloutType
   hintIcon?: string,
   hint?: Translations,
@@ -77,7 +80,8 @@ export interface TrackCallout {
 
 enum TrackComponents {
   cards = 'cards',
-  buttons = 'buttons'
+  buttons = 'buttons',
+  simpleButtons = 'simpleButtons'
 }
 export interface TrackInterface {
   component: TrackComponents,
@@ -194,6 +198,11 @@ enum FormFieldTypes {
   textarea = 'textarea',
   checkbox = 'checkbox',
 }
+
+export interface PreFill {
+  from: DataMappingFroms,
+  path: string,
+}
 export interface FormField {
   id: string,
   help?: string,
@@ -202,7 +211,8 @@ export interface FormField {
   hint?: any,
   cols?: number,
   type?: FormFieldTypes,
-  defaultValue?: boolean | string | number
+  defaultValue?: boolean | string | number,
+  preFillFrom?: PreFill
 }
 
 export interface FormOptions {
@@ -272,7 +282,7 @@ export interface ReqResp extends ReqError {
 }
 
 
-// FOR EMAILING
+// FOR EMAILING / REQUESTS
 
 export interface EmailData {
   name: string,

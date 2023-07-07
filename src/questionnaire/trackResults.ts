@@ -11,7 +11,8 @@ export const results = {
     static: true,
   },
   config: {
-    showAlert: true,
+    showAlertResults: false,
+    showAlertNoResults: true,
     showResultsTitle: false,
     showProgramInfos: false,
     showProgramSubtitles: false
@@ -78,6 +79,10 @@ export const results = {
         hint: { fr: '385 290 309 00454' },
         required: false,
         type: 'text',
+        preFillFrom: {
+          from: 'usedTracks',
+          id: 'user_siret',
+        },
         cols: 12,
         // for debugging purposes
         // defaultValue: '83014132100034'
