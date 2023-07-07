@@ -78,10 +78,11 @@
       <!-- TRACKS INTERFACES -->
       <div class="fr-grid-row fr-grid-row-gutters fr-p-1v">
         
-        <!-- SIDEBAR MENU -->
+        <!-- SIDEBAR MENU (FIL D'ARIANE)-->
         <div
-          v-show="tracks.currentStep > 1"
-          class="fr-col-3">
+          v-if="tracks.currentStep > 1"
+          class="fr-col-3"
+          style="height: 100%;">
           <TeeSidebar
             :used-tracks="tracks.usedTracks"
             :debug="debugBool"
@@ -90,7 +91,7 @@
 
         <!-- TRACKS -->
         <div 
-          :class="`fr-col-${debugBool ? 7 : tracks.currentStep > 1 ? 8 : 12 } ${debugBool ? '' : 'fr-grid-row--center'}`">
+          :class="`fr-col-${debugBool ? 7 : tracks.currentStep === 1 ? 12 : 8 } ${debugBool ? '' : 'fr-grid-row--center'}`">
           <div
             v-for="(track, index) in tracks.usedTracks"
             :key="track.id"
