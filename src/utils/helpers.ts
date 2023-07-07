@@ -88,7 +88,7 @@ export const replaceAll = (value: any, cleaner: CleanerReplaceAll) => {
 
 export const findFromRefs = (value: string, cleaner: CleanerFromJson) => {
   let val = value
-  console.log('utils > helpers > findFromJson >  cleaner :', cleaner)
+  // console.log('utils > helpers > findFromRefs >  cleaner :', cleaner)
 
   const findInRef = cleaner.findInRef
   const fromField = cleaner.findFromField
@@ -97,8 +97,8 @@ export const findFromRefs = (value: string, cleaner: CleanerFromJson) => {
   // @ts-ignore
   const obj: object = json.find(item => item[fromField] === value)
 
-  console.log('utils > helpers > findFromJson >  json :', json)
-  console.log('utils > helpers > findFromJson >  obj :', obj)
+  // console.log('utils > helpers > findFromRefs >  json :', json)
+  // console.log('utils > helpers > findFromRefs >  obj :', obj)
   
   // @ts-ignore
   val = obj && obj[targetField]
