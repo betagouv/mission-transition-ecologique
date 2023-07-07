@@ -48,6 +48,30 @@
     class="fr-grid-row fr-grid-row--gutters"
     >
   
+    <div 
+      v-if="track.callout"
+      class="fr-callout fr-callout--green-emeraude">
+        <h3 class="fr-callout__title">
+          {{ track.callout.title[choices.lang]}}
+        </h3>
+        <p class="fr-callout__text">
+          {{ track.callout.description[choices.lang]}}
+        </p>
+        <p 
+          v-if="track.callout.hint"
+          class="fr-mt-2v"
+          style="color: var(--text-active-blue-france);">
+          <i>
+            <span 
+              v-if="track.callout.hintIcon"
+              :class="track.callout.hintIcon" 
+              aria-hidden="true">
+            </span>
+            {{ track.callout.hint[choices.lang]}}
+          </i>
+        </p>
+    </div>
+
     <!-- TRACK LABEL -->
     <div
       v-if="step !== 1"
@@ -63,7 +87,9 @@
       v-if="track.info"
       class="fr-col-12">
       <p class="fr-mb-2v">
-        <span class="fr-icon-info-fill" aria-hidden="true"></span>
+        <span 
+          class="fr-icon-info-fill" 
+          aria-hidden="true"></span>
         {{ track.info[choices.lang] }}
       </p>
     </div>

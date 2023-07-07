@@ -4,6 +4,13 @@ export const goals = {
   title: { fr: 'Mes objectifs' },
   label: { fr: "Pour commencer, choisissez votre objectif prioritaire" },
   hint: { fr: "Je souhaite..." },
+  callout: {
+    title: { fr : 'En avant !' },
+    description: { fr : 'Nous allons vous poser quelques questions pour mieux vous connaître et pouvoir vous proposer des actions personnalisées.' },
+    hintIcon: 'fr-icon-timer-line',
+    hint: { fr: '2 min. chrono' },
+    type: 'info'
+  },
   interface: {
     component: 'buttons',
   },

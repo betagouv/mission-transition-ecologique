@@ -63,6 +63,18 @@ export interface Translations {
   [name: string]: string
 }
 
+
+enum TrackCalloutType {
+  info = 'info'
+}
+export interface TrackCallout {
+  title: Translations,
+  description: Translations,
+  type?: TrackCalloutType
+  hintIcon?: string,
+  hint?: Translations,
+}
+
 enum TrackComponents {
   cards = 'cards',
   buttons = 'buttons'
@@ -97,12 +109,13 @@ export interface TrackOptions {
   required?: Boolean,
   title: Translations,
   label: Translations,
+  hint?: Translations,
+  callout?: TrackCallout,
   info?: Translations,
   placeholder?: Translations,
   postResponses?: Translations,
   intro?: Translations,
   fields?: TrackOptionsField,
-  hint?: Translations,
   next?: TrackNext
 }
 
