@@ -68,6 +68,15 @@
       </p>
     </div>
 
+    <!-- TRACK HINT -->
+    <div 
+      v-if="track.hint"
+      class="fr-col-12">
+      <p class="fr-mb-0">
+        {{ track.hint[choices.lang] }}
+      </p>
+    </div>
+
     <!-- TRACK CHOICES -->
     <div
       v-for="option in optionsArray"

@@ -3,6 +3,7 @@ export const goals = {
   category: 'goals',
   title: { fr: 'Mes objectifs' },
   label: { fr: "Pour commencer, choisissez votre objectif prioritaire" },
+  hint: { fr: "Je souhaite..." },
   interface: {
     component: 'buttons',
   },
