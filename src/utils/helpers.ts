@@ -143,14 +143,14 @@ export const remapItem = (
   ) => {
   
   console.log()
-  console.log('utils > helpers > remapItem >  dataStructure :', dataStructure)
+  // console.log('utils > helpers > remapItem >  dataStructure :', dataStructure)
   let data = { ...dataStructure }
   const metaEnv = import.meta.env
   // console.log('utils > helpers > remapItem >  metaEnv :', metaEnv)
   
   dataMapping.forEach(dm => {
     console.log()
-    console.log('utils > helpers > remapItem >  dm :', dm)
+    // console.log('utils > helpers > remapItem >  dm :', dm)
     let value: any = ''
     switch (dm.from) {
       case 'env':
@@ -166,7 +166,7 @@ export const remapItem = (
         value = props && props[dm.id]
         break
       case 'rawData':
-        console.log('utils > helpers > remapItem >  rawData :', rawData)
+        // console.log('utils > helpers > remapItem >  rawData :', rawData)
         value = dm.path && getFromOnePath(rawData, dm.path )
         break
       default:

@@ -1,5 +1,5 @@
-import type { MetaEnv, UsedTrack, FormCallback } from '@/types/index'
-import { toRaw } from 'vue'
+import type { MetaEnv, FormCallback } from '@/types/index'
+// import { toRaw } from 'vue'
 import { remapItem  } from './helpers'
 
 export const buildHeaders = (metaEnv: MetaEnv | any, callback: FormCallback) => {
@@ -40,21 +40,6 @@ export const sendApiRequest = async (callback: FormCallback, formData: object | 
   // console.log('utils > requests > sendApiRequest >  method :', method)
   // console.log('utils > requests > sendApiRequest >  headers :', headers)
 
-
-
-  // const usedTrackValues = usedTracks.map(usedTrack => {
-  //   const values = usedTrack.selected?.map(s => s.value)
-  //   return toRaw(values.map(i => toRaw(i)))
-  // }).filter(i => i?.length)
-  // // console.log('utils > requests > sendApiRequest >  usedTrackValues :', usedTrackValues)
-
-  // const trackValues: any[] = usedTrackValues.flat(1)
-  // // console.log('utils > requests > sendApiRequest >  trackValues :', trackValues)
-
-
-
-
-
   let data: any = callback.dataStructure || {}
 
   const dataMapping = callback.dataMapping.filter(dm => !dm.onlyRemap)
@@ -65,7 +50,7 @@ export const sendApiRequest = async (callback: FormCallback, formData: object | 
   data = remapItem(data, dataMapping, formData, trackValues, props)
   console.log('utils > requests > sendApiRequest >  data :', data)
   const body = JSON.stringify(data)
-  console.log('utils > requests > sendApiRequest >  body :', body)
+  // console.log('utils > requests > sendApiRequest >  body :', body)
 
   // fetch and return
   const respJson = await sendRequest(url, method, headers, body, callback.action)
