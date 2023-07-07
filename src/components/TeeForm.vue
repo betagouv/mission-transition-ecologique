@@ -191,6 +191,7 @@ import { onBeforeMount, ref, computed, toRaw } from 'vue'
 import type { FormValues, FormField, FormOptions, FormCallback, UsedTrack, ReqResp } from '@/types/index'
 
 import { sendApiRequest } from '../utils/requests'
+import { remapItem } from '../utils/helpers'
 
 import { tracksStore } from '../stores/tracks'
 import { choicesStore } from '../stores/choices'
@@ -199,6 +200,9 @@ import { analyticsStore } from '../stores/analytics'
 const choices = choicesStore()
 const tracks = tracksStore()
 const analytics = analyticsStore()
+
+const usedTracks: UsedTrack[] | any[] = tracks.getAllUsedTracks
+const trackValues: any[] = tracks.getAllUsedTracksValues
 
 interface Props {
   trackId: string,
@@ -220,14 +224,34 @@ const canSaveFrom = computed(() => {
 })   
 
 onBeforeMount(() => {
-  // console.log('TeeForm > saveFormData >  props.formOptions :', props.formOptions)
-  const initValues: FormValues = {}
+  console.log('TeeForm > saveFormData >  props.formOptions :', props.formOptions)
+  console.log('TeeForm > saveFormData >  usedTracks :', usedTracks)
+  console.log('TeeForm > saveFormData >  trackValues :', trackValues)
+  
+  let initValues: FormValues = {}
+
+  // set up InitValues from formOptions.fields
   props.formOptions.fields?.forEach((field: FormField) => {
+    // console.log('TeeForm > saveFormData >  field :', field)
+    
+    // set field's key
     initValues[field.id] = field.type === 'checkbox' ? false : ''
+    
+    // set default value if any
     if (field.defaultValue) { initValues[field.id] = field.defaultValue }
+    
     // @ts-ignore
     if (field.required) { requiredFields.value.push(field.id) }
+
+    // inject value from user choices if any
+    if (field.preFillFrom) {
+      console.log('TeeForm > saveFormData >  field.preFillFrom :', field.preFillFrom)
+      initValues = remapItem(initValues, [field.preFillFrom], {}, trackValues, props, undefined)
+      console.log('TeeForm > saveFormData >  initValues :', initValues)
+
+    }
   })
+  console.log('TeeForm > saveFormData >  initValues :', initValues)
   formData = ref(initValues)
 })
 
@@ -255,7 +279,7 @@ const saveFormData = async () => {
     let resp: ReqResp = {}
     switch (callback.action) {
       case 'createContact':
-        resp = await sendApiRequest(callback, toRaw(formData.value), usedTracks, props.dataProps)
+        resp = await sendApiRequest(callback, toRaw(formData.value), trackValues, props.dataProps)
         break
       case 'sendTransactionalEmail':
         resp = await sendApiRequest(callback, toRaw(formData.value))

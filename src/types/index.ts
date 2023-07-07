@@ -199,10 +199,6 @@ enum FormFieldTypes {
   checkbox = 'checkbox',
 }
 
-export interface PreFill {
-  from: DataMappingFroms,
-  path: string,
-}
 export interface FormField {
   id: string,
   help?: string,
@@ -212,7 +208,7 @@ export interface FormField {
   cols?: number,
   type?: FormFieldTypes,
   defaultValue?: boolean | string | number,
-  preFillFrom?: PreFill
+  preFillFrom?: FormCallbackDataMapping
 }
 
 export interface FormOptions {
@@ -299,8 +295,8 @@ enum DataMappingFroms {
 export interface FormCallbackDataMapping {
   from: DataMappingFroms,
   id: string,
-  path?: string,
   dataField: string,
+  path?: string,
   asArray?: boolean
   sep?: string
   type?: string,

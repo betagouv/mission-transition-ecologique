@@ -24,7 +24,7 @@ export const buildHeaders = (metaEnv: MetaEnv | any, callback: FormCallback) => 
   return headers
 }
 
-export const sendApiRequest = async (callback: FormCallback, formData: object | any, usedTrack: UsedTrack[] = [], props: object | any = undefined) => {
+export const sendApiRequest = async (callback: FormCallback, formData: object | any, trackValues: any[] = [], props: object | any = undefined) => {
   // console.log()
   // console.log('utils > requests > sendApiRequest >  callback.action :', callback.action)
   // console.log('utils > requests > sendApiRequest >  formData :', formData)
@@ -40,14 +40,20 @@ export const sendApiRequest = async (callback: FormCallback, formData: object | 
   // console.log('utils > requests > sendApiRequest >  method :', method)
   // console.log('utils > requests > sendApiRequest >  headers :', headers)
 
-  const usedTrackValues = usedTrack.map(usedTrack => {
-    const values = usedTrack.selected?.map(s => s.value)
-    return toRaw(values.map(i => toRaw(i)))
-  }).filter(i => i?.length)
-  // console.log('utils > requests > sendApiRequest >  usedTrackValues :', usedTrackValues)
 
-  const trackValues: any[] = usedTrackValues.flat(1)
-  // console.log('utils > requests > sendApiRequest >  trackValues :', trackValues)
+
+  // const usedTrackValues = usedTracks.map(usedTrack => {
+  //   const values = usedTrack.selected?.map(s => s.value)
+  //   return toRaw(values.map(i => toRaw(i)))
+  // }).filter(i => i?.length)
+  // // console.log('utils > requests > sendApiRequest >  usedTrackValues :', usedTrackValues)
+
+  // const trackValues: any[] = usedTrackValues.flat(1)
+  // // console.log('utils > requests > sendApiRequest >  trackValues :', trackValues)
+
+
+
+
 
   let data: any = callback.dataStructure || {}
 
@@ -57,9 +63,9 @@ export const sendApiRequest = async (callback: FormCallback, formData: object | 
   // console.log('utils > requests > sendApiRequest >  listIds :', listIds)
 
   data = remapItem(data, dataMapping, formData, trackValues, props)
-  // console.log('utils > requests > sendApiRequest >  data :', data)
+  console.log('utils > requests > sendApiRequest >  data :', data)
   const body = JSON.stringify(data)
-  // console.log('utils > requests > sendApiRequest >  body :', body)
+  console.log('utils > requests > sendApiRequest >  body :', body)
 
   // fetch and return
   const respJson = await sendRequest(url, method, headers, body, callback.action)

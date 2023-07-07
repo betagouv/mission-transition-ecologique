@@ -65,13 +65,15 @@ export const findInTracksArray = (tracksArray: object[], id: string) => {
   // console.log('utils > helpers > findInTracksArray >  tracksArray :', tracksArray)
   // console.log('utils > helpers > findInTracksArray >  id :', id)
 
-  let value = undefined
-  const valObj: any = tracksArray.find((v: object) => {
-    // console.log('utils > helpers > findInTracksArray >  v :', v)
-    return Object.keys(v).includes(id)
+  // let value = undefined
+
+  let UsedTracksFlat: any = {} 
+  tracksArray.map( item => {
+    UsedTracksFlat = {...UsedTracksFlat, ...item}
   })
-  // console.log('utils > helpers > findInTracksArray >  valObj :', valObj)
-  value =  typeof valObj === 'object' ? valObj[id] : ''
+  // console.log('utils > helpers > findInTracksArray >  UsedTracksFlat :', UsedTracksFlat)
+
+  const value = UsedTracksFlat[id] 
   // console.log('utils > helpers > findInTracksArray >  value :', value)
   return value
 }
@@ -111,10 +113,10 @@ export const findFromDict = (value: string, cleaner: CleanerFromDict) => {
 }
 
 export const cleanValue = (value: any, cleaners: CleanerReplaceAll[] | CleanerFromJson[] | CleanerFromDict[]) => {
-  console.log('utils > helpers > cleanValue > value :', value)
+  // console.log('utils > helpers > cleanValue > value :', value)
   let val = value
   cleaners.forEach((cleaner: CleanerReplaceAll | CleanerFromJson | CleanerFromDict) => {
-    console.log('utils > helpers > cleanValue > cleaner :', cleaner)
+    // console.log('utils > helpers > cleanValue > cleaner :', cleaner)
     switch (cleaner.operation) {
       case 'replaceAll':
         val = replaceAll(val, <CleanerReplaceAll>cleaner)
@@ -127,7 +129,7 @@ export const cleanValue = (value: any, cleaners: CleanerReplaceAll[] | CleanerFr
         break 
     }
   })
-  console.log('utils > helpers > cleanValue > val :', val)
+  // console.log('utils > helpers > cleanValue > val :', val)
   return val
 }
 

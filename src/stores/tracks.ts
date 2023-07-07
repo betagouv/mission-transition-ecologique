@@ -49,6 +49,16 @@ export const tracksStore = defineStore('tracks', () => {
       .map((i: UsedTrack) => toRaw(i))
     return res
   })
+  const getAllUsedTracksValues = computed(() => {
+    const usedTrackValues = getAllUsedTracks.value.map((usedTrack: UsedTrack) => {
+      const values = usedTrack.selected?.map((s) => s.value)
+      return toRaw(values.map((i) => toRaw(i)))
+    }).filter((i) => i?.length)
+    console.log('store.tracks > getAllUsedTracksValues >  usedTrackValues :', usedTrackValues)
+
+    const trackValues: any[] = usedTrackValues.flat(1)
+    return trackValues
+  })
 
   // getters
   function getTrack(trackId: string) {
@@ -164,6 +174,7 @@ export const tracksStore = defineStore('tracks', () => {
     getTrackLabel,
     isTrackCompleted,
     getAllUsedTracks,
+    getAllUsedTracksValues,
     trackExistsInUsed,
     setSeedTrack,
     addToUsedTracks,

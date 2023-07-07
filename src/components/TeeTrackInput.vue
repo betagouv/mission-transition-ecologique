@@ -317,7 +317,8 @@ const processInput = async () => {
   isLoading.value = true
   resetSelection()
 
-  const usedTracks: UsedTrack[] | any[] = tracks.getAllUsedTracks
+  // const usedTracks: UsedTrack[] | any[] = tracks.getAllUsedTracks
+  const trackValues: any[] = tracks.getAllUsedTracksValues
 
   const responses: ReqResp[] = []
   const errors: ReqError[] = []
@@ -336,12 +337,12 @@ const processInput = async () => {
     let resp: ReqResp = {}
     switch (callback.action) {
       case 'requestAPI':
-        resp = await sendApiRequest(callback, {inputValue: value}, usedTracks, props)
+        resp = await sendApiRequest(callback, {inputValue: value}, trackValues, props)
         break
     }
     console.log('TeeTrackInput > processInput >  resp :', resp)
     if (resp.ok) {
-      let item = remapItem(callback.dataStructure, callback.dataMapping, {inputValue: value}, usedTracks, props, resp)
+      let item = remapItem(callback.dataStructure, callback.dataMapping, {inputValue: value}, trackValues, props, resp)
       console.log('TeeTrackInput > processInput >  item :', item)
       responses.push({
         data: item,
