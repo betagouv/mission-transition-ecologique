@@ -260,7 +260,7 @@ export interface ResultsMapping {
   class?: string,
   sep?: string,
   style?: string,
-  cleaning?: CleanerReplaceAll[] | CleanerFromJson[]
+  cleaning?: CleanerReplaceAll[] | CleanerFromJson[] | CleanerDefaultIfNull[]
 }
 
 export interface ReqError {
@@ -302,7 +302,7 @@ export interface FormCallbackDataMapping {
   type?: string,
   subKey?: string,
   onlyRemap?: boolean,
-  cleaning?: CleanerReplaceAll[] | CleanerFromJson[] | CleanerFromDict[]
+  cleaning?: CleanerReplaceAll[] | CleanerFromJson[] | CleanerFromDict[] | CleanerDefaultIfNull[]
 }
 
 enum CallbackMethods {
@@ -319,10 +319,16 @@ enum CleanerOperations {
   replaceAll = 'replaceAll',
   findFromRefs = 'findFromRefs',
   findFromDict = 'findFromDict',
+  defaultIfNull = 'defaultIfNull',
 }
 
 export interface Cleaner {
   operation: CleanerOperations,
+}
+
+export interface CleanerDefaultIfNull extends Cleaner {
+  // respFields: string,
+  defaultValue : Translations,
 }
 export interface CleanerReplaceAll extends Cleaner {
   stringToReplace: string,
@@ -353,6 +359,6 @@ export interface FormCallback {
   method: CallbackMethods,
   dataStructure: object | object[],
   dataMapping: FormCallbackDataMapping[]
-  inputCleaning?: CleanerReplaceAll[] | CleanerFromJson[] | CleanerFromDict[],
+  inputCleaning?: CleanerReplaceAll[] | CleanerFromJson[] | CleanerFromDict[] | CleanerDefaultIfNull[],
   resultsMapping?: ResultsMapping[]
 }

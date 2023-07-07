@@ -1,15 +1,15 @@
 // @ts-ignore
 import nafCodesJson from '@public/data/references/naf_codes_flat.json'
 
-enum NafCodeFields {
-  tags = 'tags',
-  NIV5 = 'NIV5',
-  NIV4 = 'NIV4',
-  NIV3 = 'NIV3',
-  NIV2 = 'NIV2',
-  NIV1 = 'NIV1',
-  label_vf = 'label_vf',
-}
+// enum NafCodeFields {
+//   tags = 'tags',
+//   NIV5 = 'NIV5',
+//   NIV4 = 'NIV4',
+//   NIV3 = 'NIV3',
+//   NIV2 = 'NIV2',
+//   NIV1 = 'NIV1',
+//   label_vf = 'label_vf',
+// }
 interface NafCode {
   tags: string[],
   NIV5: string,
@@ -26,23 +26,41 @@ const refs: Refs = {
   nafCodes: nafCodesJson
 }
 
-import type { FormCallbackDataMapping, CleanerReplaceAll, CleanerFromJson, CleanerFromDict, FindInRefs } from '@/types/index'
+import type { FormCallbackDataMapping, CleanerReplaceAll, CleanerFromJson, CleanerFromDict, CleanerDefaultIfNull, ResultsMapping } from '@/types/index'
 
 // GENERIC HELPERS
 
-export const getFrom = (from: any, selectors: string[]) =>
+export const getFrom = (from: any, selectors: string[]) => {
   // console.log('utils > helpers > getFrom >  selectors :', selectors)
-  selectors.map((s: string) =>
+  const res = selectors.map((s: string) => {
   // @ts-ignore
-  s.replace(/\[([^[\]]*)\]/g, '.$1.')
-  .split('.')
-  .filter((t: any) => t !== '')
-  .reduce((prev: any, cur: any) => prev && prev[cur], from)
-  )
+  return s.replace(/\[([^[\]]*)\]/g, '.$1.')
+    .split('.')
+    .filter((t: any) => t !== '')
+    .reduce((prev: any, cur: any) => {
+      return prev && prev[cur]
+    }, from)
+  })
+  return res
+}
 
 export const getFromOnePath = (from: any, selector: string) => {
   const val = getFrom(from, [selector])
   return val[0]
+}
+
+export const getFromResp = (from: any, resMap: ResultsMapping, lang: string = 'fr') => {
+  const selectors = resMap.respFields
+  // console.log('utils > helpers > getFromResp >  selectors :', selectors)
+  let val = getFrom(from, selectors)
+  if (resMap.cleaning) {
+    // console.log('utils > helpers > getFromResp >  selectors :', selectors)
+    val = val.map(v => {
+      // @ts-ignore
+      return cleanValue(v, resMap.cleaning, lang)
+    })
+  }
+  return val
 }
 
 export const setIn = (obj: any, [head, ...rest]: string[], value: any) => {
@@ -112,10 +130,23 @@ export const findFromDict = (value: string, cleaner: CleanerFromDict) => {
   return val
 }
 
-export const cleanValue = (value: any, cleaners: CleanerReplaceAll[] | CleanerFromJson[] | CleanerFromDict[]) => {
+export const findDefaultIfNull = (value: string, cleaner: CleanerDefaultIfNull, lang: string = 'fr') => {
+  // console.log()
+  // console.log('utils > helpers > findDefaultIfNull > value :', value)
+  // const respFields = cleaner.respFields
+  const defaultValue = cleaner.defaultValue
+  // console.log('utils > helpers > findDefaultIfNull > respFields :', respFields)
+  // console.log('utils > helpers > findDefaultIfNull > defaultValue :', defaultValue)
+
+  const val = value || defaultValue[lang]
+
+  return val
+}
+
+export const cleanValue = (value: any, cleaners: CleanerReplaceAll[] | CleanerFromJson[] | CleanerFromDict[] | CleanerDefaultIfNull[], lang: string = 'fr') => {
   // console.log('utils > helpers > cleanValue > value :', value)
   let val = value
-  cleaners.forEach((cleaner: CleanerReplaceAll | CleanerFromJson | CleanerFromDict) => {
+  cleaners.forEach((cleaner) => {
     // console.log('utils > helpers > cleanValue > cleaner :', cleaner)
     switch (cleaner.operation) {
       case 'replaceAll':
@@ -126,6 +157,9 @@ export const cleanValue = (value: any, cleaners: CleanerReplaceAll[] | CleanerFr
         break
       case 'findFromDict':
         val = findFromDict(val, <CleanerFromDict>cleaner)
+        break 
+      case 'defaultIfNull':
+        val = findDefaultIfNull(val, <CleanerDefaultIfNull>cleaner, lang)
         break 
     }
   })
@@ -139,7 +173,8 @@ export const remapItem = (
   formData: object | any = {},
   trackValues: any[] = [],
   props: object | any = undefined,
-  rawData: object | any = undefined
+  rawData: object | any = undefined,
+  lang: string = 'fr'
   ) => {
   
   console.log()
@@ -175,7 +210,7 @@ export const remapItem = (
 
     // clean value if necessary
     if (dm.cleaning) {
-      value = cleanValue(value, dm.cleaning)
+      value = cleanValue(value, dm.cleaning, lang)
     }
     // console.log('utils > helpers > remapItem >  value :', value)
 

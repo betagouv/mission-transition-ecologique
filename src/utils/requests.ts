@@ -24,7 +24,12 @@ export const buildHeaders = (metaEnv: MetaEnv | any, callback: FormCallback) => 
   return headers
 }
 
-export const sendApiRequest = async (callback: FormCallback, formData: object | any, trackValues: any[] = [], props: object | any = undefined) => {
+export const sendApiRequest = async (
+  callback: FormCallback, 
+  formData: object | any, 
+  trackValues: any[] = [], 
+  props: object | any = undefined, 
+  lang: string = 'fr') => {
   // console.log()
   // console.log('utils > requests > sendApiRequest >  callback.action :', callback.action)
   // console.log('utils > requests > sendApiRequest >  formData :', formData)
@@ -47,7 +52,7 @@ export const sendApiRequest = async (callback: FormCallback, formData: object | 
   // console.log('utils > requests > sendApiRequest >  dataMapping :', dataMapping)
   // console.log('utils > requests > sendApiRequest >  listIds :', listIds)
 
-  data = remapItem(data, dataMapping, formData, trackValues, props)
+  data = remapItem(data, dataMapping, formData, trackValues, props, undefined, lang)
   console.log('utils > requests > sendApiRequest >  data :', data)
   const body = JSON.stringify(data)
   // console.log('utils > requests > sendApiRequest >  body :', body)

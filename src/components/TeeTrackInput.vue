@@ -122,7 +122,7 @@
                 aria-hidden="true">
               </span> -->
               <span>
-                {{ getFromField(resp, resMap) }}
+                {{ getFromFields(resp, resMap) }}
               </span>
               <!-- <DsfrBadge 
                 v-if="isSelected(resp)"
@@ -150,7 +150,7 @@
               </span>
               <span
                 :style="resMap.style">
-                {{ getFromField(resp, resMap) }}
+                {{ getFromFields(resp, resMap) }}
               </span>
             </p>
           </div>
@@ -175,9 +175,7 @@
           </div>
         </div>
       </div>
-    
     </div>
-
   </div>
 
   <!-- WILDCARD -->
@@ -242,7 +240,7 @@ import { analyticsStore } from '../stores/analytics'
 import type { TrackOptionsInput, ReqResp, ReqError, FormCallback, ResultsMapping } from '@/types/index'
 
 import { sendApiRequest } from '../utils/requests'
-import { getFrom, remapItem, cleanValue } from '../utils/helpers'
+import { getFromResp, remapItem, cleanValue } from '../utils/helpers'
 
 interface Props {
   trackId: string,
@@ -273,12 +271,9 @@ onBeforeMount(() => {
 })
 
 // getters
-const getFromField = (resp: any, resMap: ResultsMapping) => {
-  let val = getFrom(resp, resMap.respFields).join( resMap.sep || ' ')
-  if (resMap.cleaning) {
-    // console.log('TeeTrackInput > getFromField > resMap.cleaning :', resMap.cleaning)
-    val = cleanValue(val, resMap.cleaning)
-  }
+const getFromFields = (resp: any, resMap: ResultsMapping) => {
+  const rawValues = getFromResp(resp, resMap)
+  const val = rawValues.join( resMap.sep || ' ')
   return val
 }
 
@@ -323,12 +318,12 @@ const processInput = async () => {
     let resp: ReqResp = {}
     switch (callback.action) {
       case 'requestAPI':
-        resp = await sendApiRequest(callback, {inputValue: value}, trackValues, props)
+        resp = await sendApiRequest(callback, {inputValue: value}, trackValues, props, choices.lang)
         break
     }
-    // console.log('TeeTrackInput > processInput >  resp :', resp)
+    console.log('TeeTrackInput > processInput >  resp :', resp)
     if (resp.ok) {
-      let item = remapItem(callback.dataStructure, callback.dataMapping, {inputValue: value}, trackValues, props, resp)
+      let item = remapItem(callback.dataStructure, callback.dataMapping, {inputValue: value}, trackValues, props, resp, choices.lang)
       // console.log('TeeTrackInput > processInput >  item :', item)
       responses.push({
         data: item,

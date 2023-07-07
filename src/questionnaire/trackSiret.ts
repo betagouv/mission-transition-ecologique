@@ -32,7 +32,7 @@ export const siret = {
       label: { fr: "Renseignez le SIRET de votre entreprise" },
       placeholder: { fr: 'ex : 830 141 321 00034' },
       // for debugging purposes
-      // defaultInput: '830 141 321 00034', // 83014132100034
+      // defaultInput: '830 141 321 00034', // 83014132100034 // 81759468200020
       postResponses: { fr: 'Vous ne retrouvez pas votre SIRET ?&nbsp;<a href="https://annuaire-entreprises.data.gouv.fr/" target="_blank">Cliquez ici</a>' },
       // required: false,
       callbacks: [
@@ -139,7 +139,14 @@ export const siret = {
               // label: 'entité',
               class: 'fr-mb-3v',
               sep: ' - SIRET ',
-              style: 'font-weight: bold;'
+              style: 'font-weight: bold;',
+              cleaning: [
+                {
+                  operation: 'defaultIfNull',
+                  respFields: 'data.denomination',
+                  defaultValue: { fr: 'Auto-entreprise' }
+                }
+              ]
             },
             {
               respFields: [
@@ -160,9 +167,16 @@ export const siret = {
                 {
                   operation: 'findFromDict',
                   dict: {
+                    TPE: 'TPE (entre 1 et 19 salarié.e.s)',
                     PME: 'PME (entre 20 et 250 salarié.e.s)',
-                    TPE: 'TPE (entre 1 et 19 salarié.e.s)'
+                    ETI: 'ETI (entre 250 et 5000 salarié.e.s)',
+                    GE: 'GE (plus de 5000 salarié.e.s)'
                   }
+                },
+                {
+                  operation: 'defaultIfNull',
+                  respFields: 'data.denomination',
+                  defaultValue: { fr: 'Autre' }
                 }
               ]
             },
