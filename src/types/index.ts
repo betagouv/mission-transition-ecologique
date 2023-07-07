@@ -175,7 +175,8 @@ export interface TrackChoice {
 // FOR TRACK RESULTS
 
 export interface TrackResultsConfig {
-  showAlert: boolean,
+  showAlertNoResults: boolean,
+  showAlertResults: boolean,
   showResultsTitle: boolean,
   showProgramInfos: boolean,
   showProgramSubtitles: boolean

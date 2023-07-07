@@ -11,7 +11,7 @@ export const results = {
     static: true,
   },
   config: {
-    showAlert: false,
+    showAlert: true,
     showResultsTitle: false,
     showProgramInfos: false,
     showProgramSubtitles: false

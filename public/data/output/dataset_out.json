@@ -37,7 +37,9 @@
         "operator": "or",
         "value": [
           "PME",
-          "TPE"
+          "TPE",
+          "ETI",
+          "GE"
         ]
       },
       {
@@ -149,7 +151,9 @@
         "operator": "or",
         "value": [
           "PME",
-          "TPE"
+          "TPE",
+          "ETI",
+          "GE"
         ]
       },
       {
@@ -205,7 +209,9 @@
         "operator": "or",
         "value": [
           "PME",
-          "TPE"
+          "TPE",
+          "ETI",
+          "GE"
         ]
       },
       {
@@ -263,7 +269,9 @@
         "operator": "or",
         "value": [
           "PME",
-          "TPE"
+          "TPE",
+          "ETI",
+          "GE"
         ]
       },
       {
@@ -373,7 +381,9 @@
         "operator": "or",
         "value": [
           "PME",
-          "TPE"
+          "TPE",
+          "ETI",
+          "GE"
         ]
       },
       {
@@ -448,7 +458,9 @@
         "operator": "or",
         "value": [
           "PME",
-          "TPE"
+          "TPE",
+          "ETI",
+          "GE"
         ]
       },
       {

@@ -36,6 +36,8 @@ conditions:
     value: 
       - PME
       - TPE
+      - ETI
+      - GE
   - type: user_goals
     operator: "or"
     value:
