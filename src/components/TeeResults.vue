@@ -26,7 +26,7 @@
     ({{ resultsProgsLen }})
   </h4>
 
-  <!-- PROGRAMS AS LIST IN ACCORDIONS -->
+  <!-- PROGRAMS AS LIST OF CARDS -->
   <div 
     v-if="resultsProgsLen"
     class="fr-container fr-px-0 fr-pt-6v">
