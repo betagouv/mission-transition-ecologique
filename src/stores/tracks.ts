@@ -54,7 +54,7 @@ export const tracksStore = defineStore('tracks', () => {
       const values = usedTrack.selected?.map((s) => s.value)
       return toRaw(values.map((i) => toRaw(i)))
     }).filter((i) => i?.length)
-    console.log('store.tracks > getAllUsedTracksValues >  usedTrackValues :', usedTrackValues)
+    // console.log('store.tracks > getAllUsedTracksValues >  usedTrackValues :', usedTrackValues)
 
     const trackValues: any[] = usedTrackValues.flat(1)
     return trackValues

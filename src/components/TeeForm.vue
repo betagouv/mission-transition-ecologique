@@ -188,7 +188,7 @@
 import { onBeforeMount, ref, computed, toRaw } from 'vue'
 
 // @ts-ignore
-import type { FormValues, FormField, FormOptions, FormCallback, UsedTrack, ReqResp } from '@/types/index'
+import type { FormValues, FormField, FormOptions, FormCallback, ReqResp } from '@/types/index'
 
 import { sendApiRequest } from '../utils/requests'
 import { remapItem } from '../utils/helpers'
@@ -201,7 +201,7 @@ const choices = choicesStore()
 const tracks = tracksStore()
 const analytics = analyticsStore()
 
-const usedTracks: UsedTrack[] | any[] = tracks.getAllUsedTracks
+// const usedTracks: UsedTrack[] | any[] = tracks.getAllUsedTracks
 const trackValues: any[] = tracks.getAllUsedTracksValues
 
 interface Props {
@@ -224,9 +224,9 @@ const canSaveFrom = computed(() => {
 })   
 
 onBeforeMount(() => {
-  console.log('TeeForm > saveFormData >  props.formOptions :', props.formOptions)
-  console.log('TeeForm > saveFormData >  usedTracks :', usedTracks)
-  console.log('TeeForm > saveFormData >  trackValues :', trackValues)
+  // console.log('TeeForm > saveFormData >  props.formOptions :', props.formOptions)
+  // console.log('TeeForm > saveFormData >  usedTracks :', usedTracks)
+  // console.log('TeeForm > saveFormData >  trackValues :', trackValues)
   
   let initValues: FormValues = {}
 
@@ -243,15 +243,15 @@ onBeforeMount(() => {
     // @ts-ignore
     if (field.required) { requiredFields.value.push(field.id) }
 
-    // inject value from user choices if any
+    // inject value into form from store if any
     if (field.preFillFrom) {
-      console.log('TeeForm > saveFormData >  field.preFillFrom :', field.preFillFrom)
+      // console.log('TeeForm > saveFormData >  field.preFillFrom :', field.preFillFrom)
       initValues = remapItem(initValues, [field.preFillFrom], {}, trackValues, props, undefined)
-      console.log('TeeForm > saveFormData >  initValues :', initValues)
+      // console.log('TeeForm > saveFormData >  initValues :', initValues)
 
     }
   })
-  console.log('TeeForm > saveFormData >  initValues :', initValues)
+  // console.log('TeeForm > saveFormData >  initValues :', initValues)
   formData = ref(initValues)
 })
 
@@ -266,8 +266,8 @@ const saveFormData = async () => {
   // console.log('TeeForm > saveFormData >  props.dataProps :', props.dataProps)
   // console.log('TeeForm > saveFormData >  formData.value :', formData.value)
   
-  const usedTracks: UsedTrack[] | any[] = tracks.getAllUsedTracks
-  console.log('TeeForm > saveFormData >  usedTracks :', usedTracks)
+  // const usedTracks: UsedTrack[] | any[] = tracks.getAllUsedTracks
+  // console.log('TeeForm > saveFormData >  usedTracks :', usedTracks)
   
   // Launch call backs if any
   const responses: ReqResp[] = []

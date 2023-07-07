@@ -232,14 +232,14 @@
 
 <script setup lang="ts">
 
-import { onBeforeMount, ref, toRaw, watch } from 'vue'
+import { onBeforeMount, ref, toRaw } from 'vue'
 
 import { tracksStore } from '../stores/tracks'
 import { choicesStore } from '../stores/choices'
 import { analyticsStore } from '../stores/analytics'
 
 // @ts-ignore
-import type { TrackOptionsInput, UsedTrack, ReqResp, ReqError, FormCallback, ResultsMapping } from '@/types/index'
+import type { TrackOptionsInput, ReqResp, ReqError, FormCallback, ResultsMapping } from '@/types/index'
 
 import { sendApiRequest } from '../utils/requests'
 import { getFrom, remapItem, cleanValue } from '../utils/helpers'
@@ -266,24 +266,10 @@ const hasSelection = ref<boolean>(false)
 
 const emit = defineEmits(['updateSelection', 'goToNextTrack'])
 
-// const track: Track | any = tracks.getTrack(props.trackId)
-
 onBeforeMount(() => {
   if (props.option.defaultInput) {
     inputValue.value = props.option.defaultInput
   }
-})
-
-// computed
-// const hasSelection = computed(() => {
-//   return Boolean(selection.value)
-// })
-
-// watchers
-watch(() => inputValue.value, (next) => {
-  console.log('TeeTrackInput > syncValue > next :', next)
-  // hasSelection.value = true
-  // selectItem(undefined)
 })
 
 // getters
@@ -340,10 +326,10 @@ const processInput = async () => {
         resp = await sendApiRequest(callback, {inputValue: value}, trackValues, props)
         break
     }
-    console.log('TeeTrackInput > processInput >  resp :', resp)
+    // console.log('TeeTrackInput > processInput >  resp :', resp)
     if (resp.ok) {
       let item = remapItem(callback.dataStructure, callback.dataMapping, {inputValue: value}, trackValues, props, resp)
-      console.log('TeeTrackInput > processInput >  item :', item)
+      // console.log('TeeTrackInput > processInput >  item :', item)
       responses.push({
         data: item,
         raw: resp,
@@ -385,7 +371,7 @@ const goToNextTrack = () => {
     option: { ...props.option },
   }
   data.option.next = props.option.wildcard.next
-  console.log('TeeTrackInput > goToNextTrack > data :', data)
+  // console.log('TeeTrackInput > goToNextTrack > data :', data)
   emit('goToNextTrack', data)
 }
 
