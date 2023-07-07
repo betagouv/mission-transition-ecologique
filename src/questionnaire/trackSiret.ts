@@ -41,8 +41,8 @@ export const siret = {
           help: 'Get entreprise data from its SIRET number',
           helpDocumentation: 'https://tee-backend-test.osc-fr1.scalingo.io/api/docs',
           action: 'requestAPI',
-          // url: 'https://tee-backend-test.osc-fr1.scalingo.io/api/insee/get_by_siret',
-          url: 'http://localhost:8001/api/insee/get_by_siret',
+          url: 'https://tee-backend-test.osc-fr1.scalingo.io/api/insee/get_by_siret',
+          // url: 'http://localhost:8001/api/insee/get_by_siret',
           method: 'POST',
           headers: {
             accept: 'application/json',
