@@ -20,8 +20,11 @@
       v-for="usedTrack in usedTracks"
       :key="usedTrack.id"
       @click="backToTrack(usedTrack.id)">
+      <!-- <code>
+        {{ usedTrack.completed }}
+      </code> -->
       <p 
-        :class="`fr-tag fr-tag-clickable fr-tag--sm ${!usedTrack.completed ? 'fr-tag-selected' : ''} fr-mr-1v fr-mb-1v`">
+        :class="`fr-tag fr-tag--sm ${usedTrack.completed ?  'fr-tag-clickable' : 'fr-tag-selected'} fr-mr-1v fr-mb-1v`">
         {{ tracks.getTrackTitle(usedTrack.id, choices.lang) }}
       </p>
       <!-- <div
