@@ -117,7 +117,7 @@
       </p>
     </div>
 
-    <!-- TRACK CHOICES -->
+    <!-- TRACK CHOICES {{ renderAs }} -->
     <div
       v-for="option in optionsArray"
       :key="option.value"
@@ -165,10 +165,9 @@
       <!-- AS BUTTONS -->
       <div 
         v-if="renderAs === 'buttons'"
-        style="height: 100%;"
         >
         <DsfrButton
-          style="width: 100% !important;"
+          class="fr-btn-fullwidth"
           :label="option.label[choices.lang]" 
           :icon="getButtonIcon(option.value)"
           :secondary="!isActiveChoice(option.value)"
@@ -181,7 +180,8 @@
         v-if="renderAs === 'simpleButtons'"
         >
         <DsfrButton
-          :label="option.label[choices.lang]" 
+          :label="option.label[choices.lang]"
+          class="fr-btn-sm-fullwidth"
           size="large"
           style="font-weight: 1000;"
           @click="updateSelection(option); saveSelection()"
@@ -232,22 +232,25 @@
   <!-- SEND / NEXT BUTTON -->
   <div 
     v-if="!noNeedForNext.includes(renderAs) && !isCompleted && !isTrackResults"
-    class="fr-grid-row fr-grid-row--gutters fr-pt-8v">
+    class="fr-grid-row fr-grid-row--gutters fr-pt-8v"
+    style="justify-content: end;;">
+    <!-- BTN PREVIOUS -->
     <div
       v-if="step > 1"
-      class="fr-col-3 fr-col-offset-6">
+      class="fr-col-6 fr-col-md-3">
       <DsfrButton
-        style="width: -moz-available !important; width: 100%"
+        class="fr-btn-fullwidth fr-btn-sm-fullwidth"
         :label="choices.t('previous')"
         icon="ri-arrow-left-line"
         secondary
         @click="backToPreviousTrack"
       />
     </div>
+    <!-- BTN NEXT -->
     <div 
-      :class="`fr-col-3 ${step === 1 ? 'fr-col-offset-9' : ''}`">
+      class="fr-col-6 fr-col-md-3">
       <DsfrButton
-        style="width: -moz-available !important; width: 100%"
+        class="fr-btn-fullwidth fr-btn-sm-fullwidth"
         :label="choices.t('next')"
         :disabled="!selectedOptions.length"
         icon="ri-arrow-right-line"

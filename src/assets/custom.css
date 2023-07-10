@@ -8,6 +8,15 @@ npm run dev
 .fr-card:hover {
   cursor: pointer !important;
 }
+.fr-btn-fullwidth {
+  width: 100% !important;
+}
+.fr-modal-custom::before {
+  content: none !important;
+}
+.fr-modal__body-custom {
+  max-height: 100vh !important;
+}
 
 /* DEBUGGING STYLES */
 code {
@@ -27,4 +36,23 @@ code {
 .vue-debug pre{
   line-height: 1.4em !important;
   overflow: auto;
+}
+
+@media screen and (max-width:768px) {
+  .fr-sm-hide {
+    display: none !important;
+  }
+  .fr-col-sm-hide {
+    display: none !important;
+  }
+  .fr-btn-sm-fullwidth {
+    width: 100% !important;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width:767px) {
+  .fr-col-sm-show {
+    display: none !important;
+  }
 }
