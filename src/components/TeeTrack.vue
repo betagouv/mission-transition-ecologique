@@ -180,8 +180,8 @@
         v-if="renderAs === 'simpleButtons'"
         >
         <DsfrButton
+          class="fr-btn-fullwidth fr-btn-sm-align-center"
           :label="option.label[choices.lang]"
-          class="fr-btn-sm-fullwidth"
           size="large"
           style="font-weight: 1000;"
           @click="updateSelection(option); saveSelection()"
