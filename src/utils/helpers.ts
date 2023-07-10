@@ -26,7 +26,7 @@ const refs: Refs = {
   nafCodes: nafCodesJson
 }
 
-import type { FormCallbackDataMapping, CleanerReplaceAll, CleanerFromJson, CleanerFromDict, CleanerDefaultIfNull, ResultsMapping } from '@/types/index'
+import type { FormCallbackDataMapping, Cleaner, CleanerReplaceAll, CleanerFromJson, CleanerFromDict, CleanerDefaultIfNull, ResultsMapping } from '@/types/index'
 
 // GENERIC HELPERS
 
@@ -143,7 +143,7 @@ export const findDefaultIfNull = (value: string, cleaner: CleanerDefaultIfNull, 
   return val
 }
 
-export const cleanValue = (value: any, cleaners: CleanerReplaceAll[] | CleanerFromJson[] | CleanerFromDict[] | CleanerDefaultIfNull[], lang: string = 'fr') => {
+export const cleanValue = (value: any, cleaners: Cleaner[] | CleanerReplaceAll[] | CleanerFromJson[] | CleanerFromDict[] | CleanerDefaultIfNull[], lang: string = 'fr') => {
   // console.log('utils > helpers > cleanValue > value :', value)
   let val = value
   cleaners.forEach((cleaner) => {
