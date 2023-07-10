@@ -1,7 +1,9 @@
 /* 
 WARNING : 
-WHEN CHANGING THIS FILE PLEASE RE-RUN 
-npm run dev 
+  ORIGINAL FILE TO EDIT : ./src/assets/custom.css
+  
+  WHEN CHANGING THIS FILE PLEASE RE-RUN 
+  npm run dev 
 */
 
 /* CUSTOM STYLES - OVERIDES DSFR */
@@ -16,6 +18,9 @@ npm run dev
 }
 .fr-modal__body-custom {
   max-height: 100vh !important;
+}
+.fr-btn-sm-align-center > svg {
+  min-width: 19px !important;
 }
 .fr-tag-clickable:hover {
   cursor: pointer !important;
@@ -45,7 +50,7 @@ code {
   overflow: auto;
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:767px) {
   .fr-sm-hide {
     display: none !important;
   }
@@ -56,9 +61,12 @@ code {
     width: 100% !important;
     justify-content: center;
   }
+  .fr-btn-sm-align-center > span {
+    width: 100%;
+  }
 }
 
-@media screen and (min-width:767px) {
+@media screen and (min-width:768px) {
   .fr-col-sm-show {
     display: none !important;
   }

@@ -167,7 +167,7 @@
         v-if="renderAs === 'buttons'"
         >
         <DsfrButton
-          class="fr-btn-fullwidth"
+          class="fr-btn-fullwidth fr-btn-sm-align-center"
           :label="option.label[choices.lang]" 
           :icon="getButtonIcon(option.value)"
           :secondary="!isActiveChoice(option.value)"
