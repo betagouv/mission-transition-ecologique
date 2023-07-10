@@ -145,8 +145,9 @@
               </span>
               <!-- TITLE -->
               <span
-                v-if="resMap.label">
-                {{ resMap.label }} :
+                v-if="resMap.label"
+                class="fr-mr-1v">
+                {{ resMap.label }}
               </span>
               <span
                 :style="resMap.style">
@@ -342,10 +343,10 @@ const processInput = async () => {
   analytics.sendEvent(props.trackId, 'processInput')
 
   // if only one result select it immediatly
-  if (requestResponses.value.length === 1) {
-    const item = requestResponses.value[0]
-    selectItem(item)
-  }
+  // if (requestResponses.value.length === 1) {
+  //   const item = requestResponses.value[0]
+  //   selectItem(item)
+  // }
 
   // send signal to parent if error
   if (requestErrors.value.length) {
