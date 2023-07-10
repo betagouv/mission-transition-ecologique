@@ -17,6 +17,13 @@ npm run dev
 .fr-modal__body-custom {
   max-height: 100vh !important;
 }
+.fr-tag-clickable:hover {
+  cursor: pointer !important;
+}
+.fr-tag-selected {
+  color: white;
+  background-color: var(--text-action-high-blue-france);
+}
 
 /* DEBUGGING STYLES */
 code {

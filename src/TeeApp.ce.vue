@@ -89,6 +89,14 @@
             :debug="debugBool"
           />
         </div>
+        <div
+          v-if="tracks.currentStep > 1"
+          class="fr-col-12 fr-col-sm-show fr-mb-8v">
+          <TeeTopbar
+            :used-tracks="tracks.usedTracks"
+            :debug="debugBool"
+          />
+        </div>
 
         <!-- TRACKS -->
         <div 
@@ -210,6 +218,8 @@ import TeeTrack from './components/TeeTrack.vue'
 import TeeStepper from './components/TeeStepper.vue'
 // @ts-ignore
 import TeeSidebar from './components/TeeSidebar.vue'
+// @ts-ignore
+import TeeTopbar from './components/TeeTopbar.vue'
 // @ts-ignore
 import TeeProgramDetail from './components/TeeProgramDetail.vue'
 // @ts-ignore
