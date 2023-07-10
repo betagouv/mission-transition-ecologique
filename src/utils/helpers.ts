@@ -152,6 +152,9 @@ export const cleanValue = (value: any, cleaners: CleanerReplaceAll[] | CleanerFr
       case 'replaceAll':
         val = replaceAll(val, <CleanerReplaceAll>cleaner)
         break
+      case 'stringToDate':
+        val = new Date(val).toLocaleDateString(lang)
+        break
       case 'findFromRefs':
         val = findFromRefs(val, <CleanerFromJson>cleaner)
         break

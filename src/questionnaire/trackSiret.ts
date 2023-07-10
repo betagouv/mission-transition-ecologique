@@ -29,7 +29,7 @@ export const siret = {
       id: 'search-siret',
       value: { ...dataTarget },
       title: { fr: 'SIRET' },
-      label: { fr: "Renseignez le SIRET de votre entreprise" },
+      label: { fr: "Renseignez le SIRET de votre entreprise (14 chiffres)" },
       placeholder: { fr: 'ex : 830 141 321 00034' },
       // for debugging purposes
       // defaultInput: '830 141 321 00034', 
@@ -152,20 +152,19 @@ export const siret = {
                 }
               ]
             },
+            // {
+            //   respFields: ['data.codeNaf'],
+            //   label: 'Code NAF :',
+            //   icon: 'fr-icon-briefcase-line'
+            // },
             {
-              respFields: [
-                'raw.etablissement.adresseEtablissement.numeroVoieEtablissement',
-                'raw.etablissement.adresseEtablissement.typeVoieEtablissement',
-                'raw.etablissement.adresseEtablissement.libelleVoieEtablissement',
-                'data.codePostal',
-                'data.ville',
-              ],
-              // label: 'Adresse',
-              icon: 'fr-icon-map-pin-2-line'
+              respFields: ['data.label_sectors'],
+              label: "Secteur d'activité :",
+              icon: 'fr-icon-briefcase-line'
             },
             {
               respFields: ['data.structure_sizes'],
-              label: 'Catégorie',
+              // label: 'Catégorie :',
               icon: 'fr-icon-parent-line',
               cleaning: [
                 {
@@ -185,21 +184,28 @@ export const siret = {
               ]
             },
             {
+              respFields: [
+                'raw.etablissement.adresseEtablissement.numeroVoieEtablissement',
+                'raw.etablissement.adresseEtablissement.typeVoieEtablissement',
+                'raw.etablissement.adresseEtablissement.libelleVoieEtablissement',
+                'data.codePostal',
+                'data.ville',
+              ],
+              // label: 'Adresse',
+              icon: 'fr-icon-map-pin-2-line'
+            },
+            {
               respFields: ['raw.etablissement.uniteLegale.dateCreationUniteLegale'],
-              label: 'Date de création',
-              prefix: 'Création le ',
-              icon: 'fr-icon-time-line'
+              label: 'Création le',
+              // prefix: 'Création le ',
+              icon: 'fr-icon-time-line',
+              cleaning: [
+                {
+                  operation: 'stringToDate'
+                }
+              ]
             },
-            {
-              respFields: ['data.codeNaf'],
-              label: 'Code NAF',
-              icon: 'fr-icon-briefcase-line'
-            },
-            {
-              respFields: ['data.label_sectors'],
-              label: "Secteur d'activité",
-              icon: 'fr-icon-briefcase-line'
-            },
+
             // {
             //   respFields: ['raw.etablissement.siret'],
             //   label: 'SIRET',
