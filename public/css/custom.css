@@ -12,6 +12,7 @@ WARNING :
 }
 .fr-btn-fullwidth {
   width: 100% !important;
+  height: 64px;
 }
 .fr-modal-custom::before {
   content: none !important;
@@ -24,6 +25,9 @@ WARNING :
   justify-content: center;
 }
 .fr-btn-align-left {
+  /* text-align: left; */
+}
+.fr-btn-sm-align-left > span {
   text-align: left;
 }
 .fr-btn-sm-align-center > svg {
@@ -69,7 +73,7 @@ code {
     justify-content: center;
   }
   .fr-btn-fullwidth {
-    height: 64px;
+    /* height: 64px; */
   }
   .fr-btn-sm-align-center > span {
     width: 100%;

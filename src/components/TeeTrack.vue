@@ -121,7 +121,7 @@
     <div
       v-for="option in optionsArray"
       :key="option.value"
-      :class="`${colsWidth} ${isTrackResults ? 'fr-col-offset-1' : ''} fr-py-1v`"
+      :class="`${colsWidth} ${isTrackResults ? 'fr-col-offset-1' : ''} fr-py-2v`"
       >
       
       <!-- AS CARDS -->
@@ -351,7 +351,7 @@ const colsWidth = computed(() => {
     }
   }
 
-  return `fr-col-lg-${divSize} fr-col-md-12 fr-col-sm-12 fr-col-xs-12`
+  return `fr-col-xl-6 fr-col-lg-6 fr-col-md-${divSize} fr-col-sm-12 fr-col-xs-12`
 })
 
 // getters
