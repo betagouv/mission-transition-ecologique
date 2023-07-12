@@ -20,6 +20,12 @@ WARNING :
   max-height: 100vh !important;
   height: 100vh !important;
 }
+.fr-btn-align-center {
+  justify-content: center;
+}
+.fr-btn-align-left {
+  justify-content: left !important;
+}
 .fr-btn-sm-align-center > svg {
   min-width: 19px !important;
 }
@@ -65,10 +71,16 @@ code {
   .fr-btn-sm-align-center > span {
     width: 100%;
   }
+  .fr-btn-sm-align-left > span {
+    width: 100%;
+  }
 }
 
 @media screen and (min-width:768px) {
   .fr-col-sm-show {
     display: none !important;
+  }
+  .fr-modal__body-custom {
+    margin-top: 2em !important;
   }
 }
