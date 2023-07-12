@@ -51,7 +51,7 @@
     <!-- CALLOUT -->
     <div 
       v-if="track.callout"
-      :class="`${track.callout.bigTitle ? 'fr-mb-10v fr-mx-0 fr-px-4v fr-container' : 'fr-callout'} ${track.callout.color || 'fr--grey-1000'}`">
+      :class="`fr-col-12 ${track.callout.bigTitle ? 'fr-mb-10v fr-mx-0 fr-px-4v' : 'fr-callout'} ${track.callout.color || 'fr--grey-1000'}`">
         <h2
           v-if="track.callout.header"
           style="color: var(--text-default-info);"
