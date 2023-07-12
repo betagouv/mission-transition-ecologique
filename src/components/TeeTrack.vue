@@ -164,9 +164,10 @@
       
       <!-- AS BUTTONS -->
       <div 
-        v-if="renderAs === 'buttons'">
+        v-if="renderAs === 'buttons'"
+        class="fr-div-fixed-height">
         <DsfrButton
-          class="fr-btn-fullwidth fr-btn-sm-align-left"
+          class="fr-btn-fullwidth fr-btn-fixed-height fr-btn-sm-align-left"
           :label="option.label[choices.lang]" 
           :icon="getButtonIcon(option.value)"
           :secondary="!isActiveChoice(option.value)"
@@ -230,11 +231,11 @@
   <div 
     v-if="!noNeedForNext.includes(renderAs) && !isCompleted && !isTrackResults"
     class="fr-grid-row fr-grid-row--gutters fr-pt-8v"
-    style="justify-content: end;;">
+    style="justify-content: end;">
     <!-- BTN PREVIOUS -->
     <div
       v-if="step > 1"
-      class="fr-col-6 fr-col-md-3">
+      class="fr-col-6 fr-col-md-4 fr-col-lg-4 fr-col-xl-3">
       <DsfrButton
         class="fr-btn-fullwidth fr-btn-sm-fullwidth"
         :label="choices.t('previous')"
@@ -245,7 +246,7 @@
     </div>
     <!-- BTN NEXT -->
     <div 
-      class="fr-col-6 fr-col-md-3">
+      class="fr-col-6 fr-col-md-4 fr-col-lg-4 fr-col-xl-3">
       <DsfrButton
         class="fr-btn-fullwidth fr-btn-sm-fullwidth"
         :label="choices.t('next')"
@@ -294,6 +295,15 @@ const colsOptions: ColsOptions = {
   modify: 2,
   results: 10,
 }
+const colsOptionsLarge: ColsOptions = {
+  buttons: 6,
+  simpleButtons: 6,
+  input: 12,
+  cards: 4,
+  form: 8,
+  modify: 2,
+  results: 10,
+}
 
 const noNeedForNext = [
   'cards',
@@ -333,6 +343,7 @@ const selectionValues = computed(() => {
 
 const colsWidth = computed(() => {
   let divSize: string | number
+  const divSizeLarge = colsOptionsLarge[renderAs]
 
   if (props.isCompleted) {
     // full width of 10 if completed track
@@ -351,7 +362,7 @@ const colsWidth = computed(() => {
     }
   }
 
-  return `fr-col-xl-6 fr-col-lg-6 fr-col-md-${divSize} fr-col-sm-12 fr-col-xs-12`
+  return `fr-col-xl-${divSizeLarge} fr-col-lg-${divSize} fr-col-md-${divSize} fr-col-sm-12 fr-col-xs-12`
 })
 
 // getters

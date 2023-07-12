@@ -82,7 +82,7 @@
         <!-- SIDEBAR MENU (FIL D'ARIANE)-->
         <div
           v-if="tracks.currentStep > 1"
-          class="fr-col-3 fr-col-sm-hide"
+          class="fr-col-3 fr-col-md-4 fr-col-lg-4 fr-col-xl-2 fr-col-offset-xl-1 fr-col-sm-hide"
           style="height: 100%;">
           <TeeSidebar
             :used-tracks="tracks.usedTracks"
@@ -100,7 +100,7 @@
 
         <!-- TRACKS -->
         <div 
-          :class="`${debugBool ? 'fr-col-7' : tracks.currentStep === 1 ? 'fr-col-12' : 'fr-col' } ${debugBool ? '' : 'fr-grid-row--center'}`">
+          :class="`${debugBool ? 'fr-col-7' : tracks.currentStep === 1 ? 'fr-col-12 fr-col-lg-8 fr-col-xl-6' : 'fr-col fr-col-lg-8 fr-col-xl-6' } ${debugBool ? '' : 'fr-grid-row--center'}`">
           <div
             v-for="(track, index) in tracks.usedTracks"
             :key="track.id"
