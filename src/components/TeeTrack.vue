@@ -351,7 +351,7 @@ const colsWidth = computed(() => {
     }
   }
 
-  return `fr-col-lg-${divSize} fr-col-md-12 fr-col-sm-12`
+  return `fr-col-lg-${divSize} fr-col-md-12 fr-col-sm-12 fr-col-xs-12`
 })
 
 // getters
