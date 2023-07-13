@@ -48,7 +48,7 @@ export const goals = {
     {
       value: { user_goals: 'economies' },
       title: { fr: 'Economies' },
-      label: { fr: "💦 Faire des économies rapides en réduisant nos pertes en énergie, matière, déchets et eau" },
+      label: { fr: "💦 Faire des économies en réduisant nos pertes en énergie, matière, déchets et eau" },
       next: {
         default: 'track_siret'
       }

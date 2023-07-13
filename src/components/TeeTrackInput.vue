@@ -101,7 +101,7 @@
     <div
       v-for="(resp, i) in requestResponses"
       :key="`resp-input-${i}`"
-      :class="`fr-card fr-card--no-arrow ${isSelected(resp) ? 'fr-card--shadow' : ''}`"
+      :class="`fr-card fr-card-result fr-card--no-arrow ${isSelected(resp) ? 'fr-card--shadow' : ''}`"
       :style="`border: ${isSelected(resp) ? 'solid thin #000091;' : 'solid thin #C4C4C4'};`"
       @click="selectItem(resp)">
       <div class="fr-card__body">

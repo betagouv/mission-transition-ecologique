@@ -51,7 +51,7 @@
     <!-- CALLOUT -->
     <div 
       v-if="track.callout"
-      :class="`${track.callout.bigTitle ? 'fr-mb-10v fr-mx-0 fr-px-4v fr-container' : 'fr-callout'} ${track.callout.color || 'fr--grey-1000'}`">
+      :class="`fr-col-12 ${track.callout.bigTitle ? 'fr-mb-10v fr-mx-0 fr-px-4v' : 'fr-callout'} ${track.callout.color || 'fr--grey-1000'}`">
         <h2
           v-if="track.callout.header"
           style="color: var(--text-default-info);"
@@ -117,11 +117,11 @@
       </p>
     </div>
 
-    <!-- TRACK CHOICES -->
+    <!-- TRACK CHOICES {{ renderAs }} -->
     <div
       v-for="option in optionsArray"
       :key="option.value"
-      :class="`fr-col-${colsWidth} ${isTrackResults ? 'fr-col-offset-1' : ''} fr-py-1v`"
+      :class="`${colsWidth} ${isTrackResults ? 'fr-col-offset-1' : ''} fr-py-2v`"
       >
       
       <!-- AS CARDS -->
@@ -165,10 +165,9 @@
       <!-- AS BUTTONS -->
       <div 
         v-if="renderAs === 'buttons'"
-        style="height: 100%;"
-        >
+        class="fr-div-fixed-height">
         <DsfrButton
-          style="width: 100% !important;"
+          class="fr-btn-fullwidth fr-btn-fixed-height fr-btn-sm-align-left"
           :label="option.label[choices.lang]" 
           :icon="getButtonIcon(option.value)"
           :secondary="!isActiveChoice(option.value)"
@@ -178,10 +177,10 @@
 
       <!-- AS SIMPLE BUTTONS -->
       <div 
-        v-if="renderAs === 'simpleButtons'"
-        >
+        v-if="renderAs === 'simpleButtons'">
         <DsfrButton
-          :label="option.label[choices.lang]" 
+          class="fr-btn-fullwidth fr-btn-align-center"
+          :label="option.label[choices.lang]"
           size="large"
           style="font-weight: 1000;"
           @click="updateSelection(option); saveSelection()"
@@ -191,8 +190,7 @@
       <!-- AS INPUT -->
       <div 
         v-if="renderAs === 'input'"
-        style="height: 100%;"
-        >
+        style="height: 100%;">
         <TeeTrackInput
           :track-id="trackId"
           :option="option"
@@ -232,22 +230,25 @@
   <!-- SEND / NEXT BUTTON -->
   <div 
     v-if="!noNeedForNext.includes(renderAs) && !isCompleted && !isTrackResults"
-    class="fr-grid-row fr-grid-row--gutters fr-pt-8v">
+    class="fr-grid-row fr-grid-row--gutters fr-pt-8v"
+    style="justify-content: end;">
+    <!-- BTN PREVIOUS -->
     <div
       v-if="step > 1"
-      class="fr-col-3 fr-col-offset-6">
+      class="fr-col-6 fr-col-md-4 fr-col-lg-4 fr-col-xl-3">
       <DsfrButton
-        style="width: -moz-available !important; width: 100%"
+        class="fr-btn-fullwidth fr-btn-sm-fullwidth"
         :label="choices.t('previous')"
         icon="ri-arrow-left-line"
         secondary
         @click="backToPreviousTrack"
       />
     </div>
+    <!-- BTN NEXT -->
     <div 
-      :class="`fr-col-3 ${step === 1 ? 'fr-col-offset-9' : ''}`">
+      class="fr-col-6 fr-col-md-4 fr-col-lg-4 fr-col-xl-3">
       <DsfrButton
-        style="width: -moz-available !important; width: 100%"
+        class="fr-btn-fullwidth fr-btn-sm-fullwidth"
         :label="choices.t('next')"
         :disabled="!selectedOptions.length"
         icon="ri-arrow-right-line"
@@ -287,6 +288,16 @@ const props = defineProps<Props>()
 
 const colsOptions: ColsOptions = {
   buttons: 12,
+  simpleButtons: 6,
+  input: 12,
+  cards: 4,
+  form: 8,
+  modify: 2,
+  results: 10,
+}
+const colsOptionsLarge: ColsOptions = {
+  buttons: 6,
+  simpleButtons: 6,
   input: 12,
   cards: 4,
   form: 8,
@@ -331,22 +342,27 @@ const selectionValues = computed(() => {
 })
 
 const colsWidth = computed(() => {
+  let divSize: string | number
+  const divSizeLarge = colsOptionsLarge[renderAs]
+
   if (props.isCompleted) {
     // full width of 10 if completed track
-    return colsOptions[renderAs]
+    divSize = colsOptions[renderAs]
   } else if (customColWidth === 'auto') {
     // auto columns width
     const rawDiv = Math.round(12 / optionsArray.length)
-    return rawDiv < 2 ? 3 : rawDiv
+    divSize = rawDiv < 2 ? 3 : rawDiv >= 12 ? colsOptions[renderAs] : rawDiv
   } else {
     if (customColWidth) {
       // if defined in choices*.ts
-      return customColWidth
+      divSize = customColWidth
     } else {
       // default values hard written 
-      return colsOptions[renderAs]
+      divSize = colsOptions[renderAs]
     }
   }
+
+  return `fr-col-xl-${divSizeLarge} fr-col-lg-${divSize} fr-col-md-${divSize} fr-col-sm-12 fr-col-xs-12`
 })
 
 // getters

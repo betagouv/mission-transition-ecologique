@@ -13,7 +13,7 @@
     />
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-10v">
       <!-- IMAGE -->
-      <div class="fr-col-4">
+      <div class="fr-col-4 fr-col-sm-hide">
         <img 
           class="fr-responsive-img"
           :src="`${choices.publicPath}images/TEE_illustration.png`"
@@ -22,7 +22,7 @@
       </div>
       
       <!-- TITLE & RESUME -->
-      <div class="fr-col-7 fr-col-offset-1">
+      <div class="fr-col fr-col-offset-md-1 fr-col-offset-sm-0">
         <!-- PROGRAM TITLE -->
         <!-- <h1>
           {{ program.title }}
@@ -57,7 +57,7 @@
         <!-- OPEN MODAL -> FORM -->
         <!-- :label="choices.t('results.showForm', {title: program.title})" -->
         <DsfrButton 
-          class="fr-mb-3v"
+          class="fr-mb-3v fr-btn-sm-fullwidth"
           :label="choices.t('results.knowMore')"
           secondary
           @click="toggleShowForm"
@@ -141,12 +141,12 @@
     aria-labelledby="fr-modal-title-modal-1" 
     role="dialog" 
     id="fr-modal-1" 
-    :class="`fr-modal ${showForm ? 'fr-modal--opened' : ''}`">
+    :class="`fr-modal fr-modal-custom ${showForm ? 'fr-modal--opened' : ''}`">
     <div class="fr-container fr-container--fluid fr-container-md">
       <div class="fr-grid-row fr-grid-row--center">
         <div class="fr-col-12 fr-col-md-11 fr-col-lg-10">
           <div 
-            class="fr-modal__body"
+            class="fr-modal__body fr-modal__body-custom"
             >
             <div class="fr-modal__header">
               <button 
@@ -155,7 +155,9 @@
                 style="align-items: center;"
                 @click="toggleShowForm"
                 >
-                {{ choices.t('close') }}
+                <span class="fr-sm-hide">
+                  {{ choices.t('close') }}
+                </span>
               </button>
             </div>
             <div class="fr-modal__content">
@@ -164,7 +166,8 @@
                 Titre de la modale
               </h1> -->
               <div class="fr-grid-row fr-grid-row--gutters">
-                <div class="fr-col-5 align">
+                <!-- MODAL INFOS -->
+                <div class="fr-col-md-5 fr-col-sm-12 align">
                   <h4 
                     class=""
                     style="text-align: center;">
@@ -176,12 +179,13 @@
                     {{ trackConfig?.form.hint[choices.lang] || '' }}
                   </p>
                   <img 
-                    class="fr-responsive-img"
+                    class="fr-responsive-img fr-sm-hide"
                     :src="`${choices.publicPath}images/TEE_illustration.png`"
                     :alt="`image / ${program.title}`"
                     />
                 </div>
-                <div class="fr-col-7">
+                <!-- MODAL FORM -->
+                <div class="fr-col">
                   <TeeForm
                     :track-id="trackConfig.id"
                     :form-options="trackConfig.form"
