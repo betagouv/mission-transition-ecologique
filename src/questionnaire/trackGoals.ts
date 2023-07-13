@@ -25,7 +25,7 @@ export const goals = {
     {
       value: { user_goals: 'impact' },
       title: { fr: 'Impact environnemental' },
-      label: { fr: "🔍 Connaître et améliorer l’impact environnemental de mon entreprise" },
+      label: { fr: "🌱 Mesurer mon impact carbone et le réduire" },
       next: {
         default: 'track_siret'
       }
@@ -33,7 +33,7 @@ export const goals = {
     {
       value: { user_goals: 'energy' },
       title: { fr: "Gestion de l'énergie" },
-      label: { fr: "⚡️ Mieux gérer l’énergie dans mon entreprise" },
+      label: { fr: "⚡️ Améliorer la performance énergétique de mon entreprise" },
       next: {
         default: 'track_siret'
       }
@@ -49,7 +49,7 @@ export const goals = {
     {
       value: { user_goals: 'economies' },
       title: { fr: 'Economies' },
-      label: { fr: "💦 Faire des économies en réduisant nos pertes en énergie, matière, déchets et eau" },
+      label: { fr: "💶 Faire des économies en réduisant nos pertes en énergie, matière, déchets et eau" },
       next: {
         default: 'track_siret'
       }
@@ -73,12 +73,13 @@ export const goals = {
     {
       value: { user_goals: 'ecoconception' },
       title: { fr: 'Eco-conception' },
-      label: { fr: "♻️ Améliorer mon produit ou service dans une logique d'éco-conception" },
+      label: { fr: "💡 Améliorer la performance environnementale de mes produits et services" },
       next: {
         default: 'track_siret'
       }
     },
     {
+      disabled: true,
       value: { user_goals: 'consolidation' },
       title: { fr: 'Consolider mon projet' },
       label: { fr: "📂 Consolider mon projet d'investissement durable" },
