@@ -56,7 +56,7 @@
             label-visible
             :required="field.required"
             :label="field.label[choices.lang]"
-            :placeholder="field.hint[choices.lang]"
+            :placeholder="(field.hint && field.hint[choices.lang]) || ''"
             @update:modelValue="updateFormData($event, field.id)"
             >
           </DsfrInput>
@@ -76,11 +76,12 @@
             </span>
           </template>
         </DsfrCheckbox>
+
         <!-- CHECKBOX HINT -->
         <div v-if="field.type == 'checkbox'">
           <span
             class="fr-hint-text fr-mt-5v"
-            v-html="field.hint[choices.lang]">
+            v-html="field.hint[choices.lang] || ''">
           </span>
         </div>
       </div>

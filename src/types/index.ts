@@ -72,8 +72,10 @@ export interface TrackCallout {
   title: Translations,
   bigTitle: boolean,
   description: Translations,
-  color?: string,
+  bgColor?: string,
   type?: TrackCalloutType
+  imageLeft?: string,
+  imageRight?: string,
   hintIcon?: string,
   hint?: Translations,
 }
@@ -134,6 +136,8 @@ export interface Track {
   id: string,
   help?: string,
   category?: string,
+  bgColor?: string,
+  imageRight?: string,
   title: Translations,
   label: Translations,
   interface?: TrackInterface,

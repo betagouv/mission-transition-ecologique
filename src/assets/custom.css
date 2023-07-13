@@ -20,6 +20,10 @@ WARNING :
 .fr-btn-fullwidth {
   width: 100% !important;
 }
+.fr-btn-grey {
+  box-shadow: inset 0 0 0 1px #929292;
+  color: #161616;
+}
 .fr-div-fixed-height {
   height: 100%;
 }

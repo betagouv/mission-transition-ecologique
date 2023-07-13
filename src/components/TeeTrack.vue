@@ -45,45 +45,86 @@
   <!-- UNCOMPLETED QUESTIONNAIRE -->
   <div
     v-if="!isCompleted"
-    class="fr-grid-row fr-grid-row--gutters"
+    :class="`fr-grid-row fr-grid-row--gutters ${track.bgColor ? 'fr-p-20v' : ''}`"
     >
 
     <!-- CALLOUT -->
     <div 
       v-if="track.callout"
-      :class="`fr-col-12 ${track.callout.bigTitle ? 'fr-mb-10v fr-mx-0 fr-px-4v' : 'fr-callout'} ${track.callout.color || 'fr--grey-1000'}`">
-        <h2
-          v-if="track.callout.header"
-          style="color: var(--text-default-info);"
-          class="">
-          {{ track.callout.header[choices.lang]}}
-        </h2>
-        <h1
-          v-if="track.callout.bigTitle"
-          class="">
-          {{ track.callout.title[choices.lang]}}
-        </h1>
-        <h3
-          v-else
-          class="fr-callout__title">
-          {{ track.callout.title[choices.lang]}}
-        </h3>
-        <p class="fr-callout__text">
-          {{ track.callout.description[choices.lang]}}
-        </p>
-        <p 
-          v-if="track.callout.hint"
-          class="fr-mt-2v"
-          style="color: var(--text-active-blue-france);">
-          <i>
-            <span 
-              v-if="track.callout.hintIcon"
-              :class="track.callout.hintIcon" 
-              aria-hidden="true">
-            </span>
-            {{ track.callout.hint[choices.lang]}}
-          </i>
-        </p>
+      :class="`fr-col-${track.imageRight ? 9 : 12} ${track.callout.bigTitle ? 'fr-mb-10v fr-mx-0 fr-px-4v' : ''}`"
+      >
+      <div
+        :class="`fr-container ${track.callout.bigTitle ? 'fr-px-0' : 'fr-py-4v'}`"
+        :style="`background-color: ${track.callout.bgColor || 'transparent'}`">
+        <div class="fr-grid-row fr-grid-row--gutters">
+          <div 
+            v-if="track.callout.imageLeft"
+            class="fr-col-4"
+            style="align-self: center;">
+            <img 
+              class="fr-responsive-img"
+              :src="`${choices.publicPath}${track.callout.imageLeft}`"
+              :alt="`image / callout`"
+              />
+          </div>
+          <div class="fr-col">
+            <h2
+              v-if="track.callout.header"
+              style="color: var(--text-default-info);"
+              class="">
+              {{ track.callout.header[choices.lang]}}
+            </h2>
+            <h1
+              v-if="track.callout.bigTitle"
+              class="">
+              {{ track.callout.title[choices.lang]}}
+            </h1>
+            <h3
+              v-else
+              class="fr-callout__title">
+              {{ track.callout.title[choices.lang]}}
+            </h3>
+            <p class="fr-callout__text">
+              {{ track.callout.description[choices.lang]}}
+            </p>
+            <p 
+              v-if="track.callout.hint"
+              class="fr-mt-2v fr-mb-1v"
+              style="color: var(--text-active-blue-france);">
+              <i>
+                <span 
+                  v-if="track.callout.hintIcon"
+                  :class="track.callout.hintIcon" 
+                  aria-hidden="true">
+                </span>
+                {{ track.callout.hint[choices.lang]}}
+              </i>
+            </p>
+          </div>
+          <div 
+            v-if="track.callout.imageRight"
+            class="fr-col-3"
+            style="align-self: center;">
+            <img 
+              class="fr-responsive-img"
+              :src="`${choices.publicPath}${track.callout.imageRight}`"
+              :alt="`image / callout`"
+              />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TRACK IMAGE IF ANY -->
+    <div 
+      v-if="track.imageRight"
+      class="fr-col-3"
+      style="align-self: center;">
+      <img 
+        class="fr-responsive-img"
+        :src="`${choices.publicPath}${track.imageRight}`"
+        :alt="`image / callout`"
+        />
     </div>
 
     <!-- TRACK LABEL -->
@@ -167,7 +208,8 @@
         v-if="renderAs === 'buttons'"
         class="fr-div-fixed-height">
         <DsfrButton
-          class="fr-btn-fullwidth fr-btn-fixed-height fr-btn-sm-align-left"
+          class="fr-btn-fullwidth fr-btn-fixed-height fr-btn-sm-align-left fr-btn-grey"
+          :style="`outline-color: #929292; ${isActiveChoice(option.value) ? 'background-color: #eeeeee' : ''}`"
           :label="option.label[choices.lang]" 
           :icon="getButtonIcon(option.value)"
           :secondary="!isActiveChoice(option.value)"

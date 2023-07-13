@@ -5,8 +5,9 @@ export const goals = {
   label: { fr: "Pour commencer, choisissez votre objectif prioritaire" },
   hint: { fr: "Je souhaite..." },
   callout: {
-    color: 'fr-callout--green-emeraude',
+    bgColor: '#FACF35', // 'fr-callout--green-emeraude',
     title: { fr : 'En avant !' },
+    imageLeft: 'images/TEE-onboarding.png',
     description: { fr : 'Nous allons vous poser quelques questions pour mieux vous connaître et pouvoir vous proposer des actions personnalisées.' },
     hintIcon: 'fr-icon-timer-line',
     hint: { fr: '2 min. chrono' },

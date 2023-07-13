@@ -61,7 +61,7 @@ export const tracksStore = defineStore('tracks', () => {
   })
 
   // getters
-  function getTrack(trackId: string) {
+  const getTrack = (trackId: string) => {
     const track = allTracks.value.find(track => track.id === trackId)
     return track
   }
@@ -78,6 +78,18 @@ export const tracksStore = defineStore('tracks', () => {
     const trackTitle: Translations = track?.label
     const titleString: string = trackTitle && trackTitle[lang]
     return titleString
+  }
+  const getTrackBgColor = (trackId: string) => {
+    const track = getTrack(trackId)
+    // @ts-ignore
+    const trackBgColor: string = track?.bgColor
+    return trackBgColor
+  }
+  const getTrackImageRight = (trackId: string) => {
+    const track = getTrack(trackId)
+    // @ts-ignore
+    const trackImageRight: string = track?.imageRight
+    return trackImageRight
   }
   function trackExistsInUsed(trackId: string) {
     // @ts-ignore
@@ -172,6 +184,8 @@ export const tracksStore = defineStore('tracks', () => {
     getTrack,
     getTrackTitle,
     getTrackLabel,
+    getTrackBgColor,
+    getTrackImageRight,
     isTrackCompleted,
     getAllUsedTracks,
     getAllUsedTracksValues,

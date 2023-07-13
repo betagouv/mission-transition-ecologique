@@ -3,6 +3,8 @@ export const needs = {
   category: 'needs',
   title: { fr: 'Mon besoin' },
   label: { fr: 'Votre besoin' },
+  bgColor: '#E8EDFF', // 'fr-callout--green-emeraude',
+  imageRight: 'images/TEE-illustrationHP.png',
   callout: {
     header: { fr: 'TPE, PME' },
     title: { fr: 'Trouvez comment faire rimer écologie avec économies' },
