@@ -10,6 +10,13 @@ WARNING :
 .fr-card:hover {
   cursor: pointer !important;
 }
+.fr-modal-custom::before {
+  content: none !important;
+}
+.fr-modal__body-custom {
+  max-height: 100vh !important;
+  height: 100vh !important;
+}
 .fr-btn-fullwidth {
   width: 100% !important;
 }
@@ -20,12 +27,8 @@ WARNING :
   min-height: 64px;
   height: 100%;
 }
-.fr-modal-custom::before {
-  content: none !important;
-}
-.fr-modal__body-custom {
-  max-height: 100vh !important;
-  height: 100vh !important;
+.fr-btn-fixed-height > svg {
+  width: 10%;
 }
 .fr-btn-align-center {
   justify-content: center;
@@ -35,6 +38,7 @@ WARNING :
 }
 .fr-btn-sm-align-left > span {
   text-align: left;
+  width: 85%;
 }
 .fr-btn-sm-align-center > svg {
   min-width: 19px !important;
