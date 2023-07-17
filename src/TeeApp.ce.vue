@@ -64,7 +64,7 @@
     <!-- QUESTIONNAIRE -->
     <div
       v-show="!programs.programDetail"
-      :class="`fr-container--fluid ${tracks.currentStep > 1? 'fr-mt-10v' : ''}`">
+      :class="`fr-container--fluid ${tracks.currentStep > 1 ? 'fr-mt-10v' : ''}`">
       <!-- STEPPER -->
       <p
         class="fr-tee-add-padding "
@@ -168,7 +168,7 @@
     <!-- DETAIL RESULT CARD -->
     <div
       v-if="programs.programDetail"
-      class="fr-container-fluid fr-px-20v">
+      :class="`fr-container-fluid fr-px-20v fr-mt-10v`">
       <div 
         class="fr-grid-row fr-grid-row-gutters">
         <div class="fr-col">
