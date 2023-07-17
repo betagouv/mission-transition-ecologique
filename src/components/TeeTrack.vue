@@ -350,7 +350,7 @@ const colsOptions: ColsOptions = {
 }
 const colsOptionsLarge: ColsOptions = {
   buttons: 6,
-  simpleButtons: 6,
+  simpleButtons: 3,
   input: 12,
   cards: 4,
   form: 8,
