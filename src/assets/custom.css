@@ -20,6 +20,10 @@ WARNING :
 .fr-btn-fullwidth {
   width: 100% !important;
 }
+.fr-btn-grey {
+  box-shadow: inset 0 0 0 1px #929292;
+  color: #161616;
+}
 .fr-div-fixed-height {
   height: 100%;
 }
@@ -78,6 +82,9 @@ code {
   .fr-sm-hide {
     display: none !important;
   }
+  /* .fr-sm-add-padding {
+    padding: 0 2em 0 2em;
+  } */
   .fr-col-sm-hide {
     display: none !important;
   }
@@ -98,7 +105,6 @@ code {
   .fr-hidden-xs {
     display: none !important;
   }
-
   .fr-unhidden-xs {
     display: inherit !important;
   }
@@ -317,6 +323,12 @@ code {
 
   .fr-col-offset-xs-12--right {
     margin-right: calc(1200% / 12);
+  }
+}
+
+@media screen and (max-width:78em) {
+  .fr-tee-add-padding {
+    padding: 0 2em 0 2em;
   }
 }
 

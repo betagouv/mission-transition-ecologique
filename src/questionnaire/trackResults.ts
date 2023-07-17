@@ -47,7 +47,7 @@ export const results = {
       {
         id: 'name',
         label: { fr: 'Prénom'},
-        hint: { fr: 'Camille' },
+        // hint: { fr: 'Camille' },
         required: false,
         type: 'text',
         cols: 6,
@@ -57,7 +57,7 @@ export const results = {
       {
         id: 'surname',
         label: { fr: 'Nom'},
-        hint: { fr: 'Dujardin' },
+        // hint: { fr: 'Dujardin' },
         required: false,
         type: 'text',
         cols: 6,
@@ -67,7 +67,7 @@ export const results = {
       {
         id: 'email',
         label: { fr: 'Email'},
-        hint: { fr: 'camille@dujardin.fr' },
+        // hint: { fr: 'camille@dujardin.fr' },
         required: true,
         type: 'email',
         // for debugging purposes
@@ -91,7 +91,7 @@ export const results = {
       {
         id: 'tel',
         label: { fr: 'Téléphone'},
-        hint: { fr: '06 05 04 03 02' },
+        // hint: { fr: '06 05 04 03 02' },
         required: true,
         type: 'text',
         cols: 12,

@@ -1,7 +1,7 @@
 <template>
   <div 
     :id="appId"
-    class="fr-container--fluid fr-py-2v">
+    class="fr-container--fluid">
   
     <!-- HEADER -->
     <p 
@@ -32,7 +32,7 @@
     <!-- MESSAGE & DEBUG SWITCH-->
     <div 
       v-if="showMessageBool || debugSwitchBool"
-      class="fr-grid-row fr-grid-row--gutters">
+      class="fr-grid-row fr-grid-row--gutters fr-tee-add-padding ">
       <!-- MESSAGE-->
       <div 
         v-if="showMessageBool"
@@ -64,9 +64,10 @@
     <!-- QUESTIONNAIRE -->
     <div
       v-show="!programs.programDetail"
-      class="fr-container--fluid">
+      :class="`fr-container--fluid ${tracks.currentStep > 1 ? 'fr-mt-10v' : ''}`">
       <!-- STEPPER -->
       <p
+        class="fr-tee-add-padding "
         v-if="showStepperBool" 
         >
         <TeeStepper
@@ -77,7 +78,7 @@
       </p>
 
       <!-- TRACKS INTERFACES -->
-      <div class="fr-grid-row fr-grid-row-gutters fr-p-1v">
+      <div class="fr-grid-row fr-grid-row-gutters fr-p-0">
         
         <!-- SIDEBAR MENU (FIL D'ARIANE)-->
         <div
@@ -91,7 +92,7 @@
         </div>
         <div
           v-if="tracks.currentStep > 1"
-          class="fr-col-12 fr-col-sm-show fr-mb-8v">
+          class="fr-tee-add-padding fr-col-12 fr-col-sm-show fr-mb-8v">
           <TeeTopbar
             :used-tracks="tracks.usedTracks"
             :debug="debugBool"
@@ -100,11 +101,13 @@
 
         <!-- TRACKS -->
         <div 
-          :class="`${debugBool ? 'fr-col-7' : tracks.currentStep === 1 ? 'fr-col-12 fr-col-lg-8 fr-col-xl-6' : 'fr-col fr-col-lg-8 fr-col-xl-6' } ${debugBool ? '' : 'fr-grid-row--center'}`">
+          :class="`${tracks.currentStep > 1 ? 'fr-tee-add-padding' :''} ${debugBool ? 'fr-col-7' : tracks.currentStep === 1 ? 'fr-col-12 fr-col-xl-12' : 'fr-col fr-col-lg-8 fr-col-xl-6' } ${debugBool ? '' : 'fr-grid-row--center'}`"
+          >
           <div
             v-for="(track, index) in tracks.usedTracks"
             :key="track.id"
-            :class="`fr-py-0 fr-mb-${ debugBool ? '12v' : '0'}`">
+            :style="`${tracks.getTrackBgColor(track.id) ? 'padding: 0px; background-color:'+tracks.getTrackBgColor(track.id) : ''}`"
+            :class="`fr-p-0 fr-mb-${ debugBool ? '12v' : '0'}`">
             <TeeTrack
               :step="index + 1"
               :track-id="track.id"
@@ -165,7 +168,7 @@
     <!-- DETAIL RESULT CARD -->
     <div
       v-if="programs.programDetail"
-      class="fr-container-fluid">
+      :class="`fr-container-fluid fr-px-20v fr-mt-10v`">
       <div 
         class="fr-grid-row fr-grid-row-gutters">
         <div class="fr-col">
