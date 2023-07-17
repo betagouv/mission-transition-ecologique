@@ -56,7 +56,7 @@
             label-visible
             :required="field.required"
             :label="field.label[choices.lang]"
-            :placeholder="field.hint[choices.lang]"
+            :placeholder="(field.hint && field.hint[choices.lang]) || ''"
             @update:modelValue="updateFormData($event, field.id)"
             >
           </DsfrInput>
@@ -76,11 +76,12 @@
             </span>
           </template>
         </DsfrCheckbox>
+
         <!-- CHECKBOX HINT -->
         <div v-if="field.type == 'checkbox'">
           <span
             class="fr-hint-text fr-mt-5v"
-            v-html="field.hint[choices.lang]">
+            v-html="field.hint[choices.lang] || ''">
           </span>
         </div>
       </div>
@@ -188,9 +189,10 @@
 import { onBeforeMount, ref, computed, toRaw } from 'vue'
 
 // @ts-ignore
-import type { FormValues, FormField, FormOptions, FormCallback, UsedTrack, ReqResp } from '@/types/index'
+import type { FormValues, FormField, FormOptions, FormCallback, ReqResp } from '@/types/index'
 
-import { sendApiRequest } from '../utils/emailing'
+import { sendApiRequest } from '../utils/requests'
+import { remapItem } from '../utils/helpers'
 
 import { tracksStore } from '../stores/tracks'
 import { choicesStore } from '../stores/choices'
@@ -199,6 +201,9 @@ import { analyticsStore } from '../stores/analytics'
 const choices = choicesStore()
 const tracks = tracksStore()
 const analytics = analyticsStore()
+
+// const usedTracks: UsedTrack[] | any[] = tracks.getAllUsedTracks
+const trackValues: any[] = tracks.getAllUsedTracksValues
 
 interface Props {
   trackId: string,
@@ -221,13 +226,33 @@ const canSaveFrom = computed(() => {
 
 onBeforeMount(() => {
   // console.log('TeeForm > saveFormData >  props.formOptions :', props.formOptions)
-  const initValues: FormValues = {}
+  // console.log('TeeForm > saveFormData >  usedTracks :', usedTracks)
+  // console.log('TeeForm > saveFormData >  trackValues :', trackValues)
+  
+  let initValues: FormValues = {}
+
+  // set up InitValues from formOptions.fields
   props.formOptions.fields?.forEach((field: FormField) => {
+    // console.log('TeeForm > saveFormData >  field :', field)
+    
+    // set field's key
     initValues[field.id] = field.type === 'checkbox' ? false : ''
+    
+    // set default value if any
     if (field.defaultValue) { initValues[field.id] = field.defaultValue }
+    
     // @ts-ignore
     if (field.required) { requiredFields.value.push(field.id) }
+
+    // inject value into form from store if any
+    if (field.preFillFrom) {
+      // console.log('TeeForm > saveFormData >  field.preFillFrom :', field.preFillFrom)
+      initValues = remapItem(initValues, [field.preFillFrom], {}, trackValues, props, undefined, choices.lang)
+      // console.log('TeeForm > saveFormData >  initValues :', initValues)
+
+    }
   })
+  // console.log('TeeForm > saveFormData >  initValues :', initValues)
   formData = ref(initValues)
 })
 
@@ -242,8 +267,8 @@ const saveFormData = async () => {
   // console.log('TeeForm > saveFormData >  props.dataProps :', props.dataProps)
   // console.log('TeeForm > saveFormData >  formData.value :', formData.value)
   
-  const usedTracks: UsedTrack[] | any[] = tracks.getAllUsedTracks
-  console.log('TeeForm > saveFormData >  usedTracks :', usedTracks)
+  // const usedTracks: UsedTrack[] | any[] = tracks.getAllUsedTracks
+  // console.log('TeeForm > saveFormData >  usedTracks :', usedTracks)
   
   // Launch call backs if any
   const responses: ReqResp[] = []
@@ -255,7 +280,7 @@ const saveFormData = async () => {
     let resp: ReqResp = {}
     switch (callback.action) {
       case 'createContact':
-        resp = await sendApiRequest(callback, toRaw(formData.value), usedTracks, props.dataProps)
+        resp = await sendApiRequest(callback, toRaw(formData.value), trackValues, props.dataProps, choices.lang)
         break
       case 'sendTransactionalEmail':
         resp = await sendApiRequest(callback, toRaw(formData.value))

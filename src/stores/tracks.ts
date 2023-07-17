@@ -5,7 +5,7 @@ import { defineStore } from 'pinia'
 import { tracks } from '../questionnaire'
 
 // @ts-ignore
-import type { Track, Translations, UsedTrack } from '@/types/index'
+import type { Translations, UsedTrack } from '@/types/index'
 
 const allTracks = ref(tracks)
 const seedTrack = ref()
@@ -49,9 +49,19 @@ export const tracksStore = defineStore('tracks', () => {
       .map((i: UsedTrack) => toRaw(i))
     return res
   })
+  const getAllUsedTracksValues = computed(() => {
+    const usedTrackValues = getAllUsedTracks.value.map((usedTrack: UsedTrack) => {
+      const values = usedTrack.selected?.map((s) => s.value)
+      return toRaw(values.map((i) => toRaw(i)))
+    }).filter((i) => i?.length)
+    // console.log('store.tracks > getAllUsedTracksValues >  usedTrackValues :', usedTrackValues)
+
+    const trackValues: any[] = usedTrackValues.flat(1)
+    return trackValues
+  })
 
   // getters
-  function getTrack(trackId: string) {
+  const getTrack = (trackId: string) => {
     const track = allTracks.value.find(track => track.id === trackId)
     return track
   }
@@ -68,6 +78,18 @@ export const tracksStore = defineStore('tracks', () => {
     const trackTitle: Translations = track?.label
     const titleString: string = trackTitle && trackTitle[lang]
     return titleString
+  }
+  const getTrackBgColor = (trackId: string) => {
+    const track = getTrack(trackId)
+    // @ts-ignore
+    const trackBgColor: string = track?.bgColor
+    return trackBgColor
+  }
+  const getTrackImageRight = (trackId: string) => {
+    const track = getTrack(trackId)
+    // @ts-ignore
+    const trackImageRight: string = track?.imageRight
+    return trackImageRight
   }
   function trackExistsInUsed(trackId: string) {
     // @ts-ignore
@@ -162,8 +184,11 @@ export const tracksStore = defineStore('tracks', () => {
     getTrack,
     getTrackTitle,
     getTrackLabel,
+    getTrackBgColor,
+    getTrackImageRight,
     isTrackCompleted,
     getAllUsedTracks,
+    getAllUsedTracksValues,
     trackExistsInUsed,
     setSeedTrack,
     addToUsedTracks,
