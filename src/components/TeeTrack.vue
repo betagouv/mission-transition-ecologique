@@ -51,7 +51,7 @@
         :class="`fr-grid-row fr-grid-row--gutters ${track.bgColor ? 'fr-p-20v' : ''}`"
         >
     
-        <!-- CALLOUT -->
+        <!-- CALLOUT (TEXT + IMAGE) -->
         <div 
           v-if="track.callout"
           :class="`fr-col-12 ${track.callout.bigTitle ? 'fr-mb-10v fr-mx-0 fr-px-4v' : ''}`"
@@ -60,9 +60,10 @@
             :class="`fr-container ${track.callout.bigTitle ? 'fr-px-0' : 'fr-py-4v'}`"
             :style="`background-color: ${track.callout.bgColor || 'transparent'}`">
             <div class="fr-grid-row fr-grid-row--gutters">
+              <!-- CALLOUT IMAGE LEFT -->
               <div 
                 v-if="track.callout.imageLeft"
-                class="fr-col-4"
+                class="fr-col-4 fr-col-sm-hide"
                 style="align-self: center;">
                 <img 
                   class="fr-responsive-img"
@@ -70,6 +71,7 @@
                   :alt="`image / callout`"
                   />
               </div>
+              <!-- CALLOUT TEXT -->
               <div class="fr-col">
                 <h2
                   v-if="track.callout.header"
@@ -104,6 +106,7 @@
                   </i>
                 </p>
               </div>
+              <!-- CALLOUT IMAGE RIGHT -->
               <div 
                 v-if="track.callout.imageRight"
                 class="fr-col-3"

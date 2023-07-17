@@ -326,8 +326,8 @@ code {
   }
 }
 
-@media screen and (max-width:62em) {
-  .fr-md-add-padding {
+@media screen and (max-width:78em) {
+  .fr-tee-add-padding {
     padding: 0 2em 0 2em;
   }
 }

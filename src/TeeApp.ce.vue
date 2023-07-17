@@ -32,7 +32,7 @@
     <!-- MESSAGE & DEBUG SWITCH-->
     <div 
       v-if="showMessageBool || debugSwitchBool"
-      class="fr-grid-row fr-grid-row--gutters fr-md-add-padding ">
+      class="fr-grid-row fr-grid-row--gutters fr-tee-add-padding ">
       <!-- MESSAGE-->
       <div 
         v-if="showMessageBool"
@@ -67,7 +67,7 @@
       class="fr-container--fluid">
       <!-- STEPPER -->
       <p
-        class="fr-md-add-padding "
+        class="fr-tee-add-padding "
         v-if="showStepperBool" 
         >
         <TeeStepper
@@ -92,7 +92,7 @@
         </div>
         <div
           v-if="tracks.currentStep > 1"
-          class="fr-md-add-padding fr-col-12 fr-col-sm-show fr-mb-8v">
+          class="fr-tee-add-padding fr-col-12 fr-col-sm-show fr-mb-8v">
           <TeeTopbar
             :used-tracks="tracks.usedTracks"
             :debug="debugBool"
@@ -101,7 +101,7 @@
 
         <!-- TRACKS -->
         <div 
-          :class="`${tracks.currentStep > 1 ? 'fr-md-add-padding' :''} ${debugBool ? 'fr-col-7' : tracks.currentStep === 1 ? 'fr-col-12 fr-col-xl-12' : 'fr-col fr-col-lg-8 fr-col-xl-6' } ${debugBool ? '' : 'fr-grid-row--center'}`"
+          :class="`${tracks.currentStep > 1 ? 'fr-tee-add-padding' :''} ${debugBool ? 'fr-col-7' : tracks.currentStep === 1 ? 'fr-col-12 fr-col-xl-12' : 'fr-col fr-col-lg-8 fr-col-xl-6' } ${debugBool ? '' : 'fr-grid-row--center'}`"
           >
           <div
             v-for="(track, index) in tracks.usedTracks"
