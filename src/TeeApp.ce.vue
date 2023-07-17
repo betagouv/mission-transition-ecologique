@@ -64,7 +64,7 @@
     <!-- QUESTIONNAIRE -->
     <div
       v-show="!programs.programDetail"
-      class="fr-container--fluid">
+      :class="`fr-container--fluid ${tracks.currentStep > 1? 'fr-mt-10v' : ''}`">
       <!-- STEPPER -->
       <p
         class="fr-tee-add-padding "
