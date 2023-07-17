@@ -55,7 +55,7 @@ WARNING :
   background-color: var(--text-action-high-blue-france) !important;
 }
 .fr-card-result  {
-  height: 250px !important; 
+  height: 100% !important; 
 }
 
 /* DEBUGGING STYLES */
