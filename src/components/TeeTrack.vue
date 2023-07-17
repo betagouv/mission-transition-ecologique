@@ -57,7 +57,7 @@
           :class="`fr-col-12 ${track.callout.bigTitle ? 'fr-mb-10v fr-mx-0 fr-px-4v' : ''}`"
           >
           <div
-            :class="`fr-container ${track.callout.bigTitle ? 'fr-px-0' : 'fr-py-4v'}`"
+            :class="`${track.callout.bigTitle ? 'fr-px-0' : 'fr-py-4v'}`"
             :style="`background-color: ${track.callout.bgColor || 'transparent'}`">
             <div class="fr-grid-row fr-grid-row--gutters">
               <!-- CALLOUT IMAGE LEFT -->
