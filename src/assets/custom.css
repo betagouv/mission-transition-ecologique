@@ -82,9 +82,9 @@ code {
   .fr-sm-hide {
     display: none !important;
   }
-  .fr-sm-add-padding {
+  /* .fr-sm-add-padding {
     padding: 0 2em 0 2em;
-  }
+  } */
   .fr-col-sm-hide {
     display: none !important;
   }
@@ -323,6 +323,12 @@ code {
 
   .fr-col-offset-xs-12--right {
     margin-right: calc(1200% / 12);
+  }
+}
+
+@media screen and (max-width:62em) {
+  .fr-md-add-padding {
+    padding: 0 2em 0 2em;
   }
 }
 
