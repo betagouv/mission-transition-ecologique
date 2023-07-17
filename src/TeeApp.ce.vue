@@ -91,7 +91,7 @@
         </div>
         <div
           v-if="tracks.currentStep > 1"
-          class="fr-col-12 fr-col-sm-show fr-mb-8v">
+          class="fr-sm-add-padding fr-col-12 fr-col-sm-show fr-mb-8v">
           <TeeTopbar
             :used-tracks="tracks.usedTracks"
             :debug="debugBool"
@@ -100,7 +100,7 @@
 
         <!-- TRACKS -->
         <div 
-          :class="`${debugBool ? 'fr-col-7' : tracks.currentStep === 1 ? 'fr-col-12 fr-col-lg-8 fr-col-xl-12' : 'fr-col fr-col-lg-8 fr-col-xl-6' } ${debugBool ? '' : 'fr-grid-row--center'}`"
+          :class="`${tracks.currentStep > 1 ? 'fr-sm-add-padding' :''} ${debugBool ? 'fr-col-7' : tracks.currentStep === 1 ? 'fr-col-12 fr-col-lg-8 fr-col-xl-12' : 'fr-col fr-col-lg-8 fr-col-xl-6' } ${debugBool ? '' : 'fr-grid-row--center'}`"
           >
           <div
             v-for="(track, index) in tracks.usedTracks"

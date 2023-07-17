@@ -130,7 +130,7 @@
     <!-- TRACK LABEL -->
     <div
       v-if="step !== 1"
-      :class="`${isTrackResults ? 'fr-col-10 fr-col-offset-1' : 'fr-col-12'}`">
+      :class="`${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`">
       <h3
         :class="track.info ? 'fr-mb-0' : 'fr-mb-2v'">
         {{ tracks.getTrackLabel(trackId, choices.lang) }}
@@ -162,7 +162,7 @@
     <div
       v-for="option in optionsArray"
       :key="option.value"
-      :class="`${colsWidth} ${isTrackResults ? 'fr-col-offset-1' : ''} fr-py-2v`"
+      :class="`${colsWidth} ${isTrackResults ? 'fr-col-offset-md-1' : ''} fr-py-2v`"
       >
       
       <!-- AS CARDS -->

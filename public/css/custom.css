@@ -82,6 +82,9 @@ code {
   .fr-sm-hide {
     display: none !important;
   }
+  .fr-sm-add-padding {
+    padding: 0 2em 0 2em;
+  }
   .fr-col-sm-hide {
     display: none !important;
   }
@@ -102,7 +105,6 @@ code {
   .fr-hidden-xs {
     display: none !important;
   }
-
   .fr-unhidden-xs {
     display: inherit !important;
   }
