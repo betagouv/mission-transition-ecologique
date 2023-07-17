@@ -7,6 +7,7 @@ export const needs = {
   imageRight: 'images/TEE-illustrationHP.png',
   callout: {
     header: { fr: 'TPE, PME' },
+    headerStyle: 'color: #6672F8;',
     title: { fr: 'Trouvez comment faire rimer écologie avec économies' },
     bigTitle: true,
     description: { fr: "Je complète mon profil en moins de 2 minutes, et je découvre comment faire des économies en réduisant mon impact environnemental." },

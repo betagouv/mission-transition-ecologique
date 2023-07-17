@@ -73,12 +73,14 @@
               </div>
               <!-- CALLOUT TEXT -->
               <div class="fr-col">
+                <!-- CALLOUT HEADER -->
                 <h2
                   v-if="track.callout.header"
-                  style="color: var(--text-default-info);"
+                  :style="`${track.callout.headerStyle} || 'color: var(--text-default-info);'`"
                   class="">
                   {{ track.callout.header[choices.lang]}}
                 </h2>
+                <!-- CALLOUT TITLE / BIG TITLE -->
                 <h1
                   v-if="track.callout.bigTitle"
                   class="">
@@ -89,9 +91,11 @@
                   class="fr-callout__title">
                   {{ track.callout.title[choices.lang]}}
                 </h3>
+                <!-- CALLOUT DESCRIPTION -->
                 <p class="fr-callout__text">
                   {{ track.callout.description[choices.lang]}}
                 </p>
+                <!-- CALLOUT HINT -->
                 <p 
                   v-if="track.callout.hint"
                   class="fr-mt-2v fr-mb-1v"
