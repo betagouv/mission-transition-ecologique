@@ -1,0 +1,27 @@
+{
+  "include": [
+    "data/**/*",
+    "src/**/*"
+  ],
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    // Directory from which to pull the source code
+    "rootDir": ".",
+    // Directory in which to put the generated js code
+    "outDir": "./build",
+
+    // stricter config
+    "allowUnusedLabels": false,
+    "allowUnreachableCode": false,
+    "exactOptionalPropertyTypes": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+
+    "checkJs": true
+  }
+}
