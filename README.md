@@ -8,8 +8,8 @@
 
 ---
 
-**A web component to help french entreprises finding public aid programs for 
-their ecological transition.**
+**A web component and data to help french entreprises finding public aid 
+programs for their ecological transition.**
 
 A project from the `transition-ecologique-entreprises` SE team.
 
