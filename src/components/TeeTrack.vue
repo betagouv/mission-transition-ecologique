@@ -46,7 +46,7 @@
     v-if="!isCompleted"
     class="fr-grid-row">
     <div 
-      :class="`fr-col${track.imageRight ? '-8 fr-col-md-9 fr-col-lg-9' : ''}`">
+      :class="`fr-col${track.imageRight ? ' fr-col-md-9 fr-col-lg-9' : ''}`">
       <!-- UNCOMPLETED QUESTIONNAIRE -->
       <div
         :class="`fr-grid-row fr-grid-row--gutters ${track.bgColor ? 'fr-p-20v' : ''}`"
