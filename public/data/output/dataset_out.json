@@ -128,7 +128,13 @@
     "resume": "Améliorez l'impact environnementale de vos produits et services",
     "origin_url": "https://diag.bpifrance.fr/produit/diag-eco-conception",
     "cover": "images/TEE_ampoule.png",
-    "description": "<b>Une démarche simple :</b>\n<ul>\n  <li>\n    Sensibilisez les équipes internes à l’écoconception et formez un référent écoconception dans votre entreprise\n  </li>\n  <li>\n    Réalisez une évaluation environnementale basée sur l’Analyse du Cycle de Vie du produit, service ou procédé concerné\n  </li>\n  <li>\n    Identifiez, formalisez et chiffrez les leviers d’écoconception, en maîtrisant le risque de transfert de pollution\n  </li>\n  <li>\n    Préparez la mise en œuvre d'un plan d’actions incluant un premier dimensionnement technico-économique\n  </li>\n</ul>\n",
+    "description": [
+      "Une démarche simple",
+      "Sensibilisez les équipes internes à l’écoconception et formez un référent écoconception dans votre entreprise",
+      "Réalisez une évaluation environnementale basée sur l’Analyse du Cycle de Vie du produit, service ou procédé concerné",
+      "Identifiez, formalisez et chiffrez les leviers d’écoconception, en maîtrisant le risque de transfert de pollution",
+      "Préparez la mise en œuvre d'un plan d’actions incluant un premier dimensionnement technico-économique"
+    ],
     "program_types": [
       "diag"
     ],
@@ -250,7 +256,12 @@
     "resume": "Mesurer votre maturité écologique et créer un plan d’actions personnalisé avec à un conseiller",
     "origin_url": "https://www.economie.gouv.fr/entreprises/entreprises-aides-transition-ecologique",
     "cover": "images/TEE_eolienne.png",
-    "description": "- \"Réalisez un état des lieux gratuit pour évaluer l'impact \n  de votre activité sur l'environnement et détecter de \n  nouvelles sources d'économies (énergie, isolation des \n  locaux, consommations d’eau, déchets, matières premières,\" \n  mobilité...)\n- \"Obtenez un diagnostic complet et la proposition \n  d'un plan d'actions prioritaires pour maîtriser \n  sa consommation énergétique et optimiser ses coûts\n- \"Valorisez votre démarche environnementale par l'obtention \n  d'un label, une reconnaissance environnementale, \n  individuelle ou collective\"\n- \"Identifiez et sélectionnez une solution d'investissement, \n  d'étude ou de formation, et soyez assisté dans le montage \n  d'une demande de financement\"\n",
+    "description": [
+      "Réalisez un état des lieux gratuit pour évaluer l'impact \nde votre activité sur l'environnement et détecter de \nnouvelles sources d'économies (énergie, isolation des \nlocaux, consommations d’eau, déchets, matières premières,\nmobilité...)\n",
+      "Obtenez un diagnostic complet et la proposition \nd'un plan d'actions prioritaires pour maîtriser \nsa consommation énergétique et optimiser ses coûts\n",
+      "Valorisez votre démarche environnementale par l'obtention \nd'un label, une reconnaissance environnementale, \nindividuelle ou collective\n",
+      "Identifiez et sélectionnez une solution d'investissement, \nd'étude ou de formation, et soyez assisté dans le montage \nd'une demande de financement\n"
+    ],
     "program_types": [
       "diag"
     ],
