@@ -2,7 +2,8 @@ id: diag-ecoflux
 title: Diag Eco-flux
 resume: Faites des économies en gérant durablement vos dépenses
 origin_url: https://diag.bpifrance.fr/produit/diag-eco-flux
-cover: images/programs/diag-ecoflux.png
+# cover: images/programs/diag-ecoflux.png
+cover: images/TEE_ampoule.png
 description: |
   <ul>
     <li>

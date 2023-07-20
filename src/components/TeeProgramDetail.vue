@@ -15,16 +15,17 @@
     <!-- PROGRAM DETAILS -->
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-10v">
       <!-- IMAGE -->
-      <div class="fr-col-4 fr-col-sm-hide">
+      <div class="fr-col-md-4 fr-col-lg-3 fr-col-sm-hide fr-text-right">
         <img 
           class="fr-responsive-img"
-          :src="`${choices.publicPath}images/TEE_illustration.png`"
+          :src="`${choices.publicPath}${program.cover}`"
           :alt="`image / ${program.title}`"
+          style="display: block; max-height: 300px; max-width: 500px;"
           />
       </div>
       
       <!-- TITLE & RESUME -->
-      <div class="fr-col fr-col-offset-md-1 fr-col-offset-sm-0">
+      <div class="fr-col">
         <!-- PROGRAM TITLE -->
         <!-- <h1>
           {{ program.title }}
@@ -236,7 +237,6 @@ const programs = programsStore()
 const analytics = analyticsStore()
 
 const blockColor = 'var(--text-default-info)'
-
 const showForm = ref<boolean>(false)
 
 interface Props {

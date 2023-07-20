@@ -2,7 +2,8 @@ id: diag-ecoconception
 title: Diag Ecoconception
 resume: Améliorez l'impact environnementale de vos produits et services
 origin_url: https://diag.bpifrance.fr/produit/diag-eco-conception
-cover: images/programs/diag-ecoconception.png
+# cover: images/programs/diag-ecoconception.png
+cover: images/TEE_ampoule.png
 description: |
   <b>Une démarche simple :</b>
   <ul>

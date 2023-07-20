@@ -57,6 +57,7 @@
             class="vue-debug fr-card__desc">
             <br> choices.publicPath : <code>{{ choices.publicPath }}</code>
             <br> prog.cover : <code>{{ prog.cover }}</code>
+            <!-- {{ `${choices.publicPath}${randomImage()}` }} -->
           </p>
           <div class="fr-card__start">
             <ul class="fr-badges-group">
@@ -76,7 +77,7 @@
           <!-- :src="`${choices.publicPath}${prog.cover}`" -->
           <img 
             class="fr-responsive-img"
-            :src="`${choices.publicPath}images/TEE_illustration.png`"
+            :src="`${choices.publicPath}${prog.cover}`"
             :alt="`image / ${prog.title}`"
             />
           <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
@@ -127,9 +128,19 @@ import { analyticsStore } from '../stores/analytics'
 // @ts-ignore
 import type { TrackChoice, TrackResultsConfig, ProgramData } from '@/types/index'
 
+// @ts-ignore
+import { randomChoice } from '@/utils/helpers'
+
 const choices = choicesStore()
 const programs = programsStore()
 const analytics = analyticsStore()
+
+const defaultImages = [
+  'images/TEE_ampoule.png',
+  'images/TEE_energie_verte.png',
+  'images/TEE_eolienne.png',
+  // 'images/TEE-illustrationHP.png'
+]
 
 interface Props {
   trackId: string,
@@ -160,4 +171,9 @@ onBeforeMount(() => {
   // analytics / send event
   analytics.sendEvent(props.trackId, 'show_results')
 })
+
+const randomImage = () => {
+  const imagePath = randomChoice(defaultImages)
+  return imagePath
+}
 </script>
