@@ -7,6 +7,9 @@ WARNING :
 */
 
 /* CUSTOM STYLES - OVERIDES DSFR */
+.fr-text-center {
+  text-align: center;
+}
 .fr-card:hover {
   cursor: pointer !important;
 }
@@ -56,6 +59,18 @@ WARNING :
 }
 .fr-card-result  {
   height: 100% !important; 
+}
+.fr-form-block {
+  background-color: #E8EDFF;
+  padding: 6em 2em 4em 2em;
+  display: flex;
+  justify-content: center;
+}
+.fr-tee-form {
+  max-width: 685px;
+}
+.fr-form-block .fr-input {
+  background-color: white;
 }
 
 /* DEBUGGING STYLES */
@@ -330,6 +345,10 @@ code {
   .fr-tee-add-padding {
     padding: 0 2em 0 2em;
   }
+  .fr-form-px-large {
+    padding-left: 20v !important;
+    padding-right: 20v !important;
+  }
 }
 
 @media screen and (min-width:48em) {
@@ -338,6 +357,10 @@ code {
   }
   .fr-modal__body-custom {
     margin-top: 2em !important;
+  }
+  .fr-form-px-large {
+    padding-left: 20v !important;
+    padding-right: 20v !important;
   }
 }
 

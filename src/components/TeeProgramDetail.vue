@@ -11,6 +11,8 @@
       noOutline
       @click="resetDetailResult"
     />
+
+    <!-- PROGRAM DETAILS -->
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-10v">
       <!-- IMAGE -->
       <div class="fr-col-4 fr-col-sm-hide">
@@ -56,12 +58,12 @@
 
         <!-- OPEN MODAL -> FORM -->
         <!-- :label="choices.t('results.showForm', {title: program.title})" -->
-        <DsfrButton 
+        <!-- <DsfrButton 
           class="fr-mb-3v fr-btn-sm-fullwidth"
           :label="choices.t('results.knowMore')"
           secondary
           @click="toggleShowForm"
-          ref="modalOrigin"/>
+          ref="modalOrigin"/> -->
       </div>
     </div>
 
@@ -133,6 +135,16 @@
           :description="'...'"
         />
       </div>
+    </div>
+
+    <!-- PROGRAM FORM -->
+    <div
+      class="fr-form-block">
+      <TeeForm
+        :track-id="trackConfig.id"
+        :form-options="trackConfig.form"
+        :data-props="{ programId: program.id }"
+        :debug="debug"/>
     </div>
   </div>
 
