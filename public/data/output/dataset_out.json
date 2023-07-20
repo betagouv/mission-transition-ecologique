@@ -5,7 +5,11 @@
     "resume": "Réduisez durablement vos émissions carbone",
     "origin_url": "https://diag.bpifrance.fr/produit/diag-decarbon-action",
     "cover": "images/TEE_eolienne.png",
-    "description": "<ul>\n  <li>\n    Mesurez les émissions de Gaz à effet de serre de votre entreprise.\n  </li>\n  <li>\n    Elaborez votre plan d'actions pour décarboner votre activité.\n  </li>\n  <li>\n    Embarquez votre écosystème en valorisant votre engagement dans la décarbonation.\n  </li>\n</ul>\n",
+    "description": [
+      "Mesurez les émissions de Gaz à effet de serre de votre entreprise.",
+      "Elaborez votre plan d'actions pour décarboner votre activité.",
+      "Embarquez votre écosystème en valorisant votre engagement dans la décarbonation."
+    ],
     "program_types": [
       "diag"
     ],
@@ -65,7 +69,12 @@
     "resume": "Faites des économies en gérant durablement vos dépenses",
     "origin_url": "https://diag.bpifrance.fr/produit/diag-eco-flux",
     "cover": "images/TEE_ampoule.png",
-    "description": "<ul>\n  <li>\n    Faites un état des lieux de vos flux et identifiez les axes prioritaires d’économies.\n  </li>\n  <li>\n    Mettez en place un plan d'actions simple pour réduire vos déchets et votre consommation d'énergie, de matières et d'eau.\n  </li>\n  <li>\n    Lancez vos premières actions.\n  </li>\n  <li>\n    Réalisez en moyenne 45 000 € d'économies par an et par site de production ou établissement (sur la base des missions restituées).\n  </li>\n</ul>\n",
+    "description": [
+      "Faites un état des lieux de vos flux et identifiez les axes prioritaires d’économies.",
+      "Mettez en place un plan d'actions simple pour réduire vos déchets et votre consommation d'énergie, de matières et d'eau.",
+      "Lancez vos premières actions.",
+      "Réalisez en moyenne 45 000 € d'économies par an et par site de production ou établissement (sur la base des missions restituées)."
+    ],
     "program_types": [
       "diag"
     ],
@@ -176,8 +185,12 @@
     "title": "Fonds Tourisme Durable",
     "resume": "Obtenez un diagnostic et des subventions dans votre activité touristique",
     "origin_url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/fonds-tourisme-durable-restaurateurs-hebergeurs-accelerez-transition-0",
-    "cover": "images/TEE_eolienne.png",
-    "description": "<ul>\n  <li>\n    Faites un état des lieux gratuitement afin d'identifier les axes prioritaires d’économies\n  </li>\n  <li>\n    Réduisez et maîtrisez vos coûts fixes (énergie, eau, déchets, gaspillage alimentaire, transport)\n  </li>\n  <li>\n    Accédez à des aides forfaitaires dans tous les domaines de la transition écologique (entre 5k€ et 200k€)\n  </li>\n</ul>\n",
+    "cover": "images/TEE_ampoule.png",
+    "description": [
+      "Faites un état des lieux gratuitement afin d'identifier les axes prioritaires d’économies",
+      "Réduisez et maîtrisez vos coûts fixes (énergie, eau, déchets, gaspillage alimentaire, transport)",
+      "Accédez à des aides forfaitaires dans tous les domaines de la transition écologique (entre 5k€ et 200k€)"
+    ],
     "program_types": [
       "aap"
     ],
@@ -237,7 +250,7 @@
     "resume": "Mesurer votre maturité écologique et créer un plan d’actions personnalisé avec à un conseiller",
     "origin_url": "https://www.economie.gouv.fr/entreprises/entreprises-aides-transition-ecologique",
     "cover": "images/TEE_eolienne.png",
-    "description": "<ul>\n  <li>\n    Réalisez un état des lieux gratuit pour évaluer l'impact \n    de votre activité sur l'environnement et détecter de \n    nouvelles sources d'économies (énergie, isolation des \n    locaux, consommations d’eau, déchets, matières premières, \n    mobilité...)\n  </li>\n  <li>\n    Obtenez un diagnostic complet et la proposition \n    d'un plan d'actions prioritaires pour maîtriser \n    sa consommation énergétique et optimiser ses coûts\n  </li>\n  <li>\n    Valorisez votre démarche environnementale par l'obtention \n    d'un label, une reconnaissance environnementale, \n    individuelle ou collective\n  </li>\n  <li>\n    Identifiez et sélectionnez une solution d'investissement, \n    d'étude ou de formation, et soyez assisté dans le montage \n    d'une demande de financement\n  </li>\n</ul>\n",
+    "description": "- \"Réalisez un état des lieux gratuit pour évaluer l'impact \n  de votre activité sur l'environnement et détecter de \n  nouvelles sources d'économies (énergie, isolation des \n  locaux, consommations d’eau, déchets, matières premières,\" \n  mobilité...)\n- \"Obtenez un diagnostic complet et la proposition \n  d'un plan d'actions prioritaires pour maîtriser \n  sa consommation énergétique et optimiser ses coûts\n- \"Valorisez votre démarche environnementale par l'obtention \n  d'un label, une reconnaissance environnementale, \n  individuelle ou collective\"\n- \"Identifiez et sélectionnez une solution d'investissement, \n  d'étude ou de formation, et soyez assisté dans le montage \n  d'une demande de financement\"\n",
     "program_types": [
       "diag"
     ],
@@ -295,7 +308,12 @@
     "resume": "Faites des économies en gérant durablement vos dépenses",
     "origin_url": "https://agirpourlatransition.ademe.fr/entreprises/optimisez-tpe-pme/diagnostic-global-personnalise",
     "cover": "images/TEE_energie_verte.png",
-    "description": "<ul>\n  <li>\n    Faites un état des lieux de vos flux et identifiez les axes prioritaires d’économies.\n  </li>\n  <li>\n    Mettez en place un plan d'actions simple pour réduire vos déchets et votre consommation d'énergie, de matières et d'eau.\n  </li>\n  <li>\n    Lancez vos premières actions.\n  </li>\n  <li>\n    Réalisez en moyenne 45 000 € d'économies par an et par site de production ou établissement (sur la base des missions restituées).\n  </li>\n</ul>\n",
+    "description": [
+      "Faites un état des lieux de vos flux et identifiez les axes prioritaires d’économies.",
+      "Mettez en place un plan d'actions simple pour réduire vos déchets et votre consommation d'énergie, de matières et d'eau.",
+      "Lancez vos premières actions.",
+      "Réalisez en moyenne 45 000 € d'économies par an et par site de production ou établissement (sur la base des missions restituées)."
+    ],
     "program_types": [
       "diag"
     ],
@@ -349,7 +367,11 @@
     "resume": "Financez vos projets d’études ou d’investissement écologique avec une ou plusieurs aides forfaitaires",
     "origin_url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/tremplin-transition-ecologique-pme",
     "cover": "images/TEE_energie_verte.png",
-    "description": "<ul>\n  <li>\n    Accédez à des aides forfaitaires dans plusieurs domaines de la transition \n    écologique (décarbonation, éco-conception,économie circulaire, gestion \n    des déchets, chaleur et froid renouvelable...)\n  </li>\n  <li>\n    Subventionnez la ou les projets écologique de votre entreprise suivant \n    une liste d’action prédéfinie par l’ADEME (entre 5k€ et 200k€)\n  </li>\n  <li>\n    Demandez une aide financière sur une ou plusieurs actions en même temps\n  </li>\n</ul>\n",
+    "description": [
+      "Accédez à des aides forfaitaires dans plusieurs domaines de la transition  écologique (décarbonation, éco-conception,économie circulaire, gestion  des déchets, chaleur et froid renouvelable...)",
+      "Subventionnez la ou les projets écologique de votre entreprise suivant  une liste d’action prédéfinie par l’ADEME (entre 5k€ et 200k€)",
+      "Demandez une aide financière sur une ou plusieurs actions en même temps"
+    ],
     "program_types": [
       "aap"
     ],
@@ -426,7 +448,12 @@
     "resume": "Mesurer votre maturité energétique et créer un plan d’actions personnalisé avec un conseiller",
     "origin_url": "https://www.cci.fr/",
     "cover": "images/TEE_energie_vertee.png",
-    "description": "<ul>\n  <li>\n    Mettez en œuvre une démarche structurée d’économies d’énergie\n  </li>\n  <li>\n    Montez en compétences sur la thématique Energie de votre entreprise\n  </li>\n  <li>\n    Construisez et réalisez un plan d’actions grâce à un expert de l'énergie\n  </li>\n  <li>\n    Réduisez la consommation d’énergie de votre entreprise\n  </li>\n</ul>\n",
+    "description": [
+      "Mettez en œuvre une démarche structurée d’économies d’énergie",
+      "Montez en compétences sur la thématique Energie de votre entreprise",
+      "Construisez et réalisez un plan d’actions grâce à un expert de l'énergie",
+      "Réduisez la consommation d’énergie de votre entreprise"
+    ],
     "program_types": [
       "diag"
     ],

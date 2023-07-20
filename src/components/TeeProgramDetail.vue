@@ -15,12 +15,12 @@
     <!-- PROGRAM DETAILS -->
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-10v">
       <!-- IMAGE -->
-      <div class="fr-col-md-4 fr-col-lg-3 fr-col-sm-hide fr-text-right">
+      <div class="fr-col-md-4 fr-col-lg-2 fr-col-xl-2 fr-col-sm-hide fr-text-right">
         <img 
           class="fr-responsive-img"
           :src="`${choices.publicPath}${program.cover}`"
           :alt="`image / ${program.title}`"
-          style="display: block; max-height: 300px; max-width: 500px;"
+          style="display: block; max-height: 150px; max-width: 200px; width: 100%;"
           />
       </div>
       
@@ -46,17 +46,6 @@
           v-html="program.resume">
         </h2>
 
-        <!-- PROGRAM DESCRIPTION -->
-        <h6
-          v-if="trackConfig.config?.showProgramSubtitles"
-          :style="`color: ${blockColor}`">
-          {{ choices.t('program.programDescription') }}
-        </h6>
-        <p 
-          v-if="program.description"
-          v-html="program.description">
-        </p>
-
         <!-- OPEN MODAL -> FORM -->
         <!-- :label="choices.t('results.showForm', {title: program.title})" -->
         <!-- <DsfrButton 
@@ -66,6 +55,30 @@
           @click="toggleShowForm"
           ref="modalOrigin"/> -->
       </div>
+    </div>
+
+    <!-- PROGRAM DESCRIPTION -->
+    <div 
+      v-if="program.description"
+      class="fr-mb-10v">
+      <h3>
+        {{ choices.t('program.programDescription') }}
+      </h3>
+      <ol class="fr-tee-description-list">
+        <li 
+          v-for="(paragraph, idx) in program.description"
+          :key="`description-paragraph-${idx}`"
+          class="fr-mb-3v">
+          <!-- <span 
+            class="fr-mr-4v"
+            :style="`color: ${blockColor};`">
+            {{ idx+1 }} |
+          </span> -->
+          <span>
+            {{ paragraph }}
+          </span>
+        </li>
+      </ol>
     </div>
 
     <!-- PROGRAM INFOS : PROVIDERS / TYPE / START / END -->

@@ -76,6 +76,25 @@ WARNING :
   background-color: white;
 }
 
+/* RESULT DETAILS PAGE */
+/* check: https://css-tricks.com/css-counters-custom-list-number-styling/ */
+ol.fr-tee-description-list {
+  list-style: none;
+  counter-reset: my-awesome-counter;
+}
+ol.fr-tee-description-list li {
+  margin: 0 0 0.5rem 0;
+  counter-increment: my-awesome-counter;
+  position: relative;
+}
+ol.fr-tee-description-list li::marker {
+  content: counter(my-awesome-counter) "| ";
+  color: #6A6AF4;
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: absolute;
+}
+
 /* DEBUGGING STYLES */
 code {
   color: red !important;

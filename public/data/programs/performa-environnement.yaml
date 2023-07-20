@@ -5,30 +5,20 @@ origin_url: https://www.economie.gouv.fr/entreprises/entreprises-aides-transitio
 # cover: images/programs/performa-environnement.jpeg
 cover: images/TEE_eolienne.png
 description: |
-  <ul>
-    <li>
-      Réalisez un état des lieux gratuit pour évaluer l'impact 
-      de votre activité sur l'environnement et détecter de 
-      nouvelles sources d'économies (énergie, isolation des 
-      locaux, consommations d’eau, déchets, matières premières, 
-      mobilité...)
-    </li>
-    <li>
-      Obtenez un diagnostic complet et la proposition 
-      d'un plan d'actions prioritaires pour maîtriser 
-      sa consommation énergétique et optimiser ses coûts
-    </li>
-    <li>
-      Valorisez votre démarche environnementale par l'obtention 
-      d'un label, une reconnaissance environnementale, 
-      individuelle ou collective
-    </li>
-    <li>
-      Identifiez et sélectionnez une solution d'investissement, 
-      d'étude ou de formation, et soyez assisté dans le montage 
-      d'une demande de financement
-    </li>
-  </ul>
+  - "Réalisez un état des lieux gratuit pour évaluer l'impact 
+    de votre activité sur l'environnement et détecter de 
+    nouvelles sources d'économies (énergie, isolation des 
+    locaux, consommations d’eau, déchets, matières premières," 
+    mobilité...)
+  - "Obtenez un diagnostic complet et la proposition 
+    d'un plan d'actions prioritaires pour maîtriser 
+    sa consommation énergétique et optimiser ses coûts
+  - "Valorisez votre démarche environnementale par l'obtention 
+    d'un label, une reconnaissance environnementale, 
+    individuelle ou collective"
+  - "Identifiez et sélectionnez une solution d'investissement, 
+    d'étude ou de formation, et soyez assisté dans le montage 
+    d'une demande de financement"
 program_types: 
   - diag
 conditions:

@@ -4,21 +4,13 @@ resume: Financez vos projets d’études ou d’investissement écologique avec 
 origin_url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/tremplin-transition-ecologique-pme
 # cover: images/programs/tremplin.jpg
 cover: images/TEE_energie_verte.png
-description: |
-  <ul>
-    <li>
-      Accédez à des aides forfaitaires dans plusieurs domaines de la transition 
-      écologique (décarbonation, éco-conception,économie circulaire, gestion 
-      des déchets, chaleur et froid renouvelable...)
-    </li>
-    <li>
-      Subventionnez la ou les projets écologique de votre entreprise suivant 
-      une liste d’action prédéfinie par l’ADEME (entre 5k€ et 200k€)
-    </li>
-    <li>
-      Demandez une aide financière sur une ou plusieurs actions en même temps
-    </li>
-  </ul>
+description:
+  - "Accédez à des aides forfaitaires dans plusieurs domaines de la transition 
+    écologique (décarbonation, éco-conception,économie circulaire, gestion 
+    des déchets, chaleur et froid renouvelable...)"
+  - "Subventionnez la ou les projets écologique de votre entreprise suivant 
+    une liste d’action prédéfinie par l’ADEME (entre 5k€ et 200k€)"
+  - Demandez une aide financière sur une ou plusieurs actions en même temps
 program_types: 
   - aap
 conditions:

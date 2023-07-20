@@ -38,7 +38,7 @@ export const frDict = {
   },
   program: {
     programResume: "Le dispositif en deux mots",
-    programDescription: "Présentation générale du dispositif",
+    programDescription: "Au programme :",
     programProviders: "Porteur(s) du dispositif",
     programType: "Type(s) de dispositif",
     programGeoZones: "Région(s) concernée(s)",
