@@ -60,7 +60,7 @@
     <!-- PROGRAM DESCRIPTION -->
     <div 
       v-if="program.description"
-      class="fr-mb-10v">
+      class="fr-mb-18v">
       <h3>
         {{ choices.t('program.programDescription') }}
       </h3>
@@ -69,11 +69,6 @@
           v-for="(paragraph, idx) in program.description"
           :key="`description-paragraph-${idx}`"
           class="fr-mb-3v">
-          <!-- <span 
-            class="fr-mr-4v"
-            :style="`color: ${blockColor};`">
-            {{ idx+1 }} |
-          </span> -->
           <span>
             {{ paragraph }}
           </span>
