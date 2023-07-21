@@ -53,7 +53,7 @@ export const sendApiRequest = async (
   // console.log('utils > requests > sendApiRequest >  listIds :', listIds)
 
   data = remapItem(data, dataMapping, formData, trackValues, props, undefined, lang)
-  console.log('utils > requests > sendApiRequest >  data :', data)
+  // console.log('utils > requests > sendApiRequest >  data :', data)
   const body = JSON.stringify(data)
   // console.log('utils > requests > sendApiRequest >  body :', body)
 
@@ -74,7 +74,7 @@ export const sendRequest = async (url: string, method: string, headers: any, bod
     headers: headers,
     body: body
   })
-  console.log('utils > requests > sendRequest >  response :', response)
+  // console.log('utils > requests > sendRequest >  response :', response)
   const respJson = await response.json()
   respJson.action = action
   respJson.ok = response.ok

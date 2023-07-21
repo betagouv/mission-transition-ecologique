@@ -26,7 +26,16 @@ const refs: Refs = {
   nafCodes: nafCodesJson
 }
 
-import type { FormCallbackDataMapping, Cleaner, CleanerReplaceAll, CleanerFromJson, CleanerFromDict, CleanerDefaultIfNull, ResultsMapping } from '@/types/index'
+import type { 
+  NextTrackRule,
+  FormCallbackDataMapping, 
+  Cleaner, 
+  CleanerReplaceAll, 
+  CleanerFromJson, 
+  CleanerFromDict, 
+  CleanerDefaultIfNull, 
+  ResultsMapping 
+} from '@/types/index'
 
 // GENERIC HELPERS
 
@@ -177,7 +186,7 @@ export const cleanValue = (value: any, cleaners: Cleaner[] | CleanerReplaceAll[]
 
 export const remapItem = (
   dataStructure: object,
-  dataMapping: FormCallbackDataMapping[],
+  dataMapping: FormCallbackDataMapping[] | NextTrackRule[],
   formData: object | any = {},
   trackValues: any[] = [],
   props: object | any = undefined,
@@ -185,14 +194,14 @@ export const remapItem = (
   lang: string = 'fr'
   ) => {
   
-  console.log()
+  // console.log()
   // console.log('utils > helpers > remapItem >  dataStructure :', dataStructure)
   let data = { ...dataStructure }
   const metaEnv = import.meta.env
   // console.log('utils > helpers > remapItem >  metaEnv :', metaEnv)
   
   dataMapping.forEach(dm => {
-    console.log()
+    // console.log()
     // console.log('utils > helpers > remapItem >  dm :', dm)
     let value: any = ''
     switch (dm.from) {
@@ -203,6 +212,7 @@ export const remapItem = (
         value = formData && formData[dm.id]
         break
       case 'usedTracks':
+        // console.log('utils > helpers > remapItem >  trackValues :', trackValues)
         value = findInTracksArray(trackValues, dm.id)
         break
       case 'props':
