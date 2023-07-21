@@ -2,19 +2,12 @@ id: diag-decarbon-action
 title: Diag Decarbon'Action
 resume: Réduisez durablement vos émissions carbone
 origin_url: https://diag.bpifrance.fr/produit/diag-decarbon-action
-cover: images/programs/decarbon-action.png
-description: |
-  <ul>
-    <li>
-      Mesurez les émissions de Gaz à effet de serre de votre entreprise.
-    </li>
-    <li>
-      Elaborez votre plan d'actions pour décarboner votre activité.
-    </li>
-    <li>
-      Embarquez votre écosystème en valorisant votre engagement dans la décarbonation.
-    </li>
-  </ul>
+# cover: images/programs/decarbon-action.png
+cover: images/TEE_eolienne.png
+description:
+  - Mesurez les émissions de Gaz à effet de serre de votre entreprise.
+  - Elaborez votre plan d'actions pour décarboner votre activité.
+  - Embarquez votre écosystème en valorisant votre engagement dans la décarbonation.
 program_types: 
   - diag
 conditions:

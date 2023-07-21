@@ -1,6 +1,8 @@
 <template>
   <!-- FORM -->
-  <div v-show="!formIsSent">
+  <div
+    class="fr-tee-form"
+    v-show="!formIsSent">
   
     <!-- DEBUGGING -->
     <div 
@@ -19,14 +21,28 @@
         </code>
       </p>
     </div>
-  
+    
+    <!-- FORM LABEL -->
+    <h3 
+      v-if="formOptions.label"
+      class="fr-text-center">
+      {{ formOptions.label[choices.lang] }}
+    </h3>
+
+    <!-- FORM LABEL -->
+    <p 
+      v-if="formOptions.hint"
+      class="fr-text-center fr-pb-10v">
+      {{ formOptions.hint[choices.lang] }}
+    </p>
+
     <!-- FIELDS -->
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-2v">
 
       <div
         v-for="field in formOptions.fields"
         :key="field.id"
-        :class="`fr-col-${ field.cols ? field.cols : 12 }`"
+        :class="`fr-col-md-${ field.cols ? field.cols : 12 } fr-col-sm-12`"
         >
         <!-- DEBUGGING -->
         <div 
@@ -116,7 +132,7 @@
   <!-- FORM CALLBACK -->
   <div
     v-if="formIsSent"
-    class="fr-mt-5v">
+    class="fr-mt-5v fr-tee-form">
     <!-- FORM ALERT AFTER SENDING-->
     <div :class="`fr-alert fr-alert--${!requestResponses || requestResponses?.map(r => r.status).every(s => s === 200 || s === 201) ? 'success' : 'error'}`">
       <h3 class="fr-alert__title">

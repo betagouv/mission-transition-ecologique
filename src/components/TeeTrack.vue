@@ -45,7 +45,8 @@
   <div 
     v-if="!isCompleted"
     class="fr-grid-row">
-    <div class="fr-col">
+    <div 
+      :class="`fr-col${track.imageRight ? ' fr-col-md-9 fr-col-lg-9' : ''}`">
       <!-- UNCOMPLETED QUESTIONNAIRE -->
       <div
         :class="`fr-grid-row fr-grid-row--gutters ${track.bgColor ? 'fr-p-20v' : ''}`"
@@ -130,7 +131,8 @@
           v-if="step !== 1"
           :class="`${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`">
           <h3
-            :class="track.info ? 'fr-mb-0' : 'fr-mb-2v'">
+            :class="track.info ? 'fr-mb-0' : 'fr-mb-2v'"
+            :style="`${isTrackResults ? 'color: #000091;' : ''}`">
             {{ tracks.getTrackLabel(trackId, choices.lang) }}
           </h3>
         </div>
@@ -306,7 +308,7 @@
       <img 
         class="fr-responsive-img fr-px-2v"
         :src="`${choices.publicPath}${track.imageRight}`"
-        style="max-height: 500px; width: auto;"
+        style="max-height: 500px; width: auto; height: auto;"
         :alt="`image / callout`"
         />
     </div>
@@ -495,14 +497,22 @@ watch(() => props.isCompleted, ( next ) => {
 
 // functions
 const saveSelection = () => {
-  // console.log()
+  console.log()
   // console.log('TeeTrack > updateStore > option :', option)
 
   const optionNext = selectedOptions.value[0].next
+  const nextExceptions = optionNext?.exceptions
   const defaultNext = track?.next
+
+  console.log('TeeTrack > updateStore > optionNext :', optionNext)
+  if (nextExceptions) {
+    console.log('TeeTrack > updateStore > nextExceptions :', nextExceptions)
+
+  }
 
   // @ts-ignore
   const next = !optionNext || allowMultiple ? defaultNext : optionNext
+  console.log('TeeTrack > updateStore > next :', next)
 
   tracks.updateUsedTracks(props.trackId, props.step, next, selectedOptions.value)
   

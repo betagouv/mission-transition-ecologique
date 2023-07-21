@@ -1,3 +1,16 @@
+const nextExceptions = [
+  {
+    rules: [
+      { 
+        id: 'siret',
+        from: 'usedTracks',
+        dataField: 'siret',
+        condition: 'exists'
+      }
+    ],
+    next: 'track_roles'
+  }
+] 
 export const sizes = {
   id: 'track_structure_sizes',
   category: 'entreprise',
@@ -15,7 +28,8 @@ export const sizes = {
       title: { fr: 'TPE' },
       label: { fr: "TPE (moins de 20 salarié.e.s)" },
       next: {
-        default: 'track_sectors'
+        default: 'track_sectors',
+        exceptions: nextExceptions
       }
     },
     {
@@ -23,7 +37,8 @@ export const sizes = {
       title: { fr: 'PME' },
       label: { fr: "PME (entre 20 et 249 salarié.e.s)" },
       next: {
-        default: 'track_sectors'
+        default: 'track_sectors',
+        exceptions: nextExceptions
       }
     },
     {
@@ -32,7 +47,8 @@ export const sizes = {
       title: { fr: 'ETI' },
       label: { fr: "ETI (entre 250 et 5000 salarié.e.s)" },
       next: {
-        default: 'track_sectors'
+        default: 'track_sectors',
+        exceptions: nextExceptions
       }
     },
     {
@@ -41,7 +57,8 @@ export const sizes = {
       title: { fr: 'GE' },
       label: { fr: "GE (plus de 5000 salarié.e.s)" },
       next: {
-        default: 'track_sectors'
+        default: 'track_sectors',
+        exceptions: nextExceptions
       }
     }
   ]

@@ -2,23 +2,14 @@ id: diag-ecoconception
 title: Diag Ecoconception
 resume: Améliorez l'impact environnementale de vos produits et services
 origin_url: https://diag.bpifrance.fr/produit/diag-eco-conception
-cover: images/programs/diag-ecoconception.png
-description: |
-  <b>Une démarche simple :</b>
-  <ul>
-    <li>
-      Sensibilisez les équipes internes à l’écoconception et formez un référent écoconception dans votre entreprise
-    </li>
-    <li>
-      Réalisez une évaluation environnementale basée sur l’Analyse du Cycle de Vie du produit, service ou procédé concerné
-    </li>
-    <li>
-      Identifiez, formalisez et chiffrez les leviers d’écoconception, en maîtrisant le risque de transfert de pollution
-    </li>
-    <li>
-      Préparez la mise en œuvre d'un plan d’actions incluant un premier dimensionnement technico-économique
-    </li>
-  </ul>
+# cover: images/programs/diag-ecoconception.png
+cover: images/TEE_ampoule.png
+description:
+  - Une démarche simple
+  - Sensibilisez les équipes internes à l’écoconception et formez un référent écoconception dans votre entreprise
+  - Réalisez une évaluation environnementale basée sur l’Analyse du Cycle de Vie du produit, service ou procédé concerné
+  - Identifiez, formalisez et chiffrez les leviers d’écoconception, en maîtrisant le risque de transfert de pollution
+  - Préparez la mise en œuvre d'un plan d’actions incluant un premier dimensionnement technico-économique
 program_types: 
   - diag
 conditions:

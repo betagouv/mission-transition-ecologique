@@ -107,6 +107,7 @@ export interface TrackOptionsField {
 }
 export interface TrackNext {
   default: string,
+  exceptions? : object[]
   [name: string]: any
 }
 export interface TrackOptions {

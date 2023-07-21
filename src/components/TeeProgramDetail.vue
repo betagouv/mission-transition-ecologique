@@ -11,18 +11,21 @@
       noOutline
       @click="resetDetailResult"
     />
+
+    <!-- PROGRAM DETAILS -->
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-10v">
       <!-- IMAGE -->
-      <div class="fr-col-4 fr-col-sm-hide">
+      <div class="fr-col-md-4 fr-col-lg-2 fr-col-xl-2 fr-col-sm-hide fr-text-right">
         <img 
           class="fr-responsive-img"
-          :src="`${choices.publicPath}images/TEE_illustration.png`"
+          :src="`${choices.publicPath}${program.cover}`"
           :alt="`image / ${program.title}`"
+          style="display: block; max-height: 150px; max-width: 200px; width: 100%;"
           />
       </div>
       
       <!-- TITLE & RESUME -->
-      <div class="fr-col fr-col-offset-md-1 fr-col-offset-sm-0">
+      <div class="fr-col">
         <!-- PROGRAM TITLE -->
         <!-- <h1>
           {{ program.title }}
@@ -43,26 +46,34 @@
           v-html="program.resume">
         </h2>
 
-        <!-- PROGRAM DESCRIPTION -->
-        <h6
-          v-if="trackConfig.config?.showProgramSubtitles"
-          :style="`color: ${blockColor}`">
-          {{ choices.t('program.programDescription') }}
-        </h6>
-        <p 
-          v-if="program.description"
-          v-html="program.description">
-        </p>
-
         <!-- OPEN MODAL -> FORM -->
         <!-- :label="choices.t('results.showForm', {title: program.title})" -->
-        <DsfrButton 
+        <!-- <DsfrButton 
           class="fr-mb-3v fr-btn-sm-fullwidth"
           :label="choices.t('results.knowMore')"
           secondary
           @click="toggleShowForm"
-          ref="modalOrigin"/>
+          ref="modalOrigin"/> -->
       </div>
+    </div>
+
+    <!-- PROGRAM DESCRIPTION -->
+    <div 
+      v-if="program.description"
+      class="fr-mb-18v">
+      <h3>
+        {{ choices.t('program.programDescription') }}
+      </h3>
+      <ol class="fr-tee-description-list">
+        <li 
+          v-for="(paragraph, idx) in program.description"
+          :key="`description-paragraph-${idx}`"
+          class="fr-mb-3v">
+          <span>
+            {{ paragraph }}
+          </span>
+        </li>
+      </ol>
     </div>
 
     <!-- PROGRAM INFOS : PROVIDERS / TYPE / START / END -->
@@ -133,6 +144,16 @@
           :description="'...'"
         />
       </div>
+    </div>
+
+    <!-- PROGRAM FORM -->
+    <div
+      class="fr-form-block">
+      <TeeForm
+        :track-id="trackConfig.id"
+        :form-options="trackConfig.form"
+        :data-props="{ programId: program.id }"
+        :debug="debug"/>
     </div>
   </div>
 
@@ -224,7 +245,6 @@ const programs = programsStore()
 const analytics = analyticsStore()
 
 const blockColor = 'var(--text-default-info)'
-
 const showForm = ref<boolean>(false)
 
 interface Props {

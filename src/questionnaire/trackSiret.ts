@@ -118,13 +118,13 @@ export const siret = {
               dataField: 'codePostal',
               onlyRemap: true
             },
-            {
-              from: 'rawData',
-              id: 'size',
-              path: 'etablissement.uniteLegale.categorieEntreprise',
-              dataField: 'structure_sizes',
-              onlyRemap: true
-            },
+            // {
+            //   from: 'rawData',
+            //   id: 'size',
+            //   path: 'etablissement.uniteLegale.categorieEntreprise',
+            //   dataField: 'structure_sizes',
+            //   onlyRemap: true
+            // },
           ],
           inputCleaning: [
             {
@@ -162,28 +162,28 @@ export const siret = {
               label: "Secteur d'activité :",
               icon: 'fr-icon-briefcase-line'
             },
-            {
-              respFields: ['data.structure_sizes'],
-              // label: 'Catégorie :',
-              icon: 'fr-icon-parent-line',
-              cleaning: [
-                {
-                  operation: 'defaultIfNull',
-                  // respFields: 'data.structure_sizes',
-                  defaultValue: { fr: 'Autre' }
-                },
-                {
-                  operation: 'findFromDict',
-                  dict: {
-                    Autre: 'Auto-Entrepreneur.e',
-                    TPE: 'TPE (entre 1 et 19 salarié.e.s)',
-                    PME: 'PME (entre 20 et 250 salarié.e.s)',
-                    ETI: 'ETI (entre 250 et 5000 salarié.e.s)',
-                    GE: 'Grande Entreprise (plus de 5000 salarié.e.s)'
-                  }
-                }
-              ]
-            },
+            // {
+            //   respFields: ['data.structure_sizes'],
+            //   // label: 'Catégorie :',
+            //   icon: 'fr-icon-parent-line',
+            //   cleaning: [
+            //     {
+            //       operation: 'defaultIfNull',
+            //       // respFields: 'data.structure_sizes',
+            //       defaultValue: { fr: 'Autre' }
+            //     },
+            //     {
+            //       operation: 'findFromDict',
+            //       dict: {
+            //         Autre: 'Auto-Entrepreneur.e',
+            //         TPE: 'TPE (entre 1 et 19 salarié.e.s)',
+            //         PME: 'PME (entre 20 et 250 salarié.e.s)',
+            //         ETI: 'ETI (entre 250 et 5000 salarié.e.s)',
+            //         GE: 'Grande Entreprise (plus de 5000 salarié.e.s)'
+            //       }
+            //     }
+            //   ]
+            // },
             {
               respFields: [
                 'raw.etablissement.adresseEtablissement.numeroVoieEtablissement',
@@ -226,8 +226,8 @@ export const siret = {
         }
       ],
       next: {
-        // default: 'track_structure_sizes',
-        default: 'track_roles'
+        default: 'track_structure_sizes',
+        // default: 'track_roles'
       },
       wildcard: {
         label: { fr: "je préfère compléter mes informations manuellement" },

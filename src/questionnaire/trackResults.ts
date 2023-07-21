@@ -29,8 +29,9 @@ export const results = {
   ],
   form: {
     value: 'contact_form.email',
-    label: { fr: 'Vous êtes intéressé.e par le dispositif {title} ?' },
-    hint: { fr: "Posez votre question, un conseiller vous contactera dans les 5 jours"},
+    // label: { fr: 'Vous êtes intéressé.e par le dispositif {title} ?' },
+    label: { fr: 'Vous souhaitez en connaître davantage ?' },
+    hint: { fr: "👋 Posez votre question, un conseiller vous contactera dans les 5 jours"},
     intro: { fr: `
       <h2>
         <span
@@ -74,6 +75,16 @@ export const results = {
         // defaultValue: 'france-transition@beta.gouv.fr'
       },
       {
+        id: 'tel',
+        label: { fr: 'Téléphone'},
+        // hint: { fr: '06 05 04 03 02' },
+        required: true,
+        type: 'text',
+        cols: 12,
+        // for debugging purposes
+        // defaultValue: '06 05 04 03 02'
+      },
+      {
         id: 'siret',
         label: { fr: 'SIRET de votre entreprise'},
         hint: { fr: '385 290 309 00454' },
@@ -87,16 +98,6 @@ export const results = {
         cols: 12,
         // for debugging purposes
         // defaultValue: '83014132100034'
-      },
-      {
-        id: 'tel',
-        label: { fr: 'Téléphone'},
-        // hint: { fr: '06 05 04 03 02' },
-        required: true,
-        type: 'text',
-        cols: 12,
-        // for debugging purposes
-        // defaultValue: '06 05 04 03 02'
       },
       {
         id: 'needs',

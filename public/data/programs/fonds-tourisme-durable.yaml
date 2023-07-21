@@ -2,19 +2,12 @@ id: fonds-tourisme-durable
 title: Fonds Tourisme Durable
 resume: Obtenez un diagnostic et des subventions dans votre activité touristique 
 origin_url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/fonds-tourisme-durable-restaurateurs-hebergeurs-accelerez-transition-0
-cover: images/programs/fonds-tourisme-durable.jpg
-description: |
-  <ul>
-    <li>
-      Faites un état des lieux gratuitement afin d'identifier les axes prioritaires d’économies
-    </li>
-    <li>
-      Réduisez et maîtrisez vos coûts fixes (énergie, eau, déchets, gaspillage alimentaire, transport)
-    </li>
-    <li>
-      Accédez à des aides forfaitaires dans tous les domaines de la transition écologique (entre 5k€ et 200k€)
-    </li>
-  </ul>
+# cover: images/programs/fonds-tourisme-durable.jpg
+cover: images/TEE_ampoule.png
+description:
+  - Faites un état des lieux gratuitement afin d'identifier les axes prioritaires d’économies
+  - Réduisez et maîtrisez vos coûts fixes (énergie, eau, déchets, gaspillage alimentaire, transport)
+  - Accédez à des aides forfaitaires dans tous les domaines de la transition écologique (entre 5k€ et 200k€)
 program_types: 
   - aap
 conditions:

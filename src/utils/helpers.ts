@@ -30,6 +30,11 @@ import type { FormCallbackDataMapping, Cleaner, CleanerReplaceAll, CleanerFromJs
 
 // GENERIC HELPERS
 
+export const randomChoice = (array: any[]) => {
+  const randomIndex = Math.floor(Math.random() * array.length)
+  return array[randomIndex]
+}
+
 export const getFrom = (from: any, selectors: string[]) => {
   // console.log('utils > helpers > getFrom >  selectors :', selectors)
   const res = selectors.map((s: string) => {
