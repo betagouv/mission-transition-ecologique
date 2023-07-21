@@ -38,7 +38,7 @@ export const programsStore = defineStore('programs', () => {
         }
       })
     })
-    console.log('store.programs > filterPrograms > conditions :', conditions)
+    // console.log('store.programs > filterPrograms > conditions :', conditions)
 
     // filter out programs
     const progsFiltered = progs.value.filter((prog: any) => {
