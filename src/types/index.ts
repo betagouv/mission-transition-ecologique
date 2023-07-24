@@ -20,10 +20,13 @@ export interface ProgramConditions {
 enum ConditionOperators {
   or = 'or',
   and = 'and',
+  is = '==',
+  exist = 'exists',
+  notEqual = '!=',
   superior = '>',
   superiorOrEqual = '>=',
-  inferior = '>',
-  inferiorOrEqual = '>=',
+  inferior = '<',
+  inferiorOrEqual = '<=',
 }
 export interface Condition {
   type?: string,
@@ -104,6 +107,14 @@ export interface TrackOptionsField {
   hint?: Translations,
   required?: boolean,
   type: string
+}
+
+export interface NextTrackRule extends FormCallbackDataMapping {
+  conditions: Condition[]
+}
+export interface NextTrackRule {
+  rules: NextTrackRule[],
+  next: TrackNext
 }
 export interface TrackNext {
   default: string,

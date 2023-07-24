@@ -328,7 +328,10 @@ import { analyticsStore } from '../stores/analytics'
 // import type { DsfrButton } from '@gouvminint/vue-dsfr/types'
 
 // @ts-ignore
-import type { Track, TrackOptions, ColsOptions } from '@/types/index'
+import type { Track, TrackOptions, NextTrackRule, ColsOptions } from '@/types/index'
+
+import { remapItem } from '../utils/helpers'
+import { CheckNextTrackRules } from '../utils/conditions'
 
 // @ts-ignore
 import TeeTrackInput from './TeeTrackInput.vue'
@@ -377,6 +380,7 @@ const selectedOptions = ref<any[]>([])
 const needRemove = ref<boolean>(false)
 
 const track: Track | any = tracks.getTrack(props.trackId)
+
 // console.log('TeeTrack > track :', track)
 const renderAs: string = track?.interface.component || 'buttons'
 const customColWidth: number | string = track?.interface.columnWidth || 0
@@ -503,16 +507,29 @@ const saveSelection = () => {
   const optionNext = selectedOptions.value[0].next
   const nextExceptions = optionNext?.exceptions
   const defaultNext = track?.next
+  
+  // @ts-ignore
+  let next = !optionNext || allowMultiple ? defaultNext : optionNext
 
-  console.log('TeeTrack > updateStore > optionNext :', optionNext)
+  // SWITCH NEXT TRACK DEPENDING ON CONDITIONS
+  // NOTE : could be deplaced in store ?
+  // console.log('TeeTrack > updateStore > optionNext :', optionNext)
   if (nextExceptions) {
-    console.log('TeeTrack > updateStore > nextExceptions :', nextExceptions)
-
+    // console.log('TeeTrack > updateStore > nextExceptions :', nextExceptions)
+    const trackValues: any[] = tracks.getAllUsedTracksValues
+    // console.log('TeeTrack > updateStore > trackValues :', trackValues)
+    nextExceptions.forEach((trackRule: NextTrackRule) => {
+      const dataStructure = {}
+      let item = remapItem(dataStructure, trackRule.rules, {}, trackValues, {}, {}, choices.lang)
+      // console.log('TeeTrack > updateStore > item :', item)
+      const bool = CheckNextTrackRules(item, trackRule.rules)
+      // console.log('TeeTrack > updateStore > bool :', bool)
+      next = bool ? trackRule.next : next
+    })
   }
 
-  // @ts-ignore
-  const next = !optionNext || allowMultiple ? defaultNext : optionNext
-  console.log('TeeTrack > updateStore > next :', next)
+
+  // console.log('TeeTrack > updateStore > next :', next)
 
   tracks.updateUsedTracks(props.trackId, props.step, next, selectedOptions.value)
   

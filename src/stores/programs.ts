@@ -2,6 +2,7 @@ import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
 import type { ProgramData, Condition } from '@/types/index'
+import { CheckConditions } from '../utils/conditions'
 
 export const programsStore = defineStore('programs', () => {
 
@@ -37,47 +38,49 @@ export const programsStore = defineStore('programs', () => {
         }
       })
     })
-    // const conditionsKeys = Object.keys(conditions)
-    // console.log()
-    // console.log('store.programs > filterPrograms > conditions : ', conditions)
-    // console.log('store.programs > filterPrograms > conditionsKeys : ', conditionsKeys)
+    // console.log('store.programs > filterPrograms > conditions :', conditions)
 
     // filter out programs
     const progsFiltered = progs.value.filter((prog: any) => {
-      const boolArray = [true]
+      // const boolArray = [true]
 
       // TO REWRITE => IMPLEMENT NEW CONDITIONS STRUCTURE W/ OPERATOR
       // retrieve program's conditions
       const progConditionsAlt = prog.conditions
+
+      // Using refactorized function 
+      const bool = CheckConditions(conditions, progConditionsAlt)
+      return bool
+
       // console.log('store.programs > filterPrograms > progConditionsAlt : ', progConditionsAlt)
       // loop program conditions keys to set a filter
-      progConditionsAlt.forEach((cond: Condition) => {
-        const condField: string = cond.type || ''
-        const condVal = cond.value
-        const userChoice = conditions[condField]
-        // console.log()
-        // console.log('store.programs > filterPrograms > condField : ', condField)
-        // console.log('store.programs > filterPrograms > condVal : ', condVal)
-        // console.log('store.programs > filterPrograms > userChoice : ', userChoice)
-        let condBool = true
-        if (userChoice) {
-          switch (cond.operator) {
-            case 'or':
-              // console.log('store.programs > filterPrograms > cond : ', cond)
-              condBool = userChoice.includes('*') || condVal.includes('*')
-              if (!condBool) {
-                // ... make the intersection between user list of condition and program's conditions
-                const intersection = condVal.filter((v: any) => userChoice.includes(v))
-                // console.log('store.programs > filterPrograms > intersection : ', intersection)
-                condBool = userChoice.includes('*') || intersection.length
-              }
-          }
-        }
-        boolArray.push(condBool)
-      })
+      // progConditionsAlt.forEach((cond: Condition) => {
+      //   const condField: string = cond.type || ''
+      //   const condVal = cond.value
+      //   const userChoice = conditions[condField]
+      //   // console.log()
+      //   // console.log('store.programs > filterPrograms > condField : ', condField)
+      //   // console.log('store.programs > filterPrograms > condVal : ', condVal)
+      //   // console.log('store.programs > filterPrograms > userChoice : ', userChoice)
+      //   let condBool = true
+      //   if (userChoice) {
+      //     switch (cond.operator) {
+      //       case 'or':
+      //         // console.log('store.programs > filterPrograms > cond : ', cond)
+      //         condBool = userChoice.includes('*') || condVal.includes('*')
+      //         if (!condBool) {
+      //           // ... make the intersection between user list of condition and program's conditions
+      //           const intersection = condVal.filter((v: any) => userChoice.includes(v))
+      //           // console.log('store.programs > filterPrograms > intersection : ', intersection)
+      //           condBool = userChoice.includes('*') || intersection.length
+      //         }
+      //     }
+      //   }
+      //   boolArray.push(condBool)
+      // })
 
       // by default all of user's conditions must be met
-      return boolArray.every(b => !!b)
+      // return boolArray.every(b => !!b)
     }) 
     // console.log('store.programs > filterPrograms > progsFiltered : ', progsFiltered)
 

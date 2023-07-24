@@ -2,13 +2,18 @@ const nextExceptions = [
   {
     rules: [
       { 
-        id: 'siret',
         from: 'usedTracks',
-        dataField: 'siret',
-        condition: 'exists'
+        id: 'project_sectors',
+        dataField: 'project_sectors',
+        conditions: [
+          { 
+            type: 'project_sectors',
+            operator: 'exists'
+          }
+        ]
       }
     ],
-    next: 'track_roles'
+    next: { default: 'track_roles' }
   }
 ] 
 export const sizes = {
