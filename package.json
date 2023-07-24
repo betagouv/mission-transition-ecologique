@@ -11,7 +11,8 @@
   "license": "AGPL-3.0",
   "scripts": {
     "build": "npm run build --workspaces",
-    "start": "bash start.sh"
+    "start": "bash start.sh",
+    "dev-front": "npm run dev -w packages/web"
   },
   "workspaces": [
     "./packages/*"
