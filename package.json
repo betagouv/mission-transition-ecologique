@@ -12,7 +12,8 @@
   "scripts": {
     "build": "npm run build --workspaces",
     "start": "bash start.sh",
-    "dev-front": "npm run dev -w packages/web"
+    "dev-front": "npm run dev -w packages/web",
+    "build-front": "npm run build -w packages/web"
   },
   "workspaces": [
     "./packages/*"
