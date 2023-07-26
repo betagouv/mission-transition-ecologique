@@ -473,13 +473,14 @@ const updateSelection = (option: any, forceRemove: boolean = false) => {
 }
 
 const updateSelectionFromSignal = (ev: any) => {
-  console.log('TeeTrack > updateSelectionFromSignal > ev :', ev)
+  // console.log('TeeTrack > updateSelectionFromSignal > ev :', ev)
   updateSelection(ev.option, ev.remove)
 }
 
 const saveSelectionFromSignal = (ev: any) => {
-  scrollToTop(props.trackElement, props.trackId)
-  console.log('TeeTrack > saveSelectionFromSignal > ev :', ev)
+  console.log()
+  // scrollToTop(props.trackElement, props.trackId)
+  // console.log('TeeTrack > saveSelectionFromSignal > ev :', ev)
   updateSelection(ev.option)
   saveSelection()
 }
@@ -550,6 +551,7 @@ const saveSelection = () => {
     // console.log('TeeTrack > updateStore > removeFromUsedTracks...')
     tracks.removeFurtherUsedTracks(props.trackId)
   }
+
   scrollToTop(props.trackElement, props.trackId)
 }
 
@@ -562,6 +564,7 @@ const backToPreviousTrack = async () => {
   // console.log('TeeTrack > backToTrack > TrackToGoBackTo :', TrackToGoBackTo)
   await tracks.setUsedTracksAsNotCompleted(TrackToGoBackTo)
   tracks.removeFurtherUsedTracks(TrackToGoBackTo)
+
   scrollToTop(props.trackElement, props.trackId)
 }
 </script>

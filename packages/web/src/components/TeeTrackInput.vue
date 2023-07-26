@@ -195,7 +195,7 @@
     {{ choices.t('or') }}
     <a
       class="fr-link"
-      href="#"
+      href="#trackElement"
       @click="goToNextTrack">
       {{ option.wildcard.label[choices.lang] }}
     </a>
