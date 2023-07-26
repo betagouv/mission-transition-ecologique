@@ -64,6 +64,8 @@
     <!-- QUESTIONNAIRE -->
     <div
       v-show="!programs.programDetail"
+      id="trackElement"
+      ref="trackElement"
       :class="`fr-container--fluid ${tracks.currentStep > 1 ? 'fr-mt-10v' : ''}`">
       <!-- STEPPER -->
       <p
@@ -101,6 +103,8 @@
 
         <!-- TRACKS -->
         <div 
+          id="tee-app-tracks"
+          ref="tee-app-tracks"
           :class="`${tracks.currentStep > 1 ? 'fr-tee-add-padding' :''} ${debugBool ? 'fr-col-7' : tracks.currentStep === 1 ? 'fr-col-12 fr-col-xl-12' : 'fr-col fr-col-lg-8 fr-col-xl-6' } ${debugBool ? '' : 'fr-grid-row--center'}`"
           >
           <div
@@ -112,6 +116,7 @@
               :step="index + 1"
               :track-id="track.id"
               :is-completed="!!tracks.isTrackCompleted(track.id)"
+              :track-element="trackElement"
               :debug="debugBool"
             />
           </div>
@@ -207,7 +212,7 @@ import '@gouvfr/dsfr/dist/core/core.main.min.css'               // Le CSS minima
 import jsonDataset from '@public/data/output/dataset_out.json'
 // console.log('TeeApp > jsonDataset :', jsonDataset)
 
-import { ref, onBeforeMount } from 'vue'
+import { ref, onBeforeMount, onMounted } from 'vue'
 
 import { tracksStore } from './stores/tracks'
 import { choicesStore } from './stores/choices'
@@ -264,6 +269,8 @@ const tracks = tracksStore()
 const choices = choicesStore()
 const programs = programsStore()
 
+let trackElement = ref(null)
+// let teeAppTopPosition = ref()
 let showHeaderBool = ref(false)
 let showMessageBool = ref(false)
 let showStepperBool = ref(false)
@@ -352,6 +359,15 @@ onBeforeMount(() => {
   tracks.setSeedTrack(props.seed)
   tracks.addToUsedTracks(props.seed, props.seed)
 })
+
+// onMounted(() => {
+//   // bounding rect of TrackElement
+//   const element = trackElement?.value
+//   // @ts-ignore
+//   const { top, right, bottom, left } = element?.getBoundingClientRect()
+//   console.log(`TeeApp > trackElement : Position: Top: ${top}, Right: ${right}, Bottom: ${bottom}, Left: ${left}`)
+//   teeAppTopPosition.value = top
+// })
 
 </script>
 

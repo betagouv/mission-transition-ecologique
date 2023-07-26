@@ -250,3 +250,11 @@ export const remapItem = (
   })
   return data
 }
+
+// UX HELPERS
+export const scrollToTop = (element: any) => {
+  // console.log()
+  console.log('utils > helpers > scrollToTop > element :', element)
+  // window.scrollTo({ top: top, behavior: "smooth" })
+  element.scrollIntoView({ behavior: 'smooth' })
+}

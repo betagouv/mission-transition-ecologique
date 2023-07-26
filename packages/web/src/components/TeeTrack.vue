@@ -242,6 +242,7 @@
               <TeeTrackInput
                 :track-id="trackId"
                 :option="option"
+                :track-element="trackElement"
                 :debug="debug"
                 @update-selection="updateSelectionFromSignal"
                 @go-to-next-track="saveSelectionFromSignal"
@@ -335,7 +336,7 @@ import { analyticsStore } from '../stores/analytics'
 // @ts-ignore
 import type { Track, TrackOptions, NextTrackRule, ColsOptions } from '@/types/index'
 
-import { remapItem } from '../utils/helpers'
+import { remapItem, scrollToTop } from '../utils/helpers'
 import { CheckNextTrackRules } from '../utils/conditions'
 
 // @ts-ignore
@@ -349,6 +350,7 @@ interface Props {
   step: number,
   trackId: string,
   isCompleted: boolean,
+  trackElement: any;
   debug?: boolean,
 }
 const props = defineProps<Props>()
@@ -505,8 +507,10 @@ watch(() => props.isCompleted, ( next ) => {
 })
 
 // functions
+
 const saveSelection = () => {
-  console.log()
+  scrollToTop(props.trackElement)
+  // console.log()
   // console.log('TeeTrack > updateStore > option :', option)
 
   const optionNext = selectedOptions.value[0].next
@@ -550,6 +554,7 @@ const saveSelection = () => {
 }
 
 const backToPreviousTrack = async () => {
+  scrollToTop(props.trackElement)
   // console.log()
   // console.log('TeeTrack > backToTrack > props.trackId :', props.trackId)
   const indexOfTrack = tracks.tracksStepsArray.indexOf(props.trackId)

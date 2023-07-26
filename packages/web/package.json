@@ -2,7 +2,7 @@
   "name": "@tee/web",
   "version": "0.1.0",
   "private": false,
-  "author": "Julien Paris - multi.coop",
+  "author": "Julien Paris (https://multi.coop)",
   "licence": "AGPL-3.0",
   "engines": {
     "node": "16.12.0",
