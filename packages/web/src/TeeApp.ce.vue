@@ -6,7 +6,7 @@
     <!-- HEADER -->
     <p 
       v-if="showHeaderBool"
-      class="fr-pb-5v">
+      class="fr-pb-0v fr-mb-0">
       <DsfrHeader
         logo-text="ADEME"
         service-title="Transition écologique des entreprises"
@@ -32,7 +32,7 @@
     <!-- MESSAGE & DEBUG SWITCH-->
     <div 
       v-if="showMessageBool || debugSwitchBool"
-      class="fr-grid-row fr-grid-row--gutters fr-tee-add-padding ">
+      class="fr-grid-row fr-grid-row--gutters ">
       <!-- MESSAGE-->
       <div 
         v-if="showMessageBool"
@@ -68,16 +68,16 @@
       ref="trackElement"
       :class="`fr-container--fluid ${tracks.currentStep > 1 ? 'fr-mt-10v' : ''}`">
       <!-- STEPPER -->
-      <p
-        class="fr-tee-add-padding "
+      <!-- <p
         v-if="showStepperBool" 
+        class="fr-tee-add-padding "
         >
         <TeeStepper
           :steps-array="tracks.tracksStepsArray"
           :current-step="tracks.currentStep"
           :debug="debugBool"
         />
-      </p>
+      </p> -->
 
       <!-- TRACKS INTERFACES -->
       <div class="fr-grid-row fr-grid-row-gutters fr-p-0">

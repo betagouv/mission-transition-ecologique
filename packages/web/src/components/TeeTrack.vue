@@ -473,12 +473,13 @@ const updateSelection = (option: any, forceRemove: boolean = false) => {
 }
 
 const updateSelectionFromSignal = (ev: any) => {
-  // console.log('TeeTrack > updateSelectionFromSignal > ev :', ev)
+  console.log('TeeTrack > updateSelectionFromSignal > ev :', ev)
   updateSelection(ev.option, ev.remove)
 }
 
 const saveSelectionFromSignal = (ev: any) => {
-  // console.log('TeeTrack > saveSelectionFromSignal > ev :', ev)
+  scrollToTop(props.trackElement, props.trackId)
+  console.log('TeeTrack > saveSelectionFromSignal > ev :', ev)
   updateSelection(ev.option)
   saveSelection()
 }
@@ -508,7 +509,6 @@ watch(() => props.isCompleted, ( next ) => {
 // functions
 
 const saveSelection = () => {
-  scrollToTop(props.trackElement)
   // console.log()
   // console.log('TeeTrack > updateStore > option :', option)
 
@@ -550,10 +550,10 @@ const saveSelection = () => {
     // console.log('TeeTrack > updateStore > removeFromUsedTracks...')
     tracks.removeFurtherUsedTracks(props.trackId)
   }
+  scrollToTop(props.trackElement, props.trackId)
 }
 
 const backToPreviousTrack = async () => {
-  scrollToTop(props.trackElement)
   // console.log()
   // console.log('TeeTrack > backToTrack > props.trackId :', props.trackId)
   const indexOfTrack = tracks.tracksStepsArray.indexOf(props.trackId)
@@ -562,5 +562,6 @@ const backToPreviousTrack = async () => {
   // console.log('TeeTrack > backToTrack > TrackToGoBackTo :', TrackToGoBackTo)
   await tracks.setUsedTracksAsNotCompleted(TrackToGoBackTo)
   tracks.removeFurtherUsedTracks(TrackToGoBackTo)
+  scrollToTop(props.trackElement, props.trackId)
 }
 </script>
