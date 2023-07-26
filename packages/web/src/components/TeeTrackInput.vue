@@ -195,7 +195,7 @@
     {{ choices.t('or') }}
     <a
       class="fr-link"
-      href="#"
+      href="#trackElement"
       @click="goToNextTrack">
       {{ option.wildcard.label[choices.lang] }}
     </a>
@@ -362,7 +362,7 @@ const processInput = async () => {
 }
 
 const goToNextTrack = () => {
-  console.log
+  // console.log()
   const data = {
     option: { ...props.option },
   }

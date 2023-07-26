@@ -1,12 +1,12 @@
 <template>
   <div 
-    :id="appId"
+    ref="trackElement"
     class="fr-container--fluid">
   
     <!-- HEADER -->
     <p 
       v-if="showHeaderBool"
-      class="fr-pb-5v">
+      class="fr-pb-0v fr-mb-0">
       <DsfrHeader
         logo-text="ADEME"
         service-title="Transition écologique des entreprises"
@@ -32,7 +32,7 @@
     <!-- MESSAGE & DEBUG SWITCH-->
     <div 
       v-if="showMessageBool || debugSwitchBool"
-      class="fr-grid-row fr-grid-row--gutters fr-tee-add-padding ">
+      class="fr-grid-row fr-grid-row--gutters ">
       <!-- MESSAGE-->
       <div 
         v-if="showMessageBool"
@@ -64,21 +64,24 @@
     <!-- QUESTIONNAIRE -->
     <div
       v-show="!programs.programDetail"
-      :class="`fr-container--fluid ${tracks.currentStep > 1 ? 'fr-mt-10v' : ''}`">
+      id="trackElement"
+      :class="`fr-container--fluid ${tracks.currentStep > 1 ? 'fr-pt-10v' : ''}`">
       <!-- STEPPER -->
-      <p
-        class="fr-tee-add-padding "
+      <!-- <p
         v-if="showStepperBool" 
+        class="fr-tee-add-padding "
         >
         <TeeStepper
           :steps-array="tracks.tracksStepsArray"
           :current-step="tracks.currentStep"
           :debug="debugBool"
         />
-      </p>
+      </p> -->
 
       <!-- TRACKS INTERFACES -->
-      <div class="fr-grid-row fr-grid-row-gutters fr-p-0">
+      <div 
+        ref="tee-app-tracks"
+        class="fr-grid-row fr-grid-row-gutters fr-p-0">
         
         <!-- SIDEBAR MENU (FIL D'ARIANE)-->
         <div
@@ -101,6 +104,7 @@
 
         <!-- TRACKS -->
         <div 
+          id="tee-app-tracks"
           :class="`${tracks.currentStep > 1 ? 'fr-tee-add-padding' :''} ${debugBool ? 'fr-col-7' : tracks.currentStep === 1 ? 'fr-col-12 fr-col-xl-12' : 'fr-col fr-col-lg-8 fr-col-xl-6' } ${debugBool ? '' : 'fr-grid-row--center'}`"
           >
           <div
@@ -112,6 +116,7 @@
               :step="index + 1"
               :track-id="track.id"
               :is-completed="!!tracks.isTrackCompleted(track.id)"
+              :track-element="trackElement"
               :debug="debugBool"
             />
           </div>
@@ -168,7 +173,7 @@
     <!-- DETAIL RESULT CARD -->
     <div
       v-if="programs.programDetail"
-      :class="`fr-container-fluid fr-px-20v fr-mt-10v`">
+      :class="`fr-container-fluid fr-px-6v fr-px-md-20v fr-mt-10v`">
       <div 
         class="fr-grid-row fr-grid-row-gutters">
         <div class="fr-col">
@@ -218,7 +223,7 @@ import TeeMatomo from './components/TeeMatomo.vue'
 // @ts-ignore
 import TeeTrack from './components/TeeTrack.vue'
 // @ts-ignore
-import TeeStepper from './components/TeeStepper.vue'
+// import TeeStepper from './components/TeeStepper.vue'
 // @ts-ignore
 import TeeSidebar from './components/TeeSidebar.vue'
 // @ts-ignore
@@ -264,6 +269,8 @@ const tracks = tracksStore()
 const choices = choicesStore()
 const programs = programsStore()
 
+let trackElement = ref(null)
+// let teeAppTopPosition = ref()
 let showHeaderBool = ref(false)
 let showMessageBool = ref(false)
 let showStepperBool = ref(false)

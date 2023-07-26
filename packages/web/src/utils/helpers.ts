@@ -250,3 +250,13 @@ export const remapItem = (
   })
   return data
 }
+
+// UX HELPERS
+export const scrollToTop = (element: any, from: string = '') => {
+  // console.log()
+  // console.log('utils > helpers > scrollToTop > from :', from)
+  // console.log('utils > helpers > scrollToTop > element :', element)
+  setTimeout(()=> {
+    element.scrollIntoView({ behavior: 'smooth' })
+  }, 100)
+}

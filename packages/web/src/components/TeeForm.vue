@@ -42,7 +42,7 @@
       <div
         v-for="field in formOptions.fields"
         :key="field.id"
-        :class="`fr-col-md-${ field.cols ? field.cols : 12 } fr-col-sm-12`"
+        :class="`fr-col-12 fr-col-md-${ field.cols ? field.cols : 12 }`"
         >
         <!-- DEBUGGING -->
         <div 
