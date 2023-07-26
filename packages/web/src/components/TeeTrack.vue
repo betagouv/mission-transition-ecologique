@@ -242,7 +242,6 @@
               <TeeTrackInput
                 :track-id="trackId"
                 :option="option"
-                :track-element="trackElement"
                 :debug="debug"
                 @update-selection="updateSelectionFromSignal"
                 @go-to-next-track="saveSelectionFromSignal"

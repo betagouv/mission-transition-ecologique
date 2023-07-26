@@ -241,12 +241,11 @@ import { analyticsStore } from '../stores/analytics'
 import type { TrackOptionsInput, ReqResp, ReqError, FormCallback, ResultsMapping } from '@/types/index'
 
 import { sendApiRequest } from '../utils/requests'
-import { getFromResp, remapItem, cleanValue, scrollToTop } from '../utils/helpers'
+import { getFromResp, remapItem, cleanValue } from '../utils/helpers'
 
 interface Props {
   trackId: string,
   option: TrackOptionsInput,
-  trackElement: any;
   debug?: boolean,
 }
 const props = defineProps<Props>()
@@ -364,7 +363,6 @@ const processInput = async () => {
 
 const goToNextTrack = () => {
   // console.log()
-  scrollToTop(props.trackElement)
   const data = {
     option: { ...props.option },
   }
