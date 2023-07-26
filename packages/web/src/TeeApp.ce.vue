@@ -173,7 +173,7 @@
     <!-- DETAIL RESULT CARD -->
     <div
       v-if="programs.programDetail"
-      :class="`fr-container-fluid fr-px-20v fr-mt-10v`">
+      :class="`fr-container-fluid fr-px-6v fr-px-md-20v fr-mt-10v`">
       <div 
         class="fr-grid-row fr-grid-row-gutters">
         <div class="fr-col">

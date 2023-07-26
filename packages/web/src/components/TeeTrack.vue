@@ -55,7 +55,7 @@
         :class="`fr-col${track.imageRight ? ' fr-col-md-9 fr-col-lg-9' : ''}`">
         <!-- UNCOMPLETED QUESTIONNAIRE -->
         <div
-          :class="`fr-grid-row fr-grid-row--gutters ${track.bgColor ? 'fr-p-20v' : ''}`"
+          :class="`fr-grid-row fr-grid-row--gutters ${track.bgColor ? 'fr-p-5v fr-p-sm-8v fr-p-md-20v' : ''}`"
           >
       
           <!-- CALLOUT (TEXT + IMAGE) -->
