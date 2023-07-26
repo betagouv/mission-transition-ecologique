@@ -39,6 +39,7 @@ conditions:
     value: 
       - trash
       - ecoconception
+      - economies
       - mobility
       - consolidation
 program_providers: 
