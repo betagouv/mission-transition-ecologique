@@ -1,0 +1,57 @@
+id: tremplin
+title: Tremplin
+resume: Financez vos projets d’études ou d’investissement écologique avec une ou plusieurs aides forfaitaires
+origin_url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/tremplin-transition-ecologique-pme
+# cover: images/programs/tremplin.jpg
+cover: images/TEE_energie_verte.png
+description:
+  - "Accédez à des aides forfaitaires dans plusieurs domaines de la transition 
+    écologique (décarbonation, éco-conception,économie circulaire, gestion 
+    des déchets, chaleur et froid renouvelable...)"
+  - "Subventionnez la ou les projets écologique de votre entreprise suivant 
+    une liste d’action prédéfinie par l’ADEME (entre 5k€ et 200k€)"
+  - Demandez une aide financière sur une ou plusieurs actions en même temps
+program_types: 
+  - aap
+conditions:
+  - type: project_needs
+    operator: "or"
+    value:
+      - advices
+      - financing
+  - type: project_status
+    operator: "or"
+    value: 
+      - "*"
+  - type: project_sectors
+    operator: "or"
+    value: 
+      - "*"
+  - type: structure_sizes
+    operator: "or"
+    value: 
+      - PME
+      - TPE
+      - ETI
+      - GE
+  - type: user_goals
+    operator: "or"
+    value: 
+      - trash
+      - ecoconception
+      - economies
+      - mobility
+      - consolidation
+program_providers: 
+  - code: ADEME
+    href: https://ademe.fr/
+    SIREN: 385 290 309
+program_url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/tremplin-transition-ecologique-pme
+program_contacts:
+  - title: Qui contacter ?
+    text: Les points de contacts se font sur la page du dispositif de la plateforme Agir pour la transition.
+    url: https://agirpourlatransition.ademe.fr/entreprises/tremplin-transition-ecologique-pme
+program_application:
+  - title: Continuer vers la candidature
+    text: Financer vos projets de transition écologique avec le guichet \"Tremplin\"
+    url: https://agirpourlatransition.ademe.fr/entreprises/dispositif-aide/tremplin-transition-ecologique-pme

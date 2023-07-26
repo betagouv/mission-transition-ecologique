@@ -1,0 +1,37 @@
+id: tpe-gagnantes
+title: TPE Gagnantes
+resume: Faites des économies en gérant durablement vos dépenses
+origin_url: https://agirpourlatransition.ademe.fr/entreprises/optimisez-tpe-pme/diagnostic-global-personnalise
+# cover: images/programs/tpe-pme-gagnantes.jpg
+cover: images/TEE_energie_verte.png
+description:
+  - Faites un état des lieux de vos flux et identifiez les axes prioritaires d’économies.
+  - Mettez en place un plan d'actions simple pour réduire vos déchets et votre consommation d'énergie, de matières et d'eau.
+  - Lancez vos premières actions.
+  - Réalisez en moyenne 45 000 € d'économies par an et par site de production ou établissement (sur la base des missions restituées).
+program_types: 
+  - diag
+conditions:
+  - type: project_needs
+    operator: "or"
+    value: 
+      - advices
+      - financing
+  - type: project_status
+    operator: "or"
+    value: 
+      - economies
+  - type: project_sectors
+    operator: "or"
+    value: 
+      - "*"
+  - type: structure_sizes
+    operator: "or"
+    value: 
+      - TPE
+  - type: user_goals
+    operator: "or"
+    value: 
+      - economies
+program_providers: 
+  - code: ADEME
