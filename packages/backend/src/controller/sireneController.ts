@@ -24,6 +24,9 @@ interface ValidateErrorJSON {
 
 @Route('health')
 export class HealthController extends Controller {
+  /**
+   * Check the API's health
+   */
   @Get()
   public async health(): Promise<string> {
     this.setStatus(200)
@@ -38,6 +41,10 @@ interface SiretBody {
 @SuccessResponse('200', 'OK')
 @Route('insee')
 export class SireneController extends Controller {
+  /**
+   * Retrieves information of an Establishment ("Établissement").
+   * Supply the SIRET and receive the corresponding establishment details.
+   */
   @Post('get_by_siret')
   public async health(
     @Body() requestBody: SiretBody,
