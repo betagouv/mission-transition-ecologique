@@ -1,17 +1,8 @@
-import express, { Express } from 'express'
-import router from './controller/routes.js'
+import app from './controller/app'
 
 import * as dotenv from 'dotenv'
 
 dotenv.config()
 
-const app: Express = express()
 const port: number = parseInt(process.env['PORT'] || '')
-
-app.use(express.json())
-
-app.use('/api', router)
-
-app.listen(port)
-
-export default app
+app.listen(port, () => console.log(`App listening at http://localhost:${port}`))
