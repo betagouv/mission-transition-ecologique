@@ -11,7 +11,7 @@ import {
 } from 'tsoa'
 import { createFeatures } from '../domain/features'
 import { EtablissementRepository } from '../domain/spi'
-import { EstablishmentNotFoundError, Etablissement, SiretNotValidError } from '../domain/types'
+import { EstablishmentNotFoundError, Etablissement } from '../domain/types'
 import { requestSireneAPI } from '../infrastructure/sirene-API'
 
 /**
@@ -49,6 +49,9 @@ export class HealthController extends Controller {
 }
 
 interface SiretBody {
+  /**
+   * @pattern ^\d{14}$ SIRET should be made of 14 digits
+   */
   siret: string
 }
 
@@ -162,7 +165,7 @@ export class SireneController extends Controller {
   public async health(
     @Body() requestBody: SiretBody,
     @Res() requestFailedResponse: TsoaResponse<500, ErrorJSON>,
-    @Res() validationFailedResponse: TsoaResponse<422, ValidateErrorJSON>,
+    @Res() _validationFailedResponse: TsoaResponse<422, ValidateErrorJSON>,
     @Res() notFoundResponse: TsoaResponse<404, EstablishmentNotFoundErrorJSON>
   ): Promise<Etablissement> {
     const requestedSiret = requestBody.siret
@@ -172,13 +175,6 @@ export class SireneController extends Controller {
 
     if (etablissementResult.isErr) {
       const err = etablissementResult.error
-
-      if (err instanceof SiretNotValidError) {
-        return validationFailedResponse(422, {
-          message: 'Validation failed',
-          details: { cause: err.message }
-        })
-      }
 
       if (err instanceof EstablishmentNotFoundError) {
         return notFoundResponse(404, { message: 'Establishment not found' })

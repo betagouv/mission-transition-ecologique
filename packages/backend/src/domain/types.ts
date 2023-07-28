@@ -101,5 +101,4 @@ class CustomError extends Error {
   }
 }
 
-export class SiretNotValidError extends CustomError {}
 export class EstablishmentNotFoundError extends CustomError {}
