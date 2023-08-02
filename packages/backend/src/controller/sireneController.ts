@@ -41,7 +41,10 @@ interface ValidateErrorJSON {
 @Produces('text/plain')
 export class HealthController extends Controller {
   /**
-   * Check the API's health
+   * Check the API's health. If the API is up and running, this endpoint
+   * should return a 200 HTTP status.
+   *
+   * @summary Check the API's health
    */
   @Example<string>('OK')
   @Get()
@@ -65,6 +68,8 @@ export class SireneController extends Controller {
   /**
    * Retrieves information of an Establishment ("Établissement").
    * Supply the SIRET and receive the corresponding establishment details.
+   *
+   * @summary Retrieves information of an "Établissement"
    *
    * @example requestBody: {"siret": "83014132100034"}
    */
