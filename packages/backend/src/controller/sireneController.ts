@@ -1,14 +1,13 @@
 import {
-  Body,
   Controller,
   Get,
-  Post,
   Route,
   SuccessResponse,
   TsoaResponse,
   Res,
   Example,
-  Produces
+  Produces,
+  Path
 } from 'tsoa'
 import { createFeatures } from '../domain/features'
 import { EtablissementRepository } from '../domain/spi'
@@ -55,12 +54,11 @@ export class HealthController extends Controller {
   }
 }
 
-interface SiretBody {
-  /**
-   * @pattern ^\d{14}$ SIRET should be made of 14 digits
-   */
-  siret: string
-}
+/**
+ * @pattern ^\d{14}$ SIRET should be made of 14 digits
+ * @example "83014132100034"
+ */
+type Siret = string
 
 const exampleEtablissement = {
   siren: '830141321',
@@ -160,7 +158,7 @@ const exampleEtablissement = {
 }
 
 @SuccessResponse('200', 'OK')
-@Route('insee')
+@Route('etablissements')
 export class SireneController extends Controller {
   /**
    * Retrieves information of an Establishment ("Établissement").
@@ -168,18 +166,16 @@ export class SireneController extends Controller {
    *
    * @summary Retrieves information of an "Établissement"
    *
-   * @example requestBody: {"siret": "83014132100034"}
    */
-
   @Example<Etablissement>(exampleEtablissement)
-  @Post('get_by_siret')
-  public async health(
-    @Body() requestBody: SiretBody,
+  @Get('{siret}')
+  public async get_etablissement(
+    @Path() siret: Siret,
     @Res() requestFailedResponse: TsoaResponse<500, ErrorJSON>,
     @Res() _validationFailedResponse: TsoaResponse<422, ValidateErrorJSON>,
     @Res() notFoundResponse: TsoaResponse<404, EstablishmentNotFoundErrorJSON>
   ): Promise<Etablissement> {
-    const requestedSiret = requestBody.siret
+    const requestedSiret = siret
 
     const feat = createFeatures(etablissementRepository)
     const etablissementResult = await feat.fetchEtablissement(requestedSiret)
