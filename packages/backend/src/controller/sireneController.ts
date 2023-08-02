@@ -7,7 +7,8 @@ import {
   SuccessResponse,
   TsoaResponse,
   Res,
-  Example
+  Example,
+  Produces
 } from 'tsoa'
 import { createFeatures } from '../domain/features'
 import { EtablissementRepository } from '../domain/spi'
@@ -37,13 +38,16 @@ interface ValidateErrorJSON {
 }
 
 @Route('health')
+@Produces('text/plain')
 export class HealthController extends Controller {
   /**
    * Check the API's health
    */
+  @Example<string>('OK')
   @Get()
   public async health(): Promise<string> {
     this.setStatus(200)
+    this.setHeader('Content-Type', 'text/plain')
     return 'OK'
   }
 }
