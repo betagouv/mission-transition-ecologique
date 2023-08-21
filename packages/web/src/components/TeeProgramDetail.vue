@@ -71,7 +71,7 @@
           class="fr-mb-3v">
           <span
             class="fr-tee-description-paragraph-marker">
-            {{ idx + 8 }} |
+            {{ idx + 1 }} |
           </span>
           <span
             class="fr-tee-description-paragraph-content">
