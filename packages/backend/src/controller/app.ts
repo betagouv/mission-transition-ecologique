@@ -1,14 +1,18 @@
 import express, { Express, NextFunction, Request, Response } from 'express'
 // import router from './controller/routes.js'
+// @ts-ignore // routes generated at build time by tsoa
 import { RegisterRoutes } from '../../generated/routes'
 import swaggerUi from 'swagger-ui-express'
 import { ValidateError } from 'tsoa'
+import cors from 'cors'
 
 const app: Express = express()
 
 app.use(express.json())
+app.use(cors())
 
 app.use('/api/docs', swaggerUi.serve, async (_req: Request, res: Response) => {
+  // @ts-ignore // routes generated at build time by tsoa
   return res.send(swaggerUi.generateHTML(await import('../../generated/swagger.json')))
 })
 
