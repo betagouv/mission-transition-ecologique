@@ -32,9 +32,9 @@ export const siret = {
       label: { fr: "Renseignez le SIRET de votre entreprise (14 chiffres)" },
       placeholder: { fr: 'ex : 830 141 321 00034' },
       // for debugging purposes
-      // defaultInput: '830 141 321 00034', 
-      /* Examples => 
-        83014132100034 - TPE 
+      // defaultInput: '830 141 321 00034',
+      /* Examples =>
+        83014132100034 - TPE
         81759468200020 - auto-entreprise
       */
       postResponses: { fr: 'Vous ne retrouvez pas votre SIRET ?&nbsp;<a href="https://annuaire-entreprises.data.gouv.fr/" target="_blank">Cliquez ici</a>' },
@@ -43,9 +43,9 @@ export const siret = {
         {
           disabled: false,
           help: 'Get entreprise data from its SIRET number',
-          helpDocumentation: 'https://tee-backend-test.osc-fr1.scalingo.io/api/docs',
+          helpDocumentation: 'https://tee-backend.osc-fr1.scalingo.io/api/docs',
           action: 'requestAPI',
-          url: 'https://tee-backend-test.osc-fr1.scalingo.io/api/insee/get_by_siret',
+          url: 'https://tee-backend.osc-fr1.scalingo.io/api/insee/get_by_siret',
           // url: 'http://localhost:8001/api/insee/get_by_siret',
           method: 'POST',
           headers: {
