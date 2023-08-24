@@ -40,24 +40,50 @@ workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces/) composed of
 two workspaces:
 
 - the ["web" workspace](./packages/web/README.md) contains the front-end implementations.
+- the ["backend" workspace](./packages/backend/README.md) contains the back-end implementations.
 
-### Install dependencies for all repositories
+### Install dependencies for all workspaces
 
 ```sh
 npm install
 ```
 
-### Build for all workspaces
+### Environment variables 
+
+Some environment vairables are needed for the services to work. Copy and 
+modify the `example.env` file from the workspace you want to build/start to 
+`.env` in the same directory.
+
+### Build
 
 ```sh
+# All workspaces
 npm run build
+# Or for a specific workspace
+npm run build-front # web
+npm run build-back  # backend
+
+# Or alternatively
+npm run build --workspace packages/{web,backend}
+```
+
+### Start services
+
+```sh
+# Front-end
+WORKSPACE="web" npm run start
+# Back-end
+WORKSPACE="backend" npm run start
+
+# Or alternatively
+npm run start --workspace packages/{web,backend}
 ```
 
 
 ### Commands for a specific workspace
 
-More scripts are define for each workspace: checout their respective 
-documentation. 
+More scripts are defined for each workspace: checkout their respective 
+documentation and `package.json` file.
 
 Scripts can be triggered with:
 

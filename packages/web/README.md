@@ -485,7 +485,7 @@ Check : https://github.com/orgs/betagouv/projects/54/views/1
 
 ### Environment variables
 
-The `env` variables you can use for deployment are listed in the `.env.example` file.
+The `env` variables you can use for deployment are listed in the `example.env` file.
 
 ```env
 # To hide the "debug" switch
