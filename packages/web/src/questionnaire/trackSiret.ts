@@ -52,6 +52,7 @@ export const siret = {
             accept: 'application/json',
             'Content-Type': 'application/json'
           },
+          dataBody: { siret: '' },
           dataStructure: { ...dataTarget },
           dataMapping: [
             {

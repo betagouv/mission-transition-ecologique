@@ -65,7 +65,7 @@ export const sendApiRequest = async (callback: FormCallback, formData: object | 
   const trackValues: any[] = usedTrackValues.flat(1)
   // console.log('utils > emailing > sendApiRequest >  trackValues :', trackValues)
 
-  let data: any = callback.dataStructure || {}
+  let data: any = callback.dataBody || callback.dataStructure || {}
 
   const dataMapping = callback.dataMapping
   // const listIds = metaEnv[callback.envListIds].split(',').map((id: string) => parseInt(id))
