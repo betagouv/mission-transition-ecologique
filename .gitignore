@@ -13,7 +13,6 @@ build
 dist
 dist-ssr
 *.tsbuildinfo
-generated
 
 node_modules
 .DS_Store

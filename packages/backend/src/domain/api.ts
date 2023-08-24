@@ -1,5 +1,5 @@
 import { Result } from 'true-myth'
-import { Etablissement } from './types'
+import { Etablissement } from './types.js'
 
 type EtablissementResult = Result<Etablissement, Error>
 
