@@ -93,6 +93,16 @@ export interface Etablissement {
   }>
 }
 
+export interface BrevoBody {
+  email: string,
+  listIds: number[],
+  attributes: object
+}
+
+export interface BrevoResponse {
+  id: number
+}
+
 class CustomError extends Error {
   constructor(...args: Array<string | undefined>) {
     super(...args)
@@ -102,3 +112,4 @@ class CustomError extends Error {
 }
 
 export class EstablishmentNotFoundError extends CustomError {}
+export class BrevoNotFoundError extends CustomError {}
