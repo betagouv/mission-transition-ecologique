@@ -19,9 +19,12 @@ import { requestBrevoAPI } from '../infrastructure/brevo-API'
  * Defines how to access external services.
  * Uses the "Repository" pattern, see README.md
  */
+const rawlistIds: string[] = process.env['BREVO_LIST_IDS']?.split(',') || ['4']
+const listIds: number[] = rawlistIds.map(id => parseInt(id))
+
 const brevoRepository: BrevoRepository = {
-  postNewContact: async (email, listIds, attributes) => 
-  requestBrevoAPI(process.env['BREVO_API_TOKEN'] || '', email, listIds, attributes)
+  postNewContact: async (email, attributes) => 
+    requestBrevoAPI(process.env['BREVO_API_TOKEN'] || '', email, listIds, attributes)
 }
 
 interface ErrorJSON {
@@ -39,7 +42,6 @@ interface ValidateErrorJSON {
 
 interface BrevoBody {
   email: string,
-  listIds: number[],
   attributes: object
 }
 
@@ -56,7 +58,7 @@ export class BrevoController extends Controller {
    *
    * @summary Adds a new contact to our Brevo list
    *
-   * @example requestBody: {"email": "contact@multi.coop", "listId": [4], "attributes": {}}
+   * @example requestBody: {"email": "contact@multi.coop", "attributes": {}}
    */
 
   @Example<BrevoResponse>(exampleBrevoResponse)
@@ -68,11 +70,10 @@ export class BrevoController extends Controller {
     @Res() notFoundResponse: TsoaResponse<404, BrevoNotFoundErrorJSON>
   ): Promise<BrevoResponse> {
     const bodyEmail = requestBody.email
-    const bodyListIds = requestBody.listIds
     const bodyAttributes = requestBody.attributes
 
     const feat = createContact(brevoRepository)
-    const brevoResult = await feat.postNewContact(bodyEmail, bodyListIds, bodyAttributes)
+    const brevoResult = await feat.postNewContact(bodyEmail, listIds, bodyAttributes)
 
     if (brevoResult.isErr) {
       const err = brevoResult.error
