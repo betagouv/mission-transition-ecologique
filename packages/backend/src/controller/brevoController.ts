@@ -12,7 +12,7 @@ import {
 } from 'tsoa'
 import { createContact } from '../domain/features'
 import { BrevoRepository } from '../domain/spi'
-import { BrevoNotFoundError, BrevoResponse } from '../domain/types'
+import { BrevoNotFoundError, BrevoBodyAttributes, BrevoResponse } from '../domain/types'
 import { requestBrevoAPI } from '../infrastructure/brevo-API'
 
 /**
@@ -42,7 +42,7 @@ interface ValidateErrorJSON {
 
 interface BrevoBody {
   email: string,
-  attributes: object
+  attributes: BrevoBodyAttributes
 }
 
 const exampleBrevoResponse = {
@@ -58,7 +58,7 @@ export class BrevoController extends Controller {
    *
    * @summary Adds a new contact to our Brevo list
    *
-   * @example requestBody: {"email": "contact@multi.coop", "attributes": {}}
+   * @example requestBody: {"email": "contact@multi.coop", "attributes": { "NOM": "Dupont", "PRENOM": "Camille", "TEL" : "...", "SIRET": "83014132100034", "OPT_IN": true }}
    */
 
   @Example<BrevoResponse>(exampleBrevoResponse)

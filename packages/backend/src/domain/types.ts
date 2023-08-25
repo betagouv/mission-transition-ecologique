@@ -93,10 +93,24 @@ export interface Etablissement {
   }>
 }
 
+export interface BrevoBodyAttributes {
+  NOM: string,
+  PRENOM: string,
+  TEL: string,
+  SIRET: string,
+  OPT_IN: boolean,
+  PROJECT_NEEDS?: string,
+  PROJECT_SECTORS?: string,
+  USER_ROLES?: string,
+  USER_GOALS?: string,
+  STRUCTURE_SIZE?: string,
+  PROGRAM_ID?: string,
+}
+
 export interface BrevoBody {
   email: string,
   listIds: number[],
-  attributes: object
+  attributes: BrevoBodyAttributes
 }
 
 export interface BrevoResponse {
