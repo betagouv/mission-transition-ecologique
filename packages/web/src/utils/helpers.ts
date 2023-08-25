@@ -110,22 +110,6 @@ export const findInTracksArray = (tracksArray: object[], id: string) => {
   return value
 }
 
-// export const findInTracksArray = (tracksArray: object[], id: string) => {
-//   // console.log()
-//   // console.log('utils > emailing > findInTracksArray >  tracksArray :', tracksArray)
-//   // console.log('utils > emailing > findInTracksArray >  id :', id)
-
-//   let value = undefined
-//   const valObj: any = tracksArray.find((v: object) => {
-//     // console.log('utils > emailing > findInTracksArray >  v :', v)
-//     return Object.keys(v).includes(id)
-//   })
-//   // console.log('utils > emailing > findInTracksArray >  valObj :', valObj)
-//   value =  typeof valObj === 'object' ? valObj[id] : ''
-//   // console.log('utils > emailing > findInTracksArray >  value :', value)
-//   return value
-// }
-
 // HELPERS FOR CLEANING AND REMAP
 
 export const replaceAll = (value: any, cleaner: CleanerReplaceAll) => {
