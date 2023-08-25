@@ -174,18 +174,20 @@ Merci d'avance pour votre appel`,
       {
         disabled: false,
         help: 'First action to trigger when the user clicks on the send button / create a contact in Brevo',
-        helpDocumentation: 'https://developers.brevo.com/reference/createcontact',
+        // helpDocumentation: 'https://developers.brevo.com/reference/createcontact',
+        helpDocumentation: 'https://tee-backend.osc-fr1.scalingo.io/api/docs',
         action: 'createContact',
-        url: 'https://api.brevo.com/v3/contacts',
+        // url: 'https://api.brevo.com/v3/contacts',
+        url: 'https://tee-backend.osc-fr1.scalingo.io/api/brevo/post_brevo_form',
         // url: 'https://api.brevo.com/v3/contacts/doubleOptinConfirmation', // for double opt-in
         method: 'POST',
         headers: {
           accept: 'application/json',
           'content-type': 'application/json',
-          'api-key': ''
+          // 'api-key': ''
         },
-        headerApiKey: 'api-key',
-        envApiKey: 'VITE_BREVO_TOKEN',
+        // headerApiKey: 'api-key',
+        // envApiKey: 'VITE_BREVO_TOKEN',
         dataStructure: {
           email: '',
           listIds: [],
@@ -200,15 +202,15 @@ Merci d'avance pour votre appel`,
             id: 'email',
             dataField: 'email',
           },
-          {
-            from: 'env',
-            id: 'VITE_BREVO_LIST_IDS',
-            dataField: 'listIds',
-            // dataField: 'includeListIds',
-            asArray: true,
-            sep: ',',
-            type: 'integer'
-          },
+          // {
+          //   from: 'env',
+          //   id: 'VITE_BREVO_LIST_IDS',
+          //   dataField: 'listIds',
+          //   // dataField: 'includeListIds',
+          //   asArray: true,
+          //   sep: ',',
+          //   type: 'integer'
+          // },
           {
             from: 'formData',
             id: 'surname',
