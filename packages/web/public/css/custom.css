@@ -78,21 +78,21 @@ WARNING :
 
 /* RESULT DETAILS PAGE */
 /* check: https://css-tricks.com/css-counters-custom-list-number-styling/ */
-ol.fr-tee-description-list {
-  list-style: none;
-  counter-reset: my-awesome-counter;
+.fr-tee-description-list p {
+  padding-left: 3rem;
+  text-indent: -3rem;
 }
-ol.fr-tee-description-list li {
-  margin: 0 0 0.5rem 0;
-  counter-increment: my-awesome-counter;
-  position: relative;
-}
-ol.fr-tee-description-list li::marker {
-  content: counter(my-awesome-counter) "| ";
+.fr-tee-description-paragraph-marker {
+  display: inline-block ;
+  text-align: right;
+  width: 2.5rem;
+  margin-right: .5rem;
   color: #6A6AF4;
   font-size: 1.5rem;
   font-weight: bold;
-  position: absolute;
+}
+.fr-tee-description-paragraph-content {
+  display: inline;
 }
 
 /* DEBUGGING STYLES */
