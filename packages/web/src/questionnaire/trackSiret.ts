@@ -1,3 +1,7 @@
+const metaEnv = import.meta.env
+// console.log('trackSiret >  metaEnv :', metaEnv)
+const TEE_BACKEND_URL = metaEnv.VITE_TEE_BACKEND_URL || 'https://tee-backend.osc-fr1.scalingo.io'
+
 const dataTarget = {
   siret: '',
   codeNaf: '',
@@ -45,7 +49,7 @@ export const siret = {
           help: 'Get entreprise data from its SIRET number',
           helpDocumentation: 'https://tee-backend.osc-fr1.scalingo.io/api/docs',
           action: 'requestAPI',
-          url: 'https://tee-backend.osc-fr1.scalingo.io/api/insee/get_by_siret',
+          url: `${TEE_BACKEND_URL}/api/insee/get_by_siret`,
           // url: 'http://localhost:8001/api/insee/get_by_siret',
           method: 'POST',
           headers: {
