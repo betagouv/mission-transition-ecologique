@@ -58,7 +58,7 @@ export class BrevoController extends Controller {
    *
    * @summary Adds a new contact to our Brevo list
    *
-   * @example requestBody: {"email": "contact@multi.coop", "attributes": { "NOM": "Dupont", "PRENOM": "Camille", "TEL" : "...", "SIRET": "83014132100034", "OPT_IN": true }}
+   * @example requestBody: {"email": "contact@multi.coop", "attributes": { "NOM": "Dupont", "PRENOM": "Camille", "TEL" : "0605040302", "SIRET": "83014132100034", "OPT_IN": true }}
    */
 
   @Example<BrevoResponse>(exampleBrevoResponse)
