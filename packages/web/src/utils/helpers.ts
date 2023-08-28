@@ -254,7 +254,7 @@ export const remapItem = (
 // UX HELPERS
 export const scrollToTop = (
   element: any, 
-  // from: string = ''
+  from: string = ''
   ) => {
   // console.log()
   // console.log('utils > helpers > scrollToTop > from :', from)
