@@ -113,13 +113,24 @@
 
       <!-- PROGRAM TYPE -->
       <div
-        v-if="program.program_type" 
+        v-if="program.program_types" 
         class="fr-col-3">
         <TeeTile
           :title="choices.t('program.programType')"
           :image-path="`${choices.publicPath}images/TEE-typefinance.svg`"
-          :description="choices.t(`programTypes.${program.program_type}`)"
-        />
+          >
+        <template #description>
+            <ul style="list-style-type: none; margin: 0 ; padding: 0;">
+              <li
+                v-for="(programType, index) in program.program_types"
+                :key="`type-${index}-${programType}`">
+                <span>
+                  {{ choices.t(`programTypes.${programType}`) }}
+                </span>
+              </li>
+            </ul>
+          </template>
+        </TeeTile>
       </div>
 
       <!-- PROGRAM GEO ZONES -->
@@ -135,11 +146,22 @@
 
       <!-- PROGRAM COST -->
       <div
-        v-if="program.cost" 
+        v-if="program.program_cost" 
         class="fr-col-3">
         <TeeTile
           :title="choices.t('program.programEndDate')"
           :image-path="`${choices.publicPath}images/TEE-cout.svg`"
+          :description="'...'"
+        />
+      </div>
+
+      <!-- PROGRAM DURATION -->
+      <div
+        v-if="program.program_duration" 
+        class="fr-col-3">
+        <TeeTile
+          :title="choices.t('program.programStartDate')"
+          :image-path="`${choices.publicPath}images/TEE-duree.svg`"
           :description="'...'"
         />
       </div>
