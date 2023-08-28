@@ -45,7 +45,7 @@ export const sendApiRequest = async (
   // console.log('utils > requests > sendApiRequest >  method :', method)
   // console.log('utils > requests > sendApiRequest >  headers :', headers)
 
-  let data: any = callback.dataStructure || {}
+  let data: any = callback.dataBody || callback.dataStructure || {}
 
   const dataMapping = callback.dataMapping.filter(dm => !dm.onlyRemap)
   // const listIds = metaEnv[callback.envListIds].split(',').map((id: string) => parseInt(id))
