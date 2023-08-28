@@ -1,8 +1,8 @@
-import { Etablissement } from '../domain/types.js'
-import axios, { AxiosResponse } from 'axios'
+import { EstablishmentNotFoundError, Etablissement } from '../domain/types'
+import axios, { AxiosError, AxiosResponse } from 'axios'
+import { EtablissementDocument } from './types'
+import { ensureError } from './helpers'
 import { Result } from 'true-myth'
-import { EtablissementDocument } from './types.js'
-import { ensureError } from './helpers.js'
 
 /**
  * Populate headers for a call to the "SIRENE" API
@@ -36,7 +36,13 @@ export const requestSireneAPI = async (
     })
     return Result.ok(response.data as Etablissement)
   } catch (err: unknown) {
-    const error = ensureError(err)
+    let error = ensureError(err)
+
+    if (error instanceof AxiosError) {
+      if (error.response && error.response.status == 404) {
+        error = new EstablishmentNotFoundError()
+      }
+    }
 
     return Result.err(error)
   }

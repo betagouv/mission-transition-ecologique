@@ -64,16 +64,21 @@
       <h3>
         {{ choices.t('program.programDescription') }}
       </h3>
-      <ol class="fr-tee-description-list">
-        <li 
+      <div class="fr-tee-description-list">
+        <p 
           v-for="(paragraph, idx) in program.description"
           :key="`description-paragraph-${idx}`"
           class="fr-mb-3v">
-          <span>
+          <span
+            class="fr-tee-description-paragraph-marker">
+            {{ idx + 1 }} |
+          </span>
+          <span
+            class="fr-tee-description-paragraph-content">
             {{ paragraph }}
           </span>
-        </li>
-      </ol>
+        </p>
+      </div>
     </div>
 
     <!-- PROGRAM INFOS : PROVIDERS / TYPE / START / END -->

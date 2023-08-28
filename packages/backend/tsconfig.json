@@ -22,6 +22,9 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
 
+    // tsoa uses decorators
+    "experimentalDecorators": true,
+
     "checkJs": true
   }
 }
