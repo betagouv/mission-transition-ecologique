@@ -1,15 +1,29 @@
 <template>
   <div class="fr-tile fr-enlarge-link">
-    <div class="fr-tile__body fr-p-3v">
-      <h4 class="fr-tile__title">
+    <!-- TITLE -->
+    <div class="fr-tile__body fr-px-3v fr-pb-3v fr-pt-0">
+      <span class="fr-tile__title">
         {{ title }}
-      </h4>
+      </span>
       <p class="fr-tile__desc">
         <span v-if="description">
           {{ description }}
         </span>
         <slot name="description"></slot>
       </p>
+    </div>
+    <!-- ILLUSTRATION -->
+    <div class="fr-tile__header">
+      <div 
+        class="fr-tile__pictogram"
+        style="text-align: center;">
+        <img 
+          class="fr-responsive-img fr-p-5v"
+          :src="imagePath"
+          :alt="`image / ${title}`"
+          :style="`width: 85px`"
+          />
+      </div>
     </div>
   </div>
 </template>
@@ -18,6 +32,7 @@
 
 defineProps<{
   title: string,
+  imagePath: string,
   description?: string,
   debug?: boolean,
 }>()

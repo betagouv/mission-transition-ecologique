@@ -54,6 +54,7 @@ export interface ProgramData {
   program_providers?: ProgramProvider[],
   program_application?: any,
   geo_zones?: any,
+  cost?: any,
   date_start?: any,
   date_end?: any,
 }

@@ -90,7 +90,8 @@
         v-if="program.program_providers" 
         class="fr-col-3">
         <TeeTile
-          :title="choices.t('program.programProviders')">
+          :title="choices.t('program.programProviders')"
+          :image-path="`${choices.publicPath}images/TEE-porteur.svg`">
           <template #description>
             <ul style="list-style-type: none; margin: 0 ; padding: 0;">
               <li
@@ -116,6 +117,7 @@
         class="fr-col-3">
         <TeeTile
           :title="choices.t('program.programType')"
+          :image-path="`${choices.publicPath}images/TEE-typefinance.svg`"
           :description="choices.t(`programTypes.${program.program_type}`)"
         />
       </div>
@@ -126,6 +128,18 @@
         class="fr-col-3">
         <TeeTile
           :title="choices.t('program.programGeoZones')"
+          :image-path="`${choices.publicPath}images/TEE-porteur.svg`"
+          :description="'...'"
+        />
+      </div>
+
+      <!-- PROGRAM COST -->
+      <div
+        v-if="program.cost" 
+        class="fr-col-3">
+        <TeeTile
+          :title="choices.t('program.programEndDate')"
+          :image-path="`${choices.publicPath}images/TEE-cout.svg`"
           :description="'...'"
         />
       </div>
@@ -136,6 +150,7 @@
         class="fr-col-3">
         <TeeTile
           :title="choices.t('program.programStartDate')"
+          :image-path="`${choices.publicPath}images/TEE-duree.svg`"
           :description="'...'"
         />
       </div>
@@ -146,6 +161,7 @@
         class="fr-col-3">
         <TeeTile
           :title="choices.t('program.programEndDate')"
+          :image-path="`${choices.publicPath}images/TEE-duree.svg`"
           :description="'...'"
         />
       </div>
