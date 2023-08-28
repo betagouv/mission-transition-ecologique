@@ -190,7 +190,7 @@ Merci d'avance pour votre appel`,
         // envApiKey: 'VITE_BREVO_TOKEN',
         dataStructure: {
           email: '',
-          listIds: [],
+          // listIds: [],
           // includeListIds: [],
           attributes: {},
           // templateId: 1,  // for double opt-in
