@@ -51,6 +51,10 @@ export const frDict = {
     sub: 'Subvention',
     diag: 'Diagnostic'
   },
+  programCosts: {
+    gratis: 'Gratuit',
+    paying: 'Payant'
+  },
   enterprise: {
     select: 'Sélectionnez votre entreprise',
     noStructureFound: "Aucune structure n'a été trouvée."

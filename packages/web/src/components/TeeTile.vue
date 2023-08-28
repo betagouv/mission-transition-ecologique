@@ -1,7 +1,9 @@
 <template>
   <div class="fr-tile fr-enlarge-link">
     <!-- TITLE -->
-    <div class="fr-tile__body fr-px-3v fr-pb-3v fr-pt-0">
+    <div 
+      class="fr-tile__body fr-px-3v fr-pb-3v fr-pt-0"
+      style="justify-content: start;">
       <span 
         class="fr-tile__title fr-pb-3v"
         style="font-weight: normal; font-size: 0.7rem;">
