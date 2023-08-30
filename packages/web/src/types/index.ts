@@ -377,6 +377,7 @@ export interface FormCallback {
   headerApiKey: string,
   envApiKey: string,
   method: CallbackMethods,
+  dataBody?: object | object[],
   dataStructure: object | object[],
   dataMapping: FormCallbackDataMapping[]
   inputCleaning?: Cleaner[] | CleanerReplaceAll[] | CleanerFromJson[] | CleanerFromDict[] | CleanerDefaultIfNull[],
