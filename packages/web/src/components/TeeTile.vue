@@ -19,7 +19,9 @@
       </p>
     </div>
     <!-- ILLUSTRATION -->
-    <div class="fr-tile__header">
+    <div 
+      v-if="imagePath"
+      class="fr-tile__header">
       <div 
         class="fr-tile__pictogram"
         style="text-align: center;">
@@ -38,7 +40,7 @@
 
 defineProps<{
   title: string,
-  imagePath: string,
+  imagePath?: string,
   description?: string,
   debug?: boolean,
 }>()

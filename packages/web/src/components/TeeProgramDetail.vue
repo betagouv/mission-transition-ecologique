@@ -289,7 +289,7 @@ const analytics = analyticsStore()
 
 const blockColor = 'var(--text-default-info)'
 const showForm = ref<boolean>(false)
-const columnTiles = ref<string>('fr-col-3 fr-col-md-2 fr-col-lg-2')
+const columnTiles = ref<string>('fr-col-4 fr-sm-3 fr-col-md-4 fr-col-lg-2')
 
 interface Props {
   program: ProgramData,
