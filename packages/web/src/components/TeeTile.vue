@@ -27,7 +27,7 @@
           class="fr-responsive-img fr-p-5v"
           :src="imagePath"
           :alt="`image / ${title}`"
-          :style="`width: 85px`"
+          :style="`width: 95px`"
           />
       </div>
     </div>

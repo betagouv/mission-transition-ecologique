@@ -20,7 +20,7 @@
           class="fr-responsive-img"
           :src="`${choices.publicPath}${program.cover}`"
           :alt="`image / ${program.title}`"
-          style="display: block; max-height: 150px; max-width: 200px; width: 100%;"
+          style="height: 100%; object-fit: cover;"
           />
       </div>
       
@@ -88,7 +88,7 @@
       <!-- PROGRAM PROVIDERS -->
       <div
         v-if="program.program_providers" 
-        class="fr-col-3">
+        :class="columnTiles">
         <TeeTile
           :title="choices.t('program.programProviders')"
           :image-path="`${choices.publicPath}images/TEE-porteur.svg`">
@@ -114,7 +114,7 @@
       <!-- PROGRAM TYPE -->
       <div
         v-if="program.program_types" 
-        class="fr-col-3">
+        :class="columnTiles">
         <TeeTile
           :title="choices.t('program.programType')"
           :image-path="`${choices.publicPath}images/TEE-typefinance.svg`"
@@ -136,7 +136,7 @@
       <!-- PROGRAM GEO ZONES -->
       <div
         v-if="program.geo_zones" 
-        class="fr-col-3">
+        :class="columnTiles">
         <TeeTile
           :title="choices.t('program.programGeoZones')"
           :image-path="`${choices.publicPath}images/TEE-porteur.svg`"
@@ -147,7 +147,7 @@
       <!-- PROGRAM COST -->
       <div
         v-if="program.program_cost" 
-        class="fr-col-3">
+        :class="columnTiles">
         <TeeTile
           :title="choices.t('program.programEndDate')"
           :image-path="`${choices.publicPath}images/TEE-cout.svg`"
@@ -158,7 +158,7 @@
       <!-- PROGRAM DURATION -->
       <div
         v-if="program.program_duration" 
-        class="fr-col-3">
+        :class="columnTiles">
         <TeeTile
           :title="choices.t('program.programStartDate')"
           :image-path="`${choices.publicPath}images/TEE-duree.svg`"
@@ -169,7 +169,7 @@
       <!-- PROGRAM START -->
       <div
         v-if="program.date_start" 
-        class="fr-col-3">
+        :class="columnTiles">
         <TeeTile
           :title="choices.t('program.programStartDate')"
           :image-path="`${choices.publicPath}images/TEE-duree.svg`"
@@ -180,7 +180,7 @@
       <!-- PROGRAM END -->
       <div
         v-if="program.date_end" 
-        class="fr-col-3">
+        :class="columnTiles">
         <TeeTile
           :title="choices.t('program.programEndDate')"
           :image-path="`${choices.publicPath}images/TEE-duree.svg`"
@@ -289,6 +289,7 @@ const analytics = analyticsStore()
 
 const blockColor = 'var(--text-default-info)'
 const showForm = ref<boolean>(false)
+const columnTiles = ref<string>('fr-col-3 fr-col-md-2 fr-col-lg-2')
 
 interface Props {
   program: ProgramData,
