@@ -20,7 +20,7 @@
           class="fr-responsive-img"
           :src="`${choices.publicPath}${program.cover}`"
           :alt="`image / ${program.title}`"
-          style="height: 100%; object-fit: cover;"
+          style="min-height: 100%; object-fit: cover;"
           />
       </div>
       
