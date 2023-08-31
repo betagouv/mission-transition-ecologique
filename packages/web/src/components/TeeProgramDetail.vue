@@ -54,33 +54,35 @@
           secondary
           @click="toggleShowForm"
           ref="modalOrigin"/> -->
-      </div>
-    </div>
 
-    <!-- PROGRAM DESCRIPTION -->
-    <div 
-      v-if="program.description"
-      class="fr-mb-18v">
-      <h3>
-        {{ choices.t('program.programDescription') }}
-      </h3>
-      <div class="fr-tee-description-list">
-        <p 
-          v-for="(paragraph, idx) in program.description"
-          :key="`description-paragraph-${idx}`"
-          class="fr-mb-3v">
-          <span
-            class="fr-tee-description-paragraph-marker">
-            {{ idx + 1 }} |
-          </span>
-          <span
-            class="fr-tee-description-paragraph-content">
-            {{ paragraph }}
-          </span>
-        </p>
-      </div>
-    </div>
+        <!-- PROGRAM DESCRIPTION -->
+        <div 
+          v-if="program.description"
+          class="fr-mb-18v">
+          <h3>
+            {{ choices.t('program.programDescription') }}
+          </h3>
+          <div class="fr-tee-description-list">
+            <p 
+              v-for="(paragraph, idx) in program.description"
+              :key="`description-paragraph-${idx}`"
+              class="fr-mb-3v">
+              <span
+                class="fr-tee-description-paragraph-marker">
+                {{ idx + 1 }} |
+              </span>
+              <span
+                class="fr-tee-description-paragraph-content">
+                {{ paragraph }}
+              </span>
+            </p>
+          </div>
+        </div>
 
+      </div>
+
+    </div>
+    
     <!-- PROGRAM INFOS : PROVIDERS / TYPE / START / END -->
     <div
       v-if="trackConfig.config?.showProgramInfos" 
@@ -188,7 +190,7 @@
         />
       </div>
     </div>
-
+    
     <!-- PROGRAM FORM -->
     <div
       class="fr-form-block">
