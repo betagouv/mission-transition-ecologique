@@ -47,6 +47,7 @@
         </h2>
         <p
           v-if="program.text"
+          style="color: #000091"
           v-html="program.text">
         </p>
 
