@@ -99,6 +99,7 @@ export interface BrevoBodyAttributes {
   TEL: string,
   SIRET: string,
   OPT_IN: boolean,
+  FORM_NEEDS?: string,
   PROJECT_NEEDS?: string,
   PROJECT_SECTORS?: string,
   USER_ROLES?: string,
