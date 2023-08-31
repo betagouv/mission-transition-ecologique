@@ -15,7 +15,7 @@
     <!-- PROGRAM DETAILS -->
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-10v">
       <!-- IMAGE -->
-      <div class="fr-col-md-4 fr-col-lg-2 fr-col-xl-2 fr-col-sm-hide fr-text-right">
+      <div class="fr-col-md-4 fr-col-lg-3 fr-col-xl-2 fr-col-sm-hide fr-text-right">
         <img 
           class="fr-responsive-img"
           :src="`${choices.publicPath}${program.cover}`"
@@ -25,7 +25,7 @@
       </div>
       
       <!-- TITLE & RESUME -->
-      <div class="fr-col">
+      <div class="fr-col fr-pl-10v">
         <!-- PROGRAM TITLE -->
         <!-- <h1>
           {{ program.title }}
@@ -34,7 +34,7 @@
           {{ program.title }}
         </p>
 
-        <!-- PROGRAM RESUME -->
+        <!-- PROGRAM RESUME / TEXT-->
         <h6
           v-if="trackConfig.config?.showProgramSubtitles"
           :style="`color: ${blockColor}`">
@@ -45,6 +45,10 @@
           :style="`color: ${blockColor}`"
           v-html="program.resume">
         </h2>
+        <p
+          v-if="program.text"
+          v-html="program.text">
+        </p>
 
         <!-- OPEN MODAL -> FORM -->
         <!-- :label="choices.t('results.showForm', {title: program.title})" -->

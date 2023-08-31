@@ -45,6 +45,7 @@ export interface ProgramData {
   index?: string | number,
   title: string,
   resume?: string,
+  text?: string,
   cover?: string,
   origin_url? : string,
   description?: string,
