@@ -74,13 +74,14 @@
         v-if="prog.cover"
         class="fr-card__header">
         <div class="fr-card__img">
-          <!-- :src="`${choices.publicPath}${prog.cover}`" -->
           <img 
             class="fr-responsive-img"
             :src="`${choices.publicPath}${prog.cover}`"
             :alt="`image / ${prog.title}`"
             />
-          <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+          <!-- L’alternative de l’image (attribut alt) doit toujours être présente, 
+            sa valeur peut être vide (image n’apportant pas de sens supplémentaire au contexte) 
+            ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
         </div>
         <ul class="fr-badges-group">
           <li

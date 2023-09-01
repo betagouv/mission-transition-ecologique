@@ -3,6 +3,7 @@
     "id": "diag-decarbon-action",
     "title": "Diag Decarbon'Action",
     "resume": "Réduisez durablement vos émissions carbone",
+    "text": "Réalisez un bilan carbone et réduisez de manière durable l’empreinte carbone de votre entreprise. \n",
     "origin_url": "https://diag.bpifrance.fr/produit/diag-decarbon-action",
     "cover": "images/TEE_eolienne.png",
     "description": [
@@ -67,6 +68,7 @@
     "id": "diag-ecoflux",
     "title": "Diag Eco-flux",
     "resume": "Faites des économies en gérant durablement vos dépenses",
+    "text": "Bénéficiez des conseils d'un expert pour réaliser rapidement des économies durables, en réduisant vos déchets et vos pertes en énergie, matière et eau, grâce à une méthode élaborée avec l'ADEME.\n",
     "origin_url": "https://diag.bpifrance.fr/produit/diag-eco-flux",
     "cover": "images/TEE_ampoule.png",
     "description": [
@@ -126,6 +128,7 @@
     "id": "diag-ecoconception",
     "title": "Diag Ecoconception",
     "resume": "Améliorez l'impact environnementale de vos produits et services",
+    "text": "Bénéficiez des experts d'un conseil pour repenser la manière de concevoir vos produits, services et procédés.\n",
     "origin_url": "https://diag.bpifrance.fr/produit/diag-eco-conception",
     "cover": "images/TEE_ampoule.png",
     "description": [
@@ -190,6 +193,7 @@
     "id": "fonds-tourisme-durable",
     "title": "Fonds Tourisme Durable",
     "resume": "Obtenez un diagnostic et des subventions dans votre activité touristique",
+    "text": "Le Fonds Tourisme Durable soutient la réalisation d'un diagnostic environnemental gratuit et de financements d'investissements et/ou d'études. \n",
     "origin_url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/fonds-tourisme-durable-restaurateurs-hebergeurs-accelerez-transition-0",
     "cover": "images/TEE_ampoule.png",
     "description": [
@@ -254,6 +258,7 @@
     "id": "performa-environnement",
     "title": "Performa Environnement",
     "resume": "Mesurer votre maturité écologique et créer un plan d’actions personnalisé avec à un conseiller",
+    "text": "Réalisez un état des lieux à 360° pour évaluer l'impact de votre activité sur l'environnement et réalisez des économies. Différents sujets sont abordés : économie d’énergie, isolation des locaux, consommations d’eau, déchets, matières premières, achats, mobilité, etc.\n",
     "origin_url": "https://www.economie.gouv.fr/entreprises/entreprises-aides-transition-ecologique",
     "cover": "images/TEE_eolienne.png",
     "description": [
@@ -317,6 +322,7 @@
     "id": "tpe-gagnantes",
     "title": "TPE Gagnantes",
     "resume": "Faites des économies en gérant durablement vos dépenses",
+    "text": "Diminuez les charges de votre entreprise et réduisez votre impact environnemental, en optimisant 4 postes de dépenses : Flux énergie,Matières premières, Déchets, Consommation d’eau  \n",
     "origin_url": "https://agirpourlatransition.ademe.fr/entreprises/optimisez-tpe-pme/diagnostic-global-personnalise",
     "cover": "images/TEE_energie_verte.png",
     "description": [
@@ -376,6 +382,7 @@
     "id": "tremplin",
     "title": "Tremplin",
     "resume": "Financez vos projets d’études ou d’investissement écologique avec une ou plusieurs aides forfaitaires",
+    "text": "Evaluer votre stratégie de réduction des émissions de gaz à effet de serre (Evaluation ACT®)\n",
     "origin_url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/tremplin-transition-ecologique-pme",
     "cover": "images/TEE_energie_verte.png",
     "description": [
@@ -458,6 +465,7 @@
     "id": "visite-energie",
     "title": "Visite Energie",
     "resume": "Mesurer votre maturité energétique et créer un plan d’actions personnalisé avec un conseiller",
+    "text": "Evaluez les coûts et surcoûts d'énergie et identifiez les actions à mener pour les réduire\n",
     "origin_url": "https://www.cci.fr/",
     "cover": "images/TEE_energie_verte.png",
     "description": [
