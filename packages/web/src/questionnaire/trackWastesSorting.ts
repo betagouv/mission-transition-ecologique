@@ -34,7 +34,7 @@ export const wastesSorting = {
       title: { fr: 'Je ne sais pas' },
       label: { fr: "Je ne sais pas" },
       next: {
-        default: 'track_results'
+        default: 'track_wastes_materials'
       }
     }
   ]
