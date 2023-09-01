@@ -22,6 +22,7 @@ enum ConditionOperators {
   and = 'and',
   is = '==',
   exist = 'exists',
+  inexists = 'inexists',
   notEqual = '!=',
   superior = '>',
   superiorOrEqual = '>=',
@@ -78,7 +79,9 @@ export interface TrackCallout {
   headerStyle?: string,
   title: Translations,
   bigTitle: boolean,
-  description: Translations,
+  titleStyle?: string,
+  description?: Translations,
+  descriptionStyle?: string,
   bgColor?: string,
   type?: TrackCalloutType
   imageLeft?: string,
@@ -116,6 +119,7 @@ export interface NextTrackRule extends FormCallbackDataMapping {
   conditions: Condition[]
 }
 export interface NextTrackRule {
+  help?: string,
   rules: NextTrackRule[],
   next: TrackNext
 }
@@ -124,6 +128,12 @@ export interface TrackNext {
   exceptions? : object[]
   [name: string]: any
 }
+
+enum HasInputOptions {
+  number = 'number',
+  text = 'text'
+}
+
 export interface TrackOptions {
   id?: string,
   disabled?: Boolean,
@@ -131,7 +141,13 @@ export interface TrackOptions {
   required?: Boolean,
   title: Translations,
   label: Translations,
+  resume?: Translations,
   hint?: Translations,
+  hintImageIcon?: string,
+  hintIcon?: string,
+  hintImage?: Translations,
+  imageTop?: string,
+  hasInput?: HasInputOptions,
   callout?: TrackCallout,
   info?: Translations,
   placeholder?: Translations,
@@ -309,6 +325,7 @@ enum DataMappingFroms {
   env = 'env',
   formData = 'formData',
   usedTracks = 'usedTracks',
+  selectionValues = 'selectionValues',
   props = 'props',
   rawData = 'rawData',
 }

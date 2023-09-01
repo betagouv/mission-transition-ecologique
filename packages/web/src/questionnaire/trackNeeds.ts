@@ -27,7 +27,8 @@ export const needs = {
       title: { fr: '' },
       label: { fr: "Je me lance !" },
       next: {
-        default: 'track_goals'
+        // default: 'track_goals'
+        default: 'track_help'
       }
     },
     {

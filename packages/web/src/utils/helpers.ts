@@ -92,21 +92,39 @@ export const setProperty = (obj: object, path: string, value: any) => {
   return resObj
 }
 
-export const findInTracksArray = (tracksArray: object[], id: string) => {
-  // console.log()
-  // console.log('utils > helpers > findInTracksArray >  tracksArray :', tracksArray)
-  // console.log('utils > helpers > findInTracksArray >  id :', id)
+// export const findInTracksArray = (tracksArray: object[], id: string) => {
+//   console.log()
+//   console.log('utils > helpers > findInTracksArray >  tracksArray :', tracksArray)
+//   console.log('utils > helpers > findInTracksArray >  id :', id)
+
+//   // let value = undefined
+
+//   let UsedTracksFlat: any = {} 
+//   tracksArray.map( item => {
+//     UsedTracksFlat = {...UsedTracksFlat, ...item}
+//   })
+//   console.log('utils > helpers > findInTracksArray >  UsedTracksFlat :', UsedTracksFlat)
+
+//   const value = UsedTracksFlat[id] 
+//   console.log('utils > helpers > findInTracksArray >  value :', value)
+//   return value
+// }
+
+export const findInObjectsArray = (objectsArray: object[], id: string) => {
+  console.log()
+  console.log('utils > helpers > findInObjectsArray >  objectsArray :', objectsArray)
+  console.log('utils > helpers > findInObjectsArray >  id :', id)
 
   // let value = undefined
 
-  let UsedTracksFlat: any = {} 
-  tracksArray.map( item => {
-    UsedTracksFlat = {...UsedTracksFlat, ...item}
+  let arrayFlat: any = {} 
+  objectsArray.map( item => {
+    arrayFlat = {...arrayFlat, ...item}
   })
-  // console.log('utils > helpers > findInTracksArray >  UsedTracksFlat :', UsedTracksFlat)
+  console.log('utils > helpers > findInObjectsArray >  arrayFlat :', arrayFlat)
 
-  const value = UsedTracksFlat[id] 
-  // console.log('utils > helpers > findInTracksArray >  value :', value)
+  const value = arrayFlat[id] 
+  console.log('utils > helpers > findInObjectsArray >  value :', value)
   return value
 }
 
@@ -191,6 +209,7 @@ export const remapItem = (
   trackValues: any[] = [],
   props: object | any = undefined,
   rawData: object | any = undefined,
+  selectionValues: any[] = [],
   lang: string = 'fr'
   ) => {
   
@@ -213,7 +232,11 @@ export const remapItem = (
         break
       case 'usedTracks':
         // console.log('utils > helpers > remapItem >  trackValues :', trackValues)
-        value = findInTracksArray(trackValues, dm.id)
+        value = findInObjectsArray(trackValues, dm.id)
+        break
+      case 'selectionValues':
+        // console.log('utils > helpers > remapItem >  trackValues :', trackValues)
+        value = findInObjectsArray(selectionValues, dm.id)
         break
       case 'props':
         value = props && props[dm.id]

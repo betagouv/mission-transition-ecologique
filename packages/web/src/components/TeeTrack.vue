@@ -61,10 +61,10 @@
           <!-- CALLOUT (TEXT + IMAGE) -->
           <div 
             v-if="track.callout"
-            :class="`fr-col-12 ${track.callout.bigTitle ? 'fr-mb-10v fr-mx-0 fr-px-4v' : ''}`"
+            :class="`fr-col-12 ${track.callout.bigTitle ? 'fr-mb-10v fr-mx-0 fr-px-2v' : ''}`"
             >
             <div
-              :class="`${track.callout.bigTitle ? 'fr-px-0' : 'fr-py-4v fr-px-4v'}`"
+              :class="`${track.callout.bigTitle ? 'fr-px-2v' : 'fr-py-4v fr-px-4v'}`"
               :style="`background-color: ${track.callout.bgColor || 'transparent'}`">
               <div class="fr-grid-row fr-grid-row--gutters">
                 <!-- CALLOUT IMAGE LEFT -->
@@ -79,7 +79,8 @@
                     />
                 </div>
                 <!-- CALLOUT TEXT -->
-                <div class="fr-col">
+                <div 
+                  class="fr-col">
                   <!-- CALLOUT HEADER -->
                   <h2
                     v-if="track.callout.header"
@@ -90,16 +91,20 @@
                   <!-- CALLOUT TITLE / BIG TITLE -->
                   <h1
                     v-if="track.callout.bigTitle"
-                    class="">
+                    :style="`${track.callout.titleStyle}`">
                     {{ track.callout.title[choices.lang]}}
                   </h1>
                   <h3
                     v-else
-                    class="fr-callout__title">
+                    class="fr-callout__title"
+                    :style="`${track.callout.titleStyle}`">
                     {{ track.callout.title[choices.lang]}}
                   </h3>
                   <!-- CALLOUT DESCRIPTION -->
-                  <p class="fr-callout__text">
+                  <p 
+                    v-if="track.callout.description"
+                    class="fr-callout__text"
+                    :style="`${track.callout.descriptionStyle}`">
                     {{ track.callout.description[choices.lang]}}
                   </p>
                   <!-- CALLOUT HINT -->
@@ -163,7 +168,7 @@
               {{ track.hint[choices.lang] }}
             </p>
           </div>
-      
+          
           <!-- TRACK CHOICES {{ renderAs }} -->
           <div
             v-for="option in optionsArray"
@@ -174,13 +179,35 @@
             <!-- AS CARDS -->
             <div
               v-if="renderAs === 'cards'"
-              style="height: 100%;"
+              style="height: 99%;"
               >
               <div 
                 class="fr-card fr-enlarge-link"
                 @click="updateSelection(option)">
+                <div
+                  v-if="option.imageTop"
+                  class="fr-card__header">
+                  <div class="fr-card__img">
+                    <img 
+                      class="fr-responsive-img" 
+                      :src="`${choices.publicPath}${option.imageTop}`"
+                      :alt="`image / ${option.label}`"
+                      />
+                  </div>
+                </div>
                 <div class="fr-card__body">
                   <div class="fr-card__content">
+                    <p 
+                      v-if="option.hintImage"
+                      class="fr-card__desc fr-mt-0 fr-mb-2v"
+                      style="order: 2;">
+                      <span 
+                        v-if="option.hintImageIcon"
+                        :class="option.hintImageIcon" 
+                        aria-hidden="true">
+                      </span>
+                      {{ option.hintImage[choices.lang] }}
+                    </p>
                     <h3 class="fr-card__title">
                       <!-- <a href="#"> -->
                         {{ option.label[choices.lang] }}
@@ -192,11 +219,23 @@
                       <p class="fr-badge fr-badge--info fr-badge--no-icon fr-mb-4v">
                         {{ choices.t('selection.selected') }}
                       </p>
+                    </div>
                   </div>
-                    <p class="fr-card__desc">
-                      {{ option.hint[choices.lang] }}
-                    </p>
-                  </div>
+                  <p 
+                    v-if="option.hint"
+                    class="fr-card__desc">
+                    <span 
+                      v-if="option.hintIcon"
+                      :class="option.hintIcon" 
+                      aria-hidden="true">
+                    </span>
+                    {{ option.hint[choices.lang] }}
+                  </p>
+                  <p
+                    v-if="option.resume"
+                    class="fr-card__desc">
+                    {{ option.resume[choices.lang] }}
+                  </p>
                 </div>
                 <!-- <div class="fr-card__header">
                   <div class="fr-card__img">
@@ -211,7 +250,7 @@
             
             <!-- AS BUTTONS -->
             <div 
-              v-if="renderAs === 'buttons'"
+              v-if="renderAs === 'buttons' && !option.hasInput"
               class="fr-div-fixed-height">
               <DsfrButton
                 class="fr-btn-fullwidth fr-btn-fixed-height fr-btn-sm-align-left fr-btn-grey"
@@ -222,7 +261,14 @@
                 @click="updateSelection(option)"
               />
             </div>
-      
+
+            <!-- AS BUTTON + BUTTON INPUT -->
+            <div 
+              v-if="renderAs === 'buttons' && option.hasInput"
+              class="fr-div-fixed-height">
+              {{ option }}
+            </div>
+
             <!-- AS SIMPLE BUTTONS -->
             <div 
               v-if="renderAs === 'simpleButtons'">
@@ -279,7 +325,7 @@
         <div 
           v-if="!noNeedForNext.includes(renderAs) && !isCompleted && !isTrackResults"
           class="fr-grid-row fr-grid-row--gutters fr-pt-8v"
-          style="justify-content: end;">
+          style="justify-content: start;">
           <!-- BTN PREVIOUS -->
           <div
             v-if="step > 1"
@@ -325,7 +371,7 @@
 
 <script setup lang="ts">
 
-import { ref, computed, watch } from 'vue'
+import { ref, computed, watch, toRaw } from 'vue'
 
 import { tracksStore } from '../stores/tracks'
 import { choicesStore } from '../stores/choices'
@@ -364,10 +410,10 @@ const colsOptions: ColsOptions = {
   results: 10,
 }
 const colsOptionsLarge: ColsOptions = {
-  buttons: 6,
+  buttons: 12,
   simpleButtons: 3,
   input: 12,
-  cards: 4,
+  cards: 6,
   form: 8,
   modify: 2,
   results: 10,
@@ -517,28 +563,38 @@ const saveSelection = () => {
   const nextExceptions = optionNext?.exceptions
   const defaultNext = track?.next
   
+  
   // @ts-ignore
   let next = !optionNext || allowMultiple ? defaultNext : optionNext
-
+  
   // SWITCH NEXT TRACK DEPENDING ON CONDITIONS
   // NOTE : could be deplaced in store ?
   // console.log('TeeTrack > updateStore > optionNext :', optionNext)
   if (nextExceptions) {
-    // console.log('TeeTrack > updateStore > nextExceptions :', nextExceptions)
+    console.log('TeeTrack > updateStore > nextExceptions :', nextExceptions)
+    
+    // get used tracks values
     const trackValues: any[] = tracks.getAllUsedTracksValues
-    // console.log('TeeTrack > updateStore > trackValues :', trackValues)
+    console.log('TeeTrack > updateStore > trackValues :', trackValues)
+
+    // get current selection
+    console.log('TeeTrack > updateStore > selectedOptions.value :', selectedOptions.value)
+    const selectionVals = selectedOptions.value.map(item => {
+      return toRaw(item.value)
+    })
+    console.log('TeeTrack > updateStore > selectionVals :', selectionVals)
+
     nextExceptions.forEach((trackRule: NextTrackRule) => {
       const dataStructure = {}
-      let item = remapItem(dataStructure, trackRule.rules, {}, trackValues, {}, {}, choices.lang)
-      // console.log('TeeTrack > updateStore > item :', item)
+      let item = remapItem(dataStructure, trackRule.rules, {}, trackValues, {}, {}, selectionVals, choices.lang)
+      console.log('TeeTrack > updateStore > item :', item)
       const bool = CheckNextTrackRules(item, trackRule.rules)
-      // console.log('TeeTrack > updateStore > bool :', bool)
+      console.log('TeeTrack > updateStore > bool :', bool)
       next = bool ? trackRule.next : next
     })
   }
 
-
-  // console.log('TeeTrack > updateStore > next :', next)
+  console.log('TeeTrack > updateStore > next :', next)
 
   tracks.updateUsedTracks(props.trackId, props.step, next, selectedOptions.value)
   
