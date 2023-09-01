@@ -18,6 +18,8 @@ import { wastesSorting } from './trackWastesSorting'
 import { wastesMaterials } from './trackWastesMaterials'
 import { waterStake } from './trackWaterStake'
 import { energyStake } from './trackEnergyStake'
+import { strategyAudits } from './trackStrategyAudits'
+import { strategyAuditsSelect } from './trackStrategyAuditsSelect'
 
 // import { status } from './trackStatus'
 
@@ -44,6 +46,8 @@ export const tracks = [
   wastesMaterials,
   waterStake,
   energyStake,
+  strategyAudits,
+  strategyAuditsSelect,
 
   results 
 ]

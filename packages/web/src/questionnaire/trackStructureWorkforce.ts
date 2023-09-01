@@ -91,7 +91,7 @@ export const workforce = {
     {
       value: { structure_workforce: 'TPE' },
       title: { fr: 'TPE ou PME' },
-      label: { fr: "TPE ou PME" },
+      label: { fr: "🧍‍♂employé.s" },
       hasInput: 'number',
       next: {
         default: 'track_sectors',
@@ -101,7 +101,7 @@ export const workforce = {
       disabled: false,
       value: { structure_workforce: '+200' },
       title: { fr: '+200 employés' },
-      label: { fr: "Plus de 200 employé.s)" },
+      label: { fr: "‍️👫👭 Plus de 200 employés" },
       next: {
         default: 'track_sectors',
         exceptions: nextExceptions

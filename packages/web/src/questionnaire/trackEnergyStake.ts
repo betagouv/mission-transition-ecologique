@@ -27,7 +27,7 @@ export const energyStake = {
       title: { fr: 'Electrique' },
       label: { fr: "⚡️ Électrique" },
       next: {
-        default: 'track_results'
+        default: 'track_strategy_audits'
       }
     },
     {
@@ -35,7 +35,7 @@ export const energyStake = {
       title: { fr: "Gas" },
       label: { fr: "💨 Gaz" },
       next: {
-        default: 'track_results'
+        default: 'track_strategy_audits'
       }
     },
     {
@@ -43,7 +43,7 @@ export const energyStake = {
       title: { fr: "Fioul" },
       label: { fr: "⛽️ Essence / fioul" },
       next: {
-        default: 'track_results'
+        default: 'track_strategy_audits'
       }
     },
     {
@@ -51,7 +51,7 @@ export const energyStake = {
       title: { fr: "Charbon" },
       label: { fr: "〰 Charbon" },
       next: {
-        default: 'track_results'
+        default: 'track_strategy_audits'
       }
     },
     {
@@ -59,7 +59,7 @@ export const energyStake = {
       title: { fr: "Bois" },
       label: { fr: "🪵 Bois" },
       next: {
-        default: 'track_results'
+        default: 'track_strategy_audits'
       }
     },
     {
@@ -67,7 +67,7 @@ export const energyStake = {
       title: { fr: 'Je ne sais pas' },
       label: { fr: "Je ne sais pas ou je ne suis pas concerné" },
       next: {
-        default: 'track_results'
+        default: 'track_strategy_audits'
       }
     },
     {
@@ -76,7 +76,7 @@ export const energyStake = {
       label: { fr: "Autre : " },
       hasInput: 'text',
       next: {
-        default: 'track_results'
+        default: 'track_strategy_audits'
       }
     },
   ]
