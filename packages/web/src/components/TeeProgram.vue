@@ -8,7 +8,7 @@
       <!-- PROGRAM PROVIDERS -->
       <div
         v-if="program.program_providers" 
-        class="fr-col-3">
+        :class="columnTiles">
         <TeeTile
           :title="choices.t('program.programProviders')">
           <template #description>
@@ -32,18 +32,18 @@
 
       <!-- PROGRAM TYPE -->
       <div
-        v-if="program.program_type" 
-        class="fr-col-3">
+        v-if="program.program_types" 
+        :class="columnTiles">
         <TeeTile
           :title="choices.t('program.programType')"
-          :description="choices.t(`programTypes.${program.program_type}`)"
+          :description="choices.t(`programTypes.${program.program_types}`)"
         />
       </div>
 
       <!-- PROGRAM GEO ZONES -->
       <div
         v-if="program.geo_zones" 
-        class="fr-col-3">
+        :class="columnTiles">
         <TeeTile
           :title="choices.t('program.programGeoZones')"
           :description="'...'"
@@ -53,7 +53,7 @@
       <!-- PROGRAM START -->
       <div
         v-if="program.date_start" 
-        class="fr-col-3">
+        :class="columnTiles">
         <TeeTile
           :title="choices.t('program.programStartDate')"
           :description="'...'"
@@ -63,7 +63,7 @@
       <!-- PROGRAM END -->
       <div
         v-if="program.date_end" 
-        class="fr-col-3">
+        :class="columnTiles">
         <TeeTile
           :title="choices.t('program.programEndDate')"
           :description="'...'"
@@ -98,6 +98,7 @@
 
 <script setup lang="ts">
 
+import { ref } from 'vue'
 // @ts-ignore
 import type { ProgramData, TrackResultsConfig } from '@/types/index'
 
@@ -108,6 +109,7 @@ import { choicesStore } from '../stores/choices'
 const choices = choicesStore()
 
 const blockColor = 'var(--text-default-info)'
+const columnTiles = ref<string>('fr-col-3 fr-col-md-2 fr-col-lg-2')
 
 defineProps<{
   program: ProgramData,

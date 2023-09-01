@@ -15,17 +15,17 @@
     <!-- PROGRAM DETAILS -->
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-10v">
       <!-- IMAGE -->
-      <div class="fr-col-md-4 fr-col-lg-2 fr-col-xl-2 fr-col-sm-hide fr-text-right">
+      <div class="fr-col-md-4 fr-col-lg-3 fr-col-xl-2 fr-col-sm-hide fr-text-right">
         <img 
           class="fr-responsive-img"
           :src="`${choices.publicPath}${program.cover}`"
           :alt="`image / ${program.title}`"
-          style="display: block; max-height: 150px; max-width: 200px; width: 100%;"
+          style="min-height: 100%; object-fit: cover;"
           />
       </div>
       
       <!-- TITLE & RESUME -->
-      <div class="fr-col">
+      <div class="fr-col fr-pl-10v">
         <!-- PROGRAM TITLE -->
         <!-- <h1>
           {{ program.title }}
@@ -34,7 +34,7 @@
           {{ program.title }}
         </p>
 
-        <!-- PROGRAM RESUME -->
+        <!-- PROGRAM RESUME / TEXT-->
         <h6
           v-if="trackConfig.config?.showProgramSubtitles"
           :style="`color: ${blockColor}`">
@@ -45,6 +45,11 @@
           :style="`color: ${blockColor}`"
           v-html="program.resume">
         </h2>
+        <p
+          v-if="program.text"
+          style="color: #000091"
+          v-html="program.text">
+        </p>
 
         <!-- OPEN MODAL -> FORM -->
         <!-- :label="choices.t('results.showForm', {title: program.title})" -->
@@ -54,33 +59,35 @@
           secondary
           @click="toggleShowForm"
           ref="modalOrigin"/> -->
-      </div>
-    </div>
 
-    <!-- PROGRAM DESCRIPTION -->
-    <div 
-      v-if="program.description"
-      class="fr-mb-18v">
-      <h3>
-        {{ choices.t('program.programDescription') }}
-      </h3>
-      <div class="fr-tee-description-list">
-        <p 
-          v-for="(paragraph, idx) in program.description"
-          :key="`description-paragraph-${idx}`"
-          class="fr-mb-3v">
-          <span
-            class="fr-tee-description-paragraph-marker">
-            {{ idx + 1 }} |
-          </span>
-          <span
-            class="fr-tee-description-paragraph-content">
-            {{ paragraph }}
-          </span>
-        </p>
-      </div>
-    </div>
+        <!-- PROGRAM DESCRIPTION -->
+        <div 
+          v-if="program.description"
+          class="fr-mb-18v">
+          <h3>
+            {{ choices.t('program.programDescription') }}
+          </h3>
+          <div class="fr-tee-description-list">
+            <p 
+              v-for="(paragraph, idx) in program.description"
+              :key="`description-paragraph-${idx}`"
+              class="fr-mb-3v">
+              <span
+                class="fr-tee-description-paragraph-marker">
+                {{ idx + 1 }} |
+              </span>
+              <span
+                class="fr-tee-description-paragraph-content">
+                {{ paragraph }}
+              </span>
+            </p>
+          </div>
+        </div>
 
+      </div>
+
+    </div>
+    
     <!-- PROGRAM INFOS : PROVIDERS / TYPE / START / END -->
     <div
       v-if="trackConfig.config?.showProgramInfos" 
@@ -88,9 +95,10 @@
       <!-- PROGRAM PROVIDERS -->
       <div
         v-if="program.program_providers" 
-        class="fr-col-3">
+        :class="columnTiles">
         <TeeTile
-          :title="choices.t('program.programProviders')">
+          :title="choices.t('program.programProviders')"
+          :image-path="`${choices.publicPath}images/TEE-porteur.svg`">
           <template #description>
             <ul style="list-style-type: none; margin: 0 ; padding: 0;">
               <li
@@ -112,20 +120,55 @@
 
       <!-- PROGRAM TYPE -->
       <div
-        v-if="program.program_type" 
-        class="fr-col-3">
+        v-if="program.program_types" 
+        :class="columnTiles">
         <TeeTile
           :title="choices.t('program.programType')"
-          :description="choices.t(`programTypes.${program.program_type}`)"
-        />
+          :image-path="`${choices.publicPath}images/TEE-typefinance.svg`"
+          >
+        <template #description>
+            <ul style="list-style-type: none; margin: 0 ; padding: 0;">
+              <li
+                v-for="(programType, index) in program.program_types"
+                :key="`type-${index}-${programType}`">
+                <span>
+                  {{ choices.t(`programTypes.${programType}`) }}
+                </span>
+              </li>
+            </ul>
+          </template>
+        </TeeTile>
       </div>
 
       <!-- PROGRAM GEO ZONES -->
       <div
         v-if="program.geo_zones" 
-        class="fr-col-3">
+        :class="columnTiles">
         <TeeTile
           :title="choices.t('program.programGeoZones')"
+          :image-path="`${choices.publicPath}images/TEE-porteur.svg`"
+          :description="'...'"
+        />
+      </div>
+
+      <!-- PROGRAM COST -->
+      <div
+        v-if="program.program_cost" 
+        :class="columnTiles">
+        <TeeTile
+          :title="choices.t('program.programEndDate')"
+          :image-path="`${choices.publicPath}images/TEE-cout.svg`"
+          :description="'...'"
+        />
+      </div>
+
+      <!-- PROGRAM DURATION -->
+      <div
+        v-if="program.program_duration" 
+        :class="columnTiles">
+        <TeeTile
+          :title="choices.t('program.programStartDate')"
+          :image-path="`${choices.publicPath}images/TEE-duree.svg`"
           :description="'...'"
         />
       </div>
@@ -133,9 +176,10 @@
       <!-- PROGRAM START -->
       <div
         v-if="program.date_start" 
-        class="fr-col-3">
+        :class="columnTiles">
         <TeeTile
           :title="choices.t('program.programStartDate')"
+          :image-path="`${choices.publicPath}images/TEE-duree.svg`"
           :description="'...'"
         />
       </div>
@@ -143,14 +187,15 @@
       <!-- PROGRAM END -->
       <div
         v-if="program.date_end" 
-        class="fr-col-3">
+        :class="columnTiles">
         <TeeTile
           :title="choices.t('program.programEndDate')"
+          :image-path="`${choices.publicPath}images/TEE-duree.svg`"
           :description="'...'"
         />
       </div>
     </div>
-
+    
     <!-- PROGRAM FORM -->
     <div
       class="fr-form-block">
@@ -251,6 +296,7 @@ const analytics = analyticsStore()
 
 const blockColor = 'var(--text-default-info)'
 const showForm = ref<boolean>(false)
+const columnTiles = ref<string>('fr-col-4 fr-sm-3 fr-col-md-4 fr-col-lg-2')
 
 interface Props {
   program: ProgramData,

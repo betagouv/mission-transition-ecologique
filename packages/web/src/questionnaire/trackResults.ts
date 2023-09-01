@@ -14,7 +14,7 @@ export const results = {
     showAlertResults: false,
     showAlertNoResults: true,
     showResultsTitle: false,
-    showProgramInfos: false,
+    showProgramInfos: true,
     showProgramSubtitles: false
   },
   options: [
