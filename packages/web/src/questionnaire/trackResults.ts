@@ -192,11 +192,11 @@ export const results = {
             id: 'siret',
             dataField: 'attributes.SIRET',
           },
-          // {
-          //   from: 'formData',
-          //   id: 'needs',
-          //   dataField: 'attributes.FORM_NEEDS',
-          // },
+          {
+            from: 'formData',
+            id: 'needs',
+            dataField: 'attributes.FORM_NEEDS',
+          },
           {
             from: 'formData',
             id: 'cgu',
