@@ -21,5 +21,5 @@ jobs:
           node-version: ${{ matrix.node-version }}
       # This step only installs ajv_cli needed for data validation
       - run: VERSION_AJV_CLI=`node -p -e "require('./packages/backend/package.json').devDependencies[\"ajv-cli\"]"` npm install --no-package-lock --no-save ajv-cli@"$VERSION_AJV_CLI"
-      # This step runs the `test` script that is specified under the `scripts` key in your `package.json` file.
+        #
       - run: npm run test-data -w packages/backend
