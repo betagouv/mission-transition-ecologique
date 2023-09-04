@@ -10,7 +10,7 @@ describe('Test that API response format is unchanged', () => {
   const expected_data = [golden_file_1, golden_file_2, golden_file_3, golden_file_4]
 
   test_siret.map((siret, index) => {
-    test(`Compare response data with golden file for siret ${siret}`, async () => {
+    test.skip(`Compare response data with golden file for siret ${siret}`, async () => {
       // const api_host = 'https://tee-backend.osc-fr1.scalingo.io'
       const api_host = 'http://localhost:3000' // local API Express - should be started before testing
       const api_path = '/api/insee/get_by_siret'

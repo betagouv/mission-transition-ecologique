@@ -26,11 +26,17 @@
     },
     "description": {
       "description": "TODO",
-      "type": "string"
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
     },
     "program_types": {
       "description": "TODO",
-      "type": "string"
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
     },
     "conditions": {
       "description": "TODO",
@@ -67,7 +73,7 @@
           }
         }
       }
-    },
-    "required": [ "id", "resume", ]
-  }
+    }
+  },
+  "required": [ "id", "resume"]
 }
