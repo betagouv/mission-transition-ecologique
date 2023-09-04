@@ -21,8 +21,8 @@
       </v-icon>
       <span
         v-if="option.hasInput === 'text'"
-        class="fr-mr-3v"
-        style="width: auto;">
+        class="fr-pr-3v"
+        style="width: auto; white-space: nowrap">
         {{ option.label[choices.lang] }}
       </span>
       <input 
@@ -30,6 +30,7 @@
         :type="option.hasInput" 
         id="text-input-text" 
         name="text-input-text"
+        :style="`${option.hasInput === 'text' ? 'width: 100%;' : ''}`"
         v-model="inputValue"
         @input="sendValueUpdate">
       <span
