@@ -97,6 +97,7 @@ export const workforce = {
       inputField: 'structure_workforce',
       next: {
         default: 'track_sectors',
+        exceptions: nextExceptions
       }
     },
     {
