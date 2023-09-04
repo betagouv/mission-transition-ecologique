@@ -63,13 +63,15 @@
     },
     "opérateur de contact": {
       "description": "TODO",
-      "type": "object",
-      "properties": {
-        "code": {
-          "description": "TODO",
-          "type": "string"
-        }
-      }
+      "type": "string"
+    },
+    "autres opérateurs": {
+      "description": "TODO",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
     }
   },
   "required": [ "id", "resume", "opérateur de contact"]

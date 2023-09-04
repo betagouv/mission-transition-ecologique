@@ -35,5 +35,6 @@ conditions:
     operator: "or"
     value:
       - economies
-opérateur de contact:
-  code: BPI
+opérateur de contact: Bpifrance
+autres opérateurs:
+  - ADEME

@@ -44,8 +44,7 @@ conditions:
       - economies
       - mobility
       - consolidation
-opérateur de contact:
-  code: ADEME
+opérateur de contact: ADEME
 program_url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/tremplin-transition-ecologique-pme
 program_contacts:
   - title: Qui contacter ?

@@ -52,5 +52,4 @@ conditions:
     operator: "or"
     value:
       - impact
-opérateur de contact:
-  code: CMA
+opérateur de contact: CMA

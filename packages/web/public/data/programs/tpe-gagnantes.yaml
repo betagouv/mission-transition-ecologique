@@ -35,5 +35,4 @@ conditions:
     operator: "or"
     value:
       - economies
-opérateur de contact:
-  code: ADEME
+opérateur de contact: CMA

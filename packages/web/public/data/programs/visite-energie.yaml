@@ -45,5 +45,4 @@ conditions:
       # - impact
       - energy
       - renovation
-opérateur de contact:
-  code: ADEME
+opérateur de contact: CCI

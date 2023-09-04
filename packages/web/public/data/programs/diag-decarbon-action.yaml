@@ -37,5 +37,6 @@ conditions:
     operator: "or"
     value:
       - impact
-opérateur de contact:
-  code: Bpifrance
+opérateur de contact: Bpifrance
+autres opérateurs:
+  - ADEME

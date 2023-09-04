@@ -38,5 +38,4 @@ conditions:
     value:
       - impact
       - consolidation
-opérateur de contact:
-  code: ADEME
+opérateur de contact: ADEME

@@ -39,5 +39,6 @@ conditions:
     operator: "or"
     value:
       - ecoconception
-opérateur de contact:
-  code: BPIFRANCE
+opérateur de contact: Bpifrance
+autres opérateurs:
+  - ADEME
