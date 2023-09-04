@@ -89,8 +89,8 @@ export const workforce = {
   },
   options: [
     {
-      value: { structure_workforce: 'TPE' },
-      title: { fr: 'TPE ou PME' },
+      value: { structure_workforce: 0 },
+      title: { fr: "Nombre d'employés" },
       label: { fr: "🧍‍♂employé.s" },
       hasInput: 'number',
       defaultInput: 1,
@@ -100,11 +100,12 @@ export const workforce = {
       }
     },
     {
+      disabled: true,
       value: { structure_workforce: 'other' },
       title: { fr: 'Autre' },
       label: { fr: "Autre catégorie (fictif)" },
       hasInput: 'text',
-      // defaultInput: 1,
+      // defaultInput: "",
       inputField: 'structure_workforce',
       next: {
         default: 'track_sectors',
