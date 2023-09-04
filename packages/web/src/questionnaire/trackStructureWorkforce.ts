@@ -93,6 +93,19 @@ export const workforce = {
       title: { fr: 'TPE ou PME' },
       label: { fr: "🧍‍♂employé.s" },
       hasInput: 'number',
+      defaultInput: 1,
+      inputField: 'structure_workforce',
+      next: {
+        default: 'track_sectors',
+      }
+    },
+    {
+      value: { structure_workforce: 'machin' },
+      title: { fr: 'Type de machin' },
+      label: { fr: "Un machin de type..." },
+      hasInput: 'text',
+      // defaultInput: 1,
+      inputField: 'structure_workforce',
       next: {
         default: 'track_sectors',
       }

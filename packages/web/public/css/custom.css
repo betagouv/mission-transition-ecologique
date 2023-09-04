@@ -39,6 +39,7 @@ WARNING :
 }
 .fr-btn-fixed-height > svg {
   width: 10%;
+  min-width: 10%;
 }
 .fr-btn-align-center {
   justify-content: center;
@@ -74,6 +75,24 @@ WARNING :
 }
 .fr-form-block .fr-input {
   background-color: white;
+}
+
+/* CUSTOM BUTTON INPUT */
+.tee-btn-input {
+  padding: .5rem 1rem; 
+  display: flex; 
+  align-items: center;
+}
+.tee-btn-input:hover {
+  cursor: pointer;
+}
+.tee-btn-input input {
+  width: auto;
+  display: inline;
+  box-shadow: none;
+  border: 1px solid #BBBBBB;
+  background-color: #F5F5F5;
+  border-radius: 0;
 }
 
 /* RESULT DETAILS PAGE */

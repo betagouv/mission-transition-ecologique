@@ -42,6 +42,8 @@
     </div>
   </div>
   
+  <!-- selectedOptions.map (values) : <code>{{ selectedOptions.map(i => i.value) }}</code> -->
+
   <Transition
     appear
     :name="`${step > 1 ? 'slide-fade' : ''}`"
@@ -171,8 +173,8 @@
           
           <!-- TRACK CHOICES {{ renderAs }} -->
           <div
-            v-for="option in optionsArray"
-            :key="option.value"
+            v-for="(option, idx) in optionsArray"
+            :key="`track-${step}-${trackId}-option-${idx}`"
             :class="`${colsWidth} ${isTrackResults ? 'fr-col-offset-md-1' : ''} fr-py-2v`"
             >
             
@@ -183,7 +185,7 @@
               >
               <div 
                 class="fr-card fr-enlarge-link"
-                @click="updateSelection(option)">
+                @click="updateSelection(option, idx)">
                 <div
                   v-if="option.imageTop"
                   class="fr-card__header">
@@ -254,11 +256,11 @@
               class="fr-div-fixed-height">
               <DsfrButton
                 class="fr-btn-fullwidth fr-btn-fixed-height fr-btn-sm-align-left fr-btn-grey"
-                :style="`outline-color: #929292; ${isActiveChoice(option.value) ? 'background-color: #eeeeee' : ''}`"
+                :style="`outline-color: #929292; ${isActiveChoice(idx) ? 'background-color: #eeeeee' : ''}`"
                 :label="option.label[choices.lang]" 
-                :icon="getButtonIcon(option.value)"
-                :secondary="!isActiveChoice(option.value)"
-                @click="updateSelection(option)"
+                :icon="getButtonIcon(idx)"
+                :secondary="!isActiveChoice(idx)"
+                @click="updateSelection(option, idx)"
               />
             </div>
 
@@ -266,7 +268,16 @@
             <div 
               v-if="renderAs === 'buttons' && option.hasInput"
               class="fr-div-fixed-height">
-              {{ option }}
+              <TeeTrackButtonInput
+                :track-id="trackId"
+                :icon="getButtonIcon(idx)"
+                :is-active="isActiveChoice(idx)"
+                :option="option"
+                :debug="debug"
+                @update-selection="updateSelectionFromSignal($event, idx)"
+                @update-value="updateSelectionValueFromSignal($event)"
+                @go-to-next-track="saveSelectionFromSignal($event, idx)"
+                />
             </div>
 
             <!-- AS SIMPLE BUTTONS -->
@@ -277,7 +288,7 @@
                 :label="option.label[choices.lang]"
                 size="large"
                 style="font-weight: 1000;"
-                @click="updateSelection(option); saveSelection()"
+                @click="updateSelection(option, idx); saveSelection()"
               />
             </div>
       
@@ -289,8 +300,8 @@
                 :track-id="trackId"
                 :option="option"
                 :debug="debug"
-                @update-selection="updateSelectionFromSignal"
-                @go-to-next-track="saveSelectionFromSignal"
+                @update-selection="updateSelectionFromSignal($event, idx)"
+                @go-to-next-track="saveSelectionFromSignal($event, idx)"
                 />
             </div>
       
@@ -386,6 +397,8 @@ import { CheckNextTrackRules } from '../utils/conditions'
 
 // @ts-ignore
 import TeeTrackInput from './TeeTrackInput.vue'
+// @ts-ignore
+import TeeTrackButtonInput from './TeeTrackButtonInput.vue'
 // // @ts-ignore
 // import TeeForm from './TeeForm.vue'
 // @ts-ignore
@@ -428,6 +441,7 @@ const tracks = tracksStore()
 const choices = choicesStore()
 const analytics = analyticsStore()
 
+const selectedOptionsIndices = ref<number[]>([])
 const selectedOptions = ref<any[]>([])
 const needRemove = ref<boolean>(false)
 
@@ -481,20 +495,30 @@ const colsWidth = computed(() => {
 })
 
 // getters
-const isActiveChoice = (value: string | number | undefined) => {
+const isActiveChoice = (index: number) => {
+  // console.log()
   // console.log('TeeTrack > isActiveChoice > value :', value)
+  // console.log('TeeTrack > isActiveChoice > index :', index)
   // console.log('TeeTrack > isActiveChoice > selectionValues :', selectionValues)
-  return selectionValues.value.includes(value)
+  const activeIndex = selectedOptionsIndices.value.includes(index)
+  // const activeValue = selectionValues.value.includes(value)
+  return activeIndex
 }
 
-const updateSelection = (option: any, forceRemove: boolean = false) => {
+const updateSelection = (option: any, index: number, forceRemove: boolean = false) => {
+  // console.log()
   // console.log('TeeTrack > updateSelection > option :', option)
-  const isActive = isActiveChoice(option.value)
+  // console.log('TeeTrack > updateSelection > index :', index)
+  const isActive = isActiveChoice(index)
+  // console.log('TeeTrack > updateSelection > isActive :', isActive)
+  // console.log('TeeTrack > updateSelection > forceRemove :', forceRemove)
   let remove = false
   if (!isActive && !forceRemove) {
     if (allowMultiple) {
+      selectedOptionsIndices.value.push(index)
       selectedOptions.value.push(option)
     } else {
+      selectedOptionsIndices.value = [index]
       selectedOptions.value = [option]
     }
 
@@ -505,12 +529,15 @@ const updateSelection = (option: any, forceRemove: boolean = false) => {
     }
   } else {
     // remove from selection because is already active
+    selectedOptionsIndices.value = selectedOptionsIndices.value.filter(i => i !== index)
     selectedOptions.value = selectedOptions.value.filter(i => i.value !== option.value)
     remove = !selectedOptions.value.length
   }
   needRemove.value = remove
   // selectedOptions.value = option
-  
+
+  // console.log('TeeTrack > updateSelection > selectedOptions.value :', selectedOptions.value)
+
   // Direct to next track
   const directToNext: string[] = ['cards']
   if (!allowMultiple && directToNext.includes(renderAs)  ) {
@@ -518,22 +545,45 @@ const updateSelection = (option: any, forceRemove: boolean = false) => {
   }
 }
 
-const updateSelectionFromSignal = (ev: any) => {
+const updateSelectionFromSignal = (ev: any, index: number) => {
+  // console.log()
   // console.log('TeeTrack > updateSelectionFromSignal > ev :', ev)
-  updateSelection(ev.option, ev.remove)
+  updateSelection(ev.option, index, ev.remove)
 }
 
-const saveSelectionFromSignal = (ev: any) => {
+const updateSelectionValueFromSignal = (ev: any) => {
+  // console.log()
+  // console.log('TeeTrack > updateSelectionValueFromSignal > ev :', ev)
+  // console.log('TeeTrack > updateSelectionValueFromSignal > index :', index)
+  // console.log('TeeTrack > updateSelectionValueFromSignal > selectedOptions.value :', selectedOptions.value)
+  const inputField = ev.option.inputField
+  const temp = selectedOptions.value.map(i => {
+    const obj = { ...i }
+    const objValues = {...obj.value}
+    // console.log('TeeTrack > updateSelectionValueFromSignal > objValues :', objValues)
+
+    if (Object.keys(objValues).includes(inputField)) {
+      objValues[inputField] = ev.option.value[inputField]
+    }
+
+    obj.value = objValues
+    return obj
+  })
+  selectedOptions.value = temp
+
+}
+
+const saveSelectionFromSignal = (ev: any, index: number) => {
   console.log()
   // scrollToTop(props.trackElement, props.trackId)
   // console.log('TeeTrack > saveSelectionFromSignal > ev :', ev)
-  updateSelection(ev.option)
+  updateSelection(ev.option, index)
   saveSelection()
 }
 
 
-const getButtonIcon = (optionValue: any) => {
-  const isActive = isActiveChoice(optionValue)
+const getButtonIcon = (index: number) => {
+  const isActive = isActiveChoice(index)
   // console.log('TeeTrack > getButtonIcon > isActive :', isActive)
   let icon = ''
   if (allowMultiple) {

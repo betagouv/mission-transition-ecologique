@@ -137,7 +137,7 @@ enum HasInputOptions {
 export interface TrackOptions {
   id?: string,
   disabled?: Boolean,
-  value: string | number,
+  value: string | number | object,
   required?: Boolean,
   title: Translations,
   label: Translations,
@@ -148,6 +148,7 @@ export interface TrackOptions {
   hintImage?: Translations,
   imageTop?: string,
   hasInput?: HasInputOptions,
+  inputField?: string,
   callout?: TrackCallout,
   info?: Translations,
   placeholder?: Translations,
