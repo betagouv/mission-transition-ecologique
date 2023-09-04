@@ -299,6 +299,7 @@
               <TeeTrackInput
                 :track-id="trackId"
                 :option="option"
+                :is-active="isActiveChoice(idx)"
                 :debug="debug"
                 @update-selection="updateSelectionFromSignal($event, idx)"
                 @go-to-next-track="saveSelectionFromSignal($event, idx)"

@@ -14,7 +14,8 @@
 
     <!-- INPUT CANVAS -->
     <div
-      class="fr-btn-fullwidth fr-btn-fixed-height fr-btn-sm-align-left fr-btn-grey tee-btn-input">
+      class="fr-btn-fullwidth fr-btn-fixed-height fr-btn-sm-align-left fr-btn-grey tee-btn-input"
+      :style="`outline-color: #929292; font-weight: 500; ${isActive ? 'background-color: #eeeeee' : ''}`">
       <v-icon
         :name="icon">
       </v-icon>
