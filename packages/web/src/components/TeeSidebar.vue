@@ -49,7 +49,7 @@
     v-for="categ in usedCategories"
     :key="categ">
     <div
-      class="fr-mb-4v">
+      class="fr-mb-6v">
       <div class="fr-mb-2v">
         {{ choices.t(`categories.${categ}`) }}
       </div>
@@ -58,14 +58,13 @@
         :key="usedTrack.id">
         <div
           v-show="usedTrack.step > 1"
-          class="fr-mb-0">
+          class="fr-mb-1v">
           <DsfrButton
             :label="tracks.getTrackTitle(usedTrack.id, choices.lang)"
             :disabled="!usedTrack.completed"
             class="tee-btn-sidebar"
             tertiary
             no-outline
-            style="text-align: start;"
             @click="backToTrack(usedTrack.id)"/>
           <!-- <template
             v-if="usedTrack.completed && usedTrack.selected.length">
