@@ -1,7 +1,7 @@
 export const buildingSurface = {
   id: 'track_structure_building_surface',
-  category: 'building',
-  title: { fr: 'Mes bâtiments (surface)' },
+  category: 'myBuildings',
+  title: { fr: 'La surface' },
   label: { fr: "Quelle est la surface de vos locaux ?" },
   interface: {
     component: 'buttons',

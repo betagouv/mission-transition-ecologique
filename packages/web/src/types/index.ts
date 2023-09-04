@@ -186,6 +186,7 @@ export interface TracksList {
 
 export interface UsedTrack {
   id: string | any,
+  category?: string,
   final?: boolean,
   completed: boolean,
   // updating: boolean,

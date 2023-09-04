@@ -1,7 +1,7 @@
 export const strategyAuditsSelect = {
   id: 'track_strategy_audits_select',
-  category: 'strategy',
-  title: { fr: "Audits" },
+  category: 'myStrategy',
+  title: { fr: "Quels audits" },
   label: { fr: "Le ou lesquels ?" },
   interface: {
     component: 'buttons',

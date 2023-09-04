@@ -1,7 +1,7 @@
 export const energyStake = {
   id: 'track_energy_stake',
-  category: 'energy',
-  title: { fr: "L'énergie" },
+  category: 'myEnergy',
+  title: { fr: "Source principale" },
   label: { fr: "Quelle est la source principale d'énergie pour vos locaux ?" },
   callout: {
     header: { fr: 'Thématique' },

@@ -1,7 +1,7 @@
 export const waterStake = {
   id: 'track_water_stake',
-  category: 'water',
-  title: { fr: "L'eau" },
+  category: 'myWater',
+  title: { fr: "Enjeu" },
   label: { fr: "Pensez-vous avoir un enjeu important sur votre consommation d'eau ?" },
   callout: {
     header: { fr: 'Thématique' },

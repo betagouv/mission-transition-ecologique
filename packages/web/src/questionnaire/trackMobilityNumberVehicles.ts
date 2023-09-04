@@ -1,6 +1,6 @@
 export const mobilityNumberVehicles = {
   id: 'track_mobility_number_vehicles',
-  category: 'mobility',
+  category: 'myMobility',
   title: { fr: 'Nombre de véhicules' },
   label: { fr: "Possédez-vous un ou plusieurs véhicules motorisés dans votre entreprise ?" },
   interface: {
@@ -26,7 +26,7 @@ export const mobilityNumberVehicles = {
       title: { fr: "Non" },
       label: { fr: "Non" },
       next: {
-        default: 'track_mobility_energy'
+        default: 'track_wastes_stake'
       }
     },
     {
@@ -34,7 +34,7 @@ export const mobilityNumberVehicles = {
       title: { fr: 'Je ne sais pas' },
       label: { fr: "Je ne sais pas" },
       next: {
-        default: 'track_mobility_energy'
+        default: 'track_wastes_stake'
       }
     }
   ]

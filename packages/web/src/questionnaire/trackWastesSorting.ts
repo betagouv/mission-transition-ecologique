@@ -1,6 +1,6 @@
 export const wastesSorting = {
   id: 'track_wastes_sorting',
-  category: 'wastes',
+  category: 'myWastes',
   title: { fr: 'Tri des déchets' },
   label: { fr: "Avez-vous mis en place une solution de tri des déchets dans votre entreprise ?" },
   interface: {

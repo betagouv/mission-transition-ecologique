@@ -1,7 +1,7 @@
 export const wastesMaterials = {
   id: 'track_wastes_materials',
-  category: 'wastes',
-  title: { fr: 'Déchets' },
+  category: 'myWastes',
+  title: { fr: 'Matières premières' },
   label: { fr: "Pensez-vous avoir un enjeu important sur les pertes de vos matières premières ?" },
   interface: {
     component: 'buttons',

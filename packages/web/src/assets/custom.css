@@ -94,6 +94,11 @@ WARNING :
   background-color: #F5F5F5;
   border-radius: 0;
 }
+.tee-btn-sidebar {
+  text-align: start;
+  padding: .1rem 1rem;
+  min-height: 1.8rem;
+}
 
 /* RESULT DETAILS PAGE */
 /* check: https://css-tricks.com/css-counters-custom-list-number-styling/ */

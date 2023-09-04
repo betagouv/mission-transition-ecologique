@@ -128,6 +128,13 @@ export const findInObjectsArray = (objectsArray: object[], id: string) => {
   return value
 }
 
+export const groupBy = (objectsArray: object[], key: string) => {
+  return objectsArray.reduce((rv: any, x: any) => {
+    (rv[x[key]] = rv[x[key]] || []).push(x)
+    return rv
+  }, {})
+}
+
 // HELPERS FOR CLEANING AND REMAP
 
 export const replaceAll = (value: any, cleaner: CleanerReplaceAll) => {

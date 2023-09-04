@@ -1,7 +1,7 @@
 export const buildingProperty = {
   id: 'track_structure_building_property',
-  category: 'building',
-  title: { fr: 'Mes bâtiments' },
+  category: 'myBuildings',
+  title: { fr: 'Mon statut' },
   label: { fr: "Parlons de vos locaux. Vous êtes :" },
   callout: {
     header: { fr: 'Thématique' },

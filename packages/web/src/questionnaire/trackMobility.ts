@@ -1,7 +1,7 @@
 export const mobility = {
   id: 'track_mobility',
-  category: 'mobility',
-  title: { fr: 'La mobilité' },
+  category: 'myMobility',
+  title: { fr: 'Mode de transport' },
   label: { fr: "Quel est le mode de transport principal des salariés pour le trajet domicile-travail ?" },
   callout: {
     header: { fr: 'Thématique' },

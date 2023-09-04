@@ -74,7 +74,7 @@ const dataTarget = {
 
 export const siret = {
   id: 'track_siret',
-  category: 'entreprise',
+  category: 'myEntreprise',
   title: { fr: 'Mon SIRET' },
   label: { fr: 'Quelle est votre entreprise ?' },
   // info: { fr: "Renseignez le SIRET de votre entreprise" },

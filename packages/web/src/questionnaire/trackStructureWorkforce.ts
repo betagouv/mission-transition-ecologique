@@ -78,7 +78,7 @@ const nextExceptions = [
 
 export const workforce = {
   id: 'track_structure_workforce',
-  category: 'entreprise',
+  category: 'myEntreprise',
   title: { fr: 'Mes effectifs' },
   label: { fr: 'Combien êtes-vous dans votre entreprise ?' },
   interface: {

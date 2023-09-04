@@ -1,6 +1,6 @@
 export const help = {
   id: 'track_help',
-  category: 'help',
+  category: 'ourHelp',
   title: { fr: 'Par où commencer ?' },
   label: { fr: "Comment pouvons-nous vous aider ?" },
   callout: {

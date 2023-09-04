@@ -1,6 +1,6 @@
 export const mobilityEnergy = {
   id: 'track_mobility_energy',
-  category: 'mobility',
+  category: 'myMobility',
   title: { fr: 'Energie des véhicules' },
   label: { fr: "Quelle est la source principale d'énergie de vos véhicules ?" },
   interface: {

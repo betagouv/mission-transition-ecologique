@@ -1,6 +1,6 @@
 export const goals = {
   id: 'track_goals',
-  category: 'goals',
+  category: 'myEntreprise',
   title: { fr: 'Mes objectifs' },
   label: { fr: "Quel est votre objectif prioritaire" },
   hint: { fr: "Je souhaite..." },

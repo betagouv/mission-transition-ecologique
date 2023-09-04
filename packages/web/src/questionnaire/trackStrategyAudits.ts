@@ -1,7 +1,7 @@
 export const strategyAudits = {
   id: 'track_strategy_audits',
-  category: 'strategy',
-  title: { fr: "Stratégie" },
+  category: 'myStrategy',
+  title: { fr: "Audits" },
   label: { fr: "Pour finir, avez-vous déjà réalisé des audits environnementaux ces 2 dernières années ?" },
   callout: {
     header: { fr: 'Thématique' },
