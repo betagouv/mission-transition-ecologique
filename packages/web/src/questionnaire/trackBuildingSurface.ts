@@ -24,7 +24,7 @@ export const buildingSurface = {
     {
       value: { structure_building_surface: '+1000m2' },
       title: { fr: '> 1 000 m2' },
-      label: { fr: "🏢 Supérieur à 1000m2" },
+      label: { fr: "🏢 Supérieur à 1 000m2" },
       next: {
         default: 'track_mobility'
       }
