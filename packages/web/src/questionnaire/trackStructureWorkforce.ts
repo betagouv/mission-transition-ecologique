@@ -90,7 +90,7 @@ export const workforce = {
   options: [
     {
       value: { structure_workforce: 0 },
-      title: { fr: "Nombre d'employés" },
+      title: { fr: "TPE ou PME" },
       label: { fr: "🧍‍♂employé.s" },
       hasInput: 'number',
       defaultInput: 1,
