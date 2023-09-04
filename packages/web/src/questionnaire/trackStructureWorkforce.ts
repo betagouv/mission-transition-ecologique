@@ -100,9 +100,9 @@ export const workforce = {
       }
     },
     {
-      value: { structure_workforce: 'machin' },
-      title: { fr: 'Type de machin' },
-      label: { fr: "Un machin de type..." },
+      value: { structure_workforce: 'other' },
+      title: { fr: 'Autre' },
+      label: { fr: "Autre catégorie (fictif)" },
       hasInput: 'text',
       // defaultInput: 1,
       inputField: 'structure_workforce',
