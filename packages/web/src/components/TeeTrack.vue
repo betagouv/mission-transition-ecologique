@@ -633,25 +633,25 @@ const saveSelection = () => {
   // NOTE : could be deplaced in store ?
   // console.log('TeeTrack > updateStore > optionNext :', optionNext)
   if (nextExceptions) {
-    console.log('TeeTrack > updateStore > nextExceptions :', nextExceptions)
+    // console.log('TeeTrack > updateStore > nextExceptions :', nextExceptions)
     
     // get used tracks values
     const trackValues: any[] = tracks.getAllUsedTracksValues
-    console.log('TeeTrack > updateStore > trackValues :', trackValues)
+    // console.log('TeeTrack > updateStore > trackValues :', trackValues)
 
     // get current selection
-    console.log('TeeTrack > updateStore > selectedOptions.value :', selectedOptions.value)
+    // console.log('TeeTrack > updateStore > selectedOptions.value :', selectedOptions.value)
     const selectionVals = selectedOptions.value.map(item => {
       return toRaw(item.value)
     })
-    console.log('TeeTrack > updateStore > selectionVals :', selectionVals)
+    // console.log('TeeTrack > updateStore > selectionVals :', selectionVals)
 
     nextExceptions.forEach((trackRule: NextTrackRule) => {
       const dataStructure = {}
       let item = remapItem(dataStructure, trackRule.rules, {}, trackValues, {}, {}, selectionVals, choices.lang)
-      console.log('TeeTrack > updateStore > item :', item)
+      // console.log('TeeTrack > updateStore > item :', item)
       const bool = CheckNextTrackRules(item, trackRule.rules)
-      console.log('TeeTrack > updateStore > bool :', bool)
+      // console.log('TeeTrack > updateStore > bool :', bool)
       next = bool ? trackRule.next : next
     })
   }

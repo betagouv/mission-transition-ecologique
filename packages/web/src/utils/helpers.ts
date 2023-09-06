@@ -110,10 +110,10 @@ export const setProperty = (obj: object, path: string, value: any) => {
 //   return value
 // }
 
-export const findInObjectsArray = (objectsArray: object[], id: string) => {
-  console.log()
-  console.log('utils > helpers > findInObjectsArray >  objectsArray :', objectsArray)
-  console.log('utils > helpers > findInObjectsArray >  id :', id)
+export const findInObjectsArray = (objectsArray: object[], id: string, all: boolean = false) => {
+  // console.log()
+  // console.log('utils > helpers > findInObjectsArray >  objectsArray :', objectsArray)
+  // console.log('utils > helpers > findInObjectsArray >  id :', id)
 
   // let value = undefined
 
@@ -121,10 +121,10 @@ export const findInObjectsArray = (objectsArray: object[], id: string) => {
   objectsArray.map( item => {
     arrayFlat = {...arrayFlat, ...item}
   })
-  console.log('utils > helpers > findInObjectsArray >  arrayFlat :', arrayFlat)
+  // console.log('utils > helpers > findInObjectsArray >  arrayFlat :', arrayFlat)
 
-  const value = arrayFlat[id] 
-  console.log('utils > helpers > findInObjectsArray >  value :', value)
+  const value = all ? arrayFlat : arrayFlat[id] 
+  // console.log('utils > helpers > findInObjectsArray >  value :', value)
   return value
 }
 
@@ -230,6 +230,7 @@ export const remapItem = (
     // console.log()
     // console.log('utils > helpers > remapItem >  dm :', dm)
     let value: any = ''
+    let allResponses: any
     switch (dm.from) {
       case 'env':
         value = metaEnv[dm.id]
@@ -240,6 +241,15 @@ export const remapItem = (
       case 'usedTracks':
         // console.log('utils > helpers > remapItem >  trackValues :', trackValues)
         value = findInObjectsArray(trackValues, dm.id)
+        break
+      case 'allUsedTracks':
+        // console.log('utils > helpers > remapItem >  trackValues :', trackValues)
+        allResponses = findInObjectsArray(trackValues, dm.id, true)
+        // console.log('utils > helpers > remapItem >  allResponses :', allResponses)
+        value = Object.keys(allResponses).map(k => {
+            return `${k}: ${allResponses[k]}`
+          })
+          .join(' / ')
         break
       case 'selectionValues':
         // console.log('utils > helpers > remapItem >  trackValues :', trackValues)

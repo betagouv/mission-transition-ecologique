@@ -74,7 +74,7 @@ export const results = {
         required: true,
         type: 'email',
         // for debugging purposes
-        // defaultValue: 'france-transition@beta.gouv.fr'
+        // defaultValue: 'contact@multi.coop'
       },
       {
         id: 'tel',
@@ -108,7 +108,7 @@ export const results = {
         required: false,
         type: 'textarea',
         // for debugging purposes
-        // defaultValue: 'Just some tests'
+        // defaultValue: 'Just some tests with Brevo API'
       },
       {
         id: 'cgu',
@@ -204,11 +204,11 @@ export const results = {
             id: 'cgu',
             dataField: 'attributes.OPT_IN',
           },
-          {
-            from: 'usedTracks',
-            id: 'project_needs',
-            dataField: 'attributes.PROJECT_NEEDS',
-          },
+          // {
+          //   from: 'usedTracks',
+          //   id: 'project_needs',
+          //   dataField: 'attributes.PROJECT_NEEDS',
+          // },
           {
             from: 'usedTracks',
             id: 'project_sectors',
@@ -229,15 +229,25 @@ export const results = {
           //   id: 'project_status',
           //   dataField: 'attributes.PROJECT_STATUS',
           // },
+          // {
+          //   from: 'usedTracks',
+          //   id: 'structure_sizes',
+          //   dataField: 'attributes.STRUCTURE_SIZE',
+          // },
           {
             from: 'usedTracks',
-            id: 'structure_sizes',
+            id: 'structure_workforce',
             dataField: 'attributes.STRUCTURE_SIZE',
           },
           {
             from: 'props',
             id: 'programId',
             dataField: 'attributes.PROGRAM_ID',
+          },
+          {
+            from: 'allUsedTracks',
+            id: '*',
+            dataField: 'attributes.ALL_RESPONSES',
           },
         ]
       },
