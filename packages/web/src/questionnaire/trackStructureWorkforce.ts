@@ -94,6 +94,8 @@ export const workforce = {
       label: { fr: "🧍‍♂employé.s" },
       hasInput: 'number',
       defaultInput: 1,
+      inputMax: 249,
+      inputMin: 1,
       inputField: 'structure_workforce',
       // inputCleaning: [
       //   {

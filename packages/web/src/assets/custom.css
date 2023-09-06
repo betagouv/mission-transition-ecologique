@@ -100,6 +100,25 @@ WARNING :
   min-height: 1.8rem;
 }
 
+/* RESULTS LIST */
+.tee-program-title {
+  color: #6A6AF4; 
+  font-size: .85rem;
+  font-weight: bold;
+}
+.tee-program-resume {
+  color: #000091; 
+}
+.tee-program-badge-image {
+  text-transform: inherit;
+  color: white;
+  background-color: #000091;
+  border-radius: 1rem;
+  padding: 0 .7rem;
+}
+/* .tee-badge-image::before {
+} */
+
 /* RESULT DETAILS PAGE */
 /* check: https://css-tricks.com/css-counters-custom-list-number-styling/ */
 .fr-tee-description-list p {

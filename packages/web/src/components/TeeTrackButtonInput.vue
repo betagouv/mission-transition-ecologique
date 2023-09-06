@@ -28,8 +28,10 @@
       <input 
         class="fr-input" 
         :type="option.hasInput" 
-        id="text-input-text" 
-        name="text-input-text"
+        :id="`track-input-${option.hasInput}`" 
+        :name="`track-input-${option.hasInput}`"
+        :min="option.hasInput !== 'text' && option.inputMin"
+        :max="option.hasInput !== 'text' && option.inputMax"
         :style="`${option.hasInput === 'text' ? 'width: 100%;' : ''}`"
         v-model="inputValue"
         @input="sendValueUpdate">

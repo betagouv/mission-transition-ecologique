@@ -45,13 +45,14 @@
       @click="updateDetailResult(prog.id)">
       <div class="fr-card__body">
         <div class="fr-card__content">
-          <h3 class="fr-card__title">
+          <h2 class="fr-card__title tee-program-resume">
             {{ prog.resume }} 
-          </h3>
+          </h2>
           <!-- <p
             class="fr-card__desc"
             v-html="prog.description">
           </p> -->
+          <!-- DEBUGGING -->
           <p
             v-if="debug"
             class="vue-debug fr-card__desc">
@@ -59,14 +60,12 @@
             <br> prog.cover : <code>{{ prog.cover }}</code>
             <!-- {{ `${choices.publicPath}${randomImage()}` }} -->
           </p>
+          <!-- TITLE -->
           <div class="fr-card__start">
-            <ul class="fr-badges-group">
-              <li>
-                <p class="fr-badge fr-badge--info fr-badge--no-icon">
-                  {{ prog.title }}
-                </p>
-              </li>
-            </ul>
+            <p 
+              class="fr-mb-3v tee-program-title">
+              {{ prog.title }}
+            </p>
           </div>
         </div>
       </div>
@@ -83,13 +82,27 @@
             sa valeur peut être vide (image n’apportant pas de sens supplémentaire au contexte) 
             ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
         </div>
-        <ul class="fr-badges-group">
+        <!-- PROVIDERS -->
+        <!-- <ul class="fr-badges-group">
           <li
             v-for="(provider, i) in prog.program_providers"
             :key="`provider-${i}`"
             >
             <p class="fr-badge">
               {{ provider.code }}
+            </p>
+          </li>
+        </ul> -->
+        <!-- PROGRAM TYPES -->
+        <ul
+          v-if="prog.program_types" 
+          class="fr-badges-group">
+          <li
+            v-for="(type, i) in prog.program_types"
+            :key="`provider-${i}`"
+            >
+            <p class="fr-badge tee-program-badge-image">
+              {{ choices.t(`programTypes.${type}`) }}
             </p>
           </li>
         </ul>
@@ -130,18 +143,18 @@ import { analyticsStore } from '../stores/analytics'
 import type { TrackChoice, TrackResultsConfig, ProgramData } from '@/types/index'
 
 // @ts-ignore
-import { randomChoice } from '@/utils/helpers'
+// import { randomChoice } from '@/utils/helpers'
 
 const choices = choicesStore()
 const programs = programsStore()
 const analytics = analyticsStore()
 
-const defaultImages = [
-  'images/TEE_ampoule.png',
-  'images/TEE_energie_verte.png',
-  'images/TEE_eolienne.png',
-  // 'images/TEE-illustrationHP.png'
-]
+// const defaultImages = [
+//   'images/TEE_ampoule.png',
+//   'images/TEE_energie_verte.png',
+//   'images/TEE_eolienne.png',
+//   // 'images/TEE-illustrationHP.png'
+// ]
 
 interface Props {
   trackId: string,
@@ -152,8 +165,6 @@ interface Props {
   debug?: boolean,
 }
 const props = defineProps<Props>()
-
-// const blockColor = 'var(--text-default-info)'
 
 const resultsProgs: ProgramData[] = programs.filterPrograms(props.tracksResults)
 
@@ -173,8 +184,8 @@ onBeforeMount(() => {
   analytics.sendEvent(props.trackId, 'show_results')
 })
 
-const randomImage = () => {
-  const imagePath = randomChoice(defaultImages)
-  return imagePath
-}
+// const randomImage = () => {
+//   const imagePath = randomChoice(defaultImages)
+//   return imagePath
+// }
 </script>

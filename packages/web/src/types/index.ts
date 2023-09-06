@@ -131,6 +131,7 @@ export interface TrackNext {
 
 enum HasInputOptions {
   number = 'number',
+  date = 'date',
   text = 'text'
 }
 
@@ -148,7 +149,6 @@ export interface TrackOptions {
   hintImage?: Translations,
   imageTop?: string,
   hasInput?: HasInputOptions,
-  inputField?: string,
   callout?: TrackCallout,
   info?: Translations,
   placeholder?: Translations,
@@ -161,6 +161,9 @@ export interface TrackOptions {
 export interface TrackOptionsInput extends TrackOptions {
   placeholder: Translations,
   defaultInput?: string | number,
+  inputField?: string,
+  inputMax: number,
+  inputMin: number,
   callbacks? : any,
   wildcard?: any
 }
@@ -176,7 +179,7 @@ export interface Track {
   interface?: TrackInterface,
   behavior?: TrackBehavior,
   next?: TrackNext,
-  options?: TrackOptions,
+  options?: TrackOptions | TrackOptionsInput,
   form?: FormOptions,
 }
 
