@@ -49,7 +49,10 @@ export const frDict = {
   programTypes: {
     aap: 'Appel à projets',
     sub: 'Subvention',
-    diag: 'Diagnostic'
+    acc: 'Accompagnement',
+    diag: 'Diagnostic',
+    loan: "Prêt",
+    fund: "Financement"
   },
   programCosts: {
     gratis: 'Gratuit',

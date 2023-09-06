@@ -12,7 +12,7 @@ description:
   - Construisez et réalisez un plan d’actions grâce à un expert de l'énergie
   - Réduisez la consommation d’énergie de votre entreprise
 program_types: 
-  - diag
+  - acc
 conditions:
   - type: project_needs
     operator: "or"

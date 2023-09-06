@@ -13,7 +13,7 @@ description:
   - Identifiez, formalisez et chiffrez les leviers d’écoconception, en maîtrisant le risque de transfert de pollution
   - Préparez la mise en œuvre d'un plan d’actions incluant un premier dimensionnement technico-économique
 program_types: 
-  - diag
+  - acc
 conditions:
   - type: project_needs
     operator: "or"

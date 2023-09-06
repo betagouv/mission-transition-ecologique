@@ -97,11 +97,20 @@ export const workforce = {
       inputMax: 249,
       inputMin: 1,
       inputField: 'structure_workforce',
-      // inputCleaning: [
-      //   {
-
-      //   }
-      // ],
+      inputCleaning: [
+        {
+          operator: '<',
+          conditionValue: 20,
+          valueField: 'structure_sizes',
+          value: ['PME']
+        },
+        {
+          operator: '>',
+          conditionValue: 20,
+          valueField: 'structure_sizes',
+          value: ['TPE']
+        }
+      ],
       next: {
         default: 'track_sectors',
         exceptions: nextExceptions

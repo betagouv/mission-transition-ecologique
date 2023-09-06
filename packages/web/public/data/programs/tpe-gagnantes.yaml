@@ -12,7 +12,7 @@ description:
   - Lancez vos premières actions.
   - Réalisez en moyenne 45 000 € d'économies par an et par site de production ou établissement (sur la base des missions restituées).
 program_types: 
-  - diag
+  - acc
 conditions:
   - type: project_needs
     operator: "or"

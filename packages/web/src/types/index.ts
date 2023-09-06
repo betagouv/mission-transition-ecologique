@@ -158,12 +158,19 @@ export interface TrackOptions {
   next?: TrackNext
 }
 
+export interface InputCleaningRule {
+  operator?: ConditionOperators,
+  conditionValue?: string | number,
+  valueField?: string,
+  value?: any | any[],
+}
 export interface TrackOptionsInput extends TrackOptions {
   placeholder: Translations,
   defaultInput?: string | number,
   inputField?: string,
   inputMax: number,
   inputMin: number,
+  inputCleaning: InputCleaningRule[],
   callbacks? : any,
   wildcard?: any
 }

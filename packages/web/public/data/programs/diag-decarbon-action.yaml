@@ -11,7 +11,7 @@ description:
   - Elaborez votre plan d'actions pour décarboner votre activité.
   - Embarquez votre écosystème en valorisant votre engagement dans la décarbonation.
 program_types: 
-  - diag
+  - acc
 conditions:
   - type: project_needs
     operator: "or"

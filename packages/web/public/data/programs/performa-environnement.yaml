@@ -26,7 +26,7 @@ description:
     d'étude ou de formation, et soyez assisté dans le montage 
     d'une demande de financement
 program_types: 
-  - diag
+  - acc
 conditions:
   - type: project_needs
     operator: "or"

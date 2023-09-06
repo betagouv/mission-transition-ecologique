@@ -83,7 +83,12 @@ onBeforeMount(() => {
 const dataObj = computed(() => {
   const inputObject: any = props.option.value
   if (props.option.inputField) {
-    inputObject[props.option.inputField] = inputValue.value
+    const val = inputValue.value
+    // clean val if inputCleaning
+    // if (props.option.inputCleaning) {
+    //   val = val
+    // } 
+    inputObject[props.option.inputField] = val
   }
   const data = {
     option: {
