@@ -54,23 +54,18 @@
         {{ choices.t(`categories.${categ}`) }}
       </div>
       <div
-        v-for="//@ts-ignore 
-        usedTrack in usedTracksRegrouped[categ]"
-        :key="//@ts-ignore 
-        usedTrack.id">
+        v-for="usedTrack in usedTracksRegrouped[categ]"
+        :key="usedTrack.id">
         <div
-          v-show="//@ts-ignore 
-          usedTrack.step > 1"
+          v-show="usedTrack.step > 1"
           class="fr-mb-1v">
           <DsfrButton
-            :label="//@ts-ignore 
-            tracks.getTrackTitle(usedTrack.id, choices.lang)"
+            :label="tracks.getTrackTitle(usedTrack.id, choices.lang)"
             :disabled="!usedTrack.completed"
             class="tee-btn-sidebar"
             tertiary
             no-outline
-            @click="//@ts-ignore 
-            backToTrack(usedTrack.id)"
+            @click="backToTrack(usedTrack.id)"
             />
         </div>
       </div>
@@ -104,6 +99,10 @@ const choices = choicesStore()
 //   return completedTracks
 // })
 
+interface UsedTrackRegrouped {
+  [name: string]: UsedTrack[]
+}
+
 const usedTracksRegrouped = computed(() => {
   const trackWithCategs = props.usedTracks.map((t: UsedTrack) => {
     const tracksByCateg = {
@@ -113,7 +112,7 @@ const usedTracksRegrouped = computed(() => {
     return tracksByCateg
   })
 
-  const trackCategs = groupBy(trackWithCategs, 'category')
+  const trackCategs: UsedTrackRegrouped = groupBy(trackWithCategs, 'category')
   return trackCategs
 })
 

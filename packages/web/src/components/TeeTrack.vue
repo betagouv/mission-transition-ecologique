@@ -645,7 +645,7 @@ const saveSelection = () => {
     })
   }
 
-  console.log('TeeTrack > updateStore > next :', next)
+  // console.log('TeeTrack > updateStore > next :', next)
 
   tracks.updateUsedTracks(props.trackId, props.step, next, selectedOptions.value)
   

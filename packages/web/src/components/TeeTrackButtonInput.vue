@@ -94,25 +94,13 @@ const dataObj = computed(() => {
 })
 
 const sendValueUpdate = () => {
-  console.log('TeeTrackButtonInput > sendValueUpdate > dataObj.value :', dataObj.value )
+  // console.log('TeeTrackButtonInput > sendValueUpdate > dataObj.value :', dataObj.value )
   emit('updateValue', dataObj.value)
 }
 
 const selectItem = () => {
   if (!props.isActive) {
-    // const inputObject = {}
-    // inputObject[props.option.inputField] = inputValue.value
-  
-    // // hasSelection.value = !hasSelection.value
-  
-    // const data = {
-    //   option: {
-    //     ...props.option,
-    //     value: inputObject
-    //   },
-    //   remove: false
-    // }
-    console.log('TeeTrackButtonInput > selectItem > dataObj.value :', dataObj.value)
+    // console.log('TeeTrackButtonInput > selectItem > dataObj.value :', dataObj.value)
     emit('updateSelection', dataObj.value)
   }
 }
