@@ -30,8 +30,8 @@
         :type="option.hasInput" 
         :id="`track-input-${option.hasInput}`" 
         :name="`track-input-${option.hasInput}`"
-        :min="option.hasInput !== 'text' && option.inputMin"
-        :max="option.hasInput !== 'text' && option.inputMax"
+        :min="option.hasInput !== 'text' && option.inputMin || undefined"
+        :max="option.hasInput !== 'text' && option.inputMax || undefined"
         :style="`${option.hasInput === 'text' ? 'width: 100%;' : ''}`"
         v-model="inputValue"
         @input="sendValueUpdate">
@@ -81,7 +81,7 @@ onBeforeMount(() => {
 
 // computed
 const dataObj = computed(() => {
-  const inputObject: any = { ...props.option.value }
+  const inputObject: any = props.option.value
   if (props.option.inputField) {
     inputObject[props.option.inputField] = inputValue.value
   }
