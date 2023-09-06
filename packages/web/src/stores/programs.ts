@@ -22,8 +22,8 @@ export const programsStore = defineStore('programs', () => {
   })
 
   function filterPrograms (tracksResults: any[]) {
-    console.log()
-    console.log('store.programs > filterPrograms > tracksResults : ', tracksResults)
+    // console.log()
+    // console.log('store.programs > filterPrograms > tracksResults : ', tracksResults)
 
     // retrieve and organize user's conditions
     const conditions: {[k: string]: any} = {}

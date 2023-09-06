@@ -55,7 +55,7 @@ export const sendApiRequest = async (
   data = remapItem(data, dataMapping, formData, trackValues, props, undefined, [], lang)
   // console.log('utils > requests > sendApiRequest >  data :', data)
   const body = JSON.stringify(data)
-  console.log('utils > requests > sendApiRequest >  body :', body)
+  // console.log('utils > requests > sendApiRequest >  body :', body)
 
   // fetch and return
   const respJson = await sendRequest(url, method, headers, body, callback.action)
