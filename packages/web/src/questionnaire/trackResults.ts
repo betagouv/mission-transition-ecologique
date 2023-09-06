@@ -3,6 +3,8 @@ export const results = {
   category: 'results',
   title: { fr: 'Dispositifs' },
   label: { fr: 'Vos résultats'},
+  hint: { fr: '🎉 Félicitations, vous avez terminé !'},
+  resume: { fr: "D’après les informations que vous avez renseignées, voici les accompagnements dont vous pouvez bénéficier pour vous aider à diminuer votre empreinte carbone."},
   intro: { fr: 'Résultats'},
   interface: {
     component: 'results',

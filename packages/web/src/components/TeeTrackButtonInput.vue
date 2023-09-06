@@ -79,7 +79,7 @@ onBeforeMount(() => {
 
 // computed
 const dataObj = computed(() => {
-  const inputObject: any = {}
+  const inputObject: any = { ...props.option.value }
   if (props.option.inputField) {
     inputObject[props.option.inputField] = inputValue.value
   }

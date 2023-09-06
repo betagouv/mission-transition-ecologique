@@ -89,34 +89,27 @@ export const workforce = {
   },
   options: [
     {
-      value: { structure_workforce: 0 },
+      value: { structure_workforce: 0, structure_sizes: ['PME', 'TPE'] },
       title: { fr: "TPE ou PME" },
       label: { fr: "🧍‍♂employé.s" },
       hasInput: 'number',
       defaultInput: 1,
       inputField: 'structure_workforce',
+      // inputCleaning: [
+      //   {
+
+      //   }
+      // ],
       next: {
         default: 'track_sectors',
         exceptions: nextExceptions
       }
     },
     {
-      disabled: true,
-      value: { structure_workforce: 'other' },
-      title: { fr: 'Autre' },
-      label: { fr: "Autre catégorie (fictif)" },
-      hasInput: 'text',
-      // defaultInput: "",
-      inputField: 'structure_workforce',
-      next: {
-        default: 'track_sectors',
-      }
-    },
-    {
       disabled: false,
-      value: { structure_workforce: '+200' },
-      title: { fr: '+200 employés' },
-      label: { fr: "‍️👫👭 Plus de 200 employés" },
+      value: { structure_workforce: '+250', structure_sizes: ['ETI', 'GE'] },
+      title: { fr: '+250 employés' },
+      label: { fr: "‍️👫👭 Plus de 250 employés" },
       next: {
         default: 'track_sectors',
         exceptions: nextExceptions

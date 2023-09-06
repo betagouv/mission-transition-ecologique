@@ -144,8 +144,8 @@
             v-if="step !== 1"
             :class="`${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`">
             <h3
-              :class="track.info ? 'fr-mb-0' : 'fr-mb-2v'"
-              :style="`${isTrackResults ? 'color: #000091;' : ''}`">
+              :class="`${track.info ? 'fr-mb-0' : 'fr-mb-2v'}`"
+              :style="`${isTrackResults ? 'color: #000091; font-size: 2.75rem;' : ''}`">
               {{ tracks.getTrackLabel(trackId, choices.lang) }}
             </h3>
           </div>
@@ -153,7 +153,7 @@
           <!-- TRACK INFOS -->
           <div 
             v-if="track.info"
-            class="fr-col-12">
+            :class="`${isTrackResults ? 'fr-col-12 fr-col-offset-md-1' : 'fr-col-12'}`">
             <p class="fr-mb-2v">
               <span 
                 class="fr-icon-info-fill" 
@@ -165,12 +165,23 @@
           <!-- TRACK HINT -->
           <div 
             v-if="track.hint"
-            class="fr-col-12">
-            <p class="fr-mb-0">
+            :class="`${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`">
+            <p 
+              :class="`fr-mb-0`"
+              :style="`${isTrackResults ? 'color: #000091;' : ''}`">
               {{ track.hint[choices.lang] }}
             </p>
           </div>
-          
+
+          <!-- TRACK RESUME -->
+          <div 
+            v-if="track.resume"
+            :class="`${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`">
+            <p class="fr-mb-0">
+              {{ track.resume[choices.lang] }}
+            </p>
+          </div>
+
           <!-- TRACK CHOICES {{ renderAs }} -->
           <div
             v-for="(option, idx) in optionsArray"
