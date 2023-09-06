@@ -60,7 +60,7 @@ export const frDict = {
     noStructureFound: "Aucune structure n'a été trouvée."
   },
   categories: {
-    start: 'Je me lance',
+    start: '🏁 Questionnaire',
     myNeeds: 'Mes besoins',
     ourHelp: '🧭 Comment vous aider',
     myEntreprise: '👋 Mon entreprise',

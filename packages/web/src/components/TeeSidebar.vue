@@ -57,7 +57,6 @@
         v-for="usedTrack in usedTracksRegrouped[categ]"
         :key="usedTrack.id">
         <div
-          v-show="usedTrack.step > 1"
           class="fr-mb-1v">
           <DsfrButton
             :label="tracks.getTrackTitle(usedTrack.id, choices.lang)"
