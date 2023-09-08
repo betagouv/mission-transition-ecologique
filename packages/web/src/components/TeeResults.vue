@@ -164,8 +164,8 @@ onBeforeMount(() => {
   analytics.sendEvent(props.trackId, 'show_results')
 })
 
-// const randomImage = () => {
-//   const imagePath = randomChoice(defaultImages)
-//   return imagePath
-// }
+const randomImage = () => {
+  const imagePath = randomChoice(defaultImages)
+  return imagePath
+}
 </script>
