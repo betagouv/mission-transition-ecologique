@@ -47,7 +47,6 @@ enum ProgramAidType {
 }
 
 export interface ProgramData {
-  index?: string | number,
   id: string,
   titre: string,
   promesse: string,

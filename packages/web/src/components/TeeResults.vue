@@ -40,7 +40,7 @@
     <!-- PROGRAM CARD -->
     <div
       v-for="prog in resultsProgs"
-      :key="prog.index"
+      :key="prog.id"
       class="fr-card fr-enlarge-link fr-card--horizontal-tier fr-mb-10v"
       @click="updateDetailResult(prog.id)">
       <div class="fr-card__body">
