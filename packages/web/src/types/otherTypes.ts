@@ -55,6 +55,8 @@ export enum DataMappingFroms {
   env = 'env',
   formData = 'formData',
   usedTracks = 'usedTracks',
+  allUsedTracks = 'allUsedTracks',
+  selectionValues = 'selectionValues',
   props = 'props',
   rawData = 'rawData',
 }

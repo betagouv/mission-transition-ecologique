@@ -78,8 +78,8 @@
             ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
         </div>
         <ul class="fr-badges-group">
-          <p class="fr-badge">
-            {{ prog['opérateur de contact'] }}
+          <p class="fr-badge tee-program-badge-image">
+            {{ prog["nature de l'aide"] }}
           </p>
         </ul>
       </div>

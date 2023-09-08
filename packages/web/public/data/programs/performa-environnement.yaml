@@ -24,11 +24,6 @@ objectifs:
     Identifiez et sélectionnez une solution d'investissement,
     d'étude ou de formation, et soyez assisté dans le montage
     d'une demande de financement
-<<<<<<< HEAD
-program_types: 
-  - acc
-=======
->>>>>>> bf87d909f5bea76738a14feb4671eefed85ca08d
 conditions:
   - type: project_needs
     operator: "or"

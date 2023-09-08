@@ -11,12 +11,6 @@
       "Elaborez votre plan d'actions pour décarboner votre activité.",
       "Embarquez votre écosystème en valorisant votre engagement dans la décarbonation."
     ],
-<<<<<<< HEAD
-    "program_types": [
-      "acc"
-    ],
-=======
->>>>>>> bf87d909f5bea76738a14feb4671eefed85ca08d
     "conditions": [
       {
         "type": "project_needs",
@@ -78,12 +72,6 @@
       "Lancez vos premières actions.",
       "Réalisez en moyenne 45 000 € d'économies par an et par site de production ou établissement (sur la base des missions restituées)."
     ],
-<<<<<<< HEAD
-    "program_types": [
-      "acc"
-    ],
-=======
->>>>>>> bf87d909f5bea76738a14feb4671eefed85ca08d
     "conditions": [
       {
         "type": "project_needs",
@@ -143,12 +131,6 @@
       "Identifiez, formalisez et chiffrez les leviers d’écoconception, en maîtrisant le risque de transfert de pollution",
       "Préparez la mise en œuvre d'un plan d’actions incluant un premier dimensionnement technico-économique"
     ],
-<<<<<<< HEAD
-    "program_types": [
-      "acc"
-    ],
-=======
->>>>>>> bf87d909f5bea76738a14feb4671eefed85ca08d
     "conditions": [
       {
         "type": "project_needs",
@@ -257,21 +239,6 @@
   },
   {
     "id": "performa-environnement",
-<<<<<<< HEAD
-    "title": "Performa Environnement",
-    "resume": "Mesurer votre maturité écologique et créer un plan d’actions personnalisé avec à un conseiller",
-    "text": "Réalisez un état des lieux à 360° pour évaluer l'impact de votre activité sur l'environnement et réalisez des économies. Différents sujets sont abordés : économie d’énergie, isolation des locaux, consommations d’eau, déchets, matières premières, achats, mobilité, etc.\n",
-    "origin_url": "https://www.economie.gouv.fr/entreprises/entreprises-aides-transition-ecologique",
-    "cover": "images/TEE_eolienne.png",
-    "description": [
-      "Réalisez un état des lieux gratuit pour évaluer l'impact \nde votre activité sur l'environnement et détecter de \nnouvelles sources d'économies (énergie, isolation des \nlocaux, consommations d’eau, déchets, matières premières,\nmobilité...)\n",
-      "Obtenez un diagnostic complet et la proposition \nd'un plan d'actions prioritaires pour maîtriser \nsa consommation énergétique et optimiser ses coûts\n",
-      "Valorisez votre démarche environnementale par l'obtention \nd'un label, une reconnaissance environnementale, \nindividuelle ou collective\n",
-      "Identifiez et sélectionnez une solution d'investissement, \nd'étude ou de formation, et soyez assisté dans le montage \nd'une demande de financement\n"
-    ],
-    "program_types": [
-      "acc"
-=======
     "titre": "Performa Environnement",
     "promesse": "Mesurer votre maturité écologique et créer un plan d’actions personnalisé avec à un conseiller",
     "description": "Réalisez un état des lieux à 360° pour évaluer l'impact de votre activité sur l'environnement et réalisez des économies. Différents sujets sont abordés : économie d’énergie, isolation des locaux, consommations d’eau, déchets, matières premières, achats, mobilité, etc.\n",
@@ -282,7 +249,6 @@
       "Obtenez un diagnostic complet et la proposition\nd'un plan d'actions prioritaires pour maîtriser\nsa consommation énergétique et optimiser ses coûts\n",
       "Valorisez votre démarche environnementale par l'obtention\nd'un label, une reconnaissance environnementale,\nindividuelle ou collective\n",
       "Identifiez et sélectionnez une solution d'investissement,\nd'étude ou de formation, et soyez assisté dans le montage\nd'une demande de financement\n"
->>>>>>> bf87d909f5bea76738a14feb4671eefed85ca08d
     ],
     "conditions": [
       {
@@ -342,12 +308,6 @@
       "Lancez vos premières actions.",
       "Réalisez en moyenne 45 000 € d'économies par an et par site de production ou établissement (sur la base des missions restituées)."
     ],
-<<<<<<< HEAD
-    "program_types": [
-      "acc"
-    ],
-=======
->>>>>>> bf87d909f5bea76738a14feb4671eefed85ca08d
     "conditions": [
       {
         "type": "project_needs",
@@ -454,7 +414,7 @@
   {
     "id": "visite-energie",
     "titre": "Visite Energie",
-    "promesse": "Mesurer votre maturité energétique et créer un plan d’actions personnalisé avec un conseiller",
+    "promesse": "Mesurez votre maturité energétique et créez un plan d’actions personnalisé avec un conseiller",
     "description": "Evaluez les coûts et surcoûts d'énergie et identifiez les actions à mener pour les réduire\n",
     "url": "https://www.cci.fr/",
     "illustration": "images/TEE_energie_verte.png",
@@ -464,12 +424,6 @@
       "Construisez et réalisez un plan d’actions grâce à un expert de l'énergie",
       "Réduisez la consommation d’énergie de votre entreprise"
     ],
-<<<<<<< HEAD
-    "program_types": [
-      "acc"
-    ],
-=======
->>>>>>> bf87d909f5bea76738a14feb4671eefed85ca08d
     "conditions": [
       {
         "type": "project_needs",

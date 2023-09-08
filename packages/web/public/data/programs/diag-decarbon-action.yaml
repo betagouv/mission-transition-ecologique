@@ -9,11 +9,6 @@ objectifs:
   - Mesurez les émissions de Gaz à effet de serre de votre entreprise.
   - Elaborez votre plan d'actions pour décarboner votre activité.
   - Embarquez votre écosystème en valorisant votre engagement dans la décarbonation.
-<<<<<<< HEAD
-program_types: 
-  - acc
-=======
->>>>>>> bf87d909f5bea76738a14feb4671eefed85ca08d
 conditions:
   - type: project_needs
     operator: "or"

@@ -10,11 +10,6 @@ objectifs:
   - Mettez en place un plan d'actions simple pour réduire vos déchets et votre consommation d'énergie, de matières et d'eau.
   - Lancez vos premières actions.
   - Réalisez en moyenne 45 000 € d'économies par an et par site de production ou établissement (sur la base des missions restituées).
-<<<<<<< HEAD
-program_types: 
-  - acc
-=======
->>>>>>> bf87d909f5bea76738a14feb4671eefed85ca08d
 conditions:
   - type: project_needs
     operator: "or"

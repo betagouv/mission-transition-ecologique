@@ -11,11 +11,6 @@ objectifs:
   - Réalisez une évaluation environnementale basée sur l’Analyse du Cycle de Vie du produit, service ou procédé concerné
   - Identifiez, formalisez et chiffrez les leviers d’écoconception, en maîtrisant le risque de transfert de pollution
   - Préparez la mise en œuvre d'un plan d’actions incluant un premier dimensionnement technico-économique
-<<<<<<< HEAD
-program_types: 
-  - acc
-=======
->>>>>>> bf87d909f5bea76738a14feb4671eefed85ca08d
 conditions:
   - type: project_needs
     operator: "or"
