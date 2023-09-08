@@ -90,3 +90,19 @@ Scripts can be triggered with:
 ```sh
 npm run <script-name> -w packages/<workspace-name>
 ```
+
+---
+
+## Data validation
+
+Source program data are stored as YAML files, we use [JSON Schema](https://json-schema.org/)
+to validate every file.
+
+The validations are triggered by Github CI on each pull request on preprod and 
+main branches.
+
+To run the validation tests manually, run:
+
+```sh
+npm run test-data -w packages/backend
+```

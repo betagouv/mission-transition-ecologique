@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Dispositif",
+  "description": "Données de dispositifs, avec des informations générales, relatifs à l'aide proposée et des données d'éligibilité.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "Identifiant unique du dispositif",
+      "type": "string"
+    },
+    "title": {
+      "description": "Titre du dispositif. Le titre est optionnel, s'il est absent, un titre générique du type \"Dispositif { opérateur de contact }\" sera utilisé.",
+      "type": "string"
+    },
+    "resume": {
+      "description": "TODO",
+      "type": "string"
+    },
+    "origin_url": {
+      "description": "TODO",
+      "type": "string"
+    },
+    "cover": {
+      "description": "TODO",
+      "type": "string"
+    },
+    "description": {
+      "description": "TODO",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "program_types": {
+      "description": "TODO",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "conditions": {
+      "description": "TODO",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "description": "TODO",
+            "type": "string"
+          },
+          "operator": {
+            "description": "TODO",
+            "type": "string"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "program_providers": {
+      "description": "TODO",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "description": "TODO",
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "required": [ "id", "resume"]
+}

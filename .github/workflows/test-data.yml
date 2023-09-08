@@ -1,0 +1,25 @@
+name: Test program data against schema
+
+on:
+  push:
+    branches: [ main, preprod ]
+  pull_request:
+    branches: [ main, preprod ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.12.0]
+#
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      # This step only installs ajv_cli needed for data validation
+      - run: VERSION_AJV_CLI=`node -p -e "require('./packages/backend/package.json').devDependencies[\"ajv-cli\"]"` npm install --no-package-lock --no-save ajv-cli@"$VERSION_AJV_CLI"
+
+      - run: npm run test-data -w packages/backend
