@@ -1,39 +1,42 @@
 id: tpe-gagnantes
-title: TPE Gagnantes
-resume: Faites des économies en gérant durablement vos dépenses
-text: | 
+titre: TPE Gagnantes
+promesse: Faites des économies en gérant durablement vos dépenses
+description: | 
   Diminuez les charges de votre entreprise et réduisez votre impact environnemental, en optimisant 4 postes de dépenses : Flux énergie,Matières premières, Déchets, Consommation d’eau  
-origin_url: https://agirpourlatransition.ademe.fr/entreprises/optimisez-tpe-pme/diagnostic-global-personnalise
-# cover: images/programs/tpe-pme-gagnantes.jpg
-cover: images/TEE_energie_verte.png
-description:
+url: https://agirpourlatransition.ademe.fr/entreprises/optimisez-tpe-pme/diagnostic-global-personnalise
+illustration: images/TEE_energie_verte.png
+objectifs:
   - Faites un état des lieux de vos flux et identifiez les axes prioritaires d’économies.
   - Mettez en place un plan d'actions simple pour réduire vos déchets et votre consommation d'énergie, de matières et d'eau.
   - Lancez vos premières actions.
   - Réalisez en moyenne 45 000 € d'économies par an et par site de production ou établissement (sur la base des missions restituées).
+<<<<<<< HEAD
 program_types: 
   - acc
+=======
+>>>>>>> bf87d909f5bea76738a14feb4671eefed85ca08d
 conditions:
   - type: project_needs
     operator: "or"
-    value: 
+    value:
       - advices
       - financing
   - type: project_status
     operator: "or"
-    value: 
+    value:
       - economies
   - type: project_sectors
     operator: "or"
-    value: 
+    value:
       - "*"
   - type: structure_sizes
     operator: "or"
-    value: 
+    value:
       - TPE
   - type: user_goals
     operator: "or"
-    value: 
+    value:
       - economies
-program_providers: 
-  - code: ADEME
+opérateur de contact: CMA
+nature de l'aide: accompagnement
+coût de l'accompagnement: gratuit

@@ -1,14 +1,13 @@
-import type { NextTrackRule, Condition } from '@/types/index'
+import type { NextTrackRule, ConditionTrack } from '@/types/index'
 
-export const CheckConditions = ( data: any, conditions: Condition[], strict: boolean = false ) => {
+export const CheckConditions = ( data: any, conditions: ConditionTrack[], strict: boolean = false ) => {
   // console.log()
   // console.log('utils > conditions > CheckConditions > data :', data)
   // console.log('...')
   // console.log('utils > conditions > CheckConditions > rules :', rules)
   const boolArray = [true]
 
-  conditions.forEach((condition: Condition) => {
-    // console.log()
+  conditions.forEach((condition: ConditionTrack) => {
     // console.log('utils > conditions > CheckConditions > condition :', condition)
     const condOperator = condition.operator
     // console.log('utils > conditions > CheckConditions > condOperator :', condOperator)

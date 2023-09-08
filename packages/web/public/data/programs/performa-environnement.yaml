@@ -1,57 +1,59 @@
 id: performa-environnement
-title: Performa Environnement
-resume: Mesurer votre maturité écologique et créer un plan d’actions personnalisé avec à un conseiller
-text: | 
+titre: Performa Environnement
+promesse: Mesurer votre maturité écologique et créer un plan d’actions personnalisé avec à un conseiller
+description: | 
   Réalisez un état des lieux à 360° pour évaluer l'impact de votre activité sur l'environnement et réalisez des économies. Différents sujets sont abordés : économie d’énergie, isolation des locaux, consommations d’eau, déchets, matières premières, achats, mobilité, etc.
-origin_url: https://www.economie.gouv.fr/entreprises/entreprises-aides-transition-ecologique
-# cover: images/programs/performa-environnement.jpeg
-cover: images/TEE_eolienne.png
-description:
-  - | 
-    Réalisez un état des lieux gratuit pour évaluer l'impact 
-    de votre activité sur l'environnement et détecter de 
-    nouvelles sources d'économies (énergie, isolation des 
+url: https://www.economie.gouv.fr/entreprises/entreprises-aides-transition-ecologique
+illustration: images/TEE_eolienne.png
+objectifs:
+  - |
+    Réalisez un état des lieux gratuit pour évaluer l'impact
+    de votre activité sur l'environnement et détecter de
+    nouvelles sources d'économies (énergie, isolation des
     locaux, consommations d’eau, déchets, matières premières,
     mobilité...)
-  - | 
-    Obtenez un diagnostic complet et la proposition 
-    d'un plan d'actions prioritaires pour maîtriser 
+  - |
+    Obtenez un diagnostic complet et la proposition
+    d'un plan d'actions prioritaires pour maîtriser
     sa consommation énergétique et optimiser ses coûts
   - |
-    Valorisez votre démarche environnementale par l'obtention 
-    d'un label, une reconnaissance environnementale, 
+    Valorisez votre démarche environnementale par l'obtention
+    d'un label, une reconnaissance environnementale,
     individuelle ou collective
   - |
-    Identifiez et sélectionnez une solution d'investissement, 
-    d'étude ou de formation, et soyez assisté dans le montage 
+    Identifiez et sélectionnez une solution d'investissement,
+    d'étude ou de formation, et soyez assisté dans le montage
     d'une demande de financement
+<<<<<<< HEAD
 program_types: 
   - acc
+=======
+>>>>>>> bf87d909f5bea76738a14feb4671eefed85ca08d
 conditions:
   - type: project_needs
     operator: "or"
-    value: 
+    value:
       - advices
       - financing
   - type: project_status
     operator: "or"
-    value: 
+    value:
       - "*"
   - type: project_sectors
     operator: "or"
-    value: 
+    value:
       - craft
   - type: structure_sizes
     operator: "or"
-    value: 
+    value:
       - PME
       - TPE
       - ETI
       - GE
   - type: user_goals
     operator: "or"
-    value: 
+    value:
       - impact
-program_providers: 
-  - code: CMA
-    siren: 187 500 046 00011
+opérateur de contact: CMA
+nature de l'aide: "accompagnement"
+coût de l'accompagnement: gratuit

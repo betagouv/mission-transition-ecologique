@@ -18,8 +18,8 @@
       <div class="fr-col-md-4 fr-col-lg-3 fr-col-xl-3 fr-col-sm-hide fr-text-right">
         <img 
           class="fr-responsive-img"
-          :src="`${choices.publicPath}${program.cover}`"
-          :alt="`image / ${program.title}`"
+          :src="`${choices.publicPath}${program.illustration}`"
+          :alt="`image / ${program.titre}`"
           style="min-height: 100%; object-fit: cover;"
           />
       </div>
@@ -31,7 +31,7 @@
           {{ program.title }}
         </h1> -->
         <p class="tee-program-title fr-mb-5v">
-          {{ program.title }}
+          {{ program.titre }}
         </p>
 
         <!-- PROGRAM RESUME / TEXT-->
@@ -41,14 +41,12 @@
           {{ choices.t('program.programResume') }}
         </h6>
         <h2
-          v-if="program.resume"
           :style="`color: ${blockColor}`"
-          v-html="program.resume">
+          v-html="program.promesse">
         </h2>
         <p
-          v-if="program.text"
-          :style="`color: ${blockColor}`"
-          v-html="program.text">
+          style="color: #000091"
+          v-html="program.description">
         </p>
 
         <!-- OPEN MODAL -> FORM -->
@@ -62,14 +60,13 @@
 
         <!-- PROGRAM DESCRIPTION -->
         <div 
-          v-if="program.description"
           class="fr-mb-18v">
           <h3>
             {{ choices.t('program.programDescription') }}
           </h3>
           <div class="fr-tee-description-list">
             <p 
-              v-for="(paragraph, idx) in program.description"
+              v-for="(paragraph, idx) in program.objectifs"
               :key="`description-paragraph-${idx}`"
               class="fr-mb-3v">
               <span
@@ -94,54 +91,30 @@
       class="fr-grid-row fr-grid-row--gutters fr-mb-5v">
       <!-- PROGRAM PROVIDERS -->
       <div
-        v-if="program.program_providers" 
         :class="columnTiles">
         <TeeTile
           :title="choices.t('program.programProviders')"
           :image-path="`${choices.publicPath}images/TEE-porteur.svg`">
           <template #description>
-            <ul style="list-style-type: none; margin: 0 ; padding: 0;">
-              <li
-                v-for="(provider, index) in program.program_providers"
-                :key="`provider-${index}-${provider.code || provider}`">
-                <a 
-                  v-if="provider.href"
-                  :href="provider.href">
-                  {{ provider.code || provider }}
-                </a>
-                <span v-else>
-                  {{ provider.code || provider }}
-                </span>
-              </li>
-            </ul>
+            <span>
+              {{ program['opérateur de contact'] }}
+            </span>
           </template>
         </TeeTile>
       </div>
 
       <!-- PROGRAM TYPE -->
       <div
-        v-if="program.program_types" 
         :class="columnTiles">
         <TeeTile
           :title="choices.t('program.programType')"
           :image-path="`${choices.publicPath}images/TEE-typefinance.svg`"
-          >
-        <template #description>
-            <ul style="list-style-type: none; margin: 0 ; padding: 0;">
-              <li
-                v-for="(programType, index) in program.program_types"
-                :key="`type-${index}-${programType}`">
-                <span>
-                  {{ choices.t(`programTypes.${programType}`) }}
-                </span>
-              </li>
-            </ul>
-          </template>
+          :description="program[`nature de l'aide`]">
         </TeeTile>
       </div>
 
       <!-- PROGRAM GEO ZONES -->
-      <div
+      <!-- <div
         v-if="program.geo_zones" 
         :class="columnTiles">
         <TeeTile
@@ -149,32 +122,50 @@
           :image-path="`${choices.publicPath}images/TEE-porteur.svg`"
           :description="'...'"
         />
-      </div>
+      </div> -->
 
-      <!-- PROGRAM COST -->
+      <!-- PROGRAM COST | LOAN | AID -->
       <div
-        v-if="program.program_cost" 
+        v-if="program[`coût de l'accompagnement`]"
         :class="columnTiles">
         <TeeTile
-          :title="choices.t('program.programEndDate')"
+          :title="choices.t('programCosts.cost')"
           :image-path="`${choices.publicPath}images/TEE-cout.svg`"
-          :description="'...'"
+          :description="program[`coût de l'accompagnement`]"
+        />
+      </div>
+      <div
+        v-if="program[`montant du financement`]"
+        :class="columnTiles">
+        <TeeTile
+          :title="choices.t('programCosts.aid')"
+          :image-path="`${choices.publicPath}images/TEE-cout.svg`"
+          :description="program[`montant du financement`]"
+        />
+      </div>
+      <div
+        v-if="program[`taux du prêt`]"
+        :class="columnTiles">
+        <TeeTile
+          :title="choices.t('programCosts.loan')"
+          :image-path="`${choices.publicPath}images/TEE-cout.svg`"
+          :description="program[`coût de l'accompagnement`]"
         />
       </div>
 
       <!-- PROGRAM DURATION -->
-      <div
-        v-if="program.program_duration" 
+      <!-- <div
+        v-if="program[""]" 
         :class="columnTiles">
         <TeeTile
           :title="choices.t('program.programStartDate')"
           :image-path="`${choices.publicPath}images/TEE-duree.svg`"
           :description="'...'"
         />
-      </div>
+      </div> -->
 
       <!-- PROGRAM START -->
-      <div
+      <!-- <div
         v-if="program.date_start" 
         :class="columnTiles">
         <TeeTile
@@ -182,10 +173,10 @@
           :image-path="`${choices.publicPath}images/TEE-duree.svg`"
           :description="'...'"
         />
-      </div>
+      </div> -->
 
       <!-- PROGRAM END -->
-      <div
+      <!-- <div
         v-if="program.date_end" 
         :class="columnTiles">
         <TeeTile
@@ -193,7 +184,7 @@
           :image-path="`${choices.publicPath}images/TEE-duree.svg`"
           :description="'...'"
         />
-      </div>
+      </div> -->
     </div>
     
     <!-- PROGRAM FORM -->
@@ -242,7 +233,7 @@
                   <h4 
                     class=""
                     style="text-align: center;">
-                    {{ choices.ti(trackConfig?.form.label[choices.lang], { title: program.title }) || '' }}
+                    {{ choices.ti(trackConfig?.form.label[choices.lang], { title: program.titre }) || '' }}
                   </h4>
                   <p
                     class=""
@@ -252,7 +243,7 @@
                   <img 
                     class="fr-responsive-img fr-sm-hide"
                     :src="`${choices.publicPath}images/TEE_illustration.png`"
-                    :alt="`image / ${program.title}`"
+                    :alt="`image / ${program.titre}`"
                     />
                 </div>
                 <!-- MODAL FORM -->

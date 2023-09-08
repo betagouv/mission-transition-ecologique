@@ -40,71 +40,47 @@
     <!-- PROGRAM CARD -->
     <div
       v-for="prog in resultsProgs"
-      :key="prog.index"
+      :key="prog.id"
       class="fr-card fr-enlarge-link fr-card--horizontal-tier fr-mb-10v"
       @click="updateDetailResult(prog.id)">
       <div class="fr-card__body">
         <div class="fr-card__content">
           <h2 class="fr-card__title tee-program-resume">
-            {{ prog.resume }} 
+            {{ prog.promesse }} 
           </h2>
-          <!-- <p
-            class="fr-card__desc"
-            v-html="prog.description">
-          </p> -->
-          <!-- DEBUGGING -->
           <p
             v-if="debug"
             class="vue-debug fr-card__desc">
             <br> choices.publicPath : <code>{{ choices.publicPath }}</code>
-            <br> prog.cover : <code>{{ prog.cover }}</code>
+            <br> prog.cover : <code>{{ prog.illustration }}</code>
             <!-- {{ `${choices.publicPath}${randomImage()}` }} -->
           </p>
           <!-- TITLE -->
           <div class="fr-card__start">
             <p 
               class="fr-mb-3v tee-program-title">
-              {{ prog.title }}
+              {{ prog.titre }}
             </p>
           </div>
         </div>
       </div>
       <div
-        v-if="prog.cover"
+        v-if="prog.illustration"
         class="fr-card__header">
         <div class="fr-card__img">
           <img 
             class="fr-responsive-img"
-            :src="`${choices.publicPath}${prog.cover}`"
-            :alt="`image / ${prog.title}`"
+            :src="`${choices.publicPath}${prog.illustration}`"
+            :alt="`image / ${prog.titre}`"
             />
           <!-- L’alternative de l’image (attribut alt) doit toujours être présente, 
             sa valeur peut être vide (image n’apportant pas de sens supplémentaire au contexte) 
             ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
         </div>
-        <!-- PROVIDERS -->
-        <!-- <ul class="fr-badges-group">
-          <li
-            v-for="(provider, i) in prog.program_providers"
-            :key="`provider-${i}`"
-            >
-            <p class="fr-badge">
-              {{ provider.code }}
-            </p>
-          </li>
-        </ul> -->
-        <!-- PROGRAM TYPES -->
-        <ul
-          v-if="prog.program_types" 
-          class="fr-badges-group">
-          <li
-            v-for="(type, i) in prog.program_types"
-            :key="`provider-${i}`"
-            >
-            <p class="fr-badge tee-program-badge-image">
-              {{ choices.t(`programTypes.${type}`) }}
-            </p>
-          </li>
+        <ul class="fr-badges-group">
+          <p class="fr-badge">
+            {{ prog['opérateur de contact'] }}
+          </p>
         </ul>
       </div>
     </div>

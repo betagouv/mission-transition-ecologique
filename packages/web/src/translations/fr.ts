@@ -40,6 +40,7 @@ export const frDict = {
     programResume: "Le dispositif en deux mots",
     programDescription: "Au programme :",
     programProviders: "Contact",
+<<<<<<< HEAD
     programType: "Type(s) de dispositif",
     programDuration: "Durée du programme",
     programGeoZones: "Région(s) concernée(s)",
@@ -53,10 +54,14 @@ export const frDict = {
     diag: 'Diagnostic',
     loan: "Prêt",
     fund: "Financement"
+=======
+    programType: "Nature de l'aide"
+>>>>>>> bf87d909f5bea76738a14feb4671eefed85ca08d
   },
   programCosts: {
-    gratis: 'Gratuit',
-    paying: 'Payant'
+    cost: "Coût reste à charge",
+    aid: 'Montant du financement',
+    paying: 'Taux du prêt'
   },
   enterprise: {
     select: 'Sélectionnez votre entreprise',
