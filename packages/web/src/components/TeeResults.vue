@@ -45,9 +45,9 @@
       @click="updateDetailResult(prog.id)">
       <div class="fr-card__body">
         <div class="fr-card__content">
-          <h3 class="fr-card__title">
+          <h2 class="fr-card__title tee-program-resume">
             {{ prog.promesse }} 
-          </h3>
+          </h2>
           <p
             v-if="debug"
             class="vue-debug fr-card__desc">
@@ -55,14 +55,12 @@
             <br> prog.cover : <code>{{ prog.illustration }}</code>
             <!-- {{ `${choices.publicPath}${randomImage()}` }} -->
           </p>
+          <!-- TITLE -->
           <div class="fr-card__start">
-            <ul class="fr-badges-group">
-              <li>
-                <p class="fr-badge fr-badge--info fr-badge--no-icon">
-                  {{ prog.titre }}
-                </p>
-              </li>
-            </ul>
+            <p 
+              class="fr-mb-3v tee-program-title">
+              {{ prog.titre }}
+            </p>
           </div>
         </div>
       </div>
@@ -80,8 +78,8 @@
             ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
         </div>
         <ul class="fr-badges-group">
-          <p class="fr-badge">
-            {{ prog['opérateur de contact'] }}
+          <p class="fr-badge tee-program-badge-image">
+            {{ prog["nature de l'aide"] }}
           </p>
         </ul>
       </div>
@@ -121,18 +119,18 @@ import { analyticsStore } from '../stores/analytics'
 import type { TrackChoice, TrackResultsConfig, ProgramData } from '@/types/index'
 
 // @ts-ignore
-import { randomChoice } from '@/utils/helpers'
+// import { randomChoice } from '@/utils/helpers'
 
 const choices = choicesStore()
 const programs = programsStore()
 const analytics = analyticsStore()
 
-const defaultImages = [
-  'images/TEE_ampoule.png',
-  'images/TEE_energie_verte.png',
-  'images/TEE_eolienne.png',
-  // 'images/TEE-illustrationHP.png'
-]
+// const defaultImages = [
+//   'images/TEE_ampoule.png',
+//   'images/TEE_energie_verte.png',
+//   'images/TEE_eolienne.png',
+//   // 'images/TEE-illustrationHP.png'
+// ]
 
 interface Props {
   trackId: string,
@@ -143,8 +141,6 @@ interface Props {
   debug?: boolean,
 }
 const props = defineProps<Props>()
-
-// const blockColor = 'var(--text-default-info)'
 
 const resultsProgs: ProgramData[] = programs.filterPrograms(props.tracksResults)
 
@@ -164,8 +160,8 @@ onBeforeMount(() => {
   analytics.sendEvent(props.trackId, 'show_results')
 })
 
-const randomImage = () => {
-  const imagePath = randomChoice(defaultImages)
-  return imagePath
-}
+// const randomImage = () => {
+//   const imagePath = randomChoice(defaultImages)
+//   return imagePath
+// }
 </script>

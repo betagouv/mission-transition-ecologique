@@ -15,7 +15,7 @@
     <!-- PROGRAM DETAILS -->
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-10v">
       <!-- IMAGE -->
-      <div class="fr-col-md-4 fr-col-lg-3 fr-col-xl-2 fr-col-sm-hide fr-text-right">
+      <div class="fr-col-md-4 fr-col-lg-3 fr-col-xl-3 fr-col-sm-hide fr-text-right">
         <img 
           class="fr-responsive-img"
           :src="`${choices.publicPath}${program.illustration}`"
@@ -27,7 +27,10 @@
       <!-- TITLE & RESUME -->
       <div class="fr-col fr-pl-10v">
         <!-- PROGRAM TITLE -->
-        <p class="fr-badge fr-badge--info fr-badge--no-icon fr-mb-5v">
+        <!-- <h1>
+          {{ program.title }}
+        </h1> -->
+        <p class="tee-program-title fr-mb-5v">
           {{ program.titre }}
         </p>
 
@@ -282,7 +285,7 @@ const choices = choicesStore()
 const programs = programsStore()
 const analytics = analyticsStore()
 
-const blockColor = 'var(--text-default-info)'
+const blockColor = '#000091'
 const showForm = ref<boolean>(false)
 const columnTiles = ref<string>('fr-col-4 fr-sm-3 fr-col-md-4 fr-col-lg-2')
 

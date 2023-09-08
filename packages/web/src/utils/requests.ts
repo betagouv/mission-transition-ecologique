@@ -52,7 +52,7 @@ export const sendApiRequest = async (
   // console.log('utils > requests > sendApiRequest >  dataMapping :', dataMapping)
   // console.log('utils > requests > sendApiRequest >  listIds :', listIds)
 
-  data = remapItem(data, dataMapping, formData, trackValues, props, undefined, lang)
+  data = remapItem(data, dataMapping, formData, trackValues, props, undefined, [], lang)
   // console.log('utils > requests > sendApiRequest >  data :', data)
   const body = JSON.stringify(data)
   // console.log('utils > requests > sendApiRequest >  body :', body)

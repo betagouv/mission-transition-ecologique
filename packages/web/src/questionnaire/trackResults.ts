@@ -1,8 +1,10 @@
 export const results = {
   id: 'track_results',
   category: 'results',
-  title: { fr: 'Mes résultats' },
+  title: { fr: 'Dispositifs' },
   label: { fr: 'Vos résultats'},
+  hint: { fr: '🎉 Félicitations, vous avez terminé !'},
+  resume: { fr: "D’après les informations que vous avez renseignées, voici les accompagnements dont vous pouvez bénéficier pour vous aider à diminuer votre empreinte carbone."},
   intro: { fr: 'Résultats'},
   interface: {
     component: 'results',
@@ -72,7 +74,7 @@ export const results = {
         required: true,
         type: 'email',
         // for debugging purposes
-        // defaultValue: 'france-transition@beta.gouv.fr'
+        // defaultValue: 'contact@multi.coop'
       },
       {
         id: 'tel',
@@ -106,7 +108,7 @@ export const results = {
         required: false,
         type: 'textarea',
         // for debugging purposes
-        // defaultValue: 'Just some tests'
+        // defaultValue: 'Just some tests with Brevo API'
       },
       {
         id: 'cgu',
@@ -202,11 +204,11 @@ export const results = {
             id: 'cgu',
             dataField: 'attributes.OPT_IN',
           },
-          {
-            from: 'usedTracks',
-            id: 'project_needs',
-            dataField: 'attributes.PROJECT_NEEDS',
-          },
+          // {
+          //   from: 'usedTracks',
+          //   id: 'project_needs',
+          //   dataField: 'attributes.PROJECT_NEEDS',
+          // },
           {
             from: 'usedTracks',
             id: 'project_sectors',
@@ -227,15 +229,25 @@ export const results = {
           //   id: 'project_status',
           //   dataField: 'attributes.PROJECT_STATUS',
           // },
+          // {
+          //   from: 'usedTracks',
+          //   id: 'structure_sizes',
+          //   dataField: 'attributes.STRUCTURE_SIZE',
+          // },
           {
             from: 'usedTracks',
-            id: 'structure_sizes',
+            id: 'structure_workforce',
             dataField: 'attributes.STRUCTURE_SIZE',
           },
           {
             from: 'props',
             id: 'programId',
             dataField: 'attributes.PROGRAM_ID',
+          },
+          {
+            from: 'allUsedTracks',
+            id: '*',
+            dataField: 'attributes.ALL_RESPONSES',
           },
         ]
       },

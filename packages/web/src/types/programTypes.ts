@@ -18,6 +18,7 @@ enum ConditionOperators {
   and = 'and',
   is = '==',
   exist = 'exists',
+  inexist = 'inexists',
   notEqual = '!=',
   superior = '>',
   superiorOrEqual = '>=',
