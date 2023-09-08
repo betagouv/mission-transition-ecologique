@@ -263,7 +263,7 @@ onBeforeMount(() => {
     // inject value into form from store if any
     if (field.preFillFrom) {
       // console.log('TeeForm > saveFormData >  field.preFillFrom :', field.preFillFrom)
-      initValues = remapItem(initValues, [field.preFillFrom], {}, trackValues, props, undefined, choices.lang)
+      initValues = remapItem(initValues, [field.preFillFrom], {}, trackValues, props, undefined, [], choices.lang)
       // console.log('TeeForm > saveFormData >  initValues :', initValues)
 
     }

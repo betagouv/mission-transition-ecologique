@@ -324,7 +324,7 @@ const processInput = async () => {
     }
     // console.log('TeeTrackInput > processInput >  resp :', resp)
     if (resp.ok) {
-      let item = remapItem(callback.dataStructure, callback.dataMapping, {inputValue: value}, trackValues, props, resp, choices.lang)
+      let item = remapItem(callback.dataStructure, callback.dataMapping, {inputValue: value}, trackValues, props, resp, [], choices.lang)
       // console.log('TeeTrackInput > processInput >  item :', item)
       responses.push({
         data: item,

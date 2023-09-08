@@ -1,24 +1,6 @@
-const nextExceptions = [
-  {
-    rules: [
-      { 
-        from: 'usedTracks',
-        id: 'project_sectors',
-        dataField: 'project_sectors',
-        conditions: [
-          { 
-            type: 'project_sectors',
-            operator: 'exists'
-          }
-        ]
-      }
-    ],
-    next: { default: 'track_roles' }
-  }
-] 
 export const sizes = {
   id: 'track_structure_sizes',
-  category: 'entreprise',
+  category: 'myEntreprise',
   title: { fr: 'Mon entreprise' },
   label: { fr: 'Quelle est la taille de votre entreprise ?' },
   interface: {
@@ -34,7 +16,7 @@ export const sizes = {
       label: { fr: "TPE (moins de 20 salarié.e.s)" },
       next: {
         default: 'track_sectors',
-        exceptions: nextExceptions
+        // exceptions: nextExceptions
       }
     },
     {
@@ -43,7 +25,7 @@ export const sizes = {
       label: { fr: "PME (entre 20 et 249 salarié.e.s)" },
       next: {
         default: 'track_sectors',
-        exceptions: nextExceptions
+        // exceptions: nextExceptions
       }
     },
     {
@@ -53,7 +35,7 @@ export const sizes = {
       label: { fr: "ETI (entre 250 et 5000 salarié.e.s)" },
       next: {
         default: 'track_sectors',
-        exceptions: nextExceptions
+        // exceptions: nextExceptions
       }
     },
     {
@@ -63,7 +45,7 @@ export const sizes = {
       label: { fr: "GE (plus de 5000 salarié.e.s)" },
       next: {
         default: 'track_sectors',
-        exceptions: nextExceptions
+        // exceptions: nextExceptions
       }
     }
   ]

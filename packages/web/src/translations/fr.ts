@@ -50,5 +50,18 @@ export const frDict = {
   enterprise: {
     select: 'Sélectionnez votre entreprise',
     noStructureFound: "Aucune structure n'a été trouvée."
+  },
+  categories: {
+    start: '🏁 Questionnaire',
+    myNeeds: 'Mes besoins',
+    ourHelp: '🧭 Comment vous aider',
+    myEntreprise: '👋 Mon entreprise',
+    myBuildings: '🏢 Bâtiment',
+    myMobility: '🚲 Mobilité',
+    myWater: "💧 Eau",
+    myWastes: '🗑 Déchets',
+    myEnergy: "⚡️ Energie",
+    myStrategy: '🎲️ Stratégie',
+    results: '✅ Résultats',
   }
 }

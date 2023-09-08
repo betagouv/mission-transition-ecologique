@@ -13,9 +13,68 @@ const dataTarget = {
   project_sectors: undefined
 }
 
+// const nextExceptions = [
+//   {
+//     rules: [
+//       { 
+//         from: 'selectionValues',
+//         id: 'siret',
+//         dataField: 'siret',
+//         conditions: [
+//           { 
+//             type: 'siret',
+//             operator: 'exists'
+//           }
+//         ]
+//       },
+//       { 
+//         from: 'usedTracks',
+//         id: 'user_help',
+//         dataField: 'user_help',
+//         conditions: [
+//           { 
+//             type: 'user_help',
+//             operator: '==',
+//             value: 'unknown',
+//           }
+//         ]
+//       }
+//     ],
+//     next: { default: 'track_structure_workforce' }
+//   },
+//   {
+//     rules: [
+//       { 
+//         from: 'selectionValues',
+//         id: 'siret',
+//         dataField: 'siret',
+//         conditions: [
+//           { 
+//             type: 'siret',
+//             operator: 'exists'
+//           }
+//         ]
+//       },
+//       { 
+//         from: 'usedTracks',
+//         id: 'user_help',
+//         dataField: 'user_help',
+//         conditions: [
+//           { 
+//             type: 'user_help',
+//             operator: '==',
+//             value: 'precise',
+//           }
+//         ]
+//       }
+//     ],
+//     next: { default: 'track_structure_sizes' }
+//   }
+// ] 
+
 export const siret = {
   id: 'track_siret',
-  category: 'entreprise',
+  category: 'myEntreprise',
   title: { fr: 'Mon SIRET' },
   label: { fr: 'Quelle est votre entreprise ?' },
   // info: { fr: "Renseignez le SIRET de votre entreprise" },
@@ -26,7 +85,7 @@ export const siret = {
   //   multipleChoices: false,
   // },
   next: {
-    default: 'track_structure_sizes'
+    default: 'track_structure_workforce'
   },
   options: [
     {
@@ -231,13 +290,17 @@ export const siret = {
         }
       ],
       next: {
-        default: 'track_structure_sizes',
+        default: 'track_structure_workforce',
+        // default: 'track_structure_sizes',
+        // exceptions: nextExceptions
         // default: 'track_roles'
       },
       wildcard: {
         label: { fr: "je préfère compléter mes informations manuellement" },
         next: {
-          default: 'track_structure_sizes',
+          default: 'track_structure_workforce',
+          // default: 'track_structure_sizes',
+          // exceptions: nextExceptions
         }
       }
     }

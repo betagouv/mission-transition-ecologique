@@ -7,6 +7,10 @@
     <h5>DEBUG - TeeSidebar</h5>
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
       <div class="fr-col-12">
+        <h6 class="fr-mb-1v"> usedTracksRegrouped :</h6>
+        <pre><code>{{ usedTracksRegrouped }} </code></pre>
+      </div>
+      <div class="fr-col-12">
         <h6 class="fr-mb-1v"> usedTracks :</h6>
         <pre><code>{{ usedTracks }} </code></pre>
       </div>
@@ -15,7 +19,7 @@
 
   <!-- LIST OF USED TRACKS + MODIFY CHOICE -->
   <!-- fr-ri-check-fill -->
-  <template
+  <!-- <template
     v-for="usedTrack in usedTracks"
     :key="usedTrack.id">
     <div
@@ -39,18 +43,54 @@
         </p>
       </template>
     </div>
+  </template> -->
+
+  <template
+    v-for="categ in usedCategories"
+    :key="categ">
+    <div
+      class="fr-mb-6v">
+      <div 
+        class="fr-mb-2v">
+        {{ choices.t(`categories.${categ}`) }}
+      </div>
+      <!-- <DsfrButton
+        :label="choices.t(`categories.${categ}`)"
+        class=""
+        tertiary
+        no-outline
+        @click="usedTracksRegrouped[categ][0].id"
+      /> -->
+      <div
+        v-for="usedTrack in usedTracksRegrouped[categ]"
+        :key="usedTrack.id">
+        <div
+          class="fr-mb-1v">
+          <DsfrButton
+            :label="tracks.getTrackTitle(usedTrack.id, choices.lang)"
+            :disabled="!usedTrack.completed"
+            class="tee-btn-sidebar"
+            tertiary
+            no-outline
+            @click="backToTrack(usedTrack.id)"
+            />
+        </div>
+      </div>
+    </div>
   </template>
 </template>
 
 <script setup lang="ts">
 
-// import { computed } from 'vue'
+import { computed } from 'vue'
 
 import { tracksStore } from '../stores/tracks'
 import { choicesStore } from '../stores/choices'
 
 // @ts-ignore
 import type { UsedTrack } from '@/types/index'
+
+import { groupBy } from '../utils/helpers'
 
 interface Props {
   usedTracks: UsedTrack[],
@@ -65,6 +105,27 @@ const choices = choicesStore()
 //   const completedTracks = tracks.usedTracks.filter(usedTrack => usedTrack.completed)
 //   return completedTracks
 // })
+
+interface UsedTrackRegrouped {
+  [name: string]: UsedTrack[]
+}
+
+const usedTracksRegrouped = computed(() => {
+  const trackWithCategs = props.usedTracks.map((t: UsedTrack) => {
+    const tracksByCateg = {
+      ...t,
+      category: tracks.getTrackCategory(t.id)
+    }
+    return tracksByCateg
+  })
+
+  const trackCategs: UsedTrackRegrouped = groupBy(trackWithCategs, 'category')
+  return trackCategs
+})
+
+const usedCategories = computed(() => {
+  return Object.keys(usedTracksRegrouped.value)
+})
 
 const backToTrack = async (trackId: string) => {
   // console.log()
