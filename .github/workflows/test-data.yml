@@ -7,7 +7,8 @@ on:
     branches: [ main, preprod ]
 
 jobs:
-  build:
+  validate-data:
+    name: Validation des données de dispositifs sur la base d'un JSON Schema
     runs-on: ubuntu-latest
     strategy:
       matrix:
