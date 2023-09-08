@@ -53,3 +53,5 @@ conditions:
     value:
       - impact
 opérateur de contact: CMA
+nature de l'aide: "accompagnement"
+coût de l'accompagnement: gratuit
