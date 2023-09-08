@@ -10,25 +10,25 @@ description:
   - Mesurez les émissions de Gaz à effet de serre de votre entreprise.
   - Elaborez votre plan d'actions pour décarboner votre activité.
   - Embarquez votre écosystème en valorisant votre engagement dans la décarbonation.
-program_types: 
+program_types:
   - diag
 conditions:
   - type: project_needs
     operator: "or"
-    value: 
+    value:
       - advices
       - financing
   - type: project_status
     operator: "or"
-    value: 
+    value:
       - carbon
   - type: project_sectors
     operator: "or"
-    value: 
+    value:
       - "*"
   - type: structure_sizes
     operator: "or"
-    value: 
+    value:
       - PME
       - TPE
       - ETI
@@ -37,6 +37,5 @@ conditions:
     operator: "or"
     value:
       - impact
-program_providers: 
-  - code: BPI
-  - code: ADEME
+opérateur de contact:
+  code: Bpifrance

@@ -12,21 +12,21 @@ description:
   - Réalisez une évaluation environnementale basée sur l’Analyse du Cycle de Vie du produit, service ou procédé concerné
   - Identifiez, formalisez et chiffrez les leviers d’écoconception, en maîtrisant le risque de transfert de pollution
   - Préparez la mise en œuvre d'un plan d’actions incluant un premier dimensionnement technico-économique
-program_types: 
+program_types:
   - diag
 conditions:
   - type: project_needs
     operator: "or"
-    value: 
+    value:
       - advices
       - financing
   - type: project_status
     operator: "or"
-    value: 
+    value:
       - improve
   - type: project_sectors
     operator: "or"
-    value: 
+    value:
       - "*"
   - type: structure_sizes
     operator: "or"
@@ -37,8 +37,7 @@ conditions:
       - GE
   - type: user_goals
     operator: "or"
-    value: 
+    value:
       - ecoconception
-program_providers: 
-  - code: BPIFRANCE
-    siren : 320 252 489
+opérateur de contact:
+  code: BPIFRANCE

@@ -61,19 +61,16 @@
         }
       }
     },
-    "program_providers": {
+    "opérateur de contact": {
       "description": "TODO",
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "code": {
-            "description": "TODO",
-            "type": "string"
-          }
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "TODO",
+          "type": "string"
         }
       }
     }
   },
-  "required": [ "id", "resume"]
+  "required": [ "id", "resume", "opérateur de contact"]
 }

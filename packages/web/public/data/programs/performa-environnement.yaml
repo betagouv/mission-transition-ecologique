@@ -7,51 +7,50 @@ origin_url: https://www.economie.gouv.fr/entreprises/entreprises-aides-transitio
 # cover: images/programs/performa-environnement.jpeg
 cover: images/TEE_eolienne.png
 description:
-  - | 
-    Réalisez un état des lieux gratuit pour évaluer l'impact 
-    de votre activité sur l'environnement et détecter de 
-    nouvelles sources d'économies (énergie, isolation des 
+  - |
+    Réalisez un état des lieux gratuit pour évaluer l'impact
+    de votre activité sur l'environnement et détecter de
+    nouvelles sources d'économies (énergie, isolation des
     locaux, consommations d’eau, déchets, matières premières,
     mobilité...)
-  - | 
-    Obtenez un diagnostic complet et la proposition 
-    d'un plan d'actions prioritaires pour maîtriser 
+  - |
+    Obtenez un diagnostic complet et la proposition
+    d'un plan d'actions prioritaires pour maîtriser
     sa consommation énergétique et optimiser ses coûts
   - |
-    Valorisez votre démarche environnementale par l'obtention 
-    d'un label, une reconnaissance environnementale, 
+    Valorisez votre démarche environnementale par l'obtention
+    d'un label, une reconnaissance environnementale,
     individuelle ou collective
   - |
-    Identifiez et sélectionnez une solution d'investissement, 
-    d'étude ou de formation, et soyez assisté dans le montage 
+    Identifiez et sélectionnez une solution d'investissement,
+    d'étude ou de formation, et soyez assisté dans le montage
     d'une demande de financement
-program_types: 
+program_types:
   - diag
 conditions:
   - type: project_needs
     operator: "or"
-    value: 
+    value:
       - advices
       - financing
   - type: project_status
     operator: "or"
-    value: 
+    value:
       - "*"
   - type: project_sectors
     operator: "or"
-    value: 
+    value:
       - craft
   - type: structure_sizes
     operator: "or"
-    value: 
+    value:
       - PME
       - TPE
       - ETI
       - GE
   - type: user_goals
     operator: "or"
-    value: 
+    value:
       - impact
-program_providers: 
-  - code: CMA
-    siren: 187 500 046 00011
+opérateur de contact:
+  code: CMA

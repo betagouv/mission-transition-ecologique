@@ -11,29 +11,29 @@ description:
   - Mettez en place un plan d'actions simple pour réduire vos déchets et votre consommation d'énergie, de matières et d'eau.
   - Lancez vos premières actions.
   - Réalisez en moyenne 45 000 € d'économies par an et par site de production ou établissement (sur la base des missions restituées).
-program_types: 
+program_types:
   - diag
 conditions:
   - type: project_needs
     operator: "or"
-    value: 
+    value:
       - advices
       - financing
   - type: project_status
     operator: "or"
-    value: 
+    value:
       - economies
   - type: project_sectors
     operator: "or"
-    value: 
+    value:
       - "*"
   - type: structure_sizes
     operator: "or"
-    value: 
+    value:
       - TPE
   - type: user_goals
     operator: "or"
-    value: 
+    value:
       - economies
-program_providers: 
-  - code: ADEME
+opérateur de contact:
+  code: ADEME

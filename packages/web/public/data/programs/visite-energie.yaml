@@ -11,21 +11,21 @@ description:
   - Montez en compétences sur la thématique Energie de votre entreprise
   - Construisez et réalisez un plan d’actions grâce à un expert de l'énergie
   - Réduisez la consommation d’énergie de votre entreprise
-program_types: 
+program_types:
   - diag
 conditions:
   - type: project_needs
     operator: "or"
-    value: 
+    value:
       - advices
       - financing
   - type: project_status
     operator: "or"
-    value: 
+    value:
       - "*"
   - type: project_sectors
     operator: "or"
-    value: 
+    value:
       - "*"
       # - industry
       # - tertiary
@@ -34,18 +34,16 @@ conditions:
       # - craft
   - type: structure_sizes
     operator: "or"
-    value: 
+    value:
       - PME
       - TPE
       - ETI
       - GE
   - type: user_goals
     operator: "or"
-    value: 
+    value:
       # - impact
       - energy
       - renovation
-program_providers: 
-  - code: ADEME
-  - code: CCI
-    siret : 187 500 020 00073
+opérateur de contact:
+  code: ADEME
