@@ -21,6 +21,12 @@ export const CheckConditions = ( data: any, conditions: ConditionTrack[], strict
         case 'exists':
           condBool = !!dataValue
           break
+        case 'inexists':
+          condBool = !dataValue
+          break
+        case '==':
+          condBool = condition.value === dataValue
+          break
         case 'or':
           condBool = dataValue.includes('*') || condVal.includes('*')
           if (!condBool) {
@@ -30,6 +36,7 @@ export const CheckConditions = ( data: any, conditions: ConditionTrack[], strict
           break
       }
     }
+    // console.log('utils > conditions > CheckConditions > condBool :', condBool)
     boolArray.push(condBool)
   })
 

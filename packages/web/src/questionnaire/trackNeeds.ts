@@ -1,7 +1,7 @@
 export const needs = {
   id: 'track_needs',
-  category: 'needs',
-  title: { fr: 'Mon besoin' },
+  category: 'start',
+  title: { fr: 'Je me lance' },
   label: { fr: 'Votre besoin' },
   bgColor: '#E8EDFF', // 'fr-callout--green-emeraude',
   imageRight: 'images/TEE-illustrationHP.png',
@@ -27,7 +27,8 @@ export const needs = {
       title: { fr: '' },
       label: { fr: "Je me lance !" },
       next: {
-        default: 'track_goals'
+        // default: 'track_goals'
+        default: 'track_help'
       }
     },
     {

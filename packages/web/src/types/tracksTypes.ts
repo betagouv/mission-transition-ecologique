@@ -8,6 +8,7 @@ enum ConditionOperators {
   and = 'and',
   is = '==',
   exist = 'exists',
+  inexist = 'inexists',
   notEqual = '!=',
   superior = '>',
   superiorOrEqual = '>=',
@@ -66,6 +67,7 @@ export interface NextTrackRule extends FormCallbackDataMapping {
   conditions: ConditionTrack[]
 }
 export interface NextTrackRule {
+  help?: string,
   rules: NextTrackRule[],
   next: TrackNext
 }
@@ -74,14 +76,26 @@ export interface TrackNext {
   exceptions? : object[]
   [name: string]: any
 }
+
+enum HasInputOptions {
+  number = 'number',
+  date = 'date',
+  text = 'text'
+}
 export interface TrackOptions {
   id?: string,
   disabled?: Boolean,
-  value: string | number,
+  value: string | number | object,
   required?: Boolean,
   title: Translations,
   label: Translations,
+  resume?: Translations,
   hint?: Translations,
+  hintImageIcon?: string,
+  hintIcon?: string,
+  hintImage?: Translations,
+  imageTop?: string,
+  hasInput?: HasInputOptions,
   callout?: TrackCallout,
   info?: Translations,
   placeholder?: Translations,
@@ -91,9 +105,19 @@ export interface TrackOptions {
   next?: TrackNext
 }
 
+export interface InputCleaningRule {
+  operator?: ConditionOperators,
+  conditionValue?: string | number,
+  valueField?: string,
+  value?: any | any[],
+}
 export interface TrackOptionsInput extends TrackOptions {
   placeholder: Translations,
   defaultInput?: string | number,
+  inputField?: string,
+  inputMax: number,
+  inputMin: number,
+  inputCleaning: InputCleaningRule[],
   callbacks? : any,
   wildcard?: any
 }
@@ -119,6 +143,7 @@ export interface TracksList {
 
 export interface UsedTrack {
   id: string | any,
+  category?: string,
   final?: boolean,
   completed: boolean,
   // updating: boolean,

@@ -65,6 +65,12 @@ export const tracksStore = defineStore('tracks', () => {
     const track = allTracks.value.find(track => track.id === trackId)
     return track
   }
+  const getTrackCategory = (trackId: string) => {
+    const track = getTrack(trackId)
+    // @ts-ignore
+    const trackCateg: string = track?.category
+    return trackCateg
+  }
   const getTrackTitle = (trackId: string, lang: string) => {
     const track = getTrack(trackId)
     // @ts-ignore
@@ -122,6 +128,7 @@ export const tracksStore = defineStore('tracks', () => {
     // add newTrackId
     const trackInfos: UsedTrack = {
       id: newTrackId,
+      category: undefined,
       completed: false,
       step: usedTracks.value.length + 1,
       selected: [],
@@ -182,6 +189,7 @@ export const tracksStore = defineStore('tracks', () => {
     currentStep,
     setMaxDepth,
     getTrack,
+    getTrackCategory,
     getTrackTitle,
     getTrackLabel,
     getTrackBgColor,
