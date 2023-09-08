@@ -121,7 +121,15 @@
       }
     }
   ],
-  "required": [ "id", "resume", "opérateur de contact", "nature de l'aide"],
+  "required": [ 
+    "id", 
+    "titre",
+    "promesse", 
+    "illustration",
+    "objectifs",
+    "opérateur de contact",
+    "nature de l'aide"
+  ],
 
   "$defs": {
     "operators": {
