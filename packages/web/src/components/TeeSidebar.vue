@@ -50,9 +50,17 @@
     :key="categ">
     <div
       class="fr-mb-6v">
-      <div class="fr-mb-2v">
+      <div 
+        class="fr-mb-2v">
         {{ choices.t(`categories.${categ}`) }}
       </div>
+      <!-- <DsfrButton
+        :label="choices.t(`categories.${categ}`)"
+        class=""
+        tertiary
+        no-outline
+        @click="usedTracksRegrouped[categ][0].id"
+      /> -->
       <div
         v-for="usedTrack in usedTracksRegrouped[categ]"
         :key="usedTrack.id">
