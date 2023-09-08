@@ -28,7 +28,7 @@ import * as fs from 'fs'
 import * as yaml from 'js-yaml'
 const programsArray = <any[]>[]
 // joining path of directory
-const dataDirPathTemp = rawEnv.VITE_DATA_DIR_PATH || './public/data/programs'
+const dataDirPathTemp = rawEnv.VITE_DATA_DIR_PATH || '../data/programs'
 const dataDirPath = path.join(__dirname, dataDirPathTemp)
 // console.log('vite.config > __dirname :', __dirname)
 console.log('vite.config > dataDirPath :', dataDirPath)

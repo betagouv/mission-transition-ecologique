@@ -322,10 +322,9 @@ The user will see the questionnaire beginning with this first track, and its jou
 
 **Disclaimer** : _This strategy for building a dataset of aid programs is freely inspired from other projects, especially by the way [aides-jeunes](https://github.com/betagouv/aides-jeunes/tree/master/data/benefits/javascript) is building a collaborative dataset of aids from a set of yaml files._
 
-
 The aid programs dataset is rebuilt as a unique `dataset_out.json` file at each deployment, based on a list of `yaml` files. All of these files are exposed in the `./public` directory.
 
-All the aids are described one by one in the `./public/data/programs` directory in distinct `yaml` files.
+All the aids are described one by one in the `../data/programs` directory in distinct `yaml` files.
 
 ```
 .
@@ -335,21 +334,30 @@ All the aids are described one by one in the `./public/data/programs` directory 
 |   └── data
 |   |   ├── output               
 |   |   |   └── dataset_out.json  <-- the json file used as a "database"
-|   |   ├── programs              <-- all the aid described in a yaml format
-|   |   |   ├── diag-decarbon-action.yaml
-|   |   |   ├── diag-eco-flux.yaml
-|   |   |   ├── diag-ecoconception.yaml
-|   |   |   ├── (other yaml files)
-|   |   |   └── ...
 |   |   └── references
 |   └── fonts
 ├── ...
 └── README.md
 ```
 
+```
+# in `./packages`
+.
+├── data
+│   └── programs                       <-- all the aid described in a yaml format
+│       ├── diag-decarbon-action.yaml
+│       ├── diag-eco-flux.yaml
+│       ├── diag-ecoconception.yaml
+│       ├── fonds-tourisme-durable.yaml
+│       ├── performa-environnement.yaml
+│       ├── tpe-gagnantes.yaml
+│       ├── tremplin.yaml
+│       └── visite-energie.yaml
+```
+
 When the app is built some functions in the `./vite.config.ts` are triggered :
 
-- All yaml files in the `./public/data/programs` are read and transformed into `js` objects ;
+- All yaml files in the `../data/programs` are read and transformed into `js` objects ;
 - All objects are then pushed into an array ;
 - This array of objects (all the data from all yaml files) is exported and written as `dataset_out.json` file (the output) in the `./public/data/output` directory.
 
@@ -386,7 +394,7 @@ Once in the store, programs can be filtered (cf `filterPrograms` function in `./
 In order to filter aid programs corresponding to the user's choices, an aid program yaml file must contain a block of `conditions` - following more or less the [open fisca](https://fr.openfisca.org/) / [Publicodes](https://publi.codes/) syntax - such as :
 
 ```yaml
-# ex. ./public/data/programs/diag-eco-flux.yaml
+# ex. ../data/programs/diag-eco-flux.yaml
 
 title: Diag Eco-flux
 resume: Faites des économies en gérant durablement vos dépenses
@@ -494,8 +502,8 @@ The `env` variables you can use for deployment are listed in the `example.env` f
 VITE_NO_DEBUG_SWITCH = false
 
 # Path of the dataset
-# Default : ./public/data/programs
-VITE_DATA_DIR_PATH = ./public/data/programs
+# Default : ../data/programs
+VITE_DATA_DIR_PATH = ../data/programs
 
 # To indicate built source while copying the widget
 VITE_DEPLOY_URL = https://gov-aid-tree.osc-fr1.scalingo.io
