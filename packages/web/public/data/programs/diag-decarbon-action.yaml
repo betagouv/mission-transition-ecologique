@@ -4,14 +4,11 @@ promesse: Réduisez durablement vos émissions carbone
 description: | 
   Réalisez un bilan carbone et réduisez de manière durable l’empreinte carbone de votre entreprise. 
 url: https://diag.bpifrance.fr/produit/diag-decarbon-action
-# cover: images/programs/decarbon-action.png
 illustration: images/TEE_eolienne.png
 objectifs:
   - Mesurez les émissions de Gaz à effet de serre de votre entreprise.
   - Elaborez votre plan d'actions pour décarboner votre activité.
   - Embarquez votre écosystème en valorisant votre engagement dans la décarbonation.
-# program_types:
-#   - diag
 conditions:
   - type: project_needs
     operator: "or"

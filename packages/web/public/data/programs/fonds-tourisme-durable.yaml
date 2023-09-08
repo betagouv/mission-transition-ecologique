@@ -4,14 +4,11 @@ promesse: Obtenez un diagnostic et des subventions dans votre activité touristi
 description: |
   Le Fonds Tourisme Durable soutient la réalisation d'un diagnostic environnemental gratuit et de financements d'investissements et/ou d'études.
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/fonds-tourisme-durable-restaurateurs-hebergeurs-accelerez-transition-0
-# cover: images/programs/fonds-tourisme-durable.jpg
 illustration: images/TEE_ampoule.png
 objectifs:
   - Faites un état des lieux gratuitement afin d'identifier les axes prioritaires d’économies
   - Réduisez et maîtrisez vos coûts fixes (énergie, eau, déchets, gaspillage alimentaire, transport)
   - Accédez à des aides forfaitaires dans tous les domaines de la transition écologique (entre 5k€ et 200k€)
-# program_types:
-#   - aap
 conditions:
   - type: project_needs
     operator: "or"

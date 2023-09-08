@@ -4,7 +4,6 @@ promesse: Financez vos projets d’études ou d’investissement écologique ave
 description: | 
   Evaluer votre stratégie de réduction des émissions de gaz à effet de serre (Evaluation ACT®)
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/tremplin-transition-ecologique-pme
-# cover: images/programs/tremplin.jpg
 illustration: images/TEE_energie_verte.png
 objectifs:
   - "Accédez à des aides forfaitaires dans plusieurs domaines de la transition
@@ -13,8 +12,6 @@ objectifs:
   - "Subventionnez la ou les projets écologique de votre entreprise suivant
     une liste d’action prédéfinie par l’ADEME (entre 5k€ et 200k€)"
   - Demandez une aide financière sur une ou plusieurs actions en même temps
-# program_types:
-#   - aap
 conditions:
   - type: project_needs
     operator: "or"
