@@ -48,10 +48,6 @@
           <h3 class="fr-card__title">
             {{ prog.promesse }} 
           </h3>
-          <!-- <p
-            class="fr-card__desc"
-            v-html="prog.description">
-          </p> -->
           <p
             v-if="debug"
             class="vue-debug fr-card__desc">

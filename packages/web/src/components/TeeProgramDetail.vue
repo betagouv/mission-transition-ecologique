@@ -121,7 +121,7 @@
         />
       </div> -->
 
-      <!-- PROGRAM COST -->
+      <!-- PROGRAM COST | LOAN | AID -->
       <div
         v-if="program[`coût de l'accompagnement`]"
         :class="columnTiles">
