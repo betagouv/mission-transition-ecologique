@@ -34,31 +34,43 @@ export interface Condition {
   value?: any | any[],
 }
 
-export interface ProgramProvider {
-  code: string,
-  href?: string,
-  SIREN?: string | number,
+// export interface ProgramProvider {
+//   code: string,
+//   href?: string,
+//   SIREN?: string | number,
+// }
+
+enum ProgramAidType {
+  acc = "accompagnement",
+  fund = "financement",
+  loan = "prêt",
 }
 
 export interface ProgramData {
-  id: string | number,
   index?: string | number,
-  title: string,
-  resume?: string,
-  text?: string,
-  cover?: string,
-  origin_url? : string,
-  description?: string,
-  program_types?: string[],
+  id: string,
+  titre: string,
+  promesse: string,
+  description: string,
+  illustration: string,
+  objectifs: string[],
+  "opérateur de contact": string,
+  "autres opérateurs"?: string[],
+  "nature de l'aide": ProgramAidType,
+
+  "coût de l'accompagnement"?: string,
+  "montant du financement"?: string,
+  "taux du prêt"?: string,
   conditions?: Condition[],
-  program_conditions?: ProgramConditions,
-  program_providers?: ProgramProvider[],
-  program_application?: any,
-  geo_zones?: any,
-  program_cost?: any,
-  program_duration?: any,
-  date_start?: any,
-  date_end?: any,
+  url? : string,
+
+  // program_conditions?: ProgramConditions,
+  // program_application?: any,
+  // geo_zones?: any,
+  // program_cost?: any,
+  // program_duration?: any,
+  // date_start?: any,
+  // date_end?: any
 }
 
 
