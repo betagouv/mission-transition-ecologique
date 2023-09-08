@@ -1,18 +1,18 @@
 id: visite-energie
-title: Visite Energie
-resume: Mesurer votre maturité energétique et créer un plan d’actions personnalisé avec un conseiller
-text: | 
+titre: Visite Energie
+promesse: Mesurer votre maturité energétique et créer un plan d’actions personnalisé avec un conseiller
+description: | 
   Evaluez les coûts et surcoûts d'énergie et identifiez les actions à mener pour les réduire
-origin_url: https://www.cci.fr/
+url: https://www.cci.fr/
 # cover: images/programs/visite-energie.jpg
-cover: images/TEE_energie_verte.png
-description:
+illustration: images/TEE_energie_verte.png
+objectifs:
   - Mettez en œuvre une démarche structurée d’économies d’énergie
   - Montez en compétences sur la thématique Energie de votre entreprise
   - Construisez et réalisez un plan d’actions grâce à un expert de l'énergie
   - Réduisez la consommation d’énergie de votre entreprise
-program_types:
-  - diag
+# program_types:
+#   - accompagnement
 conditions:
   - type: project_needs
     operator: "or"

@@ -1,12 +1,12 @@
 id: performa-environnement
-title: Performa Environnement
-resume: Mesurer votre maturité écologique et créer un plan d’actions personnalisé avec à un conseiller
-text: | 
+titre: Performa Environnement
+promesse: Mesurer votre maturité écologique et créer un plan d’actions personnalisé avec à un conseiller
+description: | 
   Réalisez un état des lieux à 360° pour évaluer l'impact de votre activité sur l'environnement et réalisez des économies. Différents sujets sont abordés : économie d’énergie, isolation des locaux, consommations d’eau, déchets, matières premières, achats, mobilité, etc.
-origin_url: https://www.economie.gouv.fr/entreprises/entreprises-aides-transition-ecologique
+url: https://www.economie.gouv.fr/entreprises/entreprises-aides-transition-ecologique
 # cover: images/programs/performa-environnement.jpeg
-cover: images/TEE_eolienne.png
-description:
+illustration: images/TEE_eolienne.png
+objectifs:
   - |
     Réalisez un état des lieux gratuit pour évaluer l'impact
     de votre activité sur l'environnement et détecter de
@@ -25,8 +25,8 @@ description:
     Identifiez et sélectionnez une solution d'investissement,
     d'étude ou de formation, et soyez assisté dans le montage
     d'une demande de financement
-program_types:
-  - diag
+# program_types:
+#   - diag
 conditions:
   - type: project_needs
     operator: "or"

@@ -8,30 +8,23 @@
       "description": "Identifiant unique du dispositif",
       "type": "string"
     },
-    "title": {
+    "titre": {
       "description": "Titre du dispositif. Le titre est optionnel, s'il est absent, un titre générique du type \"Dispositif { opérateur de contact }\" sera utilisé.",
       "type": "string"
     },
-    "resume": {
+    "promesse": {
       "description": "TODO",
       "type": "string"
     },
-    "origin_url": {
+    "url": {
       "description": "TODO",
       "type": "string"
     },
-    "cover": {
+    "illustration": {
       "description": "TODO",
       "type": "string"
     },
-    "description": {
-      "description": "TODO",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
-    "program_types": {
+    "objectifs": {
       "description": "TODO",
       "type": "array",
       "items": {
