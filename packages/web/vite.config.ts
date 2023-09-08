@@ -51,11 +51,11 @@ filesNames.forEach((file) => {
 // console.log('vite.config > programsArray :', programsArray)
 
 // build output json
-const dataAsJson = JSON.stringify(programsArray, null, 2)
-const dataBuiltOutput = './public/data/output/dataset_out.json'
-const dataOutPath = path.join(__dirname, dataBuiltOutput)
-fs.writeFileSync(dataOutPath, dataAsJson)
-console.log('vite.config > finished writing output json...')
+// const dataAsJson = JSON.stringify(programsArray, null, 2)
+// const dataBuiltOutput = './public/data/output/dataset_out.json'
+// const dataOutPath = path.join(__dirname, dataBuiltOutput)
+// fs.writeFileSync(dataOutPath, dataAsJson)
+// console.log('vite.config > finished writing output json...')
 
 // VITE CONFIG
 const viteServer = {
