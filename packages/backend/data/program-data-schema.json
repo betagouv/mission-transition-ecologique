@@ -8,30 +8,23 @@
       "description": "Identifiant unique du dispositif",
       "type": "string"
     },
-    "title": {
+    "titre": {
       "description": "Titre du dispositif. Le titre est optionnel, s'il est absent, un titre générique du type \"Dispositif { opérateur de contact }\" sera utilisé.",
       "type": "string"
     },
-    "resume": {
+    "promesse": {
       "description": "TODO",
       "type": "string"
     },
-    "origin_url": {
+    "url": {
       "description": "TODO",
       "type": "string"
     },
-    "cover": {
+    "illustration": {
       "description": "TODO",
       "type": "string"
     },
-    "description": {
-      "description": "TODO",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
-    "program_types": {
+    "objectifs": {
       "description": "TODO",
       "type": "array",
       "items": {
@@ -61,19 +54,128 @@
         }
       }
     },
-    "program_providers": {
-      "description": "TODO",
+    "opérateur de contact": {
+      "description": "L'opérateur de contact est l'opérateur à contacter pour obtenir des informations supplémentaires sur le dispositif.",
+      "type": "string",
+      "$ref": "#/$defs/operators"
+    },
+    "autres opérateurs": {
+      "description": "Les autres opérateurs peuvent être des opérateurs co-financeurs, ou des partenaires du dispositif. Ils doivent être différents de l'opérateur de contcat.",
       "type": "array",
       "items": {
-        "type": "object",
-        "properties": {
-          "code": {
-            "description": "TODO",
-            "type": "string"
-          }
-        }
-      }
+        "type": "string",
+        "$ref": "#/$defs/operators"
+      },
+      "uniqueItems": true
+    },
+    "nature de l'aide": {
+      "description": "Précise s'il s'agit d'une aide financière, d'un accompagnement, ou d'un prêt. Un accompagnement se définit comme la réalisation d'une prestation intellectuelle, par un intervenant choisi par l'opérateur.",
+      "enum": [
+        "accompagnement",
+        "financement",
+        "prêt"
+      ]
     }
   },
-  "required": [ "id", "resume"]
+  "allOf": [
+    {
+      "if": {
+        "properties": { "nature de l'aide": { "const": "accompagnement" } }
+      },
+      "then": {
+        "properties": {
+          "coût de l'accompagnement": {
+            "description": "Ce champ est utile et requis uniquement si l'aide est de nature \"accompagnement\". Elle précise le coût reste à charge de l'utilisateur pour bénéficier de l'accompagnement. Il s'agit d'un champ texte, à des fins d'affichage.",
+            "type": "string"
+          }
+        },
+        "required": [ "coût de l'accompagnement" ]
+      }
+    },
+    {
+      "if": {
+        "properties": { "nature de l'aide": { "const": "financement" }}
+      },
+      "then": {
+        "properties": {
+          "montant du financement": {
+            "description": "Ce champ est utile et requis uniquement si l'aide est de nature \"financement\". Elle précise le montant du financement, de préférence en €, à défaut en %. Il s'agit d'un champ texte, à des fins d'affichage.",
+            "type": "string"
+          }
+        },
+        "required": [ "montant du financement" ]
+      }
+    },
+    {
+      "if": {
+        "properties": { "nature de l'aide": { "const": "prêt" }}
+      },
+      "then": {
+        "properties": {
+          "taux du prêt": {
+            "description": "Ce champ est utile et requis uniquement si l'aide est de nature \"prêt\". Il s'agit d'un champ texte, à des fins d'affichage.",
+            "type": "string"
+          }
+        },
+        "required": [ "taux du prêt" ]
+      }
+    }
+  ],
+  "required": [ 
+    "id", 
+    "titre",
+    "promesse", 
+    "illustration",
+    "objectifs",
+    "opérateur de contact",
+    "nature de l'aide"
+  ],
+
+  "$defs": {
+    "operators": {
+      "enum": [
+        "ADEME",
+        "ASP",
+        "Agence de l'eau Adour-Garonne",
+        "Agence de l'eau Artois-Picardie",
+        "Agence de l'eau Loire-Bretagne",
+        "Agence de l'eau Rhin-Meuse",
+        "Agence de l'eau Rhône-Méditerranée-Corse",
+        "Agence de l'eau Seine-Normandie",
+        "Bpifrance",
+        "Breizh Fab",
+        "CCI Auvergne-Rhône-Alpes",
+        "CCI Bretagne",
+        "CCI Centre-Val de Loire",
+        "CCI Grand-Est",
+        "CCI Hauts-de-France",
+        "CCI Loir-et-Cher",
+        "CCI Loiret",
+        "CCI Morbihan",
+        "CCI Normandie",
+        "CCI Occitanie",
+        "CCI Île-de-France",
+        "CCI",
+        "CMA Auvergne-Rhône-Alpes",
+        "CMA Bourgogne-Franche-Comté",
+        "CMA Bretagne",
+        "CMA Centre-Val de Loire",
+        "CMA Grand-Est",
+        "CMA Hauts-de-France",
+        "CMA La Réunion",
+        "CMA Loiret",
+        "CMA Normandie",
+        "CMA Nouvelle-Aquitaine",
+        "CMA Provence-Alpes-Côte-D'Azur",
+        "CMA Rhône",
+        "CMA Île-de-France",
+        "CMA",
+        "DDFIP",
+        "EcoCO2",
+        "La Poste",
+        "Ministère de la Transition Écologique et Solidaire",
+        "ORACE"
+      ]
+    }
+  }
 }
