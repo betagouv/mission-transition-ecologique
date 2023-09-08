@@ -209,7 +209,11 @@ import '@gouvfr/dsfr/dist/core/core.main.min.css'               // Le CSS minima
 // import '@public/css/custom.css'
 
 // @ts-ignore
+<<<<<<< HEAD
 import jsonDataset from '@/public/data/generated/dataset_out.json'
+=======
+import jsonDataset from '@public/data/output/dataset_out.json'
+>>>>>>> 0f774c1 (reset json import in TeeApp)
 console.log('TeeApp > jsonDataset :', jsonDataset)
 
 import { ref, onBeforeMount } from 'vue'
@@ -247,8 +251,7 @@ const publicPath = `${deployUrl}${metaEnv.BASE_URL}`
 // @ts-ignore
 // console.log('TeeApp - process.env :', process.env)
 // @ts-ignore
-const yamlPrograms = jsonDataset
-// const yamlPrograms = deployMode ? jsonDataset : process.env.programs
+const yamlPrograms = deployMode ? jsonDataset : process.env.programs
 // const yamlPrograms = process.env.programs
 // console.log('TeeApp - yamlPrograms :', yamlPrograms)
 
