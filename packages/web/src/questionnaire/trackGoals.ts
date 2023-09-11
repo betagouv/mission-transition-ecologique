@@ -23,7 +23,7 @@ export const goals = {
   },
   options: [
     {
-      value: { user_goals: 'impact' },
+      value: { user_goals: 'impact', objectif: 'impact carbone' },
       title: { fr: 'Impact environnemental' },
       label: { fr: "🌱 Mesurer mon impact carbone et le réduire" },
       next: {
@@ -31,7 +31,7 @@ export const goals = {
       }
     },
     {
-      value: { user_goals: 'energy' },
+      value: { user_goals: 'energy', objectif: 'ma performance énergétique' },
       title: { fr: "Gestion de l'énergie" },
       label: { fr: "⚡️ Améliorer la performance énergétique de mon entreprise" },
       next: {
@@ -39,7 +39,7 @@ export const goals = {
       }
     },
     {
-      value: { user_goals: 'trash' },
+      value: { user_goals: 'trash', objectif: 'la gestion des déchets' },
       title: { fr: 'Gestion des déchets' },
       label: { fr: "🗑 Mieux gérer mes déchets" },
       next: {
@@ -47,7 +47,7 @@ export const goals = {
       }
     },
     {
-      value: { user_goals: 'economies' },
+      value: { user_goals: 'economies', objectif: 'faire des économies' },
       title: { fr: 'Economies' },
       label: { fr: "💶 Faire des économies en réduisant nos pertes en énergie, matière, déchets et eau" },
       next: {
@@ -55,7 +55,7 @@ export const goals = {
       }
     },
     {
-      value: { user_goals: 'mobility' },
+      value: { user_goals: 'mobility', objectif: 'la mobilité durable' },
       title: { fr: 'Mobilité durable' },
       label: { fr: "🚲 Engager une démarche de mobilité durable" },
       next: {
@@ -63,7 +63,7 @@ export const goals = {
       }
     },
     {
-      value: { user_goals: 'renovation' },
+      value: { user_goals: 'renovation', objectif: 'rénover mon bâtiment' },
       title: { fr: 'Rénovation du bâtiment' },
       label: { fr: "👷 Rénover mon bâtiment" },
       next: {
@@ -71,7 +71,7 @@ export const goals = {
       }
     },
     {
-      value: { user_goals: 'ecoconception' },
+      value: { user_goals: 'ecoconception', objectif: 'ma performance environnementale' },
       title: { fr: 'Eco-conception' },
       label: { fr: "💡 Améliorer la performance environnementale de mes produits et services" },
       next: {
@@ -80,7 +80,7 @@ export const goals = {
     },
     {
       disabled: true,
-      value: { user_goals: 'consolidation' },
+      value: { user_goals: 'consolidation', objectif: 'investir durable' },
       title: { fr: 'Consolider mon projet' },
       label: { fr: "📂 Consolider mon projet d'investissement durable" },
       next: {
@@ -89,7 +89,7 @@ export const goals = {
     },
     {
       disabled: true,
-      value: { user_goals: '*' },
+      value: { user_goals: '*', objectif: 'je ne sais pas encore' },
       title: { fr: 'Autre' },
       label: { fr: "💁 Je ne sais pas encore" },
       next: {

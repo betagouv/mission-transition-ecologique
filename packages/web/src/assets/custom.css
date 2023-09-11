@@ -429,6 +429,11 @@ code {
   }
 }
 
+/* FORMS */
+.fr-input-group .required {
+  color: red;
+}
+
 /* TRANSITIONS */
 .slide-fade-enter-active {
   transition-delay: .4s;

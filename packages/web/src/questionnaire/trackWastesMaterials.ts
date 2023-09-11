@@ -2,7 +2,7 @@ export const wastesMaterials = {
   id: 'track_wastes_materials',
   category: 'myWastes',
   title: { fr: 'Matières premières' },
-  label: { fr: "Pensez-vous avoir un enjeu important sur les pertes de vos matières premières ?" },
+  label: { fr: "Avez-vous pour objectif de réduire vos pertes de matières premières ou votre production de déchets ?" },
   interface: {
     component: 'buttons',
   },
@@ -16,7 +16,7 @@ export const wastesMaterials = {
     {
       value: { wastes_materials : 'yes' },
       title: { fr: 'Oui' },
-      label: { fr: "👍 Oui, je pense que c'est un enjeu important" },
+      label: { fr: "👍 Oui, nous aimerions limiter nos pertes de matières premières" },
       next: {
         default: 'track_water_stake'
       }
@@ -24,7 +24,7 @@ export const wastesMaterials = {
     {
       value: { wastes_materials : 'no' },
       title: { fr: "Non" },
-      label: { fr: "🗑 Non, pas vraiment" },
+      label: { fr: "❌ Non, pas vraiment" },
       next: {
         default: 'track_water_stake'
       }
@@ -32,7 +32,7 @@ export const wastesMaterials = {
     {
       value: { wastes_materials: 'unknown' },
       title: { fr: 'Je ne sais pas' },
-      label: { fr: "Je ne sais pas ou je ne suis pas concerné" },
+      label: { fr: "Je ne sais pas / Je ne suis pas concerné" },
       next: {
         default: 'track_water_stake'
       }

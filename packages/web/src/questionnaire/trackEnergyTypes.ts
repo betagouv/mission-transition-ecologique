@@ -1,17 +1,8 @@
-export const energyStake = {
-  id: 'track_energy_stake',
+export const energyTypes = {
+  id: 'track_energy_types',
   category: 'myEnergy',
   title: { fr: "Source principale" },
   label: { fr: "Quelle est la source principale d'énergie pour vos locaux ?" },
-  callout: {
-    header: { fr: 'Thématique' },
-    headerStyle: 'color: #000091; font-weight: 400; font-size: 1.3rem; margin-bottom: auto;',
-    bgColor: '#FACF35',
-    title: { fr : "Votre gestion de l'énergie" },
-    titleStyle: 'color: #000091;',
-    bigTitle: true,
-    imageLeft: 'images/thema/thema-energie.svg',
-  },
   interface: {
     component: 'buttons',
   },
@@ -23,7 +14,7 @@ export const energyStake = {
   },
   options: [
     {
-      value: { energy_stake : 'electric' },
+      value: { energy_type : 'electric' },
       title: { fr: 'Electrique' },
       label: { fr: "⚡️ Électrique" },
       next: {
@@ -31,7 +22,7 @@ export const energyStake = {
       }
     },
     {
-      value: { energy_stake : 'gas' },
+      value: { energy_type : 'gas' },
       title: { fr: "Gas" },
       label: { fr: "💨 Gaz" },
       next: {
@@ -39,7 +30,7 @@ export const energyStake = {
       }
     },
     {
-      value: { energy_stake : 'fuel' },
+      value: { energy_type : 'fuel' },
       title: { fr: "Fioul" },
       label: { fr: "⛽️ Essence / fioul" },
       next: {
@@ -47,7 +38,7 @@ export const energyStake = {
       }
     },
     {
-      value: { energy_stake : 'coal' },
+      value: { energy_type : 'coal' },
       title: { fr: "Charbon" },
       label: { fr: "〰 Charbon" },
       next: {
@@ -55,7 +46,7 @@ export const energyStake = {
       }
     },
     {
-      value: { energy_stake : 'wood' },
+      value: { energy_type : 'wood' },
       title: { fr: "Bois" },
       label: { fr: "🪵 Bois" },
       next: {
@@ -63,7 +54,7 @@ export const energyStake = {
       }
     },
     {
-      value: { energy_stake: 'unknown' },
+      value: { energy_type: 'unknown' },
       title: { fr: 'Je ne sais pas' },
       label: { fr: "Je ne sais pas ou je ne suis pas concerné" },
       next: {
@@ -71,7 +62,7 @@ export const energyStake = {
       }
     },
     {
-      value: { energy_stake: 'other' },
+      value: { energy_type: 'other' },
       title: { fr: 'Autre' },
       label: { fr: "Autre : " },
       hasInput: 'text',
