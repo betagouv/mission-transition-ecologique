@@ -63,5 +63,13 @@ export const frDict = {
     myEnergy: "⚡️ Energie",
     myStrategy: '🎲️ Stratégie',
     results: '✅ Résultats',
+  },
+  articles: {
+    accompagnement: {
+      this: 'cet'
+    },
+    financement: {
+      this: 'ce'
+    }
   }
 }

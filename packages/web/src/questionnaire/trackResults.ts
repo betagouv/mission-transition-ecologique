@@ -32,7 +32,7 @@ export const results = {
   form: {
     value: 'contact_form.email',
     // label: { fr: 'Vous êtes intéressé.e par le dispositif {title} ?' },
-    label: { fr: 'Vous souhaitez bénéficier de cet {natureAide} ?' },
+    label: { fr: 'Vous souhaitez bénéficier de {prefixAide} {natureAide} ?' },
     hint: { fr: "👋 Un conseiller vous contactera dans les 5 jours"},
     // intro: { fr: `
     //   <h2>

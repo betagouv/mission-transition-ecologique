@@ -27,7 +27,7 @@
       v-if="formOptions.label"
       class="fr-text-center">
       <!-- {{ formOptions.label[choices.lang] }} -->
-      {{ choices.ti(formOptions.label[choices.lang], { "natureAide": program["nature de l'aide"] }) || '' }}
+      {{ choices.ti(formOptions.label[choices.lang], { "prefixAide": findPrefix(program["nature de l'aide"]), "natureAide": program["nature de l'aide"] }) || '' }}
     </h3>
 
     <!-- FORM LABEL -->
@@ -254,6 +254,10 @@ const canSaveFrom = computed(() => {
   return boolArr.every(v => (!!v && v !== ''))
 })   
 
+const findPrefix = (str: string) => {
+  return choices.t(`articles.${str}.this`)
+}
+
 onBeforeMount(() => {
   // console.log('TeeForm > onBeforeMount >  props.formOptions :', props.formOptions)
   // console.log('TeeForm > onBeforeMount >  usedTracks :', usedTracks)
@@ -278,12 +282,12 @@ onBeforeMount(() => {
         const defaultValStr = defaultVal.toString()
         const dataStructure = field.dataStructure || {}
         const dataMapping = field.dataMapping || []
-        // console.log('TeeForm > onBeforeMount > defaultVal : ', defaultVal)
-        // console.log('TeeForm > onBeforeMount > dataStructure : ', dataStructure)
-        // console.log('TeeForm > onBeforeMount > dataMapping : ', dataMapping)
-        // console.log('TeeForm > onBeforeMount > trackValues : ', trackValues)
+        console.log('TeeForm > onBeforeMount > defaultVal : ', defaultVal)
+        console.log('TeeForm > onBeforeMount > dataStructure : ', dataStructure)
+        console.log('TeeForm > onBeforeMount > dataMapping : ', dataMapping)
+        console.log('TeeForm > onBeforeMount > trackValues : ', trackValues)
         const values = remapItem(dataStructure, dataMapping, {}, trackValues, props, undefined, [], choices.lang)
-        // console.log('TeeForm > onBeforeMount > values : ', values)
+        console.log('TeeForm > onBeforeMount > values : ', values)
         defaultVal = choices.ti(defaultValStr, values)
       }
       initValues[field.id] = defaultVal
