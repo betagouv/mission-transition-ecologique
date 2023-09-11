@@ -12,7 +12,7 @@ export const help = {
   },
   interface: {
     component: 'cards',
-    columnWidth: 6,
+    columnWidth: 4,
   },
   behavior: {
     multipleChoices: false,
@@ -43,6 +43,19 @@ export const help = {
       imageTop: 'images/tracks/j-ai-un-obectif.svg',
       next: {
         default: 'track_siret'
+      }
+    },
+    {
+      disabled: true,
+      value: { user_help: 'direct' },
+      title: { fr: "Résultats" },
+      label: { fr: "Les résultas" },
+      resume: { fr: 'Accès direct à tous les résultats' },
+      hintImage: { fr: '0 min. chrono !' },
+      hintImageIcon: 'fr-icon-timer-line',
+      imageTop: 'images/tracks/j-ai-un-obectif.svg',
+      next: {
+        default: 'track_results'
       }
     }
   ]

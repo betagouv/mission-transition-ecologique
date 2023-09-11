@@ -27,23 +27,23 @@ export const waterStake = {
       title: { fr: 'Oui' },
       label: { fr: "👍 Oui, je pense que c'est un enjeu pour mon entreprise" },
       next: {
-        default: 'track_energy_stake'
+        default: 'track_energy_reduction_priority'
       }
     },
     {
       value: { water_stake : 'no' },
       title: { fr: "Non" },
-      label: { fr: "🗑 Non, pas vraiment" },
+      label: { fr: "👎 Non, pas vraiment" },
       next: {
-        default: 'track_energy_stake'
+        default: 'track_energy_reduction_priority'
       }
     },
     {
       value: { water_stake: 'unknown' },
       title: { fr: 'Je ne sais pas' },
-      label: { fr: "Je ne sais pas ou je ne suis pas concerné" },
+      label: { fr: "Aucune idée !" },
       next: {
-        default: 'track_energy_stake'
+        default: 'track_energy_reduction_priority'
       }
     }
   ]

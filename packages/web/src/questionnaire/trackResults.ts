@@ -4,7 +4,7 @@ export const results = {
   title: { fr: 'Dispositifs' },
   label: { fr: 'Vos résultats'},
   hint: { fr: '🎉 Félicitations, vous avez terminé !'},
-  resume: { fr: "D’après les informations que vous avez renseignées, voici les accompagnements dont vous pouvez bénéficier pour vous aider à diminuer votre empreinte carbone."},
+  resume: { fr: "D’après les informations que vous avez renseignées, voici les accompagnements dont vous pouvez bénéficier pour diminuer l'empreinte écologique de votre entreprise."},
   intro: { fr: 'Résultats'},
   interface: {
     component: 'results',
@@ -32,26 +32,26 @@ export const results = {
   form: {
     value: 'contact_form.email',
     // label: { fr: 'Vous êtes intéressé.e par le dispositif {title} ?' },
-    label: { fr: 'Vous souhaitez en connaître davantage ?' },
-    hint: { fr: "👋 Posez votre question, un conseiller vous contactera dans les 5 jours"},
-    intro: { fr: `
-      <h2>
-        <span
-          class="fr-icon-phone-fill" 
-          aria-hidden="true"></span>
-        Vous souhaitez en connaître d'avantage ?
-      </h2>
-      <h5>
-        N'hésitez pas à nous laisser vos coordonnées, 
-        nous nous ferons un plaisir de vous aider. 
-      </h5>
-    ` },
+    label: { fr: 'Vous souhaitez bénéficier de cet {natureAide} ?' },
+    hint: { fr: "👋 Un conseiller vous contactera dans les 5 jours"},
+    // intro: { fr: `
+    //   <h2>
+    //     <span
+    //       class="fr-icon-phone-fill" 
+    //       aria-hidden="true"></span>
+    //     Vous souhaitez en connaître d'avantage ?
+    //   </h2>
+    //   <h5>
+    //     N'hésitez pas à nous laisser vos coordonnées, 
+    //     nous nous ferons un plaisir de vous aider. 
+    //   </h5>
+    // ` },
     fields: [
       {
         id: 'name',
         label: { fr: 'Prénom'},
         // hint: { fr: 'Camille' },
-        required: false,
+        required: true,
         type: 'text',
         cols: 6,
         // for debugging purposes
@@ -61,7 +61,7 @@ export const results = {
         id: 'surname',
         label: { fr: 'Nom'},
         // hint: { fr: 'Dujardin' },
-        required: false,
+        required: true,
         type: 'text',
         cols: 6,
         // for debugging purposes
@@ -107,8 +107,43 @@ export const results = {
         hint: { fr: 'Je souhaite connaître les aides pour installer des éoliennes sur mon immeuble' },
         required: false,
         type: 'textarea',
+        rows: 6,
         // for debugging purposes
-        // defaultValue: 'Just some tests with Brevo API'
+        defaultValue: `Bonjour,\n
+Mon entreprise a une activité de type "{secteur}".
+J'aimerais bénéficier du dispositif "{titreAide}" ({natureAide}). \n
+Merci d'avance pour votre appel`,
+        injectInText: true,
+        dataStructure: {
+          secteur: '',
+          natureAide: '',
+          titreAide: '',
+          objectif: '',
+        },
+        dataMapping: [
+          {
+            from: 'usedTracks',
+            id: 'secteur',
+            dataField: "secteur"
+          },
+          {
+            from: 'usedTracks',
+            id: 'objectif',
+            dataField: "objectif"
+          },
+          {
+            from: 'propsPath',
+            id: 'program',
+            path: "program.nature de l'aide",
+            dataField: 'natureAide',
+          },
+          {
+            from: 'propsPath',
+            id: 'program',
+            path: 'program.titre',
+            dataField: "titreAide"
+          }
+        ]
       },
       {
         id: 'cgu',

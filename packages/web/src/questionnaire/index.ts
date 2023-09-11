@@ -17,7 +17,8 @@ import { wastesStake } from './trackWastesStake'
 import { wastesSorting } from './trackWastesSorting'
 import { wastesMaterials } from './trackWastesMaterials'
 import { waterStake } from './trackWaterStake'
-import { energyStake } from './trackEnergyStake'
+// import { energyTypes } from './trackEnergyTypes'
+import { energyReductionPriority } from './trackEnergyReduction'
 import { strategyAudits } from './trackStrategyAudits'
 import { strategyAuditsSelect } from './trackStrategyAuditsSelect'
 
@@ -45,7 +46,8 @@ export const tracks = [
   wastesSorting,
   wastesMaterials,
   waterStake,
-  energyStake,
+  energyReductionPriority,
+  // energyTypes,
   strategyAudits,
   strategyAuditsSelect,
 
