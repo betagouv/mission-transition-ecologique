@@ -260,7 +260,7 @@ interface Props {
   locale?: string,
   msg?: string,
   seed: string,
-  datasetUrl: string,
+  datasetUrl?: string,
   maxDepth?: string
   debugSwitch?: string,
   debug?: string,
