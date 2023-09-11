@@ -293,7 +293,6 @@ const resetSelection = () => {
 }
 
 const processInput = async () => {
-  // console.log('TeeTrackInput > processInput > track :', track)
   // console.log('TeeTrackInput > processInput > props.option :', props.option)
   
   isLoading.value = true
@@ -308,7 +307,8 @@ const processInput = async () => {
 
   // loop option's callbacks
   for (const callback of activeCallbacks) {
-    console.log()
+    // console.log()
+    // console.log('TeeTrackInput > processInput >  inputValue.value :', inputValue.value)
     // console.log('TeeTrackInput > processInput >  callback :', callback)
     let value = inputValue.value
     // Clean input value

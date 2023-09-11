@@ -10,7 +10,8 @@ const dataTarget = {
   structure_sizes: '',
   denomination: '',
   label_sectors: undefined,
-  project_sectors: undefined
+  project_sectors: undefined,
+  secteur: undefined
 }
 
 // const nextExceptions = [
@@ -95,7 +96,7 @@ export const siret = {
       label: { fr: "Renseignez le SIRET de votre entreprise (14 chiffres)" },
       placeholder: { fr: 'ex : 830 141 321 00034' },
       // for debugging purposes
-      // defaultInput: '830 141 321 00034',
+      defaultInput: '830 141 321 00034',
       /* Examples =>
         83014132100034 - TPE
         81759468200020 - auto-entreprise
@@ -143,6 +144,21 @@ export const siret = {
                   findInRef: 'nafCodes',
                   findFromField: 'NIV5',
                   retrieveFromField: 'tags'
+                }
+              ]
+            },
+            {
+              from: 'rawData',
+              id: 'secteur',
+              path: 'etablissement.uniteLegale.activitePrincipaleUniteLegale',
+              dataField: 'secteur',
+              onlyRemap: true,
+              cleaning: [
+                {
+                  operation: 'findFromRefs',
+                  findInRef: 'nafCodes',
+                  findFromField: 'NIV5',
+                  retrieveFromField: 'tagsFr'
                 }
               ]
             },
