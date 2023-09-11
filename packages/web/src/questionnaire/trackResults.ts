@@ -111,7 +111,7 @@ export const results = {
         // for debugging purposes
         defaultValue: `Bonjour,\n
 Mon entreprise a une activité de type "{secteur}".
-J'aimerais bénéficier du dispositif "{titreAide}" ({natureAide}). \n
+J'aimerais bénéficier du dispositif "{titreAide}". \n
 Merci d'avance pour votre appel`,
         injectInText: true,
         dataStructure: {
@@ -131,12 +131,12 @@ Merci d'avance pour votre appel`,
             id: 'objectif',
             dataField: "objectif"
           },
-          {
-            from: 'propsPath',
-            id: 'program',
-            path: "program.nature de l'aide",
-            dataField: 'natureAide',
-          },
+          // {
+          //   from: 'propsPath',
+          //   id: 'program',
+          //   path: "program.nature de l'aide",
+          //   dataField: 'natureAide',
+          // },
           {
             from: 'propsPath',
             id: 'program',
