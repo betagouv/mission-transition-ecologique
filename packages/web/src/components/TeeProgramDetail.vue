@@ -89,19 +89,6 @@
     <div
       v-if="trackConfig.config?.showProgramInfos" 
       class="fr-grid-row fr-grid-row--gutters fr-mb-5v">
-      <!-- PROGRAM PROVIDERS -->
-      <div
-        :class="columnTiles">
-        <TeeTile
-          :title="choices.t('program.programProviders')"
-          :image-path="`${choices.publicPath}images/TEE-porteur.svg`">
-          <template #description>
-            <span>
-              {{ program['opérateur de contact'] }}
-            </span>
-          </template>
-        </TeeTile>
-      </div>
 
       <!-- PROGRAM TYPE -->
       <div
@@ -153,6 +140,19 @@
         />
       </div>
 
+      <!-- PROGRAM PROVIDERS -->
+      <div
+        :class="columnTiles">
+        <TeeTile
+          :title="choices.t('program.programProviders')"
+          :image-path="`${choices.publicPath}images/TEE-porteur.svg`">
+          <template #description>
+            <span>
+              {{ program['opérateur de contact'] }}
+            </span>
+          </template>
+        </TeeTile>
+      </div>
       <!-- PROGRAM DURATION -->
       <!-- <div
         v-if="program[""]" 
@@ -194,6 +194,7 @@
         :track-id="trackConfig.id"
         :form-options="trackConfig.form"
         :data-props="{ programId: program.id }"
+        :program="program"
         :debug="debug"/>
     </div>
   </div>
@@ -252,6 +253,7 @@
                     :track-id="trackConfig.id"
                     :form-options="trackConfig.form"
                     :data-props="{ programId: program.id }"
+                    :program="program"
                     :debug="debug"/>
                 </div>
               </div>

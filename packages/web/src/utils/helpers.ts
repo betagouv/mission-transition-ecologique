@@ -258,6 +258,10 @@ export const remapItem = (
       case 'props':
         value = props && props[dm.id]
         break
+      case 'propsPath':
+        // console.log('utils > helpers > remapItem >  rawData :', rawData)
+        value = dm.path && getFromOnePath(props, dm.path )
+        break
       case 'rawData':
         // console.log('utils > helpers > remapItem >  rawData :', rawData)
         value = dm.path && getFromOnePath(rawData, dm.path )

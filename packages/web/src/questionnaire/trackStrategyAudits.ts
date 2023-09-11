@@ -5,12 +5,12 @@ export const strategyAudits = {
   label: { fr: "Pour finir, avez-vous déjà réalisé des audits environnementaux ces 2 dernières années ?" },
   callout: {
     header: { fr: 'Thématique' },
-    headerStyle: 'color: #000091; font-weight: 400; font-size: 1.3rem; margin-bottom: auto;',
-    bgColor: '#1EBEBE',
-    title: { fr : "Votre stratégie" },
-    titleStyle: 'color: #000091;',
+    headerStyle: 'color: white; font-weight: 400; font-size: 1.3rem; margin-bottom: auto;',
+    bgColor: '#646EFA',
+    title: { fr : "Votre stratégie environnementale" },
+    titleStyle: 'color: white;',
     bigTitle: true,
-    imageLeft: 'images/tracks/je-ne-sais-pas-par-ou-commencer.svg',
+    imageLeft: 'images/thema/thema-strategie.svg',
   },
   interface: {
     component: 'buttons',
