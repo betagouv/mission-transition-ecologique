@@ -12,7 +12,7 @@ export const help = {
   },
   interface: {
     component: 'cards',
-    columnWidth: 4,
+    columnWidth: 6,
   },
   behavior: {
     multipleChoices: false,
