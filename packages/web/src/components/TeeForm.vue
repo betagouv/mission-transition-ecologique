@@ -282,12 +282,12 @@ onBeforeMount(() => {
         const defaultValStr = defaultVal.toString()
         const dataStructure = field.dataStructure || {}
         const dataMapping = field.dataMapping || []
-        console.log('TeeForm > onBeforeMount > defaultVal : ', defaultVal)
-        console.log('TeeForm > onBeforeMount > dataStructure : ', dataStructure)
-        console.log('TeeForm > onBeforeMount > dataMapping : ', dataMapping)
-        console.log('TeeForm > onBeforeMount > trackValues : ', trackValues)
+        // console.log('TeeForm > onBeforeMount > defaultVal : ', defaultVal)
+        // console.log('TeeForm > onBeforeMount > dataStructure : ', dataStructure)
+        // console.log('TeeForm > onBeforeMount > dataMapping : ', dataMapping)
+        // console.log('TeeForm > onBeforeMount > trackValues : ', trackValues)
         const values = remapItem(dataStructure, dataMapping, {}, trackValues, props, undefined, [], choices.lang)
-        console.log('TeeForm > onBeforeMount > values : ', values)
+        // console.log('TeeForm > onBeforeMount > values : ', values)
         defaultVal = choices.ti(defaultValStr, values)
       }
       initValues[field.id] = defaultVal
