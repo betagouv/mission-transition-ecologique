@@ -16,7 +16,11 @@
     "build-front": "npm run build -w packages/web",
     "dev-back": "npm run dev -w packages/backend",
     "build-back": "npm run build -w packages/backend",
+<<<<<<< HEAD
     "build-json-output": "npm run build-front-json-output -w packages/data"
+=======
+    "build-json-output": "npm run build -w packages/data"
+>>>>>>> 022f606 (refacto: migrating json building logic into package/data + nodemon + rename target folder as generated in front)
   },
   "workspaces": [
     "./packages/*"
