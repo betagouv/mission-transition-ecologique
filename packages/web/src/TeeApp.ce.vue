@@ -209,7 +209,7 @@ import '@gouvfr/dsfr/dist/core/core.main.min.css'               // Le CSS minima
 // import '@public/css/custom.css'
 
 // @ts-ignore
-import jsonDataset from '@public/data/output/dataset_out.json'
+import jsonDataset from '@public/data/generated/dataset_out.json'
 console.log('TeeApp > jsonDataset :', jsonDataset)
 
 import { ref, onBeforeMount } from 'vue'
@@ -233,7 +233,7 @@ import TeeProgramDetail from './components/TeeProgramDetail.vue'
 // @ts-ignore
 import TeeCredits from './components/TeeCredits.vue'
 
-const appId = 'gov-aid-tree-app'
+// const appId = 'gov-aid-tree-app'
 
 // @ts-ignore
 const metaEnv = import.meta.env
@@ -247,7 +247,8 @@ const publicPath = `${deployUrl}${metaEnv.BASE_URL}`
 // @ts-ignore
 // console.log('TeeApp - process.env :', process.env)
 // @ts-ignore
-const yamlPrograms = deployMode ? jsonDataset : process.env.programs
+const yamlPrograms = jsonDataset
+// const yamlPrograms = deployMode ? jsonDataset : process.env.programs
 // const yamlPrograms = process.env.programs
 // console.log('TeeApp - yamlPrograms :', yamlPrograms)
 

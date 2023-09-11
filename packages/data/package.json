@@ -1,0 +1,37 @@
+{
+  "name": "tee-data",
+  "version": "1.0.0",
+  "description": "Package in charge of storing and building TEE datasets",
+  "scripts": {
+    "build-front-json-output": "nodemon src/buildJsonOutput.ts -e ts,yaml",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/betagouv/transition-ecologique-entreprises-widget.git"
+  },
+  "keywords": [
+    "data",
+    "tee",
+    "transition",
+    "écologie",
+    "yaml",
+    "node"
+  ],
+  "author": "Julien Paris & Pierre Camilleri",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/betagouv/transition-ecologique-entreprises-widget/issues"
+  },
+  "homepage": "https://github.com/betagouv/transition-ecologique-entreprises-widget#readme",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "fs": "^0.0.1-security",
+    "js-yaml": "^4.1.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.1",
+    "nodemon": "^3.0.1"
+  }
+}
