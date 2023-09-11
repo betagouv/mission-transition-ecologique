@@ -45,8 +45,13 @@ export interface FormField {
   hint?: any,
   cols?: number,
   type?: FormFieldTypes,
+  rows?: number,
   defaultValue?: boolean | string | number,
-  preFillFrom?: FormCallbackDataMapping
+  
+  injectInText?: boolean,
+  dataStructure?: object,
+  dataMapping?: FormCallbackDataMapping[],
+  preFillFrom?: FormCallbackDataMapping,
 }
 
 export interface FormCallback {

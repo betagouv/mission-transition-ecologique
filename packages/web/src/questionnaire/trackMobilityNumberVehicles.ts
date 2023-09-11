@@ -16,7 +16,7 @@ export const mobilityNumberVehicles = {
     {
       value: { mobility_number_vehicles: 'yes' },
       title: { fr: 'Oui' },
-      label: { fr: "Oui" },
+      label: { fr: "✅ Oui" },
       next: {
         default: 'track_mobility_energy'
       }
@@ -24,7 +24,7 @@ export const mobilityNumberVehicles = {
     {
       value: { mobility_number_vehicles: 'no' },
       title: { fr: "Non" },
-      label: { fr: "Non" },
+      label: { fr: "❌ Non, l’entreprise ne possède aucun véhicule motorisé" },
       next: {
         default: 'track_wastes_stake'
       }

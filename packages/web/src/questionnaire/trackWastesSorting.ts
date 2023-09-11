@@ -22,9 +22,9 @@ export const wastesSorting = {
       }
     },
     {
-      value: { wastes_sorting : 'no' },
-      title: { fr: "Non" },
-      label: { fr: "🗑 Non, je peux faire mieux !" },
+      value: { wastes_sorting : 'can do better' },
+      title: { fr: "Je peux faire mieux" },
+      label: { fr: "🗑 Je peux faire mieux !" },
       next: {
         default: 'track_wastes_materials'
       }
