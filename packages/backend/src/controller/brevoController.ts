@@ -26,10 +26,6 @@ interface BrevoBody {
   attributes: BrevoBodyAttributes
 }
 
-const exampleBrevoResponse = {
-  id: 42
-}
-
 @SuccessResponse('200', 'OK')
 @Route('brevo')
 export class BrevoController extends Controller {
@@ -42,7 +38,7 @@ export class BrevoController extends Controller {
    * @example requestBody: {"email": "contact@multi.coop", "attributes": { "NOM": "Dupont", "PRENOM": "Camille", "TEL" : "0605040302", "SIRET": "83014132100034", "OPT_IN": true }}
    */
 
-  @Example<BrevoResponse>(exampleBrevoResponse)
+  @Example<BrevoResponse>({ id: 42 })
   @Post('post_brevo_form')
   public async health(
     @Body() requestBody: BrevoBody,
@@ -66,7 +62,6 @@ export class BrevoController extends Controller {
       return requestFailedResponse(500, { message: `Server internal error` })
     }
 
-    const brevo = brevoResult.value
-    return brevo
+    return brevoResult.value
   }
 }

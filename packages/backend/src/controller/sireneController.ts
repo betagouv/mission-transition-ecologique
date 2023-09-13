@@ -186,7 +186,6 @@ export class SireneController extends Controller {
       return requestFailedResponse(500, { message: `Server internal error` })
     }
 
-    const etablissement = etablissementResult.value
-    return etablissement
+    return etablissementResult.value
   }
 }
