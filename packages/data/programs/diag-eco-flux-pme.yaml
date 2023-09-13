@@ -23,10 +23,6 @@ conditions:
     operator: "or"
     value:
       - "*"
-  - type: structure_sizes
-    operator: "or"
-    value:
-      - PME
   - type: user_goals
     operator: "or"
     value:
@@ -36,3 +32,13 @@ autres opérateurs:
   - ADEME
 nature de l'aide: accompagnement
 coût de l'accompagnement: 3 000 € HT après subvention de 50 %
+
+publicodes:
+   entreprise:
+   entreprise . effectif:
+
+   éligibilité:
+     toutes ces conditions:
+       - entreprise . effectif >= 50
+       - entreprise . effectif <= 250
+

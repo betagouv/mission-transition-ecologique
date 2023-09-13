@@ -28,13 +28,6 @@ conditions:
       # - agriculture
       # - tourism
       # - craft
-  - type: structure_sizes
-    operator: "or"
-    value:
-      - PME
-      - TPE
-      - ETI
-      - GE
   - type: user_goals
     operator: "or"
     value:
@@ -44,3 +37,12 @@ conditions:
 opérateur de contact: CMA
 nature de l'aide: accompagnement
 coût de l'accompagnement: gratuit
+
+publicodes:
+  entreprise:
+  entreprise . effectif:
+
+  éligibilité:
+    toutes ces conditions:
+      - entreprise . effectif >= 20
+      - entreprise . effectif < 500

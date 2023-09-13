@@ -25,13 +25,6 @@ conditions:
     operator: "or"
     value:
       - "*"
-  - type: structure_sizes
-    operator: "or"
-    value:
-      - PME
-      - TPE
-      - ETI
-      - GE
   - type: user_goals
     operator: "or"
     value:
@@ -43,3 +36,10 @@ conditions:
 opérateur de contact: ADEME
 nature de l'aide: financement
 montant du financement: 50 à 80 %
+
+
+publicodes:
+  entreprise:
+  entreprise . effectif:
+
+  éligibilité: entreprise . effectif < 250
