@@ -1,5 +1,5 @@
 import { Result } from 'true-myth'
-import { Etablissement, BrevoResponse } from './types'
+import { Etablissement, ContactInfoResponse } from './types'
 
 export type EtablissementRepository = {
   getEtablissementBySiret: (siret: string) => Promise<Result<Etablissement, Error>>
@@ -10,5 +10,5 @@ export type BrevoRepository = {
     email: string,
     listIds: number[],
     attributes: object
-  ) => Promise<Result<BrevoResponse, Error>>
+  ) => Promise<Result<ContactInfoResponse, Error>>
 }

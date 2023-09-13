@@ -100,7 +100,7 @@ export interface BrevoDocument {
 }
 
 export interface BrevoBody {
-  email: string,
-  listIds: number[],
+  email: string
+  listIds: number[]
   attributes: object
 }

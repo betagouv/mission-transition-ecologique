@@ -1,7 +1,11 @@
 import { Body, Controller, Post, Route, SuccessResponse, TsoaResponse, Res, Example } from 'tsoa'
 import { createContact } from '../domain/features'
 import { BrevoRepository } from '../domain/spi'
-import { BrevoNotFoundError, BrevoBodyAttributes, BrevoResponse } from '../domain/types'
+import {
+  ServiceNotFoundError,
+  ContactInfoBodyAttributes,
+  ContactInfoResponse
+} from '../domain/types'
 import { requestBrevoAPI } from '../infrastructure/brevo-API'
 import { ErrorJSON, ValidateErrorJSON } from './types'
 
@@ -17,18 +21,18 @@ const brevoRepository: BrevoRepository = {
     requestBrevoAPI(process.env['BREVO_API_TOKEN'] || '', email, listIds, attributes)
 }
 
-interface BrevoNotFoundErrorJSON {
+interface ServiceNotFoundErrorJSON {
   message: 'Contact not created'
 }
 
-interface BrevoBody {
+interface ContactInfoBody {
   email: string
-  attributes: BrevoBodyAttributes
+  attributes: ContactInfoBodyAttributes
 }
 
 @SuccessResponse('200', 'OK')
 @Route('brevo')
-export class BrevoController extends Controller {
+export class ContactInfoController extends Controller {
   /**
    * Add a new contact to TEE's Brevo service.
    * Supply the email, the listId, and some attributes and receive the id of the contact created.
@@ -38,30 +42,30 @@ export class BrevoController extends Controller {
    * @example requestBody: {"email": "contact@multi.coop", "attributes": { "NOM": "Dupont", "PRENOM": "Camille", "TEL" : "0605040302", "SIRET": "83014132100034", "OPT_IN": true }}
    */
 
-  @Example<BrevoResponse>({ id: 42 })
-  @Post('post_brevo_form')
+  @Example<ContactInfoResponse>({ id: 42 })
+  @Post('contact-information')
   public async health(
-    @Body() requestBody: BrevoBody,
+    @Body() requestBody: ContactInfoBody,
     @Res() requestFailedResponse: TsoaResponse<500, ErrorJSON>,
     @Res() _validationFailedResponse: TsoaResponse<422, ValidateErrorJSON>,
-    @Res() notFoundResponse: TsoaResponse<404, BrevoNotFoundErrorJSON>
-  ): Promise<BrevoResponse> {
+    @Res() notFoundResponse: TsoaResponse<404, ServiceNotFoundErrorJSON>
+  ): Promise<ContactInfoResponse> {
     const bodyEmail = requestBody.email
     const bodyAttributes = requestBody.attributes
 
     const feat = createContact(brevoRepository)
-    const brevoResult = await feat.postNewContact(bodyEmail, listIds, bodyAttributes)
+    const contactInfoResult = await feat.postNewContact(bodyEmail, listIds, bodyAttributes)
 
-    if (brevoResult.isErr) {
-      const err = brevoResult.error
+    if (contactInfoResult.isErr) {
+      const err = contactInfoResult.error
 
-      if (err instanceof BrevoNotFoundError) {
+      if (err instanceof ServiceNotFoundError) {
         return notFoundResponse(404, { message: 'Contact not created' })
       }
 
       return requestFailedResponse(500, { message: `Server internal error` })
     }
 
-    return brevoResult.value
+    return contactInfoResult.value
   }
 }

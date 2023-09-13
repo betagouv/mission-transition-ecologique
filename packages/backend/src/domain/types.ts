@@ -93,28 +93,28 @@ export interface Etablissement {
   }>
 }
 
-export interface BrevoBodyAttributes {
-  NOM: string,
-  PRENOM: string,
-  TEL: string,
-  SIRET: string,
-  OPT_IN: boolean,
-  FORM_NEEDS?: string,
-  PROJECT_NEEDS?: string,
-  PROJECT_SECTORS?: string,
-  USER_ROLES?: string,
-  USER_GOALS?: string,
-  STRUCTURE_SIZE?: string,
-  PROGRAM_ID?: string,
+export interface ContactInfoBodyAttributes {
+  NOM: string
+  PRENOM: string
+  TEL: string
+  SIRET: string
+  OPT_IN: boolean
+  FORM_NEEDS?: string
+  PROJECT_NEEDS?: string
+  PROJECT_SECTORS?: string
+  USER_ROLES?: string
+  USER_GOALS?: string
+  STRUCTURE_SIZE?: string
+  PROGRAM_ID?: string
 }
 
-export interface BrevoBody {
-  email: string,
-  listIds: number[],
-  attributes: BrevoBodyAttributes
+export interface ContactInfoBody {
+  email: string
+  listIds: number[]
+  attributes: ContactInfoBodyAttributes
 }
 
-export interface BrevoResponse {
+export interface ContactInfoResponse {
   id: number
 }
 
@@ -127,4 +127,4 @@ class CustomError extends Error {
 }
 
 export class EstablishmentNotFoundError extends CustomError {}
-export class BrevoNotFoundError extends CustomError {}
+export class ServiceNotFoundError extends CustomError {}
