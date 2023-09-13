@@ -1,7 +1,7 @@
 id: diag-ecoconception
 titre: Diag Ecoconception
 promesse: Améliorez l'impact environnementale de vos produits et services
-description: | 
+description: |
   Bénéficiez des experts d'un conseil pour repenser la manière de concevoir vos produits, services et procédés.
 url: https://diag.bpifrance.fr/produit/diag-eco-conception
 illustration: images/TEE_ampoule.png
@@ -28,10 +28,7 @@ conditions:
   - type: structure_sizes
     operator: "or"
     value:
-      - PME
-      - TPE
       - ETI
-      - GE
   - type: user_goals
     operator: "or"
     value:
@@ -40,4 +37,4 @@ opérateur de contact: Bpifrance
 autres opérateurs:
   - ADEME
 nature de l'aide: accompagnement
-coût de l'accompagnement: 5 400 € HT après subvention de 70 %
+coût de l'accompagnement: 7 200 € HT après subvention de 60 %
