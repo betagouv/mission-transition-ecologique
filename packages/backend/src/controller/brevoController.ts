@@ -1,6 +1,6 @@
 import { Body, Controller, Post, Route, SuccessResponse, TsoaResponse, Res, Example } from 'tsoa'
-import { createContact } from '../domain/features'
-import { BrevoRepository } from '../domain/spi'
+import { createContactFeatures } from '../domain/features'
+import { ContactInfoRepository } from '../domain/spi'
 import {
   ServiceNotFoundError,
   ContactInfoBodyAttributes,
@@ -16,7 +16,7 @@ import { ErrorJSON, ValidateErrorJSON } from './types'
 const rawlistIds: string[] = process.env['BREVO_LIST_IDS']?.split(',') || ['4']
 const listIds: number[] = rawlistIds.map((id) => parseInt(id))
 
-const brevoRepository: BrevoRepository = {
+const brevoRepository: ContactInfoRepository = {
   postNewContact: async (email, attributes) =>
     requestBrevoAPI(process.env['BREVO_API_TOKEN'] || '', email, listIds, attributes)
 }
@@ -53,7 +53,7 @@ export class ContactInfoController extends Controller {
     const bodyEmail = requestBody.email
     const bodyAttributes = requestBody.attributes
 
-    const feat = createContact(brevoRepository)
+    const feat = createContactFeatures(brevoRepository)
     const contactInfoResult = await feat.postNewContact(bodyEmail, listIds, bodyAttributes)
 
     if (contactInfoResult.isErr) {

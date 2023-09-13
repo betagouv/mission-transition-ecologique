@@ -5,7 +5,7 @@ export type EtablissementRepository = {
   getEtablissementBySiret: (siret: string) => Promise<Result<Etablissement, Error>>
 }
 
-export type BrevoRepository = {
+export type ContactInfoRepository = {
   postNewContact: (
     email: string,
     listIds: number[],

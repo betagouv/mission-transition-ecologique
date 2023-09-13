@@ -1,12 +1,12 @@
-import { EtablissementRepository, BrevoRepository } from './spi'
+import { EtablissementRepository, ContactInfoRepository } from './spi'
 import { fetchEtablissement, postContact } from './api'
 
 /**
  * Injects infrastructure dependency into domain features
  */
-export const createFeatures = (etablissementRepository: EtablissementRepository) => {
+export const createEtablissementFeatures = (etablissementRepository: EtablissementRepository) => {
   /**
-   * fetchEtablissement passes through the Promise of the infrastructure
+   * fetchEtablissement passes through the Promise of the infrastructure layer
    * (promise of Etablissement in case of success, Error otherwise)
    * @param siret: a SIRET. Its format is expected to be 14 digits.
    */
@@ -16,16 +16,20 @@ export const createFeatures = (etablissementRepository: EtablissementRepository)
   return { fetchEtablissement }
 }
 
-export const createContact = (brevoRepository: BrevoRepository) => {
+export const createContactFeatures = (contactInfoRepository: ContactInfoRepository) => {
   /**
-   * postNewContact passes through the Promise of the infrastructure
+   * postNewContact passes through the Promise of the infrastructure layer
    * (promise of BrevoResult in case of success, Error otherwise)
    * @param email: an email
    * @param listIds: an array of brevo list ids
    * @param attributes: attributes
    */
-  const postNewContact: postContact = async (email: string, listIds: number[], attributes: object) => {
-    return brevoRepository.postNewContact(email, listIds, attributes)
+  const postNewContact: postContact = async (
+    email: string,
+    listIds: number[],
+    attributes: object
+  ) => {
+    return contactInfoRepository.postNewContact(email, listIds, attributes)
   }
   return { postNewContact }
 }
