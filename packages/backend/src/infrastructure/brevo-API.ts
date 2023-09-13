@@ -21,6 +21,8 @@ const makeHeaders = (token: string) => {
 /**
  * requestBrevoAPI requests data about user
  *
+ * documentation: 'https://developers.brevo.com/reference/createcontact',
+ *
  * @arg token - API access token
  */
 export const requestBrevoAPI = async (
@@ -29,13 +31,11 @@ export const requestBrevoAPI = async (
   listIds: number[],
   attributes: object
 ): Promise<Result<ContactID, Error>> => {
-  // helpDocumentation: 'https://developers.brevo.com/reference/createcontact',
   const api_brevo_url = `https://api.brevo.com/v3/contacts`
 
   try {
     const response: AxiosResponse<BrevoDocument> = await axios.post(
       api_brevo_url,
-      // add body here
       {
         email: email,
         listIds: listIds,
