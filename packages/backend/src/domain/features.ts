@@ -1,5 +1,5 @@
 import { EtablissementRepository, ContactInfoRepository } from './spi'
-import { fetchEtablissement, postContact } from './api'
+import { fetchEtablissement, postNewContact } from './api'
 
 /**
  * Injects infrastructure dependency into domain features
@@ -24,12 +24,12 @@ export const createContactFeatures = (contactInfoRepository: ContactInfoReposito
    * @param listIds: an array of brevo list ids
    * @param attributes: attributes
    */
-  const postNewContact: postContact = async (
+  const postNewContact: postNewContact = async (
     email: string,
     listIds: number[],
     attributes: object
   ) => {
-    return contactInfoRepository.postNewContact(email, listIds, attributes)
+    return contactInfoRepository.storeContactInfo(email, listIds, attributes)
   }
   return { postNewContact }
 }

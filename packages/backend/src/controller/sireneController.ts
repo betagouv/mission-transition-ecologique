@@ -10,7 +10,7 @@ import {
   Example,
   Produces
 } from 'tsoa'
-import { createFeatures } from '../domain/features'
+import { createEtablissementFeatures } from '../domain/features'
 import { EtablissementRepository } from '../domain/spi'
 import { EstablishmentNotFoundError, Etablissement } from '../domain/types'
 import { requestSireneAPI } from '../infrastructure/sirene-API'
@@ -173,7 +173,7 @@ export class SireneController extends Controller {
   ): Promise<Etablissement> {
     const requestedSiret = requestBody.siret
 
-    const feat = createFeatures(etablissementRepository)
+    const feat = createEtablissementFeatures(etablissementRepository)
     const etablissementResult = await feat.fetchEtablissement(requestedSiret)
 
     if (etablissementResult.isErr) {

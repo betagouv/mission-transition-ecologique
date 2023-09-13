@@ -1,11 +1,7 @@
 import { Body, Controller, Post, Route, SuccessResponse, TsoaResponse, Res, Example } from 'tsoa'
 import { createContactFeatures } from '../domain/features'
 import { ContactInfoRepository } from '../domain/spi'
-import {
-  ServiceNotFoundError,
-  ContactInfoBodyAttributes,
-  ContactInfoResponse
-} from '../domain/types'
+import { ServiceNotFoundError, ContactInfoBodyAttributes, ContactId } from '../domain/types'
 import { requestBrevoAPI } from '../infrastructure/brevo-API'
 import { ErrorJSON, ValidateErrorJSON } from './types'
 
@@ -17,7 +13,7 @@ const rawlistIds: string[] = process.env['BREVO_LIST_IDS']?.split(',') || ['4']
 const listIds: number[] = rawlistIds.map((id) => parseInt(id))
 
 const brevoRepository: ContactInfoRepository = {
-  postNewContact: async (email, attributes) =>
+  storeContactInfo: async (email, attributes) =>
     requestBrevoAPI(process.env['BREVO_API_TOKEN'] || '', email, listIds, attributes)
 }
 
@@ -42,14 +38,14 @@ export class ContactInfoController extends Controller {
    * @example requestBody: {"email": "contact@multi.coop", "attributes": { "NOM": "Dupont", "PRENOM": "Camille", "TEL" : "0605040302", "SIRET": "83014132100034", "OPT_IN": true }}
    */
 
-  @Example<ContactInfoResponse>({ id: 42 })
+  @Example<ContactId>({ id: 42 })
   @Post('contact-information')
   public async health(
     @Body() requestBody: ContactInfoBody,
     @Res() requestFailedResponse: TsoaResponse<500, ErrorJSON>,
     @Res() _validationFailedResponse: TsoaResponse<422, ValidateErrorJSON>,
     @Res() notFoundResponse: TsoaResponse<404, ServiceNotFoundErrorJSON>
-  ): Promise<ContactInfoResponse> {
+  ): Promise<ContactId> {
     const bodyEmail = requestBody.email
     const bodyAttributes = requestBody.attributes
 

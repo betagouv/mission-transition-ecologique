@@ -1,4 +1,4 @@
-import { ServiceNotFoundError, ContactInfoResponse } from '../domain/types'
+import { ServiceNotFoundError, ContactID } from '../domain/types'
 import axios, { AxiosError, AxiosResponse } from 'axios'
 import { BrevoDocument } from './types'
 import { ensureError } from './helpers'
@@ -28,7 +28,7 @@ export const requestBrevoAPI = async (
   email: string,
   listIds: number[],
   attributes: object
-): Promise<Result<ContactInfoResponse, Error>> => {
+): Promise<Result<ContactID, Error>> => {
   // helpDocumentation: 'https://developers.brevo.com/reference/createcontact',
   const api_brevo_url = `https://api.brevo.com/v3/contacts`
 

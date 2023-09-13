@@ -1,14 +1,14 @@
 import { Result } from 'true-myth'
-import { Etablissement, ContactInfoResponse } from './types'
+import { Etablissement, ContactId } from './types'
 
 export type EtablissementRepository = {
   getEtablissementBySiret: (siret: string) => Promise<Result<Etablissement, Error>>
 }
 
 export type ContactInfoRepository = {
-  postNewContact: (
+  storeContactInfo: (
     email: string,
     listIds: number[],
     attributes: object
-  ) => Promise<Result<ContactInfoResponse, Error>>
+  ) => Promise<Result<ContactId, Error>>
 }

@@ -114,7 +114,7 @@ export interface ContactInfoBody {
   attributes: ContactInfoBodyAttributes
 }
 
-export interface ContactInfoResponse {
+export interface ContactId {
   id: number
 }
 
