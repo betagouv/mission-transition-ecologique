@@ -1,14 +1,12 @@
 import {
   Body,
   Controller,
-  // Get,
   Post,
   Route,
   SuccessResponse,
   TsoaResponse,
   Res,
   Example,
-  // Produces
 } from 'tsoa'
 import { createContact } from '../domain/features'
 import { BrevoRepository } from '../domain/spi'
@@ -23,7 +21,7 @@ const rawlistIds: string[] = process.env['BREVO_LIST_IDS']?.split(',') || ['4']
 const listIds: number[] = rawlistIds.map(id => parseInt(id))
 
 const brevoRepository: BrevoRepository = {
-  postNewContact: async (email, attributes) => 
+  postNewContact: async (email, attributes) =>
     requestBrevoAPI(process.env['BREVO_API_TOKEN'] || '', email, listIds, attributes)
 }
 
