@@ -593,6 +593,10 @@ const saveSelectionFromSignal = (ev: any, index: number) => {
   saveSelection()
 }
 
+const resetSelections = () => {
+  selectedOptionsIndices.value = []
+  selectedOptions.value = []
+}
 
 const getButtonIcon = (index: number) => {
   const isActive = isActiveChoice(index)
@@ -608,9 +612,14 @@ const getButtonIcon = (index: number) => {
 
 // watchers
 watch(() => props.isCompleted, ( next ) => {
+  // console.log()
+  // console.log('TeeTrack > watch > props.trackId :', props.trackId )
   // console.log('TeeTrack > watch > isCompleted :', next )
   if (!next) {
-    selectedOptions.value = []
+    // console.log('TeeTrack > watch > selectionValues :', selectionValues )
+    if (noNeedForNext.includes(renderAs)) {
+      resetSelections()
+    }
     tracks.updateUsedTracks(props.trackId, props.step, next, selectedOptions.value)
   }
 })
@@ -619,7 +628,7 @@ watch(() => props.isCompleted, ( next ) => {
 
 const saveSelection = () => {
   // console.log()
-  // console.log('TeeTrack > updateStore > option :', option)
+  // console.log('TeeTrack > updateStore > selectedOptions.value :', selectedOptions.value)
 
   const optionNext = selectedOptions.value[0].next
   const nextExceptions = optionNext?.exceptions
