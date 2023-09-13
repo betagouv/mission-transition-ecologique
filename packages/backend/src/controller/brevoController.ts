@@ -1,45 +1,28 @@
-import {
-  Body,
-  Controller,
-  Post,
-  Route,
-  SuccessResponse,
-  TsoaResponse,
-  Res,
-  Example,
-} from 'tsoa'
+import { Body, Controller, Post, Route, SuccessResponse, TsoaResponse, Res, Example } from 'tsoa'
 import { createContact } from '../domain/features'
 import { BrevoRepository } from '../domain/spi'
 import { BrevoNotFoundError, BrevoBodyAttributes, BrevoResponse } from '../domain/types'
 import { requestBrevoAPI } from '../infrastructure/brevo-API'
+import { ErrorJSON, ValidateErrorJSON } from './types'
 
 /**
  * Defines how to access external services.
  * Uses the "Repository" pattern, see README.md
  */
 const rawlistIds: string[] = process.env['BREVO_LIST_IDS']?.split(',') || ['4']
-const listIds: number[] = rawlistIds.map(id => parseInt(id))
+const listIds: number[] = rawlistIds.map((id) => parseInt(id))
 
 const brevoRepository: BrevoRepository = {
   postNewContact: async (email, attributes) =>
     requestBrevoAPI(process.env['BREVO_API_TOKEN'] || '', email, listIds, attributes)
 }
 
-interface ErrorJSON {
-  message: string
-}
-
 interface BrevoNotFoundErrorJSON {
   message: 'Contact not created'
 }
 
-interface ValidateErrorJSON {
-  message: 'Validation failed'
-  details: { [name: string]: unknown }
-}
-
 interface BrevoBody {
-  email: string,
+  email: string
   attributes: BrevoBodyAttributes
 }
 

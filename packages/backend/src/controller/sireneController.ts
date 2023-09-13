@@ -14,6 +14,7 @@ import { createFeatures } from '../domain/features'
 import { EtablissementRepository } from '../domain/spi'
 import { EstablishmentNotFoundError, Etablissement } from '../domain/types'
 import { requestSireneAPI } from '../infrastructure/sirene-API'
+import { ErrorJSON, ValidateErrorJSON } from './types'
 
 /**
  * Defines how to access external services.
@@ -24,17 +25,8 @@ const etablissementRepository: EtablissementRepository = {
     requestSireneAPI(siret, process.env['SIRENE_API_TOKEN'] || '')
 }
 
-interface ErrorJSON {
-  message: string
-}
-
 interface EstablishmentNotFoundErrorJSON {
   message: 'Establishment not found'
-}
-
-interface ValidateErrorJSON {
-  message: 'Validation failed'
-  details: { [name: string]: unknown }
 }
 
 @Route('health')
