@@ -37,13 +37,13 @@ export const results = {
     // intro: { fr: `
     //   <h2>
     //     <span
-    //       class="fr-icon-phone-fill" 
+    //       class="fr-icon-phone-fill"
     //       aria-hidden="true"></span>
     //     Vous souhaitez en connaître d'avantage ?
     //   </h2>
     //   <h5>
-    //     N'hésitez pas à nous laisser vos coordonnées, 
-    //     nous nous ferons un plaisir de vous aider. 
+    //     N'hésitez pas à nous laisser vos coordonnées,
+    //     nous nous ferons un plaisir de vous aider.
     //   </h5>
     // ` },
     fields: [
@@ -151,12 +151,12 @@ Merci d'avance pour votre appel`,
         label: { fr: "J'accepte d'être recontacté par l'équipe de Transition Ecologique des Entreprises *"},
         hint: { fr: `
           Vos données à caractère personnel seront uniquement utilisées à des fins légitimes et nécessaires
-          par l'équipe de Transition Ecologique des Entreprises dans le respect du RGPD, 
-          c'est-à-dire pour vous recontacter par email ou par téléphone 
-          afin de vous aider à vous orienter et à vous conseiller 
+          par l'équipe de Transition Ecologique des Entreprises dans le respect du RGPD,
+          c'est-à-dire pour vous recontacter par email ou par téléphone
+          afin de vous aider à vous orienter et à vous conseiller
           dans votre recherche d'aides
           à la transition écologique de votre entreprise.
-          Voir également nos 
+          Voir également nos
           <a href="http://mission-transition.beta.gouv.fr/donnee-personnelles-et-cookies" target="_blank">
             Conditions Générales d'Utilisation
           </a>.
@@ -178,7 +178,8 @@ Merci d'avance pour votre appel`,
         helpDocumentation: 'https://tee-backend.osc-fr1.scalingo.io/api/docs',
         action: 'createContact',
         // url: 'https://api.brevo.com/v3/contacts',
-        url: 'https://tee-backend.osc-fr1.scalingo.io/api/brevo/post_brevo_form',
+        url:
+        'https://tee-backend.osc-fr1.scalingo.io/api/brevo/contact-information',
         // url: 'https://api.brevo.com/v3/contacts/doubleOptinConfirmation', // for double opt-in
         method: 'POST',
         headers: {
