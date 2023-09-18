@@ -2,32 +2,40 @@ import { ServiceNotFoundError, ContactId } from '../domain/types'
 import axios, { AxiosError, AxiosResponse } from 'axios'
 import { ensureError } from './helpers'
 import { Result } from 'true-myth'
+import { ContactInfoRepository } from '../domain/spi'
 
 /**
- * Populate headers for a call to the "BREVO" API
- *
- * @arg token - API access token
+ * addBrevoContact reads token and brevo list Ids from environment variables,
+ * and adds a contact to brevo with the help of this information
  */
-const makeHeaders = (token: string) => {
-  const jsonContentType = 'application/json'
-  return {
-    accept: jsonContentType,
-    'content-type': jsonContentType,
-    'api-key': `${token}`
-  }
+export const addBrevoContact: ContactInfoRepository['add'] = async (
+  email: string,
+  attributes: object
+) => {
+  const token = process.env['BREVO_API_TOKEN'] || ''
+
+  const debugListId = '4'
+  const rawlistIds: string = process.env['BREVO_LIST_IDS'] || debugListId
+  const listIds = parseListIds(rawlistIds)
+
+  return requestBrevoAPI(token, listIds, email, attributes)
 }
 
 /**
- * requestBrevoAPI requests data about user
+ * requestBrevoAPI adds data about a contact in Brevo
  *
- * documentation: 'https://developers.brevo.com/reference/createcontact',
+ * Documentation: 'https://developers.brevo.com/reference/createcontact',
  *
  * @arg token - API access token
+ * @listIds - Ids of Brevo lists in which to store the contact
+ * @email - email address to store
+ * @attributes - additionnal attributes to store along
+ *
  */
-export const requestBrevoAPI = async (
+const requestBrevoAPI = async (
   token: string,
-  email: string,
   listIds: number[],
+  email: string,
   attributes: object
 ): Promise<Result<ContactId, Error>> => {
   const api_brevo_url = `https://api.brevo.com/v3/contacts`
@@ -55,5 +63,26 @@ export const requestBrevoAPI = async (
     }
 
     return Result.err(error)
+  }
+}
+
+/** parseListIds parses a comma-separated list of Ids into an array of list
+ * Ids.
+ */
+const parseListIds = (rawIds: string): number[] => {
+  return rawIds.split(',').map((id) => parseInt(id))
+}
+
+/**
+ * Populate headers for a call to the "BREVO" API
+ *
+ * @arg token - API access token
+ */
+const makeHeaders = (token: string) => {
+  const jsonContentType = 'application/json'
+  return {
+    accept: jsonContentType,
+    'content-type': jsonContentType,
+    'api-key': `${token}`
   }
 }

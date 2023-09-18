@@ -6,5 +6,5 @@ export type EtablissementRepository = {
 }
 
 export type ContactInfoRepository = {
-  add: (email: string, listIds: number[], attributes: object) => Promise<Result<ContactId, Error>>
+  add: (email: string, attributes: object) => Promise<Result<ContactId, Error>>
 }

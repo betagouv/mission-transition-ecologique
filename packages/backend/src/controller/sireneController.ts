@@ -13,7 +13,7 @@ import {
 import { createEtablissementFeatures } from '../domain/features'
 import { EtablissementRepository } from '../domain/spi'
 import { EstablishmentNotFoundError, Etablissement } from '../domain/types'
-import { requestSireneAPI } from '../infrastructure/sirene-API'
+import { getEtablissement } from '../infrastructure/sirene-API'
 import { ErrorJSON, ValidateErrorJSON } from './types'
 
 /**
@@ -21,7 +21,7 @@ import { ErrorJSON, ValidateErrorJSON } from './types'
  * Uses the "Repository" pattern, see README.md
  */
 const etablissementRepository: EtablissementRepository = {
-  get: async (siret: string) => requestSireneAPI(siret, process.env['SIRENE_API_TOKEN'] || '')
+  get: getEtablissement
 }
 
 interface EstablishmentNotFoundErrorJSON {

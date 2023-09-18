@@ -2,15 +2,17 @@ export const results = {
   id: 'track_results',
   category: 'results',
   title: { fr: 'Dispositifs' },
-  label: { fr: 'Vos résultats'},
-  hint: { fr: '🎉 Félicitations, vous avez terminé !'},
-  resume: { fr: "D’après les informations que vous avez renseignées, voici les accompagnements dont vous pouvez bénéficier pour diminuer l'empreinte écologique de votre entreprise."},
-  intro: { fr: 'Résultats'},
+  label: { fr: 'Vos résultats' },
+  hint: { fr: '🎉 Félicitations, vous avez terminé !' },
+  resume: {
+    fr: "D’après les informations que vous avez renseignées, voici les accompagnements dont vous pouvez bénéficier pour diminuer l'empreinte écologique de votre entreprise."
+  },
+  intro: { fr: 'Résultats' },
   interface: {
-    component: 'results',
+    component: 'results'
   },
   behavior: {
-    static: true,
+    static: true
   },
   config: {
     showAlertResults: false,
@@ -22,7 +24,7 @@ export const results = {
   options: [
     {
       value: 'results.summary',
-      label: { fr: "Vos résultats" },
+      label: { fr: 'Vos résultats' },
       // fields: [],
       next: {
         default: false
@@ -33,7 +35,7 @@ export const results = {
     value: 'contact_form.email',
     // label: { fr: 'Vous êtes intéressé.e par le dispositif {title} ?' },
     label: { fr: 'Vous souhaitez bénéficier de {prefixAide} {natureAide} ?' },
-    hint: { fr: "👋 Un conseiller vous contactera dans les 5 jours"},
+    hint: { fr: '👋 Un conseiller vous contactera dans les 5 jours' },
     // intro: { fr: `
     //   <h2>
     //     <span
@@ -49,62 +51,64 @@ export const results = {
     fields: [
       {
         id: 'name',
-        label: { fr: 'Prénom'},
+        label: { fr: 'Prénom' },
         // hint: { fr: 'Camille' },
         required: true,
         type: 'text',
-        cols: 6,
+        cols: 6
         // for debugging purposes
         // defaultValue: 'Camille'
       },
       {
         id: 'surname',
-        label: { fr: 'Nom'},
+        label: { fr: 'Nom' },
         // hint: { fr: 'Dujardin' },
         required: true,
         type: 'text',
-        cols: 6,
+        cols: 6
         // for debugging purposes
         // defaultValue: 'Dujardin'
       },
       {
         id: 'email',
-        label: { fr: 'Email'},
+        label: { fr: 'Email' },
         // hint: { fr: 'camille@dujardin.fr' },
         required: true,
-        type: 'email',
+        type: 'email'
         // for debugging purposes
         // defaultValue: 'contact@multi.coop'
       },
       {
         id: 'tel',
-        label: { fr: 'Téléphone'},
+        label: { fr: 'Téléphone' },
         // hint: { fr: '06 05 04 03 02' },
         required: true,
         type: 'text',
-        cols: 12,
+        cols: 12
         // for debugging purposes
         // defaultValue: '06 05 04 03 02'
       },
       {
         id: 'siret',
-        label: { fr: 'SIRET de votre entreprise'},
+        label: { fr: 'SIRET de votre entreprise' },
         hint: { fr: '385 290 309 00454' },
         required: false,
         type: 'text',
         preFillFrom: {
           id: 'siret',
           from: 'usedTracks',
-          dataField: 'siret',
+          dataField: 'siret'
         },
-        cols: 12,
+        cols: 12
         // for debugging purposes
         // defaultValue: '83014132100034'
       },
       {
         id: 'needs',
-        label: { fr: 'Quel est votre besoin ?'},
-        hint: { fr: 'Je souhaite connaître les aides pour installer des éoliennes sur mon immeuble' },
+        label: { fr: 'Quel est votre besoin ?' },
+        hint: {
+          fr: 'Je souhaite connaître les aides pour installer des éoliennes sur mon immeuble'
+        },
         required: false,
         type: 'textarea',
         rows: 6,
@@ -118,18 +122,18 @@ Merci d'avance pour votre appel`,
           secteur: '',
           natureAide: '',
           titreAide: '',
-          objectif: '',
+          objectif: ''
         },
         dataMapping: [
           {
             from: 'usedTracks',
             id: 'secteur',
-            dataField: "secteur"
+            dataField: 'secteur'
           },
           {
             from: 'usedTracks',
             id: 'objectif',
-            dataField: "objectif"
+            dataField: 'objectif'
           },
           // {
           //   from: 'propsPath',
@@ -141,15 +145,18 @@ Merci d'avance pour votre appel`,
             from: 'propsPath',
             id: 'program',
             path: 'program.titre',
-            dataField: "titreAide"
+            dataField: 'titreAide'
           }
         ]
       },
       {
         id: 'cgu',
         help: 'http://mission-transition.beta.gouv.fr/donnee-personnelles-et-cookies',
-        label: { fr: "J'accepte d'être recontacté par l'équipe de Transition Ecologique des Entreprises *"},
-        hint: { fr: `
+        label: {
+          fr: "J'accepte d'être recontacté par l'équipe de Transition Ecologique des Entreprises *"
+        },
+        hint: {
+          fr: `
           Vos données à caractère personnel seront uniquement utilisées à des fins légitimes et nécessaires
           par l'équipe de Transition Ecologique des Entreprises dans le respect du RGPD,
           c'est-à-dire pour vous recontacter par email ou par téléphone
@@ -163,12 +170,13 @@ Merci d'avance pour votre appel`,
           <br>
           <br>
           Pour toute question vous pouvez nous contacter à "france-transition(at)beta.gouv.fr"
-        ` },
+        `
+        },
         required: true,
-        type: 'checkbox',
+        type: 'checkbox'
         // for debugging purposes
         // defaultValue: false
-      },
+      }
     ],
     callbacks: [
       {
@@ -178,13 +186,12 @@ Merci d'avance pour votre appel`,
         helpDocumentation: 'https://tee-backend.osc-fr1.scalingo.io/api/docs',
         action: 'createContact',
         // url: 'https://api.brevo.com/v3/contacts',
-        url:
-        'https://tee-backend.osc-fr1.scalingo.io/api/brevo/contact-information',
+        url: 'https://tee-backend.osc-fr1.scalingo.io/api/contacts',
         // url: 'https://api.brevo.com/v3/contacts/doubleOptinConfirmation', // for double opt-in
         method: 'POST',
         headers: {
           accept: 'application/json',
-          'content-type': 'application/json',
+          'content-type': 'application/json'
           // 'api-key': ''
         },
         // headerApiKey: 'api-key',
@@ -193,7 +200,7 @@ Merci d'avance pour votre appel`,
           email: '',
           // listIds: [],
           // includeListIds: [],
-          attributes: {},
+          attributes: {}
           // templateId: 1,  // for double opt-in
           // redirectionUrl: 'https://gov-aid-tree-poc.netlify.app'  // for double opt-in
         },
@@ -201,7 +208,7 @@ Merci d'avance pour votre appel`,
           {
             from: 'formData',
             id: 'email',
-            dataField: 'email',
+            dataField: 'email'
           },
           // {
           //   from: 'env',
@@ -215,32 +222,32 @@ Merci d'avance pour votre appel`,
           {
             from: 'formData',
             id: 'surname',
-            dataField: 'attributes.NOM',
+            dataField: 'attributes.NOM'
           },
           {
             from: 'formData',
             id: 'name',
-            dataField: 'attributes.PRENOM',
+            dataField: 'attributes.PRENOM'
           },
           {
             from: 'formData',
             id: 'tel',
-            dataField: 'attributes.TEL',
+            dataField: 'attributes.TEL'
           },
           {
             from: 'formData',
             id: 'siret',
-            dataField: 'attributes.SIRET',
+            dataField: 'attributes.SIRET'
           },
           {
             from: 'formData',
             id: 'needs',
-            dataField: 'attributes.FORM_NEEDS',
+            dataField: 'attributes.FORM_NEEDS'
           },
           {
             from: 'formData',
             id: 'cgu',
-            dataField: 'attributes.OPT_IN',
+            dataField: 'attributes.OPT_IN'
           },
           // {
           //   from: 'usedTracks',
@@ -250,17 +257,17 @@ Merci d'avance pour votre appel`,
           {
             from: 'usedTracks',
             id: 'project_sectors',
-            dataField: 'attributes.PROJECT_SECTORS',
+            dataField: 'attributes.PROJECT_SECTORS'
           },
           {
             from: 'usedTracks',
             id: 'user_roles',
-            dataField: 'attributes.USER_ROLES',
+            dataField: 'attributes.USER_ROLES'
           },
           {
             from: 'usedTracks',
             id: 'user_goals',
-            dataField: 'attributes.USER_GOALS',
+            dataField: 'attributes.USER_GOALS'
           },
           // {
           //   from: 'usedTracks',
@@ -275,20 +282,20 @@ Merci d'avance pour votre appel`,
           {
             from: 'usedTracks',
             id: 'structure_workforce',
-            dataField: 'attributes.STRUCTURE_SIZE',
+            dataField: 'attributes.STRUCTURE_SIZE'
           },
           {
             from: 'props',
             id: 'programId',
-            dataField: 'attributes.PROGRAM_ID',
+            dataField: 'attributes.PROGRAM_ID'
           },
           {
             from: 'allUsedTracks',
             id: '*',
-            dataField: 'attributes.ALL_RESPONSES',
-          },
+            dataField: 'attributes.ALL_RESPONSES'
+          }
         ]
-      },
+      }
       // {
       //   disabled: true,
       //   help: 'Second action send a transactional email',
@@ -356,7 +363,7 @@ Merci d'avance pour votre appel`,
       //     },
       //   ]
       // }
-    ],
+    ]
     // next: {
     //   default: 'track_results'
     // }

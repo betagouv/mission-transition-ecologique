@@ -13,6 +13,7 @@ export const createEtablissementFeatures = (etablissementRepository: Etablisseme
   const fetchEtablissement: fetchEtablissement = async (siret) => {
     return etablissementRepository.get(siret)
   }
+
   return { fetchEtablissement }
 }
 
@@ -20,16 +21,13 @@ export const createContactFeatures = (contactInfoRepository: ContactInfoReposito
   /**
    * postNewContact passes through the Promise of the infrastructure layer
    * (promise of BrevoResult in case of success, Error otherwise)
-   * @param email: an email
-   * @param listIds: an array of brevo list ids
-   * @param attributes: attributes
+   *
+   * @param email: an email address
+   * @param attributes: attributes to store along
    */
-  const postNewContact: postNewContact = async (
-    email: string,
-    listIds: number[],
-    attributes: object
-  ) => {
-    return contactInfoRepository.add(email, listIds, attributes)
+  const postNewContact: postNewContact = async (email: string, attributes: object) => {
+    return contactInfoRepository.add(email, attributes)
   }
+
   return { postNewContact }
 }

@@ -2,19 +2,15 @@ import { Body, Controller, Post, Route, SuccessResponse, TsoaResponse, Res, Exam
 import { createContactFeatures } from '../domain/features'
 import { ContactInfoRepository } from '../domain/spi'
 import { ServiceNotFoundError, ContactInfoBodyAttributes, ContactId } from '../domain/types'
-import { requestBrevoAPI } from '../infrastructure/brevo-API'
+import { addBrevoContact } from '../infrastructure/brevo-API'
 import { ErrorJSON, ValidateErrorJSON } from './types'
-
-const rawlistIds: string[] = process.env['BREVO_LIST_IDS']?.split(',') || ['4']
-const listIds: number[] = rawlistIds.map((id) => parseInt(id))
 
 /**
  * Defines how to access external data services.
  * Uses the "Repository" pattern, see README.md
  */
 const brevoRepository: ContactInfoRepository = {
-  add: async (email, attributes) =>
-    requestBrevoAPI(process.env['BREVO_API_TOKEN'] || '', email, listIds, attributes)
+  add: addBrevoContact
 }
 
 interface ServiceNotFoundErrorJSON {
@@ -27,7 +23,7 @@ interface ContactInfoBody {
 }
 
 @SuccessResponse('200', 'OK')
-@Route('brevo')
+@Route('contacts')
 export class ContactInfoController extends Controller {
   /**
    * Add a new contact to TEE's Brevo service.
@@ -39,7 +35,7 @@ export class ContactInfoController extends Controller {
    */
 
   @Example<ContactId>({ id: 42 })
-  @Post('contact-information')
+  @Post()
   public async health(
     @Body() requestBody: ContactInfoBody,
     @Res() requestFailedResponse: TsoaResponse<500, ErrorJSON>,
@@ -50,7 +46,7 @@ export class ContactInfoController extends Controller {
     const bodyAttributes = requestBody.attributes
 
     const feat = createContactFeatures(brevoRepository)
-    const contactInfoResult = await feat.postNewContact(bodyEmail, listIds, bodyAttributes)
+    const contactInfoResult = await feat.postNewContact(bodyEmail, bodyAttributes)
 
     if (contactInfoResult.isErr) {
       const err = contactInfoResult.error
