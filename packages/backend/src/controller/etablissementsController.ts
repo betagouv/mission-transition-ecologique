@@ -1,15 +1,4 @@
-import {
-  Body,
-  Controller,
-  Get,
-  Post,
-  Route,
-  SuccessResponse,
-  TsoaResponse,
-  Res,
-  Example,
-  Produces
-} from 'tsoa'
+import { Body, Controller, Post, Route, SuccessResponse, TsoaResponse, Res, Example } from 'tsoa'
 import { createEtablissementFeatures } from '../domain/features'
 import { EtablissementRepository } from '../domain/spi'
 import { EstablishmentNotFoundError, Etablissement } from '../domain/types'
@@ -17,7 +6,7 @@ import { getEtablissement } from '../infrastructure/sirene-API'
 import { ErrorJSON, ValidateErrorJSON } from './types'
 
 /**
- * Defines how to access external services.
+ * Defines how to access external data services.
  * Uses the "Repository" pattern, see README.md
  */
 const etablissementRepository: EtablissementRepository = {
@@ -26,24 +15,6 @@ const etablissementRepository: EtablissementRepository = {
 
 interface EstablishmentNotFoundErrorJSON {
   message: 'Establishment not found'
-}
-
-@Route('health')
-@Produces('text/plain')
-export class HealthController extends Controller {
-  /**
-   * Check the API's health. If the API is up and running, this endpoint
-   * should return a 200 HTTP status.
-   *
-   * @summary Check the API's health
-   */
-  @Example<string>('OK')
-  @Get()
-  public async health(): Promise<string> {
-    this.setStatus(200)
-    this.setHeader('Content-Type', 'text/plain')
-    return 'OK'
-  }
 }
 
 interface SiretBody {
