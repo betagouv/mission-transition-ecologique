@@ -21,8 +21,7 @@ import { ErrorJSON, ValidateErrorJSON } from './types'
  * Uses the "Repository" pattern, see README.md
  */
 const etablissementRepository: EtablissementRepository = {
-  getEtablissementBySiret: async (siret: string) =>
-    requestSireneAPI(siret, process.env['SIRENE_API_TOKEN'] || '')
+  get: async (siret: string) => requestSireneAPI(siret, process.env['SIRENE_API_TOKEN'] || '')
 }
 
 interface EstablishmentNotFoundErrorJSON {
