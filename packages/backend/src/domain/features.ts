@@ -20,7 +20,7 @@ export const createEtablissementFeatures = (repo: EtablissementRepository) => {
 export const createContactFeatures = (repo: ContactInfoRepository) => {
   /**
    * postNewContact passes through the Promise of the infrastructure layer
-   * (promise of BrevoResult in case of success, Error otherwise)
+   * (promise of ContactId in case of success, Error otherwise)
    *
    * @param email - an email address
    * @param attributes - attributes to store along

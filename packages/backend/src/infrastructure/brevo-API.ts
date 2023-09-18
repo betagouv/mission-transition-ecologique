@@ -4,6 +4,8 @@ import { ensureError } from './helpers'
 import { Result } from 'true-myth'
 import { ContactInfoRepository } from '../domain/spi'
 
+const DEBUG_BREVO_LIST_ID = '4'
+
 /**
  * addBrevoContact reads token and brevo list Ids from environment variables,
  * and adds a contact to brevo with the help of this information
@@ -14,8 +16,8 @@ export const addBrevoContact: ContactInfoRepository['add'] = async (
 ) => {
   const token = process.env['BREVO_API_TOKEN'] || ''
 
-  const debugListId = '4'
-  const rawlistIds: string = process.env['BREVO_LIST_IDS'] || debugListId
+  const defaultListId = DEBUG_BREVO_LIST_ID
+  const rawlistIds: string = process.env['BREVO_LIST_IDS'] || defaultListId
   const listIds = parseListIds(rawlistIds)
 
   return requestBrevoAPI(token, listIds, email, attributes)
