@@ -5,15 +5,15 @@ import { ServiceNotFoundError, ContactInfoBodyAttributes, ContactId } from '../d
 import { requestBrevoAPI } from '../infrastructure/brevo-API'
 import { ErrorJSON, ValidateErrorJSON } from './types'
 
-/**
- * Defines how to access external services.
- * Uses the "Repository" pattern, see README.md
- */
 const rawlistIds: string[] = process.env['BREVO_LIST_IDS']?.split(',') || ['4']
 const listIds: number[] = rawlistIds.map((id) => parseInt(id))
 
+/**
+ * Defines how to access external data services.
+ * Uses the "Repository" pattern, see README.md
+ */
 const brevoRepository: ContactInfoRepository = {
-  storeContactInfo: async (email, attributes) =>
+  add: async (email, attributes) =>
     requestBrevoAPI(process.env['BREVO_API_TOKEN'] || '', email, listIds, attributes)
 }
 

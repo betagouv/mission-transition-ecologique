@@ -11,7 +11,7 @@ export const createEtablissementFeatures = (etablissementRepository: Etablisseme
    * @param siret: a SIRET. Its format is expected to be 14 digits.
    */
   const fetchEtablissement: fetchEtablissement = async (siret) => {
-    return etablissementRepository.getEtablissementBySiret(siret)
+    return etablissementRepository.get(siret)
   }
   return { fetchEtablissement }
 }
@@ -29,7 +29,7 @@ export const createContactFeatures = (contactInfoRepository: ContactInfoReposito
     listIds: number[],
     attributes: object
   ) => {
-    return contactInfoRepository.storeContactInfo(email, listIds, attributes)
+    return contactInfoRepository.add(email, listIds, attributes)
   }
   return { postNewContact }
 }
