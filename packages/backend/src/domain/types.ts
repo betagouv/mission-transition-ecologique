@@ -106,6 +106,7 @@ export interface ContactInfoBodyAttributes {
   USER_GOALS?: string
   STRUCTURE_SIZE?: string
   PROGRAM_ID?: string
+  ALL_RESPONSES?: string
 }
 
 export interface ContactInfoBody {
