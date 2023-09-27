@@ -1,58 +1,20 @@
-import {
-  Body,
-  Controller,
-  Get,
-  Post,
-  Route,
-  SuccessResponse,
-  TsoaResponse,
-  Res,
-  Example,
-  Produces
-} from 'tsoa'
-import { createFeatures } from '../domain/features'
+import { Body, Controller, Post, Route, SuccessResponse, TsoaResponse, Res, Example } from 'tsoa'
+import { createEtablissementFeatures } from '../domain/features'
 import { EtablissementRepository } from '../domain/spi'
 import { EstablishmentNotFoundError, Etablissement } from '../domain/types'
-import { requestSireneAPI } from '../infrastructure/sirene-API'
+import { getEtablissement } from '../infrastructure/sirene-API'
+import { ErrorJSON, ValidateErrorJSON } from './types'
 
 /**
- * Defines how to access external services.
+ * Defines how to access external data services.
  * Uses the "Repository" pattern, see README.md
  */
 const etablissementRepository: EtablissementRepository = {
-  getEtablissementBySiret: async (siret: string) =>
-    requestSireneAPI(siret, process.env['SIRENE_API_TOKEN'] || '')
-}
-
-interface ErrorJSON {
-  message: string
+  get: getEtablissement
 }
 
 interface EstablishmentNotFoundErrorJSON {
   message: 'Establishment not found'
-}
-
-interface ValidateErrorJSON {
-  message: 'Validation failed'
-  details: { [name: string]: unknown }
-}
-
-@Route('health')
-@Produces('text/plain')
-export class HealthController extends Controller {
-  /**
-   * Check the API's health. If the API is up and running, this endpoint
-   * should return a 200 HTTP status.
-   *
-   * @summary Check the API's health
-   */
-  @Example<string>('OK')
-  @Get()
-  public async health(): Promise<string> {
-    this.setStatus(200)
-    this.setHeader('Content-Type', 'text/plain')
-    return 'OK'
-  }
 }
 
 interface SiretBody {
@@ -181,7 +143,7 @@ export class SireneController extends Controller {
   ): Promise<Etablissement> {
     const requestedSiret = requestBody.siret
 
-    const feat = createFeatures(etablissementRepository)
+    const feat = createEtablissementFeatures(etablissementRepository)
     const etablissementResult = await feat.fetchEtablissement(requestedSiret)
 
     if (etablissementResult.isErr) {
@@ -194,7 +156,6 @@ export class SireneController extends Controller {
       return requestFailedResponse(500, { message: `Server internal error` })
     }
 
-    const etablissement = etablissementResult.value
-    return etablissement
+    return etablissementResult.value
   }
 }
