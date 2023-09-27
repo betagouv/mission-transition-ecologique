@@ -1,3 +1,8 @@
+const metaEnv = import.meta.env
+// console.log('trackResults >  metaEnv :', metaEnv)
+const TEE_BACKEND_URL = metaEnv.VITE_TEE_BACKEND_URL || 'https://tee-backend.osc-fr1.scalingo.io'
+
+
 export const results = {
   id: 'track_results',
   category: 'results',
@@ -183,10 +188,9 @@ Merci d'avance pour votre appel`,
         disabled: false,
         help: 'First action to trigger when the user clicks on the send button / create a contact in Brevo',
         // helpDocumentation: 'https://developers.brevo.com/reference/createcontact',
-        helpDocumentation: 'https://tee-backend.osc-fr1.scalingo.io/api/docs',
+        helpDocumentation: `${TEE_BACKEND_URL}/api/docs`,
         action: 'createContact',
-        // url: 'https://api.brevo.com/v3/contacts',
-        url: 'https://tee-backend.osc-fr1.scalingo.io/api/contacts',
+        url: `${TEE_BACKEND_URL}/api/contacts`,
         // url: 'https://api.brevo.com/v3/contacts/doubleOptinConfirmation', // for double opt-in
         method: 'POST',
         headers: {
