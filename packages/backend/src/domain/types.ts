@@ -104,7 +104,7 @@ export interface ContactInfoBodyAttributes {
   PROJECT_SECTORS?: string
   USER_ROLES?: string
   USER_GOALS?: string
-  STRUCTURE_SIZE?: string
+  STRUCTURE_SIZE?: string | number
   PROGRAM_ID?: string
   ALL_RESPONSES?: string
 }
