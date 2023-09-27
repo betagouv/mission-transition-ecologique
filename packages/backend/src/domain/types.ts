@@ -101,7 +101,7 @@ export interface ContactInfoBodyAttributes {
   OPT_IN: boolean
   FORM_NEEDS?: string
   PROJECT_NEEDS?: string
-  PROJECT_SECTORS?: string
+  PROJECT_SECTORS?: string[]
   USER_ROLES?: string
   USER_GOALS?: string
   STRUCTURE_SIZE?: string | number
