@@ -1,8 +1,7 @@
-id: visite-energie
-titre: Visite Energie
+titre: Visite Énergie
 promesse: Mesurez votre maturité energétique et créez un plan d’actions personnalisé avec un conseiller
-description: | 
-  Evaluez les coûts et surcoûts d'énergie et identifiez les actions à mener pour les réduire
+description: |
+  Évaluez les coûts et surcoûts d'énergie et identifiez les actions à mener pour les réduire
 url: https://www.cci.fr/
 illustration: images/TEE_energie_verte.png
 objectifs:

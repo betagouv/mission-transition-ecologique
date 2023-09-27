@@ -42,7 +42,9 @@ filesNames.forEach((file) => {
   console.log('vite.config > file :', file)
   const yamlFilePath = `${dataDirPath}/${file}`
   const yamlFile = fs.readFileSync(yamlFilePath, 'utf8')
-  const yamlObj = yaml.load(yamlFile) || {}
+
+  const id = file.substring(0, file.lastIndexOf('.')) || file
+  const yamlObj = { ...(yaml.load(yamlFile) as Object), id: id } || {}
   // yamlObj.file = file
   // @ts-ignore
   console.log('vite.config > yamlObj.title :', yamlObj.title)
