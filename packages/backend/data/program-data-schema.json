@@ -4,10 +4,6 @@
   "description": "Données de dispositifs, avec des informations générales, relatifs à l'aide proposée et des données d'éligibilité.",
   "type": "object",
   "properties": {
-    "id": {
-      "description": "Identifiant unique du dispositif",
-      "type": "string"
-    },
     "titre": {
       "description": "Titre du dispositif. Le titre est optionnel, s'il est absent, un titre générique du type \"Dispositif { opérateur de contact }\" sera utilisé.",
       "type": "string"
@@ -121,10 +117,9 @@
       }
     }
   ],
-  "required": [ 
-    "id", 
+  "required": [
     "titre",
-    "promesse", 
+    "promesse",
     "illustration",
     "objectifs",
     "opérateur de contact",
