@@ -51,7 +51,7 @@ export const sectors = {
   },
   options: [
     {
-      value: { project_sectors: 'craft', secteur: 'artisanat' },
+      value: { project_sectors: ['craft'], secteur: ['artisanat'] },
       title: { fr: 'Artisanat' },
       label: { fr: "J’ai une activité artisanale" },
       next: {
@@ -60,7 +60,7 @@ export const sectors = {
       }
     },
     {
-      value: { project_sectors: 'industry', secteur: 'industrie' },
+      value: { project_sectors: ['industry'], secteur: ['industrie'] },
       title: { fr: 'Industrie' },
       label: { fr: "J’ai une activité industrielle, fabrication, production" },
       next: {
@@ -69,7 +69,7 @@ export const sectors = {
       }
     },
     {
-      value: { project_sectors: 'tourism', secteur: 'tourisme' },
+      value: { project_sectors: ['tourism'], secteur: ['tourisme'] },
       title: { fr: 'Tourisme' },
       label: { fr: "J’ai une activité de tourisme" },
       next: {
@@ -78,7 +78,7 @@ export const sectors = {
       }
     },
     {
-      value: { project_sectors: 'tertiary', secteur: 'tertiaire' },
+      value: { project_sectors: ['tertiary'], secteur: ['tertiaire'] },
       title: { fr: 'Tertiaire' },
       label: { fr: "J’ai une activité tertiaire, de services" },
       next: {
@@ -87,7 +87,7 @@ export const sectors = {
       }
     },
     {
-      value: { project_sectors: 'agriculture', secteur: 'agriculture' },
+      value: { project_sectors: ['agriculture'], secteur: ['agriculture'] },
       title: { fr: 'Agriculture' },
       label: { fr: "J’ai une activité agricole" },
       next: {
@@ -96,7 +96,7 @@ export const sectors = {
       }
     },
     {
-      value: { project_sectors: '*' , secteur: 'autre secteur'},
+      value: { project_sectors: ['*'] , secteur: ['autre secteur']},
       title: { fr: 'Autre' },
       label: { fr: "Je suis dans un autre secteur d'activité" },
       next: {
