@@ -46,3 +46,7 @@ publicodes:
     toutes ces conditions:
       - entreprise . effectif >= 20
       - entreprise . effectif < 500
+
+  présentation à l'utilisateur:
+    toutes ces conditions:
+      - éligibilité

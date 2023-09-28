@@ -28,9 +28,12 @@ opérateur de contact: ADEME
 nature de l'aide: financement
 montant du financement: 50 à 80 %
 
-
 publicodes:
   entreprise:
   entreprise . effectif:
 
   éligibilité: entreprise . effectif < 250
+
+  présentation à l'utilisateur:
+    toutes ces conditions:
+      - éligibilité

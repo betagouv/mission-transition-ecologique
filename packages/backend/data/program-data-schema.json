@@ -78,9 +78,12 @@
       "properties": {
         "éligibilité": {
           "description": "Mécanisme pour évaluer si une entreprise est éligible ou non au dispositif"
+        },
+        "présentation à l'utilisateur": {
+          "description": "Mécanisme pour évaluer si une entreprise doit être présentée à un utilisateur ou non. Est souvent plus restrictive que les mécanismes d'éligibilité"
         }
       },
-      "required": ["éligibilité"]
+      "required": ["présentation à l'utilisateur"]
     }
   },
   "allOf": [
