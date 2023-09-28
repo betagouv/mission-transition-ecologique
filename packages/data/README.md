@@ -15,7 +15,7 @@ Or
 ```sh
 # From root folder
 nvm use
-npm i -w packages/data
+npm install --workspace packages/data
 ```
 
 ## Run the scripts
