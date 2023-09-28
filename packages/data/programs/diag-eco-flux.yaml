@@ -1,0 +1,38 @@
+titre: Diag Eco-flux
+promesse: Faites des économies en gérant durablement vos dépenses
+description: |
+  Bénéficiez des conseils d'un expert pour réaliser rapidement des économies durables, en réduisant vos déchets et vos pertes en énergie, matière et eau, grâce à une méthode élaborée avec l'ADEME.
+url: https://diag.bpifrance.fr/produit/diag-eco-flux
+illustration: images/TEE_ampoule.png
+objectifs:
+  - Faites un état des lieux de vos flux et identifiez les axes prioritaires d’économies.
+  - Mettez en place un plan d'actions simple pour réduire vos déchets et votre consommation d'énergie, de matières et d'eau.
+  - Lancez vos premières actions.
+  - Réalisez en moyenne 45 000 € d'économies par an et par site de production ou établissement (sur la base des missions restituées).
+conditions:
+  - type: project_needs
+    operator: "or"
+    value:
+      - advices
+      - financing
+  - type: project_status
+    operator: "or"
+    value:
+      - economies
+  - type: project_sectors
+    operator: "or"
+    value:
+      - "*"
+  - type: structure_sizes
+    operator: "or"
+    value:
+      - PME
+  - type: user_goals
+    operator: "or"
+    value:
+      - economies
+opérateur de contact: Bpifrance
+autres opérateurs:
+  - ADEME
+nature de l'aide: accompagnement
+coût de l'accompagnement: 2 000 € HT après subvention de 50 %

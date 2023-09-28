@@ -2,7 +2,7 @@
 # Script that tests all program data files against a schema.
 # Can be run via `npm run test-data` (in backend workspace).
 
-PROGRAMS_DATA_DIR=../web/public/data/programs
+PROGRAMS_DATA_DIR=../data/programs
 JSON_SCHEMA_FILE=data/program-data-schema.json
 
 # find options:
