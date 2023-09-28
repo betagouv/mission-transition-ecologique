@@ -12,15 +12,6 @@ objectifs:
     une liste d’action prédéfinie par l’ADEME (entre 5k€ et 200k€)"
   - Demandez une aide financière sur une ou plusieurs actions en même temps
 conditions:
-  - type: project_needs
-    operator: "or"
-    value:
-      - advices
-      - financing
-  - type: project_status
-    operator: "or"
-    value:
-      - "*"
   - type: project_sectors
     operator: "or"
     value:

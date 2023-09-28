@@ -11,15 +11,6 @@ objectifs:
   - Identifiez, formalisez et chiffrez les leviers d’écoconception, en maîtrisant le risque de transfert de pollution
   - Préparez la mise en œuvre d'un plan d’actions incluant un premier dimensionnement technico-économique
 conditions:
-  - type: project_needs
-    operator: "or"
-    value:
-      - advices
-      - financing
-  - type: project_status
-    operator: "or"
-    value:
-      - improve
   - type: project_sectors
     operator: "or"
     value:

@@ -24,15 +24,6 @@ objectifs:
     d'étude ou de formation, et soyez assisté dans le montage
     d'une demande de financement
 conditions:
-  - type: project_needs
-    operator: "or"
-    value:
-      - advices
-      - financing
-  - type: project_status
-    operator: "or"
-    value:
-      - "*"
   - type: project_sectors
     operator: "or"
     value:

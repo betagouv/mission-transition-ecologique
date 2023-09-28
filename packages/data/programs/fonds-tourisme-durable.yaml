@@ -9,15 +9,6 @@ objectifs:
   - Réduisez et maîtrisez vos coûts fixes (énergie, eau, déchets, gaspillage alimentaire, transport)
   - Accédez à des aides forfaitaires dans tous les domaines de la transition écologique (entre 5k€ et 200k€)
 conditions:
-  - type: project_needs
-    operator: "or"
-    value:
-      - advices
-      - financing
-  - type: project_status
-    operator: "or"
-    value:
-      - "*"
   - type: project_sectors
     operator: "or"
     value:

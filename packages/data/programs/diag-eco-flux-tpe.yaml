@@ -10,15 +10,6 @@ objectifs:
   - Lancez vos premières actions.
   - Réalisez en moyenne 45 000 € d'économies par an et par site de production ou établissement (sur la base des missions restituées).
 conditions:
-  - type: project_needs
-    operator: "or"
-    value:
-      - advices
-      - financing
-  - type: project_status
-    operator: "or"
-    value:
-      - economies
   - type: project_sectors
     operator: "or"
     value:
