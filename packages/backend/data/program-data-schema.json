@@ -122,7 +122,6 @@
     }
   ],
   "required": [ 
-    "id", 
     "titre",
     "promesse", 
     "illustration",
