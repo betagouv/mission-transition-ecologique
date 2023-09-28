@@ -1,9 +1,65 @@
 [
   {
-    "id": "diag-decarbon-action",
     "titre": "Diag Decarbon'Action",
     "promesse": "Réduisez durablement vos émissions carbone",
-    "description": "Réalisez un bilan carbone et réduisez de manière durable l’empreinte carbone de votre entreprise. \n",
+    "description": "Réalisez un bilan carbone et réduisez de manière durable l’empreinte carbone de votre entreprise.\n",
+    "url": "https://diag.bpifrance.fr/produit/diag-decarbon-action",
+    "illustration": "images/TEE_eolienne.png",
+    "objectifs": [
+      "Mesurez les émissions de Gaz à effet de serre de votre entreprise.",
+      "Elaborez votre plan d'actions pour décarboner votre activité.",
+      "Embarquez votre écosystème en valorisant votre engagement dans la décarbonation."
+    ],
+    "conditions": [
+      {
+        "type": "project_needs",
+        "operator": "or",
+        "value": [
+          "advices",
+          "financing"
+        ]
+      },
+      {
+        "type": "project_status",
+        "operator": "or",
+        "value": [
+          "carbon"
+        ]
+      },
+      {
+        "type": "project_sectors",
+        "operator": "or",
+        "value": [
+          "*"
+        ]
+      },
+      {
+        "type": "structure_sizes",
+        "operator": "or",
+        "value": [
+          "ETI"
+        ]
+      },
+      {
+        "type": "user_goals",
+        "operator": "or",
+        "value": [
+          "impact"
+        ]
+      }
+    ],
+    "opérateur de contact": "Bpifrance",
+    "autres opérateurs": [
+      "ADEME"
+    ],
+    "nature de l'aide": "accompagnement",
+    "coût de l'accompagnement": "6 000 € HT après subvention de 40 %",
+    "id": "diag-decarbon-action-eti"
+  },
+  {
+    "titre": "Diag Decarbon'Action",
+    "promesse": "Réduisez durablement vos émissions carbone",
+    "description": "Réalisez un bilan carbone et réduisez de manière durable l’empreinte carbone de votre entreprise.\n",
     "url": "https://diag.bpifrance.fr/produit/diag-decarbon-action",
     "illustration": "images/TEE_eolienne.png",
     "objectifs": [
@@ -39,9 +95,7 @@
         "operator": "or",
         "value": [
           "PME",
-          "TPE",
-          "ETI",
-          "GE"
+          "TPE"
         ]
       },
       {
@@ -57,10 +111,10 @@
       "ADEME"
     ],
     "nature de l'aide": "accompagnement",
-    "coût de l'accompagnement": "4 000 € HT après subvention de 60 %"
+    "coût de l'accompagnement": "4 000 € HT après subvention de 60 %",
+    "id": "diag-decarbon-action-pme"
   },
   {
-    "id": "diag-ecoflux",
     "titre": "Diag Eco-flux",
     "promesse": "Faites des économies en gérant durablement vos dépenses",
     "description": "Bénéficiez des conseils d'un expert pour réaliser rapidement des économies durables, en réduisant vos déchets et vos pertes en énergie, matière et eau, grâce à une méthode élaborée avec l'ADEME.\n",
@@ -115,10 +169,127 @@
       "ADEME"
     ],
     "nature de l'aide": "accompagnement",
-    "coût de l'accompagnement": "2 000 € HT après subvention de 50 %"
+    "coût de l'accompagnement": "3 000 € HT après subvention de 50 %",
+    "id": "diag-eco-flux-pme"
   },
   {
-    "id": "diag-ecoconception",
+    "titre": "Diag Eco-flux",
+    "promesse": "Faites des économies en gérant durablement vos dépenses",
+    "description": "Bénéficiez des conseils d'un expert pour réaliser rapidement des économies durables, en réduisant vos déchets et vos pertes en énergie, matière et eau, grâce à une méthode élaborée avec l'ADEME.\n",
+    "url": "https://diag.bpifrance.fr/produit/diag-eco-flux",
+    "illustration": "images/TEE_ampoule.png",
+    "objectifs": [
+      "Faites un état des lieux de vos flux et identifiez les axes prioritaires d’économies.",
+      "Mettez en place un plan d'actions simple pour réduire vos déchets et votre consommation d'énergie, de matières et d'eau.",
+      "Lancez vos premières actions.",
+      "Réalisez en moyenne 45 000 € d'économies par an et par site de production ou établissement (sur la base des missions restituées)."
+    ],
+    "conditions": [
+      {
+        "type": "project_needs",
+        "operator": "or",
+        "value": [
+          "advices",
+          "financing"
+        ]
+      },
+      {
+        "type": "project_status",
+        "operator": "or",
+        "value": [
+          "economies"
+        ]
+      },
+      {
+        "type": "project_sectors",
+        "operator": "or",
+        "value": [
+          "*"
+        ]
+      },
+      {
+        "type": "structure_sizes",
+        "operator": "or",
+        "value": [
+          "PME"
+        ]
+      },
+      {
+        "type": "user_goals",
+        "operator": "or",
+        "value": [
+          "economies"
+        ]
+      }
+    ],
+    "opérateur de contact": "Bpifrance",
+    "autres opérateurs": [
+      "ADEME"
+    ],
+    "nature de l'aide": "accompagnement",
+    "coût de l'accompagnement": "2 000 € HT après subvention de 50 %",
+    "id": "diag-eco-flux-tpe"
+  },
+  {
+    "titre": "Diag Ecoconception",
+    "promesse": "Améliorez l'impact environnementale de vos produits et services",
+    "description": "Bénéficiez des experts d'un conseil pour repenser la manière de concevoir vos produits, services et procédés.\n",
+    "url": "https://diag.bpifrance.fr/produit/diag-eco-conception",
+    "illustration": "images/TEE_ampoule.png",
+    "objectifs": [
+      "Une démarche simple",
+      "Sensibilisez les équipes internes à l’écoconception et formez un référent écoconception dans votre entreprise",
+      "Réalisez une évaluation environnementale basée sur l’Analyse du Cycle de Vie du produit, service ou procédé concerné",
+      "Identifiez, formalisez et chiffrez les leviers d’écoconception, en maîtrisant le risque de transfert de pollution",
+      "Préparez la mise en œuvre d'un plan d’actions incluant un premier dimensionnement technico-économique"
+    ],
+    "conditions": [
+      {
+        "type": "project_needs",
+        "operator": "or",
+        "value": [
+          "advices",
+          "financing"
+        ]
+      },
+      {
+        "type": "project_status",
+        "operator": "or",
+        "value": [
+          "improve"
+        ]
+      },
+      {
+        "type": "project_sectors",
+        "operator": "or",
+        "value": [
+          "*"
+        ]
+      },
+      {
+        "type": "structure_sizes",
+        "operator": "or",
+        "value": [
+          "ETI"
+        ]
+      },
+      {
+        "type": "user_goals",
+        "operator": "or",
+        "value": [
+          "ecoconception"
+        ]
+      }
+    ],
+    "opérateur de contact": "Bpifrance",
+    "autres opérateurs": [
+      "ADEME"
+    ],
+    "nature de l'aide": "accompagnement",
+    "coût de l'accompagnement": "7 200 € HT après subvention de 60 %",
+    "id": "diag-ecoconception-eti"
+  },
+  {
     "titre": "Diag Ecoconception",
     "promesse": "Améliorez l'impact environnementale de vos produits et services",
     "description": "Bénéficiez des experts d'un conseil pour repenser la manière de concevoir vos produits, services et procédés.\n",
@@ -159,9 +330,7 @@
         "operator": "or",
         "value": [
           "PME",
-          "TPE",
-          "ETI",
-          "GE"
+          "TPE"
         ]
       },
       {
@@ -177,10 +346,10 @@
       "ADEME"
     ],
     "nature de l'aide": "accompagnement",
-    "coût de l'accompagnement": "5 400 € HT après subvention de 70 %"
+    "coût de l'accompagnement": "5 400 € HT après subvention de 70 %",
+    "id": "diag-ecoconception-pme"
   },
   {
-    "id": "fonds-tourisme-durable",
     "titre": "Fonds Tourisme Durable",
     "promesse": "Obtenez un diagnostic et des subventions dans votre activité touristique",
     "description": "Le Fonds Tourisme Durable soutient la réalisation d'un diagnostic environnemental gratuit et de financements d'investissements et/ou d'études.\n",
@@ -235,10 +404,10 @@
     ],
     "opérateur de contact": "ADEME",
     "nature de l'aide": "accompagnement",
-    "coût de l'accompagnement": "gratuit"
+    "coût de l'accompagnement": "gratuit",
+    "id": "fonds-tourisme-durable"
   },
   {
-    "id": "performa-environnement",
     "titre": "Performa Environnement",
     "promesse": "Mesurer votre maturité écologique et créer un plan d’actions personnalisé avec à un conseiller",
     "description": "Réalisez un état des lieux à 360° pour évaluer l'impact de votre activité sur l'environnement et réalisez des économies. Différents sujets sont abordés : économie d’énergie, isolation des locaux, consommations d’eau, déchets, matières premières, achats, mobilité, etc.\n",
@@ -293,13 +462,13 @@
     ],
     "opérateur de contact": "CMA",
     "nature de l'aide": "accompagnement",
-    "coût de l'accompagnement": "gratuit"
+    "coût de l'accompagnement": "gratuit",
+    "id": "performa-environnement"
   },
   {
-    "id": "tpe-gagnantes",
     "titre": "TPE Gagnantes",
     "promesse": "Faites des économies en gérant durablement vos dépenses",
-    "description": "Diminuez les charges de votre entreprise et réduisez votre impact environnemental, en optimisant 4 postes de dépenses : Flux énergie,Matières premières, Déchets, Consommation d’eau  \n",
+    "description": "Diminuez les charges de votre entreprise et réduisez votre impact environnemental, en optimisant 4 postes de dépenses : Flux énergie,Matières premières, Déchets, Consommation d’eau\n",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/optimisez-tpe-pme/diagnostic-global-personnalise",
     "illustration": "images/TEE_energie_verte.png",
     "objectifs": [
@@ -348,10 +517,10 @@
     ],
     "opérateur de contact": "CMA",
     "nature de l'aide": "accompagnement",
-    "coût de l'accompagnement": "gratuit"
+    "coût de l'accompagnement": "gratuit",
+    "id": "tpe-gagnantes"
   },
   {
-    "id": "tremplin",
     "titre": "Tremplin",
     "promesse": "Financez vos projets d’études ou d’investissement écologique avec une ou plusieurs aides forfaitaires",
     "description": "Evaluer votre stratégie de réduction des émissions de gaz à effet de serre (Evaluation ACT®)\n",
@@ -409,13 +578,13 @@
     ],
     "opérateur de contact": "ADEME",
     "nature de l'aide": "financement",
-    "montant du financement": "50 à 80 %"
+    "montant du financement": "50 à 80 %",
+    "id": "tremplin"
   },
   {
-    "id": "visite-energie",
-    "titre": "Visite Energie",
+    "titre": "Visite Énergie",
     "promesse": "Mesurez votre maturité energétique et créez un plan d’actions personnalisé avec un conseiller",
-    "description": "Evaluez les coûts et surcoûts d'énergie et identifiez les actions à mener pour les réduire\n",
+    "description": "Évaluez les coûts et surcoûts d'énergie et identifiez les actions à mener pour les réduire\n",
     "url": "https://www.cci.fr/",
     "illustration": "images/TEE_energie_verte.png",
     "objectifs": [
@@ -468,6 +637,7 @@
     ],
     "opérateur de contact": "CMA",
     "nature de l'aide": "accompagnement",
-    "coût de l'accompagnement": "gratuit"
+    "coût de l'accompagnement": "gratuit",
+    "id": "visite-energie"
   }
 ]
