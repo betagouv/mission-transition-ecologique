@@ -248,8 +248,6 @@ const publicPath = `${deployUrl}${metaEnv.BASE_URL}`
 // console.log('TeeApp - process.env :', process.env)
 // @ts-ignore
 const yamlPrograms = jsonDataset
-// const yamlPrograms = deployMode ? jsonDataset : process.env.programs
-// const yamlPrograms = process.env.programs
 // console.log('TeeApp - yamlPrograms :', yamlPrograms)
 
 interface Props {
