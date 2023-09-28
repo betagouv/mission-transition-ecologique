@@ -40,7 +40,10 @@ filesNames.forEach((file: string) => {
   console.log('buildJsonOutput.ts > file :', file)
   const yamlFilePath: string = `${dataDirPath}/${file}`
   const yamlFile: string = fs.readFileSync(yamlFilePath, 'utf8')
-  const yamlObj = yaml.load(yamlFile) || {}
+
+  const id = file.substring(0, file.lastIndexOf('.')) || file
+  const yamlObj = { ...(yaml.load(yamlFile) as Object), id: id } || {}
+
   // @ts-ignore
   console.log('buildJsonOutput.ts > yamlObj.titre :', yamlObj.titre)
   programsArray.push(yamlObj)
