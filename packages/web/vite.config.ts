@@ -55,8 +55,10 @@ filesNames.forEach((file) => {
 // build output json
 const dataAsJson = JSON.stringify(programsArray, null, 2)
 const dataBuiltOutput = './public/data/output/dataset_out.json'
+const dataBuiltGenerated = './public/data/generated/dataset_out.json'
 const dataOutPath = path.join(__dirname, dataBuiltOutput)
 fs.writeFileSync(dataOutPath, dataAsJson)
+fs.writeFileSync(dataBuiltGenerated, dataAsJson)
 console.log('vite.config > finished writing output json...')
 
 // VITE CONFIG
