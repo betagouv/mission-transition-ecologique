@@ -7,7 +7,7 @@ This workspace aims to be a space where we could store the raw data (as yaml fil
 ```sh
 # From this folder
 nvm use
-npm i
+npm install
 ```
 
 Or
