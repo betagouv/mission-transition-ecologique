@@ -374,7 +374,7 @@ The `TeeApp` widget can the import the json file as a static, and they are then 
 // ./src/TeeApp.ce.vue
 
 <script>
-  import jsonDataset from '@public/data/output/dataset_out.json'
+  import jsonDataset from '@public/data/generated/dataset_out.json'
   const yamlPrograms = deployMode ? jsonDataset : process.env.programs
   import { programsStore } from './stores/programs'
   const programs = programsStore()
@@ -464,7 +464,6 @@ Check : https://github.com/orgs/betagouv/projects/54/views/1
   show-message="true"
   msg="fr | The GOV-AID-TREE widget to find your aid program !"
   seed="track_needs"
-  dataset-url="/public/data/eco-aides.json"
   max-depth=3
   debug-switch="false"
   debug="false"

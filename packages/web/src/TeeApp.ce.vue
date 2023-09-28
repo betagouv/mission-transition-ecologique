@@ -1,10 +1,10 @@
 <template>
-  <div 
+  <div
     ref="trackElement"
     class="fr-container--fluid">
-  
+
     <!-- HEADER -->
-    <p 
+    <p
       v-if="showHeaderBool"
       class="fr-pb-0v fr-mb-0">
       <DsfrHeader
@@ -28,13 +28,13 @@
         </div>
       </div>
     </div>
-    
+
     <!-- MESSAGE & DEBUG SWITCH-->
-    <div 
+    <div
       v-if="showMessageBool || debugSwitchBool"
       class="fr-grid-row fr-grid-row--gutters ">
       <!-- MESSAGE-->
-      <div 
+      <div
         v-if="showMessageBool"
         class="fr-col">
         <h3
@@ -45,10 +45,10 @@
       </div>
       <!-- DEBUG SWITCH-->
       <div
-        v-if="debugSwitchBool" 
+        v-if="debugSwitchBool"
         class="fr-col-md-3 fr-col-sm-6">
-        <DsfrToggleSwitch 
-          label="Debug mode" 
+        <DsfrToggleSwitch
+          label="Debug mode"
           hint="Switch to activate / deactivate debugging mode"
           :modelValue="debugBool"
           @update:modelValue="changeDebug"
@@ -68,7 +68,7 @@
       :class="`fr-container--fluid ${tracks.currentStep > 1 ? 'fr-pt-10v' : ''}`">
       <!-- STEPPER -->
       <!-- <p
-        v-if="showStepperBool" 
+        v-if="showStepperBool"
         class="fr-tee-add-padding "
         >
         <TeeStepper
@@ -79,10 +79,10 @@
       </p> -->
 
       <!-- TRACKS INTERFACES -->
-      <div 
+      <div
         ref="tee-app-tracks"
         class="fr-grid-row fr-grid-row-gutters fr-p-0">
-        
+
         <!-- SIDEBAR MENU (FIL D'ARIANE)-->
         <div
           v-if="tracks.currentStep > 1"
@@ -103,7 +103,7 @@
         </div>
 
         <!-- TRACKS -->
-        <div 
+        <div
           id="tee-app-tracks"
           :class="`${tracks.currentStep > 1 ? 'fr-tee-add-padding' :''} ${debugBool ? 'fr-col-7' : tracks.currentStep === 1 ? 'fr-col-12 fr-col-xl-12' : 'fr-col fr-col-lg-8 fr-col-xl-6' } ${debugBool ? '' : 'fr-grid-row--center'}`"
           >
@@ -174,7 +174,7 @@
     <div
       v-if="programs.programDetail"
       :class="`fr-container-fluid fr-px-6v fr-px-md-20v fr-mt-10v`">
-      <div 
+      <div
         class="fr-grid-row fr-grid-row-gutters">
         <div class="fr-col">
           <TeeProgramDetail
@@ -209,8 +209,8 @@ import '@gouvfr/dsfr/dist/core/core.main.min.css'               // Le CSS minima
 // import '@public/css/custom.css'
 
 // @ts-ignore
-import jsonDataset from '@public/data/output/dataset_out.json'
-// console.log('TeeApp > jsonDataset :', jsonDataset)
+import jsonDataset from '@public/data/generated/dataset_out.json'
+console.log('TeeApp > jsonDataset :', jsonDataset)
 
 import { ref, onBeforeMount } from 'vue'
 
@@ -233,7 +233,7 @@ import TeeProgramDetail from './components/TeeProgramDetail.vue'
 // @ts-ignore
 import TeeCredits from './components/TeeCredits.vue'
 
-const appId = 'gov-aid-tree-app'
+// const appId = 'gov-aid-tree-app'
 
 // @ts-ignore
 const metaEnv = import.meta.env
@@ -247,7 +247,9 @@ const publicPath = `${deployUrl}${metaEnv.BASE_URL}`
 // @ts-ignore
 // console.log('TeeApp - process.env :', process.env)
 // @ts-ignore
-const yamlPrograms = deployMode ? jsonDataset : process.env.programs
+const yamlPrograms = jsonDataset
+// const yamlPrograms = deployMode ? jsonDataset : process.env.programs
+// const yamlPrograms = process.env.programs
 // console.log('TeeApp - yamlPrograms :', yamlPrograms)
 
 interface Props {
@@ -258,7 +260,7 @@ interface Props {
   locale?: string,
   msg?: string,
   seed: string,
-  datasetUrl: string,
+  datasetUrl?: string,
   maxDepth?: string
   debugSwitch?: string,
   debug?: string,
@@ -374,7 +376,7 @@ onBeforeMount(() => {
 <style lang="scss">
   @import '~@gouvfr/dsfr/dist/dsfr.min.css'; // ok
   @import '@public/css/custom.css';
-  
+
   // @import '../public/core.main.css';
   // @import '~@gouvfr/dsfr/dist/core/core.main.min.css';
 
