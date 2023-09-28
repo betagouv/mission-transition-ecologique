@@ -1,15 +1,7 @@
-<<<<<<< HEAD
 titre: TPE Gagnantes
 promesse: Faites des économies en gérant durablement vos dépenses
 description: |
   Diminuez les charges de votre entreprise et réduisez votre impact environnemental, en optimisant 4 postes de dépenses : Flux énergie,Matières premières, Déchets, Consommation d’eau
-=======
-id: tpe-gagnantes
-titre: TPE Gagnantes
-promesse: Faites des économies en gérant durablement vos dépenses
-description: | 
-  Diminuez les charges de votre entreprise et réduisez votre impact environnemental, en optimisant 4 postes de dépenses : Flux énergie,Matières premières, Déchets, Consommation d’eau  
->>>>>>> 6944cc7a82d633aff5d52a8b1f00158c0cc744e5
 url: https://agirpourlatransition.ademe.fr/entreprises/optimisez-tpe-pme/diagnostic-global-personnalise
 illustration: images/TEE_energie_verte.png
 objectifs:

@@ -1,13 +1,6 @@
-<<<<<<<< HEAD:packages/data/programs/diag-ecoconception-pme.yaml
 titre: Diag Ecoconception
 promesse: Améliorez l'impact environnementale de vos produits et services
 description: |
-========
-id: diag-ecoconception
-titre: Diag Ecoconception
-promesse: Améliorez l'impact environnementale de vos produits et services
-description: | 
->>>>>>>> 6944cc7a82d633aff5d52a8b1f00158c0cc744e5:packages/data/programs/diag-ecoconception.yaml
   Bénéficiez des experts d'un conseil pour repenser la manière de concevoir vos produits, services et procédés.
 url: https://diag.bpifrance.fr/produit/diag-eco-conception
 illustration: images/TEE_ampoule.png
