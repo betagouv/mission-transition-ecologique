@@ -2,10 +2,6 @@
 
 **Decision tree interfaces + fit user's decision with a database** 
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/965eef15-8fbd-4ba0-8ee9-f50258d04d8f/deploy-status)](https://app.netlify.com/sites/gov-aid-tree-poc/deploys)
-
-![](https://img.shields.io/gitlab/license/45341092)
-
 ---
 
 ## `WARNING : work in progress`
@@ -322,28 +318,20 @@ The user will see the questionnaire beginning with this first track, and its jou
 
 **Disclaimer** : _This strategy for building a dataset of aid programs is freely inspired from other projects, especially by the way [aides-jeunes](https://github.com/betagouv/aides-jeunes/tree/master/data/benefits/javascript) is building a collaborative dataset of aids from a set of yaml files._
 
-The aid programs dataset is rebuilt as a unique `dataset_out.json` file at each deployment, based on a list of `yaml` files. All of these files are exposed in the `./public` directory.
+The aid programs dataset is rebuilt as a unique `dataset_out.json` file at each deployment, based on a list of `yaml` files. This json file is exposed in the `./public` directory.
 
-All the aids are described one by one in the `../data/programs` directory in distinct `yaml` files.
-
-```
-.
-├── ...
-├── public
-|   ├── css
-|   └── data
-|   |   ├── output               
-|   |   |   └── dataset_out.json  <-- the json file used as a "database"
-|   |   └── references
-|   └── fonts
-├── ...
-└── README.md
-```
+All the aids are described one by one in the `packages/data/programs` directory in distinct `yaml` files.
 
 ```
 # in `./packages`
 .
 ├── data
+│   ├── README.md
+│   ├── example.env
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── src                            <-- scripts
+│   │   └── BuildJsonOutput.ts
 │   └── programs                       <-- all the aid described in a yaml format
 │       ├── diag-decarbon-action.yaml
 │       ├── diag-eco-flux.yaml
@@ -352,18 +340,45 @@ All the aids are described one by one in the `../data/programs` directory in dis
 │       ├── performa-environnement.yaml
 │       ├── tpe-gagnantes.yaml
 │       ├── tremplin.yaml
-│       └── visite-energie.yaml
+│       ├── visite-energie.yaml
+│       └── ...
 ```
 
-When the app is built some functions in the `./vite.config.ts` are triggered :
+These `yaml` files could be built into a json file, with the following commands :
 
-- All yaml files in the `../data/programs` are read and transformed into `js` objects ;
-- All objects are then pushed into an array ;
-- This array of objects (all the data from all yaml files) is exported and written as `dataset_out.json` file (the output) in the `./public/data/output` directory.
+```sh
+nvm use
 
-Doing so any new build (for instance triggered by a push/MR on the repo) will automatically keep updated the aid dataset. 
+# for a simple build
+npm run build-json-output
 
-This strategy for building the dataset has several advantages : 
+# for a build and a watcher on yaml files
+npm run build-json-output-watch
+```
+
+The generated `dataset_out.json` file is then created / updated in the `./packages/web/public/data/generated` folder.
+
+```
+# in `./packages/web`
+
+.
+├── ...
+├── public
+|   ├── css
+|   └── data
+|   |   ├── generated               
+|   |   |   └── dataset_out.json  <-- the json file used as a "database"
+|   |   └── references
+|   |       ├── naf_codes.json
+|   |       └── ...
+|   └── fonts
+├── ...
+└── README.md
+```
+
+At every run of the frontend app OR every run of the backend app, the json is built (in dev environnement the json is built and the yaml files are also watched). Doing so any new build (for instance triggered by a push/MR on the repo) will automatically keep updated the json dataset.
+
+This strategy for building the dataset has several advantages :
 
 - No need for a database technology (no use for a PostGreSQL / SQL / MongoDB...), we keep it simple in a json ;
 - Any member of the team (especially not developpers) can add new yaml files to the repo, and the "database" will be updated without any need of a developer.
