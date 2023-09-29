@@ -25,4 +25,5 @@ npm install --workspace packages/data
 ```sh
 # From this folder
 npm run build-front-json-output
+npm run build-front-json-output-watch
 ```
