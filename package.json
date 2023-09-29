@@ -12,11 +12,12 @@
   "scripts": {
     "build": "npm run build --workspaces",
     "start": "bash start.sh",
-    "dev-front": "npm run dev -w packages/web",
-    "build-front": "npm run build -w packages/web",
-    "dev-back": "npm run dev -w packages/backend",
-    "build-back": "npm run build -w packages/backend",
-    "build-json-output": "npm run build-front-json-output -w packages/data"
+    "dev-front": "npm run build-json-output-watch & npm run dev -w packages/web",
+    "build-front": "npm run build-json-output && npm run build -w packages/web",
+    "dev-back": "npm build-json-output-watch & npm run dev -w packages/backend",
+    "build-back": "npm run build-json-output && npm run build -w packages/backend",
+    "build-json-output": "npm run build-front-json-output -w packages/data",
+    "build-json-output-watch": "npm run build-front-json-output-watch -w packages/data"
   },
   "workspaces": [
     "./packages/*"
