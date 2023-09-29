@@ -2,10 +2,6 @@
 
 **Decision tree interfaces + fit user's decision with a database** 
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/965eef15-8fbd-4ba0-8ee9-f50258d04d8f/deploy-status)](https://app.netlify.com/sites/gov-aid-tree-poc/deploys)
-
-![](https://img.shields.io/gitlab/license/45341092)
-
 ---
 
 ## `WARNING : work in progress`
@@ -322,40 +318,67 @@ The user will see the questionnaire beginning with this first track, and its jou
 
 **Disclaimer** : _This strategy for building a dataset of aid programs is freely inspired from other projects, especially by the way [aides-jeunes](https://github.com/betagouv/aides-jeunes/tree/master/data/benefits/javascript) is building a collaborative dataset of aids from a set of yaml files._
 
+The aid programs dataset is rebuilt as a unique `dataset_out.json` file at each deployment, based on a list of `yaml` files. This json file is exposed in the `./public` directory.
 
-The aid programs dataset is rebuilt as a unique `dataset_out.json` file at each deployment, based on a list of `yaml` files. All of these files are exposed in the `./public` directory.
-
-All the aids are described one by one in the `./public/data/programs` directory in distinct `yaml` files.
+All the aids are described one by one in the `packages/data/programs` directory in distinct `yaml` files.
 
 ```
+# in `./packages`
+.
+├── data
+│   ├── README.md
+│   ├── example.env
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── src                            <-- scripts
+│   │   └── BuildJsonOutput.ts
+│   └── programs                       <-- all the aid described in a yaml format
+│       ├── diag-decarbon-action.yaml
+│       ├── diag-eco-flux.yaml
+│       ├── diag-ecoconception.yaml
+│       ├── fonds-tourisme-durable.yaml
+│       ├── performa-environnement.yaml
+│       ├── tpe-gagnantes.yaml
+│       ├── tremplin.yaml
+│       ├── visite-energie.yaml
+│       └── ...
+```
+
+These `yaml` files could be built into a json file, with the following commands :
+
+```sh
+nvm use
+
+# for a simple build
+npm run build-json-output
+
+# for a build and a watcher on yaml files
+npm run build-json-output-watch
+```
+
+The generated `dataset_out.json` file is then created / updated in the `./packages/web/public/data/generated` folder.
+
+```
+# in `./packages/web`
+
 .
 ├── ...
 ├── public
 |   ├── css
 |   └── data
-|   |   ├── output               
+|   |   ├── generated               
 |   |   |   └── dataset_out.json  <-- the json file used as a "database"
-|   |   ├── programs              <-- all the aid described in a yaml format
-|   |   |   ├── diag-decarbon-action.yaml
-|   |   |   ├── diag-eco-flux.yaml
-|   |   |   ├── diag-ecoconception.yaml
-|   |   |   ├── (other yaml files)
-|   |   |   └── ...
 |   |   └── references
+|   |       ├── naf_codes.json
+|   |       └── ...
 |   └── fonts
 ├── ...
 └── README.md
 ```
 
-When the app is built some functions in the `./vite.config.ts` are triggered :
+At every run of the frontend app OR every run of the backend app, the json is built (in dev environnement the json is built and the yaml files are also watched). Doing so any new build (for instance triggered by a push/MR on the repo) will automatically keep updated the json dataset.
 
-- All yaml files in the `./public/data/programs` are read and transformed into `js` objects ;
-- All objects are then pushed into an array ;
-- This array of objects (all the data from all yaml files) is exported and written as `dataset_out.json` file (the output) in the `./public/data/output` directory.
-
-Doing so any new build (for instance triggered by a push/MR on the repo) will automatically keep updated the aid dataset. 
-
-This strategy for building the dataset has several advantages : 
+This strategy for building the dataset has several advantages :
 
 - No need for a database technology (no use for a PostGreSQL / SQL / MongoDB...), we keep it simple in a json ;
 - Any member of the team (especially not developpers) can add new yaml files to the repo, and the "database" will be updated without any need of a developer.
@@ -366,7 +389,7 @@ The `TeeApp` widget can the import the json file as a static, and they are then 
 // ./src/TeeApp.ce.vue
 
 <script>
-  import jsonDataset from '@public/data/output/dataset_out.json'
+  import jsonDataset from '@public/data/generated/dataset_out.json'
   const yamlPrograms = deployMode ? jsonDataset : process.env.programs
   import { programsStore } from './stores/programs'
   const programs = programsStore()
@@ -386,7 +409,7 @@ Once in the store, programs can be filtered (cf `filterPrograms` function in `./
 In order to filter aid programs corresponding to the user's choices, an aid program yaml file must contain a block of `conditions` - following more or less the [open fisca](https://fr.openfisca.org/) / [Publicodes](https://publi.codes/) syntax - such as :
 
 ```yaml
-# ex. ./public/data/programs/diag-eco-flux.yaml
+# ex. ../data/programs/diag-eco-flux.yaml
 
 title: Diag Eco-flux
 resume: Faites des économies en gérant durablement vos dépenses
@@ -456,7 +479,6 @@ Check : https://github.com/orgs/betagouv/projects/54/views/1
   show-message="true"
   msg="fr | The GOV-AID-TREE widget to find your aid program !"
   seed="track_needs"
-  dataset-url="/public/data/eco-aides.json"
   max-depth=3
   debug-switch="false"
   debug="false"
@@ -494,8 +516,8 @@ The `env` variables you can use for deployment are listed in the `example.env` f
 VITE_NO_DEBUG_SWITCH = false
 
 # Path of the dataset
-# Default : ./public/data/programs
-VITE_DATA_DIR_PATH = ./public/data/programs
+# Default : ../data/programs
+VITE_DATA_DIR_PATH = ../data/programs
 
 # To indicate built source while copying the widget
 VITE_DEPLOY_URL = https://gov-aid-tree.osc-fr1.scalingo.io
