@@ -35,3 +35,12 @@ autres opérateurs:
   - ADEME
 nature de l'aide: accompagnement
 coût de l'accompagnement: 6 000 € HT après subvention de 40 %
+
+publicodes:
+  entreprise:
+  entreprise . effectif:
+
+  éligibilité:
+    toutes ces conditions:
+      - entreprise . effectif >= 250
+      - entreprise . effectif < 500

@@ -23,10 +23,6 @@ conditions:
     operator: "or"
     value:
       - "*"
-  - type: structure_sizes
-    operator: "or"
-    value:
-      - TPE
   - type: user_goals
     operator: "or"
     value:
@@ -34,3 +30,9 @@ conditions:
 opérateur de contact: CMA
 nature de l'aide: accompagnement
 coût de l'accompagnement: gratuit
+
+publicodes:
+  entreprise:
+  entreprise . effectif:
+
+  éligibilité: entreprise . effectif < 20
