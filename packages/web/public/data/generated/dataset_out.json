@@ -211,7 +211,7 @@
         "type": "structure_sizes",
         "operator": "or",
         "value": [
-          "PME"
+          "TPE"
         ]
       },
       {
