@@ -22,6 +22,16 @@ import * as path from 'path'
 import * as fs from 'fs'
 import * as yaml from 'js-yaml'
 
+const createFolderIfNotExists = (folderName: string): void => {
+  try {
+    if (!fs.existsSync(folderName)) {
+      fs.mkdirSync(folderName)
+    }
+  } catch (err) {
+    console.error(err)
+  }
+}
+
 const programsArray = <any[]>[]
 
 // joining path of directory
@@ -52,9 +62,14 @@ filesNames.forEach((file: string) => {
 
 // build output json
 const dataAsJson: string = JSON.stringify(programsArray, null, 2)
-const dataBuiltOutputDir: string = process.env.DATA_FRONT_GENERATED_DIR_PATH || '../../web/public/data/generated'
-const dataBuiltOutput: string = `${dataBuiltOutputDir}/dataset_out.json`
-const dataOutPath: string = path.join(__dirname, dataBuiltOutput)
+const dataBuiltOutputDir: string = path.join(
+  __dirname,
+  process.env.DATA_FRONT_GENERATED_DIR_PATH || '../../web/public/data/generated'
+)
+
+createFolderIfNotExists(dataBuiltOutputDir)
+
+const dataOutPath: string = `${dataBuiltOutputDir}/dataset_out.json`
 fs.writeFileSync(dataOutPath, dataAsJson)
 
 console.log()

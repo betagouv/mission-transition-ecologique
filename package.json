@@ -10,7 +10,7 @@
   "private": false,
   "license": "AGPL-3.0",
   "scripts": {
-    "build": "npm run build --workspaces",
+    "build": "npm run build-json-output && npm run build --workspaces",
     "start": "bash start.sh",
     "dev-front": "npx concurrently \"npm run build-json-output-watch\" \"npm run dev -w packages/web\"",
     "build-front": "npm run build-json-output && npm run build -w packages/web",
