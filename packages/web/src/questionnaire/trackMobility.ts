@@ -5,7 +5,7 @@ export const mobility = {
   label: { fr: "Quel est le mode de transport principal des salariés pour le trajet domicile-travail ?" },
   callout: {
     header: { fr: 'Thématique' },
-    headerStyle: 'color: #000091; font-weight: 400; margin-bottom: auto;',
+    headerStyle: 'color: #000091;',
     bgColor: '#1EBE8E',
     title: { fr : 'La mobilité dans votre entreprise' },
     titleStyle: 'color: #000091;',
