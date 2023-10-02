@@ -54,7 +54,7 @@
       :id="trackId"
       class="fr-grid-row">
       <div 
-        :class="`fr-col${track.imageRight ? ' fr-col-md-9 fr-col-lg-9' : ''}`">
+        :class="`fr-col${track.imageRight ? ' fr-col-md-6 fr-col-lg-6 tee-track-has-image-right' : ''}`">
         <!-- UNCOMPLETED QUESTIONNAIRE -->
         <div
           :class="`fr-grid-row fr-grid-row--gutters ${track.bgColor ? 'fr-p-5v fr-p-sm-8v fr-p-md-20v' : ''}`"
@@ -68,11 +68,11 @@
             <div
               :class="`${track.callout.bigTitle ? 'fr-px-2v' : 'fr-py-4v fr-px-4v'}`"
               :style="`background-color: ${track.callout.bgColor || 'transparent'}`">
-              <div class="fr-grid-row fr-grid-row--gutters">
+              <div class="tee-track-callout fr-grid-row fr-grid-row--gutters">
                 <!-- CALLOUT IMAGE LEFT -->
                 <div 
                   v-if="track.callout.imageLeft"
-                  class="fr-col-4 fr-col-sm-hide"
+                  class="fr-col-5 fr-col-sm-hide tee-track-callout-img fr-pl-1v fr-py-0 fr-pr-0"
                   style="align-self: center;">
                   <img 
                     class="fr-responsive-img"
@@ -82,37 +82,38 @@
                 </div>
                 <!-- CALLOUT TEXT -->
                 <div 
-                  class="fr-col">
+                  class="fr-col tee-track-callout-texts">
                   <!-- CALLOUT HEADER -->
                   <h2
                     v-if="track.callout.header"
                     :style="`${track.callout.headerStyle} || 'color: var(--text-default-info);'`"
-                    class="">
+                    class="tee-track-callout-header">
                     {{ track.callout.header[choices.lang]}}
                   </h2>
                   <!-- CALLOUT TITLE / BIG TITLE -->
                   <h1
                     v-if="track.callout.bigTitle"
+                    class="fr-mb-0 tee-track-callout-big-title"
                     :style="`${track.callout.titleStyle}`">
                     {{ track.callout.title[choices.lang]}}
                   </h1>
                   <h3
                     v-else
-                    class="fr-callout__title"
+                    class="fr-callout__title tee-track-callout-title"
                     :style="`${track.callout.titleStyle}`">
                     {{ track.callout.title[choices.lang]}}
                   </h3>
                   <!-- CALLOUT DESCRIPTION -->
                   <p 
                     v-if="track.callout.description"
-                    class="fr-callout__text"
+                    class="fr-callout__text tee-track-callout-description"
                     :style="`${track.callout.descriptionStyle}`">
                     {{ track.callout.description[choices.lang]}}
                   </p>
                   <!-- CALLOUT HINT -->
                   <p 
                     v-if="track.callout.hint"
-                    class="fr-mt-2v fr-mb-1v"
+                    class="fr-mt-2v fr-mb-1v tee-track-callout-hint"
                     style="color: var(--text-active-blue-france);">
                     <i>
                       <span 
@@ -186,7 +187,7 @@
           <div
             v-for="(option, idx) in optionsArray"
             :key="`track-${step}-${trackId}-option-${idx}`"
-            :class="`${colsWidth} ${isTrackResults ? 'fr-col-offset-md-1' : ''} fr-py-2v`"
+            :class="`${colsWidth} ${isTrackResults ? 'fr-col-offset-md-1' : ''} tee-track-choice`"
             >
             
             <!-- AS CARDS -->
@@ -352,7 +353,7 @@
           <!-- BTN PREVIOUS -->
           <div
             v-if="step > 1"
-            class="fr-col-6 fr-col-md-4 fr-col-lg-4 fr-col-xl-3">
+            class="fr-col-6 fr-col-md-5 fr-col-lg-4 fr-col-xl-3">
             <DsfrButton
               class="fr-btn-fullwidth fr-btn-sm-fullwidth"
               :label="choices.t('previous')"
@@ -363,7 +364,7 @@
           </div>
           <!-- BTN NEXT -->
           <div 
-            class="fr-col-6 fr-col-md-4 fr-col-lg-4 fr-col-xl-3">
+            class="fr-col-6 fr-col-md-5 fr-col-lg-4 fr-col-xl-3">
             <DsfrButton
               class="fr-btn-fullwidth fr-btn-sm-fullwidth"
               :label="choices.t('next')"
@@ -378,12 +379,10 @@
       <!-- TRACK IMAGE RIGHT IF ANY -->
       <div 
         v-if="track.imageRight"
-        class="fr-col-4 fr-col-md-3 fr-col-sm-hide fr-col-lg-3"
-        style="align-self: center;">
+        class="fr-col-12 fr-col-md-6 fr-col-lg-6 tee-track-image-right">
         <img 
-          class="fr-responsive-img fr-px-2v"
+          class="fr-responsive-img"
           :src="`${choices.publicPath}${track.imageRight}`"
-          style="max-height: 500px; width: auto; height: auto;"
           :alt="`image / callout`"
           />
       </div>
@@ -427,7 +426,7 @@ const props = defineProps<Props>()
 
 const colsOptions: ColsOptions = {
   buttons: 12,
-  simpleButtons: 6,
+  simpleButtons: 12,
   input: 12,
   cards: 4,
   form: 8,
@@ -436,7 +435,7 @@ const colsOptions: ColsOptions = {
 }
 const colsOptionsLarge: ColsOptions = {
   buttons: 12,
-  simpleButtons: 3,
+  simpleButtons: 8,
   input: 12,
   cards: 6,
   form: 8,

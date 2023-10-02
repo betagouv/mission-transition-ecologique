@@ -68,7 +68,7 @@
             <p 
               v-for="(paragraph, idx) in program.objectifs"
               :key="`description-paragraph-${idx}`"
-              class="fr-mb-3v">
+              class="fr-mb-6v">
               <span
                 class="fr-tee-description-paragraph-marker">
                 {{ idx + 1 }} |
@@ -89,16 +89,6 @@
     <div
       v-if="trackConfig.config?.showProgramInfos" 
       class="fr-grid-row fr-grid-row--gutters fr-mb-5v">
-
-      <!-- PROGRAM TYPE -->
-      <div
-        :class="columnTiles">
-        <TeeTile
-          :title="choices.t('program.programType')"
-          :image-path="`${choices.publicPath}images/TEE-typefinance.svg`"
-          :description="program[`nature de l'aide`]">
-        </TeeTile>
-      </div>
 
       <!-- PROGRAM GEO ZONES -->
       <!-- <div
@@ -138,6 +128,16 @@
           :image-path="`${choices.publicPath}images/TEE-cout.svg`"
           :description="program[`coût de l'accompagnement`]"
         />
+      </div>
+
+      <!-- PROGRAM TYPE -->
+      <div
+        :class="columnTiles">
+        <TeeTile
+          :title="choices.t('program.programType')"
+          :image-path="`${choices.publicPath}images/TEE-typefinance.svg`"
+          :description="program[`nature de l'aide`]">
+        </TeeTile>
       </div>
 
       <!-- PROGRAM PROVIDERS -->
@@ -289,7 +289,8 @@ const analytics = analyticsStore()
 
 const blockColor = '#000091'
 const showForm = ref<boolean>(false)
-const columnTiles = ref<string>('fr-col-4 fr-sm-3 fr-col-md-4 fr-col-lg-2')
+// const columnTiles = ref<string>('fr-col-4 fr-sm-3 fr-col-md-4 fr-col-lg-2')
+const columnTiles = ref<string>('fr-col')
 
 interface Props {
   program: ProgramData,

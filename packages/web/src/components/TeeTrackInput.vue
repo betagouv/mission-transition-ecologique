@@ -140,7 +140,7 @@
               <!-- ICON -->
               <span
                 v-if="resMap.icon"
-                :class="`${resMap.icon} fr-mr-6v`" 
+                :class="`${resMap.icon} fr-mr-8v`" 
                 aria-hidden="true">
               </span>
               <!-- TITLE -->

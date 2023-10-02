@@ -5,7 +5,7 @@ export const wastesStake = {
   label: { fr: "Avez-vous l’envie de progresser sur la gestion de vos déchets ? " },
   callout: {
     header: { fr: 'Thématique' },
-    headerStyle: 'color: #000091; font-weight: 400; font-size: 1.3rem; margin-bottom: auto;',
+    headerStyle: 'color: #000091;',
     bgColor: '#FCA081',
     title: { fr : 'Votre gestion des déchets' },
     titleStyle: 'color: #000091;',

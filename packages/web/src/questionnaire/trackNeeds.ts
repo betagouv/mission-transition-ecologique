@@ -64,7 +64,7 @@ export const needs = {
     },
     {
       disabled: true,
-      value: { project_needs: '*' },
+      value: { project_needs: '*', 'entreprise . effectif' : 25 },
       title: { fr: "M'informer" },
       label: { fr: "(QUESTION TEST) Je cherche juste à m'informer" },
       hint: { fr: "Faites une première recherche et découvrez les différentes offres" },

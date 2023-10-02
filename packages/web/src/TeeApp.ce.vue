@@ -210,7 +210,7 @@ import '@gouvfr/dsfr/dist/core/core.main.min.css'               // Le CSS minima
 
 // @ts-ignore
 import jsonDataset from '../public/data/generated/dataset_out.json'
-console.log('TeeApp > jsonDataset :', jsonDataset)
+// console.log('TeeApp > jsonDataset :', jsonDataset)
 
 import { ref, onBeforeMount } from 'vue'
 

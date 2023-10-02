@@ -5,7 +5,7 @@ export const strategyAudits = {
   label: { fr: "Pour finir, avez-vous déjà réalisé des audits environnementaux ces 2 dernières années ?" },
   callout: {
     header: { fr: 'Thématique' },
-    headerStyle: 'color: white; font-weight: 400; font-size: 1.3rem; margin-bottom: auto;',
+    headerStyle: 'color: white;',
     bgColor: '#646EFA',
     title: { fr : "Votre stratégie environnementale" },
     titleStyle: 'color: white;',

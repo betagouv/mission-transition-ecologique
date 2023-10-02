@@ -40,7 +40,8 @@ export const frDict = {
     programResume: "Le dispositif en deux mots",
     programDescription: "Au programme :",
     programProviders: "Contact",
-    programType: "Nature de l'aide"
+    programType: "Nature de l'aide",
+    programService: "Prestation"
   },
   programCosts: {
     cost: "Coût reste à charge",
