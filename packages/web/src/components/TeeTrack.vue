@@ -68,11 +68,11 @@
             <div
               :class="`${track.callout.bigTitle ? 'fr-px-2v' : 'fr-py-4v fr-px-4v'}`"
               :style="`background-color: ${track.callout.bgColor || 'transparent'}`">
-              <div class="fr-grid-row fr-grid-row--gutters">
+              <div class="tee-track-callout fr-grid-row fr-grid-row--gutters">
                 <!-- CALLOUT IMAGE LEFT -->
                 <div 
                   v-if="track.callout.imageLeft"
-                  class="fr-col-4 fr-col-sm-hide"
+                  class="fr-col-5 fr-col-sm-hide tee-track-callout-img fr-pl-1v fr-py-0 fr-pr-0"
                   style="align-self: center;">
                   <img 
                     class="fr-responsive-img"
@@ -82,37 +82,38 @@
                 </div>
                 <!-- CALLOUT TEXT -->
                 <div 
-                  class="fr-col">
+                  class="fr-col tee-track-callout-texts">
                   <!-- CALLOUT HEADER -->
                   <h2
                     v-if="track.callout.header"
                     :style="`${track.callout.headerStyle} || 'color: var(--text-default-info);'`"
-                    class="">
+                    class="tee-track-callout-header">
                     {{ track.callout.header[choices.lang]}}
                   </h2>
                   <!-- CALLOUT TITLE / BIG TITLE -->
                   <h1
                     v-if="track.callout.bigTitle"
+                    class="fr-mb-0 tee-track-callout-big-title"
                     :style="`${track.callout.titleStyle}`">
                     {{ track.callout.title[choices.lang]}}
                   </h1>
                   <h3
                     v-else
-                    class="fr-callout__title"
+                    class="fr-callout__title tee-track-callout-title"
                     :style="`${track.callout.titleStyle}`">
                     {{ track.callout.title[choices.lang]}}
                   </h3>
                   <!-- CALLOUT DESCRIPTION -->
                   <p 
                     v-if="track.callout.description"
-                    class="fr-callout__text"
+                    class="fr-callout__text tee-track-callout-description"
                     :style="`${track.callout.descriptionStyle}`">
                     {{ track.callout.description[choices.lang]}}
                   </p>
                   <!-- CALLOUT HINT -->
                   <p 
                     v-if="track.callout.hint"
-                    class="fr-mt-2v fr-mb-1v"
+                    class="fr-mt-2v fr-mb-1v tee-track-callout-hint"
                     style="color: var(--text-active-blue-france);">
                     <i>
                       <span 

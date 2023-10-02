@@ -63,7 +63,7 @@ export const needs = {
       }
     },
     {
-      disabled: true,
+      disabled: false,
       value: { project_needs: '*' },
       title: { fr: "M'informer" },
       label: { fr: "(QUESTION TEST) Je cherche juste à m'informer" },

@@ -77,6 +77,35 @@ WARNING :
   background-color: white;
 }
 
+/* TRACK CALLOUT */
+
+.tee-track-callout {
+  align-items: center;
+}
+.tee-track-callout-img {
+  text-align: center;
+}
+.tee-track-callout-img  > .fr-responsive-img {
+  max-height: 150px;
+}
+
+.tee-track-callout-header {
+  font-size: 1.1em;
+}
+.tee-track-callout-big-title {
+  font-size: 2.2em;
+  line-height: 1.2em;
+}
+.tee-track-callout-title {
+  
+}
+.tee-track-callout-description {
+  
+}
+.tee-track-callout-hint {
+  
+}
+
 /* CUSTOM BUTTON INPUT */
 .tee-btn-input {
   padding: .5rem 1rem; 
@@ -107,7 +136,7 @@ WARNING :
 /* RESULTS LIST */
 .tee-program-title {
   color: #6A6AF4; 
-  font-size: .9rem;
+  font-size: 1.2rem;
   font-weight: bold;
 }
 .tee-program-resume {
