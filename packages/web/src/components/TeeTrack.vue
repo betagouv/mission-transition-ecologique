@@ -54,7 +54,7 @@
       :id="trackId"
       class="fr-grid-row">
       <div 
-        :class="`fr-col${track.imageRight ? ' fr-col-md-9 fr-col-lg-9' : ''}`">
+        :class="`fr-col${track.imageRight ? ' fr-col-md-6 fr-col-lg-6 tee-track-has-image-right' : ''}`">
         <!-- UNCOMPLETED QUESTIONNAIRE -->
         <div
           :class="`fr-grid-row fr-grid-row--gutters ${track.bgColor ? 'fr-p-5v fr-p-sm-8v fr-p-md-20v' : ''}`"
@@ -352,7 +352,7 @@
           <!-- BTN PREVIOUS -->
           <div
             v-if="step > 1"
-            class="fr-col-6 fr-col-md-4 fr-col-lg-4 fr-col-xl-3">
+            class="fr-col-6 fr-col-md-5 fr-col-lg-4 fr-col-xl-3">
             <DsfrButton
               class="fr-btn-fullwidth fr-btn-sm-fullwidth"
               :label="choices.t('previous')"
@@ -363,7 +363,7 @@
           </div>
           <!-- BTN NEXT -->
           <div 
-            class="fr-col-6 fr-col-md-4 fr-col-lg-4 fr-col-xl-3">
+            class="fr-col-6 fr-col-md-5 fr-col-lg-4 fr-col-xl-3">
             <DsfrButton
               class="fr-btn-fullwidth fr-btn-sm-fullwidth"
               :label="choices.t('next')"
@@ -378,12 +378,10 @@
       <!-- TRACK IMAGE RIGHT IF ANY -->
       <div 
         v-if="track.imageRight"
-        class="fr-col-4 fr-col-md-3 fr-col-sm-hide fr-col-lg-3"
-        style="align-self: center;">
+        class="fr-col-12 fr-col-md-6 fr-col-lg-6 tee-track-image-right">
         <img 
-          class="fr-responsive-img fr-px-2v"
+          class="fr-responsive-img"
           :src="`${choices.publicPath}${track.imageRight}`"
-          style="max-height: 500px; width: auto; height: auto;"
           :alt="`image / callout`"
           />
       </div>
@@ -427,7 +425,7 @@ const props = defineProps<Props>()
 
 const colsOptions: ColsOptions = {
   buttons: 12,
-  simpleButtons: 6,
+  simpleButtons: 12,
   input: 12,
   cards: 4,
   form: 8,
@@ -436,7 +434,7 @@ const colsOptions: ColsOptions = {
 }
 const colsOptionsLarge: ColsOptions = {
   buttons: 12,
-  simpleButtons: 3,
+  simpleButtons: 8,
   input: 12,
   cards: 6,
   form: 8,
