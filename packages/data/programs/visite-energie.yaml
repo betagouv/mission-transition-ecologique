@@ -10,15 +10,6 @@ objectifs:
   - Construisez et réalisez un plan d’actions grâce à un expert de l'énergie
   - Réduisez la consommation d’énergie de votre entreprise
 conditions:
-  - type: project_needs
-    operator: "or"
-    value:
-      - advices
-      - financing
-  - type: project_status
-    operator: "or"
-    value:
-      - "*"
   - type: project_sectors
     operator: "or"
     value:

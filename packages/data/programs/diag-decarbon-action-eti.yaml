@@ -9,23 +9,10 @@ objectifs:
   - Elaborez votre plan d'actions pour décarboner votre activité.
   - Embarquez votre écosystème en valorisant votre engagement dans la décarbonation.
 conditions:
-  - type: project_needs
-    operator: "or"
-    value:
-      - advices
-      - financing
-  - type: project_status
-    operator: "or"
-    value:
-      - carbon
   - type: project_sectors
     operator: "or"
     value:
       - "*"
-  - type: structure_sizes
-    operator: "or"
-    value:
-      - ETI
   - type: user_goals
     operator: "or"
     value:
