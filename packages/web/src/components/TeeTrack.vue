@@ -186,7 +186,7 @@
           <div
             v-for="(option, idx) in optionsArray"
             :key="`track-${step}-${trackId}-option-${idx}`"
-            :class="`${colsWidth} ${isTrackResults ? 'fr-col-offset-md-1' : ''} fr-py-2v`"
+            :class="`${colsWidth} ${isTrackResults ? 'fr-col-offset-md-1' : ''} tee-track-choice`"
             >
             
             <!-- AS CARDS -->

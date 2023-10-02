@@ -99,11 +99,15 @@ WARNING :
   padding: .1rem 1.5rem;
   min-height: 1.8rem;
 }
+.tee-track-choice {
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+}
 
 /* RESULTS LIST */
 .tee-program-title {
   color: #6A6AF4; 
-  font-size: .85rem;
+  font-size: .9rem;
   font-weight: bold;
 }
 .tee-program-resume {
