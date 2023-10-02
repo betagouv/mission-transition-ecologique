@@ -1,32 +1,28 @@
 import { EstablishmentNotFoundError, Etablissement } from '../domain/types'
 import axios, { AxiosError, AxiosResponse } from 'axios'
 import { EtablissementDocument } from './types'
-import { ensureError } from './helpers'
+import { ensureError } from '../helpers/errors'
 import { Result } from 'true-myth'
+import { EtablissementRepository } from '../domain/spi'
 
 /**
- * Populate headers for a call to the "SIRENE" API
- *
- * @arg token - API access token
+ * getEtablissement reads the API token from an environment
+ * variable and get an Établissement by its siret from the Sirene API
  */
-const makeHeaders = (token: string) => {
-  const jsonContentType = 'application/json'
-  return {
-    accept: jsonContentType,
-    'content-type': jsonContentType,
-    authorization: `Bearer ${token}`
-  }
+export const getEtablissement: EtablissementRepository['get'] = async (siret) => {
+  const token = process.env['SIRENE_API_TOKEN'] || ''
+  return requestSireneAPI(token, siret)
 }
 
 /**
  * requestSireneAPI requests data about companies, given their "siret"
  *
- * @arg siret - siret number of the company to fetch
  * @arg token - API access token
+ * @arg siret - siret number of the company to fetch
  */
 export const requestSireneAPI = async (
-  siret: string,
-  token: string
+  token: string,
+  siret: string
 ): Promise<Result<Etablissement, Error>> => {
   const api_sirene_url = `https://api.insee.fr/entreprises/sirene/V3/siret/${siret}`
 
@@ -45,5 +41,19 @@ export const requestSireneAPI = async (
     }
 
     return Result.err(error)
+  }
+}
+
+/**
+ * Populate headers for a call to the "SIRENE" API
+ *
+ * @arg token - API access token
+ */
+const makeHeaders = (token: string) => {
+  const jsonContentType = 'application/json'
+  return {
+    accept: jsonContentType,
+    'content-type': jsonContentType,
+    authorization: `Bearer ${token}`
   }
 }

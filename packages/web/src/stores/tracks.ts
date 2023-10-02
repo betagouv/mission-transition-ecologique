@@ -1,4 +1,5 @@
-import { ref, computed, toRaw } from 'vue'
+// import Vue from 'vue'
+import { ref, shallowRef, computed, toRaw } from 'vue'
 // cf : https://stackoverflow.com/questions/64917686/vue-array-converted-to-proxy-object
 import { defineStore } from 'pinia'
 
@@ -17,7 +18,7 @@ export const tracksStore = defineStore('tracks', () => {
   
   const maxDepth = ref(4)
 
-  const usedTracks = ref<UsedTrack[]>([])
+  const usedTracks = shallowRef<UsedTrack[]>([])
 
   // computed
   const tracksStepsArrayDict = computed(() => {
@@ -65,6 +66,12 @@ export const tracksStore = defineStore('tracks', () => {
     const track = allTracks.value.find(track => track.id === trackId)
     return track
   }
+  const getTrackCategory = (trackId: string) => {
+    const track = getTrack(trackId)
+    // @ts-ignore
+    const trackCateg: string = track?.category
+    return trackCateg
+  }
   const getTrackTitle = (trackId: string, lang: string) => {
     const track = getTrack(trackId)
     // @ts-ignore
@@ -102,7 +109,9 @@ export const tracksStore = defineStore('tracks', () => {
   }
 
   // actions
-  function setMaxDepth(depth: number) { maxDepth.value = depth }
+  function setMaxDepth(depth: number) { 
+    maxDepth.value = depth
+  }
 
   function setSeedTrack(seed: string) {
     // console.log()
@@ -117,11 +126,14 @@ export const tracksStore = defineStore('tracks', () => {
     // console.log('store.tracks > addToUsedTracks > srcTrackId : ', srcTrackId)
     // console.log('store.tracks > addToUsedTracks > newTrackId : ', newTrackId)
 
+    const track = getTrack(srcTrackId)
+
     removeFurtherUsedTracks(srcTrackId)
 
     // add newTrackId
     const trackInfos: UsedTrack = {
       id: newTrackId,
+      category: track?.category,
       completed: false,
       step: usedTracks.value.length + 1,
       selected: [],
@@ -139,13 +151,13 @@ export const tracksStore = defineStore('tracks', () => {
     // console.log('store.tracks > updateUsedTracks > selectedOptions : ', selectedOptions)
     usedTracks.value.map((trackInfo: UsedTrack) => {
       if (trackInfo.id === trackId) {
-        // console.log('store.tracks > updateUsedTracks > trackInfo : ', trackInfo)
-        // console.log('store.tracks > updateUsedTracks > trackInfo : ', trackInfo)
+        // console.log('store.tracks > updateUsedTracks > trackInfo (A) : ', trackInfo)
         const hasValues = Boolean(selectedOptions.length)
         const nextTrack = next
         trackInfo.selected = selectedOptions
         trackInfo.completed = hasValues
         trackInfo.next = hasValues ? nextTrack : null
+        // console.log('store.tracks > updateUsedTracks > trackInfo (B) : ', trackInfo)
       }
     })
   }
@@ -153,15 +165,19 @@ export const tracksStore = defineStore('tracks', () => {
   async function setUsedTracksAsNotCompleted(trackId: string) {
     // console.log()
     // console.log('store.tracks > setUsedTracksAsNotCompleted > trackId : ', trackId)
+    // console.log('store.tracks > setUsedTracksAsNotCompleted > updatedArray : ', updatedArray)
     usedTracks.value.map((trackInfo: UsedTrack) => {
+      // console.log('store.tracks > setUsedTracksAsNotCompleted > trackInfoCopy : ', trackInfoCopy)
       if (trackInfo.id === trackId) {
         trackInfo.completed = false
+        // console.log('store.tracks > setUsedTracksAsNotCompleted > trackInfo : ', trackInfo)
       }
+      return trackInfo
     })
     // console.log('store.tracks > setUsedTracksAsNotCompleted > usedTracks.value : ', usedTracks.value)
   }
 
-  function removeFurtherUsedTracks(srcTrackId: string) {
+  async function removeFurtherUsedTracks(srcTrackId: string) {
     // console.log()
     // console.log('store.tracks > removeFurtherUsedTracks > srcTrackId : ', srcTrackId)
     const lastTrack: UsedTrack | undefined = usedTracks.value.find((t: UsedTrack) => t.id === srcTrackId)
@@ -182,6 +198,7 @@ export const tracksStore = defineStore('tracks', () => {
     currentStep,
     setMaxDepth,
     getTrack,
+    getTrackCategory,
     getTrackTitle,
     getTrackLabel,
     getTrackBgColor,

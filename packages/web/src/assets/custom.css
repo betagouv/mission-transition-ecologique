@@ -39,6 +39,7 @@ WARNING :
 }
 .fr-btn-fixed-height > svg {
   width: 10%;
+  min-width: 10%;
 }
 .fr-btn-align-center {
   justify-content: center;
@@ -75,6 +76,83 @@ WARNING :
 .fr-form-block .fr-input {
   background-color: white;
 }
+
+/* TRACK CALLOUT */
+
+.tee-track-callout {
+  align-items: center;
+}
+.tee-track-callout-img {
+  text-align: center;
+}
+.tee-track-callout-img  > .fr-responsive-img {
+  max-height: 150px;
+}
+
+.tee-track-callout-header {
+  font-size: 1.1em;
+  font-size: 1.3rem;
+  margin-bottom: auto;
+}
+.tee-track-callout-big-title {
+  font-size: 2.2em;
+  line-height: 1.2em;
+}
+.tee-track-callout-title {
+  
+}
+.tee-track-callout-description {
+  
+}
+.tee-track-callout-hint {
+  
+}
+
+/* CUSTOM BUTTON INPUT */
+.tee-btn-input {
+  padding: .5rem 1rem; 
+  display: flex; 
+  align-items: center;
+}
+.tee-btn-input:hover {
+  cursor: pointer;
+}
+.tee-btn-input input {
+  width: auto;
+  display: inline;
+  box-shadow: none;
+  border: 1px solid #BBBBBB;
+  background-color: #F5F5F5;
+  border-radius: 0;
+}
+.tee-btn-sidebar {
+  text-align: start;
+  padding: .1rem 1.5rem;
+  min-height: 1.8rem;
+}
+.tee-track-choice {
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+}
+
+/* RESULTS LIST */
+.tee-program-title {
+  color: #6A6AF4; 
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.tee-program-resume {
+  color: #000091; 
+}
+.tee-program-badge-image {
+  text-transform: inherit;
+  color: white;
+  background-color: #000091;
+  border-radius: 1rem;
+  padding: 0 .7rem;
+}
+/* .tee-badge-image::before {
+} */
 
 /* RESULT DETAILS PAGE */
 /* check: https://css-tricks.com/css-counters-custom-list-number-styling/ */
@@ -115,6 +193,12 @@ code {
   overflow: auto;
 }
 
+/* IMAGES */
+.tee-track-image-right {
+  align-self: center; 
+  text-align: center;
+}
+
 @media screen and (max-width:48em) {
   .fr-sm-hide {
     display: none !important;
@@ -137,8 +221,8 @@ code {
   }
 }
 
+/*! media sm */
 @media screen and (min-width: 0em) and (max-width: 36em) {
-  /*! media sm */
   .fr-hidden-xs {
     display: none !important;
   }
@@ -363,6 +447,37 @@ code {
   }
 }
 
+/*! media md and smaller only */
+@media (max-width: 48em) {
+  .tee-track-has-image-right {
+    order: 2;
+  }
+  .tee-track-image-right {
+    max-height: 300px;
+    /* max-width: 400px; */
+    overflow: hidden; 
+  }
+  .tee-track-image-right > .fr-responsive-img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+  }
+}
+
+/*! media more than md */
+@media (min-width: 48em) {
+  .tee-track-image-right > .fr-responsive-img {
+    max-height: 500px; 
+    width: auto; 
+    height: auto;
+  }
+}
+
+/*! media lg */
+@media (min-width: 62em) {
+}
+
+/*! media xl */
 @media screen and (max-width:78em) {
   .fr-tee-add-padding {
     padding: 0 2em 0 2em;
@@ -384,6 +499,11 @@ code {
     padding-left: 20v !important;
     padding-right: 20v !important;
   }
+}
+
+/* FORMS */
+.fr-input-group .required {
+  color: red;
 }
 
 /* TRANSITIONS */

@@ -1,49 +1,48 @@
-id: visite-energie
-title: Visite Energie
-resume: Mesurer votre maturité energétique et créer un plan d’actions personnalisé avec un conseiller
-origin_url: https://www.cci.fr/
-# cover: images/programs/visite-energie.jpg
-cover: images/TEE_energie_verte.png
-description:
+titre: Visite Énergie
+promesse: Mesurez votre maturité energétique et créez un plan d’actions personnalisé avec un conseiller
+description: |
+  Évaluez les coûts et surcoûts d'énergie et identifiez les actions à mener pour les réduire
+url: https://www.cci.fr/
+illustration: images/TEE_energie_verte.png
+objectifs:
   - Mettez en œuvre une démarche structurée d’économies d’énergie
   - Montez en compétences sur la thématique Energie de votre entreprise
   - Construisez et réalisez un plan d’actions grâce à un expert de l'énergie
   - Réduisez la consommation d’énergie de votre entreprise
-program_types: 
-  - diag
 conditions:
   - type: project_needs
     operator: "or"
-    value: 
+    value:
       - advices
       - financing
   - type: project_status
     operator: "or"
-    value: 
+    value:
       - "*"
   - type: project_sectors
     operator: "or"
-    value: 
+    value:
       - "*"
       # - industry
       # - tertiary
       # - agriculture
       # - tourism
       # - craft
-  - type: structure_sizes
-    operator: "or"
-    value: 
-      - PME
-      - TPE
-      - ETI
-      - GE
   - type: user_goals
     operator: "or"
-    value: 
+    value:
       # - impact
       - energy
       - renovation
-program_providers: 
-  - code: ADEME
-  - code: CCI
-    siret : 187 500 020 00073
+opérateur de contact: CMA
+nature de l'aide: accompagnement
+coût de l'accompagnement: gratuit
+
+publicodes:
+  entreprise:
+  entreprise . effectif:
+
+  éligibilité:
+    toutes ces conditions:
+      - entreprise . effectif >= 20
+      - entreprise . effectif < 500

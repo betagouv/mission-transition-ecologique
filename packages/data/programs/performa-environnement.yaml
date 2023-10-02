@@ -1,0 +1,52 @@
+titre: Performa Environnement
+promesse: Mesurer votre maturité écologique et créer un plan d’actions personnalisé avec à un conseiller
+description: |
+  Réalisez un état des lieux à 360° pour évaluer l'impact de votre activité sur l'environnement et réalisez des économies. Différents sujets sont abordés : économie d’énergie, isolation des locaux, consommations d’eau, déchets, matières premières, achats, mobilité, etc.
+url: https://www.economie.gouv.fr/entreprises/entreprises-aides-transition-ecologique
+illustration: images/TEE_eolienne.png
+objectifs:
+  - |
+    Réalisez un état des lieux gratuit pour évaluer l'impact
+    de votre activité sur l'environnement et détecter de
+    nouvelles sources d'économies (énergie, isolation des
+    locaux, consommations d’eau, déchets, matières premières,
+    mobilité...)
+  - |
+    Obtenez un diagnostic complet et la proposition
+    d'un plan d'actions prioritaires pour maîtriser
+    sa consommation énergétique et optimiser ses coûts
+  - |
+    Valorisez votre démarche environnementale par l'obtention
+    d'un label, une reconnaissance environnementale,
+    individuelle ou collective
+  - |
+    Identifiez et sélectionnez une solution d'investissement,
+    d'étude ou de formation, et soyez assisté dans le montage
+    d'une demande de financement
+conditions:
+  - type: project_needs
+    operator: "or"
+    value:
+      - advices
+      - financing
+  - type: project_status
+    operator: "or"
+    value:
+      - "*"
+  - type: project_sectors
+    operator: "or"
+    value:
+      - craft
+  - type: user_goals
+    operator: "or"
+    value:
+      - impact
+opérateur de contact: CMA
+nature de l'aide: "accompagnement"
+coût de l'accompagnement: gratuit
+
+publicodes:
+  entreprise:
+  entreprise . effectif:
+
+  éligibilité: entreprise . effectif < 250

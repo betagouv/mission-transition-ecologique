@@ -15,36 +15,39 @@
     <!-- PROGRAM DETAILS -->
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-10v">
       <!-- IMAGE -->
-      <div class="fr-col-md-4 fr-col-lg-2 fr-col-xl-2 fr-col-sm-hide fr-text-right">
+      <div class="fr-col-md-4 fr-col-lg-3 fr-col-xl-3 fr-col-sm-hide fr-text-right">
         <img 
           class="fr-responsive-img"
-          :src="`${choices.publicPath}${program.cover}`"
-          :alt="`image / ${program.title}`"
-          style="display: block; max-height: 150px; max-width: 200px; width: 100%;"
+          :src="`${choices.publicPath}${program.illustration}`"
+          :alt="`image / ${program.titre}`"
+          style="min-height: 100%; object-fit: cover;"
           />
       </div>
       
       <!-- TITLE & RESUME -->
-      <div class="fr-col">
+      <div class="fr-col fr-pl-10v">
         <!-- PROGRAM TITLE -->
         <!-- <h1>
           {{ program.title }}
         </h1> -->
-        <p class="fr-badge fr-badge--info fr-badge--no-icon fr-mb-5v">
-          {{ program.title }}
+        <p class="tee-program-title fr-mb-5v">
+          {{ program.titre }}
         </p>
 
-        <!-- PROGRAM RESUME -->
+        <!-- PROGRAM RESUME / TEXT-->
         <h6
           v-if="trackConfig.config?.showProgramSubtitles"
           :style="`color: ${blockColor}`">
           {{ choices.t('program.programResume') }}
         </h6>
         <h2
-          v-if="program.resume"
           :style="`color: ${blockColor}`"
-          v-html="program.resume">
+          v-html="program.promesse">
         </h2>
+        <p
+          style="color: #000091"
+          v-html="program.description">
+        </p>
 
         <!-- OPEN MODAL -> FORM -->
         <!-- :label="choices.t('results.showForm', {title: program.title})" -->
@@ -54,103 +57,136 @@
           secondary
           @click="toggleShowForm"
           ref="modalOrigin"/> -->
-      </div>
-    </div>
 
-    <!-- PROGRAM DESCRIPTION -->
-    <div 
-      v-if="program.description"
-      class="fr-mb-18v">
-      <h3>
-        {{ choices.t('program.programDescription') }}
-      </h3>
-      <div class="fr-tee-description-list">
-        <p 
-          v-for="(paragraph, idx) in program.description"
-          :key="`description-paragraph-${idx}`"
-          class="fr-mb-3v">
-          <span
-            class="fr-tee-description-paragraph-marker">
-            {{ idx + 1 }} |
-          </span>
-          <span
-            class="fr-tee-description-paragraph-content">
-            {{ paragraph }}
-          </span>
-        </p>
-      </div>
-    </div>
+        <!-- PROGRAM DESCRIPTION -->
+        <div 
+          class="fr-mb-18v">
+          <h3>
+            {{ choices.t('program.programDescription') }}
+          </h3>
+          <div class="fr-tee-description-list">
+            <p 
+              v-for="(paragraph, idx) in program.objectifs"
+              :key="`description-paragraph-${idx}`"
+              class="fr-mb-6v">
+              <span
+                class="fr-tee-description-paragraph-marker">
+                {{ idx + 1 }} |
+              </span>
+              <span
+                class="fr-tee-description-paragraph-content">
+                {{ paragraph }}
+              </span>
+            </p>
+          </div>
+        </div>
 
+      </div>
+
+    </div>
+    
     <!-- PROGRAM INFOS : PROVIDERS / TYPE / START / END -->
     <div
       v-if="trackConfig.config?.showProgramInfos" 
       class="fr-grid-row fr-grid-row--gutters fr-mb-5v">
-      <!-- PROGRAM PROVIDERS -->
-      <div
-        v-if="program.program_providers" 
-        class="fr-col-3">
+
+      <!-- PROGRAM GEO ZONES -->
+      <!-- <div
+        v-if="program.geo_zones" 
+        :class="columnTiles">
         <TeeTile
-          :title="choices.t('program.programProviders')">
-          <template #description>
-            <ul style="list-style-type: none; margin: 0 ; padding: 0;">
-              <li
-                v-for="(provider, index) in program.program_providers"
-                :key="`provider-${index}-${provider.code || provider}`">
-                <a 
-                  v-if="provider.href"
-                  :href="provider.href">
-                  {{ provider.code || provider }}
-                </a>
-                <span v-else>
-                  {{ provider.code || provider }}
-                </span>
-              </li>
-            </ul>
-          </template>
-        </TeeTile>
+          :title="choices.t('program.programGeoZones')"
+          :image-path="`${choices.publicPath}images/TEE-porteur.svg`"
+          :description="'...'"
+        />
+      </div> -->
+
+      <!-- PROGRAM COST | LOAN | AID -->
+      <div
+        v-if="program[`coût de l'accompagnement`]"
+        :class="columnTiles">
+        <TeeTile
+          :title="choices.t('programCosts.cost')"
+          :image-path="`${choices.publicPath}images/TEE-cout.svg`"
+          :description="program[`coût de l'accompagnement`]"
+        />
+      </div>
+      <div
+        v-if="program[`montant du financement`]"
+        :class="columnTiles">
+        <TeeTile
+          :title="choices.t('programCosts.aid')"
+          :image-path="`${choices.publicPath}images/TEE-cout.svg`"
+          :description="program[`montant du financement`]"
+        />
+      </div>
+      <div
+        v-if="program[`taux du prêt`]"
+        :class="columnTiles">
+        <TeeTile
+          :title="choices.t('programCosts.loan')"
+          :image-path="`${choices.publicPath}images/TEE-cout.svg`"
+          :description="program[`coût de l'accompagnement`]"
+        />
       </div>
 
       <!-- PROGRAM TYPE -->
       <div
-        v-if="program.program_type" 
-        class="fr-col-3">
+        :class="columnTiles">
         <TeeTile
           :title="choices.t('program.programType')"
-          :description="choices.t(`programTypes.${program.program_type}`)"
-        />
+          :image-path="`${choices.publicPath}images/TEE-typefinance.svg`"
+          :description="program[`nature de l'aide`]">
+        </TeeTile>
       </div>
 
-      <!-- PROGRAM GEO ZONES -->
+      <!-- PROGRAM PROVIDERS -->
       <div
-        v-if="program.geo_zones" 
-        class="fr-col-3">
+        :class="columnTiles">
         <TeeTile
-          :title="choices.t('program.programGeoZones')"
-          :description="'...'"
-        />
+          :title="choices.t('program.programProviders')"
+          :image-path="`${choices.publicPath}images/TEE-porteur.svg`">
+          <template #description>
+            <span>
+              {{ program['opérateur de contact'] }}
+            </span>
+          </template>
+        </TeeTile>
       </div>
-
-      <!-- PROGRAM START -->
-      <div
-        v-if="program.date_start" 
-        class="fr-col-3">
+      <!-- PROGRAM DURATION -->
+      <!-- <div
+        v-if="program[""]" 
+        :class="columnTiles">
         <TeeTile
           :title="choices.t('program.programStartDate')"
+          :image-path="`${choices.publicPath}images/TEE-duree.svg`"
           :description="'...'"
         />
-      </div>
+      </div> -->
+
+      <!-- PROGRAM START -->
+      <!-- <div
+        v-if="program.date_start" 
+        :class="columnTiles">
+        <TeeTile
+          :title="choices.t('program.programStartDate')"
+          :image-path="`${choices.publicPath}images/TEE-duree.svg`"
+          :description="'...'"
+        />
+      </div> -->
 
       <!-- PROGRAM END -->
-      <div
+      <!-- <div
         v-if="program.date_end" 
-        class="fr-col-3">
+        :class="columnTiles">
         <TeeTile
           :title="choices.t('program.programEndDate')"
+          :image-path="`${choices.publicPath}images/TEE-duree.svg`"
           :description="'...'"
         />
-      </div>
+      </div> -->
     </div>
-
+    
     <!-- PROGRAM FORM -->
     <div
       class="fr-form-block">
@@ -158,6 +194,7 @@
         :track-id="trackConfig.id"
         :form-options="trackConfig.form"
         :data-props="{ programId: program.id }"
+        :program="program"
         :debug="debug"/>
     </div>
   </div>
@@ -197,7 +234,7 @@
                   <h4 
                     class=""
                     style="text-align: center;">
-                    {{ choices.ti(trackConfig?.form.label[choices.lang], { title: program.title }) || '' }}
+                    {{ choices.ti(trackConfig?.form.label[choices.lang], { title: program.titre }) || '' }}
                   </h4>
                   <p
                     class=""
@@ -207,7 +244,7 @@
                   <img 
                     class="fr-responsive-img fr-sm-hide"
                     :src="`${choices.publicPath}images/TEE_illustration.png`"
-                    :alt="`image / ${program.title}`"
+                    :alt="`image / ${program.titre}`"
                     />
                 </div>
                 <!-- MODAL FORM -->
@@ -216,6 +253,7 @@
                     :track-id="trackConfig.id"
                     :form-options="trackConfig.form"
                     :data-props="{ programId: program.id }"
+                    :program="program"
                     :debug="debug"/>
                 </div>
               </div>
@@ -249,8 +287,10 @@ const choices = choicesStore()
 const programs = programsStore()
 const analytics = analyticsStore()
 
-const blockColor = 'var(--text-default-info)'
+const blockColor = '#000091'
 const showForm = ref<boolean>(false)
+// const columnTiles = ref<string>('fr-col-4 fr-sm-3 fr-col-md-4 fr-col-lg-2')
+const columnTiles = ref<string>('fr-col')
 
 interface Props {
   program: ProgramData,

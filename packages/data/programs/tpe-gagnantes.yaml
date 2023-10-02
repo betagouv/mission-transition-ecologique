@@ -1,0 +1,38 @@
+titre: TPE Gagnantes
+promesse: Faites des économies en gérant durablement vos dépenses
+description: |
+  Diminuez les charges de votre entreprise et réduisez votre impact environnemental, en optimisant 4 postes de dépenses : Flux énergie,Matières premières, Déchets, Consommation d’eau
+url: https://agirpourlatransition.ademe.fr/entreprises/optimisez-tpe-pme/diagnostic-global-personnalise
+illustration: images/TEE_energie_verte.png
+objectifs:
+  - Faites un état des lieux de vos flux et identifiez les axes prioritaires d’économies.
+  - Mettez en place un plan d'actions simple pour réduire vos déchets et votre consommation d'énergie, de matières et d'eau.
+  - Lancez vos premières actions.
+  - Réalisez en moyenne 45 000 € d'économies par an et par site de production ou établissement (sur la base des missions restituées).
+conditions:
+  - type: project_needs
+    operator: "or"
+    value:
+      - advices
+      - financing
+  - type: project_status
+    operator: "or"
+    value:
+      - economies
+  - type: project_sectors
+    operator: "or"
+    value:
+      - "*"
+  - type: user_goals
+    operator: "or"
+    value:
+      - economies
+opérateur de contact: CMA
+nature de l'aide: accompagnement
+coût de l'accompagnement: gratuit
+
+publicodes:
+  entreprise:
+  entreprise . effectif:
+
+  éligibilité: entreprise . effectif < 20

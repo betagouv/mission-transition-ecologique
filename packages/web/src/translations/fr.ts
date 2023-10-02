@@ -39,18 +39,38 @@ export const frDict = {
   program: {
     programResume: "Le dispositif en deux mots",
     programDescription: "Au programme :",
-    programProviders: "Porteur(s) du dispositif",
-    programType: "Type(s) de dispositif",
-    programGeoZones: "Région(s) concernée(s)",
-    programStartDate: "Date de début du dispositif",
-    programEndDate: "Date de clôture",
+    programProviders: "Contact",
+    programType: "Nature de l'aide",
+    programService: "Prestation"
   },
-  programTypes: {
-    aap: 'Appel à projets',
-    diag: 'Diagnostic'
+  programCosts: {
+    cost: "Coût reste à charge",
+    aid: 'Montant du financement',
+    paying: 'Taux du prêt'
   },
   enterprise: {
     select: 'Sélectionnez votre entreprise',
     noStructureFound: "Aucune structure n'a été trouvée."
+  },
+  categories: {
+    start: '🏁 Questionnaire',
+    myNeeds: 'Mes besoins',
+    ourHelp: '🧭 Comment vous aider',
+    myEntreprise: '👋 Mon entreprise',
+    myBuildings: '🏢 Bâtiment',
+    myMobility: '🚲 Mobilité',
+    myWater: "💧 Eau",
+    myWastes: '🗑 Déchets',
+    myEnergy: "⚡️ Energie",
+    myStrategy: '🎲️ Stratégie',
+    results: '✅ Résultats',
+  },
+  articles: {
+    accompagnement: {
+      this: 'cet'
+    },
+    financement: {
+      this: 'ce'
+    }
   }
 }

@@ -26,15 +26,19 @@
     <h3 
       v-if="formOptions.label"
       class="fr-text-center">
-      {{ formOptions.label[choices.lang] }}
+      <!-- {{ formOptions.label[choices.lang] }} -->
+      {{ choices.ti(formOptions.label[choices.lang], { "prefixAide": findPrefix(program["nature de l'aide"]), "natureAide": program["nature de l'aide"] }) || '' }}
     </h3>
 
     <!-- FORM LABEL -->
     <p 
       v-if="formOptions.hint"
       class="fr-text-center fr-pb-10v">
-      {{ formOptions.hint[choices.lang] }}
+      <!-- {{ formOptions.hint[choices.lang] }} -->
+      {{ choices.ti(formOptions.hint[choices.lang]) }}
     </p>
+
+    <!-- {{ program }} -->
 
     <!-- FIELDS -->
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-2v">
@@ -68,6 +72,7 @@
           <DsfrInput
             :type="field.type"
             :is-textarea="field.type === 'textarea'"
+            :rows="field.type === 'textarea' && (field.rows || 4)"
             :model-value="formData[field.id]"
             label-visible
             :required="field.required"
@@ -205,7 +210,7 @@
 import { onBeforeMount, ref, computed, toRaw } from 'vue'
 
 // @ts-ignore
-import type { FormValues, FormField, FormOptions, FormCallback, ReqResp } from '@/types/index'
+import type { FormValues, FormField, FormOptions, FormCallback, ProgramData, ReqResp } from '@/types/index'
 
 import { sendApiRequest } from '../utils/requests'
 import { remapItem } from '../utils/helpers'
@@ -221,10 +226,15 @@ const analytics = analyticsStore()
 // const usedTracks: UsedTrack[] | any[] = tracks.getAllUsedTracks
 const trackValues: any[] = tracks.getAllUsedTracksValues
 
+interface DataProps {
+  programId: string
+}
+
 interface Props {
   trackId: string,
   formOptions: FormOptions,
-  dataProps?: object,
+  dataProps: DataProps,
+  program: ProgramData,
   debug?: boolean,
 }
 const props = defineProps<Props>()
@@ -234,41 +244,63 @@ const requiredFields = ref([])
 const formIsSent = ref<boolean>(false)
 const requestResponses = ref<ReqResp[]>()
 
+// const program = computed(() => {
+//   return programs.getProgramById(props.dataProps.programId)
+// })
+
 const canSaveFrom = computed(() => {
   // @ts-ignore
   const boolArr = requiredFields.value.map((f: string) => formData.value[f])
   return boolArr.every(v => (!!v && v !== ''))
 })   
 
+const findPrefix = (str: string) => {
+  return choices.t(`articles.${str}.this`)
+}
+
 onBeforeMount(() => {
-  // console.log('TeeForm > saveFormData >  props.formOptions :', props.formOptions)
-  // console.log('TeeForm > saveFormData >  usedTracks :', usedTracks)
-  // console.log('TeeForm > saveFormData >  trackValues :', trackValues)
+  // console.log('TeeForm > onBeforeMount >  props.formOptions :', props.formOptions)
+  // console.log('TeeForm > onBeforeMount >  usedTracks :', usedTracks)
+  // console.log('TeeForm > onBeforeMount >  trackValues :', trackValues)
   
   let initValues: FormValues = {}
 
   // set up InitValues from formOptions.fields
   props.formOptions.fields?.forEach((field: FormField) => {
-    // console.log('TeeForm > saveFormData >  field :', field)
+    // console.log('TeeForm > onBeforeMount >  field :', field)
     
     // set field's key
     initValues[field.id] = field.type === 'checkbox' ? false : ''
-    
-    // set default value if any
-    if (field.defaultValue) { initValues[field.id] = field.defaultValue }
-    
+
     // @ts-ignore
     if (field.required) { requiredFields.value.push(field.id) }
+    
+    // set default value if any
+    if (field.defaultValue) {
+      let defaultVal = field.defaultValue
+      if (field.injectInText) {
+        const defaultValStr = defaultVal.toString()
+        const dataStructure = field.dataStructure || {}
+        const dataMapping = field.dataMapping || []
+        // console.log('TeeForm > onBeforeMount > defaultVal : ', defaultVal)
+        // console.log('TeeForm > onBeforeMount > dataStructure : ', dataStructure)
+        // console.log('TeeForm > onBeforeMount > dataMapping : ', dataMapping)
+        // console.log('TeeForm > onBeforeMount > trackValues : ', trackValues)
+        const values = remapItem(dataStructure, dataMapping, {}, trackValues, props, undefined, [], choices.lang)
+        // console.log('TeeForm > onBeforeMount > values : ', values)
+        defaultVal = choices.ti(defaultValStr, values)
+      }
+      initValues[field.id] = defaultVal
+    }
 
     // inject value into form from store if any
     if (field.preFillFrom) {
-      // console.log('TeeForm > saveFormData >  field.preFillFrom :', field.preFillFrom)
-      initValues = remapItem(initValues, [field.preFillFrom], {}, trackValues, props, undefined, choices.lang)
-      // console.log('TeeForm > saveFormData >  initValues :', initValues)
-
+      // console.log('TeeForm > onBeforeMount >  field.preFillFrom :', field.preFillFrom)
+      initValues = remapItem(initValues, [field.preFillFrom], {}, trackValues, props, undefined, [], choices.lang)
+      // console.log('TeeForm > onBeforeMount >  initValues :', initValues)
     }
   })
-  // console.log('TeeForm > saveFormData >  initValues :', initValues)
+  // console.log('TeeForm > onBeforeMount >  initValues :', initValues)
   formData = ref(initValues)
 })
 

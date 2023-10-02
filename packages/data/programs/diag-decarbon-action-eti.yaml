@@ -1,0 +1,46 @@
+titre: Diag Decarbon'Action
+promesse: Réduisez durablement vos émissions carbone
+description: |
+  Réalisez un bilan carbone et réduisez de manière durable l’empreinte carbone de votre entreprise.
+url: https://diag.bpifrance.fr/produit/diag-decarbon-action
+illustration: images/TEE_eolienne.png
+objectifs:
+  - Mesurez les émissions de Gaz à effet de serre de votre entreprise.
+  - Elaborez votre plan d'actions pour décarboner votre activité.
+  - Embarquez votre écosystème en valorisant votre engagement dans la décarbonation.
+conditions:
+  - type: project_needs
+    operator: "or"
+    value:
+      - advices
+      - financing
+  - type: project_status
+    operator: "or"
+    value:
+      - carbon
+  - type: project_sectors
+    operator: "or"
+    value:
+      - "*"
+  - type: structure_sizes
+    operator: "or"
+    value:
+      - ETI
+  - type: user_goals
+    operator: "or"
+    value:
+      - impact
+opérateur de contact: Bpifrance
+autres opérateurs:
+  - ADEME
+nature de l'aide: accompagnement
+coût de l'accompagnement: 6 000 € HT après subvention de 40 %
+
+publicodes:
+  entreprise:
+  entreprise . effectif:
+
+  éligibilité:
+    toutes ces conditions:
+      - entreprise . effectif >= 250
+      - entreprise . effectif < 500

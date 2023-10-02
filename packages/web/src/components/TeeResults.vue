@@ -40,57 +40,47 @@
     <!-- PROGRAM CARD -->
     <div
       v-for="prog in resultsProgs"
-      :key="prog.index"
+      :key="prog.id"
       class="fr-card fr-enlarge-link fr-card--horizontal-tier fr-mb-10v"
       @click="updateDetailResult(prog.id)">
       <div class="fr-card__body">
         <div class="fr-card__content">
-          <h3 class="fr-card__title">
-            {{ prog.resume }} 
-          </h3>
-          <!-- <p
-            class="fr-card__desc"
-            v-html="prog.description">
-          </p> -->
+          <h2 class="fr-card__title tee-program-resume">
+            {{ prog.promesse }} 
+          </h2>
           <p
             v-if="debug"
             class="vue-debug fr-card__desc">
             <br> choices.publicPath : <code>{{ choices.publicPath }}</code>
-            <br> prog.cover : <code>{{ prog.cover }}</code>
+            <br> prog.cover : <code>{{ prog.illustration }}</code>
             <!-- {{ `${choices.publicPath}${randomImage()}` }} -->
           </p>
+          <!-- TITLE -->
           <div class="fr-card__start">
-            <ul class="fr-badges-group">
-              <li>
-                <p class="fr-badge fr-badge--info fr-badge--no-icon">
-                  {{ prog.title }}
-                </p>
-              </li>
-            </ul>
+            <p 
+              class="fr-mb-3v tee-program-title">
+              {{ prog.titre }}
+            </p>
           </div>
         </div>
       </div>
       <div
-        v-if="prog.cover"
+        v-if="prog.illustration"
         class="fr-card__header">
         <div class="fr-card__img">
-          <!-- :src="`${choices.publicPath}${prog.cover}`" -->
           <img 
             class="fr-responsive-img"
-            :src="`${choices.publicPath}${prog.cover}`"
-            :alt="`image / ${prog.title}`"
+            :src="`${choices.publicPath}${prog.illustration}`"
+            :alt="`image / ${prog.titre}`"
             />
-          <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+          <!-- L’alternative de l’image (attribut alt) doit toujours être présente, 
+            sa valeur peut être vide (image n’apportant pas de sens supplémentaire au contexte) 
+            ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
         </div>
         <ul class="fr-badges-group">
-          <li
-            v-for="(provider, i) in prog.program_providers"
-            :key="`provider-${i}`"
-            >
-            <p class="fr-badge">
-              {{ provider.code }}
-            </p>
-          </li>
+          <p class="fr-badge tee-program-badge-image">
+            {{ prog["nature de l'aide"] }}
+          </p>
         </ul>
       </div>
     </div>
@@ -129,18 +119,18 @@ import { analyticsStore } from '../stores/analytics'
 import type { TrackChoice, TrackResultsConfig, ProgramData } from '@/types/index'
 
 // @ts-ignore
-import { randomChoice } from '@/utils/helpers'
+// import { randomChoice } from '@/utils/helpers'
 
 const choices = choicesStore()
 const programs = programsStore()
 const analytics = analyticsStore()
 
-const defaultImages = [
-  'images/TEE_ampoule.png',
-  'images/TEE_energie_verte.png',
-  'images/TEE_eolienne.png',
-  // 'images/TEE-illustrationHP.png'
-]
+// const defaultImages = [
+//   'images/TEE_ampoule.png',
+//   'images/TEE_energie_verte.png',
+//   'images/TEE_eolienne.png',
+//   // 'images/TEE-illustrationHP.png'
+// ]
 
 interface Props {
   trackId: string,
@@ -151,8 +141,6 @@ interface Props {
   debug?: boolean,
 }
 const props = defineProps<Props>()
-
-// const blockColor = 'var(--text-default-info)'
 
 const resultsProgs: ProgramData[] = programs.filterPrograms(props.tracksResults)
 
@@ -172,8 +160,8 @@ onBeforeMount(() => {
   analytics.sendEvent(props.trackId, 'show_results')
 })
 
-const randomImage = () => {
-  const imagePath = randomChoice(defaultImages)
-  return imagePath
-}
+// const randomImage = () => {
+//   const imagePath = randomChoice(defaultImages)
+//   return imagePath
+// }
 </script>
