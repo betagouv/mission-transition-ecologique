@@ -1,19 +1,11 @@
-console.log()
-console.log('Starting ...')
-console.log('buildJsonOutput.ts ...')
-
 import * as dotenv from 'dotenv'
 dotenv.config()
 
-// console.log('process.env.NODE_ENV : ', process.env.NODE_ENV)
-// console.log('process.env', process.env)
-
-/*
-// Build programs dataset from folder and yaml files
-// Parse data folder to build list of programs
-// Each program must must written as a distinct yaml file
-// cf : https://stackoverflow.com/questions/10049557/reading-all-files-in-a-directory-store-them-in-objects-and-send-the-object
-*/
+/**
+ * Build programs dataset from folder and yaml files
+ * Parse data folder to build list of programs
+ * Each program must must written as a distinct yaml file
+ */
 
 // requiring path and fs modules
 import * as path from 'path'
