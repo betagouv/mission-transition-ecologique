@@ -12,6 +12,9 @@ import * as path from 'path'
 import * as fs from 'fs'
 import * as yaml from 'js-yaml'
 import { compileFromFile } from 'json-schema-to-typescript'
+import type { Dispositif as ProgramWithoutId } from './generated/program'
+
+type Program = ProgramWithoutId & { id: string }
 
 const createFolderIfNotExists = (folderName: string): void => {
   try {
@@ -49,7 +52,7 @@ const generateProgramType = (): void => {
 const readPrograms = (): any[] => {
   const DEFAULT_PROGRAMS_PATH = '../programs'
 
-  const programs: any[] = []
+  const programs: Program[] = []
 
   // joining path of directory
   const relativeDataDirPath: string = process.env.DATA_DIR_PATH || DEFAULT_PROGRAMS_PATH
@@ -66,7 +69,7 @@ const readPrograms = (): any[] => {
     const yamlFilePath: string = `${dataDirPath}/${file}`
     const yamlFile: string = fs.readFileSync(yamlFilePath, 'utf8')
 
-    const program = { ...(yaml.load(yamlFile) as Object), id: id } || {}
+    const program: Program = { ...(yaml.load(yamlFile) as ProgramWithoutId), id: id }
 
     programs.push(program)
   })
@@ -79,7 +82,7 @@ const readPrograms = (): any[] => {
  * Location defaults to `packages/web/public/data/generated` but can be
  * specified with `DATA_FRONT_GENERATED_DIR_PATH` environment variable.
  */
-const buildJSONOutput = (programs: any[]): void => {
+const buildJSONOutput = (programs: Program[]): void => {
   const DEFAULT_OUTPUT_LOCATION = '../../web/public/data/generated'
 
   console.log('♺ Converting data to JSON')
