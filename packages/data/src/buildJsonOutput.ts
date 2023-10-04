@@ -77,6 +77,23 @@ const readPrograms = (): any[] => {
   return programs
 }
 
+const prependConstants = (programs: Program[]): Program[] => {
+  const CONSTANTS_PATH = './../common/constants.yaml'
+
+  const fullPath: string = path.join(__dirname, CONSTANTS_PATH)
+
+  console.log('🗎 reading constants at', fullPath)
+  const file: string = fs.readFileSync(fullPath, 'utf8')
+  const constants = yaml.load(file) as Record<string, unknown>
+
+  console.log('➕ prepending publicodes with common constants')
+
+  return programs.map((p) => {
+    p.publicodes = { ...constants, ...p.publicodes }
+    return p
+  })
+}
+
 /** Converts program data to JSON and writes it to a file.
  *
  * Location defaults to `packages/web/public/data/generated` but can be
@@ -106,7 +123,11 @@ console.log('▶ Starting data consolidation (buildJsonOutput.ts)\n')
 
 generateProgramType()
 
-const programs = readPrograms()
+var programs = readPrograms()
+
+console.log()
+
+programs = prependConstants(programs)
 
 console.log()
 
