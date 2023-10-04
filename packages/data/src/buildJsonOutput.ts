@@ -11,6 +11,34 @@ dotenv.config()
 import * as path from 'path'
 import * as fs from 'fs'
 import * as yaml from 'js-yaml'
+import { compileFromFile } from 'json-schema-to-typescript'
+
+const createFolderIfNotExists = (folderName: string): void => {
+  try {
+    if (!fs.existsSync(folderName)) {
+      console.log('📁 Output folder does not exist. Creating...')
+      fs.mkdirSync(folderName)
+    }
+  } catch (err) {
+    console.error(err)
+  }
+}
+
+/** generates a .d.ts typescript type for a Program object, from its
+ * json-schema specification
+ */
+const generateProgramType = (): void => {
+  console.log('💥 generating typescript Program type from the json schema specification.\n')
+  const jsonschemaPath =
+    '/home/pierre/Documents/multi/ademe/transition-ecologique-entreprises-widget/packages/backend/data/program-data-schema.json'
+  const generatedTypeDir = path.join('src', 'generated')
+
+  createFolderIfNotExists(generatedTypeDir)
+
+  compileFromFile(jsonschemaPath).then((ts) =>
+    fs.writeFileSync(path.join(generatedTypeDir, 'program.d.ts'), ts)
+  )
+}
 
 /** Reads all program data
  *
@@ -46,17 +74,6 @@ const readPrograms = (): any[] => {
   return programs
 }
 
-const createFolderIfNotExists = (folderName: string): void => {
-  try {
-    if (!fs.existsSync(folderName)) {
-      console.log('📁 Output folder does not exist. Creating...')
-      fs.mkdirSync(folderName)
-    }
-  } catch (err) {
-    console.error(err)
-  }
-}
-
 /** Converts program data to JSON and writes it to a file.
  *
  * Location defaults to `packages/web/public/data/generated` but can be
@@ -83,6 +100,8 @@ const buildJSONOutput = (programs: any[]): void => {
 // Script
 
 console.log('▶ Starting data consolidation (buildJsonOutput.ts)\n')
+
+generateProgramType()
 
 const programs = readPrograms()
 
