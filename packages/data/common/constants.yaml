@@ -1,0 +1,20 @@
+goal:
+  avec:
+    impact: 0
+    economies: 1
+    ecoconception: 2
+    consolidation: 3
+    trash: 4
+    mobility: 5
+    energy: 6
+    renovation: 7
+
+sector:
+  avec:
+    industry: 0
+    tertiary: 1
+    agriculture: 2
+    tourism: 3
+    craft: 4
+
+
