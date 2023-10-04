@@ -5,11 +5,15 @@
   "type": "object",
   "properties": {
     "titre": {
-      "description": "Titre du dispositif. Le titre est optionnel, s'il est absent, un titre générique du type \"Dispositif { opérateur de contact }\" sera utilisé.",
+      "description": "Titre commercial du dispositif. Si pas de titre commercial clairement identifé, un titre générique du type \"Dispositif { opérateur de contact }\" peut être utilisé.",
       "type": "string"
     },
     "promesse": {
       "description": "TODO",
+      "type": "string"
+    },
+    "description": {
+      "description": "La description donne les principales informations du dispositif en quelques lignes",
       "type": "string"
     },
     "url": {
@@ -72,6 +76,18 @@
         "prêt"
       ]
     },
+    "coût de l'accompagnement": {
+      "description": "Ce champ est utile et requis uniquement si l'aide est de nature \"accompagnement\". Elle précise le coût reste à charge de l'utilisateur pour bénéficier de l'accompagnement. Il s'agit d'un champ texte, à des fins d'affichage.",
+      "type": "string"
+    },
+    "montant du financement": {
+      "description": "Ce champ est utile et requis uniquement si l'aide est de nature \"financement\". Elle précise le montant du financement, de préférence en €, à défaut en %. Il s'agit d'un champ texte, à des fins d'affichage.",
+      "type": "string"
+    },
+    "taux du prêt": {
+      "description": "Ce champ est utile et requis uniquement si l'aide est de nature \"prêt\". Il s'agit d'un champ texte, à des fins d'affichage.",
+      "type": "string"
+    },
     "publicodes": {
       "description": "Mécanismes publicodes (https://publi.codes/) associés au dispositif. Doit être en langage publicodes valide. Les données nécessaires à l'évaluation des règles (contrat d'interface) sont matérialisés par des clés sans valeurs.",
       "type": "object",
@@ -86,48 +102,24 @@
       "required": ["présentation à l'utilisateur"]
     }
   },
-  "allOf": [
+  "oneOf": [
     {
-      "if": {
-        "properties": { "nature de l'aide": { "const": "accompagnement" } }
+      "properties": {
+        "nature de l'aide": { "const": "accompagnement" }
       },
-      "then": {
-        "properties": {
-          "coût de l'accompagnement": {
-            "description": "Ce champ est utile et requis uniquement si l'aide est de nature \"accompagnement\". Elle précise le coût reste à charge de l'utilisateur pour bénéficier de l'accompagnement. Il s'agit d'un champ texte, à des fins d'affichage.",
-            "type": "string"
-          }
-        },
-        "required": [ "coût de l'accompagnement" ]
-      }
+      "required": ["nature de l'aide", "coût de l'accompagnement"]
     },
     {
-      "if": {
-        "properties": { "nature de l'aide": { "const": "financement" }}
+      "properties": {
+        "nature de l'aide": { "const": "financement" }
       },
-      "then": {
-        "properties": {
-          "montant du financement": {
-            "description": "Ce champ est utile et requis uniquement si l'aide est de nature \"financement\". Elle précise le montant du financement, de préférence en €, à défaut en %. Il s'agit d'un champ texte, à des fins d'affichage.",
-            "type": "string"
-          }
-        },
-        "required": [ "montant du financement" ]
-      }
+      "required": ["nature de l'aide", "montant du financement"]
     },
     {
-      "if": {
-        "properties": { "nature de l'aide": { "const": "prêt" }}
+      "properties": {
+        "nature de l'aide": { "const": "prêt" }
       },
-      "then": {
-        "properties": {
-          "taux du prêt": {
-            "description": "Ce champ est utile et requis uniquement si l'aide est de nature \"prêt\". Il s'agit d'un champ texte, à des fins d'affichage.",
-            "type": "string"
-          }
-        },
-        "required": [ "taux du prêt" ]
-      }
+      "required": ["nature de l'aide", "taux du prêt"]
     }
   ],
   "required": [
@@ -139,6 +131,7 @@
     "nature de l'aide",
     "publicodes"
   ],
+  "additionalProperties": false,
 
   "$defs": {
     "operators": {
