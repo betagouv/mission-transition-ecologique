@@ -17,6 +17,7 @@ const generateProgramType = (): void => {
   const schemaFileName = 'program-data-schema.json'
 
   const jsonSchemaPath = path.join(schemaDirPath, schemaFileName)
+  console.log('Reading json schema at', jsonSchemaPath)
 
   const generatedTypeDir = path.join('src', 'generated')
   createFolderIfNotExists(generatedTypeDir)
@@ -24,8 +25,12 @@ const generateProgramType = (): void => {
   compileFromFile(jsonSchemaPath).then((ts) =>
     fs.writeFileSync(path.join(generatedTypeDir, 'program.d.ts'), ts)
   )
+
+  console.log('🖊️ Types successfully written to', generatedTypeDir)
 }
 
 console.log('▶ Starting generating program type (generateProgramType.ts)\n')
 
 generateProgramType()
+
+console.log()
