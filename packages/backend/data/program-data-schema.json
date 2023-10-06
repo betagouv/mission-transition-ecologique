@@ -107,19 +107,19 @@
       "properties": {
         "nature de l'aide": { "const": "accompagnement" }
       },
-      "required": ["nature de l'aide", "coût de l'accompagnement"]
+      "required": ["coût de l'accompagnement"]
     },
     {
       "properties": {
         "nature de l'aide": { "const": "financement" }
       },
-      "required": ["nature de l'aide", "montant du financement"]
+      "required": ["montant du financement"]
     },
     {
       "properties": {
         "nature de l'aide": { "const": "prêt" }
       },
-      "required": ["nature de l'aide", "taux du prêt"]
+      "required": ["taux du prêt"]
     }
   ],
   "required": [
