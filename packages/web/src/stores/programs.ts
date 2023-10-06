@@ -47,19 +47,19 @@ export const programsStore = defineStore('programs', () => {
       throw new Error(progsFilteredResult.error.message)
     }
 
-    const progsFiltered = progsFilteredResult.value.filter((prog: any) => {
-      // const boolArray = [true]
+    // progsFilteredResult = progsFilteredResult.value.filter((prog: any) => {
+    //   // const boolArray = [true]
 
-      // TO REWRITE => IMPLEMENT NEW CONDITIONS STRUCTURE W/ OPERATOR
-      // retrieve program's conditions
-      const progConditionsAlt = prog.conditions
+    //   // TO REWRITE => IMPLEMENT NEW CONDITIONS STRUCTURE W/ OPERATOR
+    //   // retrieve program's conditions
+    //   const progConditionsAlt = prog.conditions
 
-      // Using refactorized function
-      const bool = CheckConditions(conditions, progConditionsAlt)
-      return bool
-    })
+    //   // Using refactorized function
+    //   const bool = CheckConditions(conditions, progConditionsAlt)
+    //   return bool
+    // })
 
-    return progsFiltered
+    return progsFilteredResult
   }
 
   function setYamlDataset(dataset: any) {
