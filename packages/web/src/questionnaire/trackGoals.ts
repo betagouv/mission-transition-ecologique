@@ -1,14 +1,14 @@
 const objectifsPrioritaires = {
-  'questionnaire . objectif prioritaire . est impact carbone': false,
-  'questionnaire . objectif prioritaire . est ma performance énergétique': false,
-  'questionnaire . objectif prioritaire . est la gestion des déchets': false,
-  'questionnaire . objectif prioritaire . est faire des économies': false,
-  'questionnaire . objectif prioritaire . est la mobilité durable': false,
-  'questionnaire . objectif prioritaire . est rénover mon bâtiment': false,
-  'questionnaire . objectif prioritaire . est ma performance environnementale': false,
-  'questionnaire . objectif prioritaire . est investir durable': false,
-  'questionnaire . objectif prioritaire . est performance énergétique': false,
-  'questionnaire . objectif prioritaire . est je ne sais pas encore': false
+  'questionnaire . objectif prioritaire . est impact carbone': 'non',
+  'questionnaire . objectif prioritaire . est ma performance énergétique': 'non',
+  'questionnaire . objectif prioritaire . est la gestion des déchets': 'non',
+  'questionnaire . objectif prioritaire . est faire des économies': 'non',
+  'questionnaire . objectif prioritaire . est la mobilité durable': 'non',
+  'questionnaire . objectif prioritaire . est rénover mon bâtiment': 'non',
+  'questionnaire . objectif prioritaire . est ma performance environnementale': 'non',
+  'questionnaire . objectif prioritaire . est investir durable': 'non',
+  'questionnaire . objectif prioritaire . est performance énergétique': 'non',
+  'questionnaire . objectif prioritaire . est je ne sais pas encore': 'non'
 }
 
 export const goals = {
@@ -39,7 +39,7 @@ export const goals = {
       // WIP
       value: {
         ...objectifsPrioritaires,
-        'questionnaire . objectif prioritaire . est impact carbone': true
+        'questionnaire . objectif prioritaire . est impact carbone': 'oui'
       },
       title: { fr: 'Impact environnemental' },
       label: { fr: '🌱 Mesurer mon impact carbone et le réduire' },
@@ -50,7 +50,7 @@ export const goals = {
     {
       value: {
         ...objectifsPrioritaires,
-        'questionnaire . objectif prioritaire . est ma performance énergétique': true
+        'questionnaire . objectif prioritaire . est ma performance énergétique': 'oui'
       },
       title: { fr: "Gestion de l'énergie" },
       label: { fr: '⚡️ Améliorer la performance énergétique de mon entreprise' },
@@ -61,7 +61,7 @@ export const goals = {
     {
       value: {
         ...objectifsPrioritaires,
-        'questionnaire . objectif prioritaire . est la gestion des déchets': true
+        'questionnaire . objectif prioritaire . est la gestion des déchets': 'oui'
       },
       title: { fr: 'Gestion des déchets' },
       label: { fr: '🗑 Mieux gérer mes déchets' },
@@ -72,7 +72,7 @@ export const goals = {
     {
       value: {
         ...objectifsPrioritaires,
-        'questionnaire . objectif prioritaire . est faire des économies': true
+        'questionnaire . objectif prioritaire . est faire des économies': 'oui'
       },
       title: { fr: 'Economies' },
       label: {
@@ -85,7 +85,7 @@ export const goals = {
     {
       value: {
         ...objectifsPrioritaires,
-        'questionnaire . objectif prioritaire . est la mobilité durable': true
+        'questionnaire . objectif prioritaire . est la mobilité durable': 'oui'
       },
       title: { fr: 'Mobilité durable' },
       label: { fr: '🚲 Engager une démarche de mobilité durable' },
@@ -96,7 +96,7 @@ export const goals = {
     {
       value: {
         ...objectifsPrioritaires,
-        'questionnaire . objectif prioritaire . est rénover mon bâtiment': true
+        'questionnaire . objectif prioritaire . est rénover mon bâtiment': 'oui'
       },
       title: { fr: 'Rénovation du bâtiment' },
       label: { fr: '👷 Rénover mon bâtiment' },
@@ -107,7 +107,7 @@ export const goals = {
     {
       value: {
         ...objectifsPrioritaires,
-        'questionnaire . objectif prioritaire . est ma performance environnementale': true
+        'questionnaire . objectif prioritaire . est ma performance environnementale': 'oui'
       },
       title: { fr: 'Eco-conception' },
       label: { fr: '💡 Améliorer la performance environnementale de mes produits et services' },
@@ -119,7 +119,7 @@ export const goals = {
       disabled: true,
       value: {
         ...objectifsPrioritaires,
-        'questionnaire . objectif prioritaire . est investir durable': true
+        'questionnaire . objectif prioritaire . est investir durable': 'oui'
       },
       title: { fr: 'Consolider mon projet' },
       label: { fr: "📂 Consolider mon projet d'investissement durable" },
@@ -131,7 +131,7 @@ export const goals = {
       disabled: true,
       value: {
         ...objectifsPrioritaires,
-        'questionnaire . objectif prioritaire . est je ne sais pas encore': true
+        'questionnaire . objectif prioritaire . est je ne sais pas encore': 'oui'
       },
       title: { fr: 'Autre' },
       label: { fr: '💁 Je ne sais pas encore' },

@@ -59,7 +59,7 @@ export const programsStore = defineStore('programs', () => {
     //   return bool
     // })
 
-    return progsFilteredResult
+    return progsFilteredResult.value
   }
 
   function setDataset(dataset: any) {

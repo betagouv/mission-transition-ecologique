@@ -20,8 +20,7 @@ const dataTarget = {
   denomination: '',
   label_sectors: undefined,
   // project_sectors: undefined,
-  // secteur: undefined,
-  ...secteurs
+  secteur: undefined
 }
 
 export const siret = {
@@ -31,7 +30,7 @@ export const siret = {
   label: { fr: 'Quelle est votre entreprise ?' },
   // info: { fr: "Renseignez le SIRET de votre entreprise" },
   interface: {
-    component: 'input',
+    component: 'input'
   },
   // behavior: {
   //   multipleChoices: false,
@@ -44,7 +43,7 @@ export const siret = {
       id: 'search-siret',
       value: { ...dataTarget },
       title: { fr: 'SIRET' },
-      label: { fr: "Renseignez le SIRET de votre entreprise (14 chiffres)" },
+      label: { fr: 'Renseignez le SIRET de votre entreprise (14 chiffres)' },
       placeholder: { fr: 'ex : 830 141 321 00034' },
       // for debugging purposes
       // Examples =>
@@ -52,7 +51,9 @@ export const siret = {
       // defaultInput: '82200690400012', // - boulangerie
       // defaultInput: '83014132100034', // - TPE
       // defaultInput: '81759468200020', // - auto-entreprise
-      postResponses: { fr: 'Vous ne retrouvez pas votre SIRET ?&nbsp;<a href="https://annuaire-entreprises.data.gouv.fr/" target="_blank">Cliquez ici</a>' },
+      postResponses: {
+        fr: 'Vous ne retrouvez pas votre SIRET ?&nbsp;<a href="https://annuaire-entreprises.data.gouv.fr/" target="_blank">Cliquez ici</a>'
+      },
       // required: false,
       callbacks: [
         {
@@ -73,7 +74,7 @@ export const siret = {
             {
               from: 'formData',
               id: 'inputValue',
-              dataField: 'siret',
+              dataField: 'siret'
             },
             {
               from: 'rawData',
@@ -114,17 +115,17 @@ export const siret = {
                 {
                   operation: 'findFromDict',
                   dict: {
-                    'artisanat': { "entreprise . secteur d'activité . est artisanat": true },
-                    'industrie': { "entreprise . secteur d'activité . est industrie": true },
-                    'tourisme': { "entreprise . secteur d'activité . est tourisme": true },
-                    'tertiaire': { "entreprise . secteur d'activité . est tertiaire": true },
-                    'agriculture': { "entreprise . secteur d'activité . est agriculture": true },
+                    artisanat: { "entreprise . secteur d'activité . est artisanat": true },
+                    industrie: { "entreprise . secteur d'activité . est industrie": true },
+                    tourisme: { "entreprise . secteur d'activité . est tourisme": true },
+                    tertiaire: { "entreprise . secteur d'activité . est tertiaire": true },
+                    agriculture: { "entreprise . secteur d'activité . est agriculture": true },
                     'autre secteur': { "entreprise . secteur d'activité . est autre secteur": true }
                   }
                 },
                 {
                   operation: 'injectInObject',
-                  object: { ...secteurs },
+                  object: { ...secteurs }
                 }
               ]
             },
@@ -163,7 +164,7 @@ export const siret = {
               path: 'etablissement.adresseEtablissement.codePostalEtablissement',
               dataField: 'codePostal',
               onlyRemap: true
-            },
+            }
             // {
             //   from: 'rawData',
             //   id: 'size',
@@ -181,10 +182,7 @@ export const siret = {
           ],
           resultsMapping: [
             {
-              respFields: [
-                'data.denomination',
-                'data.siret'
-              ],
+              respFields: ['data.denomination', 'data.siret'],
               position: 'title',
               // label: 'entité',
               class: 'fr-mb-3v',
@@ -236,7 +234,7 @@ export const siret = {
                 'raw.etablissement.adresseEtablissement.typeVoieEtablissement',
                 'raw.etablissement.adresseEtablissement.libelleVoieEtablissement',
                 'data.codePostal',
-                'data.ville',
+                'data.ville'
               ],
               // label: 'Adresse',
               icon: 'fr-icon-map-pin-2-line'
@@ -256,15 +254,15 @@ export const siret = {
         }
       ],
       next: {
-        default: 'track_structure_workforce',
+        default: 'track_structure_workforce'
         // default: 'track_structure_sizes',
         // exceptions: nextExceptions
         // default: 'track_roles'
       },
       wildcard: {
-        label: { fr: "je préfère compléter mes informations manuellement" },
+        label: { fr: 'je préfère compléter mes informations manuellement' },
         next: {
-          default: 'track_structure_workforce',
+          default: 'track_structure_workforce'
           // default: 'track_structure_sizes',
           // exceptions: nextExceptions
         }

@@ -1,26 +1,48 @@
+# entreprise:
+#   avec:
+#     effectif:
+#     secteur d'activité:
+#       avec:
+#         est industrie:
+#         est tertiaire:
+#         est agriculture:
+#         est tourisme:
+#         est artisanat:
+#         est autre secteur:
+
+
+# questionnaire:
+#   avec:
+#     objectif prioritaire:
+#       avec:
+#         est impact carbone:
+#         est investir durable: # consolidation
+#         est faire des économies:
+#         est ma performance environnementale: # ecoconception
+#         est la gestion des déchets:
+#         est la mobilité durable:
+#         est ma performance énergétique:
+#         est rénover mon bâtiment:
+
 entreprise:
-  avec:
-    effectif:
-    secteur d'activité:
-      avec:
-        est industrie:
-        est tertiaire:
-        est agriculture:
-        est tourisme:
-        est artisanat:
-        est autre secteur:
+entreprise . effectif:
+
+entreprise . secteur d'activité:
+entreprise . secteur d'activité . est industrie:
+entreprise . secteur d'activité . est tertiaire:
+entreprise . secteur d'activité . est agriculture:
+entreprise . secteur d'activité . est tourisme:
+entreprise . secteur d'activité . est artisanat:
+entreprise . secteur d'activité . est autre secteur:
 
 
 questionnaire:
-  avec:
-    objectif prioritaire:
-      avec:
-        est impact carbone:
-        est investir durable: # consolidation
-        est faire des économies:
-        est ma performance environnementale: # ecoconception
-        est la gestion des déchets:
-        est la mobilité durable:
-        est ma performance énergétique:
-        est rénover mon bâtiment:
-
+questionnaire . objectif prioritaire:
+questionnaire . objectif prioritaire . est impact carbone:
+questionnaire . objectif prioritaire . est investir durable: # consolidation
+questionnaire . objectif prioritaire . est faire des économies:
+questionnaire . objectif prioritaire . est ma performance environnementale: # ecoconception
+questionnaire . objectif prioritaire . est la gestion des déchets:
+questionnaire . objectif prioritaire . est la mobilité durable:
+questionnaire . objectif prioritaire . est ma performance énergétique:
+questionnaire . objectif prioritaire . est rénover mon bâtiment:
