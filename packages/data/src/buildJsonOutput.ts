@@ -12,20 +12,11 @@ import * as path from 'path'
 import * as fs from 'fs'
 import * as yaml from 'js-yaml'
 import { compileFromFile } from 'json-schema-to-typescript'
+import { createFolderIfNotExists } from './helpers'
+// @ts-ignore
 import type { Dispositif as ProgramWithoutId } from './generated/program'
 
 type Program = ProgramWithoutId & { id: string }
-
-const createFolderIfNotExists = (folderName: string): void => {
-  try {
-    if (!fs.existsSync(folderName)) {
-      console.log('📁 Output folder does not exist. Creating...')
-      fs.mkdirSync(folderName)
-    }
-  } catch (err) {
-    console.error(err)
-  }
-}
 
 /** generates a .d.ts typescript type for a Program object, from its
  * json-schema specification
@@ -129,8 +120,6 @@ const buildJSONOutput = (programs: Program[]): void => {
 // Script
 
 console.log('▶ Starting data consolidation (buildJsonOutput.ts)\n')
-
-generateProgramType()
 
 var programs = readPrograms()
 
