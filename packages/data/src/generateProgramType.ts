@@ -10,19 +10,17 @@ import { createFolderIfNotExists } from './helpers'
 const generateProgramType = (): void => {
   console.log('💥 generating typescript Program type from the json schema specification.\n')
 
-  const DEFAULT_SCHEMAS_PATH = '../schemas'
-  const relativeSchemaDirPath: string = process.env.SCHEMAS_DIR_PATH || DEFAULT_SCHEMAS_PATH
+  const DEFAULT_SCHEMA_PATH = '../schemas/program-data-schema.json'
+  const relativeSchemaPath: string = process.env.SCHEMA_PATH || DEFAULT_SCHEMA_PATH
 
-  const schemaDirPath: string = path.join(__dirname, relativeSchemaDirPath)
-  const schemaFileName = 'program-data-schema.json'
+  const schemaPath: string = path.join(__dirname, relativeSchemaPath)
 
-  const jsonSchemaPath = path.join(schemaDirPath, schemaFileName)
-  console.log('Reading json schema at', jsonSchemaPath)
+  console.log('Reading json schema at', schemaPath)
 
   const generatedTypeDir = path.join('src', 'generated')
   createFolderIfNotExists(generatedTypeDir)
 
-  compileFromFile(jsonSchemaPath).then((ts) =>
+  compileFromFile(schemaPath).then((ts) =>
     fs.writeFileSync(path.join(generatedTypeDir, 'program.d.ts'), ts)
   )
 
