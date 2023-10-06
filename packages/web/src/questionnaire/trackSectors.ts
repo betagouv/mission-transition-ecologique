@@ -1,3 +1,12 @@
+const secteurs = {
+  "entreprise . secteur d'activité . est artisanat": false,
+  "entreprise . secteur d'activité . est industrie": false,
+  "entreprise . secteur d'activité . est tourisme": false,
+  "entreprise . secteur d'activité . est tertiaire": false,
+  "entreprise . secteur d'activité . est agriculture": false,
+  "entreprise . secteur d'activité . est autre secteur": false
+}
+
 const nextExceptions = [
   {
     help: "Goes to track_structure_building_property if : user_help == 'unknown' (newbie)",
@@ -51,7 +60,7 @@ export const sectors = {
   },
   options: [
     {
-      value: { project_sectors: ['craft'], secteur: ['artisanat'] },
+      value: { ...secteurs, "entreprise . secteur d'activité . est artisanat": true },
       title: { fr: 'Artisanat' },
       label: { fr: "J’ai une activité artisanale" },
       next: {
@@ -60,7 +69,7 @@ export const sectors = {
       }
     },
     {
-      value: { project_sectors: ['industry'], secteur: ['industrie'] },
+      value: { ...secteurs, "entreprise . secteur d'activité . est industrie": true },
       title: { fr: 'Industrie' },
       label: { fr: "J’ai une activité industrielle, fabrication, production" },
       next: {
@@ -69,7 +78,7 @@ export const sectors = {
       }
     },
     {
-      value: { project_sectors: ['tourism'], secteur: ['tourisme'] },
+      value: { ...secteurs, "entreprise . secteur d'activité . est tourisme": true },
       title: { fr: 'Tourisme' },
       label: { fr: "J’ai une activité de tourisme" },
       next: {
@@ -78,7 +87,7 @@ export const sectors = {
       }
     },
     {
-      value: { project_sectors: ['tertiary'], secteur: ['tertiaire'] },
+      value: { ...secteurs, "entreprise . secteur d'activité . est tertiaire": true },
       title: { fr: 'Tertiaire' },
       label: { fr: "J’ai une activité tertiaire, de services" },
       next: {
@@ -87,7 +96,7 @@ export const sectors = {
       }
     },
     {
-      value: { project_sectors: ['agriculture'], secteur: ['agriculture'] },
+      value: { ...secteurs, "entreprise . secteur d'activité . est agriculture": true },
       title: { fr: 'Agriculture' },
       label: { fr: "J’ai une activité agricole" },
       next: {
@@ -96,7 +105,7 @@ export const sectors = {
       }
     },
     {
-      value: { project_sectors: ['*'] , secteur: ['autre secteur']},
+      value: { ...secteurs, "entreprise . secteur d'activité . est autre secteur": true},
       title: { fr: 'Autre' },
       label: { fr: "Je suis dans un autre secteur d'activité" },
       next: {
