@@ -62,7 +62,7 @@ export const programsStore = defineStore('programs', () => {
     return progsFilteredResult
   }
 
-  function setYamlDataset(dataset: any) {
+  function setDataset(dataset: any) {
     programs.value = dataset
   }
 
@@ -87,7 +87,7 @@ export const programsStore = defineStore('programs', () => {
     programDetailConfig,
     progs,
     filterPrograms,
-    setYamlDataset,
+    setDataset,
     setDetailResult,
     resetDetailResult,
     getProgramById
