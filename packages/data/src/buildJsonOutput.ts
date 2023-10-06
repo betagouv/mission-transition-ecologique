@@ -32,13 +32,19 @@ const createFolderIfNotExists = (folderName: string): void => {
  */
 const generateProgramType = (): void => {
   console.log('💥 generating typescript Program type from the json schema specification.\n')
-  const jsonschemaPath =
-    '/home/pierre/Documents/multi/ademe/transition-ecologique-entreprises-widget/packages/backend/data/program-data-schema.json'
-  const generatedTypeDir = path.join('src', 'generated')
 
+  const DEFAULT_SCHEMAS_PATH = '../schemas'
+  const relativeSchemaDirPath: string = process.env.SCHEMAS_DIR_PATH || DEFAULT_SCHEMAS_PATH
+
+  const schemaDirPath: string = path.join(__dirname, relativeSchemaDirPath)
+  const schemaFileName = 'program-data-schema.json'
+
+  const jsonSchemaPath = path.join(schemaDirPath, schemaFileName)
+
+  const generatedTypeDir = path.join('src', 'generated')
   createFolderIfNotExists(generatedTypeDir)
 
-  compileFromFile(jsonschemaPath).then((ts) =>
+  compileFromFile(jsonSchemaPath).then((ts) =>
     fs.writeFileSync(path.join(generatedTypeDir, 'program.d.ts'), ts)
   )
 }
