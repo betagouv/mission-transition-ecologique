@@ -88,9 +88,16 @@ export const setIn = (obj: any, [head, ...rest]: string[], value: any) => {
 export const setProperty = (obj: object, path: string, value: any) => {
   // console.log('utils > helpers > setProperty >  obj :', obj)
   // const [head, ...rest] = path.split('.')
-  const pathAsArray = path.split('.')
-  const resObj = setIn(obj, pathAsArray, value)
-  return resObj
+  let resultObj: any
+  
+  if (path === '.') {
+    resultObj = { ...obj, ...value}
+  } else {
+    const pathAsArray = path.split('.')
+    resultObj = setIn(obj, pathAsArray, value)
+  }
+  
+  return resultObj
 }
 
 // export const findInTracksArray = (tracksArray: object[], id: string) => {

@@ -3,12 +3,12 @@ const metaEnv = import.meta.env
 const TEE_BACKEND_URL = metaEnv.VITE_TEE_BACKEND_URL || 'https://tee-backend.osc-fr1.scalingo.io'
 
 const secteurs = {
-  "entreprise . secteur d'activité . est artisanat": false,
-  "entreprise . secteur d'activité . est industrie": false,
-  "entreprise . secteur d'activité . est tourisme": false,
-  "entreprise . secteur d'activité . est tertiaire": false,
-  "entreprise . secteur d'activité . est agriculture": false,
-  "entreprise . secteur d'activité . est autre secteur": false
+  "entreprise . secteur d'activité . est artisanat": 'non',
+  "entreprise . secteur d'activité . est industrie": 'non',
+  "entreprise . secteur d'activité . est tourisme": 'non',
+  "entreprise . secteur d'activité . est tertiaire": 'non',
+  "entreprise . secteur d'activité . est agriculture": 'non',
+  "entreprise . secteur d'activité . est autre secteur": 'non'
 }
 
 const dataTarget = {
@@ -103,7 +103,7 @@ export const siret = {
               from: 'rawData',
               id: 'secteur',
               path: 'etablissement.uniteLegale.activitePrincipaleUniteLegale',
-              dataField: 'secteur',
+              dataField: '.',
               onlyRemap: true,
               cleaning: [
                 {
@@ -111,21 +111,33 @@ export const siret = {
                   findInRef: 'nafCodes',
                   findFromField: 'NIV5',
                   retrieveFromField: 'tagsFr'
+                  // => ['artisanat', 'industrie']
                 },
                 {
                   operation: 'findFromDict',
                   dict: {
-                    artisanat: { "entreprise . secteur d'activité . est artisanat": true },
-                    industrie: { "entreprise . secteur d'activité . est industrie": true },
-                    tourisme: { "entreprise . secteur d'activité . est tourisme": true },
-                    tertiaire: { "entreprise . secteur d'activité . est tertiaire": true },
-                    agriculture: { "entreprise . secteur d'activité . est agriculture": true },
-                    'autre secteur': { "entreprise . secteur d'activité . est autre secteur": true }
+                    artisanat: { "entreprise . secteur d'activité . est artisanat": 'oui' },
+                    industrie: { "entreprise . secteur d'activité . est industrie": 'oui' },
+                    tourisme: { "entreprise . secteur d'activité . est tourisme": 'oui' },
+                    tertiaire: { "entreprise . secteur d'activité . est tertiaire": 'oui' },
+                    agriculture: { "entreprise . secteur d'activité . est agriculture": 'oui' },
+                    'autre secteur': { "entreprise . secteur d'activité . est autre secteur": 'oui' }
                   }
+                  // => [{ "entreprise . secteur d'activité . est artisanat": 'oui' }, { "entreprise . secteur d'activité . est tertiaire": 'oui' }]
                 },
                 {
                   operation: 'injectInObject',
                   object: { ...secteurs }
+                  /* => { 
+                    {
+                      "entreprise . secteur d'activité . est artisanat": 'non',
+                      "entreprise . secteur d'activité . est industrie": 'non',
+                      "entreprise . secteur d'activité . est tourisme": 'non',
+                      "entreprise . secteur d'activité . est tertiaire": 'non',
+                      "entreprise . secteur d'activité . est agriculture": 'non',
+                      "entreprise . secteur d'activité . est autre secteur": 'non'
+                    }
+                  */
                 }
               ]
             },

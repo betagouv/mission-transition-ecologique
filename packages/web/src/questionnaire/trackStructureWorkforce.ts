@@ -17,15 +17,15 @@ const nextExceptions = [
     next: { default: 'track_sectors' }
   },
   {
-    help: "Goes to track_structure_building_property if : has infos about sector AND user_help == 'unknown' (newbie)",
+    help: "Goes to track_structure_building_property if : has infos about codeNaf AND user_help == 'unknown' (newbie)",
     rules: [
       {
         from: 'usedTracks',
-        id: 'project_sectors',
-        dataField: 'project_sectors',
+        id: 'codeNaf',
+        dataField: 'codeNaf',
         conditions: [
           {
-            type: 'project_sectors',
+            type: 'codeNaf',
             operator: 'exists'
           }
         ]
@@ -50,11 +50,11 @@ const nextExceptions = [
     rules: [
       {
         from: 'usedTracks',
-        id: 'project_sectors',
-        dataField: 'project_sectors',
+        id: 'codeNaf',
+        dataField: 'codeNaf',
         conditions: [
           {
-            type: 'project_sectors',
+            type: 'codeNaf',
             operator: 'exists'
           }
         ]
