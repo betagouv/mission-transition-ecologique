@@ -33,7 +33,8 @@ import type {
   CleanerReplaceAll, 
   CleanerFromJson, 
   CleanerFromDict, 
-  CleanerDefaultIfNull, 
+  CleanerDefaultIfNull,
+  CleanerInjectInObject,
   ResultsMapping 
 } from '@/types/index'
 
@@ -182,7 +183,13 @@ export const findDefaultIfNull = (value: string, cleaner: CleanerDefaultIfNull, 
   return val
 }
 
-export const cleanValue = (value: any, cleaners: Cleaner[] | CleanerReplaceAll[] | CleanerFromJson[] | CleanerFromDict[] | CleanerDefaultIfNull[], lang: string = 'fr') => {
+export const injectInObject = (value: object, cleaner: CleanerInjectInObject) => {
+  const targetObject = cleaner.object || {}
+  const val = { ...targetObject, ...value }
+  return val
+}
+
+export const cleanValue = (value: any, cleaners: Cleaner[] | CleanerReplaceAll[] | CleanerFromJson[] | CleanerFromDict[] | CleanerDefaultIfNull[] | CleanerInjectInObject[], lang: string = 'fr') => {
   // console.log('utils > helpers > cleanValue > value :', value)
   let val = value
   cleaners.forEach((cleaner) => {
@@ -202,7 +209,10 @@ export const cleanValue = (value: any, cleaners: Cleaner[] | CleanerReplaceAll[]
         break 
       case 'defaultIfNull':
         val = findDefaultIfNull(val, <CleanerDefaultIfNull>cleaner, lang)
-        break 
+        break
+      case 'injectInObject':
+        val = injectInObject(val, <CleanerInjectInObject>cleaner)
+        break
     }
   })
   // console.log('utils > helpers > cleanValue > val :', val)

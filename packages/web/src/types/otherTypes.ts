@@ -78,6 +78,7 @@ export enum CleanerOperations {
   findFromRefs = 'findFromRefs',
   findFromDict = 'findFromDict',
   defaultIfNull = 'defaultIfNull',
+  injectInObject = 'injectInObject'
 }
 
 export interface Cleaner {
@@ -104,4 +105,8 @@ export interface CleanerFromJson extends Cleaner {
 
 export interface CleanerFromDict extends Cleaner {
   dict: any, 
+}
+
+export interface CleanerInjectInObject extends Cleaner {
+  object: object, 
 }
