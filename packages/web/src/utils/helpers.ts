@@ -166,13 +166,13 @@ export const findFromRefs = (value: string, cleaner: CleanerFromJson) => {
 
 export const findFromDict = (value: string | string[], cleaner: CleanerFromDict) => {
   const dict = cleaner.dict
-  let val: any 
+  let valueOut: any 
   if (Array.isArray(value)) {
-    val = value.map(v => dict[v] || v)
+    valueOut = value.map(v => dict[v] || v)
   } else {
-    val = dict[value] || value
+    valueOut = dict[value] || value
   }
-  return val
+  return valueOut
 }
 
 export const findDefaultIfNull = (value: string, cleaner: CleanerDefaultIfNull, lang: string = 'fr') => {
@@ -190,15 +190,15 @@ export const findDefaultIfNull = (value: string, cleaner: CleanerDefaultIfNull, 
 
 export const injectInObject = (value: object | object[], cleaner: CleanerInjectInObject) => {
   const targetObject = cleaner.object || {}
-  let val: object  = { ...targetObject }
+  let valueOut: object  = { ...targetObject }
   if (Array.isArray(value)) {
     value.forEach(v => {
-      val = { ...val, ...v }
+      valueOut = { ...valueOut, ...v }
     })
   } else {
-    val = { ...val, ...value }
+    valueOut = { ...valueOut, ...value }
   }
-  return val
+  return valueOut
 }
 
 export const cleanValue = (value: any, cleaners: Cleaner[] | CleanerReplaceAll[] | CleanerFromJson[] | CleanerFromDict[] | CleanerDefaultIfNull[] | CleanerInjectInObject[], lang: string = 'fr') => {

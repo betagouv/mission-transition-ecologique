@@ -104,11 +104,9 @@ export interface CleanerFromJson extends Cleaner {
 }
 
 export interface CleanerFromDict extends Cleaner {
-  parseArray?: boolean,
   dict: any, 
 }
 
 export interface CleanerInjectInObject extends Cleaner {
-  parseArray?: boolean,
   object: object, 
 }
