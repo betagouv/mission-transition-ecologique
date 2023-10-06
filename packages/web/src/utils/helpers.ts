@@ -164,9 +164,14 @@ export const findFromRefs = (value: string, cleaner: CleanerFromJson) => {
   return val
 }
 
-export const findFromDict = (value: string, cleaner: CleanerFromDict) => {
+export const findFromDict = (value: string | string[], cleaner: CleanerFromDict) => {
   const dict = cleaner.dict
-  const val = dict[value] || value
+  let val: any 
+  if (Array.isArray(value)) {
+    val = value.map(v => dict[v] || v)
+  } else {
+    val = dict[value] || value
+  }
   return val
 }
 
@@ -183,15 +188,22 @@ export const findDefaultIfNull = (value: string, cleaner: CleanerDefaultIfNull, 
   return val
 }
 
-export const injectInObject = (value: object, cleaner: CleanerInjectInObject) => {
+export const injectInObject = (value: object | object[], cleaner: CleanerInjectInObject) => {
   const targetObject = cleaner.object || {}
-  const val = { ...targetObject, ...value }
+  let val: object  = { ...targetObject }
+  if (Array.isArray(value)) {
+    value.forEach(v => {
+      val = { ...val, ...v }
+    })
+  } else {
+    val = { ...val, ...value }
+  }
   return val
 }
 
 export const cleanValue = (value: any, cleaners: Cleaner[] | CleanerReplaceAll[] | CleanerFromJson[] | CleanerFromDict[] | CleanerDefaultIfNull[] | CleanerInjectInObject[], lang: string = 'fr') => {
   // console.log('utils > helpers > cleanValue > value :', value)
-  let val = value
+  let val: any = value
   cleaners.forEach((cleaner) => {
     // console.log('utils > helpers > cleanValue > cleaner :', cleaner)
     switch (cleaner.operation) {
