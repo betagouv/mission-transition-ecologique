@@ -4,7 +4,7 @@
   "description": "Package in charge of storing and building TEE datasets",
   "scripts": {
     "build-front-json-output": "npx ts-node src/generateProgramType.ts && npx ts-node src/buildJsonOutput.ts",
-    "build-front-json-output-watch": "nodemon src/buildJsonOutput.ts -e ts,yaml",
+    "build-front-json-output-watch": "npx ts-node src/generateProgramType.ts && npx concurrently \"nodemon src/generateProgramType.ts --ignore *.d.ts -e ts,yaml\" \"nodemon src/buildJsonOutput.ts -e ts,yaml\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
