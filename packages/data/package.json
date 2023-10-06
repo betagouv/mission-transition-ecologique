@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/betagouv/transition-ecologique-entreprises-widget#readme",
   "dependencies": {
+    "ajv-cli": "^5.0.0",
     "dotenv": "^16.3.1",
     "fs": "^0.0.1-security",
     "js-yaml": "^4.1.0",
