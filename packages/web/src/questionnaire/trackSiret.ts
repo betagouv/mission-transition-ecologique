@@ -113,7 +113,6 @@ export const siret = {
                 },
                 {
                   operation: 'findFromDict',
-                  parseArray: true,
                   dict: {
                     'artisanat': { "entreprise . secteur d'activité . est artisanat": true },
                     'industrie': { "entreprise . secteur d'activité . est industrie": true },
@@ -125,7 +124,6 @@ export const siret = {
                 },
                 {
                   operation: 'injectInObject',
-                  parseArray: true,
                   object: { ...secteurs },
                 }
               ]
