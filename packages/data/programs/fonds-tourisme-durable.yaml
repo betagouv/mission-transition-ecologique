@@ -24,21 +24,18 @@ coût de l'accompagnement: gratuit
 
 
 publicodes:
-  # déclaration des variables
-  entreprise:
-  entreprise . effectif:
 
   # règles d'éligibilité:
-  éligibilité:
+  règles d'éligibilité:
     toutes ces conditions:
       - entreprise . effectif < 250
       - entreprise . secteur d'activité . est tourisme
 
   # afficher le dispositif si:
-  présentation à l'utilisateur:
+  afficher le dispositif si:
     toutes ces conditions:
       - règles d'éligibilité
       - une de ces conditions:
-        - questionnaire . objectif prioritaire . est impact
-        - questionnaire . objectif prioritaire . est consolidation
+        - questionnaire . objectif prioritaire . est impact carbone
+        - questionnaire . objectif prioritaire . est investir durable
 

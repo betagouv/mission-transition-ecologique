@@ -1,44 +1,26 @@
 entreprise:
-entreprise . effectif:
-
-questionnaire:
-questionnaire . objectif prioritaire:
-
-questionnaire . objectif prioritaire . est impact:
-questionnaire . objectif prioritaire . est consolidation:
-
-questionnaire:
   avec:
-    - objectif prioritaire:
+    effectif:
+    secteur d'activité:
       avec:
-        - est impact carbone
-        - est consolidation
-        - est impact
-        - est economies
-        - est ecoconception
-        - est consolidation
-        - est gestion
-        - est mobility
-        - est performance énergétique
-        - est renovation
+        est industrie:
+        est tertiaire:
+        est agriculture:
+        est tourisme:
+        est artisanat:
+        est autre secteur:
 
-goal:
+
+questionnaire:
   avec:
-    est impact: 0
-    est economies: 1
-    est ecoconception: 2
-    est consolidation: 3
-    est trash: 4
-    est mobility: 5
-    est energy: 6
-    est renovation: 7
-
-sector:
-  avec:
-    industry: 0
-    tertiary: 1
-    agriculture: 2
-    tourism: 3
-    craft: 4
-
+    objectif prioritaire:
+      avec:
+        est impact carbone:
+        est investir durable: # consolidation
+        est faire des économies:
+        est ma performance environnementale: # ecoconception
+        est la gestion des déchets:
+        est la mobilité durable:
+        est ma performance énergétique:
+        est rénover mon bâtiment:
 

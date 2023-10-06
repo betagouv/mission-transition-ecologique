@@ -8,15 +8,6 @@ objectifs:
   - Mesurez les émissions de Gaz à effet de serre de votre entreprise.
   - Elaborez votre plan d'actions pour décarboner votre activité.
   - Embarquez votre écosystème en valorisant votre engagement dans la décarbonation.
-conditions:
-  - type: project_sectors
-    operator: "or"
-    value:
-      - "*"
-  - type: user_goals
-    operator: "or"
-    value:
-      - impact
 opérateur de contact: Bpifrance
 autres opérateurs:
   - ADEME
@@ -24,11 +15,9 @@ nature de l'aide: accompagnement
 coût de l'accompagnement: 4 000 € HT après subvention de 60 %
 
 publicodes:
-  entreprise:
-  entreprise . effectif:
+  règles d'éligibilité: entreprise . effectif < 250
 
-  éligibilité: entreprise . effectif < 250
-
-  présentation à l'utilisateur:
+  afficher le dispositif si:
     toutes ces conditions:
-      - éligibilité
+      - règles d'éligibilité
+      - questionnaire . objectif prioritaire . est impact carbone

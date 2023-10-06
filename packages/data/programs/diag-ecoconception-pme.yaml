@@ -10,15 +10,6 @@ objectifs:
   - Réalisez une évaluation environnementale basée sur l’Analyse du Cycle de Vie du produit, service ou procédé concerné
   - Identifiez, formalisez et chiffrez les leviers d’écoconception, en maîtrisant le risque de transfert de pollution
   - Préparez la mise en œuvre d'un plan d’actions incluant un premier dimensionnement technico-économique
-conditions:
-  - type: project_sectors
-    operator: "or"
-    value:
-      - "*"
-  - type: user_goals
-    operator: "or"
-    value:
-      - ecoconception
 opérateur de contact: Bpifrance
 autres opérateurs:
   - ADEME
@@ -27,11 +18,10 @@ coût de l'accompagnement: 5 400 € HT après subvention de 70 %
 
 
 publicodes:
-  entreprise:
-  entreprise . effectif:
 
-  éligibilité: entreprise . effectif < 50
+  règles d'éligibilité: entreprise . effectif < 50
 
-  présentation à l'utilisateur:
+  afficher le dispositif si:
     toutes ces conditions:
-      - éligibilité
+      - règles d'éligibilité
+      - questionnaire . objectif prioritaire . est ma performance environnementale

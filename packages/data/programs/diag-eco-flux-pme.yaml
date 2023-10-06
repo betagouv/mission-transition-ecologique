@@ -9,15 +9,6 @@ objectifs:
   - Mettez en place un plan d'actions simple pour réduire vos déchets et votre consommation d'énergie, de matières et d'eau.
   - Lancez vos premières actions.
   - Réalisez en moyenne 45 000 € d'économies par an et par site de production ou établissement (sur la base des missions restituées).
-conditions:
-  - type: project_sectors
-    operator: "or"
-    value:
-      - "*"
-  - type: user_goals
-    operator: "or"
-    value:
-      - economies
 opérateur de contact: Bpifrance
 autres opérateurs:
   - ADEME
@@ -25,14 +16,12 @@ nature de l'aide: accompagnement
 coût de l'accompagnement: 3 000 € HT après subvention de 50 %
 
 publicodes:
-   entreprise:
-   entreprise . effectif:
-
-   éligibilité:
+   règles d'éligibilité:
      toutes ces conditions:
        - entreprise . effectif >= 50
        - entreprise . effectif <= 250
 
-   présentation à l'utilisateur:
+   afficher le dispositif si:
      toutes ces conditions:
-       - éligibilité
+       - règles d'éligibilité
+       - questionnaire . objectif prioritaire . est faire des économies
