@@ -94,12 +94,19 @@ WARNING :
   max-height: 150px;
 }
 
+@media (min-width: 48em) {
+.tee-track-callout-texts {
+  max-width: 50%;
+  }
+}
+
 .tee-track-callout-header {
   font-size: 1em;
   font-weight: normal;
   line-height: 2rem;
   margin-bottom: auto;
 }
+
 .tee-track-callout-big-title {
   font-size: 2em;
   font-weight: bold;
