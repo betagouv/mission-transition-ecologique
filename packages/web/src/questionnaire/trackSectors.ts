@@ -51,7 +51,7 @@ export const sectors = {
   help: 'https://www.insee.fr/fr/metadonnees/nafr2',
   category: 'myEntreprise',
   title: { fr: 'Mon activité' },
-  label: { fr: 'Quel est votre activité ?' },
+  label: { fr: 'Quelle est votre activité ?' },
   interface: {
     component: 'buttons'
   },
@@ -60,52 +60,76 @@ export const sectors = {
   },
   options: [
     {
-      value: { ...secteurs, "entreprise . secteur d'activité . est artisanat": 'oui' },
+      value: {
+          secteur: 'Artisanat',
+          ...secteurs, 
+          "entreprise . secteur d'activité . est artisanat": 'oui' 
+      },
       title: { fr: 'Artisanat' },
-      label: { fr: 'J’ai une activité artisanale' },
+      label: { fr: '👩‍🎨 J’ai une activité artisanale' },
       next: {
         default: 'track_roles',
         exceptions: nextExceptions
       }
     },
     {
-      value: { ...secteurs, "entreprise . secteur d'activité . est industrie": 'oui' },
+      value: {
+          secteur: 'Industrie',
+          ...secteurs, 
+          "entreprise . secteur d'activité . est industrie": 'oui' 
+      },
       title: { fr: 'Industrie' },
-      label: { fr: 'J’ai une activité industrielle, fabrication, production' },
+      label: { fr: '👩‍🔧 J’ai une activité industrielle, fabrication, production' },
       next: {
         default: 'track_roles',
         exceptions: nextExceptions
       }
     },
     {
-      value: { ...secteurs, "entreprise . secteur d'activité . est tourisme": 'oui' },
+      value: {
+          secteur: 'Tourisme',
+          ...secteurs, 
+          "entreprise . secteur d'activité . est tourisme": 'oui' 
+      },
       title: { fr: 'Tourisme' },
-      label: { fr: 'J’ai une activité de tourisme' },
+      label: { fr: '🤵‍♂️ J’ai une activité de tourisme, restauration' },
       next: {
         default: 'track_roles',
         exceptions: nextExceptions
       }
     },
     {
-      value: { ...secteurs, "entreprise . secteur d'activité . est tertiaire": 'oui' },
+      value: {
+          secteur: 'Tertiaire',
+          ...secteurs, 
+          "entreprise . secteur d'activité . est tertiaire": 'oui' 
+      },
       title: { fr: 'Tertiaire' },
-      label: { fr: 'J’ai une activité tertiaire, de services' },
+      label: { fr: '🧑‍⚖️ J’ai une activité tertiaire, de services' },
       next: {
         default: 'track_roles',
         exceptions: nextExceptions
       }
     },
     {
-      value: { ...secteurs, "entreprise . secteur d'activité . est agriculture": 'oui' },
+      value: {
+          secteur: 'Agriculture',
+          ...secteurs, 
+          "entreprise . secteur d'activité . est agriculture": 'oui' 
+      },
       title: { fr: 'Agriculture' },
-      label: { fr: 'J’ai une activité agricole' },
+      label: { fr: '👩‍🌾 J’ai une activité agricole' },
       next: {
         default: 'track_roles',
         exceptions: nextExceptions
       }
     },
     {
-      value: { ...secteurs, "entreprise . secteur d'activité . est autre secteur": 'oui' },
+      value: {
+          secteur: 'Autre',
+          ...secteurs, 
+          "entreprise . secteur d'activité . est autre secteur": 'oui' 
+      },
       title: { fr: 'Autre' },
       label: { fr: "Je suis dans un autre secteur d'activité" },
       next: {
