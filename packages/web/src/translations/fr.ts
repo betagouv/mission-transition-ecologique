@@ -67,10 +67,19 @@ export const frDict = {
   },
   articles: {
     accompagnement: {
-      this: 'cet'
+      the: "l'",
+      this: 'cet',
+      of: "de l'"
     },
     financement: {
-      this: 'ce'
+      the: 'le',
+      this: 'ce',
+      of: 'du'
+    },
+    prêt: {
+      the: 'le',
+      this: 'ce',
+      of: "du"
     }
   }
 }
