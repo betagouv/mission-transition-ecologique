@@ -1,7 +1,7 @@
 import Ajv from 'ajv/dist/2020'
 import schema from '../schemas/program-data-schema.json'
 
-import { prependConstants, readPrograms } from '../src/dataPipeline'
+import { prependInterface, readPrograms } from '../src/dataPipeline'
 
 import Engine from 'publicodes'
 
@@ -29,7 +29,7 @@ test('Data is valid against the JSON schema', () => {
 
 test('Publicode data is valid when appended with interface', () => {
   let programs = readPrograms()
-  programs = prependConstants(programs)
+  programs = prependInterface(programs)
 
   programs.forEach((p) => {
     expect(() => new Engine(p.publicodes as any)).not.toThrowError()

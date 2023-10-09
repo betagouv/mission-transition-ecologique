@@ -57,7 +57,7 @@ export const readPrograms = (log: boolean = false): Program[] => {
 /** Prepends publicodes with a publicodes snippet common to all programs (stored in
  * "packages/data/common/interface.yaml")
  */
-export const prependConstants = (programs: Program[], log: boolean = false): Program[] => {
+export const prependInterface = (programs: Program[], log: boolean = false): Program[] => {
   const CONSTANTS_PATH = './../common/interface.yaml'
 
   const fullPath: string = path.join(__dirname, CONSTANTS_PATH)
