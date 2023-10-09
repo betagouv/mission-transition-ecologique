@@ -9,40 +9,20 @@ objectifs:
   - Montez en compétences sur la thématique Energie de votre entreprise
   - Construisez et réalisez un plan d’actions grâce à un expert de l'énergie
   - Réduisez la consommation d’énergie de votre entreprise
-conditions:
-  - type: project_needs
-    operator: "or"
-    value:
-      - advices
-      - financing
-  - type: project_status
-    operator: "or"
-    value:
-      - "*"
-  - type: project_sectors
-    operator: "or"
-    value:
-      - "*"
-      # - industry
-      # - tertiary
-      # - agriculture
-      # - tourism
-      # - craft
-  - type: user_goals
-    operator: "or"
-    value:
-      # - impact
-      - energy
-      - renovation
 opérateur de contact: CMA
 nature de l'aide: accompagnement
 coût de l'accompagnement: gratuit
 
 publicodes:
-  entreprise:
-  entreprise . effectif:
 
-  éligibilité:
+  règles d'éligibilité:
     toutes ces conditions:
       - entreprise . effectif >= 20
       - entreprise . effectif < 500
+
+  afficher le dispositif si:
+    toutes ces conditions:
+      - règles d'éligibilité
+      - une de ces conditions:
+        - questionnaire . objectif prioritaire . est ma performance énergétique
+        - questionnaire . objectif prioritaire . est rénover mon bâtiment

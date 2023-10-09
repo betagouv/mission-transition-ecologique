@@ -2,6 +2,15 @@ const metaEnv = import.meta.env
 // console.log('trackSiret >  metaEnv :', metaEnv)
 const TEE_BACKEND_URL = metaEnv.VITE_TEE_BACKEND_URL || 'https://tee-backend.osc-fr1.scalingo.io'
 
+const secteurs = {
+  "entreprise . secteur d'activité . est artisanat": 'non',
+  "entreprise . secteur d'activité . est industrie": 'non',
+  "entreprise . secteur d'activité . est tourisme": 'non',
+  "entreprise . secteur d'activité . est tertiaire": 'non',
+  "entreprise . secteur d'activité . est agriculture": 'non',
+  "entreprise . secteur d'activité . est autre secteur": 'non'
+}
+
 const dataTarget = {
   siret: '',
   codeNaf: '',
@@ -10,68 +19,9 @@ const dataTarget = {
   structure_sizes: '',
   denomination: '',
   label_sectors: undefined,
-  project_sectors: undefined,
+  // project_sectors: undefined,
   secteur: undefined
 }
-
-// const nextExceptions = [
-//   {
-//     rules: [
-//       { 
-//         from: 'selectionValues',
-//         id: 'siret',
-//         dataField: 'siret',
-//         conditions: [
-//           { 
-//             type: 'siret',
-//             operator: 'exists'
-//           }
-//         ]
-//       },
-//       { 
-//         from: 'usedTracks',
-//         id: 'user_help',
-//         dataField: 'user_help',
-//         conditions: [
-//           { 
-//             type: 'user_help',
-//             operator: '==',
-//             value: 'unknown',
-//           }
-//         ]
-//       }
-//     ],
-//     next: { default: 'track_structure_workforce' }
-//   },
-//   {
-//     rules: [
-//       { 
-//         from: 'selectionValues',
-//         id: 'siret',
-//         dataField: 'siret',
-//         conditions: [
-//           { 
-//             type: 'siret',
-//             operator: 'exists'
-//           }
-//         ]
-//       },
-//       { 
-//         from: 'usedTracks',
-//         id: 'user_help',
-//         dataField: 'user_help',
-//         conditions: [
-//           { 
-//             type: 'user_help',
-//             operator: '==',
-//             value: 'precise',
-//           }
-//         ]
-//       }
-//     ],
-//     next: { default: 'track_structure_sizes' }
-//   }
-// ] 
 
 export const siret = {
   id: 'track_siret',
@@ -80,7 +30,7 @@ export const siret = {
   label: { fr: 'Quelle est votre entreprise ?' },
   // info: { fr: "Renseignez le SIRET de votre entreprise" },
   interface: {
-    component: 'input',
+    component: 'input'
   },
   // behavior: {
   //   multipleChoices: false,
@@ -93,7 +43,7 @@ export const siret = {
       id: 'search-siret',
       value: { ...dataTarget },
       title: { fr: 'SIRET' },
-      label: { fr: "Renseignez le SIRET de votre entreprise (14 chiffres)" },
+      label: { fr: 'Renseignez le SIRET de votre entreprise (14 chiffres)' },
       placeholder: { fr: 'ex : 830 141 321 00034' },
       // for debugging purposes
       // Examples =>
@@ -101,7 +51,9 @@ export const siret = {
       // defaultInput: '82200690400012', // - boulangerie
       // defaultInput: '83014132100034', // - TPE
       // defaultInput: '81759468200020', // - auto-entreprise
-      postResponses: { fr: 'Vous ne retrouvez pas votre SIRET ?&nbsp;<a href="https://annuaire-entreprises.data.gouv.fr/" target="_blank">Cliquez ici</a>' },
+      postResponses: {
+        fr: 'Vous ne retrouvez pas votre SIRET ?&nbsp;<a href="https://annuaire-entreprises.data.gouv.fr/" target="_blank">Cliquez ici</a>'
+      },
       // required: false,
       callbacks: [
         {
@@ -122,7 +74,7 @@ export const siret = {
             {
               from: 'formData',
               id: 'inputValue',
-              dataField: 'siret',
+              dataField: 'siret'
             },
             {
               from: 'rawData',
@@ -132,26 +84,26 @@ export const siret = {
               dataField: 'codeNaf',
               onlyRemap: true
             },
-            {
-              from: 'rawData',
-              id: 'sector',
-              path: 'etablissement.uniteLegale.activitePrincipaleUniteLegale',
-              dataField: 'project_sectors',
-              onlyRemap: true,
-              cleaning: [
-                {
-                  operation: 'findFromRefs',
-                  findInRef: 'nafCodes',
-                  findFromField: 'NIV5',
-                  retrieveFromField: 'tags'
-                }
-              ]
-            },
+            // {
+            //   from: 'rawData',
+            //   id: 'sector',
+            //   path: 'etablissement.uniteLegale.activitePrincipaleUniteLegale',
+            //   dataField: 'project_sectors',
+            //   onlyRemap: true,
+            //   cleaning: [
+            //     {
+            //       operation: 'findFromRefs',
+            //       findInRef: 'nafCodes',
+            //       findFromField: 'NIV5',
+            //       retrieveFromField: 'tags'
+            //     }
+            //   ]
+            // },
             {
               from: 'rawData',
               id: 'secteur',
               path: 'etablissement.uniteLegale.activitePrincipaleUniteLegale',
-              dataField: 'secteur',
+              dataField: '.',
               onlyRemap: true,
               cleaning: [
                 {
@@ -159,6 +111,33 @@ export const siret = {
                   findInRef: 'nafCodes',
                   findFromField: 'NIV5',
                   retrieveFromField: 'tagsFr'
+                  // => ['artisanat', 'industrie']
+                },
+                {
+                  operation: 'findFromDict',
+                  dict: {
+                    artisanat: { "entreprise . secteur d'activité . est artisanat": 'oui' },
+                    industrie: { "entreprise . secteur d'activité . est industrie": 'oui' },
+                    tourisme: { "entreprise . secteur d'activité . est tourisme": 'oui' },
+                    tertiaire: { "entreprise . secteur d'activité . est tertiaire": 'oui' },
+                    agriculture: { "entreprise . secteur d'activité . est agriculture": 'oui' },
+                    'autre secteur': { "entreprise . secteur d'activité . est autre secteur": 'oui' }
+                  }
+                  // => [{ "entreprise . secteur d'activité . est artisanat": 'oui' }, { "entreprise . secteur d'activité . est tertiaire": 'oui' }]
+                },
+                {
+                  operation: 'injectInObject',
+                  object: { ...secteurs }
+                  /* => { 
+                    {
+                      "entreprise . secteur d'activité . est artisanat": 'non',
+                      "entreprise . secteur d'activité . est industrie": 'non',
+                      "entreprise . secteur d'activité . est tourisme": 'non',
+                      "entreprise . secteur d'activité . est tertiaire": 'non',
+                      "entreprise . secteur d'activité . est agriculture": 'non',
+                      "entreprise . secteur d'activité . est autre secteur": 'non'
+                    }
+                  */
                 }
               ]
             },
@@ -197,7 +176,7 @@ export const siret = {
               path: 'etablissement.adresseEtablissement.codePostalEtablissement',
               dataField: 'codePostal',
               onlyRemap: true
-            },
+            }
             // {
             //   from: 'rawData',
             //   id: 'size',
@@ -215,10 +194,7 @@ export const siret = {
           ],
           resultsMapping: [
             {
-              respFields: [
-                'data.denomination',
-                'data.siret'
-              ],
+              respFields: ['data.denomination', 'data.siret'],
               position: 'title',
               // label: 'entité',
               class: 'fr-mb-3v',
@@ -270,7 +246,7 @@ export const siret = {
                 'raw.etablissement.adresseEtablissement.typeVoieEtablissement',
                 'raw.etablissement.adresseEtablissement.libelleVoieEtablissement',
                 'data.codePostal',
-                'data.ville',
+                'data.ville'
               ],
               // label: 'Adresse',
               icon: 'fr-icon-map-pin-2-line'
@@ -285,36 +261,20 @@ export const siret = {
                   operation: 'stringToDate'
                 }
               ]
-            },
-
-            // {
-            //   respFields: ['raw.etablissement.siret'],
-            //   label: 'SIRET',
-            //   icon: 'fr-icon-building-fill'
-            // },
-            // {
-            //   respFields: ['raw.etablissement.siren'],
-            //   label: 'SIRET',
-            //   icon: 'fr-icon-building-fill'
-            // },
-            // {
-            //   respFields: ['raw.etablissement.nic'],
-            //   label: 'NIC',
-            //   icon: 'fr-icon-building-fill'
-            // },
+            }
           ]
         }
       ],
       next: {
-        default: 'track_structure_workforce',
+        default: 'track_structure_workforce'
         // default: 'track_structure_sizes',
         // exceptions: nextExceptions
         // default: 'track_roles'
       },
       wildcard: {
-        label: { fr: "je préfère compléter mes informations manuellement" },
+        label: { fr: 'je préfère compléter mes informations manuellement' },
         next: {
-          default: 'track_structure_workforce',
+          default: 'track_structure_workforce'
           // default: 'track_structure_sizes',
           // exceptions: nextExceptions
         }

@@ -1,9 +1,8 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
-import type { ProgramData, Condition } from '@/types/index'
-import { CheckConditions } from '../utils/conditions'
-import { filterPrograms as theRealFilterPrograms } from '@tee/backend/src/domain/eligibility'
+import type { ProgramData } from '@/types/index'
+import { filterPrograms as filterWithPublicodes } from '@tee/backend/src/domain/eligibility'
 
 export const programsStore = defineStore('programs', () => {
   const programs = ref()
@@ -41,28 +40,16 @@ export const programsStore = defineStore('programs', () => {
     // console.log('store.programs > filterPrograms > conditions :', conditions)
 
     // filter out programs
-    const progsFilteredResult = theRealFilterPrograms(progs.value as ProgramData[], conditions)
+    const progsFilteredResult = filterWithPublicodes(progs.value as ProgramData[], conditions)
 
     if (progsFilteredResult.isErr) {
       throw new Error(progsFilteredResult.error.message)
     }
 
-    const progsFiltered = progsFilteredResult.value.filter((prog: any) => {
-      // const boolArray = [true]
-
-      // TO REWRITE => IMPLEMENT NEW CONDITIONS STRUCTURE W/ OPERATOR
-      // retrieve program's conditions
-      const progConditionsAlt = prog.conditions
-
-      // Using refactorized function
-      const bool = CheckConditions(conditions, progConditionsAlt)
-      return bool
-    })
-
-    return progsFiltered
+    return progsFilteredResult.value
   }
 
-  function setYamlDataset(dataset: any) {
+  function setDataset(dataset: any) {
     programs.value = dataset
   }
 
@@ -87,7 +74,7 @@ export const programsStore = defineStore('programs', () => {
     programDetailConfig,
     progs,
     filterPrograms,
-    setYamlDataset,
+    setDataset,
     setDetailResult,
     resetDetailResult,
     getProgramById

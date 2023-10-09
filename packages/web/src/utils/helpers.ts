@@ -33,7 +33,8 @@ import type {
   CleanerReplaceAll, 
   CleanerFromJson, 
   CleanerFromDict, 
-  CleanerDefaultIfNull, 
+  CleanerDefaultIfNull,
+  CleanerInjectInObject,
   ResultsMapping 
 } from '@/types/index'
 
@@ -87,9 +88,16 @@ export const setIn = (obj: any, [head, ...rest]: string[], value: any) => {
 export const setProperty = (obj: object, path: string, value: any) => {
   // console.log('utils > helpers > setProperty >  obj :', obj)
   // const [head, ...rest] = path.split('.')
-  const pathAsArray = path.split('.')
-  const resObj = setIn(obj, pathAsArray, value)
-  return resObj
+  let resultObj: any
+  
+  if (path === '.') {
+    resultObj = { ...obj, ...value}
+  } else {
+    const pathAsArray = path.split('.')
+    resultObj = setIn(obj, pathAsArray, value)
+  }
+  
+  return resultObj
 }
 
 // export const findInTracksArray = (tracksArray: object[], id: string) => {
@@ -163,10 +171,15 @@ export const findFromRefs = (value: string, cleaner: CleanerFromJson) => {
   return val
 }
 
-export const findFromDict = (value: string, cleaner: CleanerFromDict) => {
+export const findFromDict = (value: string | string[], cleaner: CleanerFromDict) => {
   const dict = cleaner.dict
-  const val = dict[value] || value
-  return val
+  let valueOut: any 
+  if (Array.isArray(value)) {
+    valueOut = value.map(v => dict[v] || v)
+  } else {
+    valueOut = dict[value] || value
+  }
+  return valueOut
 }
 
 export const findDefaultIfNull = (value: string, cleaner: CleanerDefaultIfNull, lang: string = 'fr') => {
@@ -182,9 +195,22 @@ export const findDefaultIfNull = (value: string, cleaner: CleanerDefaultIfNull, 
   return val
 }
 
-export const cleanValue = (value: any, cleaners: Cleaner[] | CleanerReplaceAll[] | CleanerFromJson[] | CleanerFromDict[] | CleanerDefaultIfNull[], lang: string = 'fr') => {
+export const injectInObject = (value: object | object[], cleaner: CleanerInjectInObject) => {
+  const targetObject = cleaner.object || {}
+  let valueOut: object  = { ...targetObject }
+  if (Array.isArray(value)) {
+    value.forEach(v => {
+      valueOut = { ...valueOut, ...v }
+    })
+  } else {
+    valueOut = { ...valueOut, ...value }
+  }
+  return valueOut
+}
+
+export const cleanValue = (value: any, cleaners: Cleaner[] | CleanerReplaceAll[] | CleanerFromJson[] | CleanerFromDict[] | CleanerDefaultIfNull[] | CleanerInjectInObject[], lang: string = 'fr') => {
   // console.log('utils > helpers > cleanValue > value :', value)
-  let val = value
+  let val: any = value
   cleaners.forEach((cleaner) => {
     // console.log('utils > helpers > cleanValue > cleaner :', cleaner)
     switch (cleaner.operation) {
@@ -202,7 +228,10 @@ export const cleanValue = (value: any, cleaners: Cleaner[] | CleanerReplaceAll[]
         break 
       case 'defaultIfNull':
         val = findDefaultIfNull(val, <CleanerDefaultIfNull>cleaner, lang)
-        break 
+        break
+      case 'injectInObject':
+        val = injectInObject(val, <CleanerInjectInObject>cleaner)
+        break
     }
   })
   // console.log('utils > helpers > cleanValue > val :', val)

@@ -1,76 +1,109 @@
-console.log()
-console.log('Starting ...')
-console.log('buildJsonOutput.ts ...')
-
 import * as dotenv from 'dotenv'
 dotenv.config()
 
-// console.log('process.env.NODE_ENV : ', process.env.NODE_ENV)
-// console.log('process.env', process.env)
+/**
+ * Build programs dataset from folder and yaml files
+ * Parse data folder to build list of programs
+ * Each program must must written as a distinct yaml file
+ */
 
-// const CurrentDirectory = process.cwd()
-// console.log('buildJsonOutput.ts > CurrentDirectory : ', CurrentDirectory)
-
-/*
-// Build programs dataset from folder and yaml files
-// Parse data folder to build list of programs
-// Each program must must written as a distinct yaml file
-// cf : https://stackoverflow.com/questions/10049557/reading-all-files-in-a-directory-store-them-in-objects-and-send-the-object
-*/
 // requiring path and fs modules
 import * as path from 'path'
 import * as fs from 'fs'
 import * as yaml from 'js-yaml'
+import { createFolderIfNotExists } from './helpers'
+// @ts-ignore
+import type { Dispositif as ProgramWithoutId } from './generated/program'
 
-const createFolderIfNotExists = (folderName: string): void => {
-  try {
-    if (!fs.existsSync(folderName)) {
-      fs.mkdirSync(folderName)
-    }
-  } catch (err) {
-    console.error(err)
-  }
+type Program = ProgramWithoutId & { id: string }
+
+/** Reads all program data
+ *
+ * Program data is stored as yaml files, location of the files can be
+ * specified with `DATA_DIR_PATH` environment variable. Default location is
+ * "packages/data/programs".
+ */
+const readPrograms = (): any[] => {
+  const DEFAULT_PROGRAMS_PATH = '../programs'
+
+  const programs: Program[] = []
+
+  // joining path of directory
+  const relativeDataDirPath: string = process.env.DATA_DIR_PATH || DEFAULT_PROGRAMS_PATH
+  const dataDirPath: string = path.join(__dirname, relativeDataDirPath)
+  console.log('📂 Reading data at', dataDirPath, '\n')
+
+  const filenames: string[] = fs.readdirSync(dataDirPath)
+
+  filenames.forEach((file: string) => {
+    const id = file.substring(0, file.lastIndexOf('.')) || file
+
+    console.log(' 🗎 Reading program', id)
+
+    const yamlFilePath: string = `${dataDirPath}/${file}`
+    const yamlFile: string = fs.readFileSync(yamlFilePath, 'utf8')
+
+    const program: Program = { ...(yaml.load(yamlFile) as ProgramWithoutId), id: id }
+
+    programs.push(program)
+  })
+
+  return programs
 }
 
-const programsArray = <any[]>[]
+/** Prepends publicodes with constants common to all programs (stored in
+ * "packages/data/common/constants.yaml")
+ */
+const prependConstants = (programs: Program[]): Program[] => {
+  const CONSTANTS_PATH = './../common/constants.yaml'
 
-// joining path of directory
-const dataDirPathTemp: string = process.env.DATA_DIR_PATH || '../programs'
-const dataDirPath: string = path.join(__dirname, dataDirPathTemp)
-console.log('buildJsonOutput.ts > __dirname :', __dirname)
-console.log('buildJsonOutput.ts > dataDirPath :', dataDirPath)
+  const fullPath: string = path.join(__dirname, CONSTANTS_PATH)
 
-// passsing dataDirPath and callback function
-const filesNames: string[] = fs.readdirSync(dataDirPath)
-console.log('buildJsonOutput.ts > filesNames :', filesNames)
+  console.log('🗎 reading constants at', fullPath)
+  const file: string = fs.readFileSync(fullPath, 'utf8')
+  const constants = yaml.load(file) as Record<string, unknown>
 
-filesNames.forEach((file: string) => {
-  // Do whatever you want to do with the file
-  console.log()
-  console.log('buildJsonOutput.ts > file :', file)
-  const yamlFilePath: string = `${dataDirPath}/${file}`
-  const yamlFile: string = fs.readFileSync(yamlFilePath, 'utf8')
+  console.log('➕ prepending publicodes with common constants')
 
-  const id = file.substring(0, file.lastIndexOf('.')) || file
-  const yamlObj = { ...(yaml.load(yamlFile) as Object), id: id } || {}
+  return programs.map((p) => {
+    p.publicodes = { ...constants, ...p.publicodes }
+    return p
+  })
+}
 
-  // @ts-ignore
-  console.log('buildJsonOutput.ts > yamlObj.titre :', yamlObj.titre)
-  programsArray.push(yamlObj)
-})
-// console.log('buildJsonOutput.ts > programsArray :', programsArray)
+/** Converts program data to JSON and writes it to a file.
+ *
+ * Location defaults to `packages/web/public/data/generated` but can be
+ * specified with `DATA_FRONT_GENERATED_DIR_PATH` environment variable.
+ */
+const buildJSONOutput = (programs: Program[]): void => {
+  const DEFAULT_OUTPUT_LOCATION = '../../web/public/data/generated'
 
-// build output json
-const dataAsJson: string = JSON.stringify(programsArray, null, 2)
-const dataBuiltOutputDir: string = path.join(
-  __dirname,
-  process.env.DATA_FRONT_GENERATED_DIR_PATH || '../../web/public/data/generated'
-)
+  console.log('♺ Converting data to JSON')
+  const dataAsJson: string = JSON.stringify(programs, null, 2)
 
-createFolderIfNotExists(dataBuiltOutputDir)
+  const dataBuiltOutputDir: string = path.join(
+    __dirname,
+    process.env.DATA_FRONT_GENERATED_DIR_PATH || DEFAULT_OUTPUT_LOCATION
+  )
 
-const dataOutPath: string = `${dataBuiltOutputDir}/dataset_out.json`
-fs.writeFileSync(dataOutPath, dataAsJson)
+  createFolderIfNotExists(dataBuiltOutputDir)
+
+  const dataOutPath: string = `${dataBuiltOutputDir}/dataset_out.json`
+  fs.writeFileSync(dataOutPath, dataAsJson)
+  console.log('🖊️  Data successfully written at', dataOutPath)
+}
+
+// Script
+
+console.log('▶ Starting data consolidation (buildJsonOutput.ts)\n')
+
+var programs = readPrograms()
 
 console.log()
-console.log('buildJsonOutput.ts > finished writing output json...')
+
+programs = prependConstants(programs)
+
+console.log()
+
+buildJSONOutput(programs)

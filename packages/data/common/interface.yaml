@@ -1,0 +1,26 @@
+entreprise:
+
+entreprise . effectif:
+
+entreprise . secteur d'activité:
+  avec:
+    est industrie:
+    est tertiaire:
+    est agriculture:
+    est tourisme:
+    est artisanat:
+    est autre secteur:
+
+
+questionnaire:
+
+questionnaire . objectif prioritaire:
+  avec:
+    est impact carbone:
+    est investir durable: # consolidation
+    est faire des économies:
+    est ma performance environnementale: # ecoconception
+    est la gestion des déchets:
+    est la mobilité durable:
+    est ma performance énergétique:
+    est rénover mon bâtiment:

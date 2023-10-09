@@ -23,30 +23,18 @@ objectifs:
     Identifiez et sélectionnez une solution d'investissement,
     d'étude ou de formation, et soyez assisté dans le montage
     d'une demande de financement
-conditions:
-  - type: project_needs
-    operator: "or"
-    value:
-      - advices
-      - financing
-  - type: project_status
-    operator: "or"
-    value:
-      - "*"
-  - type: project_sectors
-    operator: "or"
-    value:
-      - craft
-  - type: user_goals
-    operator: "or"
-    value:
-      - impact
 opérateur de contact: CMA
 nature de l'aide: "accompagnement"
 coût de l'accompagnement: gratuit
 
 publicodes:
-  entreprise:
-  entreprise . effectif:
 
-  éligibilité: entreprise . effectif < 250
+  règles d'éligibilité:
+    toutes ces conditions:
+      - entreprise . effectif < 250
+      - entreprise . secteur d'activité . est artisanat
+
+  afficher le dispositif si:
+    toutes ces conditions:
+      - règles d'éligibilité
+      - questionnaire . objectif prioritaire . est impact carbone

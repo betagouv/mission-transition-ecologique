@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # Script that tests all program data files against a schema.
-# Can be run via `npm run test-data` (in backend workspace).
+# Can be run via `npm run test-data` (in data workspace).
 
-PROGRAMS_DATA_DIR=../data/programs
-JSON_SCHEMA_FILE=data/program-data-schema.json
+PROGRAMS_DATA_DIR=./programs
+JSON_SCHEMA_FILE=./schemas/program-data-schema.json
 
 # find options:
 #  -print0 : use null delimiter, so that xargs -0 can loop on the array
