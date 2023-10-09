@@ -27,7 +27,7 @@ export const buildingProperty = {
       title: { fr: 'Propriétaire' },
       label: { fr: "🔑 Propriétaire" },
       next: {
-        default: 'track_structure_building_surface'
+        default: 'track_mobility'
       }
     },
     {
@@ -35,7 +35,7 @@ export const buildingProperty = {
       title: { fr: "Locataire" },
       label: { fr: "📝 Locataire " },
       next: {
-        default: 'track_structure_building_surface'
+        default: 'track_mobility'
       }
     },
     {
@@ -43,7 +43,7 @@ export const buildingProperty = {
       title: { fr: 'Propriétaire & locataire' },
       label: { fr: "Je suis à la fois propriétaire et locataire sur mes différents locaux" },
       next: {
-        default: 'track_structure_building_surface'
+        default: 'track_mobility'
       }
     }
   ]
