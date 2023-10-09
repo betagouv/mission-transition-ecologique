@@ -1,9 +1,9 @@
 import axios from 'axios'
 
-import golden_file_1 from '../data/test_files/golden_file-siret-01.json'
-import golden_file_2 from '../data/test_files/golden_file-siret-02.json'
-import golden_file_3 from '../data/test_files/golden_file-siret-03.json'
-import golden_file_4 from '../data/test_files/golden_file-siret-04.json'
+import golden_file_1 from '../../data/test_files/golden_file-siret-01.json'
+import golden_file_2 from '../../data/test_files/golden_file-siret-02.json'
+import golden_file_3 from '../../data/test_files/golden_file-siret-03.json'
+import golden_file_4 from '../../data/test_files/golden_file-siret-04.json'
 
 describe('Test that API response format is unchanged', () => {
   const test_siret = ['83014132100034', '13002526500013', '80053452100011', '88003990400011']
