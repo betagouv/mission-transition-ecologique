@@ -6,7 +6,7 @@ import type { PublicodesExpression } from 'publicodes'
 import { Result } from 'true-myth'
 import { ensureError } from '../helpers/errors'
 
-/** Expected rule to evaluate if a program should be presented to the user or
+/** Expected rule to evaluate if a program should be displayed to the user or
  * filtered out (in a program's `publicodes`
  * property).
  *  @constant
