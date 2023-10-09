@@ -77,6 +77,11 @@ WARNING :
   background-color: white;
 }
 
+/* GLOBAL */
+.tee-no-hover {
+  pointer-events: none;
+}
+
 /* TRACK CALLOUT */
 
 .tee-track-callout {
@@ -199,6 +204,7 @@ code {
   text-align: center;
 }
 
+/*! media md and smaller only */
 @media screen and (max-width:48em) {
   .fr-sm-hide {
     display: none !important;

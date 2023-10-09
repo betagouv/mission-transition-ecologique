@@ -106,6 +106,7 @@
         v-if="program[`coût de l'accompagnement`]"
         :class="columnTiles">
         <TeeTile
+          class="tee-no-hover"
           :title="choices.t('programCosts.cost')"
           :image-path="`${choices.publicPath}images/TEE-cout.svg`"
           :description="program[`coût de l'accompagnement`]"
@@ -115,6 +116,7 @@
         v-if="program[`montant du financement`]"
         :class="columnTiles">
         <TeeTile
+          class="tee-no-hover"
           :title="choices.t('programCosts.aid')"
           :image-path="`${choices.publicPath}images/TEE-cout.svg`"
           :description="program[`montant du financement`]"
@@ -124,6 +126,7 @@
         v-if="program[`taux du prêt`]"
         :class="columnTiles">
         <TeeTile
+          class="tee-no-hover"
           :title="choices.t('programCosts.loan')"
           :image-path="`${choices.publicPath}images/TEE-cout.svg`"
           :description="program[`coût de l'accompagnement`]"
@@ -134,6 +137,7 @@
       <div
         :class="columnTiles">
         <TeeTile
+          class="tee-no-hover"
           :title="choices.t('program.programType')"
           :image-path="`${choices.publicPath}images/TEE-typefinance.svg`"
           :description="program[`nature de l'aide`]">
@@ -144,6 +148,7 @@
       <div
         :class="columnTiles">
         <TeeTile
+          class="tee-no-hover"
           :title="choices.t('program.programProviders')"
           :image-path="`${choices.publicPath}images/TEE-porteur.svg`">
           <template #description>
