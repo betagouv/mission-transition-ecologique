@@ -57,16 +57,16 @@ export const readPrograms = (log: boolean = false): Program[] => {
 /** Prepends publicodes with a publicodes snippet common to all programs (stored in
  * "packages/data/common/interface.yaml")
  */
-export const prependConstants = (programs: Program[]): Program[] => {
+export const prependConstants = (programs: Program[], log: boolean = false): Program[] => {
   const CONSTANTS_PATH = './../common/interface.yaml'
 
   const fullPath: string = path.join(__dirname, CONSTANTS_PATH)
 
-  console.log('🗎 reading constants at', fullPath)
+  if (log) console.log('🗎 reading constants at', fullPath)
   const file: string = fs.readFileSync(fullPath, 'utf8')
   const constants = yaml.load(file) as Record<string, unknown>
 
-  console.log('➕ prepending publicodes with common constants')
+  if (log) console.log('➕ prepending publicodes with common constants')
 
   return programs.map((p) => {
     p.publicodes = { ...constants, ...p.publicodes }

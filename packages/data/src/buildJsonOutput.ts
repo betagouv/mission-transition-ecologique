@@ -7,7 +7,7 @@ let programs = readPrograms(true)
 
 console.log()
 
-programs = prependConstants(programs)
+programs = prependConstants(programs, true)
 
 console.log()
 
