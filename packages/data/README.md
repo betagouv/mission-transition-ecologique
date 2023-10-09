@@ -33,7 +33,9 @@ npm run test-data
 
 The program type is firsthand generated from the json schema (cf `./src/generateProgramType.ts`).
 
-The original yaml files are by design incomplete. The content of `./common/constants.yaml` is appendend to each program's `publicodes` property. The data is then consolidated into `../web/public/data/generated/dataset_out.json`
+The original yaml files are by design incomplete. The content of `./common/interface.yaml` is appendend to each program's `publicodes` 
+property. The data is then consolidated into 
+`../web/public/data/generated/dataset_out.json`
 
 ```sh
 # From this folder

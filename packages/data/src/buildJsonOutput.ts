@@ -51,11 +51,11 @@ const readPrograms = (): any[] => {
   return programs
 }
 
-/** Prepends publicodes with constants common to all programs (stored in
- * "packages/data/common/constants.yaml")
+/** Prepends publicodes with a publicodes snippet common to all programs (stored in
+ * "packages/data/common/interface.yaml")
  */
 const prependConstants = (programs: Program[]): Program[] => {
-  const CONSTANTS_PATH = './../common/constants.yaml'
+  const CONSTANTS_PATH = './../common/interface.yaml'
 
   const fullPath: string = path.join(__dirname, CONSTANTS_PATH)
 
