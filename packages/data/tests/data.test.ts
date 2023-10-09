@@ -3,6 +3,10 @@ import schema from '../schemas/program-data-schema.json'
 
 import { readPrograms } from '../src/dataPipeline'
 
+test('JSON Schema is valid', () => {
+  expect(new Ajv().compile(schema)).not.toThrowError()
+})
+
 test('Data is valid against the JSON schema', () => {
   const validate = new Ajv().compile(schema)
 
