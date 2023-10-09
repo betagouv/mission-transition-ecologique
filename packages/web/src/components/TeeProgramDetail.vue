@@ -150,12 +150,8 @@
         <TeeTile
           class="tee-no-hover"
           :title="choices.t('program.programProviders')"
-          :image-path="`${choices.publicPath}images/TEE-porteur.svg`">
-          <template #description>
-            <span>
-              {{ program['opérateur de contact'] }}
-            </span>
-          </template>
+          :image-path="`${choices.publicPath}images/TEE-porteur.svg`"
+          :description="choices.to(program['opérateur de contact'])">
         </TeeTile>
       </div>
       <!-- PROGRAM DURATION -->

@@ -2,6 +2,7 @@ import { ref } from 'vue'
 import { defineStore } from 'pinia'
 
 import { frDict } from '@/translations/fr'
+import { frOperatorsDict } from '@/translations/fr-operators'
 
 export const choicesStore = defineStore('choices', () => {
   
@@ -10,6 +11,9 @@ export const choicesStore = defineStore('choices', () => {
   // internationalization
   const dict: any = {
     fr: frDict
+  }
+  const dictOperators: any = {
+    fr: frOperatorsDict
   }
 
   // language selection
@@ -48,6 +52,14 @@ export const choicesStore = defineStore('choices', () => {
     }
     return translated
   }
+  function to(path: string, params: any = undefined) {
+    const locDict = dictOperators[lang.value]
+    let translated = resolve(path, locDict) || path
+    if (params) {
+      translated = ti(translated, params)
+    }
+    return translated
+  }
 
   return {
     publicPath,
@@ -56,6 +68,7 @@ export const choicesStore = defineStore('choices', () => {
     setPublicPath,
     setLocale,
     t,
+    to,
     ti
   }
 })
