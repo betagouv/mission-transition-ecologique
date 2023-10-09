@@ -1,5 +1,5 @@
 {
-  "name": "tee-data",
+  "name": "@tee/data",
   "version": "1.0.0",
   "description": "Package in charge of storing and building TEE datasets",
   "scripts": {
@@ -26,7 +26,6 @@
   },
   "homepage": "https://github.com/betagouv/transition-ecologique-entreprises-widget#readme",
   "dependencies": {
-    "ajv-cli": "^5.0.0",
     "dotenv": "^16.3.1",
     "fs": "^0.0.1-security",
     "js-yaml": "^4.1.0",
@@ -34,11 +33,12 @@
     "path": "^0.12.7"
   },
   "devDependencies": {
+    "@types/jest": "^29.5.2",
     "ajv": "^8.12.0",
-    "concurrently": "^8.2.1",
+    "concurrently": "^8.2.0",
     "jest": "^29.7.0",
     "nodemon": "^3.0.1",
-    "publicodes": "^1.0.0-beta.76",
+    "publicodes": "^1.0.0-beta.73",
     "ts-jest": "^29.1.1"
   }
 }
