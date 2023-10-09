@@ -61,7 +61,7 @@ export const filterPrograms = (
 }
 
 /** Evaluates given program specific rules and user specific input data, if
- * the program should be presented to tho company.
+ * the program should be displayed to the user.
  *
  * @param rules - An object encoding Publicode rules for a given program. The
  *   constant `FILTERING_RULE_NAME` determines which rule to evaluate, which is therefore
