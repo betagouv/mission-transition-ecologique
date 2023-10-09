@@ -51,7 +51,7 @@ export const sectors = {
   help: 'https://www.insee.fr/fr/metadonnees/nafr2',
   category: 'myEntreprise',
   title: { fr: 'Mon activité' },
-  label: { fr: 'Quel est votre activité ?' },
+  label: { fr: 'Quelle est votre activité ?' },
   interface: {
     component: 'buttons'
   },
@@ -62,7 +62,7 @@ export const sectors = {
     {
       value: { ...secteurs, "entreprise . secteur d'activité . est artisanat": 'oui' },
       title: { fr: 'Artisanat' },
-      label: { fr: 'J’ai une activité artisanale' },
+      label: { fr: '👩‍🎨 J’ai une activité artisanale' },
       next: {
         default: 'track_roles',
         exceptions: nextExceptions
@@ -71,7 +71,7 @@ export const sectors = {
     {
       value: { ...secteurs, "entreprise . secteur d'activité . est industrie": 'oui' },
       title: { fr: 'Industrie' },
-      label: { fr: 'J’ai une activité industrielle, fabrication, production' },
+      label: { fr: '👩‍🔧 J’ai une activité industrielle, fabrication, production' },
       next: {
         default: 'track_roles',
         exceptions: nextExceptions
@@ -80,7 +80,7 @@ export const sectors = {
     {
       value: { ...secteurs, "entreprise . secteur d'activité . est tourisme": 'oui' },
       title: { fr: 'Tourisme' },
-      label: { fr: 'J’ai une activité de tourisme' },
+      label: { fr: '🤵‍♂️ J’ai une activité de tourisme, restauration' },
       next: {
         default: 'track_roles',
         exceptions: nextExceptions
@@ -89,7 +89,7 @@ export const sectors = {
     {
       value: { ...secteurs, "entreprise . secteur d'activité . est tertiaire": 'oui' },
       title: { fr: 'Tertiaire' },
-      label: { fr: 'J’ai une activité tertiaire, de services' },
+      label: { fr: '🧑‍⚖️ J’ai une activité tertiaire, de services' },
       next: {
         default: 'track_roles',
         exceptions: nextExceptions
@@ -98,7 +98,7 @@ export const sectors = {
     {
       value: { ...secteurs, "entreprise . secteur d'activité . est agriculture": 'oui' },
       title: { fr: 'Agriculture' },
-      label: { fr: 'J’ai une activité agricole' },
+      label: { fr: '👩‍🌾 J’ai une activité agricole' },
       next: {
         default: 'track_roles',
         exceptions: nextExceptions
