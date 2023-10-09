@@ -37,6 +37,6 @@ The original yaml files are by design incomplete. The content of `./common/const
 
 ```sh
 # From this folder
-npm run build-front-json-output
-npm run build-front-json-output-watch
+npm run build-json-output
+npm run build-json-output-watch
 ```
