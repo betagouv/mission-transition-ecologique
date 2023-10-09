@@ -2,7 +2,6 @@ import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
 import type { ProgramData } from '@/types/index'
-// import { CheckConditions } from '../utils/conditions'
 import { filterPrograms as filterWithPublicodes } from '@tee/backend/src/domain/eligibility'
 
 export const programsStore = defineStore('programs', () => {
@@ -46,18 +45,6 @@ export const programsStore = defineStore('programs', () => {
     if (progsFilteredResult.isErr) {
       throw new Error(progsFilteredResult.error.message)
     }
-
-    // progsFilteredResult = progsFilteredResult.value.filter((prog: any) => {
-    //   // const boolArray = [true]
-
-    //   // TO REWRITE => IMPLEMENT NEW CONDITIONS STRUCTURE W/ OPERATOR
-    //   // retrieve program's conditions
-    //   const progConditionsAlt = prog.conditions
-
-    //   // Using refactorized function
-    //   const bool = CheckConditions(conditions, progConditionsAlt)
-    //   return bool
-    // })
 
     return progsFilteredResult.value
   }
