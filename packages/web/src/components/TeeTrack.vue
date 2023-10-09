@@ -82,7 +82,7 @@
                 </div>
                 <!-- CALLOUT TEXT -->
                 <div 
-                  class="fr-col tee-track-callout-texts">
+                  :class="`fr-col ${track.callout.bigTitle ? '' : 'tee-track-callout-texts'}`">
                   <!-- CALLOUT HEADER -->
                   <h2
                     v-if="track.callout.header"
@@ -93,7 +93,7 @@
                   <!-- CALLOUT TITLE / BIG TITLE -->
                   <h1
                     v-if="track.callout.bigTitle"
-                    class="fr-mb-0 tee-track-callout-big-title"
+                    class="fr-mb-3 tee-track-callout-big-title"
                     :style="`${track.callout.titleStyle}`">
                     {{ track.callout.title[choices.lang]}}
                   </h1>
