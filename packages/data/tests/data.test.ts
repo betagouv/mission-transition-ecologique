@@ -4,7 +4,6 @@ import schema from '../schemas/program-data-schema.json'
 import { prependConstants, readPrograms } from '../src/dataPipeline'
 
 import Engine from 'publicodes'
-import { FILTERING_RULE_NAME } from '@tee/backend/src/domain/eligibility'
 
 test('JSON Schema is valid', () => {
   expect(new Ajv().compile(schema)).not.toThrowError()
