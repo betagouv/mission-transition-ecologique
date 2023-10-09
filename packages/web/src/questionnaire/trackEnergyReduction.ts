@@ -5,7 +5,7 @@ export const energyReductionPriority = {
   label: { fr: "La réduction de vos consommations d’énergie est-elle une priorité pour vous ? " },
   callout: {
     header: { fr: 'Thématique' },
-    headerStyle: 'color: #000091;',
+    headerStyle: 'color: #3A3A3A;',
     bgColor: '#FACF35',
     title: { fr : "Votre gestion de l'énergie" },
     titleStyle: 'color: #000091;',

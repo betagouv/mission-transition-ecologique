@@ -95,12 +95,14 @@ WARNING :
 }
 
 .tee-track-callout-header {
-  font-size: 1.1em;
-  font-size: 1.3rem;
+  font-size: 1em;
+  font-weight: normal;
+  line-height: 2rem;
   margin-bottom: auto;
 }
 .tee-track-callout-big-title {
-  font-size: 2.2em;
+  font-size: 2em;
+  font-weight: bold;
   line-height: 1.2em;
 }
 .tee-track-callout-title {
