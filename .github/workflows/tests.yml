@@ -1,0 +1,45 @@
+name: Run tests
+
+on:
+  push:
+    branches: [ main, preprod ]
+  pull_request:
+    branches: [ main, preprod ]
+
+jobs:
+  validate-data:
+    name: Validation des données de dispositifs sur la base d'un JSON Schema
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.12.0]
+#
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      # This step only installs ajv_cli needed for data validation
+      - run: VERSION_AJV_CLI=`node -p -e "require('./packages/data/package.json').devDependencies[\"ajv-cli\"]"` npm install --no-package-lock --no-save ajv-cli@"$VERSION_AJV_CLI"
+
+      - run: npm run test-data
+
+
+  unit-test:
+    name: Run unit tests
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.12.0]
+#
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - run: npm clean-install
+
+      - run: npm run test -w packages/backend

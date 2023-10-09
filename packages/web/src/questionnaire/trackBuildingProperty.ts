@@ -5,7 +5,7 @@ export const buildingProperty = {
   label: { fr: "Parlons de vos locaux. Vous êtes :" },
   callout: {
     header: { fr: 'Thématique' },
-    headerStyle: 'color: white; font-weight: 400; font-size: 1.3rem; margin-bottom: auto;',
+    headerStyle: 'color: white;',
     bgColor: '#6672F8',
     title: { fr : 'Zoom sur vos bâtiments' },
     titleStyle: 'color: white;',

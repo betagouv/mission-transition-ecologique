@@ -1,7 +1,7 @@
 import { EstablishmentNotFoundError, Etablissement } from '../domain/types'
 import axios, { AxiosError, AxiosResponse } from 'axios'
 import { EtablissementDocument } from './types'
-import { ensureError } from './helpers'
+import { ensureError } from '../helpers/errors'
 import { Result } from 'true-myth'
 import { EtablissementRepository } from '../domain/spi'
 

@@ -77,6 +77,57 @@ WARNING :
   background-color: white;
 }
 
+/* GLOBAL */
+.tee-no-hover {
+  pointer-events: none;
+}
+
+/* TRACK CALLOUT */
+
+.tee-track-callout {
+  align-items: center;
+}
+.tee-track-callout-img {
+  text-align: center;
+}
+.tee-track-callout-img  > .fr-responsive-img {
+  max-height: 150px;
+}
+
+@media (min-width: 48em) {
+.tee-track-callout-texts {
+  max-width: 50%;
+  }
+}
+
+.tee-track-callout-header {
+  font-size: 1em;
+  font-weight: normal;
+  line-height: 2rem;
+  margin-bottom: auto;
+}
+
+.tee-track-callout-big-title {
+  font-size: 2em;
+  font-weight: bold;
+  line-height: 1.2em;
+}
+.tee-track-callout-title {
+  
+}
+.tee-track-callout-description {
+  
+}
+.tee-track-callout-hint {
+  
+}
+
+/* TRACK INPUT */
+.tee-resp-info-block {
+  text-indent: -3.5rem;
+  padding-left: 3.5rem;
+}
+
 /* CUSTOM BUTTON INPUT */
 .tee-btn-input {
   padding: .5rem 1rem; 
@@ -99,11 +150,15 @@ WARNING :
   padding: .1rem 1.5rem;
   min-height: 1.8rem;
 }
+.tee-track-choice {
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+}
 
 /* RESULTS LIST */
 .tee-program-title {
   color: #6A6AF4; 
-  font-size: .85rem;
+  font-size: 1.2rem;
   font-weight: bold;
 }
 .tee-program-resume {
@@ -158,6 +213,13 @@ code {
   overflow: auto;
 }
 
+/* IMAGES */
+.tee-track-image-right {
+  align-self: center; 
+  text-align: center;
+}
+
+/*! media md and smaller only */
 @media screen and (max-width:48em) {
   .fr-sm-hide {
     display: none !important;
@@ -180,8 +242,8 @@ code {
   }
 }
 
+/*! media sm */
 @media screen and (min-width: 0em) and (max-width: 36em) {
-  /*! media sm */
   .fr-hidden-xs {
     display: none !important;
   }
@@ -406,6 +468,37 @@ code {
   }
 }
 
+/*! media md and smaller only */
+@media (max-width: 48em) {
+  .tee-track-has-image-right {
+    order: 2;
+  }
+  .tee-track-image-right {
+    max-height: 300px;
+    /* max-width: 400px; */
+    overflow: hidden; 
+  }
+  .tee-track-image-right > .fr-responsive-img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+  }
+}
+
+/*! media more than md */
+@media (min-width: 48em) {
+  .tee-track-image-right > .fr-responsive-img {
+    max-height: 500px; 
+    width: auto; 
+    height: auto;
+  }
+}
+
+/*! media lg */
+@media (min-width: 62em) {
+}
+
+/*! media xl */
 @media screen and (max-width:78em) {
   .fr-tee-add-padding {
     padding: 0 2em 0 2em;

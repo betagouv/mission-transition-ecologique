@@ -1,6 +1,6 @@
 import { ServiceNotFoundError, ContactId } from '../domain/types'
 import axios, { AxiosError, AxiosResponse } from 'axios'
-import { ensureError } from './helpers'
+import { ensureError } from '../helpers/errors'
 import { Result } from 'true-myth'
 import { ContactInfoRepository } from '../domain/spi'
 

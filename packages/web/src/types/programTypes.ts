@@ -1,4 +1,4 @@
-// FOR AID PROGRAMS 
+// FOR AID PROGRAMS
 
 // export interface ProgramConditions {
 //   project_needs?: string[],
@@ -7,10 +7,10 @@
 //   structure_sizes?: string[],
 // }
 
-enum ProgramAidType {
-  acc = "accompagnement",
-  fund = "financement",
-  loan = "prêt",
+export enum ProgramAidType {
+  acc = 'accompagnement',
+  fund = 'financement',
+  loan = 'prêt'
 }
 
 enum ConditionOperators {
@@ -23,30 +23,32 @@ enum ConditionOperators {
   superior = '>',
   superiorOrEqual = '>=',
   inferior = '<',
-  inferiorOrEqual = '<=',
+  inferiorOrEqual = '<='
 }
 export interface Condition {
-  type?: string,
-  operator?: ConditionOperators,
-  value?: any | any[],
+  type?: string
+  operator?: ConditionOperators
+  value?: any | any[]
 }
 
 export interface ProgramData {
-  id: string,
-  titre: string,
-  promesse: string,
-  description: string,
-  illustration: string,
-  objectifs: string[],
-  "opérateur de contact": string,
-  "autres opérateurs"?: string[],
-  "nature de l'aide": ProgramAidType,
+  id: string
+  titre: string
+  promesse: string
+  description: string
+  illustration: string
+  objectifs: string[]
+  'opérateur de contact': string
+  'autres opérateurs'?: string[]
+  "nature de l'aide": ProgramAidType
 
-  "coût de l'accompagnement"?: string,
-  "montant du financement"?: string,
-  "taux du prêt"?: string,
-  conditions?: Condition[],
-  url? : string,
+  "coût de l'accompagnement"?: string
+  'montant du financement'?: string
+  'taux du prêt'?: string
+  conditions?: Condition[]
+  url?: string
+
+  publicodes: Object
 
   // program_conditions?: ProgramConditions,
   // program_application?: any,

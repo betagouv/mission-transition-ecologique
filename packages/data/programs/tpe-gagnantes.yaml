@@ -9,28 +9,15 @@ objectifs:
   - Mettez en place un plan d'actions simple pour réduire vos déchets et votre consommation d'énergie, de matières et d'eau.
   - Lancez vos premières actions.
   - Réalisez en moyenne 45 000 € d'économies par an et par site de production ou établissement (sur la base des missions restituées).
-conditions:
-  - type: project_needs
-    operator: "or"
-    value:
-      - advices
-      - financing
-  - type: project_status
-    operator: "or"
-    value:
-      - economies
-  - type: project_sectors
-    operator: "or"
-    value:
-      - "*"
-  - type: structure_sizes
-    operator: "or"
-    value:
-      - TPE
-  - type: user_goals
-    operator: "or"
-    value:
-      - economies
 opérateur de contact: CMA
 nature de l'aide: accompagnement
 coût de l'accompagnement: gratuit
+
+publicodes:
+
+  règles d'éligibilité: entreprise . effectif < 20
+
+  afficher le dispositif si:
+    toutes ces conditions:
+      - règles d'éligibilité
+      - questionnaire . objectif prioritaire . est faire des économies

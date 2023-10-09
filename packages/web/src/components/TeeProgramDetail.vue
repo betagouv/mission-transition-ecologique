@@ -68,7 +68,7 @@
             <p 
               v-for="(paragraph, idx) in program.objectifs"
               :key="`description-paragraph-${idx}`"
-              class="fr-mb-3v">
+              class="fr-mb-6v">
               <span
                 class="fr-tee-description-paragraph-marker">
                 {{ idx + 1 }} |
@@ -90,16 +90,6 @@
       v-if="trackConfig.config?.showProgramInfos" 
       class="fr-grid-row fr-grid-row--gutters fr-mb-5v">
 
-      <!-- PROGRAM TYPE -->
-      <div
-        :class="columnTiles">
-        <TeeTile
-          :title="choices.t('program.programType')"
-          :image-path="`${choices.publicPath}images/TEE-typefinance.svg`"
-          :description="program[`nature de l'aide`]">
-        </TeeTile>
-      </div>
-
       <!-- PROGRAM GEO ZONES -->
       <!-- <div
         v-if="program.geo_zones" 
@@ -116,6 +106,7 @@
         v-if="program[`coût de l'accompagnement`]"
         :class="columnTiles">
         <TeeTile
+          class="tee-no-hover"
           :title="choices.t('programCosts.cost')"
           :image-path="`${choices.publicPath}images/TEE-cout.svg`"
           :description="program[`coût de l'accompagnement`]"
@@ -125,6 +116,7 @@
         v-if="program[`montant du financement`]"
         :class="columnTiles">
         <TeeTile
+          class="tee-no-hover"
           :title="choices.t('programCosts.aid')"
           :image-path="`${choices.publicPath}images/TEE-cout.svg`"
           :description="program[`montant du financement`]"
@@ -134,16 +126,29 @@
         v-if="program[`taux du prêt`]"
         :class="columnTiles">
         <TeeTile
+          class="tee-no-hover"
           :title="choices.t('programCosts.loan')"
           :image-path="`${choices.publicPath}images/TEE-cout.svg`"
           :description="program[`coût de l'accompagnement`]"
         />
       </div>
 
+      <!-- PROGRAM TYPE -->
+      <div
+        :class="columnTiles">
+        <TeeTile
+          class="tee-no-hover"
+          :title="choices.t('program.programType')"
+          :image-path="`${choices.publicPath}images/TEE-typefinance.svg`"
+          :description="program[`nature de l'aide`]">
+        </TeeTile>
+      </div>
+
       <!-- PROGRAM PROVIDERS -->
       <div
         :class="columnTiles">
         <TeeTile
+          class="tee-no-hover"
           :title="choices.t('program.programProviders')"
           :image-path="`${choices.publicPath}images/TEE-porteur.svg`">
           <template #description>
@@ -289,7 +294,8 @@ const analytics = analyticsStore()
 
 const blockColor = '#000091'
 const showForm = ref<boolean>(false)
-const columnTiles = ref<string>('fr-col-4 fr-sm-3 fr-col-md-4 fr-col-lg-2')
+// const columnTiles = ref<string>('fr-col-4 fr-sm-3 fr-col-md-4 fr-col-lg-2')
+const columnTiles = ref<string>('fr-col')
 
 interface Props {
   program: ProgramData,

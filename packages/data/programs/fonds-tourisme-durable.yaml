@@ -8,32 +8,22 @@ objectifs:
   - Faites un état des lieux gratuitement afin d'identifier les axes prioritaires d’économies
   - Réduisez et maîtrisez vos coûts fixes (énergie, eau, déchets, gaspillage alimentaire, transport)
   - Accédez à des aides forfaitaires dans tous les domaines de la transition écologique (entre 5k€ et 200k€)
-conditions:
-  - type: project_needs
-    operator: "or"
-    value:
-      - advices
-      - financing
-  - type: project_status
-    operator: "or"
-    value:
-      - "*"
-  - type: project_sectors
-    operator: "or"
-    value:
-      - tourism
-  - type: structure_sizes
-    operator: "or"
-    value:
-      - PME
-      - TPE
-      - ETI
-      - GE
-  - type: user_goals
-    operator: "or"
-    value:
-      - impact
-      - consolidation
 opérateur de contact: ADEME
 nature de l'aide: accompagnement
 coût de l'accompagnement: gratuit
+
+
+publicodes:
+
+  règles d'éligibilité:
+    toutes ces conditions:
+      - entreprise . effectif < 250
+      - entreprise . secteur d'activité . est tourisme
+
+  afficher le dispositif si:
+    toutes ces conditions:
+      - règles d'éligibilité
+      - une de ces conditions:
+        - questionnaire . objectif prioritaire . est impact carbone
+        - questionnaire . objectif prioritaire . est investir durable
+
