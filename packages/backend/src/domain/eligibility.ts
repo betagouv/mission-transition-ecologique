@@ -44,7 +44,7 @@ export const filterPrograms = (
 
     if (isUndefined) {
       return Result.err(
-        new Error(`${FILTERING_RULE_NAME} is undefined (probably because of missing input data)`)
+        new Error(`"${FILTERING_RULE_NAME}" is undefined (probably because of missing input data)`)
       )
     }
   }
