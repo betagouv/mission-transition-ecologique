@@ -5,8 +5,7 @@
   "scripts": {
     "build-json-output": "npx ts-node src/generateProgramType.ts && npx ts-node src/buildJsonOutput.ts",
     "build-json-output-watch": "npx ts-node src/generateProgramType.ts && npx concurrently \"nodemon src/generateProgramType.ts --ignore *.d.ts -e ts,yaml\" \"nodemon src/buildJsonOutput.ts -e ts,yaml\"",
-    "test": "jest",
-    "test-data": ". ./tests/test-program-data.sh"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
