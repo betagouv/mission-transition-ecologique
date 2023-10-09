@@ -115,6 +115,12 @@ WARNING :
   
 }
 
+/* TRACK INPUT */
+.tee-resp-info-block {
+  text-indent: -3.5rem;
+  padding-left: 3.5rem;
+}
+
 /* CUSTOM BUTTON INPUT */
 .tee-btn-input {
   padding: .5rem 1rem; 
