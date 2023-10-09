@@ -109,7 +109,7 @@
           class="tee-no-hover"
           :title="choices.t('programCosts.cost')"
           :image-path="`${choices.publicPath}images/TEE-cout.svg`"
-          :description="program[`coût de l'accompagnement`]"
+          :description="`${program[`coût de l'accompagnement`]}`"
         />
       </div>
       <div
@@ -119,7 +119,7 @@
           class="tee-no-hover"
           :title="choices.t('programCosts.aid')"
           :image-path="`${choices.publicPath}images/TEE-cout.svg`"
-          :description="program[`montant du financement`]"
+          :description="`${program[`montant du financement`]}`"
         />
       </div>
       <div
@@ -129,7 +129,7 @@
           class="tee-no-hover"
           :title="choices.t('programCosts.loan')"
           :image-path="`${choices.publicPath}images/TEE-cout.svg`"
-          :description="program[`coût de l'accompagnement`]"
+          :description="`${program[`taux du prêt`]}`"
         />
       </div>
 

@@ -45,8 +45,11 @@ export const frDict = {
   },
   programCosts: {
     cost: "Coût reste à charge",
+    costPrefix: 'Coût',
     aid: 'Montant du financement',
-    paying: 'Taux du prêt'
+    aidPrefix: "Montant de l'aide",
+    loan: 'Taux du prêt',
+    loanPrefix: 'Taux du prêt'
   },
   enterprise: {
     select: 'Sélectionnez votre entreprise',
