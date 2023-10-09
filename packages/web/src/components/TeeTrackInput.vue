@@ -132,7 +132,7 @@
             </h3>
           </template>
           
-          <div class="fr-card__desc">
+          <div class="fr-card__desc tee-resp-info-block">
             <p 
               v-for="(resMap, idx) in resp.resultsMapping?.filter(i => i.position !== 'title')"
               :key="`resp-input-${i}-field-${idx}`"
