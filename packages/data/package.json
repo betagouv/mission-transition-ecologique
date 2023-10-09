@@ -5,7 +5,7 @@
   "scripts": {
     "build-json-output": "npx ts-node src/generateProgramType.ts && npx ts-node src/buildJsonOutput.ts",
     "build-json-output-watch": "npx ts-node src/generateProgramType.ts && npx concurrently \"nodemon src/generateProgramType.ts --ignore *.d.ts -e ts,yaml\" \"nodemon src/buildJsonOutput.ts -e ts,yaml\"",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "test-data": ". ./tests/test-program-data.sh"
   },
   "repository": {
@@ -35,8 +35,10 @@
     "path": "^0.12.7"
   },
   "devDependencies": {
+    "ajv": "^8.12.0",
     "concurrently": "^8.2.1",
     "jest": "^29.7.0",
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "ts-jest": "^29.1.1"
   }
 }

@@ -63,7 +63,6 @@
       "description": "Les autres opérateurs peuvent être des opérateurs co-financeurs, ou des partenaires du dispositif. Ils doivent être différents de l'opérateur de contcat.",
       "type": "array",
       "items": {
-        "type": "string",
         "$ref": "#/$defs/operators"
       },
       "uniqueItems": true

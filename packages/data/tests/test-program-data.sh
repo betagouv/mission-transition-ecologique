@@ -13,4 +13,4 @@ JSON_SCHEMA_FILE=./schemas/program-data-schema.json
 # See [ajv documentation](https://ajv.js.org/guide/getting-started.html) for
 # details on the command line validator.
 find "${PROGRAMS_DATA_DIR}" -type f -print0 | \
-  xargs -0 -I {} -n1 npx ajv test --spec=draft2020 -s "${JSON_SCHEMA_FILE}" -d {}  --valid
+  xargs -0 -I {} -n1 npx ajv test -s "${JSON_SCHEMA_FILE}" -d {}  --valid
