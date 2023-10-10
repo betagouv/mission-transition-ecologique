@@ -129,7 +129,7 @@ EXPECT that the filtering only keeps programs that are eligible (rule
 describe(`
   GIVEN  a list of programs
   WHEN   the data does not allow to fully evaluate the eligibility rule (missing data)
-  EXPECT that filterPrograms returns an error
+  EXPECT that filterPrograms does not filter out the programs
 `, () => {
   test('undefined rule', () => {
     const programs = [makeProgram(rulesBoilerplate)]
@@ -137,8 +137,8 @@ describe(`
 
     const result = filterPrograms(programs, inputData)
 
-    expectToBeErr(result)
-    // expect(result.value.length).toBe(1)
+    expectToBeOk(result)
+    expect(result.value.length).toBe(1)
   })
 })
 
