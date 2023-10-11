@@ -92,6 +92,7 @@ WARNING :
 }
 .tee-track-callout-img  > .fr-responsive-img {
   max-height: 150px;
+  width: auto;
 }
 
 @media (min-width: 48em) {
