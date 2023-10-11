@@ -6,13 +6,13 @@ const objectifsPrioritaires = {
   'questionnaire . objectif prioritaire . est la mobilité durable': 'non',
   'questionnaire . objectif prioritaire . est la gestion des déchets': 'non',
   "questionnaire . objectif prioritaire . est l'écoconception": 'non', // ma performance environnementale
-  
+
   // FUTURE DEPRECATION
   'questionnaire . objectif prioritaire . est faire des économies': 'non',
   'questionnaire . objectif prioritaire . est investir durable': 'non',
 
   // FUTURE ADDITIONS
-  'questionnaire . objectif prioritaire . est former ou recruter': 'non',
+  'questionnaire . objectif prioritaire . est former ou recruter': 'non'
 }
 
 export const goals = {
@@ -120,7 +120,7 @@ export const goals = {
     {
       value: {
         ...objectifsPrioritaires,
-        "questionnaire . objectif prioritaire . est former ou recruter": 'oui'
+        'questionnaire . objectif prioritaire . est former ou recruter': 'oui'
       },
       title: { fr: 'Formation' },
       label: { fr: '🧑‍🎓 Former ou recruter sur la transition écologique' },
