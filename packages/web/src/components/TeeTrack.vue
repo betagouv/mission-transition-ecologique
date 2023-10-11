@@ -54,7 +54,7 @@
       :id="trackId"
       class="fr-grid-row">
       <div 
-        :class="`fr-col${track.imageRight ? ' fr-col-md-6 fr-col-lg-6 tee-track-has-image-right' : ''}`">
+        :class="`fr-col${track.imageRight ? ' fr-col-md-7 fr-col-lg-7 tee-track-has-image-right' : ''}`">
         <!-- UNCOMPLETED QUESTIONNAIRE -->
         <div
           :class="`fr-grid-row fr-grid-row--gutters ${track.bgColor ? 'fr-p-5v fr-p-sm-8v fr-p-md-20v' : ''}`"
