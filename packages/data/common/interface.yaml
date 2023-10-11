@@ -11,6 +11,31 @@ entreprise . secteur d'activité:
     est artisanat:
     est autre secteur:
 
+entreprise . code NAF:
+  avec:
+    est A:
+    est B:
+    est C:
+    est D:
+    est E:
+    est F:
+    est G:
+    est H:
+    est I:
+    est J:
+    est K:
+    est L:
+    est M:
+    est N:
+    est O:
+    est P:
+    est Q:
+    est R:
+    est S:
+    est T:
+    est U:
+
+
 
 questionnaire:
 
@@ -24,3 +49,8 @@ questionnaire . objectif prioritaire:
     est la mobilité durable:
     est ma performance énergétique:
     est rénover mon bâtiment:
+    est économiser de l'eau:
+    est former ses collaborateurs:
+    est réaliser un diagnostic:
+    est recruter pour ma transition:
+

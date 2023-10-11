@@ -98,8 +98,7 @@
     {
       "properties": {
         "nature de l'aide": { "const": "prêt" }
-      },
-      "required": ["taux du prêt"]
+      }
     }
   ],
   "required": [
@@ -154,6 +153,7 @@
         "CMA",
         "DDFIP",
         "EcoCO2",
+        "France Rénov'",
         "La Poste",
         "Ministère de la Transition Écologique et Solidaire",
         "ORACE"

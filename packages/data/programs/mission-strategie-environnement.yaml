@@ -1,0 +1,46 @@
+titre: Mission Stratégie Environnement
+promesse: Inscrire la transition énergétique et écologique dans la stratégie de votre entreprise
+description: Bénéficiez d'une mission de conseil ciblée sur 13 jours pour enclencher votre transition énergétique et écologique, l’inscrire dans la stratégie de votre entreprise et construire votre feuille de route jusqu’à 2030.
+illustration: images/TEE_energie_verte.png
+opérateur de contact: Bpifrance
+url: https://www.bpifrance.fr/catalogue-offres/transition-ecologique-et-energetique/mission-strategie-environnement
+coût de l'accompagnement: 5 000 € HT
+durée de l'accompagnement: 13 jours
+nature de l'aide: accompagnement
+objectifs:
+  - Sensibiliser et renforcer les compétences de vos collaborateurs sur les sujets liés la transition environnementale.
+  - Définir la raison d’être de votre entreprise.
+  - Evaluer les impacts de l’activité de votre entreprise sur l’environnement.
+  - Etablir les risques et opportunités de la transition environnementale sur l’activité de votre entreprise.
+  - Définir la feuille de route jusqu’à 2030 de votre entreprise pour vous guider dans la transition énergétique et écologique.
+publicodes:
+  règles d'éligibilité:
+    toutes ces conditions:
+      - entreprise . effectif >= 10
+  afficher le dispositif si:
+    toutes ces conditions:
+      - règles d'éligibilité
+      - une de ces conditions:
+          - entreprise . code NAF . est A
+          - entreprise . code NAF . est B
+          - entreprise . code NAF . est C
+          - entreprise . code NAF . est D
+          - entreprise . code NAF . est E
+          - entreprise . code NAF . est F
+          - entreprise . code NAF . est G
+          - entreprise . code NAF . est H
+          - entreprise . code NAF . est I
+          - entreprise . code NAF . est J
+          - entreprise . code NAF . est K
+          - entreprise . code NAF . est L
+          - entreprise . code NAF . est M
+          - entreprise . code NAF . est N
+          - entreprise . code NAF . est O
+          - entreprise . code NAF . est P
+          - entreprise . code NAF . est Q
+          - entreprise . code NAF . est R
+          - entreprise . code NAF . est S
+          - entreprise . code NAF . est T
+          - entreprise . code NAF . est U
+      - une de ces conditions:
+          - questionnaire . objectif prioritaire . est former ses collaborateurs

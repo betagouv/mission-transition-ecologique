@@ -1,0 +1,40 @@
+titre: Booster Éco-Énergie Tertiaire >1000 m²
+promesse: Bénéficiez d'un soutien à l'ingénierie pour les travaux de rénovation énergétique de vos bâtiments.
+description: Votre entreprise dispose de bâtiments de 1 000 m², et plus, à usage tertiaire ? Le dispositif "Booster Entreprises Eco-Energie Tertiaire" offre un soutien à l'ingénierie pour la mise en œuvre d'actions et de travaux permettant l’atteinte des exigences du Dispositif Eco Energie Tertiaire (DEET).
+illustration: images/TEE_energie_verte.png
+opérateur de contact: ADEME
+url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/booster-entreprises-eco-energie-tertiaire-reduire-facture-energetique-gagner
+coût de l'accompagnement: "0"
+nature de l'aide: financement
+montant du financement: Jusqu'à 77 000 €
+objectifs:
+  - "Définissez la prestation d'ingénierie nécessaire pour mettre en œuvre vos travaux  permettant l’atteinte des exigences du DEET : \n- Une mission de maîtrise d’œuvre rénovation énergetique (MOE) ;\n- Une mission d'assistance à maitrise d'ouvrage (AMO) pour la mise en oeuvre d'un Contrat de Performance Énergétique (CPE)."
+  - Choisissez les prestataires qui vous accompagneront pour vos missions d'ingénierie. Ces prestataires doivent répondent aux critères de qualification et compétences décrits dans les cahiers des charges de l'ADEME.
+  - 'Déposez votre demande d''aide auprès de l''Ademe : informations administratives, description du projet, rapport d''audit énergétique, détails techniques et financiers, etc. A ce stade, vos missions d''ingénierie ne doivent pas avoir commencé !'
+  - L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat de financement précisant le montant d’aide maximum, les conditions et les modalités de versement.
+publicodes:
+  règles d'éligibilité:
+    toutes ces conditions:
+      - entreprise . effectif >= 0
+      - entreprise . effectif <= 4999
+  afficher le dispositif si:
+    toutes ces conditions:
+      - règles d'éligibilité
+      - une de ces conditions:
+          - entreprise . code NAF . est C
+          - entreprise . code NAF . est F
+          - entreprise . code NAF . est G
+          - entreprise . code NAF . est H
+          - entreprise . code NAF . est I
+          - entreprise . code NAF . est J
+          - entreprise . code NAF . est K
+          - entreprise . code NAF . est L
+          - entreprise . code NAF . est M
+          - entreprise . code NAF . est N
+          - entreprise . code NAF . est Q
+          - entreprise . code NAF . est R
+          - entreprise . code NAF . est S
+      - une de ces conditions:
+          - questionnaire . objectif prioritaire . est rénover mon bâtiment
+          - questionnaire . objectif prioritaire . est ma performance énergétique
+          - questionnaire . objectif prioritaire . est réaliser un diagnostic

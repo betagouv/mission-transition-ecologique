@@ -1,0 +1,32 @@
+titre: Formations-actions Baisse les watts
+promesse: Participez à une formation pour vous aider à faire des économies d’énergie
+description: Les formations-actions "Baisse les watts" vous permettent d'apprendre à maitriser en toute autonomie la consommation énergétique de votre entreprise.
+illustration: images/TEE_energie_verte.png
+opérateur de contact: CMA
+url: 'Baisse les Watts : le programme énergie des TPE / PME | Artisanat.fr'
+coût de l'accompagnement: Gratuit
+durée de l'accompagnement: 2 jours
+nature de l'aide: accompagnement
+objectifs:
+  - Situer la consommation d’énergie de votre entreprise par rapport à votre secteur d’activité.
+  - Comprendre votre facture et votre contrat pour optimiser vos coûts
+  - Identifier vos gisements d'économies d'énergie et vos principaux leviers d'action pour mettre en place de premières actions adaptées à votre activité
+  - Apprendre à suivre votre consommation d'énergie dans le temps grâce à un "carnet de bord énergie"
+publicodes:
+  règles d'éligibilité:
+    toutes ces conditions:
+      - entreprise . effectif >= 0
+      - entreprise . effectif <= 249
+  afficher le dispositif si:
+    toutes ces conditions:
+      - règles d'éligibilité
+      - une de ces conditions:
+          - entreprise . code NAF . est D
+          - entreprise . code NAF . est F
+          - entreprise . code NAF . est G
+          - entreprise . code NAF . est I
+          - entreprise . code NAF . est S
+      - une de ces conditions:
+          - questionnaire . objectif prioritaire . est ma performance énergétique
+          - questionnaire . objectif prioritaire . est réaliser un diagnostic
+          - questionnaire . objectif prioritaire . est impact carbone

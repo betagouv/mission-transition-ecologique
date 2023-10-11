@@ -1,0 +1,37 @@
+titre: Programme Synergies durables / Economie circulaire
+promesse: Identifiez les opportunités d'économie circulaire avec les entreprises de votre territoire
+description: Votre conseiller CCI vous ouvre de nouvelles opportunités pour trouver des partenaires au sein de votre territoire et vous permettre de mutualiser des moyens, ressources et services (gestion collective des déchets, équipements, infrastructures, matières premières non utilisées...)
+illustration: images/TEE_energie_verte.png
+opérateur de contact: CCI
+url: https://www.cci.fr/offre/demarche-synergies-durables et https://www.cci.fr/ressources/developpement-durable/contacts-developpement-durable
+nature de l'aide: financement
+montant du financement: Sur devis, prise en charge totale possible selon les territoires
+objectifs:
+  - Identifier les flux à partager, mutualiser et valoriser auprès des entreprises locales.
+  - Détecter des entreprises cibles, les possibilités de mutualisation et les gains en terme de coûts de production et de fonctionnement.
+  - Solliciter et mobiliser les acteurs ressources les plus adaptés.
+  - Mettre en œuvre un contrat d’alliance et de synergies inter-entreprises.
+publicodes:
+  règles d'éligibilité:
+    toutes ces conditions:
+      - entreprise . effectif >= 20
+      - entreprise . effectif <= 499
+  afficher le dispositif si:
+    toutes ces conditions:
+      - règles d'éligibilité
+      - une de ces conditions:
+          - entreprise . code NAF . est A
+          - entreprise . code NAF . est B
+          - entreprise . code NAF . est C
+          - entreprise . code NAF . est D
+          - entreprise . code NAF . est E
+          - entreprise . code NAF . est F
+          - entreprise . code NAF . est G
+          - entreprise . code NAF . est H
+          - entreprise . code NAF . est I
+          - entreprise . code NAF . est M
+      - une de ces conditions:
+          - questionnaire . objectif prioritaire . est économiser de l'eau
+          - questionnaire . objectif prioritaire . est la gestion des déchets
+          - questionnaire . objectif prioritaire . est réaliser un diagnostic
+          - questionnaire . objectif prioritaire . est ma performance environnementale
