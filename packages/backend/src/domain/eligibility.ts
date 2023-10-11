@@ -35,17 +35,9 @@ export const filterPrograms = (
 ): Result<ProgramData[], Error> => {
   const eligibilityResults = programs.map((p) => evaluateRule(p.publicodes, inputData))
 
-  for (const r of eligibilityResults) {
-    if (r.isErr) {
-      return Result.err(r.error)
-    }
-
-    const isUndefined = r.isOk && typeof r.value === 'undefined'
-
-    if (isUndefined) {
-      return Result.err(
-        new Error(`"${FILTERING_RULE_NAME}" is undefined (probably because of missing input data)`)
-      )
+  for (const e of eligibilityResults) {
+    if (e.isErr) {
+      return Result.err(e.error)
     }
   }
 
@@ -53,8 +45,9 @@ export const filterPrograms = (
     const e = evaluateRule(p.publicodes, inputData)
 
     const isPositive = e.isOk && e.value
+    const isUndefined = e.isOk && typeof e.value === 'undefined'
 
-    return isPositive
+    return isPositive || isUndefined
   })
 
   return Result.ok(filteredPrograms)
