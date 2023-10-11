@@ -496,7 +496,7 @@ const colsWidth = computed(() => {
     if (customColWidth) {
       // if defined in track*.ts
       divSizeLarge = customColWidth
-      divSize = Number(customColWidth) + 1
+      divSize = customColWidth
     } else {
       // default values hard written 
       divSize = colsOptions[renderAs]
