@@ -12,6 +12,7 @@ export const needs = {
     titleStyle: 'font-size: 2.8rem;',
     bigTitle: true,
     description: { fr: "Je complète mon profil en moins de 2 minutes, et je découvre comment faire des économies en réduisant mon impact environnemental." },
+    descriptionStyle: 'font-size: 1.3rem; line-height: 2rem;'
   },
   interface: {
     component: 'simpleButtons',
