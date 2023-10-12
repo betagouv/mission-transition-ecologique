@@ -31,29 +31,6 @@
         "type": "string"
       }
     },
-    "conditions": {
-      "description": "TODO",
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "type": {
-            "description": "TODO",
-            "type": "string"
-          },
-          "operator": {
-            "description": "TODO",
-            "type": "string"
-          },
-          "value": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      }
-    },
     "opérateur de contact": {
       "description": "L'opérateur de contact est l'opérateur à contacter pour obtenir des informations supplémentaires sur le dispositif.",
       "type": "string",
@@ -63,7 +40,6 @@
       "description": "Les autres opérateurs peuvent être des opérateurs co-financeurs, ou des partenaires du dispositif. Ils doivent être différents de l'opérateur de contcat.",
       "type": "array",
       "items": {
-        "type": "string",
         "$ref": "#/$defs/operators"
       },
       "uniqueItems": true

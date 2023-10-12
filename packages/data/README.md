@@ -22,11 +22,12 @@ npm install --workspace packages/data
 
 ### Test program files
 
-To run the test just run :
+To run the test :
 
 ```sh
-# Either from this package or from root level
-npm run test-data
+# Either from this package
+npm run test
+# or from root level: npm run test-data
 ```
 
 ### Build JSON output
