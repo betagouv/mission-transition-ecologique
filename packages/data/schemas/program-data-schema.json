@@ -48,6 +48,7 @@
       "description": "Précise s'il s'agit d'une aide financière, d'un accompagnement, ou d'un prêt. Un accompagnement se définit comme la réalisation d'une prestation intellectuelle, par un intervenant choisi par l'opérateur.",
       "enum": [
         "accompagnement",
+        "formation",
         "financement",
         "prêt"
       ]
@@ -85,7 +86,12 @@
   "oneOf": [
     {
       "properties": {
-        "nature de l'aide": { "const": "accompagnement" }
+        "nature de l'aide": {
+          "oneOf": [
+          {"const": "accompagnement" },
+          {"const": "formation" }
+          ]
+        }
       },
       "required": ["coût de l'accompagnement", "durée de l'accompagnement"]
     },
