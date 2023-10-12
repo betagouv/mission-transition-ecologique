@@ -33,8 +33,6 @@ export const filterPrograms = (
   programs: ProgramData[],
   inputData: InputData
 ): Result<ProgramData[], Error> => {
-  const start = new Date().getTime()
-
   const eligibilityResults = programs.map((p) => evaluateRule(p.publicodes, inputData))
 
   for (const e of eligibilityResults) {
@@ -51,9 +49,6 @@ export const filterPrograms = (
 
     return isPositive || isUndefined
   })
-
-  let elapsed = new Date().getTime() - start
-  console.log('Filtering programs > time elapsed in seconds :', elapsed / 1000)
 
   return Result.ok(filteredPrograms)
 }
