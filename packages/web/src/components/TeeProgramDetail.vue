@@ -173,27 +173,6 @@
         </TeeTile>
       </div>
 
-      <!-- PROGRAM START -->
-      <!-- <div
-        v-if="program.date_start"
-        :class="columnTiles">
-        <TeeTile
-          :title="choices.t('program.programStartDate')"
-          :image-path="`${choices.publicPath}images/TEE-duree.svg`"
-          :description="'...'"
-        />
-      </div> -->
-
-      <!-- PROGRAM END -->
-      <!-- <div
-        v-if="program.date_end"
-        :class="columnTiles">
-        <TeeTile
-          :title="choices.t('program.programEndDate')"
-          :image-path="`${choices.publicPath}images/TEE-duree.svg`"
-          :description="'...'"
-        />
-      </div> -->
     </div>
 
     <!-- PROGRAM FORM -->
