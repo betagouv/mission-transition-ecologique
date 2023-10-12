@@ -152,7 +152,7 @@
         :class="columnTiles">
         <TeeTile
           class="tee-no-hover"
-          :title="choices.t('program.programService')"
+          :title="choices.t('program.programDuration')"
           :image-path="`${choices.publicPath}images/TEE-duree.svg`"
           :description="program[`durée de l'accompagnement`]"
         />

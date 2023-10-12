@@ -44,7 +44,7 @@ export const frDict = {
     programDescription: 'Au programme :',
     programProviders: 'Contact',
     programType: "Nature de l'aide",
-    programService: 'Prestation'
+    programDuration: 'Prestation'
   },
   programCosts: {
     cost: 'Coût reste à charge',
