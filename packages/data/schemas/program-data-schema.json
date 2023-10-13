@@ -31,29 +31,6 @@
         "type": "string"
       }
     },
-    "conditions": {
-      "description": "TODO",
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "type": {
-            "description": "TODO",
-            "type": "string"
-          },
-          "operator": {
-            "description": "TODO",
-            "type": "string"
-          },
-          "value": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      }
-    },
     "opérateur de contact": {
       "description": "L'opérateur de contact est l'opérateur à contacter pour obtenir des informations supplémentaires sur le dispositif.",
       "type": "string",
@@ -63,7 +40,6 @@
       "description": "Les autres opérateurs peuvent être des opérateurs co-financeurs, ou des partenaires du dispositif. Ils doivent être différents de l'opérateur de contcat.",
       "type": "array",
       "items": {
-        "type": "string",
         "$ref": "#/$defs/operators"
       },
       "uniqueItems": true
@@ -77,7 +53,11 @@
       ]
     },
     "coût de l'accompagnement": {
-      "description": "Ce champ est utile et requis uniquement si l'aide est de nature \"accompagnement\". Elle précise le coût reste à charge de l'utilisateur pour bénéficier de l'accompagnement. Il s'agit d'un champ texte, à des fins d'affichage.",
+      "description": "Uniquement pour les accompagnements. Ce champ est utile et requis uniquement si l'aide est de nature \"accompagnement\". Elle précise le coût reste à charge de l'utilisateur pour bénéficier de l'accompagnement. Il s'agit d'un champ texte, à des fins d'affichage.",
+      "type": "string"
+    },
+    "durée de l'accompagnement": {
+      "description": "Uniquement pour les accompagnements. Nombre de jours d'accompagnement du prestataire, suivi de l'étalement de son intervention le cas échéant. Par exemple : \"12 jours de prestation répartis sur 6 à 8 mois\"",
       "type": "string"
     },
     "montant du financement": {
@@ -107,7 +87,7 @@
       "properties": {
         "nature de l'aide": { "const": "accompagnement" }
       },
-      "required": ["coût de l'accompagnement"]
+      "required": ["coût de l'accompagnement", "durée de l'accompagnement"]
     },
     {
       "properties": {

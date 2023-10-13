@@ -43,6 +43,7 @@ export interface ProgramData {
   "nature de l'aide": ProgramAidType
 
   "coût de l'accompagnement"?: string
+  "durée de l'accompagnement"?: string
   'montant du financement'?: string
   'taux du prêt'?: string
   conditions?: Condition[]
