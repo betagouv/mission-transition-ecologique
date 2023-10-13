@@ -40,7 +40,7 @@ export const results = {
     value: 'contact_form.email',
     // label: { fr: 'Vous êtes intéressé.e par le dispositif {title} ?' },
     label: { fr: '{prefixAide} {natureAide} vous intéresse ?' },
-    hint: { fr: '👋 Envoyez votre demande, un conseiller {prefixOperator} {operator} vous contactera dans les 5 jours' },
+    hint: { fr: '👋 Envoyez votre demande, un conseiller {operator} vous contactera dans les 5 jours' },
     // intro: { fr: `
     //   <h2>
     //     <span
