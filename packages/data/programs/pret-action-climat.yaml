@@ -1,50 +1,64 @@
 titre: Prêt Action Climat
-promesse: Financez votre projet de transition écologique et énergétique grâce au Prêt Action Climat
-description: Bénéficiez du prêt sans garantie "Action Climat" proposé par Bpifrance. Ce prêt est destiné à accompagner les projets de transition écologique et énergétique portés par des TPE et PME de moins de 50 salariés. Il est adossé à la garantie verte mise en place avec l’Etat.
+promesse: Financez votre projet de transition écologique et énergétique grâce au Prêt
+  Action Climat
+description: Bénéficiez du prêt sans garantie "Action Climat" proposé par Bpifrance.
+  Ce prêt est destiné à accompagner les projets de transition écologique et énergétique
+  portés par des TPE et PME de moins de 50 salariés. Il est adossé à la garantie verte
+  mise en place avec l’Etat.
 illustration: images/TEE_energie_verte.png
 opérateur de contact: Bpifrance
 url: https://www.bpifrance.fr/catalogue-offres/transition-ecologique-et-energetique/pret-action-climat
 nature de l'aide: prêt
+durée du prêt: modulable de 3, à 5 ou 7 ans dont une période de différé d'amortissement
+  du capital à, respectivement, 9 mois, 1 an et 2 ans
+montant du prêt: De 10000 à 75000
 objectifs:
-  - Réalisez votre demande de prêt pour votre projet de transition écologique et énergétique.
-  - Il peut concerner aussi bien la mise aux normes ou le remplacement des machines ou outils existants que la maîtrise et l’optimisation en matière de consommation énergétique.
-  - Ce prêt peut également servir à financer des formations destinées aux collaborateurs ainsi que la réalisation de diagnostics, etc.
-  - La demande de prêt se réalise 100% en ligne en 15 minutes.
+- Réalisez votre demande de prêt pour votre projet de transition écologique et énergétique.
+- Il peut concerner aussi bien la mise aux normes ou le remplacement des machines
+  ou outils existants que la maîtrise et l’optimisation en matière de consommation
+  énergétique.
+- Ce prêt peut également servir à financer des formations destinées aux collaborateurs
+  ainsi que la réalisation de diagnostics, etc.
+- La demande de prêt se réalise 100% en ligne en 15 minutes.
 publicodes:
-  règles d'éligibilité:
-    toutes ces conditions:
-      - entreprise . effectif >= 0
-      - entreprise . effectif <= 49
   afficher le dispositif si:
     toutes ces conditions:
-      - règles d'éligibilité
-      - une de ces conditions:
-          - entreprise . code NAF . est A
-          - entreprise . code NAF . est B
-          - entreprise . code NAF . est C
-          - entreprise . code NAF . est D
-          - entreprise . code NAF . est E
-          - entreprise . code NAF . est F
-          - entreprise . code NAF . est G
-          - entreprise . code NAF . est H
-          - entreprise . code NAF . est I
-          - entreprise . code NAF . est J
-          - entreprise . code NAF . est K
-          - entreprise . code NAF . est L
-          - entreprise . code NAF . est M
-          - entreprise . code NAF . est N
-          - entreprise . code NAF . est O
-          - entreprise . code NAF . est P
-          - entreprise . code NAF . est Q
-          - entreprise . code NAF . est R
-          - entreprise . code NAF . est S
-          - entreprise . code NAF . est T
-          - entreprise . code NAF . est U
-      - une de ces conditions:
-          - questionnaire . objectif prioritaire . est ma performance énergétique
-          - questionnaire . objectif prioritaire . est économiser de l'eau
-          - questionnaire . objectif prioritaire . est investir durable
-          - questionnaire . objectif prioritaire . est la gestion des déchets
-          - questionnaire . objectif prioritaire . est former ses collaborateurs
-          - questionnaire . objectif prioritaire . est impact carbone
-          - questionnaire . objectif prioritaire . est recruter pour ma transition
+    - règles d'éligibilité
+    - secteur d'activité prioritaire
+    - est dans les objectifs de l'entreprise
+  règles d'éligibilité:
+    toutes ces conditions:
+    - entreprise . effectif >= 49
+  secteur d'activité prioritaire:
+    une de ces conditions:
+    - entreprise . code NAF . est A
+    - entreprise . code NAF . est B
+    - entreprise . code NAF . est C
+    - entreprise . code NAF . est D
+    - entreprise . code NAF . est E
+    - entreprise . code NAF . est F
+    - entreprise . code NAF . est G
+    - entreprise . code NAF . est H
+    - entreprise . code NAF . est I
+    - entreprise . code NAF . est J
+    - entreprise . code NAF . est K
+    - entreprise . code NAF . est L
+    - entreprise . code NAF . est M
+    - entreprise . code NAF . est N
+    - entreprise . code NAF . est O
+    - entreprise . code NAF . est P
+    - entreprise . code NAF . est Q
+    - entreprise . code NAF . est R
+    - entreprise . code NAF . est S
+    - entreprise . code NAF . est T
+    - entreprise . code NAF . est U
+  est dans les objectifs de l'entreprise:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est rénover mon bâtiment
+    - questionnaire . objectif prioritaire . est la mobilité durable
+    - questionnaire . objectif prioritaire . est la gestion des déchets
+    - questionnaire . objectif prioritaire . est économiser de l'eau
+    - questionnaire . objectif prioritaire . est ma performance énergétique
+    - questionnaire . objectif prioritaire . est former ou recruter
+    - questionnaire . objectif prioritaire . est mon impact environnemental
+    - questionnaire . objectif prioritaire . est l'écoconception

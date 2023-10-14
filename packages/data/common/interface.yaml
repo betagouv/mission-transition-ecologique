@@ -41,16 +41,11 @@ questionnaire:
 
 questionnaire . objectif prioritaire:
   avec:
-    est impact carbone:
-    est investir durable: # consolidation
-    est faire des économies:
-    est ma performance environnementale: # ecoconception
+    est mon impact environnemental:
+    est l'écoconception:
     est la gestion des déchets:
     est la mobilité durable:
     est ma performance énergétique:
     est rénover mon bâtiment:
     est économiser de l'eau:
-    est former ses collaborateurs:
-    est réaliser un diagnostic:
-    est recruter pour ma transition:
-
+    est former ou recruter:

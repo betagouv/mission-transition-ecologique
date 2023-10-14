@@ -1,0 +1,53 @@
+titre: Diagnostic RSE (Responsabilité Sociétale des Entreprises)
+promesse: Intégrez la RSE (Responsabilité Sociétale des Entreprises) dans le fonctionnement
+  quotidien de votre entreprise
+description: 'Réalisez avec votre conseiller CCI un diagnostic RSE en abordant les
+  3 aspects de la responsabilité sociétale de l’entreprise : la performance économique,
+  la performance sociale et la performance environnementale. Repensez votre stratégie
+  RSE comme un levier d''innovation et un vecteur de création de valeur.'
+illustration: images/TEE_eolienne.png
+opérateur de contact: CCI
+url: https://www.cci.fr/offre/evaluez-votre-maturite-aux-enjeux-de-la-rse?&cp=75013
+nature de l'aide: accompagnement
+coût de l'accompagnement: Sur devis, prise en charge totale possible selon les territoires
+durée de l'accompagnement: 1 journée
+objectifs:
+- Recueillir vos données sur l'ensemble des champs de la RSE (gouvernance, social,
+  sociétal, environnemental, économique)
+- Dresser l’état des lieux des forces et faiblesses de votre entreprise
+- Obtenez un plan d’action adapté à vos enjeux et à vos ressources pour vous aider
+  à mettre en œuvre efficacement votre démarche RSE au sein de votre entreprise
+publicodes:
+  afficher le dispositif si:
+    toutes ces conditions:
+    - règles d'éligibilité
+    - secteur d'activité prioritaire
+    - est dans les objectifs de l'entreprise
+  règles d'éligibilité:
+    toutes ces conditions:
+    - entreprise . effectif >= 20
+    - entreprise . effectif >= 499
+  secteur d'activité prioritaire:
+    une de ces conditions:
+    - entreprise . code NAF . est A
+    - entreprise . code NAF . est B
+    - entreprise . code NAF . est C
+    - entreprise . code NAF . est D
+    - entreprise . code NAF . est E
+    - entreprise . code NAF . est F
+    - entreprise . code NAF . est G
+    - entreprise . code NAF . est H
+    - entreprise . code NAF . est I
+    - entreprise . code NAF . est J
+    - entreprise . code NAF . est K
+    - entreprise . code NAF . est L
+    - entreprise . code NAF . est M
+    - entreprise . code NAF . est Q
+    - entreprise . code NAF . est R
+    - entreprise . code NAF . est S
+    - entreprise . code NAF . est T
+  est dans les objectifs de l'entreprise:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est former ou recruter
+    - questionnaire . objectif prioritaire . est mon impact environnemental
+    - questionnaire . objectif prioritaire . est l'écoconception

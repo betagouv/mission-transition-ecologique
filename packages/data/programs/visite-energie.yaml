@@ -1,31 +1,50 @@
 titre: Visite Énergie
-promesse: Mesurez votre maturité energétique et créez un plan d’actions personnalisé avec un conseiller
-description: |
-  Évaluez les coûts et surcoûts d'énergie et identifiez les actions à mener pour les réduire
-url: https://www.cci.fr/
+promesse: Optimisez vos consommations d'énergie pour faire des économies sur vos factures
+  !
+description: Bénéficiez d’une visite sur site d’un conseiller CCI qui analysera vos
+  pratiques énergétiques et construira un plan d’action pour vous aider à diminuer
+  vos factures.
 illustration: images/TEE_energie_verte.png
-objectifs:
-  - Mettez en œuvre une démarche structurée d’économies d’énergie
-  - Montez en compétences sur la thématique Energie de votre entreprise
-  - Construisez et réalisez un plan d’actions grâce à un expert de l'énergie
-  - Réduisez la consommation d’énergie de votre entreprise
-opérateur de contact: CMA
+opérateur de contact: CCI
 autres opérateurs:
-  - ORACE en Pays de la Loire
+- ORACE en Pays de la Loire
+url: https://www.cci.fr/offre/parcours-energie-pour-reduire-votre-facture-energie
+  et https://www.cci.fr/ressources/developpement-durable/contacts-developpement-durable
 nature de l'aide: accompagnement
-coût de l'accompagnement: gratuit
-durée de l'accompagnement: 5 jours de prestation répartis sur 12 mois
-
+coût de l'accompagnement: Sur devis dans un maximum de 2100 € HT
+durée de l'accompagnement: 3 jours
+objectifs:
+- Dresser un bilan des consommations globales de votre entreprise
+- Mettre en œuvre une démarche structurée d’économies d’énergie
+- Réduire vos consommations d'énergie
+- Être conseillé sur la maitrise des dépenses énergétiques et l’optimisation de votre
+  fiscalité énergétique
+- Suivre un programme de formations pour les référents énergie dans votre entreprise
 publicodes:
-
-  règles d'éligibilité:
-    toutes ces conditions:
-      - entreprise . effectif >= 20
-      - entreprise . effectif < 500
-
   afficher le dispositif si:
     toutes ces conditions:
-      - règles d'éligibilité
-      - une de ces conditions:
-        - questionnaire . objectif prioritaire . est ma performance énergétique
-        - questionnaire . objectif prioritaire . est rénover mon bâtiment
+    - règles d'éligibilité
+    - secteur d'activité prioritaire
+    - est dans les objectifs de l'entreprise
+  règles d'éligibilité:
+    toutes ces conditions:
+    - entreprise . effectif >= 20
+    - entreprise . effectif >= 499
+  secteur d'activité prioritaire:
+    une de ces conditions:
+    - entreprise . code NAF . est A
+    - entreprise . code NAF . est B
+    - entreprise . code NAF . est C
+    - entreprise . code NAF . est D
+    - entreprise . code NAF . est E
+    - entreprise . code NAF . est F
+    - entreprise . code NAF . est H
+    - entreprise . code NAF . est I
+    - entreprise . code NAF . est P
+    - entreprise . code NAF . est Q
+    - entreprise . code NAF . est R
+    - entreprise . code NAF . est S
+  est dans les objectifs de l'entreprise:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est ma performance énergétique
+    - questionnaire . objectif prioritaire . est mon impact environnemental

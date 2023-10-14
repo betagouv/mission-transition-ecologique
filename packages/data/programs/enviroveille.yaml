@@ -1,36 +1,46 @@
 titre: Enviroveille
-promesse: Accédez à toute l’information réglementaire en matière d'environnement, énergie et santé-sécurité au travail
-description: Abonnez vous au service de veille "Enviroveille" de la CCI pour avoir accès à l’information réglementaire applicable à votre activité (environnement, énergie, santé-sécurité au travail) et suivre son évolution.
-illustration: images/TEE_energie_verte.png
+promesse: Accédez à toute l’information réglementaire en matière d'environnement,
+  énergie et santé-sécurité au travail
+description: Abonnez vous au service de veille "Enviroveille" de la CCI pour avoir
+  accès à l’information réglementaire applicable à votre activité (environnement,
+  énergie, santé-sécurité au travail) et suivre son évolution.
+illustration: images/TEE_eolienne.png
 opérateur de contact: CCI
 url: https://www.cci.fr/offre/assurez-votre-conformite-au-droit-de-lenvironnement-sante-et-securite-avec-enviroveille
-coût de l'accompagnement: Abonnement, sur devis selon la formule choisie (de 150 à 800€)
-durée de l'accompagnement: 1 an
 nature de l'aide: accompagnement
+coût de l'accompagnement: Abonnement, sur devis selon la formule choisie (de 150 à
+  800€)
+durée de l'accompagnement: 12 mois
 objectifs:
-  - Recevez une alerte réglementaire une fois tous les 15 jours, comme premier niveau d'information sur l'actualité réglementaire
-  - Bénéficiez d'une veille personnalisée sur les activités qui vous concernent et recevez une fois par mois l'actualité juridique complète qui s'y rapporte.
-  - 'Accédez à une base de données juridiques sur la plateforme www.enviroveille.com : textes réglementaires, jurisprudence, projets de textes européens et nationaux.'
-  - 'Recevez un bimestriel dématérialisé qui recense les textes les plus importants sur les différentes thématiques de la transition écologique : déchets, énergie, eau, biodiversité, air, sites et sols pollués, installations classées pour la protection de l’environnement.'
+- Recevez une alerte réglementaire une fois tous les 15 jours, comme premier niveau
+  d'information sur l'actualité réglementaire
+- Bénéficiez d'une veille personnalisée sur les activités qui vous concernent et recevez
+  une fois par mois l'actualité juridique complète qui s'y rapporte.
+- 'Accédez à une base de données juridiques sur la plateforme www.enviroveille.com
+  : textes réglementaires, jurisprudence, projets de textes européens et nationaux.'
+- 'Recevez un bimestriel dématérialisé qui recense les textes les plus importants
+  sur les différentes thématiques de la transition écologique : déchets, énergie,
+  eau, biodiversité, air, sites et sols pollués, installations classées pour la protection
+  de l’environnement.'
 publicodes:
-  règles d'éligibilité:
-    toutes ces conditions:
-      - entreprise . effectif >= 0
-      - entreprise . effectif <= 499
   afficher le dispositif si:
     toutes ces conditions:
-      - règles d'éligibilité
-      - une de ces conditions:
-          - entreprise . code NAF . est A
-          - entreprise . code NAF . est B
-          - entreprise . code NAF . est C
-          - entreprise . code NAF . est D
-          - entreprise . code NAF . est E
-          - entreprise . code NAF . est F
-          - entreprise . code NAF . est K
-          - entreprise . code NAF . est M
-          - entreprise . code NAF . est N
-          - entreprise . code NAF . est O
-          - entreprise . code NAF . est P
-          - entreprise . code NAF . est Q
-      - une de ces conditions: []
+    - règles d'éligibilité
+    - secteur d'activité prioritaire
+  règles d'éligibilité:
+    toutes ces conditions:
+    - entreprise . effectif >= 499
+  secteur d'activité prioritaire:
+    une de ces conditions:
+    - entreprise . code NAF . est A
+    - entreprise . code NAF . est B
+    - entreprise . code NAF . est C
+    - entreprise . code NAF . est D
+    - entreprise . code NAF . est E
+    - entreprise . code NAF . est F
+    - entreprise . code NAF . est K
+    - entreprise . code NAF . est M
+    - entreprise . code NAF . est N
+    - entreprise . code NAF . est O
+    - entreprise . code NAF . est P
+    - entreprise . code NAF . est Q

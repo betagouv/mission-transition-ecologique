@@ -1,41 +1,48 @@
 titre: Performa Environnement
-promesse: Mesurer votre maturité écologique et créer un plan d’actions personnalisé avec à un conseiller
-description: |
-  Réalisez un état des lieux à 360° pour évaluer l'impact de votre activité sur l'environnement et réalisez des économies. Différents sujets sont abordés : économie d’énergie, isolation des locaux, consommations d’eau, déchets, matières premières, achats, mobilité, etc.
-url: https://www.economie.gouv.fr/entreprises/entreprises-aides-transition-ecologique
-illustration: images/TEE_eolienne.png
-objectifs:
-  - |
-    Réalisez un état des lieux gratuit pour évaluer l'impact
-    de votre activité sur l'environnement et détecter de
-    nouvelles sources d'économies (énergie, isolation des
-    locaux, consommations d’eau, déchets, matières premières,
-    mobilité...)
-  - |
-    Obtenez un diagnostic complet et la proposition
-    d'un plan d'actions prioritaires pour maîtriser
-    sa consommation énergétique et optimiser ses coûts
-  - |
-    Valorisez votre démarche environnementale par l'obtention
-    d'un label, une reconnaissance environnementale,
-    individuelle ou collective
-  - |
-    Identifiez et sélectionnez une solution d'investissement,
-    d'étude ou de formation, et soyez assisté dans le montage
-    d'une demande de financement
+promesse: Mesurez votre maturité écologique et créez un plan d’action personnalisé
+  avec à un conseiller
+description: 'Réalisez un état des lieux à 360° pour évaluer l''impact de votre activité
+  sur l''environnement et réalisez des économies. Différents sujets sont abordés :
+  économie d’énergie, isolation des locaux, consommations d’eau, déchets, matières
+  premières, achats, mobilité, etc.'
+illustration: images/TEE_energie_verte.png
 opérateur de contact: CMA
-nature de l'aide: "accompagnement"
-coût de l'accompagnement: gratuit
+url: https://www.artisanat.fr/nous-connaitre/vous-accompagner/performa-environnement
+nature de l'aide: accompagnement
+coût de l'accompagnement: Gratuit
 durée de l'accompagnement: 1 journée
-
+objectifs:
+- Réalisez un état des lieux gratuit pour évaluer l'impact de votre activité sur l'environnement
+  et détectez de nouvelles sources d'économies (énergie, isolation des locaux, consommations
+  d’eau, déchets, matières premières, mobilité...)
+- Obtenez un diagnostic complet et la proposition d'un plan d'action pour maîtriser
+  votre consommation énergétique et optimiser vos coûts.
+- Valorisez votre démarche environnementale par l'obtention d'un label.
+- Identifiez une solution d'investissement, d'étude ou de formation, et soyez accompagné
+  dans le montage de votre demande de financement.
 publicodes:
-
-  règles d'éligibilité:
-    toutes ces conditions:
-      - entreprise . effectif < 250
-      - entreprise . secteur d'activité . est artisanat
-
   afficher le dispositif si:
     toutes ces conditions:
-      - règles d'éligibilité
-      - questionnaire . objectif prioritaire . est impact carbone
+    - règles d'éligibilité
+    - secteur d'activité prioritaire
+    - est dans les objectifs de l'entreprise
+  règles d'éligibilité:
+    toutes ces conditions:
+    - entreprise . effectif >= 249
+  secteur d'activité prioritaire:
+    une de ces conditions:
+    - entreprise . code NAF . est C
+    - entreprise . code NAF . est D
+    - entreprise . code NAF . est F
+    - entreprise . code NAF . est G
+    - entreprise . code NAF . est I
+  est dans les objectifs de l'entreprise:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est rénover mon bâtiment
+    - questionnaire . objectif prioritaire . est la mobilité durable
+    - questionnaire . objectif prioritaire . est la gestion des déchets
+    - questionnaire . objectif prioritaire . est économiser de l'eau
+    - questionnaire . objectif prioritaire . est ma performance énergétique
+    - questionnaire . objectif prioritaire . est former ou recruter
+    - questionnaire . objectif prioritaire . est mon impact environnemental
+    - questionnaire . objectif prioritaire . est l'écoconception

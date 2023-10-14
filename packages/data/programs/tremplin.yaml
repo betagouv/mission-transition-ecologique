@@ -1,38 +1,46 @@
 titre: Tremplin
 promesse: Accédez à des aides forfaitaires dans les domaines de la transition écologique
-description: Le guichet « Tremplin pour la transition écologique des PME » permet de faire évoluer votre entreprise en cohérence avec la transition écologique. L’ADEME soutient le financement rapide des investissements et études dont vous avez besoin.
-illustration: images/TEE_energie_verte.png
+description: Le guichet « Tremplin pour la transition écologique des PME » permet
+  de faire évoluer votre entreprise en cohérence avec la transition écologique. L’ADEME
+  soutient le financement rapide des investissements et études dont vous avez besoin.
+illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/tremplin-transition-ecologique-pme
 nature de l'aide: financement
 montant du financement: de 5 000 € HT à 200 000 € HT
 objectifs:
-  - 'Accéder à des aides forfaitaires dans de nombreux domaines de la transition écologique : décarbonation, éco-conception, économie circulaire, gestion des déchets, la chaleur et le froid renouvelable pour les bâtiments (hors logement), l''efficacité énergétique de serres chauffées ou la mobilité durable.'
-  - Déposer un seul dossier pour plusieurs études et/ou investissements.
-  - Réalisez votre investissement et votre étude dans les 18 mois du contrat.
-  - Obtenez un paiement final sur attestation et justificatifs.
+- 'Accéder à des aides forfaitaires dans de nombreux domaines de la transition écologique :
+  décarbonation, éco-conception, économie circulaire, gestion des déchets, la chaleur
+  et le froid renouvelable pour les bâtiments (hors logement), l''efficacité énergétique
+  de serres chauffées ou la mobilité durable.'
+- Déposer un seul dossier pour plusieurs études et/ou investissements.
+- Réalisez votre investissement et votre étude dans les 18 mois du contrat.
+- Obtenez un paiement final sur attestation et justificatifs.
 publicodes:
-  règles d'éligibilité:
-    toutes ces conditions:
-      - entreprise . effectif >= 0
-      - entreprise . effectif <= 250
   afficher le dispositif si:
     toutes ces conditions:
-      - règles d'éligibilité
-      - une de ces conditions:
-          - entreprise . code NAF . est A
-          - entreprise . code NAF . est C
-          - entreprise . code NAF . est G
-          - entreprise . code NAF . est H
-          - entreprise . code NAF . est J
-          - entreprise . code NAF . est M
-          - entreprise . code NAF . est N
-          - entreprise . code NAF . est R
-          - entreprise . code NAF . est S
-      - une de ces conditions:
-          - questionnaire . objectif prioritaire . est ma performance énergétique
-          - questionnaire . objectif prioritaire . est économiser de l'eau
-          - questionnaire . objectif prioritaire . est la gestion des déchets
-          - questionnaire . objectif prioritaire . est réaliser un diagnostic
-          - questionnaire . objectif prioritaire . est ma performance environnementale
-          - questionnaire . objectif prioritaire . est impact carbone
+    - règles d'éligibilité
+    - secteur d'activité prioritaire
+    - est dans les objectifs de l'entreprise
+  règles d'éligibilité:
+    toutes ces conditions:
+    - entreprise . effectif >= 250
+  secteur d'activité prioritaire:
+    une de ces conditions:
+    - entreprise . code NAF . est A
+    - entreprise . code NAF . est C
+    - entreprise . code NAF . est G
+    - entreprise . code NAF . est H
+    - entreprise . code NAF . est J
+    - entreprise . code NAF . est M
+    - entreprise . code NAF . est N
+    - entreprise . code NAF . est R
+    - entreprise . code NAF . est S
+  est dans les objectifs de l'entreprise:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est la mobilité durable
+    - questionnaire . objectif prioritaire . est la gestion des déchets
+    - questionnaire . objectif prioritaire . est économiser de l'eau
+    - questionnaire . objectif prioritaire . est ma performance énergétique
+    - questionnaire . objectif prioritaire . est mon impact environnemental
+    - questionnaire . objectif prioritaire . est l'écoconception

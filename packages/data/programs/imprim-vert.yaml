@@ -1,28 +1,43 @@
 titre: Imprim'vert
 promesse: Réduisez l’impact de l’impression et obtenez le label Imprim’Vert®
-description: Vous souhaitez réduire l'impact de l'impression sur la planète en faisant des choix stratégiques, écologiques et made in France ? Valoriser votre engagement environnemental auprès de vos clients par l’obtention du label Imprim’Vert®.
-illustration: images/TEE_energie_verte.png
+description: Vous souhaitez réduire l'impact de l'impression sur la planète en faisant
+  des choix stratégiques, écologiques et made in France ? Valoriser votre engagement
+  environnemental auprès de vos clients par l’obtention du label Imprim’Vert®.
+description longue: 'La marque Imprim''vert® a pour objectif de favoriser la mise
+  en place par les entreprises exerçant les activités d''impression, d''actions concrètes
+  conduisant à une diminution des impacts de l''activité sur l''environnement.
+
+  Le cahier des charges Imprim’Vert® est fondé sur cinq critères simples : la bonne
+  gestion des déchets dangereux, la sécurisation de stockage des liquides dangereux,
+  la non utilisation de certains produits CMR, la sensibilisation environnementale
+  des salariés et de la clientèle, et le suivi des consommations énergétiques du site.'
+illustration: images/TEE_eolienne.png
 opérateur de contact: CMA
 url: https://www.artisanat.fr/metiers/labels-qualifications/label-imprim-vert
+nature de l'aide: accompagnement
 coût de l'accompagnement: entre 150 € et 450 € HT
 durée de l'accompagnement: 1 journée
-nature de l'aide: accompagnement
 objectifs:
-  - Réaliser un diagnostic de votre site de production et obtenir un plan d’actions concrètes conduisant à une diminution des impacts de votre activité sur l’environnement.
-  - Être accompagné sur les actions à mener pour être en conformité avec le cahier des charges des clients privés et des marchés publics.
-  - Être accompagné vers l’obtention puis le renouvellement du label Imprim’vert®. Pour obtenir le label, l'entreprise doit respecter un cahier des charges rigoureux afin de garantir un faible impact sur la planète et sur l'environnement.
-  - Mettre en avant votre engagement pour valoriser l’entreprise auprès des clients et être référencé sur le site Imprim'Vert.
+- Réaliser un diagnostic de votre site de production et obtenir un plan d’actions
+  concrètes conduisant à une diminution des impacts de votre activité sur l’environnement.
+- Être accompagné sur les actions à mener pour être en conformité avec le cahier des
+  charges des clients privés et des marchés publics.
+- Être accompagné vers l’obtention puis le renouvellement du label Imprim’vert®. Pour
+  obtenir le label, l'entreprise doit respecter un cahier des charges rigoureux afin
+  de garantir un faible impact sur la planète et sur l'environnement.
+- Mettre en avant votre engagement pour valoriser l’entreprise auprès des clients
+  et être référencé sur le site Imprim'Vert.
 publicodes:
-  règles d'éligibilité:
-    toutes ces conditions:
-      - entreprise . effectif >= 0
-      - entreprise . effectif <= 249
   afficher le dispositif si:
     toutes ces conditions:
-      - règles d'éligibilité
-      - une de ces conditions: []
-      - une de ces conditions:
-          - questionnaire . objectif prioritaire . est économiser de l'eau
-          - questionnaire . objectif prioritaire . est la gestion des déchets
-          - questionnaire . objectif prioritaire . est réaliser un diagnostic
-          - questionnaire . objectif prioritaire . est ma performance environnementale
+    - règles d'éligibilité
+    - est dans les objectifs de l'entreprise
+  règles d'éligibilité:
+    toutes ces conditions:
+    - entreprise . effectif >= 249
+  est dans les objectifs de l'entreprise:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est la gestion des déchets
+    - questionnaire . objectif prioritaire . est économiser de l'eau
+    - questionnaire . objectif prioritaire . est mon impact environnemental
+    - questionnaire . objectif prioritaire . est l'écoconception

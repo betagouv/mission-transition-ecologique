@@ -1,0 +1,52 @@
+titre: Prêt Économies d’Énergie (PEE)
+promesse: Bénéficiez d’un prêt pour acquérir des équipements qui visent à améliorer
+  votre efficacité énergétique
+description: Le Prêt Économies d’Énergie permet de financer le matériel éligible aux
+  certificats d'économies d'énergie (CEE), et les dépenses liées au projet d’efficience
+  énergétique.
+illustration: images/TEE_eolienne.png
+opérateur de contact: Bpifrance
+url: https://www.bpifrance.fr/catalogue-offres/transition-ecologique-et-energetique/pret-economies-denergie-pee
+nature de l'aide: prêt
+durée du prêt: de 3 à 7 ans, avec un différé d’amortissement en capital de 2 ans maximum
+montant du prêt: De 10000 à 500000
+objectifs:
+- Réalisez votre demande de prêt pour votre investissement.
+- 'L’investissement peut porter sur des équipements qui visent l’amélioration des
+  postes suivants : éclairage, froid, chauffage, climatisation, motorisation électrique.'
+publicodes:
+  afficher le dispositif si:
+    toutes ces conditions:
+    - règles d'éligibilité
+    - secteur d'activité prioritaire
+    - est dans les objectifs de l'entreprise
+  règles d'éligibilité:
+    toutes ces conditions:
+    - entreprise . effectif >= 49
+  secteur d'activité prioritaire:
+    une de ces conditions:
+    - entreprise . code NAF . est A
+    - entreprise . code NAF . est B
+    - entreprise . code NAF . est C
+    - entreprise . code NAF . est D
+    - entreprise . code NAF . est E
+    - entreprise . code NAF . est F
+    - entreprise . code NAF . est G
+    - entreprise . code NAF . est H
+    - entreprise . code NAF . est I
+    - entreprise . code NAF . est J
+    - entreprise . code NAF . est K
+    - entreprise . code NAF . est L
+    - entreprise . code NAF . est M
+    - entreprise . code NAF . est N
+    - entreprise . code NAF . est O
+    - entreprise . code NAF . est P
+    - entreprise . code NAF . est Q
+    - entreprise . code NAF . est R
+    - entreprise . code NAF . est S
+    - entreprise . code NAF . est T
+    - entreprise . code NAF . est U
+  est dans les objectifs de l'entreprise:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est ma performance énergétique
+    - questionnaire . objectif prioritaire . est l'écoconception

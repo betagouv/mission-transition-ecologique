@@ -1,0 +1,50 @@
+titre: Diag Ecoconception
+promesse: Améliorez la performance environnementale de vos produits et services dans
+  une logique d'écoconception
+description: Bénéficiez des conseils d'un expert pour évaluer la performance environnementale
+  de vos produits, services et procédés.
+illustration: images/TEE_energie_verte.png
+opérateur de contact: Bpifrance
+autres opérateurs:
+- ADEME
+url: https://diag.bpifrance.fr/diag-eco-conception
+nature de l'aide: accompagnement
+coût de l'accompagnement: 5 400 € HT après subvention de 70%
+durée de l'accompagnement: 18 jours de prestation répartis sur 6 à 8 mois
+objectifs:
+- Sensibiliser les équipes internes à l’écoconception et former un référent écoconception
+  dans votre entreprise.
+- Réaliser une évaluation environnementale basée sur l’analyse du cycle de vie du
+  produit, service ou procédé concerné.
+- Identifier, formaliser et chiffrer les leviers d’écoconception, en maîtrisant le
+  risque de transfert de pollution.
+- Préparer la mise en œuvre d'un plan d’actions incluant un premier dimensionnement
+  technico-économique.
+publicodes:
+  afficher le dispositif si:
+    toutes ces conditions:
+    - règles d'éligibilité
+    - secteur d'activité prioritaire
+    - est dans les objectifs de l'entreprise
+  règles d'éligibilité:
+    toutes ces conditions:
+    - entreprise . effectif >= 49
+  secteur d'activité prioritaire:
+    une de ces conditions:
+    - entreprise . code NAF . est C
+    - entreprise . code NAF . est D
+    - entreprise . code NAF . est E
+    - entreprise . code NAF . est F
+    - entreprise . code NAF . est J
+    - entreprise . code NAF . est L
+    - entreprise . code NAF . est M
+    - entreprise . code NAF . est R
+    - entreprise . code NAF . est S
+  est dans les objectifs de l'entreprise:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est la gestion des déchets
+    - questionnaire . objectif prioritaire . est économiser de l'eau
+    - questionnaire . objectif prioritaire . est ma performance énergétique
+    - questionnaire . objectif prioritaire . est former ou recruter
+    - questionnaire . objectif prioritaire . est mon impact environnemental
+    - questionnaire . objectif prioritaire . est l'écoconception
