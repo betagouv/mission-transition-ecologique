@@ -46,7 +46,9 @@ def printProgramYAML(rawData, colNumbers):
         program["durée de l'accompagnement"] = get("⏱Prestation (durée + étalement)")
     if nat == "prêt":
         program["durée du prêt"] = get("Etalement")
-        program["montant du prêt"] = f'De {get("MontantMin")} à {get("MontantMax")}'
+        program[
+            "montant du prêt"
+        ] = f'De {thousandSep(get("MontantMin"))} € à {thousandSep(get("MontantMax"))} €'
 
     program["objectifs"] = makeObj(
         [get(f"🎯 {i} objectif") for i in ["1er", "2ème", "3ème", "4ème", "5ème"]]
@@ -245,6 +247,10 @@ def pc_objPrioritaire(rawData, colNumbers):
             if keep
         ]
     }
+
+
+def thousandSep(value):
+    return "{:,}".format(value).replace(",", " ")
 
 
 def convertToYaml(d: dict):
