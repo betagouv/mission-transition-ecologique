@@ -36,9 +36,9 @@ publicodes:
     - est dans les objectifs de l'entreprise
   secteur d'activité prioritaire:
     une de ces conditions:
-    - entreprise . code NAF . est A
-    - entreprise . code NAF . est C
-    - entreprise . code NAF . est J
+    - entreprise . code NAF niveau 1 . est A
+    - entreprise . code NAF niveau 1 . est C
+    - entreprise . code NAF niveau 1 . est J
   est dans les objectifs de l'entreprise:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est la gestion des déchets

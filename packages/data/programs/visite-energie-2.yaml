@@ -30,10 +30,10 @@ publicodes:
     - entreprise . effectif <= 249
   secteur d'activité prioritaire:
     une de ces conditions:
-    - entreprise . code NAF . est C
-    - entreprise . code NAF . est D
-    - entreprise . code NAF . est F
-    - entreprise . code NAF . est I
+    - entreprise . code NAF niveau 1 . est C
+    - entreprise . code NAF niveau 1 . est D
+    - entreprise . code NAF niveau 1 . est F
+    - entreprise . code NAF niveau 1 . est I
   est dans les objectifs de l'entreprise:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est rénover mon bâtiment

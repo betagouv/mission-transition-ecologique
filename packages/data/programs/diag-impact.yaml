@@ -28,13 +28,13 @@ publicodes:
     - entreprise . effectif <= 250
   secteur d'activité prioritaire:
     une de ces conditions:
-    - entreprise . code NAF . est C
-    - entreprise . code NAF . est G
-    - entreprise . code NAF . est J
-    - entreprise . code NAF . est K
-    - entreprise . code NAF . est M
-    - entreprise . code NAF . est Q
-    - entreprise . code NAF . est S
+    - entreprise . code NAF niveau 1 . est C
+    - entreprise . code NAF niveau 1 . est G
+    - entreprise . code NAF niveau 1 . est J
+    - entreprise . code NAF niveau 1 . est K
+    - entreprise . code NAF niveau 1 . est M
+    - entreprise . code NAF niveau 1 . est Q
+    - entreprise . code NAF niveau 1 . est S
   est dans les objectifs de l'entreprise:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est mon impact environnemental
