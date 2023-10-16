@@ -1,17 +1,21 @@
 const objectifsPrioritaires = {
   'questionnaire . objectif prioritaire . est mon impact environnemental': 'non', // impact carbone
   'questionnaire . objectif prioritaire . est ma performance énergétique': 'non',
-  "questionnaire . objectif prioritaire . est diminuer ma consommation d'eau": 'non',
+  "questionnaire . objectif prioritaire . est économiser de l'eau": 'non',
   'questionnaire . objectif prioritaire . est rénover mon bâtiment': 'non',
   'questionnaire . objectif prioritaire . est la mobilité durable': 'non',
   'questionnaire . objectif prioritaire . est la gestion des déchets': 'non',
   "questionnaire . objectif prioritaire . est l'écoconception": 'non', // ma performance environnementale
-  // 'questionnaire . objectif prioritaire . est je ne sais pas encore': 'non',
   
+  // FUTURE DEPRECATION
+  // 'questionnaire . objectif prioritaire . est je ne sais pas encore': 'non',
   'questionnaire . objectif prioritaire . est faire des économies': 'non',
   'questionnaire . objectif prioritaire . est investir durable': 'non',
 
-  'questionnaire . objectif prioritaire . est former ses collaborateurs': 'non'
+  // FUTURE ADDITIONS
+  'questionnaire . objectif prioritaire . est former ses collaborateurs': 'non',
+  // 'questionnaire . objectif prioritaire . est réaliser un diagnostic': 'non',
+  // 'questionnaire . objectif prioritaire . est recruter pour ma transition': 'non'
 }
 
 export const goals = {
@@ -64,7 +68,7 @@ export const goals = {
     {
       value: {
         ...objectifsPrioritaires,
-        "questionnaire . objectif prioritaire . est diminuer ma consommation d'eau": 'oui'
+        "questionnaire . objectif prioritaire . est économiser de l'eau": 'oui'
       },
       title: { fr: "Gestion de l'eau" },
       label: { fr: "💧 Diminuer ma consommation d'eau" },
