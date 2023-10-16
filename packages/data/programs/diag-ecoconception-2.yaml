@@ -2,7 +2,7 @@ titre: Diag Ecoconception
 promesse: Améliorez l'impact de vos produits et services
 description: Bénéficiez des conseils d'un expert pour évaluer la performance environnementale
   de vos produits, services et procédés.
-illustration: images/TEE_energie_verte.png
+illustration: images/TEE_ampoule.png
 opérateur de contact: Bpifrance
 autres opérateurs:
 - ADEME
@@ -28,7 +28,7 @@ publicodes:
   règles d'éligibilité:
     toutes ces conditions:
     - entreprise . effectif >= 50
-    - entreprise . effectif >= 249
+    - entreprise . effectif <= 249
   secteur d'activité prioritaire:
     une de ces conditions:
     - entreprise . code NAF . est C

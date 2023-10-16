@@ -4,7 +4,7 @@ promesse: Bénéficiez d’un prêt pour acquérir des équipements qui visent �
 description: Le Prêt Économies d’Énergie permet de financer le matériel éligible aux
   certificats d'économies d'énergie (CEE), et les dépenses liées au projet d’efficience
   énergétique.
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_energie_verte.png
 opérateur de contact: Bpifrance
 url: https://www.bpifrance.fr/catalogue-offres/transition-ecologique-et-energetique/pret-economies-denergie-pee
 nature de l'aide: prêt
@@ -22,7 +22,7 @@ publicodes:
     - est dans les objectifs de l'entreprise
   règles d'éligibilité:
     toutes ces conditions:
-    - entreprise . effectif >= 49
+    - entreprise . effectif <= 49
   secteur d'activité prioritaire:
     une de ces conditions:
     - entreprise . code NAF . est A

@@ -5,7 +5,7 @@ description: Réalisez un diagnostic de transition écologique avec votre consei
   CCI. Vous pourrez évoquer ces enjeux à travers le prisme du pilotage de votre activité,
   la gestion de vos locaux, vos consommations d'énergie, la gestion de vos déchets,
   vos achats et vos mobilités.
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_energie_verte.png
 opérateur de contact: CCI
 url: ''
 nature de l'aide: accompagnement
@@ -26,7 +26,7 @@ publicodes:
     - est dans les objectifs de l'entreprise
   règles d'éligibilité:
     toutes ces conditions:
-    - entreprise . effectif >= 249
+    - entreprise . effectif <= 249
   secteur d'activité prioritaire:
     une de ces conditions:
     - entreprise . code NAF . est B

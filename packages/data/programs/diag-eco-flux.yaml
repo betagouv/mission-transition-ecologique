@@ -4,7 +4,7 @@ promesse: Bénéficiez d’un état des lieux sur vos flux pour vous aider à fa
 description: Bénéficiez des conseils d'un expert pour réaliser rapidement des économies
   durables, en réduisant vos déchets et vos pertes en énergie, matière et eau, grâce
   à une méthode élaborée avec l'ADEME.
-illustration: images/TEE_energie_verte.png
+illustration: images/TEE_ampoule.png
 opérateur de contact: Bpifrance
 autres opérateurs:
 - ADEME
@@ -28,7 +28,7 @@ publicodes:
   règles d'éligibilité:
     toutes ces conditions:
     - entreprise . effectif >= 20
-    - entreprise . effectif >= 49
+    - entreprise . effectif <= 49
   secteur d'activité prioritaire:
     une de ces conditions:
     - entreprise . code NAF . est A

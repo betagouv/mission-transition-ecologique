@@ -11,7 +11,7 @@ description longue: 'La marque Imprim''vert® a pour objectif de favoriser la mi
   gestion des déchets dangereux, la sécurisation de stockage des liquides dangereux,
   la non utilisation de certains produits CMR, la sensibilisation environnementale
   des salariés et de la clientèle, et le suivi des consommations énergétiques du site.'
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_energie_verte.png
 opérateur de contact: CMA
 url: https://www.artisanat.fr/metiers/labels-qualifications/label-imprim-vert
 nature de l'aide: accompagnement
@@ -34,7 +34,7 @@ publicodes:
     - est dans les objectifs de l'entreprise
   règles d'éligibilité:
     toutes ces conditions:
-    - entreprise . effectif >= 249
+    - entreprise . effectif <= 249
   est dans les objectifs de l'entreprise:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est la gestion des déchets

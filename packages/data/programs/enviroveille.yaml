@@ -4,7 +4,7 @@ promesse: Accédez à toute l’information réglementaire en matière d'environ
 description: Abonnez vous au service de veille "Enviroveille" de la CCI pour avoir
   accès à l’information réglementaire applicable à votre activité (environnement,
   énergie, santé-sécurité au travail) et suivre son évolution.
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_ampoule.png
 opérateur de contact: CCI
 url: https://www.cci.fr/offre/assurez-votre-conformite-au-droit-de-lenvironnement-sante-et-securite-avec-enviroveille
 nature de l'aide: accompagnement
@@ -29,7 +29,7 @@ publicodes:
     - secteur d'activité prioritaire
   règles d'éligibilité:
     toutes ces conditions:
-    - entreprise . effectif >= 499
+    - entreprise . effectif <= 499
   secteur d'activité prioritaire:
     une de ces conditions:
     - entreprise . code NAF . est A

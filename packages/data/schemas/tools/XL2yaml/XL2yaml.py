@@ -170,7 +170,7 @@ def pc_effectifConstraint(effmin, effmax):
     if valid(effmin) and effmin != 0:
         constraint.append(f"entreprise . effectif >= {effmin}")
     if valid(effmax):
-        constraint.append(f"entreprise . effectif >= {effmax}")
+        constraint.append(f"entreprise . effectif <= {effmax}")
     if len(constraint) == 0:
         return None
     else:

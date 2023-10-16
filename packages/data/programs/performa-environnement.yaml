@@ -5,7 +5,7 @@ description: 'Réalisez un état des lieux à 360° pour évaluer l''impact de v
   sur l''environnement et réalisez des économies. Différents sujets sont abordés :
   économie d’énergie, isolation des locaux, consommations d’eau, déchets, matières
   premières, achats, mobilité, etc.'
-illustration: images/TEE_energie_verte.png
+illustration: images/TEE_eolienne.png
 opérateur de contact: CMA
 url: https://www.artisanat.fr/nous-connaitre/vous-accompagner/performa-environnement
 nature de l'aide: accompagnement
@@ -28,7 +28,7 @@ publicodes:
     - est dans les objectifs de l'entreprise
   règles d'éligibilité:
     toutes ces conditions:
-    - entreprise . effectif >= 249
+    - entreprise . effectif <= 249
   secteur d'activité prioritaire:
     une de ces conditions:
     - entreprise . code NAF . est C

@@ -26,7 +26,7 @@ publicodes:
     - est dans les objectifs de l'entreprise
   règles d'éligibilité:
     toutes ces conditions:
-    - entreprise . effectif >= 499
+    - entreprise . effectif <= 499
   secteur d'activité prioritaire:
     une de ces conditions:
     - entreprise . code NAF . est I

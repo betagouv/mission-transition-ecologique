@@ -5,7 +5,7 @@ description: 'Réalisez avec votre conseiller CCI un diagnostic RSE en abordant 
   3 aspects de la responsabilité sociétale de l’entreprise : la performance économique,
   la performance sociale et la performance environnementale. Repensez votre stratégie
   RSE comme un levier d''innovation et un vecteur de création de valeur.'
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_energie_verte.png
 opérateur de contact: CCI
 url: https://www.cci.fr/offre/evaluez-votre-maturite-aux-enjeux-de-la-rse?&cp=75013
 nature de l'aide: accompagnement
@@ -26,7 +26,7 @@ publicodes:
   règles d'éligibilité:
     toutes ces conditions:
     - entreprise . effectif >= 20
-    - entreprise . effectif >= 499
+    - entreprise . effectif <= 499
   secteur d'activité prioritaire:
     une de ces conditions:
     - entreprise . code NAF . est A

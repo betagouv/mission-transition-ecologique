@@ -4,7 +4,7 @@ promesse: Optimisez vos consommations d'énergie pour faire des économies sur v
 description: Bénéficiez d’une visite sur site d’un conseiller CCI qui analysera vos
   pratiques énergétiques et construira un plan d’action pour vous aider à diminuer
   vos factures.
-illustration: images/TEE_energie_verte.png
+illustration: images/TEE_ampoule.png
 opérateur de contact: CCI
 autres opérateurs:
 - ORACE en Pays de la Loire
@@ -29,7 +29,7 @@ publicodes:
   règles d'éligibilité:
     toutes ces conditions:
     - entreprise . effectif >= 20
-    - entreprise . effectif >= 499
+    - entreprise . effectif <= 499
   secteur d'activité prioritaire:
     une de ces conditions:
     - entreprise . code NAF . est A
