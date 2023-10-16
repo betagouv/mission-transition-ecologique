@@ -109,7 +109,7 @@
           class="tee-no-hover"
           :title="choices.t('programCosts.cost')"
           :image-path="`${choices.publicPath}images/TEE-cout.svg`"
-          :description="program[`coût de l'accompagnement`]"
+          :description="`${program[`coût de l'accompagnement`]}`"
         />
       </div>
 
@@ -120,7 +120,7 @@
           class="tee-no-hover"
           :title="choices.t('programCosts.aid')"
           :image-path="`${choices.publicPath}images/TEE-cout.svg`"
-          :description="program[`montant du financement`]"
+          :description="`${program[`montant du financement`]}`"
         />
       </div>
       <div
@@ -130,7 +130,7 @@
           class="tee-no-hover"
           :title="choices.t('programCosts.loan')"
           :image-path="`${choices.publicPath}images/TEE-cout.svg`"
-          :description="program[`coût de l'accompagnement`]"
+          :description="`${program[`taux du prêt`]}`"
         />
       </div>
 
@@ -164,12 +164,8 @@
         <TeeTile
           class="tee-no-hover"
           :title="choices.t('program.programProviders')"
-          :image-path="`${choices.publicPath}images/TEE-porteur.svg`">
-          <template #description>
-            <span>
-              {{ program['opérateur de contact'] }}
-            </span>
-          </template>
+          :image-path="`${choices.publicPath}images/TEE-porteur.svg`"
+          :description="choices.to(program['opérateur de contact'])">
         </TeeTile>
       </div>
 

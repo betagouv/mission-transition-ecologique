@@ -27,7 +27,7 @@
       v-if="formOptions.label"
       class="fr-text-center">
       <!-- {{ formOptions.label[choices.lang] }} -->
-      {{ choices.ti(formOptions.label[choices.lang], { "prefixAide": findPrefix(program["nature de l'aide"]), "natureAide": program["nature de l'aide"] }) || '' }}
+      {{ capitalizeFirstLetter(choices.ti(formOptions.label[choices.lang], { 'prefixAide': findPrefix(program["nature de l'aide"], 'this'), 'natureAide': program["nature de l'aide"] }) || '') }}
     </h3>
 
     <!-- FORM LABEL -->
@@ -35,7 +35,7 @@
       v-if="formOptions.hint"
       class="fr-text-center fr-pb-10v">
       <!-- {{ formOptions.hint[choices.lang] }} -->
-      {{ choices.ti(formOptions.hint[choices.lang]) }}
+      {{ choices.ti(formOptions.hint[choices.lang], {'operator': program['opérateur de contact']}) }}
     </p>
 
     <!-- {{ program }} -->
@@ -254,9 +254,14 @@ const canSaveFrom = computed(() => {
   return boolArr.every(v => (!!v && v !== ''))
 })   
 
-const findPrefix = (str: string) => {
-  return choices.t(`articles.${str}.this`)
+const findPrefix = (str: string, prefixCode: string = 'of') => {
+  return choices.t(`articles.${str}.${prefixCode}`)
 }
+
+const capitalizeFirstLetter = (str: string) => {
+  return str.charAt(0).toUpperCase() + str.slice(1)
+}
+
 
 onBeforeMount(() => {
   // console.log('TeeForm > onBeforeMount >  props.formOptions :', props.formOptions)
