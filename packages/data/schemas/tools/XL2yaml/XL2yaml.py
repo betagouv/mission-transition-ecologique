@@ -107,6 +107,7 @@ def remove_accents(text: str) -> str:
     t = re.sub(r"[ÌÍÎÏ]", "I", t)
     t = re.sub(r"[ÒÓÔÕÖ]", "O", t)
     t = re.sub(r"[ÙÚÛÜ]", "U", t)
+    t = re.sub(r"ç", "c", t)
     return t
 
 
@@ -222,7 +223,7 @@ def pc_objPrioritaire(rawData, colNumbers):
         "🏢\nBâtiment": "est rénover mon bâtiment",
         "🚲\nMobilité": "est la mobilité durable",
         "🗑\nDéchets": "est la gestion des déchets",
-        "💧\nEau": "est économiser de l'eau",
+        "💧\nEau": "est diminuer ma consommation d'eau",
         "⚡️\nEnergie": "est ma performance énergétique",
         "🧑‍🎓\nRH": "est former ou recruter",
         "🌱\nStratégie": "est mon impact environnemental",
