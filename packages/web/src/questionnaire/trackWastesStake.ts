@@ -2,7 +2,7 @@ export const wastesStake = {
   id: 'track_wastes_stake',
   category: 'myWastes',
   title: { fr: 'Enjeu' },
-  label: { fr: "Avez-vous l’envie de progresser sur la gestion de vos déchets ? " },
+  label: { fr: "Aimeriez-vous améliorer la gestion des déchets de votre activité ? " },
   callout: {
     header: { fr: 'Thématique' },
     headerStyle: 'color: #3A3A3A;',

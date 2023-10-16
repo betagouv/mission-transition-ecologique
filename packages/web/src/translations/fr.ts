@@ -47,9 +47,12 @@ export const frDict = {
     programDuration: 'Prestation'
   },
   programCosts: {
-    cost: 'Coût reste à charge',
+    cost: "Coût reste à charge",
+    costPrefix: 'Coût',
     aid: 'Montant du financement',
-    paying: 'Taux du prêt'
+    aidPrefix: "Montant de l'aide",
+    loan: 'Taux du prêt',
+    loanPrefix: 'Taux du prêt'
   },
   enterprise: {
     select: 'Sélectionnez votre entreprise',
@@ -70,10 +73,19 @@ export const frDict = {
   },
   articles: {
     accompagnement: {
-      this: 'cet'
+      the: "l'",
+      this: 'cet',
+      of: "de l'"
     },
     financement: {
-      this: 'ce'
+      the: 'le',
+      this: 'ce',
+      of: 'du'
+    },
+    prêt: {
+      the: 'le',
+      this: 'ce',
+      of: "du"
     }
   }
 }
