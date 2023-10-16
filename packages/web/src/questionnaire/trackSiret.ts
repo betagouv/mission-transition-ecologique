@@ -11,9 +11,18 @@ const secteurs = {
   "entreprise . secteur d'activité . est autre secteur": 'non'
 }
 
+// Associates a NAF1 (composed of 1 letter) to its expected publicode variable
+const NAF1ToVar = (letter: string): string => `entreprise . code NAF . est ${letter}`
+
+const NAF1Letters = [...'ABCDEFGHIJKLMNOPQRSTU'] as const
+
+// publicodes variable initialization to "non"
+const codesNAF1 = Object.fromEntries(NAF1Letters.map((l) => [NAF1ToVar(l), 'non']))
+
 const dataTarget = {
   siret: '',
   codeNaf: '',
+  codeNAF1: '',
   ville: '',
   codePostal: '',
   structure_sizes: '',
@@ -121,14 +130,16 @@ export const siret = {
                     tourisme: { "entreprise . secteur d'activité . est tourisme": 'oui' },
                     tertiaire: { "entreprise . secteur d'activité . est tertiaire": 'oui' },
                     agriculture: { "entreprise . secteur d'activité . est agriculture": 'oui' },
-                    'autre secteur': { "entreprise . secteur d'activité . est autre secteur": 'oui' }
+                    'autre secteur': {
+                      "entreprise . secteur d'activité . est autre secteur": 'oui'
+                    }
                   }
                   // => [{ "entreprise . secteur d'activité . est artisanat": 'oui' }, { "entreprise . secteur d'activité . est tertiaire": 'oui' }]
                 },
                 {
                   operation: 'injectInObject',
                   object: { ...secteurs }
-                  /* => { 
+                  /* => {
                     {
                       "entreprise . secteur d'activité . est artisanat": 'non',
                       "entreprise . secteur d'activité . est industrie": 'non',
@@ -136,6 +147,37 @@ export const siret = {
                       "entreprise . secteur d'activité . est tertiaire": 'non',
                       "entreprise . secteur d'activité . est agriculture": 'non',
                       "entreprise . secteur d'activité . est autre secteur": 'non'
+                    }
+                  */
+                }
+              ]
+            },
+            {
+              from: 'rawData',
+              id: 'codeNAF1',
+              path: 'etablissement.uniteLegale.activitePrincipaleUniteLegale',
+              dataField: '.',
+              onlyRemap: true,
+              cleaning: [
+                {
+                  operation: 'findFromRefs',
+                  findInRef: 'nafCodes',
+                  findFromField: 'NIV5',
+                  retrieveFromField: 'NIV1'
+                  // => 'A'
+                },
+                {
+                  operation: 'findFromDict',
+                  dict: Object.fromEntries(NAF1Letters.map((l) => [l, { [NAF1ToVar(l)]: 'oui' }]))
+                  // => { "entreprise . code NAF . est A": 'oui' }
+                },
+                {
+                  operation: 'injectInObject',
+                  object: { ...codesNAF1 }
+                  /* => {
+                      "entreprise . code NAF . est A": 'oui',
+                      "entreprise . code NAF . est B": 'non',
+                      ...
                     }
                   */
                 }
