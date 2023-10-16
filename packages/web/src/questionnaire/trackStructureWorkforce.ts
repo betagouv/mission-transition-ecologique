@@ -119,9 +119,9 @@ export const workforce = {
     },
     {
       disabled: false,
-      value: { 'entreprise . effectif': 4, structure_sizes: ['TPE'] },
-      title: { fr: 'Moins de 5 employés' },
-      label: { fr: '‍️🧍‍ Moins de 5 employés' },
+      value: { 'entreprise . effectif': 19, structure_sizes: ['TPE'] },
+      title: { fr: 'Moins de 20 employés' },
+      label: { fr: '‍️🧍‍ Moins de 20 employés' },
       next: {
         default: 'track_sectors',
         exceptions: nextExceptions
@@ -130,8 +130,8 @@ export const workforce = {
     {
       disabled: false,
       value: { 'entreprise . effectif': 49, structure_sizes: ['PME'] },
-      title: { fr: 'Entre 5 et 49 employés' },
-      label: { fr: '‍️👫 Entre 5 et 49 employés' },
+      title: { fr: 'Entre 20 et 49 employés' },
+      label: { fr: '‍️👫 Entre 20 et 49 employés' },
       next: {
         default: 'track_sectors',
         exceptions: nextExceptions
@@ -139,7 +139,7 @@ export const workforce = {
     },
     {
       disabled: false,
-      value: { 'entreprise . effectif': 250, structure_sizes: ['PME'] },
+      value: { 'entreprise . effectif': 249, structure_sizes: ['PME'] },
       title: { fr: 'Entre 50 et 250 employés' },
       label: { fr: '‍️👫👭 Entre 50 et 250 employés' },
       next: {
