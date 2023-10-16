@@ -5,8 +5,8 @@
   "author": "Julien Paris (https://multi.coop)",
   "licence": "AGPL-3.0",
   "engines": {
-    "node": "~18.18",
-    "npm": "~9.8"
+    "node": "18.x",
+    "npm": "9.x"
   },
   "repository": {
     "type": "git",
