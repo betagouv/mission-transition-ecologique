@@ -12,7 +12,7 @@ const secteurs = {
 }
 
 // Associates a NAF1 (composed of 1 letter) to its expected publicode variable
-const NAF1ToVar = (letter: string): string => `entreprise . code NAF . est ${letter}`
+const NAF1ToVar = (letter: string): string => `entreprise . code NAF niveau 1 . est ${letter}`
 
 const NAF1Letters = [...'ABCDEFGHIJKLMNOPQRSTU'] as const
 
