@@ -116,11 +116,14 @@ export const results = {
         },
         required: false,
         type: 'textarea',
-        rows: 6,
+        rows: 8,
         // for debugging purposes
-        defaultValue: `Bonjour,\n
-Mon entreprise a une activité de type "{secteur}".
-J'aimerais bénéficier du dispositif "{titreAide}". \n
+        defaultValue: `Bonjour,
+
+Mon entreprise a une activité de "{label_sectors}".
+Le dispositif "{titreAide}" pourrait m'intéresser car j'ai pour projet de
+J'ai besoin d'être accompagné(e) sur
+
 Merci d'avance pour votre appel`,
         injectInText: true,
         dataStructure: {
@@ -132,8 +135,8 @@ Merci d'avance pour votre appel`,
         dataMapping: [
           {
             from: 'usedTracks',
-            id: 'secteur',
-            dataField: 'secteur'
+            id: 'label_sectors',
+            dataField: 'label_sectors'
           },
           {
             from: 'usedTracks',
