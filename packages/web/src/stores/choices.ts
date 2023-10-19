@@ -5,7 +5,7 @@ import { frDict } from '@/translations/fr'
 import { frOperatorsDict } from '@/translations/fr-operators'
 
 export const choicesStore = defineStore('choices', () => {
-  
+
   const publicPath = ref<string>()
 
   // internationalization
@@ -38,7 +38,7 @@ export const choicesStore = defineStore('choices', () => {
     if (params) {
       for (const key in params) {
         const reg = new RegExp(`{${key}}`, 'g')
-        translated = translated.replace(reg, params[key])
+        translated = translated.replace(reg, params[key] ?? '')
       }
     }
     return translated

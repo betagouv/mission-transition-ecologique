@@ -120,13 +120,14 @@ export const results = {
         // for debugging purposes
         defaultValue: `Bonjour,
 
-Mon entreprise a une activité de "{label_sectors}".
+Mon entreprise a une activité de "{label_sectors}{secteur}".
 Le dispositif "{titreAide}" pourrait m'intéresser car j'ai pour projet de
 J'ai besoin d'être accompagné(e) sur
 
 Merci d'avance pour votre appel`,
         injectInText: true,
         dataStructure: {
+          label_sectors: '',
           secteur: '',
           natureAide: '',
           titreAide: '',
@@ -137,6 +138,11 @@ Merci d'avance pour votre appel`,
             from: 'usedTracks',
             id: 'label_sectors',
             dataField: 'label_sectors'
+          },
+          {
+            from: 'usedTracks',
+            id: 'secteur',
+            dataField: 'secteur'
           },
           {
             from: 'usedTracks',
