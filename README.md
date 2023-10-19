@@ -13,6 +13,21 @@ programs for their ecological transition.**
 
 A project from the `transition-ecologique-entreprises` SE team.
 
+
+- [Screenshots](#screenshots)
+- [Project Setup](#project-setup)
+  - [Stack](#stack)
+  - [Description](#description)
+  - [Getting started](#getting-started)
+    - [NVM](#nvm)
+    - [Environment variables](#environment-variables)
+    - [Quick Start](#quick-start)
+    - [Build](#build)
+    - [Start services](#start-services)
+    - [Development Mode](#development-mode)
+    - [Commands for a specific workspace](#commands-for-a-specific-workspace)
+- [Data validation](#data-validation)
+- [Credits](#credits)
 --- 
 
 <div style="display: flex; flex-direction: row;">
@@ -30,11 +45,16 @@ height="75px">
 
 ## Screenshots
 
-![](./packages/web/images/screenshots/screenshot-230602-a.png)
-
+![](./packages/web/images/screenshots/screenshot-2023-10-19.png)
 
 ## Project Setup
 
+### Stack
+- [NodeJS](https://nodejs.org/) (v18)
+- Back: [Express](http://expressjs.com/) (v4)
+- Front: [VueJS](https://vuejs.org/) (v3)
+
+### Description
 This repository is a monorepo, based on [npm 
 workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces/) composed of 
 two workspaces:
@@ -42,19 +62,38 @@ two workspaces:
 - the ["web" workspace](./packages/web/README.md) contains the front-end implementations.
 - the ["backend" workspace](./packages/backend/README.md) contains the back-end implementations.
 
-### Install dependencies for all workspaces
+## Getting started
+
+### NVM
+The runtime is Node 18.x for this application.  
+You can use [nvm](https://github.com/nvm-sh/nvm) to install this specific version.
 
 ```sh
-npm install
+# from the root folder of the project
+nvm install
+nvm use
 ```
 
-### Environment variables 
+### Environment variables
 
-Some environment vairables are needed for the services to work. Copy and 
-modify the `example.env` file from the workspace you want to build/start to 
+Some environment variables are needed for the services to work. Copy and
+modify the `.env.example` file from the folders (`back`/`data`/`web`) you want to build/start to
 `.env` in the same directory.
 
+### Quick Start
+
+If you want to run the project locally and quickly, you can use the following commands:
+
+```sh
+# from the root folder of the project
+npm install
+npm run start-all
+```
+- Go to http://localhost:4242/ to access the front-end
+
 ### Build
+
+Use the following commands to build the project:
 
 ```sh
 # All workspaces
@@ -64,19 +103,44 @@ npm run build-front # web
 npm run build-back  # backend
 
 # Or alternatively
-npm run build --workspace packages/{web,backend}
+npm run build -w packages/web
+npm run build -w packages/backend
 ```
 
 ### Start services
 
+Use the following commands to start the project:
+
 ```sh
+# All workspaces
+npm run start-all
+# Or for a specific workspace
 # Front-end
-WORKSPACE="web" npm run start
+npm run start-front
 # Back-end
-WORKSPACE="backend" npm run start
+npm run start-back
 
 # Or alternatively
-npm run start --workspace packages/{web,backend}
+PORT=4242 npm run start --workspace packages/web
+npm run start --workspace packages/backend
+```
+
+### Development Mode
+
+To run the project in development mode, use the following commands:
+
+```sh
+# All workspaces
+npm run dev
+# Or for a specific workspace
+# Front-end
+npm run dev-front
+# Back-end
+npm run dev-back
+
+# Or alternatively
+npm run dev --workspace packages/web
+npm run dev --workspace packages/backend
 ```
 
 
@@ -84,6 +148,9 @@ npm run start --workspace packages/{web,backend}
 
 More scripts are defined for each workspace: checkout their respective 
 documentation and `package.json` file.
+- backend: [README](./packages/backend/README.md) / [package.json](./packages/backend/package.json)
+- data: [README](./packages/data/README.md) / [package.json](./packages/data/package.json)
+- web: [README](./packages/web/README.md) / [package.json](./packages/web/package.json)
 
 Scripts can be triggered with:
 
@@ -92,7 +159,6 @@ npm run <script-name> -w packages/<workspace-name>
 ```
 
 ---
-
 ## Data validation
 
 Source program data are stored as YAML files, we use [JSON Schema](https://json-schema.org/)
@@ -106,3 +172,16 @@ To run the validation tests manually, run:
 ```sh
 npm run test-data -w packages/backend
 ```
+
+
+---
+## Credits
+
+- Team
+    - Product owner: Jean-Baptiste Le Dévéhat
+    - Coaching: Julien Rayneau
+    - Designers: Coline Lebaratoux
+    - Maintainers:
+        - Pierre Camilleri
+        - Julien Paris
+        - Yohann Valentin
