@@ -162,6 +162,16 @@
           :description="program[`durée de l'accompagnement`]"
         />
       </div>
+      <div
+        v-if="program[`durée du prêt`]"
+        :class="columnTiles">
+        <TeeTile
+          class="tee-no-hover"
+          :title="choices.t('program.programDuration')"
+          :image-path="`${choices.publicPath}images/TEE-duree.svg`"
+          :description="program[`durée du prêt`]"
+        />
+      </div>
 
       <!-- PROGRAM PROVIDERS -->
       <div
