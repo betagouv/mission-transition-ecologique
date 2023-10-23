@@ -36,6 +36,7 @@ export interface ProgramData {
   titre: string
   promesse: string
   description: string
+  'description longue'?: string
   illustration: string
   objectifs: string[]
   'opérateur de contact': string

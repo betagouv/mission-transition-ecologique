@@ -48,6 +48,11 @@
           style="color: #000091"
           v-html="program.description">
         </p>
+        <!-- <p
+          v-if="program['description longue']"
+          style="color: #000091"
+          v-html="program['description longue']">
+        </p> -->
 
         <!-- OPEN MODAL -> FORM -->
         <!-- :label="choices.t('results.showForm', {title: program.title})" -->
