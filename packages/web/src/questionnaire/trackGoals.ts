@@ -1,19 +1,4 @@
-const objectifsPrioritaires = {
-  'questionnaire . objectif prioritaire . est mon impact environnemental': 'non', // impact carbone
-  'questionnaire . objectif prioritaire . est ma performance énergétique': 'non',
-  "questionnaire . objectif prioritaire . est est diminuer ma consommation d'eau": 'non',
-  'questionnaire . objectif prioritaire . est rénover mon bâtiment': 'non',
-  'questionnaire . objectif prioritaire . est la mobilité durable': 'non',
-  'questionnaire . objectif prioritaire . est la gestion des déchets': 'non',
-  "questionnaire . objectif prioritaire . est l'écoconception": 'non', // ma performance environnementale
-  
-  // FUTURE DEPRECATION
-  'questionnaire . objectif prioritaire . est faire des économies': 'non',
-  'questionnaire . objectif prioritaire . est investir durable': 'non',
-
-  // FUTURE ADDITIONS
-  'questionnaire . objectif prioritaire . est former ou recruter': 'non',
-}
+import { objectifsPrioritaires } from './publicodesObjects'
 
 export const goals = {
   id: 'track_goals',
@@ -65,7 +50,7 @@ export const goals = {
     {
       value: {
         ...objectifsPrioritaires,
-        "questionnaire . objectif prioritaire . est est diminuer ma consommation d'eau": 'oui'
+        "questionnaire . objectif prioritaire . est diminuer ma consommation d'eau": 'oui'
       },
       title: { fr: "Gestion de l'eau" },
       label: { fr: "💧 Diminuer ma consommation d'eau" },
@@ -120,7 +105,7 @@ export const goals = {
     {
       value: {
         ...objectifsPrioritaires,
-        "questionnaire . objectif prioritaire . est former ou recruter": 'oui'
+        'questionnaire . objectif prioritaire . est former ou recruter': 'oui'
       },
       title: { fr: 'Formation' },
       label: { fr: '🧑‍🎓 Former ou recruter sur la transition écologique' },

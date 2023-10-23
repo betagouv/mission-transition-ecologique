@@ -32,3 +32,7 @@ coverage
 
 # Default env variables
 .env
+
+# XL2Yaml tool
+.venv
+dispositifs.xlsx

@@ -1,0 +1,56 @@
+titre: Accélérateur décarbonation
+promesse: Intégrez l'Accélérateur Décarbonation pour définir une stratégie bas carbone
+  robuste
+description: L'accélérateur Décarbonation est un programme d'accompagnement pour les
+  dirigeants de PME et ETI souhaitant se faire accompagner pour définir une stratégie
+  bas carbone
+illustration: images/TEE_energie_verte.png
+opérateur de contact: Bpifrance
+url: https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-la-3e-promotion-de-laccelerateur-decarbonation
+nature de l'aide: accompagnement
+coût de l'accompagnement: 29 000 € HT
+durée de l'accompagnement: 39 jours de conseil et 8 jours de formation
+objectifs:
+- Identifier les leviers et définir la trajectoire de décarbonation de votre entreprise
+  en tenant compte de vos enjeux de développement
+- Participer à 8 séminaires thématiques avec les Mines ParisTech (élaborer sa stratégie
+  de décarbonation, la financer, la valoriser, conduite du changement...)
+- Accéder à la communauté des 3 000 accélérés des précédentes promotions et aux réseaux
+  Bpifrance
+- 'Bénéficier d''un accompagnement premium de la part de Bpifrance pendant toute la
+  durée du programme : 39 jours de suivi séquencés sur les 2 années du programme.'
+publicodes:
+  afficher le dispositif si:
+    toutes ces conditions:
+    - règles d'éligibilité
+    - secteur d'activité prioritaire
+    - est dans les objectifs de l'entreprise
+  règles d'éligibilité:
+    toutes ces conditions:
+    - entreprise . effectif >= 50
+  secteur d'activité prioritaire:
+    une de ces conditions:
+    - entreprise . code NAF niveau 1 . est A
+    - entreprise . code NAF niveau 1 . est B
+    - entreprise . code NAF niveau 1 . est C
+    - entreprise . code NAF niveau 1 . est D
+    - entreprise . code NAF niveau 1 . est E
+    - entreprise . code NAF niveau 1 . est F
+    - entreprise . code NAF niveau 1 . est G
+    - entreprise . code NAF niveau 1 . est H
+    - entreprise . code NAF niveau 1 . est I
+    - entreprise . code NAF niveau 1 . est J
+    - entreprise . code NAF niveau 1 . est K
+    - entreprise . code NAF niveau 1 . est L
+    - entreprise . code NAF niveau 1 . est M
+    - entreprise . code NAF niveau 1 . est N
+    - entreprise . code NAF niveau 1 . est O
+    - entreprise . code NAF niveau 1 . est P
+    - entreprise . code NAF niveau 1 . est Q
+    - entreprise . code NAF niveau 1 . est R
+    - entreprise . code NAF niveau 1 . est S
+    - entreprise . code NAF niveau 1 . est T
+    - entreprise . code NAF niveau 1 . est U
+  est dans les objectifs de l'entreprise:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est mon impact environnemental

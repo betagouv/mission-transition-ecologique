@@ -48,6 +48,11 @@
           style="color: #000091"
           v-html="program.description">
         </p>
+        <!-- <p
+          v-if="program['description longue']"
+          style="color: #000091"
+          v-html="program['description longue']">
+        </p> -->
 
         <!-- OPEN MODAL -> FORM -->
         <!-- :label="choices.t('results.showForm', {title: program.title})" -->
@@ -124,16 +129,25 @@
         />
       </div>
       <div
-        v-if="program[`taux du prêt`]"
+        v-if="program[`montant du prêt`]"
         :class="columnTiles">
         <TeeTile
           class="tee-no-hover"
           :title="choices.t('programCosts.loan')"
           :image-path="`${choices.publicPath}images/TEE-cout.svg`"
-          :description="`${program[`taux du prêt`]}`"
+          :description="`${program[`montant du prêt`]}`"
         />
       </div>
-
+      <!-- <div
+        v-if="program[`taux du prêt`]"
+        :class="columnTiles">
+        <TeeTile
+          class="tee-no-hover"
+          :title="choices.t('programCosts.loanRate')"
+          :image-path="`${choices.publicPath}images/TEE-cout.svg`"
+          :description="`${program[`taux du prêt`]}`"
+        />
+      </div> -->
 
       <!-- PROGRAM TYPE -->
       <div
@@ -155,6 +169,16 @@
           :title="choices.t('program.programDuration')"
           :image-path="`${choices.publicPath}images/TEE-duree.svg`"
           :description="program[`durée de l'accompagnement`]"
+        />
+      </div>
+      <div
+        v-if="program[`durée du prêt`]"
+        :class="columnTiles">
+        <TeeTile
+          class="tee-no-hover"
+          :title="choices.t('program.programLoanDuration')"
+          :image-path="`${choices.publicPath}images/TEE-duree.svg`"
+          :description="program[`durée du prêt`]"
         />
       </div>
 
