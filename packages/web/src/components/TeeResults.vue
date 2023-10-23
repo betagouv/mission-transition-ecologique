@@ -62,6 +62,17 @@
               {{ prog.titre }}
             </p>
           </div>
+          <div class="fr-card__end">
+            <p 
+              class="fr-mb-0">
+              <span 
+                class="fr-icon-money-euro-circle-line" 
+                aria-hidden="true">
+              </span>
+              {{ choices.t(getCostInfosPrefix(prog)) }} :
+              {{ getCostInfosText(prog) }}
+            </p>
+          </div>
         </div>
       </div>
       <div
@@ -151,6 +162,46 @@ const resultsProgsLen = computed(() => {
 const updateDetailResult = (id: string | number) => {
   // console.log(`TeeResults > updateDetailResult >  id : ${id}`)
   programs.setDetailResult(id, props.trackId)
+}
+
+interface costInfos {
+  prefix: string
+  text: string | undefined
+}
+const getCostInfos = (program: ProgramData) => {
+  let obj: costInfos = {
+    prefix: '',
+    text: ''
+  }
+  // console.log('TeeResults > onBeforeMount > resultsProgs :', resultsProgs )
+  switch (program["nature de l'aide"]) {
+    case 'accompagnement':
+      obj.prefix = 'programCosts.costPrefix'
+      obj.text = program["coût de l'accompagnement"]
+      break
+    case 'formation':
+      obj.prefix = 'programCosts.costPrefix'
+      obj.text = program["coût de l'accompagnement"]
+      break
+    case 'financement':
+      obj.prefix = 'programCosts.aidPrefix'
+      obj.text = program['montant du financement']
+      break
+    case 'prêt':
+      obj.prefix = 'programCosts.loan'
+      obj.text = program['montant du prêt']
+      break
+  }
+  return obj
+}
+
+const getCostInfosPrefix = (program: ProgramData) => {
+  const infos = getCostInfos(program)
+  return infos?.prefix
+}
+const getCostInfosText = (program: ProgramData) => {
+  const infos = getCostInfos(program)
+  return infos?.text
 }
 
 
