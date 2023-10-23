@@ -171,7 +171,7 @@
           :description="program[`durée de l'accompagnement`]"
         />
       </div>
-      <!-- <div
+      <div
         v-if="program[`durée du prêt`]"
         :class="columnTiles">
         <TeeTile
@@ -180,7 +180,7 @@
           :image-path="`${choices.publicPath}images/TEE-duree.svg`"
           :description="program[`durée du prêt`]"
         />
-      </div> -->
+      </div>
 
       <!-- PROGRAM PROVIDERS -->
       <div
