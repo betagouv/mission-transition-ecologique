@@ -46,7 +46,8 @@ export interface ProgramData {
   "coût de l'accompagnement"?: string
   "durée de l'accompagnement"?: string
   'montant du financement'?: string
-  'taux du prêt'?: string
+  'montant du prêt'?: string
+  'durée du prêt'?: string
   conditions?: Condition[]
   url?: string
 

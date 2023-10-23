@@ -129,13 +129,13 @@
         />
       </div>
       <div
-        v-if="program[`taux du prêt`]"
+        v-if="program[`montant du prêt`]"
         :class="columnTiles">
         <TeeTile
           class="tee-no-hover"
           :title="choices.t('programCosts.loan')"
           :image-path="`${choices.publicPath}images/TEE-cout.svg`"
-          :description="`${program[`taux du prêt`]}`"
+          :description="`${program[`montant du prêt`]}`"
         />
       </div>
 
