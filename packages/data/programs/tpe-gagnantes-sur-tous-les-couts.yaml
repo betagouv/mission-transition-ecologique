@@ -29,11 +29,11 @@ publicodes:
     - entreprise . effectif <= 19
   secteur d'activité prioritaire:
     une de ces conditions:
-    - entreprise . code NAF . est C
-    - entreprise . code NAF . est E
-    - entreprise . code NAF . est F
-    - entreprise . code NAF . est H
-    - entreprise . code NAF . est I
+    - entreprise . code NAF niveau 1 . est C
+    - entreprise . code NAF niveau 1 . est E
+    - entreprise . code NAF niveau 1 . est F
+    - entreprise . code NAF niveau 1 . est H
+    - entreprise . code NAF niveau 1 . est I
   est dans les objectifs de l'entreprise:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est la gestion des déchets

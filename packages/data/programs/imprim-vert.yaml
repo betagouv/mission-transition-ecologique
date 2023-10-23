@@ -38,7 +38,7 @@ publicodes:
     - entreprise . effectif <= 249
   secteur d'activité prioritaire:
     une de ces conditions:
-    - entreprise . code NAF . est C
+    - entreprise . code NAF niveau 1 . est C
   est dans les objectifs de l'entreprise:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est la gestion des déchets

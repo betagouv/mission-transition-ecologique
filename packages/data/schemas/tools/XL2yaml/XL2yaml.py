@@ -9,7 +9,7 @@ import pylightxl
 import yaml
 
 INPUT_XL_FILE = "./dispositifs.xlsx"
-WORKSHEET = "Data"
+WORKSHEET = "DataProd"
 SKIP_XL_LINES = 5
 OUTPUT_DIR = "../../../programs"
 
@@ -213,7 +213,7 @@ def pc_secteurActivitéConstraint(rawData, colNumbers):
 
     return {
         "une de ces conditions": [
-            f"entreprise . code NAF . est {s[0]}"
+            f"entreprise . code NAF niveau 1 . est {s[0]}"
             for s, keep in zip(secteurs, secteursInd)
             if keep
         ]

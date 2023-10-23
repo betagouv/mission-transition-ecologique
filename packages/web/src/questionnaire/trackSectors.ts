@@ -1,11 +1,13 @@
-const secteurs = {
-  "entreprise . secteur d'activité . est artisanat": 'non',
-  "entreprise . secteur d'activité . est industrie": 'non',
-  "entreprise . secteur d'activité . est tourisme": 'non',
-  "entreprise . secteur d'activité . est tertiaire": 'non',
-  "entreprise . secteur d'activité . est agriculture": 'non',
-  "entreprise . secteur d'activité . est autre secteur": 'non'
-}
+import { secteurs, SecteurByNAF, NAF1ToVar, codesNAF1 } from './publicodesObjects'
+
+// const secteurs = {
+//   "entreprise . secteur d'activité . est artisanat": 'non',
+//   "entreprise . secteur d'activité . est industrie": 'non',
+//   "entreprise . secteur d'activité . est tourisme": 'non',
+//   "entreprise . secteur d'activité . est tertiaire": 'non',
+//   "entreprise . secteur d'activité . est agriculture": 'non',
+//   "entreprise . secteur d'activité . est autre secteur": 'non'
+// }
 
 const nextExceptions = [
   {
@@ -46,6 +48,15 @@ const nextExceptions = [
   }
 ]
 
+// const test = { ...codesNAF1 }
+// const test = SecteurByNAF['artisanat'].map((l) => { return { [NAF1ToVar(l)]: 'oui' } })
+// const test = {
+//   'test': 'yes',
+//   ...Object.assign({}, ...SecteurByNAF['artisanat'].map((l) => { return { [NAF1ToVar(l)]: 'oui' }} ))
+// }
+// console.log(test)
+
+
 export const sectors = {
   id: 'track_sectors',
   help: 'https://www.insee.fr/fr/metadonnees/nafr2',
@@ -63,7 +74,9 @@ export const sectors = {
       value: {
           secteur: 'Artisanat',
           ...secteurs, 
-          "entreprise . secteur d'activité . est artisanat": 'oui' 
+          "entreprise . secteur d'activité . est artisanat": 'oui',
+          // "entreprise . code NAF niveau 1 . est A": 'oui'
+          ...Object.assign({}, ...SecteurByNAF['artisanat'].map((l) => { return { [NAF1ToVar(l)]: 'oui' } }))
       },
       title: { fr: 'Artisanat' },
       label: { fr: '👩‍🎨 J’ai une activité artisanale' },
@@ -76,7 +89,9 @@ export const sectors = {
       value: {
           secteur: 'Industrie',
           ...secteurs, 
-          "entreprise . secteur d'activité . est industrie": 'oui' 
+          "entreprise . secteur d'activité . est industrie": 'oui',
+          ...codesNAF1,
+          ...Object.assign({}, ...SecteurByNAF['industrie'].map((l) => { return { [NAF1ToVar(l)]: 'oui' } }))
       },
       title: { fr: 'Industrie' },
       label: { fr: '👩‍🔧 J’ai une activité industrielle, fabrication, production' },
@@ -89,7 +104,9 @@ export const sectors = {
       value: {
           secteur: 'Tourisme',
           ...secteurs, 
-          "entreprise . secteur d'activité . est tourisme": 'oui' 
+          "entreprise . secteur d'activité . est tourisme": 'oui',
+          ...codesNAF1,
+          ...Object.assign({}, ...SecteurByNAF['tourisme'].map((l) => { return { [NAF1ToVar(l)]: 'oui' } }))
       },
       title: { fr: 'Tourisme' },
       label: { fr: '🤵‍♂️ J’ai une activité de tourisme, restauration' },
@@ -102,7 +119,9 @@ export const sectors = {
       value: {
           secteur: 'Tertiaire',
           ...secteurs, 
-          "entreprise . secteur d'activité . est tertiaire": 'oui' 
+          "entreprise . secteur d'activité . est tertiaire": 'oui',
+          ...codesNAF1,
+          ...Object.assign({}, ...SecteurByNAF['tertiaire'].map((l) => { return { [NAF1ToVar(l)]: 'oui' } }))
       },
       title: { fr: 'Tertiaire' },
       label: { fr: '🧑‍⚖️ J’ai une activité tertiaire, de services' },
@@ -115,7 +134,9 @@ export const sectors = {
       value: {
           secteur: 'Agriculture',
           ...secteurs, 
-          "entreprise . secteur d'activité . est agriculture": 'oui' 
+          "entreprise . secteur d'activité . est agriculture": 'oui',
+          ...codesNAF1,
+          ...Object.assign({}, ...SecteurByNAF['agriculture'].map((l) => { return { [NAF1ToVar(l)]: 'oui' } }))
       },
       title: { fr: 'Agriculture' },
       label: { fr: '👩‍🌾 J’ai une activité agricole' },
@@ -128,7 +149,9 @@ export const sectors = {
       value: {
           secteur: 'Autre',
           ...secteurs, 
-          "entreprise . secteur d'activité . est autre secteur": 'oui' 
+          "entreprise . secteur d'activité . est autre secteur": 'oui',
+          ...codesNAF1,
+          ...Object.assign({}, ...SecteurByNAF['autre secteur'].map((l) => { return { [NAF1ToVar(l)]: 'oui' } }))
       },
       title: { fr: 'Autre' },
       label: { fr: "Je suis dans un autre secteur d'activité" },
@@ -139,3 +162,5 @@ export const sectors = {
     }
   ]
 }
+
+// console.log(sectors)

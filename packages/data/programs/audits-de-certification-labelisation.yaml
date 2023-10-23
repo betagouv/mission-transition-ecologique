@@ -29,7 +29,7 @@ publicodes:
     - entreprise . effectif <= 499
   secteur d'activité prioritaire:
     une de ces conditions:
-    - entreprise . code NAF . est I
+    - entreprise . code NAF niveau 1 . est I
   est dans les objectifs de l'entreprise:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est mon impact environnemental
