@@ -55,7 +55,7 @@
           <!-- CONTENT -->
           <h2 
             class="fr-card__title tee-program-resume fr-mb-3v"
-            style="font-size: 1.7rem;">
+            style="font-size: 1.7rem; line-height: 2rem;">
             {{ prog.promesse }} 
           </h2>
           <!-- DEBUG -->
