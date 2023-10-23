@@ -144,5 +144,3 @@ export const sectors = {
     }
   ]
 }
-
-// console.log(sectors)
