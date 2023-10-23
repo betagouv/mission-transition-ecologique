@@ -61,7 +61,7 @@ export const goals = {
     {
       value: {
         ...objectifsPrioritaires,
-        "questionnaire . objectif prioritaire . est est diminuer ma consommation d'eau": 'oui'
+        "questionnaire . objectif prioritaire . est diminuer ma consommation d'eau": 'oui'
       },
       title: { fr: "Gestion de l'eau" },
       label: { fr: "💧 Diminuer ma consommation d'eau" },

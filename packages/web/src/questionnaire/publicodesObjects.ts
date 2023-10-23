@@ -30,7 +30,7 @@ export const SecteurByNAF = {
 export const objectifsPrioritaires = {
   'questionnaire . objectif prioritaire . est mon impact environnemental': 'non',
   'questionnaire . objectif prioritaire . est ma performance énergétique': 'non',
-  "questionnaire . objectif prioritaire . est est diminuer ma consommation d'eau": 'non',
+  "questionnaire . objectif prioritaire . est diminuer ma consommation d'eau": 'non',
   'questionnaire . objectif prioritaire . est rénover mon bâtiment': 'non',
   'questionnaire . objectif prioritaire . est la mobilité durable': 'non',
   'questionnaire . objectif prioritaire . est la gestion des déchets': 'non',
