@@ -138,7 +138,16 @@
           :description="`${program[`montant du prêt`]}`"
         />
       </div>
-
+      <!-- <div
+        v-if="program[`taux du prêt`]"
+        :class="columnTiles">
+        <TeeTile
+          class="tee-no-hover"
+          :title="choices.t('programCosts.loanRate')"
+          :image-path="`${choices.publicPath}images/TEE-cout.svg`"
+          :description="`${program[`taux du prêt`]}`"
+        />
+      </div> -->
 
       <!-- PROGRAM TYPE -->
       <div
@@ -162,16 +171,16 @@
           :description="program[`durée de l'accompagnement`]"
         />
       </div>
-      <div
+      <!-- <div
         v-if="program[`durée du prêt`]"
         :class="columnTiles">
         <TeeTile
           class="tee-no-hover"
-          :title="choices.t('program.programDuration')"
+          :title="choices.t('program.programLoanDuration')"
           :image-path="`${choices.publicPath}images/TEE-duree.svg`"
           :description="program[`durée du prêt`]"
         />
-      </div>
+      </div> -->
 
       <!-- PROGRAM PROVIDERS -->
       <div
