@@ -4,23 +4,6 @@ const metaEnv = import.meta.env
 // console.log('trackSiret >  metaEnv :', metaEnv)
 const TEE_BACKEND_URL = metaEnv.VITE_TEE_BACKEND_URL || 'https://tee-backend.osc-fr1.scalingo.io'
 
-// const secteurs = {
-//   "entreprise . secteur d'activité . est artisanat": 'non',
-//   "entreprise . secteur d'activité . est industrie": 'non',
-//   "entreprise . secteur d'activité . est tourisme": 'non',
-//   "entreprise . secteur d'activité . est tertiaire": 'non',
-//   "entreprise . secteur d'activité . est agriculture": 'non',
-//   "entreprise . secteur d'activité . est autre secteur": 'non'
-// }
-
-// Associates a NAF1 (composed of 1 letter) to its expected publicode variable
-// const NAF1ToVar = (letter: string): string => `entreprise . code NAF niveau 1 . est ${letter}`
-
-// const NAF1Letters = [...'ABCDEFGHIJKLMNOPQRSTU'] as const
-
-// // publicodes variable initialization to "non"
-// const codesNAF1 = Object.fromEntries(NAF1Letters.map((l) => [NAF1ToVar(l), 'non']))
-
 const dataTarget = {
   siret: '',
   codeNaf: '',

@@ -1,14 +1,5 @@
 import { secteurs, SecteurByNAF, NAF1ToVar, codesNAF1 } from './publicodesObjects'
 
-// const secteurs = {
-//   "entreprise . secteur d'activité . est artisanat": 'non',
-//   "entreprise . secteur d'activité . est industrie": 'non',
-//   "entreprise . secteur d'activité . est tourisme": 'non',
-//   "entreprise . secteur d'activité . est tertiaire": 'non',
-//   "entreprise . secteur d'activité . est agriculture": 'non',
-//   "entreprise . secteur d'activité . est autre secteur": 'non'
-// }
-
 const nextExceptions = [
   {
     help: "Goes to track_structure_building_property if : user_help == 'unknown' (newbie)",
