@@ -49,6 +49,7 @@ export interface ProgramData {
   'montant du financement'?: string
   'montant du prêt'?: string
   'durée du prêt'?: string
+  'taux du prêt'?: string
   conditions?: Condition[]
   url?: string
 
