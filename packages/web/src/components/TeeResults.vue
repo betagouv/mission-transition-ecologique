@@ -54,8 +54,7 @@
           </div>
           <!-- CONTENT -->
           <h2 
-            class="fr-card__title tee-program-resume fr-mb-3v"
-            style="font-size: 1.7rem; line-height: 2rem;">
+            class="fr-card__title tee-program-resume fr-mb-3v">
             {{ prog.promesse }} 
           </h2>
           <!-- DEBUG -->
@@ -69,14 +68,12 @@
           <!-- END -->
           <div class="fr-card__end">
             <p 
-              class="fr-mb-0"
-              style="color: #000091;">
+              class="fr-mb-0 tee-program-info">
               <span 
                 class="fr-icon-money-euro-circle-line" 
                 aria-hidden="true">
               </span>
-              {{ choices.t(getCostInfosPrefix(prog)) }} :
-              {{ getCostInfosText(prog) }}
+              {{ getCostInfos(prog) }}
             </p>
           </div>
         </div>
@@ -134,7 +131,8 @@ import { analyticsStore } from '../stores/analytics'
 
 // @ts-ignore
 import type { TrackChoice, TrackResultsConfig, ProgramData } from '@/types/index'
-
+// @ts-ignore
+import { ProgramAidType } from '@/types/programTypes'
 // @ts-ignore
 // import { randomChoice } from '@/utils/helpers'
 
@@ -170,46 +168,34 @@ const updateDetailResult = (id: string | number) => {
   programs.setDetailResult(id, props.trackId)
 }
 
-interface costInfos {
-  prefix: string
-  text: string | undefined
-}
 const getCostInfos = (program: ProgramData) => {
-  let obj: costInfos = {
-    prefix: '',
-    text: ''
-  }
+  let prefix: string = ''
+  let text: string | undefined = ''
   // console.log('TeeResults > onBeforeMount > resultsProgs :', resultsProgs )
+
   switch (program["nature de l'aide"]) {
-    case 'accompagnement':
-      obj.prefix = 'programCosts.costPrefix'
-      obj.text = program["coût de l'accompagnement"]
+    case ProgramAidType.acc:
+      prefix = 'programCosts.costPrefix'
+      text = program["coût de l'accompagnement"]
       break
-    case 'formation':
-      obj.prefix = 'programCosts.costPrefix'
-      obj.text = program["coût de l'accompagnement"]
+    case ProgramAidType.train:
+      prefix = 'programCosts.costPrefix'
+      text = program["coût de l'accompagnement"]
       break
-    case 'financement':
-      obj.prefix = 'programCosts.aidPrefix'
-      obj.text = program['montant du financement']
+    case ProgramAidType.fund:
+      prefix = 'programCosts.aidPrefix'
+      text = program['montant du financement']
       break
-    case 'prêt':
-      obj.prefix = 'programCosts.loan'
-      obj.text = program['montant du prêt']
+    case ProgramAidType.loan:
+      prefix = 'programCosts.loan'
+      text = program['montant du prêt']
       break
   }
-  return obj
-}
+  // Translate prefix
+  prefix = choices.t(prefix)
 
-const getCostInfosPrefix = (program: ProgramData) => {
-  const infos = getCostInfos(program)
-  return infos?.prefix
+  return `${prefix} : ${text}`
 }
-const getCostInfosText = (program: ProgramData) => {
-  const infos = getCostInfos(program)
-  return infos?.text
-}
-
 
 onBeforeMount(() => {
   // console.log('TeeResults > onBeforeMount > resultsProgs :', resultsProgs )

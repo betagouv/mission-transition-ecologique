@@ -14,7 +14,7 @@ export enum ProgramAidType {
   loan = 'prêt'
 }
 
-enum ConditionOperators {
+export enum ConditionOperators {
   or = 'or',
   and = 'and',
   is = '==',
