@@ -39,15 +39,6 @@ const nextExceptions = [
   }
 ]
 
-// const test = { ...codesNAF1 }
-// const test = SecteurByNAF['artisanat'].map((l) => { return { [NAF1ToVar(l)]: 'oui' } })
-// const test = {
-//   'test': 'yes',
-//   ...Object.assign({}, ...SecteurByNAF['artisanat'].map((l) => { return { [NAF1ToVar(l)]: 'oui' }} ))
-// }
-// console.log(test)
-
-
 export const sectors = {
   id: 'track_sectors',
   help: 'https://www.insee.fr/fr/metadonnees/nafr2',
