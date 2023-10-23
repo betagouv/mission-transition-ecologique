@@ -45,9 +45,20 @@
       @click="updateDetailResult(prog.id)">
       <div class="fr-card__body">
         <div class="fr-card__content">
-          <h2 class="fr-card__title tee-program-resume">
+          <!-- TITLE -->
+          <div class="fr-card__start fr-mb-2v">
+            <p 
+              class="tee-program-title">
+              {{ prog.titre }}
+            </p>
+          </div>
+          <!-- CONTENT -->
+          <h2 
+            class="fr-card__title tee-program-resume fr-mb-3v"
+            style="font-size: 1.7rem;">
             {{ prog.promesse }} 
           </h2>
+          <!-- DEBUG -->
           <p
             v-if="debug"
             class="vue-debug fr-card__desc">
@@ -55,16 +66,11 @@
             <br> prog.cover : <code>{{ prog.illustration }}</code>
             <!-- {{ `${choices.publicPath}${randomImage()}` }} -->
           </p>
-          <!-- TITLE -->
-          <div class="fr-card__start">
-            <p 
-              class="fr-mb-3v tee-program-title">
-              {{ prog.titre }}
-            </p>
-          </div>
+          <!-- END -->
           <div class="fr-card__end">
             <p 
-              class="fr-mb-0">
+              class="fr-mb-0"
+              style="color: #000091;">
               <span 
                 class="fr-icon-money-euro-circle-line" 
                 aria-hidden="true">
