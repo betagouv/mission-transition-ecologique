@@ -11,44 +11,50 @@ export const frDict = {
     selected: 'Sélectionné'
   },
   form: {
-    mandatory: "Champs obligatoires",
-    sent: "Formulaire envoyé",
+    mandatory: 'Champs obligatoires',
+    sent: 'Formulaire envoyé',
     notSent: "Problème lors de l'envoi du formulaire",
     contactHelp: 'Merci de nous contacter à',
-    nowWhat: "Et maintenant ?",
-    advisors: "Nous allons <b>identifier le bon conseiller</b> près de chez vous",
-    phoneContact: "Le conseiller vous <b>contactera par téléphone</b> dans les 5 jours (délai moyen de prise en charge)",
+    nowWhat: 'Et maintenant ?',
+    advisors: 'Nous allons <b>identifier le bon conseiller</b> près de chez vous',
+    phoneContact: 'Le conseiller vous <b>contactera par téléphone</b> dans les 5 jours (délai moyen de prise en charge)',
   },
   input: {
     research: 'Recherche',
     search: 'Rechercher'
   },
   results: {
-    backToResults: "Retour aux résultats",
+    backToResults: 'Retour aux résultats',
     // showForm: "Candidatez pour le dispositif {title}",
-    knowMore: "En savoir plus",
-    showForm: "En savoir plus sur {title}",
-    alertTitle: "Merci, voici vos résultats",
-    alertTitleNoResults: "Pas de résultats",
-    alertNoResults: "Désolé, nous n'avons pas trouvé de dispositif adapté à votre situation et vos demandes",
-    alertDescription: "Vous pouvez également nous envoyer un mail via le formulaire ci-après pour être mis en contact avec des conseillers",
+    knowMore: 'En savoir plus',
+    showForm: 'En savoir plus sur {title}',
+    alertTitle: 'Merci, voici vos résultats',
+    alertTitleNoResults: 'Pas de résultats',
+    alertNoResults:
+      "Désolé, nous n'avons pas trouvé de dispositif adapté à votre situation et vos demandes",
+    alertDescription:
+      'Vous pouvez également nous envoyer un mail via le formulaire ci-après pour être mis en contact avec des conseillers',
     yourResults: 'Vos résultats',
-    fittingPrograms: 'Les aides correspondant à vos choix',
+    fittingPrograms: 'Les aides correspondant à vos choix'
   },
   errors: {
-    error: "Erreur"
+    error: 'Erreur'
   },
   program: {
-    programResume: "Le dispositif en deux mots",
-    programDescription: "Au programme :",
-    programProviders: "Contact",
+    programResume: 'Le dispositif en deux mots',
+    programDescription: 'Au programme :',
+    programProviders: 'Contact',
     programType: "Nature de l'aide",
-    programService: "Prestation"
+    programDuration: 'Prestation',
+    programLoanDuration: 'Durée du prêt'
   },
   programCosts: {
     cost: "Coût reste à charge",
+    costPrefix: 'Coût',
     aid: 'Montant du financement',
-    paying: 'Taux du prêt'
+    aidPrefix: "Montant de l'aide",
+    loan: 'Montant du prêt',
+    loanRate: 'Taux du prêt'
   },
   enterprise: {
     select: 'Sélectionnez votre entreprise',
@@ -61,18 +67,27 @@ export const frDict = {
     myEntreprise: '👋 Mon entreprise',
     myBuildings: '🏢 Bâtiment',
     myMobility: '🚲 Mobilité',
-    myWater: "💧 Eau",
+    myWater: '💧 Eau',
     myWastes: '🗑 Déchets',
-    myEnergy: "⚡️ Energie",
+    myEnergy: '⚡️ Energie',
     myStrategy: '🎲️ Stratégie',
-    results: '✅ Résultats',
+    results: '✅ Résultats'
   },
   articles: {
     accompagnement: {
-      this: 'cet'
+      the: "l'",
+      this: 'cet',
+      of: "de l'"
     },
     financement: {
-      this: 'ce'
+      the: 'le',
+      this: 'ce',
+      of: 'du'
+    },
+    prêt: {
+      the: 'le',
+      this: 'ce',
+      of: "du"
     }
   }
 }

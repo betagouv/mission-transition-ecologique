@@ -20,10 +20,26 @@ npm install --workspace packages/data
 
 ## Run the scripts
 
+### Test program files
+
+To run the test :
+
+```sh
+# Either from this package
+npm run test
+# or from root level: npm run test-data
+```
+
 ### Build JSON output
+
+The program type is firsthand generated from the json schema (cf `./src/generateProgramType.ts`).
+
+The original yaml files are by design incomplete. The content of `./common/interface.yaml` is appendend to each program's `publicodes` 
+property. The data is then consolidated into 
+`../web/public/data/generated/dataset_out.json`
 
 ```sh
 # From this folder
-npm run build-front-json-output
-npm run build-front-json-output-watch
+npm run build-json-output
+npm run build-json-output-watch
 ```

@@ -5,7 +5,7 @@ export const waterStake = {
   label: { fr: "Pensez-vous avoir un enjeu important sur votre consommation d'eau ?" },
   callout: {
     header: { fr: 'Thématique' },
-    headerStyle: 'color: #000091;',
+    headerStyle: 'color: #3A3A3A;',
     bgColor: '#E8EDFF',
     title: { fr : "Votre gestion de l'eau" },
     titleStyle: 'color: #000091;',

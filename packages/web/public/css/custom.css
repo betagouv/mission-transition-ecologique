@@ -80,6 +80,11 @@ WARNING :
   background-color: white;
 }
 
+/* GLOBAL */
+.tee-no-hover {
+  pointer-events: none;
+}
+
 /* TRACK CALLOUT */
 
 .tee-track-callout {
@@ -90,15 +95,25 @@ WARNING :
 }
 .tee-track-callout-img  > .fr-responsive-img {
   max-height: 150px;
+  width: auto;
+}
+
+@media (min-width: 48em) {
+.tee-track-callout-texts {
+  max-width: 50%;
+  }
 }
 
 .tee-track-callout-header {
-  font-size: 1.1em;
-  font-size: 1.3rem;
+  font-size: 1em;
+  font-weight: normal;
+  line-height: 2rem;
   margin-bottom: auto;
 }
+
 .tee-track-callout-big-title {
-  font-size: 2.2em;
+  font-size: 2em;
+  font-weight: bold;
   line-height: 1.2em;
 }
 .tee-track-callout-title {
@@ -109,6 +124,12 @@ WARNING :
 }
 .tee-track-callout-hint {
   
+}
+
+/* TRACK INPUT */
+.tee-resp-info-block {
+  text-indent: -3.5rem;
+  padding-left: 3.5rem;
 }
 
 /* CUSTOM BUTTON INPUT */
@@ -145,6 +166,11 @@ WARNING :
   font-weight: bold;
 }
 .tee-program-resume {
+  color: #000091; 
+  font-size: 1.7rem;
+  line-height: 2rem;
+}
+.tee-program-info {
   color: #000091; 
 }
 .tee-program-badge-image {
@@ -205,6 +231,7 @@ code {
   text-align: center;
 }
 
+/*! media md and smaller only */
 @media screen and (max-width:48em) {
   .fr-sm-hide {
     display: none !important;

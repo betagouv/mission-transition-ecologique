@@ -17,15 +17,15 @@ const nextExceptions = [
     next: { default: 'track_sectors' }
   },
   {
-    help: "Goes to track_structure_building_property if : has infos about sector AND user_help == 'unknown' (newbie)",
+    help: "Goes to track_structure_building_property if : has infos about codeNaf AND user_help == 'unknown' (newbie)",
     rules: [
       {
         from: 'usedTracks',
-        id: 'project_sectors',
-        dataField: 'project_sectors',
+        id: 'codeNaf',
+        dataField: 'codeNaf',
         conditions: [
           {
-            type: 'project_sectors',
+            type: 'codeNaf',
             operator: 'exists'
           }
         ]
@@ -50,11 +50,11 @@ const nextExceptions = [
     rules: [
       {
         from: 'usedTracks',
-        id: 'project_sectors',
-        dataField: 'project_sectors',
+        id: 'codeNaf',
+        dataField: 'codeNaf',
         conditions: [
           {
-            type: 'project_sectors',
+            type: 'codeNaf',
             operator: 'exists'
           }
         ]
@@ -89,6 +89,7 @@ export const workforce = {
   },
   options: [
     {
+      disabled: true,
       value: { 'entreprise . effectif': 0, structure_sizes: ['PME', 'TPE'] },
       title: { fr: 'TPE ou PME' },
       label: { fr: '🧍‍♂employé.s' },
@@ -118,9 +119,39 @@ export const workforce = {
     },
     {
       disabled: false,
+      value: { 'entreprise . effectif': 19, structure_sizes: ['TPE'] },
+      title: { fr: 'Moins de 20 employés' },
+      label: { fr: '‍️🧍‍ Moins de 20 employés' },
+      next: {
+        default: 'track_sectors',
+        exceptions: nextExceptions
+      }
+    },
+    {
+      disabled: false,
+      value: { 'entreprise . effectif': 49, structure_sizes: ['PME'] },
+      title: { fr: 'Entre 20 et 49 employés' },
+      label: { fr: '‍️👫 Entre 20 et 49 employés' },
+      next: {
+        default: 'track_sectors',
+        exceptions: nextExceptions
+      }
+    },
+    {
+      disabled: false,
+      value: { 'entreprise . effectif': 249, structure_sizes: ['PME'] },
+      title: { fr: 'Entre 50 et 250 employés' },
+      label: { fr: '‍️👫👭 Entre 50 et 250 employés' },
+      next: {
+        default: 'track_sectors',
+        exceptions: nextExceptions
+      }
+    },
+    {
+      disabled: false,
       value: { 'entreprise . effectif': 251, structure_sizes: ['ETI', 'GE'] },
       title: { fr: '+250 employés' },
-      label: { fr: '‍️👫👭 Plus de 250 employés' },
+      label: { fr: '👫👭👫 Plus de 250 employés' },
       next: {
         default: 'track_sectors',
         exceptions: nextExceptions

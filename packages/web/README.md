@@ -389,14 +389,14 @@ The `TeeApp` widget can the import the json file as a static, and they are then 
 // ./src/TeeApp.ce.vue
 
 <script>
-  import jsonDataset from '@public/data/generated/dataset_out.json'
-  const yamlPrograms = deployMode ? jsonDataset : process.env.programs
+  import jsonDataset from '../public/data/generated/dataset_out.json'
   import { programsStore } from './stores/programs'
+  const programsFromJson = jsonDataset
   const programs = programsStore()
   ...
   onBeforeMount(() => {
     ...
-    programs.setYamlDataset(yamlPrograms)
+    programs.setDataset(programsFromJson)
     ...
   })
   ...

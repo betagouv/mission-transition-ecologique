@@ -1,12 +1,12 @@
 import { ProgramData } from '@tee/web/src/types/programTypes'
 import { makeProgram } from './testing'
-import { filterPrograms, ELIGIBILITY_RULE_NAME } from '../src/domain/eligibility'
+import { filterPrograms, FILTERING_RULE_NAME } from '../src/domain/eligibility'
 import { Result, ResultNS } from 'true-myth'
 
 const rulesBoilerplate = {
   entreprise: null,
   'entreprise . effectif': null,
-  [ELIGIBILITY_RULE_NAME]: 'entreprise . effectif > 0'
+  [FILTERING_RULE_NAME]: 'entreprise . effectif > 0'
 }
 
 // As we do not use ES6 modules, I could not find more elegant way to import Ok
@@ -30,7 +30,7 @@ function expectToBeErr<T, E>(v: Result<T, E>): asserts v is Err<T, E> {
 
 describe(`
 GIVEN  input data
-  AND  a list of programs with a rule named after ELIGIBILITY_RULE_NAME with a valid publicodes expression
+  AND  a list of programs with a rule named after FILTERING_RULE_NAME with a valid publicodes expression
 WHEN   filtering the programs with data that allows to fully evaluate all the rules (no missing data)
 EXPECT that the filtering only keeps programs that are eligible (rule
        evaluated to true)
@@ -102,7 +102,7 @@ EXPECT that the filtering only keeps programs that are eligible (rule
 
   const makePrograms = (rules: string[]): ProgramData[] => {
     const progs = rules.map((r) => {
-      const completeRules = { ...rulesBoilerplate, [ELIGIBILITY_RULE_NAME]: r }
+      const completeRules = { ...rulesBoilerplate, [FILTERING_RULE_NAME]: r }
       return makeProgram(completeRules)
     })
     return progs
@@ -129,7 +129,7 @@ EXPECT that the filtering only keeps programs that are eligible (rule
 describe(`
   GIVEN  a list of programs
   WHEN   the data does not allow to fully evaluate the eligibility rule (missing data)
-  EXPECT that filterPrograms returns an error
+  EXPECT that filterPrograms does not filter out the programs
 `, () => {
   test('undefined rule', () => {
     const programs = [makeProgram(rulesBoilerplate)]
@@ -137,8 +137,8 @@ describe(`
 
     const result = filterPrograms(programs, inputData)
 
-    expectToBeErr(result)
-    // expect(result.value.length).toBe(1)
+    expectToBeOk(result)
+    expect(result.value.length).toBe(1)
   })
 })
 
@@ -162,7 +162,7 @@ error`, () => {
     },
     {
       name: "keep 'age', discard 'extraProperty'",
-      rules: { age: 0, [ELIGIBILITY_RULE_NAME]: 'age = 0' },
+      rules: { age: 0, [FILTERING_RULE_NAME]: 'age = 0' },
       inputData: { age: 0, extraProperty: 0 }
     }
   ]
@@ -183,7 +183,7 @@ describe(`
 `, () => {
   test('invalid rule', () => {
     var result = filterPrograms(
-      [makeProgram({ [ELIGIBILITY_RULE_NAME]: 'invalid Publicode expression' })],
+      [makeProgram({ [FILTERING_RULE_NAME]: 'invalid Publicode expression' })],
       {}
     )
 

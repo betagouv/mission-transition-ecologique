@@ -1,0 +1,56 @@
+titre: Mission Stratégie Environnement
+promesse: Inscrire la transition énergétique et écologique dans la stratégie de votre
+  entreprise
+description: Bénéficiez d'une mission de conseil ciblée sur 13 jours pour enclencher
+  votre transition énergétique et écologique, l’inscrire dans la stratégie de votre
+  entreprise et construire votre feuille de route jusqu’à 2030.
+illustration: images/TEE_energie_verte.png
+opérateur de contact: Bpifrance
+url: https://www.bpifrance.fr/catalogue-offres/transition-ecologique-et-energetique/mission-strategie-environnement
+nature de l'aide: accompagnement
+coût de l'accompagnement: 5 000 € HT
+durée de l'accompagnement: 13 jours
+objectifs:
+- Sensibiliser et renforcer les compétences de vos collaborateurs sur les sujets liés
+  la transition environnementale.
+- Définir la raison d’être de votre entreprise.
+- Evaluer les impacts de l’activité de votre entreprise sur l’environnement.
+- Etablir les risques et opportunités de la transition environnementale sur l’activité
+  de votre entreprise.
+- Définir la feuille de route jusqu’à 2030 de votre entreprise pour vous guider dans
+  la transition énergétique et écologique.
+publicodes:
+  afficher le dispositif si:
+    toutes ces conditions:
+    - règles d'éligibilité
+    - secteur d'activité prioritaire
+    - est dans les objectifs de l'entreprise
+  règles d'éligibilité:
+    toutes ces conditions:
+    - entreprise . effectif >= 10
+  secteur d'activité prioritaire:
+    une de ces conditions:
+    - entreprise . code NAF niveau 1 . est A
+    - entreprise . code NAF niveau 1 . est B
+    - entreprise . code NAF niveau 1 . est C
+    - entreprise . code NAF niveau 1 . est D
+    - entreprise . code NAF niveau 1 . est E
+    - entreprise . code NAF niveau 1 . est F
+    - entreprise . code NAF niveau 1 . est G
+    - entreprise . code NAF niveau 1 . est H
+    - entreprise . code NAF niveau 1 . est I
+    - entreprise . code NAF niveau 1 . est J
+    - entreprise . code NAF niveau 1 . est K
+    - entreprise . code NAF niveau 1 . est L
+    - entreprise . code NAF niveau 1 . est M
+    - entreprise . code NAF niveau 1 . est N
+    - entreprise . code NAF niveau 1 . est O
+    - entreprise . code NAF niveau 1 . est P
+    - entreprise . code NAF niveau 1 . est Q
+    - entreprise . code NAF niveau 1 . est R
+    - entreprise . code NAF niveau 1 . est S
+    - entreprise . code NAF niveau 1 . est T
+    - entreprise . code NAF niveau 1 . est U
+  est dans les objectifs de l'entreprise:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est former ou recruter

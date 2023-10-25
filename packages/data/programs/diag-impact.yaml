@@ -1,0 +1,41 @@
+titre: Diag Impact
+promesse: Développez une stratégie RSE pertinente pour votre entreprise
+description: Bénéficiez d'un accompagnement pour l'intégration des enjeux RSE/ESG
+  à la stratégie de votre entreprise, l'évaluation de l'impact de votre entreprise
+  sur les parties prenantes ou encore l'évaluation de l'impact de votre modèle d'affaires.
+illustration: images/TEE_eolienne.png
+opérateur de contact: Bpifrance
+url: https://www.bpifrance.fr/catalogue-offres/soutien-a-linnovation/diagnostic-impact
+nature de l'aide: accompagnement
+coût de l'accompagnement: 5 000 € HT
+durée de l'accompagnement: 5 jours de prestation répartis sur 3 mois
+objectifs:
+- Bénéficier d’une analyse de votre entreprise par des experts en RSE référencées
+  par Bpifrance.
+- Identifier les enjeux prioritaires de votre entreprise et évaluer votre modèle d’affaires
+  et ses impacts positifs et négatifs sur vos parties prenantes, la société et l’environnement.
+- Repartez avec des recommandations sur les enjeux RSE prioritaires, et sur les opportunités,
+  les risques et les ressources à mobiliser pour une stratégie à impact pertinente.
+publicodes:
+  afficher le dispositif si:
+    toutes ces conditions:
+    - règles d'éligibilité
+    - secteur d'activité prioritaire
+    - est dans les objectifs de l'entreprise
+  règles d'éligibilité:
+    toutes ces conditions:
+    - entreprise . effectif >= 1
+    - entreprise . effectif <= 250
+  secteur d'activité prioritaire:
+    une de ces conditions:
+    - entreprise . code NAF niveau 1 . est C
+    - entreprise . code NAF niveau 1 . est G
+    - entreprise . code NAF niveau 1 . est J
+    - entreprise . code NAF niveau 1 . est K
+    - entreprise . code NAF niveau 1 . est M
+    - entreprise . code NAF niveau 1 . est Q
+    - entreprise . code NAF niveau 1 . est S
+  est dans les objectifs de l'entreprise:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est mon impact environnemental
+    - questionnaire . objectif prioritaire . est l'écoconception

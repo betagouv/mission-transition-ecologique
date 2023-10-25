@@ -1,0 +1,55 @@
+titre: Diag Perf'Immo
+promesse: Réduisez la consommation énergétique de vos bâtiments
+description: Bénéficiez des conseils d'un expert pour réduire les consommations énergétiques
+  de vos bâtiments et établir une trajectoire conforme au Décret Tertiaire.
+illustration: images/TEE_eolienne.png
+opérateur de contact: Bpifrance
+autres opérateurs:
+- ADEME
+url: https://www.bpifrance.fr/catalogue-offres/transition-ecologique-et-energetique/diag-perfimmo
+nature de l'aide: accompagnement
+coût de l'accompagnement: entre 3 000 € HT et 15 000 € HT
+durée de l'accompagnement: variable selon la surface et la complexité du site
+objectifs:
+- Collecter et analyser des informations clés existantes (plans, équipements techniques,
+  occupation, données de consommation énergétique, etc.)
+- Effectuer des observations sur site et réaliser des mesures complémentaires si nécessaire.
+- Etablir un bilan énergétique et définir des objectifs de performance énergétique
+  conformes aux exigences du Décret Tertiaire
+- Elaborer des scénarios d’amélioration chiffrés pour l’atteinte de ces objectifs
+- Être accompagné dans la réalisation de la déclaration sur la plateforme OPERAT le
+  cas échéant
+publicodes:
+  afficher le dispositif si:
+    toutes ces conditions:
+    - règles d'éligibilité
+    - secteur d'activité prioritaire
+    - est dans les objectifs de l'entreprise
+  règles d'éligibilité:
+    toutes ces conditions:
+    - entreprise . effectif >= 1
+  secteur d'activité prioritaire:
+    une de ces conditions:
+    - entreprise . code NAF niveau 1 . est B
+    - entreprise . code NAF niveau 1 . est C
+    - entreprise . code NAF niveau 1 . est D
+    - entreprise . code NAF niveau 1 . est E
+    - entreprise . code NAF niveau 1 . est F
+    - entreprise . code NAF niveau 1 . est G
+    - entreprise . code NAF niveau 1 . est H
+    - entreprise . code NAF niveau 1 . est I
+    - entreprise . code NAF niveau 1 . est K
+    - entreprise . code NAF niveau 1 . est L
+    - entreprise . code NAF niveau 1 . est M
+    - entreprise . code NAF niveau 1 . est N
+    - entreprise . code NAF niveau 1 . est P
+    - entreprise . code NAF niveau 1 . est Q
+    - entreprise . code NAF niveau 1 . est R
+    - entreprise . code NAF niveau 1 . est S
+    - entreprise . code NAF niveau 1 . est T
+    - entreprise . code NAF niveau 1 . est U
+  est dans les objectifs de l'entreprise:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est rénover mon bâtiment
+    - questionnaire . objectif prioritaire . est ma performance énergétique
+    - questionnaire . objectif prioritaire . est mon impact environnemental

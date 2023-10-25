@@ -247,7 +247,7 @@ const publicPath = `${deployUrl}${metaEnv.BASE_URL}`
 // @ts-ignore
 // console.log('TeeApp - process.env :', process.env)
 // @ts-ignore
-const yamlPrograms = jsonDataset
+const programsFromJson = jsonDataset
 // console.log('TeeApp - yamlPrograms :', yamlPrograms)
 
 interface Props {
@@ -294,7 +294,7 @@ onBeforeMount(() => {
 
   // load dataset to pinia store
   // programs.setDataset(props.datasetUrl, deployMode, deployUrl)
-  programs.setYamlDataset(yamlPrograms)
+  programs.setDataset(programsFromJson)
 
   // inject style link in html head if not present
   const href = deployMode ? `${deployUrl}/style.css` : ''
