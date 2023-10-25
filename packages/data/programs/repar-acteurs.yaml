@@ -1,0 +1,36 @@
+titre: Repar'acteurs
+promesse: Rejoignez un réseau de professionnels de la réparation, devenez artisan
+  Répar’acteurs !
+description: Les Répar’acteurs référencent les professionnels de la réparation et
+  du dépannage partout en France. Rejoignez  le réseau et devenez un ambassadeur de
+  l’économie circulaire auprès de vos clients et au sein de votre territoire.
+illustration: images/TEE_eolienne.png
+opérateur de contact: CMA
+url: https://www.artisanat.fr/nous-connaitre/vous-accompagner/reparacteurs
+nature de l'aide: accompagnement
+coût de l'accompagnement: Gratuit
+durée de l'accompagnement: 1/2 journée
+objectifs:
+- Intégrez le réseau national d’ambassadeurs des entreprises artisanales de la réparation
+  et bénéficiez du référencement géolocalisé gratuit dans l’annuaire national de la
+  réparation.
+- Affichez le logo Répar’acteurs dans votre boutique « Je répare … et ça repart !
+  » et mettez à l’honneur le réflexe de la réparation avant tout remplacement par
+  un objet neuf.
+- Accédez à la veille d'informations sur l'actualité et aux formations pour développer
+  votre entreprise artisanale
+publicodes:
+  afficher le dispositif si:
+    toutes ces conditions:
+    - règles d'éligibilité
+    - secteur d'activité prioritaire
+    - est dans les objectifs de l'entreprise
+  règles d'éligibilité:
+    toutes ces conditions:
+    - entreprise . effectif <= 249
+  secteur d'activité prioritaire:
+    une de ces conditions:
+    - entreprise . code NAF niveau 1 . est G
+  est dans les objectifs de l'entreprise:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est la gestion des déchets

@@ -7,7 +7,7 @@ export const help = {
     bgColor: '#FACF35', // 'fr-callout--green-emeraude',
     title: { fr : 'En avant !' },
     imageLeft: 'images/TEE-onboarding.png',
-    description: { fr : 'Nous allons vous poser quelques questions pour mieux vous connaître et pouvoir vous proposer des actions personnalisées.' },
+    description: { fr : 'Nous allons vous poser quelques questions pour pouvoir identifier les accompagnements et les financements dont vous pouvez bénéficier.' },
     hintIcon: 'fr-icon-timer-line'
   },
   interface: {

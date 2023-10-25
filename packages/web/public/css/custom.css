@@ -92,6 +92,7 @@ WARNING :
 }
 .tee-track-callout-img  > .fr-responsive-img {
   max-height: 150px;
+  width: auto;
 }
 
 @media (min-width: 48em) {
@@ -162,6 +163,11 @@ WARNING :
   font-weight: bold;
 }
 .tee-program-resume {
+  color: #000091; 
+  font-size: 1.7rem;
+  line-height: 2rem;
+}
+.tee-program-info {
   color: #000091; 
 }
 .tee-program-badge-image {

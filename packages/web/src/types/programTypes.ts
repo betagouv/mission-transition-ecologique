@@ -9,11 +9,12 @@
 
 export enum ProgramAidType {
   acc = 'accompagnement',
+  train = 'formation',
   fund = 'financement',
   loan = 'prêt'
 }
 
-enum ConditionOperators {
+export enum ConditionOperators {
   or = 'or',
   and = 'and',
   is = '==',
@@ -36,6 +37,7 @@ export interface ProgramData {
   titre: string
   promesse: string
   description: string
+  'description longue'?: string
   illustration: string
   objectifs: string[]
   'opérateur de contact': string
@@ -43,7 +45,10 @@ export interface ProgramData {
   "nature de l'aide": ProgramAidType
 
   "coût de l'accompagnement"?: string
+  "durée de l'accompagnement"?: string
   'montant du financement'?: string
+  'montant du prêt'?: string
+  'durée du prêt'?: string
   'taux du prêt'?: string
   conditions?: Condition[]
   url?: string

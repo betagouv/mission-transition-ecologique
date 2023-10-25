@@ -54,7 +54,7 @@
       :id="trackId"
       class="fr-grid-row">
       <div 
-        :class="`fr-col${track.imageRight ? ' fr-col-md-6 fr-col-lg-6 tee-track-has-image-right' : ''}`">
+        :class="`fr-col${track.imageRight ? ' fr-col-md-7 fr-col-lg-7 tee-track-has-image-right' : ''}`">
         <!-- UNCOMPLETED QUESTIONNAIRE -->
         <div
           :class="`fr-grid-row fr-grid-row--gutters ${track.bgColor ? 'fr-p-5v fr-p-sm-8v fr-p-md-20v' : ''}`"
@@ -86,7 +86,7 @@
                   <!-- CALLOUT HEADER -->
                   <h2
                     v-if="track.callout.header"
-                    :style="`${track.callout.headerStyle} || 'color: var(--text-default-info);'`"
+                    :style="`${track.callout.headerStyle || 'color: var(--text-default-info);'}`"
                     class="tee-track-callout-header">
                     {{ track.callout.header[choices.lang]}}
                   </h2>
@@ -94,20 +94,20 @@
                   <h1
                     v-if="track.callout.bigTitle"
                     class="fr-mb-3 tee-track-callout-big-title"
-                    :style="`${track.callout.titleStyle}`">
+                    :style="`${track.callout.titleStyle || ''}`">
                     {{ track.callout.title[choices.lang]}}
                   </h1>
                   <h3
                     v-else
                     class="fr-callout__title tee-track-callout-title"
-                    :style="`${track.callout.titleStyle}`">
+                    :style="`${track.callout.titleStyle || ''}`">
                     {{ track.callout.title[choices.lang]}}
                   </h3>
                   <!-- CALLOUT DESCRIPTION -->
                   <p 
                     v-if="track.callout.description"
                     class="fr-callout__text tee-track-callout-description"
-                    :style="`${track.callout.descriptionStyle}`">
+                    :style="`${track.callout.descriptionStyle || ''}`">
                     {{ track.callout.description[choices.lang]}}
                   </p>
                   <!-- CALLOUT HINT -->
@@ -299,7 +299,7 @@
                 class="fr-btn-fullwidth fr-btn-align-center"
                 :label="option.label[choices.lang]"
                 size="large"
-                style="font-weight: 1000;"
+                style="font-weight: 1000; min-height: 3.5rem; font-size: 1.5rem;"
                 @click="updateSelection(option, idx); saveSelection()"
               />
             </div>
@@ -379,7 +379,7 @@
       <!-- TRACK IMAGE RIGHT IF ANY -->
       <div 
         v-if="track.imageRight"
-        class="fr-col-12 fr-col-md-6 fr-col-lg-6 tee-track-image-right">
+        class="fr-col-12 fr-col-md-5 fr-col-lg-5 tee-track-image-right">
         <img 
           class="fr-responsive-img"
           :src="`${choices.publicPath}${track.imageRight}`"
@@ -426,7 +426,7 @@ const props = defineProps<Props>()
 
 const colsOptions: ColsOptions = {
   buttons: 12,
-  simpleButtons: 12,
+  simpleButtons: 10,
   input: 12,
   cards: 4,
   form: 8,
@@ -483,7 +483,7 @@ const selectionValues = computed(() => {
 
 const colsWidth = computed(() => {
   let divSize: string | number
-  const divSizeLarge = colsOptionsLarge[renderAs]
+  let divSizeLarge = colsOptionsLarge[renderAs]
 
   if (props.isCompleted) {
     // full width of 10 if completed track
@@ -494,7 +494,8 @@ const colsWidth = computed(() => {
     divSize = rawDiv < 2 ? 3 : rawDiv >= 12 ? colsOptions[renderAs] : rawDiv
   } else {
     if (customColWidth) {
-      // if defined in choices*.ts
+      // if defined in track*.ts
+      divSizeLarge = customColWidth
       divSize = customColWidth
     } else {
       // default values hard written 

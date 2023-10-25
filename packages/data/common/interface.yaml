@@ -11,16 +11,41 @@ entreprise . secteur d'activité:
     est artisanat:
     est autre secteur:
 
+entreprise . code NAF niveau 1:
+  avec:
+    est A:
+    est B:
+    est C:
+    est D:
+    est E:
+    est F:
+    est G:
+    est H:
+    est I:
+    est J:
+    est K:
+    est L:
+    est M:
+    est N:
+    est O:
+    est P:
+    est Q:
+    est R:
+    est S:
+    est T:
+    est U:
+
+
 
 questionnaire:
 
 questionnaire . objectif prioritaire:
   avec:
-    est impact carbone:
-    est investir durable: # consolidation
-    est faire des économies:
-    est ma performance environnementale: # ecoconception
-    est la gestion des déchets:
-    est la mobilité durable:
+    est mon impact environnemental:
     est ma performance énergétique:
+    est diminuer ma consommation d'eau:
     est rénover mon bâtiment:
+    est la mobilité durable:
+    est la gestion des déchets:
+    est l'écoconception:
+    est former ou recruter:
