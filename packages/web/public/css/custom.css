@@ -164,6 +164,11 @@ WARNING :
 }
 .tee-program-resume {
   color: #000091; 
+  font-size: 1.7rem;
+  line-height: 2rem;
+}
+.tee-program-info {
+  color: #000091; 
 }
 .tee-program-badge-image {
   text-transform: inherit;
