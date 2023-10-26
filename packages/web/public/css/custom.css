@@ -169,6 +169,7 @@ WARNING :
 }
 .tee-program-info {
   color: #000091; 
+  font-size: .8rem;
 }
 .tee-program-badge-image {
   text-transform: inherit;

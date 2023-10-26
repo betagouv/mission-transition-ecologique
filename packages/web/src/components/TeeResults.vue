@@ -194,6 +194,10 @@ const getCostInfos = (program: ProgramData) => {
   // Translate prefix
   prefix = choices.t(prefix)
 
+  // No splitted amounts (non-breakable spaces in texts like '10 000 €')
+  text = text?.replace(/\s0/g, '\u00A00')
+  text = text?.replace(/\s€/g, '\u00A0€')
+
   return `${prefix} : ${text}`
 }
 

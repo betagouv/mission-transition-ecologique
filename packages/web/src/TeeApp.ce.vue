@@ -105,7 +105,7 @@
         <!-- TRACKS -->
         <div
           id="tee-app-tracks"
-          :class="`${tracks.currentStep > 1 ? 'fr-tee-add-padding' :''} ${debugBool ? 'fr-col-7' : tracks.currentStep === 1 ? 'fr-col-12 fr-col-xl-12' : 'fr-col fr-col-lg-8 fr-col-xl-6' } ${debugBool ? '' : 'fr-grid-row--center'}`"
+          :class="`${tracks.currentStep > 1 ? 'fr-tee-add-padding' :''} ${getColumnsWidth} ${debugBool ? '' : 'fr-grid-row--center'}`"
           >
           <div
             v-for="(track, index) in tracks.usedTracks"
@@ -212,11 +212,13 @@ import '@gouvfr/dsfr/dist/core/core.main.min.css'               // Le CSS minima
 import jsonDataset from '../public/data/generated/dataset_out.json'
 // console.log('TeeApp > jsonDataset :', jsonDataset)
 
-import { ref, onBeforeMount } from 'vue'
+import { ref, computed, onBeforeMount } from 'vue'
 
 import { tracksStore } from './stores/tracks'
 import { choicesStore } from './stores/choices'
 import { programsStore } from './stores/programs'
+
+import { TrackComponents } from './types'
 
 // @ts-ignore
 import TeeMatomo from './components/TeeMatomo.vue'
@@ -285,6 +287,18 @@ window.stores = { tracks, choices, programs }
 const changeDebug = (ev: any) => {
   debugBool.value = ev
 }
+
+const getColumnsWidth = computed(() => {
+  const currentTrack = tracks.getLastTrack
+  const colsDebug = 'fr-col-7'
+  const colsStart = 'fr-col-12 fr-col-xl-12'
+  const colsTracks = 'fr-col fr-col-lg-8 fr-col-xl-6'
+  const colsResults = 'fr-col fr-col-lg-10 fr-col-xl-8'
+  if (debugBool.value) return colsDebug
+  else if (tracks.currentStep === 1) return colsStart
+  else if (currentTrack.component === TrackComponents.results) return colsResults
+  else return colsTracks
+})
 
 onBeforeMount(() => {
   // console.log('TeeApp > props.seed :', props.seed)
