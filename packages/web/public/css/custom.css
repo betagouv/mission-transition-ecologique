@@ -171,6 +171,10 @@ WARNING :
   color: #000091; 
   font-size: .8rem;
 }
+.tee-program-info span::before {
+  font-size: .8rem;
+  --icon-size: 1rem;
+}
 .tee-program-badge-image {
   text-transform: inherit;
   color: white;

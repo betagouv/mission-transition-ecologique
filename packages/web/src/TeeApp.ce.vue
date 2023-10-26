@@ -293,7 +293,7 @@ const getColumnsWidth = computed(() => {
   const colsDebug = 'fr-col-7'
   const colsStart = 'fr-col-12 fr-col-xl-12'
   const colsTracks = 'fr-col fr-col-lg-8 fr-col-xl-6'
-  const colsResults = 'fr-col fr-col-lg-10 fr-col-xl-8'
+  const colsResults = 'fr-col fr-col-lg-8 fr-col-xl-8'
   if (debugBool.value) return colsDebug
   else if (tracks.currentStep === 1) return colsStart
   else if (currentTrack.component === TrackComponents.results) return colsResults
