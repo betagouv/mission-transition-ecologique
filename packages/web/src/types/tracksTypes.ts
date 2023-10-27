@@ -146,7 +146,7 @@ export interface TracksList {
 
 export interface UsedTrack {
   id: string | any,
-  component: TrackComponents,
+  component: TrackComponents | string,
   category?: string,
   final?: boolean,
   completed: boolean,
