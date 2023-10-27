@@ -44,15 +44,16 @@ export const frDict = {
     programDescription: 'Au programme :',
     programProviders: 'Contact',
     programType: "Nature de l'aide",
-    programDuration: 'Prestation'
+    programDuration: 'Prestation',
+    programLoanDuration: 'Durée du prêt'
   },
   programCosts: {
     cost: "Coût reste à charge",
     costPrefix: 'Coût',
     aid: 'Montant du financement',
     aidPrefix: "Montant de l'aide",
-    loan: 'Taux du prêt',
-    loanPrefix: 'Taux du prêt'
+    loan: 'Montant du prêt',
+    loanRate: 'Taux du prêt'
   },
   enterprise: {
     select: 'Sélectionnez votre entreprise',

@@ -1,0 +1,46 @@
+titre: Diag Décarbon'Action
+promesse: Réalisez un bilan de gaz à effet de serre et réduisez l’empreinte carbone
+  de votre entreprise
+description: Bénéficiez des conseils d'un expert pour mesurer les émissions de gaz
+  à effet de serre de votre entreprise, définissez un plan d’actions pour les réduire
+  de manière durable, mettez en œuvre vos premières actions et valorisez-les.
+illustration: images/TEE_energie_verte.png
+opérateur de contact: Bpifrance
+autres opérateurs:
+- ADEME
+url: https://diag.bpifrance.fr/diag-decarbon-action
+nature de l'aide: accompagnement
+coût de l'accompagnement: 4 000 € HT après subvention de 60%
+durée de l'accompagnement: 12 jours de prestation répartis sur 6 à 8 mois
+objectifs:
+- Mesurer les émissions de gaz à effet de serre de votre entreprise sur l'ensemble
+  de votre chaîne de valeur (scopes 1, 2 et 3).
+- Elaborer votre plan d'action pour décarboner votre activité.
+- Mettre en place les premières actions de la conduite du changement au sein de votre
+  entreprise (alignement des équipes, formation, communication, etc.) et avec vos
+  principaux clients et fournisseurs.
+publicodes:
+  afficher le dispositif si:
+    toutes ces conditions:
+    - règles d'éligibilité
+    - secteur d'activité prioritaire
+    - est dans les objectifs de l'entreprise
+  règles d'éligibilité:
+    toutes ces conditions:
+    - entreprise . effectif <= 249
+  secteur d'activité prioritaire:
+    une de ces conditions:
+    - entreprise . code NAF niveau 1 . est B
+    - entreprise . code NAF niveau 1 . est C
+    - entreprise . code NAF niveau 1 . est D
+    - entreprise . code NAF niveau 1 . est E
+    - entreprise . code NAF niveau 1 . est F
+    - entreprise . code NAF niveau 1 . est G
+    - entreprise . code NAF niveau 1 . est H
+    - entreprise . code NAF niveau 1 . est I
+    - entreprise . code NAF niveau 1 . est L
+    - entreprise . code NAF niveau 1 . est R
+  est dans les objectifs de l'entreprise:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est ma performance énergétique
+    - questionnaire . objectif prioritaire . est mon impact environnemental
