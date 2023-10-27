@@ -28,7 +28,7 @@
         </div>
         <div class="fr-col-4">
           <h6 class="fr-mb-1v"> route : </h6>
-          <pre><code>{{ route }} </code></pre>
+          <pre><code>{{ nav.routeVal }} </code></pre>
         </div>
       </div>
     </div>
@@ -216,12 +216,13 @@ import '@gouvfr/dsfr/dist/core/core.main.min.css'               // Le CSS minima
 import jsonDataset from '../public/data/generated/dataset_out.json'
 // console.log('TeeApp > jsonDataset :', jsonDataset)
 
-import { ref, onBeforeMount } from 'vue'
-import { useRoute } from 'vue-router'
+import { ref, onBeforeMount, onMounted } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 
 import { tracksStore } from './stores/tracks'
 import { choicesStore } from './stores/choices'
 import { programsStore } from './stores/programs'
+import { browserStore } from './stores/browser'
 
 // @ts-ignore
 import TeeMatomo from './components/TeeMatomo.vue'
@@ -239,7 +240,7 @@ import TeeProgramDetail from './components/TeeProgramDetail.vue'
 import TeeCredits from './components/TeeCredits.vue'
 
 // const appId = 'gov-aid-tree-app'
-
+const router = useRouter()
 const route = useRoute()
 
 // @ts-ignore
@@ -275,6 +276,7 @@ const props = defineProps<Props>()
 const tracks = tracksStore()
 const choices = choicesStore()
 const programs = programsStore()
+const nav = browserStore()
 
 let trackElement = ref(null)
 // let teeAppTopPosition = ref()
@@ -367,6 +369,13 @@ onBeforeMount(() => {
   tracks.addToUsedTracks(props.seed, props.seed)
 })
 
+onMounted(async () => {
+  // cf: https://stackoverflow.com/questions/69495211/vue3-route-query-empty
+  await router.isReady()
+  console.log('\nTeeApp > mounted > route :', route)
+  nav.setRouter(router)
+  nav.setRoute(route)
+})
 </script>
 
 <!-- <style lang="scss">
