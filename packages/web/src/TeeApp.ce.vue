@@ -26,6 +26,10 @@
         <div class="fr-col-4">
           <h6 class="fr-mb-1v"> programs.programDetail : <code>{{ programs.programDetail }} </code></h6>
         </div>
+        <div class="fr-col-4">
+          <h6 class="fr-mb-1v"> route : </h6>
+          <pre><code>{{ route }} </code></pre>
+        </div>
       </div>
     </div>
 
@@ -213,6 +217,7 @@ import jsonDataset from '../public/data/generated/dataset_out.json'
 // console.log('TeeApp > jsonDataset :', jsonDataset)
 
 import { ref, onBeforeMount } from 'vue'
+import { useRoute } from 'vue-router'
 
 import { tracksStore } from './stores/tracks'
 import { choicesStore } from './stores/choices'
@@ -234,6 +239,8 @@ import TeeProgramDetail from './components/TeeProgramDetail.vue'
 import TeeCredits from './components/TeeCredits.vue'
 
 // const appId = 'gov-aid-tree-app'
+
+const route = useRoute()
 
 // @ts-ignore
 const metaEnv = import.meta.env

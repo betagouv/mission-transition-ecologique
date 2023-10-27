@@ -1,6 +1,7 @@
 // import { createApp, defineCustomElement } from 'vue'
 import { createPinia } from 'pinia'
 import { defineCustomElement } from './defineCustomElementWithStyles'
+import { createRouter, createWebHistory } from 'vue-router'
 
 // import App from './App.ce.vue'
 import TeeApp from './TeeApp.ce.vue'
@@ -35,6 +36,11 @@ addIcons(
   MdCheckboxOutlined,
 )
 
+// Instantiate router
+const router = createRouter({
+  history: createWebHistory(),
+  routes: []
+})
 
 // Styles imports
 // import './assets/main.css'
@@ -62,7 +68,8 @@ const TeeAppComponent = defineCustomElement(TeeApp, {
     { plugin: VueDsfr },
     // { plugin: VueDsfr, options: { icons: Object.values(icons) }},
     // @ts-ignore
-    { plugin: store }
+    { plugin: store },
+    { plugin: router }
   ],
   comps: [
     { name: 'v-icon', comp: OhVueIcon }
@@ -71,6 +78,6 @@ const TeeAppComponent = defineCustomElement(TeeApp, {
 
 customElements.define('gov-aid-tree-app', TeeAppComponent)
 
-// const app = createApp(SimpleSample)
-// app.use(createPinia())
+// const app = createApp(TeeApp)
+// app.use(store)
 // app.mount('#app')
