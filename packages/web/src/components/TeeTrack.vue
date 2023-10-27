@@ -393,7 +393,7 @@
 
 <script setup lang="ts">
 
-import { ref, computed, watch, toRaw } from 'vue'
+import { ref, computed, watch, toRaw, onBeforeMount } from 'vue'
 
 import { tracksStore } from '../stores/tracks'
 import { choicesStore } from '../stores/choices'
@@ -550,7 +550,13 @@ const updateSelection = (option: any, index: number, forceRemove: boolean = fals
   needRemove.value = remove
   // selectedOptions.value = option
 
-  // console.log('TeeTrack > updateSelection > selectedOptions.value :', selectedOptions.value)
+  console.log('TeeTrack > updateSelection > selectedOptions.value :', selectedOptions.value)
+
+  // update query
+  nav.updateQuery({
+    trackId: props.trackId,
+    selection: [...selectedOptions.value.map(i => i.value)] 
+  })
 
   // Direct to next track
   const directToNext: string[] = ['cards']
@@ -681,9 +687,6 @@ const saveSelection = () => {
   }
 
   scrollToTop(props.trackElement, props.trackId)
-  nav.updateQuery({
-    trackId: props.trackId
-  })
 }
 
 const backToPreviousTrack = async () => {
@@ -698,4 +701,10 @@ const backToPreviousTrack = async () => {
 
   scrollToTop(props.trackElement, props.trackId)
 }
+
+onBeforeMount(()=> {
+  nav.setQuery({
+    trackId: props.trackId
+  })
+})
 </script>

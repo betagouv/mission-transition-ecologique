@@ -379,9 +379,6 @@ onMounted(async () => {
   console.log('\nTeeApp > mounted > route :', route)
   nav.setRouter(router)
   nav.setRoute(route)
-  nav.setQuery({
-    seedTrack: props.seed
-  })
 })
 </script>
 
