@@ -6,6 +6,7 @@ export const browserStore = defineStore('browser', () => {
   // route
   const routerRef = ref<any>()
   const routeRef = ref<any>()
+  const userQueries = ref()
 
   // getters
   const routeVal = computed(() => {
@@ -23,16 +24,21 @@ export const browserStore = defineStore('browser', () => {
     console.log('store.browser > setRoute > route : ', route)
     routeRef.value = route 
   }
-
   function setQuery(query: object) {
-    // browserQuery.value = query
+    userQueries.value = query
+  }
+  function updateQuery(query: object) {
+    const q = {...userQueries.value, ...query}
+    userQueries.value = q
   }
 
   return {
     routeRef,
     routeVal,
+    userQueries,
     setRouter,
     setRoute,
-    setQuery
+    setQuery,
+    updateQuery
   }
 })

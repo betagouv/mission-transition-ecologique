@@ -399,6 +399,7 @@ import { tracksStore } from '../stores/tracks'
 import { choicesStore } from '../stores/choices'
 import { analyticsStore } from '../stores/analytics'
 // import type { DsfrButton } from '@gouvminint/vue-dsfr/types'
+import { browserStore } from '../stores/browser'
 
 // @ts-ignore
 import type { Track, TrackOptions, NextTrackRule, ColsOptions } from '@/types/index'
@@ -451,6 +452,7 @@ const noNeedForNext = [
 const tracks = tracksStore()
 const choices = choicesStore()
 const analytics = analyticsStore()
+const nav = browserStore()
 
 const selectedOptionsIndices = ref<number[]>([])
 const selectedOptions = ref<any[]>([])
@@ -634,7 +636,6 @@ const saveSelection = () => {
   const nextExceptions = optionNext?.exceptions
   const defaultNext = track?.next
   
-  
   // @ts-ignore
   let next = !optionNext || allowMultiple ? defaultNext : optionNext
   
@@ -680,6 +681,9 @@ const saveSelection = () => {
   }
 
   scrollToTop(props.trackElement, props.trackId)
+  nav.updateQuery({
+    trackId: props.trackId
+  })
 }
 
 const backToPreviousTrack = async () => {

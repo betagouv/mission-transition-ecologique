@@ -20,15 +20,19 @@
       v-if="debugBool">
       <h5>DEBUG - TeeApp</h5>
       <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
-        <div class="fr-col-4">
+        <div class="fr-col-3">
           <h6 class="fr-mb-1v"> tracks.currentStep : <code>{{ tracks.currentStep }} </code></h6>
         </div>
-        <div class="fr-col-4">
+        <div class="fr-col-3">
           <h6 class="fr-mb-1v"> programs.programDetail : <code>{{ programs.programDetail }} </code></h6>
         </div>
-        <div class="fr-col-4">
-          <h6 class="fr-mb-1v"> route : </h6>
+        <div class="fr-col-3">
+          <h6 class="fr-mb-1v"> routeVal : </h6>
           <pre><code>{{ nav.routeVal }} </code></pre>
+        </div>
+        <div class="fr-col-3">
+          <h6 class="fr-mb-1v"> userQueries : </h6>
+          <pre><code>{{ nav.userQueries }} </code></pre>
         </div>
       </div>
     </div>
@@ -375,6 +379,9 @@ onMounted(async () => {
   console.log('\nTeeApp > mounted > route :', route)
   nav.setRouter(router)
   nav.setRoute(route)
+  nav.setQuery({
+    seedTrack: props.seed
+  })
 })
 </script>
 
