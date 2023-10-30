@@ -46,14 +46,14 @@ export const help = {
       }
     },
     {
-      disabled: true,
+      disabled: false,
       value: { user_help: 'direct' },
-      title: { fr: "Résultats" },
-      label: { fr: "Les résultas" },
-      resume: { fr: 'Accès direct à tous les résultats' },
+      title: { fr: "Catalogue" },
+      label: { fr: "Catalogue de dispositifs" },
+      resume: { fr: 'Accès direct à tous les dispositifs' },
       hintImage: { fr: '0 min. chrono !' },
       hintImageIcon: 'fr-icon-timer-line',
-      imageTop: 'images/tracks/j-ai-un-obectif.svg',
+      imageTop: 'images/tracks/tout-le-catalogue.svg',
       next: {
         default: 'track_results'
       }

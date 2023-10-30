@@ -193,10 +193,12 @@
         class="fr-grid-row fr-grid-row-gutters">
         <div class="fr-col">
           <TeeProgramDetail
-            :program="programs.getProgramById(programs.programDetail)"
-            :track-config="tracks.getTrack(programs.programDetailConfig)"
+            :program-id="programs.programDetail"
+            :track-id="programs.programDetailConfig"
             :debug="debugBool"
             />
+            <!-- :program="programs.getProgramById(programs.programDetail)"
+            :track-config="tracks.getTrack(programs.programDetailConfig)" -->
         </div>
       </div>
     </div>
@@ -404,9 +406,20 @@ onMounted(async () => {
   tracks.setSeedTrack(props.seed)
   tracks.addToUsedTracks(props.seed, props.seed)
 
-  // TO DO
   // parse url to get current track and other queries
+  // TO DO
+
   // parse url to get detail program (if any)
+  const currentTrack = route.query['teeActiveTrack']
+  const programId = route.query['teeDetail']
+  console.log('TeeApp > mounted > currentTrack :', currentTrack)
+  console.log('TeeApp > mounted > programId :', programId)
+  nav.setCurrentDetailId(programId)
+  programs.setDetailResult(programId, 'track_results')
+  /*
+  tested with url such as : 
+  localhost:4242/?teeActiveTrack=track_results&teeDetail=accelerateur-decarbonation
+  */
 
   nav.setCurrentTrackId(tracks.currentTrackId)
   nav.updateQueries(tracks.getAllUsedTracksValuesPairs)

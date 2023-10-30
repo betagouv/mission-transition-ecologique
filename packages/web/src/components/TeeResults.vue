@@ -128,6 +128,7 @@ import { onBeforeMount, computed } from 'vue'
 import { choicesStore } from '../stores/choices'
 import { programsStore } from '../stores/programs'
 import { analyticsStore } from '../stores/analytics'
+import { browserStore } from '../stores/browser'
 
 // @ts-ignore
 import type { TrackChoice, TrackResultsConfig, ProgramData } from '@/types/index'
@@ -139,6 +140,7 @@ import { ProgramAidType } from '@/types/programTypes'
 const choices = choicesStore()
 const programs = programsStore()
 const analytics = analyticsStore()
+const nav = browserStore()
 
 // const defaultImages = [
 //   'images/TEE_ampoule.png',
@@ -166,6 +168,7 @@ const resultsProgsLen = computed(() => {
 const updateDetailResult = (id: string | number) => {
   // console.log(`TeeResults > updateDetailResult >  id : ${id}`)
   programs.setDetailResult(id, props.trackId)
+  nav.setCurrentDetailId(id)
 }
 
 const getCostInfos = (program: ProgramData) => {

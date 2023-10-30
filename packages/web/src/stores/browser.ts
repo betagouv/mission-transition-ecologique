@@ -10,7 +10,7 @@ export const browserStore = defineStore('browser', () => {
   const userQueries = ref<any[]>([])
   const currentTrackId = ref<string>()
   const currentStep = ref<number>()
-  const currentDetailId = ref<string>()
+  const currentDetailId = ref<string | number>('')
 
   // getters
   const route = computed(() => {
@@ -37,8 +37,9 @@ export const browserStore = defineStore('browser', () => {
   function setCurrentStep(step: number) {
     currentStep.value = step
   }
-  function setCurrentDetailId(id: string) {
+  function setCurrentDetailId(id: string | number) {
     currentDetailId.value = id
+    updateUrl()
   }
   function addQuery(query: any) {
     const existingTrackIds = userQueries.value.map(q => q.trackId)
@@ -57,7 +58,7 @@ export const browserStore = defineStore('browser', () => {
     // existing query
     
     // loop userQueries and remap as <trackId>: `<selectionKey1>:<selectionValue1>|<selectionKey2>:<selectionValue2>`
-    const newQueries: any = {}
+    const trackQueries: any = {}
     userQueries.value.map(q => {
       const selection: any[] = []
       q.selection.forEach((s: object) => {
@@ -66,24 +67,30 @@ export const browserStore = defineStore('browser', () => {
         }
       })
       const resString = selection.join('|')
-      newQueries[q.trackId] = resString
+      trackQueries[`teetrack_${q.trackId}`] = resString
     })
-    // console.log('store.browser > updateUrl > newQueries : ', newQueries)
+    // console.log('store.browser > updateUrl > trackQueries : ', trackQueries)
     
-    // const allQueries = { currentTrack: currentTrackId.value, ...newQueries }
+    const allQueries = { 
+      teeStep: currentStep.value, 
+      teeActiveTrack: currentTrackId.value, 
+      ...trackQueries,
+      teeDetail: currentDetailId.value 
+    }
     // console.log('store.browser > updateUrl > allQueries : ', allQueries)
 
     // @ts-ignore
     // routerRef.value.replace({ query: allQueries })
     const newRoute = { 
       fullPath: routeRef.value.fullPath,
-      path: `/${path}/${currentTrackId.value}/`, // routeRef.value.path,
+      // path: `/${path}/${currentTrackId.value}/`, // routeRef.value.path,
+      path: routeRef.value.path,
       hash: routeRef.value.hash,
       params: routeRef.value.params,
       meta: routeRef.value.meta,
       name: routeRef.value.name,
       matched: routeRef.value.matched,
-      query: newQueries
+      query: allQueries
     }
     // console.log('store.browser > updateUrl > newRoute : ', newRoute)
 

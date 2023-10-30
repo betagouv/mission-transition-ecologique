@@ -1,6 +1,10 @@
 <template>
   <!-- PROGRAM INFOS -->
   <div class="">
+    <p>
+      programId: <code>{{ programId }}</code><br>
+      trackId: <code>{{ trackId }}</code>
+    </p>
 
     <!-- BACK TO RESULTS BTN -->
     <DsfrButton
@@ -280,7 +284,7 @@
 import { ref, onBeforeMount } from 'vue'
 
 // @ts-ignore
-import type { ProgramData, Track } from '@/types/index'
+// import type { ProgramData, Track } from '@/types/index'
 
 // @ts-ignore
 import TeeTile from './TeeTile.vue'
@@ -288,12 +292,19 @@ import TeeTile from './TeeTile.vue'
 import TeeForm from './TeeForm.vue'
 
 import { choicesStore } from '../stores/choices'
+import { tracksStore } from '../stores/tracks'
 import { programsStore } from '../stores/programs'
 import { analyticsStore } from '../stores/analytics'
+import { browserStore } from '../stores/browser'
 
 const choices = choicesStore()
 const programs = programsStore()
+const tracks = tracksStore()
 const analytics = analyticsStore()
+const nav = browserStore()
+
+const program = ref<any>()
+const trackConfig = ref<any>()
 
 const blockColor = '#000091'
 const showForm = ref<boolean>(false)
@@ -301,8 +312,10 @@ const showForm = ref<boolean>(false)
 const columnTiles = ref<string>('fr-col')
 
 interface Props {
-  program: ProgramData,
-  trackConfig: Track | any,
+  programId: string | number,
+  trackId: string,
+  // program: ProgramData,
+  // trackConfig: Track | any,
   debug?: boolean,
 }
 const props = defineProps<Props>()
@@ -311,18 +324,21 @@ const props = defineProps<Props>()
 const resetDetailResult = () => {
   // console.log('TeeProgramDetail > resetDetailResult > trackConfig : ', props.trackConfig )
   programs.resetDetailResult()
+  nav.setCurrentDetailId('')
 }
 const toggleShowForm = () => {
   // console.log('TeeProgramDetail > toggleShowForm > trackConfig : ', props.trackConfig )
   showForm.value = !showForm.value
   if (showForm.value) {
-    analytics.sendEvent('result_detail', 'show_form', props.program.id)
+    analytics.sendEvent('result_detail', 'show_form', props.programId)
   }
 }
 
 onBeforeMount(() => {
+  program.value = programs.getProgramById(props.programId)
+  trackConfig.value = tracks.getTrack(props.trackId)
   // console.log('TeeProgramDetail > onBeforeMount > resultsProgs :', resultsProgs )
   // analytics / send event
-  analytics.sendEvent('result_detail', 'show_detail', props.program.id)
+  analytics.sendEvent('result_detail', 'show_detail', props.programId)
 })
 </script>
