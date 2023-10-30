@@ -1,7 +1,8 @@
 // import { createApp, defineCustomElement } from 'vue'
+// import { markRaw } from 'vue'
 import { createPinia } from 'pinia'
 import { defineCustomElement } from './defineCustomElementWithStyles'
-import { createRouter, createWebHistory } from 'vue-router'
+import { router } from './router'
 
 // import App from './App.ce.vue'
 import TeeApp from './TeeApp.ce.vue'
@@ -36,12 +37,6 @@ addIcons(
   MdCheckboxOutlined,
 )
 
-// Instantiate router
-const router = createRouter({
-  history: createWebHistory(),
-  routes: []
-})
-
 // Styles imports
 // import './assets/main.css'
 
@@ -55,7 +50,11 @@ const router = createRouter({
 // About Pinia
 // cf : https://rimdev.io/vue-3-custom-elements/
 // cf : https://stackblitz.com/github/piniajs/example-vue-3-vite?file=src%2FApp.vue,src%2Fmain.ts,src%2Fstores%2Fuser.ts
-const store = createPinia()
+const pinia = createPinia()
+// cf : https://stackoverflow.com/questions/70681667/cant-use-vue-router-and-pinia-inside-a-single-store
+// pinia.use(({ store }) => {
+//   store.$router = markRaw(router)
+// })
 
 // about custom elements in vue3
 // cf : https://maximomussini.com/posts/vue-custom-elements
@@ -68,7 +67,7 @@ const TeeAppComponent = defineCustomElement(TeeApp, {
     { plugin: VueDsfr },
     // { plugin: VueDsfr, options: { icons: Object.values(icons) }},
     // @ts-ignore
-    { plugin: store },
+    { plugin: pinia },
     { plugin: router }
   ],
   comps: [
@@ -79,5 +78,5 @@ const TeeAppComponent = defineCustomElement(TeeApp, {
 customElements.define('gov-aid-tree-app', TeeAppComponent)
 
 // const app = createApp(TeeApp)
-// app.use(store)
+// app.use(pinia)
 // app.mount('#app')

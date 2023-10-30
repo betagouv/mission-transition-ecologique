@@ -17,22 +17,29 @@
     <!-- DEBUGGING -->
     <div
       class="vue-debug"
-      v-if="debugBool">
+      v-if="true">
       <h5>DEBUG - TeeApp</h5>
       <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
         <div class="fr-col-3">
-          <h6 class="fr-mb-1v"> tracks.currentStep : <code>{{ tracks.currentStep }} </code></h6>
+          <h6 class="fr-mb-1v"> tracks.currentStep : <code>{{ tracks.currentStep }} </code></h6><br>
+          <h6 class="fr-mb-1v"> programs.programDetail : <code>{{ programs.programDetail }} </code></h6><br>
         </div>
         <div class="fr-col-3">
-          <h6 class="fr-mb-1v"> programs.programDetail : <code>{{ programs.programDetail }} </code></h6>
-        </div>
-        <div class="fr-col-3">
-          <h6 class="fr-mb-1v"> routeVal : </h6>
-          <pre><code>{{ nav.routeVal }} </code></pre>
+          <h6 class="fr-mb-1v"> tracks.getAllUsedTracksValuesPairs : </h6>
+          <pre><code>{{ tracks.getAllUsedTracksValuesPairs }} </code></pre>
         </div>
         <div class="fr-col-3">
           <h6 class="fr-mb-1v"> userQueries : </h6>
           <pre><code>{{ nav.userQueries }} </code></pre>
+        </div>
+        <div class="fr-col-3">
+          <h6 class="fr-mb-1v"> nav.routerReady  : <code>{{ nav.routerReady  }} </code></h6><br>
+          <h6 class="fr-mb-1v"> nav.currentTrackId  : <code>{{ nav.currentTrackId  }} </code></h6><br>
+          <h6 class="fr-mb-1v"> nav.currentStep  : <code>{{ nav.currentStep  }} </code></h6><br>
+          <h6 class="fr-mb-1v"> nav.routeRef.path : </h6>
+          <pre><code>{{ nav.routeRef?.path }} </code></pre>
+          <h6 class="fr-mb-1v"> nav.routeRef.query : </h6>
+          <pre><code>{{ nav.routeRef?.query }} </code></pre>
         </div>
       </div>
     </div>
@@ -220,7 +227,7 @@ import '@gouvfr/dsfr/dist/core/core.main.min.css'               // Le CSS minima
 import jsonDataset from '../public/data/generated/dataset_out.json'
 // console.log('TeeApp > jsonDataset :', jsonDataset)
 
-import { ref, onBeforeMount, onMounted } from 'vue'
+import { ref, watch, onBeforeMount, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
 import { tracksStore } from './stores/tracks'
@@ -299,9 +306,23 @@ const changeDebug = (ev: any) => {
   debugBool.value = ev
 }
 
-onBeforeMount(() => {
-  // console.log('TeeApp > props.seed :', props.seed)
-  // console.log('TeeApp > props.maxDepth :', props.maxDepth)
+watch(() => tracks.usedTracks, ( next ) => {
+  console.log()
+  console.log('TeeApp > watch > tracks.usedTracks > next : ', next)
+  if (nav.routerReady) {
+    nav.setCurrentStep(tracks.currentStep)
+    nav.setCurrentTrackId(tracks.currentTrackId)
+    nav.updateQueries(tracks.getAllUsedTracksValuesPairs)
+  }
+})
+
+onBeforeMount(async () => {
+  console.log('TeeApp > props.seed :', props.seed)
+  console.log('TeeApp > props.maxDepth :', props.maxDepth)
+
+  // await router.isReady()
+  // nav.setRouter(router)
+  // nav.setRoute(route)
 
   choices.setPublicPath(publicPath)
 
@@ -368,17 +389,28 @@ onBeforeMount(() => {
     debugBool.value = props.debug === 'true'
   }
 
-  // set first track at mount
-  tracks.setSeedTrack(props.seed)
-  tracks.addToUsedTracks(props.seed, props.seed)
 })
 
 onMounted(async () => {
   // cf: https://stackoverflow.com/questions/69495211/vue3-route-query-empty
   await router.isReady()
-  console.log('\nTeeApp > mounted > route :', route)
   nav.setRouter(router)
   nav.setRoute(route)
+  // console.log('\nTeeApp > mounted > router :', router)
+
+  console.log('\nTeeApp > mounted > nav.route :', nav.route)
+  
+  // set first track at mount
+  tracks.setSeedTrack(props.seed)
+  tracks.addToUsedTracks(props.seed, props.seed)
+
+  // TO DO
+  // parse url to get current track and other queries
+  // parse url to get detail program (if any)
+
+  nav.setCurrentTrackId(tracks.currentTrackId)
+  nav.updateQueries(tracks.getAllUsedTracksValuesPairs)
+
 })
 </script>
 

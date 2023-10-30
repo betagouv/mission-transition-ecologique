@@ -393,13 +393,12 @@
 
 <script setup lang="ts">
 
-import { ref, computed, watch, toRaw, onBeforeMount } from 'vue'
+import { ref, computed, watch, toRaw } from 'vue'
 
 import { tracksStore } from '../stores/tracks'
 import { choicesStore } from '../stores/choices'
 import { analyticsStore } from '../stores/analytics'
 // import type { DsfrButton } from '@gouvminint/vue-dsfr/types'
-import { browserStore } from '../stores/browser'
 
 // @ts-ignore
 import type { Track, TrackOptions, NextTrackRule, ColsOptions } from '@/types/index'
@@ -452,7 +451,6 @@ const noNeedForNext = [
 const tracks = tracksStore()
 const choices = choicesStore()
 const analytics = analyticsStore()
-const nav = browserStore()
 
 const selectedOptionsIndices = ref<number[]>([])
 const selectedOptions = ref<any[]>([])
@@ -551,12 +549,6 @@ const updateSelection = (option: any, index: number, forceRemove: boolean = fals
   // selectedOptions.value = option
 
   console.log('TeeTrack > updateSelection > selectedOptions.value :', selectedOptions.value)
-
-  // update query
-  nav.updateQuery({
-    trackId: props.trackId,
-    selection: [...selectedOptions.value.map(i => i.value)] 
-  })
 
   // Direct to next track
   const directToNext: string[] = ['cards']
@@ -702,9 +694,4 @@ const backToPreviousTrack = async () => {
   scrollToTop(props.trackElement, props.trackId)
 }
 
-onBeforeMount(()=> {
-  nav.setQuery({
-    trackId: props.trackId
-  })
-})
 </script>

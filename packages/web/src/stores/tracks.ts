@@ -41,7 +41,13 @@ export const tracksStore = defineStore('tracks', () => {
   const currentStep = computed(() => {
     const tracksArray = usedTracks.value.slice(-1)
     const track: UsedTrack = tracksArray[0]
-    const stepNumber = track.step
+    const stepNumber = track?.step
+    return stepNumber
+  })
+  const currentTrackId = computed(() => {
+    const tracksArray = usedTracks.value.slice(-1)
+    const track: UsedTrack = tracksArray[0]
+    const stepNumber = track?.id
     return stepNumber
   })
   const getAllUsedTracks = computed(() => {
@@ -59,6 +65,19 @@ export const tracksStore = defineStore('tracks', () => {
 
     const trackValues: any[] = usedTrackValues.flat(1)
     return trackValues
+  })
+  const getAllUsedTracksValuesPairs = computed(() => {
+    const usedTrackValues = usedTracks.value.map((usedTrack: UsedTrack) => {
+      const values = usedTrack.selected?.map((s) => s.value)
+      return {
+        trackId: usedTrack.id,
+        completed: usedTrack.completed,
+        selection: toRaw(values.map((i) => toRaw(i)))
+      }
+    })
+    // console.log('store.tracks > getAllUsedTracksValues >  usedTrackValues :', usedTrackValues)
+
+    return usedTrackValues
   })
 
   // getters
@@ -196,6 +215,7 @@ export const tracksStore = defineStore('tracks', () => {
     usedTracks,
     tracksStepsArray,
     currentStep,
+    currentTrackId,
     setMaxDepth,
     getTrack,
     getTrackCategory,
@@ -206,6 +226,7 @@ export const tracksStore = defineStore('tracks', () => {
     isTrackCompleted,
     getAllUsedTracks,
     getAllUsedTracksValues,
+    getAllUsedTracksValuesPairs,
     trackExistsInUsed,
     setSeedTrack,
     addToUsedTracks,
