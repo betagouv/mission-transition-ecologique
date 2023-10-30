@@ -182,18 +182,18 @@ export const tracksStore = defineStore('tracks', () => {
   }
 
   async function setUsedTracksAsNotCompleted(trackId: string) {
-    // console.log()
-    // console.log('store.tracks > setUsedTracksAsNotCompleted > trackId : ', trackId)
+    console.log()
+    console.log('store.tracks > setUsedTracksAsNotCompleted > trackId : ', trackId)
     // console.log('store.tracks > setUsedTracksAsNotCompleted > updatedArray : ', updatedArray)
     usedTracks.value.map((trackInfo: UsedTrack) => {
-      // console.log('store.tracks > setUsedTracksAsNotCompleted > trackInfoCopy : ', trackInfoCopy)
+      // console.log('store.tracks > setUsedTracksAsNotCompleted > trackInfo : ', trackInfo)
       if (trackInfo.id === trackId) {
         trackInfo.completed = false
-        // console.log('store.tracks > setUsedTracksAsNotCompleted > trackInfo : ', trackInfo)
+        console.log('store.tracks > setUsedTracksAsNotCompleted > trackInfo : ', trackInfo)
       }
       return trackInfo
     })
-    // console.log('store.tracks > setUsedTracksAsNotCompleted > usedTracks.value : ', usedTracks.value)
+    console.log('store.tracks > setUsedTracksAsNotCompleted > usedTracks.value : ', usedTracks.value)
   }
 
   async function removeFurtherUsedTracks(srcTrackId: string) {

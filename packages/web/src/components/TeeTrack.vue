@@ -612,14 +612,15 @@ const getButtonIcon = (index: number) => {
 
 // watchers
 watch(() => props.isCompleted, ( next ) => {
-  // console.log()
-  // console.log('TeeTrack > watch > props.trackId :', props.trackId )
-  // console.log('TeeTrack > watch > isCompleted :', next )
+  console.log()
+  console.log('TeeTrack > watch > props.trackId :', props.trackId )
+  console.log('TeeTrack > watch > isCompleted :', next )
   if (!next) {
     // console.log('TeeTrack > watch > selectionValues :', selectionValues )
-    if (noNeedForNext.includes(renderAs)) {
-      resetSelections()
-    }
+    // if (noNeedForNext.includes(renderAs)) {
+    //   resetSelections()
+    // }
+    resetSelections()
     tracks.updateUsedTracks(props.trackId, props.step, next, selectedOptions.value)
   }
 })
@@ -683,13 +684,13 @@ const saveSelection = () => {
 
 const backToPreviousTrack = async () => {
   // console.log()
-  // console.log('TeeTrack > backToTrack > props.trackId :', props.trackId)
+  console.log('TeeTrack > backToTrack > props.trackId :', props.trackId)
   const indexOfTrack = tracks.tracksStepsArray.indexOf(props.trackId)
-  // console.log('TeeTrack > backToTrack > indexOfTrack :', indexOfTrack)
+  console.log('TeeTrack > backToTrack > indexOfTrack :', indexOfTrack)
   const TrackToGoBackTo = tracks.tracksStepsArray[indexOfTrack - 1]
-  // console.log('TeeTrack > backToTrack > TrackToGoBackTo :', TrackToGoBackTo)
+  console.log('TeeTrack > backToTrack > TrackToGoBackTo :', TrackToGoBackTo)
   await tracks.setUsedTracksAsNotCompleted(TrackToGoBackTo)
-  tracks.removeFurtherUsedTracks(TrackToGoBackTo)
+  await tracks.removeFurtherUsedTracks(TrackToGoBackTo)
 
   scrollToTop(props.trackElement, props.trackId)
 }

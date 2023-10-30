@@ -111,13 +111,14 @@ export const browserStore = defineStore('browser', () => {
   }
 
   function updateQueries(usedTracks: any[]) {
-    // console.log('\nstore.browser > updateQueries > queries : ', queries)
+    console.log('\nstore.browser > updateQueries > usedTracks : ', usedTracks)
     // reset userQueries
     userQueries.value = []
     const queries = usedTracks.map(t => {
+      const selection = t.completed ? t.selection : []
       return {
         trackId: t.trackId,
-        selection: t.selection
+        selection: selection
       }
     })
     queries.forEach(q => {
