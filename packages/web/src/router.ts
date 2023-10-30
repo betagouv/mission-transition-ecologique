@@ -13,6 +13,6 @@ export const router = createRouter({
   history: createWebHistory(),
   routes: [
     // { path: '/track/:trackId', component: TeeTrack },
-    { path: '/program/:programId', component: TeeProgramDetail },
+    // { path: '/program/:programId', component: TeeProgramDetail },
   ]
 })

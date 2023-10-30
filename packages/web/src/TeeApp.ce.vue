@@ -238,6 +238,9 @@ import { programsStore } from './stores/programs'
 import { browserStore } from './stores/browser'
 
 // @ts-ignore
+import { unfoldQueries } from '@/utils/urls'
+
+// @ts-ignore
 import TeeMatomo from './components/TeeMatomo.vue'
 // @ts-ignore
 import TeeTrack from './components/TeeTrack.vue'
@@ -407,18 +410,37 @@ onMounted(async () => {
   tracks.addToUsedTracks(props.seed, props.seed)
 
   // parse url to get current track and other queries
+  const currentTrack = route.query['teeActiveTrack']
+  // @ts-ignore
+  const queryTracksRaw = unfoldQueries(route.query)
+  console.log('TeeApp > mounted > queryTracksInfos :', queryTracksRaw)
   // TO DO
+  /*
+  GOAL => unfold object such as 
+  {
+    teetrack_track_help: "user_help:precise"
+    teetrack_track_needs: "project_needs:*"
+    teetrack_track_sectors: ""
+    teetrack_track_siret: "siret:|codeNaf:|codeNAF1:|ville:|codePostal:|structure_sizes:|denomination:|label_sectors:undefined|secteur:undefined"
+    teetrack_track_structure_workforce: "entreprise . effectif:249|structure_sizes:PME"
+  }
+  */
+  // tracks.populateUsedTracksFromQuery(route.query)
+  // nav.populateFromQuery(route.query)
+
 
   // parse url to get detail program (if any)
-  const currentTrack = route.query['teeActiveTrack']
   const programId = route.query['teeDetail']
   console.log('TeeApp > mounted > currentTrack :', currentTrack)
   console.log('TeeApp > mounted > programId :', programId)
+  // @ts-ignore
   nav.setCurrentDetailId(programId)
+  // @ts-ignore
   programs.setDetailResult(programId, 'track_results')
   /*
   tested with url such as : 
   localhost:4242/?teeActiveTrack=track_results&teeDetail=accelerateur-decarbonation
+  http://localhost:4242/?teeStep=3&teeActiveTrack=track_results&teetrack_track_needs=project_needs:*&teetrack_track_help=user_help:direct&teetrack_track_results=&teeDetail=accelerateur-decarbonation
   */
 
   nav.setCurrentTrackId(tracks.currentTrackId)
