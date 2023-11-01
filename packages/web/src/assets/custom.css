@@ -81,6 +81,14 @@ WARNING :
 .tee-no-hover {
   pointer-events: none;
 }
+.tee-footer-bottom {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 10;
+}
 
 /* TRACK CALLOUT */
 

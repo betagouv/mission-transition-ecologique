@@ -1,8 +1,8 @@
-// import { createApp, defineCustomElement } from 'vue'
+import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import { defineCustomElement } from './defineCustomElementWithStyles'
 
-// import App from './App.ce.vue'
+import App from './App.vue'
 import TeeApp from './TeeApp.ce.vue'
 // console.log('TeeApp.styles :', TeeApp.styles) // ["/* inlined css */"]
 
@@ -37,9 +37,9 @@ addIcons(
 
 
 // Styles imports
-// import './assets/main.css'
+import './assets/main.css'
 
-// import '@gouvfr/dsfr/dist/core/core.main.min.css'            // Le CSS minimal du DSFR
+import '@gouvfr/dsfr/dist/core/core.main.min.css'            // Le CSS minimal du DSFR
 // import '@gouvfr/dsfr/dist/component/component.main.min.css'  // Styles de tous les composants du DSFR
 // import '@gouvfr/dsfr/dist/utility/utility.main.min.css'      // Classes utilitaires : les composants de VueDsfr en ont besoin
 // import '@gouvminint/vue-dsfr/styles'                         // Les styles propres aux composants de VueDsfr
@@ -71,6 +71,7 @@ const TeeAppComponent = defineCustomElement(TeeApp, {
 
 customElements.define('gov-aid-tree-app', TeeAppComponent)
 
-// const app = createApp(SimpleSample)
-// app.use(createPinia())
-// app.mount('#app')
+const app = createApp(App)
+app.use(VueDsfr)
+app.use(store)
+app.mount('#app')

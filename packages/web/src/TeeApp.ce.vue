@@ -58,6 +58,7 @@
 
     <!-- MATOMO -->
     <TeeMatomo
+      v-if="!noLocalMatomo"
       :debug="debugBool"
       />
 
@@ -259,6 +260,7 @@ interface Props {
   locale?: string,
   msg?: string,
   seed: string,
+  noLocalMatomo?: boolean,
   datasetUrl?: string,
   maxDepth?: string
   debugSwitch?: string,

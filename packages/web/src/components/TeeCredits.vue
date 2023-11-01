@@ -15,7 +15,8 @@
   </div>
 
   <!-- FOOTER -->
-  <div class="fr-footer fr-pt-0 fr-mt-30v">
+  <div 
+    :class="`fr-footer fr-pt-0 fr-mt-30v ${stickToBottom ? 'tee-footer-bottom' : ''}`">
     <div
       class="fr-footer__body"
       style="justify-content: center;">
@@ -138,6 +139,7 @@ const projectLinks = [
 ]
 
 interface Props {
+  stickToBottom?: boolean,
   debug?: boolean,
 }
 const props = defineProps<Props>()
