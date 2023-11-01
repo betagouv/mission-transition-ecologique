@@ -2,7 +2,7 @@
 
   <!-- DEBUGGING -->
   <div 
-    v-if="true"
+    v-if="debug"
     class="vue-debug">
     <h5>DEBUG - TeeResults</h5>
     <!-- <h6>
@@ -12,11 +12,11 @@
       <div class="fr-col-4">
         <h6 class="fr-mb-1v"> trackId : <code>{{ trackId }} </code></h6>
       </div>
-      <div class="fr-col-4">
+      <!-- <div class="fr-col-4">
         <h6 class="fr-mb-1v"> trackConfig : </h6>
           <pre><code>{{ trackConfig }} </code></pre>
-      </div>
-      <div class="fr-col-4">
+      </div> -->
+      <div class="fr-col-8">
         <h6 class="fr-mb-1v"> activeLocalFilters : </h6>
           <pre><code>{{ activeLocalFilters }} </code></pre>
       </div>
@@ -52,15 +52,15 @@
     class="fr-container fr-px-0 fr-mt-6v">
   
     <!-- RESULTS SIZE -->
-    <div class="fr-mb-4v">
-      {{ resultsProgsLen }}
+    <div class="fr-mb-4v tee-text-light">
+      {{ resultsProgsReFilteredLen }}
       {{ choices.t('results.results') }}
     </div>
 
     <!-- FILTERS IF ANY -->
     <div
       v-if="trackConfig?.filters"
-      class="fr-grid-row fr-mb-4v">
+      class="fr-grid-row fr-grid-row--gutters fr-mb-4v">
       <div
         v-for="filter in trackConfig.filters"
         :key="filter.field"
@@ -159,12 +159,12 @@
 
 <script setup lang="ts">
 
-import { ref, onBeforeMount, computed } from 'vue'
+import { ref, toRaw, onBeforeMount, computed } from 'vue'
 import { choicesStore } from '../stores/choices'
 import { programsStore } from '../stores/programs'
 import { analyticsStore } from '../stores/analytics'
 
-import { scrollToTop } from '../utils/helpers'
+import { getFrom, scrollToTop } from '../utils/helpers'
 
 // @ts-ignore
 import TeeResultsFilter from './TeeResultsFilter.vue'
@@ -196,7 +196,7 @@ interface Props {
   trackForm?: any,
   tracksResults: TrackChoice[] | any[],
   trackElement: any;
-  debug?: boolean,
+  debug: boolean,
 }
 const props = defineProps<Props>()
 
@@ -204,35 +204,64 @@ const resultsProgs: ProgramData[] = programs.filterPrograms(props.tracksResults)
 
 // TO DO
 const resultsProgsReFiltered = computed(() => {
-  console.log('\nTeeResults > resultsProgsReFiltered...' )
-  console.log('TeeResults > resultsProgs :', resultsProgs )
-  const results = resultsProgs.filter((prog: any) => {
+  // console.log('\nTeeResults > resultsProgsReFiltered...' )
+  // console.log('TeeResults > resultsProgsReFiltered > resultsProgs :', resultsProgs )
+  const results = toRaw(resultsProgs).filter((prog: any) => {
+    // console.log('\nTeeResults > resultsProgsReFiltered > prog :', prog )
     const boolArray = [true]
     for (const fieldKey in activeLocalFilters.value) {
       const filterVal = activeLocalFilters.value[fieldKey]
-      console.log('TeeResults > fieldKey :', fieldKey )
-      console.log('TeeResults > prog[fieldKey] :', prog[fieldKey] )
-      const bool = filterVal === '' ? true : prog[fieldKey] === filterVal
+      const filterConfig = props.trackConfig?.filters?.find((f:any) => f.field === fieldKey)
+      const trueIf = filterConfig?.trueIf || '=='
+      // console.log(`\nTeeResults > resultsProgsReFiltered > fieldKey: "${fieldKey}" - filterVal: "${filterVal}" - trueIf: "${trueIf}"` )
+      // console.log('\nTeeResults > fieldKey :', fieldKey )
+      // console.log('TeeResults > filterVal :', filterVal )
+      // console.log('TeeResults > trueIf :', trueIf )
+
+      // const progVal = prog[fieldKey]
+      // console.log('TeeResults > progVal :', progVal )
+      let progVal = getFrom(prog, [fieldKey])
+      progVal = JSON.parse(JSON.stringify(progVal))
+      progVal = progVal[0]
+      
+      let bool = false
+      if (filterVal === '') {
+        bool = true
+      } else if (trueIf === '==') {
+        // console.log('TeeResults > resultsProgsReFiltered > progVal :', progVal )
+        bool = progVal === filterVal
+      } else if (trueIf === 'exists') {
+        progVal = progVal?.filter(i => i !== null)
+        // console.log('TeeResults > resultsProgsReFiltered > progVal :', progVal )
+        bool = !progVal ? true : progVal.includes(filterVal)
+      } else {
+        bool = true
+      }
       boolArray.push(bool)
     }
+    // console.log('TeeResults > resultsProgsReFiltered > boolArray :', boolArray )
     const checkFilters = boolArray.every(b => !!b)
+    // console.log('TeeResults > resultsProgsReFiltered > checkFilters :', checkFilters )
     return checkFilters
   })
-  console.log('TeeResults > resultsProgsReFiltered > results: ', results )
+  // console.log('TeeResults > resultsProgsReFiltered > results: ', results )
   return results
 })
 
 const resultsProgsLen = computed(() => {
-  // return resultsProgs.length
+  return resultsProgs.length
+})
+
+const resultsProgsReFilteredLen = computed(() => {
   return resultsProgsReFiltered.value.length
 })
 
 const updateLocalFilters = (event: any) => {
-  console.log('\nTeeResults > updateLocalFilters > event :', event )
-  // filter out or push selected value
-  const isActive = activeLocalFilters.value[event.field]?.selected === event.value 
-  console.log('TeeResults > updateLocalFilters > isActive :', isActive )
-  activeLocalFilters.value[event.field] = event.value
+  // console.log('\nTeeResults > updateLocalFilters > event :', event )
+  const val = {
+    [event.field]: event.value
+  }
+  activeLocalFilters.value = {...activeLocalFilters.value, ...val }
 }
 
 const updateDetailResult = (id: string | number) => {

@@ -7,6 +7,8 @@
       activeValues: <code>{{ activeValues }}</code>
     </p>
   </div>
+
+  <!-- SELECTOR -->
   <div
     class="fr-select-group">
     <select
@@ -16,9 +18,7 @@
       @change="updateLocalFilters">
       <option
         value=""
-        selected 
-        disabled 
-        hidden>
+        selected >
         {{ choices.t('results.filterSelect', { fieldLabel: filter.label }) }}
       </option>
       <option
@@ -27,10 +27,12 @@
         :value="filterVal.value">
         {{ filterVal.label }}
       </option>
-      <option
+  
+      <!-- DEBUGGING -->
+      <!-- <option
         value="">
         {{ choices.t('results.resetSelect') }}
-      </option>
+      </option> -->
     </select>
   </div>
 </template>

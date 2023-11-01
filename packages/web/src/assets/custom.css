@@ -81,7 +81,9 @@ WARNING :
 .tee-no-hover {
   pointer-events: none;
 }
-
+.tee-text-light {
+  color: #929292;
+}
 /* TRACK CALLOUT */
 
 .tee-track-callout {

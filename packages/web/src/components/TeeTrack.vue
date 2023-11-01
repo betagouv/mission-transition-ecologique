@@ -421,7 +421,7 @@ interface Props {
   trackId: string,
   isCompleted: boolean,
   trackElement: any;
-  debug?: boolean,
+  debug: boolean,
 }
 const props = defineProps<Props>()
 

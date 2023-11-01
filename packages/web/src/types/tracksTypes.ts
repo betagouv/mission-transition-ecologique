@@ -178,9 +178,11 @@ export interface TrackFilterValue {
   label: string,
   value: string
 }
+
 export interface TrackFilter {
   field: string,
   label: string,
+  trueIf: ConditionOperators,
   values: TrackFilterValue[]
 }
 export interface TrackResultsConfig {
