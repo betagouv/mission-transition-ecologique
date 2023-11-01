@@ -2,23 +2,36 @@
 
   <!-- DEBUGGING -->
   <div 
-    v-if="debug"
+    v-if="true"
     class="vue-debug">
     <h5>DEBUG - TeeResults</h5>
     <!-- <h6>
       programs.programDetail : <code>{{ programs.programDetail || 'undefined' }}</code>
     </h6> -->
+    <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
+      <div class="fr-col-4">
+        <h6 class="fr-mb-1v"> trackId : <code>{{ trackId }} </code></h6>
+      </div>
+      <div class="fr-col-4">
+        <h6 class="fr-mb-1v"> trackConfig : </h6>
+          <pre><code>{{ trackConfig }} </code></pre>
+      </div>
+      <div class="fr-col-4">
+        <h6 class="fr-mb-1v"> activeLocalFilters : </h6>
+          <pre><code>{{ activeLocalFilters }} </code></pre>
+      </div>
+    </div>
   </div>
 
   <!-- RESULTS ALERT -->
   <DsfrAlert
-    v-if="trackConfig && trackConfig.showAlertResults && resultsProgsLen"
+    v-if="trackConfig?.showAlertResults && resultsProgsLen"
     :title="choices.t('results.alertTitle')"
     :description="choices.t('results.alertDescription')"
     type="success">
   </DsfrAlert>
   <DsfrAlert
-    v-if="trackConfig && trackConfig.showAlertNoResults && !resultsProgsLen"
+    v-if="trackConfig?.showAlertNoResults && !resultsProgsLen"
     :title="choices.t('results.alertTitleNoResults')"
     :description="choices.t('results.alertNoResults')"
     type="warning">
@@ -26,20 +39,42 @@
 
   <!-- DEBUGGING -->
   <h4
-    v-if="trackConfig && trackConfig.showResultsTitle && resultsProgsLen"
+    v-if="trackConfig?.showResultsTitle && resultsProgsLen"
     class="fr-pt-12v">
     {{ choices.t('results.fittingPrograms') }}
     ({{ resultsProgsLen }})
   </h4>
 
+  
   <!-- PROGRAMS AS LIST OF CARDS -->
   <div 
     v-if="resultsProgsLen"
-    class="fr-container fr-px-0 fr-pt-6v">
+    class="fr-container fr-px-0 fr-mt-6v">
+  
+    <!-- RESULTS SIZE -->
+    <div class="fr-mb-4v">
+      {{ resultsProgsLen }}
+      {{ choices.t('results.results') }}
+    </div>
 
-    <!-- PROGRAM CARD -->
+    <!-- FILTERS IF ANY -->
     <div
-      v-for="prog in resultsProgs"
+      v-if="trackConfig?.filters"
+      class="fr-grid-row fr-mb-4v">
+      <div
+        v-for="filter in trackConfig.filters"
+        :key="filter.field"
+        class="fr-col">
+        <TeeResultsFilter
+          :filter="filter"
+          :debug="debug"
+          @updateFilter="updateLocalFilters"/>
+      </div>
+    </div>
+
+    <!-- PROGRAMS CARDS -->
+    <div
+      v-for="prog in resultsProgsReFiltered"
       :key="prog.id"
       class="fr-card fr-enlarge-link fr-card--horizontal-tier fr-mb-10v"
       @click="updateDetailResult(prog.id)">
@@ -124,12 +159,15 @@
 
 <script setup lang="ts">
 
-import { onBeforeMount, computed } from 'vue'
+import { ref, onBeforeMount, computed } from 'vue'
 import { choicesStore } from '../stores/choices'
 import { programsStore } from '../stores/programs'
 import { analyticsStore } from '../stores/analytics'
 
 import { scrollToTop } from '../utils/helpers'
+
+// @ts-ignore
+import TeeResultsFilter from './TeeResultsFilter.vue'
 
 // @ts-ignore
 import type { TrackChoice, TrackResultsConfig, ProgramData } from '@/types/index'
@@ -141,6 +179,8 @@ import { ProgramAidType } from '@/types/programTypes'
 const choices = choicesStore()
 const programs = programsStore()
 const analytics = analyticsStore()
+
+const activeLocalFilters = ref<any>({})
 
 // const defaultImages = [
 //   'images/TEE_ampoule.png',
@@ -162,9 +202,38 @@ const props = defineProps<Props>()
 
 const resultsProgs: ProgramData[] = programs.filterPrograms(props.tracksResults)
 
-const resultsProgsLen = computed(() => {
-  return resultsProgs.length
+// TO DO
+const resultsProgsReFiltered = computed(() => {
+  console.log('\nTeeResults > resultsProgsReFiltered...' )
+  console.log('TeeResults > resultsProgs :', resultsProgs )
+  const results = resultsProgs.filter((prog: any) => {
+    const boolArray = [true]
+    for (const fieldKey in activeLocalFilters.value) {
+      const filterVal = activeLocalFilters.value[fieldKey]
+      console.log('TeeResults > fieldKey :', fieldKey )
+      console.log('TeeResults > prog[fieldKey] :', prog[fieldKey] )
+      const bool = filterVal === '' ? true : prog[fieldKey] === filterVal
+      boolArray.push(bool)
+    }
+    const checkFilters = boolArray.every(b => !!b)
+    return checkFilters
+  })
+  console.log('TeeResults > resultsProgsReFiltered > results: ', results )
+  return results
 })
+
+const resultsProgsLen = computed(() => {
+  // return resultsProgs.length
+  return resultsProgsReFiltered.value.length
+})
+
+const updateLocalFilters = (event: any) => {
+  console.log('\nTeeResults > updateLocalFilters > event :', event )
+  // filter out or push selected value
+  const isActive = activeLocalFilters.value[event.field]?.selected === event.value 
+  console.log('TeeResults > updateLocalFilters > isActive :', isActive )
+  activeLocalFilters.value[event.field] = event.value
+}
 
 const updateDetailResult = (id: string | number) => {
   // console.log(`TeeResults > updateDetailResult >  id : ${id}`)

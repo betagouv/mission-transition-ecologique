@@ -24,7 +24,31 @@ export const results = {
     showAlertNoResults: true,
     showResultsTitle: false,
     showProgramInfos: true,
-    showProgramSubtitles: false
+    showProgramSubtitles: false,
+    filters: [
+      {
+        field: "nature de l'aide",
+        label: "nature de l'aide",
+        values: [
+          { 
+            label: 'Accompagnement',
+            value: 'accompagnement'
+          },
+          { 
+            label: 'Financement',
+            value: 'financement'
+          },
+          { 
+            label: 'Prêt',
+            value: 'prêt'
+          },
+          { 
+            label: 'Formation',
+            value: 'formation'
+          }
+        ]
+      }
+    ],
   },
   options: [
     {

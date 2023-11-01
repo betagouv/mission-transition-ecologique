@@ -132,6 +132,7 @@ export interface Track {
   label: Translations,
   interface?: TrackInterface,
   behavior?: TrackBehavior,
+  // config?: TrackResultsConfig,
   next?: TrackNext,
   options?: TrackOptions,
   form?: FormOptions,
@@ -173,10 +174,20 @@ export interface TrackChoice {
 
 // FOR TRACK RESULTS
 
+export interface TrackFilterValue {
+  label: string,
+  value: string
+}
+export interface TrackFilter {
+  field: string,
+  label: string,
+  values: TrackFilterValue[]
+}
 export interface TrackResultsConfig {
   showAlertNoResults: boolean,
   showAlertResults: boolean,
   showResultsTitle: boolean,
   showProgramInfos: boolean,
-  showProgramSubtitles: boolean
+  showProgramSubtitles: boolean,
+  filters?: TrackFilter[]
 }
