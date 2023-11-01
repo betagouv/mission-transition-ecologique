@@ -24,7 +24,7 @@
   </div>
 
   <!-- RESULTS ALERT -->
-  <DsfrAlert
+  <!-- <DsfrAlert
     v-if="trackConfig?.showAlertResults && resultsProgsLen"
     :title="choices.t('results.alertTitle')"
     :description="choices.t('results.alertDescription')"
@@ -35,31 +35,38 @@
     :title="choices.t('results.alertTitleNoResults')"
     :description="choices.t('results.alertNoResults')"
     type="warning">
-  </DsfrAlert>
+  </DsfrAlert> -->
+  <TeeNoResults
+    v-if="!resultsProgsLen"
+    :image="trackConfig?.noResultsImage"
+    :message="trackConfig?.noResultsMessage"
+    >
+  </TeeNoResults>
 
   <!-- DEBUGGING -->
   <h4
-    v-if="trackConfig?.showResultsTitle && resultsProgsLen"
+    v-if="resultsProgsLen && trackConfig?.showResultsTitle && resultsProgsLen"
     class="fr-pt-12v">
     {{ choices.t('results.fittingPrograms') }}
     ({{ resultsProgsLen }})
   </h4>
 
-  
   <!-- PROGRAMS AS LIST OF CARDS -->
   <div 
     v-if="resultsProgsLen"
     class="fr-container fr-px-0 fr-mt-6v">
   
     <!-- RESULTS SIZE -->
-    <div class="fr-mb-4v tee-text-light">
+    <div
+      v-if="resultsProgsLen > 1"
+      class="fr-mb-4v tee-text-light">
       {{ resultsProgsReFilteredLen }}
       {{ choices.t('results.results') }}
     </div>
 
     <!-- FILTERS IF ANY -->
     <div
-      v-if="trackConfig?.filters"
+      v-if="trackConfig?.filters && resultsProgsLen > 1"
       class="fr-grid-row fr-grid-row--gutters fr-mb-4v">
       <div
         v-for="filter in trackConfig.filters"
@@ -71,6 +78,32 @@
           @updateFilter="updateLocalFilters"/>
       </div>
     </div>
+
+    <!-- NO RESULTS -->
+    <TeeNoResults
+      v-if="!resultsProgsReFilteredLen"
+      :image="trackConfig?.noResultsImage"
+      :message="trackConfig?.noResultsMessage"
+      >
+    </TeeNoResults>
+    <!-- <div
+      v-if="trackConfig && !resultsProgsReFilteredLen"
+      class="fr-grid-row fr-my-20v">
+      <div
+        class="fr-col fr-col-6 fr-col-offset-3">
+        <img 
+          class="fr-responsive-img" 
+          :src="`${choices.publicPath}${trackConfig.noResultsImage}`"
+          :alt="`image / no-results`"/>
+      </div>
+      <div
+        class="fr-col fr-col-12">
+        <p
+          class="fr-text-center tee-text-no-result fr-mt-6v">
+          {{ trackConfig.noResultsMessage[choices.lang] }}
+        </p>
+      </div>
+    </div> -->
 
     <!-- PROGRAMS CARDS -->
     <div
@@ -168,6 +201,8 @@ import { getFrom, scrollToTop } from '../utils/helpers'
 
 // @ts-ignore
 import TeeResultsFilter from './TeeResultsFilter.vue'
+// @ts-ignore
+import TeeNoResults from './TeeNoResults.vue'
 
 // @ts-ignore
 import type { TrackChoice, TrackResultsConfig, ProgramData } from '@/types/index'

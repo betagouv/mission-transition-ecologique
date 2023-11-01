@@ -186,6 +186,8 @@ export interface TrackFilter {
   values: TrackFilterValue[]
 }
 export interface TrackResultsConfig {
+  noResultsMessage: Translations,
+  noResultsImage: string,
   showAlertNoResults: boolean,
   showAlertResults: boolean,
   showResultsTitle: boolean,

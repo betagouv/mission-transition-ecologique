@@ -116,7 +116,7 @@ export const goals = {
 
     // LEGACY OPTIONS
     {
-      disabled: true,
+      disabled: false,
       value: {
         ...objectifsPrioritaires,
         'questionnaire . objectif prioritaire . est faire des économies': 'oui'

@@ -19,6 +19,8 @@ export const results = {
     static: true
   },
   config: {
+    noResultsMessage: {fr: "Aucune aide n'a pu être identifiée avec les critères choisis..."},
+    noResultsImage: 'images/tracks/no-results.svg',
     showAlertResults: false,
     showAlertNoResults: true,
     showResultsTitle: false,
