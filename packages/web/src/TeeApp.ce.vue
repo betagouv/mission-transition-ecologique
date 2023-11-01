@@ -411,10 +411,6 @@ onMounted(async () => {
 
   // parse url to get current track and other queries
   const currentTrack = route.query['teeActiveTrack']
-  // @ts-ignore
-  const queryTracksRaw = unfoldQueries(route.query)
-  console.log('TeeApp > mounted > queryTracksInfos :', queryTracksRaw)
-  // TO DO
   /*
   GOAL => unfold object such as 
   {
@@ -425,6 +421,9 @@ onMounted(async () => {
     teetrack_track_structure_workforce: "entreprise . effectif:249|structure_sizes:PME"
   }
   */
+  const queryTracksRaw = unfoldQueries(route.query)
+  console.log('TeeApp > mounted > queryTracksInfos :', queryTracksRaw)
+   // TO DO
   // tracks.populateUsedTracksFromQuery(route.query)
   // nav.populateFromQuery(route.query)
 
