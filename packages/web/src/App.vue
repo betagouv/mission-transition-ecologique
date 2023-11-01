@@ -12,14 +12,30 @@
       /> -->
     
     <!-- MAIN APP COMPONENT  -->
-    <TeeApp
+    <div
+      style="min-height: 800px">
+      <TeeApp
       :seed="'track_needs'"
       :showHeaderBool="false"
       :showFooterBool="false"
       :noLocalMatomo="true"
       :locale="'fr'"
       />
+    </div>
 
+    <!-- INTRO / CTA -->
+    <div
+      class="fr-grid-row fr-grid-row-gutters fr-my-5v">
+      <div class="fr-col fr-col-4 fr-p-8v fr-text-center">
+        Je renseigne mon profil avec mon SIRET
+      </div>
+      <div class="fr-col fr-col-4 fr-p-8v fr-text-center">
+        Je réponds à quelques questions par thématique
+      </div>
+      <div class="fr-col fr-col-4 fr-p-8v fr-text-center">
+        J’accède aux dispositifs de soutien pour mon entreprise
+      </div>
+    </div>
     <!-- FOOTER -->
     <div
       class="fr-mt-10v">
