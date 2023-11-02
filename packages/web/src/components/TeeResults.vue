@@ -179,7 +179,7 @@
 
 <script setup lang="ts">
 
-import { ref, toRaw, onBeforeMount, computed } from 'vue'
+import { ref, onBeforeMount, computed } from 'vue'
 import { choicesStore } from '../stores/choices'
 import { programsStore } from '../stores/programs'
 import { analyticsStore } from '../stores/analytics'
@@ -227,7 +227,7 @@ const resultsProgs: ProgramData[] = programs.filterPrograms(props.tracksResults)
 const resultsProgsReFiltered = computed(() => {
   // console.log('\nTeeResults > resultsProgsReFiltered...' )
   // console.log('TeeResults > resultsProgsReFiltered > resultsProgs :', resultsProgs )
-  const results = toRaw(resultsProgs).filter((prog: ProgramData) => {
+  const results = resultsProgs.filter((prog: ProgramData) => {
     // console.log('\nTeeResults > resultsProgsReFiltered > prog :', prog )
     const boolArray = [true]
     for (const fieldKey in activeLocalFilters.value) {

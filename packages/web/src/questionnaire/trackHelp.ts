@@ -46,7 +46,7 @@ export const help = {
       }
     },
     {
-      disabled: false,
+      disabled: true,
       value: { user_help: 'direct' },
       title: { fr: "Résultats" },
       label: { fr: "Les résultas" },
