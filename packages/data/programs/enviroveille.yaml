@@ -1,0 +1,46 @@
+titre: Enviroveille
+promesse: Accédez à toute l’information réglementaire en matière d'environnement,
+  énergie et santé-sécurité au travail
+description: Abonnez vous au service de veille "Enviroveille" de la CCI pour avoir
+  accès à l’information réglementaire applicable à votre activité (environnement,
+  énergie, santé-sécurité au travail) et suivre son évolution.
+illustration: images/TEE_ampoule.png
+opérateur de contact: CCI
+url: https://www.cci.fr/offre/assurez-votre-conformite-au-droit-de-lenvironnement-sante-et-securite-avec-enviroveille
+nature de l'aide: accompagnement
+coût de l'accompagnement: Abonnement, sur devis selon la formule choisie (de 150 à
+  800€)
+durée de l'accompagnement: 12 mois
+objectifs:
+- Recevez une alerte réglementaire une fois tous les 15 jours, comme premier niveau
+  d'information sur l'actualité réglementaire
+- Bénéficiez d'une veille personnalisée sur les activités qui vous concernent et recevez
+  une fois par mois l'actualité juridique complète qui s'y rapporte.
+- 'Accédez à une base de données juridiques sur la plateforme www.enviroveille.com
+  : textes réglementaires, jurisprudence, projets de textes européens et nationaux.'
+- 'Recevez un bimestriel dématérialisé qui recense les textes les plus importants
+  sur les différentes thématiques de la transition écologique : déchets, énergie,
+  eau, biodiversité, air, sites et sols pollués, installations classées pour la protection
+  de l’environnement.'
+publicodes:
+  afficher le dispositif si:
+    toutes ces conditions:
+    - règles d'éligibilité
+    - secteur d'activité prioritaire
+  règles d'éligibilité:
+    toutes ces conditions:
+    - entreprise . effectif <= 499
+  secteur d'activité prioritaire:
+    une de ces conditions:
+    - entreprise . code NAF niveau 1 . est A
+    - entreprise . code NAF niveau 1 . est B
+    - entreprise . code NAF niveau 1 . est C
+    - entreprise . code NAF niveau 1 . est D
+    - entreprise . code NAF niveau 1 . est E
+    - entreprise . code NAF niveau 1 . est F
+    - entreprise . code NAF niveau 1 . est K
+    - entreprise . code NAF niveau 1 . est M
+    - entreprise . code NAF niveau 1 . est N
+    - entreprise . code NAF niveau 1 . est O
+    - entreprise . code NAF niveau 1 . est P
+    - entreprise . code NAF niveau 1 . est Q

@@ -1,24 +1,17 @@
+import { secteurs, NAF1ToVar, NAF1Letters, codesNAF1 } from './publicodesObjects'
+
 const metaEnv = import.meta.env
 // console.log('trackSiret >  metaEnv :', metaEnv)
 const TEE_BACKEND_URL = metaEnv.VITE_TEE_BACKEND_URL || 'https://tee-backend.osc-fr1.scalingo.io'
 
-const secteurs = {
-  "entreprise . secteur d'activité . est artisanat": 'non',
-  "entreprise . secteur d'activité . est industrie": 'non',
-  "entreprise . secteur d'activité . est tourisme": 'non',
-  "entreprise . secteur d'activité . est tertiaire": 'non',
-  "entreprise . secteur d'activité . est agriculture": 'non',
-  "entreprise . secteur d'activité . est autre secteur": 'non'
-}
-
 const dataTarget = {
   siret: '',
   codeNaf: '',
+  codeNAF1: '',
   ville: '',
   codePostal: '',
   structure_sizes: '',
   denomination: '',
-  label_sectors: undefined,
   // project_sectors: undefined,
   secteur: undefined
 }
@@ -121,14 +114,16 @@ export const siret = {
                     tourisme: { "entreprise . secteur d'activité . est tourisme": 'oui' },
                     tertiaire: { "entreprise . secteur d'activité . est tertiaire": 'oui' },
                     agriculture: { "entreprise . secteur d'activité . est agriculture": 'oui' },
-                    'autre secteur': { "entreprise . secteur d'activité . est autre secteur": 'oui' }
+                    'autre secteur': {
+                      "entreprise . secteur d'activité . est autre secteur": 'oui'
+                    }
                   }
                   // => [{ "entreprise . secteur d'activité . est artisanat": 'oui' }, { "entreprise . secteur d'activité . est tertiaire": 'oui' }]
                 },
                 {
                   operation: 'injectInObject',
                   object: { ...secteurs }
-                  /* => { 
+                  /* => {
                     {
                       "entreprise . secteur d'activité . est artisanat": 'non',
                       "entreprise . secteur d'activité . est industrie": 'non',
@@ -143,9 +138,40 @@ export const siret = {
             },
             {
               from: 'rawData',
+              id: 'codeNAF1',
+              path: 'etablissement.uniteLegale.activitePrincipaleUniteLegale',
+              dataField: '.',
+              onlyRemap: true,
+              cleaning: [
+                {
+                  operation: 'findFromRefs',
+                  findInRef: 'nafCodes',
+                  findFromField: 'NIV5',
+                  retrieveFromField: 'NIV1'
+                  // => 'A'
+                },
+                {
+                  operation: 'findFromDict',
+                  dict: Object.fromEntries(NAF1Letters.map((l) => [l, { [NAF1ToVar(l)]: 'oui' }]))
+                  // => { "entreprise . code NAF . est A": 'oui' }
+                },
+                {
+                  operation: 'injectInObject',
+                  object: { ...codesNAF1 }
+                  /* => {
+                      "entreprise . code NAF . est A": 'oui',
+                      "entreprise . code NAF . est B": 'non',
+                      ...
+                    }
+                  */
+                }
+              ]
+            },
+            {
+              from: 'rawData',
               id: 'sectorLabel',
               path: 'etablissement.uniteLegale.activitePrincipaleUniteLegale',
-              dataField: 'label_sectors',
+              dataField: 'secteur',
               onlyRemap: true,
               cleaning: [
                 {
@@ -214,7 +240,7 @@ export const siret = {
             //   icon: 'fr-icon-briefcase-line'
             // },
             {
-              respFields: ['data.label_sectors'],
+              respFields: ['data.secteur'],
               label: "Secteur d'activité :",
               icon: 'fr-icon-briefcase-line'
             },

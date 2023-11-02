@@ -45,9 +45,19 @@
       @click="updateDetailResult(prog.id)">
       <div class="fr-card__body">
         <div class="fr-card__content">
-          <h2 class="fr-card__title tee-program-resume">
+          <!-- TITLE -->
+          <div class="fr-card__start fr-mb-2v">
+            <p 
+              class="tee-program-title">
+              {{ prog.titre }}
+            </p>
+          </div>
+          <!-- CONTENT -->
+          <h2 
+            class="fr-card__title tee-program-resume fr-mb-3v">
             {{ prog.promesse }} 
           </h2>
+          <!-- DEBUG -->
           <p
             v-if="debug"
             class="vue-debug fr-card__desc">
@@ -55,11 +65,15 @@
             <br> prog.cover : <code>{{ prog.illustration }}</code>
             <!-- {{ `${choices.publicPath}${randomImage()}` }} -->
           </p>
-          <!-- TITLE -->
-          <div class="fr-card__start">
+          <!-- END -->
+          <div class="fr-card__end">
             <p 
-              class="fr-mb-3v tee-program-title">
-              {{ prog.titre }}
+              class="fr-mb-0 tee-program-info">
+              <span 
+                class="fr-icon-money-euro-circle-line" 
+                aria-hidden="true">
+              </span>
+              {{ getCostInfos(prog) }}
             </p>
           </div>
         </div>
@@ -115,9 +129,12 @@ import { choicesStore } from '../stores/choices'
 import { programsStore } from '../stores/programs'
 import { analyticsStore } from '../stores/analytics'
 
+import { scrollToTop } from '../utils/helpers'
+
 // @ts-ignore
 import type { TrackChoice, TrackResultsConfig, ProgramData } from '@/types/index'
-
+// @ts-ignore
+import { ProgramAidType } from '@/types/programTypes'
 // @ts-ignore
 // import { randomChoice } from '@/utils/helpers'
 
@@ -138,6 +155,7 @@ interface Props {
   trackOptions?: any,
   trackForm?: any,
   tracksResults: TrackChoice[] | any[],
+  trackElement: any;
   debug?: boolean,
 }
 const props = defineProps<Props>()
@@ -151,8 +169,37 @@ const resultsProgsLen = computed(() => {
 const updateDetailResult = (id: string | number) => {
   // console.log(`TeeResults > updateDetailResult >  id : ${id}`)
   programs.setDetailResult(id, props.trackId)
+  scrollToTop(props.trackElement, props.trackId)
 }
 
+const getCostInfos = (program: ProgramData) => {
+  let prefix: string = ''
+  let text: string | undefined = ''
+  // console.log('TeeResults > onBeforeMount > resultsProgs :', resultsProgs )
+
+  switch (program["nature de l'aide"]) {
+    case ProgramAidType.acc:
+      prefix = 'programCosts.costPrefix'
+      text = program["coût de l'accompagnement"]
+      break
+    case ProgramAidType.train:
+      prefix = 'programCosts.costPrefix'
+      text = program["coût de l'accompagnement"]
+      break
+    case ProgramAidType.fund:
+      prefix = 'programCosts.aidPrefix'
+      text = program['montant du financement']
+      break
+    case ProgramAidType.loan:
+      prefix = 'programCosts.loan'
+      text = program['montant du prêt']
+      break
+  }
+  // Translate prefix
+  prefix = choices.t(prefix)
+
+  return `${prefix} : ${text}`
+}
 
 onBeforeMount(() => {
   // console.log('TeeResults > onBeforeMount > resultsProgs :', resultsProgs )

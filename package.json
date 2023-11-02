@@ -28,8 +28,8 @@
     "./packages/*"
   ],
   "engines": {
-    "node": "~18.18",
-    "npm": "~9.8"
+    "node": "18.x",
+    "npm": "9.x"
   },
   "dependencies": {
     "typescript": "~4.8.4"
