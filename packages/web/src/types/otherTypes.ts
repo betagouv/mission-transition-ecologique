@@ -35,12 +35,13 @@ export interface ReqError {
   statusText?: string,
 }
 export interface ReqResp extends ReqError {
-  action?: CallbackActions,
+  action?: CallbackActions | string,
   code?: string,
   message?: string,
   data?: any,
   raw?: any,
-  resultsMapping?: ResultsMapping[]
+  resultsMapping?: ResultsMapping[],
+  url?: string
 }
 
 

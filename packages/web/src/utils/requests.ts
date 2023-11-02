@@ -1,4 +1,4 @@
-import type { MetaEnv, FormCallback } from '@/types/index'
+import type { MetaEnv, FormCallback, ReqResp } from '@/types/index'
 // import { toRaw } from 'vue'
 import { remapItem  } from './helpers'
 
@@ -70,7 +70,6 @@ export const sendRequest = async (url: string, method: string, headers: any, bod
   // console.log('utils > requests > sendRequest >  headers :', headers)
   
   // send request
-  let respJson
   try {
     const response = await fetch(url, {
       method: method,
@@ -78,20 +77,25 @@ export const sendRequest = async (url: string, method: string, headers: any, bod
       body: body
     })
     // console.log('utils > requests > sendRequest >  response :', response)
-    respJson = await response.json()
+    const respJson = await response.json()
     respJson.action = action
     respJson.ok = response.ok
     respJson.status = response.status
     respJson.statusText = response.statusText
     respJson.url = response.url
+    
     // console.log('utils > requests > sendRequest >  respJson :', respJson)
+    return respJson
   } catch (error) {
+    const respObj: ReqResp = {}
     console.log('utils > requests > sendRequest >  error :', error)
-    respJson.action = action
-    respJson.ok = false
-    respJson.status = error
-    respJson.statusText = 'Error'
+    respObj.action = action
+    respObj.ok = false
+    respObj.status = 404
+    respObj.statusText = 'Error'
+    respObj.message = `${error}`
+
+    return respObj
   }
   
-  return respJson
 }
