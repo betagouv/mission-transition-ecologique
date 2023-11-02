@@ -129,6 +129,8 @@ import { choicesStore } from '../stores/choices'
 import { programsStore } from '../stores/programs'
 import { analyticsStore } from '../stores/analytics'
 
+import { scrollToTop, consolidateAmounts } from '../utils/helpers'
+
 // @ts-ignore
 import type { TrackChoice, TrackResultsConfig, ProgramData } from '@/types/index'
 // @ts-ignore
@@ -153,6 +155,7 @@ interface Props {
   trackOptions?: any,
   trackForm?: any,
   tracksResults: TrackChoice[] | any[],
+  trackElement: any;
   debug?: boolean,
 }
 const props = defineProps<Props>()
@@ -166,6 +169,7 @@ const resultsProgsLen = computed(() => {
 const updateDetailResult = (id: string | number) => {
   // console.log(`TeeResults > updateDetailResult >  id : ${id}`)
   programs.setDetailResult(id, props.trackId)
+  scrollToTop(props.trackElement, props.trackId)
 }
 
 const getCostInfos = (program: ProgramData) => {
@@ -193,6 +197,9 @@ const getCostInfos = (program: ProgramData) => {
   }
   // Translate prefix
   prefix = choices.t(prefix)
+
+  // No splitted amounts (non-breakable spaces in texts like '10 000 €')
+  text = consolidateAmounts(text)
 
   return `${prefix} : ${text}`
 }

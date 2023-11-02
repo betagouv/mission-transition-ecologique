@@ -133,6 +133,23 @@ WARNING :
 }
 
 /* CUSTOM BUTTON INPUT */
+.tee-input-large {
+  font-size: 1.1rem; 
+  height: 4rem !important; 
+}
+.tee-btn-input-large {
+  max-height: 4rem !important; 
+  max-width: 4rem !important; 
+}
+.tee-btn-input-large::before {
+  width: 3rem !important; 
+}
+.tee-input-hint {
+  color: #000091; 
+}
+.tee-input-wildcard {
+  color: #161616; 
+}
 .tee-btn-input {
   padding: .5rem 1rem; 
   display: flex; 
@@ -172,6 +189,11 @@ WARNING :
 }
 .tee-program-info {
   color: #000091; 
+  font-size: .8rem;
+}
+.tee-program-info span::before {
+  font-size: .8rem;
+  --icon-size: 1rem;
 }
 .tee-program-badge-image {
   text-transform: inherit;
