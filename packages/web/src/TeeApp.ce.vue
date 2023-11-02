@@ -236,8 +236,6 @@ import TeeProgramDetail from './components/TeeProgramDetail.vue'
 // @ts-ignore
 import TeeCredits from './components/TeeCredits.vue'
 
-// const appId = 'gov-aid-tree-app'
-
 // @ts-ignore
 const metaEnv = import.meta.env
 // console.log('TeeApp - metaEnv :', metaEnv)
@@ -247,7 +245,6 @@ const noDebugSwitch = metaEnv.VITE_NO_DEBUG_SWITCH === 'true'
 const publicPath = `${deployUrl}${metaEnv.BASE_URL}`
 // console.log('TeeApp - publicPath :', publicPath)
 
-// @ts-ignore
 // console.log('TeeApp - process.env :', process.env)
 // @ts-ignore
 const programsFromJson = jsonDataset
