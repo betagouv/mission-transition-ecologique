@@ -291,6 +291,8 @@ import { choicesStore } from '../stores/choices'
 import { programsStore } from '../stores/programs'
 import { analyticsStore } from '../stores/analytics'
 
+import { scrollToTop } from '../utils/helpers'
+
 const choices = choicesStore()
 const programs = programsStore()
 const analytics = analyticsStore()
@@ -303,6 +305,7 @@ const columnTiles = ref<string>('fr-col')
 interface Props {
   program: ProgramData,
   trackConfig: Track | any,
+  trackElement: any;
   debug?: boolean,
 }
 const props = defineProps<Props>()
@@ -311,6 +314,7 @@ const props = defineProps<Props>()
 const resetDetailResult = () => {
   // console.log('TeeProgramDetail > resetDetailResult > trackConfig : ', props.trackConfig )
   programs.resetDetailResult()
+  scrollToTop(props.trackElement, props.program.id)
 }
 const toggleShowForm = () => {
   // console.log('TeeProgramDetail > toggleShowForm > trackConfig : ', props.trackConfig )
