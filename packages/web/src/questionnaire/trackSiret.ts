@@ -12,7 +12,6 @@ const dataTarget = {
   codePostal: '',
   structure_sizes: '',
   denomination: '',
-  label_sectors: undefined,
   // project_sectors: undefined,
   secteur: undefined
 }
@@ -173,7 +172,7 @@ export const siret = {
               from: 'rawData',
               id: 'sectorLabel',
               path: 'etablissement.uniteLegale.activitePrincipaleUniteLegale',
-              dataField: 'label_sectors',
+              dataField: 'secteur',
               onlyRemap: true,
               cleaning: [
                 {
@@ -242,7 +241,7 @@ export const siret = {
             //   icon: 'fr-icon-briefcase-line'
             // },
             {
-              respFields: ['data.label_sectors'],
+              respFields: ['data.secteur'],
               label: "Secteur d'activité :",
               icon: 'fr-icon-briefcase-line'
             },
