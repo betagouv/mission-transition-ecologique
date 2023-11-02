@@ -129,7 +129,7 @@ import { choicesStore } from '../stores/choices'
 import { programsStore } from '../stores/programs'
 import { analyticsStore } from '../stores/analytics'
 
-import { scrollToTop } from '../utils/helpers'
+import { scrollToTop, consolidateAmounts } from '../utils/helpers'
 
 // @ts-ignore
 import type { TrackChoice, TrackResultsConfig, ProgramData } from '@/types/index'
@@ -197,6 +197,9 @@ const getCostInfos = (program: ProgramData) => {
   }
   // Translate prefix
   prefix = choices.t(prefix)
+
+  // No splitted amounts (non-breakable spaces in texts like '10 000 €')
+  text = consolidateAmounts(text)
 
   return `${prefix} : ${text}`
 }
