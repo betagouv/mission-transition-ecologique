@@ -68,20 +68,30 @@ export const sendRequest = async (url: string, method: string, headers: any, bod
   // console.log('utils > requests > sendRequest >  url :', url)
   // console.log('utils > requests > sendRequest >  method :', method)
   // console.log('utils > requests > sendRequest >  headers :', headers)
+  
   // send request
-  const response = await fetch(url, {
-    method: method,
-    headers: headers,
-    body: body
-  })
-  // console.log('utils > requests > sendRequest >  response :', response)
-  const respJson = await response.json()
-  respJson.action = action
-  respJson.ok = response.ok
-  respJson.status = response.status
-  respJson.statusText = response.statusText
-  respJson.url = response.url
-  // console.log('utils > requests > sendRequest >  respJson :', respJson)
+  let respJson
+  try {
+    const response = await fetch(url, {
+      method: method,
+      headers: headers,
+      body: body
+    })
+    // console.log('utils > requests > sendRequest >  response :', response)
+    respJson = await response.json()
+    respJson.action = action
+    respJson.ok = response.ok
+    respJson.status = response.status
+    respJson.statusText = response.statusText
+    respJson.url = response.url
+    // console.log('utils > requests > sendRequest >  respJson :', respJson)
+  } catch (error) {
+    console.log('utils > requests > sendRequest >  error :', error)
+    respJson.action = action
+    respJson.ok = false
+    respJson.status = error
+    respJson.statusText = 'Error'
+  }
   
   return respJson
 }
