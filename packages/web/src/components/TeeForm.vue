@@ -253,7 +253,7 @@ const trackValues: any[] = tracks.getAllUsedTracksValues
 
 // @ts-ignore
 const metaEnv = import.meta.env
-const contactEmail = ref<string>(metaEnv.VITE_BREVO_SENDER_EMAIL || 'france-transition@beta.gouv.fr')
+const contactEmail = ref<string>(metaEnv.VITE_CONTACT_EMAIL || 'france-transition@beta.gouv.fr')
 
 interface DataProps {
   programId: string

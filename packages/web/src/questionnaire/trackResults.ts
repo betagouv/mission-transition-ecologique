@@ -202,7 +202,6 @@ Merci d'avance pour votre appel`,
           // 'api-key': ''
         },
         // headerApiKey: 'api-key',
-        // envApiKey: 'VITE_BREVO_TOKEN',
         dataStructure: {
           email: '',
           // listIds: [],
@@ -217,15 +216,6 @@ Merci d'avance pour votre appel`,
             id: 'email',
             dataField: 'email'
           },
-          // {
-          //   from: 'env',
-          //   id: 'VITE_BREVO_LIST_IDS',
-          //   dataField: 'listIds',
-          //   // dataField: 'includeListIds',
-          //   asArray: true,
-          //   sep: ',',
-          //   type: 'integer'
-          // },
           {
             from: 'formData',
             id: 'surname',
@@ -303,73 +293,6 @@ Merci d'avance pour votre appel`,
           }
         ]
       }
-      // {
-      //   disabled: true,
-      //   help: 'Second action send a transactional email',
-      //   helpDocumentation: [
-      //     'https://developers.brevo.com/docs/send-a-transactional-email',
-      //     'https://developers.brevo.com/reference/sendtransacemail'
-      //   ],
-      //   action: 'sendTransactionalEmail',
-      //   url: 'https://api.brevo.com/v3/smtp/email',
-      //   method: 'POST',
-      //   headers: {
-      //     accept: 'application/json',
-      //     'content-type': 'application/json',
-      //     'api-key': ''
-      //   },
-      //   headerApiKey: 'api-key',
-      //   envApiKey: 'VITE_BREVO_TOKEN',
-      //   dataStructure: {
-      //     sender: {
-      //       name: 'Transition Ecologique des Entreprises',
-      //       email: ''
-      //     },
-      //     to: [
-      //       {
-      //         name: '',
-      //         email: ''
-      //       }
-      //     ],
-      //     replyTo: {
-      //       name: 'Mission Transition Ecologique des Entreprises',
-      //       email: 'france-transition@beta.gouv.fr'
-      //     },
-      //     subject: 'Test transactional email',
-      //     htmlContent: `
-      //       <html>
-      //         <head></head>
-      //         <body>
-      //           <p>
-      //             Bonjour,
-      //           </p>
-      //           <p>
-      //             Merci d'avoir contacté l'équipe de Transition Ecologique des Entreprises.
-      //           </p>
-      //           <p>
-      //             Nous revenons vers vous au plus vite
-      //           </p>
-      //         </body>
-      //       </html>`
-      //   },
-      //   dataMapping: [
-      //     {
-      //       from: 'env',
-      //       id: 'VITE_BREVO_SENDER_EMAIL',
-      //       dataField: 'sender.email',
-      //     },
-      //     {
-      //       from: 'formData',
-      //       id: 'email',
-      //       dataField: 'to.0.email',
-      //     },
-      //     {
-      //       from: 'formData',
-      //       id: 'name',
-      //       dataField: 'to.0.name',
-      //     },
-      //   ]
-      // }
     ]
     // next: {
     //   default: 'track_results'

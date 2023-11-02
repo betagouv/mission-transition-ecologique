@@ -520,12 +520,10 @@ VITE_NO_DEBUG_SWITCH = false
 VITE_DATA_DIR_PATH = ../data/programs
 
 # To indicate built source while copying the widget
-VITE_DEPLOY_URL = https://gov-aid-tree.osc-fr1.scalingo.io
+VITE_DEPLOY_URL = https://tee-frontend.osc-fr1.scalingo.io
 
-# To set up Brevo services 
-VITE_BREVO_TOKEN = 123456789
-VITE_BREVO_LIST_IDS = 1,2
-VITE_BREVO_SENDER_EMAIL = france-transition@beta.gouv.fr
+# To set up global contact email
+VITE_CONTACT_EMAIL = france-transition@beta.gouv.fr
 
 # To set up Matomo analytics
 # Note : if VITE_MATOMO_DEACTIVATE is set to 'true' it prohibits the tracking
@@ -533,6 +531,9 @@ VITE_BREVO_SENDER_EMAIL = france-transition@beta.gouv.fr
 VITE_MATOMO_DEACTIVATE = true
 VITE_MATOMO_URL = https://stats.beta.gouv.fr
 VITE_MATOMO_APP_ID = 42
+
+# To indicate the backend url
+VITE_TEE_BACKEND_URL=https://tee-backend.osc-fr1.scalingo.io
 ```
 
 ---
