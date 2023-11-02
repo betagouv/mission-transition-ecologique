@@ -205,7 +205,7 @@ import TeeResultsFilter from './TeeResultsFilter.vue'
 import TeeNoResults from './TeeNoResults.vue'
 
 // @ts-ignore
-import type { TrackChoice, TrackResultsConfig, ProgramData } from '@/types/index'
+import type { TrackChoice, TrackResultsConfig, ProgramData, FilterSignal } from '@/types/index'
 // @ts-ignore
 import { ProgramAidType } from '@/types/programTypes'
 // @ts-ignore
@@ -241,7 +241,7 @@ const resultsProgs: ProgramData[] = programs.filterPrograms(props.tracksResults)
 const resultsProgsReFiltered = computed(() => {
   // console.log('\nTeeResults > resultsProgsReFiltered...' )
   // console.log('TeeResults > resultsProgsReFiltered > resultsProgs :', resultsProgs )
-  const results = toRaw(resultsProgs).filter((prog: any) => {
+  const results = toRaw(resultsProgs).filter((prog: ProgramData) => {
     // console.log('\nTeeResults > resultsProgsReFiltered > prog :', prog )
     const boolArray = [true]
     for (const fieldKey in activeLocalFilters.value) {
@@ -291,7 +291,7 @@ const resultsProgsReFilteredLen = computed(() => {
   return resultsProgsReFiltered.value.length
 })
 
-const updateLocalFilters = (event: any) => {
+const updateLocalFilters = (event: FilterSignal) => {
   // console.log('\nTeeResults > updateLocalFilters > event :', event )
   const val = {
     [event.field]: event.value

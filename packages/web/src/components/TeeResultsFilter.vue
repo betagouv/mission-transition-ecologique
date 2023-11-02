@@ -43,7 +43,7 @@ import { ref } from 'vue'
 import { choicesStore } from '../stores/choices'
 
 // @ts-ignore
-import type { TrackFilter } from '@/types/index'
+import type { TrackFilter, FilterEvent } from '@/types/index'
 
 const choices = choicesStore()
 
@@ -57,7 +57,7 @@ interface Props {
 }
 const props = defineProps<Props>()
 
-const updateLocalFilters = (event: any) => {
+const updateLocalFilters = (event: FilterEvent) => {
   // console.log('\nTeeResults > updateLocalFilters > event :', event )
   const val = event.target.value
   // console.log('TeeResults > updateLocalFilters > val :', val )
