@@ -12,7 +12,7 @@ import type {
   Refs,
   ResultsMapping
 } from '@/types'
-import { CleanerOperations } from '@/types'
+import { CleanerOperations, DataMappingFrom } from '@/types'
 
 // enum NafCodeFields {
 //   tags = 'tags',
@@ -250,17 +250,17 @@ export const remapItem = (
     let value: any = ''
     let allResponses: any
     switch (dm.from) {
-      case 'Env':
+      case DataMappingFrom.Env:
         value = metaEnv[dm.id]
         break
-      case 'FormData':
+      case DataMappingFrom.FormData:
         value = formData && formData[dm.id]
         break
-      case 'UsedTracks':
+      case DataMappingFrom.UsedTracks:
         // console.log('utils > helpers > remapItem >  trackValues :', trackValues)
         value = findInObjectsArray(trackValues, dm.id)
         break
-      case 'AllUsedTracks':
+      case DataMappingFrom.AllUsedTracks:
         // console.log('utils > helpers > remapItem >  trackValues :', trackValues)
         allResponses = findInObjectsArray(trackValues, dm.id, true)
         // console.log('utils > helpers > remapItem >  allResponses :', allResponses)
@@ -269,23 +269,23 @@ export const remapItem = (
           })
           .join(' / ')
         break
-      case 'SelectionValues':
+      case DataMappingFrom.SelectionValues:
         // console.log('utils > helpers > remapItem >  trackValues :', trackValues)
         value = findInObjectsArray(selectionValues, dm.id)
         break
-      case 'Props':
+      case DataMappingFrom.Props:
         value = props && props[dm.id]
         break
-      case 'PropsPath':
+      case DataMappingFrom.PropsPath:
         // console.log('utils > helpers > remapItem >  rawData :', rawData)
         value = dm.path && getFromOnePath(props, dm.path )
         break
-      case 'RawData':
+      case DataMappingFrom.RawData:
         // console.log('utils > helpers > remapItem >  rawData :', rawData)
         value = dm.path && getFromOnePath(rawData, dm.path )
         break
       default:
-        value = ''
+        break
     }
 
     // clean value if necessary
