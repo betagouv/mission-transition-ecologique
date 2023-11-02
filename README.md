@@ -53,6 +53,7 @@ height="75px">
 - [NodeJS](https://nodejs.org/) (v18)
 - Back: [Express](http://expressjs.com/) (v4)
 - Front: [VueJS](https://vuejs.org/) (v3)
+  - Design system: [DSFR](https://www.systeme-de-design.gouv.fr/) 
 
 ### Description
 This repository is a monorepo, based on [npm 
@@ -61,6 +62,7 @@ two workspaces:
 
 - the ["web" workspace](./packages/web/README.md) contains the front-end implementations.
 - the ["backend" workspace](./packages/backend/README.md) contains the back-end implementations.
+- the ["data" workspace](./packages/data/README.md) contains the datasets and common files for datasets builds.
 
 ## Getting started
 

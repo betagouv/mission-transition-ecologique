@@ -45,9 +45,9 @@ export default defineConfig({
     copyPublicDir: true,
     lib: {
       entry: './src/main.ce.ts',
-      name: 'tee-frontend-app',
+      name: 'gov-aid-tree-app',
       // the proper extensions will be added
-      fileName: 'tee-frontend-app'
+      fileName: 'gov-aid-tree-app'
     }
   },
   define: {
