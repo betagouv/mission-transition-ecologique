@@ -11,20 +11,24 @@
       /> -->
     
     <!-- MAIN APP COMPONENT  -->
-    <div
-      class="fr-container--fluid"
-      style="min-height: auto">
-      <TeeApp
-      :seed="'track_needs'"
-      :showHeaderBool="false"
-      :showFooterBool="false"
-      :noLocalMatomo="true"
-      :locale="'fr'"
-      />
-    </div>
+    <!-- <div 
+      class="fr-container--fluid fr-py"
+      style="background-color: #E8EDFF;"> -->
+      <div
+        class="fr-container--fluid"
+        style="min-height: auto">
+        <TeeApp
+          :seed="'track_needs'"
+          :showHeaderBool="false"
+          :showFooterBool="false"
+          :noLocalMatomo="true"
+          :locale="'fr'"
+        />
+      </div>
+    <!-- </div> -->
 
     <!-- INTRO / CTA -->
-    <div class="fr-container">
+    <div class="fr-container fr-my-5v">
       <TeeHomeSteps/>
     </div>
 

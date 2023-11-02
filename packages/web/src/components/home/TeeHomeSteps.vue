@@ -1,8 +1,7 @@
 <template>
   <div
-    class="fr-grid-row fr-grid-row-gutters fr-my-15v">
+    class="fr-grid-row fr-grid-row-gutters">
     <div class="fr-col fr-col-4 fr-p-8v fr-text-center">
-      <!-- <h1>1</h1> -->
       <img class="fr-mb-3v" src="/images/home/1.svg" alt="1" />
       <h3>
         Je renseigne mon profil avec mon SIRET
