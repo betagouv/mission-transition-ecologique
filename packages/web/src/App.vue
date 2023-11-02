@@ -1,8 +1,7 @@
 <template>
   <div
-    id="app"
     ref="trackElement"
-    class="fr-container--fluid">
+    id="app">
     <!-- HEADER -->
     <TeeHeader/>
 
@@ -13,6 +12,7 @@
     
     <!-- MAIN APP COMPONENT  -->
     <div
+      class="fr-container--fluid"
       style="min-height: auto">
       <TeeApp
       :seed="'track_needs'"
@@ -24,48 +24,40 @@
     </div>
 
     <!-- INTRO / CTA -->
-    <div
-      class="fr-grid-row fr-grid-row-gutters fr-my-10v">
-      <div class="fr-col fr-col-4 fr-p-8v fr-text-center">
-        <h1>1</h1>
-        <h3>
-          Je renseigne mon profil avec mon SIRET
-        </h3>
-        <p>
-          pour obtenir en quelques clics des résultats personnalisés 
-          éligible dans votre secteur d’activité et géographique.
-        </p>
-      </div>
-      <div class="fr-col fr-col-4 fr-p-8v fr-text-center">
-        <h1>2</h1>
-        <h3>
-          Je réponds à quelques questions par thématique
-        </h3>
-        <p>
-          En fonction de vos objectifs et des enjeux de votre entreprise : 
-          bâtiment, mobilité, déchets, eau, énergie...
-        </p>
-      </div>
-      <div class="fr-col fr-col-4 fr-p-8v fr-text-center">
-        <h1>
-          3
-        </h1>
-        <h3>
-          J’accède aux dispositifs de soutien pour mon entreprise
-        </h3>
-        <p>
-          Des propositions d’accompagnements et aides financières pour 
-          financer vos projets issues 
-          de l’ensemble des partenaires :
-          ADEME, BPI, CCI et CMA !
-        </p>
+    <div class="fr-container">
+      <TeeHomeSteps/>
+    </div>
+
+    <!-- INTRO / INFOS -->
+    <div 
+      class="fr-container--fluid"
+      style="background-color: #E8EDFF;">
+      <div
+        class="fr-container fr-py-0 fr-px-20v">
+        <TeeHomeElectric/>
+        <TeeHomeBuilding/>
+        <TeeHomeMobility/>
+        <TeeHomeWater/>
       </div>
     </div>
+
+    <!-- MAIN APP COMPONENT  -->
+    <!-- <div
+      style="min-height: auto">
+      <TeeApp
+      :seed="'track_results'"
+      :showHeaderBool="false"
+      :showFooterBool="false"
+      :noLocalMatomo="true"
+      :locale="'fr'"
+      />
+    </div> -->
+
     <!-- FOOTER -->
     <div
-      class="fr-mt-10v">
+      class="fr-mt-0v">
       <TeeAppFooter
-        :stick-to-bottom="true"/>
+        :stick-to-bottom="false"/>
     </div>
   </div>
 </template>
@@ -79,6 +71,16 @@ import TeeHeader from './components/TeeHeader.vue'
 // import TeeMatomo from './components/TeeMatomo.vue'
 // @ts-ignore
 import TeeApp from './TeeApp.ce.vue'
+// @ts-ignore
+import TeeHomeSteps from './components/home/TeeHomeSteps.vue'
+// @ts-ignore
+import TeeHomeElectric from './components/home/TeeHomeElectric.vue'
+// @ts-ignore
+import TeeHomeBuilding from './components/home/TeeHomeBuilding.vue'
+// @ts-ignore
+import TeeHomeMobility from './components/home/TeeHomeMobility.vue'
+// @ts-ignore
+import TeeHomeWater from './components/home/TeeHomeWater.vue'
 // @ts-ignore
 import TeeAppFooter from './components/TeeAppFooter.vue'
 </script>

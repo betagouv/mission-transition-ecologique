@@ -89,6 +89,16 @@ WARNING :
   background-color: white;
   z-index: 10;
 }
+.tee-home-img {
+  width: 100%;
+}
+.tee-home-img .fr-content-media__img {
+  width: 100%;
+}
+.tee-home-img > .fr-content-media__img > .fr-responsive-img {
+  aspect-ratio: 1 !important;
+  /* height: 100% !important; */
+}
 
 /* TRACK CALLOUT */
 
