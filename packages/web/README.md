@@ -327,7 +327,7 @@ All the aids are described one by one in the `packages/data/programs` directory 
 .
 ├── data
 │   ├── README.md
-│   ├── example.env
+│   ├── .env.example
 │   ├── package-lock.json
 │   ├── package.json
 │   ├── src                            <-- scripts
@@ -507,7 +507,7 @@ Check : https://github.com/orgs/betagouv/projects/54/views/1
 
 ### Environment variables
 
-The `env` variables you can use for deployment are listed in the `example.env` file.
+The `env` variables you can use for deployment are listed in the `.env.example` file.
 
 ```env
 # To hide the "debug" switch
@@ -616,7 +616,7 @@ All documentation about data models and references are on our [SE Notion space](
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-## Type Support for `.vue` Imports in TS
+### VSCode: Type Support for `.vue` Imports in TS
 
 TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
 
@@ -640,7 +640,9 @@ npm install
 cp .env.example .env
 ```
 
-### Compile and Hot-Reload for Development
+### Development mode
+
+#### Compile and Hot-Reload for Development
 
 ```sh
 npm run dev
@@ -648,19 +650,19 @@ npm run dev
 
 Should run on `http://localhost:4242`
 
-### Type-Check, Compile and Minify for Production
+#### Lint with [ESLint](https://eslint.org/)
 
 ```sh
-npm run build
+npm run lint
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+#### Run Unit Tests with [Vitest](https://vitest.dev/)
 
 ```sh
 npm run test:unit
 ```
 
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
+#### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
 
 ```sh
 npm run test:e2e:dev
@@ -669,25 +671,19 @@ npm run test:e2e:dev
 This runs the end-to-end tests against the Vite development server.
 It is much faster than the production build.
 
+### Production Mode
+#### Type-Check, Compile and Minify for Production
+
+```sh
+npm run build
+```
+
+#### Run End-to-End Tests with [Cypress](https://www.cypress.io/) on Production Build
+
+```sh
 But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
 
 ```sh
 npm run build
 npm run test:e2e
 ```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
-
----
-
-## Credits
-
-- Team
-  - Product owner : ...
-  - Coaching : ...
-  - Designers : ...
-  - Maintainers : ...
