@@ -184,7 +184,7 @@ import { choicesStore } from '../stores/choices'
 import { programsStore } from '../stores/programs'
 import { analyticsStore } from '../stores/analytics'
 
-import { getFrom, scrollToTop } from '../utils/helpers'
+import { getFrom, scrollToTop, consolidateAmounts } from '../utils/helpers'
 
 // @ts-ignore
 import TeeResultsFilter from './TeeResultsFilter.vue'
@@ -314,6 +314,9 @@ const getCostInfos = (program: ProgramData) => {
   }
   // Translate prefix
   prefix = choices.t(prefix)
+
+  // No splitted amounts (non-breakable spaces in texts like '10 000 €')
+  text = consolidateAmounts(text)
 
   return `${prefix} : ${text}`
 }

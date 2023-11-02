@@ -38,10 +38,13 @@ export interface TrackCallout {
   hint?: Translations,
 }
 
-enum TrackComponents {
+export enum TrackComponents {
   cards = 'cards',
   buttons = 'buttons',
-  simpleButtons = 'simpleButtons'
+  simpleButtons = 'simpleButtons',
+  form = 'form',
+  input = 'input',
+  results = 'results'
 }
 export interface TrackInterface {
   component: TrackComponents,
@@ -143,6 +146,7 @@ export interface TracksList {
 
 export interface UsedTrack {
   id: string | any,
+  component: TrackComponents | string,
   category?: string,
   final?: boolean,
   completed: boolean,

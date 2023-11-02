@@ -1,5 +1,5 @@
 import type { Translations } from './translationTypes'
-import type { 
+import type {
   DataMappingFroms,
   Cleaner,
   CleanerReplaceAll,
@@ -17,7 +17,7 @@ export interface FormValues {
   [name: string]: any,
 }
 
-enum FormFieldTypes {
+export enum FormFieldTypes {
   text = 'text',
   email = 'email',
   textarea = 'textarea',
@@ -47,7 +47,7 @@ export interface FormField {
   type?: FormFieldTypes,
   rows?: number,
   defaultValue?: boolean | string | number,
-  
+
   injectInText?: boolean,
   dataStructure?: object,
   dataMapping?: FormCallbackDataMapping[],

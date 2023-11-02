@@ -26,16 +26,16 @@ const refs: Refs = {
   nafCodes: nafCodesJson
 }
 
-import type { 
+import type {
   NextTrackRule,
-  FormCallbackDataMapping, 
-  Cleaner, 
-  CleanerReplaceAll, 
-  CleanerFromJson, 
-  CleanerFromDict, 
+  FormCallbackDataMapping,
+  Cleaner,
+  CleanerReplaceAll,
+  CleanerFromJson,
+  CleanerFromDict,
   CleanerDefaultIfNull,
   CleanerInjectInObject,
-  ResultsMapping 
+  ResultsMapping
 } from '@/types/index'
 
 // GENERIC HELPERS
@@ -89,14 +89,14 @@ export const setProperty = (obj: object, path: string, value: any) => {
   // console.log('utils > helpers > setProperty >  obj :', obj)
   // const [head, ...rest] = path.split('.')
   let resultObj: any
-  
+
   if (path === '.') {
     resultObj = { ...obj, ...value}
   } else {
     const pathAsArray = path.split('.')
     resultObj = setIn(obj, pathAsArray, value)
   }
-  
+
   return resultObj
 }
 
@@ -107,13 +107,13 @@ export const setProperty = (obj: object, path: string, value: any) => {
 
 //   // let value = undefined
 
-//   let UsedTracksFlat: any = {} 
+//   let UsedTracksFlat: any = {}
 //   tracksArray.map( item => {
 //     UsedTracksFlat = {...UsedTracksFlat, ...item}
 //   })
 //   console.log('utils > helpers > findInTracksArray >  UsedTracksFlat :', UsedTracksFlat)
 
-//   const value = UsedTracksFlat[id] 
+//   const value = UsedTracksFlat[id]
 //   console.log('utils > helpers > findInTracksArray >  value :', value)
 //   return value
 // }
@@ -125,14 +125,11 @@ export const findInObjectsArray = (objectsArray: object[], id: string, all: bool
 
   // let value = undefined
 
-  let arrayFlat: any = {} 
-  objectsArray.map( item => {
-    arrayFlat = {...arrayFlat, ...item}
-  })
+  const arrayFlat: any = Object.assign({}, ...objectsArray)
   // console.log('utils > helpers > findInObjectsArray >  arrayFlat :', arrayFlat)
 
-  const value = all ? arrayFlat : arrayFlat[id] 
-  // console.log('utils > helpers > findInObjectsArray >  value :', value)
+  const value = all ? arrayFlat : arrayFlat[id]
+  // console.log('utils > helpers > findInObjectsArray >  value :', {id, value})
   return value
 }
 
@@ -164,7 +161,7 @@ export const findFromRefs = (value: string, cleaner: CleanerFromJson) => {
 
   // console.log('utils > helpers > findFromRefs >  json :', json)
   // console.log('utils > helpers > findFromRefs >  obj :', obj)
-  
+
   // @ts-ignore
   val = obj && obj[targetField]
 
@@ -173,7 +170,7 @@ export const findFromRefs = (value: string, cleaner: CleanerFromJson) => {
 
 export const findFromDict = (value: string | string[], cleaner: CleanerFromDict) => {
   const dict = cleaner.dict
-  let valueOut: any 
+  let valueOut: any
   if (Array.isArray(value)) {
     valueOut = value.map(v => dict[v] || v)
   } else {
@@ -225,7 +222,7 @@ export const cleanValue = (value: any, cleaners: Cleaner[] | CleanerReplaceAll[]
         break
       case 'findFromDict':
         val = findFromDict(val, <CleanerFromDict>cleaner)
-        break 
+        break
       case 'defaultIfNull':
         val = findDefaultIfNull(val, <CleanerDefaultIfNull>cleaner, lang)
         break
@@ -248,13 +245,13 @@ export const remapItem = (
   selectionValues: any[] = [],
   lang: string = 'fr'
   ) => {
-  
+
   // console.log()
   // console.log('utils > helpers > remapItem >  dataStructure :', dataStructure)
   let data = { ...dataStructure }
   const metaEnv = import.meta.env
   // console.log('utils > helpers > remapItem >  metaEnv :', metaEnv)
-  
+
   dataMapping.forEach(dm => {
     // console.log()
     // console.log('utils > helpers > remapItem >  dm :', dm)
@@ -325,8 +322,9 @@ export const remapItem = (
 }
 
 // UX HELPERS
+
 export const scrollToTop = (
-  element: any, 
+  element: any,
   from: string = ''
   ) => {
   // console.log()
@@ -335,4 +333,11 @@ export const scrollToTop = (
   setTimeout(()=> {
     element.scrollIntoView({ behavior: 'smooth' })
   }, 100)
+}
+
+// TEXT HELPERS
+
+export const consolidateAmounts = (str: string | undefined) => {
+  const regex = /(?<=\d)\s(?=\d)|(?<=\d)\s(?=\D)/g
+  return str?.replace(regex, '\u00a0')
 }
