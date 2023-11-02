@@ -4,7 +4,7 @@
     v-if="debug"
     class="vue-debug">
     <p>
-      activeValues: <code>{{ activeValues }}</code>
+      activeValue: <code>{{ activeValue }}</code>
     </p>
   </div>
 
@@ -16,11 +16,14 @@
       :id="filter.field"
       :name="filter.field"
       @change="updateLocalFilters">
+      <!-- DEFAULT OPTION -->
       <option
         value=""
         selected >
         {{ choices.t('results.filterSelect', { fieldLabel: filter.label }) }}
       </option>
+
+      <!-- FILTER OPTIONS -->
       <option
         v-for="filterVal in filter.values"
         :key="filterVal.value"
@@ -47,7 +50,7 @@ import type { TrackFilter, FilterEvent } from '@/types/index'
 
 const choices = choicesStore()
 
-const activeValues = ref<any>()
+const activeValue = ref<any>()
 
 const emit = defineEmits(['updateFilter'])
 
@@ -63,7 +66,8 @@ const updateLocalFilters = (event: FilterEvent) => {
   // console.log('TeeResults > updateLocalFilters > val :', val )
   // console.log('TeeResults > updateLocalFilters > props.filter :', props.filter )
   
-  activeValues.value = val
+  // set local ref
+  activeValue.value = val
 
   // send signal to parent
   const fIn = {
