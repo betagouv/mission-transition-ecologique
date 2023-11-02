@@ -339,6 +339,5 @@ export const scrollToTop = (
 
 export const consolidateAmounts = (str: string | undefined) => {
   const regex = /(?<=\d)\s(?=\d)|(?<=\d)\s(?=\D)/g
-  const text = str?.replace(regex, '\u00a0')
-  return text
+  return str?.replace(regex, '\u00a0')
 }
