@@ -51,26 +51,26 @@ export interface EmailData {
   email: string,
 }
 
-export enum DataMappingFroms {
-  env = 'env',
-  formData = 'formData',
-  usedTracks = 'usedTracks',
-  allUsedTracks = 'allUsedTracks',
-  selectionValues = 'selectionValues',
-  props = 'props',
-  propsPath = 'propsPath',
-  rawData = 'rawData',
+export enum DataMappingFrom {
+  Env = 'Env',
+  FormData = 'FormData',
+  UsedTracks = 'UsedTracks',
+  AllUsedTracks = 'AllUsedTracks',
+  SelectionValues = 'SelectionValues',
+  Props = 'Props',
+  PropsPath = 'PropsPath',
+  RawData = 'RawData',
 }
 
 export enum CallbackMethods {
-  get = 'GET',
-  post = 'POST',
-  put = 'PUT',
+  Get = 'GET',
+  Post = 'POST',
+  Put = 'PUT',
 }
 export enum CallbackActions {
-  requestAPI = 'requestAPI',
-  createContact = 'createContact',
-  sendTransactionalEmail = 'sendTransactionalEmail'
+  RequestAPI = 'RequestAPI',
+  CreateContact = 'CreateContact',
+  SendTransactionalEmail = 'SendTransactionalEmail'
 }
 export enum CleanerOperations {
   replaceAll = 'replaceAll',
@@ -91,11 +91,11 @@ export interface CleanerDefaultIfNull extends Cleaner {
 }
 export interface CleanerReplaceAll extends Cleaner {
   stringToReplace: string,
-  replaceBy: string, 
+  replaceBy: string,
 }
 
 export enum FindInRefs {
-  nafCodes= 'nafCodes'
+  NafCodes= 'NafCodes'
 }
 export interface CleanerFromJson extends Cleaner {
   findInRef: FindInRefs,
@@ -104,9 +104,9 @@ export interface CleanerFromJson extends Cleaner {
 }
 
 export interface CleanerFromDict extends Cleaner {
-  dict: any, 
+  dict: any,
 }
 
 export interface CleanerInjectInObject extends Cleaner {
-  object: object, 
+  object: object,
 }

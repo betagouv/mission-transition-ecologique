@@ -1,4 +1,4 @@
-import type { NextTrackRule, ConditionTrack } from '@/types/index'
+import type { NextTrackRule, ConditionTrack } from '@/types'
 
 export const CheckConditions = ( data: any, conditions: ConditionTrack[], strict: boolean = false ) => {
   // console.log()

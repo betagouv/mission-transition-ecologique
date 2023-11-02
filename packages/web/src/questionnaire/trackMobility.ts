@@ -1,5 +1,8 @@
-export const mobility = {
-  id: 'track_mobility',
+import type { Track } from '@/types'
+import { HasInputOptions, TrackComponents, TrackId } from '@/types'
+
+export const mobility: Track = {
+  id: TrackId.Mobility,
   category: 'myMobility',
   title: { fr: 'Mode de transport' },
   label: { fr: "Quel est le mode de transport principal des salariés pour le trajet domicile-travail ?" },
@@ -13,13 +16,13 @@ export const mobility = {
     imageLeft: 'images/thema/thema-mobilite.svg',
   },
   interface: {
-    component: 'buttons',
+    component: TrackComponents.Buttons,
   },
   behavior: {
     multipleChoices: false,
   },
   next: {
-    default: 'track_mobility_number_vehicles'
+    default: TrackId.MobilityNumberVehicles,
   },
   options: [
     {
@@ -27,7 +30,7 @@ export const mobility = {
       title: { fr: 'Bus' },
       label: { fr: "🚌 Le bus" },
       next: {
-        default: 'track_mobility_number_vehicles'
+        default: TrackId.MobilityNumberVehicles
       }
     },
     {
@@ -35,7 +38,7 @@ export const mobility = {
       title: { fr: "Train ou métro" },
       label: { fr: "🚆 Le train ou le métro" },
       next: {
-        default: 'track_mobility_number_vehicles'
+        default: TrackId.MobilityNumberVehicles
       }
     },
     {
@@ -43,7 +46,7 @@ export const mobility = {
       title: { fr: 'Voiture' },
       label: { fr: "🚗 La voiture" },
       next: {
-        default: 'track_mobility_number_vehicles'
+        default: TrackId.MobilityNumberVehicles
       }
     },
     {
@@ -51,7 +54,7 @@ export const mobility = {
       title: { fr: 'Vélo' },
       label: { fr: "🚲 Le vélo" },
       next: {
-        default: 'track_mobility_number_vehicles'
+        default: TrackId.MobilityNumberVehicles
       }
     },
     {
@@ -59,7 +62,7 @@ export const mobility = {
       title: { fr: 'Moto' },
       label: { fr: "🏍 La moto ou le scooter" },
       next: {
-        default: 'track_mobility_number_vehicles'
+        default: TrackId.MobilityNumberVehicles
       }
     },
     {
@@ -67,16 +70,16 @@ export const mobility = {
       title: { fr: 'Camion' },
       label: { fr: "🚐 Une camionette, un véhicule de chantier ou un poids lourd" },
       next: {
-        default: 'track_mobility_number_vehicles'
+        default: TrackId.MobilityNumberVehicles
       }
     },
     {
       value: { mobility: 'other' },
       title: { fr: 'Autre' },
       label: { fr: "Autre : " },
-      hasInput: 'text',
+      hasInput: HasInputOptions.Text,
       next: {
-        default: 'track_mobility_number_vehicles'
+        default: TrackId.MobilityNumberVehicles
       }
     },
     {
@@ -84,7 +87,7 @@ export const mobility = {
       title: { fr: 'Je ne sais pas' },
       label: { fr: "Je ne sais pas" },
       next: {
-        default: 'track_mobility_number_vehicles'
+        default: TrackId.MobilityNumberVehicles
       }
     },
   ]

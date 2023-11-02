@@ -2,7 +2,7 @@
   <!-- DEBUGGING -->
   <div
     v-if="debug"
-    class="vue-debug" 
+    class="vue-debug"
     >
     <h5>DEBUG - TeeTopbar</h5>
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
@@ -23,7 +23,7 @@
       <!-- <code>
         {{ usedTrack.completed }}
       </code> -->
-      <p 
+      <p
         :class="`fr-tag fr-tag--sm ${usedTrack.completed ?  'fr-tag-clickable' : 'fr-tag-selected'} fr-mr-1v fr-mb-1v`">
         {{ tracks.getTrackTitle(usedTrack.id, choices.lang) }}
       </p>
@@ -79,6 +79,6 @@ const backToTrack = async (trackId: string) => {
   // console.log()
   // console.log('TeeTopbar > backToTrack > trackId :', trackId)
   await tracks.setUsedTracksAsNotCompleted(trackId)
-  tracks.removeFurtherUsedTracks(trackId)
+  await tracks.removeFurtherUsedTracks(trackId)
 }
 </script>

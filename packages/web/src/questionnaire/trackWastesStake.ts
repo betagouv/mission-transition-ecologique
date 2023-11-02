@@ -1,5 +1,8 @@
-export const wastesStake = {
-  id: 'track_wastes_stake',
+import type { Track } from '@/types'
+import { TrackComponents, TrackId } from '@/types'
+
+export const wastesStake: Track = {
+  id: TrackId.WastesStake,
   category: 'myWastes',
   title: { fr: 'Enjeu' },
   label: { fr: "Aimeriez-vous améliorer la gestion des déchets de votre activité ? " },
@@ -13,13 +16,13 @@ export const wastesStake = {
     imageLeft: 'images/thema/thema-dechets.svg',
   },
   interface: {
-    component: 'buttons',
+    component: TrackComponents.Buttons,
   },
   behavior: {
     multipleChoices: false,
   },
   next: {
-    default: 'track_results'
+    default: TrackId.Results
   },
   options: [
     {
@@ -27,7 +30,7 @@ export const wastesStake = {
       title: { fr: 'Oui' },
       label: { fr: "👍 Oui, j’aimerais faire mieux !" },
       next: {
-        default: 'track_wastes_sorting'
+        default: TrackId.WastesSorting,
       }
     },
     {
@@ -35,7 +38,7 @@ export const wastesStake = {
       title: { fr: "Non" },
       label: { fr: "🤓 Non, je fais déja mon maximum" },
       next: {
-        default: 'track_wastes_sorting'
+        default: TrackId.WastesSorting,
       }
     },
     {
@@ -43,7 +46,7 @@ export const wastesStake = {
       title: { fr: "Non" },
       label: { fr: "👎 Non, la gestion des déchets n’est pas un enjeu pour moi " },
       next: {
-        default: 'track_wastes_sorting'
+        default: TrackId.WastesSorting,
       }
     },
     {
@@ -51,7 +54,7 @@ export const wastesStake = {
       title: { fr: 'Aucune idée' },
       label: { fr: "Aucune idée" },
       next: {
-        default: 'track_wastes_sorting'
+        default: TrackId.WastesSorting,
       }
     }
   ]

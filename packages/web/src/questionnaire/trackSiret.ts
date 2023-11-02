@@ -1,4 +1,21 @@
-import { secteurs, NAF1ToVar, NAF1Letters, codesNAF1 } from './publicodesObjects'
+import {
+  codesNAF1,
+  EntrepriseSector,
+  NAF1Letters,
+  NAF1ToVar,
+  Sector,
+  sectors,
+  YesNo,
+  CallbackActions,
+  CallbackMethods,
+  CleanerOperations,
+  DataMappingFrom,
+  FindInRefs,
+  HasInputOptions,
+  TrackComponents,
+  TrackId
+} from '@/types'
+import type { Track } from '@/types'
 
 const metaEnv = import.meta.env
 // console.log('trackSiret >  metaEnv :', metaEnv)
@@ -17,24 +34,25 @@ const dataTarget = {
   secteur: undefined
 }
 
-export const siret = {
-  id: 'track_siret',
+export const siret: Track = {
+  id: TrackId.Siret,
   category: 'myEntreprise',
   title: { fr: 'Mon SIRET' },
   label: { fr: 'Quelle est votre entreprise ?' },
   // info: { fr: "Renseignez le SIRET de votre entreprise" },
   interface: {
-    component: 'input'
+    component: TrackComponents.Input
   },
   // behavior: {
   //   multipleChoices: false,
   // },
   next: {
-    default: 'track_structure_workforce'
+    default: TrackId.StructureWorkforce
   },
   options: [
     {
       id: 'search-siret',
+      hasInput: HasInputOptions.Search,
       value: { ...dataTarget },
       title: { fr: 'SIRET' },
       label: { fr: 'Renseignez le SIRET de votre entreprise (14 chiffres)' },
@@ -54,10 +72,10 @@ export const siret = {
           disabled: false,
           help: 'Get entreprise data from its SIRET number',
           helpDocumentation: 'https://tee-backend.osc-fr1.scalingo.io/api/docs',
-          action: 'requestAPI',
+          action: CallbackActions.RequestAPI,
           url: `${TEE_BACKEND_URL}/api/insee/get_by_siret`,
           // url: 'http://localhost:8001/api/insee/get_by_siret',
-          method: 'POST',
+          method: CallbackMethods.Post,
           headers: {
             accept: 'application/json',
             'Content-Type': 'application/json'
@@ -66,12 +84,12 @@ export const siret = {
           dataStructure: { ...dataTarget },
           dataMapping: [
             {
-              from: 'formData',
+              from: DataMappingFrom.FormData,
               id: 'inputValue',
               dataField: 'siret'
             },
             {
-              from: 'rawData',
+              from: DataMappingFrom.RawData,
               id: 'naf',
               help: 'https://www.insee.fr/fr/information/2120875',
               path: 'etablissement.uniteLegale.activitePrincipaleUniteLegale',
@@ -79,7 +97,7 @@ export const siret = {
               onlyRemap: true
             },
             // {
-            //   from: 'rawData',
+            //   from: DataMappingFrom.RawData,
             //   id: 'sector',
             //   path: 'etablissement.uniteLegale.activitePrincipaleUniteLegale',
             //   dataField: 'project_sectors',
@@ -94,118 +112,99 @@ export const siret = {
             //   ]
             // },
             {
-              from: 'rawData',
+              from: DataMappingFrom.RawData,
               id: 'secteur',
               path: 'etablissement.uniteLegale.activitePrincipaleUniteLegale',
               dataField: '.',
               onlyRemap: true,
               cleaning: [
                 {
-                  operation: 'findFromRefs',
-                  findInRef: 'nafCodes',
+                  operation: CleanerOperations.findFromRefs,
+                  findInRef: FindInRefs.NafCodes,
                   findFromField: 'NIV5',
                   retrieveFromField: 'tagsFr'
                   // => ['artisanat', 'industrie']
                 },
                 {
-                  operation: 'findFromDict',
+                  operation: CleanerOperations.findFromDict,
                   dict: {
-                    artisanat: { "entreprise . secteur d'activité . est artisanat": 'oui' },
-                    industrie: { "entreprise . secteur d'activité . est industrie": 'oui' },
-                    tourisme: { "entreprise . secteur d'activité . est tourisme": 'oui' },
-                    tertiaire: { "entreprise . secteur d'activité . est tertiaire": 'oui' },
-                    agriculture: { "entreprise . secteur d'activité . est agriculture": 'oui' },
-                    'autre secteur': {
-                      "entreprise . secteur d'activité . est autre secteur": 'oui'
-                    }
+                    [Sector.Craftsmanship]: { [EntrepriseSector.Craftsmanship] : YesNo.Yes },
+                    [Sector.Industry]: { [EntrepriseSector.Industry] : YesNo.Yes },
+                    [Sector.Tourism]: { [EntrepriseSector.Tourism] : YesNo.Yes },
+                    [Sector.Tertiary]: { [EntrepriseSector.Tertiary] : YesNo.Yes },
+                    [Sector.Agriculture]: { [EntrepriseSector.Agriculture] : YesNo.Yes },
+                    [Sector.Other]: { [EntrepriseSector.Other] : YesNo.Yes },
                   }
-                  // => [{ "entreprise . secteur d'activité . est artisanat": 'oui' }, { "entreprise . secteur d'activité . est tertiaire": 'oui' }]
                 },
                 {
-                  operation: 'injectInObject',
-                  object: { ...secteurs }
-                  /* => {
-                    {
-                      "entreprise . secteur d'activité . est artisanat": 'non',
-                      "entreprise . secteur d'activité . est industrie": 'non',
-                      "entreprise . secteur d'activité . est tourisme": 'non',
-                      "entreprise . secteur d'activité . est tertiaire": 'non',
-                      "entreprise . secteur d'activité . est agriculture": 'non',
-                      "entreprise . secteur d'activité . est autre secteur": 'non'
-                    }
-                  */
+                  operation: CleanerOperations.injectInObject,
+                  object: { ...sectors }
                 }
               ]
             },
             {
-              from: 'rawData',
+              from: DataMappingFrom.RawData,
               id: 'codeNAF1',
               path: 'etablissement.uniteLegale.activitePrincipaleUniteLegale',
               dataField: '.',
               onlyRemap: true,
               cleaning: [
                 {
-                  operation: 'findFromRefs',
-                  findInRef: 'nafCodes',
+                  operation: CleanerOperations.findFromRefs,
+                  findInRef: FindInRefs.NafCodes,
                   findFromField: 'NIV5',
                   retrieveFromField: 'NIV1'
                   // => 'A'
                 },
                 {
-                  operation: 'findFromDict',
+                  operation: CleanerOperations.findFromDict,
                   dict: Object.fromEntries(NAF1Letters.map((l) => [l, { [NAF1ToVar(l)]: 'oui' }]))
                   // => { "entreprise . code NAF . est A": 'oui' }
                 },
                 {
-                  operation: 'injectInObject',
+                  operation: CleanerOperations.injectInObject,
                   object: { ...codesNAF1 }
-                  /* => {
-                      "entreprise . code NAF . est A": 'oui',
-                      "entreprise . code NAF . est B": 'non',
-                      ...
-                    }
-                  */
                 }
               ]
             },
             {
-              from: 'rawData',
+              from: DataMappingFrom.RawData,
               id: 'sectorLabel',
               path: 'etablissement.uniteLegale.activitePrincipaleUniteLegale',
               dataField: 'label_sectors',
               onlyRemap: true,
               cleaning: [
                 {
-                  operation: 'findFromRefs',
-                  findInRef: 'nafCodes',
+                  operation: CleanerOperations.findFromRefs,
+                  findInRef: FindInRefs.NafCodes,
                   findFromField: 'NIV5',
                   retrieveFromField: 'label_vf'
                 }
               ]
             },
             {
-              from: 'rawData',
+              from: DataMappingFrom.RawData,
               id: 'denomination',
               path: 'etablissement.uniteLegale.denominationUniteLegale',
               dataField: 'denomination',
               onlyRemap: true
             },
             {
-              from: 'rawData',
+              from: DataMappingFrom.RawData,
               id: 'city',
               path: 'etablissement.adresseEtablissement.libelleCommuneEtablissement',
               dataField: 'ville',
               onlyRemap: true
             },
             {
-              from: 'rawData',
+              from: DataMappingFrom.RawData,
               id: 'postalCode',
               path: 'etablissement.adresseEtablissement.codePostalEtablissement',
               dataField: 'codePostal',
               onlyRemap: true
             }
             // {
-            //   from: 'rawData',
+            //   from: DataMappingFrom.RawData,
             //   id: 'size',
             //   path: 'etablissement.uniteLegale.categorieEntreprise',
             //   dataField: 'structure_sizes',
@@ -214,7 +213,7 @@ export const siret = {
           ],
           inputCleaning: [
             {
-              operation: 'replaceAll',
+              operation: CleanerOperations.replaceAll,
               stringToReplace: ' ',
               replaceBy: ''
             }
@@ -229,7 +228,7 @@ export const siret = {
               style: 'font-weight: bold;',
               cleaning: [
                 {
-                  operation: 'defaultIfNull',
+                  operation: CleanerOperations.defaultIfNull,
                   // respFields: 'data.denomination',
                   defaultValue: { fr: 'Auto-entreprise' }
                 }
@@ -285,7 +284,7 @@ export const siret = {
               icon: 'fr-icon-time-line',
               cleaning: [
                 {
-                  operation: 'stringToDate'
+                  operation: CleanerOperations.stringToDate,
                 }
               ]
             }
@@ -293,7 +292,7 @@ export const siret = {
         }
       ],
       next: {
-        default: 'track_structure_workforce'
+        default: TrackId.StructureWorkforce
         // default: 'track_structure_sizes',
         // exceptions: nextExceptions
         // default: 'track_roles'
@@ -301,7 +300,7 @@ export const siret = {
       wildcard: {
         label: { fr: 'je préfère compléter mes informations manuellement' },
         next: {
-          default: 'track_structure_workforce'
+          default: TrackId.StructureWorkforce
           // default: 'track_structure_sizes',
           // exceptions: nextExceptions
         }

@@ -1,16 +1,19 @@
-export const mobilityNumberVehicles = {
-  id: 'track_mobility_number_vehicles',
+import type { Track } from '@/types'
+import { TrackComponents, TrackId } from '@/types'
+
+export const mobilityNumberVehicles: Track = {
+  id: TrackId.MobilityNumberVehicles,
   category: 'myMobility',
   title: { fr: 'Nombre de véhicules' },
   label: { fr: "Possédez-vous un ou plusieurs véhicules motorisés dans votre entreprise ?" },
   interface: {
-    component: 'buttons',
+    component: TrackComponents.Buttons,
   },
   behavior: {
     multipleChoices: false,
   },
   next: {
-    default: 'track_mobility_energy'
+    default: TrackId.MobilityEnergy,
   },
   options: [
     {
@@ -18,7 +21,7 @@ export const mobilityNumberVehicles = {
       title: { fr: 'Oui' },
       label: { fr: "✅ Oui" },
       next: {
-        default: 'track_mobility_energy'
+        default: TrackId.MobilityEnergy,
       }
     },
     {
@@ -26,7 +29,7 @@ export const mobilityNumberVehicles = {
       title: { fr: "Non" },
       label: { fr: "❌ Non, l’entreprise ne possède aucun véhicule motorisé" },
       next: {
-        default: 'track_wastes_stake'
+        default: TrackId.WastesStake,
       }
     },
     {
@@ -34,7 +37,7 @@ export const mobilityNumberVehicles = {
       title: { fr: 'Je ne sais pas' },
       label: { fr: "Je ne sais pas" },
       next: {
-        default: 'track_wastes_stake'
+        default: TrackId.WastesStake,
       }
     }
   ]

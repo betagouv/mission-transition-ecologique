@@ -233,6 +233,7 @@ import TeeTopbar from './components/TeeTopbar.vue'
 import TeeProgramDetail from './components/TeeProgramDetail.vue'
 // @ts-ignore
 import TeeCredits from './components/TeeCredits.vue'
+import type { TrackId } from '@/types'
 
 // const appId = 'gov-aid-tree-app'
 
@@ -258,7 +259,7 @@ interface Props {
   showFooter?: string,
   locale?: string,
   msg?: string,
-  seed: string,
+  seed: TrackId,
   datasetUrl?: string,
   maxDepth?: string
   debugSwitch?: string,

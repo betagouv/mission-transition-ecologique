@@ -1,69 +1,62 @@
-export const contactForm = {
-  id: 'track_form',
+import type { Track } from '@/types'
+import { TrackComponents, TrackFieldType, TrackId } from '@/types'
+
+export const contactForm: Track = {
+  id: TrackId.ContactForm,
   title: { fr: 'Formulaire' },
   label: { fr: 'Je prends contact' },
   interface: {
-    component: 'form',
+    component: TrackComponents.Form,
   },
   behavior: {
     multipleChoices: false,
   },
   next: {
-    default: 'track_results'
+    default: TrackId.Results
   },
   options: [
     {
       value: 'contact_form.email',
       label: { fr: 'Formulaire de contact' },
-      // intro: { fr: '<h4>Accompagnements proposés:</h4>\
-      //   <p>\
-      //     <ul>\
-      //       <li>identifier les actions ayant un impact environnemental</li>\
-      //       <li>échanger avec un conseiller dans la transition écologique</li>\
-      //       <li>élaborer un plan d&lsquo;action pour vos activités quotidiennes</li>\
-      //     </ul>\
-      //   </p>\
-      //   <h5>Déposez votre demande, vous serez recontacté rapidement</h5>\
-      // ' },
       fields: [
         {
           id: 'name',
           label: { fr: 'Prénom et Nom'},
           hint: { fr: 'Camille Dujardin' },
           required: true,
-          type: 'text'
+          type: TrackFieldType.Text
         },
         {
           id: 'tel',
           label: { fr: 'Téléphone'},
           hint: { fr: '06 05 04 03 02' },
           required: true,
-          type: 'text'
+          type: TrackFieldType.Text
         },
         {
           id: 'email',
           label: { fr: 'Email'},
           hint: { fr: 'camille@dujardin.fr' },
           required: false,
-          type: 'email'
+          type: TrackFieldType.Email
         },
         {
           id: 'siret',
           label: { fr: 'SIRET de votre entreprise'},
           hint: { fr: '385 290 309 00454' },
           required: false,
-          type: 'text'
+          type: TrackFieldType.Text
         },
         {
           id: 'needs',
           label: { fr: 'Quel est votre besoin ?'},
           hint: { fr: 'Je sais pas...' },
           required: false,
-          type: 'textarea'
+          type: TrackFieldType.Textarea
         },
       ],
       next: {
-        default: 'track_results'
+        default: TrackId.Results
       }
     }
   ]

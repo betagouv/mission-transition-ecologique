@@ -1,6 +1,6 @@
 import type { Translations } from './translationTypes'
-import type { 
-  DataMappingFroms,
+import type {
+  DataMappingFrom,
   Cleaner,
   CleanerReplaceAll,
   CleanerFromJson,
@@ -8,25 +8,26 @@ import type {
   CleanerDefaultIfNull,
   CallbackActions,
   CallbackMethods,
-  ResultsMapping
+  ResultsMapping,
+  CleanerInjectInObject
 } from './otherTypes'
 
 // FOR FORMS
-
 export interface FormValues {
   [name: string]: any,
 }
 
-enum FormFieldTypes {
-  text = 'text',
-  email = 'email',
-  textarea = 'textarea',
-  checkbox = 'checkbox',
+export enum FormFieldTypes {
+  Text = 'Text',
+  Email = 'Email',
+  Textarea = 'Textarea',
+  Checkbox = 'Checkbox',
 }
 
 export interface FormCallbackDataMapping {
-  from: DataMappingFroms,
+  from: DataMappingFrom,
   id: string,
+  help?: string,
   dataField: string,
   path?: string,
   asArray?: boolean
@@ -34,22 +35,21 @@ export interface FormCallbackDataMapping {
   type?: string,
   subKey?: string,
   onlyRemap?: boolean,
-  cleaning?:  Cleaner[] | CleanerReplaceAll[] | CleanerFromJson[] | CleanerFromDict[] | CleanerDefaultIfNull[]
+  cleaning?:  (Cleaner | CleanerReplaceAll | CleanerFromJson | CleanerFromDict | CleanerDefaultIfNull | CleanerInjectInObject) []
 }
 
 export interface FormField {
   id: string,
   help?: string,
   required: boolean,
-  label?: any,
-  hint?: any,
+  label: Translations,
+  hint?: Translations,
   cols?: number,
   type?: FormFieldTypes,
   rows?: number,
   defaultValue?: boolean | string | number,
-  
   injectInText?: boolean,
-  dataStructure?: object,
+  dataStructure?: Record<string, string>,
   dataMapping?: FormCallbackDataMapping[],
   preFillFrom?: FormCallbackDataMapping,
 }
@@ -60,9 +60,9 @@ export interface FormCallback {
   helpDocumentation?: string,
   action: CallbackActions,
   url: string,
-  headers: object,
-  headerApiKey: string,
-  envApiKey: string,
+  headers: HeadersInit,
+  headerApiKey?: string, // This is not used in the track object
+  envApiKey?: string, // This is not used in the track object
   method: CallbackMethods,
   dataBody?: object | object[],
   dataStructure: object | object[],

@@ -18,25 +18,25 @@
   </div>
 
   <!-- INPUT -->
-  <label 
+  <label
     class="fr-label fr-mb-2v"
     :for="`input-${option.id}`">
     {{ option.label[choices.lang] }}
   </label>
   <div
-    class="fr-search-bar" 
+    class="fr-search-bar"
     id="header-search"
     role="search">
-    <input 
+    <input
       :id="`input-${option.id}`"
       :name="`input-${option.id}`"
       :disabled="isLoading"
-      :placeholder="option.placeholder[choices.lang]" 
-      class="fr-input" 
-      type="search" 
+      :placeholder="option?.placeholder?.[choices.lang]"
+      class="fr-input"
+      type="search"
       v-model="inputValue"
       @keyup.enter="processInput">
-    <button 
+    <button
       class="fr-btn"
       :disabled="isLoading"
       :title="choices.t('input.search')"
@@ -52,7 +52,7 @@
     <p class="fr-mb-0 fr-error-text" style="display: block;">
       <!-- <span class="fr-icon-error-line" aria-hidden="true"></span> -->
       {{ choices.t('enterprise.noStructureFound') }}
-      
+
       <!-- DEBUGGING / ERROR CODE -->
       <span v-if="debug">
         (
@@ -65,12 +65,12 @@
       </span>
       <!-- postResponses -->
       <br v-if="option.postResponses">
-      <span 
+      <span
         v-if="option.postResponses"
         v-html="option.postResponses[choices.lang]">
       </span>
     </p>
-    <!-- <div 
+    <!-- <div
       v-for="(err, i) in requestErrors"
       :key="`resp-error-${i}`"
       class="fr-alert fr-alert--warning">
@@ -86,7 +86,7 @@
       </p>
     </div> -->
   </div>
-  
+
 
 
   <!-- RESPONSES -->
@@ -106,41 +106,41 @@
       @click="selectItem(resp)">
       <div class="fr-card__body">
         <div class="fr-card__content fr-py-4v fr-px-4v">
-          
+
           <!-- TITLE -->
-          <template 
+          <template
             v-for="(resMap, idx) in resp.resultsMapping"
             :key="`resp-input-${i}-field-title-${idx}`">
-            <h3 
+            <h3
               v-if="resMap.position === 'title'"
               :class="`fr-card__title ${resMap.class || 'fr-mb-2v'}`"
               :style="`${isSelected(resp) ? 'color: #000091;' : ''}`">
               <!-- IF SELECTED -->
-              <!-- <span 
+              <!-- <span
                 v-if="hasSelection"
-                class="fr-icon-success-fill fr-mr-6v" 
+                class="fr-icon-success-fill fr-mr-6v"
                 aria-hidden="true">
               </span> -->
               <span>
                 {{ getFromFields(resp, resMap) }}
               </span>
-              <!-- <DsfrBadge 
+              <!-- <DsfrBadge
                 v-if="isSelected(resp)"
                 class="fr-ml-4v"
                 type="success"
                 :label="choices.t('selection.selected')"/> -->
             </h3>
           </template>
-          
+
           <div class="fr-card__desc tee-resp-info-block">
-            <p 
+            <p
               v-for="(resMap, idx) in resp.resultsMapping?.filter(i => i.position !== 'title')"
               :key="`resp-input-${i}-field-${idx}`"
               :class="resMap.class || 'fr-mb-2v'">
               <!-- ICON -->
               <span
                 v-if="resMap.icon"
-                :class="`${resMap.icon} fr-mr-8v`" 
+                :class="`${resMap.icon} fr-mr-8v`"
                 aria-hidden="true">
               </span>
               <!-- TITLE -->
@@ -181,7 +181,7 @@
 
   <!-- WILDCARD -->
   <!-- icon="ri-ball-pen-fill" -->
-  <!-- <DsfrButton 
+  <!-- <DsfrButton
     v-if="option.wildcard && !requestResponses.length"
     class="fr-mt-4v fr-hint-text fr-pl-0"
     tertiary
@@ -204,7 +204,7 @@
   <!-- postResponses -->
   <!-- <template
     v-if="option.postResponses && !requestResponses.length">
-    <p 
+    <p
       v-if="!requestErrors.length && !hasSelection"
       class="fr-mt-3v fr-hint-text"
       v-html="option.postResponses[choices.lang]">
@@ -230,7 +230,6 @@
 </template>
 
 <script setup lang="ts">
-
 import { onBeforeMount, ref, toRaw } from 'vue'
 
 import { tracksStore } from '../stores/tracks'
@@ -238,10 +237,11 @@ import { choicesStore } from '../stores/choices'
 import { analyticsStore } from '../stores/analytics'
 
 // @ts-ignore
-import type { TrackOptionsInput, ReqResp, ReqError, FormCallback, ResultsMapping } from '@/types/index'
+import type { TrackOptionsInput, ReqResp, ReqError, FormCallback, ResultsMapping } from '@/types'
 
 import { sendApiRequest } from '../utils/requests'
 import { getFromResp, remapItem, cleanValue } from '../utils/helpers'
+import { CallbackActions } from '@/types'
 
 interface Props {
   trackId: string,
@@ -294,7 +294,7 @@ const resetSelection = () => {
 
 const processInput = async () => {
   // console.log('TeeTrackInput > processInput > props.option :', props.option)
-  
+
   isLoading.value = true
   resetSelection()
 
@@ -303,38 +303,40 @@ const processInput = async () => {
 
   const responses: ReqResp[] = []
   const errors: ReqError[] = []
-  const activeCallbacks = toRaw(props.option.callbacks).filter((cb: FormCallback) => !cb.disabled)
 
-  // loop option's callbacks
-  for (const callback of activeCallbacks) {
-    // console.log()
-    // console.log('TeeTrackInput > processInput >  inputValue.value :', inputValue.value)
-    // console.log('TeeTrackInput > processInput >  callback :', callback)
-    let value = inputValue.value
-    // Clean input value
-    if (callback.inputCleaning) {
-      value = cleanValue(value, callback.inputCleaning)
-    }
-    // console.log('TeeTrackInput > processInput > value :', value)
-    let resp: ReqResp = {}
-    switch (callback.action) {
-      case 'requestAPI':
+  if(props.option?.callbacks) {
+    const activeCallbacks = toRaw(props.option?.callbacks).filter((cb: FormCallback) => !cb.disabled)
+
+    // loop option's callbacks
+    for (const callback of activeCallbacks) {
+      // console.log()
+      // console.log('TeeTrackInput > processInput >  inputValue.value :', inputValue.value)
+      // console.log('TeeTrackInput > processInput >  callback :', callback)
+      let value = inputValue.value
+      // Clean input value
+      if (callback.inputCleaning) {
+        value = cleanValue(value, callback.inputCleaning)
+      }
+      // console.log('TeeTrackInput > processInput > value :', value)
+      let resp: ReqResp = {}
+      if (callback.action === CallbackActions.RequestAPI) {
         resp = await sendApiRequest(callback, {inputValue: value}, trackValues, props, choices.lang)
-        break
-    }
-    // console.log('TeeTrackInput > processInput >  resp :', resp)
-    if (resp.ok) {
-      let item = remapItem(callback.dataStructure, callback.dataMapping, {inputValue: value}, trackValues, props, resp, [], choices.lang)
-      // console.log('TeeTrackInput > processInput >  item :', item)
-      responses.push({
-        data: item,
-        raw: resp,
-        resultsMapping: callback.resultsMapping
-      })
-    } else {
-      errors.push(resp)
+      }
+      // console.log('TeeTrackInput > processInput >  resp :', resp)
+      if (resp.ok) {
+        let item = remapItem(callback.dataStructure, callback.dataMapping, {inputValue: value}, trackValues, props, resp, [], choices.lang)
+        // console.log('TeeTrackInput > processInput >  item :', item)
+        responses.push({
+          data: item,
+          raw: resp,
+          resultsMapping: callback.resultsMapping
+        })
+      } else {
+        errors.push(resp)
+      }
     }
   }
+
   requestResponses.value = responses
   requestErrors.value = errors
   isLoading.value = false
@@ -358,7 +360,7 @@ const processInput = async () => {
       remove: true
     }
     emit('updateSelection', data)
-  } 
+  }
 }
 
 const goToNextTrack = () => {
@@ -366,7 +368,9 @@ const goToNextTrack = () => {
   const data = {
     option: { ...props.option },
   }
-  data.option.next = props.option.wildcard.next
+  if (props.option.wildcard) {
+    data.option.next = props.option.wildcard.next
+  }
   // console.log('TeeTrackInput > goToNextTrack > data :', data)
   emit('goToNextTrack', data)
 }
@@ -378,7 +382,7 @@ const selectItem = (item: any) => {
 
   selection.value = hasSelection.value ? undefined : item
   // console.log('TeeTrackInput > selectItem > hasSelection.value (B) :', hasSelection.value)
-  
+
   hasSelection.value = !hasSelection.value
   // console.log('TeeTrackInput > selectItem > selection.value (C) :', selection.value)
   const data = {

@@ -20,23 +20,23 @@
         :name="icon">
       </v-icon>
       <span
-        v-if="option.hasInput === 'text'"
+        v-if="isTextInput"
         class="fr-pr-3v"
         style="width: auto; white-space: nowrap">
         {{ option.label[choices.lang] }}
       </span>
-      <input 
-        class="fr-input" 
-        :type="option.hasInput" 
-        :id="`track-input-${option.hasInput}`" 
+      <input
+        class="fr-input"
+        :type="option.hasInput"
+        :id="`track-input-${option.hasInput}`"
         :name="`track-input-${option.hasInput}`"
-        :min="option.hasInput !== 'text' && option.inputMin || undefined"
-        :max="option.hasInput !== 'text' && option.inputMax || undefined"
-        :style="`${option.hasInput === 'text' ? 'width: 100%;' : ''}`"
+        :min="!isTextInput && option.inputMin || undefined"
+        :max="!isTextInput && option.inputMax || undefined"
+        :style="`${isTextInput ? 'width: 100%;' : ''}`"
         v-model="inputValue"
         @input="sendValueUpdate">
       <span
-        v-if="option.hasInput === 'number'"
+        v-if="isNumberInput"
         class="fr-ml-3v">
         {{ option.label[choices.lang] }}
       </span>
@@ -49,10 +49,11 @@
 
 import { onBeforeMount, ref, computed } from 'vue'
 
-import { choicesStore } from '../stores/choices'
+import { choicesStore } from '@/stores/choices'
 
 // @ts-ignore
-import type { TrackOptionsInput } from '@/types/index'
+import type { TrackOptionsInput } from '@/types'
+import { HasInputOptions } from '@/types'
 
 interface Props {
   trackId: string,
@@ -71,12 +72,20 @@ const inputValue = ref<string | number>()
 const emit = defineEmits(['updateSelection', 'updateValue', 'goToNextTrack'])
 
 onBeforeMount(() => {
-  if (props.option.hasInput === 'number') {
+  if (props.option.hasInput === HasInputOptions.Number) {
     inputValue.value = 0
   }
   if (props.option.defaultInput) {
     inputValue.value = props.option.defaultInput
   }
+})
+
+const isTextInput = computed(() => {
+  return props.option.hasInput === HasInputOptions.Text
+})
+
+const isNumberInput = computed(() => {
+  return props.option.hasInput === HasInputOptions.Number
 })
 
 // computed
@@ -87,7 +96,7 @@ const dataObj = computed(() => {
     // clean val if inputCleaning
     // if (props.option.inputCleaning) {
     //   val = val
-    // } 
+    // }
     inputObject[props.option.inputField] = val
   }
   const data = {

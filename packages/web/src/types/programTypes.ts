@@ -7,6 +7,8 @@
 //   structure_sizes?: string[],
 // }
 
+import type { ConditionOperators } from '@/types/conditionOperators'
+
 export enum ProgramAidType {
   acc = 'accompagnement',
   train = 'formation',
@@ -14,18 +16,6 @@ export enum ProgramAidType {
   loan = 'prêt'
 }
 
-export enum ConditionOperators {
-  or = 'or',
-  and = 'and',
-  is = '==',
-  exist = 'exists',
-  inexist = 'inexists',
-  notEqual = '!=',
-  superior = '>',
-  superiorOrEqual = '>=',
-  inferior = '<',
-  inferiorOrEqual = '<='
-}
 export interface Condition {
   type?: string
   operator?: ConditionOperators

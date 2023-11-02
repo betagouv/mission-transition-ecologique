@@ -1,5 +1,8 @@
-export const needs = {
-  id: 'track_needs',
+import type { Track } from '@/types'
+import { TrackComponents, TrackId } from '@/types'
+
+export const needs: Track = {
+  id: TrackId.Needs,
   category: 'start',
   title: { fr: 'Je me lance' },
   label: { fr: 'Votre besoin' },
@@ -15,7 +18,7 @@ export const needs = {
     descriptionStyle: 'font-size: 1.3rem; line-height: 2rem;'
   },
   interface: {
-    component: 'simpleButtons',
+    component: TrackComponents.SimpleButtons,
     columnWidth: 'auto',
   },
   behavior: {
@@ -29,8 +32,7 @@ export const needs = {
       title: { fr: '' },
       label: { fr: "Je me lance !" },
       next: {
-        // default: 'track_goals'
-        default: 'track_help'
+        default: TrackId.Help,
       }
     },
     {
@@ -40,7 +42,7 @@ export const needs = {
       label: { fr: "Je débute, je visite, je fais mes premiers pas" },
       hint: { fr: "Obtenez rapidement des premiers conseils, à travers notre outil ou avec un conseiller, afin d’initier votre transition écologique" },
       next: {
-        default: 'track_sectors'
+        default: TrackId.Sectors,
       }
     },
     {
@@ -50,8 +52,7 @@ export const needs = {
       label: { fr: "Je souhaite être conseillé pour réduire mon impact environnemental" },
       hint: { fr: "Faites des économies, cadrez un projet avec un accompagnement, un expert, un diagnostic adapté à votre situation" },
       next: {
-        // default: 'track_structure_sizes'
-        default: 'track_goals'
+        default: TrackId.Goals,
       }
     },
     {
@@ -61,7 +62,7 @@ export const needs = {
       label: { fr: "J’ai un projet de transition écologique et je cherche un financement" },
       hint: { fr: "Obtenez une aide technique ou financière pour vos investissements ou un projet ayant un impact environnemental" },
       next: {
-        default: 'track_goals'
+        default: TrackId.Goals,
       }
     },
     {
@@ -71,7 +72,7 @@ export const needs = {
       label: { fr: "(QUESTION TEST) Je cherche juste à m'informer" },
       hint: { fr: "Faites une première recherche et découvrez les différentes offres" },
       next: {
-        default: 'track_results'
+        default: TrackId.Results,
       }
     }
   ]

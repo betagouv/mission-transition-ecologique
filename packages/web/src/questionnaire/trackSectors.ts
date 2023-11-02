@@ -1,52 +1,65 @@
-import { secteurs, SecteurByNAF, NAF1ToVar, codesNAF1 } from './publicodesObjects'
+import {
+  sectors,
+  SectorByNAF,
+  NAF1ToVar,
+  codesNAF1,
+  EntrepriseSector,
+  YesNo,
+  Sector,
+  ConditionOperators,
+  DataMappingFrom,
+  TrackComponents,
+  TrackId
+} from '@/types'
+import type { Track, NextTrackRules } from '@/types'
 
-const nextExceptions = [
+const nextExceptions: NextTrackRules[] = [
   {
     help: "Goes to track_structure_building_property if : user_help == 'unknown' (newbie)",
     rules: [
       {
-        from: 'usedTracks',
+        from: DataMappingFrom.UsedTracks,
         id: 'user_help',
         dataField: 'user_help',
         conditions: [
           {
             type: 'user_help',
-            operator: '==',
+            operator: ConditionOperators.is,
             value: 'unknown'
           }
         ]
       }
     ],
-    next: { default: 'track_structure_building_property' }
+    next: { default: TrackId.BuildingProperty }
   },
   {
     help: "Goes to track_goals if : user_help == 'preise' (pro)",
     rules: [
       {
-        from: 'usedTracks',
+        from: DataMappingFrom.UsedTracks,
         id: 'user_help',
         dataField: 'user_help',
         conditions: [
           {
             type: 'user_help',
-            operator: '==',
+            operator: ConditionOperators.is,
             value: 'precise'
           }
         ]
       }
     ],
-    next: { default: 'track_goals' }
+    next: { default: TrackId.Goals }
   }
 ]
 
-export const sectors = {
-  id: 'track_sectors',
+export const trackSectors: Track = {
+  id: TrackId.Sectors,
   help: 'https://www.insee.fr/fr/metadonnees/nafr2',
   category: 'myEntreprise',
   title: { fr: 'Mon activité' },
   label: { fr: 'Quelle est votre activité ?' },
   interface: {
-    component: 'buttons'
+    component: TrackComponents.Buttons,
   },
   behavior: {
     multipleChoices: false
@@ -54,91 +67,91 @@ export const sectors = {
   options: [
     {
       value: {
-          secteur: 'Artisanat',
-          ...secteurs, 
-          "entreprise . secteur d'activité . est artisanat": 'oui',
-          // "entreprise . code NAF niveau 1 . est A": 'oui'
-          ...Object.assign({}, ...SecteurByNAF['artisanat'].map((l) => { return { [NAF1ToVar(l)]: 'oui' } }))
+        secteur: Sector.Craftsmanship,
+        ...sectors,
+        [EntrepriseSector.Craftsmanship] : YesNo.Yes,
+        // "entreprise . code NAF niveau 1 . est A": YesNo.Yes
+        ...Object.assign({}, ...SectorByNAF[EntrepriseSector.Craftsmanship].map((l) => { return { [NAF1ToVar(l)]: YesNo.Yes } }))
       },
       title: { fr: 'Artisanat' },
       label: { fr: '👩‍🎨 J’ai une activité artisanale' },
       next: {
-        default: 'track_roles',
+        default: TrackId.Roles,
         exceptions: nextExceptions
       }
     },
     {
       value: {
-          secteur: 'Industrie',
-          ...secteurs, 
-          "entreprise . secteur d'activité . est industrie": 'oui',
-          ...codesNAF1,
-          ...Object.assign({}, ...SecteurByNAF['industrie'].map((l) => { return { [NAF1ToVar(l)]: 'oui' } }))
+        secteur: Sector.Industry,
+        ...sectors,
+        [EntrepriseSector.Industry] : YesNo.Yes,
+        ...codesNAF1,
+        ...Object.assign({}, ...SectorByNAF[EntrepriseSector.Industry].map((l) => { return { [NAF1ToVar(l)]: YesNo.Yes } }))
       },
       title: { fr: 'Industrie' },
       label: { fr: '👩‍🔧 J’ai une activité industrielle, fabrication, production' },
       next: {
-        default: 'track_roles',
+        default: TrackId.Roles,
         exceptions: nextExceptions
       }
     },
     {
       value: {
-          secteur: 'Tourisme',
-          ...secteurs, 
-          "entreprise . secteur d'activité . est tourisme": 'oui',
-          ...codesNAF1,
-          ...Object.assign({}, ...SecteurByNAF['tourisme'].map((l) => { return { [NAF1ToVar(l)]: 'oui' } }))
+        secteur: Sector.Tourism,
+        ...sectors,
+        [EntrepriseSector.Tourism] : YesNo.Yes,
+        ...codesNAF1,
+        ...Object.assign({}, ...SectorByNAF[EntrepriseSector.Tourism].map((l) => { return { [NAF1ToVar(l)]: YesNo.Yes } }))
       },
       title: { fr: 'Tourisme' },
       label: { fr: '🤵‍♂️ J’ai une activité de tourisme, restauration' },
       next: {
-        default: 'track_roles',
+        default: TrackId.Roles,
         exceptions: nextExceptions
       }
     },
     {
       value: {
-          secteur: 'Tertiaire',
-          ...secteurs, 
-          "entreprise . secteur d'activité . est tertiaire": 'oui',
-          ...codesNAF1,
-          ...Object.assign({}, ...SecteurByNAF['tertiaire'].map((l) => { return { [NAF1ToVar(l)]: 'oui' } }))
+        secteur: Sector.Tertiary,
+        ...sectors,
+        [EntrepriseSector.Tertiary] : YesNo.Yes,
+        ...codesNAF1,
+        ...Object.assign({}, ...SectorByNAF[EntrepriseSector.Tertiary].map((l) => { return { [NAF1ToVar(l)]: YesNo.Yes } }))
       },
       title: { fr: 'Tertiaire' },
       label: { fr: '🧑‍⚖️ J’ai une activité tertiaire, de services' },
       next: {
-        default: 'track_roles',
+        default: TrackId.Roles,
         exceptions: nextExceptions
       }
     },
     {
       value: {
-          secteur: 'Agriculture',
-          ...secteurs, 
-          "entreprise . secteur d'activité . est agriculture": 'oui',
-          ...codesNAF1,
-          ...Object.assign({}, ...SecteurByNAF['agriculture'].map((l) => { return { [NAF1ToVar(l)]: 'oui' } }))
+        secteur: Sector.Agriculture,
+        ...sectors,
+        [EntrepriseSector.Agriculture] : YesNo.Yes,
+        ...codesNAF1,
+        ...Object.assign({}, ...SectorByNAF[EntrepriseSector.Agriculture].map((l) => { return { [NAF1ToVar(l)]: YesNo.Yes } }))
       },
       title: { fr: 'Agriculture' },
       label: { fr: '👩‍🌾 J’ai une activité agricole' },
       next: {
-        default: 'track_roles',
+        default: TrackId.Roles,
         exceptions: nextExceptions
       }
     },
     {
       value: {
-          secteur: 'Autre',
-          ...secteurs, 
-          "entreprise . secteur d'activité . est autre secteur": 'oui',
-          ...codesNAF1,
-          ...Object.assign({}, ...SecteurByNAF['autre secteur'].map((l) => { return { [NAF1ToVar(l)]: 'oui' } }))
+        secteur: Sector.Other,
+        ...sectors,
+        [EntrepriseSector.Other] : YesNo.Yes,
+        ...codesNAF1,
+        ...Object.assign({}, ...SectorByNAF[EntrepriseSector.Other].map((l) => { return { [NAF1ToVar(l)]: YesNo.Yes } }))
       },
       title: { fr: 'Autre' },
       label: { fr: "Je suis dans un autre secteur d'activité" },
       next: {
-        default: 'track_roles',
+        default: TrackId.Roles,
         exceptions: nextExceptions
       }
     }

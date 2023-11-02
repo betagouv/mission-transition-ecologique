@@ -1,10 +1,13 @@
+import type { Track } from '@/types'
+import { CallbackActions, CallbackMethods, DataMappingFrom, FormFieldTypes, TrackComponents, TrackId } from '@/types'
+
 const metaEnv = import.meta.env
 // console.log('trackResults >  metaEnv :', metaEnv)
 const TEE_BACKEND_URL = metaEnv.VITE_TEE_BACKEND_URL || 'https://tee-backend.osc-fr1.scalingo.io'
 
 
-export const results = {
-  id: 'track_results',
+export const results: Track = {
+  id: TrackId.Results,
   category: 'results',
   title: { fr: 'Dispositifs' },
   label: { fr: 'Vos résultats' },
@@ -12,12 +15,8 @@ export const results = {
   resume: {
     fr: "D’après les informations que vous avez renseignées, voici les accompagnements dont vous pouvez bénéficier pour diminuer l'empreinte écologique de votre entreprise."
   },
-  intro: { fr: 'Résultats' },
   interface: {
-    component: 'results'
-  },
-  behavior: {
-    static: true
+    component: TrackComponents.Results,
   },
   config: {
     showAlertResults: false,
@@ -59,7 +58,7 @@ export const results = {
         label: { fr: 'Prénom' },
         // hint: { fr: 'Camille' },
         required: true,
-        type: 'text',
+        type: FormFieldTypes.Text,
         cols: 6
         // for debugging purposes
         // defaultValue: 'Camille'
@@ -69,7 +68,7 @@ export const results = {
         label: { fr: 'Nom' },
         // hint: { fr: 'Dujardin' },
         required: true,
-        type: 'text',
+        type: FormFieldTypes.Text,
         cols: 6
         // for debugging purposes
         // defaultValue: 'Dujardin'
@@ -79,7 +78,7 @@ export const results = {
         label: { fr: 'Email' },
         // hint: { fr: 'camille@dujardin.fr' },
         required: true,
-        type: 'email'
+        type: FormFieldTypes.Email
         // for debugging purposes
         // defaultValue: 'contact@multi.coop'
       },
@@ -88,7 +87,7 @@ export const results = {
         label: { fr: 'Téléphone' },
         // hint: { fr: '06 05 04 03 02' },
         required: true,
-        type: 'text',
+        type: FormFieldTypes.Text,
         cols: 12
         // for debugging purposes
         // defaultValue: '06 05 04 03 02'
@@ -98,10 +97,10 @@ export const results = {
         label: { fr: 'SIRET de votre entreprise' },
         hint: { fr: '385 290 309 00454' },
         required: false,
-        type: 'text',
+        type: FormFieldTypes.Text,
         preFillFrom: {
           id: 'siret',
-          from: 'usedTracks',
+          from: DataMappingFrom.UsedTracks,
           dataField: 'siret'
         },
         cols: 12
@@ -115,7 +114,7 @@ export const results = {
           fr: 'Je souhaite connaître les aides pour installer des éoliennes sur mon immeuble'
         },
         required: false,
-        type: 'textarea',
+        type: FormFieldTypes.Textarea,
         rows: 6,
         // for debugging purposes
         defaultValue: `Bonjour,\n
@@ -131,12 +130,12 @@ Merci d'avance pour votre appel`,
         },
         dataMapping: [
           {
-            from: 'usedTracks',
+            from: DataMappingFrom.UsedTracks,
             id: 'secteur',
             dataField: 'secteur'
           },
           {
-            from: 'usedTracks',
+            from: DataMappingFrom.UsedTracks,
             id: 'objectif',
             dataField: 'objectif'
           },
@@ -147,7 +146,7 @@ Merci d'avance pour votre appel`,
           //   dataField: 'natureAide',
           // },
           {
-            from: 'propsPath',
+            from: DataMappingFrom.PropsPath,
             id: 'program',
             path: 'program.titre',
             dataField: 'titreAide'
@@ -178,7 +177,7 @@ Merci d'avance pour votre appel`,
         `
         },
         required: true,
-        type: 'checkbox'
+        type: FormFieldTypes.Checkbox,
         // for debugging purposes
         // defaultValue: false
       }
@@ -189,10 +188,10 @@ Merci d'avance pour votre appel`,
         help: 'First action to trigger when the user clicks on the send button / create a contact in Brevo',
         // helpDocumentation: 'https://developers.brevo.com/reference/createcontact',
         helpDocumentation: `${TEE_BACKEND_URL}/api/docs`,
-        action: 'createContact',
+        action: CallbackActions.CreateContact,
         url: `${TEE_BACKEND_URL}/api/contacts`,
         // url: 'https://api.brevo.com/v3/contacts/doubleOptinConfirmation', // for double opt-in
-        method: 'POST',
+        method: CallbackMethods.Post,
         headers: {
           accept: 'application/json',
           'content-type': 'application/json'
@@ -210,7 +209,7 @@ Merci d'avance pour votre appel`,
         },
         dataMapping: [
           {
-            from: 'formData',
+            from: DataMappingFrom.FormData,
             id: 'email',
             dataField: 'email'
           },
@@ -224,77 +223,77 @@ Merci d'avance pour votre appel`,
           //   type: 'integer'
           // },
           {
-            from: 'formData',
+            from: DataMappingFrom.FormData,
             id: 'surname',
             dataField: 'attributes.NOM'
           },
           {
-            from: 'formData',
+            from: DataMappingFrom.FormData,
             id: 'name',
             dataField: 'attributes.PRENOM'
           },
           {
-            from: 'formData',
+            from: DataMappingFrom.FormData,
             id: 'tel',
             dataField: 'attributes.TEL'
           },
           {
-            from: 'formData',
+            from: DataMappingFrom.FormData,
             id: 'siret',
             dataField: 'attributes.SIRET'
           },
           {
-            from: 'formData',
+            from: DataMappingFrom.FormData,
             id: 'needs',
             dataField: 'attributes.FORM_NEEDS'
           },
           {
-            from: 'formData',
+            from: DataMappingFrom.FormData,
             id: 'cgu',
             dataField: 'attributes.OPT_IN'
           },
           // {
-          //   from: 'usedTracks',
+          //   from: DataMappingFrom.usedTracks,
           //   id: 'project_needs',
           //   dataField: 'attributes.PROJECT_NEEDS',
           // },
           {
-            from: 'usedTracks',
+            from: DataMappingFrom.UsedTracks,
             id: 'project_sectors',
             dataField: 'attributes.PROJECT_SECTORS'
           },
           {
-            from: 'usedTracks',
+            from: DataMappingFrom.UsedTracks,
             id: 'user_roles',
             dataField: 'attributes.USER_ROLES'
           },
           {
-            from: 'usedTracks',
+            from: DataMappingFrom.UsedTracks,
             id: 'user_goals',
             dataField: 'attributes.USER_GOALS'
           },
           // {
-          //   from: 'usedTracks',
+          //   from: DataMappingFrom.usedTracks,
           //   id: 'project_status',
           //   dataField: 'attributes.PROJECT_STATUS',
           // },
           // {
-          //   from: 'usedTracks',
+          //   from: DataMappingFrom.usedTracks,
           //   id: 'structure_sizes',
           //   dataField: 'attributes.STRUCTURE_SIZE',
           // },
           {
-            from: 'usedTracks',
+            from: DataMappingFrom.UsedTracks,
             id: 'structure_workforce',
             dataField: 'attributes.STRUCTURE_SIZE'
           },
           {
-            from: 'props',
+            from: DataMappingFrom.Props,
             id: 'programId',
             dataField: 'attributes.PROGRAM_ID'
           },
           {
-            from: 'allUsedTracks',
+            from: DataMappingFrom.AllUsedTracks,
             id: '*',
             dataField: 'attributes.ALL_RESPONSES'
           }
@@ -356,12 +355,12 @@ Merci d'avance pour votre appel`,
       //       dataField: 'sender.email',
       //     },
       //     {
-      //       from: 'formData',
+      //       from: DataMappingFrom.formData,
       //       id: 'email',
       //       dataField: 'to.0.email',
       //     },
       //     {
-      //       from: 'formData',
+      //       from: DataMappingFrom.formData,
       //       id: 'name',
       //       dataField: 'to.0.name',
       //     },
