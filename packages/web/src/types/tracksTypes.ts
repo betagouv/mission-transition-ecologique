@@ -132,7 +132,6 @@ export interface Track {
   label: Translations,
   interface?: TrackInterface,
   behavior?: TrackBehavior,
-  // config?: TrackResultsConfig,
   next?: TrackNext,
   options?: TrackOptions,
   form?: FormOptions,
