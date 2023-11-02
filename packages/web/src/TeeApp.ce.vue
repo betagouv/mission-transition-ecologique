@@ -180,6 +180,7 @@
           <TeeProgramDetail
             :program="programs.getProgramById(programs.programDetail)"
             :track-config="tracks.getTrack(programs.programDetailConfig)"
+            :track-element="trackElement"
             :debug="debugBool"
             />
         </div>

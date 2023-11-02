@@ -5,7 +5,7 @@ import { frDict } from '@/translations/fr'
 import { frOperatorsDict } from '@/translations/fr-operators'
 
 export const choicesStore = defineStore('choices', () => {
-  
+
   const publicPath = ref<string>()
 
   // internationalization
