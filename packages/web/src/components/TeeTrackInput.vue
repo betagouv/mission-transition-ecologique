@@ -18,7 +18,8 @@
   </div>
 
   <!-- INPUT -->
-  <label 
+  <label
+    v-if="option.label"
     class="fr-label fr-mb-2v"
     :for="`input-${option.id}`">
     {{ option.label[choices.lang] }}
@@ -32,17 +33,26 @@
       :name="`input-${option.id}`"
       :disabled="isLoading"
       :placeholder="option.placeholder[choices.lang]" 
-      class="fr-input" 
+      class="fr-input tee-input-large"
       type="search" 
       v-model="inputValue"
       @keyup.enter="processInput">
     <button 
-      class="fr-btn"
+      class="fr-btn tee-btn-input-large"
       :disabled="isLoading"
       :title="choices.t('input.search')"
       @click="processInput">
-      {{ choices.t('input.search') }}
+      <!-- {{ choices.t('input.search') }} -->
     </button>
+  </div>
+  <!-- hint -->
+  <div
+    v-if="option.hint"
+    class="tee-input-hint fr-mt-4v"
+    :for="`input-${option.id}`">
+    <span
+      v-html="option.hint[choices.lang]">
+    </span>
   </div>
 
   <!-- RESPONSE ERRORS -->
@@ -63,7 +73,7 @@
         </span>
         )
       </span>
-      <!-- postResponses -->
+      <!-- POST RESPONSE HELP MESSAGE (IF ANY) -->
       <br v-if="option.postResponses">
       <span 
         v-if="option.postResponses"
@@ -86,8 +96,6 @@
       </p>
     </div> -->
   </div>
-  
-
 
   <!-- RESPONSES -->
   <div
@@ -191,10 +199,10 @@
   </DsfrButton> -->
   <p
     v-if="option.wildcard"
-    class="fr-mt-6v">
+    class="fr-mt-8v">
     {{ choices.t('or') }}
     <a
-      class="fr-link"
+      class="fr-link tee-input-wildcard"
       href="#trackElement"
       @click="goToNextTrack">
       {{ option.wildcard.label[choices.lang] }}
