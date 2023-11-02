@@ -7,7 +7,7 @@
 //   structure_sizes?: string[],
 // }
 
-import type { ConditionOperators } from '@/types/conditionOperators'
+import type { ConditionOperators } from '../types'
 
 export enum ProgramAidType {
   acc = 'accompagnement',
