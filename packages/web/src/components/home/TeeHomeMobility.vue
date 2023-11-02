@@ -16,7 +16,7 @@
     </div>
     <div class="fr-col fr-col-5 fr-col-offset-1">
       <p
-        class="fr-badge fr-mb-6v"
+        class="fr-badge fr-mb-6v fr-mt-4v"
         style="background-color: #6672F8; color: white;">
         ⚡️ Mobilité durable
       </p>

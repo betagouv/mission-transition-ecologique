@@ -16,7 +16,7 @@
     </div>
     <div class="fr-col fr-col-7 fr-col-offset-1">
       <p
-        class="fr-badge fr-mb-6v"
+        class="fr-badge fr-mb-6v fr-mt-4v"
         style="background-color: #FACF35">
         ⚡️ Gestion énergétique
       </p>

@@ -3,7 +3,7 @@
     class="fr-grid-row fr-grid-row-gutters fr-my-20v">
     <div class="fr-col fr-col-7">
       <p
-        class="fr-badge fr-mb-6v"
+        class="fr-badge fr-mb-6v fr-mt-4v"
         style="background-color: #FCA081;">
         👷‍♀️ Gestion de l’eau
       </p>

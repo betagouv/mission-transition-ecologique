@@ -17,7 +17,7 @@
   <!-- FOOTER -->
   <div 
     :class="`fr-footer ${stickToBottom ? 'tee-footer-bottom' : ''}`">
-    <div class="fr-container">
+    <div class="fr-container--fluid fr-mx-20v">
       <div
         class="fr-footer__body"
         style="">
@@ -27,21 +27,21 @@
             <br>Française
           </p>
           <a class="fr-footer__brand-link" href="/" title="Retour à l’accueil du site - Mission Transition - République Française">
-            <img class="fr-footer__logo" style="width:3.5rem;" src="@public/images/logos/mission-transition-logo.png" alt="mission transition" />
+            <img class="fr-footer__logo" style="height:110px;" src="@public/images/logos/mission-transition-logo.png" alt="mission transition" />
             <!-- L’alternative de l’image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l’image -->
           </a>
         </div>
         <div class="fr-footer__content">
-          <p class="fr-footer__content-desc">Lorem [...] elit ut.</p>
+          <!-- <p class="fr-footer__content-desc">Lorem [...] elit ut.</p> -->
           <ul class="fr-footer__content-list">
             <li class="fr-footer__content-item">
-              <a class="fr-footer__content-link" target="_blank" href="https://legifrance.gouv.fr">legifrance.gouv.fr</a>
+              <a class="fr-footer__content-link" target="_blank" href="https://ecologie.gouv.fr">ecologie.gouv.fr</a>
+            </li>
+            <li class="fr-footer__content-item">
+              <a class="fr-footer__content-link" target="_blank" href="https://economie.gouv.fr">economie.gouv.fr</a>
             </li>
             <li class="fr-footer__content-item">
               <a class="fr-footer__content-link" target="_blank" href="https://gouvernement.fr">gouvernement.fr</a>
-            </li>
-            <li class="fr-footer__content-item">
-              <a class="fr-footer__content-link" target="_blank" href="https://service-public.fr">service-public.fr</a>
             </li>
             <li class="fr-footer__content-item">
               <a class="fr-footer__content-link" target="_blank" href="https://data.gouv.fr">data.gouv.fr</a>
@@ -70,7 +70,8 @@
 
         <!-- SOURCES LINKS -->
         <div 
-          class="fr-footer__bottom fr-mt-5v">
+          class="fr-footer__bottom fr-mt-5v"
+          style="box-shadow: none;">
           <ul 
             class="fr-footer__bottom-list">
             <li

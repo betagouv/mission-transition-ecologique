@@ -37,12 +37,12 @@
             <div class="fr-header__tools-links">
               <ul class="fr-btns-group">
                 <li>
-                  <a class="fr-btn fr-icon-add-circle-line" href="[url - à modifier]">
+                  <a class="fr-btn" href="[url - à modifier]">
                     Accueil
                   </a>
                 </li>
                 <li>
-                  <a class="fr-btn fr-icon-lock-line" href="[url - à modifier]">
+                  <a class="fr-btn" href="[url - à modifier]">
                     Catalogue des aides
                   </a>
                 </li>

@@ -33,7 +33,7 @@
       class="fr-container--fluid"
       style="background-color: #E8EDFF;">
       <div
-        class="fr-container fr-py-0 fr-px-20v">
+        class="fr-container fr-py-20v fr-px-20v">
         <TeeHomeElectric/>
         <TeeHomeBuilding/>
         <TeeHomeMobility/>
