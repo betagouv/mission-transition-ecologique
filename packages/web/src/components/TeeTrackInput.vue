@@ -73,7 +73,7 @@
         </span>
         )
       </span>
-      <!-- postResponses -->
+      <!-- POST RESPONSE HELP MESSAGE (IF ANY) -->
       <br v-if="option.postResponses">
       <span 
         v-if="option.postResponses"

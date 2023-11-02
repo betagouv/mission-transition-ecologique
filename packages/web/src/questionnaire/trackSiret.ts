@@ -45,9 +45,9 @@ export const siret = {
       // defaultInput: '82200690400012', // - boulangerie
       // defaultInput: '83014132100034', // - TPE
       // defaultInput: '81759468200020', // - auto-entreprise
-      postResponses: {
-        fr: 'Vous ne retrouvez pas votre SIRET ? <a href="https://annuaire-entreprises.data.gouv.fr/" target="_blank">Cliquez ici</a>'
-      },
+      // postResponses: {
+      //   fr: 'Vous ne retrouvez pas votre SIRET ? <a href="https://annuaire-entreprises.data.gouv.fr/" target="_blank">Cliquez ici</a>'
+      // },
       // required: false,
       callbacks: [
         {
