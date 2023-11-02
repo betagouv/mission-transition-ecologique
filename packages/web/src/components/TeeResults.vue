@@ -23,19 +23,7 @@
     </div>
   </div>
 
-  <!-- RESULTS ALERT -->
-  <!-- <DsfrAlert
-    v-if="trackConfig?.showAlertResults && resultsProgsLen"
-    :title="choices.t('results.alertTitle')"
-    :description="choices.t('results.alertDescription')"
-    type="success">
-  </DsfrAlert>
-  <DsfrAlert
-    v-if="trackConfig?.showAlertNoResults && !resultsProgsLen"
-    :title="choices.t('results.alertTitleNoResults')"
-    :description="choices.t('results.alertNoResults')"
-    type="warning">
-  </DsfrAlert> -->
+  <!-- RESULTS ALERT FOR NO RESULTS BEFORE REFILTERING-->
   <TeeNoResults
     v-if="!resultsProgsLen"
     :image="trackConfig?.noResultsImage"
@@ -43,7 +31,7 @@
     >
   </TeeNoResults>
 
-  <!-- DEBUGGING -->
+  <!-- RESULTS CALLBACK -->
   <h4
     v-if="resultsProgsLen && trackConfig?.showResultsTitle && resultsProgsLen"
     class="fr-pt-12v">
@@ -187,7 +175,6 @@
     </div>
   </div>
 
-
 </template>
 
 <script setup lang="ts">
@@ -237,7 +224,6 @@ const props = defineProps<Props>()
 
 const resultsProgs: ProgramData[] = programs.filterPrograms(props.tracksResults)
 
-// TO DO
 const resultsProgsReFiltered = computed(() => {
   // console.log('\nTeeResults > resultsProgsReFiltered...' )
   // console.log('TeeResults > resultsProgsReFiltered > resultsProgs :', resultsProgs )
@@ -253,8 +239,6 @@ const resultsProgsReFiltered = computed(() => {
       // console.log('TeeResults > filterVal :', filterVal )
       // console.log('TeeResults > trueIf :', trueIf )
 
-      // const progVal = prog[fieldKey]
-      // console.log('TeeResults > progVal :', progVal )
       let progVal = getFrom(prog, [fieldKey])
       progVal = JSON.parse(JSON.stringify(progVal))
       progVal = progVal[0]
