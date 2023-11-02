@@ -3,27 +3,27 @@
   <div
     class="fr-tee-form"
     v-show="!formIsSent">
-  
+
     <!-- DEBUGGING -->
-    <div 
+    <div
       v-if="debug"
       class="vue-debug">
       <p>
-        requiredFields: 
+        requiredFields:
         <code>
           {{ requiredFields }}
         </code>
       </p>
       <p>
-        canSaveFrom: 
+        canSaveFrom:
         <code>
           {{ canSaveFrom }}
         </code>
       </p>
     </div>
-    
+
     <!-- FORM LABEL -->
-    <h3 
+    <h3
       v-if="formOptions.label"
       class="fr-text-center">
       <!-- {{ formOptions.label[choices.lang] }} -->
@@ -31,7 +31,7 @@
     </h3>
 
     <!-- FORM LABEL -->
-    <p 
+    <p
       v-if="formOptions.hint"
       class="fr-text-center fr-pb-10v">
       <!-- {{ formOptions.hint[choices.lang] }} -->
@@ -49,30 +49,30 @@
         :class="`fr-col-12 fr-col-md-${ field.cols ? field.cols : 12 }`"
         >
         <!-- DEBUGGING -->
-        <div 
+        <div
           v-if="debug"
           class="vue-debug">
-          Field.id: 
+          Field.id:
           <code>
-            {{ field.id }} 
+            {{ field.id }}
           </code >
-          --- field.type : 
+          --- field.type :
           <code >
             {{ field.type }}
           </code>
-          --- formData[field.id] : 
+          --- formData[field.id] :
           <code >
             {{ formData[field.id] }}
           </code>
         </div>
-        
+
         <!-- INPUT GROUP -->
         <DsfrInputGroup
-          v-if="field.type !== 'checkbox'">
+          v-if="field.type !== formFieldTypes.checkbox">
           <DsfrInput
             :type="field.type"
-            :is-textarea="field.type === 'textarea'"
-            :rows="field.type === 'textarea' && (field.rows || 4)"
+            :is-textarea="field.type === formFieldTypes.textarea"
+            :rows="field.type === formFieldTypes.textarea && (field.rows || 4)"
             :model-value="formData[field.id]"
             label-visible
             :required="field.required"
@@ -82,12 +82,12 @@
             >
           </DsfrInput>
         </DsfrInputGroup>
-        
+
         <!-- CHECKBOXES -->
         <DsfrCheckbox
-          v-if="field.type == 'checkbox'"
+          v-if="field.type === formFieldTypes.checkbox"
           :model-value="formData[field.id]"
-          :name="field.id" 
+          :name="field.id"
           :required="field.required"
           @update:modelValue="updateFormData($event, field.id)">
           <!-- :hint="field.hint[choices.lang]" -->
@@ -99,7 +99,7 @@
         </DsfrCheckbox>
 
         <!-- CHECKBOX HINT -->
-        <div v-if="field.type == 'checkbox'">
+        <div v-if="field.type === formFieldTypes.checkbox">
           <span
             class="fr-hint-text fr-mt-5v"
             v-html="field.hint[choices.lang] || ''">
@@ -111,13 +111,13 @@
 
     <!-- FORM HELPER -->
     <h6
-      class="fr-mb-0" 
+      class="fr-mb-0"
       style="font-size: 0.7em;">
       <code>*</code>
       &nbsp;
       {{ choices.t('form.mandatory')}}
     </h6>
-  
+
     <!-- SEND / NEXT BUTTON -->
     <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-mt-5v">
       <div
@@ -125,7 +125,7 @@
         style="display: grid; justify-content: right;">
         <!-- :label="choices.t('next')"  -->
         <DsfrButton
-          :label="choices.t('send')" 
+          :label="choices.t('send')"
           :disabled="!canSaveFrom"
           icon="ri-arrow-right-line"
           @click="saveFormData()"
@@ -133,7 +133,7 @@
       </div>
     </div>
   </div>
-  
+
   <!-- FORM CALLBACK -->
   <div
     v-if="formIsSent"
@@ -151,10 +151,10 @@
           v-for="(resp, i) in requestResponses"
           :key="`resp-${i}`">
           <b>
-            {{ resp.action }} :  
+            {{ resp.action }} :
           </b>
           <b>
-            status {{ resp.status }} :  
+            status {{ resp.status }} :
           </b>
           <b>
             "{{ resp.code }}"
@@ -182,7 +182,7 @@
   </div>
 
   <!-- DEBUGGING -->
-  <div 
+  <div
     v-if="debug"
     class="vue-debug fr-mt-5v">
     <h5>DEBUG - TeeForm</h5>
@@ -218,6 +218,7 @@ import { remapItem } from '../utils/helpers'
 import { tracksStore } from '../stores/tracks'
 import { choicesStore } from '../stores/choices'
 import { analyticsStore } from '../stores/analytics'
+import { FormFieldTypes } from '@/types/index'
 
 const choices = choicesStore()
 const tracks = tracksStore()
@@ -243,6 +244,7 @@ let formData = ref()
 const requiredFields = ref([])
 const formIsSent = ref<boolean>(false)
 const requestResponses = ref<ReqResp[]>()
+const formFieldTypes = FormFieldTypes
 
 // const program = computed(() => {
 //   return programs.getProgramById(props.dataProps.programId)
@@ -252,7 +254,7 @@ const canSaveFrom = computed(() => {
   // @ts-ignore
   const boolArr = requiredFields.value.map((f: string) => formData.value[f])
   return boolArr.every(v => (!!v && v !== ''))
-})   
+})
 
 const findPrefix = (str: string, prefixCode: string = 'of') => {
   return choices.t(`articles.${str}.${prefixCode}`)
@@ -267,19 +269,19 @@ onBeforeMount(() => {
   // console.log('TeeForm > onBeforeMount >  props.formOptions :', props.formOptions)
   // console.log('TeeForm > onBeforeMount >  usedTracks :', usedTracks)
   // console.log('TeeForm > onBeforeMount >  trackValues :', trackValues)
-  
+
   let initValues: FormValues = {}
 
   // set up InitValues from formOptions.fields
   props.formOptions.fields?.forEach((field: FormField) => {
     // console.log('TeeForm > onBeforeMount >  field :', field)
-    
+
     // set field's key
     initValues[field.id] = field.type === 'checkbox' ? false : ''
 
     // @ts-ignore
     if (field.required) { requiredFields.value.push(field.id) }
-    
+
     // set default value if any
     if (field.defaultValue) {
       let defaultVal = field.defaultValue
@@ -319,10 +321,10 @@ const saveFormData = async () => {
   // console.log('TeeForm > saveFormData >  props.formOptions :', props.formOptions)
   // console.log('TeeForm > saveFormData >  props.dataProps :', props.dataProps)
   // console.log('TeeForm > saveFormData >  formData.value :', formData.value)
-  
+
   // const usedTracks: UsedTrack[] | any[] = tracks.getAllUsedTracks
   // console.log('TeeForm > saveFormData >  usedTracks :', usedTracks)
-  
+
   // Launch call backs if any
   const responses: ReqResp[] = []
   // loop callbacks (only active ones)
@@ -348,6 +350,6 @@ const saveFormData = async () => {
   // analytics / send event
   analytics.sendEvent(props.trackId, 'send_form')
 
-}  
+}
 
 </script>
