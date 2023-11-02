@@ -125,7 +125,7 @@ export const findInObjectsArray = (objectsArray: object[], id: string, all: bool
 
   // let value = undefined
 
-  let arrayFlat: any = Object.assign({}, ...objectsArray)
+  const arrayFlat: any = Object.assign({}, ...objectsArray)
   // console.log('utils > helpers > findInObjectsArray >  arrayFlat :', arrayFlat)
 
   const value = all ? arrayFlat : arrayFlat[id]
@@ -322,6 +322,7 @@ export const remapItem = (
 }
 
 // UX HELPERS
+
 export const scrollToTop = (
   element: any,
   from: string = ''
@@ -332,4 +333,12 @@ export const scrollToTop = (
   setTimeout(()=> {
     element.scrollIntoView({ behavior: 'smooth' })
   }, 100)
+}
+
+// TEXT HELPERS
+
+export const consolidateAmounts = (str: string | undefined) => {
+  const regex = /(?<=\d)\s(?=\d)|(?<=\d)\s(?=\D)/g
+  const text = str?.replace(regex, '\u00a0')
+  return text
 }
