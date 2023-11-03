@@ -246,7 +246,9 @@ const deployMode = metaEnv.MODE != 'development'
 const deployUrl = metaEnv.VITE_DEPLOY_URL
 const noDebugSwitch = metaEnv.VITE_NO_DEBUG_SWITCH === 'true'
 const publicPath = `${deployUrl}${metaEnv.BASE_URL}`
-// console.log('WidgetApp - publicPath :', publicPath)
+console.log('WidgetApp - deployUrl :', deployUrl)
+console.log('WidgetApp - metaEnv.BASE_URL :', metaEnv.BASE_URL)
+console.log('WidgetApp - publicPath :', publicPath)
 
 // @ts-ignore
 // console.log('WidgetApp - process.env :', process.env)
@@ -263,6 +265,7 @@ interface Props {
   msg?: string,
   seed: string,
   noLocalMatomo?: boolean,
+  noLocalStyles?: boolean,
   datasetUrl?: string,
   maxDepth?: string
   debugSwitch?: string,
@@ -304,8 +307,8 @@ const getColumnsWidth = computed(() => {
 })
 
 onBeforeMount(() => {
-  console.log('WidgetApp > onBeforeMount > props.seed :', props.seed)
-  console.log('WidgetApp > onBeforeMount > props.maxDepth :', props.maxDepth)
+  // console.log('WidgetApp > onBeforeMount > props.seed :', props.seed)
+  // console.log('WidgetApp > onBeforeMount > props.maxDepth :', props.maxDepth)
 
   choices.setPublicPath(publicPath)
 
@@ -316,22 +319,29 @@ onBeforeMount(() => {
   // inject style link in html head if not present
   const href = deployMode ? `${deployUrl}/style.css` : ''
   console.log('WidgetApp > onBeforeMount > href :', href)
-  let needStyle = true
+  let needStyle = !props.noLocalStyles // true
   // avoid duplicates
   const styleSheets = document.styleSheets.length
-  console.log('WidgetApp > onBeforeMount > document.styleSheets :', document.styleSheets)
+  // console.log('WidgetApp > onBeforeMount > document.styleSheets :', document.styleSheets)
+  // console.log('WidgetApp > onBeforeMount > styleSheets :', styleSheets)
   if (styleSheets) {
+    // console.log('WidgetApp > onBeforeMount > styleSheets - A ')
     for(let i = 0; i < styleSheets; i++){
-      if(document.styleSheets[i].href == href){
+      // console.log('WidgetApp > onBeforeMount > styleSheets - A - i :', i)
+      const docStyle = document.styleSheets[i]
+      // console.log('WidgetApp > onBeforeMount > styleSheets - A - docStyle :', docStyle)
+      // console.log('WidgetApp > onBeforeMount > styleSheets - A - docStyle.href :', docStyle.href)
+      if(docStyle.href == href){
         needStyle = false
-        return
+        // return
       }
     }
   }
-  console.log('WidgetApp > onBeforeMount > SET STYLES...')
+  // console.log('WidgetApp > onBeforeMount > needStyle :', needStyle)
+  // console.log('WidgetApp > onBeforeMount > SET STYLES...')
   if (deployMode && needStyle) {
     const head = document.head
-    console.log('WidgetApp > onBeforeMount > head :', head)
+    // console.log('WidgetApp > onBeforeMount > head :', head)
     const link = document.createElement('link')
     link.type = "text/css"
     link.rel = "stylesheet"
@@ -339,7 +349,7 @@ onBeforeMount(() => {
     head.appendChild(link)
   }
 
-  console.log('WidgetApp > onBeforeMount > SET HEADER...')
+  // console.log('WidgetApp > onBeforeMount > SET HEADER...')
 
   // set header / footer components
   showHeaderBool.value = props.showHeader === 'true'
@@ -357,7 +367,7 @@ onBeforeMount(() => {
       // @ts-ignore
       messageObj[strObj[0]] = strObj[1]
     })
-    console.log('WidgetApp > onBeforeMount > messageObj :', messageObj)
+    // console.log('WidgetApp > onBeforeMount > messageObj :', messageObj)
     message.value = messageObj
   }
 

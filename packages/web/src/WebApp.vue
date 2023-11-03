@@ -22,6 +22,7 @@
           :showHeaderBool="false"
           :showFooterBool="false"
           :noLocalMatomo="true"
+          :noLocalStyles="true"
           :locale="'fr'"
         />
       </div>
