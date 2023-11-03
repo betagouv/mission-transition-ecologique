@@ -33,20 +33,19 @@ export default defineConfig({
   server: viteServer,
   plugins: [
     // postcssLit(),
-    vue({
-      template: {
-        compilerOptions: {
-          isCustomElement: (tag) => tag.startsWith('ademe-')
-        }
-      }
-    })
+    vue()
+    // vue({
+    //   template: {
+    //     compilerOptions: {
+    //       isCustomElement: (tag) => tag.startsWith('ademe-')
+    //     }
+    //   }
+    // })
   ],
   build: {
-    // rollupOptions: {
-    //   input: {
-    //     app: resolve(__dirname, 'index.html')
-    //   }
-    // },
+    rollupOptions: {
+      input: ['src/main.ce.ts', './index.html']
+    },
     outDir: 'dist',
     assetsDir: 'assets',
     copyPublicDir: true,
