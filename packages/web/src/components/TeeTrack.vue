@@ -338,6 +338,7 @@
                 :track-options="track.options"
                 :track-form="track.form"
                 :tracks-results="tracks.usedTracks"
+                :track-element="trackElement"
                 :debug="debug"
               />
             </div>

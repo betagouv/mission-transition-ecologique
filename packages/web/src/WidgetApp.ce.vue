@@ -17,29 +17,14 @@
     <!-- DEBUGGING -->
     <div
       class="vue-debug"
-      v-if="true">
+      v-if="debugBool">
       <h5>DEBUG - TeeApp</h5>
       <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
-        <div class="fr-col-3">
-          <h6 class="fr-mb-1v"> tracks.currentStep : <code>{{ tracks.currentStep }} </code></h6><br>
-          <h6 class="fr-mb-1v"> programs.programDetail : <code>{{ programs.programDetail }} </code></h6><br>
+        <div class="fr-col-4">
+          <h6 class="fr-mb-1v"> tracks.currentStep : <code>{{ tracks.currentStep }} </code></h6>
         </div>
-        <div class="fr-col-3">
-          <h6 class="fr-mb-1v"> tracks.getAllUsedTracksValuesPairs : </h6>
-          <pre><code>{{ tracks.getAllUsedTracksValuesPairs }} </code></pre>
-        </div>
-        <div class="fr-col-3">
-          <h6 class="fr-mb-1v"> userQueries : </h6>
-          <pre><code>{{ nav.userQueries }} </code></pre>
-        </div>
-        <div class="fr-col-3">
-          <h6 class="fr-mb-1v"> nav.routerReady  : <code>{{ nav.routerReady  }} </code></h6><br>
-          <h6 class="fr-mb-1v"> nav.currentTrackId  : <code>{{ nav.currentTrackId  }} </code></h6><br>
-          <h6 class="fr-mb-1v"> nav.currentStep  : <code>{{ nav.currentStep  }} </code></h6><br>
-          <h6 class="fr-mb-1v"> nav.routeRef.path : </h6>
-          <pre><code>{{ nav.routeRef?.path }} </code></pre>
-          <h6 class="fr-mb-1v"> nav.routeRef.query : </h6>
-          <pre><code>{{ nav.routeRef?.query }} </code></pre>
+        <div class="fr-col-4">
+          <h6 class="fr-mb-1v"> programs.programDetail : <code>{{ programs.programDetail }} </code></h6>
         </div>
       </div>
     </div>
@@ -73,6 +58,7 @@
 
     <!-- MATOMO -->
     <TeeMatomo
+      v-if="!noLocalMatomo"
       :debug="debugBool"
       />
 
@@ -176,7 +162,7 @@
             </div>
 
             <!-- <h4>
-              TeeApp debug / programs :
+              WidgetApp debug / programs :
             </h4>
             <code><pre>{{ programsArray  }}</pre></code> -->
           </div>
@@ -192,14 +178,14 @@
       <div
         class="fr-grid-row fr-grid-row-gutters">
         <div class="fr-col">
+          <!-- :program="programs.getProgramById(programs.programDetail)"
+          :track-config="tracks.getTrack(programs.programDetailConfig)" -->
           <TeeProgramDetail
             :program-id="programs.programDetail"
             :track-id="programs.programDetailConfig"
             :track-element="trackElement"
             :debug="debugBool"
             />
-            <!-- :program="programs.getProgramById(programs.programDetail)"
-            :track-config="tracks.getTrack(programs.programDetailConfig)" -->
         </div>
       </div>
     </div>
@@ -228,18 +214,13 @@ import '@gouvfr/dsfr/dist/core/core.main.min.css'               // Le CSS minima
 
 // @ts-ignore
 import jsonDataset from '../public/data/generated/dataset_out.json'
-// console.log('TeeApp > jsonDataset :', jsonDataset)
+// console.log('WidgetApp > jsonDataset :', jsonDataset)
 
-import { ref, computed, watch, onBeforeMount, onMounted } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { ref, computed, onBeforeMount } from 'vue'
 
 import { tracksStore } from './stores/tracks'
 import { choicesStore } from './stores/choices'
 import { programsStore } from './stores/programs'
-import { browserStore } from './stores/browser'
-
-// @ts-ignore
-import { unfoldQueries } from '@/utils/urls'
 
 import { TrackComponents } from './types'
 
@@ -259,23 +240,23 @@ import TeeProgramDetail from './components/TeeProgramDetail.vue'
 import TeeCredits from './components/TeeCredits.vue'
 
 // const appId = 'gov-aid-tree-app'
-const router = useRouter()
-const route = useRoute()
 
 // @ts-ignore
 const metaEnv = import.meta.env
-// console.log('TeeApp - metaEnv :', metaEnv)
+// console.log('WidgetApp - metaEnv :', metaEnv)
 const deployMode = metaEnv.MODE != 'development'
 const deployUrl = metaEnv.VITE_DEPLOY_URL
 const noDebugSwitch = metaEnv.VITE_NO_DEBUG_SWITCH === 'true'
-const publicPath = `${deployUrl}${metaEnv.BASE_URL}`
-// console.log('TeeApp - publicPath :', publicPath)
+const publicPath = `${deployUrl}/${metaEnv.BASE_URL}`
+console.log('WidgetApp - deployUrl :', deployUrl)
+console.log('WidgetApp - metaEnv.BASE_URL :', metaEnv.BASE_URL)
+console.log('WidgetApp - publicPath :', publicPath)
 
 // @ts-ignore
-// console.log('TeeApp - process.env :', process.env)
+// console.log('WidgetApp - process.env :', process.env)
 // @ts-ignore
 const programsFromJson = jsonDataset
-// console.log('TeeApp - yamlPrograms :', yamlPrograms)
+// console.log('WidgetApp - yamlPrograms :', yamlPrograms)
 
 interface Props {
   showHeader?: string,
@@ -285,6 +266,8 @@ interface Props {
   locale?: string,
   msg?: string,
   seed: string,
+  noLocalMatomo?: boolean,
+  noLocalStyles?: boolean,
   datasetUrl?: string,
   maxDepth?: string
   debugSwitch?: string,
@@ -295,7 +278,6 @@ const props = defineProps<Props>()
 const tracks = tracksStore()
 const choices = choicesStore()
 const programs = programsStore()
-const nav = browserStore()
 
 let trackElement = ref(null)
 // let teeAppTopPosition = ref()
@@ -314,16 +296,6 @@ const changeDebug = (ev: any) => {
   debugBool.value = ev
 }
 
-watch(() => tracks.usedTracks, ( next ) => {
-  console.log()
-  console.log('TeeApp > watch > tracks.usedTracks > next : ', next)
-  if (nav.routerReady) {
-    nav.setCurrentStep(tracks.currentStep)
-    nav.setCurrentTrackId(tracks.currentTrackId)
-    nav.updateQueries(tracks.getAllUsedTracksValuesPairs)
-  }
-})
-
 const getColumnsWidth = computed(() => {
   const currentTrack = tracks.getLastTrack
   const colsDebug = 'fr-col-7'
@@ -332,13 +304,13 @@ const getColumnsWidth = computed(() => {
   const colsResults = 'fr-col fr-col-lg-8 fr-col-xl-8'
   if (debugBool.value) return colsDebug
   else if (tracks.currentStep === 1) return colsStart
-  else if (currentTrack?.component === TrackComponents.results) return colsResults
+  else if (currentTrack && currentTrack.component === TrackComponents.results) return colsResults
   else return colsTracks
 })
 
 onBeforeMount(() => {
-  // console.log('TeeApp > props.seed :', props.seed)
-  // console.log('TeeApp > props.maxDepth :', props.maxDepth)
+  // console.log('WidgetApp > onBeforeMount > props.seed :', props.seed)
+  // console.log('WidgetApp > onBeforeMount > props.maxDepth :', props.maxDepth)
 
   choices.setPublicPath(publicPath)
 
@@ -348,28 +320,38 @@ onBeforeMount(() => {
 
   // inject style link in html head if not present
   const href = deployMode ? `${deployUrl}/style.css` : ''
-  // console.log('TeeApp > href :', href)
-  let needStyle = true
+  console.log('WidgetApp > onBeforeMount > href :', href)
+  let needStyle = !props.noLocalStyles // true
   // avoid duplicates
   const styleSheets = document.styleSheets.length
-  // console.log('TeeApp > document.styleSheets :', document.styleSheets)
+  // console.log('WidgetApp > onBeforeMount > document.styleSheets :', document.styleSheets)
+  // console.log('WidgetApp > onBeforeMount > styleSheets :', styleSheets)
   if (styleSheets) {
+    // console.log('WidgetApp > onBeforeMount > styleSheets - A ')
     for(let i = 0; i < styleSheets; i++){
-      if(document.styleSheets[i].href == href){
+      // console.log('WidgetApp > onBeforeMount > styleSheets - A - i :', i)
+      const docStyle = document.styleSheets[i]
+      // console.log('WidgetApp > onBeforeMount > styleSheets - A - docStyle :', docStyle)
+      // console.log('WidgetApp > onBeforeMount > styleSheets - A - docStyle.href :', docStyle.href)
+      if(docStyle.href == href){
         needStyle = false
-        return
+        // return
       }
     }
   }
+  // console.log('WidgetApp > onBeforeMount > needStyle :', needStyle)
+  // console.log('WidgetApp > onBeforeMount > SET STYLES...')
   if (deployMode && needStyle) {
     const head = document.head
-    // console.log('TeeApp > head :', head)
+    // console.log('WidgetApp > onBeforeMount > head :', head)
     const link = document.createElement('link')
     link.type = "text/css"
     link.rel = "stylesheet"
     link.href = href
     head.appendChild(link)
   }
+
+  // console.log('WidgetApp > onBeforeMount > SET HEADER...')
 
   // set header / footer components
   showHeaderBool.value = props.showHeader === 'true'
@@ -387,7 +369,7 @@ onBeforeMount(() => {
       // @ts-ignore
       messageObj[strObj[0]] = strObj[1]
     })
-    // console.log('TeeApp > messageObj :', messageObj)
+    // console.log('WidgetApp > onBeforeMount > messageObj :', messageObj)
     message.value = messageObj
   }
 
@@ -405,58 +387,12 @@ onBeforeMount(() => {
     debugBool.value = props.debug === 'true'
   }
 
-})
-
-onMounted(async () => {
-  // cf: https://stackoverflow.com/questions/69495211/vue3-route-query-empty
-  await router.isReady()
-  nav.setRouter(router)
-  nav.setRoute(route)
-  // console.log('\nTeeApp > mounted > router :', router)
-
-  console.log('\nTeeApp > mounted > nav.route :', nav.route)
-  
   // set first track at mount
   tracks.setSeedTrack(props.seed)
   tracks.addToUsedTracks(props.seed, props.seed)
-
-  // parse url to get current track and other queries
-  const currentTrack = route.query['teeActiveTrack']
-  /*
-  GOAL => unfold object such as 
-  {
-    teetrack_track_help: "user_help:precise"
-    teetrack_track_needs: "project_needs:*"
-    teetrack_track_sectors: ""
-    teetrack_track_siret: "siret:|codeNaf:|codeNAF1:|ville:|codePostal:|structure_sizes:|denomination:|label_sectors:undefined|secteur:undefined"
-    teetrack_track_structure_workforce: "entreprise . effectif:249|structure_sizes:PME"
-  }
-  */
-  const queryTracksRaw = unfoldQueries(route.query)
-  console.log('TeeApp > mounted > queryTracksInfos :', queryTracksRaw)
-   // TO DO
-  // tracks.populateUsedTracksFromQuery(route.query)
-  // nav.populateFromQuery(route.query)
-
-
-  // parse url to get detail program (if any)
-  const programId = route.query['teeDetail']
-  console.log('TeeApp > mounted > currentTrack :', currentTrack)
-  console.log('TeeApp > mounted > programId :', programId)
-  // @ts-ignore
-  nav.setCurrentDetailId(programId)
-  // @ts-ignore
-  programs.setDetailResult(programId, 'track_results')
-  /*
-  tested with url such as : 
-  localhost:4242/?teeActiveTrack=track_results&teeDetail=accelerateur-decarbonation
-  http://localhost:4242/?teeStep=3&teeActiveTrack=track_results&teetrack_track_needs=project_needs:*&teetrack_track_help=user_help:direct&teetrack_track_results=&teeDetail=accelerateur-decarbonation
-  */
-
-  nav.setCurrentTrackId(tracks.currentTrackId)
-  nav.updateQueries(tracks.getAllUsedTracksValuesPairs)
-
+  console.log('WidgetApp > onBeforeMount > END...')
 })
+
 </script>
 
 <!-- <style lang="scss">
