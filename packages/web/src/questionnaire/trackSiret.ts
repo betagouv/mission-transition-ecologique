@@ -36,17 +36,18 @@ export const siret = {
       id: 'search-siret',
       value: { ...dataTarget },
       title: { fr: 'SIRET' },
-      label: { fr: 'Renseignez le SIRET de votre entreprise (14 chiffres)' },
-      placeholder: { fr: 'ex : 830 141 321 00034' },
+      // label: { fr: 'Renseignez le SIRET de votre entreprise (14 chiffres)' },
+      placeholder: { fr: 'Votre numéro SIRET (14 chiffres)' },
+      hint: { fr: `Besoin d'aide pour retrouver votre SIRET ? <a href="https://annuaire-entreprises.data.gouv.fr/" target="_blank">Cliquez ici</a>` },
       // for debugging purposes
       // Examples =>
       // defaultInput: '830 141 321 00034',
       // defaultInput: '82200690400012', // - boulangerie
       // defaultInput: '83014132100034', // - TPE
       // defaultInput: '81759468200020', // - auto-entreprise
-      postResponses: {
-        fr: 'Vous ne retrouvez pas votre SIRET ?&nbsp;<a href="https://annuaire-entreprises.data.gouv.fr/" target="_blank">Cliquez ici</a>'
-      },
+      // postResponses: {
+      //   fr: 'Vous ne retrouvez pas votre SIRET ? <a href="https://annuaire-entreprises.data.gouv.fr/" target="_blank">Cliquez ici</a>'
+      // },
       // required: false,
       callbacks: [
         {
