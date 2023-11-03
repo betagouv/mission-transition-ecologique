@@ -4,6 +4,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import TeeHome from '../components/pages/TeeHome.vue'
 
 import TeeQuestionnaire from '../components/pages/TeeQuestionnaire.vue'
+import TeeCatalog from '../components/pages/TeeCatalog.vue'
 
 import TeeLegal from '../components/pages/TeeLegal.vue'
 import TeeAccessibility from '../components/pages/TeeAccessibility.vue'
@@ -42,7 +43,7 @@ export const router = createRouter({
     { 
       path: '/catalogue',
       name: 'catalog', 
-      component: TeeHome,
+      component: TeeCatalog,
       meta: {
         layout: ''
       }

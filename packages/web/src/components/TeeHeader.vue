@@ -33,22 +33,26 @@
               </p>
             </div>
           </div>
-          <!-- <div class="fr-header__tools">
+          <div class="fr-header__tools">
             <div class="fr-header__tools-links">
               <ul class="fr-btns-group">
                 <li>
-                  <a class="fr-btn" href="[url - à modifier]">
+                  <router-link 
+                    class="fr-btn"
+                    to="/">
                     Accueil
-                  </a>
+                  </router-link>
                 </li>
                 <li>
-                  <a class="fr-btn" href="[url - à modifier]">
+                  <router-link 
+                    class="fr-btn"
+                    to="/catalogue">
                     Catalogue des aides
-                  </a>
+                  </router-link>
                 </li>
               </ul>
             </div>
-          </div> -->
+          </div>
         </div>
       </div>
     </div>
