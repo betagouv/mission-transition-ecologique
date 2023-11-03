@@ -26,14 +26,14 @@ const viteServer: any = {
   // open: '/public/index.html', // test other index file
   // open: '/dist/index.html', // test other index file
 }
-if (mode === 'production') {
-  viteServer.open = '/dist/index.html'
-}
+// if (mode === 'production') {
+//   viteServer.open = './dist/index.html'
+// }
 
 // Set Vite config
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: './',
+  // base: './dist/',
   server: viteServer,
   plugins: [
     // postcssLit(),
