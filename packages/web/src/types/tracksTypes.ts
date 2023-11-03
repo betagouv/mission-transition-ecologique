@@ -99,7 +99,7 @@ export interface TrackOptions {
   value: string | number | object,
   required?: boolean,
   title?: Translations,
-  label: Translations,
+  label?: Translations,
   resume?: Translations,
   hint?: Translations,
   hintImageIcon?: string,

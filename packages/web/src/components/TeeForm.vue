@@ -207,10 +207,11 @@
 
 <script setup lang="ts">
 
-import { onBeforeMount, ref, computed, toRaw } from 'vue'
+import { computed, onBeforeMount, ref, toRaw } from 'vue'
 
 // @ts-ignore
-import type { FormValues, FormField, FormOptions, FormCallback, ProgramData, ReqResp } from '@/types/index'
+import type { FormCallback, FormField, FormOptions, FormValues, ProgramData, ReqResp } from '@/types/index'
+import { CallbackActions, FormFieldTypes } from '@/types/index'
 
 import { sendApiRequest } from '../utils/requests'
 import { remapItem } from '../utils/helpers'
@@ -218,7 +219,6 @@ import { remapItem } from '../utils/helpers'
 import { tracksStore } from '../stores/tracks'
 import { choicesStore } from '../stores/choices'
 import { analyticsStore } from '../stores/analytics'
-import { FormFieldTypes } from '@/types/index'
 
 const choices = choicesStore()
 const tracks = tracksStore()
@@ -277,7 +277,7 @@ onBeforeMount(() => {
     // console.log('TeeForm > onBeforeMount >  field :', field)
 
     // set field's key
-    initValues[field.id] = field.type === 'Checkbox' ? false : ''
+    initValues[field.id] = field.type === FormFieldTypes.Checkbox ? false : ''
 
     // @ts-ignore
     if (field.required) { requiredFields.value.push(field.id) }
@@ -334,10 +334,10 @@ const saveFormData = async () => {
     // console.log('TeeForm > saveFormData >  callback.action :', callback.action)
     let resp: ReqResp = {}
     switch (callback.action) {
-      case 'CreateContact':
+      case CallbackActions.CreateContact:
         resp = await sendApiRequest(callback, toRaw(formData.value), trackValues, props.dataProps, choices.lang)
         break
-      case 'SendTransactionalEmail':
+      case CallbackActions.SendTransactionalEmail:
         resp = await sendApiRequest(callback, toRaw(formData.value))
         break
     }

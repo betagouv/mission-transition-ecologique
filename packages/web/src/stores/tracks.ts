@@ -139,7 +139,7 @@ export const tracksStore = defineStore('tracks', () => {
     // add newTrackId
     const trackInfos: UsedTrack = {
       id: newTrackId,
-      component: nextTrack?.interface.component || TrackComponents.buttons,
+      component: nextTrack?.interface?.component ?? TrackComponents.Buttons,
       category: nextTrack?.category,
       completed: false,
       step: usedTracks.value.length + 1,

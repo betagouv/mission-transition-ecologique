@@ -18,10 +18,10 @@ export interface FormValues {
 }
 
 export enum FormFieldTypes {
-  Text = 'Text',
-  Email = 'Email',
-  Textarea = 'Textarea',
-  Checkbox = 'Checkbox',
+  Text = 'text',
+  Email = 'email',
+  Textarea = 'textarea',
+  Checkbox = 'checkbox',
 }
 
 export interface FormCallbackDataMapping {
