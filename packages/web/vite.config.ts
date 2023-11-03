@@ -18,12 +18,16 @@ const rawEnv = loadEnv(mode, process.cwd())
 console.log('vite.config > rawEnv : ', rawEnv)
 
 // VITE CONFIG
-const viteServer = {
+const viteServer: any = {
   // host: 'localhost',
   host: '0.0.0.0'
   // port: 4242,
   // open: '/index.html',
   // open: '/public/index.html', // test other index file
+  // open: '/dist/index.html', // test other index file
+}
+if (mode === 'production') {
+  viteServer.open = '/dist/index.html'
 }
 
 // Set Vite config
@@ -44,7 +48,10 @@ export default defineConfig({
   ],
   build: {
     rollupOptions: {
-      input: ['./index.html']
+      input: [
+        // './src/main.ce.ts',
+        './index.html'
+      ]
     },
     outDir: 'dist',
     assetsDir: 'assets',
