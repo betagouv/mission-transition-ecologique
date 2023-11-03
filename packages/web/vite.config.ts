@@ -47,8 +47,8 @@ export default defineConfig({
       input: ['./index.html']
     },
     outDir: 'dist',
-    // assetsDir: 'assets',
-    // copyPublicDir: true,
+    assetsDir: 'assets',
+    copyPublicDir: true,
     lib: {
       entry: 'src/main.ce.ts',
       name: 'gov-aid-tree-app',
