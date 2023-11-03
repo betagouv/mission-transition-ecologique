@@ -18,7 +18,7 @@
   </div>
 
   <!-- INPUT -->
-  <labelv-if="option.label"
+  <label v-if="option.label"
     class="fr-label fr-mb-2v"
     :for="`input-${option.id}`">
     {{ option.label[choices.lang] }}
