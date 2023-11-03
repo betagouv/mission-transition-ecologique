@@ -68,11 +68,11 @@
 
         <!-- INPUT GROUP -->
         <DsfrInputGroup
-          v-if="field.type !== 'Checkbox'">
+          v-if="field.type !== formFieldTypes.checkbox">
           <DsfrInput
             :type="field.type"
-            :is-textarea="field.type === 'Textarea'"
-            :rows="field.type === 'Textarea' && (field.rows || 4)"
+            :is-textarea="field.type === formFieldTypes.textarea"
+            :rows="field.type === formFieldTypes.textarea && (field.rows || 4)"
             :model-value="formData[field.id]"
             label-visible
             :required="field.required"
@@ -85,7 +85,7 @@
 
         <!-- CHECKBOXES -->
         <DsfrCheckbox
-          v-if="field.type == 'Checkbox'"
+          v-if="field.type === formFieldTypes.checkbox"
           :model-value="formData[field.id]"
           :name="field.id"
           :required="field.required"
@@ -99,7 +99,7 @@
         </DsfrCheckbox>
 
         <!-- CHECKBOX HINT -->
-        <div v-if="field.type == 'Checkbox'">
+        <div v-if="field.type === formFieldTypes.checkbox">
           <span
             class="fr-hint-text fr-mt-5v"
             v-html="field.hint?.[choices.lang] || ''">
@@ -218,6 +218,7 @@ import { remapItem } from '../utils/helpers'
 import { tracksStore } from '../stores/tracks'
 import { choicesStore } from '../stores/choices'
 import { analyticsStore } from '../stores/analytics'
+import { FormFieldTypes } from '@/types/index'
 
 const choices = choicesStore()
 const tracks = tracksStore()
@@ -243,6 +244,7 @@ let formData = ref()
 const requiredFields = ref([])
 const formIsSent = ref<boolean>(false)
 const requestResponses = ref<ReqResp[]>()
+const formFieldTypes = FormFieldTypes
 
 // const program = computed(() => {
 //   return programs.getProgramById(props.dataProps.programId)

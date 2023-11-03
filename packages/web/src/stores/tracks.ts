@@ -7,6 +7,7 @@ import { tracks } from '@/questionnaire'
 
 // @ts-ignore
 import type { Track, Translations, UsedTrack, TrackId } from '@/types'
+import { TrackComponents } from '@/types'
 
 const allTracks = ref(tracks)
 const seedTrack = ref()
@@ -37,9 +38,13 @@ export const tracksStore = defineStore('tracks', () => {
     }
     return tracksArray
   })
-  const currentStep = computed(() => {
+  const getLastTrack = computed(() => {
     const tracksArray = usedTracks.value.slice(-1)
     const track: UsedTrack = tracksArray[0]
+    return track
+  })
+  const currentStep = computed(() => {
+    const track: UsedTrack = getLastTrack.value
     const stepNumber = track.step
     return stepNumber
   })
@@ -119,24 +124,29 @@ export const tracksStore = defineStore('tracks', () => {
     seedTrack.value = track?.id
   }
 
-  function addToUsedTracks(srcTrackId: TrackId, newTrackId: string) {
+  function addToUsedTracks(srcTrackId: TrackId, newTrackId: TrackId) {
     // console.log()
     // console.log('store.tracks > addToUsedTracks > srcTrackId : ', srcTrackId)
     // console.log('store.tracks > addToUsedTracks > newTrackId : ', newTrackId)
 
-    const track = getTrack(srcTrackId)
+    // const srcTrack = getTrack(srcTrackId)
+    // console.log('store.tracks > addToUsedTracks > srcTrack : ', srcTrack)
+    const nextTrack = getTrack(newTrackId)
+    // console.log('store.tracks > addToUsedTracks > nextTrack : ', nextTrack)
 
     removeFurtherUsedTracks(srcTrackId)
 
     // add newTrackId
     const trackInfos: UsedTrack = {
       id: newTrackId,
-      category: track?.category,
+      component: nextTrack?.interface.component || TrackComponents.buttons,
+      category: nextTrack?.category,
       completed: false,
       step: usedTracks.value.length + 1,
       selected: [],
       next: null,
     }
+    console.log('store.tracks > addToUsedTracks > trackInfos : ', trackInfos)
     // @ts-ignore
     usedTracks.value.push(trackInfos)
   }
@@ -193,6 +203,7 @@ export const tracksStore = defineStore('tracks', () => {
     seedTrack,
     usedTracks,
     tracksStepsArray,
+    getLastTrack,
     currentStep,
     setMaxDepth,
     getTrack,

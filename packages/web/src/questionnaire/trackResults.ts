@@ -115,11 +115,14 @@ export const results: Track = {
         },
         required: false,
         type: FormFieldTypes.Textarea,
-        rows: 6,
+        rows: 8,
         // for debugging purposes
-        defaultValue: `Bonjour,\n
+        defaultValue: `Bonjour,
+
 Mon entreprise a une activité de type "{secteur}".
-J'aimerais bénéficier du dispositif "{titreAide}". \n
+Le dispositif "{titreAide}" pourrait m'intéresser car j'ai pour projet de ...
+J'ai besoin d'être accompagné(e) sur ...
+
 Merci d'avance pour votre appel`,
         injectInText: true,
         dataStructure: {
