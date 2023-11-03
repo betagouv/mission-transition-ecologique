@@ -51,7 +51,7 @@ export default defineConfig({
     assetsDir: 'assets',
     copyPublicDir: true,
     lib: {
-      entry: './src/main.js',
+      entry: './src/main.ce.ts',
       name: 'gov-aid-tree-app',
       // the proper extensions will be added
       fileName: 'gov-aid-tree-app'
