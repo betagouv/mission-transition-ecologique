@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import { defineCustomElement } from './defineCustomElementWithStyles'
+import { router } from './router'
 
 // ts-ignore
 import WebApp from './WebApp.vue'
@@ -63,7 +64,8 @@ const WidgetAppComponent = defineCustomElement(WidgetApp, {
     { plugin: VueDsfr },
     // { plugin: VueDsfr, options: { icons: Object.values(icons) }},
     // @ts-ignore
-    { plugin: store }
+    { plugin: store },
+    { plugin: router }
   ],
   comps: [
     { name: 'v-icon', comp: OhVueIcon }

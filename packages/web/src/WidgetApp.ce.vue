@@ -178,9 +178,11 @@
       <div
         class="fr-grid-row fr-grid-row-gutters">
         <div class="fr-col">
+          <!-- :program="programs.getProgramById(programs.programDetail)"
+          :track-config="tracks.getTrack(programs.programDetailConfig)" -->
           <TeeProgramDetail
-            :program="programs.getProgramById(programs.programDetail)"
-            :track-config="tracks.getTrack(programs.programDetailConfig)"
+            :program-id="programs.programDetail"
+            :track-id="programs.programDetailConfig"
             :track-element="trackElement"
             :debug="debugBool"
             />
