@@ -1,5 +1,5 @@
 import { fileURLToPath, URL } from 'node:url'
-import { resolve } from 'path'
+// import { resolve } from 'path'
 // import postcssLit from 'rollup-plugin-postcss-lit';
 
 import { defineConfig, loadEnv } from 'vite'
