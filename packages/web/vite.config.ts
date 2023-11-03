@@ -33,7 +33,7 @@ if (mode === 'production') {
 // Set Vite config
 // https://vitejs.dev/config/
 export default defineConfig({
-  // base: './',
+  base: './',
   server: viteServer,
   plugins: [
     // postcssLit(),
