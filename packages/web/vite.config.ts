@@ -48,10 +48,9 @@ export default defineConfig({
   ],
   build: {
     rollupOptions: {
-      input: [
-        // './src/main.ce.ts',
-        './index.html'
-      ]
+      input: {
+        main: 'index.html'
+      }
     },
     outDir: 'dist',
     assetsDir: 'assets',
