@@ -33,7 +33,7 @@
               </p>
             </div>
           </div>
-          <div class="fr-header__tools">
+          <!-- <div class="fr-header__tools">
             <div class="fr-header__tools-links">
               <ul class="fr-btns-group">
                 <li>
@@ -48,7 +48,7 @@
                 </li>
               </ul>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
