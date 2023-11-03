@@ -143,6 +143,15 @@ npm run dev --workspace packages/web
 npm run dev --workspace packages/backend
 ```
 
+### Preview front before deploying in production
+
+```sh
+# This script builds the front 
+# and previews the produced index.html file from the dist folder
+# on http://localhost:4242
+npm run build-and-preview-front
+```
+
 ### Commands for a specific workspace
 
 More scripts are defined for each workspace: checkout their respective documentation and `package.json` file.

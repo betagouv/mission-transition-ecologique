@@ -162,7 +162,7 @@
             </div>
 
             <!-- <h4>
-              TeeApp debug / programs :
+              WidgetApp debug / programs :
             </h4>
             <code><pre>{{ programsArray  }}</pre></code> -->
           </div>
@@ -212,7 +212,7 @@ import '@gouvfr/dsfr/dist/core/core.main.min.css'               // Le CSS minima
 
 // @ts-ignore
 import jsonDataset from '../public/data/generated/dataset_out.json'
-// console.log('TeeApp > jsonDataset :', jsonDataset)
+// console.log('WidgetApp > jsonDataset :', jsonDataset)
 
 import { ref, computed, onBeforeMount } from 'vue'
 
@@ -241,18 +241,18 @@ import TeeCredits from './components/TeeCredits.vue'
 
 // @ts-ignore
 const metaEnv = import.meta.env
-// console.log('TeeApp - metaEnv :', metaEnv)
+// console.log('WidgetApp - metaEnv :', metaEnv)
 const deployMode = metaEnv.MODE != 'development'
 const deployUrl = metaEnv.VITE_DEPLOY_URL
 const noDebugSwitch = metaEnv.VITE_NO_DEBUG_SWITCH === 'true'
 const publicPath = `${deployUrl}${metaEnv.BASE_URL}`
-// console.log('TeeApp - publicPath :', publicPath)
+// console.log('WidgetApp - publicPath :', publicPath)
 
 // @ts-ignore
-// console.log('TeeApp - process.env :', process.env)
+// console.log('WidgetApp - process.env :', process.env)
 // @ts-ignore
 const programsFromJson = jsonDataset
-// console.log('TeeApp - yamlPrograms :', yamlPrograms)
+// console.log('WidgetApp - yamlPrograms :', yamlPrograms)
 
 interface Props {
   showHeader?: string,
@@ -304,8 +304,8 @@ const getColumnsWidth = computed(() => {
 })
 
 onBeforeMount(() => {
-  // console.log('TeeApp > props.seed :', props.seed)
-  // console.log('TeeApp > props.maxDepth :', props.maxDepth)
+  console.log('WidgetApp > onBeforeMount > props.seed :', props.seed)
+  console.log('WidgetApp > onBeforeMount > props.maxDepth :', props.maxDepth)
 
   choices.setPublicPath(publicPath)
 
@@ -315,11 +315,11 @@ onBeforeMount(() => {
 
   // inject style link in html head if not present
   const href = deployMode ? `${deployUrl}/style.css` : ''
-  // console.log('TeeApp > href :', href)
+  console.log('WidgetApp > onBeforeMount > href :', href)
   let needStyle = true
   // avoid duplicates
   const styleSheets = document.styleSheets.length
-  // console.log('TeeApp > document.styleSheets :', document.styleSheets)
+  console.log('WidgetApp > onBeforeMount > document.styleSheets :', document.styleSheets)
   if (styleSheets) {
     for(let i = 0; i < styleSheets; i++){
       if(document.styleSheets[i].href == href){
@@ -328,15 +328,18 @@ onBeforeMount(() => {
       }
     }
   }
+  console.log('WidgetApp > onBeforeMount > SET STYLES...')
   if (deployMode && needStyle) {
     const head = document.head
-    // console.log('TeeApp > head :', head)
+    console.log('WidgetApp > onBeforeMount > head :', head)
     const link = document.createElement('link')
     link.type = "text/css"
     link.rel = "stylesheet"
     link.href = href
     head.appendChild(link)
   }
+
+  console.log('WidgetApp > onBeforeMount > SET HEADER...')
 
   // set header / footer components
   showHeaderBool.value = props.showHeader === 'true'
@@ -354,7 +357,7 @@ onBeforeMount(() => {
       // @ts-ignore
       messageObj[strObj[0]] = strObj[1]
     })
-    // console.log('TeeApp > messageObj :', messageObj)
+    console.log('WidgetApp > onBeforeMount > messageObj :', messageObj)
     message.value = messageObj
   }
 
@@ -375,6 +378,7 @@ onBeforeMount(() => {
   // set first track at mount
   tracks.setSeedTrack(props.seed)
   tracks.addToUsedTracks(props.seed, props.seed)
+  console.log('WidgetApp > onBeforeMount > END...')
 })
 
 </script>

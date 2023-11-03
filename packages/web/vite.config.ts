@@ -1,4 +1,5 @@
 import { fileURLToPath, URL } from 'node:url'
+import { resolve } from 'path'
 // import postcssLit from 'rollup-plugin-postcss-lit';
 
 import { defineConfig, loadEnv } from 'vite'
@@ -28,6 +29,7 @@ const viteServer = {
 // Set Vite config
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: './',
   server: viteServer,
   plugins: [
     // postcssLit(),
@@ -40,6 +42,11 @@ export default defineConfig({
     })
   ],
   build: {
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html')
+      }
+    },
     outDir: 'dist',
     assetsDir: 'assets',
     copyPublicDir: true,
