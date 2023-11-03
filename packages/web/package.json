@@ -23,7 +23,7 @@
     "update-styles": "npm run copy-dsfr-core-css && npm run copy-dsfr-fonts && npm run copy-custom-css",
     "dev": "npm run copy-custom-css && vite --port 4242",
     "build": "npm run update-styles && run-p type-check build-only",
-    "start": "vite --port $PORT",
+    "start": "echo 'STARTING FRONT WITH VITE' && vite --port $PORT",
     "start-preview": "vite preview --port $PORT",
     "preview": "vite preview",
     "test:unit": "vitest",
