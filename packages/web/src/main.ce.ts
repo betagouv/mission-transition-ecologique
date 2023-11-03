@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import { defineCustomElement } from './defineCustomElementWithStyles'
 
+// ts-ignore
 import WebApp from './WebApp.vue'
 import WidgetApp from './WidgetApp.ce.vue'
 // console.log('TeeApp.styles :', TeeApp.styles) // ["/* inlined css */"]
