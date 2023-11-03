@@ -17,7 +17,7 @@
       <div
         class="fr-container--fluid"
         style="min-height: auto">
-        <TeeApp
+        <WidgetApp
           :seed="'track_needs'"
           :showHeaderBool="false"
           :showFooterBool="false"
@@ -74,7 +74,7 @@ import TeeHeader from './components/TeeHeader.vue'
 // @ts-ignore
 // import TeeMatomo from './components/TeeMatomo.vue'
 // @ts-ignore
-import TeeApp from './TeeApp.ce.vue'
+import WidgetApp from './WidgetApp.ce.vue'
 // @ts-ignore
 import TeeHomeSteps from './components/home/TeeHomeSteps.vue'
 // @ts-ignore
