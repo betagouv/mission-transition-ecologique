@@ -1,41 +1,40 @@
 <template>
-  <!-- MAIN APP COMPONENT  -->
+  <!-- MAIN APP COMPONENT  --> 
+  <div 
+    class="fr-container--fluid"
+    style="background-color: #E8EDFF;">
     <div
-      class="fr-container--fluid"
-      style="min-height: auto">
-      <WidgetApp
-        :seed="'track_needs'"
-        :showHeaderBool="false"
-        :showFooterBool="false"
-        :noLocalMatomo="true"
-        :noLocalStyles="true"
-        :locale="'fr'"
-      />
+      class="fr-container fr-py-20v">
+      <TeeCta/>
     </div>
+  </div>
 
-    <!-- INTRO / CTA -->
-    <div class="fr-container fr-my-5v">
-      <TeeHomeSteps/>
-    </div>
 
-    <!-- INTRO / INFOS -->
-    <div 
-      class="fr-container--fluid"
-      style="background-color: #E8EDFF;">
-      <div
-        class="fr-container fr-py-20v fr-px-20v">
-        <TeeHomeElectric/>
-        <TeeHomeBuilding/>
-        <TeeHomeMobility/>
-        <TeeHomeWater/>
-      </div>
+  <!-- INTRO / CTA -->
+  <div class="fr-container fr-my-5v">
+    <TeeHomeSteps/>
+  </div>
+
+  <!-- INTRO / INFOS -->
+  <div 
+    class="fr-container--fluid"
+    style="background-color: #E8EDFF;">
+    <div
+      class="fr-container fr-py-20v fr-px-20v">
+      <TeeHomeElectric/>
+      <TeeHomeBuilding/>
+      <TeeHomeMobility/>
+      <TeeHomeWater/>
     </div>
+  </div>
 </template>
 
 <script setup lang="ts">
 
 // @ts-ignore
-import WidgetApp from '../../WidgetApp.ce.vue'
+// import WidgetApp from '../../WidgetApp.ce.vue'
+// @ts-ignore
+import TeeCta from '../home/TeeCta.vue'
 // @ts-ignore
 import TeeHomeSteps from '../home/TeeHomeSteps.vue'
 // @ts-ignore

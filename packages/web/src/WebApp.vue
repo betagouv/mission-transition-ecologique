@@ -5,12 +5,12 @@
     <!-- HEADER -->
     <TeeHeader/>
 
-    <router-view/>
-
     <!-- MATOMO -->
     <!-- <TeeMatomo
       :debug="debugBool"
       /> -->
+
+    <router-view/>
 
     <!-- FOOTER -->
     <div

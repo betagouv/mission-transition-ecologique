@@ -23,11 +23,11 @@
               </div>
             </div>
             <div class="fr-header__service">
-              <a href="/" title="Accueil - [À MODIFIER - Nom du site / service] - Nom de l’entité (ministère, secrétariat d‘état, gouvernement)">
+              <router-link to="/" title="Accueil - [À MODIFIER - Nom du site / service] - Nom de l’entité (ministère, secrétariat d‘état, gouvernement)">
                 <p class="fr-header__service-title">
                   Transition écologique des entreprises
                 </p>
-              </a>
+              </router-link>
               <p class="fr-header__service-tagline">
                 Faire rimer écologie avec économies !
               </p>

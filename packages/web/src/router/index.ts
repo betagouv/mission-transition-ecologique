@@ -1,8 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
 // import type { Router } from 'vue-router'
 
-import TeeLegal from '../components/pages/TeeLegal.vue'
 import TeeHome from '../components/pages/TeeHome.vue'
+
+import TeeQuestionnaire from '../components/pages/TeeQuestionnaire.vue'
+
+import TeeLegal from '../components/pages/TeeLegal.vue'
+import TeeAccessibility from '../components/pages/TeeAccessibility.vue'
+import TeePersonalData from '../components/pages/TeePersonalData.vue'
 // import TeeTrack from './components/TeeTrack.vue'
 // import TeeProgramDetail from './components/TeeProgramDetail.vue'
 
@@ -14,6 +19,9 @@ import TeeHome from '../components/pages/TeeHome.vue'
 // }
 export const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
+  scrollBehavior (to, from, savedPosition) {
+    return { top: 0 }
+  },
   routes: [
     { 
       path: '/',
@@ -24,9 +32,41 @@ export const router = createRouter({
       }
     },
     { 
+      path: '/questionnaire',
+      name: 'questionnaire', 
+      component: TeeQuestionnaire,
+      meta: {
+        layout: ''
+      }
+    },
+    { 
+      path: '/catalogue',
+      name: 'catalog', 
+      component: TeeHome,
+      meta: {
+        layout: ''
+      }
+    },
+    { 
       path: '/mentions-legales', 
       name: 'legal',
       component: TeeLegal,
+      meta: {
+        layout: ''
+      }
+    },
+    { 
+      path: '/accessibilite', 
+      name: 'accessibility',
+      component: TeeAccessibility,
+      meta: {
+        layout: ''
+      }
+    },
+    { 
+      path: '/donnees-personnelles', 
+      name: 'personal-data',
+      component: TeePersonalData,
       meta: {
         layout: ''
       }

@@ -197,26 +197,25 @@ const partners = [
 ]
 
 const mainLinks = [
+  // {
+  //   label: 'Plan du site',
+  //   href: '/plan-du-site'
+  // },
   {
-    label: 'Plan du site',
-    href: '/plan-du-site'
-  },
-  {
+    // router ok
     label: 'Accessibilité',
     href: '/accessibilite'
   },
   {
+    // router ok
     label: 'Mentions légales',
     href: '/mentions-legales'
   },
   {
+    // router ok
     label: 'Données personnelles',
     href: '/donnees-personnelles'
-  },
-  {
-    label: 'Gestion des cookies',
-    href: '/gestion-des-cookies'
-  },
+  }
 ]
 
 interface Props {
