@@ -44,13 +44,13 @@ export default defineConfig({
   ],
   build: {
     rollupOptions: {
-      input: ['src/main.ce.ts', './index.html']
+      input: ['./index.html']
     },
     outDir: 'dist',
-    assetsDir: 'assets',
-    copyPublicDir: true,
+    // assetsDir: 'assets',
+    // copyPublicDir: true,
     lib: {
-      entry: './src/main.ce.ts',
+      entry: 'src/main.ce.ts',
       name: 'gov-aid-tree-app',
       // the proper extensions will be added
       fileName: 'gov-aid-tree-app'
