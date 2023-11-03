@@ -18,6 +18,7 @@
   <div 
     :class="`fr-footer ${stickToBottom ? 'tee-footer-bottom' : ''}`">
     <div class="fr-container--fluid fr-mx-20v">
+      <!-- FOOTER BODY -->
       <div
         class="fr-footer__body"
         style="">
@@ -26,79 +27,108 @@
             République
             <br>Française
           </p>
-          <a class="fr-footer__brand-link" href="/" title="Retour à l’accueil du site - Mission Transition - République Française">
-            <img class="fr-footer__logo" style="height:110px;" src="@public/images/logos/mission-transition-logo.png" alt="mission transition" />
+          <router-link 
+            class="fr-footer__brand-link" 
+            to="/" 
+            title="Retour à l’accueil du site - Transition Ecologique des entreprises - République Française">
+            <img 
+            class="fr-footer__logo" 
+            style="height:110px;" 
+            src="/images/logos/mission-transition-logo.png" 
+            alt="Transition Ecologique des entreprises" />
             <!-- L’alternative de l’image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l’image -->
-          </a>
+        </router-link>
         </div>
         <div class="fr-footer__content">
           <!-- <p class="fr-footer__content-desc">Lorem [...] elit ut.</p> -->
           <ul class="fr-footer__content-list">
-            <li class="fr-footer__content-item">
-              <a class="fr-footer__content-link" target="_blank" href="https://ecologie.gouv.fr">ecologie.gouv.fr</a>
-            </li>
-            <li class="fr-footer__content-item">
-              <a class="fr-footer__content-link" target="_blank" href="https://economie.gouv.fr">economie.gouv.fr</a>
-            </li>
-            <li class="fr-footer__content-item">
-              <a class="fr-footer__content-link" target="_blank" href="https://gouvernement.fr">gouvernement.fr</a>
-            </li>
-            <li class="fr-footer__content-item">
-              <a class="fr-footer__content-link" target="_blank" href="https://data.gouv.fr">data.gouv.fr</a>
+            <li 
+              v-for="link in gouvLinks"
+              :key="link.label"
+              class="fr-footer__content-item">
+              <a 
+                class="fr-footer__content-link"
+                target="_blank"
+                :href="link.href">
+                {{ link.label }}
+              </a>
             </li>
           </ul>
         </div>
-        <!-- PARTNERS LINKS -->
-        <!-- <div 
-          class="fr-footer__content fr-ml-0 fr-mt-5v"
-          style="justify-content: center; flex-basis: 100%">
-          <ul 
-            class="fr-footer__content-list">
-            <li
-              v-for="link in ecosystemLinks"
-              :key="link.href"
-              class="fr-footer__content-item fr-mx-5v">
-              <span class="fr-icon-external-link-line fr-mr-1v" aria-hidden="true"></span>
-              <a 
-                :href="link.href"
-                class="fr-footer__content-link">
-                {{ link.label }}
-              </a>
-            </li>
-          </ul>
-        </div> -->
-
-        <!-- SOURCES LINKS -->
-        <div 
-          class="fr-footer__bottom fr-mt-5v"
-          style="box-shadow: none;">
-          <ul 
-            class="fr-footer__bottom-list">
-            <li
-              v-for="link in mainLinks"
-              :key="link.href"
-              class="fr-footer__bottom-item">
-              <a 
-                :href="link.href"
-                class="fr-footer__bottom-link">
-                {{ link.label }}
-              </a>
-            </li>
-          </ul>
-          <!-- LICENCE LINKS -->
-          <div class="fr-footer__bottom-copy">
-            <p>
-              {{ choices.t('licence') }}
-              &nbsp;
-              <a
-                :href="licenceHref"
-                class="fr-link-licence no-content-after">
-                {{ licenceName }}
-              </a>
-            </p>
+      </div>    
+  
+      <!-- FOOTER PARTNERS -->
+      <div class="fr-footer__partners">
+        <h4 class="fr-footer__partners-title">
+          Nos partenaires
+        </h4>
+        <div class="fr-footer__partners-logos">
+          <div class="fr-footer__partners-main">
+            <a
+              class="footer__partners-link" 
+              target="_blank"
+              style="background-image: none;"
+              :href="mainPartner.href">
+              <img 
+                class="fr-footer__logo" 
+                style="height: 5.625rem; width: 10rem;" 
+                :src="mainPartner.img" 
+                :alt="mainPartner.label">
+            </a>
+          </div>
+          <div class="fr-footer__partners-sub">
+            <ul
+              v-for="partner in partners"
+              :key="partner.label">
+              <li>
+                <a 
+                  class="footer__partners-link" 
+                  target="_blank"
+                  style="background-image: none;"
+                  :href="partner.href">
+                <img 
+                  class="fr-footer__logo" 
+                  style="height: 5.625rem; width: 10rem;" 
+                  :src="partner.img" 
+                  :alt="partner.label">
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
-      </div>      
+      </div>
+
+      <!-- FOOTER BOTTOM -->
+      <div 
+        class="fr-footer__bottom fr-mt-5v"
+        style="box-shadow: none;">
+        <ul 
+          class="fr-footer__bottom-list">
+          <li
+            v-for="link in mainLinks"
+            :key="link.href"
+            class="fr-footer__bottom-item">
+            <router-link 
+              :to="link.href"
+              class="fr-footer__bottom-link">
+              {{ link.label }}
+            </router-link>
+          </li>
+        </ul>
+
+        <!-- LICENCE LINKS -->
+        <div class="fr-footer__bottom-copy">
+          <p>
+            {{ choices.t('licence') }}
+            &nbsp;
+            <a
+              :href="licenceHref"
+              class="fr-link-licence no-content-after">
+              {{ licenceName }}
+            </a>
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -114,32 +144,57 @@ const choices = choicesStore()
 const licenceHref = 'https://github.com/betagouv/transition-ecologique-entreprises-widget/blob/main/LICENSE'
 const licenceName = 'GNU AGPL v.3'
 
-// const ecosystemLinks = [
-//   {
-//     label: 'ADEME',
-//     href: 'https://ademe.fr'
-//   },
-//   {
-//     label: "BPI",
-//     href: "https://www.bpifrance.fr/"
-//   },
-//   {
-//     label: 'CGDD',
-//     href: 'https://www.ecologie.gouv.fr/commissariat-general-au-developpement-durable-cgdd'
-//   },
-//   {
-//     label: 'DGE',
-//     href: 'https://www.economie.gouv.fr/direction-generale-des-entreprises-dge'
-//   },
-//   {
-//     label: 'DILA',
-//     href: 'https://www.dila.premier-ministre.gouv.fr/'
-//   },
-//   {
-//     label: 'DINUM',
-//     href: "https://www.numerique.gouv.fr/dinum/"
-//   },
-// ]
+const gouvLinks = [
+  {
+    label: 'ecologie.gouv.fr',
+    href: 'https://ecologie.gouv.fr'
+  },
+  {
+    label: 'economie.gouv.fr',
+    href: 'https://economie.gouv.fr'
+  },
+  {
+    label: 'gouvernement.fr',
+    href: 'https://gouvernement.fr'
+  },
+  {
+    label: 'data.gouv.fr',
+    href: 'https://data.gouv.fr'
+  }
+]
+
+const mainPartner = {
+  label: 'Aides-territoires',
+  img: '/images/logos/aides-territoires.png',
+  href: 'https://aides-territoires.beta.gouv.fr/'
+}
+const partners = [
+  {
+    label: "Place des entreprises",
+    img: '/images/logos/place-des-entreprises.svg',
+    href: 'https://place-des-entreprises.beta.gouv.fr'
+  },
+  {
+    label: 'ADEME',
+    img: '/images/logos/ademe.svg',
+    href: "https://www.ademe.fr/"
+  },
+  {
+    label: 'Bpifrance',
+    img: '/images/logos/bpi-france.svg',
+    href: 'https://www.bpifrance.fr/'
+  },
+  {
+    label: 'CCI France',
+    img: '/images/logos/cci-france.svg',
+    href: 'https://www.cci.fr/'
+  },
+  {
+    label: 'CMA France',
+    img: '/images/logos/cma-france.jpg',
+    href: 'https://www.artisanat.fr/'
+  },
+]
 
 const mainLinks = [
   {

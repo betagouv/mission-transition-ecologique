@@ -11,10 +11,10 @@
                 </p>
               </div>
               <div class="fr-header__operator">
-                <a href="/" title="Accueil - [À MODIFIER - texte alternatif de l’image : nom de l'opérateur ou du site serviciel] - République Française">
+                <router-link to="/" title="Accueil - [À MODIFIER - texte alternatif de l’image : nom de l'opérateur ou du site serviciel] - République Française">
                   <img class="fr-responsive-img" style="width:3.5rem;" src="@public/images/logos/mission-transition-logo.png" alt="[À MODIFIER - texte alternatif de l’image]" />
                   <!-- L’alternative de l’image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l’image -->
-                </a>
+                </router-link>
               </div>
               <div class="fr-header__navbar">
                 <button class="fr-btn--menu fr-btn" data-fr-opened="false" aria-controls="modal-499" aria-haspopup="menu" id="button-500" title="Menu">
