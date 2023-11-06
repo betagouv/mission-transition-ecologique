@@ -3,7 +3,7 @@ promesse: Améliorez la performance environnementale de vos produits et services
   une logique d'écoconception
 description: Bénéficiez des conseils d'un expert pour évaluer la performance environnementale
   de vos produits, services et procédés.
-illustration: images/TEE_energie_verte.png
+illustration: images/TEE_ampoule.png
 opérateur de contact: Bpifrance
 autres opérateurs:
 - ADEME
@@ -42,9 +42,4 @@ publicodes:
     - entreprise . code NAF niveau 1 . est S
   est dans les objectifs de l'entreprise:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est la gestion des déchets
-    - questionnaire . objectif prioritaire . est diminuer ma consommation d'eau
-    - questionnaire . objectif prioritaire . est ma performance énergétique
-    - questionnaire . objectif prioritaire . est former ou recruter
-    - questionnaire . objectif prioritaire . est mon impact environnemental
     - questionnaire . objectif prioritaire . est l'écoconception

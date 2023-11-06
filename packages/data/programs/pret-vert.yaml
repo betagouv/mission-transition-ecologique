@@ -1,0 +1,71 @@
+titre: Prêt Vert
+promesse: Financez votre projet de transition écologique et énergétique grâce au Prêt
+  Vert
+description: 'Le "Prêt Vert" est destiné à accompagner les projets sur différents
+  champs de la transition écologique : mobilité douce, économie circulaire, énergies
+  renouvelables, etc.'
+description longue: "En co-financement avec une banque privée, le prêt Vert soutient\
+  \ les projets visant à : \n• optimiser les procédés, ou améliorer la performance\
+  \ (énergie, eau, matière,) afin de mieux maîtriser ou de diminuer les impacts sur\
+  \ l’environnement, en ce compris des procédés d’économie circulaire ;\n• favoriser\
+  \ la mobilité “zéro carbone” pour les salariés, les marchandises et les produits\
+  \ ;\n• innover pour mettre sur le marché des produits ou des services en matière\
+  \ de protection de l’environnement, d’économie circulaire et/ou permettant une réduction\
+  \ de la consommation de ressources, renouvelables ou non, (énergie, matières premières,\
+  \ eau, etc. ; en ce compris la dédieselisation, l’allongement de la durée de vie\
+  \ des produits, l’intégration de recyclé, la recyclabilité, la réutilisation ou\
+  \ le réemploi) ;\n• favoriser un mix énergétique plus vertueux en intégrant davantage\
+  \ d’énergies renouvelables."
+illustration: images/TEE_ampoule.png
+opérateur de contact: Bpifrance
+url: https://www.bpifrance.fr/catalogue-offres/transition-ecologique-et-energetique/pret-vert
+nature de l'aide: prêt
+durée du prêt: de 2 à 10 ans, avec un différé d’amortissement en capital de 2 ans
+  maximum
+montant du prêt: De 50 000 € à 5 000 000 €
+objectifs:
+- Exprimez votre intérêt pour ce prêt à Bpifrance grâce au formulaire ci-dessous
+- Obtenez un rendez-vous de financement auprès d'un chargé d'affaires Bpifrance
+- Bpifrance étudie votre demande de prêt
+publicodes:
+  afficher le dispositif si:
+    toutes ces conditions:
+    - règles d'éligibilité
+    - secteur d'activité prioritaire
+    - est dans les objectifs de l'entreprise
+  règles d'éligibilité:
+    toutes ces conditions:
+    - entreprise . effectif >= 1
+    - entreprise . effectif <= 4999
+  secteur d'activité prioritaire:
+    une de ces conditions:
+    - entreprise . code NAF niveau 1 . est B
+    - entreprise . code NAF niveau 1 . est C
+    - entreprise . code NAF niveau 1 . est D
+    - entreprise . code NAF niveau 1 . est E
+    - entreprise . code NAF niveau 1 . est F
+    - entreprise . code NAF niveau 1 . est G
+    - entreprise . code NAF niveau 1 . est H
+    - entreprise . code NAF niveau 1 . est I
+    - entreprise . code NAF niveau 1 . est J
+    - entreprise . code NAF niveau 1 . est K
+    - entreprise . code NAF niveau 1 . est L
+    - entreprise . code NAF niveau 1 . est M
+    - entreprise . code NAF niveau 1 . est N
+    - entreprise . code NAF niveau 1 . est O
+    - entreprise . code NAF niveau 1 . est P
+    - entreprise . code NAF niveau 1 . est Q
+    - entreprise . code NAF niveau 1 . est R
+    - entreprise . code NAF niveau 1 . est S
+    - entreprise . code NAF niveau 1 . est T
+    - entreprise . code NAF niveau 1 . est U
+  est dans les objectifs de l'entreprise:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est rénover mon bâtiment
+    - questionnaire . objectif prioritaire . est la mobilité durable
+    - questionnaire . objectif prioritaire . est la gestion des déchets
+    - questionnaire . objectif prioritaire . est diminuer ma consommation d'eau
+    - questionnaire . objectif prioritaire . est ma performance énergétique
+    - questionnaire . objectif prioritaire . est former ou recruter
+    - questionnaire . objectif prioritaire . est mon impact environnemental
+    - questionnaire . objectif prioritaire . est l'écoconception

@@ -1,0 +1,54 @@
+titre: Étude "méthanisation"
+promesse: Étudiez votre projet de construction d'une installation de méthanisation
+description: Vous souhaitez produire une énergie renouvelable, valoriser vos déchets
+  et matières organiques ? Vous avez pour projet de construire une installation de
+  méthanisation ? L'ADEME vous soutient dans le financement de votre étude, étape
+  nécessaire avant tout investissement.
+description longue: "La méthanisation est un processus naturel biologique de dégradation\
+  \ de la matière organique en l'absence d'oxygène, grâce à l'action de micro-organismes.\
+  \ Chargées dans un digesteur – chauffées et brassées en l’absence d’oxygène\npendant\
+  \ plusieurs jours – ces matières produisent une énergie renouvelable, le biogaz\
+  \ et un fertilisant, le digestat.  Le biogaz produit peut ensuite être valorisé\
+  \ et vendu sous différentes formes (chaleur, électricité, injection dans le réseau\
+  \ de gaz naturel, carburant pour véhicules).\n L'ADEME soutient le financement aux\
+  \ : \n• Études de diagnostic et d’accompagnement de projets (dont études de faisabilité)\
+  \ : unités de méthanisation à la ferme, centralisées, en industries agro-alimentaires,\
+  \ biodéchets des collectivités ou station d’épuration urbaines (STEU).\n• Accompagnement\
+  \ au montage projet après étude de faisabilité :\n- Études de raccordement au réseau\
+  \ public de gaz (pour les projets d’injection, voir plus bas en détail, certaines\
+  \ études seulement sont éligibles).\n- Etudes d’Assistance à Maîtrise d’Ouvrage\
+  \ avant construction de l’installation.\n- Etudes pour la concertation locale/ communication/information\n\
+  - Etudes agronomiques\n- Appui au montage juridique des projets collectifs\n- Appui\
+  \ au montage du plan de financement."
+illustration: images/TEE_energie_verte.png
+opérateur de contact: ADEME
+url: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Etudes%20pr%C3%A9alables%20construction%20installation%20de%20m%C3%A9thanisation%20-%20Conditions%20%C3%A9ligibilit%C3%A9%20et%20financement.pdf
+nature de l'aide: financement
+montant du financement: Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000
+  €
+objectifs:
+- Choisissez le prestataire qui va vous accompagner pour mener votre étude. Il peut
+  s'agir d'une étude de diagnostic, de faisabilité ou un accompagnement au montage
+  projet. Les études de faisabilité devront être réalisées par un bureau d’étude certifié
+  Qualimétha ou équivalent.
+- 'Déposez votre demande d''aide : informations administratives, description du projet,
+  détails techniques et financiers, etc. A ce stade, votre projet ne doit pas avoir
+  commencé !'
+- L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat
+  de financement précisant le montant d’aide maximum, les conditions et les modalités
+  de versement.
+- Réalisez votre étude.
+publicodes:
+  afficher le dispositif si:
+    toutes ces conditions:
+    - secteur d'activité prioritaire
+    - est dans les objectifs de l'entreprise
+  secteur d'activité prioritaire:
+    une de ces conditions:
+    - entreprise . code NAF niveau 1 . est A
+    - entreprise . code NAF niveau 1 . est C
+    - entreprise . code NAF niveau 1 . est I
+  est dans les objectifs de l'entreprise:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est la gestion des déchets
+    - questionnaire . objectif prioritaire . est ma performance énergétique

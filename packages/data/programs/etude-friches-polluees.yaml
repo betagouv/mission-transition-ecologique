@@ -1,0 +1,57 @@
+titre: Étude "friches polluées"
+promesse: Réalisez une étude pour votre projet de reconversion de friches polluées
+description: Pour faciliter la reconversion des friches, l’ADEME soutient le financement
+  d'études pour évaluer le risque de pollution, interroger les intentions d'usages
+  et définir des stratégies de gestion de la pollution et de dépollution adaptées
+  au projet prévu.
+description longue: "Les prestations d’études éligibles sont principalement  :\n•\
+  \ Les études de diagnostic permettant d’accompagner à l’échelle du site et en amont\
+  \ de la reconversion, des prestations élémentaires référencées dans le cadre des\
+  \ prestations normalisées NF X31 620 de type LEVE et INFO pour caractériser les\
+  \ potentiels de changement d’usage et de mutabilité.\n• Les études d’accompagnement\
+  \ de projets regroupant les différentes missions de conseil et d’accompagnement\
+  \ dans la réalisation opérationnelle de la reconversion à savoir : \n• Les prestations\
+  \ Plan de gestion [PG (NF X31-620-2)] et les investigations associées [DIAG (NF\
+  \ X31-620-2)] et le cas échéant les\nprestations Interprétations des milieux [IEM\
+  \ (NF X31-620-2)],\n• Les prestations Plan de conception de travaux [PCT (NF X31-620-3)\
+  \ y compris les essais laboratoires (B111 réf. NF X31-620-3) et les essais terrains\
+  \ (B112 réf. NF X31-620-3) (afin de déterminer les techniques de dépollution les\
+  \ plus adaptées et obtenir les éléments de dimensionnement),\n• Les prestations\
+  \ d’assistance à maitrise d’ouvrage (AMO, réf. NF X31-620-2)."
+illustration: images/TEE_ampoule.png
+opérateur de contact: ADEME
+url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/etudes-prealables-a-reconversion-friches-a-risque-pollution-polluees?cible=79
+nature de l'aide: financement
+montant du financement: Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000
+  €
+objectifs:
+- Choisissez le prestataire qui va vous accompagner pour mener cette étude.
+- 'Déposez votre demande d''aide : informations administratives, description du projet,
+  détails techniques et financiers, etc. A ce stade, votre projet ne doit pas avoir
+  commencé !'
+- L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat
+  de financement précisant le montant d’aide maximum, les conditions et les modalités
+  de versement.
+- Réalisez votre étude de diagnostic ou d'accompagnement.
+- Lancez votre projet (ou non) suite aux résultats de votre étude.
+publicodes:
+  afficher le dispositif si:
+    toutes ces conditions:
+    - secteur d'activité prioritaire
+    - est dans les objectifs de l'entreprise
+  secteur d'activité prioritaire:
+    une de ces conditions:
+    - entreprise . code NAF niveau 1 . est A
+    - entreprise . code NAF niveau 1 . est B
+    - entreprise . code NAF niveau 1 . est C
+    - entreprise . code NAF niveau 1 . est D
+    - entreprise . code NAF niveau 1 . est E
+    - entreprise . code NAF niveau 1 . est F
+    - entreprise . code NAF niveau 1 . est G
+    - entreprise . code NAF niveau 1 . est H
+    - entreprise . code NAF niveau 1 . est I
+    - entreprise . code NAF niveau 1 . est L
+  est dans les objectifs de l'entreprise:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est rénover mon bâtiment
+    - questionnaire . objectif prioritaire . est mon impact environnemental
