@@ -6,8 +6,6 @@
     <!-- <p>TeeQuestionnairePage</p> -->
     <WidgetApp
       :seed="'track_help'"
-      :showHeaderBool="false"
-      :showFooterBool="false"
       :disable-widget="true"
       :program-id="route.params.programId"
       :locale="'fr'"

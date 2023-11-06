@@ -6,9 +6,7 @@
     <!-- <p>TeeCatalogPage</p> -->
     <WidgetApp
       :seed="'track_results'"
-      :showHeaderBool="false"
-      :showFooterBool="false"
-      :disableWidget="true"
+      :disable-widget="true"
       :program-id="route.params.programId"
       :locale="'fr'"
     />

@@ -17,14 +17,17 @@
     <!-- DEBUGGING -->
     <div
       class="vue-debug"
-      v-if="debugBool">
+      v-if="debug">
       <h5>DEBUG - WidgetApp</h5>
       <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
         <div class="fr-col-4">
           <h6 class="fr-mb-1v"> tracks.currentStep : <code>{{ tracks.currentStep }} </code></h6>
+          <h6 class="fr-mb-1v"> seed : <code>{{ seed }} </code></h6>
+
         </div>
         <div class="fr-col-4">
           <h6 class="fr-mb-1v"> programs.programDetail : <code>{{ programs.programDetail }} </code></h6>
+          <h6 class="fr-mb-1v"> tracks.seedTrack : <code>{{ tracks.seedTrack }} </code></h6>
         </div>
       </div>
     </div>
