@@ -326,6 +326,7 @@ const resetDetailResult = async () => {
   // console.log('TeeProgramDetail > resetDetailResult > props.trackConfig : ', props.trackConfig )
   programs.resetDetailResult()
   nav.setCurrentDetailId('')
+  !props.disableWidget && scrollToTop(props.trackElement, props.programId)
   if (props.disableWidget) {
     // const prevRoutePath = nav.routerRef.options.history.state.back
     // console.log('\nTeeProgramDetail > resetDetailResult > prevRoutePath : ', prevRoutePath )
@@ -341,10 +342,9 @@ const resetDetailResult = async () => {
     console.log('TeeProgramDetail > updateDetailResult >  newPath : ', newPath)
     // await router.push({ name: routeName, query: {...routeQuery} })
     // router.push({ name: nextRouteName, query: {...routeQuery} })
-    router.push({ path: newPath, query: {...routeQuery} })
+    router.push({ name: nextRouteName, path: newPath, query: {...routeQuery} })
     // await router.go(-1)
   }
-  !props.disableWidget && scrollToTop(props.trackElement, props.programId)
 }
 const toggleShowForm = () => {
   // console.log('TeeProgramDetail > toggleShowForm > trackConfig : ', props.trackConfig )

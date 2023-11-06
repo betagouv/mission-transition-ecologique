@@ -153,7 +153,7 @@
       
           <!-- TRACK INFOS -->
           <div 
-            v-if="track.info"
+            v-if="step !== 1 && track.info"
             :class="`${isTrackResults ? 'fr-col-12 fr-col-offset-md-1' : 'fr-col-12'}`">
             <p class="fr-mb-2v">
               <span 
@@ -165,7 +165,7 @@
       
           <!-- TRACK HINT -->
           <div 
-            v-if="track.hint"
+            v-if="step !== 1 && track.hint"
             :class="`${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`">
             <p 
               :class="`fr-mb-0`"
@@ -176,7 +176,7 @@
 
           <!-- TRACK RESUME -->
           <div 
-            v-if="track.resume"
+            v-if="step !== 1 && track.resume"
             :class="`${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`">
             <p class="fr-mb-0">
               {{ track.resume[choices.lang] }}

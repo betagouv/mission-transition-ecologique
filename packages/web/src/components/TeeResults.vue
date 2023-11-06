@@ -183,10 +183,11 @@ const updateDetailResult = async (id: string | number) => {
     console.log('\nTeeResults > updateDetailResult >  routeName : ', routeName)
     console.log('TeeResults > updateDetailResult >  routePath : ', routePath)
     console.log('TeeResults > updateDetailResult >  routeQuery : ', routeQuery)
-    // const nextRouteName = routeName === 'questionnaire' ? 'questionnaire-detail' : 'catalog'
-    // console.log('TeeResults > updateDetailResult >  router : ', router)
+    console.log('TeeResults > updateDetailResult >  newPath : ', newPath)
+    const nextRouteName = routeName === 'questionnaire' ? 'questionnaire-detail' : 'catalog'
+    console.log('TeeResults > updateDetailResult >  router : ', router)
     // router.push({ name: routeName, params: {programId: id}, query: {...routeQuery} })
-    router.push({ path: newPath, query: {...routeQuery} })
+    router.push({ name: nextRouteName, path: newPath, query: {...routeQuery} })
   }
   !props.disableWidget && scrollToTop(props.trackElement, props.trackId)
 }

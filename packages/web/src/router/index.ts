@@ -6,6 +6,7 @@ import { programsStore } from '../stores/programs'
 
 import TeeHomePage from '../components/pages/TeeHomePage.vue'
 
+import WidgetApp from '../WidgetApp.ce.vue'
 import TeeQuestionnairePage from '../components/pages/TeeQuestionnairePage.vue'
 import TeeCatalogPage from '../components/pages/TeeCatalogPage.vue'
 import TeeProgramPage from '../components/pages/TeeProgramPage.vue'
@@ -62,59 +63,77 @@ export const router = createRouter({
     },
     { 
       path: '/questionnaire',
-      name: 'questionnaire', 
       component: TeeQuestionnairePage,
       beforeEnter: [
         resetTrackStore,
         resetDetailProgram,
       ],
-      // children: [
-      //   { 
-      //     path: ':programId',
-      //     name: 'questionnaire-detail', 
-      //     // component: TeeQuestionnairePage,
-      //     component: TeeProgramPage,
-      //     // component: TeeProgramPage,
-      //   },
-      // ]
-    },
-    { 
-      path: '/questionnaire/:programId',
-      name: 'questionnaire-detail', 
-      // component: TeeProgramPage,
-      // component: TeeProgramDetail,
-      component: TeeProgramPage,
-      beforeEnter: [
-        setHelpAsTrackSeed
+      children: [
+        {
+          path: '',
+          name: 'questionnaire', 
+          // component: TeeQuestionnairePage,
+          component: WidgetApp,
+          // component: TeeProgramPage,
+          props: {
+            seed: 'track_help',
+            disableWidget: true
+          }
+        },
+        { 
+          path: ':programId',
+          name: 'questionnaire-detail', 
+          // component: TeeQuestionnairePage,
+          component: TeeProgramPage,
+          // component: TeeProgramPage,
+        },
       ]
     },
+    // { 
+    //   path: '/questionnaire/:programId',
+    //   name: 'questionnaire-detail', 
+    //   // component: TeeProgramPage,
+    //   // component: TeeProgramDetail,
+    //   component: TeeProgramPage,
+    //   beforeEnter: [
+    //     setHelpAsTrackSeed
+    //   ]
+    // },
     { 
       path: '/catalogue',
-      name: 'catalog', 
+      // name: 'catalog', 
       component: TeeCatalogPage,
       beforeEnter: [
         resetDetailProgram,
         resetTrackStore,
         setResultsAsTrackSeed,
       ],
-      // children: [
-      //   { 
-      //     path: ':programId',
-      //     name: 'catalog-detail', 
-      //     component: TeeCatalogPage,
-      //     // component: TeeProgramPage,
-      //   },
-      // ]
-    },
-    { 
-      path: '/catalogue/:programId',
-      name: 'catalog-detail', 
-      component: TeeProgramPage,
-      beforeEnter: [
-        resetTrackStore,
-        setResultsAsTrackSeed,
+      children: [
+        {
+          path: '',
+          name: 'catalog', 
+          component: WidgetApp,
+          props: {
+            seed: 'track_results',
+            disableWidget: true
+          }
+        },
+        { 
+          path: ':programId',
+          name: 'catalog-detail', 
+          component: TeeProgramPage,
+        },
       ]
     },
+    // { 
+    //   path: '/catalogue/:programId',
+    //   name: 'catalog-detail', 
+    //   component: TeeProgramPage,
+    //   beforeEnter: [
+    //     resetTrackStore,
+    //     setResultsAsTrackSeed,
+    //   ]
+    // },
     { 
       path: '/mentions-legales', 
       name: 'legal',

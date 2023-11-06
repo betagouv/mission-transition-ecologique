@@ -4,14 +4,14 @@
     class="fr-container--fluid fr-px-20v fr-pb-20v fr-mt-10v fr-mb-20v"
     style="min-height: 800px">
     <!-- {{ route.params.programId }} -->
-    <!-- <WidgetApp
+    <WidgetApp
       :seed="'track_results'"
       :showHeaderBool="false"
       :showFooterBool="false"
       :disableWidget="true"
       :program-id="route.params.programId"
       :locale="'fr'"
-      /> -->
+      />
       <TeeProgramDetail
         :program-id="String(route.params.programId)"
         :track-id="'track_results'"
@@ -26,7 +26,7 @@ import { onMounted } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 
 // @ts-ignore
-// import WidgetApp from '../../WidgetApp.ce.vue'
+import WidgetApp from '../../WidgetApp.ce.vue'
 // @ts-ignore
 import TeeProgramDetail from '../TeeProgramDetail.vue'
 
