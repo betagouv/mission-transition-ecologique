@@ -5,6 +5,7 @@
     style="min-height: 800px">
     <!-- <p>TeeQuestionnairePage</p> -->
     <WidgetApp
+      :key="route.name"
       :seed="'track_help'"
       :disable-widget="true"
       :program-id="route.params.programId"

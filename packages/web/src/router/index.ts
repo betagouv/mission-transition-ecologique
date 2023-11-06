@@ -21,14 +21,14 @@ const resetTrackStore = async (to: any, from: any, next: any) => {
   console.log('router > beforeEnter > resetTrackStore > to :', to)
   const tracks = tracksStore()
   await tracks.resetUsedTracks()
-  next()
+  await next()
 }
 const resetDetailProgram = async (to: any, from: any, next: any) => {
   console.log('\nrouter > beforeEnter > resetDetailProgram > from :', from)
   console.log('router > beforeEnter > resetDetailProgram > to :', to)
   const programs = programsStore()
   await programs.resetDetailResult()
-  next()
+  await next()
 }
 const setHelpAsTrackSeed = async (to: any, from: any, next: any) => {
   console.log('\nrouter > beforeEnter > setHelpAsTrackSeed > from :', from)
@@ -37,7 +37,7 @@ const setHelpAsTrackSeed = async (to: any, from: any, next: any) => {
   await tracks.setSeedTrack('track_help')
   tracks.addToUsedTracks('track_help', 'track_help')
   // next({ name: 'questionnaire' })
-  next()
+  await next()
 }
 const setResultsAsTrackSeed = async (to: any, from: any, next: any) => {
   console.log('\nrouter > beforeEnter > setResultsAsTrackSeed > from :', from)
@@ -46,7 +46,7 @@ const setResultsAsTrackSeed = async (to: any, from: any, next: any) => {
   await tracks.setSeedTrack('track_results')
   tracks.addToUsedTracks('track_results', 'track_results')
   // next({ name: 'catalog' })
-  next()
+  await next()
 }
 
 export const router = createRouter({

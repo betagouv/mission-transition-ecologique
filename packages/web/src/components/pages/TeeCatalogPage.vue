@@ -5,6 +5,7 @@
     style="min-height: 800px">
     <!-- <p>TeeCatalogPage</p> -->
     <WidgetApp
+      :key="route.name"
       :seed="'track_results'"
       :disable-widget="true"
       :program-id="route.params.programId"
