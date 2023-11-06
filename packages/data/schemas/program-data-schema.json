@@ -54,6 +54,7 @@
         "accompagnement",
         "formation",
         "financement",
+        "avantage fiscal",
         "prêt"
       ]
     },
@@ -67,6 +68,10 @@
     },
     "montant du financement": {
       "description": "Ce champ est utile et requis uniquement si l'aide est de nature \"financement\". Elle précise le montant du financement, de préférence en €, à défaut en %. Il s'agit d'un champ texte, à des fins d'affichage.",
+      "type": "string"
+    },
+    "montant de l'avantage fiscal": {
+      "description": "Ce champ est utile et requis uniquement si l'aide est de nature \"avantage fiscal\". Elle précise le montant de l'avantage fiscal, en %. Il s'agit d'un champ texte, à des fins d'affichage.",
       "type": "string"
     },
     "montant du prêt": {
@@ -115,6 +120,12 @@
     },
     {
       "properties": {
+        "nature de l'aide": { "const": "avantage fiscal" }
+      },
+      "required": ["montant de l'avantage fiscal"]
+    },
+    {
+      "properties": {
         "nature de l'aide": { "const": "prêt" }
       },
       "required": ["durée du prêt", "montant du prêt"]
@@ -136,12 +147,13 @@
       "enum": [
         "ADEME",
         "ASP",
-        "Agence de l'eau Adour-Garonne",
-        "Agence de l'eau Artois-Picardie",
-        "Agence de l'eau Loire-Bretagne",
-        "Agence de l'eau Rhin-Meuse",
-        "Agence de l'eau Rhône-Méditerranée-Corse",
-        "Agence de l'eau Seine-Normandie",
+        "Agence de l'Eau",
+        "Agence de l'Eau Adour-Garonne",
+        "Agence de l'Eau Artois-Picardie",
+        "Agence de l'Eau Loire-Bretagne",
+        "Agence de l'Eau Rhin-Meuse",
+        "Agence de l'Eau Rhône-Méditerranée-Corse",
+        "Agence de l'Eau Seine-Normandie",
         "Bpifrance",
         "Breizh Fab",
         "CCI Auvergne-Rhône-Alpes",
