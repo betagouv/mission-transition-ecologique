@@ -42,15 +42,19 @@ export const filterPrograms = (
       return Result.err(e.error)
     }
 
-    const isPositive = e.isOk && e.value
-    const isUndefined = e.isOk && typeof e.value === 'undefined'
-
-    if (isPositive || isUndefined) {
+    if (shouldKeepProgram(e)) {
       filteredPrograms.push(p)
     }
   }
 
   return Result.ok(filteredPrograms)
+}
+
+const shouldKeepProgram = (evaluation: Result<boolean | undefined, Error>): boolean => {
+  const isPositive = evaluation.isOk && evaluation.value
+  const isUndefined = evaluation.isOk && typeof evaluation.value === 'undefined'
+
+  return isPositive || isUndefined
 }
 
 /** Evaluates given program specific rules and user specific input data, if
