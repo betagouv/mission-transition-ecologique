@@ -120,7 +120,7 @@ def forgeID(name):
     name = name.lower()
     name = remove_special_chars(name)
     name = remove_accents(name)
-    name = re.sub(r"[ _]", "-", name)
+    name = re.sub(r"[ _'&]", "-", name)
     name = re.sub(r"-+", "-", name)
     name = re.sub(r"-$", "", name)
     name = re.sub(r"\"", "", name)

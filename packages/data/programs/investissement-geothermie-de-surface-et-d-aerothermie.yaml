@@ -1,24 +1,32 @@
-titre: Investissement "contrat territorial ENR&R"
-promesse: Développer des projets EnR&R thermiques sur votre territoire
-description: Vous avez plusieurs projets ayant recours à de la chaleur d'origine renouvelable
-  et de récupération (ENR&R) pour votre territoire ? L’ADEME peut vous accompagner
-  financièrement dans leur réalisation.
-description longue: 'Le contrat territorial, porte sur un minimum de 10 installations
-  (quelle que soit la technologie
+titre: Investissement "géothermie de surface et d'aérothermie"
+promesse: Financez votre installation de production de chaleur et de froid à partir
+  de géothermie de surface ou d'aérothermie
+description: Vous disposez d’une étude pour votre projet d'installation de production
+  de chaleur et de froid à partir de géothermie de surface ou d'aérothermie ? Vous
+  souhaitez investir pour le mettre en œuvre ? L’ADEME peut accompagner financièrement
+  la réalisation de votre installation.
+description longue: 'L’ADEME peut accompagner les opérations suivantes :
 
-  utilisée et leur taille). Chaque contrat territorial doit faire appel à plusieurs
-  EnR thermiques
+  • géothermie de surface avec pompes à chaleur sur aquifère superficiel, sur champ
+  de sondes géothermiques, sur géostructures énergétiques, sur échangeurs compacts
+  géothermiques ou sur chaussées thermoactives ;
 
-  différentes avec un minimum de 20% d’installations EnR&R autres que le bois-énergie.'
-illustration: images/TEE_energie_verte.png
+  • installations utilisant les mêmes principes que la géothermie mais valorisant
+  par pompe à chaleur l’énergie des eaux usées, de l’eau de mer, des eaux de surface
+  ou des eaux thermales ;
+
+  • aérothermie uniquement les pompes chaleur air/eau.
+
+  La réalisation d’une étude préalable est une condition d''éligibilité.'
+illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
-url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/contrat-chaleur-renouvelable
+url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/installations-production-chaleur-froid-a-partir-geothermie-surface
 nature de l'aide: financement
-montant du financement: Selon le type d'investissement
+montant du financement: Aide calculée au cas par cas
 objectifs:
 - 'Déposez votre demande d''aide : informations administratives, description du projet,
-  détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir
-  commencé !'
+  détails techniques et financiers, étude de faisabilité, etc. A ce stade, votre investissement
+  ne doit pas avoir été realisé !'
 - L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat
   de financement précisant le montant d’aide maximum, les conditions et les modalités
   de versement.
@@ -53,5 +61,4 @@ publicodes:
     - entreprise . code NAF niveau 1 . est U
   est dans les objectifs de l'entreprise:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est diminuer ma consommation d'eau
     - questionnaire . objectif prioritaire . est ma performance énergétique
