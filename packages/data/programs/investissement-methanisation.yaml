@@ -1,0 +1,46 @@
+titre: Investissement "méthanisation"
+promesse: Financez votre installation de méthanisation
+description: Vous disposez d’une étude pour votre projet de méthanisation ? Vous souhaitez
+  investir pour le mettre en œuvre ? L’ADEME peut accompagner financièrement la réalisation
+  de votre installation.
+description longue: 'Les équipements financés sont les suivants :
+
+  • Unités de méthanisation avec cogénération (< 500 kWe) ou injection de biométhane
+  :
+
+  - production de biogaz ;
+
+  - valorisation énergétique du biogaz : production de chaleur seule, cogénération
+  d’électricité et de chaleur, épuration du biogaz en biométhane, injection dans le
+  réseau public.
+
+  • Stations d’épuration urbaines (STEU) : valorisation énergétique du biogaz comprenant
+  l’épuration en biométhane et l’injection dans le réseau public.
+
+  La réalisation d''une étude de faisabilité préalable est une condition d''éligibilité.'
+illustration: images/TEE_energie_verte.png
+opérateur de contact: ADEME
+url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/realisation-dinstallations-methanisation-injection-cogeneration-chaleur
+nature de l'aide: financement
+montant du financement: Aide calculée selon le type d'installation
+objectifs:
+- 'Déposez votre demande d''aide : informations administratives, description du projet,
+  détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir
+  commencé !'
+- L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat
+  de financement précisant le montant d’aide maximum, les conditions et les modalités
+  de versement.
+- Réalisez vos investissements.
+publicodes:
+  afficher le dispositif si:
+    toutes ces conditions:
+    - secteur d'activité prioritaire
+    - est dans les objectifs de l'entreprise
+  secteur d'activité prioritaire:
+    une de ces conditions:
+    - entreprise . code NAF niveau 1 . est A
+    - entreprise . code NAF niveau 1 . est C
+  est dans les objectifs de l'entreprise:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est la gestion des déchets
+    - questionnaire . objectif prioritaire . est ma performance énergétique

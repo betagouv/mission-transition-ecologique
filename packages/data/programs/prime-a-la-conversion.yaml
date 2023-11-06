@@ -1,0 +1,58 @@
+titre: Prime à la conversion
+promesse: Économisez sur l'achat d'un véhicule propre, en mettant l'ancien au rebut
+description: Bénéficiez d'une aide pour louer ou acheter un véhicule peu polluant,
+  neuf ou d'occasion, en échange de la mise au rebut de l'ancien.
+description longue: 'Les véhicules peu polluants éligibles sont des véhicules zéro
+  émissions de CO2 (électriques, hydrogène ou combinaison des deux). Certains véhicules
+  Crit’Air 1 sont également éligibles à la prime à la conversion. La prime peut être
+  majorée si votre entreprise est située au sein d’une zone à faibles émissions (ZFE).
+
+  Les véhicules éligibles à la mise au rebut doivent avoir fait l’objet d’une première
+  immatriculation avant le 1er janvier 2011 s’ils utilisent le gazole comme carburant
+  principal et avant le 1er janvier 2006 sinon.'
+illustration: images/TEE_energie_verte.png
+opérateur de contact: ASP
+url: https://www.asp-public.fr/aides/bonus-ecologique-et-prime-la-conversion-espace-des-demandeurs
+nature de l'aide: financement
+montant du financement: jusqu’à 9 000 €, selon le véhicule
+objectifs:
+- Vérifiez l'égibilité à la mise au rebut de de votre vieux véhicule.
+- Louez ou achetez un véhicule propre neuf ou d'occasion éligible au dispositif.
+- Déposez une demande de prime dans les six mois suivant l'achat ou la location du
+  véhicule propre.
+- Recevez la prime à la conversion !
+publicodes:
+  afficher le dispositif si:
+    toutes ces conditions:
+    - règles d'éligibilité
+    - secteur d'activité prioritaire
+    - est dans les objectifs de l'entreprise
+  règles d'éligibilité:
+    toutes ces conditions:
+    - entreprise . effectif <= 4999
+  secteur d'activité prioritaire:
+    une de ces conditions:
+    - entreprise . code NAF niveau 1 . est A
+    - entreprise . code NAF niveau 1 . est B
+    - entreprise . code NAF niveau 1 . est C
+    - entreprise . code NAF niveau 1 . est D
+    - entreprise . code NAF niveau 1 . est E
+    - entreprise . code NAF niveau 1 . est F
+    - entreprise . code NAF niveau 1 . est G
+    - entreprise . code NAF niveau 1 . est H
+    - entreprise . code NAF niveau 1 . est I
+    - entreprise . code NAF niveau 1 . est J
+    - entreprise . code NAF niveau 1 . est K
+    - entreprise . code NAF niveau 1 . est L
+    - entreprise . code NAF niveau 1 . est M
+    - entreprise . code NAF niveau 1 . est N
+    - entreprise . code NAF niveau 1 . est O
+    - entreprise . code NAF niveau 1 . est P
+    - entreprise . code NAF niveau 1 . est Q
+    - entreprise . code NAF niveau 1 . est R
+    - entreprise . code NAF niveau 1 . est S
+    - entreprise . code NAF niveau 1 . est T
+    - entreprise . code NAF niveau 1 . est U
+  est dans les objectifs de l'entreprise:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est la mobilité durable

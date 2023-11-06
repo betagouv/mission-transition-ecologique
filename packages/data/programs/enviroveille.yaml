@@ -8,8 +8,7 @@ illustration: images/TEE_ampoule.png
 opérateur de contact: CCI
 url: https://www.cci.fr/offre/assurez-votre-conformite-au-droit-de-lenvironnement-sante-et-securite-avec-enviroveille
 nature de l'aide: accompagnement
-coût de l'accompagnement: Abonnement, sur devis selon la formule choisie (de 150 à
-  800€)
+coût de l'accompagnement: de 150 à 800€ HT (sur abonnement)
 durée de l'accompagnement: 12 mois
 objectifs:
 - Recevez une alerte réglementaire une fois tous les 15 jours, comme premier niveau
@@ -27,6 +26,7 @@ publicodes:
     toutes ces conditions:
     - règles d'éligibilité
     - secteur d'activité prioritaire
+    - est dans les objectifs de l'entreprise
   règles d'éligibilité:
     toutes ces conditions:
     - entreprise . effectif <= 499
@@ -44,3 +44,6 @@ publicodes:
     - entreprise . code NAF niveau 1 . est O
     - entreprise . code NAF niveau 1 . est P
     - entreprise . code NAF niveau 1 . est Q
+  est dans les objectifs de l'entreprise:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est mon impact environnemental

@@ -1,0 +1,75 @@
+titre: Investissement "systèmes Solaires Combinés"
+promesse: Bénéficiez d'un financement pour réaliser votre projet d'installation d'un
+  système solaire combiné
+description: Vous disposez d’une étude pour votre projet d'installation de production
+  de chaleur solaire collective, pour du chauffage et de l’eau chaude sanitaire (ECS),
+  avec capteurs solaires thermiques ? Vous souhaitez investir pour le mettre en œuvre
+  ? L'ADEME vous accompagne financièrement dans la réalisation de ce projet.
+description longue: 'Les opérations de Systèmes Solaires Combinés (SSC) sont des installations
+  de production de chaleur solaire collective, pour du chauffage et de l’eau chaude
+  sanitaire (ECS), avec capteurs solaires thermiques. Celles-ci peuvent être réalisées
+  sur des bâtiments neufs ou en rénovation, à destination du secteur Tertiaire comprenant
+  les établissements ayant des usages chauffage+ECS durant toute l’année.
+
+
+  Il est nécessaire d''avoir réalisé une étude de faisabilité pour qualifier le dimensionnement
+  de l’installation et apporter l’information sur la productivité solaire utile de
+  l’installation projetée, qui vous conforte dans votre choix d’investir, n’hésitez
+  pas à déposer un dossier de demande d’aide.
+
+
+  Opérations éligibles :
+
+  • Opération dédiée : une installation Systèmes Solaires Combinés (SSC) pour un seul
+  bâtiment avec appoint et stockage
+
+  centralisés ou appoints et stockages individualisés ;
+
+  • Opération groupée : plusieurs installations SSC sur plusieurs bâtiments localisés
+  sur un même site,
+
+  dans un éco-quartier ou équivalent, porté par un bailleur social ou un promoteur
+  privé via une entité juridique identifiée, définie par un seul et unique marché.'
+illustration: images/TEE_energie_verte.png
+opérateur de contact: ADEME
+url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/installations-systemes-solaires-combines
+nature de l'aide: financement
+montant du financement: Selon la chaleur produite
+objectifs:
+- 'Déposez votre demande d''aide : informations administratives, description du projet,
+  détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir
+  commencé !'
+- L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat
+  de financement précisant le montant d’aide maximum, les conditions et les modalités
+  de versement.
+- Réalisez vos investissements.
+publicodes:
+  afficher le dispositif si:
+    toutes ces conditions:
+    - secteur d'activité prioritaire
+    - est dans les objectifs de l'entreprise
+  secteur d'activité prioritaire:
+    une de ces conditions:
+    - entreprise . code NAF niveau 1 . est D
+    - entreprise . code NAF niveau 1 . est E
+    - entreprise . code NAF niveau 1 . est F
+    - entreprise . code NAF niveau 1 . est G
+    - entreprise . code NAF niveau 1 . est H
+    - entreprise . code NAF niveau 1 . est I
+    - entreprise . code NAF niveau 1 . est J
+    - entreprise . code NAF niveau 1 . est K
+    - entreprise . code NAF niveau 1 . est L
+    - entreprise . code NAF niveau 1 . est M
+    - entreprise . code NAF niveau 1 . est N
+    - entreprise . code NAF niveau 1 . est O
+    - entreprise . code NAF niveau 1 . est P
+    - entreprise . code NAF niveau 1 . est Q
+    - entreprise . code NAF niveau 1 . est R
+    - entreprise . code NAF niveau 1 . est S
+    - entreprise . code NAF niveau 1 . est T
+    - entreprise . code NAF niveau 1 . est U
+  est dans les objectifs de l'entreprise:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est rénover mon bâtiment
+    - questionnaire . objectif prioritaire . est diminuer ma consommation d'eau
+    - questionnaire . objectif prioritaire . est ma performance énergétique

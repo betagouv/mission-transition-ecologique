@@ -1,0 +1,60 @@
+titre: Engins moins polluants
+promesse: Investissez dans des engins non routiers moins polluants
+description: Bénéficiez d'une déduction fiscale à l'achat d'engins non routiers fonctionnant
+  au gaz naturel, à l'énergie électrique ou à l'hydrogène.
+description longue: 'La déduction s’applique :
+
+  - aux entreprises du bâtiment et de travaux publics,
+
+  - aux entreprises produisant des substances minérales solides,
+
+  - aux exploitants aéroportuaires,
+
+  - aux exploitants de remontées mécaniques et de domaines skiables.
+
+  Sont éligibles les engins non routiers fonctionnant au gaz naturel, à l''énergie
+  électrique ou à l''hydrogène, ou combinant l''énergie électrique et une motorisation
+  à l''essence ou au superéthanol E85 et ceux combinant l''essence à du gaz naturel
+  carburant ou du gaz de pétrole liquéfié dont les émissions sont inférieures ou égales
+  à une valeur fixée par décret.'
+illustration: images/TEE_eolienne.png
+opérateur de contact: DDFIP
+url: https://les-aides.fr/aide/VxMvGSwMDA4vGRUgJA/ddfip/suramortissement-des-investissements-d-engins-non-routiers-moins-polluants.html
+nature de l'aide: avantage fiscal
+montant de l'avantage fiscal: 40% à 60% du prix de l'engin
+objectifs:
+- Vérifiez l'éligibilité de l'engin que vous souhaitez acquérir.
+- Déduisez l'aide de vos résultats imposables.
+- Bénéficiez d'une déduction exceptionnelle sur votre résultat imposable, de 40% à
+  60% du prix de revient des engins non routiers.
+publicodes:
+  afficher le dispositif si:
+    toutes ces conditions:
+    - secteur d'activité prioritaire
+    - est dans les objectifs de l'entreprise
+  secteur d'activité prioritaire:
+    une de ces conditions:
+    - entreprise . code NAF niveau 1 . est A
+    - entreprise . code NAF niveau 1 . est B
+    - entreprise . code NAF niveau 1 . est C
+    - entreprise . code NAF niveau 1 . est D
+    - entreprise . code NAF niveau 1 . est E
+    - entreprise . code NAF niveau 1 . est F
+    - entreprise . code NAF niveau 1 . est G
+    - entreprise . code NAF niveau 1 . est H
+    - entreprise . code NAF niveau 1 . est I
+    - entreprise . code NAF niveau 1 . est J
+    - entreprise . code NAF niveau 1 . est K
+    - entreprise . code NAF niveau 1 . est L
+    - entreprise . code NAF niveau 1 . est M
+    - entreprise . code NAF niveau 1 . est N
+    - entreprise . code NAF niveau 1 . est O
+    - entreprise . code NAF niveau 1 . est P
+    - entreprise . code NAF niveau 1 . est Q
+    - entreprise . code NAF niveau 1 . est R
+    - entreprise . code NAF niveau 1 . est S
+    - entreprise . code NAF niveau 1 . est T
+    - entreprise . code NAF niveau 1 . est U
+  est dans les objectifs de l'entreprise:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est la mobilité durable
