@@ -169,10 +169,26 @@ const resultsProgsLen = computed(() => {
   return resultsProgs.length
 })
 
-const updateDetailResult = (id: string | number) => {
+const updateDetailResult = async (id: string | number) => {
   // console.log(`TeeResults > updateDetailResult >  id : ${id}`)
   programs.setDetailResult(id, props.trackId)
-  nav.setCurrentDetailId(id)
+  if (props.disableWidget) {
+    // check where the route is from (quetionnaire OR catalog)
+    const router = nav.routerRef
+    const routeName = nav.routeRef.name
+    const routePath = nav.routeRef.path
+    const newPath = `${routePath}/${id}`
+    const routeQuery = nav.routeRef.query
+    console.log('\nTeeResults > updateDetailResult >  routeName : ', routeName)
+    console.log('TeeResults > updateDetailResult >  routePath : ', routePath)
+    console.log('TeeResults > updateDetailResult >  routeQuery : ', routeQuery)
+    // const nextRouteName = routeName === 'questionnaire' ? 'questionnaire-detail' : 'catalog'
+    // console.log('TeeResults > updateDetailResult >  router : ', router)
+    // router.push({ name: routeName, params: {programId: id}, query: {...routeQuery} })
+    router.push({ path: newPath, query: {...routeQuery} })
+  } else {
+    nav.setCurrentDetailId(id)
+  }
   !props.disableWidget && scrollToTop(props.trackElement, props.trackId)
 }
 

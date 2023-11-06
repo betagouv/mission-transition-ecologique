@@ -49,6 +49,11 @@
                     to="/catalogue">
                     Catalogue des aides
                   </router-link>
+                  <!-- <button 
+                    class="fr-btn"
+                    @click="pushTo('/catalogue')">
+                    Catalogue des aides
+                  </button> -->
                 </li>
               </ul>
             </div>
@@ -69,5 +74,11 @@
 </template>
 
 <script setup lang="ts">
+import { navigationStore } from '../stores/navigation'
 
+const nav = navigationStore()
+
+const pushTo = async (ref: string) => {
+  await nav.routerRef.push(ref)
+}
 </script>

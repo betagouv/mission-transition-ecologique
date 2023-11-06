@@ -31,6 +31,6 @@ export const unfoldQueries = (query: any) => {
     obj.selected = pairs.filter((i: any) => !!i)
     return obj
   })
-  console.log('utils > navigation > unfoldQueries > tracksArray :', tracksArray)
+  // console.log('utils > navigation > unfoldQueries > tracksArray :', tracksArray)
   return tracksArray
 }

@@ -137,7 +137,7 @@ export const tracksStore = defineStore('tracks', () => {
     maxDepth.value = depth
   }
 
-  function setSeedTrack(seed: string) {
+  async function setSeedTrack(seed: string) {
     // console.log()
     // console.log('store.tracks > setSeedTrack > seed : ', seed)
     const track = getTrack(seed)
@@ -217,6 +217,10 @@ export const tracksStore = defineStore('tracks', () => {
     usedTracks.value = newArray
   }
 
+  async function resetUsedTracks() {
+    usedTracks.value = []
+  }
+
   return { 
     maxDepth,
     allTracks,
@@ -243,6 +247,7 @@ export const tracksStore = defineStore('tracks', () => {
     addToUsedTracks,
     updateUsedTracks,
     setUsedTracksAsNotCompleted,
-    removeFurtherUsedTracks
+    removeFurtherUsedTracks,
+    resetUsedTracks
   }
 })

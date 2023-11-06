@@ -86,7 +86,7 @@
 
         <!-- SIDEBAR MENU (FIL D'ARIANE)-->
         <div
-          v-if="tracks.currentStep > 1 || disableWidget"
+          v-if="needSidebar"
           class="fr-tee-add-padding fr-col-3 fr-col-md-4 fr-col-lg-4 fr-col-xl-2 fr-col-offset-xl-1 fr-col-sm-hide"
           style="height: 100%;">
           <TeeSidebar
@@ -95,7 +95,7 @@
           />
         </div>
         <div
-          v-if="tracks.currentStep > 1 || disableWidget"
+          v-if="needSidebar"
           class="fr-tee-add-padding fr-col-12 fr-col-sm-show fr-mb-8v">
           <TeeTopbar
             :used-tracks="tracks.usedTracks"
@@ -213,7 +213,7 @@ import '@gouvfr/dsfr/dist/core/core.main.min.css'               // Le CSS minima
 // import '@public/css/custom.css'
 
 // @ts-ignore
-import jsonDataset from '../public/data/generated/dataset_out.json'
+// import jsonDataset from '../public/data/generated/dataset_out.json'
 // console.log('WidgetApp > jsonDataset :', jsonDataset)
 
 import { ref, watch, computed, onBeforeMount, onMounted } from 'vue'
@@ -226,8 +226,15 @@ import { navigationStore } from './stores/navigation'
 
 import { TrackComponents } from './types'
 
-// ts-ignore
-import { unfoldQueries } from '@/utils/navigation'
+import {
+  metaEnv,
+  deployMode,
+  deployUrl,
+  noDebugSwitch,
+  publicPath,
+  programsFromJson
+} from './utils/global'
+import { unfoldQueries } from './utils/navigation'
 
 // @ts-ignore
 import TeeMatomo from './components/TeeMatomo.vue'
@@ -244,25 +251,6 @@ import TeeProgramDetail from './components/TeeProgramDetail.vue'
 // @ts-ignore
 import TeeCredits from './components/TeeCredits.vue'
 
-// const appId = 'gov-aid-tree-app'
-
-// @ts-ignore
-const metaEnv = import.meta.env
-// console.log('WidgetApp - metaEnv :', metaEnv)
-const deployMode = metaEnv.MODE != 'development'
-const deployUrl = metaEnv.VITE_DEPLOY_URL
-const noDebugSwitch = metaEnv.VITE_NO_DEBUG_SWITCH === 'true'
-const publicPath = `${deployUrl}/${metaEnv.BASE_URL}`
-console.log('WidgetApp - deployUrl :', deployUrl)
-console.log('WidgetApp - metaEnv.BASE_URL :', metaEnv.BASE_URL)
-console.log('WidgetApp - publicPath :', publicPath)
-
-// @ts-ignore
-// console.log('WidgetApp - process.env :', process.env)
-// @ts-ignore
-const programsFromJson = jsonDataset
-// console.log('WidgetApp - yamlPrograms :', yamlPrograms)
-
 interface Props {
   showHeader?: string,
   showMessage?: string,
@@ -272,6 +260,7 @@ interface Props {
   msg?: string,
   seed: string,
   disableWidget?: boolean,
+  programId?: string | any,
   datasetUrl?: string,
   maxDepth?: string
   debugSwitch?: string,
@@ -301,8 +290,8 @@ const route = useRoute()
 window.stores = { tracks, choices, programs }
 
 watch(() => tracks.usedTracks, (next) => {
-  console.log()
-  console.log('WidgetApp > watch > tracks.usedTracks > next : ', next)
+  // console.log()
+  // console.log('WidgetApp > watch > tracks.usedTracks > next : ', next)
   if (nav.routerReady) {
     nav.setCurrentStep(tracks.currentStep)
     nav.setCurrentTrackId(tracks.currentTrackId)
@@ -314,6 +303,10 @@ const changeDebug = (ev: any) => {
   debugBool.value = ev
 }
 
+const needSidebar = computed(() => {
+  return props.seed !== 'track_results' && (tracks.currentStep > 1 || props.disableWidget)
+})
+
 const getColumnsWidth = computed(() => {
   const currentTrack = tracks.getLastTrack
   const colsDebug = 'fr-col-7'
@@ -321,10 +314,28 @@ const getColumnsWidth = computed(() => {
   const colsTracks = 'fr-col fr-col-lg-8 fr-col-xl-6'
   const colsResults = 'fr-col fr-col-lg-8 fr-col-xl-8'
   if (debugBool.value) return colsDebug
-  else if (tracks.currentStep === 1 && !props.disableWidget) return colsStart
-  else if (currentTrack?.component === TrackComponents.results) return colsResults
-  else return colsTracks
+  else if ((props.seed === 'track_results') || tracks.currentStep === 1 && !props.disableWidget) {
+    return colsStart
+  }
+  else if (currentTrack?.component === TrackComponents.results) {
+    return colsResults
+  }
+  else {
+    return colsTracks
+  }
 })
+
+const setupGlobal = () => {
+  choices.setPublicPath(publicPath)
+
+  // load dataset to pinia store
+  // programs.setDataset(props.datasetUrl, deployMode, deployUrl)
+  programs.setDataset(programsFromJson)
+
+  // set locale and message
+  const locale = props.locale || 'fr'
+  choices.setLocale(locale)
+}
 
 const setupFromUrl = () => {  
   // parse url to get current track and other queries
@@ -345,7 +356,7 @@ const setupFromUrl = () => {
   // tracks.populateUsedTracksFromQuery(route.query)
   // nav.populateFromQuery(route.query)
   // parse url to get detail program (if any)
-  const programId = route.query['teeDetail']
+  const programId = props.programId || route.query['teeDetail']
   console.log('WidgetApp > mounted > currentTrack :', currentTrack)
   console.log('WidgetApp > mounted > programId :', programId)
   // @ts-ignore
@@ -365,11 +376,7 @@ onBeforeMount(() => {
   // console.log('WidgetApp > onBeforeMount > props.seed :', props.seed)
   // console.log('WidgetApp > onBeforeMount > props.maxDepth :', props.maxDepth)
 
-  choices.setPublicPath(publicPath)
-
-  // load dataset to pinia store
-  // programs.setDataset(props.datasetUrl, deployMode, deployUrl)
-  programs.setDataset(programsFromJson)
+  setupGlobal()
 
   // inject style link in html head if not present
   const href = deployMode ? `${deployUrl}/style.css` : ''
@@ -394,7 +401,7 @@ onBeforeMount(() => {
   }
   // console.log('WidgetApp > onBeforeMount > needStyle :', needStyle)
   // console.log('WidgetApp > onBeforeMount > SET STYLES...')
-  if (deployMode && needStyle) {
+  if (needStyle && deployMode) {
     const head = document.head
     // console.log('WidgetApp > onBeforeMount > head :', head)
     const link = document.createElement('link')
@@ -412,9 +419,6 @@ onBeforeMount(() => {
   showMessageBool.value = props.showMessage === 'true'
   showFooterBool.value = props.showFooter === 'true'
 
-  // set locale and message
-  const locale = props.locale || 'fr'
-  choices.setLocale(locale)
   const messageObj = {}
   if (props.msg) {
     props.msg.split(',').forEach((s: string) => {
@@ -457,6 +461,11 @@ onMounted(async() => {
   }
   setupFromUrl()
 
+  // set detail program ID if any
+  if (props.programId) {
+    programs.setDetailResult(props.programId, props.seed)
+    nav.setCurrentDetailId(props.programId)
+  }
 })
 </script>
 

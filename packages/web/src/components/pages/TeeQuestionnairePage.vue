@@ -1,7 +1,7 @@
 <template>
   <!-- MAIN APP COMPONENT  -->
     <div
-      class="fr-container--fluid fr-p-20v fr-my-20v "
+      class="fr-container--fluid fr-px-20v fr-pb-20v fr-mt-10v fr-mb-20v"
       style="min-height: 800px">
       <WidgetApp
         :seed="'track_help'"

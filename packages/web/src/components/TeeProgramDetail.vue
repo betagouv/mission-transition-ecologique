@@ -3,14 +3,14 @@
   <div class="">
 
     <!-- BACK TO RESULTS BTN -->
-    <DsfrButton
-      class="fr-mb-3v fr-link"
-      :label="choices.t('results.backToResults')"
-      icon="ri-arrow-left-line"
+    <button
+      class="fr-btn fr-btn--tertiary-no-outline inline-flex fr-mb-3v fr-link"
       tertiary
       noOutline
-      @click="resetDetailResult"
-    />
+      @click="resetDetailResult">
+      <v-icon name="ri-arrow-left-line" aria-hidden="true"></v-icon>
+      {{ choices.t('results.backToResults') }}
+    </button>
 
     <!-- PROGRAM DETAILS -->
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-10v">
@@ -319,10 +319,25 @@ interface Props {
 const props = defineProps<Props>()
 
 // functions
-const resetDetailResult = () => {
-  // console.log('TeeProgramDetail > resetDetailResult > trackConfig : ', props.trackConfig )
+const resetDetailResult = async () => {
+  // console.log('TeeProgramDetail > resetDetailResult > props.trackConfig : ', props.trackConfig )
   programs.resetDetailResult()
   nav.setCurrentDetailId('')
+  if (props.disableWidget) {
+    // const prevRoutePath = nav.routerRef.options.history.state.back
+    // console.log('\nTeeProgramDetail > resetDetailResult > prevRoutePath : ', prevRoutePath )
+    const router = nav.routerRef
+    const routeName = nav.routeRef.name
+    const routeQuery = nav.routeRef.query
+    console.log('\nTeeProgramDetail > updateDetailResult >  routeName : ', routeName)
+    console.log('TeeProgramDetail > updateDetailResult >  routeQuery : ', routeQuery)
+    // const nextRouteName = routeName === 'questionnaire-detail' ? 'questionnaire' : 'catalog'
+    const nextRouteName = routeName.replace('-detail', '')
+    console.log('TeeProgramDetail > updateDetailResult >  nextRouteName : ', nextRouteName)
+    // await router.push({ name: routeName, query: {...routeQuery} })
+    await router.push({ name: nextRouteName, query: {...routeQuery} })
+    // await router.go(-1)
+  }
   !props.disableWidget && scrollToTop(props.trackElement, props.programId)
 }
 const toggleShowForm = () => {
