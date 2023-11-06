@@ -7,8 +7,7 @@
         :seed="'track_results'"
         :showHeaderBool="false"
         :showFooterBool="false"
-        :noLocalMatomo="true"
-        :noLocalStyles="true"
+        :disableWidget="true"
         :locale="'fr'"
       />
     </div>

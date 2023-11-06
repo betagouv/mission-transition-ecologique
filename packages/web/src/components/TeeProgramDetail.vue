@@ -290,6 +290,7 @@ import TeeForm from './TeeForm.vue'
 import { choicesStore } from '../stores/choices'
 import { tracksStore } from '../stores/tracks'
 import { programsStore } from '../stores/programs'
+import { navigationStore } from '../stores/navigation'
 import { analyticsStore } from '../stores/analytics'
 
 import { scrollToTop } from '../utils/helpers'
@@ -298,6 +299,7 @@ const choices = choicesStore()
 const tracks = tracksStore()
 const programs = programsStore()
 const analytics = analyticsStore()
+const nav = navigationStore()
 
 const program = ref<any>()
 const trackConfig = ref<any>()
@@ -311,6 +313,7 @@ interface Props {
   programId: string | number,
   trackId: string,
   trackElement: any;
+  disableWidget?: boolean,
   debug?: boolean,
 }
 const props = defineProps<Props>()
@@ -319,7 +322,8 @@ const props = defineProps<Props>()
 const resetDetailResult = () => {
   // console.log('TeeProgramDetail > resetDetailResult > trackConfig : ', props.trackConfig )
   programs.resetDetailResult()
-  scrollToTop(props.trackElement, props.programId)
+  nav.setCurrentDetailId('')
+  !props.disableWidget && scrollToTop(props.trackElement, props.programId)
 }
 const toggleShowForm = () => {
   // console.log('TeeProgramDetail > toggleShowForm > trackConfig : ', props.trackConfig )

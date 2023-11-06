@@ -339,6 +339,7 @@
                 :track-form="track.form"
                 :tracks-results="tracks.usedTracks"
                 :track-element="trackElement"
+                :disable-widget="disableWidget"
                 :debug="debug"
               />
             </div>
@@ -420,7 +421,8 @@ interface Props {
   step: number,
   trackId: string,
   isCompleted: boolean,
-  trackElement: any;
+  trackElement: any,
+  disableWidget?: boolean,
   debug?: boolean,
 }
 const props = defineProps<Props>()
@@ -618,9 +620,10 @@ watch(() => props.isCompleted, ( next ) => {
   // console.log('TeeTrack > watch > isCompleted :', next )
   if (!next) {
     // console.log('TeeTrack > watch > selectionValues :', selectionValues )
-    if (noNeedForNext.includes(renderAs)) {
-      resetSelections()
-    }
+    // if (noNeedForNext.includes(renderAs)) {
+    //   resetSelections()
+    // }
+    resetSelections()
     tracks.updateUsedTracks(props.trackId, props.step, next, selectedOptions.value)
   }
 })
@@ -680,7 +683,7 @@ const saveSelection = () => {
     tracks.removeFurtherUsedTracks(props.trackId)
   }
 
-  scrollToTop(props.trackElement, props.trackId)
+  !props.disableWidget && scrollToTop(props.trackElement, props.trackId)
 }
 
 const backToPreviousTrack = async () => {
@@ -691,8 +694,8 @@ const backToPreviousTrack = async () => {
   const TrackToGoBackTo = tracks.tracksStepsArray[indexOfTrack - 1]
   // console.log('TeeTrack > backToTrack > TrackToGoBackTo :', TrackToGoBackTo)
   await tracks.setUsedTracksAsNotCompleted(TrackToGoBackTo)
-  tracks.removeFurtherUsedTracks(TrackToGoBackTo)
+  await tracks.removeFurtherUsedTracks(TrackToGoBackTo)
 
-  scrollToTop(props.trackElement, props.trackId)
+  !props.disableWidget && scrollToTop(props.trackElement, props.trackId)
 }
 </script>

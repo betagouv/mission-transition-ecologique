@@ -1,11 +1,11 @@
 <template>
   <div
-    ref="trackElement"
+    :ref="disableWidget ? 'widget' : 'trackElement'"
     class="fr-container--fluid">
 
     <!-- HEADER -->
     <p
-      v-if="showHeaderBool"
+      v-if="showHeaderBool && !disableWidget"
       class="fr-pb-0v fr-mb-0">
       <DsfrHeader
         logo-text="ADEME"
@@ -18,7 +18,7 @@
     <div
       class="vue-debug"
       v-if="debugBool">
-      <h5>DEBUG - TeeApp</h5>
+      <h5>DEBUG - WidgetApp</h5>
       <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
         <div class="fr-col-4">
           <h6 class="fr-mb-1v"> tracks.currentStep : <code>{{ tracks.currentStep }} </code></h6>
@@ -58,7 +58,7 @@
 
     <!-- MATOMO -->
     <TeeMatomo
-      v-if="!noLocalMatomo"
+      v-if="!disableWidget"
       :debug="debugBool"
       />
 
@@ -86,7 +86,7 @@
 
         <!-- SIDEBAR MENU (FIL D'ARIANE)-->
         <div
-          v-if="tracks.currentStep > 1"
+          v-if="tracks.currentStep > 1 || disableWidget"
           class="fr-tee-add-padding fr-col-3 fr-col-md-4 fr-col-lg-4 fr-col-xl-2 fr-col-offset-xl-1 fr-col-sm-hide"
           style="height: 100%;">
           <TeeSidebar
@@ -95,7 +95,7 @@
           />
         </div>
         <div
-          v-if="tracks.currentStep > 1"
+          v-if="tracks.currentStep > 1 || disableWidget"
           class="fr-tee-add-padding fr-col-12 fr-col-sm-show fr-mb-8v">
           <TeeTopbar
             :used-tracks="tracks.usedTracks"
@@ -118,6 +118,7 @@
               :track-id="track.id"
               :is-completed="!!tracks.isTrackCompleted(track.id)"
               :track-element="trackElement"
+              :disable-widget="disableWidget"
               :debug="debugBool"
             />
           </div>
@@ -127,7 +128,7 @@
         <div
           v-if="debugBool"
           class="vue-debug fr-col-2 fr-pl-3v">
-          <h5>DEBUG - TeeApp</h5>
+          <h5>DEBUG - WidgetApp</h5>
           <div class="fr-grid-row fr-grid-row--gutters">
             <div class="fr-col-12">
               <h6 class="fr-mb-1v"> seed : <code>{{ seed }} </code></h6>
@@ -178,12 +179,11 @@
       <div
         class="fr-grid-row fr-grid-row-gutters">
         <div class="fr-col">
-          <!-- :program="programs.getProgramById(programs.programDetail)"
-          :track-config="tracks.getTrack(programs.programDetailConfig)" -->
           <TeeProgramDetail
             :program-id="programs.programDetail"
             :track-id="programs.programDetailConfig"
             :track-element="trackElement"
+            :disable-widget="disableWidget"
             :debug="debugBool"
             />
         </div>
@@ -216,13 +216,18 @@ import '@gouvfr/dsfr/dist/core/core.main.min.css'               // Le CSS minima
 import jsonDataset from '../public/data/generated/dataset_out.json'
 // console.log('WidgetApp > jsonDataset :', jsonDataset)
 
-import { ref, computed, onBeforeMount } from 'vue'
+import { ref, watch, computed, onBeforeMount, onMounted } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 
 import { tracksStore } from './stores/tracks'
 import { choicesStore } from './stores/choices'
 import { programsStore } from './stores/programs'
+import { navigationStore } from './stores/navigation'
 
 import { TrackComponents } from './types'
+
+// ts-ignore
+import { unfoldQueries } from '@/utils/navigation'
 
 // @ts-ignore
 import TeeMatomo from './components/TeeMatomo.vue'
@@ -266,8 +271,7 @@ interface Props {
   locale?: string,
   msg?: string,
   seed: string,
-  noLocalMatomo?: boolean,
-  noLocalStyles?: boolean,
+  disableWidget?: boolean,
   datasetUrl?: string,
   maxDepth?: string
   debugSwitch?: string,
@@ -278,6 +282,7 @@ const props = defineProps<Props>()
 const tracks = tracksStore()
 const choices = choicesStore()
 const programs = programsStore()
+const nav = navigationStore()
 
 let trackElement = ref(null)
 // let teeAppTopPosition = ref()
@@ -289,8 +294,21 @@ let message = ref()
 let debugSwitchBool = ref(false)
 let debugBool = ref(false)
 
+const router = useRouter()
+const route = useRoute()
+
 // @ts-ignore
 window.stores = { tracks, choices, programs }
+
+watch(() => tracks.usedTracks, (next) => {
+  console.log()
+  console.log('WidgetApp > watch > tracks.usedTracks > next : ', next)
+  if (nav.routerReady) {
+    nav.setCurrentStep(tracks.currentStep)
+    nav.setCurrentTrackId(tracks.currentTrackId)
+    nav.updateQueries(tracks.getAllUsedTracksValuesPairs)
+  }
+})
 
 const changeDebug = (ev: any) => {
   debugBool.value = ev
@@ -303,10 +321,45 @@ const getColumnsWidth = computed(() => {
   const colsTracks = 'fr-col fr-col-lg-8 fr-col-xl-6'
   const colsResults = 'fr-col fr-col-lg-8 fr-col-xl-8'
   if (debugBool.value) return colsDebug
-  else if (tracks.currentStep === 1) return colsStart
-  else if (currentTrack.component === TrackComponents.results) return colsResults
+  else if (tracks.currentStep === 1 && !props.disableWidget) return colsStart
+  else if (currentTrack?.component === TrackComponents.results) return colsResults
   else return colsTracks
 })
+
+const setupFromUrl = () => {  
+  // parse url to get current track and other queries
+  const currentTrack = route.query['teeActiveTrack']
+  /*
+  GOAL => unfold object such as 
+  {
+    teetrack_track_help: "user_help:precise"
+    teetrack_track_needs: "project_needs:*"
+    teetrack_track_sectors: ""
+    teetrack_track_siret: "siret:|codeNaf:|codeNAF1:|ville:|codePostal:|structure_sizes:|denomination:|label_sectors:undefined|secteur:undefined"
+    teetrack_track_structure_workforce: "entreprise . effectif:249|structure_sizes:PME"
+  }
+  */
+  const queryTracksRaw = unfoldQueries(route.query)
+  console.log('WidgetApp > mounted > queryTracksInfos :', queryTracksRaw)
+    // TO DO
+  // tracks.populateUsedTracksFromQuery(route.query)
+  // nav.populateFromQuery(route.query)
+  // parse url to get detail program (if any)
+  const programId = route.query['teeDetail']
+  console.log('WidgetApp > mounted > currentTrack :', currentTrack)
+  console.log('WidgetApp > mounted > programId :', programId)
+  // @ts-ignore
+  nav.setCurrentDetailId(programId)
+  // @ts-ignore
+  programs.setDetailResult(programId, 'track_results')
+  /*
+  tested with url such as : 
+  localhost:4242/?teeActiveTrack=track_results&teeDetail=accelerateur-decarbonation
+  http://localhost:4242/?teeStep=3&teeActiveTrack=track_results&teetrack_track_needs=project_needs:*&teetrack_track_help=user_help:direct&teetrack_track_results=&teeDetail=accelerateur-decarbonation
+  */
+  nav.setCurrentTrackId(tracks.currentTrackId)
+  nav.updateQueries(tracks.getAllUsedTracksValuesPairs)
+}
 
 onBeforeMount(() => {
   // console.log('WidgetApp > onBeforeMount > props.seed :', props.seed)
@@ -321,12 +374,12 @@ onBeforeMount(() => {
   // inject style link in html head if not present
   const href = deployMode ? `${deployUrl}/style.css` : ''
   console.log('WidgetApp > onBeforeMount > href :', href)
-  let needStyle = !props.noLocalStyles // true
+  let needStyle = !props.disableWidget // true
   // avoid duplicates
   const styleSheets = document.styleSheets.length
   // console.log('WidgetApp > onBeforeMount > document.styleSheets :', document.styleSheets)
   // console.log('WidgetApp > onBeforeMount > styleSheets :', styleSheets)
-  if (styleSheets) {
+  if (needStyle && styleSheets) {
     // console.log('WidgetApp > onBeforeMount > styleSheets - A ')
     for(let i = 0; i < styleSheets; i++){
       // console.log('WidgetApp > onBeforeMount > styleSheets - A - i :', i)
@@ -386,13 +439,25 @@ onBeforeMount(() => {
   if (debugSwitchBool.value && props.debug) {
     debugBool.value = props.debug === 'true'
   }
+  // console.log('WidgetApp > onBeforeMount > END...')
 
   // set first track at mount
+  console.log('WidgetApp > onMounted > set seed track...')
   tracks.setSeedTrack(props.seed)
   tracks.addToUsedTracks(props.seed, props.seed)
-  console.log('WidgetApp > onBeforeMount > END...')
 })
 
+onMounted(async() => {
+  // cf: https://stackoverflow.com/questions/69495211/vue3-route-query-empty
+  console.log('WidgetApp > onMounted > set router...')
+  await router.isReady()
+  if (!props.disableWidget) {
+    nav.setRouter(router)
+    nav.setRoute(route)
+  }
+  setupFromUrl()
+
+})
 </script>
 
 <!-- <style lang="scss">

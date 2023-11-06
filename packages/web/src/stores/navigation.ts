@@ -1,7 +1,7 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
-export const browserStore = defineStore('browser', () => {
+export const navigationStore = defineStore('navigation', () => {
 
   // State objects
   const routerReady = ref<boolean>(false)
@@ -14,15 +14,15 @@ export const browserStore = defineStore('browser', () => {
 
   // getters
   const route = computed(() => {
-    console.log('store.browser > routeRef.value : ', routeRef.value)
+    // console.log('store.navigation > routeRef.value : ', routeRef.value)
     return routeRef.value
   })
 
   // actions
   function setRouter(router: any) {
-    // console.log('store.browser > setRouter > this.$router : ', this.$router)
-    // console.log('store.browser > setRouter > this.$route : ', this.$route)
-    // console.log('store.browser > setRouter > routeRef.value : ', routeRef.value)
+    // console.log('store.navigation > setRouter > this.$router : ', this.$router)
+    // console.log('store.navigation > setRouter > this.$route : ', this.$route)
+    // console.log('store.navigation > setRouter > routeRef.value : ', routeRef.value)
     // cf : https://stackoverflow.com/questions/70681667/cant-use-vue-router-and-pinia-inside-a-single-store
     // routerRef = markRaw(router)
     routerRef.value = router
@@ -44,7 +44,7 @@ export const browserStore = defineStore('browser', () => {
   function addQuery(query: any) {
     const existingTrackIds = userQueries.value.map(q => q.trackId)
     if (!existingTrackIds.includes(query.trackId)) {
-      // console.log('store.browser > addQuery > query : ', query)
+      // console.log('store.navigation > addQuery > query : ', query)
       userQueries.value.push(query)
     }
   }
@@ -52,8 +52,8 @@ export const browserStore = defineStore('browser', () => {
   //   userQueries.value = userQueries.value.filter(q => q.trackId !== trackId)
   // }
   function updateUrl (path: string = 'track', silent: boolean = false) {
-    // console.log('store.browser > updateUrl > routerRef.value : ', routerRef.value)
-    // console.log('store.browser > updateUrl > routeRef.value : ', routeRef.value)
+    // console.log('store.navigation > updateUrl > routerRef.value : ', routerRef.value)
+    // console.log('store.navigation > updateUrl > routeRef.value : ', routeRef.value)
 
     // existing query
 
@@ -69,7 +69,7 @@ export const browserStore = defineStore('browser', () => {
       const resString = selection.join('|')
       trackQueries[`teetrack_${q.trackId}`] = resString
     })
-    // console.log('store.browser > updateUrl > trackQueries : ', trackQueries)
+    // console.log('store.navigation > updateUrl > trackQueries : ', trackQueries)
 
     const allQueries = { 
       teeStep: currentStep.value, 
@@ -77,7 +77,7 @@ export const browserStore = defineStore('browser', () => {
       ...trackQueries,
       teeDetail: currentDetailId.value 
     }
-    // console.log('store.browser > updateUrl > allQueries : ', allQueries)
+    // console.log('store.navigation > updateUrl > allQueries : ', allQueries)
 
     // @ts-ignore
     // routerRef.value.replace({ query: allQueries })
@@ -92,7 +92,7 @@ export const browserStore = defineStore('browser', () => {
       matched: routeRef.value.matched,
       query: allQueries
     }
-    // console.log('store.browser > updateUrl > newRoute : ', newRoute)
+    // console.log('store.navigation > updateUrl > newRoute : ', newRoute)
 
     // update browser
     if (silent) {
@@ -103,7 +103,7 @@ export const browserStore = defineStore('browser', () => {
     }
   }
   function updateQuery(q: any) {
-    // console.log('store.browser > updateQuery > q : ', q)
+    // console.log('store.navigation > updateQuery > q : ', q)
     // update ref
     if (typeof q !== 'undefined') {
       const query = userQueries.value.map(i => {
@@ -118,7 +118,7 @@ export const browserStore = defineStore('browser', () => {
   }
 
   function updateQueries(usedTracks: any[]) {
-    console.log('\nstore.browser > updateQueries > usedTracks : ', usedTracks)
+    // console.log('\nstore.navigation > updateQueries > usedTracks : ', usedTracks)
     // reset userQueries
     userQueries.value = []
     const queries = usedTracks.map(t => {
@@ -129,7 +129,7 @@ export const browserStore = defineStore('browser', () => {
       }
     })
     queries.forEach(q => {
-      // console.log('store.browser > updateQueries > q : ', q)
+      // console.log('store.navigation > updateQueries > q : ', q)
       addQuery(q)
       if (q.selection.length) {
         updateQuery(q)
