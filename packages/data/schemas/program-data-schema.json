@@ -169,6 +169,8 @@
         "CCI Île-de-France",
         "CCI",
         "CCI ou CMA",
+        "CEE",
+        "CETIM",
         "CMA Auvergne-Rhône-Alpes",
         "CMA Bourgogne-Franche-Comté",
         "CMA Bretagne",
@@ -188,7 +190,10 @@
         "France Rénov'",
         "La Poste",
         "Ministère de la Transition Écologique et Solidaire",
-        "ORACE en Pays de la Loire"
+        "ORACE en Pays de la Loire",
+        "Organisations professionnelles",
+        "Région Bretagne",
+        "UIMM"
       ]
     }
   }
