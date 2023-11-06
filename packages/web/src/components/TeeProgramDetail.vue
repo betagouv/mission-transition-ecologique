@@ -278,6 +278,7 @@
 <script setup lang="ts">
 
 import { ref, onBeforeMount } from 'vue'
+// import { useRouter } from 'vue-router'
 
 // @ts-ignore
 // import type { ProgramData, Track } from '@/types/index'
@@ -294,6 +295,8 @@ import { navigationStore } from '../stores/navigation'
 import { analyticsStore } from '../stores/analytics'
 
 import { scrollToTop } from '../utils/helpers'
+
+// const router = useRouter()
 
 const choices = choicesStore()
 const tracks = tracksStore()
@@ -312,7 +315,7 @@ const columnTiles = ref<string>('fr-col')
 interface Props {
   programId: string | number,
   trackId: string,
-  trackElement: any;
+  trackElement?: any;
   disableWidget?: boolean,
   debug?: boolean,
 }
@@ -334,8 +337,11 @@ const resetDetailResult = async () => {
     // const nextRouteName = routeName === 'questionnaire-detail' ? 'questionnaire' : 'catalog'
     const nextRouteName = routeName.replace('-detail', '')
     console.log('TeeProgramDetail > updateDetailResult >  nextRouteName : ', nextRouteName)
+    const newPath = nextRouteName === 'questionnaire' ? '/questionnaire' : '/catalogue'
+    console.log('TeeProgramDetail > updateDetailResult >  newPath : ', newPath)
     // await router.push({ name: routeName, query: {...routeQuery} })
-    await router.push({ name: nextRouteName, query: {...routeQuery} })
+    // router.push({ name: nextRouteName, query: {...routeQuery} })
+    router.push({ path: newPath, query: {...routeQuery} })
     // await router.go(-1)
   }
   !props.disableWidget && scrollToTop(props.trackElement, props.programId)
@@ -348,7 +354,9 @@ const toggleShowForm = () => {
   }
 }
 
-onBeforeMount(() => {
+onBeforeMount(async() => {
+  // await router.isReady()
+  console.log('TeeProgramDetail > onBeforeMount > props.programId :', props.programId )
   program.value = programs.getProgramById(props.programId)
   trackConfig.value = tracks.getTrack(props.trackId)
   // console.log('TeeProgramDetail > onBeforeMount > resultsProgs :', resultsProgs )

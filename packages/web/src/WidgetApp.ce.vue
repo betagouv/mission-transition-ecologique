@@ -289,6 +289,13 @@ const route = useRoute()
 // @ts-ignore
 window.stores = { tracks, choices, programs }
 
+// watch (() => props.programId, (next) => {
+//   console.log('WidgetApp > watch > props.programId > next : ', next)
+// })
+// watch (() => props.seed, (next) => {
+//   console.log('WidgetApp > watch > props.seed > next : ', next)
+// })
+
 watch(() => tracks.usedTracks, (next) => {
   // console.log()
   // console.log('WidgetApp > watch > tracks.usedTracks > next : ', next)

@@ -138,8 +138,8 @@ export const tracksStore = defineStore('tracks', () => {
   }
 
   async function setSeedTrack(seed: string) {
-    // console.log()
-    // console.log('store.tracks > setSeedTrack > seed : ', seed)
+    console.log()
+    console.log('store.tracks > setSeedTrack > seed : ', seed)
     const track = getTrack(seed)
     // console.log('store.tracks > setSeedTrack > track : ', track)
     seedTrack.value = track?.id

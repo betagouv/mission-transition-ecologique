@@ -172,6 +172,7 @@ const resultsProgsLen = computed(() => {
 const updateDetailResult = async (id: string | number) => {
   // console.log(`TeeResults > updateDetailResult >  id : ${id}`)
   programs.setDetailResult(id, props.trackId)
+  nav.setCurrentDetailId(id)
   if (props.disableWidget) {
     // check where the route is from (quetionnaire OR catalog)
     const router = nav.routerRef
@@ -186,8 +187,6 @@ const updateDetailResult = async (id: string | number) => {
     // console.log('TeeResults > updateDetailResult >  router : ', router)
     // router.push({ name: routeName, params: {programId: id}, query: {...routeQuery} })
     router.push({ path: newPath, query: {...routeQuery} })
-  } else {
-    nav.setCurrentDetailId(id)
   }
   !props.disableWidget && scrollToTop(props.trackElement, props.trackId)
 }

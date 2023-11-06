@@ -44,16 +44,18 @@
                   </router-link>
                 </li>
                 <li>
-                  <router-link 
+                  <!-- <router-link 
                     class="fr-btn"
-                    to="/catalogue">
+                    :to="{
+                      name: 'catalog'
+                    }">
                     Catalogue des aides
-                  </router-link>
-                  <!-- <button 
+                  </router-link> -->
+                  <button 
                     class="fr-btn"
                     @click="pushTo('/catalogue')">
                     Catalogue des aides
-                  </button> -->
+                  </button>
                 </li>
               </ul>
             </div>
