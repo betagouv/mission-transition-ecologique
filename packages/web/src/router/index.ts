@@ -18,34 +18,34 @@ import TeePersonalDataPage from '../components/pages/TeePersonalDataPage.vue'
 
 
 const resetTrackStore = async (to: any, from: any, next: any) => {
-  console.log('\nrouter > beforeEnter > resetTrackStore > from :', from)
-  console.log('router > beforeEnter > resetTrackStore > to :', to)
+  // console.log('\nrouter > beforeEnter > resetTrackStore > from :', from)
+  // console.log('router > beforeEnter > resetTrackStore > to :', to)
   const tracks = tracksStore()
   await tracks.resetUsedTracks()
   await next()
 }
 const resetDetailProgram = async (to: any, from: any, next: any) => {
-  console.log('\nrouter > beforeEnter > resetDetailProgram > from :', from)
-  console.log('router > beforeEnter > resetDetailProgram > to :', to)
+  // console.log('\nrouter > beforeEnter > resetDetailProgram > from :', from)
+  // console.log('router > beforeEnter > resetDetailProgram > to :', to)
   const programs = programsStore()
   await programs.resetDetailResult()
   await next()
 }
 const setHelpAsTrackSeed = async (to: any, from: any, next: any) => {
-  console.log('\nrouter > beforeEnter > setHelpAsTrackSeed > from :', from)
-  console.log('router > beforeEnter > setHelpAsTrackSeed > to :', to)
+  // console.log('\nrouter > beforeEnter > setHelpAsTrackSeed > from :', from)
+  // console.log('router > beforeEnter > setHelpAsTrackSeed > to :', to)
   const tracks = tracksStore()
   await tracks.setSeedTrack('track_help')
-  tracks.addToUsedTracks('track_help', 'track_help')
+  // await tracks.addToUsedTracks('track_help', 'track_help')
   // next({ name: 'questionnaire' })
   await next()
 }
 const setResultsAsTrackSeed = async (to: any, from: any, next: any) => {
-  console.log('\nrouter > beforeEnter > setResultsAsTrackSeed > from :', from)
-  console.log('router > beforeEnter > setResultsAsTrackSeed > to :', to)
+  // console.log('\nrouter > beforeEnter > setResultsAsTrackSeed > from :', from)
+  // console.log('router > beforeEnter > setResultsAsTrackSeed > to :', to)
   const tracks = tracksStore()
   await tracks.setSeedTrack('track_results')
-  tracks.addToUsedTracks('track_results', 'track_results')
+  // await tracks.addToUsedTracks('track_results', 'track_results')
   // next({ name: 'catalog' })
   await next()
 }
@@ -67,6 +67,7 @@ export const router = createRouter({
       beforeEnter: [
         resetTrackStore,
         resetDetailProgram,
+        setHelpAsTrackSeed,
       ],
       children: [
         {
@@ -89,16 +90,6 @@ export const router = createRouter({
         },
       ]
     },
-    // { 
-    //   path: '/questionnaire/:programId',
-    //   name: 'questionnaire-detail', 
-    //   // component: TeeProgramPage,
-    //   // component: TeeProgramDetail,
-    //   component: TeeProgramPage,
-    //   beforeEnter: [
-    //     setHelpAsTrackSeed
-    //   ]
-    // },
     { 
       path: '/catalogue',
       // name: 'catalog', 
@@ -111,7 +102,7 @@ export const router = createRouter({
       children: [
         {
           path: '',
-          name: 'catalog', 
+          name: 'catalogue', 
           component: WidgetApp,
           props: {
             seed: 'track_results',
@@ -120,20 +111,11 @@ export const router = createRouter({
         },
         { 
           path: ':programId',
-          name: 'catalog-detail', 
+          name: 'catalogue-detail', 
           component: TeeProgramPage,
         },
       ]
     },
-    // { 
-    //   path: '/catalogue/:programId',
-    //   name: 'catalog-detail', 
-    //   component: TeeProgramPage,
-    //   beforeEnter: [
-    //     resetTrackStore,
-    //     setResultsAsTrackSeed,
-    //   ]
-    // },
     { 
       path: '/mentions-legales', 
       name: 'legal',

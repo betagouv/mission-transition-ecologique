@@ -325,26 +325,9 @@ const props = defineProps<Props>()
 const resetDetailResult = async () => {
   // console.log('TeeProgramDetail > resetDetailResult > props.trackConfig : ', props.trackConfig )
   programs.resetDetailResult()
-  nav.setCurrentDetailId('')
+  nav.setCurrentDetailId('', props.disableWidget)
+  nav.updateUrl(props.disableWidget)
   !props.disableWidget && scrollToTop(props.trackElement, props.programId)
-  if (props.disableWidget) {
-    // const prevRoutePath = nav.routerRef.options.history.state.back
-    // console.log('\nTeeProgramDetail > resetDetailResult > prevRoutePath : ', prevRoutePath )
-    const router = nav.routerRef
-    const routeName = nav.routeRef.name
-    const routeQuery = nav.routeRef.query
-    console.log('\nTeeProgramDetail > updateDetailResult >  routeName : ', routeName)
-    console.log('TeeProgramDetail > updateDetailResult >  routeQuery : ', routeQuery)
-    // const nextRouteName = routeName === 'questionnaire-detail' ? 'questionnaire' : 'catalog'
-    const nextRouteName = routeName.replace('-detail', '')
-    console.log('TeeProgramDetail > updateDetailResult >  nextRouteName : ', nextRouteName)
-    const newPath = nextRouteName === 'questionnaire' ? '/questionnaire' : '/catalogue'
-    console.log('TeeProgramDetail > updateDetailResult >  newPath : ', newPath)
-    // await router.push({ name: routeName, query: {...routeQuery} })
-    // router.push({ name: nextRouteName, query: {...routeQuery} })
-    router.push({ name: nextRouteName, path: newPath, query: {...routeQuery} })
-    // await router.go(-1)
-  }
 }
 const toggleShowForm = () => {
   // console.log('TeeProgramDetail > toggleShowForm > trackConfig : ', props.trackConfig )

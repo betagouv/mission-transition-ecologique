@@ -44,18 +44,18 @@
                   </router-link>
                 </li>
                 <li>
-                  <router-link 
+                  <!-- <router-link 
                     class="fr-btn"
                     :to="{
                       name: 'catalog'
                     }">
                     Catalogue des aides
-                  </router-link>
-                  <!-- <button 
+                  </router-link> -->
+                  <button 
                     class="fr-btn"
-                    @click="pushTo('/catalogue')">
+                    @click="pushTo('catalogue')">
                     Catalogue des aides
-                  </button> -->
+                  </button>
                 </li>
               </ul>
             </div>
@@ -76,11 +76,27 @@
 </template>
 
 <script setup lang="ts">
+
+import { tracksStore } from '../stores/tracks'
+import { programsStore } from '../stores/programs'
 import { navigationStore } from '../stores/navigation'
 
 const nav = navigationStore()
+const tracks = tracksStore()
+const programs = programsStore()
 
 const pushTo = async (ref: string) => {
-  await nav.routerRef.push(ref)
+  // await nav.routerRef.push(ref)
+  nav.setRouterReady(false)
+  
+  tracks.resetUsedTracks()
+  tracks.addToUsedTracks('track_results', 'track_results')
+  programs.resetDetailResult()
+  
+  nav.setCurrentStep(1)
+  nav.setCurrentTrackId('track_results')
+  nav.resetQueries()
+  nav.setRouterReady(true)
+  nav.updateUrl(true, ref)
 }
 </script>

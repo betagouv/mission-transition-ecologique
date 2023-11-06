@@ -301,12 +301,12 @@ window.stores = { tracks, choices, programs }
 // })
 
 watch(() => tracks.usedTracks, (next) => {
-  // console.log()
-  // console.log('WidgetApp > watch > tracks.usedTracks > next : ', next)
+  console.log()
+  console.log('WidgetApp > watch > tracks.usedTracks > next : ', next)
   if (nav.routerReady) {
     nav.setCurrentStep(tracks.currentStep)
     nav.setCurrentTrackId(tracks.currentTrackId)
-    nav.updateQueries(tracks.getAllUsedTracksValuesPairs)
+    nav.updateQueries(tracks.getAllUsedTracksValuesPairs, props.disableWidget)
   }
 })
 
@@ -475,7 +475,7 @@ onMounted(async() => {
   // set detail program ID if any
   if (props.programId) {
     programs.setDetailResult(props.programId, props.seed)
-    nav.setCurrentDetailId(props.programId)
+    nav.setCurrentDetailId(props.programId, props.disableWidget)
   }
 })
 </script>
