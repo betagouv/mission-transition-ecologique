@@ -33,22 +33,22 @@ export const filterPrograms = (
   programs: ProgramData[],
   inputData: InputData
 ): Result<ProgramData[], Error> => {
-  const eligibilityResults = programs.map((p) => evaluateRule(p.publicodes, inputData))
+  let filteredPrograms: ProgramData[] = []
 
-  for (const e of eligibilityResults) {
+  for (const p of programs) {
+    const e = evaluateRule(p.publicodes, inputData)
+
     if (e.isErr) {
       return Result.err(e.error)
     }
-  }
-
-  const filteredPrograms = programs.filter((p) => {
-    const e = evaluateRule(p.publicodes, inputData)
 
     const isPositive = e.isOk && e.value
     const isUndefined = e.isOk && typeof e.value === 'undefined'
 
-    return isPositive || isUndefined
-  })
+    if (isPositive || isUndefined) {
+      filteredPrograms.push(p)
+    }
+  }
 
   return Result.ok(filteredPrograms)
 }
