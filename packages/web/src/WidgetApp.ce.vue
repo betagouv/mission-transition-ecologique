@@ -314,7 +314,7 @@ const changeDebug = (ev: any) => {
 }
 
 const needSidebar = computed(() => {
-  return props.seed !== 'track_results' && (tracks.currentStep > 1 || props.disableWidget)
+  return tracks.seedTrack !== 'track_results' && (tracks.currentStep > 1 || props.disableWidget)
 })
 
 const getColumnsWidth = computed(() => {
@@ -324,7 +324,7 @@ const getColumnsWidth = computed(() => {
   const colsTracks = 'fr-col fr-col-lg-8 fr-col-xl-6'
   const colsResults = 'fr-col fr-col-lg-8 fr-col-xl-8'
   if (debugBool.value) return colsDebug
-  else if ((props.seed === 'track_results') || tracks.currentStep === 1 && !props.disableWidget) {
+  else if ((tracks.seedTrack === 'track_results') || tracks.currentStep === 1 && !props.disableWidget) {
     return colsStart
   }
   else if (currentTrack?.component === TrackComponents.results) {
