@@ -1,0 +1,52 @@
+titre: Étude "chaufferie biomasse"
+promesse: Étudiez votre projet de chaufferie alimenté par la "biomasse"
+description: 'Vous souhaitez mettre en place une installation de production de chaleur
+  à partir de biomasse (bois) en substitution
+
+  aux énergies fossiles  ? L''ADEME vous apporte une aide pour une étude de faisabilité,
+  étape nécessaire avant tout investissement.'
+description longue: "La biomasse solide aussi appelé «bois énergie», représente l’ensemble\
+  \ des combustibles d’origine végétale permettant la production de chaleur ou d’électricité.\
+  \ Première source d’énergie renouvelable utilisée en France, le bois doit fortement\
+  \ contribuer aux objectifs climatiques et énergétiques du pays. \nTypes de prestations\
+  \ concernés par le fonds chaleur : \n- Etude de faisabilité d’une chaufferie biomasse/Ingénierie\
+  \ des installations de production utilisant la biomasse en combustion. \n- Assistance\
+  \ à la maîtrise d’ouvrage pour la mise en place d’une chaufferie biomasse"
+illustration: images/TEE_ampoule.png
+opérateur de contact: ADEME
+url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/etudes-faisabilite-projets-chaufferie-biomasse
+nature de l'aide: financement
+montant du financement: Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000
+  €
+objectifs:
+- Choisissez le bureau d'étude énergétique qui va vous accompagner pour mener cette
+  étude de faisabilité.
+- 'Déposez votre demande d''aide : informations administratives, description du projet,
+  détails techniques et financiers, etc. A ce stade, votre projet ne doit pas avoir
+  commencé !'
+- L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat
+  de financement précisant le montant d’aide maximum, les conditions et les modalités
+  de versement.
+- Réalisez votre étude pour vérifier la faisabilité technique et économique de votre
+  projet d'implantation d'une chaufferie biomasse.
+- A la fin de l'étude, bénéficiez de solutions techniques adaptées aux possibilités
+  du site d’implantation, de solutions pour le financement de l’opération et pour
+  le montage administratif et juridique.
+publicodes:
+  afficher le dispositif si:
+    toutes ces conditions:
+    - secteur d'activité prioritaire
+    - est dans les objectifs de l'entreprise
+  secteur d'activité prioritaire:
+    une de ces conditions:
+    - entreprise . code NAF niveau 1 . est A
+    - entreprise . code NAF niveau 1 . est B
+    - entreprise . code NAF niveau 1 . est C
+    - entreprise . code NAF niveau 1 . est D
+    - entreprise . code NAF niveau 1 . est E
+    - entreprise . code NAF niveau 1 . est G
+    - entreprise . code NAF niveau 1 . est H
+    - entreprise . code NAF niveau 1 . est I
+  est dans les objectifs de l'entreprise:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est ma performance énergétique
