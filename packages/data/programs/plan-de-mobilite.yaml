@@ -18,7 +18,7 @@ description longue: "Le plan de mobilité (PDM) est un ensemble de mesures visan
   \ à assistance électrique...\n\nCette démarche peut également être conduite à l'échelle\
   \ d'un parc d'activité ou d'un bassin d'emploi pour mutualiser les actions entre\
   \ plusieurs entreprises et ainsi renforcer l'impact des actions proposées"
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_ampoule.png
 opérateur de contact: CCI
 url: https://www.entreprises.cci-paris-idf.fr/web/transition-ecologique/plan-de-mobilite-entreprise-ameliorez-l-accessibilite-de-votre-etablissement
 nature de l'aide: accompagnement
@@ -70,4 +70,4 @@ publicodes:
     - questionnaire . objectif prioritaire . est la mobilité durable
   est dans la bonne région:
     une de ces conditions:
-    - entreprise . région = Île-de-France
+    - région = Île-de-France

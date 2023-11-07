@@ -43,6 +43,7 @@ publicodes:
     toutes ces conditions:
     - secteur d'activité prioritaire
     - est dans les objectifs de l'entreprise
+    - règles d'éligibilité
   secteur d'activité prioritaire:
     une de ces conditions:
     - entreprise . code NAF niveau 1 . est B
@@ -54,26 +55,26 @@ publicodes:
     - questionnaire . objectif prioritaire . est ma performance énergétique
   est dans la bonne région:
     une de ces conditions:
-    - entreprise . région = Auvergne-Rhône-Alpes
-    - entreprise . région = Bourgogne-Franche-Comté
-    - entreprise . région = Bretagne
-    - entreprise . région = Centre-Val de Loire
-    - entreprise . région = Corse
-    - entreprise . région = Grand Est
-    - entreprise . région = Guadeloupe
-    - entreprise . région = Guyane
-    - entreprise . région = Hauts-de-France
-    - entreprise . région = Mayotte
-    - entreprise . région = Île-de-France
-    - entreprise . région = Martinique
-    - entreprise . région = La Réunion
-    - entreprise . région = Normandie
-    - entreprise . région = Nouvelle-Aquitaine
-    - entreprise . région = Occitanie
-    - entreprise . région = Pays de la Loire
-    - entreprise . région = Polynésie française
-    - entreprise . région = Provence-Alpes-Côte d'Azur
-    - entreprise . région = Saint-Pierre-Et-Miquelon
+    - région = Auvergne-Rhône-Alpes
+    - région = Bourgogne-Franche-Comté
+    - région = Bretagne
+    - région = Centre-Val de Loire
+    - région = Corse
+    - région = Grand Est
+    - région = Guadeloupe
+    - région = Guyane
+    - région = Hauts-de-France
+    - région = Mayotte
+    - région = Île-de-France
+    - région = Martinique
+    - région = La Réunion
+    - région = Normandie
+    - région = Nouvelle-Aquitaine
+    - région = Occitanie
+    - région = Pays de la Loire
+    - région = Polynésie française
+    - région = Provence-Alpes-Côte d'Azur
+    - région = Saint-Pierre-Et-Miquelon
   règles d'éligibilité:
     toutes ces conditions:
     - est dans la bonne région

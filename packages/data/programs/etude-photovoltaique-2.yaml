@@ -11,7 +11,7 @@ description longue: Quand la consommation électrique de vos bâtiments, de vos 
   de faisabilité dans l'objectif d'évaluer et d'analyser le potentiel du projet en
   révélant ses forces et  faiblesses, les perspectives et les menaces qu'il suppose,
   et les ressources nécessaires pour le mener à bien.
-illustration: images/TEE_energie_verte.png
+illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/etudes-faisabilite-lautoconsommation-electrique-photovoltaique
 nature de l'aide: financement
@@ -32,6 +32,7 @@ publicodes:
     toutes ces conditions:
     - secteur d'activité prioritaire
     - est dans les objectifs de l'entreprise
+    - règles d'éligibilité
   secteur d'activité prioritaire:
     une de ces conditions:
     - entreprise . code NAF niveau 1 . est A
@@ -61,14 +62,14 @@ publicodes:
     - questionnaire . objectif prioritaire . est ma performance énergétique
   est dans la bonne région:
     une de ces conditions:
-    - entreprise . région = Nouvelle-Aquitaine
-    - entreprise . région = Corse
-    - entreprise . région = Saint-Pierre-Et-Miquelon
-    - entreprise . région = Polynésie française
-    - entreprise . région = Guadeloupe
-    - entreprise . région = Guyane
-    - entreprise . région = Mayotte
-    - entreprise . région = Martinique
+    - région = Nouvelle-Aquitaine
+    - région = Corse
+    - région = Saint-Pierre-Et-Miquelon
+    - région = Polynésie française
+    - région = Guadeloupe
+    - région = Guyane
+    - région = Mayotte
+    - région = Martinique
   règles d'éligibilité:
     toutes ces conditions:
     - est dans la bonne région

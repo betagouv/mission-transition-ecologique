@@ -35,7 +35,7 @@ entreprise . code NAF niveau 1:
     est T:
     est U:
 
-entreprise . region:
+région:
 
 # France métropolitaine
 Auvergne-Rhône-Alpes: '"Auvergne-Rhône-Alpes"'

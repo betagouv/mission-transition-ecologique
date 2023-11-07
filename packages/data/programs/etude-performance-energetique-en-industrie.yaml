@@ -37,7 +37,7 @@ description longue: 'Vous avez mis en place des actions pour optimiser la perfor
 
   L’apport des scénarios d’optimisation d’une utilité ou procédé en terme d’efficacité
   énergétique et/ou de décarbonation'
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/etudes-faisabilite-performance-energetique-decarbonation-dentreprises
 nature de l'aide: financement
@@ -74,27 +74,27 @@ publicodes:
     - questionnaire . objectif prioritaire . est l'écoconception
   est dans la bonne région:
     une de ces conditions:
-    - entreprise . région = Corse
-    - entreprise . région = Wallis et Futuna
-    - entreprise . région = Centre-Val de Loire
-    - entreprise . région = Ile de Clipperton
-    - entreprise . région = Île-de-France
-    - entreprise . région = Bourgogne-Franche-Comté
-    - entreprise . région = Polynésie française
-    - entreprise . région = Saint-Martin
-    - entreprise . région = Normandie
-    - entreprise . région = Provence-Alpes-Côte d'Azur
-    - entreprise . région = Guadeloupe
-    - entreprise . région = Nouvelle-Aquitaine
-    - entreprise . région = Martinique
-    - entreprise . région = Occitanie
-    - entreprise . région = Terres australes et antarctiques françaises
-    - entreprise . région = Nouvelle-Calédonie
-    - entreprise . région = Guyane
-    - entreprise . région = La Réunion
-    - entreprise . région = Mayotte
-    - entreprise . région = Saint-Barthélemy
-    - entreprise . région = Auvergne-Rhône-Alpes
-    - entreprise . région = Saint-Pierre-Et-Miquelon
-    - entreprise . région = Bretagne
-    - entreprise . région = Grand Est
+    - région = Corse
+    - région = Wallis et Futuna
+    - région = Centre-Val de Loire
+    - région = Ile de Clipperton
+    - région = Île-de-France
+    - région = Bourgogne-Franche-Comté
+    - région = Polynésie française
+    - région = Saint-Martin
+    - région = Normandie
+    - région = Provence-Alpes-Côte d'Azur
+    - région = Guadeloupe
+    - région = Nouvelle-Aquitaine
+    - région = Martinique
+    - région = Occitanie
+    - région = Terres australes et antarctiques françaises
+    - région = Nouvelle-Calédonie
+    - région = Guyane
+    - région = La Réunion
+    - région = Mayotte
+    - région = Saint-Barthélemy
+    - région = Auvergne-Rhône-Alpes
+    - région = Saint-Pierre-Et-Miquelon
+    - région = Bretagne
+    - région = Grand Est

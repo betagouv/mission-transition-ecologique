@@ -40,6 +40,7 @@ publicodes:
     toutes ces conditions:
     - secteur d'activité prioritaire
     - est dans les objectifs de l'entreprise
+    - règles d'éligibilité
   secteur d'activité prioritaire:
     une de ces conditions:
     - entreprise . code NAF niveau 1 . est B
@@ -53,30 +54,30 @@ publicodes:
     - questionnaire . objectif prioritaire . est la gestion des déchets
   est dans la bonne région:
     une de ces conditions:
-    - entreprise . région = Bourgogne-Franche-Comté
-    - entreprise . région = Grand Est
-    - entreprise . région = Pays de la Loire
-    - entreprise . région = Occitanie
-    - entreprise . région = Provence-Alpes-Côte d'Azur
-    - entreprise . région = Corse
-    - entreprise . région = Guadeloupe
-    - entreprise . région = Guyane
-    - entreprise . région = La Réunion
-    - entreprise . région = Mayotte
-    - entreprise . région = Martinique
-    - entreprise . région = Île-de-France
-    - entreprise . région = Centre-Val de Loire
-    - entreprise . région = Hauts-de-France
-    - entreprise . région = Saint-Barthélemy
-    - entreprise . région = Saint-Pierre-Et-Miquelon
-    - entreprise . région = Nouvelle-Aquitaine
-    - entreprise . région = Wallis et Futuna
-    - entreprise . région = Terres australes et antarctiques françaises
-    - entreprise . région = Saint-Martin
-    - entreprise . région = Polynésie française
-    - entreprise . région = Nouvelle-Calédonie
-    - entreprise . région = Ile de Clipperton
-    - entreprise . région = Normandie
+    - région = Bourgogne-Franche-Comté
+    - région = Grand Est
+    - région = Pays de la Loire
+    - région = Occitanie
+    - région = Provence-Alpes-Côte d'Azur
+    - région = Corse
+    - région = Guadeloupe
+    - région = Guyane
+    - région = La Réunion
+    - région = Mayotte
+    - région = Martinique
+    - région = Île-de-France
+    - région = Centre-Val de Loire
+    - région = Hauts-de-France
+    - région = Saint-Barthélemy
+    - région = Saint-Pierre-Et-Miquelon
+    - région = Nouvelle-Aquitaine
+    - région = Wallis et Futuna
+    - région = Terres australes et antarctiques françaises
+    - région = Saint-Martin
+    - région = Polynésie française
+    - région = Nouvelle-Calédonie
+    - région = Ile de Clipperton
+    - région = Normandie
   règles d'éligibilité:
     toutes ces conditions:
     - est dans la bonne région

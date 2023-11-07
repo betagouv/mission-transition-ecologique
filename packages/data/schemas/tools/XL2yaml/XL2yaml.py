@@ -87,6 +87,9 @@ def printProgramYAML(rawData, colNumbers):
             program["publicodes"]["règles d'éligibilité"] = {
                 "toutes ces conditions": []
             }
+            program["publicodes"]["afficher le dispositif si"][
+                "toutes ces conditions"
+            ].append("règles d'éligibilité")
 
         program["publicodes"]["règles d'éligibilité"]["toutes ces conditions"].append(
             "est dans la bonne région"
@@ -274,11 +277,7 @@ def pc_regions(rawData, colNumbers):
     if len(regions) == 0:
         return None
 
-    return {
-        "une de ces conditions": [
-            f"entreprise . région = {region}" for region in regions
-        ]
-    }
+    return {"une de ces conditions": [f"région = {region}" for region in regions]}
 
 
 def thousandSep(value):

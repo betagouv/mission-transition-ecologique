@@ -4,7 +4,7 @@ promesse: Entreprise industrielle, bénéficiez d'un accompagnement pour apprend
 description: Breizh Fab propose aux industriels de la région Bretagne d’être accompagnés
   pour développer leurs projets et intégrez les enjeux des mutations environnementales
   pour gagner en compétitivité.
-illustration: images/TEE_ampoule.png
+illustration: images/TEE_eolienne.png
 opérateur de contact: Breizh Fab
 autres opérateurs:
 - ADEME
@@ -56,4 +56,4 @@ publicodes:
     - questionnaire . objectif prioritaire . est l'écoconception
   est dans la bonne région:
     une de ces conditions:
-    - entreprise . région = Bretagne
+    - région = Bretagne

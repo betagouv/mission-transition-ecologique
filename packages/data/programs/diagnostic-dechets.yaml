@@ -3,7 +3,7 @@ promesse: Réduisez et valorisez les déchets de votre entreprise
 description: Ce diagnostic permet d’établir une vision globale de la gestion des déchets
   dans votre entreprise pour optimiser les coûts associés et développer le recyclage
   des déchets
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_ampoule.png
 opérateur de contact: CCI
 url: ''
 nature de l'aide: accompagnement
@@ -47,4 +47,4 @@ publicodes:
     - questionnaire . objectif prioritaire . est la gestion des déchets
   est dans la bonne région:
     une de ces conditions:
-    - entreprise . région = Provence-Alpes-Côte d'Azur
+    - région = Provence-Alpes-Côte d'Azur

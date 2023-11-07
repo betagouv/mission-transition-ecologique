@@ -12,7 +12,7 @@ description longue: "La loi AGEC, fixe comme objectif de réduire le gaspillage 
   \ AGEC interdit la destruction des invendus. En 2021 l’ADEME a publié une étude\
   \ sur les 12 principaux secteurs d’activité révélant qu’en moyenne la part des invendus\
   \ représentent plus de 4 milliards d'euros de valeur marchande."
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/etudes-lutte-contre-gaspillage-alimentaire
 nature de l'aide: financement
@@ -34,6 +34,7 @@ publicodes:
     toutes ces conditions:
     - secteur d'activité prioritaire
     - est dans les objectifs de l'entreprise
+    - règles d'éligibilité
   secteur d'activité prioritaire:
     une de ces conditions:
     - entreprise . code NAF niveau 1 . est A
@@ -47,17 +48,17 @@ publicodes:
     - questionnaire . objectif prioritaire . est mon impact environnemental
   est dans la bonne région:
     une de ces conditions:
-    - entreprise . région = Île-de-France
-    - entreprise . région = Bourgogne-Franche-Comté
-    - entreprise . région = Centre-Val de Loire
-    - entreprise . région = Corse
-    - entreprise . région = Grand Est
-    - entreprise . région = Mayotte
-    - entreprise . région = La Réunion
-    - entreprise . région = Martinique
-    - entreprise . région = Normandie
-    - entreprise . région = Nouvelle-Aquitaine
-    - entreprise . région = Provence-Alpes-Côte d'Azur
+    - région = Île-de-France
+    - région = Bourgogne-Franche-Comté
+    - région = Centre-Val de Loire
+    - région = Corse
+    - région = Grand Est
+    - région = Mayotte
+    - région = La Réunion
+    - région = Martinique
+    - région = Normandie
+    - région = Nouvelle-Aquitaine
+    - région = Provence-Alpes-Côte d'Azur
   règles d'éligibilité:
     toutes ces conditions:
     - est dans la bonne région

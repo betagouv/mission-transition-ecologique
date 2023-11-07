@@ -33,6 +33,7 @@ publicodes:
     toutes ces conditions:
     - secteur d'activité prioritaire
     - est dans les objectifs de l'entreprise
+    - règles d'éligibilité
   secteur d'activité prioritaire:
     une de ces conditions:
     - entreprise . code NAF niveau 1 . est A
@@ -52,18 +53,18 @@ publicodes:
     - questionnaire . objectif prioritaire . est l'écoconception
   est dans la bonne région:
     une de ces conditions:
-    - entreprise . région = Corse
-    - entreprise . région = Centre-Val de Loire
-    - entreprise . région = Île-de-France
-    - entreprise . région = Bourgogne-Franche-Comté
-    - entreprise . région = Normandie
-    - entreprise . région = Provence-Alpes-Côte d'Azur
-    - entreprise . région = Guadeloupe
-    - entreprise . région = Nouvelle-Aquitaine
-    - entreprise . région = Martinique
-    - entreprise . région = La Réunion
-    - entreprise . région = Mayotte
-    - entreprise . région = Grand Est
+    - région = Corse
+    - région = Centre-Val de Loire
+    - région = Île-de-France
+    - région = Bourgogne-Franche-Comté
+    - région = Normandie
+    - région = Provence-Alpes-Côte d'Azur
+    - région = Guadeloupe
+    - région = Nouvelle-Aquitaine
+    - région = Martinique
+    - région = La Réunion
+    - région = Mayotte
+    - région = Grand Est
   règles d'éligibilité:
     toutes ces conditions:
     - est dans la bonne région

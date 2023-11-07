@@ -57,6 +57,7 @@ publicodes:
     toutes ces conditions:
     - secteur d'activité prioritaire
     - est dans les objectifs de l'entreprise
+    - règles d'éligibilité
   secteur d'activité prioritaire:
     une de ces conditions:
     - entreprise . code NAF niveau 1 . est A
@@ -71,10 +72,10 @@ publicodes:
     - questionnaire . objectif prioritaire . est ma performance énergétique
   est dans la bonne région:
     une de ces conditions:
-    - entreprise . région = Bourgogne-Franche-Comté
-    - entreprise . région = Nouvelle-Aquitaine
-    - entreprise . région = Auvergne-Rhône-Alpes
-    - entreprise . région = Provence-Alpes-Côte d'Azur
+    - région = Bourgogne-Franche-Comté
+    - région = Nouvelle-Aquitaine
+    - région = Auvergne-Rhône-Alpes
+    - région = Provence-Alpes-Côte d'Azur
   règles d'éligibilité:
     toutes ces conditions:
     - est dans la bonne région

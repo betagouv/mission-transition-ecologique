@@ -44,4 +44,4 @@ publicodes:
     - questionnaire . objectif prioritaire . est mon impact environnemental
   est dans la bonne région:
     une de ces conditions:
-    - entreprise . région = Île-de-France
+    - région = Île-de-France

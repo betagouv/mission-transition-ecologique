@@ -13,7 +13,7 @@ description longue: "Qu’est-ce qu’un biodéchet ?\nL’article L. 541-1-1 du
   \ tailles d’arbustes, haies et brindilles ou encore déchets ligneux issus de l’élagage\
   \ et de l’abattage d’arbres et de haies.\nDéchets alimentaires : restes de repas\
   \ ou de préparation de repas ou produits périmés non consommés."
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_ampoule.png
 opérateur de contact: CCI
 url: https://hautsdefrance.cci.fr/solutions/accompagnement-gestion-biodechets/
 nature de l'aide: accompagnement
@@ -33,6 +33,7 @@ publicodes:
     toutes ces conditions:
     - secteur d'activité prioritaire
     - est dans les objectifs de l'entreprise
+    - règles d'éligibilité
   secteur d'activité prioritaire:
     une de ces conditions:
     - entreprise . code NAF niveau 1 . est A
@@ -44,7 +45,7 @@ publicodes:
     - questionnaire . objectif prioritaire . est la gestion des déchets
   est dans la bonne région:
     une de ces conditions:
-    - entreprise . région = Hauts-de-France
+    - région = Hauts-de-France
   règles d'éligibilité:
     toutes ces conditions:
     - est dans la bonne région

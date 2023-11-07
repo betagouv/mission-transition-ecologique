@@ -10,7 +10,7 @@ description longue: L’économie de la fonctionnalité s’inscrit pleinement d
   repose plus sur le transfert de propriété de biens, qui restent la propriété du
   producteur tout au long de son cycle de vie, mais sur le consentement des usagers
   à payer une valeur d’usage.
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/etude-associee-a-demarche-projet-deconomie-fonctionnalite
 nature de l'aide: financement
@@ -32,6 +32,7 @@ publicodes:
     toutes ces conditions:
     - secteur d'activité prioritaire
     - est dans les objectifs de l'entreprise
+    - règles d'éligibilité
   secteur d'activité prioritaire:
     une de ces conditions:
     - entreprise . code NAF niveau 1 . est A
@@ -61,25 +62,25 @@ publicodes:
     - questionnaire . objectif prioritaire . est l'écoconception
   est dans la bonne région:
     une de ces conditions:
-    - entreprise . région = Île-de-France
-    - entreprise . région = Centre-Val de Loire
-    - entreprise . région = Bourgogne-Franche-Comté
-    - entreprise . région = Normandie
-    - entreprise . région = Hauts-de-France
-    - entreprise . région = Grand Est
-    - entreprise . région = Bretagne
-    - entreprise . région = Nouvelle-Aquitaine
-    - entreprise . région = Occitanie
-    - entreprise . région = Auvergne-Rhône-Alpes
-    - entreprise . région = Corse
-    - entreprise . région = Saint-Pierre-Et-Miquelon
-    - entreprise . région = Polynésie française
-    - entreprise . région = Guadeloupe
-    - entreprise . région = Martinique
-    - entreprise . région = Guyane
-    - entreprise . région = La Réunion
-    - entreprise . région = Mayotte
-    - entreprise . région = Pays de la Loire
+    - région = Île-de-France
+    - région = Centre-Val de Loire
+    - région = Bourgogne-Franche-Comté
+    - région = Normandie
+    - région = Hauts-de-France
+    - région = Grand Est
+    - région = Bretagne
+    - région = Nouvelle-Aquitaine
+    - région = Occitanie
+    - région = Auvergne-Rhône-Alpes
+    - région = Corse
+    - région = Saint-Pierre-Et-Miquelon
+    - région = Polynésie française
+    - région = Guadeloupe
+    - région = Martinique
+    - région = Guyane
+    - région = La Réunion
+    - région = Mayotte
+    - région = Pays de la Loire
   règles d'éligibilité:
     toutes ces conditions:
     - est dans la bonne région

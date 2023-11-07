@@ -55,4 +55,4 @@ publicodes:
     - questionnaire . objectif prioritaire . est la mobilité durable
   est dans la bonne région:
     une de ces conditions:
-    - entreprise . région = Provence-Alpes-Côte d'Azur
+    - région = Provence-Alpes-Côte d'Azur

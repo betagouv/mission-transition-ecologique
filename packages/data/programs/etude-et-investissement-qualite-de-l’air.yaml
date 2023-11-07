@@ -26,7 +26,7 @@ description longue: "Les zones concernée sont : Martinique, Ile de France (ense
   \ et/ou professionnels ou tout autre projet amenant des changements de pratiques\
   \ à l’exception d’études de préfiguration d’un Fonds Air Bois et de sa mise en place,\
   \ accompagnées via l’appel à projets dédié."
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/actions-qualite-lair-territoires-contentieux
 nature de l'aide: financement
@@ -44,6 +44,7 @@ publicodes:
     toutes ces conditions:
     - secteur d'activité prioritaire
     - est dans les objectifs de l'entreprise
+    - règles d'éligibilité
   secteur d'activité prioritaire:
     une de ces conditions:
     - entreprise . code NAF niveau 1 . est A
@@ -72,13 +73,13 @@ publicodes:
     - questionnaire . objectif prioritaire . est la mobilité durable
   est dans la bonne région:
     une de ces conditions:
-    - entreprise . région = Île-de-France
-    - entreprise . région = Normandie
-    - entreprise . région = Grand Est
-    - entreprise . région = Occitanie
-    - entreprise . région = Auvergne-Rhône-Alpes
-    - entreprise . région = Provence-Alpes-Côte d'Azur
-    - entreprise . région = Martinique
+    - région = Île-de-France
+    - région = Normandie
+    - région = Grand Est
+    - région = Occitanie
+    - région = Auvergne-Rhône-Alpes
+    - région = Provence-Alpes-Côte d'Azur
+    - région = Martinique
   règles d'éligibilité:
     toutes ces conditions:
     - est dans la bonne région

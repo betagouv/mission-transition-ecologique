@@ -31,6 +31,7 @@ publicodes:
     toutes ces conditions:
     - secteur d'activité prioritaire
     - est dans les objectifs de l'entreprise
+    - règles d'éligibilité
   secteur d'activité prioritaire:
     une de ces conditions:
     - entreprise . code NAF niveau 1 . est A
@@ -59,12 +60,12 @@ publicodes:
     - questionnaire . objectif prioritaire . est ma performance énergétique
   est dans la bonne région:
     une de ces conditions:
-    - entreprise . région = Polynésie française
-    - entreprise . région = Guadeloupe
-    - entreprise . région = Martinique
-    - entreprise . région = Guyane
-    - entreprise . région = La Réunion
-    - entreprise . région = Mayotte
+    - région = Polynésie française
+    - région = Guadeloupe
+    - région = Martinique
+    - région = Guyane
+    - région = La Réunion
+    - région = Mayotte
   règles d'éligibilité:
     toutes ces conditions:
     - est dans la bonne région

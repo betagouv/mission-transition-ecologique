@@ -6,7 +6,7 @@ description: L’ADEME vous aide à financer votre audit énergétique, indispen
 description longue: Les audits énergétiques offrent pour bénéfices 15 à 25 % d'économie
   sur un site en moyenne et des bases solides pour la mise en œuvre d'un Système de
   Management de l'énergie (SMé).
-illustration: images/TEE_energie_verte.png
+illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/audit-energetique-industrie
 nature de l'aide: financement
@@ -47,25 +47,25 @@ publicodes:
     - questionnaire . objectif prioritaire . est l'écoconception
   est dans la bonne région:
     une de ces conditions:
-    - entreprise . région = Martinique
-    - entreprise . région = Guyane
-    - entreprise . région = La Réunion
-    - entreprise . région = Mayotte
-    - entreprise . région = Centre-Val de Loire
-    - entreprise . région = Bourgogne-Franche-Comté
-    - entreprise . région = Normandie
-    - entreprise . région = Grand Est
-    - entreprise . région = Nouvelle-Aquitaine
-    - entreprise . région = Occitanie
-    - entreprise . région = Provence-Alpes-Côte d'Azur
-    - entreprise . région = Corse
-    - entreprise . région = Saint-Pierre-Et-Miquelon
-    - entreprise . région = Polynésie française
-    - entreprise . région = Guadeloupe
-    - entreprise . région = Île-de-France
-    - entreprise . région = Saint-Barthélemy
-    - entreprise . région = Terres australes et antarctiques françaises
-    - entreprise . région = Saint-Martin
-    - entreprise . région = Wallis et Futuna
-    - entreprise . région = Nouvelle-Calédonie
-    - entreprise . région = Ile de Clipperton
+    - région = Martinique
+    - région = Guyane
+    - région = La Réunion
+    - région = Mayotte
+    - région = Centre-Val de Loire
+    - région = Bourgogne-Franche-Comté
+    - région = Normandie
+    - région = Grand Est
+    - région = Nouvelle-Aquitaine
+    - région = Occitanie
+    - région = Provence-Alpes-Côte d'Azur
+    - région = Corse
+    - région = Saint-Pierre-Et-Miquelon
+    - région = Polynésie française
+    - région = Guadeloupe
+    - région = Île-de-France
+    - région = Saint-Barthélemy
+    - région = Terres australes et antarctiques françaises
+    - région = Saint-Martin
+    - région = Wallis et Futuna
+    - région = Nouvelle-Calédonie
+    - région = Ile de Clipperton

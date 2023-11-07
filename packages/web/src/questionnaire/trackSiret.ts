@@ -27,7 +27,7 @@ const dataTarget = {
   codeNAF1: '',
   ville: '',
   codePostal: '',
-  region: '',
+  région: '',
   structure_sizes: '',
   denomination: '',
   // project_sectors: undefined,
@@ -103,7 +103,7 @@ export const siret: Track = {
               from: DataMappingFrom.RawData,
               id: 'region',
               path: 'etablissement.adresseEtablissement.codeCommuneEtablissement',
-              dataField: 'codeCommune',
+              dataField: 'région',
               onlyRemap: true,
               cleaning: [
                 {

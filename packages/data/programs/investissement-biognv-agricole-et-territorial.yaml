@@ -20,7 +20,7 @@ description longue: 'Cette aide s''adresse aux entreprises exploitantes d’unit
 
   • les coûts de leurs installations, les coûts liés aux travaux d''aménagement (génie
   civil, travaux électriques, intervention sur la voirie et réseaux divers).'
-illustration: images/TEE_ampoule.png
+illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Stations%20bioGNV%20agricole%20et%20territorial%20-%20Cahier%20des%20charges%20.pdf
 nature de l'aide: financement
@@ -39,6 +39,7 @@ publicodes:
     toutes ces conditions:
     - secteur d'activité prioritaire
     - est dans les objectifs de l'entreprise
+    - règles d'éligibilité
   secteur d'activité prioritaire:
     une de ces conditions:
     - entreprise . code NAF niveau 1 . est A
@@ -52,17 +53,17 @@ publicodes:
     - questionnaire . objectif prioritaire . est ma performance énergétique
   est dans la bonne région:
     une de ces conditions:
-    - entreprise . région = Île-de-France
-    - entreprise . région = Centre-Val de Loire
-    - entreprise . région = Bourgogne-Franche-Comté
-    - entreprise . région = Normandie
-    - entreprise . région = Hauts-de-France
-    - entreprise . région = Grand Est
-    - entreprise . région = Pays de la Loire
-    - entreprise . région = Nouvelle-Aquitaine
-    - entreprise . région = Occitanie
-    - entreprise . région = Provence-Alpes-Côte d'Azur
-    - entreprise . région = Corse
+    - région = Île-de-France
+    - région = Centre-Val de Loire
+    - région = Bourgogne-Franche-Comté
+    - région = Normandie
+    - région = Hauts-de-France
+    - région = Grand Est
+    - région = Pays de la Loire
+    - région = Nouvelle-Aquitaine
+    - région = Occitanie
+    - région = Provence-Alpes-Côte d'Azur
+    - région = Corse
   règles d'éligibilité:
     toutes ces conditions:
     - est dans la bonne région

@@ -5,7 +5,7 @@ description: 'Disposez de tous les éléments indispensables à la prise de déc
   avant l’installation de panneaux photovoltaïques : montant de l’investissement et
   aides financières, économies réalisées par la vente de l’électricité et/ou par l’auto-consommation,
   points de vigilance, temps de retour sur investissement et rentabilité.'
-illustration: images/TEE_ampoule.png
+illustration: images/TEE_energie_verte.png
 opérateur de contact: CCI
 autres opérateurs:
 - ADEME
@@ -45,4 +45,4 @@ publicodes:
     - questionnaire . objectif prioritaire . est ma performance énergétique
   est dans la bonne région:
     une de ces conditions:
-    - entreprise . région = Bourgogne-Franche-Comté
+    - région = Bourgogne-Franche-Comté
