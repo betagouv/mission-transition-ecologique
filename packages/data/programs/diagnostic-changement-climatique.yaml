@@ -5,7 +5,7 @@ description: Votre CCI vous accompagne dans l'élaboration d'un plan d'adaptatio
   phénomènes liés aux conséquences du changement climatique (canicules, sécheresses,
   innondations,…) et vous permettre de poursuivre votre activité en limitant les impacts
   économiques et en saisir les éventuelles opportunités.
-illustration: images/TEE_energie_verte.png
+illustration: images/TEE_ampoule.png
 opérateur de contact: CCI
 autres opérateurs:
 - ADEME
@@ -44,4 +44,4 @@ publicodes:
     - questionnaire . objectif prioritaire . est mon impact environnemental
   est dans la bonne région:
     une de ces conditions:
-    - entreprise . etablissement . region . est Île-de-France
+    - entreprise . région = Île-de-France

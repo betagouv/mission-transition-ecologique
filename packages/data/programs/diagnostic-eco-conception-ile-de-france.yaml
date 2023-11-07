@@ -10,7 +10,7 @@ description longue: 'L’éco-conception vise à prendre en compte et réduire l
   fin de vie, etc.
 
   L’éco-conception s’applique aux produits matériels mais également aux services.'
-illustration: images/TEE_ampoule.png
+illustration: images/TEE_eolienne.png
 opérateur de contact: CCI
 autres opérateurs:
 - ADEME
@@ -50,4 +50,4 @@ publicodes:
     - questionnaire . objectif prioritaire . est l'écoconception
   est dans la bonne région:
     une de ces conditions:
-    - entreprise . etablissement . region . est Île-de-France
+    - entreprise . région = Île-de-France

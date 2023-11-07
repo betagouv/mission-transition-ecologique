@@ -3,7 +3,7 @@ promesse: Participez à une Fresque de la mobilité dédiée aux entreprises
 description: Vous réfléchissez à votre Plan de Mobilité employeur et avez besoin d'un
   outil pour embarquer votre équipe ou votre direction ? La fresque de la mobilité
   est l'atelier qu'il vous faut pour bien démarrer le projet.
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_ampoule.png
 opérateur de contact: CCI
 url: ''
 nature de l'aide: accompagnement
@@ -55,4 +55,4 @@ publicodes:
     - questionnaire . objectif prioritaire . est la mobilité durable
   est dans la bonne région:
     une de ces conditions:
-    - entreprise . etablissement . region . est Provence-Alpes-Côte d'Azur
+    - entreprise . région = Provence-Alpes-Côte d'Azur

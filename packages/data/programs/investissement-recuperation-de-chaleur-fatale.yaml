@@ -25,7 +25,7 @@ description longue: 'Les investissements éligibles sont :
 
   Pour être éligibles, les projets doivent valoriser une quantité d’énergie thermique
   supérieure à 1 GWh/an.'
-illustration: images/TEE_energie_verte.png
+illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/realisation-dinstallations-recuperation-chaleur-fatale
 nature de l'aide: financement
@@ -54,26 +54,26 @@ publicodes:
     - questionnaire . objectif prioritaire . est ma performance énergétique
   est dans la bonne région:
     une de ces conditions:
-    - entreprise . etablissement . region . est Auvergne-Rhône-Alpes
-    - entreprise . etablissement . region . est Bourgogne-Franche-Comté
-    - entreprise . etablissement . region . est Bretagne
-    - entreprise . etablissement . region . est Centre-Val de Loire
-    - entreprise . etablissement . region . est Corse
-    - entreprise . etablissement . region . est Grand Est
-    - entreprise . etablissement . region . est Guadeloupe
-    - entreprise . etablissement . region . est Guyane
-    - entreprise . etablissement . region . est Hauts-de-France
-    - entreprise . etablissement . region . est Mayotte
-    - entreprise . etablissement . region . est Île-de-France
-    - entreprise . etablissement . region . est Martinique
-    - entreprise . etablissement . region . est La Réunion
-    - entreprise . etablissement . region . est Normandie
-    - entreprise . etablissement . region . est Nouvelle-Aquitaine
-    - entreprise . etablissement . region . est Occitanie
-    - entreprise . etablissement . region . est Pays de la Loire
-    - entreprise . etablissement . region . est Polynésie française
-    - entreprise . etablissement . region . est Provence-Alpes-Côte d'Azur
-    - entreprise . etablissement . region . est Saint-Pierre-Et-Miquelon
+    - entreprise . région = Auvergne-Rhône-Alpes
+    - entreprise . région = Bourgogne-Franche-Comté
+    - entreprise . région = Bretagne
+    - entreprise . région = Centre-Val de Loire
+    - entreprise . région = Corse
+    - entreprise . région = Grand Est
+    - entreprise . région = Guadeloupe
+    - entreprise . région = Guyane
+    - entreprise . région = Hauts-de-France
+    - entreprise . région = Mayotte
+    - entreprise . région = Île-de-France
+    - entreprise . région = Martinique
+    - entreprise . région = La Réunion
+    - entreprise . région = Normandie
+    - entreprise . région = Nouvelle-Aquitaine
+    - entreprise . région = Occitanie
+    - entreprise . région = Pays de la Loire
+    - entreprise . région = Polynésie française
+    - entreprise . région = Provence-Alpes-Côte d'Azur
+    - entreprise . région = Saint-Pierre-Et-Miquelon
   règles d'éligibilité:
     toutes ces conditions:
     - est dans la bonne région

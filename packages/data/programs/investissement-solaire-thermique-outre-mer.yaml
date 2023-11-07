@@ -13,7 +13,7 @@ description longue: "Sont éligibles les opérations de production d'eau chaude 
   \ usage collectif, les restaurants, les cantines d’entreprises, les activités agricoles\
   \ (laiteries, fromageries, …) et les processus industriels consommateurs d'eau chaude.\
   \ \nLa réalisation d’une étude de faisabilité préalable est une condition d'éligibilité."
-illustration: images/TEE_energie_verte.png
+illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/installations-production-deau-chaude-solaire-thermique-outre-mer
 nature de l'aide: financement
@@ -59,12 +59,12 @@ publicodes:
     - questionnaire . objectif prioritaire . est ma performance énergétique
   est dans la bonne région:
     une de ces conditions:
-    - entreprise . etablissement . region . est Polynésie française
-    - entreprise . etablissement . region . est Guadeloupe
-    - entreprise . etablissement . region . est Martinique
-    - entreprise . etablissement . region . est Guyane
-    - entreprise . etablissement . region . est La Réunion
-    - entreprise . etablissement . region . est Mayotte
+    - entreprise . région = Polynésie française
+    - entreprise . région = Guadeloupe
+    - entreprise . région = Martinique
+    - entreprise . région = Guyane
+    - entreprise . région = La Réunion
+    - entreprise . région = Mayotte
   règles d'éligibilité:
     toutes ces conditions:
     - est dans la bonne région

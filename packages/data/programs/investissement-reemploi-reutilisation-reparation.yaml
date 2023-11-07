@@ -22,7 +22,7 @@ description longue: 'Pour bénéficier de cette aide, votre projet d''investisse
   et à la réduction des déchets accompagnant les investissements.
 
   La réalisation préalable d''une étude de faisablité est une condition d''éligibilité.'
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/RRR%20hors%20emballages%20-%20Investissement%20-%20Conditions%20%C3%A9ligibilit%C3%A9%20financement%20-%202023.pdf
 nature de l'aide: financement
@@ -53,30 +53,30 @@ publicodes:
     - questionnaire . objectif prioritaire . est la gestion des déchets
   est dans la bonne région:
     une de ces conditions:
-    - entreprise . etablissement . region . est Bourgogne-Franche-Comté
-    - entreprise . etablissement . region . est Grand Est
-    - entreprise . etablissement . region . est Pays de la Loire
-    - entreprise . etablissement . region . est Occitanie
-    - entreprise . etablissement . region . est Provence-Alpes-Côte d'Azur
-    - entreprise . etablissement . region . est Corse
-    - entreprise . etablissement . region . est Guadeloupe
-    - entreprise . etablissement . region . est Guyane
-    - entreprise . etablissement . region . est La Réunion
-    - entreprise . etablissement . region . est Mayotte
-    - entreprise . etablissement . region . est Martinique
-    - entreprise . etablissement . region . est Île-de-France
-    - entreprise . etablissement . region . est Centre-Val de Loire
-    - entreprise . etablissement . region . est Hauts-de-France
-    - entreprise . etablissement . region . est Saint-Barthélemy
-    - entreprise . etablissement . region . est Saint-Pierre-Et-Miquelon
-    - entreprise . etablissement . region . est Nouvelle-Aquitaine
-    - entreprise . etablissement . region . est Wallis et Futuna
-    - entreprise . etablissement . region . est Terres australes et antarctiques françaises
-    - entreprise . etablissement . region . est Saint-Martin
-    - entreprise . etablissement . region . est Polynésie française
-    - entreprise . etablissement . region . est Nouvelle-Calédonie
-    - entreprise . etablissement . region . est Ile de Clipperton
-    - entreprise . etablissement . region . est Normandie
+    - entreprise . région = Bourgogne-Franche-Comté
+    - entreprise . région = Grand Est
+    - entreprise . région = Pays de la Loire
+    - entreprise . région = Occitanie
+    - entreprise . région = Provence-Alpes-Côte d'Azur
+    - entreprise . région = Corse
+    - entreprise . région = Guadeloupe
+    - entreprise . région = Guyane
+    - entreprise . région = La Réunion
+    - entreprise . région = Mayotte
+    - entreprise . région = Martinique
+    - entreprise . région = Île-de-France
+    - entreprise . région = Centre-Val de Loire
+    - entreprise . région = Hauts-de-France
+    - entreprise . région = Saint-Barthélemy
+    - entreprise . région = Saint-Pierre-Et-Miquelon
+    - entreprise . région = Nouvelle-Aquitaine
+    - entreprise . région = Wallis et Futuna
+    - entreprise . région = Terres australes et antarctiques françaises
+    - entreprise . région = Saint-Martin
+    - entreprise . région = Polynésie française
+    - entreprise . région = Nouvelle-Calédonie
+    - entreprise . région = Ile de Clipperton
+    - entreprise . région = Normandie
   règles d'éligibilité:
     toutes ces conditions:
     - est dans la bonne région

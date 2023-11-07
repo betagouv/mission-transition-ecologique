@@ -52,17 +52,17 @@ publicodes:
     - questionnaire . objectif prioritaire . est ma performance énergétique
   est dans la bonne région:
     une de ces conditions:
-    - entreprise . etablissement . region . est Île-de-France
-    - entreprise . etablissement . region . est Centre-Val de Loire
-    - entreprise . etablissement . region . est Bourgogne-Franche-Comté
-    - entreprise . etablissement . region . est Normandie
-    - entreprise . etablissement . region . est Hauts-de-France
-    - entreprise . etablissement . region . est Grand Est
-    - entreprise . etablissement . region . est Pays de la Loire
-    - entreprise . etablissement . region . est Nouvelle-Aquitaine
-    - entreprise . etablissement . region . est Occitanie
-    - entreprise . etablissement . region . est Provence-Alpes-Côte d'Azur
-    - entreprise . etablissement . region . est Corse
+    - entreprise . région = Île-de-France
+    - entreprise . région = Centre-Val de Loire
+    - entreprise . région = Bourgogne-Franche-Comté
+    - entreprise . région = Normandie
+    - entreprise . région = Hauts-de-France
+    - entreprise . région = Grand Est
+    - entreprise . région = Pays de la Loire
+    - entreprise . région = Nouvelle-Aquitaine
+    - entreprise . région = Occitanie
+    - entreprise . région = Provence-Alpes-Côte d'Azur
+    - entreprise . région = Corse
   règles d'éligibilité:
     toutes ces conditions:
     - est dans la bonne région

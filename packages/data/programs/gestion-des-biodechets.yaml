@@ -44,7 +44,7 @@ publicodes:
     - questionnaire . objectif prioritaire . est la gestion des déchets
   est dans la bonne région:
     une de ces conditions:
-    - entreprise . etablissement . region . est Hauts-de-France
+    - entreprise . région = Hauts-de-France
   règles d'éligibilité:
     toutes ces conditions:
     - est dans la bonne région

@@ -11,7 +11,7 @@ description longue: Quand la consommation électrique de vos bâtiments, de vos 
   de faisabilité dans l'objectif d'évaluer et d'analyser le potentiel du projet en
   révélant ses forces et  faiblesses, les perspectives et les menaces qu'il suppose,
   et les ressources nécessaires pour le mener à bien.
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/etudes-faisabilite-lautoconsommation-electrique-photovoltaique
 nature de l'aide: financement
@@ -61,14 +61,14 @@ publicodes:
     - questionnaire . objectif prioritaire . est ma performance énergétique
   est dans la bonne région:
     une de ces conditions:
-    - entreprise . etablissement . region . est Nouvelle-Aquitaine
-    - entreprise . etablissement . region . est Corse
-    - entreprise . etablissement . region . est Saint-Pierre-Et-Miquelon
-    - entreprise . etablissement . region . est Polynésie française
-    - entreprise . etablissement . region . est Guadeloupe
-    - entreprise . etablissement . region . est Guyane
-    - entreprise . etablissement . region . est Mayotte
-    - entreprise . etablissement . region . est Martinique
+    - entreprise . région = Nouvelle-Aquitaine
+    - entreprise . région = Corse
+    - entreprise . région = Saint-Pierre-Et-Miquelon
+    - entreprise . région = Polynésie française
+    - entreprise . région = Guadeloupe
+    - entreprise . région = Guyane
+    - entreprise . région = Mayotte
+    - entreprise . région = Martinique
   règles d'éligibilité:
     toutes ces conditions:
     - est dans la bonne région

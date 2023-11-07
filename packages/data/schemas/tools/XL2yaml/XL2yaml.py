@@ -276,7 +276,7 @@ def pc_regions(rawData, colNumbers):
 
     return {
         "une de ces conditions": [
-            f"entreprise . etablissement . region . est {region}" for region in regions
+            f"entreprise . région = {region}" for region in regions
         ]
     }
 

@@ -18,7 +18,7 @@ description longue: 'Les équipements financés sont les suivants :
   l’épuration en biométhane et l’injection dans le réseau public.
 
   La réalisation d''une étude de faisabilité préalable est une condition d''éligibilité.'
-illustration: images/TEE_energie_verte.png
+illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/realisation-dinstallations-methanisation-injection-cogeneration-chaleur
 nature de l'aide: financement
@@ -46,19 +46,19 @@ publicodes:
     - questionnaire . objectif prioritaire . est ma performance énergétique
   est dans la bonne région:
     une de ces conditions:
-    - entreprise . etablissement . region . est Bourgogne-Franche-Comté
-    - entreprise . etablissement . region . est Hauts-de-France
-    - entreprise . etablissement . region . est Occitanie
-    - entreprise . etablissement . region . est Auvergne-Rhône-Alpes
-    - entreprise . etablissement . region . est Provence-Alpes-Côte d'Azur
-    - entreprise . etablissement . region . est Corse
-    - entreprise . etablissement . region . est Guadeloupe
-    - entreprise . etablissement . region . est Martinique
-    - entreprise . etablissement . region . est Guyane
-    - entreprise . etablissement . region . est La Réunion
-    - entreprise . etablissement . region . est Nouvelle-Aquitaine
-    - entreprise . etablissement . region . est Centre-Val de Loire
-    - entreprise . etablissement . region . est Pays de la Loire
+    - entreprise . région = Bourgogne-Franche-Comté
+    - entreprise . région = Hauts-de-France
+    - entreprise . région = Occitanie
+    - entreprise . région = Auvergne-Rhône-Alpes
+    - entreprise . région = Provence-Alpes-Côte d'Azur
+    - entreprise . région = Corse
+    - entreprise . région = Guadeloupe
+    - entreprise . région = Martinique
+    - entreprise . région = Guyane
+    - entreprise . région = La Réunion
+    - entreprise . région = Nouvelle-Aquitaine
+    - entreprise . région = Centre-Val de Loire
+    - entreprise . région = Pays de la Loire
   règles d'éligibilité:
     toutes ces conditions:
     - est dans la bonne région

@@ -13,7 +13,7 @@ description longue: "Le financement des investissements vise prioritairement des
   \ pesées ;\n- camions frigorifiques ;\n- acquisitions d’entrepôt ;\n- plateformes\
   \ de collecte ;\n- cantines solidaires ;\n- ateliers de transformation de type conserverie\
   \ ;\n- équipements permettant le partage de denrées alimentaires entre particuliers…"
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/installation-dequipements-lutte-contre-gaspillage?cible=79&region=35
 nature de l'aide: financement
@@ -52,18 +52,18 @@ publicodes:
     - questionnaire . objectif prioritaire . est l'écoconception
   est dans la bonne région:
     une de ces conditions:
-    - entreprise . etablissement . region . est Corse
-    - entreprise . etablissement . region . est Centre-Val de Loire
-    - entreprise . etablissement . region . est Île-de-France
-    - entreprise . etablissement . region . est Bourgogne-Franche-Comté
-    - entreprise . etablissement . region . est Normandie
-    - entreprise . etablissement . region . est Provence-Alpes-Côte d'Azur
-    - entreprise . etablissement . region . est Guadeloupe
-    - entreprise . etablissement . region . est Nouvelle-Aquitaine
-    - entreprise . etablissement . region . est Martinique
-    - entreprise . etablissement . region . est La Réunion
-    - entreprise . etablissement . region . est Mayotte
-    - entreprise . etablissement . region . est Grand Est
+    - entreprise . région = Corse
+    - entreprise . région = Centre-Val de Loire
+    - entreprise . région = Île-de-France
+    - entreprise . région = Bourgogne-Franche-Comté
+    - entreprise . région = Normandie
+    - entreprise . région = Provence-Alpes-Côte d'Azur
+    - entreprise . région = Guadeloupe
+    - entreprise . région = Nouvelle-Aquitaine
+    - entreprise . région = Martinique
+    - entreprise . région = La Réunion
+    - entreprise . région = Mayotte
+    - entreprise . région = Grand Est
   règles d'éligibilité:
     toutes ces conditions:
     - est dans la bonne région

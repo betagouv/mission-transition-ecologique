@@ -15,7 +15,7 @@ description longue: 'Le Fonds Tourisme Durable permet d’accéder à des aides 
   locaux) ;
 
   - se former, se labelliser et communiquer sur l’engagement écologique.'
-illustration: images/TEE_ampoule.png
+illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/conditions-eligibilite-financement-fonds-tourisme-durable-25.pdf
 nature de l'aide: financement
@@ -58,25 +58,25 @@ publicodes:
     - questionnaire . objectif prioritaire . est l'écoconception
   est dans la bonne région:
     une de ces conditions:
-    - entreprise . etablissement . region . est Saint-Barthélemy
-    - entreprise . etablissement . region . est Nouvelle-Calédonie
-    - entreprise . etablissement . region . est Centre-Val de Loire
-    - entreprise . etablissement . region . est Bourgogne-Franche-Comté
-    - entreprise . etablissement . region . est Normandie
-    - entreprise . etablissement . region . est Hauts-de-France
-    - entreprise . etablissement . region . est Grand Est
-    - entreprise . etablissement . region . est Pays de la Loire
-    - entreprise . etablissement . region . est Bretagne
-    - entreprise . etablissement . region . est Nouvelle-Aquitaine
-    - entreprise . etablissement . region . est Occitanie
-    - entreprise . etablissement . region . est Auvergne-Rhône-Alpes
-    - entreprise . etablissement . region . est Provence-Alpes-Côte d'Azur
-    - entreprise . etablissement . region . est Corse
-    - entreprise . etablissement . region . est Polynésie française
-    - entreprise . etablissement . region . est Guadeloupe
-    - entreprise . etablissement . region . est Martinique
-    - entreprise . etablissement . region . est Guyane
-    - entreprise . etablissement . region . est La Réunion
-    - entreprise . etablissement . region . est Mayotte
-    - entreprise . etablissement . region . est Île-de-France
-    - entreprise . etablissement . region . est Saint-Martin
+    - entreprise . région = Saint-Barthélemy
+    - entreprise . région = Nouvelle-Calédonie
+    - entreprise . région = Centre-Val de Loire
+    - entreprise . région = Bourgogne-Franche-Comté
+    - entreprise . région = Normandie
+    - entreprise . région = Hauts-de-France
+    - entreprise . région = Grand Est
+    - entreprise . région = Pays de la Loire
+    - entreprise . région = Bretagne
+    - entreprise . région = Nouvelle-Aquitaine
+    - entreprise . région = Occitanie
+    - entreprise . région = Auvergne-Rhône-Alpes
+    - entreprise . région = Provence-Alpes-Côte d'Azur
+    - entreprise . région = Corse
+    - entreprise . région = Polynésie française
+    - entreprise . région = Guadeloupe
+    - entreprise . région = Martinique
+    - entreprise . région = Guyane
+    - entreprise . région = La Réunion
+    - entreprise . région = Mayotte
+    - entreprise . région = Île-de-France
+    - entreprise . région = Saint-Martin

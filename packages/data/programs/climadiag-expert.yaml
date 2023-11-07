@@ -5,7 +5,7 @@ description: Bénéficiez d'un accompagnement d'un expert CCI pour vous aider à
   la vulnérabilité climatique de votre entreprise, prévenir les impacts du dérèglement
   climatique et vous aider à limiter les coûts imprévus de canicule, inondation, sécheresse,
   etc.
-illustration: images/TEE_ampoule.png
+illustration: images/TEE_eolienne.png
 opérateur de contact: CCI
 autres opérateurs:
 - ADEME
@@ -46,4 +46,4 @@ publicodes:
     - questionnaire . objectif prioritaire . est l'écoconception
   est dans la bonne région:
     une de ces conditions:
-    - entreprise . etablissement . region . est Bourgogne-Franche-Comté
+    - entreprise . région = Bourgogne-Franche-Comté

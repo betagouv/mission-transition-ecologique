@@ -72,13 +72,13 @@ publicodes:
     - questionnaire . objectif prioritaire . est la mobilité durable
   est dans la bonne région:
     une de ces conditions:
-    - entreprise . etablissement . region . est Île-de-France
-    - entreprise . etablissement . region . est Normandie
-    - entreprise . etablissement . region . est Grand Est
-    - entreprise . etablissement . region . est Occitanie
-    - entreprise . etablissement . region . est Auvergne-Rhône-Alpes
-    - entreprise . etablissement . region . est Provence-Alpes-Côte d'Azur
-    - entreprise . etablissement . region . est Martinique
+    - entreprise . région = Île-de-France
+    - entreprise . région = Normandie
+    - entreprise . région = Grand Est
+    - entreprise . région = Occitanie
+    - entreprise . région = Auvergne-Rhône-Alpes
+    - entreprise . région = Provence-Alpes-Côte d'Azur
+    - entreprise . région = Martinique
   règles d'éligibilité:
     toutes ces conditions:
     - est dans la bonne région

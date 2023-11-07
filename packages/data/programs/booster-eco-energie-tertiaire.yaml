@@ -19,7 +19,7 @@ description longue: 'Votre entreprise dispose de bâtiments de moins de 1 000 m�
   tertiaire », il impose une réduction progressive de la consommation d’énergie dans
   les bâtiments et parties de bâtiments de 1 000 m², et plus, à usage tertiaire afin
   de lutter contre le changement climatique.'
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/booster-entreprises-eco-energie-tertiaire-reduire-facture-energetique-gagner
 nature de l'aide: financement
@@ -71,7 +71,7 @@ publicodes:
     - questionnaire . objectif prioritaire . est mon impact environnemental
   est dans la bonne région:
     une de ces conditions:
-    - entreprise . etablissement . region . est Bretagne
-    - entreprise . etablissement . region . est Occitanie
-    - entreprise . etablissement . region . est Auvergne-Rhône-Alpes
-    - entreprise . etablissement . region . est Corse
+    - entreprise . région = Bretagne
+    - entreprise . région = Occitanie
+    - entreprise . région = Auvergne-Rhône-Alpes
+    - entreprise . région = Corse

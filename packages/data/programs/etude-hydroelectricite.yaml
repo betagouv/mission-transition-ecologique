@@ -36,7 +36,7 @@ description longue: 'Les aménagements concernés par cette étude sont les suiv
   • l’étude d’avant-projet devra préciser les conditions techniques et économique
   de réalisation de l’installation au regard de l’implantation sur le site avec des
   études de sol, des relevés topographiques précis.'
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Etudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202022.pdf
 nature de l'aide: financement
@@ -71,10 +71,10 @@ publicodes:
     - questionnaire . objectif prioritaire . est ma performance énergétique
   est dans la bonne région:
     une de ces conditions:
-    - entreprise . etablissement . region . est Bourgogne-Franche-Comté
-    - entreprise . etablissement . region . est Nouvelle-Aquitaine
-    - entreprise . etablissement . region . est Auvergne-Rhône-Alpes
-    - entreprise . etablissement . region . est Provence-Alpes-Côte d'Azur
+    - entreprise . région = Bourgogne-Franche-Comté
+    - entreprise . région = Nouvelle-Aquitaine
+    - entreprise . région = Auvergne-Rhône-Alpes
+    - entreprise . région = Provence-Alpes-Côte d'Azur
   règles d'éligibilité:
     toutes ces conditions:
     - est dans la bonne région
