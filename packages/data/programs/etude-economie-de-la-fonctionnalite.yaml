@@ -59,3 +59,27 @@ publicodes:
     - questionnaire . objectif prioritaire . est la gestion des déchets
     - questionnaire . objectif prioritaire . est mon impact environnemental
     - questionnaire . objectif prioritaire . est l'écoconception
+  est dans la bonne région:
+    une de ces conditions:
+    - entreprise . etablissement . region . est Île-de-France
+    - entreprise . etablissement . region . est Centre-Val de Loire
+    - entreprise . etablissement . region . est Bourgogne-Franche-Comté
+    - entreprise . etablissement . region . est Normandie
+    - entreprise . etablissement . region . est Hauts-de-France
+    - entreprise . etablissement . region . est Grand Est
+    - entreprise . etablissement . region . est Bretagne
+    - entreprise . etablissement . region . est Nouvelle-Aquitaine
+    - entreprise . etablissement . region . est Occitanie
+    - entreprise . etablissement . region . est Auvergne-Rhône-Alpes
+    - entreprise . etablissement . region . est Corse
+    - entreprise . etablissement . region . est Saint-Pierre-Et-Miquelon
+    - entreprise . etablissement . region . est Polynésie française
+    - entreprise . etablissement . region . est Guadeloupe
+    - entreprise . etablissement . region . est Martinique
+    - entreprise . etablissement . region . est Guyane
+    - entreprise . etablissement . region . est La Réunion
+    - entreprise . etablissement . region . est Mayotte
+    - entreprise . etablissement . region . est Pays de la Loire
+  règles d'éligibilité:
+    toutes ces conditions:
+    - est dans la bonne région

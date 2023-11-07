@@ -37,7 +37,7 @@ description longue: 'Vous avez mis en place des actions pour optimiser la perfor
 
   L’apport des scénarios d’optimisation d’une utilité ou procédé en terme d’efficacité
   énergétique et/ou de décarbonation'
-illustration: images/TEE_energie_verte.png
+illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/etudes-faisabilite-performance-energetique-decarbonation-dentreprises
 nature de l'aide: financement
@@ -62,6 +62,7 @@ publicodes:
   règles d'éligibilité:
     toutes ces conditions:
     - entreprise . effectif <= 250
+    - est dans la bonne région
   secteur d'activité prioritaire:
     une de ces conditions:
     - entreprise . code NAF niveau 1 . est B
@@ -71,3 +72,29 @@ publicodes:
     - questionnaire . objectif prioritaire . est ma performance énergétique
     - questionnaire . objectif prioritaire . est mon impact environnemental
     - questionnaire . objectif prioritaire . est l'écoconception
+  est dans la bonne région:
+    une de ces conditions:
+    - entreprise . etablissement . region . est Corse
+    - entreprise . etablissement . region . est Wallis et Futuna
+    - entreprise . etablissement . region . est Centre-Val de Loire
+    - entreprise . etablissement . region . est Ile de Clipperton
+    - entreprise . etablissement . region . est Île-de-France
+    - entreprise . etablissement . region . est Bourgogne-Franche-Comté
+    - entreprise . etablissement . region . est Polynésie française
+    - entreprise . etablissement . region . est Saint-Martin
+    - entreprise . etablissement . region . est Normandie
+    - entreprise . etablissement . region . est Provence-Alpes-Côte d'Azur
+    - entreprise . etablissement . region . est Guadeloupe
+    - entreprise . etablissement . region . est Nouvelle-Aquitaine
+    - entreprise . etablissement . region . est Martinique
+    - entreprise . etablissement . region . est Occitanie
+    - entreprise . etablissement . region . est Terres australes et antarctiques françaises
+    - entreprise . etablissement . region . est Nouvelle-Calédonie
+    - entreprise . etablissement . region . est Guyane
+    - entreprise . etablissement . region . est La Réunion
+    - entreprise . etablissement . region . est Mayotte
+    - entreprise . etablissement . region . est Saint-Barthélemy
+    - entreprise . etablissement . region . est Auvergne-Rhône-Alpes
+    - entreprise . etablissement . region . est Saint-Pierre-Et-Miquelon
+    - entreprise . etablissement . region . est Bretagne
+    - entreprise . etablissement . region . est Grand Est

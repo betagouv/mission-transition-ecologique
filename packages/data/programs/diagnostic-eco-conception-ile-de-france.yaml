@@ -38,6 +38,7 @@ publicodes:
   règles d'éligibilité:
     toutes ces conditions:
     - entreprise . effectif <= 499
+    - est dans la bonne région
   secteur d'activité prioritaire:
     une de ces conditions:
     - entreprise . code NAF niveau 1 . est M
@@ -47,3 +48,6 @@ publicodes:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est la gestion des déchets
     - questionnaire . objectif prioritaire . est l'écoconception
+  est dans la bonne région:
+    une de ces conditions:
+    - entreprise . etablissement . region . est Île-de-France

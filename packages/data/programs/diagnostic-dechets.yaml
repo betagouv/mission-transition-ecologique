@@ -3,7 +3,7 @@ promesse: Réduisez et valorisez les déchets de votre entreprise
 description: Ce diagnostic permet d’établir une vision globale de la gestion des déchets
   dans votre entreprise pour optimiser les coûts associés et développer le recyclage
   des déchets
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_ampoule.png
 opérateur de contact: CCI
 url: ''
 nature de l'aide: accompagnement
@@ -29,6 +29,7 @@ publicodes:
     toutes ces conditions:
     - entreprise . effectif >= 1
     - entreprise . effectif <= 499
+    - est dans la bonne région
   secteur d'activité prioritaire:
     une de ces conditions:
     - entreprise . code NAF niveau 1 . est B
@@ -44,3 +45,6 @@ publicodes:
   est dans les objectifs de l'entreprise:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est la gestion des déchets
+  est dans la bonne région:
+    une de ces conditions:
+    - entreprise . etablissement . region . est Provence-Alpes-Côte d'Azur

@@ -4,7 +4,7 @@ promesse: Entreprise industrielle, bénéficiez d'un accompagnement pour apprend
 description: Breizh Fab propose aux industriels de la région Bretagne d’être accompagnés
   pour développer leurs projets et intégrez les enjeux des mutations environnementales
   pour gagner en compétitivité.
-illustration: images/TEE_energie_verte.png
+illustration: images/TEE_ampoule.png
 opérateur de contact: Breizh Fab
 autres opérateurs:
 - ADEME
@@ -37,6 +37,7 @@ publicodes:
     toutes ces conditions:
     - entreprise . effectif >= 6
     - entreprise . effectif <= 249
+    - est dans la bonne région
   secteur d'activité prioritaire:
     une de ces conditions:
     - entreprise . code NAF niveau 1 . est B
@@ -53,3 +54,6 @@ publicodes:
     - questionnaire . objectif prioritaire . est former ou recruter
     - questionnaire . objectif prioritaire . est mon impact environnemental
     - questionnaire . objectif prioritaire . est l'écoconception
+  est dans la bonne région:
+    une de ces conditions:
+    - entreprise . etablissement . region . est Bretagne

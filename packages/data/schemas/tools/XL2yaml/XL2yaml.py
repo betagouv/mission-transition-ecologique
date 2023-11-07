@@ -80,6 +80,17 @@ def printProgramYAML(rawData, colNumbers):
             "toutes ces conditions"
         ].append("est dans les objectifs de l'entreprise")
 
+    reg = pc_regions(rawData, cn)
+    if reg:
+        program["publicodes"]["est dans la bonne région"] = reg
+        if "règles d'éligibilité" not in program["publicodes"]:
+            program["publicodes"]["règles d'éligibilité"] = {
+                "toutes ces conditions": []
+            }
+
+        program["publicodes"]["règles d'éligibilité"]["toutes ces conditions"].append(
+            "est dans la bonne région"
+        )
     # Si pas de condition, on affiche toujours
     if (
         len(program["publicodes"]["afficher le dispositif si"]["toutes ces conditions"])
@@ -249,6 +260,23 @@ def pc_objPrioritaire(rawData, colNumbers):
             f"questionnaire . objectif prioritaire . {objectif}"
             for objectif, keep in zip(objPri.values(), objPriInd)
             if keep
+        ]
+    }
+
+
+def pc_regions(rawData, colNumbers):
+    def get(name):
+        value = rawData[colNumbers[name]]
+        return curate(value)
+
+    regions = csvToList(get("Zones géographiques Régional"))
+
+    if len(regions) == 0:
+        return None
+
+    return {
+        "une de ces conditions": [
+            f"entreprise . etablissement . region . est {region}" for region in regions
         ]
     }
 

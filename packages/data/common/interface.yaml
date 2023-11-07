@@ -35,6 +35,43 @@ entreprise . code NAF niveau 1:
     est T:
     est U:
 
+entreprise . etablissement:
+  avec:
+    region:
+      avec:
+
+        # France métropolitaine
+        est Auvergne-Rhône-Alpes:
+        est Bourgogne-Franche-Comté:
+        est Bretagne:
+        est Centre-Val de Loire:
+        est Corse:
+        est Grand Est:
+        est Hauts-de-France:
+        est Normandie:
+        est Nouvelle-Aquitaine:
+        est Occitanie:
+        est Provence-Alpes-Côte d'Azur:
+        est Pays de la Loire:
+        est Île-de-France:
+
+        # DOM
+        est Guadeloupe:
+        est Guyane:
+        est La Réunion:
+        est Martinique:
+        est Mayotte:
+
+        # Collectivités d'outre-mer
+        est Ile de Clipperton:
+        est Nouvelle-Calédonie:
+        est Polynésie française:
+        est Saint-Barthélemy:
+        est Saint-Martin:
+        est Saint-Pierre-Et-Miquelon:
+        est Terres australes et antarctiques françaises:
+        est Wallis et Futuna:
+
 
 
 questionnaire:
@@ -49,3 +86,5 @@ questionnaire . objectif prioritaire:
     est la gestion des déchets:
     est l'écoconception:
     est former ou recruter:
+
+

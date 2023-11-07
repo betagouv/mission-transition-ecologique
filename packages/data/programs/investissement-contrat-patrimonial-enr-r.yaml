@@ -20,7 +20,7 @@ description longue: 'Le candidat s’engagera sur un nombre d’installations et
   peuvent ne pas être éligibles au Fonds Chaleur, et permet, de plus, de passer par
   une seule candidature pour l’ensemble des phases des projets, de l’étude du potentiel
   au suivi de l’installation.'
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/20220328/contrat-patrimonial-developpement-chaleur-renouvelable-occitanie?cible=79&region=41
 nature de l'aide: financement
@@ -65,3 +65,9 @@ publicodes:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est diminuer ma consommation d'eau
     - questionnaire . objectif prioritaire . est ma performance énergétique
+  est dans la bonne région:
+    une de ces conditions:
+    - entreprise . etablissement . region . est Occitanie
+  règles d'éligibilité:
+    toutes ces conditions:
+    - est dans la bonne région

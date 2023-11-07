@@ -20,7 +20,7 @@ description longue: 'Cette aide s''adresse aux entreprises exploitantes d’unit
 
   • les coûts de leurs installations, les coûts liés aux travaux d''aménagement (génie
   civil, travaux électriques, intervention sur la voirie et réseaux divers).'
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Stations%20bioGNV%20agricole%20et%20territorial%20-%20Cahier%20des%20charges%20.pdf
 nature de l'aide: financement
@@ -50,3 +50,19 @@ publicodes:
     - questionnaire . objectif prioritaire . est la mobilité durable
     - questionnaire . objectif prioritaire . est la gestion des déchets
     - questionnaire . objectif prioritaire . est ma performance énergétique
+  est dans la bonne région:
+    une de ces conditions:
+    - entreprise . etablissement . region . est Île-de-France
+    - entreprise . etablissement . region . est Centre-Val de Loire
+    - entreprise . etablissement . region . est Bourgogne-Franche-Comté
+    - entreprise . etablissement . region . est Normandie
+    - entreprise . etablissement . region . est Hauts-de-France
+    - entreprise . etablissement . region . est Grand Est
+    - entreprise . etablissement . region . est Pays de la Loire
+    - entreprise . etablissement . region . est Nouvelle-Aquitaine
+    - entreprise . etablissement . region . est Occitanie
+    - entreprise . etablissement . region . est Provence-Alpes-Côte d'Azur
+    - entreprise . etablissement . region . est Corse
+  règles d'éligibilité:
+    toutes ces conditions:
+    - est dans la bonne région

@@ -22,7 +22,7 @@ description longue: 'Pour bénéficier de cette aide, votre projet d''investisse
   et à la réduction des déchets accompagnant les investissements.
 
   La réalisation préalable d''une étude de faisablité est une condition d''éligibilité.'
-illustration: images/TEE_energie_verte.png
+illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/RRR%20hors%20emballages%20-%20Investissement%20-%20Conditions%20%C3%A9ligibilit%C3%A9%20financement%20-%202023.pdf
 nature de l'aide: financement
@@ -51,3 +51,32 @@ publicodes:
   est dans les objectifs de l'entreprise:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est la gestion des déchets
+  est dans la bonne région:
+    une de ces conditions:
+    - entreprise . etablissement . region . est Bourgogne-Franche-Comté
+    - entreprise . etablissement . region . est Grand Est
+    - entreprise . etablissement . region . est Pays de la Loire
+    - entreprise . etablissement . region . est Occitanie
+    - entreprise . etablissement . region . est Provence-Alpes-Côte d'Azur
+    - entreprise . etablissement . region . est Corse
+    - entreprise . etablissement . region . est Guadeloupe
+    - entreprise . etablissement . region . est Guyane
+    - entreprise . etablissement . region . est La Réunion
+    - entreprise . etablissement . region . est Mayotte
+    - entreprise . etablissement . region . est Martinique
+    - entreprise . etablissement . region . est Île-de-France
+    - entreprise . etablissement . region . est Centre-Val de Loire
+    - entreprise . etablissement . region . est Hauts-de-France
+    - entreprise . etablissement . region . est Saint-Barthélemy
+    - entreprise . etablissement . region . est Saint-Pierre-Et-Miquelon
+    - entreprise . etablissement . region . est Nouvelle-Aquitaine
+    - entreprise . etablissement . region . est Wallis et Futuna
+    - entreprise . etablissement . region . est Terres australes et antarctiques françaises
+    - entreprise . etablissement . region . est Saint-Martin
+    - entreprise . etablissement . region . est Polynésie française
+    - entreprise . etablissement . region . est Nouvelle-Calédonie
+    - entreprise . etablissement . region . est Ile de Clipperton
+    - entreprise . etablissement . region . est Normandie
+  règles d'éligibilité:
+    toutes ces conditions:
+    - est dans la bonne région

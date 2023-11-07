@@ -31,6 +31,7 @@ publicodes:
     toutes ces conditions:
     - entreprise . effectif >= 20
     - entreprise . effectif <= 499
+    - est dans la bonne région
   secteur d'activité prioritaire:
     une de ces conditions:
     - entreprise . code NAF niveau 1 . est B
@@ -43,3 +44,6 @@ publicodes:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est mon impact environnemental
     - questionnaire . objectif prioritaire . est l'écoconception
+  est dans la bonne région:
+    une de ces conditions:
+    - entreprise . etablissement . region . est Bourgogne-Franche-Comté

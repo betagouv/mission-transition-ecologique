@@ -12,7 +12,7 @@ description longue: "La loi AGEC, fixe comme objectif de réduire le gaspillage 
   \ AGEC interdit la destruction des invendus. En 2021 l’ADEME a publié une étude\
   \ sur les 12 principaux secteurs d’activité révélant qu’en moyenne la part des invendus\
   \ représentent plus de 4 milliards d'euros de valeur marchande."
-illustration: images/TEE_ampoule.png
+illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/etudes-lutte-contre-gaspillage-alimentaire
 nature de l'aide: financement
@@ -45,3 +45,19 @@ publicodes:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est la gestion des déchets
     - questionnaire . objectif prioritaire . est mon impact environnemental
+  est dans la bonne région:
+    une de ces conditions:
+    - entreprise . etablissement . region . est Île-de-France
+    - entreprise . etablissement . region . est Bourgogne-Franche-Comté
+    - entreprise . etablissement . region . est Centre-Val de Loire
+    - entreprise . etablissement . region . est Corse
+    - entreprise . etablissement . region . est Grand Est
+    - entreprise . etablissement . region . est Mayotte
+    - entreprise . etablissement . region . est La Réunion
+    - entreprise . etablissement . region . est Martinique
+    - entreprise . etablissement . region . est Normandie
+    - entreprise . etablissement . region . est Nouvelle-Aquitaine
+    - entreprise . etablissement . region . est Provence-Alpes-Côte d'Azur
+  règles d'éligibilité:
+    toutes ces conditions:
+    - est dans la bonne région

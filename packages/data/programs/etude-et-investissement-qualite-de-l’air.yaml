@@ -26,7 +26,7 @@ description longue: "Les zones concernée sont : Martinique, Ile de France (ense
   \ et/ou professionnels ou tout autre projet amenant des changements de pratiques\
   \ à l’exception d’études de préfiguration d’un Fonds Air Bois et de sa mise en place,\
   \ accompagnées via l’appel à projets dédié."
-illustration: images/TEE_energie_verte.png
+illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/actions-qualite-lair-territoires-contentieux
 nature de l'aide: financement
@@ -70,3 +70,15 @@ publicodes:
   est dans les objectifs de l'entreprise:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est la mobilité durable
+  est dans la bonne région:
+    une de ces conditions:
+    - entreprise . etablissement . region . est Île-de-France
+    - entreprise . etablissement . region . est Normandie
+    - entreprise . etablissement . region . est Grand Est
+    - entreprise . etablissement . region . est Occitanie
+    - entreprise . etablissement . region . est Auvergne-Rhône-Alpes
+    - entreprise . etablissement . region . est Provence-Alpes-Côte d'Azur
+    - entreprise . etablissement . region . est Martinique
+  règles d'éligibilité:
+    toutes ces conditions:
+    - est dans la bonne région

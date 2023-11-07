@@ -44,3 +44,21 @@ publicodes:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est la gestion des déchets
     - questionnaire . objectif prioritaire . est ma performance énergétique
+  est dans la bonne région:
+    une de ces conditions:
+    - entreprise . etablissement . region . est Bourgogne-Franche-Comté
+    - entreprise . etablissement . region . est Hauts-de-France
+    - entreprise . etablissement . region . est Occitanie
+    - entreprise . etablissement . region . est Auvergne-Rhône-Alpes
+    - entreprise . etablissement . region . est Provence-Alpes-Côte d'Azur
+    - entreprise . etablissement . region . est Corse
+    - entreprise . etablissement . region . est Guadeloupe
+    - entreprise . etablissement . region . est Martinique
+    - entreprise . etablissement . region . est Guyane
+    - entreprise . etablissement . region . est La Réunion
+    - entreprise . etablissement . region . est Nouvelle-Aquitaine
+    - entreprise . etablissement . region . est Centre-Val de Loire
+    - entreprise . etablissement . region . est Pays de la Loire
+  règles d'éligibilité:
+    toutes ces conditions:
+    - est dans la bonne région

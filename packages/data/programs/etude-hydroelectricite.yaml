@@ -69,3 +69,12 @@ publicodes:
   est dans les objectifs de l'entreprise:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est ma performance énergétique
+  est dans la bonne région:
+    une de ces conditions:
+    - entreprise . etablissement . region . est Bourgogne-Franche-Comté
+    - entreprise . etablissement . region . est Nouvelle-Aquitaine
+    - entreprise . etablissement . region . est Auvergne-Rhône-Alpes
+    - entreprise . etablissement . region . est Provence-Alpes-Côte d'Azur
+  règles d'éligibilité:
+    toutes ces conditions:
+    - est dans la bonne région
