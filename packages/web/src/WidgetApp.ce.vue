@@ -380,7 +380,7 @@ const setupFromUrl = () => {
   http://localhost:4242/?teeStep=3&teeActiveTrack=track_results&teetrack_track_needs=project_needs:*&teetrack_track_help=user_help:direct&teetrack_track_results=&teeDetail=accelerateur-decarbonation
   */
   nav.setCurrentTrackId(tracks.currentTrackId)
-  nav.updateQueries(tracks.getAllUsedTracksValuesPairs)
+  nav.updateQueries(tracks.getAllUsedTracksValuesPairs, props.disableWidget)
 }
 
 onBeforeMount(() => {
