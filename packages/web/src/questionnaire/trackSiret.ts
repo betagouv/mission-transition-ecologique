@@ -27,6 +27,7 @@ const dataTarget = {
   codeNAF1: '',
   ville: '',
   codePostal: '',
+  region: '',
   structure_sizes: '',
   denomination: '',
   // project_sectors: undefined,
@@ -56,7 +57,9 @@ export const siret: Track = {
       title: { fr: 'SIRET' },
       // label: { fr: 'Renseignez le SIRET de votre entreprise (14 chiffres)' },
       placeholder: { fr: 'Votre numéro SIRET (14 chiffres)' },
-      hint: { fr: `Besoin d'aide pour retrouver votre SIRET ? <a href="https://annuaire-entreprises.data.gouv.fr/" target="_blank">Cliquez ici</a>` },
+      hint: {
+        fr: `Besoin d'aide pour retrouver votre SIRET ? <a href="https://annuaire-entreprises.data.gouv.fr/" target="_blank">Cliquez ici</a>`
+      },
       // for debugging purposes
       // Examples =>
       // defaultInput: '830 141 321 00034',
@@ -96,21 +99,21 @@ export const siret: Track = {
               dataField: 'codeNaf',
               onlyRemap: true
             },
-            // {
-            //   from: DataMappingFrom.RawData,
-            //   id: 'sector',
-            //   path: 'etablissement.uniteLegale.activitePrincipaleUniteLegale',
-            //   dataField: 'project_sectors',
-            //   onlyRemap: true,
-            //   cleaning: [
-            //     {
-            //       operation: 'findFromRefs',
-            //       findInRef: 'nafCodes',
-            //       findFromField: 'NIV5',
-            //       retrieveFromField: 'tags'
-            //     }
-            //   ]
-            // },
+            {
+              from: DataMappingFrom.RawData,
+              id: 'region',
+              path: 'etablissement.adresseEtablissement.codeCommuneEtablissement',
+              dataField: 'codeCommune',
+              onlyRemap: true,
+              cleaning: [
+                {
+                  operation: CleanerOperations.findFromRefs,
+                  findInRef: FindInRefs.ComCodes,
+                  findFromField: 'COM',
+                  retrieveFromField: 'REGION'
+                }
+              ]
+            },
             {
               from: DataMappingFrom.RawData,
               id: 'secteur',
@@ -128,12 +131,12 @@ export const siret: Track = {
                 {
                   operation: CleanerOperations.findFromDict,
                   dict: {
-                    [Sector.Craftsmanship]: { [EntrepriseSector.Craftsmanship] : YesNo.Yes },
-                    [Sector.Industry]: { [EntrepriseSector.Industry] : YesNo.Yes },
-                    [Sector.Tourism]: { [EntrepriseSector.Tourism] : YesNo.Yes },
-                    [Sector.Tertiary]: { [EntrepriseSector.Tertiary] : YesNo.Yes },
-                    [Sector.Agriculture]: { [EntrepriseSector.Agriculture] : YesNo.Yes },
-                    [Sector.Other]: { [EntrepriseSector.Other] : YesNo.Yes },
+                    [Sector.Craftsmanship]: { [EntrepriseSector.Craftsmanship]: YesNo.Yes },
+                    [Sector.Industry]: { [EntrepriseSector.Industry]: YesNo.Yes },
+                    [Sector.Tourism]: { [EntrepriseSector.Tourism]: YesNo.Yes },
+                    [Sector.Tertiary]: { [EntrepriseSector.Tertiary]: YesNo.Yes },
+                    [Sector.Agriculture]: { [EntrepriseSector.Agriculture]: YesNo.Yes },
+                    [Sector.Other]: { [EntrepriseSector.Other]: YesNo.Yes }
                   }
                 },
                 {
@@ -284,7 +287,7 @@ export const siret: Track = {
               icon: 'fr-icon-time-line',
               cleaning: [
                 {
-                  operation: CleanerOperations.stringToDate,
+                  operation: CleanerOperations.stringToDate
                 }
               ]
             }
