@@ -1,4 +1,5 @@
 import Ajv from 'ajv/dist/2020'
+import { ValidateFunction } from 'ajv'
 import programSchema from '../schemas/program-data-schema.json'
 import regionSchema from '../schemas/region-data-schema.json'
 import regionData from '../../web/public/data/references/com_codes.json'
@@ -12,20 +13,13 @@ test('JSON Schema is valid', () => {
 })
 
 test('Data is valid against the JSON schema', () => {
-  const validate = new Ajv({ verbose: true }).compile(programSchema)
+  const validate = compileSchema(programSchema)
 
   const programs = readPrograms()
 
   programs.forEach((p) => {
     const { id: id, ...programWithoutId } = p
-    const valid = validate(programWithoutId)
-
-    if (!valid) {
-      console.log('Data for the program with id', id, 'is not valid')
-      console.log(validate.errors)
-    }
-
-    expect(valid).toBe(true)
+    testDataAgainstSchema(programWithoutId, `Data for the program with id ${id}`, validate)
   })
 })
 
@@ -39,13 +33,23 @@ test('Publicode data is valid when appended with interface', () => {
 })
 
 test('Region data from the passage table is consistent with what is expected in the publicodes interface', () => {
-  const validate = new Ajv({ verbose: true }).compile(regionSchema)
-  const valid = validate(regionData)
+  const validate = compileSchema(regionSchema)
+  testDataAgainstSchema(regionData, 'Region data', validate)
+})
+
+// Test helpers
+
+function compileSchema(schema: any): ValidateFunction {
+  return new Ajv({ verbose: true }).compile(schema)
+}
+
+function testDataAgainstSchema(data: any, dataDesc: string, validate: ValidateFunction) {
+  const valid = validate(data)
 
   if (!valid) {
-    console.log('Region data is not valid')
+    console.log(`${dataDesc} is not valid`)
     console.log(validate.errors)
   }
 
   expect(valid).toBe(true)
-})
+}
