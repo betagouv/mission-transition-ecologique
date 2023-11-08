@@ -21,10 +21,7 @@
     style="background-color: #E8EDFF;">
     <div
       class="fr-container fr-py-20v fr-px-20v">
-      <TeeHomeElectric/>
-      <TeeHomeBuilding/>
-      <TeeHomeMobility/>
-      <TeeHomeWater/>
+      <TeeHomeInfos/>
     </div>
   </div>
 </template>
@@ -38,12 +35,6 @@ import TeeCta from '../home/TeeCta.vue'
 // @ts-ignore
 import TeeHomeSteps from '../home/TeeHomeSteps.vue'
 // @ts-ignore
-import TeeHomeElectric from '../home/TeeHomeElectric.vue'
-// @ts-ignore
-import TeeHomeBuilding from '../home/TeeHomeBuilding.vue'
-// @ts-ignore
-import TeeHomeMobility from '../home/TeeHomeMobility.vue'
-// @ts-ignore
-import TeeHomeWater from '../home/TeeHomeWater.vue'
+import TeeHomeInfos from '../home/TeeHomeInfos.vue'
 
 </script>
