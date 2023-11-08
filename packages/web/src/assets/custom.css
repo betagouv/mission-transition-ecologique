@@ -515,7 +515,7 @@ code {
 }
 
 /*! media md and smaller only */
-@media (max-width: 48em) {
+@media screen and (max-width: 48em) {
   .tee-track-has-image-right {
     order: 2;
   }
@@ -541,7 +541,10 @@ code {
 }
 
 /*! media lg */
-@media (min-width: 62em) {
+@media (min-width: 48em) {
+  .fr-md-hide {
+    display: none !important;
+  }
 }
 
 /*! media xl */
