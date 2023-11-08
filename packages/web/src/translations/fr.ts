@@ -48,7 +48,7 @@ export const frDict = {
     programLoanDuration: 'Durée du prêt'
   },
   programCosts: {
-    cost: "Coût reste à charge",
+    cost: "Coût restant à charge",
     costPrefix: 'Coût',
     aid: 'Montant du financement',
     aidPrefix: "Montant de l'aide",

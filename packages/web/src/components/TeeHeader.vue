@@ -7,7 +7,7 @@
             <div class="fr-header__brand-top">
               <div class="fr-header__logo">
                 <p class="fr-logo">
-                  ADEME
+                  RÉPUBLIQUE<br>FRANÇAISE
                 </p>
               </div>
               <div class="fr-header__operator">
@@ -29,7 +29,7 @@
                 </p>
               </router-link>
               <p class="fr-header__service-tagline">
-                Faire rimer écologie avec économies !
+                Trouvez comment allier écologie avec économies
               </p>
             </div>
           </div>
