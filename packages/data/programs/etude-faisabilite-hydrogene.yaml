@@ -10,7 +10,7 @@ description longue: "• L’étude d’opportunité vise à accompagner les pot
   \ zone industrielle…). \n• L’étude de faisabilité se concentre sur le déploiement\
   \ de l'hydrogène sur un territoire où une demande suffisante aura été préalablement\
   \ identifiée."
-illustration: images/TEE_energie_verte.png
+illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Opportunit%C3%A9%20et%20faisabilit%C3%A9%20d%C3%A9ploiement%20hydrog%C3%A8ne%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202023.pdf
 nature de l'aide: financement
@@ -30,14 +30,14 @@ objectifs:
   décarbonation via l’hydrogène. Une étude d’opportunité peut éventuellement déboucher
   sur une étude de faisabilité.
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  secteur d'activité prioritaire:
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est B
-    - entreprise . code NAF niveau 1 . est C
-  est dans les objectifs de l'entreprise:
+    - code NAF niveau 1 . est B
+    - code NAF niveau 1 . est C
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est ma performance énergétique

@@ -35,23 +35,26 @@ objectifs:
   de versement.
 - Réalisez vos investissements.
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-    - règles d'éligibilité
-  secteur d'activité prioritaire:
+    - est éligible
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+    - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est A
-    - entreprise . code NAF niveau 1 . est C
-    - entreprise . code NAF niveau 1 . est E
-    - entreprise . code NAF niveau 1 . est O
-  est dans les objectifs de l'entreprise:
+    - code NAF niveau 1 . est A
+    - code NAF niveau 1 . est C
+    - code NAF niveau 1 . est E
+    - code NAF niveau 1 . est O
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est la mobilité durable
     - questionnaire . objectif prioritaire . est la gestion des déchets
     - questionnaire . objectif prioritaire . est ma performance énergétique
-  est dans la bonne région:
+  entreprise . est dans une zone géographique éligible:
     une de ces conditions:
     - région = Île-de-France
     - région = Centre-Val de Loire
@@ -64,6 +67,3 @@ publicodes:
     - région = Occitanie
     - région = Provence-Alpes-Côte d'Azur
     - région = Corse
-  règles d'éligibilité:
-    toutes ces conditions:
-    - est dans la bonne région

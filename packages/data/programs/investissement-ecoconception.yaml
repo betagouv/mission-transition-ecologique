@@ -17,7 +17,7 @@ description longue: "L’ADEME soutient les travaux et investissements issus d�
   \ des clients, par les performances d’usage du produit. \n\n- L’investissement peut\
   \ être réalisé dans le cadre d'un projet de développement expérimental relevant\
   \ de la recherche mais il est à soumettre dans l’appel à projets PERFECTO."
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/investissements-decoconception-ameliorer-performance-environnementale?cible=79
 nature de l'aide: financement
@@ -30,16 +30,16 @@ objectifs:
   de financement précisant le montant d’aide maximum, les conditions et les modalités
   de versement.
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  secteur d'activité prioritaire:
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est A
-    - entreprise . code NAF niveau 1 . est C
-    - entreprise . code NAF niveau 1 . est J
-  est dans les objectifs de l'entreprise:
+    - code NAF niveau 1 . est A
+    - code NAF niveau 1 . est C
+    - code NAF niveau 1 . est J
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est la gestion des déchets
     - questionnaire . objectif prioritaire . est diminuer ma consommation d'eau

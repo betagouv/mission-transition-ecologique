@@ -16,7 +16,7 @@ description longue: "En co-financement avec une banque privée, le prêt Vert so
   \ des produits, l’intégration de recyclé, la recyclabilité, la réutilisation ou\
   \ le réemploi) ;\n• favoriser un mix énergétique plus vertueux en intégrant davantage\
   \ d’énergies renouvelables."
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_ampoule.png
 opérateur de contact: Bpifrance
 url: https://www.bpifrance.fr/catalogue-offres/transition-ecologique-et-energetique/pret-vert
 nature de l'aide: prêt
@@ -28,38 +28,41 @@ objectifs:
 - Obtenez un rendez-vous de financement auprès d'un chargé d'affaires Bpifrance
 - Bpifrance étudie votre demande de prêt
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - règles d'éligibilité
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  règles d'éligibilité:
+    - est éligible
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+  entreprise . est éligible:
     toutes ces conditions:
-    - entreprise . effectif >= 1
-    - entreprise . effectif <= 4999
-  secteur d'activité prioritaire:
+    - a un effectif éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+    - effectif >= 1
+    - effectif <= 4999
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est B
-    - entreprise . code NAF niveau 1 . est C
-    - entreprise . code NAF niveau 1 . est D
-    - entreprise . code NAF niveau 1 . est E
-    - entreprise . code NAF niveau 1 . est F
-    - entreprise . code NAF niveau 1 . est G
-    - entreprise . code NAF niveau 1 . est H
-    - entreprise . code NAF niveau 1 . est I
-    - entreprise . code NAF niveau 1 . est J
-    - entreprise . code NAF niveau 1 . est K
-    - entreprise . code NAF niveau 1 . est L
-    - entreprise . code NAF niveau 1 . est M
-    - entreprise . code NAF niveau 1 . est N
-    - entreprise . code NAF niveau 1 . est O
-    - entreprise . code NAF niveau 1 . est P
-    - entreprise . code NAF niveau 1 . est Q
-    - entreprise . code NAF niveau 1 . est R
-    - entreprise . code NAF niveau 1 . est S
-    - entreprise . code NAF niveau 1 . est T
-    - entreprise . code NAF niveau 1 . est U
-  est dans les objectifs de l'entreprise:
+    - code NAF niveau 1 . est B
+    - code NAF niveau 1 . est C
+    - code NAF niveau 1 . est D
+    - code NAF niveau 1 . est E
+    - code NAF niveau 1 . est F
+    - code NAF niveau 1 . est G
+    - code NAF niveau 1 . est H
+    - code NAF niveau 1 . est I
+    - code NAF niveau 1 . est J
+    - code NAF niveau 1 . est K
+    - code NAF niveau 1 . est L
+    - code NAF niveau 1 . est M
+    - code NAF niveau 1 . est N
+    - code NAF niveau 1 . est O
+    - code NAF niveau 1 . est P
+    - code NAF niveau 1 . est Q
+    - code NAF niveau 1 . est R
+    - code NAF niveau 1 . est S
+    - code NAF niveau 1 . est T
+    - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est rénover mon bâtiment
     - questionnaire . objectif prioritaire . est la mobilité durable

@@ -10,7 +10,7 @@ description longue: 'L’éco-conception vise à prendre en compte et réduire l
   fin de vie, etc.
 
   L’éco-conception s’applique aux produits matériels mais également aux services.'
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_energie_verte.png
 opérateur de contact: CCI
 autres opérateurs:
 - ADEME
@@ -30,24 +30,27 @@ objectifs:
   : étude de faisabilité, essai, prototypage, recherche de partenaires techniques,
   etc. (phase 2)'
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - règles d'éligibilité
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  règles d'éligibilité:
+    - est éligible
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+  entreprise . est éligible:
     toutes ces conditions:
-    - entreprise . effectif <= 499
-    - est dans la bonne région
-  secteur d'activité prioritaire:
+    - a un effectif éligible
+    - entreprise . est dans une zone géographique éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+    - effectif <= 499
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est M
-    - entreprise . code NAF niveau 1 . est R
-    - entreprise . code NAF niveau 1 . est S
-  est dans les objectifs de l'entreprise:
+    - code NAF niveau 1 . est M
+    - code NAF niveau 1 . est R
+    - code NAF niveau 1 . est S
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est la gestion des déchets
     - questionnaire . objectif prioritaire . est l'écoconception
-  est dans la bonne région:
+  entreprise . est dans une zone géographique éligible:
     une de ces conditions:
     - région = Île-de-France

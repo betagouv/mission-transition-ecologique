@@ -2,7 +2,7 @@ titre: Visite Énergie
 promesse: Optimisez vos consommations énergétiques
 description: La CMA vous propose un diagnostic énergie pour vous aider à comprendre
   vos factures, agir sur vos postes de consommation et réduire vos coûts jusqu'à 30%
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_energie_verte.png
 opérateur de contact: CMA
 url: https://www.artisanat.fr/magazine/dossiers-artisanat/role-artisanat-dans-transition-ecologique
 nature de l'aide: accompagnement
@@ -18,21 +18,24 @@ objectifs:
 - Engagez un système de suivi de votre consommation d'énergie et bénéficiez de conseils
   sur des financements potentiels.
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - règles d'éligibilité
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  règles d'éligibilité:
+    - est éligible
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+  entreprise . est éligible:
     toutes ces conditions:
-    - entreprise . effectif <= 249
-  secteur d'activité prioritaire:
+    - a un effectif éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+    - effectif <= 249
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est C
-    - entreprise . code NAF niveau 1 . est D
-    - entreprise . code NAF niveau 1 . est F
-    - entreprise . code NAF niveau 1 . est I
-  est dans les objectifs de l'entreprise:
+    - code NAF niveau 1 . est C
+    - code NAF niveau 1 . est D
+    - code NAF niveau 1 . est F
+    - code NAF niveau 1 . est I
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est rénover mon bâtiment
     - questionnaire . objectif prioritaire . est ma performance énergétique

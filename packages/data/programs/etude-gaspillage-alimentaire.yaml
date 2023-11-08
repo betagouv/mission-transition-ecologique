@@ -30,23 +30,26 @@ objectifs:
 - Réalisez votre étude de diagnostic ou de faisabilité.
 - Lancez votre projet (ou non) suite aux résultats de votre étude.
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-    - règles d'éligibilité
-  secteur d'activité prioritaire:
+    - est éligible
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+    - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est A
-    - entreprise . code NAF niveau 1 . est C
-    - entreprise . code NAF niveau 1 . est D
-    - entreprise . code NAF niveau 1 . est G
-    - entreprise . code NAF niveau 1 . est I
-  est dans les objectifs de l'entreprise:
+    - code NAF niveau 1 . est A
+    - code NAF niveau 1 . est C
+    - code NAF niveau 1 . est D
+    - code NAF niveau 1 . est G
+    - code NAF niveau 1 . est I
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est la gestion des déchets
     - questionnaire . objectif prioritaire . est mon impact environnemental
-  est dans la bonne région:
+  entreprise . est dans une zone géographique éligible:
     une de ces conditions:
     - région = Île-de-France
     - région = Bourgogne-Franche-Comté
@@ -59,6 +62,3 @@ publicodes:
     - région = Normandie
     - région = Nouvelle-Aquitaine
     - région = Provence-Alpes-Côte d'Azur
-  règles d'éligibilité:
-    toutes ces conditions:
-    - est dans la bonne région

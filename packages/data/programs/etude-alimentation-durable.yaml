@@ -21,7 +21,7 @@ description longue: "Face à l’augmentation des besoins à l’échelle de la 
   \ \n• Les diagnostics d'état des lieux techniques ou organisationnel d' opérateur(s)\
   \ de la filière alimentaire ou d'un territoire. \n• Les études de faisabilité d'une\
   \ nouvelle démarche, projet ou investissement."
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Etudes%20Alimentation%20Durable%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202022.pdf
 nature de l'aide: financement
@@ -38,18 +38,18 @@ objectifs:
 - Réalisez votre étude. Il peut s'agir d'une étude générale, de diagnostic, d'accompagnement
   ou de faisabilité.
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  secteur d'activité prioritaire:
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est A
-    - entreprise . code NAF niveau 1 . est C
-    - entreprise . code NAF niveau 1 . est D
-    - entreprise . code NAF niveau 1 . est G
-    - entreprise . code NAF niveau 1 . est I
-  est dans les objectifs de l'entreprise:
+    - code NAF niveau 1 . est A
+    - code NAF niveau 1 . est C
+    - code NAF niveau 1 . est D
+    - code NAF niveau 1 . est G
+    - code NAF niveau 1 . est I
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est la gestion des déchets
     - questionnaire . objectif prioritaire . est mon impact environnemental

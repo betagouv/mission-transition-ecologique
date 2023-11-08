@@ -5,7 +5,7 @@ description: Bénéficiez d'une déduction fiscale à l'achat d'un véhicule lou
 description longue: Cet avantage fiscal est valable pour l'achat d'un véhicule lourd
   (de 2,6 tonnes à 16 tonnes) neuf utilisant des énergies propres (gaz naturel, biométhane,
   ED95, électricité, hydrogène...).
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_ampoule.png
 opérateur de contact: DDFIP
 url: https://les-aides.fr/aide/QScvGSwMDA4vGRUgJA/ddfip/deduction-exceptionnelle-vehicules-lourds-utilisant-des-energies-propres.html
 nature de l'aide: avantage fiscal
@@ -16,20 +16,20 @@ objectifs:
 - Bénéficiez d'une déduction exceptionnelle sur votre résultat imposable, de 20% à
   60% de la valeur du véhicule.
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  secteur d'activité prioritaire:
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est A
-    - entreprise . code NAF niveau 1 . est B
-    - entreprise . code NAF niveau 1 . est C
-    - entreprise . code NAF niveau 1 . est D
-    - entreprise . code NAF niveau 1 . est E
-    - entreprise . code NAF niveau 1 . est F
-    - entreprise . code NAF niveau 1 . est G
-    - entreprise . code NAF niveau 1 . est H
-  est dans les objectifs de l'entreprise:
+    - code NAF niveau 1 . est A
+    - code NAF niveau 1 . est B
+    - code NAF niveau 1 . est C
+    - code NAF niveau 1 . est D
+    - code NAF niveau 1 . est E
+    - code NAF niveau 1 . est F
+    - code NAF niveau 1 . est G
+    - code NAF niveau 1 . est H
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est la mobilité durable

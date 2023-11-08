@@ -4,7 +4,7 @@ description: L'ADEME vous aide pour financer un diagnostic énergétique afin d'
   les solutions de réduction des consommations d’énergie de vos serres et la pertinence
   d’un investissement dans une solution de production d’énergie renouvelable. Cette
   démarche peut permettre de réaliser jusqu'à 50 % d'économies sur votre site.
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/diagnostic-energetique-identification-dactions-energetiques-prioritaires?cible=79
 nature de l'aide: financement
@@ -20,18 +20,21 @@ objectifs:
 - Étudiez les sources d'énergie renouvelables à proximité et adaptées aux besoins
   de votre site.
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - règles d'éligibilité
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  règles d'éligibilité:
+    - est éligible
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+  entreprise . est éligible:
     toutes ces conditions:
-    - entreprise . effectif >= 250
-  secteur d'activité prioritaire:
+    - a un effectif éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+    - effectif >= 250
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est A
-  est dans les objectifs de l'entreprise:
+    - code NAF niveau 1 . est A
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est rénover mon bâtiment
     - questionnaire . objectif prioritaire . est ma performance énergétique

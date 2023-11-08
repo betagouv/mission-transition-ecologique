@@ -16,7 +16,7 @@ description longue: 'Les missions d’assistance à maitrise d’ouvrage vous pe
   • de s’assurer de la conformité réglementaire et technique de l’installation ;
 
   • de s’assurer du bon fonctionnement de l’installation et des modalités de maintenance.'
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/assistance-a-maitrise-douvrage-mise-place-dune-chaufferie-biomasse
 nature de l'aide: financement
@@ -33,15 +33,15 @@ objectifs:
   de versement.
 - Démarrez la mission d’assistance à maitrise d’ouvrage.
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  secteur d'activité prioritaire:
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est A
-    - entreprise . code NAF niveau 1 . est C
-    - entreprise . code NAF niveau 1 . est E
-  est dans les objectifs de l'entreprise:
+    - code NAF niveau 1 . est A
+    - code NAF niveau 1 . est C
+    - code NAF niveau 1 . est E
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est ma performance énergétique

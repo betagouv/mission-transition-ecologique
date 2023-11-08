@@ -15,6 +15,27 @@ SKIP_XL_LINES = 5
 OUTPUT_DIR = "../../../programs"
 
 
+Cible = "entreprise . est ciblée"
+
+Eligible = "entreprise . est éligible"
+EligibleNoPrefix = "est éligible"
+
+Objectif = "entreprise . a un objectif ciblé"
+ObjectifNoPrefix = "a un objectif ciblé"
+
+Secteur = "entreprise . est dans un secteur d'activité ciblé"
+SecteurNoPrefix = "est dans un secteur d'activité ciblé"
+
+ZoneGeo = "entreprise . est dans une zone géographique éligible"
+ZoneGeoNoPrefix = "est dans une zone géographique éligible"
+
+Effectif = "entreprise . a un effectif éligible"
+EffectifNoPrefix = "a un effectif éligible"
+
+ALL = "toutes ces conditions"
+ANY = "une de ces conditions"
+
+
 def printProgramYAML(rawData, colNumbers):
     cn = colNumbers
 
@@ -57,49 +78,44 @@ def printProgramYAML(rawData, colNumbers):
         [get(f"🎯 {i} objectif") for i in ["1er", "2ème", "3ème", "4ème", "5ème"]]
     )
 
-    program["publicodes"] = {}
-    program["publicodes"]["afficher le dispositif si"] = {"toutes ces conditions": []}
-    ec = pc_effectifConstraint(get("minEff"), get("maxEff"))
-    if ec:
-        program["publicodes"]["règles d'éligibilité"] = ec
-        program["publicodes"]["afficher le dispositif si"][
-            "toutes ces conditions"
-        ].append("règles d'éligibilité")
+    pc = {}
+    cible = []  # Accumulateur des règles qui font parti du ciblage.
+    eligibilite = []  # Accumulateur des règles qui font parti de l'éligibilité.
+
+    effective_constraint = pc_effectifConstraint(get("minEff"), get("maxEff"))
+    if effective_constraint:
+        pc[Effectif] = effective_constraint
+        eligibilite.append(EffectifNoPrefix)
 
     sc = pc_secteurActivitéConstraint(rawData, cn)
     if sc:
-        program["publicodes"]["secteur d'activité prioritaire"] = sc
-        program["publicodes"]["afficher le dispositif si"][
-            "toutes ces conditions"
-        ].append("secteur d'activité prioritaire")
+        pc[Secteur] = sc
+        cible.append(SecteurNoPrefix)
 
     op = pc_objPrioritaire(rawData, cn)
     if op:
-        program["publicodes"]["est dans les objectifs de l'entreprise"] = op
-        program["publicodes"]["afficher le dispositif si"][
-            "toutes ces conditions"
-        ].append("est dans les objectifs de l'entreprise")
+        pc[Objectif] = op
+        cible.append(ObjectifNoPrefix)
 
     reg = pc_regions(rawData, cn)
     if reg:
-        program["publicodes"]["est dans la bonne région"] = reg
-        if "règles d'éligibilité" not in program["publicodes"]:
-            program["publicodes"]["règles d'éligibilité"] = {
-                "toutes ces conditions": []
-            }
-            program["publicodes"]["afficher le dispositif si"][
-                "toutes ces conditions"
-            ].append("règles d'éligibilité")
+        pc[ZoneGeo] = reg
+        eligibilite.append(ZoneGeo)
 
-        program["publicodes"]["règles d'éligibilité"]["toutes ces conditions"].append(
-            "est dans la bonne région"
-        )
+    if len(eligibilite) != 0:
+        cible = [EligibleNoPrefix] + cible
+
+    program["publicodes"] = {}
     # Si pas de condition, on affiche toujours
-    if (
-        len(program["publicodes"]["afficher le dispositif si"]["toutes ces conditions"])
-        == 0
-    ):
-        program["publicodes"]["afficher le dispositif si"] = "oui"
+    if len(cible) == 0:
+        program["publicodes"][Cible] = "oui"
+    else:
+        program["publicodes"][Cible] = {ALL: cible}
+
+    if len(eligibilite) != 0:
+        program["publicodes"][Eligible] = {ALL: eligibilite}
+
+    program["publicodes"] |= pc
 
     return convertToYaml(program)
 
@@ -186,13 +202,13 @@ def makeObj(objs: list[str]):
 def pc_effectifConstraint(effmin, effmax):
     constraint = []
     if valid(effmin) and effmin != 0:
-        constraint.append(f"entreprise . effectif >= {effmin}")
+        constraint.append(f"effectif >= {effmin}")
     if valid(effmax):
-        constraint.append(f"entreprise . effectif <= {effmax}")
+        constraint.append(f"effectif <= {effmax}")
     if len(constraint) == 0:
         return None
     else:
-        return {"toutes ces conditions": constraint}
+        return {ALL: constraint}
 
 
 def pc_secteurActivitéConstraint(rawData, colNumbers):
@@ -231,7 +247,7 @@ def pc_secteurActivitéConstraint(rawData, colNumbers):
 
     return {
         "une de ces conditions": [
-            f"entreprise . code NAF niveau 1 . est {s[0]}"
+            f"code NAF niveau 1 . est {s[0]}"
             for s, keep in zip(secteurs, secteursInd)
             if keep
         ]
@@ -259,7 +275,7 @@ def pc_objPrioritaire(rawData, colNumbers):
         return None
 
     return {
-        "une de ces conditions": [
+        ANY: [
             f"questionnaire . objectif prioritaire . {objectif}"
             for objectif, keep in zip(objPri.values(), objPriInd)
             if keep
@@ -277,7 +293,7 @@ def pc_regions(rawData, colNumbers):
     if len(regions) == 0:
         return None
 
-    return {"une de ces conditions": [f"région = {region}" for region in regions]}
+    return {ANY: [f"région = {region}" for region in regions]}
 
 
 def thousandSep(value):

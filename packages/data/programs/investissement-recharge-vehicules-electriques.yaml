@@ -33,14 +33,14 @@ objectifs:
   de versement.
 - Réalisez vos investissements.
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  secteur d'activité prioritaire:
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est G
-  est dans les objectifs de l'entreprise:
+    - code NAF niveau 1 . est G
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est la mobilité durable
     - questionnaire . objectif prioritaire . est ma performance énergétique

@@ -4,7 +4,7 @@ promesse: Réalisez un bilan de gaz à effet de serre et réduisez l’empreinte
 description: Bénéficiez des conseils d'un expert pour mesurer les émissions de Gaz
   à effet de serre de votre entreprise, définissez un plan d’actions pour les réduire
   de manière durable, mettez en œuvre vos premières actions et valorisez-les.
-illustration: images/TEE_ampoule.png
+illustration: images/TEE_energie_verte.png
 opérateur de contact: Bpifrance
 autres opérateurs:
 - ADEME
@@ -20,28 +20,31 @@ objectifs:
   entreprise (alignement des équipes, formation, communication, etc.) et avec vos
   principaux clients et fournisseurs.
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - règles d'éligibilité
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  règles d'éligibilité:
+    - est éligible
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+  entreprise . est éligible:
     toutes ces conditions:
-    - entreprise . effectif >= 250
-    - entreprise . effectif <= 499
-  secteur d'activité prioritaire:
+    - a un effectif éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+    - effectif >= 250
+    - effectif <= 499
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est B
-    - entreprise . code NAF niveau 1 . est C
-    - entreprise . code NAF niveau 1 . est D
-    - entreprise . code NAF niveau 1 . est E
-    - entreprise . code NAF niveau 1 . est F
-    - entreprise . code NAF niveau 1 . est G
-    - entreprise . code NAF niveau 1 . est H
-    - entreprise . code NAF niveau 1 . est I
-    - entreprise . code NAF niveau 1 . est L
-    - entreprise . code NAF niveau 1 . est R
-  est dans les objectifs de l'entreprise:
+    - code NAF niveau 1 . est B
+    - code NAF niveau 1 . est C
+    - code NAF niveau 1 . est D
+    - code NAF niveau 1 . est E
+    - code NAF niveau 1 . est F
+    - code NAF niveau 1 . est G
+    - code NAF niveau 1 . est H
+    - code NAF niveau 1 . est I
+    - code NAF niveau 1 . est L
+    - code NAF niveau 1 . est R
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est ma performance énergétique
     - questionnaire . objectif prioritaire . est mon impact environnemental

@@ -3,7 +3,7 @@ promesse: Réalisez des économies durables en réduisant vos déchets et vos pe
   énergie, matière et eau.
 description: Bénéficier d’un état des lieux sur vos flux pour vous aider à faire des
   économies (énergie, eau, matières, déchets)
-illustration: images/TEE_ampoule.png
+illustration: images/TEE_energie_verte.png
 opérateur de contact: CMA
 url: https://www.artisanat.fr/magazine/series-podcasts/tpe-pme-gagnantes-sur-tous-couts
 nature de l'aide: accompagnement
@@ -19,22 +19,25 @@ objectifs:
 - Mettez en oeuvre votre plan d’action et soyez accompagné par un expert sur un an.
 - Evaluez les résultats et les économies financières réalisées.
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - règles d'éligibilité
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  règles d'éligibilité:
+    - est éligible
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+  entreprise . est éligible:
     toutes ces conditions:
-    - entreprise . effectif <= 19
-  secteur d'activité prioritaire:
+    - a un effectif éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+    - effectif <= 19
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est C
-    - entreprise . code NAF niveau 1 . est E
-    - entreprise . code NAF niveau 1 . est F
-    - entreprise . code NAF niveau 1 . est H
-    - entreprise . code NAF niveau 1 . est I
-  est dans les objectifs de l'entreprise:
+    - code NAF niveau 1 . est C
+    - code NAF niveau 1 . est E
+    - code NAF niveau 1 . est F
+    - code NAF niveau 1 . est H
+    - code NAF niveau 1 . est I
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est la gestion des déchets
     - questionnaire . objectif prioritaire . est diminuer ma consommation d'eau

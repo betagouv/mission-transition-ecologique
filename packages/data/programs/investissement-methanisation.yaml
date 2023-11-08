@@ -18,7 +18,7 @@ description longue: 'Les équipements financés sont les suivants :
   l’épuration en biométhane et l’injection dans le réseau public.
 
   La réalisation d''une étude de faisabilité préalable est une condition d''éligibilité.'
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/realisation-dinstallations-methanisation-injection-cogeneration-chaleur
 nature de l'aide: financement
@@ -32,20 +32,23 @@ objectifs:
   de versement.
 - Réalisez vos investissements.
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-    - règles d'éligibilité
-  secteur d'activité prioritaire:
+    - est éligible
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+    - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est A
-    - entreprise . code NAF niveau 1 . est C
-  est dans les objectifs de l'entreprise:
+    - code NAF niveau 1 . est A
+    - code NAF niveau 1 . est C
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est la gestion des déchets
     - questionnaire . objectif prioritaire . est ma performance énergétique
-  est dans la bonne région:
+  entreprise . est dans une zone géographique éligible:
     une de ces conditions:
     - région = Bourgogne-Franche-Comté
     - région = Hauts-de-France
@@ -60,6 +63,3 @@ publicodes:
     - région = Nouvelle-Aquitaine
     - région = Centre-Val de Loire
     - région = Pays de la Loire
-  règles d'éligibilité:
-    toutes ces conditions:
-    - est dans la bonne région

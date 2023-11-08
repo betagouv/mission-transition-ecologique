@@ -12,7 +12,7 @@ description longue: "Quelques critères doivent être respectés pour pouvoir b�
   \ : une alimentation globale d’au minimum 65 % d’Energie Renouvelable et de Récupération\
   \ (EnR&R) est visée pour la distribution de chaleur et 50 % pour la distribution\
   \ de froid."
-illustration: images/TEE_energie_verte.png
+illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/extension-creation-reseaux-chaleur-froid
 nature de l'aide: financement
@@ -26,15 +26,15 @@ objectifs:
   de versement.
 - Réalisez vos investissements.
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  secteur d'activité prioritaire:
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est C
-    - entreprise . code NAF niveau 1 . est D
-    - entreprise . code NAF niveau 1 . est E
-  est dans les objectifs de l'entreprise:
+    - code NAF niveau 1 . est C
+    - code NAF niveau 1 . est D
+    - code NAF niveau 1 . est E
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est ma performance énergétique

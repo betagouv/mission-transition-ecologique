@@ -22,7 +22,7 @@ description longue: 'Pour bénéficier de cette aide, votre projet d''investisse
   et à la réduction des déchets accompagnant les investissements.
 
   La réalisation préalable d''une étude de faisablité est une condition d''éligibilité.'
-illustration: images/TEE_ampoule.png
+illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/RRR%20hors%20emballages%20-%20Investissement%20-%20Conditions%20%C3%A9ligibilit%C3%A9%20financement%20-%202023.pdf
 nature de l'aide: financement
@@ -36,23 +36,26 @@ objectifs:
   de versement.
 - Réalisez vos investissements.
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-    - règles d'éligibilité
-  secteur d'activité prioritaire:
+    - est éligible
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+    - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est B
-    - entreprise . code NAF niveau 1 . est C
-    - entreprise . code NAF niveau 1 . est E
-    - entreprise . code NAF niveau 1 . est F
-    - entreprise . code NAF niveau 1 . est G
-    - entreprise . code NAF niveau 1 . est S
-  est dans les objectifs de l'entreprise:
+    - code NAF niveau 1 . est B
+    - code NAF niveau 1 . est C
+    - code NAF niveau 1 . est E
+    - code NAF niveau 1 . est F
+    - code NAF niveau 1 . est G
+    - code NAF niveau 1 . est S
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est la gestion des déchets
-  est dans la bonne région:
+  entreprise . est dans une zone géographique éligible:
     une de ces conditions:
     - région = Bourgogne-Franche-Comté
     - région = Grand Est
@@ -78,6 +81,3 @@ publicodes:
     - région = Nouvelle-Calédonie
     - région = Ile de Clipperton
     - région = Normandie
-  règles d'éligibilité:
-    toutes ces conditions:
-    - est dans la bonne région

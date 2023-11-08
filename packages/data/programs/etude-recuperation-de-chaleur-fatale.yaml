@@ -13,7 +13,7 @@ description longue: "La chaleur de récupération (ou chaleur fatale) est la cha
   \ et la valorisation de l’énergie fatale gaspillée constitue un objectif essentiel\
   \ pour une utilisation plus rationnelle de l’énergie, conformément aux objectifs\
   \ de la transition énergétique."
-illustration: images/TEE_ampoule.png
+illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/etudes-faisabilite-linstallation-recuperation-chaleur-fatale
 nature de l'aide: financement
@@ -34,19 +34,19 @@ objectifs:
   du site d’implantation, de solutions pour le financement de l’opération et pour
   le montage administratif et juridique.
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  secteur d'activité prioritaire:
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est B
-    - entreprise . code NAF niveau 1 . est C
-    - entreprise . code NAF niveau 1 . est D
-    - entreprise . code NAF niveau 1 . est E
-    - entreprise . code NAF niveau 1 . est H
-    - entreprise . code NAF niveau 1 . est I
-  est dans les objectifs de l'entreprise:
+    - code NAF niveau 1 . est B
+    - code NAF niveau 1 . est C
+    - code NAF niveau 1 . est D
+    - code NAF niveau 1 . est E
+    - code NAF niveau 1 . est H
+    - code NAF niveau 1 . est I
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est ma performance énergétique
     - questionnaire . objectif prioritaire . est l'écoconception

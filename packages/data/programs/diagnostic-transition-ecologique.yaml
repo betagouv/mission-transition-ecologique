@@ -5,7 +5,7 @@ description: 'Réalisez un diagnostic de transition écologique avec votre conse
   CCI. Vous pourrez évoquer ces enjeux à travers le prisme du pilotage de votre activité
   : la gestion de vos locaux, vos consommations d''énergie, la gestion de vos déchets,
   vos achats et vos mobilités.'
-illustration: images/TEE_ampoule.png
+illustration: images/TEE_eolienne.png
 opérateur de contact: CCI
 url: ''
 nature de l'aide: accompagnement
@@ -19,31 +19,34 @@ objectifs:
 - Menez un bouquet d'actions simples ou plus engageantes pour transformer votre entreprise
   et optimiser vos coûts.
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - règles d'éligibilité
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  règles d'éligibilité:
+    - est éligible
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+  entreprise . est éligible:
     toutes ces conditions:
-    - entreprise . effectif <= 249
-  secteur d'activité prioritaire:
+    - a un effectif éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+    - effectif <= 249
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est B
-    - entreprise . code NAF niveau 1 . est C
-    - entreprise . code NAF niveau 1 . est D
-    - entreprise . code NAF niveau 1 . est E
-    - entreprise . code NAF niveau 1 . est F
-    - entreprise . code NAF niveau 1 . est G
-    - entreprise . code NAF niveau 1 . est H
-    - entreprise . code NAF niveau 1 . est I
-    - entreprise . code NAF niveau 1 . est J
-    - entreprise . code NAF niveau 1 . est K
-    - entreprise . code NAF niveau 1 . est L
-    - entreprise . code NAF niveau 1 . est M
-    - entreprise . code NAF niveau 1 . est N
-    - entreprise . code NAF niveau 1 . est Q
-    - entreprise . code NAF niveau 1 . est R
-  est dans les objectifs de l'entreprise:
+    - code NAF niveau 1 . est B
+    - code NAF niveau 1 . est C
+    - code NAF niveau 1 . est D
+    - code NAF niveau 1 . est E
+    - code NAF niveau 1 . est F
+    - code NAF niveau 1 . est G
+    - code NAF niveau 1 . est H
+    - code NAF niveau 1 . est I
+    - code NAF niveau 1 . est J
+    - code NAF niveau 1 . est K
+    - code NAF niveau 1 . est L
+    - code NAF niveau 1 . est M
+    - code NAF niveau 1 . est N
+    - code NAF niveau 1 . est Q
+    - code NAF niveau 1 . est R
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est mon impact environnemental

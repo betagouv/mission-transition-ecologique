@@ -4,7 +4,7 @@ promesse: Rejoignez un réseau de professionnels de la réparation, devenez arti
 description: Les Répar’acteurs référencent les professionnels de la réparation et
   du dépannage partout en France. Rejoignez  le réseau et devenez un ambassadeur de
   l’économie circulaire auprès de vos clients et au sein de votre territoire.
-illustration: images/TEE_ampoule.png
+illustration: images/TEE_eolienne.png
 opérateur de contact: CMA
 url: https://www.artisanat.fr/nous-connaitre/vous-accompagner/reparacteurs
 nature de l'aide: accompagnement
@@ -20,17 +20,20 @@ objectifs:
 - Accédez à la veille d'informations sur l'actualité et aux formations pour développer
   votre entreprise artisanale
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - règles d'éligibilité
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  règles d'éligibilité:
+    - est éligible
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+  entreprise . est éligible:
     toutes ces conditions:
-    - entreprise . effectif <= 249
-  secteur d'activité prioritaire:
+    - a un effectif éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+    - effectif <= 249
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est G
-  est dans les objectifs de l'entreprise:
+    - code NAF niveau 1 . est G
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est la gestion des déchets
