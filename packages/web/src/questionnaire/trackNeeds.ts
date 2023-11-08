@@ -8,7 +8,7 @@ export const needs = {
   callout: {
     header: { fr: 'TPE, PME,' },
     headerStyle: 'color: #6672F8; font-size: 1.7rem; font-weight: bold; margin-bottom: 1.5rem;',
-    title: { fr: 'Trouvez comment faire rimer écologie avec économies' },
+    title: { fr: 'Trouvez comment allier écologie avec économies' },
     titleStyle: 'font-size: 2.8rem;',
     bigTitle: true,
     description: { fr: "Je complète mon profil en moins de 2 minutes, et je découvre comment faire des économies en réduisant mon impact environnemental." },
