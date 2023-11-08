@@ -78,7 +78,6 @@ const evaluateRule = (rules: any, inputData: InputData): Result<boolean | undefi
 
   const narrowedData = narrowInput(inputData, engine)
 
-  console.log(narrowedData)
   engine.setSituation(narrowedData)
 
   const evaluation = engine.evaluate(FILTERING_RULE_NAME)
