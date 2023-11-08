@@ -43,6 +43,10 @@ export const results = {
             value: 'prêt'
           },
           { 
+            label: 'Avantage fiscal',
+            value: 'avantage fiscal'
+          },
+          { 
             label: 'Formation',
             value: 'formation'
           },
