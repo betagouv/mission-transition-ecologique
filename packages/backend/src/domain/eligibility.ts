@@ -33,7 +33,6 @@ export const filterPrograms = (
   programs: ProgramData[],
   inputData: InputData
 ): Result<ProgramData[], Error> => {
-  console.log(inputData)
   const eligibilityResults = programs.map((p) => evaluateRule(p.publicodes, inputData))
 
   for (const e of eligibilityResults) {
