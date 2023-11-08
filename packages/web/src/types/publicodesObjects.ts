@@ -7,11 +7,11 @@ export enum YesNo {
 export enum Entreprise {
   SectorActivity = "entreprise . secteur d'activité . est ",
   CodeNAF = 'entreprise . code NAF niveau 1 . est ',
-  Workforce = 'entreprise . effectif',
+  Workforce = 'entreprise . effectif'
 }
 
 enum questionnaires {
-  priorityObjectives = 'questionnaire . objectif prioritaire . est ',
+  priorityObjectives = 'questionnaire . objectif prioritaire . est '
 }
 
 export enum Sector {
@@ -33,12 +33,12 @@ export enum EntrepriseSector {
 }
 
 export const sectors = {
-  [EntrepriseSector.Craftsmanship] : YesNo.No,
-  [EntrepriseSector.Industry] : YesNo.No,
-  [EntrepriseSector.Tourism] : YesNo.No,
-  [EntrepriseSector.Tertiary] : YesNo.No,
-  [EntrepriseSector.Agriculture] : YesNo.No,
-  [EntrepriseSector.Other] : YesNo.No
+  [EntrepriseSector.Craftsmanship]: YesNo.No,
+  [EntrepriseSector.Industry]: YesNo.No,
+  [EntrepriseSector.Tourism]: YesNo.No,
+  [EntrepriseSector.Tertiary]: YesNo.No,
+  [EntrepriseSector.Agriculture]: YesNo.No,
+  [EntrepriseSector.Other]: YesNo.No
 }
 
 // NAF CODES
@@ -48,29 +48,63 @@ export const NAF1ToVar = (letter: string): string => Entreprise.CodeNAF + letter
 export const NAF1Letters = [...'ABCDEFGHIJKLMNOPQRSTU'] as const
 
 // publicodes variable initialization to "non"
-export const codesNAF1: { [p: string]: YesNo } = Object.fromEntries(NAF1Letters.map((l) => [NAF1ToVar(l), YesNo.No]))
+export const codesNAF1: { [p: string]: YesNo } = Object.fromEntries(
+  NAF1Letters.map((l) => [NAF1ToVar(l), YesNo.No])
+)
 
 export const SectorByNAF = {
-  [EntrepriseSector.Craftsmanship]: ['C', 'E', 'F', 'H', 'I'],
-  [EntrepriseSector.Industry]: ['B', 'C', 'D', 'E', 'F'],
-  [EntrepriseSector.Tourism]: ['A', 'I'],
-  [EntrepriseSector.Tertiary]: ['G','H','I','J','K','L','M','N','O','P','Q','R','S'],
+  [EntrepriseSector.Craftsmanship]: ['C', 'F', 'G'],
+  [EntrepriseSector.Industry]: ['B', 'C', 'D', 'E'],
+  [EntrepriseSector.Tourism]: ['I'],
+  [EntrepriseSector.Tertiary]: [
+    'G',
+    'H',
+    'J',
+    'K',
+    'L',
+    'M',
+    'N',
+    'O',
+    'P',
+    'Q',
+    'R',
+    'S',
+    'T',
+    'U'
+  ],
   [EntrepriseSector.Agriculture]: ['A'],
-  [EntrepriseSector.Other]: ['T', 'U'],
+  [EntrepriseSector.Other]: [
+    'D',
+    'E',
+    'F',
+    'H',
+    'J',
+    'K',
+    'L',
+    'M',
+    'N',
+    'O',
+    'P',
+    'Q',
+    'R',
+    'S',
+    'T',
+    'U'
+  ]
 }
 
 enum Objective {
   EnvironmentalImpact = 'mon impact environnemental',
   EnergyPerformance = 'ma performance énergétique',
-  WaterConsumption = 'diminuer ma consommation d\'eau',
+  WaterConsumption = "diminuer ma consommation d'eau",
   BuildingRenovation = 'rénover mon bâtiment',
   SustainableMobility = 'la mobilité durable',
   WasteManagement = 'la gestion des déchets',
-  EcoDesign = 'l\'écoconception',
+  EcoDesign = "l'écoconception",
   TrainOrRecruit = 'former ou recruter',
   MakeSavings = 'faire des économies',
   DurablyInvest = 'investir durable',
-  UnknownYet = 'je ne sais pas encore',
+  UnknownYet = 'je ne sais pas encore'
 }
 
 export enum Objectives {
@@ -84,7 +118,7 @@ export enum Objectives {
   TrainOrRecruit = questionnaires.priorityObjectives + Objective.TrainOrRecruit,
   MakeSavings = questionnaires.priorityObjectives + Objective.MakeSavings,
   DurablyInvest = questionnaires.priorityObjectives + Objective.DurablyInvest,
-  UnknownYet = questionnaires.priorityObjectives + Objective.UnknownYet,
+  UnknownYet = questionnaires.priorityObjectives + Objective.UnknownYet
 }
 
 export const priorityObjectives = {
@@ -98,5 +132,5 @@ export const priorityObjectives = {
   [Objectives.TrainOrRecruit]: YesNo.No,
   [Objectives.MakeSavings]: YesNo.No,
   [Objectives.DurablyInvest]: YesNo.No,
-  [Objectives.UnknownYet]: YesNo.No,
+  [Objectives.UnknownYet]: YesNo.No
 }
