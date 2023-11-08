@@ -90,14 +90,11 @@
       "description": "Mécanismes publicodes (https://publi.codes/) associés au dispositif. Doit être en langage publicodes valide. Les données nécessaires à l'évaluation des règles (contrat d'interface) sont matérialisés par des clés sans valeurs.",
       "type": "object",
       "properties": {
-        "règles d'éligibilité": {
-          "description": "Règles pour évaluer si une entreprise est éligible ou non au dispositif"
-        },
-        "afficher le dispositif si": {
+        "entreprise . est ciblée": {
           "description": "Mécanisme pour évaluer si un dispositif doit être affiché à un utilisateur ou non. Est souvent plus restrictive que les mécanismes d'éligibilité"
         }
       },
-      "required": ["afficher le dispositif si"]
+      "required": ["entreprise . est ciblée"]
     }
   },
   "oneOf": [

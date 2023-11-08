@@ -12,7 +12,7 @@ import { ensureError } from '../helpers/errors'
  *  @constant
  *  @default
  */
-export const FILTERING_RULE_NAME: string = 'afficher le dispositif si'
+export const FILTERING_RULE_NAME: string = 'entreprise . est ciblée'
 
 type Name = string
 type InputData = Partial<Record<Name, PublicodesExpression>>
