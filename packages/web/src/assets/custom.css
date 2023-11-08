@@ -76,6 +76,12 @@ WARNING :
 .fr-form-block .fr-input {
   background-color: white;
 }
+.tee-router-link {
+  background-image: none !important;
+}
+button.fr-link:hover, .tee-router-link:hover {
+  background-color: transparent !important;
+}
 
 /* GLOBAL */
 .tee-no-hover {

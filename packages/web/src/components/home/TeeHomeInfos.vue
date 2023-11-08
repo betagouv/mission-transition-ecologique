@@ -44,6 +44,15 @@
       <p class="fr-sm-hide">
         {{ c.text }}
       </p>
+      <router-link
+        class="tee-router-link"
+        to="/questionnaire">
+        <button 
+          class="fr-link fr-text--bold fr-link--icon-right fr-icon-arrow-right-line"
+          aria-disabled="false">
+          Je me lance
+        </button>
+      </router-link>
     </div>
   </div>
 </template>
