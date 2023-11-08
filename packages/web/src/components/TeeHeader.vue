@@ -29,7 +29,7 @@
                 </p>
               </router-link>
               <p class="fr-header__service-tagline">
-                Trouvez comment allier écologie avec économies
+                Allier écologie avec économies !
               </p>
             </div>
           </div>
