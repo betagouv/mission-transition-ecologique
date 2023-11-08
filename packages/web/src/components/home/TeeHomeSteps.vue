@@ -1,6 +1,6 @@
 <template>
   <div
-    class="fr-grid-row fr-grid-row-gutters">
+    class="fr-grid-row fr-grid-row--gutters">
     <div
       v-for="c in content"
       :key="`${c.img}-title`"
