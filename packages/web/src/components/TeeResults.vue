@@ -63,7 +63,7 @@
         <TeeResultsFilter
           :filter="filter"
           :debug="debug"
-          @updateFilter="updateLocalFilters"/>
+          @updateFilter="updateFilters"/>
       </div>
     </div>
 
@@ -275,8 +275,8 @@ const countFilteredPrograms = computed(() => {
   return resultsProgsReFiltered.value.length
 })
 
-const updateLocalFilters = (event: FilterSignal) => {
-  // console.log('\nTeeResults > updateLocalFilters > event :', event )
+const updateFilters = (event: FilterSignal) => {
+  // console.log('\nTeeResults > updateFilters > event :', event )
   const val = {
     [event.field]: event.value
   }
