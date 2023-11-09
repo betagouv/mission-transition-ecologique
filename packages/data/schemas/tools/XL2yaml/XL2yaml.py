@@ -3,6 +3,7 @@
 import os
 import random
 import re
+import sys
 from typing import Any
 
 import pylightxl
@@ -48,7 +49,9 @@ def printProgramYAML(rawData, colNumbers):
         program["durée du prêt"] = get("Etalement")
         program[
             "montant du prêt"
-        ] = f'De {thousandSep(get("MontantMin"))} € à {thousandSep(get("MontantMax"))} €'
+        ] = f'De {thousandSep(get("MontantMin aide"))} € à {thousandSep(get("MontantMax aide"))} €'
+    if nat == "avantage fiscal":
+        program["montant de l'avantage fiscal"] = get("💰 Montant de l'aide")
 
     program["objectifs"] = makeObj(
         [get(f"🎯 {i} objectif") for i in ["1er", "2ème", "3ème", "4ème", "5ème"]]
@@ -117,15 +120,16 @@ def forgeID(name):
     name = name.lower()
     name = remove_special_chars(name)
     name = remove_accents(name)
-    name = re.sub(r"[ _]", "-", name)
+    name = re.sub(r"[ _'&]", "-", name)
     name = re.sub(r"-+", "-", name)
     name = re.sub(r"-$", "", name)
+    name = re.sub(r"\"", "", name)
     return name
 
 
-def readXL(path):
-    db = pylightxl.readxl(fn=path, ws=WORKSHEET)
-    return db.ws(WORKSHEET)
+def readXL(path, worksheet):
+    db = pylightxl.readxl(fn=path, ws=worksheet)
+    return db.ws(worksheet)
 
 
 def identifyColNumbers(header: list[Any]):
@@ -155,7 +159,7 @@ def valid(value):
 
 
 def csvToList(input: str) -> list[str]:
-    return [curate(s) for s in input.split(",") if valid(s)]
+    return [curate(s) for s in re.split(",|\|", input) if valid(s)]
 
 
 def makeObj(objs: list[str]):
@@ -258,7 +262,12 @@ def convertToYaml(d: dict):
 
 
 if __name__ == "__main__":
-    input = readXL(INPUT_XL_FILE)
+    if len(sys.argv) > 1:
+        worksheet = sys.argv[1]
+    else:
+        worksheet = WORKSHEET
+
+    input = readXL(INPUT_XL_FILE, worksheet)
     headerRowIndex = SKIP_XL_LINES + 1
     colNumbers = identifyColNumbers(input.row(headerRowIndex))
 

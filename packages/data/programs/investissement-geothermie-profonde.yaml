@@ -1,0 +1,77 @@
+titre: Investissement "géothermie profonde"
+promesse: Financez votre installation de production de chaleur à partir de géothermie
+  profonde
+description: Vous disposez d’une étude pour votre projet d'installation de production
+  de chaleur à partir de géothermie profonde ? Vous souhaitez investir pour le mettre
+  en œuvre ? L’ADEME peut accompagner financièrement la réalisation de votre installation.
+description longue: 'Sont éligibles, toutes les opérations de valorisation thermique
+  de ressources géothermales profondes (profondeur
+
+  supérieure à 200 mètres) :
+
+  • La réalisation d''un doublet de forages (ou autre configuration spécifique (triplet,
+  multi drains, ...) sur un
+
+  aquifère profond avec (ou sans) mise en place d’une pompe à chaleur.
+
+  • La mise en œuvre d''une réinjection en aquifère profond sur une opération existante
+  (exemple des
+
+  opérations de la région aquitaine).
+
+  • La transformation d''un ancien puits pétrolier pour une valorisation thermique
+  de l''eau chaude produite
+
+  avec (ou sans) mise en place d’une pompe à chaleur.
+
+  • La mise en place uniquement d’une ou de plusieurs pompe(s) à chaleur sur un réseau
+  de chaleur
+
+  alimenté par une installation de géothermie profonde déjà existante.
+
+  La réalisation d’une étude préalable et l''adhésion au Fonds de garantie Géothermie
+  sont des conditions d''élibilité.'
+illustration: images/TEE_eolienne.png
+opérateur de contact: ADEME
+url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/installations-production-chaleur-a-partir-geothermie-profonde
+nature de l'aide: financement
+montant du financement: Aide calculée au cas par cas
+objectifs:
+- 'Déposez votre demande d''aide : informations administratives, description du projet,
+  détails techniques et financiers, étude de faisabilité, etc. A ce stade, votre investissement
+  ne doit pas avoir été realisé !'
+- L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat
+  de financement précisant le montant d’aide maximum, les conditions et les modalités
+  de versement.
+- Réalisez vos investissements.
+publicodes:
+  afficher le dispositif si:
+    toutes ces conditions:
+    - secteur d'activité prioritaire
+    - est dans les objectifs de l'entreprise
+  secteur d'activité prioritaire:
+    une de ces conditions:
+    - entreprise . code NAF niveau 1 . est A
+    - entreprise . code NAF niveau 1 . est B
+    - entreprise . code NAF niveau 1 . est C
+    - entreprise . code NAF niveau 1 . est D
+    - entreprise . code NAF niveau 1 . est E
+    - entreprise . code NAF niveau 1 . est F
+    - entreprise . code NAF niveau 1 . est G
+    - entreprise . code NAF niveau 1 . est H
+    - entreprise . code NAF niveau 1 . est I
+    - entreprise . code NAF niveau 1 . est J
+    - entreprise . code NAF niveau 1 . est K
+    - entreprise . code NAF niveau 1 . est L
+    - entreprise . code NAF niveau 1 . est M
+    - entreprise . code NAF niveau 1 . est N
+    - entreprise . code NAF niveau 1 . est O
+    - entreprise . code NAF niveau 1 . est P
+    - entreprise . code NAF niveau 1 . est Q
+    - entreprise . code NAF niveau 1 . est R
+    - entreprise . code NAF niveau 1 . est S
+    - entreprise . code NAF niveau 1 . est T
+    - entreprise . code NAF niveau 1 . est U
+  est dans les objectifs de l'entreprise:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est ma performance énergétique
