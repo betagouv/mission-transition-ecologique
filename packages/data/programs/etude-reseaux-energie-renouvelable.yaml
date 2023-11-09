@@ -1,0 +1,44 @@
+titre: Étude "réseaux énergie renouvelable"
+promesse: Réalisez une étude sur les réseaux de chaleur ou de froid alimentés par
+  des énergies renouvelables et/ou de récupération
+description: 'Vous avez un projet de création ou d’extension de réseaux de chaleur
+  ou de froid entre plusieurs bâtiments alimentés par des énergies renouvelables ou
+  de récupération (EnR&R)?
+
+  L''ADEME vous soutient dans le financement de votre étude.'
+description longue: L’aide aux études et schémas directeurs est conditionnée au recours
+  à un prestataire dont les compétences respectent un référentiel validé par l’ADEME
+  (RGE Etudes avec la ou les qualifications pertinentes pour les productions EnR,
+  complété de la certification « OPQIBI 1319 Etudes du transport de chaleur et de
+  froid » pour la partie « réseau » du projet) ou pouvant justifier de conditions
+  équivalentes.
+illustration: images/TEE_ampoule.png
+opérateur de contact: ADEME
+url: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20Etudes%20en%20faveur%20de%20la%20TE%20g%C3%A9n%C3%A9rique%202023%20-%20V2.pdf
+nature de l'aide: financement
+montant du financement: Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000
+  €
+objectifs:
+- Choisissez le prestataire qui va vous accompagner pour mener votre étude. Les compétences
+  du prestataire doivent respecter un référentiel validé par l’ADEME.
+- 'Déposez votre demande d''aide : informations administratives, description du projet,
+  détails techniques et financiers, etc. A ce stade, votre projet ne doit pas avoir
+  commencé !'
+- L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat
+  de financement précisant le montant d’aide maximum, les conditions et les modalités
+  de versement.
+- Réalisez votre étude sur les réseaux de chaleur ou de froid alimentés par des énergies
+  renouvelables et/ou de récupération.
+publicodes:
+  afficher le dispositif si:
+    toutes ces conditions:
+    - secteur d'activité prioritaire
+    - est dans les objectifs de l'entreprise
+  secteur d'activité prioritaire:
+    une de ces conditions:
+    - entreprise . code NAF niveau 1 . est C
+    - entreprise . code NAF niveau 1 . est D
+    - entreprise . code NAF niveau 1 . est E
+  est dans les objectifs de l'entreprise:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est ma performance énergétique

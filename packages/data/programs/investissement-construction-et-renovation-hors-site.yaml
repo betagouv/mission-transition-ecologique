@@ -1,0 +1,55 @@
+titre: Investissement "construction et rénovation hors site"
+promesse: Développez vos usines, vos ateliers ainsi que vos projets de R&D de construction
+  écologique hors site
+description: Cet appel à projets  destiné aux entreprises de préfabrication ou d’assemblage,
+  vise à soutenir le développement du mode constructif « Hors Site » pour la construction
+  neuve et la rénovation sur tout le territoire français.
+description longue: 'Cet appel à projets à deux objectifs :
+
+  - Le soutien au développement d’usines et d’ateliers de préfabrication ou de lignes
+  de production pouvant permettre des sauts technologiques et s’inscrivant dans un
+  processus de construction hors site.
+
+  - Le soutien aux projets de R&D de construction hors site. Ceux-ci pourront s’appuyer
+  sur des démonstrateurs afin de permettre d’assurer la faisabilité de l’innovation
+  en condition réelle.
+
+
+  Dans cet appel à projet, on retiendra la définition suivante de la construction
+  hors site : « Processus de construction ou de rénovation intégrant la conception,
+  la préfabrication, la logistique, le contrôle qualité, la mise en œuvre sur le chantier
+  et la démontabilité en fin de vie, de sous-ensembles de bâtiments produits en dehors
+  du chantier »
+
+
+  Les projets devront intégrer une ou plusieurs thématiques de la construction ou
+  rénovation hors site parmi les sujets liés à la conception, la préfabrication, la
+  logistique, la mise en œuvre, la démontabilité.
+
+
+  Dernière clôture de l''appel à projets : le 15/01/2024.'
+illustration: images/TEE_eolienne.png
+opérateur de contact: ADEME
+url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/20230119/developpement-construction-renovation-hors-site-crhos?cible=79
+nature de l'aide: financement
+montant du financement: Selon la taille de l'entreprise et la zone géographique
+objectifs:
+- 'Déposez votre demande d''aide : informations administratives, description du projet,
+  détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir
+  commencé !'
+- L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat
+  de financement précisant le montant d’aide maximum, les conditions et les modalités
+  de versement.
+- Réalisez vos investissements.
+publicodes:
+  afficher le dispositif si:
+    toutes ces conditions:
+    - secteur d'activité prioritaire
+    - est dans les objectifs de l'entreprise
+  secteur d'activité prioritaire:
+    une de ces conditions:
+    - entreprise . code NAF niveau 1 . est C
+    - entreprise . code NAF niveau 1 . est F
+  est dans les objectifs de l'entreprise:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est rénover mon bâtiment

@@ -128,6 +128,18 @@
           :description="`${program[`montant du financement`]}`"
         />
       </div>
+
+      <div
+        v-if="program[`montant de l'avantage fiscal`]"
+        :class="columnTiles">
+        <TeeTile
+          class="tee-no-hover"
+          :title="choices.t('programCosts.taxAdvantage')"
+          :image-path="`${choices.publicPath}images/TEE-cout.svg`"
+          :description="`${program[`montant de l'avantage fiscal`]}`"
+        />
+      </div>
+
       <div
         v-if="program[`montant du prêt`]"
         :class="columnTiles">
