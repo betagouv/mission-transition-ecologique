@@ -14,9 +14,9 @@ const seedTrack = ref()
 
 export const tracksStore = defineStore('tracks', () => {
   // console.log('store.tracks > defineStore > tracks : ', tracks)
-  
+
   const trackResultString = 'track_results'
-  
+
   const maxDepth = ref(4)
 
   const usedTracks = shallowRef<UsedTrack[]>([])
@@ -133,7 +133,7 @@ export const tracksStore = defineStore('tracks', () => {
   }
 
   // actions
-  function setMaxDepth(depth: number) { 
+  function setMaxDepth(depth: number) {
     maxDepth.value = depth
   }
 
@@ -172,7 +172,7 @@ export const tracksStore = defineStore('tracks', () => {
     usedTracks.value.push(trackInfos)
   }
 
-  function updateUsedTracks(trackId: string, step: number, next: any, selectedOptions: any[]) {
+  async function updateUsedTracks(trackId: string, step: number, next: any, selectedOptions: any[]) {
     // console.log()
     // console.log('store.tracks > updateUsedTracks > trackId : ', trackId)
     // console.log('store.tracks > updateUsedTracks > step : ', step)
@@ -221,7 +221,7 @@ export const tracksStore = defineStore('tracks', () => {
     usedTracks.value = []
   }
 
-  return { 
+  return {
     maxDepth,
     allTracks,
     tracksStepsArrayDict,

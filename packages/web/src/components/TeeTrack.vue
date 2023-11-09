@@ -34,34 +34,33 @@
       </div>
 
       <div
-        v-if="false" 
+        v-if="false"
         class="fr-col-6">
         <h4>optionsArray (values) :</h4>
         <code><pre>{{ optionsArray.map(o => o.value) }}</pre></code>
       </div>
     </div>
   </div>
-  
-  <!-- selectedOptions.map (values) : <code>{{ selectedOptions.map(i => i.value) }}</code> -->
 
+  <!-- selectedOptions.map (values) : <code>{{ selectedOptions.map(i => i.value) }}</code> -->
   <Transition
     appear
     :name="`${step > 1 ? 'slide-fade' : ''}`"
     mode="out-in">
-    <div 
+    <div
       v-show="!isCompleted"
       :key="`track-${step}-${trackId}`"
       :id="trackId"
       class="fr-grid-row">
-      <div 
+      <div
         :class="`fr-col${track.imageRight ? ' fr-col-md-7 fr-col-lg-7 tee-track-has-image-right' : ''}`">
         <!-- UNCOMPLETED QUESTIONNAIRE -->
         <div
           :class="`fr-grid-row fr-grid-row--gutters ${track.bgColor ? 'fr-p-5v fr-p-sm-8v fr-p-md-20v' : ''}`"
           >
-      
+
           <!-- CALLOUT (TEXT + IMAGE) -->
-          <div 
+          <div
             v-if="track.callout"
             :class="`fr-col-12 ${track.callout.bigTitle ? 'fr-mb-10v fr-mx-0 fr-px-2v' : ''}`"
             >
@@ -70,18 +69,18 @@
               :style="`background-color: ${track.callout.bgColor || 'transparent'}`">
               <div class="tee-track-callout fr-grid-row fr-grid-row--gutters">
                 <!-- CALLOUT IMAGE LEFT -->
-                <div 
+                <div
                   v-if="track.callout.imageLeft"
                   class="fr-col-5 fr-col-sm-hide tee-track-callout-img fr-pl-1v fr-py-0 fr-pr-0"
                   style="align-self: center;">
-                  <img 
+                  <img
                     class="fr-responsive-img"
                     :src="`${choices.publicPath}${track.callout.imageLeft}`"
                     :alt="`image / callout`"
                     />
                 </div>
                 <!-- CALLOUT TEXT -->
-                <div 
+                <div
                   :class="`fr-col ${track.callout.bigTitle ? '' : 'tee-track-callout-texts'}`">
                   <!-- CALLOUT HEADER -->
                   <h2
@@ -104,21 +103,21 @@
                     {{ track.callout.title[choices.lang]}}
                   </h3>
                   <!-- CALLOUT DESCRIPTION -->
-                  <p 
+                  <p
                     v-if="track.callout.description"
                     class="fr-callout__text tee-track-callout-description"
                     :style="`${track.callout.descriptionStyle || ''}`">
                     {{ track.callout.description[choices.lang]}}
                   </p>
                   <!-- CALLOUT HINT -->
-                  <p 
+                  <p
                     v-if="track.callout.hint"
                     class="fr-mt-2v fr-mb-1v tee-track-callout-hint"
                     style="color: var(--text-active-blue-france);">
                     <i>
-                      <span 
+                      <span
                         v-if="track.callout.hintIcon"
-                        :class="track.callout.hintIcon" 
+                        :class="track.callout.hintIcon"
                         aria-hidden="true">
                       </span>
                       {{ track.callout.hint[choices.lang]}}
@@ -126,11 +125,11 @@
                   </p>
                 </div>
                 <!-- CALLOUT IMAGE RIGHT -->
-                <div 
+                <div
                   v-if="track.callout.imageRight"
                   class="fr-col-3"
                   style="align-self: center;">
-                  <img 
+                  <img
                     class="fr-responsive-img"
                     :src="`${choices.publicPath}${track.callout.imageRight}`"
                     :alt="`image / callout`"
@@ -139,7 +138,7 @@
               </div>
             </div>
           </div>
-      
+
           <!-- TRACK LABEL -->
           <div
             v-if="step !== 1"
@@ -150,24 +149,24 @@
               {{ tracks.getTrackLabel(trackId, choices.lang) }}
             </h3>
           </div>
-      
+
           <!-- TRACK INFOS -->
-          <div 
+          <div
             v-if="step !== 1 && track.info"
             :class="`${isTrackResults ? 'fr-col-12 fr-col-offset-md-1' : 'fr-col-12'}`">
             <p class="fr-mb-2v">
-              <span 
-                class="fr-icon-info-fill" 
+              <span
+                class="fr-icon-info-fill"
                 aria-hidden="true"></span>
               {{ track.info[choices.lang] }}
             </p>
           </div>
-      
+
           <!-- TRACK HINT -->
-          <div 
+          <div
             v-if="step !== 1 && track.hint"
             :class="`${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`">
-            <p 
+            <p
               :class="`fr-mb-0`"
               :style="`${isTrackResults ? 'color: #000091;' : ''}`">
               {{ track.hint[choices.lang] }}
@@ -175,7 +174,7 @@
           </div>
 
           <!-- TRACK RESUME -->
-          <div 
+          <div
             v-if="step !== 1 && track.resume"
             :class="`${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`">
             <p class="fr-mb-0">
@@ -189,21 +188,21 @@
             :key="`track-${step}-${trackId}-option-${idx}`"
             :class="`${colsWidth} ${isTrackResults ? 'fr-col-offset-md-1' : ''} tee-track-choice`"
             >
-            
+
             <!-- AS CARDS -->
             <div
               v-if="renderAs === 'cards'"
               style="height: 99%;"
               >
-              <div 
+              <div
                 class="fr-card fr-enlarge-link"
                 @click="updateSelection(option, idx)">
                 <div
                   v-if="option.imageTop"
                   class="fr-card__header">
                   <div class="fr-card__img">
-                    <img 
-                      class="fr-responsive-img" 
+                    <img
+                      class="fr-responsive-img"
                       :src="`${choices.publicPath}${option.imageTop}`"
                       :alt="`image / ${option.label}`"
                       />
@@ -211,13 +210,13 @@
                 </div>
                 <div class="fr-card__body">
                   <div class="fr-card__content">
-                    <p 
+                    <p
                       v-if="option.hintImage"
                       class="fr-card__desc fr-mt-0 fr-mb-2v"
                       style="order: 2;">
-                      <span 
+                      <span
                         v-if="option.hintImageIcon"
-                        :class="option.hintImageIcon" 
+                        :class="option.hintImageIcon"
                         aria-hidden="true">
                       </span>
                       {{ option.hintImage[choices.lang] }}
@@ -228,19 +227,19 @@
                       <!-- </a> -->
                     </h3>
                     <div
-                      v-if="isActiveChoice(option.value)" 
+                      v-if="isActiveChoice(option.value)"
                       class="fr-card__start">
                       <p class="fr-badge fr-badge--info fr-badge--no-icon fr-mb-4v">
                         {{ choices.t('selection.selected') }}
                       </p>
                     </div>
                   </div>
-                  <p 
+                  <p
                     v-if="option.hint"
                     class="fr-card__desc">
-                    <span 
+                    <span
                       v-if="option.hintIcon"
-                      :class="option.hintIcon" 
+                      :class="option.hintIcon"
                       aria-hidden="true">
                     </span>
                     {{ option.hint[choices.lang] }}
@@ -253,23 +252,23 @@
                 </div>
                 <!-- <div class="fr-card__header">
                   <div class="fr-card__img">
-                    <img 
-                      class="fr-responsive-img" 
-                      src="/img/placeholder.16x9.png" 
+                    <img
+                      class="fr-responsive-img"
+                      src="/img/placeholder.16x9.png"
                       alt="[À MODIFIER - vide ou texte alternatif de l’image]">
                   </div>
                 </div> -->
               </div>
             </div>
-            
+
             <!-- AS BUTTONS -->
-            <div 
+            <div
               v-if="renderAs === 'buttons' && !option.hasInput"
               class="fr-div-fixed-height">
               <DsfrButton
                 class="fr-btn-fullwidth fr-btn-fixed-height fr-btn-sm-align-left fr-btn-grey"
                 :style="`outline-color: #929292; ${isActiveChoice(idx) ? 'background-color: #eeeeee' : ''}`"
-                :label="option.label[choices.lang]" 
+                :label="option.label[choices.lang]"
                 :icon="getButtonIcon(idx)"
                 :secondary="!isActiveChoice(idx)"
                 @click="updateSelection(option, idx)"
@@ -277,7 +276,7 @@
             </div>
 
             <!-- AS BUTTON + BUTTON INPUT -->
-            <div 
+            <div
               v-if="renderAs === 'buttons' && option.hasInput"
               class="fr-div-fixed-height">
               <TeeTrackButtonInput
@@ -293,7 +292,7 @@
             </div>
 
             <!-- AS SIMPLE BUTTONS -->
-            <div 
+            <div
               v-if="renderAs === 'simpleButtons'">
               <DsfrButton
                 class="fr-btn-fullwidth fr-btn-align-center"
@@ -303,9 +302,9 @@
                 @click="updateSelection(option, idx); saveSelection()"
               />
             </div>
-      
+
             <!-- AS INPUT -->
-            <div 
+            <div
               v-if="renderAs === 'input'"
               style="height: 100%;">
               <TeeTrackInput
@@ -317,9 +316,9 @@
                 @go-to-next-track="saveSelectionFromSignal($event, idx)"
                 />
             </div>
-      
+
             <!-- AS FORM -->
-            <!-- <div 
+            <!-- <div
               v-show="renderAs === 'form'"
               >
               <TeeForm
@@ -327,9 +326,9 @@
                 :debug="debug"
                 @saveData="updateSelectionFromForm"/>
             </div> -->
-      
+
             <!-- AS RESULT -->
-            <div 
+            <div
               v-if="isTrackResults"
               >
               <TeeResults
@@ -344,11 +343,11 @@
               />
             </div>
           </div>
-      
+
         </div>
-        
+
         <!-- SEND / NEXT BUTTON -->
-        <div 
+        <div
           v-if="!noNeedForNext.includes(renderAs) && !isCompleted && !isTrackResults"
           class="fr-grid-row fr-grid-row--gutters fr-pt-8v"
           style="justify-content: start;">
@@ -365,7 +364,7 @@
             />
           </div>
           <!-- BTN NEXT -->
-          <div 
+          <div
             class="fr-col-6 fr-col-md-5 fr-col-lg-4 fr-col-xl-3">
             <DsfrButton
               class="fr-btn-fullwidth fr-btn-sm-fullwidth"
@@ -373,16 +372,17 @@
               :disabled="!selectedOptions.length"
               icon="ri-arrow-right-line"
               @click="saveSelection"
+              :loading='isLoadingNext'
             />
           </div>
         </div>
       </div>
 
       <!-- TRACK IMAGE RIGHT IF ANY -->
-      <div 
+      <div
         v-if="track.imageRight"
         class="fr-col-12 fr-col-md-5 fr-col-lg-5 tee-track-image-right">
-        <img 
+        <img
           class="fr-responsive-img"
           :src="`${choices.publicPath}${track.imageRight}`"
           :alt="`image / callout`"
@@ -416,6 +416,7 @@ import TeeTrackButtonInput from './TeeTrackButtonInput.vue'
 // import TeeForm from './TeeForm.vue'
 // @ts-ignore
 import TeeResults from './TeeResults.vue'
+import DsfrButton from '@/components/button/DsfrButton.vue'
 
 interface Props {
   step: number,
@@ -458,6 +459,7 @@ const analytics = analyticsStore()
 const selectedOptionsIndices = ref<number[]>([])
 const selectedOptions = ref<any[]>([])
 const needRemove = ref<boolean>(false)
+const isLoadingNext = ref<boolean>(false)
 
 const track: Track | any = tracks.getTrack(props.trackId)
 
@@ -501,7 +503,7 @@ const colsWidth = computed(() => {
       divSizeLarge = customColWidth
       divSize = customColWidth
     } else {
-      // default values hard written 
+      // default values hard written
       divSize = colsOptions[renderAs]
     }
   }
@@ -610,7 +612,7 @@ const getButtonIcon = (index: number) => {
   } else {
     icon = isActive ? 'md-radiobuttonchecked' : 'md-radiobuttonunchecked'
   }
-  return icon 
+  return icon
 }
 
 // watchers
@@ -630,60 +632,64 @@ watch(() => props.isCompleted, ( next ) => {
 
 // functions
 
-const saveSelection = () => {
-  // console.log()
-  // console.log('TeeTrack > updateStore > selectedOptions.value :', selectedOptions.value)
-
-  const optionNext = selectedOptions.value[0].next
-  const nextExceptions = optionNext?.exceptions
-  const defaultNext = track?.next
-  
-  
-  // @ts-ignore
-  let next = !optionNext || allowMultiple ? defaultNext : optionNext
-  
-  // SWITCH NEXT TRACK DEPENDING ON CONDITIONS
-  // NOTE : could be deplaced in store ?
-  // console.log('TeeTrack > updateStore > optionNext :', optionNext)
-  if (nextExceptions) {
-    // console.log('TeeTrack > updateStore > nextExceptions :', nextExceptions)
-    
-    // get used tracks values
-    const trackValues: any[] = tracks.getAllUsedTracksValues
-    // console.log('TeeTrack > updateStore > trackValues :', trackValues)
-
-    // get current selection
+const saveSelection = async () => {
+  try {
+    // console.log()
     // console.log('TeeTrack > updateStore > selectedOptions.value :', selectedOptions.value)
-    const selectionVals = selectedOptions.value.map(item => {
-      return toRaw(item.value)
-    })
-    // console.log('TeeTrack > updateStore > selectionVals :', selectionVals)
+    isLoadingNext.value = true
+    const optionNext = selectedOptions.value[0].next
+    const nextExceptions = optionNext?.exceptions
+    const defaultNext = track?.next
 
-    nextExceptions.forEach((trackRule: NextTrackRule) => {
-      const dataStructure = {}
-      let item = remapItem(dataStructure, trackRule.rules, {}, trackValues, {}, {}, selectionVals, choices.lang)
-      // console.log('TeeTrack > updateStore > item :', item)
-      const bool = CheckNextTrackRules(item, trackRule.rules)
-      // console.log('TeeTrack > updateStore > bool :', bool)
-      next = bool ? trackRule.next : next
-    })
+
+    // @ts-ignore
+    let next = !optionNext || allowMultiple ? defaultNext : optionNext
+
+    // SWITCH NEXT TRACK DEPENDING ON CONDITIONS
+    // NOTE : could be deplaced in store ?
+    // console.log('TeeTrack > updateStore > optionNext :', optionNext)
+    if (nextExceptions) {
+      // console.log('TeeTrack > updateStore > nextExceptions :', nextExceptions)
+
+      // get used tracks values
+      const trackValues: any[] = tracks.getAllUsedTracksValues
+      // console.log('TeeTrack > updateStore > trackValues :', trackValues)
+
+      // get current selection
+      // console.log('TeeTrack > updateStore > selectedOptions.value :', selectedOptions.value)
+      const selectionVals = selectedOptions.value.map(item => {
+        return toRaw(item.value)
+      })
+      // console.log('TeeTrack > updateStore > selectionVals :', selectionVals)
+
+      nextExceptions.forEach((trackRule: NextTrackRule) => {
+        const dataStructure = {}
+        let item = remapItem(dataStructure, trackRule.rules, {}, trackValues, {}, {}, selectionVals, choices.lang)
+        // console.log('TeeTrack > updateStore > item :', item)
+        const bool = CheckNextTrackRules(item, trackRule.rules)
+        // console.log('TeeTrack > updateStore > bool :', bool)
+        next = bool ? trackRule.next : next
+      })
+    }
+
+    // console.log('TeeTrack > updateStore > next :', next)
+
+    await tracks.updateUsedTracks(props.trackId, props.step, next, selectedOptions.value)
+
+    // console.log('TeeTrack > updateStore > needRemove.value :', needRemove.value)
+    if (!needRemove.value) {
+      // console.log('TeeTrack > updateStore > addToUsedTracks...')
+      const canAddTrack = !tracks.trackExistsInUsed(next.default)
+      canAddTrack && tracks.addToUsedTracks(props.trackId, next.default)
+    } else {
+      // console.log('TeeTrack > updateStore > removeFromUsedTracks...')
+      await tracks.removeFurtherUsedTracks(props.trackId)
+    }
+
+    !props.disableWidget && scrollToTop(props.trackElement, props.trackId)
+  } finally {
+    isLoadingNext.value = false
   }
-
-  // console.log('TeeTrack > updateStore > next :', next)
-
-  tracks.updateUsedTracks(props.trackId, props.step, next, selectedOptions.value)
-  
-  // console.log('TeeTrack > updateStore > needRemove.value :', needRemove.value)
-  if (!needRemove.value) {
-    // console.log('TeeTrack > updateStore > addToUsedTracks...')
-    const canAddTrack = !tracks.trackExistsInUsed(next.default)
-    canAddTrack && tracks.addToUsedTracks(props.trackId, next.default)
-  } else {
-    // console.log('TeeTrack > updateStore > removeFromUsedTracks...')
-    tracks.removeFurtherUsedTracks(props.trackId)
-  }
-
-  !props.disableWidget && scrollToTop(props.trackElement, props.trackId)
 }
 
 const backToPreviousTrack = async () => {

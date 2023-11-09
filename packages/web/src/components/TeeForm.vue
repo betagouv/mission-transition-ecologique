@@ -129,6 +129,7 @@
           :disabled="!canSaveFrom"
           icon="ri-arrow-right-line"
           @click="saveFormData()"
+          :loading='isLoading'
         />
       </div>
     </div>
@@ -245,6 +246,7 @@ const requiredFields = ref([])
 const formIsSent = ref<boolean>(false)
 const requestResponses = ref<ReqResp[]>()
 const formFieldTypes = FormFieldTypes
+const isLoading = ref<boolean>(false)
 
 // const program = computed(() => {
 //   return programs.getProgramById(props.dataProps.programId)
@@ -318,38 +320,42 @@ const updateFormData = (ev: string, id: string) => {
 
 // const emit = defineEmits(['saveData'])
 const saveFormData = async () => {
-  // console.log('TeeForm > saveFormData >  props.formOptions :', props.formOptions)
-  // console.log('TeeForm > saveFormData >  props.dataProps :', props.dataProps)
-  // console.log('TeeForm > saveFormData >  formData.value :', formData.value)
+  try {
+    isLoading.value = true
+    // console.log('TeeForm > saveFormData >  props.formOptions :', props.formOptions)
+    // console.log('TeeForm > saveFormData >  props.dataProps :', props.dataProps)
+    // console.log('TeeForm > saveFormData >  formData.value :', formData.value)
 
-  // const usedTracks: UsedTrack[] | any[] = tracks.getAllUsedTracks
-  // console.log('TeeForm > saveFormData >  usedTracks :', usedTracks)
+    // const usedTracks: UsedTrack[] | any[] = tracks.getAllUsedTracks
+    // console.log('TeeForm > saveFormData >  usedTracks :', usedTracks)
 
-  // Launch call backs if any
-  const responses: ReqResp[] = []
-  // loop callbacks (only active ones)
-  const activeCallbacks = toRaw(props.formOptions.callbacks).filter((cb: FormCallback) => !cb.disabled)
-  for (const callback of activeCallbacks) {
-    console.log()
-    // console.log('TeeForm > saveFormData >  callback.action :', callback.action)
-    let resp: ReqResp = {}
-    switch (callback.action) {
-      case 'createContact':
-        resp = await sendApiRequest(callback, toRaw(formData.value), trackValues, props.dataProps, choices.lang)
-        break
-      case 'sendTransactionalEmail':
-        resp = await sendApiRequest(callback, toRaw(formData.value))
-        break
+    // Launch call backs if any
+    const responses: ReqResp[] = []
+    // loop callbacks (only active ones)
+    const activeCallbacks = toRaw(props.formOptions.callbacks).filter((cb: FormCallback) => !cb.disabled)
+    for (const callback of activeCallbacks) {
+      console.log()
+      // console.log('TeeForm > saveFormData >  callback.action :', callback.action)
+      let resp: ReqResp = {}
+      switch (callback.action) {
+        case 'createContact':
+          resp = await sendApiRequest(callback, toRaw(formData.value), trackValues, props.dataProps, choices.lang)
+          break
+        case 'sendTransactionalEmail':
+          resp = await sendApiRequest(callback, toRaw(formData.value))
+          break
+      }
+      responses.push(resp)
+      // console.log('TeeForm > saveFormData >  resp :', resp)
     }
-    responses.push(resp)
-    // console.log('TeeForm > saveFormData >  resp :', resp)
+    requestResponses.value = responses
+    formIsSent.value = true
+
+    // analytics / send event
+    analytics.sendEvent(props.trackId, 'send_form')
+  } finally {
+    isLoading.value = false
   }
-  requestResponses.value = responses
-  formIsSent.value = true
-
-  // analytics / send event
-  analytics.sendEvent(props.trackId, 'send_form')
-
 }
 
 </script>
