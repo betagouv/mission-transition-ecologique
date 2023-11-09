@@ -48,7 +48,7 @@
     <div
       v-if="resultsProgsLen > 1"
       class="fr-mb-4v tee-text-light">
-      {{ resultsProgsReFilteredLen }}
+      {{ countFilteredPrograms }}
       {{ choices.t('results.results') }}
     </div>
 
@@ -69,13 +69,13 @@
 
     <!-- NO RESULTS -->
     <TeeNoResults
-      v-if="!resultsProgsReFilteredLen"
+      v-if="!countFilteredPrograms"
       :image="trackConfig?.noResultsImage"
       :message="trackConfig?.noResultsMessage"
       >
     </TeeNoResults>
     <!-- <div
-      v-if="trackConfig && !resultsProgsReFilteredLen"
+      v-if="trackConfig && !countFilteredPrograms"
       class="fr-grid-row fr-my-20v">
       <div
         class="fr-col fr-col-6 fr-col-offset-3">
@@ -271,7 +271,7 @@ const resultsProgsLen = computed(() => {
   return resultsProgs.length
 })
 
-const resultsProgsReFilteredLen = computed(() => {
+const countFilteredPrograms = computed(() => {
   return resultsProgsReFiltered.value.length
 })
 
