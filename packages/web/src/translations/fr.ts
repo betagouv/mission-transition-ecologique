@@ -53,7 +53,8 @@ export const frDict = {
     aid: 'Montant du financement',
     aidPrefix: "Montant de l'aide",
     loan: 'Montant du prêt',
-    loanRate: 'Taux du prêt'
+    loanRate: 'Taux du prêt',
+    taxAdvantage: 'Avantage fiscal'
   },
   enterprise: {
     select: 'Sélectionnez votre entreprise',
@@ -86,7 +87,7 @@ export const frDict = {
     prêt: {
       the: 'le',
       this: 'ce',
-      of: "du"
+      of: 'du'
     }
   }
 }

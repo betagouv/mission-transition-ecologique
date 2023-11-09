@@ -1,0 +1,43 @@
+titre: Diagnostic Changement climatique
+promesse: Adaptez l'organisation de votre entreprise aux conséquences du changement
+  climatique
+description: Votre CCI vous accompagne dans l'élaboration d'un plan d'adaptation aux
+  phénomènes liés aux conséquences du changement climatique (canicules, sécheresses,
+  innondations,…) et vous permettre de poursuivre votre activité en limitant les impacts
+  économiques et en saisir les éventuelles opportunités.
+illustration: images/TEE_energie_verte.png
+opérateur de contact: CCI
+autres opérateurs:
+- ADEME
+url: ''
+nature de l'aide: accompagnement
+coût de l'accompagnement: Gratuit
+durée de l'accompagnement: 3 jours
+objectifs:
+- Analyser les évènements climatiques passés ayant déjà affecté votre secteur, et
+  les tendances futures sur la base des projections climatiques.
+- Identifier les impacts directs sur vos activités ainsi que des impacts indirects
+  (financiers et sociaux) et leurs évolutions à court, moyen et long terme.
+- 'Mettre en évidence les menaces posées par le changement climatique et les
+
+  opportunités potentiellement pour vos activités, produits et services.'
+- Disposer d’un plan d’adaptation pour les risques climatiques au sein de votre entreprise.
+publicodes:
+  afficher le dispositif si:
+    toutes ces conditions:
+    - règles d'éligibilité
+    - secteur d'activité prioritaire
+    - est dans les objectifs de l'entreprise
+  règles d'éligibilité:
+    toutes ces conditions:
+    - entreprise . effectif <= 249
+  secteur d'activité prioritaire:
+    une de ces conditions:
+    - entreprise . code NAF niveau 1 . est B
+    - entreprise . code NAF niveau 1 . est C
+    - entreprise . code NAF niveau 1 . est D
+    - entreprise . code NAF niveau 1 . est E
+    - entreprise . code NAF niveau 1 . est F
+  est dans les objectifs de l'entreprise:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est mon impact environnemental

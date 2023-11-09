@@ -1,7 +1,7 @@
 <template>
 
   <!-- DEBUGGING -->
-  <div 
+  <div
     v-if="debug"
     class="vue-debug">
     <h5>DEBUG - TeeResults</h5>
@@ -33,7 +33,7 @@
   </h4>
 
   <!-- PROGRAMS AS LIST OF CARDS -->
-  <div 
+  <div
     v-if="resultsProgsLen"
     class="fr-container fr-px-0 fr-pt-6v">
 
@@ -47,15 +47,15 @@
         <div class="fr-card__content">
           <!-- TITLE -->
           <div class="fr-card__start fr-mb-2v">
-            <p 
+            <p
               class="tee-program-title">
               {{ prog.titre }}
             </p>
           </div>
           <!-- CONTENT -->
-          <h2 
+          <h2
             class="fr-card__title tee-program-resume fr-mb-3v">
-            {{ prog.promesse }} 
+            {{ prog.promesse }}
           </h2>
           <!-- DEBUG -->
           <p
@@ -67,10 +67,10 @@
           </p>
           <!-- END -->
           <div class="fr-card__end">
-            <p 
+            <p
               class="fr-mb-0 tee-program-info">
-              <span 
-                class="fr-icon-money-euro-circle-line" 
+              <span
+                class="fr-icon-money-euro-circle-line"
                 aria-hidden="true">
               </span>
               {{ getCostInfos(prog) }}
@@ -82,13 +82,13 @@
         v-if="prog.illustration"
         class="fr-card__header">
         <div class="fr-card__img">
-          <img 
+          <img
             class="fr-responsive-img"
             :src="`${choices.publicPath}${prog.illustration}`"
             :alt="`image / ${prog.titre}`"
             />
-          <!-- L’alternative de l’image (attribut alt) doit toujours être présente, 
-            sa valeur peut être vide (image n’apportant pas de sens supplémentaire au contexte) 
+          <!-- L’alternative de l’image (attribut alt) doit toujours être présente,
+            sa valeur peut être vide (image n’apportant pas de sens supplémentaire au contexte)
             ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
         </div>
         <ul class="fr-badges-group">
@@ -101,7 +101,7 @@
   </div>
 
   <!-- DEBUGGING -->
-  <div 
+  <div
     v-if="debug"
     class="vue-debug">
     <h5>DEBUG - TeeResults</h5>
@@ -198,6 +198,10 @@ const getCostInfos = (program: ProgramData) => {
     case ProgramAidType.loan:
       prefix = 'programCosts.loan'
       text = program['montant du prêt']
+      break
+    case ProgramAidType.tax:
+      prefix = 'programCosts.taxAdvantage'
+      text = program["montant de l'avantage fiscal"]
       break
   }
   // Translate prefix

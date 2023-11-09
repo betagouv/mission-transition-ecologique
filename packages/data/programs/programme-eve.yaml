@@ -1,0 +1,95 @@
+titre: Programme EVE
+promesse: Acteurs du transport et de la logistique, réduisez votre impact énergétique
+  et environnemental
+description: Le programme EVE (Engagements Volontaires pour l’Environnement) accompagne
+  des entreprises dans la réduction de l'impact énergétique et environnemental dans
+  leurs activités de transport et logistique.
+description longue: 'Par ses dispositifs dédiés, le programme apporte les solutions
+  adaptées aux besoins
+
+  de chaque acteur (chargeur, commissionnaire de transport, transporteur de marchandises,
+  transporteur de voyageurs, grossiste).
+
+
+  • FRET21 accompagne les entreprises agissant en qualité
+
+  de donneurs d’ordre pour mieux intégrer l’impact des
+
+  transports dans leur démarche RSE.
+
+  4 axes d’action :
+
+  - Taux de chargement
+
+  - Distance parcourue
+
+  - Moyens de transport
+
+  - Achats responsables
+
+
+  • EVcom donne les outils et l’accompagnement nécessaires
+
+  aux commissionnaires pour agir avec leurs partenaires transport
+
+  en faveur de l’environnement.
+
+  4 axes d’action :
+
+  - Flotte propre
+
+  - Achats transport
+
+  - Collaboration clients
+
+  - Démarche RSE
+
+
+  • Objectif CO2 soutient les transporteurs routiers dans leur démarche de réduction
+
+  d’émissions de GES et de polluants atmosphériques.
+
+  4 axes d’action :
+
+  - Véhicules
+
+  - Carburant
+
+  - Conducteurs
+
+  - Organisation des transports'
+illustration: images/TEE_energie_verte.png
+opérateur de contact: EcoCO2
+autres opérateurs:
+- ADEME
+- Organisations professionnelles
+- CEE
+url: visite
+nature de l'aide: accompagnement
+coût de l'accompagnement: Gratuit
+durée de l'accompagnement: Selon les projets
+objectifs:
+- Intégrez le programme EVE et engagez vous pour l'amélioration de l'environnement
+  dans une démarche volontaire, sur les traces de plus de 3200 entreprises engagées.
+- 'Bénéficiez d''un accompagnement sur-mesure pour votre activité et des dispositifs
+  dédiés : FRET21, EVcom et Objectif CO2'
+- Obtenez un plan d’actions pour réduire vos émissions de Gaz à effet de serre (GES)
+  sur 3 ans.
+- Bénéficiez d'outils opérationnels pour évaluer vos émissions de GES.
+- Valorisez votre performance en faveur de la transition énergétique et écologique
+  en obtenant le trophée du programme EVE, le label "Fret21" ou le label "Objectif
+  CO2".
+publicodes:
+  afficher le dispositif si:
+    toutes ces conditions:
+    - secteur d'activité prioritaire
+    - est dans les objectifs de l'entreprise
+  secteur d'activité prioritaire:
+    une de ces conditions:
+    - entreprise . code NAF niveau 1 . est G
+    - entreprise . code NAF niveau 1 . est H
+  est dans les objectifs de l'entreprise:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est la mobilité durable
+    - questionnaire . objectif prioritaire . est ma performance énergétique
+    - questionnaire . objectif prioritaire . est mon impact environnemental

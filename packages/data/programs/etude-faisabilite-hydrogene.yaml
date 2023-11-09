@@ -1,0 +1,43 @@
+titre: Étude faisabilité "hydrogène"
+promesse: Étudiez votre projet de déploiement de l'hydrogène renouvelable
+description: Vous êtes intéressé par le potentiel de l’hydrogène renouvelable comme
+  solution de substitution aux énergies fossiles pour vos activités industrielles
+  ? L'ADEME vous apporte une aide pour une étude d'opportunité ou de faisabilité,
+  étapes nécessaires avant tout investissement.
+description longue: "• L’étude d’opportunité vise à accompagner les potentiels consommateurs\
+  \ d’hydrogène (mobilité, industrie, stationnaire) dans leur réflexion de décarbonation,\
+  \ collectivement sur l’ensemble d’un territoire (regroupement de collectivités,\
+  \ zone industrielle…). \n• L’étude de faisabilité se concentre sur le déploiement\
+  \ de l'hydrogène sur un territoire où une demande suffisante aura été préalablement\
+  \ identifiée."
+illustration: images/TEE_eolienne.png
+opérateur de contact: ADEME
+url: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Opportunit%C3%A9%20et%20faisabilit%C3%A9%20d%C3%A9ploiement%20hydrog%C3%A8ne%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202023.pdf
+nature de l'aide: financement
+montant du financement: Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000
+  €
+objectifs:
+- Choisissez le prestataire qui va vous accompagner pour mener votre étude d'opportunité
+  ou de faisabilité.
+- 'Déposez votre demande d''aide : informations administratives, description du projet,
+  détails techniques et financiers, etc. A ce stade, votre projet ne doit pas avoir
+  commencé !'
+- L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat
+  de financement précisant le montant d’aide maximum, les conditions et les modalités
+  de versement.
+- Réalisez votre étude.
+- A la fin de l'étude,   vous déterminerez la pertinence de préparer un projet de
+  décarbonation via l’hydrogène. Une étude d’opportunité peut éventuellement déboucher
+  sur une étude de faisabilité.
+publicodes:
+  afficher le dispositif si:
+    toutes ces conditions:
+    - secteur d'activité prioritaire
+    - est dans les objectifs de l'entreprise
+  secteur d'activité prioritaire:
+    une de ces conditions:
+    - entreprise . code NAF niveau 1 . est B
+    - entreprise . code NAF niveau 1 . est C
+  est dans les objectifs de l'entreprise:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est ma performance énergétique

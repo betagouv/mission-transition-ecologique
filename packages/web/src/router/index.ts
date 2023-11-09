@@ -4,17 +4,17 @@ import { createRouter, createWebHistory } from 'vue-router'
 import { tracksStore } from '../stores/tracks'
 import { programsStore } from '../stores/programs'
 
-import TeeHomePage from '../components/pages/TeeHomePage.vue'
+import TeeHomePage from '../pages/TeeHomePage.vue'
 
 import WidgetApp from '../WidgetApp.ce.vue'
-import TeeQuestionnairePage from '../components/pages/TeeQuestionnairePage.vue'
-import TeeCatalogPage from '../components/pages/TeeCatalogPage.vue'
-import TeeProgramPage from '../components/pages/TeeProgramPage.vue'
+import TeeQuestionnairePage from '../pages/TeeQuestionnairePage.vue'
+import TeeCatalogPage from '../pages/TeeCatalogPage.vue'
+import TeeProgramPage from '../pages/TeeProgramPage.vue'
 // import TeeProgramDetail from '../components/TeeProgramDetail.vue'
 
-import TeeLegalPage from '../components/pages/TeeLegalPage.vue'
-import TeeAccessibilityPage from '../components/pages/TeeAccessibilityPage.vue'
-import TeePersonalDataPage from '../components/pages/TeePersonalDataPage.vue'
+import TeeLegalPage from '../pages/TeeLegalPage.vue'
+import TeeAccessibilityPage from '../pages/TeeAccessibilityPage.vue'
+import TeePersonalDataPage from '../pages/TeePersonalDataPage.vue'
 
 
 const resetTrackStore = async (to: any, from: any, next: any) => {
