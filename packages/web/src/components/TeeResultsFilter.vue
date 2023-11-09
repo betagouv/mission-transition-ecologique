@@ -13,8 +13,8 @@
     class="fr-select-group">
     <select
       class="fr-select"
-      :id="filter.field"
-      :name="filter.field"
+      :id="filter.label"
+      :name="filter.label"
       @change="updateLocalFilters">
       <!-- DEFAULT OPTION -->
       <option
