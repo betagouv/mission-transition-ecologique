@@ -9,16 +9,16 @@
       programs.programDetail : <code>{{ programs.programDetail || 'undefined' }}</code>
     </h6> -->
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
-      <div class="fr-col-4">
+      <div class="fr-col-3">
         <h6 class="fr-mb-1v"> trackId : <code>{{ trackId }} </code></h6>
       </div>
       <!-- <div class="fr-col-4">
         <h6 class="fr-mb-1v"> trackConfig : </h6>
           <pre><code>{{ trackConfig }} </code></pre>
       </div> -->
-      <div class="fr-col-8">
-        <h6 class="fr-mb-1v"> activeLocalFilters : </h6>
-          <pre><code>{{ activeLocalFilters }} </code></pre>
+      <div class="fr-col-9">
+        <h6 class="fr-mb-1v"> activeFilters : </h6>
+          <pre><code>{{ activeFilters }} </code></pre>
       </div>
     </div>
   </div>
@@ -202,7 +202,7 @@ const choices = choicesStore()
 const programs = programsStore()
 const analytics = analyticsStore()
 
-const activeLocalFilters = ref<any>({})
+const activeFilters = ref<any>({})
 
 // const defaultImages = [
 //   'images/TEE_ampoule.png',
@@ -230,8 +230,8 @@ const resultsProgsReFiltered = computed(() => {
   const results = resultsProgs.filter((prog: ProgramData) => {
     // console.log('\nTeeResults > resultsProgsReFiltered > prog :', prog )
     const boolArray = [true]
-    for (const fieldKey in activeLocalFilters.value) {
-      const filterVal = activeLocalFilters.value[fieldKey]
+    for (const fieldKey in activeFilters.value) {
+      const filterVal = activeFilters.value[fieldKey]
       const filterConfig = props.trackConfig?.filters?.find((f:any) => f.field === fieldKey)
       const trueIf = filterConfig?.trueIf || '=='
       // console.log(`\nTeeResults > resultsProgsReFiltered > fieldKey: "${fieldKey}" - filterVal: "${filterVal}" - trueIf: "${trueIf}"` )
@@ -280,7 +280,7 @@ const updateLocalFilters = (event: FilterSignal) => {
   const val = {
     [event.field]: event.value
   }
-  activeLocalFilters.value = {...activeLocalFilters.value, ...val }
+  activeFilters.value = {...activeFilters.value, ...val }
 }
 
 const updateDetailResult = (id: string | number) => {
