@@ -22,7 +22,7 @@
 
 <script setup lang="ts">
 
-import { choicesStore } from '../stores/choices'
+import { choicesStore } from '../../stores/choices'
 
 // @ts-ignore
 import type { Translations } from '@/types/index'

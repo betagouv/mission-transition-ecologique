@@ -415,7 +415,7 @@ import TeeTrackButtonInput from './TeeTrackButtonInput.vue'
 // // @ts-ignore
 // import TeeForm from './TeeForm.vue'
 // @ts-ignore
-import TeeResults from './TeeResults.vue'
+import TeeResults from './results/TeeResults.vue'
 
 interface Props {
   step: number,

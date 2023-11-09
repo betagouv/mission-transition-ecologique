@@ -43,7 +43,7 @@
 <script setup lang="ts">
 
 import { ref } from 'vue'
-import { choicesStore } from '../stores/choices'
+import { choicesStore } from '../../stores/choices'
 
 // @ts-ignore
 import type { TrackFilter, FilterEvent } from '@/types/index'

@@ -180,11 +180,11 @@
 <script setup lang="ts">
 
 import { ref, onBeforeMount, computed } from 'vue'
-import { choicesStore } from '../stores/choices'
-import { programsStore } from '../stores/programs'
-import { analyticsStore } from '../stores/analytics'
+import { choicesStore } from '../../stores/choices'
+import { programsStore } from '../../stores/programs'
+import { analyticsStore } from '../../stores/analytics'
 
-import { getFrom, scrollToTop, consolidateAmounts } from '../utils/helpers'
+import { getFrom, scrollToTop, consolidateAmounts } from '../../utils/helpers'
 
 // @ts-ignore
 import TeeResultsFilter from './TeeResultsFilter.vue'
