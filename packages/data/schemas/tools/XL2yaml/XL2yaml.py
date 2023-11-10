@@ -15,22 +15,29 @@ SKIP_XL_LINES = 5
 OUTPUT_DIR = "../../../programs"
 
 
+def remove_prefix(s):
+    return s.split(" . ")[1]
+
+
 Cible = "entreprise . est ciblée"
 
 Eligible = "entreprise . est éligible"
-EligibleNoPrefix = "est éligible"
+EligibleNoPrefix = remove_prefix(Eligible)
 
 Objectif = "entreprise . a un objectif ciblé"
-ObjectifNoPrefix = "a un objectif ciblé"
+ObjectifNoPrefix = remove_prefix(Objectif)
 
 Secteur = "entreprise . est dans un secteur d'activité ciblé"
-SecteurNoPrefix = "est dans un secteur d'activité ciblé"
+SecteurNoPrefix = remove_prefix(Secteur)
 
 ZoneGeo = "entreprise . est dans une zone géographique éligible"
-ZoneGeoNoPrefix = "est dans une zone géographique éligible"
+ZoneGeoNoPrefix = remove_prefix(ZoneGeo)
 
 Effectif = "entreprise . a un effectif éligible"
-EffectifNoPrefix = "a un effectif éligible"
+EffectifNoPrefix = remove_prefix(Effectif)
+
+ModeTransport = "entreprise . utilise un mode de transport ciblé"
+ModeTransportNoPrefix = remove_prefix(ModeTransport)
 
 ALL = "toutes ces conditions"
 ANY = "une de ces conditions"
@@ -101,6 +108,11 @@ def printProgramYAML(rawData, colNumbers):
     if reg:
         pc[ZoneGeo] = reg
         eligibilite.append(ZoneGeo)
+
+    mod = pc_mode_transport(rawData, cn)
+    if mod:
+        pc[ModeTransport] = mod
+        cible.append(ModeTransportNoPrefix)
 
     if len(eligibilite) != 0:
         cible = [EligibleNoPrefix] + cible
@@ -279,6 +291,23 @@ def pc_objPrioritaire(rawData, colNumbers):
             f"questionnaire . objectif prioritaire . {objectif}"
             for objectif, keep in zip(objPri.values(), objPriInd)
             if keep
+        ]
+    }
+
+
+def pc_mode_transport(rawData, colNumbers):
+    def get(name):
+        value = rawData[colNumbers[name]]
+        return curate(value)
+
+    modes = csvToList(get("Mode trajet domicile-travail"))
+
+    if len(modes) == 0:
+        return None
+
+    return {
+        ANY: [
+            f"mode de transport domicile-travail . est {mode.lower()}" for mode in modes
         ]
     }
 

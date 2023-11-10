@@ -20,6 +20,7 @@ publicodes:
     toutes ces conditions:
     - est dans un secteur d'activité ciblé
     - a un objectif ciblé
+    - utilise un mode de transport ciblé
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
     - code NAF niveau 1 . est A
@@ -33,3 +34,7 @@ publicodes:
   entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est la mobilité durable
+  entreprise . utilise un mode de transport ciblé:
+    une de ces conditions:
+    - mode de transport domicile-travail . est voiture
+    - mode de transport domicile-travail . est camion

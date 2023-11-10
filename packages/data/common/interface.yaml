@@ -35,6 +35,16 @@ entreprise . code NAF niveau 1:
     est T:
     est U:
 
+entreprise . mode de transport domicile-travail:
+  avec:
+    est vélo:
+    est bus:
+    est train ou métro:
+    est voiture:
+    est moto:
+    est camion:
+    est autre:
+
 région:
 
 # France métropolitaine
