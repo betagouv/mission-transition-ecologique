@@ -35,15 +35,15 @@ export const filterPrograms = (
 ): Result<ProgramData[], Error> => {
   let filteredPrograms: ProgramData[] = []
 
-  for (const p of programs) {
-    const e = evaluateRule(p.publicodes, inputData)
+  for (const program of programs) {
+    const evaluation = evaluateRule(program.publicodes, inputData)
 
-    if (e.isErr) {
-      return Result.err(e.error)
+    if (evaluation.isErr) {
+      return Result.err(evaluation.error)
     }
 
-    if (shouldKeepProgram(e)) {
-      filteredPrograms.push(p)
+    if (shouldKeepProgram(evaluation)) {
+      filteredPrograms.push(program)
     }
   }
 
