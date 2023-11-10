@@ -7,7 +7,8 @@ export enum YesNo {
 export enum Entreprise {
   SectorActivity = "entreprise . secteur d'activité . est ",
   CodeNAF = 'entreprise . code NAF niveau 1 . est ',
-  Workforce = 'entreprise . effectif'
+  Workforce = 'entreprise . effectif',
+  TransportMode = 'entreprise . mode de transport domicile-travail . est'
 }
 
 enum questionnaires {
@@ -53,6 +54,7 @@ export const codesNAF1: { [p: string]: YesNo } = Object.fromEntries(
 )
 
 export const SectorByNAF = {
+<<<<<<< HEAD
   [EntrepriseSector.Craftsmanship]: ['C', 'F', 'G'],
   [EntrepriseSector.Industry]: ['B', 'C', 'D', 'E'],
   [EntrepriseSector.Tourism]: ['I'],
@@ -133,4 +135,37 @@ export const priorityObjectives = {
   [Objectives.MakeSavings]: YesNo.No,
   [Objectives.DurablyInvest]: YesNo.No,
   [Objectives.UnknownYet]: YesNo.No
+}
+
+enum TransportMode {
+  Bike = 'bike',
+  Bus = 'bus',
+  Car = 'car',
+  Cycle = 'cycle',
+  Motorcycle = 'motorcycle',
+  Other = 'other',
+  Train = 'train',
+  Truck = 'truck'
+}
+
+export enum TransportModes {
+  Bike = Entreprise.TransportMode + TransportMode.Bike,
+  Bus = Entreprise.TransportMode + TransportMode.Bus,
+  Car = Entreprise.TransportMode + TransportMode.Car,
+  Cycle = Entreprise.TransportMode + TransportMode.Cycle,
+  Motorcycle = Entreprise.TransportMode + TransportMode.Motorcycle,
+  Other = Entreprise.TransportMode + TransportMode.Other,
+  Train = Entreprise.TransportMode + TransportMode.Train,
+  Truck = Entreprise.TransportMode + TransportMode.Truck
+}
+
+export const allTransportModes = {
+  [TransportModes.Bike]: YesNo.No,
+  [TransportModes.Bus]: YesNo.No,
+  [TransportModes.Car]: YesNo.No,
+  [TransportModes.Cycle]: YesNo.No,
+  [TransportModes.Motorcycle]: YesNo.No,
+  [TransportModes.Other]: YesNo.No,
+  [TransportModes.Train]: YesNo.No,
+  [TransportModes.Truck]: YesNo.No
 }
