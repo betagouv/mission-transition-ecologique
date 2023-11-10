@@ -256,7 +256,7 @@ Merci d'avance pour votre appel`,
             dataField: 'attributes.OPT_IN'
           },
           // {
-          //   from: DataMappingFrom.usedTracks,
+          //   from: DataMappingFrom.UsedTracks,
           //   id: 'project_needs',
           //   dataField: 'attributes.PROJECT_NEEDS',
           // },
@@ -276,12 +276,12 @@ Merci d'avance pour votre appel`,
             dataField: 'attributes.USER_GOALS'
           },
           // {
-          //   from: DataMappingFrom.usedTracks,
+          //   from: DataMappingFrom.UsedTracks,
           //   id: 'project_status',
           //   dataField: 'attributes.PROJECT_STATUS',
           // },
           // {
-          //   from: DataMappingFrom.usedTracks,
+          //   from: DataMappingFrom.UsedTracks,
           //   id: 'structure_sizes',
           //   dataField: 'attributes.STRUCTURE_SIZE',
           // },
@@ -358,12 +358,12 @@ Merci d'avance pour votre appel`,
       //       dataField: 'sender.email',
       //     },
       //     {
-      //       from: DataMappingFrom.formData,
+      //       from: DataMappingFrom.FormData,
       //       id: 'email',
       //       dataField: 'to.0.email',
       //     },
       //     {
-      //       from: DataMappingFrom.formData,
+      //       from: DataMappingFrom.FormData,
       //       id: 'name',
       //       dataField: 'to.0.name',
       //     },

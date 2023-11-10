@@ -68,11 +68,11 @@
 
         <!-- INPUT GROUP -->
         <DsfrInputGroup
-          v-if="field.type !== formFieldTypes.checkbox">
+          v-if="!isCheckbox(field)">
           <DsfrInput
             :type="field.type"
-            :is-textarea="field.type === formFieldTypes.textarea"
-            :rows="field.type === formFieldTypes.textarea && (field.rows || 4)"
+            :is-textarea="isTextarea(field)"
+            :rows="isTextarea(field) && (field.rows || 4)"
             :model-value="formData[field.id]"
             label-visible
             :required="field.required"
@@ -85,7 +85,7 @@
 
         <!-- CHECKBOXES -->
         <DsfrCheckbox
-          v-if="field.type === formFieldTypes.checkbox"
+          v-if="isCheckbox(field)"
           :model-value="formData[field.id]"
           :name="field.id"
           :required="field.required"
@@ -99,7 +99,7 @@
         </DsfrCheckbox>
 
         <!-- CHECKBOX HINT -->
-        <div v-if="field.type === formFieldTypes.checkbox">
+        <div v-if="isCheckbox(field)">
           <span
             class="fr-hint-text fr-mt-5v"
             v-html="field.hint?.[choices.lang] || ''">
@@ -265,6 +265,14 @@ const capitalizeFirstLetter = (str: string) => {
   return str.charAt(0).toUpperCase() + str.slice(1)
 }
 
+const isCheckbox = (field: FormField) => {
+  return field.type === FormFieldTypes.Checkbox
+}
+
+const isTextarea = (field: FormField) => {
+  return field.type === FormFieldTypes.Textarea
+}
+
 
 onBeforeMount(() => {
   // console.log('TeeForm > onBeforeMount >  props.formOptions :', props.formOptions)
@@ -278,7 +286,7 @@ onBeforeMount(() => {
     // console.log('TeeForm > onBeforeMount >  field :', field)
 
     // set field's key
-    initValues[field.id] = field.type === FormFieldTypes.Checkbox ? false : ''
+    initValues[field.id] = isCheckbox(field) ? false : ''
 
     // @ts-ignore
     if (field.required) { requiredFields.value.push(field.id) }
