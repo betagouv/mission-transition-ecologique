@@ -1,0 +1,45 @@
+titre: Étude "photovoltaïque"
+promesse: Découvrez le potentiel du photovoltaïque pour votre entreprise avec une
+  étude d’opportunité
+description: 'Disposez de tous les éléments indispensables à la prise de décision
+  avant l’installation de panneaux photovoltaïques : montant de l’investissement et
+  aides financières, économies réalisées par la vente de l’électricité et/ou par l’auto-consommation,
+  points de vigilance, temps de retour sur investissement et rentabilité.'
+illustration: images/TEE_ampoule.png
+opérateur de contact: CCI
+autres opérateurs:
+- ADEME
+url: ''
+nature de l'aide: accompagnement
+coût de l'accompagnement: Gratuit
+durée de l'accompagnement: 1/2 à 1 journée
+objectifs:
+- Réaliser une analyse rapide de la consommation de votre site
+- Obtenir une analyse réglementaire ainsi que les points d’attention à prendre en
+  compte (raccordement au réseau, structure de la toiture, étanchéité, charpente,
+  etc.)
+- Pré-chiffrer les travaux, calculer le temps de retour sur investissement et identifier
+  les financements possibles
+publicodes:
+  afficher le dispositif si:
+    toutes ces conditions:
+    - règles d'éligibilité
+    - secteur d'activité prioritaire
+    - est dans les objectifs de l'entreprise
+  règles d'éligibilité:
+    toutes ces conditions:
+    - entreprise . effectif <= 499
+  secteur d'activité prioritaire:
+    une de ces conditions:
+    - entreprise . code NAF niveau 1 . est B
+    - entreprise . code NAF niveau 1 . est C
+    - entreprise . code NAF niveau 1 . est D
+    - entreprise . code NAF niveau 1 . est E
+    - entreprise . code NAF niveau 1 . est F
+    - entreprise . code NAF niveau 1 . est G
+    - entreprise . code NAF niveau 1 . est H
+    - entreprise . code NAF niveau 1 . est I
+  est dans les objectifs de l'entreprise:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est rénover mon bâtiment
+    - questionnaire . objectif prioritaire . est ma performance énergétique

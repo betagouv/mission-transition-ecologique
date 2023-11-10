@@ -1,32 +1,32 @@
-titre: Études ADEME - Photovoltaïque
-promesse: Réalisez une étude de faisabilité pour votre projet d'installation de panneaux
-  solaires photovoltaïques
-description: Vous souhaitez mettre en place une toiture ou ombrière solaire photovoltaïque
-  en autoconsommation individuelle. L'ADEME vous apporte une aide pour une prestation
-  de conseil ou une assistance à maitrise d’ouvrage.
-description longue: Quand la consommation électrique de vos bâtiments, de vos équipements
-  intervient essentiellement de jour, il peut être intéressant pour vous d’étudier
-  la faisabilité de couvrir une partie de cette consommation au moyen d’électricité
-  solaire photovoltaïque. L’ADEME peut accompagner les prestations externes d’études
-  de faisabilité dans l'objectif d'évaluer et d'analyser le potentiel du projet en
-  révélant ses forces et  faiblesses, les perspectives et les menaces qu'il suppose,
-  et les ressources nécessaires pour le mener à bien.
-illustration: images/TEE_ampoule.png
+titre: Investissement "PAC solaire"
+promesse: Financez votre installation de pompe à chaleur solaire
+description: Vous disposez d’une étude de faisabilité pour un projet d'installation
+  de pompe à chaleur solaire et vous souhaitez investir pour le mettre en œuvre ?
+  Cette aide est destinée à subventionner l'achat de ces équipements.
+description longue: 'Les installations éligibles sont les opérations de production
+  d''eau chaude sanitaire à destination des secteurs Tertiaire, Industrie et Agriculture.
+  Sont compris les établissements ayant des usages d''eau chaude sanitaire durant
+  toute l’année : campings utilisés au-delà des seuls mois de juillet et août, piscines
+  à usage collectif, restaurants, cantines d’entreprises, et processus industriels
+
+  consommateurs d''eau chaude. La surface de capteurs solaires thermiques installée
+  doit être comprise entre 25 et 250 m². Le projet doit avoir fait l’objet d’une étude
+  préalable réalisée par un bureau d’étude qualifié RGE
+
+  : prestations intellectuelles ; ou justifiant de compétences équivalentes.'
+illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
-url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/etudes-faisabilite-lautoconsommation-electrique-photovoltaique
+url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/installation-pompes-a-chaleur-solaire-production-deau-chaude
 nature de l'aide: financement
-montant du financement: jusqu'à 70% du coût de l'étude
+montant du financement: Aide forfaitaire de 38 €/Mwh
 objectifs:
-- Choisissez le bureau d'étude énergétique qui va vous accompagner pour mener cette
-  étude de faisabilité.
 - 'Déposez votre demande d''aide : informations administratives, description du projet,
-  détails techniques et financiers, etc. A ce stade, votre projet ne doit pas avoir
-  commencé !'
+  détails techniques et financiers, étude de faisabilité etc. A ce stade, votre recrutement
+  ou votre projet ne doit pas avoir commencé !'
 - L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat
   de financement précisant le montant d’aide maximum, les conditions et les modalités
   de versement.
-- Réalisez votre étude de faisabilité.
-- Lancez votre projet (ou non) suite aux résultats de votre étude
+- Réalisez vos investissements.
 publicodes:
   afficher le dispositif si:
     toutes ces conditions:
@@ -57,5 +57,4 @@ publicodes:
     - entreprise . code NAF niveau 1 . est U
   est dans les objectifs de l'entreprise:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est rénover mon bâtiment
     - questionnaire . objectif prioritaire . est ma performance énergétique

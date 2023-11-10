@@ -1,0 +1,44 @@
+titre: Investissement "centre de tri"
+promesse: Bénéficiez d'un financement pour créer, étendre ou moderniser un centre
+  de tri de déchets
+description: Vous avez un projet de création, extension ou modernisation d’un centre
+  de tri de déchets ?  L'ADEME vous accompagne financièrement dans vos études ou investissements
+  pour servir son objectif de déploiement des infrastructures de tri sur l’ensemble
+  du territoire.
+description longue: "L'ADEME peut accompagner financièrement une aide à la décision\
+  \ (étude) ou une aide à l'investissement. \n\nDes aides à la décision sont attribuées\
+  \ dans le but d’accompagner les porteurs de projets afin de bien cerner le contexte\
+  \ dans lequel s’inscrit le projet d’une part, et de le dimensionner selon les besoins\
+  \ du territoire.\nLes aides sont attribuées pour réaliser :\n• une étude de faisabilité\
+  \ préalable à l’investissement dans une installation de tri / valorisation des déchets\
+  \ d’activité économique et des encombrants ou d’une déchèterie pour professionnels;\n\
+  • une étude territoriale pour les centres de tri emballages ménagers ;\nDes modèles\
+  \ de cahier des charges sont disponibles sur le site de d’ADEME.\n\n\nLes aides\
+  \ à l’investissement concernent : \n• les centres de tri des déchets d’activité\
+  \ économique non dangereux (hors emballages ménagers) \n• les centres de tri emballages\
+  \ ménagers (pour DROM-COM et Corse) \n• les centres de préparation CSR (DROM – COM\
+  \ et Corse uniquement)\n• les déchèteries pour professionnels"
+illustration: images/TEE_ampoule.png
+opérateur de contact: ADEME
+url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/creation-extension-modernisation-dun-centre-tri-dechets-valorisation-matiere?cible=79
+nature de l'aide: financement
+montant du financement: Selon le type de projet
+objectifs:
+- 'Déposez votre demande d''aide : informations administratives, description du projet,
+  détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir
+  commencé !'
+- L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat
+  de financement précisant le montant d’aide maximum, les conditions et les modalités
+  de versement.
+- Réalisez vos investissements.
+publicodes:
+  afficher le dispositif si:
+    toutes ces conditions:
+    - secteur d'activité prioritaire
+    - est dans les objectifs de l'entreprise
+  secteur d'activité prioritaire:
+    une de ces conditions:
+    - entreprise . code NAF niveau 1 . est E
+  est dans les objectifs de l'entreprise:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est la gestion des déchets

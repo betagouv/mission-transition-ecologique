@@ -128,6 +128,7 @@
           :label="choices.t('send')"
           :disabled="!canSaveFrom"
           icon="ri-arrow-right-line"
+          icon-right
           @click="saveFormData()"
         />
       </div>

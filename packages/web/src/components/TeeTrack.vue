@@ -371,6 +371,7 @@
               :label="choices.t('next')"
               :disabled="!selectedOptions.length"
               icon="ri-arrow-right-line"
+              icon-right
               @click="saveSelection"
             />
           </div>

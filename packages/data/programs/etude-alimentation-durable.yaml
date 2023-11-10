@@ -1,0 +1,55 @@
+titre: Étude "alimentation durable"
+promesse: Réalisez une étude autour de l'alimentation durable
+description: Vous souhaitez engager une transition alimentaire sur votre territoire
+  ou dans votre entreprise ? L’ADEME soutient le financement d'études pour réduire
+  les impacts environnementaux des produits et pratiques alimentaires.
+description longue: "Face à l’augmentation des besoins à l’échelle de la planète,\
+  \ l’alimentation durable s’impose comme un défi collectif à relever et comme une\
+  \ voie d’avenir pour nos filières alimentaires.\n\nL'ADEME soutient les études autour\
+  \ de l'alimentation durable comportant une dimension environnementale forte, à savoir\
+  \ : \n• contribuer à une chaîne alimentaire durable : mise à disposition des consommateurs\
+  \ des aliments à faible impact environnemental (bio, local, de saison…), écoconception\
+  \ sur l’ensemble de la filière alimentaire (soutien à l’agroécologie, développement\
+  \ de plateforme logistique, réduction des emballages…) ;\n• faire évoluer les pratiques\
+  \ alimentaires : achats responsables en circuits de proximité, affichage environnemental\
+  \ des produits, respect de la saisonnalité des produits, rééquilibrage des régimes\
+  \ alimentaires (intégration des légumineuses et diminution des protéines d’origine\
+  \ animale) ;\n\nD'autres fonds ADEME sont disponibles pour financer les études concernant\
+  \ la lutte contre le gaspillage alimentaire et la gestion des biodéchets. \n\nPlusieurs\
+  \ types d'études peuvent être financées par ce financement : \n• Les études générales\
+  \ visant à acquérir ou approfondir les connaissances sur les systèmes alimentaires,\
+  \ \n• Les diagnostics d'état des lieux techniques ou organisationnel d' opérateur(s)\
+  \ de la filière alimentaire ou d'un territoire. \n• Les études de faisabilité d'une\
+  \ nouvelle démarche, projet ou investissement."
+illustration: images/TEE_energie_verte.png
+opérateur de contact: ADEME
+url: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Etudes%20Alimentation%20Durable%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202022.pdf
+nature de l'aide: financement
+montant du financement: Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000
+  €
+objectifs:
+- Choisissez le prestataire qui va vous accompagner pour mener cette étude.
+- 'Déposez votre demande d''aide : informations administratives, description du projet,
+  détails techniques et financiers, etc. A ce stade, votre projet ne doit pas avoir
+  commencé !'
+- L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat
+  de financement précisant le montant d’aide maximum, les conditions et les modalités
+  de versement.
+- Réalisez votre étude. Il peut s'agir d'une étude générale, de diagnostic, d'accompagnement
+  ou de faisabilité.
+publicodes:
+  afficher le dispositif si:
+    toutes ces conditions:
+    - secteur d'activité prioritaire
+    - est dans les objectifs de l'entreprise
+  secteur d'activité prioritaire:
+    une de ces conditions:
+    - entreprise . code NAF niveau 1 . est A
+    - entreprise . code NAF niveau 1 . est C
+    - entreprise . code NAF niveau 1 . est D
+    - entreprise . code NAF niveau 1 . est G
+    - entreprise . code NAF niveau 1 . est I
+  est dans les objectifs de l'entreprise:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est la gestion des déchets
+    - questionnaire . objectif prioritaire . est mon impact environnemental
