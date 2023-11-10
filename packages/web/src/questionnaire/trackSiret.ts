@@ -27,7 +27,7 @@ const dataTarget = {
   codeNAF1: '',
   ville: '',
   codePostal: '',
-  région: '',
+  région: null,
   structure_sizes: '',
   denomination: '',
   // project_sectors: undefined,
