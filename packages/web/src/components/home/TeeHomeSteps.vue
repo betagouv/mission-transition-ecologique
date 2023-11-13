@@ -40,22 +40,17 @@ const content = [
   {
     title: 'Je renseigne mon profil avec mon SIRET',
     img: '/images/home/1.svg',
-    text: "pour obtenir en quelques clics des résultats personnalisés \
-          éligible dans votre secteur d’activité et géographique."
+    text: "pour obtenir en quelques clics des résultats correspondant à mon secteur d’activité et secteur géographique"
   },
   {
     title: 'Je réponds à quelques questions par thématique',
     img: '/images/home/2.svg',
-    text: " En fonction de vos objectifs et des enjeux de votre entreprise : \
-          bâtiment, mobilité, déchets, eau, énergie..."
+    text: "En fonction de vos objectifs et des enjeux de votre entreprise : bâtiment, mobilité, déchets, eau, énergie..."
   },
   {
-    title: "J’accède aux dispositifs de soutien pour mon entreprise",
+    title: "J’accède aux aides dont mon entreprise peut bénéficier",
     img: '/images/home/3.svg',
-    text: " Des propositions d’accompagnements et aides financières pour \
-          financer vos projets issues \
-          de l’ensemble des partenaires :\
-          ADEME, BPI, CCI et CMA !"
+    text: "Des propositions d’accompagnements et de financements issues de l’ensemble des partenaires : ADEME, Bpifrance, CCI, CMA, etc."
   }
 ]
 
