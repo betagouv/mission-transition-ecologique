@@ -91,8 +91,7 @@ export const router = createRouter({
       ]
     },
     { 
-      path: '/catalogue',
-      // name: 'catalog', 
+      path: '/annuaire',
       component: TeeCatalogPage,
       beforeEnter: [
         resetDetailProgram,
@@ -102,7 +101,7 @@ export const router = createRouter({
       children: [
         {
           path: '',
-          name: 'catalogue', 
+          name: 'catalog', 
           component: WidgetApp,
           props: {
             seed: 'track_results',

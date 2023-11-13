@@ -17,7 +17,7 @@
                   <img 
                     class="fr-responsive-img"
                     style="width:3.5rem;"
-                    src="@public/images/logos/mission-transition-logo.png"
+                    src="@public/images/logos/mission-transition-logo-alone.png"
                     alt="Transition Ecologique des Entreprises" />
                   <!-- L’alternative de l’image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l’image -->
                 </router-link>
@@ -58,17 +58,10 @@
                   </router-link>
                 </li>
                 <li>
-                  <!-- <router-link 
-                    class="fr-btn"
-                    :to="{
-                      name: 'catalog'
-                    }">
-                    Catalogue des aides
-                  </router-link> -->
                   <button 
                     class="fr-btn"
-                    @click="pushTo('catalogue')">
-                    Catalogue des aides
+                    @click="pushTo('catalog')">
+                    Annuaire
                   </button>
                 </li>
               </ul>

@@ -121,7 +121,7 @@ button.fr-link:hover, .tee-router-link:hover {
 
 @media (min-width: 48em) {
 .tee-track-callout-texts {
-  max-width: 50%;
+  max-width: 90%;
   }
 }
 

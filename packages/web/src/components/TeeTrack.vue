@@ -72,7 +72,7 @@
                 <!-- CALLOUT IMAGE LEFT -->
                 <div
                   v-if="track.callout.imageLeft"
-                  class="fr-col-5 fr-col-sm-hide tee-track-callout-img fr-pl-1v fr-py-0 fr-pr-0"
+                  class="fr-col fr-col-5 fr-col-sm-hide tee-track-callout-img fr-pl-0 fr-py-0 fr-pr-0"
                   style="align-self: center;">
                   <img
                     class="fr-responsive-img"
@@ -82,7 +82,7 @@
                 </div>
                 <!-- CALLOUT TEXT -->
                 <div
-                  :class="`fr-col ${track.callout.bigTitle ? '' : 'tee-track-callout-texts'}`">
+                  :class="`${track.callout.bigTitle ? 'fr-col' : 'fr-col fr-col-7 tee-track-callout-texts'}`">
                   <!-- CALLOUT HEADER -->
                   <h2
                     v-if="track.callout.header"

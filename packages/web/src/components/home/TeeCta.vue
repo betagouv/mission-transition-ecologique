@@ -16,7 +16,10 @@
                   Trouvez comment allier écologie avec économies
                 </h1>
                 <p class="fr-callout__text tee-track-callout-description" style="font-size: 1.3rem; line-height: 2rem;">
-                  Je complète mon profil en moins de 2 minutes, et j’accède à des propositions d’accompagnements et de financements pour m'aider à réduire mon impact environnemental.                </p>
+                  Je complète mon profil en moins de 2 minutes,
+                  et j’accède à des propositions d’accompagnements
+                  et de financements pour m'aider à réduire mon impact environnemental.
+                </p>
               </div>
             </div>
           </div>
