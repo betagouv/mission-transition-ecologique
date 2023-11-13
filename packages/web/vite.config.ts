@@ -3,6 +3,7 @@ import { fileURLToPath, URL } from 'node:url'
 
 import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import eslintPlugin from 'vite-plugin-eslint'
 
 console.log()
 console.log('Starting ...')
@@ -34,10 +35,11 @@ export default defineConfig({
     vue({
       template: {
         compilerOptions: {
-          isCustomElement: (tag) => tag.startsWith('ademe-')
+          isCustomElement: (tag) => tag.startsWith('ademe-') // CERTAINLY NOT WORKING
         }
       }
-    })
+    }),
+    eslintPlugin(),
   ],
   build: {
     outDir: 'dist',
