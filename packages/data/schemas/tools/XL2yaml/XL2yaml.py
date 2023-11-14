@@ -39,6 +39,8 @@ EffectifNoPrefix = remove_prefix(Effectif)
 ModeTransport = "entreprise . utilise un mode de transport ciblé"
 ModeTransportNoPrefix = remove_prefix(ModeTransport)
 
+ParcoursObjPrecis = "questionnaire . parcours = objectif précis"
+
 ALL = "toutes ces conditions"
 ANY = "une de ces conditions"
 
@@ -94,25 +96,29 @@ def printProgramYAML(rawData, colNumbers):
         pc[Effectif] = effective_constraint
         eligibilite.append(EffectifNoPrefix)
 
-    sc = pc_secteurActivitéConstraint(rawData, cn)
+    sc = pc_secteurActivitéConstraint(get)
     if sc:
         pc[Secteur] = sc
         cible.append(SecteurNoPrefix)
 
-    op = pc_objPrioritaire(rawData, cn)
+    op = pc_objPrioritaire(get)
     if op:
         pc[Objectif] = op
         cible.append(ObjectifNoPrefix)
 
-    reg = pc_regions(rawData, cn)
+    reg = pc_regions(get)
     if reg:
         pc[ZoneGeo] = reg
         eligibilite.append(ZoneGeo)
 
-    mod = pc_mode_transport(rawData, cn)
+    mod = pc_mode_transport(get)
     if mod:
         pc[ModeTransport] = mod
         cible.append(ModeTransportNoPrefix)
+
+    p360 = pc_path360(get)
+    if p360:
+        cible.append(ParcoursObjPrecis)
 
     if len(eligibilite) != 0:
         cible = [EligibleNoPrefix] + cible
@@ -223,7 +229,7 @@ def pc_effectifConstraint(effmin, effmax):
         return {ALL: constraint}
 
 
-def pc_secteurActivitéConstraint(rawData, colNumbers):
+def pc_secteurActivitéConstraint(get):
     secteurs = [
         "AAgriculture, sylviculture et pêche",
         "BIndustries extractives",
@@ -248,10 +254,6 @@ def pc_secteurActivitéConstraint(rawData, colNumbers):
         "UActivités extra-territoriales",
     ]
 
-    def get(name):
-        value = rawData[colNumbers[name]]
-        return curate(value)
-
     secteursInd = [bool(get(sect)) for sect in secteurs]
 
     if sum(secteursInd) == 0:
@@ -266,7 +268,7 @@ def pc_secteurActivitéConstraint(rawData, colNumbers):
     }
 
 
-def pc_objPrioritaire(rawData, colNumbers):
+def pc_objPrioritaire(get):
     objPri = {
         "🏢\nBâtiment": "est rénover mon bâtiment",
         "🚲\nMobilité": "est la mobilité durable",
@@ -277,10 +279,6 @@ def pc_objPrioritaire(rawData, colNumbers):
         "🌱\nStratégie": "est mon impact environnemental",
         "🏭\nProduction": "est l'écoconception",
     }
-
-    def get(name):
-        value = rawData[colNumbers[name]]
-        return curate(value)
 
     objPriInd = [bool(get(theme)) for theme in objPri.keys()]
     if sum(objPriInd) == 0:
@@ -295,11 +293,7 @@ def pc_objPrioritaire(rawData, colNumbers):
     }
 
 
-def pc_mode_transport(rawData, colNumbers):
-    def get(name):
-        value = rawData[colNumbers[name]]
-        return curate(value)
-
+def pc_mode_transport(get):
     modes = csvToList(get("Mode trajet domicile-travail"))
 
     if len(modes) == 0:
@@ -312,17 +306,22 @@ def pc_mode_transport(rawData, colNumbers):
     }
 
 
-def pc_regions(rawData, colNumbers):
-    def get(name):
-        value = rawData[colNumbers[name]]
-        return curate(value)
-
+def pc_regions(get):
     regions = csvToList(get("Zones géographiques Régional"))
 
     if len(regions) == 0:
         return None
 
     return {ANY: [f"région = {region}" for region in regions]}
+
+
+def pc_path360(get):
+    shouldShowOn360 = bool(get('Parcours "Je ne sais pas par où commencer"'))
+
+    if shouldShowOn360:
+        return None
+
+    return True
 
 
 def thousandSep(value):
@@ -356,5 +355,3 @@ if __name__ == "__main__":
                 print(f"🖊️ {id}-2.yaml")
                 with open(os.path.join(OUTPUT_DIR, f"{id}-2.yaml"), "x") as f:
                     f.write(printProgramYAML(row, colNumbers))
-
-    # printProgramYAML(firstDataRow, colNumbers)
