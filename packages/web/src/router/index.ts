@@ -15,6 +15,8 @@ import TeeProgramPage from '../pages/TeeProgramPage.vue'
 import TeeLegalPage from '../pages/TeeLegalPage.vue'
 import TeeAccessibilityPage from '../pages/TeeAccessibilityPage.vue'
 import TeePersonalDataPage from '../pages/TeePersonalDataPage.vue'
+import { RouteName } from '@/types/routeType'
+import { redirections } from '@/router/redirection'
 
 
 const resetTrackStore = async (to: any, from: any, next: any) => {
@@ -56,12 +58,12 @@ export const router = createRouter({
     return { top: 0 }
   },
   routes: [
-    { 
+    {
       path: '/',
-      name: 'homepage', 
+      name: RouteName.Homepage,
       component: TeeHomePage
     },
-    { 
+    {
       path: '/questionnaire',
       component: TeeQuestionnairePage,
       beforeEnter: [
@@ -72,7 +74,7 @@ export const router = createRouter({
       children: [
         {
           path: '',
-          name: 'questionnaire', 
+          name: 'questionnaire',
           // component: TeeQuestionnairePage,
           component: WidgetApp,
           // component: TeeProgramPage,
@@ -81,16 +83,16 @@ export const router = createRouter({
             disableWidget: true
           }
         },
-        { 
+        {
           path: ':programId',
-          name: 'questionnaire-detail', 
+          name: 'questionnaire-detail',
           // component: TeeQuestionnairePage,
           component: TeeProgramPage,
           // component: TeeProgramPage,
         },
       ]
     },
-    { 
+    {
       path: '/annuaire',
       component: TeeCatalogPage,
       beforeEnter: [
@@ -101,40 +103,41 @@ export const router = createRouter({
       children: [
         {
           path: '',
-          name: 'catalog', 
+          name: 'catalog',
           component: WidgetApp,
           props: {
             seed: 'track_results',
             disableWidget: true
           }
         },
-        { 
+        {
           path: ':programId',
-          name: 'catalogue-detail', 
+          name: 'catalogue-detail',
           component: TeeProgramPage,
         },
       ]
     },
-    { 
-      path: '/mentions-legales', 
+    {
+      path: '/mentions-legales',
       name: 'legal',
       component: TeeLegalPage
     },
-    { 
-      path: '/accessibilite', 
+    {
+      path: '/accessibilite',
       name: 'accessibility',
       component: TeeAccessibilityPage
     },
-    { 
-      path: '/donnees-personnelles', 
+    {
+      path: '/donnees-personnelles',
       name: 'personal-data',
       component: TeePersonalDataPage
     },
     {
       path: '/*',
-      name: '404', 
+      name: '404',
       component: TeeHomePage,
-    }
+    },
+    ...redirections,
     // { path: '/track/:trackId', component: TeeTrack },
     // { path: '/program/:programId', component: TeeProgramDetail },
   ]
