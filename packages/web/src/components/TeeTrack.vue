@@ -49,7 +49,7 @@
     :name="`${step > 1 ? 'slide-fade' : ''}`"
     mode="out-in">
     <div
-      v-if="!isCompleted && track !== undefined"
+      v-show="!isCompleted && track !== undefined"
       :key="`track-${step}-${trackId}`"
       :id="trackId"
       class="fr-grid-row">

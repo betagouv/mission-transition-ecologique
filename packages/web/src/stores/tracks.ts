@@ -9,8 +9,8 @@ import { tracks } from '@/questionnaire'
 import type { Track, Translations, UsedTrack, TrackId } from '@/types'
 import { TrackComponents } from '@/types'
 
-const allTracks = ref(tracks)
-const seedTrack = ref()
+const allTracks = ref<Track[]>(tracks)
+const seedTrack = ref<TrackId | undefined>()
 
 export const tracksStore = defineStore('tracks', () => {
   // console.log('store.tracks > defineStore > tracks : ', tracks)
@@ -22,7 +22,7 @@ export const tracksStore = defineStore('tracks', () => {
 
   // computed
   const tracksStepsArrayDict = computed(() => {
-    const dict = allTracks.value.map((track: any) => {
+    const dict = allTracks.value.map((track: Track) => {
       return {
         id: track.id,
         label: track.label

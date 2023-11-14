@@ -38,22 +38,6 @@ export interface FormCallbackDataMapping {
   cleaning?:  (Cleaner | CleanerReplaceAll | CleanerFromJson | CleanerFromDict | CleanerDefaultIfNull | CleanerInjectInObject) []
 }
 
-export interface FormField {
-  id: string,
-  help?: string,
-  required: boolean,
-  label: Translations,
-  hint?: Translations,
-  cols?: number,
-  type?: FormFieldTypes,
-  rows?: number,
-  defaultValue?: boolean | string | number,
-  injectInText?: boolean,
-  dataStructure?: Record<string, string>,
-  dataMapping?: FormCallbackDataMapping[],
-  preFillFrom?: FormCallbackDataMapping,
-}
-
 export interface FormCallback {
   disabled?: boolean,
   help?: string | string[],
@@ -61,8 +45,6 @@ export interface FormCallback {
   action: CallbackActions,
   url: string,
   headers: HeadersInit,
-  headerApiKey?: string, // This is not used in the track object
-  envApiKey?: string, // This is not used in the track object
   method: CallbackMethods,
   dataBody?: object | object[],
   dataStructure: object | object[],
@@ -79,6 +61,22 @@ export interface FormOptions {
   fields?: FormField[],
   next?: string,
   callbacks: FormCallback[],
+}
+
+export interface FormField {
+  id: string,
+  help?: string,
+  required: boolean,
+  label?: Translations,
+  hint?: Translations,
+  cols?: number,
+  type: FormFieldTypes,
+  rows?: number,
+  defaultValue?: boolean | string | number,
+  injectInText?: boolean,
+  dataStructure?: Record<string, string>,
+  dataMapping?: FormCallbackDataMapping[],
+  preFillFrom?: FormCallbackDataMapping,
 }
 
 export interface FormDataResp {
