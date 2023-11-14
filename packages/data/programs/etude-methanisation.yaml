@@ -44,6 +44,7 @@ publicodes:
     - est éligible
     - est dans un secteur d'activité ciblé
     - a un objectif ciblé
+    - questionnaire . parcours = objectif précis
   entreprise . est éligible:
     toutes ces conditions:
     - entreprise . est dans une zone géographique éligible

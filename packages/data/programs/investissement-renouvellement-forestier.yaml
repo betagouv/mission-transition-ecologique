@@ -32,6 +32,7 @@ publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
     - est dans un secteur d'activité ciblé
+    - questionnaire . parcours = objectif précis
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
     - code NAF niveau 1 . est A
