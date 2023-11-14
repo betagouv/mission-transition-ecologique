@@ -25,7 +25,7 @@
 
   <!-- RESULTS ALERT FOR NO RESULTS BEFORE REFILTERING-->
   <TeeNoResults
-    v-if="!resultsProgsLen"
+    v-if="!countFilteredPrograms"
     :image="trackConfig?.noResultsImage"
     :message="trackConfig?.noResultsMessage"
     >
@@ -33,28 +33,28 @@
 
   <!-- RESULTS CALLBACK -->
   <h4
-    v-if="resultsProgsLen && trackConfig?.showResultsTitle && resultsProgsLen"
+    v-if="countFilteredPrograms && trackConfig?.showResultsTitle"
     class="fr-pt-12v">
     {{ choices.t('results.fittingPrograms') }}
-    ({{ resultsProgsLen }})
+    ({{ countFilteredPrograms }})
   </h4>
 
   <!-- PROGRAMS AS LIST OF CARDS -->
   <div
-    v-if="resultsProgsLen"
+    v-if="countFilteredPrograms"
     class="fr-container fr-px-0 fr-mt-6v">
   
     <!-- RESULTS SIZE -->
     <div
-      v-if="resultsProgsLen > 1"
+      v-if="countFilteredPrograms > 1"
       class="fr-mb-4v tee-text-light">
-      {{ countFilteredPrograms }}
+      {{ countReFilteredPrograms }}
       {{ choices.t('results.results') }}
     </div>
 
     <!-- FILTERS IF ANY -->
     <div
-      v-if="trackConfig?.filters && resultsProgsLen > 1"
+      v-if="trackConfig?.filters && countFilteredPrograms > 1"
       class="fr-grid-row fr-grid-row--gutters fr-mb-4v">
       <div
         v-for="filter in trackConfig.filters"
@@ -69,33 +69,15 @@
 
     <!-- NO RESULTS -->
     <TeeNoResults
-      v-if="!countFilteredPrograms"
+      v-if="!countReFilteredPrograms"
       :image="trackConfig?.noResultsImage"
       :message="trackConfig?.noResultsMessage"
       >
     </TeeNoResults>
-    <!-- <div
-      v-if="trackConfig && !countFilteredPrograms"
-      class="fr-grid-row fr-my-20v">
-      <div
-        class="fr-col fr-col-6 fr-col-offset-3">
-        <img 
-          class="fr-responsive-img" 
-          :src="`${choices.publicPath}${trackConfig.noResultsImage}`"
-          :alt="`image / no-results`"/>
-      </div>
-      <div
-        class="fr-col fr-col-12">
-        <p
-          class="fr-text-center tee-text-no-result fr-mt-6v">
-          {{ trackConfig.noResultsMessage[choices.lang] }}
-        </p>
-      </div>
-    </div> -->
 
     <!-- PROGRAMS CARDS -->
     <div
-      v-for="prog in resultsProgsReFiltered"
+      v-for="prog in reFilteredPrograms"
       :key="prog.id"
       class="fr-card fr-enlarge-link fr-card--horizontal-tier fr-mb-10v"
       @click="updateDetailResult(prog.id)">
@@ -143,9 +125,6 @@
             :src="`${choices.publicPath}${prog.illustration}`"
             :alt="`image / ${prog.titre}`"
             />
-          <!-- L’alternative de l’image (attribut alt) doit toujours être présente,
-            sa valeur peut être vide (image n’apportant pas de sens supplémentaire au contexte)
-            ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
         </div>
         <ul class="fr-badges-group">
           <p class="fr-badge tee-program-badge-image">
@@ -163,8 +142,8 @@
     <h5>DEBUG - TeeResults</h5>
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
       <div class="fr-col-6">
-        <h6>resultsProgs</h6>
-        <code><pre>{{ resultsProgs }}</pre></code>
+        <h6>filteredPrograms</h6>
+        <code><pre>{{ filteredPrograms }}</pre></code>
       </div>
       <div class="fr-col-6">
         <h6>tracksResults</h6>
@@ -204,13 +183,6 @@ const analytics = analyticsStore()
 
 const activeFilters = ref<any>({})
 
-// const defaultImages = [
-//   'images/TEE_ampoule.png',
-//   'images/TEE_energie_verte.png',
-//   'images/TEE_eolienne.png',
-//   // 'images/TEE-illustrationHP.png'
-// ]
-
 interface Props {
   trackId: string,
   trackConfig?: TrackResultsConfig,
@@ -222,19 +194,19 @@ interface Props {
 }
 const props = defineProps<Props>()
 
-const resultsProgs: ProgramData[] = programs.filterPrograms(props.tracksResults)
+const filteredPrograms: ProgramData[] = programs.filterPrograms(props.tracksResults)
 
-const resultsProgsReFiltered = computed(() => {
-  // console.log('\nTeeResults > resultsProgsReFiltered...' )
-  // console.log('TeeResults > resultsProgsReFiltered > resultsProgs :', resultsProgs )
-  const results = resultsProgs.filter((prog: ProgramData) => {
-    // console.log('\nTeeResults > resultsProgsReFiltered > prog :', prog )
+const reFilteredPrograms = computed(() => {
+  // console.log('\nTeeResults > reFilteredPrograms...' )
+  // console.log('TeeResults > reFilteredPrograms > filteredPrograms :', filteredPrograms )
+  const results = filteredPrograms.filter((prog: ProgramData) => {
+    // console.log('\nTeeResults > reFilteredPrograms > prog :', prog )
     const boolArray = [true]
     for (const fieldKey in activeFilters.value) {
       const filterVal = activeFilters.value[fieldKey]
       const filterConfig = props.trackConfig?.filters?.find((f:any) => f.field === fieldKey)
       const trueIf = filterConfig?.trueIf || '=='
-      // console.log(`\nTeeResults > resultsProgsReFiltered > fieldKey: "${fieldKey}" - filterVal: "${filterVal}" - trueIf: "${trueIf}"` )
+      // console.log(`\nTeeResults > reFilteredPrograms > fieldKey: "${fieldKey}" - filterVal: "${filterVal}" - trueIf: "${trueIf}"` )
       // console.log('\nTeeResults > fieldKey :', fieldKey )
       // console.log('TeeResults > filterVal :', filterVal )
       // console.log('TeeResults > trueIf :', trueIf )
@@ -247,32 +219,32 @@ const resultsProgsReFiltered = computed(() => {
       if (filterVal === '') {
         bool = true
       } else if (trueIf === '==') {
-        // console.log('TeeResults > resultsProgsReFiltered > progVal :', progVal )
+        // console.log('TeeResults > reFilteredPrograms > progVal :', progVal )
         bool = progVal === filterVal
       } else if (trueIf === 'exists') {
         progVal = progVal?.filter(i => i !== null)
-        // console.log('TeeResults > resultsProgsReFiltered > progVal :', progVal )
+        // console.log('TeeResults > reFilteredPrograms > progVal :', progVal )
         bool = !progVal ? true : progVal.includes(filterVal)
       } else {
         bool = true
       }
       boolArray.push(bool)
     }
-    // console.log('TeeResults > resultsProgsReFiltered > boolArray :', boolArray )
+    // console.log('TeeResults > reFilteredPrograms > boolArray :', boolArray )
     const checkFilters = boolArray.every(b => !!b)
-    // console.log('TeeResults > resultsProgsReFiltered > checkFilters :', checkFilters )
+    // console.log('TeeResults > reFilteredPrograms > checkFilters :', checkFilters )
     return checkFilters
   })
-  // console.log('TeeResults > resultsProgsReFiltered > results: ', results )
+  // console.log('TeeResults > reFilteredPrograms > results: ', results )
   return results
 })
 
-const resultsProgsLen = computed(() => {
-  return resultsProgs.length
+const countFilteredPrograms = computed(() => {
+  return filteredPrograms.length
 })
 
-const countFilteredPrograms = computed(() => {
-  return resultsProgsReFiltered.value.length
+const countReFilteredPrograms = computed(() => {
+  return reFilteredPrograms.value.length
 })
 
 const updateFilters = (event: FilterSignal) => {
@@ -292,7 +264,7 @@ const updateDetailResult = (id: string | number) => {
 const getCostInfos = (program: ProgramData) => {
   let prefix: string = ''
   let text: string | undefined = ''
-  // console.log('TeeResults > onBeforeMount > resultsProgs :', resultsProgs )
+  // console.log('TeeResults > onBeforeMount > filteredPrograms :', filteredPrograms )
 
   switch (program["nature de l'aide"]) {
     case ProgramAidType.acc:
@@ -326,7 +298,7 @@ const getCostInfos = (program: ProgramData) => {
 }
 
 onBeforeMount(() => {
-  // console.log('TeeResults > onBeforeMount > resultsProgs :', resultsProgs )
+  // console.log('TeeResults > onBeforeMount > filteredPrograms :', filteredPrograms )
   // analytics / send event
   analytics.sendEvent(props.trackId, 'show_results')
 })
