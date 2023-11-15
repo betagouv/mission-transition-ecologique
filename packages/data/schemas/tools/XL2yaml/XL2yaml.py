@@ -41,6 +41,8 @@ ModeTransportNoPrefix = remove_prefix(ModeTransport)
 
 ParcoursObjPrecis = "questionnaire . parcours = objectif précis"
 
+Proprio = "entreprise . est propriétaire de ses locaux = oui"
+
 ALL = "toutes ces conditions"
 ANY = "une de ces conditions"
 
@@ -116,9 +118,13 @@ def printProgramYAML(rawData, colNumbers):
         pc[ModeTransport] = mod
         cible.append(ModeTransportNoPrefix)
 
-    p360 = pc_path360(get)
+    p360 = pc_onlyPrecise(get)
     if p360:
         cible.append(ParcoursObjPrecis)
+
+    own = pc_building_owner(get)
+    if own:
+        cible.append(Proprio)
 
     if len(eligibilite) != 0:
         cible = [EligibleNoPrefix] + cible
@@ -315,12 +321,21 @@ def pc_regions(get):
     return {ANY: [f"région = {region}" for region in regions]}
 
 
-def pc_path360(get):
-    shouldShowOn360 = bool(get('Parcours "Je ne sais pas par où commencer"'))
+def pc_onlyPrecise(get):
+    shouldShowOnPreciseOnly = not bool(
+        get('Parcours "Je ne sais pas par où commencer"')
+    )
 
-    if shouldShowOn360:
+    if not shouldShowOnPreciseOnly:
         return None
 
+    return True
+
+
+def pc_building_owner(get):
+    shouldAddressBuildingOwner = valid(get("Propriétaire"))
+    if not shouldAddressBuildingOwner:
+        return None
     return True
 
 

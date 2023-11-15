@@ -8,7 +8,8 @@ export enum Entreprise {
   SectorActivity = "entreprise . secteur d'activité . est ",
   CodeNAF = 'entreprise . code NAF niveau 1 . est ',
   Workforce = 'entreprise . effectif',
-  TransportMode = 'entreprise . mode de transport domicile-travail . est'
+  TransportMode = 'entreprise . mode de transport domicile-travail . est',
+  BuildingOwner = 'entreprise . est propriétaire de ses locaux'
 }
 
 export enum Questionnaire {
