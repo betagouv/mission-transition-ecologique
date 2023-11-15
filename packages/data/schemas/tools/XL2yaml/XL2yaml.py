@@ -39,9 +39,12 @@ EffectifNoPrefix = remove_prefix(Effectif)
 ModeTransport = "entreprise . utilise un mode de transport ciblé"
 ModeTransportNoPrefix = remove_prefix(ModeTransport)
 
+PossessionVehicules = "entreprise . possède des véhicules motorisés"
+PossessionVehiculesNoPrefix = remove_prefix(PossessionVehicules)
+
 ParcoursObjPrecis = "questionnaire . parcours = objectif précis"
 
-Proprio = "entreprise . est propriétaire de ses locaux = oui"
+Proprio = "entreprise . est propriétaire de ses locaux"
 
 ALL = "toutes ces conditions"
 ANY = "une de ces conditions"
@@ -65,7 +68,7 @@ def printProgramYAML(rawData, colNumbers):
     program["illustration"] = randomIllustration()
     program["opérateur de contact"] = get("Opérateur de contact")
 
-    autresOp = csvToList(get("Autres opérateurs"))
+    autresOp = csv_to_list(get("Autres opérateurs"))
     if len(autresOp) >= 1:
         program["autres opérateurs"] = autresOp
 
@@ -117,6 +120,10 @@ def printProgramYAML(rawData, colNumbers):
     if mod:
         pc[ModeTransport] = mod
         cible.append(ModeTransportNoPrefix)
+
+    veh = pc_possede_vehicule(get)
+    if veh:
+        cible.append(PossessionVehiculesNoPrefix)
 
     p360 = pc_onlyPrecise(get)
     if p360:
@@ -212,7 +219,7 @@ def valid(value):
     return True
 
 
-def csvToList(input: str) -> list[str]:
+def csv_to_list(input: str) -> list[str]:
     return [curate(s) for s in re.split(",|\|", input) if valid(s)]
 
 
@@ -300,7 +307,7 @@ def pc_objPrioritaire(get):
 
 
 def pc_mode_transport(get):
-    modes = csvToList(get("Mode trajet domicile-travail"))
+    modes = csv_to_list(get("Mode trajet domicile-travail"))
 
     if len(modes) == 0:
         return None
@@ -312,8 +319,17 @@ def pc_mode_transport(get):
     }
 
 
+def pc_possede_vehicule(get):
+    possede_vehicule = valid(get("Véhicule motorisé"))
+
+    if not possede_vehicule:
+        return None
+
+    return True
+
+
 def pc_regions(get):
-    regions = csvToList(get("Zones géographiques Régional"))
+    regions = csv_to_list(get("Zones géographiques Régional"))
 
     if len(regions) == 0:
         return None

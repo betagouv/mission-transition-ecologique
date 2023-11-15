@@ -1,5 +1,5 @@
 import type { Track } from '@/types'
-import { TrackComponents, TrackId, YesNo, Objectives } from '@/types'
+import { TrackComponents, TrackId, YesNo, Entreprise } from '@/types'
 
 export const mobilityNumberVehicles: Track = {
   id: TrackId.MobilityNumberVehicles,
@@ -19,7 +19,7 @@ export const mobilityNumberVehicles: Track = {
     {
       value: {
         mobility_number_vehicles: 'yes',
-        [Objectives.SustainableMobility]: YesNo.Yes
+        [Entreprise.VehicleOwner]: YesNo.Yes
       },
       title: { fr: 'Oui' },
       label: { fr: '✅ Oui' },
@@ -30,7 +30,7 @@ export const mobilityNumberVehicles: Track = {
     {
       value: {
         mobility_number_vehicles: 'no',
-        [Objectives.SustainableMobility]: YesNo.No
+        [Entreprise.VehicleOwner]: YesNo.No
       },
       title: { fr: 'Non' },
       label: { fr: '❌ Non, l’entreprise ne possède aucun véhicule motorisé' },
@@ -41,7 +41,7 @@ export const mobilityNumberVehicles: Track = {
     {
       value: {
         mobility_number_vehicles: 'unknown',
-        [Objectives.SustainableMobility]: YesNo.Yes
+        [Entreprise.VehicleOwner]: YesNo.Yes
       },
       title: { fr: 'Je ne sais pas' },
       label: { fr: 'Je ne sais pas' },

@@ -45,6 +45,8 @@ entreprise . mode de transport domicile-travail:
     est camion:
     est autre:
 
+entreprise . possède des véhicules motorisés:
+
 région:
 
 # France métropolitaine

@@ -9,7 +9,8 @@ export enum Entreprise {
   CodeNAF = 'entreprise . code NAF niveau 1 . est ',
   Workforce = 'entreprise . effectif',
   TransportMode = 'entreprise . mode de transport domicile-travail . est',
-  BuildingOwner = 'entreprise . est propriétaire de ses locaux'
+  BuildingOwner = 'entreprise . est propriétaire de ses locaux',
+  VehicleOwner = 'entreprise . possède des véhicules motorisés'
 }
 
 export enum Questionnaire {
