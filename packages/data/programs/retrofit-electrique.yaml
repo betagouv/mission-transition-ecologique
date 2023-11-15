@@ -23,6 +23,7 @@ publicodes:
     - est dans un secteur d'activité ciblé
     - a un objectif ciblé
     - utilise un mode de transport ciblé
+    - possède des véhicules motorisés
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
     - code NAF niveau 1 . est A
