@@ -148,7 +148,7 @@ export const tracksStore = defineStore('tracks', () => {
       selected: [],
       next: null,
     }
-    console.log('store.tracks > addToUsedTracks > trackInfos : ', trackInfos)
+    // console.log('store.tracks > addToUsedTracks > trackInfos : ', trackInfos)
     // @ts-ignore
     usedTracks.value.push(trackInfos)
   }
