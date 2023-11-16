@@ -5,9 +5,6 @@
     style="min-height: 800px">
     <router-view/>
   </div>
-  <p>
-    track : {{ track }}
-  </p>
   <!-- SHOW TeeContact ONLY IF ON RESULTS PAGE -->
   <TeeContact
     v-if="isTrackResults"/>
@@ -26,10 +23,9 @@ import TeeContact from '@/components/home/TeeContact.vue'
 
 const tracks = tracksStore()
 
-const track: Track | any = tracks.getLastTrack
-
 // computed
 const isTrackResults = computed(() => {
+  const track: Track | any = tracks.getLastTrack
   return track?.component === 'results'
 })
 </script>

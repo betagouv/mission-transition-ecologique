@@ -8,7 +8,7 @@ import TeeHomePage from '../pages/TeeHomePage.vue'
 
 import WidgetApp from '../WidgetApp.ce.vue'
 import TeeQuestionnairePage from '../pages/TeeQuestionnairePage.vue'
-// import TeeCatalogPage from '../pages/TeeCatalogPage.vue'
+import TeeCatalogPage from '../pages/TeeCatalogPage.vue'
 import TeeProgramPage from '../pages/TeeProgramPage.vue'
 
 import TeeLegalPage from '../pages/TeeLegalPage.vue'
@@ -89,8 +89,8 @@ export const router = createRouter({
     },
     {
       path: '/annuaire',
-      // component: TeeCatalogPage,
-      component: TeeQuestionnairePage,
+      component: TeeCatalogPage,
+      // component: TeeQuestionnairePage,
       beforeEnter: [
         resetDetailProgram,
         resetTrackStore,
