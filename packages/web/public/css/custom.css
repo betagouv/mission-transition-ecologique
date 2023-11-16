@@ -73,6 +73,9 @@ WARNING :
 .fr-tee-form {
   max-width: 685px;
 }
+.fr-tee-form-error {
+  text-align: center;
+}
 .fr-form-block .fr-input {
   background-color: white;
 }
@@ -257,6 +260,9 @@ button.fr-link:hover, .tee-router-link:hover {
 /* DEBUGGING STYLES */
 code {
   color: red !important;
+}
+.error-code {
+  font-size: 0.75em !important;
 }
 .vue-debug {
   font-size: 0.75em !important;

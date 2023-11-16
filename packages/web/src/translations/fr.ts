@@ -13,10 +13,11 @@ export const frDict = {
   form: {
     mandatory: 'Champs obligatoires',
     sent: 'Formulaire envoyé',
+    notSent: "Problème lors de l'envoi du formulaire",
+    contactHelp: 'Merci de nous contacter à',
     nowWhat: 'Et maintenant ?',
     advisors: 'Nous allons <b>identifier le bon conseiller</b> près de chez vous',
-    phoneContact:
-      'Le conseiller vous <b>contactera par téléphone</b> dans les 5 jours (délai moyen de prise en charge)'
+    phoneContact: 'Le conseiller vous <b>contactera par téléphone</b> dans les 5 jours (délai moyen de prise en charge)',
   },
   input: {
     research: 'Recherche',
