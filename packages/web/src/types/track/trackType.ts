@@ -1,7 +1,6 @@
-import type { Translations } from '../translationTypes'
-import type { FormCallback, FormCallbackDataMapping, FormOptions } from '../formTypes'
-import { ConditionOperators } from '@/types/conditionOperators'
-import type { TrackId } from '@/types'
+import type { Translations, FormCallback, FormCallbackDataMapping, FormOptions } from '@tee/web/src/types'
+import { ConditionOperators } from '@tee/web/src/types/conditionOperators'
+import type { TrackId } from '@tee/web/src/types'
 
 // FOR TRACKS
 export interface ConditionTrack {
