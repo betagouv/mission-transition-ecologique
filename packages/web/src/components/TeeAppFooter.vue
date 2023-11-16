@@ -106,13 +106,20 @@
           class="fr-footer__bottom-list">
           <li
             v-for="link in mainLinks"
-            :key="link.href"
+            :key="link.label"
             class="fr-footer__bottom-item">
-            <router-link 
-              :to="link.href"
+            <router-link
+              v-if="link.to"
+              :to="link.to"
               class="fr-footer__bottom-link">
               {{ link.label }}
             </router-link>
+            <a
+              v-else
+              :href="link.href"
+              class="fr-footer__bottom-link">
+              {{ link.label }}
+            </a>
           </li>
         </ul>
 
@@ -206,22 +213,30 @@ const partners = [
 const mainLinks = [
   // {
   //   label: 'Plan du site',
-  //   href: '/plan-du-site'
+  //   to: '/plan-du-site'
   // },
   {
     // router ok
     label: 'Accessibilité',
-    href: '/accessibilite'
+    to: '/accessibilite'
   },
   {
     // router ok
     label: 'Mentions légales',
-    href: '/mentions-legales'
+    to: '/mentions-legales'
   },
   {
     // router ok
     label: 'Données personnelles',
-    href: '/donnees-personnelles'
+    to: '/donnees-personnelles'
+  },
+  {
+    label: 'Code source',
+    href: sourceCodeHref
+  },
+  {
+    label: 'Statistiques',
+    href: 'https://stats.beta.gouv.fr/index.php?module=CoreHome&action=index&idSite=23&period=day&date=yesterday#?period=day&date=yesterday&category=Dashboard_Dashboard&subcategory=1&idSite=23'
   }
 ]
 
