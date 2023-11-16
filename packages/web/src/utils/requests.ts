@@ -88,11 +88,11 @@ export const sendRequest = async (url: string, method: string, headers: any, bod
     return respJson
   } catch (error) {
     const respObj: ReqResp = {}
-    console.log('utils > requests > sendRequest >  error :', error)
+    // console.log('utils > requests > sendRequest >  error :', error)
     respObj.action = action
     respObj.ok = false
-    respObj.status = 404
-    respObj.statusText = 'Error'
+    respObj.status = 500
+    respObj.statusText = 'Internal server error'
     respObj.message = `${error}`
 
     return respObj
