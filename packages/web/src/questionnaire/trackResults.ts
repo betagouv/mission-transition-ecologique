@@ -249,7 +249,7 @@ Merci d'avance pour votre appel`,
           </a>.
           <br>
           <br>
-          Pour toute question vous pouvez nous contacter à "france-transition(at)beta.gouv.fr"
+          Pour toute question, vous pouvez nous contacter à "france-transition(at)beta.gouv.fr"
         `
         },
         required: true,
