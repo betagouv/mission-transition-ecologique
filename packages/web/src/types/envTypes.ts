@@ -1,9 +1,12 @@
 // FOR ENV 
 
 export interface MetaEnv {
+  VITE_NO_DEBUG_SWITCH: boolean,
   VITE_DATA_DIR_PATH: string,
   VITE_DEPLOY_URL: string,
-  VITE_BREVO_TOKEN: string,
-  VITE_BREVO_LIST_IDS: string,
-  VITE_BREVO_SENDER_EMAIL: string,
+  VITE_CONTACT_EMAIL: string,
+  VITE_MATOMO_DEACTIVATE: boolean,
+  VITE_MATOMO_URL: string,
+  VITE_MATOMO_APP_ID: number,
+  VITE_TEE_BACKEND_URL: string,
 }

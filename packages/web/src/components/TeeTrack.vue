@@ -72,7 +72,7 @@
                 <!-- CALLOUT IMAGE LEFT -->
                 <div
                   v-if="track.callout.imageLeft"
-                  class="fr-col-5 fr-col-sm-hide tee-track-callout-img fr-pl-1v fr-py-0 fr-pr-0"
+                  class="fr-col fr-col-5 fr-col-sm-hide tee-track-callout-img fr-pl-0 fr-py-0 fr-pr-0"
                   style="align-self: center;">
                   <img
                     class="fr-responsive-img"
@@ -82,7 +82,7 @@
                 </div>
                 <!-- CALLOUT TEXT -->
                 <div
-                  :class="`fr-col ${track.callout.bigTitle ? '' : 'tee-track-callout-texts'}`">
+                  :class="`${track.callout.bigTitle ? 'fr-col' : 'fr-col fr-col-7 tee-track-callout-texts'}`">
                   <!-- CALLOUT HEADER -->
                   <h2
                     v-if="track.callout.header"
@@ -152,8 +152,8 @@
           </div>
 
           <!-- TRACK INFOS -->
-          <div
-            v-if="track.info"
+          <div 
+            v-if="step !== 1 && track.info"
             :class="`${isTrackResults ? 'fr-col-12 fr-col-offset-md-1' : 'fr-col-12'}`">
             <p class="fr-mb-2v">
               <span
@@ -164,8 +164,8 @@
           </div>
 
           <!-- TRACK HINT -->
-          <div
-            v-if="track.hint"
+          <div 
+            v-if="step !== 1 && track.hint"
             :class="`${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`">
             <p
               :class="`fr-mb-0`"
@@ -175,8 +175,8 @@
           </div>
 
           <!-- TRACK RESUME -->
-          <div
-            v-if="track.resume"
+          <div 
+            v-if="step !== 1 && track.resume"
             :class="`${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`">
             <p class="fr-mb-0">
               {{ track.resume[choices.lang] }}
@@ -339,7 +339,8 @@
                 :track-form="track.form"
                 :tracks-results="tracks.usedTracks"
                 :track-element="trackElement"
-                :debug="debug"
+                :disable-widget="disableWidget"
+                :debug="debug || false"
               />
             </div>
           </div>
@@ -421,8 +422,9 @@ interface Props {
   step: number,
   trackId: string,
   isCompleted: boolean,
-  trackElement: any;
-  debug: boolean,
+  trackElement: any,
+  disableWidget?: boolean,
+  debug?: boolean,
 }
 const props = defineProps<Props>()
 
@@ -619,9 +621,10 @@ watch(() => props.isCompleted, ( next ) => {
   // console.log('TeeTrack > watch > isCompleted :', next )
   if (!next) {
     // console.log('TeeTrack > watch > selectionValues :', selectionValues )
-    if (noNeedForNext.includes(renderAs)) {
-      resetSelections()
-    }
+    // if (noNeedForNext.includes(renderAs)) {
+    //   resetSelections()
+    // }
+    resetSelections()
     tracks.updateUsedTracks(props.trackId, props.step, next, selectedOptions.value)
   }
 })
@@ -681,7 +684,7 @@ const saveSelection = () => {
     tracks.removeFurtherUsedTracks(props.trackId)
   }
 
-  scrollToTop(props.trackElement, props.trackId)
+  !props.disableWidget && scrollToTop(props.trackElement, props.trackId)
 }
 
 const backToPreviousTrack = async () => {
@@ -692,8 +695,8 @@ const backToPreviousTrack = async () => {
   const TrackToGoBackTo = tracks.tracksStepsArray[indexOfTrack - 1]
   // console.log('TeeTrack > backToTrack > TrackToGoBackTo :', TrackToGoBackTo)
   await tracks.setUsedTracksAsNotCompleted(TrackToGoBackTo)
-  tracks.removeFurtherUsedTracks(TrackToGoBackTo)
+  await tracks.removeFurtherUsedTracks(TrackToGoBackTo)
 
-  scrollToTop(props.trackElement, props.trackId)
+  !props.disableWidget && scrollToTop(props.trackElement, props.trackId)
 }
 </script>

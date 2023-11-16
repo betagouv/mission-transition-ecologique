@@ -189,8 +189,8 @@ interface Props {
   trackOptions?: any,
   trackForm?: any,
   tracksResults: TrackChoice[] | any[],
-  trackElement: any;
-  debug: boolean,
+  trackElement: any,
+  debug?: boolean
 }
 const props = defineProps<Props>()
 

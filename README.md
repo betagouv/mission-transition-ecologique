@@ -8,11 +8,9 @@
 
 ---
 
-**A web component and data to help french entreprises finding public aid 
-programs for their ecological transition.**
+**A web component and data to help french entreprises finding public aid programs for their ecological transition.**
 
 A project from the `transition-ecologique-entreprises` SE team.
-
 
 - [Screenshots](#screenshots)
 - [Project Setup](#project-setup)
@@ -50,15 +48,15 @@ height="75px">
 ## Project Setup
 
 ### Stack
+
 - [NodeJS](https://nodejs.org/) (v18)
 - Back: [Express](http://expressjs.com/) (v4)
 - Front: [VueJS](https://vuejs.org/) (v3)
   - Design system: [DSFR](https://www.systeme-de-design.gouv.fr/) 
 
 ### Description
-This repository is a monorepo, based on [npm 
-workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces/) composed of 
-two workspaces:
+
+This repository is a monorepo, based on [npm workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces/) composed of two workspaces:
 
 - the ["web" workspace](./packages/web/README.md) contains the front-end implementations.
 - the ["backend" workspace](./packages/backend/README.md) contains the back-end implementations.
@@ -67,6 +65,7 @@ two workspaces:
 ## Getting started
 
 ### NVM
+
 The runtime is Node 18.x for this application.  
 You can use [nvm](https://github.com/nvm-sh/nvm) to install this specific version.
 
@@ -78,9 +77,7 @@ nvm use
 
 ### Environment variables
 
-Some environment variables are needed for the services to work. Copy and
-modify the `.env.example` file from the folders (`back`/`data`/`web`) you want to build/start to
-`.env` in the same directory.
+Some environment variables are needed for the services to work. Copy and modify the `.env.example` file from the folders (`back`/`data`/`web`) you want to build/start to `.env` in the same directory.
 
 ### Quick Start
 
@@ -91,6 +88,7 @@ If you want to run the project locally and quickly, you can use the following co
 npm install
 npm run start-all
 ```
+
 - Go to http://localhost:4242/ to access the front-end
 
 ### Build
@@ -145,11 +143,19 @@ npm run dev --workspace packages/web
 npm run dev --workspace packages/backend
 ```
 
+### Preview front before deploying in production
+
+```sh
+# This script builds the front 
+# and previews the produced index.html file from the dist folder
+# on http://localhost:4242
+npm run build-and-preview-front
+```
 
 ### Commands for a specific workspace
 
-More scripts are defined for each workspace: checkout their respective 
-documentation and `package.json` file.
+More scripts are defined for each workspace: checkout their respective documentation and `package.json` file.
+
 - backend: [README](./packages/backend/README.md) / [package.json](./packages/backend/package.json)
 - data: [README](./packages/data/README.md) / [package.json](./packages/data/package.json)
 - web: [README](./packages/web/README.md) / [package.json](./packages/web/package.json)
@@ -161,13 +167,12 @@ npm run <script-name> -w packages/<workspace-name>
 ```
 
 ---
+
 ## Data validation
 
-Source program data are stored as YAML files, we use [JSON Schema](https://json-schema.org/)
-to validate every file.
+Source program data are stored as YAML files, we use [JSON Schema](https://json-schema.org/) to validate every file.
 
-The validations are triggered by Github CI on each pull request on preprod and 
-main branches.
+The validations are triggered by Github CI on each pull request on preprod and main branches.
 
 To run the validation tests manually, run:
 
@@ -175,15 +180,15 @@ To run the validation tests manually, run:
 npm run test-data -w packages/backend
 ```
 
-
 ---
+
 ## Credits
 
 - Team
-    - Product owner: Jean-Baptiste Le Dévéhat
-    - Coaching: Julien Rayneau
-    - Designers: Coline Lebaratoux
-    - Maintainers:
-        - Pierre Camilleri
-        - Julien Paris
-        - Yohann Valentin
+  - Product owner: Jean-Baptiste Le Dévéhat
+  - Coaching: Julien Rayneau
+  - Designers: Coline Lebaratoux
+  - Maintainers:
+    - Pierre Camilleri
+    - Julien Paris
+    - Yohann Valentin

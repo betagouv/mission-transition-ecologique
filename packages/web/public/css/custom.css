@@ -73,13 +73,40 @@ WARNING :
 .fr-tee-form {
   max-width: 685px;
 }
+.fr-tee-form-error {
+  text-align: center;
+}
 .fr-form-block .fr-input {
   background-color: white;
+}
+.tee-router-link {
+  background-image: none !important;
+}
+button.fr-link:hover, .tee-router-link:hover {
+  background-color: transparent !important;
 }
 
 /* GLOBAL */
 .tee-no-hover {
   pointer-events: none;
+}
+.tee-footer-bottom {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 10;
+}
+.tee-home-img {
+  width: 100%;
+}
+.tee-home-img .fr-content-media__img {
+  width: 100%;
+}
+.tee-home-img > .fr-content-media__img > .fr-responsive-img {
+  aspect-ratio: 1 !important;
+  /* height: 100% !important; */
 }
 .tee-text-light {
   color: #929292;
@@ -106,7 +133,7 @@ WARNING :
 
 @media (min-width: 48em) {
 .tee-track-callout-texts {
-  max-width: 50%;
+  max-width: 90%;
   }
 }
 
@@ -139,6 +166,9 @@ WARNING :
 }
 
 /* CUSTOM BUTTON INPUT */
+.tee-btn-next {
+  justify-content: end;
+}
 .tee-input-large {
   font-size: 1.1rem; 
   height: 4rem !important; 
@@ -196,6 +226,7 @@ WARNING :
 .tee-program-info {
   color: #000091; 
   font-size: .8rem;
+  line-height: 1.3rem;
 }
 .tee-program-info span::before {
   font-size: .8rem;
@@ -233,6 +264,9 @@ WARNING :
 /* DEBUGGING STYLES */
 code {
   color: red !important;
+}
+.error-code {
+  font-size: 0.75em !important;
 }
 .vue-debug {
   font-size: 0.75em !important;
@@ -506,7 +540,7 @@ code {
 }
 
 /*! media md and smaller only */
-@media (max-width: 48em) {
+@media screen and (max-width: 48em) {
   .tee-track-has-image-right {
     order: 2;
   }
@@ -532,7 +566,10 @@ code {
 }
 
 /*! media lg */
-@media (min-width: 62em) {
+@media (min-width: 48em) {
+  .fr-md-hide {
+    display: none !important;
+  }
 }
 
 /*! media xl */

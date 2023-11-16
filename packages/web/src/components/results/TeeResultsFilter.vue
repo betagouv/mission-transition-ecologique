@@ -56,7 +56,7 @@ const emit = defineEmits(['updateFilter'])
 
 interface Props {
   filter: TrackFilter,
-  debug: boolean
+  debug?: boolean
 }
 const props = defineProps<Props>()
 
