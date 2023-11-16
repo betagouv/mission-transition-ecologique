@@ -255,7 +255,6 @@ import TeeProgramDetail from './components/TeeProgramDetail.vue'
 import TeeCredits from './components/TeeCredits.vue'
 
 interface Props {
-  key?: string | any,
   showHeader?: string,
   showMessage?: string,
   showStepper?: string,

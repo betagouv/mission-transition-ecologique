@@ -10,20 +10,6 @@
     </h6> -->
   </div>
 
-  <!-- RESULTS ALERT -->
-  <DsfrAlert
-    v-if="trackConfig && trackConfig.showAlertResults && resultsProgsLen"
-    :title="choices.t('results.alertTitle')"
-    :description="choices.t('results.alertDescription')"
-    type="success">
-  </DsfrAlert>
-  <DsfrAlert
-    v-if="trackConfig && trackConfig.showAlertNoResults && !resultsProgsLen"
-    :title="choices.t('results.alertTitleNoResults')"
-    :description="choices.t('results.alertNoResults')"
-    type="warning">
-  </DsfrAlert>
-
   <!-- DEBUGGING -->
   <h4
     v-if="trackConfig && trackConfig.showResultsTitle && resultsProgsLen"
@@ -159,7 +145,7 @@ interface Props {
   tracksResults: TrackChoice[] | any[],
   trackElement: any,
   disableWidget?: boolean,
-  debug?: boolean,
+  debug?: boolean
 }
 const props = defineProps<Props>()
 

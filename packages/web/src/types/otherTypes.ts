@@ -16,6 +16,16 @@ export interface Comp {
   comp: object
 }
 
+// FOR FILTERS
+
+export interface FilterSignal {
+  field: string,
+  value: string
+}
+export interface FilterEvent {
+  target: any
+}
+
 // FOR REQUESTS
 
 export interface ResultsMapping {

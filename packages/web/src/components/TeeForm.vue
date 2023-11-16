@@ -237,7 +237,7 @@ interface Props {
   formOptions: FormOptions,
   dataProps: DataProps,
   program: ProgramData,
-  debug?: boolean,
+  debug?: boolean
 }
 const props = defineProps<Props>()
 

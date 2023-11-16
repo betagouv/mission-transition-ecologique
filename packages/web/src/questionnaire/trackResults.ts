@@ -2,7 +2,6 @@ const metaEnv = import.meta.env
 // console.log('trackResults >  metaEnv :', metaEnv)
 const TEE_BACKEND_URL = metaEnv.VITE_TEE_BACKEND_URL || 'https://tee-backend.osc-fr1.scalingo.io'
 
-
 export const results = {
   id: 'track_results',
   category: 'results',
@@ -20,11 +19,84 @@ export const results = {
     static: true
   },
   config: {
-    showAlertResults: false,
-    showAlertNoResults: true,
+    noResultsMessage: {fr: "Aucune aide n'a pu être identifiée avec les critères choisis..."},
+    noResultsImage: 'images/tracks/no-results.svg',
     showResultsTitle: false,
     showProgramInfos: true,
-    showProgramSubtitles: false
+    showProgramSubtitles: false,
+    filters: [
+      {
+        field: "nature de l'aide",
+        label: "nature de l'aide",
+        trueIf: '==',
+        values: [
+          { 
+            label: 'Accompagnement',
+            value: 'accompagnement'
+          },
+          { 
+            label: 'Financement',
+            value: 'financement'
+          },
+          { 
+            label: 'Prêt',
+            value: 'prêt'
+          },
+          { 
+            label: 'Avantage fiscal',
+            value: 'avantage fiscal'
+          },
+          { 
+            label: 'Formation',
+            value: 'formation'
+          },
+          // for debugging purposes
+          // { 
+          //   label: 'FAIL',
+          //   value: 'xxx'
+          // }
+        ]
+      },
+      {
+        field: "publicodes.est dans les objectifs de l'entreprise.une de ces conditions",
+        label: "objectif prioritaire",
+        trueIf: 'exists',
+        values: [
+          { 
+            label: 'mon impact environnemental',
+            value: 'questionnaire . objectif prioritaire . est mon impact environnemental'
+          },
+          { 
+            label: 'ma performance énergétique',
+            value: 'questionnaire . objectif prioritaire . est ma performance énergétique'
+          },
+          { 
+            label: "ma consommation d'eau",
+            value: "questionnaire . objectif prioritaire . est diminuer ma consommation d'eau"
+          },
+          { 
+            label: 'rénover mon bâtiment',
+            value: 'questionnaire . objectif prioritaire . est rénover mon bâtiment'
+          },
+          { 
+            label: 'la mobilité durable',
+            value: 'questionnaire . objectif prioritaire . est la mobilité durable'
+          },
+          { 
+            label: 'la gestion des déchets',
+            value: 'questionnaire . objectif prioritaire . est la gestion des déchets'
+          },
+          { 
+            label: "l'écoconception",
+            value: "questionnaire . objectif prioritaire . est l'écoconception"
+          },
+          { 
+            label: 'former ou recruter',
+            value: 'questionnaire . objectif prioritaire . est former ou recruter'
+          }
+        ]
+      }
+    ],
   },
   options: [
     {
@@ -177,7 +249,7 @@ Merci d'avance pour votre appel`,
           </a>.
           <br>
           <br>
-          Pour toute question vous pouvez nous contacter à "france-transition(at)beta.gouv.fr"
+          Pour toute question, vous pouvez nous contacter à "france-transition(at)beta.gouv.fr"
         `
         },
         required: true,
