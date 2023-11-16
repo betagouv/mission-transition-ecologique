@@ -4,7 +4,7 @@
     class="fr-container--fluid"
     style="background-color: #E8EDFF;">
     <div
-      class="fr-container fr-py-20v">
+      class="fr-container fr-py-2v">
       <TeeCta/>
     </div>
   </div>
