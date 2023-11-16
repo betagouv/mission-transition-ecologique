@@ -6,7 +6,8 @@ export enum YesNo {
 
 export enum Entreprise {
   SectorActivity = "entreprise . secteur d'activité . est ",
-  CodeNAF = 'entreprise . code NAF niveau 1 . est ',
+  CodeNAF1 = 'entreprise . code NAF niveau 1 . est ',
+  CodeNAF = 'entreprise . code NAF',
   Workforce = 'entreprise . effectif',
   TransportMode = 'entreprise . mode de transport domicile-travail . est ',
   BuildingOwner = 'entreprise . est propriétaire de ses locaux',
@@ -47,7 +48,7 @@ export const sectors = {
 
 // NAF CODES
 // Associates a NAF1 (composed of 1 letter) to its expected publicode variable
-export const NAF1ToVar = (letter: string): string => Entreprise.CodeNAF + letter
+export const NAF1ToVar = (letter: string): string => Entreprise.CodeNAF1 + letter
 
 export const NAF1Letters = [...'ABCDEFGHIJKLMNOPQRSTU'] as const
 

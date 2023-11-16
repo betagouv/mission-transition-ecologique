@@ -22,17 +22,15 @@ publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
     - est éligible
-    - est dans un secteur d'activité ciblé
     - a un objectif ciblé
   entreprise . est éligible:
     toutes ces conditions:
     - a un effectif éligible
+    - est dans un secteur d'activité éligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
     - effectif <= 499
-  entreprise . est dans un secteur d'activité ciblé:
-    une de ces conditions:
-    - code NAF niveau 1 . est I
+  entreprise . est dans un secteur d'activité éligible: code NAF niveau 1 . est I
   entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est mon impact environnemental

@@ -32,38 +32,72 @@ publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
     - est éligible
-    - est dans un secteur d'activité ciblé
     - a un objectif ciblé
     - questionnaire . parcours = objectif précis
   entreprise . est éligible:
     toutes ces conditions:
     - a un effectif éligible
+    - est dans un secteur d'activité éligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
     - effectif >= 1
     - effectif <= 249
-  entreprise . est dans un secteur d'activité ciblé:
-    une de ces conditions:
-    - code NAF niveau 1 . est A
-    - code NAF niveau 1 . est B
-    - code NAF niveau 1 . est C
-    - code NAF niveau 1 . est D
-    - code NAF niveau 1 . est E
-    - code NAF niveau 1 . est F
-    - code NAF niveau 1 . est G
-    - code NAF niveau 1 . est H
-    - code NAF niveau 1 . est I
-    - code NAF niveau 1 . est J
-    - code NAF niveau 1 . est K
-    - code NAF niveau 1 . est L
-    - code NAF niveau 1 . est M
-    - code NAF niveau 1 . est N
-    - code NAF niveau 1 . est O
-    - code NAF niveau 1 . est P
-    - code NAF niveau 1 . est Q
-    - code NAF niveau 1 . est R
-    - code NAF niveau 1 . est S
-    - code NAF niveau 1 . est T
+  entreprise . est dans un secteur d'activité éligible: code NAF exclu = non
+  code NAF exclu:
+    toutes ces conditions:
+      # Activités d'intermédiation financière
+      - entreprise . code NAF = '"64.11Z"'
+      - entreprise . code NAF = '"64.19Z"'
+      - entreprise . code NAF = '"64.30Z"'
+      - entreprise . code NAF = '"64.91Z"'
+      - entreprise . code NAF = '"64.92Z"'
+      - entreprise . code NAF = '"64.99Z"'
+      # Activités de promotion immobilière et marchand de biens
+      - entreprise . code NAF = '"68.10Z"'
+      - entreprise . code NAF = '"68.20A"'
+      - entreprise . code NAF = '"68.20B"'
+      - entreprise . code NAF = '"41.10A"'
+      - entreprise . code NAF = '"41.10B"'
+      - entreprise . code NAF = '"41.10C"'
+      - entreprise . code NAF = '"41.10D"'
+      # Secteurs agricoles hors entreprises forestières
+      - entreprise . code NAF = '"01.11Z"'
+      - entreprise . code NAF = '"01.12Z"'
+      - entreprise . code NAF = '"01.13Z"'
+      - entreprise . code NAF = '"01.14Z"'
+      - entreprise . code NAF = '"01.15Z"'
+      - entreprise . code NAF = '"01.16Z"'
+      - entreprise . code NAF = '"01.19Z"'
+      - entreprise . code NAF = '"01.21Z"'
+      - entreprise . code NAF = '"01.22Z"'
+      - entreprise . code NAF = '"01.23Z"'
+      - entreprise . code NAF = '"01.24Z"'
+      - entreprise . code NAF = '"01.25Z"'
+      - entreprise . code NAF = '"01.26Z"'
+      - entreprise . code NAF = '"01.27Z"'
+      - entreprise . code NAF = '"01.28Z"'
+      - entreprise . code NAF = '"01.29Z"'
+      - entreprise . code NAF = '"01.30Z"'
+      - entreprise . code NAF = '"01.41Z"'
+      - entreprise . code NAF = '"01.42Z"'
+      - entreprise . code NAF = '"01.43Z"'
+      - entreprise . code NAF = '"01.44Z"'
+      - entreprise . code NAF = '"01.45Z"'
+      - entreprise . code NAF = '"01.46Z"'
+      - entreprise . code NAF = '"01.47Z"'
+      - entreprise . code NAF = '"01.49Z"'
+      - entreprise . code NAF = '"01.50Z"'
+      - entreprise . code NAF = '"01.61Z"'
+      - entreprise . code NAF = '"01.62Z"'
+      - entreprise . code NAF = '"01.63Z"'
+      - entreprise . code NAF = '"01.64Z"'
+      - entreprise . code NAF = '"01.70Z"'
+      - entreprise . code NAF = '"01.70Z"'
+      - entreprise . code NAF = '"02.10Z"'
+      - entreprise . code NAF = '"02.30Z"'
+      # Pêche
+      - entreprise . code NAF = '"03.21Z"'
+      - entreprise . code NAF = '"46.38A"'
   entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est rénover mon bâtiment

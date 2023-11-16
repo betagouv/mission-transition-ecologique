@@ -3,6 +3,7 @@ import { ValidateFunction } from 'ajv'
 import programSchema from '../schemas/program-data-schema.json'
 import regionSchema from '../schemas/region-data-schema.json'
 import regionData from '../../web/public/data/references/com_codes.json'
+import { ensureError } from '@tee/backend/src/helpers/errors'
 
 import { prependInterface, readPrograms } from '../src/dataPipeline'
 
@@ -28,7 +29,13 @@ test('Publicode data is valid when appended with interface', () => {
   programs = prependInterface(programs)
 
   programs.forEach((p) => {
-    expect(() => new Engine(p.publicodes as any)).not.toThrowError()
+    try {
+      expect(() => new Engine(p.publicodes as any)).not.toThrowError()
+    } catch (errUnknown) {
+      const err = ensureError(errUnknown)
+      err.message = `Program: ${p.titre}\n\n${err.message}`
+      throw err // throw the error so test fails as expected
+    }
   })
 })
 

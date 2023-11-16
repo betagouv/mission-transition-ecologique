@@ -13,7 +13,8 @@ import {
   FindInRefs,
   HasInputOptions,
   TrackComponents,
-  TrackId
+  TrackId,
+  Entreprise
 } from '@/types'
 import type { Track } from '@/types'
 
@@ -97,6 +98,14 @@ export const siret: Track = {
               help: 'https://www.insee.fr/fr/information/2120875',
               path: 'etablissement.uniteLegale.activitePrincipaleUniteLegale',
               dataField: 'codeNaf',
+              onlyRemap: true
+            },
+            {
+              from: DataMappingFrom.RawData,
+              id: 'naf',
+              help: 'https://www.insee.fr/fr/information/2120875',
+              path: 'etablissement.uniteLegale.activitePrincipaleUniteLegale',
+              dataField: Entreprise.CodeNAF,
               onlyRemap: true
             },
             {
