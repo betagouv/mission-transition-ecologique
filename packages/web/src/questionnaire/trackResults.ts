@@ -59,39 +59,47 @@ export const results = {
       },
       {
         field: "publicodes.est dans les objectifs de l'entreprise.une de ces conditions",
-        label: "objectif prioritaire",
+        label: "objectif",
         trueIf: 'exists',
         values: [
           { 
-            label: 'mon impact environnemental',
+            // label: 'mon impact environnemental',
+            label: '🌱 Stratégie environnementale',
             value: 'questionnaire . objectif prioritaire . est mon impact environnemental'
           },
           { 
-            label: 'ma performance énergétique',
+            // label: 'ma performance énergétique',
+            label: '⚡️ Energie',
             value: 'questionnaire . objectif prioritaire . est ma performance énergétique'
           },
           { 
-            label: "ma consommation d'eau",
+            // label: "ma consommation d'eau",
+            label: '💧 Eau',
             value: "questionnaire . objectif prioritaire . est diminuer ma consommation d'eau"
           },
           { 
-            label: 'rénover mon bâtiment',
+            // label: 'rénover mon bâtiment',
+            label: '🏢 Bâtiment',
             value: 'questionnaire . objectif prioritaire . est rénover mon bâtiment'
           },
           { 
-            label: 'la mobilité durable',
+            // label: 'la mobilité durable',
+            label:  '🚲 Mobilité',
             value: 'questionnaire . objectif prioritaire . est la mobilité durable'
           },
           { 
-            label: 'la gestion des déchets',
+            // label: 'la gestion des déchets',
+            label: '🗑 Déchets',
             value: 'questionnaire . objectif prioritaire . est la gestion des déchets'
           },
           { 
-            label: "l'écoconception",
+            // label: "l'écoconception",
+            label: '🏭 Production',
             value: "questionnaire . objectif prioritaire . est l'écoconception"
           },
           { 
-            label: 'former ou recruter',
+            // label: 'former ou recruter',
+            label: '🧑‍🎓 RH',
             value: 'questionnaire . objectif prioritaire . est former ou recruter'
           }
         ]
