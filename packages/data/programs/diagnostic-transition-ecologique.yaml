@@ -1,0 +1,49 @@
+titre: Diagnostic Transition Ecologique
+promesse: Intégrez la transition écologique dans le fonctionnement quotidien de votre
+  entreprise
+description: 'Réalisez un diagnostic de transition écologique avec votre conseiller
+  CCI. Vous pourrez évoquer ces enjeux à travers le prisme du pilotage de votre activité
+  : la gestion de vos locaux, vos consommations d''énergie, la gestion de vos déchets,
+  vos achats et vos mobilités.'
+illustration: images/TEE_ampoule.png
+opérateur de contact: CCI
+url: ''
+nature de l'aide: accompagnement
+coût de l'accompagnement: Gratuit (sauf en PACA 650 € à 900 € selon le secteu d'activité)
+durée de l'accompagnement: 1 jour dont 1/2 journée avec l'entreprise
+objectifs:
+- Réalisez un état des lieux à 360° afin d’évaluer la maturité écologique de votre
+  entreprise.
+- Identifiez les enjeux prioritaires de votre entreprise et élaborez un plan d'action
+  de transformation.
+- Menez un bouquet d'actions simples ou plus engageantes pour transformer votre entreprise
+  et optimiser vos coûts.
+publicodes:
+  afficher le dispositif si:
+    toutes ces conditions:
+    - règles d'éligibilité
+    - secteur d'activité prioritaire
+    - est dans les objectifs de l'entreprise
+  règles d'éligibilité:
+    toutes ces conditions:
+    - entreprise . effectif <= 249
+  secteur d'activité prioritaire:
+    une de ces conditions:
+    - entreprise . code NAF niveau 1 . est B
+    - entreprise . code NAF niveau 1 . est C
+    - entreprise . code NAF niveau 1 . est D
+    - entreprise . code NAF niveau 1 . est E
+    - entreprise . code NAF niveau 1 . est F
+    - entreprise . code NAF niveau 1 . est G
+    - entreprise . code NAF niveau 1 . est H
+    - entreprise . code NAF niveau 1 . est I
+    - entreprise . code NAF niveau 1 . est J
+    - entreprise . code NAF niveau 1 . est K
+    - entreprise . code NAF niveau 1 . est L
+    - entreprise . code NAF niveau 1 . est M
+    - entreprise . code NAF niveau 1 . est N
+    - entreprise . code NAF niveau 1 . est Q
+    - entreprise . code NAF niveau 1 . est R
+  est dans les objectifs de l'entreprise:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est mon impact environnemental

@@ -1,0 +1,69 @@
+titre: Sobriété et Résilience des Territoires
+promesse: Développez des ressources communes avec les acteurs de votre territoire
+description: Vous souhaitez agir localement avec d'autres acteurs pour renforcer l'adaptabilité
+  de votre territoire face aux changements climatiques ? Participez à l'Appel à Communs
+  "Sobriété et Résilience des territoires"
+description longue: "L'appel à communs mise sur les licences ouvertes et les communautés\
+  \ pour financer des solutions ouvertes – les communs – qui répondent aux besoins\
+  \ partagés d’un grand nombre d’acteurs hétérogènes (public, privé, citoyen). \n\n\
+  Les projets éligibles répondent aux quatre critères suivants :\n- ils sont développés\
+  \ en licences ouvertes ;\n- ils intègrent des communautés d'utilisateurs et de contributeurs\
+  \ ;\n- ils sont documentés sur le support public de l'appel à communs (le Wiki)\
+  \ ;\n- ils répondent à au moins l'un des défis de l'appel à communs.\n\n4 défis\
+  \ ont un caractère transversal : \n- Connaissances & ressources\n- Mise en récits\n\
+  - Gouvernance\n- Modèles économiques\n\n6 ont une entrée plus thématique :\n- Ecosystèmes\
+  \ et gestion des ressources naturelles\n- Planification et aménagement urbain\n\
+  - Alimentation & agriculture\n- Energie et réseaux  \n- Mobilités & Logistique\n\
+  - Bâtiment"
+illustration: images/TEE_energie_verte.png
+opérateur de contact: ADEME
+url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/20230418/sobriete-resilience-territoires?cible=79
+nature de l'aide: financement
+montant du financement: Selon projet
+objectifs:
+- 'Rejoignez la communauté de l’Appel à Communs : créez un compte, renseignez votre
+  fiche entreprise, signez la charte, etc.'
+- Découvrez les challenges déjà identifiés et rejoignez, si vous le souhaitez ,une
+  idée de commun existante.
+- 'Si votre idée de commun est nouvelle, proposez un projet de commun en le décrivant
+  via le formulaire "créer un commun" sur : https://wiki.resilience-territoire.ademe.fr/wiki/Accueil'
+- Si votre projet est séléctionné, déposez-le sur le site de l'ADEME pour faire une
+  demande de financement.
+publicodes:
+  afficher le dispositif si:
+    toutes ces conditions:
+    - secteur d'activité prioritaire
+    - est dans les objectifs de l'entreprise
+  secteur d'activité prioritaire:
+    une de ces conditions:
+    - entreprise . code NAF niveau 1 . est A
+    - entreprise . code NAF niveau 1 . est B
+    - entreprise . code NAF niveau 1 . est C
+    - entreprise . code NAF niveau 1 . est D
+    - entreprise . code NAF niveau 1 . est E
+    - entreprise . code NAF niveau 1 . est F
+    - entreprise . code NAF niveau 1 . est G
+    - entreprise . code NAF niveau 1 . est H
+    - entreprise . code NAF niveau 1 . est I
+    - entreprise . code NAF niveau 1 . est J
+    - entreprise . code NAF niveau 1 . est K
+    - entreprise . code NAF niveau 1 . est L
+    - entreprise . code NAF niveau 1 . est M
+    - entreprise . code NAF niveau 1 . est N
+    - entreprise . code NAF niveau 1 . est O
+    - entreprise . code NAF niveau 1 . est P
+    - entreprise . code NAF niveau 1 . est Q
+    - entreprise . code NAF niveau 1 . est R
+    - entreprise . code NAF niveau 1 . est S
+    - entreprise . code NAF niveau 1 . est T
+    - entreprise . code NAF niveau 1 . est U
+  est dans les objectifs de l'entreprise:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est rénover mon bâtiment
+    - questionnaire . objectif prioritaire . est la mobilité durable
+    - questionnaire . objectif prioritaire . est la gestion des déchets
+    - questionnaire . objectif prioritaire . est diminuer ma consommation d'eau
+    - questionnaire . objectif prioritaire . est ma performance énergétique
+    - questionnaire . objectif prioritaire . est former ou recruter
+    - questionnaire . objectif prioritaire . est mon impact environnemental
+    - questionnaire . objectif prioritaire . est l'écoconception

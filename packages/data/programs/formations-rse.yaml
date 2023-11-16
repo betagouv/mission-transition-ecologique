@@ -1,0 +1,64 @@
+titre: Formations RSE
+promesse: Accédez à des formations courtes et opérationnelles aux enjeux du développement
+  durable
+description: 'Bpifrance Université met en ligne gratuitement un catalogue de formations
+  animées par des experts de la RSE. Ces formations abordent de nombreux sujets relatifs
+  aux enjeux de la responsabilité sociétale des entreprises : environnement, enjeux
+  sociaux, achats responsables…'
+description longue: 'La responsabilité sociétale des entreprises (RSE) est définie
+  comme l''intégration volontaire par les entreprises de préoccupations sociales et
+  environnementales à leurs activités commerciales et leurs relations avec les parties
+  prenantes.
+
+
+  En d''autres termes, la RSE c''est la contribution des entreprises aux enjeux du
+  développement durable.
+
+
+  Une entreprise qui pratique la RSE va donc chercher à avoir un impact positif sur
+  la société tout en étant économiquement viable.'
+illustration: images/TEE_eolienne.png
+opérateur de contact: Bpifrance
+url: https://www.bpifrance-universite.fr/thematique/responsabilite-societale-des-entreprises/
+nature de l'aide: formation
+coût de l'accompagnement: Gratuit
+durée de l'accompagnement: ''
+objectifs:
+- Créer gratuitement un compte sur Mon.Bpifrance.fr afin de pouvoir accéder au catalogue
+  de formations.
+- 'Accédez à une cinquantaine de formations gratuites sur la thématique "RSE : Responsabilité
+  sociétale des entreprises".'
+- Visionnez votre formation. Elle peut prendre la forme de modules e-learning, webinaires
+  live et replay, podcasts, digital guides, tutos, exercices interactifs, ou interviews
+  réalisés avec des experts.
+publicodes:
+  afficher le dispositif si:
+    toutes ces conditions:
+    - secteur d'activité prioritaire
+    - est dans les objectifs de l'entreprise
+  secteur d'activité prioritaire:
+    une de ces conditions:
+    - entreprise . code NAF niveau 1 . est A
+    - entreprise . code NAF niveau 1 . est B
+    - entreprise . code NAF niveau 1 . est C
+    - entreprise . code NAF niveau 1 . est D
+    - entreprise . code NAF niveau 1 . est E
+    - entreprise . code NAF niveau 1 . est F
+    - entreprise . code NAF niveau 1 . est G
+    - entreprise . code NAF niveau 1 . est H
+    - entreprise . code NAF niveau 1 . est I
+    - entreprise . code NAF niveau 1 . est J
+    - entreprise . code NAF niveau 1 . est K
+    - entreprise . code NAF niveau 1 . est L
+    - entreprise . code NAF niveau 1 . est M
+    - entreprise . code NAF niveau 1 . est N
+    - entreprise . code NAF niveau 1 . est O
+    - entreprise . code NAF niveau 1 . est P
+    - entreprise . code NAF niveau 1 . est Q
+    - entreprise . code NAF niveau 1 . est R
+    - entreprise . code NAF niveau 1 . est S
+    - entreprise . code NAF niveau 1 . est T
+    - entreprise . code NAF niveau 1 . est U
+  est dans les objectifs de l'entreprise:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est former ou recruter

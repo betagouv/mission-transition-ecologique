@@ -177,10 +177,22 @@ export interface TrackChoice {
 
 // FOR TRACK RESULTS
 
+export interface TrackFilterValue {
+  label: string,
+  value: string
+}
+
+export interface TrackFilter {
+  field: string,
+  label: string,
+  trueIf: ConditionOperators,
+  values: TrackFilterValue[]
+}
 export interface TrackResultsConfig {
-  showAlertNoResults: boolean,
-  showAlertResults: boolean,
+  noResultsMessage: Translations,
+  noResultsImage: string,
   showResultsTitle: boolean,
   showProgramInfos: boolean,
-  showProgramSubtitles: boolean
+  showProgramSubtitles: boolean,
+  filters?: TrackFilter[]
 }

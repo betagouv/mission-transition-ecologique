@@ -1,0 +1,51 @@
+titre: Flotte de vélos à disposition
+promesse: Mettez à la disposition gratuite de vos salariés une flotte de vélos
+description: Bénéficiez d'une réduction d'impôt pour la mise à disposition gratuite
+  d'une flotte de vélos pour les déplacements de vos salariés entre leur domicile
+  et leur lieu de travail.
+description longue: Votre entreprise doit être soumise à l'impôt sur les sociétés
+  (IS). Si vous louez la flotte de vélos, le contrat de location doit être souscrit
+  pour une durée minimale de 3 ans.
+illustration: images/TEE_ampoule.png
+opérateur de contact: DDFIP
+url: https://les-aides.fr/aide/QXQvGSwMDA4vGRUgJA/ddfip/reduction-d-impot-pour-mise-a-disposition-d-une-flotte-de-velos.html
+nature de l'aide: avantage fiscal
+montant de l'avantage fiscal: jusqu'à 25% de l'achat ou de la location
+objectifs:
+- Louez ou achetez une flotte de vélos et mettez là gratuitement à disposition de
+  vos salariés.
+- Déclarez votre réduction d'impôt dans les mêmes délais que leur déclaration de résultats,
+  en fin d'exercice.
+- Bénéficiez d'une réduction d'impôt allant jusqu'à 25% du prix d'achat ou de location
+  de cette flotte de vélos, par exercice.
+publicodes:
+  afficher le dispositif si:
+    toutes ces conditions:
+    - secteur d'activité prioritaire
+    - est dans les objectifs de l'entreprise
+  secteur d'activité prioritaire:
+    une de ces conditions:
+    - entreprise . code NAF niveau 1 . est A
+    - entreprise . code NAF niveau 1 . est B
+    - entreprise . code NAF niveau 1 . est C
+    - entreprise . code NAF niveau 1 . est D
+    - entreprise . code NAF niveau 1 . est E
+    - entreprise . code NAF niveau 1 . est F
+    - entreprise . code NAF niveau 1 . est G
+    - entreprise . code NAF niveau 1 . est H
+    - entreprise . code NAF niveau 1 . est I
+    - entreprise . code NAF niveau 1 . est J
+    - entreprise . code NAF niveau 1 . est K
+    - entreprise . code NAF niveau 1 . est L
+    - entreprise . code NAF niveau 1 . est M
+    - entreprise . code NAF niveau 1 . est N
+    - entreprise . code NAF niveau 1 . est O
+    - entreprise . code NAF niveau 1 . est P
+    - entreprise . code NAF niveau 1 . est Q
+    - entreprise . code NAF niveau 1 . est R
+    - entreprise . code NAF niveau 1 . est S
+    - entreprise . code NAF niveau 1 . est T
+    - entreprise . code NAF niveau 1 . est U
+  est dans les objectifs de l'entreprise:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est la mobilité durable

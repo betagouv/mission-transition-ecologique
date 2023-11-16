@@ -84,6 +84,15 @@ WARNING :
 .tee-no-hover {
   pointer-events: none;
 }
+.tee-text-light {
+  color: #929292;
+}
+.tee-text-no-result {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 2.5rem;
+  color: #000091;
+}
 
 /* TRACK CALLOUT */
 

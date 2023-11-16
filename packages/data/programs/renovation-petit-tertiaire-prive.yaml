@@ -1,0 +1,55 @@
+titre: Rénovation Petit Tertiaire Privé
+promesse: Faites-vous accompagner dans vos travaux de rénovation énergétique
+description: 'Ce programme vise la mise en oeuvre d''actions d''information et d''accompagnement
+  en faveur de la rénovation énergétique  des petits locaux tertiaires privés, sur
+  tout le territoire : isolation de votre bâtiment, choix de vos équipements (cuisson,
+  froid, éclairage…), chauffage et climatisation de vos locaux...'
+illustration: images/TEE_ampoule.png
+opérateur de contact: ADEME
+autres opérateurs:
+- CCI
+- CMA
+- France Rénov'
+url: ''
+nature de l'aide: accompagnement
+coût de l'accompagnement: Gratuit
+durée de l'accompagnement: 2h
+objectifs:
+- Réalisez un premier rendez-vous par téléphone pour échanger sur votre projet de
+  rénovation énergétique
+- Benéficiez d'un rendez-vous dans vos locaux
+- Disposer d'un pré-diagnostic énergétique
+- Obtenez de l'aide votre recherche de solutions en prenant en compte l’ensemble des
+  aspects de votre projet (financier, juridique, technique et social).
+publicodes:
+  afficher le dispositif si:
+    toutes ces conditions:
+    - règles d'éligibilité
+    - secteur d'activité prioritaire
+    - est dans les objectifs de l'entreprise
+  règles d'éligibilité:
+    toutes ces conditions:
+    - entreprise . effectif <= 250
+  secteur d'activité prioritaire:
+    une de ces conditions:
+    - entreprise . code NAF niveau 1 . est C
+    - entreprise . code NAF niveau 1 . est F
+    - entreprise . code NAF niveau 1 . est G
+    - entreprise . code NAF niveau 1 . est H
+    - entreprise . code NAF niveau 1 . est I
+    - entreprise . code NAF niveau 1 . est J
+    - entreprise . code NAF niveau 1 . est K
+    - entreprise . code NAF niveau 1 . est L
+    - entreprise . code NAF niveau 1 . est M
+    - entreprise . code NAF niveau 1 . est N
+    - entreprise . code NAF niveau 1 . est P
+    - entreprise . code NAF niveau 1 . est Q
+    - entreprise . code NAF niveau 1 . est R
+    - entreprise . code NAF niveau 1 . est S
+    - entreprise . code NAF niveau 1 . est T
+    - entreprise . code NAF niveau 1 . est U
+  est dans les objectifs de l'entreprise:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est rénover mon bâtiment
+    - questionnaire . objectif prioritaire . est ma performance énergétique
+    - questionnaire . objectif prioritaire . est mon impact environnemental
