@@ -119,7 +119,13 @@
         <!-- LICENCE LINKS -->
         <div class="fr-footer__bottom-copy">
           <p>
-            {{ choices.t('licence') }}
+            {{ choices.t('footer.thisApplicationAndIts') }}
+            <a
+              :href="sourceCodeHref"
+              class="fr-link-licence no-content-after">
+              {{ choices.t('footer.sourceCode') }}
+            </a>
+            {{ choices.t('footer.areUnderlicence') }}
             &nbsp;
             <a
               :href="licenceHref"
@@ -141,6 +147,7 @@ import { choicesStore } from '../stores/choices'
 
 const choices = choicesStore()
 
+const sourceCodeHref = 'https://github.com/betagouv/transition-ecologique-entreprises-widget/tree/main'
 const licenceHref = 'https://github.com/betagouv/transition-ecologique-entreprises-widget/blob/main/LICENSE'
 const licenceName = 'GNU AGPL v.3'
 

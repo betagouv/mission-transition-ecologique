@@ -5,7 +5,11 @@ export const frDict = {
   send: 'Envoyer',
   modify: 'modifier',
   or: 'Ou',
-  licence: 'Ce widget et son code source sont sous licence',
+  footer: {
+    thisApplicationAndIts: 'Cette application et son',
+    sourceCode: 'code source',
+    areUnderlicence: 'sont sous licence',
+  },
   selection: {
     mySelection: 'Ma sélection',
     selected: 'Sélectionné'
