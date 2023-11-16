@@ -5,7 +5,7 @@
 <script setup lang='ts'>
 import type { DsfrButton } from '@gouvminint/vue-dsfr/types'
 import { computed, ref, watch } from 'vue'
-import { DsfrButtonProps } from '@gouvminint/vue-dsfr/types/components/DsfrButton/DsfrButton.vue'
+import type { DsfrButtonProps } from '@gouvminint/vue-dsfr/types/components/DsfrButton/DsfrButton.vue'
 
 interface DsfrButtonPropsWithloading extends DsfrButtonProps {
   loading?: boolean
