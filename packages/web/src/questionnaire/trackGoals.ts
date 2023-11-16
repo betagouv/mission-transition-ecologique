@@ -108,6 +108,7 @@ export const goals: Track = {
     },
 
     // LEGACY OPTIONS
+    // USEFUL FOR DEBUGGING
     {
       disabled: true,
       value: {

@@ -19,11 +19,84 @@ export const results: Track = {
     component: TrackComponents.Results,
   },
   config: {
-    showAlertResults: false,
-    showAlertNoResults: true,
+    noResultsMessage: {fr: "Aucune aide n'a pu être identifiée avec les critères choisis..."},
+    noResultsImage: 'images/tracks/no-results.svg',
     showResultsTitle: false,
     showProgramInfos: true,
-    showProgramSubtitles: false
+    showProgramSubtitles: false,
+    filters: [
+      {
+        field: "nature de l'aide",
+        label: "nature de l'aide",
+        trueIf: '==',
+        values: [
+          {
+            label: 'Accompagnement',
+            value: 'accompagnement'
+          },
+          {
+            label: 'Financement',
+            value: 'financement'
+          },
+          {
+            label: 'Prêt',
+            value: 'prêt'
+          },
+          {
+            label: 'Avantage fiscal',
+            value: 'avantage fiscal'
+          },
+          {
+            label: 'Formation',
+            value: 'formation'
+          },
+          // for debugging purposes
+          // {
+          //   label: 'FAIL',
+          //   value: 'xxx'
+          // }
+        ]
+      },
+      {
+        field: "publicodes.est dans les objectifs de l'entreprise.une de ces conditions",
+        label: "objectif prioritaire",
+        trueIf: 'exists',
+        values: [
+          {
+            label: 'mon impact environnemental',
+            value: 'questionnaire . objectif prioritaire . est mon impact environnemental'
+          },
+          {
+            label: 'ma performance énergétique',
+            value: 'questionnaire . objectif prioritaire . est ma performance énergétique'
+          },
+          {
+            label: "ma consommation d'eau",
+            value: "questionnaire . objectif prioritaire . est diminuer ma consommation d'eau"
+          },
+          {
+            label: 'rénover mon bâtiment',
+            value: 'questionnaire . objectif prioritaire . est rénover mon bâtiment'
+          },
+          {
+            label: 'la mobilité durable',
+            value: 'questionnaire . objectif prioritaire . est la mobilité durable'
+          },
+          {
+            label: 'la gestion des déchets',
+            value: 'questionnaire . objectif prioritaire . est la gestion des déchets'
+          },
+          {
+            label: "l'écoconception",
+            value: "questionnaire . objectif prioritaire . est l'écoconception"
+          },
+          {
+            label: 'former ou recruter',
+            value: 'questionnaire . objectif prioritaire . est former ou recruter'
+          }
+        ]
+      }
+    ],
   },
   options: [
     {
@@ -176,7 +249,7 @@ Merci d'avance pour votre appel`,
           </a>.
           <br>
           <br>
-          Pour toute question vous pouvez nous contacter à "france-transition(at)beta.gouv.fr"
+          Pour toute question, vous pouvez nous contacter à "france-transition(at)beta.gouv.fr"
         `
         },
         required: true,
@@ -201,7 +274,6 @@ Merci d'avance pour votre appel`,
           // 'api-key': ''
         },
         // headerApiKey: 'api-key',
-        // envApiKey: 'VITE_BREVO_TOKEN',
         dataStructure: {
           email: '',
           // listIds: [],
@@ -216,15 +288,6 @@ Merci d'avance pour votre appel`,
             id: 'email',
             dataField: 'email'
           },
-          // {
-          //   from: 'env',
-          //   id: 'VITE_BREVO_LIST_IDS',
-          //   dataField: 'listIds',
-          //   // dataField: 'includeListIds',
-          //   asArray: true,
-          //   sep: ',',
-          //   type: 'integer'
-          // },
           {
             from: DataMappingFrom.FormData,
             id: 'surname',
@@ -302,73 +365,6 @@ Merci d'avance pour votre appel`,
           }
         ]
       }
-      // {
-      //   disabled: true,
-      //   help: 'Second action send a transactional email',
-      //   helpDocumentation: [
-      //     'https://developers.brevo.com/docs/send-a-transactional-email',
-      //     'https://developers.brevo.com/reference/sendtransacemail'
-      //   ],
-      //   action: 'sendTransactionalEmail',
-      //   url: 'https://api.brevo.com/v3/smtp/email',
-      //   method: 'POST',
-      //   headers: {
-      //     accept: 'application/json',
-      //     'content-type': 'application/json',
-      //     'api-key': ''
-      //   },
-      //   headerApiKey: 'api-key',
-      //   envApiKey: 'VITE_BREVO_TOKEN',
-      //   dataStructure: {
-      //     sender: {
-      //       name: 'Transition Ecologique des Entreprises',
-      //       email: ''
-      //     },
-      //     to: [
-      //       {
-      //         name: '',
-      //         email: ''
-      //       }
-      //     ],
-      //     replyTo: {
-      //       name: 'Mission Transition Ecologique des Entreprises',
-      //       email: 'france-transition@beta.gouv.fr'
-      //     },
-      //     subject: 'Test transactional email',
-      //     htmlContent: `
-      //       <html>
-      //         <head></head>
-      //         <body>
-      //           <p>
-      //             Bonjour,
-      //           </p>
-      //           <p>
-      //             Merci d'avoir contacté l'équipe de Transition Ecologique des Entreprises.
-      //           </p>
-      //           <p>
-      //             Nous revenons vers vous au plus vite
-      //           </p>
-      //         </body>
-      //       </html>`
-      //   },
-      //   dataMapping: [
-      //     {
-      //       from: 'env',
-      //       id: 'VITE_BREVO_SENDER_EMAIL',
-      //       dataField: 'sender.email',
-      //     },
-      //     {
-      //       from: DataMappingFrom.FormData,
-      //       id: 'email',
-      //       dataField: 'to.0.email',
-      //     },
-      //     {
-      //       from: DataMappingFrom.FormData,
-      //       id: 'name',
-      //       dataField: 'to.0.name',
-      //     },
-      //   ]
-      // }
     ]
     // next: {
     //   default: 'track_results'

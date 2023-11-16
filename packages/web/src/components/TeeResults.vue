@@ -10,20 +10,6 @@
     </h6> -->
   </div>
 
-  <!-- RESULTS ALERT -->
-  <DsfrAlert
-    v-if="trackConfig && trackConfig.showAlertResults && resultsProgsLen"
-    :title="choices.t('results.alertTitle')"
-    :description="choices.t('results.alertDescription')"
-    type="success">
-  </DsfrAlert>
-  <DsfrAlert
-    v-if="trackConfig && trackConfig.showAlertNoResults && !resultsProgsLen"
-    :title="choices.t('results.alertTitleNoResults')"
-    :description="choices.t('results.alertNoResults')"
-    type="warning">
-  </DsfrAlert>
-
   <!-- DEBUGGING -->
   <h4
     v-if="trackConfig && trackConfig.showResultsTitle && resultsProgsLen"
@@ -127,6 +113,7 @@
 import { onBeforeMount, computed } from 'vue'
 import { choicesStore } from '../stores/choices'
 import { programsStore } from '../stores/programs'
+import { navigationStore } from '../stores/navigation'
 import { analyticsStore } from '../stores/analytics'
 
 import { scrollToTop, consolidateAmounts } from '../utils/helpers'
@@ -141,6 +128,7 @@ import { ProgramAidType } from '@/types/programTypes'
 const choices = choicesStore()
 const programs = programsStore()
 const analytics = analyticsStore()
+const nav = navigationStore()
 
 // const defaultImages = [
 //   'images/TEE_ampoule.png',
@@ -155,8 +143,9 @@ interface Props {
   trackOptions?: any,
   trackForm?: any,
   tracksResults: TrackChoice[] | any[],
-  trackElement: any;
-  debug?: boolean,
+  trackElement: any,
+  disableWidget?: boolean,
+  debug?: boolean
 }
 const props = defineProps<Props>()
 
@@ -166,10 +155,12 @@ const resultsProgsLen = computed(() => {
   return resultsProgs.length
 })
 
-const updateDetailResult = (id: string | number) => {
+const updateDetailResult = async (id: string | number) => {
   // console.log(`TeeResults > updateDetailResult >  id : ${id}`)
   programs.setDetailResult(id, props.trackId)
-  scrollToTop(props.trackElement, props.trackId)
+  nav.setCurrentDetailId(id, props.disableWidget)
+  nav.updateUrl(props.disableWidget)
+  !props.disableWidget && scrollToTop(props.trackElement, props.trackId)
 }
 
 const getCostInfos = (program: ProgramData) => {

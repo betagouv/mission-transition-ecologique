@@ -1,9 +1,12 @@
-// import { createApp, defineCustomElement } from 'vue'
+import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import { defineCustomElement } from './defineCustomElementWithStyles'
 
-// import App from './App.ce.vue'
-import TeeApp from './TeeApp.ce.vue'
+import { router } from './router'
+
+// ts-ignore
+import WebApp from './WebApp.vue'
+import WidgetApp from './WidgetApp.ce.vue'
 // console.log('TeeApp.styles :', TeeApp.styles) // ["/* inlined css */"]
 
 // Import dsfr
@@ -37,9 +40,9 @@ addIcons(
 
 
 // Styles imports
-// import './assets/main.css'
+import './assets/main.css'
 
-// import '@gouvfr/dsfr/dist/core/core.main.min.css'            // Le CSS minimal du DSFR
+import '@gouvfr/dsfr/dist/core/core.main.min.css'            // Le CSS minimal du DSFR
 // import '@gouvfr/dsfr/dist/component/component.main.min.css'  // Styles de tous les composants du DSFR
 // import '@gouvfr/dsfr/dist/utility/utility.main.min.css'      // Classes utilitaires : les composants de VueDsfr en ont besoin
 // import '@gouvminint/vue-dsfr/styles'                         // Les styles propres aux composants de VueDsfr
@@ -56,21 +59,24 @@ const store = createPinia()
 // cf : https://play.vuejs.org/#eNqNUstugzAQ/JUtF1MpBeUa0UhVVKn9gfaSC4IlovJLtkGqEP/eNTZpaZoSLnjXs7MzIw/Jk9ZZ32GySwpbmVY7sOg6vT/KVmhlHAxgsNlAjU0r8dBZp8QzR4HSwQiNUQIYzbMz/qCEjv0s94Wnp+tKSeugQnj8iyv1yHtC/WzaLCBTJj4fKgKwDRF41MQl7InISF3KXpBzBe/K8PqOEaDIgxmyQYVDoXnpkCqAwnsD+koLUhlRcvDUStLC3QTIA6KYnOQXQ0EiYNC4HIk690U+n7yW8/5kk8yJrAaujerbGq+HvF2kvF3E/E80RxmZU+bQOoo0/FdSq9s+RhCT2c7R5OHq0uYkadVnKz+w+v2WbvIRIF48YQJN9BSfiOKYcXX6bt5m8HWiwhreSt7hDoYhLBnHa37HL2LEH6k=
 // cf : https://levelup.gitconnected.com/how-to-use-web-components-in-vue-js-bfbd16f6b26f
 // cf : https://dev.to/nurlan_tl/tips-to-create-web-components-using-vue-3-ts-vite-3a7a
-const TeeAppComponent = defineCustomElement(TeeApp, {
+const WidgetAppComponent = defineCustomElement(WidgetApp, {
   plugins: [
     // @ts-ignore
     { plugin: VueDsfr },
     // { plugin: VueDsfr, options: { icons: Object.values(icons) }},
     // @ts-ignore
-    { plugin: store }
+    { plugin: store },
+    { plugin: router }
   ],
   comps: [
     { name: 'v-icon', comp: OhVueIcon }
   ]
 })
 
-customElements.define('gov-aid-tree-app', TeeAppComponent)
+customElements.define('gov-aid-tree-app', WidgetAppComponent)
 
-// const app = createApp(SimpleSample)
-// app.use(createPinia())
-// app.mount('#app')
+const app = createApp(WebApp)
+app.use(VueDsfr)
+app.use(store)
+app.use(router)
+app.mount('#app')
