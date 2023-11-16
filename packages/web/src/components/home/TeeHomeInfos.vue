@@ -107,7 +107,7 @@ const content = [
     badge: '👷‍♀️ Gestion de l’eau',
     badgeColor: '#FCA081',
     title: 'Faire des économies sur vos consommations d’eau',
-    img: '/images/home/water.svg',
+    img: '/images/home/water.png',
     imgRight: true,
     text: "L’eau a un coût, qui risque d’augmenter dans les années à venir. \
         La réglementation peut imposer à certaines activités de mettre \

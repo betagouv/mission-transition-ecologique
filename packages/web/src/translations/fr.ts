@@ -23,6 +23,7 @@ export const frDict = {
     search: 'Rechercher'
   },
   results: {
+    results: 'résultats',
     backToResults: 'Retour aux résultats',
     // showForm: "Candidatez pour le dispositif {title}",
     knowMore: 'En savoir plus',
@@ -30,11 +31,13 @@ export const frDict = {
     alertTitle: 'Merci, voici vos résultats',
     alertTitleNoResults: 'Pas de résultats',
     alertNoResults:
-      "Désolé, nous n'avons pas trouvé de dispositif adapté à votre situation et vos demandes",
+    "Désolé, nous n'avons pas trouvé de dispositif adapté à votre situation et vos demandes",
     alertDescription:
-      'Vous pouvez également nous envoyer un mail via le formulaire ci-après pour être mis en contact avec des conseillers',
+    'Vous pouvez également nous envoyer un mail via le formulaire ci-après pour être mis en contact avec des conseillers',
     yourResults: 'Vos résultats',
-    fittingPrograms: 'Les aides correspondant à vos choix'
+    fittingPrograms: 'Les aides correspondant à vos choix',
+    filterSelect: "Filtrer par {fieldLabel}",
+    resetSelect: '(réinitialiser)'
   },
   errors: {
     error: 'Erreur'
@@ -53,7 +56,8 @@ export const frDict = {
     aid: 'Montant du financement',
     aidPrefix: "Montant de l'aide",
     loan: 'Montant du prêt',
-    loanRate: 'Taux du prêt'
+    loanRate: 'Taux du prêt',
+    taxAdvantage: 'Avantage fiscal'
   },
   enterprise: {
     select: 'Sélectionnez votre entreprise',
@@ -86,7 +90,7 @@ export const frDict = {
     prêt: {
       the: 'le',
       this: 'ce',
-      of: "du"
+      of: 'du'
     }
   }
 }

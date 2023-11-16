@@ -34,7 +34,7 @@
             <img 
             class="fr-footer__logo" 
             style="height:110px;" 
-            src="/images/logos/mission-transition-logo.png" 
+            src="/images/logos/mission-transition-logo-alone.png" 
             alt="Transition Ecologique des entreprises" />
             <!-- L’alternative de l’image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l’image -->
         </router-link>
@@ -163,17 +163,17 @@ const gouvLinks = [
   }
 ]
 
-const mainPartner = {
-  label: 'Aides-territoires',
-  img: '/images/logos/aides-territoires.png',
-  href: 'https://aides-territoires.beta.gouv.fr/'
+const mainPartner =   {
+  label: "Place des entreprises",
+  img: '/images/logos/place-des-entreprises.svg',
+  href: 'https://place-des-entreprises.beta.gouv.fr'
 }
+// {
+//   label: 'Aides-territoires',
+//   img: '/images/logos/aides-territoires.png',
+//   href: 'https://aides-territoires.beta.gouv.fr/'
+// }
 const partners = [
-  {
-    label: "Place des entreprises",
-    img: '/images/logos/place-des-entreprises.svg',
-    href: 'https://place-des-entreprises.beta.gouv.fr'
-  },
   {
     label: 'ADEME',
     img: '/images/logos/ademe.svg',

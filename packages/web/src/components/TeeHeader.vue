@@ -11,19 +11,33 @@
                 </p>
               </div>
               <div class="fr-header__operator">
-                <router-link to="/" title="Accueil - [À MODIFIER - texte alternatif de l’image : nom de l'opérateur ou du site serviciel] - République Française">
-                  <img class="fr-responsive-img" style="width:3.5rem;" src="@public/images/logos/mission-transition-logo.png" alt="[À MODIFIER - texte alternatif de l’image]" />
+                <router-link
+                  to="/" 
+                  title="Accueil - Transition Ecologique des Entreprises - République Française">
+                  <img 
+                    class="fr-responsive-img"
+                    style="width:3.5rem;"
+                    src="@public/images/logos/mission-transition-logo-alone.png"
+                    alt="Transition Ecologique des Entreprises" />
                   <!-- L’alternative de l’image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l’image -->
                 </router-link>
               </div>
               <div class="fr-header__navbar">
-                <button class="fr-btn--menu fr-btn" data-fr-opened="false" aria-controls="modal-499" aria-haspopup="menu" id="button-500" title="Menu">
+                <button 
+                  class="fr-btn--menu fr-btn"
+                  data-fr-opened="false"
+                  aria-controls="modal-tee-header"
+                  aria-haspopup="menu"
+                  id="button-tee-header-burger"
+                  title="Menu">
                   Menu
                 </button>
               </div>
             </div>
             <div class="fr-header__service">
-              <router-link to="/" title="Accueil - [À MODIFIER - Nom du site / service] - Nom de l’entité (ministère, secrétariat d‘état, gouvernement)">
+              <router-link 
+                to="/"
+                title="Accueil - Transition Ecologique des Entreprises - ADEME">
                 <p class="fr-header__service-title">
                   Transition écologique des entreprises
                 </p>
@@ -44,17 +58,10 @@
                   </router-link>
                 </li>
                 <li>
-                  <!-- <router-link 
-                    class="fr-btn"
-                    :to="{
-                      name: 'catalog'
-                    }">
-                    Catalogue des aides
-                  </router-link> -->
                   <button 
                     class="fr-btn"
-                    @click="pushTo('catalogue')">
-                    Catalogue des aides
+                    @click="pushTo('catalog')">
+                    Annuaire
                   </button>
                 </li>
               </ul>
@@ -63,12 +70,34 @@
         </div>
       </div>
     </div>
-    <div class="fr-header__menu fr-modal" id="modal-499" aria-labelledby="button-500">
+    <div 
+      class="fr-header__menu fr-modal"
+      id="modal-tee-header" 
+      aria-labelledby="button-tee-header-burger">
       <div class="fr-container">
-        <button class="fr-btn--close fr-btn" aria-controls="modal-499" title="Fermer">
+        <button 
+          class="fr-btn--close fr-btn"
+          aria-controls="modal-tee-header"
+          title="Fermer">
           Fermer
         </button>
         <div class="fr-header__menu-links">
+          <ul class="fr-btns-group">
+            <li>
+              <router-link 
+                class="fr-btn"
+                to="/">
+                Accueil
+              </router-link>
+            </li>
+            <li>
+              <button 
+                class="fr-btn"
+                @click="pushTo('catalogue')">
+                Catalogue des aides
+              </button>
+            </li>
+          </ul>
         </div>
       </div>
     </div>

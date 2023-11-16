@@ -128,6 +128,7 @@
           :label="choices.t('send')"
           :disabled="!canSaveFrom"
           icon="ri-arrow-right-line"
+          icon-right
           @click="saveFormData()"
           :loading='isLoading'
         />
@@ -237,7 +238,7 @@ interface Props {
   formOptions: FormOptions,
   dataProps: DataProps,
   program: ProgramData,
-  debug?: boolean,
+  debug?: boolean
 }
 const props = defineProps<Props>()
 

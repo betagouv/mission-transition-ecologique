@@ -1,0 +1,49 @@
+titre: Diagnostic Eco-conception Île-de-France
+promesse: Développez des produits et services éco-responsables
+description: 'Vous souhaitez vous interroger sur l’impact environnemental global de
+  votre produit : choix des matières premières, poids et encombrement, impact énergétique,
+  à tous les niveaux (fabrication, transport, usage, fin de vie, etc.). La CCI vous
+  accompagne dans votre démarche.'
+description longue: 'L’éco-conception vise à prendre en compte et réduire les impacts
+  environnementaux dans toutes les étapes du cycle de vie d’un produit ou service
+  : extraction de matières premières, fabrication, transport, usage, traitement en
+  fin de vie, etc.
+
+  L’éco-conception s’applique aux produits matériels mais également aux services.'
+illustration: images/TEE_ampoule.png
+opérateur de contact: CCI
+autres opérateurs:
+- ADEME
+- Bpifrance
+url: https://www.cci-paris-idf.fr/fr/entreprises/actualites/accompagnement-eco-conception-performance-environnementale
+nature de l'aide: accompagnement
+coût de l'accompagnement: de 3 000 € à 6 000 € HT en fonction de la taille de l'entreprise,
+  avec prise en charge possible jusqu'à 50%
+durée de l'accompagnement: 6 à 12 jours de prestation
+objectifs:
+- Identifiez vos priorités en termes d’accompagnement lors d’un premier entretien
+  avec votre conseiller CCI.
+- Bénéficiez d'une étude d'éco-conception par un consultant expert  (phase 1)
+- Elaborez différents scénarii de processus de fabrication et quantifier leurs impacts
+  environnementaux.
+- 'En fonction de la maturité de votre projet, continuez avec une phase de pré-industrialisation
+  : étude de faisabilité, essai, prototypage, recherche de partenaires techniques,
+  etc. (phase 2)'
+publicodes:
+  afficher le dispositif si:
+    toutes ces conditions:
+    - règles d'éligibilité
+    - secteur d'activité prioritaire
+    - est dans les objectifs de l'entreprise
+  règles d'éligibilité:
+    toutes ces conditions:
+    - entreprise . effectif <= 499
+  secteur d'activité prioritaire:
+    une de ces conditions:
+    - entreprise . code NAF niveau 1 . est M
+    - entreprise . code NAF niveau 1 . est R
+    - entreprise . code NAF niveau 1 . est S
+  est dans les objectifs de l'entreprise:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est la gestion des déchets
+    - questionnaire . objectif prioritaire . est l'écoconception

@@ -71,7 +71,7 @@
                 <!-- CALLOUT IMAGE LEFT -->
                 <div
                   v-if="track.callout.imageLeft"
-                  class="fr-col-5 fr-col-sm-hide tee-track-callout-img fr-pl-1v fr-py-0 fr-pr-0"
+                  class="fr-col fr-col-5 fr-col-sm-hide tee-track-callout-img fr-pl-0 fr-py-0 fr-pr-0"
                   style="align-self: center;">
                   <img
                     class="fr-responsive-img"
@@ -81,7 +81,7 @@
                 </div>
                 <!-- CALLOUT TEXT -->
                 <div
-                  :class="`fr-col ${track.callout.bigTitle ? '' : 'tee-track-callout-texts'}`">
+                  :class="`${track.callout.bigTitle ? 'fr-col' : 'fr-col fr-col-7 tee-track-callout-texts'}`">
                   <!-- CALLOUT HEADER -->
                   <h2
                     v-if="track.callout.header"
@@ -339,7 +339,7 @@
                 :tracks-results="tracks.usedTracks"
                 :track-element="trackElement"
                 :disable-widget="disableWidget"
-                :debug="debug"
+                :debug="debug || false"
               />
             </div>
           </div>
@@ -371,6 +371,7 @@
               :label="choices.t('next')"
               :disabled="!selectedOptions.length"
               icon="ri-arrow-right-line"
+              icon-right
               @click="saveSelection"
               :loading='isLoadingNext'
             />
@@ -415,7 +416,7 @@ import TeeTrackButtonInput from './TeeTrackButtonInput.vue'
 // // @ts-ignore
 // import TeeForm from './TeeForm.vue'
 // @ts-ignore
-import TeeResults from './TeeResults.vue'
+import TeeResults from './results/TeeResults.vue'
 import DsfrButton from '@/components/button/DsfrButton.vue'
 
 interface Props {

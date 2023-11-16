@@ -2,10 +2,10 @@
   <!-- DEBUGGING -->
   <div
     v-if="debug"
-    class="vue-debug" 
+    class="vue-debug"
     >
     <h5>DEBUG - TeeStepper</h5>
-    <div 
+    <div
       v-if="true"
       class="fr-grid-row fr-grid-row--gutters">
       <div class="fr-col-3">
@@ -22,17 +22,17 @@
       style="justify-content: center;">
 
       <!-- PARTNERS LINKS -->
-      <div 
+      <div
         class="fr-footer__content fr-ml-0 fr-mt-5v"
         style="justify-content: center; flex-basis: 100%">
-        <ul 
+        <ul
           class="fr-footer__content-list">
           <li
             v-for="link in ecosystemLinks"
             :key="link.href"
             class="fr-footer__content-item fr-mx-5v">
             <span class="fr-icon-external-link-line fr-mr-1v" aria-hidden="true"></span>
-            <a 
+            <a
               :href="link.href"
               class="fr-footer__content-link">
               {{ link.label }}
@@ -42,17 +42,17 @@
       </div>
 
       <!-- SOURCES LINKS -->
-      <div 
+      <div
         class="fr-footer__bottom fr-mt-5v"
         style="justify-content: center;">
-        <ul 
+        <ul
           class="fr-footer__bottom-list"
           style="display: flex; justify-content: center;">
           <li
             v-for="link in projectLinks"
             :key="link.href"
             class="fr-footer__bottom-item">
-            <a 
+            <a
               :href="link.href"
               class="fr-footer__bottom-link">
               {{ link.label }}
@@ -72,7 +72,7 @@
           </p>
         </div>
       </div>
-      
+
     </div>
   </div>
 
@@ -118,7 +118,7 @@ const ecosystemLinks = [
 const projectLinks = [
   {
     label: 'Mission Transition',
-    href: 'http://mission-transition.beta.gouv.fr'
+    href: 'https://mission-transition.beta.gouv.fr'
   },
   {
     label: "Startup d'Etat Transition Ecologique des Entreprises",
@@ -126,7 +126,7 @@ const projectLinks = [
   },
   {
     label: 'Conditions Générales',
-    href: 'http://mission-transition.beta.gouv.fr/mentions-legales'
+    href: 'https://mission-transition.beta.gouv.fr/mentions-legales'
   },
   {
     label: 'Code source Mission Transition',

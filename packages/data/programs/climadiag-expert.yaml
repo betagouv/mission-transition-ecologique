@@ -1,0 +1,45 @@
+titre: ClimaDiag expert
+promesse: Anticipez l’impact des changements climatiques pour votre entreprise et
+  sécurisez votre activité
+description: Bénéficiez d'un accompagnement d'un expert CCI pour vous aider à évaluer
+  la vulnérabilité climatique de votre entreprise, prévenir les impacts du dérèglement
+  climatique et vous aider à limiter les coûts imprévus de canicule, inondation, sécheresse,
+  etc.
+illustration: images/TEE_ampoule.png
+opérateur de contact: CCI
+autres opérateurs:
+- ADEME
+- Agence de l'Eau
+url: https://www.grandest.cci.fr/produit/climadiag-expert
+nature de l'aide: accompagnement
+coût de l'accompagnement: Gratuit
+durée de l'accompagnement: 5 à 10 jours selon la taille de l'entreprise
+objectifs:
+- Réalisez un diagnostic sur site pour évaluer et hierarchiser l'ensemble des risques
+  encourus par votre entreprise
+- 'Identifiez l''impact sur votre écosystème : concurrents & sources d''insatisfaction
+  client liées aux changements climatiques'
+- Concevez un plan d'actions à mettre en oeuvre
+- Identifier des financements possibles
+publicodes:
+  afficher le dispositif si:
+    toutes ces conditions:
+    - règles d'éligibilité
+    - secteur d'activité prioritaire
+    - est dans les objectifs de l'entreprise
+  règles d'éligibilité:
+    toutes ces conditions:
+    - entreprise . effectif >= 20
+    - entreprise . effectif <= 499
+  secteur d'activité prioritaire:
+    une de ces conditions:
+    - entreprise . code NAF niveau 1 . est B
+    - entreprise . code NAF niveau 1 . est C
+    - entreprise . code NAF niveau 1 . est D
+    - entreprise . code NAF niveau 1 . est E
+    - entreprise . code NAF niveau 1 . est F
+    - entreprise . code NAF niveau 1 . est H
+  est dans les objectifs de l'entreprise:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est mon impact environnemental
+    - questionnaire . objectif prioritaire . est l'écoconception

@@ -11,7 +11,8 @@ export enum ProgramAidType {
   acc = 'accompagnement',
   train = 'formation',
   fund = 'financement',
-  loan = 'prêt'
+  loan = 'prêt',
+  tax = 'avantage fiscal'
 }
 
 export enum ConditionOperators {
@@ -47,6 +48,7 @@ export interface ProgramData {
   "coût de l'accompagnement"?: string
   "durée de l'accompagnement"?: string
   'montant du financement'?: string
+  "montant de l'avantage fiscal"?: string
   'montant du prêt'?: string
   'durée du prêt'?: string
   'taux du prêt'?: string

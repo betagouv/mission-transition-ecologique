@@ -115,6 +115,7 @@ export const goals = {
     },
 
     // LEGACY OPTIONS
+    // USEFUL FOR DEBUGGING
     {
       disabled: true,
       value: {

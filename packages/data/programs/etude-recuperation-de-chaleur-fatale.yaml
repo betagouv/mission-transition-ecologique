@@ -1,0 +1,52 @@
+titre: Étude "récupération de chaleur fatale"
+promesse: Étudiez votre projet de récupération de chaleur perdue
+description: "Vous pensez avoir de la chaleur perdue mais ne savez pas comment la\
+  \ valoriser ? Vous souhaitez mettre en place une installation de récupération de\
+  \ chaleur fatale ? \nL'ADEME vous apporte une aide pour une étude de faisabilité,\
+  \ étape nécessaire avant tout investissement."
+description longue: "La chaleur de récupération (ou chaleur fatale) est la chaleur\
+  \ générée par un procédé dont l’objectif premier n’est pas la production d’énergie,\
+  \ et qui de ce fait n’est pas nécessairement récupérée. \n\nIl s’agit alors de capter\
+  \ puis transporter cette chaleur, qui serait perdue, pour favoriser son exploitation\
+  \ sous forme thermique. \n\nDans un contexte de limitation progressive du recours\
+  \ aux ressources fossiles et de diminution des émissions de CO2, la récupération\
+  \ et la valorisation de l’énergie fatale gaspillée constitue un objectif essentiel\
+  \ pour une utilisation plus rationnelle de l’énergie, conformément aux objectifs\
+  \ de la transition énergétique."
+illustration: images/TEE_energie_verte.png
+opérateur de contact: ADEME
+url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/etudes-faisabilite-linstallation-recuperation-chaleur-fatale
+nature de l'aide: financement
+montant du financement: Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000
+  €
+objectifs:
+- Choisissez le bureau d'étude énergétique qui va vous accompagner pour mener cette
+  étude de faisabilité.
+- 'Déposez votre demande d''aide : informations administratives, description du projet,
+  détails techniques et financiers, etc. A ce stade, votre projet ne doit pas avoir
+  commencé !'
+- L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat
+  de financement précisant le montant d’aide maximum, les conditions et les modalités
+  de versement.
+- Réalisez votre étude pour vérifier la faisabilité technique et économique de votre
+  projet de récupération de chaleur fatale.
+- A la fin de l'étude, bénéficiez de solutions techniques adaptées aux possibilités
+  du site d’implantation, de solutions pour le financement de l’opération et pour
+  le montage administratif et juridique.
+publicodes:
+  afficher le dispositif si:
+    toutes ces conditions:
+    - secteur d'activité prioritaire
+    - est dans les objectifs de l'entreprise
+  secteur d'activité prioritaire:
+    une de ces conditions:
+    - entreprise . code NAF niveau 1 . est B
+    - entreprise . code NAF niveau 1 . est C
+    - entreprise . code NAF niveau 1 . est D
+    - entreprise . code NAF niveau 1 . est E
+    - entreprise . code NAF niveau 1 . est H
+    - entreprise . code NAF niveau 1 . est I
+  est dans les objectifs de l'entreprise:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est ma performance énergétique
+    - questionnaire . objectif prioritaire . est l'écoconception

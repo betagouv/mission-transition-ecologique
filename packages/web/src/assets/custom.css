@@ -105,6 +105,15 @@ button.fr-link:hover, .tee-router-link:hover {
   aspect-ratio: 1 !important;
   /* height: 100% !important; */
 }
+.tee-text-light {
+  color: #929292;
+}
+.tee-text-no-result {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 2.5rem;
+  color: #000091;
+}
 
 /* TRACK CALLOUT */
 
@@ -121,7 +130,7 @@ button.fr-link:hover, .tee-router-link:hover {
 
 @media (min-width: 48em) {
 .tee-track-callout-texts {
-  max-width: 50%;
+  max-width: 90%;
   }
 }
 

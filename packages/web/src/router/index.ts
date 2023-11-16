@@ -4,17 +4,19 @@ import { createRouter, createWebHistory } from 'vue-router'
 import { tracksStore } from '../stores/tracks'
 import { programsStore } from '../stores/programs'
 
-import TeeHomePage from '../components/pages/TeeHomePage.vue'
+import TeeHomePage from '../pages/TeeHomePage.vue'
 
 import WidgetApp from '../WidgetApp.ce.vue'
-import TeeQuestionnairePage from '../components/pages/TeeQuestionnairePage.vue'
-import TeeCatalogPage from '../components/pages/TeeCatalogPage.vue'
-import TeeProgramPage from '../components/pages/TeeProgramPage.vue'
+import TeeQuestionnairePage from '../pages/TeeQuestionnairePage.vue'
+import TeeCatalogPage from '../pages/TeeCatalogPage.vue'
+import TeeProgramPage from '../pages/TeeProgramPage.vue'
 // import TeeProgramDetail from '../components/TeeProgramDetail.vue'
 
-import TeeLegalPage from '../components/pages/TeeLegalPage.vue'
-import TeeAccessibilityPage from '../components/pages/TeeAccessibilityPage.vue'
-import TeePersonalDataPage from '../components/pages/TeePersonalDataPage.vue'
+import TeeLegalPage from '../pages/TeeLegalPage.vue'
+import TeeAccessibilityPage from '../pages/TeeAccessibilityPage.vue'
+import TeePersonalDataPage from '../pages/TeePersonalDataPage.vue'
+import { RouteName } from '@/types/routeType'
+import { redirections } from '@/router/redirection'
 
 
 const resetTrackStore = async (to: any, from: any, next: any) => {
@@ -56,12 +58,12 @@ export const router = createRouter({
     return { top: 0 }
   },
   routes: [
-    { 
+    {
       path: '/',
-      name: 'homepage', 
+      name: RouteName.Homepage,
       component: TeeHomePage
     },
-    { 
+    {
       path: '/questionnaire',
       component: TeeQuestionnairePage,
       beforeEnter: [
@@ -72,7 +74,7 @@ export const router = createRouter({
       children: [
         {
           path: '',
-          name: 'questionnaire', 
+          name: 'questionnaire',
           // component: TeeQuestionnairePage,
           component: WidgetApp,
           // component: TeeProgramPage,
@@ -81,18 +83,17 @@ export const router = createRouter({
             disableWidget: true
           }
         },
-        { 
+        {
           path: ':programId',
-          name: 'questionnaire-detail', 
+          name: 'questionnaire-detail',
           // component: TeeQuestionnairePage,
           component: TeeProgramPage,
           // component: TeeProgramPage,
         },
       ]
     },
-    { 
-      path: '/catalogue',
-      // name: 'catalog', 
+    {
+      path: '/annuaire',
       component: TeeCatalogPage,
       beforeEnter: [
         resetDetailProgram,
@@ -102,40 +103,41 @@ export const router = createRouter({
       children: [
         {
           path: '',
-          name: 'catalogue', 
+          name: 'catalog',
           component: WidgetApp,
           props: {
             seed: 'track_results',
             disableWidget: true
           }
         },
-        { 
+        {
           path: ':programId',
-          name: 'catalogue-detail', 
+          name: 'catalogue-detail',
           component: TeeProgramPage,
         },
       ]
     },
-    { 
-      path: '/mentions-legales', 
+    {
+      path: '/mentions-legales',
       name: 'legal',
       component: TeeLegalPage
     },
-    { 
-      path: '/accessibilite', 
+    {
+      path: '/accessibilite',
       name: 'accessibility',
       component: TeeAccessibilityPage
     },
-    { 
-      path: '/donnees-personnelles', 
+    {
+      path: '/donnees-personnelles',
       name: 'personal-data',
       component: TeePersonalDataPage
     },
     {
       path: '/*',
-      name: '404', 
+      name: '404',
       component: TeeHomePage,
-    }
+    },
+    ...redirections,
     // { path: '/track/:trackId', component: TeeTrack },
     // { path: '/program/:programId', component: TeeProgramDetail },
   ]
