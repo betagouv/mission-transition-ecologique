@@ -340,7 +340,7 @@
                 :tracks-results="tracks.usedTracks"
                 :track-element="trackElement"
                 :disable-widget="disableWidget"
-                :debug="debug"
+                :debug="debug || false"
               />
             </div>
           </div>
