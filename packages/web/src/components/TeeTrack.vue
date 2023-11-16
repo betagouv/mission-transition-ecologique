@@ -43,6 +43,7 @@
   </div>
 
   <!-- selectedOptions.map (values) : <code>{{ selectedOptions.map(i => i.value) }}</code> -->
+
   <Transition
     appear
     :name="`${step > 1 ? 'slide-fade' : ''}`"

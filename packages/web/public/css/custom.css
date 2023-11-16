@@ -73,6 +73,9 @@ WARNING :
 .fr-tee-form {
   max-width: 685px;
 }
+.fr-tee-form-error {
+  text-align: center;
+}
 .fr-form-block .fr-input {
   background-color: white;
 }
@@ -163,6 +166,9 @@ button.fr-link:hover, .tee-router-link:hover {
 }
 
 /* CUSTOM BUTTON INPUT */
+.tee-btn-next {
+  justify-content: end;
+}
 .tee-input-large {
   font-size: 1.1rem; 
   height: 4rem !important; 
@@ -220,6 +226,7 @@ button.fr-link:hover, .tee-router-link:hover {
 .tee-program-info {
   color: #000091; 
   font-size: .8rem;
+  line-height: 1.3rem;
 }
 .tee-program-info span::before {
   font-size: .8rem;
@@ -257,6 +264,9 @@ button.fr-link:hover, .tee-router-link:hover {
 /* DEBUGGING STYLES */
 code {
   color: red !important;
+}
+.error-code {
+  font-size: 0.75em !important;
 }
 .vue-debug {
   font-size: 0.75em !important;
