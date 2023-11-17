@@ -190,3 +190,19 @@ describe(`
     expectToBeErr(result)
   })
 })
+
+describe(`
+  GIVEN  input data from the questionnaire
+    AND  rules that use values from a type "PubliCodesInput"
+   WHEN  the rules are evaluated
+  EXPECT the values from "PubliCodesInput" to be properly mapped to the
+         questionnaire data
+`, () => {
+  test('"codeNaf" mapped to "entreprise . code NAF" (1)', () => {
+    const inputData = { codeNaf: '12.34Z' }
+    const program = makeProgram({ [FILTERING_RULE_NAME]: 'entreprise . code NAF = \'"12.34Z"' })
+    var result = filterPrograms([program], inputData)
+    expectToBeOk(result)
+    expect(result.value).toHaveLength(1)
+  })
+})
