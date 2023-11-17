@@ -208,8 +208,8 @@ button.fr-link:hover, .tee-router-link:hover {
   min-height: 1.8rem;
 }
 .tee-track-choice {
-  padding-top: 5px !important;
-  padding-bottom: 5px !important;
+  padding-top: 10px !important;
+  /* padding-bottom: 5px !important; */
 }
 
 /* RESULTS LIST */
