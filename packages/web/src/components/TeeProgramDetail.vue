@@ -3,14 +3,14 @@
   <div class="">
 
     <!-- BACK TO RESULTS BTN -->
-    <DsfrButton
-      class="fr-mb-3v fr-link"
-      :label="choices.t('results.backToResults')"
-      icon="ri-arrow-left-line"
+    <button
+      class="fr-btn fr-btn--tertiary-no-outline inline-flex fr-mb-3v fr-link"
       tertiary
       noOutline
-      @click="resetDetailResult"
-    />
+      @click="resetDetailResult">
+      <v-icon name="ri-arrow-left-line" aria-hidden="true"></v-icon>
+      {{ choices.t('results.backToResults') }}
+    </button>
 
     <!-- PROGRAM DETAILS -->
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-10v">
@@ -290,9 +290,10 @@
 <script setup lang="ts">
 
 import { ref, onBeforeMount } from 'vue'
+// import { useRouter } from 'vue-router'
 
 // @ts-ignore
-import type { ProgramData, Track } from '@/types/index'
+// import type { ProgramData, Track } from '@/types/index'
 
 // @ts-ignore
 import TeeTile from './TeeTile.vue'
@@ -300,14 +301,23 @@ import TeeTile from './TeeTile.vue'
 import TeeForm from './TeeForm.vue'
 
 import { choicesStore } from '../stores/choices'
+import { tracksStore } from '../stores/tracks'
 import { programsStore } from '../stores/programs'
+import { navigationStore } from '../stores/navigation'
 import { analyticsStore } from '../stores/analytics'
 
 import { scrollToTop } from '../utils/helpers'
 
+// const router = useRouter()
+
 const choices = choicesStore()
+const tracks = tracksStore()
 const programs = programsStore()
 const analytics = analyticsStore()
+const nav = navigationStore()
+
+const program = ref<any>()
+const trackConfig = ref<any>()
 
 const blockColor = '#000091'
 const showForm = ref<boolean>(false)
@@ -315,30 +325,37 @@ const showForm = ref<boolean>(false)
 const columnTiles = ref<string>('fr-col')
 
 interface Props {
-  program: ProgramData,
-  trackConfig: Track | any,
-  trackElement: any;
+  programId: string | number,
+  trackId: string,
+  trackElement?: any;
+  disableWidget?: boolean,
   debug?: boolean,
 }
 const props = defineProps<Props>()
 
 // functions
-const resetDetailResult = () => {
-  // console.log('TeeProgramDetail > resetDetailResult > trackConfig : ', props.trackConfig )
+const resetDetailResult = async () => {
+  // console.log('TeeProgramDetail > resetDetailResult > props.trackConfig : ', props.trackConfig )
   programs.resetDetailResult()
-  scrollToTop(props.trackElement, props.program.id)
+  nav.setCurrentDetailId('', props.disableWidget)
+  nav.updateUrl(props.disableWidget)
+  !props.disableWidget && scrollToTop(props.trackElement, props.programId)
 }
 const toggleShowForm = () => {
   // console.log('TeeProgramDetail > toggleShowForm > trackConfig : ', props.trackConfig )
   showForm.value = !showForm.value
   if (showForm.value) {
-    analytics.sendEvent('result_detail', 'show_form', props.program.id)
+    analytics.sendEvent('result_detail', 'show_form', props.programId)
   }
 }
 
-onBeforeMount(() => {
+onBeforeMount(async() => {
+  // await router.isReady()
+  console.log('TeeProgramDetail > onBeforeMount > props.programId :', props.programId )
+  program.value = programs.getProgramById(props.programId)
+  trackConfig.value = tracks.getTrack(props.trackId)
   // console.log('TeeProgramDetail > onBeforeMount > resultsProgs :', resultsProgs )
   // analytics / send event
-  analytics.sendEvent('result_detail', 'show_detail', props.program.id)
+  analytics.sendEvent('result_detail', 'show_detail', props.programId)
 })
 </script>

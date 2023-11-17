@@ -140,10 +140,32 @@
     v-if="formIsSent"
     class="fr-mt-5v fr-tee-form">
     <!-- FORM ALERT AFTER SENDING-->
-    <div :class="`fr-alert fr-alert--${!requestResponses || requestResponses?.map(r => r.status).every(s => s === 200 || s === 201) ? 'success' : 'error'}`">
-      <h3 class="fr-alert__title">
+    <div :class="`fr-alert fr-alert--${hasNoRespError ? 'success' : 'error fr-tee-form-error'}`">
+      <h3 
+        v-if="hasNoRespError"
+        class="fr-alert__title">
         {{ choices.t(`form.sent`) }}
       </h3>
+      <div 
+        v-else
+        class="fr-alert__title">
+        <p>
+          {{ choices.t(`form.notSent`) }}
+        </p>
+        <p>
+          <code 
+            v-for="resp, idx in requestResponses"
+            :key="idx"
+            class="error-code fr-py-2v">
+            {{ choices.t('errors.error') }} {{ resp.status }}
+            :
+            "{{ resp.message }}"
+          </code>
+        </p>
+        <p>
+          {{ choices.t(`form.contactHelp`) }} <br> {{ contactEmail }}
+        </p>
+      </div>
       <!-- DEBUGGING -->
       <div
         class="fr-mt-5v fr-highlight"
@@ -169,17 +191,19 @@
     </div>
 
     <!-- NOW WHAT -->
-    <h6 class="fr-mt-10v">
-      {{ choices.t('form.nowWhat')}}
-    </h6>
-    <p class="fr-mt-10v fr-mb-3v">
-      <span class="fr-icon-arrow-right-line fr-mr-3v" aria-hidden="true"></span>
-      <span v-html="choices.t('form.advisors')"></span>
-    </p>
-    <p class="fr-mb-3v">
-      <span class="fr-icon-arrow-right-line fr-mr-3v" aria-hidden="true"></span>
-      <span v-html="choices.t('form.phoneContact')"></span>
-    </p>
+    <div v-if="hasNoRespError">
+      <h6 class="fr-mt-10v">
+        {{ choices.t('form.nowWhat')}}
+      </h6>
+      <p class="fr-mt-10v fr-mb-3v">
+        <span class="fr-icon-arrow-right-line fr-mr-3v" aria-hidden="true"></span>
+        <span v-html="choices.t('form.advisors')"></span>
+      </p>
+      <p class="fr-mb-3v">
+        <span class="fr-icon-arrow-right-line fr-mr-3v" aria-hidden="true"></span>
+        <span v-html="choices.t('form.phoneContact')"></span>
+      </p>
+    </div>
   </div>
 
   <!-- DEBUGGING -->
@@ -228,6 +252,10 @@ const analytics = analyticsStore()
 // const usedTracks: UsedTrack[] | any[] = tracks.getAllUsedTracks
 const trackValues: any[] = tracks.getAllUsedTracksValues
 
+// @ts-ignore
+const metaEnv = import.meta.env
+const contactEmail: string = metaEnv.VITE_CONTACT_EMAIL || 'france-transition@beta.gouv.fr'
+
 interface DataProps {
   programId: string
 }
@@ -237,7 +265,7 @@ interface Props {
   formOptions: FormOptions,
   dataProps: DataProps,
   program: ProgramData,
-  debug?: boolean,
+  debug?: boolean
 }
 const props = defineProps<Props>()
 
@@ -255,6 +283,11 @@ const canSaveFrom = computed(() => {
   // @ts-ignore
   const boolArr = requiredFields.value.map((f: string) => formData.value[f])
   return boolArr.every(v => (!!v && v !== ''))
+})
+
+const hasNoRespError = computed(() => {
+  const hasError = !requestResponses.value || requestResponses.value?.map(r => r.status).every(s => s === 200 || s === 201)
+  return hasError
 })
 
 const findPrefix = (str: string, prefixCode: string = 'of') => {

@@ -1,4 +1,5 @@
 import { fileURLToPath, URL } from 'node:url'
+// import { resolve } from 'path'
 // import postcssLit from 'rollup-plugin-postcss-lit';
 
 import { defineConfig, loadEnv } from 'vite'
@@ -17,34 +18,45 @@ const rawEnv = loadEnv(mode, process.cwd())
 console.log('vite.config > rawEnv : ', rawEnv)
 
 // VITE CONFIG
-const viteServer = {
+const viteServer: any = {
   // host: 'localhost',
   host: '0.0.0.0'
   // port: 4242,
   // open: '/index.html',
   // open: '/public/index.html', // test other index file
+  // open: '/dist/index.html', // test other index file
 }
+// if (mode === 'production') {
+//   viteServer.open = './dist/index.html'
+// }
 
 // Set Vite config
 // https://vitejs.dev/config/
 export default defineConfig({
+  // base: './dist/',
   server: viteServer,
   plugins: [
     // postcssLit(),
-    vue({
-      template: {
-        compilerOptions: {
-          isCustomElement: (tag) => tag.startsWith('ademe-')
-        }
-      }
-    })
+    vue()
+    // vue({
+    //   template: {
+    //     compilerOptions: {
+    //       isCustomElement: (tag) => tag.startsWith('ademe-')
+    //     }
+    //   }
+    // })
   ],
   build: {
+    rollupOptions: {
+      input: {
+        main: 'index.html'
+      }
+    },
     outDir: 'dist',
     assetsDir: 'assets',
     copyPublicDir: true,
     lib: {
-      entry: './src/main.ce.ts',
+      entry: 'src/main.ce.ts',
       name: 'gov-aid-tree-app',
       // the proper extensions will be added
       fileName: 'gov-aid-tree-app'

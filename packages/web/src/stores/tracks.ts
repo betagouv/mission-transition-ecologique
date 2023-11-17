@@ -40,13 +40,19 @@ export const tracksStore = defineStore('tracks', () => {
     return tracksArray
   })
   const getLastTrack = computed(() => {
+    const tracksArray = usedTracks.value //.slice(-1)
+    const track: UsedTrack = tracksArray[tracksArray.length - 1]
+    return track
+  })
+  const currentTrackId = computed(() => {
     const tracksArray = usedTracks.value.slice(-1)
     const track: UsedTrack = tracksArray[0]
-    return track
+    const stepNumber = track?.id
+    return stepNumber
   })
   const currentStep = computed(() => {
     const track: UsedTrack = getLastTrack.value
-    const stepNumber = track.step
+    const stepNumber = track?.step
     return stepNumber
   })
   const getAllUsedTracks = computed(() => {
@@ -64,6 +70,19 @@ export const tracksStore = defineStore('tracks', () => {
 
     const trackValues: any[] = usedTrackValues.flat(1)
     return trackValues
+  })
+  const getAllUsedTracksValuesPairs = computed(() => {
+    const usedTrackValues = usedTracks.value.map((usedTrack: UsedTrack) => {
+      const values = usedTrack.selected?.map((s) => s.value)
+      return {
+        trackId: usedTrack.id,
+        completed: usedTrack.completed,
+        selection: toRaw(values.map((i) => toRaw(i)))
+      }
+    })
+    // console.log('store.tracks > getAllUsedTracksValues >  usedTrackValues :', usedTrackValues)
+
+    return usedTrackValues
   })
 
   // getters
@@ -118,7 +137,7 @@ export const tracksStore = defineStore('tracks', () => {
     maxDepth.value = depth
   }
 
-  function setSeedTrack(seed: string) {
+  async function setSeedTrack(seed: string) {
     // console.log()
     // console.log('store.tracks > setSeedTrack > seed : ', seed)
     const track = getTrack(seed)
@@ -148,7 +167,7 @@ export const tracksStore = defineStore('tracks', () => {
       selected: [],
       next: null,
     }
-    console.log('store.tracks > addToUsedTracks > trackInfos : ', trackInfos)
+    // console.log('store.tracks > addToUsedTracks > trackInfos : ', trackInfos)
     // @ts-ignore
     usedTracks.value.push(trackInfos)
   }
@@ -198,6 +217,10 @@ export const tracksStore = defineStore('tracks', () => {
     usedTracks.value = newArray
   }
 
+  async function resetUsedTracks() {
+    usedTracks.value = []
+  }
+
   return { 
     maxDepth,
     allTracks,
@@ -206,6 +229,7 @@ export const tracksStore = defineStore('tracks', () => {
     usedTracks,
     tracksStepsArray,
     getLastTrack,
+    currentTrackId,
     currentStep,
     setMaxDepth,
     getTrack,
@@ -217,11 +241,13 @@ export const tracksStore = defineStore('tracks', () => {
     isTrackCompleted,
     getAllUsedTracks,
     getAllUsedTracksValues,
+    getAllUsedTracksValuesPairs,
     trackExistsInUsed,
     setSeedTrack,
     addToUsedTracks,
     updateUsedTracks,
     setUsedTracksAsNotCompleted,
-    removeFurtherUsedTracks
+    removeFurtherUsedTracks,
+    resetUsedTracks
   }
 })
