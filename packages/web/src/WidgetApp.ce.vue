@@ -17,7 +17,7 @@
     <!-- DEBUGGING -->
     <div
       class="vue-debug"
-      v-if="debug">
+      v-if="debugBool">
       <h5>DEBUG - WidgetApp</h5>
       <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
         <div class="fr-col-4">
