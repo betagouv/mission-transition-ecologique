@@ -106,7 +106,7 @@
                   <!-- CALLOUT DESCRIPTION -->
                   <p
                     v-if="track.callout.description"
-                    class="fr-callout__text tee-track-callout-description"
+                    class="fr-callout__text tee-track-callout-description fr-mb-2v"
                     :style="`${track.callout.descriptionStyle || ''}`">
                     {{ track.callout.description[choices.lang]}}
                   </p>
