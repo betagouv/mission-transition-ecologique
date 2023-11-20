@@ -23,9 +23,6 @@ export default defineConfig({
   build: {
     assetsDir: 'assets',
     copyPublicDir: true,
-    lib: {
-      entry: 'src/main.ts',
-    }
   },
   define: {
     'process.env': process.env
