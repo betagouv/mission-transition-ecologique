@@ -4,6 +4,7 @@ import Engine from 'publicodes'
 
 import { Result } from 'true-myth'
 import { ensureError } from '../helpers/errors'
+import { filterObject } from '../helpers/objects'
 
 import type { QuestionnaireData, PublicodesInputData } from './types'
 
@@ -127,17 +128,4 @@ function preprocessInputForPublicodes(questionnaireData: QuestionnaireData): Pub
   }
 
   return publicodesData
-}
-
-/** Entry is a type to represent all possible [key,value] tuples of object of
- * type T */
-type Entry<T> = {
-  [K in keyof T]: [K, T[K]]
-}[keyof T]
-
-function filterObject<T extends object>(
-  obj: T,
-  fn: (entry: Entry<T>, i: number, arr: Entry<T>[]) => boolean
-): Partial<T> {
-  return Object.fromEntries((Object.entries(obj) as Entry<T>[]).filter(fn)) as Partial<T>
 }
