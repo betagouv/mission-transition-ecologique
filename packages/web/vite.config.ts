@@ -1,20 +1,14 @@
 import { fileURLToPath, URL } from 'node:url'
 
-import { defineConfig, loadEnv } from 'vite'
+import { defineConfig } from 'vite'
 import type { ServerOptions } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
-// VITE CONFIG
 const viteServer: ServerOptions = {
   host: 'localhost',
   port: 4243,
 }
-// if (mode === 'production') {
-//   viteServer.open = './dist/index.html'
-// }
 
-// Set Vite config
-// https://vitejs.dev/config/
 export default defineConfig({
   server: viteServer,
   plugins: [
