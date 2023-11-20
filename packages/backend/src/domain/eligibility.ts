@@ -124,10 +124,17 @@ const preprocessInputForPublicodes = (
 ): PublicodesInputData => {
   let publicodesData: PublicodesInputData = { ...questionnaireData }
   if (questionnaireData.codeNaf) {
-    // publicodes expects an extra pair of quotes to interpret the value as a
-    // literal string, and not a reference to another rule
-    publicodesData['entreprise . code NAF'] = `"${questionnaireData.codeNaf}"`
+    publicodesData['entreprise . code NAF'] = enquotePublicodesLiteralString(
+      questionnaireData.codeNaf
+    )
   }
 
   return publicodesData
+}
+
+/** for publicodes to interpret a value as a literal string, it expects an
+ * extra pair of quotes. Without it, it is interpreted as a reference to another rule
+ */
+const enquotePublicodesLiteralString = (value: string): string => {
+  return `"${value}"`
 }
