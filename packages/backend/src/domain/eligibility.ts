@@ -119,7 +119,9 @@ const addErrorDetails = (err: Error, programName: string): Error => {
 
 /** preprocesses the data gathered from the questionnaire into variables
  * needed by publicodes */
-function preprocessInputForPublicodes(questionnaireData: QuestionnaireData): PublicodesInputData {
+const preprocessInputForPublicodes = (
+  questionnaireData: QuestionnaireData
+): PublicodesInputData => {
   let publicodesData: PublicodesInputData = { ...questionnaireData }
   if (questionnaireData.codeNaf) {
     // publicodes expects an extra pair of quotes to interpret the value as a
