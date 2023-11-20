@@ -86,8 +86,6 @@ const evaluateRule = (
 
   const narrowedData = narrowInput(preprocessedData, engine)
 
-  console.log(narrowedData)
-
   engine.setSituation(narrowedData)
 
   const evaluation = engine.evaluate(FILTERING_RULE_NAME)
