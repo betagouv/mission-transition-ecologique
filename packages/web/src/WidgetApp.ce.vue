@@ -86,14 +86,6 @@
             :debug="debugBool"
           />
         </div>
-        <!-- <div
-          v-if="needSidebar"
-          class="fr-tee-add-padding fr-col-12 fr-col-sm-show fr-mb-8v">
-          <TeeTopbar
-            :used-tracks="tracks.usedTracks"
-            :debug="debugBool"
-          />
-        </div> -->
 
         <!-- TRACKS -->
         <div
@@ -233,11 +225,7 @@ import TeeMatomo from './components/TeeMatomo.vue'
 // @ts-ignore
 import TeeTrack from './components/TeeTrack.vue'
 // @ts-ignore
-// import TeeStepper from './components/TeeStepper.vue'
-// @ts-ignore
 import TeeSidebar from './components/TeeSidebar.vue'
-// @ts-ignore
-// import TeeTopbar from './components/TeeTopbar.vue'
 // @ts-ignore
 import TeeProgramDetail from './components/TeeProgramDetail.vue'
 // @ts-ignore
