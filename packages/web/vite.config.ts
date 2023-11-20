@@ -6,7 +6,7 @@ import vue from '@vitejs/plugin-vue'
 
 const viteServer: ServerOptions = {
   host: 'localhost',
-  port: 4243,
+  port: 4242,
 }
 
 export default defineConfig({
