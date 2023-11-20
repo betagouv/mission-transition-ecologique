@@ -131,7 +131,7 @@ const preprocessInputForPublicodes = (
 }
 
 /** for publicodes to interpret a value as a literal string, it expects an
- * extra pair of quotes. Without it, it is interpreted as a reference to another rule
+ * extra pair of quotes, added by this function. Without it, it is interpreted as a reference to another rule
  */
 const enquotePublicodesLiteralString = (value: string): string => {
   return `"${value}"`

@@ -193,9 +193,9 @@ describe(`
 
 describe(`
   GIVEN  input data from the questionnaire
-    AND  rules that use values from a type "PubliCodesInput"
+    AND  rules that use values from the keys of "PublicodesInputData" type
    WHEN  the rules are evaluated
-  EXPECT the values from "PubliCodesInput" to be properly mapped to the
+  EXPECT the values from "PublicodesInputData" used for evaluation are properly mapped to the
          questionnaire data
 `, () => {
   const testCodeNAFMapping = (inputNAFCode: string, programNAFCode: string) => {
