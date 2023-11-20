@@ -127,5 +127,13 @@ class CustomError extends Error {
   }
 }
 
+export interface QuestionnaireData {
+  codeNaf?: string
+}
+
+export interface PublicodesInputData {
+  'entreprise . code NAF': string
+}
+
 export class EstablishmentNotFoundError extends CustomError {}
 export class ServiceNotFoundError extends CustomError {}

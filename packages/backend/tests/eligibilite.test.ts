@@ -199,8 +199,12 @@ describe(`
          questionnaire data
 `, () => {
   test('"codeNaf" mapped to "entreprise . code NAF" (1)', () => {
-    const inputData = { codeNaf: '12.34Z' }
-    const program = makeProgram({ [FILTERING_RULE_NAME]: 'entreprise . code NAF = \'"12.34Z"' })
+    const inputData = { codeNaf: '"12.34Z"' }
+    const program = makeProgram({
+      entreprise: null,
+      'entreprise . code NAF': null,
+      [FILTERING_RULE_NAME]: 'entreprise . code NAF = "12.34Z"'
+    })
     var result = filterPrograms([program], inputData)
     expectToBeOk(result)
     expect(result.value).toHaveLength(1)
