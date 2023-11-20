@@ -122,7 +122,9 @@ const addErrorDetails = (err: Error, programName: string): Error => {
 function preprocessInputForPublicodes(questionnaireData: QuestionnaireData): PublicodesInputData {
   let publicodesData: PublicodesInputData = { ...questionnaireData }
   if (questionnaireData.codeNaf) {
-    publicodesData['entreprise . code NAF'] = questionnaireData.codeNaf
+    // publicodes expects an extra pair of quotes to interpret the value as a
+    // literal string, and not a reference to another rule
+    publicodesData['entreprise . code NAF'] = `"${questionnaireData.codeNaf}"`
   }
 
   return publicodesData
