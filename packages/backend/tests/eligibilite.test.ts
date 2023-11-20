@@ -219,8 +219,8 @@ describe(`
 
   const testCases: { inputNAFCode: string; programNAFCode: string }[] = [
     { inputNAFCode: '12.34Z', programNAFCode: '12.34Z' },
-    { inputNAFCode: '34.12Z', programNAFCode: '34.12Z' }
-    // { inputNAFCode: '11.11Z', programNAFCode: '99.99Z' }
+    { inputNAFCode: '34.12Z', programNAFCode: '34.12Z' },
+    { inputNAFCode: '11.11Z', programNAFCode: '99.99Z' }
   ]
 
   for (const testCase of testCases) {
