@@ -10,7 +10,6 @@ import WidgetApp from '../WidgetApp.ce.vue'
 import TeeQuestionnairePage from '../pages/TeeQuestionnairePage.vue'
 import TeeCatalogPage from '../pages/TeeCatalogPage.vue'
 import TeeProgramPage from '../pages/TeeProgramPage.vue'
-// import TeeProgramDetail from '../components/TeeProgramDetail.vue'
 
 import TeeLegalPage from '../pages/TeeLegalPage.vue'
 import TeeAccessibilityPage from '../pages/TeeAccessibilityPage.vue'
@@ -75,9 +74,7 @@ export const router = createRouter({
         {
           path: '',
           name: 'questionnaire',
-          // component: TeeQuestionnairePage,
           component: WidgetApp,
-          // component: TeeProgramPage,
           props: {
             seed: 'track_help',
             disableWidget: true
@@ -86,15 +83,14 @@ export const router = createRouter({
         {
           path: ':programId',
           name: 'questionnaire-detail',
-          // component: TeeQuestionnairePage,
           component: TeeProgramPage,
-          // component: TeeProgramPage,
         },
       ]
     },
     {
       path: '/annuaire',
       component: TeeCatalogPage,
+      // component: TeeQuestionnairePage,
       beforeEnter: [
         resetDetailProgram,
         resetTrackStore,

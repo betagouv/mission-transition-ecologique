@@ -129,6 +129,7 @@ button.fr-link:hover, .tee-router-link:hover {
 .tee-track-callout-img  > .fr-responsive-img {
   max-height: 150px;
   width: auto;
+  max-width: 100%;
 }
 
 @media (min-width: 48em) {
@@ -208,8 +209,7 @@ button.fr-link:hover, .tee-router-link:hover {
   min-height: 1.8rem;
 }
 .tee-track-choice {
-  padding-top: 5px !important;
-  padding-bottom: 5px !important;
+  padding-top: 10px !important;
 }
 
 /* RESULTS LIST */
@@ -553,6 +553,7 @@ code {
     width: 100%;
     max-width: 320px;
     height: auto;
+    max-width: 100%;
   }
 }
 
@@ -562,6 +563,7 @@ code {
     max-height: 500px; 
     width: auto; 
     height: auto;
+    max-width: 100%;
   }
 }
 

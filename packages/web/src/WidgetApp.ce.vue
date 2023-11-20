@@ -70,17 +70,6 @@
       v-show="!programs.programDetail"
       id="trackElement"
       :class="`fr-container--fluid ${tracks.currentStep > 1 ? 'fr-pt-10v' : ''}`">
-      <!-- STEPPER -->
-      <!-- <p
-        v-if="showStepperBool"
-        class="fr-tee-add-padding "
-        >
-        <TeeStepper
-          :steps-array="tracks.tracksStepsArray"
-          :current-step="tracks.currentStep"
-          :debug="debugBool"
-        />
-      </p> -->
 
       <!-- TRACKS INTERFACES -->
       <div
@@ -93,14 +82,6 @@
           class="fr-tee-add-padding fr-col-3 fr-col-md-4 fr-col-lg-4 fr-col-xl-2 fr-col-offset-xl-1 fr-col-sm-hide"
           style="height: 100%;">
           <TeeSidebar
-            :used-tracks="tracks.usedTracks"
-            :debug="debugBool"
-          />
-        </div>
-        <div
-          v-if="needSidebar"
-          class="fr-tee-add-padding fr-col-12 fr-col-sm-show fr-mb-8v">
-          <TeeTopbar
             :used-tracks="tracks.usedTracks"
             :debug="debugBool"
           />
@@ -244,11 +225,7 @@ import TeeMatomo from './components/TeeMatomo.vue'
 // @ts-ignore
 import TeeTrack from './components/TeeTrack.vue'
 // @ts-ignore
-// import TeeStepper from './components/TeeStepper.vue'
-// @ts-ignore
 import TeeSidebar from './components/TeeSidebar.vue'
-// @ts-ignore
-import TeeTopbar from './components/TeeTopbar.vue'
 // @ts-ignore
 import TeeProgramDetail from './components/TeeProgramDetail.vue'
 // @ts-ignore
@@ -322,8 +299,8 @@ const getColumnsWidth = computed(() => {
   const currentTrack = tracks.getLastTrack
   const colsDebug = 'fr-col-7'
   const colsStart = 'fr-col-12 fr-col-xl-12'
-  const colsTracks = 'fr-col fr-col-lg-8 fr-col-xl-6'
-  const colsResults = 'fr-col fr-col-lg-8 fr-col-xl-8'
+  const colsTracks = 'fr-col fr-col-sm-12 fr-col-md-8 fr-col-lg-8 fr-col-xl-6'
+  const colsResults = 'fr-col fr-col-sm-12 fr-col-md-8 fr-col-lg-8 fr-col-xl-8'
   if (debugBool.value) return colsDebug
   else if ((tracks.seedTrack === 'track_results') || tracks.currentStep === 1 && !props.disableWidget) {
     return colsStart
