@@ -120,8 +120,13 @@ const addErrorDetails = (err: Error, programName: string): Error => {
 
 /** preprocesses the data gathered from the questionnaire into variables
  * needed by publicodes */
-function preprocessInputForPublicodes(_questionnaireData: QuestionnaireData): PublicodesInputData {
-  return { ..._questionnaireData, 'entreprise . code NAF': '"12.34Z"' }
+function preprocessInputForPublicodes(questionnaireData: QuestionnaireData): PublicodesInputData {
+  let publicodesData: PublicodesInputData = { ...questionnaireData }
+  if (questionnaireData.codeNaf) {
+    publicodesData['entreprise . code NAF'] = questionnaireData.codeNaf
+  }
+
+  return publicodesData
 }
 
 /** Entry is a type to represent all possible [key,value] tuples of object of
