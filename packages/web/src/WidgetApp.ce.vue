@@ -97,14 +97,14 @@
             :debug="debugBool"
           />
         </div>
-        <div
+        <!-- <div
           v-if="needSidebar"
           class="fr-tee-add-padding fr-col-12 fr-col-sm-show fr-mb-8v">
           <TeeTopbar
             :used-tracks="tracks.usedTracks"
             :debug="debugBool"
           />
-        </div>
+        </div> -->
 
         <!-- TRACKS -->
         <div
@@ -248,7 +248,7 @@ import TeeTrack from './components/TeeTrack.vue'
 // @ts-ignore
 import TeeSidebar from './components/TeeSidebar.vue'
 // @ts-ignore
-import TeeTopbar from './components/TeeTopbar.vue'
+// import TeeTopbar from './components/TeeTopbar.vue'
 // @ts-ignore
 import TeeProgramDetail from './components/TeeProgramDetail.vue'
 // @ts-ignore
@@ -321,8 +321,8 @@ const getColumnsWidth = computed(() => {
   const currentTrack = tracks.getLastTrack
   const colsDebug = 'fr-col-7'
   const colsStart = 'fr-col-12 fr-col-xl-12'
-  const colsTracks = 'fr-col fr-col-lg-8 fr-col-xl-6'
-  const colsResults = 'fr-col fr-col-lg-8 fr-col-xl-8'
+  const colsTracks = 'fr-col fr-col-sm-12 fr-col-lg-8 fr-col-xl-6'
+  const colsResults = 'fr-col fr-col-sm-12 fr-col-lg-8 fr-col-xl-8'
   if (debugBool.value) return colsDebug
   else if ((tracks.seedTrack === 'track_results') || tracks.currentStep === 1 && !props.disableWidget) {
     return colsStart
