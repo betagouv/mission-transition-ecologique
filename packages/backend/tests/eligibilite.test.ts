@@ -206,7 +206,7 @@ describe(`
         [FILTERING_RULE_NAME]: `entreprise . code NAF = "${programNAFCode}"`
       })
 
-      const inputData = { codeNaf: `"${inputNAFCode}"` }
+      const inputData = { codeNaf: inputNAFCode }
 
       var result = filterPrograms([program], inputData)
 
