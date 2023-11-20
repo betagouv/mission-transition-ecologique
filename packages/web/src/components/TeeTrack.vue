@@ -72,7 +72,7 @@
                 <!-- CALLOUT IMAGE LEFT -->
                 <div
                   v-if="track.callout.imageLeft"
-                  class="fr-col-4 fr-col-sm-4 fr-col-md-5 tee-track-callout-img fr-pl-0 fr-py-1v fr-pr-0"
+                  class="fr-col-4 fr-col-sm-4 fr-col-md-5 tee-track-callout-img fr-pl-0 fr-p-2v fr-pr-0"
                   style="align-self: center;">
                   <img
                     class="fr-responsive-img"

@@ -70,17 +70,6 @@
       v-show="!programs.programDetail"
       id="trackElement"
       :class="`fr-container--fluid ${tracks.currentStep > 1 ? 'fr-pt-10v' : ''}`">
-      <!-- STEPPER -->
-      <!-- <p
-        v-if="showStepperBool"
-        class="fr-tee-add-padding "
-        >
-        <TeeStepper
-          :steps-array="tracks.tracksStepsArray"
-          :current-step="tracks.currentStep"
-          :debug="debugBool"
-        />
-      </p> -->
 
       <!-- TRACKS INTERFACES -->
       <div
@@ -321,8 +310,8 @@ const getColumnsWidth = computed(() => {
   const currentTrack = tracks.getLastTrack
   const colsDebug = 'fr-col-7'
   const colsStart = 'fr-col-12 fr-col-xl-12'
-  const colsTracks = 'fr-col fr-col-sm-12 fr-col-lg-8 fr-col-xl-6'
-  const colsResults = 'fr-col fr-col-sm-12 fr-col-lg-8 fr-col-xl-8'
+  const colsTracks = 'fr-col fr-col-sm-12 fr-col-md-8 fr-col-lg-8 fr-col-xl-6'
+  const colsResults = 'fr-col fr-col-sm-12 fr-col-md-8 fr-col-lg-8 fr-col-xl-8'
   if (debugBool.value) return colsDebug
   else if ((tracks.seedTrack === 'track_results') || tracks.currentStep === 1 && !props.disableWidget) {
     return colsStart
