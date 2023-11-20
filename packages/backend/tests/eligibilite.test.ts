@@ -198,26 +198,25 @@ describe(`
   EXPECT the values from "PubliCodesInput" to be properly mapped to the
          questionnaire data
 `, () => {
-  test('"codeNaf" mapped to "entreprise . code NAF" (1)', () => {
-    const inputData = { codeNaf: '"12.34Z"' }
-    const program = makeProgram({
-      entreprise: null,
-      'entreprise . code NAF': null,
-      [FILTERING_RULE_NAME]: 'entreprise . code NAF = "12.34Z"'
+  const testCodeNAFMapping = (inputNAFCode: string, programNAFCode: string) => {
+    test(`"codeNaf" mapped to "entreprise . code NAF" (input: ${inputNAFCode}, program: ${programNAFCode})`, () => {
+      const program = makeProgram({
+        entreprise: null,
+        'entreprise . code NAF': null,
+        [FILTERING_RULE_NAME]: `entreprise . code NAF = "${programNAFCode}"`
+      })
+
+      const inputData = { codeNaf: `"${inputNAFCode}"` }
+
+      var result = filterPrograms([program], inputData)
+
+      expectToBeOk(result)
+
+      const expectedLength = inputNAFCode == programNAFCode ? 1 : 0
+      expect(result.value).toHaveLength(expectedLength)
     })
-    var result = filterPrograms([program], inputData)
-    expectToBeOk(result)
-    expect(result.value).toHaveLength(1)
-  })
-  test('"codeNaf" mapped to "entreprise . code NAF" (1)', () => {
-    const inputData = { codeNaf: '"34.21Z"' }
-    const program = makeProgram({
-      entreprise: null,
-      'entreprise . code NAF': null,
-      [FILTERING_RULE_NAME]: 'entreprise . code NAF = "34.21Z"'
-    })
-    var result = filterPrograms([program], inputData)
-    expectToBeOk(result)
-    expect(result.value).toHaveLength(1)
-  })
+  }
+
+  testCodeNAFMapping('12.34Z', '12.34Z')
+  testCodeNAFMapping('34.12Z', '34.12Z')
 })
