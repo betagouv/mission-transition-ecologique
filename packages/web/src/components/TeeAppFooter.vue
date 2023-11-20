@@ -217,7 +217,7 @@ const mainLinks = [
   // },
   {
     // router ok
-    label: 'Accessibilité',
+    label: 'Accessibilité : Non conforme',
     to: '/accessibilite'
   },
   {

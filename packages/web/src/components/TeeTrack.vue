@@ -72,7 +72,7 @@
                 <!-- CALLOUT IMAGE LEFT -->
                 <div
                   v-if="track.callout.imageLeft"
-                  class="fr-col fr-col-5 fr-col-sm-hide tee-track-callout-img fr-pl-0 fr-py-0 fr-pr-0"
+                  class="fr-col-4 fr-col-sm-4 fr-col-md-5 tee-track-callout-img fr-pl-0 fr-p-2v fr-pr-0"
                   style="align-self: center;">
                   <img
                     class="fr-responsive-img"
@@ -82,7 +82,7 @@
                 </div>
                 <!-- CALLOUT TEXT -->
                 <div
-                  :class="`${track.callout.bigTitle ? 'fr-col' : 'fr-col fr-col-7 tee-track-callout-texts'}`">
+                  :class="`${track.callout.bigTitle ? 'fr-col-8 fr-col-sm-8 fr-col-md-7' : 'fr-col fr-col-md-7 tee-track-callout-texts'}`">
                   <!-- CALLOUT HEADER -->
                   <h2
                     v-if="track.callout.header"
@@ -106,7 +106,7 @@
                   <!-- CALLOUT DESCRIPTION -->
                   <p
                     v-if="track.callout.description"
-                    class="fr-callout__text tee-track-callout-description"
+                    class="fr-callout__text tee-track-callout-description fr-mb-2v"
                     :style="`${track.callout.descriptionStyle || ''}`">
                     {{ track.callout.description[choices.lang]}}
                   </p>
@@ -251,14 +251,6 @@
                     {{ option.resume[choices.lang] }}
                   </p>
                 </div>
-                <!-- <div class="fr-card__header">
-                  <div class="fr-card__img">
-                    <img
-                      class="fr-responsive-img"
-                      src="/img/placeholder.16x9.png"
-                      alt="[À MODIFIER - vide ou texte alternatif de l’image]">
-                  </div>
-                </div> -->
               </div>
             </div>
 

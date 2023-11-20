@@ -24,7 +24,7 @@
             </div>
           </div>
         </div>
-        <div class="fr-col-xl-8 fr-col-lg-10 fr-col-md-10 fr-col-sm-12 fr-col-xs-12  tee-track-choice">
+        <div class="fr-col-xl-8 fr-col-lg-10 fr-col-md-10 fr-col-sm-12 fr-col-xs-12">
           <router-link
             to="/questionnaire">
             <button 
