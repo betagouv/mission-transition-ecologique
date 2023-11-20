@@ -305,7 +305,7 @@ const getColumnsWidth = computed(() => {
   else if ((tracks.seedTrack === 'track_results') || tracks.currentStep === 1 && !props.disableWidget) {
     return colsStart
   }
-  else if (currentTrack?.component === TrackComponents.results) {
+  else if (currentTrack?.component === TrackComponents.Results) {
     return colsResults
   }
   else {
@@ -350,7 +350,7 @@ const setupFromUrl = () => {
   // @ts-ignore
   nav.setCurrentDetailId(programId)
   // @ts-ignore
-  programs.setDetailResult(programId, 'track_results')
+  programs.setDetailResult(programId, TrackId.Results)
   /*
   tested with url such as :
   localhost:4242/?teeActiveTrack=track_results&teeDetail=accelerateur-decarbonation

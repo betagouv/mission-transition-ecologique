@@ -109,6 +109,7 @@
 import { tracksStore } from '../stores/tracks'
 import { programsStore } from '../stores/programs'
 import { navigationStore } from '../stores/navigation'
+import { TrackId } from '@/types'
 
 const nav = navigationStore()
 const tracks = tracksStore()
@@ -119,11 +120,11 @@ const pushTo = async (ref: string) => {
   nav.setRouterReady(false)
   
   tracks.resetUsedTracks()
-  tracks.addToUsedTracks('track_results', 'track_results')
+  tracks.addToUsedTracks(TrackId.Results, TrackId.Results)
   programs.resetDetailResult()
   
   nav.setCurrentStep(1)
-  nav.setCurrentTrackId('track_results')
+  nav.setCurrentTrackId(TrackId.Results)
   nav.resetQueries()
   nav.setRouterReady(true)
   nav.updateUrl(true, ref)

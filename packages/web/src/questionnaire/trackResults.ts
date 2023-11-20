@@ -1,5 +1,13 @@
 import type { Track } from '@/types'
-import { CallbackActions, CallbackMethods, DataMappingFrom, FormFieldTypes, TrackComponents, TrackId } from '@/types'
+import {
+  CallbackActions,
+  CallbackMethods,
+  ConditionOperators,
+  DataMappingFrom,
+  FormFieldTypes,
+  TrackComponents,
+  TrackId
+} from '@/types'
 
 const metaEnv = import.meta.env
 // console.log('trackResults >  metaEnv :', metaEnv)
@@ -28,7 +36,7 @@ export const results: Track = {
       {
         field: "nature de l'aide",
         label: "nature de l'aide",
-        trueIf: '==',
+        trueIf: ConditionOperators.is,
         values: [
           {
             label: 'Accompagnement',
@@ -60,7 +68,7 @@ export const results: Track = {
       {
         field: "publicodes.est dans les objectifs de l'entreprise.une de ces conditions",
         label: "objectif",
-        trueIf: 'exists',
+        trueIf: ConditionOperators.exist,
         values: [
           {
             label: '🌱 Stratégie environnementale',

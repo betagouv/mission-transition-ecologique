@@ -1,13 +1,13 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
-import type { ProgramData } from '@/types/index'
+import type { ProgramData, TrackId } from '@/types/index'
 import { filterPrograms as filterWithPublicodes } from '@tee/backend/src/domain/eligibility'
 
 export const programsStore = defineStore('programs', () => {
   const programs = ref()
   const programDetail = ref<string | number>()
-  const programDetailConfig = ref()
+  const programDetailConfig = ref<TrackId>()
 
   // getters
   const progs = computed(() => {
@@ -53,7 +53,7 @@ export const programsStore = defineStore('programs', () => {
     programs.value = dataset
   }
 
-  function setDetailResult(programeId: string | number, detailConfig: any) {
+  function setDetailResult(programeId: string | number, detailConfig: TrackId) {
     programDetail.value = programeId
     programDetailConfig.value = detailConfig
   }

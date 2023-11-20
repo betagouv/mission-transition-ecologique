@@ -9,6 +9,9 @@
       "@/*": ["./src/*"]
     },
     "target": "ESNext",
-    "lib": ["ESNext", "DOM"]
+    "lib": ["ESNext", "DOM"],
+    "preserveValueImports": false,
+    "importsNotUsedAsValues": "remove",
+    "verbatimModuleSyntax": true
   }
 }

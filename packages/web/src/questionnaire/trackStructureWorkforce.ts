@@ -1,8 +1,8 @@
-import type { NextTrackRules, Track } from '@/types'
+import type { NextTrackRuleSet, Track } from '@/types'
 import { ConditionOperators, DataMappingFrom, HasInputOptions, TrackComponents, TrackId } from '@/types'
 import { Entreprise } from '@/types/publicodesObjects'
 
-const nextExceptions: NextTrackRules[] = [
+const nextExceptions: NextTrackRuleSet[] = [
   {
     help: "Goes to track_sectors if : doesn't have infos about sector",
     rules: [

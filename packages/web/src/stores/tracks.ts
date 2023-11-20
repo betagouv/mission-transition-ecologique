@@ -43,7 +43,7 @@ export const tracksStore = defineStore('tracks', () => {
     const track: UsedTrack = tracksArray[tracksArray.length - 1]
     return track
   })
-  const currentTrackId = computed(() => {
+  const currentTrackId = computed<TrackId>(() => {
     const tracksArray = usedTracks.value.slice(-1)
     const track: UsedTrack = tracksArray[0]
     const stepNumber = track?.id

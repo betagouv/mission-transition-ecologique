@@ -54,15 +54,15 @@
       :id="trackId"
       class="fr-grid-row">
       <div
-        :class="`fr-col${track.imageRight ? ' fr-col-md-7 fr-col-lg-7 tee-track-has-image-right' : ''}`">
+        :class="`fr-col${track?.imageRight ? ' fr-col-md-7 fr-col-lg-7 tee-track-has-image-right' : ''}`">
         <!-- UNCOMPLETED QUESTIONNAIRE -->
         <div
-          :class="`fr-grid-row fr-grid-row--gutters ${track.bgColor ? 'fr-p-5v fr-p-sm-8v fr-p-md-20v' : ''}`"
+          :class="`fr-grid-row fr-grid-row--gutters ${track?.bgColor ? 'fr-p-5v fr-p-sm-8v fr-p-md-20v' : ''}`"
           >
 
           <!-- CALLOUT (TEXT + IMAGE) -->
           <div
-            v-if="track.callout"
+            v-if="track?.callout"
             :class="`fr-col-12 ${track.callout.bigTitle ? 'fr-mb-10v fr-mx-0 fr-px-2v' : ''}`"
             >
             <div
@@ -145,7 +145,7 @@
             v-if="step !== 1"
             :class="`${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`">
             <h3
-              :class="`${track.info ? 'fr-mb-0' : 'fr-mb-2v'}`"
+              :class="`${track?.info ? 'fr-mb-0' : 'fr-mb-2v'}`"
               :style="`${isTrackResults ? 'color: #000091; font-size: 2.75rem;' : ''}`">
               {{ tracks.getTrackLabel(trackId, choices.lang) }}
             </h3>
@@ -153,7 +153,7 @@
 
           <!-- TRACK INFOS -->
           <div 
-            v-if="step !== 1 && track.info"
+            v-if="step !== 1 && track?.info"
             :class="`${isTrackResults ? 'fr-col-12 fr-col-offset-md-1' : 'fr-col-12'}`">
             <p class="fr-mb-2v">
               <span
@@ -165,7 +165,7 @@
 
           <!-- TRACK HINT -->
           <div 
-            v-if="step !== 1 && track.hint"
+            v-if="step !== 1 && track?.hint"
             :class="`${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`">
             <p
               :class="`fr-mb-0`"
@@ -176,7 +176,7 @@
 
           <!-- TRACK RESUME -->
           <div 
-            v-if="step !== 1 && track.resume"
+            v-if="step !== 1 && track?.resume"
             :class="`${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`">
             <p class="fr-mb-0">
               {{ track.resume[choices.lang] }}
@@ -224,7 +224,7 @@
                     </p>
                     <h3 class="fr-card__title">
                       <!-- <a href="#"> -->
-                        {{ option.label[choices.lang] }}
+                        {{ option.label?.[choices.lang] }}
                       <!-- </a> -->
                     </h3>
                     <div
@@ -261,7 +261,7 @@
               <DsfrButton
                 class="fr-btn-fullwidth fr-btn-fixed-height fr-btn-sm-align-left fr-btn-grey"
                 :style="`outline-color: #929292; ${isActiveChoice(idx) ? 'background-color: #eeeeee' : ''}`"
-                :label="option.label[choices.lang]"
+                :label="option.label?.[choices.lang]"
                 :icon="getButtonIcon(idx)"
                 :secondary="!isActiveChoice(idx)"
                 @click="updateSelection(option, idx)"
@@ -289,7 +289,7 @@
               v-if="renderAs === trackComponents.SimpleButtons">
               <DsfrButton
                 class="fr-btn-fullwidth fr-btn-align-center"
-                :label="option.label[choices.lang]"
+                :label="option.label?.[choices.lang]"
                 size="large"
                 style="font-weight: 1000; min-height: 3.5rem; font-size: 1.5rem;"
                 @click="updateSelection(option, idx); saveSelection()"
@@ -326,9 +326,9 @@
               >
               <TeeResults
                 :track-id="trackId"
-                :track-config="track.config"
-                :track-options="track.options"
-                :track-form="track.form"
+                :track-config="track?.config"
+                :track-options="track?.options"
+                :track-form="track?.form"
                 :tracks-results="tracks.usedTracks"
                 :track-element="trackElement"
                 :disable-widget="disableWidget"
@@ -373,7 +373,7 @@
 
       <!-- TRACK IMAGE RIGHT IF ANY -->
       <div
-        v-if="track.imageRight"
+        v-if="track?.imageRight"
         class="fr-col-12 fr-col-md-5 fr-col-lg-5 tee-track-image-right">
         <img
           class="fr-responsive-img"

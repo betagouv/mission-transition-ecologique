@@ -76,7 +76,7 @@
             :model-value="formData[field.id]"
             label-visible
             :required="field.required"
-            :label="field.label[choices.lang]"
+            :label="field?.label?.[choices.lang]"
             :placeholder="(field.hint && field.hint[choices.lang]) || ''"
             @update:modelValue="updateFormData($event, field.id)"
             >
@@ -93,7 +93,7 @@
           <!-- :hint="field.hint[choices.lang]" -->
           <template #label>
             <span>
-              {{ field.label[choices.lang] }}
+              {{ field?.label?.[choices.lang] }}
             </span>
           </template>
         </DsfrCheckbox>
@@ -154,7 +154,7 @@
         </p>
         <p>
           <code 
-            v-for="resp, idx in requestResponses"
+            v-for="(resp, idx) in requestResponses"
             :key="idx"
             class="error-code fr-py-2v">
             {{ choices.t('errors.error') }} {{ resp.status }}
