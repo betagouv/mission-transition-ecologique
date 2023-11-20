@@ -7,6 +7,9 @@ WARNING :
 */
 
 /* CUSTOM STYLES - OVERIDES DSFR */
+.fr-justify-center {
+  justify-content: center;
+}
 .fr-text-center {
   text-align: center;
 }

@@ -74,12 +74,12 @@
       <!-- TRACKS INTERFACES -->
       <div
         ref="tee-app-tracks"
-        class="fr-grid-row fr-grid-row-gutters fr-p-0">
+        class="fr-grid-row fr-grid-row-gutters fr-p-0 fr-justify-center">
 
         <!-- SIDEBAR MENU (FIL D'ARIANE)-->
         <div
-          v-if="needSidebar"
-          class="fr-tee-add-padding fr-col-3 fr-col-md-4 fr-col-lg-4 fr-col-xl-2 fr-col-offset-xl-1 fr-col-sm-hide"
+          v-if="needSidebar && tracks.currentStep > 1"
+          class="fr-tee-add-padding fr-mt-4v fr-col-3 fr-col-md-4 fr-col-lg-4 fr-col-xl-2 fr-col-sm-hide"
           style="height: 100%;">
           <TeeSidebar
             :used-tracks="tracks.usedTracks"
@@ -90,7 +90,7 @@
         <!-- TRACKS -->
         <div
           id="tee-app-tracks"
-          :class="`${tracks.currentStep > 1 ? 'fr-tee-add-padding' :''} ${getColumnsWidth} ${debugBool ? '' : 'fr-grid-row--center'}`"
+          :class="`${tracks.currentStep > 1 ? 'fr-tee-add-padding' : ''} ${getColumnsWidth} ${debugBool ? '' : 'fr-grid-row--center'}`"
           >
           <div
             v-for="(track, index) in tracks.usedTracks"
