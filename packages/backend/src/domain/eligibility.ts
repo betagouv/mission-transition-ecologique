@@ -120,6 +120,7 @@ const preprocessInputForPublicodes = (
   questionnaireData: QuestionnaireData
 ): PublicodesInputData => {
   let publicodesData: PublicodesInputData = { ...questionnaireData }
+
   if (questionnaireData.codeNaf) {
     publicodesData['entreprise . code NAF'] = enquotePublicodesLiteralString(
       questionnaireData.codeNaf
