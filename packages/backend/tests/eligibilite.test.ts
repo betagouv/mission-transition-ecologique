@@ -209,4 +209,15 @@ describe(`
     expectToBeOk(result)
     expect(result.value).toHaveLength(1)
   })
+  test('"codeNaf" mapped to "entreprise . code NAF" (1)', () => {
+    const inputData = { codeNaf: '"34.21Z"' }
+    const program = makeProgram({
+      entreprise: null,
+      'entreprise . code NAF': null,
+      [FILTERING_RULE_NAME]: 'entreprise . code NAF = "34.21Z"'
+    })
+    var result = filterPrograms([program], inputData)
+    expectToBeOk(result)
+    expect(result.value).toHaveLength(1)
+  })
 })
