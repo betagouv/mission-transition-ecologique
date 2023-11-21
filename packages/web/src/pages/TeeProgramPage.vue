@@ -5,7 +5,7 @@
     style="min-height: 800px">
     <!-- {{ route.params.programId }} -->
     <WidgetApp
-      :seed="'track_results'"
+      :seed="TrackId.Results"
       :showHeaderBool="false"
       :showFooterBool="false"
       :disableWidget="true"
@@ -14,7 +14,7 @@
       />
       <TeeProgramDetail
         :program-id="String(route.params.programId)"
-        :track-id="'track_results'"
+        :track-id="TrackId.Results"
         :disable-widget="true"
       />
   </div>
@@ -29,6 +29,7 @@ import { useRouter, useRoute } from 'vue-router'
 import WidgetApp from '@/WidgetApp.ce.vue'
 // @ts-ignore
 import TeeProgramDetail from '@/components/TeeProgramDetail.vue'
+import { TrackId } from '@/types'
 
 const router = useRouter()
 const route = useRoute()

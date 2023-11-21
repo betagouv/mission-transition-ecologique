@@ -1,5 +1,8 @@
-export const buildingProperty = {
-  id: 'track_structure_building_property',
+import type { Track } from '@/types'
+import { TrackComponents, TrackId } from '@/types'
+
+export const buildingProperty: Track = {
+  id: TrackId.BuildingProperty,
   category: 'myBuildings',
   title: { fr: 'Mon statut' },
   label: { fr: "Parlons de vos locaux. Vous êtes :" },
@@ -13,13 +16,13 @@ export const buildingProperty = {
     imageLeft: 'images/thema/thema-batiments.svg',
   },
   interface: {
-    component: 'buttons',
+    component: TrackComponents.Buttons,
   },
   behavior: {
     multipleChoices: false,
   },
   next: {
-    default: 'track_results'
+    default: TrackId.Results
   },
   options: [
     {
@@ -27,7 +30,7 @@ export const buildingProperty = {
       title: { fr: 'Propriétaire' },
       label: { fr: "🔑 Propriétaire" },
       next: {
-        default: 'track_mobility'
+        default: TrackId.Mobility
       }
     },
     {
@@ -35,7 +38,7 @@ export const buildingProperty = {
       title: { fr: "Locataire" },
       label: { fr: "📝 Locataire " },
       next: {
-        default: 'track_mobility'
+        default: TrackId.Mobility
       }
     },
     {
@@ -43,7 +46,7 @@ export const buildingProperty = {
       title: { fr: 'Propriétaire & locataire' },
       label: { fr: "Je suis à la fois propriétaire et locataire sur mes différents locaux" },
       next: {
-        default: 'track_mobility'
+        default: TrackId.Mobility
       }
     }
   ]

@@ -3,7 +3,9 @@
   "exclude": [],
   "compilerOptions": {
     "composite": true,
-    "lib": [],
-    "types": ["node", "jsdom"]
+    "lib": ["ESNext", "DOM"],
+    "target": "ESNext",
+    "types": ["node", "jsdom"],
+    "verbatimModuleSyntax": true
   }
 }

@@ -9,7 +9,7 @@
     "rootDir": ".",
     // Directory in which to put the generated js code
     "outDir": "./build",
-
+    "target": "ESNext",
     // stricter config
     "allowUnusedLabels": false,
     "allowUnreachableCode": false,
