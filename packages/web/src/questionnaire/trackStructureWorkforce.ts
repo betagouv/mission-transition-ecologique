@@ -13,7 +13,7 @@ const nextExceptions: NextTrackRuleSet[] = [
         conditions: [
           {
             type: 'siret',
-            operator: ConditionOperators.inexist,
+            operator: ConditionOperators.inexists,
           }
         ]
       }
@@ -30,7 +30,7 @@ const nextExceptions: NextTrackRuleSet[] = [
         conditions: [
           {
             type: 'codeNaf',
-            operator: ConditionOperators.exist
+            operator: ConditionOperators.exists
           }
         ]
       },
@@ -59,7 +59,7 @@ const nextExceptions: NextTrackRuleSet[] = [
         conditions: [
           {
             type: 'codeNaf',
-            operator: ConditionOperators.exist
+            operator: ConditionOperators.exists
           }
         ]
       },

@@ -68,7 +68,7 @@ export const results: Track = {
       {
         field: "publicodes.est dans les objectifs de l'entreprise.une de ces conditions",
         label: "objectif",
-        trueIf: ConditionOperators.exist,
+        trueIf: ConditionOperators.exists,
         values: [
           {
             label: '🌱 Stratégie environnementale',
