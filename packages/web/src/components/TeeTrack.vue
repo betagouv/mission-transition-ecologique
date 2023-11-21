@@ -49,20 +49,20 @@
     :name="`${step > 1 ? 'slide-fade' : ''}`"
     mode="out-in">
     <div
-      v-show="!isCompleted"
+      v-show="!isCompleted && track !== undefined"
       :key="`track-${step}-${trackId}`"
       :id="trackId"
       class="fr-grid-row">
       <div
-        :class="`fr-col${track.imageRight ? ' fr-col-md-7 fr-col-lg-7 tee-track-has-image-right' : ''}`">
+        :class="`fr-col${track?.imageRight ? ' fr-col-md-7 fr-col-lg-7 tee-track-has-image-right' : ''}`">
         <!-- UNCOMPLETED QUESTIONNAIRE -->
         <div
-          :class="`fr-grid-row fr-grid-row--gutters ${track.bgColor ? 'fr-p-5v fr-p-sm-8v fr-p-md-20v' : ''}`"
+          :class="`fr-grid-row fr-grid-row--gutters ${track?.bgColor ? 'fr-p-5v fr-p-sm-8v fr-p-md-20v' : ''}`"
           >
 
           <!-- CALLOUT (TEXT + IMAGE) -->
           <div
-            v-if="track.callout"
+            v-if="track?.callout"
             :class="`fr-col-12 ${track.callout.bigTitle ? 'fr-mb-10v fr-mx-0 fr-px-2v' : ''}`"
             >
             <div
@@ -72,7 +72,7 @@
                 <!-- CALLOUT IMAGE LEFT -->
                 <div
                   v-if="track.callout.imageLeft"
-                  class="fr-col fr-col-5 fr-col-sm-hide tee-track-callout-img fr-pl-0 fr-py-0 fr-pr-0"
+                  class="fr-col-4 fr-col-sm-4 fr-col-md-5 tee-track-callout-img fr-pl-0 fr-p-2v fr-pr-0"
                   style="align-self: center;">
                   <img
                     class="fr-responsive-img"
@@ -82,7 +82,7 @@
                 </div>
                 <!-- CALLOUT TEXT -->
                 <div
-                  :class="`${track.callout.bigTitle ? 'fr-col' : 'fr-col fr-col-7 tee-track-callout-texts'}`">
+                  :class="`${track.callout.bigTitle ? 'fr-col-8 fr-col-sm-8 fr-col-md-7' : 'fr-col fr-col-md-7 tee-track-callout-texts'}`">
                   <!-- CALLOUT HEADER -->
                   <h2
                     v-if="track.callout.header"
@@ -106,7 +106,7 @@
                   <!-- CALLOUT DESCRIPTION -->
                   <p
                     v-if="track.callout.description"
-                    class="fr-callout__text tee-track-callout-description"
+                    class="fr-callout__text tee-track-callout-description fr-mb-2v"
                     :style="`${track.callout.descriptionStyle || ''}`">
                     {{ track.callout.description[choices.lang]}}
                   </p>
@@ -145,7 +145,7 @@
             v-if="step !== 1"
             :class="`${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`">
             <h3
-              :class="`${track.info ? 'fr-mb-0' : 'fr-mb-2v'}`"
+              :class="`${track?.info ? 'fr-mb-0' : 'fr-mb-2v'}`"
               :style="`${isTrackResults ? 'color: #000091; font-size: 2.75rem;' : ''}`">
               {{ tracks.getTrackLabel(trackId, choices.lang) }}
             </h3>
@@ -153,7 +153,7 @@
 
           <!-- TRACK INFOS -->
           <div
-            v-if="step !== 1 && track.info"
+            v-if="step !== 1 && track?.info"
             :class="`${isTrackResults ? 'fr-col-12 fr-col-offset-md-1' : 'fr-col-12'}`">
             <p class="fr-mb-2v">
               <span
@@ -165,7 +165,7 @@
 
           <!-- TRACK HINT -->
           <div
-            v-if="step !== 1 && track.hint"
+            v-if="step !== 1 && track?.hint"
             :class="`${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`">
             <p
               :class="`fr-mb-0`"
@@ -176,7 +176,7 @@
 
           <!-- TRACK RESUME -->
           <div
-            v-if="step !== 1 && track.resume"
+            v-if="step !== 1 && track?.resume"
             :class="`${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`">
             <p class="fr-mb-0">
               {{ track.resume[choices.lang] }}
@@ -192,7 +192,7 @@
 
             <!-- AS CARDS -->
             <div
-              v-if="renderAs === 'cards'"
+              v-if="renderAs === trackComponents.Cards"
               style="height: 99%;"
               >
               <div
@@ -224,11 +224,11 @@
                     </p>
                     <h3 class="fr-card__title">
                       <!-- <a href="#"> -->
-                        {{ option.label[choices.lang] }}
+                        {{ option.label?.[choices.lang] }}
                       <!-- </a> -->
                     </h3>
                     <div
-                      v-if="isActiveChoice(option.value)"
+                      v-if="isActiveChoice(option.value as number)"
                       class="fr-card__start">
                       <p class="fr-badge fr-badge--info fr-badge--no-icon fr-mb-4v">
                         {{ choices.t('selection.selected') }}
@@ -251,25 +251,17 @@
                     {{ option.resume[choices.lang] }}
                   </p>
                 </div>
-                <!-- <div class="fr-card__header">
-                  <div class="fr-card__img">
-                    <img
-                      class="fr-responsive-img"
-                      src="/img/placeholder.16x9.png"
-                      alt="[À MODIFIER - vide ou texte alternatif de l’image]">
-                  </div>
-                </div> -->
               </div>
             </div>
 
             <!-- AS BUTTONS -->
             <div
-              v-if="renderAs === 'buttons' && !option.hasInput"
+              v-if="renderAs === trackComponents.Buttons && !isTrackOptionsInput(option)"
               class="fr-div-fixed-height">
               <DsfrButton
                 class="fr-btn-fullwidth fr-btn-fixed-height fr-btn-sm-align-left fr-btn-grey"
                 :style="`outline-color: #929292; ${isActiveChoice(idx) ? 'background-color: #eeeeee' : ''}`"
-                :label="option.label[choices.lang]"
+                :label="option.label?.[choices.lang]"
                 :icon="getButtonIcon(idx)"
                 :secondary="!isActiveChoice(idx)"
                 @click="updateSelection(option, idx)"
@@ -278,7 +270,7 @@
 
             <!-- AS BUTTON + BUTTON INPUT -->
             <div
-              v-if="renderAs === 'buttons' && option.hasInput"
+              v-if="renderAs === trackComponents.Buttons && isTrackOptionsInput(option)"
               class="fr-div-fixed-height">
               <TeeTrackButtonInput
                 :track-id="trackId"
@@ -294,10 +286,10 @@
 
             <!-- AS SIMPLE BUTTONS -->
             <div
-              v-if="renderAs === 'simpleButtons'">
+              v-if="renderAs === trackComponents.SimpleButtons">
               <DsfrButton
                 class="fr-btn-fullwidth fr-btn-align-center"
-                :label="option.label[choices.lang]"
+                :label="option.label?.[choices.lang]"
                 size="large"
                 style="font-weight: 1000; min-height: 3.5rem; font-size: 1.5rem;"
                 @click="updateSelection(option, idx); saveSelection()"
@@ -306,7 +298,7 @@
 
             <!-- AS INPUT -->
             <div
-              v-if="renderAs === 'input'"
+              v-if="renderAs === trackComponents.Input && isTrackOptionsInput(option)"
               style="height: 100%;">
               <TeeTrackInput
                 :track-id="trackId"
@@ -334,9 +326,9 @@
               >
               <TeeResults
                 :track-id="trackId"
-                :track-config="track.config"
-                :track-options="track.options"
-                :track-form="track.form"
+                :track-config="track?.config"
+                :track-options="track?.options"
+                :track-form="track?.form"
                 :tracks-results="tracks.usedTracks"
                 :track-element="trackElement"
                 :disable-widget="disableWidget"
@@ -382,7 +374,7 @@
 
       <!-- TRACK IMAGE RIGHT IF ANY -->
       <div
-        v-if="track.imageRight"
+        v-if="track?.imageRight"
         class="fr-col-12 fr-col-md-5 fr-col-lg-5 tee-track-image-right">
         <img
           class="fr-responsive-img"
@@ -397,18 +389,18 @@
 
 <script setup lang="ts">
 
-import { ref, computed, watch, toRaw } from 'vue'
+import { computed, ref, toRaw, watch } from 'vue'
 
-import { tracksStore } from '../stores/tracks'
-import { choicesStore } from '../stores/choices'
-import { analyticsStore } from '../stores/analytics'
+import { tracksStore } from '@/stores/tracks'
+import { choicesStore } from '@/stores/choices'
+import { analyticsStore } from '@/stores/analytics'
 // import type { DsfrButton } from '@gouvminint/vue-dsfr/types'
-
 // @ts-ignore
-import type { Track, TrackOptions, NextTrackRule, ColsOptions } from '@/types/index'
+import type { ColsOptions, NextTrackRules, Track, TrackOptions, TrackOptionsInput } from '@/types'
+import { isTrackOptionsInput, TrackComponents, TrackId } from '@/types'
 
-import { remapItem, scrollToTop } from '../utils/helpers'
-import { CheckNextTrackRules } from '../utils/conditions'
+import { remapItem, scrollToTop } from '@/utils/helpers'
+import { CheckNextTrackRules } from '@/utils/conditions'
 
 // @ts-ignore
 import TeeTrackInput from './TeeTrackInput.vue'
@@ -422,7 +414,7 @@ import DsfrButton from '@/components/button/DsfrButton.vue'
 
 interface Props {
   step: number,
-  trackId: string,
+  trackId: TrackId,
   isCompleted: boolean,
   trackElement: any,
   disableWidget?: boolean,
@@ -449,9 +441,11 @@ const colsOptionsLarge: ColsOptions = {
   results: 10,
 }
 
+const trackComponents = TrackComponents
+
 const noNeedForNext = [
-  'cards',
-  'simpleButtons'
+  TrackComponents.Cards,
+  TrackComponents.SimpleButtons
 ]
 
 const tracks = tracksStore()
@@ -463,11 +457,11 @@ const selectedOptions = ref<any[]>([])
 const needRemove = ref<boolean>(false)
 const isLoadingNext = ref<boolean>(false)
 
-const track: Track | any = tracks.getTrack(props.trackId)
+const track: Track | undefined = tracks.getTrack(props.trackId)
 
 // console.log('TeeTrack > track :', track)
-const renderAs: string = track?.interface.component || 'buttons'
-const customColWidth: number | string = track?.interface.columnWidth || 0
+const renderAs: TrackComponents = track?.interface?.component ?? TrackComponents.Buttons
+const customColWidth: number | string = track?.interface?.columnWidth ?? 0
 // console.log('TeeTrack > track :', track)
 
 // @ts-ignore
@@ -475,11 +469,11 @@ const allowMultiple: boolean = !!track?.behavior?.multipleChoices
 
 // @ts-ignore
 const trackOperator: boolean = track?.behavior?.operator || false
-const optionsArray: any[] = track?.options.filter( (o: TrackOptions) => !o.disabled) || []
+const optionsArray = track?.options?.filter( (o: TrackOptions) => !o.disabled) ?? []
 
 // computed
 const isTrackResults = computed(() => {
-  return track?.interface.component === 'results'
+  return track?.interface?.component === TrackComponents.Results
 })
 const selectionValues = computed(() => {
   // console.log('TeeTrack > selectionValues > selectedOptions.value :', selectedOptions.value)
@@ -664,7 +658,7 @@ const saveSelection = async () => {
       })
       // console.log('TeeTrack > updateStore > selectionVals :', selectionVals)
 
-      nextExceptions.forEach((trackRule: NextTrackRule) => {
+      nextExceptions.forEach((trackRule: NextTrackRules) => {
         const dataStructure = {}
         let item = remapItem(dataStructure, trackRule.rules, {}, trackValues, {}, {}, selectionVals, choices.lang)
         // console.log('TeeTrack > updateStore > item :', item)

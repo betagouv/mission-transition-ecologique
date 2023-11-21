@@ -307,6 +307,7 @@ import { navigationStore } from '../stores/navigation'
 import { analyticsStore } from '../stores/analytics'
 
 import { scrollToTop } from '../utils/helpers'
+import type { TrackId } from '@/types'
 
 // const router = useRouter()
 
@@ -326,7 +327,7 @@ const columnTiles = ref<string>('fr-col')
 
 interface Props {
   programId: string | number,
-  trackId: string,
+  trackId: TrackId | undefined,
   trackElement?: any;
   disableWidget?: boolean,
   debug?: boolean,
@@ -353,7 +354,9 @@ onBeforeMount(async() => {
   // await router.isReady()
   console.log('TeeProgramDetail > onBeforeMount > props.programId :', props.programId )
   program.value = programs.getProgramById(props.programId)
-  trackConfig.value = tracks.getTrack(props.trackId)
+  if (props.trackId) {
+    trackConfig.value = tracks.getTrack(props.trackId)
+  }
   // console.log('TeeProgramDetail > onBeforeMount > resultsProgs :', resultsProgs )
   // analytics / send event
   analytics.sendEvent('result_detail', 'show_detail', props.programId)

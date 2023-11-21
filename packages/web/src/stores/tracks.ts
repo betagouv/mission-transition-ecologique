@@ -1,20 +1,19 @@
 // import Vue from 'vue'
-import { ref, shallowRef, computed, toRaw } from 'vue'
+import { computed, ref, shallowRef, toRaw } from 'vue'
 // cf : https://stackoverflow.com/questions/64917686/vue-array-converted-to-proxy-object
 import { defineStore } from 'pinia'
 
-import { tracks } from '../questionnaire'
+import { tracks } from '@/questionnaire'
 
 // @ts-ignore
-import type { Translations, UsedTrack } from '@/types/index'
-import { TrackComponents } from '@/types/index'
+import type { Track, Translations, UsedTrack, TrackId } from '@/types'
+import { TrackComponents } from '@/types'
 
-const allTracks = ref(tracks)
-const seedTrack = ref()
+const allTracks = ref<Track[]>(tracks)
+const seedTrack = ref<TrackId | undefined>()
 
 export const tracksStore = defineStore('tracks', () => {
   // console.log('store.tracks > defineStore > tracks : ', tracks)
-
   const trackResultString = 'track_results'
 
   const maxDepth = ref(4)
@@ -23,7 +22,7 @@ export const tracksStore = defineStore('tracks', () => {
 
   // computed
   const tracksStepsArrayDict = computed(() => {
-    const dict = allTracks.value.map((track: any) => {
+    const dict = allTracks.value.map((track: Track) => {
       return {
         id: track.id,
         label: track.label
@@ -40,11 +39,11 @@ export const tracksStore = defineStore('tracks', () => {
     return tracksArray
   })
   const getLastTrack = computed(() => {
-    const tracksArray = usedTracks.value.slice(-1)
-    const track: UsedTrack = tracksArray[0]
+    const tracksArray = usedTracks.value //.slice(-1)
+    const track: UsedTrack = tracksArray[tracksArray.length - 1]
     return track
   })
-  const currentTrackId = computed(() => {
+  const currentTrackId = computed<TrackId>(() => {
     const tracksArray = usedTracks.value.slice(-1)
     const track: UsedTrack = tracksArray[0]
     const stepNumber = track?.id
@@ -86,48 +85,47 @@ export const tracksStore = defineStore('tracks', () => {
   })
 
   // getters
-  const getTrack = (trackId: string) => {
-    const track = allTracks.value.find(track => track.id === trackId)
-    return track
+  const getTrack = (trackId: TrackId): (Track | undefined) => {
+    return allTracks.value.find(track => track.id === trackId)
   }
-  const getTrackCategory = (trackId: string) => {
+  const getTrackCategory = (trackId: TrackId) => {
     const track = getTrack(trackId)
     // @ts-ignore
     const trackCateg: string = track?.category
     return trackCateg
   }
-  const getTrackTitle = (trackId: string, lang: string) => {
+  const getTrackTitle = (trackId: TrackId, lang: string) => {
     const track = getTrack(trackId)
     // @ts-ignore
     const trackTitle: Translations = track?.title
     const titleString: string = trackTitle && trackTitle[lang]
     return titleString
   }
-  const getTrackLabel = (trackId: string, lang: string) => {
+  const getTrackLabel = (trackId: TrackId, lang: string) => {
     const track = getTrack(trackId)
     // @ts-ignore
     const trackTitle: Translations = track?.label
     const titleString: string = trackTitle && trackTitle[lang]
     return titleString
   }
-  const getTrackBgColor = (trackId: string) => {
+  const getTrackBgColor = (trackId: TrackId) => {
     const track = getTrack(trackId)
     // @ts-ignore
     const trackBgColor: string = track?.bgColor
     return trackBgColor
   }
-  const getTrackImageRight = (trackId: string) => {
+  const getTrackImageRight = (trackId: TrackId) => {
     const track = getTrack(trackId)
     // @ts-ignore
     const trackImageRight: string = track?.imageRight
     return trackImageRight
   }
-  function trackExistsInUsed(trackId: string) {
+  function trackExistsInUsed(trackId: TrackId) {
     // @ts-ignore
     const exists = usedTracks.value.find(t => t.id === trackId)
     return !!exists
   }
-  const isTrackCompleted = (trackId: string) => {
+  const isTrackCompleted = (trackId: TrackId) => {
     const track = usedTracks.value.find(t => t.id === trackId)
     return track?.completed
   }
@@ -137,7 +135,7 @@ export const tracksStore = defineStore('tracks', () => {
     maxDepth.value = depth
   }
 
-  async function setSeedTrack(seed: string) {
+  async function setSeedTrack(seed: TrackId) {
     // console.log()
     // console.log('store.tracks > setSeedTrack > seed : ', seed)
     const track = getTrack(seed)
@@ -145,7 +143,7 @@ export const tracksStore = defineStore('tracks', () => {
     seedTrack.value = track?.id
   }
 
-  function addToUsedTracks(srcTrackId: string, newTrackId: string) {
+  function addToUsedTracks(srcTrackId: TrackId, newTrackId: TrackId) {
     // console.log()
     // console.log('store.tracks > addToUsedTracks > srcTrackId : ', srcTrackId)
     // console.log('store.tracks > addToUsedTracks > newTrackId : ', newTrackId)
@@ -160,7 +158,7 @@ export const tracksStore = defineStore('tracks', () => {
     // add newTrackId
     const trackInfos: UsedTrack = {
       id: newTrackId,
-      component: nextTrack?.interface.component || TrackComponents.buttons,
+      component: nextTrack?.interface?.component ?? TrackComponents.Buttons,
       category: nextTrack?.category,
       completed: false,
       step: usedTracks.value.length + 1,

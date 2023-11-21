@@ -1,14 +1,17 @@
-export const status = {
-  id: 'track_status',
+import type { Track } from '@/types'
+import { TrackBehaviorOperators, TrackComponents, TrackId } from '@/types'
+
+export const status: Track = {
+  id: TrackId.Status,
   category: 'goals',
   title: { fr: "Mon niveau d'avancement" },
   label: { fr: 'Statut de votre projet' },
   interface: {
-    component: 'buttons',
+    component: TrackComponents.Buttons,
   },
   behavior: {
     multipleChoices: false,
-    operator: 'or',
+    operator: TrackBehaviorOperators.or,
   },
   options: [
     {
@@ -16,7 +19,7 @@ export const status = {
       title: { fr: 'Economies' },
       label: { fr: 'Je veux faire des économies' },
       next: {
-        default: 'track_structure_sizes'
+        default: TrackId.StructureSizes,
       },
     },
     {
@@ -24,7 +27,7 @@ export const status = {
       title: { fr: 'Emissions carbone' },
       label: { fr: "J'ai besoin de connaître et réduire mes émissions carbone" },
       next: {
-        default: 'track_results'
+        default: TrackId.Results,
       },
     },
     {
@@ -32,7 +35,7 @@ export const status = {
       title: { fr: 'Améliorer mon produit/service' },
       label: { fr: "J'ai besoin d'améliorer mon produit/service" },
       next: {
-        default: 'track_results'
+        default: TrackId.Results,
       },
     }
   ]

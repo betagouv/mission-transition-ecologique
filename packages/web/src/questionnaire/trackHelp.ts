@@ -1,24 +1,28 @@
-export const help = {
-  id: 'track_help',
+import type { Track } from '@/types'
+import { TrackComponents, TrackId } from '@/types'
+
+export const help: Track = {
+  id: TrackId.Help,
   category: 'ourHelp',
   title: { fr: 'Par où commencer ?' },
   label: { fr: "Comment pouvons-nous vous aider ?" },
   callout: {
     bgColor: '#FACF35', // 'fr-callout--green-emeraude',
     title: { fr : 'En avant !' },
+    bigTitle: false,
     imageLeft: 'images/TEE-onboarding.png',
     description: { fr : 'Nous allons vous poser quelques questions pour pouvoir identifier les accompagnements et les financements dont vous pouvez bénéficier.' },
     hintIcon: 'fr-icon-timer-line'
   },
   interface: {
-    component: 'cards',
+    component: TrackComponents.Cards,
     columnWidth: 6,
   },
   behavior: {
     multipleChoices: false,
   },
   next: {
-    default: 'track_results'
+    default: TrackId.Results
   },
   options: [
     {
@@ -30,7 +34,7 @@ export const help = {
       hintImageIcon: 'fr-icon-timer-line',
       imageTop: 'images/tracks/je-ne-sais-pas-par-ou-commencer.svg',
       next: {
-        default: 'track_siret'
+        default: TrackId.Siret
       }
     },
     {
@@ -42,7 +46,7 @@ export const help = {
       hintImageIcon: 'fr-icon-timer-line',
       imageTop: 'images/tracks/j-ai-un-obectif.svg',
       next: {
-        default: 'track_siret'
+        default: TrackId.Siret
       }
     },
     {
@@ -55,7 +59,7 @@ export const help = {
       hintImageIcon: 'fr-icon-timer-line',
       imageTop: 'images/tracks/j-ai-un-obectif.svg',
       next: {
-        default: 'track_results'
+        default: TrackId.Results
       }
     }
   ]

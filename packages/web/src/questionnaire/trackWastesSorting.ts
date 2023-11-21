@@ -1,16 +1,19 @@
-export const wastesSorting = {
-  id: 'track_wastes_sorting',
+import type { Track } from '@/types'
+import { TrackComponents, TrackId } from '@/types'
+
+export const wastesSorting: Track = {
+  id: TrackId.WastesSorting,
   category: 'myWastes',
   title: { fr: 'Tri des déchets' },
   label: { fr: "Avez-vous mis en place une solution de tri des déchets dans votre entreprise ?" },
   interface: {
-    component: 'buttons',
+    component: TrackComponents.Buttons,
   },
   behavior: {
     multipleChoices: false,
   },
   next: {
-    default: 'track_results'
+    default: TrackId.Results,
   },
   options: [
     {
@@ -18,7 +21,7 @@ export const wastesSorting = {
       title: { fr: 'Oui' },
       label: { fr: "✅ Oui, j’ai déjà mis en place un système de tri" },
       next: {
-        default: 'track_wastes_materials'
+        default: TrackId.WastesMaterials,
       }
     },
     {
@@ -26,7 +29,7 @@ export const wastesSorting = {
       title: { fr: "Je peux faire mieux" },
       label: { fr: "🗑 Je peux faire mieux !" },
       next: {
-        default: 'track_wastes_materials'
+        default: TrackId.WastesMaterials,
       }
     },
     {
@@ -34,7 +37,7 @@ export const wastesSorting = {
       title: { fr: 'Je ne sais pas' },
       label: { fr: "Je ne sais pas" },
       next: {
-        default: 'track_wastes_materials'
+        default: TrackId.WastesMaterials,
       }
     }
   ]

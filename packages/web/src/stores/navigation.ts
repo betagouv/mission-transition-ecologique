@@ -1,5 +1,6 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
+import type { TrackId } from '@/types'
 
 export const navigationStore = defineStore('navigation', () => {
 
@@ -8,7 +9,7 @@ export const navigationStore = defineStore('navigation', () => {
   const routerRef = ref<any>()
   const routeRef = ref<any>()
   const userQueries = ref<any[]>([])
-  const currentTrackId = ref<string>()
+  const currentTrackId = ref<TrackId>()
   const currentStep = ref<number>()
   const currentDetailId = ref<string | number>('')
 
@@ -34,7 +35,7 @@ export const navigationStore = defineStore('navigation', () => {
   function setRoute(routeObj: any) {
     routeRef.value = routeObj
   }
-  function setCurrentTrackId(id: string) {
+  function setCurrentTrackId(id: TrackId) {
     currentTrackId.value = id
   }
   function setCurrentStep(step: number) {

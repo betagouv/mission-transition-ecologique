@@ -4,7 +4,7 @@
     class="fr-container--fluid"
     style="background-color: #E8EDFF;">
     <div
-      class="fr-container fr-py-20v">
+      class="fr-container fr-py-2v">
       <TeeCta/>
     </div>
   </div>
@@ -25,7 +25,6 @@
     </div>
   </div>
 
-  <TeeContact />
 </template>
 
 <script setup lang="ts">
@@ -38,6 +37,4 @@ import TeeCta from '@/components/home/TeeCta.vue'
 import TeeHomeSteps from '@/components/home/TeeHomeSteps.vue'
 // @ts-ignore
 import TeeHomeInfos from '@/components/home/TeeHomeInfos.vue'
-// @ts-ignore
-import TeeContact from '@/components/home/TeeContact.vue'
 </script>
