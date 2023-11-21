@@ -4,16 +4,13 @@
 
 <script setup lang='ts'>
 import type { DsfrButton } from '@gouvminint/vue-dsfr/types'
-import { computed, ref, watch } from 'vue'
+import { computed } from 'vue'
 import type { DsfrButtonProps } from '@gouvminint/vue-dsfr/types/components/DsfrButton/DsfrButton.vue'
 
-interface DsfrButtonPropsWithloading extends DsfrButtonProps {
+interface DsfrButtonPropsWithLoading extends DsfrButtonProps {
   loading?: boolean
 }
-const props = defineProps<DsfrButtonPropsWithloading>()
-
-const icon =ref<string | Record<string, string>>()
-
+const props = defineProps<DsfrButtonPropsWithLoading>()
 
 const iconComputed = computed<string | Record<string, string> | undefined>(() => {
   if (props.loading) {

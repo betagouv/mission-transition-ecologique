@@ -245,6 +245,7 @@ import { remapItem } from '../utils/helpers'
 import { tracksStore } from '../stores/tracks'
 import { choicesStore } from '../stores/choices'
 import { analyticsStore } from '../stores/analytics'
+import DsfrButton from '@/components/button/DsfrButton.vue'
 
 const choices = choicesStore()
 const tracks = tracksStore()
