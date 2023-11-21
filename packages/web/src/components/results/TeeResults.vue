@@ -43,7 +43,7 @@
   <div
     v-if="countFilteredPrograms"
     class="fr-container fr-px-0 fr-mt-6v">
-  
+
     <!-- RESULTS SIZE -->
     <div
       v-if="countFilteredPrograms > 1"
@@ -218,14 +218,14 @@ const reFilteredPrograms = computed(() => {
       let progVal = getFrom(prog, [fieldKey])
       progVal = JSON.parse(JSON.stringify(progVal))
       progVal = progVal[0]
-      
+
       let bool = false
       if (filterVal === '') {
         bool = true
       } else if (trueIf === ConditionOperators.is) {
         // console.log('TeeResults > reFilteredPrograms > progVal :', progVal )
         bool = progVal === filterVal
-      } else if (trueIf === ConditionOperators.exist) {
+      } else if (trueIf === ConditionOperators.exists) {
         progVal = progVal?.filter(i => i !== null)
         // console.log('TeeResults > reFilteredPrograms > progVal :', progVal )
         bool = !progVal ? true : progVal.includes(filterVal)

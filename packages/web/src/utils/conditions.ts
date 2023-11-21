@@ -1,4 +1,5 @@
-import type { NextTrackRule, ConditionTrack } from '@/types'
+import type { ConditionTrack, NextTrackRule } from '@/types'
+import { ConditionOperators } from '@/types'
 
 export const CheckConditions = ( data: any, conditions: ConditionTrack[], strict: boolean = false ) => {
   // console.log()
@@ -18,16 +19,16 @@ export const CheckConditions = ( data: any, conditions: ConditionTrack[], strict
     let condBool = !strict
     if (dataValue) {
       switch (condOperator) {
-        case 'exists':
+        case ConditionOperators.exists:
           condBool = !!dataValue
           break
-        case 'inexists':
+        case ConditionOperators.inexists:
           condBool = !dataValue
           break
-        case '==':
+        case ConditionOperators.is:
           condBool = condition.value === dataValue
           break
-        case 'or':
+        case ConditionOperators.or:
           condBool = dataValue.includes('*') || condVal.includes('*')
           if (!condBool) {
             const intersection = condVal.filter((v: any) => dataValue.includes(v))
