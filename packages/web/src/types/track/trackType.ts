@@ -1,35 +1,26 @@
-import type { Translations } from './translationTypes'
-import type { FormOptions, FormCallbackDataMapping } from './formTypes'
+import type { Translations, FormCallback, FormCallbackDataMapping, FormOptions } from '@tee/web/src/types'
+import { ConditionOperators } from '@tee/web/src/types/conditionOperators'
+import type { TrackId } from '@tee/web/src/types'
 
 // FOR TRACKS
-
-enum ConditionOperators {
-  or = 'or',
-  and = 'and',
-  is = '==',
-  exist = 'exists',
-  inexist = 'inexists',
-  notEqual = '!=',
-  superior = '>',
-  superiorOrEqual = '>=',
-  inferior = '<',
-  inferiorOrEqual = '<=',
-}
 export interface ConditionTrack {
   type?: string,
   operator?: ConditionOperators,
   value?: any | any[],
 }
 
-enum TrackCalloutType {
+export enum TrackCalloutType {
   info = 'info'
 }
+
 export interface TrackCallout {
   header?: Translations,
   headerStyle?: string,
   title: Translations,
+  titleStyle?: string,
   bigTitle: boolean,
-  description: Translations,
+  description?: Translations,
+  descriptionStyle?: string,
   bgColor?: string,
   type?: TrackCalloutType
   imageLeft?: string,
@@ -39,19 +30,19 @@ export interface TrackCallout {
 }
 
 export enum TrackComponents {
-  cards = 'cards',
-  buttons = 'buttons',
-  simpleButtons = 'simpleButtons',
-  form = 'form',
-  input = 'input',
-  results = 'results'
+  Cards = 'cards',
+  Buttons = 'buttons',
+  SimpleButtons = 'simpleButtons',
+  Form = 'Form',
+  Input = 'input',
+  Results = 'results',
 }
 export interface TrackInterface {
   component: TrackComponents,
   columnWidth?: number | string,
 }
-enum TrackBehaviorOperators {
-  or = 'or'
+export enum TrackBehaviorOperators {
+  or = ConditionOperators.or
 }
 export interface TrackBehavior {
   multipleChoices?: boolean,
@@ -63,35 +54,52 @@ export interface TrackOptionsField {
   label: Translations,
   hint?: Translations,
   required?: boolean,
-  type: string
+  type: TrackFieldType,
+}
+
+export enum TrackFieldType {
+  Text = 'text',
+  Number = 'number',
+  Select = 'select',
+  Radio = 'radio',
+  Checkbox = 'checkbox',
+  Textarea = 'textarea',
+  Email = 'email',
+  Tel = 'tel',
+  Date = 'date',
+  Search = 'search',
 }
 
 export interface NextTrackRule extends FormCallbackDataMapping {
   conditions: ConditionTrack[]
 }
-export interface NextTrackRule {
+
+export interface NextTrackRuleSet {
   help?: string,
   rules: NextTrackRule[],
   next: TrackNext
 }
+
 export interface TrackNext {
-  default: string,
-  exceptions? : object[]
+  default: TrackId | false,
+  exceptions? : NextTrackRuleSet[]
   [name: string]: any
 }
 
-enum HasInputOptions {
-  number = 'number',
-  date = 'date',
-  text = 'text'
+export enum HasInputOptions {
+  Number = TrackFieldType.Number,
+  Date = TrackFieldType.Date,
+  Text = TrackFieldType.Text,
+  Search = TrackFieldType.Search,
 }
+
 export interface TrackOptions {
   id?: string,
-  disabled?: Boolean,
+  disabled?: boolean,
   value: string | number | object,
-  required?: Boolean,
-  title: Translations,
-  label: Translations,
+  required?: boolean,
+  title?: Translations,
+  label?: Translations,
   resume?: Translations,
   hint?: Translations,
   hintImageIcon?: string,
@@ -103,8 +111,9 @@ export interface TrackOptions {
   info?: Translations,
   placeholder?: Translations,
   postResponses?: Translations,
+  callbacks?: FormCallback[],
   intro?: Translations,
-  fields?: TrackOptionsField,
+  fields?: TrackOptionsField[],
   next?: TrackNext
 }
 
@@ -114,29 +123,39 @@ export interface InputCleaningRule {
   valueField?: string,
   value?: any | any[],
 }
+
 export interface TrackOptionsInput extends TrackOptions {
-  placeholder: Translations,
+  hasInput: HasInputOptions,
   defaultInput?: string | number,
   inputField?: string,
-  inputMax: number,
-  inputMin: number,
-  inputCleaning: InputCleaningRule[],
-  callbacks? : any,
-  wildcard?: any
+  inputMax?: number,
+  inputMin?: number,
+  inputCleaning?: InputCleaningRule[],
+  wildcard?: TrackOptionWildcard
+}
+
+interface TrackOptionWildcard {
+  label: Translations,
+  next: TrackNext
 }
 
 export interface Track {
-  id: string,
+  id: TrackId,
   help?: string,
   category?: string,
   bgColor?: string,
   imageRight?: string,
   title: Translations,
   label: Translations,
+  info?: Translations,
+  hint?: Translations,
+  resume?: Translations,
+  callout?: TrackCallout,
   interface?: TrackInterface,
   behavior?: TrackBehavior,
+  config?: TrackResultsConfig,
   next?: TrackNext,
-  options?: TrackOptions,
+  options?: (TrackOptions | TrackOptionsInput)[],
   form?: FormOptions,
 }
 
@@ -195,4 +214,9 @@ export interface TrackResultsConfig {
   showProgramInfos: boolean,
   showProgramSubtitles: boolean,
   filters?: TrackFilter[]
+}
+
+
+export const isTrackOptionsInput = (option: TrackOptionsInput | TrackOptions): option is TrackOptionsInput => {
+  return 'hasInput' in option
 }

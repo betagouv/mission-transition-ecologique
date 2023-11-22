@@ -1,5 +1,8 @@
-export const strategyAudits = {
-  id: 'track_strategy_audits',
+import type { Track } from '@/types'
+import { TrackComponents, TrackId } from '@/types'
+
+export const strategyAudits: Track = {
+  id: TrackId.StrategyAudits,
   category: 'myStrategy',
   title: { fr: "Audits" },
   label: { fr: "Pour finir, avez-vous déjà réalisé des audits environnementaux ces 2 dernières années ?" },
@@ -13,13 +16,13 @@ export const strategyAudits = {
     imageLeft: 'images/thema/thema-strategie.svg',
   },
   interface: {
-    component: 'buttons',
+    component: TrackComponents.Buttons,
   },
   behavior: {
     multipleChoices: false,
   },
   next: {
-    default: 'track_results'
+    default: TrackId.Results,
   },
   options: [
     {
@@ -27,7 +30,7 @@ export const strategyAudits = {
       title: { fr: 'Oui' },
       label: { fr: "✅ Oui !" },
       next: {
-        default: 'track_strategy_audits_select'
+        default: TrackId.StrategyAuditsSelect
       }
     },
     {
@@ -35,7 +38,7 @@ export const strategyAudits = {
       title: { fr: "Non" },
       label: { fr: "❌ Non" },
       next: {
-        default: 'track_results'
+        default: TrackId.Results,
       }
     },
     {
@@ -43,7 +46,7 @@ export const strategyAudits = {
       title: { fr: "Je ne sais pas" },
       label: { fr: "Je ne sais pas" },
       next: {
-        default: 'track_results'
+        default: TrackId.Results,
       }
     }
   ]

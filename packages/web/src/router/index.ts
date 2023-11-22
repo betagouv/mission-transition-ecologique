@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 // import type { Router } from 'vue-router'
-
 import { tracksStore } from '../stores/tracks'
 import { programsStore } from '../stores/programs'
 
@@ -16,6 +15,7 @@ import TeeAccessibilityPage from '../pages/TeeAccessibilityPage.vue'
 import TeePersonalDataPage from '../pages/TeePersonalDataPage.vue'
 import { RouteName } from '@/types/routeType'
 import { redirections } from '@/router/redirection'
+import { TrackId } from '@/types'
 
 
 const resetTrackStore = async (to: any, from: any, next: any) => {
@@ -36,7 +36,7 @@ const setHelpAsTrackSeed = async (to: any, from: any, next: any) => {
   // console.log('\nrouter > beforeEnter > setHelpAsTrackSeed > from :', from)
   // console.log('router > beforeEnter > setHelpAsTrackSeed > to :', to)
   const tracks = tracksStore()
-  await tracks.setSeedTrack('track_help')
+  await tracks.setSeedTrack(TrackId.Help)
   // await tracks.addToUsedTracks('track_help', 'track_help')
   // next({ name: 'questionnaire' })
   await next()
@@ -45,7 +45,7 @@ const setResultsAsTrackSeed = async (to: any, from: any, next: any) => {
   // console.log('\nrouter > beforeEnter > setResultsAsTrackSeed > from :', from)
   // console.log('router > beforeEnter > setResultsAsTrackSeed > to :', to)
   const tracks = tracksStore()
-  await tracks.setSeedTrack('track_results')
+  await tracks.setSeedTrack(TrackId.Results)
   // await tracks.addToUsedTracks('track_results', 'track_results')
   // next({ name: 'catalog' })
   await next()

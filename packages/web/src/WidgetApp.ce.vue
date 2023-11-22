@@ -230,6 +230,7 @@ import TeeSidebar from './components/TeeSidebar.vue'
 import TeeProgramDetail from './components/TeeProgramDetail.vue'
 // @ts-ignore
 import TeeCredits from './components/TeeCredits.vue'
+import type { TrackId } from '@/types'
 
 interface Props {
   showHeader?: string,
@@ -238,7 +239,7 @@ interface Props {
   showFooter?: string,
   locale?: string,
   msg?: string,
-  seed: string,
+  seed: TrackId,
   disableWidget?: boolean,
   programId?: string | any,
   datasetUrl?: string,
@@ -304,7 +305,7 @@ const getColumnsWidth = computed(() => {
   else if ((tracks.seedTrack === 'track_results') || tracks.currentStep === 1 && !props.disableWidget) {
     return colsStart
   }
-  else if (currentTrack?.component === TrackComponents.results) {
+  else if (currentTrack?.component === TrackComponents.Results) {
     return colsResults
   }
   else {
@@ -324,11 +325,11 @@ const setupGlobal = () => {
   choices.setLocale(locale)
 }
 
-const setupFromUrl = () => {  
+const setupFromUrl = () => {
   // parse url to get current track and other queries
   const currentTrack = route.query['teeActiveTrack']
   /*
-  GOAL => unfold object such as 
+  GOAL => unfold object such as
   {
     teetrack_track_help: "user_help:precise"
     teetrack_track_needs: "project_needs:*"
@@ -349,9 +350,9 @@ const setupFromUrl = () => {
   // @ts-ignore
   nav.setCurrentDetailId(programId)
   // @ts-ignore
-  programs.setDetailResult(programId, 'track_results')
+  programs.setDetailResult(programId, TrackId.Results)
   /*
-  tested with url such as : 
+  tested with url such as :
   localhost:4242/?teeActiveTrack=track_results&teeDetail=accelerateur-decarbonation
   http://localhost:4242/?teeStep=3&teeActiveTrack=track_results&teetrack_track_needs=project_needs:*&teetrack_track_help=user_help:direct&teetrack_track_results=&teeDetail=accelerateur-decarbonation
   */

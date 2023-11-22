@@ -1,5 +1,8 @@
-export const waterStake = {
-  id: 'track_water_stake',
+import type { Track } from '@/types'
+import { TrackComponents, TrackId } from '@/types'
+
+export const waterStake: Track = {
+  id: TrackId.WaterStake,
   category: 'myWater',
   title: { fr: "Enjeu" },
   label: { fr: "Pensez-vous avoir un enjeu important sur votre consommation d'eau ?" },
@@ -13,13 +16,13 @@ export const waterStake = {
     imageLeft: 'images/thema/thema-eau.svg',
   },
   interface: {
-    component: 'buttons',
+    component: TrackComponents.Buttons,
   },
   behavior: {
     multipleChoices: false,
   },
   next: {
-    default: 'track_results'
+    default: TrackId.Results,
   },
   options: [
     {
@@ -27,7 +30,7 @@ export const waterStake = {
       title: { fr: 'Oui' },
       label: { fr: "👍 Oui, je pense que c'est un enjeu pour mon entreprise" },
       next: {
-        default: 'track_energy_reduction_priority'
+        default: TrackId.EnergyReductionPriority,
       }
     },
     {
@@ -35,7 +38,7 @@ export const waterStake = {
       title: { fr: "Non" },
       label: { fr: "👎 Non, pas vraiment" },
       next: {
-        default: 'track_energy_reduction_priority'
+        default: TrackId.EnergyReductionPriority,
       }
     },
     {
@@ -43,7 +46,7 @@ export const waterStake = {
       title: { fr: 'Je ne sais pas' },
       label: { fr: "Aucune idée !" },
       next: {
-        default: 'track_energy_reduction_priority'
+        default: TrackId.EnergyReductionPriority,
       }
     }
   ]

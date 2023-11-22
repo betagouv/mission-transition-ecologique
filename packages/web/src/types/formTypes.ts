@@ -1,6 +1,6 @@
 import type { Translations } from './translationTypes'
 import type {
-  DataMappingFroms,
+  DataMappingFrom,
   Cleaner,
   CleanerReplaceAll,
   CleanerFromJson,
@@ -8,25 +8,26 @@ import type {
   CleanerDefaultIfNull,
   CallbackActions,
   CallbackMethods,
-  ResultsMapping
+  ResultsMapping,
+  CleanerInjectInObject
 } from './otherTypes'
 
 // FOR FORMS
-
 export interface FormValues {
   [name: string]: any,
 }
 
 export enum FormFieldTypes {
-  text = 'text',
-  email = 'email',
-  textarea = 'textarea',
-  checkbox = 'checkbox',
+  Text = 'text',
+  Email = 'email',
+  Textarea = 'textarea',
+  Checkbox = 'checkbox',
 }
 
 export interface FormCallbackDataMapping {
-  from: DataMappingFroms,
+  from: DataMappingFrom,
   id: string,
+  help?: string,
   dataField: string,
   path?: string,
   asArray?: boolean
@@ -34,24 +35,7 @@ export interface FormCallbackDataMapping {
   type?: string,
   subKey?: string,
   onlyRemap?: boolean,
-  cleaning?:  Cleaner[] | CleanerReplaceAll[] | CleanerFromJson[] | CleanerFromDict[] | CleanerDefaultIfNull[]
-}
-
-export interface FormField {
-  id: string,
-  help?: string,
-  required: boolean,
-  label?: any,
-  hint?: any,
-  cols?: number,
-  type?: FormFieldTypes,
-  rows?: number,
-  defaultValue?: boolean | string | number,
-
-  injectInText?: boolean,
-  dataStructure?: object,
-  dataMapping?: FormCallbackDataMapping[],
-  preFillFrom?: FormCallbackDataMapping,
+  cleaning?:  (Cleaner | CleanerReplaceAll | CleanerFromJson | CleanerFromDict | CleanerDefaultIfNull | CleanerInjectInObject) []
 }
 
 export interface FormCallback {
@@ -60,9 +44,7 @@ export interface FormCallback {
   helpDocumentation?: string,
   action: CallbackActions,
   url: string,
-  headers: object,
-  headerApiKey: string,
-  envApiKey: string,
+  headers: HeadersInit,
   method: CallbackMethods,
   dataBody?: object | object[],
   dataStructure: object | object[],
@@ -79,6 +61,22 @@ export interface FormOptions {
   fields?: FormField[],
   next?: string,
   callbacks: FormCallback[],
+}
+
+export interface FormField {
+  id: string,
+  help?: string,
+  required: boolean,
+  label?: Translations,
+  hint?: Translations,
+  cols?: number,
+  type: FormFieldTypes,
+  rows?: number,
+  defaultValue?: boolean | string | number,
+  injectInText?: boolean,
+  dataStructure?: Record<string, string>,
+  dataMapping?: FormCallbackDataMapping[],
+  preFillFrom?: FormCallbackDataMapping,
 }
 
 export interface FormDataResp {

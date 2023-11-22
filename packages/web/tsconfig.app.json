@@ -9,6 +9,11 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "module": "ESNext"
+    "module": "ESNext",
+    "target": "ESNext",
+    "lib": ["ESNext", "DOM"],
+    "preserveValueImports": false,
+    "importsNotUsedAsValues": "remove",
+    "verbatimModuleSyntax": true
   }
 }
