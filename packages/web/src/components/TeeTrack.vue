@@ -678,7 +678,8 @@ const saveSelection = () => {
     tracks.removeFurtherUsedTracks(props.trackId)
   }
 
-  !props.disableWidget && scrollToTop(props.trackElement, props.trackId)
+  scrollToTop(props.trackElement, props.disableWidget, props.trackId)
+  // !props.disableWidget && scrollToTop(props.trackElement, props.trackId)
 }
 
 const backToPreviousTrack = async () => {

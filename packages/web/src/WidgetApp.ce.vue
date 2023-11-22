@@ -1,6 +1,6 @@
 <template>
   <div
-    :ref="disableWidget ? 'widget' : 'trackElement'"
+    ref="trackElement"
     class="fr-container--fluid">
 
     <!-- HEADER -->
@@ -68,7 +68,7 @@
     <!-- QUESTIONNAIRE -->
     <div
       v-show="!programs.programDetail"
-      id="trackElement"
+      :id="disableWidget ? 'widget' : 'trackElement'"
       :class="`fr-container--fluid ${tracks.currentStep > 1 ? 'fr-pt-10v' : ''}`">
 
       <!-- TRACKS INTERFACES -->
@@ -254,7 +254,9 @@ const choices = choicesStore()
 const programs = programsStore()
 const nav = navigationStore()
 
-let trackElement = ref(null)
+// HTML/Vue3 DOM ref
+const trackElement = ref(null)
+
 // let teeAppTopPosition = ref()
 let showHeaderBool = ref(false)
 let showMessageBool = ref(false)

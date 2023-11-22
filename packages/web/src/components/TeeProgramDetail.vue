@@ -340,7 +340,9 @@ const resetDetailResult = async () => {
   programs.resetDetailResult()
   nav.setCurrentDetailId('', props.disableWidget)
   nav.updateUrl(props.disableWidget)
-  !props.disableWidget && scrollToTop(props.trackElement, props.programId)
+  
+  scrollToTop(props.trackElement, props.disableWidget, props.programId)
+  //!props.disableWidget && scrollToTop(props.trackElement, props.programId)
 }
 const toggleShowForm = () => {
   // console.log('TeeProgramDetail > toggleShowForm > trackConfig : ', props.trackConfig )

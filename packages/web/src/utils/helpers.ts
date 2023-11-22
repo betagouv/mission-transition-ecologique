@@ -313,14 +313,20 @@ export const remapItem = (
 // UX HELPERS
 export const scrollToTop = (
   element: any,
+  disableWidget: boolean,
   from: string | number = ''
   ) => {
   // console.log()
   // console.log('utils > helpers > scrollToTop > from :', from)
+  // console.log('utils > helpers > scrollToTop > disableWidget :', disableWidget)
   // console.log('utils > helpers > scrollToTop > element :', element)
-  setTimeout(()=> {
-    element.scrollIntoView({ behavior: 'smooth' })
-  }, 100)
+  if (disableWidget) {
+    element.scrollIntoView()
+  } else {
+    setTimeout(()=> {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }, 100)
+  }
 }
 
 // TEXT HELPERS
