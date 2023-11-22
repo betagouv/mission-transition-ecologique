@@ -33,24 +33,28 @@ export const filterPrograms = (
   programs: ProgramData[],
   inputData: InputData
 ): Result<ProgramData[], Error> => {
-  const eligibilityResults = programs.map((p) => evaluateRule(p.publicodes, inputData))
+  let filteredPrograms: ProgramData[] = []
 
-  for (const e of eligibilityResults) {
-    if (e.isErr) {
-      return Result.err(e.error)
+  for (const program of programs) {
+    const evaluation = evaluateRule(program.publicodes, inputData)
+
+    if (evaluation.isErr) {
+      return Result.err(evaluation.error)
+    }
+
+    if (shouldKeepProgram(evaluation)) {
+      filteredPrograms.push(program)
     }
   }
 
-  const filteredPrograms = programs.filter((p) => {
-    const e = evaluateRule(p.publicodes, inputData)
-
-    const isPositive = e.isOk && e.value
-    const isUndefined = e.isOk && typeof e.value === 'undefined'
-
-    return isPositive || isUndefined
-  })
-
   return Result.ok(filteredPrograms)
+}
+
+const shouldKeepProgram = (evaluation: Result<boolean | undefined, Error>): boolean => {
+  const isPositive = evaluation.isOk && evaluation.value
+  const isUndefined = evaluation.isOk && typeof evaluation.value === 'undefined'
+
+  return isPositive || isUndefined
 }
 
 /** Evaluates given program specific rules and user specific input data, if

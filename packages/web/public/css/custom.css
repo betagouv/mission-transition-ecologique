@@ -7,6 +7,9 @@ WARNING :
 */
 
 /* CUSTOM STYLES - OVERIDES DSFR */
+.fr-justify-center {
+  justify-content: center;
+}
 .fr-text-center {
   text-align: center;
 }
@@ -73,13 +76,49 @@ WARNING :
 .fr-tee-form {
   max-width: 685px;
 }
+.fr-tee-form-error {
+  text-align: center;
+}
 .fr-form-block .fr-input {
   background-color: white;
+}
+.tee-router-link {
+  background-image: none !important;
+}
+button.fr-link:hover, .tee-router-link:hover {
+  background-color: transparent !important;
 }
 
 /* GLOBAL */
 .tee-no-hover {
   pointer-events: none;
+}
+.tee-footer-bottom {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 10;
+}
+.tee-home-img {
+  width: 100%;
+}
+.tee-home-img .fr-content-media__img {
+  width: 100%;
+}
+.tee-home-img > .fr-content-media__img > .fr-responsive-img {
+  aspect-ratio: 1 !important;
+  /* height: 100% !important; */
+}
+.tee-text-light {
+  color: #929292;
+}
+.tee-text-no-result {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 2.5rem;
+  color: #000091;
 }
 
 /* TRACK CALLOUT */
@@ -93,11 +132,12 @@ WARNING :
 .tee-track-callout-img  > .fr-responsive-img {
   max-height: 150px;
   width: auto;
+  max-width: 100%;
 }
 
 @media (min-width: 48em) {
 .tee-track-callout-texts {
-  max-width: 50%;
+  max-width: 90%;
   }
 }
 
@@ -130,6 +170,9 @@ WARNING :
 }
 
 /* CUSTOM BUTTON INPUT */
+.tee-btn-next {
+  justify-content: end;
+}
 .tee-input-large {
   font-size: 1.1rem; 
   height: 4rem !important; 
@@ -169,8 +212,7 @@ WARNING :
   min-height: 1.8rem;
 }
 .tee-track-choice {
-  padding-top: 5px !important;
-  padding-bottom: 5px !important;
+  padding-top: 10px !important;
 }
 
 /* RESULTS LIST */
@@ -187,6 +229,7 @@ WARNING :
 .tee-program-info {
   color: #000091; 
   font-size: .8rem;
+  line-height: 1.3rem;
 }
 .tee-program-info span::before {
   font-size: .8rem;
@@ -224,6 +267,9 @@ WARNING :
 /* DEBUGGING STYLES */
 code {
   color: red !important;
+}
+.error-code {
+  font-size: 0.75em !important;
 }
 .vue-debug {
   font-size: 0.75em !important;
@@ -497,7 +543,7 @@ code {
 }
 
 /*! media md and smaller only */
-@media (max-width: 48em) {
+@media screen and (max-width: 48em) {
   .tee-track-has-image-right {
     order: 2;
   }
@@ -510,6 +556,7 @@ code {
     width: 100%;
     max-width: 320px;
     height: auto;
+    max-width: 100%;
   }
 }
 
@@ -519,11 +566,15 @@ code {
     max-height: 500px; 
     width: auto; 
     height: auto;
+    max-width: 100%;
   }
 }
 
 /*! media lg */
-@media (min-width: 62em) {
+@media (min-width: 48em) {
+  .fr-md-hide {
+    display: none !important;
+  }
 }
 
 /*! media xl */

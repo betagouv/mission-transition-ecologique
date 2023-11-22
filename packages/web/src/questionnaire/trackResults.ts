@@ -1,5 +1,13 @@
 import type { Track } from '@/types'
-import { CallbackActions, CallbackMethods, DataMappingFrom, FormFieldTypes, TrackComponents, TrackId } from '@/types'
+import {
+  CallbackActions,
+  CallbackMethods,
+  ConditionOperators,
+  DataMappingFrom,
+  FormFieldTypes,
+  TrackComponents,
+  TrackId
+} from '@/types'
 
 const metaEnv = import.meta.env
 // console.log('trackResults >  metaEnv :', metaEnv)
@@ -19,11 +27,84 @@ export const results: Track = {
     component: TrackComponents.Results,
   },
   config: {
-    showAlertResults: false,
-    showAlertNoResults: true,
+    noResultsMessage: {fr: "Aucune aide n'a pu être identifiée avec les critères choisis..."},
+    noResultsImage: 'images/tracks/no-results.svg',
     showResultsTitle: false,
     showProgramInfos: true,
-    showProgramSubtitles: false
+    showProgramSubtitles: false,
+    filters: [
+      {
+        field: "nature de l'aide",
+        label: "nature de l'aide",
+        trueIf: ConditionOperators.is,
+        values: [
+          {
+            label: 'Accompagnement',
+            value: 'accompagnement'
+          },
+          {
+            label: 'Financement',
+            value: 'financement'
+          },
+          {
+            label: 'Prêt',
+            value: 'prêt'
+          },
+          {
+            label: 'Avantage fiscal',
+            value: 'avantage fiscal'
+          },
+          {
+            label: 'Formation',
+            value: 'formation'
+          },
+          // for debugging purposes
+          // {
+          //   label: 'FAIL',
+          //   value: 'xxx'
+          // }
+        ]
+      },
+      {
+        field: "publicodes.est dans les objectifs de l'entreprise.une de ces conditions",
+        label: "objectif",
+        trueIf: ConditionOperators.exists,
+        values: [
+          {
+            label: '🌱 Stratégie environnementale',
+            value: 'questionnaire . objectif prioritaire . est mon impact environnemental'
+          },
+          {
+            label: '⚡️ Energie',
+            value: 'questionnaire . objectif prioritaire . est ma performance énergétique'
+          },
+          {
+            label: '💧 Eau',
+            value: "questionnaire . objectif prioritaire . est diminuer ma consommation d'eau"
+          },
+          {
+            label: '🏢 Bâtiment',
+            value: 'questionnaire . objectif prioritaire . est rénover mon bâtiment'
+          },
+          {
+            label:  '🚲 Mobilité',
+            value: 'questionnaire . objectif prioritaire . est la mobilité durable'
+          },
+          {
+            label: '🗑 Déchets',
+            value: 'questionnaire . objectif prioritaire . est la gestion des déchets'
+          },
+          {
+            label: '🏭 Production',
+            value: "questionnaire . objectif prioritaire . est l'écoconception"
+          },
+          {
+            label: '🧑‍🎓 RH',
+            value: 'questionnaire . objectif prioritaire . est former ou recruter'
+          }
+        ]
+      }
+    ],
   },
   options: [
     {
@@ -39,7 +120,7 @@ export const results: Track = {
     value: 'contact_form.email',
     // label: { fr: 'Vous êtes intéressé.e par le dispositif {title} ?' },
     label: { fr: '{prefixAide} {natureAide} vous intéresse ?' },
-    hint: { fr: '👋 Envoyez votre demande, un conseiller {operator} vous contactera dans les 5 jours' },
+    hint: { fr: '👋 Envoyez votre demande, un conseiller {operator} vous contactera prochainement' },
     // intro: { fr: `
     //   <h2>
     //     <span
@@ -158,7 +239,7 @@ Merci d'avance pour votre appel`,
       },
       {
         id: 'cgu',
-        help: 'http://mission-transition.beta.gouv.fr/donnee-personnelles-et-cookies',
+        help: 'https://mission-transition.beta.gouv.fr/donnee-personnelles-et-cookies',
         label: {
           fr: "J'accepte d'être recontacté par l'équipe de Transition Ecologique des Entreprises *"
         },
@@ -171,12 +252,12 @@ Merci d'avance pour votre appel`,
           dans votre recherche d'aides
           à la transition écologique de votre entreprise.
           Voir également nos
-          <a href="http://mission-transition.beta.gouv.fr/donnee-personnelles-et-cookies" target="_blank">
+          <a href="https://mission-transition.beta.gouv.fr/donnee-personnelles-et-cookies" target="_blank">
             Conditions Générales d'Utilisation
           </a>.
           <br>
           <br>
-          Pour toute question vous pouvez nous contacter à "france-transition(at)beta.gouv.fr"
+          Pour toute question, vous pouvez nous contacter à "france-transition(at)beta.gouv.fr"
         `
         },
         required: true,
@@ -201,7 +282,6 @@ Merci d'avance pour votre appel`,
           // 'api-key': ''
         },
         // headerApiKey: 'api-key',
-        // envApiKey: 'VITE_BREVO_TOKEN',
         dataStructure: {
           email: '',
           // listIds: [],
@@ -216,15 +296,6 @@ Merci d'avance pour votre appel`,
             id: 'email',
             dataField: 'email'
           },
-          // {
-          //   from: 'env',
-          //   id: 'VITE_BREVO_LIST_IDS',
-          //   dataField: 'listIds',
-          //   // dataField: 'includeListIds',
-          //   asArray: true,
-          //   sep: ',',
-          //   type: 'integer'
-          // },
           {
             from: DataMappingFrom.FormData,
             id: 'surname',
@@ -256,7 +327,7 @@ Merci d'avance pour votre appel`,
             dataField: 'attributes.OPT_IN'
           },
           // {
-          //   from: DataMappingFrom.usedTracks,
+          //   from: DataMappingFrom.UsedTracks,
           //   id: 'project_needs',
           //   dataField: 'attributes.PROJECT_NEEDS',
           // },
@@ -276,12 +347,12 @@ Merci d'avance pour votre appel`,
             dataField: 'attributes.USER_GOALS'
           },
           // {
-          //   from: DataMappingFrom.usedTracks,
+          //   from: DataMappingFrom.UsedTracks,
           //   id: 'project_status',
           //   dataField: 'attributes.PROJECT_STATUS',
           // },
           // {
-          //   from: DataMappingFrom.usedTracks,
+          //   from: DataMappingFrom.UsedTracks,
           //   id: 'structure_sizes',
           //   dataField: 'attributes.STRUCTURE_SIZE',
           // },
@@ -302,73 +373,6 @@ Merci d'avance pour votre appel`,
           }
         ]
       }
-      // {
-      //   disabled: true,
-      //   help: 'Second action send a transactional email',
-      //   helpDocumentation: [
-      //     'https://developers.brevo.com/docs/send-a-transactional-email',
-      //     'https://developers.brevo.com/reference/sendtransacemail'
-      //   ],
-      //   action: 'sendTransactionalEmail',
-      //   url: 'https://api.brevo.com/v3/smtp/email',
-      //   method: 'POST',
-      //   headers: {
-      //     accept: 'application/json',
-      //     'content-type': 'application/json',
-      //     'api-key': ''
-      //   },
-      //   headerApiKey: 'api-key',
-      //   envApiKey: 'VITE_BREVO_TOKEN',
-      //   dataStructure: {
-      //     sender: {
-      //       name: 'Transition Ecologique des Entreprises',
-      //       email: ''
-      //     },
-      //     to: [
-      //       {
-      //         name: '',
-      //         email: ''
-      //       }
-      //     ],
-      //     replyTo: {
-      //       name: 'Mission Transition Ecologique des Entreprises',
-      //       email: 'france-transition@beta.gouv.fr'
-      //     },
-      //     subject: 'Test transactional email',
-      //     htmlContent: `
-      //       <html>
-      //         <head></head>
-      //         <body>
-      //           <p>
-      //             Bonjour,
-      //           </p>
-      //           <p>
-      //             Merci d'avoir contacté l'équipe de Transition Ecologique des Entreprises.
-      //           </p>
-      //           <p>
-      //             Nous revenons vers vous au plus vite
-      //           </p>
-      //         </body>
-      //       </html>`
-      //   },
-      //   dataMapping: [
-      //     {
-      //       from: 'env',
-      //       id: 'VITE_BREVO_SENDER_EMAIL',
-      //       dataField: 'sender.email',
-      //     },
-      //     {
-      //       from: DataMappingFrom.formData,
-      //       id: 'email',
-      //       dataField: 'to.0.email',
-      //     },
-      //     {
-      //       from: DataMappingFrom.formData,
-      //       id: 'name',
-      //       dataField: 'to.0.name',
-      //     },
-      //   ]
-      // }
     ]
     // next: {
     //   default: 'track_results'

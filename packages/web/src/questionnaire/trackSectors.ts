@@ -11,9 +11,9 @@ import {
   TrackComponents,
   TrackId
 } from '@/types'
-import type { Track, NextTrackRules } from '@/types'
+import type { Track, NextTrackRuleSet } from '@/types'
 
-const nextExceptions: NextTrackRules[] = [
+const nextExceptions: NextTrackRuleSet[] = [
   {
     help: "Goes to track_structure_building_property if : user_help == 'unknown' (newbie)",
     rules: [

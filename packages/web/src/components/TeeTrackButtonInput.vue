@@ -23,7 +23,7 @@
         v-if="isTextInput"
         class="fr-pr-3v"
         style="width: auto; white-space: nowrap">
-        {{ option.label[choices.lang] }}
+        {{ option.label?.[choices.lang] }}
       </span>
       <input
         class="fr-input"
@@ -38,7 +38,7 @@
       <span
         v-if="isNumberInput"
         class="fr-ml-3v">
-        {{ option.label[choices.lang] }}
+        {{ option.label?.[choices.lang] }}
       </span>
     </div>
   </div>

@@ -1,6 +1,6 @@
-import type { Translations } from './translationTypes'
-import type { FormOptions, FormCallbackDataMapping, FormCallback } from './formTypes'
-import { ConditionOperators } from '@/types/conditionOperators'
+import type { Translations, FormCallback, FormCallbackDataMapping, FormOptions } from '@tee/web/src/types'
+import { ConditionOperators } from '@tee/web/src/types/conditionOperators'
+import type { TrackId } from '@tee/web/src/types'
 
 // FOR TRACKS
 export interface ConditionTrack {
@@ -74,7 +74,7 @@ export interface NextTrackRule extends FormCallbackDataMapping {
   conditions: ConditionTrack[]
 }
 
-export interface NextTrackRules {
+export interface NextTrackRuleSet {
   help?: string,
   rules: NextTrackRule[],
   next: TrackNext
@@ -82,7 +82,7 @@ export interface NextTrackRules {
 
 export interface TrackNext {
   default: TrackId | false,
-  exceptions? : NextTrackRules[]
+  exceptions? : NextTrackRuleSet[]
   [name: string]: any
 }
 
@@ -196,41 +196,26 @@ export interface TrackChoice {
 
 // FOR TRACK RESULTS
 
+export interface TrackFilterValue {
+  label: string,
+  value: string
+}
+
+export interface TrackFilter {
+  field: string,
+  label: string,
+  trueIf: ConditionOperators,
+  values: TrackFilterValue[]
+}
 export interface TrackResultsConfig {
-  showAlertNoResults: boolean,
-  showAlertResults: boolean,
+  noResultsMessage: Translations,
+  noResultsImage: string,
   showResultsTitle: boolean,
   showProgramInfos: boolean,
-  showProgramSubtitles: boolean
+  showProgramSubtitles: boolean,
+  filters?: TrackFilter[]
 }
 
-
-export enum TrackId {
-  BuildingProperty = 'track_structure_building_property',
-  BuildingSurface = 'track_structure_building_surface',
-  ContactForm = 'track_form',
-  EnergyReductionPriority = 'track_energy_reduction_priority',
-  EnergyTypes = 'track_energy_types',
-  Goals = 'track_goals',
-  Help = 'track_help',
-  Mobility = 'track_mobility',
-  MobilityEnergy = 'track_mobility_energy',
-  MobilityNumberVehicles = 'track_mobility_number_vehicles',
-  Needs = 'track_needs',
-  Results = 'track_results',
-  Roles = 'track_roles',
-  Sectors = 'track_sectors',
-  Siret = 'track_siret',
-  Status = 'track_status',
-  StrategyAudits = 'track_strategy_audits',
-  StrategyAuditsSelect = 'track_strategy_audits_select',
-  StructureSizes = 'track_structure_sizes',
-  StructureWorkforce = 'track_structure_workforce',
-  WastesMaterials = 'track_wastes_materials',
-  WastesSorting = 'track_wastes_sorting',
-  WastesStake = 'track_wastes_stake',
-  WaterStake = 'track_water_stake',
-}
 
 export const isTrackOptionsInput = (option: TrackOptionsInput | TrackOptions): option is TrackOptionsInput => {
   return 'hasInput' in option

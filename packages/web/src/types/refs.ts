@@ -12,7 +12,7 @@ export interface ComCode {
   // Code commune
   COM: string
   // Libelle région
-  REGION: string
+  REGION: string | null
 }
 
 export interface Refs {

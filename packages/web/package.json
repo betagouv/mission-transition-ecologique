@@ -23,7 +23,8 @@
     "update-styles": "npm run copy-dsfr-core-css && npm run copy-dsfr-fonts && npm run copy-custom-css",
     "dev": "npm run copy-custom-css && vite --port 4242",
     "build": "npm run update-styles && run-p type-check build-only",
-    "start": "vite preview --port $PORT",
+    "start": "echo 'STARTING FRONT WITH VITE' && vite preview --port $PORT",
+    "start-preview": "vite preview --port $PORT",
     "preview": "vite preview",
     "test:unit": "vitest",
     "test:e2e": "start-server-and-test preview http://localhost:4173 'cypress run --e2e'",
@@ -44,7 +45,7 @@
     "vite": "^4.3.9",
     "vitest": "^0.29.1",
     "vue": "^3.2.47",
-    "vuex": "^4.1.0"
+    "vue-router": "^4.2.5"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.2.0",

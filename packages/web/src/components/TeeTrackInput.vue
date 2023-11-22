@@ -46,7 +46,7 @@
   </div>
   <!-- hint -->
   <div
-    v-if="option.hint"
+    v-if="option.hint && !requestResponses.length"
     class="tee-input-hint fr-mt-4v"
     :for="`input-${option.id}`">
     <span

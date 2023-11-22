@@ -1,6 +1,6 @@
 // @ts-ignore
-import nafCodesJson from '@public/data/references/naf_codes_flat.json'
-import comCodesJson from '@public/data/references/com_codes.json'
+import nafCodesJson from '@tee/web/public/data/references/naf_codes_flat.json'
+import comCodesJson from '@tee/web/public/data/references/com_codes.json'
 
 import type {
   Cleaner,
