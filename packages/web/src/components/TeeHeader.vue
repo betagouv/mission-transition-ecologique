@@ -91,14 +91,15 @@
             <li>
               <router-link 
                 class="fr-btn"
-                to="/">
+                to="/"
+                @click="showModal = false">
                 Accueil
               </router-link>
             </li>
             <li>
               <button 
                 class="fr-btn"
-                @click="pushTo('catalogue')">
+                @click="pushTo('catalog')">
                 Catalogue des aides
               </button>
             </li>
@@ -128,6 +129,8 @@ const pushTo = async (ref: string) => {
   // await nav.routerRef.push(ref)
   nav.setRouterReady(false)
   
+  showModal.value = false
+
   tracks.resetUsedTracks()
   tracks.addToUsedTracks(TrackId.Results, TrackId.Results)
   programs.resetDetailResult()
