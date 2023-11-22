@@ -13,7 +13,7 @@
     "start": "bash start.sh",
     "start-back": "npm run start -w packages/backend",
     "start-front": "PORT=4242 npm run start -w packages/web",
-    "start-all": "npm run build && npx concurrently \"PORT=4242 npm run start -w packages/web\" \"npm run start -w packages/backend\"",
+    "start-all": "npm run build && npx concurrently \"npm run start-front\" \"npm run start-back\"",
     "build": "npm run build-json-output && npm run build-back && npm run build-front",
     "build-back": "npm run build-json-output && npm run build -w packages/backend",
     "build-front": "npm run build-json-output && npm run build -w packages/web",

@@ -1,9 +1,32 @@
 import { fileURLToPath, URL } from 'node:url'
+import { resolve } from 'path'
 
-import { defineConfig } from 'vite'
+import { type BuildOptions, defineConfig } from 'vite'
 import type { ServerOptions } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import { resolve } from 'path'
+
+type LibType = 'main' | 'widget';
+
+const LIB: LibType = (process.env.LIB as LibType) ?? 'main';
+
+const libConfig: Record<LibType, BuildOptions> = {
+  main: {
+    emptyOutDir: false,
+  },
+  widget: {
+    emptyOutDir: false,
+    rollupOptions: {
+      input: resolve(__dirname, 'widget.html'),
+    },
+    lib: {
+      name: 'gov-aid-tree-app',
+      entry: "widget/widget.ce.ts",
+      fileName: 'widget',
+    }
+  },
+};
+
+const currentConfig = libConfig[LIB];
 
 const viteServer: ServerOptions = {
   host: '0.0.0.0',
@@ -15,26 +38,7 @@ export default defineConfig({
   plugins: [
     vue()
   ],
-  build: {
-    assetsDir: 'assets',
-    copyPublicDir: true,
-    rollupOptions: {
-      input: {
-        main: resolve(__dirname, 'index.html'),
-        widget: resolve(__dirname, 'widget/index.html'),
-      },
-      output: {
-        inlineDynamicImports: false,
-      }
-    },
-    lib: {
-      entry: 'widget/widget.ce.ts',
-      name: 'gov-aid-tree-app',
-      // the proper extensions will be added
-      fileName: 'gov-aid-tree-app',
-      formats: ['es']
-    }
-  },
+  build: currentConfig,
   define: {
     'process.env': process.env
   },
