@@ -35,6 +35,8 @@ entreprise . code NAF niveau 1:
     est T:
     est U:
 
+entreprise . est propriétaire de ses locaux:
+
 entreprise . mode de transport domicile-travail:
   avec:
     est vélo:
@@ -47,8 +49,10 @@ entreprise . mode de transport domicile-travail:
 
 entreprise . possède des véhicules motorisés:
 
+
 région:
 
+# Enum des valeurs possibles pour région
 # France métropolitaine
 Auvergne-Rhône-Alpes: '"Auvergne-Rhône-Alpes"'
 Bourgogne-Franche-Comté: '"Bourgogne-Franche-Comté"'
@@ -98,7 +102,7 @@ questionnaire . objectif prioritaire:
 
 questionnaire . parcours:
 
+# Enum des valeurs possibles pour questionnaire . parcours
 objectif précis: '"objectif précis"'
 je ne sais pas par où commencer: '"je ne sais pas par où commencer"'
 
-entreprise . est propriétaire de ses locaux:
