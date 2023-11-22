@@ -3,9 +3,10 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import type { ServerOptions } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import { resolve } from 'path'
 
 const viteServer: ServerOptions = {
-  host: 'localhost',
+  host: '0.0.0.0',
   port: 4242,
 }
 
@@ -17,6 +18,22 @@ export default defineConfig({
   build: {
     assetsDir: 'assets',
     copyPublicDir: true,
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        widget: resolve(__dirname, 'widget/index.html'),
+      },
+      output: {
+        inlineDynamicImports: false,
+      }
+    },
+    lib: {
+      entry: 'widget/widget.ce.ts',
+      name: 'gov-aid-tree-app',
+      // the proper extensions will be added
+      fileName: 'gov-aid-tree-app',
+      formats: ['es']
+    }
   },
   define: {
     'process.env': process.env
