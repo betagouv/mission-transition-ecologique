@@ -267,7 +267,6 @@ const updateDetailResult = (id: string | number) => {
   programs.setDetailResult(id, props.trackId)
   nav.setCurrentDetailId(id, props.disableWidget)
   nav.updateUrl(props.disableWidget)
-  // !props.disableWidget && scrollToTop(props.trackElement, props.trackId)
   scrollToTop(props.trackElement, props.disableWidget, props.trackId)
 }
 
