@@ -29,7 +29,8 @@
                   aria-controls="modal-tee-header"
                   aria-haspopup="menu"
                   id="button-tee-header-burger"
-                  title="Menu">
+                  title="Menu"
+                  @click="showModal = !showModal">
                   Menu
                 </button>
               </div>
@@ -71,14 +72,18 @@
       </div>
     </div>
     <div 
-      class="fr-header__menu fr-modal"
+      :class="`fr-header__menu fr-modal ${showModal ? 'fr-modal--opened' : ''}`"
       id="modal-tee-header" 
-      aria-labelledby="button-tee-header-burger">
+      aria-labelledby="button-tee-header-burger"
+      :modal="showModal"
+      :open="showModal"
+      :role="showModal ? 'dialog' : ''">
       <div class="fr-container">
         <button 
           class="fr-btn--close fr-btn"
           aria-controls="modal-tee-header"
-          title="Fermer">
+          title="Fermer"
+          @click="showModal = false">
           Fermer
         </button>
         <div class="fr-header__menu-links">
@@ -106,6 +111,8 @@
 
 <script setup lang="ts">
 
+import { ref } from 'vue'
+
 import { tracksStore } from '../stores/tracks'
 import { programsStore } from '../stores/programs'
 import { navigationStore } from '../stores/navigation'
@@ -114,6 +121,8 @@ import { TrackId } from '@/types'
 const nav = navigationStore()
 const tracks = tracksStore()
 const programs = programsStore()
+
+const showModal = ref<boolean>(false)
 
 const pushTo = async (ref: string) => {
   // await nav.routerRef.push(ref)
