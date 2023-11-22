@@ -5,7 +5,6 @@ import { frDict } from '@/translations/fr'
 import { frOperatorsDict } from '@/translations/fr-operators'
 
 export const choicesStore = defineStore('choices', () => {
-
   const publicPath = ref<string>()
 
   // internationalization
@@ -27,8 +26,13 @@ export const choicesStore = defineStore('choices', () => {
     lang.value = loc
   }
 
-  function resolve(path: string, obj=self, separator='.') {
-    const props = Array.isArray(path) ? path : path.split(separator)
+  // resolve takes an object `obj` and a hierarchical `path`, where successive keys are separated by
+  // dots. If a key contains itself a dot, it must be preceded by a backslash.
+  function resolve(path: string | string[], obj = self, separator = /(?<!\\)\./g) {
+    let props: string[] = Array.isArray(path) ? path : path.split(separator)
+
+    props = props.map((p) => p.replace('\\.', '.'))
+
     // @ts-ignore
     return props.reduce((prev, curr) => prev?.[curr], obj)
   }
@@ -46,7 +50,7 @@ export const choicesStore = defineStore('choices', () => {
 
   function t(path: string, params: any = undefined) {
     const locDict = dict[lang.value]
-    let translated = resolve(path, locDict) || path
+    let translated = (resolve(path, locDict) || path) as unknown as string
     if (params) {
       translated = ti(translated, params)
     }
@@ -54,7 +58,7 @@ export const choicesStore = defineStore('choices', () => {
   }
   function to(path: string, params: any = undefined) {
     const locDict = dictOperators[lang.value]
-    let translated = resolve(path, locDict) || path
+    let translated = (resolve(path, locDict) || path) as unknown as string
     if (params) {
       translated = ti(translated, params)
     }
