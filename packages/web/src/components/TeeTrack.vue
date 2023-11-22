@@ -42,8 +42,6 @@
     </div>
   </div>
 
-  <!-- selectedOptions.map (values) : <code>{{ selectedOptions.map(i => i.value) }}</code> -->
-
   <div
     v-show="!isCompleted && track !== undefined"
     :key="`track-${step}-${trackId}`"
