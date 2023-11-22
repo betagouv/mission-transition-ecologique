@@ -8,7 +8,7 @@ export enum Entreprise {
   SectorActivity = "entreprise . secteur d'activité . est ",
   CodeNAF = 'entreprise . code NAF niveau 1 . est ',
   Workforce = 'entreprise . effectif',
-  TransportMode = 'entreprise . mode de transport domicile-travail . est',
+  TransportMode = 'entreprise . mode de transport domicile-travail . est ',
   BuildingOwner = 'entreprise . est propriétaire de ses locaux',
   VehicleOwner = 'entreprise . possède des véhicules motorisés'
 }
@@ -141,21 +141,19 @@ export const priorityObjectives = {
 }
 
 enum TransportMode {
-  Bike = 'bike',
+  Bike = 'vélo',
   Bus = 'bus',
-  Car = 'car',
-  Cycle = 'cycle',
-  Motorcycle = 'motorcycle',
-  Other = 'other',
-  Train = 'train',
-  Truck = 'truck'
+  Car = 'voiture',
+  Motorcycle = 'moto',
+  Other = 'autre',
+  Train = 'train ou métro',
+  Truck = 'camion'
 }
 
 export enum TransportModes {
   Bike = Entreprise.TransportMode + TransportMode.Bike,
   Bus = Entreprise.TransportMode + TransportMode.Bus,
   Car = Entreprise.TransportMode + TransportMode.Car,
-  Cycle = Entreprise.TransportMode + TransportMode.Cycle,
   Motorcycle = Entreprise.TransportMode + TransportMode.Motorcycle,
   Other = Entreprise.TransportMode + TransportMode.Other,
   Train = Entreprise.TransportMode + TransportMode.Train,
@@ -166,7 +164,6 @@ export const allTransportModes = {
   [TransportModes.Bike]: YesNo.No,
   [TransportModes.Bus]: YesNo.No,
   [TransportModes.Car]: YesNo.No,
-  [TransportModes.Cycle]: YesNo.No,
   [TransportModes.Motorcycle]: YesNo.No,
   [TransportModes.Other]: YesNo.No,
   [TransportModes.Train]: YesNo.No,

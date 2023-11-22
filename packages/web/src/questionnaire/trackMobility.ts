@@ -118,7 +118,6 @@ export const mobility: Track = {
         [TransportModes.Bike]: YesNo.Yes,
         [TransportModes.Bus]: YesNo.Yes,
         [TransportModes.Car]: YesNo.Yes,
-        [TransportModes.Cycle]: YesNo.Yes,
         [TransportModes.Motorcycle]: YesNo.Yes,
         [TransportModes.Other]: YesNo.Yes,
         [TransportModes.Train]: YesNo.Yes,
