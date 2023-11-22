@@ -287,10 +287,6 @@
 <script setup lang="ts">
 
 import { ref, onBeforeMount } from 'vue'
-// import { useRouter } from 'vue-router'
-
-// @ts-ignore
-// import type { ProgramData, Track } from '@/types/index'
 
 // @ts-ignore
 import TeeTile from './TeeTile.vue'
@@ -306,8 +302,6 @@ import { analyticsStore } from '../stores/analytics'
 import { scrollToId } from '../utils/helpers'
 import type { TrackId } from '@/types'
 
-// const router = useRouter()
-
 const choices = choicesStore()
 const tracks = tracksStore()
 const programs = programsStore()
@@ -319,7 +313,6 @@ const trackConfig = ref<any>()
 
 const blockColor = '#000091'
 const showForm = ref<boolean>(false)
-// const columnTiles = ref<string>('fr-col-4 fr-sm-3 fr-col-md-4 fr-col-lg-2')
 const columnTiles = ref<string>('fr-col')
 
 interface Props {
@@ -337,7 +330,6 @@ const resetDetailResult = async () => {
   nav.setCurrentDetailId('', props.disableWidget)
   nav.updateUrl(props.disableWidget)
   
-  // scrollToTop(props.trackElement, props.disableWidget, props.programId)
   scrollToId(`${props.programId}`)
 }
 const toggleShowForm = () => {
