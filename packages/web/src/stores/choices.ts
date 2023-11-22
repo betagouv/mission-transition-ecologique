@@ -48,21 +48,19 @@ export const choicesStore = defineStore('choices', () => {
     return translated
   }
 
-  function t(path: string, params: any = undefined) {
-    const locDict = dict[lang.value]
+  function translateWithDict(path: string, params: any = undefined, dictionnary: any) {
+    const locDict = dictionnary[lang.value]
     let translated = (resolve(path, locDict) || path) as unknown as string
     if (params) {
       translated = ti(translated, params)
     }
     return translated
   }
+  function t(path: string, params: any = undefined) {
+    return translateWithDict(path, params, dict)
+  }
   function to(path: string, params: any = undefined) {
-    const locDict = dictOperators[lang.value]
-    let translated = (resolve(path, locDict) || path) as unknown as string
-    if (params) {
-      translated = ti(translated, params)
-    }
-    return translated
+    return translateWithDict(path, params, dictOperators)
   }
 
   return {
