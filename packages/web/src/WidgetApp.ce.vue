@@ -230,7 +230,7 @@ import TeeSidebar from './components/TeeSidebar.vue'
 import TeeProgramDetail from './components/TeeProgramDetail.vue'
 // @ts-ignore
 import TeeCredits from './components/TeeCredits.vue'
-import type { TrackId } from '@/types'
+import { TrackId } from '@/types'
 
 interface Props {
   showHeader?: string,
