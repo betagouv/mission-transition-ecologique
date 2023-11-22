@@ -330,10 +330,16 @@ export const scrollToTop = (
 }
 
 export const scrollToId = (
-  elementId: string
+  elementId: string,
+  // targetYPosition?: number
 ) => {
-  console.log('utils > helpers > scrollToId > elementId :', elementId)
-
+  // console.log('\nutils > helpers > scrollToId > elementId :', elementId)
+  // console.log('utils > helpers > scrollToId > targetYPosition :', targetYPosition)
+  // console.log('utils > helpers > scrollToId > element :', element)
+  setTimeout(()=> {
+    const element = document.getElementById(elementId)
+    element?.scrollIntoView()
+  }, 100)
 }
 
 // TEXT HELPERS

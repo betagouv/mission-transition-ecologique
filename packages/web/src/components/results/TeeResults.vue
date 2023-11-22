@@ -262,10 +262,13 @@ const updateFilters = (event: FilterSignal) => {
 
 const updateDetailResult = (id: string | number) => {
   // console.log(`TeeResults > updateDetailResult >  id : ${id}`)
+
+  // Set detail infos
   programs.setDetailResult(id, props.trackId)
   nav.setCurrentDetailId(id, props.disableWidget)
   nav.updateUrl(props.disableWidget)
-  !props.disableWidget && scrollToTop(props.trackElement, props.trackId)
+  // !props.disableWidget && scrollToTop(props.trackElement, props.trackId)
+  scrollToTop(props.trackElement, props.disableWidget, props.trackId)
 }
 
 const getCostInfos = (program: ProgramData) => {

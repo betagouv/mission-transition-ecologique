@@ -85,11 +85,11 @@ export const navigationStore = defineStore('navigation', () => {
 
     // adapt path
     let routePath = routeRef.value.path
-    let routeName = forcePath || routeRef.value.name
+    const routeName = forcePath || routeRef.value.name
     if (noWidget) {
-      console.log('\nstore.navigation > updateUrl > currentDetailId.value : ', currentDetailId.value)
-      console.log('store.navigation > updateUrl > routeName : ', routeName)
-      console.log('store.navigation > updateUrl > routeRef.value.params : ', routeRef.value.params)
+      // console.log('\nstore.navigation > updateUrl > currentDetailId.value : ', currentDetailId.value)
+      // console.log('store.navigation > updateUrl > routeName : ', routeName)
+      // console.log('store.navigation > updateUrl > routeRef.value.params : ', routeRef.value.params)
       routePath = `/${routeName}`
       // if (!!currentDetailId.value) {
       //   routeName = `${routeName}-detail`

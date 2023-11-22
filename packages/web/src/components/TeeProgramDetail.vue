@@ -339,7 +339,7 @@ const resetDetailResult = async () => {
   
   // scrollToTop(props.trackElement, props.disableWidget, props.programId)
   //!props.disableWidget && scrollToTop(props.trackElement, props.programId)
-  scrollToId(props.programId)
+  scrollToId(`${props.programId}`)
 }
 const toggleShowForm = () => {
   // console.log('TeeProgramDetail > toggleShowForm > trackConfig : ', props.trackConfig )
@@ -351,7 +351,7 @@ const toggleShowForm = () => {
 
 onBeforeMount(async() => {
   // await router.isReady()
-  console.log('TeeProgramDetail > onBeforeMount > props.programId :', props.programId )
+  // console.log('TeeProgramDetail > onBeforeMount > props.programId :', props.programId )
   program.value = programs.getProgramById(props.programId)
   if (props.trackId) {
     trackConfig.value = tracks.getTrack(props.trackId)

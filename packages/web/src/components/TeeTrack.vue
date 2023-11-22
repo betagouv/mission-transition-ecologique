@@ -577,8 +577,7 @@ const updateSelectionValueFromSignal = (ev: any) => {
 }
 
 const saveSelectionFromSignal = (ev: any, index: number) => {
-  console.log()
-  // scrollToTop(props.trackElement, props.trackId)
+  // console.log()
   // console.log('TeeTrack > saveSelectionFromSignal > ev :', ev)
   updateSelection(ev.option, index)
   saveSelection()
@@ -672,7 +671,6 @@ const saveSelection = () => {
   }
 
   scrollToTop(props.trackElement, props.disableWidget, props.trackId)
-  // !props.disableWidget && scrollToTop(props.trackElement, props.trackId)
 }
 
 const backToPreviousTrack = async () => {
@@ -685,6 +683,6 @@ const backToPreviousTrack = async () => {
   await tracks.setUsedTracksAsNotCompleted(TrackToGoBackTo)
   await tracks.removeFurtherUsedTracks(TrackToGoBackTo)
 
-  !props.disableWidget && scrollToTop(props.trackElement, props.trackId)
+  scrollToTop(props.trackElement, props.disableWidget, props.trackId)
 }
 </script>
