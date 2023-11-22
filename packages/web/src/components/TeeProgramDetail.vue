@@ -338,7 +338,6 @@ const resetDetailResult = async () => {
   nav.updateUrl(props.disableWidget)
   
   // scrollToTop(props.trackElement, props.disableWidget, props.programId)
-  //!props.disableWidget && scrollToTop(props.trackElement, props.programId)
   scrollToId(`${props.programId}`)
 }
 const toggleShowForm = () => {
