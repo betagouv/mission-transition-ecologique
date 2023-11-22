@@ -27,9 +27,6 @@
       <!-- TITLE & RESUME -->
       <div class="fr-col fr-pl-10v">
         <!-- PROGRAM TITLE -->
-        <!-- <h1>
-          {{ program.title }}
-        </h1> -->
         <p class="tee-program-title fr-mb-5v">
           {{ program.titre }}
         </p>
@@ -306,7 +303,7 @@ import { programsStore } from '../stores/programs'
 import { navigationStore } from '../stores/navigation'
 import { analyticsStore } from '../stores/analytics'
 
-import { scrollToTop } from '../utils/helpers'
+import { scrollToId } from '../utils/helpers'
 import type { TrackId } from '@/types'
 
 // const router = useRouter()
@@ -328,7 +325,6 @@ const columnTiles = ref<string>('fr-col')
 interface Props {
   programId: string | number,
   trackId: TrackId | undefined,
-  trackElement?: any;
   disableWidget?: boolean,
   debug?: boolean,
 }
@@ -341,8 +337,9 @@ const resetDetailResult = async () => {
   nav.setCurrentDetailId('', props.disableWidget)
   nav.updateUrl(props.disableWidget)
   
-  scrollToTop(props.trackElement, props.disableWidget, props.programId)
+  // scrollToTop(props.trackElement, props.disableWidget, props.programId)
   //!props.disableWidget && scrollToTop(props.trackElement, props.programId)
+  scrollToId(props.programId)
 }
 const toggleShowForm = () => {
   // console.log('TeeProgramDetail > toggleShowForm > trackConfig : ', props.trackConfig )

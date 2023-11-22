@@ -78,6 +78,7 @@
     <!-- PROGRAMS CARDS -->
     <div
       v-for="prog in reFilteredPrograms"
+      :id="prog.id"
       :key="prog.id"
       class="fr-card fr-enlarge-link fr-card--horizontal-tier fr-mb-10v"
       @click="updateDetailResult(prog.id)">

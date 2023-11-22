@@ -166,7 +166,6 @@
           <TeeProgramDetail
             :program-id="programs.programDetail"
             :track-id="programs.programDetailConfig"
-            :track-element="trackElement"
             :disable-widget="disableWidget"
             :debug="debugBool"
             />
@@ -280,8 +279,8 @@ window.stores = { tracks, choices, programs }
 // })
 
 watch(() => tracks.usedTracks, (next) => {
-  console.log()
-  console.log('WidgetApp > watch > tracks.usedTracks > next : ', next)
+  // console.log()
+  // console.log('WidgetApp > watch > tracks.usedTracks > next : ', next)
   if (nav.routerReady) {
     nav.setCurrentStep(tracks.currentStep)
     nav.setCurrentTrackId(tracks.currentTrackId)
@@ -340,15 +339,15 @@ const setupFromUrl = () => {
     teetrack_track_structure_workforce: "entreprise . effectif:249|structure_sizes:PME"
   }
   */
-  const queryTracksRaw = unfoldQueries(route.query)
-  console.log('WidgetApp > mounted > queryTracksInfos :', queryTracksRaw)
+  // const queryTracksRaw = unfoldQueries(route.query)
+  // console.log('WidgetApp > mounted > queryTracksInfos :', queryTracksRaw)
     // TO DO
   // tracks.populateUsedTracksFromQuery(route.query)
   // nav.populateFromQuery(route.query)
   // parse url to get detail program (if any)
   const programId = props.programId || route.query['teeDetail']
-  console.log('WidgetApp > mounted > currentTrack :', currentTrack)
-  console.log('WidgetApp > mounted > programId :', programId)
+  // console.log('WidgetApp > mounted > currentTrack :', currentTrack)
+  // console.log('WidgetApp > mounted > programId :', programId)
   // @ts-ignore
   nav.setCurrentDetailId(programId)
   // @ts-ignore
@@ -370,7 +369,7 @@ onBeforeMount(() => {
 
   // inject style link in html head if not present
   const href = deployMode ? `${deployUrl}/style.css` : ''
-  console.log('WidgetApp > onBeforeMount > href :', href)
+  // console.log('WidgetApp > onBeforeMount > href :', href)
   let needStyle = !props.disableWidget // true
   // avoid duplicates
   const styleSheets = document.styleSheets.length
@@ -436,14 +435,14 @@ onBeforeMount(() => {
   // console.log('WidgetApp > onBeforeMount > END...')
 
   // set first track at mount
-  console.log('WidgetApp > onMounted > set seed track...')
+  // console.log('WidgetApp > onMounted > set seed track...')
   tracks.setSeedTrack(props.seed)
   tracks.addToUsedTracks(props.seed, props.seed)
 })
 
 onMounted(async() => {
   // cf: https://stackoverflow.com/questions/69495211/vue3-route-query-empty
-  console.log('WidgetApp > onMounted > set router...')
+  // console.log('WidgetApp > onMounted > set router...')
   await router.isReady()
   if (!props.disableWidget) {
     nav.setRouter(router)

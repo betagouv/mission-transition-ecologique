@@ -329,6 +329,13 @@ export const scrollToTop = (
   }
 }
 
+export const scrollToId = (
+  elementId: string
+) => {
+  console.log('utils > helpers > scrollToId > elementId :', elementId)
+
+}
+
 // TEXT HELPERS
 
 export const consolidateAmounts = (str: string | undefined) => {

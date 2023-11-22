@@ -115,7 +115,7 @@ export const navigationStore = defineStore('navigation', () => {
       // matched: routeRef.value.matched,
       query: allQueries
     }
-    console.log('store.navigation > updateUrl > newRoute : ', newRoute)
+    // console.log('store.navigation > updateUrl > newRoute : ', newRoute)
 
     // update browser
     routerRef.value.push(newRoute)
@@ -136,7 +136,7 @@ export const navigationStore = defineStore('navigation', () => {
   }
 
   function updateQueries(usedTracks: any[], noWidget: boolean) {
-    console.log('\nstore.navigation > updateQueries > usedTracks : ', usedTracks)
+    // console.log('\nstore.navigation > updateQueries > usedTracks : ', usedTracks)
     // reset userQueries
     userQueries.value = []
     const queries = usedTracks.map(t => {
