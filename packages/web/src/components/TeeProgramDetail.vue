@@ -27,9 +27,6 @@
       <!-- TITLE & RESUME -->
       <div class="fr-col fr-pl-10v">
         <!-- PROGRAM TITLE -->
-        <!-- <h1>
-          {{ program.title }}
-        </h1> -->
         <p class="tee-program-title fr-mb-5v">
           {{ program.titre }}
         </p>
@@ -290,10 +287,6 @@
 <script setup lang="ts">
 
 import { ref, onBeforeMount } from 'vue'
-// import { useRouter } from 'vue-router'
-
-// @ts-ignore
-// import type { ProgramData, Track } from '@/types/index'
 
 // @ts-ignore
 import TeeTile from './TeeTile.vue'
@@ -306,10 +299,8 @@ import { programsStore } from '../stores/programs'
 import { navigationStore } from '../stores/navigation'
 import { analyticsStore } from '../stores/analytics'
 
-import { scrollToTop } from '../utils/helpers'
+import { scrollToId } from '../utils/helpers'
 import type { TrackId } from '@/types'
-
-// const router = useRouter()
 
 const choices = choicesStore()
 const tracks = tracksStore()
@@ -322,13 +313,11 @@ const trackConfig = ref<any>()
 
 const blockColor = '#000091'
 const showForm = ref<boolean>(false)
-// const columnTiles = ref<string>('fr-col-4 fr-sm-3 fr-col-md-4 fr-col-lg-2')
 const columnTiles = ref<string>('fr-col')
 
 interface Props {
   programId: string | number,
   trackId: TrackId | undefined,
-  trackElement?: any;
   disableWidget?: boolean,
   debug?: boolean,
 }
@@ -340,7 +329,8 @@ const resetDetailResult = async () => {
   programs.resetDetailResult()
   nav.setCurrentDetailId('', props.disableWidget)
   nav.updateUrl(props.disableWidget)
-  !props.disableWidget && scrollToTop(props.trackElement, props.programId)
+  
+  scrollToId(`${props.programId}`)
 }
 const toggleShowForm = () => {
   // console.log('TeeProgramDetail > toggleShowForm > trackConfig : ', props.trackConfig )
@@ -352,7 +342,7 @@ const toggleShowForm = () => {
 
 onBeforeMount(async() => {
   // await router.isReady()
-  console.log('TeeProgramDetail > onBeforeMount > props.programId :', props.programId )
+  // console.log('TeeProgramDetail > onBeforeMount > props.programId :', props.programId )
   program.value = programs.getProgramById(props.programId)
   if (props.trackId) {
     trackConfig.value = tracks.getTrack(props.trackId)
