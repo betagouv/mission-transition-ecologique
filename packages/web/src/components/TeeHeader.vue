@@ -19,7 +19,6 @@
                     style="width:3.5rem;"
                     src="@public/images/logos/mission-transition-logo-alone.png"
                     alt="Transition Ecologique des Entreprises" />
-                  <!-- L’alternative de l’image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l’image -->
                 </router-link>
               </div>
               <div class="fr-header__navbar">
@@ -51,18 +50,14 @@
           <div class="fr-header__tools">
             <div class="fr-header__tools-links">
               <ul class="fr-btns-group">
-                <li>
-                  <router-link 
-                    class="fr-btn"
-                    to="/">
-                    Accueil
-                  </router-link>
-                </li>
-                <li>
+                <li
+                  v-for="link in quickLinks"
+                  :key="link.label">
                   <button 
                     class="fr-btn"
-                    @click="pushTo('catalog')">
-                    Annuaire
+                    :to="link.label"
+                    @click="pushTo(link.to.name)">
+                    {{ link.label }}
                   </button>
                 </li>
               </ul>
@@ -88,19 +83,14 @@
         </button>
         <div class="fr-header__menu-links">
           <ul class="fr-btns-group">
-            <li>
-              <router-link 
-                class="fr-btn"
-                to="/"
-                @click="showModal = false">
-                Accueil
-              </router-link>
-            </li>
-            <li>
+            <li
+              v-for="link in quickLinks"
+              :key="link.label">
               <button 
                 class="fr-btn"
-                @click="pushTo('catalog')">
-                Catalogue des aides
+                :to="link.label"
+                @click="pushTo(link.to.name)">
+                {{ link.label }}
               </button>
             </li>
           </ul>
@@ -119,14 +109,30 @@ import { programsStore } from '../stores/programs'
 import { navigationStore } from '../stores/navigation'
 import { TrackId } from '@/types'
 
+import { RouteName } from '@/types/routeType'
+
 const nav = navigationStore()
 const tracks = tracksStore()
 const programs = programsStore()
 
 const showModal = ref<boolean>(false)
 
+const quickLinks = [
+  {
+    label: 'Accueil',
+    to: {
+      name: RouteName.Homepage
+    }
+  },
+  {
+    label: 'Annuaire',
+    to: {
+      name: RouteName.Catalog
+    }
+  }
+]
+
 const pushTo = async (ref: string) => {
-  // await nav.routerRef.push(ref)
   nav.setRouterReady(false)
   
   showModal.value = false
