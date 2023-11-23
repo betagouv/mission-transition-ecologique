@@ -7,6 +7,9 @@ WARNING :
 */
 
 /* CUSTOM STYLES - OVERIDES DSFR */
+.fr-justify-center {
+  justify-content: center;
+}
 .fr-text-center {
   text-align: center;
 }
@@ -129,6 +132,7 @@ button.fr-link:hover, .tee-router-link:hover {
 .tee-track-callout-img  > .fr-responsive-img {
   max-height: 150px;
   width: auto;
+  max-width: 100%;
 }
 
 @media (min-width: 48em) {
@@ -552,6 +556,7 @@ code {
     width: 100%;
     max-width: 320px;
     height: auto;
+    max-width: 100%;
   }
 }
 
@@ -561,6 +566,7 @@ code {
     max-height: 500px; 
     width: auto; 
     height: auto;
+    max-width: 100%;
   }
 }
 
@@ -600,26 +606,21 @@ code {
   color: red;
 }
 
-/* TRANSITIONS */
-.slide-fade-enter-active {
+/* TRANSITIONS - DEPRECATED */
+/* .slide-fade-enter-active {
   transition-delay: .4s;
   transition-duration: .3s;
-  /* transition-timing-function: cubic-bezier(1, 0.5, 0.8, 1); */
   transition-timing-function: ease-in;
-  /* transition: all .3s ease-out; */
 }
 .slide-fade-enter-from {
   transform: translateY(40px);
   opacity: 0;
 }
 
-/* .slide-fade-enter-active, */
 .slide-fade-leave-active {
-  /* transition: all .3s cubic-bezier(1, 0.5, 0.8, 1); */
   transition: all .3s ease-in;
 }
-/* .slide-fade-enter-from, */
 .slide-fade-leave-to {
   transform: translateY(-40px);
   opacity: 0;
-}
+} */

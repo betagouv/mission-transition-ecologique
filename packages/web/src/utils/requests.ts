@@ -1,46 +1,27 @@
 import type { MetaEnv, FormCallback, ReqResp } from '@/types/index'
 // import { toRaw } from 'vue'
-import { remapItem  } from './helpers'
+import { remapItem } from './helpers'
 
-export const buildHeaders = (metaEnv: MetaEnv | any, callback: FormCallback) => {
-  // console.log()
-  // console.log('utils > requests > buildHeaders >  metaEnv :', metaEnv)
-  // const mode = 'cors'
-  // console.log('utils > requests > buildHeaders >  mode :', mode)
-
-  // const method = callback.method
-  const headerApiKey = callback.headerApiKey
-  const headers = {...callback.headers}
-  // @ts-ignore
-  const apiKey = metaEnv[callback.envApiKey]
-  // console.log('utils > requests > buildHeaders >  method :', method)
-  // console.log('utils > requests > buildHeaders >  headerApiKey :', headerApiKey)
-  // console.log('utils > requests > buildHeaders >  apiKey :', apiKey)
-  
-  // @ts-ignore
-  headers[headerApiKey] = apiKey
-  // console.log('utils > requests > buildHeaders >  headers :', headers)
-
-  return headers
+export const buildHeaders = (callback: FormCallback) => {
+  return { ...callback.headers }
 }
 
 export const sendApiRequest = async (
-  callback: FormCallback, 
-  formData: object | any, 
-  trackValues: any[] = [], 
-  props: object | any = undefined, 
+  callback: FormCallback,
+  formData: object | any,
+  trackValues: any[] = [],
+  props: object | any = undefined,
   lang: string = 'fr') => {
   // console.log()
   // console.log('utils > requests > sendApiRequest >  callback.action :', callback.action)
   // console.log('utils > requests > sendApiRequest >  formData :', formData)
   // console.log('utils > requests > sendApiRequest >  usedTrack :', usedTrack)
   // console.log('utils > requests > sendApiRequest >  props :', props)
-  
-  const metaEnv = import.meta.env
+
   // console.log('utils > requests > sendApiRequest >  metaEnv :', metaEnv)
   const url = callback.url
   const method = callback.method
-  const headers = buildHeaders(metaEnv, callback)
+  const headers = buildHeaders(callback)
   // console.log('utils > requests > sendApiRequest >  url :', url)
   // console.log('utils > requests > sendApiRequest >  method :', method)
   // console.log('utils > requests > sendApiRequest >  headers :', headers)
@@ -57,18 +38,15 @@ export const sendApiRequest = async (
   const body = JSON.stringify(data)
   // console.log('utils > requests > sendApiRequest >  body :', body)
 
-  // fetch and return
-  const respJson = await sendRequest(url, method, headers, body, callback.action)
-  return respJson
-  // return {}
+  return await sendRequest(url, method, headers, body, callback.action)
 }
 
-export const sendRequest = async (url: string, method: string, headers: any, body: any, action: string) => {
+export const sendRequest = async (url: string, method: string, headers: HeadersInit, body: BodyInit, action: string) => {
   // console.log()
   // console.log('utils > requests > sendRequest >  url :', url)
   // console.log('utils > requests > sendRequest >  method :', method)
   // console.log('utils > requests > sendRequest >  headers :', headers)
-  
+
   // send request
   try {
     const response = await fetch(url, {
@@ -83,7 +61,7 @@ export const sendRequest = async (url: string, method: string, headers: any, bod
     respJson.status = response.status
     respJson.statusText = response.statusText
     respJson.url = response.url
-    
+
     // console.log('utils > requests > sendRequest >  respJson :', respJson)
     return respJson
   } catch (error) {
@@ -97,5 +75,4 @@ export const sendRequest = async (url: string, method: string, headers: any, bod
 
     return respObj
   }
-  
 }

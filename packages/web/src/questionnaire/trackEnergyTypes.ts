@@ -1,16 +1,19 @@
-export const energyTypes = {
-  id: 'track_energy_types',
+import type { Track } from '@/types'
+import { HasInputOptions, TrackComponents, TrackId } from '@/types'
+
+export const energyTypes: Track = {
+  id: TrackId.EnergyTypes,
   category: 'myEnergy',
   title: { fr: "Source principale" },
   label: { fr: "Quelle est la source principale d'énergie pour vos locaux ?" },
   interface: {
-    component: 'buttons',
+    component: TrackComponents.Buttons,
   },
   behavior: {
     multipleChoices: false,
   },
   next: {
-    default: 'track_results'
+    default: TrackId.Results
   },
   options: [
     {
@@ -18,7 +21,7 @@ export const energyTypes = {
       title: { fr: 'Electrique' },
       label: { fr: "⚡️ Électrique" },
       next: {
-        default: 'track_strategy_audits'
+        default: TrackId.StrategyAudits,
       }
     },
     {
@@ -26,7 +29,7 @@ export const energyTypes = {
       title: { fr: "Gas" },
       label: { fr: "💨 Gaz" },
       next: {
-        default: 'track_strategy_audits'
+        default: TrackId.StrategyAudits,
       }
     },
     {
@@ -34,7 +37,7 @@ export const energyTypes = {
       title: { fr: "Fioul" },
       label: { fr: "⛽️ Essence / fioul" },
       next: {
-        default: 'track_strategy_audits'
+        default: TrackId.StrategyAudits,
       }
     },
     {
@@ -42,7 +45,7 @@ export const energyTypes = {
       title: { fr: "Charbon" },
       label: { fr: "〰 Charbon" },
       next: {
-        default: 'track_strategy_audits'
+        default: TrackId.StrategyAudits,
       }
     },
     {
@@ -50,7 +53,7 @@ export const energyTypes = {
       title: { fr: "Bois" },
       label: { fr: "🪵 Bois" },
       next: {
-        default: 'track_strategy_audits'
+        default: TrackId.StrategyAudits,
       }
     },
     {
@@ -58,16 +61,16 @@ export const energyTypes = {
       title: { fr: 'Je ne sais pas' },
       label: { fr: "Je ne sais pas ou je ne suis pas concerné" },
       next: {
-        default: 'track_strategy_audits'
+        default: TrackId.StrategyAudits,
       }
     },
     {
       value: { energy_type: 'other' },
       title: { fr: 'Autre' },
       label: { fr: "Autre : " },
-      hasInput: 'text',
+      hasInput: HasInputOptions.Text,
       next: {
-        default: 'track_strategy_audits'
+        default: TrackId.StrategyAudits,
       }
     },
   ]

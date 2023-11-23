@@ -27,9 +27,6 @@
       <!-- TITLE & RESUME -->
       <div class="fr-col fr-pl-10v">
         <!-- PROGRAM TITLE -->
-        <!-- <h1>
-          {{ program.title }}
-        </h1> -->
         <p class="tee-program-title fr-mb-5v">
           {{ program.titre }}
         </p>
@@ -63,29 +60,7 @@
           @click="toggleShowForm"
           ref="modalOrigin"/> -->
 
-        <!-- PROGRAM DESCRIPTION -->
-        <div
-          class="fr-mb-18v">
-          <h3>
-            {{ choices.t('program.programDescription') }}
-          </h3>
-          <div class="fr-tee-description-list">
-            <p
-              v-for="(paragraph, idx) in program.objectifs"
-              :key="`description-paragraph-${idx}`"
-              class="fr-mb-6v">
-              <span
-                class="fr-tee-description-paragraph-marker">
-                {{ idx + 1 }} |
-              </span>
-              <span
-                class="fr-tee-description-paragraph-content">
-                {{ paragraph }}
-              </span>
-            </p>
-          </div>
-        </div>
-
+        <ProgramObjective :program='program'></ProgramObjective>
       </div>
 
     </div>
@@ -290,25 +265,21 @@
 <script setup lang="ts">
 
 import { ref, onBeforeMount } from 'vue'
-// import { useRouter } from 'vue-router'
 
 // @ts-ignore
-// import type { ProgramData, Track } from '@/types/index'
-
+import TeeTile from '../TeeTile.vue'
 // @ts-ignore
-import TeeTile from './TeeTile.vue'
-// @ts-ignore
-import TeeForm from './TeeForm.vue'
+import TeeForm from '../TeeForm.vue'
 
-import { choicesStore } from '../stores/choices'
-import { tracksStore } from '../stores/tracks'
-import { programsStore } from '../stores/programs'
-import { navigationStore } from '../stores/navigation'
-import { analyticsStore } from '../stores/analytics'
+import { choicesStore } from '../../stores/choices'
+import { tracksStore } from '../../stores/tracks'
+import { programsStore } from '../../stores/programs'
+import { navigationStore } from '../../stores/navigation'
+import { analyticsStore } from '../../stores/analytics'
 
-import { scrollToTop } from '../utils/helpers'
-
-// const router = useRouter()
+import { scrollToId } from '../../utils/helpers'
+import type { TrackId } from '@/types'
+import ProgramObjective from '@/components/program/ProgramObjective.vue'
 
 const choices = choicesStore()
 const tracks = tracksStore()
@@ -321,13 +292,11 @@ const trackConfig = ref<any>()
 
 const blockColor = '#000091'
 const showForm = ref<boolean>(false)
-// const columnTiles = ref<string>('fr-col-4 fr-sm-3 fr-col-md-4 fr-col-lg-2')
 const columnTiles = ref<string>('fr-col')
 
 interface Props {
   programId: string | number,
-  trackId: string,
-  trackElement?: any;
+  trackId: TrackId | undefined,
   disableWidget?: boolean,
   debug?: boolean,
 }
@@ -339,7 +308,8 @@ const resetDetailResult = async () => {
   programs.resetDetailResult()
   nav.setCurrentDetailId('', props.disableWidget)
   nav.updateUrl(props.disableWidget)
-  !props.disableWidget && scrollToTop(props.trackElement, props.programId)
+
+  scrollToId(`${props.programId}`)
 }
 const toggleShowForm = () => {
   // console.log('TeeProgramDetail > toggleShowForm > trackConfig : ', props.trackConfig )
@@ -351,9 +321,11 @@ const toggleShowForm = () => {
 
 onBeforeMount(async() => {
   // await router.isReady()
-  console.log('TeeProgramDetail > onBeforeMount > props.programId :', props.programId )
+  // console.log('TeeProgramDetail > onBeforeMount > props.programId :', props.programId )
   program.value = programs.getProgramById(props.programId)
-  trackConfig.value = tracks.getTrack(props.trackId)
+  if (props.trackId) {
+    trackConfig.value = tracks.getTrack(props.trackId)
+  }
   // console.log('TeeProgramDetail > onBeforeMount > resultsProgs :', resultsProgs )
   // analytics / send event
   analytics.sendEvent('result_detail', 'show_detail', props.programId)

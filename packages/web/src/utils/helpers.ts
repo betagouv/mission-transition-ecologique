@@ -1,5 +1,18 @@
 // @ts-ignore
 import nafCodesJson from '@public/data/references/naf_codes_flat.json'
+import type {
+  Cleaner,
+  CleanerDefaultIfNull,
+  CleanerFromDict,
+  CleanerFromJson,
+  CleanerInjectInObject,
+  CleanerReplaceAll,
+  FormCallbackDataMapping,
+  NextTrackRule,
+  Refs,
+  ResultsMapping
+} from '@/types'
+import { CleanerOperations, DataMappingFrom } from '@/types'
 
 // enum NafCodeFields {
 //   tags = 'tags',
@@ -10,33 +23,10 @@ import nafCodesJson from '@public/data/references/naf_codes_flat.json'
 //   NIV1 = 'NIV1',
 //   label_vf = 'label_vf',
 // }
-interface NafCode {
-  tags: string[],
-  NIV5: string,
-  NIV4: string,
-  NIV3: string,
-  NIV2: string,
-  NIV1: string,
-  label_vf: string,
-}
-interface Refs {
-  nafCodes: NafCode[]
-}
-const refs: Refs = {
-  nafCodes: nafCodesJson
-}
 
-import type {
-  NextTrackRule,
-  FormCallbackDataMapping,
-  Cleaner,
-  CleanerReplaceAll,
-  CleanerFromJson,
-  CleanerFromDict,
-  CleanerDefaultIfNull,
-  CleanerInjectInObject,
-  ResultsMapping
-} from '@/types/index'
+const refs: Refs = {
+  NafCodes: nafCodesJson
+}
 
 // GENERIC HELPERS
 
@@ -144,8 +134,7 @@ export const groupBy = (objectsArray: object[], key: string) => {
 
 export const replaceAll = (value: any, cleaner: CleanerReplaceAll) => {
   const re = new RegExp(cleaner.stringToReplace, 'g')
-  const val = String(value).replace(re, cleaner.replaceBy)
-  return val
+  return String(value).replace(re, cleaner.replaceBy)
 }
 
 export const findFromRefs = (value: string, cleaner: CleanerFromJson) => {
@@ -187,9 +176,7 @@ export const findDefaultIfNull = (value: string, cleaner: CleanerDefaultIfNull, 
   // console.log('utils > helpers > findDefaultIfNull > respFields :', respFields)
   // console.log('utils > helpers > findDefaultIfNull > defaultValue :', defaultValue)
 
-  const val = value || defaultValue[lang]
-
-  return val
+  return value || defaultValue[lang]
 }
 
 export const injectInObject = (value: object | object[], cleaner: CleanerInjectInObject) => {
@@ -211,23 +198,25 @@ export const cleanValue = (value: any, cleaners: Cleaner[] | CleanerReplaceAll[]
   cleaners.forEach((cleaner) => {
     // console.log('utils > helpers > cleanValue > cleaner :', cleaner)
     switch (cleaner.operation) {
-      case 'replaceAll':
+      case CleanerOperations.replaceAll:
         val = replaceAll(val, <CleanerReplaceAll>cleaner)
         break
-      case 'stringToDate':
+      case CleanerOperations.stringToDate:
         val = new Date(val).toLocaleDateString(lang)
         break
-      case 'findFromRefs':
+      case CleanerOperations.findFromRefs:
         val = findFromRefs(val, <CleanerFromJson>cleaner)
         break
-      case 'findFromDict':
+      case CleanerOperations.findFromDict:
         val = findFromDict(val, <CleanerFromDict>cleaner)
         break
-      case 'defaultIfNull':
+      case CleanerOperations.defaultIfNull:
         val = findDefaultIfNull(val, <CleanerDefaultIfNull>cleaner, lang)
         break
-      case 'injectInObject':
+      case CleanerOperations.injectInObject:
         val = injectInObject(val, <CleanerInjectInObject>cleaner)
+        break
+      default:
         break
     }
   })
@@ -258,17 +247,17 @@ export const remapItem = (
     let value: any = ''
     let allResponses: any
     switch (dm.from) {
-      case 'env':
+      case DataMappingFrom.Env:
         value = metaEnv[dm.id]
         break
-      case 'formData':
+      case DataMappingFrom.FormData:
         value = formData && formData[dm.id]
         break
-      case 'usedTracks':
+      case DataMappingFrom.UsedTracks:
         // console.log('utils > helpers > remapItem >  trackValues :', trackValues)
         value = findInObjectsArray(trackValues, dm.id)
         break
-      case 'allUsedTracks':
+      case DataMappingFrom.AllUsedTracks:
         // console.log('utils > helpers > remapItem >  trackValues :', trackValues)
         allResponses = findInObjectsArray(trackValues, dm.id, true)
         // console.log('utils > helpers > remapItem >  allResponses :', allResponses)
@@ -277,23 +266,23 @@ export const remapItem = (
           })
           .join(' / ')
         break
-      case 'selectionValues':
+      case DataMappingFrom.SelectionValues:
         // console.log('utils > helpers > remapItem >  trackValues :', trackValues)
         value = findInObjectsArray(selectionValues, dm.id)
         break
-      case 'props':
+      case DataMappingFrom.Props:
         value = props && props[dm.id]
         break
-      case 'propsPath':
+      case DataMappingFrom.PropsPath:
         // console.log('utils > helpers > remapItem >  rawData :', rawData)
         value = dm.path && getFromOnePath(props, dm.path )
         break
-      case 'rawData':
+      case DataMappingFrom.RawData:
         // console.log('utils > helpers > remapItem >  rawData :', rawData)
         value = dm.path && getFromOnePath(rawData, dm.path )
         break
       default:
-        value = ''
+        break
     }
 
     // clean value if necessary
@@ -322,16 +311,34 @@ export const remapItem = (
 }
 
 // UX HELPERS
-
 export const scrollToTop = (
   element: any,
+  disableWidget: boolean,
   from: string | number = ''
   ) => {
   // console.log()
   // console.log('utils > helpers > scrollToTop > from :', from)
+  // console.log('utils > helpers > scrollToTop > disableWidget :', disableWidget)
   // console.log('utils > helpers > scrollToTop > element :', element)
+  if (disableWidget) {
+    element.scrollIntoView()
+  } else {
+    setTimeout(()=> {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }, 100)
+  }
+}
+
+export const scrollToId = (
+  elementId: string,
+  // targetYPosition?: number
+) => {
+  // console.log('\nutils > helpers > scrollToId > elementId :', elementId)
+  // console.log('utils > helpers > scrollToId > targetYPosition :', targetYPosition)
+  // console.log('utils > helpers > scrollToId > element :', element)
   setTimeout(()=> {
-    element.scrollIntoView({ behavior: 'smooth' })
+    const element = document.getElementById(elementId)
+    element?.scrollIntoView()
   }, 100)
 }
 

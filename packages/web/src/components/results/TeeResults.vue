@@ -43,7 +43,7 @@
   <div
     v-if="countFilteredPrograms"
     class="fr-container fr-px-0 fr-mt-6v">
-  
+
     <!-- RESULTS SIZE -->
     <div
       v-if="countFilteredPrograms > 1"
@@ -78,6 +78,7 @@
     <!-- PROGRAMS CARDS -->
     <div
       v-for="prog in reFilteredPrograms"
+      :id="prog.id"
       :key="prog.id"
       class="fr-card fr-enlarge-link fr-card--horizontal-tier fr-mb-10v"
       @click="updateDetailResult(prog.id)">
@@ -171,25 +172,29 @@ import TeeResultsFilter from './TeeResultsFilter.vue'
 import TeeNoResults from './TeeNoResults.vue'
 
 // @ts-ignore
-import type { TrackChoice, TrackResultsConfig, ProgramData, FilterSignal } from '@/types/index'
+import type { TrackChoice, TrackResultsConfig, ProgramData, FilterSignal, TrackFilter } from '@/types/index'
 // @ts-ignore
 import { ProgramAidType } from '@/types/programTypes'
+import { navigationStore } from '@/stores/navigation'
+import { ConditionOperators, TrackId } from '@/types/index'
 // @ts-ignore
 // import { randomChoice } from '@/utils/helpers'
 
 const choices = choicesStore()
 const programs = programsStore()
 const analytics = analyticsStore()
+const nav = navigationStore()
 
 const activeFilters = ref<any>({})
 
 interface Props {
-  trackId: string,
+  trackId: TrackId,
   trackConfig?: TrackResultsConfig,
   trackOptions?: any,
   trackForm?: any,
   tracksResults: TrackChoice[] | any[],
   trackElement: any,
+  disableWidget?: boolean,
   debug?: boolean
 }
 const props = defineProps<Props>()
@@ -204,8 +209,8 @@ const reFilteredPrograms = computed(() => {
     const boolArray = [true]
     for (const fieldKey in activeFilters.value) {
       const filterVal = activeFilters.value[fieldKey]
-      const filterConfig = props.trackConfig?.filters?.find((f:any) => f.field === fieldKey)
-      const trueIf = filterConfig?.trueIf || '=='
+      const filterConfig: TrackFilter | undefined = props.trackConfig?.filters?.find((f:any) => f.field === fieldKey)
+      const trueIf = filterConfig?.trueIf || ConditionOperators.is
       // console.log(`\nTeeResults > reFilteredPrograms > fieldKey: "${fieldKey}" - filterVal: "${filterVal}" - trueIf: "${trueIf}"` )
       // console.log('\nTeeResults > fieldKey :', fieldKey )
       // console.log('TeeResults > filterVal :', filterVal )
@@ -214,14 +219,14 @@ const reFilteredPrograms = computed(() => {
       let progVal = getFrom(prog, [fieldKey])
       progVal = JSON.parse(JSON.stringify(progVal))
       progVal = progVal[0]
-      
+
       let bool = false
       if (filterVal === '') {
         bool = true
-      } else if (trueIf === '==') {
+      } else if (trueIf === ConditionOperators.is) {
         // console.log('TeeResults > reFilteredPrograms > progVal :', progVal )
         bool = progVal === filterVal
-      } else if (trueIf === 'exists') {
+      } else if (trueIf === ConditionOperators.exists) {
         progVal = progVal?.filter(i => i !== null)
         // console.log('TeeResults > reFilteredPrograms > progVal :', progVal )
         bool = !progVal ? true : progVal.includes(filterVal)
@@ -257,8 +262,12 @@ const updateFilters = (event: FilterSignal) => {
 
 const updateDetailResult = (id: string | number) => {
   // console.log(`TeeResults > updateDetailResult >  id : ${id}`)
+
+  // Set detail infos
   programs.setDetailResult(id, props.trackId)
-  scrollToTop(props.trackElement, props.trackId)
+  nav.setCurrentDetailId(id, props.disableWidget)
+  nav.updateUrl(props.disableWidget)
+  scrollToTop(props.trackElement, props.disableWidget, props.trackId)
 }
 
 const getCostInfos = (program: ProgramData) => {
