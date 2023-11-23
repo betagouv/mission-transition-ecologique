@@ -96,6 +96,11 @@ export const frDict = {
       the: 'le',
       this: 'ce',
       of: 'du'
-    }
+    },
+    "avantage fiscal": {
+      the: 'le',
+      this: 'ce',
+      of: 'du'
+    },
   }
 }
