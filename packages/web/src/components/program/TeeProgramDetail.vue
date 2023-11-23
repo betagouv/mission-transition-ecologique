@@ -60,29 +60,7 @@
           @click="toggleShowForm"
           ref="modalOrigin"/> -->
 
-        <!-- PROGRAM DESCRIPTION -->
-        <div
-          class="fr-mb-18v">
-          <h3>
-            {{ choices.t('program.programDescription') }}
-          </h3>
-          <div class="fr-tee-description-list">
-            <p
-              v-for="(paragraph, idx) in program.objectifs"
-              :key="`description-paragraph-${idx}`"
-              class="fr-mb-6v">
-              <span
-                class="fr-tee-description-paragraph-marker">
-                {{ idx + 1 }} |
-              </span>
-              <span
-                class="fr-tee-description-paragraph-content">
-                {{ paragraph }}
-              </span>
-            </p>
-          </div>
-        </div>
-
+        <ProgramObjective :program='program'></ProgramObjective>
       </div>
 
     </div>
@@ -289,18 +267,19 @@
 import { ref, onBeforeMount } from 'vue'
 
 // @ts-ignore
-import TeeTile from './TeeTile.vue'
+import TeeTile from '../TeeTile.vue'
 // @ts-ignore
-import TeeForm from './TeeForm.vue'
+import TeeForm from '../TeeForm.vue'
 
-import { choicesStore } from '../stores/choices'
-import { tracksStore } from '../stores/tracks'
-import { programsStore } from '../stores/programs'
-import { navigationStore } from '../stores/navigation'
-import { analyticsStore } from '../stores/analytics'
+import { choicesStore } from '../../stores/choices'
+import { tracksStore } from '../../stores/tracks'
+import { programsStore } from '../../stores/programs'
+import { navigationStore } from '../../stores/navigation'
+import { analyticsStore } from '../../stores/analytics'
 
-import { scrollToId } from '../utils/helpers'
+import { scrollToId } from '../../utils/helpers'
 import type { TrackId } from '@/types'
+import ProgramObjective from '@/components/program/ProgramObjective.vue'
 
 const choices = choicesStore()
 const tracks = tracksStore()
@@ -329,7 +308,7 @@ const resetDetailResult = async () => {
   programs.resetDetailResult()
   nav.setCurrentDetailId('', props.disableWidget)
   nav.updateUrl(props.disableWidget)
-  
+
   scrollToId(`${props.programId}`)
 }
 const toggleShowForm = () => {

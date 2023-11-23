@@ -226,7 +226,7 @@ import TeeTrack from './components/TeeTrack.vue'
 // @ts-ignore
 import TeeSidebar from './components/TeeSidebar.vue'
 // @ts-ignore
-import TeeProgramDetail from './components/TeeProgramDetail.vue'
+import TeeProgramDetail from './components/program/TeeProgramDetail.vue'
 // @ts-ignore
 import TeeCredits from './components/TeeCredits.vue'
 import { TrackId } from '@/types'
