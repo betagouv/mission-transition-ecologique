@@ -51,8 +51,8 @@ export const frDict = {
     programResume: 'Le dispositif en deux mots',
     programObjective: {
       title: {
-        base: 'Au programme :',
-        second: 'Les étapes de votre demande d’aide :'
+        inProgram: 'Au programme :',
+        applicationSteps: 'Les étapes de votre demande d’aide :'
       }
     },
     programProviders: 'Contact',

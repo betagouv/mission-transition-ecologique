@@ -39,9 +39,9 @@ const getProgramObjectiveTitle = () => {
     case ProgramAidType.train:
     case ProgramAidType.loan:
     case ProgramAidType.tax:
-      return choices.t('program.programObjective.title.base')
+      return choices.t('program.programObjective.title.inProgram')
     case ProgramAidType.fund:
-      return choices.t('program.programObjective.title.second')
+      return choices.t('program.programObjective.title.applicationSteps')
   }
 }
 
