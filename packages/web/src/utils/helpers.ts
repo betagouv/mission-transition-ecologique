@@ -330,12 +330,30 @@ export const remapItem = (
 }
 
 // UX HELPERS
-export const scrollToTop = (element: any, from: string = '') => {
+export const scrollToTop = (element: any, disableWidget: boolean, from: string | number = '') => {
   // console.log()
   // console.log('utils > helpers > scrollToTop > from :', from)
+  // console.log('utils > helpers > scrollToTop > disableWidget :', disableWidget)
   // console.log('utils > helpers > scrollToTop > element :', element)
+  if (disableWidget) {
+    element.scrollIntoView()
+  } else {
+    setTimeout(() => {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }, 100)
+  }
+}
+
+export const scrollToId = (
+  elementId: string
+  // targetYPosition?: number
+) => {
+  // console.log('\nutils > helpers > scrollToId > elementId :', elementId)
+  // console.log('utils > helpers > scrollToId > targetYPosition :', targetYPosition)
+  // console.log('utils > helpers > scrollToId > element :', element)
   setTimeout(() => {
-    element.scrollIntoView({ behavior: 'smooth' })
+    const element = document.getElementById(elementId)
+    element?.scrollIntoView()
   }, 100)
 }
 
