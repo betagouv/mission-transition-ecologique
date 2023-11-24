@@ -39,7 +39,7 @@ export const filterPrograms = (
     const evaluation = evaluateRule(program.publicodes, inputData)
 
     if (evaluation.isErr) {
-      return Result.err(evaluation.error)
+      return Result.err(addErrorDetails(evaluation.error, program.id))
     }
 
     if (shouldKeepProgram(evaluation)) {
@@ -112,4 +112,10 @@ const narrowInput = (data: InputData, engine: Engine): Partial<InputData> => {
     }, {})
 
   return filtered
+}
+
+const addErrorDetails = (err: Error, programName: string): Error => {
+  return new Error(`Evaluation of publicodes rules failed on program with id ${programName}`, {
+    cause: err
+  })
 }
