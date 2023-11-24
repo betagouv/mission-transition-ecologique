@@ -102,14 +102,6 @@ export const siret: Track = {
             },
             {
               from: DataMappingFrom.RawData,
-              id: 'naf',
-              help: 'https://www.insee.fr/fr/information/2120875',
-              path: 'etablissement.uniteLegale.activitePrincipaleUniteLegale',
-              dataField: Entreprise.CodeNAF,
-              onlyRemap: true
-            },
-            {
-              from: DataMappingFrom.RawData,
               id: 'region',
               path: 'etablissement.adresseEtablissement.codeCommuneEtablissement',
               dataField: 'région',
