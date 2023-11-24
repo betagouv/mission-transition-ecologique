@@ -11,6 +11,7 @@ import type {
   CleanerReplaceAll,
   FormCallbackDataMapping,
   NextTrackRule,
+  PropertyPath,
   Refs,
   ResultsMapping
 } from '@/types'
@@ -38,19 +39,28 @@ export const randomChoice = (array: any[]) => {
   return array[randomIndex]
 }
 
-export const getFrom = (from: any, selectors: string[]) => {
+export const getFrom = (from: any, selectors: PropertyPath[]) => {
   // console.log('utils > helpers > getFrom >  selectors :', selectors)
-  const res = selectors.map((s: string) => {
+  const res = selectors.map((selector: PropertyPath) => {
     // @ts-ignore
-    return s
-      .replace(/\[([^[\]]*)\]/g, '.$1.')
-      .split('.')
-      .filter((t: any) => t !== '')
-      .reduce((prev: any, cur: any) => {
-        return prev && prev[cur]
-      }, from)
+    const arraySelector = Array.isArray(selector)
+      ? selector
+      : selector
+          // Add support for array notation, e.g.
+          // a.b[3] becomes a.b.3.
+          .replace(/\[([^[\]]*)\]/g, '.$1.')
+          .split('.')
+          .filter((t: any) => t !== '')
+
+    return getFromArraySelector(from, arraySelector)
   })
   return res
+}
+
+const getFromArraySelector = (from: any, selector: string[]) => {
+  return selector.reduce((prev: any, cur: any) => {
+    return prev && prev[cur]
+  }, from)
 }
 
 export const getFromOnePath = (from: any, selector: string) => {

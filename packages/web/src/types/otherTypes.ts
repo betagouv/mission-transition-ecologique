@@ -19,7 +19,7 @@ export interface Comp {
 // FOR FILTERS
 
 export interface FilterSignal {
-  field: string
+  label: string
   value: string
 }
 export interface FilterEvent {
