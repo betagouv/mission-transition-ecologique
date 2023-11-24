@@ -3,6 +3,7 @@ import { defineStore } from 'pinia'
 
 import { frDict } from '@/translations/fr'
 import { frOperatorsDict } from '@/translations/fr-operators'
+import type { PropertyPath } from '@/types'
 
 export const choicesStore = defineStore('choices', () => {
   const publicPath = ref<string>()
@@ -26,12 +27,8 @@ export const choicesStore = defineStore('choices', () => {
     lang.value = loc
   }
 
-  // resolve takes an object `obj` and a hierarchical `path`, where successive keys are separated by
-  // dots. If a key contains itself a dot, it must be preceded by a backslash.
-  function resolve(path: string | string[], obj = self, separator = /(?<!\\)\./g) {
-    let props: string[] = Array.isArray(path) ? path : path.split(separator)
-
-    props = props.map((p) => p.replace('\\.', '.'))
+  function resolve(path: PropertyPath, obj = self, separator = '.') {
+    const props: string[] = Array.isArray(path) ? path : path.split(separator)
 
     // @ts-ignore
     return props.reduce((prev, curr) => prev?.[curr], obj)
