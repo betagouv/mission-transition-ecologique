@@ -15,22 +15,36 @@ SKIP_XL_LINES = 5
 OUTPUT_DIR = "../../../programs"
 
 
+def remove_prefix(s):
+    return s.split(" . ")[1]
+
+
 Cible = "entreprise . est ciblée"
 
 Eligible = "entreprise . est éligible"
-EligibleNoPrefix = "est éligible"
+EligibleNoPrefix = remove_prefix(Eligible)
 
 Objectif = "entreprise . a un objectif ciblé"
-ObjectifNoPrefix = "a un objectif ciblé"
+ObjectifNoPrefix = remove_prefix(Objectif)
 
 Secteur = "entreprise . est dans un secteur d'activité ciblé"
-SecteurNoPrefix = "est dans un secteur d'activité ciblé"
+SecteurNoPrefix = remove_prefix(Secteur)
 
 ZoneGeo = "entreprise . est dans une zone géographique éligible"
-ZoneGeoNoPrefix = "est dans une zone géographique éligible"
+ZoneGeoNoPrefix = remove_prefix(ZoneGeo)
 
 Effectif = "entreprise . a un effectif éligible"
-EffectifNoPrefix = "a un effectif éligible"
+EffectifNoPrefix = remove_prefix(Effectif)
+
+ModeTransport = "entreprise . utilise un mode de transport ciblé"
+ModeTransportNoPrefix = remove_prefix(ModeTransport)
+
+PossessionVehicules = "entreprise . possède des véhicules motorisés"
+PossessionVehiculesNoPrefix = remove_prefix(PossessionVehicules)
+
+ParcoursObjPrecis = "questionnaire . parcours = objectif précis"
+
+Proprio = "entreprise . est propriétaire de ses locaux"
 
 ALL = "toutes ces conditions"
 ANY = "une de ces conditions"
@@ -54,7 +68,7 @@ def printProgramYAML(rawData, colNumbers):
     program["illustration"] = randomIllustration()
     program["opérateur de contact"] = get("Opérateur de contact")
 
-    autresOp = csvToList(get("Autres opérateurs"))
+    autresOp = csv_to_list(get("Autres opérateurs"))
     if len(autresOp) >= 1:
         program["autres opérateurs"] = autresOp
 
@@ -87,20 +101,37 @@ def printProgramYAML(rawData, colNumbers):
         pc[Effectif] = effective_constraint
         eligibilite.append(EffectifNoPrefix)
 
-    sc = pc_secteurActivitéConstraint(rawData, cn)
+    sc = pc_secteurActivitéConstraint(get)
     if sc:
         pc[Secteur] = sc
         cible.append(SecteurNoPrefix)
 
-    op = pc_objPrioritaire(rawData, cn)
+    op = pc_objPrioritaire(get)
     if op:
         pc[Objectif] = op
         cible.append(ObjectifNoPrefix)
 
-    reg = pc_regions(rawData, cn)
+    reg = pc_regions(get)
     if reg:
         pc[ZoneGeo] = reg
         eligibilite.append(ZoneGeo)
+
+    mod = pc_mode_transport(get)
+    if mod:
+        pc[ModeTransport] = mod
+        cible.append(ModeTransportNoPrefix)
+
+    veh = pc_possede_vehicule(get)
+    if veh:
+        cible.append(PossessionVehiculesNoPrefix)
+
+    p360 = pc_onlyPrecise(get)
+    if p360:
+        cible.append(ParcoursObjPrecis)
+
+    own = pc_building_owner(get)
+    if own:
+        cible.append(Proprio)
 
     if len(eligibilite) != 0:
         cible = [EligibleNoPrefix] + cible
@@ -188,7 +219,7 @@ def valid(value):
     return True
 
 
-def csvToList(input: str) -> list[str]:
+def csv_to_list(input: str) -> list[str]:
     return [curate(s) for s in re.split(",|\|", input) if valid(s)]
 
 
@@ -211,7 +242,7 @@ def pc_effectifConstraint(effmin, effmax):
         return {ALL: constraint}
 
 
-def pc_secteurActivitéConstraint(rawData, colNumbers):
+def pc_secteurActivitéConstraint(get):
     secteurs = [
         "AAgriculture, sylviculture et pêche",
         "BIndustries extractives",
@@ -236,10 +267,6 @@ def pc_secteurActivitéConstraint(rawData, colNumbers):
         "UActivités extra-territoriales",
     ]
 
-    def get(name):
-        value = rawData[colNumbers[name]]
-        return curate(value)
-
     secteursInd = [bool(get(sect)) for sect in secteurs]
 
     if sum(secteursInd) == 0:
@@ -254,7 +281,7 @@ def pc_secteurActivitéConstraint(rawData, colNumbers):
     }
 
 
-def pc_objPrioritaire(rawData, colNumbers):
+def pc_objPrioritaire(get):
     objPri = {
         "🏢\nBâtiment": "est rénover mon bâtiment",
         "🚲\nMobilité": "est la mobilité durable",
@@ -265,10 +292,6 @@ def pc_objPrioritaire(rawData, colNumbers):
         "🌱\nStratégie": "est mon impact environnemental",
         "🏭\nProduction": "est l'écoconception",
     }
-
-    def get(name):
-        value = rawData[colNumbers[name]]
-        return curate(value)
 
     objPriInd = [bool(get(theme)) for theme in objPri.keys()]
     if sum(objPriInd) == 0:
@@ -283,17 +306,53 @@ def pc_objPrioritaire(rawData, colNumbers):
     }
 
 
-def pc_regions(rawData, colNumbers):
-    def get(name):
-        value = rawData[colNumbers[name]]
-        return curate(value)
+def pc_mode_transport(get):
+    modes = csv_to_list(get("Mode trajet domicile-travail"))
 
-    regions = csvToList(get("Zones géographiques Régional"))
+    if len(modes) == 0:
+        return None
+
+    return {
+        ANY: [
+            f"mode de transport domicile-travail . est {mode.lower()}" for mode in modes
+        ]
+    }
+
+
+def pc_possede_vehicule(get):
+    possede_vehicule = valid(get("Véhicule motorisé"))
+
+    if not possede_vehicule:
+        return None
+
+    return True
+
+
+def pc_regions(get):
+    regions = csv_to_list(get("Zones géographiques Régional"))
 
     if len(regions) == 0:
         return None
 
     return {ANY: [f"région = {region}" for region in regions]}
+
+
+def pc_onlyPrecise(get):
+    shouldShowOnPreciseOnly = not bool(
+        get('Parcours "Je ne sais pas par où commencer"')
+    )
+
+    if not shouldShowOnPreciseOnly:
+        return None
+
+    return True
+
+
+def pc_building_owner(get):
+    shouldAddressBuildingOwner = valid(get("Propriétaire"))
+    if not shouldAddressBuildingOwner:
+        return None
+    return True
 
 
 def thousandSep(value):
@@ -327,5 +386,3 @@ if __name__ == "__main__":
                 print(f"🖊️ {id}-2.yaml")
                 with open(os.path.join(OUTPUT_DIR, f"{id}-2.yaml"), "x") as f:
                     f.write(printProgramYAML(row, colNumbers))
-
-    # printProgramYAML(firstDataRow, colNumbers)

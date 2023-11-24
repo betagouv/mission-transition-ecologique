@@ -227,3 +227,8 @@ export const isTrackOptionsInput = (
 ): option is TrackOptionsInput => {
   return 'hasInput' in option
 }
+
+export enum TrackHelpValue {
+  Unknown = 'unknown',
+  Precise = 'precise'
+}

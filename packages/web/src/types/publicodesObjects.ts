@@ -7,11 +7,15 @@ export enum YesNo {
 export enum Entreprise {
   SectorActivity = "entreprise . secteur d'activité . est ",
   CodeNAF = 'entreprise . code NAF niveau 1 . est ',
-  Workforce = 'entreprise . effectif'
+  Workforce = 'entreprise . effectif',
+  TransportMode = 'entreprise . mode de transport domicile-travail . est ',
+  BuildingOwner = 'entreprise . est propriétaire de ses locaux',
+  VehicleOwner = 'entreprise . possède des véhicules motorisés'
 }
 
-enum questionnaires {
-  priorityObjectives = 'questionnaire . objectif prioritaire . est '
+export enum Questionnaire {
+  priorityObjectives = 'questionnaire . objectif prioritaire . est ',
+  path = 'questionnaire . parcours'
 }
 
 export enum Sector {
@@ -108,17 +112,17 @@ enum Objective {
 }
 
 export enum Objectives {
-  EnvironmentalImpact = questionnaires.priorityObjectives + Objective.EnvironmentalImpact,
-  EnergyPerformance = questionnaires.priorityObjectives + Objective.EnergyPerformance,
-  WaterConsumption = questionnaires.priorityObjectives + Objective.WaterConsumption,
-  BuildingRenovation = questionnaires.priorityObjectives + Objective.BuildingRenovation,
-  SustainableMobility = questionnaires.priorityObjectives + Objective.SustainableMobility,
-  WasteManagement = questionnaires.priorityObjectives + Objective.WasteManagement,
-  EcoDesign = questionnaires.priorityObjectives + Objective.EcoDesign,
-  TrainOrRecruit = questionnaires.priorityObjectives + Objective.TrainOrRecruit,
-  MakeSavings = questionnaires.priorityObjectives + Objective.MakeSavings,
-  DurablyInvest = questionnaires.priorityObjectives + Objective.DurablyInvest,
-  UnknownYet = questionnaires.priorityObjectives + Objective.UnknownYet
+  EnvironmentalImpact = Questionnaire.priorityObjectives + Objective.EnvironmentalImpact,
+  EnergyPerformance = Questionnaire.priorityObjectives + Objective.EnergyPerformance,
+  WaterConsumption = Questionnaire.priorityObjectives + Objective.WaterConsumption,
+  BuildingRenovation = Questionnaire.priorityObjectives + Objective.BuildingRenovation,
+  SustainableMobility = Questionnaire.priorityObjectives + Objective.SustainableMobility,
+  WasteManagement = Questionnaire.priorityObjectives + Objective.WasteManagement,
+  EcoDesign = Questionnaire.priorityObjectives + Objective.EcoDesign,
+  TrainOrRecruit = Questionnaire.priorityObjectives + Objective.TrainOrRecruit,
+  MakeSavings = Questionnaire.priorityObjectives + Objective.MakeSavings,
+  DurablyInvest = Questionnaire.priorityObjectives + Objective.DurablyInvest,
+  UnknownYet = Questionnaire.priorityObjectives + Objective.UnknownYet
 }
 
 export const priorityObjectives = {
@@ -133,4 +137,38 @@ export const priorityObjectives = {
   [Objectives.MakeSavings]: YesNo.No,
   [Objectives.DurablyInvest]: YesNo.No,
   [Objectives.UnknownYet]: YesNo.No
+}
+
+enum TransportMode {
+  Bike = 'vélo',
+  Bus = 'bus',
+  Car = 'voiture',
+  Motorcycle = 'moto',
+  Other = 'autre',
+  Train = 'train ou métro',
+  Truck = 'camion'
+}
+
+export enum TransportModes {
+  Bike = Entreprise.TransportMode + TransportMode.Bike,
+  Bus = Entreprise.TransportMode + TransportMode.Bus,
+  Car = Entreprise.TransportMode + TransportMode.Car,
+  Motorcycle = Entreprise.TransportMode + TransportMode.Motorcycle,
+  Other = Entreprise.TransportMode + TransportMode.Other,
+  Train = Entreprise.TransportMode + TransportMode.Train,
+  Truck = Entreprise.TransportMode + TransportMode.Truck
+}
+
+export const allTransportModes = {
+  [TransportModes.Bike]: YesNo.No,
+  [TransportModes.Bus]: YesNo.No,
+  [TransportModes.Car]: YesNo.No,
+  [TransportModes.Motorcycle]: YesNo.No,
+  [TransportModes.Other]: YesNo.No,
+  [TransportModes.Train]: YesNo.No,
+  [TransportModes.Truck]: YesNo.No
+}
+export enum PublicodesTrackHelpValue {
+  Unknown = 'je ne sais pas par où commencer',
+  Precise = 'objectif précis'
 }
