@@ -11,6 +11,8 @@ entreprise . secteur d'activité:
     est artisanat:
     est autre secteur:
 
+entreprise . code NAF:
+
 entreprise . code NAF niveau 1:
   avec:
     est A:

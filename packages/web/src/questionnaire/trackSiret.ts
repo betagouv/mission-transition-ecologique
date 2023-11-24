@@ -13,7 +13,8 @@ import {
   FindInRefs,
   HasInputOptions,
   TrackComponents,
-  TrackId
+  TrackId,
+  Entreprise
 } from '@/types'
 import type { Track } from '@/types'
 

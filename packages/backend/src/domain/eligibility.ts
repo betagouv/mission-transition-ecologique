@@ -1,10 +1,12 @@
 import type { ProgramData } from '@tee/web/src/types/programTypes'
 
 import Engine from 'publicodes'
-import type { PublicodesExpression } from 'publicodes'
 
 import { Result } from 'true-myth'
 import { ensureError } from '../helpers/errors'
+import { filterObject } from '../helpers/objects'
+
+import type { QuestionnaireData, PublicodesInputData } from './types'
 
 /** Expected rule to evaluate if a program should be displayed to the user or
  * filtered out (in a program's `publicodes`
@@ -14,24 +16,18 @@ import { ensureError } from '../helpers/errors'
  */
 export const FILTERING_RULE_NAME: string = 'entreprise . est ciblée'
 
-type Name = string
-type InputData = Partial<Record<Name, PublicodesExpression>>
-
 /** Filter out programs for which the company is not eligible
  *
  * @param programs - A list of programs, holding data on their eligibility
  *   rules (`publicodes` property)
- * @param inputData - Data associated with the company or the user inputs. The
- *   data is expected to be using the exact same names as the variables in the
- *   rules.
- *
+ * @param inputData - Data associated with the company or the user inputs.
  * @returns Programs from `programs` that are either eligible (rules evaluate
  *   to `true`) or which eligibility cannot be assessed (rules evaluate to
  *   `undefined`, for instance with missing data)
  */
 export const filterPrograms = (
   programs: ProgramData[],
-  inputData: InputData
+  inputData: QuestionnaireData
 ): Result<ProgramData[], Error> => {
   let filteredPrograms: ProgramData[] = []
 
@@ -63,7 +59,7 @@ const shouldKeepProgram = (evaluation: Result<boolean | undefined, Error>): bool
  * @param rules - An object encoding Publicode rules for a given program. The
  *   constant `FILTERING_RULE_NAME` determines which rule to evaluate, which is therefore
  *   mandatory.
- * @param inputData - Data associated with the company or the user inputs. The
+ * @param questionnaireData - Data associated with the company or the user inputs. The
  *   data is expected to be using the exact same names as the variables in the
  *   `rules`.
  *
@@ -71,7 +67,10 @@ const shouldKeepProgram = (evaluation: Result<boolean | undefined, Error>): bool
  *   `undefined` if the input data does not allow to fully evaluate the rule) or
  *   the Error if any.
  */
-const evaluateRule = (rules: any, inputData: InputData): Result<boolean | undefined, Error> => {
+const evaluateRule = (
+  rules: any,
+  questionnaireData: QuestionnaireData
+): Result<boolean | undefined, Error> => {
   let engine: Engine
   try {
     engine = new Engine(rules)
@@ -80,7 +79,9 @@ const evaluateRule = (rules: any, inputData: InputData): Result<boolean | undefi
     return Result.err(err)
   }
 
-  const narrowedData = narrowInput(inputData, engine)
+  const preprocessedData = preprocessInputForPublicodes(questionnaireData)
+
+  const narrowedData = narrowInput(preprocessedData, engine)
 
   engine.setSituation(narrowedData)
 
@@ -97,19 +98,12 @@ const evaluateRule = (rules: any, inputData: InputData): Result<boolean | undefi
 
 /** Narrows input data to keep only keys expected inside the rules
  */
-const narrowInput = (data: InputData, engine: Engine): Partial<InputData> => {
+const narrowInput = (data: PublicodesInputData, engine: Engine): Partial<PublicodesInputData> => {
   const parsedRules = engine.getParsedRules()
 
   const allowed = Object.keys(parsedRules)
 
-  const filtered = Object.keys(data)
-    .filter((key) => allowed.includes(key))
-    .reduce((obj, key) => {
-      return {
-        ...obj,
-        [key]: data[key]
-      }
-    }, {})
+  const filtered = filterObject(data, (entry) => allowed.includes(entry[0]))
 
   return filtered
 }
@@ -118,4 +112,27 @@ const addErrorDetails = (err: Error, programName: string): Error => {
   return new Error(`Evaluation of publicodes rules failed on program with id ${programName}`, {
     cause: err
   })
+}
+
+/** preprocesses the data gathered from the questionnaire into variables
+ * needed by publicodes */
+const preprocessInputForPublicodes = (
+  questionnaireData: QuestionnaireData
+): PublicodesInputData => {
+  let publicodesData: PublicodesInputData = { ...questionnaireData }
+
+  if (questionnaireData.codeNaf) {
+    publicodesData['entreprise . code NAF'] = enquotePublicodesLiteralString(
+      questionnaireData.codeNaf
+    )
+  }
+
+  return publicodesData
+}
+
+/** for publicodes to interpret a value as a literal string, it expects an
+ * extra pair of quotes, added by this function. Without it, it is interpreted as a reference to another rule
+ */
+const enquotePublicodesLiteralString = (value: string): string => {
+  return `"${value}"`
 }
