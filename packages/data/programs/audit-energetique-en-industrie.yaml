@@ -6,7 +6,7 @@ description: L’ADEME vous aide à financer votre audit énergétique, indispen
 description longue: Les audits énergétiques offrent pour bénéfices 15 à 25 % d'économie
   sur un site en moyenne et des bases solides pour la mise en œuvre d'un Système de
   Management de l'énergie (SMé).
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/audit-energetique-industrie
 nature de l'aide: financement
@@ -27,20 +27,48 @@ objectifs:
   des pistes d'amélioration ainsi que les gains économiques associés et le temps de
   retour sur investissement ; et d'un plan d'actions.
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - règles d'éligibilité
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  règles d'éligibilité:
+    - est éligible
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+  entreprise . est éligible:
     toutes ces conditions:
-    - entreprise . effectif <= 250
-  secteur d'activité prioritaire:
+    - a un effectif éligible
+    - entreprise . est dans une zone géographique éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+    - effectif <= 250
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est B
-    - entreprise . code NAF niveau 1 . est C
-  est dans les objectifs de l'entreprise:
+    - code NAF niveau 1 . est B
+    - code NAF niveau 1 . est C
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est ma performance énergétique
     - questionnaire . objectif prioritaire . est mon impact environnemental
     - questionnaire . objectif prioritaire . est l'écoconception
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+    - région = Martinique
+    - région = Guyane
+    - région = La Réunion
+    - région = Mayotte
+    - région = Centre-Val de Loire
+    - région = Bourgogne-Franche-Comté
+    - région = Normandie
+    - région = Grand Est
+    - région = Nouvelle-Aquitaine
+    - région = Occitanie
+    - région = Provence-Alpes-Côte d'Azur
+    - région = Corse
+    - région = Saint-Pierre-Et-Miquelon
+    - région = Polynésie française
+    - région = Guadeloupe
+    - région = Île-de-France
+    - région = Saint-Barthélemy
+    - région = Terres australes et antarctiques françaises
+    - région = Saint-Martin
+    - région = Wallis et Futuna
+    - région = Nouvelle-Calédonie
+    - région = Ile de Clipperton

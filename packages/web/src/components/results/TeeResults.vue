@@ -58,7 +58,7 @@
       class="fr-grid-row fr-grid-row--gutters fr-mb-4v">
       <div
         v-for="filter in trackConfig.filters"
-        :key="filter.field"
+        :key="filter.label"
         class="fr-col">
         <TeeResultsFilter
           :filter="filter"
@@ -172,7 +172,7 @@ import TeeResultsFilter from './TeeResultsFilter.vue'
 import TeeNoResults from './TeeNoResults.vue'
 
 // @ts-ignore
-import type { TrackChoice, TrackResultsConfig, ProgramData, FilterSignal, TrackFilter } from '@/types/index'
+import type { TrackChoice, TrackResultsConfig, ProgramData, FilterSignal, TrackFilter, PropertyPath } from '@/types/index'
 // @ts-ignore
 import { ProgramAidType } from '@/types/programTypes'
 import { navigationStore } from '@/stores/navigation'
@@ -207,16 +207,17 @@ const reFilteredPrograms = computed(() => {
   const results = filteredPrograms.filter((prog: ProgramData) => {
     // console.log('\nTeeResults > reFilteredPrograms > prog :', prog )
     const boolArray = [true]
-    for (const fieldKey in activeFilters.value) {
-      const filterVal = activeFilters.value[fieldKey]
-      const filterConfig: TrackFilter | undefined = props.trackConfig?.filters?.find((f:any) => f.field === fieldKey)
+    for (const filterLabel in activeFilters.value) {
+      const filterVal = activeFilters.value[filterLabel]
+      const filterConfig: TrackFilter | undefined = props.trackConfig?.filters?.find((f:any) => f.label === filterLabel)
+      const filterField: PropertyPath = filterConfig?.field || ''
       const trueIf = filterConfig?.trueIf || ConditionOperators.is
-      // console.log(`\nTeeResults > reFilteredPrograms > fieldKey: "${fieldKey}" - filterVal: "${filterVal}" - trueIf: "${trueIf}"` )
-      // console.log('\nTeeResults > fieldKey :', fieldKey )
-      // console.log('TeeResults > filterVal :', filterVal )
-      // console.log('TeeResults > trueIf :', trueIf )
+      console.log(`\nTeeResults > reFilteredPrograms > filterField: "${filterField}" - filterVal: "${filterVal}" - trueIf: "${trueIf}"` )
+      console.log('\nTeeResults > filterField :', filterField )
+      console.log('TeeResults > filterVal :', filterVal )
+      console.log('TeeResults > trueIf :', trueIf )
 
-      let progVal = getFrom(prog, [fieldKey])
+      let progVal = getFrom(prog, [filterField])
       progVal = JSON.parse(JSON.stringify(progVal))
       progVal = progVal[0]
 
@@ -255,7 +256,7 @@ const countReFilteredPrograms = computed(() => {
 const updateFilters = (event: FilterSignal) => {
   // console.log('\nTeeResults > updateFilters > event :', event )
   const val = {
-    [event.field]: event.value
+    [event.label]: event.value
   }
   activeFilters.value = {...activeFilters.value, ...val }
 }

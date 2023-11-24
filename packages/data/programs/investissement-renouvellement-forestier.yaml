@@ -17,7 +17,7 @@ description longue: 'Le dispositif de renouvellement forestier a trois grands ob
 
   - l’amélioration, l’enrichissement et la conversion de peuplements forestiers pauvres
   pour améliorer leur contribution à l''atténuation du changement climatique.'
-illustration: images/TEE_energie_verte.png
+illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/20230413/renouvellement-forestier
 nature de l'aide: financement
@@ -29,9 +29,9 @@ objectifs:
   précisant le montant d’aide maximum, les conditions et les modalités de versement.
 - Réalisez vos investissements.
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - secteur d'activité prioritaire
-  secteur d'activité prioritaire:
+    - est dans un secteur d'activité ciblé
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est A
+    - code NAF niveau 1 . est A

@@ -19,7 +19,7 @@ description longue: 'Le dispositif concerne les entreprises distribuant du carbu
   est déjà en place, les coûts associés à ce point de charge ne seront pas éligibles.
   Au moins un des points de recharge doit être accessible aux personnes à mobilité
   réduite, sauf en cas d’impossibilités techniques qui devront être justifiées.'
-illustration: images/TEE_energie_verte.png
+illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2022/infrastructures-recharge-vehicules-electriques-stations-service
 nature de l'aide: financement
@@ -33,14 +33,14 @@ objectifs:
   de versement.
 - Réalisez vos investissements.
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  secteur d'activité prioritaire:
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est G
-  est dans les objectifs de l'entreprise:
+    - code NAF niveau 1 . est G
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est la mobilité durable
     - questionnaire . objectif prioritaire . est ma performance énergétique

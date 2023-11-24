@@ -12,7 +12,7 @@ import { ensureError } from '../helpers/errors'
  *  @constant
  *  @default
  */
-export const FILTERING_RULE_NAME: string = 'afficher le dispositif si'
+export const FILTERING_RULE_NAME: string = 'entreprise . est ciblée'
 
 type Name = string
 type InputData = Partial<Record<Name, PublicodesExpression>>
@@ -39,7 +39,7 @@ export const filterPrograms = (
     const evaluation = evaluateRule(program.publicodes, inputData)
 
     if (evaluation.isErr) {
-      return Result.err(evaluation.error)
+      return Result.err(addErrorDetails(evaluation.error, program.id))
     }
 
     if (shouldKeepProgram(evaluation)) {
@@ -81,6 +81,7 @@ const evaluateRule = (rules: any, inputData: InputData): Result<boolean | undefi
   }
 
   const narrowedData = narrowInput(inputData, engine)
+
   engine.setSituation(narrowedData)
 
   const evaluation = engine.evaluate(FILTERING_RULE_NAME)
@@ -111,4 +112,10 @@ const narrowInput = (data: InputData, engine: Engine): Partial<InputData> => {
     }, {})
 
   return filtered
+}
+
+const addErrorDetails = (err: Error, programName: string): Error => {
+  return new Error(`Evaluation of publicodes rules failed on program with id ${programName}`, {
+    cause: err
+  })
 }

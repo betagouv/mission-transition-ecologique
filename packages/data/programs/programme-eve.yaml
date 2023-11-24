@@ -80,15 +80,15 @@ objectifs:
   en obtenant le trophée du programme EVE, le label "Fret21" ou le label "Objectif
   CO2".
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  secteur d'activité prioritaire:
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est G
-    - entreprise . code NAF niveau 1 . est H
-  est dans les objectifs de l'entreprise:
+    - code NAF niveau 1 . est G
+    - code NAF niveau 1 . est H
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est la mobilité durable
     - questionnaire . objectif prioritaire . est ma performance énergétique

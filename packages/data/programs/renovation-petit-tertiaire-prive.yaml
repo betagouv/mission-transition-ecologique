@@ -22,15 +22,15 @@ objectifs:
 - Obtenez de l'aide votre recherche de solutions en prenant en compte l’ensemble des
   aspects de votre projet (financier, juridique, technique et social).
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - règles d'éligibilité
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  règles d'éligibilité:
+    - est éligible
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+  entreprise . est éligible:
     toutes ces conditions:
     - entreprise . effectif <= 250
-  secteur d'activité prioritaire:
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
     - entreprise . code NAF niveau 1 . est C
     - entreprise . code NAF niveau 1 . est F
@@ -48,7 +48,7 @@ publicodes:
     - entreprise . code NAF niveau 1 . est S
     - entreprise . code NAF niveau 1 . est T
     - entreprise . code NAF niveau 1 . est U
-  est dans les objectifs de l'entreprise:
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est rénover mon bâtiment
     - questionnaire . objectif prioritaire . est ma performance énergétique

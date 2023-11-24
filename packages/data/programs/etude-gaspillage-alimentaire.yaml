@@ -12,7 +12,7 @@ description longue: "La loi AGEC, fixe comme objectif de réduire le gaspillage 
   \ AGEC interdit la destruction des invendus. En 2021 l’ADEME a publié une étude\
   \ sur les 12 principaux secteurs d’activité révélant qu’en moyenne la part des invendus\
   \ représentent plus de 4 milliards d'euros de valeur marchande."
-illustration: images/TEE_ampoule.png
+illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/etudes-lutte-contre-gaspillage-alimentaire
 nature de l'aide: financement
@@ -30,18 +30,35 @@ objectifs:
 - Réalisez votre étude de diagnostic ou de faisabilité.
 - Lancez votre projet (ou non) suite aux résultats de votre étude.
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  secteur d'activité prioritaire:
+    - est éligible
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+    - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est A
-    - entreprise . code NAF niveau 1 . est C
-    - entreprise . code NAF niveau 1 . est D
-    - entreprise . code NAF niveau 1 . est G
-    - entreprise . code NAF niveau 1 . est I
-  est dans les objectifs de l'entreprise:
+    - code NAF niveau 1 . est A
+    - code NAF niveau 1 . est C
+    - code NAF niveau 1 . est D
+    - code NAF niveau 1 . est G
+    - code NAF niveau 1 . est I
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est la gestion des déchets
     - questionnaire . objectif prioritaire . est mon impact environnemental
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+    - région = Île-de-France
+    - région = Bourgogne-Franche-Comté
+    - région = Centre-Val de Loire
+    - région = Corse
+    - région = Grand Est
+    - région = Mayotte
+    - région = La Réunion
+    - région = Martinique
+    - région = Normandie
+    - région = Nouvelle-Aquitaine
+    - région = Provence-Alpes-Côte d'Azur

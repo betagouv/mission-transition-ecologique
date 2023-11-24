@@ -19,15 +19,15 @@ objectifs:
 - Menez un bouquet d'actions simples ou plus engageantes pour transformer votre entreprise
   et optimiser vos coûts.
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - règles d'éligibilité
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  règles d'éligibilité:
+    - est éligible
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+  entreprise . est éligible:
     toutes ces conditions:
     - entreprise . effectif <= 249
-  secteur d'activité prioritaire:
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
     - entreprise . code NAF niveau 1 . est B
     - entreprise . code NAF niveau 1 . est C
@@ -44,6 +44,6 @@ publicodes:
     - entreprise . code NAF niveau 1 . est N
     - entreprise . code NAF niveau 1 . est Q
     - entreprise . code NAF niveau 1 . est R
-  est dans les objectifs de l'entreprise:
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est mon impact environnemental

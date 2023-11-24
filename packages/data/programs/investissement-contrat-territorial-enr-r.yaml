@@ -24,11 +24,11 @@ objectifs:
   de versement.
 - Réalisez vos investissements.
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  secteur d'activité prioritaire:
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
     - entreprise . code NAF niveau 1 . est A
     - entreprise . code NAF niveau 1 . est B
@@ -51,7 +51,7 @@ publicodes:
     - entreprise . code NAF niveau 1 . est S
     - entreprise . code NAF niveau 1 . est T
     - entreprise . code NAF niveau 1 . est U
-  est dans les objectifs de l'entreprise:
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est diminuer ma consommation d'eau
     - questionnaire . objectif prioritaire . est ma performance énergétique
