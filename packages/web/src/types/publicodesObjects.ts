@@ -57,7 +57,6 @@ export const codesNAF1: { [p: string]: YesNo } = Object.fromEntries(
 )
 
 export const SectorByNAF = {
-<<<<<<< HEAD
   [EntrepriseSector.Craftsmanship]: ['C', 'F', 'G'],
   [EntrepriseSector.Industry]: ['B', 'C', 'D', 'E'],
   [EntrepriseSector.Tourism]: ['I'],
