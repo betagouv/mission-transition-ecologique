@@ -1,16 +1,19 @@
-export const strategyAuditsSelect = {
-  id: 'track_strategy_audits_select',
+import type { Track } from '@/types'
+import { HasInputOptions, TrackComponents, TrackId } from '@/types'
+
+export const strategyAuditsSelect: Track = {
+  id: TrackId.StrategyAuditsSelect,
   category: 'myStrategy',
   title: { fr: "Quels audits" },
   label: { fr: "Le ou lesquels ?" },
   interface: {
-    component: 'buttons',
+    component: TrackComponents.Buttons,
   },
   behavior: {
     multipleChoices: true,
   },
   next: {
-    default: 'track_results'
+    default: TrackId.Results,
   },
   options: [
     {
@@ -18,7 +21,7 @@ export const strategyAuditsSelect = {
       title: { fr: 'Oui' },
       label: { fr: "🌱 Bilan de gaz à effet de serre ou bilan carbone" },
       next: {
-        default: 'track_results'
+        default: TrackId.Results,
       }
     },
     {
@@ -26,7 +29,7 @@ export const strategyAuditsSelect = {
       title: { fr: "Performance énergétique" },
       label: { fr: "⚡️ ️ Audit de performance énergétique des bâtiments ou Certification ISO 50001" },
       next: {
-        default: 'track_results'
+        default: TrackId.Results,
       }
     },
     {
@@ -34,7 +37,7 @@ export const strategyAuditsSelect = {
       title: { fr: "Consommation d'énergie" },
       label: { fr: "⚡️ ️ Audit consommation d’énergie" },
       next: {
-        default: 'track_results'
+        default: TrackId.Results,
       }
     },
 
@@ -43,7 +46,7 @@ export const strategyAuditsSelect = {
       title: { fr: "Eau" },
       label: { fr: "💧 Audit eau" },
       next: {
-        default: 'track_results'
+        default: TrackId.Results,
       }
     },
     {
@@ -51,7 +54,7 @@ export const strategyAuditsSelect = {
       title: { fr: "Déchets" },
       label: { fr: "🗑  Audit déchets" },
       next: {
-        default: 'track_results'
+        default: TrackId.Results,
       }
     },
     {
@@ -59,7 +62,7 @@ export const strategyAuditsSelect = {
       title: { fr: "Matières premières" },
       label: { fr: "🧱  Audit matières premières" },
       next: {
-        default: 'track_results'
+        default: TrackId.Results,
       }
     },
     {
@@ -67,7 +70,7 @@ export const strategyAuditsSelect = {
       title: { fr: "Certification" },
       label: { fr: "🎖  Certification ISO 14001 " },
       next: {
-        default: 'track_results'
+        default: TrackId.Results,
       }
     },
 
@@ -75,9 +78,9 @@ export const strategyAuditsSelect = {
       value: { strategy_audits_select: 'other' },
       title: { fr: 'Autre' },
       label: { fr: "Autre : " },
-      hasInput: 'text',
+      hasInput: HasInputOptions.Text,
       next: {
-        default: 'track_wastes_stake'
+        default: TrackId.WastesStake,
       }
     },
     {
@@ -85,7 +88,7 @@ export const strategyAuditsSelect = {
       title: { fr: "Je ne sais pas" },
       label: { fr: "Je ne sais pas" },
       next: {
-        default: 'track_results'
+        default: TrackId.Results,
       }
     }
   ]

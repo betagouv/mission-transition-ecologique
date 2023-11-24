@@ -68,15 +68,15 @@
 
         <!-- INPUT GROUP -->
         <DsfrInputGroup
-          v-if="field.type !== formFieldTypes.checkbox">
+          v-if="!isCheckbox(field)">
           <DsfrInput
             :type="field.type"
-            :is-textarea="field.type === formFieldTypes.textarea"
-            :rows="field.type === formFieldTypes.textarea && (field.rows || 4)"
+            :is-textarea="isTextarea(field)"
+            :rows="isTextarea(field) && (field.rows || 4)"
             :model-value="formData[field.id]"
             label-visible
             :required="field.required"
-            :label="field.label[choices.lang]"
+            :label="field?.label?.[choices.lang]"
             :placeholder="(field.hint && field.hint[choices.lang]) || ''"
             @update:modelValue="updateFormData($event, field.id)"
             >
@@ -85,7 +85,7 @@
 
         <!-- CHECKBOXES -->
         <DsfrCheckbox
-          v-if="field.type === formFieldTypes.checkbox"
+          v-if="isCheckbox(field)"
           :model-value="formData[field.id]"
           :name="field.id"
           :required="field.required"
@@ -93,16 +93,16 @@
           <!-- :hint="field.hint[choices.lang]" -->
           <template #label>
             <span>
-              {{ field.label[choices.lang] }}
+              {{ field?.label?.[choices.lang] }}
             </span>
           </template>
         </DsfrCheckbox>
 
         <!-- CHECKBOX HINT -->
-        <div v-if="field.type === formFieldTypes.checkbox">
+        <div v-if="isCheckbox(field)">
           <span
             class="fr-hint-text fr-mt-5v"
-            v-html="field.hint[choices.lang] || ''">
+            v-html="field.hint?.[choices.lang] || ''">
           </span>
         </div>
       </div>
@@ -140,10 +140,32 @@
     v-if="formIsSent"
     class="fr-mt-5v fr-tee-form">
     <!-- FORM ALERT AFTER SENDING-->
-    <div :class="`fr-alert fr-alert--${!requestResponses || requestResponses?.map(r => r.status).every(s => s === 200 || s === 201) ? 'success' : 'error'}`">
-      <h3 class="fr-alert__title">
+    <div :class="`fr-alert fr-alert--${hasNoRespError ? 'success' : 'error fr-tee-form-error'}`">
+      <h3 
+        v-if="hasNoRespError"
+        class="fr-alert__title">
         {{ choices.t(`form.sent`) }}
       </h3>
+      <div 
+        v-else
+        class="fr-alert__title">
+        <p>
+          {{ choices.t(`form.notSent`) }}
+        </p>
+        <p>
+          <code 
+            v-for="(resp, idx) in requestResponses"
+            :key="idx"
+            class="error-code fr-py-2v">
+            {{ choices.t('errors.error') }} {{ resp.status }}
+            :
+            "{{ resp.message }}"
+          </code>
+        </p>
+        <p>
+          {{ choices.t(`form.contactHelp`) }} <br> {{ contactEmail }}
+        </p>
+      </div>
       <!-- DEBUGGING -->
       <div
         class="fr-mt-5v fr-highlight"
@@ -169,17 +191,19 @@
     </div>
 
     <!-- NOW WHAT -->
-    <h6 class="fr-mt-10v">
-      {{ choices.t('form.nowWhat')}}
-    </h6>
-    <p class="fr-mt-10v fr-mb-3v">
-      <span class="fr-icon-arrow-right-line fr-mr-3v" aria-hidden="true"></span>
-      <span v-html="choices.t('form.advisors')"></span>
-    </p>
-    <p class="fr-mb-3v">
-      <span class="fr-icon-arrow-right-line fr-mr-3v" aria-hidden="true"></span>
-      <span v-html="choices.t('form.phoneContact')"></span>
-    </p>
+    <div v-if="hasNoRespError">
+      <h6 class="fr-mt-10v">
+        {{ choices.t('form.nowWhat')}}
+      </h6>
+      <p class="fr-mt-10v fr-mb-3v">
+        <span class="fr-icon-arrow-right-line fr-mr-3v" aria-hidden="true"></span>
+        <span v-html="choices.t('form.advisors')"></span>
+      </p>
+      <p class="fr-mb-3v">
+        <span class="fr-icon-arrow-right-line fr-mr-3v" aria-hidden="true"></span>
+        <span v-html="choices.t('form.phoneContact')"></span>
+      </p>
+    </div>
   </div>
 
   <!-- DEBUGGING -->
@@ -208,10 +232,11 @@
 
 <script setup lang="ts">
 
-import { onBeforeMount, ref, computed, toRaw } from 'vue'
+import { computed, onBeforeMount, ref, toRaw } from 'vue'
 
 // @ts-ignore
-import type { FormValues, FormField, FormOptions, FormCallback, ProgramData, ReqResp } from '@/types/index'
+import type { FormCallback, FormField, FormOptions, FormValues, ProgramData, ReqResp } from '@/types/index'
+import { CallbackActions, FormFieldTypes } from '@/types/index'
 
 import { sendApiRequest } from '../utils/requests'
 import { remapItem } from '../utils/helpers'
@@ -219,7 +244,6 @@ import { remapItem } from '../utils/helpers'
 import { tracksStore } from '../stores/tracks'
 import { choicesStore } from '../stores/choices'
 import { analyticsStore } from '../stores/analytics'
-import { FormFieldTypes } from '@/types/index'
 
 const choices = choicesStore()
 const tracks = tracksStore()
@@ -227,6 +251,10 @@ const analytics = analyticsStore()
 
 // const usedTracks: UsedTrack[] | any[] = tracks.getAllUsedTracks
 const trackValues: any[] = tracks.getAllUsedTracksValues
+
+// @ts-ignore
+const metaEnv = import.meta.env
+const contactEmail: string = metaEnv.VITE_CONTACT_EMAIL || 'france-transition@beta.gouv.fr'
 
 interface DataProps {
   programId: string
@@ -237,7 +265,7 @@ interface Props {
   formOptions: FormOptions,
   dataProps: DataProps,
   program: ProgramData,
-  debug?: boolean,
+  debug?: boolean
 }
 const props = defineProps<Props>()
 
@@ -257,12 +285,25 @@ const canSaveFrom = computed(() => {
   return boolArr.every(v => (!!v && v !== ''))
 })
 
+const hasNoRespError = computed(() => {
+  const hasError = !requestResponses.value || requestResponses.value?.map(r => r.status).every(s => s === 200 || s === 201)
+  return hasError
+})
+
 const findPrefix = (str: string, prefixCode: string = 'of') => {
   return choices.t(`articles.${str}.${prefixCode}`)
 }
 
 const capitalizeFirstLetter = (str: string) => {
   return str.charAt(0).toUpperCase() + str.slice(1)
+}
+
+const isCheckbox = (field: FormField) => {
+  return field.type === FormFieldTypes.Checkbox
+}
+
+const isTextarea = (field: FormField) => {
+  return field.type === FormFieldTypes.Textarea
 }
 
 
@@ -278,7 +319,7 @@ onBeforeMount(() => {
     // console.log('TeeForm > onBeforeMount >  field :', field)
 
     // set field's key
-    initValues[field.id] = field.type === 'checkbox' ? false : ''
+    initValues[field.id] = isCheckbox(field) ? false : ''
 
     // @ts-ignore
     if (field.required) { requiredFields.value.push(field.id) }
@@ -335,10 +376,10 @@ const saveFormData = async () => {
     // console.log('TeeForm > saveFormData >  callback.action :', callback.action)
     let resp: ReqResp = {}
     switch (callback.action) {
-      case 'createContact':
+      case CallbackActions.CreateContact:
         resp = await sendApiRequest(callback, toRaw(formData.value), trackValues, props.dataProps, choices.lang)
         break
-      case 'sendTransactionalEmail':
+      case CallbackActions.SendTransactionalEmail:
         resp = await sendApiRequest(callback, toRaw(formData.value))
         break
     }

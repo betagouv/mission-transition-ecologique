@@ -1,10 +1,13 @@
-export const roles = {
-  id: 'track_roles',
+import type { Track } from '@/types'
+import { TrackComponents, TrackId } from '@/types'
+
+export const roles: Track = {
+  id: TrackId.Roles,
   category: 'myEntreprise',
   title: { fr: 'Mon rôle' },
   label: { fr: "Quel est votre rôle ?" },
   interface: {
-    component: 'buttons',
+    component: TrackComponents.Buttons,
   },
   behavior: {
     multipleChoices: false,
@@ -15,7 +18,7 @@ export const roles = {
       title: { fr: 'Gérant.e' },
       label: { fr: "🧑‍💼 Je suis gérant.e de cette entreprise" },
       next: {
-        default: 'track_results'
+        default: TrackId.Results,
       }
     },
     {
@@ -23,7 +26,7 @@ export const roles = {
       title: { fr: 'Salarié.e' },
       label: { fr: "👩‍🎤 Je suis salarié.e de cette entreprise" },
       next: {
-        default: 'track_results'
+        default: TrackId.Results,
       }
     },
     {
@@ -31,7 +34,7 @@ export const roles = {
       title: { fr: 'Consultant.e' },
       label: { fr: "🧑‍💻 Je suis un.e consultant.e extérieur.e" },
       next: {
-        default: 'track_results'
+        default: TrackId.Results,
       }
     },
     {
@@ -39,7 +42,7 @@ export const roles = {
       title: { fr: 'Autre' },
       label: { fr: "💁 J'ai un autre rôle" },
       next: {
-        default: 'track_results'
+        default: TrackId.Results,
       }
     }
   ]

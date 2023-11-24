@@ -1,8 +1,11 @@
-export const energyReductionPriority = {
-  id: 'track_energy_reduction_priority',
+import type { Track } from '@/types'
+import { TrackComponents, TrackId } from '@/types'
+
+export const energyReductionPriority: Track = {
+  id: TrackId.EnergyReductionPriority,
   category: 'myEnergy',
   title: { fr: "Réduction de la consommation" },
-  label: { fr: "La réduction de vos consommations d’énergie est-elle une priorité pour vous ? " },
+  label: { fr: "La réduction de vos consommations d’énergie est-elle une priorité pour vous ?" },
   callout: {
     header: { fr: 'Thématique' },
     headerStyle: 'color: #3A3A3A;',
@@ -13,13 +16,13 @@ export const energyReductionPriority = {
     imageLeft: 'images/thema/thema-energie.svg',
   },
   interface: {
-    component: 'buttons',
+    component: TrackComponents.Buttons,
   },
   behavior: {
     multipleChoices: false,
   },
   next: {
-    default: 'track_results'
+    default: TrackId.Results
   },
   options: [
     {
@@ -27,7 +30,7 @@ export const energyReductionPriority = {
       title: { fr: 'Oui' },
       label: { fr: "👍 Oui, c’est une priorité" },
       next: {
-        default: 'track_strategy_audits'
+        default: TrackId.StrategyAudits
       }
     },
     {
@@ -35,7 +38,7 @@ export const energyReductionPriority = {
       title: { fr: "Non" },
       label: { fr: "❌ Ce n’est pas ma priorité" },
       next: {
-        default: 'track_strategy_audits'
+        default: TrackId.StrategyAudits
       }
     },
     {
@@ -43,7 +46,7 @@ export const energyReductionPriority = {
       title: { fr: 'Je ne sais pas' },
       label: { fr: "Je ne sais pas" },
       next: {
-        default: 'track_strategy_audits'
+        default: TrackId.StrategyAudits
       }
     },
   ]

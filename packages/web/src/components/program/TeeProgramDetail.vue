@@ -3,14 +3,14 @@
   <div class="">
 
     <!-- BACK TO RESULTS BTN -->
-    <DsfrButton
-      class="fr-mb-3v fr-link"
-      :label="choices.t('results.backToResults')"
-      icon="ri-arrow-left-line"
+    <button
+      class="fr-btn fr-btn--tertiary-no-outline inline-flex fr-mb-3v fr-link"
       tertiary
       noOutline
-      @click="resetDetailResult"
-    />
+      @click="resetDetailResult">
+      <v-icon name="ri-arrow-left-line" aria-hidden="true"></v-icon>
+      {{ choices.t('results.backToResults') }}
+    </button>
 
     <!-- PROGRAM DETAILS -->
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-10v">
@@ -27,9 +27,6 @@
       <!-- TITLE & RESUME -->
       <div class="fr-col fr-pl-10v">
         <!-- PROGRAM TITLE -->
-        <!-- <h1>
-          {{ program.title }}
-        </h1> -->
         <p class="tee-program-title fr-mb-5v">
           {{ program.titre }}
         </p>
@@ -63,29 +60,7 @@
           @click="toggleShowForm"
           ref="modalOrigin"/> -->
 
-        <!-- PROGRAM DESCRIPTION -->
-        <div
-          class="fr-mb-18v">
-          <h3>
-            {{ choices.t('program.programDescription') }}
-          </h3>
-          <div class="fr-tee-description-list">
-            <p
-              v-for="(paragraph, idx) in program.objectifs"
-              :key="`description-paragraph-${idx}`"
-              class="fr-mb-6v">
-              <span
-                class="fr-tee-description-paragraph-marker">
-                {{ idx + 1 }} |
-              </span>
-              <span
-                class="fr-tee-description-paragraph-content">
-                {{ paragraph }}
-              </span>
-            </p>
-          </div>
-        </div>
-
+        <ProgramObjective :program='program'></ProgramObjective>
       </div>
 
     </div>
@@ -292,53 +267,67 @@
 import { ref, onBeforeMount } from 'vue'
 
 // @ts-ignore
-import type { ProgramData, Track } from '@/types/index'
-
+import TeeTile from '../TeeTile.vue'
 // @ts-ignore
-import TeeTile from './TeeTile.vue'
-// @ts-ignore
-import TeeForm from './TeeForm.vue'
+import TeeForm from '../TeeForm.vue'
 
-import { choicesStore } from '../stores/choices'
-import { programsStore } from '../stores/programs'
-import { analyticsStore } from '../stores/analytics'
+import { choicesStore } from '../../stores/choices'
+import { tracksStore } from '../../stores/tracks'
+import { programsStore } from '../../stores/programs'
+import { navigationStore } from '../../stores/navigation'
+import { analyticsStore } from '../../stores/analytics'
 
-import { scrollToTop } from '../utils/helpers'
+import { scrollToId } from '../../utils/helpers'
+import type { TrackId } from '@/types'
+import ProgramObjective from '@/components/program/ProgramObjective.vue'
 
 const choices = choicesStore()
+const tracks = tracksStore()
 const programs = programsStore()
 const analytics = analyticsStore()
+const nav = navigationStore()
+
+const program = ref<any>()
+const trackConfig = ref<any>()
 
 const blockColor = '#000091'
 const showForm = ref<boolean>(false)
-// const columnTiles = ref<string>('fr-col-4 fr-sm-3 fr-col-md-4 fr-col-lg-2')
 const columnTiles = ref<string>('fr-col')
 
 interface Props {
-  program: ProgramData,
-  trackConfig: Track | any,
-  trackElement: any;
+  programId: string | number,
+  trackId: TrackId | undefined,
+  disableWidget?: boolean,
   debug?: boolean,
 }
 const props = defineProps<Props>()
 
 // functions
-const resetDetailResult = () => {
-  // console.log('TeeProgramDetail > resetDetailResult > trackConfig : ', props.trackConfig )
+const resetDetailResult = async () => {
+  // console.log('TeeProgramDetail > resetDetailResult > props.trackConfig : ', props.trackConfig )
   programs.resetDetailResult()
-  scrollToTop(props.trackElement, props.program.id)
+  nav.setCurrentDetailId('', props.disableWidget)
+  nav.updateUrl(props.disableWidget)
+
+  scrollToId(`${props.programId}`)
 }
 const toggleShowForm = () => {
   // console.log('TeeProgramDetail > toggleShowForm > trackConfig : ', props.trackConfig )
   showForm.value = !showForm.value
   if (showForm.value) {
-    analytics.sendEvent('result_detail', 'show_form', props.program.id)
+    analytics.sendEvent('result_detail', 'show_form', props.programId)
   }
 }
 
-onBeforeMount(() => {
+onBeforeMount(async() => {
+  // await router.isReady()
+  // console.log('TeeProgramDetail > onBeforeMount > props.programId :', props.programId )
+  program.value = programs.getProgramById(props.programId)
+  if (props.trackId) {
+    trackConfig.value = tracks.getTrack(props.trackId)
+  }
   // console.log('TeeProgramDetail > onBeforeMount > resultsProgs :', resultsProgs )
   // analytics / send event
-  analytics.sendEvent('result_detail', 'show_detail', props.program.id)
+  analytics.sendEvent('result_detail', 'show_detail', props.programId)
 })
 </script>

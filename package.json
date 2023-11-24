@@ -17,6 +17,7 @@
     "build": "npm run build-json-output && npm run build-back && npm run build-front",
     "build-back": "npm run build-json-output && npm run build -w packages/backend",
     "build-front": "npm run build-json-output && npm run build -w packages/web",
+    "build-and-preview-front": "npm run build-front && PORT=4242 npm run start-preview -w packages/web",
     "build-json-output": "npm run build-json-output -w packages/data",
     "build-json-output-watch": "npm run build-json-output-watch -w packages/data",
     "dev": "npx concurrently \"npm run build-json-output-watch\" \"npm run dev -w packages/backend\" \"npm run dev -w packages/web\"",
@@ -32,7 +33,7 @@
     "npm": "9.x"
   },
   "dependencies": {
-    "typescript": "~4.8.4"
+    "typescript": "~5.2.2"
   },
   "devDependencies": {
     "@types/cors": "^2.8.13",

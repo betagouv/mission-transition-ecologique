@@ -5,7 +5,11 @@ export const frDict = {
   send: 'Envoyer',
   modify: 'modifier',
   or: 'Ou',
-  licence: 'Ce widget et son code source sont sous licence',
+  footer: {
+    thisApplicationAndIts: 'Cette application et son',
+    sourceCode: 'code source',
+    areUnderlicence: 'sont sous licence',
+  },
   selection: {
     mySelection: 'Ma sélection',
     selected: 'Sélectionné'
@@ -13,16 +17,18 @@ export const frDict = {
   form: {
     mandatory: 'Champs obligatoires',
     sent: 'Formulaire envoyé',
+    notSent: "Problème lors de l'envoi du formulaire",
+    contactHelp: 'Merci de nous contacter à',
     nowWhat: 'Et maintenant ?',
     advisors: 'Nous allons <b>identifier le bon conseiller</b> près de chez vous',
-    phoneContact:
-      'Le conseiller vous <b>contactera par téléphone</b> dans les 5 jours (délai moyen de prise en charge)'
+    phoneContact: 'Le conseiller vous <b>contactera par téléphone</b> dans les 5 jours (délai moyen de prise en charge)',
   },
   input: {
     research: 'Recherche',
     search: 'Rechercher'
   },
   results: {
+    results: 'résultats',
     backToResults: 'Retour aux résultats',
     // showForm: "Candidatez pour le dispositif {title}",
     knowMore: 'En savoir plus',
@@ -30,25 +36,32 @@ export const frDict = {
     alertTitle: 'Merci, voici vos résultats',
     alertTitleNoResults: 'Pas de résultats',
     alertNoResults:
-      "Désolé, nous n'avons pas trouvé de dispositif adapté à votre situation et vos demandes",
+    "Désolé, nous n'avons pas trouvé de dispositif adapté à votre situation et vos demandes",
     alertDescription:
-      'Vous pouvez également nous envoyer un mail via le formulaire ci-après pour être mis en contact avec des conseillers',
+    'Vous pouvez également nous envoyer un mail via le formulaire ci-après pour être mis en contact avec des conseillers',
     yourResults: 'Vos résultats',
-    fittingPrograms: 'Les aides correspondant à vos choix'
+    fittingPrograms: 'Les aides correspondant à vos choix',
+    filterSelect: "Filtrer par {fieldLabel}",
+    resetSelect: '(réinitialiser)'
   },
   errors: {
     error: 'Erreur'
   },
   program: {
     programResume: 'Le dispositif en deux mots',
-    programDescription: 'Au programme :',
+    programObjective: {
+      title: {
+        inProgram: 'Au programme :',
+        applicationSteps: 'Les étapes de votre demande d’aide :'
+      }
+    },
     programProviders: 'Contact',
     programType: "Nature de l'aide",
     programDuration: 'Prestation',
     programLoanDuration: 'Durée du prêt'
   },
   programCosts: {
-    cost: 'Coût reste à charge',
+    cost: "Coût restant à charge",
     costPrefix: 'Coût',
     aid: 'Montant du financement',
     aidPrefix: "Montant de l'aide",
