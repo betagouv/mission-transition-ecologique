@@ -212,10 +212,10 @@ const reFilteredPrograms = computed(() => {
       const filterConfig: TrackFilter | undefined = props.trackConfig?.filters?.find((f:any) => f.label === filterLabel)
       const filterField: PropertyPath = filterConfig?.field || ''
       const trueIf = filterConfig?.trueIf || ConditionOperators.is
-      console.log(`\nTeeResults > reFilteredPrograms > filterField: "${filterField}" - filterVal: "${filterVal}" - trueIf: "${trueIf}"` )
-      console.log('\nTeeResults > filterField :', filterField )
-      console.log('TeeResults > filterVal :', filterVal )
-      console.log('TeeResults > trueIf :', trueIf )
+      // console.log(`\nTeeResults > reFilteredPrograms > filterField: "${filterField}" - filterVal: "${filterVal}" - trueIf: "${trueIf}"` )
+      // console.log('\nTeeResults > filterField :', filterField )
+      // console.log('TeeResults > filterVal :', filterVal )
+      // console.log('TeeResults > trueIf :', trueIf )
 
       let progVal = getFrom(prog, [filterField])
       progVal = JSON.parse(JSON.stringify(progVal))
