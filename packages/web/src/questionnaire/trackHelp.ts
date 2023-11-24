@@ -1,5 +1,11 @@
 import type { Track } from '@/types'
-import { Questionnaire, TrackComponents, TrackId } from '@/types'
+import {
+  PublicodesTrackHelpValue,
+  Questionnaire,
+  TrackComponents,
+  TrackHelpValue,
+  TrackId
+} from '@/types'
 
 export const help: Track = {
   id: TrackId.Help,
@@ -29,8 +35,8 @@ export const help: Track = {
   options: [
     {
       value: {
-        user_help: 'unknown',
-        [Questionnaire.path]: 'je ne sais pas par où commencer'
+        user_help: TrackHelpValue.Unknown,
+        [Questionnaire.path]: PublicodesTrackHelpValue.Unknown
       },
       title: { fr: 'Je ne sais pas' },
       label: { fr: 'Je ne sais pas par où commencer' },
@@ -46,8 +52,8 @@ export const help: Track = {
     },
     {
       value: {
-        user_help: 'precise',
-        [Questionnaire.path]: 'objectif précis'
+        user_help: TrackHelpValue.Precise,
+        [Questionnaire.path]: PublicodesTrackHelpValue.Precise
       },
       title: { fr: "J'ai un objectif" },
       label: { fr: "J'ai un objectif précis en tête" },
@@ -59,19 +65,6 @@ export const help: Track = {
       imageTop: 'images/tracks/j-ai-un-obectif.svg',
       next: {
         default: TrackId.Siret
-      }
-    },
-    {
-      disabled: true,
-      value: { user_help: 'direct' },
-      title: { fr: 'Résultats' },
-      label: { fr: 'Les résultas' },
-      resume: { fr: 'Accès direct à tous les résultats' },
-      hintImage: { fr: '0 min. chrono !' },
-      hintImageIcon: 'fr-icon-timer-line',
-      imageTop: 'images/tracks/j-ai-un-obectif.svg',
-      next: {
-        default: TrackId.Results
       }
     }
   ]
