@@ -23,7 +23,7 @@ autres opérateurs:
 url: https://www.baisseleswatts.fr/
 nature de l'aide: accompagnement
 coût de l'accompagnement: Gratuit
-durée de l'accompagnement: 2j
+durée de l'accompagnement: 2 jours
 objectifs:
 - Visualisez votre consommation d'énergie par équipement en ouvrant un « Carnet de
   bord Energie » sur https://www.baisseleswatts.fr/
@@ -68,4 +68,3 @@ publicodes:
   entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est ma performance énergétique
-    - questionnaire . objectif prioritaire . est mon impact environnemental

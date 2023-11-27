@@ -144,13 +144,13 @@
       "enum": [
         "ADEME",
         "ASP",
-        "Agence de l'Eau",
         "Agence de l'Eau Adour-Garonne",
         "Agence de l'Eau Artois-Picardie",
         "Agence de l'Eau Loire-Bretagne",
         "Agence de l'Eau Rhin-Meuse",
         "Agence de l'Eau Rhône-Méditerranée-Corse",
         "Agence de l'Eau Seine-Normandie",
+        "Agence de l'Eau",
         "Bpifrance",
         "Breizh Fab",
         "CCI Auvergne-Rhône-Alpes",
@@ -163,9 +163,9 @@
         "CCI Morbihan",
         "CCI Normandie",
         "CCI Occitanie",
+        "CCI ou CMA",
         "CCI Île-de-France",
         "CCI",
-        "CCI ou CMA",
         "CEE",
         "CETIM",
         "CMA Auvergne-Rhône-Alpes",
@@ -183,6 +183,7 @@
         "CMA Île-de-France",
         "CMA",
         "DDFIP",
+        "DREAL Bretagne",
         "EcoCO2",
         "France Rénov'",
         "La Poste",
@@ -190,7 +191,10 @@
         "ORACE en Pays de la Loire",
         "Organisations professionnelles",
         "Région Bretagne",
-        "UIMM"
+        "Saur",
+        "Suez",
+        "UIMM",
+        "Véolia Eau"
       ]
     }
   }

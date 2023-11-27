@@ -4,6 +4,7 @@ import os
 import random
 import re
 import sys
+import urllib.request
 from typing import Any
 
 import pylightxl
@@ -50,7 +51,7 @@ ALL = "toutes ces conditions"
 ANY = "une de ces conditions"
 
 
-def printProgramYAML(rawData, colNumbers):
+def printProgramYAML(rawData, colNumbers, id):
     cn = colNumbers
 
     def get(name):
@@ -65,7 +66,7 @@ def printProgramYAML(rawData, colNumbers):
     if get("Description longue"):
         program["description longue"] = get("Description longue")
 
-    program["illustration"] = randomIllustration()
+    program["illustration"] = tryAndGetIllustration(id)
     program["opérateur de contact"] = get("Opérateur de contact")
 
     autresOp = csv_to_list(get("Autres opérateurs"))
@@ -195,6 +196,23 @@ def readXL(path, worksheet):
 
 def identifyColNumbers(header: list[Any]):
     return {h: i for h, i in zip(header, range(len(header)))}
+
+
+def tryAndGetIllustration(id: str):
+    url = f"https://raw.githubusercontent.com/betagouv/transition-ecologique-entreprises-widget/preprod/packages/data/programs/{id}.yaml"
+    try:
+        with urllib.request.urlopen(url) as response:
+            program_data = response.read().decode(
+                response.headers.get_content_charset()
+            )
+    except:
+        return randomIllustration()
+
+    illustrationLine = re.search(r"\nillustration: ([^\n]*)\n", program_data)
+    if illustrationLine is None:
+        return randomIllustration()
+    illustration = illustrationLine.group(1)
+    return illustration
 
 
 def randomIllustration():
@@ -381,8 +399,8 @@ if __name__ == "__main__":
             try:
                 print(f"🖊️ {id}.yaml")
                 with open(os.path.join(OUTPUT_DIR, f"{id}.yaml"), "x") as f:
-                    f.write(printProgramYAML(row, colNumbers))
+                    f.write(printProgramYAML(row, colNumbers, id))
             except Exception:
                 print(f"🖊️ {id}-2.yaml")
                 with open(os.path.join(OUTPUT_DIR, f"{id}-2.yaml"), "x") as f:
-                    f.write(printProgramYAML(row, colNumbers))
+                    f.write(printProgramYAML(row, colNumbers, f"{id}-2"))
