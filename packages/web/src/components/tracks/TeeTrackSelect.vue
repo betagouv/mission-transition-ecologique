@@ -3,8 +3,8 @@
   <div class="fr-select-group">
     <select
       class="fr-select"
-      :id="`${trackId}-select`"
-      :name="`${trackId}-select`"
+      :id="`${track.id}-select`"
+      :name="`${track.id}-select`"
       @change="updateLocalSelection">
       <!-- DEFAULT OPTION -->
       <option
@@ -16,35 +16,24 @@
       <!-- VALUES -->
       <option
         v-for="(optionVal, idx) in options"
-        :key="`${trackId}-select-option-${idx}`"
+        :key="`${track.id}-select-option-${idx}`"
         :value="idx">
         {{ optionVal?.label[choices.lang]  }}
       </option>
     </select>
   </div>
 
-  <!-- DEBUGGING -->
-  <!-- <p>
-    activeOption.value: <pre><code>{{ activeOption?.value }}</code></pre>
-  </p> -->
-  <!-- <p>
-    options : 
-    <pre><code>{{ options }}</code></pre>
-  </p> -->
-
 </template>
 
 <script setup lang="ts">
 
-import type { TrackOptionsSelect } from '@/types'
+import type { Track, TrackOptionsSelect } from '@/types'
 
 import { ref } from 'vue'
 import { choicesStore } from '../../stores/choices'
 
 interface Props {
-  trackId: string,
-  options: TrackOptionsSelect[],
-  debug?: boolean
+  track: Track
 }
 const props = defineProps<Props>()
 
@@ -54,15 +43,17 @@ const activeOption = ref<any>()
 
 const emit = defineEmits(['updateSelection'])
 
+const options: TrackOptionsSelect[] = props.track.options?.filter((o): o is TrackOptionsSelect => !!o.label) || []
+
 const updateLocalSelection = (event: any) => {
   // console.log()
   // console.log('TeeTrackSelect > updateLocalSelection > event :', event)
-  const val = event.target.value
-  // console.log('TeeTrackSelect > updateLocalSelection > val :', val)
+  const index = event.target.value
+  // console.log('TeeTrackSelect > updateLocalSelection > index :', index)
 
   const isReset = event.target.value === ''
   // set local ref
-  activeOption.value = isReset ? undefined : props.options[val]
+  activeOption.value = isReset ? undefined : options[index]
 
   // send signal to parent
   const data = {

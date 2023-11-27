@@ -335,11 +335,9 @@
 
       <!-- AS SELECT -->
       <div
-        v-if="renderAs === trackComponents.Select">
+        v-if="track !== undefined && renderAs === trackComponents.Select">
         <TeeTrackSelect
-          :track-id="trackId"
-          :options="optionsArray"
-          :debug="debug"
+          :track="track"
           @update-selection="updateSelectionValueFromSelectSignal($event)"
           />
       </div>
@@ -399,7 +397,7 @@ import { choicesStore } from '@/stores/choices'
 import { analyticsStore } from '@/stores/analytics'
 // import type { DsfrButton } from '@gouvminint/vue-dsfr/types'
 // @ts-ignore
-import type { ColsOptions, NextTrackRules, Track, TrackOptions } from '@/types'
+import type { ColsOptions, NextTrackRules, Track, TrackOptions, TrackOptionsSelect, TrackOptionsInput } from '@/types'
 import { isTrackOptionsInput, TrackComponents, TrackId } from '@/types'
 
 import { remapItem, scrollToTop } from '@/utils/helpers'
@@ -473,7 +471,7 @@ const allowMultiple: boolean = !!track?.behavior?.multipleChoices
 
 // @ts-ignore
 const trackOperator: boolean = track?.behavior?.operator || false
-const optionsArray = track?.options?.filter( (o: TrackOptions) => !o.disabled) ?? []
+const optionsArray = track?.options?.filter( (o): o is (TrackOptions | TrackOptionsSelect | TrackOptionsInput) => !o.disabled) ?? []
 
 // computed
 const isTrackResults = computed(() => {

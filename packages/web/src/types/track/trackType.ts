@@ -124,10 +124,6 @@ export interface TrackOptions {
   next?: TrackNext
 }
 
-export interface TrackOptionsSelect extends TrackOptions {
-  label: Translations
-}
-
 export interface InputCleaningRule {
   operator?: ConditionOperators
   conditionValue?: string | number
@@ -145,6 +141,9 @@ export interface TrackOptionsInput extends TrackOptions {
   wildcard?: TrackOptionWildcard
 }
 
+export interface TrackOptionsSelect extends TrackOptions {
+  label: Translations
+}
 interface TrackOptionWildcard {
   label: Translations
   next: TrackNext
