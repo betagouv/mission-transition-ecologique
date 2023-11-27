@@ -1,22 +1,21 @@
 titre: Engins moins polluants
 promesse: Investissez dans des engins non routiers moins polluants
-description: Bénéficiez d'une déduction fiscale à l'achat d'engins non routiers fonctionnant
-  au gaz naturel, à l'énergie électrique ou à l'hydrogène.
-description longue: 'La déduction s’applique :
-
-  - aux entreprises du bâtiment et de travaux publics,
-
-  - aux entreprises produisant des substances minérales solides,
-
-  - aux exploitants aéroportuaires,
-
-  - aux exploitants de remontées mécaniques et de domaines skiables.
-
-  Sont éligibles les engins non routiers fonctionnant au gaz naturel, à l''énergie
-  électrique ou à l''hydrogène, ou combinant l''énergie électrique et une motorisation
-  à l''essence ou au superéthanol E85 et ceux combinant l''essence à du gaz naturel
-  carburant ou du gaz de pétrole liquéfié dont les émissions sont inférieures ou égales
-  à une valeur fixée par décret.'
+description: Vous souhaitez investir dans des engins mobiles non routiers fonctionnant
+  aux énergies alternatives (gaz naturel, énergie électrique, hydrogène, hybride...)
+  ? Bénéficiez d'une déduction fiscale pour votre achat.
+description longue: "La déduction s’applique :\n• aux entreprises du bâtiment et de\
+  \ travaux publics,\n•  aux entreprises produisant des substances minérales solides,\n\
+  •  aux exploitants aéroportuaires,\n•  aux exploitants de remontées mécaniques et\
+  \ de domaines skiables.\n\nSont éligibles :\n•  Les engins \"non routiers\",c'est-à-dire\
+  \ n'ayant pas reçu d'autorisation pour circuler sur la voie publique et n'étant\
+  \ pas immatriculés.\n•  Les engins non routiers inscrits à l'actif immobilisé et\
+  \ fonctionnant au gaz naturel, à l'énergie électrique ou à l'hydrogène, \n• Les\
+  \ engins non routiers combinant l'énergie électrique et une motorisation à l'essence\
+  \ ou au superéthanol E85 et ceux combinant l'essence à du gaz naturel carburant\
+  \ ou du gaz de pétrole liquéfié dont les émissions sont inférieures ou égales à\
+  \ une valeur fixée par décret, qui relèvent de l'une catégories suivantes :\n- matériels\
+  \ et outillages utilisés pour des opérations industrielles,\n- matériels de manutention,\n\
+  - moteurs installés dans les matériels des deux précédentes catégories."
 illustration: images/TEE_energie_verte.png
 opérateur de contact: DDFIP
 url: https://les-aides.fr/aide/VxMvGSwMDA4vGRUgJA/ddfip/suramortissement-des-investissements-d-engins-non-routiers-moins-polluants.html
@@ -26,7 +25,7 @@ objectifs:
 - Vérifiez l'éligibilité de l'engin que vous souhaitez acquérir.
 - Déduisez l'aide de vos résultats imposables.
 - Bénéficiez d'une déduction exceptionnelle sur votre résultat imposable, de 40% à
-  60% du prix de revient des engins non routiers.
+  60% du prix de revient de votre engin.
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
@@ -34,27 +33,9 @@ publicodes:
     - a un objectif ciblé
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - code NAF niveau 1 . est A
     - code NAF niveau 1 . est B
-    - code NAF niveau 1 . est C
-    - code NAF niveau 1 . est D
-    - code NAF niveau 1 . est E
     - code NAF niveau 1 . est F
-    - code NAF niveau 1 . est G
     - code NAF niveau 1 . est H
-    - code NAF niveau 1 . est I
-    - code NAF niveau 1 . est J
-    - code NAF niveau 1 . est K
-    - code NAF niveau 1 . est L
-    - code NAF niveau 1 . est M
-    - code NAF niveau 1 . est N
-    - code NAF niveau 1 . est O
-    - code NAF niveau 1 . est P
-    - code NAF niveau 1 . est Q
-    - code NAF niveau 1 . est R
-    - code NAF niveau 1 . est S
-    - code NAF niveau 1 . est T
-    - code NAF niveau 1 . est U
   entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est la mobilité durable

@@ -13,6 +13,7 @@ objectifs:
 - Réalisez votre demande de prêt pour votre investissement.
 - 'L’investissement peut porter sur des équipements qui visent l’amélioration des
   postes suivants : éclairage, froid, chauffage, climatisation, motorisation électrique.'
+- Ce prêt est éligible aux certificats d'économies d'énergie (CEE)
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
@@ -81,4 +82,3 @@ publicodes:
   entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est ma performance énergétique
-    - questionnaire . objectif prioritaire . est l'écoconception

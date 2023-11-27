@@ -19,7 +19,7 @@ montant du financement: Jusqu'à 70% du coût de l'étude, dans un maximum de 10
   €
 objectifs:
 - Choisissez le prestataire qui va vous accompagner pour mener ce Test de Réponse
-  Thermique (TRT)
+  Thermique (TRT) et obtenez un devis.
 - 'Déposez votre demande d''aide : informations administratives, description du projet,
   détails techniques et financiers, etc. A ce stade, votre projet ne doit pas avoir
   commencé !'
@@ -35,7 +35,7 @@ publicodes:
     - est dans un secteur d'activité ciblé
     - a un objectif ciblé
     - questionnaire . parcours = objectif précis
-    - entreprise . est propriétaire de ses locaux = oui
+    - entreprise . est propriétaire de ses locaux
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
     - code NAF niveau 1 . est A
