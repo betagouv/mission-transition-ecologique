@@ -593,7 +593,12 @@ const updateSelectionValueFromSelectSignal = (ev: any) => {
   // console.log()
   // console.log('TeeTrack > updateSelectionValueFromSignal > ev :', ev)
   // console.log('TeeTrack > updateSelectionValueFromSignal > selectedOptions.value :', selectedOptions.value)
-  updateSelection(ev.option, ev.index)
+  if (ev.reset) {
+    selectedOptionsIndices.value = []
+    selectedOptions.value = []
+  } else {
+    updateSelection(ev.option, ev.index)
+  }
 }
 
 const saveSelectionFromSignal = (ev: any, index: number) => {

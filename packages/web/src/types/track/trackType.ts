@@ -125,7 +125,6 @@ export interface TrackOptions {
 }
 
 export interface TrackOptionsSelect extends TrackOptions {
-  title: Translations
   label: Translations
 }
 

@@ -60,13 +60,15 @@ const updateLocalSelection = (event: any) => {
   const val = event.target.value
   // console.log('TeeTrackSelect > updateLocalSelection > val :', val)
 
+  const isReset = event.target.value === ''
   // set local ref
-  activeOption.value = props.options[val]
+  activeOption.value = isReset ? undefined : props.options[val]
 
   // send signal to parent
   const data = {
     index: event,
-    option: activeOption.value
+    option: activeOption.value,
+    reset: isReset
   }
   emit('updateSelection', data)
 }
