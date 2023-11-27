@@ -37,7 +37,7 @@ export enum EntrepriseSector {
   Other = Entreprise.SectorActivity + Sector.Other
 }
 
-export const sectors = {
+export const Sectors = {
   [EntrepriseSector.Craftsmanship]: YesNo.No,
   [EntrepriseSector.Industry]: YesNo.No,
   [EntrepriseSector.Tourism]: YesNo.No,

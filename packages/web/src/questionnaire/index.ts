@@ -1,9 +1,11 @@
 import { needs } from './trackNeeds'
 import { help } from './trackHelp'
-import { siret } from './trackSiret'
+
+import { siret } from './trackStructureSiret'
 import { workforce } from './trackStructureWorkforce'
 // import { sizes } from './trackStructureSizes'
-import { trackSectors } from './trackSectors'
+import { sectors } from './trackStructureSectors'
+import { regions } from './trackStructureRegion'
 
 import { goals } from './trackGoals'
 import { roles } from './trackRoles'
@@ -33,7 +35,9 @@ export const tracks: Track[] = [
   siret,
   // sizes,
   workforce,
-  trackSectors,
+  sectors,
+  regions,
+
   // status,
   goals,
   roles,

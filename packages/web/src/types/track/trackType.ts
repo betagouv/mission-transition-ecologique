@@ -39,8 +39,9 @@ export enum TrackComponents {
   Cards = 'cards',
   Buttons = 'buttons',
   SimpleButtons = 'simpleButtons',
-  Form = 'Form',
+  Form = 'form',
   Input = 'input',
+  Select = 'select',
   Results = 'results'
 }
 export interface TrackInterface {
@@ -140,6 +141,9 @@ export interface TrackOptionsInput extends TrackOptions {
   wildcard?: TrackOptionWildcard
 }
 
+export interface TrackOptionsSelect extends TrackOptions {
+  label: Translations
+}
 interface TrackOptionWildcard {
   label: Translations
   next: TrackNext
@@ -161,7 +165,7 @@ export interface Track {
   behavior?: TrackBehavior
   config?: TrackResultsConfig
   next?: TrackNext
-  options?: (TrackOptions | TrackOptionsInput)[]
+  options?: (TrackOptions | TrackOptionsSelect | TrackOptionsInput)[]
   form?: FormOptions
 }
 

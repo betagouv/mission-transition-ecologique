@@ -24,6 +24,9 @@ export const frDict = {
     phoneContact:
       'Le conseiller vous <b>contactera par téléphone</b> dans les 5 jours (délai moyen de prise en charge)'
   },
+  select: {
+    selectOption: 'Sélectionnez une option'
+  },
   input: {
     research: 'Recherche',
     search: 'Rechercher'

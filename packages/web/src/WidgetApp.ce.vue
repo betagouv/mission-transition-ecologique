@@ -222,7 +222,7 @@ import { unfoldQueries } from './utils/navigation'
 // @ts-ignore
 import TeeMatomo from './components/TeeMatomo.vue'
 // @ts-ignore
-import TeeTrack from './components/TeeTrack.vue'
+import TeeTrack from './components/tracks/TeeTrack.vue'
 // @ts-ignore
 import TeeSidebar from './components/TeeSidebar.vue'
 // @ts-ignore
