@@ -6,14 +6,11 @@ import {
   EntrepriseSector,
   YesNo,
   Sector,
-  // ConditionOperators,
-  // DataMappingFrom,
   TrackComponents,
   TrackId
 } from '@/types'
 import type {
   Track,
-  // NextTrackRuleSet
 } from '@/types'
 
 export const sectors: Track = {
