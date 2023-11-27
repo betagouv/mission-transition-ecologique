@@ -3,7 +3,7 @@ promesse: Financez vos équipements pour améliorer votre efficacité énergéti
 description: Le Prêt Économies d’Énergie permet de financer le matériel éligible aux
   certificats d'économies d'énergie (CEE), et les dépenses liées au projet d’efficience
   énergétique.
-illustration: images/TEE_energie_verte.png
+illustration: images/TEE_eolienne.png
 opérateur de contact: Bpifrance
 url: https://www.bpifrance.fr/catalogue-offres/transition-ecologique-et-energetique/pret-economies-denergie-pee
 nature de l'aide: prêt
@@ -13,39 +13,72 @@ objectifs:
 - Réalisez votre demande de prêt pour votre investissement.
 - 'L’investissement peut porter sur des équipements qui visent l’amélioration des
   postes suivants : éclairage, froid, chauffage, climatisation, motorisation électrique.'
+- Ce prêt est éligible aux certificats d'économies d'énergie (CEE)
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - règles d'éligibilité
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  règles d'éligibilité:
+    - est éligible
+    - a un objectif ciblé
+  entreprise . est éligible:
     toutes ces conditions:
-    - entreprise . effectif <= 49
-  secteur d'activité prioritaire:
-    une de ces conditions:
-    - entreprise . code NAF niveau 1 . est A
-    - entreprise . code NAF niveau 1 . est B
-    - entreprise . code NAF niveau 1 . est C
-    - entreprise . code NAF niveau 1 . est D
-    - entreprise . code NAF niveau 1 . est E
-    - entreprise . code NAF niveau 1 . est F
-    - entreprise . code NAF niveau 1 . est G
-    - entreprise . code NAF niveau 1 . est H
-    - entreprise . code NAF niveau 1 . est I
-    - entreprise . code NAF niveau 1 . est J
-    - entreprise . code NAF niveau 1 . est K
-    - entreprise . code NAF niveau 1 . est L
-    - entreprise . code NAF niveau 1 . est M
-    - entreprise . code NAF niveau 1 . est N
-    - entreprise . code NAF niveau 1 . est O
-    - entreprise . code NAF niveau 1 . est P
-    - entreprise . code NAF niveau 1 . est Q
-    - entreprise . code NAF niveau 1 . est R
-    - entreprise . code NAF niveau 1 . est S
-    - entreprise . code NAF niveau 1 . est T
-    - entreprise . code NAF niveau 1 . est U
-  est dans les objectifs de l'entreprise:
+    - a un effectif éligible
+    - est dans un secteur d'activité éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+    - effectif <= 49
+  entreprise . est dans un secteur d'activité éligible: code NAF exclu = non
+  code NAF exclu:
+    toutes ces conditions:
+      # Activités d'intermédiation financière
+      - entreprise . code NAF = "64.11Z"
+      - entreprise . code NAF = "64.19Z"
+      - entreprise . code NAF = "64.30Z"
+      - entreprise . code NAF = "64.91Z"
+      - entreprise . code NAF = "64.92Z"
+      - entreprise . code NAF = "64.99Z"
+      # Activités de promotion immobilière et marchand de biens
+      - entreprise . code NAF = "68.10Z"
+      - entreprise . code NAF = "68.20A"
+      - entreprise . code NAF = "68.20B"
+      - entreprise . code NAF = "41.10A"
+      - entreprise . code NAF = "41.10B"
+      - entreprise . code NAF = "41.10C"
+      - entreprise . code NAF = "41.10D"
+      # Secteurs agricoles hors entreprises forestières
+      - entreprise . code NAF = "01.11Z"
+      - entreprise . code NAF = "01.12Z"
+      - entreprise . code NAF = "01.13Z"
+      - entreprise . code NAF = "01.14Z"
+      - entreprise . code NAF = "01.15Z"
+      - entreprise . code NAF = "01.16Z"
+      - entreprise . code NAF = "01.19Z"
+      - entreprise . code NAF = "01.21Z"
+      - entreprise . code NAF = "01.22Z"
+      - entreprise . code NAF = "01.23Z"
+      - entreprise . code NAF = "01.24Z"
+      - entreprise . code NAF = "01.25Z"
+      - entreprise . code NAF = "01.26Z"
+      - entreprise . code NAF = "01.27Z"
+      - entreprise . code NAF = "01.28Z"
+      - entreprise . code NAF = "01.29Z"
+      - entreprise . code NAF = "01.30Z"
+      - entreprise . code NAF = "01.41Z"
+      - entreprise . code NAF = "01.42Z"
+      - entreprise . code NAF = "01.43Z"
+      - entreprise . code NAF = "01.44Z"
+      - entreprise . code NAF = "01.45Z"
+      - entreprise . code NAF = "01.46Z"
+      - entreprise . code NAF = "01.47Z"
+      - entreprise . code NAF = "01.49Z"
+      - entreprise . code NAF = "01.50Z"
+      - entreprise . code NAF = "01.61Z"
+      - entreprise . code NAF = "01.62Z"
+      - entreprise . code NAF = "01.63Z"
+      - entreprise . code NAF = "01.64Z"
+      - entreprise . code NAF = "01.70Z"
+      - entreprise . code NAF = "01.70Z"
+      - entreprise . code NAF = "02.10Z"
+      - entreprise . code NAF = "02.30Z"
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est ma performance énergétique
-    - questionnaire . objectif prioritaire . est l'écoconception

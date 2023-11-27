@@ -20,17 +20,46 @@ objectifs:
 - Accédez à la veille d'informations sur l'actualité et aux formations pour développer
   votre entreprise artisanale
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - règles d'éligibilité
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  règles d'éligibilité:
+    - est éligible
+    - a un objectif ciblé
+  entreprise . est éligible:
     toutes ces conditions:
-    - entreprise . effectif <= 249
-  secteur d'activité prioritaire:
-    une de ces conditions:
-    - entreprise . code NAF niveau 1 . est G
-  est dans les objectifs de l'entreprise:
+    - est dans un secteur d'activité éligible
+    - a un effectif éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+    - effectif <= 249
+  entreprise . est dans un secteur d'activité éligible:
+    toutes ces conditions:
+      - une de ces conditions:
+        - code NAF niveau 1 . est C
+        - code NAF niveau 1 . est S
+      - une de ces conditions:
+        - code NAF = "14.13Z"
+        - code NAF = "15.12Z"
+        - code NAF = "16.29Z"
+        - code NAF = "26.52Z"
+        - code NAF = "31.09A"
+        - code NAF = "31.09B"
+        - code NAF = "32.12Z"
+        - code NAF = "32.13Z"
+        - code NAF = "32.20Z"
+        - code NAF = "32.99Z"
+        - code NAF = "33.11Z"
+        - code NAF = "33.12Z"
+        - code NAF = "33.13Z"
+        - code NAF = "33.14Z"
+        - code NAF = "33.19Z"
+        - code NAF = "95.11Z"
+        - code NAF = "95.12Z"
+        - code NAF = "95.21Z"
+        - code NAF = "95.22Z"
+        - code NAF = "95.23Z"
+        - code NAF = "95.24Z"
+        - code NAF = "95.25Z"
+        - code NAF = "95.29Z"
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est la gestion des déchets

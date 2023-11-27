@@ -11,7 +11,7 @@ description longue: "L’ADEME peut soutenir :\n- la création ou l’aménageme
   \ relatifs à la création ou l’aménagement de plateformes, le\nnombre et la surface\
   \ des plateformes de stockage ainsi qu’une estimation de la\nquantité de bois transitant\
   \ par les équipements."
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/equipements-lapprovisionnement-chaufferies-bois-fonds-chaleur
 nature de l'aide: financement
@@ -25,13 +25,14 @@ objectifs:
   de versement.
 - Réalisez vos investissements.
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  secteur d'activité prioritaire:
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+    - questionnaire . parcours = objectif précis
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est A
-  est dans les objectifs de l'entreprise:
+    - code NAF niveau 1 . est A
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est ma performance énergétique

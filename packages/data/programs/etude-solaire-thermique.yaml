@@ -6,17 +6,17 @@ description: Vous souhaitez mettre en place une installation solaire thermique ?
 description longue: 'Cette étude de faisabilité peut être liée à la mise en œuvre
   :
 
-  - d’installations dédiées sur bâtiment ou process
+  •  d’installations dédiées sur bâtiment ou process
 
-  - d’installations sur réseau de chaleur
+  •  d’installations sur réseau de chaleur
 
-  - de systèmes solaires combinés
+  • de systèmes solaires combinés
 
 
   *Les compétences du prestataire doivent respecter le référentiel RGE Étude ou un
   niveau équivalent. La liste des professionnels RGE Études est disponible sur le
   portail Open data de l’ADEME.'
-illustration: images/TEE_ampoule.png
+illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/etude-faisabilite-dinstallation-solaire-thermique
 nature de l'aide: financement
@@ -36,33 +36,59 @@ objectifs:
   du site d’implantation et de solutions pour le financement de l’opération et le
   montage administratif et juridique.
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  secteur d'activité prioritaire:
+    - est éligible
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+    - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est A
-    - entreprise . code NAF niveau 1 . est B
-    - entreprise . code NAF niveau 1 . est C
-    - entreprise . code NAF niveau 1 . est D
-    - entreprise . code NAF niveau 1 . est E
-    - entreprise . code NAF niveau 1 . est F
-    - entreprise . code NAF niveau 1 . est G
-    - entreprise . code NAF niveau 1 . est H
-    - entreprise . code NAF niveau 1 . est I
-    - entreprise . code NAF niveau 1 . est J
-    - entreprise . code NAF niveau 1 . est K
-    - entreprise . code NAF niveau 1 . est L
-    - entreprise . code NAF niveau 1 . est M
-    - entreprise . code NAF niveau 1 . est N
-    - entreprise . code NAF niveau 1 . est O
-    - entreprise . code NAF niveau 1 . est P
-    - entreprise . code NAF niveau 1 . est Q
-    - entreprise . code NAF niveau 1 . est R
-    - entreprise . code NAF niveau 1 . est S
-    - entreprise . code NAF niveau 1 . est T
-    - entreprise . code NAF niveau 1 . est U
-  est dans les objectifs de l'entreprise:
+    - code NAF niveau 1 . est A
+    - code NAF niveau 1 . est B
+    - code NAF niveau 1 . est C
+    - code NAF niveau 1 . est D
+    - code NAF niveau 1 . est E
+    - code NAF niveau 1 . est F
+    - code NAF niveau 1 . est G
+    - code NAF niveau 1 . est H
+    - code NAF niveau 1 . est I
+    - code NAF niveau 1 . est J
+    - code NAF niveau 1 . est K
+    - code NAF niveau 1 . est L
+    - code NAF niveau 1 . est M
+    - code NAF niveau 1 . est N
+    - code NAF niveau 1 . est O
+    - code NAF niveau 1 . est P
+    - code NAF niveau 1 . est Q
+    - code NAF niveau 1 . est R
+    - code NAF niveau 1 . est S
+    - code NAF niveau 1 . est T
+    - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est ma performance énergétique
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+    - région = Centre-Val de Loire
+    - région = Bourgogne-Franche-Comté
+    - région = Normandie
+    - région = Hauts-de-France
+    - région = Grand Est
+    - région = Pays de la Loire
+    - région = Bretagne
+    - région = Nouvelle-Aquitaine
+    - région = Occitanie
+    - région = Auvergne-Rhône-Alpes
+    - région = Provence-Alpes-Côte d'Azur
+    - région = Corse
+    - région = Saint-Pierre-Et-Miquelon
+    - région = Polynésie française
+    - région = Guadeloupe
+    - région = Martinique
+    - région = Guyane
+    - région = La Réunion
+    - région = Mayotte
+    - région = Île-de-France

@@ -137,7 +137,7 @@
         <!-- TRACK LABEL -->
         <div
           v-if="step !== 1"
-          :class="`${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`">
+          :class="`fr-mt-3v ${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`">
           <h3
             :class="`${track?.info ? 'fr-mb-0' : 'fr-mb-2v'}`"
             :style="`${isTrackResults ? 'color: #000091; font-size: 2.75rem;' : ''}`">
@@ -177,11 +177,12 @@
           </p>
         </div>
 
-        <!-- TRACK CHOICES {{ renderAs }} -->
+        <!-- TRACK CHOICES {{ renderAs }} / EXCEPT SELECT-->
         <div
           v-for="(option, idx) in optionsArray"
           :key="`track-${step}-${trackId}-option-${idx}`"
           :class="`${colsWidth} ${isTrackResults ? 'fr-col-offset-md-1' : ''} tee-track-choice`"
+          :style="renderAs === trackComponents.Select ? 'display: none' : ''"
           >
 
           <!-- AS CARDS -->
@@ -330,7 +331,15 @@
             />
           </div>
         </div>
+      </div>
 
+      <!-- AS SELECT -->
+      <div
+        v-if="track !== undefined && renderAs === trackComponents.Select">
+        <TeeTrackSelect
+          :track="track"
+          @update-selection="updateSelectionValueFromSelectSignal($event)"
+          />
       </div>
 
       <!-- SEND / NEXT BUTTON -->
@@ -388,7 +397,7 @@ import { choicesStore } from '@/stores/choices'
 import { analyticsStore } from '@/stores/analytics'
 // import type { DsfrButton } from '@gouvminint/vue-dsfr/types'
 // @ts-ignore
-import type { ColsOptions, NextTrackRules, Track, TrackOptions, TrackOptionsInput } from '@/types'
+import type { ColsOptions, NextTrackRules, Track, TrackOptions, TrackOptionsSelect, TrackOptionsInput } from '@/types'
 import { isTrackOptionsInput, TrackComponents, TrackId } from '@/types'
 
 import { remapItem, scrollToTop } from '@/utils/helpers'
@@ -397,11 +406,13 @@ import { CheckNextTrackRules } from '@/utils/conditions'
 // @ts-ignore
 import TeeTrackInput from './TeeTrackInput.vue'
 // @ts-ignore
+import TeeTrackSelect from './TeeTrackSelect.vue'
+// @ts-ignore
 import TeeTrackButtonInput from './TeeTrackButtonInput.vue'
 // // @ts-ignore
 // import TeeForm from './TeeForm.vue'
 // @ts-ignore
-import TeeResults from './results/TeeResults.vue'
+import TeeResults from '../results/TeeResults.vue'
 
 interface Props {
   step: number,
@@ -417,6 +428,7 @@ const colsOptions: ColsOptions = {
   buttons: 12,
   simpleButtons: 10,
   input: 12,
+  select: 12,
   cards: 4,
   form: 8,
   modify: 2,
@@ -459,7 +471,7 @@ const allowMultiple: boolean = !!track?.behavior?.multipleChoices
 
 // @ts-ignore
 const trackOperator: boolean = track?.behavior?.operator || false
-const optionsArray = track?.options?.filter( (o: TrackOptions) => !o.disabled) ?? []
+const optionsArray = track?.options?.filter( (o): o is (TrackOptions | TrackOptionsSelect | TrackOptionsInput) => !o.disabled) ?? []
 
 // computed
 const isTrackResults = computed(() => {
@@ -557,12 +569,11 @@ const updateSelectionFromSignal = (ev: any, index: number) => {
 const updateSelectionValueFromSignal = (ev: any) => {
   // console.log()
   // console.log('TeeTrack > updateSelectionValueFromSignal > ev :', ev)
-  // console.log('TeeTrack > updateSelectionValueFromSignal > index :', index)
   // console.log('TeeTrack > updateSelectionValueFromSignal > selectedOptions.value :', selectedOptions.value)
   const inputField = ev.option.inputField
   const temp = selectedOptions.value.map(i => {
     const obj = { ...i }
-    const objValues = {...obj.value}
+    const objValues = { ...obj.value }
     // console.log('TeeTrack > updateSelectionValueFromSignal > objValues :', objValues)
 
     if (Object.keys(objValues).includes(inputField)) {
@@ -574,6 +585,18 @@ const updateSelectionValueFromSignal = (ev: any) => {
   })
   selectedOptions.value = temp
 
+}
+
+const updateSelectionValueFromSelectSignal = (ev: any) => {
+  // console.log()
+  // console.log('TeeTrack > updateSelectionValueFromSignal > ev :', ev)
+  // console.log('TeeTrack > updateSelectionValueFromSignal > selectedOptions.value :', selectedOptions.value)
+  if (ev.reset) {
+    selectedOptionsIndices.value = []
+    selectedOptions.value = []
+  } else {
+    updateSelection(ev.option, ev.index)
+  }
 }
 
 const saveSelectionFromSignal = (ev: any, index: number) => {
