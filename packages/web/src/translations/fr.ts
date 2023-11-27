@@ -8,7 +8,7 @@ export const frDict = {
   footer: {
     thisApplicationAndIts: 'Cette application et son',
     sourceCode: 'code source',
-    areUnderlicence: 'sont sous licence',
+    areUnderlicence: 'sont sous licence'
   },
   selection: {
     mySelection: 'Ma sélection',
@@ -21,7 +21,8 @@ export const frDict = {
     contactHelp: 'Merci de nous contacter à',
     nowWhat: 'Et maintenant ?',
     advisors: 'Nous allons <b>identifier le bon conseiller</b> près de chez vous',
-    phoneContact: 'Le conseiller vous <b>contactera par téléphone</b> dans les 5 jours (délai moyen de prise en charge)',
+    phoneContact:
+      'Le conseiller vous <b>contactera par téléphone</b> dans les 5 jours (délai moyen de prise en charge)'
   },
   input: {
     research: 'Recherche',
@@ -36,12 +37,12 @@ export const frDict = {
     alertTitle: 'Merci, voici vos résultats',
     alertTitleNoResults: 'Pas de résultats',
     alertNoResults:
-    "Désolé, nous n'avons pas trouvé de dispositif adapté à votre situation et vos demandes",
+      "Désolé, nous n'avons pas trouvé de dispositif adapté à votre situation et vos demandes",
     alertDescription:
-    'Vous pouvez également nous envoyer un mail via le formulaire ci-après pour être mis en contact avec des conseillers',
+      'Vous pouvez également nous envoyer un mail via le formulaire ci-après pour être mis en contact avec des conseillers',
     yourResults: 'Vos résultats',
     fittingPrograms: 'Les aides correspondant à vos choix',
-    filterSelect: "Filtrer par {fieldLabel}",
+    filterSelect: 'Filtrer par {fieldLabel}',
     resetSelect: '(réinitialiser)'
   },
   errors: {
@@ -56,7 +57,7 @@ export const frDict = {
     programLoanDuration: 'Durée du prêt'
   },
   programCosts: {
-    cost: "Coût restant à charge",
+    cost: 'Coût restant à charge',
     costPrefix: 'Coût',
     aid: 'Montant du financement',
     aidPrefix: "Montant de l'aide",
@@ -97,10 +98,10 @@ export const frDict = {
       this: 'ce',
       of: 'du'
     },
-    "avantage fiscal": {
-      the: 'le',
+    'avantage fiscal': {
+      the: "l'",
       this: 'cet',
-      of: 'du'
-    },
+      of: "de l'"
+    }
   }
 }
