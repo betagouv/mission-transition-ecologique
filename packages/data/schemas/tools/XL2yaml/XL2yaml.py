@@ -200,8 +200,14 @@ def identifyColNumbers(header: list[Any]):
 
 def tryAndGetIllustration(id: str):
     url = f"https://raw.githubusercontent.com/betagouv/transition-ecologique-entreprises-widget/preprod/packages/data/programs/{id}.yaml"
-    with urllib.request.urlopen(url) as response:
-        program_data = response.read().decode(response.headers.get_content_charset())
+    try:
+        with urllib.request.urlopen(url) as response:
+            program_data = response.read().decode(
+                response.headers.get_content_charset()
+            )
+    except:
+        return randomIllustration()
+
     illustrationLine = re.search(r"\nillustration: ([^\n]*)\n", program_data)
     if illustrationLine is None:
         return randomIllustration()
