@@ -370,6 +370,6 @@ export const scrollToId = (
 // TEXT HELPERS
 
 export const consolidateAmounts = (str: string | undefined) => {
-  const regex = /(?<=\d)\s(?=\d)|(?<=\d)\s(?=\D)/g
-  return str?.replace(regex, '\u00a0')
+  const regex = /(\d+)\s*([a-zA-Z])?/g
+  return str?.replace(regex, '$1\u00a0$2')
 }
