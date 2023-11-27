@@ -567,9 +567,9 @@ const updateSelectionFromSignal = (ev: any, index: number) => {
 }
 
 const updateSelectionValueFromSignal = (ev: any) => {
-  console.log()
-  console.log('TeeTrack > updateSelectionValueFromSignal > ev :', ev)
-  console.log('TeeTrack > updateSelectionValueFromSignal > selectedOptions.value :', selectedOptions.value)
+  // console.log()
+  // console.log('TeeTrack > updateSelectionValueFromSignal > ev :', ev)
+  // console.log('TeeTrack > updateSelectionValueFromSignal > selectedOptions.value :', selectedOptions.value)
   const inputField = ev.option.inputField
   const temp = selectedOptions.value.map(i => {
     const obj = { ...i }
