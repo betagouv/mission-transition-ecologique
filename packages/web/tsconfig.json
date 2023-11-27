@@ -1,14 +1,28 @@
 {
-  "files": [],
-  "references": [
-    {
-      "path": "./tsconfig.node.json"
-    },
-    {
-      "path": "./tsconfig.app.json"
-    },
-    {
-      "path": "./tsconfig.vitest.json"
-    }
+  "extends": [
+    "@tsconfig/node18/tsconfig.json",
+    "@vue/tsconfig/tsconfig.json"
   ],
+  "include": ["env.d.ts", "src/**/*", "vite.config.*", "vitest.config.*", "cypress.config.*", "playwright.config.*"],
+  "compilerOptions": {
+    "rootDir": ".",
+    "composite": true,
+    "declaration": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "target": "ESNext",
+    "lib": [
+      "ESNext",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "types": ["node", "jsdom"],
+    "preserveValueImports": false,
+    "importsNotUsedAsValues": "remove",
+    "verbatimModuleSyntax": true
+  }
 }

@@ -2,10 +2,11 @@
 require('@rushstack/eslint-patch/modern-module-resolution')
 
 module.exports = {
+  parser: 'vue-eslint-parser',
   extends: [
-    'plugin:vue/vue3-essential',
-    '@vue/eslint-config-typescript',
-    '@vue/eslint-config-prettier/skip-formatting'
+    'plugin:vue/vue3-recommended',
+    '@vue/eslint-config-typescript/recommended',
+    '@vue/eslint-config-prettier',
   ],
   overrides: [
     {
@@ -18,6 +19,19 @@ module.exports = {
     }
   ],
   parserOptions: {
-    ecmaVersion: 'latest'
-  }
+    parser: '@typescript-eslint/parser',
+    ecmaVersion: 'latest',
+  },
+  ignorePatterns: [
+    'dist/*',
+    'coverage/*',
+    'images/*',
+    'npm-debug.log',
+    '.env',
+    '.env.*',
+    'tsconfig.json',
+    '.vscode/*',
+    'README.md',
+    'index.html',
+  ],
 }

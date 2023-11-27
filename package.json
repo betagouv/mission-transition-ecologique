@@ -7,7 +7,7 @@
   "contributors": [
     "Pierre Camilleri (https://multi.coop)"
   ],
-  "private": false,
+  "private": true,
   "license": "AGPL-3.0",
   "scripts": {
     "start": "bash start.sh",
@@ -24,7 +24,8 @@
     "dev-back": "npx concurrently \"npm run build-json-output-watch\" \"npm run dev -w packages/backend\"",
     "dev-front": "npx concurrently \"npm run build-json-output-watch\" \"npm run dev -w packages/web\"",
     "test-data": "npm run test -w packages/data",
-    "lint": "npx concurrently 'npm run lint -w packages/backend' 'npm run lint -w packages/web' 'npm run lint -w packages/data'"
+    "lint": "elint . --fix",
+    "lint-concurrently": "npx concurrently 'npm run lint -w packages/backend' 'npm run lint -w packages/web' 'npm run lint -w packages/data'"
   },
   "workspaces": [
     "./packages/*"
@@ -37,9 +38,11 @@
     "typescript": "~5.2.2"
   },
   "devDependencies": {
+    "@tsconfig/node18": "^18.2.2",
     "@types/cors": "^2.8.13",
-    "@types/node": "^20.4.0",
-    "@typescript-eslint/parser": "^5.62.0",
+    "@types/node": "^18.18.13",
+    "@typescript-eslint/eslint-plugin": "^6.12.0",
+    "@typescript-eslint/parser": "^6.12.0",
     "concurrently": "^8.2.0",
     "eslint": "^8.53.0",
     "prettier": "^3.0.3",

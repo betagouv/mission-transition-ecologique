@@ -1,6 +1,7 @@
 {
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "tests/**/*"
   ],
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
@@ -9,6 +10,8 @@
     // Directory in which to put the generated js code
     "outDir": "./build",
     "target": "ESNext",
+    "composite": true,
+    "declaration": true,
     // stricter config
     "allowUnusedLabels": false,
     "allowUnreachableCode": false,
