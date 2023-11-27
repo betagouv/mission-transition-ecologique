@@ -1,11 +1,6 @@
 <template>
   <!-- SELECTOR -->
   <div class="fr-select-group">
-    <!-- <label
-      class="fr-label"
-      :for="`${trackId}-select`">
-      Choisir
-    </label> -->
     <select
       class="fr-select"
       :id="`${trackId}-select`"
@@ -29,9 +24,9 @@
   </div>
 
   <!-- DEBUGGING -->
-  <p>
+  <!-- <p>
     activeOption.value: <pre><code>{{ activeOption?.value }}</code></pre>
-  </p>
+  </p> -->
   <!-- <p>
     options : 
     <pre><code>{{ options }}</code></pre>
@@ -44,7 +39,7 @@
 import type { TrackOptionsSelect } from '@/types'
 
 import { ref } from 'vue'
-import { choicesStore } from '../stores/choices'
+import { choicesStore } from '../../stores/choices'
 
 interface Props {
   trackId: string,
@@ -60,18 +55,20 @@ const activeOption = ref<any>()
 const emit = defineEmits(['updateSelection'])
 
 const updateLocalSelection = (event: any) => {
-  console.log()
+  // console.log()
+  // console.log('TeeTrackSelect > updateLocalSelection > event :', event)
   const val = event.target.value
+  // console.log('TeeTrackSelect > updateLocalSelection > val :', val)
 
   // set local ref
   activeOption.value = props.options[val]
 
   // send signal to parent
-  // const fIn = {
-  //   label: props.filter.label,
-  //   value: val
-  // }
-  // emit('updateSelection', fIn)
+  const data = {
+    index: event,
+    option: activeOption.value
+  }
+  emit('updateSelection', data)
 }
 
 </script>

@@ -340,7 +340,7 @@
           :track-id="trackId"
           :options="optionsArray"
           :debug="debug"
-          @update-selection="updateSelectionValueFromSignal($event)"
+          @update-selection="updateSelectionValueFromSelectSignal($event)"
           />
       </div>
 
@@ -399,7 +399,7 @@ import { choicesStore } from '@/stores/choices'
 import { analyticsStore } from '@/stores/analytics'
 // import type { DsfrButton } from '@gouvminint/vue-dsfr/types'
 // @ts-ignore
-import type { ColsOptions, NextTrackRules, Track, TrackOptions, TrackOptionsInput } from '@/types'
+import type { ColsOptions, NextTrackRules, Track, TrackOptions } from '@/types'
 import { isTrackOptionsInput, TrackComponents, TrackId } from '@/types'
 
 import { remapItem, scrollToTop } from '@/utils/helpers'
@@ -414,7 +414,7 @@ import TeeTrackButtonInput from './TeeTrackButtonInput.vue'
 // // @ts-ignore
 // import TeeForm from './TeeForm.vue'
 // @ts-ignore
-import TeeResults from './results/TeeResults.vue'
+import TeeResults from '../results/TeeResults.vue'
 
 interface Props {
   step: number,
@@ -563,20 +563,19 @@ const updateSelection = (option: any, index: number, forceRemove: boolean = fals
 }
 
 const updateSelectionFromSignal = (ev: any, index: number) => {
-  // console.log()
-  // console.log('TeeTrack > updateSelectionFromSignal > ev :', ev)
+  console.log()
+  console.log('TeeTrack > updateSelectionFromSignal > ev :', ev)
   updateSelection(ev.option, index, ev.remove)
 }
 
 const updateSelectionValueFromSignal = (ev: any) => {
-  // console.log()
-  // console.log('TeeTrack > updateSelectionValueFromSignal > ev :', ev)
-  // console.log('TeeTrack > updateSelectionValueFromSignal > index :', index)
-  // console.log('TeeTrack > updateSelectionValueFromSignal > selectedOptions.value :', selectedOptions.value)
+  console.log()
+  console.log('TeeTrack > updateSelectionValueFromSignal > ev :', ev)
+  console.log('TeeTrack > updateSelectionValueFromSignal > selectedOptions.value :', selectedOptions.value)
   const inputField = ev.option.inputField
   const temp = selectedOptions.value.map(i => {
     const obj = { ...i }
-    const objValues = {...obj.value}
+    const objValues = { ...obj.value }
     // console.log('TeeTrack > updateSelectionValueFromSignal > objValues :', objValues)
 
     if (Object.keys(objValues).includes(inputField)) {
@@ -588,6 +587,13 @@ const updateSelectionValueFromSignal = (ev: any) => {
   })
   selectedOptions.value = temp
 
+}
+
+const updateSelectionValueFromSelectSignal = (ev: any) => {
+  // console.log()
+  // console.log('TeeTrack > updateSelectionValueFromSignal > ev :', ev)
+  // console.log('TeeTrack > updateSelectionValueFromSignal > selectedOptions.value :', selectedOptions.value)
+  updateSelection(ev.option, ev.index)
 }
 
 const saveSelectionFromSignal = (ev: any, index: number) => {
