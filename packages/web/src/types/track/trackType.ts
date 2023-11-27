@@ -39,8 +39,9 @@ export enum TrackComponents {
   Cards = 'cards',
   Buttons = 'buttons',
   SimpleButtons = 'simpleButtons',
-  Form = 'Form',
+  Form = 'form',
   Input = 'input',
+  Select = 'select',
   Results = 'results'
 }
 export interface TrackInterface {
@@ -123,6 +124,11 @@ export interface TrackOptions {
   next?: TrackNext
 }
 
+export interface TrackOptionsSelect extends TrackOptions {
+  title: Translations
+  label: Translations
+}
+
 export interface InputCleaningRule {
   operator?: ConditionOperators
   conditionValue?: string | number
@@ -161,7 +167,7 @@ export interface Track {
   behavior?: TrackBehavior
   config?: TrackResultsConfig
   next?: TrackNext
-  options?: (TrackOptions | TrackOptionsInput)[]
+  options?: (TrackOptions | TrackOptionsSelect | TrackOptionsInput)[]
   form?: FormOptions
 }
 

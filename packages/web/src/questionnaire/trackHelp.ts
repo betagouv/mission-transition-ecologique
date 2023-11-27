@@ -66,6 +66,25 @@ export const help: Track = {
       next: {
         default: TrackId.Siret
       }
+    },
+    {
+      disabled: false,
+      value: {
+        user_help: TrackHelpValue.Precise,
+        [Questionnaire.path]: PublicodesTrackHelpValue.Precise
+      },
+      title: { fr: "TEST - Je choisis ma région" },
+      label: { fr: "TEST - Je teste la piste de question des régions" },
+      resume: {
+        fr: 'Trouvons une région'
+      },
+      hintImage: { fr: '2 min. chrono !' },
+      hintImageIcon: 'fr-icon-timer-line',
+      imageTop: 'images/tracks/j-ai-un-obectif.svg',
+      next: {
+        default: TrackId.StructureRegion
+      }
     }
+
   ]
 }

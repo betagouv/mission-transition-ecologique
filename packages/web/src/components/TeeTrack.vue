@@ -137,7 +137,7 @@
         <!-- TRACK LABEL -->
         <div
           v-if="step !== 1"
-          :class="`${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`">
+          :class="`fr-mt-3v ${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`">
           <h3
             :class="`${track?.info ? 'fr-mb-0' : 'fr-mb-2v'}`"
             :style="`${isTrackResults ? 'color: #000091; font-size: 2.75rem;' : ''}`">
@@ -177,11 +177,12 @@
           </p>
         </div>
 
-        <!-- TRACK CHOICES {{ renderAs }} -->
+        <!-- TRACK CHOICES {{ renderAs }} / EXCEPT SELECT-->
         <div
           v-for="(option, idx) in optionsArray"
           :key="`track-${step}-${trackId}-option-${idx}`"
           :class="`${colsWidth} ${isTrackResults ? 'fr-col-offset-md-1' : ''} tee-track-choice`"
+          :style="renderAs === trackComponents.Select ? 'display: none' : ''"
           >
 
           <!-- AS CARDS -->
@@ -330,7 +331,17 @@
             />
           </div>
         </div>
+      </div>
 
+      <!-- AS SELECT -->
+      <div
+        v-if="renderAs === trackComponents.Select">
+        <TeeTrackSelect
+          :track-id="trackId"
+          :options="optionsArray"
+          :debug="debug"
+          @update-selection="updateSelectionValueFromSignal($event)"
+          />
       </div>
 
       <!-- SEND / NEXT BUTTON -->
@@ -397,6 +408,8 @@ import { CheckNextTrackRules } from '@/utils/conditions'
 // @ts-ignore
 import TeeTrackInput from './TeeTrackInput.vue'
 // @ts-ignore
+import TeeTrackSelect from './TeeTrackSelect.vue'
+// @ts-ignore
 import TeeTrackButtonInput from './TeeTrackButtonInput.vue'
 // // @ts-ignore
 // import TeeForm from './TeeForm.vue'
@@ -417,6 +430,7 @@ const colsOptions: ColsOptions = {
   buttons: 12,
   simpleButtons: 10,
   input: 12,
+  select: 12,
   cards: 4,
   form: 8,
   modify: 2,

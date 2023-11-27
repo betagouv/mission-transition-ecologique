@@ -4,7 +4,7 @@ import {
   NAF1Letters,
   NAF1ToVar,
   Sector,
-  sectors,
+  Sectors,
   YesNo,
   CallbackActions,
   CallbackMethods,
@@ -142,7 +142,7 @@ export const siret: Track = {
                 },
                 {
                   operation: CleanerOperations.injectInObject,
-                  object: { ...sectors }
+                  object: { ...Sectors }
                 }
               ]
             },
