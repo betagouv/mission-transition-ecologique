@@ -1,0 +1,47 @@
+titre: Programme Ecod'o
+promesse: Réalisez des économies sur vos consommations d’eau
+description: Le programme ECOD’O accompagne les acteurs industriels et du tourisme
+  dans la réduction de leur consommation d’eau. Le soutien intervient sur les aspects
+  techniques, mais aussi financiers et réglementaires.
+illustration: images/TEE_ampoule.png
+opérateur de contact: CCI
+autres opérateurs:
+- DREAL Bretagne
+- Agence de l'Eau Loire-Bretagne
+- Région Bretagne
+- Saur
+- Suez
+- Véolia Eau
+url: https://www.bretagne.cci.fr/developper-son-entreprise/developpement-durable/le-programme-ecod-o
+nature de l'aide: accompagnement
+coût de l'accompagnement: Gratuit
+durée de l'accompagnement: Selon l'entreprise
+objectifs:
+- Établir un diagnostic personnalisé des consommations et usages dans votre entreprise.
+- Identifier les potentiels d'économie d'eau et de réutilisation des eaux usées traitées
+  (REUSE/REUT).
+- Bénéficier d'un plan d'action dédié à votre entreprise.
+- Être conseillé dans la recherche de solutions et de financements pour vos projets
+  d'investissement.
+- Mettre en place les préconisations et réduisez vos consommations d'eau d'au moins
+  10%.
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+    - est éligible
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+    - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+    - code NAF niveau 1 . est C
+    - code NAF niveau 1 . est D
+    - code NAF niveau 1 . est I
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est diminuer ma consommation d'eau
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+    - région = Bretagne
