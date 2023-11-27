@@ -563,8 +563,8 @@ const updateSelection = (option: any, index: number, forceRemove: boolean = fals
 }
 
 const updateSelectionFromSignal = (ev: any, index: number) => {
-  console.log()
-  console.log('TeeTrack > updateSelectionFromSignal > ev :', ev)
+  // console.log()
+  // console.log('TeeTrack > updateSelectionFromSignal > ev :', ev)
   updateSelection(ev.option, index, ev.remove)
 }
 

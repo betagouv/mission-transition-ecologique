@@ -91,7 +91,7 @@ const regionsOptions = regionsList.map(reg => {
     }
   }
 })
-console.log('questionnaire > trackStructureRegions > regionsOptions :', regionsOptions)
+// console.log('questionnaire > trackStructureRegions > regionsOptions :', regionsOptions)
 
 export const regions: Track = {
   id: TrackId.StructureRegion,
