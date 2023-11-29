@@ -6,7 +6,7 @@
     "build-json-output": "npx ts-node src/generateProgramType.ts && npx ts-node src/buildJsonOutput.ts",
     "build-json-output-watch": "nodemon --exec \"npx ts-node src/generateProgramType.ts && npx ts-node src/buildJsonOutput.ts\" --ext yaml,json,ts --ignore src/generated ",
     "test": "jest",
-    "lint": "eslint . --fix --ignore-path .eslintignore"
+    "lint": "eslint . --fix"
   },
   "repository": {
     "type": "git",
