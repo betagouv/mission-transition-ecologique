@@ -29,6 +29,7 @@ describe('Test that API response format is unchanged', () => {
         headers: headers,
         data: postData
       })
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       const respData = response.data
 
       expect(respData).toEqual(expected_data[index])
