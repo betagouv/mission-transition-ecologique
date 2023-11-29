@@ -7,12 +7,29 @@ describe(`
   WHEN sorting the programs
 EXPECT that the programs respect a set of given rules
 `, () => {
-  test('', () => {
-    const programs: ProgramData[] = []
-    expect(sortPrograms(programs)).toHaveLength(0)
+  type TestCase = {
+    name: string
+    programs: ProgramData[]
+    expectedPrograms: ProgramData[]
+  }
 
-    const program = makeProgram('')
-    const programs2: ProgramData[] = [program]
-    expect(sortPrograms(programs2)[0]).toBe(program)
+  const program = makeProgram('')
+
+  const testCases: TestCase[] = [
+    {
+      name: 'empty',
+      programs: [],
+      expectedPrograms: []
+    },
+    {
+      name: 'single program',
+      programs: [program],
+      expectedPrograms: [program]
+    }
+  ]
+  testCases.map((tc) => {
+    test(`${tc.name}`, () => {
+      expect(sortPrograms(tc.programs)).toStrictEqual(tc.expectedPrograms)
+    })
   })
 })
