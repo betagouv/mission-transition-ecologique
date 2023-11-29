@@ -97,7 +97,7 @@ export interface ContactInfoBodyAttributes {
   NOM: string
   PRENOM: string
   TEL: string
-  SIRET: string
+  SIRET?: string
   OPT_IN: boolean
   FORM_NEEDS?: string
   PROJECT_NEEDS?: string
