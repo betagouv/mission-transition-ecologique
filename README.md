@@ -43,7 +43,7 @@ height="75px">
 
 ## Screenshots
 
-![](./packages/web/images/screenshots/screenshot-2023-10-19.png)
+![](./packages/web/images/screenshots/screenshot-2023-11-29-a.png)
 
 ## Project Setup
 
