@@ -1,6 +1,6 @@
 import { ProgramData } from '@tee/web/src/types/programTypes'
 import { makeProgram } from './testing'
-import { filterPrograms, FILTERING_RULE_NAME } from '../src/domain/eligibility'
+import { filterPrograms, FILTERING_RULE_NAME } from '../src/domain/filter-programs'
 import { Result, ResultNS } from 'true-myth'
 
 const rulesBoilerplate = {

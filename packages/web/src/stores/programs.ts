@@ -2,7 +2,7 @@ import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
 import type { ProgramData, TrackId } from '@/types/index'
-import { filterPrograms as filterWithPublicodes } from '@tee/backend/src/domain/eligibility'
+import { filterPrograms as filterWithPublicodes } from '@tee/backend/src/domain/filter-programs'
 import type { QuestionnaireData } from '@tee/backend/src/domain/types'
 
 export const programsStore = defineStore('programs', () => {
