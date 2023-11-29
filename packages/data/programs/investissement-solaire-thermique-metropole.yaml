@@ -16,7 +16,7 @@ description longue: "Sont éligibles les opérations de production d'eau chaude 
   \ opérations couplées à des Réseaux de Chaleur urbains (RCU), contribuant à l’objectif\
   \ d’atteindre une alimentation globale du réseau couverte par au minimum 65 % d’EnR&R.\n\
   La réalisation d’une étude de faisabilité préalable est une condition d'éligibilité."
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/installation-production-deau-chaude-solaire-thermique-metropole
 nature de l'aide: financement
@@ -31,32 +31,52 @@ objectifs:
   de versement.
 - Réalisez vos investissements.
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  secteur d'activité prioritaire:
+    - est éligible
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+    - questionnaire . parcours = objectif précis
+  entreprise . est éligible:
+    toutes ces conditions:
+    - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est A
-    - entreprise . code NAF niveau 1 . est B
-    - entreprise . code NAF niveau 1 . est C
-    - entreprise . code NAF niveau 1 . est D
-    - entreprise . code NAF niveau 1 . est E
-    - entreprise . code NAF niveau 1 . est F
-    - entreprise . code NAF niveau 1 . est G
-    - entreprise . code NAF niveau 1 . est H
-    - entreprise . code NAF niveau 1 . est I
-    - entreprise . code NAF niveau 1 . est J
-    - entreprise . code NAF niveau 1 . est K
-    - entreprise . code NAF niveau 1 . est L
-    - entreprise . code NAF niveau 1 . est M
-    - entreprise . code NAF niveau 1 . est N
-    - entreprise . code NAF niveau 1 . est O
-    - entreprise . code NAF niveau 1 . est P
-    - entreprise . code NAF niveau 1 . est Q
-    - entreprise . code NAF niveau 1 . est R
-    - entreprise . code NAF niveau 1 . est S
-    - entreprise . code NAF niveau 1 . est U
-  est dans les objectifs de l'entreprise:
+    - code NAF niveau 1 . est A
+    - code NAF niveau 1 . est B
+    - code NAF niveau 1 . est C
+    - code NAF niveau 1 . est D
+    - code NAF niveau 1 . est E
+    - code NAF niveau 1 . est F
+    - code NAF niveau 1 . est G
+    - code NAF niveau 1 . est H
+    - code NAF niveau 1 . est I
+    - code NAF niveau 1 . est J
+    - code NAF niveau 1 . est K
+    - code NAF niveau 1 . est L
+    - code NAF niveau 1 . est M
+    - code NAF niveau 1 . est N
+    - code NAF niveau 1 . est O
+    - code NAF niveau 1 . est P
+    - code NAF niveau 1 . est Q
+    - code NAF niveau 1 . est R
+    - code NAF niveau 1 . est S
+    - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est ma performance énergétique
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+    - région = Auvergne-Rhône-Alpes
+    - région = Bourgogne-Franche-Comté
+    - région = Bretagne
+    - région = Centre-Val de Loire
+    - région = Corse
+    - région = Grand Est
+    - région = Hauts-de-France
+    - région = Île-de-France
+    - région = Normandie
+    - région = Nouvelle-Aquitaine
+    - région = Occitanie
+    - région = Pays de la Loire
+    - région = Provence-Alpes-Côte d'Azur

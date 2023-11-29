@@ -190,3 +190,40 @@ describe(`
     expectToBeErr(result)
   })
 })
+
+describe(`
+  GIVEN  input data from the questionnaire
+    AND  rules that use values from the keys of "PublicodesInputData" type
+   WHEN  the rules are evaluated
+  EXPECT the values from "PublicodesInputData" used for evaluation are properly mapped to the
+         questionnaire data
+`, () => {
+  const testCodeNAFMapping = (inputNAFCode: string, programNAFCode: string) => {
+    test(`"codeNaf" mapped to "entreprise . code NAF" (input: ${inputNAFCode}, program: ${programNAFCode})`, () => {
+      const program = makeProgram({
+        entreprise: null,
+        'entreprise . code NAF': null,
+        [FILTERING_RULE_NAME]: `entreprise . code NAF = "${programNAFCode}"`
+      })
+
+      const inputData = { codeNaf: inputNAFCode }
+
+      var result = filterPrograms([program], inputData)
+
+      expectToBeOk(result)
+
+      const expectedLength = inputNAFCode == programNAFCode ? 1 : 0
+      expect(result.value).toHaveLength(expectedLength)
+    })
+  }
+
+  const testCases: { inputNAFCode: string; programNAFCode: string }[] = [
+    { inputNAFCode: '12.34Z', programNAFCode: '12.34Z' },
+    { inputNAFCode: '34.12Z', programNAFCode: '34.12Z' },
+    { inputNAFCode: '11.11Z', programNAFCode: '99.99Z' }
+  ]
+
+  for (const testCase of testCases) {
+    testCodeNAFMapping(testCase.inputNAFCode, testCase.programNAFCode)
+  }
+})

@@ -28,18 +28,37 @@ objectifs:
 - Mettre en avant votre engagement pour valoriser l’entreprise auprès des clients
   et être référencé sur le site Imprim'Vert.
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - règles d'éligibilité
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  règles d'éligibilité:
+    - est éligible
+    - a un objectif ciblé
+  entreprise . est éligible:
     toutes ces conditions:
-    - entreprise . effectif <= 249
-  secteur d'activité prioritaire:
-    une de ces conditions:
-    - entreprise . code NAF niveau 1 . est C
-  est dans les objectifs de l'entreprise:
+    - a un effectif éligible
+    - est dans un secteur d'activité éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+    - effectif <= 249
+  entreprise . est dans un secteur d'activité éligible:
+    toutes ces conditions:
+    - code NAF niveau 1 . est C
+    - une de ces conditions:
+      - code NAF = "17.11Z"
+      - code NAF = "17.12Z"
+      - code NAF = "17.21Z"
+      - code NAF = "17.22Z"
+      - code NAF = "17.23Z"
+      - code NAF = "17.24Z"
+      - code NAF = "17.29Z"
+      - code NAF = "18.12A"
+      - code NAF = "18.12B"
+      - code NAF = "18.13A"
+      - code NAF = "18.13B"
+      - code NAF = "18.13C"
+      - code NAF = "18.14Z"
+      - code NAF = "18.20Z"
+      - code NAF = "58.19P"
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est la gestion des déchets
     - questionnaire . objectif prioritaire . est diminuer ma consommation d'eau

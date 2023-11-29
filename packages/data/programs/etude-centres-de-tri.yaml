@@ -16,14 +16,15 @@ description longue: 'Ces études concernent les investissements suivants :
 
   Le périmètre d’étude doit couvrir, au minimum, les collectivités concernées par
   le bassin versant du centre de tri.'
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/collectivites/sites/default/files/CEF-ADEME-etudes-centres-tri-preparation_mai23.pdf
 nature de l'aide: financement
 montant du financement: Jusqu'à 70% du coût de l'étude, dans un maximum de 50 000
   €
 objectifs:
-- Choisissez le prestataire qui va vous accompagner pour mener votre étude.
+- Choisissez le prestataire qui va vous accompagner pour mener votre étude et obtenez
+  un devis.
 - 'Déposez votre demande d''aide : informations administratives, description du projet,
   détails techniques et financiers, etc. A ce stade, votre projet ne doit pas avoir
   commencé !'
@@ -32,14 +33,15 @@ objectifs:
   de versement.
 - Réalisez votre étude de faisabilité ou votre étude territoriale.
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  secteur d'activité prioritaire:
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+    - questionnaire . parcours = objectif précis
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est E
-    - entreprise . code NAF niveau 1 . est F
-  est dans les objectifs de l'entreprise:
+    - code NAF niveau 1 . est E
+    - code NAF niveau 1 . est F
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est la gestion des déchets

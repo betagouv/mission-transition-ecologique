@@ -36,7 +36,7 @@ description longue: 'Les aménagements concernés par cette étude sont les suiv
   • l’étude d’avant-projet devra préciser les conditions techniques et économique
   de réalisation de l’installation au regard de l’implantation sur le site avec des
   études de sol, des relevés topographiques précis.'
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Etudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202022.pdf
 nature de l'aide: financement
@@ -53,19 +53,30 @@ objectifs:
 - Réalisez votre étude. Il peut s'agir d'une étude de potentiel, de faisabilité ou
   d'avant-projet.
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  secteur d'activité prioritaire:
+    - est éligible
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+    - questionnaire . parcours = objectif précis
+  entreprise . est éligible:
+    toutes ces conditions:
+    - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est A
-    - entreprise . code NAF niveau 1 . est B
-    - entreprise . code NAF niveau 1 . est C
-    - entreprise . code NAF niveau 1 . est D
-    - entreprise . code NAF niveau 1 . est E
-    - entreprise . code NAF niveau 1 . est F
-    - entreprise . code NAF niveau 1 . est I
-  est dans les objectifs de l'entreprise:
+    - code NAF niveau 1 . est A
+    - code NAF niveau 1 . est B
+    - code NAF niveau 1 . est C
+    - code NAF niveau 1 . est D
+    - code NAF niveau 1 . est E
+    - code NAF niveau 1 . est F
+    - code NAF niveau 1 . est I
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est ma performance énergétique
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+    - région = Bourgogne-Franche-Comté
+    - région = Nouvelle-Aquitaine
+    - région = Auvergne-Rhône-Alpes
+    - région = Provence-Alpes-Côte d'Azur

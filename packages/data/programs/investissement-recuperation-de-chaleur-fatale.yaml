@@ -25,7 +25,7 @@ description longue: 'Les investissements éligibles sont :
 
   Pour être éligibles, les projets doivent valoriser une quantité d’énergie thermique
   supérieure à 1 GWh/an.'
-illustration: images/TEE_energie_verte.png
+illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/realisation-dinstallations-recuperation-chaleur-fatale
 nature de l'aide: financement
@@ -39,16 +39,43 @@ objectifs:
   de versement.
 - Réalisez vos investissements.
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  secteur d'activité prioritaire:
+    - est éligible
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+    - questionnaire . parcours = objectif précis
+  entreprise . est éligible:
+    toutes ces conditions:
+    - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est B
-    - entreprise . code NAF niveau 1 . est C
-    - entreprise . code NAF niveau 1 . est D
-    - entreprise . code NAF niveau 1 . est E
-  est dans les objectifs de l'entreprise:
+    - code NAF niveau 1 . est B
+    - code NAF niveau 1 . est C
+    - code NAF niveau 1 . est D
+    - code NAF niveau 1 . est E
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est ma performance énergétique
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+    - région = Auvergne-Rhône-Alpes
+    - région = Bourgogne-Franche-Comté
+    - région = Bretagne
+    - région = Centre-Val de Loire
+    - région = Corse
+    - région = Grand Est
+    - région = Guadeloupe
+    - région = Guyane
+    - région = Hauts-de-France
+    - région = Mayotte
+    - région = Île-de-France
+    - région = Martinique
+    - région = La Réunion
+    - région = Normandie
+    - région = Nouvelle-Aquitaine
+    - région = Occitanie
+    - région = Pays de la Loire
+    - région = Polynésie française
+    - région = Provence-Alpes-Côte d'Azur
+    - région = Saint-Pierre-Et-Miquelon

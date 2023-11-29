@@ -4,7 +4,7 @@ description: Participez à l’opération « Eco-défis des commerçants et arti
   permet de valoriser les actions menées par les entreprises locales en matière d’environnement,
   énergie, transport, déchets, éco-produits, gestion de l’eau, emballages, responsabilité
   sociétale.
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_energie_verte.png
 opérateur de contact: CCI ou CMA
 url: ''
 nature de l'aide: accompagnement
@@ -19,20 +19,23 @@ objectifs:
   label.
 - Profiter d’une communication gratuite dans le cadre de cette opération.
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - règles d'éligibilité
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  règles d'éligibilité:
+    - est éligible
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+  entreprise . est éligible:
     toutes ces conditions:
-    - entreprise . effectif <= 249
-  secteur d'activité prioritaire:
+    - a un effectif éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+    - effectif <= 249
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est F
-    - entreprise . code NAF niveau 1 . est G
-    - entreprise . code NAF niveau 1 . est I
-  est dans les objectifs de l'entreprise:
+    - code NAF niveau 1 . est F
+    - code NAF niveau 1 . est G
+    - code NAF niveau 1 . est I
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est la gestion des déchets
     - questionnaire . objectif prioritaire . est diminuer ma consommation d'eau

@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Table de passage Code commune <> Région",
+  "description": "Cette table de passage permet de récupérer le nom de la région en fonction d'un code commune.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "REGION": {
+        "enum": [
+          null,
+          "Auvergne-Rhône-Alpes",
+          "Bourgogne-Franche-Comté",
+          "Bretagne",
+          "Centre-Val de Loire",
+          "Corse",
+          "Grand Est",
+          "Hauts-de-France",
+          "Normandie",
+          "Nouvelle-Aquitaine",
+          "Occitanie",
+          "Provence-Alpes-Côte d'Azur",
+          "Pays de la Loire",
+          "Île-de-France",
+          "Guadeloupe",
+          "Guyane",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Ile de Clipperton",
+          "Nouvelle-Calédonie",
+          "Polynésie française",
+          "Saint-Barthélemy",
+          "Saint-Martin",
+          "Saint-Pierre-Et-Miquelon",
+          "Terres australes et antarctiques françaises",
+          "Wallis et Futuna"
+        ]
+      },
+      "COM": {
+        "type": "string"
+      }
+    }
+  }
+}
