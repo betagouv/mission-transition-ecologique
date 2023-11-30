@@ -103,7 +103,20 @@ EXPECT that the programs respect a set of given rules
       ProgramAidType.loan,
       /*has priority over*/ [ProgramAidType.tax, ProgramAidType.train]
     ),
-    ...TestProgramTypePriority(ProgramAidType.tax, /*has priority over*/ [ProgramAidType.train])
+    ...TestProgramTypePriority(ProgramAidType.tax /*has priority over*/, [ProgramAidType.train]),
+    {
+      name: 'wrap up',
+      programs: [
+        makeProgram('1', '', ProgramAidType.train),
+        makeProgram('2', '', ProgramAidType.tax),
+        makeProgram('3', '', ProgramAidType.loan),
+        makeProgram('4', '', ProgramAidType.fund),
+        makeProgram('5', '', ProgramAidType.acc),
+        makeProgram('6', 'Sur devis (Gratuit en bretagne)', ProgramAidType.acc),
+        makeProgram('7', 'gratuit', ProgramAidType.acc)
+      ],
+      expectedIdOrder: ['7', '6', '5', '4', '3', '2', '1']
+    }
   ]
   testCases.map((tc) => {
     test(`${tc.name}`, () => {
