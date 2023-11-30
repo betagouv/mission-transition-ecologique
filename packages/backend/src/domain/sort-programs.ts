@@ -18,19 +18,19 @@ const comparePrograms = (
 const getPriority = (prog: ProgramData, route: TrackHelpValue): number => {
   switch (route) {
     case TrackHelpValue.Unknown:
-      if (isFreeCoaching(prog)) return 1
-      if (isMaybeFreeCoaching(prog)) return 2
+      if (isFreeCoachingOrTraining(prog)) return 1
+      if (isMaybeFreeCoachingOrTraining(prog)) return 2
       if (hasType(ProgramAidType.acc, prog)) return 3
-      if (hasType(ProgramAidType.train, prog)) return 4
-      if (hasType(ProgramAidType.fund, prog)) return 5
-      if (hasType(ProgramAidType.loan, prog)) return 6
-      if (hasType(ProgramAidType.tax, prog)) return 7
+      if (hasType(ProgramAidType.train, prog)) return 3
+      if (hasType(ProgramAidType.fund, prog)) return 4
+      if (hasType(ProgramAidType.loan, prog)) return 5
+      if (hasType(ProgramAidType.tax, prog)) return 6
       return 10
 
     case TrackHelpValue.Precise:
-      if (isFreeCoaching(prog)) return 7
-      if (isMaybeFreeCoaching(prog)) return 6
-      if (hasType(ProgramAidType.acc, prog)) return 5
+      if (isFreeCoachingOrTraining(prog)) return 6
+      if (isMaybeFreeCoachingOrTraining(prog)) return 5
+      if (hasType(ProgramAidType.acc, prog)) return 4
       if (hasType(ProgramAidType.train, prog)) return 4
       if (hasType(ProgramAidType.tax, prog)) return 3
       if (hasType(ProgramAidType.loan, prog)) return 2
@@ -41,10 +41,10 @@ const getPriority = (prog: ProgramData, route: TrackHelpValue): number => {
 
 const FREE_KEYWORD = 'gratuit'
 
-const isFreeCoaching = (program: ProgramData) =>
+const isFreeCoachingOrTraining = (program: ProgramData) =>
   program["coût de l'accompagnement"]?.toLowerCase() == FREE_KEYWORD
 
-const isMaybeFreeCoaching = (program: ProgramData) =>
+const isMaybeFreeCoachingOrTraining = (program: ProgramData) =>
   program["coût de l'accompagnement"]?.toLowerCase().includes(FREE_KEYWORD)
 
 const hasType = (aidType: ProgramAidType, program: ProgramData) =>

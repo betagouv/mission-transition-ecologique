@@ -101,7 +101,7 @@ EXPECT that the programs respect a set of given rules
         makeProgram('6', ProgramAidType.acc, 'Sur devis (Gratuit en bretagne)'),
         makeProgram('7', ProgramAidType.acc, 'gratuit')
       ],
-      expectedIdOrder: ['7', '6', '5', '4', '3', '2', '1']
+      expectedIdOrder: ['7', '6', '4', '5', '3', '2', '1']
     }
   ]
 
@@ -160,7 +160,7 @@ EXPECT that the programs respect a set of given rules
         makeProgram('6', ProgramAidType.loan),
         makeProgram('7', ProgramAidType.fund)
       ],
-      expectedIdOrder: ['7', '6', '5', '4', '3', '2', '1']
+      expectedIdOrder: ['7', '6', '5', '3', '4', '2', '1']
     }
   ]
 
