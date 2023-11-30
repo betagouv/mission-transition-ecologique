@@ -98,7 +98,12 @@ EXPECT that the programs respect a set of given rules
     ...TestProgramTypePriority(
       ProgramAidType.fund,
       /*has priority over*/ [ProgramAidType.loan, ProgramAidType.tax, ProgramAidType.train]
-    )
+    ),
+    ...TestProgramTypePriority(
+      ProgramAidType.loan,
+      /*has priority over*/ [ProgramAidType.tax, ProgramAidType.train]
+    ),
+    ...TestProgramTypePriority(ProgramAidType.tax, /*has priority over*/ [ProgramAidType.train])
   ]
   testCases.map((tc) => {
     test(`${tc.name}`, () => {

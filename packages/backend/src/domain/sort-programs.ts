@@ -14,6 +14,8 @@ const getPriority = (program: ProgramData): number => {
   if (isMaybeFreeCoaching(program)) return 2
   if (isCoaching(program)) return 3
   if (isFunding(program)) return 4
+  if (isLoan(program)) return 5
+  if (isTax(program)) return 6
   return 100
 }
 
@@ -28,3 +30,7 @@ const isMaybeFreeCoaching = (program: ProgramData) =>
 const isCoaching = (program: ProgramData) => program["nature de l'aide"] == ProgramAidType.acc
 
 const isFunding = (program: ProgramData) => program["nature de l'aide"] == ProgramAidType.fund
+
+const isLoan = (program: ProgramData) => program["nature de l'aide"] == ProgramAidType.loan
+
+const isTax = (program: ProgramData) => program["nature de l'aide"] == ProgramAidType.tax
