@@ -1,5 +1,5 @@
 import { sortPrograms } from '@tee/backend/src/domain/sort-programs'
-import { ProgramAidType, ProgramData } from '@tee/web/src/types'
+import { ProgramAidType, ProgramData, TrackHelpValue } from '@tee/web/src/types'
 import { makeProgramHelper } from './testing'
 
 const makeProgram = (id: string, cost: string, nature: ProgramAidType) =>
@@ -11,7 +11,8 @@ const makeProgram = (id: string, cost: string, nature: ProgramAidType) =>
 
 describe(`
  GIVEN a list of programs
-  WHEN sorting the programs
+  WHEN sorting the programs for the questionnaire route "Je ne sais pas par où
+       commencer"
 EXPECT that the programs respect a set of given rules
 `, () => {
   type TestCase = {
@@ -120,7 +121,7 @@ EXPECT that the programs respect a set of given rules
   ]
   testCases.map((tc) => {
     test(`${tc.name}`, () => {
-      const sortedPrograms = sortPrograms(tc.programs)
+      const sortedPrograms = sortPrograms(tc.programs, TrackHelpValue.Unknown)
       expect(sortedPrograms).toHaveLength(tc.expectedIdOrder.length)
 
       const expectedSortedPrograms = tc.expectedIdOrder.map((id) => {

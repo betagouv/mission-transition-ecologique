@@ -1,21 +1,34 @@
-import { ProgramAidType, ProgramData } from '@tee/web/src/types'
+import { ProgramAidType, ProgramData, TrackHelpValue } from '@tee/web/src/types'
 
-export const sortPrograms = (programs: ProgramData[]): ProgramData[] => {
-  const sortedPrograms = programs.sort(comparePrograms)
+export const sortPrograms = (
+  programs: ProgramData[],
+  questionnaireRoute: TrackHelpValue
+): ProgramData[] => {
+  const comparisonFun = (program1: ProgramData, program2: ProgramData) =>
+    comparePrograms(program1, program2, questionnaireRoute)
+  const sortedPrograms = programs.sort(comparisonFun)
   return sortedPrograms
 }
 
-const comparePrograms = (program1: ProgramData, program2: ProgramData): number => {
-  return Math.sign(getPriority(program1) - getPriority(program2))
+const comparePrograms = (
+  program1: ProgramData,
+  program2: ProgramData,
+  questionnaireRoute: TrackHelpValue
+): number => {
+  return Math.sign(
+    getPriority(program1, questionnaireRoute) - getPriority(program2, questionnaireRoute)
+  )
 }
 
-const getPriority = (program: ProgramData): number => {
-  if (isFreeCoaching(program)) return 1
-  if (isMaybeFreeCoaching(program)) return 2
-  if (hasType(ProgramAidType.acc, program)) return 3
-  if (hasType(ProgramAidType.fund, program)) return 4
-  if (hasType(ProgramAidType.loan, program)) return 5
-  if (hasType(ProgramAidType.tax, program)) return 6
+const getPriority = (program: ProgramData, questionnaireRoute: TrackHelpValue): number => {
+  if (questionnaireRoute == TrackHelpValue.Unknown) {
+    if (isFreeCoaching(program)) return 1
+    if (isMaybeFreeCoaching(program)) return 2
+    if (hasType(ProgramAidType.acc, program)) return 3
+    if (hasType(ProgramAidType.fund, program)) return 4
+    if (hasType(ProgramAidType.loan, program)) return 5
+    if (hasType(ProgramAidType.tax, program)) return 6
+  }
   return 100
 }
 
