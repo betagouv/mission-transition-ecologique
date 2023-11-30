@@ -15,8 +15,10 @@ const getPriority = (program: ProgramData): number => {
   return 3
 }
 
+const FREE_KEYWORD = 'gratuit'
+
 const isFreeCoaching = (program: ProgramData) =>
-  program["coût de l'accompagnement"]?.toLowerCase() == 'gratuit'
+  program["coût de l'accompagnement"]?.toLowerCase() == FREE_KEYWORD
 
 const isMaybeFreeCoaching = (program: ProgramData) =>
-  program["coût de l'accompagnement"]?.includes('gratuit')
+  program["coût de l'accompagnement"]?.toLowerCase().includes(FREE_KEYWORD)

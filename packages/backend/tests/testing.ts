@@ -6,11 +6,13 @@ import { FILTERING_RULE_NAME } from '../src/domain/filter-programs'
 export const makeProgramHelper = ({
   id = '',
   rules = { [FILTERING_RULE_NAME]: 'oui' },
-  cost = '1000 €'
+  cost = '1000 €',
+  nature = ProgramAidType.acc
 }: {
   id?: string
   rules?: Object
   cost?: string
+  nature?: ProgramAidType
 }): ProgramData => {
   return {
     id: id,
@@ -20,7 +22,7 @@ export const makeProgramHelper = ({
     illustration: '',
     objectifs: [],
     'opérateur de contact': '',
-    "nature de l'aide": ProgramAidType.acc,
+    "nature de l'aide": nature,
     "coût de l'accompagnement": cost,
     publicodes: rules
   }
