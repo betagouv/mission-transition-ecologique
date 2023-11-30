@@ -11,8 +11,12 @@ const comparePrograms = (program1: ProgramData, program2: ProgramData): number =
 
 const getPriority = (program: ProgramData): number => {
   if (isFreeCoaching(program)) return 1
-  return 2
+  if (isMaybeFreeCoaching(program)) return 2
+  return 3
 }
 
 const isFreeCoaching = (program: ProgramData) =>
   program["coût de l'accompagnement"]?.toLowerCase() == 'gratuit'
+
+const isMaybeFreeCoaching = (program: ProgramData) =>
+  program["coût de l'accompagnement"]?.includes('gratuit')
