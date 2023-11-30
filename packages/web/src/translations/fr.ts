@@ -110,6 +110,11 @@ export const frDict = {
       the: "l'",
       this: 'cet',
       of: "de l'"
-    }
+    },
+    formation: {
+      the: 'la',
+      this: 'cette',
+      of: 'de la'
+    },
   }
 }
