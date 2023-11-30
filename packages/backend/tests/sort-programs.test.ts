@@ -211,7 +211,7 @@ EXPECT that the programs respect a set of given rules
   ]
 
   allTestCases.map((tc) => {
-    test(`${tc.name}`, () => {
+    test(`${tc.questionnaireRoute}: ${tc.name}`, () => {
       const sortedPrograms = sortPrograms(tc.programs, tc.questionnaireRoute!)
       expect(sortedPrograms).toHaveLength(tc.expectedIdOrder.length)
 

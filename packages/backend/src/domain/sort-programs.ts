@@ -4,24 +4,19 @@ export const sortPrograms = (
   programs: ProgramData[],
   questionnaireRoute: TrackHelpValue
 ): ProgramData[] => {
-  const comparisonFun = (program1: ProgramData, program2: ProgramData) =>
-    comparePrograms(program1, program2, questionnaireRoute)
-  const sortedPrograms = programs.sort(comparisonFun)
-  return sortedPrograms
+  return programs.sort((p1, p2) => comparePrograms(p1, p2, questionnaireRoute))
 }
 
 const comparePrograms = (
   program1: ProgramData,
   program2: ProgramData,
-  questionnaireRoute: TrackHelpValue
+  route: TrackHelpValue
 ): number => {
-  return Math.sign(
-    getPriority(program1, questionnaireRoute) - getPriority(program2, questionnaireRoute)
-  )
+  return Math.sign(getPriority(program1, route) - getPriority(program2, route))
 }
 
-const getPriority = (prog: ProgramData, questionnaireRoute: TrackHelpValue): number => {
-  switch (questionnaireRoute) {
+const getPriority = (prog: ProgramData, route: TrackHelpValue): number => {
+  switch (route) {
     case TrackHelpValue.Unknown:
       if (isFreeCoaching(prog)) return 1
       if (isMaybeFreeCoaching(prog)) return 2
@@ -29,14 +24,16 @@ const getPriority = (prog: ProgramData, questionnaireRoute: TrackHelpValue): num
       if (hasType(ProgramAidType.fund, prog)) return 4
       if (hasType(ProgramAidType.loan, prog)) return 5
       if (hasType(ProgramAidType.tax, prog)) return 6
-      return 7
+      return 10
 
     case TrackHelpValue.Precise:
-      if (hasType(ProgramAidType.fund, prog)) return 1
-      if (hasType(ProgramAidType.loan, prog)) return 2
-      if (hasType(ProgramAidType.tax, prog)) return 3
+      if (isFreeCoaching(prog)) return 6
+      if (isMaybeFreeCoaching(prog)) return 5
       if (hasType(ProgramAidType.acc, prog)) return 4
-      return 100
+      if (hasType(ProgramAidType.tax, prog)) return 3
+      if (hasType(ProgramAidType.loan, prog)) return 2
+      if (hasType(ProgramAidType.fund, prog)) return 1
+      return 10
   }
 }
 
