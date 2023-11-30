@@ -38,7 +38,7 @@ EXPECT that the programs respect a set of given rules
       expectedIdOrder: ['2', '1']
     },
     {
-      name: 'free coaching first 3',
+      name: 'free coaching first 3 (case insensitive)',
       programs: [makeProgram('1'), makeCoachingProgram('2', 'Gratuit')],
       expectedIdOrder: ['2', '1']
     }
