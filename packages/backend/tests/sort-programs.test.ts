@@ -20,6 +20,19 @@ EXPECT that the programs respect a set of given rules
     expectedIdOrder: string[]
   }
 
+  const TestProgramTypePriority = (
+    priorityType: ProgramAidType,
+    over: ProgramAidType[]
+  ): TestCase[] => {
+    return over.map((aidType) => {
+      return {
+        name: `${priorityType} over ${aidType}`,
+        programs: [makeProgram('1', '', aidType), makeProgram('2', '', priorityType)],
+        expectedIdOrder: ['2', '1']
+      }
+    })
+  }
+
   const testCases: TestCase[] = [
     {
       name: 'empty',
@@ -73,22 +86,19 @@ EXPECT that the programs respect a set of given rules
       ],
       expectedIdOrder: ['3', '2', '1']
     },
-    ...[ProgramAidType.fund, ProgramAidType.loan, ProgramAidType.tax, ProgramAidType.train].map(
-      (aidType) => {
-        return {
-          name: `coaching over ${aidType}`,
-          programs: [makeProgram('1', '', aidType), makeProgram('2', '', ProgramAidType.acc)],
-          expectedIdOrder: ['2', '1']
-        }
-      }
+    ...TestProgramTypePriority(
+      ProgramAidType.acc,
+      /* has priority over*/ [
+        ProgramAidType.fund,
+        ProgramAidType.loan,
+        ProgramAidType.tax,
+        ProgramAidType.train
+      ]
     ),
-    ...[ProgramAidType.loan, ProgramAidType.tax, ProgramAidType.train].map((aidType) => {
-      return {
-        name: `funding over ${aidType}`,
-        programs: [makeProgram('1', '', aidType), makeProgram('2', '', ProgramAidType.fund)],
-        expectedIdOrder: ['2', '1']
-      }
-    })
+    ...TestProgramTypePriority(
+      ProgramAidType.fund,
+      /*has priority over*/ [ProgramAidType.loan, ProgramAidType.tax, ProgramAidType.train]
+    )
   ]
   testCases.map((tc) => {
     test(`${tc.name}`, () => {
