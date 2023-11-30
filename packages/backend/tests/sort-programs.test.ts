@@ -36,6 +36,11 @@ EXPECT that the programs respect a set of given rules
       name: 'free coaching first 2',
       programs: [makeProgram('1'), makeCoachingProgram('2', 'gratuit')],
       expectedIdOrder: ['2', '1']
+    },
+    {
+      name: 'free coaching first 3',
+      programs: [makeProgram('1'), makeCoachingProgram('2', 'Gratuit')],
+      expectedIdOrder: ['2', '1']
     }
   ]
   testCases.map((tc) => {
