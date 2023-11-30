@@ -73,7 +73,6 @@ EXPECT that the programs respect a set of given rules
       ],
       expectedIdOrder: ['3', '2', '1']
     },
-
     ...[ProgramAidType.fund, ProgramAidType.loan, ProgramAidType.tax, ProgramAidType.train].map(
       (aidType) => {
         return {
@@ -82,7 +81,14 @@ EXPECT that the programs respect a set of given rules
           expectedIdOrder: ['2', '1']
         }
       }
-    )
+    ),
+    ...[ProgramAidType.loan, ProgramAidType.tax, ProgramAidType.train].map((aidType) => {
+      return {
+        name: `funding over ${aidType}`,
+        programs: [makeProgram('1', '', aidType), makeProgram('2', '', ProgramAidType.fund)],
+        expectedIdOrder: ['2', '1']
+      }
+    })
   ]
   testCases.map((tc) => {
     test(`${tc.name}`, () => {
