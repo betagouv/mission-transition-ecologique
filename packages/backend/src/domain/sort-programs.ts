@@ -30,6 +30,7 @@ const getPriority = (program: ProgramData, questionnaireRoute: TrackHelpValue): 
       if (hasType(ProgramAidType.loan, program)) return 5
       if (hasType(ProgramAidType.tax, program)) return 6
       return 100
+
     case TrackHelpValue.Precise:
       if (hasType(ProgramAidType.fund, program)) return 1
       if (hasType(ProgramAidType.loan, program)) return 2
