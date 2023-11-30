@@ -42,7 +42,6 @@ export const randomChoice = (array: any[]) => {
 export const getFrom = (from: any, selectors: PropertyPath[]) => {
   // console.log('utils > helpers > getFrom >  selectors :', selectors)
   const res = selectors.map((selector: PropertyPath) => {
-    // @ts-ignore
     const arraySelector = Array.isArray(selector)
       ? selector
       : selector
@@ -52,8 +51,10 @@ export const getFrom = (from: any, selectors: PropertyPath[]) => {
           .split('.')
           .filter((t: any) => t !== '')
 
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return getFromArraySelector(from, arraySelector)
   })
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return res
 }
 

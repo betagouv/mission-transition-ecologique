@@ -28,19 +28,19 @@ const props = defineProps<Props>()
 
 const choices = choicesStore()
 
-const activeOption = ref<any>()
+const activeOption = ref<TrackOptionsSelect>()
 
 const emit = defineEmits(['updateSelection'])
 
 const options: TrackOptionsSelect[] = props.track.options?.filter((o): o is TrackOptionsSelect => !!o.label) || []
 
-const updateLocalSelection = (event: any) => {
+const updateLocalSelection = (event: Event) => {
   // console.log()
   // console.log('TeeTrackSelect > updateLocalSelection > event :', event)
-  const index = event.target.value
+  const index = (event.target as HTMLSelectElement).value as unknown as number
   // console.log('TeeTrackSelect > updateLocalSelection > index :', index)
 
-  const isReset = event.target.value === ''
+  const isReset = (event.target as HTMLSelectElement).value === ''
   // set local ref
   activeOption.value = isReset ? undefined : options[index]
 

@@ -83,6 +83,5 @@
 </template>
 
 <script setup lang="ts">
-// @ts-ignore
 import TeeHelp from '@/components/home/TeeHelp.vue'
 </script>

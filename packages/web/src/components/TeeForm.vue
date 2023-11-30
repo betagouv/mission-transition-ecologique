@@ -185,17 +185,14 @@
 
 <script setup lang="ts">
 import { computed, onBeforeMount, ref, toRaw } from 'vue'
-
-// @ts-ignore
 import type { FormCallback, FormField, FormOptions, FormValues, ProgramData, ReqResp } from '@/types/index'
 import { CallbackActions, FormFieldTypes } from '@/types/index'
-
 import { sendApiRequest } from '../utils/requests'
 import { remapItem } from '../utils/helpers'
-
 import { tracksStore } from '../stores/tracks'
 import { choicesStore } from '../stores/choices'
 import { analyticsStore } from '../stores/analytics'
+import type { ImportMetaEnv } from '@/env'
 
 const choices = choicesStore()
 const tracks = tracksStore()
@@ -203,10 +200,8 @@ const analytics = analyticsStore()
 
 // const usedTracks: UsedTrack[] | any[] = tracks.getAllUsedTracks
 const trackValues: any[] = tracks.getAllUsedTracksValues
-
-// @ts-ignore
-const metaEnv = import.meta.env
-const contactEmail: string = metaEnv.VITE_CONTACT_EMAIL || 'france-transition@beta.gouv.fr'
+const metaEnv: ImportMetaEnv = import.meta.env
+const contactEmail = metaEnv.VITE_CONTACT_EMAIL || 'france-transition@beta.gouv.fr'
 
 interface DataProps {
   programId: string
@@ -221,18 +216,16 @@ interface Props {
 }
 const props = defineProps<Props>()
 
-let formData = ref()
-const requiredFields = ref([])
+let formData = ref<FormValues>()
+const requiredFields = ref<string[]>([])
 const formIsSent = ref<boolean>(false)
 const requestResponses = ref<ReqResp[]>()
-const formFieldTypes = FormFieldTypes
 
 // const program = computed(() => {
 //   return programs.getProgramById(props.dataProps.programId)
 // })
 
 const canSaveFrom = computed(() => {
-  // @ts-ignore
   const boolArr = requiredFields.value.map((f: string) => formData.value[f])
   return boolArr.every((v) => !!v && v !== '')
 })
@@ -272,7 +265,6 @@ onBeforeMount(() => {
     // set field's key
     initValues[field.id] = isCheckbox(field) ? false : ''
 
-    // @ts-ignore
     if (field.required) {
       requiredFields.value.push(field.id)
     }

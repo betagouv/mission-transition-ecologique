@@ -20,7 +20,7 @@ export enum ProgramAidType {
 export interface Condition {
   type?: string
   operator?: ConditionOperators
-  value?: any | any[]
+  value?: any
 }
 
 export interface ProgramData {

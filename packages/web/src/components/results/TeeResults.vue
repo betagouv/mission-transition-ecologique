@@ -127,29 +127,20 @@ import { ref, onBeforeMount, computed } from 'vue'
 import { choicesStore } from '../../stores/choices'
 import { programsStore } from '../../stores/programs'
 import { analyticsStore } from '../../stores/analytics'
-
 import { getFrom, scrollToTop, consolidateAmounts } from '../../utils/helpers'
-
-// @ts-ignore
 import TeeResultsFilter from './TeeResultsFilter.vue'
-// @ts-ignore
 import TeeNoResults from './TeeNoResults.vue'
-
-// @ts-ignore
 import type { TrackResultsConfig, ProgramData, FilterSignal, TrackFilter, PropertyPath } from '@/types/index'
-// @ts-ignore
 import { ProgramAidType } from '@/types/programTypes'
 import { navigationStore } from '@/stores/navigation'
-import { ConditionOperators, TrackId, UsedTrack } from '@/types/index'
-// @ts-ignore
-// import { randomChoice } from '@/utils/helpers'
+import { ConditionOperators, TrackId, type UsedTrack } from '@/types/index'
 
 const choices = choicesStore()
 const programs = programsStore()
 const analytics = analyticsStore()
 const nav = navigationStore()
 
-const activeFilters = ref<any>({})
+const activeFilters = ref<Record<string, string>>({})
 
 interface Props {
   trackId: TrackId
@@ -173,7 +164,8 @@ const reFilteredPrograms = computed(() => {
     const boolArray = [true]
     for (const filterLabel in activeFilters.value) {
       const filterVal = activeFilters.value[filterLabel]
-      const filterConfig: TrackFilter | undefined = props.trackConfig?.filters?.find((f: any) => f.label === filterLabel)
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      const filterConfig: TrackFilter | undefined = props.trackConfig?.filters?.find((filter: any) => filter.label === filterLabel)
       const filterField: PropertyPath = filterConfig?.field || ''
       const trueIf = filterConfig?.trueIf || ConditionOperators.is
       // console.log(`\nTeeResults > reFilteredPrograms > filterField: "${filterField}" - filterVal: "${filterVal}" - trueIf: "${trueIf}"` )
@@ -182,7 +174,9 @@ const reFilteredPrograms = computed(() => {
       // console.log('TeeResults > trueIf :', trueIf )
 
       let progVal = getFrom(prog, [filterField])
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       progVal = JSON.parse(JSON.stringify(progVal))
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       progVal = progVal[0]
 
       let bool = false
@@ -190,7 +184,7 @@ const reFilteredPrograms = computed(() => {
         bool = true
       } else if (trueIf === ConditionOperators.is) {
         // console.log('TeeResults > reFilteredPrograms > progVal :', progVal )
-        bool = progVal === filterVal
+        bool = (progVal as unknown as string) === filterVal
       } else if (trueIf === ConditionOperators.exists) {
         progVal = progVal?.filter((i) => i !== null)
         // console.log('TeeResults > reFilteredPrograms > progVal :', progVal )
@@ -225,13 +219,13 @@ const updateFilters = (event: FilterSignal) => {
   activeFilters.value = { ...activeFilters.value, ...val }
 }
 
-const updateDetailResult = (id: string | number) => {
+const updateDetailResult = async (id: string | number) => {
   // console.log(`TeeResults > updateDetailResult >  id : ${id}`)
 
   // Set detail infos
   programs.setDetailResult(id, props.trackId)
-  nav.setCurrentDetailId(id, props.disableWidget)
-  nav.updateUrl(props.disableWidget)
+  await nav.setCurrentDetailId(id, props.disableWidget)
+  await nav.updateUrl(props.disableWidget)
   scrollToTop(props.trackElement, props.disableWidget, props.trackId)
 }
 
@@ -276,9 +270,4 @@ onBeforeMount(() => {
   // analytics / send event
   analytics.sendEvent(props.trackId, 'show_results')
 })
-
-// const randomImage = () => {
-//   const imagePath = randomChoice(defaultImages)
-//   return imagePath
-// }
 </script>
