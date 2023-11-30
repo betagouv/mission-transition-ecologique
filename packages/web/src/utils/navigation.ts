@@ -2,15 +2,13 @@ export const unfoldQueries = (query: any) => {
   const prefix = 'teetrack_'
   const sepValues = '|'
   const sepPairs = ':'
-  const queryTracksRaw = Object.fromEntries(Object.entries(query)
-    .filter(([key]) => key.startsWith(prefix))
-  )
+  const queryTracksRaw = Object.fromEntries(Object.entries(query).filter(([key]) => key.startsWith(prefix)))
   // console.log('utils > navigation > unfoldQueries > queryTracksRaw :', queryTracksRaw)
 
   const queryTracks = Object.keys(queryTracksRaw)
   // console.log('utils > navigation > unfoldQueries > queryTracks :', queryTracks)
 
-  const tracksArray: any[] = queryTracks.map(key => {
+  const tracksArray: any[] = queryTracks.map((key) => {
     const trackId = key.replace(prefix, '')
     const obj = {
       id: trackId,

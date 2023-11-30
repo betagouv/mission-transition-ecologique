@@ -22,6 +22,9 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     ecmaVersion: 'latest',
   },
+  rules: {
+    "@typescript-eslint/no-explicit-any": "off",
+  },
   ignorePatterns: [
     'dist/*',
     'coverage/*',
@@ -33,5 +36,6 @@ module.exports = {
     '.vscode/*',
     'README.md',
     'index.html',
+    '.eslintrc.cjs',
   ],
 }

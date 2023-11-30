@@ -1,79 +1,53 @@
 <template>
-
   <!-- DEBUGGING -->
-  <div
-    v-if="debug"
-    class="vue-debug">
+  <div v-if="debug" class="vue-debug">
     <h5>DEBUG - TeeResults</h5>
     <!-- <h6>
       programs.programDetail : <code>{{ programs.programDetail || 'undefined' }}</code>
     </h6> -->
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
       <div class="fr-col-3">
-        <h6 class="fr-mb-1v"> trackId : <code>{{ trackId }} </code></h6>
+        <h6 class="fr-mb-1v">
+          trackId : <code>{{ trackId }} </code>
+        </h6>
       </div>
       <!-- <div class="fr-col-4">
         <h6 class="fr-mb-1v"> trackConfig : </h6>
           <pre><code>{{ trackConfig }} </code></pre>
       </div> -->
       <div class="fr-col-9">
-        <h6 class="fr-mb-1v"> activeFilters : </h6>
-          <pre><code>{{ activeFilters }} </code></pre>
+        <h6 class="fr-mb-1v">activeFilters :</h6>
+        <pre><code>{{ activeFilters }} </code></pre>
       </div>
     </div>
   </div>
 
   <!-- RESULTS ALERT FOR NO RESULTS BEFORE REFILTERING-->
-  <TeeNoResults
-    v-if="!countFilteredPrograms"
-    :image="trackConfig?.noResultsImage"
-    :message="trackConfig?.noResultsMessage"
-    >
-  </TeeNoResults>
+  <TeeNoResults v-if="!countFilteredPrograms" :image="trackConfig?.noResultsImage" :message="trackConfig?.noResultsMessage"> </TeeNoResults>
 
   <!-- RESULTS CALLBACK -->
-  <h4
-    v-if="countFilteredPrograms && trackConfig?.showResultsTitle"
-    class="fr-pt-12v">
+  <h4 v-if="countFilteredPrograms && trackConfig?.showResultsTitle" class="fr-pt-12v">
     {{ choices.t('results.fittingPrograms') }}
     ({{ countFilteredPrograms }})
   </h4>
 
   <!-- PROGRAMS AS LIST OF CARDS -->
-  <div
-    v-if="countFilteredPrograms"
-    class="fr-container fr-px-0 fr-mt-6v">
-
+  <div v-if="countFilteredPrograms" class="fr-container fr-px-0 fr-mt-6v">
     <!-- RESULTS SIZE -->
-    <div
-      v-if="countFilteredPrograms > 1"
-      class="fr-mb-4v tee-text-light">
+    <div v-if="countFilteredPrograms > 1" class="fr-mb-4v tee-text-light">
       {{ countReFilteredPrograms }}
       {{ choices.t('results.results') }}
     </div>
 
     <!-- FILTERS IF ANY -->
-    <div
-      v-if="trackConfig?.filters && countFilteredPrograms > 1"
-      class="fr-grid-row fr-grid-row--gutters fr-mb-4v">
-      <div
-        v-for="filter in trackConfig.filters"
-        :key="filter.label"
-        class="fr-col">
-        <TeeResultsFilter
-          :filter="filter"
-          :debug="debug"
-          @updateFilter="updateFilters"/>
+    <div v-if="trackConfig?.filters && countFilteredPrograms > 1" class="fr-grid-row fr-grid-row--gutters fr-mb-4v">
+      <div v-for="filter in trackConfig.filters" :key="filter.label" class="fr-col">
+        <TeeResultsFilter :filter="filter" :debug="debug" @updateFilter="updateFilters" />
       </div>
     </div>
 
     <!-- NO RESULTS -->
-    <TeeNoResults
-      v-if="!countReFilteredPrograms"
-      :image="trackConfig?.noResultsImage"
-      :message="trackConfig?.noResultsMessage"
-      >
-    </TeeNoResults>
+    <TeeNoResults v-if="!countReFilteredPrograms" :image="trackConfig?.noResultsImage" :message="trackConfig?.noResultsMessage"> </TeeNoResults>
 
     <!-- PROGRAMS CARDS -->
     <div
@@ -81,51 +55,39 @@
       :id="prog.id"
       :key="prog.id"
       class="fr-card fr-enlarge-link fr-card--horizontal-tier fr-mb-10v"
-      @click="updateDetailResult(prog.id)">
+      @click="updateDetailResult(prog.id)"
+    >
       <div class="fr-card__body">
         <div class="fr-card__content">
           <!-- TITLE -->
           <div class="fr-card__start fr-mb-2v">
-            <p
-              class="tee-program-title">
+            <p class="tee-program-title">
               {{ prog.titre }}
             </p>
           </div>
           <!-- CONTENT -->
-          <h2
-            class="fr-card__title tee-program-resume fr-mb-3v">
+          <h2 class="fr-card__title tee-program-resume fr-mb-3v">
             {{ prog.promesse }}
           </h2>
           <!-- DEBUG -->
-          <p
-            v-if="debug"
-            class="vue-debug fr-card__desc">
-            <br> choices.publicPath : <code>{{ choices.publicPath }}</code>
-            <br> prog.cover : <code>{{ prog.illustration }}</code>
+          <p v-if="debug" class="vue-debug fr-card__desc">
+            <br />
+            choices.publicPath : <code>{{ choices.publicPath }}</code> <br />
+            prog.cover : <code>{{ prog.illustration }}</code>
             <!-- {{ `${choices.publicPath}${randomImage()}` }} -->
           </p>
           <!-- END -->
           <div class="fr-card__end">
-            <p
-              class="fr-mb-0 tee-program-info">
-              <span
-                class="fr-icon-money-euro-circle-line"
-                aria-hidden="true">
-              </span>
+            <p class="fr-mb-0 tee-program-info">
+              <span class="fr-icon-money-euro-circle-line" aria-hidden="true"> </span>
               {{ getCostInfos(prog) }}
             </p>
           </div>
         </div>
       </div>
-      <div
-        v-if="prog.illustration"
-        class="fr-card__header">
+      <div v-if="prog.illustration" class="fr-card__header">
         <div class="fr-card__img">
-          <img
-            class="fr-responsive-img"
-            :src="`${choices.publicPath}${prog.illustration}`"
-            :alt="`image / ${prog.titre}`"
-            />
+          <img class="fr-responsive-img" :src="`${choices.publicPath}${prog.illustration}`" :alt="`image / ${prog.titre}`" />
         </div>
         <ul class="fr-badges-group">
           <p class="fr-badge tee-program-badge-image">
@@ -137,28 +99,30 @@
   </div>
 
   <!-- DEBUGGING -->
-  <div
-    v-if="debug"
-    class="vue-debug">
+  <div v-if="debug" class="vue-debug">
     <h5>DEBUG - TeeResults</h5>
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
       <div class="fr-col-6">
         <h6>filteredPrograms</h6>
-        <code><pre>{{ filteredPrograms }}</pre></code>
+        <code>
+          <pre>{{ filteredPrograms }}</pre>
+        </code>
       </div>
       <div class="fr-col-6">
         <h6>tracksResults</h6>
-        <code><pre>{{ tracksResults }}</pre></code>
+        <code>
+          <pre>{{ tracksResults }}</pre>
+        </code>
         <h6>programs.progs</h6>
-        <code><pre>{{ programs.progs }}</pre></code>
+        <code>
+          <pre>{{ programs.progs }}</pre>
+        </code>
       </div>
     </div>
   </div>
-
 </template>
 
 <script setup lang="ts">
-
 import { ref, onBeforeMount, computed } from 'vue'
 import { choicesStore } from '../../stores/choices'
 import { programsStore } from '../../stores/programs'
@@ -172,11 +136,11 @@ import TeeResultsFilter from './TeeResultsFilter.vue'
 import TeeNoResults from './TeeNoResults.vue'
 
 // @ts-ignore
-import type { TrackChoice, TrackResultsConfig, ProgramData, FilterSignal, TrackFilter, PropertyPath } from '@/types/index'
+import type { TrackResultsConfig, ProgramData, FilterSignal, TrackFilter, PropertyPath } from '@/types/index'
 // @ts-ignore
 import { ProgramAidType } from '@/types/programTypes'
 import { navigationStore } from '@/stores/navigation'
-import { ConditionOperators, TrackId } from '@/types/index'
+import { ConditionOperators, TrackId, UsedTrack } from '@/types/index'
 // @ts-ignore
 // import { randomChoice } from '@/utils/helpers'
 
@@ -188,13 +152,13 @@ const nav = navigationStore()
 const activeFilters = ref<any>({})
 
 interface Props {
-  trackId: TrackId,
-  trackConfig?: TrackResultsConfig,
-  trackOptions?: any,
-  trackForm?: any,
-  tracksResults: TrackChoice[] | any[],
-  trackElement: any,
-  disableWidget?: boolean,
+  trackId: TrackId
+  trackConfig?: TrackResultsConfig
+  trackOptions?: any
+  trackForm?: any
+  tracksResults: UsedTrack[]
+  trackElement: any
+  disableWidget?: boolean
   debug?: boolean
 }
 const props = defineProps<Props>()
@@ -209,7 +173,7 @@ const reFilteredPrograms = computed(() => {
     const boolArray = [true]
     for (const filterLabel in activeFilters.value) {
       const filterVal = activeFilters.value[filterLabel]
-      const filterConfig: TrackFilter | undefined = props.trackConfig?.filters?.find((f:any) => f.label === filterLabel)
+      const filterConfig: TrackFilter | undefined = props.trackConfig?.filters?.find((f: any) => f.label === filterLabel)
       const filterField: PropertyPath = filterConfig?.field || ''
       const trueIf = filterConfig?.trueIf || ConditionOperators.is
       // console.log(`\nTeeResults > reFilteredPrograms > filterField: "${filterField}" - filterVal: "${filterVal}" - trueIf: "${trueIf}"` )
@@ -228,7 +192,7 @@ const reFilteredPrograms = computed(() => {
         // console.log('TeeResults > reFilteredPrograms > progVal :', progVal )
         bool = progVal === filterVal
       } else if (trueIf === ConditionOperators.exists) {
-        progVal = progVal?.filter(i => i !== null)
+        progVal = progVal?.filter((i) => i !== null)
         // console.log('TeeResults > reFilteredPrograms > progVal :', progVal )
         bool = !progVal ? true : progVal.includes(filterVal)
       } else {
@@ -237,7 +201,7 @@ const reFilteredPrograms = computed(() => {
       boolArray.push(bool)
     }
     // console.log('TeeResults > reFilteredPrograms > boolArray :', boolArray )
-    const checkFilters = boolArray.every(b => !!b)
+    const checkFilters = boolArray.every((b) => !!b)
     // console.log('TeeResults > reFilteredPrograms > checkFilters :', checkFilters )
     return checkFilters
   })
@@ -258,7 +222,7 @@ const updateFilters = (event: FilterSignal) => {
   const val = {
     [event.label]: event.value
   }
-  activeFilters.value = {...activeFilters.value, ...val }
+  activeFilters.value = { ...activeFilters.value, ...val }
 }
 
 const updateDetailResult = (id: string | number) => {

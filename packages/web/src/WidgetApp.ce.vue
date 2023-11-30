@@ -6,7 +6,7 @@
     </p>
 
     <!-- DEBUGGING -->
-    <div class="vue-debug" v-if="debug">
+    <div v-if="debug" class="vue-debug">
       <h5>DEBUG - WidgetApp</h5>
       <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
         <div class="fr-col-4">
@@ -38,7 +38,7 @@
       </div>
       <!-- DEBUG SWITCH-->
       <div v-if="debugSwitchBool" class="fr-col-md-3 fr-col-sm-6">
-        <DsfrToggleSwitch label="Debug mode" hint="Switch to activate / deactivate debugging mode" :modelValue="debugBool" @update:modelValue="changeDebug" />
+        <DsfrToggleSwitch label="Debug mode" hint="Switch to activate / deactivate debugging mode" :model-value="debugBool" @update:model-value="changeDebug" />
       </div>
     </div>
 
@@ -46,11 +46,19 @@
     <TeeMatomo v-if="!disableWidget" :debug="debugBool" />
 
     <!-- QUESTIONNAIRE -->
-    <div v-show="!programs.programDetail" :id="disableWidget ? 'widget' : 'trackElement'" :class="`fr-container--fluid ${tracks.currentStep > 1 ? 'fr-pt-10v' : ''}`">
+    <div
+      v-show="!programs.programDetail"
+      :id="disableWidget ? 'widget' : 'trackElement'"
+      :class="`fr-container--fluid ${tracks.currentStep > 1 ? 'fr-pt-10v' : ''}`"
+    >
       <!-- TRACKS INTERFACES -->
       <div ref="tee-app-tracks" class="fr-grid-row fr-grid-row-gutters fr-p-0 fr-justify-center">
         <!-- SIDEBAR MENU (FIL D'ARIANE)-->
-        <div v-if="needSidebar && tracks.currentStep > 1" class="fr-tee-add-padding fr-mt-4v fr-col-3 fr-col-md-4 fr-col-lg-4 fr-col-xl-2 fr-col-sm-hide" style="height: 100%">
+        <div
+          v-if="needSidebar && tracks.currentStep > 1"
+          class="fr-tee-add-padding fr-mt-4v fr-col-3 fr-col-md-4 fr-col-lg-4 fr-col-xl-2 fr-col-sm-hide"
+          style="height: 100%"
+        >
           <TeeSidebar :used-tracks="tracks.usedTracks" :debug="debugBool" />
         </div>
 
@@ -62,7 +70,14 @@
             :style="`${tracks.getTrackBgColor(track.id) ? 'padding: 0px; background-color:' + tracks.getTrackBgColor(track.id) : ''}`"
             :class="`fr-p-0 fr-mb-${debugBool ? '12v' : '0'}`"
           >
-            <TeeTrack :step="index + 1" :track-id="track.id" :is-completed="!!tracks.isTrackCompleted(track.id)" :track-element="trackElement" :disable-widget="disableWidget" :debug="debugBool" />
+            <TeeTrack
+              :step="index + 1"
+              :track-id="track.id"
+              :is-completed="!!tracks.isTrackCompleted(track.id)"
+              :track-element="trackElement"
+              :disable-widget="disableWidget"
+              :debug="debugBool"
+            />
           </div>
         </div>
 
@@ -154,38 +169,25 @@ import '@gouvfr/dsfr/dist/core/core.main.min.css' // Le CSS minimal du DSFR
 // import '@gouvminint/vue-dsfr/styles'                         // Les styles propres aux composants de VueDsfr
 // import '@gouvfr/dsfr/dist/scheme/scheme.min.css'             // Facultatif : Si les thèmes sont utilisés (thème sombre, thème clair)
 // import '@gouvfr/dsfr/dist/utility/icons/icons.min.css'       // Facultatif : Si des icônes sont utilisées avec les classes "fr-icon-..."
-
 // import '@public/css/core.main.min.css'
 // import '@public/css/custom.css'
-
-// @ts-ignore
 // import jsonDataset from '../public/data/generated/dataset_out.json'
 // console.log('WidgetApp > jsonDataset :', jsonDataset)
-
-import { ref, watch, computed, onBeforeMount, onMounted } from 'vue'
+import { computed, onBeforeMount, onMounted, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
 import { tracksStore } from './stores/tracks'
 import { choicesStore } from './stores/choices'
 import { programsStore } from './stores/programs'
 import { navigationStore } from './stores/navigation'
-
-import { TrackComponents } from './types'
-
-import { metaEnv, deployMode, deployUrl, noDebugSwitch, publicPath, programsFromJson } from './utils/global'
-import { unfoldQueries } from './utils/navigation'
-
-// @ts-ignore
+import { TrackComponents, TrackId } from './types'
+import { deployMode, deployUrl, metaEnv, noDebugSwitch, programsFromJson, publicPath } from './utils/global'
 import TeeMatomo from './components/TeeMatomo.vue'
-// @ts-ignore
 import TeeTrack from './components/tracks/TeeTrack.vue'
-// @ts-ignore
 import TeeSidebar from './components/TeeSidebar.vue'
-// @ts-ignore
 import TeeProgramDetail from './components/program/TeeProgramDetail.vue'
-// @ts-ignore
 import TeeCredits from './components/TeeCredits.vue'
-import { TrackId } from '@/types'
+import { DsfrToggleSwitch } from '@gouvminint/vue-dsfr'
 
 interface Props {
   showHeader?: string
@@ -196,7 +198,7 @@ interface Props {
   msg?: string
   seed: TrackId
   disableWidget?: boolean
-  programId?: string | any
+  programId?: string
   datasetUrl?: string
   maxDepth?: string
   debugSwitch?: string
@@ -213,18 +215,17 @@ const nav = navigationStore()
 const trackElement = ref(null)
 
 // let teeAppTopPosition = ref()
-let showHeaderBool = ref(false)
-let showMessageBool = ref(false)
-let showStepperBool = ref(false)
-let showFooterBool = ref(false)
-let message = ref()
-let debugSwitchBool = ref(false)
-let debugBool = ref(false)
+const showHeaderBool = ref(false)
+const showMessageBool = ref(false)
+const showStepperBool = ref(false)
+const showFooterBool = ref(false)
+const message = ref()
+const debugSwitchBool = ref(false)
+const debugBool = ref(false)
 
 const router = useRouter()
 const route = useRoute()
 
-// @ts-ignore
 window.stores = { tracks, choices, programs }
 
 // watch (() => props.programId, (next) => {
@@ -236,7 +237,7 @@ window.stores = { tracks, choices, programs }
 
 watch(
   () => tracks.usedTracks,
-  (next) => {
+  () => {
     // console.log()
     // console.log('WidgetApp > watch > tracks.usedTracks > next : ', next)
     if (nav.routerReady) {
@@ -247,12 +248,12 @@ watch(
   }
 )
 
-const changeDebug = (ev: any) => {
-  debugBool.value = ev
+const changeDebug = (event: Event) => {
+  debugBool.value = (event.target as HTMLInputElement).value as boolean
 }
 
 const needSidebar = computed(() => {
-  return tracks.seedTrack !== 'track_results' && (tracks.currentStep > 1 || props.disableWidget)
+  return tracks.seedTrack !== TrackId.Results && (tracks.currentStep > 1 || props.disableWidget)
 })
 
 const getColumnsWidth = computed(() => {
@@ -262,9 +263,9 @@ const getColumnsWidth = computed(() => {
   const colsTracks = 'fr-col fr-col-sm-12 fr-col-md-8 fr-col-lg-8 fr-col-xl-6'
   const colsResults = 'fr-col fr-col-sm-12 fr-col-md-8 fr-col-lg-8 fr-col-xl-8'
   if (debugBool.value) return colsDebug
-  else if (tracks.seedTrack === 'track_results' || (tracks.currentStep === 1 && !props.disableWidget)) {
+  else if (tracks.seedTrack === TrackId.Results || (tracks.currentStep === 1 && !props.disableWidget)) {
     return colsStart
-  } else if (currentTrack?.component === TrackComponents.Results) {
+  } else if ((currentTrack.component as TrackComponents) === TrackComponents.Results) {
     return colsResults
   } else {
     return colsTracks
@@ -283,9 +284,8 @@ const setupGlobal = () => {
   choices.setLocale(locale)
 }
 
-const setupFromUrl = () => {
+const setupFromUrl = async () => {
   // parse url to get current track and other queries
-  const currentTrack = route.query['teeActiveTrack']
   /*
   GOAL => unfold object such as
   {
@@ -302,13 +302,13 @@ const setupFromUrl = () => {
   // tracks.populateUsedTracksFromQuery(route.query)
   // nav.populateFromQuery(route.query)
   // parse url to get detail program (if any)
-  const programId = props.programId || route.query['teeDetail']
+  const programId = props.programId || (route.query['teeDetail'] as string | null)
   // console.log('WidgetApp > mounted > currentTrack :', currentTrack)
   // console.log('WidgetApp > mounted > programId :', programId)
-  // @ts-ignore
-  nav.setCurrentDetailId(programId)
-  // @ts-ignore
-  programs.setDetailResult(programId, TrackId.Results)
+  if (programId) {
+    await nav.setCurrentDetailId(programId)
+    programs.setDetailResult(programId, TrackId.Results)
+  }
   /*
   tested with url such as :
   localhost:4242/?teeActiveTrack=track_results&teeDetail=accelerateur-decarbonation
@@ -318,7 +318,7 @@ const setupFromUrl = () => {
   nav.updateQueries(tracks.getAllUsedTracksValuesPairs, props.disableWidget)
 }
 
-onBeforeMount(() => {
+onBeforeMount(async () => {
   // console.log('WidgetApp > onBeforeMount > props.seed :', props.seed)
   // console.log('WidgetApp > onBeforeMount > props.maxDepth :', props.maxDepth)
 
@@ -369,7 +369,6 @@ onBeforeMount(() => {
   if (props.msg) {
     props.msg.split(',').forEach((s: string) => {
       const strObj = s.split('|').map((i: string) => i.trim())
-      // @ts-ignore
       messageObj[strObj[0]] = strObj[1]
     })
     // console.log('WidgetApp > onBeforeMount > messageObj :', messageObj)
@@ -393,7 +392,7 @@ onBeforeMount(() => {
 
   // set first track at mount
   // console.log('WidgetApp > onMounted > set seed track...')
-  tracks.setSeedTrack(props.seed)
+  await tracks.setSeedTrack(props.seed)
   tracks.addToUsedTracks(props.seed, props.seed)
 })
 
@@ -405,12 +404,12 @@ onMounted(async () => {
     nav.setRouter(router)
     nav.setRoute(route)
   }
-  setupFromUrl()
+  await setupFromUrl()
 
   // set detail program ID if any
   if (props.programId) {
     programs.setDetailResult(props.programId, props.seed)
-    nav.setCurrentDetailId(props.programId, props.disableWidget)
+    await nav.setCurrentDetailId(props.programId, props.disableWidget)
   }
 })
 </script>

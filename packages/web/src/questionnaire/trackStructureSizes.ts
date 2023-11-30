@@ -7,44 +7,44 @@ export const sizes: Track = {
   title: { fr: 'Mon entreprise' },
   label: { fr: 'Quelle est la taille de votre entreprise ?' },
   interface: {
-    component: TrackComponents.Buttons,
+    component: TrackComponents.Buttons
   },
   behavior: {
-    multipleChoices: false,
+    multipleChoices: false
   },
   options: [
     {
       value: { structure_sizes: 'TPE' },
       title: { fr: 'TPE' },
-      label: { fr: "TPE (moins de 20 salarié.e.s)" },
+      label: { fr: 'TPE (moins de 20 salarié.e.s)' },
       next: {
-        default: TrackId.Sectors,
+        default: TrackId.Sectors
       }
     },
     {
       value: { structure_sizes: 'PME' },
       title: { fr: 'PME' },
-      label: { fr: "PME (entre 20 et 249 salarié.e.s)" },
+      label: { fr: 'PME (entre 20 et 249 salarié.e.s)' },
       next: {
-        default: TrackId.Sectors,
+        default: TrackId.Sectors
       }
     },
     {
       disabled: false,
       value: { structure_sizes: 'ETI' },
       title: { fr: 'ETI' },
-      label: { fr: "ETI (entre 250 et 5000 salarié.e.s)" },
+      label: { fr: 'ETI (entre 250 et 5000 salarié.e.s)' },
       next: {
-        default: TrackId.Sectors,
+        default: TrackId.Sectors
       }
     },
     {
       disabled: false,
       value: { structure_sizes: 'GE' },
       title: { fr: 'GE' },
-      label: { fr: "GE (plus de 5000 salarié.e.s)" },
+      label: { fr: 'GE (plus de 5000 salarié.e.s)' },
       next: {
-        default: TrackId.Sectors,
+        default: TrackId.Sectors
       }
     }
   ]

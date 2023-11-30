@@ -9,10 +9,10 @@ export const choicesStore = defineStore('choices', () => {
   const publicPath = ref<string>()
 
   // internationalization
-  const dict: any = {
+  const dict: object = {
     fr: frDict
   }
-  const dictOperators: any = {
+  const dictOperators: Record<string, string> = {
     fr: frOperatorsDict
   }
 
@@ -27,37 +27,36 @@ export const choicesStore = defineStore('choices', () => {
     lang.value = loc
   }
 
-  function resolve(path: PropertyPath, obj = self, separator = '.') {
+  function resolve(path: PropertyPath, obj: object = self, separator = '.') {
     const props: string[] = Array.isArray(path) ? path : path.split(separator)
 
-    // @ts-ignore
-    return props.reduce((prev, curr) => prev?.[curr], obj)
+    return props.reduce((prev: string, curr: string) => prev?.[curr] as string | undefined, obj)
   }
 
-  function ti(translation: string, params: any = undefined) {
+  function ti(translation: string, params: Record<string, string | number> = undefined) {
     let translated = translation
     if (params) {
       for (const key in params) {
         const reg = new RegExp(`{${key}}`, 'g')
-        translated = translated.replace(reg, (params[key] ?? '...'))
+        translated = translated.replace(reg, params[key] ?? '...')
       }
     }
     return translated
   }
 
-  function translateWithDict(path: string, params: any = undefined, dictionnary: any) {
-    const locDict = dictionnary[lang.value]
+  function translateWithDict(path: string, dictionary: object, params: Record<string, string | number> = undefined) {
+    const locDict = dictionary[lang.value] as object
     let translated = (resolve(path, locDict) || path) as unknown as string
     if (params) {
       translated = ti(translated, params)
     }
     return translated
   }
-  function t(path: string, params: any = undefined) {
-    return translateWithDict(path, params, dict)
+  function t(path: string, params: Record<string, string | number> = undefined) {
+    return translateWithDict(path, dict, params)
   }
-  function to(path: string, params: any = undefined) {
-    return translateWithDict(path, params, dictOperators)
+  function to(path: string, params: Record<string, string | number> = undefined) {
+    return translateWithDict(path, dictOperators, params)
   }
 
   return {

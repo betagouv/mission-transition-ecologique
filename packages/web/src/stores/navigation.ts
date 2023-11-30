@@ -1,14 +1,14 @@
-import { ref, computed } from 'vue'
+import { computed, ref } from 'vue'
 import { defineStore } from 'pinia'
-import type { TrackId } from '@/types'
+import type { TrackId, UsedTrackValuePair } from '@/types'
+import { RouteLocationNormalizedLoaded, RouteLocationRaw, Router } from 'vue-router'
 
 export const navigationStore = defineStore('navigation', () => {
-
   // State objects
   const routerReady = ref<boolean>(false)
-  const routerRef = ref<any>()
-  const routeRef = ref<any>()
-  const userQueries = ref<any[]>([])
+  const routerRef = ref<Router>()
+  const routeRef = ref<RouteLocationNormalizedLoaded>()
+  const userQueries = ref<Partial<UsedTrackValuePair>[]>([])
   const currentTrackId = ref<TrackId>()
   const currentStep = ref<number>()
   const currentDetailId = ref<string | number>('')
@@ -23,7 +23,7 @@ export const navigationStore = defineStore('navigation', () => {
   function setRouterReady(bool: boolean) {
     routerReady.value = bool
   }
-  function setRouter(router: any) {
+  function setRouter(router: Router) {
     // console.log('store.navigation > setRouter > this.$router : ', this.$router)
     // console.log('store.navigation > setRouter > this.$route : ', this.$route)
     // console.log('store.navigation > setRouter > routeRef.value : ', routeRef.value)
@@ -32,7 +32,7 @@ export const navigationStore = defineStore('navigation', () => {
     routerRef.value = router
     setRouterReady(true)
   }
-  function setRoute(routeObj: any) {
+  function setRoute(routeObj: RouteLocationNormalizedLoaded) {
     routeRef.value = routeObj
   }
   function setCurrentTrackId(id: TrackId) {
@@ -41,12 +41,12 @@ export const navigationStore = defineStore('navigation', () => {
   function setCurrentStep(step: number) {
     currentStep.value = step
   }
-  function setCurrentDetailId(id: string | number, noWidget: boolean) {
+  async function setCurrentDetailId(id: string | number, noWidget: boolean = true) {
     currentDetailId.value = id
-    updateUrl(noWidget)
+    await updateUrl(noWidget)
   }
-  function addQuery(query: any) {
-    const existingTrackIds = userQueries.value.map(q => q.trackId)
+  function addQuery(query: Partial<UsedTrackValuePair>) {
+    const existingTrackIds = userQueries.value.map((q) => q.trackId)
     if (!existingTrackIds.includes(query.trackId)) {
       // console.log('store.navigation > addQuery > query : ', query)
       userQueries.value.push(query)
@@ -55,15 +55,15 @@ export const navigationStore = defineStore('navigation', () => {
   // function removeQuery(trackId: string) {
   //   userQueries.value = userQueries.value.filter(q => q.trackId !== trackId)
   // }
-  function updateUrl (noWidget: boolean, forcePath: string | boolean = false) {
+  async function updateUrl(noWidget: boolean, forcePath: string | boolean = false) {
     // console.log('store.navigation > updateUrl > routerRef.value : ', routerRef.value)
     // console.log('store.navigation > updateUrl > routeRef.value : ', routeRef.value)
 
     // existing query
 
     // loop userQueries and remap as <trackId>: `<selectionKey1>:<selectionValue1>|<selectionKey2>:<selectionValue2>`
-    const trackQueries: any = {}
-    userQueries.value.map(q => {
+    const trackQueries: object = {}
+    userQueries.value.map((q) => {
       const selection: any[] = []
       q.selection.forEach((s: object) => {
         for (const [key, value] of Object.entries(s)) {
@@ -75,17 +75,17 @@ export const navigationStore = defineStore('navigation', () => {
     })
     // console.log('store.navigation > updateUrl > trackQueries : ', trackQueries)
 
-    const allQueries = { 
-      teeStep: currentStep.value, 
-      teeActiveTrack: currentTrackId.value, 
+    const allQueries = {
+      teeStep: currentStep.value,
+      teeActiveTrack: currentTrackId.value,
       ...trackQueries,
-      teeDetail: currentDetailId.value 
+      teeDetail: currentDetailId.value
     }
     // console.log('store.navigation > updateUrl > allQueries : ', allQueries)
 
     // adapt path
     let routePath = routeRef.value.path
-    const routeName = forcePath || routeRef.value.name
+    const routeName = forcePath || (routeRef.value.name as string)
     if (noWidget) {
       // console.log('\nstore.navigation > updateUrl > currentDetailId.value : ', currentDetailId.value)
       // console.log('store.navigation > updateUrl > routeName : ', routeName)
@@ -101,9 +101,8 @@ export const navigationStore = defineStore('navigation', () => {
     }
     // console.log('store.navigation > updateUrl > routePath : ', routePath)
 
-    // @ts-ignore
     // routerRef.value.replace({ query: allQueries })
-    const newRoute = { 
+    const newRoute = {
       // fullPath: routeRef.value.fullPath,
       // path: routeRef.value.path,
       path: routePath,
@@ -114,51 +113,52 @@ export const navigationStore = defineStore('navigation', () => {
       // name: routeRef.value.name,
       // matched: routeRef.value.matched,
       query: allQueries
-    }
+    } as RouteLocationRaw
     // console.log('store.navigation > updateUrl > newRoute : ', newRoute)
 
     // update browser
-    routerRef.value.push(newRoute)
+    await routerRef.value.push(newRoute)
   }
-  function updateQuery(q: any) {
+  function updateQuery(q: Partial<UsedTrackValuePair>) {
     // console.log('store.navigation > updateQuery > q : ', q)
     // update ref
     if (typeof q !== 'undefined') {
-      const query = userQueries.value.map(i => {
-        const iCopy = {...i}
+      userQueries.value = userQueries.value.map((i) => {
+        const iCopy = { ...i }
         if (i.trackId === q.trackId) {
           iCopy.selection = q.selection
         }
         return iCopy
       })
-      userQueries.value = query
     }
   }
 
-  function updateQueries(usedTracks: any[], noWidget: boolean) {
-    // console.log('\nstore.navigation > updateQueries > usedTracks : ', usedTracks)
+  function updateQueries(usedTracks: UsedTrackValuePair[], noWidget: boolean) {
+    if (noWidget) {
+      // Do something
+    }
     // reset userQueries
     userQueries.value = []
-    const queries = usedTracks.map(t => {
-      const selection = t.completed ? t.selection : []
+    const queries = usedTracks.map((usedTrack) => {
+      const selection = usedTrack.completed ? usedTrack.selection : []
       return {
-        trackId: t.trackId,
+        trackId: usedTrack.trackId,
         selection: selection
-      }
+      } as Partial<UsedTrackValuePair>
     })
-    queries.forEach(q => {
+    queries.forEach((query) => {
       // console.log('store.navigation > updateQueries > q : ', q)
-      addQuery(q)
-      if (q.selection.length) {
-        updateQuery(q)
+      addQuery(query)
+      if (query.selection.length) {
+        updateQuery(query)
       }
     })
     // // update url in browser
     // updateUrl(noWidget)
   }
-  function resetQueries() {
-    userQueries.value = []
-  }
+  // function resetQueries() {
+  //   userQueries.value = []
+  // }
 
   return {
     routerReady,
@@ -169,17 +169,12 @@ export const navigationStore = defineStore('navigation', () => {
     currentTrackId,
     currentStep,
     currentDetailId,
-    setRouterReady,
     setRouter,
     setRoute,
     setCurrentTrackId,
     setCurrentStep,
     setCurrentDetailId,
-    addQuery,
-    // removeQuery,
     updateUrl,
-    updateQuery,
-    updateQueries,
-    resetQueries
+    updateQueries
   }
 })

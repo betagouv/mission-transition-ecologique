@@ -1,10 +1,9 @@
-import { createApp } from 'vue'
+import { Component, createApp, Plugin } from 'vue'
 import { createPinia } from 'pinia'
 import { defineCustomElement } from './defineCustomElementWithStyles'
 
 import { router } from './router'
 
-// ts-ignore
 import WebApp from './WebApp.vue'
 import WidgetApp from './WidgetApp.ce.vue'
 // console.log('TeeApp.styles :', TeeApp.styles) // ["/* inlined css */"]
@@ -12,7 +11,7 @@ import WidgetApp from './WidgetApp.ce.vue'
 // Import dsfr
 // cf : https://vue-dsfr.netlify.app/?path=/docs/composants-tuile-dsfrtile--docs
 // cf : https://vue-dsfr.netlify.app/?path=/docs/docs-2-guide-d-utilisation--docs#vue3
-import VueDsfr from '@gouvminint/vue-dsfr'   // Import (par défaut) de la bibliothèque
+import VueDsfr from '@gouvminint/vue-dsfr' // Import (par défaut) de la bibliothèque
 
 // import more icons
 // cf: https://oh-vue-icons.js.org/docs
@@ -24,25 +23,24 @@ import {
   MdRadiobuttonchecked,
   MdRadiobuttonunchecked,
   MdCheckboxoutlineblank,
-  MdCheckboxOutlined,
+  MdCheckboxOutlined
 } from 'oh-vue-icons/icons'
 const Ri = Object.values({ ...RiIcons })
 // console.log('TeeApp > main.ce.ts > Ri :', Ri)
 addIcons(
-  ...Ri, 
-  // LaCircle, 
+  ...Ri,
+  // LaCircle,
   // LaDotCircle,
   MdRadiobuttonchecked,
   MdRadiobuttonunchecked,
   MdCheckboxoutlineblank,
-  MdCheckboxOutlined,
+  MdCheckboxOutlined
 )
-
 
 // Styles imports
 import './assets/main.css'
 
-import '@gouvfr/dsfr/dist/core/core.main.min.css'            // Le CSS minimal du DSFR
+import '@gouvfr/dsfr/dist/core/core.main.min.css' // Le CSS minimal du DSFR
 // import '@gouvfr/dsfr/dist/component/component.main.min.css'  // Styles de tous les composants du DSFR
 // import '@gouvfr/dsfr/dist/utility/utility.main.min.css'      // Classes utilitaires : les composants de VueDsfr en ont besoin
 // import '@gouvminint/vue-dsfr/styles'                         // Les styles propres aux composants de VueDsfr
@@ -60,23 +58,14 @@ const store = createPinia()
 // cf : https://levelup.gitconnected.com/how-to-use-web-components-in-vue-js-bfbd16f6b26f
 // cf : https://dev.to/nurlan_tl/tips-to-create-web-components-using-vue-3-ts-vite-3a7a
 const WidgetAppComponent = defineCustomElement(WidgetApp, {
-  plugins: [
-    // @ts-ignore
-    { plugin: VueDsfr },
-    // { plugin: VueDsfr, options: { icons: Object.values(icons) }},
-    // @ts-ignore
-    { plugin: store },
-    { plugin: router }
-  ],
-  comps: [
-    { name: 'v-icon', comp: OhVueIcon }
-  ]
+  plugins: [{ plugin: VueDsfr as Plugin }, { plugin: store }, { plugin: router }],
+  comps: [{ name: 'v-icon', comp: OhVueIcon as Component }]
 })
 
 customElements.define('gov-aid-tree-app', WidgetAppComponent)
 
-const app = createApp(WebApp)
-app.use(VueDsfr)
+const app = createApp(WebApp as Component)
+app.use(VueDsfr as Plugin)
 app.use(store)
 app.use(router)
 app.mount('#app')

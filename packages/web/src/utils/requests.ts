@@ -11,7 +11,8 @@ export const sendApiRequest = async (
   formData: object | any,
   trackValues: any[] = [],
   props: object | any = undefined,
-  lang: string = 'fr') => {
+  lang: string = 'fr'
+) => {
   // console.log()
   // console.log('utils > requests > sendApiRequest >  callback.action :', callback.action)
   // console.log('utils > requests > sendApiRequest >  formData :', formData)
@@ -28,7 +29,7 @@ export const sendApiRequest = async (
 
   let data: any = callback.dataBody || callback.dataStructure || {}
 
-  const dataMapping = callback.dataMapping.filter(dm => !dm.onlyRemap)
+  const dataMapping = callback.dataMapping.filter((dm) => !dm.onlyRemap)
   // const listIds = metaEnv[callback.envListIds].split(',').map((id: string) => parseInt(id))
   // console.log('utils > requests > sendApiRequest >  dataMapping :', dataMapping)
   // console.log('utils > requests > sendApiRequest >  listIds :', listIds)

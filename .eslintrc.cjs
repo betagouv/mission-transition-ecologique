@@ -12,7 +12,7 @@ module.exports = {
   },
   rules: {
     'prettier/prettier': 'error',
-    '@typescript-eslint/no-unused-vars': 'error'
+    '@typescript-eslint/no-unused-vars': 'error',
   },
   ignorePatterns: [
     '.idea/*',

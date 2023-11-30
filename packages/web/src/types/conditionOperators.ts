@@ -8,5 +8,5 @@ export enum ConditionOperators {
   superior = '>',
   superiorOrEqual = '>=',
   inferior = '<',
-  inferiorOrEqual = '<=',
+  inferiorOrEqual = '<='
 }

@@ -45,7 +45,7 @@ export interface ProgramData {
   conditions?: Condition[]
   url?: string
 
-  publicodes: Object
+  publicodes: object
 
   // program_conditions?: ProgramConditions,
   // program_application?: any,

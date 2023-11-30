@@ -6,7 +6,7 @@ import { defineStore } from 'pinia'
 import { tracks } from '@/questionnaire'
 
 // @ts-ignore
-import type { Track, Translations, UsedTrack, TrackId } from '@/types'
+import type { Track, TrackId, Translations, UsedTrack, UsedTrackValuePair } from '@/types'
 import { TrackComponents } from '@/types'
 
 const allTracks = ref<Track[]>(tracks)
@@ -55,23 +55,23 @@ export const tracksStore = defineStore('tracks', () => {
     return stepNumber
   })
   const getAllUsedTracks = computed(() => {
-    const res = usedTracks.value
-      .filter((i: UsedTrack) => i?.completed)
-      .map((i: UsedTrack) => toRaw(i))
+    const res = usedTracks.value.filter((i: UsedTrack) => i?.completed).map((i: UsedTrack) => toRaw(i))
     return res
   })
   const getAllUsedTracksValues = computed(() => {
-    const usedTrackValues = getAllUsedTracks.value.map((usedTrack: UsedTrack) => {
-      const values = usedTrack.selected?.map((s) => s.value)
-      return toRaw(values.map((i) => toRaw(i)))
-    }).filter((i) => i?.length)
+    const usedTrackValues = getAllUsedTracks.value
+      .map((usedTrack: UsedTrack) => {
+        const values = usedTrack.selected?.map((s) => s.value)
+        return toRaw(values.map((i) => toRaw(i)))
+      })
+      .filter((i) => i?.length)
     // console.log('store.tracks > getAllUsedTracksValues >  usedTrackValues :', usedTrackValues)
 
     const trackValues: any[] = usedTrackValues.flat(1)
     return trackValues
   })
-  const getAllUsedTracksValuesPairs = computed(() => {
-    const usedTrackValues = usedTracks.value.map((usedTrack: UsedTrack) => {
+  const getAllUsedTracksValuesPairs = computed<UsedTrackValuePair[]>(() => {
+    return usedTracks.value.map((usedTrack: UsedTrack) => {
       const values = usedTrack.selected?.map((s) => s.value)
       return {
         trackId: usedTrack.id,
@@ -79,14 +79,11 @@ export const tracksStore = defineStore('tracks', () => {
         selection: toRaw(values.map((i) => toRaw(i)))
       }
     })
-    // console.log('store.tracks > getAllUsedTracksValues >  usedTrackValues :', usedTrackValues)
-
-    return usedTrackValues
   })
 
   // getters
-  const getTrack = (trackId: TrackId): (Track | undefined) => {
-    return allTracks.value.find(track => track.id === trackId)
+  const getTrack = (trackId: TrackId): Track | undefined => {
+    return allTracks.value.find((track) => track.id === trackId)
   }
   const getTrackCategory = (trackId: TrackId) => {
     const track = getTrack(trackId)
@@ -122,11 +119,11 @@ export const tracksStore = defineStore('tracks', () => {
   }
   function trackExistsInUsed(trackId: TrackId) {
     // @ts-ignore
-    const exists = usedTracks.value.find(t => t.id === trackId)
+    const exists = usedTracks.value.find((t) => t.id === trackId)
     return !!exists
   }
   const isTrackCompleted = (trackId: TrackId) => {
-    const track = usedTracks.value.find(t => t.id === trackId)
+    const track = usedTracks.value.find((t) => t.id === trackId)
     return track?.completed
   }
 
@@ -163,7 +160,7 @@ export const tracksStore = defineStore('tracks', () => {
       completed: false,
       step: usedTracks.value.length + 1,
       selected: [],
-      next: null,
+      next: null
     }
     // console.log('store.tracks > addToUsedTracks > trackInfos : ', trackInfos)
     // @ts-ignore

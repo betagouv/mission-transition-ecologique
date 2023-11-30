@@ -1,32 +1,21 @@
 <template>
   <!-- SELECTOR -->
   <div class="fr-select-group">
-    <select
-      class="fr-select"
-      :id="`${track.id}-select`"
-      :name="`${track.id}-select`"
-      @change="updateLocalSelection">
+    <select :id="`${track.id}-select`" class="fr-select" :name="`${track.id}-select`" @change="updateLocalSelection">
       <!-- DEFAULT OPTION -->
-      <option
-        value=""
-        selected>
+      <option value="" selected>
         {{ choices.t('select.selectOption') }}
       </option>
 
       <!-- VALUES -->
-      <option
-        v-for="(optionVal, idx) in options"
-        :key="`${track.id}-select-option-${idx}`"
-        :value="idx">
-        {{ optionVal?.label[choices.lang]  }}
+      <option v-for="(optionVal, idx) in options" :key="`${track.id}-select-option-${idx}`" :value="idx">
+        {{ optionVal?.label[choices.lang] }}
       </option>
     </select>
   </div>
-
 </template>
 
 <script setup lang="ts">
-
 import type { Track, TrackOptionsSelect } from '@/types'
 
 import { ref } from 'vue'
@@ -63,5 +52,4 @@ const updateLocalSelection = (event: any) => {
   }
   emit('updateSelection', data)
 }
-
 </script>

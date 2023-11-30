@@ -1,13 +1,5 @@
 import type { Track } from '@/types'
-import {
-  CallbackActions,
-  CallbackMethods,
-  ConditionOperators,
-  DataMappingFrom,
-  FormFieldTypes,
-  TrackComponents,
-  TrackId
-} from '@/types'
+import { CallbackActions, CallbackMethods, ConditionOperators, DataMappingFrom, FormFieldTypes, TrackComponents, TrackId } from '@/types'
 
 const metaEnv = import.meta.env
 // console.log('trackResults >  metaEnv :', metaEnv)

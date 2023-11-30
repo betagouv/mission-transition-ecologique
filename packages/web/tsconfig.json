@@ -3,7 +3,16 @@
     "@tsconfig/node18/tsconfig.json",
     "@vue/tsconfig/tsconfig.json"
   ],
-  "include": ["env.d.ts", "src/**/*", "vite.config.*", "vitest.config.*", "cypress.config.*", "playwright.config.*"],
+  "include": [
+    "env.d.ts",
+    "src/**/*",
+    "vite.config.*",
+    "vitest.config.*",
+    "cypress.config.*",
+    "playwright.config.*",
+    "cypress/**/*",
+    "public/data/generated/dataset_out.json"
+  ],
   "compilerOptions": {
     "rootDir": ".",
     "composite": true,
@@ -20,7 +29,7 @@
       "DOM",
       "DOM.Iterable"
     ],
-    "types": ["node", "jsdom"],
+    "types": ["node", "jsdom", "env.d.ts"],
     "preserveValueImports": false,
     "importsNotUsedAsValues": "remove",
     "verbatimModuleSyntax": true

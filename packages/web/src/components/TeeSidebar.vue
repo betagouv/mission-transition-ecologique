@@ -1,17 +1,14 @@
 <template>
   <!-- DEBUGGING -->
-  <div
-    v-if="debug"
-    class="vue-debug" 
-    >
+  <div v-if="debug" class="vue-debug">
     <h5>DEBUG - TeeSidebar</h5>
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
       <div class="fr-col-12">
-        <h6 class="fr-mb-1v"> usedTracksRegrouped :</h6>
+        <h6 class="fr-mb-1v">usedTracksRegrouped :</h6>
         <pre><code>{{ usedTracksRegrouped }} </code></pre>
       </div>
       <div class="fr-col-12">
-        <h6 class="fr-mb-1v"> usedTracks :</h6>
+        <h6 class="fr-mb-1v">usedTracks :</h6>
         <pre><code>{{ usedTracks }} </code></pre>
       </div>
     </div>
@@ -45,13 +42,9 @@
     </div>
   </template> -->
 
-  <template
-    v-for="categ in usedCategories"
-    :key="categ">
-    <div
-      class="fr-mb-6v">
-      <div 
-        class="fr-mb-2v">
+  <template v-for="categ in usedCategories" :key="categ">
+    <div class="fr-mb-6v">
+      <div class="fr-mb-2v">
         {{ choices.t(`categories.${categ}`) }}
       </div>
       <!-- <DsfrButton
@@ -61,19 +54,16 @@
         no-outline
         @click="usedTracksRegrouped[categ][0].id"
       /> -->
-      <div
-        v-for="usedTrack in usedTracksRegrouped[categ]"
-        :key="usedTrack.id">
-        <div
-          class="fr-mb-1v">
+      <div v-for="usedTrack in usedTracksRegrouped[categ]" :key="usedTrack.id">
+        <div class="fr-mb-1v">
           <DsfrButton
-            :label="tracks.getTrackTitle(usedTrack.id, choices.lang)"
+            :label="tracks.getTrackTitle(usedTrack.id as TrackId, choices.lang)"
             :disabled="!usedTrack.completed"
             class="tee-btn-sidebar"
             tertiary
             no-outline
             @click="backToTrack(usedTrack.id)"
-            />
+          />
         </div>
       </div>
     </div>
@@ -81,20 +71,16 @@
 </template>
 
 <script setup lang="ts">
-
 import { computed } from 'vue'
-
 import { tracksStore } from '../stores/tracks'
 import { choicesStore } from '../stores/choices'
-
-// @ts-ignore
 import type { UsedTrack } from '@/types/index'
-
 import { groupBy } from '../utils/helpers'
+import { TrackId } from '@/types/index'
 
 interface Props {
-  usedTracks: UsedTrack[],
-  debug?: boolean,
+  usedTracks: UsedTrack[]
+  debug?: boolean
 }
 const props = defineProps<Props>()
 
@@ -111,10 +97,10 @@ interface UsedTrackRegrouped {
 }
 
 const usedTracksRegrouped = computed(() => {
-  const trackWithCategs = props.usedTracks.map((t: UsedTrack) => {
+  const trackWithCategs = props.usedTracks.map((usedTrack: UsedTrack) => {
     const tracksByCateg = {
-      ...t,
-      category: tracks.getTrackCategory(t.id)
+      ...usedTrack,
+      category: tracks.getTrackCategory(usedTrack.id as TrackId)
     }
     return tracksByCateg
   })
@@ -130,7 +116,7 @@ const usedCategories = computed(() => {
 const backToTrack = async (trackId: string) => {
   // console.log()
   // console.log('TeeSidebar > backToTrack > trackId :', trackId)
-  tracks.setUsedTracksAsNotCompleted(trackId)
-  tracks.removeFurtherUsedTracks(trackId)
+  await tracks.setUsedTracksAsNotCompleted(trackId)
+  await tracks.removeFurtherUsedTracks(trackId)
 }
 </script>

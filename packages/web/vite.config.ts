@@ -31,10 +31,7 @@ const viteServer: any = {
 // https://vitejs.dev/config/
 export default defineConfig({
   server: viteServer,
-  plugins: [
-    vue(),
-    eslintPlugin(),
-  ],
+  plugins: [vue(), eslintPlugin()],
   build: {
     rollupOptions: {
       input: {

@@ -137,9 +137,10 @@ export const findInObjectsArray = (objectsArray: object[], id: string, all: bool
   return value
 }
 
-export const groupBy = (objectsArray: object[], key: string) => {
-  return objectsArray.reduce((rv: any, x: any) => {
-    ;(rv[x[key]] = rv[x[key]] || []).push(x)
+export const groupBy = <T>(objectsArray: T[], key: keyof T): Record<string, T[]> => {
+  return objectsArray.reduce((rv: Record<string, T[]>, x: T) => {
+    const keyValue = x[key] as unknown as string
+    ;(rv[keyValue] = rv[keyValue] || []).push(x)
     return rv
   }, {})
 }
@@ -182,11 +183,7 @@ export const findFromDict = (value: string | string[], cleaner: CleanerFromDict)
   return valueOut
 }
 
-export const findDefaultIfNull = (
-  value: string,
-  cleaner: CleanerDefaultIfNull,
-  lang: string = 'fr'
-) => {
+export const findDefaultIfNull = (value: string, cleaner: CleanerDefaultIfNull, lang: string = 'fr') => {
   // console.log()
   // console.log('utils > helpers > findDefaultIfNull > value :', value)
   // const respFields = cleaner.respFields
@@ -212,13 +209,7 @@ export const injectInObject = (value: object | object[], cleaner: CleanerInjectI
 
 export const cleanValue = (
   value: any,
-  cleaners:
-    | Cleaner[]
-    | CleanerReplaceAll[]
-    | CleanerFromJson[]
-    | CleanerFromDict[]
-    | CleanerDefaultIfNull[]
-    | CleanerInjectInObject[],
+  cleaners: Cleaner[] | CleanerReplaceAll[] | CleanerFromJson[] | CleanerFromDict[] | CleanerDefaultIfNull[] | CleanerInjectInObject[],
   lang: string = 'fr'
 ) => {
   // console.log('utils > helpers > cleanValue > value :', value)
