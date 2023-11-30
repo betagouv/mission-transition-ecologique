@@ -157,7 +157,50 @@ EXPECT that the programs respect a set of given rules
       ProgramAidType.tax,
       /*has priority over*/ [ProgramAidType.acc, ProgramAidType.train]
     ),
-    ...TestProgramTypePriority(ProgramAidType.acc /*has priority over*/, [ProgramAidType.train])
+    ...TestProgramTypePriority(ProgramAidType.acc /*has priority over*/, [ProgramAidType.train]),
+
+    {
+      name: 'free coaching last 1',
+      programs: [
+        makeProgram('1', ProgramAidType.acc, 'gratuit'),
+        makeProgram('2', ProgramAidType.acc)
+      ],
+      expectedIdOrder: ['2', '1']
+    },
+    {
+      name: 'free coaching last 2',
+      programs: [
+        makeProgram('1', ProgramAidType.acc),
+        makeProgram('2', ProgramAidType.acc, 'gratuit')
+      ],
+      expectedIdOrder: ['1', '2']
+    },
+    {
+      name: 'free coaching last 3 (case insensitive)',
+      programs: [
+        makeProgram('1', ProgramAidType.acc, 'Gratuit'),
+        makeProgram('2', ProgramAidType.acc)
+      ],
+      expectedIdOrder: ['2', '1']
+    },
+    {
+      name: 'possible free coaching second last 1',
+      programs: [
+        makeProgram('1', ProgramAidType.acc, 'gratuit'),
+        makeProgram('2', ProgramAidType.acc, 'Sur devis (gratuit en bretagne)'),
+        makeProgram('3', ProgramAidType.acc)
+      ],
+      expectedIdOrder: ['3', '2', '1']
+    },
+    {
+      name: 'possible free coaching second last 2 (case insensitive)',
+      programs: [
+        makeProgram('1', ProgramAidType.acc, 'gratuit'),
+        makeProgram('2', ProgramAidType.acc, 'Sur devis (Gratuit en bretagne)'),
+        makeProgram('3', ProgramAidType.acc)
+      ],
+      expectedIdOrder: ['3', '2', '1']
+    }
   ]
 
   const allTestCases = [

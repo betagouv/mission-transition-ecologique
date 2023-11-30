@@ -20,22 +20,22 @@ const comparePrograms = (
   )
 }
 
-const getPriority = (program: ProgramData, questionnaireRoute: TrackHelpValue): number => {
+const getPriority = (prog: ProgramData, questionnaireRoute: TrackHelpValue): number => {
   switch (questionnaireRoute) {
     case TrackHelpValue.Unknown:
-      if (isFreeCoaching(program)) return 1
-      if (isMaybeFreeCoaching(program)) return 2
-      if (hasType(ProgramAidType.acc, program)) return 3
-      if (hasType(ProgramAidType.fund, program)) return 4
-      if (hasType(ProgramAidType.loan, program)) return 5
-      if (hasType(ProgramAidType.tax, program)) return 6
-      return 100
+      if (isFreeCoaching(prog)) return 1
+      if (isMaybeFreeCoaching(prog)) return 2
+      if (hasType(ProgramAidType.acc, prog)) return 3
+      if (hasType(ProgramAidType.fund, prog)) return 4
+      if (hasType(ProgramAidType.loan, prog)) return 5
+      if (hasType(ProgramAidType.tax, prog)) return 6
+      return 7
 
     case TrackHelpValue.Precise:
-      if (hasType(ProgramAidType.fund, program)) return 1
-      if (hasType(ProgramAidType.loan, program)) return 2
-      if (hasType(ProgramAidType.tax, program)) return 3
-      if (hasType(ProgramAidType.acc, program)) return 4
+      if (hasType(ProgramAidType.fund, prog)) return 1
+      if (hasType(ProgramAidType.loan, prog)) return 2
+      if (hasType(ProgramAidType.tax, prog)) return 3
+      if (hasType(ProgramAidType.acc, prog)) return 4
       return 100
   }
 }
