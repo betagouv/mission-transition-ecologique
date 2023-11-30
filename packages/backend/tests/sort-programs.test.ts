@@ -1,6 +1,8 @@
 import { sortPrograms } from '@tee/backend/src/domain/sort-programs'
 import { ProgramData } from '@tee/web/src/types'
-import { makeProgram } from './testing'
+import { makeProgramHelper } from './testing'
+
+const makeProgram = () => makeProgramHelper({})
 
 describe(`
  GIVEN a list of programs
@@ -13,7 +15,7 @@ EXPECT that the programs respect a set of given rules
     expectedPrograms: ProgramData[]
   }
 
-  const program = makeProgram('')
+  const program = makeProgram()
 
   const testCases: TestCase[] = [
     {
