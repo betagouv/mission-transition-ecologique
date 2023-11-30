@@ -12,10 +12,10 @@ const comparePrograms = (program1: ProgramData, program2: ProgramData): number =
 const getPriority = (program: ProgramData): number => {
   if (isFreeCoaching(program)) return 1
   if (isMaybeFreeCoaching(program)) return 2
-  if (isCoaching(program)) return 3
-  if (isFunding(program)) return 4
-  if (isLoan(program)) return 5
-  if (isTax(program)) return 6
+  if (hasType(ProgramAidType.acc, program)) return 3
+  if (hasType(ProgramAidType.fund, program)) return 4
+  if (hasType(ProgramAidType.loan, program)) return 5
+  if (hasType(ProgramAidType.tax, program)) return 6
   return 100
 }
 
@@ -27,10 +27,5 @@ const isFreeCoaching = (program: ProgramData) =>
 const isMaybeFreeCoaching = (program: ProgramData) =>
   program["coût de l'accompagnement"]?.toLowerCase().includes(FREE_KEYWORD)
 
-const isCoaching = (program: ProgramData) => program["nature de l'aide"] == ProgramAidType.acc
-
-const isFunding = (program: ProgramData) => program["nature de l'aide"] == ProgramAidType.fund
-
-const isLoan = (program: ProgramData) => program["nature de l'aide"] == ProgramAidType.loan
-
-const isTax = (program: ProgramData) => program["nature de l'aide"] == ProgramAidType.tax
+const hasType = (aidType: ProgramAidType, program: ProgramData) =>
+  program["nature de l'aide"] == aidType
