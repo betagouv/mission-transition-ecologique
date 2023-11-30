@@ -1,4 +1,5 @@
-import { ProgramAidType, ProgramData, TrackHelpValue } from '@tee/web/src/types'
+import type { ProgramData } from '@tee/web/src/types'
+import { ProgramAidType, TrackHelpValue } from '@tee/web/src/types'
 
 export const sortPrograms = (
   programs: ProgramData[],

@@ -1,5 +1,6 @@
 import { sortPrograms } from '@tee/backend/src/domain/sort-programs'
-import { ProgramAidType, ProgramData, TrackHelpValue } from '@tee/web/src/types'
+import type { ProgramData } from '@tee/web/src/types'
+import { ProgramAidType, TrackHelpValue } from '@tee/web/src/types'
 import { makeProgramHelper } from './testing'
 
 const makeProgram = (id: string, nature: ProgramAidType, cost: string = '') =>

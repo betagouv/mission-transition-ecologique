@@ -1,4 +1,5 @@
-import { ProgramData, ProgramAidType } from '@tee/web/src/types/programTypes'
+import type { ProgramData } from '@tee/web/src/types/programTypes'
+import { ProgramAidType } from '@tee/web/src/types/programTypes'
 
 import { FILTERING_RULE_NAME } from '../src/domain/filter-programs'
 
