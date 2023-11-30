@@ -3,6 +3,7 @@ import { ProgramData } from '@tee/web/src/types'
 import { makeProgramHelper } from './testing'
 
 const makeProgram = (id: string) => makeProgramHelper({ id: id })
+const makeCoachingProgram = (id: string, cost: string) => makeProgramHelper({ id: id, cost: cost })
 
 describe(`
  GIVEN a list of programs
@@ -25,6 +26,16 @@ EXPECT that the programs respect a set of given rules
       name: 'single program',
       programs: [makeProgram('1')],
       expectedIdOrder: ['1']
+    },
+    {
+      name: 'free coaching first 1',
+      programs: [makeCoachingProgram('1', 'gratuit'), makeProgram('2')],
+      expectedIdOrder: ['1', '2']
+    },
+    {
+      name: 'free coaching first 2',
+      programs: [makeProgram('1'), makeCoachingProgram('2', 'gratuit')],
+      expectedIdOrder: ['2', '1']
     }
   ]
   testCases.map((tc) => {
