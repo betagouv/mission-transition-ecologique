@@ -21,15 +21,17 @@ const getPriority = (prog: ProgramData, route: TrackHelpValue): number => {
       if (isFreeCoaching(prog)) return 1
       if (isMaybeFreeCoaching(prog)) return 2
       if (hasType(ProgramAidType.acc, prog)) return 3
-      if (hasType(ProgramAidType.fund, prog)) return 4
-      if (hasType(ProgramAidType.loan, prog)) return 5
-      if (hasType(ProgramAidType.tax, prog)) return 6
+      if (hasType(ProgramAidType.train, prog)) return 4
+      if (hasType(ProgramAidType.fund, prog)) return 5
+      if (hasType(ProgramAidType.loan, prog)) return 6
+      if (hasType(ProgramAidType.tax, prog)) return 7
       return 10
 
     case TrackHelpValue.Precise:
-      if (isFreeCoaching(prog)) return 6
-      if (isMaybeFreeCoaching(prog)) return 5
-      if (hasType(ProgramAidType.acc, prog)) return 4
+      if (isFreeCoaching(prog)) return 7
+      if (isMaybeFreeCoaching(prog)) return 6
+      if (hasType(ProgramAidType.acc, prog)) return 5
+      if (hasType(ProgramAidType.train, prog)) return 4
       if (hasType(ProgramAidType.tax, prog)) return 3
       if (hasType(ProgramAidType.loan, prog)) return 2
       if (hasType(ProgramAidType.fund, prog)) return 1

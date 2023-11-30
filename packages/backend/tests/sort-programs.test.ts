@@ -21,21 +21,6 @@ EXPECT that the programs respect a set of given rules
     questionnaireRoute?: TrackHelpValue
   }
 
-  // helper to generate `testCase`s that check that a given program type has priority over other
-  // ones
-  const TestProgramTypePriority = (
-    priorityType: ProgramAidType,
-    over: ProgramAidType[]
-  ): TestCase[] => {
-    return over.map((aidType) => {
-      return {
-        name: `${priorityType} over ${aidType}`,
-        programs: [makeProgram('1', aidType), makeProgram('2', priorityType)],
-        expectedIdOrder: ['2', '1']
-      }
-    })
-  }
-
   // test helper
   const addQuestionnaireRoute = (
     questionnaireRoute: TrackHelpValue,
@@ -105,31 +90,13 @@ EXPECT that the programs respect a set of given rules
       ],
       expectedIdOrder: ['3', '2', '1']
     },
-    ...TestProgramTypePriority(
-      ProgramAidType.acc,
-      /* has priority over*/ [
-        ProgramAidType.fund,
-        ProgramAidType.loan,
-        ProgramAidType.tax,
-        ProgramAidType.train
-      ]
-    ),
-    ...TestProgramTypePriority(
-      ProgramAidType.fund,
-      /*has priority over*/ [ProgramAidType.loan, ProgramAidType.tax, ProgramAidType.train]
-    ),
-    ...TestProgramTypePriority(
-      ProgramAidType.loan,
-      /*has priority over*/ [ProgramAidType.tax, ProgramAidType.train]
-    ),
-    ...TestProgramTypePriority(ProgramAidType.tax /*has priority over*/, [ProgramAidType.train]),
     {
-      name: 'wrap up',
+      name: 'correct ordering of types',
       programs: [
-        makeProgram('1', ProgramAidType.train),
-        makeProgram('2', ProgramAidType.tax),
-        makeProgram('3', ProgramAidType.loan),
-        makeProgram('4', ProgramAidType.fund),
+        makeProgram('1', ProgramAidType.tax),
+        makeProgram('2', ProgramAidType.loan),
+        makeProgram('3', ProgramAidType.fund),
+        makeProgram('4', ProgramAidType.train),
         makeProgram('5', ProgramAidType.acc),
         makeProgram('6', ProgramAidType.acc, 'Sur devis (Gratuit en bretagne)'),
         makeProgram('7', ProgramAidType.acc, 'gratuit')
@@ -140,25 +107,6 @@ EXPECT that the programs respect a set of given rules
 
   // test cases for the questionnaire route "j'ai un objectif précis"
   const testCasesSpecificGoal: TestCase[] = [
-    ...TestProgramTypePriority(
-      ProgramAidType.fund,
-      /* has priority over*/ [
-        ProgramAidType.loan,
-        ProgramAidType.tax,
-        ProgramAidType.acc,
-        ProgramAidType.train
-      ]
-    ),
-    ...TestProgramTypePriority(
-      ProgramAidType.loan,
-      /*has priority over*/ [ProgramAidType.tax, ProgramAidType.acc, ProgramAidType.train]
-    ),
-    ...TestProgramTypePriority(
-      ProgramAidType.tax,
-      /*has priority over*/ [ProgramAidType.acc, ProgramAidType.train]
-    ),
-    ...TestProgramTypePriority(ProgramAidType.acc /*has priority over*/, [ProgramAidType.train]),
-
     {
       name: 'free coaching last 1',
       programs: [
@@ -200,6 +148,19 @@ EXPECT that the programs respect a set of given rules
         makeProgram('3', ProgramAidType.acc)
       ],
       expectedIdOrder: ['3', '2', '1']
+    },
+    {
+      name: 'correct ordering of types',
+      programs: [
+        makeProgram('1', ProgramAidType.acc, 'gratuit'),
+        makeProgram('2', ProgramAidType.acc, 'Sur devis (Gratuit en bretagne)'),
+        makeProgram('3', ProgramAidType.acc),
+        makeProgram('4', ProgramAidType.train),
+        makeProgram('5', ProgramAidType.tax),
+        makeProgram('6', ProgramAidType.loan),
+        makeProgram('7', ProgramAidType.fund)
+      ],
+      expectedIdOrder: ['7', '6', '5', '4', '3', '2', '1']
     }
   ]
 
