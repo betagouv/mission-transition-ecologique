@@ -44,6 +44,16 @@ EXPECT that the programs respect a set of given rules
       name: 'single program',
       programs: [makeProgram('1', ProgramAidType.acc)],
       expectedIdOrder: ['1']
+    },
+    {
+      name: 'no reordering of coaching/training 1',
+      programs: [makeProgram('1', ProgramAidType.train), makeProgram('2', ProgramAidType.acc)],
+      expectedIdOrder: ['1', '2']
+    },
+    {
+      name: 'no reordering of coaching/training 2',
+      programs: [makeProgram('1', ProgramAidType.acc), makeProgram('2', ProgramAidType.train)],
+      expectedIdOrder: ['1', '2']
     }
   ]
 
@@ -52,21 +62,13 @@ EXPECT that the programs respect a set of given rules
     {
       name: 'free coaching first 1',
       programs: [
-        makeProgram('1', ProgramAidType.acc, 'gratuit'),
-        makeProgram('2', ProgramAidType.acc)
-      ],
-      expectedIdOrder: ['1', '2']
-    },
-    {
-      name: 'free coaching first 2',
-      programs: [
         makeProgram('1', ProgramAidType.acc),
         makeProgram('2', ProgramAidType.acc, 'gratuit')
       ],
       expectedIdOrder: ['2', '1']
     },
     {
-      name: 'free coaching first 3 (case insensitive)',
+      name: 'free coaching first 2 (case insensitive)',
       programs: [
         makeProgram('1', ProgramAidType.acc),
         makeProgram('2', ProgramAidType.acc, 'Gratuit')
@@ -117,15 +119,7 @@ EXPECT that the programs respect a set of given rules
       expectedIdOrder: ['2', '1']
     },
     {
-      name: 'free coaching last 2',
-      programs: [
-        makeProgram('1', ProgramAidType.acc),
-        makeProgram('2', ProgramAidType.acc, 'gratuit')
-      ],
-      expectedIdOrder: ['1', '2']
-    },
-    {
-      name: 'free coaching last 3 (case insensitive)',
+      name: 'free coaching last 2 (case insensitive)',
       programs: [
         makeProgram('1', ProgramAidType.acc, 'Gratuit'),
         makeProgram('2', ProgramAidType.acc)
