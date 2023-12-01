@@ -16,6 +16,9 @@
 
 <script setup lang="ts">
 
+// CONSOLE LOG TEMPLATE
+// console.log(`TeeHeader > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 import { choicesStore } from '../stores/choices'
 
 import { RouteName } from '@/types/routeType'

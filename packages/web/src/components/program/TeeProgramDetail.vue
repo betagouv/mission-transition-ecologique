@@ -264,6 +264,9 @@
 
 <script setup lang="ts">
 
+// CONSOLE LOG TEMPLATE
+// console.log(`TeeProgramDetail > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 import { ref, onBeforeMount } from 'vue'
 
 // @ts-ignore
@@ -304,7 +307,6 @@ const props = defineProps<Props>()
 
 // functions
 const resetDetailResult = async () => {
-  // console.log('TeeProgramDetail > resetDetailResult > props.trackConfig : ', props.trackConfig )
   programs.resetDetailResult()
   nav.setCurrentDetailId('', props.disableWidget)
   nav.updateUrl(props.disableWidget)
@@ -312,7 +314,6 @@ const resetDetailResult = async () => {
   scrollToId(`${props.programId}`)
 }
 const toggleShowForm = () => {
-  // console.log('TeeProgramDetail > toggleShowForm > trackConfig : ', props.trackConfig )
   showForm.value = !showForm.value
   if (showForm.value) {
     analytics.sendEvent('result_detail', 'show_form', props.programId)
@@ -320,13 +321,10 @@ const toggleShowForm = () => {
 }
 
 onBeforeMount(async() => {
-  // await router.isReady()
-  // console.log('TeeProgramDetail > onBeforeMount > props.programId :', props.programId )
   program.value = programs.getProgramById(props.programId)
   if (props.trackId) {
     trackConfig.value = tracks.getTrack(props.trackId)
   }
-  // console.log('TeeProgramDetail > onBeforeMount > resultsProgs :', resultsProgs )
   // analytics / send event
   analytics.sendEvent('result_detail', 'show_detail', props.programId)
 })

@@ -103,6 +103,10 @@
 </template>
 
 <script setup lang="ts">
+
+// CONSOLE LOG TEMPLATE
+// console.log(`TeeLegalPage > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 // @ts-ignore
 import TeeHelp from '@/components/home/TeeHelp.vue'
 </script>

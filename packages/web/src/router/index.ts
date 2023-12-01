@@ -1,3 +1,6 @@
+// CONSOLE LOG TEMPLATE
+//console.log(`router.index > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 import { createRouter, createWebHistory } from 'vue-router'
 // import type { Router } from 'vue-router'
 import { tracksStore } from '../stores/tracks'
@@ -17,24 +20,17 @@ import { RouteName } from '@/types/routeType'
 import { redirections } from '@/router/redirection'
 import { TrackId } from '@/types'
 
-
 const resetTrackStore = async (to: any, from: any, next: any) => {
-  // console.log('\nrouter > beforeEnter > resetTrackStore > from :', from)
-  // console.log('router > beforeEnter > resetTrackStore > to :', to)
   const tracks = tracksStore()
   await tracks.resetUsedTracks()
   await next()
 }
 const resetDetailProgram = async (to: any, from: any, next: any) => {
-  // console.log('\nrouter > beforeEnter > resetDetailProgram > from :', from)
-  // console.log('router > beforeEnter > resetDetailProgram > to :', to)
   const programs = programsStore()
   await programs.resetDetailResult()
   await next()
 }
 const setHelpAsTrackSeed = async (to: any, from: any, next: any) => {
-  // console.log('\nrouter > beforeEnter > setHelpAsTrackSeed > from :', from)
-  // console.log('router > beforeEnter > setHelpAsTrackSeed > to :', to)
   const tracks = tracksStore()
   await tracks.setSeedTrack(TrackId.Help)
   // await tracks.addToUsedTracks('track_help', 'track_help')
@@ -42,8 +38,6 @@ const setHelpAsTrackSeed = async (to: any, from: any, next: any) => {
   await next()
 }
 const setResultsAsTrackSeed = async (to: any, from: any, next: any) => {
-  // console.log('\nrouter > beforeEnter > setResultsAsTrackSeed > from :', from)
-  // console.log('router > beforeEnter > setResultsAsTrackSeed > to :', to)
   const tracks = tracksStore()
   await tracks.setSeedTrack(TrackId.Results)
   // await tracks.addToUsedTracks('track_results', 'track_results')

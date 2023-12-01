@@ -42,6 +42,9 @@
 
 <script setup lang="ts">
 
+// CONSOLE LOG TEMPLATE
+// console.log(`TeeResultsFilter > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 import { ref } from 'vue'
 import { choicesStore } from '../../stores/choices'
 
@@ -61,10 +64,7 @@ interface Props {
 const props = defineProps<Props>()
 
 const updateLocalFilters = (event: FilterEvent) => {
-  // console.log('\nTeeResults > updateLocalFilters > event :', event )
   const val = event.target.value
-  // console.log('TeeResults > updateLocalFilters > val :', val )
-  // console.log('TeeResults > updateLocalFilters > props.filter :', props.filter )
 
   // set local ref
   activeValue.value = val
@@ -74,7 +74,6 @@ const updateLocalFilters = (event: FilterEvent) => {
     label: props.filter.label,
     value: val
   }
-  // console.log('TeeResults > updateLocalFilters > fIn :', fIn )
   emit('updateFilter', fIn)
 }
 

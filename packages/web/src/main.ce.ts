@@ -1,3 +1,6 @@
+// CONSOLE LOG TEMPLATE
+// console.log(`main.ce.ts > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import { defineCustomElement } from './defineCustomElementWithStyles'
@@ -7,7 +10,6 @@ import { router } from './router'
 // ts-ignore
 import WebApp from './WebApp.vue'
 import WidgetApp from './WidgetApp.ce.vue'
-// console.log('TeeApp.styles :', TeeApp.styles) // ["/* inlined css */"]
 
 // Import dsfr
 // cf : https://vue-dsfr.netlify.app/?path=/docs/composants-tuile-dsfrtile--docs
@@ -37,7 +39,6 @@ addIcons(
   MdCheckboxoutlineblank,
   MdCheckboxOutlined,
 )
-
 
 // Styles imports
 import './assets/main.css'

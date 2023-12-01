@@ -1,3 +1,6 @@
+// CONSOLE LOG TEMPLATE
+// console.log(`tracks.trackResults > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 import type { Track } from '@/types'
 import {
   CallbackActions,
@@ -10,7 +13,6 @@ import {
 } from '@/types'
 
 const metaEnv = import.meta.env
-// console.log('trackResults >  metaEnv :', metaEnv)
 const TEE_BACKEND_URL = metaEnv.VITE_TEE_BACKEND_URL || 'https://tee-backend.osc-fr1.scalingo.io'
 
 export const results: Track = {
@@ -280,13 +282,9 @@ Merci d'avance pour votre appel`,
         headers: {
           accept: 'application/json',
           'content-type': 'application/json'
-          // 'api-key': ''
         },
-        // headerApiKey: 'api-key',
         dataStructure: {
           email: '',
-          // listIds: [],
-          // includeListIds: [],
           attributes: {}
           // templateId: 1,  // for double opt-in
           // redirectionUrl: 'https://gov-aid-tree-poc.netlify.app'  // for double opt-in
@@ -375,8 +373,5 @@ Merci d'avance pour votre appel`,
         ]
       }
     ]
-    // next: {
-    //   default: 'track_results'
-    // }
   }
 }
