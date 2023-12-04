@@ -29,7 +29,6 @@ import {
   MdCheckboxOutlined,
 } from 'oh-vue-icons/icons'
 const Ri = Object.values({ ...RiIcons })
-// console.log('TeeApp > main.ce.ts > Ri :', Ri)
 addIcons(
   ...Ri, 
   // LaCircle, 
