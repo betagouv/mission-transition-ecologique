@@ -2,9 +2,7 @@ import type { ConditionTrack, NextTrackRule } from '@/types'
 import { ConditionOperators } from '@/types'
 
 export const CheckConditions = (data: any, conditions: ConditionTrack[]) => {
-  const boolArray = conditions.map((cond) => evaluateCondition(cond, data))
-
-  return boolArray.every((b) => !!b)
+  return conditions.every((cond) => evaluateCondition(cond, data))
 }
 
 const evaluateCondition = (condition: ConditionTrack, data: any): boolean => {
@@ -12,10 +10,16 @@ const evaluateCondition = (condition: ConditionTrack, data: any): boolean => {
 
   switch (condition.operator) {
     case ConditionOperators.exists:
-      return !!dataKey && dataKey in data
+      // actually exists and is truthy
+      const exists = !!dataKey && dataKey in data
+      const isTruthy = exists && data[dataKey]
+      return exists && isTruthy
 
     case ConditionOperators.missing:
-      return !!dataKey && dataKey! in data
+      // actually is missing or is falsy
+      const isMissing = !!dataKey && dataKey! in data
+      const isFalsy = !!dataKey && dataKey in data && !data[dataKey]
+      return isMissing || isFalsy
 
     case ConditionOperators.is:
       return !!dataKey && data[dataKey] === condition.value
