@@ -189,9 +189,6 @@
 
 // cf : https://stackoverflow.com/questions/71163741/vuejs-script-setup-cannot-contain-es-module-exports
 
-// CONSOLE LOG TEMPLATE
-//console.log(`WidgetApp > FUNCTION_NAME > MSG_OR_VALUE :`)
-
 import '@gouvfr/dsfr/dist/core/core.main.min.css'               // Le CSS minimal du DSFR
 // import '@gouvfr/dsfr/dist/component/component.main.min.css'  // Styles de tous les composants du DSFR
 // import '@gouvfr/dsfr/dist/utility/utility.main.min.css'      // Classes utilitaires : les composants de VueDsfr en ont besoin
