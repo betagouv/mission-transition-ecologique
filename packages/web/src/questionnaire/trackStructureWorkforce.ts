@@ -13,7 +13,7 @@ const nextExceptions: NextTrackRuleSet[] = [
         conditions: [
           {
             type: 'siret',
-            operator: ConditionOperators.missing
+            operator: ConditionOperators.isMissing
           }
         ]
       }

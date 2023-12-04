@@ -17,7 +17,7 @@ const checkCondition = (condition: ConditionTrack, data: any): boolean => {
       const isTruthy = exists && data[dataKey]
       return exists && isTruthy
 
-    case ConditionOperators.missing:
+    case ConditionOperators.isMissing:
       // actually is missing or is falsy
       const isMissing = !(dataKey in data)
       const isFalsy = dataKey in data && !data[dataKey]
