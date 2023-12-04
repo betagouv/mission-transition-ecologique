@@ -4,7 +4,6 @@
     "tests/**/*",
     "generated/**/*",
     "generated/swagger.json",
-    "../data/test_files/**/*",
   ],
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {

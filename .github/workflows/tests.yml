@@ -23,7 +23,7 @@ jobs:
 
       - run: npm clean-install
 
-      - run: npm run test -w packages/data
+      - run: npm run build-json-output && npm run test -w packages/data
 
 
   type-check:
