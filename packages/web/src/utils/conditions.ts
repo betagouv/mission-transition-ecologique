@@ -1,43 +1,27 @@
 import type { ConditionTrack, NextTrackRule } from '@/types'
 import { ConditionOperators } from '@/types'
 
-export const CheckConditions = (
-  data: any,
-  conditions: ConditionTrack[],
-  strict: boolean = false
-) => {
-  const boolArray = [true]
-
-  conditions.forEach((condition: ConditionTrack) => {
-    const condOperator = condition.operator
-    const condField: string = condition.type || ''
-    const dataValue = data[condField]
-    const condVal = condition.value
-    let condBool = !strict
-    if (dataValue) {
-      switch (condOperator) {
-        case ConditionOperators.exists:
-          condBool = !!dataValue
-          break
-        case ConditionOperators.missing:
-          condBool = !dataValue
-          break
-        case ConditionOperators.is:
-          condBool = condition.value === dataValue
-          break
-        case ConditionOperators.or:
-          condBool = dataValue.includes('*') || condVal.includes('*')
-          if (!condBool) {
-            const intersection = condVal.filter((v: any) => dataValue.includes(v))
-            condBool = dataValue.includes('*') || intersection.length
-          }
-          break
-      }
-    }
-    boolArray.push(condBool)
-  })
+export const CheckConditions = (data: any, conditions: ConditionTrack[]) => {
+  const boolArray = conditions.map((cond) => evaluateCondition(cond, data))
 
   return boolArray.every((b) => !!b)
+}
+
+const evaluateCondition = (condition: ConditionTrack, data: any): boolean => {
+  const dataKey: string | undefined = condition.type
+
+  switch (condition.operator) {
+    case ConditionOperators.exists:
+      return !!dataKey && dataKey in data
+
+    case ConditionOperators.missing:
+      return !!dataKey && dataKey! in data
+
+    case ConditionOperators.is:
+      return !!dataKey && data[dataKey] === condition.value
+  }
+
+  return false
 }
 
 export const CheckNextTrackRules = (data: any, rules: NextTrackRule[]) => {
@@ -48,7 +32,7 @@ export const CheckNextTrackRules = (data: any, rules: NextTrackRule[]) => {
 
   rules.forEach((rule: NextTrackRule) => {
     // console.log('utils > conditions > CheckNextTrackRules > rule :', rule)
-    const bool = CheckConditions(data, rule.conditions, true)
+    const bool = CheckConditions(data, rule.conditions)
     boolArray.push(bool)
   })
 
