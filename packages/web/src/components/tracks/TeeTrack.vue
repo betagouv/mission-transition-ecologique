@@ -15,7 +15,6 @@
       <div class="fr-col-4">
         <h6 class="fr-mb-1v"> renderAs : <code>{{ renderAs }} </code></h6>
         <h6 class="fr-mb-1v"> allowMultiple : <code>{{ allowMultiple }} </code></h6>
-        <h6 class="fr-mb-1v"> trackOperator : <code>{{ trackOperator }} </code></h6>
         <h6 class="fr-mb-1v"> colsWidth : <code>{{ colsWidth }} </code></h6>
         <h6 class="fr-mb-1v"> selectionValues : </h6>
         <code><pre>{{ selectionValues }}</pre> </code>
@@ -146,7 +145,7 @@
         </div>
 
         <!-- TRACK INFOS -->
-        <div 
+        <div
           v-if="step !== 1 && track?.info"
           :class="`${isTrackResults ? 'fr-col-12 fr-col-offset-md-1' : 'fr-col-12'}`">
           <p class="fr-mb-2v">
@@ -158,7 +157,7 @@
         </div>
 
         <!-- TRACK HINT -->
-        <div 
+        <div
           v-if="step !== 1 && track?.hint"
           :class="`${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`">
           <p
@@ -169,7 +168,7 @@
         </div>
 
         <!-- TRACK RESUME -->
-        <div 
+        <div
           v-if="step !== 1 && track?.resume"
           :class="`${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`">
           <p class="fr-mb-0">
@@ -469,9 +468,8 @@ const customColWidth: number | string = track?.interface?.columnWidth ?? 0
 // @ts-ignore
 const allowMultiple: boolean = !!track?.behavior?.multipleChoices
 
-// @ts-ignore
-const trackOperator: boolean = track?.behavior?.operator || false
-const optionsArray = track?.options?.filter( (o): o is (TrackOptions | TrackOptionsSelect | TrackOptionsInput) => !o.disabled) ?? []
+const optionsArray = track?.options?.filter( (o): o is (TrackOptions |
+  TrackOptionsSelect | TrackOptionsInput) => !o.disabled) ?? []
 
 // computed
 const isTrackResults = computed(() => {

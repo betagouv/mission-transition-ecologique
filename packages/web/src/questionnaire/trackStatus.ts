@@ -1,5 +1,5 @@
 import type { Track } from '@/types'
-import { TrackBehaviorOperators, TrackComponents, TrackId } from '@/types'
+import { TrackComponents, TrackId } from '@/types'
 
 export const status: Track = {
   id: TrackId.Status,
@@ -7,11 +7,10 @@ export const status: Track = {
   title: { fr: "Mon niveau d'avancement" },
   label: { fr: 'Statut de votre projet' },
   interface: {
-    component: TrackComponents.Buttons,
+    component: TrackComponents.Buttons
   },
   behavior: {
-    multipleChoices: false,
-    operator: TrackBehaviorOperators.or,
+    multipleChoices: false
   },
   options: [
     {
@@ -19,24 +18,24 @@ export const status: Track = {
       title: { fr: 'Economies' },
       label: { fr: 'Je veux faire des économies' },
       next: {
-        default: TrackId.StructureSizes,
-      },
+        default: TrackId.StructureSizes
+      }
     },
     {
       value: { project_status: 'carbon' },
       title: { fr: 'Emissions carbone' },
       label: { fr: "J'ai besoin de connaître et réduire mes émissions carbone" },
       next: {
-        default: TrackId.Results,
-      },
+        default: TrackId.Results
+      }
     },
     {
       value: { project_status: 'improve' },
       title: { fr: 'Améliorer mon produit/service' },
       label: { fr: "J'ai besoin d'améliorer mon produit/service" },
       next: {
-        default: TrackId.Results,
-      },
+        default: TrackId.Results
+      }
     }
   ]
 }

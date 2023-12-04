@@ -48,13 +48,8 @@ export interface TrackInterface {
   component: TrackComponents
   columnWidth?: number | string
 }
-export enum TrackBehaviorOperators {
-  or = ConditionOperators.or
-}
 export interface TrackBehavior {
   multipleChoices?: boolean
-  singleChoice?: boolean
-  operator?: TrackBehaviorOperators
 }
 export interface TrackOptionsField {
   id: string
