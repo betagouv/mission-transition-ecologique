@@ -3,6 +3,7 @@ import { fileURLToPath, URL } from 'node:url'
 // import postcssLit from 'rollup-plugin-postcss-lit';
 
 import { defineConfig, loadEnv } from 'vite'
+import type { ServerOptions } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import eslintPlugin from 'vite-plugin-eslint'
 
@@ -19,7 +20,7 @@ const rawEnv = loadEnv(mode, process.cwd())
 console.log('vite.config > rawEnv : ', rawEnv)
 
 // VITE CONFIG
-const viteServer: any = {
+const viteServer: ServerOptions = {
   // host: 'localhost',
   host: '0.0.0.0'
   // port: 4242,
@@ -31,6 +32,7 @@ const viteServer: any = {
 // https://vitejs.dev/config/
 export default defineConfig({
   server: viteServer,
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   plugins: [vue(), eslintPlugin()],
   build: {
     rollupOptions: {

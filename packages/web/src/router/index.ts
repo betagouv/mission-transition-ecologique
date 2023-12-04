@@ -1,5 +1,5 @@
-import { createRouter, createWebHistory, NavigationGuardNext, RouteLocationNormalized } from 'vue-router'
-// import type { Router } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
+import type { NavigationGuardNext, RouteLocationNormalized } from 'vue-router'
 import { tracksStore } from '../stores/tracks'
 import { programsStore } from '../stores/programs'
 
@@ -16,13 +16,13 @@ import TeePersonalDataPage from '../pages/TeePersonalDataPage.vue'
 import { RouteName } from '@/types/routeType'
 import { redirections } from '@/router/redirection'
 import { TrackId } from '@/types'
-import { Component } from 'vue'
+import type { Component } from 'vue'
 
-const resetTrackStore = async (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
+const resetTrackStore = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
   // console.log('\nrouter > beforeEnter > resetTrackStore > from :', from)
   // console.log('router > beforeEnter > resetTrackStore > to :', to)
   const tracks = tracksStore()
-  await tracks.resetUsedTracks()
+  tracks.resetUsedTracks()
   next()
 }
 const resetDetailProgram = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
@@ -32,20 +32,20 @@ const resetDetailProgram = (to: RouteLocationNormalized, from: RouteLocationNorm
   programs.resetDetailResult()
   next()
 }
-const setHelpAsTrackSeed = async (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
+const setHelpAsTrackSeed = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
   // console.log('\nrouter > beforeEnter > setHelpAsTrackSeed > from :', from)
   // console.log('router > beforeEnter > setHelpAsTrackSeed > to :', to)
   const tracks = tracksStore()
-  await tracks.setSeedTrack(TrackId.Help)
+  tracks.setSeedTrack(TrackId.Help)
   // await tracks.addToUsedTracks('track_help', 'track_help')
   // next({ name: 'questionnaire' })
   next()
 }
-const setResultsAsTrackSeed = async (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
+const setResultsAsTrackSeed = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
   // console.log('\nrouter > beforeEnter > setResultsAsTrackSeed > from :', from)
   // console.log('router > beforeEnter > setResultsAsTrackSeed > to :', to)
   const tracks = tracksStore()
-  await tracks.setSeedTrack(TrackId.Results)
+  tracks.setSeedTrack(TrackId.Results)
   // await tracks.addToUsedTracks('track_results', 'track_results')
   // next({ name: 'catalog' })
   next()

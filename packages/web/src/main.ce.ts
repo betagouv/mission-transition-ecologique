@@ -1,4 +1,5 @@
-import { Component, createApp, Plugin } from 'vue'
+import { createApp } from 'vue'
+import type { Component, Plugin } from 'vue'
 import { createPinia } from 'pinia'
 import { defineCustomElement } from './defineCustomElementWithStyles'
 

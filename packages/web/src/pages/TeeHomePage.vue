@@ -20,12 +20,7 @@
 </template>
 
 <script setup lang="ts">
-// @ts-ignore
-// import WidgetApp from '../../WidgetApp.ce.vue'
-// @ts-ignore
 import TeeCta from '@/components/home/TeeCta.vue'
-// @ts-ignore
 import TeeHomeSteps from '@/components/home/TeeHomeSteps.vue'
-// @ts-ignore
 import TeeHomeInfos from '@/components/home/TeeHomeInfos.vue'
 </script>

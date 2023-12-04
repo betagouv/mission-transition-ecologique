@@ -20,12 +20,12 @@ export const sectors: Track = {
         ...Sectors,
         [EntrepriseSector.Craftsmanship]: YesNo.Yes,
         // "entreprise . code NAF niveau 1 . est A": YesNo.Yes
-        ...Object.assign(
+        ...(Object.assign(
           {},
           ...SectorByNAF[EntrepriseSector.Craftsmanship].map((l) => {
             return { [NAF1ToVar(l)]: YesNo.Yes }
           })
-        )
+        ) as object)
       },
       title: { fr: 'Artisanat' },
       label: { fr: '👩‍🎨 J’ai une activité artisanale' },
@@ -39,12 +39,12 @@ export const sectors: Track = {
         ...Sectors,
         [EntrepriseSector.Industry]: YesNo.Yes,
         ...codesNAF1,
-        ...Object.assign(
+        ...(Object.assign(
           {},
           ...SectorByNAF[EntrepriseSector.Industry].map((l) => {
             return { [NAF1ToVar(l)]: YesNo.Yes }
           })
-        )
+        ) as object)
       },
       title: { fr: 'Industrie' },
       label: { fr: '👩‍🔧 J’ai une activité industrielle, fabrication, production' },
@@ -58,12 +58,12 @@ export const sectors: Track = {
         ...Sectors,
         [EntrepriseSector.Tourism]: YesNo.Yes,
         ...codesNAF1,
-        ...Object.assign(
+        ...(Object.assign(
           {},
           ...SectorByNAF[EntrepriseSector.Tourism].map((l) => {
             return { [NAF1ToVar(l)]: YesNo.Yes }
           })
-        )
+        ) as object)
       },
       title: { fr: 'Tourisme' },
       label: { fr: '🤵‍♂️ J’ai une activité de tourisme, restauration' },
@@ -77,12 +77,12 @@ export const sectors: Track = {
         ...Sectors,
         [EntrepriseSector.Tertiary]: YesNo.Yes,
         ...codesNAF1,
-        ...Object.assign(
+        ...(Object.assign(
           {},
           ...SectorByNAF[EntrepriseSector.Tertiary].map((l) => {
             return { [NAF1ToVar(l)]: YesNo.Yes }
           })
-        )
+        ) as object)
       },
       title: { fr: 'Tertiaire' },
       label: { fr: '🧑‍⚖️ J’ai une activité tertiaire, de services' },
@@ -96,12 +96,12 @@ export const sectors: Track = {
         ...Sectors,
         [EntrepriseSector.Agriculture]: YesNo.Yes,
         ...codesNAF1,
-        ...Object.assign(
+        ...(Object.assign(
           {},
           ...SectorByNAF[EntrepriseSector.Agriculture].map((l) => {
             return { [NAF1ToVar(l)]: YesNo.Yes }
           })
-        )
+        ) as object)
       },
       title: { fr: 'Agriculture' },
       label: { fr: '👩‍🌾 J’ai une activité agricole' },
@@ -115,12 +115,12 @@ export const sectors: Track = {
         ...Sectors,
         [EntrepriseSector.Other]: YesNo.Yes,
         ...codesNAF1,
-        ...Object.assign(
+        ...(Object.assign(
           {},
           ...SectorByNAF[EntrepriseSector.Other].map((l) => {
             return { [NAF1ToVar(l)]: YesNo.Yes }
           })
-        )
+        ) as object)
       },
       title: { fr: 'Autre' },
       label: { fr: "Je suis dans un autre secteur d'activité" },

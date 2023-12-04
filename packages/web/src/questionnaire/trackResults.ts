@@ -1,7 +1,8 @@
 import type { Track } from '@/types'
 import { CallbackActions, CallbackMethods, ConditionOperators, DataMappingFrom, FormFieldTypes, TrackComponents, TrackId } from '@/types'
+import type { ImportMetaEnv } from '@/env'
 
-const metaEnv = import.meta.env
+const metaEnv: ImportMetaEnv = import.meta.env
 // console.log('trackResults >  metaEnv :', metaEnv)
 const TEE_BACKEND_URL = metaEnv.VITE_TEE_BACKEND_URL || 'https://tee-backend.osc-fr1.scalingo.io'
 

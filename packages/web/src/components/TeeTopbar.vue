@@ -45,19 +45,15 @@
 </template>
 
 <script setup lang="ts">
-// import { computed } from 'vue'
-
 import { tracksStore } from '../stores/tracks'
 import { choicesStore } from '../stores/choices'
-
-// @ts-ignore
 import type { UsedTrack } from '@/types/index'
 
 interface Props {
   usedTracks: UsedTrack[]
   debug?: boolean
 }
-const props = defineProps<Props>()
+defineProps<Props>()
 
 const tracks = tracksStore()
 const choices = choicesStore()
@@ -67,10 +63,10 @@ const choices = choicesStore()
 //   return completedTracks
 // })
 
-const backToTrack = async (trackId: string) => {
+const backToTrack = (trackId: string) => {
   // console.log()
   // console.log('TeeTopbar > backToTrack > trackId :', trackId)
-  await tracks.setUsedTracksAsNotCompleted(trackId)
-  await tracks.removeFurtherUsedTracks(trackId)
+  tracks.setUsedTracksAsNotCompleted(trackId)
+  tracks.removeFurtherUsedTracks(trackId)
 }
 </script>

@@ -53,7 +53,12 @@ ${hasTrackAllOutlinks ? "_paq.push(['enableLinkTracking']);" : ''}
   `
 }
 
-export const trackEvent = (evCategory: string, evAction: string, evName: string | undefined = undefined, EvValue: number | undefined = undefined) => {
+export const trackEvent = (
+  evCategory: string,
+  evAction: string,
+  evName: string | undefined = undefined,
+  EvValue: number | undefined = undefined
+) => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const _paq: any = window._paq || []
   console.log()

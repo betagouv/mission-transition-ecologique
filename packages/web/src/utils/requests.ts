@@ -1,5 +1,4 @@
-import type { MetaEnv, FormCallback, ReqResp } from '@/types/index'
-// import { toRaw } from 'vue'
+import type { FormCallback, ReqResp } from '@/types/index'
 import { remapItem } from './helpers'
 
 export const buildHeaders = (callback: FormCallback) => {
@@ -8,9 +7,9 @@ export const buildHeaders = (callback: FormCallback) => {
 
 export const sendApiRequest = async (
   callback: FormCallback,
-  formData: object | any,
+  formData: any,
   trackValues: any[] = [],
-  props: object | any = undefined,
+  props: any = undefined,
   lang: string = 'fr'
 ) => {
   // console.log()
@@ -34,6 +33,7 @@ export const sendApiRequest = async (
   // console.log('utils > requests > sendApiRequest >  dataMapping :', dataMapping)
   // console.log('utils > requests > sendApiRequest >  listIds :', listIds)
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
   data = remapItem(data, dataMapping, formData, trackValues, props, undefined, [], lang)
   // console.log('utils > requests > sendApiRequest >  data :', data)
   const body = JSON.stringify(data)
@@ -42,7 +42,7 @@ export const sendApiRequest = async (
   return await sendRequest(url, method, headers, body, callback.action)
 }
 
-export const sendRequest = async (url: string, method: string, headers: HeadersInit, body: BodyInit, action: string) => {
+export const sendRequest = async (url: string, method: string, headers: HeadersInit, body: BodyInit, action: string): Promise<ReqResp> => {
   // console.log()
   // console.log('utils > requests > sendRequest >  url :', url)
   // console.log('utils > requests > sendRequest >  method :', method)
@@ -56,7 +56,7 @@ export const sendRequest = async (url: string, method: string, headers: HeadersI
       body: body
     })
     // console.log('utils > requests > sendRequest >  response :', response)
-    const respJson = await response.json()
+    const respJson: ReqResp = (await response.json()) as ReqResp
     respJson.action = action
     respJson.ok = response.ok
     respJson.status = response.status
@@ -65,13 +65,14 @@ export const sendRequest = async (url: string, method: string, headers: HeadersI
 
     // console.log('utils > requests > sendRequest >  respJson :', respJson)
     return respJson
-  } catch (error) {
+  } catch (error: unknown) {
     const respObj: ReqResp = {}
     // console.log('utils > requests > sendRequest >  error :', error)
     respObj.action = action
     respObj.ok = false
     respObj.status = 500
     respObj.statusText = 'Internal server error'
+    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
     respObj.message = `${error}`
 
     return respObj

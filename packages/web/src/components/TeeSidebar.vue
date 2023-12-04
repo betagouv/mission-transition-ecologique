@@ -113,10 +113,10 @@ const usedCategories = computed(() => {
   return Object.keys(usedTracksRegrouped.value)
 })
 
-const backToTrack = async (trackId: string) => {
+const backToTrack = (trackId: string) => {
   // console.log()
   // console.log('TeeSidebar > backToTrack > trackId :', trackId)
-  await tracks.setUsedTracksAsNotCompleted(trackId)
-  await tracks.removeFurtherUsedTracks(trackId)
+  tracks.setUsedTracksAsNotCompleted(trackId)
+  tracks.removeFurtherUsedTracks(trackId)
 }
 </script>

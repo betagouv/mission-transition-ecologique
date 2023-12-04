@@ -13,12 +13,12 @@ import {
   FindInRefs,
   HasInputOptions,
   TrackComponents,
-  TrackId,
-  Entreprise
+  TrackId
 } from '@/types'
 import type { Track } from '@/types'
+import type { ImportMetaEnv } from '@/env'
 
-const metaEnv = import.meta.env
+const metaEnv: ImportMetaEnv = import.meta.env
 // console.log('trackSiret >  metaEnv :', metaEnv)
 const TEE_BACKEND_URL = metaEnv.VITE_TEE_BACKEND_URL || 'https://tee-backend.osc-fr1.scalingo.io'
 

@@ -196,14 +196,10 @@
 
 <script setup lang="ts">
 import { onBeforeMount, ref, toRaw } from 'vue'
-
 import { tracksStore } from '../../stores/tracks'
 import { choicesStore } from '../../stores/choices'
 import { analyticsStore } from '../../stores/analytics'
-
-// @ts-ignore
 import type { TrackOptionsInput, ReqResp, ReqError, FormCallback, ResultsMapping } from '@/types'
-
 import { sendApiRequest } from '../../utils/requests'
 import { getFromResp, remapItem, cleanValue } from '../../utils/helpers'
 import { CallbackActions } from '@/types'
@@ -280,7 +276,7 @@ const processInput = async () => {
       let value = inputValue.value
       // Clean input value
       if (callback.inputCleaning) {
-        value = cleanValue(value, callback.inputCleaning)
+        value = cleanValue(value, callback.inputCleaning) as string | number | undefined
       }
       // console.log('TeeTrackInput > processInput > value :', value)
       let resp: ReqResp = {}
@@ -289,7 +285,16 @@ const processInput = async () => {
       }
       // console.log('TeeTrackInput > processInput >  resp :', resp)
       if (resp.ok) {
-        const item = remapItem(callback.dataStructure, callback.dataMapping, { inputValue: value }, trackValues, props, resp, [], choices.lang)
+        const item = remapItem(
+          callback.dataStructure,
+          callback.dataMapping,
+          { inputValue: value },
+          trackValues,
+          props,
+          resp,
+          [],
+          choices.lang
+        )
         // console.log('TeeTrackInput > processInput >  item :', item)
         responses.push({
           data: item,
@@ -320,6 +325,7 @@ const processInput = async () => {
     const data = {
       option: {
         ...props.option,
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         value: selection.value
       },
       remove: true
@@ -345,6 +351,7 @@ const selectItem = (item: any) => {
   // console.log('TeeTrackInput > selectItem > hasSelection.value (A) :', hasSelection.value)
   // console.log('TeeTrackInput > selectItem > item :', item)
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   selection.value = hasSelection.value ? undefined : item
   // console.log('TeeTrackInput > selectItem > hasSelection.value (B) :', hasSelection.value)
 
@@ -353,6 +360,7 @@ const selectItem = (item: any) => {
   const data = {
     option: {
       ...props.option,
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-member-access
       value: item.data
     },
     remove: !hasSelection.value

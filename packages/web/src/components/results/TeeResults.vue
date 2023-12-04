@@ -47,7 +47,8 @@
     </div>
 
     <!-- NO RESULTS -->
-    <TeeNoResults v-if="!countReFilteredPrograms" :image="trackConfig?.noResultsImage" :message="trackConfig?.noResultsMessage"> </TeeNoResults>
+    <TeeNoResults v-if="!countReFilteredPrograms" :image="trackConfig?.noResultsImage" :message="trackConfig?.noResultsMessage">
+    </TeeNoResults>
 
     <!-- PROGRAMS CARDS -->
     <div
@@ -148,7 +149,7 @@ interface Props {
   trackOptions?: any
   trackForm?: any
   tracksResults: UsedTrack[]
-  trackElement: any
+  trackElement: Element
   disableWidget?: boolean
   debug?: boolean
 }
@@ -226,7 +227,7 @@ const updateDetailResult = async (id: string | number) => {
   programs.setDetailResult(id, props.trackId)
   await nav.setCurrentDetailId(id, props.disableWidget)
   await nav.updateUrl(props.disableWidget)
-  scrollToTop(props.trackElement, props.disableWidget, props.trackId)
+  scrollToTop(props.trackElement, props.disableWidget)
 }
 
 const getCostInfos = (program: ProgramData) => {

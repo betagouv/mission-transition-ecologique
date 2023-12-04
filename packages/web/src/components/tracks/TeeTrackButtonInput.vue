@@ -40,10 +40,7 @@
 
 <script setup lang="ts">
 import { onBeforeMount, ref, computed } from 'vue'
-
 import { choicesStore } from '@/stores/choices'
-
-// @ts-ignore
 import type { TrackOptionsInput } from '@/types'
 import { HasInputOptions } from '@/types'
 
@@ -82,7 +79,7 @@ const isNumberInput = computed(() => {
 
 // computed
 const dataObj = computed(() => {
-  const inputObject: any = props.option.value
+  const inputObject = props.option.value as Record<string, unknown>
   if (props.option.inputField) {
     const val = inputValue.value
     // clean val if inputCleaning

@@ -14,7 +14,9 @@ export const needs: Track = {
     title: { fr: 'Trouvez comment faire rimer écologie avec économies' },
     titleStyle: 'font-size: 2.8rem;',
     bigTitle: true,
-    description: { fr: 'Je complète mon profil en moins de 2 minutes, et je découvre comment faire des économies en réduisant mon impact environnemental.' },
+    description: {
+      fr: 'Je complète mon profil en moins de 2 minutes, et je découvre comment faire des économies en réduisant mon impact environnemental.'
+    },
     descriptionStyle: 'font-size: 1.3rem; line-height: 2rem;'
   },
   interface: {
@@ -40,7 +42,9 @@ export const needs: Track = {
       value: { project_needs: 'starting' },
       title: { fr: 'Découvrir' },
       label: { fr: 'Je débute, je visite, je fais mes premiers pas' },
-      hint: { fr: 'Obtenez rapidement des premiers conseils, à travers notre outil ou avec un conseiller, afin d’initier votre transition écologique' },
+      hint: {
+        fr: 'Obtenez rapidement des premiers conseils, à travers notre outil ou avec un conseiller, afin d’initier votre transition écologique'
+      },
       next: {
         default: TrackId.Sectors
       }

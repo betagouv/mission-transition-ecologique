@@ -1,7 +1,7 @@
 import { computed, ref } from 'vue'
 import { defineStore } from 'pinia'
 import type { TrackId, UsedTrackValuePair } from '@/types'
-import { RouteLocationNormalizedLoaded, RouteLocationRaw, Router } from 'vue-router'
+import type { RouteLocationNormalizedLoaded, RouteLocationRaw, Router } from 'vue-router'
 
 export const navigationStore = defineStore('navigation', () => {
   // State objects

@@ -134,7 +134,10 @@
         </p>
       </div>
       <!-- DEBUGGING -->
-      <div v-if="debug && requestResponses?.filter((resp) => resp.status && ![200, 201].includes(resp.status))" class="fr-mt-5v fr-highlight">
+      <div
+        v-if="debug && requestResponses?.filter((resp) => resp.status && ![200, 201].includes(resp.status))"
+        class="fr-mt-5v fr-highlight"
+      >
         <p v-for="(resp, i) in requestResponses" :key="`resp-${i}`">
           <b> {{ resp.action }} : </b>
           <b> status {{ resp.status }} : </b>
@@ -226,7 +229,8 @@ const requestResponses = ref<ReqResp[]>()
 // })
 
 const canSaveFrom = computed(() => {
-  const boolArr = requiredFields.value.map((f: string) => formData.value[f])
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+  const boolArr = requiredFields.value.map((f: string) => formData.value?.[f])
   return boolArr.every((v) => !!v && v !== '')
 })
 
@@ -300,7 +304,9 @@ onBeforeMount(() => {
 
 const updateFormData = (ev: string, id: string) => {
   // console.log(`TeeForm > saveFormData >  id : ${id} > ev : ${ev}`)
-  formData.value[id] = ev
+  if (formData.value) {
+    formData.value[id] = ev
+  }
 }
 
 // const emit = defineEmits(['saveData'])

@@ -154,12 +154,23 @@
 
     <!-- PROGRAM FORM -->
     <div class="fr-form-block">
-      <TeeForm :track-id="trackConfig.id" :form-options="trackConfig.form" :data-props="{ programId: program.id }" :program="program" :debug="debug" />
+      <TeeForm
+        :track-id="trackConfig.id"
+        :form-options="trackConfig.form"
+        :data-props="{ programId: program.id }"
+        :program="program"
+        :debug="debug"
+      />
     </div>
   </div>
 
   <!-- MODAL DIALOG -->
-  <dialog id="fr-modal-1" aria-labelledby="fr-modal-title-modal-1" role="dialog" :class="`fr-modal fr-modal-custom ${showForm ? 'fr-modal--opened' : ''}`">
+  <dialog
+    id="fr-modal-1"
+    aria-labelledby="fr-modal-title-modal-1"
+    role="dialog"
+    :class="`fr-modal fr-modal-custom ${showForm ? 'fr-modal--opened' : ''}`"
+  >
     <div class="fr-container fr-container--fluid fr-container-md">
       <div class="fr-grid-row fr-grid-row--center">
         <div class="fr-col-12 fr-col-md-11 fr-col-lg-10">
@@ -185,7 +196,11 @@
                   <p class="" style="text-align: center">
                     {{ trackConfig?.form.hint[choices.lang] || '' }}
                   </p>
-                  <img class="fr-responsive-img fr-sm-hide" :src="`${choices.publicPath}images/TEE_illustration.png`" :alt="`image / ${program.titre}`" />
+                  <img
+                    class="fr-responsive-img fr-sm-hide"
+                    :src="`${choices.publicPath}images/TEE_illustration.png`"
+                    :alt="`image / ${program.titre}`"
+                  />
                 </div>
                 <!-- MODAL FORM -->
                 <div class="fr-col">
@@ -221,7 +236,7 @@ import { analyticsStore } from '../../stores/analytics'
 import { scrollToId } from '../../utils/helpers'
 import type { TrackId } from '@/types'
 import ProgramObjective from '@/components/program/ProgramObjective.vue'
-import { ProgramData } from '@/types'
+import type { ProgramData } from '@/types'
 
 const choices = choicesStore()
 const tracks = tracksStore()

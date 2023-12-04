@@ -93,7 +93,12 @@ onMounted(() => {
     matomoScriptElem.setAttribute('type', 'text/javascript')
 
     // console.log('TeeMatomo > onMounted >  scriptText :', scriptText)
-    matomoScriptElem.innerHTML = matomoScript(analytics.matomoServer, analytics.matomoSiteId, analytics.domain, analytics.hasTrackAllOutlinks)
+    matomoScriptElem.innerHTML = matomoScript(
+      analytics.matomoServer,
+      analytics.matomoSiteId,
+      analytics.domain,
+      analytics.hasTrackAllOutlinks
+    )
     document.head.appendChild(matomoScriptElem)
     analytics.setMatomoIsSet(true)
   }

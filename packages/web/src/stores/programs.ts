@@ -1,8 +1,7 @@
 import { computed, ref } from 'vue'
 import { defineStore } from 'pinia'
 
-import type { ProgramData, TrackId, TrackOptions } from '@/types/index'
-import { UsedTrack } from '@/types/index'
+import type { ProgramData, TrackId, TrackOptions, UsedTrack } from '@/types/index'
 import { filterPrograms as filterWithPublicodes } from '@tee/backend/src/domain/eligibility'
 import type { QuestionnaireData } from '@tee/backend/src/domain/types'
 

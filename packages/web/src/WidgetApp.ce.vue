@@ -2,7 +2,11 @@
   <div ref="trackElement" class="fr-container--fluid">
     <!-- HEADER -->
     <p v-if="showHeaderBool && !disableWidget" class="fr-pb-0v fr-mb-0">
-      <DsfrHeader logo-text="ADEME" service-title="Transition écologique des entreprises" service-description="Faire rimer écologie avec économies !" />
+      <DsfrHeader
+        logo-text="ADEME"
+        service-title="Transition écologique des entreprises"
+        service-description="Faire rimer écologie avec économies !"
+      />
     </p>
 
     <!-- DEBUGGING -->
@@ -38,7 +42,12 @@
       </div>
       <!-- DEBUG SWITCH-->
       <div v-if="debugSwitchBool" class="fr-col-md-3 fr-col-sm-6">
-        <DsfrToggleSwitch label="Debug mode" hint="Switch to activate / deactivate debugging mode" :model-value="debugBool" @update:model-value="changeDebug" />
+        <DsfrToggleSwitch
+          label="Debug mode"
+          hint="Switch to activate / deactivate debugging mode"
+          :model-value="debugBool"
+          @update:model-value="changeDebug"
+        />
       </div>
     </div>
 
@@ -63,7 +72,10 @@
         </div>
 
         <!-- TRACKS -->
-        <div id="tee-app-tracks" :class="`${tracks.currentStep > 1 ? 'fr-tee-add-padding' : ''} ${getColumnsWidth} ${debugBool ? '' : 'fr-grid-row--center'}`">
+        <div
+          id="tee-app-tracks"
+          :class="`${tracks.currentStep > 1 ? 'fr-tee-add-padding' : ''} ${getColumnsWidth} ${debugBool ? '' : 'fr-grid-row--center'}`"
+        >
           <div
             v-for="(track, index) in tracks.usedTracks"
             :key="track.id"
@@ -148,7 +160,12 @@
     <div v-if="programs.programDetail" :class="`fr-container-fluid fr-px-6v fr-px-md-20v fr-mt-10v`">
       <div class="fr-grid-row fr-grid-row-gutters">
         <div class="fr-col">
-          <TeeProgramDetail :program-id="programs.programDetail" :track-id="programs.programDetailConfig" :disable-widget="disableWidget" :debug="debugBool" />
+          <TeeProgramDetail
+            :program-id="programs.programDetail"
+            :track-id="programs.programDetailConfig"
+            :disable-widget="disableWidget"
+            :debug="debugBool"
+          />
         </div>
       </div>
     </div>
@@ -318,7 +335,7 @@ const setupFromUrl = async () => {
   nav.updateQueries(tracks.getAllUsedTracksValuesPairs, props.disableWidget)
 }
 
-onBeforeMount(async () => {
+onBeforeMount(() => {
   // console.log('WidgetApp > onBeforeMount > props.seed :', props.seed)
   // console.log('WidgetApp > onBeforeMount > props.maxDepth :', props.maxDepth)
 
@@ -392,7 +409,7 @@ onBeforeMount(async () => {
 
   // set first track at mount
   // console.log('WidgetApp > onMounted > set seed track...')
-  await tracks.setSeedTrack(props.seed)
+  tracks.setSeedTrack(props.seed)
   tracks.addToUsedTracks(props.seed, props.seed)
 })
 

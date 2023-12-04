@@ -51,10 +51,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-
-// @ts-ignore
 import type { Dict } from '@/types/index'
-
 import { tracksStore } from '../stores/tracks'
 import { choicesStore } from '../stores/choices'
 

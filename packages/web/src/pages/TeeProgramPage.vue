@@ -17,10 +17,7 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
-
-// @ts-ignore
 import WidgetApp from '@/WidgetApp.ce.vue'
-// @ts-ignore
 import TeeProgramDetail from '@/components/program/TeeProgramDetail.vue'
 import { TrackId } from '@/types'
 

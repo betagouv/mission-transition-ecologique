@@ -66,7 +66,10 @@
       <div :class="`fr-grid-row fr-grid-row--gutters ${track?.bgColor ? 'fr-p-5v fr-p-sm-8v fr-p-md-20v' : ''}`">
         <!-- CALLOUT (TEXT + IMAGE) -->
         <div v-if="track?.callout" :class="`fr-col-12 ${track.callout.bigTitle ? 'fr-mb-10v fr-mx-0 fr-px-2v' : ''}`">
-          <div :class="`${track.callout.bigTitle ? 'fr-px-2v' : 'fr-py-4v fr-px-4v'}`" :style="`background-color: ${track.callout.bgColor || 'transparent'}`">
+          <div
+            :class="`${track.callout.bigTitle ? 'fr-px-2v' : 'fr-py-4v fr-px-4v'}`"
+            :style="`background-color: ${track.callout.bgColor || 'transparent'}`"
+          >
             <div class="tee-track-callout fr-grid-row fr-grid-row--gutters">
               <!-- CALLOUT IMAGE LEFT -->
               <div
@@ -79,7 +82,11 @@
               <!-- CALLOUT TEXT -->
               <div :class="`${track.callout.bigTitle ? 'fr-col-8 fr-col-sm-8 fr-col-md-7' : 'fr-col fr-col-md-7 tee-track-callout-texts'}`">
                 <!-- CALLOUT HEADER -->
-                <h2 v-if="track.callout.header" :style="`${track.callout.headerStyle || 'color: var(--text-default-info);'}`" class="tee-track-callout-header">
+                <h2
+                  v-if="track.callout.header"
+                  :style="`${track.callout.headerStyle || 'color: var(--text-default-info);'}`"
+                  class="tee-track-callout-header"
+                >
                   {{ track.callout.header[choices.lang] }}
                 </h2>
                 <!-- CALLOUT TITLE / BIG TITLE -->
@@ -322,7 +329,7 @@ interface Props {
   step: number
   trackId: TrackId
   isCompleted: boolean
-  trackElement: any
+  trackElement: Element
   disableWidget?: boolean
   debug?: boolean
 }
@@ -420,7 +427,7 @@ const isActiveChoice = (index: number) => {
   return activeIndex
 }
 
-const updateSelection = async (option: TrackOptionsUnion, index: number, forceRemove: boolean = false) => {
+const updateSelection = (option: TrackOptionsUnion, index: number, forceRemove: boolean = false) => {
   // console.log()
   // console.log('TeeTrack > updateSelection > option :', option)
   // console.log('TeeTrack > updateSelection > index :', index)
@@ -455,16 +462,16 @@ const updateSelection = async (option: TrackOptionsUnion, index: number, forceRe
   // Direct to next track
   const directToNext: string[] = ['cards']
   if (!allowMultiple && directToNext.includes(renderAs)) {
-    await saveSelection()
+    saveSelection()
   }
 }
 
-const updateSelectionFromSignal = async (ev: any, index: number) => {
+const updateSelectionFromSignal = (ev: any, index: number) => {
   // console.log()
   // console.log('TeeTrack > updateSelectionFromSignal > ev :', ev)
   // TODO (ev.target as HTMLSelectElement)
   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-argument
-  await updateSelection(ev.option, index, ev.remove)
+  updateSelection(ev.option, index, ev.remove)
 }
 
 const updateSelectionValueFromSignal = (ev: any) => {
@@ -490,27 +497,27 @@ const updateSelectionValueFromSignal = (ev: any) => {
   selectedOptions.value = temp
 }
 
-const updateSelectionValueFromSelectSignal = async (ev: any) => {
+const updateSelectionValueFromSelectSignal = (ev: any) => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
   if (ev.reset) {
     selectedOptionsIndices.value = []
     selectedOptions.value = []
   } else {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-argument
-    await updateSelection(ev.option, ev.index)
+    updateSelection(ev.option, ev.index)
   }
 }
 
-const saveSelectionFromSignal = async (ev: any, index: number) => {
+const saveSelectionFromSignal = (ev: any, index: number) => {
   // console.log()
   // console.log('TeeTrack > saveSelectionFromSignal > ev :', ev)
   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-  await updateAndSave(ev.option as TrackOptionsUnion, index)
+  updateAndSave(ev.option as TrackOptionsUnion, index)
 }
 
-const updateAndSave = async (option: TrackOptionsUnion, index: number) => {
-  await updateSelection(option, index)
-  await saveSelection()
+const updateAndSave = (option: TrackOptionsUnion, index: number) => {
+  updateSelection(option, index)
+  saveSelection()
 }
 
 const resetSelections = () => {
@@ -550,7 +557,7 @@ watch(
 
 // functions
 
-const saveSelection = async () => {
+const saveSelection = () => {
   // console.log()
   // console.log('TeeTrack > updateStore > selectedOptions.value :', selectedOptions.value)
 
@@ -598,22 +605,22 @@ const saveSelection = async () => {
     canAddTrack && tracks.addToUsedTracks(props.trackId, next.default)
   } else {
     // console.log('TeeTrack > updateStore > removeFromUsedTracks...')
-    await tracks.removeFurtherUsedTracks(props.trackId)
+    tracks.removeFurtherUsedTracks(props.trackId)
   }
 
-  scrollToTop(props.trackElement, props.disableWidget, props.trackId)
+  scrollToTop(props.trackElement, props.disableWidget)
 }
 
-const backToPreviousTrack = async () => {
+const backToPreviousTrack = () => {
   // console.log()
   // console.log('TeeTrack > backToTrack > props.trackId :', props.trackId)
   const indexOfTrack = tracks.tracksStepsArray.indexOf(props.trackId)
   // console.log('TeeTrack > backToTrack > indexOfTrack :', indexOfTrack)
   const TrackToGoBackTo = tracks.tracksStepsArray[indexOfTrack - 1]
   // console.log('TeeTrack > backToTrack > TrackToGoBackTo :', TrackToGoBackTo)
-  await tracks.setUsedTracksAsNotCompleted(TrackToGoBackTo)
-  await tracks.removeFurtherUsedTracks(TrackToGoBackTo)
+  tracks.setUsedTracksAsNotCompleted(TrackToGoBackTo)
+  tracks.removeFurtherUsedTracks(TrackToGoBackTo)
 
-  scrollToTop(props.trackElement, props.disableWidget, props.trackId)
+  scrollToTop(props.trackElement, props.disableWidget)
 }
 </script>

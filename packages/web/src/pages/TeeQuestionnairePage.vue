@@ -9,19 +9,15 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-
 import { tracksStore } from '../stores/tracks'
-
-// @ts-ignore
-import type { Track } from '@/types/index'
-// @ts-ignore
 import TeeContact from '@/components/home/TeeContact.vue'
+import type { UsedTrack } from '@/types/index'
 
 const tracks = tracksStore()
 
 // computed
 const isTrackResults = computed(() => {
-  const track: Track | any = tracks.getLastTrack
+  const track: UsedTrack = tracks.getLastTrack
   return track?.component === 'results'
 })
 </script>

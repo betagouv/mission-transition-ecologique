@@ -112,6 +112,6 @@ export const frDict = {
       the: 'la',
       this: 'cette',
       of: 'de la'
-    },
+    }
   }
 }

@@ -21,7 +21,11 @@
             République
             <br />Française
           </p>
-          <router-link class="fr-footer__brand-link" to="/" title="Retour à l’accueil du site - Transition Ecologique des entreprises - République Française">
+          <router-link
+            class="fr-footer__brand-link"
+            to="/"
+            title="Retour à l’accueil du site - Transition Ecologique des entreprises - République Française"
+          >
             <img
               class="fr-footer__logo"
               style="height: 110px"
