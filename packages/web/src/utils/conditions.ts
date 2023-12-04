@@ -6,19 +6,12 @@ export const CheckConditions = (
   conditions: ConditionTrack[],
   strict: boolean = false
 ) => {
-  // console.log()
-  // console.log('utils > conditions > CheckConditions > data :', data)
-  // console.log('...')
-  // console.log('utils > conditions > CheckConditions > rules :', rules)
   const boolArray = [true]
 
   conditions.forEach((condition: ConditionTrack) => {
-    // console.log('utils > conditions > CheckConditions > condition :', condition)
     const condOperator = condition.operator
-    // console.log('utils > conditions > CheckConditions > condOperator :', condOperator)
     const condField: string = condition.type || ''
     const dataValue = data[condField]
-    // console.log('utils > conditions > CheckConditions > dataValue :', dataValue)
     const condVal = condition.value
     let condBool = !strict
     if (dataValue) {
@@ -41,7 +34,6 @@ export const CheckConditions = (
           break
       }
     }
-    // console.log('utils > conditions > CheckConditions > condBool :', condBool)
     boolArray.push(condBool)
   })
 
