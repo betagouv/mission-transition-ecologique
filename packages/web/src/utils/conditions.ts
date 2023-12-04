@@ -25,18 +25,6 @@ const checkCondition = (condition: ConditionTrack, data: any): boolean => {
 
     case ConditionOperators.is:
       return !!dataKey && data[dataKey] === condition.value
-
-    case ConditionOperators.or:
-    case ConditionOperators.and:
-      const childEvaluations = condition.value.map((childCondition: any) =>
-        checkCondition(childCondition, data)
-      )
-
-    case ConditionOperators.or:
-      return childEvaluations.some()
-
-    case ConditionOperators.and:
-      return childEvaluations.every()
   }
 
   return false
