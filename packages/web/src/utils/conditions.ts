@@ -1,7 +1,7 @@
 import type { ConditionTrack, NextTrackRule } from '@/types'
 import { ConditionOperators } from '@/types'
 
-export const CheckConditions = (conditions: ConditionTrack[], data: any) => {
+export const checkConditions = (conditions: ConditionTrack[], data: any) => {
   return conditions.every((cond) => checkCondition(cond, data))
 }
 
@@ -38,7 +38,7 @@ export const CheckNextTrackRules = (data: any, rules: NextTrackRule[]) => {
 
   rules.forEach((rule: NextTrackRule) => {
     // console.log('utils > conditions > CheckNextTrackRules > rule :', rule)
-    const bool = CheckConditions(rule.conditions, data)
+    const bool = checkConditions(rule.conditions, data)
     boolArray.push(bool)
   })
 
