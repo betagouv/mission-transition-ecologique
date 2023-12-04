@@ -6,7 +6,7 @@ export const wastesMaterials: Track = {
   category: 'myWastes',
   title: { fr: 'Matières premières' },
   label: {
-    fr: 'Avez-vous pour objectif de réduire vos pertes de matières premières ?'
+    fr: 'Avez-vous pour objectif de réduire vos pertes de matières premières ou votre production de déchets ?'
   },
   interface: {
     component: TrackComponents.Buttons
