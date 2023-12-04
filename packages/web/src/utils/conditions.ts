@@ -1,7 +1,11 @@
 import type { ConditionTrack, NextTrackRule } from '@/types'
 import { ConditionOperators } from '@/types'
 
-export const CheckConditions = ( data: any, conditions: ConditionTrack[], strict: boolean = false ) => {
+export const CheckConditions = (
+  data: any,
+  conditions: ConditionTrack[],
+  strict: boolean = false
+) => {
   // console.log()
   // console.log('utils > conditions > CheckConditions > data :', data)
   // console.log('...')
@@ -22,7 +26,7 @@ export const CheckConditions = ( data: any, conditions: ConditionTrack[], strict
         case ConditionOperators.exists:
           condBool = !!dataValue
           break
-        case ConditionOperators.inexists:
+        case ConditionOperators.missing:
           condBool = !dataValue
           break
         case ConditionOperators.is:
@@ -41,10 +45,10 @@ export const CheckConditions = ( data: any, conditions: ConditionTrack[], strict
     boolArray.push(condBool)
   })
 
-  return boolArray.every(b => !!b)
+  return boolArray.every((b) => !!b)
 }
 
-export const CheckNextTrackRules = ( data: any, rules: NextTrackRule[] ) => {
+export const CheckNextTrackRules = (data: any, rules: NextTrackRule[]) => {
   // console.log()
   // console.log('utils > conditions > CheckNextTrackRules > data :', data)
   // console.log('...')
@@ -56,5 +60,5 @@ export const CheckNextTrackRules = ( data: any, rules: NextTrackRule[] ) => {
     boolArray.push(bool)
   })
 
-  return boolArray.every(b => !!b)
+  return boolArray.every((b) => !!b)
 }

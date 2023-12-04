@@ -1,5 +1,11 @@
 import type { NextTrackRuleSet, Track } from '@/types'
-import { ConditionOperators, DataMappingFrom, HasInputOptions, TrackComponents, TrackId } from '@/types'
+import {
+  ConditionOperators,
+  DataMappingFrom,
+  HasInputOptions,
+  TrackComponents,
+  TrackId
+} from '@/types'
 import { Entreprise } from '@/types/publicodesObjects'
 
 const nextExceptions: NextTrackRuleSet[] = [
@@ -13,7 +19,7 @@ const nextExceptions: NextTrackRuleSet[] = [
         conditions: [
           {
             type: 'siret',
-            operator: ConditionOperators.inexists,
+            operator: ConditionOperators.missing
           }
         ]
       }
