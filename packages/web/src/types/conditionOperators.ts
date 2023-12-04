@@ -3,10 +3,5 @@ export enum ConditionOperators {
   and = 'and',
   is = '==',
   exists = 'exists',
-  missing = 'missing',
-  notEqual = '!=',
-  superior = '>',
-  superiorOrEqual = '>=',
-  inferior = '<',
-  inferiorOrEqual = '<='
+  missing = 'missing'
 }

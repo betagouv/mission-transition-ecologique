@@ -1,11 +1,11 @@
 import type { ConditionTrack, NextTrackRule } from '@/types'
 import { ConditionOperators } from '@/types'
 
-export const CheckConditions = (data: any, conditions: ConditionTrack[]) => {
-  return conditions.every((cond) => evaluateCondition(cond, data))
+export const CheckConditions = (conditions: ConditionTrack[], data: any) => {
+  return conditions.every((cond) => checkCondition(cond, data))
 }
 
-const evaluateCondition = (condition: ConditionTrack, data: any): boolean => {
+const checkCondition = (condition: ConditionTrack, data: any): boolean => {
   const dataKey: string | undefined = condition.type
 
   if (!dataKey) return false
@@ -25,6 +25,18 @@ const evaluateCondition = (condition: ConditionTrack, data: any): boolean => {
 
     case ConditionOperators.is:
       return !!dataKey && data[dataKey] === condition.value
+
+    case ConditionOperators.or:
+    case ConditionOperators.and:
+      const childEvaluations = condition.value.map((childCondition: any) =>
+        checkCondition(childCondition, data)
+      )
+
+    case ConditionOperators.or:
+      return childEvaluations.some()
+
+    case ConditionOperators.and:
+      return childEvaluations.every()
   }
 
   return false
@@ -38,7 +50,7 @@ export const CheckNextTrackRules = (data: any, rules: NextTrackRule[]) => {
 
   rules.forEach((rule: NextTrackRule) => {
     // console.log('utils > conditions > CheckNextTrackRules > rule :', rule)
-    const bool = CheckConditions(data, rule.conditions)
+    const bool = CheckConditions(rule.conditions, data)
     boolArray.push(bool)
   })
 
