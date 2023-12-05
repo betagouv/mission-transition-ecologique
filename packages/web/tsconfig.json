@@ -4,7 +4,7 @@
     "@vue/tsconfig/tsconfig.json"
   ],
   "include": [
-    "env.d.ts",
+    "src/env.d.ts",
     "src/**/*",
     "vite.config.*",
     "vitest.config.*",
@@ -29,9 +29,11 @@
       "DOM",
       "DOM.Iterable"
     ],
-    "types": ["node", "jsdom", "env.d.ts"],
+    "types": ["node", "jsdom", "./src/env.d.ts"],
     "preserveValueImports": false,
     "importsNotUsedAsValues": "remove",
-    "verbatimModuleSyntax": true
+    "verbatimModuleSyntax": true,
+    "resolvePackageJsonImports": false,
+    "resolvePackageJsonExports": false,
   }
 }

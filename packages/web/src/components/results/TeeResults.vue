@@ -155,12 +155,12 @@ interface Props {
 }
 const props = defineProps<Props>()
 
-const filteredPrograms: ProgramData[] = programs.filterPrograms(props.tracksResults)
+const filteredPrograms: ProgramData[] | undefined = programs.filterPrograms(props.tracksResults)
 
 const reFilteredPrograms = computed(() => {
   // console.log('\nTeeResults > reFilteredPrograms...' )
   // console.log('TeeResults > reFilteredPrograms > filteredPrograms :', filteredPrograms )
-  const results = filteredPrograms.filter((prog: ProgramData) => {
+  const results = filteredPrograms?.filter((prog: ProgramData) => {
     // console.log('\nTeeResults > reFilteredPrograms > prog :', prog )
     const boolArray = [true]
     for (const filterLabel in activeFilters.value) {
@@ -205,11 +205,11 @@ const reFilteredPrograms = computed(() => {
 })
 
 const countFilteredPrograms = computed(() => {
-  return filteredPrograms.length
+  return filteredPrograms?.length
 })
 
 const countReFilteredPrograms = computed(() => {
-  return reFilteredPrograms.value.length
+  return reFilteredPrograms.value?.length
 })
 
 const updateFilters = (event: FilterSignal) => {

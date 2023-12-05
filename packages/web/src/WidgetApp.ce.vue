@@ -58,13 +58,13 @@
     <div
       v-show="!programs.programDetail"
       :id="disableWidget ? 'widget' : 'trackElement'"
-      :class="`fr-container--fluid ${tracks.currentStep > 1 ? 'fr-pt-10v' : ''}`"
+      :class="`fr-container--fluid ${tracks.currentStep && tracks.currentStep > 1 ? 'fr-pt-10v' : ''}`"
     >
       <!-- TRACKS INTERFACES -->
       <div ref="tee-app-tracks" class="fr-grid-row fr-grid-row-gutters fr-p-0 fr-justify-center">
         <!-- SIDEBAR MENU (FIL D'ARIANE)-->
         <div
-          v-if="needSidebar && tracks.currentStep > 1"
+          v-if="needSidebar && tracks.currentStep && tracks.currentStep > 1"
           class="fr-tee-add-padding fr-mt-4v fr-col-3 fr-col-md-4 fr-col-lg-4 fr-col-xl-2 fr-col-sm-hide"
           style="height: 100%"
         >
@@ -74,18 +74,25 @@
         <!-- TRACKS -->
         <div
           id="tee-app-tracks"
-          :class="`${tracks.currentStep > 1 ? 'fr-tee-add-padding' : ''} ${getColumnsWidth} ${debugBool ? '' : 'fr-grid-row--center'}`"
+          :class="`${tracks.currentStep && tracks.currentStep > 1 ? 'fr-tee-add-padding' : ''} ${getColumnsWidth} ${
+            debugBool ? '' : 'fr-grid-row--center'
+          }`"
         >
           <div
             v-for="(track, index) in tracks.usedTracks"
             :key="track.id"
-            :style="`${tracks.getTrackBgColor(track.id) ? 'padding: 0px; background-color:' + tracks.getTrackBgColor(track.id) : ''}`"
+            :style="`${
+              tracks.getTrackBgColor(track.id as TrackId)
+                ? 'padding: 0px; background-color:' + tracks.getTrackBgColor(track.id as TrackId)
+                : ''
+            }`"
             :class="`fr-p-0 fr-mb-${debugBool ? '12v' : '0'}`"
           >
             <TeeTrack
+              v-if="trackElement"
               :step="index + 1"
-              :track-id="track.id"
-              :is-completed="!!tracks.isTrackCompleted(track.id)"
+              :track-id="track.id as TrackId"
+              :is-completed="!!tracks.isTrackCompleted(track.id as TrackId)"
               :track-element="trackElement"
               :disable-widget="disableWidget"
               :debug="debugBool"
@@ -197,7 +204,7 @@ import { tracksStore } from './stores/tracks'
 import { choicesStore } from './stores/choices'
 import { programsStore } from './stores/programs'
 import { navigationStore } from './stores/navigation'
-import { TrackComponents, TrackId } from './types'
+import { type ProgramData, TrackComponents, TrackId } from './types'
 import { deployMode, deployUrl, metaEnv, noDebugSwitch, programsFromJson, publicPath } from './utils/global'
 import TeeMatomo from './components/TeeMatomo.vue'
 import TeeTrack from './components/tracks/TeeTrack.vue'
@@ -229,7 +236,7 @@ const programs = programsStore()
 const nav = navigationStore()
 
 // HTML/Vue3 DOM ref
-const trackElement = ref(null)
+const trackElement = ref<HTMLElement | null>(null)
 
 // let teeAppTopPosition = ref()
 const showHeaderBool = ref(false)
@@ -242,8 +249,6 @@ const debugBool = ref(false)
 
 const router = useRouter()
 const route = useRoute()
-
-window.stores = { tracks, choices, programs }
 
 // watch (() => props.programId, (next) => {
 //   console.log('WidgetApp > watch > props.programId > next : ', next)
@@ -258,19 +263,21 @@ watch(
     // console.log()
     // console.log('WidgetApp > watch > tracks.usedTracks > next : ', next)
     if (nav.routerReady) {
-      nav.setCurrentStep(tracks.currentStep)
-      nav.setCurrentTrackId(tracks.currentTrackId)
+      if (tracks.currentStep) {
+        nav.setCurrentStep(tracks.currentStep)
+      }
+      nav.setCurrentTrackId(tracks.currentTrackId as TrackId)
       nav.updateQueries(tracks.getAllUsedTracksValuesPairs, props.disableWidget)
     }
   }
 )
 
 const changeDebug = (event: Event) => {
-  debugBool.value = (event.target as HTMLInputElement).value as boolean
+  debugBool.value = (event.target as HTMLInputElement).value as unknown as boolean
 }
 
 const needSidebar = computed(() => {
-  return tracks.seedTrack !== TrackId.Results && (tracks.currentStep > 1 || props.disableWidget)
+  return tracks.seedTrack !== TrackId.Results && tracks.currentStep && (tracks.currentStep > 1 || props.disableWidget)
 })
 
 const getColumnsWidth = computed(() => {
@@ -279,10 +286,11 @@ const getColumnsWidth = computed(() => {
   const colsStart = 'fr-col-12 fr-col-xl-12'
   const colsTracks = 'fr-col fr-col-sm-12 fr-col-md-8 fr-col-lg-8 fr-col-xl-6'
   const colsResults = 'fr-col fr-col-sm-12 fr-col-md-8 fr-col-lg-8 fr-col-xl-8'
-  if (debugBool.value) return colsDebug
-  else if (tracks.seedTrack === TrackId.Results || (tracks.currentStep === 1 && !props.disableWidget)) {
+  if (debugBool.value) {
+    return colsDebug
+  } else if (tracks.seedTrack === TrackId.Results || (tracks.currentStep === 1 && !props.disableWidget)) {
     return colsStart
-  } else if ((currentTrack.component as TrackComponents) === TrackComponents.Results) {
+  } else if ((currentTrack && (currentTrack.component as TrackComponents)) === TrackComponents.Results) {
     return colsResults
   } else {
     return colsTracks
@@ -294,7 +302,7 @@ const setupGlobal = () => {
 
   // load dataset to pinia store
   // programs.setDataset(props.datasetUrl, deployMode, deployUrl)
-  programs.setDataset(programsFromJson)
+  programs.setDataset(programsFromJson as ProgramData[])
 
   // set locale and message
   const locale = props.locale || 'fr'
@@ -331,7 +339,7 @@ const setupFromUrl = async () => {
   localhost:4242/?teeActiveTrack=track_results&teeDetail=accelerateur-decarbonation
   http://localhost:4242/?teeStep=3&teeActiveTrack=track_results&teetrack_track_needs=project_needs:*&teetrack_track_help=user_help:direct&teetrack_track_results=&teeDetail=accelerateur-decarbonation
   */
-  nav.setCurrentTrackId(tracks.currentTrackId)
+  nav.setCurrentTrackId(tracks.currentTrackId as TrackId)
   nav.updateQueries(tracks.getAllUsedTracksValuesPairs, props.disableWidget)
 }
 
@@ -386,6 +394,8 @@ onBeforeMount(() => {
   if (props.msg) {
     props.msg.split(',').forEach((s: string) => {
       const strObj = s.split('|').map((i: string) => i.trim())
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-expect-error
       messageObj[strObj[0]] = strObj[1]
     })
     // console.log('WidgetApp > onBeforeMount > messageObj :', messageObj)

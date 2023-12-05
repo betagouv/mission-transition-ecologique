@@ -37,8 +37,7 @@ export const tracksStore = defineStore('tracks', () => {
   })
   const getLastTrack = computed(() => {
     const tracksArray = usedTracks.value //.slice(-1)
-    const track: UsedTrack = tracksArray[tracksArray.length - 1]
-    return track
+    return tracksArray[tracksArray.length - 1] as UsedTrack | undefined
   })
   const currentTrackId = computed(() => {
     const tracksArray = usedTracks.value.slice(-1)
@@ -46,9 +45,8 @@ export const tracksStore = defineStore('tracks', () => {
     return track?.id
   })
   const currentStep = computed(() => {
-    const track: UsedTrack = getLastTrack.value
-    const stepNumber = track?.step
-    return stepNumber
+    const track = getLastTrack.value
+    return track?.step
   })
   const getAllUsedTracks = computed(() => {
     const res = usedTracks.value.filter((i: UsedTrack) => i?.completed).map((i: UsedTrack) => toRaw(i))
@@ -181,10 +179,9 @@ export const tracksStore = defineStore('tracks', () => {
     // console.log()
     // console.log('store.tracks > removeFurtherUsedTracks > srcTrackId : ', srcTrackId)
     const lastTrack: UsedTrack | undefined = usedTracks.value.find((t: UsedTrack) => t.id === srcTrackId)
-    // console.log('store.tracks > removeFurtherUsedTracks > lastTrack : ', lastTrack)
-    const newArray = usedTracks.value.filter((t: UsedTrack) => t.step <= lastTrack?.step)
-    // console.log('store.tracks > removeFurtherUsedTracks > newArray : ', newArray)
-    usedTracks.value = newArray
+    if (lastTrack) {
+      usedTracks.value = usedTracks.value.filter((t: UsedTrack) => t.step <= lastTrack?.step)
+    }
   }
 
   function resetUsedTracks() {

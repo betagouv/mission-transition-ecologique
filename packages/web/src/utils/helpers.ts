@@ -17,7 +17,7 @@ import type {
   ResultsMapping
 } from '@/types'
 import { CleanerOperations, DataMappingFrom } from '@/types'
-import type { ImportMetaEnv } from '@/env'
+import type { ImportMetaEnv } from '../env'
 
 // enum NafCodeFields {
 //   tags = 'tags',
@@ -265,7 +265,7 @@ export const remapItem = (
   // console.log()
   // console.log('utils > helpers > remapItem >  dataStructure :', dataStructure)
   let data = { ...dataStructure }
-  const metaEnv: ImportMetaEnv = import.meta.env
+  const metaEnv: ImportMetaEnv = import.meta.env as ImportMetaEnv
   // console.log('utils > helpers > remapItem >  metaEnv :', metaEnv)
 
   dataMapping.forEach((dm) => {
@@ -326,10 +326,10 @@ export const remapItem = (
     // parse as array
     if (dm.asArray) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-      value = value.split(dm.sep || ',')
+      value = (value as string).split(dm.sep || ',')
       if (dm.type === 'integer') {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-        value = value.map((v: string) => parseInt(v))
+        value = (value as string[]).map((v: string) => parseInt(v))
       }
     }
     // as integer

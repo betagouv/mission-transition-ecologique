@@ -30,6 +30,7 @@ import { publicPath, programsFromJson } from './utils/global'
 import TeeHeader from './components/TeeHeader.vue'
 import TeeMatomo from './components/TeeMatomo.vue'
 import TeeAppFooter from './components/TeeAppFooter.vue'
+import type { ProgramData } from '@/types'
 
 const choices = choicesStore()
 const programs = programsStore()
@@ -45,7 +46,7 @@ defineProps<Props>()
 
 onBeforeMount(() => {
   choices.setPublicPath(publicPath)
-  programs.setDataset(programsFromJson)
+  programs.setDataset(programsFromJson as ProgramData[])
 })
 
 onMounted(async () => {

@@ -14,7 +14,7 @@ export const analyticsStore = defineStore('analytics', () => {
   const matomoIsSet = ref(false)
 
   // actions
-  function setAnalyticsServer(server: string, appId: string, deactivate: boolean = false, trackAllOutlinks: boolean = false) {
+  function setAnalyticsServer(server: string, appId: number, deactivate: boolean = false, trackAllOutlinks: boolean = false) {
     matomoServer.value = server
     matomoSiteId.value = appId
     hasTrackAllOutlinks.value = trackAllOutlinks
@@ -34,10 +34,14 @@ export const analyticsStore = defineStore('analytics', () => {
     // console.log('analytics > sendEvent > name :', name)
     // console.log('analytics > sendEvent > value :', value)
     if (matomoIsSet.value) {
-      // Track by domain
-      trackEvent('from_domain', domain.value)
-      // Track by action
-      trackEvent(action, name, value)
+      if (domain.value) {
+        // Track by domain
+        trackEvent('from_domain', domain.value)
+      }
+      if (name && value) {
+        // Track by action
+        trackEvent(action, name, value)
+      }
     }
   }
 

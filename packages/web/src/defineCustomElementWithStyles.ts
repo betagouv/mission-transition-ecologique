@@ -1,4 +1,4 @@
-import { defineCustomElement as VueDefineCustomElement, h, createApp, getCurrentInstance } from 'vue'
+import { defineCustomElement as VueDefineCustomElement, h, createApp, getCurrentInstance, type Component } from 'vue'
 import type { Plugin, Comp } from '@/types/index'
 
 // cf : https://stackblitz.com/edit/vue3-custom-elements-with-plugins?file=src%2FdefineCustomElementWithStyles.js,src%2Fmain.js
@@ -14,12 +14,12 @@ const getNearestElementParent = (el: any) => {
   return el
 }
 
-export const defineCustomElement = (component: any, { plugins = <Plugin[]>[], comps = <Comp[]>[] }) =>
+export const defineCustomElement = (component: Component, { plugins = <Plugin[]>[], comps = <Comp[]>[] }) =>
   VueDefineCustomElement({
     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     render: () => h(component),
     setup() {
-      const app = createApp()
+      const app = createApp(component)
 
       // install plugins
       plugins.forEach((obj) => {
@@ -57,7 +57,7 @@ export const defineCustomElement = (component: any, { plugins = <Plugin[]>[], co
             // eslint-disable-next-line @typescript-eslint/no-unsafe-argument,@typescript-eslint/no-unsafe-member-access
             for (const comp of Object.values(this.$options.components)) {
               // console.log('mounted > comp', comp)
-              insertStyles(comp.styles)
+              insertStyles((comp as Record<string, unknown>).styles)
             }
           }
         },

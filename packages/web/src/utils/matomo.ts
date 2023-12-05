@@ -14,7 +14,7 @@
 // </script>
 // <!-- End Matomo Code -->
 
-export const matomoScript = (matomoServer: string, siteId: string, domain: string, hasTrackAllOutlinks: boolean = false) => {
+export const matomoScript = (matomoServer: string, siteId: number, domain: string, hasTrackAllOutlinks: boolean = false) => {
   const isMatomoCloud = matomoServer.endsWith('.matomo.cloud')
   const scriptSrc = `${isMatomoCloud ? '//cdn.matomo.cloud/' : ''}${matomoServer}/matomo.js`
 
@@ -56,9 +56,11 @@ ${hasTrackAllOutlinks ? "_paq.push(['enableLinkTracking']);" : ''}
 export const trackEvent = (
   evCategory: string,
   evAction: string,
-  evName: string | undefined = undefined,
+  evName: string | number | undefined = undefined,
   EvValue: number | undefined = undefined
 ) => {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-expect-error
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const _paq: any = window._paq || []
   console.log()

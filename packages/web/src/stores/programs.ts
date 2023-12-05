@@ -11,8 +11,8 @@ export const programsStore = defineStore('programs', () => {
   const programDetailConfig = ref<TrackId>()
 
   // getters
-  const progs = computed<({ index: string } & ProgramData)[]>(() => {
-    return programs.value.map((programData: ProgramData, i: number) => {
+  const progs = computed<({ index: string } & ProgramData)[] | undefined>(() => {
+    return programs.value?.map((programData: ProgramData, i: number) => {
       return {
         index: i.toString(),
         ...programData
@@ -38,13 +38,15 @@ export const programsStore = defineStore('programs', () => {
     // console.log('store.programs > filterPrograms > conditions :', conditions)
 
     // filter out programs
-    const progsFilteredResult = filterWithPublicodes(progs.value, conditions as QuestionnaireData)
+    if (progs.value) {
+      const progsFilteredResult = filterWithPublicodes(progs.value, conditions as QuestionnaireData)
 
-    if (progsFilteredResult.isErr) {
-      throw new Error(progsFilteredResult.error.message)
+      if (progsFilteredResult.isErr) {
+        throw new Error(progsFilteredResult.error.message)
+      }
+
+      return progsFilteredResult.value
     }
-
-    return progsFilteredResult.value
   }
 
   function setDataset(dataset: ProgramData[]) {
@@ -62,7 +64,7 @@ export const programsStore = defineStore('programs', () => {
   }
 
   function getProgramById(id: string | number) {
-    return progs.value.find((programData: ProgramData) => programData.id === id)
+    return progs.value?.find((programData: ProgramData) => programData.id === id)
   }
 
   return {

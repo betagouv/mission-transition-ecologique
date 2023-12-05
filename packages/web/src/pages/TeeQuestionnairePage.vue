@@ -11,13 +11,12 @@
 import { computed } from 'vue'
 import { tracksStore } from '../stores/tracks'
 import TeeContact from '@/components/home/TeeContact.vue'
-import type { UsedTrack } from '@/types/index'
 
 const tracks = tracksStore()
 
 // computed
 const isTrackResults = computed(() => {
-  const track: UsedTrack = tracks.getLastTrack
+  const track = tracks.getLastTrack
   return track?.component === 'results'
 })
 </script>

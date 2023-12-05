@@ -53,12 +53,12 @@
           </code>
           --- formData[field.id] :
           <code>
-            {{ formData[field.id] }}
+            {{ formData?.[field.id] }}
           </code>
         </div>
 
         <!-- INPUT GROUP -->
-        <DsfrInputGroup v-if="!isCheckbox(field)">
+        <DsfrInputGroup v-if="!isCheckbox(field) && formData">
           <DsfrInput
             :type="field.type"
             :is-textarea="isTextarea(field)"
@@ -75,7 +75,7 @@
 
         <!-- CHECKBOXES -->
         <DsfrCheckbox
-          v-if="isCheckbox(field)"
+          v-if="isCheckbox(field) && formData"
           :model-value="formData[field.id]"
           :name="field.id"
           :required="field.required"
@@ -195,7 +195,7 @@ import { remapItem } from '../utils/helpers'
 import { tracksStore } from '../stores/tracks'
 import { choicesStore } from '../stores/choices'
 import { analyticsStore } from '../stores/analytics'
-import type { ImportMetaEnv } from '@/env'
+import type { ImportMetaEnv } from '../env'
 
 const choices = choicesStore()
 const tracks = tracksStore()
@@ -203,7 +203,7 @@ const analytics = analyticsStore()
 
 // const usedTracks: UsedTrack[] | any[] = tracks.getAllUsedTracks
 const trackValues: any[] = tracks.getAllUsedTracksValues
-const metaEnv: ImportMetaEnv = import.meta.env
+const metaEnv: ImportMetaEnv = import.meta.env as ImportMetaEnv
 const contactEmail = metaEnv.VITE_CONTACT_EMAIL || 'france-transition@beta.gouv.fr'
 
 interface DataProps {

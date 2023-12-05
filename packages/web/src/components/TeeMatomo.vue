@@ -49,7 +49,7 @@ import { onBeforeMount, onMounted } from 'vue'
 import { analyticsStore } from '../stores/analytics'
 
 import { matomoScript } from '../utils/matomo'
-import type { ImportMetaEnv } from '@/env'
+import type { ImportMetaEnv } from '../env'
 
 interface Props {
   debug?: boolean
@@ -60,7 +60,7 @@ const analytics = analyticsStore()
 
 // const scriptUniqueId = 'gov-aid-tree-matomo-script'
 
-const metaEnv: ImportMetaEnv = import.meta.env
+const metaEnv: ImportMetaEnv = import.meta.env as ImportMetaEnv
 // const matomoDeactivate = ref(metaEnv.VITE_MATOMO_DEACTIVATE === 'true')
 const matomoDeactivate: boolean = metaEnv.VITE_MATOMO_DEACTIVATE
 // const matomoServer = ref(metaEnv.VITE_MATOMO_URL)
@@ -93,12 +93,14 @@ onMounted(() => {
     matomoScriptElem.setAttribute('type', 'text/javascript')
 
     // console.log('TeeMatomo > onMounted >  scriptText :', scriptText)
-    matomoScriptElem.innerHTML = matomoScript(
-      analytics.matomoServer,
-      analytics.matomoSiteId,
-      analytics.domain,
-      analytics.hasTrackAllOutlinks
-    )
+    if (analytics.matomoServer && analytics.matomoSiteId && analytics.domain) {
+      matomoScriptElem.innerHTML = matomoScript(
+        analytics.matomoServer,
+        analytics.matomoSiteId,
+        analytics.domain,
+        analytics.hasTrackAllOutlinks
+      )
+    }
     document.head.appendChild(matomoScriptElem)
     analytics.setMatomoIsSet(true)
   }

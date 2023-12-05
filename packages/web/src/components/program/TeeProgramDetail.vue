@@ -13,8 +13,8 @@
       <div class="fr-col-md-4 fr-col-lg-3 fr-col-xl-3 fr-col-sm-hide fr-text-right">
         <img
           class="fr-responsive-img"
-          :src="`${choices.publicPath}${program.illustration}`"
-          :alt="`image / ${program.titre}`"
+          :src="`${choices.publicPath}${program?.illustration}`"
+          :alt="`image / ${program?.titre}`"
           style="min-height: 100%; object-fit: cover"
         />
       </div>
@@ -23,15 +23,15 @@
       <div class="fr-col fr-pl-10v">
         <!-- PROGRAM TITLE -->
         <p class="tee-program-title fr-mb-5v">
-          {{ program.titre }}
+          {{ program?.titre }}
         </p>
 
         <!-- PROGRAM RESUME / TEXT-->
         <h6 v-if="trackConfig.config?.showProgramSubtitles" :style="`color: ${blockColor}`">
           {{ choices.t('program.programResume') }}
         </h6>
-        <h2 :style="`color: ${blockColor}`" v-html="program.promesse"></h2>
-        <p style="color: #000091" v-html="program.description"></p>
+        <h2 :style="`color: ${blockColor}`" v-html="program?.promesse"></h2>
+        <p style="color: #000091" v-html="program?.description"></p>
         <!-- <p
           v-if="program['description longue']"
           style="color: #000091"
@@ -47,7 +47,7 @@
           @click="toggleShowForm"
           ref="modalOrigin"/> -->
 
-        <ProgramObjective :program="program"></ProgramObjective>
+        <ProgramObjective v-if="program" :program="program"></ProgramObjective>
       </div>
     </div>
 
@@ -65,7 +65,7 @@
       </div> -->
 
       <!-- PROGRAM COST | LOAN | AID -->
-      <div v-if="program[`coût de l'accompagnement`]" :class="columnTiles">
+      <div v-if="program?.[`coût de l'accompagnement`]" :class="columnTiles">
         <TeeTile
           class="tee-no-hover"
           :title="choices.t('programCosts.cost')"
@@ -74,7 +74,7 @@
         />
       </div>
 
-      <div v-if="program[`montant du financement`]" :class="columnTiles">
+      <div v-if="program?.[`montant du financement`]" :class="columnTiles">
         <TeeTile
           class="tee-no-hover"
           :title="choices.t('programCosts.aid')"
@@ -83,7 +83,7 @@
         />
       </div>
 
-      <div v-if="program[`montant de l'avantage fiscal`]" :class="columnTiles">
+      <div v-if="program?.[`montant de l'avantage fiscal`]" :class="columnTiles">
         <TeeTile
           class="tee-no-hover"
           :title="choices.t('programCosts.taxAdvantage')"
@@ -92,7 +92,7 @@
         />
       </div>
 
-      <div v-if="program[`montant du prêt`]" :class="columnTiles">
+      <div v-if="program?.[`montant du prêt`]" :class="columnTiles">
         <TeeTile
           class="tee-no-hover"
           :title="choices.t('programCosts.loan')"
@@ -117,13 +117,13 @@
           class="tee-no-hover"
           :title="choices.t('program.programType')"
           :image-path="`${choices.publicPath}images/TEE-typefinance.svg`"
-          :description="program[`nature de l'aide`]"
+          :description="program?.[`nature de l'aide`]"
         >
         </TeeTile>
       </div>
 
       <!-- PROGRAM DURATION -->
-      <div v-if="program[`durée de l'accompagnement`]" :class="columnTiles">
+      <div v-if="program?.[`durée de l'accompagnement`]" :class="columnTiles">
         <TeeTile
           class="tee-no-hover"
           :title="choices.t('program.programDuration')"
@@ -131,7 +131,7 @@
           :description="program[`durée de l'accompagnement`]"
         />
       </div>
-      <div v-if="program[`durée du prêt`]" :class="columnTiles">
+      <div v-if="program?.[`durée du prêt`]" :class="columnTiles">
         <TeeTile
           class="tee-no-hover"
           :title="choices.t('program.programLoanDuration')"
@@ -143,6 +143,7 @@
       <!-- PROGRAM PROVIDERS -->
       <div :class="columnTiles">
         <TeeTile
+          v-if="program"
           class="tee-no-hover"
           :title="choices.t('program.programProviders')"
           :image-path="`${choices.publicPath}images/TEE-porteur.svg`"
@@ -155,6 +156,7 @@
     <!-- PROGRAM FORM -->
     <div class="fr-form-block">
       <TeeForm
+        v-if="program"
         :track-id="trackConfig.id"
         :form-options="trackConfig.form"
         :data-props="{ programId: program.id }"
@@ -190,13 +192,14 @@
               <div class="fr-grid-row fr-grid-row--gutters">
                 <!-- MODAL INFOS -->
                 <div class="fr-col-md-5 fr-col-sm-12 align">
-                  <h4 class="" style="text-align: center">
+                  <h4 v-if="program" class="" style="text-align: center">
                     {{ choices.ti(trackConfig?.form.label[choices.lang], { title: program.titre }) || '' }}
                   </h4>
                   <p class="" style="text-align: center">
                     {{ trackConfig?.form.hint[choices.lang] || '' }}
                   </p>
                   <img
+                    v-if="program"
                     class="fr-responsive-img fr-sm-hide"
                     :src="`${choices.publicPath}images/TEE_illustration.png`"
                     :alt="`image / ${program.titre}`"
@@ -205,6 +208,7 @@
                 <!-- MODAL FORM -->
                 <div class="fr-col">
                   <TeeForm
+                    v-if="program"
                     :track-id="trackConfig.id"
                     :form-options="trackConfig.form"
                     :data-props="{ programId: program.id }"
@@ -234,9 +238,8 @@ import { navigationStore } from '../../stores/navigation'
 import { analyticsStore } from '../../stores/analytics'
 
 import { scrollToId } from '../../utils/helpers'
-import type { TrackId } from '@/types'
+import type { TrackId, ProgramData } from '@/types'
 import ProgramObjective from '@/components/program/ProgramObjective.vue'
-import type { ProgramData } from '@/types'
 
 const choices = choicesStore()
 const tracks = tracksStore()

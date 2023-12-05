@@ -7,7 +7,7 @@
       :show-header-bool="false"
       :show-footer-bool="false"
       :disable-widget="true"
-      :program-id="route.params.programId"
+      :program-id="route.params.programId as string"
       :locale="'fr'"
     />
     <TeeProgramDetail :program-id="String(route.params.programId)" :track-id="TrackId.Results" :disable-widget="true" />

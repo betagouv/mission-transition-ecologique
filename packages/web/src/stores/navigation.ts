@@ -62,10 +62,10 @@ export const navigationStore = defineStore('navigation', () => {
     // existing query
 
     // loop userQueries and remap as <trackId>: `<selectionKey1>:<selectionValue1>|<selectionKey2>:<selectionValue2>`
-    const trackQueries: object = {}
+    const trackQueries: Record<string, string> = {}
     userQueries.value.map((q) => {
       const selection: any[] = []
-      q.selection.forEach((s: object) => {
+      q.selection?.forEach((s) => {
         for (const [key, value] of Object.entries(s)) {
           selection.push(`${key}:${value}`)
         }
@@ -84,8 +84,8 @@ export const navigationStore = defineStore('navigation', () => {
     // console.log('store.navigation > updateUrl > allQueries : ', allQueries)
 
     // adapt path
-    let routePath = routeRef.value.path
-    const routeName = forcePath || (routeRef.value.name as string)
+    let routePath = routeRef.value?.path
+    const routeName = forcePath || (routeRef.value?.name as string)
     if (noWidget) {
       // console.log('\nstore.navigation > updateUrl > currentDetailId.value : ', currentDetailId.value)
       // console.log('store.navigation > updateUrl > routeName : ', routeName)
@@ -117,7 +117,7 @@ export const navigationStore = defineStore('navigation', () => {
     // console.log('store.navigation > updateUrl > newRoute : ', newRoute)
 
     // update browser
-    await routerRef.value.push(newRoute)
+    await routerRef.value?.push(newRoute)
   }
   function updateQuery(q: Partial<UsedTrackValuePair>) {
     // console.log('store.navigation > updateQuery > q : ', q)
@@ -149,7 +149,7 @@ export const navigationStore = defineStore('navigation', () => {
     queries.forEach((query) => {
       // console.log('store.navigation > updateQueries > q : ', q)
       addQuery(query)
-      if (query.selection.length) {
+      if (query.selection?.length) {
         updateQuery(query)
       }
     })

@@ -18,7 +18,7 @@
         {{ usedTrack.completed }}
       </code> -->
       <p :class="`fr-tag fr-tag--sm ${usedTrack.completed ? 'fr-tag-clickable' : 'fr-tag-selected'} fr-mr-1v fr-mb-1v`">
-        {{ tracks.getTrackTitle(usedTrack.id, choices.lang) }}
+        {{ tracks.getTrackTitle(usedTrack.id as TrackId, choices.lang) }}
       </p>
       <!-- <div
         v-show="usedTrack.step > 1"
@@ -48,6 +48,7 @@
 import { tracksStore } from '../stores/tracks'
 import { choicesStore } from '../stores/choices'
 import type { UsedTrack } from '@/types/index'
+import { TrackId } from '@/types/index'
 
 interface Props {
   usedTracks: UsedTrack[]
