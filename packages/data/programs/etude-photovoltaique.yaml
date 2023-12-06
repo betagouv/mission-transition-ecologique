@@ -5,14 +5,13 @@ description: 'Disposez de tous les éléments indispensables à la prise de déc
   avant l’installation de panneaux photovoltaïques : montant de l’investissement et
   aides financières, économies réalisées par la vente de l’électricité et/ou par l’auto-consommation,
   points de vigilance, temps de retour sur investissement et rentabilité.'
-illustration: images/TEE_ampoule.png
+illustration: images/TEE_eolienne.png
 opérateur de contact: CCI
 autres opérateurs:
 - ADEME
 url: ''
-nature de l'aide: accompagnement
-coût de l'accompagnement: Gratuit
-durée de l'accompagnement: 1/2 à 1 journée
+nature de l'aide: financement
+montant du financement: ''
 objectifs:
 - Réaliser une analyse rapide de la consommation de votre site
 - Obtenir une analyse réglementaire ainsi que les points d’attention à prendre en
@@ -21,25 +20,32 @@ objectifs:
 - Pré-chiffrer les travaux, calculer le temps de retour sur investissement et identifier
   les financements possibles
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - règles d'éligibilité
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  règles d'éligibilité:
+    - est éligible
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+  entreprise . est éligible:
     toutes ces conditions:
-    - entreprise . effectif <= 499
-  secteur d'activité prioritaire:
+    - a un effectif éligible
+    - entreprise . est dans une zone géographique éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+    - effectif <= 499
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est B
-    - entreprise . code NAF niveau 1 . est C
-    - entreprise . code NAF niveau 1 . est D
-    - entreprise . code NAF niveau 1 . est E
-    - entreprise . code NAF niveau 1 . est F
-    - entreprise . code NAF niveau 1 . est G
-    - entreprise . code NAF niveau 1 . est H
-    - entreprise . code NAF niveau 1 . est I
-  est dans les objectifs de l'entreprise:
+    - code NAF niveau 1 . est B
+    - code NAF niveau 1 . est C
+    - code NAF niveau 1 . est D
+    - code NAF niveau 1 . est E
+    - code NAF niveau 1 . est F
+    - code NAF niveau 1 . est G
+    - code NAF niveau 1 . est H
+    - code NAF niveau 1 . est I
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est rénover mon bâtiment
     - questionnaire . objectif prioritaire . est ma performance énergétique
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+    - région = Bourgogne-Franche-Comté

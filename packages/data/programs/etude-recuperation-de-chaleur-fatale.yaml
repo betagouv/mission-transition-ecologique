@@ -21,7 +21,7 @@ montant du financement: Jusqu'à 70% du coût de l'étude, dans un maximum de 10
   €
 objectifs:
 - Choisissez le bureau d'étude énergétique qui va vous accompagner pour mener cette
-  étude de faisabilité.
+  étude de faisabilité et obtenez un devis.
 - 'Déposez votre demande d''aide : informations administratives, description du projet,
   détails techniques et financiers, etc. A ce stade, votre projet ne doit pas avoir
   commencé !'
@@ -34,19 +34,20 @@ objectifs:
   du site d’implantation, de solutions pour le financement de l’opération et pour
   le montage administratif et juridique.
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  secteur d'activité prioritaire:
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+    - questionnaire . parcours = objectif précis
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est B
-    - entreprise . code NAF niveau 1 . est C
-    - entreprise . code NAF niveau 1 . est D
-    - entreprise . code NAF niveau 1 . est E
-    - entreprise . code NAF niveau 1 . est H
-    - entreprise . code NAF niveau 1 . est I
-  est dans les objectifs de l'entreprise:
+    - code NAF niveau 1 . est B
+    - code NAF niveau 1 . est C
+    - code NAF niveau 1 . est D
+    - code NAF niveau 1 . est E
+    - code NAF niveau 1 . est H
+    - code NAF niveau 1 . est I
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est ma performance énergétique
     - questionnaire . objectif prioritaire . est l'écoconception

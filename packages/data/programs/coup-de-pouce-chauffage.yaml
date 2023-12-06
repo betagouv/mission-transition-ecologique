@@ -1,11 +1,10 @@
 titre: Coup de pouce Chauffage
-promesse: Entrepreneur du tertiaire, chauffez vos bâtiments grâce à une énergie renouvelable
+promesse: Chauffez vos bâtiments grâce à une énergie renouvelable
 description: Bénéficiez d'une prime pour le remplacement de vos anciens équipements
   par un système de chauffage fonctionnant aux énergies renouvelables et ne consommant
   ni charbon ni fioul.
 description longue: 'Ces opérations d''économies d''énergie correspondent à l''installation
   :
-
 
   - d''une chaudière collective à haute performance énergétique,
 
@@ -16,42 +15,51 @@ description longue: 'Ces opérations d''économies d''énergie correspondent à 
   - ou d''un raccordement à un réseau de chaleur dans les bâtiments tertiaires qui
   viennent en remplacement d''équipements fonctionnant au charbon ou au fioul et,
   dans certains cas, au gaz ; modification relative à la bonification d''opérations
-  d''économies d''énergie liées à un contrat de performance énergétique (CPE).'
-illustration: images/TEE_energie_verte.png
+  d''économies d''énergie liées à un contrat de performance énergétique (CPE).
+
+
+  *Les entreprises signataires de la charte "Coup de pouce Chauffage des bâtiments
+  tertiaires" sont listées dans la rubrique "Quelles sont les offres disponibles ?"
+  du site : https://www.ecologie.gouv.fr/coup-pouce-chauffage-des-batiments-residentiels-collectifs-et-tertiaires)'
+illustration: images/TEE_eolienne.png
 opérateur de contact: Ministère de la Transition Écologique et Solidaire
 url: https://les-aides.fr/aide/YwUv3w/ministere-de-la-transition-ecologique-et-solidaire/prime-energie-coup-de-pouce-chauffage-des-batiments-tertiaires.html
 nature de l'aide: financement
 montant du financement: Montant des aides variable selon le projet
 objectifs:
-- Vérifiez l'égibilité de vos bâtiments et des projets que vous souhaitez réaliser,
-  auprès des professionnels signataires de la charte.
-- Faites réaliser vos travaux de rénovation par un professionnel habilité signataire
-  de la charte.
-- Bénéficiez d'une prime !
+- Choisissez une entreprise parmi les entreprises signataires de la charte "Coup de
+  pouce Chauffage des bâtiments tertiaires"*.
+- Comparez puis acceptez l'offre de votre choix. Cette offre doit être validée avant
+  de signer le devis des travaux et devra obligatoirement comporter un document décrivant
+  la proposition.
+- Signez le devis proposé par un professionnel pour la réalisation de vos travaux.
+- Faites réaliser les travaux par le professionnel.
+- Retournez les documents (factures, attestations sur l’honneur, etc.) au signataire
+  de la charte ou à son partenaire dans les délais prévus pour bénéficier de la prime.
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  secteur d'activité prioritaire:
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est C
-    - entreprise . code NAF niveau 1 . est F
-    - entreprise . code NAF niveau 1 . est G
-    - entreprise . code NAF niveau 1 . est H
-    - entreprise . code NAF niveau 1 . est I
-    - entreprise . code NAF niveau 1 . est J
-    - entreprise . code NAF niveau 1 . est K
-    - entreprise . code NAF niveau 1 . est L
-    - entreprise . code NAF niveau 1 . est M
-    - entreprise . code NAF niveau 1 . est N
-    - entreprise . code NAF niveau 1 . est P
-    - entreprise . code NAF niveau 1 . est Q
-    - entreprise . code NAF niveau 1 . est R
-    - entreprise . code NAF niveau 1 . est S
-    - entreprise . code NAF niveau 1 . est T
-    - entreprise . code NAF niveau 1 . est U
-  est dans les objectifs de l'entreprise:
+    - code NAF niveau 1 . est C
+    - code NAF niveau 1 . est F
+    - code NAF niveau 1 . est G
+    - code NAF niveau 1 . est H
+    - code NAF niveau 1 . est I
+    - code NAF niveau 1 . est J
+    - code NAF niveau 1 . est K
+    - code NAF niveau 1 . est L
+    - code NAF niveau 1 . est M
+    - code NAF niveau 1 . est N
+    - code NAF niveau 1 . est P
+    - code NAF niveau 1 . est Q
+    - code NAF niveau 1 . est R
+    - code NAF niveau 1 . est S
+    - code NAF niveau 1 . est T
+    - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est rénover mon bâtiment
     - questionnaire . objectif prioritaire . est ma performance énergétique

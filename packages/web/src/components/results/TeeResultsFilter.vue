@@ -1,6 +1,6 @@
 <template>
   <!-- DEBUGGING -->
-  <div 
+  <div
     v-if="debug"
     class="vue-debug">
     <p>
@@ -30,7 +30,7 @@
         :value="filterVal.value">
         {{ filterVal.label }}
       </option>
-  
+
       <!-- DEBUGGING -->
       <!-- <option
         value="">
@@ -65,13 +65,13 @@ const updateLocalFilters = (event: FilterEvent) => {
   const val = event.target.value
   // console.log('TeeResults > updateLocalFilters > val :', val )
   // console.log('TeeResults > updateLocalFilters > props.filter :', props.filter )
-  
+
   // set local ref
   activeValue.value = val
 
   // send signal to parent
   const fIn = {
-    field: props.filter.field,
+    label: props.filter.label,
     value: val
   }
   // console.log('TeeResults > updateLocalFilters > fIn :', fIn )

@@ -1,5 +1,7 @@
 // @ts-ignore
-import nafCodesJson from '@public/data/references/naf_codes_flat.json'
+import nafCodesJson from '@tee/web/public/data/references/naf_codes_flat.json'
+import comCodesJson from '@tee/web/public/data/references/com_codes.json'
+
 import type {
   Cleaner,
   CleanerDefaultIfNull,
@@ -9,6 +11,7 @@ import type {
   CleanerReplaceAll,
   FormCallbackDataMapping,
   NextTrackRule,
+  PropertyPath,
   Refs,
   ResultsMapping
 } from '@/types'
@@ -25,7 +28,8 @@ import { CleanerOperations, DataMappingFrom } from '@/types'
 // }
 
 const refs: Refs = {
-  NafCodes: nafCodesJson
+  NafCodes: nafCodesJson,
+  ComCodes: comCodesJson
 }
 
 // GENERIC HELPERS
@@ -35,18 +39,28 @@ export const randomChoice = (array: any[]) => {
   return array[randomIndex]
 }
 
-export const getFrom = (from: any, selectors: string[]) => {
+export const getFrom = (from: any, selectors: PropertyPath[]) => {
   // console.log('utils > helpers > getFrom >  selectors :', selectors)
-  const res = selectors.map((s: string) => {
-  // @ts-ignore
-  return s.replace(/\[([^[\]]*)\]/g, '.$1.')
-    .split('.')
-    .filter((t: any) => t !== '')
-    .reduce((prev: any, cur: any) => {
-      return prev && prev[cur]
-    }, from)
+  const res = selectors.map((selector: PropertyPath) => {
+    // @ts-ignore
+    const arraySelector = Array.isArray(selector)
+      ? selector
+      : selector
+          // Add support for array notation, e.g.
+          // a.b[3] becomes a.b.3.
+          .replace(/\[([^[\]]*)\]/g, '.$1.')
+          .split('.')
+          .filter((t: any) => t !== '')
+
+    return getFromArraySelector(from, arraySelector)
   })
   return res
+}
+
+const getFromArraySelector = (from: any, selector: string[]) => {
+  return selector.reduce((prev: any, cur: any) => {
+    return prev && prev[cur]
+  }, from)
 }
 
 export const getFromOnePath = (from: any, selector: string) => {
@@ -60,7 +74,7 @@ export const getFromResp = (from: any, resMap: ResultsMapping, lang: string = 'f
   let val = getFrom(from, selectors)
   if (resMap.cleaning) {
     // console.log('utils > helpers > getFromResp >  selectors :', selectors)
-    val = val.map(v => {
+    val = val.map((v) => {
       // @ts-ignore
       return cleanValue(v, resMap.cleaning, lang)
     })
@@ -70,8 +84,8 @@ export const getFromResp = (from: any, resMap: ResultsMapping, lang: string = 'f
 
 export const setIn = (obj: any, [head, ...rest]: string[], value: any) => {
   // console.log('utils > helpers > setIn >  obj :', obj)
-  const newObj: any = Array.isArray(obj) ? [...obj] : {...obj}
-  newObj[head] = rest.length ? setIn(obj[head], rest, value) : value;
+  const newObj: any = Array.isArray(obj) ? [...obj] : { ...obj }
+  newObj[head] = rest.length ? setIn(obj[head], rest, value) : value
   return newObj
 }
 
@@ -81,7 +95,7 @@ export const setProperty = (obj: object, path: string, value: any) => {
   let resultObj: any
 
   if (path === '.') {
-    resultObj = { ...obj, ...value}
+    resultObj = { ...obj, ...value }
   } else {
     const pathAsArray = path.split('.')
     resultObj = setIn(obj, pathAsArray, value)
@@ -125,7 +139,7 @@ export const findInObjectsArray = (objectsArray: object[], id: string, all: bool
 
 export const groupBy = (objectsArray: object[], key: string) => {
   return objectsArray.reduce((rv: any, x: any) => {
-    (rv[x[key]] = rv[x[key]] || []).push(x)
+    ;(rv[x[key]] = rv[x[key]] || []).push(x)
     return rv
   }, {})
 }
@@ -146,7 +160,7 @@ export const findFromRefs = (value: string, cleaner: CleanerFromJson) => {
   const targetField = cleaner.retrieveFromField
   const json = refs[findInRef]
   // @ts-ignore
-  const obj: object = json.find(item => item[fromField] === value)
+  const obj: object = json.find((item) => item[fromField] === value)
 
   // console.log('utils > helpers > findFromRefs >  json :', json)
   // console.log('utils > helpers > findFromRefs >  obj :', obj)
@@ -161,14 +175,18 @@ export const findFromDict = (value: string | string[], cleaner: CleanerFromDict)
   const dict = cleaner.dict
   let valueOut: any
   if (Array.isArray(value)) {
-    valueOut = value.map(v => dict[v] || v)
+    valueOut = value.map((v) => dict[v] || v)
   } else {
     valueOut = dict[value] || value
   }
   return valueOut
 }
 
-export const findDefaultIfNull = (value: string, cleaner: CleanerDefaultIfNull, lang: string = 'fr') => {
+export const findDefaultIfNull = (
+  value: string,
+  cleaner: CleanerDefaultIfNull,
+  lang: string = 'fr'
+) => {
   // console.log()
   // console.log('utils > helpers > findDefaultIfNull > value :', value)
   // const respFields = cleaner.respFields
@@ -181,9 +199,9 @@ export const findDefaultIfNull = (value: string, cleaner: CleanerDefaultIfNull, 
 
 export const injectInObject = (value: object | object[], cleaner: CleanerInjectInObject) => {
   const targetObject = cleaner.object || {}
-  let valueOut: object  = { ...targetObject }
+  let valueOut: object = { ...targetObject }
   if (Array.isArray(value)) {
-    value.forEach(v => {
+    value.forEach((v) => {
       valueOut = { ...valueOut, ...v }
     })
   } else {
@@ -192,7 +210,17 @@ export const injectInObject = (value: object | object[], cleaner: CleanerInjectI
   return valueOut
 }
 
-export const cleanValue = (value: any, cleaners: Cleaner[] | CleanerReplaceAll[] | CleanerFromJson[] | CleanerFromDict[] | CleanerDefaultIfNull[] | CleanerInjectInObject[], lang: string = 'fr') => {
+export const cleanValue = (
+  value: any,
+  cleaners:
+    | Cleaner[]
+    | CleanerReplaceAll[]
+    | CleanerFromJson[]
+    | CleanerFromDict[]
+    | CleanerDefaultIfNull[]
+    | CleanerInjectInObject[],
+  lang: string = 'fr'
+) => {
   // console.log('utils > helpers > cleanValue > value :', value)
   let val: any = value
   cleaners.forEach((cleaner) => {
@@ -233,15 +261,14 @@ export const remapItem = (
   rawData: object | any = undefined,
   selectionValues: any[] = [],
   lang: string = 'fr'
-  ) => {
-
+) => {
   // console.log()
   // console.log('utils > helpers > remapItem >  dataStructure :', dataStructure)
   let data = { ...dataStructure }
   const metaEnv = import.meta.env
   // console.log('utils > helpers > remapItem >  metaEnv :', metaEnv)
 
-  dataMapping.forEach(dm => {
+  dataMapping.forEach((dm) => {
     // console.log()
     // console.log('utils > helpers > remapItem >  dm :', dm)
     let value: any = ''
@@ -261,7 +288,8 @@ export const remapItem = (
         // console.log('utils > helpers > remapItem >  trackValues :', trackValues)
         allResponses = findInObjectsArray(trackValues, dm.id, true)
         // console.log('utils > helpers > remapItem >  allResponses :', allResponses)
-        value = Object.keys(allResponses).map(k => {
+        value = Object.keys(allResponses)
+          .map((k) => {
             return `${k}: ${allResponses[k]}`
           })
           .join(' / ')
@@ -275,11 +303,11 @@ export const remapItem = (
         break
       case DataMappingFrom.PropsPath:
         // console.log('utils > helpers > remapItem >  rawData :', rawData)
-        value = dm.path && getFromOnePath(props, dm.path )
+        value = dm.path && getFromOnePath(props, dm.path)
         break
       case DataMappingFrom.RawData:
         // console.log('utils > helpers > remapItem >  rawData :', rawData)
-        value = dm.path && getFromOnePath(rawData, dm.path )
+        value = dm.path && getFromOnePath(rawData, dm.path)
         break
       default:
         break
@@ -293,8 +321,10 @@ export const remapItem = (
 
     // parse as array
     if (dm.asArray) {
-      value = value.split( dm.sep || ',')
-      if (dm.type === 'integer') { value = value.map((v: string) => parseInt(v)) }
+      value = value.split(dm.sep || ',')
+      if (dm.type === 'integer') {
+        value = value.map((v: string) => parseInt(v))
+      }
     }
     // as integer
     if (!dm.asArray && dm.type === 'integer') {
@@ -305,27 +335,41 @@ export const remapItem = (
     // set in data body
     data = setProperty(data, dm.dataField, value)
     // console.log('utils > helpers > remapItem >  data :', data)
-
   })
   return data
 }
 
 // UX HELPERS
-export const scrollToTop = (
-  element: any,
-  from: string | number = ''
-  ) => {
+export const scrollToTop = (element: any, disableWidget: boolean, from: string | number = '') => {
   // console.log()
   // console.log('utils > helpers > scrollToTop > from :', from)
+  // console.log('utils > helpers > scrollToTop > disableWidget :', disableWidget)
   // console.log('utils > helpers > scrollToTop > element :', element)
-  setTimeout(()=> {
-    element.scrollIntoView({ behavior: 'smooth' })
+  if (disableWidget) {
+    element.scrollIntoView()
+  } else {
+    setTimeout(() => {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }, 100)
+  }
+}
+
+export const scrollToId = (
+  elementId: string
+  // targetYPosition?: number
+) => {
+  // console.log('\nutils > helpers > scrollToId > elementId :', elementId)
+  // console.log('utils > helpers > scrollToId > targetYPosition :', targetYPosition)
+  // console.log('utils > helpers > scrollToId > element :', element)
+  setTimeout(() => {
+    const element = document.getElementById(elementId)
+    element?.scrollIntoView()
   }, 100)
 }
 
 // TEXT HELPERS
 
 export const consolidateAmounts = (str: string | undefined) => {
-  const regex = /(?<=\d)\s(?=\d)|(?<=\d)\s(?=\D)/g
-  return str?.replace(regex, '\u00a0')
+  const regex = /(\d+)\s*([a-zA-Z])?/g
+  return str?.replace(regex, '$1\u00a0$2')
 }

@@ -18,14 +18,15 @@ description longue: "Les prestations d’études éligibles sont principalement 
   \ (B112 réf. NF X31-620-3) (afin de déterminer les techniques de dépollution les\
   \ plus adaptées et obtenir les éléments de dimensionnement),\n• Les prestations\
   \ d’assistance à maitrise d’ouvrage (AMO, réf. NF X31-620-2)."
-illustration: images/TEE_ampoule.png
+illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/etudes-prealables-a-reconversion-friches-a-risque-pollution-polluees?cible=79
 nature de l'aide: financement
 montant du financement: Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000
   €
 objectifs:
-- Choisissez le prestataire qui va vous accompagner pour mener cette étude.
+- Choisissez le prestataire qui va vous accompagner pour mener cette étude et obtenez
+  un devis.
 - 'Déposez votre demande d''aide : informations administratives, description du projet,
   détails techniques et financiers, etc. A ce stade, votre projet ne doit pas avoir
   commencé !'
@@ -35,23 +36,24 @@ objectifs:
 - Réalisez votre étude de diagnostic ou d'accompagnement.
 - Lancez votre projet (ou non) suite aux résultats de votre étude.
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  secteur d'activité prioritaire:
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+    - questionnaire . parcours = objectif précis
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est A
-    - entreprise . code NAF niveau 1 . est B
-    - entreprise . code NAF niveau 1 . est C
-    - entreprise . code NAF niveau 1 . est D
-    - entreprise . code NAF niveau 1 . est E
-    - entreprise . code NAF niveau 1 . est F
-    - entreprise . code NAF niveau 1 . est G
-    - entreprise . code NAF niveau 1 . est H
-    - entreprise . code NAF niveau 1 . est I
-    - entreprise . code NAF niveau 1 . est L
-  est dans les objectifs de l'entreprise:
+    - code NAF niveau 1 . est A
+    - code NAF niveau 1 . est B
+    - code NAF niveau 1 . est C
+    - code NAF niveau 1 . est D
+    - code NAF niveau 1 . est E
+    - code NAF niveau 1 . est F
+    - code NAF niveau 1 . est G
+    - code NAF niveau 1 . est H
+    - code NAF niveau 1 . est I
+    - code NAF niveau 1 . est L
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est rénover mon bâtiment
     - questionnaire . objectif prioritaire . est mon impact environnemental

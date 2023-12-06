@@ -36,18 +36,49 @@ objectifs:
   de versement.
 - Réalisez vos investissements.
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  secteur d'activité prioritaire:
+    - est éligible
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+    - questionnaire . parcours = objectif précis
+  entreprise . est éligible:
+    toutes ces conditions:
+    - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est B
-    - entreprise . code NAF niveau 1 . est C
-    - entreprise . code NAF niveau 1 . est E
-    - entreprise . code NAF niveau 1 . est F
-    - entreprise . code NAF niveau 1 . est G
-    - entreprise . code NAF niveau 1 . est S
-  est dans les objectifs de l'entreprise:
+    - code NAF niveau 1 . est B
+    - code NAF niveau 1 . est C
+    - code NAF niveau 1 . est E
+    - code NAF niveau 1 . est F
+    - code NAF niveau 1 . est G
+    - code NAF niveau 1 . est S
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est la gestion des déchets
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+    - région = Bourgogne-Franche-Comté
+    - région = Grand Est
+    - région = Pays de la Loire
+    - région = Occitanie
+    - région = Provence-Alpes-Côte d'Azur
+    - région = Corse
+    - région = Guadeloupe
+    - région = Guyane
+    - région = La Réunion
+    - région = Mayotte
+    - région = Martinique
+    - région = Île-de-France
+    - région = Centre-Val de Loire
+    - région = Hauts-de-France
+    - région = Saint-Barthélemy
+    - région = Saint-Pierre-Et-Miquelon
+    - région = Nouvelle-Aquitaine
+    - région = Wallis et Futuna
+    - région = Terres australes et antarctiques françaises
+    - région = Saint-Martin
+    - région = Polynésie française
+    - région = Nouvelle-Calédonie
+    - région = Ile de Clipperton
+    - région = Normandie

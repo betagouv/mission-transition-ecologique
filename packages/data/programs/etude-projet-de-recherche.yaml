@@ -21,15 +21,19 @@ description longue: 'l’ADEME renforcera son soutien aux recherches
 
   déploiements à grande échelle,
 
-  • de s’appuyer sur des transformations en cours dans la société et les territoires.'
+  • de s’appuyer sur des transformations en cours dans la société et les territoires.
+
+
+  * Pour vérifier que votre thématique ne correspond à aucun appel à projets de recherche
+  en cours, vous pouvez consulter la liste complète ici : https://www.appelsprojetsrecherche.fr/'
 illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/projets-recherche-developpement-innovation-rdi
 nature de l'aide: financement
 montant du financement: Selon projet
 objectifs:
-- 'Vérifier l’éligibilité de votre projet. Votre thématique ne doit correspondre à
-  aucun appel à projets de recherche en cours. Voir la liste complète ici : https://www.appelsprojetsrecherche.fr/'
+- Vérifier l’éligibilité de votre projet. Votre thématique ne doit correspondre à
+  aucun appel à projets de recherche en cours*.
 - 'Déposez votre demande d''aide : informations administratives, description du projet,
   détails techniques et financiers, etc.'
 - L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat
@@ -37,22 +41,23 @@ objectifs:
   de versement. Le financement pourra se faire par le biais de subventions ou d'aides
   remboursables.
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  secteur d'activité prioritaire:
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+    - questionnaire . parcours = objectif précis
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est A
-    - entreprise . code NAF niveau 1 . est C
-    - entreprise . code NAF niveau 1 . est D
-    - entreprise . code NAF niveau 1 . est E
-    - entreprise . code NAF niveau 1 . est F
-    - entreprise . code NAF niveau 1 . est H
-    - entreprise . code NAF niveau 1 . est J
-    - entreprise . code NAF niveau 1 . est M
-    - entreprise . code NAF niveau 1 . est S
-  est dans les objectifs de l'entreprise:
+    - code NAF niveau 1 . est A
+    - code NAF niveau 1 . est C
+    - code NAF niveau 1 . est D
+    - code NAF niveau 1 . est E
+    - code NAF niveau 1 . est F
+    - code NAF niveau 1 . est H
+    - code NAF niveau 1 . est J
+    - code NAF niveau 1 . est M
+    - code NAF niveau 1 . est S
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est rénover mon bâtiment
     - questionnaire . objectif prioritaire . est la mobilité durable

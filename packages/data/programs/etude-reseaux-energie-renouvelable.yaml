@@ -19,8 +19,9 @@ nature de l'aide: financement
 montant du financement: Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000
   €
 objectifs:
-- Choisissez le prestataire qui va vous accompagner pour mener votre étude. Les compétences
-  du prestataire doivent respecter un référentiel validé par l’ADEME.
+- Choisissez le prestataire qui va vous accompagner pour mener votre étude et obtenez
+  un devis. Les compétences du prestataire doivent respecter un référentiel validé
+  par l’ADEME.
 - 'Déposez votre demande d''aide : informations administratives, description du projet,
   détails techniques et financiers, etc. A ce stade, votre projet ne doit pas avoir
   commencé !'
@@ -30,15 +31,16 @@ objectifs:
 - Réalisez votre étude sur les réseaux de chaleur ou de froid alimentés par des énergies
   renouvelables et/ou de récupération.
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  secteur d'activité prioritaire:
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+    - questionnaire . parcours = objectif précis
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est C
-    - entreprise . code NAF niveau 1 . est D
-    - entreprise . code NAF niveau 1 . est E
-  est dans les objectifs de l'entreprise:
+    - code NAF niveau 1 . est C
+    - code NAF niveau 1 . est D
+    - code NAF niveau 1 . est E
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est ma performance énergétique

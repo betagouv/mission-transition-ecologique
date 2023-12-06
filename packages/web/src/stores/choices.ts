@@ -3,9 +3,9 @@ import { defineStore } from 'pinia'
 
 import { frDict } from '@/translations/fr'
 import { frOperatorsDict } from '@/translations/fr-operators'
+import type { PropertyPath } from '@/types'
 
 export const choicesStore = defineStore('choices', () => {
-
   const publicPath = ref<string>()
 
   // internationalization
@@ -27,8 +27,9 @@ export const choicesStore = defineStore('choices', () => {
     lang.value = loc
   }
 
-  function resolve(path: string, obj=self, separator='.') {
-    const props = Array.isArray(path) ? path : path.split(separator)
+  function resolve(path: PropertyPath, obj = self, separator = '.') {
+    const props: string[] = Array.isArray(path) ? path : path.split(separator)
+
     // @ts-ignore
     return props.reduce((prev, curr) => prev?.[curr], obj)
   }
@@ -38,27 +39,25 @@ export const choicesStore = defineStore('choices', () => {
     if (params) {
       for (const key in params) {
         const reg = new RegExp(`{${key}}`, 'g')
-        translated = translated.replace(reg, params[key])
+        translated = translated.replace(reg, (params[key] ?? '...'))
       }
     }
     return translated
   }
 
-  function t(path: string, params: any = undefined) {
-    const locDict = dict[lang.value]
-    let translated = resolve(path, locDict) || path
+  function translateWithDict(path: string, params: any = undefined, dictionnary: any) {
+    const locDict = dictionnary[lang.value]
+    let translated = (resolve(path, locDict) || path) as unknown as string
     if (params) {
       translated = ti(translated, params)
     }
     return translated
   }
+  function t(path: string, params: any = undefined) {
+    return translateWithDict(path, params, dict)
+  }
   function to(path: string, params: any = undefined) {
-    const locDict = dictOperators[lang.value]
-    let translated = resolve(path, locDict) || path
-    if (params) {
-      translated = ti(translated, params)
-    }
-    return translated
+    return translateWithDict(path, params, dictOperators)
   }
 
   return {

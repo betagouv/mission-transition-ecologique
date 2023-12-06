@@ -20,17 +20,17 @@ description longue: "La méthanisation est un processus naturel biologique de d�
   \ avant construction de l’installation.\n- Etudes pour la concertation locale/ communication/information\n\
   - Etudes agronomiques\n- Appui au montage juridique des projets collectifs\n- Appui\
   \ au montage du plan de financement."
-illustration: images/TEE_energie_verte.png
+illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Etudes%20pr%C3%A9alables%20construction%20installation%20de%20m%C3%A9thanisation%20-%20Conditions%20%C3%A9ligibilit%C3%A9%20et%20financement.pdf
 nature de l'aide: financement
 montant du financement: Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000
   €
 objectifs:
-- Choisissez le prestataire qui va vous accompagner pour mener votre étude. Il peut
-  s'agir d'une étude de diagnostic, de faisabilité ou un accompagnement au montage
-  projet. Les études de faisabilité devront être réalisées par un bureau d’étude certifié
-  Qualimétha ou équivalent.
+- Choisissez le prestataire qui va vous accompagner pour mener votre étude et obtenez
+  un devis. Il peut s'agir d'une étude de diagnostic, de faisabilité ou un accompagnement
+  au montage projet. Les études de faisabilité devront être réalisées par un bureau
+  d’étude certifié Qualimétha ou équivalent.
 - 'Déposez votre demande d''aide : informations administratives, description du projet,
   détails techniques et financiers, etc. A ce stade, votre projet ne doit pas avoir
   commencé !'
@@ -39,16 +39,40 @@ objectifs:
   de versement.
 - Réalisez votre étude.
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  secteur d'activité prioritaire:
+    - est éligible
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+    - questionnaire . parcours = objectif précis
+  entreprise . est éligible:
+    toutes ces conditions:
+    - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est A
-    - entreprise . code NAF niveau 1 . est C
-    - entreprise . code NAF niveau 1 . est I
-  est dans les objectifs de l'entreprise:
+    - code NAF niveau 1 . est A
+    - code NAF niveau 1 . est C
+    - code NAF niveau 1 . est I
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est la gestion des déchets
     - questionnaire . objectif prioritaire . est ma performance énergétique
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+    - région = Pays de la Loire
+    - région = Centre-Val de Loire
+    - région = Bourgogne-Franche-Comté
+    - région = Normandie
+    - région = Hauts-de-France
+    - région = Bretagne
+    - région = Nouvelle-Aquitaine
+    - région = Occitanie
+    - région = Auvergne-Rhône-Alpes
+    - région = Provence-Alpes-Côte d'Azur
+    - région = Corse
+    - région = Guadeloupe
+    - région = Martinique
+    - région = Guyane
+    - région = La Réunion
+    - région = Mayotte
+    - région = Île-de-France

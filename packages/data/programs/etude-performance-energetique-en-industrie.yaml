@@ -44,7 +44,8 @@ nature de l'aide: financement
 montant du financement: Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000
   €
 objectifs:
-- Choisissez le prestataire qui va vous accompagner pour mener cette étude.
+- Choisissez le prestataire qui va vous accompagner pour mener cette étude et obtenez
+  un devis.
 - 'Déposez votre demande d''aide : informations administratives, description du projet,
   détails techniques et financiers, etc. A ce stade, votre projet ne doit pas avoir
   commencé !'
@@ -54,20 +55,50 @@ objectifs:
 - Réalisez votre étude d'optimisation de la performance énergétique de votre site
   de production.
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - règles d'éligibilité
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  règles d'éligibilité:
+    - est éligible
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+  entreprise . est éligible:
     toutes ces conditions:
-    - entreprise . effectif <= 250
-  secteur d'activité prioritaire:
+    - a un effectif éligible
+    - entreprise . est dans une zone géographique éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+    - effectif <= 250
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est B
-    - entreprise . code NAF niveau 1 . est C
-  est dans les objectifs de l'entreprise:
+    - code NAF niveau 1 . est B
+    - code NAF niveau 1 . est C
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est ma performance énergétique
     - questionnaire . objectif prioritaire . est mon impact environnemental
     - questionnaire . objectif prioritaire . est l'écoconception
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+    - région = Corse
+    - région = Wallis et Futuna
+    - région = Centre-Val de Loire
+    - région = Ile de Clipperton
+    - région = Île-de-France
+    - région = Bourgogne-Franche-Comté
+    - région = Polynésie française
+    - région = Saint-Martin
+    - région = Normandie
+    - région = Provence-Alpes-Côte d'Azur
+    - région = Guadeloupe
+    - région = Nouvelle-Aquitaine
+    - région = Martinique
+    - région = Occitanie
+    - région = Terres australes et antarctiques françaises
+    - région = Nouvelle-Calédonie
+    - région = Guyane
+    - région = La Réunion
+    - région = Mayotte
+    - région = Saint-Barthélemy
+    - région = Auvergne-Rhône-Alpes
+    - région = Saint-Pierre-Et-Miquelon
+    - région = Bretagne
+    - région = Grand Est

@@ -7,19 +7,19 @@ export interface ColsOptions {
 }
 
 export interface Plugin {
-  plugin: any,
-  options?: object | null,
+  plugin: any
+  options?: object | null
   icons?: any[] | null
 }
 export interface Comp {
-  name: string,
+  name: string
   comp: object
 }
 
 // FOR FILTERS
 
 export interface FilterSignal {
-  field: string,
+  label: string
   value: string
 }
 export interface FilterEvent {
@@ -29,37 +29,36 @@ export interface FilterEvent {
 // FOR REQUESTS
 
 export interface ResultsMapping {
-  respFields: string[],
-  position?: string,
-  label?: string,
-  icon?: string,
-  class?: string,
-  sep?: string,
-  style?: string,
-  cleaning?:  Cleaner[] | CleanerReplaceAll[] | CleanerFromJson[] | CleanerDefaultIfNull[]
+  respFields: string[]
+  position?: string
+  label?: string
+  icon?: string
+  class?: string
+  sep?: string
+  style?: string
+  cleaning?: Cleaner[] | CleanerReplaceAll[] | CleanerFromJson[] | CleanerDefaultIfNull[]
 }
 
 export interface ReqError {
-  ok?: boolean,
-  status?: number,
-  statusText?: string,
+  ok?: boolean
+  status?: number
+  statusText?: string
 }
 export interface ReqResp extends ReqError {
-  action?: CallbackActions | string,
-  code?: string,
-  message?: string,
-  data?: any,
-  raw?: any,
-  resultsMapping?: ResultsMapping[],
+  action?: CallbackActions | string
+  code?: string
+  message?: string
+  data?: any
+  raw?: any
+  resultsMapping?: ResultsMapping[]
   url?: string
 }
-
 
 // FOR EMAILING / REQUESTS
 
 export interface EmailData {
-  name: string,
-  email: string,
+  name: string
+  email: string
 }
 
 export enum DataMappingFrom {
@@ -70,13 +69,13 @@ export enum DataMappingFrom {
   SelectionValues = 'SelectionValues',
   Props = 'Props',
   PropsPath = 'PropsPath',
-  RawData = 'RawData',
+  RawData = 'RawData'
 }
 
 export enum CallbackMethods {
   Get = 'GET',
   Post = 'POST',
-  Put = 'PUT',
+  Put = 'PUT'
 }
 export enum CallbackActions {
   RequestAPI = 'RequestAPI',
@@ -93,31 +92,32 @@ export enum CleanerOperations {
 }
 
 export interface Cleaner {
-  operation: CleanerOperations,
+  operation: CleanerOperations
 }
 
 export interface CleanerDefaultIfNull extends Cleaner {
   // respFields: string,
-  defaultValue : Translations,
+  defaultValue: Translations
 }
 export interface CleanerReplaceAll extends Cleaner {
-  stringToReplace: string,
-  replaceBy: string,
+  stringToReplace: string
+  replaceBy: string
 }
 
 export enum FindInRefs {
-  NafCodes= 'NafCodes'
+  NafCodes = 'NafCodes',
+  ComCodes = 'ComCodes'
 }
 export interface CleanerFromJson extends Cleaner {
-  findInRef: FindInRefs,
-  findFromField: string,
-  retrieveFromField: string,
+  findInRef: FindInRefs
+  findFromField: string
+  retrieveFromField: string
 }
 
 export interface CleanerFromDict extends Cleaner {
-  dict: any,
+  dict: any
 }
 
 export interface CleanerInjectInObject extends Cleaner {
-  object: object,
+  object: object
 }

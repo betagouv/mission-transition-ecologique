@@ -5,11 +5,11 @@ description: Vous réflechissez à des solutions pour diminuer vos emballages pl
   pour réaliser une étude ou une expérimentation sur le sujet.
 description longue: 'Les dépenses éligibles sont :
 
-  - Les investissements d''équipements et outils  pour permettre le passage au réemploi
+  •  Les investissements d''équipements et outils  pour permettre le passage au réemploi
 
-  - Les expérimentations : tests à petite échelle préalable à l''investissement.
+  •  Les expérimentations : tests à petite échelle préalable à l''investissement.
 
-  - Les diagnostics et études de faisabilité.'
+  •  Les diagnostics et études de faisabilité.'
 illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/aides-reemploi-emballages-contenants?cible=79
@@ -18,7 +18,8 @@ montant du financement: Jusqu'à 70% du coût de l'étude ou 55% de l'investisse
   dans un maximum de 1 000 000 €
 objectifs:
 - Si vous souhaitez financer une étude, commencez par choisir le prestataire qui va
-  vous accompagner pour mener l'audit / étude ou l'expérimentation test.
+  vous accompagner pour mener l'audit / étude ou l'expérimentation test, et faites
+  réaliser un devis.
 - Si vous souhaitez financer un investissement, vous devez avoir réalisé en amont
   les études justifiant l'intérêt économique et écologique de votre investissement.
   Elles seront à joindre à votre dossier.
@@ -29,30 +30,30 @@ objectifs:
   de financement précisant le montant d’aide maximum, les conditions et les modalités
   de versement.
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  secteur d'activité prioritaire:
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est A
-    - entreprise . code NAF niveau 1 . est B
-    - entreprise . code NAF niveau 1 . est C
-    - entreprise . code NAF niveau 1 . est D
-    - entreprise . code NAF niveau 1 . est E
-    - entreprise . code NAF niveau 1 . est F
-    - entreprise . code NAF niveau 1 . est G
-    - entreprise . code NAF niveau 1 . est H
-    - entreprise . code NAF niveau 1 . est I
-    - entreprise . code NAF niveau 1 . est J
-    - entreprise . code NAF niveau 1 . est K
-    - entreprise . code NAF niveau 1 . est L
-    - entreprise . code NAF niveau 1 . est M
-    - entreprise . code NAF niveau 1 . est N
-    - entreprise . code NAF niveau 1 . est O
-    - entreprise . code NAF niveau 1 . est Q
-    - entreprise . code NAF niveau 1 . est R
-    - entreprise . code NAF niveau 1 . est S
-  est dans les objectifs de l'entreprise:
+    - code NAF niveau 1 . est A
+    - code NAF niveau 1 . est B
+    - code NAF niveau 1 . est C
+    - code NAF niveau 1 . est D
+    - code NAF niveau 1 . est E
+    - code NAF niveau 1 . est F
+    - code NAF niveau 1 . est G
+    - code NAF niveau 1 . est H
+    - code NAF niveau 1 . est I
+    - code NAF niveau 1 . est J
+    - code NAF niveau 1 . est K
+    - code NAF niveau 1 . est L
+    - code NAF niveau 1 . est M
+    - code NAF niveau 1 . est N
+    - code NAF niveau 1 . est O
+    - code NAF niveau 1 . est Q
+    - code NAF niveau 1 . est R
+    - code NAF niveau 1 . est S
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est la gestion des déchets

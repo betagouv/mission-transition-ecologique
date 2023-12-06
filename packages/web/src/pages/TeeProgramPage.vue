@@ -28,7 +28,7 @@ import { useRouter, useRoute } from 'vue-router'
 // @ts-ignore
 import WidgetApp from '@/WidgetApp.ce.vue'
 // @ts-ignore
-import TeeProgramDetail from '@/components/TeeProgramDetail.vue'
+import TeeProgramDetail from '@/components/program/TeeProgramDetail.vue'
 import { TrackId } from '@/types'
 
 const router = useRouter()

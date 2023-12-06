@@ -1,8 +1,10 @@
 titre: Booster Éco-Énergie Tertiaire
 promesse: Bénéficiez d'un accompagnement pour la rénovation énergétique de vos bâtiments
-description: Vous avez des bâtiments d'activités tertiaires  et souhaitez réduire
-  vos consommations d'énergie ? L’ADEME soutient financièrement le coût de prestations
-  d’audit et d’ingénierie, effectuées par des bureaux d’études.
+description: Vous avez des bâtiments d'activités tertiaires et souhaitez réduire vos
+  consommations d'énergie ? L’ADEME soutient financièrement le coût de prestations
+  d’audit pour obtenir un plan d’action et un plan de financement, ainsi que les prestations
+  d’ingénierie pour bénéficier d'un accompagnement à la mise en œuvre d'actions à
+  temps de retour rapide (réglages, régulations des installations, GTB, etc.)
 description longue: 'Votre entreprise dispose de bâtiments de moins de 1 000 m² à
   usage tertiaire ? Le dispositif "Booster Entreprises Eco-Energie Tertiaire" offre
   un soutien pour réaliser toutes les phases décrites dans cet accompagnement, à savoir
@@ -19,52 +21,62 @@ description longue: 'Votre entreprise dispose de bâtiments de moins de 1 000 m�
   tertiaire », il impose une réduction progressive de la consommation d’énergie dans
   les bâtiments et parties de bâtiments de 1 000 m², et plus, à usage tertiaire afin
   de lutter contre le changement climatique.'
-illustration: images/TEE_energie_verte.png
+illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/booster-entreprises-eco-energie-tertiaire-reduire-facture-energetique-gagner
 nature de l'aide: financement
 montant du financement: Jusqu'à 77 000 €
 objectifs:
-- Réalisez un diagnostic ou un audit énergétique et bénéficiez d'un plan d’action
-  et d'un plan de financement.
-- Bénéficiez d'un accompagnement à la mise en œuvre d'actions à gains rapides (réglages,
-  régulations des installations, GTB, etc.)
-- "Définissez la prestation d'ingénierie nécessaire pour mettre en œuvre vos travaux\
-  \ : \n- Une mission de maîtrise d’œuvre rénovation énergétique (MOE) ;\n- Une mission\
-  \ d'assistance à maitrise d'ouvrage (AMO) pour la mise en oeuvre d'un Contrat de\
-  \ Performance Énergétique (CPE)."
-- Choisissez les prestataires qui vous accompagneront pour vos missions d'ingénierie.
-  Ces prestataires doivent répondent aux critères de qualification et compétences
-  décrits dans les cahiers des charges de l'ADEME.
+- 'Pour la Phase 1 (diagnostic) : identifiez le prestataire qui va vous accompagner
+  et faites réaliser un devis.'
+- 'Pour la phase 2 (ingénierie), définissez la prestation nécessaire pour mettre en
+  œuvre vos travaux : une mission de maîtrise d’œuvre rénovation énergétique (MOE)
+  ou une mission d''assistance à maitrise d''ouvrage (AMO) pour la mise en oeuvre
+  d''un Contrat de Performance Énergétique (CPE).'
+- Choisissez les prestataires qui vous accompagneront pour vos missions d'ingénierie
+  et faites réaliser des devis. Ces prestataires doivent répondre aux critères de
+  qualification et compétences décrits dans les cahiers des charges de l'ADEME.
 - 'Déposez votre demande d''aide auprès de l''ADEME : informations administratives,
   description du projet, rapport d''audit énergétique, détails techniques et financiers,
-  etc. A ce stade, vos missions d''ingénierie ne doivent pas avoir commencé !'
+  etc. A ce stade, votre audit ou missions d''ingénierie ne doivent pas avoir commencé
+  !'
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - règles d'éligibilité
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  règles d'éligibilité:
+    - est éligible
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+    - entreprise . est propriétaire de ses locaux
+  entreprise . est éligible:
     toutes ces conditions:
-    - entreprise . effectif <= 4999
-  secteur d'activité prioritaire:
+    - a un effectif éligible
+    - entreprise . est dans une zone géographique éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+    - effectif <= 4999
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est C
-    - entreprise . code NAF niveau 1 . est F
-    - entreprise . code NAF niveau 1 . est G
-    - entreprise . code NAF niveau 1 . est H
-    - entreprise . code NAF niveau 1 . est I
-    - entreprise . code NAF niveau 1 . est J
-    - entreprise . code NAF niveau 1 . est K
-    - entreprise . code NAF niveau 1 . est L
-    - entreprise . code NAF niveau 1 . est M
-    - entreprise . code NAF niveau 1 . est N
-    - entreprise . code NAF niveau 1 . est Q
-    - entreprise . code NAF niveau 1 . est R
-    - entreprise . code NAF niveau 1 . est S
-  est dans les objectifs de l'entreprise:
+    - code NAF niveau 1 . est C
+    - code NAF niveau 1 . est F
+    - code NAF niveau 1 . est G
+    - code NAF niveau 1 . est H
+    - code NAF niveau 1 . est I
+    - code NAF niveau 1 . est J
+    - code NAF niveau 1 . est K
+    - code NAF niveau 1 . est L
+    - code NAF niveau 1 . est M
+    - code NAF niveau 1 . est N
+    - code NAF niveau 1 . est Q
+    - code NAF niveau 1 . est R
+    - code NAF niveau 1 . est S
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est rénover mon bâtiment
     - questionnaire . objectif prioritaire . est ma performance énergétique
     - questionnaire . objectif prioritaire . est mon impact environnemental
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+    - région = Bretagne
+    - région = Occitanie
+    - région = Auvergne-Rhône-Alpes
+    - région = Corse

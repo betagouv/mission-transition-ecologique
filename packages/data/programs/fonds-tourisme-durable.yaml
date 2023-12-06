@@ -7,15 +7,15 @@ description: Obtenez des financements pour mettre en place des actions concrète
 description longue: 'Le Fonds Tourisme Durable permet d’accéder à des aides dans tous
   les domaines de la transition écologique. Les aides visent à :
 
-  - réduire et maîtriser les coûts fixes (énergie, eau, déchets, gaspillage alimentaire,
+  • réduire et maîtriser les coûts fixes (énergie, eau, déchets, gaspillage alimentaire,
   transport) ;
 
-  - encourager l’ancrage dans les territoires (circuits courts de proximité et de
+  • encourager l’ancrage dans les territoires (circuits courts de proximité et de
   qualité, synergies pérennes avec les acteurs du tourisme local et les producteurs
   locaux) ;
 
-  - se former, se labelliser et communiquer sur l’engagement écologique.'
-illustration: images/TEE_ampoule.png
+  • se former, se labelliser et communiquer sur l’engagement écologique.'
+illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/conditions-eligibilite-financement-fonds-tourisme-durable-25.pdf
 nature de l'aide: financement
@@ -33,19 +33,33 @@ objectifs:
 - Réalisez votre investissement dans les 18 mois du contrat.
 - Obtenez un paiement final sur attestation et justificatifs.
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - règles d'éligibilité
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  règles d'éligibilité:
+    - est éligible
+    - a un objectif ciblé
+  entreprise . est éligible:
     toutes ces conditions:
-    - entreprise . effectif <= 250
-  secteur d'activité prioritaire:
-    une de ces conditions:
-    - entreprise . code NAF niveau 1 . est A
-    - entreprise . code NAF niveau 1 . est I
-  est dans les objectifs de l'entreprise:
+    - a un effectif éligible
+    - est dans un secteur d'activité éligible
+    - entreprise . est dans une zone géographique éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+    - effectif <= 250
+  entreprise . est dans un secteur d'activité éligible:
+    toutes ces conditions:
+      # Les conditions sur le code NAF niveau 1 servent lorsque le code NAF
+      # n'est pas connu.
+      - une de ces conditions:
+        - code NAF niveau 1 . est A
+        - code NAF niveau 1 . est I
+      - une de ces conditions:
+        - code NAF = "56.10A"
+        - code NAF = "56.21Z"
+        - code NAF = "55.10Z"
+        - code NAF = "55.20Z"
+        - code NAF = "55.30Z"
+        - code NAF = "55.90Z"
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est rénover mon bâtiment
     - questionnaire . objectif prioritaire . est la mobilité durable
@@ -55,3 +69,27 @@ publicodes:
     - questionnaire . objectif prioritaire . est former ou recruter
     - questionnaire . objectif prioritaire . est mon impact environnemental
     - questionnaire . objectif prioritaire . est l'écoconception
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+    - région = Saint-Barthélemy
+    - région = Nouvelle-Calédonie
+    - région = Centre-Val de Loire
+    - région = Bourgogne-Franche-Comté
+    - région = Normandie
+    - région = Hauts-de-France
+    - région = Grand Est
+    - région = Pays de la Loire
+    - région = Bretagne
+    - région = Nouvelle-Aquitaine
+    - région = Occitanie
+    - région = Auvergne-Rhône-Alpes
+    - région = Provence-Alpes-Côte d'Azur
+    - région = Corse
+    - région = Polynésie française
+    - région = Guadeloupe
+    - région = Martinique
+    - région = Guyane
+    - région = La Réunion
+    - région = Mayotte
+    - région = Île-de-France
+    - région = Saint-Martin
