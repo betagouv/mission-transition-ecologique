@@ -1,11 +1,13 @@
 import type { ProgramData } from '@tee/web/src/types'
 import { ProgramAidType, TrackHelpValue } from '@tee/web/src/types'
 
+// sorts the programs according to a "sortProfile", which currently
+// only depends on the questionnaireRoute
 export const sortPrograms = (
   programs: ProgramData[],
-  questionnaireRoute: TrackHelpValue
+  sortProfile: TrackHelpValue
 ): ProgramData[] => {
-  return programs.sort((p1, p2) => comparePrograms(p1, p2, questionnaireRoute))
+  return programs.sort((p1, p2) => comparePrograms(p1, p2, sortProfile))
 }
 
 const comparePrograms = (
