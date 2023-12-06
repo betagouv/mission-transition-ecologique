@@ -6,13 +6,13 @@ import VueDsfr from '@gouvminint/vue-dsfr'
 // Styles imports
 import './assets/main.css'
 import '@gouvfr/dsfr/dist/core/core.main.min.css'
-import { addIcons } from '@/icons'
+import { listIcons } from '@/icons'
 
-addIcons()
 const store = createPinia()
 
 const app = createApp(WebApp)
-app.use(VueDsfr)
+
+app.use(VueDsfr, { icons: listIcons()})
 app.use(store)
 app.use(router)
 app.mount('#app')

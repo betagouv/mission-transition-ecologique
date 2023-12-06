@@ -230,6 +230,7 @@ import TeeProgramDetail from './components/program/TeeProgramDetail.vue'
 // @ts-ignore
 import TeeCredits from './components/TeeCredits.vue'
 import { TrackId } from '@/types'
+import Widget from '@/utils/widget'
 
 interface Props {
   showHeader?: string,
@@ -443,6 +444,10 @@ onBeforeMount(() => {
 onMounted(async() => {
   // cf: https://stackoverflow.com/questions/69495211/vue3-route-query-empty
   // console.log('WidgetApp > onMounted > set router...')
+  if (Widget.is) {
+    return
+  }
+
   await router.isReady()
   if (!props.disableWidget) {
     nav.setRouter(router)

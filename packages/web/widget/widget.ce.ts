@@ -6,18 +6,17 @@ import VueDsfr from '@gouvminint/vue-dsfr'
 // Styles imports
 import '@/assets/main.css'
 import '@gouvfr/dsfr/dist/core/core.main.min.css'
-import { addIcons, OhVueIcon } from '../src/icons'
+import { listIcons } from '../src/icons'
+import Widget from '../src/utils/widget'
 
-addIcons()
 const store = createPinia()
+
+Widget.is = true
 
 const WidgetAppComponent = defineCustomElement(WidgetApp, {
   plugins: [
-    { plugin: VueDsfr },
+    { plugin: VueDsfr, options: { icons: listIcons() } },
     { plugin: store },
-  ],
-  comps: [
-    { name: 'v-icon', comp: OhVueIcon }
   ]
 })
 

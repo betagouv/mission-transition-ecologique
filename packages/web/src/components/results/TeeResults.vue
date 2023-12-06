@@ -179,6 +179,7 @@ import { navigationStore } from '@/stores/navigation'
 import { ConditionOperators, TrackId } from '@/types/index'
 import { useRoute, useRouter } from 'vue-router'
 import { RouteName } from '@/types/routeType'
+import Widget from '@/utils/widget'
 // @ts-ignore
 // import { randomChoice } from '@/utils/helpers'
 
@@ -267,6 +268,10 @@ const updateFilters = (event: FilterSignal) => {
 
 const updateDetailResult = (id: string | number) => {
   // console.log(`TeeResults > updateDetailResult >  id : ${id}`)
+  if (Widget.is) {
+    programs.setDetailResult(id, props.trackId)
+    return
+  }
   if (route.name === RouteName.Catalog) {
     router.push({
       name: RouteName.CatalogueDetail,

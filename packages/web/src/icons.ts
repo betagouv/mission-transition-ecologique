@@ -19,3 +19,7 @@ export const addIcons = () => {
     MdCheckboxOutlined,
   )
 }
+
+export const listIcons = () => {
+  return Object.values([{ ...RiIcons }, MdRadiobuttonchecked, MdRadiobuttonunchecked, MdCheckboxoutlineblank, MdCheckboxOutlined])
+}
