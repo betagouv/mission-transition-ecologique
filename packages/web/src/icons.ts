@@ -1,5 +1,5 @@
 // import icons
-import { addIcons as ovAddIcons } from 'oh-vue-icons'
+import { addIcons as ovAddIcons, type CustomizeIconType } from 'oh-vue-icons'
 export { OhVueIcon } from 'oh-vue-icons'
 import * as RiIcons from 'oh-vue-icons/icons/ri'
 import {
@@ -20,6 +20,6 @@ export const addIcons = () => {
   )
 }
 
-export const listIcons = () => {
-  return Object.values([{ ...RiIcons }, MdRadiobuttonchecked, MdRadiobuttonunchecked, MdCheckboxoutlineblank, MdCheckboxOutlined])
+export const listIcons = (): CustomizeIconType[] => {
+  return [{ ...RiIcons }, MdRadiobuttonchecked, MdRadiobuttonunchecked, MdCheckboxoutlineblank, MdCheckboxOutlined] as CustomizeIconType[]
 }
