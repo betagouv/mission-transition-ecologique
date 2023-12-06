@@ -6,9 +6,7 @@ export const checkConditions = (conditions: ConditionTrack[], data: any) => {
 }
 
 const checkCondition = (condition: ConditionTrack, data: any): boolean => {
-  const dataKey: string | undefined = condition.type
-
-  if (!dataKey) return false
+  const dataKey: string = condition.type
 
   switch (condition.operator) {
     case ConditionOperators.exists:
@@ -24,7 +22,7 @@ const checkCondition = (condition: ConditionTrack, data: any): boolean => {
       return isMissing || isFalsy
 
     case ConditionOperators.is:
-      return !!dataKey && data[dataKey] === condition.value
+      return data[dataKey] === condition.value
   }
 }
 
