@@ -22,7 +22,7 @@
     "copy-custom-css": "cp -a ./src/assets/custom.css ./public/css/custom.css",
     "update-styles": "npm run copy-dsfr-core-css && npm run copy-dsfr-fonts && npm run copy-custom-css",
     "dev": "npm run copy-custom-css && vite --port 4242",
-    "build": "npm run update-styles && run-p type-check build-only",
+    "build": "npm run update-styles && npm run build-only",
     "start": "echo 'STARTING FRONT WITH VITE' && vite preview --port $PORT",
     "start-preview": "vite preview --port $PORT",
     "preview": "vite preview",
