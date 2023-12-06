@@ -10,8 +10,8 @@ import type { TrackId } from '@tee/web/src/types'
 
 // FOR TRACKS
 export interface ConditionTrack {
-  type?: string
-  operator?: ConditionOperators
+  type: string
+  operator: ConditionOperators
   value?: any | any[]
 }
 
