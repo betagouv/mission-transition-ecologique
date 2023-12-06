@@ -9,11 +9,16 @@ import { ConditionOperators } from '@tee/web/src/types/conditionOperators'
 import type { TrackId } from '@tee/web/src/types'
 
 // FOR TRACKS
-export interface ConditionTrack {
-  type: string
-  operator: ConditionOperators
-  value?: any | any[]
-}
+export type ConditionTrack =
+  | {
+      type: string
+      operator: ConditionOperators.is
+      value: any
+    }
+  | {
+      type: string
+      operator: ConditionOperators.exists | ConditionOperators.isMissing
+    }
 
 export enum TrackCalloutType {
   info = 'info'
