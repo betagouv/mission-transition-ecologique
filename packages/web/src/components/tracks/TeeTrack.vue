@@ -369,7 +369,6 @@
               icon="ri-arrow-right-line"
               icon-right
               @click="saveSelection"
-              :loading='isLoadingNext'
             />
           </div>
         </div>
@@ -414,7 +413,6 @@ import TeeTrackButtonInput from './TeeTrackButtonInput.vue'
 // import TeeForm from './TeeForm.vue'
 // @ts-ignore
 import TeeResults from '../results/TeeResults.vue'
-import DsfrButton from '@/components/button/DsfrButton.vue'
 
 interface Props {
   step: number,
@@ -644,63 +642,59 @@ watch(() => props.isCompleted, ( next ) => {
 // functions
 
 const saveSelection = async () => {
-  try {
-    // console.log()
+  // console.log()
+  // console.log('TeeTrack > updateStore > selectedOptions.value :', selectedOptions.value)
+  isLoadingNext.value = true
+  const optionNext = selectedOptions.value[0].next
+  const nextExceptions = optionNext?.exceptions
+  const defaultNext = track?.next
+
+
+  // @ts-ignore
+  let next = !optionNext || allowMultiple ? defaultNext : optionNext
+
+  // SWITCH NEXT TRACK DEPENDING ON CONDITIONS
+  // NOTE : could be deplaced in store ?
+  // console.log('TeeTrack > updateStore > optionNext :', optionNext)
+  if (nextExceptions) {
+    // console.log('TeeTrack > updateStore > nextExceptions :', nextExceptions)
+
+    // get used tracks values
+    const trackValues: any[] = tracks.getAllUsedTracksValues
+    // console.log('TeeTrack > updateStore > trackValues :', trackValues)
+
+    // get current selection
     // console.log('TeeTrack > updateStore > selectedOptions.value :', selectedOptions.value)
-    isLoadingNext.value = true
-    const optionNext = selectedOptions.value[0].next
-    const nextExceptions = optionNext?.exceptions
-    const defaultNext = track?.next
+    const selectionVals = selectedOptions.value.map(item => {
+      return toRaw(item.value)
+    })
+    // console.log('TeeTrack > updateStore > selectionVals :', selectionVals)
 
-
-    // @ts-ignore
-    let next = !optionNext || allowMultiple ? defaultNext : optionNext
-
-    // SWITCH NEXT TRACK DEPENDING ON CONDITIONS
-    // NOTE : could be deplaced in store ?
-    // console.log('TeeTrack > updateStore > optionNext :', optionNext)
-    if (nextExceptions) {
-      // console.log('TeeTrack > updateStore > nextExceptions :', nextExceptions)
-
-      // get used tracks values
-      const trackValues: any[] = tracks.getAllUsedTracksValues
-      // console.log('TeeTrack > updateStore > trackValues :', trackValues)
-
-      // get current selection
-      // console.log('TeeTrack > updateStore > selectedOptions.value :', selectedOptions.value)
-      const selectionVals = selectedOptions.value.map(item => {
-        return toRaw(item.value)
-      })
-      // console.log('TeeTrack > updateStore > selectionVals :', selectionVals)
-
-      nextExceptions.forEach((trackRule: NextTrackRules) => {
-        const dataStructure = {}
-        let item = remapItem(dataStructure, trackRule.rules, {}, trackValues, {}, {}, selectionVals, choices.lang)
-        // console.log('TeeTrack > updateStore > item :', item)
-        const bool = CheckNextTrackRules(item, trackRule.rules)
-        // console.log('TeeTrack > updateStore > bool :', bool)
-        next = bool ? trackRule.next : next
-      })
-    }
-
-    // console.log('TeeTrack > updateStore > next :', next)
-
-    await tracks.updateUsedTracks(props.trackId, props.step, next, selectedOptions.value)
-
-    // console.log('TeeTrack > updateStore > needRemove.value :', needRemove.value)
-    if (!needRemove.value) {
-      // console.log('TeeTrack > updateStore > addToUsedTracks...')
-      const canAddTrack = !tracks.trackExistsInUsed(next.default)
-      canAddTrack && tracks.addToUsedTracks(props.trackId, next.default)
-    } else {
-      // console.log('TeeTrack > updateStore > removeFromUsedTracks...')
-      await tracks.removeFurtherUsedTracks(props.trackId)
-    }
-
-    scrollToTop(props.trackElement, props.disableWidget,props.trackId)
-  } finally {
-    isLoadingNext.value = false
+    nextExceptions.forEach((trackRule: NextTrackRules) => {
+      const dataStructure = {}
+      let item = remapItem(dataStructure, trackRule.rules, {}, trackValues, {}, {}, selectionVals, choices.lang)
+      // console.log('TeeTrack > updateStore > item :', item)
+      const bool = CheckNextTrackRules(item, trackRule.rules)
+      // console.log('TeeTrack > updateStore > bool :', bool)
+      next = bool ? trackRule.next : next
+    })
   }
+
+  // console.log('TeeTrack > updateStore > next :', next)
+
+  await tracks.updateUsedTracks(props.trackId, props.step, next, selectedOptions.value)
+
+  // console.log('TeeTrack > updateStore > needRemove.value :', needRemove.value)
+  if (!needRemove.value) {
+    // console.log('TeeTrack > updateStore > addToUsedTracks...')
+    const canAddTrack = !tracks.trackExistsInUsed(next.default)
+    canAddTrack && tracks.addToUsedTracks(props.trackId, next.default)
+  } else {
+    // console.log('TeeTrack > updateStore > removeFromUsedTracks...')
+    await tracks.removeFurtherUsedTracks(props.trackId)
+  }
+
+  scrollToTop(props.trackElement, props.disableWidget,props.trackId)
 }
 
 const backToPreviousTrack = async () => {
