@@ -13,7 +13,7 @@ description longue: "Qu’est-ce qu’un biodéchet ?\nL’article L. 541-1-1 du
   \ tailles d’arbustes, haies et brindilles ou encore déchets ligneux issus de l’élagage\
   \ et de l’abattage d’arbres et de haies.\nDéchets alimentaires : restes de repas\
   \ ou de préparation de repas ou produits périmés non consommés."
-illustration: images/TEE_ampoule.png
+illustration: images/TEE_eolienne.png
 opérateur de contact: CCI
 url: https://hautsdefrance.cci.fr/solutions/accompagnement-gestion-biodechets/
 nature de l'aide: accompagnement
@@ -29,16 +29,23 @@ objectifs:
 - 'Obtenir un outil d’aide à la décision : solutions techniques, dispositifs de financements,
   contacts associés.'
 publicodes:
-  afficher le dispositif si:
+  entreprise . est ciblée:
     toutes ces conditions:
-    - secteur d'activité prioritaire
-    - est dans les objectifs de l'entreprise
-  secteur d'activité prioritaire:
+    - est éligible
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+    - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - entreprise . code NAF niveau 1 . est A
-    - entreprise . code NAF niveau 1 . est E
-    - entreprise . code NAF niveau 1 . est G
-    - entreprise . code NAF niveau 1 . est I
-  est dans les objectifs de l'entreprise:
+    - code NAF niveau 1 . est A
+    - code NAF niveau 1 . est E
+    - code NAF niveau 1 . est G
+    - code NAF niveau 1 . est I
+  entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est la gestion des déchets
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+    - région = Hauts-de-France

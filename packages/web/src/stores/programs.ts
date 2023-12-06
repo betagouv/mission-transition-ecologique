@@ -3,6 +3,7 @@ import { defineStore } from 'pinia'
 
 import type { ProgramData, TrackId } from '@/types/index'
 import { filterPrograms as filterWithPublicodes } from '@tee/backend/src/domain/eligibility'
+import type { QuestionnaireData } from '@tee/backend/src/domain/types'
 
 export const programsStore = defineStore('programs', () => {
   const programs = ref()
@@ -40,7 +41,10 @@ export const programsStore = defineStore('programs', () => {
     // console.log('store.programs > filterPrograms > conditions :', conditions)
 
     // filter out programs
-    const progsFilteredResult = filterWithPublicodes(progs.value as ProgramData[], conditions)
+    const progsFilteredResult = filterWithPublicodes(
+      progs.value as ProgramData[],
+      conditions as QuestionnaireData
+    )
 
     if (progsFilteredResult.isErr) {
       throw new Error(progsFilteredResult.error.message)

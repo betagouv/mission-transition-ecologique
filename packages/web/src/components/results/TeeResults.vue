@@ -58,7 +58,7 @@
       class="fr-grid-row fr-grid-row--gutters fr-mb-4v">
       <div
         v-for="filter in trackConfig.filters"
-        :key="filter.field"
+        :key="filter.label"
         class="fr-col">
         <TeeResultsFilter
           :filter="filter"
@@ -78,6 +78,7 @@
     <!-- PROGRAMS CARDS -->
     <div
       v-for="prog in reFilteredPrograms"
+      :id="prog.id"
       :key="prog.id"
       class="fr-card fr-enlarge-link fr-card--horizontal-tier fr-mb-10v"
       @click="updateDetailResult(prog.id)">
@@ -171,14 +172,18 @@ import TeeResultsFilter from './TeeResultsFilter.vue'
 import TeeNoResults from './TeeNoResults.vue'
 
 // @ts-ignore
-import type { TrackChoice, TrackResultsConfig, ProgramData, FilterSignal, TrackFilter } from '@/types/index'
+import type { TrackChoice, TrackResultsConfig, ProgramData, FilterSignal, TrackFilter, PropertyPath } from '@/types/index'
 // @ts-ignore
 import { ProgramAidType } from '@/types/programTypes'
 import { navigationStore } from '@/stores/navigation'
 import { ConditionOperators, TrackId } from '@/types/index'
+import { useRoute, useRouter } from 'vue-router'
+import { RouteName } from '@/types/routeType'
 // @ts-ignore
 // import { randomChoice } from '@/utils/helpers'
 
+const route = useRoute()
+const router = useRouter()
 const choices = choicesStore()
 const programs = programsStore()
 const analytics = analyticsStore()
@@ -206,16 +211,17 @@ const reFilteredPrograms = computed(() => {
   const results = filteredPrograms.filter((prog: ProgramData) => {
     // console.log('\nTeeResults > reFilteredPrograms > prog :', prog )
     const boolArray = [true]
-    for (const fieldKey in activeFilters.value) {
-      const filterVal = activeFilters.value[fieldKey]
-      const filterConfig: TrackFilter | undefined = props.trackConfig?.filters?.find((f:any) => f.field === fieldKey)
+    for (const filterLabel in activeFilters.value) {
+      const filterVal = activeFilters.value[filterLabel]
+      const filterConfig: TrackFilter | undefined = props.trackConfig?.filters?.find((f:any) => f.label === filterLabel)
+      const filterField: PropertyPath = filterConfig?.field || ''
       const trueIf = filterConfig?.trueIf || ConditionOperators.is
-      // console.log(`\nTeeResults > reFilteredPrograms > fieldKey: "${fieldKey}" - filterVal: "${filterVal}" - trueIf: "${trueIf}"` )
-      // console.log('\nTeeResults > fieldKey :', fieldKey )
+      // console.log(`\nTeeResults > reFilteredPrograms > filterField: "${filterField}" - filterVal: "${filterVal}" - trueIf: "${trueIf}"` )
+      // console.log('\nTeeResults > filterField :', filterField )
       // console.log('TeeResults > filterVal :', filterVal )
       // console.log('TeeResults > trueIf :', trueIf )
 
-      let progVal = getFrom(prog, [fieldKey])
+      let progVal = getFrom(prog, [filterField])
       progVal = JSON.parse(JSON.stringify(progVal))
       progVal = progVal[0]
 
@@ -254,17 +260,27 @@ const countReFilteredPrograms = computed(() => {
 const updateFilters = (event: FilterSignal) => {
   // console.log('\nTeeResults > updateFilters > event :', event )
   const val = {
-    [event.field]: event.value
+    [event.label]: event.value
   }
   activeFilters.value = {...activeFilters.value, ...val }
 }
 
 const updateDetailResult = (id: string | number) => {
   // console.log(`TeeResults > updateDetailResult >  id : ${id}`)
-  programs.setDetailResult(id, props.trackId)
-  nav.setCurrentDetailId(id, props.disableWidget)
-  nav.updateUrl(props.disableWidget)
-  !props.disableWidget && scrollToTop(props.trackElement, props.trackId)
+  if (route.name === RouteName.Catalog) {
+    router.push({
+      name: RouteName.CatalogueDetail,
+      params: {
+        programId: id.toString()
+      }
+    })
+  } else {
+    // Set detail infos
+    programs.setDetailResult(id, props.trackId)
+    nav.setCurrentDetailId(id, props.disableWidget)
+    nav.updateUrl(props.disableWidget)
+    scrollToTop(props.trackElement, props.disableWidget, props.trackId)
+  }
 }
 
 const getCostInfos = (program: ProgramData) => {

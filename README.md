@@ -8,7 +8,7 @@
 
 ---
 
-**A web component and data to help french entreprises finding public aid programs for their ecological transition.**
+**An app + a web component + a dataset to help french entreprises finding public aid programs for their ecological transition.**
 
 A project from the `transition-ecologique-entreprises` SE team.
 
@@ -43,7 +43,7 @@ height="75px">
 
 ## Screenshots
 
-![](./packages/web/images/screenshots/screenshot-2023-10-19.png)
+![](./packages/web/images/screenshots/screenshot-2023-11-29-a.png)
 
 ## Project Setup
 

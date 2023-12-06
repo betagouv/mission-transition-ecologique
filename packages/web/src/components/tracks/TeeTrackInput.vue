@@ -187,15 +187,6 @@
   </div>
 
   <!-- WILDCARD -->
-  <!-- icon="ri-ball-pen-fill" -->
-  <!-- <DsfrButton
-    v-if="option.wildcard && !requestResponses.length"
-    class="fr-mt-4v fr-hint-text fr-pl-0"
-    tertiary
-    no-outline
-    @click="goToNextTrack">
-    {{ option.wildcard.label[choices.lang] }}
-  </DsfrButton> -->
   <p
     v-if="option.wildcard"
     class="fr-mt-8v">
@@ -239,15 +230,15 @@
 <script setup lang="ts">
 import { onBeforeMount, ref, toRaw } from 'vue'
 
-import { tracksStore } from '../stores/tracks'
-import { choicesStore } from '../stores/choices'
-import { analyticsStore } from '../stores/analytics'
+import { tracksStore } from '../../stores/tracks'
+import { choicesStore } from '../../stores/choices'
+import { analyticsStore } from '../../stores/analytics'
 
 // @ts-ignore
 import type { TrackOptionsInput, ReqResp, ReqError, FormCallback, ResultsMapping } from '@/types'
 
-import { sendApiRequest } from '../utils/requests'
-import { getFromResp, remapItem, cleanValue } from '../utils/helpers'
+import { sendApiRequest } from '../../utils/requests'
+import { getFromResp, remapItem, cleanValue } from '../../utils/helpers'
 import { CallbackActions } from '@/types'
 
 interface Props {

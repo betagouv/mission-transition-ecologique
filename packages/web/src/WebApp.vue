@@ -60,9 +60,9 @@ onBeforeMount(() => {
 
 onMounted(async() => {
   // cf: https://stackoverflow.com/questions/69495211/vue3-route-query-empty
-  console.log('WebApp > onMounted > set router...')
+  // console.log('WebApp > onMounted > set router...')
   await router.isReady()
-  console.log('WebApp > onMounted > router is ready...')
+  // console.log('WebApp > onMounted > router is ready...')
   nav.setRouter(router)
   nav.setRoute(route)
 })
@@ -71,6 +71,7 @@ onMounted(async() => {
 
 <style lang="scss">
   @import '~@gouvfr/dsfr/dist/dsfr.min.css'; // ok
+  @import '@gouvminint/vue-dsfr/dist/vue-dsfr.css';
   @import '@public/css/custom.css';
   @import '~@gouvfr/dsfr/dist/utility/icons/icons.min.css'; // ok
   @import '~@gouvminint/vue-dsfr/dist/vue-dsfr.css';

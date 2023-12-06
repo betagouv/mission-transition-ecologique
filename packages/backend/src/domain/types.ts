@@ -97,7 +97,7 @@ export interface ContactInfoBodyAttributes {
   NOM: string
   PRENOM: string
   TEL: string
-  SIRET: string
+  SIRET?: string
   OPT_IN: boolean
   FORM_NEEDS?: string
   PROJECT_NEEDS?: string
@@ -125,6 +125,16 @@ class CustomError extends Error {
     this.name = this.constructor.name
     Error.captureStackTrace(this, CustomError)
   }
+}
+
+export interface QuestionnaireData {
+  codeNaf?: string
+  [key: string]: any
+}
+
+export interface PublicodesInputData {
+  'entreprise . code NAF'?: string
+  [key: string]: any
 }
 
 export class EstablishmentNotFoundError extends CustomError {}

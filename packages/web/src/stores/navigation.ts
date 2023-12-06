@@ -85,11 +85,11 @@ export const navigationStore = defineStore('navigation', () => {
 
     // adapt path
     let routePath = routeRef.value.path
-    let routeName = forcePath || routeRef.value.name
+    const routeName = forcePath || routeRef.value.name
     if (noWidget) {
-      console.log('\nstore.navigation > updateUrl > currentDetailId.value : ', currentDetailId.value)
-      console.log('store.navigation > updateUrl > routeName : ', routeName)
-      console.log('store.navigation > updateUrl > routeRef.value.params : ', routeRef.value.params)
+      // console.log('\nstore.navigation > updateUrl > currentDetailId.value : ', currentDetailId.value)
+      // console.log('store.navigation > updateUrl > routeName : ', routeName)
+      // console.log('store.navigation > updateUrl > routeRef.value.params : ', routeRef.value.params)
       routePath = `/${routeName}`
       // if (!!currentDetailId.value) {
       //   routeName = `${routeName}-detail`
@@ -115,7 +115,7 @@ export const navigationStore = defineStore('navigation', () => {
       // matched: routeRef.value.matched,
       query: allQueries
     }
-    console.log('store.navigation > updateUrl > newRoute : ', newRoute)
+    // console.log('store.navigation > updateUrl > newRoute : ', newRoute)
 
     // update browser
     routerRef.value.push(newRoute)
@@ -136,7 +136,7 @@ export const navigationStore = defineStore('navigation', () => {
   }
 
   function updateQueries(usedTracks: any[], noWidget: boolean) {
-    console.log('\nstore.navigation > updateQueries > usedTracks : ', usedTracks)
+    // console.log('\nstore.navigation > updateQueries > usedTracks : ', usedTracks)
     // reset userQueries
     userQueries.value = []
     const queries = usedTracks.map(t => {

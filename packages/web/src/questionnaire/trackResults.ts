@@ -13,7 +13,6 @@ const metaEnv = import.meta.env
 // console.log('trackResults >  metaEnv :', metaEnv)
 const TEE_BACKEND_URL = metaEnv.VITE_TEE_BACKEND_URL || 'https://tee-backend.osc-fr1.scalingo.io'
 
-
 export const results: Track = {
   id: TrackId.Results,
   category: 'results',
@@ -24,10 +23,10 @@ export const results: Track = {
     fr: "D’après les informations que vous avez renseignées, voici les accompagnements dont vous pouvez bénéficier pour diminuer l'empreinte écologique de votre entreprise."
   },
   interface: {
-    component: TrackComponents.Results,
+    component: TrackComponents.Results
   },
   config: {
-    noResultsMessage: {fr: "Aucune aide n'a pu être identifiée avec les critères choisis..."},
+    noResultsMessage: { fr: "Aucune aide n'a pu être identifiée avec les critères choisis..." },
     noResultsImage: 'images/tracks/no-results.svg',
     showResultsTitle: false,
     showProgramInfos: true,
@@ -57,7 +56,7 @@ export const results: Track = {
           {
             label: 'Formation',
             value: 'formation'
-          },
+          }
           // for debugging purposes
           // {
           //   label: 'FAIL',
@@ -66,8 +65,8 @@ export const results: Track = {
         ]
       },
       {
-        field: "publicodes.est dans les objectifs de l'entreprise.une de ces conditions",
-        label: "objectif",
+        field: ['publicodes', 'entreprise . a un objectif ciblé', 'une de ces conditions'],
+        label: 'objectif',
         trueIf: ConditionOperators.exists,
         values: [
           {
@@ -87,7 +86,7 @@ export const results: Track = {
             value: 'questionnaire . objectif prioritaire . est rénover mon bâtiment'
           },
           {
-            label:  '🚲 Mobilité',
+            label: '🚲 Mobilité',
             value: 'questionnaire . objectif prioritaire . est la mobilité durable'
           },
           {
@@ -104,7 +103,7 @@ export const results: Track = {
           }
         ]
       }
-    ],
+    ]
   },
   options: [
     {
@@ -120,7 +119,9 @@ export const results: Track = {
     value: 'contact_form.email',
     // label: { fr: 'Vous êtes intéressé.e par le dispositif {title} ?' },
     label: { fr: '{prefixAide} {natureAide} vous intéresse ?' },
-    hint: { fr: '👋 Envoyez votre demande, un conseiller {operator} vous contactera prochainement' },
+    hint: {
+      fr: '👋 Envoyez votre demande, un conseiller {operator} vous contactera prochainement'
+    },
     // intro: { fr: `
     //   <h2>
     //     <span
@@ -261,7 +262,7 @@ Merci d'avance pour votre appel`,
         `
         },
         required: true,
-        type: FormFieldTypes.Checkbox,
+        type: FormFieldTypes.Checkbox
         // for debugging purposes
         // defaultValue: false
       }
