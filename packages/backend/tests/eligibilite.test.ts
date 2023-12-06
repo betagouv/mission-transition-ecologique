@@ -1,4 +1,4 @@
-import type { ProgramData } from '../../web/src/types/programTypes'
+import { ProgramData } from '@tee/web/src/types/programTypes'
 import { makeProgram } from './testing'
 import { filterPrograms, FILTERING_RULE_NAME } from '../src/domain/eligibility'
 import { Result, ResultNS } from 'true-myth'

@@ -1,4 +1,4 @@
-import { ProgramData, ProgramAidType } from '../../web/src/types/programTypes'
+import { ProgramData, ProgramAidType } from '@tee/web/src/types/programTypes'
 
 /** makes data for a mock program with given eligibility rules */
 export const makeProgram = (rules: object): ProgramData => {
