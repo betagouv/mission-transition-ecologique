@@ -19,6 +19,8 @@ console.log('vite.config > mode : ', mode)
 const rawEnv = loadEnv(mode, process.cwd())
 console.log('vite.config > rawEnv : ', rawEnv)
 
+const isProd = mode === 'production'
+
 // VITE CONFIG
 const viteServer: ServerOptions = {
   // host: 'localhost',
@@ -37,7 +39,7 @@ export default defineConfig({
     vue(),
     {
       ...eslintPlugin(),
-      apply: 'serve'
+      apply: isProd ? 'serve' : undefined
     }
   ],
   build: {
