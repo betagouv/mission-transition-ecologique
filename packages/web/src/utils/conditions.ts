@@ -26,8 +26,6 @@ const checkCondition = (condition: ConditionTrack, data: any): boolean => {
     case ConditionOperators.is:
       return !!dataKey && data[dataKey] === condition.value
   }
-
-  return false
 }
 
 export const CheckNextTrackRules = (data: any, rules: NextTrackRule[]) => {
