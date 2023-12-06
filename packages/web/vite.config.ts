@@ -5,7 +5,7 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig, loadEnv } from 'vite'
 import type { ServerOptions } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import eslintPlugin from 'vite-plugin-eslint'
+
 
 console.log()
 console.log('Starting ...')
@@ -21,14 +21,15 @@ console.log('vite.config > rawEnv : ', rawEnv)
 
 const isProd = mode === 'production'
 
-const plugins = () => {
+const plugins = async () => {
   const basePlugins = [vue()]
   if(isProd) {
     return basePlugins
   } else {
+    const eslintPlugin = await import('vite-plugin-eslint')
     return [
       ...basePlugins,
-      eslintPlugin()
+      eslintPlugin.default()
     ]
   }
 }
