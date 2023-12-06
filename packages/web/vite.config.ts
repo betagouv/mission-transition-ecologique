@@ -21,6 +21,18 @@ console.log('vite.config > rawEnv : ', rawEnv)
 
 const isProd = mode === 'production'
 
+const plugins = () => {
+  const basePlugins = [vue()]
+  if(isProd) {
+    return basePlugins
+  } else {
+    return [
+      ...basePlugins,
+      eslintPlugin()
+    ]
+  }
+}
+
 // VITE CONFIG
 const viteServer: ServerOptions = {
   // host: 'localhost',
@@ -36,11 +48,7 @@ export default defineConfig({
   server: viteServer,
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   plugins: [
-    vue(),
-    {
-      ...eslintPlugin(),
-      apply: isProd ? 'serve' : undefined
-    }
+    plugins()
   ],
   build: {
     rollupOptions: {
