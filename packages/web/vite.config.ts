@@ -33,7 +33,13 @@ const viteServer: ServerOptions = {
 export default defineConfig({
   server: viteServer,
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-  plugins: [vue(), eslintPlugin()],
+  plugins: [
+    vue(),
+    {
+      ...eslintPlugin(),
+      apply: 'serve'
+    }
+  ],
   build: {
     rollupOptions: {
       input: {
