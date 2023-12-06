@@ -1,5 +1,5 @@
-import type { Translations, FormCallback, FormCallbackDataMapping, FormOptions, PropertyPath, TrackId } from '@/types'
-import { ConditionOperators } from '@/types/conditionOperators'
+import type { Translations, FormCallback, FormCallbackDataMapping, FormOptions, PropertyPath, TrackId } from '@tee/web/src/types'
+import { ConditionOperators } from '@tee/web/src/types/conditionOperators'
 
 // FOR TRACKS
 export interface ConditionTrack {

@@ -22,13 +22,11 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     ecmaVersion: 'latest',
   },
-  exclude: [
-    '../backend/src/domain/eligibility.ts',
-  ],
   rules: {
     "@typescript-eslint/no-explicit-any": "off",
   },
   ignorePatterns: [
+    '../backend/src/domain/eligibility.ts',
     'dist/*',
     'coverage/*',
     'images/*',
