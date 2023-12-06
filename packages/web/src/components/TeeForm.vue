@@ -130,6 +130,7 @@
           icon="ri-arrow-right-line"
           icon-right
           @click="saveFormData()"
+          :loading='isLoading'
         />
       </div>
     </div>
@@ -141,19 +142,19 @@
     class="fr-mt-5v fr-tee-form">
     <!-- FORM ALERT AFTER SENDING-->
     <div :class="`fr-alert fr-alert--${hasNoRespError ? 'success' : 'error fr-tee-form-error'}`">
-      <h3 
+      <h3
         v-if="hasNoRespError"
         class="fr-alert__title">
         {{ choices.t(`form.sent`) }}
       </h3>
-      <div 
+      <div
         v-else
         class="fr-alert__title">
         <p>
           {{ choices.t(`form.notSent`) }}
         </p>
         <p>
-          <code 
+          <code
             v-for="(resp, idx) in requestResponses"
             :key="idx"
             class="error-code fr-py-2v">
@@ -244,6 +245,7 @@ import { remapItem } from '../utils/helpers'
 import { tracksStore } from '../stores/tracks'
 import { choicesStore } from '../stores/choices'
 import { analyticsStore } from '../stores/analytics'
+import DsfrButton from '@/components/button/DsfrButton.vue'
 
 const choices = choicesStore()
 const tracks = tracksStore()
@@ -274,6 +276,7 @@ const requiredFields = ref([])
 const formIsSent = ref<boolean>(false)
 const requestResponses = ref<ReqResp[]>()
 const formFieldTypes = FormFieldTypes
+const isLoading = ref<boolean>(false)
 
 // const program = computed(() => {
 //   return programs.getProgramById(props.dataProps.programId)
@@ -360,38 +363,42 @@ const updateFormData = (ev: string, id: string) => {
 
 // const emit = defineEmits(['saveData'])
 const saveFormData = async () => {
-  // console.log('TeeForm > saveFormData >  props.formOptions :', props.formOptions)
-  // console.log('TeeForm > saveFormData >  props.dataProps :', props.dataProps)
-  // console.log('TeeForm > saveFormData >  formData.value :', formData.value)
+  try {
+    isLoading.value = true
+    // console.log('TeeForm > saveFormData >  props.formOptions :', props.formOptions)
+    // console.log('TeeForm > saveFormData >  props.dataProps :', props.dataProps)
+    // console.log('TeeForm > saveFormData >  formData.value :', formData.value)
 
-  // const usedTracks: UsedTrack[] | any[] = tracks.getAllUsedTracks
-  // console.log('TeeForm > saveFormData >  usedTracks :', usedTracks)
+    // const usedTracks: UsedTrack[] | any[] = tracks.getAllUsedTracks
+    // console.log('TeeForm > saveFormData >  usedTracks :', usedTracks)
 
-  // Launch call backs if any
-  const responses: ReqResp[] = []
-  // loop callbacks (only active ones)
-  const activeCallbacks = toRaw(props.formOptions.callbacks).filter((cb: FormCallback) => !cb.disabled)
-  for (const callback of activeCallbacks) {
-    console.log()
-    // console.log('TeeForm > saveFormData >  callback.action :', callback.action)
-    let resp: ReqResp = {}
-    switch (callback.action) {
-      case CallbackActions.CreateContact:
-        resp = await sendApiRequest(callback, toRaw(formData.value), trackValues, props.dataProps, choices.lang)
-        break
-      case CallbackActions.SendTransactionalEmail:
-        resp = await sendApiRequest(callback, toRaw(formData.value))
-        break
+    // Launch call backs if any
+    const responses: ReqResp[] = []
+    // loop callbacks (only active ones)
+    const activeCallbacks = toRaw(props.formOptions.callbacks).filter((cb: FormCallback) => !cb.disabled)
+    for (const callback of activeCallbacks) {
+      console.log()
+      // console.log('TeeForm > saveFormData >  callback.action :', callback.action)
+      let resp: ReqResp = {}
+      switch (callback.action) {
+        case CallbackActions.CreateContact:
+          resp = await sendApiRequest(callback, toRaw(formData.value), trackValues, props.dataProps, choices.lang)
+          break
+        case CallbackActions.SendTransactionalEmail:
+          resp = await sendApiRequest(callback, toRaw(formData.value))
+          break
+      }
+      responses.push(resp)
+      // console.log('TeeForm > saveFormData >  resp :', resp)
     }
-    responses.push(resp)
-    // console.log('TeeForm > saveFormData >  resp :', resp)
+    requestResponses.value = responses
+    formIsSent.value = true
+
+    // analytics / send event
+    analytics.sendEvent(props.trackId, 'send_form')
+  } finally {
+    isLoading.value = false
   }
-  requestResponses.value = responses
-  formIsSent.value = true
-
-  // analytics / send event
-  analytics.sendEvent(props.trackId, 'send_form')
-
 }
 
 </script>

@@ -18,8 +18,8 @@ export const FILTERING_RULE_NAME: string = 'entreprise . est ciblée'
 
 /** Filter out programs for which the company is not eligible
  *
- * @param programs - A list of programs, holding data on their eligibility
- *   rules (`publicodes` property)
+ * @param programs - A list of programs, holding data on their filtering
+ *   rules (inside the `publicodes` property)
  * @param inputData - Data associated with the company or the user inputs.
  * @returns Programs from `programs` that are either eligible (rules evaluate
  *   to `true`) or which eligibility cannot be assessed (rules evaluate to

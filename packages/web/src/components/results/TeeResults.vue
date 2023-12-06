@@ -177,9 +177,13 @@ import type { TrackChoice, TrackResultsConfig, ProgramData, FilterSignal, TrackF
 import { ProgramAidType } from '@/types/programTypes'
 import { navigationStore } from '@/stores/navigation'
 import { ConditionOperators, TrackId } from '@/types/index'
+import { useRoute, useRouter } from 'vue-router'
+import { RouteName } from '@/types/routeType'
 // @ts-ignore
 // import { randomChoice } from '@/utils/helpers'
 
+const route = useRoute()
+const router = useRouter()
 const choices = choicesStore()
 const programs = programsStore()
 const analytics = analyticsStore()
@@ -263,12 +267,20 @@ const updateFilters = (event: FilterSignal) => {
 
 const updateDetailResult = (id: string | number) => {
   // console.log(`TeeResults > updateDetailResult >  id : ${id}`)
-
-  // Set detail infos
-  programs.setDetailResult(id, props.trackId)
-  nav.setCurrentDetailId(id, props.disableWidget)
-  nav.updateUrl(props.disableWidget)
-  scrollToTop(props.trackElement, props.disableWidget, props.trackId)
+  if (route.name === RouteName.Catalog) {
+    router.push({
+      name: RouteName.CatalogueDetail,
+      params: {
+        programId: id.toString()
+      }
+    })
+  } else {
+    // Set detail infos
+    programs.setDetailResult(id, props.trackId)
+    nav.setCurrentDetailId(id, props.disableWidget)
+    nav.updateUrl(props.disableWidget)
+    scrollToTop(props.trackElement, props.disableWidget, props.trackId)
+  }
 }
 
 const getCostInfos = (program: ProgramData) => {

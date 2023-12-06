@@ -35,7 +35,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "@gouvminint/vue-dsfr": "^3.6.0",
+    "@gouvminint/vue-dsfr": "^5.0.0",
     "@vitejs/plugin-vue": "^4.0.0",
     "fs": "^0.0.1-security",
     "js-yaml": "^4.1.0",
