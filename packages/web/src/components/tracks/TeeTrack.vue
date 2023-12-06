@@ -458,7 +458,6 @@ const analytics = analyticsStore()
 const selectedOptionsIndices = ref<number[]>([])
 const selectedOptions = ref<any[]>([])
 const needRemove = ref<boolean>(false)
-const isLoadingNext = ref<boolean>(false)
 
 const track: Track | undefined = tracks.getTrack(props.trackId)
 
@@ -641,10 +640,9 @@ watch(() => props.isCompleted, ( next ) => {
 
 // functions
 
-const saveSelection = async () => {
+const saveSelection = () => {
   // console.log()
   // console.log('TeeTrack > updateStore > selectedOptions.value :', selectedOptions.value)
-  isLoadingNext.value = true
   const optionNext = selectedOptions.value[0].next
   const nextExceptions = optionNext?.exceptions
   const defaultNext = track?.next
@@ -682,7 +680,7 @@ const saveSelection = async () => {
 
   // console.log('TeeTrack > updateStore > next :', next)
 
-  await tracks.updateUsedTracks(props.trackId, props.step, next, selectedOptions.value)
+  tracks.updateUsedTracks(props.trackId, props.step, next, selectedOptions.value)
 
   // console.log('TeeTrack > updateStore > needRemove.value :', needRemove.value)
   if (!needRemove.value) {
@@ -691,7 +689,7 @@ const saveSelection = async () => {
     canAddTrack && tracks.addToUsedTracks(props.trackId, next.default)
   } else {
     // console.log('TeeTrack > updateStore > removeFromUsedTracks...')
-    await tracks.removeFurtherUsedTracks(props.trackId)
+    tracks.removeFurtherUsedTracks(props.trackId)
   }
 
   scrollToTop(props.trackElement, props.disableWidget,props.trackId)
