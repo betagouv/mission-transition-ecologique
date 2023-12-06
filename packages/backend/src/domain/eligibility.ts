@@ -1,4 +1,4 @@
-import type { ProgramData } from '@tee/web/src/types/programTypes'
+import type { ProgramData } from '../../../web/src/types/programTypes'
 
 import Engine from 'publicodes'
 

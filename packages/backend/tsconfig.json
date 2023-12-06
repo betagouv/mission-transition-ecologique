@@ -4,6 +4,7 @@
     "tests/**/*",
     "generated/**/*",
     "generated/swagger.json",
+    "../web/src/types/programTypes.ts"
   ],
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {

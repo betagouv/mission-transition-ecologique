@@ -15,7 +15,7 @@
 </template>
 
 <script setup lang="ts">
-import { choicesStore } from '@tee/web/src/stores/choices'
+import { choicesStore } from '@/stores/choices'
 import type { ProgramData } from '@/types'
 import { ProgramAidType } from '@/types'
 
