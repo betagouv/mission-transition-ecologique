@@ -62,7 +62,7 @@ const store = createPinia()
 const WidgetAppComponent = defineCustomElement(WidgetApp, {
   plugins: [
     // @ts-ignore
-    { plugin: VueDsfr },
+    { plugin: VueDsfr, options: { icons: Ri} },
     // { plugin: VueDsfr, options: { icons: Object.values(icons) }},
     // @ts-ignore
     { plugin: store },
@@ -76,7 +76,7 @@ const WidgetAppComponent = defineCustomElement(WidgetApp, {
 customElements.define('gov-aid-tree-app', WidgetAppComponent)
 
 const app = createApp(WebApp)
-app.use(VueDsfr)
+app.use(VueDsfr, { icons: Ri})
 app.use(store)
 app.use(router)
 app.mount('#app')

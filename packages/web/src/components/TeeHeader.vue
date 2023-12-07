@@ -15,9 +15,8 @@
 </template>
 
 <script setup lang="ts">
-
+import { DsfrHeader } from '@gouvminint/vue-dsfr'
 import { choicesStore } from '../stores/choices'
-
 import { RouteName } from '@/types/routeType'
 
 const choices = choicesStore()

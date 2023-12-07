@@ -1,6 +1,6 @@
-import { ProgramData } from '@tee/web/src/types/programTypes'
-import { makeProgram } from './testing'
-import { filterPrograms, FILTERING_RULE_NAME } from '../src/domain/eligibility'
+import type { ProgramData } from '@tee/web/src/types/programTypes'
+import { makeProgramHelper } from './testing'
+import { filterPrograms, FILTERING_RULE_NAME } from '../src/domain/filter-programs'
 import { Result, ResultNS } from 'true-myth'
 
 const rulesBoilerplate = {
@@ -8,6 +8,8 @@ const rulesBoilerplate = {
   'entreprise . effectif': null,
   [FILTERING_RULE_NAME]: 'entreprise . effectif > 0'
 }
+
+const makeProgram = (rules: Object) => makeProgramHelper({ rules: rules })
 
 // As we do not use ES6 modules, I could not find more elegant way to import Ok
 type Ok<T, E> = ResultNS.Ok<T, E>

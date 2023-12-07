@@ -204,7 +204,7 @@ export const tracksStore = defineStore('tracks', () => {
     // console.log('store.tracks > setUsedTracksAsNotCompleted > usedTracks.value : ', usedTracks.value)
   }
 
-  async function removeFurtherUsedTracks(srcTrackId: string) {
+  function removeFurtherUsedTracks(srcTrackId: string) {
     // console.log()
     // console.log('store.tracks > removeFurtherUsedTracks > srcTrackId : ', srcTrackId)
     const lastTrack: UsedTrack | undefined = usedTracks.value.find((t: UsedTrack) => t.id === srcTrackId)

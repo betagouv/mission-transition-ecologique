@@ -1,7 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 // import type { Router } from 'vue-router'
-import { tracksStore } from '../stores/tracks'
-import { programsStore } from '../stores/programs'
 
 import TeeHomePage from '../pages/TeeHomePage.vue'
 
@@ -16,40 +14,8 @@ import TeePersonalDataPage from '../pages/TeePersonalDataPage.vue'
 import { RouteName } from '@/types/routeType'
 import { redirections } from '@/router/redirection'
 import { TrackId } from '@/types'
+import { resetDetailProgram, resetTrackStore, setHelpAsTrackSeed, setResultsAsTrackSeed } from '@/router/hook'
 
-
-const resetTrackStore = async (to: any, from: any, next: any) => {
-  // console.log('\nrouter > beforeEnter > resetTrackStore > from :', from)
-  // console.log('router > beforeEnter > resetTrackStore > to :', to)
-  const tracks = tracksStore()
-  await tracks.resetUsedTracks()
-  await next()
-}
-const resetDetailProgram = async (to: any, from: any, next: any) => {
-  // console.log('\nrouter > beforeEnter > resetDetailProgram > from :', from)
-  // console.log('router > beforeEnter > resetDetailProgram > to :', to)
-  const programs = programsStore()
-  await programs.resetDetailResult()
-  await next()
-}
-const setHelpAsTrackSeed = async (to: any, from: any, next: any) => {
-  // console.log('\nrouter > beforeEnter > setHelpAsTrackSeed > from :', from)
-  // console.log('router > beforeEnter > setHelpAsTrackSeed > to :', to)
-  const tracks = tracksStore()
-  await tracks.setSeedTrack(TrackId.Help)
-  // await tracks.addToUsedTracks('track_help', 'track_help')
-  // next({ name: 'questionnaire' })
-  await next()
-}
-const setResultsAsTrackSeed = async (to: any, from: any, next: any) => {
-  // console.log('\nrouter > beforeEnter > setResultsAsTrackSeed > from :', from)
-  // console.log('router > beforeEnter > setResultsAsTrackSeed > to :', to)
-  const tracks = tracksStore()
-  await tracks.setSeedTrack(TrackId.Results)
-  // await tracks.addToUsedTracks('track_results', 'track_results')
-  // next({ name: 'catalog' })
-  await next()
-}
 
 export const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
@@ -76,7 +42,7 @@ export const router = createRouter({
           name: 'questionnaire',
           component: WidgetApp,
           props: {
-            seed: 'track_help',
+            seed: TrackId.Help,
             disableWidget: true
           }
         },
@@ -99,16 +65,16 @@ export const router = createRouter({
       children: [
         {
           path: '',
-          name: 'catalog',
+          name: RouteName.Catalog,
           component: WidgetApp,
           props: {
-            seed: 'track_results',
+            seed: TrackId.Results,
             disableWidget: true
           }
         },
         {
           path: ':programId',
-          name: 'catalogue-detail',
+          name: RouteName.CatalogueDetail,
           component: TeeProgramPage,
         },
       ]
