@@ -36,8 +36,8 @@
     "npm": "9.x"
   },
   "dependencies": {
-    "typescript": "~5.2.2",
-    "@tsconfig/node18": "^18.2.2"
+    "@tsconfig/node18": "^18.2.2",
+    "typescript": "~5.2.2"
   },
   "devDependencies": {
     "@types/cors": "^2.8.13",

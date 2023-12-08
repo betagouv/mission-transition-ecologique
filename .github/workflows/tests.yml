@@ -25,6 +25,21 @@ jobs:
 
       - run: npm run build-json-output && npm run test -w packages/data
 
+  lint:
+    name: Run eslint
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ '18.x' ]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm clean-install
+      - run: npm run lint
 
   type-check:
     name: Run typescript types check
@@ -41,7 +56,6 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm clean-install
       - run: npm run build-json-output && npm run type-check -w packages/web
-
 
   unit-test:
     name: Run unit tests
