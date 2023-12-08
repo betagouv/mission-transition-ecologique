@@ -26,6 +26,7 @@
     "dev-front": "npx concurrently \"npm run build-json-output-watch\" \"npm run dev -w packages/web\"",
     "test-data": "npm run test -w packages/data",
     "lint": "eslint . --fix",
+    "lint-check": "eslint .",
     "lint-concurrently": "npx concurrently 'npm run lint -w packages/backend' 'npm run lint -w packages/web' 'npm run lint -w packages/data'"
   },
   "workspaces": [
