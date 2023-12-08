@@ -131,11 +131,15 @@ import { analyticsStore } from '../../stores/analytics'
 import { getFrom, scrollToTop, consolidateAmounts } from '../../utils/helpers'
 import TeeResultsFilter from './TeeResultsFilter.vue'
 import TeeNoResults from './TeeNoResults.vue'
-import type { TrackResultsConfig, ProgramData, FilterSignal, TrackFilter, PropertyPath } from '@/types/index'
+import type { TrackResultsConfig, ProgramData, FilterSignal, TrackFilter, PropertyPath, UsedTrack } from '@/types/index'
 import { ProgramAidType } from '@/types/programTypes'
 import { navigationStore } from '@/stores/navigation'
-import { ConditionOperators, TrackId, type UsedTrack } from '@/types/index'
+import { ConditionOperators, TrackId } from '@/types/index'
+import { useRoute, useRouter } from 'vue-router'
+import { RouteName } from '@/types/routeType'
 
+const route = useRoute()
+const router = useRouter()
 const choices = choicesStore()
 const programs = programsStore()
 const analytics = analyticsStore()
@@ -221,13 +225,19 @@ const updateFilters = (event: FilterSignal) => {
 }
 
 const updateDetailResult = async (id: string | number) => {
-  // console.log(`TeeResults > updateDetailResult >  id : ${id}`)
-
-  // Set detail infos
-  programs.setDetailResult(id, props.trackId)
-  await nav.setCurrentDetailId(id, props.disableWidget)
-  await nav.updateUrl(props.disableWidget)
-  scrollToTop(props.trackElement, props.disableWidget)
+  if (route.name === RouteName.Catalog) {
+    await router.push({
+      name: RouteName.CatalogueDetail,
+      params: {
+        programId: id.toString()
+      }
+    })
+  } else {
+    // Set detail infos
+    programs.setDetailResult(id, props.trackId)
+    await nav.setCurrentDetailId(id, props.disableWidget)
+    scrollToTop(props.trackElement, props.disableWidget)
+  }
 }
 
 const getCostInfos = (program: ProgramData) => {
@@ -237,9 +247,6 @@ const getCostInfos = (program: ProgramData) => {
 
   switch (program["nature de l'aide"]) {
     case ProgramAidType.acc:
-      prefix = 'programCosts.costPrefix'
-      text = program["coût de l'accompagnement"]
-      break
     case ProgramAidType.train:
       prefix = 'programCosts.costPrefix'
       text = program["coût de l'accompagnement"]

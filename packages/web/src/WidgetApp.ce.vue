@@ -272,8 +272,8 @@ watch(
   }
 )
 
-const changeDebug = (event: Event) => {
-  debugBool.value = (event.target as HTMLInputElement).value as unknown as boolean
+const changeDebug = (payload: boolean) => {
+  debugBool.value = payload
 }
 
 const needSidebar = computed(() => {

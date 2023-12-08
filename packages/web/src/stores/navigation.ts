@@ -156,9 +156,10 @@ export const navigationStore = defineStore('navigation', () => {
     // // update url in browser
     // updateUrl(noWidget)
   }
-  // function resetQueries() {
-  //   userQueries.value = []
-  // }
+
+  function resetQueries() {
+    userQueries.value = []
+  }
 
   return {
     routerReady,
@@ -169,6 +170,7 @@ export const navigationStore = defineStore('navigation', () => {
     currentTrackId,
     currentStep,
     currentDetailId,
+    resetQueries,
     setRouter,
     setRoute,
     setCurrentTrackId,

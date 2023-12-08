@@ -6,7 +6,6 @@ import { defineConfig, loadEnv } from 'vite'
 import type { ServerOptions } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
-
 console.log()
 console.log('Starting ...')
 console.log('vite.config ...')
@@ -23,14 +22,11 @@ const isProd = mode === 'production'
 
 const plugins = async () => {
   const basePlugins = [vue()]
-  if(isProd) {
+  if (isProd) {
     return basePlugins
   } else {
     const eslintPlugin = await import('vite-plugin-eslint')
-    return [
-      ...basePlugins,
-      eslintPlugin.default()
-    ]
+    return [...basePlugins, eslintPlugin.default()]
   }
 }
 
@@ -48,9 +44,7 @@ const viteServer: ServerOptions = {
 export default defineConfig({
   server: viteServer,
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-  plugins: [
-    plugins()
-  ],
+  plugins: [plugins()],
   build: {
     rollupOptions: {
       input: {

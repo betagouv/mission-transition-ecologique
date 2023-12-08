@@ -59,14 +59,14 @@ const store = createPinia()
 // cf : https://levelup.gitconnected.com/how-to-use-web-components-in-vue-js-bfbd16f6b26f
 // cf : https://dev.to/nurlan_tl/tips-to-create-web-components-using-vue-3-ts-vite-3a7a
 const WidgetAppComponent = defineCustomElement(WidgetApp as Component, {
-  plugins: [{ plugin: VueDsfr }, { plugin: store }, { plugin: router }],
+  plugins: [{ plugin: VueDsfr, options: { icons: Ri } }, { plugin: store }, { plugin: router }],
   comps: [{ name: 'v-icon', comp: OhVueIcon as Component }]
 })
 
 customElements.define('gov-aid-tree-app', WidgetAppComponent)
 
 const app = createApp(WebApp as Component)
-app.use(VueDsfr)
+app.use(VueDsfr, { icons: Ri })
 app.use(store)
 app.use(router)
 app.mount('#app')

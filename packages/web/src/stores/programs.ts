@@ -2,8 +2,10 @@ import { computed, ref } from 'vue'
 import { defineStore } from 'pinia'
 
 import type { ProgramData, TrackId, TrackOptions, UsedTrack } from '@/types/index'
-import { filterPrograms as filterWithPublicodes } from '@tee/backend/src/domain/eligibility'
+import { filterPrograms as filterWithPublicodes } from '@tee/backend/src/domain/filter-programs'
+import { sortPrograms } from '@tee/backend/src/domain/sort-programs'
 import type { QuestionnaireData } from '@tee/backend/src/domain/types'
+import { TrackHelpValue } from '@/types/index'
 
 export const programsStore = defineStore('programs', () => {
   const programs = ref<ProgramData[]>()
@@ -21,9 +23,6 @@ export const programsStore = defineStore('programs', () => {
   })
 
   function filterPrograms(tracksResults: UsedTrack[]) {
-    // console.log()
-    // console.log('store.programs > filterPrograms > tracksResults : ', tracksResults)
-
     // retrieve and organize user's conditions
     const conditions: { [k: string]: any } = {}
     tracksResults.forEach((trackResult) => {
@@ -35,7 +34,6 @@ export const programsStore = defineStore('programs', () => {
         })
       })
     })
-    // console.log('store.programs > filterPrograms > conditions :', conditions)
 
     // filter out programs
     if (progs.value) {
@@ -45,7 +43,7 @@ export const programsStore = defineStore('programs', () => {
         throw new Error(progsFilteredResult.error.message)
       }
 
-      return progsFilteredResult.value
+      return sortPrograms(progsFilteredResult.value, conditions['user_help'] as TrackHelpValue)
     }
   }
 

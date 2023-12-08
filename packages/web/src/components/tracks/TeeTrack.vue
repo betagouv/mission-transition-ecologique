@@ -560,7 +560,6 @@ watch(
 const saveSelection = () => {
   // console.log()
   // console.log('TeeTrack > updateStore > selectedOptions.value :', selectedOptions.value)
-
   const optionNext = selectedOptions.value[0].next
   const nextExceptions = optionNext?.exceptions
   const defaultNext = track?.next

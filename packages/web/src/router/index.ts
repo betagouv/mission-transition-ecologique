@@ -1,15 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import type { NavigationGuardNext, RouteLocationNormalized } from 'vue-router'
-import { tracksStore } from '../stores/tracks'
-import { programsStore } from '../stores/programs'
-
 import TeeHomePage from '../pages/TeeHomePage.vue'
-
 import WidgetApp from '../WidgetApp.ce.vue'
 import TeeQuestionnairePage from '../pages/TeeQuestionnairePage.vue'
 import TeeCatalogPage from '../pages/TeeCatalogPage.vue'
 import TeeProgramPage from '../pages/TeeProgramPage.vue'
-
 import TeeLegalPage from '../pages/TeeLegalPage.vue'
 import TeeAccessibilityPage from '../pages/TeeAccessibilityPage.vue'
 import TeePersonalDataPage from '../pages/TeePersonalDataPage.vue'
@@ -17,39 +11,7 @@ import { RouteName } from '@/types/routeType'
 import { redirections } from '@/router/redirection'
 import { TrackId } from '@/types'
 import type { Component } from 'vue'
-
-const resetTrackStore = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
-  // console.log('\nrouter > beforeEnter > resetTrackStore > from :', from)
-  // console.log('router > beforeEnter > resetTrackStore > to :', to)
-  const tracks = tracksStore()
-  tracks.resetUsedTracks()
-  next()
-}
-const resetDetailProgram = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
-  // console.log('\nrouter > beforeEnter > resetDetailProgram > from :', from)
-  // console.log('router > beforeEnter > resetDetailProgram > to :', to)
-  const programs = programsStore()
-  programs.resetDetailResult()
-  next()
-}
-const setHelpAsTrackSeed = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
-  // console.log('\nrouter > beforeEnter > setHelpAsTrackSeed > from :', from)
-  // console.log('router > beforeEnter > setHelpAsTrackSeed > to :', to)
-  const tracks = tracksStore()
-  tracks.setSeedTrack(TrackId.Help)
-  // await tracks.addToUsedTracks('track_help', 'track_help')
-  // next({ name: 'questionnaire' })
-  next()
-}
-const setResultsAsTrackSeed = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
-  // console.log('\nrouter > beforeEnter > setResultsAsTrackSeed > from :', from)
-  // console.log('router > beforeEnter > setResultsAsTrackSeed > to :', to)
-  const tracks = tracksStore()
-  tracks.setSeedTrack(TrackId.Results)
-  // await tracks.addToUsedTracks('track_results', 'track_results')
-  // next({ name: 'catalog' })
-  next()
-}
+import { resetDetailProgram, resetTrackStore, setHelpAsTrackSeed, setResultsAsTrackSeed } from '@/router/hook'
 
 export const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
@@ -72,7 +34,7 @@ export const router = createRouter({
           name: 'questionnaire',
           component: WidgetApp as Component,
           props: {
-            seed: 'track_help',
+            seed: TrackId.Help,
             disableWidget: true
           }
         },
@@ -86,21 +48,20 @@ export const router = createRouter({
     {
       path: '/annuaire',
       component: TeeCatalogPage as Component,
-      // component: TeeQuestionnairePage,
       beforeEnter: [resetDetailProgram, resetTrackStore, setResultsAsTrackSeed],
       children: [
         {
           path: '',
-          name: 'catalog',
+          name: RouteName.Catalog,
           component: WidgetApp as Component,
           props: {
-            seed: 'track_results',
+            seed: TrackId.Results,
             disableWidget: true
           }
         },
         {
           path: ':programId',
-          name: 'catalogue-detail',
+          name: RouteName.CatalogueDetail,
           component: TeeProgramPage as Component
         }
       ]
@@ -126,7 +87,5 @@ export const router = createRouter({
       component: TeeHomePage as Component
     },
     ...redirections
-    // { path: '/track/:trackId', component: TeeTrack },
-    // { path: '/program/:programId', component: TeeProgramDetail },
   ]
 })
