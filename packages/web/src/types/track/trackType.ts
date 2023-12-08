@@ -13,7 +13,7 @@ export type ConditionTrack =
   | {
       type: string
       operator: ConditionOperators.is
-      value: any
+      value: string | number | object
     }
   | {
       type: string
