@@ -16,80 +16,62 @@ SKIP_XL_LINES = 5
 OUTPUT_DIR = "../../../programs"
 
 
-def remove_prefix(s):
-    return s.split(" . ")[1]
+def remove_namespace(s):
+    return "".join(s.split(" . ")[1:])
 
 
-Cible = "entreprise . est ciblée"
-
-Eligible = "entreprise . est éligible"
-EligibleNoPrefix = remove_prefix(Eligible)
-
-Objectif = "entreprise . a un objectif ciblé"
-ObjectifNoPrefix = remove_prefix(Objectif)
-
-Secteur = "entreprise . est dans un secteur d'activité ciblé"
-SecteurNoPrefix = remove_prefix(Secteur)
-
-ZoneGeo = "entreprise . est dans une zone géographique éligible"
-ZoneGeoNoPrefix = remove_prefix(ZoneGeo)
-
-Effectif = "entreprise . a un effectif éligible"
-EffectifNoPrefix = remove_prefix(Effectif)
-
-ModeTransport = "entreprise . utilise un mode de transport ciblé"
-ModeTransportNoPrefix = remove_prefix(ModeTransport)
-
-PossessionVehicules = "entreprise . possède des véhicules motorisés"
-PossessionVehiculesNoPrefix = remove_prefix(PossessionVehicules)
-
-ParcoursObjPrecis = "questionnaire . parcours = objectif précis"
-
-Proprio = "entreprise . est propriétaire de ses locaux"
+CIBLE = "entreprise . est ciblée"
+ELIGIBLE = "entreprise . est éligible"
+OBJECTIF = "entreprise . a un objectif ciblé"
+SECTEUR = "entreprise . est dans un secteur d'activité ciblé"
+ZONE_GEO = "entreprise . est dans une zone géographique éligible"
+EFFECTIF = "entreprise . a un effectif éligible"
+MODE_TRANSPORT = "entreprise . utilise un mode de transport ciblé"
+POSSESSION_VEHICULES = "entreprise . possède des véhicules motorisés"
+PARCOURS_OBJ_PRECIS = "questionnaire . parcours = objectif précis"
+PROPRIO = "entreprise . est propriétaire de ses locaux"
 
 ALL = "toutes ces conditions"
 ANY = "une de ces conditions"
 
 
-def printProgramYAML(rawData, colNumbers, id):
-    cn = colNumbers
-
+def printProgramYAML(rawData, colNumbersByName, id):
     def get(name):
-        value = rawData[cn[name]]
+        value = rawData[colNumbersByName[name]]
         return curate(value)
 
-    program = {
-        "titre": get("Titre"),
-        "promesse": get("Promesse"),
-        "description": get("Description courte"),
-    }
-    if get("Description longue"):
-        program["description longue"] = get("Description longue")
+    prog = {}
+    prog["titre"] = (get("Titre"),)
+    prog["promesse"] = (get("Promesse"),)
+    prog["description"] = get("Description courte")
 
-    program["illustration"] = tryAndGetIllustration(id)
-    program["opérateur de contact"] = get("Opérateur de contact")
+    if get("Description longue"):
+        prog["description longue"] = get("Description longue")
+
+    prog["illustration"] = tryAndGetIllustration(id)
+    prog["opérateur de contact"] = get("Opérateur de contact")
 
     autresOp = csv_to_list(get("Autres opérateurs"))
     if len(autresOp) >= 1:
-        program["autres opérateurs"] = autresOp
+        prog["autres opérateurs"] = autresOp
 
-    program["url"] = get("Lien en savoir+")
-    program["nature de l'aide"] = get("💸 Nature de l'aide").lower()
-    nat = program["nature de l'aide"]
+    prog["url"] = get("Lien en savoir+")
+    prog["nature de l'aide"] = get("💸 Nature de l'aide").lower()
+    nat = prog["nature de l'aide"]
     if nat == "financement":
-        program["montant du financement"] = get("💰 Montant de l'aide")
+        prog["montant du financement"] = get("💰 Montant de l'aide")
     if nat == "accompagnement" or nat == "formation":
-        program["coût de l'accompagnement"] = get("💰 Coût reste à charge")
-        program["durée de l'accompagnement"] = get("⏱Prestation (durée + étalement)")
+        prog["coût de l'accompagnement"] = get("💰 Coût reste à charge")
+        prog["durée de l'accompagnement"] = get("⏱Prestation (durée + étalement)")
     if nat == "prêt":
-        program["durée du prêt"] = get("Etalement")
-        program[
+        prog["durée du prêt"] = get("Etalement")
+        prog[
             "montant du prêt"
         ] = f'De {thousandSep(get("MontantMin aide"))} € à {thousandSep(get("MontantMax aide"))} €'
     if nat == "avantage fiscal":
-        program["montant de l'avantage fiscal"] = get("💰 Montant de l'aide")
+        prog["montant de l'avantage fiscal"] = get("💰 Montant de l'aide")
 
-    program["objectifs"] = makeObj(
+    prog["objectifs"] = makeObj(
         [get(f"🎯 {i} objectif") for i in ["1er", "2ème", "3ème", "4ème", "5ème"]]
     )
 
@@ -99,57 +81,57 @@ def printProgramYAML(rawData, colNumbers, id):
 
     effective_constraint = pc_effectifConstraint(get("minEff"), get("maxEff"))
     if effective_constraint:
-        pc[Effectif] = effective_constraint
-        eligibilite.append(EffectifNoPrefix)
+        pc[EFFECTIF] = effective_constraint
+        eligibilite.append(remove_namespace(EFFECTIF))
 
     sc = pc_secteurActivitéConstraint(get)
     if sc:
-        pc[Secteur] = sc
-        cible.append(SecteurNoPrefix)
+        pc[SECTEUR] = sc
+        cible.append(remove_namespace(SECTEUR))
 
     op = pc_objPrioritaire(get)
     if op:
-        pc[Objectif] = op
-        cible.append(ObjectifNoPrefix)
+        pc[OBJECTIF] = op
+        cible.append(remove_namespace(OBJECTIF))
 
     reg = pc_regions(get)
     if reg:
-        pc[ZoneGeo] = reg
-        eligibilite.append(ZoneGeo)
+        pc[ZONE_GEO] = reg
+        eligibilite.append(ZONE_GEO)
 
     mod = pc_mode_transport(get)
     if mod:
-        pc[ModeTransport] = mod
-        cible.append(ModeTransportNoPrefix)
+        pc[MODE_TRANSPORT] = mod
+        cible.append(remove_namespace(MODE_TRANSPORT))
 
     veh = pc_possede_vehicule(get)
     if veh:
-        cible.append(PossessionVehiculesNoPrefix)
+        cible.append(remove_namespace(POSSESSION_VEHICULES))
 
     p360 = pc_onlyPrecise(get)
     if p360:
-        cible.append(ParcoursObjPrecis)
+        cible.append(PARCOURS_OBJ_PRECIS)
 
     own = pc_building_owner(get)
     if own:
-        cible.append(Proprio)
+        cible.append(PROPRIO)
 
     if len(eligibilite) != 0:
-        cible = [EligibleNoPrefix] + cible
+        cible = [remove_namespace(ELIGIBLE)] + cible
 
-    program["publicodes"] = {}
+    prog["publicodes"] = {}
     # Si pas de condition, on affiche toujours
     if len(cible) == 0:
-        program["publicodes"][Cible] = "oui"
+        prog["publicodes"][CIBLE] = "oui"
     else:
-        program["publicodes"][Cible] = {ALL: cible}
+        prog["publicodes"][CIBLE] = {ALL: cible}
 
     if len(eligibilite) != 0:
-        program["publicodes"][Eligible] = {ALL: eligibilite}
+        prog["publicodes"][ELIGIBLE] = {ALL: eligibilite}
 
-    program["publicodes"] |= pc
+    prog["publicodes"] |= pc
 
-    return convertToYaml(program)
+    return convertToYaml(prog)
 
 
 def remove_special_chars(text: str) -> str:
@@ -205,7 +187,7 @@ def tryAndGetIllustration(id: str):
             program_data = response.read().decode(
                 response.headers.get_content_charset()
             )
-    except:
+    except:  # noqa
         return randomIllustration()
 
     illustrationLine = re.search(r"\nillustration: ([^\n]*)\n", program_data)
@@ -238,7 +220,7 @@ def valid(value):
 
 
 def csv_to_list(input: str) -> list[str]:
-    return [curate(s) for s in re.split(",|\|", input) if valid(s)]
+    return [curate(s) for s in re.split(r",|\|", input) if valid(s)]
 
 
 def makeObj(objs: list[str]):
