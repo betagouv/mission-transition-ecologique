@@ -53,6 +53,8 @@ def printProgramYAML(rawData, colNumbersByName, id):
     def set(key, value, overwrite=False):
         if overwrite or key not in existingProgram:
             prog[key] = value
+        else:
+            prog[key] = existingProgram[key]
 
     set("titre", get("Titre"))
     prog["promesse"] = get("Promesse")
