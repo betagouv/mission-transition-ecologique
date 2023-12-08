@@ -48,15 +48,17 @@ def printProgramYAML(rawData, colNumbersByName, id):
 
     prog = {}
 
+    FORCE_ALL = False
+
     # Only sets the key if key does not exist.
     # if force = True, then replaces the key even if it exists
-    def set(key, value, overwrite=False):
+    def set(key, value, overwrite=FORCE_ALL):
         if overwrite or key not in existingProgram:
             prog[key] = value
         else:
             prog[key] = existingProgram[key]
 
-    set("titre", get("Titre"))
+    set("titre", get("Titre"), True)
     prog["promesse"] = get("Promesse")
     prog["description"] = get("Description courte")
 
