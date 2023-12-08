@@ -39,7 +39,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm clean-install
-      - run: npm run lint
+      - run: npm run build-json-output && npm run lint
 
   type-check:
     name: Run typescript types check
