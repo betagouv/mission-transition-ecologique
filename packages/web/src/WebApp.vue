@@ -72,6 +72,7 @@ onMounted(async() => {
 
 <style lang="scss">
   @import '~@gouvfr/dsfr/dist/dsfr.min.css'; // ok
+  @import '@gouvminint/vue-dsfr/dist/vue-dsfr.css';
   @import '@public/css/custom.css';
   @import '~@gouvfr/dsfr/dist/utility/icons/icons.min.css'; // ok
   @import '~@gouvminint/vue-dsfr/dist/vue-dsfr.css';

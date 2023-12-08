@@ -178,7 +178,7 @@ export const tracksStore = defineStore('tracks', () => {
     })
   }
 
-  async function removeFurtherUsedTracks(srcTrackId: string) {
+  function removeFurtherUsedTracks(srcTrackId: string) {
     const lastTrack: UsedTrack | undefined = usedTracks.value.find((t: UsedTrack) => t.id === srcTrackId)
     // @ts-ignore
     const newArray = usedTracks.value.filter((t: UsedTrack) => t.step <= lastTrack?.step)

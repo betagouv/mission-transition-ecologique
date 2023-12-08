@@ -146,7 +146,7 @@
         </div>
 
         <!-- TRACK INFOS -->
-        <div 
+        <div
           v-if="step !== 1 && track?.info"
           :class="`${isTrackResults ? 'fr-col-12 fr-col-offset-md-1' : 'fr-col-12'}`">
           <p class="fr-mb-2v">
@@ -158,7 +158,7 @@
         </div>
 
         <!-- TRACK HINT -->
-        <div 
+        <div
           v-if="step !== 1 && track?.hint"
           :class="`${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`">
           <p
@@ -169,7 +169,7 @@
         </div>
 
         <!-- TRACK RESUME -->
-        <div 
+        <div
           v-if="step !== 1 && track?.resume"
           :class="`${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`">
           <p class="fr-mb-0">
@@ -342,37 +342,37 @@
           />
       </div>
 
-      <!-- SEND / NEXT BUTTON -->
-      <div
-        v-if="!noNeedForNext.includes(renderAs) && !isCompleted && !isTrackResults"
-        class="fr-grid-row fr-grid-row--gutters fr-pt-8v"
-        style="justify-content: start;">
-        <!-- BTN PREVIOUS -->
+        <!-- SEND / NEXT BUTTON -->
         <div
-          v-if="step > 1"
-          class="fr-col-6 fr-col-md-5 fr-col-lg-4 fr-col-xl-3">
-          <DsfrButton
-            class="fr-btn-fullwidth fr-btn-sm-fullwidth"
-            :label="choices.t('previous')"
-            icon="ri-arrow-left-line"
-            secondary
-            @click="backToPreviousTrack"
-          />
-        </div>
-        <!-- BTN NEXT -->
-        <div
-          class="fr-col-6 fr-col-md-5 fr-col-lg-4 fr-col-xl-3">
-          <DsfrButton
-            class="fr-btn-fullwidth fr-btn-sm-fullwidth"
-            :label="choices.t('next')"
-            :disabled="!selectedOptions.length"
-            icon="ri-arrow-right-line"
-            icon-right
-            @click="saveSelection"
-          />
+          v-if="!noNeedForNext.includes(renderAs) && !isCompleted && !isTrackResults"
+          class="fr-grid-row fr-grid-row--gutters fr-pt-8v"
+          style="justify-content: start;">
+          <!-- BTN PREVIOUS -->
+          <div
+            v-if="step > 1"
+            class="fr-col-6 fr-col-md-5 fr-col-lg-4 fr-col-xl-3">
+            <DsfrButton
+              class="fr-btn-fullwidth fr-btn-sm-fullwidth"
+              :label="choices.t('previous')"
+              icon="ri-arrow-left-line"
+              secondary
+              @click="backToPreviousTrack"
+            />
+          </div>
+          <!-- BTN NEXT -->
+          <div
+            class="fr-col-6 fr-col-md-5 fr-col-lg-4 fr-col-xl-3">
+            <DsfrButton
+              class="fr-btn-fullwidth fr-btn-sm-fullwidth"
+              :label="choices.t('next')"
+              :disabled="!selectedOptions.length"
+              icon="ri-arrow-right-line"
+              icon-right
+              @click="saveSelection"
+            />
+          </div>
         </div>
       </div>
-    </div>
 
     <!-- TRACK IMAGE RIGHT IF ANY -->
     <div
@@ -644,7 +644,7 @@ const saveSelection = () => {
     tracks.removeFurtherUsedTracks(props.trackId)
   }
 
-  scrollToTop(props.trackElement, props.disableWidget, props.trackId)
+  scrollToTop(props.trackElement, props.disableWidget,props.trackId)
 }
 
 const backToPreviousTrack = async () => {

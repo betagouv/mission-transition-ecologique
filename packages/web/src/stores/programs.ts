@@ -5,7 +5,8 @@ import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
 import type { ProgramData, TrackId } from '@/types/index'
-import { filterPrograms as filterWithPublicodes } from '@tee/backend/src/domain/eligibility'
+import { filterPrograms as filterWithPublicodes } from '@tee/backend/src/domain/filter-programs'
+import { sortPrograms } from '@tee/backend/src/domain/sort-programs'
 import type { QuestionnaireData } from '@tee/backend/src/domain/types'
 
 export const programsStore = defineStore('programs', () => {
@@ -47,7 +48,9 @@ export const programsStore = defineStore('programs', () => {
       throw new Error(progsFilteredResult.error.message)
     }
 
-    return progsFilteredResult.value
+    const sortedPrograms = sortPrograms(progsFilteredResult.value, conditions['user_help'])
+
+    return sortedPrograms
   }
 
   function setDataset(dataset: any) {
