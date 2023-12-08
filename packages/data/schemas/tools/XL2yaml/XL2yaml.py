@@ -392,16 +392,20 @@ if __name__ == "__main__":
     headerRowIndex = SKIP_XL_LINES + 1
     colNumbers = identifyColNumbers(input.row(headerRowIndex))
 
+    all_ids = set()
     for i, row in enumerate(input.rows):
         if i <= headerRowIndex:
             pass
-        if row[4] == 1:
-            id = forgeID(row[1])
-            try:
-                print(f"🖊️ {id}.yaml")
-                with open(os.path.join(OUTPUT_DIR, f"{id}.yaml"), "x") as f:
-                    f.write(printProgramYAML(row, colNumbers, id))
-            except Exception:
-                print(f"🖊️ {id}-2.yaml")
-                with open(os.path.join(OUTPUT_DIR, f"{id}-2.yaml"), "x") as f:
-                    f.write(printProgramYAML(row, colNumbers, f"{id}-2"))
+        if row[6] == 1:
+            id = row[1]
+            if id == "":
+                id = forgeID(row[3])
+
+            if id in all_ids:
+                raise Exception("Duplicate ID !")
+            all_ids.add(id)
+
+            all_ids.add(id)
+            print(f"🖊️ {id}.yaml")
+            with open(os.path.join(OUTPUT_DIR, f"{id}.yaml"), "r+") as f:
+                f.write(printProgramYAML(row, colNumbers, id))
