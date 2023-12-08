@@ -5,6 +5,7 @@ import random
 import re
 import sys
 import urllib.request
+from pathlib import Path
 from typing import Any
 
 import pylightxl
@@ -14,10 +15,6 @@ INPUT_XL_FILE = "./dispositifs.xlsx"
 WORKSHEET = "DataProd"
 SKIP_XL_LINES = 5
 OUTPUT_DIR = "../../../programs"
-
-
-def remove_namespace(s):
-    return "".join(s.split(" . ")[1:])
 
 
 CIBLE = "entreprise . est ciblée"
@@ -35,14 +32,30 @@ ALL = "toutes ces conditions"
 ANY = "une de ces conditions"
 
 
+def remove_namespace(s):
+    return "".join(s.split(" . ")[1:])
+
+
 def printProgramYAML(rawData, colNumbersByName, id):
     def get(name):
         value = rawData[colNumbersByName[name]]
         return curate(value)
 
+    try:
+        existingProgram = readFromYaml(Path(OUTPUT_DIR, f"{id}.yaml"))
+    except:  # noqa
+        existingProgram = {}
+
     prog = {}
-    prog["titre"] = (get("Titre"),)
-    prog["promesse"] = (get("Promesse"),)
+
+    # Only sets the key if key does not exist.
+    # if force = True, then replaces the key even if it exists
+    def set(key, value, overwrite=False):
+        if overwrite or key not in existingProgram:
+            prog[key] = value
+
+    set("titre", get("Titre"))
+    prog["promesse"] = get("Promesse")
     prog["description"] = get("Description courte")
 
     if get("Description longue"):
@@ -361,6 +374,12 @@ def thousandSep(value):
 
 def convertToYaml(d: dict):
     return yaml.safe_dump(d, allow_unicode=True, sort_keys=False)
+
+
+def readFromYaml(program_path: Path):
+    with open(program_path) as f:
+        program = yaml.safe_load(f)
+    return program
 
 
 if __name__ == "__main__":
