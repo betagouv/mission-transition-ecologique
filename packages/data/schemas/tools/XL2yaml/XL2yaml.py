@@ -58,38 +58,42 @@ def printProgramYAML(rawData, colNumbersByName, id):
         else:
             prog[key] = existingProgram[key]
 
-    set("titre", get("Titre"), True)
-    prog["promesse"] = get("Promesse")
-    prog["description"] = get("Description courte")
+    set("titre", get("Titre"))
+    set("promesse", get("Promesse"))
+    set("description", get("Description courte"))
 
     if get("Description longue"):
-        prog["description longue"] = get("Description longue")
+        set("description longue", get("Description longue"))
 
-    prog["illustration"] = tryAndGetIllustration(id)
-    prog["opérateur de contact"] = get("Opérateur de contact")
+    set("illustration", tryAndGetIllustration(id))
+    set("opérateur de contact", get("Opérateur de contact"))
 
     autresOp = csv_to_list(get("Autres opérateurs"))
     if len(autresOp) >= 1:
-        prog["autres opérateurs"] = autresOp
+        set("autres opérateurs", autresOp)
 
-    prog["url"] = get("Lien en savoir+")
-    prog["nature de l'aide"] = get("💸 Nature de l'aide").lower()
+    set("url", get("Lien en savoir+"))
+    set("nature de l'aide", get("💸 Nature de l'aide").lower())
     nat = prog["nature de l'aide"]
     if nat == "financement":
-        prog["montant du financement"] = get("💰 Montant de l'aide")
+        set("montant du financement", get("💰 Montant de l'aide"))
     if nat == "accompagnement" or nat == "formation":
-        prog["coût de l'accompagnement"] = get("💰 Coût reste à charge")
-        prog["durée de l'accompagnement"] = get("⏱Prestation (durée + étalement)")
+        set("coût de l'accompagnement", get("💰 Coût reste à charge"))
+        set("durée de l'accompagnement", get("⏱Prestation (durée + étalement)"))
     if nat == "prêt":
-        prog["durée du prêt"] = get("Etalement")
-        prog[
-            "montant du prêt"
-        ] = f'De {thousandSep(get("MontantMin aide"))} € à {thousandSep(get("MontantMax aide"))} €'
+        set("durée du prêt", get("Etalement"))
+        set(
+            "montant du prêt",
+            f'De {thousandSep(get("MontantMin aide"))} € à {thousandSep(get("MontantMax aide"))} €',
+        )
     if nat == "avantage fiscal":
-        prog["montant de l'avantage fiscal"] = get("💰 Montant de l'aide")
+        set("montant de l'avantage fiscal", get("💰 Montant de l'aide"))
 
-    prog["objectifs"] = makeObj(
-        [get(f"🎯 {i} objectif") for i in ["1er", "2ème", "3ème", "4ème", "5ème"]]
+    set(
+        "objectifs",
+        makeObj(
+            [get(f"🎯 {i} objectif") for i in ["1er", "2ème", "3ème", "4ème", "5ème"]]
+        ),
     )
 
     pc = {}
@@ -136,17 +140,19 @@ def printProgramYAML(rawData, colNumbersByName, id):
     if len(eligibilite) != 0:
         cible = [remove_namespace(ELIGIBLE)] + cible
 
-    prog["publicodes"] = {}
+    publicodes_obj = {}
     # Si pas de condition, on affiche toujours
     if len(cible) == 0:
-        prog["publicodes"][CIBLE] = "oui"
+        publicodes_obj[CIBLE] = "oui"
     else:
-        prog["publicodes"][CIBLE] = {ALL: cible}
+        publicodes_obj[CIBLE] = {ALL: cible}
 
     if len(eligibilite) != 0:
-        prog["publicodes"][ELIGIBLE] = {ALL: eligibilite}
+        publicodes_obj[ELIGIBLE] = {ALL: eligibilite}
 
-    prog["publicodes"] |= pc
+    publicodes_obj |= pc
+
+    set("publicodes", publicodes_obj)
 
     return convertToYaml(prog)
 
