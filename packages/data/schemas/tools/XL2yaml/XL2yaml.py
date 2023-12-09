@@ -4,7 +4,6 @@ import os
 import random
 import re
 import sys
-import urllib.request
 from pathlib import Path
 from typing import Any
 
@@ -65,7 +64,7 @@ def printProgramYAML(rawData, colNumbersByName, id):
     if get("Description longue"):
         set("description longue", get("Description longue"))
 
-    set("illustration", tryAndGetIllustration(id))
+    set("illustration", randomIllustration())
     set("opérateur de contact", get("Opérateur de contact"))
 
     autresOp = csv_to_list(get("Autres opérateurs"))
@@ -201,23 +200,6 @@ def readXL(path, worksheet):
 
 def identifyColNumbers(header: list[Any]):
     return {h: i for h, i in zip(header, range(len(header)))}
-
-
-def tryAndGetIllustration(id: str):
-    url = f"https://raw.githubusercontent.com/betagouv/transition-ecologique-entreprises-widget/preprod/packages/data/programs/{id}.yaml"
-    try:
-        with urllib.request.urlopen(url) as response:
-            program_data = response.read().decode(
-                response.headers.get_content_charset()
-            )
-    except:  # noqa
-        return randomIllustration()
-
-    illustrationLine = re.search(r"\nillustration: ([^\n]*)\n", program_data)
-    if illustrationLine is None:
-        return randomIllustration()
-    illustration = illustrationLine.group(1)
-    return illustration
 
 
 def randomIllustration():
