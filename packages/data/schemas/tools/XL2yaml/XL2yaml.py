@@ -35,7 +35,7 @@ def remove_namespace(s):
     return "".join(s.split(" . ")[1:])
 
 
-def printProgramYAML(rawData, colNumbersByName, id):
+def assembleProgramYAML(rawData, colNumbersByName, id):
     def get(name):
         value = rawData[colNumbersByName[name]]
         return curate(value)
@@ -88,12 +88,10 @@ def printProgramYAML(rawData, colNumbersByName, id):
     if nat == "avantage fiscal":
         set("montant de l'avantage fiscal", get("💰 Montant de l'aide"))
 
-    set(
-        "objectifs",
-        makeObj(
-            [get(f"🎯 {i} objectif") for i in ["1er", "2ème", "3ème", "4ème", "5ème"]]
-        ),
+    objectifs = makeObj(
+        [get(f"🎯 {i} objectif") for i in ["1er", "2ème", "3ème", "4ème", "5ème"]]
     )
+    set("objectifs", objectifs)
 
     pc = {}
     cible = []  # Accumulateur des règles qui font parti du ciblage.
@@ -369,7 +367,7 @@ def convertToYaml(d: dict):
 
 
 def readFromYaml(program_path: Path):
-    with open(program_path) as f:
+    with open(program_path, "r") as f:
         program = yaml.safe_load(f)
     return program
 
@@ -397,7 +395,7 @@ if __name__ == "__main__":
                 raise Exception("Duplicate ID !")
             all_ids.add(id)
 
-            all_ids.add(id)
             print(f"🖊️ {id}.yaml")
-            with open(os.path.join(OUTPUT_DIR, f"{id}.yaml"), "r+") as f:
-                f.write(printProgramYAML(row, colNumbers, id))
+            prog = assembleProgramYAML(row, colNumbers, id)
+            with open(os.path.join(OUTPUT_DIR, f"{id}.yaml"), "w") as f:
+                f.write(prog)
