@@ -64,6 +64,11 @@ def assembleProgramYAML(rawData, colNumbersByName, id):
     if get("Description longue"):
         set("description longue", get("Description longue"))
 
+    if valid(get("DISPOSITIF_DATE_DEBUT")):
+        set("début de validité", get("DISPOSITIF_DATE_DEBUT"))
+    if valid(get("DISPOSITIF_DATE_FIN")):
+        set("fin de validité", get("DISPOSITIF_DATE_FIN"))
+
     set("illustration", randomIllustration())
     set("opérateur de contact", get("Opérateur de contact"))
 

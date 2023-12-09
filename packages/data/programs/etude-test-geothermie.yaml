@@ -11,6 +11,8 @@ description longue: La géothermie est une source d’énergie renouvelable qui 
   est essentiel de réaliser des tests de réponse thermique. Ceux-ci permettent notamment
   d’évaluer la conductivité thermique du sol et de dimensionner correctement les installations
   géothermiques.
+début de validité: 2023/01/01
+fin de validité: 2023/12/31
 illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/test-reponse-thermique-terrain-geothermie
