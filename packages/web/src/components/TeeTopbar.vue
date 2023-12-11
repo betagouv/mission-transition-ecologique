@@ -1,13 +1,10 @@
 <template>
   <!-- DEBUGGING -->
-  <div
-    v-if="debug"
-    class="vue-debug"
-    >
+  <div v-if="debug" class="vue-debug">
     <h5>DEBUG - TeeTopbar</h5>
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
       <div class="fr-col-12">
-        <h6 class="fr-mb-1v"> usedTracks :</h6>
+        <h6 class="fr-mb-1v">usedTracks :</h6>
         <pre><code>{{ usedTracks }} </code></pre>
       </div>
     </div>
@@ -16,16 +13,12 @@
   <!-- LIST OF USED TRACKS + MODIFY CHOICE -->
   <!-- fr-ri-check-fill -->
   <div class="fr-grid-row">
-    <div
-      v-for="usedTrack in usedTracks"
-      :key="usedTrack.id"
-      @click="backToTrack(usedTrack.id)">
+    <div v-for="usedTrack in usedTracks" :key="usedTrack.id" @click="backToTrack(usedTrack.id)">
       <!-- <code>
         {{ usedTrack.completed }}
       </code> -->
-      <p
-        :class="`fr-tag fr-tag--sm ${usedTrack.completed ?  'fr-tag-clickable' : 'fr-tag-selected'} fr-mr-1v fr-mb-1v`">
-        {{ tracks.getTrackTitle(usedTrack.id, choices.lang) }}
+      <p :class="`fr-tag fr-tag--sm ${usedTrack.completed ? 'fr-tag-clickable' : 'fr-tag-selected'} fr-mr-1v fr-mb-1v`">
+        {{ tracks.getTrackTitle(usedTrack.id as TrackId, choices.lang) }}
       </p>
       <!-- <div
         v-show="usedTrack.step > 1"
@@ -52,20 +45,16 @@
 </template>
 
 <script setup lang="ts">
-
-// import { computed } from 'vue'
-
 import { tracksStore } from '../stores/tracks'
 import { choicesStore } from '../stores/choices'
-
-// @ts-ignore
 import type { UsedTrack } from '@/types/index'
+import { TrackId } from '@/types/index'
 
 interface Props {
-  usedTracks: UsedTrack[],
-  debug?: boolean,
+  usedTracks: UsedTrack[]
+  debug?: boolean
 }
-const props = defineProps<Props>()
+defineProps<Props>()
 
 const tracks = tracksStore()
 const choices = choicesStore()
@@ -75,10 +64,10 @@ const choices = choicesStore()
 //   return completedTracks
 // })
 
-const backToTrack = async (trackId: string) => {
+const backToTrack = (trackId: string) => {
   // console.log()
   // console.log('TeeTopbar > backToTrack > trackId :', trackId)
-  await tracks.setUsedTracksAsNotCompleted(trackId)
-  await tracks.removeFurtherUsedTracks(trackId)
+  tracks.setUsedTracksAsNotCompleted(trackId)
+  tracks.removeFurtherUsedTracks(trackId)
 }
 </script>

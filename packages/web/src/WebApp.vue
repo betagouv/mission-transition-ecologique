@@ -1,5 +1,5 @@
 <template>
-  <div ref="trackElement" id="app">
+  <div id="app" ref="trackElement">
     <!-- HEADER -->
     <TeeHeader />
 
@@ -27,12 +27,10 @@ import { navigationStore } from './stores/navigation'
 
 import { publicPath, programsFromJson } from './utils/global'
 
-// @ts-ignore
 import TeeHeader from './components/TeeHeader.vue'
-// @ts-ignore
 import TeeMatomo from './components/TeeMatomo.vue'
-// @ts-ignore
 import TeeAppFooter from './components/TeeAppFooter.vue'
+import type { ProgramData } from '@/types'
 
 const choices = choicesStore()
 const programs = programsStore()
@@ -44,11 +42,11 @@ const route = useRoute()
 interface Props {
   needTracksReset?: boolean
 }
-const props = defineProps<Props>()
+defineProps<Props>()
 
 onBeforeMount(() => {
   choices.setPublicPath(publicPath)
-  programs.setDataset(programsFromJson)
+  programs.setDataset(programsFromJson as ProgramData[])
 })
 
 onMounted(async () => {

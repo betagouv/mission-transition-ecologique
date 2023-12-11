@@ -1,41 +1,30 @@
 <template>
-  <div
-    v-for="c in content"
-    :key="c.badge"
-    class="fr-grid-row fr-grid-row-gutters fr-my-20v">
-    <div 
-      :class="`fr-col fr-col-sm-12 fr-col-md-4 fr-sm-hide ${c.imgRight ? 'fr-col-offset-1' : ''}`"
-      >
+  <div v-for="c in content" :key="c.badge" class="fr-grid-row fr-grid-row-gutters fr-my-20v">
+    <div :class="`fr-col fr-col-sm-12 fr-col-md-4 fr-sm-hide ${c.imgRight ? 'fr-col-offset-1' : ''}`">
       <figure
         class="fr-content-media fr-content-media--md tee-home-img fr-my-0"
-        role="group" 
-        aria-label="© Transition Ecologique des entreprises">
+        role="group"
+        aria-label="© Transition Ecologique des entreprises"
+      >
         <div class="fr-content-media__img fr-ratio-32x9">
-          <img 
-            class="fr-responsive-img" 
-            :src="c.img"
-            :alt="`TEE - ${ c.badge }`" />
+          <img class="fr-responsive-img" :src="c.img" :alt="`TEE - ${c.badge}`" />
         </div>
       </figure>
     </div>
-    <div 
-      :class="`fr-col fr-col-sm-12 fr-col-md-7 ${!c.imgRight ? 'fr-col-offset-1' : ''}`"
-      :style="c.imgRight ? 'order: -1;' : ''"
-      >
+    <div :class="`fr-col fr-col-sm-12 fr-col-md-7 ${!c.imgRight ? 'fr-col-offset-1' : ''}`" :style="c.imgRight ? 'order: -1;' : ''">
       <figure
         class="fr-content-media fr-sm-show fr-md-hide fr-content-media--md tee-home-img fr-my-1"
-        role="group" 
-        aria-label="© Transition Ecologique des entreprises">
+        role="group"
+        aria-label="© Transition Ecologique des entreprises"
+      >
         <div class="fr-content-media__img fr-ratio-32x9">
-          <img 
-            class="fr-responsive-img" 
-            :src="c.img"
-            :alt="`TEE - ${ c.badge }`" />
+          <img class="fr-responsive-img" :src="c.img" :alt="`TEE - ${c.badge}`" />
         </div>
       </figure>
       <p
         class="fr-badge fr-mb-6v fr-mt-4v fr-sm-hide"
-        :style="`background-color: ${ c.badgeColor }; ${ c.badgeTextColor ? 'color: ' + c.badgeTextColor : ''}`">
+        :style="`background-color: ${c.badgeColor}; ${c.badgeTextColor ? 'color: ' + c.badgeTextColor : ''}`"
+      >
         {{ c.badge }}
       </p>
       <h1>
@@ -44,21 +33,14 @@
       <p class="fr-sm-hide">
         {{ c.text }}
       </p>
-      <router-link
-        class="tee-router-link"
-        to="/questionnaire">
-        <button 
-          class="fr-link fr-text--bold fr-link--icon-right fr-icon-arrow-right-line"
-          aria-disabled="false">
-          Je me lance
-        </button>
+      <router-link class="tee-router-link" to="/questionnaire">
+        <button class="fr-link fr-text--bold fr-link--icon-right fr-icon-arrow-right-line" aria-disabled="false">Je me lance</button>
       </router-link>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-
 const content = [
   {
     badge: '⚡️ Gestion énergétique',
@@ -66,14 +48,14 @@ const content = [
     title: ' Diminuer votre facture d’éléctricité',
     img: '/images/home/electric.svg',
     imgRight: false,
-    text: "Le prix de l’énergie ne cesse d’augmenter. \
+    text: 'Le prix de l’énergie ne cesse d’augmenter. \
         L’efficacité énergétique est un axe à court terme \
         vous permettant de générer des économies d’énergie, \
         d’optimiser vos consommations énergétiques, \
         de réduire vos émissions carbones et surtout d’assurer \
         votre rentabilité. Des dizaines d’actions rapides \
         peuvent être mises en places dès à présent pour \
-        réduire la consommation d’électricité ou de gaz d’une entreprise. "
+        réduire la consommation d’électricité ou de gaz d’une entreprise. '
   },
   {
     badge: '👷‍♀️ Bâtiment durable',
@@ -94,14 +76,14 @@ const content = [
     title: 'Optez pour des modes de transport moins polluants',
     img: '/images/home/mobility.svg',
     imgRight: false,
-    text:  "L’objectif est de mettre en place des solutions \
+    text: 'L’objectif est de mettre en place des solutions \
         pour favoriser le recours à des modes de transport \
         alternatifs et de limiter les déplacements et les \
         émissions de Gaz à Effet de Serre (GES). \
         Pour s’inscrire pleinement dans la transition écologique, \
         il convient à chaque entreprise d’intégrer cette \
         réflexion à sa stratégie. Il existe des aides pour\
-        vous accompagner dans sa construction et le financement de sa mise en place ! "
+        vous accompagner dans sa construction et le financement de sa mise en place ! '
   },
   {
     badge: '👷‍♀️ Gestion de l’eau',
@@ -109,10 +91,10 @@ const content = [
     title: 'Faire des économies sur vos consommations d’eau',
     img: '/images/home/water.png',
     imgRight: true,
-    text: "L’eau a un coût, qui risque d’augmenter dans les années à venir. \
+    text: 'L’eau a un coût, qui risque d’augmenter dans les années à venir. \
         La réglementation peut imposer à certaines activités de mettre \
         en place une réutilisation de l’eau, des circuits fermés. \
-        Économiser dès maintenant, étudier les alternatives, c’est anticiper l’avenir. "
+        Économiser dès maintenant, étudier les alternatives, c’est anticiper l’avenir. '
   }
 ]
 </script>

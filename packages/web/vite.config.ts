@@ -1,10 +1,7 @@
 import { fileURLToPath, URL } from 'node:url'
-// import { resolve } from 'path'
-// import postcssLit from 'rollup-plugin-postcss-lit';
-
 import { defineConfig, loadEnv } from 'vite'
+import type { ServerOptions } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import eslintPlugin from 'vite-plugin-eslint'
 
 console.log()
 console.log('Starting ...')
@@ -18,8 +15,20 @@ console.log('vite.config > mode : ', mode)
 const rawEnv = loadEnv(mode, process.cwd())
 console.log('vite.config > rawEnv : ', rawEnv)
 
+const isProd = mode === 'production'
+
+const plugins = async () => {
+  const basePlugins = [vue()]
+  if (isProd) {
+    return basePlugins
+  } else {
+    const eslintPlugin = await import('vite-plugin-eslint')
+    return [...basePlugins, eslintPlugin.default()]
+  }
+}
+
 // VITE CONFIG
-const viteServer: any = {
+const viteServer: ServerOptions = {
   // host: 'localhost',
   host: '0.0.0.0'
   // port: 4242,
@@ -31,10 +40,8 @@ const viteServer: any = {
 // https://vitejs.dev/config/
 export default defineConfig({
   server: viteServer,
-  plugins: [
-    vue(),
-    eslintPlugin(),
-  ],
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+  plugins: [plugins()],
   build: {
     rollupOptions: {
       input: {

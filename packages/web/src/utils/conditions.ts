@@ -1,7 +1,7 @@
 import type { ConditionTrack, NextTrackRule } from '@/types'
 import { ConditionOperators } from '@/types'
 
-export const CheckConditions = ( data: any, conditions: ConditionTrack[], strict: boolean = false ) => {
+export const CheckConditions = (data: any, conditions: ConditionTrack[], strict: boolean = false) => {
   // console.log()
   // console.log('utils > conditions > CheckConditions > data :', data)
   // console.log('...')
@@ -13,8 +13,10 @@ export const CheckConditions = ( data: any, conditions: ConditionTrack[], strict
     const condOperator = condition.operator
     // console.log('utils > conditions > CheckConditions > condOperator :', condOperator)
     const condField: string = condition.type || ''
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-assignment
     const dataValue = data[condField]
     // console.log('utils > conditions > CheckConditions > dataValue :', dataValue)
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const condVal = condition.value
     let condBool = !strict
     if (dataValue) {
@@ -29,9 +31,12 @@ export const CheckConditions = ( data: any, conditions: ConditionTrack[], strict
           condBool = condition.value === dataValue
           break
         case ConditionOperators.or:
-          condBool = dataValue.includes('*') || condVal.includes('*')
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-call
+          condBool = (dataValue.includes('*') || condVal.includes('*')) as boolean
           if (!condBool) {
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-return
             const intersection = condVal.filter((v: any) => dataValue.includes(v))
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-assignment
             condBool = dataValue.includes('*') || intersection.length
           }
           break
@@ -41,10 +46,10 @@ export const CheckConditions = ( data: any, conditions: ConditionTrack[], strict
     boolArray.push(condBool)
   })
 
-  return boolArray.every(b => !!b)
+  return boolArray.every((b) => !!b)
 }
 
-export const CheckNextTrackRules = ( data: any, rules: NextTrackRule[] ) => {
+export const CheckNextTrackRules = (data: any, rules: NextTrackRule[]) => {
   // console.log()
   // console.log('utils > conditions > CheckNextTrackRules > data :', data)
   // console.log('...')
@@ -56,5 +61,5 @@ export const CheckNextTrackRules = ( data: any, rules: NextTrackRule[] ) => {
     boolArray.push(bool)
   })
 
-  return boolArray.every(b => !!b)
+  return boolArray.every((b) => !!b)
 }

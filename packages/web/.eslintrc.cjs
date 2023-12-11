@@ -22,7 +22,11 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     ecmaVersion: 'latest',
   },
+  rules: {
+    "@typescript-eslint/no-explicit-any": "off",
+  },
   ignorePatterns: [
+    '../backend/src/domain/eligibility.ts',
     'dist/*',
     'coverage/*',
     'images/*',
@@ -33,5 +37,6 @@ module.exports = {
     '.vscode/*',
     'README.md',
     'index.html',
+    '.eslintrc.cjs',
   ],
 }

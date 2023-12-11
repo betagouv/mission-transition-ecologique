@@ -4,18 +4,17 @@ import { defineStore } from 'pinia'
 import { trackEvent } from '@/utils/matomo'
 
 export const analyticsStore = defineStore('analytics', () => {
-  
   // language selection
   const scriptUniqueId = ref('gov-aid-tree-matomo-script')
   const allowAnalytics = ref(false)
-  const matomoServer = ref()
-  const matomoSiteId = ref()
-  const domain = ref()
+  const matomoServer = ref<string>()
+  const matomoSiteId = ref<number>()
+  const domain = ref<string>()
   const hasTrackAllOutlinks = ref(false)
   const matomoIsSet = ref(false)
 
   // actions
-  function setAnalyticsServer(server: string, appId: string, deactivate: boolean = false, trackAllOutlinks: boolean = false) {
+  function setAnalyticsServer(server: string, appId: number, deactivate: boolean = false, trackAllOutlinks: boolean = false) {
     matomoServer.value = server
     matomoSiteId.value = appId
     hasTrackAllOutlinks.value = trackAllOutlinks
@@ -29,23 +28,20 @@ export const analyticsStore = defineStore('analytics', () => {
     matomoIsSet.value = allowAnalytics.value && scriptIsSet
   }
 
-  function sendEvent (action: any, name: any = null, value: any = null) {
+  function sendEvent(action: string, name: string | null = null, value: string | number | null = null) {
     // console.log()
     // console.log('analytics > sendEvent > action :', action)
     // console.log('analytics > sendEvent > name :', name)
     // console.log('analytics > sendEvent > value :', value)
     if (matomoIsSet.value) {
-      // Track by domain
-      trackEvent(
-        'from_domain',
-        domain.value
-      )
-      // Track by action
-      trackEvent(
-        action,
-        name,
-        value
-      )
+      if (domain.value) {
+        // Track by domain
+        trackEvent('from_domain', domain.value)
+      }
+      if (name && value) {
+        // Track by action
+        trackEvent(action, name, value)
+      }
     }
   }
 

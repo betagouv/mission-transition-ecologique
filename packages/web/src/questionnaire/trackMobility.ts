@@ -1,12 +1,5 @@
 import type { Track } from '@/types'
-import {
-  HasInputOptions,
-  TrackComponents,
-  TrackId,
-  TransportModes,
-  YesNo,
-  allTransportModes
-} from '@/types'
+import { HasInputOptions, TrackComponents, TrackId, TransportModes, YesNo, allTransportModes } from '@/types'
 
 export const mobility: Track = {
   id: TrackId.Mobility,

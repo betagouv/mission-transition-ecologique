@@ -4,14 +4,13 @@
     service-description="Allier écologie avec économies !"
     home-to="/"
     :quick-links="quickLinks"
-    logo-text='RÉPUBLIQUE<br>FRANÇAISE'
+    logo-text="RÉPUBLIQUE<br>FRANÇAISE"
     :show-search="false"
     :operator-img-src="`${choices.publicPath}images/logos/mission-transition-logo-alone.png`"
-    operator-img-alt='Transition Ecologique des Entreprises - ADEME'
-    operator-img-style='width:3.5rem;'
-    >
+    operator-img-alt="Transition Ecologique des Entreprises - ADEME"
+    operator-img-style="width:3.5rem;"
+  >
   </DsfrHeader>
-
 </template>
 
 <script setup lang="ts">
@@ -35,5 +34,4 @@ const quickLinks = [
     }
   }
 ]
-
 </script>

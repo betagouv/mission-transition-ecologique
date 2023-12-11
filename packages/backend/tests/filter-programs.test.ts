@@ -9,7 +9,7 @@ const rulesBoilerplate = {
   [FILTERING_RULE_NAME]: 'entreprise . effectif > 0'
 }
 
-const makeProgram = (rules: Object) => makeProgramHelper({ rules: rules })
+const makeProgram = (rules: object) => makeProgramHelper({ rules: rules })
 
 // As we do not use ES6 modules, I could not find more elegant way to import Ok
 type Ok<T, E> = ResultNS.Ok<T, E>

@@ -6,10 +6,10 @@ export const contactForm: Track = {
   title: { fr: 'Formulaire' },
   label: { fr: 'Je prends contact' },
   interface: {
-    component: TrackComponents.Form,
+    component: TrackComponents.Form
   },
   behavior: {
-    multipleChoices: false,
+    multipleChoices: false
   },
   next: {
     default: TrackId.Results
@@ -21,39 +21,39 @@ export const contactForm: Track = {
       fields: [
         {
           id: 'name',
-          label: { fr: 'Prénom et Nom'},
+          label: { fr: 'Prénom et Nom' },
           hint: { fr: 'Camille Dujardin' },
           required: true,
           type: TrackFieldType.Text
         },
         {
           id: 'tel',
-          label: { fr: 'Téléphone'},
+          label: { fr: 'Téléphone' },
           hint: { fr: '06 05 04 03 02' },
           required: true,
           type: TrackFieldType.Text
         },
         {
           id: 'email',
-          label: { fr: 'Email'},
+          label: { fr: 'Email' },
           hint: { fr: 'camille@dujardin.fr' },
           required: false,
           type: TrackFieldType.Email
         },
         {
           id: 'siret',
-          label: { fr: 'SIRET de votre entreprise'},
+          label: { fr: 'SIRET de votre entreprise' },
           hint: { fr: '385 290 309 00454' },
           required: false,
           type: TrackFieldType.Text
         },
         {
           id: 'needs',
-          label: { fr: 'Quel est votre besoin ?'},
+          label: { fr: 'Quel est votre besoin ?' },
           hint: { fr: 'Je sais pas...' },
           required: false,
           type: TrackFieldType.Textarea
-        },
+        }
       ],
       next: {
         default: TrackId.Results

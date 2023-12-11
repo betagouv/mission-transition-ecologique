@@ -1,35 +1,34 @@
 <template>
   <!-- DEBUGGING -->
-  <div
-    v-if="debug"
-    class="vue-debug" 
-    >
+  <div v-if="debug" class="vue-debug">
     <h5>DEBUG - TeeStepper</h5>
-    <div 
-      v-if="true"
-      class="fr-grid-row fr-grid-row--gutters">
+    <div v-if="true" class="fr-grid-row fr-grid-row--gutters">
       <div class="fr-col-3">
-        <h6 class="fr-mb-1v"> choices.lang : <code>{{ choices.lang }} </code></h6>
-        <h6 class="fr-mb-1v"> currentStep : <code>{{ currentStep }} </code></h6>
-      </div>
-  
-      <div class="fr-col-3">
-        <h6 class="fr-mb-1v"> stepsLen : <code>{{ stepsLen }} </code></h6>
-        <h6 class="fr-mb-1v"> isLastStep : <code>{{ isLastStep }} </code></h6>
+        <h6 class="fr-mb-1v">
+          choices.lang : <code>{{ choices.lang }} </code>
+        </h6>
+        <h6 class="fr-mb-1v">
+          currentStep : <code>{{ currentStep }} </code>
+        </h6>
       </div>
 
       <div class="fr-col-3">
         <h6 class="fr-mb-1v">
-          stepsArray :
+          stepsLen : <code>{{ stepsLen }} </code>
         </h6>
-        <code>{{ stepsArray  }}</code>
+        <h6 class="fr-mb-1v">
+          isLastStep : <code>{{ isLastStep }} </code>
+        </h6>
       </div>
 
       <div class="fr-col-3">
-        <h6 class="fr-mb-1v">
-          stepsArrayTranslated :
-        </h6>
-        <code>{{ stepsArrayTranslated  }}</code>
+        <h6 class="fr-mb-1v">stepsArray :</h6>
+        <code>{{ stepsArray }}</code>
+      </div>
+
+      <div class="fr-col-3">
+        <h6 class="fr-mb-1v">stepsArrayTranslated :</h6>
+        <code>{{ stepsArrayTranslated }}</code>
       </div>
     </div>
   </div>
@@ -51,19 +50,15 @@
 </template>
 
 <script setup lang="ts">
-
 import { computed } from 'vue'
-
-// @ts-ignore
 import type { Dict } from '@/types/index'
-
 import { tracksStore } from '../stores/tracks'
 import { choicesStore } from '../stores/choices'
 
 interface Props {
-  stepsArray: string[],
-  currentStep: number,
-  debug?: boolean,
+  stepsArray: string[]
+  currentStep: number
+  debug?: boolean
 }
 const props = defineProps<Props>()
 
@@ -89,5 +84,4 @@ const stepsLen = computed(() => {
 const isLastStep = computed(() => {
   return stepsLen.value === props.currentStep
 })
-
 </script>
