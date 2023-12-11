@@ -21,7 +21,7 @@ objectifs:
 - La demande de prêt se réalise 100% en ligne en 15 minutes.
 conditions d'éligibilité:
   taille de l'entreprise:
-  - Toutes tailles
+  - Moins de 50 salariés
   - Éligible aux micro-entreprises
 publicodes:
   entreprise . est ciblée:
