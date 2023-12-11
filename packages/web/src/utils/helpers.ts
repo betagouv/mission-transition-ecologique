@@ -97,7 +97,7 @@ export const setProperty = (obj: object, path: string, value: any) => {
 
 export const findInObjectsArray = (objectsArray: object[], id: string, all: boolean = false) => {
   const arrayFlat: Record<string, unknown> = Object.assign({}, ...objectsArray) as Record<string, unknown>
-  return  all ? arrayFlat : arrayFlat[id]
+  return all ? arrayFlat : arrayFlat[id]
 }
 
 export const groupBy = <T>(objectsArray: T[], key: keyof T): Record<string, T[]> => {
@@ -116,8 +116,6 @@ export const replaceAll = (value: any, cleaner: CleanerReplaceAll) => {
 }
 
 export const findFromRefs = (value: string, cleaner: CleanerFromJson) => {
-  let val = value
-
   const findInRef = cleaner.findInRef
   const fromField = cleaner.findFromField
   const targetField = cleaner.retrieveFromField
@@ -285,9 +283,7 @@ export const scrollToTop = (element: Element, disableWidget: boolean) => {
   }
 }
 
-export const scrollToId = (
-  elementId: string
-) => {
+export const scrollToId = (elementId: string) => {
   setTimeout(() => {
     const element = document.getElementById(elementId)
     element?.scrollIntoView()

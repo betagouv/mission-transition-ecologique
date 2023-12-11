@@ -520,9 +520,7 @@ const getButtonIcon = (index: number) => {
 watch(
   () => props.isCompleted,
   (next) => {
-
     if (!next) {
-
       resetSelections()
       tracks.updateUsedTracks(props.trackId, props.step, next, selectedOptions.value)
     }
@@ -541,7 +539,6 @@ const saveSelection = () => {
   // SWITCH NEXT TRACK DEPENDING ON CONDITIONS
   // NOTE : could be deplaced in store ?
   if (nextExceptions) {
-
     // get used tracks values
     const trackValues: any[] = tracks.getAllUsedTracksValues
 

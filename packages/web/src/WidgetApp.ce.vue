@@ -185,7 +185,6 @@
 </template>
 
 <script setup lang="ts">
-
 // CONSOLE LOG TEMPLATE
 // console.log(`WidgetApp > FUNCTION_NAME > MSG_OR_VALUE :`)
 
@@ -319,7 +318,7 @@ const setupFromUrl = async () => {
   }
   */
   // const queryTracksRaw = unfoldQueries(route.query)
-    // TO DO
+  // TO DO
   // tracks.populateUsedTracksFromQuery(route.query)
   // nav.populateFromQuery(route.query)
   // parse url to get detail program (if any)
@@ -338,7 +337,6 @@ const setupFromUrl = async () => {
 }
 
 onBeforeMount(() => {
-
   setupGlobal()
 
   // inject style link in html head if not present

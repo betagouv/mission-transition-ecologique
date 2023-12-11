@@ -1,7 +1,5 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`utils.global > FUNCTION_NAME > MSG_OR_VALUE :`)
-
-// @ts-ignore
 import jsonDataset from '../../public/data/generated/dataset_out.json'
 import type { ImportMetaEnv } from '@/env'
 

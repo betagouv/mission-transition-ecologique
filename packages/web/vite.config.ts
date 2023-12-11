@@ -14,7 +14,7 @@ console.log('vite.config ...')
 // console.log('vite.config > mode : ', mode)
 // const rawEnv = loadEnv(mode, process.cwd())
 // console.log('vite.config > rawEnv : ', rawEnv)
-
+const mode = process.env.NODE_ENV ?? 'development'
 const isProd = mode === 'production'
 
 const plugins = async () => {

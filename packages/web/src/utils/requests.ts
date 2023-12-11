@@ -15,7 +15,6 @@ export const sendApiRequest = async (
   props: any = undefined,
   lang: string = 'fr'
 ) => {
-
   const url = callback.url
   const method = callback.method
   const headers = buildHeaders(callback)

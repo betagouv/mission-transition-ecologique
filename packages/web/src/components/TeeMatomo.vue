@@ -73,7 +73,6 @@ onBeforeMount(() => {
 
 onMounted(() => {
   if (!matomoScriptElem && analytics.allowAnalytics) {
-
     matomoScriptElem = document.createElement('script')
     matomoScriptElem.setAttribute('id', analytics.scriptUniqueId)
     matomoScriptElem.setAttribute('type', 'text/javascript')
