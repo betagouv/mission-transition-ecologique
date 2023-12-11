@@ -85,7 +85,8 @@ conditions d'éligibilité:
   - Toutes tailles
   - Éligible aux micro-entreprises
   secteur d'activité:
-  - Tous secteurs d'activité
+  - Transporteurs routiers (marchandises, grossistes, voyageurs), chargeurs et commissionnaires
+    de transport
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

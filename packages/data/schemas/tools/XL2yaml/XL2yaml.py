@@ -5,7 +5,7 @@ import random
 import re
 import sys
 from pathlib import Path
-from typing import Any
+from typing import Any, Optional
 
 import pylightxl
 import yaml
@@ -110,7 +110,9 @@ def assembleProgramYAML(rawData, colNumbersByName, id):
     eligibility_conditions[ELIGIBILITY_SIZE].append(eligibility_size(get))
     eligibility_conditions[ELIGIBILITY_SIZE].append(eligibility_microentreprise(get))
 
-    eligibility_conditions[ELIGIBILITY_SECTOR].append("Tous secteurs d'activité")
+    eligibility_conditions[ELIGIBILITY_SECTOR].append(eligibility_sector(get))
+    if eligibility_naf(get):
+        eligibility_conditions[ELIGIBILITY_SECTOR].append(eligibility_naf(get))
 
     set("conditions d'éligibilité", eligibility_conditions, True)
 
@@ -276,6 +278,20 @@ def eligibility_microentreprise(get) -> str:
         else:
             raise Exception("Valeur non interprétable (colonne microEntre)")
     return "Éligible aux micro-entreprises"
+
+
+def eligibility_sector(get) -> str:
+    es = get("👨‍🍳Eligibilité Sectorielle")
+    if valid(es):
+        return es
+    raise Exception("Condition d'éligibilité sectorielle manquante")
+
+
+def eligibility_naf(get) -> Optional[str]:
+    en = get("Eligibilité Naf")
+    if valid(en):
+        return en
+    return None
 
 
 def pc_effectifConstraint(effmin, effmax):

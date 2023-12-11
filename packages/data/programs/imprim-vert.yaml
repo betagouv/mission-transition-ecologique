@@ -32,7 +32,9 @@ conditions d'éligibilité:
   - TPE et PME
   - Éligible aux micro-entreprises
   secteur d'activité:
-  - Tous secteurs d'activité
+  - Activités d'imprimerie, reproduction et arts graphiques
+  - 'Codes NAF concernés : De 1712ZZ à 1724ZZ | 5819ZP | 1711ZZ | 1721AZZ | 1721BZ|
+    1812ZA| 1814ZZ| 1721CZ 1722ZZ|1729ZZ| 1812ZB| 1813ZA|1813ZB| 1813ZC| 1820ZZ'
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

@@ -35,7 +35,7 @@ conditions d'éligibilité:
   - Toutes tailles
   - Éligible aux micro-entreprises
   secteur d'activité:
-  - Tous secteurs d'activité
+  - Entreprise propriétaire forestier
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

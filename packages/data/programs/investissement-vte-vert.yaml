@@ -31,7 +31,7 @@ conditions d'éligibilité:
   - PME et ETI
   - Non éligible aux micro-entreprises
   secteur d'activité:
-  - Tous secteurs d'activité
+  - Tous secteurs d’activité
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

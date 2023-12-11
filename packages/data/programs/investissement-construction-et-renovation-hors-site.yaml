@@ -48,7 +48,7 @@ conditions d'éligibilité:
   - Toutes tailles
   - Éligible aux micro-entreprises
   secteur d'activité:
-  - Tous secteurs d'activité
+  - Entreprises de préfabrication ou d'assemblage
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

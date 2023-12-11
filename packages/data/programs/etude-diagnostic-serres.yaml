@@ -30,7 +30,11 @@ conditions d'éligibilité:
   - Plus de 250 salariés
   - Éligible aux micro-entreprises
   secteur d'activité:
-  - Tous secteurs d'activité
+  - Structures agricoles
+  - 'Codes NAF concernés : section A (Produits de l''agriculture, de la sylviculture
+    et de la pêche), Division 01 (Culture et production animale, chasse et services
+    annexes), Groupe 01.1 (Cultures non permanentes), 01.2 (Cultures permanentes)
+    ou 01.3 (Reproduction de plantes)'
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

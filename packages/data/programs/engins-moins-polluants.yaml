@@ -31,7 +31,12 @@ conditions d'éligibilité:
   - Toutes tailles
   - Éligible aux micro-entreprises
   secteur d'activité:
-  - Tous secteurs d'activité
+  - Entreprises du bâtiment et de travaux publics ; entreprises produisant des substances
+    minérales solides ; exploitants aéroportuaires ; exploitants de remontées mécaniques
+    et de domaines skiables
+  - 'Codes NAF concernés : section F (Construction), section B (industries extractives),
+    section H division 51 (transports aériens), Code 4949C (Téléphériques et remontées
+    mécaniques)'
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

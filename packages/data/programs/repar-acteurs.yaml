@@ -24,7 +24,11 @@ conditions d'éligibilité:
   - TPE et PME
   - Éligible aux micro-entreprises
   secteur d'activité:
-  - Tous secteurs d'activité
+  - Artisan
+  - 1413ZA | 1413ZB | 1512ZA | 1512ZC | 1629ZB | 2652ZZ | 3109AZ | 3109BA | 3109BB
+    | 3109BC | 3212ZZ | 3213ZZ | 3220ZA | 3220ZC | 3299ZB | 3311ZZ | 3312ZA | 3313ZZ
+    | 3314ZZ | 3319ZZ | 9511ZZ | 9512ZZ | 9521ZZ | 9522ZA | 9522ZB | 9523ZZ | 9524ZZ
+    | 9525ZZ | 9529ZA | 9529ZB| 9529ZC | 9529ZD | 9529ZE | 9529ZF
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

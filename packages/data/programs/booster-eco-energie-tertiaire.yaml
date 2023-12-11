@@ -47,7 +47,7 @@ conditions d'éligibilité:
   - Toutes tailles
   - Non éligible aux micro-entreprises
   secteur d'activité:
-  - Tous secteurs d'activité
+  - Secteur tertiaire
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

@@ -25,7 +25,7 @@ conditions d'éligibilité:
   - Moins de 50 salariés
   - Non éligible aux micro-entreprises
   secteur d'activité:
-  - Tous secteurs d'activité
+  - Tous secteurs d’activité
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

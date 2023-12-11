@@ -32,7 +32,7 @@ conditions d'éligibilité:
   - Toutes tailles
   - Non éligible aux micro-entreprises
   secteur d'activité:
-  - Tous secteurs d'activité
+  - Activités tertiaires privées (tourisme, commerce, santé, logistique, services…)
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

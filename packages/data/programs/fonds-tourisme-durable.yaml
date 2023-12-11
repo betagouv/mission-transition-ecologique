@@ -39,7 +39,10 @@ conditions d'éligibilité:
   - TPE et PME
   - Éligible aux micro-entreprises
   secteur d'activité:
-  - Tous secteurs d'activité
+  - Activité de restauration et/ou d’hébergement touristique, structures du tourisme
+    social avec un code NAF association ou activités d’agritourisme avec un code NAF
+    agricole.
+  - 'Codes NAF concernés : 56.10A | 56.21Z | 55.10Z | 55.20Z | 55.30Z | 55.90Z.'
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

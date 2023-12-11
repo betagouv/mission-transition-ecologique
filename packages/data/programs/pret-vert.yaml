@@ -32,7 +32,13 @@ conditions d'éligibilité:
   - PME et ETI
   - Non éligible aux micro-entreprises
   secteur d'activité:
-  - Tous secteurs d'activité
+  - Tous secteurs d’activité
+  - 'Sont exclus : les activités d’intermédiation financière (NAF : section K64 sauf
+    64-2 pour les achats d’entreprises) ; les activités de promotion immobilière et
+    marchand de biens (NAF : section L68-1, L68-2 et F41-1) ; les entreprises des
+    secteurs agricoles identifiées par les code NAF section A01, et section A02 dont
+    le chiffre d’affaires est inférieur à 750 000 €, à l’exception des codes NAF 02.20Z
+    et 02.40Z (entreprises forestières)'
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
