@@ -201,7 +201,7 @@
       </h6>
       <p class="fr-mb-15v">
         <span>
-          {{ choices.ti(choices.t('form.phoneContact'), { operator: program['opérateur de contact'] }, true) }}
+          {{ choices.ti(choices.t('form.phoneContact'), { operator: program['opérateur de contact'] }) }}
         </span>
       </p>
     </div>

@@ -37,13 +37,10 @@ export const choicesStore = defineStore('choices', () => {
     return props.reduce((prev, curr) => prev?.[curr], obj)
   }
 
-  function ti(translation: string, params: any = undefined, debug: boolean = false) {
-    debug && console.log(`\nstore.choices > ti > translation :`, translation)
-    debug && console.log(`store.choices > ti > params :`, params)
+  function ti(translation: string, params: any = undefined) {
     let translated = translation
     if (params) {
       for (const key in params) {
-        debug && console.log(`store.choices > ti > key :`, key)
         const reg = new RegExp(`{${key}}`, 'g')
         translated = translated.replace(reg, (params[key] ?? '...'))
       }
