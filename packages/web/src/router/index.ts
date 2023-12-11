@@ -1,3 +1,6 @@
+// CONSOLE LOG TEMPLATE
+//console.log(`router.index > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 import { createRouter, createWebHistory } from 'vue-router'
 // import type { Router } from 'vue-router'
 

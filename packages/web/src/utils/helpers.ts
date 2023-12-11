@@ -1,3 +1,6 @@
+// CONSOLE LOG TEMPLATE
+// console.log(`utils.helpers > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 // @ts-ignore
 import nafCodesJson from '@tee/web/public/data/references/naf_codes_flat.json'
 import comCodesJson from '@tee/web/public/data/references/com_codes.json'
@@ -17,16 +20,6 @@ import type {
 } from '@/types'
 import { CleanerOperations, DataMappingFrom } from '@/types'
 
-// enum NafCodeFields {
-//   tags = 'tags',
-//   NIV5 = 'NIV5',
-//   NIV4 = 'NIV4',
-//   NIV3 = 'NIV3',
-//   NIV2 = 'NIV2',
-//   NIV1 = 'NIV1',
-//   label_vf = 'label_vf',
-// }
-
 const refs: Refs = {
   NafCodes: nafCodesJson,
   ComCodes: comCodesJson
@@ -40,7 +33,6 @@ export const randomChoice = (array: any[]) => {
 }
 
 export const getFrom = (from: any, selectors: PropertyPath[]) => {
-  // console.log('utils > helpers > getFrom >  selectors :', selectors)
   const res = selectors.map((selector: PropertyPath) => {
     // @ts-ignore
     const arraySelector = Array.isArray(selector)
@@ -70,10 +62,8 @@ export const getFromOnePath = (from: any, selector: string) => {
 
 export const getFromResp = (from: any, resMap: ResultsMapping, lang: string = 'fr') => {
   const selectors = resMap.respFields
-  // console.log('utils > helpers > getFromResp >  selectors :', selectors)
   let val = getFrom(from, selectors)
   if (resMap.cleaning) {
-    // console.log('utils > helpers > getFromResp >  selectors :', selectors)
     val = val.map((v) => {
       // @ts-ignore
       return cleanValue(v, resMap.cleaning, lang)
@@ -83,15 +73,12 @@ export const getFromResp = (from: any, resMap: ResultsMapping, lang: string = 'f
 }
 
 export const setIn = (obj: any, [head, ...rest]: string[], value: any) => {
-  // console.log('utils > helpers > setIn >  obj :', obj)
   const newObj: any = Array.isArray(obj) ? [...obj] : { ...obj }
   newObj[head] = rest.length ? setIn(obj[head], rest, value) : value
   return newObj
 }
 
 export const setProperty = (obj: object, path: string, value: any) => {
-  // console.log('utils > helpers > setProperty >  obj :', obj)
-  // const [head, ...rest] = path.split('.')
   let resultObj: any
 
   if (path === '.') {
@@ -104,36 +91,9 @@ export const setProperty = (obj: object, path: string, value: any) => {
   return resultObj
 }
 
-// export const findInTracksArray = (tracksArray: object[], id: string) => {
-//   console.log()
-//   console.log('utils > helpers > findInTracksArray >  tracksArray :', tracksArray)
-//   console.log('utils > helpers > findInTracksArray >  id :', id)
-
-//   // let value = undefined
-
-//   let UsedTracksFlat: any = {}
-//   tracksArray.map( item => {
-//     UsedTracksFlat = {...UsedTracksFlat, ...item}
-//   })
-//   console.log('utils > helpers > findInTracksArray >  UsedTracksFlat :', UsedTracksFlat)
-
-//   const value = UsedTracksFlat[id]
-//   console.log('utils > helpers > findInTracksArray >  value :', value)
-//   return value
-// }
-
 export const findInObjectsArray = (objectsArray: object[], id: string, all: boolean = false) => {
-  // console.log()
-  // console.log('utils > helpers > findInObjectsArray >  objectsArray :', objectsArray)
-  // console.log('utils > helpers > findInObjectsArray >  id :', id)
-
-  // let value = undefined
-
   const arrayFlat: any = Object.assign({}, ...objectsArray)
-  // console.log('utils > helpers > findInObjectsArray >  arrayFlat :', arrayFlat)
-
   const value = all ? arrayFlat : arrayFlat[id]
-  // console.log('utils > helpers > findInObjectsArray >  value :', {id, value})
   return value
 }
 
@@ -153,7 +113,6 @@ export const replaceAll = (value: any, cleaner: CleanerReplaceAll) => {
 
 export const findFromRefs = (value: string, cleaner: CleanerFromJson) => {
   let val = value
-  // console.log('utils > helpers > findFromRefs >  cleaner :', cleaner)
 
   const findInRef = cleaner.findInRef
   const fromField = cleaner.findFromField
@@ -161,9 +120,6 @@ export const findFromRefs = (value: string, cleaner: CleanerFromJson) => {
   const json = refs[findInRef]
   // @ts-ignore
   const obj: object = json.find((item) => item[fromField] === value)
-
-  // console.log('utils > helpers > findFromRefs >  json :', json)
-  // console.log('utils > helpers > findFromRefs >  obj :', obj)
 
   // @ts-ignore
   val = obj && obj[targetField]
@@ -187,13 +143,7 @@ export const findDefaultIfNull = (
   cleaner: CleanerDefaultIfNull,
   lang: string = 'fr'
 ) => {
-  // console.log()
-  // console.log('utils > helpers > findDefaultIfNull > value :', value)
-  // const respFields = cleaner.respFields
   const defaultValue = cleaner.defaultValue
-  // console.log('utils > helpers > findDefaultIfNull > respFields :', respFields)
-  // console.log('utils > helpers > findDefaultIfNull > defaultValue :', defaultValue)
-
   return value || defaultValue[lang]
 }
 
@@ -221,10 +171,8 @@ export const cleanValue = (
     | CleanerInjectInObject[],
   lang: string = 'fr'
 ) => {
-  // console.log('utils > helpers > cleanValue > value :', value)
   let val: any = value
   cleaners.forEach((cleaner) => {
-    // console.log('utils > helpers > cleanValue > cleaner :', cleaner)
     switch (cleaner.operation) {
       case CleanerOperations.replaceAll:
         val = replaceAll(val, <CleanerReplaceAll>cleaner)
@@ -248,7 +196,6 @@ export const cleanValue = (
         break
     }
   })
-  // console.log('utils > helpers > cleanValue > val :', val)
   return val
 }
 
@@ -262,15 +209,10 @@ export const remapItem = (
   selectionValues: any[] = [],
   lang: string = 'fr'
 ) => {
-  // console.log()
-  // console.log('utils > helpers > remapItem >  dataStructure :', dataStructure)
   let data = { ...dataStructure }
   const metaEnv = import.meta.env
-  // console.log('utils > helpers > remapItem >  metaEnv :', metaEnv)
 
   dataMapping.forEach((dm) => {
-    // console.log()
-    // console.log('utils > helpers > remapItem >  dm :', dm)
     let value: any = ''
     let allResponses: any
     switch (dm.from) {
@@ -281,13 +223,10 @@ export const remapItem = (
         value = formData && formData[dm.id]
         break
       case DataMappingFrom.UsedTracks:
-        // console.log('utils > helpers > remapItem >  trackValues :', trackValues)
         value = findInObjectsArray(trackValues, dm.id)
         break
       case DataMappingFrom.AllUsedTracks:
-        // console.log('utils > helpers > remapItem >  trackValues :', trackValues)
         allResponses = findInObjectsArray(trackValues, dm.id, true)
-        // console.log('utils > helpers > remapItem >  allResponses :', allResponses)
         value = Object.keys(allResponses)
           .map((k) => {
             return `${k}: ${allResponses[k]}`
@@ -295,18 +234,15 @@ export const remapItem = (
           .join(' / ')
         break
       case DataMappingFrom.SelectionValues:
-        // console.log('utils > helpers > remapItem >  trackValues :', trackValues)
         value = findInObjectsArray(selectionValues, dm.id)
         break
       case DataMappingFrom.Props:
         value = props && props[dm.id]
         break
       case DataMappingFrom.PropsPath:
-        // console.log('utils > helpers > remapItem >  rawData :', rawData)
         value = dm.path && getFromOnePath(props, dm.path)
         break
       case DataMappingFrom.RawData:
-        // console.log('utils > helpers > remapItem >  rawData :', rawData)
         value = dm.path && getFromOnePath(rawData, dm.path)
         break
       default:
@@ -317,7 +253,6 @@ export const remapItem = (
     if (dm.cleaning) {
       value = cleanValue(value, dm.cleaning, lang)
     }
-    // console.log('utils > helpers > remapItem >  value :', value)
 
     // parse as array
     if (dm.asArray) {
@@ -330,21 +265,15 @@ export const remapItem = (
     if (!dm.asArray && dm.type === 'integer') {
       value = parseInt(value)
     }
-    // console.log('utils > helpers > remapItem >  value :', value)
 
     // set in data body
     data = setProperty(data, dm.dataField, value)
-    // console.log('utils > helpers > remapItem >  data :', data)
   })
   return data
 }
 
 // UX HELPERS
 export const scrollToTop = (element: any, disableWidget: boolean, from: string | number = '') => {
-  // console.log()
-  // console.log('utils > helpers > scrollToTop > from :', from)
-  // console.log('utils > helpers > scrollToTop > disableWidget :', disableWidget)
-  // console.log('utils > helpers > scrollToTop > element :', element)
   if (disableWidget) {
     element.scrollIntoView()
   } else {
@@ -356,11 +285,7 @@ export const scrollToTop = (element: any, disableWidget: boolean, from: string |
 
 export const scrollToId = (
   elementId: string
-  // targetYPosition?: number
 ) => {
-  // console.log('\nutils > helpers > scrollToId > elementId :', elementId)
-  // console.log('utils > helpers > scrollToId > targetYPosition :', targetYPosition)
-  // console.log('utils > helpers > scrollToId > element :', element)
   setTimeout(() => {
     const element = document.getElementById(elementId)
     element?.scrollIntoView()

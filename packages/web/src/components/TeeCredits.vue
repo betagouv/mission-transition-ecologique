@@ -81,6 +81,9 @@
 
 <script setup lang="ts">
 
+// CONSOLE LOG TEMPLATE
+// console.log(`TeeCredits > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 import { choicesStore } from '../stores/choices'
 
 const choices = choicesStore()

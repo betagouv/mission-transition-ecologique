@@ -22,6 +22,9 @@
 <script setup lang="ts">
 // cf : https://github.com/betagouv/transition-ecologique-entreprises-widget/commit/845f2cd7c31b16aa7bbeecf8533a9d72bb557c38#diff-11f3012b2f722ad4a8671a5c6dbb44f832deb7b4064388325f824ac0e958837c
 
+// CONSOLE LOG TEMPLATE
+//console.log(`WebApp > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 import { onBeforeMount, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
@@ -60,9 +63,7 @@ onBeforeMount(() => {
 
 onMounted(async() => {
   // cf: https://stackoverflow.com/questions/69495211/vue3-route-query-empty
-  // console.log('WebApp > onMounted > set router...')
   await router.isReady()
-  // console.log('WebApp > onMounted > router is ready...')
   nav.setRouter(router)
   nav.setRoute(route)
 })
