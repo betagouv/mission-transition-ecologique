@@ -48,12 +48,7 @@ export const router = createRouter({
             seed: TrackId.Help,
             disableWidget: true
           }
-        },
-        {
-          path: ':programId',
-          name: 'questionnaire-detail',
-          component: TeeProgramPage,
-        },
+        }
       ]
     },
     {
