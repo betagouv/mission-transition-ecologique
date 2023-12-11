@@ -8,13 +8,15 @@
 </template>
 
 <script setup lang="ts">
+// CONSOLE LOG TEMPLATE
+// console.log(`TeeQuestionnairePage > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 import { computed } from 'vue'
 import { tracksStore } from '../stores/tracks'
 import TeeContact from '@/components/home/TeeContact.vue'
 
 const tracks = tracksStore()
 
-// computed
 const isTrackResults = computed(() => {
   const track = tracks.getLastTrack
   return track?.component === 'results'

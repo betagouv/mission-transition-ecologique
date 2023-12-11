@@ -1,3 +1,6 @@
+// CONSOLE LOG TEMPLATE
+// console.log(`defineCustomElementWithStyles > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 import { defineCustomElement as VueDefineCustomElement, h, createApp, getCurrentInstance, type Component } from 'vue'
 import type { Plugin, Comp } from '@/types/index'
 
@@ -56,7 +59,6 @@ export const defineCustomElement = (component: Component, { plugins = <Plugin[]>
           if (this.$options.components) {
             // eslint-disable-next-line @typescript-eslint/no-unsafe-argument,@typescript-eslint/no-unsafe-member-access
             for (const comp of Object.values(this.$options.components)) {
-              // console.log('mounted > comp', comp)
               insertStyles((comp as Record<string, unknown>).styles)
             }
           }
@@ -75,5 +77,3 @@ export const defineCustomElement = (component: Component, { plugins = <Plugin[]>
       Object.assign(inst.provides, app._context.provides)
     }
   })
-
-// export default defineCustomElement

@@ -71,6 +71,9 @@
 </template>
 
 <script setup lang="ts">
+// CONSOLE LOG TEMPLATE
+// console.log(`TeeSidebar > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 import { computed } from 'vue'
 import { tracksStore } from '../stores/tracks'
 import { choicesStore } from '../stores/choices'
@@ -86,11 +89,6 @@ const props = defineProps<Props>()
 
 const tracks = tracksStore()
 const choices = choicesStore()
-
-// const onlyCompletedTracks = computed(() => {
-//   const completedTracks = tracks.usedTracks.filter(usedTrack => usedTrack.completed)
-//   return completedTracks
-// })
 
 interface UsedTrackRegrouped {
   [name: string]: UsedTrack[]
@@ -114,8 +112,6 @@ const usedCategories = computed(() => {
 })
 
 const backToTrack = (trackId: string) => {
-  // console.log()
-  // console.log('TeeSidebar > backToTrack > trackId :', trackId)
   tracks.setUsedTracksAsNotCompleted(trackId)
   tracks.removeFurtherUsedTracks(trackId)
 }

@@ -195,6 +195,10 @@
 </template>
 
 <script setup lang="ts">
+
+// CONSOLE LOG TEMPLATE
+// console.log(`TeeTrackInput > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 import { onBeforeMount, ref, toRaw } from 'vue'
 import { tracksStore } from '../../stores/tracks'
 import { choicesStore } from '../../stores/choices'
@@ -246,7 +250,6 @@ const isSelected = (resp: any) => {
 
 // functions
 const resetSelection = () => {
-  // console.log('TeeTrackInput > resetSelection > ...')
   requestResponses.value = []
   requestErrors.value = []
   selection.value = undefined
@@ -254,12 +257,9 @@ const resetSelection = () => {
 }
 
 const processInput = async () => {
-  // console.log('TeeTrackInput > processInput > props.option :', props.option)
-
   isLoading.value = true
   resetSelection()
 
-  // const usedTracks: UsedTrack[] | any[] = tracks.getAllUsedTracks
   const trackValues: any[] = tracks.getAllUsedTracksValues
 
   const responses: ReqResp[] = []
@@ -270,20 +270,15 @@ const processInput = async () => {
 
     // loop option's callbacks
     for (const callback of activeCallbacks) {
-      // console.log()
-      // console.log('TeeTrackInput > processInput >  inputValue.value :', inputValue.value)
-      // console.log('TeeTrackInput > processInput >  callback :', callback)
       let value = inputValue.value
       // Clean input value
       if (callback.inputCleaning) {
         value = cleanValue(value, callback.inputCleaning) as string | number | undefined
       }
-      // console.log('TeeTrackInput > processInput > value :', value)
       let resp: ReqResp = {}
       if (callback.action === CallbackActions.RequestAPI) {
         resp = await sendApiRequest(callback, { inputValue: value }, trackValues, props, choices.lang)
       }
-      // console.log('TeeTrackInput > processInput >  resp :', resp)
       if (resp.ok) {
         const item = remapItem(
           callback.dataStructure,
@@ -295,7 +290,6 @@ const processInput = async () => {
           [],
           choices.lang
         )
-        // console.log('TeeTrackInput > processInput >  item :', item)
         responses.push({
           data: item,
           raw: resp,
@@ -314,12 +308,6 @@ const processInput = async () => {
   // analytics / send event
   analytics.sendEvent(props.trackId, 'processInput')
 
-  // if only one result select it immediatly
-  // if (requestResponses.value.length === 1) {
-  //   const item = requestResponses.value[0]
-  //   selectItem(item)
-  // }
-
   // send signal to parent if error
   if (requestErrors.value.length) {
     const data = {
@@ -335,28 +323,19 @@ const processInput = async () => {
 }
 
 const goToNextTrack = () => {
-  // console.log()
   const data = {
     option: { ...props.option }
   }
   if (props.option.wildcard) {
     data.option.next = props.option.wildcard.next
   }
-  // console.log('TeeTrackInput > goToNextTrack > data :', data)
   emit('goToNextTrack', data)
 }
 
 const selectItem = (item: any) => {
-  // console.log()
-  // console.log('TeeTrackInput > selectItem > hasSelection.value (A) :', hasSelection.value)
-  // console.log('TeeTrackInput > selectItem > item :', item)
-
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   selection.value = hasSelection.value ? undefined : item
-  // console.log('TeeTrackInput > selectItem > hasSelection.value (B) :', hasSelection.value)
-
   hasSelection.value = !hasSelection.value
-  // console.log('TeeTrackInput > selectItem > selection.value (C) :', selection.value)
   const data = {
     option: {
       ...props.option,
@@ -365,7 +344,6 @@ const selectItem = (item: any) => {
     },
     remove: !hasSelection.value
   }
-  // console.log('TeeTrackInput > selectItem > data :', data)
   emit('updateSelection', data)
 }
 </script>

@@ -15,6 +15,9 @@
 </template>
 
 <script setup lang="ts">
+// CONSOLE LOG TEMPLATE
+// console.log(`ProgramObjective > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 import { choicesStore } from '@/stores/choices'
 import type { ProgramData } from '@/types'
 import { ProgramAidType } from '@/types'

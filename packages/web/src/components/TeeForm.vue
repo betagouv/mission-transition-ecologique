@@ -194,6 +194,9 @@
 </template>
 
 <script setup lang="ts">
+// CONSOLE LOG TEMPLATE
+// console.log(`TeeForm > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 import { computed, onBeforeMount, ref, toRaw } from 'vue'
 import type { FormCallback, FormField, FormOptions, FormValues, ProgramData, ReqResp } from '@/types/index'
 import { CallbackActions, FormFieldTypes } from '@/types/index'
@@ -209,7 +212,6 @@ const choices = choicesStore()
 const tracks = tracksStore()
 const analytics = analyticsStore()
 
-// const usedTracks: UsedTrack[] | any[] = tracks.getAllUsedTracks
 const trackValues: any[] = tracks.getAllUsedTracksValues
 const metaEnv: ImportMetaEnv = import.meta.env as ImportMetaEnv
 const contactEmail = metaEnv.VITE_CONTACT_EMAIL || 'france-transition@beta.gouv.fr'
@@ -232,10 +234,6 @@ const requiredFields = ref<string[]>([])
 const formIsSent = ref<boolean>(false)
 const requestResponses = ref<ReqResp[]>()
 const isLoading = ref<boolean>(false)
-
-// const program = computed(() => {
-//   return programs.getProgramById(props.dataProps.programId)
-// })
 
 const canSaveFrom = computed(() => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return
@@ -265,16 +263,10 @@ const isTextarea = (field: FormField) => {
 }
 
 onBeforeMount(() => {
-  // console.log('TeeForm > onBeforeMount >  props.formOptions :', props.formOptions)
-  // console.log('TeeForm > onBeforeMount >  usedTracks :', usedTracks)
-  // console.log('TeeForm > onBeforeMount >  trackValues :', trackValues)
-
   let initValues: FormValues = {}
 
   // set up InitValues from formOptions.fields
   props.formOptions.fields?.forEach((field: FormField) => {
-    // console.log('TeeForm > onBeforeMount >  field :', field)
-
     // set field's key
     initValues[field.id] = isCheckbox(field) ? false : ''
 
@@ -289,12 +281,7 @@ onBeforeMount(() => {
         const defaultValStr = defaultVal.toString()
         const dataStructure = field.dataStructure || {}
         const dataMapping = field.dataMapping || []
-        // console.log('TeeForm > onBeforeMount > defaultVal : ', defaultVal)
-        // console.log('TeeForm > onBeforeMount > dataStructure : ', dataStructure)
-        // console.log('TeeForm > onBeforeMount > dataMapping : ', dataMapping)
-        // console.log('TeeForm > onBeforeMount > trackValues : ', trackValues)
         const values = remapItem(dataStructure, dataMapping, {}, trackValues, props, undefined, [], choices.lang)
-        // console.log('TeeForm > onBeforeMount > values : ', values)
         defaultVal = choices.ti(defaultValStr, values)
       }
       initValues[field.id] = defaultVal
@@ -302,32 +289,21 @@ onBeforeMount(() => {
 
     // inject value into form from store if any
     if (field.preFillFrom) {
-      // console.log('TeeForm > onBeforeMount >  field.preFillFrom :', field.preFillFrom)
       initValues = remapItem(initValues, [field.preFillFrom], {}, trackValues, props, undefined, [], choices.lang)
-      // console.log('TeeForm > onBeforeMount >  initValues :', initValues)
     }
   })
-  // console.log('TeeForm > onBeforeMount >  initValues :', initValues)
   formData = ref(initValues)
 })
 
 const updateFormData = (ev: string, id: string) => {
-  // console.log(`TeeForm > saveFormData >  id : ${id} > ev : ${ev}`)
   if (formData.value) {
     formData.value[id] = ev
   }
 }
 
-// const emit = defineEmits(['saveData'])
 const saveFormData = async () => {
   try {
     isLoading.value = true
-    // console.log('TeeForm > saveFormData >  props.formOptions :', props.formOptions)
-    // console.log('TeeForm > saveFormData >  props.dataProps :', props.dataProps)
-    // console.log('TeeForm > saveFormData >  formData.value :', formData.value)
-
-    // const usedTracks: UsedTrack[] | any[] = tracks.getAllUsedTracks
-    // console.log('TeeForm > saveFormData >  usedTracks :', usedTracks)
 
     // Launch call backs if any
     const responses: ReqResp[] = []
@@ -335,7 +311,6 @@ const saveFormData = async () => {
     const activeCallbacks = toRaw(props.formOptions.callbacks).filter((cb: FormCallback) => !cb.disabled)
     for (const callback of activeCallbacks) {
       console.log()
-      // console.log('TeeForm > saveFormData >  callback.action :', callback.action)
       let resp: ReqResp = {}
       switch (callback.action) {
         case CallbackActions.CreateContact:
@@ -346,7 +321,6 @@ const saveFormData = async () => {
           break
       }
       responses.push(resp)
-      // console.log('TeeForm > saveFormData >  resp :', resp)
     }
     requestResponses.value = responses
     formIsSent.value = true

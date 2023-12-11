@@ -1,3 +1,6 @@
+// CONSOLE LOG TEMPLATE
+// console.log(`router.redirection > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 import type { RouteRecordRaw } from 'vue-router'
 import { RouteName } from '@/types/routeType'
 

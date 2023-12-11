@@ -1,5 +1,5 @@
 import { fileURLToPath, URL } from 'node:url'
-import { defineConfig, loadEnv } from 'vite'
+import { defineConfig } from 'vite'
 import type { ServerOptions } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
@@ -7,13 +7,13 @@ console.log()
 console.log('Starting ...')
 console.log('vite.config ...')
 
-console.log('process.env.NODE_ENV : ', process.env.NODE_ENV)
-console.log('process.env', process.env)
+// console.log('process.env.NODE_ENV : ', process.env.NODE_ENV)
+// console.log('process.env', process.env)
 
-const mode = process.env.NODE_ENV || 'development'
-console.log('vite.config > mode : ', mode)
-const rawEnv = loadEnv(mode, process.cwd())
-console.log('vite.config > rawEnv : ', rawEnv)
+// const mode = process.env.NODE_ENV || 'development'
+// console.log('vite.config > mode : ', mode)
+// const rawEnv = loadEnv(mode, process.cwd())
+// console.log('vite.config > rawEnv : ', rawEnv)
 
 const isProd = mode === 'production'
 

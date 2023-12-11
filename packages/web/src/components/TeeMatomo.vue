@@ -44,6 +44,9 @@
 </template>
 
 <script setup lang="ts">
+// CONSOLE LOG TEMPLATE
+// console.log(`TeeMatomo > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 import { onBeforeMount, onMounted } from 'vue'
 
 import { analyticsStore } from '../stores/analytics'
@@ -58,41 +61,23 @@ defineProps<Props>()
 
 const analytics = analyticsStore()
 
-// const scriptUniqueId = 'gov-aid-tree-matomo-script'
-
 const metaEnv: ImportMetaEnv = import.meta.env as ImportMetaEnv
-// const matomoDeactivate = ref(metaEnv.VITE_MATOMO_DEACTIVATE === 'true')
 const matomoDeactivate: boolean = metaEnv.VITE_MATOMO_DEACTIVATE
-// const matomoServer = ref(metaEnv.VITE_MATOMO_URL)
-// const matomoSiteId = ref(metaEnv.VITE_MATOMO_APP_ID)
-// const hasTrackAllOutlinks = false
 
 let matomoScriptElem = document.getElementById(analytics.scriptUniqueId)
 
 onBeforeMount(() => {
-  // console.log()
-  // console.log('TeeMatomo > onBeforeMount >  matomoDeactivate :', matomoDeactivate)
-  // console.log('TeeMatomo > onBeforeMount >  matomoDeactivate :', typeof(matomoDeactivate))
   analytics.setAppDomain(location.hostname)
   analytics.setAnalyticsServer(metaEnv.VITE_MATOMO_URL, metaEnv.VITE_MATOMO_APP_ID, matomoDeactivate)
-  // console.log('TeeMatomo > onBeforeMount >  analytics.matomoServer :', analytics.matomoServer)
-  // console.log('TeeMatomo > onBeforeMount >  analytics.matomoSiteId :', analytics.matomoSiteId)
-  // console.log('TeeMatomo > onBeforeMount >  analytics.domain :', analytics.domain)
 })
 
 onMounted(() => {
-  // console.log()
-  // console.log('TeeMatomo > onMounted >  analytics.matomoServer :', analytics.matomoServer)
-  // console.log('TeeMatomo > onMounted >  analytics.matomoSiteId :', analytics.matomoSiteId)
-  // console.log('TeeMatomo > onMounted >  analytics.domain :', analytics.domain)
-  // console.log('TeeMatomo > onMounted >  analytics.allowAnalytics :', analytics.allowAnalytics)
   if (!matomoScriptElem && analytics.allowAnalytics) {
-    // console.log('TeeMatomo > onMounted >  hasTrackAllOutlinks :', hasTrackAllOutlinks)
+
     matomoScriptElem = document.createElement('script')
     matomoScriptElem.setAttribute('id', analytics.scriptUniqueId)
     matomoScriptElem.setAttribute('type', 'text/javascript')
 
-    // console.log('TeeMatomo > onMounted >  scriptText :', scriptText)
     if (analytics.matomoServer && analytics.matomoSiteId && analytics.domain) {
       matomoScriptElem.innerHTML = matomoScript(
         analytics.matomoServer,

@@ -8,7 +8,7 @@
       ><br />
       - inputValue: <code>{{ inputValue }}</code
       ><br />
-      -isActive : <code>{{ isActive }}</code>
+      - isActive : <code>{{ isActive }}</code>
     </div>
 
     <!-- INPUT CANVAS -->
@@ -39,6 +39,9 @@
 </template>
 
 <script setup lang="ts">
+// CONSOLE LOG TEMPLATE
+// console.log(`TeeTrackButtonInput > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 import { onBeforeMount, ref, computed } from 'vue'
 import { choicesStore } from '@/stores/choices'
 import type { TrackOptionsInput } from '@/types'
@@ -56,7 +59,6 @@ const props = defineProps<Props>()
 const choices = choicesStore()
 
 const inputValue = ref<string | number>()
-// const hasSelection = ref<boolean>(false)
 
 const emit = defineEmits(['updateSelection', 'updateValue', 'goToNextTrack'])
 
@@ -82,10 +84,6 @@ const dataObj = computed(() => {
   const inputObject = props.option.value as Record<string, unknown>
   if (props.option.inputField) {
     const val = inputValue.value
-    // clean val if inputCleaning
-    // if (props.option.inputCleaning) {
-    //   val = val
-    // }
     inputObject[props.option.inputField] = val
   }
   const data = {
@@ -99,13 +97,11 @@ const dataObj = computed(() => {
 })
 
 const sendValueUpdate = () => {
-  // console.log('TeeTrackButtonInput > sendValueUpdate > dataObj.value :', dataObj.value )
   emit('updateValue', dataObj.value)
 }
 
 const selectItem = () => {
   if (!props.isActive) {
-    // console.log('TeeTrackButtonInput > selectItem > dataObj.value :', dataObj.value)
     emit('updateSelection', dataObj.value)
   }
 }

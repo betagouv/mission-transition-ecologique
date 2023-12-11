@@ -24,6 +24,9 @@
 </template>
 
 <script setup lang="ts">
+// CONSOLE LOG TEMPLATE
+// console.log(`TeeContact > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 import type { ImportMetaEnv } from '@/env'
 
 const metaEnv: ImportMetaEnv = import.meta.env as ImportMetaEnv

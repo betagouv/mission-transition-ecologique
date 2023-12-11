@@ -124,6 +124,9 @@
 </template>
 
 <script setup lang="ts">
+// CONSOLE LOG TEMPLATE
+// console.log(`TeeResults > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 import { ref, onBeforeMount, computed } from 'vue'
 import { choicesStore } from '../../stores/choices'
 import { programsStore } from '../../stores/programs'
@@ -162,10 +165,7 @@ const props = defineProps<Props>()
 const filteredPrograms: ProgramData[] | undefined = programs.filterPrograms(props.tracksResults)
 
 const reFilteredPrograms = computed(() => {
-  // console.log('\nTeeResults > reFilteredPrograms...' )
-  // console.log('TeeResults > reFilteredPrograms > filteredPrograms :', filteredPrograms )
   const results = filteredPrograms?.filter((prog: ProgramData) => {
-    // console.log('\nTeeResults > reFilteredPrograms > prog :', prog )
     const boolArray = [true]
     for (const filterLabel in activeFilters.value) {
       const filterVal = activeFilters.value[filterLabel]
@@ -173,10 +173,6 @@ const reFilteredPrograms = computed(() => {
       const filterConfig: TrackFilter | undefined = props.trackConfig?.filters?.find((filter: any) => filter.label === filterLabel)
       const filterField: PropertyPath = filterConfig?.field || ''
       const trueIf = filterConfig?.trueIf || ConditionOperators.is
-      // console.log(`\nTeeResults > reFilteredPrograms > filterField: "${filterField}" - filterVal: "${filterVal}" - trueIf: "${trueIf}"` )
-      // console.log('\nTeeResults > filterField :', filterField )
-      // console.log('TeeResults > filterVal :', filterVal )
-      // console.log('TeeResults > trueIf :', trueIf )
 
       let progVal = getFrom(prog, [filterField])
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
@@ -188,23 +184,18 @@ const reFilteredPrograms = computed(() => {
       if (filterVal === '') {
         bool = true
       } else if (trueIf === ConditionOperators.is) {
-        // console.log('TeeResults > reFilteredPrograms > progVal :', progVal )
         bool = (progVal as unknown as string) === filterVal
       } else if (trueIf === ConditionOperators.exists) {
         progVal = progVal?.filter((i) => i !== null)
-        // console.log('TeeResults > reFilteredPrograms > progVal :', progVal )
         bool = !progVal ? true : progVal.includes(filterVal)
       } else {
         bool = true
       }
       boolArray.push(bool)
     }
-    // console.log('TeeResults > reFilteredPrograms > boolArray :', boolArray )
     const checkFilters = boolArray.every((b) => !!b)
-    // console.log('TeeResults > reFilteredPrograms > checkFilters :', checkFilters )
     return checkFilters
   })
-  // console.log('TeeResults > reFilteredPrograms > results: ', results )
   return results
 })
 
@@ -217,7 +208,6 @@ const countReFilteredPrograms = computed(() => {
 })
 
 const updateFilters = (event: FilterSignal) => {
-  // console.log('\nTeeResults > updateFilters > event :', event )
   const val = {
     [event.label]: event.value
   }
@@ -243,7 +233,6 @@ const updateDetailResult = async (id: string | number) => {
 const getCostInfos = (program: ProgramData) => {
   let prefix: string = ''
   let text: string | undefined = ''
-  // console.log('TeeResults > onBeforeMount > filteredPrograms :', filteredPrograms )
 
   switch (program["nature de l'aide"]) {
     case ProgramAidType.acc:
@@ -267,14 +256,12 @@ const getCostInfos = (program: ProgramData) => {
   // Translate prefix
   prefix = choices.t(prefix)
 
-  // No splitted amounts (non-breakable spaces in texts like '10 000 €')
   text = consolidateAmounts(text)
 
   return `${prefix} : ${text}`
 }
 
 onBeforeMount(() => {
-  // console.log('TeeResults > onBeforeMount > filteredPrograms :', filteredPrograms )
   // analytics / send event
   analytics.sendEvent(props.trackId, 'show_results')
 })

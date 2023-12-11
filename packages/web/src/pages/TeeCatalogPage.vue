@@ -3,5 +3,8 @@
 </template>
 
 <script setup lang="ts">
-import TeeQuestionnairePage from './TeeQuestionnairePage.vue'
+// CONSOLE LOG TEMPLATE
+// console.log(`TeeQuestionnairePage > FUNCTION_NAME > MSG_OR_VALUE :`)
+
+import TeeQuestionnairePage from './TeeQuestionnairePage.vue';
 </script>

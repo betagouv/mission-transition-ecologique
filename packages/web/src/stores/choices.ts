@@ -1,3 +1,6 @@
+// CONSOLE LOG TEMPLATE
+// console.log(`store.choices > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
 

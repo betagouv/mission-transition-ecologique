@@ -22,6 +22,9 @@
 </template>
 
 <script setup lang="ts">
+// CONSOLE LOG TEMPLATE
+// console.log(`TeeTile > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 defineProps<{
   title: string
   imagePath?: string

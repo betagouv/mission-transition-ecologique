@@ -310,6 +310,9 @@
 </template>
 
 <script setup lang="ts">
+// CONSOLE LOG TEMPLATE
+// console.log(`TeeTrack > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 import { computed, ref, toRaw, watch } from 'vue'
 
 import { tracksStore } from '@/stores/tracks'
@@ -369,10 +372,8 @@ const needRemove = ref<boolean>(false)
 
 const track: Track | undefined = tracks.getTrack(props.trackId)
 
-// console.log('TeeTrack > track :', track)
 const renderAs: TrackComponents = track?.interface?.component ?? TrackComponents.Buttons
 const customColWidth: number | string = track?.interface?.columnWidth ?? 0
-// console.log('TeeTrack > track :', track)
 
 const allowMultiple: boolean = !!track?.behavior?.multipleChoices
 
@@ -384,7 +385,6 @@ const isTrackResults = computed(() => {
   return track?.interface?.component === TrackComponents.Results
 })
 const selectionValues = computed(() => {
-  // console.log('TeeTrack > selectionValues > selectedOptions.value :', selectedOptions.value)
   if (selectedOptions.value.length === 0) {
     return []
   }
@@ -418,22 +418,12 @@ const colsWidth = computed(() => {
 
 // getters
 const isActiveChoice = (index: number) => {
-  // console.log()
-  // console.log('TeeTrack > isActiveChoice > value :', value)
-  // console.log('TeeTrack > isActiveChoice > index :', index)
-  // console.log('TeeTrack > isActiveChoice > selectionValues :', selectionValues)
   const activeIndex = selectedOptionsIndices.value.includes(index)
-  // const activeValue = selectionValues.value.includes(value)
   return activeIndex
 }
 
 const updateSelection = (option: TrackOptionsUnion, index: number, forceRemove: boolean = false) => {
-  // console.log()
-  // console.log('TeeTrack > updateSelection > option :', option)
-  // console.log('TeeTrack > updateSelection > index :', index)
   const isActive = isActiveChoice(index)
-  // console.log('TeeTrack > updateSelection > isActive :', isActive)
-  // console.log('TeeTrack > updateSelection > forceRemove :', forceRemove)
   let remove = false
   if (!isActive && !forceRemove) {
     if (allowMultiple) {
@@ -455,9 +445,6 @@ const updateSelection = (option: TrackOptionsUnion, index: number, forceRemove: 
     remove = !selectedOptions.value.length
   }
   needRemove.value = remove
-  // selectedOptions.value = option
-
-  // console.log('TeeTrack > updateSelection > selectedOptions.value :', selectedOptions.value)
 
   // Direct to next track
   const directToNext: string[] = ['cards']
@@ -467,17 +454,12 @@ const updateSelection = (option: TrackOptionsUnion, index: number, forceRemove: 
 }
 
 const updateSelectionFromSignal = (ev: any, index: number) => {
-  // console.log()
-  // console.log('TeeTrack > updateSelectionFromSignal > ev :', ev)
   // TODO (ev.target as HTMLSelectElement)
   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-argument
   updateSelection(ev.option, index, ev.remove)
 }
 
 const updateSelectionValueFromSignal = (ev: any) => {
-  // console.log()
-  // console.log('TeeTrack > updateSelectionValueFromSignal > ev :', ev)
-  // console.log('TeeTrack > updateSelectionValueFromSignal > selectedOptions.value :', selectedOptions.value)
   // TODO (ev.target as HTMLSelectElement)
   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
   const inputField: string = ev.option.inputField as string
@@ -509,8 +491,6 @@ const updateSelectionValueFromSelectSignal = (ev: any) => {
 }
 
 const saveSelectionFromSignal = (ev: any, index: number) => {
-  // console.log()
-  // console.log('TeeTrack > saveSelectionFromSignal > ev :', ev)
   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
   updateAndSave(ev.option as TrackOptionsUnion, index)
 }
@@ -527,7 +507,6 @@ const resetSelections = () => {
 
 const getButtonIcon = (index: number) => {
   const isActive = isActiveChoice(index)
-  // console.log('TeeTrack > getButtonIcon > isActive :', isActive)
   let icon = ''
   if (allowMultiple) {
     icon = isActive ? 'ri-checkbox-line' : 'ri-checkbox-blank-line'
@@ -541,14 +520,9 @@ const getButtonIcon = (index: number) => {
 watch(
   () => props.isCompleted,
   (next) => {
-    // console.log()
-    // console.log('TeeTrack > watch > props.trackId :', props.trackId )
-    // console.log('TeeTrack > watch > isCompleted :', next )
+
     if (!next) {
-      // console.log('TeeTrack > watch > selectionValues :', selectionValues )
-      // if (noNeedForNext.includes(renderAs)) {
-      //   resetSelections()
-      // }
+
       resetSelections()
       tracks.updateUsedTracks(props.trackId, props.step, next, selectedOptions.value)
     }
@@ -558,8 +532,6 @@ watch(
 // functions
 
 const saveSelection = () => {
-  // console.log()
-  // console.log('TeeTrack > updateStore > selectedOptions.value :', selectedOptions.value)
   const optionNext = selectedOptions.value[0].next
   const nextExceptions = optionNext?.exceptions
   const defaultNext = track?.next
@@ -568,42 +540,30 @@ const saveSelection = () => {
 
   // SWITCH NEXT TRACK DEPENDING ON CONDITIONS
   // NOTE : could be deplaced in store ?
-  // console.log('TeeTrack > updateStore > optionNext :', optionNext)
   if (nextExceptions) {
-    // console.log('TeeTrack > updateStore > nextExceptions :', nextExceptions)
 
     // get used tracks values
     const trackValues: any[] = tracks.getAllUsedTracksValues
-    // console.log('TeeTrack > updateStore > trackValues :', trackValues)
 
     // get current selection
-    // console.log('TeeTrack > updateStore > selectedOptions.value :', selectedOptions.value)
     const selectionVals = selectedOptions.value.map((item) => {
       return toRaw(item.value)
     })
-    // console.log('TeeTrack > updateStore > selectionVals :', selectionVals)
 
     nextExceptions.forEach((trackRule: NextTrackRuleSet) => {
       const dataStructure = {}
       const item = remapItem(dataStructure, trackRule.rules, {}, trackValues, {}, {}, selectionVals, choices.lang)
-      // console.log('TeeTrack > updateStore > item :', item)
       const bool = CheckNextTrackRules(item, trackRule.rules)
-      // console.log('TeeTrack > updateStore > bool :', bool)
       next = bool ? trackRule.next : next
     })
   }
 
-  // console.log('TeeTrack > updateStore > next :', next)
-
   tracks.updateUsedTracks(props.trackId, props.step, next, selectedOptions.value)
 
-  // console.log('TeeTrack > updateStore > needRemove.value :', needRemove.value)
   if (!needRemove.value && next && next.default !== false) {
-    // console.log('TeeTrack > updateStore > addToUsedTracks...')
     const canAddTrack = !tracks.trackExistsInUsed(next.default)
     canAddTrack && tracks.addToUsedTracks(props.trackId, next.default)
   } else {
-    // console.log('TeeTrack > updateStore > removeFromUsedTracks...')
     tracks.removeFurtherUsedTracks(props.trackId)
   }
 
@@ -611,12 +571,8 @@ const saveSelection = () => {
 }
 
 const backToPreviousTrack = () => {
-  // console.log()
-  // console.log('TeeTrack > backToTrack > props.trackId :', props.trackId)
   const indexOfTrack = tracks.tracksStepsArray.indexOf(props.trackId)
-  // console.log('TeeTrack > backToTrack > indexOfTrack :', indexOfTrack)
   const TrackToGoBackTo = tracks.tracksStepsArray[indexOfTrack - 1]
-  // console.log('TeeTrack > backToTrack > TrackToGoBackTo :', TrackToGoBackTo)
   tracks.setUsedTracksAsNotCompleted(TrackToGoBackTo)
   tracks.removeFurtherUsedTracks(TrackToGoBackTo)
 

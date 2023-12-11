@@ -1,3 +1,6 @@
+// CONSOLE LOG TEMPLATE
+// console.log(`utils.matomo > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 // <!-- Matomo -->
 // <script>
 //   var _paq = window._paq = window._paq || [];
@@ -63,7 +66,6 @@ export const trackEvent = (
   // @ts-expect-error
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const _paq: any = window._paq || []
-  console.log()
   if (_paq) {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access
     _paq.push(['trackEvent', evCategory, evAction, evName, EvValue])

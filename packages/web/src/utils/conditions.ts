@@ -1,21 +1,17 @@
+// CONSOLE LOG TEMPLATE
+// console.log(`utils.conditions > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 import type { ConditionTrack, NextTrackRule } from '@/types'
 import { ConditionOperators } from '@/types'
 
 export const CheckConditions = (data: any, conditions: ConditionTrack[], strict: boolean = false) => {
-  // console.log()
-  // console.log('utils > conditions > CheckConditions > data :', data)
-  // console.log('...')
-  // console.log('utils > conditions > CheckConditions > rules :', rules)
   const boolArray = [true]
 
   conditions.forEach((condition: ConditionTrack) => {
-    // console.log('utils > conditions > CheckConditions > condition :', condition)
     const condOperator = condition.operator
-    // console.log('utils > conditions > CheckConditions > condOperator :', condOperator)
     const condField: string = condition.type || ''
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-assignment
     const dataValue = data[condField]
-    // console.log('utils > conditions > CheckConditions > dataValue :', dataValue)
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const condVal = condition.value
     let condBool = !strict
@@ -42,7 +38,6 @@ export const CheckConditions = (data: any, conditions: ConditionTrack[], strict:
           break
       }
     }
-    // console.log('utils > conditions > CheckConditions > condBool :', condBool)
     boolArray.push(condBool)
   })
 
@@ -50,13 +45,9 @@ export const CheckConditions = (data: any, conditions: ConditionTrack[], strict:
 }
 
 export const CheckNextTrackRules = (data: any, rules: NextTrackRule[]) => {
-  // console.log()
-  // console.log('utils > conditions > CheckNextTrackRules > data :', data)
-  // console.log('...')
   const boolArray = [true]
 
   rules.forEach((rule: NextTrackRule) => {
-    // console.log('utils > conditions > CheckNextTrackRules > rule :', rule)
     const bool = CheckConditions(data, rule.conditions, true)
     boolArray.push(bool)
   })

@@ -1,3 +1,6 @@
+// CONSOLE LOG TEMPLATE
+//console.log(`router.index > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 import { createRouter, createWebHistory } from 'vue-router'
 import TeeHomePage from '../pages/TeeHomePage.vue'
 import WidgetApp from '../WidgetApp.ce.vue'

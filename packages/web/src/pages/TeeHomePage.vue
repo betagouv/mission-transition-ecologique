@@ -20,6 +20,9 @@
 </template>
 
 <script setup lang="ts">
+// CONSOLE LOG TEMPLATE
+// console.log(`TeeHomePage > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 import TeeCta from '@/components/home/TeeCta.vue'
 import TeeHomeSteps from '@/components/home/TeeHomeSteps.vue'
 import TeeHomeInfos from '@/components/home/TeeHomeInfos.vue'

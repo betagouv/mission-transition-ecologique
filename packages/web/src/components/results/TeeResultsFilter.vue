@@ -29,6 +29,9 @@
 </template>
 
 <script setup lang="ts">
+// CONSOLE LOG TEMPLATE
+// console.log(`TeeResultsFilter > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 import { ref } from 'vue'
 import { choicesStore } from '../../stores/choices'
 import type { TrackFilter, FilterEvent } from '@/types/index'
@@ -46,11 +49,8 @@ interface Props {
 const props = defineProps<Props>()
 
 const updateLocalFilters = (event: FilterEvent) => {
-  // console.log('\nTeeResults > updateLocalFilters > event :', event )
   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-assignment
   const val = event.target.value
-  // console.log('TeeResults > updateLocalFilters > val :', val )
-  // console.log('TeeResults > updateLocalFilters > props.filter :', props.filter )
 
   // set local ref
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
@@ -62,7 +62,6 @@ const updateLocalFilters = (event: FilterEvent) => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     value: val
   }
-  // console.log('TeeResults > updateLocalFilters > fIn :', fIn )
   emit('updateFilter', fIn)
 }
 </script>

@@ -143,5 +143,8 @@
 </template>
 
 <script setup lang="ts">
+// CONSOLE LOG TEMPLATE
+// console.log(`TeePersonalDataPage > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 import TeeHelp from '@/components/home/TeeHelp.vue'
 </script>

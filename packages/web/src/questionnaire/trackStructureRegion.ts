@@ -1,3 +1,6 @@
+// CONSOLE LOG TEMPLATE
+// console.log(`questionnaire.trackStructureRegion > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 import type { Track } from '@/types'
 import { TrackComponents, TrackId, ConditionOperators, DataMappingFrom } from '@/types'
 import type { NextTrackRuleSet } from '@/types'
@@ -87,7 +90,6 @@ const regionsOptions = regionsList.map((regName) => {
     }
   }
 })
-// console.log('questionnaire > trackStructureRegions > regionsOptions :', regionsOptions)
 
 export const regions: Track = {
   id: TrackId.StructureRegion,

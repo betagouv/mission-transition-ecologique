@@ -1,13 +1,14 @@
+// CONSOLE LOG TEMPLATE
+// console.log(`utils.navigation > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 export const unfoldQueries = (query: any) => {
   const prefix = 'teetrack_'
   const sepValues = '|'
   const sepPairs = ':'
   // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
   const queryTracksRaw = Object.fromEntries(Object.entries(query).filter(([key]) => key.startsWith(prefix)))
-  // console.log('utils > navigation > unfoldQueries > queryTracksRaw :', queryTracksRaw)
 
   const queryTracks = Object.keys(queryTracksRaw)
-  // console.log('utils > navigation > unfoldQueries > queryTracks :', queryTracks)
 
   const tracksArray: any[] = queryTracks.map((key) => {
     const trackId = key.replace(prefix, '')
@@ -18,7 +19,6 @@ export const unfoldQueries = (query: any) => {
     }
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-assignment
     const strParts = query[key].split(sepValues)
-    // console.log('utils > navigation > unfoldQueries > strParts :', strParts)
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-assignment
     const pairs = strParts.map((i: any) => {
       const o: any = {}
@@ -32,12 +32,10 @@ export const unfoldQueries = (query: any) => {
         return o
       }
     })
-    // console.log('utils > navigation > unfoldQueries > pairs :', pairs)
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-assignment
     obj.selected = pairs.filter((i: any) => !!i)
     return obj
   })
-  // console.log('utils > navigation > unfoldQueries > tracksArray :', tracksArray)
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return tracksArray
 }

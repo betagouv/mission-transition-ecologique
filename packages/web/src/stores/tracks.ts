@@ -1,4 +1,6 @@
-// import Vue from 'vue'
+// CONSOLE LOG TEMPLATE
+// console.log(`store.tracks > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 import { computed, ref, shallowRef, toRaw } from 'vue'
 // cf : https://stackoverflow.com/questions/64917686/vue-array-converted-to-proxy-object
 import { defineStore } from 'pinia'
@@ -10,7 +12,6 @@ const allTracks = ref<Track[]>(tracks)
 const seedTrack = ref<TrackId | undefined>()
 
 export const tracksStore = defineStore('tracks', () => {
-  // console.log('store.tracks > defineStore > tracks : ', tracks)
   const trackResultString = 'track_results'
 
   const maxDepth = ref(4)
@@ -59,7 +60,6 @@ export const tracksStore = defineStore('tracks', () => {
         return toRaw(values.map((i) => toRaw(i)))
       })
       .filter((i) => i?.length)
-    // console.log('store.tracks > getAllUsedTracksValues >  usedTrackValues :', usedTrackValues)
 
     return usedTrackValues.flat(1)
   })
@@ -115,10 +115,7 @@ export const tracksStore = defineStore('tracks', () => {
   }
 
   function setSeedTrack(seed: TrackId) {
-    // console.log()
-    // console.log('store.tracks > setSeedTrack > seed : ', seed)
     const track = getTrack(seed)
-    // console.log('store.tracks > setSeedTrack > track : ', track)
     seedTrack.value = track?.id
   }
 
@@ -142,42 +139,27 @@ export const tracksStore = defineStore('tracks', () => {
   }
 
   function updateUsedTracks(trackId: string, step: number, next: any, selectedOptions: TrackOptions[]) {
-    // console.log()
-    // console.log('store.tracks > updateUsedTracks > trackId : ', trackId)
-    // console.log('store.tracks > updateUsedTracks > step : ', step)
-    // console.log('store.tracks > updateUsedTracks > next : ', next)
-    // console.log('store.tracks > updateUsedTracks > selectedOptions : ', selectedOptions)
     usedTracks.value.map((trackInfo: UsedTrack) => {
       if (trackInfo.id === trackId) {
-        // console.log('store.tracks > updateUsedTracks > trackInfo (A) : ', trackInfo)
         const hasValues = Boolean(selectedOptions.length)
         trackInfo.selected = selectedOptions
         trackInfo.completed = hasValues
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         trackInfo.next = hasValues ? next : null
-        // console.log('store.tracks > updateUsedTracks > trackInfo (B) : ', trackInfo)
       }
     })
   }
 
   function setUsedTracksAsNotCompleted(trackId: string) {
-    // console.log()
-    // console.log('store.tracks > setUsedTracksAsNotCompleted > trackId : ', trackId)
-    // console.log('store.tracks > setUsedTracksAsNotCompleted > updatedArray : ', updatedArray)
     usedTracks.value.map((trackInfo: UsedTrack) => {
-      // console.log('store.tracks > setUsedTracksAsNotCompleted > trackInfoCopy : ', trackInfoCopy)
       if (trackInfo.id === trackId) {
         trackInfo.completed = false
-        // console.log('store.tracks > setUsedTracksAsNotCompleted > trackInfo : ', trackInfo)
       }
       return trackInfo
     })
-    // console.log('store.tracks > setUsedTracksAsNotCompleted > usedTracks.value : ', usedTracks.value)
   }
 
   function removeFurtherUsedTracks(srcTrackId: string) {
-    // console.log()
-    // console.log('store.tracks > removeFurtherUsedTracks > srcTrackId : ', srcTrackId)
     const lastTrack: UsedTrack | undefined = usedTracks.value.find((t: UsedTrack) => t.id === srcTrackId)
     if (lastTrack) {
       usedTracks.value = usedTracks.value.filter((t: UsedTrack) => t.step <= lastTrack?.step)

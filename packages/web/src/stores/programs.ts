@@ -1,3 +1,6 @@
+// CONSOLE LOG TEMPLATE
+// console.log(`store.programs > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 import { computed, ref } from 'vue'
 import { defineStore } from 'pinia'
 

@@ -15,6 +15,9 @@
 </template>
 
 <script setup lang="ts">
+// CONSOLE LOG TEMPLATE
+// console.log(`TeeProgramPage > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 import { onMounted } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import WidgetApp from '@/WidgetApp.ce.vue'
@@ -25,8 +28,7 @@ const router = useRouter()
 const route = useRoute()
 
 onMounted(async () => {
-  //   // cf: https://stackoverflow.com/questions/69495211/vue3-route-query-empty
-  //   console.log('TeeCatalogPage > onMounted > set router...')
+  // cf: https://stackoverflow.com/questions/69495211/vue3-route-query-empty
   await router.isReady()
   console.log('TeeCatalogPage > onMounted > router is ready...')
 })
