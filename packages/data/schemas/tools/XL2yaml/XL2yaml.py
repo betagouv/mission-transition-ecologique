@@ -28,6 +28,7 @@ PARCOURS_OBJ_PRECIS = "questionnaire . parcours = objectif précis"
 PROPRIO = "entreprise . est propriétaire de ses locaux"
 
 ELIGIBILITY_SIZE = "taille de l'entreprise"
+ELIGIBILITY_SECTOR = "secteur d'activité"
 
 ALL = "toutes ces conditions"
 ANY = "une de ces conditions"
@@ -105,9 +106,11 @@ def assembleProgramYAML(rawData, colNumbersByName, id):
     eligibilite = []  # Accumulateur des règles qui font parti de l'éligibilité.
 
     # Conditions d'éligibilité
-    eligibility_conditions = {ELIGIBILITY_SIZE: []}
+    eligibility_conditions = {ELIGIBILITY_SIZE: [], ELIGIBILITY_SECTOR: []}
     eligibility_conditions[ELIGIBILITY_SIZE].append(eligibility_size(get))
     eligibility_conditions[ELIGIBILITY_SIZE].append(eligibility_microentreprise(get))
+
+    eligibility_conditions[ELIGIBILITY_SECTOR].append("Tous secteurs d'activité")
 
     set("conditions d'éligibilité", eligibility_conditions, True)
 

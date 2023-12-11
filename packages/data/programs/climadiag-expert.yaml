@@ -27,6 +27,8 @@ conditions d'éligibilité:
   taille de l'entreprise:
   - PME
   - Non éligible aux micro-entreprises
+  secteur d'activité:
+  - Tous secteurs d'activité
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
