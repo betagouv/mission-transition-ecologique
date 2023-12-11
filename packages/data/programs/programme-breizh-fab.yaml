@@ -34,7 +34,7 @@ conditions d'éligibilité:
   secteur d'activité:
   - Industrie
   nombre d'années d'activité:
-  - Éligible à toutes les entreprises
+  - Au moins 3 ans d’activité
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

@@ -42,7 +42,7 @@ conditions d'éligibilité:
     d’affaires est inférieur à 750 000 €, à l’exception des codes NAF 02.20Z et 02.40Z
     (entreprises forestières)'
   nombre d'années d'activité:
-  - Éligible à toutes les entreprises
+  - Au moins 3 ans d’activité
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

@@ -303,6 +303,8 @@ def eligibility_naf(get) -> Optional[str]:
 
 def eligibility_nyears(get) -> str:
     en = get("Eligibilité Existence")
+    if valid(en):
+        return en
     return "Éligible à toutes les entreprises"
 
 
