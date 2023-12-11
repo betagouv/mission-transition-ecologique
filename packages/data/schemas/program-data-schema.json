@@ -100,6 +100,13 @@
       "description": "Les conditions d'éligibilité, écrites en langage naturel, pour affichage sur la fiche de résultat",
       "type": "object",
       "properties": {
+        "secteur d'activité": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
         "taille de l'entreprise": {
           "type": "array",
           "items": {
@@ -108,7 +115,7 @@
           "minItems": 2
         }
       },
-      "required": ["taille de l'entreprise"]
+      "required": ["taille de l'entreprise", "secteur d'activité"]
     },
     "publicodes": {
       "description": "Mécanismes publicodes (https://publi.codes/) associés au dispositif. Doit être en langage publicodes valide. Les données nécessaires à l'évaluation des règles (contrat d'interface) sont matérialisés par des clés sans valeurs.",
