@@ -1,11 +1,11 @@
-import type { ConditionTrack, NextTrackRule } from '@/types'
+import type { Condition, NextTrackRule } from '@/types'
 import { ConditionOperators } from '@/types'
 
-export const checkConditions = (conditions: ConditionTrack[], data: any) => {
+export const checkConditions = (conditions: Condition[], data: any) => {
   return conditions.every((cond) => checkCondition(cond, data))
 }
 
-const checkCondition = (condition: ConditionTrack, data: any): boolean => {
+const checkCondition = (condition: Condition, data: any): boolean => {
   const dataKey: string = condition.type
 
   switch (condition.operator) {

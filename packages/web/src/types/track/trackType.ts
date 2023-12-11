@@ -9,16 +9,18 @@ import { ConditionOperators } from '@tee/web/src/types/conditionOperators'
 import type { TrackId } from '@tee/web/src/types'
 
 // FOR TRACKS
-export type ConditionTrack =
-  | {
-      type: string
-      operator: ConditionOperators.is
-      value: string | number | object
-    }
-  | {
-      type: string
-      operator: ConditionOperators.exists | ConditionOperators.isMissing
-    }
+type ConditionIs = {
+  type: string
+  operator: ConditionOperators.is
+  value: string | number | object
+}
+
+type ConditionExistsOrIsMissing = {
+  type: string
+  operator: ConditionOperators.exists | ConditionOperators.isMissing
+}
+
+export type Condition = ConditionIs | ConditionExistsOrIsMissing
 
 export enum TrackCalloutType {
   info = 'info'
@@ -78,7 +80,7 @@ export enum TrackFieldType {
 }
 
 export interface NextTrackRule extends FormCallbackDataMapping {
-  conditions: ConditionTrack[]
+  conditions: Condition[]
 }
 
 export interface NextTrackRuleSet {
