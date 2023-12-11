@@ -18,6 +18,10 @@ objectifs:
   résultats, en fin d'exercice.
 - Bénéficiez d'une réduction d'impôt allant jusqu'à 25% du prix d'achat ou de location
   de cette flotte de vélos, par exercice.
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Toutes tailles
+  - Éligible aux micro-entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

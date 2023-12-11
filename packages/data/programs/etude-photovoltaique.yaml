@@ -21,6 +21,10 @@ objectifs:
   etc.)
 - Pré-chiffrer les travaux, calculer le temps de retour sur investissement et identifier
   les financements possibles
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Toutes tailles
+  - Éligible aux micro-entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

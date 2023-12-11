@@ -17,6 +17,10 @@ objectifs:
 - Optimisez le type de contrat souscrit avec vos fournisseurs d’énergie
 - Engagez un système de suivi de votre consommation d'énergie et bénéficiez de conseils
   sur des financements potentiels.
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Toutes tailles
+  - Éligible aux micro-entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

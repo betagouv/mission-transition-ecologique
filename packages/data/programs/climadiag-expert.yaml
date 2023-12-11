@@ -23,6 +23,10 @@ objectifs:
   client liées aux changements climatiques'
 - Concevez un plan d'actions à mettre en oeuvre
 - Identifier des financements possibles
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Toutes tailles
+  - Éligible aux micro-entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

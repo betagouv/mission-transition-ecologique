@@ -16,6 +16,10 @@ objectifs:
 - Déposez une demande de bonus écologique dans les six mois suivant l'achat ou la
   location du véhicule propre.
 - Recevez le bonus écologique !
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Toutes tailles
+  - Éligible aux micro-entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

@@ -42,6 +42,10 @@ objectifs:
   de financement précisant le montant d’aide maximum, les conditions et les modalités
   de versement. Le financement pourra se faire par le biais de subventions ou d'aides
   remboursables.
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Toutes tailles
+  - Éligible aux micro-entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

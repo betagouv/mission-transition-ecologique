@@ -28,6 +28,10 @@ objectifs:
 - Exprimez votre intérêt pour ce prêt à Bpifrance grâce au formulaire ci-dessous
 - Obtenez un rendez-vous de financement auprès d'un chargé d'affaires Bpifrance
 - Bpifrance étudie votre demande de prêt
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Toutes tailles
+  - Éligible aux micro-entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
@@ -42,7 +46,8 @@ publicodes:
     toutes ces conditions:
     - effectif >= 1
     - effectif <= 249
-  entreprise . est dans un secteur d'activité éligible: est secteur d'activité exclu = non
+  entreprise . est dans un secteur d'activité éligible: est secteur d'activité exclu
+    = non
   est secteur d'activité exclu:
     une de ces conditions:
     - est activité d'intermédiation financière

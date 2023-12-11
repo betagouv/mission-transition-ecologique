@@ -19,6 +19,10 @@ objectifs:
 - Ce prêt peut également servir à financer des formations destinées aux collaborateurs
   ainsi que la réalisation de diagnostics, etc.
 - La demande de prêt se réalise 100% en ligne en 15 minutes.
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Toutes tailles
+  - Éligible aux micro-entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

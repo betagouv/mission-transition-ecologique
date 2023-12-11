@@ -18,6 +18,10 @@ objectifs:
 - Déposer un seul dossier pour plusieurs études et/ou investissements.
 - Réalisez votre investissement et votre étude dans les 18 mois du contrat.
 - Obtenez un paiement final sur attestation et justificatifs.
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Toutes tailles
+  - Éligible aux micro-entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

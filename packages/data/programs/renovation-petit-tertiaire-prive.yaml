@@ -21,6 +21,10 @@ objectifs:
 - Disposer d'un pré-diagnostic énergétique
 - Obtenez de l'aide votre recherche de solutions en prenant en compte l’ensemble des
   aspects de votre projet (financier, juridique, technique et social).
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Toutes tailles
+  - Éligible aux micro-entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

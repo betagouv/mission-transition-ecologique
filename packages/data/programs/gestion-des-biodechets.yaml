@@ -28,6 +28,10 @@ objectifs:
 - Répertorier les biodéchets sur une plateforme géolocalisée.
 - 'Obtenir un outil d’aide à la décision : solutions techniques, dispositifs de financements,
   contacts associés.'
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Toutes tailles
+  - Éligible aux micro-entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

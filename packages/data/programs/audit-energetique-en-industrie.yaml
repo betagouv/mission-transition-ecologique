@@ -28,6 +28,10 @@ objectifs:
 - A la fin du diagnostic, bénéficiez d'un état des lieux complet de vos consommations,
   des pistes d'amélioration ainsi que les gains économiques associés et le temps de
   retour sur investissement ; et d'un plan d'actions.
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Toutes tailles
+  - Éligible aux micro-entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

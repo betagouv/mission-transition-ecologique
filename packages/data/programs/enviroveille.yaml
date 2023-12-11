@@ -21,6 +21,10 @@ objectifs:
   sur les différentes thématiques de la transition écologique : déchets, énergie,
   eau, biodiversité, air, sites et sols pollués, installations classées pour la protection
   de l’environnement.'
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Toutes tailles
+  - Éligible aux micro-entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

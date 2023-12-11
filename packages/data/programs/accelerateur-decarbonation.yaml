@@ -20,6 +20,10 @@ objectifs:
   Bpifrance
 - 'Bénéficier d''un accompagnement premium de la part de Bpifrance pendant toute la
   durée du programme : 39 jours de suivi séquencés sur les 2 années du programme.'
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Toutes tailles
+  - Éligible aux micro-entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

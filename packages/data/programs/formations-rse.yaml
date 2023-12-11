@@ -31,6 +31,10 @@ objectifs:
 - Visionnez votre formation. Elle peut prendre la forme de modules e-learning, webinaires
   live et replay, podcasts, digital guides, tutos, exercices interactifs, ou interviews
   réalisés avec des experts.
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Toutes tailles
+  - Éligible aux micro-entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

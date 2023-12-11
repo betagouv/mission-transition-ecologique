@@ -14,6 +14,10 @@ objectifs:
 - 'L’investissement peut porter sur des équipements qui visent l’amélioration des
   postes suivants : éclairage, froid, chauffage, climatisation, motorisation électrique.'
 - Ce prêt est éligible aux certificats d'économies d'énergie (CEE)
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Toutes tailles
+  - Éligible aux micro-entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
@@ -26,7 +30,8 @@ publicodes:
   entreprise . a un effectif éligible:
     toutes ces conditions:
     - effectif <= 49
-  entreprise . est dans un secteur d'activité éligible: est secteur d'activité exclu = non
+  entreprise . est dans un secteur d'activité éligible: est secteur d'activité exclu
+    = non
   est secteur d'activité exclu:
     une de ces conditions:
     - est activité d'intermédiation financière

@@ -31,6 +31,10 @@ objectifs:
 - A la fin de l'étude,   vous déterminerez la pertinence de préparer un projet de
   décarbonation via l’hydrogène. Une étude d’opportunité peut éventuellement déboucher
   sur une étude de faisabilité.
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Toutes tailles
+  - Éligible aux micro-entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

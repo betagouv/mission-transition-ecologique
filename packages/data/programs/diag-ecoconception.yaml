@@ -20,6 +20,10 @@ objectifs:
   risque de transfert de pollution.
 - Préparer la mise en œuvre d'un plan d’actions incluant un premier dimensionnement
   technico-économique.
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Toutes tailles
+  - Éligible aux micro-entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

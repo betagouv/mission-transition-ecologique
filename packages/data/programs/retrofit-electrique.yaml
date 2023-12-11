@@ -17,6 +17,10 @@ objectifs:
 - Ne vendez pas votre véhicule dans l'année suivant sa transformation, ni avant d'avoir
   parcouru au moins 6 000 km.
 - Bénéficiez d'une prime allant jusqu'à 9000 € pour une camionnette.
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Toutes tailles
+  - Éligible aux micro-entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

@@ -21,6 +21,10 @@ objectifs:
 - Déposez une demande de prime dans les six mois suivant l'achat ou la location du
   véhicule propre.
 - Recevez la prime à la conversion !
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Toutes tailles
+  - Éligible aux micro-entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

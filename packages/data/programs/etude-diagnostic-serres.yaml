@@ -25,6 +25,10 @@ objectifs:
 - 'Réalisez votre audit énergétique : état des lieux de vos consommations, pistes
   d''amélioration, hierarchisation des actions en fonction de leur faisabilité et
   de leur temps de retour sur investissement.'
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Toutes tailles
+  - Éligible aux micro-entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

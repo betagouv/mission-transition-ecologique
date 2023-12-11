@@ -19,6 +19,10 @@ objectifs:
 - Identifier les pistes d'amélioration (tri, collecte, réemploi, mutualisation,etc.)
   et les possibilités de financement.
 - Réaliser un plan d’action  et permettre la mise en conformité réglementaire.
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Toutes tailles
+  - Éligible aux micro-entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

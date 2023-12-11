@@ -31,6 +31,10 @@ objectifs:
 - Déclarez le crédit d'impôt au moment de la déclaration de vos résultats ou de vos
   revenus.
 - Recevez une aide en crédit d'impôt à hauteur de 30% des dépenses de rénovation engagées.
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Toutes tailles
+  - Éligible aux micro-entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

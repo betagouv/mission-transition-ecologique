@@ -27,6 +27,8 @@ POSSESSION_VEHICULES = "entreprise . possède des véhicules motorisés"
 PARCOURS_OBJ_PRECIS = "questionnaire . parcours = objectif précis"
 PROPRIO = "entreprise . est propriétaire de ses locaux"
 
+ELIGIBILITY_SIZE = "taille de l'entreprise"
+
 ALL = "toutes ces conditions"
 ANY = "une de ces conditions"
 
@@ -102,6 +104,14 @@ def assembleProgramYAML(rawData, colNumbersByName, id):
     cible = []  # Accumulateur des règles qui font parti du ciblage.
     eligibilite = []  # Accumulateur des règles qui font parti de l'éligibilité.
 
+    # Conditions d'éligibilité
+    eligibility_conditions = {ELIGIBILITY_SIZE: []}
+    eligibility_conditions[ELIGIBILITY_SIZE].append("Toutes tailles")
+    eligibility_conditions[ELIGIBILITY_SIZE].append("Éligible aux micro-entreprises")
+
+    set("conditions d'éligibilité", eligibility_conditions, True)
+
+    # Publicodes constraints
     effective_constraint = pc_effectifConstraint(get("minEff"), get("maxEff"))
     if effective_constraint:
         pc[EFFECTIF] = effective_constraint

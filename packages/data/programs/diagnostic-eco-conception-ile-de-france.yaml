@@ -31,6 +31,10 @@ objectifs:
 - 'En fonction de la maturité de votre projet, continuez avec une phase de pré-industrialisation
   : étude de faisabilité, essai, prototypage, recherche de partenaires techniques,
   etc. (phase 2)'
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Toutes tailles
+  - Éligible aux micro-entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

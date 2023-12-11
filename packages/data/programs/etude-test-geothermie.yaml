@@ -31,6 +31,10 @@ objectifs:
 - Réalisez le Test.
 - A la fin du test, vous pourrez déterminer l’intérêt de pouvoir faire de la géothermie
   sur champs de sondes pour le chauffage des bâtiments concernés.
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Toutes tailles
+  - Éligible aux micro-entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
