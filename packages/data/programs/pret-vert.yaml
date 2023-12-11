@@ -40,15 +40,22 @@ publicodes:
     toutes ces conditions:
     - effectif >= 1
     - effectif <= 4999
-  entreprise . est dans un secteur d'activité éligible: code NAF exclu = non
-  code NAF exclu:
-    toutes ces conditions:
+  entreprise . est dans un secteur d'activité éligible: est secteur d'activité exclu = non
+  est secteur d'activité exclu:
+    une de ces conditions:
+    - est activité d'intermédiation financière
+    - est activité de promotion immobilière et marchand de biens
+    - est secteur agricole hors entreprises forestières
+  est activité d'intermédiation financière:
+    une de ces conditions:
     - entreprise . code NAF = "64.11Z"
     - entreprise . code NAF = "64.19Z"
     - entreprise . code NAF = "64.30Z"
     - entreprise . code NAF = "64.91Z"
     - entreprise . code NAF = "64.92Z"
     - entreprise . code NAF = "64.99Z"
+  est activité de promotion immobilière et marchand de biens:
+    une de ces conditions:
     - entreprise . code NAF = "68.10Z"
     - entreprise . code NAF = "68.20A"
     - entreprise . code NAF = "68.20B"
@@ -56,6 +63,8 @@ publicodes:
     - entreprise . code NAF = "41.10B"
     - entreprise . code NAF = "41.10C"
     - entreprise . code NAF = "41.10D"
+  est secteur agricole hors entreprises forestières:
+    une de ces conditions:
     - entreprise . code NAF = "01.11Z"
     - entreprise . code NAF = "01.12Z"
     - entreprise . code NAF = "01.13Z"
