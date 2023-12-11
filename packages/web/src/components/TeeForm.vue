@@ -123,7 +123,6 @@
       <div
         class="fr-col-12"
         style="display: grid; justify-content: right;">
-        <!-- :label="choices.t('next')"  -->
         <DsfrButton
           :label="choices.t('send')"
           :disabled="!canSaveFrom"
@@ -373,6 +372,12 @@ const saveFormData = async () => {
   } finally {
     isLoading.value = false
   }
+  scrollToFormContainer()
+}
+
+const scrollToFormContainer = () => {
+  const element: HTMLElement | null = document.getElementById("tee-program-form-container")
+  element?.scrollIntoView()
 }
 
 </script>

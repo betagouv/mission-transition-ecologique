@@ -184,6 +184,7 @@
 
     <!-- PROGRAM FORM -->
     <div
+      id="tee-program-form-container"
       class="fr-form-block">
       <TeeForm
         :track-id="trackConfig.id"
