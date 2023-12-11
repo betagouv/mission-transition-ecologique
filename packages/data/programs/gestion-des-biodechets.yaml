@@ -35,6 +35,8 @@ conditions d'éligibilité:
   secteur d'activité:
   - Entreprises produisant des biodéchets (industries agro-alimentaires, Hotellerie
     restauration, Grande & moyennes surfaces...)
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

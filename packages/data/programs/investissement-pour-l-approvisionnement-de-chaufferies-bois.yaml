@@ -38,6 +38,8 @@ conditions d'éligibilité:
     bois de chauffage, les groupements de propriétaires forestiers, les communes,
     syndicats intercommunaux, les entrepreneurs de travaux forestiers, les exploitants
     forestiers.
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

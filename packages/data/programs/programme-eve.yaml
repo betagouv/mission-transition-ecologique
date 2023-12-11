@@ -87,6 +87,8 @@ conditions d'éligibilité:
   secteur d'activité:
   - Transporteurs routiers (marchandises, grossistes, voyageurs), chargeurs et commissionnaires
     de transport
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

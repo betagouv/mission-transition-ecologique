@@ -52,6 +52,8 @@ conditions d'éligibilité:
   secteur d'activité:
   - Secteur Tertiaire (établissements ayant des usages chauffage et eau chaude sanitaire
     durant toute l’année)
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

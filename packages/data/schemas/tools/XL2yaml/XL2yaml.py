@@ -29,6 +29,7 @@ PROPRIO = "entreprise . est propriétaire de ses locaux"
 
 ELIGIBILITY_SIZE = "taille de l'entreprise"
 ELIGIBILITY_SECTOR = "secteur d'activité"
+ELIGIBILITY_NYEARS = "nombre d'années d'activité"
 
 ALL = "toutes ces conditions"
 ANY = "une de ces conditions"
@@ -106,13 +107,19 @@ def assembleProgramYAML(rawData, colNumbersByName, id):
     eligibilite = []  # Accumulateur des règles qui font parti de l'éligibilité.
 
     # Conditions d'éligibilité
-    eligibility_conditions = {ELIGIBILITY_SIZE: [], ELIGIBILITY_SECTOR: []}
-    eligibility_conditions[ELIGIBILITY_SIZE].append(eligibility_size(get))
-    eligibility_conditions[ELIGIBILITY_SIZE].append(eligibility_microentreprise(get))
-
+    eligibility_conditions = {
+        ELIGIBILITY_SIZE: [],
+        ELIGIBILITY_SECTOR: [],
+        ELIGIBILITY_NYEARS: [],
+    }
     eligibility_conditions[ELIGIBILITY_SECTOR].append(eligibility_sector(get))
     if eligibility_naf(get):
         eligibility_conditions[ELIGIBILITY_SECTOR].append(eligibility_naf(get))
+
+    eligibility_conditions[ELIGIBILITY_SIZE].append(eligibility_size(get))
+    eligibility_conditions[ELIGIBILITY_SIZE].append(eligibility_microentreprise(get))
+
+    eligibility_conditions[ELIGIBILITY_NYEARS].append(eligibility_nyears(get))
 
     set("conditions d'éligibilité", eligibility_conditions, True)
 
@@ -292,6 +299,11 @@ def eligibility_naf(get) -> Optional[str]:
     if valid(en):
         return en
     return None
+
+
+def eligibility_nyears(get) -> str:
+    en = get("Eligibilité Existence")
+    return "Éligible à toutes les entreprises"
 
 
 def pc_effectifConstraint(effmin, effmax):

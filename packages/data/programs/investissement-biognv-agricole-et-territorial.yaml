@@ -42,6 +42,8 @@ conditions d'éligibilité:
   - Éligible aux micro-entreprises
   secteur d'activité:
   - Entreprises exploitantes d’unités de méthanisation
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

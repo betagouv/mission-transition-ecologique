@@ -37,6 +37,8 @@ conditions d'éligibilité:
   - 'Codes NAF concernés : section F (Construction), section B (industries extractives),
     section H division 51 (transports aériens), Code 4949C (Téléphériques et remontées
     mécaniques)'
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

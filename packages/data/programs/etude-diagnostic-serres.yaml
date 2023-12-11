@@ -35,6 +35,8 @@ conditions d'éligibilité:
     et de la pêche), Division 01 (Culture et production animale, chasse et services
     annexes), Groupe 01.1 (Cultures non permanentes), 01.2 (Cultures permanentes)
     ou 01.3 (Reproduction de plantes)'
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

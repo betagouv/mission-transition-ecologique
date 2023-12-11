@@ -58,6 +58,8 @@ conditions d'éligibilité:
     cinémas, les salles de jeux et les casinos, les lieux éphémères et événements
     itinérants, les Parcs naturels régionaux, les parcs nationaux, les parcs naturels
     marins, les "Grands sites de France".'
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

@@ -31,6 +31,8 @@ conditions d'éligibilité:
   - Éligible aux micro-entreprises
   secteur d'activité:
   - Tous secteurs d’activité
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

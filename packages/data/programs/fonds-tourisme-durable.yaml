@@ -43,6 +43,8 @@ conditions d'éligibilité:
     social avec un code NAF association ou activités d’agritourisme avec un code NAF
     agricole.
   - 'Codes NAF concernés : 56.10A | 56.21Z | 55.10Z | 55.20Z | 55.30Z | 55.90Z.'
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
