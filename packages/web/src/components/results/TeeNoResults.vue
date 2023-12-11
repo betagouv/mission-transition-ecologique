@@ -22,6 +22,9 @@
 
 <script setup lang="ts">
 
+// CONSOLE LOG TEMPLATE
+// console.log(`TeeNoResults > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 import { choicesStore } from '../../stores/choices'
 
 // @ts-ignore

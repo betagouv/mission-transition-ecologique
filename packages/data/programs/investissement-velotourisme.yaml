@@ -26,6 +26,8 @@ description longue: "Accueil Vélo©' est une\nmarque nationale qui\ngarantit un
   \ pour recharge VAE ; \n- Un stationnement sécurisé (consigne individuelle ou collective)\n\
   - La recharge éléctrique de différents matériels (batterie, VAE, GPS, tablette)\
   \ au niveau des consignes, arceaux et supports d'attaches."
+début de validité: 01/01/2023
+fin de validité: 31/12/2023
 illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/developper-velotourisme

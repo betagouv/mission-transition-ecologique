@@ -183,6 +183,10 @@
 </template>
 
 <script setup lang="ts">
+
+// CONSOLE LOG TEMPLATE
+// console.log(`WidgetApp > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 // cf : https://stackoverflow.com/questions/71163741/vuejs-script-setup-cannot-contain-es-module-exports
 
 import '@gouvfr/dsfr/dist/core/core.main.min.css'               // Le CSS minimal du DSFR
@@ -197,7 +201,6 @@ import '@gouvfr/dsfr/dist/core/core.main.min.css'               // Le CSS minima
 
 // @ts-ignore
 // import jsonDataset from '../public/data/generated/dataset_out.json'
-// console.log('WidgetApp > jsonDataset :', jsonDataset)
 
 import { ref, watch, computed, onBeforeMount, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
@@ -272,16 +275,7 @@ const route = useRoute()
 // @ts-ignore
 window.stores = { tracks, choices, programs }
 
-// watch (() => props.programId, (next) => {
-//   console.log('WidgetApp > watch > props.programId > next : ', next)
-// })
-// watch (() => props.seed, (next) => {
-//   console.log('WidgetApp > watch > props.seed > next : ', next)
-// })
-
 watch(() => tracks.usedTracks, (next) => {
-  // console.log()
-  // console.log('WidgetApp > watch > tracks.usedTracks > next : ', next)
   if (nav.routerReady) {
     nav.setCurrentStep(tracks.currentStep)
     nav.setCurrentTrackId(tracks.currentTrackId)
@@ -341,14 +335,11 @@ const setupFromUrl = () => {
   }
   */
   // const queryTracksRaw = unfoldQueries(route.query)
-  // console.log('WidgetApp > mounted > queryTracksInfos :', queryTracksRaw)
     // TO DO
   // tracks.populateUsedTracksFromQuery(route.query)
   // nav.populateFromQuery(route.query)
   // parse url to get detail program (if any)
   const programId = props.programId || route.query['teeDetail']
-  // console.log('WidgetApp > mounted > currentTrack :', currentTrack)
-  // console.log('WidgetApp > mounted > programId :', programId)
   // @ts-ignore
   nav.setCurrentDetailId(programId)
   // @ts-ignore
@@ -363,45 +354,30 @@ const setupFromUrl = () => {
 }
 
 onBeforeMount(() => {
-  // console.log('WidgetApp > onBeforeMount > props.seed :', props.seed)
-  // console.log('WidgetApp > onBeforeMount > props.maxDepth :', props.maxDepth)
 
   setupGlobal()
 
   // inject style link in html head if not present
   const href = deployMode ? `${deployUrl}/style.css` : ''
-  // console.log('WidgetApp > onBeforeMount > href :', href)
   let needStyle = !props.disableWidget // true
   // avoid duplicates
   const styleSheets = document.styleSheets.length
-  // console.log('WidgetApp > onBeforeMount > document.styleSheets :', document.styleSheets)
-  // console.log('WidgetApp > onBeforeMount > styleSheets :', styleSheets)
   if (needStyle && styleSheets) {
-    // console.log('WidgetApp > onBeforeMount > styleSheets - A ')
     for(let i = 0; i < styleSheets; i++){
-      // console.log('WidgetApp > onBeforeMount > styleSheets - A - i :', i)
       const docStyle = document.styleSheets[i]
-      // console.log('WidgetApp > onBeforeMount > styleSheets - A - docStyle :', docStyle)
-      // console.log('WidgetApp > onBeforeMount > styleSheets - A - docStyle.href :', docStyle.href)
       if(docStyle.href == href){
         needStyle = false
-        // return
       }
     }
   }
-  // console.log('WidgetApp > onBeforeMount > needStyle :', needStyle)
-  // console.log('WidgetApp > onBeforeMount > SET STYLES...')
   if (needStyle && deployMode) {
     const head = document.head
-    // console.log('WidgetApp > onBeforeMount > head :', head)
     const link = document.createElement('link')
     link.type = "text/css"
     link.rel = "stylesheet"
     link.href = href
     head.appendChild(link)
   }
-
-  // console.log('WidgetApp > onBeforeMount > SET HEADER...')
 
   // set header / footer components
   showHeaderBool.value = props.showHeader === 'true'
@@ -416,7 +392,6 @@ onBeforeMount(() => {
       // @ts-ignore
       messageObj[strObj[0]] = strObj[1]
     })
-    // console.log('WidgetApp > onBeforeMount > messageObj :', messageObj)
     message.value = messageObj
   }
 
@@ -433,17 +408,14 @@ onBeforeMount(() => {
   if (debugSwitchBool.value && props.debug) {
     debugBool.value = props.debug === 'true'
   }
-  // console.log('WidgetApp > onBeforeMount > END...')
 
   // set first track at mount
-  // console.log('WidgetApp > onMounted > set seed track...')
   tracks.setSeedTrack(props.seed)
   tracks.addToUsedTracks(props.seed, props.seed)
 })
 
 onMounted(async() => {
   // cf: https://stackoverflow.com/questions/69495211/vue3-route-query-empty
-  // console.log('WidgetApp > onMounted > set router...')
   if (Widget.is) {
     return
   }
@@ -463,32 +435,10 @@ onMounted(async() => {
 })
 </script>
 
-<!-- <style lang="scss">
-  @import '~@gouvfr/dsfr/dist/core/core.main.min.css';
-  @import '~@gouvfr/dsfr/dist/component/component.main.min.css';
-  @import '~@gouvfr/dsfr/dist/utility/utility.main.min.css';
-  @import '~@gouvfr/dsfr/dist/scheme/scheme.min.css';
-  @import '~@gouvfr/dsfr/dist/utility/icons/icons.min.css';
-  @import '~@gouvminint/vue-dsfr/dist/vue-dsfr.css';
-</style> -->
-
 <style lang="scss">
   @import '~@gouvfr/dsfr/dist/dsfr.min.css'; // ok
   @import '@public/css/custom.css';
-
-  // @import '../public/core.main.css';
-  // @import '~@gouvfr/dsfr/dist/core/core.main.min.css';
-
-  // @import '~@gouvfr/dsfr/dist/dsfr.legacy.min.css';
-  // @import '~@gouvfr/dsfr/dist/dsfr.main.min.css';
-
-  // @import '~@gouvfr/dsfr/dist/component/component.main.min.css';
-  // @import '~@gouvfr/dsfr/dist/utility/utility.main.min.css';
-
-  // @import '~@gouvfr/dsfr/dist/scheme/scheme.min.css';
   @import '~@gouvfr/dsfr/dist/utility/icons/icons.min.css'; // ok
-
-  // @import '~@gouvminint/vue-dsfr/styles';
   @import '~@gouvminint/vue-dsfr/dist/vue-dsfr.css'; // ok
 </style>
 

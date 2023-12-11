@@ -4,6 +4,8 @@ description: L'ADEME vous aide pour financer un diagnostic énergétique afin d'
   les solutions de réduction des consommations d’énergie de vos serres et la pertinence
   d’un investissement dans une solution de production d’énergie renouvelable. Cette
   démarche peut permettre de réaliser jusqu'à 50 % d'économies sur votre site.
+début de validité: 01/01/2023
+fin de validité: 31/12/2023
 illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/diagnostic-energetique-identification-dactions-energetiques-prioritaires?cible=79
@@ -38,27 +40,25 @@ publicodes:
     - effectif >= 250
   entreprise . est dans un secteur d'activité éligible:
     toutes ces conditions:
-      # cette condition sur le NAF niveau 1 est utile lorsque le code NAF
-      # n'est pas connu
-      - code NAF niveau 1 . est A
-      - une de ces conditions:
-        - code NAF = "01.11Z"
-        - code NAF = "01.12Z"
-        - code NAF = "01.13Z"
-        - code NAF = "01.14Z"
-        - code NAF = "01.15Z"
-        - code NAF = "01.16Z"
-        - code NAF = "01.19Z"
-        - code NAF = "01.21Z"
-        - code NAF = "01.22Z"
-        - code NAF = "01.23Z"
-        - code NAF = "01.24Z"
-        - code NAF = "01.25Z"
-        - code NAF = "01.26Z"
-        - code NAF = "01.27Z"
-        - code NAF = "01.28Z"
-        - code NAF = "01.29Z"
-        - code NAF = "01.30Z"
+    - code NAF niveau 1 . est A
+    - une de ces conditions:
+      - code NAF = "01.11Z"
+      - code NAF = "01.12Z"
+      - code NAF = "01.13Z"
+      - code NAF = "01.14Z"
+      - code NAF = "01.15Z"
+      - code NAF = "01.16Z"
+      - code NAF = "01.19Z"
+      - code NAF = "01.21Z"
+      - code NAF = "01.22Z"
+      - code NAF = "01.23Z"
+      - code NAF = "01.24Z"
+      - code NAF = "01.25Z"
+      - code NAF = "01.26Z"
+      - code NAF = "01.27Z"
+      - code NAF = "01.28Z"
+      - code NAF = "01.29Z"
+      - code NAF = "01.30Z"
   entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est rénover mon bâtiment

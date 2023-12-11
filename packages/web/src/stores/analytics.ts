@@ -1,3 +1,6 @@
+// CONSOLE LOG TEMPLATE
+// console.log(`store.analytics > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
 
@@ -30,10 +33,6 @@ export const analyticsStore = defineStore('analytics', () => {
   }
 
   function sendEvent (action: any, name: any = null, value: any = null) {
-    // console.log()
-    // console.log('analytics > sendEvent > action :', action)
-    // console.log('analytics > sendEvent > name :', name)
-    // console.log('analytics > sendEvent > value :', value)
     if (matomoIsSet.value) {
       // Track by domain
       trackEvent(

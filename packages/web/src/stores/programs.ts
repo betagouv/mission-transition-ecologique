@@ -1,8 +1,12 @@
+// CONSOLE LOG TEMPLATE
+// console.log(`store.programs > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
 import type { ProgramData, TrackId } from '@/types/index'
-import { filterPrograms as filterWithPublicodes } from '@tee/backend/src/domain/eligibility'
+import { filterPrograms as filterWithPublicodes } from '@tee/backend/src/domain/filter-programs'
+import { sortPrograms } from '@tee/backend/src/domain/sort-programs'
 import type { QuestionnaireData } from '@tee/backend/src/domain/types'
 
 export const programsStore = defineStore('programs', () => {
@@ -22,23 +26,17 @@ export const programsStore = defineStore('programs', () => {
   })
 
   function filterPrograms(tracksResults: any[]) {
-    // console.log()
-    // console.log('store.programs > filterPrograms > tracksResults : ', tracksResults)
-
     // retrieve and organize user's conditions
     const conditions: { [k: string]: any } = {}
     tracksResults.map((tr) => {
       tr.selected.map((v: object) => {
         // @ts-ignore
         const val = v.value || {}
-        // console.log('store.programs > filterPrograms > val : ', val)
         for (const [key, value] of Object.entries(val)) {
-          // console.log(`store.programs > filterPrograms > key : ${key} / value : ${value}`)
           conditions[key] = value
         }
       })
     })
-    // console.log('store.programs > filterPrograms > conditions :', conditions)
 
     // filter out programs
     const progsFilteredResult = filterWithPublicodes(
@@ -50,7 +48,9 @@ export const programsStore = defineStore('programs', () => {
       throw new Error(progsFilteredResult.error.message)
     }
 
-    return progsFilteredResult.value
+    const sortedPrograms = sortPrograms(progsFilteredResult.value, conditions['user_help'])
+
+    return sortedPrograms
   }
 
   function setDataset(dataset: any) {

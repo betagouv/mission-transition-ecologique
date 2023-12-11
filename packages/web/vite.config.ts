@@ -5,10 +5,11 @@ import { type BuildOptions, defineConfig } from 'vite'
 import type { ServerOptions } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
+console.log('Starting ...')
+console.log('vite.config ...')
+
 type LibType = 'main' | 'widget';
-
 const LIB: LibType = (process.env.LIB as LibType) ?? 'main';
-
 const libConfig: Record<LibType, BuildOptions> = {
   main: {
     emptyOutDir: false,

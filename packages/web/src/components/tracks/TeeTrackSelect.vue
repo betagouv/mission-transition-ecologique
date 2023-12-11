@@ -27,6 +27,9 @@
 
 <script setup lang="ts">
 
+// CONSOLE LOG TEMPLATE
+// console.log(`TeeTrackSelect > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 import type { Track, TrackOptionsSelect } from '@/types'
 
 import { ref } from 'vue'
@@ -46,12 +49,9 @@ const emit = defineEmits(['updateSelection'])
 const options: TrackOptionsSelect[] = props.track.options?.filter((o): o is TrackOptionsSelect => !!o.label) || []
 
 const updateLocalSelection = (event: any) => {
-  // console.log()
-  // console.log('TeeTrackSelect > updateLocalSelection > event :', event)
   const index = event.target.value
-  // console.log('TeeTrackSelect > updateLocalSelection > index :', index)
-
   const isReset = event.target.value === ''
+
   // set local ref
   activeOption.value = isReset ? undefined : options[index]
 

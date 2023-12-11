@@ -20,6 +20,16 @@
       "description": "La description longue La description longue est facultative. Elle peut être ajoutée si on juge que l'utilisateur ne dispose pas des informations suffisantes avec les seules autres informations. Elle peut être ajoutée par exemple pour définir un terme technique, pour détailler une loi à laquelle un dispositif fait référence ou pour détailler les projets concernés par un financement",
       "type": "string"
     },
+    "début de validité": {
+      "description": "Premier jour de validité de l'offre. Date au format JJ/MM/AAAA",
+      "type": "string",
+      "pattern": "^[0-3][0-9]\/[0-1][0-9]\/[0-9]{4}$"
+    },
+    "fin de validité": {
+      "description": "Dernier jour de validité de l'offre. Date au format JJ/MM/AAAA",
+      "type": "string",
+      "pattern": "^[0-3][0-9]\/[0-1][0-9]\/[0-9]{4}$"
+    },
     "url": {
       "description": "TODO",
       "type": "string"

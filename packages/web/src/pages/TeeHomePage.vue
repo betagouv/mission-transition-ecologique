@@ -29,8 +29,9 @@
 
 <script setup lang="ts">
 
-// @ts-ignore
-// import WidgetApp from '../../WidgetApp.ce.vue'
+// CONSOLE LOG TEMPLATE
+// console.log(`TeeHomePage > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 // @ts-ignore
 import TeeCta from '@/components/home/TeeCta.vue'
 // @ts-ignore
