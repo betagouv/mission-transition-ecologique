@@ -113,9 +113,16 @@
             "type": "string"
           },
           "minItems": 2
+        },
+        "nombre d'années d'activité": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
         }
       },
-      "required": ["taille de l'entreprise", "secteur d'activité"]
+      "required": ["taille de l'entreprise", "secteur d'activité", "nombre d'années d'activité"]
     },
     "publicodes": {
       "description": "Mécanismes publicodes (https://publi.codes/) associés au dispositif. Doit être en langage publicodes valide. Les données nécessaires à l'évaluation des règles (contrat d'interface) sont matérialisés par des clés sans valeurs.",
