@@ -22,7 +22,7 @@ objectifs:
 conditions d'éligibilité:
   taille de l'entreprise:
   - De 50 à 250 salariés
-  - Éligible aux micro-entreprises
+  - Non éligible aux micro-entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

@@ -107,7 +107,7 @@ def assembleProgramYAML(rawData, colNumbersByName, id):
     # Conditions d'éligibilité
     eligibility_conditions = {ELIGIBILITY_SIZE: []}
     eligibility_conditions[ELIGIBILITY_SIZE].append(eligibility_size(get))
-    eligibility_conditions[ELIGIBILITY_SIZE].append("Éligible aux micro-entreprises")
+    eligibility_conditions[ELIGIBILITY_SIZE].append(eligibility_microentreprise(get))
 
     set("conditions d'éligibilité", eligibility_conditions, True)
 
@@ -248,7 +248,7 @@ def makeObj(objs: list[str]):
     return [obj for obj in objs if keepObj(obj)]
 
 
-def eligibility_size(get):
+def eligibility_size(get) -> str:
     col_eligibilite_taille = get("👫👫\nEligibilité Taille")
     col_min_eff = get("minEff")
     col_max_eff = get("maxEff")
@@ -261,6 +261,18 @@ def eligibility_size(get):
     elif valid(col_max_eff):
         return f"Effectif inférieur à {col_max_eff} employés"
     return "Toutes tailles"
+
+
+def eligibility_microentreprise(get) -> str:
+    me = get("microEntre")
+    if valid(me):
+        if me.lower() == "oui":
+            return "Éligible aux micro-entreprises"
+        elif me.lower() == "non":
+            return "Non éligible aux micro-entreprises"
+        else:
+            raise Exception("Valeur non interprétable (colonne microEntre)")
+    return "Éligible aux micro-entreprises"
 
 
 def pc_effectifConstraint(effmin, effmax):

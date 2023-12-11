@@ -26,7 +26,7 @@ objectifs:
 conditions d'éligibilité:
   taille de l'entreprise:
   - PME
-  - Éligible aux micro-entreprises
+  - Non éligible aux micro-entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
