@@ -1,16 +1,13 @@
 <template>
   <!-- TEE PROGRAM COMPONENT  -->
-  <div class="fr-container--fluid fr-px-20v fr-pb-20v fr-mt-10v fr-mb-20v" style="min-height: 800px">
-    <!-- {{ route.params.programId }} -->
-    <WidgetApp
-      :seed="TrackId.Results"
-      :show-header-bool="false"
-      :show-footer-bool="false"
-      :disable-widget="true"
-      :program-id="route.params.programId as string"
-      :locale="'fr'"
-    />
-    <TeeProgramDetail :program-id="String(route.params.programId)" :track-id="TrackId.Results" :disable-widget="true" />
+  <div
+    class="fr-container--fluid fr-px-20v fr-pb-20v fr-mt-10v fr-mb-20v"
+    style="min-height: 800px">
+      <TeeProgramDetail
+        :program-id="String(route.params.programId)"
+        :track-id="TrackId.Results"
+        :disable-widget="true"
+      />
   </div>
 </template>
 
@@ -18,18 +15,8 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`TeeProgramPage > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import { onMounted } from 'vue'
-import { useRouter, useRoute } from 'vue-router'
-import WidgetApp from '@/WidgetApp.ce.vue'
+import { useRoute } from 'vue-router'
 import TeeProgramDetail from '@/components/program/TeeProgramDetail.vue'
 import { TrackId } from '@/types'
-
-const router = useRouter()
 const route = useRoute()
-
-onMounted(async () => {
-  // cf: https://stackoverflow.com/questions/69495211/vue3-route-query-empty
-  await router.isReady()
-  console.log('TeeCatalogPage > onMounted > router is ready...')
-})
 </script>
