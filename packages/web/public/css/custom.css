@@ -264,6 +264,14 @@ button.fr-link:hover, .tee-router-link:hover {
   display: inline;
 }
 
+/* FORM */
+
+.tee-form-response-title {
+  color: #000091; 
+  font-size: 1.3rem;
+  line-height: 1.3rem;
+}
+
 /* DEBUGGING STYLES */
 code {
   color: red !important;

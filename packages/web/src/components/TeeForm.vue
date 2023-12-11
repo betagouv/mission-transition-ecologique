@@ -141,14 +141,10 @@
     v-if="formIsSent"
     class="fr-mt-5v fr-tee-form">
     <!-- FORM ALERT AFTER SENDING-->
-    <div :class="`fr-alert fr-alert--${hasNoRespError ? 'success' : 'error fr-tee-form-error'}`">
-      <h3
-        v-if="hasNoRespError"
-        class="fr-alert__title">
-        {{ choices.t(`form.sent`) }}
-      </h3>
+    <div
+      v-if="!hasNoRespError"
+      class="fr-alert fr-alert--error fr-tee-form-error">
       <div
-        v-else
         class="fr-alert__title">
         <p>
           {{ choices.t(`form.notSent`) }}
@@ -192,17 +188,21 @@
     </div>
 
     <!-- NOW WHAT -->
-    <div v-if="hasNoRespError">
-      <h6 class="fr-mt-10v">
+    <div v-if="hasNoRespError" class="fr-text-center">
+      <p class="tee-form-response-title">
+        <v-icon name="ri-checkbox-circle-fill" aria-hidden="true" scale="3"></v-icon>
+      </p>
+      <h3
+        class="tee-form-response-title">
+        {{ choices.t(`form.sent`) }}
+      </h3>
+      <h6 class="fr-mt-15v fr-mb-3v">
         {{ choices.t('form.nowWhat')}}
       </h6>
-      <p class="fr-mt-10v fr-mb-3v">
-        <span class="fr-icon-arrow-right-line fr-mr-3v" aria-hidden="true"></span>
-        <span v-html="choices.t('form.advisors')"></span>
-      </p>
-      <p class="fr-mb-3v">
-        <span class="fr-icon-arrow-right-line fr-mr-3v" aria-hidden="true"></span>
-        <span v-html="choices.t('form.phoneContact')"></span>
+      <p class="fr-mb-15v">
+        <span>
+          {{ choices.ti(choices.t('form.phoneContact'), { operator: program['opérateur de contact'] }, true) }}
+        </span>
       </p>
     </div>
   </div>

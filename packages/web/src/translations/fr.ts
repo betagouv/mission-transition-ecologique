@@ -16,13 +16,12 @@ export const frDict = {
   },
   form: {
     mandatory: 'Champs obligatoires',
-    sent: 'Formulaire envoyé',
+    sent: 'Votre message a bien été envoyé !',
     notSent: "Problème lors de l'envoi du formulaire",
     contactHelp: 'Merci de nous contacter à',
     nowWhat: 'Et maintenant ?',
-    advisors: 'Nous allons <b>identifier le bon conseiller</b> près de chez vous',
-    phoneContact:
-      'Le conseiller vous <b>contactera par téléphone</b> dans les 5 jours (délai moyen de prise en charge)'
+    advisors: 'Nous allons identifier le bon conseiller près de chez vous',
+    phoneContact: 'Un conseiller {operator} vous contactera prochainement par mail ou par téléphone pour échanger sur votre besoin et répondre à vos questions'
   },
   select: {
     selectOption: 'Sélectionnez une option'
