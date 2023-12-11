@@ -11,15 +11,11 @@
               <p class="fr-text--sm fr-follow__desc">
                 Vous ne trouvez pas ce que vous recherchez ?
                 écrivez-vous, nous vous mettrons en relation
-                avec le bon interlocuteur pour répondre à votre question. 
+                avec le bon interlocuteur pour répondre à votre question.
               </p>
             </div>
             <div>
-              <button
-                class="fr-button fr-btn--secondary fr-btn--lg  fr-btn--icon-right fr-icon-mail-line"
-                @click="sendEmail">
-                Nous contacter
-              </button>
+              <ContactButton />
             </div>
           </div>
         </div>
@@ -29,12 +25,5 @@
 </template>
 
 <script setup lang="ts">
-
-// @ts-ignore
-const metaEnv = import.meta.env
-const contactEmail: string = metaEnv.VITE_CONTACT_EMAIL || 'france-transition@beta.gouv.fr'
-
-const sendEmail = () => {
-  window.location.assign(`mailto:${contactEmail}`)
-}
+import ContactButton from '@/components/button/ContactButton.vue'
 </script>

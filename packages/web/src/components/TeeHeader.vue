@@ -6,7 +6,7 @@
     :quick-links="quickLinks"
     logo-text='RÉPUBLIQUE<br>FRANÇAISE'
     :show-search="false"
-    :operator-img-src="`${choices.publicPath}images/logos/mission-transition-logo-alone.png`"
+    :operator-img-src="`/images/logos/mission-transition-logo-alone.png`"
     operator-img-alt='Transition Ecologique des Entreprises - ADEME'
     operator-img-style='width:3.5rem;'
     >
@@ -16,12 +16,11 @@
 
 <script setup lang="ts">
 import { DsfrHeader } from '@gouvminint/vue-dsfr'
-import { choicesStore } from '../stores/choices'
 import { RouteName } from '@/types/routeType'
+import type { DsfrHeaderMenuLinkProps } from '@gouvminint/vue-dsfr/types/components/DsfrHeader/DsfrHeaderMenuLink.vue'
+import { externalLinks } from '@/utils/global'
 
-const choices = choicesStore()
-
-const quickLinks = [
+const quickLinks: DsfrHeaderMenuLinkProps[] = [
   {
     label: 'Accueil',
     to: {
@@ -33,6 +32,11 @@ const quickLinks = [
     to: {
       name: RouteName.Catalog
     }
+  },
+  {
+    label: "Échanger avec un conseiller",
+    href: externalLinks.placeDesEntreprises,
+    target: "_blank"
   }
 ]
 

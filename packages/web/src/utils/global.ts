@@ -15,3 +15,7 @@ export const publicPath = `${deployUrl}/${metaEnv.BASE_URL}`
 
 // @ts-ignore
 export const programsFromJson = jsonDataset
+
+export const externalLinks = {
+  placeDesEntreprises: 'https://place-des-entreprises.beta.gouv.fr/aide-entreprise/accueil/theme/environnement-transition-ecologique?mtm_campaign=orientation-partenaire&mtm_kwd=experimentation-te#section-breadcrumbs',
+}
