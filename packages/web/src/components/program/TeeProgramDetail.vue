@@ -283,12 +283,16 @@ import { analyticsStore } from '../../stores/analytics'
 import { scrollToId } from '../../utils/helpers'
 import type { TrackId } from '@/types'
 import ProgramObjective from '@/components/program/ProgramObjective.vue'
+import { useRoute, useRouter } from 'vue-router'
+import { RouteName } from '@/types/routeType'
 
 const choices = choicesStore()
 const tracks = tracksStore()
 const programs = programsStore()
 const analytics = analyticsStore()
 const nav = navigationStore()
+const route = useRoute()
+const router = useRouter()
 
 const program = ref<any>()
 const trackConfig = ref<any>()
@@ -307,6 +311,10 @@ const props = defineProps<Props>()
 
 // functions
 const resetDetailResult = async () => {
+  if (route.name === RouteName.CatalogDetail) {
+    await router.push({ name: RouteName.Catalog })
+    return
+  }
   programs.resetDetailResult()
   nav.setCurrentDetailId('', props.disableWidget)
   nav.updateUrl(props.disableWidget)

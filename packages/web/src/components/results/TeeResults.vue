@@ -258,7 +258,7 @@ const updateFilters = (event: FilterSignal) => {
 const updateDetailResult = (id: string | number) => {
   if (route.name === RouteName.Catalog) {
     router.push({
-      name: RouteName.CatalogueDetail,
+      name: RouteName.CatalogDetail,
       params: {
         programId: id.toString()
       }
