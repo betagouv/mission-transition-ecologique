@@ -14,5 +14,6 @@ module.exports = {
     'README.md',
     'test_files/*',
     'jest.config.cjs',
+    '.eslintrc.js'
   ],
 }

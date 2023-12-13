@@ -19,5 +19,6 @@ module.exports = {
     'README.md',
     'start.sh',
     '.github/*',
+    '.eslintrc.js'
   ]
 }

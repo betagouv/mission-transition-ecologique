@@ -37,6 +37,6 @@ module.exports = {
     '.vscode/*',
     'README.md',
     'index.html',
-    '.eslintrc.cjs',
+    '.eslintrc.js',
   ],
 }

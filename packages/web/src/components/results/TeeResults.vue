@@ -42,7 +42,7 @@
     <!-- FILTERS IF ANY -->
     <div v-if="trackConfig?.filters && countFilteredPrograms > 1" class="fr-grid-row fr-grid-row--gutters fr-mb-4v">
       <div v-for="filter in trackConfig.filters" :key="filter.label" class="fr-col">
-        <TeeResultsFilter :filter="filter" :debug="debug" @updateFilter="updateFilters" />
+        <TeeResultsFilter :filter="filter" :debug="debug" @update-filter="updateFilters" />
       </div>
     </div>
 

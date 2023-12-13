@@ -15,5 +15,6 @@ module.exports = {
     'tsoa.json',
     'jest.config.cjs',
     'nodemon.json',
+    '.eslintrc.js'
   ],
 }

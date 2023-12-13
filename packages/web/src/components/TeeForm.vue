@@ -68,7 +68,7 @@
             :required="field.required"
             :label="field?.label?.[choices.lang]"
             :placeholder="(field.hint && field.hint[choices.lang]) || ''"
-            @update:modelValue="updateFormData($event, field.id)"
+            @update:model-value="updateFormData($event, field.id)"
           >
           </DsfrInput>
         </DsfrInputGroup>
@@ -79,7 +79,7 @@
           :model-value="formData[field.id]"
           :name="field.id"
           :required="field.required"
-          @update:modelValue="updateFormData($event, field.id)"
+          @update:model-value="updateFormData($event, field.id)"
         >
           <!-- :hint="field.hint[choices.lang]" -->
           <template #label>
