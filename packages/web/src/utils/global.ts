@@ -9,8 +9,3 @@ export const deployUrl = metaEnv.VITE_DEPLOY_URL
 export const noDebugSwitch = metaEnv.VITE_NO_DEBUG_SWITCH
 export const publicPath = `${deployUrl}/${metaEnv.BASE_URL}`
 export const programsFromJson = jsonDataset
-
-
-export const externalLinks = {
-  placeDesEntreprises: 'https://place-des-entreprises.beta.gouv.fr/aide-entreprise/accueil/theme/environnement-transition-ecologique?mtm_campaign=orientation-partenaire&mtm_kwd=experimentation-te#section-breadcrumbs',
-}

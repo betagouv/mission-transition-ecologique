@@ -6,7 +6,6 @@ import TeeHomePage from '../pages/TeeHomePage.vue'
 import WidgetApp from '../WidgetApp.ce.vue'
 import TeeQuestionnairePage from '../pages/TeeQuestionnairePage.vue'
 import TeeCatalogPage from '../pages/TeeCatalogPage.vue'
-import TeeProgramPage from '../pages/TeeProgramPage.vue'
 import TeeLegalPage from '../pages/TeeLegalPage.vue'
 import TeeAccessibilityPage from '../pages/TeeAccessibilityPage.vue'
 import TeePersonalDataPage from '../pages/TeePersonalDataPage.vue'
@@ -15,6 +14,8 @@ import { redirections } from '@/router/redirection'
 import { TrackId } from '@/types'
 import type { Component } from 'vue'
 import { resetDetailProgram, resetTrackStore, setHelpAsTrackSeed, setResultsAsTrackSeed } from '@/router/hook'
+import ChatAdvisorPage from '@/pages/ChatAdvisorPage.vue'
+import TeeProgramDetail from '@/components/program/TeeProgramDetail.vue'
 
 export const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
@@ -60,9 +61,18 @@ export const router = createRouter({
         {
           path: ':programId',
           name: RouteName.CatalogueDetail,
-          component: TeeProgramPage as Component
+          component: TeeProgramDetail as Component,
+          props: (route) => ({
+            programId: route.params.programId as string,
+            trackId: TrackId.Results
+          })
         }
       ]
+    },
+    {
+      path: '/echanger-avec-un-conseiller',
+      name: RouteName.ChatAdvisor,
+      component: ChatAdvisorPage as Component
     },
     {
       path: '/mentions-legales',

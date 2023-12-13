@@ -20,6 +20,7 @@
     </div>
   </div>
 </template>
-<script setup lang='ts'>
-import ContactButton from '@/components/button/ContactButton.vue'
+
+<script setup lang="ts">
+import ContactButton from '@/components/contact/ContactButton.vue'
 </script>

@@ -164,18 +164,14 @@
     </div>
 
     <!-- DETAIL RESULT CARD -->
-    <div v-if="programs.programDetail" :class="`fr-container-fluid fr-px-6v fr-px-md-20v fr-mt-10v`">
-      <div class="fr-grid-row fr-grid-row-gutters">
-        <div class="fr-col">
-          <TeeProgramDetail
-            :program-id="programs.programDetail"
-            :track-id="programs.programDetailConfig"
-            :disable-widget="disableWidget"
-            :debug="debugBool"
-          />
-        </div>
-      </div>
-    </div>
+    <template v-if="programs.programDetail">
+      <TeeProgramDetail
+        :program-id="programs.programDetail"
+        :track-id="programs.programDetailConfig"
+        :disable-widget="disableWidget"
+        :debug="debugBool"
+      />
+    </template>
 
     <!-- FOOTER -->
     <div v-if="showFooterBool" class="fr-mt-10v">

@@ -20,7 +20,6 @@
 import { DsfrHeader } from '@gouvminint/vue-dsfr'
 import { RouteName } from '@/types/routeType'
 import type { DsfrHeaderMenuLinkProps } from '@gouvminint/vue-dsfr/types/components/DsfrHeader/DsfrHeaderMenuLink.vue'
-import { externalLinks } from '@/utils/global'
 
 const quickLinks: DsfrHeaderMenuLinkProps[] = [
   {
@@ -34,11 +33,6 @@ const quickLinks: DsfrHeaderMenuLinkProps[] = [
     to: {
       name: RouteName.Catalog
     }
-  },
-  {
-    label: "Échanger avec un conseiller",
-    href: externalLinks.placeDesEntreprises,
-    target: "_blank"
   }
 ]
 </script>

@@ -125,7 +125,9 @@
           Pour nous contacter :
         </p>
         <ul>
-          <li>merci d’envoyer un email à cette adresse</li>
+          <li>
+            merci de nous contacter par mail à : <a :href="Contact.mailTo">{{ Contact.email }}</a>
+          </li>
           <li>
             ou écrire à :<br />
             <div class="fr-highlight fr-mt-3w">
@@ -139,12 +141,13 @@
       </div>
     </div>
   </div>
-  <TeeHelp />
+  <ContactMail />
 </template>
 
 <script setup lang="ts">
 // CONSOLE LOG TEMPLATE
 // console.log(`TeePersonalDataPage > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import TeeHelp from '@/components/home/TeeHelp.vue'
+import ContactMail from '@/components/contact/ContactMail.vue'
+import Contact from '@/utils/contact'
 </script>

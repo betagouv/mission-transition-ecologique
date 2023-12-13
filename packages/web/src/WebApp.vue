@@ -1,5 +1,5 @@
 <template>
-  <div id="app" ref="trackElement">
+  <div ref="trackElement">
     <!-- HEADER -->
     <TeeHeader />
 
