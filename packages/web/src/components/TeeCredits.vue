@@ -1,8 +1,14 @@
 <template>
   <!-- DEBUGGING -->
-  <div v-if="debug" class="vue-debug">
+  <div
+    v-if="debug"
+    class="vue-debug"
+  >
     <h5>DEBUG - TeeStepper</h5>
-    <div v-if="true" class="fr-grid-row fr-grid-row--gutters">
+    <div
+      v-if="true"
+      class="fr-grid-row fr-grid-row--gutters"
+    >
       <div class="fr-col-3">
         <h6 class="fr-mb-1v">
           choices.lang : <code>{{ choices.lang }} </code>
@@ -13,13 +19,29 @@
 
   <!-- FOOTER -->
   <div :class="`fr-footer fr-pt-0 fr-mt-30v ${stickToBottom ? 'tee-footer-bottom' : ''}`">
-    <div class="fr-footer__body" style="justify-content: center">
+    <div
+      class="fr-footer__body"
+      style="justify-content: center"
+    >
       <!-- PARTNERS LINKS -->
-      <div class="fr-footer__content fr-ml-0 fr-mt-5v" style="justify-content: center; flex-basis: 100%">
+      <div
+        class="fr-footer__content fr-ml-0 fr-mt-5v"
+        style="justify-content: center; flex-basis: 100%"
+      >
         <ul class="fr-footer__content-list">
-          <li v-for="link in ecosystemLinks" :key="link.href" class="fr-footer__content-item fr-mx-5v">
-            <span class="fr-icon-external-link-line fr-mr-1v" aria-hidden="true"></span>
-            <a :href="link.href" class="fr-footer__content-link">
+          <li
+            v-for="link in ecosystemLinks"
+            :key="link.href"
+            class="fr-footer__content-item fr-mx-5v"
+          >
+            <span
+              class="fr-icon-external-link-line fr-mr-1v"
+              aria-hidden="true"
+            ></span>
+            <a
+              :href="link.href"
+              class="fr-footer__content-link"
+            >
               {{ link.label }}
             </a>
           </li>
@@ -27,10 +49,23 @@
       </div>
 
       <!-- SOURCES LINKS -->
-      <div class="fr-footer__bottom fr-mt-5v" style="justify-content: center">
-        <ul class="fr-footer__bottom-list" style="display: flex; justify-content: center">
-          <li v-for="link in projectLinks" :key="link.href" class="fr-footer__bottom-item">
-            <a :href="link.href" class="fr-footer__bottom-link">
+      <div
+        class="fr-footer__bottom fr-mt-5v"
+        style="justify-content: center"
+      >
+        <ul
+          class="fr-footer__bottom-list"
+          style="display: flex; justify-content: center"
+        >
+          <li
+            v-for="link in projectLinks"
+            :key="link.href"
+            class="fr-footer__bottom-item"
+          >
+            <a
+              :href="link.href"
+              class="fr-footer__bottom-link"
+            >
               {{ link.label }}
             </a>
           </li>
@@ -40,7 +75,10 @@
           <p>
             {{ choices.t('licence') }}
             &nbsp;
-            <a :href="licenceHref" class="fr-link-licence no-content-after">
+            <a
+              :href="licenceHref"
+              class="fr-link-licence no-content-after"
+            >
               {{ licenceName }}
             </a>
           </p>

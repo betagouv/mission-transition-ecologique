@@ -12,7 +12,10 @@
               </p>
             </div>
             <div>
-              <button class="fr-button fr-btn--secondary fr-btn--lg fr-btn--icon-right fr-icon-mail-line" @click="sendEmail">
+              <button
+                class="fr-button fr-btn--secondary fr-btn--lg fr-btn--icon-right fr-icon-mail-line"
+                @click="sendEmail"
+              >
                 Nous contacter
               </button>
             </div>

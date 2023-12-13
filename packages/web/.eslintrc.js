@@ -23,7 +23,7 @@ module.exports = {
     ecmaVersion: 'latest',
   },
   rules: {
-    'prettier/prettier': 0,
+    'prettier/prettier': 'error',
     "@typescript-eslint/no-explicit-any": "off"
   },
   ignorePatterns: [
@@ -39,5 +39,8 @@ module.exports = {
     'README.md',
     'index.html',
     '.eslintrc.js',
+  ],
+  plugins: [
+    'prettier'
   ],
 }

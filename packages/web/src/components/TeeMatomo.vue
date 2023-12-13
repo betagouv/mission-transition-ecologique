@@ -1,8 +1,14 @@
 <template>
   <!-- DEBUGGING -->
-  <div v-if="debug" class="vue-debug fr-mt-5v">
+  <div
+    v-if="debug"
+    class="vue-debug fr-mt-5v"
+  >
     <h5>DEBUG - TeeMatomo</h5>
-    <div v-if="true" class="fr-grid-row fr-grid-row--gutters">
+    <div
+      v-if="true"
+      class="fr-grid-row fr-grid-row--gutters"
+    >
       <div class="fr-col-2">
         <h6>
           analytics.matomoServer :<br />

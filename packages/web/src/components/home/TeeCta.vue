@@ -1,9 +1,15 @@
 <template>
-  <div id="track_needs" class="fr-grid-row">
+  <div
+    id="track_needs"
+    class="fr-grid-row"
+  >
     <div class="fr-col fr-col-md-8 fr-col-lg-8 tee-track-has-image-right">
       <div class="fr-grid-row fr-grid-row--gutters fr-p-5v fr-p-sm-8v fr-p-md-20v">
         <div class="fr-col-12 fr-mb-4v fr-mx-0 fr-px-2v">
-          <div class="fr-px-2v" style="background-color: transparent">
+          <div
+            class="fr-px-2v"
+            style="background-color: transparent"
+          >
             <div class="tee-track-callout fr-grid-row fr-grid-row--gutters">
               <div class="fr-col">
                 <h2
@@ -12,10 +18,16 @@
                 >
                   TPE, PME,
                 </h2>
-                <h1 class="fr-mb-3 tee-track-callout-big-title" style="font-size: 2.8rem">
+                <h1
+                  class="fr-mb-3 tee-track-callout-big-title"
+                  style="font-size: 2.8rem"
+                >
                   Trouvez comment allier écologie avec économies
                 </h1>
-                <p class="fr-callout__text tee-track-callout-description" style="font-size: 1.3rem; line-height: 2rem">
+                <p
+                  class="fr-callout__text tee-track-callout-description"
+                  style="font-size: 1.3rem; line-height: 2rem"
+                >
                   Je complète mon profil en moins de 2 minutes, et j’accède à des propositions d’accompagnements et de financements pour
                   m'aider à réduire mon impact environnemental.
                 </p>
@@ -37,7 +49,11 @@
       </div>
     </div>
     <div class="fr-col-12 fr-col-md-4 fr-col-lg-4 tee-track-image-right">
-      <img class="fr-responsive-img" src="/images/TEE-illustrationHP.png" alt="image / callout" />
+      <img
+        class="fr-responsive-img"
+        src="/images/TEE-illustrationHP.png"
+        alt="image / callout"
+      />
     </div>
   </div>
 </template>

@@ -1,11 +1,19 @@
 <template>
-  <div id="simple-page" class="fr-container fr-my-8w">
+  <div
+    id="simple-page"
+    class="fr-container fr-my-8w"
+  >
     <div class="fr-grid-row--gutters">
       <div class="fr-grid-col">
         <h1>Données personnelles (et gestion des cookies)</h1>
         <p>
-          Le site <a href="/" target="_blank">https://mission-transition-ecologique.beta.gouv.fr</a> est soumis au Règlement général de
-          protection des données (RGPD) et à la loi informatique et liberté.
+          Le site
+          <a
+            href="/"
+            target="_blank"
+            >https://mission-transition-ecologique.beta.gouv.fr</a
+          >
+          est soumis au Règlement général de protection des données (RGPD) et à la loi informatique et liberté.
         </p>
 
         <h4 class="fr-mt-3w">Données personnelles</h4>
@@ -49,7 +57,11 @@
         <h4 class="fr-mt-3w">Le site de la société Matomo</h4>
 
         <p>
-          <a href="https://fr.matomo.org/" target="_blank">CONSULTER SITE SOCIÉTÉ MATOMO</a>
+          <a
+            href="https://fr.matomo.org/"
+            target="_blank"
+            >CONSULTER SITE SOCIÉTÉ MATOMO</a
+          >
         </p>
         <div class="fr-mt-3w">
           <p>
@@ -57,13 +69,21 @@
             (dés)activation des cookies Matomo sur votre navigateur :
           </p>
           <p>
-            <a href="https://fr.matomo.org/privacy/" target="_blank">CONSULTER MATOMO : PROTECTION DE LA VIE PRIVÉE</a>
+            <a
+              href="https://fr.matomo.org/privacy/"
+              target="_blank"
+              >CONSULTER MATOMO : PROTECTION DE LA VIE PRIVÉE</a
+            >
           </p>
         </div>
         <div class="fr-mt-3w">
           <p>Pour s'informer sur la propriété des données par la société Matomo :</p>
           <p>
-            <a href="https://fr.matomo.org/100-data-ownership/" target="_blank">CONSULTER MATOMO : PROPRIÉTÉ DES DONNÉES</a>
+            <a
+              href="https://fr.matomo.org/100-data-ownership/"
+              target="_blank"
+              >CONSULTER MATOMO : PROPRIÉTÉ DES DONNÉES</a
+            >
           </p>
         </div>
         <h4 class="fr-mt-3w">Le site de la société Hotjar</h4>
@@ -96,14 +116,20 @@
         </div>
         <div class="fr-mt-3w">
           <p>
-            <a href="https://www.hotjar.com/" target="_blank">CONSULTER SITE SOCIÉTÉ HOTJAR</a>
+            <a
+              href="https://www.hotjar.com/"
+              target="_blank"
+              >CONSULTER SITE SOCIÉTÉ HOTJAR</a
+            >
           </p>
         </div>
         <div class="fr-mt-3w">
           <p>Pour obtenir de plus amples informations dans la déclaration de confidentialité de Hotjar disponible à l’adresse suivante :</p>
 
           <p>
-            <a href="https://www.hotjar.com/legal/policies/privacy" target="_blank"
+            <a
+              href="https://www.hotjar.com/legal/policies/privacy"
+              target="_blank"
               >CONSULTER HOTJAR : PROTECTION DE LA VIE PRIVÉE - NOUVELLE FENÊTRE</a
             >
           </p>
@@ -114,7 +140,9 @@
             Hotjar ainsi que l’emploi de cookies de suivi de Hotjar sur d’autres sites Web. Veuillez pour cela utiliser le lien suivant :
           </p>
           <p>
-            <a href="https://www.hotjar.com/legal/compliance/opt-out" target="_blank"
+            <a
+              href="https://www.hotjar.com/legal/compliance/opt-out"
+              target="_blank"
               >CONSULTER HOTJAR : REFUSER ENREGISTREMENT - NOUVELLE FENÊTRE</a
             >
           </p>

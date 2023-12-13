@@ -2,8 +2,16 @@
   <!-- PROGRAM INFOS -->
   <div class="">
     <!-- BACK TO RESULTS BTN -->
-    <button class="fr-btn fr-btn--tertiary-no-outline inline-flex fr-mb-3v fr-link" tertiary noOutline @click="resetDetailResult">
-      <v-icon name="ri-arrow-left-line" aria-hidden="true"></v-icon>
+    <button
+      class="fr-btn fr-btn--tertiary-no-outline inline-flex fr-mb-3v fr-link"
+      tertiary
+      noOutline
+      @click="resetDetailResult"
+    >
+      <v-icon
+        name="ri-arrow-left-line"
+        aria-hidden="true"
+      ></v-icon>
       {{ choices.t('results.backToResults') }}
     </button>
 
@@ -27,11 +35,20 @@
         </p>
 
         <!-- PROGRAM RESUME / TEXT-->
-        <h6 v-if="trackConfig.config?.showProgramSubtitles" :style="`color: ${blockColor}`">
+        <h6
+          v-if="trackConfig.config?.showProgramSubtitles"
+          :style="`color: ${blockColor}`"
+        >
           {{ choices.t('program.programResume') }}
         </h6>
-        <h2 :style="`color: ${blockColor}`" v-html="program?.promesse"></h2>
-        <p style="color: #000091" v-html="program?.description"></p>
+        <h2
+          :style="`color: ${blockColor}`"
+          v-html="program?.promesse"
+        ></h2>
+        <p
+          style="color: #000091"
+          v-html="program?.description"
+        ></p>
         <!-- <p
           v-if="program['description longue']"
           style="color: #000091"
@@ -47,12 +64,18 @@
           @click="toggleShowForm"
           ref="modalOrigin"/> -->
 
-        <ProgramObjective v-if="program" :program="program"></ProgramObjective>
+        <ProgramObjective
+          v-if="program"
+          :program="program"
+        ></ProgramObjective>
       </div>
     </div>
 
     <!-- PROGRAM INFOS : PROVIDERS / TYPE / START / END -->
-    <div v-if="trackConfig.config?.showProgramInfos" class="fr-grid-row fr-grid-row--gutters fr-mb-5v">
+    <div
+      v-if="trackConfig.config?.showProgramInfos"
+      class="fr-grid-row fr-grid-row--gutters fr-mb-5v"
+    >
       <!-- PROGRAM GEO ZONES -->
       <!-- <div
         v-if="program.geo_zones"
@@ -65,7 +88,10 @@
       </div> -->
 
       <!-- PROGRAM COST | LOAN | AID -->
-      <div v-if="program?.[`coût de l'accompagnement`]" :class="columnTiles">
+      <div
+        v-if="program?.[`coût de l'accompagnement`]"
+        :class="columnTiles"
+      >
         <TeeTile
           class="tee-no-hover"
           :title="choices.t('programCosts.cost')"
@@ -74,7 +100,10 @@
         />
       </div>
 
-      <div v-if="program?.[`montant du financement`]" :class="columnTiles">
+      <div
+        v-if="program?.[`montant du financement`]"
+        :class="columnTiles"
+      >
         <TeeTile
           class="tee-no-hover"
           :title="choices.t('programCosts.aid')"
@@ -83,7 +112,10 @@
         />
       </div>
 
-      <div v-if="program?.[`montant de l'avantage fiscal`]" :class="columnTiles">
+      <div
+        v-if="program?.[`montant de l'avantage fiscal`]"
+        :class="columnTiles"
+      >
         <TeeTile
           class="tee-no-hover"
           :title="choices.t('programCosts.taxAdvantage')"
@@ -92,7 +124,10 @@
         />
       </div>
 
-      <div v-if="program?.[`montant du prêt`]" :class="columnTiles">
+      <div
+        v-if="program?.[`montant du prêt`]"
+        :class="columnTiles"
+      >
         <TeeTile
           class="tee-no-hover"
           :title="choices.t('programCosts.loan')"
@@ -123,7 +158,10 @@
       </div>
 
       <!-- PROGRAM DURATION -->
-      <div v-if="program?.[`durée de l'accompagnement`]" :class="columnTiles">
+      <div
+        v-if="program?.[`durée de l'accompagnement`]"
+        :class="columnTiles"
+      >
         <TeeTile
           class="tee-no-hover"
           :title="choices.t('program.programDuration')"
@@ -131,7 +169,10 @@
           :description="program[`durée de l'accompagnement`]"
         />
       </div>
-      <div v-if="program?.[`durée du prêt`]" :class="columnTiles">
+      <div
+        v-if="program?.[`durée du prêt`]"
+        :class="columnTiles"
+      >
         <TeeTile
           class="tee-no-hover"
           :title="choices.t('program.programLoanDuration')"
@@ -178,7 +219,12 @@
         <div class="fr-col-12 fr-col-md-11 fr-col-lg-10">
           <div class="fr-modal__body fr-modal__body-custom">
             <div class="fr-modal__header">
-              <button class="fr-link--close fr-link" aria-controls="fr-modal-1" style="align-items: center" @click="toggleShowForm">
+              <button
+                class="fr-link--close fr-link"
+                aria-controls="fr-modal-1"
+                style="align-items: center"
+                @click="toggleShowForm"
+              >
                 <span class="fr-sm-hide">
                   {{ choices.t('close') }}
                 </span>
@@ -192,10 +238,17 @@
               <div class="fr-grid-row fr-grid-row--gutters">
                 <!-- MODAL INFOS -->
                 <div class="fr-col-md-5 fr-col-sm-12 align">
-                  <h4 v-if="program" class="" style="text-align: center">
+                  <h4
+                    v-if="program"
+                    class=""
+                    style="text-align: center"
+                  >
                     {{ choices.ti(trackConfig?.form.label[choices.lang], { title: program.titre }) || '' }}
                   </h4>
-                  <p class="" style="text-align: center">
+                  <p
+                    class=""
+                    style="text-align: center"
+                  >
                     {{ trackConfig?.form.hint[choices.lang] || '' }}
                   </p>
                   <img

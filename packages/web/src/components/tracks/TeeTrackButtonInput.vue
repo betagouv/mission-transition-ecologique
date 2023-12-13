@@ -1,7 +1,13 @@
 <template>
-  <div class="fr-div-fixed- height" @click="selectItem">
+  <div
+    class="fr-div-fixed- height"
+    @click="selectItem"
+  >
     <!-- DEBUGGING -->
-    <div v-if="debug" class="debug">
+    <div
+      v-if="debug"
+      class="debug"
+    >
       - option : <code>{{ option }}</code
       ><br />
       - icon: <code>{{ icon }}</code
@@ -17,7 +23,11 @@
       :style="`outline-color: #929292; font-weight: 500; ${isActive ? 'background-color: #eeeeee' : ''}`"
     >
       <v-icon :name="icon"> </v-icon>
-      <span v-if="isTextInput" class="fr-pr-3v" style="width: auto; white-space: nowrap">
+      <span
+        v-if="isTextInput"
+        class="fr-pr-3v"
+        style="width: auto; white-space: nowrap"
+      >
         {{ option.label?.[choices.lang] }}
       </span>
       <input
@@ -31,7 +41,10 @@
         :style="`${isTextInput ? 'width: 100%;' : ''}`"
         @input="sendValueUpdate"
       />
-      <span v-if="isNumberInput" class="fr-ml-3v">
+      <span
+        v-if="isNumberInput"
+        class="fr-ml-3v"
+      >
         {{ option.label?.[choices.lang] }}
       </span>
     </div>

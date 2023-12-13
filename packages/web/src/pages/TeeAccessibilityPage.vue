@@ -1,12 +1,19 @@
 <template>
-  <div id="simple-page" class="fr-container fr-my-8w">
+  <div
+    id="simple-page"
+    class="fr-container fr-my-8w"
+  >
     <div class="fr-grid-row--gutters">
       <div class="fr-grid-col">
         <h1>Politique d’accessibilité - RGAA</h1>
         <p>
           Cette page n’est pas une page d’aide. Elle vise à présenter la politique d’accessibilité du site
-          <a href="/" target="_blank">https://mission-transition-ecologique.beta.gouv.fr</a> et à définir le niveau d’accessibilité général
-          constaté sur le site conformément aux référentiels et à la réglementation.
+          <a
+            href="/"
+            target="_blank"
+            >https://mission-transition-ecologique.beta.gouv.fr</a
+          >
+          et à définir le niveau d’accessibilité général constaté sur le site conformément aux référentiels et à la réglementation.
         </p>
         <h4 class="fr-mt-3w">Qu’est-ce que l’accessibilité numérique ?</h4>
         <p>
