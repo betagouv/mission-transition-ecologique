@@ -120,6 +120,13 @@
             "type": "string"
           },
           "minItems": 1
+        },
+        "autres critères d'éligibilité": {
+          "type": "array",
+          "items": {
+             "type": "string"
+            },
+           "minItems": 1
         }
       },
       "required": ["taille de l'entreprise", "secteur d'activité", "nombre d'années d'activité"]
