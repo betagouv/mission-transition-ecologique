@@ -22,6 +22,9 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     ecmaVersion: 'latest',
   },
+  plugins: [
+    'prettier'
+  ],
   rules: {
     'prettier/prettier': 'error',
     "@typescript-eslint/no-explicit-any": "off"
@@ -39,8 +42,5 @@ module.exports = {
     'README.md',
     'index.html',
     '.eslintrc.js',
-  ],
-  plugins: [
-    'prettier'
   ],
 }
