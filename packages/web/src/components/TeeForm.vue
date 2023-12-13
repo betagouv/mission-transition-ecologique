@@ -26,7 +26,6 @@
     <h3
       v-if="formOptions.label"
       class="fr-text-center">
-      <!-- {{ formOptions.label[choices.lang] }} -->
       {{ capitalizeFirstLetter(choices.ti(formOptions.label[choices.lang], { 'prefixAide': findPrefix(program["nature de l'aide"], 'this'), 'natureAide': program["nature de l'aide"] }) || '') }}
     </h3>
 
@@ -37,8 +36,6 @@
       <!-- {{ formOptions.hint[choices.lang] }} -->
       {{ choices.ti(formOptions.hint[choices.lang], {'operator': program['opérateur de contact']}) }}
     </p>
-
-    <!-- {{ program }} -->
 
     <!-- FIELDS -->
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-2v">
@@ -377,7 +374,7 @@ const saveFormData = async () => {
 
 const scrollToFormContainer = () => {
   const element: HTMLElement | null = document.getElementById("tee-program-form-container")
-  element?.scrollIntoView()
+  element?.scrollIntoView({ block: 'center' })
 }
 
 </script>
