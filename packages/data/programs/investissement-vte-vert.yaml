@@ -34,6 +34,8 @@ conditions d'éligibilité:
   - Tous secteurs d’activité
   nombre d'années d'activité:
   - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+  - Sont exclues les entreprises en difficulté au sens de la définition européenne
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

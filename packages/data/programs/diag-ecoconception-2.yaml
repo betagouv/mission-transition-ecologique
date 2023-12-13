@@ -27,6 +27,8 @@ conditions d'éligibilité:
   - Tous secteurs d’activité
   nombre d'années d'activité:
   - Au moins 1 an d’activité
+  autres critères d'éligibilité:
+  - Avoir réalisé moins de 50M€ de CA ou moins de 43M€ de bilan total
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

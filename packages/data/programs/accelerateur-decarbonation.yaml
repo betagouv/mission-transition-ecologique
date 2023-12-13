@@ -28,6 +28,9 @@ conditions d'éligibilité:
   - Tous secteurs d’activité
   nombre d'années d'activité:
   - Au moins 3 ans d’activité
+  autres critères d'éligibilité:
+  - Réaliser un chiffre d’affaires supérieur à 10 M€ et inférieur à 5 milliards d'euros
+  - Avoir réalisé un bilan carbone datant de moins de 2 ans
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

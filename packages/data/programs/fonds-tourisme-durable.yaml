@@ -45,6 +45,12 @@ conditions d'éligibilité:
   - 'Codes NAF concernés : 56.10A | 56.21Z | 55.10Z | 55.20Z | 55.30Z | 55.90Z.'
   nombre d'années d'activité:
   - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+  - Avoir bénéficié d'un diagnostic Fonds Tourisme Durable avec l'un des partenaires
+    du programme .
+  - 'L''opération pour laquelle vous sollicitez une aide financière ne doit pas avoir
+    commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque
+    forme que ce soit : marché signé, commande signée, devis accepté…)'
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

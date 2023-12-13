@@ -35,6 +35,9 @@ conditions d'éligibilité:
   - Activités tertiaires privées (tourisme, commerce, santé, logistique, services…)
   nombre d'années d'activité:
   - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+  - Être propriétaire de bâtiment(s) à usage tertiaire ou mixte industriel-tertiaire
+    et disposant des plans.
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

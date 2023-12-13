@@ -26,6 +26,9 @@ conditions d'éligibilité:
   - Tous secteurs d’activité
   nombre d'années d'activité:
   - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+  - Cette réduction d'impôt ne concerne que les entreprises soumises à l'impôt sur
+    les sociétés (IS).
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

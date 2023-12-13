@@ -41,6 +41,9 @@ conditions d'éligibilité:
     et 02.40Z (entreprises forestières)'
   nombre d'années d'activité:
   - Au moins 3 ans d’activité
+  autres critères d'éligibilité:
+  - Ce prêt est obligatoirement associé à un concours bancaire du même montant
+  - Sont exclues les entreprises en difficulté au sens de la définition européenne
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

@@ -62,6 +62,14 @@ conditions d'éligibilité:
   - Tous secteurs d’activité
   nombre d'années d'activité:
   - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+  - Pour les régions Bourgogne-Franche-Comté, Auvergne-Rhône-Alpes et Occitanie, les
+    trois types d'études sont éligibles. Pour les régions Provence-Alpes-Côte-d'Azur
+    et Nouvelle-Aquitaine,les études de potentiel et de faisabilité sont éligibles.
+    Les études d'avant-projet ne sont pas éligibles.
+  - 'L''opération pour laquelle vous sollicitez une aide financière ne doit pas avoir
+    commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque
+    forme que ce soit : marché signé, commande signée, devis accepté…)'
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

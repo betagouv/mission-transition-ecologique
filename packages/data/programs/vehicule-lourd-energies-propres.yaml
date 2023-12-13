@@ -23,6 +23,9 @@ conditions d'éligibilité:
   - Tous secteurs d’activité
   nombre d'années d'activité:
   - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+  - Sont concernées les entreprises soumises à l'Impôt sur les Sociétés (IS) ou à
+    l'Impôt sur le Revenu (IR) selon un régime réel d'imposition.
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

@@ -30,6 +30,7 @@ PROPRIO = "entreprise . est propriétaire de ses locaux"
 ELIGIBILITY_SIZE = "taille de l'entreprise"
 ELIGIBILITY_SECTOR = "secteur d'activité"
 ELIGIBILITY_NYEARS = "nombre d'années d'activité"
+ELIGIBILITY_SPECIFIC = "autres critères d'éligibilité"
 
 ALL = "toutes ces conditions"
 ANY = "une de ces conditions"
@@ -120,6 +121,11 @@ def assembleProgramYAML(rawData, colNumbersByName, id):
     eligibility_conditions[ELIGIBILITY_SIZE].append(eligibility_microentreprise(get))
 
     eligibility_conditions[ELIGIBILITY_NYEARS].append(eligibility_nyears(get))
+
+    for es in eligibility_specific(get):
+        if ELIGIBILITY_SPECIFIC not in eligibility_conditions:
+            eligibility_conditions[ELIGIBILITY_SPECIFIC] = []
+        eligibility_conditions[ELIGIBILITY_SPECIFIC].append(es)
 
     set("conditions d'éligibilité", eligibility_conditions, True)
 
@@ -306,6 +312,13 @@ def eligibility_nyears(get) -> str:
     if valid(en):
         return en
     return "Éligible à toutes les entreprises"
+
+
+def eligibility_specific(get) -> list[str]:
+    es1 = get("Eligibilité Spécifique1")
+    es2 = get("Eligibilité Spécifique2")
+    es3 = get("Eligibilité Spécifique3")
+    return [es for es in [es1, es2, es3] if valid(es)]
 
 
 def pc_effectifConstraint(effmin, effmax):

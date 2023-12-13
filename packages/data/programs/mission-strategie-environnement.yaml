@@ -27,6 +27,10 @@ conditions d'éligibilité:
   - Tous secteurs d’activité
   nombre d'années d'activité:
   - Au moins 3 ans d’activité
+  autres critères d'éligibilité:
+  - Réaliser au minimum 5M€ de chiffre d'affaires (les PME réalisant moins de 5M€
+    de CA peuvent être éligibles, sous condition de structuration suffisante afin
+    que le parcours conseil soit adapté)
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

@@ -44,6 +44,8 @@ conditions d'éligibilité:
   - Secteur tertiaire
   nombre d'années d'activité:
   - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+  - vos bâtiments doivent exister depuis plus de 2 ans à la date d’engagement de l’opération.
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

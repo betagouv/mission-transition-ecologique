@@ -32,6 +32,8 @@ conditions d'éligibilité:
   - Industrie et Services aux entreprises
   nombre d'années d'activité:
   - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+  - Réaliser ou maintenir au moins 3 emplois et 200 K€ de CA à 3 ans
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

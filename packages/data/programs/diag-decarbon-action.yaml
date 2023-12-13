@@ -27,6 +27,9 @@ conditions d'éligibilité:
   - Tous secteurs d’activité
   nombre d'années d'activité:
   - Au moins 1 an d’activité
+  autres critères d'éligibilité:
+  - aucune démarche de bilan GES réalisée dans les 5 dernières années / non soumis
+    à la règlementation BEGES (art.L229-25)
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
