@@ -307,7 +307,14 @@ def eligibility_sector(get) -> str:
 
 
 def eligibility_geography(get) -> list[str]:
-    return ["France et territoires d'outre-mer"]
+    egr = get("Zones géographiques Régional")
+    egs = get("Zones géographiques Spécifique")
+    egd = get("Zones géographiques Départemental")
+    eg = [eg for eg in [egr, egs, egd] if valid(eg)]
+    if len(eg) > 0:
+        return eg
+    else:
+        return ["France et territoires d'outre-mer"]
 
 
 def eligibility_naf(get) -> Optional[str]:

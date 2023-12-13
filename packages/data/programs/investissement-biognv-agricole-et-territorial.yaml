@@ -41,7 +41,8 @@ conditions d'éligibilité:
   - Toutes tailles
   - Éligible aux micro-entreprises
   secteur géographique:
-  - France et territoires d'outre-mer
+  - Île-de-France|Centre-Val de Loire|Bourgogne-Franche-Comté|Normandie|Hauts-de-France|Grand
+    Est|Pays de la Loire|Nouvelle-Aquitaine|Occitanie|Provence-Alpes-Côte d'Azur|Corse
   secteur d'activité:
   - Entreprises exploitantes d’unités de méthanisation
   nombre d'années d'activité:

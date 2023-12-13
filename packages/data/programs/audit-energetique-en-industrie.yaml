@@ -33,7 +33,10 @@ conditions d'éligibilité:
   - TPE et PME
   - Éligible aux micro-entreprises
   secteur géographique:
-  - France et territoires d'outre-mer
+  - Martinique|Guyane|La Réunion|Mayotte|Centre-Val de Loire|Bourgogne-Franche-Comté|Normandie|Grand
+    Est|Nouvelle-Aquitaine|Occitanie|Provence-Alpes-Côte d'Azur|Corse|Saint-Pierre-Et-Miquelon|Polynésie
+    française|Guadeloupe|Île-de-France|Saint-Barthélemy|Terres australes et antarctiques
+    françaises|Saint-Martin|Wallis et Futuna|Nouvelle-Calédonie|Ile de Clipperton
   secteur d'activité:
   - Industrie
   nombre d'années d'activité:

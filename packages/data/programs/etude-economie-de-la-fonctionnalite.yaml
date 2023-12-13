@@ -34,7 +34,9 @@ conditions d'éligibilité:
   - Toutes tailles
   - Éligible aux micro-entreprises
   secteur géographique:
-  - France et territoires d'outre-mer
+  - Île-de-France|Centre-Val de Loire|Bourgogne-Franche-Comté|Normandie|Hauts-de-France|Grand
+    Est|Bretagne|Nouvelle-Aquitaine|Occitanie|Auvergne-Rhône-Alpes|Corse|Saint-Pierre-Et-Miquelon|Polynésie
+    française|Guadeloupe|Martinique|Guyane|La Réunion|Mayotte|Pays de la Loire
   secteur d'activité:
   - Tous secteurs d’activité
   nombre d'années d'activité:
