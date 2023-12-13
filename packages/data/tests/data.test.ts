@@ -30,7 +30,7 @@ test('Publicode data is valid when appended with interface', () => {
 
   programs.forEach((p) => {
     try {
-      expect(() => new Engine(p.publicodes as any)).not.toThrowError()
+      expect(() => new Engine(p.publicodes as object)).not.toThrowError()
     } catch (errUnknown) {
       const err = ensureError(errUnknown)
       err.message = `Program: ${p.titre}\n\n${err.message}`
@@ -46,11 +46,11 @@ test('Region data from the passage table is consistent with what is expected in 
 
 // Test helpers
 
-function compileSchema(schema: any): ValidateFunction {
+function compileSchema(schema: object): ValidateFunction {
   return new Ajv({ verbose: true }).compile(schema)
 }
 
-function testDataAgainstSchema(data: any, dataDesc: string, validate: ValidateFunction) {
+function testDataAgainstSchema(data: object, dataDesc: string, validate: ValidateFunction) {
   const valid = validate(data)
 
   if (!valid) {

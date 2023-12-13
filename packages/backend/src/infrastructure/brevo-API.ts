@@ -10,10 +10,7 @@ const DEBUG_BREVO_LIST_ID = '4'
  * addBrevoContact reads token and brevo list Ids from environment variables,
  * and adds a contact to brevo with the help of this information
  */
-export const addBrevoContact: ContactInfoRepository['add'] = async (
-  email: string,
-  attributes: object
-) => {
+export const addBrevoContact: ContactInfoRepository['add'] = async (email: string, attributes: object) => {
   const token = process.env['BREVO_API_TOKEN'] || ''
 
   const defaultListId = DEBUG_BREVO_LIST_ID
@@ -34,12 +31,7 @@ export const addBrevoContact: ContactInfoRepository['add'] = async (
  * @attributes - additionnal attributes to store along
  *
  */
-const requestBrevoAPI = async (
-  token: string,
-  listIds: number[],
-  email: string,
-  attributes: object
-): Promise<Result<ContactId, Error>> => {
+const requestBrevoAPI = async (token: string, listIds: number[], email: string, attributes: object): Promise<Result<ContactId, Error>> => {
   const api_brevo_url = `https://api.brevo.com/v3/contacts`
 
   try {
@@ -54,7 +46,7 @@ const requestBrevoAPI = async (
         headers: makeHeaders(token)
       }
     )
-    return Result.ok(response.data as ContactId)
+    return Result.ok(response.data)
   } catch (err: unknown) {
     let error = ensureError(err)
 

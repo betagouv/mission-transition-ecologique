@@ -10,25 +10,26 @@ export const buildHeaders = (callback: FormCallback) => {
 
 export const sendApiRequest = async (
   callback: FormCallback,
-  formData: object | any,
+  formData: any,
   trackValues: any[] = [],
-  props: object | any = undefined,
-  lang: string = 'fr') => {
-
+  props: any = undefined,
+  lang: string = 'fr'
+) => {
   const url = callback.url
   const method = callback.method
   const headers = buildHeaders(callback)
 
   let data: any = callback.dataBody || callback.dataStructure || {}
-  const dataMapping = callback.dataMapping.filter(dm => !dm.onlyRemap)
+  const dataMapping = callback.dataMapping.filter((dm) => !dm.onlyRemap)
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
   data = remapItem(data, dataMapping, formData, trackValues, props, undefined, [], lang)
   const body = JSON.stringify(data)
 
   return await sendRequest(url, method, headers, body, callback.action)
 }
 
-export const sendRequest = async (url: string, method: string, headers: HeadersInit, body: BodyInit, action: string) => {
+export const sendRequest = async (url: string, method: string, headers: HeadersInit, body: BodyInit, action: string): Promise<ReqResp> => {
   // send request
   try {
     const response = await fetch(url, {
@@ -36,7 +37,7 @@ export const sendRequest = async (url: string, method: string, headers: HeadersI
       headers: headers,
       body: body
     })
-    const respJson = await response.json()
+    const respJson: ReqResp = (await response.json()) as ReqResp
     respJson.action = action
     respJson.ok = response.ok
     respJson.status = response.status
@@ -44,12 +45,13 @@ export const sendRequest = async (url: string, method: string, headers: HeadersI
     respJson.url = response.url
 
     return respJson
-  } catch (error) {
+  } catch (error: unknown) {
     const respObj: ReqResp = {}
     respObj.action = action
     respObj.ok = false
     respObj.status = 500
     respObj.statusText = 'Internal server error'
+    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
     respObj.message = `${error}`
 
     return respObj

@@ -4,11 +4,8 @@
 import { computed, ref, shallowRef, toRaw } from 'vue'
 // cf : https://stackoverflow.com/questions/64917686/vue-array-converted-to-proxy-object
 import { defineStore } from 'pinia'
-
 import { tracks } from '@/questionnaire'
-
-// @ts-ignore
-import type { Track, Translations, UsedTrack, TrackId } from '@/types'
+import type { Track, TrackId, TrackOptions, Translations, UsedTrack, UsedTrackValuePair } from '@/types'
 import { TrackComponents } from '@/types'
 
 const allTracks = ref<Track[]>(tracks)
@@ -41,37 +38,33 @@ export const tracksStore = defineStore('tracks', () => {
   })
   const getLastTrack = computed(() => {
     const tracksArray = usedTracks.value //.slice(-1)
-    const track: UsedTrack = tracksArray[tracksArray.length - 1]
-    return track
+    return tracksArray[tracksArray.length - 1] as UsedTrack | undefined
   })
-  const currentTrackId = computed<TrackId>(() => {
+  const currentTrackId = computed(() => {
     const tracksArray = usedTracks.value.slice(-1)
     const track: UsedTrack = tracksArray[0]
-    const stepNumber = track?.id
-    return stepNumber
+    return track?.id
   })
   const currentStep = computed(() => {
-    const track: UsedTrack = getLastTrack.value
-    const stepNumber = track?.step
-    return stepNumber
+    const track = getLastTrack.value
+    return track?.step
   })
   const getAllUsedTracks = computed(() => {
-    const res = usedTracks.value
-      .filter((i: UsedTrack) => i?.completed)
-      .map((i: UsedTrack) => toRaw(i))
+    const res = usedTracks.value.filter((i: UsedTrack) => i?.completed).map((i: UsedTrack) => toRaw(i))
     return res
   })
-  const getAllUsedTracksValues = computed(() => {
-    const usedTrackValues = getAllUsedTracks.value.map((usedTrack: UsedTrack) => {
-      const values = usedTrack.selected?.map((s) => s.value)
-      return toRaw(values.map((i) => toRaw(i)))
-    }).filter((i) => i?.length)
+  const getAllUsedTracksValues = computed<(string | number | object)[]>(() => {
+    const usedTrackValues = getAllUsedTracks.value
+      .map((usedTrack: UsedTrack) => {
+        const values = usedTrack.selected?.map((s) => s.value)
+        return toRaw(values.map((i) => toRaw(i)))
+      })
+      .filter((i) => i?.length)
 
-    const trackValues: any[] = usedTrackValues.flat(1)
-    return trackValues
+    return usedTrackValues.flat(1)
   })
-  const getAllUsedTracksValuesPairs = computed(() => {
-    const usedTrackValues = usedTracks.value.map((usedTrack: UsedTrack) => {
+  const getAllUsedTracksValuesPairs = computed<UsedTrackValuePair[]>(() => {
+    return usedTracks.value.map((usedTrack: UsedTrack) => {
       const values = usedTrack.selected?.map((s) => s.value)
       return {
         trackId: usedTrack.id,
@@ -79,52 +72,40 @@ export const tracksStore = defineStore('tracks', () => {
         selection: toRaw(values.map((i) => toRaw(i)))
       }
     })
-    return usedTrackValues
   })
 
   // getters
-  const getTrack = (trackId: TrackId): (Track | undefined) => {
-    return allTracks.value.find(track => track.id === trackId)
+  const getTrack = (trackId: TrackId): Track | undefined => {
+    return allTracks.value.find((track) => track.id === trackId)
   }
-  const getTrackCategory = (trackId: TrackId) => {
+  const getTrackCategory = (trackId: TrackId): string | undefined => {
     const track = getTrack(trackId)
-    // @ts-ignore
-    const trackCateg: string = track?.category
-    return trackCateg
+    return track?.category
   }
-  const getTrackTitle = (trackId: TrackId, lang: string) => {
+  const getTrackTitle = (trackId: TrackId, lang: string): string | undefined => {
     const track = getTrack(trackId)
-    // @ts-ignore
-    const trackTitle: Translations = track?.title
-    const titleString: string = trackTitle && trackTitle[lang]
-    return titleString
+    const trackTitle: Translations | undefined = track?.title
+    return trackTitle?.[lang]
   }
-  const getTrackLabel = (trackId: TrackId, lang: string) => {
+  const getTrackLabel = (trackId: TrackId, lang: string): string | undefined => {
     const track = getTrack(trackId)
-    // @ts-ignore
-    const trackTitle: Translations = track?.label
-    const titleString: string = trackTitle && trackTitle[lang]
-    return titleString
+    const trackLabel: Translations | undefined = track?.label
+    return trackLabel?.[lang]
   }
-  const getTrackBgColor = (trackId: TrackId) => {
+  const getTrackBgColor = (trackId: TrackId): string | undefined => {
     const track = getTrack(trackId)
-    // @ts-ignore
-    const trackBgColor: string = track?.bgColor
-    return trackBgColor
+    return track?.bgColor
   }
-  const getTrackImageRight = (trackId: TrackId) => {
+  const getTrackImageRight = (trackId: TrackId): string | undefined => {
     const track = getTrack(trackId)
-    // @ts-ignore
-    const trackImageRight: string = track?.imageRight
-    return trackImageRight
+    return track?.imageRight
   }
   function trackExistsInUsed(trackId: TrackId) {
-    // @ts-ignore
-    const exists = usedTracks.value.find(t => t.id === trackId)
+    const exists = usedTracks.value.find((usedTrack) => (usedTrack.id as TrackId) === trackId)
     return !!exists
   }
   const isTrackCompleted = (trackId: TrackId) => {
-    const track = usedTracks.value.find(t => t.id === trackId)
+    const track = usedTracks.value.find((usedTrack) => (usedTrack.id as TrackId) === trackId)
     return track?.completed
   }
 
@@ -133,7 +114,7 @@ export const tracksStore = defineStore('tracks', () => {
     maxDepth.value = depth
   }
 
-  async function setSeedTrack(seed: TrackId) {
+  function setSeedTrack(seed: TrackId) {
     const track = getTrack(seed)
     seedTrack.value = track?.id
   }
@@ -151,25 +132,25 @@ export const tracksStore = defineStore('tracks', () => {
       completed: false,
       step: usedTracks.value.length + 1,
       selected: [],
-      next: null,
+      next: null
     }
-    // @ts-ignore
+
     usedTracks.value.push(trackInfos)
   }
 
-  function updateUsedTracks(trackId: string, step: number, next: any, selectedOptions: any[]) {
+  function updateUsedTracks(trackId: string, step: number, next: any, selectedOptions: TrackOptions[]) {
     usedTracks.value.map((trackInfo: UsedTrack) => {
       if (trackInfo.id === trackId) {
         const hasValues = Boolean(selectedOptions.length)
-        const nextTrack = next
         trackInfo.selected = selectedOptions
         trackInfo.completed = hasValues
-        trackInfo.next = hasValues ? nextTrack : null
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+        trackInfo.next = hasValues ? next : null
       }
     })
   }
 
-  async function setUsedTracksAsNotCompleted(trackId: string) {
+  function setUsedTracksAsNotCompleted(trackId: string) {
     usedTracks.value.map((trackInfo: UsedTrack) => {
       if (trackInfo.id === trackId) {
         trackInfo.completed = false
@@ -180,12 +161,12 @@ export const tracksStore = defineStore('tracks', () => {
 
   function removeFurtherUsedTracks(srcTrackId: string) {
     const lastTrack: UsedTrack | undefined = usedTracks.value.find((t: UsedTrack) => t.id === srcTrackId)
-    // @ts-ignore
-    const newArray = usedTracks.value.filter((t: UsedTrack) => t.step <= lastTrack?.step)
-    usedTracks.value = newArray
+    if (lastTrack) {
+      usedTracks.value = usedTracks.value.filter((t: UsedTrack) => t.step <= lastTrack?.step)
+    }
   }
 
-  async function resetUsedTracks() {
+  function resetUsedTracks() {
     usedTracks.value = []
   }
 

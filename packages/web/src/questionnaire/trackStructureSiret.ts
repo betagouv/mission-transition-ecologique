@@ -16,12 +16,13 @@ import {
   FindInRefs,
   HasInputOptions,
   TrackComponents,
-  TrackId,
+  TrackId
   // Entreprise
 } from '@/types'
 import type { Track } from '@/types'
+import type { ImportMetaEnv } from '@/env'
 
-const metaEnv = import.meta.env
+const metaEnv: ImportMetaEnv = import.meta.env as ImportMetaEnv
 const TEE_BACKEND_URL = metaEnv.VITE_TEE_BACKEND_URL || 'https://tee-backend.osc-fr1.scalingo.io'
 
 const dataTarget = {

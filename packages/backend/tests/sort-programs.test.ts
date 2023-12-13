@@ -23,10 +23,7 @@ EXPECT that the programs respect a set of given rules
   }
 
   // test helper
-  const addQuestionnaireRoute = (
-    questionnaireRoute: TrackHelpValue,
-    testCases: TestCase[]
-  ): TestCase[] => {
+  const addQuestionnaireRoute = (questionnaireRoute: TrackHelpValue, testCases: TestCase[]): TestCase[] => {
     return testCases.map((testCase) => {
       testCase.questionnaireRoute = questionnaireRoute
       return testCase
@@ -61,18 +58,12 @@ EXPECT that the programs respect a set of given rules
   const testCasesNoSpecificGoal: TestCase[] = [
     {
       name: 'free coaching first 1',
-      programs: [
-        makeProgram('1', ProgramAidType.acc),
-        makeProgram('2', ProgramAidType.acc, 'gratuit')
-      ],
+      programs: [makeProgram('1', ProgramAidType.acc), makeProgram('2', ProgramAidType.acc, 'gratuit')],
       expectedIdOrder: ['2', '1']
     },
     {
       name: 'free coaching first 2 (case insensitive)',
-      programs: [
-        makeProgram('1', ProgramAidType.acc),
-        makeProgram('2', ProgramAidType.acc, 'Gratuit')
-      ],
+      programs: [makeProgram('1', ProgramAidType.acc), makeProgram('2', ProgramAidType.acc, 'Gratuit')],
       expectedIdOrder: ['2', '1']
     },
     {
@@ -112,18 +103,12 @@ EXPECT that the programs respect a set of given rules
   const testCasesSpecificGoal: TestCase[] = [
     {
       name: 'free coaching last 1',
-      programs: [
-        makeProgram('1', ProgramAidType.acc, 'gratuit'),
-        makeProgram('2', ProgramAidType.acc)
-      ],
+      programs: [makeProgram('1', ProgramAidType.acc, 'gratuit'), makeProgram('2', ProgramAidType.acc)],
       expectedIdOrder: ['2', '1']
     },
     {
       name: 'free coaching last 2 (case insensitive)',
-      programs: [
-        makeProgram('1', ProgramAidType.acc, 'Gratuit'),
-        makeProgram('2', ProgramAidType.acc)
-      ],
+      programs: [makeProgram('1', ProgramAidType.acc, 'Gratuit'), makeProgram('2', ProgramAidType.acc)],
       expectedIdOrder: ['2', '1']
     },
     {

@@ -1,13 +1,8 @@
 <template>
   <!-- PROGRAM INFOS -->
   <div class="">
-
     <!-- BACK TO RESULTS BTN -->
-    <button
-      class="fr-btn fr-btn--tertiary-no-outline inline-flex fr-mb-3v fr-link"
-      tertiary
-      noOutline
-      @click="resetDetailResult">
+    <button class="fr-btn fr-btn--tertiary-no-outline inline-flex fr-mb-3v fr-link" tertiary noOutline @click="resetDetailResult">
       <v-icon name="ri-arrow-left-line" aria-hidden="true"></v-icon>
       {{ choices.t('results.backToResults') }}
     </button>
@@ -18,33 +13,25 @@
       <div class="fr-col-md-4 fr-col-lg-3 fr-col-xl-3 fr-col-sm-hide fr-text-right">
         <img
           class="fr-responsive-img"
-          :src="`${choices.publicPath}${program.illustration}`"
-          :alt="`image / ${program.titre}`"
-          style="min-height: 100%; object-fit: cover;"
-          />
+          :src="`${choices.publicPath}${program?.illustration}`"
+          :alt="`image / ${program?.titre}`"
+          style="min-height: 100%; object-fit: cover"
+        />
       </div>
 
       <!-- TITLE & RESUME -->
       <div class="fr-col fr-pl-10v">
         <!-- PROGRAM TITLE -->
         <p class="tee-program-title fr-mb-5v">
-          {{ program.titre }}
+          {{ program?.titre }}
         </p>
 
         <!-- PROGRAM RESUME / TEXT-->
-        <h6
-          v-if="trackConfig.config?.showProgramSubtitles"
-          :style="`color: ${blockColor}`">
+        <h6 v-if="trackConfig.config?.showProgramSubtitles" :style="`color: ${blockColor}`">
           {{ choices.t('program.programResume') }}
         </h6>
-        <h2
-          :style="`color: ${blockColor}`"
-          v-html="program.promesse">
-        </h2>
-        <p
-          style="color: #000091"
-          v-html="program.description">
-        </p>
+        <h2 :style="`color: ${blockColor}`" v-html="program?.promesse"></h2>
+        <p style="color: #000091" v-html="program?.description"></p>
         <!-- <p
           v-if="program['description longue']"
           style="color: #000091"
@@ -60,16 +47,12 @@
           @click="toggleShowForm"
           ref="modalOrigin"/> -->
 
-        <ProgramObjective :program='program'></ProgramObjective>
+        <ProgramObjective v-if="program" :program="program"></ProgramObjective>
       </div>
-
     </div>
 
     <!-- PROGRAM INFOS : PROVIDERS / TYPE / START / END -->
-    <div
-      v-if="trackConfig.config?.showProgramInfos"
-      class="fr-grid-row fr-grid-row--gutters fr-mb-5v">
-
+    <div v-if="trackConfig.config?.showProgramInfos" class="fr-grid-row fr-grid-row--gutters fr-mb-5v">
       <!-- PROGRAM GEO ZONES -->
       <!-- <div
         v-if="program.geo_zones"
@@ -82,9 +65,7 @@
       </div> -->
 
       <!-- PROGRAM COST | LOAN | AID -->
-      <div
-        v-if="program[`coût de l'accompagnement`]"
-        :class="columnTiles">
+      <div v-if="program?.[`coût de l'accompagnement`]" :class="columnTiles">
         <TeeTile
           class="tee-no-hover"
           :title="choices.t('programCosts.cost')"
@@ -93,9 +74,7 @@
         />
       </div>
 
-      <div
-        v-if="program[`montant du financement`]"
-        :class="columnTiles">
+      <div v-if="program?.[`montant du financement`]" :class="columnTiles">
         <TeeTile
           class="tee-no-hover"
           :title="choices.t('programCosts.aid')"
@@ -104,9 +83,7 @@
         />
       </div>
 
-      <div
-        v-if="program[`montant de l'avantage fiscal`]"
-        :class="columnTiles">
+      <div v-if="program?.[`montant de l'avantage fiscal`]" :class="columnTiles">
         <TeeTile
           class="tee-no-hover"
           :title="choices.t('programCosts.taxAdvantage')"
@@ -115,9 +92,7 @@
         />
       </div>
 
-      <div
-        v-if="program[`montant du prêt`]"
-        :class="columnTiles">
+      <div v-if="program?.[`montant du prêt`]" :class="columnTiles">
         <TeeTile
           class="tee-no-hover"
           :title="choices.t('programCosts.loan')"
@@ -137,20 +112,18 @@
       </div> -->
 
       <!-- PROGRAM TYPE -->
-      <div
-        :class="columnTiles">
+      <div :class="columnTiles">
         <TeeTile
           class="tee-no-hover"
           :title="choices.t('program.programType')"
           :image-path="`${choices.publicPath}images/TEE-typefinance.svg`"
-          :description="program[`nature de l'aide`]">
+          :description="program?.[`nature de l'aide`]"
+        >
         </TeeTile>
       </div>
 
       <!-- PROGRAM DURATION -->
-      <div
-        v-if="program[`durée de l'accompagnement`]"
-        :class="columnTiles">
+      <div v-if="program?.[`durée de l'accompagnement`]" :class="columnTiles">
         <TeeTile
           class="tee-no-hover"
           :title="choices.t('program.programDuration')"
@@ -158,9 +131,7 @@
           :description="program[`durée de l'accompagnement`]"
         />
       </div>
-      <div
-        v-if="program[`durée du prêt`]"
-        :class="columnTiles">
+      <div v-if="program?.[`durée du prêt`]" :class="columnTiles">
         <TeeTile
           class="tee-no-hover"
           :title="choices.t('program.programLoanDuration')"
@@ -170,49 +141,44 @@
       </div>
 
       <!-- PROGRAM PROVIDERS -->
-      <div
-        :class="columnTiles">
+      <div :class="columnTiles">
         <TeeTile
+          v-if="program"
           class="tee-no-hover"
           :title="choices.t('program.programProviders')"
           :image-path="`${choices.publicPath}images/TEE-porteur.svg`"
-          :description="choices.to(program['opérateur de contact'])">
+          :description="choices.to(program['opérateur de contact'])"
+        >
         </TeeTile>
       </div>
-
     </div>
 
     <!-- PROGRAM FORM -->
-    <div
-      class="fr-form-block">
+    <div class="fr-form-block">
       <TeeForm
+        v-if="program"
         :track-id="trackConfig.id"
         :form-options="trackConfig.form"
         :data-props="{ programId: program.id }"
         :program="program"
-        :debug="debug"/>
+        :debug="debug"
+      />
     </div>
   </div>
 
   <!-- MODAL DIALOG -->
   <dialog
+    id="fr-modal-1"
     aria-labelledby="fr-modal-title-modal-1"
     role="dialog"
-    id="fr-modal-1"
-    :class="`fr-modal fr-modal-custom ${showForm ? 'fr-modal--opened' : ''}`">
+    :class="`fr-modal fr-modal-custom ${showForm ? 'fr-modal--opened' : ''}`"
+  >
     <div class="fr-container fr-container--fluid fr-container-md">
       <div class="fr-grid-row fr-grid-row--center">
         <div class="fr-col-12 fr-col-md-11 fr-col-lg-10">
-          <div
-            class="fr-modal__body fr-modal__body-custom"
-            >
+          <div class="fr-modal__body fr-modal__body-custom">
             <div class="fr-modal__header">
-              <button
-                class="fr-link--close fr-link"
-                aria-controls="fr-modal-1"
-                style="align-items: center;"
-                @click="toggleShowForm"
-                >
+              <button class="fr-link--close fr-link" aria-controls="fr-modal-1" style="align-items: center" @click="toggleShowForm">
                 <span class="fr-sm-hide">
                   {{ choices.t('close') }}
                 </span>
@@ -226,30 +192,29 @@
               <div class="fr-grid-row fr-grid-row--gutters">
                 <!-- MODAL INFOS -->
                 <div class="fr-col-md-5 fr-col-sm-12 align">
-                  <h4
-                    class=""
-                    style="text-align: center;">
+                  <h4 v-if="program" class="" style="text-align: center">
                     {{ choices.ti(trackConfig?.form.label[choices.lang], { title: program.titre }) || '' }}
                   </h4>
-                  <p
-                    class=""
-                    style="text-align: center;">
+                  <p class="" style="text-align: center">
                     {{ trackConfig?.form.hint[choices.lang] || '' }}
                   </p>
                   <img
+                    v-if="program"
                     class="fr-responsive-img fr-sm-hide"
                     :src="`${choices.publicPath}images/TEE_illustration.png`"
                     :alt="`image / ${program.titre}`"
-                    />
+                  />
                 </div>
                 <!-- MODAL FORM -->
                 <div class="fr-col">
                   <TeeForm
+                    v-if="program"
                     :track-id="trackConfig.id"
                     :form-options="trackConfig.form"
                     :data-props="{ programId: program.id }"
                     :program="program"
-                    :debug="debug"/>
+                    :debug="debug"
+                  />
                 </div>
               </div>
             </div>
@@ -258,20 +223,15 @@
       </div>
     </div>
   </dialog>
-
 </template>
 
-
 <script setup lang="ts">
-
 // CONSOLE LOG TEMPLATE
 // console.log(`TeeProgramDetail > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import { ref, onBeforeMount } from 'vue'
 
-// @ts-ignore
 import TeeTile from '../TeeTile.vue'
-// @ts-ignore
 import TeeForm from '../TeeForm.vue'
 
 import { choicesStore } from '../../stores/choices'
@@ -281,7 +241,7 @@ import { navigationStore } from '../../stores/navigation'
 import { analyticsStore } from '../../stores/analytics'
 
 import { scrollToId } from '../../utils/helpers'
-import type { TrackId } from '@/types'
+import type { TrackId, ProgramData } from '@/types'
 import ProgramObjective from '@/components/program/ProgramObjective.vue'
 import { useRoute, useRouter } from 'vue-router'
 import { RouteName } from '@/types/routeType'
@@ -294,7 +254,7 @@ const nav = navigationStore()
 const route = useRoute()
 const router = useRouter()
 
-const program = ref<any>()
+const program = ref<{ index: string } & ProgramData>()
 const trackConfig = ref<any>()
 
 const blockColor = '#000091'
@@ -302,10 +262,10 @@ const showForm = ref<boolean>(false)
 const columnTiles = ref<string>('fr-col')
 
 interface Props {
-  programId: string | number,
-  trackId: TrackId | undefined,
-  disableWidget?: boolean,
-  debug?: boolean,
+  programId: string | number
+  trackId: TrackId | undefined
+  disableWidget?: boolean
+  debug?: boolean
 }
 const props = defineProps<Props>()
 
@@ -316,8 +276,8 @@ const resetDetailResult = async () => {
     return
   }
   programs.resetDetailResult()
-  nav.setCurrentDetailId('', props.disableWidget)
-  nav.updateUrl(props.disableWidget)
+  await nav.setCurrentDetailId('', props.disableWidget)
+  await nav.updateUrl(props.disableWidget)
 
   scrollToId(`${props.programId}`)
 }
@@ -328,7 +288,7 @@ const toggleShowForm = () => {
   }
 }
 
-onBeforeMount(async() => {
+onBeforeMount(() => {
   program.value = programs.getProgramById(props.programId)
   if (props.trackId) {
     trackConfig.value = tracks.getTrack(props.trackId)
