@@ -2,13 +2,11 @@
   <!-- FORM -->
   <div
     v-show="!formIsSent"
-    class="fr-tee-form"
-  >
+    class="fr-tee-form">
     <!-- DEBUGGING -->
     <div
       v-if="debug"
-      class="vue-debug"
-    >
+      class="vue-debug">
       <p>
         requiredFields:
         <code>
@@ -26,8 +24,7 @@
     <!-- FORM LABEL -->
     <h3
       v-if="formOptions.label"
-      class="fr-text-center"
-    >
+      class="fr-text-center">
       <!-- {{ formOptions.label[choices.lang] }} -->
       {{
         capitalizeFirstLetter(
@@ -42,8 +39,7 @@
     <!-- FORM LABEL -->
     <p
       v-if="formOptions.hint"
-      class="fr-text-center fr-pb-10v"
-    >
+      class="fr-text-center fr-pb-10v">
       <!-- {{ formOptions.hint[choices.lang] }} -->
       {{ choices.ti(formOptions.hint[choices.lang], { operator: program['opérateur de contact'] }) }}
     </p>
@@ -55,13 +51,11 @@
       <div
         v-for="field in formOptions.fields"
         :key="field.id"
-        :class="`fr-col-12 fr-col-md-${field.cols ? field.cols : 12}`"
-      >
+        :class="`fr-col-12 fr-col-md-${field.cols ? field.cols : 12}`">
         <!-- DEBUGGING -->
         <div
           v-if="debug"
-          class="vue-debug"
-        >
+          class="vue-debug">
           Field.id:
           <code>
             {{ field.id }}
@@ -87,8 +81,7 @@
             :required="field.required"
             :label="field?.label?.[choices.lang]"
             :placeholder="(field.hint && field.hint[choices.lang]) || ''"
-            @update:model-value="updateFormData($event, field.id)"
-          >
+            @update:model-value="updateFormData($event, field.id)">
           </DsfrInput>
         </DsfrInputGroup>
 
@@ -98,8 +91,7 @@
           :model-value="formData[field.id]"
           :name="field.id"
           :required="field.required"
-          @update:model-value="updateFormData($event, field.id)"
-        >
+          @update:model-value="updateFormData($event, field.id)">
           <!-- :hint="field.hint[choices.lang]" -->
           <template #label>
             <span>
@@ -112,8 +104,7 @@
         <div v-if="isCheckbox(field)">
           <span
             class="fr-hint-text fr-mt-5v"
-            v-html="field.hint?.[choices.lang] || ''"
-          >
+            v-html="field.hint?.[choices.lang] || ''">
           </span>
         </div>
       </div>
@@ -122,8 +113,7 @@
     <!-- FORM HELPER -->
     <h6
       class="fr-mb-0"
-      style="font-size: 0.7em"
-    >
+      style="font-size: 0.7em">
       <code>*</code>
       &nbsp;
       {{ choices.t('form.mandatory') }}
@@ -133,8 +123,7 @@
     <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-mt-5v">
       <div
         class="fr-col-12"
-        style="display: grid; justify-content: right"
-      >
+        style="display: grid; justify-content: right">
         <!-- :label="choices.t('next')"  -->
         <DsfrButton
           :label="choices.t('send')"
@@ -142,8 +131,7 @@
           icon="ri-arrow-right-line"
           icon-right
           :loading="isLoading"
-          @click="saveFormData()"
-        />
+          @click="saveFormData()" />
       </div>
     </div>
   </div>
@@ -151,20 +139,17 @@
   <!-- FORM CALLBACK -->
   <div
     v-if="formIsSent"
-    class="fr-mt-5v fr-tee-form"
-  >
+    class="fr-mt-5v fr-tee-form">
     <!-- FORM ALERT AFTER SENDING-->
     <div :class="`fr-alert fr-alert--${hasNoRespError ? 'success' : 'error fr-tee-form-error'}`">
       <h3
         v-if="hasNoRespError"
-        class="fr-alert__title"
-      >
+        class="fr-alert__title">
         {{ choices.t(`form.sent`) }}
       </h3>
       <div
         v-else
-        class="fr-alert__title"
-      >
+        class="fr-alert__title">
         <p>
           {{ choices.t(`form.notSent`) }}
         </p>
@@ -172,8 +157,7 @@
           <code
             v-for="(resp, idx) in requestResponses"
             :key="idx"
-            class="error-code fr-py-2v"
-          >
+            class="error-code fr-py-2v">
             {{ choices.t('errors.error') }} {{ resp.status }} : "{{ resp.message }}"
           </code>
         </p>
@@ -185,12 +169,10 @@
       <!-- DEBUGGING -->
       <div
         v-if="debug && requestResponses?.filter((resp) => resp.status && ![200, 201].includes(resp.status))"
-        class="fr-mt-5v fr-highlight"
-      >
+        class="fr-mt-5v fr-highlight">
         <p
           v-for="(resp, i) in requestResponses"
-          :key="`resp-${i}`"
-        >
+          :key="`resp-${i}`">
           <b> {{ resp.action }} : </b>
           <b> status {{ resp.status }} : </b>
           <b> "{{ resp.code }}" </b>
@@ -210,15 +192,13 @@
       <p class="fr-mt-10v fr-mb-3v">
         <span
           class="fr-icon-arrow-right-line fr-mr-3v"
-          aria-hidden="true"
-        ></span>
+          aria-hidden="true"></span>
         <span v-html="choices.t('form.advisors')"></span>
       </p>
       <p class="fr-mb-3v">
         <span
           class="fr-icon-arrow-right-line fr-mr-3v"
-          aria-hidden="true"
-        ></span>
+          aria-hidden="true"></span>
         <span v-html="choices.t('form.phoneContact')"></span>
       </p>
     </div>
@@ -227,14 +207,12 @@
   <!-- DEBUGGING -->
   <div
     v-if="debug"
-    class="vue-debug fr-mt-5v"
-  >
+    class="vue-debug fr-mt-5v">
     <h5>DEBUG - TeeForm</h5>
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
       <div
         v-if="false"
-        class="fr-col-12"
-      >
+        class="fr-col-12">
         <h4>formOptions :</h4>
         <code>
           <pre>{{ formOptions }}</pre>

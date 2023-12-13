@@ -5,13 +5,11 @@
       :id="`${track.id}-select`"
       class="fr-select"
       :name="`${track.id}-select`"
-      @change="updateLocalSelection"
-    >
+      @change="updateLocalSelection">
       <!-- DEFAULT OPTION -->
       <option
         value=""
-        selected
-      >
+        selected>
         {{ choices.t('select.selectOption') }}
       </option>
 
@@ -19,8 +17,7 @@
       <option
         v-for="(optionVal, idx) in options"
         :key="`${track.id}-select-option-${idx}`"
-        :value="idx"
-      >
+        :value="idx">
         {{ optionVal?.label[choices.lang] }}
       </option>
     </select>

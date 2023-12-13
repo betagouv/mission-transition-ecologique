@@ -2,13 +2,11 @@
   <!-- DEBUGGING -->
   <div
     v-if="debug"
-    class="vue-debug"
-  >
+    class="vue-debug">
     <h5>DEBUG - TeeAppFooter</h5>
     <div
       v-if="true"
-      class="fr-grid-row fr-grid-row--gutters"
-    >
+      class="fr-grid-row fr-grid-row--gutters">
       <div class="fr-col-3">
         <h6 class="fr-mb-1v">
           choices.lang : <code>{{ choices.lang }} </code>
@@ -23,8 +21,7 @@
       <!-- FOOTER BODY -->
       <div
         class="fr-footer__body"
-        style=""
-      >
+        style="">
         <div class="fr-footer__brand fr-enlarge-link">
           <p class="fr-logo">
             République
@@ -33,14 +30,12 @@
           <router-link
             class="fr-footer__brand-link"
             to="/"
-            title="Retour à l’accueil du site - Transition Ecologique des entreprises - République Française"
-          >
+            title="Retour à l’accueil du site - Transition Ecologique des entreprises - République Française">
             <img
               class="fr-footer__logo"
               style="height: 110px"
               src="/images/logos/mission-transition-logo-alone.png"
-              alt="Transition Ecologique des entreprises"
-            />
+              alt="Transition Ecologique des entreprises" />
             <!-- L’alternative de l’image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l’image -->
           </router-link>
         </div>
@@ -50,13 +45,11 @@
             <li
               v-for="link in gouvLinks"
               :key="link.label"
-              class="fr-footer__content-item"
-            >
+              class="fr-footer__content-item">
               <a
                 class="fr-footer__content-link"
                 target="_blank"
-                :href="link.href"
-              >
+                :href="link.href">
                 {{ link.label }}
               </a>
             </li>
@@ -73,34 +66,29 @@
               class="footer__partners-link"
               target="_blank"
               style="background-image: none"
-              :href="mainPartner.href"
-            >
+              :href="mainPartner.href">
               <img
                 class="fr-footer__logo"
                 style="height: 5.625rem; width: 10rem"
                 :src="mainPartner.img"
-                :alt="mainPartner.label"
-              />
+                :alt="mainPartner.label" />
             </a>
           </div>
           <div class="fr-footer__partners-sub">
             <ul
               v-for="partner in partners"
-              :key="partner.label"
-            >
+              :key="partner.label">
               <li>
                 <a
                   class="footer__partners-link"
                   target="_blank"
                   style="background-image: none"
-                  :href="partner.href"
-                >
+                  :href="partner.href">
                   <img
                     class="fr-footer__logo"
                     style="height: 5.625rem; width: 10rem"
                     :src="partner.img"
-                    :alt="partner.label"
-                  />
+                    :alt="partner.label" />
                 </a>
               </li>
             </ul>
@@ -111,26 +99,22 @@
       <!-- FOOTER BOTTOM -->
       <div
         class="fr-footer__bottom fr-mt-5v"
-        style="box-shadow: none"
-      >
+        style="box-shadow: none">
         <ul class="fr-footer__bottom-list">
           <li
             v-for="link in mainLinks"
             :key="link.label"
-            class="fr-footer__bottom-item"
-          >
+            class="fr-footer__bottom-item">
             <router-link
               v-if="link.to"
               :to="link.to"
-              class="fr-footer__bottom-link"
-            >
+              class="fr-footer__bottom-link">
               {{ link.label }}
             </router-link>
             <a
               v-else
               :href="link.href"
-              class="fr-footer__bottom-link"
-            >
+              class="fr-footer__bottom-link">
               {{ link.label }}
             </a>
           </li>
@@ -142,16 +126,14 @@
             {{ choices.t('footer.thisApplicationAndIts') }}
             <a
               :href="sourceCodeHref"
-              class="fr-link-licence no-content-after"
-            >
+              class="fr-link-licence no-content-after">
               {{ choices.t('footer.sourceCode') }}
             </a>
             {{ choices.t('footer.areUnderlicence') }}
             &nbsp;
             <a
               :href="licenceHref"
-              class="fr-link-licence no-content-after"
-            >
+              class="fr-link-licence no-content-after">
               {{ licenceName }}
             </a>
           </p>

@@ -2,8 +2,7 @@
   <!-- MAIN APP COMPONENT  -->
   <div
     class="fr-container--fluid"
-    style="background-color: #e8edff"
-  >
+    style="background-color: #e8edff">
     <div class="fr-container fr-py-2v">
       <TeeCta />
     </div>
@@ -17,8 +16,7 @@
   <!-- INTRO / INFOS -->
   <div
     class="fr-container--fluid"
-    style="background-color: #e8edff"
-  >
+    style="background-color: #e8edff">
     <div class="fr-container fr-py-20v fr-px-20v">
       <TeeHomeInfos />
     </div>

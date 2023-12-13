@@ -1,8 +1,7 @@
 <template>
   <DsfrButton
     v-bind="props"
-    :icon="iconComputed"
-  />
+    :icon="iconComputed" />
 </template>
 
 <script setup lang="ts">

@@ -2,18 +2,15 @@
   <div class="fr-grid-row fr-my-20v">
     <div
       v-if="image"
-      class="fr-col fr-col-6 fr-col-offset-3"
-    >
+      class="fr-col fr-col-6 fr-col-offset-3">
       <img
         class="fr-responsive-img"
         :src="`${choices.publicPath}${image}`"
-        :alt="`image / no-results`"
-      />
+        :alt="`image / no-results`" />
     </div>
     <div
       v-if="message"
-      class="fr-col fr-col-12"
-    >
+      class="fr-col fr-col-12">
       <p class="fr-text-center tee-text-no-result fr-mt-6v">
         {{ message[choices.lang] }}
       </p>

@@ -2,8 +2,7 @@
   <!-- DEBUGGING -->
   <div
     v-if="debug"
-    class="vue-debug"
-  >
+    class="vue-debug">
     <p>
       activeValue: <code>{{ activeValue }}</code>
     </p>
@@ -15,13 +14,11 @@
       :id="filter.label"
       class="fr-select"
       :name="filter.label"
-      @change="updateLocalFilters"
-    >
+      @change="updateLocalFilters">
       <!-- DEFAULT OPTION -->
       <option
         value=""
-        selected
-      >
+        selected>
         {{ choices.t('results.filterSelect', { fieldLabel: filter.label }) }}
       </option>
 
@@ -29,8 +26,7 @@
       <option
         v-for="filterVal in filter.values"
         :key="filterVal.value"
-        :value="filterVal.value"
-      >
+        :value="filterVal.value">
         {{ filterVal.label }}
       </option>
 

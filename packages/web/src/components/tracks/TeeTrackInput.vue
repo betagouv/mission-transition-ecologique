@@ -2,8 +2,7 @@
   <!-- DEBUGGING -->
   <div
     v-if="debug"
-    class="vue-debug"
-  >
+    class="vue-debug">
     <h5>DEBUG - TeeTrackInput</h5>
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
       <div class="fr-col-3">
@@ -26,15 +25,13 @@
   <label
     v-if="option.label"
     class="fr-label fr-mb-2v"
-    :for="`input-${option.id}`"
-  >
+    :for="`input-${option.id}`">
     {{ option.label[choices.lang] }}
   </label>
   <div
     id="header-search"
     class="fr-search-bar"
-    role="search"
-  >
+    role="search">
     <input
       :id="`input-${option.id}`"
       v-model="inputValue"
@@ -43,14 +40,12 @@
       :placeholder="option?.placeholder?.[choices.lang]"
       class="fr-input tee-input-large"
       type="search"
-      @keyup.enter="processInput"
-    />
+      @keyup.enter="processInput" />
     <button
       class="fr-btn tee-btn-input-large"
       :disabled="isLoading"
       :title="choices.t('input.search')"
-      @click="processInput"
-    >
+      @click="processInput">
       <!-- {{ choices.t('input.search') }} -->
     </button>
   </div>
@@ -58,20 +53,17 @@
   <div
     v-if="option.hint && !requestResponses.length"
     class="tee-input-hint fr-mt-4v"
-    :for="`input-${option.id}`"
-  >
+    :for="`input-${option.id}`">
     <span v-html="option.hint[choices.lang]"> </span>
   </div>
 
   <!-- RESPONSE ERRORS -->
   <div
     v-if="requestErrors.length"
-    class="fr-mt-6v"
-  >
+    class="fr-mt-6v">
     <p
       class="fr-mb-0 fr-error-text"
-      style="display: block"
-    >
+      style="display: block">
       <!-- <span class="fr-icon-error-line" aria-hidden="true"></span> -->
       {{ choices.t('enterprise.noStructureFound') }}
 
@@ -80,8 +72,7 @@
         (
         <span
           v-for="(err, i) in requestErrors"
-          :key="`resp-error-${i}`"
-        >
+          :key="`resp-error-${i}`">
           {{ choices.t('errors.error') }} {{ err.status }}
         </span>
         )
@@ -90,8 +81,7 @@
       <br v-if="option.postResponses" />
       <span
         v-if="option.postResponses"
-        v-html="option.postResponses[choices.lang]"
-      >
+        v-html="option.postResponses[choices.lang]">
       </span>
     </p>
     <!-- <div
@@ -114,8 +104,7 @@
   <!-- RESPONSES -->
   <div
     v-if="requestResponses.length"
-    class="fr-mt-4v"
-  >
+    class="fr-mt-4v">
     <h6 v-show="!hasSelection && requestResponses.length > 1">
       {{ choices.t('enterprise.select') }}
     </h6>
@@ -125,20 +114,17 @@
       :key="`resp-input-${i}`"
       :class="`fr-card fr-card-result fr-card--no-arrow ${isSelected(resp) ? 'fr-card--shadow' : ''}`"
       :style="`border: ${isSelected(resp) ? 'solid thin #000091;' : 'solid thin #C4C4C4'};`"
-      @click="selectItem(resp)"
-    >
+      @click="selectItem(resp)">
       <div class="fr-card__body">
         <div class="fr-card__content fr-py-4v fr-px-4v">
           <!-- TITLE -->
           <template
             v-for="(resMap, idx) in resp.resultsMapping"
-            :key="`resp-input-${i}-field-title-${idx}`"
-          >
+            :key="`resp-input-${i}-field-title-${idx}`">
             <h3
               v-if="resMap.position === 'title'"
               :class="`fr-card__title ${resMap.class || 'fr-mb-2v'}`"
-              :style="`${isSelected(resp) ? 'color: #000091;' : ''}`"
-            >
+              :style="`${isSelected(resp) ? 'color: #000091;' : ''}`">
               <!-- IF SELECTED -->
               <!-- <span
                 v-if="hasSelection"
@@ -160,20 +146,17 @@
             <p
               v-for="(resMap, idx) in resp.resultsMapping?.filter((i) => i.position !== 'title')"
               :key="`resp-input-${i}-field-${idx}`"
-              :class="resMap.class || 'fr-mb-2v'"
-            >
+              :class="resMap.class || 'fr-mb-2v'">
               <!-- ICON -->
               <span
                 v-if="resMap.icon"
                 :class="`${resMap.icon} fr-mr-8v`"
-                aria-hidden="true"
-              >
+                aria-hidden="true">
               </span>
               <!-- TITLE -->
               <span
                 v-if="resMap.label"
-                class="fr-mr-1v"
-              >
+                class="fr-mr-1v">
                 {{ resMap.label }}
               </span>
               <span :style="resMap.style">
@@ -187,8 +170,7 @@
       <!-- DEBUGGING -->
       <div
         v-if="debug"
-        class="vue-debug"
-      >
+        class="vue-debug">
         <h5>DEBUG - TeeTrackInput</h5>
         <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
           <div class="fr-col-6">
@@ -211,14 +193,12 @@
   <!-- WILDCARD -->
   <p
     v-if="option.wildcard"
-    class="fr-mt-8v"
-  >
+    class="fr-mt-8v">
     {{ choices.t('or') }}
     <a
       class="fr-link tee-input-wildcard"
       href="#trackElement"
-      @click="goToNextTrack"
-    >
+      @click="goToNextTrack">
       {{ option.wildcard.label[choices.lang] }}
     </a>
   </p>
@@ -236,8 +216,7 @@
   <!-- DEBUGGING -->
   <div
     v-if="debug && selection"
-    class="vue-debug"
-  >
+    class="vue-debug">
     <h5>DEBUG - TeeTrackInput</h5>
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
       <div class="fr-col-6">

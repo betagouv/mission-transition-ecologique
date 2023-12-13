@@ -3,15 +3,13 @@
     <div
       v-for="c in content"
       :key="`${c.img}-title`"
-      class="fr-col fr-col-xs-12 fr-col-md-4 fr-pt-8v fr-text-center fr-pb-0"
-    >
+      class="fr-col fr-col-xs-12 fr-col-md-4 fr-pt-8v fr-text-center fr-pb-0">
       <div class="fr-grid-row fr-px-2v">
         <div class="fr-col fr-col-xs-2 fr-col-sm-12">
           <img
             class="fr-mb-5v"
             :src="c.img"
-            :alt="c.title"
-          />
+            :alt="c.title" />
         </div>
         <div class="fr-col fr-col-xs-10 fr-col-sm-12">
           <h3>
@@ -25,8 +23,7 @@
     <div
       v-for="c in content"
       :key="`${c.img}-text`"
-      class="fr-col fr-col-4 fr-pb-8v fr-pt-0 fr-px-2v fr-text-center"
-    >
+      class="fr-col fr-col-4 fr-pb-8v fr-pt-0 fr-px-2v fr-text-center">
       <p>
         {{ c.text }}
       </p>
