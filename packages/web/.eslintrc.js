@@ -23,7 +23,8 @@ module.exports = {
     ecmaVersion: 'latest',
   },
   rules: {
-    "@typescript-eslint/no-explicit-any": "off",
+    'prettier/prettier': 0,
+    "@typescript-eslint/no-explicit-any": "off"
   },
   ignorePatterns: [
     '../backend/src/domain/eligibility.ts',
