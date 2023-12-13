@@ -2,34 +2,25 @@ import { tracksStore } from '@/stores/tracks'
 import { programsStore } from '@/stores/programs'
 import { TrackId } from '@/types'
 import { navigationStore } from '@/stores/navigation'
+import type { NavigationGuardNext, RouteLocationNormalized } from 'vue-router'
 
-export const resetTrackStore = async (to: any, from: any, next: any) => {
-  // console.log('\nrouter > beforeEnter > resetTrackStore > from :', from)
-  // console.log('router > beforeEnter > resetTrackStore > to :', to)
+export const resetTrackStore = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
   const tracks = tracksStore()
-  await tracks.resetUsedTracks()
-  await next()
+  tracks.resetUsedTracks()
+  next()
 }
-export const resetDetailProgram = async (to: any, from: any, next: any) => {
+export const resetDetailProgram = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
   navigationStore().resetQueries()
   programsStore().resetDetailResult()
-  await next()
+  next()
 }
-export const setHelpAsTrackSeed = async (to: any, from: any, next: any) => {
-  // console.log('\nrouter > beforeEnter > setHelpAsTrackSeed > from :', from)
-  // console.log('router > beforeEnter > setHelpAsTrackSeed > to :', to)
+export const setHelpAsTrackSeed = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
   const tracks = tracksStore()
-  await tracks.setSeedTrack(TrackId.Help)
-  // await tracks.addToUsedTracks('track_help', 'track_help')
-  // next({ name: 'questionnaire' })
-  await next()
+  tracks.setSeedTrack(TrackId.Help)
+  next()
 }
-export const setResultsAsTrackSeed = async (to: any, from: any, next: any) => {
-  // console.log('\nrouter > beforeEnter > setResultsAsTrackSeed > from :', from)
-  // console.log('router > beforeEnter > setResultsAsTrackSeed > to :', to)
+export const setResultsAsTrackSeed = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
   const tracks = tracksStore()
-  await tracks.setSeedTrack(TrackId.Results)
-  // await tracks.addToUsedTracks('track_results', 'track_results')
-  // next({ name: 'catalog' })
-  await next()
+  tracks.setSeedTrack(TrackId.Results)
+  next()
 }

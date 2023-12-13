@@ -1,20 +1,16 @@
 <template>
-  <div
-    ref="trackElement"
-    id="app">
+  <div id="app" ref="trackElement">
     <!-- HEADER -->
-    <TeeHeader/>
+    <TeeHeader />
 
     <!-- MATOMO -->
-    <TeeMatomo/>
+    <TeeMatomo />
 
-    <router-view/>
+    <router-view />
 
     <!-- FOOTER -->
-    <div
-      class="fr-mt-0v">
-      <TeeAppFooter
-        :stick-to-bottom="false"/>
+    <div class="fr-mt-0v">
+      <TeeAppFooter :stick-to-bottom="false" />
     </div>
   </div>
 </template>
@@ -32,17 +28,12 @@ import { choicesStore } from './stores/choices'
 import { programsStore } from './stores/programs'
 import { navigationStore } from './stores/navigation'
 
-import {
-  publicPath,
-  programsFromJson
-} from './utils/global'
+import { publicPath, programsFromJson } from './utils/global'
 
-// @ts-ignore
 import TeeHeader from './components/TeeHeader.vue'
-// @ts-ignore
 import TeeMatomo from './components/TeeMatomo.vue'
-// @ts-ignore
 import TeeAppFooter from './components/TeeAppFooter.vue'
+import type { ProgramData } from '@/types'
 
 const choices = choicesStore()
 const programs = programsStore()
@@ -54,26 +45,24 @@ const route = useRoute()
 interface Props {
   needTracksReset?: boolean
 }
-const props = defineProps<Props>()
+defineProps<Props>()
 
 onBeforeMount(() => {
   choices.setPublicPath(publicPath)
-  programs.setDataset(programsFromJson)
+  programs.setDataset(programsFromJson as ProgramData[])
 })
 
-onMounted(async() => {
+onMounted(async () => {
   // cf: https://stackoverflow.com/questions/69495211/vue3-route-query-empty
   await router.isReady()
   nav.setRouter(router)
   nav.setRoute(route)
 })
-
 </script>
 
 <style lang="scss">
-  @import '~@gouvfr/dsfr/dist/dsfr.min.css'; // ok
-  @import '@gouvminint/vue-dsfr/dist/vue-dsfr.css';
-  @import '@public/css/custom.css';
-  @import '~@gouvfr/dsfr/dist/utility/icons/icons.min.css'; // ok
-  @import '~@gouvminint/vue-dsfr/dist/vue-dsfr.css';
+@import '~@gouvfr/dsfr/dist/dsfr.min.css'; // ok
+@import '~@gouvminint/vue-dsfr/dist/vue-dsfr.css';
+@import '@public/css/custom.css';
+@import '~@gouvfr/dsfr/dist/utility/icons/icons.min.css'; // ok
 </style>

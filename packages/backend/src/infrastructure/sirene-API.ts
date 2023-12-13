@@ -20,10 +20,7 @@ export const getEtablissement: EtablissementRepository['get'] = async (siret) =>
  * @arg token - API access token
  * @arg siret - siret number of the company to fetch
  */
-export const requestSireneAPI = async (
-  token: string,
-  siret: string
-): Promise<Result<Etablissement, Error>> => {
+export const requestSireneAPI = async (token: string, siret: string): Promise<Result<Etablissement, Error>> => {
   const api_sirene_url = `https://api.insee.fr/entreprises/sirene/V3/siret/${siret}`
 
   try {

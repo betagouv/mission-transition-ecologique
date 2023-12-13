@@ -12,7 +12,6 @@ import * as path from 'path'
 import * as fs from 'fs'
 import * as yaml from 'js-yaml'
 import { createFolderIfNotExists } from './helpers'
-// @ts-ignore
 import type { Dispositif as ProgramWithoutId } from './generated/program'
 
 export type { ProgramWithoutId }
@@ -85,10 +84,7 @@ export const buildJSONOutput = (programs: Program[]): void => {
   console.log('♺ Converting data to JSON')
   const dataAsJson: string = JSON.stringify(programs, null, 2)
 
-  const dataBuiltOutputDir: string = path.join(
-    __dirname,
-    process.env.DATA_FRONT_GENERATED_DIR_PATH || DEFAULT_OUTPUT_LOCATION
-  )
+  const dataBuiltOutputDir: string = path.join(__dirname, process.env.DATA_FRONT_GENERATED_DIR_PATH || DEFAULT_OUTPUT_LOCATION)
 
   createFolderIfNotExists(dataBuiltOutputDir)
 

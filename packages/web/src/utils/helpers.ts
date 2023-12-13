@@ -1,7 +1,5 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`utils.helpers > FUNCTION_NAME > MSG_OR_VALUE :`)
-
-// @ts-ignore
 import nafCodesJson from '@tee/web/public/data/references/naf_codes_flat.json'
 import comCodesJson from '@tee/web/public/data/references/com_codes.json'
 
@@ -12,29 +10,26 @@ import type {
   CleanerFromJson,
   CleanerInjectInObject,
   CleanerReplaceAll,
+  ComCode,
   FormCallbackDataMapping,
+  NafCode,
   NextTrackRule,
   PropertyPath,
   Refs,
   ResultsMapping
 } from '@/types'
 import { CleanerOperations, DataMappingFrom } from '@/types'
+import type { ImportMetaEnv } from '../env'
 
 const refs: Refs = {
-  NafCodes: nafCodesJson,
-  ComCodes: comCodesJson
+  NafCodes: nafCodesJson as NafCode[],
+  ComCodes: comCodesJson as ComCode[]
 }
 
 // GENERIC HELPERS
 
-export const randomChoice = (array: any[]) => {
-  const randomIndex = Math.floor(Math.random() * array.length)
-  return array[randomIndex]
-}
-
 export const getFrom = (from: any, selectors: PropertyPath[]) => {
   const res = selectors.map((selector: PropertyPath) => {
-    // @ts-ignore
     const arraySelector = Array.isArray(selector)
       ? selector
       : selector
@@ -44,19 +39,24 @@ export const getFrom = (from: any, selectors: PropertyPath[]) => {
           .split('.')
           .filter((t: any) => t !== '')
 
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return getFromArraySelector(from, arraySelector)
   })
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return res
 }
 
 const getFromArraySelector = (from: any, selector: string[]) => {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return selector.reduce((prev: any, cur: any) => {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-return
     return prev && prev[cur]
   }, from)
 }
 
 export const getFromOnePath = (from: any, selector: string) => {
   const val = getFrom(from, [selector])
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return val[0]
 }
 
@@ -65,26 +65,30 @@ export const getFromResp = (from: any, resMap: ResultsMapping, lang: string = 'f
   let val = getFrom(from, selectors)
   if (resMap.cleaning) {
     val = val.map((v) => {
-      // @ts-ignore
-      return cleanValue(v, resMap.cleaning, lang)
+      return cleanValue(v, resMap.cleaning as Cleaner[] | CleanerReplaceAll[] | CleanerFromJson[] | CleanerDefaultIfNull[], lang)
     })
   }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return val
 }
 
 export const setIn = (obj: any, [head, ...rest]: string[], value: any) => {
-  const newObj: any = Array.isArray(obj) ? [...obj] : { ...obj }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+  const newObj: any = Array.isArray(obj) ? [...(obj as [])] : { ...obj }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-assignment
   newObj[head] = rest.length ? setIn(obj[head], rest, value) : value
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return newObj
 }
 
 export const setProperty = (obj: object, path: string, value: any) => {
-  let resultObj: any
+  let resultObj: object
 
   if (path === '.') {
-    resultObj = { ...obj, ...value }
+    resultObj = { ...obj, ...value } as object
   } else {
     const pathAsArray = path.split('.')
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     resultObj = setIn(obj, pathAsArray, value)
   }
 
@@ -92,14 +96,14 @@ export const setProperty = (obj: object, path: string, value: any) => {
 }
 
 export const findInObjectsArray = (objectsArray: object[], id: string, all: boolean = false) => {
-  const arrayFlat: any = Object.assign({}, ...objectsArray)
-  const value = all ? arrayFlat : arrayFlat[id]
-  return value
+  const arrayFlat: Record<string, unknown> = Object.assign({}, ...objectsArray) as Record<string, unknown>
+  return all ? arrayFlat : arrayFlat[id]
 }
 
-export const groupBy = (objectsArray: object[], key: string) => {
-  return objectsArray.reduce((rv: any, x: any) => {
-    ;(rv[x[key]] = rv[x[key]] || []).push(x)
+export const groupBy = <T>(objectsArray: T[], key: keyof T): Record<string, T[]> => {
+  return objectsArray.reduce((rv: Record<string, T[]>, x: T) => {
+    const keyValue = x[key] as unknown as string
+    ;(rv[keyValue] = rv[keyValue] || []).push(x)
     return rv
   }, {})
 }
@@ -112,37 +116,32 @@ export const replaceAll = (value: any, cleaner: CleanerReplaceAll) => {
 }
 
 export const findFromRefs = (value: string, cleaner: CleanerFromJson) => {
-  let val = value
-
   const findInRef = cleaner.findInRef
   const fromField = cleaner.findFromField
   const targetField = cleaner.retrieveFromField
   const json = refs[findInRef]
-  // @ts-ignore
-  const obj: object = json.find((item) => item[fromField] === value)
 
-  // @ts-ignore
-  val = obj && obj[targetField]
+  const obj = json.find((item) => item[fromField] === value)
 
-  return val
+  return obj?.[targetField] as string
 }
 
 export const findFromDict = (value: string | string[], cleaner: CleanerFromDict) => {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const dict = cleaner.dict
   let valueOut: any
   if (Array.isArray(value)) {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return,@typescript-eslint/no-unsafe-member-access
     valueOut = value.map((v) => dict[v] || v)
   } else {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-assignment
     valueOut = dict[value] || value
   }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return valueOut
 }
 
-export const findDefaultIfNull = (
-  value: string,
-  cleaner: CleanerDefaultIfNull,
-  lang: string = 'fr'
-) => {
+export const findDefaultIfNull = (value: string, cleaner: CleanerDefaultIfNull, lang: string = 'fr') => {
   const defaultValue = cleaner.defaultValue
   return value || defaultValue[lang]
 }
@@ -152,6 +151,7 @@ export const injectInObject = (value: object | object[], cleaner: CleanerInjectI
   let valueOut: object = { ...targetObject }
   if (Array.isArray(value)) {
     value.forEach((v) => {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       valueOut = { ...valueOut, ...v }
     })
   } else {
@@ -162,35 +162,29 @@ export const injectInObject = (value: object | object[], cleaner: CleanerInjectI
 
 export const cleanValue = (
   value: any,
-  cleaners:
-    | Cleaner[]
-    | CleanerReplaceAll[]
-    | CleanerFromJson[]
-    | CleanerFromDict[]
-    | CleanerDefaultIfNull[]
-    | CleanerInjectInObject[],
+  cleaners: Cleaner[] | CleanerReplaceAll[] | CleanerFromJson[] | CleanerFromDict[] | CleanerDefaultIfNull[] | CleanerInjectInObject[],
   lang: string = 'fr'
 ) => {
-  let val: any = value
+  let val: unknown = value
   cleaners.forEach((cleaner) => {
     switch (cleaner.operation) {
       case CleanerOperations.replaceAll:
         val = replaceAll(val, <CleanerReplaceAll>cleaner)
         break
       case CleanerOperations.stringToDate:
-        val = new Date(val).toLocaleDateString(lang)
+        val = new Date(val as string | number | Date).toLocaleDateString(lang)
         break
       case CleanerOperations.findFromRefs:
-        val = findFromRefs(val, <CleanerFromJson>cleaner)
+        val = findFromRefs(val as string, <CleanerFromJson>cleaner)
         break
       case CleanerOperations.findFromDict:
-        val = findFromDict(val, <CleanerFromDict>cleaner)
+        val = findFromDict(val as string | string[], <CleanerFromDict>cleaner)
         break
       case CleanerOperations.defaultIfNull:
-        val = findDefaultIfNull(val, <CleanerDefaultIfNull>cleaner, lang)
+        val = findDefaultIfNull(val as string, <CleanerDefaultIfNull>cleaner, lang)
         break
       case CleanerOperations.injectInObject:
-        val = injectInObject(val, <CleanerInjectInObject>cleaner)
+        val = injectInObject(val as object | object[], <CleanerInjectInObject>cleaner)
         break
       default:
         break
@@ -202,42 +196,46 @@ export const cleanValue = (
 export const remapItem = (
   dataStructure: object,
   dataMapping: FormCallbackDataMapping[] | NextTrackRule[],
-  formData: object | any = {},
+  formData: any = {},
   trackValues: any[] = [],
-  props: object | any = undefined,
-  rawData: object | any = undefined,
+  props: any = undefined,
+  rawData: any = undefined,
   selectionValues: any[] = [],
   lang: string = 'fr'
 ) => {
   let data = { ...dataStructure }
-  const metaEnv = import.meta.env
+  const metaEnv: ImportMetaEnv = import.meta.env as ImportMetaEnv
 
   dataMapping.forEach((dm) => {
-    let value: any = ''
+    let value: unknown = ''
     let allResponses: any
     switch (dm.from) {
       case DataMappingFrom.Env:
         value = metaEnv[dm.id]
         break
       case DataMappingFrom.FormData:
-        value = formData && formData[dm.id]
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        value = formData?.[dm.id]
         break
       case DataMappingFrom.UsedTracks:
-        value = findInObjectsArray(trackValues, dm.id)
+        value = findInObjectsArray(trackValues as object[], dm.id)
         break
       case DataMappingFrom.AllUsedTracks:
-        allResponses = findInObjectsArray(trackValues, dm.id, true)
+        allResponses = findInObjectsArray(trackValues as object[], dm.id, true)
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         value = Object.keys(allResponses)
           .map((k) => {
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
             return `${k}: ${allResponses[k]}`
           })
           .join(' / ')
         break
       case DataMappingFrom.SelectionValues:
-        value = findInObjectsArray(selectionValues, dm.id)
+        value = findInObjectsArray(selectionValues as object[], dm.id)
         break
       case DataMappingFrom.Props:
-        value = props && props[dm.id]
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        value = props?.[dm.id]
         break
       case DataMappingFrom.PropsPath:
         value = dm.path && getFromOnePath(props, dm.path)
@@ -256,13 +254,15 @@ export const remapItem = (
 
     // parse as array
     if (dm.asArray) {
-      value = value.split(dm.sep || ',')
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+      value = (value as string).split(dm.sep || ',')
       if (dm.type === 'integer') {
-        value = value.map((v: string) => parseInt(v))
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+        value = (value as string[]).map((v: string) => parseInt(v))
       }
     }
     // as integer
-    if (!dm.asArray && dm.type === 'integer') {
+    if (!dm.asArray && dm.type === 'integer' && typeof value === 'string') {
       value = parseInt(value)
     }
 
@@ -273,7 +273,7 @@ export const remapItem = (
 }
 
 // UX HELPERS
-export const scrollToTop = (element: any, disableWidget: boolean, from: string | number = '') => {
+export const scrollToTop = (element: Element, disableWidget: boolean) => {
   if (disableWidget) {
     element.scrollIntoView()
   } else {
@@ -283,9 +283,7 @@ export const scrollToTop = (element: any, disableWidget: boolean, from: string |
   }
 }
 
-export const scrollToId = (
-  elementId: string
-) => {
+export const scrollToId = (elementId: string) => {
   setTimeout(() => {
     const element = document.getElementById(elementId)
     element?.scrollIntoView()
