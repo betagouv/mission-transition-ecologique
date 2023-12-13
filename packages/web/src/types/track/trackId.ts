@@ -23,5 +23,5 @@ export enum TrackId {
   WastesMaterials = 'track_wastes_materials',
   WastesSorting = 'track_wastes_sorting',
   WastesStake = 'track_wastes_stake',
-  WaterStake = 'track_water_stake',
+  WaterStake = 'track_water_stake'
 }

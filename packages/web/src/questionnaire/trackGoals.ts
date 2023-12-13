@@ -8,102 +8,102 @@ export const goals: Track = {
   label: { fr: 'Quel est votre objectif prioritaire ?' },
   hint: { fr: 'Je souhaite...' },
   interface: {
-    component: TrackComponents.Buttons,
+    component: TrackComponents.Buttons
   },
   behavior: {
     multipleChoices: false
   },
   next: {
-    default: TrackId.Results,
+    default: TrackId.Results
   },
   options: [
     {
       // WIP
       value: {
         ...priorityObjectives,
-        [Objectives.EnvironmentalImpact] : YesNo.Yes,
+        [Objectives.EnvironmentalImpact]: YesNo.Yes
       },
       title: { fr: 'Impact environnemental' },
       label: { fr: '🌱 Mesurer mon impact environnemental et le réduire' },
       next: {
-        default: TrackId.Results,
+        default: TrackId.Results
       }
     },
     {
       value: {
         ...priorityObjectives,
-        [Objectives.EnergyPerformance] : YesNo.Yes,
+        [Objectives.EnergyPerformance]: YesNo.Yes
       },
       title: { fr: "Gestion de l'énergie" },
       label: { fr: '⚡️ Améliorer la performance énergétique de mon entreprise' },
       next: {
-        default: TrackId.Results,
+        default: TrackId.Results
       }
     },
     {
       value: {
         ...priorityObjectives,
-        [Objectives.WaterConsumption] : YesNo.Yes,
+        [Objectives.WaterConsumption]: YesNo.Yes
       },
       title: { fr: "Gestion de l'eau" },
       label: { fr: "💧 Diminuer ma consommation d'eau" },
       next: {
-        default: TrackId.Results,
+        default: TrackId.Results
       }
     },
     {
       value: {
         ...priorityObjectives,
-        [Objectives.BuildingRenovation] : YesNo.Yes,
+        [Objectives.BuildingRenovation]: YesNo.Yes
       },
       title: { fr: 'Rénovation du bâtiment' },
       label: { fr: '🏢 Rénover mon bâtiment' },
       next: {
-        default: TrackId.Results,
+        default: TrackId.Results
       }
     },
     {
       value: {
         ...priorityObjectives,
-        [Objectives.SustainableMobility] : YesNo.Yes,
+        [Objectives.SustainableMobility]: YesNo.Yes
       },
       title: { fr: 'Mobilité durable' },
       label: { fr: '🚲 Engager une démarche de mobilité durable' },
       next: {
-        default: TrackId.Results,
+        default: TrackId.Results
       }
     },
     {
       value: {
         ...priorityObjectives,
-        [Objectives.WasteManagement] : YesNo.Yes,
+        [Objectives.WasteManagement]: YesNo.Yes
       },
       title: { fr: 'Gestion des déchets' },
       label: { fr: '🗑 Mieux gérer mes déchets' },
       next: {
-        default: TrackId.Results,
+        default: TrackId.Results
       }
     },
     {
       value: {
         ...priorityObjectives,
-        [Objectives.EcoDesign] : YesNo.Yes,
+        [Objectives.EcoDesign]: YesNo.Yes
       },
       title: { fr: 'Eco-conception' },
       label: { fr: '🏭 Améliorer la performance environnementale de mes produits et services' },
       next: {
-        default: TrackId.Results,
+        default: TrackId.Results
       }
     },
     {
       value: {
         ...priorityObjectives,
-        [Objectives.TrainOrRecruit] : YesNo.Yes,
+        [Objectives.TrainOrRecruit]: YesNo.Yes
       },
       title: { fr: 'Formation' },
       label: { fr: '🧑‍🎓 Former ou recruter sur la transition écologique' },
       next: {
-        default: TrackId.Results,
+        default: TrackId.Results
       }
     },
 
@@ -113,38 +113,38 @@ export const goals: Track = {
       disabled: true,
       value: {
         ...priorityObjectives,
-        [Objectives.MakeSavings] : YesNo.Yes,
+        [Objectives.MakeSavings]: YesNo.Yes
       },
       title: { fr: 'Economies' },
       label: {
         fr: '💶 Faire des économies en réduisant nos pertes en énergie, matière, déchets et eau'
       },
       next: {
-        default: TrackId.Results,
+        default: TrackId.Results
       }
     },
     {
       disabled: true,
       value: {
         ...priorityObjectives,
-        [Objectives.DurablyInvest] : YesNo.Yes,
+        [Objectives.DurablyInvest]: YesNo.Yes
       },
       title: { fr: 'Consolider mon projet' },
       label: { fr: "📂 Consolider mon projet d'investissement durable" },
       next: {
-        default: TrackId.Results,
+        default: TrackId.Results
       }
     },
     {
       disabled: true,
       value: {
         ...priorityObjectives,
-        [Objectives.UnknownYet] : YesNo.Yes,
+        [Objectives.UnknownYet]: YesNo.Yes
       },
       title: { fr: 'Autre' },
       label: { fr: '💁 Je ne sais pas encore' },
       next: {
-        default: TrackId.Results,
+        default: TrackId.Results
       }
     }
   ]

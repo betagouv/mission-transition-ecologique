@@ -1,10 +1,8 @@
+// CONSOLE LOG TEMPLATE
+// console.log(`questionnaire.trackStructureRegion > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 import type { Track } from '@/types'
-import {
-  TrackComponents,
-  TrackId,
-  ConditionOperators,
-  DataMappingFrom,
-} from '@/types'
+import { TrackComponents, TrackId, ConditionOperators, DataMappingFrom } from '@/types'
 import type { NextTrackRuleSet } from '@/types'
 
 // note : based on authorized values in "/packages/data/common/interface.yaml"
@@ -81,7 +79,7 @@ const nextExceptions: NextTrackRuleSet[] = [
   }
 ]
 
-const regionsOptions = regionsList.map(regName => {
+const regionsOptions = regionsList.map((regName) => {
   return {
     value: { région: regName },
     title: { fr: regName },
@@ -92,7 +90,6 @@ const regionsOptions = regionsList.map(regName => {
     }
   }
 })
-// console.log('questionnaire > trackStructureRegions > regionsOptions :', regionsOptions)
 
 export const regions: Track = {
   id: TrackId.StructureRegion,
@@ -100,10 +97,10 @@ export const regions: Track = {
   title: { fr: 'Ma localisation' },
   label: { fr: 'Où êtes-vous situé ?' },
   interface: {
-    component: TrackComponents.Select,
+    component: TrackComponents.Select
   },
   behavior: {
-    multipleChoices: false,
+    multipleChoices: false
   },
   options: regionsOptions
 }

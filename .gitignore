@@ -35,4 +35,6 @@ coverage
 
 # XL2Yaml tool
 .venv
+pyrightconfig.json
+.flake8
 dispositifs.xlsx

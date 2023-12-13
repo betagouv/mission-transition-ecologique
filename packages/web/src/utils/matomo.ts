@@ -1,3 +1,5 @@
+// CONSOLE LOG TEMPLATE
+// console.log(`utils.matomo > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 // <!-- Matomo -->
 // <script>
@@ -15,7 +17,7 @@
 // </script>
 // <!-- End Matomo Code -->
 
-export const matomoScript = (matomoServer: string, siteId: string, domain: string, hasTrackAllOutlinks: boolean = false) => {
+export const matomoScript = (matomoServer: string, siteId: number, domain: string, hasTrackAllOutlinks: boolean = false) => {
   const isMatomoCloud = matomoServer.endsWith('.matomo.cloud')
   const scriptSrc = `${isMatomoCloud ? '//cdn.matomo.cloud/' : ''}${matomoServer}/matomo.js`
 
@@ -54,16 +56,18 @@ ${hasTrackAllOutlinks ? "_paq.push(['enableLinkTracking']);" : ''}
   `
 }
 
-export const trackEvent = (evCategory: string, evAction: string, evName: string | undefined = undefined, EvValue: number | undefined = undefined) => {
-  // @ts-ignore
-  const _paq = window._paq || []
-  console.log()
-  // console.log('Matomo > trackEvent >  _paq :', _paq)
-  // console.log('Matomo > trackEvent > evCategory :', evCategory)
-  // console.log('Matomo > trackEvent > evAction :', evAction)
-  // console.log('Matomo > trackEvent > evName :', evName)
-  // console.log('Matomo > trackEvent > EvValue :', EvValue)
+export const trackEvent = (
+  evCategory: string,
+  evAction: string,
+  evName: string | number | undefined = undefined,
+  EvValue: number | undefined = undefined
+) => {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-expect-error
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+  const _paq: any = window._paq || []
   if (_paq) {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access
     _paq.push(['trackEvent', evCategory, evAction, evName, EvValue])
   }
 }
