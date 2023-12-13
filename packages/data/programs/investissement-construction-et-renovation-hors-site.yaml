@@ -47,6 +47,8 @@ conditions d'éligibilité:
   taille de l'entreprise:
   - Toutes tailles
   - Éligible aux micro-entreprises
+  secteur géographique:
+  - France et territoires d'outre-mer
   secteur d'activité:
   - Entreprises de préfabrication ou d'assemblage
   nombre d'années d'activité:

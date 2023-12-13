@@ -30,6 +30,8 @@ conditions d'éligibilité:
   taille de l'entreprise:
   - Toutes tailles
   - Éligible aux micro-entreprises
+  secteur géographique:
+  - France et territoires d'outre-mer
   secteur d'activité:
   - Entreprises du bâtiment et de travaux publics ; entreprises produisant des substances
     minérales solides ; exploitants aéroportuaires ; exploitants de remontées mécaniques

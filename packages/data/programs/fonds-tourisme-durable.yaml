@@ -38,6 +38,8 @@ conditions d'éligibilité:
   taille de l'entreprise:
   - TPE et PME
   - Éligible aux micro-entreprises
+  secteur géographique:
+  - France et territoires d'outre-mer
   secteur d'activité:
   - Activité de restauration et/ou d’hébergement touristique, structures du tourisme
     social avec un code NAF association ou activités d’agritourisme avec un code NAF

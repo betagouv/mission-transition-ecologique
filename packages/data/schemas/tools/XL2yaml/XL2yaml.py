@@ -28,6 +28,7 @@ PARCOURS_OBJ_PRECIS = "questionnaire . parcours = objectif précis"
 PROPRIO = "entreprise . est propriétaire de ses locaux"
 
 ELIGIBILITY_SIZE = "taille de l'entreprise"
+ELIGIBILITY_GEOGRAPHY = "secteur géographique"
 ELIGIBILITY_SECTOR = "secteur d'activité"
 ELIGIBILITY_NYEARS = "nombre d'années d'activité"
 ELIGIBILITY_SPECIFIC = "autres critères d'éligibilité"
@@ -110,15 +111,20 @@ def assembleProgramYAML(rawData, colNumbersByName, id):
     # Conditions d'éligibilité
     eligibility_conditions = {
         ELIGIBILITY_SIZE: [],
+        ELIGIBILITY_GEOGRAPHY: [],
         ELIGIBILITY_SECTOR: [],
         ELIGIBILITY_NYEARS: [],
     }
-    eligibility_conditions[ELIGIBILITY_SECTOR].append(eligibility_sector(get))
-    if eligibility_naf(get):
-        eligibility_conditions[ELIGIBILITY_SECTOR].append(eligibility_naf(get))
 
     eligibility_conditions[ELIGIBILITY_SIZE].append(eligibility_size(get))
     eligibility_conditions[ELIGIBILITY_SIZE].append(eligibility_microentreprise(get))
+
+    for eg in eligibility_geography(get):
+        eligibility_conditions[ELIGIBILITY_GEOGRAPHY].append(eg)
+
+    eligibility_conditions[ELIGIBILITY_SECTOR].append(eligibility_sector(get))
+    if eligibility_naf(get):
+        eligibility_conditions[ELIGIBILITY_SECTOR].append(eligibility_naf(get))
 
     eligibility_conditions[ELIGIBILITY_NYEARS].append(eligibility_nyears(get))
 
@@ -298,6 +304,10 @@ def eligibility_sector(get) -> str:
     if valid(es):
         return es
     raise Exception("Condition d'éligibilité sectorielle manquante")
+
+
+def eligibility_geography(get) -> list[str]:
+    return ["France et territoires d'outre-mer"]
 
 
 def eligibility_naf(get) -> Optional[str]:

@@ -29,6 +29,8 @@ conditions d'éligibilité:
   taille de l'entreprise:
   - Plus de 250 salariés
   - Éligible aux micro-entreprises
+  secteur géographique:
+  - France et territoires d'outre-mer
   secteur d'activité:
   - Structures agricoles
   - 'Codes NAF concernés : section A (Produits de l''agriculture, de la sylviculture

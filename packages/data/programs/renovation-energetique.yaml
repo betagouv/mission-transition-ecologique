@@ -35,6 +35,8 @@ conditions d'éligibilité:
   taille de l'entreprise:
   - TPE et PME
   - Non éligible aux micro-entreprises
+  secteur géographique:
+  - France et territoires d'outre-mer
   secteur d'activité:
   - Secteur tertiaire
   nombre d'années d'activité:

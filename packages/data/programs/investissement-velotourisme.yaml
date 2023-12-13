@@ -49,6 +49,8 @@ conditions d'éligibilité:
   taille de l'entreprise:
   - Toutes tailles
   - Éligible aux micro-entreprises
+  secteur géographique:
+  - France et territoires d'outre-mer
   secteur d'activité:
   - Hébergements touristiques et restaurateurs
   - 'Les structures suivantes ne sont pas éligibles : les loueurs et réparateurs de

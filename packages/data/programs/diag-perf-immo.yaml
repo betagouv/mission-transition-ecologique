@@ -31,6 +31,8 @@ conditions d'éligibilité:
   taille de l'entreprise:
   - Toutes tailles
   - Non éligible aux micro-entreprises
+  secteur géographique:
+  - France et territoires d'outre-mer
   secteur d'activité:
   - Activités tertiaires privées (tourisme, commerce, santé, logistique, services…)
   nombre d'années d'activité:
