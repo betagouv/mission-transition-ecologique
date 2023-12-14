@@ -197,7 +197,7 @@ const mainLinks = [
   {
     label: 'Échanger avec un conseiller',
     to: { name: RouteName.ChatAdvisor },
-    icon: 'fr-icon-external-link-line'
+    icon: 'fr-icon-chat-3-line'
   }
 ]
 

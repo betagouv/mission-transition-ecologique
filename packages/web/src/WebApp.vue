@@ -32,7 +32,7 @@ import { publicPath, programsFromJson } from './utils/global'
 
 import TeeHeader from './components/TeeHeader.vue'
 import TeeMatomo from './components/TeeMatomo.vue'
-import TeeAppFooter from './components/TeeAppFooter.vue'
+import TeeAppFooter from './components/TeeFooter.vue'
 import type { ProgramData } from '@/types'
 
 const choices = choicesStore()

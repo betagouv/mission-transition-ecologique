@@ -1,8 +1,7 @@
 <template>
   <router-link
     v-if="iframe"
-    class="fr-btn fr-btn--secondary fr-btn--lg fr-btn--icon-right"
-    target="_blank"
+    class="fr-btn fr-btn--secondary fr-btn--lg fr-btn--icon-right fr-icon-chat-3-line"
     :to="{ name: RouteName.ChatAdvisor }"
   >
     Nous contacter
