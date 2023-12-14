@@ -11,7 +11,7 @@ export const makeProgramHelper = ({
   nature = ProgramAidType.acc
 }: {
   id?: string
-  rules?: Object
+  rules?: object
   cost?: string
   nature?: ProgramAidType
 }): ProgramData => {

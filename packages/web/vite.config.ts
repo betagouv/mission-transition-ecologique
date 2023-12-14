@@ -1,6 +1,5 @@
 import { fileURLToPath, URL } from 'node:url'
 import { resolve } from 'path'
-
 import { type BuildOptions, defineConfig } from 'vite'
 import type { ServerOptions } from 'vite'
 import vue from '@vitejs/plugin-vue'
@@ -8,8 +7,11 @@ import vue from '@vitejs/plugin-vue'
 console.log('Starting ...')
 console.log('vite.config ...')
 
-type LibType = 'main' | 'widget';
-const LIB: LibType = (process.env.LIB as LibType) ?? 'main';
+const mode = process.env.NODE_ENV ?? 'development'
+const isProd = mode === 'production'
+
+type LibType = 'main' | 'widget'
+const LIB: LibType = (process.env.LIB as LibType) ?? 'main'
 const libConfig: Record<LibType, BuildOptions> = {
   main: {
     emptyOutDir: false,
@@ -27,18 +29,26 @@ const libConfig: Record<LibType, BuildOptions> = {
   },
 };
 
-const currentConfig = libConfig[LIB];
+const plugins = async () => {
+  const basePlugins = [vue()]
+  if (isProd) {
+    return basePlugins
+  } else {
+    const eslintPlugin = await import('vite-plugin-eslint')
+    return [...basePlugins, eslintPlugin.default()]
+  }
+}
+
+const currentConfig = libConfig[LIB]
 
 const viteServer: ServerOptions = {
   host: '0.0.0.0',
-  port: 4242,
+  port: 4242
 }
 
 export default defineConfig({
   server: viteServer,
-  plugins: [
-    vue()
-  ],
+  plugins: [plugins()],
   build: currentConfig,
   define: {
     'process.env': process.env

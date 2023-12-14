@@ -7,10 +7,10 @@ export const mobilityEnergy: Track = {
   title: { fr: 'Energie des véhicules' },
   label: { fr: "Quelle est la source principale d'énergie de vos véhicules ?" },
   interface: {
-    component: TrackComponents.Buttons,
+    component: TrackComponents.Buttons
   },
   behavior: {
-    multipleChoices: false,
+    multipleChoices: false
   },
   next: {
     default: TrackId.Results
@@ -19,42 +19,42 @@ export const mobilityEnergy: Track = {
     {
       value: { mobility_energy: 'gas' },
       title: { fr: 'Essence ou gasoil' },
-      label: { fr: "⛽️ Essence ou gasoil" },
+      label: { fr: '⛽️ Essence ou gasoil' },
       next: {
-        default: TrackId.WastesStake,
+        default: TrackId.WastesStake
       }
     },
     {
       value: { mobility_energy: 'electric' },
-      title: { fr: "Electrique" },
-      label: { fr: "⚡️ Electrique" },
+      title: { fr: 'Electrique' },
+      label: { fr: '⚡️ Electrique' },
       next: {
-        default: TrackId.WastesStake,
+        default: TrackId.WastesStake
       }
     },
     {
       value: { mobility_energy: 'hybrid' },
       title: { fr: 'Hybride' },
-      label: { fr: "⛽️⚡️ Hybride" },
+      label: { fr: '⛽️⚡️ Hybride' },
       next: {
-        default: TrackId.WastesStake,
+        default: TrackId.WastesStake
       }
     },
     {
       value: { mobility: 'other' },
       title: { fr: 'Autre' },
-      label: { fr: "Autre : " },
+      label: { fr: 'Autre : ' },
       hasInput: HasInputOptions.Text,
       next: {
-        default: TrackId.WastesStake,
+        default: TrackId.WastesStake
       }
     },
     {
       value: { mobility_energy: 'unknown' },
       title: { fr: 'Je ne sais pas' },
-      label: { fr: "Je ne sais pas" },
+      label: { fr: 'Je ne sais pas' },
       next: {
-        default: TrackId.WastesStake,
+        default: TrackId.WastesStake
       }
     }
   ]

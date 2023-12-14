@@ -144,6 +144,19 @@ npm run dev --workspace packages/web
 npm run dev --workspace packages/backend
 ```
 
+#### Linting
+
+```sh
+# All workspaces with fix
+npm run lint
+# All workspaces without fix
+npm run lint-check
+# Type check on web workspace
+npm run type-check --workspace packages/web
+# Type check on web workspace with watch mode
+npm run type-check-watch --workspace packages/web
+```
+
 ### Preview front before deploying in production
 
 ```sh

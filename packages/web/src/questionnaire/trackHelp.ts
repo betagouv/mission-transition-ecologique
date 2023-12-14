@@ -1,11 +1,5 @@
 import type { Track } from '@/types'
-import {
-  PublicodesTrackHelpValue,
-  Questionnaire,
-  TrackComponents,
-  TrackHelpValue,
-  TrackId
-} from '@/types'
+import { PublicodesTrackHelpValue, Questionnaire, TrackComponents, TrackHelpValue, TrackId } from '@/types'
 
 export const help: Track = {
   id: TrackId.Help,

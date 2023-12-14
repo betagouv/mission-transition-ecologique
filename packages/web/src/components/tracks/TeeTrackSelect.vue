@@ -1,32 +1,21 @@
 <template>
   <!-- SELECTOR -->
   <div class="fr-select-group">
-    <select
-      class="fr-select"
-      :id="`${track.id}-select`"
-      :name="`${track.id}-select`"
-      @change="updateLocalSelection">
+    <select :id="`${track.id}-select`" class="fr-select" :name="`${track.id}-select`" @change="updateLocalSelection">
       <!-- DEFAULT OPTION -->
-      <option
-        value=""
-        selected>
+      <option value="" selected>
         {{ choices.t('select.selectOption') }}
       </option>
 
       <!-- VALUES -->
-      <option
-        v-for="(optionVal, idx) in options"
-        :key="`${track.id}-select-option-${idx}`"
-        :value="idx">
-        {{ optionVal?.label[choices.lang]  }}
+      <option v-for="(optionVal, idx) in options" :key="`${track.id}-select-option-${idx}`" :value="idx">
+        {{ optionVal?.label[choices.lang] }}
       </option>
     </select>
   </div>
-
 </template>
 
 <script setup lang="ts">
-
 // CONSOLE LOG TEMPLATE
 // console.log(`TeeTrackSelect > FUNCTION_NAME > MSG_OR_VALUE :`)
 
@@ -42,16 +31,15 @@ const props = defineProps<Props>()
 
 const choices = choicesStore()
 
-const activeOption = ref<any>()
+const activeOption = ref<TrackOptionsSelect>()
 
 const emit = defineEmits(['updateSelection'])
 
 const options: TrackOptionsSelect[] = props.track.options?.filter((o): o is TrackOptionsSelect => !!o.label) || []
 
-const updateLocalSelection = (event: any) => {
-  const index = event.target.value
-  const isReset = event.target.value === ''
-
+const updateLocalSelection = (event: Event) => {
+  const index = (event.target as HTMLSelectElement).value as unknown as number
+  const isReset = (event.target as HTMLSelectElement).value === ''
   // set local ref
   activeOption.value = isReset ? undefined : options[index]
 
@@ -63,5 +51,4 @@ const updateLocalSelection = (event: any) => {
   }
   emit('updateSelection', data)
 }
-
 </script>
