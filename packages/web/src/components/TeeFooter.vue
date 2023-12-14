@@ -105,7 +105,7 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`TeeAppFooter > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import { choicesStore } from '../stores/choices'
+import { choicesStore } from '@/stores/choices'
 import { RouteName } from '@/types/routeType'
 
 const choices = choicesStore()
