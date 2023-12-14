@@ -272,10 +272,10 @@ const props = defineProps<Props>()
 // functions
 const resetDetailResult = async () => {
   if (route.name === RouteName.CatalogDetail) {
+    tracks.resetUsedTracks()
     await router.push({ name: RouteName.Catalog })
     return
   }
-  programs.resetDetailResult()
   await nav.setCurrentDetailId('', props.disableWidget)
   await nav.updateUrl(props.disableWidget)
 
