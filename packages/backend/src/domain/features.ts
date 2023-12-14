@@ -14,7 +14,9 @@ export const createEtablissementFeatures = (repo: EtablissementRepository) => {
     return repo.get(siret)
   }
 
-  return { fetchEtablissement }
+  return {
+    fetchEtablissement
+  }
 }
 
 export const createContactFeatures = (repo: ContactInfoRepository) => {
@@ -29,5 +31,7 @@ export const createContactFeatures = (repo: ContactInfoRepository) => {
     return repo.add(email, attributes)
   }
 
-  return { postNewContact }
+  return {
+    postNewContact
+  }
 }

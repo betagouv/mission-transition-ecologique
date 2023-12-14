@@ -47,7 +47,9 @@ test('Region data from the passage table is consistent with what is expected in 
 // Test helpers
 
 function compileSchema(schema: object): ValidateFunction {
-  return new Ajv({ verbose: true }).compile(schema)
+  return new Ajv({
+    verbose: true
+  }).compile(schema)
 }
 
 function testDataAgainstSchema(data: object, dataDesc: string, validate: ValidateFunction) {

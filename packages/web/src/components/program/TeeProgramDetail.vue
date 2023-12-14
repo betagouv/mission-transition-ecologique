@@ -46,7 +46,6 @@
           secondary
           @click="toggleShowForm"
           ref="modalOrigin"/> -->
-
         <ProgramObjective v-if="program" :program="program"></ProgramObjective>
       </div>
     </div>
@@ -153,6 +152,9 @@
       </div>
     </div>
 
+    <!-- LONG DESCRIPTION -->
+    <ProgramLongDescription v-if="program && program['description longue']" :program="program"></ProgramLongDescription>
+
     <!-- PROGRAM FORM -->
     <div class="fr-form-block">
       <TeeForm
@@ -242,6 +244,7 @@ import { analyticsStore } from '../../stores/analytics'
 
 import { scrollToId } from '../../utils/helpers'
 import type { TrackId, ProgramData } from '@/types'
+import ProgramLongDescription from '@/components/program/ProgramLongDescription.vue'
 import ProgramObjective from '@/components/program/ProgramObjective.vue'
 
 const choices = choicesStore()

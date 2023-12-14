@@ -34,7 +34,9 @@ export class ContactInfoController extends Controller {
    * @example requestBody: {"email": "contact@multi.coop", "attributes": { "NOM": "Dupont", "PRENOM": "Camille", "TEL" : "0605040302", "SIRET": "83014132100034", "OPT_IN": true }}
    */
 
-  @Example<ContactId>({ id: 42 })
+  @Example<ContactId>({
+    id: 42
+  })
   @Post()
   public async health(
     @Body() requestBody: ContactInfoBody,
@@ -53,11 +55,15 @@ export class ContactInfoController extends Controller {
 
       if (err instanceof ServiceNotFoundError) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-        return notFoundResponse(404, { message: 'Contact not created' })
+        return notFoundResponse(404, {
+          message: 'Contact not created'
+        })
       }
 
       // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-      return requestFailedResponse(500, { message: `Server internal error` })
+      return requestFailedResponse(500, {
+        message: `Server internal error`
+      })
     }
 
     return contactInfoResult.value

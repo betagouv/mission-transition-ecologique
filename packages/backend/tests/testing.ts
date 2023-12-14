@@ -6,7 +6,9 @@ import { FILTERING_RULE_NAME } from '../src/domain/filter-programs'
 /** makes data for a mock program with given eligibility rules */
 export const makeProgramHelper = ({
   id = '',
-  rules = { [FILTERING_RULE_NAME]: 'oui' },
+  rules = {
+    [FILTERING_RULE_NAME]: 'oui'
+  },
   cost = '1000 €',
   nature = ProgramAidType.acc
 }: {
