@@ -195,7 +195,7 @@ export const cleanValue = (
 
 export const remapItem = (
   dataStructure: object,
-  dataMapping: FormCallbackDataMapping[] | NextTrackRule[],
+  dataMappings: FormCallbackDataMapping[] | NextTrackRule[],
   formData: any = {},
   trackValues: any[] = [],
   props: any = undefined,
@@ -206,22 +206,22 @@ export const remapItem = (
   let data = { ...dataStructure }
   const metaEnv: ImportMetaEnv = import.meta.env as ImportMetaEnv
 
-  dataMapping.forEach((dm) => {
+  dataMappings.forEach((dataMapping) => {
     let value: unknown = ''
     let allResponses: any
-    switch (dm.from) {
+    switch (dataMapping.from) {
       case DataMappingFrom.Env:
-        value = metaEnv[dm.id]
+        value = metaEnv[dataMapping.id]
         break
       case DataMappingFrom.FormData:
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        value = formData?.[dm.id]
+        value = formData?.[dataMapping.id]
         break
       case DataMappingFrom.UsedTracks:
-        value = findInObjectsArray(trackValues as object[], dm.id)
+        value = findInObjectsArray(trackValues as object[], dataMapping.id)
         break
       case DataMappingFrom.AllUsedTracks:
-        allResponses = findInObjectsArray(trackValues as object[], dm.id, true)
+        allResponses = findInObjectsArray(trackValues as object[], dataMapping.id, true)
         // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         value = Object.keys(allResponses)
           .map((k) => {
@@ -231,43 +231,43 @@ export const remapItem = (
           .join(' / ')
         break
       case DataMappingFrom.SelectionValues:
-        value = findInObjectsArray(selectionValues as object[], dm.id)
+        value = findInObjectsArray(selectionValues as object[], dataMapping.id)
         break
       case DataMappingFrom.Props:
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        value = props?.[dm.id]
+        value = props?.[dataMapping.id]
         break
       case DataMappingFrom.PropsPath:
-        value = dm.path && getFromOnePath(props, dm.path)
+        value = dataMapping.path && getFromOnePath(props, dataMapping.path)
         break
       case DataMappingFrom.RawData:
-        value = dm.path && getFromOnePath(rawData, dm.path)
+        value = dataMapping.path && getFromOnePath(rawData, dataMapping.path)
         break
       default:
         break
     }
 
     // clean value if necessary
-    if (dm.cleaning) {
-      value = cleanValue(value, dm.cleaning, lang)
+    if (dataMapping.cleaning) {
+      value = cleanValue(value, dataMapping.cleaning, lang)
     }
 
     // parse as array
-    if (dm.asArray) {
+    if (dataMapping.asArray) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-      value = (value as string).split(dm.sep || ',')
-      if (dm.type === 'integer') {
+      value = (value as string).split(dataMapping.sep || ',')
+      if (dataMapping.type === 'integer') {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-call
         value = (value as string[]).map((v: string) => parseInt(v))
       }
     }
     // as integer
-    if (!dm.asArray && dm.type === 'integer' && typeof value === 'string') {
+    if (!dataMapping.asArray && dataMapping.type === 'integer' && typeof value === 'string') {
       value = parseInt(value)
     }
 
     // set in data body
-    data = setProperty(data, dm.dataField, value)
+    data = setProperty(data, dataMapping.dataField, value)
   })
   return data
 }

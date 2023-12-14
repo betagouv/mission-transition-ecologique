@@ -4,17 +4,19 @@
       <div class="fr-grid-col">
         <h1>Données personnelles (et gestion des cookies)</h1>
         <p>
-          Le site <a href="/" target="_blank">https://mission-transition-ecologique.beta.gouv.fr</a> est soumis au Règlement général de
-          protection des données (RGPD) et à la loi informatique et liberté.
+          Le site
+          <RouterLink :to="{ name: RouteName.Homepage }" target="_blank">https://mission-transition-ecologique.beta.gouv.fr</RouterLink> est
+          soumis au Règlement général de protection des données (RGPD) et à la loi informatique et liberté.
         </p>
 
         <h4 class="fr-mt-3w">Données personnelles</h4>
         <p>Quelles sont les données personnelles collectées ? dans quel but ?</p>
         <h4 class="fr-mt-3w">Un cookie pour analyser les statistiques de fréquentation et de comportement utilisateur</h4>
         <p>
-          Lors de la consultation du site <a href="/">mission-transition.beta.gouv.fr</a>, des témoins de connexion, dits « cookies », sont
-          déposés sur votre ordinateur, votre mobile ou votre tablette. <br />Lors de votre première visite, un bandeau signale leur
-          présence vous avez la possibilité de les accepter ou de les refuser.
+          Lors de la consultation du site
+          <RouterLink :to="{ name: RouteName.Homepage }">mission-transition-ecologique.beta.gouv.fr</RouterLink>, des témoins de connexion,
+          dits « cookies », sont déposés sur votre ordinateur, votre mobile ou votre tablette. <br />Lors de votre première visite, un
+          bandeau signale leur présence vous avez la possibilité de les accepter ou de les refuser.
         </p>
         <p>
           Ces cookies permettent aux gestionnaires du site d’établir des mesures statistiques de fréquentation et d’utilisation du site.
@@ -25,7 +27,7 @@
           <li>le cookie déposé sert uniquement à la production de statistiques anonymes ;</li>
           <li>
             le cookie ne permet pas de suivre la navigation de l’internaute sur d’autres sites que celui du site
-            <a href="/">mission-transition.beta.gouv.fr</a>
+            <RouterLink :to="{ name: RouteName.Homepage }">mission-transition-ecologique.beta.gouv.fr</RouterLink>
           </li>
           <li>
             L’outil de mesure d’audience déployé sur ce site est Matomo. L’outil d’analyse du comportement des utilisateurs de la plateforme
@@ -129,7 +131,8 @@
           <li>
             ou écrire à :<br />
             <div class="fr-highlight fr-mt-3w">
-              Données personnelles - Site <a href="/">mission-transition.beta.gouv.fr</a><br />
+              Données personnelles - Site
+              <RouterLink :to="{ name: RouteName.Homepage }">mission-transition-ecologique.beta.gouv.fr</RouterLink><br />
               Commissariat Général au Développement Durable<br />
               Tour Séquoia<br />
               92055 La Défense Cedex
@@ -147,4 +150,5 @@
 // console.log(`TeePersonalDataPage > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import TeeHelp from '@/components/home/TeeHelp.vue'
+import { RouteName } from '@/types/routeType'
 </script>
