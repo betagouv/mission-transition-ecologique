@@ -14,20 +14,20 @@ type LibType = 'main' | 'widget'
 const LIB: LibType = (process.env.LIB as LibType) ?? 'main'
 const libConfig: Record<LibType, BuildOptions> = {
   main: {
-    emptyOutDir: false,
+    emptyOutDir: false
   },
   widget: {
     emptyOutDir: false,
     rollupOptions: {
-      input: resolve(__dirname, 'widget.html'),
+      input: resolve(__dirname, 'widget.html')
     },
     lib: {
       name: 'gov-aid-tree-app',
-      entry: "widget/widget.ce.ts",
-      fileName: 'widget',
+      entry: 'widget/widget.ce.ts',
+      fileName: 'widget'
     }
-  },
-};
+  }
+}
 
 const plugins = async () => {
   const basePlugins = [vue()]
