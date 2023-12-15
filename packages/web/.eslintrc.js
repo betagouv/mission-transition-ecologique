@@ -3,31 +3,20 @@ require('@rushstack/eslint-patch/modern-module-resolution')
 
 module.exports = {
   parser: 'vue-eslint-parser',
-  extends: [
-    'plugin:vue/vue3-recommended',
-    '@vue/eslint-config-typescript/recommended',
-    '@vue/eslint-config-prettier',
-  ],
+  extends: ['plugin:vue/vue3-recommended', '@vue/eslint-config-typescript/recommended', '@vue/eslint-config-prettier'],
   overrides: [
     {
-      files: [
-        'cypress/e2e/**/*.{cy,spec}.{js,ts,jsx,tsx}'
-      ],
-      extends: [
-        'plugin:cypress/recommended'
-      ]
+      files: ['cypress/e2e/**/*.{cy,spec}.{js,ts,jsx,tsx}'],
+      extends: ['plugin:cypress/recommended']
     }
   ],
   parserOptions: {
     parser: '@typescript-eslint/parser',
-    ecmaVersion: 'latest',
+    ecmaVersion: 'latest'
   },
-  plugins: [
-    'prettier'
-  ],
   rules: {
     'prettier/prettier': 'error',
-    "@typescript-eslint/no-explicit-any": "off"
+    '@typescript-eslint/no-explicit-any': 'off'
   },
   ignorePatterns: [
     '../backend/src/domain/eligibility.ts',
@@ -41,6 +30,6 @@ module.exports = {
     '.vscode/*',
     'README.md',
     'index.html',
-    '.eslintrc.js',
-  ],
+    '.eslintrc.js'
+  ]
 }
