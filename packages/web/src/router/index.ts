@@ -59,7 +59,7 @@ export const router = createRouter({
         },
         {
           path: ':programId',
-          name: RouteName.CatalogueDetail,
+          name: RouteName.CatalogDetail,
           component: TeeProgramPage as Component
         }
       ]
