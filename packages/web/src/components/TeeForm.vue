@@ -18,10 +18,15 @@
     </div>
 
     <!-- FORM LABEL -->
-    <h3
-      v-if="formOptions.label"
-      class="fr-text-center">
-      {{ capitalizeFirstLetter(choices.ti(formOptions.label[choices.lang], { 'prefixAide': findPrefix(program["nature de l'aide"], 'this'), 'natureAide': program["nature de l'aide"] }) || '') }}
+    <h3 v-if="formOptions.label" class="fr-text-center">
+      {{
+        capitalizeFirstLetter(
+          choices.ti(formOptions.label[choices.lang], {
+            prefixAide: findPrefix(program["nature de l'aide"], 'this'),
+            natureAide: program["nature de l'aide"]
+          }) || ''
+        )
+      }}
     </h3>
 
     <!-- FORM LABEL -->
@@ -97,9 +102,7 @@
 
     <!-- SEND / NEXT BUTTON -->
     <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-mt-5v">
-      <div
-        class="fr-col-12"
-        style="display: grid; justify-content: right;">
+      <div class="fr-col-12" style="display: grid; justify-content: right">
         <DsfrButton
           :label="choices.t('send')"
           :disabled="!canSaveFrom"
@@ -115,11 +118,8 @@
   <!-- FORM CALLBACK -->
   <div v-if="formIsSent" class="fr-mt-5v fr-tee-form">
     <!-- FORM ALERT AFTER SENDING-->
-    <div
-      v-if="!hasNoRespError"
-      class="fr-alert fr-alert--error fr-tee-form-error">
-      <div
-        class="fr-alert__title">
+    <div v-if="!hasNoRespError" class="fr-alert fr-alert--error fr-tee-form-error">
+      <div class="fr-alert__title">
         <p>
           {{ choices.t(`form.notSent`) }}
         </p>
@@ -151,22 +151,15 @@
     </div>
 
     <!-- NOW WHAT -->
-<<<<<<< HEAD
     <div v-if="hasNoRespError" class="fr-text-center">
       <p class="tee-form-response-title">
         <v-icon name="ri-checkbox-circle-fill" aria-hidden="true" scale="3"></v-icon>
       </p>
-      <h3
-        class="tee-form-response-title">
+      <h3 class="tee-form-response-title">
         {{ choices.t(`form.sent`) }}
       </h3>
       <h6 class="fr-mt-15v fr-mb-3v">
-        {{ choices.t('form.nowWhat')}}
-=======
-    <div v-if="hasNoRespError">
-      <h6 class="fr-mt-10v">
         {{ choices.t('form.nowWhat') }}
->>>>>>> d637e1a662bc6251b6f96638b7973ef72468fd47
       </h6>
       <p class="fr-mb-15v">
         <span>
@@ -337,7 +330,7 @@ const saveFormData = async () => {
 }
 
 const scrollToFormContainer = () => {
-  const element: HTMLElement | null = document.getElementById("tee-program-form-container")
+  const element: HTMLElement | null = document.getElementById('tee-program-form-container')
   element?.scrollIntoView({ block: 'center' })
 }
 </script>
