@@ -23,6 +23,16 @@ objectifs:
   client liées aux changements climatiques'
 - Concevez un plan d'actions à mettre en oeuvre
 - Identifier des financements possibles
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - PME
+  - Non éligible aux micro-entreprises
+  secteur géographique:
+  - Bourgogne-Franche-Comté
+  secteur d'activité:
+  - Industrie
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

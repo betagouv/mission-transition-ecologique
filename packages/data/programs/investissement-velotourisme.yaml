@@ -45,6 +45,27 @@ objectifs:
   de financement précisant le montant d’aide maximum, les conditions et les modalités
   de versement.
 - Réalisez vos investissements.
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Toutes tailles
+  - Éligible aux micro-entreprises
+  secteur géographique:
+  - France et territoires d'outre-mer
+  secteur d'activité:
+  - Hébergements touristiques et restaurateurs
+  - 'Les structures suivantes ne sont pas éligibles : les loueurs et réparateurs de
+    vélos, les équipements ét établissements thermaux et centres de thalassothérapie,
+    les zones commerciales, villages d''artisans, galeries et boutiques de souvenirs
+    à proximité de lieux de visite ou de pélerinage, les salles de spectacles, les
+    cinémas, les salles de jeux et les casinos, les lieux éphémères et événements
+    itinérants, les Parcs naturels régionaux, les parcs nationaux, les parcs naturels
+    marins, les "Grands sites de France".'
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+  - 'L''opération pour laquelle vous sollicitez une aide financière ne doit pas avoir
+    commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque
+    forme que ce soit : marché signé, commande signée, devis accepté…)'
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

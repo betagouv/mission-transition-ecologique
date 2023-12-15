@@ -26,6 +26,21 @@ objectifs:
 - Déduisez l'aide de vos résultats imposables.
 - Bénéficiez d'une déduction exceptionnelle sur votre résultat imposable, de 40% à
   60% du prix de revient de votre engin.
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Toutes tailles
+  - Éligible aux micro-entreprises
+  secteur géographique:
+  - France et territoires d'outre-mer
+  secteur d'activité:
+  - Entreprises du bâtiment et de travaux publics ; entreprises produisant des substances
+    minérales solides ; exploitants aéroportuaires ; exploitants de remontées mécaniques
+    et de domaines skiables
+  - 'Codes NAF concernés : section F (Construction), section B (industries extractives),
+    section H division 51 (transports aériens), Code 4949C (Téléphériques et remontées
+    mécaniques)'
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

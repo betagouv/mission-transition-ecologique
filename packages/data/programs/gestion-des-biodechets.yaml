@@ -28,6 +28,17 @@ objectifs:
 - Répertorier les biodéchets sur une plateforme géolocalisée.
 - 'Obtenir un outil d’aide à la décision : solutions techniques, dispositifs de financements,
   contacts associés.'
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - TPE, PME et ETI
+  - Éligible aux micro-entreprises
+  secteur géographique:
+  - Hauts-de-France
+  secteur d'activité:
+  - Entreprises produisant des biodéchets (industries agro-alimentaires, Hotellerie
+    restauration, Grande & moyennes surfaces...)
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

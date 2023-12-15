@@ -18,6 +18,16 @@ objectifs:
   en terme de coûts de production et de fonctionnement.
 - Solliciter et mobiliser les acteurs ressources les plus adaptés.
 - Mettre en œuvre un contrat d’alliance et de synergies inter-entreprises.
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - PME
+  - Non éligible aux micro-entreprises
+  secteur géographique:
+  - France et territoires d'outre-mer
+  secteur d'activité:
+  - Tous secteurs d’activité
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
