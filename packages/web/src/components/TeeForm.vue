@@ -1,6 +1,17 @@
 <template>
+  <!-- BACK TO FORM BTN -->
+  <button
+    v-if="formIsSent"
+    class="fr-btn fr-btn--tertiary-no-outline inline-flex fr-mb-3v fr-link fr-tee-form-arrow-back"
+    tertiary
+    noOutline
+    @click="formIsSent = !formIsSent"
+  >
+    <v-icon scale="2" name="ri-arrow-left-line" aria-hidden="true"></v-icon>
+  </button>
+
   <!-- FORM -->
-  <div v-show="!formIsSent" class="fr-tee-form">
+  <div v-show="!formIsSent" class="fr-tee-form fr-my-4v">
     <!-- DEBUGGING -->
     <div v-if="debug" class="vue-debug">
       <p>
@@ -29,7 +40,7 @@
       }}
     </h3>
 
-    <!-- FORM LABEL -->
+    <!-- FORM HINT -->
     <p v-if="formOptions.hint" class="fr-text-center fr-pb-10v">
       <!-- {{ formOptions.hint[choices.lang] }} -->
       {{ choices.ti(formOptions.hint[choices.lang], { operator: program['opérateur de contact'] }) }}
@@ -117,22 +128,24 @@
 
   <!-- FORM CALLBACK -->
   <div v-if="formIsSent" class="fr-mt-5v fr-tee-form">
-    <!-- FORM ALERT AFTER SENDING-->
-    <div v-if="!hasNoRespError" class="fr-alert fr-alert--error fr-tee-form-error">
-      <div class="fr-alert__title">
-        <p>
-          {{ choices.t(`form.notSent`) }}
-        </p>
-        <p>
-          <code v-for="(resp, idx) in requestResponses" :key="idx" class="error-code fr-py-2v">
-            {{ choices.t('errors.error') }} {{ resp.status }} : "{{ resp.message }}"
-          </code>
-        </p>
-        <p>
-          {{ choices.t(`form.contactHelp`) }} <br />
-          {{ contactEmail }}
-        </p>
-      </div>
+    <!-- MESSAGE IF ERROR-->
+    <div v-if="!hasNoRespError" class="fr-text-center">
+      <p class="tee-form-response tee-form-response-error">
+        <v-icon name="ri-close-circle-fill" aria-hidden="true" scale="3"></v-icon>
+      </p>
+      <h3 class="tee-form-response tee-form-response-error fr-mb-2v">
+        {{ choices.t(`form.sorryError`) }}
+      </h3>
+      <h3 class="tee-form-response tee-form-response-error">
+        {{ choices.t(`form.notSent`) }}
+      </h3>
+      <h6 class="tee-form-response-blue fr-mt-15v fr-mb-3v">
+        {{ choices.t('form.nowWhat') }}
+      </h6>
+      <p class="tee-form-response-blue fr-mb-15v">
+        <span v-html="choices.ti(choices.t('form.errorMsg'), { email: contactEmail })"></span>
+      </p>
+
       <!-- DEBUGGING -->
       <div
         v-if="debug && requestResponses?.filter((resp) => resp.status && ![200, 201].includes(resp.status))"
@@ -150,12 +163,12 @@
       </div>
     </div>
 
-    <!-- NOW WHAT -->
+    <!-- MESSAGE IF 200 -->
     <div v-if="hasNoRespError" class="fr-text-center">
-      <p class="tee-form-response-title">
+      <p class="tee-form-response tee-form-response-blue">
         <v-icon name="ri-checkbox-circle-fill" aria-hidden="true" scale="3"></v-icon>
       </p>
-      <h3 class="tee-form-response-title">
+      <h3 class="tee-form-response tee-form-response-blue">
         {{ choices.t(`form.sent`) }}
       </h3>
       <h6 class="fr-mt-15v fr-mb-3v">

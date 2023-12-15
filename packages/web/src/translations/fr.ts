@@ -17,12 +17,15 @@ export const frDict = {
   form: {
     mandatory: 'Champs obligatoires',
     sent: 'Votre message a bien été envoyé !',
-    notSent: "Problème lors de l'envoi du formulaire",
+    sorryError: 'Nous sommes désolés, une erreur est survenue.',
+    notSent: 'Votre message n’a pas pu être envoyé',
     contactHelp: 'Merci de nous contacter à',
     nowWhat: 'Et maintenant ?',
     advisors: 'Nous allons identifier le bon conseiller près de chez vous',
     phoneContact:
-      'Un conseiller {operator} vous contactera prochainement par mail ou par téléphone pour échanger sur votre besoin et répondre à vos questions'
+      'Un conseiller {operator} vous contactera prochainement par mail ou par téléphone pour échanger sur votre besoin et répondre à vos questions',
+    errorMsg:
+      'Vous avez la possibilité de nous transmettre votre demande par mail à <a href="mailto:{email}">{email}</a> en précisant vos coordonnées, votre numéro de SIRET, le nom et le lien de l’aide qui vous intéresse.'
   },
   select: {
     selectOption: 'Sélectionnez une option'

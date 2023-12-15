@@ -154,7 +154,7 @@
     </div>
 
     <!-- PROGRAM FORM -->
-    <div id="tee-program-form-container" class="fr-form-block">
+    <div id="tee-program-form-container" class="fr-tee-form-block fr-tee-form-container">
       <TeeForm
         v-if="program"
         :track-id="trackConfig.id"
