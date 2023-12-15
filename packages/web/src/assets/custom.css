@@ -268,14 +268,14 @@ button.fr-link:hover, .tee-router-link:hover {
 }
 .fr-tee-eligigility-list {
   list-style-type: none;
-  padding-left: 2.4em;
+  padding-left: 2.2em;
 }
 .fr-tee-eligigility-list li:before {
   padding-left: 2em;
 }
 .fr-tee-eligigility-list li:before {
   content: '';
-  margin:0 5px 0 -2.5em;
+  margin:0 5px 0 -2.2em;
   height: 1.5em;
   width: 1em;
   position: absolute;
