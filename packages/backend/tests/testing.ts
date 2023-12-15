@@ -25,7 +25,7 @@ export const makeProgramHelper = ({
     'opérateur de contact': '',
     "nature de l'aide": nature,
     "coût de l'accompagnement": cost,
-    "conditions d'éligiblité": {
+    "conditions d'éligibilité": {
       "taille de l'entreprise": [],
       'secteur géographique': [],
       "secteur d'activité": [],

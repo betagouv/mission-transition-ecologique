@@ -45,7 +45,7 @@ export interface ProgramData {
   conditions?: Condition[]
   url?: string
 
-  "conditions d'éligiblité": {
+  "conditions d'éligibilité": {
     "taille de l'entreprise": string[]
     'secteur géographique': string[]
     "secteur d'activité": string[]
