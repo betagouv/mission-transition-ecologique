@@ -37,6 +37,24 @@ objectifs:
   de financement précisant le montant d’aide maximum, les conditions et les modalités
   de versement.
 - Réalisez vos investissements.
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Toutes tailles
+  - Éligible aux micro-entreprises
+  secteur géographique:
+  - Bourgogne-Franche-Comté|Grand Est|Pays de la Loire|Occitanie|Provence-Alpes-Côte
+    d'Azur|Corse|Guadeloupe|Guyane|La Réunion|Mayotte|Martinique|Île-de-France|Centre-Val
+    de Loire|Hauts-de-France|Saint-Barthélemy|Saint-Pierre-Et-Miquelon|Nouvelle-Aquitaine|Wallis
+    et Futuna|Terres australes et antarctiques françaises|Saint-Martin|Polynésie française|Nouvelle-Calédonie|Ile
+    de Clipperton|Normandie
+  secteur d'activité:
+  - Tous secteurs d’activité
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+  - 'L''opération pour laquelle vous sollicitez une aide financière ne doit pas avoir
+    commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque
+    forme que ce soit : marché signé, commande signée, devis accepté…)'
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

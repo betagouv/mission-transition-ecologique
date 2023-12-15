@@ -33,6 +33,16 @@ objectifs:
 - Mettre en oeuvre les différentes actions et mobiliser les collaborateurs à chaque
   étape.
 - Planification et suivi des actions sur trois ans.
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - PME
+  - Non éligible aux micro-entreprises
+  secteur géographique:
+  - Île-de-France
+  secteur d'activité:
+  - Tous secteurs d’activité
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

@@ -36,6 +36,18 @@ objectifs:
 - Faites réaliser les travaux par le professionnel.
 - Retournez les documents (factures, attestations sur l’honneur, etc.) au signataire
   de la charte ou à son partenaire dans les délais prévus pour bénéficier de la prime.
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Toutes tailles
+  - Éligible aux micro-entreprises
+  secteur géographique:
+  - France et territoires d'outre-mer
+  secteur d'activité:
+  - Secteur tertiaire
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+  - vos bâtiments doivent exister depuis plus de 2 ans à la date d’engagement de l’opération.
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

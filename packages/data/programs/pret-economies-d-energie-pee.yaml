@@ -14,6 +14,22 @@ objectifs:
 - 'L’investissement peut porter sur des équipements qui visent l’amélioration des
   postes suivants : éclairage, froid, chauffage, climatisation, motorisation électrique.'
 - Ce prêt est éligible aux certificats d'économies d'énergie (CEE)
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Moins de 50 salariés
+  - Non éligible aux micro-entreprises
+  secteur géographique:
+  - France et territoires d'outre-mer
+  secteur d'activité:
+  - Tous secteurs d’activité
+  - 'Sont exclus: les activités d’intermédiation financière (NAF : section K64 sauf
+    64-2 pour les achats d’entreprises) ; les activités de promotion immobilière et
+    marchand de biens (NAF : section L68-1, L68-2 et F41-1) ; les entreprises des
+    secteurs agricoles identifiées par les code NAF section A01, et section A02 dont
+    le chiffre d’affaires est inférieur à 750 000 €, à l’exception des codes NAF 02.20Z
+    et 02.40Z (entreprises forestières)'
+  nombre d'années d'activité:
+  - Au moins 3 ans d’activité
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
@@ -26,7 +42,8 @@ publicodes:
   entreprise . a un effectif éligible:
     toutes ces conditions:
     - effectif <= 49
-  entreprise . est dans un secteur d'activité éligible: est secteur d'activité exclu = non
+  entreprise . est dans un secteur d'activité éligible: est secteur d'activité exclu
+    = non
   est secteur d'activité exclu:
     une de ces conditions:
     - est activité d'intermédiation financière
