@@ -21,7 +21,8 @@ export const frDict = {
     contactHelp: 'Merci de nous contacter à',
     nowWhat: 'Et maintenant ?',
     advisors: 'Nous allons identifier le bon conseiller près de chez vous',
-    phoneContact: 'Un conseiller {operator} vous contactera prochainement par mail ou par téléphone pour échanger sur votre besoin et répondre à vos questions'
+    phoneContact:
+      'Un conseiller {operator} vous contactera prochainement par mail ou par téléphone pour échanger sur votre besoin et répondre à vos questions'
   },
   select: {
     selectOption: 'Sélectionnez une option'
@@ -38,10 +39,8 @@ export const frDict = {
     showForm: 'En savoir plus sur {title}',
     alertTitle: 'Merci, voici vos résultats',
     alertTitleNoResults: 'Pas de résultats',
-    alertNoResults:
-      "Désolé, nous n'avons pas trouvé de dispositif adapté à votre situation et vos demandes",
-    alertDescription:
-      'Vous pouvez également nous envoyer un mail via le formulaire ci-après pour être mis en contact avec des conseillers',
+    alertNoResults: "Désolé, nous n'avons pas trouvé de dispositif adapté à votre situation et vos demandes",
+    alertDescription: 'Vous pouvez également nous envoyer un mail via le formulaire ci-après pour être mis en contact avec des conseillers',
     yourResults: 'Vos résultats',
     fittingPrograms: 'Les aides correspondant à vos choix',
     filterSelect: 'Filtrer par {fieldLabel}',
@@ -114,6 +113,6 @@ export const frDict = {
       the: 'la',
       this: 'cette',
       of: 'de la'
-    },
+    }
   }
 }

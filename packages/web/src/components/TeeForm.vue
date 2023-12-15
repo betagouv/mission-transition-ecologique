@@ -1,13 +1,8 @@
 <template>
   <!-- FORM -->
-  <div
-    class="fr-tee-form"
-    v-show="!formIsSent">
-
+  <div v-show="!formIsSent" class="fr-tee-form">
     <!-- DEBUGGING -->
-    <div
-      v-if="debug"
-      class="vue-debug">
+    <div v-if="debug" class="vue-debug">
       <p>
         requiredFields:
         <code>
@@ -30,42 +25,32 @@
     </h3>
 
     <!-- FORM LABEL -->
-    <p
-      v-if="formOptions.hint"
-      class="fr-text-center fr-pb-10v">
+    <p v-if="formOptions.hint" class="fr-text-center fr-pb-10v">
       <!-- {{ formOptions.hint[choices.lang] }} -->
-      {{ choices.ti(formOptions.hint[choices.lang], {'operator': program['opérateur de contact']}) }}
+      {{ choices.ti(formOptions.hint[choices.lang], { operator: program['opérateur de contact'] }) }}
     </p>
 
     <!-- FIELDS -->
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-2v">
-
-      <div
-        v-for="field in formOptions.fields"
-        :key="field.id"
-        :class="`fr-col-12 fr-col-md-${ field.cols ? field.cols : 12 }`"
-        >
+      <div v-for="field in formOptions.fields" :key="field.id" :class="`fr-col-12 fr-col-md-${field.cols ? field.cols : 12}`">
         <!-- DEBUGGING -->
-        <div
-          v-if="debug"
-          class="vue-debug">
+        <div v-if="debug" class="vue-debug">
           Field.id:
           <code>
             {{ field.id }}
-          </code >
+          </code>
           --- field.type :
-          <code >
+          <code>
             {{ field.type }}
           </code>
           --- formData[field.id] :
-          <code >
-            {{ formData[field.id] }}
+          <code>
+            {{ formData?.[field.id] }}
           </code>
         </div>
 
         <!-- INPUT GROUP -->
-        <DsfrInputGroup
-          v-if="!isCheckbox(field)">
+        <DsfrInputGroup v-if="!isCheckbox(field) && formData">
           <DsfrInput
             :type="field.type"
             :is-textarea="isTextarea(field)"
@@ -75,18 +60,19 @@
             :required="field.required"
             :label="field?.label?.[choices.lang]"
             :placeholder="(field.hint && field.hint[choices.lang]) || ''"
-            @update:modelValue="updateFormData($event, field.id)"
-            >
+            @update:model-value="updateFormData($event, field.id)"
+          >
           </DsfrInput>
         </DsfrInputGroup>
 
         <!-- CHECKBOXES -->
         <DsfrCheckbox
-          v-if="isCheckbox(field)"
+          v-if="isCheckbox(field) && formData"
           :model-value="formData[field.id]"
           :name="field.id"
           :required="field.required"
-          @update:modelValue="updateFormData($event, field.id)">
+          @update:model-value="updateFormData($event, field.id)"
+        >
           <!-- :hint="field.hint[choices.lang]" -->
           <template #label>
             <span>
@@ -97,22 +83,16 @@
 
         <!-- CHECKBOX HINT -->
         <div v-if="isCheckbox(field)">
-          <span
-            class="fr-hint-text fr-mt-5v"
-            v-html="field.hint?.[choices.lang] || ''">
-          </span>
+          <span class="fr-hint-text fr-mt-5v" v-html="field.hint?.[choices.lang] || ''"> </span>
         </div>
       </div>
-
     </div>
 
     <!-- FORM HELPER -->
-    <h6
-      class="fr-mb-0"
-      style="font-size: 0.7em;">
+    <h6 class="fr-mb-0" style="font-size: 0.7em">
       <code>*</code>
       &nbsp;
-      {{ choices.t('form.mandatory')}}
+      {{ choices.t('form.mandatory') }}
     </h6>
 
     <!-- SEND / NEXT BUTTON -->
@@ -125,17 +105,15 @@
           :disabled="!canSaveFrom"
           icon="ri-arrow-right-line"
           icon-right
+          :loading="isLoading"
           @click="saveFormData()"
-          :loading='isLoading'
         />
       </div>
     </div>
   </div>
 
   <!-- FORM CALLBACK -->
-  <div
-    v-if="formIsSent"
-    class="fr-mt-5v fr-tee-form">
+  <div v-if="formIsSent" class="fr-mt-5v fr-tee-form">
     <!-- FORM ALERT AFTER SENDING-->
     <div
       v-if="!hasNoRespError"
@@ -146,36 +124,25 @@
           {{ choices.t(`form.notSent`) }}
         </p>
         <p>
-          <code
-            v-for="(resp, idx) in requestResponses"
-            :key="idx"
-            class="error-code fr-py-2v">
-            {{ choices.t('errors.error') }} {{ resp.status }}
-            :
-            "{{ resp.message }}"
+          <code v-for="(resp, idx) in requestResponses" :key="idx" class="error-code fr-py-2v">
+            {{ choices.t('errors.error') }} {{ resp.status }} : "{{ resp.message }}"
           </code>
         </p>
         <p>
-          {{ choices.t(`form.contactHelp`) }} <br> {{ contactEmail }}
+          {{ choices.t(`form.contactHelp`) }} <br />
+          {{ contactEmail }}
         </p>
       </div>
       <!-- DEBUGGING -->
       <div
+        v-if="debug && requestResponses?.filter((resp) => resp.status && ![200, 201].includes(resp.status))"
         class="fr-mt-5v fr-highlight"
-        v-if="debug && requestResponses?.filter(resp => resp.status && ![200, 201].includes(resp.status))">
-        <p
-          v-for="(resp, i) in requestResponses"
-          :key="`resp-${i}`">
-          <b>
-            {{ resp.action }} :
-          </b>
-          <b>
-            status {{ resp.status }} :
-          </b>
-          <b>
-            "{{ resp.code }}"
-          </b>
-          <br>
+      >
+        <p v-for="(resp, i) in requestResponses" :key="`resp-${i}`">
+          <b> {{ resp.action }} : </b>
+          <b> status {{ resp.status }} : </b>
+          <b> "{{ resp.code }}" </b>
+          <br />
           <i>
             {{ resp.message }}
           </i>
@@ -184,6 +151,7 @@
     </div>
 
     <!-- NOW WHAT -->
+<<<<<<< HEAD
     <div v-if="hasNoRespError" class="fr-text-center">
       <p class="tee-form-response-title">
         <v-icon name="ri-checkbox-circle-fill" aria-hidden="true" scale="3"></v-icon>
@@ -194,6 +162,11 @@
       </h3>
       <h6 class="fr-mt-15v fr-mb-3v">
         {{ choices.t('form.nowWhat')}}
+=======
+    <div v-if="hasNoRespError">
+      <h6 class="fr-mt-10v">
+        {{ choices.t('form.nowWhat') }}
+>>>>>>> d637e1a662bc6251b6f96638b7973ef72468fd47
       </h6>
       <p class="fr-mb-15v">
         <span>
@@ -204,46 +177,38 @@
   </div>
 
   <!-- DEBUGGING -->
-  <div
-    v-if="debug"
-    class="vue-debug fr-mt-5v">
+  <div v-if="debug" class="vue-debug fr-mt-5v">
     <h5>DEBUG - TeeForm</h5>
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
-      <div
-        v-if="false"
-        class="fr-col-12">
-        <h4>
-          formOptions :
-        </h4>
-        <code><pre>{{ formOptions }}</pre></code>
+      <div v-if="false" class="fr-col-12">
+        <h4>formOptions :</h4>
+        <code>
+          <pre>{{ formOptions }}</pre>
+        </code>
       </div>
       <div class="fr-col-12">
-        <h4>
-          formData :
-        </h4>
-        <code><pre>{{ formData }}</pre></code>
+        <h4>formData :</h4>
+        <code>
+          <pre>{{ formData }}</pre>
+        </code>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-
 // CONSOLE LOG TEMPLATE
 // console.log(`TeeForm > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import { computed, onBeforeMount, ref, toRaw } from 'vue'
-
-// @ts-ignore
 import type { FormCallback, FormField, FormOptions, FormValues, ProgramData, ReqResp } from '@/types/index'
 import { CallbackActions, FormFieldTypes } from '@/types/index'
-
 import { sendApiRequest } from '../utils/requests'
 import { remapItem } from '../utils/helpers'
-
 import { tracksStore } from '../stores/tracks'
 import { choicesStore } from '../stores/choices'
 import { analyticsStore } from '../stores/analytics'
+import type { ImportMetaEnv } from '../env'
 import DsfrButton from '@/components/button/DsfrButton.vue'
 
 const choices = choicesStore()
@@ -251,39 +216,36 @@ const tracks = tracksStore()
 const analytics = analyticsStore()
 
 const trackValues: any[] = tracks.getAllUsedTracksValues
-
-// @ts-ignore
-const metaEnv = import.meta.env
-const contactEmail: string = metaEnv.VITE_CONTACT_EMAIL || 'france-transition@beta.gouv.fr'
+const metaEnv: ImportMetaEnv = import.meta.env as ImportMetaEnv
+const contactEmail = metaEnv.VITE_CONTACT_EMAIL || 'france-transition@beta.gouv.fr'
 
 interface DataProps {
   programId: string
 }
 
 interface Props {
-  trackId: string,
-  formOptions: FormOptions,
-  dataProps: DataProps,
-  program: ProgramData,
+  trackId: string
+  formOptions: FormOptions
+  dataProps: DataProps
+  program: ProgramData
   debug?: boolean
 }
 const props = defineProps<Props>()
 
-let formData = ref()
-const requiredFields = ref([])
+let formData = ref<FormValues>()
+const requiredFields = ref<string[]>([])
 const formIsSent = ref<boolean>(false)
 const requestResponses = ref<ReqResp[]>()
-const formFieldTypes = FormFieldTypes
 const isLoading = ref<boolean>(false)
 
 const canSaveFrom = computed(() => {
-  // @ts-ignore
-  const boolArr = requiredFields.value.map((f: string) => formData.value[f])
-  return boolArr.every(v => (!!v && v !== ''))
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+  const boolArr = requiredFields.value.map((f: string) => formData.value?.[f])
+  return boolArr.every((v) => !!v && v !== '')
 })
 
 const hasNoRespError = computed(() => {
-  const hasError = !requestResponses.value || requestResponses.value?.map(r => r.status).every(s => s === 200 || s === 201)
+  const hasError = !requestResponses.value || requestResponses.value?.map((r) => r.status).every((s) => s === 200 || s === 201)
   return hasError
 })
 
@@ -303,7 +265,6 @@ const isTextarea = (field: FormField) => {
   return field.type === FormFieldTypes.Textarea
 }
 
-
 onBeforeMount(() => {
   let initValues: FormValues = {}
 
@@ -312,8 +273,9 @@ onBeforeMount(() => {
     // set field's key
     initValues[field.id] = isCheckbox(field) ? false : ''
 
-    // @ts-ignore
-    if (field.required) { requiredFields.value.push(field.id) }
+    if (field.required) {
+      requiredFields.value.push(field.id)
+    }
 
     // set default value if any
     if (field.defaultValue) {
@@ -337,7 +299,9 @@ onBeforeMount(() => {
 })
 
 const updateFormData = (ev: string, id: string) => {
-  formData.value[id] = ev
+  if (formData.value) {
+    formData.value[id] = ev
+  }
 }
 
 const saveFormData = async () => {
@@ -376,5 +340,4 @@ const scrollToFormContainer = () => {
   const element: HTMLElement | null = document.getElementById("tee-program-form-container")
   element?.scrollIntoView({ block: 'center' })
 }
-
 </script>

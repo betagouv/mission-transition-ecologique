@@ -21,6 +21,16 @@ objectifs:
   etc.)
 - Pré-chiffrer les travaux, calculer le temps de retour sur investissement et identifier
   les financements possibles
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - PME
+  - Éligible aux micro-entreprises
+  secteur géographique:
+  - Bourgogne-Franche-Comté
+  secteur d'activité:
+  - Industrie
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

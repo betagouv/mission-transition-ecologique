@@ -150,9 +150,11 @@ export class SireneController extends Controller {
       const err = etablissementResult.error
 
       if (err instanceof EstablishmentNotFoundError) {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-return
         return notFoundResponse(404, { message: 'Establishment not found' })
       }
 
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       return requestFailedResponse(500, { message: `Server internal error` })
     }
 

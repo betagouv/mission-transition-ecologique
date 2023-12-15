@@ -4,10 +4,12 @@
   "description": "",
   "main": "build/src/index.js",
   "scripts": {
+    "spec-and-routes": "npx tsoa spec-and-routes",
     "build": "npx tsoa spec-and-routes && npx tsc --build --verbose",
     "start": "node build/src/index.js",
-    "dev": "npx concurrently \"npx tsc --build --watch --verbose --preserveWatchOutput\" \"npx nodemon\" \"npx nodemon -x npx tsoa spec-and-routes\"",
-    "test": "jest"
+    "dev": "npx tsoa spec-and-routes && npx concurrently \"npx tsc --build --watch --verbose --preserveWatchOutput\" \"npx nodemon\" \"npx nodemon -x npx tsoa spec-and-routes\"",
+    "test": "jest",
+    "lint": "eslint . --fix"
   },
   "keywords": [],
   "author": "",
@@ -31,7 +33,6 @@
     "@types/express": "^4.17.17",
     "@types/jest": "^29.5.2",
     "@types/swagger-ui-express": "^4.1.3",
-    "concurrently": "^8.2.0",
     "jest": "^29.7.0",
     "nodemon": "^3.0.1"
   }

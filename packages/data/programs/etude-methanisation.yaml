@@ -40,6 +40,21 @@ objectifs:
   de financement précisant le montant d’aide maximum, les conditions et les modalités
   de versement.
 - Réalisez votre étude.
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Toutes tailles
+  - Éligible aux micro-entreprises
+  secteur géographique:
+  - Pays de la Loire|Centre-Val de Loire|Bourgogne-Franche-Comté|Normandie|Hauts-de-France|Bretagne|Nouvelle-Aquitaine|Occitanie|Auvergne-Rhône-Alpes|Provence-Alpes-Côte
+    d'Azur|Corse|Guadeloupe|Martinique|Guyane|La Réunion|Mayotte|Île-de-France
+  secteur d'activité:
+  - Activité agricole ou  industries agro-alimentaires
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+  - 'L''opération pour laquelle vous sollicitez une aide financière ne doit pas avoir
+    commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque
+    forme que ce soit : marché signé, commande signée, devis accepté…)'
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

@@ -1,11 +1,6 @@
 import { fileURLToPath, URL } from 'node:url'
-// import { resolve } from 'path'
-// import postcssLit from 'rollup-plugin-postcss-lit';
-
-import {
-  defineConfig,
-  // loadEnv
-} from 'vite'
+import { defineConfig } from 'vite'
+import type { ServerOptions } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
 console.log()
@@ -19,36 +14,34 @@ console.log('vite.config ...')
 // console.log('vite.config > mode : ', mode)
 // const rawEnv = loadEnv(mode, process.cwd())
 // console.log('vite.config > rawEnv : ', rawEnv)
+const mode = process.env.NODE_ENV ?? 'development'
+const isProd = mode === 'production'
+
+const plugins = async () => {
+  const basePlugins = [vue()]
+  if (isProd) {
+    return basePlugins
+  } else {
+    const eslintPlugin = await import('vite-plugin-eslint')
+    return [...basePlugins, eslintPlugin.default()]
+  }
+}
 
 // VITE CONFIG
-const viteServer: any = {
+const viteServer: ServerOptions = {
   // host: 'localhost',
   host: '0.0.0.0'
   // port: 4242,
   // open: '/index.html',
   // open: '/public/index.html', // test other index file
-  // open: '/dist/index.html', // test other index file
 }
-// if (mode === 'production') {
-//   viteServer.open = './dist/index.html'
-// }
 
 // Set Vite config
 // https://vitejs.dev/config/
 export default defineConfig({
-  // base: './dist/',
   server: viteServer,
-  plugins: [
-    // postcssLit(),
-    vue()
-    // vue({
-    //   template: {
-    //     compilerOptions: {
-    //       isCustomElement: (tag) => tag.startsWith('ademe-')
-    //     }
-    //   }
-    // })
-  ],
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+  plugins: [plugins()],
   build: {
     rollupOptions: {
       input: {

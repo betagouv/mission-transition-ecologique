@@ -5,39 +5,39 @@ export const wastesSorting: Track = {
   id: TrackId.WastesSorting,
   category: 'myWastes',
   title: { fr: 'Tri des déchets' },
-  label: { fr: "Avez-vous mis en place une solution de tri des déchets dans votre entreprise ?" },
+  label: { fr: 'Avez-vous mis en place une solution de tri des déchets dans votre entreprise ?' },
   interface: {
-    component: TrackComponents.Buttons,
+    component: TrackComponents.Buttons
   },
   behavior: {
-    multipleChoices: false,
+    multipleChoices: false
   },
   next: {
-    default: TrackId.Results,
+    default: TrackId.Results
   },
   options: [
     {
-      value: { wastes_sorting : 'yes' },
+      value: { wastes_sorting: 'yes' },
       title: { fr: 'Oui' },
-      label: { fr: "✅ Oui, j’ai déjà mis en place un système de tri" },
+      label: { fr: '✅ Oui, j’ai déjà mis en place un système de tri' },
       next: {
-        default: TrackId.WastesMaterials,
+        default: TrackId.WastesMaterials
       }
     },
     {
-      value: { wastes_sorting : 'can do better' },
-      title: { fr: "Je peux faire mieux" },
-      label: { fr: "🗑 Je peux faire mieux !" },
+      value: { wastes_sorting: 'can do better' },
+      title: { fr: 'Je peux faire mieux' },
+      label: { fr: '🗑 Je peux faire mieux !' },
       next: {
-        default: TrackId.WastesMaterials,
+        default: TrackId.WastesMaterials
       }
     },
     {
       value: { wastes_sorting: 'unknown' },
       title: { fr: 'Je ne sais pas' },
-      label: { fr: "Je ne sais pas" },
+      label: { fr: 'Je ne sais pas' },
       next: {
-        default: TrackId.WastesMaterials,
+        default: TrackId.WastesMaterials
       }
     }
   ]

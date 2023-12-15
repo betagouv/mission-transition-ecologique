@@ -19,6 +19,16 @@ objectifs:
 - Identifier les pistes d'amélioration (tri, collecte, réemploi, mutualisation,etc.)
   et les possibilités de financement.
 - Réaliser un plan d’action  et permettre la mise en conformité réglementaire.
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - TPE, PME et ETI
+  - Non éligible aux micro-entreprises
+  secteur géographique:
+  - Provence-Alpes-Côte d'Azur
+  secteur d'activité:
+  - Tous secteurs d’activité
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
