@@ -19,11 +19,19 @@
         </h6>
       </div>
       <div class="fr-col-4">
-        <h6 class="fr-mb-1v"> renderAs : <code>{{ renderAs }} </code></h6>
-        <h6 class="fr-mb-1v"> allowMultiple : <code>{{ allowMultiple }} </code></h6>
-        <h6 class="fr-mb-1v"> colsWidth : <code>{{ colsWidth }} </code></h6>
-        <h6 class="fr-mb-1v"> selectionValues : </h6>
-        <code><pre>{{ selectionValues }}</pre> </code>
+        <h6 class="fr-mb-1v">
+          renderAs : <code>{{ renderAs }} </code>
+        </h6>
+        <h6 class="fr-mb-1v">
+          allowMultiple : <code>{{ allowMultiple }} </code>
+        </h6>
+        <h6 class="fr-mb-1v">
+          colsWidth : <code>{{ colsWidth }} </code>
+        </h6>
+        <h6 class="fr-mb-1v">selectionValues :</h6>
+        <code>
+          <pre>{{ selectionValues }}</pre>
+        </code>
       </div>
       <!-- <div class="fr-col-3"> -->
       <!-- <h6 class="fr-mb-1v"> selection : </h6>
@@ -125,12 +133,8 @@
         </div>
 
         <!-- TRACK HINT -->
-        <div
-          v-if="step !== 1 && track?.hint"
-          :class="`${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`">
-          <p
-            :class="`fr-mb-0`"
-            :style="`${isTrackResults ? 'color: #000091;' : ''}`">
+        <div v-if="step !== 1 && track?.hint" :class="`${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`">
+          <p :class="`fr-mb-0`" :style="`${isTrackResults ? 'color: #000091;' : ''}`">
             {{ track.hint[choices.lang] }}
           </p>
         </div>
@@ -370,8 +374,7 @@ const customColWidth: number | string = track?.interface?.columnWidth ?? 0
 
 const allowMultiple: boolean = !!track?.behavior?.multipleChoices
 
-const optionsArray = track?.options?.filter( (o): o is (TrackOptions |
-  TrackOptionsSelect | TrackOptionsInput) => !o.disabled) ?? []
+const optionsArray = track?.options?.filter((o): o is TrackOptions | TrackOptionsSelect | TrackOptionsInput => !o.disabled) ?? []
 
 // computed
 const isTrackResults = computed(() => {

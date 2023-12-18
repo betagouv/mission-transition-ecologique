@@ -1,25 +1,27 @@
 import type { Condition, NextTrackRule } from '@/types'
 import { ConditionOperators } from '@/types'
 
-export const checkConditions = (conditions: Condition[], data: any) => {
+export const checkConditions = (conditions: Condition[], data: Record<string, unknown>) => {
   return conditions.every((cond) => checkCondition(cond, data))
 }
 
-const checkCondition = (condition: Condition, data: any): boolean => {
+const checkCondition = (condition: Condition, data: Record<string, unknown>): boolean => {
   const dataKey: string = condition.type
 
   switch (condition.operator) {
-    case ConditionOperators.exists:
+    case ConditionOperators.exists: {
       // actually exists and is truthy
-      const exists = dataKey in data
-      const isTruthy = exists && data[dataKey]
+      const exists: boolean = dataKey in data
+      const isTruthy: boolean = exists && !!data[dataKey]
       return exists && isTruthy
+    }
 
-    case ConditionOperators.isMissing:
+    case ConditionOperators.isMissing: {
       // actually is missing or is falsy
-      const isMissing = !(dataKey in data)
-      const isFalsy = dataKey in data && !data[dataKey]
+      const isMissing: boolean = !(dataKey in data)
+      const isFalsy: boolean = dataKey in data && !data[dataKey]
       return isMissing || isFalsy
+    }
 
     case ConditionOperators.is:
       return data[dataKey] === condition.value
