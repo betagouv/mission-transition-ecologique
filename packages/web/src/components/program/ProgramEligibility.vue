@@ -11,7 +11,7 @@
             <span class="fr-mr-1v">{{ eligilityEmojis[field] }}</span>
             {{ field.toString()[0].toUpperCase() + field.toString().slice(1) }}
           </p>
-          <ul class="fr-tee-eligigility-list">
+          <ul class="fr-tee-eligigility-list fr-mt-1v">
             <li v-for="(value, i) in programEligibility[field]" :key="`elegibility-field-${idx}-value-${i}`">
               {{ value }}
             </li>
