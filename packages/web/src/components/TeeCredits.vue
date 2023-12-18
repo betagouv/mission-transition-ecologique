@@ -30,7 +30,10 @@
       <div class="fr-footer__bottom fr-mt-5v" style="justify-content: center">
         <ul class="fr-footer__bottom-list" style="display: flex; justify-content: center">
           <li v-for="link in projectLinks" :key="link.href" class="fr-footer__bottom-item">
-            <a :href="link.href" class="fr-footer__bottom-link">
+            <router-link v-if="link.to" :to="link.to" class="fr-footer__bottom-link">
+              {{ link.label }}
+            </router-link>
+            <a v-else :href="link.href" class="fr-footer__bottom-link">
               {{ link.label }}
             </a>
           </li>
@@ -55,6 +58,7 @@
 // console.log(`TeeCredits > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import { choicesStore } from '../stores/choices'
+import { RouteName } from '@/types/routeType'
 
 const choices = choicesStore()
 
@@ -91,15 +95,15 @@ const ecosystemLinks = [
 const projectLinks = [
   {
     label: 'Mission Transition',
-    href: 'https://mission-transition.beta.gouv.fr'
+    to: { name: RouteName.Homepage }
   },
   {
     label: "Startup d'Etat Transition Ecologique des Entreprises",
     href: 'https://beta.gouv.fr/startups/transition-ecologique-des-entreprises.html'
   },
   {
-    label: 'Conditions Générales',
-    href: 'https://mission-transition.beta.gouv.fr/mentions-legales'
+    label: 'Mentions légales',
+    to: { name: RouteName.Legal }
   },
   {
     label: 'Code source Mission Transition',

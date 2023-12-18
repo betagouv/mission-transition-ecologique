@@ -105,6 +105,7 @@
 // console.log(`TeeAppFooter > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import { choicesStore } from '../stores/choices'
+import { RouteName } from '@/types/routeType'
 
 const choices = choicesStore()
 
@@ -177,12 +178,12 @@ const mainLinks = [
   {
     // router ok
     label: 'Mentions légales',
-    to: '/mentions-legales'
+    to: { name: RouteName.Legal }
   },
   {
     // router ok
     label: 'Données personnelles',
-    to: '/donnees-personnelles'
+    to: { name: RouteName.PersonalData }
   },
   {
     label: 'Code source',
