@@ -4,17 +4,20 @@
       {{ choices.t('program.programAmIEligible') }}
     </h2>
     <hr class="fr-mb-4v" />
-    <div v-for="(values, field, idx) in programEligibility" :key="`elegibility-field-${idx}`" class="fr-mb-8v fr-tee-eligigility">
-      <h6 class="fr-tee-eligigility fr-mb-2v">
-        <span class="fr-mr-1v">{{ eligilityEmojis[field] }}</span>
-        {{ field[0].toUpperCase() + field.slice(1) }}
-      </h6>
-      <ul class="fr-tee-eligigility-list">
-        <li v-for="(value, i) in values" :key="`elegibility-field-${idx}-value-${i}`">
-          <!-- <span class="fr-icon-check-line"></span> -->
-          {{ value }}
-        </li>
-      </ul>
+    <div class="fr-grid-row fr-grid-row--gutters">
+      <div v-for="partIdx in 2" :key="`part-${partIdx}`" class="fr-col-6 fr-col-xs-12">
+        <div v-for="(field, idx) in PartsOrder[partIdx - 1]" :key="`elegibility-field-part1-${idx}`" class="fr-mb-8v fr-tee-eligigility">
+          <p class="fr-tee-eligigility-title fr-mb-2v">
+            <span class="fr-mr-1v">{{ eligilityEmojis[field] }}</span>
+            {{ field.toString()[0].toUpperCase() + field.toString().slice(1) }}
+          </p>
+          <ul class="fr-tee-eligigility-list">
+            <li v-for="(value, i) in programEligibility[field]" :key="`elegibility-field-${idx}-value-${i}`">
+              {{ value }}
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -27,13 +30,21 @@ import { computed } from 'vue'
 import { choicesStore } from '@/stores/choices'
 import type { ProgramData } from '@/types'
 
-const eligilityEmojis = {
-  "taille de l'entreprise": '🏢',
+interface Emojis {
+  [key: string]: string
+}
+const eligilityEmojis: Emojis = {
+  "taille de l'entreprise": '👫',
   'secteur géographique': '📍',
-  "secteur d'activité": '👫',
   "nombre d'années d'activité": '🗓',
+  "secteur d'activité": '🏢',
   "autres critères d'éligibilité": '💡'
 }
+
+const PartsOrder = [
+  ["taille de l'entreprise", 'secteur géographique', "nombre d'années d'activité"],
+  ["secteur d'activité", "autres critères d'éligibilité"]
+]
 
 interface Props {
   program: ProgramData
@@ -43,7 +54,7 @@ const props = defineProps<Props>()
 
 const choices = choicesStore()
 
-const programEligibility = computed(() => {
+const programEligibility: any = computed(() => {
   return props.program["conditions d'éligibilité"]
 })
 </script>

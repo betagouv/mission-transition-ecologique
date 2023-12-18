@@ -266,14 +266,19 @@ button.fr-link:hover, .tee-router-link:hover {
 .fr-tee-eligigility {
   color: #6266EF;
 }
+.fr-tee-eligigility-title {
+  font-weight: bold;
+}
 .fr-tee-eligigility-list {
-  list-style-type: none;
   padding-left: 2.2em;
+}
+.fr-tee-eligigility-list-check {
+  list-style-type: none;
 }
 .fr-tee-eligigility-list li:before {
   padding-left: 2em;
 }
-.fr-tee-eligigility-list li:before {
+.fr-tee-eligigility-list-check li:before {
   content: '';
   margin:0 5px 0 -2.2em;
   height: 1.5em;
@@ -281,6 +286,11 @@ button.fr-link:hover, .tee-router-link:hover {
   position: absolute;
   background-repeat: no-repeat;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z' fill='rgba(98,102,239,1)'%3E%3C/path%3E%3C/svg%3E");
+}
+.fr-tee-eligigility-list li:before {
+  margin:0 5px 0 -2.2em;
+  height: 1.5em;
+  width: 1em;
 }
 
 /* DEBUGGING STYLES */
