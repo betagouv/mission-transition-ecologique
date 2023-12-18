@@ -140,6 +140,7 @@ import { navigationStore } from '@/stores/navigation'
 import { ConditionOperators, TrackId } from '@/types/index'
 import { useRoute, useRouter } from 'vue-router'
 import { RouteName } from '@/types/routeType'
+import Widget from '@/utils/widget'
 
 const route = useRoute()
 const router = useRouter()
@@ -215,6 +216,10 @@ const updateFilters = (event: FilterSignal) => {
 }
 
 const updateDetailResult = async (id: string | number) => {
+  if (Widget.is) {
+    programs.setDetailResult(id, props.trackId)
+    return
+  }
   if (route.name === RouteName.Catalog) {
     await router.push({
       name: RouteName.CatalogDetail,

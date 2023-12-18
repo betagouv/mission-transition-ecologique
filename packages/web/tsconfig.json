@@ -11,7 +11,8 @@
     "cypress.config.*",
     "playwright.config.*",
     "cypress/**/*",
-    "public/data/generated/dataset_out.json"
+    "public/data/generated/dataset_out.json",
+    "widget/**/*",
   ],
   "compilerOptions": {
     "rootDir": ".",
