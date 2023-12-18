@@ -18,6 +18,16 @@ objectifs:
 - Valoriser l’engagement environnemental de votre entreprise par l’obtention d'un
   label.
 - Profiter d’une communication gratuite dans le cadre de cette opération.
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - TPE et PME
+  - Éligible aux micro-entreprises
+  secteur géographique:
+  - France et territoires d'outre-mer
+  secteur d'activité:
+  - Artisan
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

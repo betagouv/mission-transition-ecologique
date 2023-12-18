@@ -27,6 +27,19 @@ objectifs:
 - Elaborer des scénarios d’amélioration chiffrés pour l’atteinte de ces objectifs
 - Être accompagné dans la réalisation de la déclaration sur la plateforme OPERAT le
   cas échéant
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Toutes tailles
+  - Non éligible aux micro-entreprises
+  secteur géographique:
+  - France et territoires d'outre-mer
+  secteur d'activité:
+  - Activités tertiaires privées (tourisme, commerce, santé, logistique, services…)
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+  - Être propriétaire de bâtiment(s) à usage tertiaire ou mixte industriel-tertiaire
+    et disposant des plans.
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

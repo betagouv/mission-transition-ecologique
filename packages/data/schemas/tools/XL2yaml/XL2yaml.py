@@ -5,7 +5,7 @@ import random
 import re
 import sys
 from pathlib import Path
-from typing import Any
+from typing import Any, Optional
 
 import pylightxl
 import yaml
@@ -26,6 +26,12 @@ MODE_TRANSPORT = "entreprise . utilise un mode de transport ciblé"
 POSSESSION_VEHICULES = "entreprise . possède des véhicules motorisés"
 PARCOURS_OBJ_PRECIS = "questionnaire . parcours = objectif précis"
 PROPRIO = "entreprise . est propriétaire de ses locaux"
+
+ELIGIBILITY_SIZE = "taille de l'entreprise"
+ELIGIBILITY_GEOGRAPHY = "secteur géographique"
+ELIGIBILITY_SECTOR = "secteur d'activité"
+ELIGIBILITY_NYEARS = "nombre d'années d'activité"
+ELIGIBILITY_SPECIFIC = "autres critères d'éligibilité"
 
 ALL = "toutes ces conditions"
 ANY = "une de ces conditions"
@@ -102,6 +108,34 @@ def assembleProgramYAML(rawData, colNumbersByName, id):
     cible = []  # Accumulateur des règles qui font parti du ciblage.
     eligibilite = []  # Accumulateur des règles qui font parti de l'éligibilité.
 
+    # Conditions d'éligibilité
+    eligibility_conditions = {
+        ELIGIBILITY_SIZE: [],
+        ELIGIBILITY_GEOGRAPHY: [],
+        ELIGIBILITY_SECTOR: [],
+        ELIGIBILITY_NYEARS: [],
+    }
+
+    eligibility_conditions[ELIGIBILITY_SIZE].append(eligibility_size(get))
+    eligibility_conditions[ELIGIBILITY_SIZE].append(eligibility_microentreprise(get))
+
+    for eg in eligibility_geography(get):
+        eligibility_conditions[ELIGIBILITY_GEOGRAPHY].append(eg)
+
+    eligibility_conditions[ELIGIBILITY_SECTOR].append(eligibility_sector(get))
+    if eligibility_naf(get):
+        eligibility_conditions[ELIGIBILITY_SECTOR].append(eligibility_naf(get))
+
+    eligibility_conditions[ELIGIBILITY_NYEARS].append(eligibility_nyears(get))
+
+    for es in eligibility_specific(get):
+        if ELIGIBILITY_SPECIFIC not in eligibility_conditions:
+            eligibility_conditions[ELIGIBILITY_SPECIFIC] = []
+        eligibility_conditions[ELIGIBILITY_SPECIFIC].append(es)
+
+    set("conditions d'éligibilité", eligibility_conditions, True)
+
+    # Publicodes constraints
     effective_constraint = pc_effectifConstraint(get("minEff"), get("maxEff"))
     if effective_constraint:
         pc[EFFECTIF] = effective_constraint
@@ -236,6 +270,72 @@ def makeObj(objs: list[str]):
         return curate(obj) != "" and curate(obj) != "-"
 
     return [obj for obj in objs if keepObj(obj)]
+
+
+def eligibility_size(get) -> str:
+    col_eligibilite_taille = get("👫👫\nEligibilité Taille")
+    col_min_eff = get("minEff")
+    col_max_eff = get("maxEff")
+    if valid(col_eligibilite_taille):
+        return col_eligibilite_taille
+    elif valid(col_min_eff) and valid(col_max_eff):
+        return f"Effectif compris entre {col_min_eff} et {col_max_eff} employés"
+    elif valid(col_min_eff):
+        return f"Effectif supérieur à {col_min_eff} employés"
+    elif valid(col_max_eff):
+        return f"Effectif inférieur à {col_max_eff} employés"
+    return "Toutes tailles"
+
+
+def eligibility_microentreprise(get) -> str:
+    me = get("microEntre")
+    if valid(me):
+        if me.lower() == "oui":
+            return "Éligible aux micro-entreprises"
+        elif me.lower() == "non":
+            return "Non éligible aux micro-entreprises"
+        else:
+            raise Exception("Valeur non interprétable (colonne microEntre)")
+    return "Éligible aux micro-entreprises"
+
+
+def eligibility_sector(get) -> str:
+    es = get("👨‍🍳Eligibilité Sectorielle")
+    if valid(es):
+        return es
+    raise Exception("Condition d'éligibilité sectorielle manquante")
+
+
+def eligibility_geography(get) -> list[str]:
+    egr = get("Zones géographiques Régional")
+    egs = get("Zones géographiques Spécifique")
+    egd = get("Zones géographiques Départemental")
+    eg = [eg for eg in [egr, egs, egd] if valid(eg)]
+    if len(eg) > 0:
+        return eg
+    else:
+        return ["France et territoires d'outre-mer"]
+
+
+def eligibility_naf(get) -> Optional[str]:
+    en = get("Eligibilité Naf")
+    if valid(en):
+        return en
+    return None
+
+
+def eligibility_nyears(get) -> str:
+    en = get("Eligibilité Existence")
+    if valid(en):
+        return en
+    return "Éligible à toutes les entreprises"
+
+
+def eligibility_specific(get) -> list[str]:
+    es1 = get("Eligibilité Spécifique1")
+    es2 = get("Eligibilité Spécifique2")
+    es3 = get("Eligibilité Spécifique3")
+    return [es for es in [es1, es2, es3] if valid(es)]
 
 
 def pc_effectifConstraint(effmin, effmax):

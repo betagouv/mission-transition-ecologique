@@ -217,7 +217,7 @@ const updateFilters = (event: FilterSignal) => {
 const updateDetailResult = async (id: string | number) => {
   if (route.name === RouteName.Catalog) {
     await router.push({
-      name: RouteName.CatalogueDetail,
+      name: RouteName.CatalogDetail,
       params: {
         programId: id.toString()
       }

@@ -20,6 +20,18 @@ objectifs:
   risque de transfert de pollution.
 - Préparer la mise en œuvre d'un plan d’actions incluant un premier dimensionnement
   technico-économique.
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Moins de 50 salariés
+  - Non éligible aux micro-entreprises
+  secteur géographique:
+  - France et territoires d'outre-mer
+  secteur d'activité:
+  - Tous secteurs d’activité
+  nombre d'années d'activité:
+  - Au moins 1 an d’activité
+  autres critères d'éligibilité:
+  - Avoir réalisé moins de 10M€ de CA ou de total de bilan
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
