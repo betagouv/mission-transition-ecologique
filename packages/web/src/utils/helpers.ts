@@ -20,6 +20,7 @@ import type {
 } from '@/types'
 import { CleanerOperations, DataMappingFrom } from '@/types'
 import type { ImportMetaEnv } from '../env'
+import Widget from '@/utils/widget'
 
 const refs: Refs = {
   NafCodes: nafCodesJson as NafCode[],
@@ -273,8 +274,8 @@ export const remapItem = (
 }
 
 // UX HELPERS
-export const scrollToTop = (element: Element, disableWidget: boolean) => {
-  if (disableWidget) {
+export const scrollToTop = (element: Element) => {
+  if (!Widget.is) {
     element.scrollIntoView()
   } else {
     setTimeout(() => {

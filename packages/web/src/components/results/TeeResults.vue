@@ -158,7 +158,6 @@ interface Props {
   trackForm?: any
   tracksResults: UsedTrack[]
   trackElement: Element
-  disableWidget?: boolean
   debug?: boolean
 }
 const props = defineProps<Props>()
@@ -230,8 +229,8 @@ const updateDetailResult = async (id: string | number) => {
   } else {
     // Set detail infos
     programs.setDetailResult(id, props.trackId)
-    await nav.setCurrentDetailId(id, props.disableWidget)
-    scrollToTop(props.trackElement, props.disableWidget)
+    await nav.setCurrentDetailId(id)
+    scrollToTop(props.trackElement)
   }
 }
 

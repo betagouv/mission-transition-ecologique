@@ -15,6 +15,7 @@ import { redirections } from '@/router/redirection'
 import { TrackId } from '@/types'
 import type { Component } from 'vue'
 import { resetDetailProgram, resetTrackStore, setHelpAsTrackSeed, setResultsAsTrackSeed } from '@/router/hook'
+import TeeQuestionnaire from '@/components/TeeQuestionnaire.vue'
 
 export const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
@@ -35,10 +36,9 @@ export const router = createRouter({
         {
           path: '',
           name: 'questionnaire',
-          component: WidgetApp as Component,
+          component: TeeQuestionnaire as Component,
           props: {
-            seed: TrackId.Help,
-            disableWidget: true
+            seed: TrackId.Help
           }
         }
       ]
@@ -53,8 +53,7 @@ export const router = createRouter({
           name: RouteName.Catalog,
           component: WidgetApp as Component,
           props: {
-            seed: TrackId.Results,
-            disableWidget: true
+            seed: TrackId.Results
           }
         },
         {

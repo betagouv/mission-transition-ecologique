@@ -257,7 +257,6 @@
               :track-form="track?.form"
               :tracks-results="tracks.usedTracks"
               :track-element="trackElement"
-              :disable-widget="disableWidget"
               :debug="debug || false"
             />
           </div>
@@ -330,7 +329,6 @@ interface Props {
   trackId: TrackId
   isCompleted: boolean
   trackElement: Element
-  disableWidget?: boolean
   debug?: boolean
 }
 const props = defineProps<Props>()
@@ -560,7 +558,7 @@ const saveSelection = () => {
     tracks.removeFurtherUsedTracks(props.trackId)
   }
 
-  scrollToTop(props.trackElement, props.disableWidget)
+  scrollToTop(props.trackElement)
 }
 
 const backToPreviousTrack = () => {
@@ -569,6 +567,6 @@ const backToPreviousTrack = () => {
   tracks.setUsedTracksAsNotCompleted(TrackToGoBackTo)
   tracks.removeFurtherUsedTracks(TrackToGoBackTo)
 
-  scrollToTop(props.trackElement, props.disableWidget)
+  scrollToTop(props.trackElement)
 }
 </script>

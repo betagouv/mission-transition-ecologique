@@ -245,6 +245,7 @@ import type { TrackId, ProgramData } from '@/types'
 import ProgramObjective from '@/components/program/ProgramObjective.vue'
 import { useRoute, useRouter } from 'vue-router'
 import { RouteName } from '@/types/routeType'
+import Widget from '@/utils/widget'
 
 const choices = choicesStore()
 const tracks = tracksStore()
@@ -264,7 +265,6 @@ const columnTiles = ref<string>('fr-col')
 interface Props {
   programId: string | number
   trackId: TrackId | undefined
-  disableWidget?: boolean
   debug?: boolean
 }
 const props = defineProps<Props>()
@@ -276,8 +276,8 @@ const resetDetailResult = async () => {
     await router.push({ name: RouteName.Catalog })
     return
   }
-  await nav.setCurrentDetailId('', props.disableWidget)
-  await nav.updateUrl(props.disableWidget)
+  await nav.setCurrentDetailId('')
+  await nav.updateUrl(!Widget.is)
 
   scrollToId(`${props.programId}`)
 }

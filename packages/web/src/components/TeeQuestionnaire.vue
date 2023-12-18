@@ -1,12 +1,9 @@
 <template>
+  <!-- QUESTIONNAIRE -->
   <div ref="trackElement" class="fr-container--fluid">
-    <!-- MATOMO -->
-    <TeeMatomo :debug="debugBool" />
-
-    <!-- QUESTIONNAIRE -->
     <div
       v-show="!programs.programDetail"
-      id="widget"
+      id="trackElement"
       :class="`fr-container--fluid ${tracks.currentStep && tracks.currentStep > 1 ? 'fr-pt-10v' : ''}`"
     >
       <!-- TRACKS INTERFACES -->
@@ -23,9 +20,8 @@
         <!-- TRACKS -->
         <div
           id="tee-app-tracks"
-          :class="`${tracks.currentStep && tracks.currentStep > 1 ? 'fr-tee-add-padding' : ''} ${getColumnsWidth} ${
-            debugBool ? '' : 'fr-grid-row--center'
-          }`"
+          :class="`${tracks.currentStep && tracks.currentStep > 1 ? 'fr-tee-add-padding' : ''} ${getColumnsWidth}`"
+          class="fr-grid-row--center"
         >
           <div
             v-for="(track, index) in tracks.usedTracks"
@@ -42,8 +38,8 @@
               :step="index + 1"
               :track-id="track.id as TrackId"
               :is-completed="!!tracks.isTrackCompleted(track.id as TrackId)"
-              :track-element="trackElement"
               :debug="debugBool"
+              :track-element="trackElement"
             />
           </div>
         </div>
@@ -62,47 +58,39 @@
 </template>
 
 <script setup lang="ts">
-// CONSOLE LOG TEMPLATE
-// console.log(`WidgetApp > FUNCTION_NAME > MSG_OR_VALUE :`)
+import { computed, onBeforeMount, onMounted, ref, watch } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 
-// cf : https://stackoverflow.com/questions/71163741/vuejs-script-setup-cannot-contain-es-module-exports
-
-import '@gouvfr/dsfr/dist/core/core.main.min.css'
-
-import { computed, onBeforeMount, ref, watch } from 'vue'
-
-import { tracksStore } from './stores/tracks'
-import { choicesStore } from './stores/choices'
-import { programsStore } from './stores/programs'
-import { navigationStore } from './stores/navigation'
-import { type ProgramData, TrackComponents, TrackId } from './types'
-import { deployMode, deployUrl, noDebugSwitch, programsFromJson, publicPath } from './utils/global'
-import TeeMatomo from './components/TeeMatomo.vue'
-import TeeTrack from './components/tracks/TeeTrack.vue'
-import TeeSidebar from './components/TeeSidebar.vue'
-import TeeProgramDetail from './components/program/TeeProgramDetail.vue'
-import Widget from '@/utils/widget'
+import { tracksStore } from '@/stores/tracks'
+import { choicesStore } from '@/stores/choices'
+import { programsStore } from '@/stores/programs'
+import { navigationStore } from '@/stores/navigation'
+import { type ProgramData, TrackComponents, TrackId } from '@/types'
+import { programsFromJson, publicPath } from '@/utils/global'
+import TeeTrack from '@/components/tracks/TeeTrack.vue'
+import TeeSidebar from '@/components/TeeSidebar.vue'
+import TeeProgramDetail from '@/components/program/TeeProgramDetail.vue'
 
 interface Props {
   locale?: string
   seed: TrackId
   programId?: string
+  datasetUrl?: string
   maxDepth?: string
-  debugSwitch?: boolean
-  debug?: boolean
 }
 const props = defineProps<Props>()
+
+const trackElement = ref<HTMLElement | null>(null)
 
 const tracks = tracksStore()
 const choices = choicesStore()
 const programs = programsStore()
 const nav = navigationStore()
 
-// HTML/Vue3 DOM ref
-const trackElement = ref<HTMLElement | null>(null)
-
-const debugSwitchBool = ref(false)
 const debugBool = ref(false)
+
+const router = useRouter()
+const route = useRoute()
 
 watch(
   () => tracks.usedTracks,
@@ -118,18 +106,15 @@ watch(
 )
 
 const needSidebar = computed(() => {
-  return tracks.seedTrack !== TrackId.Results && tracks.currentStep && (tracks.currentStep > 1 || !Widget.is)
+  return tracks.seedTrack !== TrackId.Results && tracks.currentStep && tracks.currentStep > 1
 })
 
 const getColumnsWidth = computed(() => {
   const currentTrack = tracks.getLastTrack
-  const colsDebug = 'fr-col-7'
   const colsStart = 'fr-col-12 fr-col-xl-12'
   const colsTracks = 'fr-col fr-col-sm-12 fr-col-md-8 fr-col-lg-8 fr-col-xl-6'
   const colsResults = 'fr-col fr-col-sm-12 fr-col-md-8 fr-col-lg-8 fr-col-xl-8'
-  if (debugBool.value) {
-    return colsDebug
-  } else if (tracks.seedTrack === TrackId.Results || (tracks.currentStep === 1 && Widget.is)) {
+  if (tracks.seedTrack === TrackId.Results || (tracks.currentStep === 1 && !true)) {
     return colsStart
   } else if ((currentTrack && (currentTrack.component as TrackComponents)) === TrackComponents.Results) {
     return colsResults
@@ -146,34 +131,23 @@ const setupGlobal = () => {
   programs.setDataset(programsFromJson as ProgramData[])
 
   // set locale and message
-  const locale = props.locale ?? 'fr'
+  const locale = props.locale || 'fr'
   choices.setLocale(locale)
+}
+
+const setupFromUrl = async () => {
+  const programId = props.programId || (route.query['teeDetail'] as string | null)
+  if (programId) {
+    await nav.setCurrentDetailId(programId)
+    programs.setDetailResult(programId, TrackId.Results)
+  }
+
+  nav.setCurrentTrackId(tracks.currentTrackId as TrackId)
+  nav.updateQueries(tracks.getAllUsedTracksValuesPairs)
 }
 
 onBeforeMount(() => {
   setupGlobal()
-
-  // inject style link in html head if not present
-  const href = deployMode ? `${deployUrl}/style.css` : ''
-  let needStyle = Widget.is
-  // avoid duplicates
-  const styleSheets = document.styleSheets.length
-  if (needStyle && styleSheets) {
-    for (let i = 0; i < styleSheets; i++) {
-      const docStyle = document.styleSheets[i]
-      if (docStyle.href == href) {
-        needStyle = false
-      }
-    }
-  }
-  if (needStyle && deployMode) {
-    const head = document.head
-    const link = document.createElement('link')
-    link.type = 'text/css'
-    link.rel = 'stylesheet'
-    link.href = href
-    head.appendChild(link)
-  }
 
   // set max depth at mount
   if (props.maxDepth) {
@@ -181,23 +155,20 @@ onBeforeMount(() => {
     tracks.setMaxDepth(maxDepthNum)
   }
 
-  // set debug mode
-  // no switch for production deployment
-
-  debugSwitchBool.value = !noDebugSwitch && props.debugSwitch
-  if (debugSwitchBool.value && props.debug) {
-    debugBool.value = props.debug
-  }
-
   // set first track at mount
   tracks.setSeedTrack(props.seed)
   tracks.addToUsedTracks(props.seed, props.seed)
 })
-</script>
 
-<style lang="scss">
-@import '~@gouvfr/dsfr/dist/dsfr.min.css'; // ok
-@import '@public/css/custom.css';
-@import '~@gouvfr/dsfr/dist/utility/icons/icons.min.css'; // ok
-@import '~@gouvminint/vue-dsfr/dist/vue-dsfr.css'; // ok
-</style>
+onMounted(async () => {
+  // cf: https://stackoverflow.com/questions/69495211/vue3-route-query-empty
+  await router.isReady()
+  await setupFromUrl()
+
+  // set detail program ID if any
+  if (props.programId) {
+    programs.setDetailResult(props.programId, props.seed)
+    await nav.setCurrentDetailId(props.programId)
+  }
+})
+</script>
