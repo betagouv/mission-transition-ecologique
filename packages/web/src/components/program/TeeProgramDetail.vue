@@ -276,6 +276,7 @@ const resetDetailResult = async () => {
     await router.push({ name: RouteName.Catalog })
     return
   }
+  programs.resetDetailResult()
   await nav.setCurrentDetailId('')
   await nav.updateUrl(!Widget.is)
 
