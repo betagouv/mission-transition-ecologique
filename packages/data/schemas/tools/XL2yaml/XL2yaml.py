@@ -308,8 +308,11 @@ def eligibility_sector(get) -> str:
 
 def eligibility_geography(get) -> list[str]:
     egr = get("Zones géographiques Régional")
+    egr = ", ".join(csv_to_list(egr))
     egs = get("Zones géographiques Spécifique")
+    egs = ", ".join(csv_to_list(egs))
     egd = get("Zones géographiques Départemental")
+    egd = ", ".join(csv_to_list(egd))
     eg = [eg for eg in [egr, egs, egd] if valid(eg)]
     if len(eg) > 0:
         return eg
