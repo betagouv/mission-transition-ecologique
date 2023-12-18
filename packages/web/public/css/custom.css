@@ -269,6 +269,9 @@ button.fr-link:hover, .tee-router-link:hover {
   font-size: 1.3rem;
   line-height: 1.3rem;
 }
+.tee-form-response-blue a {
+  white-space: nowrap;
+}
 .tee-form-response-blue {
   color: #000091;
 }
