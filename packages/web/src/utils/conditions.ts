@@ -28,7 +28,7 @@ const checkCondition = (condition: Condition, data: Record<string, unknown>): bo
   }
 }
 
-export const CheckNextTrackRules = (data: any, rules: NextTrackRule[]) => {
+export const CheckNextTrackRules = (data: Record<string, unknown>, rules: NextTrackRule[]) => {
   const boolArray = [true]
 
   rules.forEach((rule: NextTrackRule) => {

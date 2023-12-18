@@ -317,7 +317,7 @@ import { choicesStore } from '@/stores/choices'
 import { analyticsStore } from '@/stores/analytics'
 // import type { DsfrButton } from '@gouvminint/vue-dsfr/types'
 import type { ColsOptions, NextTrackRuleSet, Track, TrackOptionsUnion } from '@/types'
-import { isTrackOptionsInput, TrackBehaviorOperators, TrackComponents, TrackId } from '@/types'
+import { isTrackOptionsInput, TrackComponents, TrackId } from '@/types'
 import { remapItem, scrollToTop } from '@/utils/helpers'
 import { CheckNextTrackRules } from '@/utils/conditions'
 import TeeTrackInput from './TeeTrackInput.vue'
@@ -374,7 +374,7 @@ const customColWidth: number | string = track?.interface?.columnWidth ?? 0
 
 const allowMultiple: boolean = !!track?.behavior?.multipleChoices
 
-const optionsArray = track?.options?.filter((o): o is TrackOptions | TrackOptionsSelect | TrackOptionsInput => !o.disabled) ?? []
+const optionsArray = track?.options?.filter((o): o is TrackOptionsUnion => !o.disabled) ?? []
 
 // computed
 const isTrackResults = computed(() => {
