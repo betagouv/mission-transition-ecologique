@@ -1,5 +1,5 @@
 import type { Translations } from './translationTypes'
-
+import type { Plugin as VuePlugin } from 'vue'
 // FOR COMPONENTS
 
 export interface ColsOptions {
@@ -7,7 +7,7 @@ export interface ColsOptions {
 }
 
 export interface Plugin {
-  plugin: any
+  plugin: VuePlugin
   options?: object | null
   icons?: any[] | null
 }

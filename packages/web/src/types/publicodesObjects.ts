@@ -53,49 +53,15 @@ export const NAF1ToVar = (letter: string): string => Entreprise.CodeNAF1 + lette
 export const NAF1Letters = [...'ABCDEFGHIJKLMNOPQRSTU'] as const
 
 // publicodes variable initialization to "non"
-export const codesNAF1: { [p: string]: YesNo } = Object.fromEntries(
-  NAF1Letters.map((l) => [NAF1ToVar(l), YesNo.No])
-)
+export const codesNAF1: { [p: string]: YesNo } = Object.fromEntries(NAF1Letters.map((l) => [NAF1ToVar(l), YesNo.No]))
 
 export const SectorByNAF = {
   [EntrepriseSector.Craftsmanship]: ['C', 'F', 'G'],
   [EntrepriseSector.Industry]: ['B', 'C', 'D', 'E'],
   [EntrepriseSector.Tourism]: ['I'],
-  [EntrepriseSector.Tertiary]: [
-    'G',
-    'H',
-    'J',
-    'K',
-    'L',
-    'M',
-    'N',
-    'O',
-    'P',
-    'Q',
-    'R',
-    'S',
-    'T',
-    'U'
-  ],
+  [EntrepriseSector.Tertiary]: ['G', 'H', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U'],
   [EntrepriseSector.Agriculture]: ['A'],
-  [EntrepriseSector.Other]: [
-    'D',
-    'E',
-    'F',
-    'H',
-    'J',
-    'K',
-    'L',
-    'M',
-    'N',
-    'O',
-    'P',
-    'Q',
-    'R',
-    'S',
-    'T',
-    'U'
-  ]
+  [EntrepriseSector.Other]: ['D', 'E', 'F', 'H', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U']
 }
 
 enum Objective {

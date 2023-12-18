@@ -53,9 +53,7 @@ export const needs: Track = {
       value: { project_needs: 'advices' },
       title: { fr: 'Conseils' },
       label: { fr: 'Je souhaite être conseillé pour réduire mon impact environnemental' },
-      hint: {
-        fr: 'Faites des économies, cadrez un projet avec un accompagnement, un expert, un diagnostic adapté à votre situation'
-      },
+      hint: { fr: 'Faites des économies, cadrez un projet avec un accompagnement, un expert, un diagnostic adapté à votre situation' },
       next: {
         default: TrackId.Goals
       }
@@ -65,9 +63,7 @@ export const needs: Track = {
       value: { project_needs: 'financing' },
       title: { fr: 'Financements' },
       label: { fr: 'J’ai un projet de transition écologique et je cherche un financement' },
-      hint: {
-        fr: 'Obtenez une aide technique ou financière pour vos investissements ou un projet ayant un impact environnemental'
-      },
+      hint: { fr: 'Obtenez une aide technique ou financière pour vos investissements ou un projet ayant un impact environnemental' },
       next: {
         default: TrackId.Goals
       }

@@ -1,7 +1,9 @@
 {
   "include": [
-    "data/**/*",
-    "src/**/*"
+    "src/**/*",
+    "tests/**/*",
+    "generated/**/*",
+    "generated/swagger.json",
   ],
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
@@ -10,6 +12,8 @@
     // Directory in which to put the generated js code
     "outDir": "./build",
     "target": "ESNext",
+    "composite": true,
+    "declaration": true,
     // stricter config
     "allowUnusedLabels": false,
     "allowUnreachableCode": false,
@@ -25,6 +29,7 @@
     // tsoa uses decorators
     "experimentalDecorators": true,
 
+    "allowJs": true,
     "checkJs": true
   }
 }

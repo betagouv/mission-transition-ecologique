@@ -3,6 +3,8 @@ promesse: Accédez à des aides forfaitaires dans les domaines de la transition 
 description: Le guichet « Tremplin pour la transition écologique des PME » permet
   de faire évoluer votre entreprise en cohérence avec la transition écologique. L’ADEME
   soutient le financement rapide des investissements et études dont vous avez besoin.
+début de validité: 01/01/2023
+fin de validité: 31/12/2023
 illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/tremplin-transition-ecologique-pme
@@ -16,6 +18,20 @@ objectifs:
 - Déposer un seul dossier pour plusieurs études et/ou investissements.
 - Réalisez votre investissement et votre étude dans les 18 mois du contrat.
 - Obtenez un paiement final sur attestation et justificatifs.
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - TPE et PME
+  - Non éligible aux micro-entreprises
+  secteur géographique:
+  - France et territoires d'outre-mer
+  secteur d'activité:
+  - Tous secteurs d’activité
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+  - 'L''opération pour laquelle vous sollicitez une aide financière ne doit pas avoir
+    commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque
+    forme que ce soit : marché signé, commande signée, devis accepté…)'
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

@@ -10,6 +10,8 @@ description longue: "• L’étude d’opportunité vise à accompagner les pot
   \ zone industrielle…). \n• L’étude de faisabilité se concentre sur le déploiement\
   \ de l'hydrogène sur un territoire où une demande suffisante aura été préalablement\
   \ identifiée."
+début de validité: 01/01/2023
+fin de validité: 31/12/2023
 illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Opportunit%C3%A9%20et%20faisabilit%C3%A9%20d%C3%A9ploiement%20hydrog%C3%A8ne%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202023.pdf
@@ -29,6 +31,20 @@ objectifs:
 - A la fin de l'étude,   vous déterminerez la pertinence de préparer un projet de
   décarbonation via l’hydrogène. Une étude d’opportunité peut éventuellement déboucher
   sur une étude de faisabilité.
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Toutes tailles
+  - Éligible aux micro-entreprises
+  secteur géographique:
+  - France et territoires d'outre-mer
+  secteur d'activité:
+  - Tous secteurs d’activité
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+  - 'L''opération pour laquelle vous sollicitez une aide financière ne doit pas avoir
+    commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque
+    forme que ce soit : marché signé, commande signée, devis accepté…)'
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

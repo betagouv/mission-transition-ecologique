@@ -19,6 +19,16 @@ objectifs:
 - Lancez vos premières actions.
 - Réalisez en moyenne 45 000 € d'économies par an et par site de production ou établissement
   (sur la base de 678 missions restituées).
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - De 20 à 49 salariés
+  - Non éligible aux micro-entreprises
+  secteur géographique:
+  - France et territoires d'outre-mer
+  secteur d'activité:
+  - Tous secteurs d’activité
+  nombre d'années d'activité:
+  - Au moins 1 an d’activité
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

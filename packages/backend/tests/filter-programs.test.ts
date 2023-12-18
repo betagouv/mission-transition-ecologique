@@ -1,6 +1,6 @@
-import { ProgramData } from '@tee/web/src/types/programTypes'
-import { makeProgram } from './testing'
-import { filterPrograms, FILTERING_RULE_NAME } from '../src/domain/eligibility'
+import type { ProgramData } from '@tee/web/src/types/programTypes'
+import { makeProgramHelper } from './testing'
+import { filterPrograms, FILTERING_RULE_NAME } from '../src/domain/filter-programs'
 import { Result, ResultNS } from 'true-myth'
 
 const rulesBoilerplate = {
@@ -8,6 +8,8 @@ const rulesBoilerplate = {
   'entreprise . effectif': null,
   [FILTERING_RULE_NAME]: 'entreprise . effectif > 0'
 }
+
+const makeProgram = (rules: object) => makeProgramHelper({ rules: rules })
 
 // As we do not use ES6 modules, I could not find more elegant way to import Ok
 type Ok<T, E> = ResultNS.Ok<T, E>
@@ -150,7 +152,7 @@ describe(`
 error`, () => {
   type TestCase = {
     name: string
-    rules: {}
+    rules: object
     inputData: Record<string, number>
   }
 
@@ -169,7 +171,7 @@ error`, () => {
 
   testCases.map((tc) => {
     test(`${tc.name}`, () => {
-      var result = filterPrograms([makeProgram(tc.rules)], tc.inputData)
+      const result = filterPrograms([makeProgram(tc.rules)], tc.inputData)
 
       expectToBeOk(result)
     })
@@ -182,10 +184,7 @@ describe(`
   EXPECT an explicit error
 `, () => {
   test('invalid rule', () => {
-    var result = filterPrograms(
-      [makeProgram({ [FILTERING_RULE_NAME]: 'invalid Publicode expression' })],
-      {}
-    )
+    const result = filterPrograms([makeProgram({ [FILTERING_RULE_NAME]: 'invalid Publicode expression' })], {})
 
     expectToBeErr(result)
   })
@@ -208,7 +207,7 @@ describe(`
 
       const inputData = { codeNaf: inputNAFCode }
 
-      var result = filterPrograms([program], inputData)
+      const result = filterPrograms([program], inputData)
 
       expectToBeOk(result)
 

@@ -20,9 +20,9 @@ const generateProgramType = (): void => {
   const generatedTypeDir = path.join('src', 'generated')
   createFolderIfNotExists(generatedTypeDir)
 
-  compileFromFile(schemaPath).then((ts) =>
-    fs.writeFileSync(path.join(generatedTypeDir, 'program.d.ts'), ts)
-  )
+  compileFromFile(schemaPath)
+    .then((ts: string) => fs.writeFileSync(path.join(generatedTypeDir, 'program.d.ts'), ts))
+    .catch((err: Error) => console.error(err))
 
   console.log('🖊️ Types successfully written to', generatedTypeDir)
 }

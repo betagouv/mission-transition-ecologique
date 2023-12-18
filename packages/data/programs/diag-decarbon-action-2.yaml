@@ -19,6 +19,19 @@ objectifs:
 - Mettre en place les premières actions de la conduite du changement au sein de votre
   entreprise (alignement des équipes, formation, communication, etc.) et avec vos
   principaux clients et fournisseurs.
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - De 250 à 500 salariés
+  - Non éligible aux micro-entreprises
+  secteur géographique:
+  - France et territoires d'outre-mer
+  secteur d'activité:
+  - Tous secteurs d’activité
+  nombre d'années d'activité:
+  - Au moins 1 an d’activité
+  autres critères d'éligibilité:
+  - aucune démarche de bilan GES réalisée dans les 5 dernières années / non soumis
+    à la règlementation BEGES (art.L229-25)
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

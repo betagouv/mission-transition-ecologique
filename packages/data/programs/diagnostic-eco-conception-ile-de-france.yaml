@@ -10,6 +10,8 @@ description longue: 'L’éco-conception vise à prendre en compte et réduire l
   fin de vie, etc.
 
   L’éco-conception s’applique aux produits matériels mais également aux services.'
+début de validité: 01/01/2023
+fin de validité: 31/12/2025
 illustration: images/TEE_energie_verte.png
 opérateur de contact: CCI
 autres opérateurs:
@@ -29,6 +31,16 @@ objectifs:
 - 'En fonction de la maturité de votre projet, continuez avec une phase de pré-industrialisation
   : étude de faisabilité, essai, prototypage, recherche de partenaires techniques,
   etc. (phase 2)'
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - TPE, PME et ETI
+  - Éligible aux micro-entreprises
+  secteur géographique:
+  - Île-de-France
+  secteur d'activité:
+  - Tous secteurs d’activité
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

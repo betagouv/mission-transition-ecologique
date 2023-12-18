@@ -28,6 +28,8 @@ description longue: 'Cet appel à projets à deux objectifs :
 
 
   Dernière clôture de l''appel à projets : le 15/01/2024.'
+début de validité: 15/02/2023
+fin de validité: 15/01/2024
 illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/20230119/developpement-construction-renovation-hors-site-crhos?cible=79
@@ -41,6 +43,20 @@ objectifs:
   de financement précisant le montant d’aide maximum, les conditions et les modalités
   de versement.
 - Réalisez vos investissements.
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Toutes tailles
+  - Éligible aux micro-entreprises
+  secteur géographique:
+  - France et territoires d'outre-mer
+  secteur d'activité:
+  - Entreprises de préfabrication ou d'assemblage
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+  - 'L''opération pour laquelle vous sollicitez une aide financière ne doit pas avoir
+    commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque
+    forme que ce soit : marché signé, commande signée, devis accepté…)'
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

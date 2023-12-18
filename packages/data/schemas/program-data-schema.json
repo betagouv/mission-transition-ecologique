@@ -20,6 +20,16 @@
       "description": "La description longue La description longue est facultative. Elle peut être ajoutée si on juge que l'utilisateur ne dispose pas des informations suffisantes avec les seules autres informations. Elle peut être ajoutée par exemple pour définir un terme technique, pour détailler une loi à laquelle un dispositif fait référence ou pour détailler les projets concernés par un financement",
       "type": "string"
     },
+    "début de validité": {
+      "description": "Premier jour de validité de l'offre. Date au format JJ/MM/AAAA",
+      "type": "string",
+      "pattern": "^[0-3][0-9]\/[0-1][0-9]\/[0-9]{4}$"
+    },
+    "fin de validité": {
+      "description": "Dernier jour de validité de l'offre. Date au format JJ/MM/AAAA",
+      "type": "string",
+      "pattern": "^[0-3][0-9]\/[0-1][0-9]\/[0-9]{4}$"
+    },
     "url": {
       "description": "TODO",
       "type": "string"
@@ -86,6 +96,48 @@
       "description": "Ce champ est utile uniquement si l'aide est de nature \"prêt\", mais facultatif. Il s'agit d'un champ texte, à des fins d'affichage.",
       "type": "string"
     },
+    "conditions d'éligibilité": {
+      "description": "Les conditions d'éligibilité, écrites en langage naturel, pour affichage sur la fiche de résultat",
+      "type": "object",
+      "properties": {
+        "secteur d'activité": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "secteur géographique": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "taille de l'entreprise": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 2
+        },
+        "nombre d'années d'activité": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "autres critères d'éligibilité": {
+          "type": "array",
+          "items": {
+             "type": "string"
+            },
+           "minItems": 1
+        }
+      },
+      "required": ["taille de l'entreprise", "secteur géographique", "secteur d'activité", "nombre d'années d'activité"]
+    },
     "publicodes": {
       "description": "Mécanismes publicodes (https://publi.codes/) associés au dispositif. Doit être en langage publicodes valide. Les données nécessaires à l'évaluation des règles (contrat d'interface) sont matérialisés par des clés sans valeurs.",
       "type": "object",
@@ -135,6 +187,7 @@
     "objectifs",
     "opérateur de contact",
     "nature de l'aide",
+    "conditions d'éligibilité",
     "publicodes"
   ],
   "additionalProperties": false,

@@ -14,6 +14,8 @@ description longue: 'Baisse les Watts vous aide à réduire votre consommation e
   - GPL,
 
   - RCU (Réseau de chaleur urbain) – hors carburants.'
+début de validité: 01/01/2023
+fin de validité: 31/12/2025
 illustration: images/TEE_eolienne.png
 opérateur de contact: La Poste
 autres opérateurs:
@@ -30,6 +32,16 @@ objectifs:
 - Identifiez des écogestes afin de baisser votre facture énergétique.
 - Bénéficiez d'un accompagnement personnalisé avec le suivi d’un conseiller.
 - Suivez un programme de formation (séances en présentiel ou formation e-learning).
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - TPE et PME
+  - Éligible aux micro-entreprises
+  secteur géographique:
+  - France et territoires d'outre-mer
+  secteur d'activité:
+  - Tous secteurs d’activité
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

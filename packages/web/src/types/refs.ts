@@ -1,4 +1,5 @@
 export interface NafCode {
+  [key: string]: string | string[]
   tags: string[]
   NIV5: string
   NIV4: string
@@ -9,6 +10,7 @@ export interface NafCode {
 }
 
 export interface ComCode {
+  [key: string]: string | null
   // Code commune
   COM: string
   // Libelle région

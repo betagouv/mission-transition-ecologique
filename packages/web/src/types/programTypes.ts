@@ -29,7 +29,15 @@ export interface ProgramData {
   'taux du prêt'?: string
   url?: string
 
-  publicodes: Object
+  "conditions d'éligibilité": {
+    "taille de l'entreprise": string[]
+    'secteur géographique': string[]
+    "secteur d'activité": string[]
+    "nombre d'années d'activité": string[]
+    "autres critères d'éligibilité"?: string[]
+  }
+
+  publicodes: object
 
   // program_conditions?: ProgramConditions,
   // program_application?: any,

@@ -21,6 +21,16 @@ objectifs:
 - Être conseillé sur la maitrise des dépenses énergétiques et l’optimisation de votre
   fiscalité énergétique
 - Suivre un programme de formations pour les référents énergie dans votre entreprise
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - PME
+  - Non éligible aux micro-entreprises
+  secteur géographique:
+  - France et territoires d'outre-mer
+  secteur d'activité:
+  - Tous secteurs d’activité
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

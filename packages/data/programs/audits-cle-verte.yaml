@@ -4,6 +4,8 @@ promesse: Restaurateurs & hébergeurs, obtenez un label pour valoriser l'engagem
 description: 'Mettez à profit vos actions engagées en matière de développement durable,
   obtenez une certification et valorisez votre entreprise auprès de vos collaborateurs
   et à l’externe : investisseurs, fournisseurs, prestataires, etc.'
+début de validité: 01/05/2023
+fin de validité: 31/12/2026
 illustration: images/TEE_energie_verte.png
 opérateur de contact: CCI
 url: https://www.cci.fr/offre/valorisez-les-demarches-environnementales-de-votre-entreprise
@@ -18,6 +20,16 @@ objectifs:
   à votre entreprise.
 - Bénéficier d'un suivi de votre démarche jusqu'à l’obtention du label, de la certification.
 - Etre conseillé pour valoriser le label/certification obtenue.
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - TPE et PME
+  - Éligible aux micro-entreprises
+  secteur géographique:
+  - France et territoires d'outre-mer
+  secteur d'activité:
+  - Hôtellerie & restauration
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

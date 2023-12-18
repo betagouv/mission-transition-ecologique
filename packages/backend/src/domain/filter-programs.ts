@@ -18,18 +18,15 @@ export const FILTERING_RULE_NAME: string = 'entreprise . est ciblée'
 
 /** Filter out programs for which the company is not eligible
  *
- * @param programs - A list of programs, holding data on their eligibility
- *   rules (`publicodes` property)
+ * @param programs - A list of programs, holding data on their filtering
+ *   rules (inside the `publicodes` property)
  * @param inputData - Data associated with the company or the user inputs.
  * @returns Programs from `programs` that are either eligible (rules evaluate
  *   to `true`) or which eligibility cannot be assessed (rules evaluate to
  *   `undefined`, for instance with missing data)
  */
-export const filterPrograms = (
-  programs: ProgramData[],
-  inputData: QuestionnaireData
-): Result<ProgramData[], Error> => {
-  let filteredPrograms: ProgramData[] = []
+export const filterPrograms = (programs: ProgramData[], inputData: QuestionnaireData): Result<ProgramData[], Error> => {
+  const filteredPrograms: ProgramData[] = []
 
   for (const program of programs) {
     const evaluation = evaluateRule(program.publicodes, inputData)
@@ -67,10 +64,7 @@ const shouldKeepProgram = (evaluation: Result<boolean | undefined, Error>): bool
  *   `undefined` if the input data does not allow to fully evaluate the rule) or
  *   the Error if any.
  */
-const evaluateRule = (
-  rules: any,
-  questionnaireData: QuestionnaireData
-): Result<boolean | undefined, Error> => {
+const evaluateRule = (rules: object, questionnaireData: QuestionnaireData): Result<boolean | undefined, Error> => {
   let engine: Engine
   try {
     engine = new Engine(rules)
@@ -89,9 +83,7 @@ const evaluateRule = (
   const eligibility = evaluation.nodeValue
 
   if (typeof eligibility !== 'boolean' && typeof eligibility !== 'undefined') {
-    return Result.err(
-      new Error(`"${FILTERING_RULE_NAME}" is expected to be a boolean or undefined`)
-    )
+    return Result.err(new Error(`"${FILTERING_RULE_NAME}" is expected to be a boolean or undefined`))
   }
   return Result.ok(eligibility)
 }
@@ -116,15 +108,11 @@ const addErrorDetails = (err: Error, programName: string): Error => {
 
 /** preprocesses the data gathered from the questionnaire into variables
  * needed by publicodes */
-const preprocessInputForPublicodes = (
-  questionnaireData: QuestionnaireData
-): PublicodesInputData => {
-  let publicodesData: PublicodesInputData = { ...questionnaireData }
+const preprocessInputForPublicodes = (questionnaireData: QuestionnaireData): PublicodesInputData => {
+  const publicodesData: PublicodesInputData = { ...questionnaireData }
 
   if (questionnaireData.codeNaf) {
-    publicodesData['entreprise . code NAF'] = enquotePublicodesLiteralString(
-      questionnaireData.codeNaf
-    )
+    publicodesData['entreprise . code NAF'] = enquotePublicodesLiteralString(questionnaireData.codeNaf)
   }
 
   return publicodesData

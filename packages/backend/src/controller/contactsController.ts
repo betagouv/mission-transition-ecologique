@@ -52,9 +52,11 @@ export class ContactInfoController extends Controller {
       const err = contactInfoResult.error
 
       if (err instanceof ServiceNotFoundError) {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-return
         return notFoundResponse(404, { message: 'Contact not created' })
       }
 
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       return requestFailedResponse(500, { message: `Server internal error` })
     }
 

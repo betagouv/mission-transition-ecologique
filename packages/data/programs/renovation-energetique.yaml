@@ -18,6 +18,8 @@ description longue: "Ce crédit d'impôt pour les PME s'applique aux dépenses d
   \ flux ou double flux,\nRaccordement à un réseau de chaleur ou de froid,\n- Acquisition\
   \ et pose d'une chaudière biomasse,\n- Acquisition et pose d'un système de régulation\
   \ ou de programmation du chauffage et de la ventilation."
+début de validité: 01/01/2023
+fin de validité: 31/12/2024
 illustration: images/TEE_eolienne.png
 opérateur de contact: DDFIP
 url: https://entreprendre.service-public.fr/vosdroits/F35585
@@ -29,6 +31,16 @@ objectifs:
 - Déclarez le crédit d'impôt au moment de la déclaration de vos résultats ou de vos
   revenus.
 - Recevez une aide en crédit d'impôt à hauteur de 30% des dépenses de rénovation engagées.
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - TPE et PME
+  - Non éligible aux micro-entreprises
+  secteur géographique:
+  - Outre-mer
+  secteur d'activité:
+  - Secteur tertiaire
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

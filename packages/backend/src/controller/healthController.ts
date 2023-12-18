@@ -11,7 +11,7 @@ export class HealthController extends Controller {
    */
   @Example<string>('OK')
   @Get()
-  public async health(): Promise<string> {
+  public health(): string {
     this.setStatus(200)
     this.setHeader('Content-Type', 'text/plain')
     return 'OK'

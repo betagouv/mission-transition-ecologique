@@ -27,13 +27,9 @@ const checkCondition = (condition: Condition, data: any): boolean => {
 }
 
 export const CheckNextTrackRules = (data: any, rules: NextTrackRule[]) => {
-  // console.log()
-  // console.log('utils > conditions > CheckNextTrackRules > data :', data)
-  // console.log('...')
   const boolArray = [true]
 
   rules.forEach((rule: NextTrackRule) => {
-    // console.log('utils > conditions > CheckNextTrackRules > rule :', rule)
     const bool = checkConditions(rule.conditions, data)
     boolArray.push(bool)
   })
