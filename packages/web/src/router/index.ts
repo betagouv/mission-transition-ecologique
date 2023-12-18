@@ -60,7 +60,7 @@ export const router = createRouter({
         },
         {
           path: ':programId',
-          name: RouteName.CatalogueDetail,
+          name: RouteName.CatalogDetail,
           component: TeeProgramDetail as Component,
           props: (route) => ({
             programId: route.params.programId as string,

@@ -27,6 +27,16 @@ objectifs:
   et gratuites à l’ensemble des industriels bretons pour s’informer, confronter ses
   idées et densifier son réseau régional. (webinaires, ateliers, visites d'entreprise,
   rencontres...)
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - PMI
+  - Éligible aux micro-entreprises
+  secteur géographique:
+  - Bretagne
+  secteur d'activité:
+  - Industrie
+  nombre d'années d'activité:
+  - Au moins 3 ans d’activité
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

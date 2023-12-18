@@ -17,6 +17,16 @@ objectifs:
 - Optimisez le type de contrat souscrit avec vos fournisseurs d’énergie
 - Engagez un système de suivi de votre consommation d'énergie et bénéficiez de conseils
   sur des financements potentiels.
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - TPE et PME
+  - Éligible aux micro-entreprises
+  secteur géographique:
+  - France et territoires d'outre-mer
+  secteur d'activité:
+  - Artisan
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

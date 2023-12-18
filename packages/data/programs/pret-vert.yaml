@@ -27,6 +27,25 @@ objectifs:
 - Exprimez votre intérêt pour ce prêt à Bpifrance grâce au formulaire ci-dessous
 - Obtenez un rendez-vous de financement auprès d'un chargé d'affaires Bpifrance
 - Bpifrance étudie votre demande de prêt
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - PME et ETI
+  - Non éligible aux micro-entreprises
+  secteur géographique:
+  - France et territoires d'outre-mer
+  secteur d'activité:
+  - Tous secteurs d’activité
+  - 'Sont exclus : les activités d’intermédiation financière (NAF : section K64 sauf
+    64-2 pour les achats d’entreprises) ; les activités de promotion immobilière et
+    marchand de biens (NAF : section L68-1, L68-2 et F41-1) ; les entreprises des
+    secteurs agricoles identifiées par les code NAF section A01, et section A02 dont
+    le chiffre d’affaires est inférieur à 750 000 €, à l’exception des codes NAF 02.20Z
+    et 02.40Z (entreprises forestières)'
+  nombre d'années d'activité:
+  - Au moins 3 ans d’activité
+  autres critères d'éligibilité:
+  - Ce prêt est obligatoirement associé à un concours bancaire du même montant
+  - Sont exclues les entreprises en difficulté au sens de la définition européenne
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
@@ -40,7 +59,8 @@ publicodes:
     toutes ces conditions:
     - effectif >= 1
     - effectif <= 4999
-  entreprise . est dans un secteur d'activité éligible: est secteur d'activité exclu = non
+  entreprise . est dans un secteur d'activité éligible: est secteur d'activité exclu
+    = non
   est secteur d'activité exclu:
     une de ces conditions:
     - est activité d'intermédiation financière

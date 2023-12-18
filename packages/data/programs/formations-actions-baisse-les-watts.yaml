@@ -18,6 +18,16 @@ objectifs:
   pour mettre en place de premières actions adaptées à votre activité
 - Apprendre à suivre votre consommation d'énergie dans le temps grâce à un "carnet
   de bord énergie"
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - TPE PME hors PMI
+  - Éligible aux micro-entreprises
+  secteur géographique:
+  - France et territoires d'outre-mer
+  secteur d'activité:
+  - Tous secteurs d’activité
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

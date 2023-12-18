@@ -42,6 +42,21 @@ objectifs:
   description du projet, rapport d''audit énergétique, détails techniques et financiers,
   etc. A ce stade, votre audit ou missions d''ingénierie ne doivent pas avoir commencé
   !'
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Toutes tailles
+  - Non éligible aux micro-entreprises
+  secteur géographique:
+  - Bretagne|Occitanie|Auvergne-Rhône-Alpes|Corse
+  secteur d'activité:
+  - Secteur tertiaire
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+  - Être une entreprise privée ayant des bâtiments d'activités tertiaires
+  - 'L''opération pour laquelle vous sollicitez une aide financière ne doit pas avoir
+    commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque
+    forme que ce soit : marché signé, commande signée, devis accepté…)'
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
