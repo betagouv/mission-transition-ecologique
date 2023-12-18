@@ -179,12 +179,12 @@ const mainLinks = [
   {
     // router ok
     label: 'Mentions légales',
-    to: '/mentions-legales'
+    to: { name: RouteName.Legal }
   },
   {
     // router ok
     label: 'Données personnelles',
-    to: '/donnees-personnelles'
+    to: { name: RouteName.PersonalData }
   },
   {
     label: 'Code source',
