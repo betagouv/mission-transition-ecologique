@@ -2,11 +2,18 @@ import type { Translations, FormCallback, FormCallbackDataMapping, FormOptions, 
 import { ConditionOperators } from '@tee/web/src/types/conditionOperators'
 
 // FOR TRACKS
-export interface ConditionTrack {
-  type?: string
-  operator?: ConditionOperators
-  value?: any
+type ConditionIs = {
+  type: string
+  operator: ConditionOperators.is
+  value: string | number | object
 }
+
+type ConditionExistsOrIsMissing = {
+  type: string
+  operator: ConditionOperators.exists | ConditionOperators.isMissing
+}
+
+export type Condition = ConditionIs | ConditionExistsOrIsMissing
 
 export enum TrackCalloutType {
   info = 'info'
@@ -41,13 +48,8 @@ export interface TrackInterface {
   component: TrackComponents
   columnWidth?: number | string
 }
-export enum TrackBehaviorOperators {
-  or = ConditionOperators.or
-}
 export interface TrackBehavior {
   multipleChoices?: boolean
-  singleChoice?: boolean
-  operator?: TrackBehaviorOperators
 }
 export interface TrackOptionsField {
   id: string
@@ -71,7 +73,7 @@ export enum TrackFieldType {
 }
 
 export interface NextTrackRule extends FormCallbackDataMapping {
-  conditions: ConditionTrack[]
+  conditions: Condition[]
 }
 
 export interface NextTrackRuleSet {
