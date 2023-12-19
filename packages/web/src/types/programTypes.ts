@@ -14,6 +14,8 @@ export interface ProgramData {
   promesse: string
   description: string
   'description longue'?: string
+  'début de validité'?: string
+  'fin de validité'?: string
   illustration: string
   objectifs: string[]
   'opérateur de contact': string

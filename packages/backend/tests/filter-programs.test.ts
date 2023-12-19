@@ -194,8 +194,7 @@ describe(`
   GIVEN  input data from the questionnaire
     AND  rules that use values from the keys of "PublicodesInputData" type
    WHEN  the rules are evaluated
-  EXPECT the values from "PublicodesInputData" used for evaluation are properly mapped to the
-         questionnaire data
+ EXPECT the values from "PublicodesInputData" used for evaluation are properly computed from the questionnaire data
 `, () => {
   const testCodeNAFMapping = (inputNAFCode: string, programNAFCode: string) => {
     test(`"codeNaf" mapped to "entreprise . code NAF" (input: ${inputNAFCode}, program: ${programNAFCode})`, () => {
@@ -225,4 +224,31 @@ describe(`
   for (const testCase of testCases) {
     testCodeNAFMapping(testCase.inputNAFCode, testCase.programNAFCode)
   }
+})
+
+describe(`
+  GIVEN  data from the program
+    AND  rules that use values from the keys of "PublicodesInputData" type
+   WHEN  the rules are evaluated
+ EXPECT  the values from "PublicodesInputData" used for evaluation to be properly computed from the program data
+`, () => {
+  test(`"début de validité" mapped to "dispositif . début de validité", interpreted as date`, () => {
+    const program = makeProgram({
+      dispositif: null,
+      'dispositif . début de validité': null,
+      [FILTERING_RULE_NAME]: 'dispositif . début de validité > 01/01/2024'
+    })
+
+    program['début de validité'] = '19/12/2023'
+
+    const result = filterPrograms([program], {})
+
+    if (!result.isOk) {
+      console.log(result.error)
+    }
+    expectToBeOk(result)
+
+    const expectedLength = 0
+    expect(result.value).toHaveLength(expectedLength)
+  })
 })
