@@ -242,7 +242,7 @@ interface Props {
   formOptions: FormOptions
   dataProps: DataProps
   program: ProgramData
-  formContainerRef: HTMLElement | null | undefined
+  formContainerRef?: HTMLElement | null | undefined
   debug?: boolean
 }
 const props = defineProps<Props>()
