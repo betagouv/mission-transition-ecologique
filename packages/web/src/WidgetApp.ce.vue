@@ -14,7 +14,7 @@
 
     <!-- DEBUGGING -->
     <div
-      v-if="debug"
+      v-if="debugBool"
       class="vue-debug">
       <h5>DEBUG - WidgetApp</h5>
       <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
@@ -235,6 +235,7 @@ import TeeSidebar from './components/TeeSidebar.vue'
 import TeeProgramDetail from './components/program/TeeProgramDetail.vue'
 import TeeCredits from './components/TeeCredits.vue'
 import { DsfrToggleSwitch } from '@gouvminint/vue-dsfr'
+import Widget from '@/utils/widget'
 
 interface Props {
   showHeader?: string
@@ -419,6 +420,10 @@ onBeforeMount(() => {
 
 onMounted(async () => {
   // cf: https://stackoverflow.com/questions/69495211/vue3-route-query-empty
+  if (Widget.is) {
+    return
+  }
+
   await router.isReady()
   if (!props.disableWidget) {
     nav.setRouter(router)

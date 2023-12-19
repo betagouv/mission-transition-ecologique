@@ -28,9 +28,6 @@
           allowMultiple : <code>{{ allowMultiple }} </code>
         </h6>
         <h6 class="fr-mb-1v">
-          trackOperator : <code>{{ trackOperator }} </code>
-        </h6>
-        <h6 class="fr-mb-1v">
           colsWidth : <code>{{ colsWidth }} </code>
         </h6>
         <h6 class="fr-mb-1v">selectionValues :</h6>
@@ -394,7 +391,7 @@ import { choicesStore } from '@/stores/choices'
 import { analyticsStore } from '@/stores/analytics'
 // import type { DsfrButton } from '@gouvminint/vue-dsfr/types'
 import type { ColsOptions, NextTrackRuleSet, Track, TrackOptionsUnion } from '@/types'
-import { isTrackOptionsInput, TrackBehaviorOperators, TrackComponents, TrackId } from '@/types'
+import { isTrackOptionsInput, TrackComponents, TrackId } from '@/types'
 import { remapItem, scrollToTop } from '@/utils/helpers'
 import { CheckNextTrackRules } from '@/utils/conditions'
 import TeeTrackInput from './TeeTrackInput.vue'
@@ -451,7 +448,6 @@ const customColWidth: number | string = track?.interface?.columnWidth ?? 0
 
 const allowMultiple: boolean = !!track?.behavior?.multipleChoices
 
-const trackOperator: boolean | TrackBehaviorOperators = track?.behavior?.operator || false
 const optionsArray = track?.options?.filter((o): o is TrackOptionsUnion => !o.disabled) ?? []
 
 // computed

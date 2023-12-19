@@ -1,21 +1,33 @@
 import { fileURLToPath, URL } from 'node:url'
-import { defineConfig } from 'vite'
+import { resolve } from 'path'
+import { type BuildOptions, defineConfig } from 'vite'
 import type { ServerOptions } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
-console.log()
 console.log('Starting ...')
 console.log('vite.config ...')
 
-// console.log('process.env.NODE_ENV : ', process.env.NODE_ENV)
-// console.log('process.env', process.env)
-
-// const mode = process.env.NODE_ENV || 'development'
-// console.log('vite.config > mode : ', mode)
-// const rawEnv = loadEnv(mode, process.cwd())
-// console.log('vite.config > rawEnv : ', rawEnv)
 const mode = process.env.NODE_ENV ?? 'development'
 const isProd = mode === 'production'
+
+type LibType = 'main' | 'widget'
+const LIB: LibType = (process.env.LIB as LibType) ?? 'main'
+const libConfig: Record<LibType, BuildOptions> = {
+  main: {
+    emptyOutDir: false
+  },
+  widget: {
+    emptyOutDir: false,
+    rollupOptions: {
+      input: resolve(__dirname, 'widget.html')
+    },
+    lib: {
+      name: 'gov-aid-tree-app',
+      entry: 'widget/widget.ce.ts',
+      fileName: 'widget'
+    }
+  }
+}
 
 const plugins = async () => {
   const basePlugins = [vue()]
@@ -27,37 +39,17 @@ const plugins = async () => {
   }
 }
 
-// VITE CONFIG
+const currentConfig = libConfig[LIB]
+
 const viteServer: ServerOptions = {
-  // host: 'localhost',
-  host: '0.0.0.0'
-  // port: 4242,
-  // open: '/index.html',
-  // open: '/public/index.html', // test other index file
+  host: '0.0.0.0',
+  port: 4242
 }
 
-// Set Vite config
-// https://vitejs.dev/config/
 export default defineConfig({
   server: viteServer,
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   plugins: [plugins()],
-  build: {
-    rollupOptions: {
-      input: {
-        main: 'index.html'
-      }
-    },
-    outDir: 'dist',
-    assetsDir: 'assets',
-    copyPublicDir: true,
-    lib: {
-      entry: 'src/main.ce.ts',
-      name: 'gov-aid-tree-app',
-      // the proper extensions will be added
-      fileName: 'gov-aid-tree-app'
-    }
-  },
+  build: currentConfig,
   define: {
     'process.env': process.env
   },

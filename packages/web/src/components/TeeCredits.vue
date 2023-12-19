@@ -52,7 +52,14 @@
             v-for="link in projectLinks"
             :key="link.href"
             class="fr-footer__bottom-item">
+            <router-link
+              v-if="link.to"
+              :to="link.to"
+              class="fr-footer__bottom-link">
+              {{ link.label }}
+            </router-link>
             <a
+              v-else
               :href="link.href"
               class="fr-footer__bottom-link">
               {{ link.label }}
@@ -81,6 +88,7 @@
 // console.log(`TeeCredits > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import { choicesStore } from '../stores/choices'
+import { RouteName } from '@/types/routeType'
 
 const choices = choicesStore()
 
@@ -117,15 +125,15 @@ const ecosystemLinks = [
 const projectLinks = [
   {
     label: 'Mission Transition',
-    href: 'https://mission-transition.beta.gouv.fr'
+    to: { name: RouteName.Homepage }
   },
   {
     label: "Startup d'Etat Transition Ecologique des Entreprises",
     href: 'https://beta.gouv.fr/startups/transition-ecologique-des-entreprises.html'
   },
   {
-    label: 'Conditions Générales',
-    href: 'https://mission-transition.beta.gouv.fr/mentions-legales'
+    label: 'Mentions légales',
+    to: { name: RouteName.Legal }
   },
   {
     label: 'Code source Mission Transition',

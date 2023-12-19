@@ -90,6 +90,7 @@ npm run start-all
 ```
 
 - Go to http://localhost:4242/ to access the front-end
+- Go to http://localhost:4242/widget/index.html to access the widget front-end
 
 ### Build
 
