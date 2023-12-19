@@ -74,6 +74,7 @@ const evaluateRule = (rules: object, questionnaireData: QuestionnaireData): Resu
   }
 
   const preprocessedData = preprocessInputForPublicodes(questionnaireData)
+  preprocessedData['dispositif . début de validité'] = '19/12/2023'
 
   const narrowedData = narrowInput(preprocessedData, engine)
 
