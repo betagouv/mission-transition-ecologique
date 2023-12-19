@@ -44,7 +44,7 @@ export const router = createRouter({
       ]
     },
     {
-      path: '/annuaire',
+      path: '/aides-entreprise',
       component: TeeCatalogPage as Component,
       beforeEnter: [resetDetailProgram, resetTrackStore, setResultsAsTrackSeed],
       children: [
