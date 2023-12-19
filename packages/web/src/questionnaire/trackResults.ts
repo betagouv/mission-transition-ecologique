@@ -235,7 +235,7 @@ Merci d'avance pour votre appel`,
       },
       {
         id: 'cgu',
-        help: 'https://mission-transition.beta.gouv.fr/donnee-personnelles-et-cookies',
+        help: 'https://mission-transition-ecologique.beta.gouv.fr/donnees-personnelles',
         label: {
           fr: "J'accepte d'être recontacté par l'équipe de Transition Ecologique des Entreprises *"
         },
@@ -248,7 +248,7 @@ Merci d'avance pour votre appel`,
           dans votre recherche d'aides
           à la transition écologique de votre entreprise.
           Voir également nos
-          <a href="https://mission-transition.beta.gouv.fr/donnee-personnelles-et-cookies" target="_blank">
+          <a href="https://mission-transition-ecologique.beta.gouv.fr/donnees-personnelles" target="_blank">
             Conditions Générales d'Utilisation
           </a>.
           <br>

@@ -96,6 +96,48 @@
       "description": "Ce champ est utile uniquement si l'aide est de nature \"prêt\", mais facultatif. Il s'agit d'un champ texte, à des fins d'affichage.",
       "type": "string"
     },
+    "conditions d'éligibilité": {
+      "description": "Les conditions d'éligibilité, écrites en langage naturel, pour affichage sur la fiche de résultat",
+      "type": "object",
+      "properties": {
+        "secteur d'activité": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "secteur géographique": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "taille de l'entreprise": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 2
+        },
+        "nombre d'années d'activité": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "autres critères d'éligibilité": {
+          "type": "array",
+          "items": {
+             "type": "string"
+            },
+           "minItems": 1
+        }
+      },
+      "required": ["taille de l'entreprise", "secteur géographique", "secteur d'activité", "nombre d'années d'activité"]
+    },
     "publicodes": {
       "description": "Mécanismes publicodes (https://publi.codes/) associés au dispositif. Doit être en langage publicodes valide. Les données nécessaires à l'évaluation des règles (contrat d'interface) sont matérialisés par des clés sans valeurs.",
       "type": "object",
@@ -145,6 +187,7 @@
     "objectifs",
     "opérateur de contact",
     "nature de l'aide",
+    "conditions d'éligibilité",
     "publicodes"
   ],
   "additionalProperties": false,

@@ -20,6 +20,16 @@ objectifs:
 - Valorisez votre démarche environnementale par l'obtention d'un label.
 - Identifiez une solution d'investissement, d'étude ou de formation, et soyez accompagné
   dans le montage de votre demande de financement.
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - TPE et PME
+  - Éligible aux micro-entreprises
+  secteur géographique:
+  - France et territoires d'outre-mer
+  secteur d'activité:
+  - Artisan
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

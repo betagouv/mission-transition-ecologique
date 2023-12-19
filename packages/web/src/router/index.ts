@@ -59,14 +59,14 @@ export const router = createRouter({
         },
         {
           path: ':programId',
-          name: RouteName.CatalogueDetail,
+          name: RouteName.CatalogDetail,
           component: TeeProgramPage as Component
         }
       ]
     },
     {
       path: '/mentions-legales',
-      name: 'legal',
+      name: RouteName.Legal,
       component: TeeLegalPage as Component
     },
     {
@@ -76,7 +76,7 @@ export const router = createRouter({
     },
     {
       path: '/donnees-personnelles',
-      name: 'personal-data',
+      name: RouteName.PersonalData,
       component: TeePersonalDataPage as Component
     },
     {

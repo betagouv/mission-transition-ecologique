@@ -1,5 +1,7 @@
 export enum RouteName {
   Homepage = 'homepage',
   Catalog = 'catalog',
-  CatalogueDetail = 'catalogue-detail'
+  CatalogDetail = 'catalog-detail',
+  PersonalData = 'personal-data',
+  Legal = 'legal'
 }

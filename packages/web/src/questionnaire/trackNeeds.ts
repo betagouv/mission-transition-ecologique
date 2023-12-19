@@ -24,8 +24,7 @@ export const needs: Track = {
     columnWidth: 'auto'
   },
   behavior: {
-    multipleChoices: false,
-    singleChoice: true
+    multipleChoices: false
   },
   options: [
     {
