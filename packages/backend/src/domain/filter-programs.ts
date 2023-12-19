@@ -109,9 +109,7 @@ const addErrorDetails = (err: Error, programName: string): Error => {
 /** preprocesses the data gathered from the questionnaire into variables
  * needed by publicodes */
 const preprocessInputForPublicodes = (questionnaireData: QuestionnaireData): PublicodesInputData => {
-  const publicodesData: PublicodesInputData = {
-    ...questionnaireData
-  }
+  const publicodesData: PublicodesInputData = { ...questionnaireData }
 
   if (questionnaireData.codeNaf) {
     publicodesData['entreprise . code NAF'] = enquotePublicodesLiteralString(questionnaireData.codeNaf)

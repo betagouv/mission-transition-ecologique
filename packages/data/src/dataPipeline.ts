@@ -45,10 +45,7 @@ export const readPrograms = (log: boolean = false): Program[] => {
     const yamlFilePath: string = `${dataDirPath}/${file}`
     const yamlFile: string = fs.readFileSync(yamlFilePath, 'utf8')
 
-    const program: Program = {
-      ...(yaml.load(yamlFile) as ProgramWithoutId),
-      id: id
-    }
+    const program: Program = { ...(yaml.load(yamlFile) as ProgramWithoutId), id: id }
 
     programs.push(program)
   })
@@ -71,10 +68,7 @@ export const prependInterface = (programs: Program[], log: boolean = false): Pro
   if (log) console.log('➕ prepending publicodes with common constants')
 
   return programs.map((p) => {
-    p.publicodes = {
-      ...constants,
-      ...p.publicodes
-    }
+    p.publicodes = { ...constants, ...p.publicodes }
     return p
   })
 }
