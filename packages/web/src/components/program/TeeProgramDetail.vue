@@ -6,10 +6,12 @@
       class="fr-btn fr-btn--tertiary-no-outline inline-flex fr-mb-3v fr-link"
       tertiary
       noOutline
-      @click="resetDetailResult">
+      @click="resetDetailResult"
+    >
       <v-icon
         name="ri-arrow-left-line"
-        aria-hidden="true"></v-icon>
+        aria-hidden="true"
+      ></v-icon>
       {{ choices.t('results.backToResults') }}
     </button>
 
@@ -21,7 +23,8 @@
           class="fr-responsive-img"
           :src="`${choices.publicPath}${program?.illustration}`"
           :alt="`image / ${program?.titre}`"
-          style="min-height: 100%; object-fit: cover" />
+          style="min-height: 100%; object-fit: cover"
+        />
       </div>
 
       <!-- TITLE & RESUME -->
@@ -34,15 +37,18 @@
         <!-- PROGRAM RESUME / TEXT-->
         <h6
           v-if="trackConfig.config?.showProgramSubtitles"
-          :style="`color: ${blockColor}`">
+          :style="`color: ${blockColor}`"
+        >
           {{ choices.t('program.programResume') }}
         </h6>
         <h2
           :style="`color: ${blockColor}`"
-          v-html="program?.promesse"></h2>
+          v-html="program?.promesse"
+        ></h2>
         <p
           style="color: #000091"
-          v-html="program?.description"></p>
+          v-html="program?.description"
+        ></p>
         <!-- <p
           v-if="program['description longue']"
           style="color: #000091"
@@ -60,14 +66,16 @@
 
         <ProgramObjective
           v-if="program"
-          :program="program"></ProgramObjective>
+          :program="program"
+        ></ProgramObjective>
       </div>
     </div>
 
     <!-- PROGRAM INFOS : PROVIDERS / TYPE / START / END -->
     <div
       v-if="trackConfig.config?.showProgramInfos"
-      class="fr-grid-row fr-grid-row--gutters fr-mb-5v">
+      class="fr-grid-row fr-grid-row--gutters fr-mb-5v"
+    >
       <!-- PROGRAM GEO ZONES -->
       <!-- <div
         v-if="program.geo_zones"
@@ -82,42 +90,50 @@
       <!-- PROGRAM COST | LOAN | AID -->
       <div
         v-if="program?.[`coût de l'accompagnement`]"
-        :class="columnTiles">
+        :class="columnTiles"
+      >
         <TeeTile
           class="tee-no-hover"
           :title="choices.t('programCosts.cost')"
           :image-path="`${choices.publicPath}images/TEE-cout.svg`"
-          :description="`${program[`coût de l'accompagnement`]}`" />
+          :description="`${program[`coût de l'accompagnement`]}`"
+        />
       </div>
 
       <div
         v-if="program?.[`montant du financement`]"
-        :class="columnTiles">
+        :class="columnTiles"
+      >
         <TeeTile
           class="tee-no-hover"
           :title="choices.t('programCosts.aid')"
           :image-path="`${choices.publicPath}images/TEE-cout.svg`"
-          :description="`${program[`montant du financement`]}`" />
+          :description="`${program[`montant du financement`]}`"
+        />
       </div>
 
       <div
         v-if="program?.[`montant de l'avantage fiscal`]"
-        :class="columnTiles">
+        :class="columnTiles"
+      >
         <TeeTile
           class="tee-no-hover"
           :title="choices.t('programCosts.taxAdvantage')"
           :image-path="`${choices.publicPath}images/TEE-cout.svg`"
-          :description="`${program[`montant de l'avantage fiscal`]}`" />
+          :description="`${program[`montant de l'avantage fiscal`]}`"
+        />
       </div>
 
       <div
         v-if="program?.[`montant du prêt`]"
-        :class="columnTiles">
+        :class="columnTiles"
+      >
         <TeeTile
           class="tee-no-hover"
           :title="choices.t('programCosts.loan')"
           :image-path="`${choices.publicPath}images/TEE-cout.svg`"
-          :description="`${program[`montant du prêt`]}`" />
+          :description="`${program[`montant du prêt`]}`"
+        />
       </div>
       <!-- <div
         v-if="program[`taux du prêt`]"
@@ -136,28 +152,33 @@
           class="tee-no-hover"
           :title="choices.t('program.programType')"
           :image-path="`${choices.publicPath}images/TEE-typefinance.svg`"
-          :description="program?.[`nature de l'aide`]">
+          :description="program?.[`nature de l'aide`]"
+        >
         </TeeTile>
       </div>
 
       <!-- PROGRAM DURATION -->
       <div
         v-if="program?.[`durée de l'accompagnement`]"
-        :class="columnTiles">
+        :class="columnTiles"
+      >
         <TeeTile
           class="tee-no-hover"
           :title="choices.t('program.programDuration')"
           :image-path="`${choices.publicPath}images/TEE-duree.svg`"
-          :description="program[`durée de l'accompagnement`]" />
+          :description="program[`durée de l'accompagnement`]"
+        />
       </div>
       <div
         v-if="program?.[`durée du prêt`]"
-        :class="columnTiles">
+        :class="columnTiles"
+      >
         <TeeTile
           class="tee-no-hover"
           :title="choices.t('program.programLoanDuration')"
           :image-path="`${choices.publicPath}images/TEE-duree.svg`"
-          :description="program[`durée du prêt`]" />
+          :description="program[`durée du prêt`]"
+        />
       </div>
 
       <!-- PROGRAM PROVIDERS -->
@@ -167,7 +188,8 @@
           class="tee-no-hover"
           :title="choices.t('program.programProviders')"
           :image-path="`${choices.publicPath}images/TEE-porteur.svg`"
-          :description="choices.to(program['opérateur de contact'])">
+          :description="choices.to(program['opérateur de contact'])"
+        >
         </TeeTile>
       </div>
     </div>
@@ -180,7 +202,8 @@
         :form-options="trackConfig.form"
         :data-props="{ programId: program.id }"
         :program="program"
-        :debug="debug" />
+        :debug="debug"
+      />
     </div>
   </div>
 
@@ -189,7 +212,8 @@
     id="fr-modal-1"
     aria-labelledby="fr-modal-title-modal-1"
     role="dialog"
-    :class="`fr-modal fr-modal-custom ${showForm ? 'fr-modal--opened' : ''}`">
+    :class="`fr-modal fr-modal-custom ${showForm ? 'fr-modal--opened' : ''}`"
+  >
     <div class="fr-container fr-container--fluid fr-container-md">
       <div class="fr-grid-row fr-grid-row--center">
         <div class="fr-col-12 fr-col-md-11 fr-col-lg-10">
@@ -199,7 +223,8 @@
                 class="fr-link--close fr-link"
                 aria-controls="fr-modal-1"
                 style="align-items: center"
-                @click="toggleShowForm">
+                @click="toggleShowForm"
+              >
                 <span class="fr-sm-hide">
                   {{ choices.t('close') }}
                 </span>
@@ -216,19 +241,22 @@
                   <h4
                     v-if="program"
                     class=""
-                    style="text-align: center">
+                    style="text-align: center"
+                  >
                     {{ choices.ti(trackConfig?.form.label[choices.lang], { title: program.titre }) || '' }}
                   </h4>
                   <p
                     class=""
-                    style="text-align: center">
+                    style="text-align: center"
+                  >
                     {{ trackConfig?.form.hint[choices.lang] || '' }}
                   </p>
                   <img
                     v-if="program"
                     class="fr-responsive-img fr-sm-hide"
                     :src="`${choices.publicPath}images/TEE_illustration.png`"
-                    :alt="`image / ${program.titre}`" />
+                    :alt="`image / ${program.titre}`"
+                  />
                 </div>
                 <!-- MODAL FORM -->
                 <div class="fr-col">
@@ -238,7 +266,8 @@
                     :form-options="trackConfig.form"
                     :data-props="{ programId: program.id }"
                     :program="program"
-                    :debug="debug" />
+                    :debug="debug"
+                  />
                 </div>
               </div>
             </div>

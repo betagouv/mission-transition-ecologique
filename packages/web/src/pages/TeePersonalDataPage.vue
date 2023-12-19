@@ -1,7 +1,8 @@
 <template>
   <div
     id="simple-page"
-    class="fr-container fr-my-8w">
+    class="fr-container fr-my-8w"
+  >
     <div class="fr-grid-row--gutters">
       <div class="fr-grid-col">
         <h1>Données personnelles (et gestion des cookies)</h1>
@@ -82,62 +83,6 @@
           </p>
         </div>
 
-        <<<<<<< HEAD
-        <p>
-          Hotjar utilise des cookies et d’autres technologies afin de collecter des informations sur le comportement de nos utilisateurs et
-          de leurs appareils, y compris l’adresse IP de l’appareil (collectée et enregistrée sous forme anonymisée), la taille de l’écran,
-          le type d’appareil (identificateur unique d’appareil), les informations sur le navigateur utilisé ou encore la localisation
-          (uniquement le pays) pour afficher notre site Web dans la langue préférée. Hotjar sauvegarde ces informations dans un profil
-          d’utilisateur pseudonyme.
-        </p>
-
-        <p>
-          Ces informations ne sont utilisées ni par Hotjar ni par nous-mêmes pour identifier des utilisateurs individuels ou fusionner avec
-          d’autres données concernant des utilisateurs individuels.
-        </p>
-
-        <h4 class="fr-mt-3w">Société Hotjar</h4>
-        <div class="fr-highlight fr-mt-3w">
-          <p>
-            Ltd, Level 2, St Julians Business Centre, 3, Elia Zammit Street,
-            <br />
-            St Julians STJ 1000, Malte
-          </p>
-        </div>
-        <div class="fr-mt-3w">
-          <p>
-            <a
-              href="https://www.hotjar.com/"
-              target="_blank"
-              >CONSULTER SITE SOCIÉTÉ HOTJAR</a
-            >
-          </p>
-        </div>
-        <div class="fr-mt-3w">
-          <p>Pour obtenir de plus amples informations dans la déclaration de confidentialité de Hotjar disponible à l’adresse suivante :</p>
-
-          <p>
-            <a
-              href="https://www.hotjar.com/legal/policies/privacy"
-              target="_blank"
-              >CONSULTER HOTJAR : PROTECTION DE LA VIE PRIVÉE - NOUVELLE FENÊTRE</a
-            >
-          </p>
-        </div>
-        <div class="fr-mt-3w">
-          <p>
-            Pour refuser l’enregistrement d’un profil d’utilisateur et des informations à propos de votre visite sur notre site Web par
-            Hotjar ainsi que l’emploi de cookies de suivi de Hotjar sur d’autres sites Web. Veuillez pour cela utiliser le lien suivant :
-          </p>
-          <p>
-            <a
-              href="https://www.hotjar.com/legal/compliance/opt-out"
-              target="_blank"
-              >CONSULTER HOTJAR : REFUSER ENREGISTREMENT - NOUVELLE FENÊTRE</a
-            >
-          </p>
-        </div>
-        ======= >>>>>>> 88765ab50884fa746f52e84ffcfadc188f15767c
         <h4 class="fr-mt-3w">Informatique et Libertés</h4>
         <p>
           Droit d’accès, modification, suppression des données personnelles vous concernant.<br />

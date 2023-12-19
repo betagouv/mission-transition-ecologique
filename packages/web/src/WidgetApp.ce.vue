@@ -1,21 +1,25 @@
 <template>
   <div
     ref="trackElement"
-    class="fr-container--fluid">
+    class="fr-container--fluid"
+  >
     <!-- HEADER -->
     <p
       v-if="showHeaderBool && !disableWidget"
-      class="fr-pb-0v fr-mb-0">
+      class="fr-pb-0v fr-mb-0"
+    >
       <DsfrHeader
         logo-text="ADEME"
         service-title="Transition écologique des entreprises"
-        service-description="Faire rimer écologie avec économies !" />
+        service-description="Faire rimer écologie avec économies !"
+      />
     </p>
 
     <!-- DEBUGGING -->
     <div
       v-if="debugBool"
-      class="vue-debug">
+      class="vue-debug"
+    >
       <h5>DEBUG - WidgetApp</h5>
       <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
         <div class="fr-col-4">
@@ -40,51 +44,61 @@
     <!-- MESSAGE & DEBUG SWITCH-->
     <div
       v-if="showMessageBool || debugSwitchBool"
-      class="fr-grid-row fr-grid-row--gutters">
+      class="fr-grid-row fr-grid-row--gutters"
+    >
       <!-- MESSAGE-->
       <div
         v-if="showMessageBool"
-        class="fr-col">
+        class="fr-col"
+      >
         <h3
           v-if="message"
-          class="red-color">
+          class="red-color"
+        >
           <span v-html="message[choices.lang]" />
         </h3>
       </div>
       <!-- DEBUG SWITCH-->
       <div
         v-if="debugSwitchBool"
-        class="fr-col-md-3 fr-col-sm-6">
+        class="fr-col-md-3 fr-col-sm-6"
+      >
         <DsfrToggleSwitch
           label="Debug mode"
           hint="Switch to activate / deactivate debugging mode"
           :model-value="debugBool"
-          @update:model-value="changeDebug" />
+          @update:model-value="changeDebug"
+        />
       </div>
     </div>
 
     <!-- MATOMO -->
     <TeeMatomo
       v-if="!disableWidget"
-      :debug="debugBool" />
+      :debug="debugBool"
+    />
 
     <!-- QUESTIONNAIRE -->
     <div
       v-show="!programs.programDetail"
       :id="disableWidget ? 'widget' : 'trackElement'"
-      :class="`fr-container--fluid ${tracks.currentStep && tracks.currentStep > 1 ? 'fr-pt-10v' : ''}`">
+      :class="`fr-container--fluid ${tracks.currentStep && tracks.currentStep > 1 ? 'fr-pt-10v' : ''}`"
+    >
       <!-- TRACKS INTERFACES -->
       <div
         ref="tee-app-tracks"
-        class="fr-grid-row fr-grid-row-gutters fr-p-0 fr-justify-center">
+        class="fr-grid-row fr-grid-row-gutters fr-p-0 fr-justify-center"
+      >
         <!-- SIDEBAR MENU (FIL D'ARIANE)-->
         <div
           v-if="needSidebar && tracks.currentStep && tracks.currentStep > 1"
           class="fr-tee-add-padding fr-mt-4v fr-col-3 fr-col-md-4 fr-col-lg-4 fr-col-xl-2 fr-col-sm-hide"
-          style="height: 100%">
+          style="height: 100%"
+        >
           <TeeSidebar
             :used-tracks="tracks.usedTracks"
-            :debug="debugBool" />
+            :debug="debugBool"
+          />
         </div>
 
         <!-- TRACKS -->
@@ -92,7 +106,8 @@
           id="tee-app-tracks"
           :class="`${tracks.currentStep && tracks.currentStep > 1 ? 'fr-tee-add-padding' : ''} ${getColumnsWidth} ${
             debugBool ? '' : 'fr-grid-row--center'
-          }`">
+          }`"
+        >
           <div
             v-for="(track, index) in tracks.usedTracks"
             :key="track.id"
@@ -101,7 +116,8 @@
                 ? 'padding: 0px; background-color:' + tracks.getTrackBgColor(track.id as TrackId)
                 : ''
             }`"
-            :class="`fr-p-0 fr-mb-${debugBool ? '12v' : '0'}`">
+            :class="`fr-p-0 fr-mb-${debugBool ? '12v' : '0'}`"
+          >
             <TeeTrack
               v-if="trackElement"
               :step="index + 1"
@@ -109,14 +125,16 @@
               :is-completed="!!tracks.isTrackCompleted(track.id as TrackId)"
               :track-element="trackElement"
               :disable-widget="disableWidget"
-              :debug="debugBool" />
+              :debug="debugBool"
+            />
           </div>
         </div>
 
         <!-- DEBUGGING -->
         <div
           v-if="debugBool"
-          class="vue-debug fr-col-2 fr-pl-3v">
+          class="vue-debug fr-col-2 fr-pl-3v"
+        >
           <h5>DEBUG - WidgetApp</h5>
           <div class="fr-grid-row fr-grid-row--gutters">
             <div class="fr-col-12">
@@ -164,7 +182,8 @@
 
             <div
               v-if="false"
-              class="fr-col-12">
+              class="fr-col-12"
+            >
               <h6>metaEnv :</h6>
               <code>
                 <pre>{{ metaEnv }}</pre>
@@ -183,14 +202,16 @@
     <!-- DETAIL RESULT CARD -->
     <div
       v-if="programs.programDetail"
-      :class="`fr-container-fluid fr-px-6v fr-px-md-20v fr-mt-10v`">
+      :class="`fr-container-fluid fr-px-6v fr-px-md-20v fr-mt-10v`"
+    >
       <div class="fr-grid-row fr-grid-row-gutters">
         <div class="fr-col">
           <TeeProgramDetail
             :program-id="programs.programDetail"
             :track-id="programs.programDetailConfig"
             :disable-widget="disableWidget"
-            :debug="debugBool" />
+            :debug="debugBool"
+          />
         </div>
       </div>
     </div>
@@ -198,7 +219,8 @@
     <!-- FOOTER -->
     <div
       v-if="showFooterBool"
-      class="fr-mt-10v">
+      class="fr-mt-10v"
+    >
       <TeeCredits />
     </div>
   </div>

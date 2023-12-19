@@ -1,11 +1,13 @@
 <template>
   <div
     class="fr-div-fixed- height"
-    @click="selectItem">
+    @click="selectItem"
+  >
     <!-- DEBUGGING -->
     <div
       v-if="debug"
-      class="debug">
+      class="debug"
+    >
       - option : <code>{{ option }}</code
       ><br />
       - icon: <code>{{ icon }}</code
@@ -18,12 +20,14 @@
     <!-- INPUT CANVAS -->
     <div
       class="fr-btn-fullwidth fr-btn-fixed-height fr-btn-sm-align-left fr-btn-grey tee-btn-input"
-      :style="`outline-color: #929292; font-weight: 500; ${isActive ? 'background-color: #eeeeee' : ''}`">
+      :style="`outline-color: #929292; font-weight: 500; ${isActive ? 'background-color: #eeeeee' : ''}`"
+    >
       <v-icon :name="icon"> </v-icon>
       <span
         v-if="isTextInput"
         class="fr-pr-3v"
-        style="width: auto; white-space: nowrap">
+        style="width: auto; white-space: nowrap"
+      >
         {{ option.label?.[choices.lang] }}
       </span>
       <input
@@ -35,10 +39,12 @@
         :min="(!isTextInput && option.inputMin) || undefined"
         :max="(!isTextInput && option.inputMax) || undefined"
         :style="`${isTextInput ? 'width: 100%;' : ''}`"
-        @input="sendValueUpdate" />
+        @input="sendValueUpdate"
+      />
       <span
         v-if="isNumberInput"
-        class="fr-ml-3v">
+        class="fr-ml-3v"
+      >
         {{ option.label?.[choices.lang] }}
       </span>
     </div>

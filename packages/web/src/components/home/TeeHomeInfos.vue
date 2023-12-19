@@ -2,37 +2,44 @@
   <div
     v-for="c in content"
     :key="c.badge"
-    class="fr-grid-row fr-grid-row-gutters fr-my-20v">
+    class="fr-grid-row fr-grid-row-gutters fr-my-20v"
+  >
     <div :class="`fr-col fr-col-sm-12 fr-col-md-4 fr-sm-hide ${c.imgRight ? 'fr-col-offset-1' : ''}`">
       <figure
         class="fr-content-media fr-content-media--md tee-home-img fr-my-0"
         role="group"
-        aria-label="© Transition Ecologique des entreprises">
+        aria-label="© Transition Ecologique des entreprises"
+      >
         <div class="fr-content-media__img fr-ratio-32x9">
           <img
             class="fr-responsive-img"
             :src="c.img"
-            :alt="`TEE - ${c.badge}`" />
+            :alt="`TEE - ${c.badge}`"
+          />
         </div>
       </figure>
     </div>
     <div
       :class="`fr-col fr-col-sm-12 fr-col-md-7 ${!c.imgRight ? 'fr-col-offset-1' : ''}`"
-      :style="c.imgRight ? 'order: -1;' : ''">
+      :style="c.imgRight ? 'order: -1;' : ''"
+    >
       <figure
         class="fr-content-media fr-sm-show fr-md-hide fr-content-media--md tee-home-img fr-my-1"
         role="group"
-        aria-label="© Transition Ecologique des entreprises">
+        aria-label="© Transition Ecologique des entreprises"
+      >
         <div class="fr-content-media__img fr-ratio-32x9">
           <img
             class="fr-responsive-img"
             :src="c.img"
-            :alt="`TEE - ${c.badge}`" />
+            :alt="`TEE - ${c.badge}`"
+          />
         </div>
       </figure>
       <p
         class="fr-badge fr-mb-6v fr-mt-4v fr-sm-hide"
-        :style="`background-color: ${c.badgeColor}; ${c.badgeTextColor ? 'color: ' + c.badgeTextColor : ''}`">
+        :style="`background-color: ${c.badgeColor}; ${c.badgeTextColor ? 'color: ' + c.badgeTextColor : ''}`"
+      >
         {{ c.badge }}
       </p>
       <h1>
@@ -43,10 +50,12 @@
       </p>
       <router-link
         class="tee-router-link"
-        to="/questionnaire">
+        to="/questionnaire"
+      >
         <button
           class="fr-link fr-text--bold fr-link--icon-right fr-icon-arrow-right-line"
-          aria-disabled="false">
+          aria-disabled="false"
+        >
           Je me lance
         </button>
       </router-link>

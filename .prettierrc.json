@@ -5,6 +5,5 @@
   "singleQuote": true,
   "printWidth": 140,
   "trailingComma": "none",
-  "singleAttributePerLine": true,
-  "bracketSameLine": true
+  "singleAttributePerLine": true
 }

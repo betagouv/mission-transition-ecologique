@@ -2,7 +2,8 @@
   <!-- DEBUGGING -->
   <div
     v-if="debug"
-    class="vue-debug">
+    class="vue-debug"
+  >
     <h5>DEBUG - TeeResults</h5>
     <!-- <h6>
       programs.programDetail : <code>{{ programs.programDetail || 'undefined' }}</code>
@@ -28,13 +29,15 @@
   <TeeNoResults
     v-if="!countFilteredPrograms"
     :image="trackConfig?.noResultsImage"
-    :message="trackConfig?.noResultsMessage">
+    :message="trackConfig?.noResultsMessage"
+  >
   </TeeNoResults>
 
   <!-- RESULTS CALLBACK -->
   <h4
     v-if="countFilteredPrograms && trackConfig?.showResultsTitle"
-    class="fr-pt-12v">
+    class="fr-pt-12v"
+  >
     {{ choices.t('results.fittingPrograms') }}
     ({{ countFilteredPrograms }})
   </h4>
@@ -42,11 +45,13 @@
   <!-- PROGRAMS AS LIST OF CARDS -->
   <div
     v-if="countFilteredPrograms"
-    class="fr-container fr-px-0 fr-mt-6v">
+    class="fr-container fr-px-0 fr-mt-6v"
+  >
     <!-- RESULTS SIZE -->
     <div
       v-if="countFilteredPrograms > 1"
-      class="fr-mb-4v tee-text-light">
+      class="fr-mb-4v tee-text-light"
+    >
       {{ countReFilteredPrograms }}
       {{ choices.t('results.results') }}
     </div>
@@ -54,15 +59,18 @@
     <!-- FILTERS IF ANY -->
     <div
       v-if="trackConfig?.filters && countFilteredPrograms > 1"
-      class="fr-grid-row fr-grid-row--gutters fr-mb-4v">
+      class="fr-grid-row fr-grid-row--gutters fr-mb-4v"
+    >
       <div
         v-for="filter in trackConfig.filters"
         :key="filter.label"
-        class="fr-col">
+        class="fr-col"
+      >
         <TeeResultsFilter
           :filter="filter"
           :debug="debug"
-          @update-filter="updateFilters" />
+          @update-filter="updateFilters"
+        />
       </div>
     </div>
 
@@ -70,7 +78,8 @@
     <TeeNoResults
       v-if="!countReFilteredPrograms"
       :image="trackConfig?.noResultsImage"
-      :message="trackConfig?.noResultsMessage">
+      :message="trackConfig?.noResultsMessage"
+    >
     </TeeNoResults>
 
     <!-- PROGRAMS CARDS -->
@@ -79,7 +88,8 @@
       :id="prog.id"
       :key="prog.id"
       class="fr-card fr-enlarge-link fr-card--horizontal-tier fr-mb-10v"
-      @click="updateDetailResult(prog.id)">
+      @click="updateDetailResult(prog.id)"
+    >
       <div class="fr-card__body">
         <div class="fr-card__content">
           <!-- TITLE -->
@@ -95,7 +105,8 @@
           <!-- DEBUG -->
           <p
             v-if="debug"
-            class="vue-debug fr-card__desc">
+            class="vue-debug fr-card__desc"
+          >
             <br />
             choices.publicPath : <code>{{ choices.publicPath }}</code> <br />
             prog.cover : <code>{{ prog.illustration }}</code>
@@ -106,7 +117,8 @@
             <p class="fr-mb-0 tee-program-info">
               <span
                 class="fr-icon-money-euro-circle-line"
-                aria-hidden="true">
+                aria-hidden="true"
+              >
               </span>
               {{ getCostInfos(prog) }}
             </p>
@@ -115,12 +127,14 @@
       </div>
       <div
         v-if="prog.illustration"
-        class="fr-card__header">
+        class="fr-card__header"
+      >
         <div class="fr-card__img">
           <img
             class="fr-responsive-img"
             :src="`${choices.publicPath}${prog.illustration}`"
-            :alt="`image / ${prog.titre}`" />
+            :alt="`image / ${prog.titre}`"
+          />
         </div>
         <ul class="fr-badges-group">
           <p class="fr-badge tee-program-badge-image">
@@ -134,7 +148,8 @@
   <!-- DEBUGGING -->
   <div
     v-if="debug"
-    class="vue-debug">
+    class="vue-debug"
+  >
     <h5>DEBUG - TeeResults</h5>
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
       <div class="fr-col-6">

@@ -1,7 +1,8 @@
 <template>
   <div
     id="app"
-    ref="trackElement">
+    ref="trackElement"
+  >
     <!-- HEADER -->
     <TeeHeader />
 

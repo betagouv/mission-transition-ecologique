@@ -2,11 +2,13 @@
   <!-- DEBUGGING -->
   <div
     v-if="debug"
-    class="vue-debug">
+    class="vue-debug"
+  >
     <h5>DEBUG - TeeStepper</h5>
     <div
       v-if="true"
-      class="fr-grid-row fr-grid-row--gutters">
+      class="fr-grid-row fr-grid-row--gutters"
+    >
       <div class="fr-col-3">
         <h6 class="fr-mb-1v">
           choices.lang : <code>{{ choices.lang }} </code>
@@ -19,22 +21,27 @@
   <div :class="`fr-footer fr-pt-0 fr-mt-30v ${stickToBottom ? 'tee-footer-bottom' : ''}`">
     <div
       class="fr-footer__body"
-      style="justify-content: center">
+      style="justify-content: center"
+    >
       <!-- PARTNERS LINKS -->
       <div
         class="fr-footer__content fr-ml-0 fr-mt-5v"
-        style="justify-content: center; flex-basis: 100%">
+        style="justify-content: center; flex-basis: 100%"
+      >
         <ul class="fr-footer__content-list">
           <li
             v-for="link in ecosystemLinks"
             :key="link.href"
-            class="fr-footer__content-item fr-mx-5v">
+            class="fr-footer__content-item fr-mx-5v"
+          >
             <span
               class="fr-icon-external-link-line fr-mr-1v"
-              aria-hidden="true"></span>
+              aria-hidden="true"
+            ></span>
             <a
               :href="link.href"
-              class="fr-footer__content-link">
+              class="fr-footer__content-link"
+            >
               {{ link.label }}
             </a>
           </li>
@@ -44,24 +51,29 @@
       <!-- SOURCES LINKS -->
       <div
         class="fr-footer__bottom fr-mt-5v"
-        style="justify-content: center">
+        style="justify-content: center"
+      >
         <ul
           class="fr-footer__bottom-list"
-          style="display: flex; justify-content: center">
+          style="display: flex; justify-content: center"
+        >
           <li
             v-for="link in projectLinks"
             :key="link.href"
-            class="fr-footer__bottom-item">
+            class="fr-footer__bottom-item"
+          >
             <router-link
               v-if="link.to"
               :to="link.to"
-              class="fr-footer__bottom-link">
+              class="fr-footer__bottom-link"
+            >
               {{ link.label }}
             </router-link>
             <a
               v-else
               :href="link.href"
-              class="fr-footer__bottom-link">
+              class="fr-footer__bottom-link"
+            >
               {{ link.label }}
             </a>
           </li>
@@ -73,7 +85,8 @@
             &nbsp;
             <a
               :href="licenceHref"
-              class="fr-link-licence no-content-after">
+              class="fr-link-licence no-content-after"
+            >
               {{ licenceName }}
             </a>
           </p>

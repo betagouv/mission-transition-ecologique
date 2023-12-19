@@ -16,7 +16,8 @@
                 title="Envoyer un email - ouvre une nouvelle fenêtre"
                 href="mailto:france-transition@beta.gouv.fr"
                 target="_blank"
-                rel="noopener">
+                rel="noopener"
+              >
                 Nous contacter
               </a>
             </div>
