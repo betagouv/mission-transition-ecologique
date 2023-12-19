@@ -262,7 +262,7 @@ const blockColor = '#000091'
 const showForm = ref<boolean>(false)
 const columnTiles = ref<string>('fr-col')
 
-const TeeProgramFormContainer = ref(null)
+const TeeProgramFormContainer = ref<HTMLElement | null>(null)
 
 interface Props {
   programId: string | number
