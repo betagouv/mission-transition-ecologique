@@ -154,13 +154,14 @@
     </div>
 
     <!-- PROGRAM FORM -->
-    <div id="tee-program-form-container" class="fr-tee-form-block fr-tee-form-container">
+    <div ref="TeeProgramFormContainer" class="fr-tee-form-block fr-tee-form-container">
       <TeeForm
         v-if="program"
         :track-id="trackConfig.id"
         :form-options="trackConfig.form"
         :data-props="{ programId: program.id }"
         :program="program"
+        :form-container-ref="TeeProgramFormContainer"
         :debug="debug"
       />
     </div>
@@ -260,6 +261,8 @@ const trackConfig = ref<any>()
 const blockColor = '#000091'
 const showForm = ref<boolean>(false)
 const columnTiles = ref<string>('fr-col')
+
+const TeeProgramFormContainer = ref(null)
 
 interface Props {
   programId: string | number

@@ -1,7 +1,7 @@
 <template>
   <!-- BACK TO FORM BTN -->
   <button
-    v-if="formIsSent"
+    v-show="formIsSent"
     class="fr-btn fr-btn--tertiary-no-outline inline-flex fr-mb-3v fr-link fr-tee-form-arrow-back"
     tertiary
     noOutline
@@ -10,24 +10,32 @@
     <v-icon scale="2" name="ri-arrow-left-line" aria-hidden="true"></v-icon>
   </button>
 
-  <!-- FORM -->
-  <div v-show="!formIsSent" class="fr-tee-form fr-my-4v">
-    <!-- DEBUGGING -->
-    <div v-if="debug" class="vue-debug">
-      <p>
-        requiredFields:
-        <code>
-          {{ requiredFields }}
-        </code>
-      </p>
-      <p>
-        canSaveFrom:
-        <code>
-          {{ canSaveFrom }}
-        </code>
-      </p>
-    </div>
+  <!-- DEBUGGING -->
+  <div v-if="debug" class="vue-debug">
+    <p>
+      requiredFields:
+      <code>{{ requiredFields }}</code>
+    </p>
+    <p>
+      canSaveFrom:
+      <code>{{ canSaveFrom }}</code>
+    </p>
+    <p>
+      formIsSent:
+      <code>{{ formIsSent }}</code>
+    </p>
+    <p>
+      hasNoRespError:
+      <code>{{ hasNoRespError }}</code>
+    </p>
+    <p>
+      formContainerRef:<br />
+      <code>{{ formContainerRef }}</code>
+    </p>
+  </div>
 
+  <!-- FORM -->
+  <div v-if="!formIsSent" class="fr-tee-form fr-my-4v">
     <!-- FORM LABEL -->
     <h3 v-if="formOptions.label" class="fr-text-center">
       {{
@@ -234,6 +242,7 @@ interface Props {
   formOptions: FormOptions
   dataProps: DataProps
   program: ProgramData
+  formContainerRef: HTMLElement | null
   debug?: boolean
 }
 const props = defineProps<Props>()
@@ -332,18 +341,17 @@ const saveFormData = async () => {
       responses.push(resp)
     }
     requestResponses.value = responses
-    formIsSent.value = true
 
     // analytics / send event
     analytics.sendEvent(props.trackId, 'send_form')
   } finally {
     isLoading.value = false
+    formIsSent.value = true
+    scrollToFormContainer()
   }
-  scrollToFormContainer()
 }
 
 const scrollToFormContainer = () => {
-  const element: HTMLElement | null = document.getElementById('tee-program-form-container')
-  element?.scrollIntoView({ block: 'center' })
+  props.formContainerRef?.scrollIntoView({ block: 'center' })
 }
 </script>
