@@ -232,7 +232,7 @@ describe(`
    WHEN  the rules are evaluated
  EXPECT  the values from "PublicodesInputData" used for evaluation to be properly computed from the program data
 `, () => {
-  const testValidityStartMapping = (validityStart: string, expectedKeep: boolean) => {
+  const testValidityStartMapping = (validityStart: string | null, expectedKeep: boolean) => {
     test(`"début de validité" mapped to "dispositif . début de validité", interpreted as date (${validityStart})`, () => {
       const program = makeProgram({
         dispositif: null,
@@ -263,6 +263,10 @@ describe(`
     },
     {
       validityStart: '02/01/2024',
+      expectedKeep: true
+    },
+    {
+      validityStart: null,
       expectedKeep: true
     }
   ]
