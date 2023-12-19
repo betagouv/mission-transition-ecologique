@@ -45,8 +45,9 @@ conditions d'éligibilité:
   - Toutes tailles
   - Éligible aux micro-entreprises
   secteur géographique:
-  - Pays de la Loire|Centre-Val de Loire|Bourgogne-Franche-Comté|Normandie|Hauts-de-France|Bretagne|Nouvelle-Aquitaine|Occitanie|Auvergne-Rhône-Alpes|Provence-Alpes-Côte
-    d'Azur|Corse|Guadeloupe|Martinique|Guyane|La Réunion|Mayotte|Île-de-France
+  - Pays de la Loire, Centre-Val de Loire, Bourgogne-Franche-Comté, Normandie, Hauts-de-France,
+    Bretagne, Nouvelle-Aquitaine, Occitanie, Auvergne-Rhône-Alpes, Provence-Alpes-Côte
+    d'Azur, Corse, Guadeloupe, Martinique, Guyane, La Réunion, Mayotte, Île-de-France
   secteur d'activité:
   - Activité agricole ou  industries agro-alimentaires
   nombre d'années d'activité:
