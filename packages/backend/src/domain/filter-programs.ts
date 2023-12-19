@@ -74,7 +74,6 @@ const evaluateRule = (rules: object, questionnaireData: QuestionnaireData): Resu
   }
 
   const preprocessedData = preprocessInputForPublicodes(questionnaireData)
-  preprocessedData['dispositif . début de validité'] = '19/12/2023'
 
   const narrowedData = narrowInput(preprocessedData, engine)
 
@@ -115,6 +114,8 @@ const preprocessInputForPublicodes = (questionnaireData: QuestionnaireData): Pub
   if (questionnaireData.codeNaf) {
     publicodesData['entreprise . code NAF'] = enquotePublicodesLiteralString(questionnaireData.codeNaf)
   }
+
+  publicodesData['dispositif . début de validité'] = '19/12/2023'
 
   return publicodesData
 }
