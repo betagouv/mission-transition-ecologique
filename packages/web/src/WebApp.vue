@@ -10,7 +10,7 @@
 
     <!-- FOOTER -->
     <div class="fr-mt-0v">
-      <TeeAppFooter :stick-to-bottom="false" />
+      <TeeAppFooter />
     </div>
   </div>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <!-- DEBUGGING -->
-  <div v-if="debug" class="vue-debug">
+  <div v-if="debugStore.is" class="vue-debug">
     <p>
       activeValue: <code>{{ activeValue }}</code>
     </p>
@@ -35,8 +35,10 @@
 import { ref } from 'vue'
 import { choicesStore } from '../../stores/choices'
 import type { TrackFilter, FilterEvent } from '@/types/index'
+import { useDebugStore } from '@/stores/debug'
 
 const choices = choicesStore()
+const debugStore = useDebugStore()
 
 const activeValue = ref<any>()
 
@@ -44,7 +46,6 @@ const emit = defineEmits(['updateFilter'])
 
 interface Props {
   filter: TrackFilter
-  debug?: boolean
 }
 const props = defineProps<Props>()
 

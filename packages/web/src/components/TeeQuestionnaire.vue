@@ -14,7 +14,7 @@
           class="fr-tee-add-padding fr-mt-4v fr-col-3 fr-col-md-4 fr-col-lg-4 fr-col-xl-2 fr-col-sm-hide"
           style="height: 100%"
         >
-          <TeeSidebar :used-tracks="tracks.usedTracks" :debug="debugBool" />
+          <TeeSidebar :used-tracks="tracks.usedTracks" />
         </div>
 
         <!-- TRACKS -->
@@ -31,14 +31,13 @@
                 ? 'padding: 0px; background-color:' + tracks.getTrackBgColor(track.id as TrackId)
                 : ''
             }`"
-            :class="`fr-p-0 fr-mb-${debugBool ? '12v' : '0'}`"
+            :class="`fr-p-0 fr-mb-${debugStore.is ? '12v' : '0'}`"
           >
             <TeeTrack
               v-if="trackElement"
               :step="index + 1"
               :track-id="track.id as TrackId"
               :is-completed="!!tracks.isTrackCompleted(track.id as TrackId)"
-              :debug="debugBool"
               :track-element="trackElement"
             />
           </div>
@@ -50,7 +49,7 @@
     <div v-if="programs.programDetail" :class="`fr-container-fluid fr-px-6v fr-px-md-20v fr-mt-10v`">
       <div class="fr-grid-row fr-grid-row-gutters">
         <div class="fr-col">
-          <TeeProgramDetail :program-id="programs.programDetail" :track-id="programs.programDetailConfig" :debug="debugBool" />
+          <TeeProgramDetail :program-id="programs.programDetail" :track-id="programs.programDetailConfig" />
         </div>
       </div>
     </div>
@@ -70,6 +69,7 @@ import { programsFromJson, publicPath } from '@/utils/global'
 import TeeTrack from '@/components/tracks/TeeTrack.vue'
 import TeeSidebar from '@/components/TeeSidebar.vue'
 import TeeProgramDetail from '@/components/program/TeeProgramDetail.vue'
+import { useDebugStore } from '@/stores/debug'
 
 interface Props {
   locale?: string
@@ -86,8 +86,7 @@ const tracks = tracksStore()
 const choices = choicesStore()
 const programs = programsStore()
 const nav = navigationStore()
-
-const debugBool = ref(false)
+const debugStore = useDebugStore()
 
 const router = useRouter()
 const route = useRoute()
@@ -114,7 +113,7 @@ const getColumnsWidth = computed(() => {
   const colsStart = 'fr-col-12 fr-col-xl-12'
   const colsTracks = 'fr-col fr-col-sm-12 fr-col-md-8 fr-col-lg-8 fr-col-xl-6'
   const colsResults = 'fr-col fr-col-sm-12 fr-col-md-8 fr-col-lg-8 fr-col-xl-8'
-  if (tracks.seedTrack === TrackId.Results || (tracks.currentStep === 1 && !true)) {
+  if (tracks.seedTrack === TrackId.Results || (tracks.currentStep === 1 && false)) {
     return colsStart
   } else if ((currentTrack && (currentTrack.component as TrackComponents)) === TrackComponents.Results) {
     return colsResults

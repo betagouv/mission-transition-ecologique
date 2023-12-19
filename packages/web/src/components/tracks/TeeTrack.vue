@@ -1,6 +1,6 @@
 <template>
   <!-- DEBUGGING -->
-  <div v-if="debug" class="vue-debug">
+  <div v-if="debugStore.is" class="vue-debug">
     <h5>DEBUG - TeeTrack</h5>
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
       <div class="fr-col-3">
@@ -208,7 +208,6 @@
               :icon="getButtonIcon(idx)"
               :is-active="isActiveChoice(idx)"
               :option="option"
-              :debug="debug"
               @update-selection="updateSelectionFromSignal($event, idx)"
               @update-value="updateSelectionValueFromSignal($event)"
               @go-to-next-track="saveSelectionFromSignal($event, idx)"
@@ -232,21 +231,10 @@
               :track-id="trackId"
               :option="option"
               :is-active="isActiveChoice(idx)"
-              :debug="debug"
               @update-selection="updateSelectionFromSignal($event, idx)"
               @go-to-next-track="saveSelectionFromSignal($event, idx)"
             />
           </div>
-
-          <!-- AS FORM -->
-          <!-- <div
-            v-show="renderAs === 'form'"
-            >
-            <TeeForm
-              :form-options="option"
-              :debug="debug"
-              @saveData="updateSelectionFromForm"/>
-          </div> -->
 
           <!-- AS RESULT -->
           <div v-if="isTrackResults">
@@ -257,7 +245,6 @@
               :track-form="track?.form"
               :tracks-results="tracks.usedTracks"
               :track-element="trackElement"
-              :debug="debug || false"
             />
           </div>
         </div>
@@ -310,11 +297,7 @@
 // console.log(`TeeTrack > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import { computed, ref, toRaw, watch } from 'vue'
-
-import { tracksStore } from '@/stores/tracks'
-import { choicesStore } from '@/stores/choices'
-import { analyticsStore } from '@/stores/analytics'
-// import type { DsfrButton } from '@gouvminint/vue-dsfr/types'
+import type { DsfrButton } from '@gouvminint/vue-dsfr'
 import type { ColsOptions, NextTrackRuleSet, Track, TrackOptionsUnion } from '@/types'
 import { isTrackOptionsInput, TrackComponents, TrackId } from '@/types'
 import { remapItem, scrollToTop } from '@/utils/helpers'
@@ -323,13 +306,16 @@ import TeeTrackInput from './TeeTrackInput.vue'
 import TeeTrackSelect from './TeeTrackSelect.vue'
 import TeeTrackButtonInput from './TeeTrackButtonInput.vue'
 import TeeResults from '../results/TeeResults.vue'
+import { tracksStore } from '@/stores/tracks'
+import { choicesStore } from '@/stores/choices'
+import { analyticsStore } from '@/stores/analytics'
+import { useDebugStore } from '@/stores/debug'
 
 interface Props {
   step: number
   trackId: TrackId
   isCompleted: boolean
   trackElement: Element
-  debug?: boolean
 }
 const props = defineProps<Props>()
 
@@ -360,6 +346,7 @@ const noNeedForNext = [TrackComponents.Cards, TrackComponents.SimpleButtons]
 const tracks = tracksStore()
 const choices = choicesStore()
 const analytics = analyticsStore()
+const debugStore = useDebugStore()
 
 const selectedOptionsIndices = ref<number[]>([])
 const selectedOptions = ref<TrackOptionsUnion[]>([])

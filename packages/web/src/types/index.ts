@@ -1,5 +1,4 @@
 export * from './conditionOperators'
-export * from './envTypes'
 export * from './formTypes'
 export * from './refs'
 export * from './otherTypes'

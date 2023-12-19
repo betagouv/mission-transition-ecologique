@@ -1,6 +1,6 @@
 <template>
   <!-- DEBUGGING -->
-  <div v-if="debug" class="vue-debug">
+  <div v-if="debugStore.is" class="vue-debug">
     <h5>DEBUG - TeeResults</h5>
     <!-- <h6>
       programs.programDetail : <code>{{ programs.programDetail || 'undefined' }}</code>
@@ -42,7 +42,7 @@
     <!-- FILTERS IF ANY -->
     <div v-if="trackConfig?.filters && countFilteredPrograms > 1" class="fr-grid-row fr-grid-row--gutters fr-mb-4v">
       <div v-for="filter in trackConfig.filters" :key="filter.label" class="fr-col">
-        <TeeResultsFilter :filter="filter" :debug="debug" @update-filter="updateFilters" />
+        <TeeResultsFilter :filter="filter" @update-filter="updateFilters" />
       </div>
     </div>
 
@@ -71,7 +71,7 @@
             {{ prog.promesse }}
           </h2>
           <!-- DEBUG -->
-          <p v-if="debug" class="vue-debug fr-card__desc">
+          <p v-if="debugStore.is" class="vue-debug fr-card__desc">
             <br />
             choices.publicPath : <code>{{ choices.publicPath }}</code> <br />
             prog.cover : <code>{{ prog.illustration }}</code>
@@ -100,7 +100,7 @@
   </div>
 
   <!-- DEBUGGING -->
-  <div v-if="debug" class="vue-debug">
+  <div v-if="debugStore.is" class="vue-debug">
     <h5>DEBUG - TeeResults</h5>
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
       <div class="fr-col-6">
@@ -141,6 +141,7 @@ import { ConditionOperators, TrackId } from '@/types/index'
 import { useRoute, useRouter } from 'vue-router'
 import { RouteName } from '@/types/routeType'
 import Widget from '@/utils/widget'
+import { useDebugStore } from '@/stores/debug'
 
 const route = useRoute()
 const router = useRouter()
@@ -148,6 +149,7 @@ const choices = choicesStore()
 const programs = programsStore()
 const analytics = analyticsStore()
 const nav = navigationStore()
+const debugStore = useDebugStore()
 
 const activeFilters = ref<Record<string, string>>({})
 
@@ -158,7 +160,6 @@ interface Props {
   trackForm?: any
   tracksResults: UsedTrack[]
   trackElement: Element
-  debug?: boolean
 }
 const props = defineProps<Props>()
 

@@ -1,7 +1,42 @@
 <template>
   <div ref="trackElement" class="fr-container--fluid">
+    <div v-if="debugStore.is" class="vue-debug">
+      <h5>DEBUG - WidgetApp</h5>
+      <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
+        <div class="fr-col-4">
+          <h6 class="fr-mb-1v">
+            tracks.currentStep : <code>{{ tracks.currentStep }} </code>
+          </h6>
+          <h6 class="fr-mb-1v">
+            seed : <code>{{ seed }} </code>
+          </h6>
+        </div>
+        <div class="fr-col-4">
+          <h6 class="fr-mb-1v">
+            programs.programDetail : <code>{{ programs.programDetail }} </code>
+          </h6>
+          <h6 class="fr-mb-1v">
+            tracks.seedTrack : <code>{{ tracks.seedTrack }} </code>
+          </h6>
+        </div>
+      </div>
+    </div>
+
+    <!-- MESSAGE & DEBUG SWITCH-->
+    <div v-if="debugStore.hasSwitch" class="fr-grid-row fr-grid-row--gutters">
+      <!-- DEBUG SWITCH-->
+      <div class="fr-col-md-3 fr-col-sm-6">
+        <DsfrToggleSwitch
+          label="Debug mode"
+          hint="Switch to activate / deactivate debugging mode"
+          :model-value="debugStore.is"
+          @update:model-value="changeDebug"
+        />
+      </div>
+    </div>
+
     <!-- MATOMO -->
-    <TeeMatomo :debug="debugBool" />
+    <TeeMatomo />
 
     <!-- QUESTIONNAIRE -->
     <div
@@ -17,14 +52,14 @@
           class="fr-tee-add-padding fr-mt-4v fr-col-3 fr-col-md-4 fr-col-lg-4 fr-col-xl-2 fr-col-sm-hide"
           style="height: 100%"
         >
-          <TeeSidebar :used-tracks="tracks.usedTracks" :debug="debugBool" />
+          <TeeSidebar />
         </div>
 
         <!-- TRACKS -->
         <div
           id="tee-app-tracks"
           :class="`${tracks.currentStep && tracks.currentStep > 1 ? 'fr-tee-add-padding' : ''} ${getColumnsWidth} ${
-            debugBool ? '' : 'fr-grid-row--center'
+            debugStore.is ? '' : 'fr-grid-row--center'
           }`"
         >
           <div
@@ -35,7 +70,7 @@
                 ? 'padding: 0px; background-color:' + tracks.getTrackBgColor(track.id as TrackId)
                 : ''
             }`"
-            :class="`fr-p-0 fr-mb-${debugBool ? '12v' : '0'}`"
+            :class="`fr-p-0 fr-mb-${debugStore.is ? '12v' : '0'}`"
           >
             <TeeTrack
               v-if="trackElement"
@@ -43,7 +78,6 @@
               :track-id="track.id as TrackId"
               :is-completed="!!tracks.isTrackCompleted(track.id as TrackId)"
               :track-element="trackElement"
-              :debug="debugBool"
             />
           </div>
         </div>
@@ -54,7 +88,7 @@
     <div v-if="programs.programDetail" :class="`fr-container-fluid fr-px-6v fr-px-md-20v fr-mt-10v`">
       <div class="fr-grid-row fr-grid-row-gutters">
         <div class="fr-col">
-          <TeeProgramDetail :program-id="programs.programDetail" :track-id="programs.programDetailConfig" :debug="debugBool" />
+          <TeeProgramDetail :program-id="programs.programDetail" :track-id="programs.programDetailConfig" />
         </div>
       </div>
     </div>
@@ -82,6 +116,8 @@ import TeeTrack from './components/tracks/TeeTrack.vue'
 import TeeSidebar from './components/TeeSidebar.vue'
 import TeeProgramDetail from './components/program/TeeProgramDetail.vue'
 import Widget from '@/utils/widget'
+import { useDebugStore } from '@/stores/debug'
+import { DsfrToggleSwitch } from '@gouvminint/vue-dsfr'
 
 interface Props {
   locale?: string
@@ -97,12 +133,10 @@ const tracks = tracksStore()
 const choices = choicesStore()
 const programs = programsStore()
 const nav = navigationStore()
+const debugStore = useDebugStore()
 
 // HTML/Vue3 DOM ref
 const trackElement = ref<HTMLElement | null>(null)
-
-const debugSwitchBool = ref(false)
-const debugBool = ref(false)
 
 watch(
   () => tracks.usedTracks,
@@ -117,6 +151,10 @@ watch(
   }
 )
 
+const changeDebug = (payload: boolean) => {
+  debugStore.is = payload
+}
+
 const needSidebar = computed(() => {
   return tracks.seedTrack !== TrackId.Results && tracks.currentStep && (tracks.currentStep > 1 || !Widget.is)
 })
@@ -127,7 +165,7 @@ const getColumnsWidth = computed(() => {
   const colsStart = 'fr-col-12 fr-col-xl-12'
   const colsTracks = 'fr-col fr-col-sm-12 fr-col-md-8 fr-col-lg-8 fr-col-xl-6'
   const colsResults = 'fr-col fr-col-sm-12 fr-col-md-8 fr-col-lg-8 fr-col-xl-8'
-  if (debugBool.value) {
+  if (debugStore.is) {
     return colsDebug
   } else if (tracks.seedTrack === TrackId.Results || (tracks.currentStep === 1 && Widget.is)) {
     return colsStart
@@ -183,10 +221,9 @@ onBeforeMount(() => {
 
   // set debug mode
   // no switch for production deployment
-
-  debugSwitchBool.value = !noDebugSwitch && props.debugSwitch
-  if (debugSwitchBool.value && props.debug) {
-    debugBool.value = props.debug
+  debugStore.hasSwitch = !noDebugSwitch && props.debugSwitch
+  if (debugStore.hasSwitch && props.debug) {
+    debugStore.is = props.debug
   }
 
   // set first track at mount

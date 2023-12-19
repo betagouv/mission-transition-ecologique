@@ -1,6 +1,6 @@
 <template>
   <!-- DEBUGGING -->
-  <div v-if="debug" class="vue-debug fr-mt-5v">
+  <div v-if="debugStore.is" class="vue-debug fr-mt-5v">
     <h5>DEBUG - TeeMatomo</h5>
     <div v-if="true" class="fr-grid-row fr-grid-row--gutters">
       <div class="fr-col-2">
@@ -53,13 +53,10 @@ import { analyticsStore } from '../stores/analytics'
 
 import { matomoScript } from '../utils/matomo'
 import type { ImportMetaEnv } from '../env'
-
-interface Props {
-  debug?: boolean
-}
-defineProps<Props>()
+import { useDebugStore } from '@/stores/debug'
 
 const analytics = analyticsStore()
+const debugStore = useDebugStore()
 
 const metaEnv: ImportMetaEnv = import.meta.env as ImportMetaEnv
 const matomoDeactivate: boolean = metaEnv.VITE_MATOMO_DEACTIVATE

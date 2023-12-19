@@ -161,7 +161,6 @@
         :form-options="trackConfig.form"
         :data-props="{ programId: program.id }"
         :program="program"
-        :debug="debug"
       />
     </div>
   </div>
@@ -213,7 +212,6 @@
                     :form-options="trackConfig.form"
                     :data-props="{ programId: program.id }"
                     :program="program"
-                    :debug="debug"
                   />
                 </div>
               </div>
@@ -234,13 +232,12 @@ import { ref, onBeforeMount } from 'vue'
 import TeeTile from '../TeeTile.vue'
 import TeeForm from '../TeeForm.vue'
 
-import { choicesStore } from '../../stores/choices'
-import { tracksStore } from '../../stores/tracks'
-import { programsStore } from '../../stores/programs'
-import { navigationStore } from '../../stores/navigation'
-import { analyticsStore } from '../../stores/analytics'
-
-import { scrollToId } from '../../utils/helpers'
+import { choicesStore } from '@/stores/choices'
+import { tracksStore } from '@/stores/tracks'
+import { programsStore } from '@/stores/programs'
+import { navigationStore } from '@/stores/navigation'
+import { analyticsStore } from '@/stores/analytics'
+import { scrollToId } from '@/utils/helpers'
 import type { TrackId, ProgramData } from '@/types'
 import ProgramObjective from '@/components/program/ProgramObjective.vue'
 import { useRoute, useRouter } from 'vue-router'
@@ -265,7 +262,6 @@ const columnTiles = ref<string>('fr-col')
 interface Props {
   programId: string | number
   trackId: TrackId | undefined
-  debug?: boolean
 }
 const props = defineProps<Props>()
 

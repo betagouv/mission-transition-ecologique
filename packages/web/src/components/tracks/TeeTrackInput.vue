@@ -1,6 +1,6 @@
 <template>
   <!-- DEBUGGING -->
-  <div v-if="debug" class="vue-debug">
+  <div v-if="debugStore.is" class="vue-debug">
     <h5>DEBUG - TeeTrackInput</h5>
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
       <div class="fr-col-3">
@@ -175,7 +175,7 @@
   </template> -->
 
   <!-- DEBUGGING -->
-  <div v-if="debug && selection" class="vue-debug">
+  <div v-if="debugStore.is && selection" class="vue-debug">
     <h5>DEBUG - TeeTrackInput</h5>
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
       <div class="fr-col-6">
@@ -206,17 +206,18 @@ import type { TrackOptionsInput, ReqResp, ReqError, FormCallback, ResultsMapping
 import { sendApiRequest } from '../../utils/requests'
 import { getFromResp, remapItem, cleanValue } from '../../utils/helpers'
 import { CallbackActions } from '@/types'
+import { useDebugStore } from '@/stores/debug'
 
 interface Props {
   trackId: string
   option: TrackOptionsInput
-  debug?: boolean
 }
 const props = defineProps<Props>()
 
 const tracks = tracksStore()
 const choices = choicesStore()
 const analytics = analyticsStore()
+const debugStore = useDebugStore()
 
 const inputValue = ref<string | number>()
 const isLoading = ref<boolean>(false)
