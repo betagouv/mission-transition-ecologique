@@ -66,49 +66,37 @@ EXPECT that the filtering only keeps programs that are eligible (rule
     },
     {
       name: 'eligible < 20 people company',
-      inputData: {
-        'entreprise . effectif': 12
-      },
+      inputData: { 'entreprise . effectif': 12 },
       rules: ['entreprise . effectif < 20'],
       expectedProgramIndexes: [0]
     },
     {
       name: 'non eligible >= 20 people company',
-      inputData: {
-        'entreprise . effectif': 25
-      },
+      inputData: { 'entreprise . effectif': 25 },
       rules: ['entreprise . effectif < 20'],
       expectedProgramIndexes: []
     },
     {
       name: 'eligible >= 20 people company',
-      inputData: {
-        'entreprise . effectif': 25
-      },
+      inputData: { 'entreprise . effectif': 25 },
       rules: ['entreprise . effectif >= 20'],
       expectedProgramIndexes: [0]
     },
     {
       name: 'both eligible',
-      inputData: {
-        'entreprise . effectif': 25
-      },
+      inputData: { 'entreprise . effectif': 25 },
       rules: ['entreprise . effectif >= 20', 'oui'],
       expectedProgramIndexes: [0, 1]
     },
     {
       name: 'both non eligible',
-      inputData: {
-        'entreprise . effectif': 25
-      },
+      inputData: { 'entreprise . effectif': 25 },
       rules: ['non', 'entreprise . effectif < 20'],
       expectedProgramIndexes: []
     },
     {
       name: 'one of each',
-      inputData: {
-        'entreprise . effectif': 12
-      },
+      inputData: { 'entreprise . effectif': 12 },
       rules: ['non', 'entreprise . effectif < 20'],
       expectedProgramIndexes: [1]
     }
@@ -116,10 +104,7 @@ EXPECT that the filtering only keeps programs that are eligible (rule
 
   const makePrograms = (rules: string[]): ProgramData[] => {
     const progs = rules.map((r) => {
-      const completeRules = {
-        ...rulesBoilerplate,
-        [FILTERING_RULE_NAME]: r
-      }
+      const completeRules = { ...rulesBoilerplate, [FILTERING_RULE_NAME]: r }
       return makeProgram(completeRules)
     })
     return progs
@@ -175,21 +160,12 @@ error`, () => {
     {
       name: "keep 'entreprise . effectif', discard 'additionalProperty'",
       rules: rulesBoilerplate,
-      inputData: {
-        'entreprise . effectif': 12,
-        additionalProperty: 0
-      }
+      inputData: { 'entreprise . effectif': 12, additionalProperty: 0 }
     },
     {
       name: "keep 'age', discard 'extraProperty'",
-      rules: {
-        age: 0,
-        [FILTERING_RULE_NAME]: 'age = 0'
-      },
-      inputData: {
-        age: 0,
-        extraProperty: 0
-      }
+      rules: { age: 0, [FILTERING_RULE_NAME]: 'age = 0' },
+      inputData: { age: 0, extraProperty: 0 }
     }
   ]
 
@@ -208,14 +184,7 @@ describe(`
   EXPECT an explicit error
 `, () => {
   test('invalid rule', () => {
-    const result = filterPrograms(
-      [
-        makeProgram({
-          [FILTERING_RULE_NAME]: 'invalid Publicode expression'
-        })
-      ],
-      {}
-    )
+    const result = filterPrograms([makeProgram({ [FILTERING_RULE_NAME]: 'invalid Publicode expression' })], {})
 
     expectToBeErr(result)
   })
@@ -236,9 +205,7 @@ describe(`
         [FILTERING_RULE_NAME]: `entreprise . code NAF = "${programNAFCode}"`
       })
 
-      const inputData = {
-        codeNaf: inputNAFCode
-      }
+      const inputData = { codeNaf: inputNAFCode }
 
       const result = filterPrograms([program], inputData)
 
@@ -250,18 +217,9 @@ describe(`
   }
 
   const testCases: { inputNAFCode: string; programNAFCode: string }[] = [
-    {
-      inputNAFCode: '12.34Z',
-      programNAFCode: '12.34Z'
-    },
-    {
-      inputNAFCode: '34.12Z',
-      programNAFCode: '34.12Z'
-    },
-    {
-      inputNAFCode: '11.11Z',
-      programNAFCode: '99.99Z'
-    }
+    { inputNAFCode: '12.34Z', programNAFCode: '12.34Z' },
+    { inputNAFCode: '34.12Z', programNAFCode: '34.12Z' },
+    { inputNAFCode: '11.11Z', programNAFCode: '99.99Z' }
   ]
 
   for (const testCase of testCases) {
