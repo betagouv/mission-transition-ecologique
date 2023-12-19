@@ -352,6 +352,6 @@ const saveFormData = async () => {
 }
 
 const scrollToFormContainer = () => {
-  props.formContainerRef?.scrollIntoView({ block: 'center' })
+  props.formContainerRef?.scrollIntoView({ block: 'start' })
 }
 </script>
