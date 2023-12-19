@@ -29,7 +29,7 @@ export const filterPrograms = (programs: ProgramData[], inputData: Questionnaire
   const filteredPrograms: ProgramData[] = []
 
   for (const program of programs) {
-    const evaluation = evaluateRule(program.publicodes, inputData)
+    const evaluation = evaluateRule(program, inputData)
 
     if (evaluation.isErr) {
       return Result.err(addErrorDetails(evaluation.error, program.id))
@@ -64,7 +64,9 @@ const shouldKeepProgram = (evaluation: Result<boolean | undefined, Error>): bool
  *   `undefined` if the input data does not allow to fully evaluate the rule) or
  *   the Error if any.
  */
-const evaluateRule = (rules: object, questionnaireData: QuestionnaireData): Result<boolean | undefined, Error> => {
+const evaluateRule = (programData: ProgramData, questionnaireData: QuestionnaireData): Result<boolean | undefined, Error> => {
+  const rules = programData.publicodes
+
   let engine: Engine
   try {
     engine = new Engine(rules)
@@ -73,7 +75,7 @@ const evaluateRule = (rules: object, questionnaireData: QuestionnaireData): Resu
     return Result.err(err)
   }
 
-  const preprocessedData = preprocessInputForPublicodes(questionnaireData)
+  const preprocessedData = preprocessInputForPublicodes(questionnaireData, programData)
 
   const narrowedData = narrowInput(preprocessedData, engine)
 
@@ -108,14 +110,16 @@ const addErrorDetails = (err: Error, programName: string): Error => {
 
 /** preprocesses the data gathered from the questionnaire into variables
  * needed by publicodes */
-const preprocessInputForPublicodes = (questionnaireData: QuestionnaireData): PublicodesInputData => {
+const preprocessInputForPublicodes = (questionnaireData: QuestionnaireData, programData: ProgramData): PublicodesInputData => {
   const publicodesData: PublicodesInputData = { ...questionnaireData }
 
   if (questionnaireData.codeNaf) {
     publicodesData['entreprise . code NAF'] = enquotePublicodesLiteralString(questionnaireData.codeNaf)
   }
 
-  publicodesData['dispositif . début de validité'] = '19/12/2023'
+  if (programData['début de validité']) {
+    publicodesData['dispositif . début de validité'] = programData['début de validité']
+  }
 
   return publicodesData
 }
