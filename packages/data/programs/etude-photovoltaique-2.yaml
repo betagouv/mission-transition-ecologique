@@ -34,7 +34,8 @@ conditions d'éligibilité:
   - Toutes tailles
   - Éligible aux micro-entreprises
   secteur géographique:
-  - Nouvelle-Aquitaine|Corse|Saint-Pierre-Et-Miquelon|Polynésie française|Guadeloupe|Guyane|Mayotte|Martinique
+  - Nouvelle-Aquitaine, Corse, Saint-Pierre-Et-Miquelon, Polynésie française, Guadeloupe,
+    Guyane, Mayotte, Martinique
   secteur d'activité:
   - Tous secteurs d’activité
   nombre d'années d'activité:
