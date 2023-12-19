@@ -251,4 +251,24 @@ describe(`
     const expectedLength = 0
     expect(result.value).toHaveLength(expectedLength)
   })
+
+  test(`"début de validité" mapped to "dispositif . début de validité", interpreted as date 2`, () => {
+    const program = makeProgram({
+      dispositif: null,
+      'dispositif . début de validité': null,
+      [FILTERING_RULE_NAME]: 'dispositif . début de validité > 01/01/2024'
+    })
+
+    program['début de validité'] = '02/01/2024'
+
+    const result = filterPrograms([program], {})
+
+    if (!result.isOk) {
+      console.log(result.error)
+    }
+    expectToBeOk(result)
+
+    const expectedLength = 1
+    expect(result.value).toHaveLength(expectedLength)
+  })
 })
