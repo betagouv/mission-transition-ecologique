@@ -6,18 +6,20 @@
     <hr class="fr-mb-4v" />
     <div class="fr-grid-row fr-grid-row--gutters">
       <div v-for="partIdx in 2" :key="`part-${partIdx}`" class="fr-col-6 fr-col-xs-12">
-        <div v-for="(field, idx) in PartsOrder[partIdx - 1]" :key="`elegibility-field-part1-${idx}`" class="fr-mb-8v fr-tee-eligigility">
-          <div v-if="programEligibility[field]">
-            <p class="fr-tee-eligigility-title fr-mb-1v">
-              <span class="fr-mr-1v">{{ eligilityEmojis[field] }}</span>
-              {{ field.toString()[0].toUpperCase() + field.toString().slice(1) }}
-            </p>
-            <ul class="fr-tee-eligigility-list fr-mt-1v">
-              <li v-for="(value, i) in programEligibility[field]" :key="`elegibility-field-${idx}-value-${i}`">
-                {{ value }}
-              </li>
-            </ul>
-          </div>
+        <div
+          v-for="(field, idx) in splitInTwo(order.filter((field) => !!programEligibility[field]))[partIdx - 1]"
+          :key="`elegibility-field-part1-${idx}`"
+          class="fr-mb-8v fr-tee-eligigility"
+        >
+          <p class="fr-tee-eligigility-title fr-mb-1v">
+            <span class="fr-mr-1v">{{ eligilityEmojis[field] }}</span>
+            {{ field.toString()[0].toUpperCase() + field.toString().slice(1) }}
+          </p>
+          <ul class="fr-tee-eligigility-list fr-mt-1v">
+            <li v-for="(value, i) in programEligibility[field]" :key="`elegibility-field-${idx}-value-${i}`">
+              {{ value }}
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -43,10 +45,18 @@ const eligilityEmojis: Emojis = {
   "autres critères d'éligibilité": '💡'
 }
 
-const PartsOrder = [
-  ["taille de l'entreprise", 'secteur géographique', "nombre d'années d'activité"],
-  ["secteur d'activité", "autres critères d'éligibilité"]
-]
+const order = [
+  "taille de l'entreprise",
+  'secteur géographique',
+  "nombre d'années d'activité",
+  "secteur d'activité",
+  "autres critères d'éligibilité"
+] as const
+
+const splitInTwo = (fields: string[]): [string[], string[]] => {
+  const mid: number = Math.ceil(fields.length / 2)
+  return [fields.slice(0, mid), fields.slice(mid)]
+}
 
 interface Props {
   program: ProgramData
