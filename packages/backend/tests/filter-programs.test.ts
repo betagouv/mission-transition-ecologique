@@ -219,7 +219,7 @@ type CurrentDateInput = {
 type PreprocessingTestCase = (QuestionnaireInputProperty | ProgramInputProperty | CurrentDateInput) & {
   title: string
   publicodesKey: string
-  filteringRule: string
+  filteringRule: string | object
   expectedKeep: boolean
 }
 
@@ -421,12 +421,19 @@ describe(`
   WHEN evaluating this rule
 EXPECT the program to be kept or filtered out as expected`, () => {
   const testCurrentDate = (currentDate: string, keptDate: string, expectedKeep: boolean) => {
+    //   `date du jour = ${keptDate}` ne fonctionne pas comme attendu
+    // cf https://github.com/publicodes/publicodes/issues/430
+    // Contournement :
+    const rule = {
+      'toutes ces conditions': [`date du jour <= ${keptDate}`, `date du jour >= ${keptDate}`]
+    }
+
     testHelperPreprocessing({
       title: `current date is mapped to "date du jour" (current date ${currentDate}, keep if equal to ${keptDate})`,
       currentDate: currentDate,
       inputDataSource: DataSources.CurrentDateService,
       publicodesKey: 'date du jour',
-      filteringRule: `date du jour = ${keptDate}`,
+      filteringRule: rule,
       expectedKeep: expectedKeep
     })
   }

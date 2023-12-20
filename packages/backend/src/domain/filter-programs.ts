@@ -123,16 +123,17 @@ const addErrorDetails = (err: Error, programName: string): Error => {
 const preprocessInputForPublicodes = (
   questionnaireData: QuestionnaireData,
   programData: ProgramData,
-  _currentDate: string
+  currentDate: string
 ): PublicodesInputData => {
-  const publicodesData: PublicodesInputData = { ...questionnaireData }
+  const publicodesData: PublicodesInputData = {
+    ...questionnaireData,
+    'date du jour': currentDate
+  }
 
   if (questionnaireData.codeNaf) publicodesData['entreprise . code NAF'] = enquotePublicodesLiteralString(questionnaireData.codeNaf)
 
   if (programData['début de validité']) publicodesData['dispositif . début de validité'] = programData['début de validité']
   if (programData['fin de validité']) publicodesData['dispositif . fin de validité'] = programData['fin de validité']
-
-  // publicodesData['date du jour'] = currentDate
 
   return publicodesData
 }
