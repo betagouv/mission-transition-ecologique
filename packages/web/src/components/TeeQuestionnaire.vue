@@ -64,11 +64,8 @@ import TeeProgramDetail from '@/components/program/TeeProgramDetail.vue'
 import { useDebugStore } from '@/stores/debug'
 
 interface Props {
-  locale?: string
   seed: TrackId
   programId?: string
-  datasetUrl?: string
-  maxDepth?: string
 }
 const props = defineProps<Props>()
 
@@ -125,12 +122,6 @@ const setupFromUrl = async () => {
 }
 
 onBeforeMount(() => {
-  // set max depth at mount
-  if (props.maxDepth) {
-    const maxDepthNum = Number(props.maxDepth)
-    tracks.setMaxDepth(maxDepthNum)
-  }
-
   // set first track at mount
   tracks.setSeedTrack(props.seed)
   tracks.addToUsedTracks(props.seed, props.seed)
