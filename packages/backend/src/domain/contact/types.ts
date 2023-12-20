@@ -1,3 +1,5 @@
+import { CustomError } from '../../helpers/errors'
+
 export interface ContactInfoBodyAttributes {
   NOM: string
   PRENOM: string

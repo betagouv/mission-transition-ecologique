@@ -1,3 +1,5 @@
+import { CustomError } from '../../helpers/errors'
+
 export interface Etablissement {
   siren: string
   nic: string
