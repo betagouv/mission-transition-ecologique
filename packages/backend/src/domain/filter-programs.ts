@@ -7,6 +7,7 @@ import { ensureError } from '../helpers/errors'
 import { filterObject } from '../helpers/objects'
 
 import type { QuestionnaireData, PublicodesInputData } from './types'
+import { CurrentDateService } from './spi'
 
 /** Expected rule to evaluate if a program should be displayed to the user or
  * filtered out (in a program's `publicodes`
@@ -16,31 +17,36 @@ import type { QuestionnaireData, PublicodesInputData } from './types'
  */
 export const FILTERING_RULE_NAME: string = 'entreprise . est ciblée'
 
-/** Filter out programs for which the company is not eligible
- *
- * @param programs - A list of programs, holding data on their filtering
- *   rules (inside the `publicodes` property)
- * @param inputData - Data associated with the company or the user inputs.
- * @returns Programs from `programs` that are either eligible (rules evaluate
- *   to `true`) or which eligibility cannot be assessed (rules evaluate to
- *   `undefined`, for instance with missing data)
- */
-export const filterPrograms = (programs: ProgramData[], inputData: QuestionnaireData): Result<ProgramData[], Error> => {
-  const filteredPrograms: ProgramData[] = []
+// createService deals with dependency injection
+export const createService = (currentDateService: CurrentDateService) => {
+  /** Filter out programs for which the company is not eligible
+   *
+   * @param programs - A list of programs, holding data on their filtering
+   *   rules (inside the `publicodes` property)
+   * @param inputData - Data associated with the company or the user inputs.
+   * @returns Programs from `programs` that are either eligible (rules evaluate
+   *   to `true`) or which eligibility cannot be assessed (rules evaluate to
+   *   `undefined`, for instance with missing data)
+   */
+  const filterPrograms = (programs: ProgramData[], inputData: QuestionnaireData): Result<ProgramData[], Error> => {
+    const filteredPrograms: ProgramData[] = []
 
-  for (const program of programs) {
-    const evaluation = evaluateRule(program, inputData)
+    for (const program of programs) {
+      const evaluation = evaluateRule(program, inputData, currentDateService.get())
 
-    if (evaluation.isErr) {
-      return Result.err(addErrorDetails(evaluation.error, program.id))
+      if (evaluation.isErr) {
+        return Result.err(addErrorDetails(evaluation.error, program.id))
+      }
+
+      if (shouldKeepProgram(evaluation)) {
+        filteredPrograms.push(program)
+      }
     }
 
-    if (shouldKeepProgram(evaluation)) {
-      filteredPrograms.push(program)
-    }
+    return Result.ok(filteredPrograms)
   }
 
-  return Result.ok(filteredPrograms)
+  return filterPrograms
 }
 
 const shouldKeepProgram = (evaluation: Result<boolean | undefined, Error>): boolean => {
@@ -64,7 +70,11 @@ const shouldKeepProgram = (evaluation: Result<boolean | undefined, Error>): bool
  *   `undefined` if the input data does not allow to fully evaluate the rule) or
  *   the Error if any.
  */
-const evaluateRule = (programData: ProgramData, questionnaireData: QuestionnaireData): Result<boolean | undefined, Error> => {
+const evaluateRule = (
+  programData: ProgramData,
+  questionnaireData: QuestionnaireData,
+  currentDate: string
+): Result<boolean | undefined, Error> => {
   const rules = programData.publicodes
 
   let engine: Engine
@@ -75,7 +85,7 @@ const evaluateRule = (programData: ProgramData, questionnaireData: Questionnaire
     return Result.err(err)
   }
 
-  const preprocessedData = preprocessInputForPublicodes(questionnaireData, programData)
+  const preprocessedData = preprocessInputForPublicodes(questionnaireData, programData, currentDate)
 
   const narrowedData = narrowInput(preprocessedData, engine)
 
@@ -110,13 +120,19 @@ const addErrorDetails = (err: Error, programName: string): Error => {
 
 /** preprocesses the data gathered from the questionnaire into variables
  * needed by publicodes */
-const preprocessInputForPublicodes = (questionnaireData: QuestionnaireData, programData: ProgramData): PublicodesInputData => {
+const preprocessInputForPublicodes = (
+  questionnaireData: QuestionnaireData,
+  programData: ProgramData,
+  _currentDate: string
+): PublicodesInputData => {
   const publicodesData: PublicodesInputData = { ...questionnaireData }
 
   if (questionnaireData.codeNaf) publicodesData['entreprise . code NAF'] = enquotePublicodesLiteralString(questionnaireData.codeNaf)
 
   if (programData['début de validité']) publicodesData['dispositif . début de validité'] = programData['début de validité']
   if (programData['fin de validité']) publicodesData['dispositif . fin de validité'] = programData['fin de validité']
+
+  // publicodesData['date du jour'] = currentDate
 
   return publicodesData
 }

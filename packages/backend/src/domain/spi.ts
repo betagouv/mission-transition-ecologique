@@ -8,3 +8,7 @@ export type EtablissementRepository = {
 export type ContactInfoRepository = {
   add: (email: string, attributes: object) => Promise<Result<ContactId, Error>>
 }
+
+export type CurrentDateService = {
+  get: () => string
+}

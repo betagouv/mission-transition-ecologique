@@ -1,9 +1,12 @@
 import { makeProgramHelper } from './testing'
-import { filterPrograms, FILTERING_RULE_NAME } from '../src/domain/filter-programs'
+import { createService, FILTERING_RULE_NAME } from '../src/domain/filter-programs'
 import { Result, ResultNS } from 'true-myth'
 import { ProgramData } from '@tee/web/src/types'
 import type { QuestionnaireData } from '../src/domain/types'
 import { Entry, setObjectProperty } from '../src/helpers/objects'
+
+const mockCurrentDateService = { get: () => '01/01/2024' }
+const filterPrograms = createService(mockCurrentDateService)
 
 const rulesBoilerplate = {
   entreprise: null,
@@ -194,7 +197,8 @@ describe(`
 
 enum DataSources {
   Questionnaire,
-  Program
+  Program,
+  CurrentDateService
 }
 
 type QuestionnaireInputProperty = {
@@ -207,7 +211,12 @@ type ProgramInputProperty = {
   inputDataSource: DataSources.Program
 }
 
-type PreprocessingTestCase = (QuestionnaireInputProperty | ProgramInputProperty) & {
+type CurrentDateInput = {
+  currentDate: string
+  inputDataSource: DataSources.CurrentDateService
+}
+
+type PreprocessingTestCase = (QuestionnaireInputProperty | ProgramInputProperty | CurrentDateInput) & {
   title: string
   publicodesKey: string
   filteringRule: string
@@ -237,8 +246,14 @@ const testHelperPreprocessing = (testCase: PreprocessingTestCase) => {
     })
 
     const questionnaireData: QuestionnaireData = {}
+    let mockCurrentDateService = { get: () => '01/01/2024' } // default
 
-    if (testCase.inputDataEntry !== undefined && testCase.inputDataEntry[1] !== undefined) {
+    // Set input data depending on data source
+    if (
+      testCase.inputDataSource !== DataSources.CurrentDateService &&
+      testCase.inputDataEntry !== undefined &&
+      testCase.inputDataEntry[1] !== undefined
+    ) {
       if (testCase.inputDataSource === DataSources.Questionnaire) {
         const key = testCase.inputDataEntry[0]
         const value = testCase.inputDataEntry[1]
@@ -252,6 +267,11 @@ const testHelperPreprocessing = (testCase: PreprocessingTestCase) => {
       }
     }
 
+    if (testCase.inputDataSource === DataSources.CurrentDateService) {
+      mockCurrentDateService = { get: () => testCase.currentDate }
+    }
+
+    const filterPrograms = createService(mockCurrentDateService)
     const result = filterPrograms([program], questionnaireData)
 
     expectToBeOk(result)
@@ -393,4 +413,23 @@ describe(`
   testCases.forEach((testCase) => {
     testValidityEnd(testCase.validityEnd, testCase.currentDate, testCase.expectedKeep)
   })
+})
+
+describe(`
+ GIVEN a current date
+   AND a program with a rule using "date du jour"
+  WHEN evaluating this rule
+EXPECT the program to be kept or filtered out as expected`, () => {
+  const testCurrentDate = (currentDate: string, keptDate: string, expectedKeep: boolean) => {
+    testHelperPreprocessing({
+      title: `current date is mapped to "date du jour" (current date ${currentDate}, keep if equal to ${keptDate})`,
+      currentDate: currentDate,
+      inputDataSource: DataSources.CurrentDateService,
+      publicodesKey: 'date du jour',
+      filteringRule: `date du jour = ${keptDate}`,
+      expectedKeep: expectedKeep
+    })
+  }
+
+  testCurrentDate('31/12/2023', '31/12/2023', true)
 })
