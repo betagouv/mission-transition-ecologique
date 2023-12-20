@@ -432,4 +432,5 @@ EXPECT the program to be kept or filtered out as expected`, () => {
   }
 
   testCurrentDate('31/12/2023', '31/12/2023', true)
+  testCurrentDate('01/12/2023', '31/12/2023', false)
 })
