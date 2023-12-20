@@ -5,7 +5,6 @@ import WebApp from '@/WebApp.vue'
 import VueDsfr from '@gouvminint/vue-dsfr'
 // Styles imports
 import './assets/main.css'
-import '@gouvfr/dsfr/dist/core/core.main.min.css'
 import { listIcons } from '@/icons'
 
 const store = createPinia()

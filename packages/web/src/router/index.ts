@@ -3,7 +3,6 @@
 
 import { createRouter, createWebHistory } from 'vue-router'
 import TeeHomePage from '../pages/TeeHomePage.vue'
-import WidgetApp from '../WidgetApp.ce.vue'
 import TeeQuestionnairePage from '../pages/TeeQuestionnairePage.vue'
 import TeeCatalogPage from '../pages/TeeCatalogPage.vue'
 import TeeProgramPage from '../pages/TeeProgramPage.vue'
@@ -51,7 +50,7 @@ export const router = createRouter({
         {
           path: '',
           name: RouteName.Catalog,
-          component: WidgetApp as Component,
+          component: TeeQuestionnaire as Component,
           props: {
             seed: TrackId.Results
           }
