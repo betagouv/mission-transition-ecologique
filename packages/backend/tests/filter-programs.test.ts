@@ -262,10 +262,10 @@ const testHelperPreprocessing = (testCase: PreprocessingTestCase) => {
 }
 
 describe(`
-  GIVEN  input data from the questionnaire
-    AND  rules that use values from the keys of "PublicodesInputData" type
-   WHEN  the rules are evaluated
- EXPECT the values from "PublicodesInputData" used for evaluation are properly computed from the questionnaire data
+  GIVEN  questionnaireData with a property "codeNAF"
+    AND  a rule that uses "entreprise . code NAF"
+   WHEN  the rule is evaluated
+ EXPECT  the program is properly kept or filtered out
 `, () => {
   const testCodeNaf = (inputCodeNaf: string | undefined, keptCodeNaf: string, expectedKeep: boolean) => {
     testHelperPreprocessing({
@@ -306,38 +306,91 @@ describe(`
 })
 
 describe(`
-  GIVEN  data from the program
-    AND  rules that use values from the keys of "PublicodesInputData" type
-   WHEN  the rules are evaluated
- EXPECT  the values from "PublicodesInputData" used for evaluation to be properly computed from the program data
+  GIVEN  a program with a property "début de validité"
+    AND  a rule that uses "dispositif . début de validité"
+   WHEN  the rule is evaluated
+ EXPECT  the program is properly kept or filtered out
 `, () => {
-  const testValidityStartMapping = (validityStart: string | undefined, expectedKeep: boolean) => {
+  const testValidityStart = (validityStart: string | undefined, currentDate: string, expectedKeep: boolean) => {
     testHelperPreprocessing({
-      title: `"début de validité" mapped to "dispositif . début de validité", interpreted as date (${validityStart})`,
+      title: `"début de validité" mapped to "dispositif . début de validité", (valid since ${validityStart}, current date ${currentDate})`,
       inputDataEntry: ['début de validité', validityStart],
       inputDataSource: DataSources.Program,
       publicodesKey: 'dispositif . début de validité',
-      filteringRule: 'dispositif . début de validité > 01/01/2024',
+      filteringRule: `dispositif . début de validité <= ${currentDate}`,
       expectedKeep: expectedKeep
     })
   }
 
   const testCases = [
     {
-      validityStart: '19/12/2023',
+      validityStart: '01/01/2024',
+      currentDate: '20/12/2023',
       expectedKeep: false
     },
     {
-      validityStart: '02/01/2024',
+      validityStart: '01/01/2024',
+      currentDate: '02/01/2024',
+      expectedKeep: true
+    },
+    {
+      validityStart: '01/01/2024',
+      currentDate: '01/01/2024',
       expectedKeep: true
     },
     {
       validityStart: undefined,
+      currentDate: '20/12/2024',
       expectedKeep: true
     }
   ]
 
-  testCases.forEach((tc) => {
-    testValidityStartMapping(tc.validityStart, tc.expectedKeep)
+  testCases.forEach((testCase) => {
+    testValidityStart(testCase.validityStart, testCase.currentDate, testCase.expectedKeep)
+  })
+})
+
+describe(`
+  GIVEN  a program with a property "fin de validité"
+    AND  a rule that uses "dispositif . fin de validité"
+   WHEN  the rule is evaluated
+ EXPECT  the program is properly kept or filtered out
+`, () => {
+  const testValidityEnd = (validityEnd: string | undefined, currentDate: string, expectedKeep: boolean) => {
+    testHelperPreprocessing({
+      title: `"fin de validité" mapped to "dispositif . fin de validité", (valid until ${validityEnd}, current date ${currentDate})`,
+      inputDataEntry: ['fin de validité', validityEnd],
+      inputDataSource: DataSources.Program,
+      publicodesKey: 'dispositif . fin de validité',
+      filteringRule: `${currentDate} <= dispositif . fin de validité`,
+      expectedKeep: expectedKeep
+    })
+  }
+
+  const testCases = [
+    {
+      validityEnd: '31/12/2023',
+      currentDate: '20/12/2023',
+      expectedKeep: true
+    },
+    {
+      validityEnd: '31/12/2023',
+      currentDate: '01/01/2024',
+      expectedKeep: false
+    },
+    {
+      validityEnd: '31/12/2023',
+      currentDate: '31/12/2023',
+      expectedKeep: true
+    },
+    {
+      validityEnd: undefined,
+      currentDate: '01/01/2028',
+      expectedKeep: true
+    }
+  ]
+
+  testCases.forEach((testCase) => {
+    testValidityEnd(testCase.validityEnd, testCase.currentDate, testCase.expectedKeep)
   })
 })
