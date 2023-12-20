@@ -23,7 +23,7 @@ export default class MetaEnv {
   }
 
   static get isDebugSwitch() {
-    return this.metaEnv.VITE_NO_DEBUG_SWITCH === 'false' ?? false
+    return this.metaEnv.VITE_NO_DEBUG_SWITCH === 'false'
   }
 
   static get contactEmail() {
@@ -31,7 +31,7 @@ export default class MetaEnv {
   }
 
   static get hasMatomo() {
-    return this.metaEnv.VITE_MATOMO_DEACTIVATE === 'false' ?? false
+    return this.metaEnv.VITE_MATOMO_DEACTIVATE === 'false'
   }
 
   static get baseUrl() {
