@@ -73,9 +73,9 @@
           <!-- DEBUG -->
           <p v-if="debugStore.is" class="vue-debug fr-card__desc">
             <br />
-            choices.publicPath : <code>{{ choices.publicPath }}</code> <br />
+            publicPath : <code>{{ publicPath }}</code> <br />
             prog.cover : <code>{{ prog.illustration }}</code>
-            <!-- {{ `${choices.publicPath}${randomImage()}` }} -->
+            <!-- {{ `${publicPath}${randomImage()}` }} -->
           </p>
           <!-- END -->
           <div class="fr-card__end">
@@ -88,7 +88,7 @@
       </div>
       <div v-if="prog.illustration" class="fr-card__header">
         <div class="fr-card__img">
-          <img class="fr-responsive-img" :src="`${choices.publicPath}${prog.illustration}`" :alt="`image / ${prog.titre}`" />
+          <img class="fr-responsive-img" :src="`${publicPath}${prog.illustration}`" :alt="`image / ${prog.titre}`" />
         </div>
         <ul class="fr-badges-group">
           <p class="fr-badge tee-program-badge-image">
@@ -130,7 +130,6 @@
 import { ref, onBeforeMount, computed } from 'vue'
 import { choicesStore } from '../../stores/choices'
 import { programsStore } from '../../stores/programs'
-import { analyticsStore } from '../../stores/analytics'
 import { getFrom, scrollToTop, consolidateAmounts } from '../../utils/helpers'
 import TeeResultsFilter from './TeeResultsFilter.vue'
 import TeeNoResults from './TeeNoResults.vue'
@@ -142,12 +141,13 @@ import { useRoute, useRouter } from 'vue-router'
 import { RouteName } from '@/types/routeType'
 import Widget from '@/utils/widget'
 import { useDebugStore } from '@/stores/debug'
+import MetaEnv from '@/utils/metaEnv'
+import Matomo from '@/utils/matomo'
 
 const route = useRoute()
 const router = useRouter()
 const choices = choicesStore()
 const programs = programsStore()
-const analytics = analyticsStore()
 const nav = navigationStore()
 const debugStore = useDebugStore()
 
@@ -162,6 +162,8 @@ interface Props {
   trackElement: Element
 }
 const props = defineProps<Props>()
+
+const publicPath = MetaEnv.publicPath
 
 const filteredPrograms: ProgramData[] | undefined = programs.filterPrograms(props.tracksResults)
 
@@ -268,6 +270,6 @@ const getCostInfos = (program: ProgramData) => {
 
 onBeforeMount(() => {
   // analytics / send event
-  analytics.sendEvent(props.trackId, 'show_results')
+  Matomo.sendEvent(props.trackId, 'show_results')
 })
 </script>

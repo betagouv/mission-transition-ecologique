@@ -8,10 +8,10 @@
           step : <code>{{ step }} </code>
         </h6>
         <h6 class="fr-mb-1v">
-          trackId : <code>{{ trackId }} </code>
+          trackId : <code>{{ usedTrack.id }} </code>
         </h6>
         <h6 class="fr-mb-1v">
-          isCompleted : <code>{{ isCompleted }} </code>
+          isCompleted : <code>{{ usedTrack.completed }} </code>
         </h6>
         <!-- <h6 class="fr-mb-1v"> tracks.isTrackCompleted(trackId) : <code>{{ tracks.isTrackCompleted(trackId) }} </code></h6> -->
         <h6 class="fr-mb-1v">
@@ -57,7 +57,7 @@
     </div>
   </div>
 
-  <div v-show="!isCompleted && track !== undefined" :id="trackId" :key="`track-${step}-${trackId}`" class="fr-grid-row">
+  <div v-show="!usedTrack.completed && track !== undefined" :id="usedTrack.id" :key="`track-${step}-${usedTrack.id}`" class="fr-grid-row">
     <div :class="`fr-col${track?.imageRight ? ' fr-col-md-7 fr-col-lg-7 tee-track-has-image-right' : ''}`">
       <!-- UNCOMPLETED QUESTIONNAIRE -->
       <div :class="`fr-grid-row fr-grid-row--gutters ${track?.bgColor ? 'fr-p-5v fr-p-sm-8v fr-p-md-20v' : ''}`">
@@ -74,7 +74,7 @@
                 class="fr-col-4 fr-col-sm-4 fr-col-md-5 tee-track-callout-img fr-pl-0 fr-p-2v fr-pr-0"
                 style="align-self: center"
               >
-                <img class="fr-responsive-img" :src="`${choices.publicPath}${track.callout.imageLeft}`" :alt="`image / callout`" />
+                <img class="fr-responsive-img" :src="`${publicPath}${track.callout.imageLeft}`" :alt="`image / callout`" />
               </div>
               <!-- CALLOUT TEXT -->
               <div :class="`${track.callout.bigTitle ? 'fr-col-8 fr-col-sm-8 fr-col-md-7' : 'fr-col fr-col-md-7 tee-track-callout-texts'}`">
@@ -111,7 +111,7 @@
               </div>
               <!-- CALLOUT IMAGE RIGHT -->
               <div v-if="track.callout.imageRight" class="fr-col-3" style="align-self: center">
-                <img class="fr-responsive-img" :src="`${choices.publicPath}${track.callout.imageRight}`" :alt="`image / callout`" />
+                <img class="fr-responsive-img" :src="`${publicPath}${track.callout.imageRight}`" :alt="`image / callout`" />
               </div>
             </div>
           </div>
@@ -120,7 +120,7 @@
         <!-- TRACK LABEL -->
         <div v-if="step !== 1" :class="`fr-mt-3v ${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`">
           <h3 :class="`${track?.info ? 'fr-mb-0' : 'fr-mb-2v'}`" :style="`${isTrackResults ? 'color: #000091; font-size: 2.75rem;' : ''}`">
-            {{ tracks.getTrackLabel(trackId, choices.lang) }}
+            {{ tracks.getTrackLabel(usedTrack.id, choices.lang) }}
           </h3>
         </div>
 
@@ -149,7 +149,7 @@
         <!-- TRACK CHOICES {{ renderAs }} / EXCEPT SELECT-->
         <div
           v-for="(option, idx) in optionsArray"
-          :key="`track-${step}-${trackId}-option-${idx}`"
+          :key="`track-${step}-${usedTrack.id}-option-${idx}`"
           :class="`${colsWidth} ${isTrackResults ? 'fr-col-offset-md-1' : ''} tee-track-choice`"
           :style="renderAs === trackComponents.Select ? 'display: none' : ''"
         >
@@ -158,7 +158,7 @@
             <div class="fr-card fr-enlarge-link" @click="updateSelection(option, idx)">
               <div v-if="option.imageTop" class="fr-card__header">
                 <div class="fr-card__img">
-                  <img class="fr-responsive-img" :src="`${choices.publicPath}${option.imageTop}`" :alt="`image / ${option.label}`" />
+                  <img class="fr-responsive-img" :src="`${publicPath}${option.imageTop}`" :alt="`image / ${option.label}`" />
                 </div>
               </div>
               <div class="fr-card__body">
@@ -204,7 +204,7 @@
           <!-- AS BUTTON + BUTTON INPUT -->
           <div v-if="renderAs === trackComponents.Buttons && isTrackOptionsInput(option)" class="fr-div-fixed-height">
             <TeeTrackButtonInput
-              :track-id="trackId"
+              :track-id="usedTrack.id"
               :icon="getButtonIcon(idx)"
               :is-active="isActiveChoice(idx)"
               :option="option"
@@ -228,9 +228,8 @@
           <!-- AS INPUT -->
           <div v-if="renderAs === trackComponents.Input && isTrackOptionsInput(option)" style="height: 100%">
             <TeeTrackInput
-              :track-id="trackId"
+              :track-id="usedTrack.id"
               :option="option"
-              :is-active="isActiveChoice(idx)"
               @update-selection="updateSelectionFromSignal($event, idx)"
               @go-to-next-track="saveSelectionFromSignal($event, idx)"
             />
@@ -239,7 +238,7 @@
           <!-- AS RESULT -->
           <div v-if="isTrackResults">
             <TeeResults
-              :track-id="trackId"
+              :track-id="usedTrack.id"
               :track-config="track?.config"
               :track-options="track?.options"
               :track-form="track?.form"
@@ -257,7 +256,7 @@
 
       <!-- SEND / NEXT BUTTON -->
       <div
-        v-if="!noNeedForNext.includes(renderAs) && !isCompleted && !isTrackResults"
+        v-if="!noNeedForNext.includes(renderAs) && !usedTrack.completed && !isTrackResults"
         class="fr-grid-row fr-grid-row--gutters fr-pt-8v"
         style="justify-content: start"
       >
@@ -287,7 +286,7 @@
 
     <!-- TRACK IMAGE RIGHT IF ANY -->
     <div v-if="track?.imageRight" class="fr-col-12 fr-col-md-5 fr-col-lg-5 tee-track-image-right">
-      <img class="fr-responsive-img" :src="`${choices.publicPath}${track.imageRight}`" :alt="`image / callout`" />
+      <img class="fr-responsive-img" :src="`${publicPath}${track.imageRight}`" :alt="`image / callout`" />
     </div>
   </div>
 </template>
@@ -298,8 +297,8 @@
 
 import { computed, ref, toRaw, watch } from 'vue'
 import type { DsfrButton } from '@gouvminint/vue-dsfr'
-import type { ColsOptions, NextTrackRuleSet, Track, TrackOptionsUnion } from '@/types'
-import { isTrackOptionsInput, TrackComponents, TrackId } from '@/types'
+import type { ColsOptions, NextTrackRuleSet, Track, TrackOptionsUnion, UsedTrack } from '@/types'
+import { isTrackOptionsInput, TrackComponents } from '@/types'
 import { remapItem, scrollToTop } from '@/utils/helpers'
 import { CheckNextTrackRules } from '@/utils/conditions'
 import TeeTrackInput from './TeeTrackInput.vue'
@@ -308,13 +307,13 @@ import TeeTrackButtonInput from './TeeTrackButtonInput.vue'
 import TeeResults from '../results/TeeResults.vue'
 import { tracksStore } from '@/stores/tracks'
 import { choicesStore } from '@/stores/choices'
-import { analyticsStore } from '@/stores/analytics'
 import { useDebugStore } from '@/stores/debug'
+import MetaEnv from '@/utils/metaEnv'
+import Matomo from '@/utils/matomo'
 
 interface Props {
   step: number
-  trackId: TrackId
-  isCompleted: boolean
+  usedTrack: UsedTrack
   trackElement: Element
 }
 const props = defineProps<Props>()
@@ -345,14 +344,15 @@ const noNeedForNext = [TrackComponents.Cards, TrackComponents.SimpleButtons]
 
 const tracks = tracksStore()
 const choices = choicesStore()
-const analytics = analyticsStore()
 const debugStore = useDebugStore()
 
 const selectedOptionsIndices = ref<number[]>([])
 const selectedOptions = ref<TrackOptionsUnion[]>([])
 const needRemove = ref<boolean>(false)
 
-const track: Track | undefined = tracks.getTrack(props.trackId)
+const publicPath = MetaEnv.publicPath
+const track: Track | undefined = tracks.getTrack(props.usedTrack.id)
+// const usedTrackRef = ref<UsedTrack>(props.usedTrack)
 
 const renderAs: TrackComponents = track?.interface?.component ?? TrackComponents.Buttons
 const customColWidth: number | string = track?.interface?.columnWidth ?? 0
@@ -376,7 +376,7 @@ const colsWidth = computed(() => {
   let divSize: string | number
   let divSizeLarge = colsOptionsLarge[renderAs]
 
-  if (props.isCompleted) {
+  if (props.usedTrack.completed) {
     // full width of 10 if completed track
     divSize = colsOptions[renderAs]
   } else if (customColWidth === 'auto') {
@@ -399,8 +399,7 @@ const colsWidth = computed(() => {
 
 // getters
 const isActiveChoice = (index: number) => {
-  const activeIndex = selectedOptionsIndices.value.includes(index)
-  return activeIndex
+  return selectedOptionsIndices.value.includes(index)
 }
 
 const updateSelection = (option: TrackOptionsUnion, index: number, forceRemove: boolean = false) => {
@@ -417,7 +416,7 @@ const updateSelection = (option: TrackOptionsUnion, index: number, forceRemove: 
 
     // analytics / track event / only if positive choice
     for (const [key, val] of Object.entries(option.value)) {
-      analytics.sendEvent(props.trackId, key, val as string | number)
+      Matomo.sendEvent(props.usedTrack.id, key, val as string | number)
     }
   } else {
     // remove from selection because is already active
@@ -497,19 +496,6 @@ const getButtonIcon = (index: number) => {
   return icon
 }
 
-// watchers
-watch(
-  () => props.isCompleted,
-  (next) => {
-    if (!next) {
-      resetSelections()
-      tracks.updateUsedTracks(props.trackId, props.step, next, selectedOptions.value)
-    }
-  }
-)
-
-// functions
-
 const saveSelection = () => {
   const optionNext = selectedOptions.value[0].next
   const nextExceptions = optionNext?.exceptions
@@ -536,24 +522,36 @@ const saveSelection = () => {
     })
   }
 
-  tracks.updateUsedTracks(props.trackId, props.step, next, selectedOptions.value)
+  tracks.updateUsedTracks(props.usedTrack.id, props.step, next, selectedOptions.value)
 
   if (!needRemove.value && next && next.default !== false) {
     const canAddTrack = !tracks.trackExistsInUsed(next.default)
-    canAddTrack && tracks.addToUsedTracks(props.trackId, next.default)
+    canAddTrack && tracks.addToUsedTracks(props.usedTrack.id, next.default)
   } else {
-    tracks.removeFurtherUsedTracks(props.trackId)
+    tracks.removeFurtherUsedTracks(props.usedTrack.id)
   }
 
   scrollToTop(props.trackElement)
 }
 
 const backToPreviousTrack = () => {
-  const indexOfTrack = tracks.tracksStepsArray.indexOf(props.trackId)
+  const indexOfTrack = tracks.tracksStepsArray.indexOf(props.usedTrack.id)
   const TrackToGoBackTo = tracks.tracksStepsArray[indexOfTrack - 1]
   tracks.setUsedTracksAsNotCompleted(TrackToGoBackTo)
   tracks.removeFurtherUsedTracks(TrackToGoBackTo)
 
   scrollToTop(props.trackElement)
 }
+
+// watchers
+watch(
+  () => props.usedTrack.completed,
+  (next) => {
+    if (!next) {
+      resetSelections()
+      tracks.updateUsedTracks(props.usedTrack.id, props.step, next, selectedOptions.value)
+    }
+  },
+  { deep: true }
+)
 </script>

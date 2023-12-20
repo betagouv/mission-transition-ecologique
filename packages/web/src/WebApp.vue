@@ -28,12 +28,11 @@ import { choicesStore } from './stores/choices'
 import { programsStore } from './stores/programs'
 import { navigationStore } from './stores/navigation'
 
-import { publicPath, programsFromJson } from './utils/global'
-
 import TeeHeader from './components/TeeHeader.vue'
 import TeeMatomo from './components/TeeMatomo.vue'
 import TeeAppFooter from './components/TeeAppFooter.vue'
 import type { ProgramData } from '@/types'
+import jsonDataset from '../public/data/generated/dataset_out.json'
 
 const choices = choicesStore()
 const programs = programsStore()
@@ -48,8 +47,8 @@ interface Props {
 defineProps<Props>()
 
 onBeforeMount(() => {
-  choices.setPublicPath(publicPath)
-  programs.setDataset(programsFromJson as ProgramData[])
+  programs.setDataset(jsonDataset as ProgramData[])
+  choices.setLocale('fr')
 })
 
 onMounted(async () => {

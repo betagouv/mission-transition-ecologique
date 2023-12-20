@@ -14,7 +14,7 @@
           class="fr-tee-add-padding fr-mt-4v fr-col-3 fr-col-md-4 fr-col-lg-4 fr-col-xl-2 fr-col-sm-hide"
           style="height: 100%"
         >
-          <TeeSidebar :used-tracks="tracks.usedTracks" />
+          <TeeSidebar />
         </div>
 
         <!-- TRACKS -->
@@ -33,13 +33,7 @@
             }`"
             :class="`fr-p-0 fr-mb-${debugStore.is ? '12v' : '0'}`"
           >
-            <TeeTrack
-              v-if="trackElement"
-              :step="index + 1"
-              :track-id="track.id as TrackId"
-              :is-completed="!!tracks.isTrackCompleted(track.id as TrackId)"
-              :track-element="trackElement"
-            />
+            <TeeTrack v-if="trackElement" :step="index + 1" :used-track="track" :track-element="trackElement" />
           </div>
         </div>
       </div>
@@ -61,11 +55,9 @@ import { computed, onBeforeMount, onMounted, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
 import { tracksStore } from '@/stores/tracks'
-import { choicesStore } from '@/stores/choices'
 import { programsStore } from '@/stores/programs'
 import { navigationStore } from '@/stores/navigation'
-import { type ProgramData, TrackComponents, TrackId } from '@/types'
-import { programsFromJson, publicPath } from '@/utils/global'
+import { TrackComponents, TrackId } from '@/types'
 import TeeTrack from '@/components/tracks/TeeTrack.vue'
 import TeeSidebar from '@/components/TeeSidebar.vue'
 import TeeProgramDetail from '@/components/program/TeeProgramDetail.vue'
@@ -83,7 +75,6 @@ const props = defineProps<Props>()
 const trackElement = ref<HTMLElement | null>(null)
 
 const tracks = tracksStore()
-const choices = choicesStore()
 const programs = programsStore()
 const nav = navigationStore()
 const debugStore = useDebugStore()
@@ -122,18 +113,6 @@ const getColumnsWidth = computed(() => {
   }
 })
 
-const setupGlobal = () => {
-  choices.setPublicPath(publicPath)
-
-  // load dataset to pinia store
-  // programs.setDataset(props.datasetUrl, deployMode, deployUrl)
-  programs.setDataset(programsFromJson as ProgramData[])
-
-  // set locale and message
-  const locale = props.locale || 'fr'
-  choices.setLocale(locale)
-}
-
 const setupFromUrl = async () => {
   const programId = props.programId || (route.query['teeDetail'] as string | null)
   if (programId) {
@@ -146,8 +125,6 @@ const setupFromUrl = async () => {
 }
 
 onBeforeMount(() => {
-  setupGlobal()
-
   // set max depth at mount
   if (props.maxDepth) {
     const maxDepthNum = Number(props.maxDepth)

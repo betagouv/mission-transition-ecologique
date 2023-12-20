@@ -27,10 +27,9 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`TeeContact > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import type { ImportMetaEnv } from '@/env'
+import MetaEnv from '@/utils/metaEnv'
 
-const metaEnv: ImportMetaEnv = import.meta.env as ImportMetaEnv
-const contactEmail: string = metaEnv.VITE_CONTACT_EMAIL || 'france-transition@beta.gouv.fr'
+const contactEmail = MetaEnv.contactEmail
 
 const sendEmail = () => {
   window.location.assign(`mailto:${contactEmail}`)

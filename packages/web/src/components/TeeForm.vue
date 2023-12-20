@@ -204,17 +204,15 @@ import { sendApiRequest } from '../utils/requests'
 import { remapItem } from '../utils/helpers'
 import { tracksStore } from '../stores/tracks'
 import { choicesStore } from '../stores/choices'
-import { analyticsStore } from '../stores/analytics'
-import type { ImportMetaEnv } from '../env'
 import DsfrButton from '@/components/button/DsfrButton.vue'
+import Matomo from '@/utils/matomo'
+import MetaEnv from '@/utils/metaEnv'
 
 const choices = choicesStore()
 const tracks = tracksStore()
-const analytics = analyticsStore()
 
 const trackValues: any[] = tracks.getAllUsedTracksValues
-const metaEnv: ImportMetaEnv = import.meta.env as ImportMetaEnv
-const contactEmail = metaEnv.VITE_CONTACT_EMAIL || 'france-transition@beta.gouv.fr'
+const contactEmail = MetaEnv.contactEmail
 
 interface DataProps {
   programId: string
@@ -326,7 +324,7 @@ const saveFormData = async () => {
     formIsSent.value = true
 
     // analytics / send event
-    analytics.sendEvent(props.trackId, 'send_form')
+    Matomo.sendEvent(props.trackId, 'send_form')
   } finally {
     isLoading.value = false
   }

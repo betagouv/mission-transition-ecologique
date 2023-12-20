@@ -52,10 +52,12 @@ const tracks = tracksStore()
 const choices = choicesStore()
 const debugStore = useDebugStore()
 
-const usedTracks = tracks.usedTracks
+const usedTracks = computed(() => {
+  return tracks.usedTracks
+})
 
 const usedTracksRegrouped = computed(() => {
-  const trackWithCategories = usedTracks.map((usedTrack: UsedTrack) => {
+  const trackWithCategories = usedTracks.value.map((usedTrack: UsedTrack) => {
     return {
       ...usedTrack,
       category: tracks.getTrackCategory(usedTrack.id as TrackId)
@@ -69,7 +71,7 @@ const usedCategories = computed(() => {
   return Object.keys(usedTracksRegrouped.value)
 })
 
-const backToTrack = (trackId: string) => {
+const backToTrack = (trackId: TrackId) => {
   tracks.setUsedTracksAsNotCompleted(trackId)
   tracks.removeFurtherUsedTracks(trackId)
 }

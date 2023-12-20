@@ -72,13 +72,7 @@
             }`"
             :class="`fr-p-0 fr-mb-${debugStore.is ? '12v' : '0'}`"
           >
-            <TeeTrack
-              v-if="trackElement"
-              :step="index + 1"
-              :track-id="track.id as TrackId"
-              :is-completed="!!tracks.isTrackCompleted(track.id as TrackId)"
-              :track-element="trackElement"
-            />
+            <TeeTrack v-if="trackElement" :step="index + 1" :used-track="track" :track-element="trackElement" />
           </div>
         </div>
       </div>
@@ -110,7 +104,6 @@ import { choicesStore } from './stores/choices'
 import { programsStore } from './stores/programs'
 import { navigationStore } from './stores/navigation'
 import { type ProgramData, TrackComponents, TrackId } from './types'
-import { deployMode, deployUrl, noDebugSwitch, programsFromJson, publicPath } from './utils/global'
 import TeeMatomo from './components/TeeMatomo.vue'
 import TeeTrack from './components/tracks/TeeTrack.vue'
 import TeeSidebar from './components/TeeSidebar.vue'
@@ -118,6 +111,8 @@ import TeeProgramDetail from './components/program/TeeProgramDetail.vue'
 import Widget from '@/utils/widget'
 import { useDebugStore } from '@/stores/debug'
 import { DsfrToggleSwitch } from '@gouvminint/vue-dsfr'
+import jsonDataset from '../public/data/generated/dataset_out.json'
+import MetaEnv from '@/utils/metaEnv'
 
 interface Props {
   locale?: string
@@ -177,11 +172,9 @@ const getColumnsWidth = computed(() => {
 })
 
 const setupGlobal = () => {
-  choices.setPublicPath(publicPath)
-
   // load dataset to pinia store
   // programs.setDataset(props.datasetUrl, deployMode, deployUrl)
-  programs.setDataset(programsFromJson as ProgramData[])
+  programs.setDataset(jsonDataset as ProgramData[])
 
   // set locale and message
   const locale = props.locale ?? 'fr'
@@ -192,7 +185,7 @@ onBeforeMount(() => {
   setupGlobal()
 
   // inject style link in html head if not present
-  const href = deployMode ? `${deployUrl}/style.css` : ''
+  const href = MetaEnv.isProduction ? `${MetaEnv.deployUrl}/style.css` : ''
   let needStyle = Widget.is
   // avoid duplicates
   const styleSheets = document.styleSheets.length
@@ -204,7 +197,7 @@ onBeforeMount(() => {
       }
     }
   }
-  if (needStyle && deployMode) {
+  if (needStyle && MetaEnv.isProduction) {
     const head = document.head
     const link = document.createElement('link')
     link.type = 'text/css'
@@ -221,7 +214,7 @@ onBeforeMount(() => {
 
   // set debug mode
   // no switch for production deployment
-  debugStore.hasSwitch = !noDebugSwitch && props.debugSwitch
+  debugStore.hasSwitch = MetaEnv.isDebugSwitch && props.debugSwitch
   if (debugStore.hasSwitch && props.debug) {
     debugStore.is = props.debug
   }

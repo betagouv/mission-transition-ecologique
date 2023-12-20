@@ -13,7 +13,7 @@
       <div class="fr-col-md-4 fr-col-lg-3 fr-col-xl-3 fr-col-sm-hide fr-text-right">
         <img
           class="fr-responsive-img"
-          :src="`${choices.publicPath}${program?.illustration}`"
+          :src="`${publicPath}${program?.illustration}`"
           :alt="`image / ${program?.titre}`"
           style="min-height: 100%; object-fit: cover"
         />
@@ -59,7 +59,7 @@
         :class="columnTiles">
         <TeeTile
           :title="choices.t('program.programGeoZones')"
-          :image-path="`${choices.publicPath}images/TEE-porteur.svg`"
+          :image-path="`${publicPath}images/TEE-porteur.svg`"
           :description="'...'"
         />
       </div> -->
@@ -69,7 +69,7 @@
         <TeeTile
           class="tee-no-hover"
           :title="choices.t('programCosts.cost')"
-          :image-path="`${choices.publicPath}images/TEE-cout.svg`"
+          :image-path="`${publicPath}images/TEE-cout.svg`"
           :description="`${program[`coût de l'accompagnement`]}`"
         />
       </div>
@@ -78,7 +78,7 @@
         <TeeTile
           class="tee-no-hover"
           :title="choices.t('programCosts.aid')"
-          :image-path="`${choices.publicPath}images/TEE-cout.svg`"
+          :image-path="`${publicPath}images/TEE-cout.svg`"
           :description="`${program[`montant du financement`]}`"
         />
       </div>
@@ -87,7 +87,7 @@
         <TeeTile
           class="tee-no-hover"
           :title="choices.t('programCosts.taxAdvantage')"
-          :image-path="`${choices.publicPath}images/TEE-cout.svg`"
+          :image-path="`${publicPath}images/TEE-cout.svg`"
           :description="`${program[`montant de l'avantage fiscal`]}`"
         />
       </div>
@@ -96,7 +96,7 @@
         <TeeTile
           class="tee-no-hover"
           :title="choices.t('programCosts.loan')"
-          :image-path="`${choices.publicPath}images/TEE-cout.svg`"
+          :image-path="`${publicPath}images/TEE-cout.svg`"
           :description="`${program[`montant du prêt`]}`"
         />
       </div>
@@ -106,7 +106,7 @@
         <TeeTile
           class="tee-no-hover"
           :title="choices.t('programCosts.loanRate')"
-          :image-path="`${choices.publicPath}images/TEE-cout.svg`"
+          :image-path="`${publicPath}images/TEE-cout.svg`"
           :description="`${program[`taux du prêt`]}`"
         />
       </div> -->
@@ -116,7 +116,7 @@
         <TeeTile
           class="tee-no-hover"
           :title="choices.t('program.programType')"
-          :image-path="`${choices.publicPath}images/TEE-typefinance.svg`"
+          :image-path="`${publicPath}images/TEE-typefinance.svg`"
           :description="program?.[`nature de l'aide`]"
         >
         </TeeTile>
@@ -127,7 +127,7 @@
         <TeeTile
           class="tee-no-hover"
           :title="choices.t('program.programDuration')"
-          :image-path="`${choices.publicPath}images/TEE-duree.svg`"
+          :image-path="`${publicPath}images/TEE-duree.svg`"
           :description="program[`durée de l'accompagnement`]"
         />
       </div>
@@ -135,7 +135,7 @@
         <TeeTile
           class="tee-no-hover"
           :title="choices.t('program.programLoanDuration')"
-          :image-path="`${choices.publicPath}images/TEE-duree.svg`"
+          :image-path="`${publicPath}images/TEE-duree.svg`"
           :description="program[`durée du prêt`]"
         />
       </div>
@@ -146,7 +146,7 @@
           v-if="program"
           class="tee-no-hover"
           :title="choices.t('program.programProviders')"
-          :image-path="`${choices.publicPath}images/TEE-porteur.svg`"
+          :image-path="`${publicPath}images/TEE-porteur.svg`"
           :description="choices.to(program['opérateur de contact'])"
         >
         </TeeTile>
@@ -200,7 +200,7 @@
                   <img
                     v-if="program"
                     class="fr-responsive-img fr-sm-hide"
-                    :src="`${choices.publicPath}images/TEE_illustration.png`"
+                    :src="`${publicPath}images/TEE_illustration.png`"
                     :alt="`image / ${program.titre}`"
                   />
                 </div>
@@ -236,18 +236,18 @@ import { choicesStore } from '@/stores/choices'
 import { tracksStore } from '@/stores/tracks'
 import { programsStore } from '@/stores/programs'
 import { navigationStore } from '@/stores/navigation'
-import { analyticsStore } from '@/stores/analytics'
 import { scrollToId } from '@/utils/helpers'
 import type { TrackId, ProgramData } from '@/types'
 import ProgramObjective from '@/components/program/ProgramObjective.vue'
 import { useRoute, useRouter } from 'vue-router'
 import { RouteName } from '@/types/routeType'
 import Widget from '@/utils/widget'
+import MetaEnv from '@/utils/metaEnv'
+import Matomo from '@/utils/matomo'
 
 const choices = choicesStore()
 const tracks = tracksStore()
 const programs = programsStore()
-const analytics = analyticsStore()
 const nav = navigationStore()
 const route = useRoute()
 const router = useRouter()
@@ -258,6 +258,8 @@ const trackConfig = ref<any>()
 const blockColor = '#000091'
 const showForm = ref<boolean>(false)
 const columnTiles = ref<string>('fr-col')
+
+const publicPath = MetaEnv.publicPath
 
 interface Props {
   programId: string | number
@@ -281,7 +283,7 @@ const resetDetailResult = async () => {
 const toggleShowForm = () => {
   showForm.value = !showForm.value
   if (showForm.value) {
-    analytics.sendEvent('result_detail', 'show_form', props.programId)
+    Matomo.sendEvent('result_detail', 'show_form', props.programId)
   }
 }
 
@@ -291,6 +293,6 @@ onBeforeMount(() => {
     trackConfig.value = tracks.getTrack(props.trackId)
   }
   // analytics / send event
-  analytics.sendEvent('result_detail', 'show_detail', props.programId)
+  Matomo.sendEvent('result_detail', 'show_detail', props.programId)
 })
 </script>
