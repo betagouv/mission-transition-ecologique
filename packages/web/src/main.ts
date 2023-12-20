@@ -3,8 +3,6 @@ import { createPinia } from 'pinia'
 import { router } from '@/router'
 import WebApp from '@/WebApp.vue'
 import VueDsfr from '@gouvminint/vue-dsfr'
-// Styles imports
-import './assets/main.css'
 import { listIcons } from '@/icons'
 
 const store = createPinia()
