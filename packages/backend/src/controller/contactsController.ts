@@ -1,17 +1,7 @@
 import { Body, Controller, Post, Route, SuccessResponse, TsoaResponse, Res, Example } from 'tsoa'
-import { createContactFeatures } from '../domain/features'
-import { ContactInfoRepository } from '../domain/spi'
-import { ServiceNotFoundError, ContactInfoBodyAttributes, ContactId } from '../domain/types'
-import { addBrevoContact } from '../infrastructure/brevo-API'
+import { ServiceNotFoundError, ContactInfoBodyAttributes, ContactId } from '../domain/contact/types'
 import { ErrorJSON, ValidateErrorJSON } from './types'
-
-/**
- * Defines how to access external data services.
- * Uses the "Repository" pattern, see README.md
- */
-const brevoRepository: ContactInfoRepository = {
-  add: addBrevoContact
-}
+import { postNewContact } from '../domain/services/contact-service'
 
 interface ServiceNotFoundErrorJSON {
   message: 'Contact not created'
@@ -45,8 +35,7 @@ export class ContactInfoController extends Controller {
     const bodyEmail = requestBody.email
     const bodyAttributes = requestBody.attributes
 
-    const feat = createContactFeatures(brevoRepository)
-    const contactInfoResult = await feat.postNewContact(bodyEmail, bodyAttributes)
+    const contactInfoResult = await postNewContact(bodyEmail, bodyAttributes)
 
     if (contactInfoResult.isErr) {
       const err = contactInfoResult.error

@@ -3,11 +3,11 @@ import type { ProgramData } from '@tee/web/src/types/programTypes'
 import Engine from 'publicodes'
 
 import { Result } from 'true-myth'
-import { ensureError } from '../helpers/errors'
-import { filterObject } from '../helpers/objects'
+import { ensureError } from '@tee/backend/src/helpers/errors'
+import { filterObject } from '@tee/backend/src/helpers/objects'
 
 import type { QuestionnaireData, PublicodesInputData } from './types'
-import { CurrentDateService } from './spi'
+import type { CurrentDateService } from './spi'
 
 /** Expected rule to evaluate if a program should be displayed to the user or
  * filtered out (in a program's `publicodes`
@@ -17,7 +17,7 @@ import { CurrentDateService } from './spi'
  */
 export const FILTERING_RULE_NAME: string = 'entreprise . est ciblée'
 
-// createService deals with dependency injection
+/** deals with dependency injection */
 export const createService = (currentDateService: CurrentDateService) => {
   /** Filter out programs for which the company is not eligible
    *

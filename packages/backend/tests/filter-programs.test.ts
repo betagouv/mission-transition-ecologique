@@ -1,8 +1,8 @@
 import { makeProgramHelper } from './testing'
-import { createService, FILTERING_RULE_NAME } from '../src/domain/filter-programs'
+import { createService, FILTERING_RULE_NAME } from '../src/domain/program/filter-programs'
 import { Result, ResultNS } from 'true-myth'
 import { ProgramData } from '@tee/web/src/types'
-import type { QuestionnaireData } from '../src/domain/types'
+import type { QuestionnaireData } from '../src/domain/program/types'
 import { Entry, setObjectProperty } from '../src/helpers/objects'
 
 const mockCurrentDateService = { get: () => '01/01/2024' }
@@ -255,9 +255,7 @@ const testHelperPreprocessing = (testCase: PreprocessingTestCase) => {
       testCase.inputDataEntry[1] !== undefined
     ) {
       if (testCase.inputDataSource === DataSources.Questionnaire) {
-        const key = testCase.inputDataEntry[0]
-        const value = testCase.inputDataEntry[1]
-        setObjectProperty(questionnaireData, key, value)
+        setObjectProperty(questionnaireData, testCase.inputDataEntry[0], testCase.inputDataEntry[1])
       }
 
       if (testCase.inputDataSource === DataSources.Program) {
@@ -423,7 +421,7 @@ EXPECT the program to be kept or filtered out as expected`, () => {
   const testCurrentDate = (currentDate: string, keptDate: string, expectedKeep: boolean) => {
     //   `date du jour = ${keptDate}` ne fonctionne pas comme attendu
     // cf https://github.com/publicodes/publicodes/issues/430
-    // Contournement :
+    // Contournement:
     const rule = {
       'toutes ces conditions': [`date du jour <= ${keptDate}`, `date du jour >= ${keptDate}`]
     }

@@ -1,9 +1,9 @@
-import { EstablishmentNotFoundError, Etablissement } from '../domain/types'
+import { EstablishmentNotFoundError, Etablissement } from '../domain/establishment/types'
 import axios, { AxiosError, AxiosResponse } from 'axios'
 import { EtablissementDocument } from './types'
 import { ensureError } from '../helpers/errors'
 import { Result } from 'true-myth'
-import { EtablissementRepository } from '../domain/spi'
+import { EtablissementRepository } from '../domain/establishment/spi'
 
 /**
  * getEtablissement reads the API token from an environment
