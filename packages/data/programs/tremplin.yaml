@@ -39,6 +39,10 @@ publicodes:
     - est dans un secteur d'activité ciblé
     - a un objectif ciblé
   entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+      - dispositif . début de validité <= date du jour
+      - date du jour <= dispositif . fin de validité
     toutes ces conditions:
     - a un effectif éligible
   entreprise . a un effectif éligible:
