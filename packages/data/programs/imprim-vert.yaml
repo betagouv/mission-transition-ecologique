@@ -43,17 +43,33 @@ publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
     - est éligible
-    - est dans un secteur d'activité ciblé
     - a un objectif ciblé
   entreprise . est éligible:
     toutes ces conditions:
     - a un effectif éligible
+    - est dans un secteur d'activité éligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
     - effectif <= 249
-  entreprise . est dans un secteur d'activité ciblé:
-    une de ces conditions:
+  entreprise . est dans un secteur d'activité éligible:
+    toutes ces conditions:
     - code NAF niveau 1 . est C
+    - une de ces conditions:
+      - code NAF = "17.11Z"
+      - code NAF = "17.12Z"
+      - code NAF = "17.21Z"
+      - code NAF = "17.22Z"
+      - code NAF = "17.23Z"
+      - code NAF = "17.24Z"
+      - code NAF = "17.29Z"
+      - code NAF = "18.12A"
+      - code NAF = "18.12B"
+      - code NAF = "18.13A"
+      - code NAF = "18.13B"
+      - code NAF = "18.13C"
+      - code NAF = "18.14Z"
+      - code NAF = "18.20Z"
+      - code NAF = "58.19P"
   entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est la gestion des déchets
