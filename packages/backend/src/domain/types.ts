@@ -136,6 +136,7 @@ export interface QuestionnaireData {
 export interface PublicodesInputData {
   'entreprise . code NAF'?: string
   'dispositif . début de validité'?: string
+  'dispositif . fin de validité'?: string
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any
 }
