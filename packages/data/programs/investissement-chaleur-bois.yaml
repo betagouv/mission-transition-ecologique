@@ -10,6 +10,8 @@ description longue: 'Opérations éligibles :
 
   - les installations en secteur Industrie (et agricole) ayant une production de 1
   200 à 12 000 MWh/an biomasse sortie chaudière.'
+début de validité: 01/01/2023
+fin de validité: 31/12/2023
 illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/realisation-dinstallations-production-chaleur-biomasse-bois
@@ -25,6 +27,24 @@ objectifs:
 - Si votre demande est acceptée, recevez un contrat de financement précisant le montant
   d’aide maximum, les conditions et les modalités de versement.
 - Réalisez vos investissements.
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Toutes tailles
+  - Éligible aux micro-entreprises
+  secteur géographique:
+  - France et territoires d'outre-mer
+  secteur d'activité:
+  - Tous secteurs d’activité
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+  - 'Votre projet doit avoir fait l’objet d’une étude de faisabilité préalable ou
+    d’une note d’opportunité
+
+    suivie d’une note de dimensionnement par le maitre d’œuvre.'
+  - 'L''opération pour laquelle vous sollicitez une aide financière ne doit pas avoir
+    commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque
+    forme que ce soit : marché signé, commande signée, devis accepté…)'
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

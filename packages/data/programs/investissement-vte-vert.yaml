@@ -26,6 +26,18 @@ objectifs:
   écologique de l'entreprise
 - Demandez la labellisation VTE Vert du contrat au plus tard dans les 6 mois de l'embauche
 - A l'issue de l'année, réalisez votre demande de remboursement
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - PME et ETI
+  - Non éligible aux micro-entreprises
+  secteur géographique:
+  - France et territoires d'outre-mer
+  secteur d'activité:
+  - Tous secteurs d’activité
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+  - Sont exclues les entreprises en difficulté au sens de la définition européenne
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

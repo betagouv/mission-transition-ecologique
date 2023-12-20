@@ -1,5 +1,5 @@
 import type { NextTrackRuleSet, Track } from '@/types'
-import { ConditionOperators, DataMappingFrom, HasInputOptions, TrackComponents, TrackId } from '@/types'
+import { ConditionOperators, DataMappingFrom, TrackComponents, TrackId } from '@/types'
 import { Entreprise } from '@/types/publicodesObjects'
 
 const nextExceptions: NextTrackRuleSet[] = [
@@ -13,7 +13,7 @@ const nextExceptions: NextTrackRuleSet[] = [
         conditions: [
           {
             type: 'siret',
-            operator: ConditionOperators.inexists,
+            operator: ConditionOperators.isMissing
           }
         ]
       }
@@ -92,35 +92,6 @@ export const workforce: Track = {
     multipleChoices: false
   },
   options: [
-    {
-      disabled: true,
-      value: { [Entreprise.Workforce]: 0, structure_sizes: ['PME', 'TPE'] },
-      title: { fr: 'TPE ou PME' },
-      label: { fr: '🧍‍♂employé.s' },
-      hasInput: HasInputOptions.Number,
-      defaultInput: 1,
-      inputMax: 249,
-      inputMin: 1,
-      inputField: Entreprise.Workforce,
-      inputCleaning: [
-        {
-          operator: ConditionOperators.inferior,
-          conditionValue: 20,
-          valueField: 'structure_sizes',
-          value: ['PME']
-        },
-        {
-          operator: ConditionOperators.superior,
-          conditionValue: 20,
-          valueField: 'structure_sizes',
-          value: ['TPE']
-        }
-      ],
-      next: {
-        default: TrackId.Sectors,
-        exceptions: nextExceptions
-      }
-    },
     {
       disabled: false,
       value: { [Entreprise.Workforce]: 19, structure_sizes: ['TPE'] },

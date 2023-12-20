@@ -5,7 +5,4 @@ type EtablissementResult = Result<Etablissement, Error>
 
 export type fetchEtablissement = (siret: string) => Promise<EtablissementResult>
 
-export type postNewContact = (
-  email: string,
-  attributes: object
-) => Promise<Result<ContactId, Error>>
+export type postNewContact = (email: string, attributes: object) => Promise<Result<ContactId, Error>>

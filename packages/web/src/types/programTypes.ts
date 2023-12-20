@@ -1,26 +1,11 @@
 // FOR AID PROGRAMS
 
-// export interface ProgramConditions {
-//   project_needs?: string[],
-//   project_status?: string[],
-//   project_sectors?: string[],
-//   structure_sizes?: string[],
-// }
-
-import type { ConditionOperators } from '../types'
-
 export enum ProgramAidType {
   acc = 'accompagnement',
   train = 'formation',
   fund = 'financement',
   loan = 'prêt',
   tax = 'avantage fiscal'
-}
-
-export interface Condition {
-  type?: string
-  operator?: ConditionOperators
-  value?: any | any[]
 }
 
 export interface ProgramData {
@@ -42,10 +27,17 @@ export interface ProgramData {
   'montant du prêt'?: string
   'durée du prêt'?: string
   'taux du prêt'?: string
-  conditions?: Condition[]
   url?: string
 
-  publicodes: Object
+  "conditions d'éligibilité": {
+    "taille de l'entreprise": string[]
+    'secteur géographique': string[]
+    "secteur d'activité": string[]
+    "nombre d'années d'activité": string[]
+    "autres critères d'éligibilité"?: string[]
+  }
+
+  publicodes: object
 
   // program_conditions?: ProgramConditions,
   // program_application?: any,

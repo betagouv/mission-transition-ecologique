@@ -11,7 +11,7 @@ export const makeProgramHelper = ({
   nature = ProgramAidType.acc
 }: {
   id?: string
-  rules?: Object
+  rules?: object
   cost?: string
   nature?: ProgramAidType
 }): ProgramData => {
@@ -25,6 +25,12 @@ export const makeProgramHelper = ({
     'opérateur de contact': '',
     "nature de l'aide": nature,
     "coût de l'accompagnement": cost,
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [],
+      'secteur géographique': [],
+      "secteur d'activité": [],
+      "nombre d'années d'activité": []
+    },
     publicodes: rules
   }
 }

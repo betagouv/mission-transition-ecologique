@@ -21,6 +21,8 @@ description longue: 'Votre entreprise dispose de bâtiments de moins de 1 000 m�
   tertiaire », il impose une réduction progressive de la consommation d’énergie dans
   les bâtiments et parties de bâtiments de 1 000 m², et plus, à usage tertiaire afin
   de lutter contre le changement climatique.'
+début de validité: 01/01/2023
+fin de validité: 31/12/2023
 illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/booster-entreprises-eco-energie-tertiaire-reduire-facture-energetique-gagner
@@ -40,6 +42,21 @@ objectifs:
   description du projet, rapport d''audit énergétique, détails techniques et financiers,
   etc. A ce stade, votre audit ou missions d''ingénierie ne doivent pas avoir commencé
   !'
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Toutes tailles
+  - Non éligible aux micro-entreprises
+  secteur géographique:
+  - Bretagne, Occitanie, Auvergne-Rhône-Alpes, Corse
+  secteur d'activité:
+  - Secteur tertiaire
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+  - Être une entreprise privée ayant des bâtiments d'activités tertiaires
+  - 'L''opération pour laquelle vous sollicitez une aide financière ne doit pas avoir
+    commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque
+    forme que ce soit : marché signé, commande signée, devis accepté…)'
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

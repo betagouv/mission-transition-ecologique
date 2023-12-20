@@ -484,7 +484,7 @@ Check : https://github.com/orgs/betagouv/projects/54/views/1
   debug="false"
   >
 </gov-aid-tree-app>
-<script type="module" defer src="<DEPLOYMENT_URL>/gov-aid-tree-app.umd.js"></script>
+<script type="module" defer src="<DEPLOYMENT_URL>/widget.umd.js"></script>
 ```
 
 ### Widget parameters

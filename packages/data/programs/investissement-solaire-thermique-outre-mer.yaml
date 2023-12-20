@@ -13,6 +13,8 @@ description longue: "Sont éligibles les opérations de production d'eau chaude 
   \ usage collectif, les restaurants, les cantines d’entreprises, les activités agricoles\
   \ (laiteries, fromageries, …) et les processus industriels consommateurs d'eau chaude.\
   \ \nLa réalisation d’une étude de faisabilité préalable est une condition d'éligibilité."
+début de validité: 01/01/2023
+fin de validité: 31/12/2023
 illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/installations-production-deau-chaude-solaire-thermique-outre-mer
@@ -26,6 +28,20 @@ objectifs:
   de financement précisant le montant d’aide maximum, les conditions et les modalités
   de versement.
 - Réalisez vos investissements.
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Toutes tailles
+  - Éligible aux micro-entreprises
+  secteur géographique:
+  - Polynésie française, Guadeloupe, Martinique, Guyane, La Réunion, Mayotte
+  secteur d'activité:
+  - Tous secteurs d’activité
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+  - 'L''opération pour laquelle vous sollicitez une aide financière ne doit pas avoir
+    commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque
+    forme que ce soit : marché signé, commande signée, devis accepté…)'
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

@@ -20,6 +20,8 @@ description longue: "La méthanisation est un processus naturel biologique de d�
   \ avant construction de l’installation.\n- Etudes pour la concertation locale/ communication/information\n\
   - Etudes agronomiques\n- Appui au montage juridique des projets collectifs\n- Appui\
   \ au montage du plan de financement."
+début de validité: 01/01/2023
+fin de validité: 31/12/2023
 illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Etudes%20pr%C3%A9alables%20construction%20installation%20de%20m%C3%A9thanisation%20-%20Conditions%20%C3%A9ligibilit%C3%A9%20et%20financement.pdf
@@ -38,6 +40,22 @@ objectifs:
   de financement précisant le montant d’aide maximum, les conditions et les modalités
   de versement.
 - Réalisez votre étude.
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Toutes tailles
+  - Éligible aux micro-entreprises
+  secteur géographique:
+  - Pays de la Loire, Centre-Val de Loire, Bourgogne-Franche-Comté, Normandie, Hauts-de-France,
+    Bretagne, Nouvelle-Aquitaine, Occitanie, Auvergne-Rhône-Alpes, Provence-Alpes-Côte
+    d'Azur, Corse, Guadeloupe, Martinique, Guyane, La Réunion, Mayotte, Île-de-France
+  secteur d'activité:
+  - Activité agricole ou  industries agro-alimentaires
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+  - 'L''opération pour laquelle vous sollicitez une aide financière ne doit pas avoir
+    commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque
+    forme que ce soit : marché signé, commande signée, devis accepté…)'
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

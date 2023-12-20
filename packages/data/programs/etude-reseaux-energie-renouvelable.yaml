@@ -12,6 +12,8 @@ description longue: L’aide aux études et schémas directeurs est conditionné
   complété de la certification « OPQIBI 1319 Etudes du transport de chaleur et de
   froid » pour la partie « réseau » du projet) ou pouvant justifier de conditions
   équivalentes.
+début de validité: 01/01/2023
+fin de validité: 31/12/2023
 illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20Etudes%20en%20faveur%20de%20la%20TE%20g%C3%A9n%C3%A9rique%202023%20-%20V2.pdf
@@ -30,6 +32,20 @@ objectifs:
   de versement.
 - Réalisez votre étude sur les réseaux de chaleur ou de froid alimentés par des énergies
   renouvelables et/ou de récupération.
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Toutes tailles
+  - Éligible aux micro-entreprises
+  secteur géographique:
+  - France et territoires d'outre-mer
+  secteur d'activité:
+  - Tous secteurs d’activité
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+  - 'L''opération pour laquelle vous sollicitez une aide financière ne doit pas avoir
+    commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque
+    forme que ce soit : marché signé, commande signée, devis accepté…)'
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

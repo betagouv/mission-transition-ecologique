@@ -6,9 +6,6 @@ type Entry<T> = {
 
 /** filters an object based on entries (type `Entry`)
  */
-export function filterObject<T extends object>(
-  obj: T,
-  fn: (entry: Entry<T>, i: number, arr: Entry<T>[]) => boolean
-): Partial<T> {
+export function filterObject<T extends object>(obj: T, fn: (entry: Entry<T>, i: number, arr: Entry<T>[]) => boolean): Partial<T> {
   return Object.fromEntries((Object.entries(obj) as Entry<T>[]).filter(fn)) as Partial<T>
 }

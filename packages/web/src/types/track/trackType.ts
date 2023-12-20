@@ -1,19 +1,19 @@
-import type {
-  Translations,
-  FormCallback,
-  FormCallbackDataMapping,
-  FormOptions,
-  PropertyPath
-} from '@tee/web/src/types'
+import type { Translations, FormCallback, FormCallbackDataMapping, FormOptions, PropertyPath, TrackId } from '@tee/web/src/types'
 import { ConditionOperators } from '@tee/web/src/types/conditionOperators'
-import type { TrackId } from '@tee/web/src/types'
 
 // FOR TRACKS
-export interface ConditionTrack {
-  type?: string
-  operator?: ConditionOperators
-  value?: any | any[]
+type ConditionIs = {
+  type: string
+  operator: ConditionOperators.is
+  value: string | number | object
 }
+
+type ConditionExistsOrIsMissing = {
+  type: string
+  operator: ConditionOperators.exists | ConditionOperators.isMissing
+}
+
+export type Condition = ConditionIs | ConditionExistsOrIsMissing
 
 export enum TrackCalloutType {
   info = 'info'
@@ -48,13 +48,8 @@ export interface TrackInterface {
   component: TrackComponents
   columnWidth?: number | string
 }
-export enum TrackBehaviorOperators {
-  or = ConditionOperators.or
-}
 export interface TrackBehavior {
   multipleChoices?: boolean
-  singleChoice?: boolean
-  operator?: TrackBehaviorOperators
 }
 export interface TrackOptionsField {
   id: string
@@ -78,7 +73,7 @@ export enum TrackFieldType {
 }
 
 export interface NextTrackRule extends FormCallbackDataMapping {
-  conditions: ConditionTrack[]
+  conditions: Condition[]
 }
 
 export interface NextTrackRuleSet {
@@ -128,7 +123,7 @@ export interface InputCleaningRule {
   operator?: ConditionOperators
   conditionValue?: string | number
   valueField?: string
-  value?: any | any[]
+  value?: any
 }
 
 export interface TrackOptionsInput extends TrackOptions {
@@ -165,16 +160,19 @@ export interface Track {
   behavior?: TrackBehavior
   config?: TrackResultsConfig
   next?: TrackNext
-  options?: (TrackOptions | TrackOptionsSelect | TrackOptionsInput)[]
+  options?: TrackOptionsUnion[]
   form?: FormOptions
 }
+
+// Alias for TrackOptions (TrackOptions | TrackOptionsSelect | TrackOptionsInput)
+export type TrackOptionsUnion = TrackOptions | TrackOptionsSelect | TrackOptionsInput
 
 export interface TracksList {
   programs: Track[]
 }
 
 export interface UsedTrack {
-  id: string | any
+  id: string
   component: TrackComponents | string
   category?: string
   final?: boolean
@@ -226,13 +224,17 @@ export interface TrackResultsConfig {
   filters?: TrackFilter[]
 }
 
-export const isTrackOptionsInput = (
-  option: TrackOptionsInput | TrackOptions
-): option is TrackOptionsInput => {
+export const isTrackOptionsInput = (option: TrackOptionsInput | TrackOptions): option is TrackOptionsInput => {
   return 'hasInput' in option
 }
 
 export enum TrackHelpValue {
   Unknown = 'unknown',
   Precise = 'precise'
+}
+
+export interface UsedTrackValuePair {
+  trackId: string
+  completed: boolean
+  selection: (string | number | object)[]
 }

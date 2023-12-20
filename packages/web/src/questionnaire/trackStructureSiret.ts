@@ -1,3 +1,6 @@
+// CONSOLE LOG TEMPLATE
+// console.log(`questionnaire.trackSiret > FUNCTION_NAME > MSG_OR_VALUE :`)
+
 import {
   codesNAF1,
   EntrepriseSector,
@@ -13,13 +16,13 @@ import {
   FindInRefs,
   HasInputOptions,
   TrackComponents,
-  TrackId,
-  Entreprise
+  TrackId
+  // Entreprise
 } from '@/types'
 import type { Track } from '@/types'
+import type { ImportMetaEnv } from '@/env'
 
-const metaEnv = import.meta.env
-// console.log('trackSiret >  metaEnv :', metaEnv)
+const metaEnv: ImportMetaEnv = import.meta.env as ImportMetaEnv
 const TEE_BACKEND_URL = metaEnv.VITE_TEE_BACKEND_URL || 'https://tee-backend.osc-fr1.scalingo.io'
 
 const dataTarget = {
@@ -44,9 +47,6 @@ export const siret: Track = {
   interface: {
     component: TrackComponents.Input
   },
-  // behavior: {
-  //   multipleChoices: false,
-  // },
   next: {
     default: TrackId.StructureWorkforce
   },
@@ -238,38 +238,11 @@ export const siret: Track = {
                 }
               ]
             },
-            // {
-            //   respFields: ['data.codeNaf'],
-            //   label: 'Code NAF :',
-            //   icon: 'fr-icon-briefcase-line'
-            // },
             {
               respFields: ['data.secteur'],
               label: "Secteur d'activité :",
               icon: 'fr-icon-briefcase-line'
             },
-            // {
-            //   respFields: ['data.structure_sizes'],
-            //   // label: 'Catégorie :',
-            //   icon: 'fr-icon-parent-line',
-            //   cleaning: [
-            //     {
-            //       operation: 'defaultIfNull',
-            //       // respFields: 'data.structure_sizes',
-            //       defaultValue: { fr: 'Autre' }
-            //     },
-            //     {
-            //       operation: 'findFromDict',
-            //       dict: {
-            //         Autre: 'Auto-Entrepreneur.e',
-            //         TPE: 'TPE (entre 1 et 19 salarié.e.s)',
-            //         PME: 'PME (entre 20 et 250 salarié.e.s)',
-            //         ETI: 'ETI (entre 250 et 5000 salarié.e.s)',
-            //         GE: 'Grande Entreprise (plus de 5000 salarié.e.s)'
-            //       }
-            //     }
-            //   ]
-            // },
             {
               respFields: [
                 'raw.etablissement.adresseEtablissement.numeroVoieEtablissement',
@@ -297,16 +270,11 @@ export const siret: Track = {
       ],
       next: {
         default: TrackId.StructureWorkforce
-        // default: 'track_structure_sizes',
-        // exceptions: nextExceptions
-        // default: 'track_roles'
       },
       wildcard: {
         label: { fr: 'je préfère compléter mes informations manuellement' },
         next: {
           default: TrackId.StructureWorkforce
-          // default: 'track_structure_sizes',
-          // exceptions: nextExceptions
         }
       }
     }

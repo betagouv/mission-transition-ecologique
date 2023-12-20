@@ -1,16 +1,11 @@
-import type { Track } from '@/types'
-import {
-  CallbackActions,
-  CallbackMethods,
-  ConditionOperators,
-  DataMappingFrom,
-  FormFieldTypes,
-  TrackComponents,
-  TrackId
-} from '@/types'
+// CONSOLE LOG TEMPLATE
+// console.log(`tracks.trackResults > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-const metaEnv = import.meta.env
-// console.log('trackResults >  metaEnv :', metaEnv)
+import type { Track } from '@/types'
+import { CallbackActions, CallbackMethods, ConditionOperators, DataMappingFrom, FormFieldTypes, TrackComponents, TrackId } from '@/types'
+import type { ImportMetaEnv } from '@/env'
+
+const metaEnv: ImportMetaEnv = import.meta.env as ImportMetaEnv
 const TEE_BACKEND_URL = metaEnv.VITE_TEE_BACKEND_URL || 'https://tee-backend.osc-fr1.scalingo.io'
 
 export const results: Track = {
@@ -240,7 +235,7 @@ Merci d'avance pour votre appel`,
       },
       {
         id: 'cgu',
-        help: 'https://mission-transition.beta.gouv.fr/donnee-personnelles-et-cookies',
+        help: 'https://mission-transition-ecologique.beta.gouv.fr/donnees-personnelles',
         label: {
           fr: "J'accepte d'être recontacté par l'équipe de Transition Ecologique des Entreprises *"
         },
@@ -253,7 +248,7 @@ Merci d'avance pour votre appel`,
           dans votre recherche d'aides
           à la transition écologique de votre entreprise.
           Voir également nos
-          <a href="https://mission-transition.beta.gouv.fr/donnee-personnelles-et-cookies" target="_blank">
+          <a href="https://mission-transition-ecologique.beta.gouv.fr/donnees-personnelles" target="_blank">
             Conditions Générales d'Utilisation
           </a>.
           <br>
@@ -280,13 +275,9 @@ Merci d'avance pour votre appel`,
         headers: {
           accept: 'application/json',
           'content-type': 'application/json'
-          // 'api-key': ''
         },
-        // headerApiKey: 'api-key',
         dataStructure: {
           email: '',
-          // listIds: [],
-          // includeListIds: [],
           attributes: {}
           // templateId: 1,  // for double opt-in
           // redirectionUrl: 'https://gov-aid-tree-poc.netlify.app'  // for double opt-in
@@ -375,8 +366,5 @@ Merci d'avance pour votre appel`,
         ]
       }
     ]
-    // next: {
-    //   default: 'track_results'
-    // }
   }
 }

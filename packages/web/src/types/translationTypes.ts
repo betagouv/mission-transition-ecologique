@@ -1,11 +1,11 @@
 // FOR TRANSLATIONS
 
 export interface Translations {
-  fr: string,
+  fr: string
   [name: string]: string
 }
 
 export interface Dict {
-  id: string,
-  label: any,
+  id: string
+  label: any
 }

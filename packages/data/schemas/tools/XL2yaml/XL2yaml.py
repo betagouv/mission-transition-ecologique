@@ -4,8 +4,8 @@ import os
 import random
 import re
 import sys
-import urllib.request
-from typing import Any
+from pathlib import Path
+from typing import Any, Optional
 
 import pylightxl
 import yaml
@@ -16,140 +16,181 @@ SKIP_XL_LINES = 5
 OUTPUT_DIR = "../../../programs"
 
 
-def remove_prefix(s):
-    return s.split(" . ")[1]
+CIBLE = "entreprise . est ciblée"
+ELIGIBLE = "entreprise . est éligible"
+OBJECTIF = "entreprise . a un objectif ciblé"
+SECTEUR = "entreprise . est dans un secteur d'activité ciblé"
+ZONE_GEO = "entreprise . est dans une zone géographique éligible"
+EFFECTIF = "entreprise . a un effectif éligible"
+MODE_TRANSPORT = "entreprise . utilise un mode de transport ciblé"
+POSSESSION_VEHICULES = "entreprise . possède des véhicules motorisés"
+PARCOURS_OBJ_PRECIS = "questionnaire . parcours = objectif précis"
+PROPRIO = "entreprise . est propriétaire de ses locaux"
 
-
-Cible = "entreprise . est ciblée"
-
-Eligible = "entreprise . est éligible"
-EligibleNoPrefix = remove_prefix(Eligible)
-
-Objectif = "entreprise . a un objectif ciblé"
-ObjectifNoPrefix = remove_prefix(Objectif)
-
-Secteur = "entreprise . est dans un secteur d'activité ciblé"
-SecteurNoPrefix = remove_prefix(Secteur)
-
-ZoneGeo = "entreprise . est dans une zone géographique éligible"
-ZoneGeoNoPrefix = remove_prefix(ZoneGeo)
-
-Effectif = "entreprise . a un effectif éligible"
-EffectifNoPrefix = remove_prefix(Effectif)
-
-ModeTransport = "entreprise . utilise un mode de transport ciblé"
-ModeTransportNoPrefix = remove_prefix(ModeTransport)
-
-PossessionVehicules = "entreprise . possède des véhicules motorisés"
-PossessionVehiculesNoPrefix = remove_prefix(PossessionVehicules)
-
-ParcoursObjPrecis = "questionnaire . parcours = objectif précis"
-
-Proprio = "entreprise . est propriétaire de ses locaux"
+ELIGIBILITY_SIZE = "taille de l'entreprise"
+ELIGIBILITY_GEOGRAPHY = "secteur géographique"
+ELIGIBILITY_SECTOR = "secteur d'activité"
+ELIGIBILITY_NYEARS = "nombre d'années d'activité"
+ELIGIBILITY_SPECIFIC = "autres critères d'éligibilité"
 
 ALL = "toutes ces conditions"
 ANY = "une de ces conditions"
 
 
-def printProgramYAML(rawData, colNumbers, id):
-    cn = colNumbers
+def remove_namespace(s):
+    return "".join(s.split(" . ")[1:])
 
+
+def assembleProgramYAML(rawData, colNumbersByName, id):
     def get(name):
-        value = rawData[cn[name]]
+        value = rawData[colNumbersByName[name]]
         return curate(value)
 
-    program = {
-        "titre": get("Titre"),
-        "promesse": get("Promesse"),
-        "description": get("Description courte"),
-    }
-    if get("Description longue"):
-        program["description longue"] = get("Description longue")
+    try:
+        existingProgram = readFromYaml(Path(OUTPUT_DIR, f"{id}.yaml"))
+    except:  # noqa
+        existingProgram = {}
 
-    program["illustration"] = tryAndGetIllustration(id)
-    program["opérateur de contact"] = get("Opérateur de contact")
+    prog = {}
+
+    FORCE_ALL = False
+
+    # Only sets the key if key does not exist.
+    # if force = True, then replaces the key even if it exists
+    def set(key, value, overwrite=FORCE_ALL):
+        if overwrite or key not in existingProgram:
+            prog[key] = value
+        else:
+            prog[key] = existingProgram[key]
+
+    set("titre", get("Titre"))
+    set("promesse", get("Promesse"))
+    set("description", get("Description courte"))
+
+    if get("Description longue"):
+        set("description longue", get("Description longue"))
+
+    if valid(get("DISPOSITIF_DATE_DEBUT")):
+        set("début de validité", get("DISPOSITIF_DATE_DEBUT"))
+    if valid(get("DISPOSITIF_DATE_FIN")):
+        set("fin de validité", get("DISPOSITIF_DATE_FIN"))
+
+    set("illustration", randomIllustration())
+    set("opérateur de contact", get("Opérateur de contact"))
 
     autresOp = csv_to_list(get("Autres opérateurs"))
     if len(autresOp) >= 1:
-        program["autres opérateurs"] = autresOp
+        set("autres opérateurs", autresOp)
 
-    program["url"] = get("Lien en savoir+")
-    program["nature de l'aide"] = get("💸 Nature de l'aide").lower()
-    nat = program["nature de l'aide"]
+    set("url", get("Lien en savoir+"))
+    set("nature de l'aide", get("💸 Nature de l'aide").lower())
+    nat = prog["nature de l'aide"]
     if nat == "financement":
-        program["montant du financement"] = get("💰 Montant de l'aide")
+        set("montant du financement", get("💰 Montant de l'aide"))
     if nat == "accompagnement" or nat == "formation":
-        program["coût de l'accompagnement"] = get("💰 Coût reste à charge")
-        program["durée de l'accompagnement"] = get("⏱Prestation (durée + étalement)")
+        set("coût de l'accompagnement", get("💰 Coût reste à charge"))
+        set("durée de l'accompagnement", get("⏱Prestation (durée + étalement)"))
     if nat == "prêt":
-        program["durée du prêt"] = get("Etalement")
-        program[
-            "montant du prêt"
-        ] = f'De {thousandSep(get("MontantMin aide"))} € à {thousandSep(get("MontantMax aide"))} €'
+        set("durée du prêt", get("Etalement"))
+        set(
+            "montant du prêt",
+            f'De {thousandSep(get("MontantMin aide"))} € à {thousandSep(get("MontantMax aide"))} €',
+        )
     if nat == "avantage fiscal":
-        program["montant de l'avantage fiscal"] = get("💰 Montant de l'aide")
+        set("montant de l'avantage fiscal", get("💰 Montant de l'aide"))
 
-    program["objectifs"] = makeObj(
+    objectifs = makeObj(
         [get(f"🎯 {i} objectif") for i in ["1er", "2ème", "3ème", "4ème", "5ème"]]
     )
+    set("objectifs", objectifs)
 
     pc = {}
     cible = []  # Accumulateur des règles qui font parti du ciblage.
     eligibilite = []  # Accumulateur des règles qui font parti de l'éligibilité.
 
+    # Conditions d'éligibilité
+    eligibility_conditions = {
+        ELIGIBILITY_SIZE: [],
+        ELIGIBILITY_GEOGRAPHY: [],
+        ELIGIBILITY_SECTOR: [],
+        ELIGIBILITY_NYEARS: [],
+    }
+
+    eligibility_conditions[ELIGIBILITY_SIZE].append(eligibility_size(get))
+    eligibility_conditions[ELIGIBILITY_SIZE].append(eligibility_microentreprise(get))
+
+    for eg in eligibility_geography(get):
+        eligibility_conditions[ELIGIBILITY_GEOGRAPHY].append(eg)
+
+    eligibility_conditions[ELIGIBILITY_SECTOR].append(eligibility_sector(get))
+    if eligibility_naf(get):
+        eligibility_conditions[ELIGIBILITY_SECTOR].append(eligibility_naf(get))
+
+    eligibility_conditions[ELIGIBILITY_NYEARS].append(eligibility_nyears(get))
+
+    for es in eligibility_specific(get):
+        if ELIGIBILITY_SPECIFIC not in eligibility_conditions:
+            eligibility_conditions[ELIGIBILITY_SPECIFIC] = []
+        eligibility_conditions[ELIGIBILITY_SPECIFIC].append(es)
+
+    set("conditions d'éligibilité", eligibility_conditions, True)
+
+    # Publicodes constraints
     effective_constraint = pc_effectifConstraint(get("minEff"), get("maxEff"))
     if effective_constraint:
-        pc[Effectif] = effective_constraint
-        eligibilite.append(EffectifNoPrefix)
+        pc[EFFECTIF] = effective_constraint
+        eligibilite.append(remove_namespace(EFFECTIF))
 
     sc = pc_secteurActivitéConstraint(get)
     if sc:
-        pc[Secteur] = sc
-        cible.append(SecteurNoPrefix)
+        pc[SECTEUR] = sc
+        cible.append(remove_namespace(SECTEUR))
 
     op = pc_objPrioritaire(get)
     if op:
-        pc[Objectif] = op
-        cible.append(ObjectifNoPrefix)
+        pc[OBJECTIF] = op
+        cible.append(remove_namespace(OBJECTIF))
 
     reg = pc_regions(get)
     if reg:
-        pc[ZoneGeo] = reg
-        eligibilite.append(ZoneGeo)
+        pc[ZONE_GEO] = reg
+        eligibilite.append(ZONE_GEO)
 
     mod = pc_mode_transport(get)
     if mod:
-        pc[ModeTransport] = mod
-        cible.append(ModeTransportNoPrefix)
+        pc[MODE_TRANSPORT] = mod
+        cible.append(remove_namespace(MODE_TRANSPORT))
 
     veh = pc_possede_vehicule(get)
     if veh:
-        cible.append(PossessionVehiculesNoPrefix)
+        cible.append(remove_namespace(POSSESSION_VEHICULES))
 
     p360 = pc_onlyPrecise(get)
     if p360:
-        cible.append(ParcoursObjPrecis)
+        cible.append(PARCOURS_OBJ_PRECIS)
 
     own = pc_building_owner(get)
     if own:
-        cible.append(Proprio)
+        cible.append(PROPRIO)
 
     if len(eligibilite) != 0:
-        cible = [EligibleNoPrefix] + cible
+        cible = [remove_namespace(ELIGIBLE)] + cible
 
-    program["publicodes"] = {}
+    publicodes_obj = {}
     # Si pas de condition, on affiche toujours
     if len(cible) == 0:
-        program["publicodes"][Cible] = "oui"
+        publicodes_obj[CIBLE] = "oui"
     else:
-        program["publicodes"][Cible] = {ALL: cible}
+        publicodes_obj[CIBLE] = {ALL: cible}
 
     if len(eligibilite) != 0:
-        program["publicodes"][Eligible] = {ALL: eligibilite}
+        publicodes_obj[ELIGIBLE] = {ALL: eligibilite}
 
-    program["publicodes"] |= pc
+    publicodes_obj |= pc
 
-    return convertToYaml(program)
+    set("publicodes", publicodes_obj)
+
+    return convertToYaml(prog)
 
 
 def remove_special_chars(text: str) -> str:
@@ -198,23 +239,6 @@ def identifyColNumbers(header: list[Any]):
     return {h: i for h, i in zip(header, range(len(header)))}
 
 
-def tryAndGetIllustration(id: str):
-    url = f"https://raw.githubusercontent.com/betagouv/transition-ecologique-entreprises-widget/preprod/packages/data/programs/{id}.yaml"
-    try:
-        with urllib.request.urlopen(url) as response:
-            program_data = response.read().decode(
-                response.headers.get_content_charset()
-            )
-    except:
-        return randomIllustration()
-
-    illustrationLine = re.search(r"\nillustration: ([^\n]*)\n", program_data)
-    if illustrationLine is None:
-        return randomIllustration()
-    illustration = illustrationLine.group(1)
-    return illustration
-
-
 def randomIllustration():
     illustrations = [
         "images/TEE_energie_verte.png",
@@ -238,7 +262,7 @@ def valid(value):
 
 
 def csv_to_list(input: str) -> list[str]:
-    return [curate(s) for s in re.split(",|\|", input) if valid(s)]
+    return [curate(s) for s in re.split(r",|\|", input) if valid(s)]
 
 
 def makeObj(objs: list[str]):
@@ -246,6 +270,75 @@ def makeObj(objs: list[str]):
         return curate(obj) != "" and curate(obj) != "-"
 
     return [obj for obj in objs if keepObj(obj)]
+
+
+def eligibility_size(get) -> str:
+    col_eligibilite_taille = get("👫👫\nEligibilité Taille")
+    col_min_eff = get("minEff")
+    col_max_eff = get("maxEff")
+    if valid(col_eligibilite_taille):
+        return col_eligibilite_taille
+    elif valid(col_min_eff) and valid(col_max_eff):
+        return f"Effectif compris entre {col_min_eff} et {col_max_eff} employés"
+    elif valid(col_min_eff):
+        return f"Effectif supérieur à {col_min_eff} employés"
+    elif valid(col_max_eff):
+        return f"Effectif inférieur à {col_max_eff} employés"
+    return "Toutes tailles"
+
+
+def eligibility_microentreprise(get) -> str:
+    me = get("microEntre")
+    if valid(me):
+        if me.lower() == "oui":
+            return "Éligible aux micro-entreprises"
+        elif me.lower() == "non":
+            return "Non éligible aux micro-entreprises"
+        else:
+            raise Exception("Valeur non interprétable (colonne microEntre)")
+    return "Éligible aux micro-entreprises"
+
+
+def eligibility_sector(get) -> str:
+    es = get("👨‍🍳Eligibilité Sectorielle")
+    if valid(es):
+        return es
+    raise Exception("Condition d'éligibilité sectorielle manquante")
+
+
+def eligibility_geography(get) -> list[str]:
+    egr = get("Zones géographiques Régional")
+    egr = ", ".join(csv_to_list(egr))
+    egs = get("Zones géographiques Spécifique")
+    egs = ", ".join(csv_to_list(egs))
+    egd = get("Zones géographiques Départemental")
+    egd = ", ".join(csv_to_list(egd))
+    eg = [eg for eg in [egr, egs, egd] if valid(eg)]
+    if len(eg) > 0:
+        return eg
+    else:
+        return ["France et territoires d'outre-mer"]
+
+
+def eligibility_naf(get) -> Optional[str]:
+    en = get("Eligibilité Naf")
+    if valid(en):
+        return en
+    return None
+
+
+def eligibility_nyears(get) -> str:
+    en = get("Eligibilité Existence")
+    if valid(en):
+        return en
+    return "Éligible à toutes les entreprises"
+
+
+def eligibility_specific(get) -> list[str]:
+    es1 = get("Eligibilité Spécifique1")
+    es2 = get("Eligibilité Spécifique2")
+    es3 = get("Eligibilité Spécifique3")
+    return [es for es in [es1, es2, es3] if valid(es)]
 
 
 def pc_effectifConstraint(effmin, effmax):
@@ -381,6 +474,12 @@ def convertToYaml(d: dict):
     return yaml.safe_dump(d, allow_unicode=True, sort_keys=False)
 
 
+def readFromYaml(program_path: Path):
+    with open(program_path, "r") as f:
+        program = yaml.safe_load(f)
+    return program
+
+
 if __name__ == "__main__":
     if len(sys.argv) > 1:
         worksheet = sys.argv[1]
@@ -391,16 +490,20 @@ if __name__ == "__main__":
     headerRowIndex = SKIP_XL_LINES + 1
     colNumbers = identifyColNumbers(input.row(headerRowIndex))
 
+    all_ids = set()
     for i, row in enumerate(input.rows):
         if i <= headerRowIndex:
             pass
-        if row[4] == 1:
-            id = forgeID(row[1])
-            try:
-                print(f"🖊️ {id}.yaml")
-                with open(os.path.join(OUTPUT_DIR, f"{id}.yaml"), "x") as f:
-                    f.write(printProgramYAML(row, colNumbers, id))
-            except Exception:
-                print(f"🖊️ {id}-2.yaml")
-                with open(os.path.join(OUTPUT_DIR, f"{id}-2.yaml"), "x") as f:
-                    f.write(printProgramYAML(row, colNumbers, f"{id}-2"))
+        if row[6] == 1:
+            id = row[1]
+            if id == "":
+                id = forgeID(row[3])
+
+            if id in all_ids:
+                raise Exception("Duplicate ID !")
+            all_ids.add(id)
+
+            print(f"🖊️ {id}.yaml")
+            prog = assembleProgramYAML(row, colNumbers, id)
+            with open(os.path.join(OUTPUT_DIR, f"{id}.yaml"), "w") as f:
+                f.write(prog)

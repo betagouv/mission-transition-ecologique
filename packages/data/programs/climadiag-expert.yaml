@@ -5,6 +5,8 @@ description: Bénéficiez d'un accompagnement d'un expert CCI pour vous aider à
   la vulnérabilité climatique de votre entreprise, prévenir les impacts du dérèglement
   climatique et vous aider à limiter les coûts imprévus de canicule, inondation, sécheresse,
   etc.
+début de validité: 01/10/2023
+fin de validité: 01/08/2026
 illustration: images/TEE_energie_verte.png
 opérateur de contact: CCI
 autres opérateurs:
@@ -21,6 +23,16 @@ objectifs:
   client liées aux changements climatiques'
 - Concevez un plan d'actions à mettre en oeuvre
 - Identifier des financements possibles
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - PME
+  - Non éligible aux micro-entreprises
+  secteur géographique:
+  - Bourgogne-Franche-Comté
+  secteur d'activité:
+  - Industrie
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

@@ -1,60 +1,40 @@
-import type { ConditionTrack, NextTrackRule } from '@/types'
+import type { Condition, NextTrackRule } from '@/types'
 import { ConditionOperators } from '@/types'
 
-export const CheckConditions = ( data: any, conditions: ConditionTrack[], strict: boolean = false ) => {
-  // console.log()
-  // console.log('utils > conditions > CheckConditions > data :', data)
-  // console.log('...')
-  // console.log('utils > conditions > CheckConditions > rules :', rules)
-  const boolArray = [true]
-
-  conditions.forEach((condition: ConditionTrack) => {
-    // console.log('utils > conditions > CheckConditions > condition :', condition)
-    const condOperator = condition.operator
-    // console.log('utils > conditions > CheckConditions > condOperator :', condOperator)
-    const condField: string = condition.type || ''
-    const dataValue = data[condField]
-    // console.log('utils > conditions > CheckConditions > dataValue :', dataValue)
-    const condVal = condition.value
-    let condBool = !strict
-    if (dataValue) {
-      switch (condOperator) {
-        case ConditionOperators.exists:
-          condBool = !!dataValue
-          break
-        case ConditionOperators.inexists:
-          condBool = !dataValue
-          break
-        case ConditionOperators.is:
-          condBool = condition.value === dataValue
-          break
-        case ConditionOperators.or:
-          condBool = dataValue.includes('*') || condVal.includes('*')
-          if (!condBool) {
-            const intersection = condVal.filter((v: any) => dataValue.includes(v))
-            condBool = dataValue.includes('*') || intersection.length
-          }
-          break
-      }
-    }
-    // console.log('utils > conditions > CheckConditions > condBool :', condBool)
-    boolArray.push(condBool)
-  })
-
-  return boolArray.every(b => !!b)
+export const checkConditions = (conditions: Condition[], data: Record<string, unknown>) => {
+  return conditions.every((cond) => checkCondition(cond, data))
 }
 
-export const CheckNextTrackRules = ( data: any, rules: NextTrackRule[] ) => {
-  // console.log()
-  // console.log('utils > conditions > CheckNextTrackRules > data :', data)
-  // console.log('...')
+const checkCondition = (condition: Condition, data: Record<string, unknown>): boolean => {
+  const dataKey: string = condition.type
+
+  switch (condition.operator) {
+    case ConditionOperators.exists: {
+      // actually exists and is truthy
+      const exists: boolean = dataKey in data
+      const isTruthy: boolean = exists && !!data[dataKey]
+      return exists && isTruthy
+    }
+
+    case ConditionOperators.isMissing: {
+      // actually is missing or is falsy
+      const isMissing: boolean = !(dataKey in data)
+      const isFalsy: boolean = dataKey in data && !data[dataKey]
+      return isMissing || isFalsy
+    }
+
+    case ConditionOperators.is:
+      return data[dataKey] === condition.value
+  }
+}
+
+export const CheckNextTrackRules = (data: Record<string, unknown>, rules: NextTrackRule[]) => {
   const boolArray = [true]
 
   rules.forEach((rule: NextTrackRule) => {
-    // console.log('utils > conditions > CheckNextTrackRules > rule :', rule)
-    const bool = CheckConditions(data, rule.conditions, true)
+    const bool = checkConditions(rule.conditions, data)
     boolArray.push(bool)
   })
 
-  return boolArray.every(b => !!b)
+  return boolArray.every((b) => !!b)
 }

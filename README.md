@@ -90,6 +90,7 @@ npm run start-all
 ```
 
 - Go to http://localhost:4242/ to access the front-end
+- Go to http://localhost:4242/widget/index.html to access the widget front-end
 
 ### Build
 
@@ -141,6 +142,19 @@ npm run dev-back
 # Or alternatively
 npm run dev --workspace packages/web
 npm run dev --workspace packages/backend
+```
+
+#### Linting
+
+```sh
+# All workspaces with fix
+npm run lint
+# All workspaces without fix
+npm run lint-check
+# Type check on web workspace
+npm run type-check --workspace packages/web
+# Type check on web workspace with watch mode
+npm run type-check-watch --workspace packages/web
 ```
 
 ### Preview front before deploying in production

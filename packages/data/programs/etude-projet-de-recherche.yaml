@@ -26,6 +26,8 @@ description longue: 'l’ADEME renforcera son soutien aux recherches
 
   * Pour vérifier que votre thématique ne correspond à aucun appel à projets de recherche
   en cours, vous pouvez consulter la liste complète ici : https://www.appelsprojetsrecherche.fr/'
+début de validité: 01/01/2023
+fin de validité: 31/12/2023
 illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/projets-recherche-developpement-innovation-rdi
@@ -40,6 +42,20 @@ objectifs:
   de financement précisant le montant d’aide maximum, les conditions et les modalités
   de versement. Le financement pourra se faire par le biais de subventions ou d'aides
   remboursables.
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Toutes tailles
+  - Éligible aux micro-entreprises
+  secteur géographique:
+  - France et territoires d'outre-mer
+  secteur d'activité:
+  - Tous secteurs d’activité
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+  - 'L''opération pour laquelle vous sollicitez une aide financière ne doit pas avoir
+    commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque
+    forme que ce soit : marché signé, commande signée, devis accepté…)'
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
