@@ -86,7 +86,7 @@ watch(
       if (tracks.currentStep) {
         nav.setCurrentStep(tracks.currentStep)
       }
-      nav.setCurrentTrackId(tracks.currentTrackId as TrackId)
+      nav.setCurrentTrackId(tracks.currentTrackId)
       nav.updateQueries(tracks.getAllUsedTracksValuesPairs)
     }
   }
@@ -111,13 +111,13 @@ const getColumnsWidth = computed(() => {
 })
 
 const setupFromUrl = async () => {
-  const programId = props.programId || (route.query['teeDetail'] as string | null)
+  const programId = props.programId ?? (route.query['teeDetail'] as string | null)
   if (programId) {
     await nav.setCurrentDetailId(programId)
     programs.setDetailResult(programId, TrackId.Results)
   }
 
-  nav.setCurrentTrackId(tracks.currentTrackId as TrackId)
+  nav.setCurrentTrackId(tracks.currentTrackId)
   nav.updateQueries(tracks.getAllUsedTracksValuesPairs)
 }
 
