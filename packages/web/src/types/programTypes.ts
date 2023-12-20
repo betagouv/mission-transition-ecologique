@@ -40,12 +40,4 @@ export interface ProgramData {
   }
 
   publicodes: object
-
-  // program_conditions?: ProgramConditions,
-  // program_application?: any,
-  // geo_zones?: any,
-  // program_cost?: any,
-  // program_duration?: any,
-  // date_start?: any,
-  // date_end?: any
 }

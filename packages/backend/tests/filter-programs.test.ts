@@ -1,7 +1,9 @@
-import type { ProgramData } from '@tee/web/src/types/programTypes'
 import { makeProgramHelper } from './testing'
 import { filterPrograms, FILTERING_RULE_NAME } from '../src/domain/filter-programs'
 import { Result, ResultNS } from 'true-myth'
+import { ProgramData } from '@tee/web/src/types'
+import type { QuestionnaireData } from '../src/domain/types'
+import { Entry, setObjectProperty } from '../src/helpers/objects'
 
 const rulesBoilerplate = {
   entreprise: null,
@@ -190,39 +192,116 @@ describe(`
   })
 })
 
+enum DataSources {
+  Questionnaire,
+  Program
+}
+
+type QuestionnaireInputProperty = {
+  inputDataEntry: Entry<QuestionnaireData>
+  inputDataSource: DataSources.Questionnaire
+}
+
+type ProgramInputProperty = {
+  inputDataEntry: Entry<ProgramData>
+  inputDataSource: DataSources.Program
+}
+
+type PreprocessingTestCase = (QuestionnaireInputProperty | ProgramInputProperty) & {
+  title: string
+  publicodesKey: string
+  filteringRule: string
+  expectedKeep: boolean
+}
+
+/** tests that input data for the filtering (either from the questionnaire or from the program), is correctly translated into publicodes by
+  confronting a single program to a single rule
+ */
+const testHelperPreprocessing = (testCase: PreprocessingTestCase) => {
+  test(testCase.title, () => {
+    const publicodesKey = testCase.publicodesKey
+    const publicodesNamespace = publicodesKey.split(' . ')[0]
+    const expectedKeep = testCase.expectedKeep
+
+    const fileringRule = testCase.filteringRule
+
+    // namespace (if any) and variable declaration in publicodes
+    const publicodesInterface = {
+      ...(publicodesNamespace && { [publicodesNamespace]: null }),
+      [publicodesKey]: null
+    }
+
+    const program = makeProgram({
+      ...publicodesInterface,
+      [FILTERING_RULE_NAME]: fileringRule
+    })
+
+    const questionnaireData: QuestionnaireData = {}
+
+    if (testCase.inputDataEntry !== undefined && testCase.inputDataEntry[1] !== undefined) {
+      if (testCase.inputDataSource === DataSources.Questionnaire) {
+        const key = testCase.inputDataEntry[0]
+        const value = testCase.inputDataEntry[1]
+        setObjectProperty(questionnaireData, key, value)
+      }
+
+      if (testCase.inputDataSource === DataSources.Program) {
+        const key = testCase.inputDataEntry[0]
+        const value = testCase.inputDataEntry[1]
+        setObjectProperty(program, key, value)
+      }
+    }
+
+    const result = filterPrograms([program], questionnaireData)
+
+    expectToBeOk(result)
+
+    const expectedLength = expectedKeep ? 1 : 0
+    expect(result.value).toHaveLength(expectedLength)
+  })
+}
+
 describe(`
   GIVEN  input data from the questionnaire
     AND  rules that use values from the keys of "PublicodesInputData" type
    WHEN  the rules are evaluated
  EXPECT the values from "PublicodesInputData" used for evaluation are properly computed from the questionnaire data
 `, () => {
-  const testCodeNAFMapping = (inputNAFCode: string, programNAFCode: string) => {
-    test(`"codeNaf" mapped to "entreprise . code NAF" (input: ${inputNAFCode}, program: ${programNAFCode})`, () => {
-      const program = makeProgram({
-        entreprise: null,
-        'entreprise . code NAF': null,
-        [FILTERING_RULE_NAME]: `entreprise . code NAF = "${programNAFCode}"`
-      })
-
-      const inputData = { codeNaf: inputNAFCode }
-
-      const result = filterPrograms([program], inputData)
-
-      expectToBeOk(result)
-
-      const expectedLength = inputNAFCode == programNAFCode ? 1 : 0
-      expect(result.value).toHaveLength(expectedLength)
+  const testCodeNaf = (inputCodeNaf: string | undefined, keptCodeNaf: string, expectedKeep: boolean) => {
+    testHelperPreprocessing({
+      title: 'questionnaire "codeNAF" mapped to literal "entreprise . code NAF"',
+      inputDataEntry: ['codeNaf', inputCodeNaf],
+      inputDataSource: DataSources.Questionnaire,
+      publicodesKey: 'entreprise . code NAF',
+      filteringRule: `entreprise . code NAF = "${keptCodeNaf}"`,
+      expectedKeep: expectedKeep
     })
   }
-
-  const testCases: { inputNAFCode: string; programNAFCode: string }[] = [
-    { inputNAFCode: '12.34Z', programNAFCode: '12.34Z' },
-    { inputNAFCode: '34.12Z', programNAFCode: '34.12Z' },
-    { inputNAFCode: '11.11Z', programNAFCode: '99.99Z' }
+  const testCases = [
+    {
+      inputCodeNaf: '12.34Z',
+      keptCodeNaf: '12.34Z',
+      expectedKeep: true
+    },
+    {
+      inputCodeNaf: '34.12Z',
+      keptCodeNaf: '34.12Z',
+      expectedKeep: true
+    },
+    {
+      inputCodeNaf: '11.11Z',
+      keptCodeNaf: '99.99Z',
+      expectedKeep: false
+    },
+    {
+      inputCodeNaf: undefined,
+      keptCodeNaf: '99.99Z',
+      expectedKeep: true
+    }
   ]
 
   for (const testCase of testCases) {
-    testCodeNAFMapping(testCase.inputNAFCode, testCase.programNAFCode)
+    testCodeNaf(testCase.inputCodeNaf, testCase.keptCodeNaf, testCase.expectedKeep)
   }
 })
 
@@ -232,27 +311,14 @@ describe(`
    WHEN  the rules are evaluated
  EXPECT  the values from "PublicodesInputData" used for evaluation to be properly computed from the program data
 `, () => {
-  const testValidityStartMapping = (validityStart: string | null, expectedKeep: boolean) => {
-    test(`"début de validité" mapped to "dispositif . début de validité", interpreted as date (${validityStart})`, () => {
-      const program = makeProgram({
-        dispositif: null,
-        'dispositif . début de validité': null,
-        [FILTERING_RULE_NAME]: 'dispositif . début de validité > 01/01/2024'
-      })
-
-      if (validityStart) {
-        program['début de validité'] = validityStart
-      }
-
-      const result = filterPrograms([program], {})
-
-      if (!result.isOk) {
-        console.log(result.error)
-      }
-      expectToBeOk(result)
-
-      const expectedLength = expectedKeep ? 1 : 0
-      expect(result.value).toHaveLength(expectedLength)
+  const testValidityStartMapping = (validityStart: string | undefined, expectedKeep: boolean) => {
+    testHelperPreprocessing({
+      title: `"début de validité" mapped to "dispositif . début de validité", interpreted as date (${validityStart})`,
+      inputDataEntry: ['début de validité', validityStart],
+      inputDataSource: DataSources.Program,
+      publicodesKey: 'dispositif . début de validité',
+      filteringRule: 'dispositif . début de validité > 01/01/2024',
+      expectedKeep: expectedKeep
     })
   }
 
@@ -266,7 +332,7 @@ describe(`
       expectedKeep: true
     },
     {
-      validityStart: null,
+      validityStart: undefined,
       expectedKeep: true
     }
   ]
