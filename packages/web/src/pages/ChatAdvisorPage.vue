@@ -1,7 +1,8 @@
 <template>
   <div class="fr-container--fluid">
     <iframe
-      v-resize="{ log: true }"
+      ref="iframe"
+      v-resize="{ log: false }"
       :src="Contact.iframeSrc"
       class="contact-iframe"
       title="Place des entreprise - france-transition-ecologique"
