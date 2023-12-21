@@ -10,5 +10,11 @@ export const addIcons = () => {
 }
 
 export const listIcons = (): CustomizeIconType[] => {
-  return [{ ...RiIcons }, MdRadiobuttonchecked, MdRadiobuttonunchecked, MdCheckboxoutlineblank, MdCheckboxOutlined] as CustomizeIconType[]
+  return [
+    ...Object.values({ ...RiIcons }),
+    MdRadiobuttonchecked,
+    MdRadiobuttonunchecked,
+    MdCheckboxoutlineblank,
+    MdCheckboxOutlined
+  ] as CustomizeIconType[]
 }
