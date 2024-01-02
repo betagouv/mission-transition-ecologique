@@ -14,6 +14,8 @@ export interface ProgramData {
   promesse: string
   description: string
   'description longue'?: string
+  'début de validité'?: string
+  'fin de validité'?: string
   illustration: string
   objectifs: string[]
   'opérateur de contact': string
@@ -38,12 +40,4 @@ export interface ProgramData {
   }
 
   publicodes: object
-
-  // program_conditions?: ProgramConditions,
-  // program_application?: any,
-  // geo_zones?: any,
-  // program_cost?: any,
-  // program_duration?: any,
-  // date_start?: any,
-  // date_end?: any
 }

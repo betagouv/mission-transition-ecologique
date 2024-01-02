@@ -1,17 +1,7 @@
 import { Body, Controller, Post, Route, SuccessResponse, TsoaResponse, Res, Example } from 'tsoa'
-import { createEtablissementFeatures } from '../domain/features'
-import { EtablissementRepository } from '../domain/spi'
-import { EstablishmentNotFoundError, Etablissement } from '../domain/types'
-import { getEtablissement } from '../infrastructure/sirene-API'
+import { fetchEtablissement } from '../domain/services/establishment-service'
+import { EstablishmentNotFoundError, Etablissement } from '../domain/establishment/types'
 import { ErrorJSON, ValidateErrorJSON } from './types'
-
-/**
- * Defines how to access external data services.
- * Uses the "Repository" pattern, see README.md
- */
-const etablissementRepository: EtablissementRepository = {
-  get: getEtablissement
-}
 
 interface EstablishmentNotFoundErrorJSON {
   message: 'Establishment not found'
@@ -143,8 +133,7 @@ export class SireneController extends Controller {
   ): Promise<Etablissement> {
     const requestedSiret = requestBody.siret
 
-    const feat = createEtablissementFeatures(etablissementRepository)
-    const etablissementResult = await feat.fetchEtablissement(requestedSiret)
+    const etablissementResult = await fetchEtablissement(requestedSiret)
 
     if (etablissementResult.isErr) {
       const err = etablissementResult.error
