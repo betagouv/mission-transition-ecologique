@@ -1,4 +1,4 @@
-import { addBrevoContact } from '@tee/backend/src/infrastructure/brevo-API'
+import { addBrevoContact } from '../../infrastructure/brevo-API'
 import { createService } from '../contact/contact-features'
 import { ContactInfoRepository } from '../contact/spi'
 
