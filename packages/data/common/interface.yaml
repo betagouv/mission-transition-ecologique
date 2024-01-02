@@ -108,3 +108,9 @@ questionnaire . parcours:
 objectif précis: '"objectif précis"'
 je ne sais pas par où commencer: '"je ne sais pas par où commencer"'
 
+dispositif:
+  avec:
+    début de validité:
+    fin de validité:
+
+date du jour:

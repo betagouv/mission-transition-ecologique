@@ -21,3 +21,11 @@ export function ensureError(value: unknown): Error {
   const error = new Error(`This value was thrown as is, not through an Error: ${stringified}`)
   return error
 }
+
+export class CustomError extends Error {
+  constructor(...args: Array<string | undefined>) {
+    super(...args)
+    this.name = this.constructor.name
+    Error.captureStackTrace(this, CustomError)
+  }
+}
