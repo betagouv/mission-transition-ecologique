@@ -1,5 +1,5 @@
 import { createService } from '../establishment/establishment-features'
-import { getEtablissement } from '@tee/backend/src/infrastructure/sirene-API'
+import { getEtablissement } from '../../infrastructure/sirene-API'
 import { EtablissementRepository } from '../establishment/spi'
 
 /**
