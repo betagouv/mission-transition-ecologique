@@ -1,6 +1,6 @@
-import { createService } from '../establishment/establishment-features'
-import { getEtablissement } from '../../infrastructure/sirene-API'
-import { EtablissementRepository } from '../establishment/spi'
+import { createService } from '../domain/establishmentFeatures'
+import { getEtablissement } from '../infrastructure/api/sirene/sirene'
+import { EtablissementRepository } from '../domain/spi'
 
 /**
  * Defines how to access external data.

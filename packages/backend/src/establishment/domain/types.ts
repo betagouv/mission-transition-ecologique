@@ -1,4 +1,4 @@
-import { CustomError } from '../../helpers/errors'
+import { CustomError } from '../../common/errors'
 
 export interface Etablissement {
   siren: string

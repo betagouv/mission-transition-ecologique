@@ -1,6 +1,6 @@
-import { currentDateService } from '../../infrastructure/current-date'
-import { createService as createFilterService } from '../program/filter-programs'
+import { currentDateService } from '../infrastructure/currentDate'
+import { createService as createFilterService } from '../domain/filterPrograms'
 
-export { sortPrograms } from '../program/sort-programs'
+export { sortPrograms } from '../domain/sortPrograms'
 
 export const filterPrograms = createFilterService(currentDateService)

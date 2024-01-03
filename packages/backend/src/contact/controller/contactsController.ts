@@ -1,7 +1,7 @@
 import { Body, Controller, Post, Route, SuccessResponse, TsoaResponse, Res, Example } from 'tsoa'
-import { ServiceNotFoundError, ContactInfoBodyAttributes, ContactId } from '../domain/contact/types'
-import { ErrorJSON, ValidateErrorJSON } from './types'
-import { postNewContact } from '../domain/services/contact-service'
+import { ServiceNotFoundError, ContactInfoBodyAttributes, ContactId } from '../domain/types'
+import { ErrorJSON, ValidateErrorJSON } from '../../common/jsonError'
+import { postNewContact } from '../application/postNewContact'
 
 interface ServiceNotFoundErrorJSON {
   message: 'Contact not created'

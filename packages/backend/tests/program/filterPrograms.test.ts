@@ -1,9 +1,9 @@
 import { makeProgramHelper } from './testing'
-import { createService, FILTERING_RULE_NAME } from '../src/domain/program/filter-programs'
+import { createService, FILTERING_RULE_NAME } from '../../src/program/domain/filterPrograms'
 import { Result, ResultNS } from 'true-myth'
 import { ProgramData } from '@tee/web/src/types'
-import type { QuestionnaireData } from '../src/domain/program/types'
-import { Entry, setObjectProperty } from '../src/helpers/objects'
+import type { QuestionnaireData } from '../../src/program/domain/types'
+import { Entry, setObjectProperty } from '../../src/common/objects'
 
 const mockCurrentDateService = { get: () => '01/01/2024' }
 const filterPrograms = createService(mockCurrentDateService)
