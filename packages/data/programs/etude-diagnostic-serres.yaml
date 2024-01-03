@@ -47,7 +47,6 @@ publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
     - est éligible
-    - est dans un secteur d'activité ciblé
     - a un objectif ciblé
     - entreprise . est propriétaire de ses locaux
   entreprise . est éligible:
@@ -57,12 +56,31 @@ publicodes:
       - date du jour <= dispositif . fin de validité
     toutes ces conditions:
     - a un effectif éligible
+    - est dans un secteur d'activité éligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
     - effectif >= 250
-  entreprise . est dans un secteur d'activité ciblé:
-    une de ces conditions:
+  entreprise . est dans un secteur d'activité éligible:
+    toutes ces conditions:
     - code NAF niveau 1 . est A
+    - une de ces conditions:
+      - code NAF = "01.11Z"
+      - code NAF = "01.12Z"
+      - code NAF = "01.13Z"
+      - code NAF = "01.14Z"
+      - code NAF = "01.15Z"
+      - code NAF = "01.16Z"
+      - code NAF = "01.19Z"
+      - code NAF = "01.21Z"
+      - code NAF = "01.22Z"
+      - code NAF = "01.23Z"
+      - code NAF = "01.24Z"
+      - code NAF = "01.25Z"
+      - code NAF = "01.26Z"
+      - code NAF = "01.27Z"
+      - code NAF = "01.28Z"
+      - code NAF = "01.29Z"
+      - code NAF = "01.30Z"
   entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est rénover mon bâtiment
