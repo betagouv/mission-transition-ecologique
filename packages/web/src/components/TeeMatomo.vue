@@ -62,7 +62,7 @@ defineProps<Props>()
 const analytics = analyticsStore()
 
 const metaEnv: ImportMetaEnv = import.meta.env as ImportMetaEnv
-const matomoDeactivate: boolean = metaEnv.VITE_MATOMO_DEACTIVATE
+const matomoDeactivate: boolean = metaEnv.VITE_MATOMO_DEACTIVATE === 'true'
 
 let matomoScriptElem = document.getElementById(analytics.scriptUniqueId)
 
