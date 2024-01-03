@@ -26,4 +26,8 @@ export interface ContactId {
   id: number
 }
 
+export interface DealId {
+  id: string
+}
+
 export class ServiceNotFoundError extends CustomError {}

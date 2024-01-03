@@ -7,7 +7,7 @@ import { ContactInfoRepository } from '../domain/spi'
  * Uses the "Repository" pattern, see README.md
  */
 const brevoRepository: ContactInfoRepository = {
-  add: addBrevoContact
+  addContact: addBrevoContact
 }
 const service = createService(brevoRepository)
 

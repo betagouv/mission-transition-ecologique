@@ -1,6 +1,7 @@
-import { Result } from 'true-myth'
-import { ContactId } from './types'
+import type { Result } from 'true-myth'
+import type { ContactId, DealId } from './types'
 
 export type ContactInfoRepository = {
-  add: (email: string, attributes: object) => Promise<Result<ContactId, Error>>
+  addContact: (email: string, attributes: object) => Promise<Result<ContactId, Error>>
+  addOpportunity: (attributes: object) => Promise<Result<DealId, Error>>
 }
