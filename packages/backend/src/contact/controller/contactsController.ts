@@ -1,7 +1,7 @@
 import { Body, Controller, Post, Route, SuccessResponse, TsoaResponse, Res, Example } from 'tsoa'
 import { ServiceNotFoundError, ContactInfoBodyAttributes, ContactId } from '../domain/types'
 import { ErrorJSON, ValidateErrorJSON } from '../../common/jsonError'
-import { postNewContact } from '../application/postNewContact'
+import { postNewOpportunity } from '../application/postNewOpportunity'
 
 interface ServiceNotFoundErrorJSON {
   message: 'Contact not created'
@@ -35,7 +35,7 @@ export class ContactInfoController extends Controller {
     const bodyEmail = requestBody.email
     const bodyAttributes = requestBody.attributes
 
-    const contactInfoResult = await postNewContact(bodyEmail, bodyAttributes)
+    const contactInfoResult = await postNewOpportunity(bodyEmail, bodyAttributes)
 
     console.log(contactInfoResult)
 
