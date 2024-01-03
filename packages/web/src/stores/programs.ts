@@ -5,8 +5,8 @@ import { computed, ref } from 'vue'
 import { defineStore } from 'pinia'
 
 import type { ProgramData, TrackId, TrackOptions, UsedTrack } from '@/types/index'
-import { filterPrograms as filterWithPublicodes, sortPrograms } from '@tee/backend/src/domain/services/program-service'
-import type { QuestionnaireData } from '@tee/backend/src/domain/program/types'
+import { filterPrograms as filterWithPublicodes, sortPrograms } from '@tee/backend/src/program/application/sortAndFilterPrograms'
+import type { QuestionnaireData } from '@tee/backend/src/program/domain/types'
 import { TrackHelpValue } from '@/types/index'
 
 export const programsStore = defineStore('programs', () => {
