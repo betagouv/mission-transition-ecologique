@@ -6,9 +6,9 @@ export const createService = (repo: ContactInfoRepository) => {
    * postNewContact passes through the Promise of the infrastructure layer
    * (promise of ContactId in case of success, Error otherwise)
    */
-  const postNewContact = async (email: string, attributes: object) => {
-    return repo.add(email, attributes)
+  const postNewOpportunity = async (email: string, attributes: object) => {
+    return repo.addContact(email, attributes)
   }
 
-  return { postNewContact }
+  return { postNewOpportunity: postNewOpportunity }
 }

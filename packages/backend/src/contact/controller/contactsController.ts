@@ -37,6 +37,8 @@ export class ContactInfoController extends Controller {
 
     const contactInfoResult = await postNewContact(bodyEmail, bodyAttributes)
 
+    console.log(contactInfoResult)
+
     if (contactInfoResult.isErr) {
       const err = contactInfoResult.error
 

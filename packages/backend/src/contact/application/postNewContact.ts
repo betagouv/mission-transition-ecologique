@@ -11,4 +11,4 @@ const brevoRepository: ContactInfoRepository = {
 }
 const service = createService(brevoRepository)
 
-export const postNewContact = service.postNewContact
+export const postNewOpportunity = service.postNewOpportunity
