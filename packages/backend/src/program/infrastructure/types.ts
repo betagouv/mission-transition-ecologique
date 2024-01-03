@@ -94,9 +94,3 @@ export interface EtablissementDocument {
     }
   ]
 }
-
-export interface BrevoBody {
-  email: string
-  listIds: number[]
-  attributes: object
-}
