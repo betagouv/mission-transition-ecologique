@@ -7,7 +7,7 @@
     <div class="fr-grid-row fr-grid-row--gutters">
       <div v-for="partIdx in 2" :key="`part-${partIdx}`" class="fr-col-6 fr-col-xs-12">
         <div
-          v-for="(field, idx) in splitInTwo(order.filter((field) => !!programEligibility[field]))[partIdx - 1]"
+          v-for="(field, idx) in getFieldsForColumn(partIdx)"
           :key="`elegibility-field-part1-${idx}`"
           class="fr-mb-8v fr-tee-eligigility"
         >
@@ -57,6 +57,12 @@ const splitInTwo = (fields: string[]): [string[], string[]] => {
   const mid: number = Math.ceil(fields.length / 2)
   return [fields.slice(0, mid), fields.slice(mid)]
 }
+
+const getFieldsForColumn = (columnNumber: number): string[] => {
+  const columns = splitInTwo(order.filter((field) => !!programEligibility.value[field]))
+  return columns[columnNumber - 1]
+}
+
 
 interface Props {
   program: ProgramData
