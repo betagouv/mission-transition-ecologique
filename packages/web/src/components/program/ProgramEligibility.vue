@@ -72,7 +72,7 @@ const props = defineProps<Props>()
 
 const choices = choicesStore()
 
-const programEligibility: any = computed(() => {
+const programEligibility = computed(() => {
   return props.program["conditions d'éligibilité"]
 })
 </script>
