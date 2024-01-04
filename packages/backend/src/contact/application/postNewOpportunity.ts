@@ -10,7 +10,7 @@ import { DealId } from '../domain/types'
  */
 const brevoRepository: ContactInfoRepository = {
   addContact: addBrevoContact,
-  addOpportunity: async (_attributes: object): Promise<Result<DealId, Error>> => {
+  addOpportunity: async (_contactId: number, _attributes: object): Promise<Result<DealId, Error>> => {
     const res: Result<DealId, Error> = Result.ok({ id: '1' })
     return res
   }

@@ -16,7 +16,7 @@ const testRepository: ContactInfoRepository = {
     contactCreated = true
     return Result.ok({ id: 1 }) as Result<ContactId, Error>
   },
-  addOpportunity: async (_attributes: object): Promise<Result<DealId, Error>> => {
+  addOpportunity: async (_contactId: number, _attributes: object): Promise<Result<DealId, Error>> => {
     opportunityCreated = true
     return Result.ok({ id: '1' }) as Result<DealId, Error>
   }
