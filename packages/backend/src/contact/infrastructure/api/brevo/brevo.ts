@@ -1,8 +1,8 @@
-import { ServiceNotFoundError, ContactId } from '../domain/contact/types'
+import { ServiceNotFoundError, ContactId } from '../../../domain/types'
 import axios, { AxiosError, AxiosResponse } from 'axios'
-import { ensureError } from '../helpers/errors'
+import { ensureError } from '../../../../common/errors'
 import { Result } from 'true-myth'
-import { ContactInfoRepository } from '../domain/contact/spi'
+import { ContactInfoRepository } from '../../../domain/spi'
 
 const DEBUG_BREVO_LIST_ID = '4'
 

@@ -1,4 +1,6 @@
-export interface EtablissementDocument {
+import { CustomError } from '../../common/errors'
+
+export interface Etablissement {
   siren: string
   nic: string
   siret: string
@@ -74,29 +76,23 @@ export interface EtablissementDocument {
     codePaysEtranger2Etablissement: null
     libellePaysEtranger2Etablissement: null
   }
-  periodesEtablissement: [
-    {
-      dateFin: null
-      dateDebut: string
-      etatAdministratifEtablissement: string
-      changementEtatAdministratifEtablissement: boolean
-      enseigne1Etablissement: null
-      enseigne2Etablissement: null
-      enseigne3Etablissement: null
-      changementEnseigneEtablissement: boolean
-      denominationUsuelleEtablissement: null
-      changementDenominationUsuelleEtablissement: boolean
-      activitePrincipaleEtablissement: string
-      nomenclatureActivitePrincipaleEtablissement: string
-      changementActivitePrincipaleEtablissement: boolean
-      caractereEmployeurEtablissement: string
-      changementCaractereEmployeurEtablissement: boolean
-    }
-  ]
+  periodesEtablissement: Array<{
+    dateFin: null
+    dateDebut: string
+    etatAdministratifEtablissement: string
+    changementEtatAdministratifEtablissement: boolean
+    enseigne1Etablissement: null
+    enseigne2Etablissement: null
+    enseigne3Etablissement: null
+    changementEnseigneEtablissement: boolean
+    denominationUsuelleEtablissement: null
+    changementDenominationUsuelleEtablissement: boolean
+    activitePrincipaleEtablissement: string
+    nomenclatureActivitePrincipaleEtablissement: string
+    changementActivitePrincipaleEtablissement: boolean
+    caractereEmployeurEtablissement: string
+    changementCaractereEmployeurEtablissement: boolean
+  }>
 }
 
-export interface BrevoBody {
-  email: string
-  listIds: number[]
-  attributes: object
-}
+export class EstablishmentNotFoundError extends CustomError {}

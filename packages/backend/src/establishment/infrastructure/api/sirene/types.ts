@@ -1,6 +1,4 @@
-import { CustomError } from '../../helpers/errors'
-
-export interface Etablissement {
+export interface EtablissementDocument {
   siren: string
   nic: string
   siret: string
@@ -76,23 +74,23 @@ export interface Etablissement {
     codePaysEtranger2Etablissement: null
     libellePaysEtranger2Etablissement: null
   }
-  periodesEtablissement: Array<{
-    dateFin: null
-    dateDebut: string
-    etatAdministratifEtablissement: string
-    changementEtatAdministratifEtablissement: boolean
-    enseigne1Etablissement: null
-    enseigne2Etablissement: null
-    enseigne3Etablissement: null
-    changementEnseigneEtablissement: boolean
-    denominationUsuelleEtablissement: null
-    changementDenominationUsuelleEtablissement: boolean
-    activitePrincipaleEtablissement: string
-    nomenclatureActivitePrincipaleEtablissement: string
-    changementActivitePrincipaleEtablissement: boolean
-    caractereEmployeurEtablissement: string
-    changementCaractereEmployeurEtablissement: boolean
-  }>
+  periodesEtablissement: [
+    {
+      dateFin: null
+      dateDebut: string
+      etatAdministratifEtablissement: string
+      changementEtatAdministratifEtablissement: boolean
+      enseigne1Etablissement: null
+      enseigne2Etablissement: null
+      enseigne3Etablissement: null
+      changementEnseigneEtablissement: boolean
+      denominationUsuelleEtablissement: null
+      changementDenominationUsuelleEtablissement: boolean
+      activitePrincipaleEtablissement: string
+      nomenclatureActivitePrincipaleEtablissement: string
+      changementActivitePrincipaleEtablissement: boolean
+      caractereEmployeurEtablissement: string
+      changementCaractereEmployeurEtablissement: boolean
+    }
+  ]
 }
-
-export class EstablishmentNotFoundError extends CustomError {}

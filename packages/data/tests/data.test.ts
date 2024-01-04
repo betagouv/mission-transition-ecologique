@@ -3,14 +3,14 @@ import { ValidateFunction } from 'ajv'
 import programSchema from '../schemas/program-data-schema.json'
 import regionSchema from '../schemas/region-data-schema.json'
 import regionData from '../../web/public/data/references/com_codes.json'
-import { ensureError } from '@tee/backend/src/helpers/errors'
+import { ensureError } from '@tee/backend/src/common/errors'
 
 import { prependInterface, readPrograms } from '../src/dataPipeline'
 
 import Engine from 'publicodes'
 
 test('JSON Schema is valid', () => {
-  expect(new Ajv().compile(programSchema)).not.toThrowError()
+  expect(new Ajv().compile(programSchema)).not.toThrow()
 })
 
 test('Data is valid against the JSON schema', () => {
@@ -30,7 +30,7 @@ test('Publicode data is valid when appended with interface', () => {
 
   programs.forEach((p) => {
     try {
-      expect(() => new Engine(p.publicodes as object)).not.toThrowError()
+      expect(() => new Engine(p.publicodes as object)).not.toThrow()
     } catch (errUnknown) {
       const err = ensureError(errUnknown)
       err.message = `Program: ${p.titre}\n\n${err.message}`

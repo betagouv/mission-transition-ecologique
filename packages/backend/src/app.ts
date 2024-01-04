@@ -1,5 +1,5 @@
 import express, { Express, NextFunction, Request, Response } from 'express'
-import { RegisterRoutes } from '../../generated/routes'
+import { RegisterRoutes } from '../generated/routes'
 import swaggerUi from 'swagger-ui-express'
 import { ValidateError } from 'tsoa'
 import cors from 'cors'
@@ -11,7 +11,7 @@ app.use(cors())
 
 // eslint-disable-next-line @typescript-eslint/no-misused-promises
 app.use('/api/docs', swaggerUi.serve, async (_req: Request, res: Response) => {
-  return res.send(swaggerUi.generateHTML(await import('../../generated/swagger.json')))
+  return res.send(swaggerUi.generateHTML(await import('../generated/swagger.json')))
 })
 
 RegisterRoutes(app)

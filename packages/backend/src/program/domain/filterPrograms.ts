@@ -3,8 +3,8 @@ import type { ProgramData } from '@tee/web/src/types/programTypes'
 import Engine from 'publicodes'
 
 import { Result } from 'true-myth'
-import { ensureError } from '@tee/backend/src/helpers/errors'
-import { filterObject } from '@tee/backend/src/helpers/objects'
+import { ensureError } from '@tee/backend/src/common/errors'
+import { filterObject } from '@tee/backend/src/common/objects'
 
 import type { QuestionnaireData, PublicodesInputData } from './types'
 import type { CurrentDateService } from './spi'

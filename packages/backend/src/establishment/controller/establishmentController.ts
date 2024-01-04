@@ -1,7 +1,7 @@
 import { Body, Controller, Post, Route, SuccessResponse, TsoaResponse, Res, Example } from 'tsoa'
-import { fetchEtablissement } from '../domain/services/establishment-service'
-import { EstablishmentNotFoundError, Etablissement } from '../domain/establishment/types'
-import { ErrorJSON, ValidateErrorJSON } from './types'
+import { fetchEtablissement } from '../application/fetchEtablissement'
+import { EstablishmentNotFoundError, Etablissement } from '../domain/types'
+import { ErrorJSON, ValidateErrorJSON } from '../../common/jsonError'
 
 interface EstablishmentNotFoundErrorJSON {
   message: 'Establishment not found'

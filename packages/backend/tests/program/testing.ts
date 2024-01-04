@@ -1,7 +1,7 @@
 import type { ProgramData } from '@tee/web/src/types/programTypes'
 import { ProgramAidType } from '@tee/web/src/types/programTypes'
 
-import { FILTERING_RULE_NAME } from '../src/domain/program/filter-programs'
+import { FILTERING_RULE_NAME } from '../../src/program/domain/filterPrograms'
 
 /** makes data for a mock program with given eligibility rules */
 export const makeProgramHelper = ({

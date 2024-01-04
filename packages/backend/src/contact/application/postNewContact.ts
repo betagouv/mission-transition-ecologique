@@ -1,6 +1,6 @@
-import { addBrevoContact } from '../../infrastructure/brevo-API'
-import { createService } from '../contact/contact-features'
-import { ContactInfoRepository } from '../contact/spi'
+import { addBrevoContact } from '../infrastructure/api/brevo/brevo'
+import { createService } from '../domain/contactFeatures'
+import { ContactInfoRepository } from '../domain/spi'
 
 /**
  * Defines how to access external data.

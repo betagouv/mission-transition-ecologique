@@ -1,4 +1,4 @@
-import { sortPrograms } from '@tee/backend/src/domain/program/sort-programs'
+import { sortPrograms } from '@tee/backend/src/program/domain/sortPrograms'
 import type { ProgramData } from '@tee/web/src/types'
 import { ProgramAidType, TrackHelpValue } from '@tee/web/src/types'
 import { makeProgramHelper } from './testing'
