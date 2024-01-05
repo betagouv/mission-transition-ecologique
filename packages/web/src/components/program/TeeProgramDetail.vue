@@ -155,6 +155,9 @@
           </div>
         </div>
 
+
+    <ProgramEligibility v-if="program" :program="program"></ProgramEligibility>
+
         <!-- PROGRAM FORM -->
         <div class="fr-form-block">
           <TeeForm
@@ -179,6 +182,8 @@ import { ref, onBeforeMount } from 'vue'
 
 import TeeTile from '../TeeTile.vue'
 import TeeForm from '../TeeForm.vue'
+import ProgramEligibility from '@/components/program/ProgramEligibility.vue'
+import ProgramObjective from '@/components/program/ProgramObjective.vue'
 
 import { choicesStore } from '../../stores/choices'
 import { tracksStore } from '../../stores/tracks'
@@ -188,7 +193,6 @@ import { analyticsStore } from '../../stores/analytics'
 
 import { scrollToId } from '../../utils/helpers'
 import type { TrackId, ProgramData } from '@/types'
-import ProgramObjective from '@/components/program/ProgramObjective.vue'
 import { useRoute, useRouter } from 'vue-router'
 import { RouteName } from '@/types/routeType'
 
