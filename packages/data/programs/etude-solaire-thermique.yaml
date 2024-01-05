@@ -42,10 +42,10 @@ conditions d'éligibilité:
   - Toutes tailles
   - Éligible aux micro-entreprises
   secteur géographique:
-  - Centre-Val de Loire|Bourgogne-Franche-Comté|Normandie|Hauts-de-France|Grand Est|Pays
-    de la Loire|Bretagne|Nouvelle-Aquitaine|Occitanie|Auvergne-Rhône-Alpes|Provence-Alpes-Côte
-    d'Azur|Corse|Saint-Pierre-Et-Miquelon|Polynésie française|Guadeloupe|Martinique|Guyane|La
-    Réunion|Mayotte|Île-de-France
+  - Centre-Val de Loire, Bourgogne-Franche-Comté, Normandie, Hauts-de-France, Grand
+    Est, Pays de la Loire, Bretagne, Nouvelle-Aquitaine, Occitanie, Auvergne-Rhône-Alpes,
+    Provence-Alpes-Côte d'Azur, Corse, Saint-Pierre-Et-Miquelon, Polynésie française,
+    Guadeloupe, Martinique, Guyane, La Réunion, Mayotte, Île-de-France
   secteur d'activité:
   - Tous secteurs d’activité
   nombre d'années d'activité:
@@ -61,6 +61,10 @@ publicodes:
     - est dans un secteur d'activité ciblé
     - a un objectif ciblé
   entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+      - dispositif . début de validité <= date du jour
+      - date du jour <= dispositif . fin de validité
     toutes ces conditions:
     - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:

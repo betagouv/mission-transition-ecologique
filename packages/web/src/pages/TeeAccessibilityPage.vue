@@ -59,8 +59,8 @@
         <h4 class="fr-mt-3w">Nous contacter</h4>
         <p>
           Nous nous engageons à mettre ce site à la disposition de tout internaute, indépendamment de ses dispositions physiques,
-          cognitives, matérielles ou géographiques. Si vous constatez qu’une page ne correspond à ce critère, merci de nous contacter via
-          notre formulaire en ligne.
+          cognitives, matérielles ou géographiques. Si vous constatez qu’une page ne correspond à ce critère, merci de nous contacter par
+          mail à : <a :href="Contact.mailTo">{{ Contact.email }}</a>
         </p>
 
         <h4 class="fr-mt-3w">Défenseur des droits</h4>
@@ -102,12 +102,13 @@
       </div>
     </div>
   </div>
-  <TeeHelp />
+  <ContactMail />
 </template>
 
 <script setup lang="ts">
 // CONSOLE LOG TEMPLATE
 // console.log(`TeeAccessibilityPage > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import TeeHelp from '@/components/home/TeeHelp.vue'
+import ContactMail from '@/components/contact/ContactMail.vue'
+import Contact from '@/utils/contact'
 </script>

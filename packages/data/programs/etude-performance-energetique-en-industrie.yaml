@@ -61,10 +61,11 @@ conditions d'éligibilité:
   - TPE et PME
   - Éligible aux micro-entreprises
   secteur géographique:
-  - Corse|Wallis et Futuna|Centre-Val de Loire|Ile de Clipperton|Île-de-France|Bourgogne-Franche-Comté|Polynésie
-    française|Saint-Martin|Normandie|Provence-Alpes-Côte d'Azur|Guadeloupe|Nouvelle-Aquitaine|Martinique|Occitanie|Terres
-    australes et antarctiques françaises|Nouvelle-Calédonie|Guyane|La Réunion|Mayotte|Saint-Barthélemy|Auvergne-Rhône-Alpes|Saint-Pierre-Et-Miquelon|Bretagne|Grand
-    Est
+  - Corse, Wallis et Futuna, Centre-Val de Loire, Ile de Clipperton, Île-de-France,
+    Bourgogne-Franche-Comté, Polynésie française, Saint-Martin, Normandie, Provence-Alpes-Côte
+    d'Azur, Guadeloupe, Nouvelle-Aquitaine, Martinique, Occitanie, Terres australes
+    et antarctiques françaises, Nouvelle-Calédonie, Guyane, La Réunion, Mayotte, Saint-Barthélemy,
+    Auvergne-Rhône-Alpes, Saint-Pierre-Et-Miquelon, Bretagne, Grand Est
   secteur d'activité:
   - Industrie
   nombre d'années d'activité:
@@ -80,6 +81,10 @@ publicodes:
     - est dans un secteur d'activité ciblé
     - a un objectif ciblé
   entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+      - dispositif . début de validité <= date du jour
+      - date du jour <= dispositif . fin de validité
     toutes ces conditions:
     - a un effectif éligible
     - entreprise . est dans une zone géographique éligible

@@ -133,7 +133,7 @@ def assembleProgramYAML(rawData, colNumbersByName, id):
             eligibility_conditions[ELIGIBILITY_SPECIFIC] = []
         eligibility_conditions[ELIGIBILITY_SPECIFIC].append(es)
 
-    set("conditions d'éligibilité", eligibility_conditions, True)
+    set("conditions d'éligibilité", eligibility_conditions)
 
     # Publicodes constraints
     effective_constraint = pc_effectifConstraint(get("minEff"), get("maxEff"))
@@ -173,22 +173,30 @@ def assembleProgramYAML(rawData, colNumbersByName, id):
     if own:
         cible.append(PROPRIO)
 
+    applicability = pc_eligibility_applicability(
+        get("DISPOSITIF_DATE_DEBUT"), get("DISPOSITIF_DATE_FIN")
+    )
+
     if len(eligibilite) != 0:
-        cible = [remove_namespace(ELIGIBLE)] + cible
+        eligibilite = {
+            **applicability,
+            ALL: eligibilite,
+        }
+    else:
+        eligibilite = {
+            **applicability,
+            "valeur": "oui",
+        }
+
+    cible = [remove_namespace(ELIGIBLE)] + cible
 
     publicodes_obj = {}
-    # Si pas de condition, on affiche toujours
-    if len(cible) == 0:
-        publicodes_obj[CIBLE] = "oui"
-    else:
-        publicodes_obj[CIBLE] = {ALL: cible}
-
-    if len(eligibilite) != 0:
-        publicodes_obj[ELIGIBLE] = {ALL: eligibilite}
+    publicodes_obj[CIBLE] = {ALL: cible}
+    publicodes_obj[ELIGIBLE] = eligibilite
 
     publicodes_obj |= pc
 
-    set("publicodes", publicodes_obj)
+    set("publicodes", publicodes_obj, True)
 
     return convertToYaml(prog)
 
@@ -308,8 +316,11 @@ def eligibility_sector(get) -> str:
 
 def eligibility_geography(get) -> list[str]:
     egr = get("Zones géographiques Régional")
+    egr = ", ".join(csv_to_list(egr))
     egs = get("Zones géographiques Spécifique")
+    egs = ", ".join(csv_to_list(egs))
     egd = get("Zones géographiques Départemental")
+    egd = ", ".join(csv_to_list(egd))
     eg = [eg for eg in [egr, egs, egd] if valid(eg)]
     if len(eg) > 0:
         return eg
@@ -461,6 +472,19 @@ def pc_building_owner(get):
     if not shouldAddressBuildingOwner:
         return None
     return True
+
+
+def pc_eligibility_applicability(validity_start, validity_end):
+    has_started = "dispositif . début de validité <= date du jour"
+    has_not_ended = "date du jour <= dispositif . fin de validité"
+
+    if not validity_start and not validity_end:
+        return {}
+    if not validity_start:
+        return {"applicable si": has_not_ended}
+    if not validity_end:
+        return {"applicable si": has_started}
+    return {"applicable si": {ALL: [has_started, has_not_ended]}}
 
 
 def thousandSep(value):

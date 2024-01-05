@@ -47,7 +47,7 @@ conditions d'éligibilité:
   - Toutes tailles
   - Non éligible aux micro-entreprises
   secteur géographique:
-  - Bretagne|Occitanie|Auvergne-Rhône-Alpes|Corse
+  - Bretagne, Occitanie, Auvergne-Rhône-Alpes, Corse
   secteur d'activité:
   - Secteur tertiaire
   nombre d'années d'activité:
@@ -65,6 +65,10 @@ publicodes:
     - a un objectif ciblé
     - entreprise . est propriétaire de ses locaux
   entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+      - dispositif . début de validité <= date du jour
+      - date du jour <= dispositif . fin de validité
     toutes ces conditions:
     - a un effectif éligible
     - entreprise . est dans une zone géographique éligible

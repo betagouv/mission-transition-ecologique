@@ -39,9 +39,11 @@ conditions d'éligibilité:
   - TPE et PME
   - Éligible aux micro-entreprises
   secteur géographique:
-  - Saint-Barthélemy|Nouvelle-Calédonie|Centre-Val de Loire|Bourgogne-Franche-Comté|Normandie|Hauts-de-France|Grand
-    Est|Pays de la Loire|Bretagne|Nouvelle-Aquitaine|Occitanie|Auvergne-Rhône-Alpes|Provence-Alpes-Côte
-    d'Azur|Corse|Polynésie française|Guadeloupe|Martinique|Guyane|La Réunion|Mayotte|Île-de-France|Saint-Martin
+  - Saint-Barthélemy, Nouvelle-Calédonie, Centre-Val de Loire, Bourgogne-Franche-Comté,
+    Normandie, Hauts-de-France, Grand Est, Pays de la Loire, Bretagne, Nouvelle-Aquitaine,
+    Occitanie, Auvergne-Rhône-Alpes, Provence-Alpes-Côte d'Azur, Corse, Polynésie
+    française, Guadeloupe, Martinique, Guyane, La Réunion, Mayotte, Île-de-France,
+    Saint-Martin
   - Pour les territoires métropolitains, être situé dans les communes rurales à densité
     intermédiaire, peu denses ou très peu denses (selon la grille de densité communale
     de l'INSEE 2020), étant également communes de moins de 20 000 habitants. L'ensemble
@@ -65,6 +67,10 @@ publicodes:
     - est éligible
     - a un objectif ciblé
   entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+      - dispositif . début de validité <= date du jour
+      - date du jour <= dispositif . fin de validité
     toutes ces conditions:
     - a un effectif éligible
     - est dans un secteur d'activité éligible

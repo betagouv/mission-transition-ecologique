@@ -38,9 +38,9 @@ conditions d'éligibilité:
   - Toutes tailles
   - Éligible aux micro-entreprises
   secteur géographique:
-  - Bourgogne-Franche-Comté|Hauts-de-France|Occitanie|Auvergne-Rhône-Alpes|Provence-Alpes-Côte
-    d'Azur|Corse|Guadeloupe|Martinique|Guyane|La Réunion|Nouvelle-Aquitaine|Centre-Val
-    de Loire|Pays de la Loire
+  - Bourgogne-Franche-Comté, Hauts-de-France, Occitanie, Auvergne-Rhône-Alpes, Provence-Alpes-Côte
+    d'Azur, Corse, Guadeloupe, Martinique, Guyane, La Réunion, Nouvelle-Aquitaine,
+    Centre-Val de Loire, Pays de la Loire
   secteur d'activité:
   - Tous secteurs d’activité
   nombre d'années d'activité:
@@ -57,6 +57,10 @@ publicodes:
     - a un objectif ciblé
     - questionnaire . parcours = objectif précis
   entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+      - dispositif . début de validité <= date du jour
+      - date du jour <= dispositif . fin de validité
     toutes ces conditions:
     - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:

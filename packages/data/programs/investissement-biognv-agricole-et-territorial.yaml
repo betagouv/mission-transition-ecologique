@@ -41,8 +41,9 @@ conditions d'éligibilité:
   - Toutes tailles
   - Éligible aux micro-entreprises
   secteur géographique:
-  - Île-de-France|Centre-Val de Loire|Bourgogne-Franche-Comté|Normandie|Hauts-de-France|Grand
-    Est|Pays de la Loire|Nouvelle-Aquitaine|Occitanie|Provence-Alpes-Côte d'Azur|Corse
+  - Île-de-France, Centre-Val de Loire, Bourgogne-Franche-Comté, Normandie, Hauts-de-France,
+    Grand Est, Pays de la Loire, Nouvelle-Aquitaine, Occitanie, Provence-Alpes-Côte
+    d'Azur, Corse
   secteur d'activité:
   - Entreprises exploitantes d’unités de méthanisation
   nombre d'années d'activité:
@@ -59,6 +60,10 @@ publicodes:
     - a un objectif ciblé
     - questionnaire . parcours = objectif précis
   entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+      - dispositif . début de validité <= date du jour
+      - date du jour <= dispositif . fin de validité
     toutes ces conditions:
     - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:
