@@ -1,4 +1,4 @@
-import app from './controller/app'
+import app from './app'
 
 import * as dotenv from 'dotenv'
 

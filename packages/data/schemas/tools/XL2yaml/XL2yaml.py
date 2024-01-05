@@ -173,24 +173,26 @@ def assembleProgramYAML(rawData, colNumbersByName, id):
     if own:
         cible.append(PROPRIO)
 
-    if len(eligibilite) != 0:
-        cible = [remove_namespace(ELIGIBLE)] + cible
-
-    publicodes_obj = {}
-    # Si pas de condition, on affiche toujours
-    if len(cible) == 0:
-        publicodes_obj[CIBLE] = "oui"
-    else:
-        publicodes_obj[CIBLE] = {ALL: cible}
+    applicability = pc_eligibility_applicability(
+        get("DISPOSITIF_DATE_DEBUT"), get("DISPOSITIF_DATE_FIN")
+    )
 
     if len(eligibilite) != 0:
         eligibilite = {
-            **pc_eligibility_applicability(
-                get("DISPOSITIF_DATE_DEBUT"), get("DISPOSITIF_DATE_FIN")
-            ),
+            **applicability,
             ALL: eligibilite,
         }
-        publicodes_obj[ELIGIBLE] = eligibilite
+    else:
+        eligibilite = {
+            **applicability,
+            "valeur": "oui",
+        }
+
+    cible = [remove_namespace(ELIGIBLE)] + cible
+
+    publicodes_obj = {}
+    publicodes_obj[CIBLE] = {ALL: cible}
+    publicodes_obj[ELIGIBLE] = eligibilite
 
     publicodes_obj |= pc
 
