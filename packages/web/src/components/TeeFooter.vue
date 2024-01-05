@@ -74,6 +74,7 @@
           <li v-for="link in mainLinks" :key="link.label" class="fr-footer__bottom-item">
             <router-link v-if="link.to" :to="link.to" class="fr-footer__bottom-link">
               {{ link.label }}
+              <span v-if="link.icon" :class="link.icon" class="fr-icon--sm" />
             </router-link>
             <a v-else :href="link.href" class="fr-footer__bottom-link">
               {{ link.label }}
@@ -104,7 +105,7 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`TeeAppFooter > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import { choicesStore } from '../stores/choices'
+import { choicesStore } from '@/stores/choices'
 import { RouteName } from '@/types/routeType'
 
 const choices = choicesStore()
@@ -192,6 +193,11 @@ const mainLinks = [
   {
     label: 'Statistiques',
     href: 'https://stats.beta.gouv.fr/index.php?module=CoreHome&action=index&idSite=23&period=day&date=yesterday#?period=day&date=yesterday&category=Dashboard_Dashboard&subcategory=1&idSite=23'
+  },
+  {
+    label: 'Échanger avec un conseiller',
+    to: { name: RouteName.ChatAdvisor },
+    icon: 'fr-icon-chat-3-line'
   }
 ]
 
