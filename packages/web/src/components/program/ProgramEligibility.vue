@@ -46,13 +46,13 @@ const eligilityEmojis: Emojis = {
   "autres critères d'éligibilité": '💡'
 }
 
-const order = [
+const order: EligibilityCategory[] = [
   "taille de l'entreprise",
   'secteur géographique',
   "nombre d'années d'activité",
   "secteur d'activité",
   "autres critères d'éligibilité"
-] as const
+]
 
 const splitInTwo = (fields: EligibilityCategory[]): [EligibilityCategory[], EligibilityCategory[]] => {
   const mid: number = Math.ceil(fields.length / 2)
