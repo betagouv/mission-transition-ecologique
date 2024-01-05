@@ -34,9 +34,10 @@ import { computed } from 'vue'
 import { choicesStore } from '@/stores/choices'
 import type { ProgramData } from '@/types'
 
-interface Emojis {
-  [key: string]: string
-}
+type EligibilityCategory = keyof ProgramData["conditions d'éligibilité"]
+
+type Emojis = Record<EligibilityCategory, string>
+
 const eligilityEmojis: Emojis = {
   "taille de l'entreprise": '👫',
   'secteur géographique': '📍',
@@ -53,12 +54,13 @@ const order = [
   "autres critères d'éligibilité"
 ] as const
 
-const splitInTwo = (fields: string[]): [string[], string[]] => {
+const splitInTwo = (fields: EligibilityCategory[]): [EligibilityCategory[], EligibilityCategory[]] => {
   const mid: number = Math.ceil(fields.length / 2)
   return [fields.slice(0, mid), fields.slice(mid)]
 }
 
-const getFieldsForColumn = (columnNumber: number): string[] => {
+
+const getFieldsForColumn = (columnNumber: number): EligibilityCategory[] => {
   const columns = splitInTwo(order.filter((field) => !!programEligibility.value[field]))
   return columns[columnNumber - 1]
 }
