@@ -8,7 +8,7 @@ export enum HttpMethod {
   DELETE = 'delete'
 }
 
-export type BrevoRequestData = BrevoPostContactData | BrevoGetContactData | BrevoPostDeal | BrevoPatchDeal
+export type BrevoRequestData = BrevoPostContactData | BrevoGetContactData | BrevoPostDeal | BrevoPatchDealData
 
 export interface BrevoPostContactData extends AxiosRequestConfig {
   method: HttpMethod.POST
@@ -35,7 +35,7 @@ export interface BrevoPostDeal extends AxiosRequestConfig {
   }
 }
 
-export interface BrevoPatchDeal extends AxiosRequestConfig {
+export interface BrevoPatchDealData extends AxiosRequestConfig {
   method: HttpMethod.PATCH
   url: `https://api.brevo.com/v3/crm/deals/link-unlink/${string}`
   data: {

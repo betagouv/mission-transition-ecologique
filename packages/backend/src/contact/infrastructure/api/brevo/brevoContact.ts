@@ -26,27 +26,25 @@ export const addBrevoContact: ContactInfoRepository['addContact'] = async (email
       attributes: attributes
     }
   })
-  if (responseResult.isErr) return responseResult.error as unknown as Result<ContactId, Error>
+
+  if (responseResult.isErr) return Result.err(responseResult.error)
 
   const response = responseResult.value
-  let contactId: ContactId
+  let contactId: Result<ContactId, Error>
 
   if (response.status == axios.HttpStatusCode.Created) {
-    contactId = response.data as ContactId
+    contactId = Result.ok(response.data as ContactId)
   } else {
-    // Contact already exists, no data is returned
-    const contactIdNum = await fetchContactId(email)
-    if (contactIdNum.isErr) return contactIdNum.error as unknown as Result<ContactId, Error>
-    contactId = { id: contactIdNum.value }
+    contactId = await retrieveExistingContactId(email)
   }
 
-  return Result.ok(contactId)
+  return contactId
 }
 
-const fetchContactId = async (email: string): Promise<Result<number, Error>> => {
+const retrieveExistingContactId = async (email: string): Promise<Result<ContactId, Error>> => {
   const responseResult = await requestBrevoAPI({ method: HttpMethod.GET, url: `https://api.brevo.com/v3/contacts/${email}` })
-  if (responseResult.isErr) return Result.err(responseResult.error)
-  return Result.ok(responseResult.value.data.id)
+  const contactId = responseResult.map((r) => r.data as ContactId)
+  return contactId
 }
 
 /** parseListIds parses a comma-separated list of Ids into an array of list

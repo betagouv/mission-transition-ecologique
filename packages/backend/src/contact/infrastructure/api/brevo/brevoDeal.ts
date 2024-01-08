@@ -19,21 +19,20 @@ export const addBrevoOpportunity: ContactInfoRepository['addOpportunity'] = asyn
     }
   })
 
-  if (responseResult.isErr) return Result.err(responseResult.error)
-  const response = responseResult.value
+  const dealId = responseResult.map((r) => r.data as DealId)
 
-  const dealId = response.data.id
+  if (!dealId.isErr) {
+    // associate brevo deal to contact
+    const responsePatch = await requestBrevoAPI({
+      method: HttpMethod.PATCH,
+      url: `https://api.brevo.com/v3/crm/deals/link-unlink/${dealId.map((d) => d.id)}`,
+      data: {
+        linkContactIds: [contactId]
+      }
+    })
+    if (responsePatch.isErr)
+      return Result.err(new Error('Something went wrong while attaching contact to opportunity', { cause: responsePatch.error }))
+  }
 
-  // associate brevo deal to contact
-  const responsePatch = await requestBrevoAPI({
-    method: HttpMethod.PATCH,
-    url: `https://api.brevo.com/v3/crm/deals/link-unlink/${dealId}`,
-    data: {
-      linkContactIds: [contactId]
-    }
-  })
-
-  if (responsePatch.isErr) console.log(responsePatch.error)
-
-  return Result.ok({ id: dealId })
+  return dealId
 }
