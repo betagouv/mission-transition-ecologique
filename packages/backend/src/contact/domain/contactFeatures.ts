@@ -14,7 +14,10 @@ export const createService = (repo: ContactInfoRepository) => {
     if (contactIdResult.isErr) {
       return Result.err(contactIdResult.error)
     }
-    repo.addOpportunity(contactIdResult.value.id, attributes)
+    const opportunityResult = await repo.addOpportunity(contactIdResult.value.id, attributes)
+    if (opportunityResult.isErr) {
+      return Result.err(opportunityResult.error)
+    }
     return Result.ok({ id: 'abc' })
   }
 
