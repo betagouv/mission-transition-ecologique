@@ -12,14 +12,7 @@
               </p>
             </div>
             <div>
-              <a
-                title="Envoyer un email - ouvre une nouvelle fenêtre"
-                href="mailto:france-transition@beta.gouv.fr"
-                target="_blank"
-                rel="noopener"
-              >
-                Nous contacter
-              </a>
+              <ContactButton />
             </div>
           </div>
         </div>
@@ -27,3 +20,7 @@
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import ContactButton from '@/components/contact/ContactButton.vue'
+</script>
