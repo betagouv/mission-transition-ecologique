@@ -1,42 +1,37 @@
 import { Result } from 'true-myth'
-import type { ContactInfoRepository } from '../../src/contact/domain/spi'
 import { ContactId, DealId } from '../../src/contact/domain/types'
 import { createService } from '../../src/contact/domain/contactFeatures'
 import { expectToBeErr, expectToBeOk } from '../testing'
 
+let addContactCalled: boolean
+let addOpportunityCalled: boolean
+
+beforeEach(() => {
+  addContactCalled = false
+  addOpportunityCalled = false
+})
+
+const dummyAddContact = async (_email: string, _attributes: object): Promise<Result<ContactId, Error>> => {
+  addContactCalled = true
+  return Result.ok({ id: 1 })
+}
+const dummyAddOpportunity = async (_contactId: number, _attributes: object): Promise<Result<DealId, Error>> => {
+  addOpportunityCalled = true
+  return Result.ok({ id: '1' })
+}
+
 describe(`
    WHEN creating a new opportunity
  EXPECT a contact to be created or updated, and an opportunity to be created`, () => {
-  let contactCreated: boolean
-  let opportunityCreated: boolean
+  const postNewOpportunity = createService({
+    addContact: dummyAddContact,
+    addOpportunity: dummyAddOpportunity
+  }).postNewOpportunity
 
-  beforeEach(() => {
-    contactCreated = false
-    opportunityCreated = false
-  })
-
-  const testRepository: ContactInfoRepository = {
-    addContact: async (_email: string, _attributes: object): Promise<Result<ContactId, Error>> => {
-      contactCreated = true
-      return Result.ok({ id: 1 }) as Result<ContactId, Error>
-    },
-    addOpportunity: async (_contactId: number, _attributes: object): Promise<Result<DealId, Error>> => {
-      opportunityCreated = true
-      return Result.ok({ id: '1' }) as Result<DealId, Error>
-    }
-  }
-
-  const postNewOpportunity = createService(testRepository).postNewOpportunity
-
-  test('postNewOpportunity creates or updates a contact', async () => {
+  test('postNewOpportunity creates or updates a contact and creates an opportunity', async () => {
     const result = await postNewOpportunity('test@email.com', {})
-    expect(contactCreated).toBe(true)
-    expectToBeOk(result)
-  })
-
-  test('postNewOpportunity creates an opportunity', async () => {
-    const result = await postNewOpportunity('test@email.com', {})
-    expect(opportunityCreated).toBe(true)
+    expect(addContactCalled).toBe(true)
+    expect(addOpportunityCalled).toBe(true)
     expectToBeOk(result)
   })
 })
@@ -45,19 +40,37 @@ describe(`
   WHEN creating a new opportunity
    AND contact creation/update or opportunity creation goes wrong
 EXPECT postNewOpportunity to return an error (wrapped in Result)`, () => {
-  const testRepository: ContactInfoRepository = {
-    addContact: async (_email: string, _attributes: object): Promise<Result<ContactId, Error>> => {
-      return Result.err(new Error('contact error'))
-    },
-    addOpportunity: async (_contactId: number, _attributes: object): Promise<Result<DealId, Error>> => {
-      return Result.err(new Error('opportunity error'))
-    }
+  class ContactError extends Error {}
+  class OpportunityError extends Error {}
+  const addContactWithError = async (_email: string, _attributes: object): Promise<Result<ContactId, Error>> => {
+    return Result.err(new ContactError('contact error'))
   }
 
-  const postNewOpportunity = createService(testRepository).postNewOpportunity
+  const addOpportunityWithError = async (_contactId: number, _attributes: object): Promise<Result<DealId, Error>> => {
+    return Result.err(new OpportunityError('opportunity error'))
+  }
 
   test('postNewOpportunity escalates contact creation/update error', async () => {
+    const postNewOpportunity = createService({
+      addContact: addContactWithError,
+      addOpportunity: dummyAddOpportunity
+    }).postNewOpportunity
+
     const result = await postNewOpportunity('test@email.com', {})
+
     expectToBeErr(result)
+    expect(result.error).toBeInstanceOf(ContactError)
+  })
+
+  test('postNewOpportunity escalates opportunity creation error', async () => {
+    const postNewOpportunity = createService({
+      addContact: dummyAddContact,
+      addOpportunity: addOpportunityWithError
+    }).postNewOpportunity
+
+    const result = await postNewOpportunity('test@email.com', {})
+
+    expectToBeErr(result)
+    expect(result.error).toBeInstanceOf(OpportunityError)
   })
 })
