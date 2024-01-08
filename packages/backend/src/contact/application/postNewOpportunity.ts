@@ -1,8 +1,8 @@
-import { Result } from 'true-myth'
-import { addBrevoContact } from '../infrastructure/api/brevo/brevo'
 import { createService } from '../domain/contactFeatures'
 import { ContactInfoRepository } from '../domain/spi'
-import { DealId } from '../domain/types'
+
+import { addBrevoContact } from '../infrastructure/api/brevo/brevoContact'
+import { addBrevoOpportunity } from '../infrastructure/api/brevo/brevoDeal'
 
 /**
  * Defines how to access external data.
@@ -10,10 +10,7 @@ import { DealId } from '../domain/types'
  */
 const brevoRepository: ContactInfoRepository = {
   addContact: addBrevoContact,
-  addOpportunity: async (_contactId: number, _attributes: object): Promise<Result<DealId, Error>> => {
-    const res: Result<DealId, Error> = Result.ok({ id: '1' })
-    return res
-  }
+  addOpportunity: addBrevoOpportunity
 }
 const service = createService(brevoRepository)
 
