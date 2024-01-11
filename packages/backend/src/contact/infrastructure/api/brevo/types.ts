@@ -56,11 +56,12 @@ export interface ContactAttributes {
 }
 
 export enum BrevoQuestionnaireRoute {
+  DIRECTORY = 'annuaire',
   SPECIFIC_GOAL = 'jai_un_objectif_prcis',
   NO_SPECIFIC_GOAL = 'je_ne_sais_pas_par_o_commencer'
 }
 
 export interface DealAttributes {
-  parcours?: BrevoQuestionnaireRoute
+  parcours: BrevoQuestionnaireRoute
   objectifs_renseigns?: string
 }

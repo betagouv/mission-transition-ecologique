@@ -50,12 +50,14 @@ const associateBrevoDealToContact = async (dealId: DealId, contactId: number): P
 
 const convertDomainToBrevoDeal = (domainAttributes: OpportunityDetails): DealAttributes => {
   return {
-    ...(domainAttributes.questionnaireRoute && { parcours: translateQuestionnaireRoute(domainAttributes.questionnaireRoute) }),
+    parcours: translateQuestionnaireRoute(domainAttributes.questionnaireRoute),
     ...(domainAttributes.priorityObjectives && { objectifs_renseigns: domainAttributes.priorityObjectives.join(', ') })
   }
 }
 
-const translateQuestionnaireRoute = (questionnaireRoute: TrackHelpValue): BrevoQuestionnaireRoute => {
+const translateQuestionnaireRoute = (questionnaireRoute: TrackHelpValue | undefined): BrevoQuestionnaireRoute => {
+  if (!questionnaireRoute) return BrevoQuestionnaireRoute.DIRECTORY
+
   switch (questionnaireRoute) {
     case TrackHelpValue.Precise:
       return BrevoQuestionnaireRoute.SPECIFIC_GOAL
