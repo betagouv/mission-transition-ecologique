@@ -1,3 +1,5 @@
+import { ContactInfoBodyAttributes } from '../../../domain/types'
+
 export interface BrevoBody {
   email: string
   listIds: number[]
@@ -5,5 +7,5 @@ export interface BrevoBody {
 }
 
 export interface updateContactBody {
-  attributes: object
+  attributes: ContactInfoBodyAttributes
 }
