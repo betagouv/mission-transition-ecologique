@@ -1,5 +1,5 @@
-import { Body, Controller, Post, Route, SuccessResponse, TsoaResponse, Res, Example } from 'tsoa'
-import { ServiceNotFoundError, ContactInfoBodyAttributes, ContactUpdateAttributes } from '../domain/types'
+import { Body, Controller, Example, Post, Res, Route, SuccessResponse, TsoaResponse } from 'tsoa'
+import { ContactInfoBodyAttributes, ServiceNotFoundError } from '../domain/types'
 import { ErrorJSON, ValidateErrorJSON } from '../../common/jsonError'
 import ContactService from '../application/contactService'
 import { Err } from 'true-myth/dist/es/result'
@@ -50,8 +50,7 @@ export class ContactInfoController extends Controller {
     if (program) {
       const operatorResult = await new OperatorService().create({ email: bodyEmail, attributes: bodyAttributes }, program)
       if (false !== operatorResult) {
-        const contactUpdateAttributes: ContactUpdateAttributes = { BPI_FRANCE: operatorResult.isOk }
-        const contactUpdateResult = await new ContactService().update(contactInfoResult.value, contactUpdateAttributes)
+        const contactUpdateResult = await new ContactService().update(contactInfoResult.value, { BPI_FRANCE: operatorResult.isOk })
         if (contactUpdateResult.isErr) {
           // TODO: Send an email to the admin
         }

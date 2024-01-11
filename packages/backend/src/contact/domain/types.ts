@@ -14,7 +14,6 @@ export interface ContactInfoBodyAttributes {
   STRUCTURE_SIZE?: string | number
   PROGRAM_ID: string
   ALL_RESPONSES: string
-  BPI_FRANCE?: boolean
 }
 
 export type ContactUpdateAttributes = Partial<ContactInfoBodyAttributes> & { BPI_FRANCE: boolean }
