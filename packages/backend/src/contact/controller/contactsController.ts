@@ -18,7 +18,7 @@ export class ContactInfoController extends Controller {
    * @summary Adds a new contact to our Brevo list
    *
    * @example requestBody: {"opportunity": {"name": "Dupont", "forname": "Camille", "email": "contact@multi.coop", "phone": "0605040302",
-   * "siret": "83014132100034", "programId": "test-program"}, "optIn": true}
+   * "siret": "83014132100034", "programId": "test-program", "message": "Bonjour !"}, "optIn": true}
    */
 
   @Example<DealId>({ id: '42' })

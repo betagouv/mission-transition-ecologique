@@ -50,6 +50,7 @@ const associateBrevoDealToContact = async (dealId: DealId, contactId: number): P
 
 const convertDomainToBrevoDeal = (domainAttributes: OpportunityDetails): DealAttributes => {
   return {
+    message: domainAttributes.message,
     parcours: translateQuestionnaireRoute(domainAttributes.questionnaireRoute),
     ...(domainAttributes.priorityObjectives && { objectifs_renseigns: domainAttributes.priorityObjectives.join(', ') })
   }

@@ -12,7 +12,8 @@ export const fakeContact = (): ContactDetails => {
 
 export const fakeOpportunityDetails = (): OpportunityDetails => {
   return {
-    programId: 'test-program'
+    programId: 'test-program',
+    message: 'Bonjour monde !'
   }
 }
 
