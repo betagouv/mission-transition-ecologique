@@ -1,4 +1,4 @@
-import { addBrevoContact } from '../infrastructure/api/brevo/brevo'
+import { addBrevoContact, updateBrevoContact } from '../infrastructure/api/brevo/brevo'
 import { createService } from '../domain/contactFeatures'
 import { ContactInfoRepository } from '../domain/spi'
 
@@ -7,7 +7,8 @@ import { ContactInfoRepository } from '../domain/spi'
  * Uses the "Repository" pattern, see README.md
  */
 const brevoRepository: ContactInfoRepository = {
-  add: addBrevoContact
+  create: addBrevoContact,
+  update: updateBrevoContact
 }
 const service = createService(brevoRepository)
 

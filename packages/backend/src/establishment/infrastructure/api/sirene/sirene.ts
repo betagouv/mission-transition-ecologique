@@ -4,6 +4,7 @@ import { EtablissementDocument } from './types'
 import { ensureError } from '../../../../common/errors'
 import { Result } from 'true-myth'
 import { EtablissementRepository } from '../../../domain/spi'
+import AxiosHeaders from '../../../../common/infrastructure/api/axiosHeaders'
 
 /**
  * getEtablissement reads the API token from an environment
@@ -47,10 +48,8 @@ export const requestSireneAPI = async (token: string, siret: string): Promise<Re
  * @arg token - API access token
  */
 const makeHeaders = (token: string) => {
-  const jsonContentType = 'application/json'
   return {
-    accept: jsonContentType,
-    'content-type': jsonContentType,
-    authorization: `Bearer ${token}`
+    ...AxiosHeaders.makeJsonHeader(),
+    ...AxiosHeaders.makeBearerHeader(token)
   }
 }

@@ -3,3 +3,7 @@ export interface BrevoBody {
   listIds: number[]
   attributes: object
 }
+
+export interface updateContactBody {
+  attributes: object
+}
