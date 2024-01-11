@@ -1,15 +1,11 @@
 import { Body, Controller, Post, Route, SuccessResponse, TsoaResponse, Res, Example } from 'tsoa'
-import { ServiceNotFoundError, ContactInfoBodyAttributes, DealId } from '../domain/types'
+import { ServiceNotFoundError, DealId, Opportunity } from '../domain/types'
 import { ErrorJSON, ValidateErrorJSON } from '../../common/jsonError'
 import { postNewOpportunity } from '../application/postNewOpportunity'
 
-interface ServiceNotFoundErrorJSON {
-  message: 'Opportunity not created'
-}
-
 interface ContactInfoBody {
-  email: string
-  attributes: ContactInfoBodyAttributes
+  opportunity: Opportunity
+  optIn: boolean
 }
 
 @SuccessResponse('200', 'OK')
@@ -21,7 +17,8 @@ export class ContactInfoController extends Controller {
    *
    * @summary Adds a new contact to our Brevo list
    *
-   * @example requestBody: {"email": "contact@multi.coop", "attributes": { "NOM": "Dupont", "PRENOM": "Camille", "TEL" : "0605040302", "SIRET": "83014132100034", "OPT_IN": true }}
+   * @example requestBody: {"opportunity": {"name": "Dupont", "forname": "Camille", "email": "contact@multi.coop", "phone": "0605040302",
+   * "siret": "83014132100034", "programId": "test-program"}, "optIn": true}
    */
 
   @Example<DealId>({ id: '42' })
@@ -30,12 +27,12 @@ export class ContactInfoController extends Controller {
     @Body() requestBody: ContactInfoBody,
     @Res() requestFailedResponse: TsoaResponse<500, ErrorJSON>,
     @Res() _validationFailedResponse: TsoaResponse<422, ValidateErrorJSON>,
-    @Res() notFoundResponse: TsoaResponse<404, ServiceNotFoundErrorJSON>
+    @Res() notFoundResponse: TsoaResponse<404, ErrorJSON>,
+    @Res() missingOptInResponse: TsoaResponse<422, ErrorJSON>
   ): Promise<DealId> {
-    const bodyEmail = requestBody.email
-    const bodyAttributes = requestBody.attributes
+    if (!requestBody.optIn) return missingOptInResponse(422, { message: 'opt-in is required for storing contact data' })
 
-    const contactInfoResult = await postNewOpportunity(bodyEmail, bodyAttributes)
+    const contactInfoResult = await postNewOpportunity(requestBody.opportunity, requestBody.optIn)
 
     if (contactInfoResult.isErr) {
       const err = contactInfoResult.error

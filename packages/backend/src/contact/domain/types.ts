@@ -1,25 +1,23 @@
+import { Objectives, TrackHelpValue } from '@tee/web/src/types'
 import { CustomError } from '../../common/errors'
 
-export interface ContactInfoBodyAttributes {
-  NOM: string
-  PRENOM: string
-  TEL: string
-  SIRET?: string
-  OPT_IN: boolean
-  FORM_NEEDS?: string
-  PROJECT_NEEDS?: string
-  PROJECT_SECTORS?: string[]
-  USER_ROLES?: string
-  USER_GOALS?: string
-  STRUCTURE_SIZE?: string | number
-  PROGRAM_ID?: string
-  ALL_RESPONSES?: string
+export interface Opportunity extends ContactDetails, OpportunityDetails {}
+
+export interface ContactDetails {
+  name: string
+  forname: string
+  email: string
+  phone: string
+  siret: string
+  companyName?: string
+  companySector?: string
+  companySize?: Taille
 }
 
-export interface ContactInfoBody {
-  email: string
-  listIds: number[]
-  attributes: ContactInfoBodyAttributes
+export interface OpportunityDetails {
+  programId: string
+  questionnaireRoute?: TrackHelpValue
+  priorityObjectives?: Objectives[]
 }
 
 export interface ContactId {
@@ -31,3 +29,10 @@ export interface DealId {
 }
 
 export class ServiceNotFoundError extends CustomError {}
+
+// Taille de l'entreprise au sens communautaire
+export enum Taille {
+  PME,
+  ETI,
+  GE
+}

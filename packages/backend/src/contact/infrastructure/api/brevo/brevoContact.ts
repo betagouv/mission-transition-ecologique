@@ -1,8 +1,8 @@
-import { ContactId } from '../../../domain/types'
+import { ContactDetails, ContactId } from '../../../domain/types'
 import axios from 'axios'
 import { Result } from 'true-myth'
 import { ContactInfoRepository } from '../../../domain/spi'
-import { HttpMethod } from './types'
+import { ContactAttributes, HttpMethod } from './types'
 import { requestBrevoAPI } from './brevoRequest'
 
 const DEBUG_BREVO_LIST_ID = '4'
@@ -11,7 +11,7 @@ const DEBUG_BREVO_LIST_ID = '4'
  * addBrevoContact reads token and brevo list Ids from environment variables,
  * and adds a contact to brevo with the help of this information
  */
-export const addBrevoContact: ContactInfoRepository['addContact'] = async (email: string, attributes: object) => {
+export const addBrevoContact: ContactInfoRepository['addContact'] = async (contact: ContactDetails, optIn: true) => {
   const defaultListId = DEBUG_BREVO_LIST_ID
   const rawlistIds: string = process.env['BREVO_LIST_IDS'] || defaultListId
   const listIds = parseListIds(rawlistIds)
@@ -20,10 +20,10 @@ export const addBrevoContact: ContactInfoRepository['addContact'] = async (email
     method: HttpMethod.POST,
     url: 'https://api.brevo.com/v3/contacts',
     data: {
-      email: email,
+      email: contact.email,
       updateEnabled: true,
       listIds: listIds,
-      attributes: attributes
+      attributes: convertDomainToBrevoContact(contact, optIn)
     }
   })
 
@@ -35,7 +35,7 @@ export const addBrevoContact: ContactInfoRepository['addContact'] = async (email
   if (response.status == axios.HttpStatusCode.Created) {
     contactId = Result.ok(response.data as ContactId)
   } else {
-    contactId = await retrieveExistingContactId(email)
+    contactId = await retrieveExistingContactId(contact.email)
   }
 
   return contactId
@@ -52,4 +52,16 @@ const retrieveExistingContactId = async (email: string): Promise<Result<ContactI
  */
 const parseListIds = (rawIds: string): number[] => {
   return rawIds.split(',').map((id) => parseInt(id))
+}
+function convertDomainToBrevoContact(contact: ContactDetails, optIn: true): ContactAttributes {
+  return {
+    NOM: contact.name,
+    PRENOM: contact.forname,
+    TEL: contact.phone,
+    SIRET: contact.siret,
+    OPT_IN: optIn,
+    ...(contact.companyName && { DENOMINATION: contact.companyName }),
+    ...(contact.companySector && { SECTEUR_D_ACTIVITE: contact.companySector }),
+    ...(contact.companySize && { TAILLE: contact.companySize })
+  }
 }
