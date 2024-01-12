@@ -58,6 +58,9 @@ export const frDict = {
     },
     programProviders: 'Contact',
     programType: "Nature de l'aide",
+    programEndValidity: 'Date de fin',
+    programAvailable: 'Aide disponible',
+    programAvailableUntil: "Disponible jusqu'au {date}",
     programDuration: 'Prestation',
     programLoanDuration: 'Durée du prêt',
     programAmIEligible: 'Suis-je éligible ?'

@@ -237,6 +237,19 @@ button.fr-link:hover, .tee-router-link:hover {
 } */
 
 /* RESULT DETAILS PAGE */
+.fr-tee-program-detail-img {
+  position: relative;
+}
+.fr-tee-program-detail-img > img.fr-responsive-img {
+  min-height: 100%;
+  object-fit: cover;
+}
+.fr-tee-program-detail-img-badge {
+  position: absolute;
+  top: 2em;
+  padding-left: 1em;
+}
+
 /* check: https://css-tricks.com/css-counters-custom-list-number-styling/ */
 .fr-tee-description-list p {
   padding-left: 3rem;

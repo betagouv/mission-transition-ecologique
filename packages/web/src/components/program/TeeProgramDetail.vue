@@ -12,13 +12,15 @@
         <!-- PROGRAM DETAILS -->
         <div class="fr-grid-row fr-grid-row--gutters fr-mb-10v">
           <!-- IMAGE -->
-          <div class="fr-col-md-4 fr-col-lg-3 fr-col-xl-3 fr-col-sm-hide fr-text-right">
-            <img
-              class="fr-responsive-img"
-              :src="`${choices.publicPath}${program?.illustration}`"
-              :alt="`image / ${program?.titre}`"
-              style="min-height: 100%; object-fit: cover"
-            />
+          <div class="fr-col-md-4 fr-col-lg-3 fr-col-xl-3 fr-col-sm-hide fr-text-right fr-tee-program-detail-img">
+            <img class="fr-responsive-img" :src="`${choices.publicPath}${program?.illustration}`" :alt="`image / ${program?.titre}`" />
+
+            <!-- PROGRAM TYPE -->
+            <ul class="fr-badges-group fr-tee-program-detail-img-badge">
+              <p class="fr-badge tee-program-badge-image">
+                {{ program?.["nature de l'aide"] }}
+              </p>
+            </ul>
           </div>
 
           <!-- TITLE & RESUME -->
@@ -113,17 +115,6 @@
             />
           </div> -->
 
-          <!-- PROGRAM TYPE -->
-          <div :class="columnTiles">
-            <TeeTile
-              class="tee-no-hover"
-              :title="choices.t('program.programType')"
-              :image-path="`${choices.publicPath}images/TEE-typefinance.svg`"
-              :description="program?.[`nature de l'aide`]"
-            >
-            </TeeTile>
-          </div>
-
           <!-- PROGRAM DURATION -->
           <div v-if="program?.[`durée de l'accompagnement`]" :class="columnTiles">
             <TeeTile
@@ -153,10 +144,23 @@
             >
             </TeeTile>
           </div>
+
+          <!-- PROGRAM END VALIDITY -->
+          <div :class="columnTiles">
+            <TeeTile
+              class="tee-no-hover"
+              :title="choices.t('program.programEndValidity')"
+              :image-path="`${choices.publicPath}images/TEE-duree.svg`"
+              :description="
+                program?.[`fin de validité`]
+                  ? choices.ti(choices.t('program.programAvailableUntil'), { date: program[`fin de validité`] })
+                  : choices.t('program.programAvailable')
+              "
+            />
+          </div>
         </div>
 
-
-    <ProgramEligibility v-if="program" :program="program"></ProgramEligibility>
+        <ProgramEligibility v-if="program" :program="program"></ProgramEligibility>
 
         <!-- PROGRAM FORM -->
         <div class="fr-form-block">
