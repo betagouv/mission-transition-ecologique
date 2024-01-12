@@ -28,7 +28,7 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`ProgramLongdescription > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import { ref, computed } from 'vue'
+import { ref, computed, onBeforeMount } from 'vue'
 import { choicesStore } from '@/stores/choices'
 import type { ProgramData } from '@/types'
 
@@ -44,5 +44,11 @@ const choices = choicesStore()
 const descriptionParagraphs = computed(() => {
   const textRaw = props.program['description longue']
   return textRaw?.split('\n')
+})
+
+onBeforeMount(() => {
+  if (window.innerWidth > 767) {
+    drawerOpen.value = true
+  }
 })
 </script>

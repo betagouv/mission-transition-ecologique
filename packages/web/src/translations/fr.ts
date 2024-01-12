@@ -60,7 +60,8 @@ export const frDict = {
     programType: "Nature de l'aide",
     programDuration: 'Prestation',
     programLoanDuration: 'Durée du prêt',
-    programKnowMore: 'En savoir plus'
+    programKnowMore: 'En savoir plus',
+    programAmIEligible: 'Suis-je éligible ?'
   },
   programCosts: {
     cost: 'Coût restant à charge',
