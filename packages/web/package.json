@@ -6,7 +6,7 @@
   "licence": "AGPL-3.0",
   "engines": {
     "node": "18.x",
-    "npm": "9.x"
+    "npm": ">=9.0 <11"
   },
   "repository": {
     "type": "git",
@@ -41,6 +41,7 @@
     "@vitejs/plugin-vue": "^4.0.0",
     "@vue/tsconfig": "^0.4.0",
     "fs": "^0.0.1-security",
+    "iframe-resizer": "^4.3.9",
     "js-yaml": "^4.1.0",
     "lit": "^2.7.3",
     "path": "^0.12.7",
@@ -52,6 +53,7 @@
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.2.0",
+    "@types/iframe-resizer": "^3.5.13",
     "@types/js-yaml": "^4.0.5",
     "@types/jsdom": "^21.1.0",
     "@vue/eslint-config-prettier": "^8.0.0",

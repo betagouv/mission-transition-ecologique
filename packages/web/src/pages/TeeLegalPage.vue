@@ -92,12 +92,12 @@
       </div>
     </div>
   </div>
-  <TeeHelp />
+  <ContactMail />
 </template>
 
 <script setup lang="ts">
 // CONSOLE LOG TEMPLATE
 // console.log(`TeeLegalPage > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import TeeHelp from '@/components/home/TeeHelp.vue'
+import ContactMail from '@/components/contact/ContactMail.vue'
 </script>
