@@ -4,6 +4,9 @@ import swaggerUi from 'swagger-ui-express'
 import { ValidateError } from 'tsoa'
 import cors from 'cors'
 import Sentry from './plugin/sentry'
+import * as dotenv from 'dotenv'
+
+dotenv.config()
 
 const app: Express = express()
 
@@ -17,10 +20,6 @@ app.use(cors())
 // eslint-disable-next-line @typescript-eslint/no-misused-promises
 app.use('/api/docs', swaggerUi.serve, async (_req: Request, res: Response) => {
   return res.send(swaggerUi.generateHTML(await import('../generated/swagger.json')))
-})
-
-app.get('/debug-sentry', function mainHandler() {
-  throw new Error('My first Sentry error!')
 })
 
 RegisterRoutes(app)
