@@ -1,5 +1,6 @@
 import { AxiosRequestConfig } from 'axios'
 import { Taille } from '../../../domain/types'
+import { ContactBodyAttributes } from '../../../domain/types'
 
 export enum HttpMethod {
   GET = 'get',
@@ -65,4 +66,13 @@ export interface DealAttributes {
   message: string
   parcours: BrevoQuestionnaireRoute
   objectifs_renseigns?: string
+
+export interface BrevoBody {
+  email: string
+  listIds: number[]
+  attributes: object
+}
+
+export interface updateContactBody {
+  attributes: ContactBodyAttributes
 }

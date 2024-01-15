@@ -21,6 +21,8 @@ export interface OpportunityDetails {
   priorityObjectives?: Objectives[]
 }
 
+export type ContactUpdateAttributes = Partial<ContactDetails> & { BPI_FRANCE: boolean }
+
 export interface ContactId {
   id: number
 }
