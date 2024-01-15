@@ -1,19 +1,11 @@
-import { ServiceNotFoundError } from '../../../domain/types'
-import axios, { AxiosError, AxiosResponse } from 'axios'
+import axios, { AxiosResponse, RawAxiosRequestHeaders } from 'axios'
 import { Result } from 'true-myth'
 import type { BrevoRequestData } from './types'
-import { ensureError } from '../../../../common/errors'
+import AxiosHeaders from '../../../../common/infrastructure/api/axiosHeaders'
+import { handleException } from '../../../../common/domain/errors'
 
 /**
- * requestBrevoAPI adds data about a contact in Brevo
- *
- * Documentation: 'https://developers.brevo.com/reference/createcontact',
- *
- * @arg token - API access token
- * @listIds - Ids of Brevo lists in which to store the contact
- * @email - email address to store
- * @attributes - additdionnal attributes to store along
- *
+ * Brevo API Documentation: 'https://developers.brevo.com/reference',
  */
 export const requestBrevoAPI = async (data: BrevoRequestData): Promise<Result<AxiosResponse, Error>> => {
   const token = process.env['BREVO_API_TOKEN'] || ''
@@ -22,15 +14,7 @@ export const requestBrevoAPI = async (data: BrevoRequestData): Promise<Result<Ax
     const response: AxiosResponse = await axios.request({ ...data, headers: makeHeaders(token) })
     return Result.ok(response)
   } catch (err: unknown) {
-    let error = ensureError(err)
-
-    if (error instanceof AxiosError) {
-      if (error.response && error.response.status == 404) {
-        error = new ServiceNotFoundError()
-      }
-    }
-
-    return Result.err(error)
+    return Result.err(handleException(err))
   }
 }
 
@@ -39,11 +23,9 @@ export const requestBrevoAPI = async (data: BrevoRequestData): Promise<Result<Ax
  *
  * @arg token - API access token
  */
-const makeHeaders = (token: string) => {
-  const jsonContentType = 'application/json'
+const makeHeaders = (token: string): RawAxiosRequestHeaders => {
   return {
-    accept: jsonContentType,
-    'content-type': jsonContentType,
+    ...AxiosHeaders.makeJsonHeader(),
     'api-key': `${token}`
   }
 }

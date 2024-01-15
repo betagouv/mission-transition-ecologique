@@ -1,6 +1,5 @@
 import { AxiosRequestConfig } from 'axios'
-import { Taille } from '../../../domain/types'
-import { ContactBodyAttributes } from '../../../domain/types'
+import { ContactDetails, Taille } from '../../../domain/types'
 
 export enum HttpMethod {
   GET = 'get',
@@ -10,7 +9,7 @@ export enum HttpMethod {
   DELETE = 'delete'
 }
 
-export type BrevoRequestData = BrevoPostContactData | BrevoGetContactData | BrevoPostDeal | BrevoPatchDealData
+export type BrevoRequestData = BrevoPostContactData | BrevoGetContactData | BrevoPostDeal | BrevoLinkDealData | BrevoPatchDealData
 
 export interface BrevoPostContactData extends AxiosRequestConfig {
   method: HttpMethod.POST
@@ -19,7 +18,7 @@ export interface BrevoPostContactData extends AxiosRequestConfig {
     email: string
     updateEnabled: true
     listIds: number[]
-    attributes: object
+    attributes: ContactAttributes
   }
 }
 
@@ -33,15 +32,23 @@ export interface BrevoPostDeal extends AxiosRequestConfig {
   url: 'https://api.brevo.com/v3/crm/deals'
   data: {
     name: string
-    attributes: object
+    attributes: DealAttributes
+  }
+}
+
+export interface BrevoLinkDealData extends AxiosRequestConfig {
+  method: HttpMethod.PATCH
+  url: `https://api.brevo.com/v3/crm/deals/link-unlink/${string}`
+  data: {
+    linkContactIds: number[]
   }
 }
 
 export interface BrevoPatchDealData extends AxiosRequestConfig {
   method: HttpMethod.PATCH
-  url: `https://api.brevo.com/v3/crm/deals/link-unlink/${string}`
+  url: `https://api.brevo.com/v3/crm/deals/${string}`
   data: {
-    linkContactIds: number[]
+    attributes: Partial<DealAttributes>
   }
 }
 
@@ -66,13 +73,8 @@ export interface DealAttributes {
   message: string
   parcours: BrevoQuestionnaireRoute
   objectifs_renseigns?: string
-
-export interface BrevoBody {
-  email: string
-  listIds: number[]
-  attributes: object
 }
 
-export interface updateContactBody {
-  attributes: ContactBodyAttributes
+export interface UpdateContactBody {
+  attributes: ContactDetails
 }

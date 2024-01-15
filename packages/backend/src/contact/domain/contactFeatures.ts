@@ -1,8 +1,6 @@
 import { Result } from 'true-myth'
-import type { ContactInfoRepository } from './spi'
-import { ContactBodyAttributes } from './types'
-
-import type { DealId, Opportunity } from './types'
+import type { ContactRepository, OpportunityRepository } from './spi'
+import type { OpportunityId, Opportunity } from './types'
 
 /** allows dependency injection */
 export const createService = (contactRepository: ContactRepository, opportunityRepository: OpportunityRepository) => {
@@ -12,7 +10,7 @@ export const createService = (contactRepository: ContactRepository, opportunityR
    * It is required that the user has opt-in to allow data collection.
    *
    */
-  const postNewOpportunity = async (opportunity: Opportunity, optIn: true): Promise<Result<DealId, Error>> => {
+  const postNewOpportunity = async (opportunity: Opportunity, optIn: true): Promise<Result<OpportunityId, Error>> => {
     const contactIdResult = await contactRepository.create(opportunity, optIn)
     if (contactIdResult.isErr) {
       return Result.err(contactIdResult.error)

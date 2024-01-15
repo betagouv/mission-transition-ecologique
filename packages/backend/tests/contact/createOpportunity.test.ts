@@ -1,5 +1,5 @@
 import { Result } from 'true-myth'
-import { ContactDetails, ContactId, DealId, OpportunityDetails } from '../../src/contact/domain/types'
+import { ContactDetails, ContactId, OpportunityId, OpportunityDetails } from '../../src/contact/domain/types'
 import { createService } from '../../src/contact/domain/contactFeatures'
 import { expectToBeErr, expectToBeOk } from '../testing'
 import { fakeOpportunity } from './testing'
@@ -16,7 +16,7 @@ const dummyAddContact = async (_contact: ContactDetails, _optIn: true): Promise<
   addContactCalled = true
   return Result.ok({ id: 1 })
 }
-const dummyAddOpportunity = async (_contactId: number, _opportunitiy: OpportunityDetails): Promise<Result<DealId, Error>> => {
+const dummyAddOpportunity = async (_contactId: number, _opportunitiy: OpportunityDetails): Promise<Result<OpportunityId, Error>> => {
   addOpportunityCalled = true
   return Result.ok({ id: '1' })
 }
@@ -47,7 +47,7 @@ EXPECT postNewOpportunity to return an error (wrapped in Result)`, () => {
     return Result.err(new ContactError('contact error'))
   }
 
-  const addOpportunityWithError = async (_contactId: number, _opportunitiy: OpportunityDetails): Promise<Result<DealId, Error>> => {
+  const addOpportunityWithError = async (_contactId: number, _opportunitiy: OpportunityDetails): Promise<Result<OpportunityId, Error>> => {
     return Result.err(new OpportunityError('opportunity error'))
   }
 

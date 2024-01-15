@@ -1,4 +1,4 @@
-import { ContactInfoBodyAttributes, ServiceNotFoundError, DealId, Opportunity } from '../domain/types'
+import { ServiceNotFoundError, OpportunityId, Opportunity } from '../domain/types'
 import { Body, Controller, Example, Post, Res, Route, SuccessResponse, TsoaResponse } from 'tsoa'
 import { ErrorJSON, ValidateErrorJSON } from '../../common/jsonError'
 import ContactService from '../application/contactService'
@@ -7,6 +7,7 @@ import { Err } from 'true-myth/dist/es/result'
 import OperatorService from '../../operator/application/operatorService'
 import ProgramService from '../../program/application/programService'
 import { ContactId } from '../../common/domain/types'
+import OpportunityService from '../application/opportunityService'
 
 interface ContactInfoBody {
   opportunity: Opportunity
@@ -25,7 +26,7 @@ export class ContactController extends Controller {
    * @example requestBody: {"opportunity": {"name": "Dupont", "forname": "Camille", "email": "contact@multi.coop", "phone": "0605040302",
    * "siret": "83014132100034", "programId": "test-program", "message": "Bonjour !"}, "optIn": true}
    */
-  @Example<DealId>({ id: '42' })
+  @Example<OpportunityId>({ id: '42' })
   @Post()
   public async post(
     @Body() requestBody: ContactInfoBody,
@@ -33,7 +34,7 @@ export class ContactController extends Controller {
     @Res() _validationFailedResponse: TsoaResponse<422, ValidateErrorJSON>,
     @Res() notFoundResponse: TsoaResponse<404, ErrorJSON>,
     @Res() missingOptInResponse: TsoaResponse<422, ErrorJSON>
-  ): Promise<DealId | void> {
+  ): Promise<OpportunityId | void> {
     if (!requestBody.optIn) return missingOptInResponse(422, { message: 'opt-in is required for storing contact data' })
 
     const dealResult = await postNewOpportunity(requestBody.opportunity, requestBody.optIn)
@@ -45,10 +46,11 @@ export class ContactController extends Controller {
     }
 
     const program = new ProgramService().getById(requestBody.opportunity.programId)
+
     if (program) {
-      const operatorResult = await new OperatorService().create({ email: bodyEmail, attributes: bodyAttributes }, program)
+      const operatorResult = await new OperatorService().create(requestBody.opportunity, program)
       if (false !== operatorResult) {
-        const contactUpdateResult = await new ContactService().update(dealResult.value, { BPI_FRANCE: operatorResult.isOk })
+        const contactUpdateResult = await new OpportunityService().update(dealResult.value, { sentToBpifrance: operatorResult.isOk })
         if (contactUpdateResult.isErr) {
           // TODO: Send an email to the admin
         }

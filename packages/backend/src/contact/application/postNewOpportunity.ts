@@ -1,12 +1,7 @@
-<<<<<<< HEAD:packages/backend/src/contact/application/postNewOpportunity.ts
-=======
-import { addBrevoContact, updateBrevoContact } from '../infrastructure/api/brevo/brevo'
->>>>>>> origin/feature/api-bpifrance:packages/backend/src/contact/application/postNewContact.ts
+import { addBrevoContact, updateBrevoContact } from '../infrastructure/api/brevo/brevoContact'
+import { addBrevoDeal, updateBrevoDeal } from '../infrastructure/api/brevo/brevoDeal'
 import { createService } from '../domain/contactFeatures'
-import { ContactInfoRepository } from '../domain/spi'
-
-import { addBrevoContact } from '../infrastructure/api/brevo/brevoContact'
-import { addBrevoOpportunity } from '../infrastructure/api/brevo/brevoDeal'
+import { ContactRepository, OpportunityRepository } from '../domain/spi'
 
 /**
  * Defines how to access external data.
@@ -18,9 +13,10 @@ const brevoContactRepository: ContactRepository = {
 }
 
 const brevoOpportunityRepository: OpportunityRepository = {
-  create: addBrevoOpportunity
+  create: addBrevoDeal,
+  update: updateBrevoDeal
 }
 
-const service = createService(brevoContactRepository)
+const service = createService(brevoContactRepository, brevoOpportunityRepository)
 
 export const postNewOpportunity = service.postNewOpportunity

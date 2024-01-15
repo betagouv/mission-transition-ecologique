@@ -19,15 +19,17 @@ export interface OpportunityDetails {
   message: string
   questionnaireRoute?: TrackHelpValue
   priorityObjectives?: Objectives[]
+  sentToBpifrance: boolean
 }
 
-export type ContactUpdateAttributes = Partial<ContactDetails> & { BPI_FRANCE: boolean }
+export type ContactUpdateAttributes = Partial<ContactDetails>
+export type OpportunityUpdateAttributes = Partial<OpportunityDetails>
 
 export interface ContactId {
   id: number
 }
 
-export interface DealId {
+export interface OpportunityId {
   id: string
 }
 
