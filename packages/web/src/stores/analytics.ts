@@ -31,13 +31,13 @@ export const analyticsStore = defineStore('analytics', () => {
     matomoIsSet.value = allowAnalytics.value && scriptIsSet
   }
 
-  function sendEvent(action: string, name: string | null = null, value: string | number | null = null) {
+  function sendEvent(action: string, name: string | null = null, value?: string | number | undefined) {
     if (matomoIsSet.value) {
       if (domain.value) {
         // Track by domain
         trackEvent('from_domain', domain.value)
       }
-      if (name && value) {
+      if (name) {
         // Track by action
         trackEvent(action, name, value)
       }
