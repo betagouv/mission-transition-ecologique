@@ -32,14 +32,12 @@ export const analyticsStore = defineStore('analytics', () => {
   }
 
   function sendEvent(action: string, name: string | null = null, value?: string | number | undefined) {
-    console.log(matomoIsSet.value, name)
     if (matomoIsSet.value) {
       if (domain.value) {
         // Track by domain
         trackEvent('from_domain', domain.value)
       }
       if (name) {
-        console.log({ action, name, value })
         // Track by action
         trackEvent(action, name, value)
       }
