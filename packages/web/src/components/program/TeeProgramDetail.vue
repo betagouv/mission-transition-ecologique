@@ -160,20 +160,25 @@
           </div>
         </div>
 
+        <!-- ELIGIBILITY -->
         <ProgramEligibility v-if="program" :program="program"></ProgramEligibility>
 
-        <!-- PROGRAM FORM -->
-        <div class="fr-form-block">
-          <TeeForm
-            v-if="program"
-            :track-id="trackConfig.id"
-            :form-options="trackConfig.form"
-            :data-props="{ programId: program.id }"
-            :program="program"
-            :debug="debug"
-          />
-        </div>
+        <!-- LONG DESCRIPTION -->
+        <ProgramLongDescription v-if="program && program['description longue']" :program="program"></ProgramLongDescription>
       </div>
+    </div>
+
+    <!-- PROGRAM FORM -->
+    <div ref="TeeProgramFormContainer" class="fr-tee-form-block fr-tee-form-container">
+      <TeeForm
+        v-if="program"
+        :track-id="trackConfig.id"
+        :form-options="trackConfig.form"
+        :data-props="{ programId: program.id }"
+        :program="program"
+        :form-container-ref="TeeProgramFormContainer"
+        :debug="debug"
+      />
     </div>
   </div>
 </template>
@@ -188,6 +193,7 @@ import TeeTile from '../TeeTile.vue'
 import TeeForm from '../TeeForm.vue'
 import ProgramEligibility from '@/components/program/ProgramEligibility.vue'
 import ProgramObjective from '@/components/program/ProgramObjective.vue'
+import ProgramLongDescription from '@/components/program/ProgramLongDescription.vue'
 
 import { choicesStore } from '../../stores/choices'
 import { tracksStore } from '../../stores/tracks'
@@ -213,6 +219,8 @@ const trackConfig = ref<any>()
 
 const blockColor = '#000091'
 const columnTiles = ref<string>('fr-col')
+
+const TeeProgramFormContainer = ref<HTMLElement | null | undefined>(null)
 
 interface Props {
   programId: string | number
@@ -242,6 +250,6 @@ onBeforeMount(() => {
     trackConfig.value = tracks.getTrack(props.trackId)
   }
   // analytics / send event
-  analytics.sendEvent('result_detail', 'show_detail', props.programId)
+  analytics.sendEvent('result_detail', route.name === RouteName.CatalogDetail ? 'show_detail_catalog' : 'show_detail', props.programId)
 })
 </script>
