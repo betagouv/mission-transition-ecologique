@@ -3,7 +3,7 @@ import { Result } from 'true-myth'
 import { ContactInfoRepository } from '../../../domain/spi'
 import { ContactId, ContactInfoBodyAttributes, ContactUpdateAttributes } from '../../../domain/types'
 import { BrevoBody, updateContactBody } from './types'
-import { ensureError } from '../../../../common/domain/errors'
+import { ensureError } from '../../../../common/domain/error/errors'
 import ServiceNotFoundError from '../../../../common/domain/api/serviceNotFoundError'
 import AxiosHeaders from '../../../../common/infrastructure/api/axiosHeaders'
 

@@ -1,13 +1,10 @@
 import type { ProgramData } from '@tee/web/src/types/programTypes'
-
 import Engine from 'publicodes'
-
 import { Result } from 'true-myth'
-import { ensureError } from '@tee/backend/src/common/errors'
-import { filterObject } from '@tee/backend/src/common/objects'
-
-import type { QuestionnaireData, PublicodesInputData } from './types'
+import type { PublicodesInputData, QuestionnaireData } from './types'
 import type { CurrentDateService } from './spi'
+import { ensureError } from '../../common/domain/error/errors'
+import { filterObject } from '../../common/objects'
 
 /** Expected rule to evaluate if a program should be displayed to the user or
  * filtered out (in a program's `publicodes`
@@ -107,9 +104,7 @@ const narrowInput = (data: PublicodesInputData, engine: Engine): Partial<Publico
 
   const allowed = Object.keys(parsedRules)
 
-  const filtered = filterObject(data, (entry) => allowed.includes(entry[0]))
-
-  return filtered
+  return filterObject(data, (entry) => allowed.includes(entry[0]))
 }
 
 const addErrorDetails = (err: Error, programName: string): Error => {

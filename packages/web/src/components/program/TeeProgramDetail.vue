@@ -155,8 +155,7 @@
           </div>
         </div>
 
-
-    <ProgramEligibility v-if="program" :program="program"></ProgramEligibility>
+        <ProgramEligibility v-if="program" :program="program"></ProgramEligibility>
 
         <!-- PROGRAM FORM -->
         <div class="fr-form-block">

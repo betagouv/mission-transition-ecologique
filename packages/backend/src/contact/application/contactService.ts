@@ -1,6 +1,9 @@
 import { addBrevoContact, updateBrevoContact } from '../infrastructure/api/brevo/brevo'
-import { ContactId, ContactInfoBodyAttributes, ContactUpdateAttributes } from '../domain/types'
+import { ContactId, ContactInfo, ContactInfoBodyAttributes, ContactUpdateAttributes } from '../domain/types'
 import Contact from '../domain/contact'
+import ProgramService from '../../program/application/programService'
+import OperatorService from '../../operator/application/operatorService'
+import { Result } from 'true-myth'
 
 export default class ContactService {
   private _contact: Contact
@@ -13,10 +16,32 @@ export default class ContactService {
   }
 
   public async create(email: string, attributes: ContactInfoBodyAttributes) {
-    return this._contact.create(email, attributes)
+    const contactInfoResult = await this._contact.create(email, attributes)
+
+    await this._createOpportunityOnOperator(contactInfoResult, { email: email, attributes: attributes })
+
+    return contactInfoResult
   }
 
   public async update(contactId: ContactId, attributes: ContactUpdateAttributes) {
     return this._contact.update(contactId, attributes)
+  }
+
+  private async _createOpportunityOnOperator(contactInfoResult: Result<ContactId, Error>, contactInfo: ContactInfo) {
+    if (contactInfoResult.isErr) {
+      return
+    }
+
+    const program = new ProgramService().getById(contactInfo.attributes.PROGRAM_ID)
+
+    if (program) {
+      const operatorResult = await new OperatorService().createOpportunity(contactInfo, program)
+      if (false !== operatorResult) {
+        const contactUpdateResult = await new ContactService().update(contactInfoResult.value, { BPI_FRANCE: operatorResult.isOk })
+        if (contactUpdateResult.isErr) {
+          // TODO: Send an email to the admin
+        }
+      }
+    }
   }
 }

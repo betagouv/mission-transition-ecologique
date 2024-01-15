@@ -5,7 +5,7 @@ import { ContactResponse } from './types'
 import OperatorAbstract from '../operatorAbstract'
 import { Operators, Program } from '../../../../program/domain/types'
 import AxiosHeaders from '../../../../common/infrastructure/api/axiosHeaders'
-import { handleException } from '../../../../common/domain/errors'
+import { handleException } from '../../../../common/domain/error/errors'
 import { ContactInfo } from '../../../../contact/domain/types'
 import { ContactId } from '../../../domain/types'
 import ContactPayloadDTO from './contactPayloadDTO'
@@ -25,7 +25,7 @@ export class BpiFrance extends OperatorAbstract {
   constructor() {
     super()
     this._axios = axios.create({
-      baseURL: this._baseUrl,
+      baseURL: this.baseUrl,
       timeout: 2000,
       headers: AxiosHeaders.makeJsonHeader()
     })
@@ -33,7 +33,7 @@ export class BpiFrance extends OperatorAbstract {
 
   private _getToken = async (): Promise<Result<TokenResponse, Error>> => {
     try {
-      const response = await this._axios.get(this._tokenUrl, {
+      const response = await this.axios.get(this._tokenUrl, {
         params: {
           grant_type: 'client_credentials',
           client_id: this.client_id,
@@ -46,7 +46,7 @@ export class BpiFrance extends OperatorAbstract {
     }
   }
 
-  public create = async (contactInfo: ContactInfo, program: Program): Promise<Result<ContactId, Error>> => {
+  public createOpportunity = async (contactInfo: ContactInfo, program: Program): Promise<Result<ContactId, Error>> => {
     try {
       const tokenResult = await this._getToken()
       if (tokenResult.isErr) {
@@ -54,7 +54,7 @@ export class BpiFrance extends OperatorAbstract {
       }
 
       const contactPayloadDTO = new ContactPayloadDTO(contactInfo, program).getPayload()
-      const response = await this._axios.post(this._contactUrl, contactPayloadDTO, {
+      const response = await this.axios.post(this._contactUrl, contactPayloadDTO, {
         headers: AxiosHeaders.makeBearerHeader(tokenResult.value.access_token)
       })
 

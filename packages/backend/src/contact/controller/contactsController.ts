@@ -1,11 +1,10 @@
 import { Body, Controller, Example, Post, Res, Route, SuccessResponse, TsoaResponse } from 'tsoa'
-import { ContactInfoBodyAttributes, ServiceNotFoundError } from '../domain/types'
-import { ErrorJSON, ValidateErrorJSON } from '../../common/jsonError'
+import { ContactInfoBodyAttributes } from '../domain/types'
+import { ErrorJSON, ValidateErrorJSON } from '../../common/controller/jsonError'
 import ContactService from '../application/contactService'
 import { Err } from 'true-myth/dist/es/result'
-import OperatorService from '../../operator/application/operatorService'
-import ProgramService from '../../program/application/programService'
 import { ContactId } from '../../common/domain/types'
+import ServiceNotFoundError from '../../common/domain/api/serviceNotFoundError'
 
 interface ServiceNotFoundErrorJSON {
   message: 'Contact not created'
@@ -44,17 +43,6 @@ export class ContactInfoController extends Controller {
       this.getErrorResponseFromContact(contactInfoResult, notFoundResponse, requestFailedResponse)
 
       return
-    }
-
-    const program = new ProgramService().getById(bodyAttributes.PROGRAM_ID)
-    if (program) {
-      const operatorResult = await new OperatorService().create({ email: bodyEmail, attributes: bodyAttributes }, program)
-      if (false !== operatorResult) {
-        const contactUpdateResult = await new ContactService().update(contactInfoResult.value, { BPI_FRANCE: operatorResult.isOk })
-        if (contactUpdateResult.isErr) {
-          // TODO: Send an email to the admin
-        }
-      }
     }
 
     return contactInfoResult.value

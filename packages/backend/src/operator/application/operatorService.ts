@@ -13,8 +13,8 @@ export default class OperatorService {
     this._operator = new Operator(this.getOperatorRepositories())
   }
 
-  create(contactInfo: ContactInfo, program: Program): Promise<Result<ContactId, Error> | false> {
-    return this._operator.create(contactInfo, program)
+  public createOpportunity(contactInfo: ContactInfo, program: Program): Promise<Result<ContactId, Error> | false> {
+    return this._operator.createOpportunity(contactInfo, program)
   }
 
   private getOperatorRepositories(): OperatorRepository[] {

@@ -59,12 +59,10 @@ const splitInTwo = (fields: EligibilityCategory[]): [EligibilityCategory[], Elig
   return [fields.slice(0, mid), fields.slice(mid)]
 }
 
-
 const getFieldsForColumn = (columnNumber: number): EligibilityCategory[] => {
   const columns = splitInTwo(order.filter((field) => !!programEligibility.value[field]))
   return columns[columnNumber - 1]
 }
-
 
 interface Props {
   program: ProgramData

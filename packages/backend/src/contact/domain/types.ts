@@ -1,5 +1,3 @@
-import { CustomError } from '../../common/errors'
-
 export interface ContactInfoBodyAttributes {
   NOM: string
   PRENOM: string
@@ -26,5 +24,3 @@ export interface ContactInfo {
 export interface ContactId {
   id: number
 }
-
-export class ServiceNotFoundError extends CustomError {}
