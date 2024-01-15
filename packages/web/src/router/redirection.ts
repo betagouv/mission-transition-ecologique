@@ -16,5 +16,25 @@ export const redirections: RouteRecordRaw[] = [
     redirect: () => {
       return { name: RouteName.Homepage, query: null }
     }
+  },
+  {
+    path: '/annuaire',
+    redirect: () => {
+      return { name: RouteName.Catalog }
+    },
+    children: [
+      {
+        path: '',
+        redirect: () => {
+          return { name: RouteName.Catalog }
+        }
+      },
+      {
+        path: ':programId',
+        redirect: (route) => {
+          return { name: RouteName.CatalogDetail, params: { programId: route.params.programId } }
+        }
+      }
+    ]
   }
 ]

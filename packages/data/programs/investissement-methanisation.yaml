@@ -57,6 +57,10 @@ publicodes:
     - a un objectif ciblé
     - questionnaire . parcours = objectif précis
   entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+      - dispositif . début de validité <= date du jour
+      - date du jour <= dispositif . fin de validité
     toutes ces conditions:
     - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:
