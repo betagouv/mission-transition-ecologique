@@ -155,23 +155,25 @@
           </div>
         </div>
 
+        <!-- ELIGIBILITY -->
         <ProgramEligibility v-if="program" :program="program"></ProgramEligibility>
 
         <!-- LONG DESCRIPTION -->
         <ProgramLongDescription v-if="program && program['description longue']" :program="program"></ProgramLongDescription>
-
-        <!-- PROGRAM FORM -->
-        <div class="fr-form-block">
-          <TeeForm
-            v-if="program"
-            :track-id="trackConfig.id"
-            :form-options="trackConfig.form"
-            :data-props="{ programId: program.id }"
-            :program="program"
-            :debug="debug"
-          />
-        </div>
       </div>
+    </div>
+
+    <!-- PROGRAM FORM -->
+    <div ref="TeeProgramFormContainer" class="fr-tee-form-block fr-tee-form-container">
+      <TeeForm
+        v-if="program"
+        :track-id="trackConfig.id"
+        :form-options="trackConfig.form"
+        :data-props="{ programId: program.id }"
+        :program="program"
+        :form-container-ref="TeeProgramFormContainer"
+        :debug="debug"
+      />
     </div>
   </div>
 </template>
@@ -212,6 +214,8 @@ const trackConfig = ref<any>()
 
 const blockColor = '#000091'
 const columnTiles = ref<string>('fr-col')
+
+const TeeProgramFormContainer = ref<HTMLElement | null | undefined>(null)
 
 interface Props {
   programId: string | number
