@@ -207,6 +207,8 @@ import { choicesStore } from '../stores/choices'
 import { analyticsStore } from '../stores/analytics'
 import type { ImportMetaEnv } from '../env'
 import DsfrButton from '@/components/button/DsfrButton.vue'
+import { RouteName } from '@/types/routeType'
+import { useRoute } from 'vue-router'
 
 const choices = choicesStore()
 const tracks = tracksStore()
@@ -234,6 +236,8 @@ const requiredFields = ref<string[]>([])
 const formIsSent = ref<boolean>(false)
 const requestResponses = ref<ReqResp[]>()
 const isLoading = ref<boolean>(false)
+
+const route = useRoute()
 
 const canSaveFrom = computed(() => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return
@@ -326,7 +330,7 @@ const saveFormData = async () => {
     formIsSent.value = true
 
     // analytics / send event
-    analytics.sendEvent(props.trackId, 'send_form')
+    analytics.sendEvent(props.trackId, route.name === RouteName.CatalogDetail ? 'send_form_catalog' : 'send_form')
   } finally {
     isLoading.value = false
   }
