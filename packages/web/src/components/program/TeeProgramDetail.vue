@@ -155,7 +155,11 @@
           </div>
         </div>
 
+        <!-- ELIGIBILITY -->
         <ProgramEligibility v-if="program" :program="program"></ProgramEligibility>
+
+        <!-- LONG DESCRIPTION -->
+        <ProgramLongDescription v-if="program && program['description longue']" :program="program"></ProgramLongDescription>
       </div>
     </div>
 
@@ -184,6 +188,7 @@ import TeeTile from '../TeeTile.vue'
 import TeeForm from '../TeeForm.vue'
 import ProgramEligibility from '@/components/program/ProgramEligibility.vue'
 import ProgramObjective from '@/components/program/ProgramObjective.vue'
+import ProgramLongDescription from '@/components/program/ProgramLongDescription.vue'
 
 import { choicesStore } from '../../stores/choices'
 import { tracksStore } from '../../stores/tracks'
