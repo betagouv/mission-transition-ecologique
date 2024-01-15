@@ -155,8 +155,7 @@
           </div>
         </div>
 
-
-    <ProgramEligibility v-if="program" :program="program"></ProgramEligibility>
+        <ProgramEligibility v-if="program" :program="program"></ProgramEligibility>
 
         <!-- PROGRAM FORM -->
         <div class="fr-form-block">
@@ -238,6 +237,6 @@ onBeforeMount(() => {
     trackConfig.value = tracks.getTrack(props.trackId)
   }
   // analytics / send event
-  analytics.sendEvent('result_detail', 'show_detail', props.programId)
+  analytics.sendEvent('result_detail', route.name === RouteName.CatalogDetail ? 'show_detail_catalog' : 'show_detail', props.programId)
 })
 </script>
