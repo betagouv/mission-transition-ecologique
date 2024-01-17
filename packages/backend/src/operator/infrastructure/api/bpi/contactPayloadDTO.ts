@@ -23,7 +23,6 @@ export default class ContactPayloadDTO {
     this._firstName = contactInfo.attributes.PRENOM
     this._lastName = contactInfo.attributes.NOM
     this._phoneNumber = contactInfo.attributes.TEL
-    this._companyName = ''
     this._companySiret = contactInfo.attributes.SIRET
     this._companySize = contactInfo.attributes.STRUCTURE_SIZE
     this._responses = contactInfo.attributes.ALL_RESPONSES
@@ -60,7 +59,7 @@ export default class ContactPayloadDTO {
   }
 
   private get companyName(): string | undefined {
-    return this._companyName
+    return this._companyName ?? '-'
   }
 
   private get phoneNumber(): string {

@@ -18,7 +18,7 @@ export default class ContactService {
   public async create(email: string, attributes: ContactInfoBodyAttributes) {
     const contactInfoResult = await this._contact.create(email, attributes)
 
-    await this._createOpportunityOnOperator(contactInfoResult, { email: email, attributes: attributes })
+    this._createOpportunityOnOperator(contactInfoResult, { email: email, attributes: attributes })
 
     return contactInfoResult
   }
@@ -27,7 +27,7 @@ export default class ContactService {
     return this._contact.update(contactId, attributes)
   }
 
-  private async _createOpportunityOnOperator(contactInfoResult: Result<ContactId, Error>, contactInfo: ContactInfo) {
+  private _createOpportunityOnOperator(contactInfoResult: Result<ContactId, Error>, contactInfo: ContactInfo) {
     if (contactInfoResult.isErr) {
       return
     }
@@ -35,13 +35,14 @@ export default class ContactService {
     const program = new ProgramService().getById(contactInfo.attributes.PROGRAM_ID)
 
     if (program) {
-      const operatorResult = await new OperatorService().createOpportunity(contactInfo, program)
-      if (false !== operatorResult) {
-        const contactUpdateResult = await new ContactService().update(contactInfoResult.value, { BPI_FRANCE: operatorResult.isOk })
-        if (contactUpdateResult.isErr) {
-          // TODO: Send an email to the admin
+      void new OperatorService().createOpportunity(contactInfo, program).then(async (operatorResult) => {
+        if (false !== operatorResult) {
+          const contactUpdateResult = await new ContactService().update(contactInfoResult.value, { BPI_FRANCE: operatorResult.isOk })
+          if (contactUpdateResult.isErr) {
+            // TODO: Send an email to the admin: Contact not updated
+          }
         }
-      }
+      })
     }
   }
 }
