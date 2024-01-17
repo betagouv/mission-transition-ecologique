@@ -26,7 +26,7 @@ export class BpiFrance extends OperatorAbstract {
     super()
     this._axios = axios.create({
       baseURL: this.baseUrl,
-      timeout: 2000,
+      timeout: 3000,
       headers: AxiosHeaders.makeJsonHeader()
     })
   }
