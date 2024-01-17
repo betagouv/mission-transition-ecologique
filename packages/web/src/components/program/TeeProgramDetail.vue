@@ -12,7 +12,7 @@
     </div>
   </div>
   <!-- PROGRAM INFOS -->
-  <div :class="`fr-container-fluid fr-px-6v fr-px-md-20v fr-mt-${programIsNoLongerAvailable ? 4 : 8}v`">
+  <div :class="`fr-container-fluid fr-px-6v fr-px-md-20v fr-mt-${programIsNoLongerAvailable ? 3 : 8}v`">
     <div class="fr-grid-row fr-grid-row-gutters">
       <div class="fr-col">
         <!-- BACK TO RESULTS BTN -->
@@ -181,7 +181,7 @@
     </div>
 
     <!-- PROGRAM FORM -->
-    <div ref="TeeProgramFormContainer" class="fr-tee-form-block fr-tee-form-container">
+    <div v-if="!programIsNoLongerAvailable" ref="TeeProgramFormContainer" class="fr-tee-form-block fr-tee-form-container">
       <TeeForm
         v-if="program"
         :track-id="trackConfig.id"
