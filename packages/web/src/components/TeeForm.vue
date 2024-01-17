@@ -151,7 +151,7 @@
         {{ choices.t('form.nowWhat') }}
       </h6>
       <p class="tee-form-response-blue fr-mb-15v">
-        <span v-html="choices.ti(choices.t('form.errorMsg'), { email: contactEmail })"></span>
+        <span v-html="choices.t('form.errorMsg', { mailto: getMailTo(), email: contactEmail })"></span>
       </p>
 
       <!-- DEBUGGING -->
@@ -215,7 +215,8 @@
 // console.log(`TeeForm > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import { computed, onBeforeMount, ref, toRaw } from 'vue'
-import type { FormCallback, FormField, FormOptions, FormValues, ProgramData, ReqResp } from '@/types/index'
+import type { FormCallback, FormField, FormOptions, FormValues, ProgramData, ReqResp } from '@/types'
+import { TrackId } from '@/types'
 import { CallbackActions, FormFieldTypes } from '@/types/index'
 import { sendApiRequest } from '../utils/requests'
 import { remapItem } from '../utils/helpers'
@@ -226,6 +227,7 @@ import type { ImportMetaEnv } from '../env'
 import DsfrButton from '@/components/button/DsfrButton.vue'
 import { RouteName } from '@/types/routeType'
 import { useRoute } from 'vue-router'
+import Contact from '@/utils/contact'
 
 const choices = choicesStore()
 const tracks = tracksStore()
@@ -240,7 +242,7 @@ interface DataProps {
 }
 
 interface Props {
-  trackId: string
+  trackId: TrackId
   formOptions: FormOptions
   dataProps: DataProps
   program: ProgramData
@@ -264,8 +266,7 @@ const canSaveFrom = computed(() => {
 })
 
 const hasNoRespError = computed(() => {
-  const hasError = !requestResponses.value || requestResponses.value?.map((r) => r.status).every((s) => s === 200 || s === 201)
-  return hasError
+  return !requestResponses.value || requestResponses.value?.map((r) => r.status).every((s) => s === 200 || s === 201)
 })
 
 const findPrefix = (str: string, prefixCode: string = 'of') => {
@@ -282,6 +283,26 @@ const isCheckbox = (field: FormField) => {
 
 const isTextarea = (field: FormField) => {
   return field.type === FormFieldTypes.Textarea
+}
+
+const getMailTo = (): string => {
+  if (props.trackId === TrackId.Results && formData.value) {
+    const needsValue = 'needs' in formData.value ? (formData.value.needs as string) : ''
+    const nameValue = 'name' in formData.value ? (formData.value.name as string) : ''
+    const surnameValue = 'surname' in formData.value ? (formData.value.surname as string) : ''
+    const telValue = 'tel' in formData.value ? (formData.value.tel as string) : ''
+    const siretValue = 'siret' in formData.value ? (formData.value.siret as string) : ''
+    return Contact.getMailtoUrl(
+      choices.t('form.errorEmail.subject', { program: props.program.titre }),
+      `${needsValue}
+
+${nameValue} ${surnameValue}
+${telValue}
+SIRET : ${siretValue}`
+    )
+  }
+
+  return ''
 }
 
 onBeforeMount(() => {
