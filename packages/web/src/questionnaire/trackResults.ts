@@ -173,7 +173,7 @@ export const results: Track = {
         id: 'siret',
         label: { fr: 'SIRET de votre entreprise' },
         // hint: { fr: '385 290 309 00454' },
-        required: false,
+        required: true,
         type: FormFieldTypes.Text,
         preFillFrom: {
           id: 'siret',

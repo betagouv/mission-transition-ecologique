@@ -1,3 +1,6 @@
+export { type Program } from '@tee/data/src/type/program'
+export { type Operators } from '@tee/data/src/generated/program'
+
 export interface QuestionnaireData {
   codeNaf?: string
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
