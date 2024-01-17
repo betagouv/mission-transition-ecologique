@@ -2,6 +2,22 @@ export default class Config {
   private static _sentryEnvironment = ['prod', 'preprod']
   private static _sentryDefaultEnvironment = 'preprod'
 
+  public static get BPI_FRANCE_CLIENT_ID(): string {
+    if (!process.env['BPI_FRANCE_CLIENT_ID']) {
+      throw new Error('BPI_FRANCE_CLIENT_ID is not defined')
+    }
+
+    return process.env['BPI_FRANCE_CLIENT_ID']
+  }
+
+  public static get BPI_FRANCE_CLIENT_SECRET(): string {
+    if (!process.env['BPI_FRANCE_CLIENT_SECRET']) {
+      throw new Error('BPI_FRANCE_CLIENT_SECRET is not defined')
+    }
+
+    return process.env['BPI_FRANCE_CLIENT_SECRET']
+  }
+
   public static get SENTRY_DSN(): string | undefined {
     if (!process.env['SENTRY_DSN']) {
       return undefined
