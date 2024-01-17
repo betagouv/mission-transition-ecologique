@@ -1,4 +1,4 @@
-import type { Result } from 'true-myth'
+import type { Maybe, Result } from 'true-myth'
 import type {
   ContactId,
   OpportunityId,
@@ -16,5 +16,5 @@ export type ContactRepository = {
 export type OpportunityRepository = {
   // add contact or update it if contact with same email exists
   create: (contactId: number, opportunity: OpportunityDetails) => Promise<Result<OpportunityId, Error>>
-  update: (dealId: OpportunityId, attributes: OpportunityUpdateAttributes) => Promise<Result<OpportunityId, Error>>
+  update: (dealId: OpportunityId, attributes: OpportunityUpdateAttributes) => Promise<Maybe<Error>>
 }

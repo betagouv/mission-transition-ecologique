@@ -4,7 +4,7 @@ import { Operators } from '@tee/data/src/generated/program'
 import { AxiosInstance } from 'axios'
 import { OperatorRepository } from '../../domain/spi'
 import { Program } from '../../../program/domain/types'
-import { ContactInfo } from '../../../contact/domain/types'
+import { Opportunity } from '../../../contact/domain/types'
 import { ContactId } from '../../domain/types'
 
 export default abstract class OperatorAbstract implements OperatorRepository {
@@ -14,7 +14,7 @@ export default abstract class OperatorAbstract implements OperatorRepository {
 
   support = (program: Program) => (program['opérateur de contact'] as Operators) === this.operatorName
 
-  public abstract create: (contactInfo: ContactInfo, Program: Program) => Promise<Result<ContactId, Error>>
+  public abstract create: (opportunity: Opportunity, Program: Program) => Promise<Result<ContactId, Error>>
 
   get operatorName(): Operators {
     return this._operatorName

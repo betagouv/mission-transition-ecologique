@@ -1,10 +1,10 @@
 import Operator from '../domain/operator'
-import { ContactInfo } from '../../contact/domain/types'
 import { Program } from '../../program/domain/types'
 import { OperatorRepository } from '../domain/spi'
 import { BpiFrance } from '../infrastructure/api/bpi/bpiFrance'
 import { Result } from 'true-myth'
 import { ContactId } from '../domain/types'
+import { Opportunity } from '../../contact/domain/types'
 
 export default class OperatorService {
   private _operator: Operator
@@ -13,8 +13,8 @@ export default class OperatorService {
     this._operator = new Operator(this.getOperatorRepositories())
   }
 
-  create(contactInfo: ContactInfo, program: Program): Promise<Result<ContactId, Error> | false> {
-    return this._operator.create(contactInfo, program)
+  create(opportunity: Opportunity, program: Program): Promise<Result<ContactId, Error> | false> {
+    return this._operator.create(opportunity, program)
   }
 
   private getOperatorRepositories(): OperatorRepository[] {

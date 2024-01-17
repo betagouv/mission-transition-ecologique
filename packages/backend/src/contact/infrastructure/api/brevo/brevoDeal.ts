@@ -41,22 +41,14 @@ const requestCreateDeal = async (name: string, attributes: DealAttributes): Prom
 
 export const updateBrevoDeal: OpportunityRepository['update'] = async (
   dealId: OpportunityId,
-  domainOpportunity: Partial<OpportunityDetails>
-): Promise<Result<OpportunityId, Error>> => {
+  domainOpportunity: OpportunityDetails
+): Promise<Maybe<Error>> => {
   const brevoDeal = mapDomainToBrevoDeal(domainOpportunity)
 
-  const dealId = await requestCreateDeal(domainOpportunity.programId, brevoDeal)
-
-  if (!dealId.isErr) {
-    const maybeError = await associateBrevoDealToContact(dealId.value, contactId)
-    if (maybeError.isJust)
-      return Result.err(new Error('Something went wrong while attaching contact to opportunity', { cause: maybeError.value }))
-  }
-
-  return dealId
+  return requestUpdateDeal(dealId, brevoDeal)
 }
 
-const requestUpdateDeal = async (dealId: DealId, attributes: Partial<DealAttributes>): Promise<Result<OpportunityId, Error>> => {
+const requestUpdateDeal = async (dealId: OpportunityId, attributes: Partial<DealAttributes>): Promise<Maybe<Error>> => {
   const responseResult = await requestBrevoAPI({
     method: HttpMethod.PATCH,
     url: `https://api.brevo.com/v3/crm/deals/${dealId}`,
@@ -65,8 +57,7 @@ const requestUpdateDeal = async (dealId: DealId, attributes: Partial<DealAttribu
     }
   })
 
-  const dealId = responseResult.map((r) => r.data as OpportunityId)
-  return dealId
+  return Maybe.of(responseResult.isErr ? responseResult.error : null)
 }
 
 const associateBrevoDealToContact = async (dealId: OpportunityId, contactId: number): Promise<Maybe<Error>> => {
