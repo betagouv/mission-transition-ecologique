@@ -1,6 +1,18 @@
 <template>
+  <!-- ALERT - PROGRAM NOT AVAILABLE ANYMORE -->
+  <div v-if="programIsNoLongerAvailable" class="fr-notice fr-tee-program-notice-alert fr-mb-0">
+    <div class="fr-container">
+      <div class="fr-notice__body fr-text-center">
+        <p class="fr-notice__title">
+          <span class="fr-icon-information-line" aria-hidden="true"></span>
+          {{ choices.t('program.programNotAvailable') }}
+        </p>
+        <p class="fr-notice__subtitle">{{ choices.t('program.programEndValidity') }} : {{ program?.[`fin de validité`] }}</p>
+      </div>
+    </div>
+  </div>
   <!-- PROGRAM INFOS -->
-  <div :class="`fr-container-fluid fr-px-6v fr-px-md-20v fr-mt-10v`">
+  <div :class="`fr-container-fluid fr-px-6v fr-px-md-20v fr-mt-${programIsNoLongerAvailable ? 4 : 8}v`">
     <div class="fr-grid-row fr-grid-row-gutters">
       <div class="fr-col">
         <!-- BACK TO RESULTS BTN -->
@@ -187,7 +199,7 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`TeeProgramDetail > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import { ref, onBeforeMount } from 'vue'
+import { ref, computed, onBeforeMount } from 'vue'
 
 import TeeTile from '../TeeTile.vue'
 import TeeForm from '../TeeForm.vue'
@@ -216,11 +228,13 @@ const router = useRouter()
 
 const program = ref<{ index: string } & ProgramData>()
 const trackConfig = ref<any>()
+const TeeProgramFormContainer = ref<HTMLElement | null | undefined>(null)
 
 const blockColor = '#000091'
 const columnTiles = ref<string>('fr-col')
 
-const TeeProgramFormContainer = ref<HTMLElement | null | undefined>(null)
+const todayDate = new Date()
+// const todayStr = todayDate.toLocaleDateString('fr-FR')
 
 interface Props {
   programId: string | number
@@ -251,5 +265,21 @@ onBeforeMount(() => {
   }
   // analytics / send event
   analytics.sendEvent('result_detail', route.name === RouteName.CatalogDetail ? 'show_detail_catalog' : 'show_detail', props.programId)
+})
+
+const programEndDate = computed(() => {
+  const endDateStr: string | undefined = program.value?.['fin de validité']
+  let endDate: Date
+  if (endDateStr) {
+    const dateArr: string[] = endDateStr.split('/')
+    endDate = new Date(`${dateArr[2]}/${dateArr[1]}/${dateArr[0]}`)
+  } else {
+    endDate = todayDate
+  }
+  return endDate
+})
+const programIsNoLongerAvailable = computed(() => {
+  const dateIsPassed = programEndDate.value < todayDate
+  return dateIsPassed
 })
 </script>
