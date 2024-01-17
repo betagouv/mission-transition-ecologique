@@ -35,19 +35,14 @@ export default class ContactService {
     const program = new ProgramService().getById(contactInfo.attributes.PROGRAM_ID)
 
     if (program) {
-      new OperatorService()
-        .createOpportunity(contactInfo, program)
-        .then(async (operatorResult) => {
-          if (false !== operatorResult) {
-            const contactUpdateResult = await new ContactService().update(contactInfoResult.value, { BPI_FRANCE: operatorResult.isOk })
-            if (contactUpdateResult.isErr) {
-              // TODO: Send an email to the admin: Contact no updated
-            }
+      void new OperatorService().createOpportunity(contactInfo, program).then(async (operatorResult) => {
+        if (false !== operatorResult) {
+          const contactUpdateResult = await new ContactService().update(contactInfoResult.value, { BPI_FRANCE: operatorResult.isOk })
+          if (contactUpdateResult.isErr) {
+            // TODO: Send an email to the admin: Contact not updated
           }
-        })
-        .catch(() => {
-          // TODO: Send an email to the admin: Opportunity on operator no created
-        })
+        }
+      })
     }
   }
 }
