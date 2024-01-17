@@ -3,7 +3,7 @@ import { ValidateFunction } from 'ajv'
 import programSchema from '../schemas/program-data-schema.json'
 import regionSchema from '../schemas/region-data-schema.json'
 import regionData from '../../web/public/data/references/com_codes.json'
-import { ensureError } from '@tee/backend/src/common/errors'
+import { ensureError } from '@tee/backend/src/common/domain/error/errors'
 
 import { prependInterface, readPrograms } from '../src/dataPipeline'
 
