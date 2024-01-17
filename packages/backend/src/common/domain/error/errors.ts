@@ -1,5 +1,5 @@
 import { AxiosError } from 'axios'
-import ServiceNotFoundError from './api/serviceNotFoundError'
+import ServiceNotFoundError from '../api/serviceNotFoundError'
 
 /**
  * Returns a value if it is an Error, or encapsulates it inside an Error otherwise

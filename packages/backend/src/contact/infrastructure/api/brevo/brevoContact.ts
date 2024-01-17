@@ -7,7 +7,7 @@ import { requestBrevoAPI } from './brevoRequest'
 
 const DEBUG_BREVO_LIST_ID = '4'
 
-export const addBrevoContact: ContactRepository['create'] = async (contact: ContactDetails, optIn: true) => {
+export const addBrevoContact: ContactRepository['createOrUpdate'] = async (contact: ContactDetails, optIn: true) => {
   const defaultListId = DEBUG_BREVO_LIST_ID
   const rawlistIds: string = process.env['BREVO_LIST_IDS'] || defaultListId
   const listIds = parseListIds(rawlistIds)

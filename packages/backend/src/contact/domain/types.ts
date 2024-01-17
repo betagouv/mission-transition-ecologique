@@ -1,5 +1,4 @@
 import { Objectives, TrackHelpValue } from '@tee/web/src/types'
-import { CustomError } from '../../common/errors'
 
 export interface Opportunity extends ContactDetails, OpportunityDetails {}
 
@@ -22,8 +21,7 @@ export interface OpportunityDetails {
   sentToBpifrance: boolean
 }
 
-export type ContactUpdateAttributes = Partial<ContactDetails>
-export type OpportunityUpdateAttributes = Partial<OpportunityDetails>
+export type OpportunityUpdateAttributes = Pick<OpportunityDetails, 'sentToBpifrance'>
 
 export interface ContactId {
   id: number
@@ -32,8 +30,6 @@ export interface ContactId {
 export interface OpportunityId {
   id: string
 }
-
-export class ServiceNotFoundError extends CustomError {}
 
 // Taille de l'entreprise au sens communautaire
 export enum Taille {

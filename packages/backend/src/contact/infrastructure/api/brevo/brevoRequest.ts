@@ -2,7 +2,7 @@ import axios, { AxiosResponse, RawAxiosRequestHeaders } from 'axios'
 import { Result } from 'true-myth'
 import type { BrevoRequestData } from './types'
 import AxiosHeaders from '../../../../common/infrastructure/api/axiosHeaders'
-import { handleException } from '../../../../common/domain/errors'
+import { handleException } from '../../../../common/domain/error/errors'
 
 /**
  * Brevo API Documentation: 'https://developers.brevo.com/reference',

@@ -1,6 +1,6 @@
-import { ServiceNotFoundError, OpportunityId, Opportunity } from '../domain/types'
+import { OpportunityId, Opportunity } from '../domain/types'
 import { Body, Controller, Example, Post, Res, Route, SuccessResponse, TsoaResponse } from 'tsoa'
-import { ErrorJSON, ValidateErrorJSON } from '../../common/jsonError'
+import { ErrorJSON, ValidateErrorJSON } from '../../common/controller/jsonError'
 import ContactService from '../application/contactService'
 import { postNewOpportunity } from '../application/postNewOpportunity'
 import { Err } from 'true-myth/dist/es/result'
@@ -8,6 +8,7 @@ import OperatorService from '../../operator/application/operatorService'
 import ProgramService from '../../program/application/programService'
 import { ContactId } from '../../common/domain/types'
 import OpportunityService from '../application/opportunityService'
+import ServiceNotFoundError from '../../common/domain/api/serviceNotFoundError'
 
 interface ContactInfoBody {
   opportunity: Opportunity

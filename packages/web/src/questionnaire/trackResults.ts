@@ -172,8 +172,8 @@ export const results: Track = {
       {
         id: 'siret',
         label: { fr: 'SIRET de votre entreprise' },
-        hint: { fr: '385 290 309 00454' },
-        required: false,
+        // hint: { fr: '385 290 309 00454' },
+        required: true,
         type: FormFieldTypes.Text,
         preFillFrom: {
           id: 'siret',
@@ -200,7 +200,7 @@ Mon entreprise a une activité de type "{secteur}".
 Le dispositif "{titreAide}" pourrait m'intéresser car j'ai pour projet de ...
 J'ai besoin d'être accompagné(e) sur ...
 
-Merci d'avance pour votre appel`,
+Merci d'avance pour votre retour`,
         injectInText: true,
         dataStructure: {
           secteur: '',

@@ -48,7 +48,7 @@ export interface BrevoPatchDealData extends AxiosRequestConfig {
   method: HttpMethod.PATCH
   url: `https://api.brevo.com/v3/crm/deals/${string}`
   data: {
-    attributes: Partial<DealAttributes>
+    attributes: DealUpdateAttributes
   }
 }
 
@@ -73,6 +73,10 @@ export interface DealAttributes {
   message: string
   parcours: BrevoQuestionnaireRoute
   objectifs_renseigns?: string
+}
+
+export interface DealUpdateAttributes {
+  envoy__bpifrance: boolean
 }
 
 export interface UpdateContactBody {

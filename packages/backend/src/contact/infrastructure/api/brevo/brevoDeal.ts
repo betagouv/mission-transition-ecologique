@@ -1,9 +1,9 @@
 import { Maybe, Result } from 'true-myth'
 
 import { OpportunityRepository } from '../../../domain/spi'
-import { OpportunityId, OpportunityDetails } from '../../../domain/types'
+import { OpportunityId, OpportunityDetails, OpportunityUpdateAttributes } from '../../../domain/types'
 import { requestBrevoAPI } from './brevoRequest'
-import { DealAttributes, HttpMethod, BrevoQuestionnaireRoute } from './types'
+import { DealAttributes, HttpMethod, BrevoQuestionnaireRoute, DealUpdateAttributes } from './types'
 import { TrackHelpValue } from '@tee/web/src/types'
 
 // "Opportunities" are called "Deals" in Brevo
@@ -41,14 +41,14 @@ const requestCreateDeal = async (name: string, attributes: DealAttributes): Prom
 
 export const updateBrevoDeal: OpportunityRepository['update'] = async (
   dealId: OpportunityId,
-  domainOpportunity: OpportunityDetails
+  updateAttributes: OpportunityUpdateAttributes
 ): Promise<Maybe<Error>> => {
-  const brevoDeal = mapDomainToBrevoDeal(domainOpportunity)
+  const brevoDeal = mapDomainToBrevoDealUpdate(updateAttributes)
 
   return requestUpdateDeal(dealId, brevoDeal)
 }
 
-const requestUpdateDeal = async (dealId: OpportunityId, attributes: Partial<DealAttributes>): Promise<Maybe<Error>> => {
+const requestUpdateDeal = async (dealId: OpportunityId, attributes: DealUpdateAttributes): Promise<Maybe<Error>> => {
   const responseResult = await requestBrevoAPI({
     method: HttpMethod.PATCH,
     url: `https://api.brevo.com/v3/crm/deals/${dealId}`,
@@ -81,6 +81,12 @@ const mapDomainToBrevoDeal = (domainAttributes: OpportunityDetails): DealAttribu
     message: domainAttributes.message,
     parcours: mapQuestionnaireRoute(domainAttributes.questionnaireRoute),
     ...(domainAttributes.priorityObjectives && { objectifs_renseigns: domainAttributes.priorityObjectives.join(', ') })
+  }
+}
+
+const mapDomainToBrevoDealUpdate = (domainUpdateAttributes: OpportunityUpdateAttributes): DealUpdateAttributes => {
+  return {
+    envoy__bpifrance: domainUpdateAttributes.sentToBpifrance
   }
 }
 
