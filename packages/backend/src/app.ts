@@ -17,7 +17,7 @@ app.use('/api/docs', swaggerUi.serve, async (_req: Request, res: Response) => {
 RegisterRoutes(app)
 
 app.use(function notFoundHandler(_req, res: Response) {
-  res.status(404).send({ message: 'Not Found' })
+  res.status(404).send({ message: 'Not Found to test' })
 })
 
 app.use(function errorHandler(err: unknown, req: Request, res: Response, next: NextFunction): Response | void {

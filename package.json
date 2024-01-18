@@ -11,7 +11,7 @@
   "private": true,
   "license": "AGPL-3.0",
   "scripts": {
-    "start": "bash start.sh",
+    "start": "npx concurrently \"npm run start-back\" \"npm run start -w packages/web\"",
     "start-back": "npm run start -w packages/backend",
     "start-front": "PORT=4242 npm run start -w packages/web",
     "start-all": "npm run build && npx concurrently \"npm run start-front\" \"npm run start-back\"",
