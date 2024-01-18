@@ -13,10 +13,10 @@ export default class Matomo {
     this._isSet = this.allowAnalytics && isSet
   }
 
-  static sendEvent(action: string, name: string | null = null, value: string | number | null = null) {
+  static sendEvent(action: string, name: string | null = null, value?: string | number | undefined) {
     if (this._isSet) {
       this.trackEvent('from_domain', this.domain)
-      if (name && value) {
+      if (name) {
         // Track by action
         this.trackEvent(action, name, value)
       }

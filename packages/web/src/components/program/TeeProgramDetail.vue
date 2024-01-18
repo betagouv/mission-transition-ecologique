@@ -228,7 +228,7 @@ const props = defineProps<Props>()
 const resetDetailResult = async () => {
   if (route.name === RouteName.CatalogDetail) {
     tracks.resetUsedTracks()
-    await router.push({ name: RouteName.Catalog })
+    await router.push({ name: RouteName.Catalog, hash: '#' + props.programId })
     return
   }
   programs.resetDetailResult()
@@ -236,12 +236,6 @@ const resetDetailResult = async () => {
   await nav.updateUrl(!Widget.is)
 
   scrollToId(`${props.programId}`)
-}
-const toggleShowForm = () => {
-  showForm.value = !showForm.value
-  if (showForm.value) {
-    Matomo.sendEvent('result_detail', 'show_form', props.programId)
-  }
 }
 
 onBeforeMount(() => {

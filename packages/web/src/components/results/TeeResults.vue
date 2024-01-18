@@ -47,8 +47,7 @@
     </div>
 
     <!-- NO RESULTS -->
-    <TeeNoResults v-if="!countReFilteredPrograms" :image="trackConfig?.noResultsImage" :message="trackConfig?.noResultsMessage">
-    </TeeNoResults>
+    <TeeNoResults v-if="!countReFilteredPrograms" :image="trackConfig?.noResultsImage" :message="trackConfig?.noResultsMessage" />
 
     <!-- PROGRAMS CARDS -->
     <div
@@ -127,16 +126,16 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`TeeResults > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import { ref, onBeforeMount, computed } from 'vue'
+import { computed, onBeforeMount, ref } from 'vue'
 import { choicesStore } from '../../stores/choices'
 import { programsStore } from '../../stores/programs'
-import { getFrom, scrollToTop, consolidateAmounts } from '../../utils/helpers'
+import { consolidateAmounts, getFrom, scrollToTop } from '../../utils/helpers'
 import TeeResultsFilter from './TeeResultsFilter.vue'
 import TeeNoResults from './TeeNoResults.vue'
-import type { TrackResultsConfig, ProgramData, FilterSignal, TrackFilter, PropertyPath, UsedTrack } from '@/types/index'
+import type { FilterSignal, ProgramData, PropertyPath, TrackFilter, TrackResultsConfig, UsedTrack } from '@/types/index'
+import { ConditionOperators, TrackId } from '@/types/index'
 import { ProgramAidType } from '@/types/programTypes'
 import { navigationStore } from '@/stores/navigation'
-import { ConditionOperators, TrackId } from '@/types/index'
 import { useRoute, useRouter } from 'vue-router'
 import { RouteName } from '@/types/routeType'
 import Widget from '@/utils/widget'
@@ -168,7 +167,7 @@ const publicPath = MetaEnv.publicPath
 const filteredPrograms: ProgramData[] | undefined = programs.filterPrograms(props.tracksResults)
 
 const reFilteredPrograms = computed(() => {
-  const results = filteredPrograms?.filter((prog: ProgramData) => {
+  return filteredPrograms?.filter((prog: ProgramData) => {
     const boolArray = [true]
     for (const filterLabel in activeFilters.value) {
       const filterVal = activeFilters.value[filterLabel]
@@ -196,10 +195,8 @@ const reFilteredPrograms = computed(() => {
       }
       boolArray.push(bool)
     }
-    const checkFilters = boolArray.every((b) => !!b)
-    return checkFilters
+    return boolArray.every((b) => !!b)
   })
-  return results
 })
 
 const countFilteredPrograms = computed(() => {
@@ -270,6 +267,6 @@ const getCostInfos = (program: ProgramData) => {
 
 onBeforeMount(() => {
   // analytics / send event
-  analytics.sendEvent(props.trackId, route.name === RouteName.Catalog ? 'show_results_catalog' : 'show_results')
+  Matomo.sendEvent(props.trackId, route.name === RouteName.Catalog ? 'show_results_catalog' : 'show_results')
 })
 </script>
