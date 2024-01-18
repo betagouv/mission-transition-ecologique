@@ -317,6 +317,6 @@ const getCostInfos = (program: ProgramData) => {
 
 onBeforeMount(() => {
   // analytics / send event
-  analytics.sendEvent(props.trackId, 'show_results')
+  analytics.sendEvent(props.trackId, route.name === RouteName.Catalog ? 'show_results_catalog' : 'show_results')
 })
 </script>

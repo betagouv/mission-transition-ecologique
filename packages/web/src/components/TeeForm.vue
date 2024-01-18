@@ -1,34 +1,56 @@
 <template>
+  <!-- BACK TO FORM BTN -->
+  <button
+    v-show="formIsSent"
+    class="fr-btn fr-btn--tertiary-no-outline inline-flex fr-mb-3v fr-link fr-tee-form-arrow-back"
+    tertiary
+    noOutline
+    @click="formIsSent = !formIsSent"
+  >
+    <v-icon
+      scale="2"
+      name="ri-arrow-left-line"
+      aria-hidden="true"
+    ></v-icon>
+  </button>
+
+  <!-- DEBUGGING -->
+  <div
+    v-if="debug"
+    class="vue-debug"
+  >
+    <p>
+      requiredFields:
+      <code>{{ requiredFields }}</code>
+    </p>
+    <p>
+      canSaveFrom:
+      <code>{{ canSaveFrom }}</code>
+    </p>
+    <p>
+      formIsSent:
+      <code>{{ formIsSent }}</code>
+    </p>
+    <p>
+      hasNoRespError:
+      <code>{{ hasNoRespError }}</code>
+    </p>
+    <p>
+      formContainerRef:<br />
+      <code>{{ formContainerRef }}</code>
+    </p>
+  </div>
+
   <!-- FORM -->
   <div
-    v-show="!formIsSent"
-    class="fr-tee-form"
+    v-if="!formIsSent"
+    class="fr-tee-form fr-my-4v"
   >
-    <!-- DEBUGGING -->
-    <div
-      v-if="debug"
-      class="vue-debug"
-    >
-      <p>
-        requiredFields:
-        <code>
-          {{ requiredFields }}
-        </code>
-      </p>
-      <p>
-        canSaveFrom:
-        <code>
-          {{ canSaveFrom }}
-        </code>
-      </p>
-    </div>
-
     <!-- FORM LABEL -->
     <h3
       v-if="formOptions.label"
       class="fr-text-center"
     >
-      <!-- {{ formOptions.label[choices.lang] }} -->
       {{
         capitalizeFirstLetter(
           choices.ti(formOptions.label[choices.lang], {
@@ -39,7 +61,7 @@
       }}
     </h3>
 
-    <!-- FORM LABEL -->
+    <!-- FORM HINT -->
     <p
       v-if="formOptions.hint"
       class="fr-text-center fr-pb-10v"
@@ -47,8 +69,6 @@
       <!-- {{ formOptions.hint[choices.lang] }} -->
       {{ choices.ti(formOptions.hint[choices.lang], { operator: program['opérateur de contact'] }) }}
     </p>
-
-    <!-- {{ program }} -->
 
     <!-- FIELDS -->
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-2v">
@@ -135,7 +155,6 @@
         class="fr-col-12"
         style="display: grid; justify-content: right"
       >
-        <!-- :label="choices.t('next')"  -->
         <DsfrButton
           :label="choices.t('send')"
           :disabled="!canSaveFrom"
@@ -153,35 +172,31 @@
     v-if="formIsSent"
     class="fr-mt-5v fr-tee-form"
   >
-    <!-- FORM ALERT AFTER SENDING-->
-    <div :class="`fr-alert fr-alert--${hasNoRespError ? 'success' : 'error fr-tee-form-error'}`">
-      <h3
-        v-if="hasNoRespError"
-        class="fr-alert__title"
-      >
-        {{ choices.t(`form.sent`) }}
+    <!-- MESSAGE IF ERROR-->
+    <div
+      v-if="!hasNoRespError"
+      class="fr-text-center"
+    >
+      <p class="tee-form-response tee-form-response-error">
+        <v-icon
+          name="ri-close-circle-fill"
+          aria-hidden="true"
+          scale="3"
+        ></v-icon>
+      </p>
+      <h3 class="tee-form-response tee-form-response-error fr-mb-2v">
+        {{ choices.t(`form.sorryError`) }}
       </h3>
-      <div
-        v-else
-        class="fr-alert__title"
-      >
-        <p>
-          {{ choices.t(`form.notSent`) }}
-        </p>
-        <p>
-          <code
-            v-for="(resp, idx) in requestResponses"
-            :key="idx"
-            class="error-code fr-py-2v"
-          >
-            {{ choices.t('errors.error') }} {{ resp.status }} : "{{ resp.message }}"
-          </code>
-        </p>
-        <p>
-          {{ choices.t(`form.contactHelp`) }} <br />
-          {{ contactEmail }}
-        </p>
-      </div>
+      <h3 class="tee-form-response tee-form-response-error">
+        {{ choices.t(`form.notSent`) }}
+      </h3>
+      <h6 class="tee-form-response-blue fr-mt-15v fr-mb-3v">
+        {{ choices.t('form.nowWhat') }}
+      </h6>
+      <p class="tee-form-response-blue fr-mb-15v">
+        <span v-html="choices.ti(choices.t('form.errorMsg'), { email: contactEmail })"></span>
+      </p>
+
       <!-- DEBUGGING -->
       <div
         v-if="debug && requestResponses?.filter((resp) => resp.status && ![200, 201].includes(resp.status))"
@@ -202,24 +217,28 @@
       </div>
     </div>
 
-    <!-- NOW WHAT -->
-    <div v-if="hasNoRespError">
-      <h6 class="fr-mt-10v">
+    <!-- MESSAGE IF 200 -->
+    <div
+      v-if="hasNoRespError"
+      class="fr-text-center"
+    >
+      <p class="tee-form-response tee-form-response-blue">
+        <v-icon
+          name="ri-checkbox-circle-fill"
+          aria-hidden="true"
+          scale="3"
+        ></v-icon>
+      </p>
+      <h3 class="tee-form-response tee-form-response-blue">
+        {{ choices.t(`form.sent`) }}
+      </h3>
+      <h6 class="fr-mt-15v fr-mb-3v">
         {{ choices.t('form.nowWhat') }}
       </h6>
-      <p class="fr-mt-10v fr-mb-3v">
-        <span
-          class="fr-icon-arrow-right-line fr-mr-3v"
-          aria-hidden="true"
-        ></span>
-        <span v-html="choices.t('form.advisors')"></span>
-      </p>
-      <p class="fr-mb-3v">
-        <span
-          class="fr-icon-arrow-right-line fr-mr-3v"
-          aria-hidden="true"
-        ></span>
-        <span v-html="choices.t('form.phoneContact')"></span>
+      <p class="fr-mb-15v">
+        <span>
+          {{ choices.ti(choices.t('form.phoneContact'), { operator: program['opérateur de contact'] }) }}
+        </span>
       </p>
     </div>
   </div>
@@ -264,6 +283,8 @@ import { choicesStore } from '../stores/choices'
 import { analyticsStore } from '../stores/analytics'
 import type { ImportMetaEnv } from '../env'
 import DsfrButton from '@/components/button/DsfrButton.vue'
+import { RouteName } from '@/types/routeType'
+import { useRoute } from 'vue-router'
 
 const choices = choicesStore()
 const tracks = tracksStore()
@@ -282,6 +303,7 @@ interface Props {
   formOptions: FormOptions
   dataProps: DataProps
   program: ProgramData
+  formContainerRef?: HTMLElement | null | undefined
   debug?: boolean
 }
 const props = defineProps<Props>()
@@ -291,6 +313,8 @@ const requiredFields = ref<string[]>([])
 const formIsSent = ref<boolean>(false)
 const requestResponses = ref<ReqResp[]>()
 const isLoading = ref<boolean>(false)
+
+const route = useRoute()
 
 const canSaveFrom = computed(() => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return
@@ -380,12 +404,17 @@ const saveFormData = async () => {
       responses.push(resp)
     }
     requestResponses.value = responses
-    formIsSent.value = true
 
     // analytics / send event
-    analytics.sendEvent(props.trackId, 'send_form')
+    analytics.sendEvent(props.trackId, route.name === RouteName.CatalogDetail ? 'send_form_catalog' : 'send_form')
   } finally {
     isLoading.value = false
+    formIsSent.value = true
+    scrollToFormContainer()
   }
+}
+
+const scrollToFormContainer = () => {
+  props.formContainerRef?.scrollIntoView({ block: 'start' })
 }
 </script>

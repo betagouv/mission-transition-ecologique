@@ -1,7 +1,10 @@
+import { AxiosError } from 'axios'
+import ServiceNotFoundError from '../api/serviceNotFoundError'
+
 /**
  * Returns a value if it is an Error, or encapsulates it inside an Error otherwise
  *
- * Javascript `throw` keyword can throw anything, not only errors, most of the times we
+ * Javascript `throw` keyword can throw anything, not only errors, most of the time we
  * however expect errors when we use `try/catch`.
  *
  * This function helps to ensure that the `catch`ed object is indeed an error.
@@ -18,14 +21,17 @@ export function ensureError(value: unknown): Error {
     // Do nothing
   }
 
-  const error = new Error(`This value was thrown as is, not through an Error: ${stringified}`)
-  return error
+  return new Error(`This value was thrown as is, not through an Error: ${stringified}`)
 }
 
-export class CustomError extends Error {
-  constructor(...args: Array<string | undefined>) {
-    super(...args)
-    this.name = this.constructor.name
-    Error.captureStackTrace(this, CustomError)
+export function handleException(exception: unknown): Error {
+  const error = ensureError(exception)
+
+  if (error instanceof AxiosError) {
+    if (error.response && error.response.status == 404) {
+      return new ServiceNotFoundError(error.message)
+    }
   }
+
+  return error
 }
