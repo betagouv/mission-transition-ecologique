@@ -80,16 +80,8 @@
 
     <!-- DETAIL RESULT CARD -->
     <template v-if="programs.programDetail">
-      <TeeProgramDetail
-        :program-id="programs.programDetail"
-        :track-id="programs.programDetailConfig"
-      />
+      <TeeProgramDetail :program-id="programs.programDetail" :track-id="programs.programDetailConfig" />
     </template>
-
-    <!-- FOOTER -->
-    <div v-if="showFooterBool" class="fr-mt-10v">
-      <TeeCredits />
-    </div>
   </div>
 </template>
 
