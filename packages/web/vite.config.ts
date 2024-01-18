@@ -43,7 +43,18 @@ const currentConfig = libConfig[LIB]
 
 const viteServer: ServerOptions = {
   host: '0.0.0.0',
-  port: 4242
+  port: 4242,
+  headers: {
+    'Content-Security-Policy':
+      "default-src 'self';" +
+      "script-src 'self';" +
+      "style-src 'unsafe-inline';" +
+      "font-src 'self';" +
+      "img-src 'self' data:;" +
+      "frame-src 'self' https://place-des-entreprises.beta.gouv.fr;" +
+      "frame-ancestors 'self' https://place-des-entreprises.beta.gouv.fr;",
+    'X-Frame-Options': 'ALLOW-FROM https://place-des-entreprises.beta.gouv.fr'
+  }
 }
 
 export default defineConfig({
