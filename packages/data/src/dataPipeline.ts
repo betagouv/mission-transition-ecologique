@@ -1,4 +1,12 @@
 import * as dotenv from 'dotenv'
+// requiring path and fs modules
+import * as path from 'path'
+import * as fs from 'fs'
+import * as yaml from 'js-yaml'
+import { createFolderIfNotExists } from './helpers'
+
+import { Program, ProgramWithoutId } from './type/program'
+
 dotenv.config()
 
 /**
@@ -6,17 +14,6 @@ dotenv.config()
  * Parse data folder to build list of programs
  * Each program must must written as a distinct yaml file
  */
-
-// requiring path and fs modules
-import * as path from 'path'
-import * as fs from 'fs'
-import * as yaml from 'js-yaml'
-import { createFolderIfNotExists } from './helpers'
-import type { Dispositif as ProgramWithoutId } from './generated/program'
-
-export type { ProgramWithoutId }
-
-export type Program = ProgramWithoutId & { id: string }
 
 /** Reads all program data
  *

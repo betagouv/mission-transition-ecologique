@@ -16,12 +16,16 @@ export const frDict = {
   },
   form: {
     mandatory: 'Champs obligatoires',
-    sent: 'Formulaire envoyé',
-    notSent: "Problème lors de l'envoi du formulaire",
+    sent: 'Votre message a bien été envoyé !',
+    sorryError: 'Nous sommes désolés, une erreur est survenue.',
+    notSent: 'Votre message n’a pas pu être envoyé',
     contactHelp: 'Merci de nous contacter à',
     nowWhat: 'Et maintenant ?',
-    advisors: 'Nous allons <b>identifier le bon conseiller</b> près de chez vous',
-    phoneContact: 'Le conseiller vous <b>contactera par téléphone</b> dans les 5 jours (délai moyen de prise en charge)'
+    advisors: 'Nous allons identifier le bon conseiller près de chez vous',
+    phoneContact:
+      'Un conseiller {operator} vous contactera prochainement par mail ou par téléphone pour échanger sur votre besoin et répondre à vos questions',
+    errorMsg:
+      'Vous avez la possibilité de nous transmettre votre demande par mail à <a href="mailto:{email}">{email}</a> en précisant vos coordonnées, votre numéro de SIRET, le nom et le lien de l’aide qui vous intéresse.'
   },
   select: {
     selectOption: 'Sélectionnez une option'
@@ -59,7 +63,9 @@ export const frDict = {
     programProviders: 'Contact',
     programType: "Nature de l'aide",
     programDuration: 'Prestation',
-    programLoanDuration: 'Durée du prêt'
+    programLoanDuration: 'Durée du prêt',
+    programKnowMore: 'En savoir plus',
+    programAmIEligible: 'Suis-je éligible ?'
   },
   programCosts: {
     cost: 'Coût restant à charge',

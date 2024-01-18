@@ -1,5 +1,5 @@
 <template>
-  <div id="app" ref="trackElement">
+  <div ref="trackElement">
     <!-- HEADER -->
     <TeeHeader />
 
@@ -30,7 +30,7 @@ import { navigationStore } from './stores/navigation'
 
 import TeeHeader from './components/TeeHeader.vue'
 import TeeMatomo from './components/TeeMatomo.vue'
-import TeeAppFooter from './components/TeeAppFooter.vue'
+import TeeAppFooter from './components/TeeFooter.vue'
 import type { ProgramData } from '@/types'
 import jsonDataset from '../public/data/generated/dataset_out.json'
 

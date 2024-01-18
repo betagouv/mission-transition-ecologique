@@ -3,5 +3,12 @@
   "include": [
     "src/**/*",
     "tests/**/*"
-  ]
+  ],
+  "compilerOptions": {
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
+  }
 }
