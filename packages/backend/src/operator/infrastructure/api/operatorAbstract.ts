@@ -14,17 +14,17 @@ export default abstract class OperatorAbstract implements OperatorRepository {
 
   support = (program: Program) => (program['opérateur de contact'] as Operators) === this.operatorName
 
-  public abstract create: (opportunity: Opportunity, Program: Program) => Promise<Result<ContactId, Error>>
+  public abstract createOpportunity: (opportunity: Opportunity, Program: Program) => Promise<Result<ContactId, Error>>
 
   get operatorName(): Operators {
     return this._operatorName
   }
 
-  get baseUrl(): string {
+  protected get baseUrl(): string {
     return this._baseUrl
   }
 
-  get axios(): AxiosInstance {
+  protected get axios(): AxiosInstance {
     return this._axios
   }
 }
