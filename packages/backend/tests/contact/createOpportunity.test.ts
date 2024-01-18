@@ -1,6 +1,6 @@
-import { Result } from 'true-myth'
-import { ContactDetails, ContactId, OpportunityId, OpportunityDetails } from '../../src/contact/domain/types'
-import { createService } from '../../src/contact/domain/contactFeatures'
+import { Maybe, Result } from 'true-myth'
+import { ContactDetails, ContactId, OpportunityId, OpportunityDetails, OpportunityUpdateAttributes } from '../../src/contact/domain/types'
+import ContactFeatures from '../../src/contact/domain/contactFeatures'
 import { expectToBeErr, expectToBeOk } from '../testing'
 import { fakeOpportunity } from './testing'
 
@@ -12,25 +12,29 @@ beforeEach(() => {
   addOpportunityCalled = false
 })
 
-const dummyAddContact = async (_contact: ContactDetails, _optIn: true): Promise<Result<ContactId, Error>> => {
+const dummyAddContact = (_contact: ContactDetails, _optIn: true): Promise<Result<ContactId, Error>> => {
   addContactCalled = true
-  return Result.ok({ id: 1 })
+  return Promise.resolve(Result.ok({ id: 1 }))
 }
-const dummyAddOpportunity = async (_contactId: number, _opportunitiy: OpportunityDetails): Promise<Result<OpportunityId, Error>> => {
+const dummyAddOpportunity = (_contactId: number, _opportunitiy: OpportunityDetails): Promise<Result<OpportunityId, Error>> => {
   addOpportunityCalled = true
-  return Result.ok({ id: '1' })
+  return Promise.resolve(Result.ok({ id: '1' }))
+}
+
+const dummyUpdateOpportunity = (_opportunitiyId: OpportunityId, _opportunitiy: OpportunityUpdateAttributes): Promise<Maybe<Error>> => {
+  return Promise.resolve(Maybe.nothing<Error>())
 }
 
 describe(`
    WHEN creating a new opportunity
  EXPECT a contact to be created or updated, and an opportunity to be created`, () => {
-  const postNewOpportunity = createService({
-    addContact: dummyAddContact,
-    addOpportunity: dummyAddOpportunity
-  }).postNewOpportunity
+  const createOpportunity = new ContactFeatures(
+    { createOrUpdate: dummyAddContact },
+    { create: dummyAddOpportunity, update: dummyUpdateOpportunity }
+  ).createOpportunity
 
-  test('postNewOpportunity creates or updates a contact and creates an opportunity', async () => {
-    const result = await postNewOpportunity(fakeOpportunity(), true)
+  test('createOpportunity creates or updates a contact and creates an opportunity', async () => {
+    const result = await createOpportunity(fakeOpportunity(), true)
     expect(addContactCalled).toBe(true)
     expect(addOpportunityCalled).toBe(true)
     expectToBeOk(result)
@@ -40,36 +44,40 @@ describe(`
 describe(`
   WHEN creating a new opportunity
    AND contact creation/update or opportunity creation goes wrong
-EXPECT postNewOpportunity to return an error (wrapped in Result)`, () => {
+EXPECT createOpportunity to return an error (wrapped in Result)`, () => {
   class ContactError extends Error {}
   class OpportunityError extends Error {}
-  const addContactWithError = async (_contact: ContactDetails, _optIn: true): Promise<Result<ContactId, Error>> => {
-    return Result.err(new ContactError('contact error'))
+  const addContactWithError = (_contact: ContactDetails, _optIn: true): Promise<Result<ContactId, Error>> => {
+    return Promise.resolve(Result.err(new ContactError('contact error')))
   }
 
-  const addOpportunityWithError = async (_contactId: number, _opportunitiy: OpportunityDetails): Promise<Result<OpportunityId, Error>> => {
-    return Result.err(new OpportunityError('opportunity error'))
+  const addOpportunityWithError = (_contactId: number, _opportunitiy: OpportunityDetails): Promise<Result<OpportunityId, Error>> => {
+    return Promise.resolve(Result.err(new OpportunityError('opportunity error')))
   }
 
-  test('postNewOpportunity escalates contact creation/update error', async () => {
-    const postNewOpportunity = createService({
-      addContact: addContactWithError,
-      addOpportunity: dummyAddOpportunity
-    }).postNewOpportunity
+  test('createOpportunity escalates contact creation/update error', async () => {
+    const createOpportunity = new ContactFeatures(
+      {
+        createOrUpdate: addContactWithError
+      },
+      { create: dummyAddOpportunity, update: dummyUpdateOpportunity }
+    ).createOpportunity
 
-    const result = await postNewOpportunity(fakeOpportunity(), true)
+    const result = await createOpportunity(fakeOpportunity(), true)
 
     expectToBeErr(result)
     expect(result.error).toBeInstanceOf(ContactError)
   })
 
-  test('postNewOpportunity escalates opportunity creation error', async () => {
-    const postNewOpportunity = createService({
-      addContact: dummyAddContact,
-      addOpportunity: addOpportunityWithError
-    }).postNewOpportunity
+  test('createOpportunity escalates opportunity creation error', async () => {
+    const createOpportunity = new ContactFeatures(
+      {
+        createOrUpdate: dummyAddContact
+      },
+      { create: addOpportunityWithError, update: dummyUpdateOpportunity }
+    ).createOpportunity
 
-    const result = await postNewOpportunity(fakeOpportunity(), true)
+    const result = await createOpportunity(fakeOpportunity(), true)
 
     expectToBeErr(result)
     expect(result.error).toBeInstanceOf(OpportunityError)

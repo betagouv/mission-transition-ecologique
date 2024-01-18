@@ -10,10 +10,10 @@ export default class Operator {
     this._operatorRepositories = operatorRepositories
   }
 
-  async create(opportunity: Opportunity, program: Program): Promise<Result<ContactId, Error> | false> {
+  public async createOpportunity(opportunity: Opportunity, program: Program): Promise<Result<ContactId, Error> | false> {
     for (const operatorRepository of this._operatorRepositories) {
       if (operatorRepository.support(program)) {
-        return await operatorRepository.create(opportunity, program)
+        return await operatorRepository.createOpportunity(opportunity, program)
       }
     }
 

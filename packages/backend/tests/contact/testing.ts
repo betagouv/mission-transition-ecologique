@@ -2,11 +2,11 @@ import { ContactDetails, Opportunity, OpportunityDetails } from '../../src/conta
 
 export const fakeContact = (): ContactDetails => {
   return {
-    name: 'name',
-    forname: 'forname',
+    lastName: 'name',
+    firstName: 'forname',
     email: 'test@email.com',
-    phone: '0605040302',
-    siret: '83014132100034'
+    phoneNumber: '0605040302',
+    companySiret: '83014132100034'
   }
 }
 

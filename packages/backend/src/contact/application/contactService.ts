@@ -1,47 +1,25 @@
-import { addBrevoContact, updateBrevoContact } from '../infrastructure/api/brevo/brevo'
-import { ContactId, ContactInfo, ContactInfoBodyAttributes, ContactUpdateAttributes } from '../domain/types'
+import { Opportunity, OpportunityId } from '../domain/types'
 import ContactFeatures from '../domain/contactFeatures'
-import ProgramService from '../../program/application/programService'
-import OperatorService from '../../operator/application/operatorService'
 import { Result } from 'true-myth'
+import { addBrevoDeal, updateBrevoDeal } from '../infrastructure/api/brevo/brevoDeal'
+import { addBrevoContact } from '../infrastructure/api/brevo/brevoContact'
 
 export default class ContactService {
-  private _contact: Contact
+  private _contactFeatures: ContactFeatures
 
   constructor() {
-    this._contact = new ContactFeatures({
-      createOrUpdate: addBrevoContact
-    })
+    this._contactFeatures = new ContactFeatures(
+      {
+        createOrUpdate: addBrevoContact
+      },
+      { create: addBrevoDeal, update: updateBrevoDeal }
+    )
   }
 
-  public async createOpportunity(email: string, attributes: ContactInfoBodyAttributes) {
-    const contactInfoResult = await this._contact.create(email, attributes)
-
-    this._createOpportunityOnOperator(contactInfoResult, { email: email, attributes: attributes })
-
-    return contactInfoResult
-  }
-
-  public async update(contactId: ContactId, attributes: ContactUpdateAttributes) {
-    return this._contact.update(contactId, attributes)
-  }
-
-  private _createOpportunityOnOperator(contactInfoResult: Result<ContactId, Error>, contactInfo: ContactInfo) {
-    if (contactInfoResult.isErr) {
-      return
+  public async createOpportunity(opportunity: Opportunity, optIn: boolean): Promise<Result<OpportunityId, Error>> {
+    if (!optIn) {
+      return Result.err(new Error('opt-in is required for storing contact data'))
     }
-
-    const program = new ProgramService().getById(contactInfo.attributes.PROGRAM_ID)
-
-    if (program) {
-      void new OperatorService().createOpportunity(contactInfo, program).then(async (operatorResult) => {
-        if (false !== operatorResult) {
-          const contactUpdateResult = await new ContactService().update(contactInfoResult.value, { BPI_FRANCE: operatorResult.isOk })
-          if (contactUpdateResult.isErr) {
-            // TODO: Send an email to the admin: Contact not updated
-          }
-        }
-      })
-    }
+    return await this._contactFeatures.createOpportunity(opportunity, optIn)
   }
 }

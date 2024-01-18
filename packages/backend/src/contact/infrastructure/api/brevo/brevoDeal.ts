@@ -51,7 +51,7 @@ export const updateBrevoDeal: OpportunityRepository['update'] = async (
 const requestUpdateDeal = async (dealId: OpportunityId, attributes: DealUpdateAttributes): Promise<Maybe<Error>> => {
   const responseResult = await requestBrevoAPI({
     method: HttpMethod.PATCH,
-    url: `https://api.brevo.com/v3/crm/deals/${dealId}`,
+    url: `https://api.brevo.com/v3/crm/deals/${dealId.id}`,
     data: {
       attributes: attributes
     }

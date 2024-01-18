@@ -34,6 +34,7 @@ const requestCreateContact = async (listIds: number[], contact: ContactDetails, 
   const response = responseResult.value
   let contactId: Result<ContactId, Error>
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-enum-comparison
   if (response.status == axios.HttpStatusCode.Created) {
     contactId = Result.ok(response.data as ContactId)
   } else {
@@ -57,10 +58,10 @@ const parseListIds = (rawIds: string): number[] => {
 }
 function convertDomainToBrevoContact(contact: ContactDetails, optIn: true): ContactAttributes {
   return {
-    NOM: contact.name,
-    PRENOM: contact.forname,
-    TEL: contact.phone,
-    SIRET: contact.siret,
+    NOM: contact.lastName,
+    PRENOM: contact.firstName,
+    TEL: contact.phoneNumber,
+    SIRET: contact.companySiret,
     OPT_IN: optIn,
     ...(contact.companyName && { DENOMINATION: contact.companyName }),
     ...(contact.companySector && { SECTEUR_D_ACTIVITE: contact.companySector }),

@@ -3,11 +3,11 @@ import { Objectives, TrackHelpValue } from '@tee/web/src/types'
 export interface Opportunity extends ContactDetails, OpportunityDetails {}
 
 export interface ContactDetails {
-  name: string
-  forname: string
+  firstName: string
+  lastName: string
   email: string
-  phone: string
-  siret: string
+  phoneNumber: string
+  companySiret: string
   companyName?: string
   companySector?: string
   companySize?: Taille
@@ -18,10 +18,10 @@ export interface OpportunityDetails {
   message: string
   questionnaireRoute?: TrackHelpValue
   priorityObjectives?: Objectives[]
-  sentToBpifrance: boolean
+  sentToBpifrance?: boolean
 }
 
-export type OpportunityUpdateAttributes = Pick<OpportunityDetails, 'sentToBpifrance'>
+export type OpportunityUpdateAttributes = Required<Pick<OpportunityDetails, 'sentToBpifrance'>>
 
 export interface ContactId {
   id: number
@@ -33,7 +33,7 @@ export interface OpportunityId {
 
 // Taille de l'entreprise au sens communautaire
 export enum Taille {
-  PME,
-  ETI,
-  GE
+  PME = 'PME',
+  ETI = 'ETI',
+  GE = 'GE'
 }
