@@ -16,8 +16,8 @@
     <div class="fr-grid-row fr-grid-row-gutters">
       <div class="fr-col">
         <!-- BACK TO RESULTS BTN -->
-        <button class="fr-btn fr-btn--tertiary-no-outline inline-flex fr-mb-3v fr-link" tertiary noOutline @click="resetDetailResult">
-          <v-icon name="ri-arrow-left-line" aria-hidden="true"></v-icon>
+        <button class="fr-btn fr-btn--lg fr-btn--tertiary-no-outline fr-mb-3v fr-pl-2v" tertiary noOutline @click="resetDetailResult">
+          <v-icon name="ri-arrow-left-line" aria-hidden="true" class="fr-mr-2v"></v-icon>
           {{ choices.t('results.backToResults') }}
         </button>
 
