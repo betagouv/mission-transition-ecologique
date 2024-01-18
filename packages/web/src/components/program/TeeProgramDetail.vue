@@ -1,10 +1,16 @@
 <template>
   <!-- ALERT - PROGRAM NOT AVAILABLE ANYMORE -->
-  <div v-if="programIsNoLongerAvailable" class="fr-notice fr-tee-program-notice-alert fr-mb-0">
+  <div
+    v-if="programIsNoLongerAvailable"
+    class="fr-notice fr-tee-program-notice-alert fr-mb-0"
+  >
     <div class="fr-container">
       <div class="fr-notice__body fr-text-center">
         <p class="fr-notice__title">
-          <span class="fr-icon-information-line" aria-hidden="true"></span>
+          <span
+            class="fr-icon-information-line"
+            aria-hidden="true"
+          ></span>
           {{ choices.t('program.programNotAvailable') }}
         </p>
         <p class="fr-notice__subtitle">{{ choices.t('program.programEndValidity') }} : {{ program?.[`fin de validité`] }}</p>
@@ -16,8 +22,17 @@
     <div class="fr-grid-row fr-grid-row-gutters">
       <div class="fr-col">
         <!-- BACK TO RESULTS BTN -->
-        <button class="fr-btn fr-btn--lg fr-btn--tertiary-no-outline fr-mb-3v fr-pl-2v" tertiary noOutline @click="resetDetailResult">
-          <v-icon name="ri-arrow-left-line" aria-hidden="true" class="fr-mr-2v"></v-icon>
+        <button
+          class="fr-btn fr-btn--lg fr-btn--tertiary-no-outline fr-mb-3v fr-pl-2v"
+          tertiary
+          noOutline
+          @click="resetDetailResult"
+        >
+          <v-icon
+            name="ri-arrow-left-line"
+            aria-hidden="true"
+            class="fr-mr-2v"
+          ></v-icon>
           {{ choices.t('results.backToResults') }}
         </button>
 
@@ -25,7 +40,11 @@
         <div class="fr-grid-row fr-grid-row--gutters fr-mb-10v">
           <!-- IMAGE -->
           <div class="fr-col-md-4 fr-col-lg-3 fr-col-xl-3 fr-col-sm-hide fr-text-right fr-tee-program-detail-img">
-            <img class="fr-responsive-img" :src="`${choices.publicPath}${program?.illustration}`" :alt="`image / ${program?.titre}`" />
+            <img
+              class="fr-responsive-img"
+              :src="`${choices.publicPath}${program?.illustration}`"
+              :alt="`image / ${program?.titre}`"
+            />
 
             <!-- PROGRAM TYPE -->
             <ul class="fr-badges-group fr-tee-program-detail-img-badge">
@@ -43,11 +62,20 @@
             </p>
 
             <!-- PROGRAM RESUME / TEXT-->
-            <h6 v-if="trackConfig.config?.showProgramSubtitles" :style="`color: ${blockColor}`">
+            <h6
+              v-if="trackConfig.config?.showProgramSubtitles"
+              :style="`color: ${blockColor}`"
+            >
               {{ choices.t('program.programResume') }}
             </h6>
-            <h2 :style="`color: ${blockColor}`" v-html="program?.promesse"></h2>
-            <p style="color: #000091" v-html="program?.description"></p>
+            <h2
+              :style="`color: ${blockColor}`"
+              v-html="program?.promesse"
+            ></h2>
+            <p
+              style="color: #000091"
+              v-html="program?.description"
+            ></p>
             <!-- <p
               v-if="program['description longue']"
               style="color: #000091"
@@ -63,12 +91,18 @@
               @click="toggleShowForm"
               ref="modalOrigin"/> -->
 
-            <ProgramObjective v-if="program" :program="program"></ProgramObjective>
+            <ProgramObjective
+              v-if="program"
+              :program="program"
+            ></ProgramObjective>
           </div>
         </div>
 
         <!-- PROGRAM INFOS : PROVIDERS / TYPE / START / END -->
-        <div v-if="trackConfig.config?.showProgramInfos" class="fr-grid-row fr-grid-row--gutters fr-mb-5v">
+        <div
+          v-if="trackConfig.config?.showProgramInfos"
+          class="fr-grid-row fr-grid-row--gutters fr-mb-5v"
+        >
           <!-- PROGRAM GEO ZONES -->
           <!-- <div
             v-if="program.geo_zones"
@@ -81,7 +115,10 @@
           </div> -->
 
           <!-- PROGRAM COST | LOAN | AID -->
-          <div v-if="program?.[`coût de l'accompagnement`]" :class="columnTiles">
+          <div
+            v-if="program?.[`coût de l'accompagnement`]"
+            :class="columnTiles"
+          >
             <TeeTile
               class="tee-no-hover"
               :title="choices.t('programCosts.cost')"
@@ -90,7 +127,10 @@
             />
           </div>
 
-          <div v-if="program?.[`montant du financement`]" :class="columnTiles">
+          <div
+            v-if="program?.[`montant du financement`]"
+            :class="columnTiles"
+          >
             <TeeTile
               class="tee-no-hover"
               :title="choices.t('programCosts.aid')"
@@ -99,7 +139,10 @@
             />
           </div>
 
-          <div v-if="program?.[`montant de l'avantage fiscal`]" :class="columnTiles">
+          <div
+            v-if="program?.[`montant de l'avantage fiscal`]"
+            :class="columnTiles"
+          >
             <TeeTile
               class="tee-no-hover"
               :title="choices.t('programCosts.taxAdvantage')"
@@ -108,7 +151,10 @@
             />
           </div>
 
-          <div v-if="program?.[`montant du prêt`]" :class="columnTiles">
+          <div
+            v-if="program?.[`montant du prêt`]"
+            :class="columnTiles"
+          >
             <TeeTile
               class="tee-no-hover"
               :title="choices.t('programCosts.loan')"
@@ -128,7 +174,10 @@
           </div> -->
 
           <!-- PROGRAM DURATION -->
-          <div v-if="program?.[`durée de l'accompagnement`]" :class="columnTiles">
+          <div
+            v-if="program?.[`durée de l'accompagnement`]"
+            :class="columnTiles"
+          >
             <TeeTile
               class="tee-no-hover"
               :title="choices.t('program.programDuration')"
@@ -136,7 +185,10 @@
               :description="program[`durée de l'accompagnement`]"
             />
           </div>
-          <div v-if="program?.[`durée du prêt`]" :class="columnTiles">
+          <div
+            v-if="program?.[`durée du prêt`]"
+            :class="columnTiles"
+          >
             <TeeTile
               class="tee-no-hover"
               :title="choices.t('program.programLoanDuration')"
@@ -173,15 +225,24 @@
         </div>
 
         <!-- ELIGIBILITY -->
-        <ProgramEligibility v-if="program" :program="program"></ProgramEligibility>
+        <ProgramEligibility
+          v-if="program"
+          :program="program"
+        ></ProgramEligibility>
 
         <!-- LONG DESCRIPTION -->
-        <ProgramLongDescription v-if="program && program['description longue']" :program="program"></ProgramLongDescription>
+        <ProgramLongDescription
+          v-if="program && program['description longue']"
+          :program="program"
+        ></ProgramLongDescription>
       </div>
     </div>
 
     <!-- PROGRAM FORM -->
-    <div v-if="!programIsNoLongerAvailable" ref="TeeProgramFormContainer" class="fr-tee-form-block fr-tee-form-container">
+    <div
+      ref="TeeProgramFormContainer"
+      class="fr-tee-form-block fr-tee-form-container"
+    >
       <TeeForm
         v-if="program"
         :track-id="trackConfig.id"

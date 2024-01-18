@@ -1,7 +1,13 @@
 <template>
-  <div ref="trackElement" class="fr-container--fluid">
+  <div
+    ref="trackElement"
+    class="fr-container--fluid"
+  >
     <!-- HEADER -->
-    <p v-if="showHeaderBool && !disableWidget" class="fr-pb-0v fr-mb-0">
+    <p
+      v-if="showHeaderBool && !disableWidget"
+      class="fr-pb-0v fr-mb-0"
+    >
       <DsfrHeader
         logo-text="ADEME"
         service-title="Transition écologique des entreprises"
@@ -10,7 +16,10 @@
     </p>
 
     <!-- DEBUGGING -->
-    <div v-if="debugBool" class="vue-debug">
+    <div
+      v-if="debugBool"
+      class="vue-debug"
+    >
       <h5>DEBUG - WidgetApp</h5>
       <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
         <div class="fr-col-4">
@@ -33,15 +42,27 @@
     </div>
 
     <!-- MESSAGE & DEBUG SWITCH-->
-    <div v-if="showMessageBool || debugSwitchBool" class="fr-grid-row fr-grid-row--gutters">
+    <div
+      v-if="showMessageBool || debugSwitchBool"
+      class="fr-grid-row fr-grid-row--gutters"
+    >
       <!-- MESSAGE-->
-      <div v-if="showMessageBool" class="fr-col">
-        <h3 v-if="message" class="red-color">
+      <div
+        v-if="showMessageBool"
+        class="fr-col"
+      >
+        <h3
+          v-if="message"
+          class="red-color"
+        >
           <span v-html="message[choices.lang]" />
         </h3>
       </div>
       <!-- DEBUG SWITCH-->
-      <div v-if="debugSwitchBool" class="fr-col-md-3 fr-col-sm-6">
+      <div
+        v-if="debugSwitchBool"
+        class="fr-col-md-3 fr-col-sm-6"
+      >
         <DsfrToggleSwitch
           label="Debug mode"
           hint="Switch to activate / deactivate debugging mode"
@@ -52,7 +73,10 @@
     </div>
 
     <!-- MATOMO -->
-    <TeeMatomo v-if="!disableWidget" :debug="debugBool" />
+    <TeeMatomo
+      v-if="!disableWidget"
+      :debug="debugBool"
+    />
 
     <!-- QUESTIONNAIRE -->
     <div
@@ -61,14 +85,20 @@
       :class="`fr-container--fluid ${tracks.currentStep && tracks.currentStep > 1 ? 'fr-pt-10v' : ''}`"
     >
       <!-- TRACKS INTERFACES -->
-      <div ref="tee-app-tracks" class="fr-grid-row fr-grid-row-gutters fr-p-0 fr-justify-center">
+      <div
+        ref="tee-app-tracks"
+        class="fr-grid-row fr-grid-row-gutters fr-p-0 fr-justify-center"
+      >
         <!-- SIDEBAR MENU (FIL D'ARIANE)-->
         <div
           v-if="needSidebar && tracks.currentStep && tracks.currentStep > 1"
           class="fr-tee-add-padding fr-mt-4v fr-col-3 fr-col-md-4 fr-col-lg-4 fr-col-xl-2 fr-col-sm-hide"
           style="height: 100%"
         >
-          <TeeSidebar :used-tracks="tracks.usedTracks" :debug="debugBool" />
+          <TeeSidebar
+            :used-tracks="tracks.usedTracks"
+            :debug="debugBool"
+          />
         </div>
 
         <!-- TRACKS -->
@@ -101,7 +131,10 @@
         </div>
 
         <!-- DEBUGGING -->
-        <div v-if="debugBool" class="vue-debug fr-col-2 fr-pl-3v">
+        <div
+          v-if="debugBool"
+          class="vue-debug fr-col-2 fr-pl-3v"
+        >
           <h5>DEBUG - WidgetApp</h5>
           <div class="fr-grid-row fr-grid-row--gutters">
             <div class="fr-col-12">
@@ -147,7 +180,10 @@
               <code><pre>{{ tracks.tracksResults  }}</pre></code> -->
             </div>
 
-            <div v-if="false" class="fr-col-12">
+            <div
+              v-if="false"
+              class="fr-col-12"
+            >
               <h6>metaEnv :</h6>
               <code>
                 <pre>{{ metaEnv }}</pre>
@@ -174,7 +210,10 @@
     </template>
 
     <!-- FOOTER -->
-    <div v-if="showFooterBool" class="fr-mt-10v">
+    <div
+      v-if="showFooterBool"
+      class="fr-mt-10v"
+    >
       <TeeCredits />
     </div>
   </div>

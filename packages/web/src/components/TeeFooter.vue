@@ -1,8 +1,14 @@
 <template>
   <!-- DEBUGGING -->
-  <div v-if="debug" class="vue-debug">
+  <div
+    v-if="debug"
+    class="vue-debug"
+  >
     <h5>DEBUG - TeeAppFooter</h5>
-    <div v-if="true" class="fr-grid-row fr-grid-row--gutters">
+    <div
+      v-if="true"
+      class="fr-grid-row fr-grid-row--gutters"
+    >
       <div class="fr-col-3">
         <h6 class="fr-mb-1v">
           choices.lang : <code>{{ choices.lang }} </code>
@@ -15,7 +21,10 @@
   <div :class="`fr-footer ${stickToBottom ? 'tee-footer-bottom' : ''}`">
     <div class="fr-container--fluid fr-mx-20v">
       <!-- FOOTER BODY -->
-      <div class="fr-footer__body" style="">
+      <div
+        class="fr-footer__body"
+        style=""
+      >
         <div class="fr-footer__brand fr-enlarge-link">
           <p class="fr-logo">
             République
@@ -38,8 +47,16 @@
         <div class="fr-footer__content">
           <!-- <p class="fr-footer__content-desc">Lorem [...] elit ut.</p> -->
           <ul class="fr-footer__content-list">
-            <li v-for="link in gouvLinks" :key="link.label" class="fr-footer__content-item">
-              <a class="fr-footer__content-link" target="_blank" :href="link.href">
+            <li
+              v-for="link in gouvLinks"
+              :key="link.label"
+              class="fr-footer__content-item"
+            >
+              <a
+                class="fr-footer__content-link"
+                target="_blank"
+                :href="link.href"
+              >
                 {{ link.label }}
               </a>
             </li>
@@ -52,15 +69,38 @@
         <h4 class="fr-footer__partners-title">Nos partenaires</h4>
         <div class="fr-footer__partners-logos">
           <div class="fr-footer__partners-main">
-            <a class="footer__partners-link" target="_blank" style="background-image: none" :href="mainPartner.href">
-              <img class="fr-footer__logo" style="height: 5.625rem; width: 10rem" :src="mainPartner.img" :alt="mainPartner.label" />
+            <a
+              class="footer__partners-link"
+              target="_blank"
+              style="background-image: none"
+              :href="mainPartner.href"
+            >
+              <img
+                class="fr-footer__logo"
+                style="height: 5.625rem; width: 10rem"
+                :src="mainPartner.img"
+                :alt="mainPartner.label"
+              />
             </a>
           </div>
           <div class="fr-footer__partners-sub">
-            <ul v-for="partner in partners" :key="partner.label">
+            <ul
+              v-for="partner in partners"
+              :key="partner.label"
+            >
               <li>
-                <a class="footer__partners-link" target="_blank" style="background-image: none" :href="partner.href">
-                  <img class="fr-footer__logo" style="height: 5.625rem; width: 10rem" :src="partner.img" :alt="partner.label" />
+                <a
+                  class="footer__partners-link"
+                  target="_blank"
+                  style="background-image: none"
+                  :href="partner.href"
+                >
+                  <img
+                    class="fr-footer__logo"
+                    style="height: 5.625rem; width: 10rem"
+                    :src="partner.img"
+                    :alt="partner.label"
+                  />
                 </a>
               </li>
             </ul>
@@ -69,14 +109,33 @@
       </div>
 
       <!-- FOOTER BOTTOM -->
-      <div class="fr-footer__bottom fr-mt-5v" style="box-shadow: none">
+      <div
+        class="fr-footer__bottom fr-mt-5v"
+        style="box-shadow: none"
+      >
         <ul class="fr-footer__bottom-list">
-          <li v-for="link in mainLinks" :key="link.label" class="fr-footer__bottom-item">
-            <router-link v-if="link.to" :to="link.to" class="fr-footer__bottom-link">
+          <li
+            v-for="link in mainLinks"
+            :key="link.label"
+            class="fr-footer__bottom-item"
+          >
+            <router-link
+              v-if="link.to"
+              :to="link.to"
+              class="fr-footer__bottom-link"
+            >
               {{ link.label }}
-              <span v-if="link.icon" :class="link.icon" class="fr-icon--sm" />
+              <span
+                v-if="link.icon"
+                :class="link.icon"
+                class="fr-icon--sm"
+              />
             </router-link>
-            <a v-else :href="link.href" class="fr-footer__bottom-link">
+            <a
+              v-else
+              :href="link.href"
+              class="fr-footer__bottom-link"
+            >
               {{ link.label }}
             </a>
           </li>
@@ -86,12 +145,18 @@
         <div class="fr-footer__bottom-copy">
           <p>
             {{ choices.t('footer.thisApplicationAndIts') }}
-            <a :href="sourceCodeHref" class="fr-link-licence no-content-after">
+            <a
+              :href="sourceCodeHref"
+              class="fr-link-licence no-content-after"
+            >
               {{ choices.t('footer.sourceCode') }}
             </a>
             {{ choices.t('footer.areUnderlicence') }}
             &nbsp;
-            <a :href="licenceHref" class="fr-link-licence no-content-after">
+            <a
+              :href="licenceHref"
+              class="fr-link-licence no-content-after"
+            >
               {{ licenceName }}
             </a>
           </p>

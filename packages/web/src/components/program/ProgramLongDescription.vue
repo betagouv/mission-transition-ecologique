@@ -16,7 +16,11 @@
       :style="drawerOpen ? '-collapse: -165px; --collapse-max-height: none;' : '-collapse: -203px;'"
     >
       <div class="fr-pt-8v fr-pb-12v">
-        <p v-for="(paragraph, idx) in descriptionParagraphs" :key="`long-description-paragraph-${idx}`" class="fr-mb-0">
+        <p
+          v-for="(paragraph, idx) in descriptionParagraphs"
+          :key="`long-description-paragraph-${idx}`"
+          class="fr-mb-0"
+        >
           {{ paragraph || '&nbsp;' }}
         </p>
       </div>
