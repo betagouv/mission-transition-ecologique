@@ -1,10 +1,10 @@
 import { Program } from '../../program/domain/types'
 import { OperatorRepository } from './spi'
-import { Opportunity } from '../../contact/domain/types'
+import { Opportunity } from '../../opportunity/domain/types'
 import { Result } from 'true-myth'
 import { ContactId } from './types'
 
-export default class Operator {
+export default class OperatorFeatures {
   private readonly _operatorRepositories: OperatorRepository[]
   constructor(operatorRepositories: OperatorRepository[]) {
     this._operatorRepositories = operatorRepositories

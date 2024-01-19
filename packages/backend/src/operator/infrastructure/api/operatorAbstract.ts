@@ -1,10 +1,9 @@
-// import { ContactInfo } from '@/contact/domain/types'
 import { Result } from 'true-myth'
 import { Operators } from '@tee/data/src/generated/program'
 import { AxiosInstance } from 'axios'
 import { OperatorRepository } from '../../domain/spi'
 import { Program } from '../../../program/domain/types'
-import { Opportunity } from '../../../contact/domain/types'
+import { Opportunity } from '../../../opportunity/domain/types'
 import { ContactId } from '../../domain/types'
 
 export default abstract class OperatorAbstract implements OperatorRepository {

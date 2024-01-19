@@ -3,7 +3,7 @@ import { Body, Controller, Example, Post, Res, Route, SuccessResponse, TsoaRespo
 import { ErrorJSON, ValidateErrorJSON } from '../../common/controller/jsonError'
 import { Err } from 'true-myth/dist/es/result'
 import ServiceNotFoundError from '../../common/domain/api/serviceNotFoundError'
-import ContactService from '../application/contactService'
+import OpportunityService from '../application/opportunityService'
 
 interface OpportunityBody {
   opportunity: Opportunity
@@ -11,13 +11,10 @@ interface OpportunityBody {
 }
 
 @SuccessResponse('200', 'OK')
-@Route('contacts')
-export class ContactController extends Controller {
+@Route('opportunities')
+export class OpportunityController extends Controller {
   /**
-   * Add a new contact to TEE's Brevo service.
-   * Supply the email, the listId, and some attributes and receive the id of the contact created.
-   *
-   * @summary Adds a new contact to our Brevo list
+   * Create an opportunity of a company interested in a given program.
    *
    * @example requestBody: {"opportunity": {"name": "Dupont", "forname": "Camille", "email": "contact@multi.coop", "phone": "0605040302",
    * "siret": "83014132100034", "programId": "test-program", "message": "Bonjour !"}, "optIn": true}
@@ -30,23 +27,23 @@ export class ContactController extends Controller {
     @Res() _validationFailedResponse: TsoaResponse<422, ValidateErrorJSON>,
     @Res() notFoundResponse: TsoaResponse<404, ErrorJSON>
   ): Promise<OpportunityId | void> {
-    const dealResult = await new ContactService().createOpportunity(requestBody.opportunity, requestBody.optIn)
+    const opportunityResult = await new OpportunityService().createOpportunity(requestBody.opportunity, requestBody.optIn)
 
-    if (dealResult.isErr) {
-      this.getErrorResponseFromContact(dealResult, notFoundResponse, requestFailedResponse)
+    if (opportunityResult.isErr) {
+      this.getErrorResponseFromOpportunity(opportunityResult, notFoundResponse, requestFailedResponse)
 
       return
     }
 
-    return dealResult.value
+    return opportunityResult.value
   }
 
-  private getErrorResponseFromContact(
-    contactInfoResult: Err<OpportunityId, Error>,
+  private getErrorResponseFromOpportunity(
+    opportunityResult: Err<OpportunityId, Error>,
     notFoundResponse: TsoaResponse<404, ErrorJSON>,
     requestFailedResponse: TsoaResponse<500, ErrorJSON>
   ) {
-    const err = contactInfoResult.error
+    const err = opportunityResult.error
 
     if (err instanceof ServiceNotFoundError) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-return

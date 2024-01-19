@@ -1,6 +1,6 @@
 import { ProgramRepository } from './spi'
 
-export default class Program {
+export default class ProgramFeatures {
   private _programRepository: ProgramRepository
 
   constructor(programRepository: ProgramRepository) {

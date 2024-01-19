@@ -1,4 +1,4 @@
-import { Opportunity } from '../../../../contact/domain/types'
+import { Opportunity } from '../../../../opportunity/domain/types'
 import { Program } from '../../../../program/domain/types'
 import { bpiOpportunityPayload } from './types'
 

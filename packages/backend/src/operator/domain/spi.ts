@@ -1,6 +1,6 @@
 import { Result } from 'true-myth'
 import { Operators, Program } from '../../program/domain/types'
-import { Opportunity } from '../../contact/domain/types'
+import { Opportunity } from '../../opportunity/domain/types'
 import { ContactId } from './types'
 
 export interface OperatorRepository {

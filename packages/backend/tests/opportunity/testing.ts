@@ -1,4 +1,4 @@
-import { ContactDetails, Opportunity, OpportunityDetails } from '../../src/contact/domain/types'
+import { ContactDetails, Opportunity, OpportunityDetails } from '../../src/opportunity/domain/types'
 
 export const fakeContact = (): ContactDetails => {
   return {
