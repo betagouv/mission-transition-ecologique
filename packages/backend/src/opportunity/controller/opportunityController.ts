@@ -16,8 +16,8 @@ export class OpportunityController extends Controller {
   /**
    * Create an opportunity of a company interested in a given program.
    *
-   * @example requestBody: {"opportunity": {"name": "Dupont", "forname": "Camille", "email": "contact@multi.coop", "phone": "0605040302",
-   * "siret": "83014132100034", "programId": "test-program", "message": "Bonjour !"}, "optIn": true}
+   * @example requestBody: {"opportunity": {"firstName": "Camille", "lastName": "Dupont", "email": "contact@multi.coop", "phoneNumber": "0605040302",
+   * "companySiret": "83014132100034", "programId": "test-program", "message": "Bonjour !"}, "optIn": true}
    */
   @Example<OpportunityId>({ id: '42' })
   @Post()
