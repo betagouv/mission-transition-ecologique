@@ -54,7 +54,7 @@ export class BpiFrance extends OperatorAbstract {
       }
 
       const contactPayloadDTO = new opportunityPayloadDTO(opportunity, program).getPayload()
-      const response = await this._axios.post(this._contactUrl, contactPayloadDTO, {
+      const response = await this.axios.post(this._contactUrl, contactPayloadDTO, {
         headers: AxiosHeaders.makeBearerHeader(tokenResult.value.access_token)
       })
 
