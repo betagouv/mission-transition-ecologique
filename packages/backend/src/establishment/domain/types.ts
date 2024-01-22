@@ -1,5 +1,7 @@
 import CustomError from '../../common/domain/error/customError'
 
+export type Siret = string
+
 export interface Establishment {
   siren: string
   nic: string

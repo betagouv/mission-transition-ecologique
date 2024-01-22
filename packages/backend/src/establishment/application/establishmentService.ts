@@ -1,15 +1,21 @@
 import { createService } from '../domain/establishmentFeatures'
 import { getEstablishment } from '../infrastructure/api/sirene/sirene'
 import { EstablishmentRepository } from '../domain/spi'
+import type { Establishment, Siret } from '../domain/types'
+import { Result } from 'true-myth'
 
-/**
- * Defines how to access external data.
- * Uses the "Repository" pattern, see README.md
- */
-const establishmentRepository: EstablishmentRepository = {
-  get: getEstablishment
+export default class EstablishmentService {
+  private _establishmentFeatures
+
+  constructor() {
+    this._establishmentFeatures = createService(this.getEstablishmentRepository())
+  }
+
+  public getBySiret(siret: Siret): Promise<Result<Establishment, Error>> {
+    return this._establishmentFeatures.fetchEstablishment(siret)
+  }
+
+  private getEstablishmentRepository(): EstablishmentRepository {
+    return { get: getEstablishment }
+  }
 }
-
-const service = createService(establishmentRepository)
-
-export const fetchEstablishment = service.fetchEstablishment

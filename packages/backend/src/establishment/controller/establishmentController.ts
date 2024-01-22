@@ -1,5 +1,5 @@
 import { Body, Controller, Post, Route, SuccessResponse, TsoaResponse, Res, Example } from 'tsoa'
-import { fetchEstablishment } from '../application/establishmentService'
+import EstablishmentService from '../application/establishmentService'
 import { EstablishmentNotFoundError, Establishment } from '../domain/types'
 import { ErrorJSON, ValidateErrorJSON } from '../../common/controller/jsonError'
 
@@ -133,7 +133,7 @@ export class SireneController extends Controller {
   ): Promise<Establishment> {
     const requestedSiret = requestBody.siret
 
-    const establishmentResult = await fetchEstablishment(requestedSiret)
+    const establishmentResult = await new EstablishmentService().getBySiret(requestedSiret)
 
     if (establishmentResult.isErr) {
       const err = establishmentResult.error
