@@ -2,6 +2,9 @@
   "env": {
     "CANONICAL_HOST_URL": {
       "generator": "url"
+    },
+    "VITE_HOST_URL": {
+      "generator": "url"
     }
   }
 }
