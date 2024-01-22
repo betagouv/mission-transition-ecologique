@@ -1,6 +1,13 @@
 {
   "name": "tee",
   "env": {
+    "IS_REVIEW_APP": {
+      "value": "true"
+    },
+    "VITE_HOST_SERVEUR": {
+      "generator": "template",
+      "template" : "%APP%.osc-fr1.scalingo.io"
+    },
     "VITE_DEPLOY_URL": {
       "description": "The URL at which the site will be deployed",
       "generator": "url"
