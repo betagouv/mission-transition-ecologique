@@ -12,7 +12,7 @@ export const addBrevoDeal: OpportunityRepository['create'] = async (
   contactId: number,
   domainOpportunity: OpportunityDetails
 ): Promise<Result<OpportunityId, Error>> => {
-  const brevoDeal = mapDomainToBrevoDeal(domainOpportunity)
+  const brevoDeal = convertDomainToBrevoDeal(domainOpportunity)
 
   const dealId = await requestCreateDeal(domainOpportunity.programId, brevoDeal)
 
@@ -43,7 +43,7 @@ export const updateBrevoDeal: OpportunityRepository['update'] = async (
   dealId: OpportunityId,
   updateAttributes: OpportunityUpdateAttributes
 ): Promise<Maybe<Error>> => {
-  const brevoDeal = mapDomainToBrevoDealUpdate(updateAttributes)
+  const brevoDeal = convertDomainToBrevoDealUpdate(updateAttributes)
 
   return requestUpdateDeal(dealId, brevoDeal)
 }
@@ -76,7 +76,7 @@ const associateBrevoDealToContact = async (dealId: OpportunityId, contactId: num
   else return Maybe.nothing()
 }
 
-const mapDomainToBrevoDeal = (domainAttributes: OpportunityDetails): DealAttributes => {
+const convertDomainToBrevoDeal = (domainAttributes: OpportunityDetails): DealAttributes => {
   return {
     message: domainAttributes.message,
     parcours: mapQuestionnaireRoute(domainAttributes.questionnaireRoute),
@@ -84,7 +84,7 @@ const mapDomainToBrevoDeal = (domainAttributes: OpportunityDetails): DealAttribu
   }
 }
 
-const mapDomainToBrevoDealUpdate = (domainUpdateAttributes: OpportunityUpdateAttributes): DealUpdateAttributes => {
+const convertDomainToBrevoDealUpdate = (domainUpdateAttributes: OpportunityUpdateAttributes): DealUpdateAttributes => {
   return {
     envoy__bpifrance: domainUpdateAttributes.sentToBpifrance
   }
