@@ -11,7 +11,7 @@ import { listIcons } from '@/icons'
 const store = createPinia()
 
 const app = createApp(WebApp as Component)
-
+// Comment to have new commit
 app.use(VueDsfr, { icons: listIcons() })
 app.use(store)
 app.use(router)
