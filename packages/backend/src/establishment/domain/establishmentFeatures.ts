@@ -9,7 +9,7 @@ export default class EstablishmentFeatures {
     this._establishmentRepository = establishmentRepository
   }
 
-  public async fetchEstablishment(siret: Siret): Promise<Result<Establishment, Error>> {
+  public async getBySiret(siret: Siret): Promise<Result<Establishment, Error>> {
     return this._establishmentRepository.get(siret)
   }
 }

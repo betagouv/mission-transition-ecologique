@@ -12,7 +12,7 @@ export default class EstablishmentService {
   }
 
   public getBySiret(siret: Siret): Promise<Result<Establishment, Error>> {
-    return this._establishmentFeatures.fetchEstablishment(siret)
+    return this._establishmentFeatures.getBySiret(siret)
   }
 
   private getEstablishmentRepository(): EstablishmentRepository {
