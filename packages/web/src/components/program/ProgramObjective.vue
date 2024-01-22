@@ -4,7 +4,11 @@
       {{ getProgramObjectiveTitle() }}
     </h3>
     <div class="fr-tee-description-list">
-      <p v-for="(paragraph, idx) in program.objectifs" :key="`description-paragraph-${idx}`" class="fr-mb-6v">
+      <p
+        v-for="(paragraph, idx) in program.objectifs"
+        :key="`description-paragraph-${idx}`"
+        class="fr-mb-6v"
+      >
         <span class="fr-tee-description-paragraph-marker"> {{ idx + 1 }} | </span>
         <span class="fr-tee-description-paragraph-content">
           {{ paragraph }}
