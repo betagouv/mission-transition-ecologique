@@ -3,8 +3,7 @@ import { Maybe, Result } from 'true-myth'
 import { OpportunityRepository } from '../../../domain/spi'
 import { OpportunityId, OpportunityDetails, OpportunityUpdateAttributes } from '../../../domain/types'
 import { requestBrevoAPI } from './brevoRequest'
-import { DealAttributes, HttpMethod, BrevoQuestionnaireRoute, DealUpdateAttributes } from './types'
-import { TrackHelpValue } from '@tee/web/src/types'
+import { DealAttributes, HttpMethod, BrevoQuestionnaireRoute, DealUpdateAttributes, QuestionnaireRoute } from './types'
 
 // "Opportunities" are called "Deals" in Brevo
 
@@ -79,7 +78,7 @@ const associateBrevoDealToContact = async (dealId: OpportunityId, contactId: num
 const convertDomainToBrevoDeal = (domainAttributes: OpportunityDetails): DealAttributes => {
   return {
     message: domainAttributes.message,
-    parcours: mapQuestionnaireRoute(domainAttributes.questionnaireRoute),
+    parcours: convertQuestionnaireRoute(domainAttributes.questionnaireRoute),
     ...(domainAttributes.priorityObjectives && { objectifs_renseigns: domainAttributes.priorityObjectives.join(', ') })
   }
 }
@@ -90,13 +89,13 @@ const convertDomainToBrevoDealUpdate = (domainUpdateAttributes: OpportunityUpdat
   }
 }
 
-const mapQuestionnaireRoute = (questionnaireRoute: TrackHelpValue | undefined): BrevoQuestionnaireRoute => {
+const convertQuestionnaireRoute = (questionnaireRoute: QuestionnaireRoute | undefined): BrevoQuestionnaireRoute => {
   if (!questionnaireRoute) return BrevoQuestionnaireRoute.DIRECTORY
 
   switch (questionnaireRoute) {
-    case TrackHelpValue.Precise:
+    case QuestionnaireRoute.Precise:
       return BrevoQuestionnaireRoute.SPECIFIC_GOAL
-    case TrackHelpValue.Unknown:
+    case QuestionnaireRoute.Unknown:
       return BrevoQuestionnaireRoute.NO_SPECIFIC_GOAL
   }
 }

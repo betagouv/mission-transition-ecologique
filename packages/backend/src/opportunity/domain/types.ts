@@ -1,4 +1,5 @@
-import { Objectives, TrackHelpValue } from '@tee/web/src/types'
+import { Objectives } from '@tee/web/src/types'
+import { QuestionnaireRoute } from '../infrastructure/api/brevo/types'
 
 export interface Opportunity extends ContactDetails, OpportunityDetails {}
 
@@ -16,7 +17,7 @@ export interface ContactDetails {
 export interface OpportunityDetails {
   programId: string
   message: string
-  questionnaireRoute?: TrackHelpValue
+  questionnaireRoute?: QuestionnaireRoute
   priorityObjectives?: Objectives[]
   sentToBpifrance?: boolean
 }
