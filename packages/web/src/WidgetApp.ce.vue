@@ -1,6 +1,12 @@
 <template>
-  <div ref="trackElement" class="fr-container--fluid">
-    <div v-if="debugStore.is" class="vue-debug">
+  <div
+    ref="trackElement"
+    class="fr-container--fluid"
+  >
+    <div
+      v-if="debugStore.is"
+      class="vue-debug"
+    >
       <h5>DEBUG - WidgetApp</h5>
       <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
         <div class="fr-col-4">
@@ -23,9 +29,14 @@
     </div>
 
     <!-- MESSAGE & DEBUG SWITCH-->
-    <div v-if="debugStore.hasSwitch" class="fr-grid-row fr-grid-row--gutters">
+    <div
+      v-if="debugStore.hasSwitch"
+      class="fr-grid-row fr-grid-row--gutters"
+    >
       <!-- DEBUG SWITCH-->
-      <div class="fr-col-md-3 fr-col-sm-6">
+      <div
+        class="fr-col-md-3 fr-col-sm-6"
+      >
         <DsfrToggleSwitch
           label="Debug mode"
           hint="Switch to activate / deactivate debugging mode"
@@ -36,7 +47,8 @@
     </div>
 
     <!-- MATOMO -->
-    <TeeMatomo />
+    <TeeMatomo
+    />
 
     <!-- QUESTIONNAIRE -->
     <div
@@ -45,14 +57,18 @@
       :class="`fr-container--fluid ${tracks.currentStep && tracks.currentStep > 1 ? 'fr-pt-10v' : ''}`"
     >
       <!-- TRACKS INTERFACES -->
-      <div ref="tee-app-tracks" class="fr-grid-row fr-grid-row-gutters fr-p-0 fr-justify-center">
+      <div
+        ref="tee-app-tracks"
+        class="fr-grid-row fr-grid-row-gutters fr-p-0 fr-justify-center"
+      >
         <!-- SIDEBAR MENU (FIL D'ARIANE)-->
         <div
           v-if="needSidebar && tracks.currentStep && tracks.currentStep > 1"
           class="fr-tee-add-padding fr-mt-4v fr-col-3 fr-col-md-4 fr-col-lg-4 fr-col-xl-2 fr-col-sm-hide"
           style="height: 100%"
         >
-          <TeeSidebar />
+          <TeeSidebar
+          />
         </div>
 
         <!-- TRACKS -->
@@ -80,7 +96,10 @@
 
     <!-- DETAIL RESULT CARD -->
     <template v-if="programs.programDetail">
-      <TeeProgramDetail :program-id="programs.programDetail" :track-id="programs.programDetailConfig" />
+      <TeeProgramDetail
+        :program-id="programs.programDetail"
+        :track-id="programs.programDetailConfig"
+      />
     </template>
   </div>
 </template>

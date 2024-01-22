@@ -1,6 +1,9 @@
 <template>
   <!-- DEBUGGING -->
-  <div v-if="debugStore.is" class="vue-debug">
+  <div
+    v-if="debugStore.is"
+    class="vue-debug"
+  >
     <h5>DEBUG - TeeSidebar</h5>
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
       <div class="fr-col-12">
@@ -14,12 +17,18 @@
     </div>
   </div>
 
-  <template v-for="categ in usedCategories" :key="categ">
+  <template
+    v-for="categ in usedCategories"
+    :key="categ"
+  >
     <div class="fr-mb-6v">
       <div class="fr-mb-2v">
         {{ choices.t(`categories.${categ}`) }}
       </div>
-      <div v-for="usedTrack in usedTracksRegrouped[categ]" :key="usedTrack.id">
+      <div
+        v-for="usedTrack in usedTracksRegrouped[categ]"
+        :key="usedTrack.id"
+      >
         <div class="fr-mb-1v">
           <DsfrButton
             :label="tracks.getTrackTitle(usedTrack.id as TrackId, choices.lang)"
