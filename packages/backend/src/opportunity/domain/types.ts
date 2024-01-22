@@ -33,6 +33,7 @@ export interface OpportunityId {
 
 // Taille de l'entreprise au sens communautaire
 export enum Taille {
+  TPE = 'TPE',
   PME = 'PME',
   ETI = 'ETI',
   GE = 'GE'
