@@ -1,4 +1,4 @@
-export interface EtablissementDocument {
+export interface EstablishmentDocument {
   siren: string
   nic: string
   siret: string

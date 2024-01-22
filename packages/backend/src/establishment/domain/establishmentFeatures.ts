@@ -1,15 +1,15 @@
-import type { EtablissementRepository } from './spi'
+import type { EstablishmentRepository } from './spi'
 
 /** allows dependency injection */
-export const createService = (repo: EtablissementRepository) => {
+export const createService = (repo: EstablishmentRepository) => {
   /*
-   * fetchEtablissement passes through the Promise of the infrastructure layer
-   * (promise of Etablissement in case of success, Error otherwise)
+   * fetchEstablishment passes through the Promise of the infrastructure layer
+   * (promise of Establishment in case of success, Error otherwise)
    * @param siret: a SIRET. Its format is expected to be 14 digits.
    */
-  const fetchEtablissement = async (siret: string) => {
+  const fetchEstablishment = async (siret: string) => {
     return repo.get(siret)
   }
 
-  return { fetchEtablissement }
+  return { fetchEstablishment }
 }

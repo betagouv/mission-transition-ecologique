@@ -1,16 +1,16 @@
-import { EstablishmentNotFoundError, Etablissement } from '../../../domain/types'
+import { EstablishmentNotFoundError, Establishment } from '../../../domain/types'
 import axios, { AxiosError, AxiosResponse } from 'axios'
-import { EtablissementDocument } from './types'
+import { EstablishmentDocument } from './types'
 import { Result } from 'true-myth'
-import { EtablissementRepository } from '../../../domain/spi'
+import { EstablishmentRepository } from '../../../domain/spi'
 import AxiosHeaders from '../../../../common/infrastructure/api/axiosHeaders'
 import { ensureError } from '../../../../common/domain/error/errors'
 
 /**
- * getEtablissement reads the API token from an environment
+ * getEstablishment reads the API token from an environment
  * variable and get an Établissement by its siret from the Sirene API
  */
-export const getEtablissement: EtablissementRepository['get'] = async (siret) => {
+export const getEstablishment: EstablishmentRepository['get'] = async (siret) => {
   const token = process.env['SIRENE_API_TOKEN'] || ''
   return requestSireneAPI(token, siret)
 }
@@ -21,14 +21,14 @@ export const getEtablissement: EtablissementRepository['get'] = async (siret) =>
  * @arg token - API access token
  * @arg siret - siret number of the company to fetch
  */
-export const requestSireneAPI = async (token: string, siret: string): Promise<Result<Etablissement, Error>> => {
+export const requestSireneAPI = async (token: string, siret: string): Promise<Result<Establishment, Error>> => {
   const api_sirene_url = `https://api.insee.fr/entreprises/sirene/V3/siret/${siret}`
 
   try {
-    const response: AxiosResponse<EtablissementDocument> = await axios.get(api_sirene_url, {
+    const response: AxiosResponse<EstablishmentDocument> = await axios.get(api_sirene_url, {
       headers: makeHeaders(token)
     })
-    return Result.ok(response.data as Etablissement)
+    return Result.ok(response.data as Establishment)
   } catch (err: unknown) {
     let error = ensureError(err)
 

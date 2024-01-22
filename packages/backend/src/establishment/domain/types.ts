@@ -1,6 +1,6 @@
 import CustomError from '../../common/domain/error/customError'
 
-export interface Etablissement {
+export interface Establishment {
   siren: string
   nic: string
   siret: string

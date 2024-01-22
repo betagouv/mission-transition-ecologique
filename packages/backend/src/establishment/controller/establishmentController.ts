@@ -1,6 +1,6 @@
 import { Body, Controller, Post, Route, SuccessResponse, TsoaResponse, Res, Example } from 'tsoa'
-import { fetchEtablissement } from '../application/fetchEtablissement'
-import { EstablishmentNotFoundError, Etablissement } from '../domain/types'
+import { fetchEstablishment } from '../application/establishmentService'
+import { EstablishmentNotFoundError, Establishment } from '../domain/types'
 import { ErrorJSON, ValidateErrorJSON } from '../../common/controller/jsonError'
 
 interface EstablishmentNotFoundErrorJSON {
@@ -14,7 +14,7 @@ interface SiretBody {
   siret: string
 }
 
-const exampleEtablissement = {
+const exampleEstablishment = {
   siren: '830141321',
   nic: '00034',
   siret: '83014132100034',
@@ -123,20 +123,20 @@ export class SireneController extends Controller {
    * @example requestBody: {"siret": "83014132100034"}
    */
 
-  @Example<Etablissement>(exampleEtablissement)
+  @Example<Establishment>(exampleEstablishment)
   @Post('get_by_siret')
   public async health(
     @Body() requestBody: SiretBody,
     @Res() requestFailedResponse: TsoaResponse<500, ErrorJSON>,
     @Res() _validationFailedResponse: TsoaResponse<422, ValidateErrorJSON>,
     @Res() notFoundResponse: TsoaResponse<404, EstablishmentNotFoundErrorJSON>
-  ): Promise<Etablissement> {
+  ): Promise<Establishment> {
     const requestedSiret = requestBody.siret
 
-    const etablissementResult = await fetchEtablissement(requestedSiret)
+    const establishmentResult = await fetchEstablishment(requestedSiret)
 
-    if (etablissementResult.isErr) {
-      const err = etablissementResult.error
+    if (establishmentResult.isErr) {
+      const err = establishmentResult.error
 
       if (err instanceof EstablishmentNotFoundError) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-return
@@ -147,6 +147,6 @@ export class SireneController extends Controller {
       return requestFailedResponse(500, { message: `Server internal error` })
     }
 
-    return etablissementResult.value
+    return establishmentResult.value
   }
 }
