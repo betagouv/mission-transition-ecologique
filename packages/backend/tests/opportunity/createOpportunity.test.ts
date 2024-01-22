@@ -6,7 +6,7 @@ import {
   OpportunityDetails,
   OpportunityUpdateAttributes
 } from '../../src/opportunity/domain/types'
-import ContactFeatures from '../../src/opportunity/domain/contactFeatures'
+import OpportunityFeatures from '../../src/opportunity/domain/opportunityFeatures'
 import { expectToBeErr, expectToBeOk } from '../testing'
 import { fakeOpportunity } from './testing'
 import type { ContactRepository, OpportunityRepository } from '../../src/opportunity/domain/spi'
@@ -39,7 +39,7 @@ const dummyUpdateOpportunity = (_opportunitiyId: OpportunityId, _opportunitiy: O
 const dummyOpportunityRepository: OpportunityRepository = { create: dummyAddOpportunity, update: dummyUpdateOpportunity }
 
 const makeCreateOpportunityFun = (contactRepository: ContactRepository, opportunityRepository: OpportunityRepository) => {
-  return new ContactFeatures(contactRepository, opportunityRepository, [], ProgramsJson.getInstance()).createOpportunity
+  return new OpportunityFeatures(contactRepository, opportunityRepository, [], ProgramsJson.getInstance()).createOpportunity
 }
 
 describe(`

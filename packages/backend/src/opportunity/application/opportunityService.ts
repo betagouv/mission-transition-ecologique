@@ -1,5 +1,5 @@
 import { Opportunity, OpportunityId } from '../domain/types'
-import ContactFeatures from '../domain/contactFeatures'
+import OpportuntiyFeatures from '../domain/opportunityFeatures'
 import { Result } from 'true-myth'
 import { addBrevoDeal, updateBrevoDeal } from '../infrastructure/api/brevo/brevoDeal'
 import { addBrevoContact } from '../infrastructure/api/brevo/brevoContact'
@@ -10,10 +10,10 @@ import { ProgramRepository } from '../../program/domain/spi'
 import ProgramsJson from '../../program/infrastructure/programsJson'
 
 export default class OpportunityService {
-  private _contactFeatures: ContactFeatures
+  private _opportunityFeatures: OpportuntiyFeatures
 
   constructor() {
-    this._contactFeatures = new ContactFeatures(
+    this._opportunityFeatures = new OpportuntiyFeatures(
       this.getContactRepository(),
       this.getOpportunityRepository(),
       this.getOperatorRepositories(),
@@ -25,7 +25,7 @@ export default class OpportunityService {
     if (!optIn) {
       return Result.err(new Error('opt-in is required for storing contact data'))
     }
-    return await this._contactFeatures.createOpportunity(opportunity, optIn)
+    return await this._opportunityFeatures.createOpportunity(opportunity, optIn)
   }
 
   private getContactRepository(): ContactRepository {

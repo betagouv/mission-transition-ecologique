@@ -1,12 +1,12 @@
 import { Maybe, Result } from 'true-myth'
 import type { ContactRepository, OpportunityRepository } from './spi'
-import type { OpportunityId, Opportunity } from './types'
+import type { OpportunityId, Opportunity, ContactDetails } from './types'
 import OperatorFeatures from '../../operator/domain/operator'
 import { OperatorRepository } from '../../operator/domain/spi'
 import { ProgramRepository } from '../../program/domain/spi'
 import ProgramFeatures from '../../program/domain/programFeatures'
 
-export default class ContactFeatures {
+export default class OpportunityFeatures {
   private readonly _contactRepository: ContactRepository
   private readonly _opportunityRepository: OpportunityRepository
   private readonly _operatorRepositories: OperatorRepository[]
@@ -18,14 +18,17 @@ export default class ContactFeatures {
     operatorRepositories: OperatorRepository[],
     programRepository: ProgramRepository
   ) {
+    console.log('opportunityFeatures > constructor start')
     this._contactRepository = contactRepository
     this._opportunityRepository = opportunityRepository
     this._operatorRepositories = operatorRepositories
     this._programRepository = programRepository
+    console.log('opportunityFeatures > constructor end')
   }
 
   createOpportunity = async (opportunity: Opportunity, optIn: true): Promise<Result<OpportunityId, Error>> => {
-    const contactIdResult = await this._contactRepository.createOrUpdate(opportunity, optIn)
+    console.log('opportunityFeatures.ts > createOpportunity')
+    const contactIdResult = await this._contactRepository.createOrUpdate(opportunity as ContactDetails, optIn)
     if (contactIdResult.isErr) {
       return Result.err(contactIdResult.error)
     }

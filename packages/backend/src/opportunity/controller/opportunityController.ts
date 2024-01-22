@@ -30,7 +30,7 @@ export class OpportunityController extends Controller {
     const opportunityResult = await new OpportunityService().createOpportunity(requestBody.opportunity, requestBody.optIn)
 
     if (opportunityResult.isErr) {
-      this.getErrorResponseFromOpportunity(opportunityResult, notFoundResponse, requestFailedResponse)
+      this.throwErrorResponse(opportunityResult, notFoundResponse, requestFailedResponse)
 
       return
     }
@@ -38,7 +38,7 @@ export class OpportunityController extends Controller {
     return opportunityResult.value
   }
 
-  private getErrorResponseFromOpportunity(
+  private throwErrorResponse(
     opportunityResult: Err<OpportunityId, Error>,
     notFoundResponse: TsoaResponse<404, ErrorJSON>,
     requestFailedResponse: TsoaResponse<500, ErrorJSON>
