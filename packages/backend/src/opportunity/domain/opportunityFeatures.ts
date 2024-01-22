@@ -18,16 +18,13 @@ export default class OpportunityFeatures {
     operatorRepositories: OperatorRepository[],
     programRepository: ProgramRepository
   ) {
-    console.log('opportunityFeatures > constructor start')
     this._contactRepository = contactRepository
     this._opportunityRepository = opportunityRepository
     this._operatorRepositories = operatorRepositories
     this._programRepository = programRepository
-    console.log('opportunityFeatures > constructor end')
   }
 
   createOpportunity = async (opportunity: Opportunity, optIn: true): Promise<Result<OpportunityId, Error>> => {
-    console.log('opportunityFeatures.ts > createOpportunity')
     const contactIdResult = await this._contactRepository.createOrUpdate(opportunity as ContactDetails, optIn)
     if (contactIdResult.isErr) {
       return Result.err(contactIdResult.error)
