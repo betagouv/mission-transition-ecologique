@@ -1,6 +1,9 @@
 <template>
   <!-- DEBUGGING -->
-  <div v-if="debug" class="vue-debug">
+  <div
+    v-if="debug"
+    class="vue-debug"
+  >
     <h5>DEBUG - TeeTrack</h5>
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
       <div class="fr-col-3">
@@ -48,7 +51,10 @@
         </code>
       </div>
 
-      <div v-if="false" class="fr-col-6">
+      <div
+        v-if="false"
+        class="fr-col-6"
+      >
         <h4>optionsArray (values) :</h4>
         <code>
           <pre>{{ optionsArray.map((o) => o.value) }}</pre>
@@ -57,12 +63,20 @@
     </div>
   </div>
 
-  <div v-show="!isCompleted && track !== undefined" :id="trackId" :key="`track-${step}-${trackId}`" class="fr-grid-row">
+  <div
+    v-show="!isCompleted && track !== undefined"
+    :id="trackId"
+    :key="`track-${step}-${trackId}`"
+    class="fr-grid-row"
+  >
     <div :class="`fr-col${track?.imageRight ? ' fr-col-md-7 fr-col-lg-7 tee-track-has-image-right' : ''}`">
       <!-- UNCOMPLETED QUESTIONNAIRE -->
       <div :class="`fr-grid-row fr-grid-row--gutters ${track?.bgColor ? 'fr-p-5v fr-p-sm-8v fr-p-md-20v' : ''}`">
         <!-- CALLOUT (TEXT + IMAGE) -->
-        <div v-if="track?.callout" :class="`fr-col-12 ${track.callout.bigTitle ? 'fr-mb-10v fr-mx-0 fr-px-2v' : ''}`">
+        <div
+          v-if="track?.callout"
+          :class="`fr-col-12 ${track.callout.bigTitle ? 'fr-mb-10v fr-mx-0 fr-px-2v' : ''}`"
+        >
           <div
             :class="`${track.callout.bigTitle ? 'fr-px-2v' : 'fr-py-4v fr-px-4v'}`"
             :style="`background-color: ${track.callout.bgColor || 'transparent'}`"
@@ -74,7 +88,11 @@
                 class="fr-col-4 fr-col-sm-4 fr-col-md-5 tee-track-callout-img fr-pl-0 fr-p-2v fr-pr-0"
                 style="align-self: center"
               >
-                <img class="fr-responsive-img" :src="`${choices.publicPath}${track.callout.imageLeft}`" :alt="`image / callout`" />
+                <img
+                  class="fr-responsive-img"
+                  :src="`${choices.publicPath}${track.callout.imageLeft}`"
+                  :alt="`image / callout`"
+                />
               </div>
               <!-- CALLOUT TEXT -->
               <div :class="`${track.callout.bigTitle ? 'fr-col-8 fr-col-sm-8 fr-col-md-7' : 'fr-col fr-col-md-7 tee-track-callout-texts'}`">
@@ -87,10 +105,18 @@
                   {{ track.callout.header[choices.lang] }}
                 </h2>
                 <!-- CALLOUT TITLE / BIG TITLE -->
-                <h1 v-if="track.callout.bigTitle" class="fr-mb-3 tee-track-callout-big-title" :style="`${track.callout.titleStyle || ''}`">
+                <h1
+                  v-if="track.callout.bigTitle"
+                  class="fr-mb-3 tee-track-callout-big-title"
+                  :style="`${track.callout.titleStyle || ''}`"
+                >
                   {{ track.callout.title[choices.lang] }}
                 </h1>
-                <h3 v-else class="fr-callout__title tee-track-callout-title" :style="`${track.callout.titleStyle || ''}`">
+                <h3
+                  v-else
+                  class="fr-callout__title tee-track-callout-title"
+                  :style="`${track.callout.titleStyle || ''}`"
+                >
                   {{ track.callout.title[choices.lang] }}
                 </h3>
                 <!-- CALLOUT DESCRIPTION -->
@@ -102,45 +128,83 @@
                   {{ track.callout.description[choices.lang] }}
                 </p>
                 <!-- CALLOUT HINT -->
-                <p v-if="track.callout.hint" class="fr-mt-2v fr-mb-1v tee-track-callout-hint" style="color: var(--text-active-blue-france)">
+                <p
+                  v-if="track.callout.hint"
+                  class="fr-mt-2v fr-mb-1v tee-track-callout-hint"
+                  style="color: var(--text-active-blue-france)"
+                >
                   <i>
-                    <span v-if="track.callout.hintIcon" :class="track.callout.hintIcon" aria-hidden="true"> </span>
+                    <span
+                      v-if="track.callout.hintIcon"
+                      :class="track.callout.hintIcon"
+                      aria-hidden="true"
+                    >
+                    </span>
                     {{ track.callout.hint[choices.lang] }}
                   </i>
                 </p>
               </div>
               <!-- CALLOUT IMAGE RIGHT -->
-              <div v-if="track.callout.imageRight" class="fr-col-3" style="align-self: center">
-                <img class="fr-responsive-img" :src="`${choices.publicPath}${track.callout.imageRight}`" :alt="`image / callout`" />
+              <div
+                v-if="track.callout.imageRight"
+                class="fr-col-3"
+                style="align-self: center"
+              >
+                <img
+                  class="fr-responsive-img"
+                  :src="`${choices.publicPath}${track.callout.imageRight}`"
+                  :alt="`image / callout`"
+                />
               </div>
             </div>
           </div>
         </div>
 
         <!-- TRACK LABEL -->
-        <div v-if="step !== 1" :class="`fr-mt-3v ${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`">
-          <h3 :class="`${track?.info ? 'fr-mb-0' : 'fr-mb-2v'}`" :style="`${isTrackResults ? 'color: #000091; font-size: 2.75rem;' : ''}`">
+        <div
+          v-if="step !== 1"
+          :class="`fr-mt-3v ${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`"
+        >
+          <h3
+            :class="`${track?.info ? 'fr-mb-0' : 'fr-mb-2v'}`"
+            :style="`${isTrackResults ? 'color: #000091; font-size: 2.75rem;' : ''}`"
+          >
             {{ tracks.getTrackLabel(trackId, choices.lang) }}
           </h3>
         </div>
 
         <!-- TRACK INFOS -->
-        <div v-if="step !== 1 && track?.info" :class="`${isTrackResults ? 'fr-col-12 fr-col-offset-md-1' : 'fr-col-12'}`">
+        <div
+          v-if="step !== 1 && track?.info"
+          :class="`${isTrackResults ? 'fr-col-12 fr-col-offset-md-1' : 'fr-col-12'}`"
+        >
           <p class="fr-mb-2v">
-            <span class="fr-icon-info-fill" aria-hidden="true"></span>
+            <span
+              class="fr-icon-info-fill"
+              aria-hidden="true"
+            ></span>
             {{ track.info[choices.lang] }}
           </p>
         </div>
 
         <!-- TRACK HINT -->
-        <div v-if="step !== 1 && track?.hint" :class="`${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`">
-          <p :class="`fr-mb-0`" :style="`${isTrackResults ? 'color: #000091;' : ''}`">
+        <div
+          v-if="step !== 1 && track?.hint"
+          :class="`${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`"
+        >
+          <p
+            :class="`fr-mb-0`"
+            :style="`${isTrackResults ? 'color: #000091;' : ''}`"
+          >
             {{ track.hint[choices.lang] }}
           </p>
         </div>
 
         <!-- TRACK RESUME -->
-        <div v-if="step !== 1 && track?.resume" :class="`${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`">
+        <div
+          v-if="step !== 1 && track?.resume"
+          :class="`${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`"
+        >
           <p class="fr-mb-0">
             {{ track.resume[choices.lang] }}
           </p>
@@ -154,17 +218,39 @@
           :style="renderAs === trackComponents.Select ? 'display: none' : ''"
         >
           <!-- AS CARDS -->
-          <div v-if="renderAs === trackComponents.Cards" style="height: 99%">
-            <div class="fr-card fr-enlarge-link" @click="updateSelection(option, idx)">
-              <div v-if="option.imageTop" class="fr-card__header">
+          <div
+            v-if="renderAs === trackComponents.Cards"
+            style="height: 99%"
+          >
+            <div
+              class="fr-card fr-enlarge-link"
+              @click="updateSelection(option, idx)"
+            >
+              <div
+                v-if="option.imageTop"
+                class="fr-card__header"
+              >
                 <div class="fr-card__img">
-                  <img class="fr-responsive-img" :src="`${choices.publicPath}${option.imageTop}`" :alt="`image / ${option.label}`" />
+                  <img
+                    class="fr-responsive-img"
+                    :src="`${choices.publicPath}${option.imageTop}`"
+                    :alt="`image / ${option.label}`"
+                  />
                 </div>
               </div>
               <div class="fr-card__body">
                 <div class="fr-card__content">
-                  <p v-if="option.hintImage" class="fr-card__desc fr-mt-0 fr-mb-2v" style="order: 2">
-                    <span v-if="option.hintImageIcon" :class="option.hintImageIcon" aria-hidden="true"> </span>
+                  <p
+                    v-if="option.hintImage"
+                    class="fr-card__desc fr-mt-0 fr-mb-2v"
+                    style="order: 2"
+                  >
+                    <span
+                      v-if="option.hintImageIcon"
+                      :class="option.hintImageIcon"
+                      aria-hidden="true"
+                    >
+                    </span>
                     {{ option.hintImage[choices.lang] }}
                   </p>
                   <h3 class="fr-card__title">
@@ -172,17 +258,31 @@
                     {{ option.label?.[choices.lang] }}
                     <!-- </a> -->
                   </h3>
-                  <div v-if="isActiveChoice(option.value as number)" class="fr-card__start">
+                  <div
+                    v-if="isActiveChoice(option.value as number)"
+                    class="fr-card__start"
+                  >
                     <p class="fr-badge fr-badge--info fr-badge--no-icon fr-mb-4v">
                       {{ choices.t('selection.selected') }}
                     </p>
                   </div>
                 </div>
-                <p v-if="option.hint" class="fr-card__desc">
-                  <span v-if="option.hintIcon" :class="option.hintIcon" aria-hidden="true"> </span>
+                <p
+                  v-if="option.hint"
+                  class="fr-card__desc"
+                >
+                  <span
+                    v-if="option.hintIcon"
+                    :class="option.hintIcon"
+                    aria-hidden="true"
+                  >
+                  </span>
                   {{ option.hint[choices.lang] }}
                 </p>
-                <p v-if="option.resume" class="fr-card__desc">
+                <p
+                  v-if="option.resume"
+                  class="fr-card__desc"
+                >
                   {{ option.resume[choices.lang] }}
                 </p>
               </div>
@@ -190,7 +290,10 @@
           </div>
 
           <!-- AS BUTTONS -->
-          <div v-if="renderAs === trackComponents.Buttons && !isTrackOptionsInput(option)" class="fr-div-fixed-height">
+          <div
+            v-if="renderAs === trackComponents.Buttons && !isTrackOptionsInput(option)"
+            class="fr-div-fixed-height"
+          >
             <DsfrButton
               class="fr-btn-fullwidth fr-btn-fixed-height fr-btn-sm-align-left fr-btn-grey"
               :style="`outline-color: #929292; ${isActiveChoice(idx) ? 'background-color: #eeeeee' : ''}`"
@@ -202,7 +305,10 @@
           </div>
 
           <!-- AS BUTTON + BUTTON INPUT -->
-          <div v-if="renderAs === trackComponents.Buttons && isTrackOptionsInput(option)" class="fr-div-fixed-height">
+          <div
+            v-if="renderAs === trackComponents.Buttons && isTrackOptionsInput(option)"
+            class="fr-div-fixed-height"
+          >
             <TeeTrackButtonInput
               :track-id="trackId"
               :icon="getButtonIcon(idx)"
@@ -227,7 +333,10 @@
           </div>
 
           <!-- AS INPUT -->
-          <div v-if="renderAs === trackComponents.Input && isTrackOptionsInput(option)" style="height: 100%">
+          <div
+            v-if="renderAs === trackComponents.Input && isTrackOptionsInput(option)"
+            style="height: 100%"
+          >
             <TeeTrackInput
               :track-id="trackId"
               :option="option"
@@ -266,7 +375,10 @@
 
       <!-- AS SELECT -->
       <div v-if="track !== undefined && renderAs === trackComponents.Select">
-        <TeeTrackSelect :track="track" @update-selection="updateSelectionValueFromSelectSignal($event)" />
+        <TeeTrackSelect
+          :track="track"
+          @update-selection="updateSelectionValueFromSelectSignal($event)"
+        />
       </div>
 
       <!-- SEND / NEXT BUTTON -->
@@ -276,7 +388,10 @@
         style="justify-content: start"
       >
         <!-- BTN PREVIOUS -->
-        <div v-if="step > 1" class="fr-col-6 fr-col-md-5 fr-col-lg-4 fr-col-xl-3">
+        <div
+          v-if="step > 1"
+          class="fr-col-6 fr-col-md-5 fr-col-lg-4 fr-col-xl-3"
+        >
           <DsfrButton
             class="fr-btn-fullwidth fr-btn-sm-fullwidth"
             :label="choices.t('previous')"
@@ -300,8 +415,15 @@
     </div>
 
     <!-- TRACK IMAGE RIGHT IF ANY -->
-    <div v-if="track?.imageRight" class="fr-col-12 fr-col-md-5 fr-col-lg-5 tee-track-image-right">
-      <img class="fr-responsive-img" :src="`${choices.publicPath}${track.imageRight}`" :alt="`image / callout`" />
+    <div
+      v-if="track?.imageRight"
+      class="fr-col-12 fr-col-md-5 fr-col-lg-5 tee-track-image-right"
+    >
+      <img
+        class="fr-responsive-img"
+        :src="`${choices.publicPath}${track.imageRight}`"
+        :alt="`image / callout`"
+      />
     </div>
   </div>
 </template>
