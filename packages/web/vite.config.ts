@@ -48,7 +48,7 @@ const viteServer: ServerOptions = {
     'Content-Security-Policy':
       "default-src 'self';" +
       "script-src 'self';" +
-      "style-src 'unsafe-inline';" +
+      "style-src 'self' 'unsafe-inline';" +
       "font-src 'self';" +
       "img-src 'self' data:;" +
       "frame-src 'self' https://place-des-entreprises.beta.gouv.fr;" +
