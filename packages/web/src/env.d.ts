@@ -9,8 +9,6 @@ export interface ImportMetaEnv {
   readonly VITE_MATOMO_URL: string
   readonly VITE_MATOMO_APP_ID: number
   readonly VITE_TEE_BACKEND_URL: string
-  readonly VITE_SERVER_ENV?: string
-  readonly APP: string
   readonly BASE_URL: string
   readonly MODE: string
   readonly DEV: boolean
