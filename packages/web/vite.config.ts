@@ -59,7 +59,8 @@ const viteServer: ServerOptions = {
       "connect-src 'self' https://place-des-entreprises.beta.gouv.fr;" +
       "frame-src 'self' https://place-des-entreprises.beta.gouv.fr;" +
       "frame-ancestors 'self' https://place-des-entreprises.beta.gouv.fr;",
-    'X-Frame-Options': 'ALLOW-FROM https://place-des-entreprises.beta.gouv.fr'
+    'X-Frame-Options': 'ALLOW-FROM https://place-des-entreprises.beta.gouv.fr',
+    'X-Content-Type-Options': 'nosniff'
   }
 }
 
