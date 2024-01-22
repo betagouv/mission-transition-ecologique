@@ -10,7 +10,7 @@ import OpportunityFeatures from '../../src/opportunity/domain/opportunityFeature
 import { expectToBeErr, expectToBeOk } from '../testing'
 import { fakeOpportunity } from './testing'
 import type { ContactRepository, OpportunityRepository } from '../../src/opportunity/domain/spi'
-import ProgramsJson from '../../src/program/infrastructure/programsJson'
+import { ProgramRepository } from '../../src/program/domain/spi'
 
 let addContactCalled: boolean
 let addOpportunityCalled: boolean
@@ -39,7 +39,12 @@ const dummyUpdateOpportunity = (_opportunitiyId: OpportunityId, _opportunitiy: O
 const dummyOpportunityRepository: OpportunityRepository = { create: dummyAddOpportunity, update: dummyUpdateOpportunity }
 
 const makeCreateOpportunityFun = (contactRepository: ContactRepository, opportunityRepository: OpportunityRepository) => {
-  return new OpportunityFeatures(contactRepository, opportunityRepository, [], ProgramsJson.getInstance()).createOpportunity
+  return new OpportunityFeatures(contactRepository, opportunityRepository, [], dummyProgramRepository).createOpportunity
+}
+
+const dummyProgramRepository: ProgramRepository = {
+  programs: [],
+  getById: (_id: string) => undefined
 }
 
 describe(`
