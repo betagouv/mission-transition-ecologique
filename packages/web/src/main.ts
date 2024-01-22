@@ -12,6 +12,8 @@ const store = createPinia()
 
 const app = createApp(WebApp as Component)
 
+console.log(process.env)
+
 app.use(VueDsfr, { icons: listIcons() })
 app.use(store)
 app.use(router)
