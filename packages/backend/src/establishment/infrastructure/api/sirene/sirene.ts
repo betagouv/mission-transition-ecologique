@@ -28,7 +28,7 @@ export const requestSireneAPI = async (token: string, siret: string): Promise<Re
     const response: AxiosResponse<EstablishmentDocument> = await axios.get(api_sirene_url, {
       headers: makeHeaders(token)
     })
-    return Result.ok(response.data as Establishment)
+    return Result.ok(parseEstablishment(response.data))
   } catch (err: unknown) {
     let error = ensureError(err)
 
@@ -39,6 +39,26 @@ export const requestSireneAPI = async (token: string, siret: string): Promise<Re
     }
 
     return Result.err(error)
+  }
+}
+
+const parseEstablishment = (establishmentDocument: EstablishmentDocument): Establishment => {
+  const establishment = establishmentDocument.etablissement
+  return {
+    siren: establishment.siren,
+    nic: establishment.nic,
+    siret: establishment.siret,
+    creationDate: establishment.uniteLegale.dateCreationUniteLegale,
+    denomination: establishment.uniteLegale.denominationUniteLegale,
+    nafCode: establishment.uniteLegale.activitePrincipaleUniteLegale,
+    address: {
+      streetNumber: establishment.adresseEtablissement.numeroVoieEtablissement,
+      streetType: establishment.adresseEtablissement.typeVoieEtablissement,
+      streetLabel: establishment.adresseEtablissement.libelleVoieEtablissement,
+      zipCode: establishment.adresseEtablissement.codePostalEtablissement,
+      cityLabel: establishment.adresseEtablissement.libelleCommuneEtablissement,
+      cityCode: establishment.adresseEtablissement.codeCommuneEtablissement
+    }
   }
 }
 
