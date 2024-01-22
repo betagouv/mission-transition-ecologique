@@ -6,7 +6,7 @@ import vue from '@vitejs/plugin-vue'
 
 console.log('Starting ...')
 console.log('vite.config ...')
-console.log(process.env.NODE_ENV)
+console.log(process.env)
 
 const mode = process.env.NODE_ENV ?? 'development'
 const isProd = mode === 'production'
@@ -47,11 +47,16 @@ const viteServer: ServerOptions = {
   port: 4242,
   headers: {
     'Content-Security-Policy':
-      "default-src 'self';" +
+      "default-src 'none';" +
+      "base-uri 'self';" +
+      "form-action 'self';" +
       "script-src 'self';" +
+      "script-src-elem 'self';" +
       "style-src 'self' 'unsafe-inline';" +
       "font-src 'self';" +
       "img-src 'self' data:;" +
+      "object-src 'self';" +
+      "connect-src 'self' https://place-des-entreprises.beta.gouv.fr;" +
       "frame-src 'self' https://place-des-entreprises.beta.gouv.fr;" +
       "frame-ancestors 'self' https://place-des-entreprises.beta.gouv.fr;",
     'X-Frame-Options': 'ALLOW-FROM https://place-des-entreprises.beta.gouv.fr'
