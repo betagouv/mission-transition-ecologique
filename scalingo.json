@@ -2,7 +2,7 @@
   "name": "tee",
   "env": {
     "IS_REVIEW_APP": {
-      "value": true
+      "value": "true"
     },
     "VITE_DEPLOY_URL": {
       "description": "The URL at which the site will be deployed",
