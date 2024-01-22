@@ -1,14 +1,14 @@
-import { createService } from '../domain/establishmentFeatures'
+import EstablishmentFeatures from '../domain/establishmentFeatures'
 import { getEstablishment } from '../infrastructure/api/sirene/sirene'
 import { EstablishmentRepository } from '../domain/spi'
 import type { Establishment, Siret } from '../domain/types'
 import { Result } from 'true-myth'
 
 export default class EstablishmentService {
-  private _establishmentFeatures
+  private _establishmentFeatures: EstablishmentFeatures
 
   constructor() {
-    this._establishmentFeatures = createService(this.getEstablishmentRepository())
+    this._establishmentFeatures = new EstablishmentFeatures(this.getEstablishmentRepository())
   }
 
   public getBySiret(siret: Siret): Promise<Result<Establishment, Error>> {
