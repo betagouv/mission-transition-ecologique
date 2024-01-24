@@ -56,6 +56,7 @@ const retrieveExistingContactId = async (email: string): Promise<Result<ContactI
 const parseListIds = (rawIds: string): number[] => {
   return rawIds.split(',').map((id) => parseInt(id))
 }
+
 function convertDomainToBrevoContact(contact: ContactDetails, optIn: true): ContactAttributes {
   return {
     NOM: contact.lastName,
