@@ -27,7 +27,9 @@ const requestCreateContact = async (listIds: number[], contact: ContactDetails, 
     }
   })
 
-  if (responseResult.isErr) return Result.err(responseResult.error)
+  if (responseResult.isErr) {
+    return Result.err(responseResult.error)
+  }
 
   const response = responseResult.value
   let contactId: Result<ContactId, Error>
