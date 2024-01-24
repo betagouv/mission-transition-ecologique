@@ -65,14 +65,20 @@
         v-for="filter in trackConfig.filters"
         :key="filter.label"
         class="fr-col"
-      >  <TeeResultsFilter :filter="filter"
+      >
+        <TeeResultsFilter
+          :filter="filter"
           @update-filter="updateFilters"
         />
       </div>
     </div>
 
     <!-- NO RESULTS -->
-    <TeeNoResults v-if="!countReFilteredPrograms" :image="trackConfig?.noResultsImage" :message="trackConfig?.noResultsMessage" />
+    <TeeNoResults
+      v-if="!countReFilteredPrograms"
+      :image="trackConfig?.noResultsImage"
+      :message="trackConfig?.noResultsMessage"
+    />
 
     <!-- PROGRAMS CARDS -->
     <div

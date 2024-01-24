@@ -34,9 +34,7 @@
       class="fr-grid-row fr-grid-row--gutters"
     >
       <!-- DEBUG SWITCH-->
-      <div
-        class="fr-col-md-3 fr-col-sm-6"
-      >
+      <div class="fr-col-md-3 fr-col-sm-6">
         <DsfrToggleSwitch
           label="Debug mode"
           hint="Switch to activate / deactivate debugging mode"
@@ -47,8 +45,7 @@
     </div>
 
     <!-- MATOMO -->
-    <TeeMatomo
-    />
+    <TeeMatomo />
 
     <!-- QUESTIONNAIRE -->
     <div
@@ -67,8 +64,7 @@
           class="fr-tee-add-padding fr-mt-4v fr-col-3 fr-col-md-4 fr-col-lg-4 fr-col-xl-2 fr-col-sm-hide"
           style="height: 100%"
         >
-          <TeeSidebar
-          />
+          <TeeSidebar />
         </div>
 
         <!-- TRACKS -->
@@ -88,7 +84,12 @@
             }`"
             :class="`fr-p-0 fr-mb-${debugStore.is ? '12v' : '0'}`"
           >
-            <TeeTrack v-if="trackElement" :step="index + 1" :used-track="track" :track-element="trackElement" />
+            <TeeTrack
+              v-if="trackElement"
+              :step="index + 1"
+              :used-track="track"
+              :track-element="trackElement"
+            />
           </div>
         </div>
       </div>

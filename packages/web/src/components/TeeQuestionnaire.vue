@@ -1,13 +1,19 @@
 <template>
   <!-- QUESTIONNAIRE -->
-  <div ref="trackElement" class="fr-container--fluid">
+  <div
+    ref="trackElement"
+    class="fr-container--fluid"
+  >
     <div
       v-show="!programs.programDetail"
       id="trackElement"
       :class="`fr-container--fluid ${tracks.currentStep && tracks.currentStep > 1 ? 'fr-pt-10v' : ''}`"
     >
       <!-- TRACKS INTERFACES -->
-      <div ref="tee-app-tracks" class="fr-grid-row fr-grid-row-gutters fr-p-0 fr-justify-center">
+      <div
+        ref="tee-app-tracks"
+        class="fr-grid-row fr-grid-row-gutters fr-p-0 fr-justify-center"
+      >
         <!-- SIDEBAR MENU (FIL D'ARIANE)-->
         <div
           v-if="needSidebar && tracks.currentStep && tracks.currentStep > 1"
@@ -33,17 +39,28 @@
             }`"
             :class="`fr-p-0 fr-mb-${debugStore.is ? '12v' : '0'}`"
           >
-            <TeeTrack v-if="trackElement" :step="index + 1" :used-track="track" :track-element="trackElement" />
+            <TeeTrack
+              v-if="trackElement"
+              :step="index + 1"
+              :used-track="track"
+              :track-element="trackElement"
+            />
           </div>
         </div>
       </div>
     </div>
 
     <!-- DETAIL RESULT CARD -->
-    <div v-if="programs.programDetail" :class="`fr-container-fluid fr-px-6v fr-px-md-20v fr-mt-10v`">
+    <div
+      v-if="programs.programDetail"
+      :class="`fr-container-fluid fr-px-6v fr-px-md-20v fr-mt-10v`"
+    >
       <div class="fr-grid-row fr-grid-row-gutters">
         <div class="fr-col">
-          <TeeProgramDetail :program-id="programs.programDetail" :track-id="programs.programDetailConfig" />
+          <TeeProgramDetail
+            :program-id="programs.programDetail"
+            :track-id="programs.programDetailConfig"
+          />
         </div>
       </div>
     </div>
