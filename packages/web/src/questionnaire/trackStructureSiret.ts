@@ -20,10 +20,6 @@ import {
   // Entreprise
 } from '@/types'
 import type { Track } from '@/types'
-import type { ImportMetaEnv } from '@/env'
-
-const metaEnv: ImportMetaEnv = import.meta.env as ImportMetaEnv
-const TEE_BACKEND_URL = metaEnv.VITE_TEE_BACKEND_URL || 'https://tee-backend.osc-fr1.scalingo.io'
 
 const dataTarget = {
   siret: '',
@@ -77,7 +73,7 @@ export const siret: Track = {
           help: 'Get entreprise data from its SIRET number',
           helpDocumentation: 'https://tee-backend.osc-fr1.scalingo.io/api/docs',
           action: CallbackActions.RequestAPI,
-          url: `${TEE_BACKEND_URL}/api/insee/get_by_siret`,
+          url: '/api/insee/get_by_siret',
           // url: 'http://localhost:8001/api/insee/get_by_siret',
           method: CallbackMethods.Post,
           headers: {
