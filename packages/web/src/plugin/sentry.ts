@@ -12,8 +12,6 @@ export default class Sentry {
       options.dsn = MetaEnv.SENTRY_DSN
     }
 
-    console.log(options)
-
     SentryVue.init(options)
   }
 
