@@ -1,5 +1,5 @@
 import { AxiosRequestConfig } from 'axios'
-import { ContactDetails, Taille } from '../../../domain/types'
+import { ContactDetails, CompanySize } from '../../../domain/types'
 
 export enum HttpMethod {
   GET = 'get',
@@ -60,7 +60,7 @@ export interface ContactAttributes {
   OPT_IN: true
   DENOMINATION?: string
   SECTEUR_D_ACTIVITE?: string
-  TAILLE?: Taille
+  TAILLE?: CompanySize
 }
 
 export enum QuestionnaireRoute {
