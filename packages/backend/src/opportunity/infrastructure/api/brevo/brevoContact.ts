@@ -12,9 +12,7 @@ export const addBrevoContact: ContactRepository['createOrUpdate'] = async (conta
   const rawlistIds: string = process.env['BREVO_LIST_IDS'] || defaultListId
   const listIds = parseListIds(rawlistIds)
 
-  const contactId = requestCreateContact(listIds, contact, optIn)
-
-  return contactId
+  return requestCreateContact(listIds, contact, optIn)
 }
 
 const requestCreateContact = async (listIds: number[], contact: ContactDetails, optIn: true): Promise<Result<ContactId, Error>> => {
