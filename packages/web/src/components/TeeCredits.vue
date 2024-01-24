@@ -11,7 +11,7 @@
     >
       <div class="fr-col-3">
         <h6 class="fr-mb-1v">
-          choices.lang : <code>{{ choices.lang }} </code>
+          Translation.lang : <code>{{ Translation.lang }} </code>
         </h6>
       </div>
     </div>
@@ -81,7 +81,7 @@
         <!-- LICENCE LINKS -->
         <div class="fr-footer__bottom-copy">
           <p>
-            {{ choices.t('licence') }}
+            {{ Translation.t('licence') }}
             &nbsp;
             <a
               :href="licenceHref"
@@ -100,10 +100,8 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`TeeCredits > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import { choicesStore } from '../stores/choices'
+import Translation from '../utils/translation'
 import { RouteName } from '@/types/routeType'
-
-const choices = choicesStore()
 
 const licenceHref = 'https://github.com/betagouv/transition-ecologique-entreprises-widget/blob/main/LICENSE'
 const licenceName = 'GNU AGPL v.3'

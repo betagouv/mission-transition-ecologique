@@ -12,7 +12,7 @@
         value=""
         selected
       >
-        {{ choices.t('select.selectOption') }}
+        {{ Translation.t('select.selectOption') }}
       </option>
 
       <!-- VALUES -->
@@ -21,7 +21,7 @@
         :key="`${track.id}-select-option-${idx}`"
         :value="idx"
       >
-        {{ optionVal?.label[choices.lang] }}
+        {{ optionVal?.label[Translation.lang] }}
       </option>
     </select>
   </div>
@@ -34,14 +34,12 @@
 import type { Track, TrackOptionsSelect } from '@/types'
 
 import { ref } from 'vue'
-import { choicesStore } from '../../stores/choices'
+import Translation from '../../utils/translation'
 
 interface Props {
   track: Track
 }
 const props = defineProps<Props>()
-
-const choices = choicesStore()
 
 const activeOption = ref<TrackOptionsSelect>()
 

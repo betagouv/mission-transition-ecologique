@@ -116,7 +116,7 @@ import '@gouvfr/dsfr/dist/core/core.main.min.css'
 import { computed, onBeforeMount, ref, watch } from 'vue'
 
 import { tracksStore } from './stores/tracks'
-import { choicesStore } from './stores/choices'
+import Translation from '@/utils/translation'
 import { programsStore } from './stores/programs'
 import { navigationStore } from './stores/navigation'
 import { type ProgramData, TrackComponents, TrackId } from './types'
@@ -141,7 +141,6 @@ interface Props {
 const props = defineProps<Props>()
 
 const tracks = tracksStore()
-const choices = choicesStore()
 const programs = programsStore()
 const nav = navigationStore()
 const debugStore = useDebugStore()
@@ -194,7 +193,7 @@ const setupGlobal = () => {
 
   // set locale and message
   const locale = props.locale ?? 'fr'
-  choices.setLocale(locale)
+  Translation.setLocale(locale)
 }
 
 onBeforeMount(() => {

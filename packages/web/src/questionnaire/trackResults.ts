@@ -110,7 +110,7 @@ export const results: Track = {
   form: {
     value: 'contact_form.email',
     // label: { fr: 'Vous êtes intéressé.e par le dispositif {title} ?' },
-    label: { fr: '{prefixAide} {natureAide} vous intéresse ?' },
+    label: { fr: '' },
     hint: {
       fr: '👋 Envoyez votre demande, un conseiller {operator} vous contactera prochainement'
     },

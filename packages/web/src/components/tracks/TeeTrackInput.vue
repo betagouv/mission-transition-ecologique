@@ -28,7 +28,7 @@
     class="fr-label fr-mb-2v"
     :for="`input-${option.id}`"
   >
-    {{ option.label[choices.lang] }}
+    {{ option.label[Translation.lang] }}
   </label>
   <div
     id="header-search"
@@ -40,7 +40,7 @@
       v-model="inputValue"
       :name="`input-${option.id}`"
       :disabled="isLoading"
-      :placeholder="option?.placeholder?.[choices.lang]"
+      :placeholder="option?.placeholder?.[Translation.lang]"
       class="fr-input tee-input-large"
       type="search"
       @keyup.enter="processInput"
@@ -48,10 +48,10 @@
     <button
       class="fr-btn tee-btn-input-large"
       :disabled="isLoading"
-      :title="choices.t('input.search')"
+      :title="Translation.t('input.search')"
       @click="processInput"
     >
-      <!-- {{ choices.t('input.search') }} -->
+      <!-- {{ Translation.t('input.search') }} -->
     </button>
   </div>
   <!-- hint -->
@@ -60,7 +60,7 @@
     class="tee-input-hint fr-mt-4v"
     :for="`input-${option.id}`"
   >
-    <span v-html="option.hint[choices.lang]"> </span>
+    <span v-html="option.hint[Translation.lang]"> </span>
   </div>
 
   <!-- RESPONSE ERRORS -->
@@ -73,7 +73,7 @@
       style="display: block"
     >
       <!-- <span class="fr-icon-error-line" aria-hidden="true"></span> -->
-      {{ choices.t('enterprise.noStructureFound') }}
+      {{ Translation.t('enterprise.noStructureFound') }}
 
       <!-- DEBUGGING / ERROR CODE -->
       <span v-if="debugStore.is">
@@ -82,7 +82,7 @@
           v-for="(err, i) in requestErrors"
           :key="`resp-error-${i}`"
         >
-          {{ choices.t('errors.error') }} {{ err.status }}
+          {{ Translation.t('errors.error') }} {{ err.status }}
         </span>
         )
       </span>
@@ -90,7 +90,7 @@
       <br v-if="option.postResponses" />
       <span
         v-if="option.postResponses"
-        v-html="option.postResponses[choices.lang]"
+        v-html="option.postResponses[Translation.lang]"
       >
       </span>
     </p>
@@ -101,7 +101,7 @@
       <p>
         <b>
           <span class="fr-mr-2v">
-            {{ choices.t('errors.error') }} {{ err.status }}
+            {{ Translation.t('errors.error') }} {{ err.status }}
           </span>
         </b>
         <code>
@@ -117,7 +117,7 @@
     class="fr-mt-4v"
   >
     <h6 v-show="!hasSelection && requestResponses.length > 1">
-      {{ choices.t('enterprise.select') }}
+      {{ Translation.t('enterprise.select') }}
     </h6>
     <!-- CARDS -->
     <div
@@ -152,7 +152,7 @@
                 v-if="isSelected(resp)"
                 class="fr-ml-4v"
                 type="success"
-                :label="choices.t('selection.selected')"/> -->
+                :label="Translation.t('selection.selected')"/> -->
             </h3>
           </template>
 
@@ -213,13 +213,13 @@
     v-if="option.wildcard"
     class="fr-mt-8v"
   >
-    {{ choices.t('or') }}
+    {{ Translation.t('or') }}
     <a
       class="fr-link tee-input-wildcard"
       href="#trackElement"
       @click="goToNextTrack"
     >
-      {{ option.wildcard.label[choices.lang] }}
+      {{ option.wildcard.label[Translation.lang] }}
     </a>
   </p>
 
@@ -229,7 +229,7 @@
     <p
       v-if="!requestErrors.length && !hasSelection"
       class="fr-mt-3v fr-hint-text"
-      v-html="option.postResponses[choices.lang]">
+      v-html="option.postResponses[Translation.lang]">
     </p>
   </template> -->
 
@@ -262,7 +262,7 @@
 
 import { onBeforeMount, ref, toRaw } from 'vue'
 import { tracksStore } from '../../stores/tracks'
-import { choicesStore } from '../../stores/choices'
+import Translation from '../../utils/translation'
 import { type TrackOptionsInput, type ReqResp, type ReqError, type FormCallback, type ResultsMapping, TrackId } from '@/types'
 import { sendApiRequest } from '../../utils/requests'
 import { getFromResp, remapItem, cleanValue } from '../../utils/helpers'
@@ -277,7 +277,6 @@ interface Props {
 const props = defineProps<Props>()
 
 const tracks = tracksStore()
-const choices = choicesStore()
 const debugStore = useDebugStore()
 
 const inputValue = ref<string | number>()
@@ -338,7 +337,7 @@ const processInput = async () => {
       }
       let resp: ReqResp = {}
       if (callback.action === CallbackActions.RequestAPI) {
-        resp = await sendApiRequest(callback, { inputValue: value }, trackValues, props, choices.lang)
+        resp = await sendApiRequest(callback, { inputValue: value }, trackValues, props, Translation.lang)
       }
       if (resp.ok) {
         const item = remapItem(
@@ -349,7 +348,7 @@ const processInput = async () => {
           props,
           resp,
           [],
-          choices.lang
+          Translation.lang
         )
         responses.push({
           data: item,
