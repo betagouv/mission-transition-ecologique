@@ -1,7 +1,7 @@
 import { Maybe, Result } from 'true-myth'
 import type { ContactRepository, OpportunityRepository } from './spi'
 import type { OpportunityId, Opportunity, ContactDetails } from './types'
-import OperatorFeatures from '../../operator/domain/operator'
+import OperatorFeatures from '../../operator/domain/operatorFeatures'
 import { OperatorRepository } from '../../operator/domain/spi'
 import { ProgramRepository } from '../../program/domain/spi'
 import ProgramFeatures from '../../program/domain/programFeatures'
