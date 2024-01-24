@@ -1,5 +1,6 @@
 import { Objectives } from '@tee/web/src/types'
 import { QuestionnaireRoute } from '../infrastructure/api/brevo/types'
+import { type Operators } from '@tee/data/src/generated/program'
 
 export interface Opportunity extends ContactDetails, OpportunityDetails {}
 
@@ -16,13 +17,14 @@ export interface ContactDetails {
 
 export interface OpportunityDetails {
   programId: string
+  programContactOperator?: Operators
   message: string
   questionnaireRoute?: QuestionnaireRoute
   priorityObjectives?: Objectives[]
-  sentToBpifrance?: boolean
+  sentToOperator?: boolean
 }
 
-export type OpportunityUpdateAttributes = Required<Pick<OpportunityDetails, 'sentToBpifrance'>>
+export type OpportunityUpdateAttributes = Required<Pick<OpportunityDetails, 'sentToOperator'>>
 
 export interface ContactId {
   id: number

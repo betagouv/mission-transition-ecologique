@@ -1,5 +1,6 @@
 import { AxiosRequestConfig } from 'axios'
 import { CompanySize } from '../../../domain/types'
+import { Operators } from '@tee/data/src/generated/program'
 
 export enum HttpMethod {
   GET = 'get',
@@ -59,8 +60,9 @@ export interface DealAttributes {
   message: string
   parcours: BrevoQuestionnaireRoute
   objectifs_renseigns?: string
+  oprateur_de_contact?: Operators
 }
 
 export interface DealUpdateAttributes {
-  envoy__bpifrance: boolean
+  envoy: boolean
 }

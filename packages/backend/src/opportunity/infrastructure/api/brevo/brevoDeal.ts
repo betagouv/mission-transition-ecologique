@@ -67,13 +67,14 @@ const convertDomainToBrevoDeal = (domainAttributes: OpportunityDetails): DealAtt
   return {
     message: domainAttributes.message,
     parcours: convertQuestionnaireRoute(domainAttributes.questionnaireRoute),
-    ...(domainAttributes.priorityObjectives && { objectifs_renseigns: domainAttributes.priorityObjectives.join(', ') })
+    ...(domainAttributes.priorityObjectives && { objectifs_renseigns: domainAttributes.priorityObjectives.join(', ') }),
+    ...(domainAttributes.programContactOperator && { oprateur_de_contact: domainAttributes.programContactOperator })
   }
 }
 
 const convertDomainToBrevoDealUpdate = (domainUpdateAttributes: OpportunityUpdateAttributes): DealUpdateAttributes => {
   return {
-    envoy__bpifrance: domainUpdateAttributes.sentToBpifrance
+    envoy: domainUpdateAttributes.sentToOperator
   }
 }
 

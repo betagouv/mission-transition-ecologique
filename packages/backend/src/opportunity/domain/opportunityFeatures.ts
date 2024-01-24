@@ -5,6 +5,7 @@ import OperatorFeatures from '../../operator/domain/operatorFeatures'
 import { OperatorRepository } from '../../operator/domain/spi'
 import { ProgramRepository } from '../../program/domain/spi'
 import ProgramFeatures from '../../program/domain/programFeatures'
+import { Program } from '@tee/data/src/type/program'
 
 export default class OpportunityFeatures {
   private readonly _contactRepository: ContactRepository
@@ -30,6 +31,8 @@ export default class OpportunityFeatures {
       return Result.err(contactIdResult.error)
     }
 
+    opportunity = this._addContactOperatorToOpportunity(opportunity)
+
     const opportunityResult = await this._opportunityRepository.create(contactIdResult.value.id, opportunity)
 
     if (!opportunityResult.isErr) {
@@ -40,7 +43,7 @@ export default class OpportunityFeatures {
   }
 
   private _createOpportunityOnOperator(opportunityId: OpportunityId, opportunity: Opportunity) {
-    const program = new ProgramFeatures(this._programRepository).getById(opportunity.programId)
+    const program = this._getProgramById(opportunity.programId)
 
     if (program) {
       void new OperatorFeatures(this._operatorRepositories).createOpportunity(opportunity, program).then(async (operatorResult) => {
@@ -55,6 +58,18 @@ export default class OpportunityFeatures {
   }
 
   private async _updateOpportunitySentToOperator(opportunityId: OpportunityId, success: boolean): Promise<Maybe<Error>> {
-    return await this._opportunityRepository.update(opportunityId, { sentToBpifrance: success })
+    return await this._opportunityRepository.update(opportunityId, { sentToOperator: success })
+  }
+
+  private _addContactOperatorToOpportunity(opportunity: Opportunity): Opportunity {
+    const program = this._getProgramById(opportunity.programId)
+    if (program) {
+      opportunity.programContactOperator = program['opérateur de contact']
+    }
+    return opportunity
+  }
+
+  private _getProgramById(id: string): Program | undefined {
+    return new ProgramFeatures(this._programRepository).getById(id)
   }
 }
