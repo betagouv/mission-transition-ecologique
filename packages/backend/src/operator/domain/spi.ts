@@ -5,6 +5,6 @@ import { ContactId } from './types'
 
 export interface OperatorRepository {
   get operatorName(): Operators
-  createOpportunity: (contactInfo: Opportunity, program: Program) => Promise<Result<ContactId, Error>>
+  createOpportunity: (opporunity: Opportunity, program: Program) => Promise<Result<ContactId, Error>>
   support: (program: Program) => boolean
 }
