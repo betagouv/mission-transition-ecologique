@@ -1,6 +1,6 @@
-import axios, { AxiosInstance, AxiosResponse, RawAxiosRequestHeaders } from 'axios'
+import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from 'axios'
 import { Result } from 'true-myth'
-import type { BrevoRequestData } from './types'
+import { HttpMethod, BrevoPostContactPayload, BrevoPostDealPayload, BrevoPatchDealPayload, BrevoLinkDealPayload } from './types'
 import AxiosHeaders from '../../../../common/infrastructure/api/axiosHeaders'
 import { handleException } from '../../../../common/domain/error/errors'
 
@@ -16,7 +16,46 @@ export default class BrevoAPI {
     })
   }
 
-  public async request(data: BrevoRequestData): Promise<Result<AxiosResponse, Error>> {
+  public PostContact(payload: BrevoPostContactPayload): Promise<Result<AxiosResponse, Error>> {
+    return this._request({
+      method: HttpMethod.POST,
+      url: '/contacts',
+      data: payload
+    })
+  }
+
+  public GetContact(email: string): Promise<Result<AxiosResponse, Error>> {
+    return this._request({
+      method: HttpMethod.GET,
+      url: `/contacts/${email}`
+    })
+  }
+
+  public PostDeal(payload: BrevoPostDealPayload): Promise<Result<AxiosResponse, Error>> {
+    return this._request({
+      method: HttpMethod.POST,
+      url: '/crm/deals',
+      data: payload
+    })
+  }
+
+  public LinkDeal(dealId: string, payload: BrevoLinkDealPayload): Promise<Result<AxiosResponse, Error>> {
+    return this._request({
+      method: HttpMethod.PATCH,
+      url: `/crm/deals/link-unlink/${dealId}`,
+      data: payload
+    })
+  }
+
+  public PatchDeal(dealId: string, payload: BrevoPatchDealPayload): Promise<Result<AxiosResponse, Error>> {
+    return this._request({
+      method: HttpMethod.PATCH,
+      url: `/crm/deals/${dealId}`,
+      data: payload
+    })
+  }
+
+  private async _request(data: AxiosRequestConfig): Promise<Result<AxiosResponse, Error>> {
     try {
       const response: AxiosResponse = await this.axios.request(data)
       return Result.ok(response)

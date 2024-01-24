@@ -1,5 +1,5 @@
 import { AxiosRequestConfig } from 'axios'
-import { ContactDetails, CompanySize } from '../../../domain/types'
+import { CompanySize } from '../../../domain/types'
 
 export enum HttpMethod {
   GET = 'get',
@@ -9,48 +9,29 @@ export enum HttpMethod {
   DELETE = 'delete'
 }
 
-export type BrevoRequestData = BrevoPostContactData | BrevoGetContactData | BrevoPostDeal | BrevoLinkDealData | BrevoPatchDealData
+// Payloads
 
-export interface BrevoPostContactData extends AxiosRequestConfig {
-  method: HttpMethod.POST
-  url: '/contacts'
-  data: {
-    email: string
-    updateEnabled: true
-    listIds: number[]
-    attributes: ContactAttributes
-  }
+export interface BrevoPostContactPayload extends AxiosRequestConfig {
+  email: string
+  updateEnabled: true
+  listIds: number[]
+  attributes: ContactAttributes
 }
 
-export interface BrevoGetContactData extends AxiosRequestConfig {
-  method: HttpMethod.GET
-  url: `/contacts/${string}`
+export interface BrevoPostDealPayload extends AxiosRequestConfig {
+  name: string
+  attributes: DealAttributes
 }
 
-export interface BrevoPostDeal extends AxiosRequestConfig {
-  method: HttpMethod.POST
-  url: '/crm/deals'
-  data: {
-    name: string
-    attributes: DealAttributes
-  }
+export interface BrevoLinkDealPayload extends AxiosRequestConfig {
+  linkContactIds: number[]
 }
 
-export interface BrevoLinkDealData extends AxiosRequestConfig {
-  method: HttpMethod.PATCH
-  url: `/crm/deals/link-unlink/${string}`
-  data: {
-    linkContactIds: number[]
-  }
+export interface BrevoPatchDealPayload extends AxiosRequestConfig {
+  attributes: DealUpdateAttributes
 }
 
-export interface BrevoPatchDealData extends AxiosRequestConfig {
-  method: HttpMethod.PATCH
-  url: `/crm/deals/${string}`
-  data: {
-    attributes: DealUpdateAttributes
-  }
-}
+// Brevo custom attributes
 
 export interface ContactAttributes {
   NOM: string
@@ -82,8 +63,4 @@ export interface DealAttributes {
 
 export interface DealUpdateAttributes {
   envoy__bpifrance: boolean
-}
-
-export interface UpdateContactBody {
-  attributes: ContactDetails
 }

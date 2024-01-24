@@ -3,7 +3,7 @@ import { Maybe, Result } from 'true-myth'
 import { OpportunityRepository } from '../../../domain/spi'
 import { OpportunityId, OpportunityDetails, OpportunityUpdateAttributes } from '../../../domain/types'
 import BrevoAPI from './brevoAPI'
-import { DealAttributes, HttpMethod, BrevoQuestionnaireRoute, DealUpdateAttributes, QuestionnaireRoute } from './types'
+import { DealAttributes, BrevoQuestionnaireRoute, DealUpdateAttributes, QuestionnaireRoute } from './types'
 
 // "Opportunities" are called "Deals" in Brevo
 
@@ -25,13 +25,9 @@ export const addBrevoDeal: OpportunityRepository['create'] = async (
 }
 
 const requestCreateDeal = async (name: string, attributes: DealAttributes): Promise<Result<OpportunityId, Error>> => {
-  const responseResult = await new BrevoAPI().request({
-    method: HttpMethod.POST,
-    url: '/crm/deals',
-    data: {
-      name: name,
-      attributes: attributes
-    }
+  const responseResult = await new BrevoAPI().PostDeal({
+    name: name,
+    attributes: attributes
   })
 
   const dealId = responseResult.map((r) => r.data as OpportunityId)
@@ -48,12 +44,8 @@ export const updateBrevoDeal: OpportunityRepository['update'] = async (
 }
 
 const requestUpdateDeal = async (dealId: OpportunityId, attributes: DealUpdateAttributes): Promise<Maybe<Error>> => {
-  const responseResult = await new BrevoAPI().request({
-    method: HttpMethod.PATCH,
-    url: `/crm/deals/${dealId.id}`,
-    data: {
-      attributes: attributes
-    }
+  const responseResult = await new BrevoAPI().PatchDeal(dealId.id, {
+    attributes: attributes
   })
 
   return Maybe.of(responseResult.isErr ? responseResult.error : null)
@@ -63,12 +55,8 @@ const associateBrevoDealToContact = async (dealId: OpportunityId, contactId: num
   const dealIdStr = dealId.id
 
   // associate brevo deal to contact
-  const responsePatch = await new BrevoAPI().request({
-    method: HttpMethod.PATCH,
-    url: `/crm/deals/link-unlink/${dealIdStr}`,
-    data: {
-      linkContactIds: [contactId]
-    }
+  const responsePatch = await new BrevoAPI().LinkDeal(dealIdStr, {
+    linkContactIds: [contactId]
   })
 
   if (responsePatch.isErr) return Maybe.of(responsePatch.error)

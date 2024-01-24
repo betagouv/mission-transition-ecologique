@@ -14,10 +14,10 @@ export default class OpportunityService {
 
   constructor() {
     this._opportunityFeatures = new OpportuntiyFeatures(
-      this.getContactRepository(),
-      this.getOpportunityRepository(),
-      this.getOperatorRepositories(),
-      this.getProgramRepository()
+      this._getContactRepository(),
+      this._getOpportunityRepository(),
+      this._getOperatorRepositories(),
+      this._getProgramRepository()
     )
   }
 
@@ -28,21 +28,21 @@ export default class OpportunityService {
     return await this._opportunityFeatures.createOpportunity(opportunity, optIn)
   }
 
-  private getContactRepository(): ContactRepository {
+  private _getContactRepository(): ContactRepository {
     return {
       createOrUpdate: addBrevoContact
     }
   }
 
-  private getOpportunityRepository(): OpportunityRepository {
+  private _getOpportunityRepository(): OpportunityRepository {
     return { create: addBrevoDeal, update: updateBrevoDeal }
   }
 
-  private getOperatorRepositories(): OperatorRepository[] {
+  private _getOperatorRepositories(): OperatorRepository[] {
     return [new BpiFrance()]
   }
 
-  private getProgramRepository(): ProgramRepository {
+  private _getProgramRepository(): ProgramRepository {
     return ProgramsJson.getInstance()
   }
 }
