@@ -13,7 +13,7 @@ export type BrevoRequestData = BrevoPostContactData | BrevoGetContactData | Brev
 
 export interface BrevoPostContactData extends AxiosRequestConfig {
   method: HttpMethod.POST
-  url: 'https://api.brevo.com/v3/contacts'
+  url: '/contacts'
   data: {
     email: string
     updateEnabled: true
@@ -24,12 +24,12 @@ export interface BrevoPostContactData extends AxiosRequestConfig {
 
 export interface BrevoGetContactData extends AxiosRequestConfig {
   method: HttpMethod.GET
-  url: `https://api.brevo.com/v3/contacts/${string}`
+  url: `/contacts/${string}`
 }
 
 export interface BrevoPostDeal extends AxiosRequestConfig {
   method: HttpMethod.POST
-  url: 'https://api.brevo.com/v3/crm/deals'
+  url: '/crm/deals'
   data: {
     name: string
     attributes: DealAttributes
@@ -38,7 +38,7 @@ export interface BrevoPostDeal extends AxiosRequestConfig {
 
 export interface BrevoLinkDealData extends AxiosRequestConfig {
   method: HttpMethod.PATCH
-  url: `https://api.brevo.com/v3/crm/deals/link-unlink/${string}`
+  url: `/crm/deals/link-unlink/${string}`
   data: {
     linkContactIds: number[]
   }
@@ -46,7 +46,7 @@ export interface BrevoLinkDealData extends AxiosRequestConfig {
 
 export interface BrevoPatchDealData extends AxiosRequestConfig {
   method: HttpMethod.PATCH
-  url: `https://api.brevo.com/v3/crm/deals/${string}`
+  url: `/crm/deals/${string}`
   data: {
     attributes: DealUpdateAttributes
   }

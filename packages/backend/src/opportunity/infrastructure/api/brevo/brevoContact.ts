@@ -3,7 +3,7 @@ import axios from 'axios'
 import { Result } from 'true-myth'
 import { ContactRepository } from '../../../domain/spi'
 import { ContactAttributes, HttpMethod } from './types'
-import { requestBrevoAPI } from './brevoRequest'
+import BrevoAPI from './brevoAPI'
 
 const DEBUG_BREVO_LIST_ID = '4'
 
@@ -16,9 +16,9 @@ export const addBrevoContact: ContactRepository['createOrUpdate'] = async (conta
 }
 
 const requestCreateContact = async (listIds: number[], contact: ContactDetails, optIn: true): Promise<Result<ContactId, Error>> => {
-  const responseResult = await requestBrevoAPI({
+  const responseResult = await new BrevoAPI().request({
     method: HttpMethod.POST,
-    url: 'https://api.brevo.com/v3/contacts',
+    url: '/contacts',
     data: {
       email: contact.email,
       updateEnabled: true,
@@ -45,7 +45,7 @@ const requestCreateContact = async (listIds: number[], contact: ContactDetails, 
 }
 
 const retrieveExistingContactId = async (email: string): Promise<Result<ContactId, Error>> => {
-  const responseResult = await requestBrevoAPI({ method: HttpMethod.GET, url: `https://api.brevo.com/v3/contacts/${email}` })
+  const responseResult = await new BrevoAPI().request({ method: HttpMethod.GET, url: `/contacts/${email}` })
   const contactId = responseResult.map((r) => r.data as ContactId)
   return contactId
 }

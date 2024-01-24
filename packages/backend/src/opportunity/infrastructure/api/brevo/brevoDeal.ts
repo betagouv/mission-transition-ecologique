@@ -2,7 +2,7 @@ import { Maybe, Result } from 'true-myth'
 
 import { OpportunityRepository } from '../../../domain/spi'
 import { OpportunityId, OpportunityDetails, OpportunityUpdateAttributes } from '../../../domain/types'
-import { requestBrevoAPI } from './brevoRequest'
+import BrevoAPI from './brevoAPI'
 import { DealAttributes, HttpMethod, BrevoQuestionnaireRoute, DealUpdateAttributes, QuestionnaireRoute } from './types'
 
 // "Opportunities" are called "Deals" in Brevo
@@ -25,9 +25,9 @@ export const addBrevoDeal: OpportunityRepository['create'] = async (
 }
 
 const requestCreateDeal = async (name: string, attributes: DealAttributes): Promise<Result<OpportunityId, Error>> => {
-  const responseResult = await requestBrevoAPI({
+  const responseResult = await new BrevoAPI().request({
     method: HttpMethod.POST,
-    url: 'https://api.brevo.com/v3/crm/deals',
+    url: '/crm/deals',
     data: {
       name: name,
       attributes: attributes
@@ -48,9 +48,9 @@ export const updateBrevoDeal: OpportunityRepository['update'] = async (
 }
 
 const requestUpdateDeal = async (dealId: OpportunityId, attributes: DealUpdateAttributes): Promise<Maybe<Error>> => {
-  const responseResult = await requestBrevoAPI({
+  const responseResult = await new BrevoAPI().request({
     method: HttpMethod.PATCH,
-    url: `https://api.brevo.com/v3/crm/deals/${dealId.id}`,
+    url: `/crm/deals/${dealId.id}`,
     data: {
       attributes: attributes
     }
@@ -63,9 +63,9 @@ const associateBrevoDealToContact = async (dealId: OpportunityId, contactId: num
   const dealIdStr = dealId.id
 
   // associate brevo deal to contact
-  const responsePatch = await requestBrevoAPI({
+  const responsePatch = await new BrevoAPI().request({
     method: HttpMethod.PATCH,
-    url: `https://api.brevo.com/v3/crm/deals/link-unlink/${dealIdStr}`,
+    url: `/crm/deals/link-unlink/${dealIdStr}`,
     data: {
       linkContactIds: [contactId]
     }
