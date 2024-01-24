@@ -45,7 +45,7 @@ export default class OpportunityFeatures {
     if (program) {
       void new OperatorFeatures(this._operatorRepositories).createOpportunity(opportunity, program).then(async (operatorResult) => {
         if (false !== operatorResult) {
-          const opportunityUpdateErr = await this._updateOpportunitySentToBpifrance(opportunityId, operatorResult.isOk)
+          const opportunityUpdateErr = await this._updateOpportunitySentToOperator(opportunityId, operatorResult.isOk)
           if (opportunityUpdateErr.isJust) {
             // TODO: Send an email to the admin: Opportunity not updated
           }
@@ -54,7 +54,7 @@ export default class OpportunityFeatures {
     }
   }
 
-  private async _updateOpportunitySentToBpifrance(opportunityId: OpportunityId, success: boolean): Promise<Maybe<Error>> {
+  private async _updateOpportunitySentToOperator(opportunityId: OpportunityId, success: boolean): Promise<Maybe<Error>> {
     return await this._opportunityRepository.update(opportunityId, { sentToBpifrance: success })
   }
 }
