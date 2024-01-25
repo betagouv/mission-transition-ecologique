@@ -1,4 +1,4 @@
-import { AxiosRequestConfig } from 'axios'
+import { AxiosRequestConfig, Method } from 'axios'
 import { CompanySize } from '../../../domain/types'
 import { Operators } from '@tee/data/src/generated/program'
 
@@ -8,6 +8,11 @@ export enum HttpMethod {
   PUT = 'put',
   PATCH = 'patch',
   DELETE = 'delete'
+}
+
+export interface BrevoRequestData extends AxiosRequestConfig {
+  method: Method
+  url: string
 }
 
 // Payloads

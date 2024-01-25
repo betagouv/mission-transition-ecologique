@@ -1,6 +1,6 @@
-import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from 'axios'
+import axios, { AxiosInstance, AxiosResponse, RawAxiosRequestHeaders } from 'axios'
 import { Result } from 'true-myth'
-import { HttpMethod, BrevoPostContactPayload, BrevoPostDealPayload, BrevoPatchDealPayload, BrevoLinkDealPayload } from './types'
+import { HttpMethod, BrevoPostContactPayload, BrevoPostDealPayload, BrevoPatchDealPayload, BrevoLinkDealPayload, BrevoRequestData } from './types'
 import AxiosHeaders from '../../../../common/infrastructure/api/axiosHeaders'
 import { handleException } from '../../../../common/domain/error/errors'
 
@@ -55,7 +55,7 @@ export default class BrevoAPI {
     })
   }
 
-  private async _request(data: AxiosRequestConfig): Promise<Result<AxiosResponse, Error>> {
+  private async _request(data: BrevoRequestData): Promise<Result<AxiosResponse, Error>> {
     try {
       const response: AxiosResponse = await this.axios.request(data)
       return Result.ok(response)
