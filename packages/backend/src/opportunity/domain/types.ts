@@ -12,7 +12,7 @@ export interface ContactDetails {
   companySiret: string
   companyName?: string
   companySector?: string
-  companySize?: CompanySize
+  companySize?: number
 }
 
 export interface OpportunityDetails {
@@ -32,12 +32,4 @@ export interface ContactId {
 
 export interface OpportunityId {
   id: string
-}
-
-// Taille de l'entreprise au sens communautaire
-export enum CompanySize {
-  TPE = 'TPE',
-  PME = 'PME',
-  ETI = 'ETI',
-  GE = 'GE'
 }

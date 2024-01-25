@@ -2,7 +2,7 @@ import { ContactDetails, ContactId } from '../../../domain/types'
 import axios from 'axios'
 import { Result } from 'true-myth'
 import { ContactRepository } from '../../../domain/spi'
-import { ContactAttributes } from './types'
+import { BrevoCompanySize, ContactAttributes } from './types'
 import BrevoAPI from './brevoAPI'
 
 const DEBUG_BREVO_LIST_ID = '4'
@@ -53,7 +53,7 @@ const parseListIds = (rawIds: string): number[] => {
   return rawIds.split(',').map((id) => parseInt(id))
 }
 
-function convertDomainToBrevoContact(contact: ContactDetails, optIn: true): ContactAttributes {
+const convertDomainToBrevoContact = (contact: ContactDetails, optIn: true): ContactAttributes => {
   return {
     NOM: contact.lastName,
     PRENOM: contact.firstName,
@@ -62,6 +62,17 @@ function convertDomainToBrevoContact(contact: ContactDetails, optIn: true): Cont
     OPT_IN: optIn,
     ...(contact.companyName && { DENOMINATION: contact.companyName }),
     ...(contact.companySector && { SECTEUR_D_ACTIVITE: contact.companySector }),
-    ...(contact.companySize && { TAILLE: contact.companySize })
+    ...(contact.companySize && { TAILLE: convertCompanySize(contact.companySize) })
   }
+}
+
+const convertCompanySize = (companySize: number): BrevoCompanySize => {
+  if (companySize < 20) {
+    return BrevoCompanySize.LESS_THAN_20
+  } else if (companySize <= 49) {
+    return BrevoCompanySize.FROM_20_TO_49
+  } else if (companySize <= 250) {
+    return BrevoCompanySize.FROM_50_TO_250
+  }
+  return BrevoCompanySize.MORE_THAN_250
 }

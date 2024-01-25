@@ -2,7 +2,16 @@
 // console.log(`tracks.trackResults > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import type { Track } from '@/types'
-import { CallbackActions, CallbackMethods, ConditionOperators, DataMappingFrom, FormFieldTypes, TrackComponents, TrackId } from '@/types'
+import {
+  CallbackActions,
+  CallbackMethods,
+  ConditionOperators,
+  DataMappingFrom,
+  Entreprise,
+  FormFieldTypes,
+  TrackComponents,
+  TrackId
+} from '@/types'
 import type { ImportMetaEnv } from '@/env'
 
 const metaEnv: ImportMetaEnv = import.meta.env as ImportMetaEnv
@@ -318,7 +327,7 @@ Merci d'avance pour votre retour`,
           },
           {
             from: DataMappingFrom.UsedTracks,
-            id: 'structure_workforce',
+            id: Entreprise.Workforce,
             dataField: 'opportunity.companySize'
           },
           {

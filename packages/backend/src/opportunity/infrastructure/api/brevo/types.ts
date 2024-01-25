@@ -1,5 +1,4 @@
 import { AxiosRequestConfig, Method } from 'axios'
-import { CompanySize } from '../../../domain/types'
 import { Operators } from '@tee/data/src/generated/program'
 
 export enum HttpMethod {
@@ -48,7 +47,7 @@ export interface ContactAttributes {
   OPT_IN: true
   DENOMINATION?: string
   SECTEUR_D_ACTIVITE?: string
-  TAILLE?: CompanySize
+  TAILLE?: BrevoCompanySize
 }
 
 export enum QuestionnaireRoute {
@@ -71,4 +70,11 @@ export interface DealAttributes {
 
 export interface DealUpdateAttributes {
   envoy: boolean
+}
+
+export enum BrevoCompanySize {
+  LESS_THAN_20 = 1,
+  FROM_20_TO_49,
+  FROM_50_TO_250,
+  MORE_THAN_250
 }
