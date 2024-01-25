@@ -252,6 +252,7 @@ button.fr-link:hover, .tee-router-link:hover {
 .fr-tee-program-notice-alert {
   background-color: #FCA081;
   padding: 2em 0 2em 0 !important;
+  margin: 0 -.5rem !important;
 }
 
 /* check: https://css-tricks.com/css-counters-custom-list-number-styling/ */
