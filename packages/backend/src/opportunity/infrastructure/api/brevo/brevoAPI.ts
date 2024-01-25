@@ -1,6 +1,13 @@
 import axios, { AxiosInstance, AxiosResponse, RawAxiosRequestHeaders } from 'axios'
 import { Result } from 'true-myth'
-import { HttpMethod, BrevoPostContactPayload, BrevoPostDealPayload, BrevoPatchDealPayload, BrevoLinkDealPayload, BrevoRequestData } from './types'
+import {
+  HttpMethod,
+  BrevoPostContactPayload,
+  BrevoPostDealPayload,
+  BrevoPatchDealPayload,
+  BrevoLinkDealPayload,
+  BrevoRequestData
+} from './types'
 import AxiosHeaders from '../../../../common/infrastructure/api/axiosHeaders'
 import { handleException } from '../../../../common/domain/error/errors'
 
