@@ -1,20 +1,15 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`utils.matomo > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import type { FormCallback, ReqResp } from '@/types/index'
+import type { FormCallback, ReqResp } from '@/types'
 import { remapItem } from './helpers'
+import Translation from '@/utils/translation'
 
 export const buildHeaders = (callback: FormCallback) => {
   return { ...callback.headers }
 }
 
-export const sendApiRequest = async (
-  callback: FormCallback,
-  formData: any,
-  trackValues: any[] = [],
-  props: any = undefined,
-  lang: string = 'fr'
-) => {
+export const sendApiRequest = async (callback: FormCallback, formData: any, trackValues: any[] = [], props: any = undefined) => {
   const url = callback.url
   const method = callback.method
   const headers = buildHeaders(callback)
@@ -23,37 +18,33 @@ export const sendApiRequest = async (
   const dataMapping = callback.dataMapping.filter((dm) => !dm.onlyRemap)
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-  data = remapItem(data, dataMapping, formData, trackValues, props, undefined, [], lang)
+  data = remapItem(data, dataMapping, formData, trackValues, props, undefined, [], Translation.lang)
   const body = JSON.stringify(data)
 
-  return await sendRequest(url, method, headers, body, callback.action)
+  return await sendRequest(url, method, headers, body)
 }
 
-export const sendRequest = async (url: string, method: string, headers: HeadersInit, body: BodyInit, action: string): Promise<ReqResp> => {
+export const sendRequest = async (url: string, method: string, headers: HeadersInit, body: BodyInit): Promise<ReqResp> => {
   // send request
+  let resp: ReqResp = {}
   try {
     const response = await fetch(url, {
       method: method,
       headers: headers,
       body: body
     })
-    const respJson: ReqResp = (await response.json()) as ReqResp
-    respJson.action = action
-    respJson.ok = response.ok
-    respJson.status = response.status
-    respJson.statusText = response.statusText
-    respJson.url = response.url
-
-    return respJson
+    resp = (await response.json()) as ReqResp
+    resp.ok = response.ok
+    resp.status = response.status
+    resp.statusText = response.statusText
+    resp.url = response.url
   } catch (error: unknown) {
-    const respObj: ReqResp = {}
-    respObj.action = action
-    respObj.ok = false
-    respObj.status = 500
-    respObj.statusText = 'Internal server error'
+    resp.ok = false
+    resp.status = 500
+    resp.statusText = 'Internal server error'
     // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-    respObj.message = `${error}`
-
-    return respObj
+    resp.message = `${error}`
   }
+
+  return resp
 }

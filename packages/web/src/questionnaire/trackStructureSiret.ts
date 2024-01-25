@@ -21,8 +21,9 @@ import {
 } from '@/types'
 import type { Track } from '@/types'
 import MetaEnv from '@/utils/metaEnv'
+import type EstablishmentType from '@/types/establishmentType'
 
-const dataTarget = {
+const dataTarget: EstablishmentType = {
   siret: '',
   codeNaf: '',
   codeNAF1: '',

@@ -215,11 +215,10 @@
       ref="TeeProgramFormContainer"
       class="fr-tee-form-block fr-tee-form-container"
     >
-      <TeeForm
+      <ProgramForm
         v-if="program"
         :track-id="trackConfig.id"
         :form-options="trackConfig.form"
-        :data-props="{ programId: program.id }"
         :program="program"
         :form-container-ref="TeeProgramFormContainer"
       />
@@ -234,10 +233,10 @@
 import { ref, onBeforeMount } from 'vue'
 
 import TeeTile from '../TeeTile.vue'
-import TeeForm from '../TeeForm.vue'
 import ProgramEligibility from '@/components/program/ProgramEligibility.vue'
 import ProgramObjective from '@/components/program/ProgramObjective.vue'
 import ProgramLongDescription from '@/components/program/ProgramLongDescription.vue'
+import ProgramForm from '@/components/program/ProgramForm.vue'
 
 import Translation from '@/utils/translation'
 import { tracksStore } from '@/stores/tracks'

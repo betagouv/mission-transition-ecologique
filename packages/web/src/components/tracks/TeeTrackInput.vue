@@ -337,7 +337,7 @@ const processInput = async () => {
       }
       let resp: ReqResp = {}
       if (callback.action === CallbackActions.RequestAPI) {
-        resp = await sendApiRequest(callback, { inputValue: value }, trackValues, props, Translation.lang)
+        resp = await sendApiRequest(callback, { inputValue: value }, trackValues, props)
       }
       if (resp.ok) {
         const item = remapItem(

@@ -392,9 +392,6 @@ const saveFormData = async () => {
         case CallbackActions.CreateContact:
           resp = await sendApiRequest(callback, toRaw(formData.value), trackValues, props.dataProps, Translation.lang)
           break
-        case CallbackActions.SendTransactionalEmail:
-          resp = await sendApiRequest(callback, toRaw(formData.value))
-          break
       }
       responses.push(resp)
     }
