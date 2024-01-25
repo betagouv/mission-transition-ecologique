@@ -226,7 +226,7 @@ const partners = [
   },
   {
     label: 'CMA France',
-    img: '/images/logos/cma-france.jpg',
+    img: '/images/logos/cma-france.png',
     href: 'https://www.artisanat.fr/'
   }
 ]
