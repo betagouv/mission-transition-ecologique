@@ -1,7 +1,7 @@
 <template>
   <!-- DEBUGGING -->
   <div
-    v-if="debug"
+    v-if="debugStore.is"
     class="vue-debug"
   >
     <h5>DEBUG - TeeTrackInput</h5>
@@ -76,7 +76,7 @@
       {{ choices.t('enterprise.noStructureFound') }}
 
       <!-- DEBUGGING / ERROR CODE -->
-      <span v-if="debug">
+      <span v-if="debugStore.is">
         (
         <span
           v-for="(err, i) in requestErrors"
@@ -186,7 +186,7 @@
 
       <!-- DEBUGGING -->
       <div
-        v-if="debug"
+        v-if="debugStore.is"
         class="vue-debug"
       >
         <h5>DEBUG - TeeTrackInput</h5>
@@ -235,7 +235,7 @@
 
   <!-- DEBUGGING -->
   <div
-    v-if="debug && selection"
+    v-if="debugStore.is && selection"
     class="vue-debug"
   >
     <h5>DEBUG - TeeTrackInput</h5>
@@ -263,22 +263,22 @@
 import { onBeforeMount, ref, toRaw } from 'vue'
 import { tracksStore } from '../../stores/tracks'
 import { choicesStore } from '../../stores/choices'
-import { analyticsStore } from '../../stores/analytics'
-import type { TrackOptionsInput, ReqResp, ReqError, FormCallback, ResultsMapping } from '@/types'
+import { type TrackOptionsInput, type ReqResp, type ReqError, type FormCallback, type ResultsMapping, TrackId } from '@/types'
 import { sendApiRequest } from '../../utils/requests'
 import { getFromResp, remapItem, cleanValue } from '../../utils/helpers'
 import { CallbackActions } from '@/types'
+import { useDebugStore } from '@/stores/debug'
+import Matomo from '@/utils/matomo'
 
 interface Props {
-  trackId: string
+  trackId: TrackId
   option: TrackOptionsInput
-  debug?: boolean
 }
 const props = defineProps<Props>()
 
 const tracks = tracksStore()
 const choices = choicesStore()
-const analytics = analyticsStore()
+const debugStore = useDebugStore()
 
 const inputValue = ref<string | number>()
 const isLoading = ref<boolean>(false)
@@ -367,7 +367,7 @@ const processInput = async () => {
   isLoading.value = false
 
   // analytics / send event
-  analytics.sendEvent(props.trackId, 'processInput')
+  Matomo.sendEvent(props.trackId, 'processInput')
 
   // send signal to parent if error
   if (requestErrors.value.length) {
