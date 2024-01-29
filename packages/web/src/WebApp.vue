@@ -25,6 +25,7 @@ import { onBeforeMount, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { programsStore } from './stores/programs'
 import { navigationStore } from './stores/navigation'
+
 import TeeHeader from './components/TeeHeader.vue'
 import TeeMatomo from './components/TeeMatomo.vue'
 import TeeAppFooter from './components/TeeFooter.vue'

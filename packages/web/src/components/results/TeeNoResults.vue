@@ -31,6 +31,8 @@ import MetaEnv from '@/utils/metaEnv'
 
 const publicPath = MetaEnv.publicPath
 
+const publicPath = MetaEnv.publicPath
+
 interface Props {
   image?: string
   message?: Translations

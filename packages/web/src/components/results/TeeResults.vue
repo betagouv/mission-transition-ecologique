@@ -81,10 +81,12 @@
     />
 
     <!-- PROGRAMS CARDS -->
-    <div
+    <component
+      :is="navigation.isCatalog ? 'router-link' : 'div'"
       v-for="prog in reFilteredPrograms"
       :id="prog.id"
       :key="prog.id"
+      :to="navigation.isCatalog ? { name: RouteName.CatalogDetail, params: { programId: prog.id.toString() } } : undefined"
       class="fr-card fr-enlarge-link fr-card--horizontal-tier fr-mb-10v"
       @click="updateDetailResult(prog.id)"
     >
@@ -140,7 +142,7 @@
           </p>
         </ul>
       </div>
-    </div>
+    </component>
   </div>
 
   <!-- DEBUGGING -->
@@ -175,26 +177,23 @@
 // console.log(`TeeResults > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import { computed, onBeforeMount, ref } from 'vue'
-import Translation from '../../utils/translation'
-import { programsStore } from '../../stores/programs'
-import { consolidateAmounts, getFrom, scrollToTop } from '../../utils/helpers'
+import Translation from '@/utils/translation'
+import { programsStore } from '@/stores/programs'
+import { consolidateAmounts, getFrom, scrollToTop } from '@/utils/helpers'
 import TeeResultsFilter from './TeeResultsFilter.vue'
 import TeeNoResults from './TeeNoResults.vue'
-import type { FilterSignal, ProgramData, PropertyPath, TrackFilter, TrackResultsConfig, UsedTrack } from '@/types/index'
-import { ConditionOperators, TrackId } from '@/types/index'
+import type { FilterSignal, ProgramData, PropertyPath, TrackFilter, TrackResultsConfig, UsedTrack } from '@/types'
+import { ConditionOperators, TrackId } from '@/types'
 import { ProgramAidType } from '@/types/programTypes'
 import { navigationStore } from '@/stores/navigation'
-import { useRoute, useRouter } from 'vue-router'
 import { RouteName } from '@/types/routeType'
 import Widget from '@/utils/widget'
 import { useDebugStore } from '@/stores/debug'
 import MetaEnv from '@/utils/metaEnv'
 import Matomo from '@/utils/matomo'
 
-const route = useRoute()
-const router = useRouter()
 const programs = programsStore()
-const nav = navigationStore()
+const navigation = navigationStore()
 const debugStore = useDebugStore()
 
 const activeFilters = ref<Record<string, string>>({})
@@ -266,19 +265,13 @@ const updateDetailResult = async (id: string | number) => {
     programs.setDetailResult(id, props.trackId)
     return
   }
-  if (route.name === RouteName.Catalog) {
-    await router.push({
-      name: RouteName.CatalogDetail,
-      params: {
-        programId: id.toString()
-      }
-    })
-  } else {
-    // Set detail infos
-    programs.setDetailResult(id, props.trackId)
-    await nav.setCurrentDetailId(id)
-    scrollToTop(props.trackElement)
+  if (navigation.isCatalog) {
+    return
   }
+  // Set detail infos
+  programs.setDetailResult(id, props.trackId)
+  await navigation.setCurrentDetailId(id)
+  scrollToTop(props.trackElement)
 }
 
 const getCostInfos = (program: ProgramData) => {
@@ -314,6 +307,6 @@ const getCostInfos = (program: ProgramData) => {
 
 onBeforeMount(() => {
   // analytics / send event
-  Matomo.sendEvent(props.trackId, route.name === RouteName.Catalog ? 'show_results_catalog' : 'show_results')
+  Matomo.sendEvent(props.trackId, navigation.isCatalog ? 'show_results_catalog' : 'show_results')
 })
 </script>

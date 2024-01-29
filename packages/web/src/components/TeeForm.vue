@@ -194,7 +194,7 @@
         {{ Translation.t('form.nowWhat') }}
       </h6>
       <p class="tee-form-response-blue fr-mb-15v">
-        <span v-html="Translation.ti(Translation.t('form.errorMsg'), { email: contactEmail })"></span>
+        <span v-html="Translation.t('form.errorMsg', { mailto: getMailTo(), email: contactEmail })"></span>
       </p>
 
       <!-- DEBUGGING -->
@@ -274,7 +274,8 @@
 // console.log(`TeeForm > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import { computed, onBeforeMount, ref, toRaw } from 'vue'
-import type { FormCallback, FormField, FormOptions, FormValues, ProgramData, ReqResp } from '@/types/index'
+import type { FormCallback, FormField, FormOptions, FormValues, ProgramData, ReqResp } from '@/types'
+import { TrackId } from '@/types'
 import { CallbackActions, FormFieldTypes } from '@/types/index'
 import { sendApiRequest } from '../utils/requests'
 import { remapItem } from '../utils/helpers'
@@ -285,8 +286,11 @@ import Matomo from '@/utils/matomo'
 import MetaEnv from '@/utils/metaEnv'
 import { RouteName } from '@/types/routeType'
 import { useRoute } from 'vue-router'
+import Contact from '@/utils/contact'
+import { useDebugStore } from '@/stores/debug'
 import { useDebugStore } from '@/stores/debug'
 
+const route = useRoute()
 const route = useRoute()
 const tracks = tracksStore()
 const debugStore = useDebugStore()
@@ -299,7 +303,7 @@ interface DataProps {
 }
 
 interface Props {
-  trackId: string
+  trackId: TrackId
   formOptions: FormOptions
   dataProps: DataProps
   program: ProgramData
@@ -337,6 +341,26 @@ const isCheckbox = (field: FormField) => {
 
 const isTextarea = (field: FormField) => {
   return field.type === FormFieldTypes.Textarea
+}
+
+const getMailTo = (): string => {
+  if (props.trackId === TrackId.Results && formData.value) {
+    const needsValue = 'needs' in formData.value ? (formData.value.needs as string) : ''
+    const nameValue = 'name' in formData.value ? (formData.value.name as string) : ''
+    const surnameValue = 'surname' in formData.value ? (formData.value.surname as string) : ''
+    const telValue = 'tel' in formData.value ? (formData.value.tel as string) : ''
+    const siretValue = 'siret' in formData.value ? (formData.value.siret as string) : ''
+    return Contact.getMailtoUrl(
+      choices.t('form.errorEmail.subject', { program: props.program.titre }),
+      `${needsValue}
+
+${nameValue} ${surnameValue}
+${telValue}
+SIRET : ${siretValue}`
+    )
+  }
+
+  return ''
 }
 
 onBeforeMount(() => {

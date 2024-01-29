@@ -20,7 +20,6 @@ import {
   // Entreprise
 } from '@/types'
 import type { Track } from '@/types'
-import MetaEnv from '@/utils/metaEnv'
 
 const dataTarget = {
   siret: '',
@@ -74,7 +73,7 @@ export const siret: Track = {
           help: 'Get entreprise data from its SIRET number',
           helpDocumentation: 'https://tee-backend.osc-fr1.scalingo.io/api/docs',
           action: CallbackActions.RequestAPI,
-          url: `${MetaEnv.backendUrl}/api/insee/get_by_siret`,
+          url: '/api/insee/get_by_siret',
           // url: 'http://localhost:8001/api/insee/get_by_siret',
           method: CallbackMethods.Post,
           headers: {
