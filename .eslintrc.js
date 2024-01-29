@@ -14,5 +14,5 @@ module.exports = {
     'prettier/prettier': 'error',
     '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }]
   },
-  ignorePatterns: ['.idea/*', 'README.md', 'start.sh', '.github/*', '.eslintrc.js']
+  ignorePatterns: ['.idea/*', 'README.md', '.github/*', '.eslintrc.js', '.eslintrc.cjs']
 }

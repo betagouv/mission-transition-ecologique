@@ -12,7 +12,6 @@ import {
   TrackComponents,
   TrackId
 } from '@/types'
-import MetaEnv from '@/utils/metaEnv'
 
 export const results: Track = {
   id: TrackId.Results,
@@ -273,10 +272,9 @@ Merci d'avance pour votre retour`,
         disabled: false,
         help: 'First action to trigger when the user clicks on the send button / create a contact in Brevo',
         // helpDocumentation: 'https://developers.brevo.com/reference/createcontact',
-        helpDocumentation: `${MetaEnv.backendUrl}/api/docs`,
+        helpDocumentation: '/api/docs',
         action: CallbackActions.CreateOpportunity,
-        url: `${MetaEnv.backendUrl}/api/opportunities`,
-        // url: 'https://api.brevo.com/v3/contacts/doubleOptinConfirmation', // for double opt-in
+        url: '/api/opportunities',
         method: CallbackMethods.Post,
         headers: {
           accept: 'application/json',
