@@ -31,20 +31,19 @@ export default class OpportunityFeatures {
       return Result.err(contactIdResult.error)
     }
 
-    opportunity = this._addContactOperatorToOpportunity(opportunity)
+    const program = this._getProgramById(opportunity.programId)
+    opportunity = this._addContactOperatorToOpportunity(opportunity, program)
 
     const opportunityResult = await this._opportunityRepository.create(contactIdResult.value.id, opportunity)
 
     if (!opportunityResult.isErr) {
-      this._createOpportunityOnOperator(opportunityResult.value, opportunity)
+      this._createOpportunityOnOperator(opportunityResult.value, opportunity, program)
     }
 
     return opportunityResult
   }
 
-  private _createOpportunityOnOperator(opportunityId: OpportunityId, opportunity: Opportunity) {
-    const program = this._getProgramById(opportunity.programId)
-
+  private _createOpportunityOnOperator(opportunityId: OpportunityId, opportunity: Opportunity, program: Program | undefined) {
     if (program) {
       void new OperatorFeatures(this._operatorRepositories).createOpportunity(opportunity, program).then(async (operatorResult) => {
         if (false !== operatorResult) {
@@ -61,8 +60,7 @@ export default class OpportunityFeatures {
     return await this._opportunityRepository.update(opportunityId, { sentToOperator: success })
   }
 
-  private _addContactOperatorToOpportunity(opportunity: Opportunity): Opportunity {
-    const program = this._getProgramById(opportunity.programId)
+  private _addContactOperatorToOpportunity(opportunity: Opportunity, program: Program | undefined): Opportunity {
     if (program) {
       opportunity.programContactOperator = program['opérateur de contact']
     }
