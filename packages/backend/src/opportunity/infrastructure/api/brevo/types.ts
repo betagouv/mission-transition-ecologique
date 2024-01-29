@@ -13,27 +13,28 @@ export enum HttpMethod {
 export interface BrevoRequestData extends AxiosRequestConfig {
   method: Method
   url: string
+  data?: BrevoPostContactPayload | BrevoPostDealPayload | BrevoLinkDealPayload | BrevoPatchDealPayload
 }
 
 // Payloads
 
-export interface BrevoPostContactPayload extends AxiosRequestConfig {
+export interface BrevoPostContactPayload {
   email: string
   updateEnabled: true
   listIds: number[]
   attributes: ContactAttributes
 }
 
-export interface BrevoPostDealPayload extends AxiosRequestConfig {
+export interface BrevoPostDealPayload {
   name: string
   attributes: DealAttributes
 }
 
-export interface BrevoLinkDealPayload extends AxiosRequestConfig {
+export interface BrevoLinkDealPayload {
   linkContactIds: number[]
 }
 
-export interface BrevoPatchDealPayload extends AxiosRequestConfig {
+export interface BrevoPatchDealPayload {
   attributes: DealUpdateAttributes
 }
 
