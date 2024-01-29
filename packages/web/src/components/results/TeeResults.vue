@@ -1,7 +1,7 @@
 <template>
   <!-- DEBUGGING -->
   <div
-    v-if="debug"
+    v-if="debugStore.is"
     class="vue-debug"
   >
     <h5>DEBUG - TeeResults</h5>
@@ -68,7 +68,6 @@
       >
         <TeeResultsFilter
           :filter="filter"
-          :debug="debug"
           @update-filter="updateFilters"
         />
       </div>
@@ -79,8 +78,7 @@
       v-if="!countReFilteredPrograms"
       :image="trackConfig?.noResultsImage"
       :message="trackConfig?.noResultsMessage"
-    >
-    </TeeNoResults>
+    />
 
     <!-- PROGRAMS CARDS -->
     <component
@@ -106,13 +104,13 @@
           </h2>
           <!-- DEBUG -->
           <p
-            v-if="debug"
+            v-if="debugStore.is"
             class="vue-debug fr-card__desc"
           >
             <br />
-            choices.publicPath : <code>{{ choices.publicPath }}</code> <br />
+            publicPath : <code>{{ publicPath }}</code> <br />
             prog.cover : <code>{{ prog.illustration }}</code>
-            <!-- {{ `${choices.publicPath}${randomImage()}` }} -->
+            <!-- {{ `${publicPath}${randomImage()}` }} -->
           </p>
           <!-- END -->
           <div class="fr-card__end">
@@ -134,7 +132,7 @@
         <div class="fr-card__img">
           <img
             class="fr-responsive-img"
-            :src="`${choices.publicPath}${prog.illustration}`"
+            :src="`${publicPath}${prog.illustration}`"
             :alt="`image / ${prog.titre}`"
           />
         </div>
@@ -149,7 +147,7 @@
 
   <!-- DEBUGGING -->
   <div
-    v-if="debug"
+    v-if="debugStore.is"
     class="vue-debug"
   >
     <h5>DEBUG - TeeResults</h5>
@@ -178,24 +176,26 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`TeeResults > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import { ref, onBeforeMount, computed } from 'vue'
+import { computed, onBeforeMount, ref } from 'vue'
 import { choicesStore } from '../../stores/choices'
 import { programsStore } from '../../stores/programs'
-import { analyticsStore } from '../../stores/analytics'
-import { getFrom, scrollToTop, consolidateAmounts } from '../../utils/helpers'
+import { consolidateAmounts, getFrom, scrollToTop } from '../../utils/helpers'
 import TeeResultsFilter from './TeeResultsFilter.vue'
 import TeeNoResults from './TeeNoResults.vue'
-import type { TrackResultsConfig, ProgramData, FilterSignal, TrackFilter, PropertyPath, UsedTrack } from '@/types/index'
+import type { FilterSignal, ProgramData, PropertyPath, TrackFilter, TrackResultsConfig, UsedTrack } from '@/types/index'
+import { ConditionOperators, TrackId } from '@/types/index'
 import { ProgramAidType } from '@/types/programTypes'
 import { navigationStore } from '@/stores/navigation'
-import { ConditionOperators, TrackId } from '@/types/index'
 import { RouteName } from '@/types/routeType'
 import Widget from '@/utils/widget'
+import { useDebugStore } from '@/stores/debug'
+import MetaEnv from '@/utils/metaEnv'
+import Matomo from '@/utils/matomo'
 
 const choices = choicesStore()
 const programs = programsStore()
-const analytics = analyticsStore()
 const navigation = navigationStore()
+const debugStore = useDebugStore()
 
 const activeFilters = ref<Record<string, string>>({})
 
@@ -206,15 +206,15 @@ interface Props {
   trackForm?: any
   tracksResults: UsedTrack[]
   trackElement: Element
-  disableWidget?: boolean
-  debug?: boolean
 }
 const props = defineProps<Props>()
+
+const publicPath = MetaEnv.publicPath
 
 const filteredPrograms: ProgramData[] | undefined = programs.filterPrograms(props.tracksResults)
 
 const reFilteredPrograms = computed(() => {
-  const results = filteredPrograms?.filter((prog: ProgramData) => {
+  return filteredPrograms?.filter((prog: ProgramData) => {
     const boolArray = [true]
     for (const filterLabel in activeFilters.value) {
       const filterVal = activeFilters.value[filterLabel]
@@ -242,10 +242,8 @@ const reFilteredPrograms = computed(() => {
       }
       boolArray.push(bool)
     }
-    const checkFilters = boolArray.every((b) => !!b)
-    return checkFilters
+    return boolArray.every((b) => !!b)
   })
-  return results
 })
 
 const countFilteredPrograms = computed(() => {
@@ -273,8 +271,8 @@ const updateDetailResult = async (id: string | number) => {
   }
   // Set detail infos
   programs.setDetailResult(id, props.trackId)
-  await navigation.setCurrentDetailId(id, props.disableWidget)
-  scrollToTop(props.trackElement, props.disableWidget)
+  await navigation.setCurrentDetailId(id)
+  scrollToTop(props.trackElement)
 }
 
 const getCostInfos = (program: ProgramData) => {
@@ -310,6 +308,6 @@ const getCostInfos = (program: ProgramData) => {
 
 onBeforeMount(() => {
   // analytics / send event
-  analytics.sendEvent(props.trackId, navigation.isCatalog ? 'show_results_catalog' : 'show_results')
+  Matomo.sendEvent(props.trackId, navigation.isCatalog ? 'show_results_catalog' : 'show_results')
 })
 </script>

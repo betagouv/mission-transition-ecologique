@@ -3,21 +3,8 @@
     ref="trackElement"
     class="fr-container--fluid"
   >
-    <!-- HEADER -->
-    <p
-      v-if="showHeaderBool && !disableWidget"
-      class="fr-pb-0v fr-mb-0"
-    >
-      <DsfrHeader
-        logo-text="ADEME"
-        service-title="Transition écologique des entreprises"
-        service-description="Faire rimer écologie avec économies !"
-      />
-    </p>
-
-    <!-- DEBUGGING -->
     <div
-      v-if="debugBool"
+      v-if="debugStore.is"
       class="vue-debug"
     >
       <h5>DEBUG - WidgetApp</h5>
@@ -43,45 +30,27 @@
 
     <!-- MESSAGE & DEBUG SWITCH-->
     <div
-      v-if="showMessageBool || debugSwitchBool"
+      v-if="debugStore.hasSwitch"
       class="fr-grid-row fr-grid-row--gutters"
     >
-      <!-- MESSAGE-->
-      <div
-        v-if="showMessageBool"
-        class="fr-col"
-      >
-        <h3
-          v-if="message"
-          class="red-color"
-        >
-          <span v-html="message[choices.lang]" />
-        </h3>
-      </div>
       <!-- DEBUG SWITCH-->
-      <div
-        v-if="debugSwitchBool"
-        class="fr-col-md-3 fr-col-sm-6"
-      >
+      <div class="fr-col-md-3 fr-col-sm-6">
         <DsfrToggleSwitch
           label="Debug mode"
           hint="Switch to activate / deactivate debugging mode"
-          :model-value="debugBool"
+          :model-value="debugStore.is"
           @update:model-value="changeDebug"
         />
       </div>
     </div>
 
     <!-- MATOMO -->
-    <TeeMatomo
-      v-if="!disableWidget"
-      :debug="debugBool"
-    />
+    <TeeMatomo />
 
     <!-- QUESTIONNAIRE -->
     <div
       v-show="!programs.programDetail"
-      :id="disableWidget ? 'widget' : 'trackElement'"
+      id="widget"
       :class="`fr-container--fluid ${tracks.currentStep && tracks.currentStep > 1 ? 'fr-pt-10v' : ''}`"
     >
       <!-- TRACKS INTERFACES -->
@@ -95,17 +64,14 @@
           class="fr-tee-add-padding fr-mt-4v fr-col-3 fr-col-md-4 fr-col-lg-4 fr-col-xl-2 fr-col-sm-hide"
           style="height: 100%"
         >
-          <TeeSidebar
-            :used-tracks="tracks.usedTracks"
-            :debug="debugBool"
-          />
+          <TeeSidebar />
         </div>
 
         <!-- TRACKS -->
         <div
           id="tee-app-tracks"
           :class="`${tracks.currentStep && tracks.currentStep > 1 ? 'fr-tee-add-padding' : ''} ${getColumnsWidth} ${
-            debugBool ? '' : 'fr-grid-row--center'
+            debugStore.is ? '' : 'fr-grid-row--center'
           }`"
         >
           <div
@@ -116,84 +82,14 @@
                 ? 'padding: 0px; background-color:' + tracks.getTrackBgColor(track.id as TrackId)
                 : ''
             }`"
-            :class="`fr-p-0 fr-mb-${debugBool ? '12v' : '0'}`"
+            :class="`fr-p-0 fr-mb-${debugStore.is ? '12v' : '0'}`"
           >
             <TeeTrack
               v-if="trackElement"
               :step="index + 1"
-              :track-id="track.id as TrackId"
-              :is-completed="!!tracks.isTrackCompleted(track.id as TrackId)"
+              :used-track="track"
               :track-element="trackElement"
-              :disable-widget="disableWidget"
-              :debug="debugBool"
             />
-          </div>
-        </div>
-
-        <!-- DEBUGGING -->
-        <div
-          v-if="debugBool"
-          class="vue-debug fr-col-2 fr-pl-3v"
-        >
-          <h5>DEBUG - WidgetApp</h5>
-          <div class="fr-grid-row fr-grid-row--gutters">
-            <div class="fr-col-12">
-              <h6 class="fr-mb-1v">
-                seed : <code>{{ seed }} </code>
-              </h6>
-              <h6 class="fr-mb-1v">
-                debug : <code>{{ debug }} </code>
-              </h6>
-              <h6 class="fr-mb-1v">
-                debugBool : <code>{{ debugBool }} </code>
-              </h6>
-              <h6 class="fr-mb-1v">
-                showHeader : <code>{{ showHeader }} </code>
-              </h6>
-              <h6 class="fr-mb-1v">
-                choices.lang : <code>{{ choices.lang }} </code>
-              </h6>
-              <h6 class="fr-mb-1v">
-                tracks.maxDepth : <code>{{ tracks.maxDepth }} </code>
-              </h6>
-              <h6 class="fr-mb-1v">
-                tracks.seedTrack : <code>{{ tracks.seedTrack }} </code>
-              </h6>
-            </div>
-
-            <div class="fr-col-12">
-              <h6 class="fr-mb-1v">
-                tracks.currentStep : <code>{{ tracks.currentStep }} </code>
-              </h6>
-              <h6>tracks.tracksStepsArray :</h6>
-              <code>
-                <pre>{{ tracks.tracksStepsArray }}</pre>
-              </code>
-            </div>
-
-            <div class="fr-col-12">
-              <h6>tracks.usedTracks :</h6>
-              <code>
-                <pre>{{ tracks.usedTracks }}</pre>
-              </code>
-              <!-- <h6>tracks.tracksResults :</h6>
-              <code><pre>{{ tracks.tracksResults  }}</pre></code> -->
-            </div>
-
-            <div
-              v-if="false"
-              class="fr-col-12"
-            >
-              <h6>metaEnv :</h6>
-              <code>
-                <pre>{{ metaEnv }}</pre>
-              </code>
-            </div>
-
-            <!-- <h4>
-              WidgetApp debug / programs :
-            </h4>
-            <code><pre>{{ programsArray  }}</pre></code> -->
           </div>
         </div>
       </div>
@@ -204,18 +100,8 @@
       <TeeProgramDetail
         :program-id="programs.programDetail"
         :track-id="programs.programDetailConfig"
-        :disable-widget="disableWidget"
-        :debug="debugBool"
       />
     </template>
-
-    <!-- FOOTER -->
-    <div
-      v-if="showFooterBool"
-      class="fr-mt-10v"
-    >
-      <TeeCredits />
-    </div>
   </div>
 </template>
 
@@ -225,47 +111,32 @@
 
 // cf : https://stackoverflow.com/questions/71163741/vuejs-script-setup-cannot-contain-es-module-exports
 
-import '@gouvfr/dsfr/dist/core/core.main.min.css' // Le CSS minimal du DSFR
-// import '@gouvfr/dsfr/dist/component/component.main.min.css'  // Styles de tous les composants du DSFR
-// import '@gouvfr/dsfr/dist/utility/utility.main.min.css'      // Classes utilitaires : les composants de VueDsfr en ont besoin
-// import '@gouvminint/vue-dsfr/styles'                         // Les styles propres aux composants de VueDsfr
-// import '@gouvfr/dsfr/dist/scheme/scheme.min.css'             // Facultatif : Si les thèmes sont utilisés (thème sombre, thème clair)
-// import '@gouvfr/dsfr/dist/utility/icons/icons.min.css'       // Facultatif : Si des icônes sont utilisées avec les classes "fr-icon-..."
-// import '@public/css/core.main.min.css'
-// import '@public/css/custom.css'
-// import jsonDataset from '../public/data/generated/dataset_out.json'
+import '@gouvfr/dsfr/dist/core/core.main.min.css'
 
-import { computed, onBeforeMount, onMounted, ref, watch } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { computed, onBeforeMount, ref, watch } from 'vue'
 
 import { tracksStore } from './stores/tracks'
 import { choicesStore } from './stores/choices'
 import { programsStore } from './stores/programs'
 import { navigationStore } from './stores/navigation'
 import { type ProgramData, TrackComponents, TrackId } from './types'
-import { deployMode, deployUrl, metaEnv, noDebugSwitch, programsFromJson, publicPath } from './utils/global'
 import TeeMatomo from './components/TeeMatomo.vue'
 import TeeTrack from './components/tracks/TeeTrack.vue'
 import TeeSidebar from './components/TeeSidebar.vue'
 import TeeProgramDetail from './components/program/TeeProgramDetail.vue'
-import TeeCredits from './components/TeeCredits.vue'
-import { DsfrToggleSwitch } from '@gouvminint/vue-dsfr'
 import Widget from '@/utils/widget'
+import { useDebugStore } from '@/stores/debug'
+import { DsfrToggleSwitch } from '@gouvminint/vue-dsfr'
+import jsonDataset from '../public/data/generated/dataset_out.json'
+import MetaEnv from '@/utils/metaEnv'
 
 interface Props {
-  showHeader?: string
-  showMessage?: string
-  showStepper?: string
-  showFooter?: string
   locale?: string
-  msg?: string
   seed: TrackId
-  disableWidget?: boolean
   programId?: string
-  datasetUrl?: string
   maxDepth?: string
-  debugSwitch?: string
-  debug?: string
+  debugSwitch?: boolean
+  debug?: boolean
 }
 const props = defineProps<Props>()
 
@@ -273,43 +144,30 @@ const tracks = tracksStore()
 const choices = choicesStore()
 const programs = programsStore()
 const nav = navigationStore()
+const debugStore = useDebugStore()
 
 // HTML/Vue3 DOM ref
 const trackElement = ref<HTMLElement | null>(null)
 
-// let teeAppTopPosition = ref()
-const showHeaderBool = ref(false)
-const showMessageBool = ref(false)
-const showStepperBool = ref(false)
-const showFooterBool = ref(false)
-const message = ref()
-const debugSwitchBool = ref(false)
-const debugBool = ref(false)
-
-const router = useRouter()
-const route = useRoute()
-
 watch(
   () => tracks.usedTracks,
   () => {
-    // console.log()
-    // console.log('WidgetApp > watch > tracks.usedTracks > next : ', next)
     if (nav.routerReady) {
       if (tracks.currentStep) {
         nav.setCurrentStep(tracks.currentStep)
       }
       nav.setCurrentTrackId(tracks.currentTrackId as TrackId)
-      nav.updateQueries(tracks.getAllUsedTracksValuesPairs, props.disableWidget)
+      nav.updateQueries(tracks.getAllUsedTracksValuesPairs)
     }
   }
 )
 
 const changeDebug = (payload: boolean) => {
-  debugBool.value = payload
+  debugStore.is = payload
 }
 
 const needSidebar = computed(() => {
-  return tracks.seedTrack !== TrackId.Results && tracks.currentStep && (tracks.currentStep > 1 || props.disableWidget)
+  return tracks.seedTrack !== TrackId.Results && tracks.currentStep && (tracks.currentStep > 1 || !Widget.is)
 })
 
 const getColumnsWidth = computed(() => {
@@ -318,9 +176,9 @@ const getColumnsWidth = computed(() => {
   const colsStart = 'fr-col-12 fr-col-xl-12'
   const colsTracks = 'fr-col fr-col-sm-12 fr-col-md-8 fr-col-lg-8 fr-col-xl-6'
   const colsResults = 'fr-col fr-col-sm-12 fr-col-md-8 fr-col-lg-8 fr-col-xl-8'
-  if (debugBool.value) {
+  if (debugStore.is) {
     return colsDebug
-  } else if (tracks.seedTrack === TrackId.Results || (tracks.currentStep === 1 && !props.disableWidget)) {
+  } else if (tracks.seedTrack === TrackId.Results || (tracks.currentStep === 1 && Widget.is)) {
     return colsStart
   } else if ((currentTrack && (currentTrack.component as TrackComponents)) === TrackComponents.Results) {
     return colsResults
@@ -330,54 +188,21 @@ const getColumnsWidth = computed(() => {
 })
 
 const setupGlobal = () => {
-  choices.setPublicPath(publicPath)
-
   // load dataset to pinia store
   // programs.setDataset(props.datasetUrl, deployMode, deployUrl)
-  programs.setDataset(programsFromJson as ProgramData[])
+  programs.setDataset(jsonDataset as ProgramData[])
 
   // set locale and message
-  const locale = props.locale || 'fr'
+  const locale = props.locale ?? 'fr'
   choices.setLocale(locale)
-}
-
-const setupFromUrl = async () => {
-  // parse url to get current track and other queries
-  /*
-  GOAL => unfold object such as
-  {
-    teetrack_track_help: "user_help:precise"
-    teetrack_track_needs: "project_needs:*"
-    teetrack_track_sectors: ""
-    teetrack_track_siret: "siret:|codeNaf:|codeNAF1:|ville:|codePostal:|structure_sizes:|denomination:|label_sectors:undefined|secteur:undefined"
-    teetrack_track_structure_workforce: "entreprise . effectif:249|structure_sizes:PME"
-  }
-  */
-  // const queryTracksRaw = unfoldQueries(route.query)
-  // TO DO
-  // tracks.populateUsedTracksFromQuery(route.query)
-  // nav.populateFromQuery(route.query)
-  // parse url to get detail program (if any)
-  const programId = props.programId || (route.query['teeDetail'] as string | null)
-  if (programId) {
-    await nav.setCurrentDetailId(programId)
-    programs.setDetailResult(programId, TrackId.Results)
-  }
-  /*
-  tested with url such as :
-  localhost:4242/?teeActiveTrack=track_results&teeDetail=accelerateur-decarbonation
-  http://localhost:4242/?teeStep=3&teeActiveTrack=track_results&teetrack_track_needs=project_needs:*&teetrack_track_help=user_help:direct&teetrack_track_results=&teeDetail=accelerateur-decarbonation
-  */
-  nav.setCurrentTrackId(tracks.currentTrackId as TrackId)
-  nav.updateQueries(tracks.getAllUsedTracksValuesPairs, props.disableWidget)
 }
 
 onBeforeMount(() => {
   setupGlobal()
 
   // inject style link in html head if not present
-  const href = deployMode ? `${deployUrl}/style.css` : ''
-  let needStyle = !props.disableWidget // true
+  const href = MetaEnv.isProduction ? `${MetaEnv.deployUrl}/style.css` : ''
+  let needStyle = Widget.is
   // avoid duplicates
   const styleSheets = document.styleSheets.length
   if (needStyle && styleSheets) {
@@ -388,30 +213,13 @@ onBeforeMount(() => {
       }
     }
   }
-  if (needStyle && deployMode) {
+  if (needStyle && MetaEnv.isProduction) {
     const head = document.head
     const link = document.createElement('link')
     link.type = 'text/css'
     link.rel = 'stylesheet'
     link.href = href
     head.appendChild(link)
-  }
-
-  // set header / footer components
-  showHeaderBool.value = props.showHeader === 'true'
-  showStepperBool.value = props.showStepper === 'true'
-  showMessageBool.value = props.showMessage === 'true'
-  showFooterBool.value = props.showFooter === 'true'
-
-  const messageObj = {}
-  if (props.msg) {
-    props.msg.split(',').forEach((s: string) => {
-      const strObj = s.split('|').map((i: string) => i.trim())
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-expect-error
-      messageObj[strObj[0]] = strObj[1]
-    })
-    message.value = messageObj
   }
 
   // set max depth at mount
@@ -422,35 +230,14 @@ onBeforeMount(() => {
 
   // set debug mode
   // no switch for production deployment
-
-  debugSwitchBool.value = !noDebugSwitch && props.debugSwitch === 'true'
-  if (debugSwitchBool.value && props.debug) {
-    debugBool.value = props.debug === 'true'
+  debugStore.hasSwitch = MetaEnv.isDebugSwitch && props.debugSwitch
+  if (debugStore.hasSwitch && props.debug) {
+    debugStore.is = props.debug
   }
 
   // set first track at mount
   tracks.setSeedTrack(props.seed)
   tracks.addToUsedTracks(props.seed, props.seed)
-})
-
-onMounted(async () => {
-  // cf: https://stackoverflow.com/questions/69495211/vue3-route-query-empty
-  if (Widget.is) {
-    return
-  }
-
-  await router.isReady()
-  if (!props.disableWidget) {
-    nav.setRouter(router)
-    nav.setRoute(route)
-  }
-  await setupFromUrl()
-
-  // set detail program ID if any
-  if (props.programId) {
-    programs.setDetailResult(props.programId, props.seed)
-    await nav.setCurrentDetailId(props.programId, props.disableWidget)
-  }
 })
 </script>
 

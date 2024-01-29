@@ -6,6 +6,7 @@ import { defineStore } from 'pinia'
 import type { TrackId, UsedTrackValuePair } from '@/types'
 import type { RouteLocationNormalizedLoaded, RouteLocationRaw, Router } from 'vue-router'
 import { RouteName } from '@/types/routeType'
+import Widget from '@/utils/widget'
 
 export const navigationStore = defineStore('navigation', () => {
   // State objects
@@ -44,9 +45,9 @@ export const navigationStore = defineStore('navigation', () => {
   function setCurrentStep(step: number) {
     currentStep.value = step
   }
-  async function setCurrentDetailId(id: string | number, noWidget: boolean = true) {
+  async function setCurrentDetailId(id: string | number) {
     currentDetailId.value = id
-    await updateUrl(noWidget)
+    await updateUrl(!Widget.is)
   }
   function addQuery(query: Partial<UsedTrackValuePair>) {
     const existingTrackIds = userQueries.value.map((q) => q.trackId)
@@ -124,10 +125,7 @@ export const navigationStore = defineStore('navigation', () => {
     }
   }
 
-  function updateQueries(usedTracks: UsedTrackValuePair[], noWidget: boolean) {
-    if (noWidget) {
-      // Do something
-    }
+  function updateQueries(usedTracks: UsedTrackValuePair[]) {
     // reset userQueries
     userQueries.value = []
     const queries = usedTracks.map((usedTrack) => {
