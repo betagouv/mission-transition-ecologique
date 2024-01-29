@@ -14,7 +14,6 @@ import {
 } from '@/types'
 import MetaEnv from '@/utils/metaEnv'
 
-
 export const results: Track = {
   id: TrackId.Results,
   category: 'results',
