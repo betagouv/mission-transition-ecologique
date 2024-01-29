@@ -6,7 +6,7 @@
     >
       <img
         class="fr-responsive-img"
-        :src="`${choices.publicPath}${image}`"
+        :src="`${publicPath}${image}`"
         :alt="`image / no-results`"
       />
     </div>
@@ -27,8 +27,11 @@
 
 import { choicesStore } from '../../stores/choices'
 import type { Translations } from '@/types/index'
+import MetaEnv from '@/utils/metaEnv'
 
 const choices = choicesStore()
+
+const publicPath = MetaEnv.publicPath
 
 interface Props {
   image?: string

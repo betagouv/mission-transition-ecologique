@@ -3,10 +3,7 @@
 
 import type { Track } from '@/types'
 import { CallbackActions, CallbackMethods, ConditionOperators, DataMappingFrom, FormFieldTypes, TrackComponents, TrackId } from '@/types'
-import type { ImportMetaEnv } from '@/env'
-
-const metaEnv: ImportMetaEnv = import.meta.env as ImportMetaEnv
-const TEE_BACKEND_URL = metaEnv.VITE_TEE_BACKEND_URL || 'https://tee-backend.osc-fr1.scalingo.io'
+import MetaEnv from '@/utils/metaEnv'
 
 export const results: Track = {
   id: TrackId.Results,
@@ -267,9 +264,9 @@ Merci d'avance pour votre retour`,
         disabled: false,
         help: 'First action to trigger when the user clicks on the send button / create a contact in Brevo',
         // helpDocumentation: 'https://developers.brevo.com/reference/createcontact',
-        helpDocumentation: `${TEE_BACKEND_URL}/api/docs`,
+        helpDocumentation: `${MetaEnv.backendUrl}/api/docs`,
         action: CallbackActions.CreateContact,
-        url: `${TEE_BACKEND_URL}/api/contacts`,
+        url: `${MetaEnv.backendUrl}/api/contacts`,
         // url: 'https://api.brevo.com/v3/contacts/doubleOptinConfirmation', // for double opt-in
         method: CallbackMethods.Post,
         headers: {

@@ -9,8 +9,6 @@ import { frOperatorsDict } from '@/translations/fr-operators'
 import type { PropertyPath } from '@/types'
 
 export const choicesStore = defineStore('choices', () => {
-  const publicPath = ref<string>()
-
   // internationalization
   const dict: object = {
     fr: frDict
@@ -23,9 +21,6 @@ export const choicesStore = defineStore('choices', () => {
   const lang = ref('fr')
 
   // actions
-  function setPublicPath(path: string) {
-    publicPath.value = path
-  }
   function setLocale(loc: string) {
     lang.value = loc
   }
@@ -68,10 +63,8 @@ export const choicesStore = defineStore('choices', () => {
   }
 
   return {
-    publicPath,
     dict,
     lang,
-    setPublicPath,
     setLocale,
     t,
     to,
