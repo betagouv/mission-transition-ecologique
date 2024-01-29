@@ -5,6 +5,7 @@ import { computed, ref } from 'vue'
 import { defineStore } from 'pinia'
 import type { TrackId, UsedTrackValuePair } from '@/types'
 import type { RouteLocationNormalizedLoaded, RouteLocationRaw, Router } from 'vue-router'
+import { RouteName } from '@/types/routeType'
 import Widget from '@/utils/widget'
 
 export const navigationStore = defineStore('navigation', () => {
@@ -20,6 +21,10 @@ export const navigationStore = defineStore('navigation', () => {
   // getters
   const route = computed(() => {
     return routeRef.value
+  })
+
+  const isCatalog = computed(() => {
+    return routeRef.value?.name === RouteName.Catalog
   })
 
   // actions
@@ -151,6 +156,7 @@ export const navigationStore = defineStore('navigation', () => {
     currentTrackId,
     currentStep,
     currentDetailId,
+    isCatalog,
     resetQueries,
     setRouter,
     setRoute,
