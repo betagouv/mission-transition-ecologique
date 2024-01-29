@@ -16,7 +16,7 @@
 
   <!-- DEBUGGING -->
   <div
-    v-if="debug"
+    v-if="debugStore.is"
     class="vue-debug"
   >
     <p>
@@ -79,7 +79,7 @@
       >
         <!-- DEBUGGING -->
         <div
-          v-if="debug"
+          v-if="debugStore.is"
           class="vue-debug"
         >
           Field.id:
@@ -199,7 +199,7 @@
 
       <!-- DEBUGGING -->
       <div
-        v-if="debug && requestResponses?.filter((resp) => resp.status && ![200, 201].includes(resp.status))"
+        v-if="debugStore.is && requestResponses?.filter((resp) => resp.status && ![200, 201].includes(resp.status))"
         class="fr-mt-5v fr-highlight"
       >
         <p
@@ -245,7 +245,7 @@
 
   <!-- DEBUGGING -->
   <div
-    v-if="debug"
+    v-if="debugStore.is"
     class="vue-debug fr-mt-5v"
   >
     <h5>DEBUG - TeeForm</h5>
@@ -280,19 +280,20 @@ import { sendApiRequest } from '../utils/requests'
 import { remapItem } from '../utils/helpers'
 import { tracksStore } from '../stores/tracks'
 import { choicesStore } from '../stores/choices'
-import { analyticsStore } from '../stores/analytics'
-import type { ImportMetaEnv } from '../env'
 import DsfrButton from '@/components/button/DsfrButton.vue'
+import Matomo from '@/utils/matomo'
+import MetaEnv from '@/utils/metaEnv'
 import { RouteName } from '@/types/routeType'
 import { useRoute } from 'vue-router'
+import { useDebugStore } from '@/stores/debug'
 
+const route = useRoute()
 const choices = choicesStore()
 const tracks = tracksStore()
-const analytics = analyticsStore()
+const debugStore = useDebugStore()
 
 const trackValues: any[] = tracks.getAllUsedTracksValues
-const metaEnv: ImportMetaEnv = import.meta.env as ImportMetaEnv
-const contactEmail = metaEnv.VITE_CONTACT_EMAIL || 'france-transition@beta.gouv.fr'
+const contactEmail = MetaEnv.contactEmail
 
 interface DataProps {
   programId: string
@@ -304,7 +305,6 @@ interface Props {
   dataProps: DataProps
   program: ProgramData
   formContainerRef?: HTMLElement | null | undefined
-  debug?: boolean
 }
 const props = defineProps<Props>()
 
@@ -314,8 +314,6 @@ const formIsSent = ref<boolean>(false)
 const requestResponses = ref<ReqResp[]>()
 const isLoading = ref<boolean>(false)
 
-const route = useRoute()
-
 const canSaveFrom = computed(() => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   const boolArr = requiredFields.value.map((f: string) => formData.value?.[f])
@@ -323,8 +321,7 @@ const canSaveFrom = computed(() => {
 })
 
 const hasNoRespError = computed(() => {
-  const hasError = !requestResponses.value || requestResponses.value?.map((r) => r.status).every((s) => s === 200 || s === 201)
-  return hasError
+  return !requestResponses.value || requestResponses.value?.map((r) => r.status).every((s) => s === 200 || s === 201)
 })
 
 const findPrefix = (str: string, prefixCode: string = 'of') => {
@@ -391,7 +388,6 @@ const saveFormData = async () => {
     // loop callbacks (only active ones)
     const activeCallbacks = toRaw(props.formOptions.callbacks).filter((cb: FormCallback) => !cb.disabled)
     for (const callback of activeCallbacks) {
-      console.log()
       let resp: ReqResp = {}
       switch (callback.action) {
         case CallbackActions.CreateContact:
@@ -406,7 +402,7 @@ const saveFormData = async () => {
     requestResponses.value = responses
 
     // analytics / send event
-    analytics.sendEvent(props.trackId, route.name === RouteName.CatalogDetail ? 'send_form_catalog' : 'send_form')
+    Matomo.sendEvent(props.trackId, route.name === RouteName.CatalogDetail ? 'send_form_catalog' : 'send_form')
   } finally {
     isLoading.value = false
     formIsSent.value = true
