@@ -15,6 +15,8 @@ export interface Establishment {
     streetLabel: string
     zipCode: string
     cityLabel: string
+    // Code officiel géographique de l'INSEE
+    // https://www.insee.fr/fr/information/2560452
     cityCode: string
   }
 }
