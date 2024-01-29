@@ -177,13 +177,13 @@
 // console.log(`TeeResults > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import { computed, onBeforeMount, ref } from 'vue'
-import { choicesStore } from '../../stores/choices'
-import { programsStore } from '../../stores/programs'
-import { consolidateAmounts, getFrom, scrollToTop } from '../../utils/helpers'
+import { choicesStore } from '@/stores/choices'
+import { programsStore } from '@/stores/programs'
+import { consolidateAmounts, getFrom, scrollToTop } from '@/utils/helpers'
 import TeeResultsFilter from './TeeResultsFilter.vue'
 import TeeNoResults from './TeeNoResults.vue'
-import type { FilterSignal, ProgramData, PropertyPath, TrackFilter, TrackResultsConfig, UsedTrack } from '@/types/index'
-import { ConditionOperators, TrackId } from '@/types/index'
+import type { FilterSignal, ProgramData, PropertyPath, TrackFilter, TrackResultsConfig, UsedTrack } from '@/types'
+import { ConditionOperators, TrackId } from '@/types'
 import { ProgramAidType } from '@/types/programTypes'
 import { navigationStore } from '@/stores/navigation'
 import { RouteName } from '@/types/routeType'
