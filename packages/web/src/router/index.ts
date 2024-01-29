@@ -1,25 +1,31 @@
 // CONSOLE LOG TEMPLATE
 //console.log(`router.index > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory, type RouteLocationNormalized, type RouteLocationNormalizedLoaded } from 'vue-router'
 import TeeHomePage from '../pages/TeeHomePage.vue'
-import WidgetApp from '../WidgetApp.ce.vue'
 import TeeQuestionnairePage from '../pages/TeeQuestionnairePage.vue'
 import TeeCatalogPage from '../pages/TeeCatalogPage.vue'
 import TeeLegalPage from '../pages/TeeLegalPage.vue'
 import TeeAccessibilityPage from '../pages/TeeAccessibilityPage.vue'
 import TeePersonalDataPage from '../pages/TeePersonalDataPage.vue'
+import ChatAdvisorPage from '@/pages/ChatAdvisorPage.vue'
+import TeeQuestionnaire from '@/components/TeeQuestionnaire.vue'
+import TeeProgramDetail from '@/components/program/TeeProgramDetail.vue'
 import { RouteName } from '@/types/routeType'
 import { redirections } from '@/router/redirection'
 import { TrackId } from '@/types'
 import type { Component } from 'vue'
 import { resetDetailProgram, resetTrackStore, setHelpAsTrackSeed, setResultsAsTrackSeed } from '@/router/hook'
-import ChatAdvisorPage from '@/pages/ChatAdvisorPage.vue'
-import TeeProgramDetail from '@/components/program/TeeProgramDetail.vue'
 
 export const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  scrollBehavior() {
+  scrollBehavior(to: RouteLocationNormalized, from: RouteLocationNormalizedLoaded, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    }
+    if (to.hash) {
+      return { el: to.hash }
+    }
     return { top: 0 }
   },
   routes: [
@@ -36,10 +42,9 @@ export const router = createRouter({
         {
           path: '',
           name: 'questionnaire',
-          component: WidgetApp as Component,
+          component: TeeQuestionnaire as Component,
           props: {
-            seed: TrackId.Help,
-            disableWidget: true
+            seed: TrackId.Help
           }
         }
       ]
@@ -52,10 +57,9 @@ export const router = createRouter({
         {
           path: '',
           name: RouteName.Catalog,
-          component: WidgetApp as Component,
+          component: TeeQuestionnaire as Component,
           props: {
-            seed: TrackId.Results,
-            disableWidget: true
+            seed: TrackId.Results
           }
         },
         {

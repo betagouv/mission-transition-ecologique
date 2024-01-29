@@ -7,11 +7,18 @@
     noOutline
     @click="formIsSent = !formIsSent"
   >
-    <v-icon scale="2" name="ri-arrow-left-line" aria-hidden="true"></v-icon>
+    <v-icon
+      scale="2"
+      name="ri-arrow-left-line"
+      aria-hidden="true"
+    ></v-icon>
   </button>
 
   <!-- DEBUGGING -->
-  <div v-if="debug" class="vue-debug">
+  <div
+    v-if="debugStore.is"
+    class="vue-debug"
+  >
     <p>
       requiredFields:
       <code>{{ requiredFields }}</code>
@@ -35,9 +42,15 @@
   </div>
 
   <!-- FORM -->
-  <div v-if="!formIsSent" class="fr-tee-form fr-my-4v">
+  <div
+    v-if="!formIsSent"
+    class="fr-tee-form fr-my-4v"
+  >
     <!-- FORM LABEL -->
-    <h3 v-if="formOptions.label" class="fr-text-center">
+    <h3
+      v-if="formOptions.label"
+      class="fr-text-center"
+    >
       {{
         capitalizeFirstLetter(
           choices.ti(formOptions.label[choices.lang], {
@@ -49,16 +62,26 @@
     </h3>
 
     <!-- FORM HINT -->
-    <p v-if="formOptions.hint" class="fr-text-center fr-pb-10v">
+    <p
+      v-if="formOptions.hint"
+      class="fr-text-center fr-pb-10v"
+    >
       <!-- {{ formOptions.hint[choices.lang] }} -->
       {{ choices.ti(formOptions.hint[choices.lang], { operator: program['opérateur de contact'] }) }}
     </p>
 
     <!-- FIELDS -->
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-2v">
-      <div v-for="field in formOptions.fields" :key="field.id" :class="`fr-col-12 fr-col-md-${field.cols ? field.cols : 12}`">
+      <div
+        v-for="field in formOptions.fields"
+        :key="field.id"
+        :class="`fr-col-12 fr-col-md-${field.cols ? field.cols : 12}`"
+      >
         <!-- DEBUGGING -->
-        <div v-if="debug" class="vue-debug">
+        <div
+          v-if="debugStore.is"
+          class="vue-debug"
+        >
           Field.id:
           <code>
             {{ field.id }}
@@ -107,13 +130,20 @@
 
         <!-- CHECKBOX HINT -->
         <div v-if="isCheckbox(field)">
-          <span class="fr-hint-text fr-mt-5v" v-html="field.hint?.[choices.lang] || ''"> </span>
+          <span
+            class="fr-hint-text fr-mt-5v"
+            v-html="field.hint?.[choices.lang] || ''"
+          >
+          </span>
         </div>
       </div>
     </div>
 
     <!-- FORM HELPER -->
-    <h6 class="fr-mb-0" style="font-size: 0.7em">
+    <h6
+      class="fr-mb-0"
+      style="font-size: 0.7em"
+    >
       <code>*</code>
       &nbsp;
       {{ choices.t('form.mandatory') }}
@@ -121,7 +151,10 @@
 
     <!-- SEND / NEXT BUTTON -->
     <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-mt-5v">
-      <div class="fr-col-12" style="display: grid; justify-content: right">
+      <div
+        class="fr-col-12"
+        style="display: grid; justify-content: right"
+      >
         <DsfrButton
           :label="choices.t('send')"
           :disabled="!canSaveFrom"
@@ -135,11 +168,21 @@
   </div>
 
   <!-- FORM CALLBACK -->
-  <div v-if="formIsSent" class="fr-mt-5v fr-tee-form">
+  <div
+    v-if="formIsSent"
+    class="fr-mt-5v fr-tee-form"
+  >
     <!-- MESSAGE IF ERROR-->
-    <div v-if="!hasNoRespError" class="fr-text-center">
+    <div
+      v-if="!hasNoRespError"
+      class="fr-text-center"
+    >
       <p class="tee-form-response tee-form-response-error">
-        <v-icon name="ri-close-circle-fill" aria-hidden="true" scale="3"></v-icon>
+        <v-icon
+          name="ri-close-circle-fill"
+          aria-hidden="true"
+          scale="3"
+        ></v-icon>
       </p>
       <h3 class="tee-form-response tee-form-response-error fr-mb-2v">
         {{ choices.t(`form.sorryError`) }}
@@ -156,10 +199,13 @@
 
       <!-- DEBUGGING -->
       <div
-        v-if="debug && requestResponses?.filter((resp) => resp.status && ![200, 201].includes(resp.status))"
+        v-if="debugStore.is && requestResponses?.filter((resp) => resp.status && ![200, 201].includes(resp.status))"
         class="fr-mt-5v fr-highlight"
       >
-        <p v-for="(resp, i) in requestResponses" :key="`resp-${i}`">
+        <p
+          v-for="(resp, i) in requestResponses"
+          :key="`resp-${i}`"
+        >
           <b> {{ resp.action }} : </b>
           <b> status {{ resp.status }} : </b>
           <b> "{{ resp.code }}" </b>
@@ -172,9 +218,16 @@
     </div>
 
     <!-- MESSAGE IF 200 -->
-    <div v-if="hasNoRespError" class="fr-text-center">
+    <div
+      v-if="hasNoRespError"
+      class="fr-text-center"
+    >
       <p class="tee-form-response tee-form-response-blue">
-        <v-icon name="ri-checkbox-circle-fill" aria-hidden="true" scale="3"></v-icon>
+        <v-icon
+          name="ri-checkbox-circle-fill"
+          aria-hidden="true"
+          scale="3"
+        ></v-icon>
       </p>
       <h3 class="tee-form-response tee-form-response-blue">
         {{ choices.t(`form.sent`) }}
@@ -191,10 +244,16 @@
   </div>
 
   <!-- DEBUGGING -->
-  <div v-if="debug" class="vue-debug fr-mt-5v">
+  <div
+    v-if="debugStore.is"
+    class="vue-debug fr-mt-5v"
+  >
     <h5>DEBUG - TeeForm</h5>
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
-      <div v-if="false" class="fr-col-12">
+      <div
+        v-if="false"
+        class="fr-col-12"
+      >
         <h4>formOptions :</h4>
         <code>
           <pre>{{ formOptions }}</pre>
@@ -222,20 +281,21 @@ import { sendApiRequest } from '../utils/requests'
 import { remapItem } from '../utils/helpers'
 import { tracksStore } from '../stores/tracks'
 import { choicesStore } from '../stores/choices'
-import { analyticsStore } from '../stores/analytics'
-import type { ImportMetaEnv } from '../env'
 import DsfrButton from '@/components/button/DsfrButton.vue'
+import Matomo from '@/utils/matomo'
+import MetaEnv from '@/utils/metaEnv'
 import { RouteName } from '@/types/routeType'
 import { useRoute } from 'vue-router'
 import Contact from '@/utils/contact'
+import { useDebugStore } from '@/stores/debug'
 
+const route = useRoute()
 const choices = choicesStore()
 const tracks = tracksStore()
-const analytics = analyticsStore()
+const debugStore = useDebugStore()
 
 const trackValues: any[] = tracks.getAllUsedTracksValues
-const metaEnv: ImportMetaEnv = import.meta.env as ImportMetaEnv
-const contactEmail = metaEnv.VITE_CONTACT_EMAIL || 'france-transition@beta.gouv.fr'
+const contactEmail = MetaEnv.contactEmail
 
 interface DataProps {
   programId: string
@@ -247,7 +307,6 @@ interface Props {
   dataProps: DataProps
   program: ProgramData
   formContainerRef?: HTMLElement | null | undefined
-  debug?: boolean
 }
 const props = defineProps<Props>()
 
@@ -256,8 +315,6 @@ const requiredFields = ref<string[]>([])
 const formIsSent = ref<boolean>(false)
 const requestResponses = ref<ReqResp[]>()
 const isLoading = ref<boolean>(false)
-
-const route = useRoute()
 
 const canSaveFrom = computed(() => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return
@@ -353,7 +410,6 @@ const saveFormData = async () => {
     // loop callbacks (only active ones)
     const activeCallbacks = toRaw(props.formOptions.callbacks).filter((cb: FormCallback) => !cb.disabled)
     for (const callback of activeCallbacks) {
-      console.log()
       let resp: ReqResp = {}
       switch (callback.action) {
         case CallbackActions.CreateContact:
@@ -368,7 +424,7 @@ const saveFormData = async () => {
     requestResponses.value = responses
 
     // analytics / send event
-    analytics.sendEvent(props.trackId, route.name === RouteName.CatalogDetail ? 'send_form_catalog' : 'send_form')
+    Matomo.sendEvent(props.trackId, route.name === RouteName.CatalogDetail ? 'send_form_catalog' : 'send_form')
   } finally {
     isLoading.value = false
     formIsSent.value = true

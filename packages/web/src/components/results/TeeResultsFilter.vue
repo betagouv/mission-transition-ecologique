@@ -1,6 +1,9 @@
 <template>
   <!-- DEBUGGING -->
-  <div v-if="debug" class="vue-debug">
+  <div
+    v-if="debugStore.is"
+    class="vue-debug"
+  >
     <p>
       activeValue: <code>{{ activeValue }}</code>
     </p>
@@ -8,14 +11,26 @@
 
   <!-- SELECTOR -->
   <div class="fr-select-group">
-    <select :id="filter.label" class="fr-select" :name="filter.label" @change="updateLocalFilters">
+    <select
+      :id="filter.label"
+      class="fr-select"
+      :name="filter.label"
+      @change="updateLocalFilters"
+    >
       <!-- DEFAULT OPTION -->
-      <option value="" selected>
+      <option
+        value=""
+        selected
+      >
         {{ choices.t('results.filterSelect', { fieldLabel: filter.label }) }}
       </option>
 
       <!-- FILTER OPTIONS -->
-      <option v-for="filterVal in filter.values" :key="filterVal.value" :value="filterVal.value">
+      <option
+        v-for="filterVal in filter.values"
+        :key="filterVal.value"
+        :value="filterVal.value"
+      >
         {{ filterVal.label }}
       </option>
 
@@ -35,8 +50,10 @@
 import { ref } from 'vue'
 import { choicesStore } from '../../stores/choices'
 import type { TrackFilter, FilterEvent } from '@/types/index'
+import { useDebugStore } from '@/stores/debug'
 
 const choices = choicesStore()
+const debugStore = useDebugStore()
 
 const activeValue = ref<any>()
 
@@ -44,7 +61,6 @@ const emit = defineEmits(['updateFilter'])
 
 interface Props {
   filter: TrackFilter
-  debug?: boolean
 }
 const props = defineProps<Props>()
 

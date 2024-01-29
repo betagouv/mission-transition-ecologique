@@ -5,7 +5,11 @@
     </h2>
     <hr class="fr-mb-4v" />
     <div class="fr-grid-row fr-grid-row--gutters">
-      <div v-for="partIdx in 2" :key="`part-${partIdx}`" class="fr-col-6 fr-col-xs-12">
+      <div
+        v-for="partIdx in 2"
+        :key="`part-${partIdx}`"
+        class="fr-col-6 fr-col-xs-12"
+      >
         <div
           v-for="(field, idx) in getFieldsForColumn(partIdx)"
           :key="`elegibility-field-part1-${idx}`"
@@ -16,7 +20,10 @@
             {{ field.toString()[0].toUpperCase() + field.toString().slice(1) }}
           </p>
           <ul class="fr-tee-eligigility-list fr-mt-1v">
-            <li v-for="(value, i) in programEligibility[field]" :key="`elegibility-field-${idx}-value-${i}`">
+            <li
+              v-for="(value, i) in programEligibility[field]"
+              :key="`elegibility-field-${idx}-value-${i}`"
+            >
               {{ value }}
             </li>
           </ul>
