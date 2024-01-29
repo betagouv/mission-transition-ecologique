@@ -349,6 +349,11 @@ Merci d'avance pour votre retour`,
             from: DataMappingFrom.FormData,
             id: 'cgu',
             dataField: 'optIn'
+          },
+          {
+            from: DataMappingFrom.AllUsedTracks,
+            id: '*',
+            dataField: 'opportunity.otherData'
           }
         ]
       }

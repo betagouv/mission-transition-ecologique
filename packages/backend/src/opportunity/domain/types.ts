@@ -22,6 +22,7 @@ export interface OpportunityDetails {
   questionnaireRoute?: QuestionnaireRoute
   priorityObjectives?: Objectives[]
   sentToOperator?: boolean
+  otherData?: string
 }
 
 export type OpportunityUpdateAttributes = Required<Pick<OpportunityDetails, 'sentToOperator'>>

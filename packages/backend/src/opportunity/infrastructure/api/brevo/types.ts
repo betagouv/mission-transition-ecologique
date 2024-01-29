@@ -66,6 +66,7 @@ export interface DealAttributes {
   parcours: BrevoQuestionnaireRoute
   objectifs_renseigns?: string
   oprateur_de_contact?: Operators
+  autres_donnes?: string
 }
 
 export interface DealUpdateAttributes {
