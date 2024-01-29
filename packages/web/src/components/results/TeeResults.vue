@@ -1,6 +1,9 @@
 <template>
   <!-- DEBUGGING -->
-  <div v-if="debug" class="vue-debug">
+  <div
+    v-if="debugStore.is"
+    class="vue-debug"
+  >
     <h5>DEBUG - TeeResults</h5>
     <!-- <h6>
       programs.programDetail : <code>{{ programs.programDetail || 'undefined' }}</code>
@@ -23,38 +26,67 @@
   </div>
 
   <!-- RESULTS ALERT FOR NO RESULTS BEFORE REFILTERING-->
-  <TeeNoResults v-if="!countFilteredPrograms" :image="trackConfig?.noResultsImage" :message="trackConfig?.noResultsMessage"> </TeeNoResults>
+  <TeeNoResults
+    v-if="!countFilteredPrograms"
+    :image="trackConfig?.noResultsImage"
+    :message="trackConfig?.noResultsMessage"
+  >
+  </TeeNoResults>
 
   <!-- RESULTS CALLBACK -->
-  <h4 v-if="countFilteredPrograms && trackConfig?.showResultsTitle" class="fr-pt-12v">
+  <h4
+    v-if="countFilteredPrograms && trackConfig?.showResultsTitle"
+    class="fr-pt-12v"
+  >
     {{ choices.t('results.fittingPrograms') }}
     ({{ countFilteredPrograms }})
   </h4>
 
   <!-- PROGRAMS AS LIST OF CARDS -->
-  <div v-if="countFilteredPrograms" class="fr-container fr-px-0 fr-mt-6v">
+  <div
+    v-if="countFilteredPrograms"
+    class="fr-container fr-px-0 fr-mt-6v"
+  >
     <!-- RESULTS SIZE -->
-    <div v-if="countFilteredPrograms > 1" class="fr-mb-4v tee-text-light">
+    <div
+      v-if="countFilteredPrograms > 1"
+      class="fr-mb-4v tee-text-light"
+    >
       {{ countReFilteredPrograms }}
       {{ choices.t('results.results') }}
     </div>
 
     <!-- FILTERS IF ANY -->
-    <div v-if="trackConfig?.filters && countFilteredPrograms > 1" class="fr-grid-row fr-grid-row--gutters fr-mb-4v">
-      <div v-for="filter in trackConfig.filters" :key="filter.label" class="fr-col">
-        <TeeResultsFilter :filter="filter" :debug="debug" @update-filter="updateFilters" />
+    <div
+      v-if="trackConfig?.filters && countFilteredPrograms > 1"
+      class="fr-grid-row fr-grid-row--gutters fr-mb-4v"
+    >
+      <div
+        v-for="filter in trackConfig.filters"
+        :key="filter.label"
+        class="fr-col"
+      >
+        <TeeResultsFilter
+          :filter="filter"
+          @update-filter="updateFilters"
+        />
       </div>
     </div>
 
     <!-- NO RESULTS -->
-    <TeeNoResults v-if="!countReFilteredPrograms" :image="trackConfig?.noResultsImage" :message="trackConfig?.noResultsMessage">
-    </TeeNoResults>
+    <TeeNoResults
+      v-if="!countReFilteredPrograms"
+      :image="trackConfig?.noResultsImage"
+      :message="trackConfig?.noResultsMessage"
+    />
 
     <!-- PROGRAMS CARDS -->
-    <div
+    <component
+      :is="navigation.isCatalog ? 'router-link' : 'div'"
       v-for="prog in reFilteredPrograms"
       :id="prog.id"
       :key="prog.id"
+      :to="navigation.isCatalog ? { name: RouteName.CatalogDetail, params: { programId: prog.id.toString() } } : undefined"
       class="fr-card fr-enlarge-link fr-card--horizontal-tier fr-mb-10v"
       @click="updateDetailResult(prog.id)"
     >
@@ -71,24 +103,38 @@
             {{ prog.promesse }}
           </h2>
           <!-- DEBUG -->
-          <p v-if="debug" class="vue-debug fr-card__desc">
+          <p
+            v-if="debugStore.is"
+            class="vue-debug fr-card__desc"
+          >
             <br />
-            choices.publicPath : <code>{{ choices.publicPath }}</code> <br />
+            publicPath : <code>{{ publicPath }}</code> <br />
             prog.cover : <code>{{ prog.illustration }}</code>
-            <!-- {{ `${choices.publicPath}${randomImage()}` }} -->
+            <!-- {{ `${publicPath}${randomImage()}` }} -->
           </p>
           <!-- END -->
           <div class="fr-card__end">
             <p class="fr-mb-0 tee-program-info">
-              <span class="fr-icon-money-euro-circle-line" aria-hidden="true"> </span>
+              <span
+                class="fr-icon-money-euro-circle-line"
+                aria-hidden="true"
+              >
+              </span>
               {{ getCostInfos(prog) }}
             </p>
           </div>
         </div>
       </div>
-      <div v-if="prog.illustration" class="fr-card__header">
+      <div
+        v-if="prog.illustration"
+        class="fr-card__header"
+      >
         <div class="fr-card__img">
-          <img class="fr-responsive-img" :src="`${choices.publicPath}${prog.illustration}`" :alt="`image / ${prog.titre}`" />
+          <img
+            class="fr-responsive-img"
+            :src="`${publicPath}${prog.illustration}`"
+            :alt="`image / ${prog.titre}`"
+          />
         </div>
         <ul class="fr-badges-group">
           <p class="fr-badge tee-program-badge-image">
@@ -96,11 +142,14 @@
           </p>
         </ul>
       </div>
-    </div>
+    </component>
   </div>
 
   <!-- DEBUGGING -->
-  <div v-if="debug" class="vue-debug">
+  <div
+    v-if="debugStore.is"
+    class="vue-debug"
+  >
     <h5>DEBUG - TeeResults</h5>
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
       <div class="fr-col-6">
@@ -127,27 +176,26 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`TeeResults > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import { ref, onBeforeMount, computed } from 'vue'
-import { choicesStore } from '../../stores/choices'
-import { programsStore } from '../../stores/programs'
-import { analyticsStore } from '../../stores/analytics'
-import { getFrom, scrollToTop, consolidateAmounts } from '../../utils/helpers'
+import { computed, onBeforeMount, ref } from 'vue'
+import { choicesStore } from '@/stores/choices'
+import { programsStore } from '@/stores/programs'
+import { consolidateAmounts, getFrom, scrollToTop } from '@/utils/helpers'
 import TeeResultsFilter from './TeeResultsFilter.vue'
 import TeeNoResults from './TeeNoResults.vue'
-import type { TrackResultsConfig, ProgramData, FilterSignal, TrackFilter, PropertyPath, UsedTrack } from '@/types/index'
+import type { FilterSignal, ProgramData, PropertyPath, TrackFilter, TrackResultsConfig, UsedTrack } from '@/types'
+import { ConditionOperators, TrackId } from '@/types'
 import { ProgramAidType } from '@/types/programTypes'
 import { navigationStore } from '@/stores/navigation'
-import { ConditionOperators, TrackId } from '@/types/index'
-import { useRoute, useRouter } from 'vue-router'
 import { RouteName } from '@/types/routeType'
 import Widget from '@/utils/widget'
+import { useDebugStore } from '@/stores/debug'
+import MetaEnv from '@/utils/metaEnv'
+import Matomo from '@/utils/matomo'
 
-const route = useRoute()
-const router = useRouter()
 const choices = choicesStore()
 const programs = programsStore()
-const analytics = analyticsStore()
-const nav = navigationStore()
+const navigation = navigationStore()
+const debugStore = useDebugStore()
 
 const activeFilters = ref<Record<string, string>>({})
 
@@ -158,15 +206,15 @@ interface Props {
   trackForm?: any
   tracksResults: UsedTrack[]
   trackElement: Element
-  disableWidget?: boolean
-  debug?: boolean
 }
 const props = defineProps<Props>()
+
+const publicPath = MetaEnv.publicPath
 
 const filteredPrograms: ProgramData[] | undefined = programs.filterPrograms(props.tracksResults)
 
 const reFilteredPrograms = computed(() => {
-  const results = filteredPrograms?.filter((prog: ProgramData) => {
+  return filteredPrograms?.filter((prog: ProgramData) => {
     const boolArray = [true]
     for (const filterLabel in activeFilters.value) {
       const filterVal = activeFilters.value[filterLabel]
@@ -194,10 +242,8 @@ const reFilteredPrograms = computed(() => {
       }
       boolArray.push(bool)
     }
-    const checkFilters = boolArray.every((b) => !!b)
-    return checkFilters
+    return boolArray.every((b) => !!b)
   })
-  return results
 })
 
 const countFilteredPrograms = computed(() => {
@@ -220,19 +266,13 @@ const updateDetailResult = async (id: string | number) => {
     programs.setDetailResult(id, props.trackId)
     return
   }
-  if (route.name === RouteName.Catalog) {
-    await router.push({
-      name: RouteName.CatalogDetail,
-      params: {
-        programId: id.toString()
-      }
-    })
-  } else {
-    // Set detail infos
-    programs.setDetailResult(id, props.trackId)
-    await nav.setCurrentDetailId(id, props.disableWidget)
-    scrollToTop(props.trackElement, props.disableWidget)
+  if (navigation.isCatalog) {
+    return
   }
+  // Set detail infos
+  programs.setDetailResult(id, props.trackId)
+  await navigation.setCurrentDetailId(id)
+  scrollToTop(props.trackElement)
 }
 
 const getCostInfos = (program: ProgramData) => {
@@ -268,6 +308,6 @@ const getCostInfos = (program: ProgramData) => {
 
 onBeforeMount(() => {
   // analytics / send event
-  analytics.sendEvent(props.trackId, route.name === RouteName.Catalog ? 'show_results_catalog' : 'show_results')
+  Matomo.sendEvent(props.trackId, navigation.isCatalog ? 'show_results_catalog' : 'show_results')
 })
 </script>

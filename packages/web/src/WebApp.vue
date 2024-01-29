@@ -10,7 +10,7 @@
 
     <!-- FOOTER -->
     <div class="fr-mt-0v">
-      <TeeAppFooter :stick-to-bottom="false" />
+      <TeeAppFooter />
     </div>
   </div>
 </template>
@@ -28,12 +28,11 @@ import { choicesStore } from './stores/choices'
 import { programsStore } from './stores/programs'
 import { navigationStore } from './stores/navigation'
 
-import { publicPath, programsFromJson } from './utils/global'
-
 import TeeHeader from './components/TeeHeader.vue'
 import TeeMatomo from './components/TeeMatomo.vue'
 import TeeAppFooter from './components/TeeFooter.vue'
 import type { ProgramData } from '@/types'
+import jsonDataset from '../public/data/generated/dataset_out.json'
 
 const choices = choicesStore()
 const programs = programsStore()
@@ -48,8 +47,8 @@ interface Props {
 defineProps<Props>()
 
 onBeforeMount(() => {
-  choices.setPublicPath(publicPath)
-  programs.setDataset(programsFromJson as ProgramData[])
+  programs.setDataset(jsonDataset as ProgramData[])
+  choices.setLocale('fr')
 })
 
 onMounted(async () => {
@@ -61,8 +60,9 @@ onMounted(async () => {
 </script>
 
 <style lang="scss">
-@import '~@gouvfr/dsfr/dist/dsfr.min.css'; // ok
+@import '~@gouvfr/dsfr/dist/dsfr.min.css';
 @import '~@gouvminint/vue-dsfr/dist/vue-dsfr.css';
 @import '@public/css/custom.css';
-@import '~@gouvfr/dsfr/dist/utility/icons/icons.min.css'; // ok
+@import '~@gouvfr/dsfr/dist/utility/icons/icons.min.css';
+@import './assets/main.css';
 </style>
