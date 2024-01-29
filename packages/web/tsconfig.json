@@ -36,6 +36,5 @@
     "verbatimModuleSyntax": true,
     "resolvePackageJsonImports": false,
     "resolvePackageJsonExports": false,
-    "experimentalDecorators": true,
   }
 }
