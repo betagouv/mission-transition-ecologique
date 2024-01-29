@@ -172,7 +172,7 @@ export interface TracksList {
 }
 
 export interface UsedTrack {
-  id: string
+  id: TrackId
   component: TrackComponents | string
   category?: string
   final?: boolean

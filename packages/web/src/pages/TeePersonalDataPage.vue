@@ -1,12 +1,19 @@
 <template>
-  <div id="simple-page" class="fr-container fr-my-8w">
+  <div
+    id="simple-page"
+    class="fr-container fr-my-8w"
+  >
     <div class="fr-grid-row--gutters">
       <div class="fr-grid-col">
         <h1>Données personnelles (et gestion des cookies)</h1>
         <p>
           Le site
-          <RouterLink :to="{ name: RouteName.Homepage }" target="_blank">https://mission-transition-ecologique.beta.gouv.fr</RouterLink> est
-          soumis au Règlement général de protection des données (RGPD) et à la loi informatique et liberté.
+          <RouterLink
+            :to="{ name: RouteName.Homepage }"
+            target="_blank"
+            >https://mission-transition-ecologique.beta.gouv.fr</RouterLink
+          >
+          est soumis au Règlement général de protection des données (RGPD) et à la loi informatique et liberté.
         </p>
 
         <h4 class="fr-mt-3w">Données personnelles</h4>
@@ -46,7 +53,11 @@
 
         <h4 class="fr-mt-3w">Le site de la société Matomo</h4>
         <p>
-          <a href="https://fr.matomo.org/" target="_blank">CONSULTER SITE SOCIÉTÉ MATOMO</a>
+          <a
+            href="https://fr.matomo.org/"
+            target="_blank"
+            >CONSULTER SITE SOCIÉTÉ MATOMO</a
+          >
         </p>
         <div class="fr-mt-3w">
           <p>
@@ -54,13 +65,21 @@
             (dés)activation des cookies Matomo sur votre navigateur :
           </p>
           <p>
-            <a href="https://fr.matomo.org/privacy/" target="_blank">CONSULTER MATOMO : PROTECTION DE LA VIE PRIVÉE</a>
+            <a
+              href="https://fr.matomo.org/privacy/"
+              target="_blank"
+              >CONSULTER MATOMO : PROTECTION DE LA VIE PRIVÉE</a
+            >
           </p>
         </div>
         <div class="fr-mt-3w">
           <p>Pour s'informer sur la propriété des données par la société Matomo :</p>
           <p>
-            <a href="https://fr.matomo.org/100-data-ownership/" target="_blank">CONSULTER MATOMO : PROPRIÉTÉ DES DONNÉES</a>
+            <a
+              href="https://fr.matomo.org/100-data-ownership/"
+              target="_blank"
+              >CONSULTER MATOMO : PROPRIÉTÉ DES DONNÉES</a
+            >
           </p>
         </div>
 

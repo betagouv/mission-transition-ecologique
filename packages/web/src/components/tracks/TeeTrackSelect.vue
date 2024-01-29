@@ -1,14 +1,26 @@
 <template>
   <!-- SELECTOR -->
   <div class="fr-select-group">
-    <select :id="`${track.id}-select`" class="fr-select" :name="`${track.id}-select`" @change="updateLocalSelection">
+    <select
+      :id="`${track.id}-select`"
+      class="fr-select"
+      :name="`${track.id}-select`"
+      @change="updateLocalSelection"
+    >
       <!-- DEFAULT OPTION -->
-      <option value="" selected>
+      <option
+        value=""
+        selected
+      >
         {{ choices.t('select.selectOption') }}
       </option>
 
       <!-- VALUES -->
-      <option v-for="(optionVal, idx) in options" :key="`${track.id}-select-option-${idx}`" :value="idx">
+      <option
+        v-for="(optionVal, idx) in options"
+        :key="`${track.id}-select-option-${idx}`"
+        :value="idx"
+      >
         {{ optionVal?.label[choices.lang] }}
       </option>
     </select>
