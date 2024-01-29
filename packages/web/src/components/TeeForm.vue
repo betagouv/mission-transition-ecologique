@@ -276,10 +276,10 @@
 import { computed, onBeforeMount, ref, toRaw } from 'vue'
 import type { FormCallback, FormField, FormOptions, FormValues, ProgramData, ReqResp } from '@/types'
 import { TrackId } from '@/types'
-import { CallbackActions, FormFieldTypes } from '@/types/index'
-import { sendApiRequest } from '../utils/requests'
-import { remapItem } from '../utils/helpers'
-import { tracksStore } from '../stores/tracks'
+import { CallbackActions, FormFieldTypes } from '@/types'
+import { sendApiRequest } from '@/utils/requests'
+import { remapItem } from '@/utils/helpers'
+import { tracksStore } from '@/stores/tracks'
 import Translation from '../utils/translation'
 import DsfrButton from '@/components/button/DsfrButton.vue'
 import Matomo from '@/utils/matomo'
@@ -288,9 +288,7 @@ import { RouteName } from '@/types/routeType'
 import { useRoute } from 'vue-router'
 import Contact from '@/utils/contact'
 import { useDebugStore } from '@/stores/debug'
-import { useDebugStore } from '@/stores/debug'
 
-const route = useRoute()
 const route = useRoute()
 const tracks = tracksStore()
 const debugStore = useDebugStore()
@@ -351,7 +349,7 @@ const getMailTo = (): string => {
     const telValue = 'tel' in formData.value ? (formData.value.tel as string) : ''
     const siretValue = 'siret' in formData.value ? (formData.value.siret as string) : ''
     return Contact.getMailtoUrl(
-      choices.t('form.errorEmail.subject', { program: props.program.titre }),
+      Translation.t('form.errorEmail.subject', { program: props.program.titre }),
       `${needsValue}
 
 ${nameValue} ${surnameValue}

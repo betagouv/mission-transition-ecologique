@@ -26,10 +26,8 @@
 // console.log(`TeeNoResults > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import Translation from '../../utils/translation'
-import type { Translations } from '@/types/index'
+import type { Translations } from '@/types'
 import MetaEnv from '@/utils/metaEnv'
-
-const publicPath = MetaEnv.publicPath
 
 const publicPath = MetaEnv.publicPath
 
