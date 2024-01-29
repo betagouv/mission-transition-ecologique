@@ -83,10 +83,12 @@
     </TeeNoResults>
 
     <!-- PROGRAMS CARDS -->
-    <div
+    <component
+      :is="navigation.isCatalog ? 'router-link' : 'div'"
       v-for="prog in reFilteredPrograms"
       :id="prog.id"
       :key="prog.id"
+      :to="navigation.isCatalog ? { name: RouteName.CatalogDetail, params: { programId: prog.id.toString() } } : undefined"
       class="fr-card fr-enlarge-link fr-card--horizontal-tier fr-mb-10v"
       @click="updateDetailResult(prog.id)"
     >
@@ -142,7 +144,7 @@
           </p>
         </ul>
       </div>
-    </div>
+    </component>
   </div>
 
   <!-- DEBUGGING -->
@@ -187,16 +189,15 @@ import type { TrackResultsConfig, ProgramData, FilterSignal, TrackFilter, Proper
 import { ProgramAidType } from '@/types/programTypes'
 import { navigationStore } from '@/stores/navigation'
 import { ConditionOperators, TrackId } from '@/types/index'
-import { useRoute, useRouter } from 'vue-router'
+import { useRoute } from 'vue-router'
 import { RouteName } from '@/types/routeType'
 import Widget from '@/utils/widget'
 
 const route = useRoute()
-const router = useRouter()
 const choices = choicesStore()
 const programs = programsStore()
 const analytics = analyticsStore()
-const nav = navigationStore()
+const navigation = navigationStore()
 
 const activeFilters = ref<Record<string, string>>({})
 
@@ -269,19 +270,13 @@ const updateDetailResult = async (id: string | number) => {
     programs.setDetailResult(id, props.trackId)
     return
   }
-  if (route.name === RouteName.Catalog) {
-    await router.push({
-      name: RouteName.CatalogDetail,
-      params: {
-        programId: id.toString()
-      }
-    })
-  } else {
-    // Set detail infos
-    programs.setDetailResult(id, props.trackId)
-    await nav.setCurrentDetailId(id, props.disableWidget)
-    scrollToTop(props.trackElement, props.disableWidget)
+  if (navigation.isCatalog) {
+    return
   }
+  // Set detail infos
+  programs.setDetailResult(id, props.trackId)
+  await navigation.setCurrentDetailId(id, props.disableWidget)
+  scrollToTop(props.trackElement, props.disableWidget)
 }
 
 const getCostInfos = (program: ProgramData) => {
