@@ -5,7 +5,7 @@
   >
     <!-- DEBUGGING -->
     <div
-      v-if="debug"
+      v-if="debugStore.is"
       class="debug"
     >
       - option : <code>{{ option }}</code
@@ -59,17 +59,18 @@ import { onBeforeMount, ref, computed } from 'vue'
 import { choicesStore } from '@/stores/choices'
 import type { TrackOptionsInput } from '@/types'
 import { HasInputOptions } from '@/types'
+import { useDebugStore } from '@/stores/debug'
 
 interface Props {
   trackId: string
   icon: string
   isActive: boolean
   option: TrackOptionsInput
-  debug?: boolean
 }
 const props = defineProps<Props>()
 
 const choices = choicesStore()
+const debugStore = useDebugStore()
 
 const inputValue = ref<string | number>()
 

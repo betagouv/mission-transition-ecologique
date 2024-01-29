@@ -20,6 +20,8 @@ import type {
 } from '@/types'
 import { CleanerOperations, DataMappingFrom } from '@/types'
 import type { ImportMetaEnv } from '../env'
+import Widget from '@/utils/widget'
+import MetaEnv from '@/utils/metaEnv'
 
 const refs: Refs = {
   NafCodes: nafCodesJson as NafCode[],
@@ -204,7 +206,7 @@ export const remapItem = (
   lang: string = 'fr'
 ) => {
   let data = { ...dataStructure }
-  const metaEnv: ImportMetaEnv = import.meta.env as ImportMetaEnv
+  const metaEnv: ImportMetaEnv = MetaEnv.metaEnv
 
   dataMappings.forEach((dataMapping) => {
     let value: unknown = ''
@@ -273,8 +275,8 @@ export const remapItem = (
 }
 
 // UX HELPERS
-export const scrollToTop = (element: Element, disableWidget: boolean) => {
-  if (disableWidget) {
+export const scrollToTop = (element: Element) => {
+  if (!Widget.is) {
     element.scrollIntoView()
   } else {
     setTimeout(() => {
