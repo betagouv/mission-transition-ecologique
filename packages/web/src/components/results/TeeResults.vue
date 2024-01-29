@@ -189,11 +189,9 @@ import type { TrackResultsConfig, ProgramData, FilterSignal, TrackFilter, Proper
 import { ProgramAidType } from '@/types/programTypes'
 import { navigationStore } from '@/stores/navigation'
 import { ConditionOperators, TrackId } from '@/types/index'
-import { useRoute } from 'vue-router'
 import { RouteName } from '@/types/routeType'
 import Widget from '@/utils/widget'
 
-const route = useRoute()
 const choices = choicesStore()
 const programs = programsStore()
 const analytics = analyticsStore()
