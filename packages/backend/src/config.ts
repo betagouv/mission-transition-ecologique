@@ -1,6 +1,9 @@
-export default class Config {
-  private static _sentryEnvironment = ['prod', 'preprod']
-  private static _sentryDefaultEnvironment = 'preprod'
+import ConfigCommon from '@tee/common/src/config/configCommon'
+import { Environment } from '@tee/common/src/config/types'
+
+export default class Config extends ConfigCommon {
+  protected static override _sentryDsn = process.env['SENTRY_DSN']
+  protected static override _sentryEnvironment = process.env['SENTRY_ENVIRONMENT'] as Environment
 
   public static get BPI_FRANCE_CLIENT_ID(): string {
     if (!process.env['BPI_FRANCE_CLIENT_ID']) {
@@ -16,29 +19,5 @@ export default class Config {
     }
 
     return process.env['BPI_FRANCE_CLIENT_SECRET']
-  }
-
-  public static get SENTRY_DSN(): string | undefined {
-    if (!process.env['SENTRY_DSN']) {
-      return undefined
-    }
-
-    return process.env['SENTRY_DSN']
-  }
-
-  public static get SENTRY_ENVIRONMENT(): string {
-    if (!process.env['SENTRY_ENVIRONMENT']) {
-      process.env['SENTRY_ENVIRONMENT'] = this._sentryDefaultEnvironment
-    }
-
-    if (!this.isValidSentryEnvironment(process.env['SENTRY_ENVIRONMENT'])) {
-      throw new Error('SENTRY_ENVIRONMENT is not valid')
-    }
-
-    return process.env['SENTRY_ENVIRONMENT']
-  }
-
-  private static isValidSentryEnvironment(sentryEnvironment: string): boolean {
-    return this._sentryEnvironment.includes(sentryEnvironment)
   }
 }
