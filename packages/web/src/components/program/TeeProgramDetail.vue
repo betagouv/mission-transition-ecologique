@@ -289,6 +289,7 @@ import { RouteName } from '@/types/routeType'
 import Widget from '@/utils/widget'
 import MetaEnv from '@/utils/metaEnv'
 import Matomo from '@/utils/matomo'
+import Program from '@/utils/program'
 
 const choices = choicesStore()
 const tracks = tracksStore()
@@ -304,8 +305,6 @@ const TeeProgramFormContainer = ref<HTMLElement | null | undefined>(null)
 const blockColor = '#000091'
 const columnTiles = ref<string>('fr-col')
 
-const todayDate = new Date()
-// const todayStr = todayDate.toLocaleDateString('fr-FR')
 const publicPath = MetaEnv.publicPath
 
 interface Props {
@@ -337,19 +336,7 @@ onBeforeMount(() => {
   Matomo.sendEvent('result_detail', route.name === RouteName.CatalogDetail ? 'show_detail_catalog' : 'show_detail', props.programId)
 })
 
-const programEndDate = computed(() => {
-  const endDateStr: string | undefined = program.value?.['fin de validité']
-  let endDate: Date
-  if (endDateStr) {
-    const dateArr: string[] = endDateStr.split('/')
-    endDate = new Date(`${dateArr[2]}/${dateArr[1]}/${dateArr[0]}`)
-  } else {
-    endDate = todayDate
-  }
-  return endDate
-})
 const programIsAvailable = computed(() => {
-  const dateIsPassed = programEndDate.value > todayDate
-  return dateIsPassed
+  return !Program.isAvailable(program.value)
 })
 </script>
