@@ -228,7 +228,7 @@
               :image-path="`${publicPath}images/TEE-duree.svg`"
               :description="
                 program?.[`fin de validité`]
-                  ? choices.ti(choices.t('program.programAvailableUntil'), { date: program[`fin de validité`] })
+                  ? choices.t(choices.t('program.programAvailableUntil'), { date: program[`fin de validité`] })
                   : choices.t('program.programAvailable')
               "
             />
