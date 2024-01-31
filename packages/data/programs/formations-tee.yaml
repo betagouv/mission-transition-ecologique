@@ -1,0 +1,77 @@
+titre: Formations Transition Écologique et Énergétique
+promesse: Accédez à des formations courtes et opérationnelles aux enjeux de la transition
+  écologique et énergétique
+description: 'Bpifrance Université met en ligne gratuitement un catalogue de formations
+  animées par des experts de la transition écologique et énergétique. Ces formations
+  abordent de nombreux sujets relatifs aux enjeux de la responsabilité sociétale des
+  entreprises (RSE) : environnement, enjeux sociaux, achats responsables…'
+description longue: 'Ce cursus Transition Écologique et Énergétique vous permettra
+  de :
+
+  - mesurer l’impact de votre activité sur l’environnement à l’aide de l’autodiagnostic
+  "Mon Climatomètre"
+
+  - Comprendre ce qu’est la transition écologique et énergétique (TEE) et ses enjeux
+  dans votre entreprise
+
+  - Opérer une TEE au sein de votre entreprise
+
+  - Cerner la TEE au sein de votre secteur d’activité'
+illustration: images/TEE_ampoule.png
+opérateur de contact: Bpifrance
+url: https://universite.bpifrance.fr/
+nature de l'aide: formation
+coût de l'accompagnement: Gratuit
+durée de l'accompagnement: 1h
+objectifs:
+- Accédez à un catalogue d'une cinquantaine de formations gratuites sur la thématique
+  de la Transition Ecologique et Energétique des entreprises.
+- Visionnez vos formations à votre rythme et en toute autonomie. Elles peuvent prendre
+  la forme de modules e-learning, webinaires live et replay, podcasts, digital guides,
+  tutos, exercices interactifs, ou interviews réalisés avec des experts.
+- Accédez à un outil d'autodiagnostic en ligne pour mesurer l’impact de votre activité
+  sur l’environnement
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Toutes tailles
+  - Éligible aux micro-entreprises
+  secteur géographique:
+  - France et territoires d'outre-mer
+  secteur d'activité:
+  - Tous secteurs d’activité
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+    - est éligible
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+  entreprise . est éligible:
+    valeur: oui
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+    - code NAF niveau 1 . est A
+    - code NAF niveau 1 . est B
+    - code NAF niveau 1 . est C
+    - code NAF niveau 1 . est D
+    - code NAF niveau 1 . est E
+    - code NAF niveau 1 . est F
+    - code NAF niveau 1 . est G
+    - code NAF niveau 1 . est H
+    - code NAF niveau 1 . est I
+    - code NAF niveau 1 . est J
+    - code NAF niveau 1 . est K
+    - code NAF niveau 1 . est L
+    - code NAF niveau 1 . est M
+    - code NAF niveau 1 . est N
+    - code NAF niveau 1 . est O
+    - code NAF niveau 1 . est P
+    - code NAF niveau 1 . est Q
+    - code NAF niveau 1 . est R
+    - code NAF niveau 1 . est S
+    - code NAF niveau 1 . est T
+    - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est former ou recruter

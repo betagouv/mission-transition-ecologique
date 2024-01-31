@@ -53,7 +53,7 @@ def assembleProgramYAML(rawData, colNumbersByName, id):
 
     prog = {}
 
-    FORCE_ALL = False
+    FORCE_ALL = True
 
     # Only sets the key if key does not exist.
     # if force = True, then replaces the key even if it exists
@@ -75,14 +75,14 @@ def assembleProgramYAML(rawData, colNumbersByName, id):
     if valid(get("DISPOSITIF_DATE_FIN")):
         set("fin de validité", get("DISPOSITIF_DATE_FIN"))
 
-    set("illustration", randomIllustration())
+    set("illustration", randomIllustration(), overwrite=False)
     set("opérateur de contact", get("Opérateur de contact"))
 
     autresOp = csv_to_list(get("Autres opérateurs"))
     if len(autresOp) >= 1:
         set("autres opérateurs", autresOp)
 
-    set("url", get("Lien en savoir+"))
+    set("url", get("URL"))
     set("nature de l'aide", get("💸 Nature de l'aide").lower())
     nat = prog["nature de l'aide"]
     if nat == "financement":
@@ -100,7 +100,7 @@ def assembleProgramYAML(rawData, colNumbersByName, id):
         set("montant de l'avantage fiscal", get("💰 Montant de l'aide"))
 
     objectifs = makeObj(
-        [get(f"🎯 {i} objectif") for i in ["1er", "2ème", "3ème", "4ème", "5ème"]]
+        [get(f"🎯 {i} étape") for i in ["1er", "2ème", "3ème", "4ème", "5ème"]]
     )
     set("objectifs", objectifs)
 
@@ -196,7 +196,7 @@ def assembleProgramYAML(rawData, colNumbersByName, id):
 
     publicodes_obj |= pc
 
-    set("publicodes", publicodes_obj, True)
+    set("publicodes", publicodes_obj, overwrite=False)
 
     return convertToYaml(prog)
 
@@ -256,10 +256,17 @@ def randomIllustration():
     return illustrations[random.randint(0, 2)]
 
 
+WRONG_DATE_PATTERN = re.compile(r"^[0-9]{4}/[0-9]{2}/[0-9]{2}$")
+
+
 def curate(value):
     curated = value
     if isinstance(value, str):
         curated = curated.strip()
+
+    if isinstance(curated, str) and WRONG_DATE_PATTERN.match(curated):
+        curated = curated[8:10] + "/" + curated[5:7] + "/" + curated[0:4]
+
     return curated
 
 

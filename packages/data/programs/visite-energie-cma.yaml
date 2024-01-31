@@ -1,0 +1,52 @@
+titre: Visite Énergie CMA
+promesse: Optimisez les consommations d'énergie de votre entreprise
+description: La CMA vous propose un diagnostic énergie pour vous aider à comprendre
+  vos factures, agir sur vos postes de consommation et réduire vos coûts jusqu'à 30%
+illustration: images/TEE_eolienne.png
+opérateur de contact: CMA
+url: ''
+nature de l'aide: accompagnement
+coût de l'accompagnement: Gratuit
+durée de l'accompagnement: 1 journée
+objectifs:
+- Bénéficiez d'une visite sur site d'un expert en énergie pour recueillir les grands
+  postes de consommation d’énergie de votre entreprise. (éclairage, chauffage, climatisation,
+  air comprimé, informatique, froid, etc…).
+- Disposez d’un plan d’action permettant d’optimiser votre gestion avec des préconisations
+  sur du court, moyen ou long terme et un retour sur investissement rapide et significatif.
+- Optimisez le type de contrat souscrit avec vos fournisseurs d’énergie
+- Engagez un système de suivi de votre consommation d'énergie et bénéficiez de conseils
+  sur des financements potentiels.
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - TPE et PME
+  - Éligible aux micro-entreprises
+  secteur géographique:
+  - France et territoires d'outre-mer
+  secteur d'activité:
+  - Artisan
+  nombre d'années d'activité:
+  - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+    - est éligible
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+    - a un effectif éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+    - effectif <= 249
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+    - code NAF niveau 1 . est C
+    - code NAF niveau 1 . est D
+    - code NAF niveau 1 . est F
+    - code NAF niveau 1 . est I
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est rénover mon bâtiment
+    - questionnaire . objectif prioritaire . est ma performance énergétique
+    - questionnaire . objectif prioritaire . est mon impact environnemental

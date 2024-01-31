@@ -1,4 +1,4 @@
-titre: Investissement "méthanisation"
+titre: Investissement "Méthanisation"
 promesse: Financez votre installation de méthanisation
 description: Vous disposez d’une étude pour votre projet de méthanisation ? Vous souhaitez
   investir pour le mettre en œuvre ? L’ADEME peut accompagner financièrement la réalisation
@@ -19,10 +19,10 @@ description longue: 'Les équipements financés sont les suivants :
 
   La réalisation d''une étude de faisabilité préalable est une condition d''éligibilité.'
 début de validité: 01/01/2023
-fin de validité: 31/12/2023
+fin de validité: 31/12/2024
 illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
-url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/realisation-dinstallations-methanisation-injection-cogeneration-chaleur
+url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/realisation-dinstallations-methanisation-injection-cogeneration-chaleur
 nature de l'aide: financement
 montant du financement: Aide calculée selon le type d'installation
 objectifs:
@@ -38,9 +38,9 @@ conditions d'éligibilité:
   - Toutes tailles
   - Éligible aux micro-entreprises
   secteur géographique:
-  - Bourgogne-Franche-Comté, Hauts-de-France, Occitanie, Auvergne-Rhône-Alpes, Provence-Alpes-Côte
-    d'Azur, Corse, Guadeloupe, Martinique, Guyane, La Réunion, Nouvelle-Aquitaine,
-    Centre-Val de Loire, Pays de la Loire
+  - Corse, Centre-Val de Loire, Bourgogne-Franche-Comté, Provence-Alpes-Côte d'Azur,
+    Guadeloupe, Nouvelle-Aquitaine, Martinique, Occitanie, Guyane, La Réunion, Auvergne-Rhône-Alpes,
+    Hauts-de-France, Pays de la Loire
   secteur d'activité:
   - Tous secteurs d’activité
   nombre d'années d'activité:
@@ -73,16 +73,16 @@ publicodes:
     - questionnaire . objectif prioritaire . est ma performance énergétique
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
-    - région = Bourgogne-Franche-Comté
-    - région = Hauts-de-France
-    - région = Occitanie
-    - région = Auvergne-Rhône-Alpes
-    - région = Provence-Alpes-Côte d'Azur
     - région = Corse
+    - région = Centre-Val de Loire
+    - région = Bourgogne-Franche-Comté
+    - région = Provence-Alpes-Côte d'Azur
     - région = Guadeloupe
+    - région = Nouvelle-Aquitaine
     - région = Martinique
+    - région = Occitanie
     - région = Guyane
     - région = La Réunion
-    - région = Nouvelle-Aquitaine
-    - région = Centre-Val de Loire
+    - région = Auvergne-Rhône-Alpes
+    - région = Hauts-de-France
     - région = Pays de la Loire
