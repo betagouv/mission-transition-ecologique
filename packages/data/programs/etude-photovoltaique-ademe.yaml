@@ -1,4 +1,4 @@
-titre: Étude "Photovoltaïque"
+titre: Étude "Photovoltaïque" Ademe
 promesse: Réalisez une étude de faisabilité pour votre projet d'installation de panneaux
   solaires photovoltaïques
 description: Vous souhaitez mettre en place une toiture ou ombrière solaire photovoltaïque
@@ -12,8 +12,8 @@ description longue: Quand la consommation électrique de vos bâtiments, de vos 
   révélant ses forces et  faiblesses, les perspectives et les menaces qu'il suppose,
   et les ressources nécessaires pour le mener à bien.
 début de validité: 01/01/2023
-fin de validité: 31/12/2023
-illustration: images/TEE_eolienne.png
+fin de validité: 2024/12/31
+illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/etudes-faisabilite-lautoconsommation-electrique-photovoltaique
 nature de l'aide: financement
@@ -34,8 +34,8 @@ conditions d'éligibilité:
   - Toutes tailles
   - Éligible aux micro-entreprises
   secteur géographique:
-  - Nouvelle-Aquitaine, Corse, Saint-Pierre-Et-Miquelon, Polynésie française, Guadeloupe,
-    Guyane, Mayotte, Martinique
+  - Corse, Saint-Pierre-Et-Miquelon, Polynésie française, Guadeloupe, Martinique,
+    Guyane, Mayotte
   secteur d'activité:
   - Tous secteurs d’activité
   nombre d'années d'activité:
@@ -89,11 +89,10 @@ publicodes:
     - questionnaire . objectif prioritaire . est ma performance énergétique
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
-    - région = Nouvelle-Aquitaine
     - région = Corse
     - région = Saint-Pierre-Et-Miquelon
     - région = Polynésie française
     - région = Guadeloupe
+    - région = Martinique
     - région = Guyane
     - région = Mayotte
-    - région = Martinique
