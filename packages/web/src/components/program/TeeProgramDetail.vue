@@ -337,6 +337,6 @@ onBeforeMount(() => {
 })
 
 const programIsAvailable = computed(() => {
-  return !Program.isAvailable(program.value)
+  return Program.isAvailable(program.value)
 })
 </script>
