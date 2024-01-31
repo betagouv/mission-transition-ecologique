@@ -93,14 +93,12 @@
             >
               <li>
                 <a
-                  class="footer__partners-link"
+                  class="footer__partners-link tee-footer-partners-container"
                   target="_blank"
-                  style="background-image: none"
                   :href="partner.href"
                 >
                   <img
-                    class="fr-footer__logo"
-                    style="height: auto; max-height: 5.625rem; width: 10rem"
+                    class="fr-footer__logo tee-footer-partners-img"
                     :src="partner.img"
                     :alt="partner.label"
                   />
@@ -175,6 +173,7 @@
 
 import { choicesStore } from '@/stores/choices'
 import { RouteName } from '@/types/routeType'
+import partners from '@/utils/partners'
 
 const choices = choicesStore()
 
@@ -211,28 +210,28 @@ const mainPartner = {
 //   img: '/images/logos/aides-territoires.png',
 //   href: 'https://aides-territoires.beta.gouv.fr/'
 // }
-const partners = [
-  {
-    label: 'ADEME',
-    img: '/images/logos/ademe.svg',
-    href: 'https://www.ademe.fr/'
-  },
-  {
-    label: 'Bpifrance',
-    img: '/images/logos/bpi-france.svg',
-    href: 'https://www.bpifrance.fr/'
-  },
-  {
-    label: 'CCI France',
-    img: '/images/logos/cci-france.svg',
-    href: 'https://www.cci.fr/'
-  },
-  {
-    label: 'CMA France',
-    img: '/images/logos/cma-france.png',
-    href: 'https://www.artisanat.fr/'
-  }
-]
+// const partners = [
+//   {
+//     label: 'ADEME',
+//     img: '/images/logos/ademe.svg',
+//     href: 'https://www.ademe.fr/'
+//   },
+//   {
+//     label: 'Bpifrance',
+//     img: '/images/logos/bpi-france.svg',
+//     href: 'https://www.bpifrance.fr/'
+//   },
+//   {
+//     label: 'CCI France',
+//     img: '/images/logos/cci-france.svg',
+//     href: 'https://www.cci.fr/'
+//   },
+//   {
+//     label: 'CMA France',
+//     img: '/images/logos/cma-france.png',
+//     href: 'https://www.artisanat.fr/'
+//   }
+// ]
 
 const mainLinks = [
   // {
