@@ -75,14 +75,14 @@ def assembleProgramYAML(rawData, colNumbersByName, id):
     if valid(get("DISPOSITIF_DATE_FIN")):
         set("fin de validité", get("DISPOSITIF_DATE_FIN"))
 
-    set("illustration", randomIllustration())
+    set("illustration", randomIllustration(), overwrite=False)
     set("opérateur de contact", get("Opérateur de contact"))
 
     autresOp = csv_to_list(get("Autres opérateurs"))
     if len(autresOp) >= 1:
         set("autres opérateurs", autresOp)
 
-    set("url", get("Lien en savoir+"))
+    set("url", get("URL"))
     set("nature de l'aide", get("💸 Nature de l'aide").lower())
     nat = prog["nature de l'aide"]
     if nat == "financement":
@@ -100,7 +100,7 @@ def assembleProgramYAML(rawData, colNumbersByName, id):
         set("montant de l'avantage fiscal", get("💰 Montant de l'aide"))
 
     objectifs = makeObj(
-        [get(f"🎯 {i} objectif") for i in ["1er", "2ème", "3ème", "4ème", "5ème"]]
+        [get(f"🎯 {i} étape") for i in ["1er", "2ème", "3ème", "4ème", "5ème"]]
     )
     set("objectifs", objectifs)
 
