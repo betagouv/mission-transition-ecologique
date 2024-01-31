@@ -388,15 +388,14 @@ The `TeeApp` widget can the import the json file as a static, and they are then 
 ```js
 // ./src/TeeApp.ce.vue
 
-<script>
+<script lang="ts">
   import jsonDataset from '../public/data/generated/dataset_out.json'
   import { programsStore } from './stores/programs'
-  const programsFromJson = jsonDataset
   const programs = programsStore()
   ...
   onBeforeMount(() => {
     ...
-    programs.setDataset(programsFromJson)
+    programs.setDataset(jsonDataset as ProgramData[])
     ...
   })
   ...
@@ -473,11 +472,6 @@ Check : https://github.com/orgs/betagouv/projects/54/views/1
 <gov-aid-tree-app
   id="main-widget"
   locale="fr"
-  show-header="true"
-  show-footer="true"
-  show-stepper="true"
-  show-message="true"
-  msg="fr | The GOV-AID-TREE widget to find your aid program !"
   seed="track_needs"
   max-depth=3
   debug-switch="false"

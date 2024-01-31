@@ -1,39 +1,28 @@
 titre: Coup de pouce Chauffage
 promesse: Chauffez vos bâtiments grâce à une énergie renouvelable
 description: Bénéficiez d'une prime pour le remplacement de vos anciens équipements
-  par un système de chauffage fonctionnant aux énergies renouvelables et ne consommant
-  ni charbon ni fioul.
-description longue: 'Ces opérations d''économies d''énergie correspondent à l''installation
-  :
-
-  - d''une chaudière collective à haute performance énergétique,
-
-  - d''une pompe à chaleur,
-
-  - d''une chaudière biomasse,
-
-  - ou d''un raccordement à un réseau de chaleur dans les bâtiments tertiaires qui
-  viennent en remplacement d''équipements fonctionnant au charbon ou au fioul et,
-  dans certains cas, au gaz ; modification relative à la bonification d''opérations
-  d''économies d''énergie liées à un contrat de performance énergétique (CPE).
-
-
-  *Les entreprises signataires de la charte "Coup de pouce Chauffage des bâtiments
-  tertiaires" sont listées dans la rubrique "Quelles sont les offres disponibles ?"
-  du site : https://www.ecologie.gouv.fr/coup-pouce-chauffage-des-batiments-residentiels-collectifs-et-tertiaires)'
+  à énergie fossile (charbon, fioul ou gaz) au profit d’un système de chauffage ou
+  de production d’eau chaude fonctionnant aux énergies renouvelables.
+description longue: "• Si un réseau de chaleur passe à proximité de votre adresse,\
+  \ vous avez le droit à une prime pour le raccordement de vos locaux à ce réseau\
+  \ de chaleur.\n• S’il n’y a pas de réseau de chaleur à proximité de votre adresse,\
+  \ vous avez le droit à une prime pour la mise en place d’équipements de chauffage\
+  \ ou de production d’eau chaude sanitaire ne consommant ni charbon ni fioul. \n\
+  Les équipements éligibles sont les suivants : \n- chaudière collective à haute performance\
+  \ énergétique,\n- chaudière biomasse,\n- pompe à chaleur."
 illustration: images/TEE_eolienne.png
 opérateur de contact: Ministère de la Transition Écologique et Solidaire
-url: https://les-aides.fr/aide/YwUv3w/ministere-de-la-transition-ecologique-et-solidaire/prime-energie-coup-de-pouce-chauffage-des-batiments-tertiaires.html
+url: ''
 nature de l'aide: financement
-montant du financement: Montant des aides variable selon le projet
+montant du financement: Variable selon le bâtiment et le type d'équipement
 objectifs:
-- Choisissez une entreprise parmi les entreprises signataires de la charte "Coup de
-  pouce Chauffage des bâtiments tertiaires"*.
-- Comparez puis acceptez l'offre de votre choix. Cette offre doit être validée avant
-  de signer le devis des travaux et devra obligatoirement comporter un document décrivant
-  la proposition.
+- Prenez contact avec des fournisseurs d’énergie signataires de la charte Coup de
+  pouce chauffage pour obtenir une estimation tarifaire. N’hésitez pas à comparer
+  les offres entre plusieurs fournisseurs d’énergie.
+- Acceptez l'offre de votre choix. Cette offre doit être validée avant de signer le
+  devis des travaux et devra obligatoirement comporter un document décrivant la proposition.
 - Signez le devis proposé par un professionnel pour la réalisation de vos travaux.
-- Faites réaliser les travaux par le professionnel.
+- Faites réaliser les travaux par un professionnel.
 - Retournez les documents (factures, attestations sur l’honneur, etc.) au signataire
   de la charte ou à son partenaire dans les délais prévus pour bénéficier de la prime.
 conditions d'éligibilité:
@@ -47,7 +36,12 @@ conditions d'éligibilité:
   nombre d'années d'activité:
   - Éligible à toutes les entreprises
   autres critères d'éligibilité:
-  - vos bâtiments doivent exister depuis plus de 2 ans à la date d’engagement de l’opération.
+  - Votre bâtiment doit être dédié à un usage tertiaire (vous devez en être propriétaire
+    ou gestionnaire)
+  - La superficie de votre  bâtiment doit être inférieur à 1000 m2
+  - Votre bâtiment doit être construit depuis au moins deux ans à la date d’engagement
+    des travaux et il ne doit pas avoir été raccordé à un réseau de chaleur (dans
+    un délai de cinq ans précédant la date de l'engagement de l'opération)
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
@@ -55,8 +49,6 @@ publicodes:
     - a un objectif ciblé
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - code NAF niveau 1 . est C
-    - code NAF niveau 1 . est F
     - code NAF niveau 1 . est G
     - code NAF niveau 1 . est H
     - code NAF niveau 1 . est I

@@ -5,7 +5,7 @@ export interface TokenResponse {
   token_type: string
 }
 
-export interface ContactPayload {
+export interface bpiOpportunityPayload {
   Subject: 'Demande d’échange'
   Produit_souhaite__c: string
   SuppliedEmail: string
