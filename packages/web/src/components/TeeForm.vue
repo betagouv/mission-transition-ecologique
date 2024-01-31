@@ -277,10 +277,10 @@ import { computed, onBeforeMount, ref, toRaw } from 'vue'
 import type { FormCallback, FormField, FormOptions, FormValues, ProgramData, ReqResp } from '@/types'
 import { TrackId } from '@/types'
 import { CallbackActions, FormFieldTypes } from '@/types/index'
-import { sendApiRequest } from '../utils/requests'
-import { remapItem } from '../utils/helpers'
-import { tracksStore } from '../stores/tracks'
-import { choicesStore } from '../stores/choices'
+import { sendApiRequest } from '@/utils/requests'
+import { remapItem, scrollToElementCenter } from '@/utils/helpers'
+import { tracksStore } from '@/stores/tracks'
+import { choicesStore } from '@/stores/choices'
 import DsfrButton from '@/components/button/DsfrButton.vue'
 import Matomo from '@/utils/matomo'
 import MetaEnv from '@/utils/metaEnv'
@@ -433,6 +433,9 @@ const saveFormData = async () => {
 }
 
 const scrollToFormContainer = () => {
-  props.formContainerRef?.scrollIntoView({ block: 'start' })
+  const element = props.formContainerRef
+  if (element) {
+    scrollToElementCenter(element)
+  }
 }
 </script>
