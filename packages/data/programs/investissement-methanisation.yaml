@@ -73,16 +73,16 @@ publicodes:
     - questionnaire . objectif prioritaire . est ma performance énergétique
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
-    - région = Bourgogne-Franche-Comté
-    - région = Hauts-de-France
-    - région = Occitanie
-    - région = Auvergne-Rhône-Alpes
-    - région = Provence-Alpes-Côte d'Azur
     - région = Corse
+    - région = Centre-Val de Loire
+    - région = Bourgogne-Franche-Comté
+    - région = Provence-Alpes-Côte d'Azur
     - région = Guadeloupe
+    - région = Nouvelle-Aquitaine
     - région = Martinique
+    - région = Occitanie
     - région = Guyane
     - région = La Réunion
-    - région = Nouvelle-Aquitaine
-    - région = Centre-Val de Loire
+    - région = Auvergne-Rhône-Alpes
+    - région = Hauts-de-France
     - région = Pays de la Loire

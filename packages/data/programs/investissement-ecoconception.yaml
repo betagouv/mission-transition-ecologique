@@ -59,7 +59,8 @@ publicodes:
       toutes ces conditions:
       - dispositif . début de validité <= date du jour
       - date du jour <= dispositif . fin de validité
-    valeur: oui
+    toutes ces conditions:
+    - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
     - code NAF niveau 1 . est A
@@ -72,3 +73,24 @@ publicodes:
     - questionnaire . objectif prioritaire . est ma performance énergétique
     - questionnaire . objectif prioritaire . est mon impact environnemental
     - questionnaire . objectif prioritaire . est l'écoconception
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+    - région = Auvergne-Rhône-Alpes
+    - région = Bourgogne-Franche-Comté
+    - région = Bretagne
+    - région = Centre-Val de Loire
+    - région = Grand Est
+    - région = Guadeloupe
+    - région = Guyane
+    - région = Hauts-de-France
+    - région = Île-de-France
+    - région = La Réunion
+    - région = Martinique
+    - région = Mayotte
+    - région = Normandie
+    - région = Nouvelle-Aquitaine
+    - région = Occitanie
+    - région = Nouvelle-Calédonie
+    - région = Pays de la Loire
+    - région = Polynésie française
+    - région = Provence-Alpes-Côte d'Azur

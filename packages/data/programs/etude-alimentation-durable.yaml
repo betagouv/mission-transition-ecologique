@@ -69,7 +69,8 @@ publicodes:
       toutes ces conditions:
       - dispositif . début de validité <= date du jour
       - date du jour <= dispositif . fin de validité
-    valeur: oui
+    toutes ces conditions:
+    - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
     - code NAF niveau 1 . est A
@@ -81,3 +82,25 @@ publicodes:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est la gestion des déchets
     - questionnaire . objectif prioritaire . est mon impact environnemental
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+    - région = Grand Est
+    - région = Pays de la Loire
+    - région = Hauts-de-France
+    - région = Saint-Pierre-Et-Miquelon
+    - région = Saint-Barthélemy
+    - région = Mayotte
+    - région = La Réunion
+    - région = Guyane
+    - région = Nouvelle-Calédonie
+    - région = Occitanie
+    - région = Martinique
+    - région = Nouvelle-Aquitaine
+    - région = Guadeloupe
+    - région = Provence-Alpes-Côte d'Azur
+    - région = Normandie
+    - région = Polynésie française
+    - région = Bourgogne-Franche-Comté
+    - région = Île-de-France
+    - région = Centre-Val de Loire
+    - région = Corse

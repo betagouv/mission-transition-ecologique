@@ -52,11 +52,7 @@ publicodes:
       - dispositif . début de validité <= date du jour
       - date du jour <= dispositif . fin de validité
     toutes ces conditions:
-    - a un effectif éligible
     - est dans un secteur d'activité éligible
-  entreprise . a un effectif éligible:
-    toutes ces conditions:
-    - effectif >= 250
   entreprise . est dans un secteur d'activité éligible:
     toutes ces conditions:
     - code NAF niveau 1 . est A

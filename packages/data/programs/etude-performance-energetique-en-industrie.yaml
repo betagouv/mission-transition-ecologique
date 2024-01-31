@@ -86,7 +86,6 @@ publicodes:
       - date du jour <= dispositif . fin de validité
     toutes ces conditions:
     - a un effectif éligible
-    - entreprise . est dans une zone géographique éligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
     - effectif <= 250
@@ -99,29 +98,3 @@ publicodes:
     - questionnaire . objectif prioritaire . est ma performance énergétique
     - questionnaire . objectif prioritaire . est mon impact environnemental
     - questionnaire . objectif prioritaire . est l'écoconception
-  entreprise . est dans une zone géographique éligible:
-    une de ces conditions:
-    - région = Corse
-    - région = Wallis et Futuna
-    - région = Centre-Val de Loire
-    - région = Ile de Clipperton
-    - région = Île-de-France
-    - région = Bourgogne-Franche-Comté
-    - région = Polynésie française
-    - région = Saint-Martin
-    - région = Normandie
-    - région = Provence-Alpes-Côte d'Azur
-    - région = Guadeloupe
-    - région = Nouvelle-Aquitaine
-    - région = Martinique
-    - région = Occitanie
-    - région = Terres australes et antarctiques françaises
-    - région = Nouvelle-Calédonie
-    - région = Guyane
-    - région = La Réunion
-    - région = Mayotte
-    - région = Saint-Barthélemy
-    - région = Auvergne-Rhône-Alpes
-    - région = Saint-Pierre-Et-Miquelon
-    - région = Bretagne
-    - région = Grand Est
