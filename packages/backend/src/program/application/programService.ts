@@ -1,11 +1,11 @@
-import Program from '../domain/program'
+import ProgramFeatures from '../domain/programFeatures'
 import ProgramsJson from '../infrastructure/programsJson'
 
 export default class ProgramService {
-  private _program: Program
+  private _program: ProgramFeatures
 
   constructor() {
-    this._program = new Program(ProgramsJson.getInstance())
+    this._program = new ProgramFeatures(ProgramsJson.getInstance())
   }
 
   public getById(id: string) {

@@ -15,7 +15,7 @@ export enum Entreprise {
 }
 
 export enum Questionnaire {
-  priorityObjectives = 'questionnaire . objectif prioritaire . est ',
+  priorityObjective = 'questionnaire . objectif prioritaire . est ',
   path = 'questionnaire . parcours'
 }
 
@@ -79,17 +79,17 @@ enum Objective {
 }
 
 export enum Objectives {
-  EnvironmentalImpact = Questionnaire.priorityObjectives + Objective.EnvironmentalImpact,
-  EnergyPerformance = Questionnaire.priorityObjectives + Objective.EnergyPerformance,
-  WaterConsumption = Questionnaire.priorityObjectives + Objective.WaterConsumption,
-  BuildingRenovation = Questionnaire.priorityObjectives + Objective.BuildingRenovation,
-  SustainableMobility = Questionnaire.priorityObjectives + Objective.SustainableMobility,
-  WasteManagement = Questionnaire.priorityObjectives + Objective.WasteManagement,
-  EcoDesign = Questionnaire.priorityObjectives + Objective.EcoDesign,
-  TrainOrRecruit = Questionnaire.priorityObjectives + Objective.TrainOrRecruit,
-  MakeSavings = Questionnaire.priorityObjectives + Objective.MakeSavings,
-  DurablyInvest = Questionnaire.priorityObjectives + Objective.DurablyInvest,
-  UnknownYet = Questionnaire.priorityObjectives + Objective.UnknownYet
+  EnvironmentalImpact = Questionnaire.priorityObjective + Objective.EnvironmentalImpact,
+  EnergyPerformance = Questionnaire.priorityObjective + Objective.EnergyPerformance,
+  WaterConsumption = Questionnaire.priorityObjective + Objective.WaterConsumption,
+  BuildingRenovation = Questionnaire.priorityObjective + Objective.BuildingRenovation,
+  SustainableMobility = Questionnaire.priorityObjective + Objective.SustainableMobility,
+  WasteManagement = Questionnaire.priorityObjective + Objective.WasteManagement,
+  EcoDesign = Questionnaire.priorityObjective + Objective.EcoDesign,
+  TrainOrRecruit = Questionnaire.priorityObjective + Objective.TrainOrRecruit,
+  MakeSavings = Questionnaire.priorityObjective + Objective.MakeSavings,
+  DurablyInvest = Questionnaire.priorityObjective + Objective.DurablyInvest,
+  UnknownYet = Questionnaire.priorityObjective + Objective.UnknownYet
 }
 
 export const priorityObjectives = {
