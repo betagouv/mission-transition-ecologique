@@ -53,7 +53,7 @@ def assembleProgramYAML(rawData, colNumbersByName, id):
 
     prog = {}
 
-    FORCE_ALL = False
+    FORCE_ALL = True
 
     # Only sets the key if key does not exist.
     # if force = True, then replaces the key even if it exists
@@ -196,7 +196,7 @@ def assembleProgramYAML(rawData, colNumbersByName, id):
 
     publicodes_obj |= pc
 
-    set("publicodes", publicodes_obj, True)
+    set("publicodes", publicodes_obj, overwrite=False)
 
     return convertToYaml(prog)
 
@@ -256,10 +256,17 @@ def randomIllustration():
     return illustrations[random.randint(0, 2)]
 
 
+WRONG_DATE_PATTERN = re.compile(r"^[0-9]{4}/[0-9]{2}/[0-9]{2}$")
+
+
 def curate(value):
     curated = value
     if isinstance(value, str):
         curated = curated.strip()
+
+    if isinstance(curated, str) and WRONG_DATE_PATTERN.match(curated):
+        curated = curated[8:10] + "/" + curated[5:7] + "/" + curated[0:4]
+
     return curated
 
 
