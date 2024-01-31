@@ -1,36 +1,35 @@
-import { ContactInfo } from '../../../../contact/domain/types'
+import { Opportunity } from '../../../../opportunity/domain/types'
 import { Program } from '../../../../program/domain/types'
-import { ContactPayload } from './types'
+import { bpiOpportunityPayload } from './types'
 
-export default class ContactPayloadDTO {
+export default class OpportunityPayloadDTO {
   private readonly Subject = 'Demande d’échange' as const
   private readonly Origin = 'Site Plateforme Etat TEE' as const
   private readonly Type = 'question' as const
   private readonly point_de_contact__c = 'Site Plateforme Etat TEE' as const
-  private readonly _companySize: string | number | undefined
   private readonly _companySiret: string | undefined
   private readonly _companyName: string | undefined
+  private readonly _companySize: number | undefined
   private readonly _phoneNumber: string
   private readonly _lastName: string
   private readonly _firstName: string
   private readonly _email: string
   private readonly _program: Program
-  private readonly _responses: string
-  private readonly _description: string
+  private readonly _message: string
 
-  constructor(contactInfo: ContactInfo, program: Program) {
-    this._email = contactInfo.email
-    this._firstName = contactInfo.attributes.PRENOM
-    this._lastName = contactInfo.attributes.NOM
-    this._phoneNumber = contactInfo.attributes.TEL
-    this._companySiret = contactInfo.attributes.SIRET
-    this._companySize = contactInfo.attributes.STRUCTURE_SIZE
-    this._responses = contactInfo.attributes.ALL_RESPONSES
+  constructor(opportunity: Opportunity, program: Program) {
+    this._email = opportunity.email
+    this._firstName = opportunity.firstName
+    this._lastName = opportunity.lastName
+    this._phoneNumber = opportunity.phoneNumber
+    this._companySiret = opportunity.companySiret
+    this._companyName = opportunity.companyName
+    this._companySize = opportunity.companySize
     this._program = program
-    this._description = contactInfo.attributes.FORM_NEEDS
+    this._message = opportunity.message
   }
 
-  public getPayload(): ContactPayload {
+  public getPayload(): bpiOpportunityPayload {
     return {
       Origin: this.Origin,
       Type: this.Type,
@@ -46,7 +45,7 @@ export default class ContactPayloadDTO {
       SIRET__c: this.companySiret,
       Taille_de_lentreprise__c: this.companySize,
       Description: this.description,
-      Description_Complementaire__c: this.responses
+      Description_Complementaire__c: ''
     }
   }
 
@@ -83,11 +82,7 @@ export default class ContactPayloadDTO {
   }
 
   private get description(): string {
-    return this._description
-  }
-
-  private get responses(): string {
-    return this._responses
+    return this._message
   }
 
   get program(): Program {

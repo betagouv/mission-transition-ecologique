@@ -1,26 +1,27 @@
 titre: Rénovation Petit Tertiaire Privé
-promesse: Faites-vous accompagner dans vos travaux de rénovation énergétique
-description: 'Ce programme vise la mise en oeuvre d''actions d''information et d''accompagnement
-  en faveur de la rénovation énergétique  des petits locaux tertiaires privés, sur
-  tout le territoire : isolation de votre bâtiment, choix de vos équipements (cuisson,
-  froid, éclairage…), chauffage et climatisation de vos locaux...'
+promesse: Engagez la rénovation énergétique de votre local professionnel
+description: Vous souhaitez réaliser des économies d’énergie et améliorer le confort
+  de vos locaux professionnels ? Vous pouvez bénéficier d'un accompagnement pour vous
+  aider à identifier les solutions techniques les plus adaptées (isolation, climatisation,
+  eau chaude, ventilation, éclairage…) et rechercher les aides financières mobilisables.
 illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
 autres opérateurs:
 - CCI
 - CMA
 - France Rénov'
-url: ''
+url: https://www.ecologie.gouv.fr/sites/default/files/211130_guide_METRO_COPIL_VF2.pdf
 nature de l'aide: accompagnement
 coût de l'accompagnement: Gratuit
 durée de l'accompagnement: 2h
 objectifs:
 - Réalisez un premier rendez-vous par téléphone pour échanger sur votre projet de
-  rénovation énergétique
-- Benéficiez d'un rendez-vous dans vos locaux
-- Disposer d'un pré-diagnostic énergétique
-- Obtenez de l'aide votre recherche de solutions en prenant en compte l’ensemble des
-  aspects de votre projet (financier, juridique, technique et social).
+  rénovation énergétique.
+- 'Benéficiez d''un rendez-vous dans vos locaux pour aborder votre projet dans son
+  ensemble : vos besoins et attentes, les travaux d’amélioration du bâtiment et des
+  systèmes envisagés, ainsi que les éventuelles contraintes à prendre en compte.'
+- A l’issu de ce rendez-vous, obtenez un compte-rendu détaillé vous permettant d’évaluer
+  les travaux à envisager ainsi que les aides financières mobilisables.
 conditions d'éligibilité:
   taille de l'entreprise:
   - TPE et PME
@@ -32,9 +33,7 @@ conditions d'éligibilité:
   nombre d'années d'activité:
   - Éligible à toutes les entreprises
   autres critères d'éligibilité:
-  - 'L''opération pour laquelle vous sollicitez une aide financière ne doit pas avoir
-    commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque
-    forme que ce soit : marché signé, commande signée, devis accepté…)'
+  - Entreprises dont les locaux sont inférieurs à 1 000 m2
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
@@ -49,8 +48,6 @@ publicodes:
     - effectif <= 250
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - code NAF niveau 1 . est C
-    - code NAF niveau 1 . est F
     - code NAF niveau 1 . est G
     - code NAF niveau 1 . est H
     - code NAF niveau 1 . est I

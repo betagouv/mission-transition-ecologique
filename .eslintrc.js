@@ -12,7 +12,7 @@ module.exports = {
   },
   rules: {
     'prettier/prettier': 'error',
-    '@typescript-eslint/no-unused-vars': 'error'
+    '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }]
   },
-  ignorePatterns: ['.idea/*', 'README.md', 'start.sh', '.github/*', '.eslintrc.js', '.eslintrc.cjs']
+  ignorePatterns: ['.idea/*', 'README.md', '.github/*', '.eslintrc.js', '.eslintrc.cjs']
 }

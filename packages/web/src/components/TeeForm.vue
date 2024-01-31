@@ -412,7 +412,7 @@ const saveFormData = async () => {
     for (const callback of activeCallbacks) {
       let resp: ReqResp = {}
       switch (callback.action) {
-        case CallbackActions.CreateContact:
+        case CallbackActions.CreateOpportunity:
           resp = await sendApiRequest(callback, toRaw(formData.value), trackValues, props.dataProps, choices.lang)
           break
         case CallbackActions.SendTransactionalEmail:

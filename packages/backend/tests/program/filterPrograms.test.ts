@@ -1,9 +1,9 @@
 import { makeProgramHelper } from './testing'
 import { createService, FILTERING_RULE_NAME } from '../../src/program/domain/filterPrograms'
-import { Result, ResultNS } from 'true-myth'
 import { ProgramData } from '@tee/web/src/types'
 import type { QuestionnaireData } from '../../src/program/domain/types'
 import { Entry, setObjectProperty } from '../../src/common/objects'
+import { expectToBeErr, expectToBeOk } from '../testing'
 
 const mockCurrentDateService = { get: () => '01/01/2024' }
 const filterPrograms = createService(mockCurrentDateService)
@@ -16,24 +16,10 @@ const rulesBoilerplate = {
 
 const makeProgram = (rules: object) => makeProgramHelper({ rules: rules })
 
-// As we do not use ES6 modules, I could not find more elegant way to import Ok
-type Ok<T, E> = ResultNS.Ok<T, E>
-type Err<T, E> = ResultNS.Err<T, E>
-
 // Helper function that performs type narrowing.
 // Not automatic in jest, see https://github.com/jestjs/jest/issues/10094
 // Cannot use arrow functions for assertions.
 // See https://github.com/microsoft/TypeScript/issues/34523
-
-// check that `Result` is `Ok`, i.e. does not return an error
-function expectToBeOk<T, E>(v: Result<T, E>): asserts v is Ok<T, E> {
-  expect(v.isOk).toBe(true)
-}
-
-// check that `Result` is `Err`, i.e. returns an error
-function expectToBeErr<T, E>(v: Result<T, E>): asserts v is Err<T, E> {
-  expect(v.isErr).toBe(true)
-}
 
 describe(`
 GIVEN  input data

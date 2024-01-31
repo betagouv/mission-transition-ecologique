@@ -39,8 +39,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm clean-install
-      - run: npm run spec-and-routes -w packages/backend
       - run: npm run build-json-output
+      - run: npm run spec-and-routes -w packages/backend
       - run: npm run lint-check
 
   type-check:
