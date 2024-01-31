@@ -22,7 +22,7 @@ export default class Sentry {
         new SentryVue.BrowserTracing({
           routingInstrumentation: SentryVue.vueRouterInstrumentation(router)
         }),
-        new SentryVue.Replay()
+        SentryVue.replayIntegration()
       ],
       environment: MetaEnv.SENTRY_ENVIRONMENT,
 
