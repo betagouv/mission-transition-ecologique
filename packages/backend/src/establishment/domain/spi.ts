@@ -1,6 +1,10 @@
 import { Result } from 'true-myth'
-import { Establishment } from './types'
+import { EstablishmentDetails } from './types'
 
 export type EstablishmentRepository = {
-  get: (siret: string) => Promise<Result<Establishment, Error>>
+  get: (siret: string) => Promise<Result<EstablishmentDetails, Error>>
+}
+
+export type CityToRegionMapping = {
+  getRegion: (cityCode: string) => string
 }

@@ -2,7 +2,9 @@ import CustomError from '../../common/domain/error/customError'
 
 export type Siret = string
 
-export interface Establishment {
+export interface Establishment extends EstablishmentDetails, GeographicDetails {}
+
+export interface EstablishmentDetails {
   siren: string
   nic: string
   siret: string
@@ -19,6 +21,10 @@ export interface Establishment {
     // https://www.insee.fr/fr/information/2560452
     cityCode: string
   }
+}
+
+export interface GeographicDetails {
+  region: string
 }
 
 export class EstablishmentNotFoundError extends CustomError {}
