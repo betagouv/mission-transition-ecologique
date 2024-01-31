@@ -1,4 +1,4 @@
-titre: Étude "performance énergétique" en industrie
+titre: Étude "Performance énergétique" en industrie
 promesse: Entreprise industrielle, réalisez une étude d'optimisation de la performance
   énergétique de votre site de production
 description: 'Vous avez mis en place des actions pour optimiser la performance énergétique
@@ -38,12 +38,12 @@ description longue: 'Vous avez mis en place des actions pour optimiser la perfor
   L’apport des scénarios d’optimisation d’une utilité ou procédé en terme d’efficacité
   énergétique et/ou de décarbonation'
 début de validité: 01/01/2023
-fin de validité: 31/12/2023
+fin de validité: 31/12/2024
 illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
-url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/etudes-faisabilite-performance-energetique-decarbonation-dentreprises
+url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/etudes-faisabilite-performance-energetique-decarbonation-dentreprises
 nature de l'aide: financement
-montant du financement: Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000
+montant du financement: Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000
   €
 objectifs:
 - Choisissez le prestataire qui va vous accompagner pour mener cette étude et obtenez
@@ -61,11 +61,7 @@ conditions d'éligibilité:
   - TPE et PME
   - Éligible aux micro-entreprises
   secteur géographique:
-  - Corse, Wallis et Futuna, Centre-Val de Loire, Ile de Clipperton, Île-de-France,
-    Bourgogne-Franche-Comté, Polynésie française, Saint-Martin, Normandie, Provence-Alpes-Côte
-    d'Azur, Guadeloupe, Nouvelle-Aquitaine, Martinique, Occitanie, Terres australes
-    et antarctiques françaises, Nouvelle-Calédonie, Guyane, La Réunion, Mayotte, Saint-Barthélemy,
-    Auvergne-Rhône-Alpes, Saint-Pierre-Et-Miquelon, Bretagne, Grand Est
+  - France et territoires d'outre-mer
   secteur d'activité:
   - Industrie
   nombre d'années d'activité:
@@ -74,6 +70,9 @@ conditions d'éligibilité:
   - 'L''opération pour laquelle vous sollicitez une aide financière ne doit pas avoir
     commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque
     forme que ce soit : marché signé, commande signée, devis accepté…)'
+  - Eligible pour les sites de moins de 250 salariés des grandes entreprises, dès
+    lors que l’entreprise est à jour de ses obligations vis-à-vis de l’audit énergétique
+    réglementaire
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
@@ -87,7 +86,6 @@ publicodes:
       - date du jour <= dispositif . fin de validité
     toutes ces conditions:
     - a un effectif éligible
-    - entreprise . est dans une zone géographique éligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
     - effectif <= 250
@@ -100,29 +98,3 @@ publicodes:
     - questionnaire . objectif prioritaire . est ma performance énergétique
     - questionnaire . objectif prioritaire . est mon impact environnemental
     - questionnaire . objectif prioritaire . est l'écoconception
-  entreprise . est dans une zone géographique éligible:
-    une de ces conditions:
-    - région = Corse
-    - région = Wallis et Futuna
-    - région = Centre-Val de Loire
-    - région = Ile de Clipperton
-    - région = Île-de-France
-    - région = Bourgogne-Franche-Comté
-    - région = Polynésie française
-    - région = Saint-Martin
-    - région = Normandie
-    - région = Provence-Alpes-Côte d'Azur
-    - région = Guadeloupe
-    - région = Nouvelle-Aquitaine
-    - région = Martinique
-    - région = Occitanie
-    - région = Terres australes et antarctiques françaises
-    - région = Nouvelle-Calédonie
-    - région = Guyane
-    - région = La Réunion
-    - région = Mayotte
-    - région = Saint-Barthélemy
-    - région = Auvergne-Rhône-Alpes
-    - région = Saint-Pierre-Et-Miquelon
-    - région = Bretagne
-    - région = Grand Est
