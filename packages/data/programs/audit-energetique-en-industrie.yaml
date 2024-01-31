@@ -7,12 +7,12 @@ description longue: Les audits énergétiques offrent pour bénéfices 15 à 25 
   sur un site en moyenne et des bases solides pour la mise en œuvre d'un Système de
   Management de l'énergie (SMé).
 début de validité: 01/01/2023
-fin de validité: 31/12/2023
+fin de validité: 31/12/2024
 illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/audit-energetique-industrie
 nature de l'aide: financement
-montant du financement: Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000
+montant du financement: Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000
   €
 objectifs:
 - Choisissez l'auditeur énergétique qui va vous accompagner et obtenez un devis. Les
@@ -30,14 +30,10 @@ objectifs:
   retour sur investissement ; et d'un plan d'actions.
 conditions d'éligibilité:
   taille de l'entreprise:
-  - TPE et PME
+  - Toutes tailles
   - Éligible aux micro-entreprises
   secteur géographique:
-  - Martinique, Guyane, La Réunion, Mayotte, Centre-Val de Loire, Bourgogne-Franche-Comté,
-    Normandie, Grand Est, Nouvelle-Aquitaine, Occitanie, Provence-Alpes-Côte d'Azur,
-    Corse, Saint-Pierre-Et-Miquelon, Polynésie française, Guadeloupe, Île-de-France,
-    Saint-Barthélemy, Terres australes et antarctiques françaises, Saint-Martin, Wallis
-    et Futuna, Nouvelle-Calédonie, Ile de Clipperton
+  - France et territoires d'outre-mer
   secteur d'activité:
   - Industrie
   nombre d'années d'activité:
@@ -46,6 +42,12 @@ conditions d'éligibilité:
   - 'L''opération pour laquelle vous sollicitez une aide financière ne doit pas avoir
     commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque
     forme que ce soit : marché signé, commande signée, devis accepté…)'
+  - Eligible pour les sites de moins de 250 salariés des grandes entreprises, dès
+    lors que l’entreprise est à jour de ses obligations vis-à-vis de l’audit énergétique
+    réglementaire
+  - 'Ne sont pas éligibles : les sites de moins de 250 salariés des grandes entreprises
+    dès lors que l''échéance de renouvellement de l''audit énergétique réglementaire
+    est inférieure à 1 an, ainsi que les locaux d’activité tertiaire seuls.'
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
