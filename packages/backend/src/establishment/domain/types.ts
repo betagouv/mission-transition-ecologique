@@ -29,7 +29,6 @@ export interface GeographicDetails {
 
 export interface SectorDetails {
   nafSectionCode?: string
-  nafSectionLabel?: string
   nafLabel?: string
 }
 

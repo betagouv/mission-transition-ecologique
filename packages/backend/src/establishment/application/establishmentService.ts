@@ -1,9 +1,10 @@
 import EstablishmentFeatures from '../domain/establishmentFeatures'
 import { getEstablishment } from '../infrastructure/api/sirene/sirene'
-import { CityToRegionMapping, EstablishmentRepository } from '../domain/spi'
+import { CityToRegionMapping, EstablishmentRepository, NafMapping } from '../domain/spi'
 import type { EstablishmentDetails, Siret } from '../domain/types'
-import { Maybe, Result } from 'true-myth'
+import { Result } from 'true-myth'
 import { COG2023Mapping } from '../infrastructure/json/cityToRegionMapping'
+import { NAF_JSONMapping } from '../infrastructure/json/nafMapping'
 
 export default class EstablishmentService {
   private _establishmentFeatures: EstablishmentFeatures
@@ -12,7 +13,7 @@ export default class EstablishmentService {
     this._establishmentFeatures = new EstablishmentFeatures(
       this._getEstablishmentRepository(),
       this._getCityToRegionMapping(),
-      dummyEstablishmentRepository
+      this._getNafMapping()
     )
   }
 
@@ -27,10 +28,8 @@ export default class EstablishmentService {
   private _getCityToRegionMapping(): CityToRegionMapping {
     return new COG2023Mapping()
   }
-}
 
-const dummyEstablishmentRepository = {
-  getLabel: (_nafCode: string) => Maybe.nothing<string>(),
-  getSectionLabel: (_nafCode: string) => Maybe.nothing<string>(),
-  getSectionCode: (_nafCode: string) => Maybe.nothing<string>()
+  private _getNafMapping(): NafMapping {
+    return new NAF_JSONMapping()
+  }
 }

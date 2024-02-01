@@ -37,17 +37,15 @@ export default class EstablishmentFeatures {
   private _addSectorDetailsToEstablishment(establishment: Establishment): Establishment {
     const code = establishment.nafCode
     const maybeLabel = this._nafMapping.getLabel(code)
-    const maybeSectionLabel = this._nafMapping.getSectionLabel(code)
     const maybeSectionCode = this._nafMapping.getSectionCode(code)
 
-    if (maybeLabel.isNothing || maybeSectionLabel.isNothing || maybeSectionCode.isNothing) {
+    if (maybeLabel.isNothing || maybeSectionCode.isNothing) {
       return establishment
     }
 
     return {
       ...establishment,
       nafLabel: maybeLabel.value,
-      nafSectionLabel: maybeSectionLabel.value,
       nafSectionCode: maybeSectionCode.value
     }
   }
