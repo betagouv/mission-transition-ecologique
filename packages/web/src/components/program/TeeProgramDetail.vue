@@ -11,9 +11,9 @@
             class="fr-icon-information-line"
             aria-hidden="true"
           ></span>
-          {{ choices.t('program.programNotAvailable') }}
+          {{ Translation.t('program.programNotAvailable') }}
         </p>
-        <p class="fr-notice__subtitle">{{ choices.t('program.programEndValidity') }} : {{ program?.[`fin de validité`] }}</p>
+        <p class="fr-notice__subtitle">{{ Translation.t('program.programEndValidity') }} : {{ program?.[`fin de validité`] }}</p>
       </div>
     </div>
   </div>
@@ -224,12 +224,12 @@
           <div :class="columnTiles">
             <TeeTile
               class="tee-no-hover"
-              :title="choices.t('program.programEndValidity')"
+              :title="Translation.t('program.programEndValidity')"
               :image-path="`${publicPath}images/TEE-duree.svg`"
               :description="
                 program?.[`fin de validité`]
-                  ? choices.t(choices.t('program.programAvailableUntil'), { date: program[`fin de validité`] })
-                  : choices.t('program.programAvailable')
+                  ? Translation.t(Translation.t('program.programAvailableUntil'), { date: program[`fin de validité`] })
+                  : Translation.t('program.programAvailable')
               "
             />
           </div>
