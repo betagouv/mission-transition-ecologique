@@ -8,6 +8,15 @@ export const mobilityWishes: Track = {
   label: {
     fr: 'Souhaitez-vous favoriser des déplacements plus écologiques pour vous et vos employés ?'
   },
+  callout: {
+    header: { fr: 'Thématique' },
+    headerStyle: 'color: #3A3A3A;',
+    bgColor: '#1EBE8E',
+    title: { fr: 'La mobilité dans votre entreprise' },
+    titleStyle: 'color: #000091;',
+    bigTitle: true,
+    imageLeft: 'images/thema/thema-mobilite.svg'
+  },
   interface: {
     component: TrackComponents.Buttons
   },
