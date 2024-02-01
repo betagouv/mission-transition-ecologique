@@ -24,7 +24,7 @@ export interface EstablishmentDetails {
 }
 
 export interface GeographicDetails {
-  region: string
+  region?: string
 }
 
 export class EstablishmentNotFoundError extends CustomError {}

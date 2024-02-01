@@ -28,7 +28,8 @@ const exampleEstablishment = {
     zipCode: '94120',
     cityLabel: 'FONTENAY-SOUS-BOIS',
     cityCode: '94033'
-  }
+  },
+  region: 'Île-de-France'
 }
 
 @SuccessResponse('200', 'OK')

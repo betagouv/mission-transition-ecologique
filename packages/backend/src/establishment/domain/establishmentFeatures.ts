@@ -24,7 +24,10 @@ export default class EstablishmentFeatures {
   }
 
   private _addRegionToEstablishment(establishment: EstablishmentDetails): Establishment {
-    const region = this._cityToRegionMapping.getRegion(establishment.address.cityCode)
-    return { ...establishment, region: region }
+    const maybeRegion = this._cityToRegionMapping.getRegion(establishment.address.cityCode)
+    if (maybeRegion.isNothing) {
+      return establishment
+    }
+    return { ...establishment, region: maybeRegion.value }
   }
 }

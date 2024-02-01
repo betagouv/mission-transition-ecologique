@@ -1,4 +1,4 @@
-import { Result } from 'true-myth'
+import { Maybe, Result } from 'true-myth'
 import { EstablishmentDetails } from './types'
 
 export type EstablishmentRepository = {
@@ -6,5 +6,9 @@ export type EstablishmentRepository = {
 }
 
 export type CityToRegionMapping = {
-  getRegion: (cityCode: string) => string
+  getRegion: (cityCode: string) => Maybe<string>
+}
+
+export type NafToLabelMapping = {
+  getLabel: (nafCode: string, nafLevel: number) => Maybe<string>
 }

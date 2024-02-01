@@ -3,10 +3,7 @@ import { getEstablishment } from '../infrastructure/api/sirene/sirene'
 import { CityToRegionMapping, EstablishmentRepository } from '../domain/spi'
 import type { EstablishmentDetails, Siret } from '../domain/types'
 import { Result } from 'true-myth'
-
-const dummyGetRegion = (_cityCode: string): string => {
-  return 'bretagne'
-}
+import { COG2023Mapping } from '../infrastructure/json/cityToRegionMapping'
 
 export default class EstablishmentService {
   private _establishmentFeatures: EstablishmentFeatures
@@ -24,6 +21,6 @@ export default class EstablishmentService {
   }
 
   private _getCityToRegionMapping(): CityToRegionMapping {
-    return { getRegion: dummyGetRegion }
+    return new COG2023Mapping()
   }
 }
