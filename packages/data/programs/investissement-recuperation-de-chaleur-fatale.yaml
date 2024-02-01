@@ -1,4 +1,4 @@
-titre: Investissement "récupération de chaleur fatale"
+titre: Investissement "Récupération de chaleur fatale"
 promesse: Financez votre installation de récupération de chaleur fatale
 description: Vous disposez d’une étude pour votre projet d'installation de récupération
   de chaleur fatale ? Vous souhaitez investir pour le mettre en œuvre ? L’ADEME peut
@@ -26,7 +26,7 @@ description longue: 'Les investissements éligibles sont :
   Pour être éligibles, les projets doivent valoriser une quantité d’énergie thermique
   supérieure à 1 GWh/an.'
 début de validité: 01/01/2023
-fin de validité: 31/12/2023
+fin de validité: 31/12/2024
 illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/realisation-dinstallations-recuperation-chaleur-fatale
@@ -45,10 +45,7 @@ conditions d'éligibilité:
   - Toutes tailles
   - Éligible aux micro-entreprises
   secteur géographique:
-  - Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Centre-Val de Loire,
-    Corse, Grand Est, Guadeloupe, Guyane, Hauts-de-France, Mayotte, Île-de-France,
-    Martinique, La Réunion, Normandie, Nouvelle-Aquitaine, Occitanie, Pays de la Loire,
-    Polynésie française, Provence-Alpes-Côte d'Azur, Saint-Pierre-Et-Miquelon
+  - France et territoires d'outre-mer
   secteur d'activité:
   - Tous secteurs d’activité
   nombre d'années d'activité:
@@ -69,8 +66,7 @@ publicodes:
       toutes ces conditions:
       - dispositif . début de validité <= date du jour
       - date du jour <= dispositif . fin de validité
-    toutes ces conditions:
-    - entreprise . est dans une zone géographique éligible
+    valeur: oui
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
     - code NAF niveau 1 . est B
@@ -80,25 +76,3 @@ publicodes:
   entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est ma performance énergétique
-  entreprise . est dans une zone géographique éligible:
-    une de ces conditions:
-    - région = Auvergne-Rhône-Alpes
-    - région = Bourgogne-Franche-Comté
-    - région = Bretagne
-    - région = Centre-Val de Loire
-    - région = Corse
-    - région = Grand Est
-    - région = Guadeloupe
-    - région = Guyane
-    - région = Hauts-de-France
-    - région = Mayotte
-    - région = Île-de-France
-    - région = Martinique
-    - région = La Réunion
-    - région = Normandie
-    - région = Nouvelle-Aquitaine
-    - région = Occitanie
-    - région = Pays de la Loire
-    - région = Polynésie française
-    - région = Provence-Alpes-Côte d'Azur
-    - région = Saint-Pierre-Et-Miquelon

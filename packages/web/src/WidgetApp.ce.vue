@@ -195,7 +195,6 @@ const setupGlobal = () => {
   const locale = props.locale ?? 'fr'
   Translation.setLocale(locale)
 }
-
 onBeforeMount(() => {
   setupGlobal()
 

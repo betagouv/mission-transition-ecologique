@@ -2,8 +2,16 @@
 // console.log(`tracks.trackResults > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import type { Track } from '@/types'
-import { CallbackActions, CallbackMethods, ConditionOperators, DataMappingFrom, FormFieldTypes, TrackComponents, TrackId } from '@/types'
-import MetaEnv from '@/utils/metaEnv'
+import {
+  CallbackActions,
+  CallbackMethods,
+  ConditionOperators,
+  DataMappingFrom,
+  Entreprise,
+  FormFieldTypes,
+  TrackComponents,
+  TrackId
+} from '@/types'
 
 export const results: Track = {
   id: TrackId.Results,
@@ -264,101 +272,83 @@ Merci d'avance pour votre retour`,
         disabled: false,
         help: 'First action to trigger when the user clicks on the send button / create a contact in Brevo',
         // helpDocumentation: 'https://developers.brevo.com/reference/createcontact',
-        helpDocumentation: `${MetaEnv.backendUrl}/api/docs`,
-        action: CallbackActions.CreateContact,
-        url: `${MetaEnv.backendUrl}/api/contacts`,
-        // url: 'https://api.brevo.com/v3/contacts/doubleOptinConfirmation', // for double opt-in
+        helpDocumentation: '/api/docs',
+        action: CallbackActions.CreateOpportunity,
+        url: '/api/opportunities',
         method: CallbackMethods.Post,
         headers: {
           accept: 'application/json',
           'content-type': 'application/json'
         },
         dataStructure: {
-          email: '',
-          attributes: {}
-          // templateId: 1,  // for double opt-in
-          // redirectionUrl: 'https://gov-aid-tree-poc.netlify.app'  // for double opt-in
+          opportunity: {},
+          optIn: false
         },
         dataMapping: [
           {
             from: DataMappingFrom.FormData,
-            id: 'email',
-            dataField: 'email'
+            id: 'name',
+            dataField: 'opportunity.firstName'
           },
           {
             from: DataMappingFrom.FormData,
             id: 'surname',
-            dataField: 'attributes.NOM'
+            dataField: 'opportunity.lastName'
           },
           {
             from: DataMappingFrom.FormData,
-            id: 'name',
-            dataField: 'attributes.PRENOM'
+            id: 'email',
+            dataField: 'opportunity.email'
           },
           {
             from: DataMappingFrom.FormData,
             id: 'tel',
-            dataField: 'attributes.TEL'
+            dataField: 'opportunity.phoneNumber'
           },
           {
             from: DataMappingFrom.FormData,
             id: 'siret',
-            dataField: 'attributes.SIRET'
-          },
-          {
-            from: DataMappingFrom.FormData,
-            id: 'needs',
-            dataField: 'attributes.FORM_NEEDS'
-          },
-          {
-            from: DataMappingFrom.FormData,
-            id: 'cgu',
-            dataField: 'attributes.OPT_IN'
-          },
-          // {
-          //   from: DataMappingFrom.UsedTracks,
-          //   id: 'project_needs',
-          //   dataField: 'attributes.PROJECT_NEEDS',
-          // },
-          {
-            from: DataMappingFrom.UsedTracks,
-            id: 'project_sectors',
-            dataField: 'attributes.PROJECT_SECTORS'
+            dataField: 'opportunity.companySiret'
           },
           {
             from: DataMappingFrom.UsedTracks,
-            id: 'user_roles',
-            dataField: 'attributes.USER_ROLES'
+            id: 'denomination',
+            dataField: 'opportunity.companyName'
           },
           {
             from: DataMappingFrom.UsedTracks,
-            id: 'user_goals',
-            dataField: 'attributes.USER_GOALS'
+            id: 'secteur',
+            dataField: 'opportunity.companySector'
           },
-          // {
-          //   from: DataMappingFrom.UsedTracks,
-          //   id: 'project_status',
-          //   dataField: 'attributes.PROJECT_STATUS',
-          // },
-          // {
-          //   from: DataMappingFrom.UsedTracks,
-          //   id: 'structure_sizes',
-          //   dataField: 'attributes.STRUCTURE_SIZE',
-          // },
           {
             from: DataMappingFrom.UsedTracks,
-            id: 'structure_workforce',
-            dataField: 'attributes.STRUCTURE_SIZE'
+            id: Entreprise.Workforce,
+            dataField: 'opportunity.companySize'
           },
           {
             from: DataMappingFrom.Props,
             id: 'programId',
-            dataField: 'attributes.PROGRAM_ID'
+            dataField: 'opportunity.programId'
+          },
+          {
+            from: DataMappingFrom.FormData,
+            id: 'needs',
+            dataField: 'opportunity.message'
+          },
+          {
+            from: DataMappingFrom.UsedTracks,
+            id: 'user_help',
+            dataField: 'opportunity.questionnaireRoute'
+          },
+          {
+            from: DataMappingFrom.FormData,
+            id: 'cgu',
+            dataField: 'optIn'
           },
           {
             from: DataMappingFrom.AllUsedTracks,
             id: '*',
-            dataField: 'attributes.ALL_RESPONSES'
+            dataField: 'opportunity.otherData'
           }
         ]
       }

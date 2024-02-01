@@ -16,7 +16,7 @@ description longue: 'Le Fonds Tourisme Durable permet d’accéder à des aides 
 
   • se former, se labelliser et communiquer sur l’engagement écologique.'
 début de validité: 01/01/2023
-fin de validité: 31/12/2023
+fin de validité: 31/12/2024
 illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
 url: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/conditions-eligibilite-financement-fonds-tourisme-durable-25.pdf
@@ -46,7 +46,7 @@ conditions d'éligibilité:
     Saint-Martin
   - Pour les territoires métropolitains, être situé dans les communes rurales à densité
     intermédiaire, peu denses ou très peu denses (selon la grille de densité communale
-    de l'INSEE 2020), étant également communes de moins de 20 000 habitants. L'ensemble
+    de l'INSEE 2020), étant également communes de moins de 30 000 habitants. L'ensemble
     des communes en territoire ultra-marins sont éligibles.
   secteur d'activité:
   - Activité de restauration et/ou d’hébergement touristique, structures du tourisme
@@ -65,6 +65,7 @@ publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
     - est éligible
+    - est dans un secteur d'activité ciblé
     - a un objectif ciblé
   entreprise . est éligible:
     applicable si:
@@ -73,23 +74,14 @@ publicodes:
       - date du jour <= dispositif . fin de validité
     toutes ces conditions:
     - a un effectif éligible
-    - est dans un secteur d'activité éligible
     - entreprise . est dans une zone géographique éligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
     - effectif <= 250
-  entreprise . est dans un secteur d'activité éligible:
-    toutes ces conditions:
-    - une de ces conditions:
-      - code NAF niveau 1 . est A
-      - code NAF niveau 1 . est I
-    - une de ces conditions:
-      - code NAF = "56.10A"
-      - code NAF = "56.21Z"
-      - code NAF = "55.10Z"
-      - code NAF = "55.20Z"
-      - code NAF = "55.30Z"
-      - code NAF = "55.90Z"
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+    - code NAF niveau 1 . est A
+    - code NAF niveau 1 . est I
   entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est rénover mon bâtiment

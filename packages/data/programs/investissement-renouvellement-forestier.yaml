@@ -25,8 +25,9 @@ url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023041
 nature de l'aide: financement
 montant du financement: Entre 37,5% à 80% selon le projet
 objectifs:
-- Obtenez vos codes d'accès puis déposez votre dossier sur la plateforme CartoGIP.
-  À ce stade, votre projet ne doit pas avoir commencé !
+- 'Déposez votre demande d''aide : informations administratives, description du projet,
+  détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir
+  commencé !'
 - L'ADEME étudie votre projet. S'il est retenu, recevez un contrat de financement
   précisant le montant d’aide maximum, les conditions et les modalités de versement.
 - Réalisez vos investissements.
@@ -49,6 +50,7 @@ publicodes:
     toutes ces conditions:
     - est éligible
     - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
     - questionnaire . parcours = objectif précis
   entreprise . est éligible:
     applicable si:
@@ -59,3 +61,7 @@ publicodes:
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
     - code NAF niveau 1 . est A
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est mon impact environnemental
+    - questionnaire . objectif prioritaire . est l'écoconception

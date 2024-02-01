@@ -34,7 +34,7 @@
 import type { Track, TrackOptionsSelect } from '@/types'
 
 import { ref } from 'vue'
-import Translation from '../../utils/translation'
+import Translation from '@/utils/translation'
 
 interface Props {
   track: Track

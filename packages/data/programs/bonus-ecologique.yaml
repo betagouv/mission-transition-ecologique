@@ -1,18 +1,15 @@
 titre: Bonus écologique
 promesse: Économisez sur l'achat d'un véhicule propre
 description: Bénéficiez d'une aide pour louer ou acheter un véhicule peu polluant,
-  neuf ou d'occasion.
-description longue: Les véhicules peu polluants éligibles sont des véhicules zéro
-  émissions de CO2 (électriques, hydrogène ou combinaison des deux). Certains véhicules
-  Crit’Air 1 sont également éligibles à la prime à la conversion. La prime peut être
-  majorée si votre entreprise est située au sein d’une zone à faibles émissions (ZFE).
+  neuf ou d'occasion en échange de la mise au rebut de votre ancien véhicule
 illustration: images/TEE_energie_verte.png
 opérateur de contact: ASP
 url: https://www.primealaconversion.gouv.fr/dboneco/accueil/access.html
 nature de l'aide: financement
 montant du financement: jusqu’à 9 000 €, selon le véhicule
 objectifs:
-- Louez ou achetez un véhicule propre neuf ou d'occasion éligible au dispositif.
+- Louez ou achetez un véhicule neuf ou d'occasion "propre" (électrique, hydrogène
+  ou combinaison des deux).
 - Déposez une demande de bonus écologique dans les six mois suivant l'achat ou la
   location du véhicule propre.
 - Recevez le bonus écologique !

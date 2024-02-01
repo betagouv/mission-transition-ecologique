@@ -194,6 +194,10 @@ To run the validation tests manually, run:
 npm run test-data -w packages/backend
 ```
 
+## Scalingo, deployment and review apps
+We use scalingo manifest json to deploy the app on scalingo with specific environment variables.
+see [scalingo manifest](https://doc.scalingo.com/platform/app/app-manifest) for more details.
+
 ---
 
 ## Credits

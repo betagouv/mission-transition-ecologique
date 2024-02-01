@@ -262,7 +262,7 @@
 
 import { onBeforeMount, ref, toRaw } from 'vue'
 import { tracksStore } from '../../stores/tracks'
-import Translation from '../../utils/translation'
+import Translation from '@/utils/translation'
 import { type TrackOptionsInput, type ReqResp, type ReqError, type FormCallback, type ResultsMapping, TrackId } from '@/types'
 import { sendApiRequest } from '../../utils/requests'
 import { getFromResp, remapItem, cleanValue } from '../../utils/helpers'
