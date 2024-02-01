@@ -248,7 +248,7 @@ import type { TrackId, ProgramData } from '@/types'
 import { useRoute, useRouter } from 'vue-router'
 import { RouteName } from '@/types/routeType'
 import Widget from '@/utils/widget'
-import MetaEnv from '@/utils/metaEnv'
+import Config from '@/config'
 import Matomo from '@/utils/matomo'
 
 const choices = choicesStore()
@@ -264,7 +264,7 @@ const trackConfig = ref<any>()
 const blockColor = '#000091'
 const columnTiles = ref<string>('fr-col')
 
-const publicPath = MetaEnv.publicPath
+const publicPath = Config.publicPath
 
 const TeeProgramFormContainer = ref<HTMLElement | null | undefined>(null)
 

@@ -128,7 +128,7 @@ import Widget from '@/utils/widget'
 import { useDebugStore } from '@/stores/debug'
 import { DsfrToggleSwitch } from '@gouvminint/vue-dsfr'
 import jsonDataset from '../public/data/generated/dataset_out.json'
-import MetaEnv from '@/utils/metaEnv'
+import Config from '@/config'
 
 interface Props {
   locale?: string
@@ -201,7 +201,7 @@ onBeforeMount(() => {
   setupGlobal()
 
   // inject style link in html head if not present
-  const href = MetaEnv.isProduction ? `${MetaEnv.deployUrl}/style.css` : ''
+  const href = Config.isProduction ? `${Config.deployUrl}/style.css` : ''
   let needStyle = Widget.is
   // avoid duplicates
   const styleSheets = document.styleSheets.length
@@ -213,7 +213,7 @@ onBeforeMount(() => {
       }
     }
   }
-  if (needStyle && MetaEnv.isProduction) {
+  if (needStyle && Config.isProduction) {
     const head = document.head
     const link = document.createElement('link')
     link.type = 'text/css'
@@ -230,7 +230,7 @@ onBeforeMount(() => {
 
   // set debug mode
   // no switch for production deployment
-  debugStore.hasSwitch = MetaEnv.isDebugSwitch && props.debugSwitch
+  debugStore.hasSwitch = Config.isDebugSwitch && props.debugSwitch
   if (debugStore.hasSwitch && props.debug) {
     debugStore.is = props.debug
   }

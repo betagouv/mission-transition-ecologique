@@ -2,14 +2,14 @@ import { router } from '@/router'
 import type { App } from 'vue'
 import * as SentryVue from '@sentry/vue'
 import type { Options, TracingOptions } from '@sentry/vue/types/types'
-import MetaEnv from '@/utils/metaEnv'
+import Config from '@/config'
 
 export default class Sentry {
   static init(app: App) {
     const options: SentryVue.BrowserOptions = this._defaultOptions(app)
 
-    if (MetaEnv.SENTRY_DSN) {
-      options.dsn = MetaEnv.SENTRY_DSN
+    if (Config.SENTRY_DSN) {
+      options.dsn = Config.SENTRY_DSN
     }
 
     SentryVue.init(options)
@@ -24,12 +24,12 @@ export default class Sentry {
         }),
         SentryVue.replayIntegration()
       ],
-      environment: MetaEnv.SENTRY_ENVIRONMENT,
+      environment: Config.SENTRY_ENVIRONMENT,
 
       // Set tracesSampleRate to 1.0 to capture 100%
       // of transactions for performance monitoring.
       // We recommend adjusting this value in production
-      tracesSampleRate: 1.0,
+      tracesSampleRate: 0.5,
 
       // Set `tracePropagationTargets` to control for which URLs distributed tracing should be enabled
       tracePropagationTargets: ['localhost', /^https:\/\/tee-backend(-staging|-preprod).osc-fr1.scalingo.io\/api/],

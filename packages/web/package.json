@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "@gouvminint/vue-dsfr": "^5.0.0",
+    "@sentry/utils": "^7.99.0",
     "@sentry/vue": "^7.93.0",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vue/tsconfig": "^0.4.0",

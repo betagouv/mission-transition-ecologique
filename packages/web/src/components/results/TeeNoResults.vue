@@ -27,11 +27,11 @@
 
 import { choicesStore } from '../../stores/choices'
 import type { Translations } from '@/types/index'
-import MetaEnv from '@/utils/metaEnv'
+import Config from '@/config'
 
 const choices = choicesStore()
 
-const publicPath = MetaEnv.publicPath
+const publicPath = Config.publicPath
 
 interface Props {
   image?: string

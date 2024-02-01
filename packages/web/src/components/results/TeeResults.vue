@@ -189,7 +189,7 @@ import { navigationStore } from '@/stores/navigation'
 import { RouteName } from '@/types/routeType'
 import Widget from '@/utils/widget'
 import { useDebugStore } from '@/stores/debug'
-import MetaEnv from '@/utils/metaEnv'
+import Config from '@/config'
 import Matomo from '@/utils/matomo'
 
 const choices = choicesStore()
@@ -209,7 +209,7 @@ interface Props {
 }
 const props = defineProps<Props>()
 
-const publicPath = MetaEnv.publicPath
+const publicPath = Config.publicPath
 
 const filteredPrograms: ProgramData[] | undefined = programs.filterPrograms(props.tracksResults)
 

@@ -2,7 +2,7 @@ import type { ImportMetaEnv } from '@/env'
 import ConfigCommon from '@tee/common/src/config/configCommon'
 import { Environment } from '@tee/common/src/config/types'
 
-export default class MetaEnv extends ConfigCommon {
+export default class Config extends ConfigCommon {
   static metaEnv: ImportMetaEnv = import.meta.env as ImportMetaEnv
   protected static override _sentryDsn = this.metaEnv.VITE_SENTRY_DSN
   protected static override _sentryEnvironment = this.metaEnv.VITE_SENTRY_ENVIRONMENT as Environment

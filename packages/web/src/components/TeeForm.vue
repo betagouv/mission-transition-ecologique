@@ -283,7 +283,7 @@ import { tracksStore } from '../stores/tracks'
 import { choicesStore } from '../stores/choices'
 import DsfrButton from '@/components/button/DsfrButton.vue'
 import Matomo from '@/utils/matomo'
-import MetaEnv from '@/utils/metaEnv'
+import Config from '@/config'
 import { RouteName } from '@/types/routeType'
 import { useRoute } from 'vue-router'
 import Contact from '@/utils/contact'
@@ -295,7 +295,7 @@ const tracks = tracksStore()
 const debugStore = useDebugStore()
 
 const trackValues: any[] = tracks.getAllUsedTracksValues
-const contactEmail = MetaEnv.contactEmail
+const contactEmail = Config.contactEmail
 
 interface DataProps {
   programId: string
