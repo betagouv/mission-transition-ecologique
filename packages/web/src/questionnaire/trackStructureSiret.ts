@@ -3,17 +3,12 @@
 
 import {
   codesNAF1,
-  EntrepriseSector,
   NAF1Letters,
   NAF1ToVar,
-  Sector,
-  Sectors,
-  YesNo,
   CallbackActions,
   CallbackMethods,
   CleanerOperations,
   DataMappingFrom,
-  FindInRefs,
   HasInputOptions,
   TrackComponents,
   TrackId

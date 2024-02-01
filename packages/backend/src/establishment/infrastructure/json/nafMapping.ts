@@ -1,4 +1,4 @@
-import nafMapping from '@tee/web/public/data/references/naf_codes.json'
+import nafMapping from '@tee/data/references/nafMapping.json'
 import { Maybe } from 'true-myth'
 
 export class NAF_JSONMapping {

@@ -1,4 +1,4 @@
-import jsonMapping from '@tee/web/public/data/references/com_codes.json'
+import jsonMapping from '@tee/data/references/regionMapping.json'
 import { Maybe } from 'true-myth'
 
 export class COG2023Mapping {
