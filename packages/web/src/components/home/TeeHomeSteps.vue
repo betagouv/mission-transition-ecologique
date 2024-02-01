@@ -34,11 +34,16 @@
         v-if="c.logos"
         class="fr-grid-row fr-sm-hide fr-justify-center fr-mb-2v tee-home-step-partners-container"
       >
-        <img
+        <!-- <img
           v-for="logo in c.logos"
           :key="logo.img"
           :src="logo.img"
           :alt="logo.label"
+          class="fr-mx-2v fr-my-2v tee-home-step-partners-img"
+        /> -->
+        <img
+          :src="c.logos.img"
+          :alt="c.logos.label"
           class="fr-mx-2v fr-my-2v tee-home-step-partners-img"
         />
       </div>
@@ -47,7 +52,7 @@
 </template>
 
 <script setup lang="ts">
-import partners from '@/utils/partners'
+// import partners from '@/utils/partners'
 
 const content = [
   {
@@ -64,7 +69,10 @@ const content = [
     title: 'J’accède aux aides dont mon entreprise peut bénéficier',
     img: '/images/home/3.svg',
     text: 'Des propositions d’accompagnements et de financements issues de l’ensemble des partenaires : ADEME, Bpifrance, CCI, CMA, etc.',
-    logos: partners
+    logos: {
+      label: 'Partenaires',
+      img: '/images/logos/logos-partners.png'
+    }
   }
 ]
 </script>

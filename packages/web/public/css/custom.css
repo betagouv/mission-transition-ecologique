@@ -105,9 +105,9 @@ button.fr-link:hover, .tee-router-link:hover {
   align-items: center
 }
 .tee-home-step-partners-img {
-  max-height: 2rem;
+  max-height: 100%;
   width: auto;
-  max-width: 8rem;
+  max-width: 100%;
 }
 .tee-footer-partners-container {
   background-image: none
