@@ -14,7 +14,7 @@ interface SiretBody {
   siret: Siret
 }
 
-export const exampleEstablishment = {
+const exampleEstablishment = {
   siren: '830141321',
   nic: '00034',
   siret: '83014132100034',

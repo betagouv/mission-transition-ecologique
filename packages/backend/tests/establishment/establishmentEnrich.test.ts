@@ -1,16 +1,8 @@
-import { Maybe, Result, ResultNS } from 'true-myth'
-import { EstablishmentRepository, NafMapping } from '../../src/establishment/domain/spi'
-import { COG2023Mapping } from '../../src/establishment/infrastructure/json/cityToRegionMapping'
+import { Maybe } from 'true-myth'
+import { NafMapping } from '../../src/establishment/domain/spi'
 import EstablishmentFeatures from '../../src/establishment/domain/establishmentFeatures'
-import { exampleEstablishment } from '../../src/establishment/controller/establishmentController'
-
-// As we do not use ES6 modules, I could not find more elegant way to import Ok
-type Ok<T, E> = ResultNS.Ok<T, E>
-
-// check that `Result` is `Ok`, i.e. does not return an error
-function expectToBeOk<T, E>(v: Result<T, E>): asserts v is Ok<T, E> {
-  expect(v.isOk).toBe(true)
-}
+import { expectToBeOk } from '../testing'
+import { dummyEstablishmentRepository, nothingRegionMapping } from './testing'
 
 const DUMMY_SIRET = '00000000000000'
 
@@ -23,14 +15,6 @@ const dummyNafMapping: NafMapping = {
   getLabel: (_nafCode: string) => Maybe.of(DUMMY_NAF_LABEL),
   getSectionLabel: (_nafCode: string) => Maybe.of(DUMMY_SECTION_LABEL),
   getSectionCode: (_nafCode: string) => Maybe.of(DUMMY_SECTION_CODE)
-}
-
-const nothingRegionMapping: COG2023Mapping = {
-  getRegion: (_cityCode: string) => Maybe.nothing<string>()
-}
-
-const dummyEstablishmentRepository: EstablishmentRepository = {
-  get: (_siret: string) => Promise.resolve(Result.ok(exampleEstablishment))
 }
 
 describe(`
