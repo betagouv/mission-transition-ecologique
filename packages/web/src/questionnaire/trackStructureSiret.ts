@@ -98,63 +98,17 @@ export const siret: Track = {
             {
               from: DataMappingFrom.RawData,
               id: 'region',
-              path: 'address.cityCode',
+              path: 'region',
               dataField: 'région',
-              onlyRemap: true,
-              cleaning: [
-                {
-                  operation: CleanerOperations.findFromRefs,
-                  findInRef: FindInRefs.ComCodes,
-                  findFromField: 'COM',
-                  retrieveFromField: 'REGION'
-                }
-              ]
-            },
-            {
-              from: DataMappingFrom.RawData,
-              id: 'secteur',
-              path: 'nafCode',
-              dataField: '.',
-              onlyRemap: true,
-              cleaning: [
-                {
-                  operation: CleanerOperations.findFromRefs,
-                  findInRef: FindInRefs.NafCodes,
-                  findFromField: 'NIV5',
-                  retrieveFromField: 'tagsFr'
-                  // => ['artisanat', 'industrie']
-                },
-                {
-                  operation: CleanerOperations.findFromDict,
-                  dict: {
-                    [Sector.Craftsmanship]: { [EntrepriseSector.Craftsmanship]: YesNo.Yes },
-                    [Sector.Industry]: { [EntrepriseSector.Industry]: YesNo.Yes },
-                    [Sector.Tourism]: { [EntrepriseSector.Tourism]: YesNo.Yes },
-                    [Sector.Tertiary]: { [EntrepriseSector.Tertiary]: YesNo.Yes },
-                    [Sector.Agriculture]: { [EntrepriseSector.Agriculture]: YesNo.Yes },
-                    [Sector.Other]: { [EntrepriseSector.Other]: YesNo.Yes }
-                  }
-                },
-                {
-                  operation: CleanerOperations.injectInObject,
-                  object: { ...Sectors }
-                }
-              ]
+              onlyRemap: true
             },
             {
               from: DataMappingFrom.RawData,
               id: 'codeNAF1',
-              path: 'nafCode',
+              path: 'nafSectionCode',
               dataField: '.',
               onlyRemap: true,
               cleaning: [
-                {
-                  operation: CleanerOperations.findFromRefs,
-                  findInRef: FindInRefs.NafCodes,
-                  findFromField: 'NIV5',
-                  retrieveFromField: 'NIV1'
-                  // => 'A'
-                },
                 {
                   operation: CleanerOperations.findFromDict,
                   dict: Object.fromEntries(NAF1Letters.map((l) => [l, { [NAF1ToVar(l)]: 'oui' }]))
@@ -169,17 +123,9 @@ export const siret: Track = {
             {
               from: DataMappingFrom.RawData,
               id: 'sectorLabel',
-              path: 'nafCode',
+              path: 'nafLabel',
               dataField: 'secteur',
-              onlyRemap: true,
-              cleaning: [
-                {
-                  operation: CleanerOperations.findFromRefs,
-                  findInRef: FindInRefs.NafCodes,
-                  findFromField: 'NIV5',
-                  retrieveFromField: 'label_vf'
-                }
-              ]
+              onlyRemap: true
             },
             {
               from: DataMappingFrom.RawData,
