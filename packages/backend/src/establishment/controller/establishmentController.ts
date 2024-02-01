@@ -1,6 +1,6 @@
 import { Body, Controller, Post, Route, SuccessResponse, TsoaResponse, Res, Example } from 'tsoa'
 import EstablishmentService from '../application/establishmentService'
-import { EstablishmentNotFoundError, EstablishmentDetails, Siret } from '../domain/types'
+import { EstablishmentNotFoundError, Siret, Establishment } from '../domain/types'
 import { ErrorJSON, ValidateErrorJSON } from '../../common/controller/jsonError'
 
 interface EstablishmentNotFoundErrorJSON {
@@ -21,6 +21,8 @@ const exampleEstablishment = {
   creationDate: '2021-12-01',
   denomination: 'MULTI',
   nafCode: '62.01Z',
+  nafSectionCode: 'A',
+  nafLabel: 'Programmation informatique',
   address: {
     streetNumber: '116',
     streetType: 'RUE',
@@ -44,14 +46,14 @@ export class SireneController extends Controller {
    * @example requestBody: {"siret": "83014132100034"}
    */
 
-  @Example<EstablishmentDetails>(exampleEstablishment)
+  @Example<Establishment>(exampleEstablishment)
   @Post('get_by_siret')
   public async getEstablishmentBySiret(
     @Body() requestBody: SiretBody,
     @Res() requestFailedResponse: TsoaResponse<500, ErrorJSON>,
     @Res() _validationFailedResponse: TsoaResponse<422, ValidateErrorJSON>,
     @Res() notFoundResponse: TsoaResponse<404, EstablishmentNotFoundErrorJSON>
-  ): Promise<EstablishmentDetails> {
+  ): Promise<Establishment> {
     const requestedSiret = requestBody.siret
 
     const establishmentResult = await new EstablishmentService().getBySiret(requestedSiret)
