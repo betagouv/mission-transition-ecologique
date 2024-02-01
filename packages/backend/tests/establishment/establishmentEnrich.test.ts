@@ -2,7 +2,7 @@ import { Maybe, Result, ResultNS } from 'true-myth'
 import { EstablishmentRepository, NafMapping } from '../../src/establishment/domain/spi'
 import { COG2023Mapping } from '../../src/establishment/infrastructure/json/cityToRegionMapping'
 import EstablishmentFeatures from '../../src/establishment/domain/establishmentFeatures'
-import { Establishment } from '../../src/establishment/domain/types'
+import { exampleEstablishment } from '../../src/establishment/controller/establishmentController'
 
 // As we do not use ES6 modules, I could not find more elegant way to import Ok
 type Ok<T, E> = ResultNS.Ok<T, E>
@@ -30,7 +30,7 @@ const nothingRegionMapping: COG2023Mapping = {
 }
 
 const dummyEstablishmentRepository: EstablishmentRepository = {
-  get: (_siret: string) => Promise.resolve(Result.ok({} as Establishment))
+  get: (_siret: string) => Promise.resolve(Result.ok(exampleEstablishment))
 }
 
 describe(`

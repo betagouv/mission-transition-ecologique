@@ -20,16 +20,35 @@ export default class EstablishmentFeatures {
       return Result.err(establishmentResult.error)
     }
 
-    const establishment = this._addRegionToEstablishment(establishmentResult.value)
+    let establishment = this._addRegionToEstablishment(establishmentResult.value)
+    establishment = this._addSectorDetailsToEstablishment(establishment)
 
     return Result.ok(establishment)
   }
 
-  private _addRegionToEstablishment(establishment: EstablishmentDetails): Establishment {
+  private _addRegionToEstablishment(establishment: Establishment): Establishment {
     const maybeRegion = this._cityToRegionMapping.getRegion(establishment.address.cityCode)
     if (maybeRegion.isNothing) {
       return establishment
     }
     return { ...establishment, region: maybeRegion.value }
+  }
+
+  private _addSectorDetailsToEstablishment(establishment: Establishment): Establishment {
+    const code = establishment.nafCode
+    const maybeLabel = this._nafMapping.getLabel(code)
+    const maybeSectionLabel = this._nafMapping.getSectionLabel(code)
+    const maybeSectionCode = this._nafMapping.getSectionCode(code)
+
+    if (maybeLabel.isNothing || maybeSectionLabel.isNothing || maybeSectionCode.isNothing) {
+      return establishment
+    }
+
+    return {
+      ...establishment,
+      nafLabel: maybeLabel.value,
+      nafSectionLabel: maybeSectionLabel.value,
+      nafSectionCode: maybeSectionCode.value
+    }
   }
 }
