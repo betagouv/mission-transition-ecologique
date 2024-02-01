@@ -1,11 +1,29 @@
 <template>
+  <!-- ALERT - PROGRAM NOT AVAILABLE ANYMORE -->
+  <div
+    v-if="!programIsAvailable"
+    class="fr-notice fr-tee-program-notice-alert fr-mb-0"
+  >
+    <div class="fr-container">
+      <div class="fr-notice__body fr-text-center">
+        <p class="fr-notice__title">
+          <span
+            class="fr-icon-information-line"
+            aria-hidden="true"
+          ></span>
+          {{ choices.t('program.programNotAvailable') }}
+        </p>
+        <p class="fr-notice__subtitle">{{ choices.t('program.programEndValidity') }} : {{ program?.[`fin de validité`] }}</p>
+      </div>
+    </div>
+  </div>
   <!-- PROGRAM INFOS -->
-  <div :class="`fr-container-fluid fr-px-6v fr-px-md-20v fr-mt-10v`">
+  <div :class="`fr-container-fluid fr-px-6v fr-px-md-20v fr-mt-${!programIsAvailable ? 3 : 8}v`">
     <div class="fr-grid-row fr-grid-row-gutters">
       <div class="fr-col">
         <!-- BACK TO RESULTS BTN -->
         <button
-          class="fr-btn fr-btn--tertiary-no-outline inline-flex fr-mb-3v fr-link"
+          class="fr-btn fr-btn--lg fr-btn--tertiary-no-outline fr-mb-3v fr-pl-2v"
           tertiary
           noOutline
           @click="resetDetailResult"
@@ -13,6 +31,7 @@
           <v-icon
             name="ri-arrow-left-line"
             aria-hidden="true"
+            class="fr-mr-2v"
           ></v-icon>
           {{ Translation.t('results.backToResults') }}
         </button>
@@ -20,13 +39,19 @@
         <!-- PROGRAM DETAILS -->
         <div class="fr-grid-row fr-grid-row--gutters fr-mb-10v">
           <!-- IMAGE -->
-          <div class="fr-col-md-4 fr-col-lg-3 fr-col-xl-3 fr-col-sm-hide fr-text-right">
+          <div class="fr-col-md-4 fr-col-lg-3 fr-col-xl-3 fr-col-sm-hide fr-text-right fr-tee-program-detail-img">
             <img
               class="fr-responsive-img"
               :src="`${publicPath}${program?.illustration}`"
               :alt="`image / ${program?.titre}`"
-              style="min-height: 100%; object-fit: cover"
             />
+
+            <!-- PROGRAM TYPE -->
+            <ul class="fr-badges-group fr-tee-program-detail-img-badge">
+              <p class="fr-badge tee-program-badge-image">
+                {{ program?.["nature de l'aide"] }}
+              </p>
+            </ul>
           </div>
 
           <!-- TITLE & RESUME -->
@@ -194,6 +219,20 @@
             >
             </TeeTile>
           </div>
+
+          <!-- PROGRAM END VALIDITY -->
+          <div :class="columnTiles">
+            <TeeTile
+              class="tee-no-hover"
+              :title="choices.t('program.programEndValidity')"
+              :image-path="`${publicPath}images/TEE-duree.svg`"
+              :description="
+                program?.[`fin de validité`]
+                  ? choices.t(choices.t('program.programAvailableUntil'), { date: program[`fin de validité`] })
+                  : choices.t('program.programAvailable')
+              "
+            />
+          </div>
         </div>
 
         <!-- ELIGIBILITY -->
@@ -231,7 +270,7 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`TeeProgramDetail > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import { ref, onBeforeMount } from 'vue'
+import { ref, computed, onBeforeMount } from 'vue'
 
 import TeeTile from '../TeeTile.vue'
 import TeeForm from '../TeeForm.vue'
@@ -250,6 +289,7 @@ import { RouteName } from '@/types/routeType'
 import Widget from '@/utils/widget'
 import MetaEnv from '@/utils/metaEnv'
 import Matomo from '@/utils/matomo'
+import Program from '@/utils/program'
 
 const tracks = tracksStore()
 const programs = programsStore()
@@ -259,13 +299,12 @@ const router = useRouter()
 
 const program = ref<{ index: string } & ProgramData>()
 const trackConfig = ref<any>()
+const TeeProgramFormContainer = ref<HTMLElement | null | undefined>(null)
 
 const blockColor = '#000091'
 const columnTiles = ref<string>('fr-col')
 
 const publicPath = MetaEnv.publicPath
-
-const TeeProgramFormContainer = ref<HTMLElement | null | undefined>(null)
 
 interface Props {
   programId: string | number
@@ -294,5 +333,9 @@ onBeforeMount(() => {
   }
   // analytics / send event
   Matomo.sendEvent('result_detail', route.name === RouteName.CatalogDetail ? 'show_detail_catalog' : 'show_detail', props.programId)
+})
+
+const programIsAvailable = computed(() => {
+  return Program.isAvailable(program.value)
 })
 </script>

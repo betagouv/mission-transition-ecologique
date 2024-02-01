@@ -280,7 +280,7 @@ import { CallbackActions, FormFieldTypes } from '@/types'
 import { sendApiRequest } from '@/utils/requests'
 import { remapItem } from '@/utils/helpers'
 import { tracksStore } from '@/stores/tracks'
-import Translation from '../utils/translation'
+import Translation from '@/utils/translation'
 import DsfrButton from '@/components/button/DsfrButton.vue'
 import Matomo from '@/utils/matomo'
 import MetaEnv from '@/utils/metaEnv'
@@ -411,7 +411,7 @@ const saveFormData = async () => {
     for (const callback of activeCallbacks) {
       let resp: ReqResp = {}
       switch (callback.action) {
-        case CallbackActions.CreateContact:
+        case CallbackActions.CreateOpportunity:
           resp = await sendApiRequest(callback, toRaw(formData.value), trackValues, props.dataProps, Translation.lang)
           break
         case CallbackActions.SendTransactionalEmail:

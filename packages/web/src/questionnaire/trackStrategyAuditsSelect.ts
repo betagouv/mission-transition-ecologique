@@ -27,7 +27,7 @@ export const strategyAuditsSelect: Track = {
     {
       value: { strategy_audits_select: 'energetic_performance_audit' },
       title: { fr: 'Performance énergétique' },
-      label: { fr: '⚡️ ️ Audit de performance énergétique des bâtiments ou Certification ISO 50001' },
+      label: { fr: '⚡️ Audit de performance énergétique des bâtiments ou Certification ISO 50001' },
       next: {
         default: TrackId.Results
       }
@@ -35,7 +35,7 @@ export const strategyAuditsSelect: Track = {
     {
       value: { strategy_audits_select: 'energy_consumption_audit' },
       title: { fr: "Consommation d'énergie" },
-      label: { fr: '⚡️ ️ Audit consommation d’énergie' },
+      label: { fr: '⚡️ Audit consommation d’énergie' },
       next: {
         default: TrackId.Results
       }
@@ -52,7 +52,7 @@ export const strategyAuditsSelect: Track = {
     {
       value: { strategy_audits_select: 'wastes_audit' },
       title: { fr: 'Déchets' },
-      label: { fr: '🗑  Audit déchets' },
+      label: { fr: '🗑 Audit déchets' },
       next: {
         default: TrackId.Results
       }
@@ -60,7 +60,7 @@ export const strategyAuditsSelect: Track = {
     {
       value: { strategy_audits_select: 'raw_materials_audit' },
       title: { fr: 'Matières premières' },
-      label: { fr: '🧱  Audit matières premières' },
+      label: { fr: '🧱 Audit matières premières' },
       next: {
         default: TrackId.Results
       }
@@ -68,7 +68,7 @@ export const strategyAuditsSelect: Track = {
     {
       value: { strategy_audits_select: 'certification' },
       title: { fr: 'Certification' },
-      label: { fr: '🎖  Certification ISO 14001 ' },
+      label: { fr: '🎖 Certification ISO 14001 ' },
       next: {
         default: TrackId.Results
       }

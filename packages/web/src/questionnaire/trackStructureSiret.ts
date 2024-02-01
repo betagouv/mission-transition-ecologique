@@ -30,7 +30,6 @@ const dataTarget = {
   région: null,
   structure_sizes: '',
   denomination: '',
-  // project_sectors: undefined,
   secteur: undefined
 }
 

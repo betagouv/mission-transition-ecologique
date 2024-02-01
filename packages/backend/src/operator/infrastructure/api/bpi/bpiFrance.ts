@@ -6,9 +6,9 @@ import OperatorAbstract from '../operatorAbstract'
 import { Operators, Program } from '../../../../program/domain/types'
 import AxiosHeaders from '../../../../common/infrastructure/api/axiosHeaders'
 import { handleException } from '../../../../common/domain/error/errors'
-import { ContactInfo } from '../../../../contact/domain/types'
+import { Opportunity } from '../../../../opportunity/domain/types'
 import { ContactId } from '../../../domain/types'
-import ContactPayloadDTO from './contactPayloadDTO'
+import opportunityPayloadDTO from './opportunityPayloadDTO'
 import Config from '../../../../config'
 
 export class BpiFrance extends OperatorAbstract {
@@ -46,14 +46,14 @@ export class BpiFrance extends OperatorAbstract {
     }
   }
 
-  public createOpportunity = async (contactInfo: ContactInfo, program: Program): Promise<Result<ContactId, Error>> => {
+  public createOpportunity = async (opportunity: Opportunity, program: Program): Promise<Result<ContactId, Error>> => {
     try {
       const tokenResult = await this._getToken()
       if (tokenResult.isErr) {
         return Result.err(tokenResult.error)
       }
 
-      const contactPayloadDTO = new ContactPayloadDTO(contactInfo, program).getPayload()
+      const contactPayloadDTO = new opportunityPayloadDTO(opportunity, program).getPayload()
       const response = await this.axios.post(this._contactUrl, contactPayloadDTO, {
         headers: AxiosHeaders.makeBearerHeader(tokenResult.value.access_token)
       })
