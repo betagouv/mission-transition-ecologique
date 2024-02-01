@@ -9,6 +9,8 @@ export type CityToRegionMapping = {
   getRegion: (cityCode: string) => Maybe<string>
 }
 
-export type NafToLabelMapping = {
-  getLabel: (nafCode: string, nafLevel: number) => Maybe<string>
+export type NafMapping = {
+  getLabel: (nafCode: string) => Maybe<string>
+  getSectionLabel: (nafCode: string) => Maybe<string>
+  getSectionCode: (nafCode: string) => Maybe<string>
 }

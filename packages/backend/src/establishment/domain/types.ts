@@ -2,7 +2,7 @@ import CustomError from '../../common/domain/error/customError'
 
 export type Siret = string
 
-export interface Establishment extends EstablishmentDetails, GeographicDetails {}
+export interface Establishment extends EstablishmentDetails, GeographicDetails, SectorDetails {}
 
 export interface EstablishmentDetails {
   siren: string
@@ -25,6 +25,12 @@ export interface EstablishmentDetails {
 
 export interface GeographicDetails {
   region?: string
+}
+
+export interface SectorDetails {
+  nafSectionCode?: string
+  nafSectionLabel?: string
+  nafLabel?: string
 }
 
 export class EstablishmentNotFoundError extends CustomError {}
