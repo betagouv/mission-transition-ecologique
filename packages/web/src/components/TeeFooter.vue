@@ -83,7 +83,10 @@
               />
             </a>
           </div>
-          <div class="fr-footer__partners-sub">
+          <div
+            class="fr-footer__partners-sub fr-grid-row--middle"
+            style="align-items: center"
+          >
             <ul
               v-for="partner in partners"
               :key="partner.label"
@@ -97,7 +100,7 @@
                 >
                   <img
                     class="fr-footer__logo"
-                    style="height: 5.625rem; width: 10rem"
+                    style="height: auto; max-height: 5.625rem; width: 10rem"
                     :src="partner.img"
                     :alt="partner.label"
                   />
@@ -226,7 +229,7 @@ const partners = [
   },
   {
     label: 'CMA France',
-    img: '/images/logos/cma-france.jpg',
+    img: '/images/logos/cma-france.png',
     href: 'https://www.artisanat.fr/'
   }
 ]
