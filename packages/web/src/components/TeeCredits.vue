@@ -100,7 +100,7 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`TeeCredits > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import Translation from '../utils/translation'
+import Translation from '@/utils/translation'
 import { RouteName } from '@/types/routeType'
 
 const licenceHref = 'https://github.com/betagouv/transition-ecologique-entreprises-widget/blob/main/LICENSE'

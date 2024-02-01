@@ -48,7 +48,7 @@
 // console.log(`TeeResultsFilter > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import { ref } from 'vue'
-import Translation from '../../utils/translation'
+import Translation from '@/utils/translation'
 import type { TrackFilter, FilterEvent } from '@/types/index'
 import { useDebugStore } from '@/stores/debug'
 
