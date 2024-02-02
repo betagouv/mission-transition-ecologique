@@ -88,19 +88,19 @@
             style="align-items: center"
           >
             <ul
-              v-for="partner in partners"
-              :key="partner.label"
+              v-for="operator in operators"
+              :key="operator.label"
             >
               <li>
                 <a
-                  class="footer__partners-link tee-footer-partners-container"
+                  class="footer__partners-link tee-footer-operators-container"
                   target="_blank"
-                  :href="partner.href"
+                  :href="operator.href"
                 >
                   <img
-                    class="fr-footer__logo tee-footer-partners-img"
-                    :src="partner.img"
-                    :alt="partner.label"
+                    class="fr-footer__logo tee-footer-operators-img"
+                    :src="operator.img"
+                    :alt="operator.label"
                   />
                 </a>
               </li>
@@ -173,7 +173,7 @@
 
 import { choicesStore } from '@/stores/choices'
 import { RouteName } from '@/types/routeType'
-import partners from '@/utils/partners'
+import operators from '@/utils/operators'
 
 const choices = choicesStore()
 
@@ -252,3 +252,4 @@ interface Props {
 }
 defineProps<Props>()
 </script>
+@/utils/operators

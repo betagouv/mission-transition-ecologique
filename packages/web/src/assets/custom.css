@@ -101,18 +101,18 @@ button.fr-link:hover, .tee-router-link:hover {
   background-color: white;
   z-index: 10;
 }
-.tee-home-step-partners-container {
+.tee-home-step-operators-container {
   align-items: center
 }
-.tee-home-step-partners-img {
+.tee-home-step-operators-img {
   max-height: 100%;
   width: auto;
   max-width: 100%;
 }
-.tee-footer-partners-container {
+.tee-footer-operators-container {
   background-image: none
 }
-.tee-footer-partners-img {
+.tee-footer-operators-img {
   height: auto;
   max-height: 5.625rem;
   width: 10rem

@@ -32,19 +32,12 @@
       </p>
       <div
         v-if="c.logos"
-        class="fr-grid-row fr-sm-hide fr-justify-center fr-mb-2v tee-home-step-partners-container"
+        class="fr-grid-row fr-sm-hide fr-justify-center fr-mb-2v tee-home-step-operators-container"
       >
-        <!-- <img
-          v-for="logo in c.logos"
-          :key="logo.img"
-          :src="logo.img"
-          :alt="logo.label"
-          class="fr-mx-2v fr-my-2v tee-home-step-partners-img"
-        /> -->
         <img
           :src="c.logos.img"
           :alt="c.logos.label"
-          class="fr-mx-2v fr-my-2v tee-home-step-partners-img"
+          class="fr-mx-2v fr-my-2v tee-home-step-operators-img"
         />
       </div>
     </div>
@@ -52,8 +45,6 @@
 </template>
 
 <script setup lang="ts">
-// import partners from '@/utils/partners'
-
 const content = [
   {
     title: 'Je renseigne mon profil avec mon SIRET',
@@ -63,7 +54,7 @@ const content = [
   {
     title: 'Je réponds à quelques questions par thématique',
     img: '/images/home/2.svg',
-    text: 'En fonction de vos objectifs et des enjeux de mon entreprise : bâtiment, mobilité, déchets, eau, énergie...'
+    text: 'En fonction de mes objectifs et des enjeux de mon entreprise : bâtiment, mobilité, déchets, eau, énergie...'
   },
   {
     title: 'J’accède aux aides dont mon entreprise peut bénéficier',
@@ -71,7 +62,7 @@ const content = [
     text: 'Des propositions d’accompagnements et de financements issues de l’ensemble des partenaires : ADEME, Bpifrance, CCI, CMA, etc.',
     logos: {
       label: 'Partenaires',
-      img: '/images/logos/logos-partners.png'
+      img: '/images/logos/logos-operators.png'
     }
   }
 ]

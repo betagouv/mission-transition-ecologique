@@ -1,4 +1,4 @@
-const partners = [
+const operators = [
   {
     label: 'ADEME',
     img: '/images/logos/ademe.svg',
@@ -21,4 +21,4 @@ const partners = [
   }
 ]
 
-export default partners
+export default operators
