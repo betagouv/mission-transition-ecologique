@@ -1,8 +1,8 @@
 import type { Track } from '@/types'
-import { PublicodesTrackHelpValue, Questionnaire, TrackComponents, TrackHelpValue, TrackId } from '@/types'
+import { PublicodesTrackHelpValue, Questionnaire, TrackComponents, QuestionnaireRoute, TrackId } from '@/types'
 
-export const help: Track = {
-  id: TrackId.Help,
+export const questionnaireRoute: Track = {
+  id: TrackId.QuestionnaireRoute,
   category: 'ourHelp',
   title: { fr: 'Par où commencer ?' },
   label: { fr: 'Comment pouvons-nous vous aider ?' },
@@ -29,7 +29,7 @@ export const help: Track = {
   options: [
     {
       value: {
-        user_help: TrackHelpValue.Unknown,
+        questionnaire_route: QuestionnaireRoute.SpecificGoal,
         [Questionnaire.path]: PublicodesTrackHelpValue.Unknown
       },
       title: { fr: 'Je ne sais pas' },
@@ -46,7 +46,7 @@ export const help: Track = {
     },
     {
       value: {
-        user_help: TrackHelpValue.Precise,
+        questionnaire_route: QuestionnaireRoute.SpecificGoal,
         [Questionnaire.path]: PublicodesTrackHelpValue.Precise
       },
       title: { fr: "J'ai un objectif" },

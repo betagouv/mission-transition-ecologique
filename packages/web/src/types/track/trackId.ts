@@ -5,7 +5,7 @@ export enum TrackId {
   EnergyReductionPriority = 'track_energy_reduction_priority',
   EnergyTypes = 'track_energy_types',
   Goals = 'track_goals',
-  Help = 'track_help',
+  QuestionnaireRoute = 'track_questionnaire_route',
   Mobility = 'track_mobility',
   MobilityEnergy = 'track_mobility_energy',
   MobilityNumberVehicles = 'track_mobility_number_vehicles',

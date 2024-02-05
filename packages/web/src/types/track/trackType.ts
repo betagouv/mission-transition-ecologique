@@ -228,9 +228,9 @@ export const isTrackOptionsInput = (option: TrackOptionsInput | TrackOptions): o
   return 'hasInput' in option
 }
 
-export enum TrackHelpValue {
-  Unknown = 'unknown',
-  Precise = 'precise'
+export enum QuestionnaireRoute {
+  NoSpecificGoal = 'no_specific_goal',
+  SpecificGoal = 'specific_goal'
 }
 
 export interface UsedTrackValuePair {

@@ -50,11 +50,6 @@ export interface ContactAttributes {
   TAILLE?: BrevoCompanySize
 }
 
-export enum QuestionnaireRoute {
-  Unknown = 'unknown',
-  Precise = 'precise'
-}
-
 export enum BrevoQuestionnaireRoute {
   DIRECTORY = 'annuaire',
   SPECIFIC_GOAL = 'jai_un_objectif_prcis',
