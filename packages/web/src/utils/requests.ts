@@ -15,28 +15,51 @@ export const sendApiRequest = async (
   props: any = undefined,
   lang: string = 'fr'
 ) => {
-  const url = callback.url
   const method = callback.method
   const headers = buildHeaders(callback)
 
-  let data: any = callback.dataBody || callback.dataStructure || {}
+  let data: any = callback.dataBody || callback.dataPath || callback.dataStructure || {}
   const dataMapping = callback.dataMapping.filter((dm) => !dm.onlyRemap)
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
   data = remapItem(data, dataMapping, formData, trackValues, props, undefined, [], lang)
-  const body = JSON.stringify(data)
+  const url = replacePlaceholders(callback.url, data as Record<string, string>)
+  const body = callback.dataBody ? JSON.stringify(data) : undefined
 
   return await sendRequest(url, method, headers, body, callback.action)
 }
 
-export const sendRequest = async (url: string, method: string, headers: HeadersInit, body: BodyInit, action: string): Promise<ReqResp> => {
-  // send request
+const replacePlaceholders = (url: string, dataPath?: Record<string, string>): string => {
+  if (!dataPath) {
+    return url
+  }
+  const placeholderRegexp = new RegExp('{([^{}]+)}', 'g')
+  const matches = [...url.matchAll(placeholderRegexp)]
+  const placeholders = matches.map((placeholder) => /* capture group */ placeholder[1])
+  return placeholders.reduce((accu: string, placeholder: string) => replacePlaceholder(accu, placeholder, dataPath?.[placeholder]), url)
+}
+
+const replacePlaceholder = (url: string, placeholderName: string, placeholderData: string | undefined): string => {
+  if (placeholderData) {
+    url = url.replace('{' + placeholderName + '}', placeholderData)
+  }
+  return url
+}
+
+export const sendRequest = async (
+  url: string,
+  method: string,
+  headers: HeadersInit,
+  body: BodyInit | undefined,
+  action: string
+): Promise<ReqResp> => {
   try {
     const response = await fetch(url, {
       method: method,
       headers: headers,
       body: body
     })
+    console.log(response)
     const respJson: ReqResp = (await response.json()) as ReqResp
     respJson.action = action
     respJson.ok = response.ok
