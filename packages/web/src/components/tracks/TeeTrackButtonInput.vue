@@ -28,7 +28,7 @@
         class="fr-pr-3v"
         style="width: auto; white-space: nowrap"
       >
-        {{ option.label?.[choices.lang] }}
+        {{ option.label?.[Translation.lang] }}
       </span>
       <input
         :id="`track-input-${option.hasInput}`"
@@ -45,7 +45,7 @@
         v-if="isNumberInput"
         class="fr-ml-3v"
       >
-        {{ option.label?.[choices.lang] }}
+        {{ option.label?.[Translation.lang] }}
       </span>
     </div>
   </div>
@@ -56,7 +56,7 @@
 // console.log(`TeeTrackButtonInput > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import { onBeforeMount, ref, computed } from 'vue'
-import { choicesStore } from '@/stores/choices'
+import Translation from '@/utils/translation'
 import type { TrackOptionsInput } from '@/types'
 import { HasInputOptions } from '@/types'
 import { useDebugStore } from '@/stores/debug'
@@ -69,7 +69,6 @@ interface Props {
 }
 const props = defineProps<Props>()
 
-const choices = choicesStore()
 const debugStore = useDebugStore()
 
 const inputValue = ref<string | number>()

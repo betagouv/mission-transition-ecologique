@@ -11,7 +11,7 @@
     >
       <div class="fr-col-3">
         <h6 class="fr-mb-1v">
-          choices.lang : <code>{{ choices.lang }} </code>
+          Translation.lang : <code>{{ Translation.lang }} </code>
         </h6>
       </div>
     </div>
@@ -145,14 +145,14 @@
         <!-- LICENCE LINKS -->
         <div class="fr-footer__bottom-copy">
           <p>
-            {{ choices.t('footer.thisApplicationAndIts') }}
+            {{ Translation.t('footer.thisApplicationAndIts') }}
             <a
               :href="sourceCodeHref"
               class="fr-link-licence no-content-after"
             >
-              {{ choices.t('footer.sourceCode') }}
+              {{ Translation.t('footer.sourceCode') }}
             </a>
-            {{ choices.t('footer.areUnderlicence') }}
+            {{ Translation.t('footer.areUnderlicence') }}
             &nbsp;
             <a
               :href="licenceHref"
@@ -171,11 +171,9 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`TeeAppFooter > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import { choicesStore } from '@/stores/choices'
+import Translation from '@/utils/translation'
 import { RouteName } from '@/types/routeType'
 import operators from '@/utils/operators'
-
-const choices = choicesStore()
 
 const sourceCodeHref = 'https://github.com/betagouv/transition-ecologique-entreprises-widget/tree/main'
 const licenceHref = 'https://github.com/betagouv/transition-ecologique-entreprises-widget/blob/main/LICENSE'

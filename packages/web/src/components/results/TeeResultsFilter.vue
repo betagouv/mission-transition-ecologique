@@ -22,7 +22,7 @@
         value=""
         selected
       >
-        {{ choices.t('results.filterSelect', { fieldLabel: filter.label }) }}
+        {{ Translation.t('results.filterSelect', { fieldLabel: filter.label }) }}
       </option>
 
       <!-- FILTER OPTIONS -->
@@ -37,7 +37,7 @@
       <!-- DEBUGGING -->
       <!-- <option
         value="">
-        {{ choices.t('results.resetSelect') }}
+        {{ Translation.t('results.resetSelect') }}
       </option> -->
     </select>
   </div>
@@ -48,11 +48,10 @@
 // console.log(`TeeResultsFilter > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import { ref } from 'vue'
-import { choicesStore } from '../../stores/choices'
+import Translation from '@/utils/translation'
 import type { TrackFilter, FilterEvent } from '@/types/index'
 import { useDebugStore } from '@/stores/debug'
 
-const choices = choicesStore()
 const debugStore = useDebugStore()
 
 const activeValue = ref<any>()

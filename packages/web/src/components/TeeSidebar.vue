@@ -23,7 +23,7 @@
   >
     <div class="fr-mb-6v">
       <div class="fr-mb-2v">
-        {{ choices.t(`categories.${categ}`) }}
+        {{ Translation.t(`categories.${categ}`) }}
       </div>
       <div
         v-for="usedTrack in usedTracksRegrouped[categ]"
@@ -31,7 +31,7 @@
       >
         <div class="fr-mb-1v">
           <DsfrButton
-            :label="tracks.getTrackTitle(usedTrack.id as TrackId, choices.lang)"
+            :label="tracks.getTrackTitle(usedTrack.id as TrackId, Translation.lang)"
             :disabled="!usedTrack.completed"
             class="tee-btn-sidebar"
             tertiary
@@ -50,7 +50,7 @@
 
 import { computed } from 'vue'
 import { tracksStore } from '@/stores/tracks'
-import { choicesStore } from '@/stores/choices'
+import Translation from '@/utils/translation'
 import type { UsedTrack } from '@/types'
 import { TrackId } from '@/types'
 import { groupBy } from '@/utils/helpers'
@@ -58,7 +58,6 @@ import { useDebugStore } from '@/stores/debug'
 import { DsfrButton } from '@gouvminint/vue-dsfr'
 
 const tracks = tracksStore()
-const choices = choicesStore()
 const debugStore = useDebugStore()
 
 const usedTracks = computed(() => {
