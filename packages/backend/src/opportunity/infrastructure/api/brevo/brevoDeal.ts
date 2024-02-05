@@ -13,7 +13,7 @@ enum QuestionnaireRoute {
   SpecificGoal = 'specific_goal'
 }
 
-// // "Opportunities" are called "Deals" in Brevo
+// "Opportunities" are called "Deals" in Brevo
 
 export const addBrevoDeal: OpportunityRepository['create'] = async (
   contactId: number,
