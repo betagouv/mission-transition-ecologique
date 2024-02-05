@@ -71,7 +71,7 @@
 import { computed, onBeforeMount, onMounted, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
-import { tracksStore } from '@/stores/tracks'
+import { useTracksStore } from '@/stores/tracks'
 import { programsStore } from '@/stores/programs'
 import { navigationStore } from '@/stores/navigation'
 import { TrackComponents, TrackId } from '@/types'
@@ -88,7 +88,7 @@ const props = defineProps<Props>()
 
 const trackElement = ref<HTMLElement | null>(null)
 
-const tracks = tracksStore()
+const tracks = useTracksStore()
 const programs = programsStore()
 const nav = navigationStore()
 const debugStore = useDebugStore()

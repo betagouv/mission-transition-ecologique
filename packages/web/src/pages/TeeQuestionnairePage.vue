@@ -13,11 +13,11 @@
 // console.log(`TeeQuestionnairePage > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import { computed } from 'vue'
-import { tracksStore } from '@/stores/tracks'
+import { useTracksStore } from '@/stores/tracks'
 import ContactHelp from '@/components/contact/ContactHelp.vue'
 import { TrackComponents } from '@/types'
 
-const tracks = tracksStore()
+const tracks = useTracksStore()
 
 const isTrackResults = computed(() => {
   const track = tracks.getLastTrack

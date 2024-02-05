@@ -11,7 +11,7 @@ import { TrackComponents, TrackId } from '@/types'
 const allTracks = ref<Track[]>(tracks)
 const seedTrack = ref<TrackId | undefined>()
 
-export const tracksStore = defineStore('tracks', () => {
+export const useTracksStore = defineStore('tracks', () => {
   const trackResultString = TrackId.Results
 
   const maxDepth = ref(4)
@@ -55,8 +55,7 @@ export const tracksStore = defineStore('tracks', () => {
   })
 
   const getAllUsedTracks = computed(() => {
-    const res = usedTracks.value.filter((i: UsedTrack) => i?.completed).map((i: UsedTrack) => toRaw(i))
-    return res
+    return usedTracks.value.filter((usedTrack: UsedTrack) => usedTrack?.completed).map((usedTrack: UsedTrack) => toRaw(usedTrack))
   })
 
   const getAllUsedTracksValues = computed<(string | number | object)[]>(() => {

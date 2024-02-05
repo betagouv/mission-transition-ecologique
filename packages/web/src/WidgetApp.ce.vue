@@ -115,7 +115,7 @@ import '@gouvfr/dsfr/dist/core/core.main.min.css'
 
 import { computed, onBeforeMount, ref, watch } from 'vue'
 
-import { tracksStore } from './stores/tracks'
+import { useTracksStore } from './stores/tracks'
 import Translation from '@/utils/translation'
 import { programsStore } from './stores/programs'
 import { navigationStore } from './stores/navigation'
@@ -140,7 +140,7 @@ interface Props {
 }
 const props = defineProps<Props>()
 
-const tracks = tracksStore()
+const tracks = useTracksStore()
 const programs = programsStore()
 const nav = navigationStore()
 const debugStore = useDebugStore()

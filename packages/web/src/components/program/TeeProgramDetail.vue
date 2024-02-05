@@ -278,7 +278,7 @@ import ProgramLongDescription from '@/components/program/ProgramLongDescription.
 import ProgramForm from '@/components/program/ProgramForm.vue'
 
 import Translation from '@/utils/translation'
-import { tracksStore } from '@/stores/tracks'
+import { useTracksStore } from '@/stores/tracks'
 import { programsStore } from '@/stores/programs'
 import { navigationStore } from '@/stores/navigation'
 import { scrollToId } from '@/utils/helpers'
@@ -290,7 +290,7 @@ import MetaEnv from '@/utils/metaEnv'
 import Matomo from '@/utils/matomo'
 import Program from '@/utils/program'
 
-const tracks = tracksStore()
+const tracks = useTracksStore()
 const programs = programsStore()
 const nav = navigationStore()
 const route = useRoute()

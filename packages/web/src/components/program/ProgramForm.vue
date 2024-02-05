@@ -35,11 +35,11 @@
         <DsfrInputGroup>
           <DsfrInput
             type="text"
-            :model-value="formData.name.value"
+            :model-value="opportunityForm.name.value"
             label-visible
-            :required="formData.name.required"
+            :required="opportunityForm.name.required"
             label="Prénom"
-            @update:model-value="updateFormData($event, 'name')"
+            @update:model-value="updateOpportunityForm($event, 'name')"
           >
           </DsfrInput>
         </DsfrInputGroup>
@@ -48,11 +48,11 @@
         <DsfrInputGroup>
           <DsfrInput
             type="text"
-            :model-value="formData.surname.value"
+            :model-value="opportunityForm.surname.value"
             label-visible
-            :required="formData.surname.required"
+            :required="opportunityForm.surname.required"
             label="Nom"
-            @update:model-value="updateFormData($event, 'surname')"
+            @update:model-value="updateOpportunityForm($event, 'surname')"
           >
           </DsfrInput>
         </DsfrInputGroup>
@@ -60,12 +60,12 @@
       <div class="fr-col-12 fr-col-md-12">
         <DsfrInputGroup>
           <DsfrInput
-            type="text"
-            :model-value="formData.email.value"
+            type="email"
+            :model-value="opportunityForm.email.value"
             label-visible
-            :required="formData.email.required"
+            :required="opportunityForm.email.required"
             label="Email"
-            @update:model-value="updateFormData($event, 'email')"
+            @update:model-value="updateOpportunityForm($event, 'email')"
           >
           </DsfrInput>
         </DsfrInputGroup>
@@ -73,12 +73,12 @@
       <div class="fr-col-12 fr-col-md-12">
         <DsfrInputGroup>
           <DsfrInput
-            type="text"
-            :model-value="formData.tel.value"
+            type="tel"
+            :model-value="opportunityForm.tel.value"
             label-visible
-            :required="formData.tel.required"
+            :required="opportunityForm.tel.required"
             label="Téléphone"
-            @update:model-value="updateFormData($event, 'tel')"
+            @update:model-value="updateOpportunityForm($event, 'tel')"
           >
           </DsfrInput>
         </DsfrInputGroup>
@@ -87,11 +87,11 @@
         <DsfrInputGroup>
           <DsfrInput
             type="text"
-            :model-value="formData.siret.value"
+            :model-value="opportunityForm.siret.value"
             label-visible
-            :required="formData.siret.required"
+            :required="opportunityForm.siret.required"
             label="SIRET de votre entreprise"
-            @update:model-value="updateFormData($event, 'siret')"
+            @update:model-value="updateOpportunityForm($event, 'siret')"
           >
           </DsfrInput>
         </DsfrInputGroup>
@@ -102,21 +102,21 @@
             type="textarea"
             is-textarea
             rows="8"
-            :model-value="formData.needs.value"
+            :model-value="opportunityForm.needs.value"
             label-visible
-            :required="formData.needs.required"
+            :required="opportunityForm.needs.required"
             label="Quel est votre besoin ?"
-            @update:model-value="updateFormData($event, 'needs')"
+            @update:model-value="updateOpportunityForm($event, 'needs')"
           >
           </DsfrInput>
         </DsfrInputGroup>
       </div>
       <div class="fr-col-12 fr-col-md-12">
         <DsfrCheckbox
-          :model-value="formData.cgu.value"
+          :model-value="opportunityForm.cgu.value"
           name="cgu"
-          :required="formData.cgu.required"
-          @update:model-value="updateFormData($event, 'cgu')"
+          :required="opportunityForm.cgu.required"
+          @update:model-value="updateOpportunityForm($event, 'cgu')"
         >
           <template #label>
             <span> J'accepte d'être recontacté par l'équipe de Transition Écologique des Entreprises <code>*</code></span>
@@ -164,7 +164,7 @@
           icon="ri-arrow-right-line"
           icon-right
           :loading="isLoading"
-          @click="saveFormData()"
+          @click="saveOpportunityForm()"
         />
       </div>
     </div>
@@ -177,7 +177,7 @@
   >
     <!-- MESSAGE IF ERROR-->
     <div
-      v-if="!hasNoRespError"
+      v-if="!isValidResponse"
       class="fr-text-center"
     >
       <p class="tee-form-response tee-form-response-error">
@@ -197,13 +197,13 @@
         {{ Translation.t('form.nowWhat') }}
       </h6>
       <p class="tee-form-response-blue fr-mb-15v">
-        <span v-html="Translation.ti(Translation.t('form.errorMsg'), { email: contactEmail })"></span>
+        <span v-html="Translation.ti(Translation.t('form.errorMsg'), { mailto: getMailTo(), email: Contact.email })"></span>
       </p>
     </div>
 
     <!-- MESSAGE IF 200 -->
     <div
-      v-if="hasNoRespError"
+      v-if="isValidResponse"
       class="fr-text-center"
     >
       <p class="tee-form-response tee-form-response-blue">
@@ -229,27 +229,22 @@
 </template>
 
 <script setup lang="ts">
-// CONSOLE LOG TEMPLATE
-// console.log(`TeeForm > FUNCTION_NAME > MSG_OR_VALUE :`)
-
-import { computed, ref, toRaw } from 'vue'
-import { type FormCallback, type FormOptions, type ProgramData, type ReqResp, TrackId } from '@/types'
-import { sendApiRequest } from '@/utils/requests'
-import { tracksStore } from '@/stores/tracks'
+import { computed, ref } from 'vue'
+import { type FormOptions, type ProgramData, type ReqResp, TrackId } from '@/types'
+import { useTracksStore } from '@/stores/tracks'
 import Translation from '@/utils/translation'
 import DsfrButton from '@/components/button/DsfrButton.vue'
 import { DsfrInput, DsfrInputGroup, DsfrCheckbox } from '@gouvminint/vue-dsfr'
 import Matomo from '@/utils/matomo'
-import MetaEnv from '@/utils/metaEnv'
 import { RouteName } from '@/types/routeType'
 import { useRoute } from 'vue-router'
 import Format from '@/utils/format'
+import OpportunityApi from '@/service/api/opportunityApi'
+import type { opportunityFormType } from '@/types/opportunityFormType'
+import Contact from '@/utils/contact'
 
 const route = useRoute()
-const tracks = tracksStore()
-
-const trackValues: any[] = tracks.getAllUsedTracksValues
-const contactEmail = MetaEnv.contactEmail
+const tracks = useTracksStore()
 
 interface Props {
   trackId: TrackId
@@ -259,18 +254,7 @@ interface Props {
 }
 const props = defineProps<Props>()
 
-export interface ContactForm {
-  [key: string]: { required: boolean; value: string | undefined } | { required: boolean; value: boolean }
-  name: { required: true; value: string | undefined }
-  surname: { required: true; value: string | undefined }
-  tel: { required: true; value: string | undefined }
-  email: { required: true; value: string | undefined }
-  siret: { required: true; value: string | undefined }
-  needs: { required: true; value: string | undefined }
-  cgu: { required: true; value: boolean }
-}
-
-const formData = ref<ContactForm>({
+const opportunityForm = ref<opportunityFormType>({
   name: { required: true, value: undefined },
   surname: { required: true, value: undefined },
   tel: { required: true, value: undefined },
@@ -279,48 +263,74 @@ const formData = ref<ContactForm>({
   needs: {
     required: true,
     value: Translation.t('program.form.needs', {
-      secteur: tracks.findSelectedValueByTrackIdAndKey(TrackId.Siret, 'secteur'),
+      secteur:
+        tracks.findSelectedValueByTrackIdAndKey(TrackId.Siret, 'secteur') ??
+        tracks.findSelectedValueByTrackIdAndKey(TrackId.Sectors, 'secteur'),
       titreAide: props.program.titre
     })
   },
   cgu: { required: true, value: false }
 })
 const formIsSent = ref<boolean>(false)
-const requestResponses = ref<ReqResp[]>()
+const requestResponse = ref<ReqResp>()
 const isLoading = ref<boolean>(false)
 
 const canSaveFrom = computed(() => {
   const isValid = []
-  for (const key in formData.value) {
-    if (formData.value[key].required) {
-      isValid.push(!(formData.value[key].value === undefined || formData.value[key].value === ''))
+  for (const key in opportunityForm.value) {
+    if (opportunityForm.value[key].required) {
+      isValid.push(
+        !(
+          opportunityForm.value[key].value === undefined ||
+          opportunityForm.value[key].value === '' ||
+          opportunityForm.value[key].value === false
+        )
+      )
     }
   }
   return isValid.every((v) => v)
 })
 
-const hasNoRespError = computed(() => {
-  return !requestResponses.value || requestResponses.value?.map((r) => r.status).every((s) => s === 200 || s === 201)
+const isValidResponse = computed(() => {
+  return !requestResponse.value || requestResponse.value.status === 200 || requestResponse.value.status === 201
 })
+
+const getMailTo = (): string => {
+  if (props.trackId === TrackId.Results && opportunityForm.value) {
+    const needsValue = 'needs' in opportunityForm.value && opportunityForm.value.needs.value ? opportunityForm.value.needs.value : ''
+    const nameValue = 'name' in opportunityForm.value && opportunityForm.value.name.value ? opportunityForm.value.name.value : ''
+    const surnameValue =
+      'surname' in opportunityForm.value && opportunityForm.value.surname.value ? opportunityForm.value.surname.value : ''
+    const telValue = 'tel' in opportunityForm.value && opportunityForm.value.tel.value ? opportunityForm.value.tel.value : ''
+    const siretValue = 'siret' in opportunityForm.value && opportunityForm.value.siret.value ? opportunityForm.value.siret.value : ''
+    return Contact.getMailtoUrl(
+      Translation.t('form.errorEmail.subject', { program: props.program.titre }),
+      `${needsValue}
+
+${nameValue} ${surnameValue}
+${telValue}
+SIRET : ${siretValue}`
+    )
+  }
+
+  return ''
+}
 
 const findPrefix = (str: string, prefixCode: string = 'of') => {
   return Translation.t(`articles.${str}.${prefixCode}`)
 }
 
-const updateFormData = (ev: string | boolean, id: string) => {
-  if (formData.value) {
-    formData.value[id].value = ev
+const updateOpportunityForm = (ev: string | boolean, id: string) => {
+  if (opportunityForm.value) {
+    opportunityForm.value[id].value = ev
   }
 }
 
-const saveFormData = async () => {
+const saveOpportunityForm = async () => {
   try {
     isLoading.value = true
-    requestResponses.value = []
-    const activeCallbacks = toRaw(props.formOptions.callbacks).filter((cb: FormCallback) => !cb.disabled)
-    for (const callback of activeCallbacks) {
-      requestResponses.value.push(await sendApiRequest(callback, formData, trackValues, { programId: props.program.id }))
-    }
+    const opportunity = new OpportunityApi(opportunityForm.value, props.program.id)
+    requestResponse.value = await opportunity.fetch()
 
     // analytics / send event
     Matomo.sendEvent(props.trackId, route.name === RouteName.CatalogDetail ? 'send_form_catalog' : 'send_form')

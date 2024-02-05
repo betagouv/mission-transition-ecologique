@@ -261,7 +261,7 @@
 // console.log(`TeeTrackInput > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import { onBeforeMount, ref, toRaw } from 'vue'
-import { tracksStore } from '../../stores/tracks'
+import { useTracksStore } from '../../stores/tracks'
 import Translation from '@/utils/translation'
 import { type TrackOptionsInput, type ReqResp, type ReqError, type FormCallback, type ResultsMapping, TrackId } from '@/types'
 import { sendApiRequest } from '../../utils/requests'
@@ -276,7 +276,7 @@ interface Props {
 }
 const props = defineProps<Props>()
 
-const tracks = tracksStore()
+const tracks = useTracksStore()
 const debugStore = useDebugStore()
 
 const inputValue = ref<string | number>()

@@ -279,7 +279,7 @@ import { TrackId } from '@/types'
 import { CallbackActions, FormFieldTypes } from '@/types'
 import { sendApiRequest } from '@/utils/requests'
 import { remapItem } from '@/utils/helpers'
-import { tracksStore } from '@/stores/tracks'
+import { useTracksStore } from '@/stores/tracks'
 import Translation from '@/utils/translation'
 import DsfrButton from '@/components/button/DsfrButton.vue'
 import Matomo from '@/utils/matomo'
@@ -290,7 +290,7 @@ import Contact from '@/utils/contact'
 import { useDebugStore } from '@/stores/debug'
 
 const route = useRoute()
-const tracks = tracksStore()
+const tracks = useTracksStore()
 const debugStore = useDebugStore()
 
 const trackValues: any[] = tracks.getAllUsedTracksValues
@@ -412,7 +412,7 @@ const saveFormData = async () => {
       let resp: ReqResp = {}
       switch (callback.action) {
         case CallbackActions.CreateOpportunity:
-          resp = await sendApiRequest(callback, toRaw(formData.value), trackValues, props.dataProps, Translation.lang)
+          resp = await sendApiRequest(callback, toRaw(formData.value), trackValues, props.dataProps)
           break
       }
       responses.push(resp)

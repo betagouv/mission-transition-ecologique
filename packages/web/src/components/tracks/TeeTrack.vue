@@ -427,7 +427,7 @@ import TeeTrackInput from './TeeTrackInput.vue'
 import TeeTrackSelect from './TeeTrackSelect.vue'
 import TeeTrackButtonInput from './TeeTrackButtonInput.vue'
 import TeeResults from '../results/TeeResults.vue'
-import { tracksStore } from '@/stores/tracks'
+import { useTracksStore } from '@/stores/tracks'
 import Translation from '@/utils/translation'
 import { useDebugStore } from '@/stores/debug'
 import MetaEnv from '@/utils/metaEnv'
@@ -464,7 +464,7 @@ const trackComponents = TrackComponents
 
 const noNeedForNext = [TrackComponents.Cards, TrackComponents.SimpleButtons]
 
-const tracks = tracksStore()
+const tracks = useTracksStore()
 const debugStore = useDebugStore()
 
 const selectedOptionsIndices = ref<number[]>([])

@@ -49,7 +49,7 @@
 // console.log(`TeeSidebar > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import { computed } from 'vue'
-import { tracksStore } from '@/stores/tracks'
+import { useTracksStore } from '@/stores/tracks'
 import Translation from '@/utils/translation'
 import type { UsedTrack } from '@/types'
 import { TrackId } from '@/types'
@@ -57,7 +57,7 @@ import { groupBy } from '@/utils/helpers'
 import { useDebugStore } from '@/stores/debug'
 import { DsfrButton } from '@gouvminint/vue-dsfr'
 
-const tracks = tracksStore()
+const tracks = useTracksStore()
 const debugStore = useDebugStore()
 
 const usedTracks = computed(() => {

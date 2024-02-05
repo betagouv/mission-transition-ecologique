@@ -5,7 +5,7 @@ import { Err } from 'true-myth/dist/es/result'
 import ServiceNotFoundError from '../../common/domain/api/serviceNotFoundError'
 import OpportunityService from '../application/opportunityService'
 
-interface OpportunityBody {
+export interface OpportunityBody {
   opportunity: Opportunity
   optIn: boolean
 }
