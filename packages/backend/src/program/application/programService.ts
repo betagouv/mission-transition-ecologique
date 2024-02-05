@@ -1,3 +1,4 @@
+import { Program } from '@tee/data/src/type/program'
 import ProgramFeatures from '../domain/programFeatures'
 import ProgramsJson from '../infrastructure/programsJson'
 
@@ -8,7 +9,7 @@ export default class ProgramService {
     this._program = new ProgramFeatures(ProgramsJson.getInstance())
   }
 
-  public getById(id: string) {
+  public getById(id: string): Program | undefined {
     return this._program.getById(id)
   }
 }
