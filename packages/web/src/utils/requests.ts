@@ -1,7 +1,7 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`utils.matomo > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import type { FormCallback, ReqResp } from '@/types/index'
+import { CallbackMethods, type FormCallback, type ReqResp } from '@/types/index'
 import { remapItem } from './helpers'
 
 export const buildHeaders = (callback: FormCallback) => {
@@ -18,13 +18,17 @@ export const sendApiRequest = async (
   const method = callback.method
   const headers = buildHeaders(callback)
 
-  let data: any = callback.dataBody || callback.dataPath || callback.dataStructure || {}
   const dataMapping = callback.dataMapping.filter((dm) => !dm.onlyRemap)
 
+  let pathData: any = callback.dataPath || {}
   // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-  data = remapItem(data, dataMapping, formData, trackValues, props, undefined, [], lang)
-  const url = replacePlaceholders(callback.url, data as Record<string, string>)
-  const body = callback.dataBody ? JSON.stringify(data) : undefined
+  pathData = remapItem(pathData, dataMapping, formData, trackValues, props, undefined, [], lang)
+  const url = replacePlaceholders(callback.url, pathData as Record<string, string>)
+
+  let bodyData: any = callback.dataBody || callback.dataStructure || {}
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+  bodyData = remapItem(bodyData, dataMapping, formData, trackValues, props, undefined, [], lang)
+  const body = JSON.stringify(bodyData)
 
   return await sendRequest(url, method, headers, body, callback.action)
 }
@@ -48,18 +52,17 @@ const replacePlaceholder = (url: string, placeholderName: string, placeholderDat
 
 export const sendRequest = async (
   url: string,
-  method: string,
+  method: CallbackMethods,
   headers: HeadersInit,
-  body: BodyInit | undefined,
+  body: BodyInit,
   action: string
 ): Promise<ReqResp> => {
   try {
     const response = await fetch(url, {
       method: method,
       headers: headers,
-      body: body
+      body: method === CallbackMethods.Get ? undefined : body
     })
-    console.log(response)
     const respJson: ReqResp = (await response.json()) as ReqResp
     respJson.action = action
     respJson.ok = response.ok
