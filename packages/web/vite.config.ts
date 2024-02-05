@@ -56,7 +56,7 @@ const viteServer: ServerOptions = {
       "base-uri 'self';" +
       "form-action 'self';" +
       "script-src 'self';" +
-      "script-src-elem 'self' 'sha256-PNy1JqjViuKB4TRVA9dGD8G/yia50xi0NgGkH2cMqkI=' https://stats.beta.gouv.fr;" +
+      "script-src-elem 'self' 'unsafe-inline' https://stats.beta.gouv.fr;" +
       "style-src 'self' 'unsafe-inline';" +
       "font-src 'self';" +
       "img-src 'self' data:;" +
