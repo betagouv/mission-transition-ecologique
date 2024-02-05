@@ -135,7 +135,3 @@ export const allTransportModes = {
   [TransportModes.Train]: YesNo.No,
   [TransportModes.Truck]: YesNo.No
 }
-export enum PublicodesTrackHelpValue {
-  Unknown = 'je ne sais pas par où commencer',
-  Precise = 'objectif précis'
-}
