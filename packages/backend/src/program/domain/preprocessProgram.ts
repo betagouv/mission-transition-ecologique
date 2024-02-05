@@ -1,5 +1,5 @@
-import { ProgramData, QuestionnaireRoute } from '@tee/web/src/types'
-import { PublicodesInputData, PublicodesKeys, PublicodesQuestionnaireRoute, QuestionnaireData } from './types'
+import { type ProgramData, QuestionnaireRoute } from '@tee/web/src/types'
+import { type PublicodesInputData, PublicodesKeys, PublicodesQuestionnaireRoute, type QuestionnaireData } from './types'
 
 /** preprocesses the data gathered from the questionnaire into variables
  * needed by publicodes */
