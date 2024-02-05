@@ -43,21 +43,21 @@ export const requestSireneAPI = async (token: string, siret: string): Promise<Re
 }
 
 const parseEstablishment = (establishmentDocument: EstablishmentDocument): EstablishmentDetails => {
-  const establishment = establishmentDocument.etablissement
+  const rawEstablishment = establishmentDocument.etablissement
   return {
-    siren: establishment.siren,
-    nic: establishment.nic,
-    siret: establishment.siret,
-    creationDate: establishment.uniteLegale.dateCreationUniteLegale,
-    denomination: establishment.uniteLegale.denominationUniteLegale,
-    nafCode: establishment.uniteLegale.activitePrincipaleUniteLegale,
+    siren: rawEstablishment.siren,
+    nic: rawEstablishment.nic,
+    siret: rawEstablishment.siret,
+    creationDate: rawEstablishment.uniteLegale.dateCreationUniteLegale,
+    denomination: rawEstablishment.uniteLegale.denominationUniteLegale,
+    nafCode: rawEstablishment.uniteLegale.activitePrincipaleUniteLegale,
     address: {
-      streetNumber: establishment.adresseEtablissement.numeroVoieEtablissement,
-      streetType: establishment.adresseEtablissement.typeVoieEtablissement,
-      streetLabel: establishment.adresseEtablissement.libelleVoieEtablissement,
-      zipCode: establishment.adresseEtablissement.codePostalEtablissement,
-      cityLabel: establishment.adresseEtablissement.libelleCommuneEtablissement,
-      cityCode: establishment.adresseEtablissement.codeCommuneEtablissement
+      streetNumber: rawEstablishment.adresseEtablissement.numeroVoieEtablissement,
+      streetType: rawEstablishment.adresseEtablissement.typeVoieEtablissement,
+      streetLabel: rawEstablishment.adresseEtablissement.libelleVoieEtablissement,
+      zipCode: rawEstablishment.adresseEtablissement.codePostalEtablissement,
+      cityLabel: rawEstablishment.adresseEtablissement.libelleCommuneEtablissement,
+      cityCode: rawEstablishment.adresseEtablissement.codeCommuneEtablissement
     }
   }
 }
