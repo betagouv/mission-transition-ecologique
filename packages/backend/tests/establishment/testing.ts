@@ -1,5 +1,5 @@
 import { Maybe, Result } from 'true-myth'
-import { type EstablishmentRepository } from '../../src/establishment/domain/spi'
+import { NafMapping, type EstablishmentRepository } from '../../src/establishment/domain/spi'
 import { type COG2023Mapping } from '../../src/establishment/infrastructure/json/cityToRegionMapping'
 
 const testEstablishment = {
@@ -16,8 +16,7 @@ const testEstablishment = {
     zipCode: '94120',
     cityLabel: 'FONTENAY-SOUS-BOIS',
     cityCode: '94033'
-  },
-  region: 'Île-de-France'
+  }
 }
 
 export const dummyEstablishmentRepository: EstablishmentRepository = {
@@ -26,4 +25,9 @@ export const dummyEstablishmentRepository: EstablishmentRepository = {
 
 export const nothingRegionMapping: COG2023Mapping = {
   getRegion: (_cityCode: string) => Maybe.nothing<string>()
+}
+
+export const nothingNafMapping: NafMapping = {
+  getLabel: (_nafCode: string) => Maybe.nothing<string>(),
+  getSectionCode: (_nafCode: string) => Maybe.nothing<string>()
 }
