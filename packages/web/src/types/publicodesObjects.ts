@@ -15,8 +15,7 @@ export enum Entreprise {
 }
 
 export enum Questionnaire {
-  priorityObjective = 'questionnaire . objectif prioritaire . est ',
-  path = 'questionnaire . parcours'
+  priorityObjective = 'questionnaire . objectif prioritaire . est '
 }
 
 export enum Sector {
