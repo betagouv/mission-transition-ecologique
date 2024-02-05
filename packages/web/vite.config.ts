@@ -56,12 +56,12 @@ const viteServer: ServerOptions = {
       "base-uri 'self';" +
       "form-action 'self';" +
       "script-src 'self';" +
-      "script-src-elem 'self';" +
+      "script-src-elem 'self' 'sha256-PNy1JqjViuKB4TRVA9dGD8G/yia50xi0NgGkH2cMqkI=' https://stats.beta.gouv.fr;" +
       "style-src 'self' 'unsafe-inline';" +
       "font-src 'self';" +
       "img-src 'self' data:;" +
       "object-src 'self';" +
-      "connect-src 'self' https://place-des-entreprises.beta.gouv.fr;" +
+      "connect-src 'self' https://place-des-entreprises.beta.gouv.fr https://stats.beta.gouv.fr;" +
       "frame-src 'self' https://place-des-entreprises.beta.gouv.fr;" +
       "frame-ancestors 'self' https://place-des-entreprises.beta.gouv.fr;",
     'X-Frame-Options': 'ALLOW-FROM https://place-des-entreprises.beta.gouv.fr',
