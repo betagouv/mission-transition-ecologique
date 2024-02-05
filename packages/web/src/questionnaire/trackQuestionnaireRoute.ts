@@ -29,7 +29,7 @@ export const questionnaireRoute: Track = {
   options: [
     {
       value: {
-        questionnaire_route: QuestionnaireRoute.SpecificGoal,
+        questionnaire_route: QuestionnaireRoute.NoSpecificGoal,
         [Questionnaire.path]: PublicodesTrackHelpValue.Unknown
       },
       title: { fr: 'Je ne sais pas' },
