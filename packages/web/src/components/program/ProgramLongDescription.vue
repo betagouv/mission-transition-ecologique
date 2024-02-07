@@ -1,5 +1,5 @@
 <template>
-  <div class="fr-accordion fr-mb-12v">
+  <div class="fr-accordion fr-mb-10v">
     <h3 class="fr-accordion__title">
       <button
         class="fr-accordion__btn"
@@ -15,7 +15,7 @@
       :class="`fr-collapse ${drawerOpen ? 'fr-collapse--expanded' : ''}`"
       :style="drawerOpen ? '-collapse: -165px; --collapse-max-height: none;' : '-collapse: -203px;'"
     >
-      <div class="fr-pt-8v fr-pb-12v">
+      <div class="fr-pt-4v fr-pb-2v">
         <p
           v-for="(paragraph, idx) in descriptionParagraphs"
           :key="`long-description-paragraph-${idx}`"
