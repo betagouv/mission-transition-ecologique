@@ -73,6 +73,7 @@
               v-html="program?.promesse"
             ></h2>
             <p
+              class="fr-mb-12v"
               style="color: #000091"
               v-html="program?.description"
             ></p>
