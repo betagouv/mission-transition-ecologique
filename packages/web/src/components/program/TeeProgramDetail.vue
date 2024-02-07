@@ -11,9 +11,9 @@
             class="fr-icon-information-line"
             aria-hidden="true"
           ></span>
-          {{ choices.t('program.programNotAvailable') }}
+          {{ Translation.t('program.programNotAvailable') }}
         </p>
-        <p class="fr-notice__subtitle">{{ choices.t('program.programEndValidity') }} : {{ program?.[`fin de validité`] }}</p>
+        <p class="fr-notice__subtitle">{{ Translation.t('program.programEndValidity') }} : {{ program?.[`fin de validité`] }}</p>
       </div>
     </div>
   </div>
@@ -33,7 +33,7 @@
             aria-hidden="true"
             class="fr-mr-2v"
           ></v-icon>
-          {{ choices.t('results.backToResults') }}
+          {{ Translation.t('results.backToResults') }}
         </button>
 
         <!-- PROGRAM DETAILS -->
@@ -66,7 +66,7 @@
               v-if="trackConfig.config?.showProgramSubtitles"
               :style="`color: ${blockColor}`"
             >
-              {{ choices.t('program.programResume') }}
+              {{ Translation.t('program.programResume') }}
             </h6>
             <h2
               :style="`color: ${blockColor}`"
@@ -83,10 +83,10 @@
             </p> -->
 
             <!-- OPEN MODAL -> FORM -->
-            <!-- :label="choices.t('results.showForm', {title: program.title})" -->
+            <!-- :label="Translation.t('results.showForm', {title: program.title})" -->
             <!-- <DsfrButton
               class="fr-mb-3v fr-btn-sm-fullwidth"
-              :label="choices.t('results.knowMore')"
+              :label="Translation.t('results.knowMore')"
               secondary
               @click="toggleShowForm"
               ref="modalOrigin"/> -->
@@ -108,7 +108,7 @@
             v-if="program.geo_zones"
             :class="columnTiles">
             <TeeTile
-              :title="choices.t('program.programGeoZones')"
+              :title="Translation.t('program.programGeoZones')"
               :image-path="`${publicPath}images/TEE-porteur.svg`"
               :description="'...'"
             />
@@ -121,7 +121,7 @@
           >
             <TeeTile
               class="tee-no-hover"
-              :title="choices.t('programCosts.cost')"
+              :title="Translation.t('programCosts.cost')"
               :image-path="`${publicPath}images/TEE-cout.svg`"
               :description="`${program[`coût de l'accompagnement`]}`"
             />
@@ -133,7 +133,7 @@
           >
             <TeeTile
               class="tee-no-hover"
-              :title="choices.t('programCosts.aid')"
+              :title="Translation.t('programCosts.aid')"
               :image-path="`${publicPath}images/TEE-cout.svg`"
               :description="`${program[`montant du financement`]}`"
             />
@@ -145,7 +145,7 @@
           >
             <TeeTile
               class="tee-no-hover"
-              :title="choices.t('programCosts.taxAdvantage')"
+              :title="Translation.t('programCosts.taxAdvantage')"
               :image-path="`${publicPath}images/TEE-cout.svg`"
               :description="`${program[`montant de l'avantage fiscal`]}`"
             />
@@ -157,7 +157,7 @@
           >
             <TeeTile
               class="tee-no-hover"
-              :title="choices.t('programCosts.loan')"
+              :title="Translation.t('programCosts.loan')"
               :image-path="`${publicPath}images/TEE-cout.svg`"
               :description="`${program[`montant du prêt`]}`"
             />
@@ -167,8 +167,8 @@
             :class="columnTiles">
             <TeeTile
               class="tee-no-hover"
-              :title="choices.t('programCosts.loanRate')"
-              :image-path="`${choices.publicPath}images/TEE-cout.svg`"
+              :title="Translation.t('programCosts.loanRate')"
+              :image-path="`${Translation.publicPath}images/TEE-cout.svg`"
               :description="`${program[`taux du prêt`]}`"
             />
           </div> -->
@@ -180,7 +180,7 @@
           >
             <TeeTile
               class="tee-no-hover"
-              :title="choices.t('program.programDuration')"
+              :title="Translation.t('program.programDuration')"
               :image-path="`${publicPath}images/TEE-duree.svg`"
               :description="program[`durée de l'accompagnement`]"
             />
@@ -191,7 +191,7 @@
           >
             <TeeTile
               class="tee-no-hover"
-              :title="choices.t('program.programLoanDuration')"
+              :title="Translation.t('program.programLoanDuration')"
               :image-path="`${publicPath}images/TEE-duree.svg`"
               :description="program[`durée du prêt`]"
             />
@@ -202,9 +202,9 @@
             <TeeTile
               v-if="program"
               class="tee-no-hover"
-              :title="choices.t('program.programProviders')"
+              :title="Translation.t('program.programProviders')"
               :image-path="`${publicPath}images/TEE-porteur.svg`"
-              :description="choices.to(program['opérateur de contact'])"
+              :description="Translation.to(program['opérateur de contact'])"
             >
             </TeeTile>
           </div>
@@ -213,12 +213,12 @@
           <div :class="columnTiles">
             <TeeTile
               class="tee-no-hover"
-              :title="choices.t('program.programEndValidity')"
+              :title="Translation.t('program.programEndValidity')"
               :image-path="`${publicPath}images/TEE-duree.svg`"
               :description="
                 program?.[`fin de validité`]
-                  ? choices.t(choices.t('program.programAvailableUntil'), { date: program[`fin de validité`] })
-                  : choices.t('program.programAvailable')
+                  ? Translation.t(Translation.t('program.programAvailableUntil'), { date: program[`fin de validité`] })
+                  : Translation.t('program.programAvailable')
               "
             />
           </div>
@@ -267,7 +267,7 @@ import ProgramEligibility from '@/components/program/ProgramEligibility.vue'
 import ProgramObjective from '@/components/program/ProgramObjective.vue'
 import ProgramLongDescription from '@/components/program/ProgramLongDescription.vue'
 
-import { choicesStore } from '@/stores/choices'
+import Translation from '@/utils/translation'
 import { tracksStore } from '@/stores/tracks'
 import { programsStore } from '@/stores/programs'
 import { navigationStore } from '@/stores/navigation'
@@ -280,7 +280,6 @@ import MetaEnv from '@/utils/metaEnv'
 import Matomo from '@/utils/matomo'
 import Program from '@/utils/program'
 
-const choices = choicesStore()
 const tracks = tracksStore()
 const programs = programsStore()
 const nav = navigationStore()

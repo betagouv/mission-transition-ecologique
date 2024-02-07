@@ -23,8 +23,6 @@
 
 import { onBeforeMount, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-
-import { choicesStore } from './stores/choices'
 import { programsStore } from './stores/programs'
 import { navigationStore } from './stores/navigation'
 
@@ -33,8 +31,8 @@ import TeeMatomo from './components/TeeMatomo.vue'
 import TeeAppFooter from './components/TeeFooter.vue'
 import type { ProgramData } from '@/types'
 import jsonDataset from '../public/data/generated/dataset_out.json'
+import Translation from '@/utils/translation'
 
-const choices = choicesStore()
 const programs = programsStore()
 const nav = navigationStore()
 
@@ -48,7 +46,7 @@ defineProps<Props>()
 
 onBeforeMount(() => {
   programs.setDataset(jsonDataset as ProgramData[])
-  choices.setLocale('fr')
+  Translation.setLocale('fr')
 })
 
 onMounted(async () => {
