@@ -102,7 +102,7 @@
         <!-- PROGRAM INFOS : PROVIDERS / TYPE / START / END -->
         <div
           v-if="trackConfig.config?.showProgramInfos"
-          class="fr-grid-row fr-grid-row--gutters fr-mb-5v"
+          class="fr-grid-row fr-grid-row--gutters fr-mb-10v"
         >
           <!-- PROGRAM GEO ZONES -->
           <!-- <div

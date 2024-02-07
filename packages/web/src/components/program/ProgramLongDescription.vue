@@ -1,5 +1,5 @@
 <template>
-  <div class="fr-accordion fr-my-18v">
+  <div class="fr-accordion fr-mb-12v">
     <h3 class="fr-accordion__title">
       <button
         class="fr-accordion__btn"

@@ -1,5 +1,5 @@
 <template>
-  <div class="fr-mb-18v fr-mt-18v">
+  <div class="fr-mb-2v">
     <h2 class="fr-mb-3v">
       {{ Translation.t('program.programAmIEligible') }}
     </h2>
