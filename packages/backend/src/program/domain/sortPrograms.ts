@@ -14,22 +14,40 @@ const comparePrograms = (program1: ProgramData, program2: ProgramData, route: Qu
 const getPriority = (prog: ProgramData, route: QuestionnaireRoute): number => {
   switch (route) {
     case QuestionnaireRoute.NoSpecificGoal:
-      if (isCoachingOrTraining(prog) && isFree(prog)) return 1
-      if (isCoachingOrTraining(prog) && isMaybeFree(prog)) return 2
-      if (isCoachingOrTraining(prog)) return 3
-      if (hasType(ProgramAidType.fund, prog)) return 4
-      if (hasType(ProgramAidType.loan, prog)) return 5
-      if (hasType(ProgramAidType.tax, prog)) return 6
-      return 10
+      switch (true) {
+        case isCoachingOrTraining(prog) && isFree(prog):
+          return 1
+        case isCoachingOrTraining(prog) && isMaybeFree(prog):
+          return 2
+        case isCoachingOrTraining(prog):
+          return 3
+        case hasType(ProgramAidType.fund, prog):
+          return 4
+        case hasType(ProgramAidType.loan, prog):
+          return 5
+        case hasType(ProgramAidType.tax, prog):
+          return 6
+        default:
+          return 10
+      }
 
     case QuestionnaireRoute.SpecificGoal:
-      if (hasType(ProgramAidType.fund, prog)) return 1
-      if (hasType(ProgramAidType.loan, prog)) return 2
-      if (hasType(ProgramAidType.tax, prog)) return 3
-      if (isCoachingOrTraining(prog) && !isMaybeFree(prog) && !isFree(prog)) return 4
-      if (isCoachingOrTraining(prog) && isMaybeFree(prog) && !isFree(prog)) return 5
-      if (isCoachingOrTraining(prog) && isFree(prog)) return 6
-      return 10
+      switch (true) {
+        case hasType(ProgramAidType.fund, prog):
+          return 1
+        case hasType(ProgramAidType.loan, prog):
+          return 2
+        case hasType(ProgramAidType.tax, prog):
+          return 3
+        case isCoachingOrTraining(prog) && !isMaybeFree(prog) && !isFree(prog):
+          return 4
+        case isCoachingOrTraining(prog) && isMaybeFree(prog) && !isFree(prog):
+          return 5
+        case isCoachingOrTraining(prog) && isFree(prog):
+          return 6
+        default:
+          return 10
+      }
   }
 }
 
