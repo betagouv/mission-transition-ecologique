@@ -2,7 +2,7 @@ import Ajv from 'ajv/dist/2020'
 import { ValidateFunction } from 'ajv'
 import programSchema from '../schemas/program-data-schema.json'
 import regionSchema from '../schemas/region-data-schema.json'
-import regionData from '../../web/public/data/references/com_codes.json'
+import regionMapping from '../references/regionMapping.json'
 import { ensureError } from '@tee/backend/src/common/domain/error/errors'
 
 import { prependInterface, readPrograms } from '../src/dataPipeline'
@@ -41,7 +41,7 @@ test('Publicode data is valid when appended with interface', () => {
 
 test('Region data from the passage table is consistent with what is expected in the publicodes interface', () => {
   const validate = compileSchema(regionSchema)
-  testDataAgainstSchema(regionData, 'Region data', validate)
+  testDataAgainstSchema(regionMapping, 'Region data', validate)
 })
 
 // Test helpers

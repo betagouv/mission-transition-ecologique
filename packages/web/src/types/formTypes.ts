@@ -3,7 +3,6 @@ import type {
   DataMappingFrom,
   Cleaner,
   CleanerReplaceAll,
-  CleanerFromJson,
   CleanerFromDict,
   CleanerDefaultIfNull,
   CallbackActions,
@@ -35,7 +34,7 @@ export interface FormCallbackDataMapping {
   type?: string
   subKey?: string
   onlyRemap?: boolean
-  cleaning?: (Cleaner | CleanerReplaceAll | CleanerFromJson | CleanerFromDict | CleanerDefaultIfNull | CleanerInjectInObject)[]
+  cleaning?: (Cleaner | CleanerReplaceAll | CleanerFromDict | CleanerDefaultIfNull | CleanerInjectInObject)[]
 }
 
 export interface FormCallback {
@@ -50,7 +49,7 @@ export interface FormCallback {
   dataPath?: Record<string, string>
   dataStructure: object | object[]
   dataMapping: FormCallbackDataMapping[]
-  inputCleaning?: Cleaner[] | CleanerReplaceAll[] | CleanerFromJson[] | CleanerFromDict[] | CleanerDefaultIfNull[]
+  inputCleaning?: Cleaner[] | CleanerReplaceAll[] | CleanerFromDict[] | CleanerDefaultIfNull[]
   resultsMapping?: ResultsMapping[]
 }
 

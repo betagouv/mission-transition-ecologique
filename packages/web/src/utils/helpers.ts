@@ -1,32 +1,20 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`utils.helpers > FUNCTION_NAME > MSG_OR_VALUE :`)
-import nafCodesJson from '@tee/web/public/data/references/naf_codes_flat.json'
-import comCodesJson from '@tee/web/public/data/references/com_codes.json'
-
 import type {
   Cleaner,
   CleanerDefaultIfNull,
   CleanerFromDict,
-  CleanerFromJson,
   CleanerInjectInObject,
   CleanerReplaceAll,
-  ComCode,
   FormCallbackDataMapping,
-  NafCode,
   NextTrackRule,
   PropertyPath,
-  Refs,
   ResultsMapping
 } from '@/types'
 import { CleanerOperations, DataMappingFrom } from '@/types'
 import type { ImportMetaEnv } from '../env'
 import Widget from '@/utils/widget'
 import MetaEnv from '@/utils/metaEnv'
-
-const refs: Refs = {
-  NafCodes: nafCodesJson as NafCode[],
-  ComCodes: comCodesJson as ComCode[]
-}
 
 // GENERIC HELPERS
 
@@ -67,7 +55,7 @@ export const getFromResp = (from: any, resMap: ResultsMapping, lang: string = 'f
   let val = getFrom(from, selectors)
   if (resMap.cleaning) {
     val = val.map((v) => {
-      return cleanValue(v, resMap.cleaning as Cleaner[] | CleanerReplaceAll[] | CleanerFromJson[] | CleanerDefaultIfNull[], lang)
+      return cleanValue(v, resMap.cleaning as Cleaner[] | CleanerReplaceAll[] | CleanerDefaultIfNull[], lang)
     })
   }
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return
@@ -117,17 +105,6 @@ export const replaceAll = (value: any, cleaner: CleanerReplaceAll) => {
   return String(value).replace(re, cleaner.replaceBy)
 }
 
-export const findFromRefs = (value: string, cleaner: CleanerFromJson) => {
-  const findInRef = cleaner.findInRef
-  const fromField = cleaner.findFromField
-  const targetField = cleaner.retrieveFromField
-  const json = refs[findInRef]
-
-  const obj = json.find((item) => item[fromField] === value)
-
-  return obj?.[targetField] as string
-}
-
 export const findFromDict = (value: string | string[], cleaner: CleanerFromDict) => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const dict = cleaner.dict
@@ -164,7 +141,7 @@ export const injectInObject = (value: object | object[], cleaner: CleanerInjectI
 
 export const cleanValue = (
   value: any,
-  cleaners: Cleaner[] | CleanerReplaceAll[] | CleanerFromJson[] | CleanerFromDict[] | CleanerDefaultIfNull[] | CleanerInjectInObject[],
+  cleaners: Cleaner[] | CleanerReplaceAll[] | CleanerFromDict[] | CleanerDefaultIfNull[] | CleanerInjectInObject[],
   lang: string = 'fr'
 ) => {
   let val: unknown = value
@@ -175,9 +152,6 @@ export const cleanValue = (
         break
       case CleanerOperations.stringToDate:
         val = new Date(val as string | number | Date).toLocaleDateString(lang)
-        break
-      case CleanerOperations.findFromRefs:
-        val = findFromRefs(val as string, <CleanerFromJson>cleaner)
         break
       case CleanerOperations.findFromDict:
         val = findFromDict(val as string | string[], <CleanerFromDict>cleaner)
