@@ -37,10 +37,13 @@ const replacePlaceholders = (url: string, dataPath?: Record<string, string>): st
   if (!dataPath) {
     return url
   }
-  const placeholderRegexp = new RegExp('{([^{}]+)}', 'g')
-  const matches = [...url.matchAll(placeholderRegexp)]
-  const placeholders = matches.map((placeholder) => /* capture group */ placeholder[1])
-  return placeholders.reduce((accu: string, placeholder: string) => replacePlaceholder(accu, placeholder, dataPath?.[placeholder]), url)
+
+  for (const placeholderName in dataPath) {
+    const placeholderData = dataPath[placeholderName]
+    url = replacePlaceholder(placeholderName, placeholderData, url)
+  }
+
+  return url
 }
 
 const replacePlaceholder = (url: string, placeholderName: string, placeholderData: string | undefined): string => {
