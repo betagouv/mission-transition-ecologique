@@ -1,17 +1,17 @@
-import type { ProgramData } from '@tee/web/src/types'
 import { ProgramAidType, TrackHelpValue } from '@tee/web/src/types'
+import { Program } from './types'
 
 // sorts the programs according to a "sortProfile", which currently
 // only depends on the questionnaireRoute
-export const sortPrograms = (programs: ProgramData[], sortProfile: TrackHelpValue): ProgramData[] => {
+export const sortPrograms = (programs: Program[], sortProfile: TrackHelpValue): Program[] => {
   return programs.sort((p1, p2) => comparePrograms(p1, p2, sortProfile))
 }
 
-const comparePrograms = (program1: ProgramData, program2: ProgramData, route: TrackHelpValue): number => {
+const comparePrograms = (program1: Program, program2: Program, route: TrackHelpValue): number => {
   return Math.sign(getPriority(program1, route) - getPriority(program2, route))
 }
 
-const getPriority = (prog: ProgramData, route: TrackHelpValue): number => {
+const getPriority = (prog: Program, route: TrackHelpValue): number => {
   switch (route) {
     case TrackHelpValue.Unknown:
       if (isCoachingOrTraining(prog) && isFree(prog)) return 1
@@ -33,10 +33,10 @@ const getPriority = (prog: ProgramData, route: TrackHelpValue): number => {
   }
 }
 
-const hasType = (aidType: ProgramAidType, program: ProgramData) => program["nature de l'aide"] == aidType
+const hasType = (aidType: ProgramAidType, program: Program) => program["nature de l'aide"] == aidType
 
-const isFree = (program: ProgramData) => program["coût de l'accompagnement"]?.toLowerCase() == 'gratuit'
+const isFree = (program: Program) => program["coût de l'accompagnement"]?.toLowerCase() == 'gratuit'
 
-const isMaybeFree = (program: ProgramData) => program["coût de l'accompagnement"]?.toLowerCase().includes('gratuit')
+const isMaybeFree = (program: Program) => program["coût de l'accompagnement"]?.toLowerCase().includes('gratuit')
 
-const isCoachingOrTraining = (program: ProgramData) => hasType(ProgramAidType.acc, program) || hasType(ProgramAidType.train, program)
+const isCoachingOrTraining = (program: Program) => hasType(ProgramAidType.acc, program) || hasType(ProgramAidType.train, program)

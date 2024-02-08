@@ -1,8 +1,6 @@
-import type { ProgramData } from '@tee/web/src/types/programTypes'
 import Engine from 'publicodes'
 import { Result } from 'true-myth'
-import type { PublicodesInputData, QuestionnaireData } from './types'
-import type { CurrentDateService } from './spi'
+import type { Program, PublicodesInputData, QuestionnaireData } from './types'
 import { ensureError } from '../../common/domain/error/errors'
 import { filterObject } from '../../common/objects'
 
@@ -12,38 +10,33 @@ import { filterObject } from '../../common/objects'
  *  @constant
  *  @default
  */
-export const FILTERING_RULE_NAME: string = 'entreprise . est ciblée'
+export const FILTERING_RULE_NAME = 'entreprise . est ciblée'
 
-/** deals with dependency injection */
-export const createService = (currentDateService: CurrentDateService) => {
-  /** Filter out programs for which the company is not eligible
-   *
-   * @param programs - A list of programs, holding data on their filtering
-   *   rules (inside the `publicodes` property)
-   * @param inputData - Data associated with the company or the user inputs.
-   * @returns Programs from `programs` that are either eligible (rules evaluate
-   *   to `true`) or which eligibility cannot be assessed (rules evaluate to
-   *   `undefined`, for instance with missing data)
-   */
-  const filterPrograms = (programs: ProgramData[], inputData: QuestionnaireData): Result<ProgramData[], Error> => {
-    const filteredPrograms: ProgramData[] = []
+/** Filter out programs for which the company is not eligible
+ *
+ * @param programs - A list of programs, holding data on their filtering
+ *   rules (inside the `publicodes` property)
+ * @param inputData - Data associated with the company or the user inputs.
+ * @returns Programs from `programs` that are either eligible (rules evaluate
+ *   to `true`) or which eligibility cannot be assessed (rules evaluate to
+ *   `undefined`, for instance with missing data)
+ */
+export const filterPrograms = (programs: Program[], inputData: QuestionnaireData, currentDate: string): Result<Program[], Error> => {
+  const filteredPrograms: Program[] = []
 
-    for (const program of programs) {
-      const evaluation = evaluateRule(program, inputData, currentDateService.get())
-
-      if (evaluation.isErr) {
-        return Result.err(addErrorDetails(evaluation.error, program.id))
-      }
-
-      if (shouldKeepProgram(evaluation)) {
-        filteredPrograms.push(program)
-      }
+  for (const program of programs) {
+    const evaluation = evaluateRule(program, inputData, currentDate)
+    currentDate
+    if (evaluation.isErr) {
+      return Result.err(addErrorDetails(evaluation.error, program.id))
     }
 
-    return Result.ok(filteredPrograms)
+    if (shouldKeepProgram(evaluation)) {
+      filteredPrograms.push(program)
+    }
   }
 
-  return filterPrograms
+  return Result.ok(filteredPrograms)
 }
 
 const shouldKeepProgram = (evaluation: Result<boolean | undefined, Error>): boolean => {
@@ -68,7 +61,7 @@ const shouldKeepProgram = (evaluation: Result<boolean | undefined, Error>): bool
  *   the Error if any.
  */
 const evaluateRule = (
-  programData: ProgramData,
+  programData: Program,
   questionnaireData: QuestionnaireData,
   currentDate: string
 ): Result<boolean | undefined, Error> => {
@@ -76,7 +69,7 @@ const evaluateRule = (
 
   let engine: Engine
   try {
-    engine = new Engine(rules)
+    engine = new Engine(rules as object)
   } catch (e) {
     const err = ensureError(e)
     return Result.err(err)
@@ -117,7 +110,7 @@ const addErrorDetails = (err: Error, programName: string): Error => {
  * needed by publicodes */
 const preprocessInputForPublicodes = (
   questionnaireData: QuestionnaireData,
-  programData: ProgramData,
+  programData: Program,
   currentDate: string
 ): PublicodesInputData => {
   const publicodesData: PublicodesInputData = {

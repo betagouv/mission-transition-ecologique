@@ -12,7 +12,7 @@ export interface ProgramData {
   id: string
   titre: string
   promesse: string
-  description: string
+  description?: string
   'description longue'?: string
   'début de validité'?: string
   'fin de validité'?: string
