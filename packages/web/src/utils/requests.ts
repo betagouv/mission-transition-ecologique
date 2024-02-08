@@ -47,8 +47,7 @@ const replacePlaceholders = (url: string, dataPath?: Record<string, string>): st
 }
 
 const replacePlaceholder = (url: string, placeholderName: string, placeholderData: string): string => {
-  url = url.replace('{' + placeholderName + '}', placeholderData)
-  return url
+  return url.replace('{' + placeholderName + '}', placeholderData)
 }
 
 export const sendRequest = async (
