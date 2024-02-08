@@ -46,10 +46,8 @@ const replacePlaceholders = (url: string, dataPath?: Record<string, string>): st
   return url
 }
 
-const replacePlaceholder = (url: string, placeholderName: string, placeholderData: string | undefined): string => {
-  if (placeholderData) {
-    url = url.replace('{' + placeholderName + '}', placeholderData)
-  }
+const replacePlaceholder = (url: string, placeholderName: string, placeholderData: string): string => {
+  url = url.replace('{' + placeholderName + '}', placeholderData)
   return url
 }
 
