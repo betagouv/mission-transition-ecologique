@@ -1,4 +1,8 @@
 <template>
+  <!-- BLOCKS HEADER -->
+  <h2 class="tee-text-blue">On vous aide à atteindre vos objectifs :</h2>
+
+  <!-- CONTENT BLOCKS -->
   <div
     v-for="c in content"
     :key="c.badge"

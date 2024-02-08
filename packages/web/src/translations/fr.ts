@@ -1,3 +1,5 @@
+import programFrDict from '@/translations/fr/program'
+
 export const frDict = {
   next: 'Suivant',
   previous: 'Précédent',
@@ -54,25 +56,6 @@ export const frDict = {
   errors: {
     error: 'Erreur'
   },
-  program: {
-    programResume: 'Le dispositif en deux mots',
-    programObjective: {
-      title: {
-        inProgram: 'Au programme :',
-        applicationSteps: 'Les étapes de votre demande d’aide :'
-      }
-    },
-    programProviders: 'Contact',
-    programType: "Nature de l'aide",
-    programEndValidity: 'Date de fin',
-    programAvailable: 'Aide disponible',
-    programNotAvailable: "Cette aide n'est plus disponible",
-    programAvailableUntil: "Disponible jusqu'au {date}",
-    programDuration: 'Prestation',
-    programLoanDuration: 'Durée du prêt',
-    programKnowMore: 'En savoir plus',
-    programAmIEligible: 'Suis-je éligible ?'
-  },
   programCosts: {
     cost: 'Coût restant à charge',
     costPrefix: 'Coût',
@@ -125,5 +108,6 @@ export const frDict = {
       this: 'cette',
       of: 'de la'
     }
-  }
+  },
+  ...programFrDict
 }
