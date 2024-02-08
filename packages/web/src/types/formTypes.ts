@@ -47,6 +47,7 @@ export interface FormCallback {
   headers: HeadersInit
   method: CallbackMethods
   dataBody?: object | object[]
+  dataPath?: Record<string, string>
   dataStructure: object | object[]
   dataMapping: FormCallbackDataMapping[]
   inputCleaning?: Cleaner[] | CleanerReplaceAll[] | CleanerFromJson[] | CleanerFromDict[] | CleanerDefaultIfNull[]
