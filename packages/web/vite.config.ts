@@ -97,12 +97,12 @@ function buildHeaders() {
       "base-uri 'self';" +
       "form-action 'self';" +
       "script-src 'self';" +
-      "script-src-elem 'self';" +
+      "script-src-elem 'self' 'unsafe-inline' https://stats.beta.gouv.fr;" +
       "style-src 'self' 'unsafe-inline';" +
       "font-src 'self';" +
       "img-src 'self' data:;" +
       "object-src 'self';" +
-      `connect-src 'self' https://place-des-entreprises.beta.gouv.fr ${sentryData?.domain ? sentryData.domain : ''};` +
+      `connect-src 'self' https://place-des-entreprises.beta.gouv.fr https://stats.beta.gouv.fr ${sentryData?.domain ? sentryData.domain : ''};` +
       "worker-src 'self' blob:;" +
       "frame-src 'self' https://place-des-entreprises.beta.gouv.fr;" +
       "frame-ancestors 'self' https://place-des-entreprises.beta.gouv.fr;",

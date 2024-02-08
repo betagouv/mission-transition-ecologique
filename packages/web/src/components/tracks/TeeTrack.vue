@@ -102,7 +102,7 @@
                   :style="`${track.callout.headerStyle || 'color: var(--text-default-info);'}`"
                   class="tee-track-callout-header"
                 >
-                  {{ track.callout.header[choices.lang] }}
+                  {{ track.callout.header[Translation.lang] }}
                 </h2>
                 <!-- CALLOUT TITLE / BIG TITLE -->
                 <h1
@@ -110,14 +110,14 @@
                   class="fr-mb-3 tee-track-callout-big-title"
                   :style="`${track.callout.titleStyle || ''}`"
                 >
-                  {{ track.callout.title[choices.lang] }}
+                  {{ track.callout.title[Translation.lang] }}
                 </h1>
                 <h3
                   v-else
                   class="fr-callout__title tee-track-callout-title"
                   :style="`${track.callout.titleStyle || ''}`"
                 >
-                  {{ track.callout.title[choices.lang] }}
+                  {{ track.callout.title[Translation.lang] }}
                 </h3>
                 <!-- CALLOUT DESCRIPTION -->
                 <p
@@ -125,7 +125,7 @@
                   class="fr-callout__text tee-track-callout-description fr-mb-2v"
                   :style="`${track.callout.descriptionStyle || ''}`"
                 >
-                  {{ track.callout.description[choices.lang] }}
+                  {{ track.callout.description[Translation.lang] }}
                 </p>
                 <!-- CALLOUT HINT -->
                 <p
@@ -140,7 +140,7 @@
                       aria-hidden="true"
                     >
                     </span>
-                    {{ track.callout.hint[choices.lang] }}
+                    {{ track.callout.hint[Translation.lang] }}
                   </i>
                 </p>
               </div>
@@ -169,7 +169,7 @@
             :class="`${track?.info ? 'fr-mb-0' : 'fr-mb-2v'}`"
             :style="`${isTrackResults ? 'color: #000091; font-size: 2.75rem;' : ''}`"
           >
-            {{ tracks.getTrackLabel(usedTrack.id, choices.lang) }}
+            {{ tracks.getTrackLabel(usedTrack.id, Translation.lang) }}
           </h3>
         </div>
 
@@ -183,7 +183,7 @@
               class="fr-icon-info-fill"
               aria-hidden="true"
             ></span>
-            {{ track.info[choices.lang] }}
+            {{ track.info[Translation.lang] }}
           </p>
         </div>
 
@@ -196,7 +196,7 @@
             :class="`fr-mb-0`"
             :style="`${isTrackResults ? 'color: #000091;' : ''}`"
           >
-            {{ track.hint[choices.lang] }}
+            {{ track.hint[Translation.lang] }}
           </p>
         </div>
 
@@ -206,11 +206,11 @@
           :class="`${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`"
         >
           <p class="fr-mb-0">
-            {{ track.resume[choices.lang] }}
+            {{ track.resume[Translation.lang] }}
           </p>
         </div>
 
-        <!-- TRACK CHOICES {{ renderAs }} / EXCEPT SELECT-->
+        <!-- TRACK Translation {{ renderAs }} / EXCEPT SELECT-->
         <div
           v-for="(option, idx) in optionsArray"
           :key="`track-${step}-${usedTrack.id}-option-${idx}`"
@@ -251,11 +251,11 @@
                       aria-hidden="true"
                     >
                     </span>
-                    {{ option.hintImage[choices.lang] }}
+                    {{ option.hintImage[Translation.lang] }}
                   </p>
                   <h3 class="fr-card__title">
                     <!-- <a href="#"> -->
-                    {{ option.label?.[choices.lang] }}
+                    {{ option.label?.[Translation.lang] }}
                     <!-- </a> -->
                   </h3>
                   <div
@@ -263,7 +263,7 @@
                     class="fr-card__start"
                   >
                     <p class="fr-badge fr-badge--info fr-badge--no-icon fr-mb-4v">
-                      {{ choices.t('selection.selected') }}
+                      {{ Translation.t('selection.selected') }}
                     </p>
                   </div>
                 </div>
@@ -277,13 +277,13 @@
                     aria-hidden="true"
                   >
                   </span>
-                  {{ option.hint[choices.lang] }}
+                  {{ option.hint[Translation.lang] }}
                 </p>
                 <p
                   v-if="option.resume"
                   class="fr-card__desc"
                 >
-                  {{ option.resume[choices.lang] }}
+                  {{ option.resume[Translation.lang] }}
                 </p>
               </div>
             </div>
@@ -297,7 +297,7 @@
             <DsfrButton
               class="fr-btn-fullwidth fr-btn-fixed-height fr-btn-sm-align-left fr-btn-grey"
               :style="`outline-color: #929292; ${isActiveChoice(idx) ? 'background-color: #eeeeee' : ''}`"
-              :label="option.label?.[choices.lang]"
+              :label="option.label?.[Translation.lang]"
               :icon="getButtonIcon(idx)"
               :secondary="!isActiveChoice(idx)"
               @click="updateSelection(option, idx)"
@@ -324,7 +324,7 @@
           <div v-if="renderAs === trackComponents.SimpleButtons">
             <DsfrButton
               class="fr-btn-fullwidth fr-btn-align-center"
-              :label="option.label?.[choices.lang]"
+              :label="option.label?.[Translation.lang]"
               size="large"
               style="font-weight: 1000; min-height: 3.5rem; font-size: 1.5rem"
               @click="updateAndSave(option, idx)"
@@ -379,7 +379,7 @@
         >
           <DsfrButton
             class="fr-btn-fullwidth fr-btn-sm-fullwidth"
-            :label="choices.t('previous')"
+            :label="Translation.t('previous')"
             icon="ri-arrow-left-line"
             secondary
             @click="backToPreviousTrack"
@@ -389,7 +389,7 @@
         <div class="fr-col-6 fr-col-md-5 fr-col-lg-4 fr-col-xl-3">
           <DsfrButton
             class="fr-btn-fullwidth fr-btn-sm-fullwidth"
-            :label="choices.t('next')"
+            :label="Translation.t('next')"
             :disabled="!selectedOptions.length"
             icon="ri-arrow-right-line"
             icon-right
@@ -428,7 +428,7 @@ import TeeTrackSelect from './TeeTrackSelect.vue'
 import TeeTrackButtonInput from './TeeTrackButtonInput.vue'
 import TeeResults from '../results/TeeResults.vue'
 import { tracksStore } from '@/stores/tracks'
-import { choicesStore } from '@/stores/choices'
+import Translation from '@/utils/translation'
 import { useDebugStore } from '@/stores/debug'
 import Config from '@/config'
 import Matomo from '@/utils/matomo'
@@ -465,7 +465,6 @@ const trackComponents = TrackComponents
 const noNeedForNext = [TrackComponents.Cards, TrackComponents.SimpleButtons]
 
 const tracks = tracksStore()
-const choices = choicesStore()
 const debugStore = useDebugStore()
 
 const selectedOptionsIndices = ref<number[]>([])
@@ -638,7 +637,7 @@ const saveSelection = () => {
 
     nextExceptions.forEach((trackRule: NextTrackRuleSet) => {
       const dataStructure = {}
-      const item = remapItem(dataStructure, trackRule.rules, {}, trackValues, {}, {}, selectionVals, choices.lang)
+      const item = remapItem(dataStructure, trackRule.rules, {}, trackValues, {}, {}, selectionVals, Translation.lang)
       const bool = CheckNextTrackRules(item, trackRule.rules)
       next = bool ? trackRule.next : next
     })

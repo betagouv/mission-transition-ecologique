@@ -1,7 +1,7 @@
 <template>
   <div class="fr-mb-18v fr-mt-18v">
     <h2 class="fr-mb-3v">
-      {{ choices.t('program.programAmIEligible') }}
+      {{ Translation.t('program.programAmIEligible') }}
     </h2>
     <hr class="fr-mb-4v" />
     <div class="fr-grid-row fr-grid-row--gutters">
@@ -38,7 +38,7 @@
 // console.log(`ProgramEligibility > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import { computed } from 'vue'
-import { choicesStore } from '@/stores/choices'
+import Translation from '@/utils/translation'
 import type { ProgramData } from '@/types'
 
 type EligibilityCategory = keyof ProgramData["conditions d'éligibilité"]
@@ -76,8 +76,6 @@ interface Props {
 }
 
 const props = defineProps<Props>()
-
-const choices = choicesStore()
 
 const programEligibility = computed(() => {
   return props.program["conditions d'éligibilité"]

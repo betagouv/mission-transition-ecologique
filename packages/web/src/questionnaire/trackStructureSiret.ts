@@ -72,14 +72,13 @@ export const siret: Track = {
           help: 'Get entreprise data from its SIRET number',
           helpDocumentation: 'https://tee-backend.osc-fr1.scalingo.io/api/docs',
           action: CallbackActions.RequestAPI,
-          url: '/api/insee/get_by_siret',
-          // url: 'http://localhost:8001/api/insee/get_by_siret',
-          method: CallbackMethods.Post,
+          url: '/api/establishments/{siret}',
+          method: CallbackMethods.Get,
           headers: {
             accept: 'application/json',
             'Content-Type': 'application/json'
           },
-          dataBody: { siret: '' },
+          dataPath: { siret: '' },
           dataStructure: { ...dataTarget },
           dataMapping: [
             {
@@ -202,13 +201,6 @@ export const siret: Track = {
               dataField: 'codePostal',
               onlyRemap: true
             }
-            // {
-            //   from: DataMappingFrom.RawData,
-            //   id: 'size',
-            //   path: 'etablissement.uniteLegale.categorieEntreprise',
-            //   dataField: 'structure_sizes',
-            //   onlyRemap: true
-            // },
           ],
           inputCleaning: [
             {

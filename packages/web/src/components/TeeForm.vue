@@ -53,7 +53,7 @@
     >
       {{
         capitalizeFirstLetter(
-          choices.ti(formOptions.label[choices.lang], {
+          Translation.ti(formOptions.label[Translation.lang], {
             prefixAide: findPrefix(program["nature de l'aide"], 'this'),
             natureAide: program["nature de l'aide"]
           }) || ''
@@ -66,8 +66,8 @@
       v-if="formOptions.hint"
       class="fr-text-center fr-pb-10v"
     >
-      <!-- {{ formOptions.hint[choices.lang] }} -->
-      {{ choices.ti(formOptions.hint[choices.lang], { operator: program['opérateur de contact'] }) }}
+      <!-- {{ formOptions.hint[Translation.lang] }} -->
+      {{ Translation.ti(formOptions.hint[Translation.lang], { operator: program['opérateur de contact'] }) }}
     </p>
 
     <!-- FIELDS -->
@@ -105,8 +105,8 @@
             :model-value="formData[field.id]"
             label-visible
             :required="field.required"
-            :label="field?.label?.[choices.lang]"
-            :placeholder="(field.hint && field.hint[choices.lang]) || ''"
+            :label="field?.label?.[Translation.lang]"
+            :placeholder="(field.hint && field.hint[Translation.lang]) || ''"
             @update:model-value="updateFormData($event, field.id)"
           >
           </DsfrInput>
@@ -120,10 +120,10 @@
           :required="field.required"
           @update:model-value="updateFormData($event, field.id)"
         >
-          <!-- :hint="field.hint[choices.lang]" -->
+          <!-- :hint="field.hint[Translation.lang]" -->
           <template #label>
             <span>
-              {{ field?.label?.[choices.lang] }}
+              {{ field?.label?.[Translation.lang] }}
             </span>
           </template>
         </DsfrCheckbox>
@@ -132,7 +132,7 @@
         <div v-if="isCheckbox(field)">
           <span
             class="fr-hint-text fr-mt-5v"
-            v-html="field.hint?.[choices.lang] || ''"
+            v-html="field.hint?.[Translation.lang] || ''"
           >
           </span>
         </div>
@@ -146,7 +146,7 @@
     >
       <code>*</code>
       &nbsp;
-      {{ choices.t('form.mandatory') }}
+      {{ Translation.t('form.mandatory') }}
     </h6>
 
     <!-- SEND / NEXT BUTTON -->
@@ -156,7 +156,7 @@
         style="display: grid; justify-content: right"
       >
         <DsfrButton
-          :label="choices.t('send')"
+          :label="Translation.t('send')"
           :disabled="!canSaveFrom"
           icon="ri-arrow-right-line"
           icon-right
@@ -185,16 +185,16 @@
         ></v-icon>
       </p>
       <h3 class="tee-form-response tee-form-response-error fr-mb-2v">
-        {{ choices.t(`form.sorryError`) }}
+        {{ Translation.t(`form.sorryError`) }}
       </h3>
       <h3 class="tee-form-response tee-form-response-error">
-        {{ choices.t(`form.notSent`) }}
+        {{ Translation.t(`form.notSent`) }}
       </h3>
       <h6 class="tee-form-response-blue fr-mt-15v fr-mb-3v">
-        {{ choices.t('form.nowWhat') }}
+        {{ Translation.t('form.nowWhat') }}
       </h6>
       <p class="tee-form-response-blue fr-mb-15v">
-        <span v-html="choices.t('form.errorMsg', { mailto: getMailTo(), email: contactEmail })"></span>
+        <span v-html="Translation.t('form.errorMsg', { mailto: getMailTo(), email: contactEmail })"></span>
       </p>
 
       <!-- DEBUGGING -->
@@ -230,14 +230,14 @@
         ></v-icon>
       </p>
       <h3 class="tee-form-response tee-form-response-blue">
-        {{ choices.t(`form.sent`) }}
+        {{ Translation.t(`form.sent`) }}
       </h3>
       <h6 class="fr-mt-15v fr-mb-3v">
-        {{ choices.t('form.nowWhat') }}
+        {{ Translation.t('form.nowWhat') }}
       </h6>
       <p class="fr-mb-15v">
         <span>
-          {{ choices.ti(choices.t('form.phoneContact'), { operator: program['opérateur de contact'] }) }}
+          {{ Translation.ti(Translation.t('form.phoneContact'), { operator: program['opérateur de contact'] }) }}
         </span>
       </p>
     </div>
@@ -276,11 +276,11 @@
 import { computed, onBeforeMount, ref, toRaw } from 'vue'
 import type { FormCallback, FormField, FormOptions, FormValues, ProgramData, ReqResp } from '@/types'
 import { TrackId } from '@/types'
-import { CallbackActions, FormFieldTypes } from '@/types/index'
-import { sendApiRequest } from '../utils/requests'
-import { remapItem } from '../utils/helpers'
-import { tracksStore } from '../stores/tracks'
-import { choicesStore } from '../stores/choices'
+import { CallbackActions, FormFieldTypes } from '@/types'
+import { sendApiRequest } from '@/utils/requests'
+import { remapItem } from '@/utils/helpers'
+import { tracksStore } from '@/stores/tracks'
+import Translation from '@/utils/translation'
 import DsfrButton from '@/components/button/DsfrButton.vue'
 import Matomo from '@/utils/matomo'
 import Config from '@/config'
@@ -290,7 +290,6 @@ import Contact from '@/utils/contact'
 import { useDebugStore } from '@/stores/debug'
 
 const route = useRoute()
-const choices = choicesStore()
 const tracks = tracksStore()
 const debugStore = useDebugStore()
 
@@ -327,7 +326,7 @@ const hasNoRespError = computed(() => {
 })
 
 const findPrefix = (str: string, prefixCode: string = 'of') => {
-  return choices.t(`articles.${str}.${prefixCode}`)
+  return Translation.t(`articles.${str}.${prefixCode}`)
 }
 
 const capitalizeFirstLetter = (str: string) => {
@@ -350,7 +349,7 @@ const getMailTo = (): string => {
     const telValue = 'tel' in formData.value ? (formData.value.tel as string) : ''
     const siretValue = 'siret' in formData.value ? (formData.value.siret as string) : ''
     return Contact.getMailtoUrl(
-      choices.t('form.errorEmail.subject', { program: props.program.titre }),
+      Translation.t('form.errorEmail.subject', { program: props.program.titre }),
       `${needsValue}
 
 ${nameValue} ${surnameValue}
@@ -381,15 +380,15 @@ onBeforeMount(() => {
         const defaultValStr = defaultVal.toString()
         const dataStructure = field.dataStructure || {}
         const dataMapping = field.dataMapping || []
-        const values = remapItem(dataStructure, dataMapping, {}, trackValues, props, undefined, [], choices.lang)
-        defaultVal = choices.ti(defaultValStr, values)
+        const values = remapItem(dataStructure, dataMapping, {}, trackValues, props, undefined, [], Translation.lang)
+        defaultVal = Translation.ti(defaultValStr, values)
       }
       initValues[field.id] = defaultVal
     }
 
     // inject value into form from store if any
     if (field.preFillFrom) {
-      initValues = remapItem(initValues, [field.preFillFrom], {}, trackValues, props, undefined, [], choices.lang)
+      initValues = remapItem(initValues, [field.preFillFrom], {}, trackValues, props, undefined, [], Translation.lang)
     }
   })
   formData = ref(initValues)
@@ -413,7 +412,7 @@ const saveFormData = async () => {
       let resp: ReqResp = {}
       switch (callback.action) {
         case CallbackActions.CreateOpportunity:
-          resp = await sendApiRequest(callback, toRaw(formData.value), trackValues, props.dataProps, choices.lang)
+          resp = await sendApiRequest(callback, toRaw(formData.value), trackValues, props.dataProps, Translation.lang)
           break
         case CallbackActions.SendTransactionalEmail:
           resp = await sendApiRequest(callback, toRaw(formData.value))

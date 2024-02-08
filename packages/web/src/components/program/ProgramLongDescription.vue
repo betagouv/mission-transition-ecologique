@@ -7,7 +7,7 @@
         :aria-controls="`accordion-${program.id}`"
         @click="drawerOpen = !drawerOpen"
       >
-        {{ choices.t('program.programKnowMore') }}
+        {{ Translation.t('program.programKnowMore') }}
       </button>
     </h3>
     <div
@@ -33,7 +33,7 @@
 // console.log(`ProgramLongdescription > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import { ref, computed, onBeforeMount } from 'vue'
-import { choicesStore } from '@/stores/choices'
+import Translation from '@/utils/translation'
 import type { ProgramData } from '@/types'
 
 interface Props {
@@ -42,8 +42,6 @@ interface Props {
 const props = defineProps<Props>()
 
 const drawerOpen = ref<boolean>(false)
-
-const choices = choicesStore()
 
 const descriptionParagraphs = computed(() => {
   const textRaw = props.program['description longue']

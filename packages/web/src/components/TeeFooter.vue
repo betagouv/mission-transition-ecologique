@@ -11,7 +11,7 @@
     >
       <div class="fr-col-3">
         <h6 class="fr-mb-1v">
-          choices.lang : <code>{{ choices.lang }} </code>
+          Translation.lang : <code>{{ Translation.lang }} </code>
         </h6>
       </div>
     </div>
@@ -88,21 +88,19 @@
             style="align-items: center"
           >
             <ul
-              v-for="partner in partners"
-              :key="partner.label"
+              v-for="operator in operators"
+              :key="operator.label"
             >
               <li>
                 <a
-                  class="footer__partners-link"
+                  class="footer__partners-link tee-footer-operators-container"
                   target="_blank"
-                  style="background-image: none"
-                  :href="partner.href"
+                  :href="operator.href"
                 >
                   <img
-                    class="fr-footer__logo"
-                    style="height: auto; max-height: 5.625rem; width: 10rem"
-                    :src="partner.img"
-                    :alt="partner.label"
+                    class="fr-footer__logo tee-footer-operators-img"
+                    :src="operator.img"
+                    :alt="operator.label"
                   />
                 </a>
               </li>
@@ -147,14 +145,14 @@
         <!-- LICENCE LINKS -->
         <div class="fr-footer__bottom-copy">
           <p>
-            {{ choices.t('footer.thisApplicationAndIts') }}
+            {{ Translation.t('footer.thisApplicationAndIts') }}
             <a
               :href="sourceCodeHref"
               class="fr-link-licence no-content-after"
             >
-              {{ choices.t('footer.sourceCode') }}
+              {{ Translation.t('footer.sourceCode') }}
             </a>
-            {{ choices.t('footer.areUnderlicence') }}
+            {{ Translation.t('footer.areUnderlicence') }}
             &nbsp;
             <a
               :href="licenceHref"
@@ -173,10 +171,9 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`TeeAppFooter > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import { choicesStore } from '@/stores/choices'
+import Translation from '@/utils/translation'
 import { RouteName } from '@/types/routeType'
-
-const choices = choicesStore()
+import operators from '@/utils/operators'
 
 const sourceCodeHref = 'https://github.com/betagouv/transition-ecologique-entreprises-widget/tree/main'
 const licenceHref = 'https://github.com/betagouv/transition-ecologique-entreprises-widget/blob/main/LICENSE'
@@ -211,28 +208,6 @@ const mainPartner = {
 //   img: '/images/logos/aides-territoires.png',
 //   href: 'https://aides-territoires.beta.gouv.fr/'
 // }
-const partners = [
-  {
-    label: 'ADEME',
-    img: '/images/logos/ademe.svg',
-    href: 'https://www.ademe.fr/'
-  },
-  {
-    label: 'Bpifrance',
-    img: '/images/logos/bpi-france.svg',
-    href: 'https://www.bpifrance.fr/'
-  },
-  {
-    label: 'CCI France',
-    img: '/images/logos/cci-france.svg',
-    href: 'https://www.cci.fr/'
-  },
-  {
-    label: 'CMA France',
-    img: '/images/logos/cma-france.png',
-    href: 'https://www.artisanat.fr/'
-  }
-]
 
 const mainLinks = [
   // {
@@ -275,3 +250,4 @@ interface Props {
 }
 defineProps<Props>()
 </script>
+@/utils/operators

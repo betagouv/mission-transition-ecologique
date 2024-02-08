@@ -38,7 +38,7 @@
     v-if="countFilteredPrograms && trackConfig?.showResultsTitle"
     class="fr-pt-12v"
   >
-    {{ choices.t('results.fittingPrograms') }}
+    {{ Translation.t('results.fittingPrograms') }}
     ({{ countFilteredPrograms }})
   </h4>
 
@@ -53,7 +53,7 @@
       class="fr-mb-4v tee-text-light"
     >
       {{ countReFilteredPrograms }}
-      {{ choices.t('results.results') }}
+      {{ Translation.t('results.results') }}
     </div>
 
     <!-- FILTERS IF ANY -->
@@ -177,7 +177,7 @@
 // console.log(`TeeResults > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import { computed, onBeforeMount, ref } from 'vue'
-import { choicesStore } from '@/stores/choices'
+import Translation from '@/utils/translation'
 import { programsStore } from '@/stores/programs'
 import { consolidateAmounts, getFrom, scrollToTop } from '@/utils/helpers'
 import TeeResultsFilter from './TeeResultsFilter.vue'
@@ -192,7 +192,6 @@ import { useDebugStore } from '@/stores/debug'
 import Config from '@/config'
 import Matomo from '@/utils/matomo'
 
-const choices = choicesStore()
 const programs = programsStore()
 const navigation = navigationStore()
 const debugStore = useDebugStore()
@@ -299,7 +298,7 @@ const getCostInfos = (program: ProgramData) => {
       break
   }
   // Translate prefix
-  prefix = choices.t(prefix)
+  prefix = Translation.t(prefix)
 
   text = consolidateAmounts(text)
 
