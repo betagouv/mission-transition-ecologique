@@ -40,7 +40,7 @@ const replacePlaceholders = (url: string, dataPath?: Record<string, string>): st
 
   for (const placeholderName in dataPath) {
     const placeholderData = dataPath[placeholderName]
-    url = replacePlaceholder(placeholderName, placeholderData, url)
+    url = replacePlaceholder(url, placeholderName, placeholderData)
   }
 
   return url
