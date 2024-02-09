@@ -37,7 +37,7 @@
         </button>
 
         <!-- PROGRAM DETAILS -->
-        <div class="fr-grid-row fr-grid-row--gutters fr-mb-10v">
+        <div class="fr-grid-row fr-grid-row--gutters fr-mb-8v">
           <!-- IMAGE -->
           <div class="fr-col-md-4 fr-col-lg-3 fr-col-xl-3 fr-col-sm-12 fr-text-right fr-tee-program-detail-img">
             <img
@@ -102,7 +102,7 @@
         <!-- PROGRAM INFOS : PROVIDERS / TYPE / START / END -->
         <div
           v-if="trackConfig.config?.showProgramInfos"
-          class="fr-grid-row fr-grid-row--gutters fr-mb-10v"
+          class="fr-grid-row fr-grid-row--gutters fr-mb-8v"
         >
           <!-- PROGRAM GEO ZONES -->
           <!-- <div
