@@ -19,7 +19,7 @@
   </div>
 
   <!-- PROGRAM INFOS -->
-  <div :class="`fr-container-fluid fr-px-0 fr-px-md-20v fr-mt-${!programIsAvailable ? 3 : 8}v`">
+  <div class="fr-container-fluid fr-px-0 fr-px-md-20v fr-mt-3v">
     <div class="fr-grid-row fr-grid-row-gutters">
       <div class="fr-col">
         <!-- BACK TO RESULTS BTN -->

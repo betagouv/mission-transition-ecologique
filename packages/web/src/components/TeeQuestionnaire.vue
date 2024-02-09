@@ -12,12 +12,12 @@
       <!-- TRACKS INTERFACES -->
       <div
         ref="tee-app-tracks"
-        class="fr-grid-row fr-grid-row-gutters fr-p-0 fr-justify-center"
+        class="fr-grid-row fr-grid-row-gutters fr-justify-center"
       >
         <!-- SIDEBAR MENU (FIL D'ARIANE)-->
         <div
           v-if="needSidebar && tracks.currentStep && tracks.currentStep > 1"
-          class="fr-tee-add-padding fr-mt-4v fr-col-3 fr-col-md-4 fr-col-lg-4 fr-col-xl-2 fr-col-sm-hide"
+          class="fr-tee-add-padding fr-mt-10v fr-col-3 fr-col-md-4 fr-col-lg-4 fr-col-xl-2 fr-col-sm-hide"
           style="height: 100%"
         >
           <TeeSidebar />
@@ -26,7 +26,7 @@
         <!-- TRACKS -->
         <div
           id="tee-app-tracks"
-          :class="`${tracks.currentStep && tracks.currentStep > 1 ? 'fr-tee-add-padding' : ''} ${getColumnsWidth}`"
+          :class="`${getColumnsWidth}`"
           class="fr-grid-row--center"
         >
           <div
@@ -53,7 +53,7 @@
     <!-- DETAIL RESULT CARD -->
     <div
       v-if="programs.programDetail"
-      :class="`fr-container-fluid fr-px-6v fr-px-md-20v fr-mt-10v`"
+      :class="`fr-container-fluid fr-px-0v fr-px-md-20v`"
     >
       <div class="fr-grid-row fr-grid-row-gutters">
         <div class="fr-col">
