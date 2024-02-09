@@ -35,7 +35,7 @@ export const mobilityNumberVehicles: Track = {
       title: { fr: 'Non' },
       label: { fr: '❌ Non, l’entreprise ne possède aucun véhicule motorisé' },
       next: {
-        default: TrackId.WastesStake
+        default: TrackId.MobilityWishes
       }
     },
     {
@@ -46,7 +46,7 @@ export const mobilityNumberVehicles: Track = {
       title: { fr: 'Je ne sais pas' },
       label: { fr: 'Je ne sais pas' },
       next: {
-        default: TrackId.WastesStake
+        default: TrackId.MobilityEnergy
       }
     }
   ]

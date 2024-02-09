@@ -33,7 +33,7 @@ export const buildingProperty: Track = {
       title: { fr: 'Propriétaire' },
       label: { fr: '🔑 Propriétaire' },
       next: {
-        default: TrackId.Mobility
+        default: TrackId.MobilityWishes
       }
     },
     {
@@ -44,7 +44,7 @@ export const buildingProperty: Track = {
       title: { fr: 'Locataire' },
       label: { fr: '📝 Locataire ' },
       next: {
-        default: TrackId.Mobility
+        default: TrackId.MobilityWishes
       }
     },
     {
@@ -55,7 +55,7 @@ export const buildingProperty: Track = {
       title: { fr: 'Propriétaire & locataire' },
       label: { fr: 'Je suis à la fois propriétaire et locataire sur mes différents locaux' },
       next: {
-        default: TrackId.Mobility
+        default: TrackId.MobilityWishes
       }
     }
   ]
