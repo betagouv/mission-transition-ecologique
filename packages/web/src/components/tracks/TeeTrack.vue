@@ -100,14 +100,14 @@
                 <h2
                   v-if="track.callout.header"
                   :style="`${track.callout.headerStyle || 'color: var(--text-default-info);'}`"
-                  class="tee-track-callout-header"
+                  class="tee-track-callout-header fr-sm-hide"
                 >
                   {{ track.callout.header[Translation.lang] }}
                 </h2>
                 <!-- CALLOUT TITLE / BIG TITLE -->
                 <h1
                   v-if="track.callout.bigTitle"
-                  class="fr-mb-3 tee-track-callout-big-title"
+                  class="tee-track-callout-big-title tee-mb-none"
                   :style="`${track.callout.titleStyle || ''}`"
                 >
                   {{ track.callout.title[Translation.lang] }}

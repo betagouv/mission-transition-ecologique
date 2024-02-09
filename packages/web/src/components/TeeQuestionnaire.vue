@@ -7,7 +7,7 @@
     <div
       v-show="!programs.programDetail"
       id="trackElement"
-      :class="`fr-container--fluid ${tracks.currentStep && tracks.currentStep > 1 ? 'fr-pt-10v' : ''}`"
+      :class="`fr-container--fluid ${tracks.currentStep && tracks.currentStep > 1 ? 'fr-pt-0v' : ''}`"
     >
       <!-- TRACKS INTERFACES -->
       <div
