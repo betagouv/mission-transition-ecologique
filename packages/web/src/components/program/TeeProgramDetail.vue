@@ -173,17 +173,6 @@
             />
           </div> -->
 
-          <!-- PROGRAM TYPE -->
-          <div :class="columnTiles">
-            <TeeTile
-              class="tee-no-hover"
-              :title="Translation.t('program.programType')"
-              :image-path="`${publicPath}images/TEE-typefinance.svg`"
-              :description="program?.[`nature de l'aide`]"
-            >
-            </TeeTile>
-          </div>
-
           <!-- PROGRAM DURATION -->
           <div
             v-if="program?.[`durée de l'accompagnement`]"
