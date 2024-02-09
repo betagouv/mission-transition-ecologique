@@ -237,16 +237,27 @@
         </div>
 
         <!-- ELIGIBILITY -->
-        <ProgramEligibility
-          v-if="program"
-          :program="program"
-        ></ProgramEligibility>
+        <ProgramAccordion
+          v-if="program && program['description longue']"
+          :accordion-id="`${program.id}-eligibility`"
+          :title="Translation.t('program.programAmIEligible')"
+        >
+          <template #content>
+            <ProgramEligibility :program="program"></ProgramEligibility>
+          </template>
+        </ProgramAccordion>
 
         <!-- LONG DESCRIPTION -->
-        <ProgramLongDescription
+        <ProgramAccordion
           v-if="program && program['description longue']"
-          :program="program"
-        ></ProgramLongDescription>
+          :accordion-id="`${program.id}-long-description`"
+          :title="Translation.t('program.programKnowMore')"
+        >
+          <template #content>
+            <ProgramLongDescription :program="program"></ProgramLongDescription>
+          </template>
+        </ProgramAccordion>
+        <hr class="fr-mb-9v fr-pb-1v" />
       </div>
     </div>
 
@@ -275,8 +286,9 @@ import { ref, computed, onBeforeMount } from 'vue'
 
 import TeeTile from '../TeeTile.vue'
 import TeeForm from '../TeeForm.vue'
-import ProgramEligibility from '@/components/program/ProgramEligibility.vue'
 import ProgramObjective from '@/components/program/ProgramObjective.vue'
+import ProgramAccordion from '@/components/program/ProgramAccordion.vue'
+import ProgramEligibility from '@/components/program/ProgramEligibility.vue'
 import ProgramLongDescription from '@/components/program/ProgramLongDescription.vue'
 
 import Translation from '@/utils/translation'

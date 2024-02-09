@@ -3,17 +3,12 @@
 
 import {
   codesNAF1,
-  EntrepriseSector,
   NAF1Letters,
   NAF1ToVar,
-  Sector,
-  Sectors,
-  YesNo,
   CallbackActions,
   CallbackMethods,
   CleanerOperations,
   DataMappingFrom,
-  FindInRefs,
   HasInputOptions,
   TrackComponents,
   TrackId
@@ -72,14 +67,13 @@ export const siret: Track = {
           help: 'Get entreprise data from its SIRET number',
           helpDocumentation: 'https://tee-backend.osc-fr1.scalingo.io/api/docs',
           action: CallbackActions.RequestAPI,
-          url: '/api/insee/get_by_siret',
-          // url: 'http://localhost:8001/api/insee/get_by_siret',
-          method: CallbackMethods.Post,
+          url: '/api/establishments/{siret}',
+          method: CallbackMethods.Get,
           headers: {
             accept: 'application/json',
             'Content-Type': 'application/json'
           },
-          dataBody: { siret: '' },
+          dataPath: { siret: '' },
           dataStructure: { ...dataTarget },
           dataMapping: [
             {
@@ -91,70 +85,24 @@ export const siret: Track = {
               from: DataMappingFrom.RawData,
               id: 'naf',
               help: 'https://www.insee.fr/fr/information/2120875',
-              path: 'etablissement.uniteLegale.activitePrincipaleUniteLegale',
+              path: 'nafCode',
               dataField: 'codeNaf',
               onlyRemap: true
             },
             {
               from: DataMappingFrom.RawData,
               id: 'region',
-              path: 'etablissement.adresseEtablissement.codeCommuneEtablissement',
+              path: 'region',
               dataField: 'région',
-              onlyRemap: true,
-              cleaning: [
-                {
-                  operation: CleanerOperations.findFromRefs,
-                  findInRef: FindInRefs.ComCodes,
-                  findFromField: 'COM',
-                  retrieveFromField: 'REGION'
-                }
-              ]
-            },
-            {
-              from: DataMappingFrom.RawData,
-              id: 'secteur',
-              path: 'etablissement.uniteLegale.activitePrincipaleUniteLegale',
-              dataField: '.',
-              onlyRemap: true,
-              cleaning: [
-                {
-                  operation: CleanerOperations.findFromRefs,
-                  findInRef: FindInRefs.NafCodes,
-                  findFromField: 'NIV5',
-                  retrieveFromField: 'tagsFr'
-                  // => ['artisanat', 'industrie']
-                },
-                {
-                  operation: CleanerOperations.findFromDict,
-                  dict: {
-                    [Sector.Craftsmanship]: { [EntrepriseSector.Craftsmanship]: YesNo.Yes },
-                    [Sector.Industry]: { [EntrepriseSector.Industry]: YesNo.Yes },
-                    [Sector.Tourism]: { [EntrepriseSector.Tourism]: YesNo.Yes },
-                    [Sector.Tertiary]: { [EntrepriseSector.Tertiary]: YesNo.Yes },
-                    [Sector.Agriculture]: { [EntrepriseSector.Agriculture]: YesNo.Yes },
-                    [Sector.Other]: { [EntrepriseSector.Other]: YesNo.Yes }
-                  }
-                },
-                {
-                  operation: CleanerOperations.injectInObject,
-                  object: { ...Sectors }
-                }
-              ]
+              onlyRemap: true
             },
             {
               from: DataMappingFrom.RawData,
               id: 'codeNAF1',
-              path: 'etablissement.uniteLegale.activitePrincipaleUniteLegale',
+              path: 'nafSectionCode',
               dataField: '.',
               onlyRemap: true,
               cleaning: [
-                {
-                  operation: CleanerOperations.findFromRefs,
-                  findInRef: FindInRefs.NafCodes,
-                  findFromField: 'NIV5',
-                  retrieveFromField: 'NIV1'
-                  // => 'A'
-                },
                 {
                   operation: CleanerOperations.findFromDict,
                   dict: Object.fromEntries(NAF1Letters.map((l) => [l, { [NAF1ToVar(l)]: 'oui' }]))
@@ -169,46 +117,31 @@ export const siret: Track = {
             {
               from: DataMappingFrom.RawData,
               id: 'sectorLabel',
-              path: 'etablissement.uniteLegale.activitePrincipaleUniteLegale',
+              path: 'nafLabel',
               dataField: 'secteur',
-              onlyRemap: true,
-              cleaning: [
-                {
-                  operation: CleanerOperations.findFromRefs,
-                  findInRef: FindInRefs.NafCodes,
-                  findFromField: 'NIV5',
-                  retrieveFromField: 'label_vf'
-                }
-              ]
+              onlyRemap: true
             },
             {
               from: DataMappingFrom.RawData,
               id: 'denomination',
-              path: 'etablissement.uniteLegale.denominationUniteLegale',
+              path: 'denomination',
               dataField: 'denomination',
               onlyRemap: true
             },
             {
               from: DataMappingFrom.RawData,
               id: 'city',
-              path: 'etablissement.adresseEtablissement.libelleCommuneEtablissement',
+              path: 'address.cityLabel',
               dataField: 'ville',
               onlyRemap: true
             },
             {
               from: DataMappingFrom.RawData,
               id: 'postalCode',
-              path: 'etablissement.adresseEtablissement.codePostalEtablissement',
+              path: 'address.zipCode',
               dataField: 'codePostal',
               onlyRemap: true
             }
-            // {
-            //   from: DataMappingFrom.RawData,
-            //   id: 'size',
-            //   path: 'etablissement.uniteLegale.categorieEntreprise',
-            //   dataField: 'structure_sizes',
-            //   onlyRemap: true
-            // },
           ],
           inputCleaning: [
             {
@@ -240,9 +173,9 @@ export const siret: Track = {
             },
             {
               respFields: [
-                'raw.etablissement.adresseEtablissement.numeroVoieEtablissement',
-                'raw.etablissement.adresseEtablissement.typeVoieEtablissement',
-                'raw.etablissement.adresseEtablissement.libelleVoieEtablissement',
+                'raw.address.streetNumber',
+                'raw.address.streetType',
+                'raw.address.streetLabel',
                 'data.codePostal',
                 'data.ville'
               ],
@@ -250,7 +183,7 @@ export const siret: Track = {
               icon: 'fr-icon-map-pin-2-line'
             },
             {
-              respFields: ['raw.etablissement.uniteLegale.dateCreationUniteLegale'],
+              respFields: ['raw.creationDate'],
               label: 'Création le',
               // prefix: 'Création le ',
               icon: 'fr-icon-time-line',
