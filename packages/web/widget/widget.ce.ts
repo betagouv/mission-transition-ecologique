@@ -5,7 +5,7 @@ import VueDsfr from '@gouvminint/vue-dsfr'
 // Styles imports
 import '@/assets/main.css'
 import '@gouvfr/dsfr/dist/core/core.main.min.css'
-import { listIcons } from '../src/icons'
+import { listIcons } from '@/plugin/icons'
 import Widget from '../src/utils/widget'
 import type { Component } from 'vue'
 

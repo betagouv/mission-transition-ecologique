@@ -275,6 +275,22 @@ button.fr-link:hover, .tee-router-link:hover {
   margin: 0 -.5rem !important;
 }
 
+.tee-accordion::before {
+  box-shadow: none;
+  border-top: 1px solid #dddddd;
+}
+.tee-accordion-btn {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 4.25rem;
+  color: #161616 ;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+.tee-accordion-btn[aria-expanded=true] {
+  background-color: transparent;
+}
+
 /* check: https://css-tricks.com/css-counters-custom-list-number-styling/ */
 .fr-tee-description-list p {
   padding-left: 3rem;

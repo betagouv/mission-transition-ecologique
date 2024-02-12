@@ -430,7 +430,7 @@ import TeeResults from '../results/TeeResults.vue'
 import { useTracksStore } from '@/stores/tracks'
 import Translation from '@/utils/translation'
 import { useDebugStore } from '@/stores/debug'
-import MetaEnv from '@/utils/metaEnv'
+import Config from '@/config'
 import Matomo from '@/utils/matomo'
 
 interface Props {
@@ -471,7 +471,7 @@ const selectedOptionsIndices = ref<number[]>([])
 const selectedOptions = ref<TrackOptionsUnion[]>([])
 const needRemove = ref<boolean>(false)
 
-const publicPath = MetaEnv.publicPath
+const publicPath = Config.publicPath
 const track: Track | undefined = tracks.getTrack(props.usedTrack.id)
 // const usedTrackRef = ref<UsedTrack>(props.usedTrack)
 

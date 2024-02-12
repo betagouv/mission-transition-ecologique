@@ -7,7 +7,7 @@
       <p
         v-for="(paragraph, idx) in program.objectifs"
         :key="`description-paragraph-${idx}`"
-        class="fr-mb-6v"
+        class="fr-mb-3v"
       >
         <span class="fr-tee-description-paragraph-marker"> {{ idx + 1 }} | </span>
         <span class="fr-tee-description-paragraph-content">

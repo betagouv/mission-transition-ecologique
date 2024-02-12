@@ -1,6 +1,5 @@
 export * from './conditionOperators'
 export * from './formTypes'
-export * from './refs'
 export * from './otherTypes'
 export * from './programTypes'
 export * from './publicodesObjects'
