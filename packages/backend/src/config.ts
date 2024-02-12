@@ -1,5 +1,5 @@
 import ConfigCommon from '../../common/src/config/configCommon'
-import { Environment } from '../../common/src/config/types'
+import { Environment } from '@tee/common/src/config/types'
 
 export default class Config extends ConfigCommon {
   protected static override _sentryDsn = process.env['SENTRY_DSN']
