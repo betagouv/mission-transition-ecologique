@@ -14,7 +14,7 @@ import type {
 import { CleanerOperations, DataMappingFrom } from '@/types'
 import type { ImportMetaEnv } from '../env'
 import Widget from '@/utils/widget'
-import MetaEnv from '@/utils/metaEnv'
+import Config from '@/config'
 
 // GENERIC HELPERS
 
@@ -180,7 +180,7 @@ export const remapItem = (
   lang: string = 'fr'
 ) => {
   let data = { ...dataStructure }
-  const metaEnv: ImportMetaEnv = MetaEnv.metaEnv
+  const metaEnv: ImportMetaEnv = Config.metaEnv
 
   dataMappings.forEach((dataMapping) => {
     let value: unknown = ''
