@@ -3,8 +3,16 @@ import { RegisterRoutes } from '../generated/routes'
 import swaggerUi from 'swagger-ui-express'
 import { ValidateError } from 'tsoa'
 import cors from 'cors'
+import Sentry from './plugin/sentry'
+import * as dotenv from 'dotenv'
+
+dotenv.config()
 
 const app: Express = express()
+
+Sentry.init(app)
+app.use(Sentry.requestHandler())
+app.use(Sentry.tracingHandler())
 
 app.use(express.json())
 app.use(cors())
@@ -15,6 +23,8 @@ app.use('/api/docs', swaggerUi.serve, async (_req: Request, res: Response) => {
 })
 
 RegisterRoutes(app)
+
+app.use(Sentry.errorHandler())
 
 app.use(function notFoundHandler(_req, res: Response) {
   res.status(404).send({ message: 'Not Found' })

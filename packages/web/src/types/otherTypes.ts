@@ -36,7 +36,7 @@ export interface ResultsMapping {
   class?: string
   sep?: string
   style?: string
-  cleaning?: Cleaner[] | CleanerReplaceAll[] | CleanerFromJson[] | CleanerDefaultIfNull[]
+  cleaning?: Cleaner[] | CleanerReplaceAll[] | CleanerDefaultIfNull[]
 }
 
 export interface ReqError {
@@ -85,7 +85,6 @@ export enum CallbackActions {
 export enum CleanerOperations {
   replaceAll = 'replaceAll',
   stringToDate = 'stringToDate',
-  findFromRefs = 'findFromRefs',
   findFromDict = 'findFromDict',
   defaultIfNull = 'defaultIfNull',
   injectInObject = 'injectInObject'
@@ -102,16 +101,6 @@ export interface CleanerDefaultIfNull extends Cleaner {
 export interface CleanerReplaceAll extends Cleaner {
   stringToReplace: string
   replaceBy: string
-}
-
-export enum FindInRefs {
-  NafCodes = 'NafCodes',
-  ComCodes = 'ComCodes'
-}
-export interface CleanerFromJson extends Cleaner {
-  findInRef: FindInRefs
-  findFromField: string
-  retrieveFromField: string
 }
 
 export interface CleanerFromDict extends Cleaner {

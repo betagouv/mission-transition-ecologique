@@ -15,6 +15,7 @@ import { buildingSurface } from './trackBuildingSurface'
 import { mobility } from './trackMobility'
 import { mobilityNumberVehicles } from './trackMobilityNumberVehicles'
 import { mobilityEnergy } from './trackMobilityEnergy'
+import { mobilityWishes } from './trackMobilityWishes'
 import { wastesStake } from './trackWastesStake'
 import { wastesSorting } from './trackWastesSorting'
 import { wastesMaterials } from './trackWastesMaterials'
@@ -47,6 +48,7 @@ export const tracks: Track[] = [
   mobility,
   mobilityNumberVehicles,
   mobilityEnergy,
+  mobilityWishes,
   wastesStake,
   wastesSorting,
   wastesMaterials,

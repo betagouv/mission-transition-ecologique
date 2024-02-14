@@ -101,6 +101,23 @@ button.fr-link:hover, .tee-router-link:hover {
   background-color: white;
   z-index: 10;
 }
+.tee-home-step-operators-container {
+  align-items: center
+}
+.tee-home-step-operators-img {
+  max-height: 100%;
+  width: auto;
+  max-width: 100%;
+}
+.tee-footer-operators-container {
+  background-image: none
+}
+.tee-footer-operators-img {
+  height: auto;
+  max-height: 5.625rem;
+  width: 10rem
+}
+
 .tee-home-img {
   width: 100%;
 }
@@ -113,6 +130,9 @@ button.fr-link:hover, .tee-router-link:hover {
 }
 .tee-text-light {
   color: #929292;
+}
+.tee-text-blue {
+  color: #000091;
 }
 .tee-text-no-result {
   font-size: 2rem;
@@ -237,6 +257,40 @@ button.fr-link:hover, .tee-router-link:hover {
 } */
 
 /* RESULT DETAILS PAGE */
+.fr-tee-program-detail-img {
+  position: relative;
+}
+.fr-tee-program-detail-img > img.fr-responsive-img {
+  min-height: 100%;
+  object-fit: cover;
+}
+.fr-tee-program-detail-img-badge {
+  position: absolute;
+  top: 2em;
+  padding-left: 1em;
+}
+.fr-tee-program-notice-alert {
+  background-color: #FCA081;
+  padding: 2em 0 2em 0 !important;
+  margin: 0 -.5rem !important;
+}
+
+.tee-accordion::before {
+  box-shadow: none;
+  border-top: 1px solid #dddddd;
+}
+.tee-accordion-btn {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 4.25rem;
+  color: #161616 ;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+.tee-accordion-btn[aria-expanded=true] {
+  background-color: transparent;
+}
+
 /* check: https://css-tricks.com/css-counters-custom-list-number-styling/ */
 .fr-tee-description-list p {
   padding-left: 3rem;

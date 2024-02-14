@@ -116,7 +116,7 @@ import '@gouvfr/dsfr/dist/core/core.main.min.css'
 import { computed, onBeforeMount, ref, watch } from 'vue'
 
 import { tracksStore } from './stores/tracks'
-import { choicesStore } from './stores/choices'
+import Translation from '@/utils/translation'
 import { programsStore } from './stores/programs'
 import { navigationStore } from './stores/navigation'
 import { type ProgramData, TrackComponents, TrackId } from './types'
@@ -128,7 +128,7 @@ import Widget from '@/utils/widget'
 import { useDebugStore } from '@/stores/debug'
 import { DsfrToggleSwitch } from '@gouvminint/vue-dsfr'
 import jsonDataset from '../public/data/generated/dataset_out.json'
-import MetaEnv from '@/utils/metaEnv'
+import Config from '@/config'
 
 interface Props {
   locale?: string
@@ -141,7 +141,6 @@ interface Props {
 const props = defineProps<Props>()
 
 const tracks = tracksStore()
-const choices = choicesStore()
 const programs = programsStore()
 const nav = navigationStore()
 const debugStore = useDebugStore()
@@ -194,14 +193,13 @@ const setupGlobal = () => {
 
   // set locale and message
   const locale = props.locale ?? 'fr'
-  choices.setLocale(locale)
+  Translation.setLocale(locale)
 }
-
 onBeforeMount(() => {
   setupGlobal()
 
   // inject style link in html head if not present
-  const href = MetaEnv.isProduction ? `${MetaEnv.deployUrl}/style.css` : ''
+  const href = Config.isProduction ? `${Config.deployUrl}/style.css` : ''
   let needStyle = Widget.is
   // avoid duplicates
   const styleSheets = document.styleSheets.length
@@ -213,7 +211,7 @@ onBeforeMount(() => {
       }
     }
   }
-  if (needStyle && MetaEnv.isProduction) {
+  if (needStyle && Config.isProduction) {
     const head = document.head
     const link = document.createElement('link')
     link.type = 'text/css'
@@ -230,7 +228,7 @@ onBeforeMount(() => {
 
   // set debug mode
   // no switch for production deployment
-  debugStore.hasSwitch = MetaEnv.isDebugSwitch && props.debugSwitch
+  debugStore.hasSwitch = Config.isDebugSwitch && props.debugSwitch
   if (debugStore.hasSwitch && props.debug) {
     debugStore.is = props.debug
   }

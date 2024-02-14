@@ -19,7 +19,7 @@
     class="fr-container--fluid"
     style="background-color: #e8edff"
   >
-    <div class="fr-container fr-py-20v fr-px-20v">
+    <div class="fr-container fr-pt-10v fr-pb-20v fr-px-20v">
       <TeeHomeInfos />
     </div>
   </div>

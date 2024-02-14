@@ -7,7 +7,7 @@
       <p
         v-for="(paragraph, idx) in program.objectifs"
         :key="`description-paragraph-${idx}`"
-        class="fr-mb-6v"
+        class="fr-mb-3v"
       >
         <span class="fr-tee-description-paragraph-marker"> {{ idx + 1 }} | </span>
         <span class="fr-tee-description-paragraph-content">
@@ -22,7 +22,7 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`ProgramObjective > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import { choicesStore } from '@/stores/choices'
+import Translation from '@/utils/translation'
 import type { ProgramData } from '@/types'
 import { ProgramAidType } from '@/types'
 
@@ -38,11 +38,9 @@ const getProgramObjectiveTitle = () => {
     case ProgramAidType.train:
     case ProgramAidType.loan:
     case ProgramAidType.tax:
-      return choices.t('program.programObjective.title.inProgram')
+      return Translation.t('program.programObjective.title.inProgram')
     case ProgramAidType.fund:
-      return choices.t('program.programObjective.title.applicationSteps')
+      return Translation.t('program.programObjective.title.applicationSteps')
   }
 }
-
-const choices = choicesStore()
 </script>
