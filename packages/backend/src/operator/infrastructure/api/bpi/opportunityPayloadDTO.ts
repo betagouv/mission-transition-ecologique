@@ -8,7 +8,7 @@ export default class OpportunityPayloadDTO {
   private readonly Type = 'question' as const
   private readonly point_de_contact__c = 'Site Plateforme Etat TEE' as const
   private readonly _companySiret: string | undefined
-  private readonly _companyName: string | undefined
+  private readonly _companyName: string | undefined | null
   private readonly _companySize: number | undefined
   private readonly _phoneNumber: string
   private readonly _lastName: string
