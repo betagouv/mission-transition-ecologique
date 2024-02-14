@@ -10,7 +10,7 @@ export interface ContactDetails {
   email: string
   phoneNumber: string
   companySiret: string
-  companyName?: string
+  companyName?: string | null
   companySector?: string
   companySize?: number
 }
