@@ -1,12 +1,12 @@
 {
-  "extends": [
-    "@tsconfig/node18/tsconfig.json"
-  ],
+  "extends": "../../tsconfig.base.json",
   "include": [
     "src/**/*",
   ],
   "compilerOptions": {
+    "module": "ESNext",
     "rootDir": ".",
+    "outDir": "./build",
     "composite": true,
     "declaration": true,
     "baseUrl": ".",
@@ -14,13 +14,11 @@
     "resolveJsonModule": true,
     "target": "ESNext",
     "lib": [
-      "ESNext",
-      "DOM",
-      "DOM.Iterable"
+      "ESNext"
     ],
     "preserveValueImports": false,
     "importsNotUsedAsValues": "remove",
     "resolvePackageJsonImports": false,
-    "resolvePackageJsonExports": false,
+    "resolvePackageJsonExports": false
   }
 }

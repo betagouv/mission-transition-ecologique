@@ -6,7 +6,7 @@
   "scripts": {
     "spec-and-routes": "npx tsoa spec-and-routes",
     "build": "npx tsoa spec-and-routes && npx tsc --build --verbose",
-    "start": "node build/src/index.js",
+    "start": "node build/backend/src/index.js",
     "dev": "npx tsoa spec-and-routes && npx concurrently \"npx tsc --build --watch --verbose --preserveWatchOutput\" \"npx nodemon\" \"npx nodemon -x npx tsoa spec-and-routes\"",
     "test": "jest",
     "lint": "eslint . --fix"
