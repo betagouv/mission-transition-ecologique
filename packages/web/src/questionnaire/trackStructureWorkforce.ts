@@ -1,6 +1,5 @@
 import type { NextTrackRuleSet, Track } from '@/types'
-import { ConditionOperators, DataMappingFrom, TrackComponents, TrackId } from '@/types'
-import { Entreprise } from '@/types/publicodesObjects'
+import { ConditionOperators, DataMappingFrom, TrackComponents, TrackId, Entreprise } from '@/types'
 
 const nextExceptions: NextTrackRuleSet[] = [
   {

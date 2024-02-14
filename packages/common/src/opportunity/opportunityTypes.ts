@@ -1,8 +1,12 @@
+import type { Operators } from '@tee/data/src/generated/program'
 import { Objectives } from '@tee/data/src/type/publicodesTypes'
-import { QuestionnaireRoute } from '../infrastructure/api/brevo/types'
-import { type Operators } from '@tee/data/src/generated/program'
 
-export interface Opportunity extends ContactDetails, OpportunityDetails {}
+export type Opportunity = ContactDetails & OpportunityDetails
+
+export interface OpportunityBody {
+  opportunity: Opportunity
+  optIn: boolean
+}
 
 export interface ContactDetails {
   firstName: string
@@ -10,7 +14,7 @@ export interface ContactDetails {
   email: string
   phoneNumber: string
   companySiret: string
-  companyName?: string | null
+  companyName?: string
   companySector?: string
   companySize?: number
 }
@@ -24,14 +28,7 @@ export interface OpportunityDetails {
   otherData?: string
 }
 
-export interface OpportunityUpdateAttributes {
-  sentToOperator: boolean
-}
-
-export interface ContactId {
-  id: number
-}
-
-export interface OpportunityId {
-  id: string
+export enum QuestionnaireRoute {
+  Unknown = 'unknown',
+  Precise = 'precise'
 }

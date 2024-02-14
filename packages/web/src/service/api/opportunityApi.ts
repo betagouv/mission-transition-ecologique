@@ -1,15 +1,15 @@
-import type { OpportunityBody } from '@tee/backend/build/src/opportunity/controller/opportunityController'
 import { useTracksStore } from '@/stores/tracks'
-import { Entreprise, type ReqResp, TrackId, type WithoutNullableKeys } from '@/types'
-import type { QuestionnaireRoute } from '@tee/backend/build/src/opportunity/infrastructure/api/brevo/types'
-import type { opportunityFormType } from '@/types/opportunityFormType'
+import { Entreprise, QuestionnaireRoute, TrackId } from '@/types'
+import type { OpportunityBody, ReqResp, WithoutNullableKeys, opportunityFormType } from '@/types'
+import RequestApi from '@/service/api/requestApi'
 
-export default class OpportunityApi {
+export default class OpportunityApi extends RequestApi {
   private readonly url = '/api/opportunities'
   private readonly headers = {
     accept: 'application/json',
     'content-type': 'application/json'
   }
+
   private useTracks = useTracksStore()
 
   private _opportunityForm: WithoutNullableKeys<opportunityFormType>
@@ -18,8 +18,10 @@ export default class OpportunityApi {
     opportunityForm: opportunityFormType,
     private _programId: string
   ) {
+    super()
     this._opportunityForm = opportunityForm as WithoutNullableKeys<opportunityFormType>
   }
+
   async fetch() {
     let resp: ReqResp = {}
     try {

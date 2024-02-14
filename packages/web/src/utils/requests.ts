@@ -1,20 +1,16 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`utils.matomo > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import { CallbackMethods, type FormCallback, type ReqResp } from '@/types/index'
+import { CallbackMethods, type FormCallback, type ReqResp } from '@/types'
 import { remapItem } from './helpers'
 import Translation from '@/utils/translation'
+import RequestApi from '@/service/api/requestApi'
 
 export const buildHeaders = (callback: FormCallback) => {
   return { ...callback.headers }
 }
 
-export const sendApiRequest = async (
-  callback: FormCallback,
-  formData: any,
-  trackValues: any[] = [],
-  props: any = undefined
-) => {
+export const sendApiRequest = async (callback: FormCallback, formData: any, trackValues: any[] = [], props: any = undefined) => {
   const method = callback.method
   const headers = buildHeaders(callback)
 
@@ -23,7 +19,7 @@ export const sendApiRequest = async (
   let pathData: any = callback.dataPath || {}
   // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
   pathData = remapItem(pathData, dataMapping, formData, trackValues, props, undefined, [], Translation.lang)
-  const url = replacePlaceholders(callback.url, pathData as Record<string, string>)
+  const url = RequestApi.buildUrl(callback.url, pathData as Record<string, string>)
 
   let bodyData: any = callback.dataBody || callback.dataStructure || {}
   // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
@@ -33,29 +29,7 @@ export const sendApiRequest = async (
   return await sendRequest(url, method, headers, body)
 }
 
-const replacePlaceholders = (url: string, dataPath?: Record<string, string>): string => {
-  if (!dataPath) {
-    return url
-  }
-
-  for (const placeholderName in dataPath) {
-    const placeholderData = dataPath[placeholderName]
-    url = replacePlaceholder(url, placeholderName, placeholderData)
-  }
-
-  return url
-}
-
-const replacePlaceholder = (url: string, placeholderName: string, placeholderData: string): string => {
-  return url.replace('{' + placeholderName + '}', placeholderData)
-}
-
-export const sendRequest = async (
-  url: string,
-  method: CallbackMethods,
-  headers: HeadersInit,
-  body: BodyInit
-): Promise<ReqResp> => {
+export const sendRequest = async (url: string, method: CallbackMethods, headers: HeadersInit, body: BodyInit): Promise<ReqResp> => {
   let resp: ReqResp = {}
   try {
     const response = await fetch(url, {
