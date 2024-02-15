@@ -35,6 +35,6 @@
     "importsNotUsedAsValues": "remove",
     "verbatimModuleSyntax": true,
     "resolvePackageJsonImports": false,
-    "resolvePackageJsonExports": false,
+    "resolvePackageJsonExports": false
   }
 }

@@ -1,7 +1,7 @@
 <template>
   <!-- DEBUGGING -->
   <div
-    v-if="debug"
+    v-if="useDebug.is"
     class="vue-debug"
   >
     <h5>DEBUG - TeeAppFooter</h5>
@@ -174,6 +174,14 @@
 import Translation from '@/utils/translation'
 import { RouteName } from '@/types/routeType'
 import operators from '@/utils/operators'
+import { useDebugStore } from '@/stores/debug'
+
+interface Props {
+  stickToBottom?: boolean
+}
+defineProps<Props>()
+
+const useDebug = useDebugStore()
 
 const sourceCodeHref = 'https://github.com/betagouv/transition-ecologique-entreprises-widget/tree/main'
 const licenceHref = 'https://github.com/betagouv/transition-ecologique-entreprises-widget/blob/main/LICENSE'
@@ -243,11 +251,4 @@ const mainLinks = [
     icon: 'fr-icon-chat-3-line'
   }
 ]
-
-interface Props {
-  stickToBottom?: boolean
-  debug?: boolean
-}
-defineProps<Props>()
 </script>
-@/utils/operators

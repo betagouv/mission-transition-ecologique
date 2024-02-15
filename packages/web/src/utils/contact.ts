@@ -1,7 +1,7 @@
-import MetaEnv from '@/utils/metaEnv'
+import Config from '@/config'
 
 export default class Contact {
-  private static readonly _email: string = MetaEnv.contactEmail
+  private static readonly _email: string = Config.contactEmail
 
   static get email(): string {
     return this._email

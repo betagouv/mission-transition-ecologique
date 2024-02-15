@@ -27,9 +27,9 @@
 
 import Translation from '@/utils/translation'
 import type { Translations } from '@/types'
-import MetaEnv from '@/utils/metaEnv'
+import Config from '@/config'
 
-const publicPath = MetaEnv.publicPath
+const publicPath = Config.publicPath
 
 interface Props {
   image?: string

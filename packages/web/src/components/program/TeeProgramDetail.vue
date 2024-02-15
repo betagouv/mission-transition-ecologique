@@ -37,9 +37,9 @@
         </button>
 
         <!-- PROGRAM DETAILS -->
-        <div class="fr-grid-row fr-grid-row--gutters fr-mb-10v">
+        <div class="fr-grid-row fr-grid-row--gutters fr-mb-8v">
           <!-- IMAGE -->
-          <div class="fr-col-md-4 fr-col-lg-3 fr-col-xl-3 fr-col-sm-hide fr-text-right fr-tee-program-detail-img">
+          <div class="fr-col-md-4 fr-col-lg-3 fr-col-xl-3 fr-col-sm-12 fr-text-right fr-tee-program-detail-img">
             <img
               class="fr-responsive-img"
               :src="`${publicPath}${program?.illustration}`"
@@ -73,6 +73,7 @@
               v-html="program?.promesse"
             ></h2>
             <p
+              class="fr-mb-12v"
               style="color: #000091"
               v-html="program?.description"
             ></p>
@@ -101,7 +102,7 @@
         <!-- PROGRAM INFOS : PROVIDERS / TYPE / START / END -->
         <div
           v-if="trackConfig.config?.showProgramInfos"
-          class="fr-grid-row fr-grid-row--gutters fr-mb-5v"
+          class="fr-grid-row fr-grid-row--gutters fr-mb-8v"
         >
           <!-- PROGRAM GEO ZONES -->
           <!-- <div
@@ -173,17 +174,6 @@
             />
           </div> -->
 
-          <!-- PROGRAM TYPE -->
-          <div :class="columnTiles">
-            <TeeTile
-              class="tee-no-hover"
-              :title="Translation.t('program.programType')"
-              :image-path="`${publicPath}images/TEE-typefinance.svg`"
-              :description="program?.[`nature de l'aide`]"
-            >
-            </TeeTile>
-          </div>
-
           <!-- PROGRAM DURATION -->
           <div
             v-if="program?.[`durée de l'accompagnement`]"
@@ -236,16 +226,27 @@
         </div>
 
         <!-- ELIGIBILITY -->
-        <ProgramEligibility
-          v-if="program"
-          :program="program"
-        ></ProgramEligibility>
+        <ProgramAccordion
+          v-if="program && program['description longue']"
+          :accordion-id="`${program.id}-eligibility`"
+          :title="Translation.t('program.programAmIEligible')"
+        >
+          <template #content>
+            <ProgramEligibility :program="program"></ProgramEligibility>
+          </template>
+        </ProgramAccordion>
 
         <!-- LONG DESCRIPTION -->
-        <ProgramLongDescription
+        <ProgramAccordion
           v-if="program && program['description longue']"
-          :program="program"
-        ></ProgramLongDescription>
+          :accordion-id="`${program.id}-long-description`"
+          :title="Translation.t('program.programKnowMore')"
+        >
+          <template #content>
+            <ProgramLongDescription :program="program"></ProgramLongDescription>
+          </template>
+        </ProgramAccordion>
+        <hr class="fr-mb-9v fr-pb-1v" />
       </div>
     </div>
 
@@ -274,8 +275,9 @@ import { ref, computed, onBeforeMount } from 'vue'
 
 import TeeTile from '../TeeTile.vue'
 import TeeForm from '../TeeForm.vue'
-import ProgramEligibility from '@/components/program/ProgramEligibility.vue'
 import ProgramObjective from '@/components/program/ProgramObjective.vue'
+import ProgramAccordion from '@/components/program/ProgramAccordion.vue'
+import ProgramEligibility from '@/components/program/ProgramEligibility.vue'
 import ProgramLongDescription from '@/components/program/ProgramLongDescription.vue'
 
 import Translation from '@/utils/translation'
@@ -287,7 +289,7 @@ import type { TrackId, ProgramData } from '@/types'
 import { useRoute, useRouter } from 'vue-router'
 import { RouteName } from '@/types/routeType'
 import Widget from '@/utils/widget'
-import MetaEnv from '@/utils/metaEnv'
+import Config from '@/config'
 import Matomo from '@/utils/matomo'
 import Program from '@/utils/program'
 
@@ -304,7 +306,7 @@ const TeeProgramFormContainer = ref<HTMLElement | null | undefined>(null)
 const blockColor = '#000091'
 const columnTiles = ref<string>('fr-col')
 
-const publicPath = MetaEnv.publicPath
+const publicPath = Config.publicPath
 
 interface Props {
   programId: string | number

@@ -21,7 +21,7 @@ export const mobilityEnergy: Track = {
       title: { fr: 'Essence ou gasoil' },
       label: { fr: '⛽️ Essence ou gasoil' },
       next: {
-        default: TrackId.WastesStake
+        default: TrackId.MobilityWishes
       }
     },
     {
@@ -29,7 +29,7 @@ export const mobilityEnergy: Track = {
       title: { fr: 'Electrique' },
       label: { fr: '⚡️ Electrique' },
       next: {
-        default: TrackId.WastesStake
+        default: TrackId.MobilityWishes
       }
     },
     {
@@ -37,7 +37,7 @@ export const mobilityEnergy: Track = {
       title: { fr: 'Hybride' },
       label: { fr: '⛽️⚡️ Hybride' },
       next: {
-        default: TrackId.WastesStake
+        default: TrackId.MobilityWishes
       }
     },
     {
@@ -46,7 +46,7 @@ export const mobilityEnergy: Track = {
       label: { fr: 'Autre : ' },
       hasInput: HasInputOptions.Text,
       next: {
-        default: TrackId.WastesStake
+        default: TrackId.MobilityWishes
       }
     },
     {
@@ -54,7 +54,7 @@ export const mobilityEnergy: Track = {
       title: { fr: 'Je ne sais pas' },
       label: { fr: 'Je ne sais pas' },
       next: {
-        default: TrackId.WastesStake
+        default: TrackId.MobilityWishes
       }
     }
   ]

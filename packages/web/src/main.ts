@@ -1,13 +1,16 @@
-import { type Component, createApp } from 'vue'
+import { type App, type Component, createApp } from 'vue'
 import { createPinia } from 'pinia'
 import { router } from '@/router'
 import WebApp from '@/WebApp.vue'
 import VueDsfr from '@gouvminint/vue-dsfr'
-import { listIcons } from '@/icons'
+import { listIcons } from '@/plugin/icons'
+import Sentry from '@/plugin/sentry'
 
 const store = createPinia()
 
-const app = createApp(WebApp as Component)
+const app: App = createApp(WebApp as Component)
+
+Sentry.init(app)
 
 app.use(VueDsfr, { icons: listIcons() })
 app.use(store)
