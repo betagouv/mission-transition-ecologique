@@ -1,6 +1,8 @@
 import { AxiosRequestConfig, Method } from 'axios'
 import { Operators } from '@tee/data/src/generated/program'
 
+export { QuestionnaireRoute } from '../../../../../../common/src/questionnaire/types'
+
 export enum HttpMethod {
   GET = 'get',
   POST = 'post',

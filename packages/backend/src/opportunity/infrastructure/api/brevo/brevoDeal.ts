@@ -3,9 +3,7 @@ import { Maybe, Result } from 'true-myth'
 import { OpportunityRepository } from '../../../domain/spi'
 import { OpportunityId, OpportunityDetails, OpportunityUpdateAttributes } from '../../../domain/types'
 import BrevoAPI from './brevoAPI'
-import { DealAttributes, BrevoQuestionnaireRoute, DealUpdateAttributes } from './types'
-
-import { QuestionnaireRoute } from '@tee/common/src/questionnaire/types'
+import { DealAttributes, BrevoQuestionnaireRoute, QuestionnaireRoute, DealUpdateAttributes } from './types'
 
 // "Opportunities" are called "Deals" in Brevo
 
