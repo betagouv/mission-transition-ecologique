@@ -7,7 +7,7 @@ import { defineStore } from 'pinia'
 import type { ProgramData, TrackId, TrackOptions, UsedTrack } from '@/types/index'
 import { filterPrograms as filterWithPublicodes, sortPrograms } from '@tee/backend/src/program/application/sortAndFilterPrograms'
 import type { QuestionnaireData } from '@tee/backend/src/program/domain/types'
-import { QuestionnaireRoute } from '@/types/index'
+import { QuestionnaireRoute } from '@tee/common/src/questionnaire/types'
 
 export const programsStore = defineStore('programs', () => {
   const programs = ref<ProgramData[]>()

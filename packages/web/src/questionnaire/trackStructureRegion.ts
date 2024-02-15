@@ -2,7 +2,8 @@
 // console.log(`questionnaire.trackStructureRegion > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import type { Track } from '@/types'
-import { TrackComponents, TrackId, ConditionOperators, DataMappingFrom, QuestionnaireRoute } from '@/types'
+import { TrackComponents, TrackId, ConditionOperators, DataMappingFrom } from '@/types'
+import { QuestionnaireRoute } from '@tee/common/src/questionnaire/types'
 import type { NextTrackRuleSet } from '@/types'
 
 // note : based on authorized values in "/packages/data/common/interface.yaml"

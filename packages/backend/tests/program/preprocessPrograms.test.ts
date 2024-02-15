@@ -1,4 +1,5 @@
-import { ProgramData, QuestionnaireRoute } from '@tee/web/src/types'
+import { ProgramData } from '@tee/web/src/types'
+import { QuestionnaireRoute } from '@tee/common/src/questionnaire/types'
 import { Entry, setObjectProperty } from '../../src/common/objects'
 import { PublicodesKeys, PublicodesQuestionnaireRoute, QuestionnaireData } from '../../src/program/domain/types'
 import { makeProgramHelper } from './testing'

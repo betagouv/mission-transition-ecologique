@@ -1,5 +1,6 @@
 import type { ProgramData } from '@tee/web/src/types'
-import { ProgramAidType, QuestionnaireRoute } from '@tee/web/src/types'
+import { ProgramAidType } from '@tee/web/src/types'
+import { QuestionnaireRoute } from '@tee/common/src/questionnaire/types'
 
 // sorts the programs according to a "sortProfile", which currently
 // only depends on the questionnaireRoute

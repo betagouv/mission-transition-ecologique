@@ -5,13 +5,7 @@ import { OpportunityId, OpportunityDetails, OpportunityUpdateAttributes } from '
 import BrevoAPI from './brevoAPI'
 import { DealAttributes, BrevoQuestionnaireRoute, DealUpdateAttributes } from './types'
 
-// Why does this not work ???
-// import { QuestionnaireRoute } from '@tee/web/src/types'
-
-enum QuestionnaireRoute {
-  NoSpecificGoal = 'no_specific_goal',
-  SpecificGoal = 'specific_goal'
-}
+import { QuestionnaireRoute } from '@tee/common/src/questionnaire/types'
 
 // "Opportunities" are called "Deals" in Brevo
 
