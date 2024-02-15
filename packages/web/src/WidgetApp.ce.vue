@@ -97,7 +97,7 @@
 
     <!-- DETAIL RESULT CARD -->
     <template v-if="programs.programDetail">
-      <TeeProgramDetail
+      <ProgramDetail
         :program-id="programs.programDetail"
         :track-id="programs.programDetailConfig"
       />
@@ -117,13 +117,13 @@ import { computed, onBeforeMount, ref, watch } from 'vue'
 
 import { useTracksStore } from './stores/tracks'
 import Translation from '@/utils/translation'
-import { programsStore } from './stores/programs'
+import { useProgramsStore } from './stores/programs'
 import { navigationStore } from './stores/navigation'
 import { type ProgramData, TrackComponents, TrackId } from './types'
 import TeeMatomo from './components/TeeMatomo.vue'
 import TeeTrack from './components/tracks/TeeTrack.vue'
 import TeeSidebar from './components/TeeSidebar.vue'
-import TeeProgramDetail from './components/program/TeeProgramDetail.vue'
+import ProgramDetail from './components/program/detail/ProgramDetail.vue'
 import Widget from '@/utils/widget'
 import { useDebugStore } from '@/stores/debug'
 import { DsfrToggleSwitch } from '@gouvminint/vue-dsfr'
@@ -141,7 +141,7 @@ interface Props {
 const props = defineProps<Props>()
 
 const tracks = useTracksStore()
-const programs = programsStore()
+const programs = useProgramsStore()
 const nav = navigationStore()
 const debugStore = useDebugStore()
 

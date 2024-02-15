@@ -57,7 +57,7 @@
     >
       <div class="fr-grid-row fr-grid-row-gutters">
         <div class="fr-col">
-          <TeeProgramDetail
+          <ProgramDetail
             :program-id="programs.programDetail"
             :track-id="programs.programDetailConfig"
           />
@@ -72,12 +72,12 @@ import { computed, onBeforeMount, onMounted, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
 import { useTracksStore } from '@/stores/tracks'
-import { programsStore } from '@/stores/programs'
+import { useProgramsStore } from '@/stores/programs'
 import { navigationStore } from '@/stores/navigation'
 import { TrackComponents, TrackId } from '@/types'
 import TeeTrack from '@/components/tracks/TeeTrack.vue'
 import TeeSidebar from '@/components/TeeSidebar.vue'
-import TeeProgramDetail from '@/components/program/TeeProgramDetail.vue'
+import ProgramDetail from '@/components/program/detail/ProgramDetail.vue'
 import { useDebugStore } from '@/stores/debug'
 
 interface Props {
@@ -89,7 +89,7 @@ const props = defineProps<Props>()
 const trackElement = ref<HTMLElement | null>(null)
 
 const tracks = useTracksStore()
-const programs = programsStore()
+const programs = useProgramsStore()
 const nav = navigationStore()
 const debugStore = useDebugStore()
 

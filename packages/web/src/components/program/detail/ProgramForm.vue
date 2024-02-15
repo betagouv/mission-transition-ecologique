@@ -160,7 +160,7 @@
       >
         <DsfrButton
           :label="Translation.t('send')"
-          :disabled="!canSaveFrom"
+          :disabled="!isValidForm"
           icon="ri-arrow-right-line"
           icon-right
           :loading="isLoading"
@@ -177,7 +177,7 @@
   >
     <!-- MESSAGE IF ERROR-->
     <div
-      v-if="!isValidResponse"
+      v-if="!hasValidResponse"
       class="fr-text-center"
     >
       <p class="tee-form-response tee-form-response-error">
@@ -203,7 +203,7 @@
 
     <!-- MESSAGE IF 200 -->
     <div
-      v-if="isValidResponse"
+      v-if="hasValidResponse"
       class="fr-text-center"
     >
       <p class="tee-form-response tee-form-response-blue">
@@ -230,7 +230,7 @@
 
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import { type FormOptions, type ProgramData, type ReqResp, TrackId } from '@/types'
+import { type ProgramData, type ReqResp, TrackId } from '@/types'
 import { useTracksStore } from '@/stores/tracks'
 import Translation from '@/utils/translation'
 import DsfrButton from '@/components/button/DsfrButton.vue'
@@ -247,8 +247,6 @@ const route = useRoute()
 const tracks = useTracksStore()
 
 interface Props {
-  trackId: TrackId
-  formOptions: FormOptions
   program: ProgramData
   formContainerRef: HTMLElement | null | undefined
 }
@@ -275,7 +273,7 @@ const formIsSent = ref<boolean>(false)
 const requestResponse = ref<ReqResp>()
 const isLoading = ref<boolean>(false)
 
-const canSaveFrom = computed(() => {
+const isValidForm = computed(() => {
   const isValid = []
   for (const key in opportunityForm.value) {
     if (opportunityForm.value[key].required) {
@@ -291,18 +289,17 @@ const canSaveFrom = computed(() => {
   return isValid.every((v) => v)
 })
 
-const isValidResponse = computed(() => {
+const hasValidResponse = computed(() => {
   return !requestResponse.value || requestResponse.value.status === 200 || requestResponse.value.status === 201
 })
 
 const getMailTo = (): string => {
-  if (props.trackId === TrackId.Results && opportunityForm.value) {
-    const needsValue = 'needs' in opportunityForm.value && opportunityForm.value.needs.value ? opportunityForm.value.needs.value : ''
-    const nameValue = 'name' in opportunityForm.value && opportunityForm.value.name.value ? opportunityForm.value.name.value : ''
-    const surnameValue =
-      'surname' in opportunityForm.value && opportunityForm.value.surname.value ? opportunityForm.value.surname.value : ''
-    const telValue = 'tel' in opportunityForm.value && opportunityForm.value.tel.value ? opportunityForm.value.tel.value : ''
-    const siretValue = 'siret' in opportunityForm.value && opportunityForm.value.siret.value ? opportunityForm.value.siret.value : ''
+  if (opportunityForm.value) {
+    const needsValue = opportunityForm.value.needs.value ? opportunityForm.value.needs.value : ''
+    const nameValue = opportunityForm.value.name.value ? opportunityForm.value.name.value : ''
+    const surnameValue = opportunityForm.value.surname.value ? opportunityForm.value.surname.value : ''
+    const telValue = opportunityForm.value.tel.value ? opportunityForm.value.tel.value : ''
+    const siretValue = opportunityForm.value.siret.value ? opportunityForm.value.siret.value : ''
     return Contact.getMailtoUrl(
       Translation.t('form.errorEmail.subject', { program: props.program.titre }),
       `${needsValue}
@@ -333,7 +330,7 @@ const saveOpportunityForm = async () => {
     requestResponse.value = await opportunity.fetch()
 
     // analytics / send event
-    Matomo.sendEvent(props.trackId, route.name === RouteName.CatalogDetail ? 'send_form_catalog' : 'send_form')
+    Matomo.sendEvent(TrackId.Results, route.name === RouteName.CatalogDetail ? 'send_form_catalog' : 'send_form')
   } finally {
     isLoading.value = false
     formIsSent.value = true

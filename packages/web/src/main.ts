@@ -5,6 +5,7 @@ import WebApp from '@/WebApp.vue'
 import VueDsfr from '@gouvminint/vue-dsfr'
 import { listIcons } from '@/plugin/icons'
 import Sentry from '@/plugin/sentry'
+import '@gouvminint/vue-dsfr/styles'
 
 const store = createPinia()
 

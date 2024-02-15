@@ -178,7 +178,7 @@
 
 import { computed, onBeforeMount, ref } from 'vue'
 import Translation from '@/utils/translation'
-import { programsStore } from '@/stores/programs'
+import { useProgramsStore } from '@/stores/programs'
 import { consolidateAmounts, getFrom, scrollToTop } from '@/utils/helpers'
 import TeeResultsFilter from './TeeResultsFilter.vue'
 import TeeNoResults from './TeeNoResults.vue'
@@ -192,7 +192,7 @@ import { useDebugStore } from '@/stores/debug'
 import Config from '@/config'
 import Matomo from '@/utils/matomo'
 
-const programs = programsStore()
+const programs = useProgramsStore()
 const navigation = navigationStore()
 const debugStore = useDebugStore()
 
@@ -210,7 +210,7 @@ const props = defineProps<Props>()
 
 const publicPath = Config.publicPath
 
-const filteredPrograms: ProgramData[] | undefined = programs.filterPrograms(props.tracksResults)
+const filteredPrograms: ProgramData[] | undefined = programs.filterPrograms()
 
 const reFilteredPrograms = computed(() => {
   return filteredPrograms?.filter((prog: ProgramData) => {

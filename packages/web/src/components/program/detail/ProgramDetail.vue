@@ -257,8 +257,6 @@
     >
       <ProgramForm
         v-if="program"
-        :track-id="trackConfig.id"
-        :form-options="trackConfig.form"
         :program="program"
         :form-container-ref="TeeProgramFormContainer"
       />
@@ -272,16 +270,16 @@
 
 import { ref, computed, onBeforeMount } from 'vue'
 
-import TeeTile from '../TeeTile.vue'
-import ProgramObjective from '@/components/program/ProgramObjective.vue'
-import ProgramAccordion from '@/components/program/ProgramAccordion.vue'
-import ProgramEligibility from '@/components/program/ProgramEligibility.vue'
-import ProgramLongDescription from '@/components/program/ProgramLongDescription.vue'
-import ProgramForm from '@/components/program/ProgramForm.vue'
+import TeeTile from '../../TeeTile.vue'
+import ProgramObjective from '@/components/program/detail/ProgramObjective.vue'
+import ProgramAccordion from '@/components/program/detail/ProgramAccordion.vue'
+import ProgramEligibility from '@/components/program/detail/ProgramEligibility.vue'
+import ProgramLongDescription from '@/components/program/detail/ProgramLongDescription.vue'
+import ProgramForm from '@/components/program/detail/ProgramForm.vue'
 
 import Translation from '@/utils/translation'
 import { useTracksStore } from '@/stores/tracks'
-import { programsStore } from '@/stores/programs'
+import { useProgramsStore } from '@/stores/programs'
 import { navigationStore } from '@/stores/navigation'
 import { scrollToId } from '@/utils/helpers'
 import type { TrackId, ProgramData } from '@/types'
@@ -293,7 +291,7 @@ import Matomo from '@/utils/matomo'
 import Program from '@/utils/program'
 
 const tracks = useTracksStore()
-const programs = programsStore()
+const programs = useProgramsStore()
 const nav = navigationStore()
 const route = useRoute()
 const router = useRouter()

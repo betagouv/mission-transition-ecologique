@@ -419,8 +419,16 @@
 
 import { computed, ref, toRaw, watch } from 'vue'
 import type { DsfrButton } from '@gouvminint/vue-dsfr'
-import type { ColsOptions, NextTrackRuleSet, Track, TrackOptionsUnion, UsedTrack } from '@/types'
-import { isTrackOptionsInput, TrackComponents } from '@/types'
+import {
+  type ColsOptions,
+  isTrackOptionsInput,
+  type NextTrackRuleSet,
+  type Track,
+  TrackComponents,
+  TrackId,
+  type TrackOptionsUnion,
+  type UsedTrack
+} from '@/types'
 import { remapItem, scrollToTop } from '@/utils/helpers'
 import { CheckNextTrackRules } from '@/utils/conditions'
 import TeeTrackInput from './TeeTrackInput.vue'
@@ -484,7 +492,7 @@ const optionsArray = track?.options?.filter((o): o is TrackOptionsUnion => !o.di
 
 // computed
 const isTrackResults = computed(() => {
-  return track?.interface?.component === TrackComponents.Results
+  return track?.id === TrackId.Results
 })
 const selectionValues = computed(() => {
   if (selectedOptions.value.length === 0) {

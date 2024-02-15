@@ -10,12 +10,13 @@ import TeeAccessibilityPage from '../pages/TeeAccessibilityPage.vue'
 import TeePersonalDataPage from '../pages/TeePersonalDataPage.vue'
 import ChatAdvisorPage from '@/pages/ChatAdvisorPage.vue'
 import TeeQuestionnaire from '@/components/TeeQuestionnaire.vue'
-import TeeProgramDetail from '@/components/program/TeeProgramDetail.vue'
+import ProgramDetail from '@/components/program/detail/ProgramDetail.vue'
 import { RouteName } from '@/types/routeType'
 import { redirections } from '@/router/redirection'
 import { TrackId } from '@/types'
 import type { Component } from 'vue'
 import { resetDetailProgram, resetTrackStore, setHelpAsTrackSeed, setResultsAsTrackSeed } from '@/router/hook'
+import ProgramList from '@/components/program/list/ProgramList.vue'
 
 export const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
@@ -57,15 +58,12 @@ export const router = createRouter({
         {
           path: '',
           name: RouteName.Catalog,
-          component: TeeQuestionnaire as Component,
-          props: {
-            seed: TrackId.Results
-          }
+          component: ProgramList as Component
         },
         {
           path: ':programId',
           name: RouteName.CatalogDetail,
-          component: TeeProgramDetail as Component,
+          component: ProgramDetail as Component,
           props: (route) => ({
             programId: route.params.programId as string,
             trackId: TrackId.Results

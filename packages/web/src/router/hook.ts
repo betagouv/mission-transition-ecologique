@@ -1,5 +1,5 @@
 import { useTracksStore } from '@/stores/tracks'
-import { programsStore } from '@/stores/programs'
+import { useProgramsStore } from '@/stores/programs'
 import { TrackId } from '@/types'
 import { navigationStore } from '@/stores/navigation'
 import type { NavigationGuardNext, RouteLocationNormalized } from 'vue-router'
@@ -11,7 +11,7 @@ export const resetTrackStore = (to: RouteLocationNormalized, from: RouteLocation
 }
 export const resetDetailProgram = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
   navigationStore().resetQueries()
-  programsStore().resetDetailResult()
+  useProgramsStore().resetDetailResult()
   next()
 }
 export const setHelpAsTrackSeed = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
