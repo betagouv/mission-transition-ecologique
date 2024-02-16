@@ -3,6 +3,7 @@
 
 import type { Track } from '@/types'
 import { TrackComponents, TrackId, ConditionOperators, DataMappingFrom } from '@/types'
+import { QuestionnaireRoute } from '@tee/common/src/questionnaire/types'
 import type { NextTrackRuleSet } from '@/types'
 
 // note : based on authorized values in "/packages/data/common/interface.yaml"
@@ -42,17 +43,17 @@ const regionsList = [
 
 const nextExceptions: NextTrackRuleSet[] = [
   {
-    help: "Goes to track_structure_building_property if : user_help == 'unknown' (newbie)",
+    help: "Goes to track_structure_building_property if : questionnaire_route == 'no_specific_goal' (newbie)",
     rules: [
       {
         from: DataMappingFrom.UsedTracks,
-        id: 'user_help',
-        dataField: 'user_help',
+        id: 'questionnaire_route',
+        dataField: 'questionnaire_route',
         conditions: [
           {
-            type: 'user_help',
+            type: 'questionnaire_route',
             operator: ConditionOperators.is,
-            value: 'unknown'
+            value: QuestionnaireRoute.NoSpecificGoal
           }
         ]
       }
@@ -60,17 +61,17 @@ const nextExceptions: NextTrackRuleSet[] = [
     next: { default: TrackId.BuildingProperty }
   },
   {
-    help: "Goes to track_goals if : user_help == 'precise' (pro)",
+    help: "Goes to track_goals if : questionnaire_route == 'specific_goal' (pro)",
     rules: [
       {
         from: DataMappingFrom.UsedTracks,
-        id: 'user_help',
-        dataField: 'user_help',
+        id: 'questionnaire_route',
+        dataField: 'questionnaire_route',
         conditions: [
           {
-            type: 'user_help',
+            type: 'questionnaire_route',
             operator: ConditionOperators.is,
-            value: 'precise'
+            value: QuestionnaireRoute.SpecificGoal
           }
         ]
       }

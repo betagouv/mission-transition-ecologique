@@ -1,5 +1,5 @@
 import { Objectives } from '@tee/web/src/types'
-import { QuestionnaireRoute } from '../infrastructure/api/brevo/types'
+import { QuestionnaireRoute } from '@tee/common/src/questionnaire/types'
 import { type Operators } from '@tee/data/src/generated/program'
 
 export interface Opportunity extends ContactDetails, OpportunityDetails {}

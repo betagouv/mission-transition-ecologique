@@ -1,5 +1,5 @@
 import { needs } from './trackNeeds'
-import { help } from './trackHelp'
+import { questionnaireRoute } from './trackQuestionnaireRoute'
 
 import { siret } from './trackStructureSiret'
 import { workforce } from './trackStructureWorkforce'
@@ -32,7 +32,7 @@ import type { Track } from '@/types'
 
 export const tracks: Track[] = [
   needs,
-  help,
+  questionnaireRoute,
   siret,
   // sizes,
   workforce,
