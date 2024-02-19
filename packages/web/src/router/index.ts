@@ -45,7 +45,7 @@ export const router = createRouter({
           name: 'questionnaire',
           component: TeeQuestionnaire as Component,
           props: {
-            seed: TrackId.Help
+            seed: TrackId.QuestionnaireRoute
           }
         }
       ]

@@ -15,8 +15,7 @@ export enum Entreprise {
 }
 
 export enum Questionnaire {
-  priorityObjective = 'questionnaire . objectif prioritaire . est ',
-  path = 'questionnaire . parcours'
+  priorityObjective = 'questionnaire . objectif prioritaire . est '
 }
 
 export enum Sector {
@@ -134,8 +133,4 @@ export const allTransportModes = {
   [TransportModes.Other]: YesNo.No,
   [TransportModes.Train]: YesNo.No,
   [TransportModes.Truck]: YesNo.No
-}
-export enum PublicodesTrackHelpValue {
-  Unknown = 'je ne sais pas par où commencer',
-  Precise = 'objectif précis'
 }

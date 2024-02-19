@@ -1,6 +1,8 @@
 import { AxiosRequestConfig, Method } from 'axios'
 import { Operators } from '@tee/data/src/generated/program'
 
+export { QuestionnaireRoute } from '../../../../../../common/src/questionnaire/types'
+
 export enum HttpMethod {
   GET = 'get',
   POST = 'post',
@@ -48,11 +50,6 @@ export interface ContactAttributes {
   DENOMINATION?: string
   SECTEUR_D_ACTIVITE?: string
   TAILLE?: BrevoCompanySize
-}
-
-export enum QuestionnaireRoute {
-  Unknown = 'unknown',
-  Precise = 'precise'
 }
 
 export enum BrevoQuestionnaireRoute {

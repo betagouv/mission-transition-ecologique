@@ -1,5 +1,6 @@
 import type { NextTrackRuleSet, Track } from '@/types'
 import { ConditionOperators, DataMappingFrom, TrackComponents, TrackId, Entreprise } from '@/types'
+import { QuestionnaireRoute } from '@tee/common/src/questionnaire/types'
 
 const nextExceptions: NextTrackRuleSet[] = [
   {
@@ -20,7 +21,7 @@ const nextExceptions: NextTrackRuleSet[] = [
     next: { default: TrackId.Sectors }
   },
   {
-    help: "Goes to track_structure_building_property if : has infos about codeNaf AND user_help == 'unknown' (newbie)",
+    help: "Goes to track_structure_building_property if : has infos about codeNaf AND questionnaire_route == 'no_specific_goal' (newbie)",
     rules: [
       {
         from: DataMappingFrom.UsedTracks,
@@ -35,13 +36,13 @@ const nextExceptions: NextTrackRuleSet[] = [
       },
       {
         from: DataMappingFrom.UsedTracks,
-        id: 'user_help',
-        dataField: 'user_help',
+        id: 'questionnaire_route',
+        dataField: 'questionnaire_route',
         conditions: [
           {
-            type: 'user_help',
+            type: 'questionnaire_route',
             operator: ConditionOperators.is,
-            value: 'unknown'
+            value: QuestionnaireRoute.NoSpecificGoal
           }
         ]
       }
@@ -49,7 +50,7 @@ const nextExceptions: NextTrackRuleSet[] = [
     next: { default: TrackId.BuildingProperty }
   },
   {
-    help: "Goes to track_goals if : have infos about sector AND user_help == 'precise' (pro)",
+    help: "Goes to track_goals if : have infos about sector AND questionnaire_route == 'specific_goal' (pro)",
     rules: [
       {
         from: DataMappingFrom.UsedTracks,
@@ -64,13 +65,13 @@ const nextExceptions: NextTrackRuleSet[] = [
       },
       {
         from: DataMappingFrom.UsedTracks,
-        id: 'user_help',
-        dataField: 'user_help',
+        id: 'questionnaire_route',
+        dataField: 'questionnaire_route',
         conditions: [
           {
-            type: 'user_help',
+            type: 'questionnaire_route',
             operator: ConditionOperators.is,
-            value: 'precise'
+            value: QuestionnaireRoute.SpecificGoal
           }
         ]
       }

@@ -1,6 +1,7 @@
 import { sortPrograms } from '@tee/backend/src/program/domain/sortPrograms'
-import type { ProgramData } from '@tee/web/src/types'
-import { ProgramAidType, TrackHelpValue } from '@tee/web/src/types'
+import { type ProgramData } from '@tee/web/src/types'
+import { ProgramAidType } from '@tee/web/src/types'
+import { QuestionnaireRoute } from '@tee/common/src/questionnaire/types'
 import { makeProgramHelper } from './testing'
 
 const makeProgram = (id: string, nature: ProgramAidType, cost: string = '') =>
@@ -19,11 +20,11 @@ EXPECT that the programs respect a set of given rules
     name: string
     programs: ProgramData[]
     expectedIdOrder: string[]
-    questionnaireRoute?: TrackHelpValue
+    questionnaireRoute?: QuestionnaireRoute
   }
 
   // test helper
-  const addQuestionnaireRoute = (questionnaireRoute: TrackHelpValue, testCases: TestCase[]): TestCase[] => {
+  const addQuestionnaireRoute = (questionnaireRoute: QuestionnaireRoute, testCases: TestCase[]): TestCase[] => {
     return testCases.map((testCase) => {
       testCase.questionnaireRoute = questionnaireRoute
       return testCase
@@ -145,10 +146,10 @@ EXPECT that the programs respect a set of given rules
   ]
 
   const allTestCases = [
-    ...addQuestionnaireRoute(TrackHelpValue.Unknown, testCasesCommon),
-    ...addQuestionnaireRoute(TrackHelpValue.Precise, testCasesCommon),
-    ...addQuestionnaireRoute(TrackHelpValue.Unknown, testCasesNoSpecificGoal),
-    ...addQuestionnaireRoute(TrackHelpValue.Precise, testCasesSpecificGoal)
+    ...addQuestionnaireRoute(QuestionnaireRoute.NoSpecificGoal, testCasesCommon),
+    ...addQuestionnaireRoute(QuestionnaireRoute.SpecificGoal, testCasesCommon),
+    ...addQuestionnaireRoute(QuestionnaireRoute.NoSpecificGoal, testCasesNoSpecificGoal),
+    ...addQuestionnaireRoute(QuestionnaireRoute.SpecificGoal, testCasesSpecificGoal)
   ]
 
   allTestCases.map((tc) => {
