@@ -12,7 +12,7 @@ const rulesBoilerplate = {
   [FILTERING_RULE_NAME]: 'entreprise . effectif > 0'
 }
 
-const makeProgram = (rules: object) => makeProgramHelper({ rules: rules })
+const makeProgram = (rules: Record<string, unknown>) => makeProgramHelper({ rules: rules })
 
 // Helper function that performs type narrowing.
 // Not automatic in jest, see https://github.com/jestjs/jest/issues/10094
@@ -141,7 +141,7 @@ describe(`
 error`, () => {
   type TestCase = {
     name: string
-    rules: object
+    rules: Record<string, unknown>
     inputData: Record<string, number>
   }
 

@@ -1,19 +1,32 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`store.programs > FUNCTION_NAME > MSG_OR_VALUE :`)
 
+import ProgramFilter from '@/utils/program/programFilters'
 import { computed, ref } from 'vue'
 import { defineStore } from 'pinia'
 
-import type { ProgramData, TrackId, TrackOptions } from '@/types'
-import { QuestionnaireRoute } from '@tee/common/src/questionnaire/types'
+import {
+  type ProgramData,
+  type TrackId,
+  type TrackOptions,
+  type QuestionnaireRoute,
+  type programFiltersType,
+  ProgramAidType,
+  Objectives
+} from '@/types'
 import { filterPrograms as filterWithPublicodes, sortPrograms } from '@tee/backend/src/program/application/sortAndFilterPrograms'
 import type { QuestionnaireData } from '@tee/backend/src/program/domain/types'
 import { useTracksStore } from '@/stores/tracks'
 
 export const useProgramsStore = defineStore('programs', () => {
-  const programs = ref<ProgramData[]>()
+  const programs = ref<ProgramData[]>([])
   const programDetail = ref<string | number>()
   const programDetailConfig = ref<TrackId>()
+
+  const programFilters = ref<programFiltersType>({
+    programAidTypeSelected: '',
+    objectifTypeSelected: ''
+  })
 
   // getters
   const progs = computed<({ index: string } & ProgramData)[] | undefined>(() => {
@@ -25,7 +38,8 @@ export const useProgramsStore = defineStore('programs', () => {
     })
   })
 
-  function filterPrograms(tracksResults: UsedTrack[]) {
+  function getProgramsByUsedTracks() {
+    const tracksResults = useTracksStore().usedTracks
     // retrieve and organize user's conditions
     const conditions: { [k: string]: any } = {}
     tracksResults.forEach((trackResult) => {
@@ -48,6 +62,17 @@ export const useProgramsStore = defineStore('programs', () => {
 
       return sortPrograms(progsFilteredResult.value, conditions['questionnaire_route'] as QuestionnaireRoute)
     }
+
+    return []
+  }
+
+  function getProgramsByFilters(programs: ProgramData[]) {
+    return programs.filter((program: ProgramData) => {
+      return (
+        ProgramFilter.filterProgramsByAidType(program, programFilters.value.programAidTypeSelected as ProgramAidType) &&
+        ProgramFilter.filterProgramsByObjective(program, programFilters.value.objectifTypeSelected as Objectives)
+      )
+    })
   }
 
   function setDataset(dataset: ProgramData[]) {
@@ -73,7 +98,9 @@ export const useProgramsStore = defineStore('programs', () => {
     programDetail,
     programDetailConfig,
     progs,
-    filterPrograms,
+    programFilters,
+    getProgramsByUsedTracks,
+    getProgramsByFilters,
     setDataset,
     setDetailResult,
     resetDetailResult,

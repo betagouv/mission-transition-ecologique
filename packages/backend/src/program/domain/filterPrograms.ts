@@ -1,4 +1,4 @@
-import type { ProgramData } from '@tee/web/src/types/programTypes'
+import type { ProgramData } from '@tee/web/src/types/program/programTypes'
 import Engine from 'publicodes'
 import { Result } from 'true-myth'
 import type { PublicodesInputData, QuestionnaireData } from './types'
@@ -73,7 +73,7 @@ const evaluateRule = (
   questionnaireData: QuestionnaireData,
   currentDate: string
 ): Result<boolean | undefined, Error> => {
-  const rules = programData.publicodes
+  const rules = programData.publicodes as object
 
   let engine: Engine
   try {

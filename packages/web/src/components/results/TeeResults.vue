@@ -184,7 +184,7 @@ import TeeResultsFilter from './TeeResultsFilter.vue'
 import TeeNoResults from './TeeNoResults.vue'
 import type { FilterSignal, ProgramData, PropertyPath, TrackFilter, TrackResultsConfig, UsedTrack } from '@/types'
 import { ConditionOperators, TrackId } from '@/types'
-import { ProgramAidType } from '@/types/programTypes'
+import { ProgramAidType } from '@/types/program/programTypes'
 import { navigationStore } from '@/stores/navigation'
 import { RouteName } from '@/types/routeType'
 import Widget from '@/utils/widget'
@@ -210,7 +210,7 @@ const props = defineProps<Props>()
 
 const publicPath = Config.publicPath
 
-const filteredPrograms: ProgramData[] | undefined = programs.filterPrograms()
+const filteredPrograms: ProgramData[] | undefined = programs.getProgramsByUsedTracks()
 
 const reFilteredPrograms = computed(() => {
   return filteredPrograms?.filter((prog: ProgramData) => {

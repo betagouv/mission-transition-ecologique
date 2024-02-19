@@ -417,8 +417,9 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`TeeTrack > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import { computed, ref, toRaw, watch } from 'vue'
-import type { DsfrButton } from '@gouvminint/vue-dsfr'
+import Config from '@/config'
+import { useDebugStore } from '@/stores/debug'
+import { useTracksStore } from '@/stores/tracks'
 import {
   type ColsOptions,
   isTrackOptionsInput,
@@ -429,17 +430,18 @@ import {
   type TrackOptionsUnion,
   type UsedTrack
 } from '@/types'
-import { remapItem, scrollToTop } from '@/utils/helpers'
+import { RouteName } from '@/types/routeType'
 import { CheckNextTrackRules } from '@/utils/conditions'
+import { remapItem, scrollToTop } from '@/utils/helpers'
+import Matomo from '@/utils/matomo'
+import Translation from '@/utils/translation'
+import type { DsfrButton } from '@gouvminint/vue-dsfr'
+import { computed, ref, toRaw, watch } from 'vue'
+import { useRouter } from 'vue-router'
+import TeeResults from '../results/TeeResults.vue'
+import TeeTrackButtonInput from './TeeTrackButtonInput.vue'
 import TeeTrackInput from './TeeTrackInput.vue'
 import TeeTrackSelect from './TeeTrackSelect.vue'
-import TeeTrackButtonInput from './TeeTrackButtonInput.vue'
-import TeeResults from '../results/TeeResults.vue'
-import { useTracksStore } from '@/stores/tracks'
-import Translation from '@/utils/translation'
-import { useDebugStore } from '@/stores/debug'
-import Config from '@/config'
-import Matomo from '@/utils/matomo'
 
 interface Props {
   step: number
@@ -472,6 +474,7 @@ const trackComponents = TrackComponents
 
 const noNeedForNext = [TrackComponents.Cards, TrackComponents.SimpleButtons]
 
+const router = useRouter()
 const tracks = useTracksStore()
 const debugStore = useDebugStore()
 
@@ -531,7 +534,7 @@ const isActiveChoice = (index: number) => {
   return selectedOptionsIndices.value.includes(index)
 }
 
-const updateSelection = (option: TrackOptionsUnion, index: number, forceRemove: boolean = false) => {
+const updateSelection = async (option: TrackOptionsUnion, index: number, forceRemove: boolean = false) => {
   const isActive = isActiveChoice(index)
   let remove = false
   if (!isActive && !forceRemove) {
@@ -558,14 +561,14 @@ const updateSelection = (option: TrackOptionsUnion, index: number, forceRemove: 
   // Direct to next track
   const directToNext: string[] = ['cards']
   if (!allowMultiple && directToNext.includes(renderAs)) {
-    saveSelection()
+    await saveSelection()
   }
 }
 
-const updateSelectionFromSignal = (ev: any, index: number) => {
+const updateSelectionFromSignal = async (ev: any, index: number) => {
   // TODO (ev.target as HTMLSelectElement)
   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-argument
-  updateSelection(ev.option, index, ev.remove)
+  await updateSelection(ev.option, index, ev.remove)
 }
 
 const updateSelectionValueFromSignal = (ev: any) => {
@@ -588,25 +591,25 @@ const updateSelectionValueFromSignal = (ev: any) => {
   selectedOptions.value = temp
 }
 
-const updateSelectionValueFromSelectSignal = (ev: any) => {
+const updateSelectionValueFromSelectSignal = async (ev: any) => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
   if (ev.reset) {
     selectedOptionsIndices.value = []
     selectedOptions.value = []
   } else {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-argument
-    updateSelection(ev.option, ev.index)
+    await updateSelection(ev.option, ev.index)
   }
 }
 
-const saveSelectionFromSignal = (ev: any, index: number) => {
+const saveSelectionFromSignal = async (ev: any, index: number) => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-  updateAndSave(ev.option as TrackOptionsUnion, index)
+  await updateAndSave(ev.option as TrackOptionsUnion, index)
 }
 
-const updateAndSave = (option: TrackOptionsUnion, index: number) => {
-  updateSelection(option, index)
-  saveSelection()
+const updateAndSave = async (option: TrackOptionsUnion, index: number) => {
+  await updateSelection(option, index)
+  await saveSelection()
 }
 
 const resetSelections = () => {
@@ -625,7 +628,7 @@ const getButtonIcon = (index: number) => {
   return icon
 }
 
-const saveSelection = () => {
+const saveSelection = async () => {
   const optionNext = selectedOptions.value[0].next
   const nextExceptions = optionNext?.exceptions
   const defaultNext = track?.next
@@ -654,6 +657,9 @@ const saveSelection = () => {
   tracks.updateUsedTracks(props.usedTrack.id, props.step, next, selectedOptions.value)
 
   if (!needRemove.value && next && next.default !== false) {
+    if (next.default === TrackId.Results) {
+      await router.push({ name: RouteName.QuestionnaireResult })
+    }
     const canAddTrack = !tracks.trackExistsInUsed(next.default)
     canAddTrack && tracks.addToUsedTracks(props.usedTrack.id, next.default)
   } else {

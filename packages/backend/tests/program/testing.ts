@@ -1,5 +1,5 @@
-import type { ProgramData } from '@tee/web/src/types/programTypes'
-import { ProgramAidType } from '@tee/web/src/types/programTypes'
+import type { ProgramData } from '@tee/web/src/types/program/programTypes'
+import { ProgramAidType } from '@tee/web/src/types/program/programTypes'
 
 import { FILTERING_RULE_NAME } from '../../src/program/domain/filterPrograms'
 
@@ -11,7 +11,7 @@ export const makeProgramHelper = ({
   nature = ProgramAidType.acc
 }: {
   id?: string
-  rules?: object
+  rules?: Record<string, unknown>
   cost?: string
   nature?: ProgramAidType
 }): ProgramData => {

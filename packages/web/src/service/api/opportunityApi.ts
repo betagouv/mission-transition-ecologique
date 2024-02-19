@@ -60,7 +60,7 @@ export default class OpportunityApi extends RequestApi {
         companySize: (this.getFromUsedTrack(TrackId.StructureWorkforce, Entreprise.Workforce) as unknown as number) ?? undefined, // get from usedTrack
         programId: this._programId,
         message: this._opportunityForm.needs.value,
-        questionnaireRoute: this.getFromUsedTrack(TrackId.Help, 'user_help') as QuestionnaireRoute, // get from usedTrack
+        questionnaireRoute: this.getFromUsedTrack(TrackId.QuestionnaireRoute, 'user_help') as QuestionnaireRoute, // get from usedTrack
         otherData: this.getAllValuesFromUsedTrack()
       },
       optIn: this._opportunityForm.cgu.value

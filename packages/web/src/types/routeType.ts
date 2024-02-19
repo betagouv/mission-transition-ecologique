@@ -4,5 +4,6 @@ export enum RouteName {
   CatalogDetail = 'catalog-detail',
   ChatAdvisor = 'chat-advisor',
   Legal = 'legal',
-  PersonalData = 'personal-data'
+  PersonalData = 'personal-data',
+  QuestionnaireResult = 'questionnaire-result'
 }

@@ -47,6 +47,11 @@ export const router = createRouter({
           props: {
             seed: TrackId.QuestionnaireRoute
           }
+        },
+        {
+          path: 'resultat',
+          name: RouteName.QuestionnaireResult,
+          component: ProgramList as Component
         }
       ]
     },

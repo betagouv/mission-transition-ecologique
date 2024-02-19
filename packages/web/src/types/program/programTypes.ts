@@ -1,5 +1,7 @@
 // FOR AID PROGRAMS
 
+import { Entreprise, Objectives, PublicodesCondition } from '../index'
+
 export enum ProgramAidType {
   acc = 'accompagnement',
   train = 'formation',
@@ -39,5 +41,12 @@ export interface ProgramData {
     "autres critères d'éligibilité"?: string[]
   }
 
-  publicodes: object
+  publicodes: PublicodesProgramData
+}
+
+export type PublicodesProgramData = {
+  [key: string]: unknown
+  [Entreprise.hasObjective]?: {
+    [PublicodesCondition.oneOfThese]: Objectives[]
+  }
 }

@@ -2,31 +2,39 @@
   <div class="fr-grid-row fr-grid-row--gutters fr-mb-4v">
     <div class="fr-col">
       <DsfrSelect
-        v-model="programAidTypeSelected"
+        v-model="programFilters.programAidTypeSelected"
         :options="programAidTypeOptions"
+        @update:model-value="updateFilters"
       />
     </div>
     <div class="fr-col">
       <DsfrSelect
-        v-model="objectifTypeSelected"
+        v-model="programFilters.objectifTypeSelected"
         :options="objectifTypeOptions"
+        @update:model-value="updateFilters"
       />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { Objectives, ProgramAidType } from '@/types'
+import { useProgramsStore } from '@/stores/programs'
+import { Objectives, ProgramAidType, type programFiltersType } from '@/types'
 import { DsfrSelect } from '@gouvminint/vue-dsfr'
-import { ref } from 'vue'
+import type { DsfrSelectProps } from '@gouvminint/vue-dsfr/types/components/DsfrSelect/DsfrSelect.types'
 
-const programAidTypeSelected = ref<null | ProgramAidType>(null)
-const objectifTypeSelected = ref<null | Objectives>(null)
+const emit = defineEmits<{ update: [value: programFiltersType] }>()
 
-const programAidTypeOptions = [
+const programFilters = useProgramsStore().programFilters
+
+const updateFilters = () => {
+  emit('update', programFilters)
+}
+
+const programAidTypeOptions: DsfrSelectProps['options'] = [
   {
     text: "Filtrer par nature de l'aide",
-    value: null
+    value: ''
   },
   {
     text: 'Accompagnement',
@@ -50,10 +58,10 @@ const programAidTypeOptions = [
   }
 ]
 
-const objectifTypeOptions = [
+const objectifTypeOptions: DsfrSelectProps['options'] = [
   {
     text: 'Filtrer par objectif',
-    value: null
+    value: ''
   },
   {
     text: '🌱 Stratégie environnementale',

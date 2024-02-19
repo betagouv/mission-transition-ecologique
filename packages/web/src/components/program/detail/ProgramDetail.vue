@@ -288,7 +288,7 @@ import { RouteName } from '@/types/routeType'
 import Widget from '@/utils/widget'
 import Config from '@/config'
 import Matomo from '@/utils/matomo'
-import Program from '@/utils/program'
+import Program from '@/utils/program/program'
 
 const tracks = useTracksStore()
 const programs = useProgramsStore()

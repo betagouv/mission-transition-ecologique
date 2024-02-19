@@ -4,6 +4,11 @@ export enum YesNo {
   No = 'non'
 }
 
+export enum PublicodesCondition {
+  allOfThese = 'toutes ces conditions',
+  oneOfThese = 'une de ces conditions'
+}
+
 export enum Entreprise {
   SectorActivity = "entreprise . secteur d'activité . est ",
   CodeNAF1 = 'entreprise . code NAF niveau 1 . est ',
@@ -11,7 +16,8 @@ export enum Entreprise {
   Workforce = 'entreprise . effectif',
   TransportMode = 'entreprise . mode de transport domicile-travail . est ',
   BuildingOwner = 'entreprise . est propriétaire de ses locaux',
-  VehicleOwner = 'entreprise . possède des véhicules motorisés'
+  VehicleOwner = 'entreprise . possède des véhicules motorisés',
+  hasObjective = 'entreprise . a un objectif ciblé'
 }
 
 export enum Questionnaire {

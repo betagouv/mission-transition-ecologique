@@ -6,7 +6,7 @@ import { makeProgramHelper } from './testing'
 import { FILTERING_RULE_NAME, createService } from '../../src/program/domain/filterPrograms'
 import { expectToBeOk } from '../testing'
 
-const makeProgram = (rules: object) => makeProgramHelper({ rules: rules })
+const makeProgram = (rules: Record<string, unknown>) => makeProgramHelper({ rules: rules })
 
 enum DataSources {
   Questionnaire,
