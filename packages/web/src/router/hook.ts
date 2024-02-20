@@ -16,7 +16,7 @@ export const resetDetailProgram = (to: RouteLocationNormalized, from: RouteLocat
 }
 export const setHelpAsTrackSeed = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
   const tracks = tracksStore()
-  tracks.setSeedTrack(TrackId.Help)
+  tracks.setSeedTrack(TrackId.QuestionnaireRoute)
   next()
 }
 export const setResultsAsTrackSeed = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {

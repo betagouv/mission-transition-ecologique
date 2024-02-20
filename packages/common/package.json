@@ -1,0 +1,16 @@
+{
+  "name": "@tee/common",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "author": "",
+  "license": "AGPL-3.0",
+  "engines": {
+    "node": "18.x",
+    "npm": ">=9.0 <11"
+  },
+  "scripts": {
+    "build": "npx tsc --build --verbose",
+    "lint": "eslint . --fix"
+  }
+}

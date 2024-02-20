@@ -1,22 +1,22 @@
 <template>
-  <div class="fr-grid-row fr-grid-row--gutters">
+  <div class="fr-grid-row fr-grid-row--gutters tee-home-steps fr-pt-md-5v">
     <div
       v-for="c in content"
       :key="`${c.img}-title`"
-      class="fr-col fr-col-xs-12 fr-col-md-4 fr-pt-8v fr-text-center fr-pb-0"
+      class="fr-col fr-col-xs-12 fr-col-md-4 fr-text-center fr-py-4v"
     >
-      <div class="fr-grid-row fr-px-2v">
-        <div class="fr-col fr-col-xs-2 fr-col-sm-12">
+      <div class="fr-grid-row fr-px-2v fr-pb-sm-6v">
+        <div class="fr-col fr-col-xs-2 fr-col-sm-3 fr-col-md-12 tee-home-steps-image">
           <img
-            class="fr-mb-5v"
+            class="fr-mb-md-5v"
             :src="c.img"
             :alt="c.title"
           />
         </div>
-        <div class="fr-col fr-col-xs-10 fr-col-sm-12">
-          <h3>
+        <div class="fr-col fr-col-xs-10 fr-col-sm-9 fr-col-md-12 tee-home-steps-title">
+          <h4>
             {{ c.title }}
-          </h3>
+          </h4>
         </div>
       </div>
     </div>
@@ -30,6 +30,16 @@
       <p>
         {{ c.text }}
       </p>
+      <div
+        v-if="c.logos"
+        class="fr-grid-row fr-sm-hide fr-justify-center fr-mb-2v tee-home-step-operators-container"
+      >
+        <img
+          :src="c.logos.img"
+          :alt="c.logos.label"
+          class="fr-mx-2v fr-my-2v tee-home-step-operators-img"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -44,12 +54,16 @@ const content = [
   {
     title: 'Je réponds à quelques questions par thématique',
     img: '/images/home/2.svg',
-    text: 'En fonction de vos objectifs et des enjeux de votre entreprise : bâtiment, mobilité, déchets, eau, énergie...'
+    text: 'En fonction de mes objectifs et des enjeux de mon entreprise : bâtiment, mobilité, déchets, eau, énergie...'
   },
   {
     title: 'J’accède aux aides dont mon entreprise peut bénéficier',
     img: '/images/home/3.svg',
-    text: 'Des propositions d’accompagnements et de financements issues de l’ensemble des partenaires : ADEME, Bpifrance, CCI, CMA, etc.'
+    text: 'Des propositions d’accompagnements et de financements issues de l’ensemble des partenaires : ADEME, Bpifrance, CCI, CMA, etc.',
+    logos: {
+      label: 'Partenaires',
+      img: '/images/logos/logos-operators.png'
+    }
   }
 ]
 </script>

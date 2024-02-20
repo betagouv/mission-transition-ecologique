@@ -1,6 +1,15 @@
-import { Result } from 'true-myth'
-import { Etablissement } from './types'
+import { Maybe, Result } from 'true-myth'
+import { EstablishmentDetails } from './types'
 
-export type EtablissementRepository = {
-  get: (siret: string) => Promise<Result<Etablissement, Error>>
+export type EstablishmentRepository = {
+  get: (siret: string) => Promise<Result<EstablishmentDetails, Error>>
+}
+
+export type CityToRegionMapping = {
+  getRegion: (cityCode: string) => Maybe<string>
+}
+
+export type NafMapping = {
+  getLabel: (nafCode: string) => Maybe<string>
+  getSectionCode: (nafCode: string) => Maybe<string>
 }

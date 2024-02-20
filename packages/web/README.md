@@ -365,12 +365,9 @@ The generated `dataset_out.json` file is then created / updated in the `./packag
 ├── ...
 ├── public
 |   ├── css
-|   └── data
-|   |   ├── generated               
-|   |   |   └── dataset_out.json  <-- the json file used as a "database"
-|   |   └── references
-|   |       ├── naf_codes.json
-|   |       └── ...
+|   ├── data
+|   |   └── generated               
+|   |       └── dataset_out.json  <-- the json file used as a "database"
 |   └── fonts
 ├── ...
 └── README.md

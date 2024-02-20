@@ -1,7 +1,7 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`utils.matomo > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import type { FormCallback, ReqResp } from '@/types/index'
+import { CallbackMethods, type FormCallback, type ReqResp } from '@/types/index'
 import { remapItem } from './helpers'
 
 export const buildHeaders = (callback: FormCallback) => {
@@ -15,27 +15,53 @@ export const sendApiRequest = async (
   props: any = undefined,
   lang: string = 'fr'
 ) => {
-  const url = callback.url
   const method = callback.method
   const headers = buildHeaders(callback)
 
-  let data: any = callback.dataBody || callback.dataStructure || {}
   const dataMapping = callback.dataMapping.filter((dm) => !dm.onlyRemap)
 
+  let pathData: any = callback.dataPath || {}
   // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-  data = remapItem(data, dataMapping, formData, trackValues, props, undefined, [], lang)
-  const body = JSON.stringify(data)
+  pathData = remapItem(pathData, dataMapping, formData, trackValues, props, undefined, [], lang)
+  const url = replacePlaceholders(callback.url, pathData as Record<string, string>)
+
+  let bodyData: any = callback.dataBody || callback.dataStructure || {}
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+  bodyData = remapItem(bodyData, dataMapping, formData, trackValues, props, undefined, [], lang)
+  const body = JSON.stringify(bodyData)
 
   return await sendRequest(url, method, headers, body, callback.action)
 }
 
-export const sendRequest = async (url: string, method: string, headers: HeadersInit, body: BodyInit, action: string): Promise<ReqResp> => {
-  // send request
+const replacePlaceholders = (url: string, dataPath?: Record<string, string>): string => {
+  if (!dataPath) {
+    return url
+  }
+
+  for (const placeholderName in dataPath) {
+    const placeholderData = dataPath[placeholderName]
+    url = replacePlaceholder(url, placeholderName, placeholderData)
+  }
+
+  return url
+}
+
+const replacePlaceholder = (url: string, placeholderName: string, placeholderData: string): string => {
+  return url.replace('{' + placeholderName + '}', placeholderData)
+}
+
+export const sendRequest = async (
+  url: string,
+  method: CallbackMethods,
+  headers: HeadersInit,
+  body: BodyInit,
+  action: string
+): Promise<ReqResp> => {
   try {
     const response = await fetch(url, {
       method: method,
       headers: headers,
-      body: body
+      body: method === CallbackMethods.Get ? undefined : body
     })
     const respJson: ReqResp = (await response.json()) as ReqResp
     respJson.action = action

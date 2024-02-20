@@ -15,7 +15,7 @@
       class="fr-col fr-col-12"
     >
       <p class="fr-text-center tee-text-no-result fr-mt-6v">
-        {{ message[choices.lang] }}
+        {{ message[Translation.lang] }}
       </p>
     </div>
   </div>
@@ -25,13 +25,11 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`TeeNoResults > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import { choicesStore } from '../../stores/choices'
-import type { Translations } from '@/types/index'
-import MetaEnv from '@/utils/metaEnv'
+import Translation from '@/utils/translation'
+import type { Translations } from '@/types'
+import Config from '@/config'
 
-const choices = choicesStore()
-
-const publicPath = MetaEnv.publicPath
+const publicPath = Config.publicPath
 
 interface Props {
   image?: string

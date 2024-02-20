@@ -1,40 +1,30 @@
 <template>
-  <div class="fr-tile fr-enlarge-link">
+  <div
+    class="fr-tile fr-tile--no-border fr-tile--horizontal fr-tile--vertical@md fr-enlarge-link fr-mx-4v fr-mx-md-0 fr-px-0v fr-py-4v fr-pt-md-10v fr-pb-md-0v"
+  >
     <!-- TITLE -->
-    <div
-      class="fr-tile__body fr-px-3v fr-pb-3v fr-pt-0"
-      style="justify-content: start"
-    >
-      <span
-        class="fr-tile__title fr-pb-3v"
-        style="font-weight: normal; font-size: 0.7rem"
-      >
+    <div class="fr-tile__body fr-pb-md-0v fr-pt-0">
+      <span class="fr-tile__title fr-pb-0v fr-mb-0 fr-text-lead">
         {{ title }}
       </span>
-      <p
-        class="fr-tile__desc"
-        style="font-weight: 700"
-      >
+      <p class="fr-tile__desc fr-pb-2v fr-pt-md-4v">
         <span v-if="description">
           {{ description }}
         </span>
         <slot name="description"></slot>
       </p>
     </div>
+
     <!-- ILLUSTRATION -->
     <div
       v-if="imagePath"
       class="fr-tile__header"
     >
-      <div
-        class="fr-tile__pictogram"
-        style="text-align: center"
-      >
+      <div class="fr-tile__pictogram">
         <img
           class="fr-responsive-img fr-p-5v"
           :src="imagePath"
           :alt="`image / ${title}`"
-          :style="`width: 95px`"
         />
       </div>
     </div>

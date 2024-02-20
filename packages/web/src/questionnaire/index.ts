@@ -1,5 +1,5 @@
 import { needs } from './trackNeeds'
-import { help } from './trackHelp'
+import { questionnaireRoute } from './trackQuestionnaireRoute'
 
 import { siret } from './trackStructureSiret'
 import { workforce } from './trackStructureWorkforce'
@@ -15,6 +15,7 @@ import { buildingSurface } from './trackBuildingSurface'
 import { mobility } from './trackMobility'
 import { mobilityNumberVehicles } from './trackMobilityNumberVehicles'
 import { mobilityEnergy } from './trackMobilityEnergy'
+import { mobilityWishes } from './trackMobilityWishes'
 import { wastesStake } from './trackWastesStake'
 import { wastesSorting } from './trackWastesSorting'
 import { wastesMaterials } from './trackWastesMaterials'
@@ -31,7 +32,7 @@ import type { Track } from '@/types'
 
 export const tracks: Track[] = [
   needs,
-  help,
+  questionnaireRoute,
   siret,
   // sizes,
   workforce,
@@ -47,6 +48,7 @@ export const tracks: Track[] = [
   mobility,
   mobilityNumberVehicles,
   mobilityEnergy,
+  mobilityWishes,
   wastesStake,
   wastesSorting,
   wastesMaterials,
