@@ -109,8 +109,11 @@ button.fr-link:hover, .tee-router-link:hover {
   width: auto;
   max-width: 100%;
 }
+.tee-footer-app-logo {
+  height: 60px !important;
+}
 .tee-footer-operators-container {
-  background-image: none
+  background-image: none;
 }
 .tee-home-step-operator-logo {
   box-shadow: none !important;
@@ -177,6 +180,7 @@ button.fr-link:hover, .tee-router-link:hover {
 /* TRACK CALLOUT */
 .tee-track-callout {
   align-items: center;
+  min-height: 125px;
 }
 .tee-track-callout-img {
   text-align: center;

@@ -37,7 +37,7 @@
         <img
           :src="c.logos.img"
           :alt="c.logos.label"
-          class="fr-mx-2v fr-my-2v tee-home-step-operators-img"
+          class="fr-mx-2v fr-my-2v tee-home-step-operator-img"
         />
       </div>
     </div>
