@@ -6,13 +6,18 @@
 <script setup lang="ts">
 // CONSOLE LOG TEMPLATE
 // console.log(`TeeAddProgram > FUNCTION_NAME > MSG_OR_VALUE :`)
-import { onMounted } from 'vue'
+import { onMounted, onBeforeUnmount } from 'vue'
+
+const typeformScript = document.createElement('script')
+typeformScript.async = true
+typeformScript.setAttribute('type', 'text/javascript')
+typeformScript.setAttribute('src', 'https://embed.typeform.com/next/embed.js')
 
 onMounted(() => {
-  const typeformScript = document.createElement('script')
-  typeformScript.async = true
-  typeformScript.setAttribute('type', 'text/javascript')
-  typeformScript.setAttribute('src', 'https://embed.typeform.com/next/embed.js')
   document.head.appendChild(typeformScript)
+})
+
+onBeforeUnmount(() => {
+  document.head.removeChild(typeformScript)
 })
 </script>
