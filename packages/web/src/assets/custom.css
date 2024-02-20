@@ -524,7 +524,7 @@ code {
   }
   .tee-home-steps-image {
     display: flex;
-    justify-content: center;
+    justify-content: start;
   }
   .tee-home-steps-image img {
     max-height: 40px;
