@@ -12,7 +12,7 @@
     </div>
     <div
       :id="`accordion-${accordionId}`"
-      :class="`fr-collapse ${drawerOpen ? 'fr-collapse--expanded' : ''} fr-pt-0`"
+      :class="`fr-collapse ${drawerOpen ? 'fr-collapse--expanded' : ''} fr-pt-0 fr-mx-4v fr-mx-md-0`"
       :style="drawerOpen ? '-collapse: -165px; --collapse-max-height: none;' : '-collapse: -203px;'"
     >
       <slot name="content"></slot>
