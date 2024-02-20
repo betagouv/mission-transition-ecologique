@@ -76,7 +76,7 @@
               :href="mainPartner.href"
             >
               <img
-                class="fr-footer__logo"
+                class="fr-footer__logo tee-footer-logo"
                 style="height: 5.625rem; width: 10rem"
                 :src="mainPartner.img"
                 :alt="mainPartner.label"
@@ -98,7 +98,7 @@
                   :href="operator.href"
                 >
                   <img
-                    class="fr-footer__logo tee-footer-operators-img"
+                    class="fr-footer__logo tee-footer-operators-img tee-footer-logo"
                     :src="operator.img"
                     :alt="operator.label"
                   />
