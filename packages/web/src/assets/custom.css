@@ -104,7 +104,7 @@ button.fr-link:hover, .tee-router-link:hover {
 .tee-home-step-operators-container {
   align-items: center
 }
-.tee-home-step-operators-img {
+.tee-home-step-operator-img {
   max-height: 100%;
   width: auto;
   max-width: 100%;
@@ -112,10 +112,17 @@ button.fr-link:hover, .tee-router-link:hover {
 .tee-footer-operators-container {
   background-image: none
 }
-.tee-footer-operators-img {
+.tee-home-step-operator-logo {
+  box-shadow: none !important;
+}
+.tee-footer-operator-main {
+  height: 5.625rem;
+  width: 10rem;
+}
+.tee-footer-operator-img {
   height: auto;
   max-height: 5.625rem;
-  width: 10rem
+  width: 10rem !important;
 }
 
 .tee-home-img {

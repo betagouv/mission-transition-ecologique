@@ -69,15 +69,15 @@
         <h4 class="fr-footer__partners-title">Nos partenaires</h4>
         <div class="fr-footer__partners-logos">
           <div class="fr-footer__partners-main">
+            <!-- style="background-image: none" -->
             <a
-              class="footer__partners-link"
+              class="footer__partners-link fr-my-4v fr-mr-4v tee-router-link"
               target="_blank"
-              style="background-image: none"
               :href="mainPartner.href"
             >
+              <!-- style="height: 5.625rem; width: 10rem" -->
               <img
-                class="fr-footer__logo"
-                style="height: 5.625rem; width: 10rem"
+                class="fr-footer__logo tee-home-step-operator-logo tee-footer-operator-main"
                 :src="mainPartner.img"
                 :alt="mainPartner.label"
               />
@@ -93,12 +93,12 @@
             >
               <li>
                 <a
-                  class="footer__partners-link tee-footer-operators-container"
+                  class="footer__partners-link tee-footer-operators-container fr-my-4v fr-ml-4v"
                   target="_blank"
                   :href="operator.href"
                 >
                   <img
-                    class="fr-footer__logo tee-footer-operators-img"
+                    class="fr-footer__logo tee-home-step-operator-logo tee-footer-operator-img"
                     :src="operator.img"
                     :alt="operator.label"
                   />
