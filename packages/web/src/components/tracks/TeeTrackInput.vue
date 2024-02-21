@@ -30,10 +30,10 @@
   >
     {{ option.label[Translation.lang] }}
   </label>
-  <div
-    id="header-search"
-    class="fr-search-bar"
-    role="search"
+  <TeeTrackInputWrapper
+    :has-input="!!inputValue"
+    :is-loading="isLoading"
+    @reset-input="clearInput"
   >
     <input
       :id="`input-${option.id}`"
@@ -41,20 +41,20 @@
       :name="`input-${option.id}`"
       :disabled="isLoading"
       :placeholder="option?.placeholder?.[Translation.lang]"
-      class="fr-input tee-input-large"
+      :class="`fr-input tee-input-large tee-input-search-${inputValue ? '' : 'not-'}clearable`"
       type="search"
       @keyup.enter="processInput"
     />
-    <button
-      class="fr-btn tee-btn-input-large"
-      :disabled="isLoading"
-      :title="Translation.t('input.search')"
-      @click="processInput"
-    >
-      <!-- {{ Translation.t('input.search') }} -->
-    </button>
-  </div>
-  <!-- hint -->
+    <template #search-button>
+      <button
+        class="fr-btn tee-btn-input-large fr-icon-search-line"
+        :disabled="isLoading"
+        :title="Translation.t('input.search')"
+        @click="processInput"
+      ></button>
+    </template>
+  </TeeTrackInputWrapper>
+  <!-- HINT -->
   <div
     v-if="option.hint && !requestResponses.length"
     class="tee-input-hint fr-mt-4v"
@@ -125,7 +125,7 @@
       :key="`resp-input-${i}`"
       :class="`fr-card fr-card-result fr-card--no-arrow ${isSelected(resp) ? 'fr-card--shadow' : ''}`"
       :style="`border: ${isSelected(resp) ? 'solid thin #000091;' : 'solid thin #C4C4C4'};`"
-      @click="selectItem(resp)"
+      @click="!disableDeselect && selectItem(resp)"
     >
       <div class="fr-card__body">
         <div class="fr-card__content fr-py-4v fr-px-4v">
@@ -269,6 +269,7 @@ import { getFromResp, remapItem, cleanValue } from '../../utils/helpers'
 import { CallbackActions } from '@/types'
 import { useDebugStore } from '@/stores/debug'
 import Matomo from '@/utils/matomo'
+import TeeTrackInputWrapper from '@/components/tracks/TeeTrackInputWrapper.vue'
 
 interface Props {
   trackId: TrackId
@@ -286,6 +287,7 @@ const requestResponses = ref<ReqResp[]>([])
 const requestErrors = ref<ReqError[]>([])
 
 const selection = ref<any>()
+const disableDeselect = ref<boolean>(false)
 const hasSelection = ref<boolean>(false)
 
 const emit = defineEmits(['updateSelection', 'goToNextTrack'])
@@ -309,6 +311,11 @@ const isSelected = (resp: any) => {
 }
 
 // functions
+const clearInput = () => {
+  inputValue.value = undefined
+  resetSelection()
+}
+
 const resetSelection = () => {
   requestResponses.value = []
   requestErrors.value = []
@@ -358,6 +365,12 @@ const processInput = async () => {
       } else {
         errors.push(resp)
       }
+    }
+
+    // if only one response in list select it
+    if (responses.length === 1) {
+      selectItem(responses[0])
+      disableDeselect.value = true
     }
   }
 
