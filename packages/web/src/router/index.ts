@@ -94,9 +94,11 @@ export const router = createRouter({
       component: TeePersonalDataPage as Component
     },
     {
-      path: '/*',
+      path: '/:pathMatch(.*)*',
       name: '404',
-      component: TeeHomePage as Component
+      redirect: () => {
+        return { name: RouteName.Homepage }
+      }
     },
     ...redirections
   ]
