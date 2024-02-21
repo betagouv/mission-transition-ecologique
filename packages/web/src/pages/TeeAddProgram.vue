@@ -19,5 +19,9 @@ onMounted(() => {
 
 onBeforeUnmount(() => {
   document.head.removeChild(typeformScript)
+  const typeformLink = document.head.querySelector('link[href*="https://embed.typeform.com"]')
+  if (typeformLink) {
+    document.head.removeChild(typeformLink)
+  }
 })
 </script>
