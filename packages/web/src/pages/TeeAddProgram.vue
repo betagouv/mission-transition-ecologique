@@ -1,6 +1,9 @@
 <template>
-  <!-- MAIN APP COMPONENT  -->
-  <div data-tf-live="01HNJQ5V7EYXZTQAY755QPMA4R"></div>
+  <!-- TYPEFORM WIDGET  -->
+  <div
+    data-tf-live="01HNJQ5V7EYXZTQAY755QPMA4R"
+    class="tee-typeform-widget"
+  ></div>
 </template>
 
 <script setup lang="ts">
