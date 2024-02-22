@@ -305,7 +305,7 @@ const trackConfig = ref<any>()
 const TeeProgramFormContainer = ref<HTMLElement | null | undefined>(null)
 
 const blockColor = '#000091'
-const columnTiles = 'fr-col fr-col-sm-12 fr-col-md-4 fr-tee-detail-info-tile'
+const columnTiles = 'fr-col fr-col-sm-12 fr-col-md-3 fr-tee-detail-info-tile'
 
 const publicPath = Config.publicPath
 
