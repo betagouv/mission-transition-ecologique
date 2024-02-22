@@ -4,7 +4,7 @@
     class="fr-container--fluid"
   >
     <div
-      id="trackElement"
+      :id="RouteName.QuestionnaireResult"
       class="fr-container--fluid"
     >
       <div
@@ -12,7 +12,7 @@
         class="fr-grid-row fr-grid-row-gutters fr-justify-center"
       >
         <div
-          class="fr-tee-add-padding fr-mt-10v fr-col-3 fr-col-md-4 fr-col-lg-3 fr-col-sm-hide"
+          class="fr-tee-add-padding fr-mt-10v fr-col-3 fr-col-md-4 fr-col-lg-3 fr-col-xl-2 fr-col-sm-hide"
           style="height: 100%"
         >
           <TeeSidebar />
@@ -34,4 +34,5 @@
 <script setup lang="ts">
 import ProgramList from '@/components/program/list/ProgramList.vue'
 import TeeSidebar from '@/components/TeeSidebar.vue'
+import { RouteName } from '@/types/routeType'
 </script>

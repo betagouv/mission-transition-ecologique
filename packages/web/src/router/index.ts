@@ -1,7 +1,7 @@
 // CONSOLE LOG TEMPLATE
 //console.log(`router.index > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import TeeQuestionnaireResult from '@/components/TeeQuestionnaireResult.vue'
+import TeeQuestionnaireResult from '@/components/questionnaire/TeeQuestionnaireResult.vue'
 import { createRouter, createWebHistory, type RouteLocationNormalized, type RouteLocationNormalizedLoaded } from 'vue-router'
 import TeeHomePage from '../pages/TeeHomePage.vue'
 import TeeQuestionnairePage from '../pages/TeeQuestionnairePage.vue'
@@ -10,7 +10,7 @@ import TeeLegalPage from '../pages/TeeLegalPage.vue'
 import TeeAccessibilityPage from '../pages/TeeAccessibilityPage.vue'
 import TeePersonalDataPage from '../pages/TeePersonalDataPage.vue'
 import ChatAdvisorPage from '@/pages/ChatAdvisorPage.vue'
-import TeeQuestionnaire from '@/components/TeeQuestionnaire.vue'
+import TeeQuestionnaire from '@/components/questionnaire/TeeQuestionnaire.vue'
 import ProgramDetail from '@/components/program/detail/ProgramDetail.vue'
 import { RouteName } from '@/types/routeType'
 import { redirections } from '@/router/redirection'

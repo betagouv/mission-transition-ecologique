@@ -162,12 +162,9 @@
         <!-- TRACK LABEL -->
         <div
           v-if="step !== 1"
-          :class="`fr-px-4v fr-px-md-0v fr-mt-6v ${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`"
+          class="fr-px-4v fr-px-md-0v fr-mt-6v fr-col-12"
         >
-          <h3
-            :class="`${track?.info ? 'fr-mb-0' : 'fr-mb-2v'}`"
-            :style="`${isTrackResults ? 'color: #000091; font-size: 2.75rem;' : ''}`"
-          >
+          <h3 :class="`${track?.info ? 'fr-mb-0' : 'fr-mb-2v'}`">
             {{ tracks.getTrackLabel(usedTrack.id, Translation.lang) }}
           </h3>
         </div>
@@ -175,7 +172,7 @@
         <!-- TRACK INFOS -->
         <div
           v-if="step !== 1 && track?.info"
-          :class="`fr-px-4v fr-px-md-0v ${isTrackResults ? 'fr-col-12 fr-col-offset-md-1' : 'fr-col-12'}`"
+          class="fr-px-4v fr-px-md-0v fr-col-12"
         >
           <p class="fr-mb-2v">
             <span
@@ -189,12 +186,9 @@
         <!-- TRACK HINT -->
         <div
           v-if="step !== 1 && track?.hint"
-          :class="`fr-px-4v fr-px-md-0v ${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`"
+          class="fr-px-4v fr-px-md-0v fr-col-12"
         >
-          <p
-            :class="`fr-mb-0`"
-            :style="`${isTrackResults ? 'color: #000091;' : ''}`"
-          >
+          <p :class="`fr-mb-0`">
             {{ track.hint[Translation.lang] }}
           </p>
         </div>
@@ -202,7 +196,7 @@
         <!-- TRACK RESUME -->
         <div
           v-if="step !== 1 && track?.resume"
-          :class="`fr-px-4v fr-px-md-0v ${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`"
+          class="fr-px-4v fr-px-md-0v fr-col-12"
         >
           <p class="fr-mb-0">
             {{ track.resume[Translation.lang] }}
@@ -214,7 +208,7 @@
           <div
             v-for="(option, idx) in optionsArray"
             :key="`track-${step}-${usedTrack.id}-option-${idx}`"
-            :class="`${colsWidth} ${isTrackResults ? 'fr-col-offset-md-1' : ''} tee-track-choice`"
+            :class="`${colsWidth} tee-track-choice`"
           >
             <!-- AS CARDS -->
             <div
@@ -342,18 +336,6 @@
                 @go-to-next-track="saveSelectionFromSignal($event, idx)"
               />
             </div>
-
-            <!-- AS RESULT -->
-            <div v-if="isTrackResults">
-              <TeeResults
-                :track-id="usedTrack.id"
-                :track-config="track?.config"
-                :track-options="track?.options"
-                :track-form="track?.form"
-                :tracks-results="tracks.usedTracks"
-                :track-element="trackElement"
-              />
-            </div>
           </div>
         </template>
       </div>
@@ -372,7 +354,7 @@
 
       <!-- SEND / NEXT BUTTON -->
       <div
-        v-if="!noNeedForNext.includes(renderAs) && !usedTrack.completed && !isTrackResults"
+        v-if="!noNeedForNext.includes(renderAs) && !usedTrack.completed"
         class="fr-grid-row fr-grid-row--gutters fr-pt-8v fr-px-4v fr-px-md-0v"
         style="justify-content: start"
       >
@@ -438,11 +420,11 @@ import { RouteName } from '@/types/routeType'
 import { CheckNextTrackRules } from '@/utils/conditions'
 import { remapItem, scrollToTop } from '@/utils/helpers'
 import Matomo from '@/utils/matomo'
+import Navigation from '@/utils/navigation'
 import Translation from '@/utils/translation'
 import type { DsfrButton } from '@gouvminint/vue-dsfr'
 import { computed, ref, toRaw, watch } from 'vue'
 import { useRouter } from 'vue-router'
-import TeeResults from '../results/TeeResults.vue'
 import TeeTrackButtonInput from './TeeTrackButtonInput.vue'
 import TeeTrackInput from './TeeTrackInput.vue'
 import TeeTrackSelect from './TeeTrackSelect.vue'
@@ -497,10 +479,6 @@ const allowMultiple: boolean = !!track?.behavior?.multipleChoices
 
 const optionsArray = track?.options?.filter((o): o is TrackOptionsUnion => !o.disabled) ?? []
 
-// computed
-const isTrackResults = computed(() => {
-  return track?.id === TrackId.Results
-})
 const selectionValues = computed(() => {
   if (selectedOptions.value.length === 0) {
     return []
@@ -662,7 +640,7 @@ const saveSelection = async () => {
 
   if (!needRemove.value && next && next.default !== false) {
     if (next.default === TrackId.Results) {
-      await router.push({ name: RouteName.QuestionnaireResult })
+      await router.push({ name: RouteName.QuestionnaireResult, hash: Navigation.hashByRouteName(RouteName.QuestionnaireResult) })
     }
     const canAddTrack = !tracks.trackExistsInUsed(next.default)
     canAddTrack && tracks.addToUsedTracks(props.usedTrack.id, next.default)

@@ -17,7 +17,7 @@
       </div>
 
       <div class="fr-col-12">
-        <TeeNoResults
+        <ProgramListNoResults
           v-if="!countFilteredPrograms"
           image="images/tracks/no-results.svg"
           :message="{ fr: 'Aucune aide n\'a pu être identifiée avec les critères choisis...' }"
@@ -47,7 +47,7 @@ import { type ProgramData, TrackId } from '@/types'
 import { navigationStore } from '@/stores/navigation'
 import { RouteName } from '@/types/routeType'
 import Matomo from '@/utils/matomo'
-import TeeNoResults from '@/components/results/TeeNoResults.vue'
+import ProgramListNoResults from '@/components/program/list/ProgramListNoResults.vue'
 import ProgramFilters from '@/components/program/list/ProgramFilters.vue'
 
 const programsStore = useProgramsStore()

@@ -5,7 +5,7 @@
     class="fr-container--fluid"
   >
     <div
-      id="trackElement"
+      :id="RouteName.Questionnaire"
       :class="`fr-container--fluid ${needSidebar ? 'fr-pt-0v' : ''}`"
     >
       <!-- TRACKS INTERFACES -->
@@ -25,8 +25,7 @@
         <!-- TRACKS -->
         <div
           id="tee-app-tracks"
-          :class="`${getColumnsWidth}`"
-          class="fr-grid-row--center"
+          class="fr-grid-row--center fr-col fr-col-sm-12 fr-col-md-8 fr-col-lg-8 fr-col-xl-6"
         >
           <div
             v-for="(track, index) in tracks.usedTracks"
@@ -52,6 +51,7 @@
 </template>
 
 <script setup lang="ts">
+import { RouteName } from '@/types/routeType'
 import { computed, onBeforeMount, onMounted, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 
@@ -89,16 +89,6 @@ watch(
 
 const needSidebar = computed(() => {
   return tracks.currentStep && tracks.currentStep > 1
-})
-
-const getColumnsWidth = computed(() => {
-  // const colsStart = 'fr-col-12 fr-col-xl-12'
-  return 'fr-col fr-col-sm-12 fr-col-md-8 fr-col-lg-8 fr-col-xl-6'
-  // if (tracks.currentStep === 1) {
-  //   return colsStart
-  // } else {
-  //   return colsTracks
-  // }
 })
 
 const setupFromUrl = () => {

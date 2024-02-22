@@ -216,7 +216,7 @@
     {{ Translation.t('or') }}
     <a
       class="fr-link tee-input-wildcard"
-      href="#trackElement"
+      :href="Navigation.hashByRouteName(RouteName.Questionnaire)"
       @click="goToNextTrack"
     >
       {{ option.wildcard.label[Translation.lang] }}
@@ -260,6 +260,8 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`TeeTrackInput > FUNCTION_NAME > MSG_OR_VALUE :`)
 
+import { RouteName } from '@/types/routeType'
+import Navigation from '@/utils/navigation'
 import { onBeforeMount, ref, toRaw } from 'vue'
 import { useTracksStore } from '../../stores/tracks'
 import Translation from '@/utils/translation'
