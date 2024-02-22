@@ -48,6 +48,7 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`TeeSidebar > FUNCTION_NAME > MSG_OR_VALUE :`)
 
+import { RouteName } from '@/types/routeType'
 import { computed } from 'vue'
 import { useTracksStore } from '@/stores/tracks'
 import Translation from '@/utils/translation'
@@ -56,9 +57,11 @@ import { TrackId } from '@/types'
 import { groupBy } from '@/utils/helpers'
 import { useDebugStore } from '@/stores/debug'
 import { DsfrButton } from '@gouvminint/vue-dsfr'
+import { useRouter } from 'vue-router'
 
 const tracks = useTracksStore()
 const debugStore = useDebugStore()
+const router = useRouter()
 
 const usedTracks = computed(() => {
   return tracks.usedTracks
@@ -79,8 +82,9 @@ const usedCategories = computed(() => {
   return Object.keys(usedTracksRegrouped.value)
 })
 
-const backToTrack = (trackId: TrackId) => {
+const backToTrack = async (trackId: TrackId) => {
   tracks.setUsedTracksAsNotCompleted(trackId)
   tracks.removeFurtherUsedTracks(trackId)
+  await router.push({ name: RouteName.QuestionnaireFromSidebar })
 }
 </script>

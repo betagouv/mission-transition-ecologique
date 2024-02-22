@@ -64,7 +64,6 @@
   </div>
 
   <div
-    v-show="!usedTrack.completed && track !== undefined"
     :id="usedTrack.id"
     :key="`track-${step}-${usedTrack.id}`"
     class="fr-grid-row"
@@ -211,157 +210,162 @@
         </div>
 
         <!-- TRACK Translation {{ renderAs }} / EXCEPT SELECT-->
-        <div
-          v-for="(option, idx) in optionsArray"
-          :key="`track-${step}-${usedTrack.id}-option-${idx}`"
-          :class="`${colsWidth} ${isTrackResults ? 'fr-col-offset-md-1' : ''} tee-track-choice`"
-          :style="renderAs === trackComponents.Select ? 'display: none' : ''"
-        >
-          <!-- AS CARDS -->
+        <template v-if="renderAs !== trackComponents.Select">
           <div
-            v-if="renderAs === trackComponents.Cards"
-            style="height: 99%"
+            v-for="(option, idx) in optionsArray"
+            :key="`track-${step}-${usedTrack.id}-option-${idx}`"
+            :class="`${colsWidth} ${isTrackResults ? 'fr-col-offset-md-1' : ''} tee-track-choice`"
           >
+            <!-- AS CARDS -->
             <div
-              class="fr-card fr-enlarge-link"
-              @click="updateSelection(option, idx)"
+              v-if="renderAs === trackComponents.Cards"
+              style="height: 99%"
             >
               <div
-                v-if="option.imageTop"
-                class="fr-card__header"
+                class="fr-card fr-enlarge-link"
+                @click="updateSelection(option, idx)"
               >
-                <div class="fr-card__img">
-                  <img
-                    class="fr-responsive-img"
-                    :src="`${publicPath}${option.imageTop}`"
-                    :alt="`image / ${option.label}`"
-                  />
+                <div
+                  v-if="option.imageTop"
+                  class="fr-card__header"
+                >
+                  <div class="fr-card__img">
+                    <img
+                      class="fr-responsive-img"
+                      :src="`${publicPath}${option.imageTop}`"
+                      :alt="`image / ${option.label}`"
+                    />
+                  </div>
                 </div>
-              </div>
-              <div class="fr-card__body">
-                <div class="fr-card__content">
+                <div class="fr-card__body">
+                  <div class="fr-card__content">
+                    <p
+                      v-if="option.hintImage"
+                      class="fr-card__desc fr-mt-0 fr-mb-2v"
+                      style="order: 2"
+                    >
+                      <span
+                        v-if="option.hintImageIcon"
+                        :class="option.hintImageIcon"
+                        aria-hidden="true"
+                      >
+                      </span>
+                      {{ option.hintImage[Translation.lang] }}
+                    </p>
+                    <h3 class="fr-card__title">
+                      <!-- <a href="#"> -->
+                      {{ option.label?.[Translation.lang] }}
+                      <!-- </a> -->
+                    </h3>
+                    <div
+                      v-if="isActiveChoice(option.value as number)"
+                      class="fr-card__start"
+                    >
+                      <p class="fr-badge fr-badge--info fr-badge--no-icon fr-mb-4v">
+                        {{ Translation.t('selection.selected') }}
+                      </p>
+                    </div>
+                  </div>
                   <p
-                    v-if="option.hintImage"
-                    class="fr-card__desc fr-mt-0 fr-mb-2v"
-                    style="order: 2"
+                    v-if="option.hint"
+                    class="fr-card__desc"
                   >
                     <span
-                      v-if="option.hintImageIcon"
-                      :class="option.hintImageIcon"
+                      v-if="option.hintIcon"
+                      :class="option.hintIcon"
                       aria-hidden="true"
                     >
                     </span>
-                    {{ option.hintImage[Translation.lang] }}
+                    {{ option.hint[Translation.lang] }}
                   </p>
-                  <h3 class="fr-card__title">
-                    <!-- <a href="#"> -->
-                    {{ option.label?.[Translation.lang] }}
-                    <!-- </a> -->
-                  </h3>
-                  <div
-                    v-if="isActiveChoice(option.value as number)"
-                    class="fr-card__start"
+                  <p
+                    v-if="option.resume"
+                    class="fr-card__desc"
                   >
-                    <p class="fr-badge fr-badge--info fr-badge--no-icon fr-mb-4v">
-                      {{ Translation.t('selection.selected') }}
-                    </p>
-                  </div>
+                    {{ option.resume[Translation.lang] }}
+                  </p>
                 </div>
-                <p
-                  v-if="option.hint"
-                  class="fr-card__desc"
-                >
-                  <span
-                    v-if="option.hintIcon"
-                    :class="option.hintIcon"
-                    aria-hidden="true"
-                  >
-                  </span>
-                  {{ option.hint[Translation.lang] }}
-                </p>
-                <p
-                  v-if="option.resume"
-                  class="fr-card__desc"
-                >
-                  {{ option.resume[Translation.lang] }}
-                </p>
               </div>
             </div>
-          </div>
 
-          <!-- AS BUTTONS -->
-          <div
-            v-if="renderAs === trackComponents.Buttons && !isTrackOptionsInput(option)"
-            class="fr-div-fixed-height"
-          >
-            <DsfrButton
-              class="fr-btn-fullwidth fr-btn-fixed-height fr-btn-sm-align-left fr-btn-grey"
-              :style="`outline-color: #929292; ${isActiveChoice(idx) ? 'background-color: #eeeeee' : ''}`"
-              :label="option.label?.[Translation.lang]"
-              :icon="getButtonIcon(idx)"
-              :secondary="!isActiveChoice(idx)"
-              @click="updateSelection(option, idx)"
-            />
-          </div>
+            <!-- AS BUTTONS -->
+            <div
+              v-if="renderAs === trackComponents.Buttons && !isTrackOptionsInput(option)"
+              class="fr-div-fixed-height"
+            >
+              <DsfrButton
+                class="fr-btn-fullwidth fr-btn-fixed-height fr-btn-sm-align-left fr-btn-grey"
+                :style="`outline-color: #929292; ${isActiveChoice(idx) ? 'background-color: #eeeeee' : ''}`"
+                :label="option.label?.[Translation.lang]"
+                :icon="getButtonIcon(idx)"
+                :secondary="!isActiveChoice(idx)"
+                @click="updateSelection(option, idx)"
+              />
+            </div>
 
-          <!-- AS BUTTON + BUTTON INPUT -->
-          <div
-            v-if="renderAs === trackComponents.Buttons && isTrackOptionsInput(option)"
-            class="fr-div-fixed-height"
-          >
-            <TeeTrackButtonInput
-              :track-id="usedTrack.id"
-              :icon="getButtonIcon(idx)"
-              :is-active="isActiveChoice(idx)"
-              :option="option"
-              @update-selection="updateSelectionFromSignal($event, idx)"
-              @update-value="updateSelectionValueFromSignal($event)"
-              @go-to-next-track="saveSelectionFromSignal($event, idx)"
-            />
-          </div>
+            <!-- AS BUTTON + BUTTON INPUT -->
+            <div
+              v-if="renderAs === trackComponents.Buttons && isTrackOptionsInput(option)"
+              class="fr-div-fixed-height"
+            >
+              <TeeTrackButtonInput
+                :track-id="usedTrack.id"
+                :icon="getButtonIcon(idx)"
+                :is-active="isActiveChoice(idx)"
+                :option="option"
+                @update-selection="updateSelectionFromSignal($event, idx)"
+                @update-value="updateSelectionValueFromSignal($event)"
+                @go-to-next-track="saveSelectionFromSignal($event, idx)"
+              />
+            </div>
 
-          <!-- AS SIMPLE BUTTONS -->
-          <div v-if="renderAs === trackComponents.SimpleButtons">
-            <DsfrButton
-              class="fr-btn-fullwidth fr-btn-align-center"
-              :label="option.label?.[Translation.lang]"
-              size="large"
-              style="font-weight: 1000; min-height: 3.5rem; font-size: 1.5rem"
-              @click="updateAndSave(option, idx)"
-            />
-          </div>
+            <!-- AS SIMPLE BUTTONS -->
+            <div v-if="renderAs === trackComponents.SimpleButtons">
+              <DsfrButton
+                class="fr-btn-fullwidth fr-btn-align-center"
+                :label="option.label?.[Translation.lang]"
+                size="large"
+                style="font-weight: 1000; min-height: 3.5rem; font-size: 1.5rem"
+                @click="updateAndSave(option, idx)"
+              />
+            </div>
 
-          <!-- AS INPUT -->
-          <div
-            v-if="renderAs === trackComponents.Input && isTrackOptionsInput(option)"
-            style="height: 100%"
-          >
-            <TeeTrackInput
-              :track-id="usedTrack.id"
-              :option="option"
-              @update-selection="updateSelectionFromSignal($event, idx)"
-              @go-to-next-track="saveSelectionFromSignal($event, idx)"
-            />
-          </div>
+            <!-- AS INPUT -->
+            <div
+              v-if="renderAs === trackComponents.Input && isTrackOptionsInput(option)"
+              style="height: 100%"
+            >
+              <TeeTrackInput
+                :track-id="usedTrack.id"
+                :option="option"
+                @update-selection="updateSelectionFromSignal($event, idx)"
+                @go-to-next-track="saveSelectionFromSignal($event, idx)"
+              />
+            </div>
 
-          <!-- AS RESULT -->
-          <div v-if="isTrackResults">
-            <TeeResults
-              :track-id="usedTrack.id"
-              :track-config="track?.config"
-              :track-options="track?.options"
-              :track-form="track?.form"
-              :tracks-results="tracks.usedTracks"
-              :track-element="trackElement"
-            />
+            <!-- AS RESULT -->
+            <div v-if="isTrackResults">
+              <TeeResults
+                :track-id="usedTrack.id"
+                :track-config="track?.config"
+                :track-options="track?.options"
+                :track-form="track?.form"
+                :tracks-results="tracks.usedTracks"
+                :track-element="trackElement"
+              />
+            </div>
           </div>
-        </div>
+        </template>
       </div>
 
       <!-- AS SELECT -->
-      <div v-if="track !== undefined && renderAs === trackComponents.Select">
+      <div
+        v-if="track !== undefined && renderAs === trackComponents.Select"
+        class="fr-px-4v fr-px-md-0v fr-grid-row fr-grid-row--gutters"
+      >
         <TeeTrackSelect
           :track="track"
+          class="fr-px-2v fr-px-md-3v fr-mt-6v fr-col-12"
           @update-selection="updateSelectionValueFromSelectSignal($event)"
         />
       </div>

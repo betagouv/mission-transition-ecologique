@@ -5,9 +5,8 @@
     class="fr-container--fluid"
   >
     <div
-      v-show="!programs.programDetail"
       id="trackElement"
-      :class="`fr-container--fluid ${tracks.currentStep && tracks.currentStep > 1 ? 'fr-pt-0v' : ''}`"
+      :class="`fr-container--fluid ${needSidebar ? 'fr-pt-0v' : ''}`"
     >
       <!-- TRACKS INTERFACES -->
       <div
@@ -16,7 +15,7 @@
       >
         <!-- SIDEBAR MENU (FIL D'ARIANE)-->
         <div
-          v-if="needSidebar && tracks.currentStep && tracks.currentStep > 1"
+          v-if="needSidebar"
           class="fr-tee-add-padding fr-mt-10v fr-col-3 fr-col-md-4 fr-col-lg-4 fr-col-xl-2 fr-col-sm-hide"
           style="height: 100%"
         >
@@ -40,7 +39,7 @@
             :class="`fr-p-0 fr-mb-${debugStore.is ? '12v' : '0'}`"
           >
             <TeeTrack
-              v-if="trackElement"
+              v-if="trackElement && !track.completed"
               :step="index + 1"
               :used-track="track"
               :track-element="trackElement"
@@ -49,52 +48,31 @@
         </div>
       </div>
     </div>
-
-    <!-- DETAIL RESULT CARD -->
-    <div
-      v-if="programs.programDetail"
-      :class="`fr-container-fluid fr-px-0v fr-px-md-20v`"
-    >
-      <div class="fr-grid-row fr-grid-row-gutters">
-        <div class="fr-col">
-          <ProgramDetail
-            :program-id="programs.programDetail"
-            :track-id="programs.programDetailConfig"
-          />
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { computed, onBeforeMount, onMounted, ref, watch } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { useRouter } from 'vue-router'
 
 import { useTracksStore } from '@/stores/tracks'
-import { useProgramsStore } from '@/stores/programs'
 import { navigationStore } from '@/stores/navigation'
-import { TrackComponents, TrackId } from '@/types'
+import { TrackId } from '@/types'
 import TeeTrack from '@/components/tracks/TeeTrack.vue'
 import TeeSidebar from '@/components/TeeSidebar.vue'
-import ProgramDetail from '@/components/program/detail/ProgramDetail.vue'
 import { useDebugStore } from '@/stores/debug'
 
 interface Props {
-  seed: TrackId
-  programId?: string
+  seed?: TrackId
 }
 const props = defineProps<Props>()
 
 const trackElement = ref<HTMLElement | null>(null)
 
 const tracks = useTracksStore()
-const programs = useProgramsStore()
 const nav = navigationStore()
 const debugStore = useDebugStore()
-
 const router = useRouter()
-const route = useRoute()
 
 watch(
   () => tracks.usedTracks,
@@ -110,49 +88,35 @@ watch(
 )
 
 const needSidebar = computed(() => {
-  return tracks.seedTrack !== TrackId.Results && tracks.currentStep && tracks.currentStep > 1
+  return tracks.currentStep && tracks.currentStep > 1
 })
 
 const getColumnsWidth = computed(() => {
-  const currentTrack = tracks.getLastTrack
-  const colsStart = 'fr-col-12 fr-col-xl-12'
-  const colsTracks = 'fr-col fr-col-sm-12 fr-col-md-8 fr-col-lg-8 fr-col-xl-6'
-  const colsResults = 'fr-col fr-col-sm-12 fr-col-md-8 fr-col-lg-8 fr-col-xl-8'
-  if (tracks.seedTrack === TrackId.Results || (tracks.currentStep === 1 && false)) {
-    return colsStart
-  } else if ((currentTrack && (currentTrack.component as TrackComponents)) === TrackComponents.Results) {
-    return colsResults
-  } else {
-    return colsTracks
-  }
+  // const colsStart = 'fr-col-12 fr-col-xl-12'
+  return 'fr-col fr-col-sm-12 fr-col-md-8 fr-col-lg-8 fr-col-xl-6'
+  // if (tracks.currentStep === 1) {
+  //   return colsStart
+  // } else {
+  //   return colsTracks
+  // }
 })
 
-const setupFromUrl = async () => {
-  const programId = props.programId ?? (route.query['teeDetail'] as string | null)
-  if (programId) {
-    await nav.setCurrentDetailId(programId)
-    programs.setDetailResult(programId, TrackId.Results)
-  }
-
+const setupFromUrl = () => {
   nav.setCurrentTrackId(tracks.currentTrackId)
   nav.updateQueries(tracks.getAllUsedTracksValuesPairs)
 }
 
 onBeforeMount(() => {
   // set first track at mount
-  tracks.setSeedTrack(props.seed)
-  tracks.addToUsedTracks(props.seed, props.seed)
+  if (props.seed) {
+    tracks.setSeedTrack(props.seed)
+    tracks.addToUsedTracks(props.seed, props.seed)
+  }
 })
 
 onMounted(async () => {
   // cf: https://stackoverflow.com/questions/69495211/vue3-route-query-empty
   await router.isReady()
-  await setupFromUrl()
-
-  // set detail program ID if any
-  if (props.programId) {
-    programs.setDetailResult(props.programId, props.seed)
-    await nav.setCurrentDetailId(props.programId)
-  }
+  setupFromUrl()
 })
 </script>

@@ -3,7 +3,7 @@
 
 import ProgramFilter from '@/utils/program/programFilters'
 import { computed, ref } from 'vue'
-import { defineStore } from 'pinia'
+import { acceptHMRUpdate, defineStore } from 'pinia'
 
 import {
   type ProgramData,
@@ -29,7 +29,7 @@ export const useProgramsStore = defineStore('programs', () => {
   })
 
   // getters
-  const progs = computed<({ index: string } & ProgramData)[] | undefined>(() => {
+  const progs = computed<({ index: string } & ProgramData)[]>(() => {
     return programs.value?.map((programData: ProgramData, i: number) => {
       return {
         index: i.toString(),
@@ -39,10 +39,10 @@ export const useProgramsStore = defineStore('programs', () => {
   })
 
   function getProgramsByUsedTracks() {
-    const tracksResults = useTracksStore().usedTracks
+    const usedTracks = useTracksStore().usedTracks
     // retrieve and organize user's conditions
     const conditions: { [k: string]: any } = {}
-    tracksResults.forEach((trackResult) => {
+    usedTracks.forEach((trackResult) => {
       trackResult.selected.forEach((trackOptions: TrackOptions) => {
         const val = trackOptions.value || {}
 
@@ -53,7 +53,7 @@ export const useProgramsStore = defineStore('programs', () => {
     })
 
     // filter out programs
-    if (progs.value) {
+    if (progs.value.length > 0) {
       const progsFilteredResult = filterWithPublicodes(progs.value, conditions as QuestionnaireData)
 
       if (progsFilteredResult.isErr) {
@@ -107,3 +107,7 @@ export const useProgramsStore = defineStore('programs', () => {
     getProgramById
   }
 })
+
+if (import.meta.hot) {
+  import.meta.hot.accept(acceptHMRUpdate(useProgramsStore, import.meta.hot))
+}

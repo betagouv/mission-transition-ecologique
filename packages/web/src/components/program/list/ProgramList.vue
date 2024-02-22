@@ -1,36 +1,38 @@
 <template>
   <!-- PROGRAMS AS LIST OF CARDS -->
-  <div class="fr-container fr-px-0 fr-mt-6v">
-    <div class="fr-grid-row fr-grid-row--gutters">
-      <div
-        v-if="havePrograms && countPrograms > 1"
-        class="fr-mb-4v tee-text-light"
-      >
-        {{ countFilteredPrograms }}
-        {{ Translation.t('results.results') }}
+  <div class="fr-container fr-px-0 fr-px-md-4w fr-mt-6v">
+    <ProgramListHeaderResult v-if="!navigation.isCatalog()" />
+    <div class="fr-grid-row">
+      <div class="fr-mt-4v fr-mb-2v fr-col-12">
+        <div
+          v-if="havePrograms && countPrograms > 1"
+          class="tee-text-light"
+        >
+          {{ countFilteredPrograms }}
+          {{ countFilteredPrograms > 1 ? Translation.t('results.results') : Translation.t('results.result') }}
+        </div>
+      </div>
+      <div class="fr-col-12">
+        <ProgramFilters v-if="havePrograms && countPrograms > 1" />
       </div>
 
-      <ProgramListHeaderResult v-if="!navigation.isCatalog" />
+      <div class="fr-col-12">
+        <TeeNoResults
+          v-if="!countFilteredPrograms"
+          image="images/tracks/no-results.svg"
+          :message="{ fr: 'Aucune aide n\'a pu être identifiée avec les critères choisis...' }"
+        />
+      </div>
 
-      <ProgramFilters v-if="havePrograms && countPrograms > 1" />
-
-      <TeeNoResults
-        v-if="!countFilteredPrograms"
-        image="images/tracks/no-results.svg"
-        :message="{ fr: 'Aucune aide n\'a pu être identifiée avec les critères choisis...' }"
-      />
-
-      <component
-        :is="navigation.isCatalog ? 'router-link' : 'div'"
+      <router-link
         v-for="program in filteredPrograms"
         :id="program.id"
         :key="program.id"
-        :to="navigation.isCatalog ? { name: RouteName.CatalogDetail, params: { programId: program.id } } : undefined"
-        class="fr-card fr-enlarge-link fr-card--horizontal-tier fr-mb-10v"
-        @click="updateDetailResult(program.id)"
+        :to="getRouteToProgramDetail(program.id)"
+        class="fr-col-12 fr-card fr-enlarge-link fr-card--horizontal-tier fr-mb-10v"
       >
         <ProgramCard :program="program" />
-      </component>
+      </router-link>
     </div>
   </div>
 </template>
@@ -44,7 +46,6 @@ import { useProgramsStore } from '@/stores/programs'
 import { type ProgramData, TrackId } from '@/types'
 import { navigationStore } from '@/stores/navigation'
 import { RouteName } from '@/types/routeType'
-import Widget from '@/utils/widget'
 import Matomo from '@/utils/matomo'
 import TeeNoResults from '@/components/results/TeeNoResults.vue'
 import ProgramFilters from '@/components/program/list/ProgramFilters.vue'
@@ -70,22 +71,13 @@ const countFilteredPrograms = computed(() => {
   return filteredPrograms.value?.length || 0
 })
 
-const updateDetailResult = async (id: string | number) => {
-  if (Widget.is) {
-    programsStore.setDetailResult(id, TrackId.Results)
-    return
-  }
-  if (navigation.isCatalog) {
-    return
-  }
-  // Set detail infos
-  programsStore.setDetailResult(id, TrackId.Results)
-  await navigation.setCurrentDetailId(id)
-  // scrollToTop(props.trackElement)
+const getRouteToProgramDetail = (programId: string) => {
+  const routeName = navigation.isCatalog() ? RouteName.CatalogDetail : RouteName.QuestionnaireResultDetail
+  return { name: routeName, params: { programId } }
 }
 
 onBeforeMount(() => {
   // analytics / send event
-  Matomo.sendEvent(TrackId.Results, navigation.isCatalog ? 'show_results_catalog' : 'show_results')
+  Matomo.sendEvent(TrackId.Results, navigation.isCatalog() ? 'show_results_catalog' : 'show_results')
 })
 </script>

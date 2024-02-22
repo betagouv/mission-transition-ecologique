@@ -1,6 +1,7 @@
 // CONSOLE LOG TEMPLATE
 //console.log(`router.index > FUNCTION_NAME > MSG_OR_VALUE :`)
 
+import TeeQuestionnaireResult from '@/components/TeeQuestionnaireResult.vue'
 import { createRouter, createWebHistory, type RouteLocationNormalized, type RouteLocationNormalizedLoaded } from 'vue-router'
 import TeeHomePage from '../pages/TeeHomePage.vue'
 import TeeQuestionnairePage from '../pages/TeeQuestionnairePage.vue'
@@ -42,16 +43,28 @@ export const router = createRouter({
       children: [
         {
           path: '',
-          name: 'questionnaire',
+          name: RouteName.Questionnaire,
           component: TeeQuestionnaire as Component,
           props: {
             seed: TrackId.QuestionnaireRoute
           }
         },
         {
+          path: '',
+          name: RouteName.QuestionnaireFromSidebar,
+          component: TeeQuestionnaire as Component,
+          beforeEnter: []
+        },
+        {
           path: 'resultat',
           name: RouteName.QuestionnaireResult,
-          component: ProgramList as Component
+          component: TeeQuestionnaireResult as Component
+        },
+        {
+          path: 'resultat/:programId',
+          name: RouteName.QuestionnaireResultDetail,
+          component: ProgramDetail as Component,
+          props: true
         }
       ]
     },
@@ -69,10 +82,7 @@ export const router = createRouter({
           path: ':programId',
           name: RouteName.CatalogDetail,
           component: ProgramDetail as Component,
-          props: (route) => ({
-            programId: route.params.programId as string,
-            trackId: TrackId.Results
-          })
+          props: true
         }
       ]
     },

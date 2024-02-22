@@ -3,7 +3,7 @@
 
 import { computed, ref, toRaw } from 'vue'
 // cf : https://stackoverflow.com/questions/64917686/vue-array-converted-to-proxy-object
-import { defineStore } from 'pinia'
+import { acceptHMRUpdate, defineStore } from 'pinia'
 import { tracks } from '@/questionnaire'
 import type { Track, TrackOptions, Translations, UsedTrack, UsedTrackValuePair } from '@/types'
 import { TrackComponents, TrackId } from '@/types'
@@ -226,3 +226,7 @@ export const useTracksStore = defineStore('tracks', () => {
     findSelectedValueByTrackIdAndKey
   }
 })
+
+if (import.meta.hot) {
+  import.meta.hot.accept(acceptHMRUpdate(useTracksStore, import.meta.hot))
+}
