@@ -438,10 +438,6 @@ button.fr-link:hover, .tee-router-link:hover {
 .tee-form-response-error {
   color: #CE0500;
 }
-.fr-tee-form-arrow-back {
-  position: absolute;
-  left: 8em;
-}
 
 /* DEBUGGING STYLES */
 code {
@@ -805,6 +801,11 @@ code {
     height: auto;
     max-width: 100%;
   }
+
+  .fr-tee-form-arrow-back {
+    position: absolute;
+    left: 1em;
+  }
 }
 
 /*! media more than md */
@@ -814,6 +815,11 @@ code {
     width: auto;
     height: auto;
     max-width: 100%;
+  }
+
+  .fr-tee-form-arrow-back {
+    position: absolute;
+    left: 8em;
   }
 }
 

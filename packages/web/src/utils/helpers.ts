@@ -260,8 +260,6 @@ export const scrollToTop = (element: Element) => {
 }
 
 export const scrollToElementCenter = (element: HTMLElement) => {
-  // console.log('\nscrollToElementCenter > element : ', element)
-  // console.log('scrollToElementCenter > Widget.is : ', Widget.is)
   if (!Widget.is) {
     setTimeout(() => {
       const docHeight = document.documentElement.clientHeight

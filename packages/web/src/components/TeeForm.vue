@@ -163,13 +163,6 @@
           :loading="isLoading"
           @click="saveFormData()"
         />
-        <!-- <DsfrButton
-          :label="Translation.t('test')"
-          icon="ri-arrow-right-line"
-          icon-right
-          :loading="isLoading"
-          @click="scrollToFormContainer()"
-        /> -->
       </div>
     </div>
   </div>
