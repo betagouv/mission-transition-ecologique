@@ -17,8 +17,9 @@
       </div>
     </div>
   </div>
+
   <!-- PROGRAM INFOS -->
-  <div :class="`fr-container-fluid fr-px-6v fr-px-md-20v fr-mt-${!programIsAvailable ? 3 : 8}v`">
+  <div class="fr-container-fluid fr-px-0 fr-px-md-20v fr-mt-3v">
     <div class="fr-grid-row fr-grid-row-gutters">
       <div class="fr-col">
         <!-- BACK TO RESULTS BTN -->
@@ -123,7 +124,7 @@
             <TeeTile
               class="tee-no-hover"
               :title="Translation.t('programCosts.cost')"
-              :image-path="`${publicPath}images/TEE-cout.svg`"
+              :image-path="`${publicPath}images/TEE-cout-02.svg`"
               :description="`${program[`coût de l'accompagnement`]}`"
             />
           </div>
@@ -135,7 +136,7 @@
             <TeeTile
               class="tee-no-hover"
               :title="Translation.t('programCosts.aid')"
-              :image-path="`${publicPath}images/TEE-cout.svg`"
+              :image-path="`${publicPath}images/TEE-cout-02.svg`"
               :description="`${program[`montant du financement`]}`"
             />
           </div>
@@ -147,7 +148,7 @@
             <TeeTile
               class="tee-no-hover"
               :title="Translation.t('programCosts.taxAdvantage')"
-              :image-path="`${publicPath}images/TEE-cout.svg`"
+              :image-path="`${publicPath}images/TEE-cout-02.svg`"
               :description="`${program[`montant de l'avantage fiscal`]}`"
             />
           </div>
@@ -159,7 +160,7 @@
             <TeeTile
               class="tee-no-hover"
               :title="Translation.t('programCosts.loan')"
-              :image-path="`${publicPath}images/TEE-cout.svg`"
+              :image-path="`${publicPath}images/TEE-cout-02.svg`"
               :description="`${program[`montant du prêt`]}`"
             />
           </div>
@@ -270,7 +271,7 @@
 
 import { ref, computed, onBeforeMount } from 'vue'
 
-import TeeTile from '../../TeeTile.vue'
+import TeeTile from '@/components/TeeTile.vue'
 import ProgramObjective from '@/components/program/detail/ProgramObjective.vue'
 import ProgramAccordion from '@/components/program/detail/ProgramAccordion.vue'
 import ProgramEligibility from '@/components/program/detail/ProgramEligibility.vue'
@@ -301,7 +302,7 @@ const trackConfig = ref<any>()
 const TeeProgramFormContainer = ref<HTMLElement | null | undefined>(null)
 
 const blockColor = '#000091'
-const columnTiles = ref<string>('fr-col')
+const columnTiles = 'fr-col fr-col-sm-12 fr-col-md-4 fr-tee-detail-info-tile'
 
 const publicPath = Config.publicPath
 

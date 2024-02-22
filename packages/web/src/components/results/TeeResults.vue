@@ -45,7 +45,7 @@
   <!-- PROGRAMS AS LIST OF CARDS -->
   <div
     v-if="countFilteredPrograms"
-    class="fr-container fr-px-0 fr-mt-6v"
+    class="fr-container fr-px-2v fr-mt-6v"
   >
     <!-- RESULTS SIZE -->
     <div
