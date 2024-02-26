@@ -38,6 +38,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@gouvfr/dsfr": "^1.11.1",
     "@gouvminint/vue-dsfr": "^5.0.0",
     "@sentry/utils": "^7.99.0",
     "@sentry/vue": "^7.93.0",
