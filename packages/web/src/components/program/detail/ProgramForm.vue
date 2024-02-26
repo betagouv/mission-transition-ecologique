@@ -1,6 +1,6 @@
 <template>
   <!-- BACK TO FORM BTN -->
-  <DsfrButton
+  <TeeDsfrButton
     v-show="formIsSent"
     class="fr-btn fr-btn--tertiary-no-outline inline-flex fr-mb-3v fr-link fr-tee-form-arrow-back"
     tertiary
@@ -158,7 +158,7 @@
         class="fr-col-12"
         style="display: grid; justify-content: right"
       >
-        <DsfrButton
+        <TeeDsfrButton
           :label="Translation.t('send')"
           :disabled="!isValidForm"
           icon="ri-arrow-right-line"
@@ -233,7 +233,7 @@ import { computed, ref } from 'vue'
 import { type ProgramData, type ReqResp, TrackId } from '@/types'
 import { useTracksStore } from '@/stores/tracks'
 import Translation from '@/utils/translation'
-import DsfrButton from '@/components/button/DsfrButton.vue'
+import TeeDsfrButton from '@/components/button/TeeDsfrButton.vue'
 import { DsfrInput, DsfrInputGroup, DsfrCheckbox } from '@gouvminint/vue-dsfr'
 import Matomo from '@/utils/matomo'
 import { RouteName } from '@/types/routeType'
