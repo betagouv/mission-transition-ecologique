@@ -76,7 +76,7 @@
               :href="mainPartner.href"
             >
               <img
-                class="fr-footer__logo"
+                class="fr-footer__logo tee-footer-logo"
                 style="height: 5.625rem; width: 10rem"
                 :src="mainPartner.img"
                 :alt="mainPartner.label"
@@ -98,7 +98,7 @@
                   :href="operator.href"
                 >
                   <img
-                    class="fr-footer__logo tee-footer-operators-img"
+                    class="fr-footer__logo tee-footer-operators-img tee-footer-logo"
                     :src="operator.img"
                     :alt="operator.label"
                   />
@@ -244,6 +244,10 @@ const mainLinks = [
   {
     label: 'Statistiques',
     href: 'https://stats.beta.gouv.fr/index.php?module=CoreHome&action=index&idSite=23&period=day&date=yesterday#?period=day&date=yesterday&category=Dashboard_Dashboard&subcategory=1&idSite=23'
+  },
+  {
+    label: 'Ajouter une aide',
+    to: { name: RouteName.AddProgram }
   },
   {
     label: 'Échanger avec un conseiller',
