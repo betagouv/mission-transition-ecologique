@@ -127,6 +127,9 @@ button.fr-link:hover, .tee-router-link:hover {
   max-height: 5.625rem;
   width: 10rem !important;
 }
+.tee-footer-logo {
+  box-shadow: none !important;
+}
 
 .tee-home-img {
   width: 100%;
@@ -882,3 +885,15 @@ code {
   transform: translateY(-40px);
   opacity: 0;
 } */
+
+/* IFRAMES AND WIDGETS */
+@media screen and (min-width: 48em) {
+  .tee-typeform-widget > div {
+    height: calc(100vh - 80px) !important;
+  }
+}
+@media screen and (min-width: 0em) and (max-width: 48em) {
+  .tee-typeform-widget > div {
+    height: calc(100vh - 113px) !important;
+  }
+}

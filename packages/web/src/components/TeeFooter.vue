@@ -243,6 +243,10 @@ const mainLinks = [
     href: 'https://stats.beta.gouv.fr/index.php?module=CoreHome&action=index&idSite=23&period=day&date=yesterday#?period=day&date=yesterday&category=Dashboard_Dashboard&subcategory=1&idSite=23'
   },
   {
+    label: 'Ajouter une aide',
+    to: { name: RouteName.AddProgram }
+  },
+  {
     label: 'Échanger avec un conseiller',
     to: { name: RouteName.ChatAdvisor },
     icon: 'fr-icon-chat-3-line'
