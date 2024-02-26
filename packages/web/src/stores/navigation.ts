@@ -8,7 +8,7 @@ import type { RouteLocationNormalizedLoaded, RouteLocationRaw, Router } from 'vu
 import { RouteName } from '@/types/routeType'
 import Widget from '@/utils/widget'
 
-export const navigationStore = defineStore('navigation', () => {
+export const useNavigationStore = defineStore('navigation', () => {
   // State objects
   const routerReady = ref<boolean>(false)
   const routerRef = ref<Router>()
@@ -174,5 +174,5 @@ export const navigationStore = defineStore('navigation', () => {
 })
 
 if (import.meta.hot) {
-  import.meta.hot.accept(acceptHMRUpdate(navigationStore, import.meta.hot))
+  import.meta.hot.accept(acceptHMRUpdate(useNavigationStore, import.meta.hot))
 }

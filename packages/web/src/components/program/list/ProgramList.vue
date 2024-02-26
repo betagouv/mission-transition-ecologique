@@ -44,14 +44,14 @@ import { computed, onBeforeMount } from 'vue'
 import Translation from '@/utils/translation'
 import { useProgramsStore } from '@/stores/programs'
 import { type ProgramData, TrackId } from '@/types'
-import { navigationStore } from '@/stores/navigation'
+import { useNavigationStore } from '@/stores/navigation'
 import { RouteName } from '@/types/routeType'
 import Matomo from '@/utils/matomo'
 import ProgramListNoResults from '@/components/program/list/ProgramListNoResults.vue'
 import ProgramFilters from '@/components/program/list/ProgramFilters.vue'
 
 const programsStore = useProgramsStore()
-const navigation = navigationStore()
+const navigation = useNavigationStore()
 
 const programs: ProgramData[] = programsStore.getProgramsByUsedTracks()
 

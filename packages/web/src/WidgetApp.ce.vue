@@ -118,7 +118,7 @@ import { computed, onBeforeMount, ref, watch } from 'vue'
 import { useTracksStore } from './stores/tracks'
 import Translation from '@/utils/translation'
 import { useProgramsStore } from './stores/programs'
-import { navigationStore } from './stores/navigation'
+import { useNavigationStore } from './stores/navigation'
 import { type ProgramData, TrackComponents, TrackId } from './types'
 import TeeMatomo from './components/TeeMatomo.vue'
 import TeeTrack from './components/tracks/TeeTrack.vue'
@@ -142,7 +142,7 @@ const props = defineProps<Props>()
 
 const tracks = useTracksStore()
 const programs = useProgramsStore()
-const nav = navigationStore()
+const nav = useNavigationStore()
 const debugStore = useDebugStore()
 
 // HTML/Vue3 DOM ref
