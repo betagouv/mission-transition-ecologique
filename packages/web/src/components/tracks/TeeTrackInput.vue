@@ -22,7 +22,7 @@
     </div>
   </div>
 
-  <!-- INPUT -->
+  <!-- INPUT FORM -->
   <label
     v-if="option.label"
     class="fr-label fr-mb-2v"
@@ -30,30 +30,33 @@
   >
     {{ option.label[Translation.lang] }}
   </label>
-  <TeeTrackInputWrapper
-    :has-input="!!inputValue"
-    :is-loading="isLoading"
-    @reset-input="clearInput"
-  >
+  <form class="tee-form-input-large">
+    <!-- TEXT INPUT -->
     <input
       :id="`input-${option.id}`"
       v-model="inputValue"
       :name="`input-${option.id}`"
       :disabled="isLoading"
       :placeholder="option?.placeholder?.[Translation.lang]"
-      :class="`fr-input tee-input-large tee-input-search-${inputValue ? '' : 'not-'}clearable`"
+      class="fr-input tee-input-large"
       type="search"
       @keyup.enter="processInput"
     />
-    <template #search-button>
-      <button
-        class="fr-btn tee-btn-input-large fr-icon-search-line"
-        :disabled="isLoading"
-        :title="Translation.t('input.search')"
-        @click="processInput"
-      ></button>
-    </template>
-  </TeeTrackInputWrapper>
+    <!-- CLEAR BTN -->
+    <button
+      v-if="inputValue"
+      :class="`fr-btn fr-icon-close-line fr-btn--tertiary-no-outline tee-btn-input-large tee-btn-input-clear-btn${isLoading ? '-disabled' : ''}`"
+      @click="clearInput"
+    ></button>
+    <!-- SEARCH BTN -->
+    <button
+      class="fr-btn tee-btn-input-large fr-icon-search-line"
+      :disabled="isLoading"
+      :title="Translation.t('input.search')"
+      @click="processInput"
+    ></button>
+  </form>
+
   <!-- HINT -->
   <div
     v-if="option.hint && !requestResponses.length"
@@ -269,7 +272,6 @@ import { getFromResp, remapItem, cleanValue } from '../../utils/helpers'
 import { CallbackActions } from '@/types'
 import { useDebugStore } from '@/stores/debug'
 import Matomo from '@/utils/matomo'
-import TeeTrackInputWrapper from '@/components/tracks/TeeTrackInputWrapper.vue'
 
 interface Props {
   trackId: TrackId

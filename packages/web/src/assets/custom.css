@@ -212,11 +212,8 @@ button.fr-link:hover, .tee-router-link:hover {
 .tee-btn-next {
   justify-content: end;
 }
-.tee-input-large-container {
-  height: 4rem !important;
-}
-.tee-input-large-container .fr-input-wrap{
-  width: 100%;
+.tee-form-input-large {
+  display: flex;
 }
 .tee-input-large {
   font-size: 1.1rem;
@@ -233,12 +230,13 @@ button.fr-link:hover, .tee-router-link:hover {
 .tee-btn-input-large::before {
   width: 3rem !important;
 }
-.tee-input-search-clearable {
-  width: calc(100% - 8rem) !important;
+.tee-form-input-large input[type="search"]::-webkit-search-decoration,
+.tee-form-input-large input[type="search"]::-webkit-search-cancel-button,
+.tee-form-input-large input[type="search"]::-webkit-search-results-button,
+.tee-form-input-large input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance:none !important;
 }
-.tee-input-search-not-clearable {
-  width: calc(100% - 4rem) !important;
-}
+
 .tee-btn-input-clear-btn {
   background-color: var(--background-contrast-grey);
   box-shadow: inset 0 -2px 0 0 var(--border-plain-grey);
