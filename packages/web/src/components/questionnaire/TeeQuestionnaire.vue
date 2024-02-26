@@ -27,23 +27,26 @@
           id="tee-app-tracks"
           class="fr-grid-row--center fr-col fr-col-sm-12 fr-col-md-8 fr-col-lg-8 fr-col-xl-6"
         >
-          <div
+          <template
             v-for="(track, index) in tracks.usedTracks"
             :key="track.id"
-            :style="`${
-              tracks.getTrackBgColor(track.id as TrackId)
-                ? 'padding: 0px; background-color:' + tracks.getTrackBgColor(track.id as TrackId)
-                : ''
-            }`"
-            :class="`fr-p-0 fr-mb-${debugStore.is ? '12v' : '0'}`"
           >
-            <TeeTrack
+            <div
               v-if="trackElement && !track.completed"
-              :step="index + 1"
-              :used-track="track"
-              :track-element="trackElement"
-            />
-          </div>
+              :style="`${
+                tracks.getTrackBgColor(track.id as TrackId)
+                  ? 'padding: 0px; background-color:' + tracks.getTrackBgColor(track.id as TrackId)
+                  : ''
+              }`"
+              :class="`fr-p-0 fr-mb-${debugStore.is ? '12v' : '0'}`"
+            >
+              <TeeTrack
+                :step="index + 1"
+                :used-track="track"
+                :track-element="trackElement"
+              />
+            </div>
+          </template>
         </div>
       </div>
     </div>
