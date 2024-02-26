@@ -219,6 +219,7 @@ button.fr-link:hover, .tee-router-link:hover {
   font-size: 1.1rem;
   height: 4rem !important;
   max-height: 4rem !important;
+  border-radius: .25rem 0 0 0;
 }
 .tee-input-large::placeholder {
   font-size: 1rem;
