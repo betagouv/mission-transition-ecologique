@@ -90,7 +90,7 @@
             >
               <li>
                 <a
-                  class="footer__partners-link tee-footer-operators-container fr-my-4v fr-ml-4v"
+                  class="footer__partners-link tee-router-link fr-my-4v fr-ml-4v"
                   target="_blank"
                   :href="operator.href"
                 >

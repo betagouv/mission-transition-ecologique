@@ -112,9 +112,6 @@ button.fr-link:hover, .tee-router-link:hover {
 .tee-footer-app-logo {
   height: 60px !important;
 }
-.tee-footer-operators-container {
-  background-image: none;
-}
 .tee-home-step-operator-logo {
   box-shadow: none !important;
 }
@@ -409,7 +406,6 @@ button.fr-link:hover, .tee-router-link:hover {
 @media screen and (max-width:48em) {
   .fr-tee-detail-info-tile .fr-tile {
     background-color: #F5F5FE;
-    /* background-image: none !important; */
     border: none !important;
   }
   .fr-tee-detail-info-tile .fr-tile__title:before {
