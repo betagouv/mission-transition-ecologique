@@ -4,14 +4,12 @@
       <DsfrSelect
         v-model="programFilters.programAidTypeSelected"
         :options="programAidTypeOptions"
-        @update:model-value="updateFilters"
       />
     </div>
     <div class="fr-col-12 fr-col-sm-6">
       <DsfrSelect
         v-model="programFilters.objectifTypeSelected"
         :options="objectifTypeOptions"
-        @update:model-value="updateFilters"
       />
     </div>
   </div>
@@ -23,13 +21,7 @@ import { Objectives, ProgramAidType, type programFiltersType } from '@/types'
 import { DsfrSelect } from '@gouvminint/vue-dsfr'
 import type { DsfrSelectProps } from '@gouvminint/vue-dsfr/types/components/DsfrSelect/DsfrSelect.types'
 
-const emit = defineEmits<{ update: [value: programFiltersType] }>()
-
-const programFilters = useProgramsStore().programFilters
-
-const updateFilters = () => {
-  emit('update', programFilters)
-}
+const programFilters: programFiltersType = useProgramsStore().programFilters
 
 const programAidTypeOptions: DsfrSelectProps['options'] = [
   {
