@@ -171,21 +171,25 @@ def assembleProgramYAML(rawData, colNumbersByName, id):
             **applicability,
             ALL: eligibilite,
         }
-    else:
+    elif applicability:
         eligibilite = {
             **applicability,
             "valeur": "oui",
         }
 
-    cible = [remove_namespace(ELIGIBLE)] + cible
-
     publicodes_obj = {}
+
+    if eligibilite:
+        cible = [remove_namespace(ELIGIBLE)] + cible
+
     publicodes_obj[CIBLE] = {ALL: cible}
-    publicodes_obj[ELIGIBLE] = eligibilite
+
+    if eligibilite:
+        publicodes_obj[ELIGIBLE] = eligibilite
 
     publicodes_obj |= pc
 
-    set("publicodes", publicodes_obj, overwrite=False)
+    set("publicodes", publicodes_obj, overwrite=True)
 
     return convertToYaml(prog)
 
