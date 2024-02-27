@@ -39,19 +39,6 @@ entreprise . code NAF niveau 1:
 
 entreprise . est propriétaire de ses locaux:
 
-entreprise . mode de transport domicile-travail:
-  avec:
-    est vélo:
-    est bus:
-    est train ou métro:
-    est voiture:
-    est moto:
-    est camion:
-    est autre:
-
-entreprise . possède des véhicules motorisés:
-
-
 région:
 
 # Enum des valeurs possibles pour région
