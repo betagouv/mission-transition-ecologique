@@ -11,7 +11,6 @@ import { goals } from './trackGoals'
 import { roles } from './trackRoles'
 
 import { buildingProperty } from './trackBuildingProperty'
-import { buildingSurface } from './trackBuildingSurface'
 import { mobilityWishes } from './trackMobilityWishes'
 import { wastesStake } from './trackWastesStake'
 import { wastesSorting } from './trackWastesSorting'
@@ -41,7 +40,6 @@ export const tracks: Track[] = [
   roles,
 
   buildingProperty,
-  buildingSurface,
   mobilityWishes,
   wastesStake,
   wastesSorting,
