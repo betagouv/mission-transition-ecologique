@@ -12,9 +12,6 @@ import { roles } from './trackRoles'
 
 import { buildingProperty } from './trackBuildingProperty'
 import { buildingSurface } from './trackBuildingSurface'
-import { mobility } from './trackMobility'
-import { mobilityNumberVehicles } from './trackMobilityNumberVehicles'
-import { mobilityEnergy } from './trackMobilityEnergy'
 import { mobilityWishes } from './trackMobilityWishes'
 import { wastesStake } from './trackWastesStake'
 import { wastesSorting } from './trackWastesSorting'
@@ -45,9 +42,6 @@ export const tracks: Track[] = [
 
   buildingProperty,
   buildingSurface,
-  mobility,
-  mobilityNumberVehicles,
-  mobilityEnergy,
   mobilityWishes,
   wastesStake,
   wastesSorting,
