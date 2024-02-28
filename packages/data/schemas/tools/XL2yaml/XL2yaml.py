@@ -51,7 +51,7 @@ def assembleProgramYAML(rawData, colNumbersByName, id):
 
     prog = {}
 
-    FORCE_ALL = True
+    FORCE_ALL = False
 
     # Only sets the key if key does not exist.
     # if force = True, then replaces the key even if it exists
@@ -80,7 +80,7 @@ def assembleProgramYAML(rawData, colNumbersByName, id):
     if len(autresOp) >= 1:
         set("autres opérateurs", autresOp)
 
-    set("url", get("URL"))
+    set("url", get("🔗 URL externe"))
     set("nature de l'aide", get("💸 Nature de l'aide").lower())
     nat = prog["nature de l'aide"]
     if nat == "financement":
