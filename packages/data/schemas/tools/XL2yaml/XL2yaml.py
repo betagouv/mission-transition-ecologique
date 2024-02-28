@@ -51,7 +51,7 @@ def assembleProgramYAML(rawData, colNumbersByName, id):
 
     prog = {}
 
-    FORCE_ALL = False
+    FORCE_ALL = True
 
     # Only sets the key if key does not exist.
     # if force = True, then replaces the key even if it exists
