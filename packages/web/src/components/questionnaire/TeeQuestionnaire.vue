@@ -59,7 +59,7 @@ import { computed, onBeforeMount, onMounted, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 
 import { useTracksStore } from '@/stores/tracks'
-import { navigationStore } from '@/stores/navigation'
+import { useNavigationStore } from '@/stores/navigation'
 import { TrackId } from '@/types'
 import TeeTrack from '@/components/tracks/TeeTrack.vue'
 import TeeSidebar from '@/components/TeeSidebar.vue'
@@ -73,7 +73,7 @@ const props = defineProps<Props>()
 const trackElement = ref<HTMLElement | null>(null)
 
 const tracks = useTracksStore()
-const nav = navigationStore()
+const nav = useNavigationStore()
 const debugStore = useDebugStore()
 const router = useRouter()
 

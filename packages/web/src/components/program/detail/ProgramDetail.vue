@@ -276,7 +276,7 @@ import ProgramLongDescription from '@/components/program/detail/ProgramLongDescr
 import ProgramObjective from '@/components/program/detail/ProgramObjective.vue'
 import TeeTile from '@/components/TeeTile.vue'
 import Config from '@/config'
-import { navigationStore } from '@/stores/navigation'
+import { useNavigationStore } from '@/stores/navigation'
 import { useProgramsStore } from '@/stores/programs'
 import { useTracksStore } from '@/stores/tracks'
 import { type ProgramData, TrackId } from '@/types'
@@ -289,7 +289,7 @@ import { useRoute, useRouter } from 'vue-router'
 
 const tracks = useTracksStore()
 const programs = useProgramsStore()
-const navigation = navigationStore()
+const navigation = useNavigationStore()
 const route = useRoute()
 const router = useRouter()
 

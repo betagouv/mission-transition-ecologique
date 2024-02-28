@@ -5,7 +5,7 @@
   >
     <router-view />
   </div>
-  <ContactHelp v-if="navigationStore().isByRouteName(RouteName.QuestionnaireResult)" />
+  <ContactHelp v-if="useNavigationStore().isByRouteName(RouteName.QuestionnaireResult)" />
 </template>
 
 <script setup lang="ts">
@@ -13,6 +13,6 @@
 // console.log(`TeeQuestionnairePage > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import ContactHelp from '@/components/contact/ContactHelp.vue'
-import { navigationStore } from '@/stores/navigation'
+import { useNavigationStore } from '@/stores/navigation'
 import { RouteName } from '@/types/routeType'
 </script>
