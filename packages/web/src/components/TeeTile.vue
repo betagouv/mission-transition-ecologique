@@ -22,7 +22,7 @@
     >
       <div class="fr-tile__pictogram">
         <img
-          class="fr-responsive-img fr-p-5v"
+          class="fr-responsive-img fr-p-0 fr-md-p-5v"
           :src="imagePath"
           :alt="`image / ${title}`"
         />

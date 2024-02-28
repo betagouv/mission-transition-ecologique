@@ -409,13 +409,14 @@ button.fr-link:hover, .tee-router-link:hover {
     border: none !important;
   }
   .fr-tee-detail-info-tile .fr-tile__title:before {
-    background-size: 0.75em 100%;
+    background-size: 0.25em 100%;
   }
   .fr-tee-detail-info-tile .fr-tile__title::before {
     background-image: linear-gradient(0deg, #6A6AF4, #6A6AF4) !important;
   }
   .fr-tee-detail-info-tile .fr-responsive-img {
-    width: 72px;
+    width: max-content;
+    height: 4rem;
   }
 }
 
