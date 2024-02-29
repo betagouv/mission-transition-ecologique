@@ -1,6 +1,8 @@
-import { Controller, Get, Queries, Route, SuccessResponse } from 'tsoa'
+import { Controller, Get, Queries, Res, Route, SuccessResponse, TsoaResponse } from 'tsoa'
 import ProgramService from '../application/programService'
 import { OpenAPISafeProgram } from './types'
+import { ErrorJSON } from '../../common/controller/jsonError'
+import { Err } from 'true-myth/dist/es/result'
 
 interface QueryParams {
   code_Naf?: string
@@ -17,11 +19,26 @@ export class ProgramsController extends Controller {
    * @summary Get relevant programs given input data
    */
   @Get()
-  public async get(@Queries() _queryParams: QueryParams): Promise<OpenAPISafeProgram[]> {
+  public async get(
+    @Queries() queryParams: QueryParams,
+    @Res() requestFailedResponse: TsoaResponse<500, ErrorJSON>
+  ): Promise<OpenAPISafeProgram[] | void> {
     this.setStatus(200)
 
-    programsResult = new ProgramService().getFilteredPrograms()
+    const programsResult = new ProgramService().getFilteredPrograms(queryParams)
 
-    return
+    if (programsResult.isErr) {
+      this.throwErrorResponse(programsResult, requestFailedResponse)
+      return
+    }
+
+    return programsResult.value
+  }
+
+  private throwErrorResponse(programsResult: Err<OpenAPISafeProgram[], Error>, requestFailedResponse: TsoaResponse<500, ErrorJSON>) {
+    const err = programsResult.error
+
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+    return requestFailedResponse(500, { message: `Server internal error: ${err.message}` })
   }
 }
