@@ -104,18 +104,25 @@ button.fr-link:hover, .tee-router-link:hover {
 .tee-home-step-operators-container {
   align-items: center
 }
-.tee-home-step-operators-img {
+.tee-home-step-operator-img {
   max-height: 100%;
   width: auto;
   max-width: 100%;
 }
-.tee-footer-operators-container {
-  background-image: none
+.tee-footer-app-logo {
+  height: 60px !important;
 }
-.tee-footer-operators-img {
+.tee-home-step-operator-logo {
+  box-shadow: none !important;
+}
+.tee-footer-operator-main {
+  height: 5.625rem;
+  width: 10rem;
+}
+.tee-footer-operator-img {
   height: auto;
   max-height: 5.625rem;
-  width: 10rem
+  width: 10rem !important;
 }
 .tee-footer-logo {
   box-shadow: none !important;
@@ -173,6 +180,7 @@ button.fr-link:hover, .tee-router-link:hover {
 /* TRACK CALLOUT */
 .tee-track-callout {
   align-items: center;
+  min-height: 125px;
 }
 .tee-track-callout-img {
   text-align: center;
@@ -398,17 +406,17 @@ button.fr-link:hover, .tee-router-link:hover {
 @media screen and (max-width:48em) {
   .fr-tee-detail-info-tile .fr-tile {
     background-color: #F5F5FE;
-    /* background-image: none !important; */
     border: none !important;
   }
   .fr-tee-detail-info-tile .fr-tile__title:before {
-    background-size: 0.75em 100%;
+    background-size: 0.25em 100%;
   }
   .fr-tee-detail-info-tile .fr-tile__title::before {
     background-image: linear-gradient(0deg, #6A6AF4, #6A6AF4) !important;
   }
   .fr-tee-detail-info-tile .fr-responsive-img {
-    width: 72px;
+    width: max-content;
+    height: 4rem;
   }
 }
 
@@ -527,7 +535,7 @@ code {
   }
   .tee-home-steps-image {
     display: flex;
-    justify-content: center;
+    justify-content: start;
   }
   .tee-home-steps-image img {
     max-height: 40px;

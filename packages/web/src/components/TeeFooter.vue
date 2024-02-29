@@ -36,8 +36,7 @@
             title="Retour à l’accueil du site - Transition Ecologique des entreprises - République Française"
           >
             <img
-              class="fr-footer__logo"
-              style="height: 110px"
+              class="fr-footer__logo tee-footer-app-logo"
               src="/images/logos/mission-transition-logo-alone.png"
               alt="Transition Ecologique des entreprises"
             />
@@ -70,14 +69,12 @@
         <div class="fr-footer__partners-logos">
           <div class="fr-footer__partners-main">
             <a
-              class="footer__partners-link"
+              class="footer__partners-link fr-my-4v fr-mr-4v tee-router-link"
               target="_blank"
-              style="background-image: none"
               :href="mainPartner.href"
             >
               <img
-                class="fr-footer__logo tee-footer-logo"
-                style="height: 5.625rem; width: 10rem"
+                class="fr-footer__logo tee-home-step-operator-logo tee-footer-operator-main"
                 :src="mainPartner.img"
                 :alt="mainPartner.label"
               />
@@ -93,12 +90,12 @@
             >
               <li>
                 <a
-                  class="footer__partners-link tee-footer-operators-container"
+                  class="footer__partners-link tee-router-link fr-my-4v fr-ml-4v"
                   target="_blank"
                   :href="operator.href"
                 >
                   <img
-                    class="fr-footer__logo tee-footer-operators-img tee-footer-logo"
+                    class="fr-footer__logo tee-home-step-operator-logo tee-footer-operator-img"
                     :src="operator.img"
                     :alt="operator.label"
                   />
