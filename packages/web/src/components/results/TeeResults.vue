@@ -210,7 +210,7 @@ const props = defineProps<Props>()
 
 const publicPath = MetaEnv.publicPath
 
-const filteredPrograms: ProgramData[] | undefined = programs.filterPrograms(props.tracksResults)
+const filteredPrograms: ProgramData[] = await programs.filterPrograms(props.tracksResults)
 
 const reFilteredPrograms = computed(() => {
   return filteredPrograms?.filter((prog: ProgramData) => {
