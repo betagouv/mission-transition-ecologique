@@ -336,7 +336,7 @@ const columnTiles = computed(() => {
     true // shortcut for programProvider block (always exists)
   ].filter(Boolean)
   const colsSize = Math.round(12 / infoBlocks.length)
-  return `fr-col fr-col-sm-12 fr-col-md-${colsSize} fr-tee-detail-info-tile`
+  return `fr-col fr-col-xs-12 fr-col-sm-12 fr-col-md-${colsSize} fr-tee-detail-info-tile`
 })
 
 // functions
