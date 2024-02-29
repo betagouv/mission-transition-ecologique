@@ -278,7 +278,7 @@ import type { FormCallback, FormField, FormOptions, FormValues, ProgramData, Req
 import { TrackId } from '@/types'
 import { CallbackActions, FormFieldTypes } from '@/types'
 import { sendApiRequest } from '@/utils/requests'
-import { remapItem } from '@/utils/helpers'
+import { remapItem, scrollToElementCenter } from '@/utils/helpers'
 import { tracksStore } from '@/stores/tracks'
 import Translation from '@/utils/translation'
 import DsfrButton from '@/components/button/DsfrButton.vue'
@@ -432,6 +432,9 @@ const saveFormData = async () => {
 }
 
 const scrollToFormContainer = () => {
-  props.formContainerRef?.scrollIntoView({ block: 'start' })
+  const element = props.formContainerRef
+  if (element) {
+    scrollToElementCenter(element)
+  }
 }
 </script>
