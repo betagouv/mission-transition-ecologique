@@ -1,4 +1,4 @@
-import { Sectors, SectorByNAF, NAF1ToVar, codesNAF1, EntrepriseSector, YesNo, Sector, TrackComponents, TrackId } from '@/types'
+import { Sectors, SectorByNAF, NAF1ToVar, codesNAF1, EntrepriseSector, YesNo, Sector, TrackComponent, TrackId } from '@/types'
 import type { Track } from '@/types'
 
 export const sectors: Track = {
@@ -8,7 +8,7 @@ export const sectors: Track = {
   title: { fr: 'Mon activité' },
   label: { fr: 'Quelle est votre activité ?' },
   interface: {
-    component: TrackComponents.Buttons
+    component: TrackComponent.Buttons
   },
   behavior: {
     multipleChoices: false

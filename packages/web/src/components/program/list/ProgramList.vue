@@ -42,7 +42,7 @@ import ProgramCard from '@/components/program/list/ProgramCard.vue'
 import ProgramListHeaderResult from '@/components/program/list/ProgramListHeaderResult.vue'
 import { computed, onBeforeMount } from 'vue'
 import Translation from '@/utils/translation'
-import { useProgramsStore } from '@/stores/programs'
+import { useProgramStore } from '@/stores/program'
 import { type ProgramData, TrackId } from '@/types'
 import { useNavigationStore } from '@/stores/navigation'
 import { RouteName } from '@/types/routeType'
@@ -50,7 +50,7 @@ import Matomo from '@/utils/matomo'
 import ProgramListNoResults from '@/components/program/list/ProgramListNoResults.vue'
 import ProgramFilters from '@/components/program/list/ProgramFilters.vue'
 
-const programsStore = useProgramsStore()
+const programsStore = useProgramStore()
 const navigation = useNavigationStore()
 
 const programs: ProgramData[] = programsStore.getProgramsByUsedTracks()

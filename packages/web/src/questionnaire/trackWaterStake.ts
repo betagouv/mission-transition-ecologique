@@ -1,5 +1,5 @@
 import type { Track } from '@/types'
-import { Objectives, TrackComponents, TrackId, YesNo } from '@/types'
+import { Objectives, TrackComponent, TrackId, YesNo } from '@/types'
 
 export const waterStake: Track = {
   id: TrackId.WaterStake,
@@ -16,7 +16,7 @@ export const waterStake: Track = {
     imageLeft: 'images/thema/thema-eau.svg'
   },
   interface: {
-    component: TrackComponents.Buttons
+    component: TrackComponent.Buttons
   },
   behavior: {
     multipleChoices: false

@@ -1,5 +1,5 @@
 import type { Track } from '@/types'
-import { TrackComponents, TrackId } from '@/types'
+import { TrackComponent, TrackId } from '@/types'
 
 export const wastesSorting: Track = {
   id: TrackId.WastesSorting,
@@ -7,7 +7,7 @@ export const wastesSorting: Track = {
   title: { fr: 'Tri des déchets' },
   label: { fr: 'Avez-vous mis en place une solution de tri des déchets dans votre entreprise ?' },
   interface: {
-    component: TrackComponents.Buttons
+    component: TrackComponent.Buttons
   },
   behavior: {
     multipleChoices: false

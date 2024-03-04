@@ -1,5 +1,5 @@
 import type { Track } from '@/types'
-import { TrackComponents, TrackId, YesNo, Entreprise } from '@/types'
+import { TrackComponent, TrackId, YesNo, Entreprise } from '@/types'
 
 export const mobilityNumberVehicles: Track = {
   id: TrackId.MobilityNumberVehicles,
@@ -7,7 +7,7 @@ export const mobilityNumberVehicles: Track = {
   title: { fr: 'Nombre de véhicules' },
   label: { fr: 'Possédez-vous un ou plusieurs véhicules motorisés dans votre entreprise ?' },
   interface: {
-    component: TrackComponents.Buttons
+    component: TrackComponent.Buttons
   },
   behavior: {
     multipleChoices: false

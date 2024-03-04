@@ -1,9 +1,10 @@
+import { TrackComponent } from '@/types/track/trackType'
 import type { Translations } from './translationTypes'
 import type { Plugin as VuePlugin } from 'vue'
 // FOR COMPONENTS
 
-export interface ColsOptions {
-  [name: string]: number | string
+export type ColsOptions = {
+  [key in TrackComponent]: number
 }
 
 export interface Plugin {

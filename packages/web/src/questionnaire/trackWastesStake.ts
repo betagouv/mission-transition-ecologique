@@ -1,5 +1,5 @@
 import type { Track } from '@/types'
-import { Objectives, TrackComponents, TrackId, YesNo } from '@/types'
+import { Objectives, TrackComponent, TrackId, YesNo } from '@/types'
 
 export const wastesStake: Track = {
   id: TrackId.WastesStake,
@@ -16,7 +16,7 @@ export const wastesStake: Track = {
     imageLeft: 'images/thema/thema-dechets.svg'
   },
   interface: {
-    component: TrackComponents.Buttons
+    component: TrackComponent.Buttons
   },
   behavior: {
     multipleChoices: false

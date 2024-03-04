@@ -1,5 +1,5 @@
 import type { Track } from '@/types'
-import { HasInputOptions, TrackComponents, TrackId } from '@/types'
+import { HasInputOptions, TrackComponent, TrackId } from '@/types'
 
 export const strategyAuditsSelect: Track = {
   id: TrackId.StrategyAuditsSelect,
@@ -7,7 +7,7 @@ export const strategyAuditsSelect: Track = {
   title: { fr: 'Quels audits' },
   label: { fr: 'Le ou lesquels ?' },
   interface: {
-    component: TrackComponents.Buttons
+    component: TrackComponent.Buttons
   },
   behavior: {
     multipleChoices: true

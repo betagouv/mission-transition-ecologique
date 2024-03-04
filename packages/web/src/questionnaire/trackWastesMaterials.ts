@@ -1,5 +1,5 @@
 import type { Track } from '@/types'
-import { Objectives, TrackComponents, TrackId, YesNo } from '@/types'
+import { Objectives, TrackComponent, TrackId, YesNo } from '@/types'
 
 export const wastesMaterials: Track = {
   id: TrackId.WastesMaterials,
@@ -9,7 +9,7 @@ export const wastesMaterials: Track = {
     fr: 'Avez-vous pour objectif de réduire vos pertes de matières premières ?'
   },
   interface: {
-    component: TrackComponents.Buttons
+    component: TrackComponent.Buttons
   },
   behavior: {
     multipleChoices: false

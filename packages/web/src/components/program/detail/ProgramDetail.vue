@@ -277,8 +277,9 @@ import ProgramObjective from '@/components/program/detail/ProgramObjective.vue'
 import TeeTile from '@/components/TeeTile.vue'
 import Config from '@/config'
 import { useNavigationStore } from '@/stores/navigation'
-import { useProgramsStore } from '@/stores/programs'
-import { useTracksStore } from '@/stores/tracks'
+import { useProgramStore } from '@/stores/program'
+import { useTrackStore } from '@/stores/track'
+import { useUsedTrackStore } from '@/stores/usedTrack'
 import { type ProgramData, TrackId } from '@/types'
 import { RouteName } from '@/types/routeType'
 import Matomo from '@/utils/matomo'
@@ -287,11 +288,12 @@ import Translation from '@/utils/translation'
 import { computed, onBeforeMount, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
-const tracks = useTracksStore()
-const programs = useProgramsStore()
+const tracks = useTrackStore()
+const programs = useProgramStore()
 const navigation = useNavigationStore()
 const route = useRoute()
 const router = useRouter()
+const usedTrackStore = useUsedTrackStore()
 
 const program = ref<{ index: string } & ProgramData>()
 const trackConfig = ref<any>()
@@ -311,7 +313,7 @@ const props = defineProps<Props>()
 const resetDetailResult = async () => {
   const isCatalogDetail = navigation.isByRouteName(RouteName.CatalogDetail)
   if (isCatalogDetail) {
-    tracks.resetUsedTracks()
+    usedTrackStore.resetUsedTracks()
   }
 
   const routeName = isCatalogDetail ? RouteName.Catalog : RouteName.QuestionnaireResult

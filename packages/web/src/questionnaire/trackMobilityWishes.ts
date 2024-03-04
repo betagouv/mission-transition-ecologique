@@ -1,5 +1,5 @@
 import type { Track } from '@/types'
-import { TrackComponents, TrackId, Objectives, YesNo } from '@/types'
+import { TrackComponent, TrackId, Objectives, YesNo } from '@/types'
 
 export const mobilityWishes: Track = {
   id: TrackId.MobilityWishes,
@@ -18,7 +18,7 @@ export const mobilityWishes: Track = {
     imageLeft: 'images/thema/thema-mobilite.svg'
   },
   interface: {
-    component: TrackComponents.Buttons
+    component: TrackComponent.Buttons
   },
   behavior: {
     multipleChoices: false

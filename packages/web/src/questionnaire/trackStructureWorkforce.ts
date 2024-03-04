@@ -1,8 +1,8 @@
 import type { NextTrackRuleSet, Track } from '@/types'
-import { ConditionOperators, DataMappingFrom, TrackComponents, TrackId, Entreprise } from '@/types'
+import { ConditionOperators, DataMappingFrom, TrackComponent, TrackId, Entreprise } from '@/types'
 import { QuestionnaireRoute } from '@tee/common/src/questionnaire/types'
 
-const nextExceptions: NextTrackRuleSet[] = [
+const nextTrackRuleSets: NextTrackRuleSet[] = [
   {
     help: "Goes to track_sectors if : doesn't have infos about sector",
     rules: [
@@ -86,7 +86,7 @@ export const workforce: Track = {
   title: { fr: 'Mes effectifs' },
   label: { fr: 'Combien êtes-vous dans votre entreprise ?' },
   interface: {
-    component: TrackComponents.Buttons
+    component: TrackComponent.Buttons
   },
   behavior: {
     multipleChoices: false
@@ -99,7 +99,7 @@ export const workforce: Track = {
       label: { fr: '‍️🧍‍ Moins de 20 employés' },
       next: {
         default: TrackId.Sectors,
-        exceptions: nextExceptions
+        ruleSet: nextTrackRuleSets
       }
     },
     {
@@ -109,7 +109,7 @@ export const workforce: Track = {
       label: { fr: '‍️👫 Entre 20 et 49 employés' },
       next: {
         default: TrackId.Sectors,
-        exceptions: nextExceptions
+        ruleSet: nextTrackRuleSets
       }
     },
     {
@@ -119,7 +119,7 @@ export const workforce: Track = {
       label: { fr: '‍️👫👭 Entre 50 et 250 employés' },
       next: {
         default: TrackId.Sectors,
-        exceptions: nextExceptions
+        ruleSet: nextTrackRuleSets
       }
     },
     {
@@ -129,7 +129,7 @@ export const workforce: Track = {
       label: { fr: '👫👭👫 Plus de 250 employés' },
       next: {
         default: TrackId.Sectors,
-        exceptions: nextExceptions
+        ruleSet: nextTrackRuleSets
       }
     }
   ]

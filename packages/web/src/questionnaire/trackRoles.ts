@@ -1,5 +1,5 @@
 import type { Track } from '@/types'
-import { TrackComponents, TrackId } from '@/types'
+import { TrackComponent, TrackId } from '@/types'
 
 export const roles: Track = {
   id: TrackId.Roles,
@@ -7,7 +7,7 @@ export const roles: Track = {
   title: { fr: 'Mon rôle' },
   label: { fr: 'Quel est votre rôle ?' },
   interface: {
-    component: TrackComponents.Buttons
+    component: TrackComponent.Buttons
   },
   behavior: {
     multipleChoices: false

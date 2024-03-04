@@ -229,9 +229,9 @@
 </template>
 
 <script setup lang="ts">
+import { useUsedTrackStore } from '@/stores/usedTrack'
 import { computed, ref } from 'vue'
 import { type ProgramData, type ReqResp, TrackId } from '@/types'
-import { useTracksStore } from '@/stores/tracks'
 import Translation from '@/utils/translation'
 import TeeDsfrButton from '@/components/button/TeeDsfrButton.vue'
 import { DsfrInput, DsfrInputGroup, DsfrCheckbox } from '@gouvminint/vue-dsfr'
@@ -244,7 +244,7 @@ import type { opportunityFormType } from '@/types/opportunityFormType'
 import Contact from '@/utils/contact'
 
 const route = useRoute()
-const tracks = useTracksStore()
+const usedTrack = useUsedTrackStore()
 
 interface Props {
   program: ProgramData
@@ -257,13 +257,13 @@ const opportunityForm = ref<opportunityFormType>({
   surname: { required: true, value: undefined },
   tel: { required: true, value: undefined },
   email: { required: true, value: undefined },
-  siret: { required: true, value: tracks.findSelectedValueByTrackIdAndKey(TrackId.Siret, 'siret') },
+  siret: { required: true, value: usedTrack.findSelectedValueByTrackIdAndKey(TrackId.Siret, 'siret') },
   needs: {
     required: true,
     value: Translation.t('program.form.needs', {
       secteur:
-        tracks.findSelectedValueByTrackIdAndKey(TrackId.Siret, 'secteur') ??
-        tracks.findSelectedValueByTrackIdAndKey(TrackId.Sectors, 'secteur'),
+        usedTrack.findSelectedValueByTrackIdAndKey(TrackId.Siret, 'secteur') ??
+        usedTrack.findSelectedValueByTrackIdAndKey(TrackId.Sectors, 'secteur'),
       titreAide: props.program.titre
     })
   },

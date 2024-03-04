@@ -1,5 +1,5 @@
 import type { Track } from '@/types'
-import { TrackComponents, TrackId } from '@/types'
+import { TrackComponent, TrackId } from '@/types'
 
 export const sizes: Track = {
   id: TrackId.StructureSizes,
@@ -7,7 +7,7 @@ export const sizes: Track = {
   title: { fr: 'Mon entreprise' },
   label: { fr: 'Quelle est la taille de votre entreprise ?' },
   interface: {
-    component: TrackComponents.Buttons
+    component: TrackComponent.Buttons
   },
   behavior: {
     multipleChoices: false

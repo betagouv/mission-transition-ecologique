@@ -1,27 +1,18 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`store.programs > FUNCTION_NAME > MSG_OR_VALUE :`)
 
+import { useUsedTrackStore } from '@/stores/usedTrack'
 import ProgramFilter from '@/utils/program/programFilters'
 import { computed, ref } from 'vue'
 import { acceptHMRUpdate, defineStore } from 'pinia'
 
-import {
-  type ProgramData,
-  type TrackId,
-  type TrackOptions,
-  type QuestionnaireRoute,
-  type programFiltersType,
-  ProgramAidType,
-  Objectives
-} from '@/types'
+import { type ProgramData, type TrackOptions, type QuestionnaireRoute, type programFiltersType, ProgramAidType, Objectives } from '@/types'
 import { filterPrograms as filterWithPublicodes, sortPrograms } from '@tee/backend/src/program/application/sortAndFilterPrograms'
 import type { QuestionnaireData } from '@tee/backend/src/program/domain/types'
-import { useTracksStore } from '@/stores/tracks'
 
-export const useProgramsStore = defineStore('programs', () => {
+export const useProgramStore = defineStore('program', () => {
   const programs = ref<ProgramData[]>([])
   const programDetail = ref<string | number>()
-  const programDetailConfig = ref<TrackId>()
 
   const programFilters = ref<programFiltersType>({
     programAidTypeSelected: '',
@@ -39,11 +30,11 @@ export const useProgramsStore = defineStore('programs', () => {
   })
 
   function getProgramsByUsedTracks() {
-    const usedTracks = useTracksStore().usedTracks
+    const usedTracks = useUsedTrackStore().usedTracks
     // retrieve and organize user's conditions
     const conditions: { [k: string]: any } = {}
-    usedTracks.forEach((trackResult) => {
-      trackResult.selected.forEach((trackOptions: TrackOptions) => {
+    usedTracks.forEach((usedTrack) => {
+      usedTrack.selected.forEach((trackOptions: TrackOptions) => {
         const val = trackOptions.value || {}
 
         Object.entries(val).forEach(([key, value]) => {
@@ -79,16 +70,6 @@ export const useProgramsStore = defineStore('programs', () => {
     programs.value = dataset
   }
 
-  function setDetailResult(programId: string | number, detailConfig: TrackId) {
-    programDetail.value = programId
-    programDetailConfig.value = detailConfig
-  }
-
-  function resetDetailResult() {
-    programDetail.value = undefined
-    programDetailConfig.value = undefined
-  }
-
   function getProgramById(id: string | number) {
     return progs.value?.find((programData: ProgramData) => programData.id === id)
   }
@@ -96,18 +77,15 @@ export const useProgramsStore = defineStore('programs', () => {
   return {
     programs,
     programDetail,
-    programDetailConfig,
     progs,
     programFilters,
     getProgramsByUsedTracks,
     getProgramsByFilters,
     setDataset,
-    setDetailResult,
-    resetDetailResult,
     getProgramById
   }
 })
 
 if (import.meta.hot) {
-  import.meta.hot.accept(acceptHMRUpdate(useProgramsStore, import.meta.hot))
+  import.meta.hot.accept(acceptHMRUpdate(useProgramStore, import.meta.hot))
 }

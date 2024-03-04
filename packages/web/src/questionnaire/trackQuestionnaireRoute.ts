@@ -1,5 +1,5 @@
 import type { Track } from '@/types'
-import { TrackComponents, TrackId } from '@/types'
+import { TrackComponent, TrackId } from '@/types'
 import { QuestionnaireRoute } from '@tee/common/src/questionnaire/types'
 
 export const questionnaireRoute: Track = {
@@ -18,7 +18,7 @@ export const questionnaireRoute: Track = {
     hintIcon: 'fr-icon-timer-line'
   },
   interface: {
-    component: TrackComponents.Cards,
+    component: TrackComponent.Cards,
     columnWidth: 6
   },
   behavior: {

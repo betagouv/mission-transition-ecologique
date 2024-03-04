@@ -23,7 +23,7 @@
 
 import { onBeforeMount, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { useProgramsStore } from './stores/programs'
+import { useProgramStore } from './stores/program'
 import { useNavigationStore } from './stores/navigation'
 
 import TeeHeader from './components/TeeHeader.vue'
@@ -33,7 +33,7 @@ import type { ProgramData } from '@/types'
 import jsonDataset from '../public/data/generated/dataset_out.json'
 import Translation from '@/utils/translation'
 
-const programs = useProgramsStore()
+const programs = useProgramStore()
 const nav = useNavigationStore()
 
 const router = useRouter()

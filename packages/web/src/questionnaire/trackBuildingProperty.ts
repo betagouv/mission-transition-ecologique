@@ -1,5 +1,5 @@
 import type { Track } from '@/types'
-import { Entreprise, TrackComponents, TrackId, YesNo } from '@/types'
+import { Entreprise, TrackComponent, TrackId, YesNo } from '@/types'
 
 export const buildingProperty: Track = {
   id: TrackId.BuildingProperty,
@@ -16,7 +16,7 @@ export const buildingProperty: Track = {
     imageLeft: 'images/thema/thema-batiments.svg'
   },
   interface: {
-    component: TrackComponents.Buttons
+    component: TrackComponent.Buttons
   },
   behavior: {
     multipleChoices: false

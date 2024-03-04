@@ -1,4 +1,4 @@
-import { Objectives, priorityObjectives, YesNo, TrackComponents, TrackId } from '@/types'
+import { Objectives, priorityObjectives, YesNo, TrackComponent, TrackId } from '@/types'
 import type { Track } from '@/types'
 
 export const goals: Track = {
@@ -8,7 +8,7 @@ export const goals: Track = {
   label: { fr: 'Quel est votre objectif prioritaire ?' },
   hint: { fr: 'Je souhaite...' },
   interface: {
-    component: TrackComponents.Buttons
+    component: TrackComponent.Buttons
   },
   behavior: {
     multipleChoices: false

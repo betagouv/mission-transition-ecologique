@@ -9,7 +9,7 @@ import {
   DataMappingFrom,
   Entreprise,
   FormFieldTypes,
-  TrackComponents,
+  TrackComponent,
   TrackId
 } from '@/types'
 
@@ -23,7 +23,7 @@ export const results: Track = {
     fr: "D’après les informations que vous avez renseignées, voici les accompagnements dont vous pouvez bénéficier pour diminuer l'empreinte écologique de votre entreprise."
   },
   interface: {
-    component: TrackComponents.Results
+    component: TrackComponent.Results
   },
   config: {
     noResultsMessage: { fr: "Aucune aide n'a pu être identifiée avec les critères choisis..." },

@@ -10,7 +10,7 @@ import {
   CleanerOperations,
   DataMappingFrom,
   HasInputOptions,
-  TrackComponents,
+  TrackComponent,
   TrackId
   // Entreprise
 } from '@/types'
@@ -36,7 +36,7 @@ export const siret: Track = {
   label: { fr: 'Quelle est votre entreprise ?' },
   // info: { fr: "Renseignez le SIRET de votre entreprise" },
   interface: {
-    component: TrackComponents.Input
+    component: TrackComponent.Input
   },
   next: {
     default: TrackId.StructureWorkforce

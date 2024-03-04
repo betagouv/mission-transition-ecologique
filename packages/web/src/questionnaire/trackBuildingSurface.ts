@@ -1,5 +1,5 @@
 import type { Track } from '@/types'
-import { TrackComponents, TrackId } from '@/types'
+import { TrackComponent, TrackId } from '@/types'
 
 export const buildingSurface: Track = {
   id: TrackId.BuildingSurface,
@@ -7,7 +7,7 @@ export const buildingSurface: Track = {
   title: { fr: 'La surface' },
   label: { fr: 'Quelle est la surface de vos locaux ?' },
   interface: {
-    component: TrackComponents.Buttons
+    component: TrackComponent.Buttons
   },
   behavior: {
     multipleChoices: false

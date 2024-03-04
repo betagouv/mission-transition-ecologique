@@ -44,23 +44,24 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`TeeSidebar > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import { RouteName } from '@/types/routeType'
-import Navigation from '@/utils/navigation'
-import { computed } from 'vue'
-import { useTracksStore } from '@/stores/tracks'
-import Translation from '@/utils/translation'
-import { TrackId } from '@/types'
-import { groupBy } from '@/utils/helpers'
 import { useDebugStore } from '@/stores/debug'
+import { useTrackStore } from '@/stores/track'
+import { useUsedTrackStore } from '@/stores/usedTrack'
+import { TrackId } from '@/types'
+import { RouteName } from '@/types/routeType'
+import { groupBy } from '@/utils/helpers'
+import Navigation from '@/utils/navigation'
+import Translation from '@/utils/translation'
 import { DsfrButton } from '@gouvminint/vue-dsfr'
+import { computed } from 'vue'
 import { useRouter } from 'vue-router'
 
-const tracks = useTracksStore()
+const tracks = useTrackStore()
 const debugStore = useDebugStore()
 const router = useRouter()
 
 const usedTracksRegrouped = computed(() => {
-  return groupBy(tracks.usedTracks, 'category')
+  return groupBy(useUsedTrackStore().usedTracks, 'category')
 })
 
 const usedCategories = computed(() => {
@@ -68,8 +69,10 @@ const usedCategories = computed(() => {
 })
 
 const backToTrack = async (trackId: TrackId) => {
-  tracks.setUsedTracksAsNotCompleted(trackId)
-  tracks.removeFurtherUsedTracks(trackId)
-  await router.push({ name: RouteName.QuestionnaireFromSidebar, hash: Navigation.hashByRouteName(RouteName.Questionnaire) })
+  await router.push({
+    name: RouteName.Questionnaire,
+    params: { trackId: trackId },
+    hash: Navigation.hashByRouteName(RouteName.Questionnaire)
+  })
 }
 </script>

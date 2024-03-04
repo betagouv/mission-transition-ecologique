@@ -1,5 +1,5 @@
 import type { Track } from '@/types'
-import { TrackComponents, TrackId } from '@/types'
+import { TrackComponent, TrackId } from '@/types'
 
 export const status: Track = {
   id: TrackId.Status,
@@ -7,7 +7,7 @@ export const status: Track = {
   title: { fr: "Mon niveau d'avancement" },
   label: { fr: 'Statut de votre projet' },
   interface: {
-    component: TrackComponents.Buttons
+    component: TrackComponent.Buttons
   },
   behavior: {
     multipleChoices: false

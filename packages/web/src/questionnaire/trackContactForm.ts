@@ -1,12 +1,12 @@
 import type { Track } from '@/types'
-import { TrackComponents, TrackFieldType, TrackId } from '@/types'
+import { TrackComponent, TrackFieldType, TrackId } from '@/types'
 
 export const contactForm: Track = {
   id: TrackId.ContactForm,
   title: { fr: 'Formulaire' },
   label: { fr: 'Je prends contact' },
   interface: {
-    component: TrackComponents.Form
+    component: TrackComponent.Form
   },
   behavior: {
     multipleChoices: false

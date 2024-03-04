@@ -2,6 +2,7 @@
 //console.log(`router.index > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import TeeQuestionnaireResult from '@/components/questionnaire/TeeQuestionnaireResult.vue'
+import { TrackId } from '@/types'
 import { createRouter, createWebHistory, type RouteLocationNormalized, type RouteLocationNormalizedLoaded } from 'vue-router'
 import TeeHomePage from '../pages/TeeHomePage.vue'
 import TeeQuestionnairePage from '../pages/TeeQuestionnairePage.vue'
@@ -14,9 +15,8 @@ import TeeQuestionnaire from '@/components/questionnaire/TeeQuestionnaire.vue'
 import ProgramDetail from '@/components/program/detail/ProgramDetail.vue'
 import { RouteName } from '@/types/routeType'
 import { redirections } from '@/router/redirection'
-import { TrackId } from '@/types'
 import type { Component } from 'vue'
-import { resetDetailProgram, resetTrackStore, setHelpAsTrackSeed, setResultsAsTrackSeed } from '@/router/hook'
+import { resetQueries, resetTrackStore, startQuestionnaire } from '@/router/hook'
 import ProgramList from '@/components/program/list/ProgramList.vue'
 
 export const router = createRouter({
@@ -39,21 +39,19 @@ export const router = createRouter({
     {
       path: '/questionnaire',
       component: TeeQuestionnairePage as Component,
-      beforeEnter: [resetTrackStore, resetDetailProgram, setHelpAsTrackSeed],
       children: [
         {
           path: '',
-          name: RouteName.Questionnaire,
+          name: RouteName.QuestionnaireStart,
           component: TeeQuestionnaire as Component,
-          props: {
-            seed: TrackId.QuestionnaireRoute
-          }
+          beforeEnter: [startQuestionnaire, resetQueries],
+          props: { trackId: TrackId.QuestionnaireRoute }
         },
         {
-          path: '',
-          name: RouteName.QuestionnaireFromSidebar,
+          path: ':trackId',
+          name: RouteName.Questionnaire,
           component: TeeQuestionnaire as Component,
-          beforeEnter: []
+          props: true
         },
         {
           path: 'resultat',
@@ -71,7 +69,7 @@ export const router = createRouter({
     {
       path: '/aides-entreprise',
       component: TeeCatalogPage as Component,
-      beforeEnter: [resetDetailProgram, resetTrackStore, setResultsAsTrackSeed],
+      beforeEnter: [resetQueries, resetTrackStore],
       children: [
         {
           path: '',

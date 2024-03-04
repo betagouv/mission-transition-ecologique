@@ -387,7 +387,7 @@ The `TeeApp` widget can the import the json file as a static, and they are then 
 
 <script lang="ts">
   import jsonDataset from '../public/data/generated/dataset_out.json'
-  import {useProgramsStore} from './stores/programs'
+  import {useProgramStore} from './stores/programs'
   const programs = programsStore()
   ...
   onBeforeMount(() => {

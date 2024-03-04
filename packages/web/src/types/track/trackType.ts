@@ -35,7 +35,7 @@ export interface TrackCallout {
   hint?: Translations
 }
 
-export enum TrackComponents {
+export enum TrackComponent {
   Cards = 'cards',
   Buttons = 'buttons',
   SimpleButtons = 'simpleButtons',
@@ -45,7 +45,7 @@ export enum TrackComponents {
   Results = 'results'
 }
 export interface TrackInterface {
-  component: TrackComponents
+  component: TrackComponent
   columnWidth?: number | string
 }
 export interface TrackBehavior {
@@ -72,8 +72,10 @@ export enum TrackFieldType {
   Search = 'search'
 }
 
-export interface NextTrackRule extends FormCallbackDataMapping {
-  conditions: Condition[]
+export interface TrackNext {
+  default: TrackId | false
+  ruleSet?: NextTrackRuleSet[]
+  [name: string]: any
 }
 
 export interface NextTrackRuleSet {
@@ -82,10 +84,8 @@ export interface NextTrackRuleSet {
   next: TrackNext
 }
 
-export interface TrackNext {
-  default: TrackId | false
-  exceptions?: NextTrackRuleSet[]
-  [name: string]: any
+export interface NextTrackRule extends FormCallbackDataMapping {
+  conditions: Condition[]
 }
 
 export enum HasInputOptions {
@@ -173,7 +173,7 @@ export interface TracksList {
 
 export interface UsedTrack {
   id: TrackId
-  component: TrackComponents | string
+  component: TrackComponent
   category?: string
   final?: boolean
   completed: boolean
@@ -184,7 +184,7 @@ export interface UsedTrack {
   // val: any[] | null,
   // data: object,
   selected: TrackOptions[]
-  next: any
+  next?: TrackNext
 }
 
 // FOR TRACKS - COMPONENTS
@@ -229,7 +229,7 @@ export const isTrackOptionsInput = (option: TrackOptionsInput | TrackOptions): o
 }
 
 export interface UsedTrackValuePair {
-  trackId: string
+  currentId: string
   completed: boolean
   selection: (string | number | object)[]
 }

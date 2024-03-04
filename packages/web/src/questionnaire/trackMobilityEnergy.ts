@@ -1,5 +1,5 @@
 import type { Track } from '@/types'
-import { HasInputOptions, TrackComponents, TrackId } from '@/types'
+import { HasInputOptions, TrackComponent, TrackId } from '@/types'
 
 export const mobilityEnergy: Track = {
   id: TrackId.MobilityEnergy,
@@ -7,7 +7,7 @@ export const mobilityEnergy: Track = {
   title: { fr: 'Energie des véhicules' },
   label: { fr: "Quelle est la source principale d'énergie de vos véhicules ?" },
   interface: {
-    component: TrackComponents.Buttons
+    component: TrackComponent.Buttons
   },
   behavior: {
     multipleChoices: false

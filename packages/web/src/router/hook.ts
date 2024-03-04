@@ -1,26 +1,16 @@
-import { useTracksStore } from '@/stores/tracks'
-import { useProgramsStore } from '@/stores/programs'
-import { TrackId } from '@/types'
 import { useNavigationStore } from '@/stores/navigation'
+import { useUsedTrackStore } from '@/stores/usedTrack'
 import type { NavigationGuardNext, RouteLocationNormalized } from 'vue-router'
 
 export const resetTrackStore = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
-  const tracks = useTracksStore()
-  tracks.resetUsedTracks()
+  useUsedTrackStore().resetUsedTracks()
   next()
 }
-export const resetDetailProgram = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
+export const resetQueries = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
   useNavigationStore().resetQueries()
-  useProgramsStore().resetDetailResult()
   next()
 }
-export const setHelpAsTrackSeed = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
-  const tracks = useTracksStore()
-  tracks.setSeedTrack(TrackId.QuestionnaireRoute)
-  next()
-}
-export const setResultsAsTrackSeed = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
-  const tracks = useTracksStore()
-  tracks.setSeedTrack(TrackId.Results)
+export const startQuestionnaire = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
+  useUsedTrackStore().resetUsedTracks()
   next()
 }

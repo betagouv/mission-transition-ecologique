@@ -1,5 +1,5 @@
 import type { Track } from '@/types'
-import { Objectives, TrackComponents, TrackId, YesNo } from '@/types'
+import { Objectives, TrackComponent, TrackId, YesNo } from '@/types'
 
 export const energyReductionPriority: Track = {
   id: TrackId.EnergyReductionPriority,
@@ -16,7 +16,7 @@ export const energyReductionPriority: Track = {
     imageLeft: 'images/thema/thema-energie.svg'
   },
   interface: {
-    component: TrackComponents.Buttons
+    component: TrackComponent.Buttons
   },
   behavior: {
     multipleChoices: false

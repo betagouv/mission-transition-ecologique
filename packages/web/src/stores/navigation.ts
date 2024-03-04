@@ -54,8 +54,8 @@ export const useNavigationStore = defineStore('navigation', () => {
     await updateUrl(!Widget.is)
   }
   function addQuery(query: Partial<UsedTrackValuePair>) {
-    const existingTrackIds = userQueries.value.map((q) => q.trackId)
-    if (!existingTrackIds.includes(query.trackId)) {
+    const existingTrackIds = userQueries.value.map((q) => q.currentId)
+    if (!existingTrackIds.includes(query.currentId)) {
       userQueries.value.push(query)
     }
   }
@@ -75,7 +75,7 @@ export const useNavigationStore = defineStore('navigation', () => {
         }
       })
       const resString = selection.join('|')
-      trackQueries[`teetrack_${q.trackId}`] = resString
+      trackQueries[`teetrack_${q.currentId}`] = resString
     })
 
     const allQueries = {
@@ -121,7 +121,7 @@ export const useNavigationStore = defineStore('navigation', () => {
     if (typeof q !== 'undefined') {
       userQueries.value = userQueries.value.map((i) => {
         const iCopy = { ...i }
-        if (i.trackId === q.trackId) {
+        if (i.currentId === q.currentId) {
           iCopy.selection = q.selection
         }
         return iCopy
@@ -135,7 +135,7 @@ export const useNavigationStore = defineStore('navigation', () => {
     const queries = usedTracks.map((usedTrack) => {
       const selection = usedTrack.completed ? usedTrack.selection : []
       return {
-        trackId: usedTrack.trackId,
+        currentId: usedTrack.currentId,
         selection: selection
       } as Partial<UsedTrackValuePair>
     })
