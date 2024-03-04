@@ -259,6 +259,20 @@ export const scrollToTop = (element: Element) => {
   }
 }
 
+export const scrollToElementCenter = (element: HTMLElement) => {
+  if (!Widget.is) {
+    setTimeout(() => {
+      const docHeight = document.documentElement.clientHeight
+      const { offsetTop, clientHeight } = element
+      window.scrollTo({ top: offsetTop + clientHeight / 2 - docHeight / 2 })
+    }, 100)
+  } else {
+    setTimeout(() => {
+      element.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    }, 100)
+  }
+}
+
 export const scrollToId = (elementId: string) => {
   setTimeout(() => {
     const element = document.getElementById(elementId)
