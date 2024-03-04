@@ -118,50 +118,50 @@
 
           <!-- PROGRAM COST | LOAN | AID -->
           <div
-            v-if="program?.[`coût de l'accompagnement`]"
+            v-if="programCost"
             :class="columnTiles"
           >
             <TeeTile
               class="tee-no-hover"
               :title="Translation.t('programCosts.cost')"
               :image-path="`${publicPath}images/TEE-cout-02.svg`"
-              :description="`${program[`coût de l'accompagnement`]}`"
+              :description="`${programCost}`"
             />
           </div>
 
           <div
-            v-if="program?.[`montant du financement`]"
+            v-if="programAidAmount"
             :class="columnTiles"
           >
             <TeeTile
               class="tee-no-hover"
               :title="Translation.t('programCosts.aid')"
               :image-path="`${publicPath}images/TEE-cout-02.svg`"
-              :description="`${program[`montant du financement`]}`"
+              :description="`${programAidAmount}`"
             />
           </div>
 
           <div
-            v-if="program?.[`montant de l'avantage fiscal`]"
+            v-if="programTaxAdvantage"
             :class="columnTiles"
           >
             <TeeTile
               class="tee-no-hover"
               :title="Translation.t('programCosts.taxAdvantage')"
               :image-path="`${publicPath}images/TEE-cout-02.svg`"
-              :description="`${program[`montant de l'avantage fiscal`]}`"
+              :description="`${programTaxAdvantage}`"
             />
           </div>
 
           <div
-            v-if="program?.[`montant du prêt`]"
+            v-if="programLoan"
             :class="columnTiles"
           >
             <TeeTile
               class="tee-no-hover"
               :title="Translation.t('programCosts.loan')"
               :image-path="`${publicPath}images/TEE-cout-02.svg`"
-              :description="`${program[`montant du prêt`]}`"
+              :description="`${programLoan}`"
             />
           </div>
           <!-- <div
@@ -177,36 +177,36 @@
 
           <!-- PROGRAM DURATION -->
           <div
-            v-if="program?.[`durée de l'accompagnement`]"
+            v-if="programDuration"
             :class="columnTiles"
           >
             <TeeTile
               class="tee-no-hover"
               :title="Translation.t('program.programDuration')"
               :image-path="`${publicPath}images/TEE-duree.svg`"
-              :description="program[`durée de l'accompagnement`]"
+              :description="programDuration"
             />
           </div>
           <div
-            v-if="program?.[`durée du prêt`]"
+            v-if="programLoanDuration"
             :class="columnTiles"
           >
             <TeeTile
               class="tee-no-hover"
               :title="Translation.t('program.programLoanDuration')"
               :image-path="`${publicPath}images/TEE-duree.svg`"
-              :description="program[`durée du prêt`]"
+              :description="programLoanDuration"
             />
           </div>
 
           <!-- PROGRAM PROVIDERS -->
           <div :class="columnTiles">
             <TeeTile
-              v-if="program"
+              v-if="programProvider"
               class="tee-no-hover"
               :title="Translation.t('program.programProviders')"
               :image-path="`${publicPath}images/TEE-porteur.svg`"
-              :description="Translation.to(program['opérateur de contact'])"
+              :description="Translation.to(programProvider)"
             >
             </TeeTile>
           </div>
@@ -218,8 +218,8 @@
               :title="Translation.t('program.programEndValidity')"
               :image-path="`${publicPath}images/TEE-duree.svg`"
               :description="
-                program?.[`fin de validité`]
-                  ? Translation.t(Translation.t('program.programAvailableUntil'), { date: program[`fin de validité`] })
+                programEndValidity
+                  ? Translation.t(Translation.t('program.programAvailableUntil'), { date: programEndValidity })
                   : Translation.t('program.programAvailable')
               "
             />
@@ -300,7 +300,6 @@ const trackConfig = ref<any>()
 const TeeProgramFormContainer = ref<HTMLElement | null | undefined>(null)
 
 const blockColor = '#000091'
-const columnTiles = 'fr-col fr-col-sm-12 fr-col-md-4 fr-tee-detail-info-tile'
 
 const publicPath = Config.publicPath
 
@@ -308,6 +307,31 @@ interface Props {
   programId: string | number
 }
 const props = defineProps<Props>()
+
+// computed
+const programCost = computed(() => program.value?.[`coût de l'accompagnement`])
+const programAidAmount = computed(() => program.value?.[`montant du financement`])
+const programTaxAdvantage = computed(() => program.value?.[`montant de l'avantage fiscal`])
+const programLoan = computed(() => program.value?.[`montant du prêt`])
+const programDuration = computed(() => program.value?.[`durée de l'accompagnement`])
+const programLoanDuration = computed(() => program.value?.[`durée du prêt`])
+const programProvider = computed(() => program.value?.['opérateur de contact'])
+const programEndValidity = computed(() => program.value?.[`fin de validité`])
+
+const columnTiles = computed(() => {
+  const infoBlocks = [
+    !!programCost.value,
+    !!programAidAmount.value,
+    !!programTaxAdvantage.value,
+    !!programLoan.value,
+    !!programDuration.value,
+    !!programLoanDuration.value,
+    true, // shortcut for programValidity block (always exists)
+    true // shortcut for programProvider block (always exists)
+  ].filter(Boolean)
+  const colsSize = Math.round(12 / infoBlocks.length)
+  return `fr-col fr-col-xs-12 fr-col-sm-12 fr-col-md-${colsSize} fr-tee-detail-info-tile`
+})
 
 // functions
 const resetDetailResult = async () => {

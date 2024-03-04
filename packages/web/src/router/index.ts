@@ -7,6 +7,7 @@ import { createRouter, createWebHistory, type RouteLocationNormalized, type Rout
 import TeeHomePage from '../pages/TeeHomePage.vue'
 import TeeQuestionnairePage from '../pages/TeeQuestionnairePage.vue'
 import TeeCatalogPage from '../pages/TeeCatalogPage.vue'
+import TeeAddProgram from '../pages/TeeAddProgram.vue'
 import TeeLegalPage from '../pages/TeeLegalPage.vue'
 import TeeAccessibilityPage from '../pages/TeeAccessibilityPage.vue'
 import TeePersonalDataPage from '../pages/TeePersonalDataPage.vue'
@@ -83,6 +84,11 @@ export const router = createRouter({
           props: true
         }
       ]
+    },
+    {
+      path: '/ajouter-une-aide-entreprises',
+      name: RouteName.AddProgram,
+      component: TeeAddProgram as Component
     },
     {
       path: '/echanger-avec-un-conseiller',

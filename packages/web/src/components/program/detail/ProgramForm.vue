@@ -229,6 +229,7 @@
 </template>
 
 <script setup lang="ts">
+import { scrollToElementCenter } from '@/utils/helpers'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { computed, ref } from 'vue'
 import { type ProgramData, type ReqResp, TrackId } from '@/types'
@@ -339,6 +340,9 @@ const saveOpportunityForm = async () => {
 }
 
 const scrollToFormContainer = () => {
-  props.formContainerRef?.scrollIntoView({ block: 'start' })
+  const element = props.formContainerRef
+  if (element) {
+    scrollToElementCenter(element)
+  }
 }
 </script>
