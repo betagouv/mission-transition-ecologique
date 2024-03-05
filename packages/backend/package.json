@@ -6,7 +6,7 @@
   "scripts": {
     "spec-and-routes": "npx tsoa spec-and-routes",
     "build": "npx tsoa spec-and-routes && npx tsc --build --verbose",
-    "start": "node build/src/index.js",
+    "start": "node build/backend/src/index.js",
     "dev": "npx tsoa spec-and-routes && npx concurrently \"npx tsc --build --watch --verbose --preserveWatchOutput\" \"npx nodemon\" \"npx nodemon -x npx tsoa spec-and-routes\"",
     "test": "jest",
     "lint": "eslint . --fix"
@@ -19,9 +19,9 @@
     "npm": ">=9.0 <11"
   },
   "dependencies": {
+    "@sentry/node": "^7.93.0",
     "axios": "^1.6.5",
     "cors": "^2.8.5",
-    "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "publicodes": "^1.0.0-beta.73",
     "swagger-ui-express": "^5.0.0",

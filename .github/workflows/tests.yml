@@ -74,5 +74,5 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - run: npm clean-install
-
+      - run: npm run build-json-output
       - run: npm run test -w packages/backend

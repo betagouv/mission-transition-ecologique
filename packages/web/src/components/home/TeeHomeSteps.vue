@@ -1,19 +1,19 @@
 <template>
-  <div class="fr-grid-row fr-grid-row--gutters">
+  <div class="fr-grid-row fr-grid-row--gutters tee-home-steps fr-pt-md-5v">
     <div
       v-for="c in content"
       :key="`${c.img}-title`"
-      class="fr-col fr-col-xs-12 fr-col-md-4 fr-pt-8v fr-text-center fr-pb-0"
+      class="fr-col fr-col-xs-12 fr-col-md-4 fr-text-center fr-py-4v"
     >
-      <div class="fr-grid-row fr-px-2v">
-        <div class="fr-col fr-col-xs-2 fr-col-sm-12">
+      <div class="fr-grid-row fr-px-2v fr-pb-sm-6v">
+        <div class="fr-col fr-col-xs-2 fr-col-sm-3 fr-col-md-12 tee-home-steps-image">
           <img
-            class="fr-mb-5v"
+            class="fr-mb-md-5v"
             :src="c.img"
             :alt="c.title"
           />
         </div>
-        <div class="fr-col fr-col-xs-10 fr-col-sm-12">
+        <div class="fr-col fr-col-xs-10 fr-col-sm-9 fr-col-md-12 tee-home-steps-title">
           <h4>
             {{ c.title }}
           </h4>
@@ -37,7 +37,7 @@
         <img
           :src="c.logos.img"
           :alt="c.logos.label"
-          class="fr-mx-2v fr-my-2v tee-home-step-operators-img"
+          class="fr-mx-2v fr-my-2v tee-home-step-operator-img"
         />
       </div>
     </div>

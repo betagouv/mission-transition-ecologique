@@ -3,6 +3,7 @@ import { Result } from 'true-myth'
 import type { Program, PublicodesInputData, QuestionnaireData } from './types'
 import { ensureError } from '../../common/domain/error/errors'
 import { filterObject } from '../../common/objects'
+import { preprocessInputForPublicodes } from './preprocessProgram'
 
 /** Expected rule to evaluate if a program should be displayed to the user or
  * filtered out (in a program's `publicodes`
@@ -104,31 +105,4 @@ const addErrorDetails = (err: Error, programName: string): Error => {
   return new Error(`Evaluation of publicodes rules failed on program with id ${programName}`, {
     cause: err
   })
-}
-
-/** preprocesses the data gathered from the questionnaire into variables
- * needed by publicodes */
-const preprocessInputForPublicodes = (
-  questionnaireData: QuestionnaireData,
-  programData: Program,
-  currentDate: string
-): PublicodesInputData => {
-  const publicodesData: PublicodesInputData = {
-    ...questionnaireData,
-    'date du jour': currentDate
-  }
-
-  if (questionnaireData.codeNaf) publicodesData['entreprise . code NAF'] = enquotePublicodesLiteralString(questionnaireData.codeNaf)
-
-  if (programData['début de validité']) publicodesData['dispositif . début de validité'] = programData['début de validité']
-  if (programData['fin de validité']) publicodesData['dispositif . fin de validité'] = programData['fin de validité']
-
-  return publicodesData
-}
-
-/** for publicodes to interpret a value as a literal string, it expects an
- * extra pair of quotes, added by this function. Without it, it is interpreted as a reference to another rule
- */
-const enquotePublicodesLiteralString = (value: string): string => {
-  return `"${value}"`
 }

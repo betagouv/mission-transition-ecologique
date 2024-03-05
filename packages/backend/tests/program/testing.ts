@@ -2,6 +2,7 @@ import { ProgramAidType } from '@tee/web/src/types/programTypes'
 
 import { FILTERING_RULE_NAME } from '../../src/program/domain/filterPrograms'
 import { Program } from '@tee/data/src/type/program'
+import { ProgramRepository } from '../../src/program/domain/spi'
 
 export type Rules = { [FILTERING_RULE_NAME]: { [k: string]: unknown } | string; [k: string]: unknown }
 
@@ -34,5 +35,14 @@ export const makeProgramHelper = ({
       "nombre d'années d'activité": ['e']
     },
     publicodes: rules
+  }
+}
+
+export const mockCurrentDateService = { get: () => '01/01/2024' }
+
+export const makeProgramsRepository = (programs: Program[]): ProgramRepository => {
+  return {
+    getById: (_id: string) => undefined,
+    getAll: () => programs
   }
 }

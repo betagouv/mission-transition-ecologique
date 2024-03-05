@@ -1,5 +1,5 @@
 <template>
-  <div class="fr-mb-18v">
+  <div class="fr-mb-0v fr-mb-md-12v fr-mr-4v fr-mr-md-0">
     <h3>
       {{ getProgramObjectiveTitle() }}
     </h3>
@@ -7,7 +7,7 @@
       <p
         v-for="(paragraph, idx) in program.objectifs"
         :key="`description-paragraph-${idx}`"
-        class="fr-mb-6v"
+        class="fr-mb-3v"
       >
         <span class="fr-tee-description-paragraph-marker"> {{ idx + 1 }} | </span>
         <span class="fr-tee-description-paragraph-content">

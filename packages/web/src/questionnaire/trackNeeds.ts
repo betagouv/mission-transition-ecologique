@@ -33,7 +33,7 @@ export const needs: Track = {
       title: { fr: '' },
       label: { fr: 'Je me lance !' },
       next: {
-        default: TrackId.Help
+        default: TrackId.QuestionnaireRoute
       }
     },
     {

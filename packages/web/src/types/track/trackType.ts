@@ -228,11 +228,6 @@ export const isTrackOptionsInput = (option: TrackOptionsInput | TrackOptions): o
   return 'hasInput' in option
 }
 
-export enum TrackHelpValue {
-  Unknown = 'unknown',
-  Precise = 'precise'
-}
-
 export interface UsedTrackValuePair {
   trackId: string
   completed: boolean

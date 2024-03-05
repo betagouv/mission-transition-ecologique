@@ -14,7 +14,7 @@ import type {
 import { CleanerOperations, DataMappingFrom } from '@/types'
 import type { ImportMetaEnv } from '../env'
 import Widget from '@/utils/widget'
-import MetaEnv from '@/utils/metaEnv'
+import Config from '@/config'
 
 // GENERIC HELPERS
 
@@ -180,7 +180,7 @@ export const remapItem = (
   lang: string = 'fr'
 ) => {
   let data = { ...dataStructure }
-  const metaEnv: ImportMetaEnv = MetaEnv.metaEnv
+  const metaEnv: ImportMetaEnv = Config.metaEnv
 
   dataMappings.forEach((dataMapping) => {
     let value: unknown = ''
@@ -255,6 +255,20 @@ export const scrollToTop = (element: Element) => {
   } else {
     setTimeout(() => {
       element.scrollIntoView({ behavior: 'smooth' })
+    }, 100)
+  }
+}
+
+export const scrollToElementCenter = (element: HTMLElement) => {
+  if (!Widget.is) {
+    setTimeout(() => {
+      const docHeight = document.documentElement.clientHeight
+      const { offsetTop, clientHeight } = element
+      window.scrollTo({ top: offsetTop + clientHeight / 2 - docHeight / 2 })
+    }, 100)
+  } else {
+    setTimeout(() => {
+      element.scrollIntoView({ behavior: 'smooth', block: 'center' })
     }, 100)
   }
 }

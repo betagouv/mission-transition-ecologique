@@ -69,101 +69,101 @@
     :key="`track-${step}-${usedTrack.id}`"
     class="fr-grid-row"
   >
-    <div :class="`fr-col${track?.imageRight ? ' fr-col-md-7 fr-col-lg-7 tee-track-has-image-right' : ''}`">
-      <!-- UNCOMPLETED QUESTIONNAIRE -->
-      <div :class="`fr-grid-row fr-grid-row--gutters ${track?.bgColor ? 'fr-p-5v fr-p-sm-8v fr-p-md-20v' : ''}`">
-        <!-- CALLOUT (TEXT + IMAGE) -->
-        <div
-          v-if="track?.callout"
-          :class="`fr-col-12 ${track.callout.bigTitle ? 'fr-mb-10v fr-mx-0 fr-px-2v' : ''}`"
-        >
+    <!-- CALLOUT (TEXT + IMAGE) -->
+    <div
+      v-if="track?.callout"
+      :class="`fr-col-12 ${track.callout.bigTitle ? 'fr-mx-0' : ''} fr-px-0v fr-px-md-4v fr-mb-4v`"
+    >
+      <div
+        :class="`${track.callout.bigTitle ? 'fr-px-2v' : 'fr-py-4v fr-px-4v'}`"
+        :style="`background-color: ${track.callout.bgColor || 'transparent'}`"
+      >
+        <div class="tee-track-callout fr-grid-row fr-grid-row--gutters">
+          <!-- CALLOUT IMAGE LEFT -->
           <div
-            :class="`${track.callout.bigTitle ? 'fr-px-2v' : 'fr-py-4v fr-px-4v'}`"
-            :style="`background-color: ${track.callout.bgColor || 'transparent'}`"
+            v-if="track.callout.imageLeft"
+            class="fr-col-4 fr-col-sm-4 fr-col-md-5 tee-track-callout-img fr-pl-0 fr-p-2v fr-pr-0"
+            style="align-self: center"
           >
-            <div class="tee-track-callout fr-grid-row fr-grid-row--gutters">
-              <!-- CALLOUT IMAGE LEFT -->
-              <div
-                v-if="track.callout.imageLeft"
-                class="fr-col-4 fr-col-sm-4 fr-col-md-5 tee-track-callout-img fr-pl-0 fr-p-2v fr-pr-0"
-                style="align-self: center"
-              >
-                <img
-                  class="fr-responsive-img"
-                  :src="`${publicPath}${track.callout.imageLeft}`"
-                  :alt="`image / callout`"
-                />
-              </div>
-              <!-- CALLOUT TEXT -->
-              <div :class="`${track.callout.bigTitle ? 'fr-col-8 fr-col-sm-8 fr-col-md-7' : 'fr-col fr-col-md-7 tee-track-callout-texts'}`">
-                <!-- CALLOUT HEADER -->
-                <h2
-                  v-if="track.callout.header"
-                  :style="`${track.callout.headerStyle || 'color: var(--text-default-info);'}`"
-                  class="tee-track-callout-header"
+            <img
+              class="fr-responsive-img"
+              :src="`${publicPath}${track.callout.imageLeft}`"
+              :alt="`image / callout`"
+            />
+          </div>
+          <!-- CALLOUT TEXT -->
+          <div :class="`${track.callout.bigTitle ? 'fr-col-8 fr-col-sm-8 fr-col-md-7' : 'fr-col fr-col-md-7 tee-track-callout-texts'}`">
+            <!-- CALLOUT HEADER -->
+            <h2
+              v-if="track.callout.header"
+              :style="`${track.callout.headerStyle || 'color: var(--text-default-info);'}`"
+              class="tee-track-callout-header fr-sm-hide"
+            >
+              {{ track.callout.header[Translation.lang] }}
+            </h2>
+            <!-- CALLOUT TITLE / BIG TITLE -->
+            <h1
+              v-if="track.callout.bigTitle"
+              class="tee-track-callout-big-title tee-mb-none"
+              :style="`${track.callout.titleStyle || ''}`"
+            >
+              {{ track.callout.title[Translation.lang] }}
+            </h1>
+            <h3
+              v-else
+              class="fr-callout__title tee-track-callout-title"
+              :style="`${track.callout.titleStyle || ''}`"
+            >
+              {{ track.callout.title[Translation.lang] }}
+            </h3>
+            <!-- CALLOUT DESCRIPTION -->
+            <p
+              v-if="track.callout.description"
+              class="fr-callout__text tee-track-callout-description fr-mb-2v"
+              :style="`${track.callout.descriptionStyle || ''}`"
+            >
+              {{ track.callout.description[Translation.lang] }}
+            </p>
+            <!-- CALLOUT HINT -->
+            <p
+              v-if="track.callout.hint"
+              class="fr-mt-2v fr-mb-1v tee-track-callout-hint"
+              style="color: var(--text-active-blue-france)"
+            >
+              <i>
+                <span
+                  v-if="track.callout.hintIcon"
+                  :class="track.callout.hintIcon"
+                  aria-hidden="true"
                 >
-                  {{ track.callout.header[Translation.lang] }}
-                </h2>
-                <!-- CALLOUT TITLE / BIG TITLE -->
-                <h1
-                  v-if="track.callout.bigTitle"
-                  class="fr-mb-3 tee-track-callout-big-title"
-                  :style="`${track.callout.titleStyle || ''}`"
-                >
-                  {{ track.callout.title[Translation.lang] }}
-                </h1>
-                <h3
-                  v-else
-                  class="fr-callout__title tee-track-callout-title"
-                  :style="`${track.callout.titleStyle || ''}`"
-                >
-                  {{ track.callout.title[Translation.lang] }}
-                </h3>
-                <!-- CALLOUT DESCRIPTION -->
-                <p
-                  v-if="track.callout.description"
-                  class="fr-callout__text tee-track-callout-description fr-mb-2v"
-                  :style="`${track.callout.descriptionStyle || ''}`"
-                >
-                  {{ track.callout.description[Translation.lang] }}
-                </p>
-                <!-- CALLOUT HINT -->
-                <p
-                  v-if="track.callout.hint"
-                  class="fr-mt-2v fr-mb-1v tee-track-callout-hint"
-                  style="color: var(--text-active-blue-france)"
-                >
-                  <i>
-                    <span
-                      v-if="track.callout.hintIcon"
-                      :class="track.callout.hintIcon"
-                      aria-hidden="true"
-                    >
-                    </span>
-                    {{ track.callout.hint[Translation.lang] }}
-                  </i>
-                </p>
-              </div>
-              <!-- CALLOUT IMAGE RIGHT -->
-              <div
-                v-if="track.callout.imageRight"
-                class="fr-col-3"
-                style="align-self: center"
-              >
-                <img
-                  class="fr-responsive-img"
-                  :src="`${publicPath}${track.callout.imageRight}`"
-                  :alt="`image / callout`"
-                />
-              </div>
-            </div>
+                </span>
+                {{ track.callout.hint[Translation.lang] }}
+              </i>
+            </p>
+          </div>
+          <!-- CALLOUT IMAGE RIGHT -->
+          <div
+            v-if="track.callout.imageRight"
+            class="fr-col-3"
+            style="align-self: center"
+          >
+            <img
+              class="fr-responsive-img"
+              :src="`${publicPath}${track.callout.imageRight}`"
+              :alt="`image / callout`"
+            />
           </div>
         </div>
+      </div>
+    </div>
 
+    <!-- UNCOMPLETED QUESTIONNAIRE -->
+    <div :class="`fr-col${track?.imageRight ? ' fr-col-md-7 fr-col-lg-7 tee-track-has-image-right' : ''}`">
+      <div :class="`fr-px-4v fr-px-md-0v fr-grid-row fr-grid-row--gutters ${track?.bgColor ? 'fr-p-5v fr-p-sm-8v fr-p-md-20v' : ''}`">
         <!-- TRACK LABEL -->
         <div
           v-if="step !== 1"
-          :class="`fr-mt-3v ${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`"
+          :class="`fr-px-4v fr-px-md-0v fr-mt-6v ${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`"
         >
           <h3
             :class="`${track?.info ? 'fr-mb-0' : 'fr-mb-2v'}`"
@@ -176,7 +176,7 @@
         <!-- TRACK INFOS -->
         <div
           v-if="step !== 1 && track?.info"
-          :class="`${isTrackResults ? 'fr-col-12 fr-col-offset-md-1' : 'fr-col-12'}`"
+          :class="`fr-px-4v fr-px-md-0v ${isTrackResults ? 'fr-col-12 fr-col-offset-md-1' : 'fr-col-12'}`"
         >
           <p class="fr-mb-2v">
             <span
@@ -190,7 +190,7 @@
         <!-- TRACK HINT -->
         <div
           v-if="step !== 1 && track?.hint"
-          :class="`${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`"
+          :class="`fr-px-4v fr-px-md-0v ${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`"
         >
           <p
             :class="`fr-mb-0`"
@@ -203,7 +203,7 @@
         <!-- TRACK RESUME -->
         <div
           v-if="step !== 1 && track?.resume"
-          :class="`${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`"
+          :class="`fr-px-4v fr-px-md-0v ${isTrackResults ? 'fr-col-10 fr-col-offset-md-1' : 'fr-col-12'}`"
         >
           <p class="fr-mb-0">
             {{ track.resume[Translation.lang] }}
@@ -376,7 +376,7 @@
       <!-- SEND / NEXT BUTTON -->
       <div
         v-if="!noNeedForNext.includes(renderAs) && !usedTrack.completed && !isTrackResults"
-        class="fr-grid-row fr-grid-row--gutters fr-pt-8v"
+        class="fr-grid-row fr-grid-row--gutters fr-pt-8v fr-px-4v fr-px-md-0v"
         style="justify-content: start"
       >
         <!-- BTN PREVIOUS -->
@@ -437,7 +437,7 @@ import TeeResults from '../results/TeeResults.vue'
 import { tracksStore } from '@/stores/tracks'
 import Translation from '@/utils/translation'
 import { useDebugStore } from '@/stores/debug'
-import MetaEnv from '@/utils/metaEnv'
+import Config from '@/config'
 import Matomo from '@/utils/matomo'
 
 interface Props {
@@ -478,7 +478,7 @@ const selectedOptionsIndices = ref<number[]>([])
 const selectedOptions = ref<TrackOptionsUnion[]>([])
 const needRemove = ref<boolean>(false)
 
-const publicPath = MetaEnv.publicPath
+const publicPath = Config.publicPath
 const track: Track | undefined = tracks.getTrack(props.usedTrack.id)
 // const usedTrackRef = ref<UsedTrack>(props.usedTrack)
 

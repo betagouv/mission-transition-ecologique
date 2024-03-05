@@ -45,7 +45,7 @@
   <!-- PROGRAMS AS LIST OF CARDS -->
   <div
     v-if="countFilteredPrograms"
-    class="fr-container fr-px-0 fr-mt-6v"
+    class="fr-container fr-px-2v fr-mt-6v"
   >
     <!-- RESULTS SIZE -->
     <div
@@ -189,7 +189,7 @@ import { navigationStore } from '@/stores/navigation'
 import { RouteName } from '@/types/routeType'
 import Widget from '@/utils/widget'
 import { useDebugStore } from '@/stores/debug'
-import MetaEnv from '@/utils/metaEnv'
+import Config from '@/config'
 import Matomo from '@/utils/matomo'
 
 const programs = programsStore()
@@ -208,7 +208,7 @@ interface Props {
 }
 const props = defineProps<Props>()
 
-const publicPath = MetaEnv.publicPath
+const publicPath = Config.publicPath
 
 const filteredPrograms: ProgramData[] = await programs.filterPrograms(props.tracksResults)
 

@@ -1,7 +1,7 @@
 <template>
   <!-- DEBUGGING -->
   <div
-    v-if="debug"
+    v-if="useDebug.is"
     class="vue-debug"
   >
     <h5>DEBUG - TeeAppFooter</h5>
@@ -36,8 +36,7 @@
             title="Retour à l’accueil du site - Transition Ecologique des entreprises - République Française"
           >
             <img
-              class="fr-footer__logo"
-              style="height: 110px"
+              class="fr-footer__logo tee-footer-app-logo"
               src="/images/logos/mission-transition-logo-alone.png"
               alt="Transition Ecologique des entreprises"
             />
@@ -70,14 +69,12 @@
         <div class="fr-footer__partners-logos">
           <div class="fr-footer__partners-main">
             <a
-              class="footer__partners-link"
+              class="footer__partners-link fr-my-4v fr-mr-4v tee-router-link"
               target="_blank"
-              style="background-image: none"
               :href="mainPartner.href"
             >
               <img
-                class="fr-footer__logo"
-                style="height: 5.625rem; width: 10rem"
+                class="fr-footer__logo tee-home-step-operator-logo tee-footer-operator-main"
                 :src="mainPartner.img"
                 :alt="mainPartner.label"
               />
@@ -93,12 +90,12 @@
             >
               <li>
                 <a
-                  class="footer__partners-link tee-footer-operators-container"
+                  class="footer__partners-link tee-router-link fr-my-4v fr-ml-4v"
                   target="_blank"
                   :href="operator.href"
                 >
                   <img
-                    class="fr-footer__logo tee-footer-operators-img"
+                    class="fr-footer__logo tee-home-step-operator-logo tee-footer-operator-img"
                     :src="operator.img"
                     :alt="operator.label"
                   />
@@ -174,6 +171,14 @@
 import Translation from '@/utils/translation'
 import { RouteName } from '@/types/routeType'
 import operators from '@/utils/operators'
+import { useDebugStore } from '@/stores/debug'
+
+interface Props {
+  stickToBottom?: boolean
+}
+defineProps<Props>()
+
+const useDebug = useDebugStore()
 
 const sourceCodeHref = 'https://github.com/betagouv/transition-ecologique-entreprises-widget/tree/main'
 const licenceHref = 'https://github.com/betagouv/transition-ecologique-entreprises-widget/blob/main/LICENSE'
@@ -238,16 +243,13 @@ const mainLinks = [
     href: 'https://stats.beta.gouv.fr/index.php?module=CoreHome&action=index&idSite=23&period=day&date=yesterday#?period=day&date=yesterday&category=Dashboard_Dashboard&subcategory=1&idSite=23'
   },
   {
+    label: 'Ajouter une aide',
+    to: { name: RouteName.AddProgram }
+  },
+  {
     label: 'Échanger avec un conseiller',
     to: { name: RouteName.ChatAdvisor },
     icon: 'fr-icon-chat-3-line'
   }
 ]
-
-interface Props {
-  stickToBottom?: boolean
-  debug?: boolean
-}
-defineProps<Props>()
 </script>
-@/utils/operators
