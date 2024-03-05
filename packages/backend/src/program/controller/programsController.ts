@@ -3,10 +3,7 @@ import ProgramService from '../application/programService'
 import { OpenAPISafeProgram } from './types'
 import { ErrorJSON } from '../../common/controller/jsonError'
 import { Err } from 'true-myth/dist/es/result'
-
-interface QueryParams {
-  code_Naf?: string
-}
+import { QuestionnaireData } from '../domain/types'
 
 @SuccessResponse('200', 'OK')
 @Route('programs')
@@ -19,10 +16,13 @@ export class ProgramsController extends Controller {
    * @summary Get relevant programs given input data
    */
   @Get()
-  public get(@Queries() queryParams: QueryParams, @Res() requestFailedResponse: TsoaResponse<500, ErrorJSON>): OpenAPISafeProgram[] | void {
+  public get(
+    @Queries() questionnaireData: QuestionnaireData,
+    @Res() requestFailedResponse: TsoaResponse<500, ErrorJSON>
+  ): OpenAPISafeProgram[] | void {
     this.setStatus(200)
 
-    const programsResult = new ProgramService().getFilteredPrograms(queryParams)
+    const programsResult = new ProgramService().getFilteredPrograms(questionnaireData)
 
     if (programsResult.isErr) {
       this.throwErrorResponse(programsResult, requestFailedResponse)
