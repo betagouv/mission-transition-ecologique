@@ -24,7 +24,7 @@
 
 import Translation from '@/utils/translation'
 import type { ProgramData } from '@/types'
-import { ProgramAidType } from '@/types'
+import { ProgramAidType } from '@tee/common/src/program/types'
 
 interface Props {
   program: ProgramData

@@ -1,8 +1,7 @@
-import { ProgramAidType } from '@tee/web/src/types/programTypes'
-
 import { FILTERING_RULE_NAME } from '../../src/program/domain/filterPrograms'
 import { Program } from '@tee/data/src/type/program'
 import { ProgramRepository } from '../../src/program/domain/spi'
+import { ProgramAidType } from '@tee/common/src/program/types'
 
 export type Rules = { [FILTERING_RULE_NAME]: { [k: string]: unknown } | string; [k: string]: unknown }
 

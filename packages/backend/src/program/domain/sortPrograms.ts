@@ -1,4 +1,4 @@
-import { ProgramAidType } from '@tee/web/src/types'
+import { ProgramAidType } from '@tee/common/src/program/types'
 import { Program } from './types'
 import { QuestionnaireRoute } from '@tee/common/src/questionnaire/types'
 

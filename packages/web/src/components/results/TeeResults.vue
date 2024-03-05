@@ -184,13 +184,13 @@ import TeeResultsFilter from './TeeResultsFilter.vue'
 import TeeNoResults from './TeeNoResults.vue'
 import type { FilterSignal, ProgramData, PropertyPath, TrackFilter, TrackResultsConfig, UsedTrack } from '@/types'
 import { ConditionOperators, TrackId } from '@/types'
-import { ProgramAidType } from '@/types/programTypes'
 import { navigationStore } from '@/stores/navigation'
 import { RouteName } from '@/types/routeType'
 import Widget from '@/utils/widget'
 import { useDebugStore } from '@/stores/debug'
 import Config from '@/config'
 import Matomo from '@/utils/matomo'
+import { ProgramAidType } from '@tee/common/src/program/types'
 
 const programs = programsStore()
 const navigation = navigationStore()

@@ -2,6 +2,7 @@ import { Program } from '@tee/data/src/type/program'
 import { CurrentDateService, ProgramRepository } from './spi'
 import { QuestionnaireData } from './types'
 import { filterPrograms } from './filterPrograms'
+import { sortPrograms } from './sortPrograms'
 import { Result } from 'true-myth'
 
 export default class ProgramFeatures {
@@ -19,6 +20,11 @@ export default class ProgramFeatures {
 
   public getFilteredBy(questionnaireData: QuestionnaireData): Result<Program[], Error> {
     const allPrograms = this._programRepository.getAll()
-    return filterPrograms(allPrograms, questionnaireData, this._currentDateService.get())
+    let filteredPrograms = filterPrograms(allPrograms, questionnaireData, this._currentDateService.get())
+    const route = questionnaireData.questionnaire_route
+    if (route) {
+      filteredPrograms = filteredPrograms.map((programs) => sortPrograms(programs, route))
+    }
+    return filteredPrograms
   }
 }
