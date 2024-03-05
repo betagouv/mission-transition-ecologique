@@ -6,7 +6,6 @@ import { defineStore } from 'pinia'
 
 import type { ProgramData, TrackId, TrackOptions, UsedTrack } from '@/types/index'
 import type { QuestionnaireData } from '@tee/backend/src/program/domain/types'
-import { TrackHelpValue } from '@/types/index'
 
 export const programsStore = defineStore('programs', () => {
   const programs = ref<ProgramData[]>()
@@ -73,11 +72,8 @@ export const programsStore = defineStore('programs', () => {
 })
 
 async function fetchFilteredPrograms(questionnaireData: QuestionnaireData): Promise<ProgramData[]> {
-  const url = ''
-  const response = await fetch(url, {
-    method: 'GET',
-    body: JSON.stringify(questionnaireData)
-  })
-  const programs = await response.json()
-  return programs as ProgramData[]
+  const url: string = '/api/programs?' + new URLSearchParams(questionnaireData).toString()
+  const response = await fetch(url)
+  const programs = (await response.json()) as ProgramData[]
+  return programs
 }
