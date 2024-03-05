@@ -6,7 +6,6 @@ import { OperatorRepository } from '../../operator/domain/spi'
 import { ProgramRepository } from '../../program/domain/spi'
 import ProgramFeatures from '../../program/domain/programFeatures'
 import { Program } from '@tee/data/src/type/program'
-import { currentDateService } from '../../program/infrastructure/currentDate'
 
 export default class OpportunityFeatures {
   private readonly _contactRepository: ContactRepository
@@ -69,6 +68,8 @@ export default class OpportunityFeatures {
   }
 
   private _getProgramById(id: string): Program | undefined {
-    return new ProgramFeatures(this._programRepository, currentDateService).getById(id)
+    // No date is required for ProgramFeaturs.getById
+    const emptyDateService = { get: () => '' }
+    return new ProgramFeatures(this._programRepository, emptyDateService).getById(id)
   }
 }
