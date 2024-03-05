@@ -19,10 +19,7 @@ export class ProgramsController extends Controller {
    * @summary Get relevant programs given input data
    */
   @Get()
-  public async get(
-    @Queries() queryParams: QueryParams,
-    @Res() requestFailedResponse: TsoaResponse<500, ErrorJSON>
-  ): Promise<OpenAPISafeProgram[] | void> {
+  public get(@Queries() queryParams: QueryParams, @Res() requestFailedResponse: TsoaResponse<500, ErrorJSON>): OpenAPISafeProgram[] | void {
     this.setStatus(200)
 
     const programsResult = new ProgramService().getFilteredPrograms(queryParams)
