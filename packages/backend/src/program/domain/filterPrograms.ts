@@ -27,7 +27,7 @@ export const filterPrograms = (programs: Program[], inputData: QuestionnaireData
 
   for (const program of programs) {
     const evaluation = evaluateRule(program, inputData, currentDate)
-    currentDate
+
     if (evaluation.isErr) {
       return Result.err(addErrorDetails(evaluation.error, program.id))
     }
