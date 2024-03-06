@@ -2,6 +2,7 @@
 //console.log(`router.index > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import TeeQuestionnaireResult from '@/components/questionnaire/TeeQuestionnaireResult.vue'
+import Hook from '@/router/hook'
 import { TrackId } from '@/types'
 import { createRouter, createWebHistory, type RouteLocationNormalized, type RouteLocationNormalizedLoaded } from 'vue-router'
 import TeeHomePage from '../pages/TeeHomePage.vue'
@@ -17,7 +18,6 @@ import ProgramDetail from '@/components/program/detail/ProgramDetail.vue'
 import { RouteName } from '@/types/routeType'
 import { redirections } from '@/router/redirection'
 import type { Component } from 'vue'
-import { resetQueries, resetTrackStore, startQuestionnaire } from '@/router/hook'
 import ProgramList from '@/components/program/list/ProgramList.vue'
 
 export const router = createRouter({
@@ -45,13 +45,14 @@ export const router = createRouter({
           path: '',
           name: RouteName.QuestionnaireStart,
           component: TeeQuestionnaire as Component,
-          beforeEnter: [startQuestionnaire, resetQueries],
+          beforeEnter: [Hook.startQuestionnaire, Hook.resetQueries],
           props: { trackId: TrackId.QuestionnaireRoute }
         },
         {
           path: ':trackId',
           name: RouteName.Questionnaire,
           component: TeeQuestionnaire as Component,
+          beforeEnter: [Hook.hasUsedTracks],
           props: true
         },
         {
@@ -70,7 +71,7 @@ export const router = createRouter({
     {
       path: '/aides-entreprise',
       component: TeeCatalogPage as Component,
-      beforeEnter: [resetQueries, resetTrackStore],
+      beforeEnter: [Hook.resetQueries, Hook.resetTrackStore],
       children: [
         {
           path: '',
