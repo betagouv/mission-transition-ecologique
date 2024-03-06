@@ -40,6 +40,7 @@
 <script setup lang="ts">
 import ProgramCard from '@/components/program/list/ProgramCard.vue'
 import ProgramListHeaderResult from '@/components/program/list/ProgramListHeaderResult.vue'
+import { useUsedTrackStore } from '@/stores/usedTrack'
 import { computed, onBeforeMount } from 'vue'
 import Translation from '@/utils/translation'
 import { useProgramStore } from '@/stores/program'
@@ -53,7 +54,7 @@ import ProgramFilters from '@/components/program/list/ProgramFilters.vue'
 const programsStore = useProgramStore()
 const navigation = useNavigationStore()
 
-const programs: ProgramData[] = programsStore.getProgramsByUsedTracks()
+const programs: ProgramData[] = useUsedTrackStore().hasUsedTracks() ? programsStore.programsByUsedTracks : programsStore.programs
 
 const filteredPrograms = computed(() => {
   return programsStore.getProgramsByFilters(programs)

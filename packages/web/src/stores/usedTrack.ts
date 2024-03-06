@@ -100,6 +100,10 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     return usedTracks.value.find((usedTrack) => usedTrack.id === trackId) !== undefined
   }
 
+  function hasUsedTracks() {
+    return usedTracks.value.length > 0
+  }
+
   function removeFurtherUsedTracks(trackId: TrackId) {
     const usedTrack = getUsedTrack(trackId)
     if (usedTrack) {
@@ -173,6 +177,7 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     currentIsFirst,
     getUsedTrack,
     hasUsedTrack,
+    hasUsedTracks,
     removeFurtherUsedTracks,
     currentStep,
     replaceUsedTrack,

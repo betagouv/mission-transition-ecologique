@@ -23,19 +23,14 @@
 
 import { onBeforeMount, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { useProgramStore } from './stores/program'
 import { useNavigationStore } from './stores/navigation'
 
 import TeeHeader from './components/TeeHeader.vue'
 import TeeMatomo from './components/TeeMatomo.vue'
 import TeeFooter from './components/TeeFooter.vue'
-import type { ProgramData } from '@/types'
-import jsonDataset from '../public/data/generated/dataset_out.json'
 import Translation from '@/utils/translation'
 
-const programs = useProgramStore()
 const nav = useNavigationStore()
-
 const router = useRouter()
 const route = useRoute()
 
@@ -45,7 +40,6 @@ interface Props {
 defineProps<Props>()
 
 onBeforeMount(() => {
-  programs.setDataset(jsonDataset as ProgramData[])
   Translation.setLocale('fr')
 })
 

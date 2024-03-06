@@ -109,14 +109,13 @@ import { computed, onBeforeMount, ref, watch } from 'vue'
 import Translation from '@/utils/translation'
 import { useProgramStore } from './stores/program'
 import { useNavigationStore } from './stores/navigation'
-import { type ProgramData, TrackComponent, TrackId } from './types'
+import { TrackComponent, TrackId } from './types'
 import TeeMatomo from './components/TeeMatomo.vue'
 import TrackSidebar from '@/components/track/TrackSidebar.vue'
 import ProgramDetail from './components/program/detail/ProgramDetail.vue'
 import Widget from '@/utils/widget'
 import { useDebugStore } from '@/stores/debug'
 import { DsfrToggleSwitch } from '@gouvminint/vue-dsfr'
-import jsonDataset from '../public/data/generated/dataset_out.json'
 import Config from '@/config'
 
 interface Props {
@@ -177,10 +176,6 @@ const getColumnsWidth = computed(() => {
 })
 
 const setupGlobal = () => {
-  // load dataset to pinia store
-  // programs.setDataset(props.datasetUrl, deployMode, deployUrl)
-  programs.setDataset(jsonDataset as ProgramData[])
-
   // set locale and message
   const locale = props.locale ?? 'fr'
   Translation.setLocale(locale)

@@ -5,13 +5,14 @@ import { useUsedTrackStore } from '@/stores/usedTrack'
 import ProgramFilter from '@/utils/program/programFilters'
 import { computed, ref } from 'vue'
 import { acceptHMRUpdate, defineStore } from 'pinia'
+import jsonDataset from '../../public/data/generated/dataset_out.json'
 
 import { type ProgramData, type TrackOptions, type QuestionnaireRoute, type programFiltersType, ProgramAidType, Objectives } from '@/types'
 import { filterPrograms as filterWithPublicodes, sortPrograms } from '@tee/backend/src/program/application/sortAndFilterPrograms'
 import type { QuestionnaireData } from '@tee/backend/src/program/domain/types'
 
 export const useProgramStore = defineStore('program', () => {
-  const programs = ref<ProgramData[]>([])
+  const programsJson = ref<ProgramData[]>(jsonDataset as ProgramData[])
   const programDetail = ref<string | number>()
 
   const programFilters = ref<programFiltersType>({
@@ -19,17 +20,11 @@ export const useProgramStore = defineStore('program', () => {
     objectifTypeSelected: ''
   })
 
-  // getters
-  const progs = computed<({ index: string } & ProgramData)[]>(() => {
-    return programs.value?.map((programData: ProgramData, i: number) => {
-      return {
-        index: i.toString(),
-        ...programData
-      }
-    })
+  const programs = computed<ProgramData[]>(() => {
+    return getPrograms()
   })
 
-  function getProgramsByUsedTracks() {
+  const programsByUsedTracks = computed<ProgramData[]>(() => {
     const usedTracks = useUsedTrackStore().usedTracks
     // retrieve and organize user's conditions
     const conditions: { [k: string]: any } = {}
@@ -44,14 +39,18 @@ export const useProgramStore = defineStore('program', () => {
     })
 
     // filter out programs
-    if (progs.value.length > 0) {
-      const progsFilteredResult = filterWithPublicodes(progs.value, conditions as QuestionnaireData)
+    return getPrograms(conditions)
+  })
 
-      if (progsFilteredResult.isErr) {
-        throw new Error(progsFilteredResult.error.message)
+  function getPrograms(questionnaireData: QuestionnaireData = {}) {
+    if (programsJson.value.length > 0) {
+      const programsFilteredResult = filterWithPublicodes(programsJson.value, questionnaireData)
+
+      if (programsFilteredResult.isErr) {
+        throw new Error(programsFilteredResult.error.message)
       }
 
-      return sortPrograms(progsFilteredResult.value, conditions['questionnaire_route'] as QuestionnaireRoute)
+      return sortPrograms(programsFilteredResult.value, questionnaireData['questionnaire_route'] as QuestionnaireRoute)
     }
 
     return []
@@ -66,22 +65,16 @@ export const useProgramStore = defineStore('program', () => {
     })
   }
 
-  function setDataset(dataset: ProgramData[]) {
-    programs.value = dataset
-  }
-
   function getProgramById(id: string | number) {
-    return progs.value?.find((programData: ProgramData) => programData.id === id)
+    return programsJson.value?.find((programData: ProgramData) => programData.id === id)
   }
 
   return {
     programs,
     programDetail,
-    progs,
     programFilters,
-    getProgramsByUsedTracks,
+    programsByUsedTracks,
     getProgramsByFilters,
-    setDataset,
     getProgramById
   }
 })
