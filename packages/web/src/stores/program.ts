@@ -7,7 +7,7 @@ import { computed, ref } from 'vue'
 import { acceptHMRUpdate, defineStore } from 'pinia'
 import jsonDataset from '../../public/data/generated/dataset_out.json'
 
-import { type ProgramData, type TrackOptions, type QuestionnaireRoute, type programFiltersType, ProgramAidType, Objectives } from '@/types'
+import { type ProgramData, type QuestionnaireRoute, type programFiltersType, ProgramAidType, Objectives } from '@/types'
 import { filterPrograms as filterWithPublicodes, sortPrograms } from '@tee/backend/src/program/application/sortAndFilterPrograms'
 import type { QuestionnaireData } from '@tee/backend/src/program/domain/types'
 
@@ -25,21 +25,8 @@ export const useProgramStore = defineStore('program', () => {
   })
 
   const programsByUsedTracks = computed<ProgramData[]>(() => {
-    const usedTracks = useUsedTrackStore().usedTracks
-    // retrieve and organize user's conditions
-    const conditions: { [k: string]: any } = {}
-    usedTracks.forEach((usedTrack) => {
-      usedTrack.selected.forEach((trackOptions: TrackOptions) => {
-        const val = trackOptions.value || {}
-
-        Object.entries(val).forEach(([key, value]) => {
-          conditions[key] = value as unknown
-        })
-      })
-    })
-
     // filter out programs
-    return getPrograms(conditions)
+    return getPrograms(useUsedTrackStore().getQuestionnaireData())
   })
 
   function getPrograms(questionnaireData: QuestionnaireData = {}) {

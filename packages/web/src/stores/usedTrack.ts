@@ -1,5 +1,6 @@
 import { useTrackStore } from '@/stores/track'
 import { TrackComponent, TrackId, type TrackNext, type TrackOptions, type UsedTrack, type UsedTrackValuePair } from '@/types'
+import type { QuestionnaireData } from '@tee/backend/build/backend/src/program/domain/types'
 import { acceptHMRUpdate, defineStore } from 'pinia'
 import { computed, ref, toRaw } from 'vue'
 
@@ -157,6 +158,21 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     }
   }
 
+  function getQuestionnaireData(): QuestionnaireData {
+    const questionnaireData: { [k: string]: any } = {}
+    usedTracks.value.forEach((usedTrack) => {
+      usedTrack.selected.forEach((trackOptions: TrackOptions) => {
+        const val = trackOptions.value || {}
+
+        Object.entries(val).forEach(([key, value]) => {
+          questionnaireData[key] = value as unknown
+        })
+      })
+    })
+
+    return questionnaireData
+  }
+
   function resetUsedTracks() {
     usedTracks.value = []
   }
@@ -183,7 +199,8 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     replaceUsedTrack,
     add,
     resetUsedTracks,
-    findSelectedValueByTrackIdAndKey
+    findSelectedValueByTrackIdAndKey,
+    getQuestionnaireData
   }
 })
 
