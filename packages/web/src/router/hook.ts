@@ -5,22 +5,22 @@ import { useNavigationStore } from '@/stores/navigation'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 
 export default class Hook {
-  static readonly resetTrackStore = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
+  static readonly resetUsedTrackStore = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
     useUsedTrackStore().resetUsedTracks()
     next()
   }
 
   static readonly resetQueries = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
-    useNavigationStore().resetQueries()
-    next()
+    if (Hook.hasQuery(to)) {
+      useNavigationStore().resetQueries()
+      next({ ...to, query: undefined })
+    } else {
+      next()
+    }
   }
 
-  static readonly startQuestionnaire = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
-    useUsedTrackStore().resetUsedTracks()
-    next()
-  }
   static readonly hasUsedTracks = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
-    if (useUsedTrackStore().usedTracks.length) {
+    if (useUsedTrackStore().hasUsedTracks()) {
       next()
     } else {
       next(
@@ -37,5 +37,9 @@ export default class Hook {
     } else {
       next(to.name === RouteName.QuestionnaireResultDetail ? { name: RouteName.QuestionnaireStart } : { name: RouteName.Homepage })
     }
+  }
+
+  private static readonly hasQuery = (route: RouteLocationNormalized) => {
+    return Object.keys(route.query).length
   }
 }

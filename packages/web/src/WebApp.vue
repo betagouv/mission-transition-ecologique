@@ -30,7 +30,7 @@ import TeeMatomo from './components/TeeMatomo.vue'
 import TeeFooter from './components/TeeFooter.vue'
 import Translation from '@/utils/translation'
 
-const nav = useNavigationStore()
+const navigationStore = useNavigationStore()
 const router = useRouter()
 const route = useRoute()
 
@@ -46,7 +46,7 @@ onBeforeMount(() => {
 onMounted(async () => {
   // cf: https://stackoverflow.com/questions/69495211/vue3-route-query-empty
   await router.isReady()
-  nav.setRouter(router)
-  nav.setRoute(route)
+  navigationStore.setRouter(router)
+  navigationStore.setRoute(route)
 })
 </script>

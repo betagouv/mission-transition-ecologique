@@ -156,6 +156,7 @@
 // console.log(`TeeTrack > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import { useDebugStore } from '@/stores/debug'
+import { useNavigationStore } from '@/stores/navigation'
 import { useTrackStore } from '@/stores/track'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import {
@@ -333,7 +334,8 @@ const saveSelection = async () => {
     return await router.push({
       name: RouteName.Questionnaire,
       hash: Navigation.hashByRouteName(RouteName.Questionnaire),
-      params: { trackId: next.default }
+      params: { trackId: next.default },
+      query: useNavigationStore().query
     })
   } else {
     usedTrackStore.removeFurtherUsedTracks(usedTrack.id)

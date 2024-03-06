@@ -45,7 +45,7 @@ export const router = createRouter({
           path: '',
           name: RouteName.QuestionnaireStart,
           component: TeeQuestionnaire as Component,
-          beforeEnter: [Hook.startQuestionnaire, Hook.resetQueries],
+          beforeEnter: [Hook.resetUsedTrackStore, Hook.resetQueries],
           props: { trackId: TrackId.QuestionnaireRoute }
         },
         {
@@ -73,7 +73,7 @@ export const router = createRouter({
     {
       path: '/aides-entreprise',
       component: TeeCatalogPage as Component,
-      beforeEnter: [Hook.resetQueries, Hook.resetTrackStore],
+      beforeEnter: [Hook.resetUsedTrackStore, Hook.resetQueries],
       children: [
         {
           path: '',

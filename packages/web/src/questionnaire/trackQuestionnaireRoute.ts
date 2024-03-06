@@ -29,7 +29,8 @@ export const questionnaireRoute: Track = {
   },
   options: [
     {
-      value: {
+      value: QuestionnaireRoute.NoSpecificGoal,
+      questionnaireData: {
         questionnaire_route: QuestionnaireRoute.NoSpecificGoal
       },
       title: { fr: 'Je ne sais pas' },
@@ -45,7 +46,8 @@ export const questionnaireRoute: Track = {
       }
     },
     {
-      value: {
+      value: QuestionnaireRoute.SpecificGoal,
+      questionnaireData: {
         questionnaire_route: QuestionnaireRoute.SpecificGoal
       },
       title: { fr: "J'ai un objectif" },

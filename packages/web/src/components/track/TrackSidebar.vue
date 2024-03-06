@@ -27,7 +27,7 @@
       >
         <div class="fr-mb-1v">
           <DsfrButton
-            :label="tracks.getTrackTitle(usedTrack.id as TrackId, Translation.lang)"
+            :label="trackStore.getTrackTitle(usedTrack.id as TrackId, Translation.lang)"
             :disabled="!usedTrack.completed"
             class="tee-btn-sidebar"
             tertiary
@@ -45,6 +45,7 @@
 // console.log(`TeeSidebar > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import { useDebugStore } from '@/stores/debug'
+import { useNavigationStore } from '@/stores/navigation'
 import { useTrackStore } from '@/stores/track'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { TrackId } from '@/types'
@@ -54,14 +55,16 @@ import Navigation from '@/utils/navigation'
 import Translation from '@/utils/translation'
 import { DsfrButton } from '@gouvminint/vue-dsfr'
 import { computed } from 'vue'
-import { useRouter } from 'vue-router'
+import { type RouteLocationRaw, useRouter } from 'vue-router'
 
-const tracks = useTrackStore()
+const trackStore = useTrackStore()
 const debugStore = useDebugStore()
 const router = useRouter()
+const navigationStore = useNavigationStore()
+const usedTrackStore = useUsedTrackStore()
 
 const usedTracksRegrouped = computed(() => {
-  return groupBy(useUsedTrackStore().usedTracks, 'category')
+  return groupBy(usedTrackStore.usedTracks, 'category')
 })
 
 const usedCategories = computed(() => {
@@ -69,10 +72,22 @@ const usedCategories = computed(() => {
 })
 
 const backToTrack = async (trackId: TrackId) => {
-  await router.push({
+  let route: RouteLocationRaw = {
     name: RouteName.Questionnaire,
     params: { trackId: trackId },
-    hash: Navigation.hashByRouteName(RouteName.Questionnaire)
-  })
+    hash: Navigation.hashByRouteName(RouteName.Questionnaire),
+    query: navigationStore.query
+  }
+
+  if (TrackId.QuestionnaireRoute === trackId) {
+    route = {
+      ...route,
+      name: RouteName.QuestionnaireStart,
+      query: undefined,
+      params: {}
+    }
+  }
+
+  await router.push(route)
 }
 </script>

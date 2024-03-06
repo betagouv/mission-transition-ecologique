@@ -44,7 +44,7 @@
 import TrackContent from '@/components/track/TrackContent.vue'
 import TrackSidebar from '@/components/track/TrackSidebar.vue'
 import { useDebugStore } from '@/stores/debug'
-import { useNavigationStore } from '@/stores/navigation'
+// import { useNavigationStore } from '@/stores/navigation'
 import { useTrackStore } from '@/stores/track'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { TrackId } from '@/types'
@@ -61,7 +61,7 @@ const trackElement = ref<HTMLElement | null>(null)
 
 const trackStore = useTrackStore()
 const usedTrackStore = useUsedTrackStore()
-const nav = useNavigationStore()
+// const nav = useNavigationStore()
 const debugStore = useDebugStore()
 const router = useRouter()
 
@@ -69,9 +69,9 @@ const needSidebar = computed(() => {
   return trackStore.currentId !== TrackId.QuestionnaireRoute
 })
 
-const setupFromUrl = () => {
-  nav.updateQueries(usedTrackStore.usedTracksValuesPairs)
-}
+// const setupFromUrl = async () => {
+//   await nav.updateQueries(usedTrackStore.usedTracksValuesPairs)
+// }
 
 onBeforeMount(() => {
   usedTrackStore.add(props.trackId, props.trackId)
@@ -80,6 +80,6 @@ onBeforeMount(() => {
 onMounted(async () => {
   // cf: https://stackoverflow.com/questions/69495211/vue3-route-query-empty
   await router.isReady()
-  setupFromUrl()
+  // await setupFromUrl()
 })
 </script>

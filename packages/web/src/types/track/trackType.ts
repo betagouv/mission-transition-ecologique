@@ -99,6 +99,7 @@ export interface TrackOptions {
   id?: string
   disabled?: boolean
   value: string | number | object
+  questionnaireData?: object
   required?: boolean
   title?: Translations
   label?: Translations

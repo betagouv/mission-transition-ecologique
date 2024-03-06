@@ -1,3 +1,4 @@
+import { useNavigationStore } from '@/stores/navigation'
 import { useTrackStore } from '@/stores/track'
 import { TrackComponent, TrackId, type TrackNext, type TrackOptions, type UsedTrack, type UsedTrackValuePair } from '@/types'
 import type { QuestionnaireData } from '@tee/backend/build/backend/src/program/domain/types'
@@ -80,6 +81,17 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
       current.value.next = hasValues ? next : undefined
 
       replaceUsedTrack(current.value)
+
+      let value = undefined
+      if (current.value.selected.length > 1) {
+        value = selectedOptions.map((selectedOption) => selectedOption.value as string)
+      } else {
+        value = selectedOptions.find(Boolean)?.value as string
+      }
+
+      if (value) {
+        useNavigationStore().updateQuery({ name: current.value.id, value: value })
+      }
     }
   }
 
@@ -146,7 +158,7 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     setCurrent(usedTrack)
   }
 
-  const findSelectedValueByTrackIdAndKey = (trackId: TrackId, key: string): string | undefined => {
+  function findSelectedValueByTrackIdAndKey(trackId: TrackId, key: string): string | undefined {
     const usedTrack = usedTracks.value.find((usedTrack: UsedTrack) => usedTrack.id === trackId)
     if (usedTrack?.selected) {
       for (const option of usedTrack.selected) {

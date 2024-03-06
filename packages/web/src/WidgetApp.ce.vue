@@ -105,10 +105,9 @@
 import '@gouvfr/dsfr/dist/core/core.main.min.css'
 import { useTrackStore } from '@/stores/track'
 import { useUsedTrackStore } from '@/stores/usedTrack'
-import { computed, onBeforeMount, ref, watch } from 'vue'
+import { computed, onBeforeMount, ref } from 'vue'
 import Translation from '@/utils/translation'
 import { useProgramStore } from './stores/program'
-import { useNavigationStore } from './stores/navigation'
 import { TrackComponent, TrackId } from './types'
 import TeeMatomo from './components/TeeMatomo.vue'
 import TrackSidebar from '@/components/track/TrackSidebar.vue'
@@ -129,26 +128,12 @@ interface Props {
 const props = defineProps<Props>()
 
 const programs = useProgramStore()
-const nav = useNavigationStore()
 const debugStore = useDebugStore()
 const trackStore = useTrackStore()
 const usedTrackStore = useUsedTrackStore()
 
 // HTML/Vue3 DOM ref
 const trackElement = ref<HTMLElement | null>(null)
-
-watch(
-  () => usedTrackStore.usedTracks,
-  () => {
-    if (nav.routerReady) {
-      if (usedTrackStore.currentStep) {
-        nav.setCurrentStep(usedTrackStore.currentStep)
-      }
-      nav.setCurrentTrackId(trackStore.currentId as TrackId)
-      nav.updateQueries(usedTrackStore.usedTracksValuesPairs)
-    }
-  }
-)
 
 const changeDebug = (payload: boolean) => {
   debugStore.is = payload
