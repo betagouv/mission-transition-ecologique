@@ -66,7 +66,11 @@ export const useProgramStore = defineStore('program', () => {
   }
 
   function getProgramById(id: string | number) {
-    return programsJson.value?.find((programData: ProgramData) => programData.id === id)
+    return programs.value?.find((programData: ProgramData) => programData.id === id)
+  }
+
+  function hasProgramById(id: string | number) {
+    return programs.value?.some((programData: ProgramData) => programData.id === id)
   }
 
   return {
@@ -75,7 +79,8 @@ export const useProgramStore = defineStore('program', () => {
     programFilters,
     programsByUsedTracks,
     getProgramsByFilters,
-    getProgramById
+    getProgramById,
+    hasProgramById
   }
 })
 

@@ -58,12 +58,14 @@ export const router = createRouter({
         {
           path: 'resultat',
           name: RouteName.QuestionnaireResult,
-          component: TeeQuestionnaireResult as Component
+          component: TeeQuestionnaireResult as Component,
+          beforeEnter: [Hook.hasUsedTracks]
         },
         {
           path: 'resultat/:programId',
           name: RouteName.QuestionnaireResultDetail,
           component: ProgramDetail as Component,
+          beforeEnter: [Hook.hasProgram, Hook.hasUsedTracks],
           props: true
         }
       ]
@@ -80,8 +82,9 @@ export const router = createRouter({
         },
         {
           path: ':programId',
-          name: RouteName.CatalogDetail,
+          name: RouteName.QuestionnaireResultDetail,
           component: ProgramDetail as Component,
+          beforeEnter: [Hook.hasProgram],
           props: true
         }
       ]

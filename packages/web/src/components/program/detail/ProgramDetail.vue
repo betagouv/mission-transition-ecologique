@@ -295,7 +295,7 @@ const route = useRoute()
 const router = useRouter()
 const usedTrackStore = useUsedTrackStore()
 
-const program = ref<{ index: string } & ProgramData>()
+const program = ref<ProgramData>()
 const trackConfig = ref<any>()
 const TeeProgramFormContainer = ref<HTMLElement | null | undefined>(null)
 
