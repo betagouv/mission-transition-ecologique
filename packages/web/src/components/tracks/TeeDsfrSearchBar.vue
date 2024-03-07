@@ -4,7 +4,7 @@
     v-if="debugStore.is"
     class="vue-debug"
   >
-    <h5>DEBUG - TeeTrackInput</h5>
+    <h5>DEBUG - TeeDsfrSearchBar</h5>
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
       <div class="fr-col-3">
         <h6 class="fr-mb-1v">
@@ -192,7 +192,7 @@
         v-if="debugStore.is"
         class="vue-debug"
       >
-        <h5>DEBUG - TeeTrackInput</h5>
+        <h5>DEBUG - TeeDsfrSearchBar</h5>
         <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
           <div class="fr-col-6">
             <h6 class="fr-mb-1v">resp.data :</h6>
@@ -241,7 +241,7 @@
     v-if="debugStore.is && selection"
     class="vue-debug"
   >
-    <h5>DEBUG - TeeTrackInput</h5>
+    <h5>DEBUG - TeeDsfrSearchBar</h5>
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
       <div class="fr-col-6">
         <h6 class="fr-mb-1v">selection.data :</h6>
@@ -261,7 +261,7 @@
 
 <script setup lang="ts">
 // CONSOLE LOG TEMPLATE
-// console.log(`TeeTrackInput > FUNCTION_NAME > MSG_OR_VALUE :`)
+// console.log(`TeeDsfrSearchBar > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import { onBeforeMount, ref, toRaw } from 'vue'
 import { tracksStore } from '../../stores/tracks'
