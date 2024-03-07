@@ -20,7 +20,11 @@ export const results: Track = {
   label: { fr: 'Vos résultats' },
   hint: { fr: '🎉 Félicitations, vous avez terminé !' },
   resume: {
-    fr: "D’après les informations que vous avez renseignées, voici les accompagnements dont vous pouvez bénéficier pour diminuer l'empreinte écologique de votre entreprise."
+    // fr: "D’après les informations que vous avez renseignées, voici les accompagnements dont vous pouvez bénéficier pour diminuer l'empreinte écologique de votre entreprise."
+    fr: 'Voici les accompagnements \
+      dont vous pouvez bénéficier pour diminuer l’empreinte écologique \
+      de votre {structure_sizes} du secteur {secteur} \
+      en région {région}'
   },
   interface: {
     component: TrackComponents.Results
