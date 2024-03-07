@@ -1,4 +1,4 @@
-import { QuestionnaireRoute } from '@tee/common/src/questionnaire/types'
+import { QuestionnaireRoute } from '../../../../common/src/questionnaire/types'
 
 export { type Program } from '@tee/data/src/type/program'
 export { type Operators } from '@tee/data/src/generated/program'

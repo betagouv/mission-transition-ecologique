@@ -1,4 +1,4 @@
-import { QuestionnaireRoute } from '@tee/common/src/questionnaire/types'
+import { QuestionnaireRoute } from '../../../../common/src/questionnaire/types'
 import { type PublicodesInputData, PublicodesKeys, PublicodesQuestionnaireRoute, type QuestionnaireData, Program } from './types'
 
 /** preprocesses the data gathered from the questionnaire into variables
