@@ -68,8 +68,6 @@ export default class OpportunityFeatures {
   }
 
   private _getProgramById(id: string): Program | undefined {
-    // No date is required for ProgramFeaturs.getById
-    const emptyDateService = { get: () => '' }
-    return new ProgramFeatures(this._programRepository, emptyDateService).getById(id)
+    return new ProgramFeatures(this._programRepository).getById(id)
   }
 }

@@ -7,9 +7,9 @@ import { Result } from 'true-myth'
 
 export default class ProgramFeatures {
   private _programRepository: ProgramRepository
-  private _currentDateService: CurrentDateService
+  private _currentDateService: CurrentDateService | undefined
 
-  constructor(programRepository: ProgramRepository, currentDateService: CurrentDateService) {
+  constructor(programRepository: ProgramRepository, currentDateService: CurrentDateService | undefined = undefined) {
     this._programRepository = programRepository
     this._currentDateService = currentDateService
   }
@@ -20,6 +20,9 @@ export default class ProgramFeatures {
 
   public getFilteredBy(questionnaireData: QuestionnaireData): Result<Program[], Error> {
     const allPrograms = this._programRepository.getAll()
+    if (!this._currentDateService) {
+      return Result.err(new Error('CurrentDateService should be defined to filter programs'))
+    }
     let filteredPrograms = filterPrograms(allPrograms, questionnaireData, this._currentDateService.get())
     const route = questionnaireData.questionnaire_route
     if (route) {
