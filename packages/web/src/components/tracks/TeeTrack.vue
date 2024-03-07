@@ -210,8 +210,6 @@
           </p>
         </div>
 
-        <!-- <pre><code>{{ tracks.getAllUsedTracksValuesSingleObject }}</code></pre> -->
-
         <!-- TRACK Translation {{ renderAs }} / EXCEPT SELECT-->
         <div
           v-for="(option, idx) in optionsArray"
@@ -667,12 +665,9 @@ const backToPreviousTrack = () => {
 }
 
 const injectValuesInString = (str: string) => {
-  // console.log(`TeeTrack > injectValuesInString > str A :`, str)
   const userValues = tracks.getAllUsedTracksValuesSingleObject as FlatObject
-  // console.log(`TeeTrack > injectValuesInString >  userValues :`, userValues)
   const regex = /\{.+?\}/g
   const matches = str.match(regex) || []
-  // console.log(`TeeTrack > injectValuesInString > matches :`, matches)
   const params: Record<string, string> = {}
   if (matches.length) {
     matches.forEach((s: string) => {
@@ -680,11 +675,7 @@ const injectValuesInString = (str: string) => {
       params[key] = userValues[key].toString()
     })
   }
-  // console.log(`TeeTrack > injectValuesInString > str B :`, str)
-  // console.log(`TeeTrack > injectValuesInString > params :`, params)
-  const text = Translation.ti(str, params)
-  // console.log(`TeeTrack > injectValuesInString > text :`, text)
-  return text
+  return Translation.ti(str, params)
 }
 
 // watchers
