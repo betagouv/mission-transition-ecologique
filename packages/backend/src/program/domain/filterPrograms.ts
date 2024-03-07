@@ -15,9 +15,6 @@ export const FILTERING_RULE_NAME = 'entreprise . est ciblée'
 
 /** Filter out programs for which the company is not eligible
  *
- * @param programs - A list of programs, holding data on their filtering
- *   rules (inside the `publicodes` property)
- * @param inputData - Data associated with the company or the user inputs.
  * @returns Programs from `programs` that are either eligible (rules evaluate
  *   to `true`) or which eligibility cannot be assessed (rules evaluate to
  *   `undefined`, for instance with missing data)
@@ -49,13 +46,6 @@ const shouldKeepProgram = (evaluation: Result<boolean | undefined, Error>): bool
 
 /** Evaluates given program specific rules and user specific input data, if
  * the program should be displayed to the user.
- *
- * @param rules - An object encoding Publicode rules for a given program. The
- *   constant `FILTERING_RULE_NAME` determines which rule to evaluate, which is therefore
- *   mandatory.
- * @param questionnaireData - Data associated with the company or the user inputs. The
- *   data is expected to be using the exact same names as the variables in the
- *   `rules`.
  *
  * @returns Result that stores the rule evaluation (either a boolean or
  *   `undefined` if the input data does not allow to fully evaluate the rule) or
