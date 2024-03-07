@@ -1,11 +1,13 @@
 import { QuestionnaireRoute } from '@tee/common/src/questionnaire/types'
 import { Entry, setObjectProperty } from '../../src/common/objects'
 
-import { Program, PublicodesKeys, PublicodesQuestionnaireRoute, QuestionnaireData } from '../../src/program/domain/types'
+import { Program, QuestionnaireData } from '../../src/program/domain/types'
+import { PublicodesKeys, PublicodesQuestionnaireRoute } from '../../src/program/infrastructure/types'
 import { makeProgramHelper, mockCurrentDateService, makeProgramsRepository } from './testing'
 import { FILTERING_RULE_NAME } from '../../src/program/domain/filterPrograms'
 import { expectToBeOk } from '../testing'
 import ProgramFeatures from '../../src/program/domain/programFeatures'
+import { publicodesService } from '../../src/program/infrastructure/publicodes'
 
 const makeProgram = (rules: object) => makeProgramHelper({ rules: { ...{ [FILTERING_RULE_NAME]: { valeur: 'oui' } }, ...rules } })
 
@@ -83,7 +85,9 @@ const testHelperPreprocessing = (testCase: PreprocessingTestCase) => {
       testCurrentDateService = { get: () => testCase.currentDate }
     }
 
-    const result = new ProgramFeatures(makeProgramsRepository([program]), testCurrentDateService).getFilteredBy(questionnaireData)
+    const result = new ProgramFeatures(makeProgramsRepository([program]), testCurrentDateService, publicodesService).getFilteredBy(
+      questionnaireData
+    )
 
     expectToBeOk(result)
 
