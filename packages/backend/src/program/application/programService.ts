@@ -12,11 +12,7 @@ export default class ProgramService {
   private _program: ProgramFeatures
 
   constructor() {
-    this._program = new ProgramFeatures(
-      ProgramsJson.getInstance(),
-      currentDateService,
-      publicodesService
-    )
+    this._program = new ProgramFeatures(ProgramsJson.getInstance(), currentDateService, publicodesService)
   }
 
   public getById(id: string): Program | undefined {
