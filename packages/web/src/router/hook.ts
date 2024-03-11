@@ -1,7 +1,7 @@
 import { useTracksStore } from '@/stores/tracks'
 import { useProgramsStore } from '@/stores/programs'
 import { TrackId } from '@/types'
-import { navigationStore } from '@/stores/navigation'
+import { useNavigationStore } from '@/stores/navigation'
 import type { NavigationGuardNext, RouteLocationNormalized } from 'vue-router'
 
 export const resetTrackStore = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
@@ -10,7 +10,7 @@ export const resetTrackStore = (to: RouteLocationNormalized, from: RouteLocation
   next()
 }
 export const resetDetailProgram = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
-  navigationStore().resetQueries()
+  useNavigationStore().resetQueries()
   useProgramsStore().resetDetailResult()
   next()
 }

@@ -24,7 +24,7 @@
 import { onBeforeMount, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useProgramsStore } from './stores/programs'
-import { navigationStore } from './stores/navigation'
+import { useNavigationStore } from './stores/navigation'
 
 import TeeHeader from './components/TeeHeader.vue'
 import TeeMatomo from './components/TeeMatomo.vue'
@@ -34,7 +34,7 @@ import jsonDataset from '../public/data/generated/dataset_out.json'
 import Translation from '@/utils/translation'
 
 const programs = useProgramsStore()
-const nav = navigationStore()
+const nav = useNavigationStore()
 
 const router = useRouter()
 const route = useRoute()
@@ -56,13 +56,3 @@ onMounted(async () => {
   nav.setRoute(route)
 })
 </script>
-
-<style lang="scss">
-@import '@gouvfr/dsfr/dist/core/core.main.min.css';
-@import '@gouvfr/dsfr/dist/component/component.main.min.css';
-@import '@gouvfr/dsfr/dist/utility/utility.main.min.css';
-@import '~@gouvminint/vue-dsfr/dist/vue-dsfr.css';
-@import '~@gouvfr/dsfr/dist/utility/icons/icons.min.css';
-@import '@public/css/custom.css';
-@import './assets/main.css';
-</style>
