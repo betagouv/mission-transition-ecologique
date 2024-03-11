@@ -52,7 +52,7 @@ export const router = createRouter({
           path: ':trackId',
           name: RouteName.Questionnaire,
           component: TeeQuestionnaire as Component,
-          beforeEnter: [Hook.hasUsedTracks],
+          beforeEnter: [Hook.setUsedTracks, Hook.hasUsedTracks],
           props: true
         },
         {

@@ -98,7 +98,8 @@ export enum HasInputOptions {
 export interface TrackOptions {
   id?: string
   disabled?: boolean
-  value: string | number | object
+  value?: string | number | object
+  validation?: CallableFunction
   questionnaireData?: object
   required?: boolean
   title?: Translations
@@ -232,5 +233,5 @@ export const isTrackOptionsInput = (option: TrackOptionsInput | TrackOptions): o
 export interface UsedTrackValuePair {
   currentId: string
   completed: boolean
-  selection: (string | number | object)[]
+  selection: (string | number | object | undefined)[]
 }

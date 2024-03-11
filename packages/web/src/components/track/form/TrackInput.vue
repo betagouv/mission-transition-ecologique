@@ -1,45 +1,46 @@
 <template>
   <div style="height: 100%">
-    <!-- INPUT -->
-    <label
-      v-if="option.label"
-      class="fr-label fr-mb-2v"
-      :for="`input-${option.id}`"
-    >
-      {{ option.label[Translation.lang] }}
-    </label>
-    <div
-      id="header-search"
-      class="fr-search-bar"
-      role="search"
-    >
-      <input
-        :id="`input-${option.id}`"
-        v-model="inputValue"
-        :name="`input-${option.id}`"
-        :disabled="isLoading"
-        :placeholder="option?.placeholder?.[Translation.lang]"
-        class="fr-input tee-input-large"
-        type="search"
-        @keyup.enter="processInput"
-      />
-      <button
-        class="fr-btn tee-btn-input-large"
-        :disabled="isLoading"
-        :title="Translation.t('input.search')"
-        @click="processInput"
+    <DsfrInputGroup :error-message="errorMessage">
+      <!-- INPUT -->
+      <label
+        v-if="option.label"
+        class="fr-label fr-mb-2v"
+        :for="`input-${option.id}`"
       >
-        <!-- {{ Translation.t('input.search') }} -->
-      </button>
-    </div>
-    <!-- hint -->
-    <div
-      v-if="option.hint && !requestResponses.length"
-      class="tee-input-hint fr-mt-4v"
-      :for="`input-${option.id}`"
-    >
-      <span v-html="option.hint[Translation.lang]"> </span>
-    </div>
+        {{ option.label[Translation.lang] }}
+      </label>
+      <div
+        id="header-search"
+        class="fr-search-bar"
+        role="search"
+      >
+        <input
+          :id="`input-${option.id}`"
+          v-model="inputValue"
+          :name="`input-${option.id}`"
+          :disabled="isLoading"
+          :placeholder="option?.placeholder?.[Translation.lang]"
+          class="fr-input tee-input-large"
+          type="search"
+          @keyup.enter="processInput"
+        />
+        <button
+          class="fr-btn tee-btn-input-large"
+          :disabled="isLoading"
+          :title="Translation.t('input.search')"
+          @click="processInput"
+        >
+          <!-- {{ Translation.t('input.search') }} -->
+        </button>
+      </div>
+      <!-- hint -->
+      <div
+        v-if="option.hint && !requestResponses.length"
+        class="tee-input-hint fr-mt-4v"
+      >
+        <span v-html="option.hint[Translation.lang]"> </span>
+      </div>
+    </DsfrInputGroup>
 
     <!-- RESPONSE ERRORS -->
     <div
@@ -75,7 +76,7 @@
       <div
         v-for="(resp, i) in requestResponses"
         :key="`resp-input-${i}`"
-        :class="`fr-card fr-card-result fr-card--no-arrow ${isSelected(resp) ? 'fr-card--shadow' : ''}`"
+        class="fr-card fr-card-result fr-card--no-arrow fr-card--shadow"
         :style="`border: ${isSelected(resp) ? 'solid thin #000091;' : 'solid thin #C4C4C4'};`"
         @click="selectItem(resp)"
       >
@@ -148,31 +149,21 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`TeeTrackInput > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import { useUsedTrackStore } from '@/stores/usedTrack'
-import {
-  CallbackActions,
-  type FormCallback,
-  type ReqError,
-  type ReqResp,
-  type ResultsMapping,
-  TrackId,
-  type TrackOptionsInput
-} from '@/types'
+import { type ReqError, type ReqResp, type ResultsMapping, TrackId, type TrackOptionsInput, type TrackOptionsUnion } from '@/types'
 import { RouteName } from '@/types/routeType'
-import { cleanValue, getFromResp, remapItem } from '@/utils/helpers'
+import { getFromResp } from '@/utils/helpers'
 import Matomo from '@/utils/matomo'
 import Navigation from '@/utils/navigation'
-import { sendApiRequest } from '@/utils/requests'
+import TrackCallback from '@/utils/track/TrackCallback'
 import Translation from '@/utils/translation'
-import { onBeforeMount, ref, toRaw } from 'vue'
+import { DsfrInputGroup } from '@gouvminint/vue-dsfr'
+import { onBeforeMount, ref } from 'vue'
 
 interface Props {
   trackId: TrackId
   option: TrackOptionsInput
 }
 const props = defineProps<Props>()
-
-const usedTrackStore = useUsedTrackStore()
 
 const inputValue = ref<string | number>()
 const isLoading = ref<boolean>(false)
@@ -182,6 +173,7 @@ const requestErrors = ref<ReqError[]>([])
 
 const selection = ref<any>()
 const hasSelection = ref<boolean>(false)
+const errorMessage = ref<string>()
 
 const emit = defineEmits(['updateSelection', 'goToNextTrack'])
 
@@ -210,48 +202,19 @@ const resetSelection = () => {
 
 const processInput = async () => {
   isLoading.value = true
+  errorMessage.value = undefined
   resetSelection()
 
-  const trackValues: any[] = usedTrackStore.completedUsedTracksValues
-
-  const responses: ReqResp[] = []
-  const errors: ReqError[] = []
-
-  if (props.option?.callbacks) {
-    const activeCallbacks = toRaw(props.option?.callbacks).filter((cb: FormCallback) => !cb.disabled)
-
-    // loop option's callbacks
-    for (const callback of activeCallbacks) {
-      let value = inputValue.value
-      // Clean input value
-      if (callback.inputCleaning) {
-        value = cleanValue(value, callback.inputCleaning) as string | number | undefined
-      }
-      let resp: ReqResp = {}
-      if (callback.action === CallbackActions.RequestAPI) {
-        resp = await sendApiRequest(callback, { inputValue: value }, trackValues, props)
-      }
-      if (resp.ok) {
-        const item = remapItem(
-          callback.dataStructure,
-          callback.dataMapping,
-          { inputValue: value },
-          trackValues,
-          props,
-          resp,
-          [],
-          Translation.lang
-        )
-        responses.push({
-          data: item,
-          raw: resp,
-          resultsMapping: callback.resultsMapping
-        })
-      } else {
-        errors.push(resp)
-      }
+  if (props.option?.validation.length > 0) {
+    // const isValid = false
+    if (!props.option.validation(inputValue.value)) {
+      errorMessage.value = "Le numéro SIRET n'est pas valide"
+      isLoading.value = false
+      return
     }
   }
+
+  const { responses, errors } = await TrackCallback.applies(props.option, inputValue.value as string)
 
   requestResponses.value = responses
   requestErrors.value = errors
@@ -292,10 +255,12 @@ const selectItem = (item: any) => {
     option: {
       ...props.option,
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-member-access
-      value: item.data
-    },
+      questionnaireData: item.data,
+      value: inputValue.value
+    } as TrackOptionsUnion,
     remove: !hasSelection.value
   }
+
   emit('updateSelection', data)
 }
 </script>

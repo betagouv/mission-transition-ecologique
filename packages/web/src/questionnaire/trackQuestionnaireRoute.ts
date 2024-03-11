@@ -30,9 +30,7 @@ export const questionnaireRoute: Track = {
   options: [
     {
       value: QuestionnaireRoute.NoSpecificGoal,
-      questionnaireData: {
-        questionnaire_route: QuestionnaireRoute.NoSpecificGoal
-      },
+      questionnaireData: { questionnaire_route: QuestionnaireRoute.NoSpecificGoal },
       title: { fr: 'Je ne sais pas' },
       label: { fr: 'Je ne sais pas par où commencer' },
       resume: {

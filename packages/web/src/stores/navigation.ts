@@ -1,9 +1,10 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`store.navigation > FUNCTION_NAME > MSG_OR_VALUE :`)
 
+import type { UrlParam } from '@/types/navigation'
 import { ref } from 'vue'
 import { acceptHMRUpdate, defineStore } from 'pinia'
-import { type RouteLocationNormalizedLoaded, type Router } from 'vue-router'
+import { type LocationQuery, type RouteLocationNormalizedLoaded, type Router } from 'vue-router'
 import { RouteName } from '@/types/routeType'
 
 export const useNavigationStore = defineStore('navigation', () => {
@@ -37,18 +38,35 @@ export const useNavigationStore = defineStore('navigation', () => {
     route.value = useRoute
   }
 
-  function updateQuery(param: { name: string; value: string | string[] }) {
-    if (!Array.isArray(param.value) && param.value !== '' && param.value !== undefined) {
+  function updateSearchParams(query: LocationQuery) {
+    Object.entries(query).forEach(([key, value]) => {
+      updateSearchParam({ name: key, value: value } as UrlParam)
+    })
+  }
+
+  function setSearchParams(query: LocationQuery) {
+    resetSearchParams()
+    updateSearchParams(query)
+  }
+
+  function updateSearchParam(param: UrlParam) {
+    if (param.value === '' || param.value === undefined || param.value === null) {
+      deleteSearchParam(param.name)
+    } else if (!Array.isArray(param.value)) {
       searchParams.value.set(param.name, param.value)
     } else if (Array.isArray(param.value) && param.value.length > 0) {
-      searchParams.value.delete(param.name)
+      deleteSearchParam(param.name)
       param.value.forEach((value) => {
         searchParams.value.append(param.name + '[]', value)
       })
     }
   }
 
-  function resetQueries() {
+  function deleteSearchParam(name: string) {
+    searchParams.value.delete(name)
+  }
+
+  function resetSearchParams() {
     searchParams.value = new URLSearchParams()
   }
 
@@ -59,10 +77,12 @@ export const useNavigationStore = defineStore('navigation', () => {
     query,
     isCatalog,
     isByRouteName,
-    resetQueries,
+    resetSearchParams,
     setRouter,
     setRoute,
-    updateQuery
+    setSearchParams,
+    updateSearchParam,
+    deleteSearchParam
   }
 })
 

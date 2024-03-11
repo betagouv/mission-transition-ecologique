@@ -12,7 +12,7 @@ export default class Hook {
 
   static readonly resetQueries = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
     if (Hook.hasQuery(to)) {
-      useNavigationStore().resetQueries()
+      useNavigationStore().resetSearchParams()
       next({ ...to, query: undefined })
     } else {
       next()
@@ -31,6 +31,15 @@ export default class Hook {
     }
   }
 
+  static readonly setUsedTracks = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
+    if (Hook.hasQuery(to) && !Hook.hasNameRoute(from)) {
+      useNavigationStore().setSearchParams(to.query)
+      useUsedTrackStore().setFromNavigation()
+    }
+
+    next()
+  }
+
   static readonly hasProgram = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
     if (to.params.programId && useProgramStore().hasProgramById(to.params.programId as string)) {
       next()
@@ -41,5 +50,9 @@ export default class Hook {
 
   private static readonly hasQuery = (route: RouteLocationNormalized) => {
     return Object.keys(route.query).length
+  }
+
+  private static hasNameRoute(from: RouteLocationNormalized) {
+    return from.name !== undefined
   }
 }

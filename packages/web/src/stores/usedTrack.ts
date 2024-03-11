@@ -1,6 +1,6 @@
 import { useNavigationStore } from '@/stores/navigation'
 import { useTrackStore } from '@/stores/track'
-import { TrackComponent, TrackId, type TrackNext, type TrackOptions, type UsedTrack, type UsedTrackValuePair } from '@/types'
+import { type Track, TrackComponent, TrackId, type TrackNext, type TrackOptions, type UsedTrack, type UsedTrackValuePair } from '@/types'
 import type { QuestionnaireData } from '@tee/backend/build/backend/src/program/domain/types'
 import { acceptHMRUpdate, defineStore } from 'pinia'
 import { computed, ref, toRaw } from 'vue'
@@ -42,7 +42,7 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     return usedTracks.value.filter((usedTrack: UsedTrack) => usedTrack?.completed).map((usedTrack: UsedTrack) => toRaw(usedTrack))
   })
 
-  const completedUsedTracksValues = computed<(string | number | object)[]>(() => {
+  const completedUsedTracksValues = computed<(string | number | object | undefined)[]>(() => {
     const usedTrackValues = completedUsedTracks.value
       .map((usedTrack: UsedTrack) => {
         const values = usedTrack.selected?.map((s) => s.value)
@@ -68,7 +68,7 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     current.value = track
   }
 
-  function setCurrentByTrackId(trackId: TrackId) {
+  function setCurrentById(trackId: TrackId) {
     setCurrent(getUsedTrack(trackId))
   }
 
@@ -90,7 +90,7 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
       }
 
       if (value) {
-        useNavigationStore().updateQuery({ name: current.value.id, value: value })
+        useNavigationStore().updateSearchParam({ name: current.value.id, value: value })
       }
     }
   }
@@ -137,25 +137,32 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
 
   function add(currentTrackId: TrackId, nextTrackId: TrackId) {
     removeFurtherUsedTracks(currentTrackId)
-
     const track = useTrackStore().getTrack(nextTrackId)
+    if (track) {
+      const usedTrack = createOrUpdateUsedTrack(track)
+
+      useTrackStore().setCurrentTrack(track)
+      setCurrent(usedTrack)
+    }
+  }
+
+  function createOrUpdateUsedTrack(track: Track, selectedOptions: TrackOptions[] = [], next?: TrackNext) {
     const usedTrack: UsedTrack = {
-      id: nextTrackId,
-      component: track?.interface?.component ?? TrackComponent.Buttons,
-      category: track?.category,
-      completed: false,
+      id: track.id,
+      component: track.interface?.component ?? TrackComponent.Buttons,
+      category: track.category,
+      completed: Boolean(selectedOptions.length),
       step: usedTracks.value.length + 1,
-      selected: [],
-      next: undefined
+      selected: selectedOptions,
+      next: next
     }
 
-    // Check if already exists annd replace it
+    // Check if already exists and replace it
     if (!replaceUsedTrack(usedTrack)) {
       usedTracks.value.push(usedTrack)
     }
 
-    useTrackStore().setCurrentTrack(track)
-    setCurrent(usedTrack)
+    return usedTrack
   }
 
   function findSelectedValueByTrackIdAndKey(trackId: TrackId, key: string): string | undefined {
@@ -185,6 +192,22 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     return questionnaireData
   }
 
+  function setFromNavigation() {
+    Object.entries(useNavigationStore().query).forEach(([trackId, value]) => {
+      const track = useTrackStore().getTrack(trackId as TrackId)
+      if (track) {
+        // TODO exception on siret track
+        const selected = track.options?.find((option) => option.value === value)
+        if (selected) {
+          createOrUpdateUsedTrack(track, [selected])
+          return
+        }
+      }
+
+      useNavigationStore().deleteSearchParam(trackId)
+    })
+  }
+
   function resetUsedTracks() {
     usedTracks.value = []
   }
@@ -199,7 +222,7 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     usedTracksValuesPairs,
     currentIsCompleted,
     setCurrent,
-    setCurrentByTrackId,
+    setCurrentByTrackId: setCurrentById,
     updateCurrent,
     setCurrentToUncompleted,
     currentIsFirst,
@@ -212,7 +235,8 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     add,
     resetUsedTracks,
     findSelectedValueByTrackIdAndKey,
-    getQuestionnaireData
+    getQuestionnaireData,
+    setFromNavigation
   }
 })
 
