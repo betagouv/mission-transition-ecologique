@@ -16,7 +16,7 @@ export class ProgramsController extends Controller {
    * @summary Get relevant programs given input data
    */
   @Get()
-  public getAll(
+  public get(
     @Queries() questionnaireData: QuestionnaireData,
     @Res() requestFailedResponse: TsoaResponse<500, ErrorJSON>
   ): OpenAPISafeProgram[] | void {
@@ -40,7 +40,7 @@ export class ProgramsController extends Controller {
    * @summary Get relevant programs given input data
    */
   @Get('{programId}')
-  public getById(@Path() programId: string, @Res() notFoundResponse: TsoaResponse<404, ErrorJSON>): OpenAPISafeProgram {
+  public getOne(@Path() programId: string, @Res() notFoundResponse: TsoaResponse<404, ErrorJSON>): OpenAPISafeProgram {
     this.setStatus(200)
 
     const program = new ProgramService().getById(programId)
