@@ -6,18 +6,6 @@ import { ensureError } from '../../common/domain/error/errors'
 import { filterObject } from '../../common/objects'
 import { preprocessInputForPublicodes } from './preprocessProgramsPublicodes'
 
-const initializePublicodesEngine = (rules: object): Result<Engine, Error> => {
-  let engine: Engine
-  try {
-    engine = new Engine(rules)
-  } catch (e) {
-    const err = ensureError(e)
-    return Result.err(err)
-  }
-
-  return Result.ok(engine)
-}
-
 /** Evaluates given program specific rules and user specific input data, if
  * the program should be displayed to the user.
  *
@@ -57,6 +45,18 @@ const evaluateRule = (
 
 export const publicodesService = {
   evaluate: evaluateRule
+}
+
+const initializePublicodesEngine = (rules: object): Result<Engine, Error> => {
+  let engine: Engine
+  try {
+    engine = new Engine(rules)
+  } catch (e) {
+    const err = ensureError(e)
+    return Result.err(err)
+  }
+
+  return Result.ok(engine)
 }
 
 /** Narrows input data to keep only keys expected inside the rules
