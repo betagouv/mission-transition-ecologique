@@ -4,10 +4,10 @@ import type { Program, QuestionnaireData } from '../../src/program/domain/types'
 import { expectToBeErr, expectToBeOk } from '../testing'
 import ProgramFeatures from '../../src/program/domain/programFeatures'
 import { type Result } from 'true-myth'
-import { publicodesService } from '../../src/program/infrastructure/publicodes'
+import { PublicodesService } from '../../src/program/infrastructure/publicodesService'
 
 const defaultFilterPrograms = (programs: Program[], inputData: QuestionnaireData): Result<Program[], Error> => {
-  const programService = new ProgramFeatures(makeProgramsRepository(programs), mockCurrentDateService, publicodesService)
+  const programService = new ProgramFeatures(makeProgramsRepository(programs), mockCurrentDateService, new PublicodesService(programs))
   return programService.getFilteredBy(inputData)
 }
 
