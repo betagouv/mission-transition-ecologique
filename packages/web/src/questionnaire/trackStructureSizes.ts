@@ -31,7 +31,7 @@ export const sizes: Track = {
     },
     {
       disabled: false,
-      value: { structure_sizes: 'ETI' },
+      value: { structure_sizes: 'Etablissement de Taille Intermédiaire (ETI)' },
       title: { fr: 'ETI' },
       label: { fr: 'ETI (entre 250 et 5000 salarié.e.s)' },
       next: {
@@ -40,7 +40,7 @@ export const sizes: Track = {
     },
     {
       disabled: false,
-      value: { structure_sizes: 'GE' },
+      value: { structure_sizes: 'Grande Entreprise (GE)' },
       title: { fr: 'GE' },
       label: { fr: 'GE (plus de 5000 salarié.e.s)' },
       next: {
