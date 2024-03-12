@@ -30,7 +30,7 @@
   >
     {{ option.label[Translation.lang] }}
   </label>
-  <form class="tee-form-input-large">
+  <div class="tee-form-input-large">
     <!-- TEXT INPUT -->
     <input
       :id="`input-${option.id}`"
@@ -45,7 +45,8 @@
     <!-- CLEAR BTN -->
     <button
       v-if="inputValue"
-      :class="`fr-btn fr-icon-close-line fr-btn--tertiary-no-outline tee-btn-input-large tee-btn-input-clear-btn${isLoading ? '-disabled' : ''}`"
+      class="fr-btn fr-icon-close-line fr-btn--tertiary-no-outline tee-btn-input-large tee-btn-input-clear-btn"
+      :disabled="isLoading"
       @click="clearInput"
     ></button>
     <!-- SEARCH BTN -->
@@ -55,7 +56,7 @@
       :title="Translation.t('input.search')"
       @click="processInput"
     ></button>
-  </form>
+  </div>
 
   <!-- HINT -->
   <div
