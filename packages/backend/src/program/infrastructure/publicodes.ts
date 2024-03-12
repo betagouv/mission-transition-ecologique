@@ -6,6 +6,18 @@ import { ensureError } from '../../common/domain/error/errors'
 import { filterObject } from '../../common/objects'
 import { preprocessInputForPublicodes } from './preprocessProgramsPublicodes'
 
+const initializePublicodesEngine = (rules: object): Result<Engine, Error> => {
+  let engine: Engine
+  try {
+    engine = new Engine(rules)
+  } catch (e) {
+    const err = ensureError(e)
+    return Result.err(err)
+  }
+
+  return Result.ok(engine)
+}
+
 /** Evaluates given program specific rules and user specific input data, if
  * the program should be displayed to the user.
  *
@@ -21,13 +33,12 @@ const evaluateRule = (
 ): Result<boolean | undefined, Error> => {
   const rules = programData.publicodes
 
-  let engine: Engine
-  try {
-    engine = new Engine(rules as object)
-  } catch (e) {
-    const err = ensureError(e)
-    return Result.err(err)
+  const engineResult = initializePublicodesEngine(rules as object)
+  if (engineResult.isErr) {
+    return Result.err(engineResult.error)
   }
+
+  const engine = engineResult.value
 
   const preprocessedData = preprocessInputForPublicodes(questionnaireData, programData, currentDate)
 
