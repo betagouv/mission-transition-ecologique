@@ -19,7 +19,6 @@ export enum TrackId {
   StrategyAudits = 'track_strategy_audits',
   StrategyAuditsSelect = 'track_strategy_audits_select',
   StructureRegion = 'track_structure_region',
-  StructureSizes = 'track_structure_sizes',
   StructureWorkforce = 'track_structure_workforce',
   WastesMaterials = 'track_wastes_materials',
   WastesSorting = 'track_wastes_sorting',

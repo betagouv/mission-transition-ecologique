@@ -3,7 +3,6 @@ import { questionnaireRoute } from './trackQuestionnaireRoute'
 
 import { siret } from './trackStructureSiret'
 import { workforce } from './trackStructureWorkforce'
-// import { sizes } from './trackStructureSizes'
 import { sectors } from './trackStructureSectors'
 import { regions } from './trackStructureRegion'
 
@@ -34,7 +33,6 @@ export const tracks: Track[] = [
   needs,
   questionnaireRoute,
   siret,
-  // sizes,
   workforce,
   sectors,
   regions,
