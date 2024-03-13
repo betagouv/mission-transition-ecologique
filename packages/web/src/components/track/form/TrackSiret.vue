@@ -103,7 +103,7 @@ import Navigation from '@/utils/navigation'
 import TrackCallback from '@/utils/track/TrackCallback'
 import TrackSiret from '@/utils/track/TrackSiret'
 import Translation from '@/utils/translation'
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 
 interface Props {
   trackId: TrackId
