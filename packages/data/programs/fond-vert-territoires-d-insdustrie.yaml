@@ -52,7 +52,7 @@ conditions d'éligibilité:
   - Toutes tailles
   - Éligible aux micro-entreprises
   secteur géographique:
-  - https://www.data.gouv.fr/fr/datasets/r/708dd0cc-e6c1-4a0d-baf6-f4073933786f
+  - Projets situés dans le périmètre géographique d’un des Territoires d’industrie 2023-2027
   secteur d'activité:
   - Industrie
   nombre d'années d'activité:
