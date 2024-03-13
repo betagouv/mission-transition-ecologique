@@ -1,7 +1,7 @@
 <template>
   <!-- PROGRAMS AS LIST OF CARDS -->
   <div class="fr-container fr-px-0 fr-px-md-4w fr-mt-6v">
-    <ProgramListHeaderResult v-if="!navigation.isCatalog()" />
+    <ProgramListHeaderResult v-if="!navigationStore.isCatalog()" />
     <div class="fr-grid-row">
       <div class="fr-mt-4v fr-mb-2v fr-col-12">
         <div
@@ -39,22 +39,24 @@
 
 <script setup lang="ts">
 import ProgramCard from '@/components/program/list/ProgramCard.vue'
+import ProgramFilters from '@/components/program/list/ProgramFilters.vue'
 import ProgramListHeaderResult from '@/components/program/list/ProgramListHeaderResult.vue'
-import { useUsedTrackStore } from '@/stores/usedTrack'
-import { computed, onBeforeMount } from 'vue'
-import Translation from '@/utils/translation'
-import { useProgramStore } from '@/stores/program'
-import { type ProgramData, TrackId } from '@/types'
+import ProgramListNoResults from '@/components/program/list/ProgramListNoResults.vue'
 import { useNavigationStore } from '@/stores/navigation'
+import { useProgramStore } from '@/stores/program'
+import { useUsedTrackStore } from '@/stores/usedTrack'
+import { type ProgramData, TrackId } from '@/types'
 import { RouteName } from '@/types/routeType'
 import Matomo from '@/utils/matomo'
-import ProgramListNoResults from '@/components/program/list/ProgramListNoResults.vue'
-import ProgramFilters from '@/components/program/list/ProgramFilters.vue'
+import Translation from '@/utils/translation'
+import { computed, onBeforeMount } from 'vue'
+import { type RouteLocationRaw } from 'vue-router'
 
 const programsStore = useProgramStore()
-const navigation = useNavigationStore()
+const navigationStore = useNavigationStore()
 
 const programs: ProgramData[] = useUsedTrackStore().hasUsedTracks() ? programsStore.programsByUsedTracks : programsStore.programs
+const isCatalog = navigationStore.isCatalog()
 
 const filteredPrograms = computed(() => {
   return programsStore.getProgramsByFilters(programs)
@@ -72,13 +74,16 @@ const countFilteredPrograms = computed(() => {
   return filteredPrograms.value?.length || 0
 })
 
-const getRouteToProgramDetail = (programId: string) => {
-  const routeName = navigation.isCatalog() ? RouteName.CatalogDetail : RouteName.QuestionnaireResultDetail
-  return { name: routeName, params: { programId } }
+const getRouteToProgramDetail = (programId: string): RouteLocationRaw => {
+  return {
+    name: isCatalog ? RouteName.CatalogDetail : RouteName.QuestionnaireResultDetail,
+    params: { programId },
+    query: isCatalog ? undefined : navigationStore.query
+  }
 }
 
 onBeforeMount(() => {
   // analytics / send event
-  Matomo.sendEvent(TrackId.Results, navigation.isCatalog() ? 'show_results_catalog' : 'show_results')
+  Matomo.sendEvent(TrackId.Results, navigationStore.isCatalog() ? 'show_results_catalog' : 'show_results')
 })
 </script>

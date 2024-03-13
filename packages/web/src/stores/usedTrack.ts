@@ -1,6 +1,20 @@
 import { useNavigationStore } from '@/stores/navigation'
 import { useTrackStore } from '@/stores/track'
-import { type Track, TrackComponent, TrackId, type TrackNext, type TrackOptions, type UsedTrack, type UsedTrackValuePair } from '@/types'
+import {
+  type NextTrackRuleSet,
+  type Track,
+  TrackComponent,
+  TrackId,
+  type TrackNext,
+  type TrackOptions,
+  type TrackOptionsUnion,
+  type UsedTrack,
+  type UsedTrackValuePair
+} from '@/types'
+import { CheckNextTrackRules } from '@/utils/conditions'
+import { remapItem } from '@/utils/helpers'
+import TrackSiret from '@/utils/track/TrackSiret'
+import Translation from '@/utils/translation'
 import type { QuestionnaireData } from '@tee/backend/build/backend/src/program/domain/types'
 import { acceptHMRUpdate, defineStore } from 'pinia'
 import { computed, ref, toRaw } from 'vue'
@@ -42,15 +56,13 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     return usedTracks.value.filter((usedTrack: UsedTrack) => usedTrack?.completed).map((usedTrack: UsedTrack) => toRaw(usedTrack))
   })
 
-  const completedUsedTracksValues = computed<(string | number | object | undefined)[]>(() => {
-    const usedTrackValues = completedUsedTracks.value
+  const completedQuestionnaireData = computed<(string | number | object | undefined)[]>(() => {
+    return completedUsedTracks.value
       .map((usedTrack: UsedTrack) => {
-        const values = usedTrack.selected?.map((s) => s.value)
-        return toRaw(values.map((i) => toRaw(i)))
+        return usedTrack.selected?.map((optionSelected) => toRaw(optionSelected.questionnaireData))
       })
-      .filter((i) => i?.length)
-
-    return usedTrackValues.flat(1)
+      .filter((questionnaireDatum) => questionnaireDatum?.length)
+      .flat(1)
   })
 
   const usedTracksValuesPairs = computed<UsedTrackValuePair[]>(() => {
@@ -72,13 +84,11 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     setCurrent(getUsedTrack(trackId))
   }
 
-  function updateCurrent(selectedOptions: TrackOptions[], next?: TrackNext) {
+  function updateCurrent(selectedOptions: TrackOptions[]) {
     if (current.value) {
-      const hasValues = Boolean(selectedOptions.length)
-
       current.value.selected = selectedOptions
-      current.value.completed = hasValues
-      current.value.next = hasValues ? next : undefined
+      current.value.completed = Boolean(selectedOptions.length)
+      current.value.next = getNextFromCurrent()
 
       replaceUsedTrack(current.value)
 
@@ -93,6 +103,42 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
         useNavigationStore().updateSearchParam({ name: current.value.id, value: value })
       }
     }
+  }
+
+  function getNextFromCurrent() {
+    if (!current.value?.completed) {
+      return undefined
+    }
+
+    const optionNext = current.value?.selected[0].next
+    const nextTrackRulesSet = optionNext?.ruleSet
+    const defaultNext = useTrackStore().current?.next
+
+    let next = !optionNext || !!useTrackStore().current?.behavior?.multipleChoices ? defaultNext : optionNext
+
+    if (nextTrackRulesSet) {
+      // get current selection
+      const selectedQuestionnaireData = current.value?.selected.map((item) => {
+        return toRaw(item.questionnaireData)
+      })
+
+      nextTrackRulesSet.forEach((trackRule: NextTrackRuleSet) => {
+        const item = remapItem(
+          {},
+          trackRule.rules,
+          {},
+          completedQuestionnaireData.value,
+          {},
+          {},
+          selectedQuestionnaireData,
+          Translation.lang
+        )
+        const bool = CheckNextTrackRules(item, trackRule.rules)
+        next = bool ? trackRule.next : next
+      })
+    }
+
+    return next
   }
 
   function setCurrentToUncompleted() {
@@ -147,6 +193,7 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
   }
 
   function createOrUpdateUsedTrack(track: Track, selectedOptions: TrackOptions[] = [], next?: TrackNext) {
+    console.trace('createOrUpdateUsedTrack', track, selectedOptions)
     const usedTrack: UsedTrack = {
       id: track.id,
       component: track.interface?.component ?? TrackComponent.Buttons,
@@ -181,9 +228,9 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     const questionnaireData: { [k: string]: any } = {}
     usedTracks.value.forEach((usedTrack) => {
       usedTrack.selected.forEach((trackOptions: TrackOptions) => {
-        const val = trackOptions.value || {}
+        const questionnaireDatum = trackOptions.questionnaireData || {}
 
-        Object.entries(val).forEach(([key, value]) => {
+        Object.entries(questionnaireDatum).forEach(([key, value]) => {
           questionnaireData[key] = value as unknown
         })
       })
@@ -192,20 +239,39 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     return questionnaireData
   }
 
-  function setFromNavigation() {
-    Object.entries(useNavigationStore().query).forEach(([trackId, value]) => {
+  async function setFromNavigation() {
+    for (const trackId of Object.keys(useNavigationStore().query)) {
       const track = useTrackStore().getTrack(trackId as TrackId)
-      if (track) {
-        // TODO exception on siret track
-        const selected = track.options?.find((option) => option.value === value)
-        if (selected) {
-          createOrUpdateUsedTrack(track, [selected])
-          return
+
+      if (track === undefined) {
+        useNavigationStore().deleteSearchParam(trackId)
+        return
+      }
+
+      const value = useNavigationStore().query[trackId] as string | string[]
+      let selectedOptions: TrackOptionsUnion[] = []
+      let selectedOption: TrackOptionsUnion | undefined = undefined
+      if (track.id === TrackId.Siret && !Array.isArray(value)) {
+        selectedOption = await TrackSiret.getOptionBySiret(track, value)
+      } else {
+        if (Array.isArray(value)) {
+          selectedOptions = value.map((value) => track.options?.find((option) => option.value === value) as TrackOptionsUnion)
+        } else {
+          selectedOption = track.options?.find((option) => option.value === value)
         }
       }
 
-      useNavigationStore().deleteSearchParam(trackId)
-    })
+      if (selectedOption) {
+        selectedOptions = [selectedOption]
+      }
+
+      if (selectedOptions.length === 0) {
+        useNavigationStore().deleteSearchParam(trackId)
+        return
+      }
+
+      createOrUpdateUsedTrack(track, selectedOptions)
+    }
   }
 
   function resetUsedTracks() {
@@ -218,7 +284,7 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     currentComponent,
     usedTracks,
     usedTracksIds,
-    completedUsedTracksValues,
+    completedQuestionnaireData,
     usedTracksValuesPairs,
     currentIsCompleted,
     setCurrent,

@@ -11,8 +11,8 @@ export default class Hook {
   }
 
   static readonly resetQueries = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
+    useNavigationStore().resetSearchParams()
     if (Hook.hasQuery(to)) {
-      useNavigationStore().resetSearchParams()
       next({ ...to, query: undefined })
     } else {
       next()
@@ -31,10 +31,10 @@ export default class Hook {
     }
   }
 
-  static readonly setUsedTracks = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
+  static readonly setUsedTracks = async (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
     if (Hook.hasQuery(to) && !Hook.hasNameRoute(from)) {
       useNavigationStore().setSearchParams(to.query)
-      useUsedTrackStore().setFromNavigation()
+      await useUsedTrackStore().setFromNavigation()
     }
 
     next()

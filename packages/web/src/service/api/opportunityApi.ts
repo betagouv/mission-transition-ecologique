@@ -72,6 +72,6 @@ export default class OpportunityApi extends RequestApi {
   }
 
   private getAllValuesFromUsedTrack() {
-    return JSON.stringify(this.usedTrackStore.completedUsedTracksValues)
+    return JSON.stringify(this.usedTrackStore.completedQuestionnaireData)
   }
 }

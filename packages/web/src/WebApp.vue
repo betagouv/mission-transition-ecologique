@@ -1,14 +1,11 @@
 <template>
   <div>
-    <!-- HEADER -->
     <TeeHeader />
-
-    <!-- MATOMO -->
     <TeeMatomo />
 
-    <router-view />
+    <router-view v-if="isReady" />
+    <template v-else> chargement... </template>
 
-    <!-- FOOTER -->
     <div class="fr-mt-0v">
       <TeeFooter />
     </div>
@@ -38,6 +35,10 @@ interface Props {
   needTracksReset?: boolean
 }
 defineProps<Props>()
+
+const isReady = computed(() => {
+  return navigationStore.isReady
+})
 
 onBeforeMount(() => {
   Translation.setLocale('fr')

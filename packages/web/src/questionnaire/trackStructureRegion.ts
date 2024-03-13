@@ -82,7 +82,8 @@ const nextTrackRulesSet: NextTrackRuleSet[] = [
 
 const regionsOptions: TrackOptionsUnion[] = regionsList.map((regName) => {
   return {
-    value: { région: regName },
+    value: regName,
+    questionnaireData: { région: regName },
     title: { fr: regName },
     label: { fr: regName },
     next: {

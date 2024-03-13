@@ -248,12 +248,7 @@ button.fr-link:hover, .tee-router-link:hover {
 
 .tee-btn-input-clear-btn {
   background-color: var(--background-contrast-grey);
-  box-shadow: inset 0 -2px 0 0 var(--border-plain-grey);
-}
-.tee-btn-input-clear-btn-disabled {
-  background-color: var(--background-contrast-grey);
-  box-shadow: inset 0 -2px 0 0 var(--border-disabled-grey);
-  color: var(--text-disabled-grey);
+  box-shadow: inset 0 -2px 0 0 var(--border-action-high-blue-france);
 }
 .tee-input-hint {
   color: #000091;

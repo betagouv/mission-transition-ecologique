@@ -4,17 +4,26 @@
 import type { UrlParam } from '@/types/navigation'
 import { ref } from 'vue'
 import { acceptHMRUpdate, defineStore } from 'pinia'
-import { type LocationQuery, type RouteLocationNormalizedLoaded, type Router } from 'vue-router'
+import { type LocationQuery, type LocationQueryValue, type RouteLocationNormalizedLoaded, type Router } from 'vue-router'
 import { RouteName } from '@/types/routeType'
 
 export const useNavigationStore = defineStore('navigation', () => {
   const isReady = ref<boolean>(false)
   const router = ref<Router>()
   const route = ref<RouteLocationNormalizedLoaded>()
-  const searchParams = ref(new URLSearchParams())
+  const searchParams = ref<URLSearchParams>(new URLSearchParams())
+  const stringOfSearchParams = ref<string>('')
 
-  const query = computed(() => {
-    return Object.fromEntries(searchParams.value)
+  const query = computed<Record<string, LocationQueryValue | LocationQueryValue[]>>(() => {
+    const query: LocationQuery = {}
+    for (const key of new URLSearchParams(stringOfSearchParams.value).keys()) {
+      if (!(key in query)) {
+        const values = searchParams.value.getAll(key)
+        query[key] = values.length > 1 ? values : values[0]
+      }
+    }
+
+    return query
   })
 
   function isCatalog() {
@@ -52,22 +61,34 @@ export const useNavigationStore = defineStore('navigation', () => {
   function updateSearchParam(param: UrlParam) {
     if (param.value === '' || param.value === undefined || param.value === null) {
       deleteSearchParam(param.name)
-    } else if (!Array.isArray(param.value)) {
-      searchParams.value.set(param.name, param.value)
-    } else if (Array.isArray(param.value) && param.value.length > 0) {
-      deleteSearchParam(param.name)
-      param.value.forEach((value) => {
-        searchParams.value.append(param.name + '[]', value)
-      })
+    } else {
+      setSearchParam(param.name, param.value)
     }
   }
 
   function deleteSearchParam(name: string) {
     searchParams.value.delete(name)
+    setStringOfSearchParams()
+  }
+
+  function setSearchParam(name: string, value: string | string[]) {
+    if (Array.isArray(value)) {
+      deleteSearchParam(name)
+      value.forEach((value) => searchParams.value.append(name, value))
+    } else {
+      searchParams.value.set(name, value)
+    }
+
+    setStringOfSearchParams()
+  }
+
+  function setStringOfSearchParams() {
+    stringOfSearchParams.value = searchParams.value.toString()
   }
 
   function resetSearchParams() {
     searchParams.value = new URLSearchParams()
+    stringOfSearchParams.value = ''
   }
 
   return {
@@ -75,6 +96,7 @@ export const useNavigationStore = defineStore('navigation', () => {
     router,
     route,
     query,
+    searchParams,
     isCatalog,
     isByRouteName,
     resetSearchParams,

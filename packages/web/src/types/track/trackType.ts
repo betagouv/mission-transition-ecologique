@@ -41,6 +41,7 @@ export enum TrackComponent {
   SimpleButtons = 'simpleButtons',
   Form = 'form',
   Input = 'input',
+  Siret = 'siret',
   Select = 'select',
   Results = 'results'
 }
@@ -98,7 +99,7 @@ export enum HasInputOptions {
 export interface TrackOptions {
   id?: string
   disabled?: boolean
-  value?: string | number | object
+  value?: string | number | object | Record<string, string | number>
   validation?: CallableFunction
   questionnaireData?: object
   required?: boolean
@@ -138,12 +139,22 @@ export interface TrackOptionsInput extends TrackOptions {
   wildcard?: TrackOptionWildcard
 }
 
+interface TrackOptionWildcard {
+  label: Translations
+  value?: string | number
+  next: TrackNext
+}
+
 export interface TrackOptionsSelect extends TrackOptions {
   label: Translations
 }
-interface TrackOptionWildcard {
-  label: Translations
-  next: TrackNext
+
+// Alias for TrackOptions (TrackOptions | TrackOptionsSelect | TrackOptionsInput)
+export type TrackOptionsUnion = TrackOptions | TrackOptionsSelect | TrackOptionsInput
+
+export type TrackOptionItem = {
+  option: TrackOptionsUnion
+  remove?: boolean
 }
 
 export interface Track {
@@ -166,9 +177,6 @@ export interface Track {
   form?: FormOptions
 }
 
-// Alias for TrackOptions (TrackOptions | TrackOptionsSelect | TrackOptionsInput)
-export type TrackOptionsUnion = TrackOptions | TrackOptionsSelect | TrackOptionsInput
-
 export interface TracksList {
   programs: Track[]
 }
@@ -185,7 +193,7 @@ export interface UsedTrack {
   // titles?: Translations[],
   // val: any[] | null,
   // data: object,
-  selected: TrackOptions[]
+  selected: TrackOptionsUnion[]
   next?: TrackNext
 }
 

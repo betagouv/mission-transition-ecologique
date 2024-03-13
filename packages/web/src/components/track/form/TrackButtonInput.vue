@@ -41,7 +41,7 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`TeeTrackButtonInput > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import { HasInputOptions, type TrackOptionsInput } from '@/types'
+import { HasInputOptions, type TrackOptionItem, type TrackOptionsInput } from '@/types'
 import Button from '@/utils/button'
 import Translation from '@/utils/translation'
 import { computed, onBeforeMount, ref } from 'vue'
@@ -55,7 +55,10 @@ const props = defineProps<Props>()
 
 const inputValue = ref<string | number>()
 
-const emit = defineEmits(['updateSelection', 'updateValue'])
+const emit = defineEmits<{
+  updateSelection: [TrackOptionItem]
+  updateValue: [TrackOptionItem]
+}>()
 
 onBeforeMount(() => {
   if (props.option.hasInput === HasInputOptions.Number) {
@@ -75,7 +78,7 @@ const isNumberInput = computed(() => {
 })
 
 // computed
-const dataObj = computed(() => {
+const trackOptionItem = computed<TrackOptionItem>(() => {
   const inputObject = props.option.value as Record<string, unknown>
   if (props.option.inputField) {
     inputObject[props.option.inputField] = inputValue.value
@@ -90,12 +93,12 @@ const dataObj = computed(() => {
 })
 
 const sendValueUpdate = () => {
-  emit('updateValue', dataObj.value)
+  emit('updateValue', trackOptionItem.value)
 }
 
 const selectItem = () => {
   if (!props.isActive) {
-    emit('updateSelection', dataObj.value)
+    emit('updateSelection', trackOptionItem.value)
   }
 }
 </script>

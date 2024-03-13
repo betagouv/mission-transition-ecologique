@@ -19,7 +19,8 @@ export const wastesMaterials: Track = {
   },
   options: [
     {
-      value: { wastes_materials: 'yes', [Objectives.EcoDesign]: YesNo.Yes },
+      value: YesNo.Yes,
+      questionnaireData: { wastes_materials: YesNo.Yes, [Objectives.EcoDesign]: YesNo.Yes },
       title: { fr: 'Oui' },
       label: { fr: '👍 Oui, nous aimerions limiter nos pertes de matières premières' },
       next: {
@@ -27,7 +28,8 @@ export const wastesMaterials: Track = {
       }
     },
     {
-      value: { wastes_materials: 'no', [Objectives.EcoDesign]: YesNo.No },
+      value: YesNo.No,
+      questionnaireData: { wastes_materials: YesNo.No, [Objectives.EcoDesign]: YesNo.No },
       title: { fr: 'Non' },
       label: { fr: '❌ Non, pas vraiment' },
       next: {
@@ -35,7 +37,8 @@ export const wastesMaterials: Track = {
       }
     },
     {
-      value: { wastes_materials: 'unknown', [Objectives.EcoDesign]: YesNo.Yes },
+      value: YesNo.Unknown,
+      questionnaireData: { wastes_materials: YesNo.Unknown, [Objectives.EcoDesign]: YesNo.Yes },
       title: { fr: 'Je ne sais pas' },
       label: { fr: 'Je ne sais pas / Je ne suis pas concerné' },
       next: {

@@ -59,13 +59,13 @@ export const router = createRouter({
           path: 'resultat',
           name: RouteName.QuestionnaireResult,
           component: TeeQuestionnaireResult as Component,
-          beforeEnter: [Hook.hasUsedTracks]
+          beforeEnter: [Hook.setUsedTracks, Hook.hasUsedTracks]
         },
         {
           path: 'resultat/:programId',
           name: RouteName.QuestionnaireResultDetail,
           component: ProgramDetail as Component,
-          beforeEnter: [Hook.hasProgram, Hook.hasUsedTracks],
+          beforeEnter: [Hook.hasProgram, Hook.setUsedTracks, Hook.hasUsedTracks],
           props: true
         }
       ]
@@ -82,7 +82,7 @@ export const router = createRouter({
         },
         {
           path: ':programId',
-          name: RouteName.QuestionnaireResultDetail,
+          name: RouteName.CatalogDetail,
           component: ProgramDetail as Component,
           beforeEnter: [Hook.hasProgram],
           props: true

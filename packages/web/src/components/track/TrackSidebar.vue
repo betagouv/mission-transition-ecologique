@@ -26,13 +26,20 @@
         :key="usedTrack.id"
       >
         <div class="fr-mb-1v">
+          <router-link
+            v-if="usedTrack.completed"
+            class="tee-btn-sidebar fr-btn fr-btn--tertiary-no-outline"
+            :to="backToTrack(usedTrack.id)"
+          >
+            {{ trackStore.getTrackTitle(usedTrack.id as TrackId, Translation.lang) }}
+          </router-link>
           <DsfrButton
+            v-else
             :label="trackStore.getTrackTitle(usedTrack.id as TrackId, Translation.lang)"
-            :disabled="!usedTrack.completed"
-            class="tee-btn-sidebar"
+            :disabled="true"
             tertiary
             no-outline
-            @click="backToTrack(usedTrack.id)"
+            class="tee-btn-sidebar"
           />
         </div>
       </div>
@@ -53,13 +60,12 @@ import { RouteName } from '@/types/routeType'
 import { groupBy } from '@/utils/helpers'
 import Navigation from '@/utils/navigation'
 import Translation from '@/utils/translation'
-import { DsfrButton } from '@gouvminint/vue-dsfr'
 import { computed } from 'vue'
-import { type RouteLocationRaw, useRouter } from 'vue-router'
+import { type RouteLocationRaw } from 'vue-router'
 
 const trackStore = useTrackStore()
 const debugStore = useDebugStore()
-const router = useRouter()
+// const router = useRouter()
 const navigationStore = useNavigationStore()
 const usedTrackStore = useUsedTrackStore()
 
@@ -71,7 +77,7 @@ const usedCategories = computed(() => {
   return Object.keys(usedTracksRegrouped.value)
 })
 
-const backToTrack = async (trackId: TrackId) => {
+const backToTrack = (trackId: TrackId) => {
   let route: RouteLocationRaw = {
     name: RouteName.Questionnaire,
     params: { trackId: trackId },
@@ -88,6 +94,8 @@ const backToTrack = async (trackId: TrackId) => {
     }
   }
 
-  await router.push(route)
+  return route
+
+  // await router.push(route)
 }
 </script>

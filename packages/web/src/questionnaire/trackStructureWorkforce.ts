@@ -80,6 +80,16 @@ const nextTrackRuleSets: NextTrackRuleSet[] = [
   }
 ]
 
+export enum Workforce {
+  TPE = 'TPE',
+  PME = 'PME',
+  PE = 'PE',
+  ME = 'ME',
+  ETI = 'ETI',
+  GE = 'GE',
+  ETI_GE = 'ETI_et_GE'
+}
+
 export const workforce: Track = {
   id: TrackId.StructureWorkforce,
   category: 'myEntreprise',
@@ -93,8 +103,8 @@ export const workforce: Track = {
   },
   options: [
     {
-      disabled: false,
-      value: { [Entreprise.Workforce]: 19, structure_sizes: ['TPE'] },
+      value: Workforce.TPE,
+      questionnaireData: { [Entreprise.Workforce]: 19, structure_sizes: [Workforce.TPE] },
       title: { fr: 'Moins de 20 employés' },
       label: { fr: '‍️🧍‍ Moins de 20 employés' },
       next: {
@@ -103,8 +113,8 @@ export const workforce: Track = {
       }
     },
     {
-      disabled: false,
-      value: { [Entreprise.Workforce]: 49, structure_sizes: ['PME'] },
+      value: Workforce.PE,
+      questionnaireData: { [Entreprise.Workforce]: 49, structure_sizes: [Workforce.PME] },
       title: { fr: 'Entre 20 et 49 employés' },
       label: { fr: '‍️👫 Entre 20 et 49 employés' },
       next: {
@@ -113,8 +123,8 @@ export const workforce: Track = {
       }
     },
     {
-      disabled: false,
-      value: { [Entreprise.Workforce]: 249, structure_sizes: ['PME'] },
+      value: Workforce.ME,
+      questionnaireData: { [Entreprise.Workforce]: 249, structure_sizes: [Workforce.PME] },
       title: { fr: 'Entre 50 et 250 employés' },
       label: { fr: '‍️👫👭 Entre 50 et 250 employés' },
       next: {
@@ -123,8 +133,8 @@ export const workforce: Track = {
       }
     },
     {
-      disabled: false,
-      value: { [Entreprise.Workforce]: 251, structure_sizes: ['ETI', 'GE'] },
+      value: Workforce.ETI_GE,
+      questionnaireData: { [Entreprise.Workforce]: 251, structure_sizes: [Workforce.ETI, Workforce.GE] },
       title: { fr: '+250 employés' },
       label: { fr: '👫👭👫 Plus de 250 employés' },
       next: {

@@ -1,1 +1,3 @@
-export type UrlParam = { name: string; value?: string | string[] | null }
+import type { TrackId } from '@/types/track/trackId'
+
+export type UrlParam = { name: TrackId; value?: string | string[] | null }
