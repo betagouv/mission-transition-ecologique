@@ -5,20 +5,39 @@
   "type": "object",
   "properties": {
     "titre": {
-      "description": "Titre commercial du dispositif. Si pas de titre commercial clairement identifé, un titre générique du type \"Dispositif { opérateur de contact }\" peut être utilisé.",
+      "title": "Titre court, nom commercial du dispositif",
+      "description": "1 à 4 mots",
+      "examples": ["Diag Décarbon'Action", "Répar'acteurs"],
       "type": "string"
     },
     "promesse": {
-      "description": "TODO",
+      "title": "Promesse, résumé court du dispositif",
+      "description": "La promesse a pour objectif de :\n- résumer le dispositif de manière claire & simple en quelques mots\n- distinguer les offres les unes des autres.\n\nFormulation :\n- 6 à 12 mots.\n- La promesse commence par un verbe à l'impératif\n- rédigée sous l'angle du bénéfice utilisateur, s'adressant à lui par le pluriel de politesse \"vous\" \"votre entreprise\" \n- pas de point à la fin de la promesse (sauf point d'exclamation cf ex.2)",
+      "examples": ["Mesurez votre maturité écologique et créez un plan d’action personnalisé avec à un conseiller", "Rejoignez un réseau de professionnels de la réparation, devenez artisan Répar’acteurs !"],
       "type": "string"
     },
     "description": {
-      "description": "La description donne les principales informations du dispositif en quelques lignes",
+      "title": "Description courte de l'objectif du dispositif",
+      "description": "Qu'est-ce que l'entreprise gagne à bénéficier de cette aide ?\n\nFormulation :\n- 15 à 40 mots\n- rédigée sous l'angle du bénéfice utilisateur, s'adressant à lui par le pluriel de politesse \"vous\" \"votre entreprise\"\n- La description courte est ponctuée par un point",
+      "examples": ["Bénéficiez des conseils d'un expert pour mesurer les émissions de gaz à effet de serre de votre entreprise, définissez un plan d’actions pour les réduire de manière durable, mettez en œuvre vos premières actions et valorisez-les.",
+        "Les Répar’acteurs référencent les professionnels de la réparation et du dépannage partout en France. Rejoignez le réseau et devenez un ambassadeur de l’économie circulaire auprès de vos clients et au sein de votre territoire."],
       "type": "string"
     },
     "description longue": {
-      "description": "La description longue La description longue est facultative. Elle peut être ajoutée si on juge que l'utilisateur ne dispose pas des informations suffisantes avec les seules autres informations. Elle peut être ajoutée par exemple pour définir un terme technique, pour détailler une loi à laquelle un dispositif fait référence ou pour détailler les projets concernés par un financement",
+      "title": "Description longue du dispositif",
+      "description": "- La description longue est facultative. Elle peut être ajoutée si on juge que l'utilisateur ne dispose pas des informations suffisantes avec les seules autres informations. Elle peut être ajoutée par exemple :\n- pour définir un terme technique\n- pour détailler une loi à laquelle un dispositif fait référence\n- pour détailler les projets concernés par un financement\n\nFormulation :\n- 15 à 100 mots",
+      "examples": ["La marque Imprim'vert® a pour objectif de favoriser la mise en place par les entreprises exerçant les activités d'impression, d'actions concrètes conduisant à une diminution des impacts de l'activité sur l'environnement.\nLe cahier des charges Imprim’Vert® est fondé sur cinq critères simples : la bonne gestion des déchets dangereux, la sécurisation de stockage des liquides dangereux, la non utilisation de certains produits CMR, la sensibilisation environnementale des salariés et de la clientèle, et le suivi des consommations énergétiques du site."],
       "type": "string"
+    },
+    "objectifs": {
+      "title": "Étapes de l'accompagnement ou de la demande d'aide",
+      "description": "Les objectifs aparaissent sous la dénomination de \"au programme :\" pour les accompagnements. Ils ont pour objectif de détailler les grandes étapes de l'accompagnement.\n- Les objectifs apparaissent sous la dénomination de \"Les étapes de votre demande d’aide :\" pour les financements. Ils ont pour objectif de détailler comment se passe la démarche pour obtenir le financement en question.\n\nFormulation :\n- 15 à 40 mots par\n- Chaque dispositif est décrit à l'aide de 2 à 5 objectifs max.\n- rédigés sous l'angle du bénéfice utilisateur, s'adressant à lui par le pluriel de politesse \"vous\" \"votre entreprise\"\n- Les objectifs d'un même dispositif sont formulés soit à l'aide d'un verbe à l'infinitif ou à l'impératif.\n- Ils sont ponctués par un point.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "examples": ["Mesurer les émissions de gaz à effet de serre de votre entreprise sur l'ensemble de votre chaîne de valeur (scopes 1, 2 et 3).", "Elaborer votre plan d'action pour décarboner votre activité.", "Mettre en place les premières actions de la conduite du changement au sein de votre entreprise (alignement des équipes, formation, communication, etc.) et avec vos principaux clients et fournisseurs."],
+        "minItems": 2
+      }
     },
     "début de validité": {
       "description": "Premier jour de validité de l'offre. Date au format JJ/MM/AAAA",
@@ -31,35 +50,25 @@
       "pattern": "^[0-3][0-9]\/[0-1][0-9]\/[0-9]{4}$"
     },
     "url": {
-      "description": "TODO",
+      "title": "URL de la page présentant le dispositif",
       "type": "string"
     },
-    "illustration": {
-      "description": "TODO",
+    "opérateur de contact": {
+      "title": "Nom de l'opérateur de contact",
+      "description": "Un seul opérateur (les co-financeurs peuvent être renseignés dans le champ \"autres opérateurs\"",
       "type": "string"
     },
-    "objectifs": {
-      "description": "TODO",
+    "autres opérateurs": {
+      "title": "Autres opérateurs",
+      "description": "Les autres opérateurs peuvent être des opérateurs co-financeurs, ou des partenaires du dispositif. Ils doivent être différents de l'opérateur de contact.",
       "type": "array",
       "items": {
         "type": "string"
-      }
-    },
-    "opérateur de contact": {
-      "description": "L'opérateur de contact est l'opérateur à contacter pour obtenir des informations supplémentaires sur le dispositif.",
-      "type": "string",
-      "$ref": "#/$defs/operators"
-    },
-    "autres opérateurs": {
-      "description": "Les autres opérateurs peuvent être des opérateurs co-financeurs, ou des partenaires du dispositif. Ils doivent être différents de l'opérateur de contcat.",
-      "type": "array",
-      "items": {
-        "$ref": "#/$defs/operators"
       },
       "uniqueItems": true
     },
     "nature de l'aide": {
-      "description": "Précise s'il s'agit d'une aide financière, d'un accompagnement, ou d'un prêt. Un accompagnement se définit comme la réalisation d'une prestation intellectuelle, par un intervenant choisi par l'opérateur.",
+      "description": "Précise s'il s'agit d'une aide financière, d'un accompagnement, ou d'un prêt, d'une formation ou d'un avantage fiscal. Un accompagnement se définit comme la réalisation d'une prestation intellectuelle, par un intervenant choisi par l'opérateur.",
       "enum": [
         "accompagnement",
         "formation",
@@ -69,84 +78,207 @@
       ]
     },
     "coût de l'accompagnement": {
-      "description": "Uniquement pour les accompagnements. Ce champ est utile et requis uniquement si l'aide est de nature \"accompagnement\". Elle précise le coût reste à charge de l'utilisateur pour bénéficier de l'accompagnement. Il s'agit d'un champ texte, à des fins d'affichage.",
+      "description": "Uniquement si l'aide est de nature \"accompagnement\". Le coût reste à charge correspond au montant que devra payer l'entreprise pour bénéficier d'un accompagnement, après déduction de la subvention.\n\n Formulation :\n- 10 mots max\n- selon le format \"x € HT après subvention de x%\"\n- écriture des chiffres en unités numériques\n- ne pas utiliser d'abréviations (ex : utiliser jour et non l'abréviation \"j.\")",
+      "examples": ["4 000 € HT après subvention de 60%"],
       "type": "string"
     },
     "durée de l'accompagnement": {
-      "description": "Uniquement pour les accompagnements. Nombre de jours d'accompagnement du prestataire, suivi de l'étalement de son intervention le cas échéant. Par exemple : \"12 jours de prestation répartis sur 6 à 8 mois\"",
+      "title": "Durée de la prestation et son étalement dans le temps",
+      "description": "Ce champ est utile et requis uniquement si l'aide est de nature \"accompagnement\".\n\nFormulation :\n- 10 mots max.\n- selon le format \" n jours de prestation répartis sur x mois\"\n- écriture des chiffres en unités numériques\n- ne pas utiliser d'abréviations (ex : utiliser jour et non l'abréviation \"j.\")\n- utiliser \"journée\" au singulier (et non jour)",
+      "examples": ["12 jours de prestation répartis sur 6 à 8 mois"],
       "type": "string"
     },
     "montant du financement": {
-      "description": "Ce champ est utile et requis uniquement si l'aide est de nature \"financement\". Elle précise le montant du financement, de préférence en €, à défaut en %. Il s'agit d'un champ texte, à des fins d'affichage.",
+      "title": "Montant du financement",
+      "description": "Uniquement si l'aide est de nature \"financement\". Le montant de l'aide correspond au montant de financement ou de prêt auquel l'entreprise peut prétendre pour financer son projet / son étude.\n\nFormulation :\n- 10 mots max.\nLes objectifs aparaissent sous la dénomination de \"au programme :\" pour les accompagnements. Ils ont pour objectif de détailler les grandes étapes de l'accompagnement.\n- Les objectifs apparaissent sous la dénomination de \"Les étapes de votre demande d’aide :\" pour les financements. Ils ont pour objectifs de détailler comment se passe la démarche pour obtenir le financement en question.",
+      "examples": ["jusqu'à 70% du coût de l'étude", "selon projet", "de 5 000 € HT à 200 000 € HT"],
       "type": "string"
     },
     "montant de l'avantage fiscal": {
-      "description": "Ce champ est utile et requis uniquement si l'aide est de nature \"avantage fiscal\". Elle précise le montant de l'avantage fiscal, en %. Il s'agit d'un champ texte, à des fins d'affichage.",
+      "title": "Montant de l'avantage fiscal",
+      "description": "Uniquement si l'aide est de nature \"avantage fiscal\". Elle précise le montant de l'avantage fiscal, en %.",
       "type": "string"
     },
     "montant du prêt": {
-      "description": "Ce champ est utile et requis uniquement si l'aide est de nature \"prêt\". Il s'agit d'un champ texte, à des fins d'affichage.",
+      "title": "Montant du prêt",
+      "description": "Uniquement si l'aide est de nature \"prêt\". Mêmes règles de formulation que le champ \"montant du financement\"",
       "type": "string"
     },
     "durée du prêt": {
-      "description": "Ce champ est utile et requis uniquement si l'aide est de nature \"prêt\". Il s'agit d'un champ texte, à des fins d'affichage.",
+      "description": "Uniquement si l'aide est de nature \"prêt\". Mêmes règles de formulation que le champ \"durée de l'accompagnement\"",
       "type": "string"
     },
     "taux du prêt": {
-      "description": "Ce champ est utile uniquement si l'aide est de nature \"prêt\", mais facultatif. Il s'agit d'un champ texte, à des fins d'affichage.",
+      "title": "Taux du prêt",
+      "description": "Uniquement si l'aide est de nature \"prêt\".",
       "type": "string"
     },
     "conditions d'éligibilité": {
-      "description": "Les conditions d'éligibilité, écrites en langage naturel, pour affichage sur la fiche de résultat",
+      "title": "Détail des conditions d'éligibilité",
+      "description": "Les conditions d'éligibilité sont réparties en plusieurs catégories : secteur d'activité, secteur géographique, taille de l'entreprise, nombre d'années d'activité, et autres.",
       "type": "object",
       "properties": {
         "secteur d'activité": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "minItems": 1
+          "type": "object",
+          "title": "Conditions d'éligibilité relatives au secteur d'activité",
+          "properties": {
+            "description": {
+              "title": "Description en langage naturel des conditions d'éligibilité relatives au secteur d'activité",
+              "description": "Plusieurs valeurs possibles",
+              "type": "array",
+              "items": {
+                "type": "string",
+                "default": "Tous secteurs d'activité",
+                "examples": ["Secteur tertiaire"],
+                "minItems": 1
+              }
+            },
+            "secteurs spécifiques": {
+              "title": "Secteurs d'activité spécifiquement ciblés",
+              "description": "Identifiés via leurs codes APE",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "secteurs exclus": {
+              "title": "Secteurs d'activité exclus du dispositif",
+              "description": "Identifiés via leurs codes APE",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
         },
         "secteur géographique": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "minItems": 1
+          "title": "Conditions d'éligibilité relatives au secteur géographique",
+          "type": "object",
+          "properties": {
+            "description": {
+              "title": "Description en langage naturel des conditions d'éligibilité relatives au secteur géographique",
+              "description": "Plusieurs valeurs possibles",
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minItems": 1
+              }
+            },
+            "zone géographique Régions": {
+              "title": "Régions éligibles",
+              "description": "Liste des régions éligibles au dispositif",
+              "type": "array",
+              "items": {
+                "enum": [
+                  "Auvergne-Rhône-Alpes",
+                  "Bourgogne-Franche-Comté",
+                  "Bretagne",
+                  "Centre-Val de Loire",
+                  "Corse",
+                  "Grand Est",
+                  "Hauts-de-France",
+                  "Normandie",
+                  "Nouvelle-Aquitaine",
+                  "Occitanie",
+                  "Provence-Alpes-Côte d'Azur",
+                  "Pays de la Loire",
+                  "Île-de-France",
+                  "Guadeloupe",
+                  "Guyane",
+                  "La Réunion",
+                  "Martinique",
+                  "Mayotte",
+                  "Ile de Clipperton",
+                  "Nouvelle-Calédonie",
+                  "Polynésie française",
+                  "Saint-Barthélemy",
+                  "Saint-Martin",
+                  "Saint-Pierre-Et-Miquelon",
+                  "Terres australes et antarctiques françaises",
+                  "Wallis et Futuna"
+                ]
+              }
+            }
+          }
         },
         "taille de l'entreprise": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "minItems": 2
+          "type": "object",
+          "title": "Conditions d'éligibilité relatives à la taille de l'entreprise",
+          "properties": {
+            "description": {
+              "title": "Description en langage naturel des conditions d'éligibilité relatives à la taille de l'entreprise",
+              "description": "Plusieurs valeurs possibles",
+              "type": "array",
+              "items": {
+                "type": "string",
+                "default": "Toutes tailles",
+                "minItems": 1
+              }
+            },
+            "catégorie d'entreprise": {
+              "title": "Catégories d'entreprise éligibles",
+              "type": "array",
+              "items": {
+                "enum": ["TPE", "PME", "ETI", "GE"]
+              }
+            },
+            "effectif minimum": {
+              "title": "Effectif minimum de l'entreprise",
+              "description": "Doit être compatible avec la (les) catégorie(s) d'entreprise",
+              "type": "integer"
+            },
+            "effectif maximum": {
+              "title": "Effectif maximum de l'entreprise",
+              "description": "Doit être compatible avec la (les) catégorie(s) d'entreprise",
+              "type": "integer"
+            },
+            "éligible aux micro-entreprises": {
+              "title": "Éligible aux micro-entreprises",
+              "type": "boolean",
+              "default": "true"
+            }
+          }
         },
         "nombre d'années d'activité": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "minItems": 1
+          "type": "object",
+          "title": "Conditions d'éligibilité relatives au nombre d'années d'activité",
+          "properties": {
+            "description": {
+              "title": "Description en langage naturel des conditions d'éligibilité relatives au nombre d'années d'activité",
+              "description": "Plusieurs valeurs possibles",
+              "type": "array",
+              "items": {
+                "type": "string",
+                "default": "Éligible à toutes les entreprises",
+                "minItems": 1
+              }
+            },
+            "minimum d'années d'activité": {
+              "title": "Nombre minimum d'années d'activité",
+              "type": "number"
+            },
+            "maximum d'années d'activité": {
+              "title": "Nombre maximum d'années d'activité",
+              "type": "number"
+            }
+          }
         },
         "autres critères d'éligibilité": {
-          "type": "array",
-          "items": {
-             "type": "string"
-            },
-           "minItems": 1
+          "type": "object",
+          "title": "Autres critères d'éligibilité",
+          "properties": {
+            "description": {
+              "title": "Description en langage naturel d'autres critères d'éligibilité",
+              "description": "Plusieurs valeurs possibles",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
         }
       },
       "required": ["taille de l'entreprise", "secteur géographique", "secteur d'activité", "nombre d'années d'activité"]
-    },
-    "publicodes": {
-      "description": "Mécanismes publicodes (https://publi.codes/) associés au dispositif. Doit être en langage publicodes valide. Les données nécessaires à l'évaluation des règles (contrat d'interface) sont matérialisés par des clés sans valeurs.",
-      "type": "object",
-      "properties": {
-        "entreprise . est ciblée": {
-          "description": "Mécanisme pour évaluer si un dispositif doit être affiché à un utilisateur ou non. Est souvent plus restrictive que les mécanismes d'éligibilité"
-        }
-      },
-      "required": ["entreprise . est ciblée"]
     }
   },
   "oneOf": [
@@ -154,8 +286,8 @@
       "properties": {
         "nature de l'aide": {
           "oneOf": [
-          {"const": "accompagnement" },
-          {"const": "formation" }
+            {"const": "accompagnement" },
+            {"const": "formation" }
           ]
         }
       },
@@ -183,72 +315,11 @@
   "required": [
     "titre",
     "promesse",
-    "illustration",
     "objectifs",
     "opérateur de contact",
     "nature de l'aide",
     "conditions d'éligibilité",
     "publicodes"
   ],
-  "additionalProperties": false,
-
-  "$defs": {
-    "operators": {
-      "enum": [
-        "ADEME",
-        "ASP",
-        "Agence de l'Eau Adour-Garonne",
-        "Agence de l'Eau Artois-Picardie",
-        "Agence de l'Eau Loire-Bretagne",
-        "Agence de l'Eau Rhin-Meuse",
-        "Agence de l'Eau Rhône-Méditerranée-Corse",
-        "Agence de l'Eau Seine-Normandie",
-        "Agence de l'Eau",
-        "Bpifrance",
-        "Breizh Fab",
-        "CCI Auvergne-Rhône-Alpes",
-        "CCI Bretagne",
-        "CCI Centre-Val de Loire",
-        "CCI Grand-Est",
-        "CCI Hauts-de-France",
-        "CCI Loir-et-Cher",
-        "CCI Loiret",
-        "CCI Morbihan",
-        "CCI Normandie",
-        "CCI Occitanie",
-        "CCI ou CMA",
-        "CCI Île-de-France",
-        "CCI",
-        "CEE",
-        "CETIM",
-        "CMA Auvergne-Rhône-Alpes",
-        "CMA Bourgogne-Franche-Comté",
-        "CMA Bretagne",
-        "CMA Centre-Val de Loire",
-        "CMA Grand-Est",
-        "CMA Hauts-de-France",
-        "CMA La Réunion",
-        "CMA Loiret",
-        "CMA Normandie",
-        "CMA Nouvelle-Aquitaine",
-        "CMA Provence-Alpes-Côte-D'Azur",
-        "CMA Rhône",
-        "CMA Île-de-France",
-        "CMA",
-        "DDFIP",
-        "DREAL Bretagne",
-        "EcoCO2",
-        "France Rénov'",
-        "La Poste",
-        "Ministère de la Transition Écologique et Solidaire",
-        "ORACE en Pays de la Loire",
-        "Organisations professionnelles",
-        "Région Bretagne",
-        "Saur",
-        "Suez",
-        "UIMM",
-        "Véolia Eau"
-      ]
-    }
-  }
+  "additionalProperties": false
 }
