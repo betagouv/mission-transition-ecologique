@@ -80,7 +80,7 @@ def assembleProgramYAML(rawData, colNumbersByName, id):
     if len(autresOp) >= 1:
         set("autres opérateurs", autresOp)
 
-    set("url", get("URL"))
+    set("url", get("🔗 URL externe"))
     set("nature de l'aide", get("💸 Nature de l'aide").lower())
     nat = prog["nature de l'aide"]
     if nat == "financement":

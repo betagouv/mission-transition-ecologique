@@ -10,7 +10,7 @@ autres opérateurs:
 - ADEME
 url: https://diag.bpifrance.fr/produit/diag-eco-flux
 nature de l'aide: accompagnement
-coût de l'accompagnement: 2 000 € HT après subvention de 50%
+coût de l'accompagnement: de 2 000 € HT à 3 000 € HT après subvention de 50%
 durée de l'accompagnement: 6 à 8 jours de prestation répartis sur 15 à 18 mois
 objectifs:
 - Faites un état des lieux de vos flux et identifiez les axes prioritaires d’économies.
@@ -21,7 +21,7 @@ objectifs:
   (sur la base de 678 missions restituées).
 conditions d'éligibilité:
   taille de l'entreprise:
-  - De 20 à 49 salariés
+  - De 20 à 250 salariés
   - Non éligible aux micro-entreprises
   secteur géographique:
   - France et territoires d'outre-mer
@@ -41,7 +41,7 @@ publicodes:
   entreprise . a un effectif éligible:
     toutes ces conditions:
     - effectif >= 20
-    - effectif <= 49
+    - effectif <= 250
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
     - code NAF niveau 1 . est A
