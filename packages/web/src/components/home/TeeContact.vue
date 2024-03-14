@@ -33,7 +33,7 @@
 import type { ImportMetaEnv } from '@/env'
 
 const metaEnv: ImportMetaEnv = import.meta.env as ImportMetaEnv
-const contactEmail: string = metaEnv.VITE_CONTACT_EMAIL || 'france-transition@beta.gouv.fr'
+const contactEmail: string = metaEnv.VITE_CONTACT_EMAIL || 'contact@mission-transition-ecologique.beta.gouv.fr'
 
 const sendEmail = () => {
   window.location.assign(`mailto:${contactEmail}`)
