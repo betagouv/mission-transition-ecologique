@@ -60,6 +60,7 @@
   </div>
 
   <div
+    v-if="track"
     :id="usedTrack.id"
     :key="`track-${usedTrack.step}-${usedTrack.id}`"
     class="fr-grid-row"
@@ -74,21 +75,21 @@
         <TrackResume :track="track" />
 
         <!-- TRACK Translation {{ renderAs }} / EXCEPT SELECT-->
-        <template v-if="usedTrack.component !== TrackComponent.Select">
+        <template v-if="!TrackComponent.isSelect(usedTrack)">
           <div
             v-for="(option, idx) in trackStore.currentOptions"
             :key="`track-${usedTrack.step}-${usedTrack.id}-option-${idx}`"
             :class="`${currentColumnWidth()} tee-track-choice`"
           >
             <TrackCard
-              v-if="usedTrack.component === TrackComponent.Cards"
+              v-if="TrackComponent.isCards(usedTrack)"
               :option="option"
               :is-active="isActiveChoice(idx)"
               @click="updateSelection(option, idx)"
             />
 
             <TrackButton
-              v-if="usedTrack.component === TrackComponent.Buttons && !isTrackOptionsInput(option)"
+              v-if="TrackComponent.isButtons(usedTrack)"
               :option="option"
               :is-active="isActiveChoice(idx)"
               :is-checkbox="allowMultiple"
@@ -96,7 +97,7 @@
             />
 
             <TrackButtonInput
-              v-if="usedTrack.component === TrackComponent.Buttons && isTrackOptionsInput(option)"
+              v-if="TrackComponent.isButtonInput(usedTrack, option)"
               :is-active="isActiveChoice(idx)"
               :is-checkbox="allowMultiple"
               :option="option"
@@ -105,14 +106,13 @@
             />
 
             <TrackSimpleButton
-              v-if="usedTrack.component === TrackComponent.SimpleButtons"
+              v-if="TrackComponent.isSimpleButtons(usedTrack)"
               :option="option"
               @click="updateAndSave(option, idx)"
             />
 
             <TrackSiret
-              v-if="isSiretComponent(option)"
-              :track-id="usedTrack.id"
+              v-if="TrackComponent.isSiret(usedTrack, option)"
               :option="option"
               @update-selection="updateSelection($event.option, idx, $event.remove)"
               @go-to-next-track="updateAndSave($event, idx)"
@@ -122,13 +122,12 @@
       </div>
 
       <div
-        v-if="track && usedTrack.component === TrackComponent.Select"
+        v-if="TrackComponent.isSelect(usedTrack)"
         class="fr-px-4v fr-px-md-0v fr-grid-row fr-grid-row--gutters"
       >
         <TrackSelect
-          :track="track"
           class="fr-px-2v fr-px-md-3v fr-mt-6v fr-col-12"
-          @update-selection="updateSelectionValueFromSelect($event)"
+          @update-selection="updateSelection($event.option, $event.index, $event.remove)"
         />
       </div>
 
@@ -157,10 +156,8 @@ import { useNavigationStore } from '@/stores/navigation'
 import { useTrackStore } from '@/stores/track'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import {
-  HasInputOptions,
-  isTrackOptionsInput,
   type Track,
-  TrackComponent,
+  TrackComponent as TrackComponentType,
   TrackId,
   type TrackOptionItem,
   type TrackOptionsInput,
@@ -172,6 +169,7 @@ import { scrollToTop } from '@/utils/helpers'
 import Matomo from '@/utils/matomo'
 import Navigation from '@/utils/navigation'
 import TrackColOption from '@/utils/track/TrackColOption'
+import TrackComponent from '@/utils/track/TrackComponent'
 import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
 
@@ -184,6 +182,7 @@ const router = useRouter()
 const trackStore = useTrackStore()
 const debugStore = useDebugStore()
 const usedTrackStore = useUsedTrackStore()
+const navigationStore = useNavigationStore()
 
 const selectedOptionsIndexes = ref<number[]>([])
 const selectedOptions = ref<TrackOptionsUnion[]>([])
@@ -224,10 +223,6 @@ const isActiveChoice = (index: number) => {
   return selectedOptionsIndexes.value.includes(index)
 }
 
-const isSiretComponent = (option: TrackOptionsUnion) => {
-  return usedTrack.component === TrackComponent.Siret && isTrackOptionsInput(option) && option.hasInput === HasInputOptions.Search
-}
-
 const updateSelection = async (option: TrackOptionsUnion, index: number, forceRemove: boolean = false) => {
   const isActive = isActiveChoice(index)
   let remove = false
@@ -251,7 +246,7 @@ const updateSelection = async (option: TrackOptionsUnion, index: number, forceRe
   }
 
   // Direct to next track
-  const directToNext: string[] = [TrackComponent.Cards]
+  const directToNext: string[] = [TrackComponentType.Cards]
   if (!allowMultiple && directToNext.includes(trackStore.currentComponent)) {
     await saveSelection(remove)
   }
@@ -274,17 +269,6 @@ const updateSelectionValueFromButtonInput = (trackOptionItem: TrackOptionItem) =
   })
 }
 
-const updateSelectionValueFromSelect = async (ev: any) => {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-  if (ev.reset) {
-    selectedOptionsIndexes.value = []
-    selectedOptions.value = []
-  } else {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-argument
-    await updateSelection(ev.option, ev.index)
-  }
-}
-
 const updateAndSave = async (option: TrackOptionsUnion, index: number) => {
   await updateSelection(option, index)
   await saveSelection()
@@ -300,7 +284,7 @@ const saveSelection = async (needRemove = false) => {
       return await router.push({
         name: RouteName.QuestionnaireResult,
         hash: Navigation.hashByRouteName(RouteName.QuestionnaireResult),
-        query: useNavigationStore().query
+        query: navigationStore.query
       })
     }
 
@@ -310,7 +294,7 @@ const saveSelection = async (needRemove = false) => {
       name: RouteName.Questionnaire,
       hash: Navigation.hashByRouteName(RouteName.Questionnaire),
       params: { trackId: next.default },
-      query: useNavigationStore().query
+      query: navigationStore.query
     })
   } else {
     usedTrackStore.removeFurtherUsedTracks(usedTrack.id)
@@ -320,15 +304,12 @@ const saveSelection = async (needRemove = false) => {
 }
 
 const backToPreviousTrack = async () => {
-  const indexOfTrack = usedTrackStore.usedTracksIds.indexOf(usedTrack.id)
-  const trackId = usedTrackStore.usedTracksIds[indexOfTrack - 1]
+  const trackId = usedTrackStore.usedTracksIds.slice(-2).reverse().pop()
   usedTrackStore.setCurrentToUncompleted()
-  usedTrackStore.removeFurtherUsedTracks(trackId)
+  if (trackId) {
+    usedTrackStore.removeFurtherUsedTracks(trackId)
 
-  return await router.push({
-    name: RouteName.Questionnaire,
-    hash: Navigation.hashByRouteName(RouteName.Questionnaire),
-    params: { trackId: trackId }
-  })
+    return await router.push(navigationStore.routeByTrackId(trackId))
+  }
 }
 </script>

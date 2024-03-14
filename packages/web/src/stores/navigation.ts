@@ -1,10 +1,18 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`store.navigation > FUNCTION_NAME > MSG_OR_VALUE :`)
 
+import { TrackId } from '@/types'
 import type { UrlParam } from '@/types/navigation'
+import Navigation from '@/utils/navigation'
 import { ref, computed } from 'vue'
 import { acceptHMRUpdate, defineStore } from 'pinia'
-import { type LocationQuery, type LocationQueryValue, type RouteLocationNormalizedLoaded, type Router } from 'vue-router'
+import {
+  type LocationQuery,
+  type LocationQueryValue,
+  type RouteLocationNormalizedLoaded,
+  type RouteLocationRaw,
+  type Router
+} from 'vue-router'
 import { RouteName } from '@/types/routeType'
 
 export const useNavigationStore = defineStore('navigation', () => {
@@ -15,16 +23,54 @@ export const useNavigationStore = defineStore('navigation', () => {
   const stringOfSearchParams = ref<string>('')
 
   const query = computed<Record<string, LocationQueryValue | LocationQueryValue[]>>(() => {
-    const query: LocationQuery = {}
+    let query: LocationQuery = {}
     for (const key of new URLSearchParams(stringOfSearchParams.value).keys()) {
-      if (!(key in query)) {
-        const values = searchParams.value.getAll(key)
-        query[key] = values.length > 1 ? values : values[0]
-      }
+      query = addQueryByKey(key, query)
     }
 
     return query
   })
+
+  function addQueryByKey(key: string, query: LocationQuery) {
+    if (!(key in query)) {
+      const values = searchParams.value.getAll(key)
+      query[key] = values.length > 1 ? values : values[0]
+    }
+
+    return query
+  }
+
+  function queryByUsedTrackId(usedTrackId: string) {
+    let query: LocationQuery = {}
+    for (const key of new URLSearchParams(stringOfSearchParams.value).keys()) {
+      if (key === usedTrackId) {
+        break
+      }
+      query = addQueryByKey(key, query)
+    }
+
+    return query
+  }
+
+  function routeByTrackId(trackId: TrackId) {
+    let route: RouteLocationRaw = {
+      name: RouteName.Questionnaire,
+      params: { trackId: trackId },
+      hash: Navigation.hashByRouteName(RouteName.Questionnaire),
+      query: queryByUsedTrackId(trackId)
+    }
+
+    if (TrackId.QuestionnaireRoute === trackId) {
+      route = {
+        ...route,
+        name: RouteName.QuestionnaireStart,
+        query: undefined,
+        params: {}
+      }
+    }
+
+    return route
+  }
 
   function isCatalog() {
     return isByRouteName(RouteName.Catalog)
@@ -97,6 +143,7 @@ export const useNavigationStore = defineStore('navigation', () => {
     route,
     query,
     searchParams,
+    queryByUsedTrackId,
     isCatalog,
     isByRouteName,
     resetSearchParams,
@@ -104,7 +151,8 @@ export const useNavigationStore = defineStore('navigation', () => {
     setRoute,
     setSearchParams,
     updateSearchParam,
-    deleteSearchParam
+    deleteSearchParam,
+    routeByTrackId
   }
 })
 

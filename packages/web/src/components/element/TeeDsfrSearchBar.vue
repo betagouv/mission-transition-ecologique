@@ -52,12 +52,11 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`TeeDsfrSearchBar > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import { TrackId, type TrackOptionsInput } from '@/types'
+import { type TrackOptionsInput } from '@/types'
 import Translation from '@/utils/translation'
 import { DsfrInputGroup, DsfrInput, DsfrButton } from '@gouvminint/vue-dsfr'
 
 interface Props {
-  trackId: TrackId
   option: TrackOptionsInput
   isLoading?: boolean
   errorMessage?: string

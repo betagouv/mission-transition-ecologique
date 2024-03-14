@@ -1,64 +1,66 @@
 <template>
   <!-- SELECTOR -->
   <div class="fr-select-group">
-    <select
-      :id="`${track.id}-select`"
-      class="fr-select"
-      :name="`${track.id}-select`"
-      @change="updateLocalSelection"
-    >
-      <!-- DEFAULT OPTION -->
-      <option
-        value=""
-        selected
-      >
-        {{ Translation.t('select.selectOption') }}
-      </option>
-
-      <!-- VALUES -->
-      <option
-        v-for="(optionVal, idx) in options"
-        :key="`${track.id}-select-option-${idx}`"
-        :value="idx"
-      >
-        {{ optionVal?.label[Translation.lang] }}
-      </option>
-    </select>
+    <DsfrSelect
+      :id="`${currentTrack?.id}-select`"
+      v-model="value"
+      :name="`${currentTrack?.id}-select`"
+      :options="options"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
 // CONSOLE LOG TEMPLATE
-// console.log(`TeeTrackSelect > FUNCTION_NAME > MSG_OR_VALUE :`)
+// console.log(`TrackSelect > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import type { Track, TrackOptionsSelect } from '@/types'
-
-import { ref } from 'vue'
+import { useTrackStore } from '@/stores/track'
+import { useUsedTrackStore } from '@/stores/usedTrack'
+import type { TrackOptionItem } from '@/types'
 import Translation from '@/utils/translation'
+import { computed } from 'vue'
 
-interface Props {
-  track: Track
-}
-const props = defineProps<Props>()
-
-const activeOption = ref<TrackOptionsSelect>()
+const currentUsedTrack = useUsedTrackStore().current
+const currentTrack = useTrackStore().current
 
 const emit = defineEmits(['updateSelection'])
 
-const options: TrackOptionsSelect[] = props.track.options?.filter((o): o is TrackOptionsSelect => !!o.label) || []
-
-const updateLocalSelection = (event: Event) => {
-  const index = (event.target as HTMLSelectElement).value as unknown as number
-  const isReset = (event.target as HTMLSelectElement).value === ''
-  // set local ref
-  activeOption.value = isReset ? undefined : options[index]
-
-  // send signal to parent
-  const data = {
-    index: event,
-    option: activeOption.value,
-    reset: isReset
+const options = computed<(string | { value: string; text: string; disabled?: boolean | undefined })[]>(() => {
+  const options: (string | { value: string; text: string; disabled?: boolean | undefined })[] = []
+  if (!currentTrack?.options) {
+    return options
   }
-  emit('updateSelection', data)
-}
+
+  for (const option of currentTrack.options) {
+    if (option.label) {
+      options.push({
+        value: option.label[Translation.lang],
+        text: option.label[Translation.lang]
+      })
+    }
+  }
+
+  return options
+})
+
+const value = computed({
+  get() {
+    return currentUsedTrack?.selected.find(() => true)?.value as string | undefined
+  },
+  set(value: string | undefined) {
+    const selectedOptionIndex = currentTrack?.options?.findIndex((option) => option.value === value)
+    const selectedOption = selectedOptionIndex ? currentTrack?.options?.[selectedOptionIndex] : undefined
+
+    if (selectedOption) {
+      useUsedTrackStore().setCurrentSelectedOptions([selectedOption])
+    }
+
+    const data = {
+      option: selectedOption,
+      index: selectedOptionIndex,
+      remove: selectedOption === undefined
+    } as TrackOptionItem
+    emit('updateSelection', data)
+  }
+})
 </script>

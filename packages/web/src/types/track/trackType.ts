@@ -154,6 +154,7 @@ export type TrackOptionsUnion = TrackOptions | TrackOptionsSelect | TrackOptions
 
 export type TrackOptionItem = {
   option: TrackOptionsUnion
+  index?: number
   remove?: boolean
 }
 

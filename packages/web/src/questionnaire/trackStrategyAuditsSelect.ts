@@ -1,5 +1,5 @@
 import type { Track } from '@/types'
-import { HasInputOptions, TrackComponent, TrackId } from '@/types'
+import { TrackComponent, TrackId } from '@/types'
 
 export enum StrategyAuditsSelect {
   CarbonAudit = 'carbon_audit',
@@ -111,10 +111,9 @@ export const strategyAuditsSelect: Track = {
         strategy_audits_select: StrategyAuditsSelect.Other
       },
       title: { fr: 'Autre' },
-      label: { fr: 'Autre : ' },
-      hasInput: HasInputOptions.Text,
+      label: { fr: 'Autre' },
       next: {
-        default: TrackId.WastesStake
+        default: TrackId.Results
       }
     },
     {

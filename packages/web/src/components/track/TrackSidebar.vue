@@ -29,7 +29,7 @@
           <router-link
             v-if="usedTrack.completed"
             class="tee-btn-sidebar fr-btn fr-btn--tertiary-no-outline"
-            :to="backToTrack(usedTrack.id)"
+            :to="navigationStore.routeByTrackId(usedTrack.id)"
           >
             {{ trackStore.getTrackTitle(usedTrack.id as TrackId, Translation.lang) }}
           </router-link>
@@ -56,12 +56,9 @@ import { useNavigationStore } from '@/stores/navigation'
 import { useTrackStore } from '@/stores/track'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { TrackId } from '@/types'
-import { RouteName } from '@/types/routeType'
 import { groupBy } from '@/utils/helpers'
-import Navigation from '@/utils/navigation'
 import Translation from '@/utils/translation'
 import { computed } from 'vue'
-import { type RouteLocationRaw } from 'vue-router'
 
 const trackStore = useTrackStore()
 const debugStore = useDebugStore()
@@ -76,26 +73,4 @@ const usedTracksRegrouped = computed(() => {
 const usedCategories = computed(() => {
   return Object.keys(usedTracksRegrouped.value)
 })
-
-const backToTrack = (trackId: TrackId) => {
-  let route: RouteLocationRaw = {
-    name: RouteName.Questionnaire,
-    params: { trackId: trackId },
-    hash: Navigation.hashByRouteName(RouteName.Questionnaire),
-    query: navigationStore.query
-  }
-
-  if (TrackId.QuestionnaireRoute === trackId) {
-    route = {
-      ...route,
-      name: RouteName.QuestionnaireStart,
-      query: undefined,
-      params: {}
-    }
-  }
-
-  return route
-
-  // await router.push(route)
-}
 </script>

@@ -43,13 +43,8 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     return current.value?.id === TrackId.QuestionnaireRoute
   })
 
-  const usedTracksIds = computed(() => {
-    const trackIds = usedTracks.value.map((t: UsedTrack) => t.id)
-    const lastTrack = trackIds[trackIds.length - 1]
-    if (lastTrack !== TrackId.Results) {
-      trackIds.push(TrackId.Results)
-    }
-    return trackIds
+  const usedTracksIds = computed<TrackId[]>(() => {
+    return usedTracks.value.map((usedTrack: UsedTrack) => usedTrack.id)
   })
 
   const completedUsedTracks = computed(() => {
@@ -82,6 +77,12 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
 
   function setCurrentById(trackId: TrackId) {
     setCurrent(getUsedTrack(trackId))
+  }
+
+  function setCurrentSelectedOptions(selectedOptions: TrackOptions[]) {
+    if (current.value) {
+      current.value.selected = selectedOptions
+    }
   }
 
   function updateCurrent(selectedOptions: TrackOptions[]) {
@@ -287,7 +288,8 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     usedTracksValuesPairs,
     currentIsCompleted,
     setCurrent,
-    setCurrentByTrackId: setCurrentById,
+    setCurrentById,
+    setCurrentSelectedOptions,
     updateCurrent,
     setCurrentToUncompleted,
     currentIsFirst,

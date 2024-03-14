@@ -1,7 +1,6 @@
 <template>
   <TeeDsfrSearchBar
     v-model.trim="siretValue"
-    :track-id="props.trackId"
     :option="props.option"
     :is-loading="isLoading"
     :error-message="errorMessage"
@@ -94,7 +93,8 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`TeeDsfrSearchBar > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import { type ReqResp, type ResultsMapping, TrackId, type TrackOptionItem, type TrackOptionsInput } from '@/types'
+import { useTrackStore } from '@/stores/track'
+import { type ReqResp, type ResultsMapping, type TrackOptionItem, type TrackOptionsInput } from '@/types'
 import type EstablishmentType from '@/types/establishmentType'
 import { RouteName } from '@/types/routeType'
 import { getFromResp } from '@/utils/helpers'
@@ -106,7 +106,6 @@ import Translation from '@/utils/translation'
 import { ref, computed } from 'vue'
 
 interface Props {
-  trackId: TrackId
   option: TrackOptionsInput
 }
 const props = defineProps<Props>()
@@ -179,7 +178,10 @@ const processInput = async () => {
   isLoading.value = false
 
   // analytics / send event
-  Matomo.sendEvent(props.trackId, 'processInput')
+  const trackId = useTrackStore().currentId
+  if (trackId) {
+    Matomo.sendEvent(trackId, 'processInput')
+  }
 }
 
 const goToNextTrack = () => {
