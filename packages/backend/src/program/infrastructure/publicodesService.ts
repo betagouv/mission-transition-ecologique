@@ -8,20 +8,7 @@ export class PublicodesService {
   private readonly _publicodeEngines: Record<string, Engine>
 
   constructor(programs: Program[]) {
-    const engines = programs.reduce(
-      (accu, program) => {
-        const engineResult = initializePublicodesEngine(program.publicodes as object)
-
-        if (engineResult.isErr) {
-          throw engineResult.error
-        }
-        accu[program.id] = engineResult.value
-        return accu
-      },
-      {} as Record<string, Engine>
-    )
-
-    this._publicodeEngines = engines
+    this._publicodeEngines = initializePublicodesEngineForAllPrograms(programs)
   }
 
   public evaluate(
@@ -39,6 +26,21 @@ export class PublicodesService {
     }
     return evaluateRule(rule, engine, program, questionnaireData, currentDate)
   }
+}
+
+const initializePublicodesEngineForAllPrograms = (programs: Program[]): Record<string, Engine> => {
+  return programs.reduce(
+    (accu, program) => {
+      const engineResult = initializePublicodesEngine(program.publicodes as object)
+
+      if (engineResult.isErr) {
+        throw engineResult.error
+      }
+      accu[program.id] = engineResult.value
+      return accu
+    },
+    {} as Record<string, Engine>
+  )
 }
 
 const initializePublicodesEngine = (rules: object): Result<Engine, Error> => {
