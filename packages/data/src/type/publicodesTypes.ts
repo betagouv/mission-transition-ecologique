@@ -14,9 +14,7 @@ export enum Entreprise {
   CodeNAF1 = 'entreprise . code NAF niveau 1 . est ',
   CodeNAF = 'entreprise . code NAF',
   Workforce = 'entreprise . effectif',
-  TransportMode = 'entreprise . mode de transport domicile-travail . est ',
   BuildingOwner = 'entreprise . est propriétaire de ses locaux',
-  VehicleOwner = 'entreprise . possède des véhicules motorisés',
   hasObjective = 'entreprise . a un objectif ciblé'
 }
 
@@ -109,34 +107,4 @@ export const priorityObjectives = {
   [Objectives.MakeSavings]: YesNo.No,
   [Objectives.DurablyInvest]: YesNo.No,
   [Objectives.UnknownYet]: YesNo.No
-}
-
-enum TransportMode {
-  Bike = 'vélo',
-  Bus = 'bus',
-  Car = 'voiture',
-  Motorcycle = 'moto',
-  Other = 'autre',
-  Train = 'train ou métro',
-  Truck = 'camion'
-}
-
-export enum TransportModes {
-  Bike = Entreprise.TransportMode + TransportMode.Bike,
-  Bus = Entreprise.TransportMode + TransportMode.Bus,
-  Car = Entreprise.TransportMode + TransportMode.Car,
-  Motorcycle = Entreprise.TransportMode + TransportMode.Motorcycle,
-  Other = Entreprise.TransportMode + TransportMode.Other,
-  Train = Entreprise.TransportMode + TransportMode.Train,
-  Truck = Entreprise.TransportMode + TransportMode.Truck
-}
-
-export const allTransportModes = {
-  [TransportModes.Bike]: YesNo.No,
-  [TransportModes.Bus]: YesNo.No,
-  [TransportModes.Car]: YesNo.No,
-  [TransportModes.Motorcycle]: YesNo.No,
-  [TransportModes.Other]: YesNo.No,
-  [TransportModes.Train]: YesNo.No,
-  [TransportModes.Truck]: YesNo.No
 }
