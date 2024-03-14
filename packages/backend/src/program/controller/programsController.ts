@@ -22,7 +22,7 @@ export class ProgramsController extends Controller {
     @Res() requestFailedResponse: TsoaResponse<500, ErrorJSON>,
     @Request() request: ExpressRequest
   ): OpenAPISafeProgram[] | void {
-    const programService = request.app.get('programService')
+    const programService = request.app.get('programService') as ProgramService
     this.setStatus(200)
 
     const programsResult = programService.getFilteredPrograms(questionnaireData)
