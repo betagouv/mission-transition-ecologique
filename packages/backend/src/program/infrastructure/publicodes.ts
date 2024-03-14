@@ -19,8 +19,6 @@ export const evaluateRule = (
   questionnaireData: QuestionnaireData,
   currentDate: string
 ): Result<boolean | undefined, Error> => {
-  // const rules = programData.publicodes
-
   const preprocessedData = preprocessInputForPublicodes(questionnaireData, programData, currentDate)
 
   const narrowedData = narrowInput(preprocessedData, engine)
