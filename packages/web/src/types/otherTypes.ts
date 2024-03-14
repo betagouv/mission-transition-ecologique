@@ -1,4 +1,4 @@
-import { TrackComponent } from '@/types/track/trackType'
+import type { TrackComponent } from './track/trackType'
 import type { Translations } from './translationTypes'
 import type { Plugin as VuePlugin } from 'vue'
 // FOR COMPONENTS

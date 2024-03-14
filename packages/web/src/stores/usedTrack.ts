@@ -193,7 +193,6 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
   }
 
   function createOrUpdateUsedTrack(track: Track, selectedOptions: TrackOptions[] = [], next?: TrackNext) {
-    console.trace('createOrUpdateUsedTrack', track, selectedOptions)
     const usedTrack: UsedTrack = {
       id: track.id,
       component: track.interface?.component ?? TrackComponent.Buttons,
