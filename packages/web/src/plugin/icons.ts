@@ -5,7 +5,8 @@ import {
   RiCloseCircleFill,
   RiCheckboxCircleFill,
   RiCheckboxLine,
-  RiCheckboxBlankLine
+  RiCheckboxBlankLine,
+  RiLoader5Fill
 } from 'oh-vue-icons/icons/ri'
 import { MdRadiobuttonchecked, MdRadiobuttonunchecked } from 'oh-vue-icons/icons'
 
@@ -20,6 +21,7 @@ export const listIcons = (): CustomizeIconType[] => {
     RiCloseCircleFill,
     RiCheckboxCircleFill,
     RiCheckboxLine,
+    RiLoader5Fill,
     RiCheckboxBlankLine,
     MdRadiobuttonchecked,
     MdRadiobuttonunchecked

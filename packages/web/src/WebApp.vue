@@ -4,7 +4,15 @@
     <TeeMatomo />
 
     <router-view v-if="isReady" />
-    <template v-else> chargement... </template>
+    <template v-else>
+      <div class="fr-grid-row--center fr-my-10v">
+        <div class="fr-col-12">
+          <div class="fr-text-center">
+            <TeeSpinner scale="6" />
+          </div>
+        </div>
+      </div>
+    </template>
 
     <div class="fr-mt-0v">
       <TeeFooter />
@@ -29,12 +37,7 @@ const navigationStore = useNavigationStore()
 const router = useRouter()
 const route = useRoute()
 
-interface Props {
-  needTracksReset?: boolean
-}
-defineProps<Props>()
-
-const isReady = computed(() => {
+const isReady = computed<boolean>(() => {
   return navigationStore.isReady
 })
 
