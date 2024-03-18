@@ -125,7 +125,7 @@ export const workforce: Track = {
     },
     {
       disabled: false,
-      value: { [Entreprise.Workforce]: 251, structure_sizes: ['Etablissement de Taille Intermédiaire (ETI)', 'Grande Entreprise (GE)'] },
+      value: { [Entreprise.Workforce]: 251, structure_sizes: ['ETI ou Grande Entreprise'] },
       title: { fr: '+250 employés' },
       label: { fr: '👫👭👫 Plus de 250 employés' },
       next: {
