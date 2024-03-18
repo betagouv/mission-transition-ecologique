@@ -60,6 +60,13 @@ export const useProgramStore = defineStore('program', () => {
     return programs.value?.some((programData: ProgramData) => programData.id === id)
   }
 
+  function resetFilters() {
+    programFilters.value = {
+      programAidTypeSelected: '',
+      objectifTypeSelected: ''
+    }
+  }
+
   return {
     programs,
     programDetail,
@@ -67,7 +74,8 @@ export const useProgramStore = defineStore('program', () => {
     programsByUsedTracks,
     getProgramsByFilters,
     getProgramById,
-    hasProgramById
+    hasProgramById,
+    resetFilters
   }
 })
 
