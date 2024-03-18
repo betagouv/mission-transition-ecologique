@@ -73,7 +73,7 @@ export const router = createRouter({
     {
       path: '/aides-entreprise',
       component: TeeCatalogPage as Component,
-      beforeEnter: [Hook.resetUsedTrackStore, Hook.resetQueries],
+      beforeEnter: [Hook.resetUsedTrackStore, Hook.resetQueries, Hook.resetProgramFilters],
       children: [
         {
           path: '',

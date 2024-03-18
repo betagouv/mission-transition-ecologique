@@ -10,6 +10,11 @@ export default class Hook {
     next()
   }
 
+  static readonly resetProgramFilters = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
+    useProgramStore().resetFilters()
+    next()
+  }
+
   static readonly resetQueries = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
     useNavigationStore().resetSearchParams()
     if (Hook.hasQuery(to)) {
