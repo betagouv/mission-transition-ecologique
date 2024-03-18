@@ -29,7 +29,7 @@
       "examples": ["La marque Imprim'vert® a pour objectif de favoriser la mise en place par les entreprises exerçant les activités d'impression, d'actions concrètes conduisant à une diminution des impacts de l'activité sur l'environnement.\nLe cahier des charges Imprim’Vert® est fondé sur cinq critères simples : la bonne gestion des déchets dangereux, la sécurisation de stockage des liquides dangereux, la non utilisation de certains produits CMR, la sensibilisation environnementale des salariés et de la clientèle, et le suivi des consommations énergétiques du site."],
       "type": "string"
     },
-    "objectifs": {
+    "étapes": {
       "title": "Étapes de l'accompagnement ou de la demande d'aide",
       "description": "Les objectifs aparaissent sous la dénomination de \"au programme :\" pour les accompagnements. Ils ont pour objectif de détailler les grandes étapes de l'accompagnement.\n- Les objectifs apparaissent sous la dénomination de \"Les étapes de votre demande d’aide :\" pour les financements. Ils ont pour objectif de détailler comment se passe la démarche pour obtenir le financement en question.\n\nFormulation :\n- 15 à 40 mots par\n- Chaque dispositif est décrit à l'aide de 2 à 5 objectifs max.\n- rédigés sous l'angle du bénéfice utilisateur, s'adressant à lui par le pluriel de politesse \"vous\" \"votre entreprise\"\n- Les objectifs d'un même dispositif sont formulés soit à l'aide d'un verbe à l'infinitif ou à l'impératif.\n- Ils sont ponctués par un point.",
       "type": "array",
