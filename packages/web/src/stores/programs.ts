@@ -12,7 +12,8 @@ import {
   type QuestionnaireRoute,
   type programFiltersType,
   ProgramAidType,
-  Objectives
+  Objectives,
+  type QuestionnaireData
 } from '@/types'
 import { filterPrograms as filterWithPublicodes, sortPrograms } from '@tee/backend/src/program/application/sortAndFilterPrograms'
 import type { QuestionnaireData } from '@tee/backend/src/program/domain/types'
@@ -38,7 +39,7 @@ export const useProgramsStore = defineStore('programs', () => {
     })
   })
 
-  function getProgramsByUsedTracks() {
+  async function getProgramsByUsedTracks() {
     const usedTracks = useTracksStore().usedTracks
     // retrieve and organize user's conditions
     const conditions: { [k: string]: any } = {}
@@ -52,18 +53,7 @@ export const useProgramsStore = defineStore('programs', () => {
       })
     })
 
-    // filter out programs
-    if (progs.value.length > 0) {
-      const progsFilteredResult = filterWithPublicodes(progs.value, conditions as QuestionnaireData)
-
-      if (progsFilteredResult.isErr) {
-        throw new Error(progsFilteredResult.error.message)
-      }
-
-      return sortPrograms(progsFilteredResult.value, conditions['questionnaire_route'] as QuestionnaireRoute)
-    }
-
-    return []
+    return await fetchFilteredPrograms(conditions)
   }
 
   function getProgramsByFilters(programs: ProgramData[]) {
@@ -118,4 +108,11 @@ export const useProgramsStore = defineStore('programs', () => {
 
 if (import.meta.hot) {
   import.meta.hot.accept(acceptHMRUpdate(useProgramsStore, import.meta.hot))
+}
+
+async function fetchFilteredPrograms(questionnaireData: QuestionnaireData): Promise<ProgramData[]> {
+  const url: string = '/api/programs?' + new URLSearchParams(questionnaireData).toString()
+  const response = await fetch(url)
+  const programs = (await response.json()) as ProgramData[]
+  return programs
 }
