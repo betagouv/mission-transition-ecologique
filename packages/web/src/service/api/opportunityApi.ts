@@ -68,7 +68,7 @@ export default class OpportunityApi extends RequestApi {
   }
 
   private getFromUsedTrack(trackId: TrackId, key: string) {
-    return this.usedTrackStore.findSelectedValueByTrackIdAndKey(trackId, key)
+    return this.usedTrackStore.findInQuestionnaireDataByTrackIdAndKey(trackId, key)
   }
 
   private getAllValuesFromUsedTrack() {

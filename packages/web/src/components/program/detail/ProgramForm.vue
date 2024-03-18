@@ -258,13 +258,13 @@ const opportunityForm = ref<opportunityFormType>({
   surname: { required: true, value: undefined },
   tel: { required: true, value: undefined },
   email: { required: true, value: undefined },
-  siret: { required: true, value: usedTrack.findSelectedValueByTrackIdAndKey(TrackId.Siret, 'siret') },
+  siret: { required: true, value: usedTrack.findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'siret') },
   needs: {
     required: true,
     value: Translation.t('program.form.needs', {
       secteur:
-        usedTrack.findSelectedValueByTrackIdAndKey(TrackId.Siret, 'secteur') ??
-        usedTrack.findSelectedValueByTrackIdAndKey(TrackId.Sectors, 'secteur'),
+        usedTrack.findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'secteur') ??
+        usedTrack.findInQuestionnaireDataByTrackIdAndKey(TrackId.Sectors, 'secteur'),
       titreAide: props.program.titre
     })
   },

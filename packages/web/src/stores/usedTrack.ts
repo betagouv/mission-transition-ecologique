@@ -212,13 +212,13 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     return usedTrack
   }
 
-  function findSelectedValueByTrackIdAndKey(trackId: TrackId, key: string): string | undefined {
+  function findInQuestionnaireDataByTrackIdAndKey(trackId: TrackId, key: string): string | undefined {
     const usedTrack = usedTracks.value.find((usedTrack: UsedTrack) => usedTrack.id === trackId)
     if (usedTrack?.selected) {
       for (const option of usedTrack.selected) {
-        if (typeof option.value === 'object' && key in option.value) {
-          const value = option.value as Record<string, unknown>
-          return value[key] as string
+        if (option.questionnaireData && key in option.questionnaireData) {
+          const questionnaireData = option.questionnaireData as Record<string, unknown>
+          return questionnaireData[key] as string
         }
       }
     }
@@ -301,7 +301,7 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     replaceUsedTrack,
     add,
     resetUsedTracks,
-    findSelectedValueByTrackIdAndKey,
+    findInQuestionnaireDataByTrackIdAndKey,
     getQuestionnaireData,
     setFromNavigation
   }

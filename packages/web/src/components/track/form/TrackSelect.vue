@@ -49,7 +49,8 @@ const value = computed({
   },
   set(value: string | undefined) {
     const selectedOptionIndex = currentTrack?.options?.findIndex((option) => option.value === value)
-    const selectedOption = selectedOptionIndex ? currentTrack?.options?.[selectedOptionIndex] : undefined
+    const selectedOption =
+      selectedOptionIndex !== undefined && selectedOptionIndex !== -1 ? currentTrack?.options?.[selectedOptionIndex] : undefined
 
     if (selectedOption) {
       useUsedTrackStore().setCurrentSelectedOptions([selectedOption])
