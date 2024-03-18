@@ -90,7 +90,7 @@
       "default": [],
       "uniqueItems": true
     },
-    "nature de l'aide": {
+    "type de l'aide": {
       "description": "Précise s'il s'agit d'une aide financière, d'un accompagnement, ou d'un prêt, d'une formation ou d'un avantage fiscal. Un accompagnement se définit comme la réalisation d'une prestation intellectuelle, par un intervenant choisi par l'opérateur.",
       "enum": [
         "accompagnement",
@@ -101,39 +101,39 @@
       ]
     },
     "coût de l'accompagnement": {
-      "description": "Uniquement si l'aide est de nature \"accompagnement\". Le coût reste à charge correspond au montant que devra payer l'entreprise pour bénéficier d'un accompagnement, après déduction de la subvention.\n\n Formulation :\n- 10 mots max\n- selon le format \"x € HT après subvention de x%\"\n- écriture des chiffres en unités numériques\n- ne pas utiliser d'abréviations (ex : utiliser jour et non l'abréviation \"j.\")",
+      "description": "Uniquement si l'aide est de type \"accompagnement\". Le coût reste à charge correspond au montant que devra payer l'entreprise pour bénéficier d'un accompagnement, après déduction de la subvention.\n\n Formulation :\n- 10 mots max\n- selon le format \"x € HT après subvention de x%\"\n- écriture des chiffres en unités numériques\n- ne pas utiliser d'abréviations (ex : utiliser jour et non l'abréviation \"j.\")",
       "examples": ["4 000 € HT après subvention de 60%"],
       "type": "string"
     },
     "durée de l'accompagnement": {
       "title": "Durée de la prestation et son étalement dans le temps",
-      "description": "Ce champ est utile et requis uniquement si l'aide est de nature \"accompagnement\".\n\nFormulation :\n- 10 mots max.\n- selon le format \" n jours de prestation répartis sur x mois\"\n- écriture des chiffres en unités numériques\n- ne pas utiliser d'abréviations (ex : utiliser jour et non l'abréviation \"j.\")\n- utiliser \"journée\" au singulier (et non jour)",
+      "description": "Ce champ est utile et requis uniquement si l'aide est de type \"accompagnement\".\n\nFormulation :\n- 10 mots max.\n- selon le format \" n jours de prestation répartis sur x mois\"\n- écriture des chiffres en unités numériques\n- ne pas utiliser d'abréviations (ex : utiliser jour et non l'abréviation \"j.\")\n- utiliser \"journée\" au singulier (et non jour)",
       "examples": ["12 jours de prestation répartis sur 6 à 8 mois"],
       "type": "string"
     },
     "montant du financement": {
       "title": "Montant du financement",
-      "description": "Uniquement si l'aide est de nature \"financement\". Le montant de l'aide correspond au montant de financement ou de prêt auquel l'entreprise peut prétendre pour financer son projet / son étude.\n\nFormulation :\n- 10 mots max.\nLes objectifs aparaissent sous la dénomination de \"au programme :\" pour les accompagnements. Ils ont pour objectif de détailler les grandes étapes de l'accompagnement.\n- Les objectifs apparaissent sous la dénomination de \"Les étapes de votre demande d’aide :\" pour les financements. Ils ont pour objectifs de détailler comment se passe la démarche pour obtenir le financement en question.",
+      "description": "Uniquement si l'aide est de type \"financement\". Le montant de l'aide correspond au montant de financement ou de prêt auquel l'entreprise peut prétendre pour financer son projet / son étude.\n\nFormulation :\n- 10 mots max.\nLes objectifs aparaissent sous la dénomination de \"au programme :\" pour les accompagnements. Ils ont pour objectif de détailler les grandes étapes de l'accompagnement.\n- Les objectifs apparaissent sous la dénomination de \"Les étapes de votre demande d’aide :\" pour les financements. Ils ont pour objectifs de détailler comment se passe la démarche pour obtenir le financement en question.",
       "examples": ["jusqu'à 70% du coût de l'étude", "selon projet", "de 5 000 € HT à 200 000 € HT"],
       "type": "string"
     },
     "montant de l'avantage fiscal": {
       "title": "Montant de l'avantage fiscal",
-      "description": "Uniquement si l'aide est de nature \"avantage fiscal\". Elle précise le montant de l'avantage fiscal, en %.",
+      "description": "Uniquement si l'aide est de type \"avantage fiscal\". Elle précise le montant de l'avantage fiscal, en %.",
       "type": "string"
     },
     "montant du prêt": {
       "title": "Montant du prêt",
-      "description": "Uniquement si l'aide est de nature \"prêt\". Mêmes règles de formulation que le champ \"montant du financement\"",
+      "description": "Uniquement si l'aide est de type \"prêt\". Mêmes règles de formulation que le champ \"montant du financement\"",
       "type": "string"
     },
     "durée du prêt": {
-      "description": "Uniquement si l'aide est de nature \"prêt\". Mêmes règles de formulation que le champ \"durée de l'accompagnement\"",
+      "description": "Uniquement si l'aide est de type \"prêt\". Mêmes règles de formulation que le champ \"durée de l'accompagnement\"",
       "type": "string"
     },
     "taux du prêt": {
       "title": "Taux du prêt",
-      "description": "Uniquement si l'aide est de nature \"prêt\".",
+      "description": "Uniquement si l'aide est de type \"prêt\".",
       "type": "string"
     },
     "conditions d'éligibilité": {
@@ -179,6 +179,7 @@
         "secteur géographique": {
           "title": "Conditions d'éligibilité relatives au secteur géographique",
           "type": "object",
+          "default": {"description": ["France et territoires d'outre-mer"]},
           "properties": {
             "description": {
               "title": "Description en langage naturel des conditions d'éligibilité relatives au secteur géographique",
@@ -191,7 +192,7 @@
             },
             "zone géographique Régions": {
               "title": "Régions éligibles",
-              "description": "Liste des régions éligibles au dispositif",
+              "description": "Liste des régions éligibles au dispositif. Si absent, considère l'éligibilité sur l'ensemble des régions.",
               "type": "array",
               "items": {
                 "enum": [
@@ -224,11 +225,13 @@
                 ]
               }
             }
-          }
+          },
+          "required": "description"
         },
         "taille de l'entreprise": {
           "type": "object",
           "title": "Conditions d'éligibilité relatives à la taille de l'entreprise",
+          "default": {"description": ["Toutes tailles"]},
           "properties": {
             "description": {
               "title": "Description en langage naturel des conditions d'éligibilité relatives à la taille de l'entreprise",
@@ -236,7 +239,6 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "default": "Toutes tailles",
                 "minItems": 1
               }
             },
@@ -262,11 +264,13 @@
               "type": "boolean",
               "default": "true"
             }
-          }
+          },
+          "required": ["description"]
         },
         "nombre d'années d'activité": {
           "type": "object",
           "title": "Conditions d'éligibilité relatives au nombre d'années d'activité",
+          "default": {"description": ["Éligible à toutes les entreprises"]},
           "properties": {
             "description": {
               "title": "Description en langage naturel des conditions d'éligibilité relatives au nombre d'années d'activité",
@@ -274,19 +278,21 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "default": "Éligible à toutes les entreprises",
                 "minItems": 1
               }
             },
             "minimum d'années d'activité": {
               "title": "Nombre minimum d'années d'activité",
-              "type": "number"
+              "type": "integer",
+              "minimum": 1
             },
             "maximum d'années d'activité": {
               "title": "Nombre maximum d'années d'activité",
-              "type": "number"
+              "type": "integer",
+              "minimum": 1
             }
-          }
+          },
+          "required": ["description"]
         },
         "autres critères d'éligibilité": {
           "type": "object",
@@ -297,19 +303,20 @@
               "description": "Plusieurs valeurs possibles",
               "type": "array",
               "items": {
-                "type": "string"
+                "type": "string",
+                "minItems": 1
               }
             }
-          }
+          },
+          "required": ["description"]
         }
       },
-      "required": ["taille de l'entreprise", "secteur géographique", "secteur d'activité", "nombre d'années d'activité"]
     }
   },
   "oneOf": [
     {
       "properties": {
-        "nature de l'aide": {
+        "type de l'aide": {
           "oneOf": [
             {"const": "accompagnement" },
             {"const": "formation" }
@@ -320,19 +327,19 @@
     },
     {
       "properties": {
-        "nature de l'aide": { "const": "financement" }
+        "type de l'aide": { "const": "financement" }
       },
       "required": ["montant du financement"]
     },
     {
       "properties": {
-        "nature de l'aide": { "const": "avantage fiscal" }
+        "type de l'aide": { "const": "avantage fiscal" }
       },
       "required": ["montant de l'avantage fiscal"]
     },
     {
       "properties": {
-        "nature de l'aide": { "const": "prêt" }
+        "type de l'aide": { "const": "prêt" }
       },
       "required": ["durée du prêt", "montant du prêt"]
     }
@@ -344,8 +351,7 @@
     "étapes",
     "url",
     "opérateur de contact",
-    "nature de l'aide",
-    "conditions d'éligibilité"
+    "type de l'aide",
   ],
   "additionalProperties": true,
 
