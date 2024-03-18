@@ -17,7 +17,7 @@ import { RouteName } from '@/types/routeType'
 import { redirections } from '@/router/redirection'
 import { TrackId } from '@/types'
 import type { Component } from 'vue'
-import { resetDetailProgram, resetTrackStore, setHelpAsTrackSeed, setResultsAsTrackSeed } from '@/router/hook'
+import { resetDetailProgram, resetProgramFilters, resetTrackStore, setHelpAsTrackSeed, setResultsAsTrackSeed } from '@/router/hook'
 import ProgramList from '@/components/program/list/ProgramList.vue'
 
 export const router = createRouter({
@@ -72,7 +72,7 @@ export const router = createRouter({
     {
       path: '/aides-entreprise',
       component: TeeCatalogPage as Component,
-      beforeEnter: [resetDetailProgram, resetTrackStore, setResultsAsTrackSeed],
+      beforeEnter: [resetDetailProgram, resetTrackStore, setResultsAsTrackSeed, resetProgramFilters],
       children: [
         {
           path: '',

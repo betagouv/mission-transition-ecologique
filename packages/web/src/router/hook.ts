@@ -9,6 +9,13 @@ export const resetTrackStore = (to: RouteLocationNormalized, from: RouteLocation
   tracks.resetUsedTracks()
   next()
 }
+
+export const resetProgramFilters = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
+  const programsStore = useProgramsStore()
+  programsStore.resetFilters()
+  next()
+}
+
 export const resetDetailProgram = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
   useNavigationStore().resetQueries()
   useProgramsStore().resetDetailResult()

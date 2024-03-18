@@ -89,6 +89,13 @@ export const useProgramsStore = defineStore('programs', () => {
     programDetailConfig.value = undefined
   }
 
+  function resetFilters() {
+    programFilters.value = {
+      programAidTypeSelected: '',
+      objectifTypeSelected: ''
+    }
+  }
+
   function getProgramById(id: string | number) {
     return progs.value?.find((programData: ProgramData) => programData.id === id)
   }
@@ -99,6 +106,7 @@ export const useProgramsStore = defineStore('programs', () => {
     programDetailConfig,
     progs,
     programFilters,
+    resetFilters,
     getProgramsByUsedTracks,
     getProgramsByFilters,
     setDataset,
