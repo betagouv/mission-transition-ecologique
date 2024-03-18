@@ -22,9 +22,7 @@
           id="tee-app-tracks"
           class="fr-grid-row--center fr-col fr-col-sm-12 fr-col-md-8 fr-col-lg-9 fr-col-xl-8"
         >
-          <div class="fr-mb-0 fr-px-4v fr-px-md-0">
-            <ProgramList />
-          </div>
+          <ProgramList />
         </div>
       </div>
     </div>

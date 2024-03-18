@@ -1,6 +1,6 @@
 <template>
   <!-- PROGRAMS AS LIST OF CARDS -->
-  <div class="fr-container fr-px-0 fr-px-md-4w fr-mt-6v">
+  <div class="fr-container fr-px-4v fr-mb-0 fr-mt-6v fr-px-md-4w">
     <ProgramListHeaderResult v-if="!navigation.isCatalog()" />
     <div class="fr-grid-row">
       <div class="fr-mt-4v fr-mb-2v fr-col-12">
