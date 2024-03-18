@@ -1,18 +1,12 @@
 // FOR AID PROGRAMS
 
-export enum ProgramAidType {
-  acc = 'accompagnement',
-  train = 'formation',
-  fund = 'financement',
-  loan = 'prêt',
-  tax = 'avantage fiscal'
-}
+import type { ProgramAidType } from '@tee/common/src/program/types'
 
 export interface ProgramData {
   id: string
   titre: string
   promesse: string
-  description: string
+  description?: string
   'description longue'?: string
   'début de validité'?: string
   'fin de validité'?: string
@@ -21,7 +15,6 @@ export interface ProgramData {
   'opérateur de contact': string
   'autres opérateurs'?: string[]
   "nature de l'aide": ProgramAidType
-
   "coût de l'accompagnement"?: string
   "durée de l'accompagnement"?: string
   'montant du financement'?: string
