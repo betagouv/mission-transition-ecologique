@@ -1,31 +1,35 @@
-titre: Investissement "Contrat Chaleur Renouvelable"
-promesse: Financez vos projets d'énergies renouvelables thermiques sur votre territoire
-description: Vous avez plusieurs projets ayant recours à de la chaleur d'origine renouvelable
-  et de récupération (ENR&R) pour votre territoire ? L’ADEME peut vous accompagner
-  financièrement dans leur réalisation.
-description longue: 'Le contrat territorial, porte sur un minimum de 10 installations
-  (quelle que soit la technologie
-
-  utilisée et leur taille). Chaque contrat territorial doit faire appel à plusieurs
-  EnR thermiques
-
-  différentes avec un minimum de 20% d’installations EnR&R autres que le bois-énergie.'
-début de validité: 01/01/2023
-fin de validité: 31/12/2024
+titre: ACT Pas à Pas
+promesse: Développez votre stratégie bas carbone et mettez en œuvre votre plan de
+  transition
+description: Élaborez un modèle économique compatible avec une trajectoire bas carbone
+  grâce à la méthode ACT Pas à Pas (Assessing Low Carbon Transition). Cette démarche
+  est une méthode structurante, progressive et sur le long terme pour aider les entreprises
+  à réduire significativement leurs émissions de gaz à effet de serre.
+description longue: "L'étude ACT Pas à Pas se déroule en 12 à 18 mois selon les entreprises.\
+  \ Les grandes étapes de l'étude sont les suivantes :  \n\n• Analyser la maturité\
+  \ initiale de l'entreprise sur des bases carbone.\n\n• Exposer les enjeux et  réaliser\
+  \ une analyse stratégique de l’entreprise dans un contexte de transition bas carbone.\n\
+  \n• Déterminer une vision d’entreprise et concevoir la feuille de route du plan\
+  \ de transition à court, moyen et long terme. \n\n• Elaborer des objectifs de performance\
+  \ carbone et définir une stratégie.\n\n • Mettre en oeuvre des actions de décarbonation."
+début de validité: 13/11/2023
+fin de validité: 30/06/2026
 illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
-url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/contrat-chaleur-renouvelable
+url: ''
 nature de l'aide: financement
-montant du financement: Selon le type d'investissement
+montant du financement: Jusqu'à 80% du coût de l'étude, dans un maximum de 15 000
+  €
 objectifs:
-- Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME.
+- Choisissez le prestataire qui va vous accompagner pour mener l'étude méthodologie
+  ACT.
 - 'Déposez votre demande d''aide : informations administratives, description du projet,
-  détails techniques et financiers, étude de faisabilité, etc. A ce stade, votre investissement
-  ne doit pas avoir été realisé !'
+  détails techniques et financiers, etc. A ce stade, votre projet ne doit pas avoir
+  commencé !'
 - L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat
   de financement précisant le montant d’aide maximum, les conditions et les modalités
   de versement.
-- Réalisez vos investissements.
+- Réalisez votre étude ACT Pas à Pas.
 conditions d'éligibilité:
   taille de l'entreprise:
   - Toutes tailles
@@ -37,16 +41,14 @@ conditions d'éligibilité:
   nombre d'années d'activité:
   - Éligible à toutes les entreprises
   autres critères d'éligibilité:
-  - 'L''opération pour laquelle vous sollicitez une aide financière ne doit pas avoir
-    commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque
-    forme que ce soit : marché signé, commande signée, devis accepté…)'
+  - Pour accéder à cette étude, vous devez avoir déjà réalisé un premier bilan de
+    gaz à effet de serre.
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
     - est éligible
     - est dans un secteur d'activité ciblé
     - a un objectif ciblé
-    - questionnaire . parcours = objectif précis
   entreprise . est éligible:
     applicable si:
       toutes ces conditions:
@@ -78,5 +80,4 @@ publicodes:
     - code NAF niveau 1 . est U
   entreprise . a un objectif ciblé:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est diminuer ma consommation d'eau
-    - questionnaire . objectif prioritaire . est ma performance énergétique
+    - questionnaire . objectif prioritaire . est mon impact environnemental
