@@ -322,6 +322,27 @@
           "required": ["description"]
         }
       }
+    },
+    "cible": {
+      "type": "object",
+      "description": "Description du cœur de cible du dispositif, au delà des conditions d'éligibilité",
+      "properties": {
+        "secteurs d'activité ciblés": {
+          "title": "Secteurs d'activité spécifiquement ciblés",
+          "description": "Identifiés via leurs codes APE. Peut être n'importe niveau de code APE (section, division, groupe etc.)",
+          "examples": [["A", "55.20Z"]],
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/code ape"
+          }
+        },
+        "catégories d'entreprise ciblées": {
+          "title": "Catégories d'entreprise ciblées",
+          "type": "array",
+          "items": {
+            "enum": ["TPE", "PME", "ETI", "GE"]
+          }
+      }
     }
   },
   "oneOf": [
