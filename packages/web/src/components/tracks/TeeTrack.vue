@@ -336,7 +336,7 @@
             v-if="renderAs === trackComponents.Input && isTrackOptionsInput(option)"
             style="height: 100%"
           >
-            <TeeTrackInput
+            <TeeDsfrSearchBar
               :track-id="usedTrack.id"
               :option="option"
               @update-selection="updateSelectionFromSignal($event, idx)"
@@ -430,7 +430,7 @@ import type { ColsOptions, NextTrackRuleSet, Track, TrackOptionsUnion, UsedTrack
 import { isTrackOptionsInput, TrackComponents } from '@/types'
 import { remapItem, scrollToTop } from '@/utils/helpers'
 import { CheckNextTrackRules } from '@/utils/conditions'
-import TeeTrackInput from './TeeTrackInput.vue'
+import TeeDsfrSearchBar from './TeeDsfrSearchBar.vue'
 import TeeTrackSelect from './TeeTrackSelect.vue'
 import TeeTrackButtonInput from './TeeTrackButtonInput.vue'
 import TeeResults from '../results/TeeResults.vue'
