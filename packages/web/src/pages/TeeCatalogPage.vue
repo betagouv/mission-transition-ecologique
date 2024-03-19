@@ -3,7 +3,12 @@
     class="fr-container--fluid fr-mt-0 fr-mb-12v"
     style="min-height: 800px"
   >
-    <router-view />
+    <Suspense>
+      <router-view />
+      <template #fallback>
+        <span>Chargement...</span>
+      </template>
+    </Suspense>
   </div>
   <ContactHelp />
 </template>

@@ -1,22 +1,11 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`store.programs > FUNCTION_NAME > MSG_OR_VALUE :`)
 
+import ProgramApi from '@/service/api/programApi'
 import ProgramFilter from '@/utils/program/programFilters'
 import { computed, ref } from 'vue'
 import { acceptHMRUpdate, defineStore } from 'pinia'
-
-import {
-  type ProgramData,
-  type TrackId,
-  type TrackOptions,
-  type QuestionnaireRoute,
-  type programFiltersType,
-  ProgramAidType,
-  Objectives,
-  type QuestionnaireData
-} from '@/types'
-import { filterPrograms as filterWithPublicodes, sortPrograms } from '@tee/backend/src/program/application/sortAndFilterPrograms'
-import type { QuestionnaireData } from '@tee/backend/src/program/domain/types'
+import { type ProgramData, type TrackId, type TrackOptions, type programFiltersType, ProgramAidType, Objectives } from '@/types'
 import { useTracksStore } from '@/stores/tracks'
 
 export const useProgramsStore = defineStore('programs', () => {
@@ -53,7 +42,7 @@ export const useProgramsStore = defineStore('programs', () => {
       })
     })
 
-    return await fetchFilteredPrograms(conditions)
+    return await new ProgramApi(conditions).fetch()
   }
 
   function getProgramsByFilters(programs: ProgramData[]) {
@@ -108,11 +97,4 @@ export const useProgramsStore = defineStore('programs', () => {
 
 if (import.meta.hot) {
   import.meta.hot.accept(acceptHMRUpdate(useProgramsStore, import.meta.hot))
-}
-
-async function fetchFilteredPrograms(questionnaireData: QuestionnaireData): Promise<ProgramData[]> {
-  const url: string = '/api/programs?' + new URLSearchParams(questionnaireData).toString()
-  const response = await fetch(url)
-  const programs = (await response.json()) as ProgramData[]
-  return programs
 }

@@ -53,14 +53,14 @@ import ProgramFilters from '@/components/program/list/ProgramFilters.vue'
 const programsStore = useProgramsStore()
 const navigation = useNavigationStore()
 
-const programs: ProgramData[] = programsStore.getProgramsByUsedTracks()
+const programs = ref<ProgramData[]>([])
 
 const filteredPrograms = computed(() => {
-  return programsStore.getProgramsByFilters(programs)
+  return programsStore.getProgramsByFilters(programs.value)
 })
 
 const countPrograms = computed(() => {
-  return programs?.length || 0
+  return programs.value?.length || 0
 })
 
 const havePrograms = computed(() => {
@@ -76,7 +76,8 @@ const getRouteToProgramDetail = (programId: string) => {
   return { name: routeName, params: { programId } }
 }
 
-onBeforeMount(() => {
+onBeforeMount(async () => {
+  programs.value = await programsStore.getProgramsByUsedTracks()
   // analytics / send event
   Matomo.sendEvent(TrackId.Results, navigation.isCatalog() ? 'show_results_catalog' : 'show_results')
 })
