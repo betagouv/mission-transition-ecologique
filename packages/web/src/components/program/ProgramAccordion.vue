@@ -1,39 +1,38 @@
 <template>
-  <div class="fr-accordion tee-accordion fr-my-0">
-    <div class="fr-accordion__title">
-      <button
-        class="fr-accordion__btn tee-accordion-btn"
-        :aria-expanded="drawerOpen"
-        :aria-controls="`accordion-${accordionId}`"
-        @click="drawerOpen = !drawerOpen"
-      >
-        {{ title }}
-      </button>
-    </div>
-    <div
-      :id="`accordion-${accordionId}`"
-      :class="`fr-collapse ${drawerOpen ? 'fr-collapse--expanded' : ''} fr-pt-0 fr-mx-4v fr-mx-md-0`"
-      :style="drawerOpen ? '-collapse: -165px; --collapse-max-height: none;' : '-collapse: -203px;'"
-    >
-      <slot name="content"></slot>
-    </div>
-  </div>
+  <DsfrAccordion
+    :id="`accordion-${accordionId}`"
+    class="fr-my-0"
+    :title="title"
+    :expanded-id="expandedId"
+    @expand="expandedId = $event"
+  >
+    <template #title>
+      <h3>{{ title }}</h3>
+    </template>
+    <slot />
+  </DsfrAccordion>
 </template>
 
 <script setup lang="ts">
+import { DsfrAccordion } from '@gouvminint/vue-dsfr'
 import { ref, onBeforeMount } from 'vue'
-
 interface Props {
   accordionId: string
   title: string
 }
-defineProps<Props>()
+const props = defineProps<Props>()
 
-const drawerOpen = ref<boolean>(false)
+const expandedId = ref<string>()
 
 onBeforeMount(() => {
   if (window.innerWidth > 767) {
-    drawerOpen.value = true
+    expandedId.value = `accordion-${props.accordionId}`
   }
 })
 </script>
+
+<style>
+.fr-accordion__btn h3 {
+  line-height: 3.75rem !important;
+}
+</style>
