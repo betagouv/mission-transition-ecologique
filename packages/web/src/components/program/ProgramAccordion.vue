@@ -1,7 +1,6 @@
 <template>
   <DsfrAccordion
     :id="`accordion-${accordionId}`"
-    class="fr-my-0"
     :title="title"
     :expanded-id="expandedId"
     @expand="expandedId = $event"
@@ -30,9 +29,3 @@ onBeforeMount(() => {
   }
 })
 </script>
-
-<style>
-.fr-accordion__btn h3 {
-  line-height: 3.75rem !important;
-}
-</style>
