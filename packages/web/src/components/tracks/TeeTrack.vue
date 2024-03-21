@@ -164,7 +164,10 @@
           v-if="step !== 1"
           class="fr-px-4v fr-px-md-0v fr-mt-6v fr-col-12"
         >
-          <h3 :class="`${track?.info ? 'fr-mb-0' : 'fr-mb-2v'}`">
+          <h3
+            :class="`${track?.info ? 'fr-mb-0' : 'fr-mb-2v'}`"
+            :style="`${isTrackResults ? 'color: #000091; font-size: 2.75rem;' : ''}`"
+          >
             {{ tracks.getTrackLabel(usedTrack.id, Translation.lang) }}
           </h3>
         </div>
@@ -329,7 +332,7 @@
               v-if="renderAs === trackComponents.Input && isTrackOptionsInput(option)"
               style="height: 100%"
             >
-              <TeeTrackInput
+              <TeeDsfrSearchBar
                 :track-id="usedTrack.id"
                 :option="option"
                 @update-selection="updateSelectionFromSignal($event, idx)"
@@ -426,7 +429,7 @@ import type { DsfrButton } from '@gouvminint/vue-dsfr'
 import { computed, ref, toRaw, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import TeeTrackButtonInput from './TeeTrackButtonInput.vue'
-import TeeTrackInput from './TeeTrackInput.vue'
+import TeeDsfrSearchBar from './TeeDsfrSearchBar.vue'
 import TeeTrackSelect from './TeeTrackSelect.vue'
 
 interface Props {
