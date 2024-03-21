@@ -176,30 +176,15 @@
     class="fr-mt-5v fr-tee-form"
   >
     <!-- MESSAGE IF ERROR-->
-    <div
+    <TeeError
       v-if="!hasValidResponse"
-      class="fr-text-center"
+      :mailto="getMailTo()"
+      :email="Contact.email"
     >
-      <p class="tee-form-response tee-form-response-error">
-        <v-icon
-          name="ri-close-circle-fill"
-          aria-hidden="true"
-          scale="3"
-        ></v-icon>
-      </p>
-      <h3 class="tee-form-response tee-form-response-error fr-mb-2v">
-        {{ Translation.t(`form.sorryError`) }}
-      </h3>
       <h3 class="tee-form-response tee-form-response-error">
         {{ Translation.t(`form.notSent`) }}
       </h3>
-      <h6 class="tee-form-response-blue fr-mt-15v fr-mb-3v">
-        {{ Translation.t('form.nowWhat') }}
-      </h6>
-      <p class="tee-form-response-blue fr-mb-15v">
-        <span v-html="Translation.ti(Translation.t('form.errorMsg'), { mailto: getMailTo(), email: Contact.email })"></span>
-      </p>
-    </div>
+    </TeeError>
 
     <!-- MESSAGE IF 200 -->
     <div

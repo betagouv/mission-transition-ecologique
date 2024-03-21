@@ -164,10 +164,7 @@
           v-if="step !== 1"
           class="fr-px-4v fr-px-md-0v fr-mt-6v fr-col-12"
         >
-          <h3
-            :class="`${track?.info ? 'fr-mb-0' : 'fr-mb-2v'}`"
-            :style="`${isTrackResults ? 'color: #000091; font-size: 2.75rem;' : ''}`"
-          >
+          <h3 :class="`${track?.info ? 'fr-mb-0' : 'fr-mb-2v'}`">
             {{ tracks.getTrackLabel(usedTrack.id, Translation.lang) }}
           </h3>
         </div>

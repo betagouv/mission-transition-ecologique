@@ -17,10 +17,16 @@
       </div>
 
       <div class="fr-col-12">
+        <span v-if="programs === undefined && !hasError">Chargement...</span>
         <ProgramListNoResults
-          v-if="!countFilteredPrograms"
+          v-else-if="!countFilteredPrograms && !hasError"
           image="images/tracks/no-results.svg"
           :message="{ fr: 'Aucune aide n\'a pu être identifiée avec les critères choisis...' }"
+        />
+        <TeeError
+          v-else-if="hasError"
+          :mailto="Contact.email"
+          :email="Contact.email"
         />
       </div>
 
@@ -40,6 +46,7 @@
 <script setup lang="ts">
 import ProgramCard from '@/components/program/list/ProgramCard.vue'
 import ProgramListHeaderResult from '@/components/program/list/ProgramListHeaderResult.vue'
+import Contact from '@/utils/contact'
 import { computed, onBeforeMount } from 'vue'
 import Translation from '@/utils/translation'
 import { useProgramsStore } from '@/stores/programs'
@@ -53,10 +60,11 @@ import ProgramFilters from '@/components/program/list/ProgramFilters.vue'
 const programsStore = useProgramsStore()
 const navigation = useNavigationStore()
 
-const programs = ref<ProgramData[]>([])
+const programs = ref<ProgramData[]>()
+const hasError = ref<boolean>(false)
 
 const filteredPrograms = computed(() => {
-  return programsStore.getProgramsByFilters(programs.value)
+  return programs.value ? programsStore.getProgramsByFilters(programs.value) : undefined
 })
 
 const countPrograms = computed(() => {
@@ -77,7 +85,13 @@ const getRouteToProgramDetail = (programId: string) => {
 }
 
 onBeforeMount(async () => {
-  programs.value = await programsStore.getProgramsByUsedTracks()
+  const result = await programsStore.getProgramsByUsedTracks()
+  if (result.isOk) {
+    programs.value = result.value
+  } else {
+    hasError.value = true
+  }
+
   // analytics / send event
   Matomo.sendEvent(TrackId.Results, navigation.isCatalog() ? 'show_results_catalog' : 'show_results')
 })

@@ -42,7 +42,7 @@ export const useProgramsStore = defineStore('programs', () => {
       })
     })
 
-    return await new ProgramApi(conditions).fetch()
+    return await new ProgramApi(conditions).get()
   }
 
   function getProgramsByFilters(programs: ProgramData[]) {
