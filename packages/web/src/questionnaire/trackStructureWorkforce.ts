@@ -95,7 +95,7 @@ export const workforce: Track = {
   options: [
     {
       disabled: false,
-      value: { [Entreprise.Workforce]: 1, structure_sizes: ['EI'] },
+      value: { [Entreprise.Workforce]: 1, structure_sizes: ['Entreprise Individuelle'] },
       title: { fr: 'Entreprise individuelle' },
       label: { fr: '‍️🧍Je suis un entrepreneur individuel' },
       next: {
