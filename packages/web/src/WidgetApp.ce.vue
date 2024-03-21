@@ -43,7 +43,7 @@
 
     <!-- QUESTIONNAIRE -->
     <div
-      v-show="!programs.programDetail"
+      v-show="!programs.currentProgram"
       id="widget"
       :class="`fr-container--fluid ${usedTrackStore.currentStep && usedTrackStore.currentStep > 1 ? 'fr-pt-10v' : ''}`"
     >
@@ -90,8 +90,8 @@
     </div>
 
     <!-- DETAIL RESULT CARD -->
-    <template v-if="programs.programDetail">
-      <ProgramDetail :program-id="programs.programDetail" />
+    <template v-if="programs.currentProgram">
+      <ProgramDetail :program-id="programs.currentProgram" />
     </template>
   </div>
 </template>

@@ -16,8 +16,11 @@
         <ProgramFilters v-if="havePrograms && countPrograms > 1" />
       </div>
 
-      <div class="fr-col-12">
-        <span v-if="programs === undefined && !hasError">Chargement...</span>
+      <div class="fr-col-12 fr-text-center">
+        <TeeSpinner
+          v-if="programs === undefined && !hasError"
+          scale="6"
+        />
         <ProgramListNoResults
           v-else-if="!countFilteredPrograms && !hasError"
           image="images/tracks/no-results.svg"
@@ -62,8 +65,8 @@ import { type RouteLocationRaw } from 'vue-router'
 const programsStore = useProgramStore()
 const navigationStore = useNavigationStore()
 
-const programs: ProgramData[] = useUsedTrackStore().hasUsedTracks() ? programsStore.programsByUsedTracks : programsStore.programs
 const isCatalog = navigationStore.isCatalog()
+const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)
 
 const filteredPrograms = computed(() => {
@@ -91,7 +94,7 @@ const getRouteToProgramDetail = (programId: string): RouteLocationRaw => {
 }
 
 onBeforeMount(async () => {
-  const result = await programsStore.getProgramsByUsedTracks()
+  const result = useUsedTrackStore().hasUsedTracks() ? await programsStore.programsByUsedTracks : await programsStore.programs
   if (result.isOk) {
     programs.value = result.value
   } else {

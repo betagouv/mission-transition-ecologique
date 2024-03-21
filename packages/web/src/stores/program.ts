@@ -1,46 +1,41 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`store.programs > FUNCTION_NAME > MSG_OR_VALUE :`)
 
+import ProgramApi from '@/service/api/programApi'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import ProgramFilter from '@/utils/program/programFilters'
+import { Result } from 'true-myth'
 import { computed, ref } from 'vue'
 import { acceptHMRUpdate, defineStore } from 'pinia'
-import jsonDataset from '../../public/data/generated/dataset_out.json'
-
-import { type ProgramData, type QuestionnaireRoute, type programFiltersType, ProgramAidType, Objectives } from '@/types'
-import { filterPrograms as filterWithPublicodes, sortPrograms } from '@tee/backend/src/program/application/sortAndFilterPrograms'
+import { type ProgramData, type programFiltersType, ProgramAidType, Objectives, type Program } from '@/types'
 import type { QuestionnaireData } from '@tee/backend/src/program/domain/types'
 
 export const useProgramStore = defineStore('program', () => {
-  const programsJson = ref<ProgramData[]>(jsonDataset as ProgramData[])
-  const programDetail = ref<string | number>()
+  const currentProgram = ref<Program>()
+  const hasPrograms = ref<boolean>(false)
 
   const programFilters = ref<programFiltersType>({
     programAidTypeSelected: '',
     objectifTypeSelected: ''
   })
 
-  const programs = computed<ProgramData[]>(() => {
-    return getPrograms()
-  })
+  const programs = computed(async () => {
+    const result = await getPrograms()
 
-  const programsByUsedTracks = computed<ProgramData[]>(() => {
-    // filter out programs
-    return getPrograms(useUsedTrackStore().getQuestionnaireData())
-  })
-
-  function getPrograms(questionnaireData: QuestionnaireData = {}) {
-    if (programsJson.value.length > 0) {
-      const programsFilteredResult = filterWithPublicodes(programsJson.value, questionnaireData)
-
-      if (programsFilteredResult.isErr) {
-        throw new Error(programsFilteredResult.error.message)
-      }
-
-      return sortPrograms(programsFilteredResult.value, questionnaireData['questionnaire_route'] as QuestionnaireRoute)
+    if (result.isOk) {
+      hasPrograms.value = result.value.length > 0
     }
 
-    return []
+    return result
+  })
+
+  const programsByUsedTracks = computed(async () => {
+    // filter out programs
+    return await getPrograms(useUsedTrackStore().getQuestionnaireData())
+  })
+
+  async function getPrograms(questionnaireData: QuestionnaireData = {}) {
+    return await new ProgramApi(questionnaireData).get()
   }
 
   function getProgramsByFilters(programs: ProgramData[]) {
@@ -52,12 +47,30 @@ export const useProgramStore = defineStore('program', () => {
     })
   }
 
-  function getProgramById(id: string | number) {
-    return programs.value?.find((programData: ProgramData) => programData.id === id)
-  }
+  async function getProgramById(id: string): Promise<Result<Program, Error>> {
+    currentProgram.value = undefined
 
-  function hasProgramById(id: string | number) {
-    return programs.value?.some((programData: ProgramData) => programData.id === id)
+    if (hasPrograms.value) {
+      const result = await programs.value
+      if (result.isOk) {
+        const program = result.value.find((program) => program.id === id)
+        if (program) {
+          currentProgram.value = program
+          return Result.ok(currentProgram.value)
+        }
+
+        return Result.err(new Error('Program not found'))
+      }
+
+      return Result.err(result.error)
+    }
+
+    const result = await new ProgramApi().getOne(id)
+    if (result.isOk) {
+      currentProgram.value = result.value
+    }
+
+    return result
   }
 
   function resetFilters() {
@@ -69,12 +82,11 @@ export const useProgramStore = defineStore('program', () => {
 
   return {
     programs,
-    programDetail,
+    currentProgram,
     programFilters,
     programsByUsedTracks,
     getProgramsByFilters,
     getProgramById,
-    hasProgramById,
     resetFilters
   }
 })

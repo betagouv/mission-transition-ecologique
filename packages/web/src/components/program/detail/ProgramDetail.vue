@@ -1,4 +1,32 @@
 <template>
+  <div class="fr-container-fluid fr-px-0 fr-px-md-20v fr-mt-3v">
+    <div class="fr-grid-row fr-grid-row-gutters">
+      <div class="fr-col">
+        <!-- BACK TO RESULTS BTN -->
+        <button
+          class="fr-btn fr-btn--lg fr-btn--tertiary-no-outline fr-mb-3v fr-pl-2v"
+          @click="resetDetailResult"
+        >
+          <v-icon
+            name="ri-arrow-left-line"
+            aria-hidden="true"
+            class="fr-mr-2v"
+          ></v-icon>
+          {{ Translation.t('results.backToResults') }}
+        </button>
+      </div>
+      <div
+        v-if="!program"
+        class="fr-col-12"
+      >
+        <TeeError
+          :mailto="Contact.email"
+          :email="Contact.email"
+        />
+      </div>
+    </div>
+  </div>
+
   <!-- ALERT - PROGRAM NOT AVAILABLE ANYMORE -->
   <div
     v-if="!programIsAvailable"
@@ -19,22 +47,12 @@
   </div>
 
   <!-- PROGRAM INFOS -->
-  <div class="fr-container-fluid fr-px-0 fr-px-md-20v fr-mt-3v">
+  <div
+    v-if="program"
+    class="fr-container-fluid fr-px-0 fr-px-md-20v fr-mt-3v"
+  >
     <div class="fr-grid-row fr-grid-row-gutters">
       <div class="fr-col">
-        <!-- BACK TO RESULTS BTN -->
-        <button
-          class="fr-btn fr-btn--lg fr-btn--tertiary-no-outline fr-mb-3v fr-pl-2v"
-          @click="resetDetailResult"
-        >
-          <v-icon
-            name="ri-arrow-left-line"
-            aria-hidden="true"
-            class="fr-mr-2v"
-          ></v-icon>
-          {{ Translation.t('results.backToResults') }}
-        </button>
-
         <!-- PROGRAM DETAILS -->
         <div class="fr-grid-row fr-grid-row--gutters fr-mb-8v">
           <!-- IMAGE -->
@@ -61,12 +79,6 @@
             </p>
 
             <!-- PROGRAM RESUME / TEXT-->
-            <h6
-              v-if="trackConfig.config?.showProgramSubtitles"
-              :style="`color: ${blockColor}`"
-            >
-              {{ Translation.t('program.programResume') }}
-            </h6>
             <h2
               :style="`color: ${blockColor}`"
               v-html="program?.promesse"
@@ -84,10 +96,7 @@
         </div>
 
         <!-- PROGRAM INFOS : PROVIDERS / TYPE / START / END -->
-        <div
-          v-if="trackConfig.config?.showProgramInfos"
-          class="fr-grid-row fr-grid-row--gutters fr-mb-8v"
-        >
+        <div class="fr-grid-row fr-grid-row--gutters fr-mb-8v">
           <!-- PROGRAM COST | LOAN | AID -->
           <div
             v-if="programCost"
@@ -240,23 +249,21 @@ import ProgramTile from '@/components/program/detail/ProgramTile.vue'
 import Config from '@/config'
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
-import { useTrackStore } from '@/stores/track'
-import { type ProgramData, TrackId } from '@/types'
+import { type Program as ProgramType } from '@/types'
 import { RouteName } from '@/types/routeType'
+import Contact from '@/utils/contact'
 import Matomo from '@/utils/matomo'
 import Program from '@/utils/program/program'
 import Translation from '@/utils/translation'
 import { computed, onBeforeMount, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
-const tracks = useTrackStore()
-const programs = useProgramStore()
+const programsStore = useProgramStore()
 const navigationStore = useNavigationStore()
 const route = useRoute()
 const router = useRouter()
 
-const program = ref<ProgramData>()
-const trackConfig = ref<any>()
+const program = ref<ProgramType>()
 const TeeProgramFormContainer = ref<HTMLElement | null | undefined>(null)
 
 const blockColor = '#000091'
@@ -264,7 +271,7 @@ const publicPath = Config.publicPath
 const isCatalogDetail = navigationStore.isByRouteName(RouteName.CatalogDetail)
 
 interface Props {
-  programId: string | number
+  programId: string
 }
 const props = defineProps<Props>()
 
@@ -303,13 +310,13 @@ const resetDetailResult = async () => {
 }
 
 onBeforeMount(() => {
-  program.value = programs.getProgramById(props.programId)
-  trackConfig.value = tracks.getTrack(TrackId.Results)
+  program.value = programsStore.currentProgram
+
   // analytics / send event
   Matomo.sendEvent('result_detail', route.name === RouteName.CatalogDetail ? 'show_detail_catalog' : 'show_detail', props.programId)
 })
 
 const programIsAvailable = computed(() => {
-  return Program.isAvailable(program.value)
+  return Program.isAvailable(programsStore.currentProgram)
 })
 </script>

@@ -45,8 +45,8 @@ export default class Hook {
     next()
   }
 
-  static readonly hasProgram = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
-    if (to.params.programId && useProgramStore().hasProgramById(to.params.programId as string)) {
+  static readonly hasProgram = async (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
+    if (to.params.programId && (await useProgramStore().getProgramById(to.params.programId as string)).isOk) {
       next()
     } else {
       next(to.name === RouteName.QuestionnaireResultDetail ? { name: RouteName.QuestionnaireStart } : { name: RouteName.Homepage })
