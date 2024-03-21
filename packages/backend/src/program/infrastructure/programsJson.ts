@@ -8,7 +8,7 @@ export default class ProgramsJson implements ProgramRepository {
   private _programs: Program[] = []
 
   private constructor() {
-    this.programs = jsonPrograms as unknown as Program[]
+    this._programs = jsonPrograms as unknown as Program[]
   }
 
   public static getInstance(): ProgramsJson {
@@ -19,15 +19,10 @@ export default class ProgramsJson implements ProgramRepository {
     return ProgramsJson.instance
   }
 
-  get programs(): Program[] {
+  public getAll(): Program[] {
     return this._programs
   }
-
-  set programs(programs: Program[]) {
-    this._programs = programs
-  }
-
-  getById = (id: string): Program | undefined => {
-    return this.programs.find((programData: Program) => programData.id === id)
+  public getById = (id: string): Program | undefined => {
+    return this.getAll().find((programData: Program) => programData.id === id)
   }
 }

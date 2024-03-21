@@ -17,10 +17,16 @@
       </div>
 
       <div class="fr-col-12">
+        <span v-if="programs === undefined && !hasError">Chargement...</span>
         <ProgramListNoResults
-          v-if="!countFilteredPrograms"
+          v-else-if="!countFilteredPrograms && !hasError"
           image="images/tracks/no-results.svg"
           :message="{ fr: 'Aucune aide n\'a pu être identifiée avec les critères choisis...' }"
+        />
+        <TeeError
+          v-else-if="hasError"
+          :mailto="Contact.email"
+          :email="Contact.email"
         />
       </div>
 
@@ -41,6 +47,7 @@
 import ProgramCard from '@/components/program/list/ProgramCard.vue'
 import ProgramFilters from '@/components/program/list/ProgramFilters.vue'
 import ProgramListHeaderResult from '@/components/program/list/ProgramListHeaderResult.vue'
+import Contact from '@/utils/contact'
 import ProgramListNoResults from '@/components/program/list/ProgramListNoResults.vue'
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
@@ -57,13 +64,14 @@ const navigationStore = useNavigationStore()
 
 const programs: ProgramData[] = useUsedTrackStore().hasUsedTracks() ? programsStore.programsByUsedTracks : programsStore.programs
 const isCatalog = navigationStore.isCatalog()
+const hasError = ref<boolean>(false)
 
 const filteredPrograms = computed(() => {
-  return programsStore.getProgramsByFilters(programs)
+  return programs.value ? programsStore.getProgramsByFilters(programs.value) : undefined
 })
 
 const countPrograms = computed(() => {
-  return programs?.length || 0
+  return programs.value?.length || 0
 })
 
 const havePrograms = computed(() => {
@@ -82,7 +90,14 @@ const getRouteToProgramDetail = (programId: string): RouteLocationRaw => {
   }
 }
 
-onBeforeMount(() => {
+onBeforeMount(async () => {
+  const result = await programsStore.getProgramsByUsedTracks()
+  if (result.isOk) {
+    programs.value = result.value
+  } else {
+    hasError.value = true
+  }
+
   // analytics / send event
   Matomo.sendEvent(TrackId.Results, navigationStore.isCatalog() ? 'show_results_catalog' : 'show_results')
 })

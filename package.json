@@ -40,7 +40,8 @@
   "dependencies": {
     "@tsconfig/node18": "^18.2.2",
     "dotenv": "^16.4.1",
-    "typescript": "~5.2.2"
+    "typescript": "~5.2.2",
+    "true-myth": "^7.1.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.13",

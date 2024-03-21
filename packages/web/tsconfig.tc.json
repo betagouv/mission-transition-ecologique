@@ -4,5 +4,6 @@
   ],
   "include": [
     "src/**/*.vue",
+    "src/auto-imports.d.ts",
   ]
 }
