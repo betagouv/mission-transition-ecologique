@@ -1,0 +1,13 @@
+.fr-accordion__btn {
+  &[aria-expanded='true'] {
+    background-color: unset;
+
+    :hover {
+      background-color: inherit;
+    }
+  }
+
+  h3 {
+    line-height: 3.75rem;
+  }
+}
