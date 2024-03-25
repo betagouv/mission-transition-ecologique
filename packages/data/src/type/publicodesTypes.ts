@@ -16,7 +16,8 @@ export enum Entreprise {
   CodeNAF = 'entreprise . code NAF',
   Workforce = 'entreprise . effectif',
   BuildingOwner = 'entreprise . est propriétaire de ses locaux',
-  hasObjective = 'entreprise . a un objectif ciblé'
+  hasObjective = 'entreprise . a un objectif ciblé',
+  isTargeted = 'entreprise . est ciblée'
 }
 
 export enum Questionnaire {

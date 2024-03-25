@@ -91,7 +91,7 @@
 
     <!-- DETAIL RESULT CARD -->
     <template v-if="programs.currentProgram">
-      <ProgramDetail :program-id="programs.currentProgram" />
+      <ProgramDetail :program-id="programs.currentProgram.id" />
     </template>
   </div>
 </template>

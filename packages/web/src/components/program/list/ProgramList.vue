@@ -1,7 +1,7 @@
 <template>
   <!-- PROGRAMS AS LIST OF CARDS -->
   <div class="fr-container fr-px-4v fr-mb-0 fr-mt-6v fr-px-md-4w">
-    <ProgramListHeaderResult v-if="!navigationStore.isCatalog()" />
+    <ProgramListHeaderResult v-if="!navigationStore.isCatalog() && !hasSpinner" />
     <div class="fr-grid-row">
       <div class="fr-mt-4v fr-mb-2v fr-col-12">
         <div
@@ -18,7 +18,7 @@
 
       <div class="fr-col-12 fr-text-center">
         <TeeSpinner
-          v-if="programs === undefined && !hasError"
+          v-if="hasSpinner"
           scale="6"
         />
         <ProgramListNoResults
@@ -83,6 +83,10 @@ const havePrograms = computed(() => {
 
 const countFilteredPrograms = computed(() => {
   return filteredPrograms.value?.length || 0
+})
+
+const hasSpinner = computed(() => {
+  return programs.value === undefined && !hasError.value
 })
 
 const getRouteToProgramDetail = (programId: string): RouteLocationRaw => {
