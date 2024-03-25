@@ -4,6 +4,10 @@
   "description": "Données de dispositifs, avec des informations générales, relatifs à l'aide proposée et des données d'éligibilité.",
   "type": "object",
   "properties": {
+    "date mise à jour": {
+      "title": "Date de dernière mise à jour du schéma",
+      "type": "date"
+    },
     "titre": {
       "title": "Titre court, nom commercial du dispositif",
       "description": "1 à 4 mots",
@@ -72,6 +76,32 @@
         "maxItems": 5
       }
     },
+    "types bénéficiaire": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "Communes",
+          "EPCI à fiscalité propre",
+          "Départements",
+          "Régions",
+          "Associations",
+          "Particuliers",
+          "Agriculteurs",
+          "Entreprises privées",
+          "Entreprises publiques locales (Sem, Spl, SemOp)",
+          "Établissements publics - Services de l'État",
+          "Recherche"
+        ]
+      }
+    },
+    "programmes": {
+      "type": "array",
+      "title": "Programme(s) au(x)quel(s) se réfère l'aide",
+      "description": "Si aucun programme, laisser vide.",
+      "items": {
+        "type": "string"
+      }
+    },
     "début de validité": {
       "description": "Premier jour de validité de l'offre. Date au format JJ/MM/AAAA",
       "type": "string",
@@ -81,6 +111,13 @@
       "description": "Dernier jour de validité de l'offre. Date au format JJ/MM/AAAA",
       "type": "string",
       "pattern": "^[0-3][0-9]\/[0-1][0-9]\/[0-9]{4}$"
+    },
+    "récurrence": {
+      "enum": [
+        "",
+        "Ponctuelle",
+        "Récurrente"
+      ]
     },
     "url": {
       "title": "URL de la page présentant le dispositif",
@@ -381,6 +418,7 @@
     "titre",
     "promesse",
     "description",
+    "types bénéficiaire",
     "étapes",
     "url",
     "opérateur de contact",
