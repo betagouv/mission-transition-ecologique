@@ -199,13 +199,11 @@
 
         <!-- ELIGIBILITY -->
         <ProgramAccordion
-          v-if="program && program['description longue']"
+          v-if="program && program['conditions d\'éligibilité']"
           :accordion-id="`${program.id}-eligibility`"
           :title="Translation.t('program.programAmIEligible')"
         >
-          <template #content>
-            <ProgramEligibility :program="program"></ProgramEligibility>
-          </template>
+          <ProgramEligibility :program="program"></ProgramEligibility>
         </ProgramAccordion>
 
         <!-- LONG DESCRIPTION -->
@@ -214,9 +212,7 @@
           :accordion-id="`${program.id}-long-description`"
           :title="Translation.t('program.programKnowMore')"
         >
-          <template #content>
-            <ProgramLongDescription :program="program"></ProgramLongDescription>
-          </template>
+          <ProgramLongDescription :program="program"></ProgramLongDescription>
         </ProgramAccordion>
         <hr class="fr-mb-9v fr-pb-1v" />
       </div>
