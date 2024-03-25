@@ -253,20 +253,12 @@ input[type=search]::-webkit-search-results-decoration {
   outline-style: solid;
 }
 .tee-input-large:focus {
-  outline-offset: none;
-  outline-width: none;
-  outline-color: none;
+  outline-offset: unset;
+  outline-width: unset;
+  outline-color: unset;
   outline-style: none;
 }
 
-.tee-btn-input-clear-btn {
-  background-color: var(--background-contrast-grey);
-  box-shadow: inset 0 -2px 0 0 var(--border-plain-grey);
-}
-.tee-btn-input-clear-btn:disabled {
-  background-color: var(--background-contrast-grey);
-  box-shadow: inset 0 -2px 0 0 var(--border-disabled-grey);
-}
 .tee-input-hint {
   color: #000091;
 }
