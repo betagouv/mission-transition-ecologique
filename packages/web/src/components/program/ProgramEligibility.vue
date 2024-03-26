@@ -1,5 +1,5 @@
 <template>
-  <div class="fr-grid-row fr-grid-row--gutters fr-mt-1v">
+  <div class="fr-grid-row fr-grid-row--gutters">
     <div
       v-for="partIdx in 2"
       :key="`part-${partIdx}`"
