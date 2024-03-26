@@ -5,7 +5,7 @@
   "type": "object",
   "properties": {
     "date mise à jour": {
-      "title": "Date de dernière mise à jour du schéma",
+      "title": "Date de dernière mise à jour du dispositif",
       "type": "date"
     },
     "titre": {
@@ -114,6 +114,11 @@
     },
     "url": {
       "title": "URL de la page présentant le dispositif",
+      "type": "string"
+    },
+    "identifiant interne": {
+      "title": "Identifiant chez l'opérateur principal de l'aide",
+      "description": "Identifiant unique pour l'opérateur",
       "type": "string"
     },
     "opérateur de contact": {
