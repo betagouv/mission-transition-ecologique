@@ -112,13 +112,6 @@
       "type": "string",
       "pattern": "^[0-3][0-9]\/[0-1][0-9]\/[0-9]{4}$"
     },
-    "récurrence": {
-      "enum": [
-        "",
-        "Ponctuelle",
-        "Récurrente"
-      ]
-    },
     "url": {
       "title": "URL de la page présentant le dispositif",
       "type": "string"
