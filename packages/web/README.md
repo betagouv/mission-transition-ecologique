@@ -1,10 +1,6 @@
-# <img src="./images/logos/logo-gov-aid-tree-cropped.png" height="30px"> GOV-AID-TREE
+# <img src="./images/logos/logo-gov-aid-tree-cropped.png" height="30px"> TEE-FRONTEND
 
 **Decision tree interfaces + fit user's decision with a database**
-
----
-
-## `WARNING : work in progress`
 
 ---
 
@@ -25,7 +21,11 @@ A project from the `transition-ecologique-entreprises` SE team.
 
 ## Screenshots
 
-![](./images/screenshots/screenshot-230602-a.png)
+![](./images/screenshots/screenshot-240326-a.png)
+
+---
+
+![](./images/screenshots/screenshot-240326-b.png)
 
 ---
 
@@ -68,9 +68,9 @@ The last main challenge is to give the widest possible visibility to the aids, i
 - Easy to implement / replicate in any partner's website.
 - Publish the dataset in open data.
 
-### The gov-aid-tree widget
+### The widget
 
-This project is built to respond to those challenges. We made gov-aid-tree as :
+This project is built to respond to those challenges. We made this project as :
 
 - a web component (widget) to facilitate its replication and visibility ;
 - based on a common schema for all aid programs ;
@@ -455,7 +455,7 @@ Check : https://github.com/orgs/betagouv/projects/54/views/1
 
 ### Data
 
-- [ ] Retrieve pertinent public data from the entreprise SIRET number
+- [x] Retrieve pertinent public data from the entreprise SIRET number
 - [ ] Get and update aid programs dataset
 
 ---
@@ -483,12 +483,12 @@ Check : https://github.com/orgs/betagouv/projects/54/views/1
 ### Widget parameters
 
 |   Parameter    | Status |   Type    | Default  | Definition                                        |
-| :------------: | :----: | :-------: | :------: | ------------------------------------------------- | ---------------------------------- |
+| :------------: | :----: | :-------: | :------: | ------------------------------------------------- |
 | `show-header`  |  R&D   | `boolean` |  `true`  | Show / hide header on top of the widget           |
 | `show-footer`  |  R&D   | `boolean` | `false`  | Show / hide footer on top of the widget           |
 | `show-stepper` |  R&D   | `boolean` | `false`  | Show / hide stepper on top of the widget          |
 | `show-message` |  R&D   | `boolean` | `false`  | Show / hide message on top of the widget          |
-|     `msg`      |  R&D   | `string`  |  `...`   | Locale `                                          | ` Message on the top of the widget |
+|     `msg`      |  R&D   | `string`  |  `...`   | Locale `Message on the top of the widget          |
 |     `seed`     |  R&D   | `string`  | `needs`  | Questionnaire seed question                       |
 |   `dataset`    |   x    | `string`  | `*.json` | Dataset file / url to select from to find results |
 |  `max-depth`   |   x    | `number`  |   `4`    | Maximum number of questions before results        |
