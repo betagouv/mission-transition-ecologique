@@ -6,7 +6,8 @@
   "properties": {
     "date mise à jour": {
       "title": "Date de dernière mise à jour du dispositif",
-      "type": "date"
+      "type": "string",
+      "format": "date"
     },
     "titre": {
       "title": "Titre court, nom commercial du dispositif",
