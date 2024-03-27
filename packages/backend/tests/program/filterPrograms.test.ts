@@ -7,7 +7,8 @@ import { type Result } from 'true-myth'
 import { PublicodesService } from '../../src/program/infrastructure/publicodesService'
 
 const defaultFilterPrograms = (programs: Program[], inputData: QuestionnaireData): Result<Program[], Error> => {
-  const programService = new ProgramFeatures(makeProgramsRepository(programs), mockCurrentDateService, new PublicodesService(programs))
+  PublicodesService.init(programs)
+  const programService = new ProgramFeatures(makeProgramsRepository(programs), mockCurrentDateService, PublicodesService.getInstance())
   return programService.getFilteredBy(inputData)
 }
 

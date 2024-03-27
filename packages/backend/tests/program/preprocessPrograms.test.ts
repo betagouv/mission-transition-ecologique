@@ -86,10 +86,11 @@ const testHelperPreprocessing = (testCase: PreprocessingTestCase) => {
     }
 
     const programs = [program]
+    PublicodesService.init(programs)
     const result = new ProgramFeatures(
       makeProgramsRepository(programs),
       testCurrentDateService,
-      new PublicodesService(programs)
+      PublicodesService.getInstance()
     ).getFilteredBy(questionnaireData)
 
     expectToBeOk(result)

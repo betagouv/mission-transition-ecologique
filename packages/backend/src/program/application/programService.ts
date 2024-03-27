@@ -11,9 +11,13 @@ import { PublicodesService } from '../infrastructure/publicodesService'
 export default class ProgramService {
   private _program: ProgramFeatures
 
-  constructor() {
+  public static init(): void {
+    PublicodesService.init(ProgramsJson.getInstance().getAll())
+  }
+
+  public constructor() {
     const programsService = ProgramsJson.getInstance()
-    this._program = new ProgramFeatures(programsService, currentDateService, new PublicodesService(programsService.getAll()))
+    this._program = new ProgramFeatures(programsService, currentDateService, PublicodesService.getInstance())
   }
 
   public getById(id: string): Program | undefined {

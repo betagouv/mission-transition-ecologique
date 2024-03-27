@@ -1,5 +1,4 @@
-import { Controller, Get, Path, Queries, Res, Request, Route, SuccessResponse, TsoaResponse } from 'tsoa'
-import { Request as ExpressRequest } from 'express'
+import { Controller, Get, Path, Queries, Res, Route, SuccessResponse, TsoaResponse } from 'tsoa'
 import ProgramService from '../application/programService'
 import { OpenAPISafeProgram } from './types'
 import { ErrorJSON } from '../../common/controller/jsonError'
@@ -19,10 +18,9 @@ export class ProgramsController extends Controller {
   @Get()
   public get(
     @Queries() questionnaireData: QuestionnaireData,
-    @Res() requestFailedResponse: TsoaResponse<500, ErrorJSON>,
-    @Request() request: ExpressRequest
+    @Res() requestFailedResponse: TsoaResponse<500, ErrorJSON>
   ): OpenAPISafeProgram[] | void {
-    const programService = request.app.get('programService') as ProgramService
+    const programService = new ProgramService()
     this.setStatus(200)
 
     const programsResult = programService.getFilteredPrograms(questionnaireData)

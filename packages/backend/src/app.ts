@@ -23,7 +23,7 @@ app.use('/api/docs', swaggerUi.serve, async (_req: Request, res: Response) => {
   return res.send(swaggerUi.generateHTML(await import('../generated/swagger.json')))
 })
 
-app.set('programService', new ProgramService())
+ProgramService.init()
 
 RegisterRoutes(app)
 

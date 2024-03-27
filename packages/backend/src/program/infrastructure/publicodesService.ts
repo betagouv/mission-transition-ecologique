@@ -5,10 +5,20 @@ import { ensureError } from '../../common/domain/error/errors'
 import { Program, QuestionnaireData } from '../domain/types'
 
 export class PublicodesService {
+  private static instance: PublicodesService
+
   private readonly _publicodeEngines: Record<string, Engine>
 
-  constructor(programs: Program[]) {
+  private constructor(programs: Program[]) {
     this._publicodeEngines = initializePublicodesEngineForAllPrograms(programs)
+  }
+
+  public static init(programs: Program[]): void {
+    PublicodesService.instance = new PublicodesService(programs)
+  }
+
+  public static getInstance(): PublicodesService {
+    return PublicodesService.instance
   }
 
   public evaluate(
