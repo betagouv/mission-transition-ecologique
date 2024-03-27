@@ -5,6 +5,7 @@ import type { ServerOptions } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { dsnFromString } from '@sentry/utils'
 import * as dotenv from 'dotenv'
+import sitemapPlugin from './src/utils/robots'
 
 dotenv.config()
 
@@ -34,7 +35,7 @@ const libConfig: Record<LibType, BuildOptions> = {
 }
 
 const plugins = async () => {
-  const basePlugins = [vue()]
+  const basePlugins = [vue(), sitemapPlugin()]
   if (isProd) {
     return basePlugins
   } else {
