@@ -1,6 +1,6 @@
 import Ajv from 'ajv/dist/2020'
 import { ValidateFunction } from 'ajv'
-import programSchema from '../schemas/program-data-schema.json'
+import programSchema from '../schemas/program-with-publicodes-schema.json'
 import regionSchema from '../schemas/region-data-schema.json'
 import regionMapping from '../references/regionMapping.json'
 import { ensureError } from '@tee/backend/src/common/domain/error/errors'
