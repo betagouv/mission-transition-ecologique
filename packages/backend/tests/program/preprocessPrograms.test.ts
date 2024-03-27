@@ -7,7 +7,7 @@ import { makeProgramHelper, mockCurrentDateService, makeProgramsRepository } fro
 import { FILTERING_RULE_NAME } from '../../src/program/domain/filterPrograms'
 import { expectToBeOk } from '../testing'
 import ProgramFeatures from '../../src/program/domain/programFeatures'
-import { publicodesService } from '../../src/program/infrastructure/publicodes'
+import { PublicodesService } from '../../src/program/infrastructure/publicodesService'
 
 const makeProgram = (rules: object) => makeProgramHelper({ rules: { ...{ [FILTERING_RULE_NAME]: { valeur: 'oui' } }, ...rules } })
 
@@ -85,9 +85,13 @@ const testHelperPreprocessing = (testCase: PreprocessingTestCase) => {
       testCurrentDateService = { get: () => testCase.currentDate }
     }
 
-    const result = new ProgramFeatures(makeProgramsRepository([program]), testCurrentDateService, publicodesService).getFilteredBy(
-      questionnaireData
-    )
+    const programs = [program]
+    PublicodesService.init(programs)
+    const result = new ProgramFeatures(
+      makeProgramsRepository(programs),
+      testCurrentDateService,
+      PublicodesService.getInstance()
+    ).getFilteredBy(questionnaireData)
 
     expectToBeOk(result)
 

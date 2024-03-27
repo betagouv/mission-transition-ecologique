@@ -6,13 +6,18 @@ import { QuestionnaireData } from '../domain/types'
 
 import ProgramsJson from '../infrastructure/programsJson'
 import { currentDateService } from '../infrastructure/currentDate'
-import { publicodesService } from '../infrastructure/publicodes'
+import { PublicodesService } from '../infrastructure/publicodesService'
 
 export default class ProgramService {
   private _program: ProgramFeatures
 
-  constructor() {
-    this._program = new ProgramFeatures(ProgramsJson.getInstance(), currentDateService, publicodesService)
+  public static init(): void {
+    PublicodesService.init(ProgramsJson.getInstance().getAll())
+  }
+
+  public constructor() {
+    const programsService = ProgramsJson.getInstance()
+    this._program = new ProgramFeatures(programsService, currentDateService, PublicodesService.getInstance())
   }
 
   public getById(id: string): Program | undefined {

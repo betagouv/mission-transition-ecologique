@@ -20,9 +20,10 @@ export class ProgramsController extends Controller {
     @Queries() questionnaireData: QuestionnaireData,
     @Res() requestFailedResponse: TsoaResponse<500, ErrorJSON>
   ): OpenAPISafeProgram[] | void {
+    const programService = new ProgramService()
     this.setStatus(200)
 
-    const programsResult = new ProgramService().getFilteredPrograms(questionnaireData)
+    const programsResult = programService.getFilteredPrograms(questionnaireData)
 
     if (programsResult.isErr) {
       this.throwErrorResponse(programsResult, requestFailedResponse)
