@@ -8,7 +8,7 @@ describe('BasicTest', () => {
   it('renders properly', () => {
     const wrapper = mount(WebApp, {
       props: {
-        seed: TrackId.Needs,
+        seed: TrackId.Goals,
         msg: 'Hello'
       }
     })

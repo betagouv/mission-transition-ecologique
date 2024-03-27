@@ -1,12 +1,12 @@
-import { type ProgramData } from '@tee/web/src/types'
-import { QuestionnaireRoute } from '@tee/common/src/questionnaire/types'
-import { type PublicodesInputData, PublicodesKeys, PublicodesQuestionnaireRoute, type QuestionnaireData } from './types'
+import { QuestionnaireRoute } from '../../../../common/src/questionnaire/types'
+import { type QuestionnaireData, Program } from '../domain/types'
+import { type PublicodesInputData, PublicodesKeys, PublicodesQuestionnaireRoute } from './types'
 
 /** preprocesses the data gathered from the questionnaire into variables
  * needed by publicodes */
 export const preprocessInputForPublicodes = (
   questionnaireData: QuestionnaireData,
-  programData: ProgramData,
+  programData: Program,
   currentDate: string
 ): PublicodesInputData => {
   const publicodesData: PublicodesInputData = {

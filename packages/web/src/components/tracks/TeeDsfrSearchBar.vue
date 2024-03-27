@@ -4,7 +4,7 @@
     v-if="debugStore.is"
     class="vue-debug"
   >
-    <h5>DEBUG - TeeTrackInput</h5>
+    <h5>DEBUG - TeeDsfrSearchBar</h5>
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
       <div class="fr-col-3">
         <h6 class="fr-mb-1v">
@@ -22,7 +22,7 @@
     </div>
   </div>
 
-  <!-- INPUT -->
+  <!-- INPUT FORM -->
   <label
     v-if="option.label"
     class="fr-label fr-mb-2v"
@@ -30,11 +30,8 @@
   >
     {{ option.label[Translation.lang] }}
   </label>
-  <div
-    id="header-search"
-    class="fr-search-bar"
-    role="search"
-  >
+  <div class="tee-form-input-large">
+    <!-- TEXT INPUT -->
     <input
       :id="`input-${option.id}`"
       v-model="inputValue"
@@ -45,16 +42,23 @@
       type="search"
       @keyup.enter="processInput"
     />
+    <!-- CLEAR BTN -->
     <button
-      class="fr-btn tee-btn-input-large"
+      v-if="inputValue"
+      class="fr-btn fr-icon-close-line fr-btn--tertiary-no-outline tee-btn-input-large tee-btn-input-clear-btn"
+      :disabled="isLoading"
+      @click="clearInput"
+    ></button>
+    <!-- SEARCH BTN -->
+    <button
+      class="fr-btn tee-btn-input-large fr-icon-search-line"
       :disabled="isLoading"
       :title="Translation.t('input.search')"
       @click="processInput"
-    >
-      <!-- {{ Translation.t('input.search') }} -->
-    </button>
+    ></button>
   </div>
-  <!-- hint -->
+
+  <!-- HINT -->
   <div
     v-if="option.hint && !requestResponses.length"
     class="tee-input-hint fr-mt-4v"
@@ -125,7 +129,7 @@
       :key="`resp-input-${i}`"
       :class="`fr-card fr-card-result fr-card--no-arrow ${isSelected(resp) ? 'fr-card--shadow' : ''}`"
       :style="`border: ${isSelected(resp) ? 'solid thin #000091;' : 'solid thin #C4C4C4'};`"
-      @click="selectItem(resp)"
+      @click="!disableDeselect && selectItem(resp)"
     >
       <div class="fr-card__body">
         <div class="fr-card__content fr-py-4v fr-px-4v">
@@ -189,7 +193,7 @@
         v-if="debugStore.is"
         class="vue-debug"
       >
-        <h5>DEBUG - TeeTrackInput</h5>
+        <h5>DEBUG - TeeDsfrSearchBar</h5>
         <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
           <div class="fr-col-6">
             <h6 class="fr-mb-1v">resp.data :</h6>
@@ -238,7 +242,7 @@
     v-if="debugStore.is && selection"
     class="vue-debug"
   >
-    <h5>DEBUG - TeeTrackInput</h5>
+    <h5>DEBUG - TeeDsfrSearchBar</h5>
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
       <div class="fr-col-6">
         <h6 class="fr-mb-1v">selection.data :</h6>
@@ -258,7 +262,7 @@
 
 <script setup lang="ts">
 // CONSOLE LOG TEMPLATE
-// console.log(`TeeTrackInput > FUNCTION_NAME > MSG_OR_VALUE :`)
+// console.log(`TeeDsfrSearchBar > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import { onBeforeMount, ref, toRaw } from 'vue'
 import { tracksStore } from '../../stores/tracks'
@@ -286,6 +290,7 @@ const requestResponses = ref<ReqResp[]>([])
 const requestErrors = ref<ReqError[]>([])
 
 const selection = ref<any>()
+const disableDeselect = ref<boolean>(false)
 const hasSelection = ref<boolean>(false)
 
 const emit = defineEmits(['updateSelection', 'goToNextTrack'])
@@ -309,6 +314,11 @@ const isSelected = (resp: any) => {
 }
 
 // functions
+const clearInput = () => {
+  inputValue.value = undefined
+  resetSelection()
+}
+
 const resetSelection = () => {
   requestResponses.value = []
   requestErrors.value = []
@@ -358,6 +368,12 @@ const processInput = async () => {
       } else {
         errors.push(resp)
       }
+    }
+
+    // if only one response in list select it
+    if (responses.length === 1) {
+      selectItem(responses[0])
+      disableDeselect.value = true
     }
   }
 

@@ -5,9 +5,7 @@ import { computed, ref } from 'vue'
 import { defineStore } from 'pinia'
 
 import type { ProgramData, TrackId, TrackOptions, UsedTrack } from '@/types/index'
-import { filterPrograms as filterWithPublicodes, sortPrograms } from '@tee/backend/src/program/application/sortAndFilterPrograms'
 import type { QuestionnaireData } from '@tee/backend/src/program/domain/types'
-import { QuestionnaireRoute } from '@tee/common/src/questionnaire/types'
 
 export const programsStore = defineStore('programs', () => {
   const programs = ref<ProgramData[]>()
@@ -24,7 +22,7 @@ export const programsStore = defineStore('programs', () => {
     })
   })
 
-  function filterPrograms(tracksResults: UsedTrack[]) {
+  async function filterPrograms(tracksResults: UsedTrack[]) {
     // retrieve and organize user's conditions
     const conditions: { [k: string]: any } = {}
     tracksResults.forEach((trackResult) => {
@@ -37,16 +35,9 @@ export const programsStore = defineStore('programs', () => {
       })
     })
 
-    // filter out programs
-    if (progs.value) {
-      const progsFilteredResult = filterWithPublicodes(progs.value, conditions as QuestionnaireData)
-
-      if (progsFilteredResult.isErr) {
-        throw new Error(progsFilteredResult.error.message)
-      }
-
-      return sortPrograms(progsFilteredResult.value, conditions['questionnaire_route'] as QuestionnaireRoute)
-    }
+    // get filtered programs
+    const progsFilteredResult = await fetchFilteredPrograms(conditions)
+    return progsFilteredResult
   }
 
   function setDataset(dataset: ProgramData[]) {
@@ -79,3 +70,10 @@ export const programsStore = defineStore('programs', () => {
     getProgramById
   }
 })
+
+async function fetchFilteredPrograms(questionnaireData: QuestionnaireData): Promise<ProgramData[]> {
+  const url: string = '/api/programs?' + new URLSearchParams(questionnaireData).toString()
+  const response = await fetch(url)
+  const programs = (await response.json()) as ProgramData[]
+  return programs
+}

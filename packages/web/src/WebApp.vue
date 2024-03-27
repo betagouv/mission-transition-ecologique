@@ -62,5 +62,5 @@ onMounted(async () => {
 @import '~@gouvminint/vue-dsfr/dist/vue-dsfr.css';
 @import '@public/css/custom.css';
 @import '~@gouvfr/dsfr/dist/utility/icons/icons.min.css';
-@import './assets/main.css';
+@import './assets/main';
 </style>

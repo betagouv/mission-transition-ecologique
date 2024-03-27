@@ -1,8 +1,8 @@
 import { sortPrograms } from '@tee/backend/src/program/domain/sortPrograms'
-import { type ProgramData } from '@tee/web/src/types'
-import { ProgramAidType } from '@tee/web/src/types'
 import { QuestionnaireRoute } from '@tee/common/src/questionnaire/types'
 import { makeProgramHelper } from './testing'
+import { Program } from '../../src/program/domain/types'
+import { ProgramAidType } from '@tee/common/src/program/types'
 
 const makeProgram = (id: string, nature: ProgramAidType, cost: string = '') =>
   makeProgramHelper({
@@ -18,7 +18,7 @@ EXPECT that the programs respect a set of given rules
 `, () => {
   type TestCase = {
     name: string
-    programs: ProgramData[]
+    programs: Program[]
     expectedIdOrder: string[]
     questionnaireRoute?: QuestionnaireRoute
   }

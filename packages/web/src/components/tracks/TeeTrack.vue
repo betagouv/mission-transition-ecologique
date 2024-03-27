@@ -336,7 +336,7 @@
             v-if="renderAs === trackComponents.Input && isTrackOptionsInput(option)"
             style="height: 100%"
           >
-            <TeeTrackInput
+            <TeeDsfrSearchBar
               :track-id="usedTrack.id"
               :option="option"
               @update-selection="updateSelectionFromSignal($event, idx)"
@@ -346,14 +346,21 @@
 
           <!-- AS RESULT -->
           <div v-if="isTrackResults">
-            <TeeResults
-              :track-id="usedTrack.id"
-              :track-config="track?.config"
-              :track-options="track?.options"
-              :track-form="track?.form"
-              :tracks-results="tracks.usedTracks"
-              :track-element="trackElement"
-            />
+            <Suspense>
+              <template #default>
+                <TeeResults
+                  :track-id="usedTrack.id"
+                  :track-config="track?.config"
+                  :track-options="track?.options"
+                  :track-form="track?.form"
+                  :tracks-results="tracks.usedTracks"
+                  :track-element="trackElement"
+                />
+              </template>
+              <template #fallback>
+                <span>Chargement...</span>
+              </template>
+            </Suspense>
           </div>
         </div>
       </div>
@@ -423,7 +430,7 @@ import type { ColsOptions, NextTrackRuleSet, Track, TrackOptionsUnion, UsedTrack
 import { isTrackOptionsInput, TrackComponents } from '@/types'
 import { remapItem, scrollToTop } from '@/utils/helpers'
 import { CheckNextTrackRules } from '@/utils/conditions'
-import TeeTrackInput from './TeeTrackInput.vue'
+import TeeDsfrSearchBar from './TeeDsfrSearchBar.vue'
 import TeeTrackSelect from './TeeTrackSelect.vue'
 import TeeTrackButtonInput from './TeeTrackButtonInput.vue'
 import TeeResults from '../results/TeeResults.vue'

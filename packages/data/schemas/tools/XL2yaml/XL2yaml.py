@@ -22,8 +22,6 @@ OBJECTIF = "entreprise . a un objectif ciblé"
 SECTEUR = "entreprise . est dans un secteur d'activité ciblé"
 ZONE_GEO = "entreprise . est dans une zone géographique éligible"
 EFFECTIF = "entreprise . a un effectif éligible"
-MODE_TRANSPORT = "entreprise . utilise un mode de transport ciblé"
-POSSESSION_VEHICULES = "entreprise . possède des véhicules motorisés"
 PARCOURS_OBJ_PRECIS = "questionnaire . parcours = objectif précis"
 PROPRIO = "entreprise . est propriétaire de ses locaux"
 
@@ -82,7 +80,7 @@ def assembleProgramYAML(rawData, colNumbersByName, id):
     if len(autresOp) >= 1:
         set("autres opérateurs", autresOp)
 
-    set("url", get("URL"))
+    set("url", get("🔗 URL externe"))
     set("nature de l'aide", get("💸 Nature de l'aide").lower())
     nat = prog["nature de l'aide"]
     if nat == "financement":
@@ -156,15 +154,6 @@ def assembleProgramYAML(rawData, colNumbersByName, id):
         pc[ZONE_GEO] = reg
         eligibilite.append(ZONE_GEO)
 
-    mod = pc_mode_transport(get)
-    if mod:
-        pc[MODE_TRANSPORT] = mod
-        cible.append(remove_namespace(MODE_TRANSPORT))
-
-    veh = pc_possede_vehicule(get)
-    if veh:
-        cible.append(remove_namespace(POSSESSION_VEHICULES))
-
     p360 = pc_onlyPrecise(get)
     if p360:
         cible.append(PARCOURS_OBJ_PRECIS)
@@ -182,21 +171,25 @@ def assembleProgramYAML(rawData, colNumbersByName, id):
             **applicability,
             ALL: eligibilite,
         }
-    else:
+    elif applicability:
         eligibilite = {
             **applicability,
             "valeur": "oui",
         }
 
-    cible = [remove_namespace(ELIGIBLE)] + cible
-
     publicodes_obj = {}
+
+    if eligibilite:
+        cible = [remove_namespace(ELIGIBLE)] + cible
+
     publicodes_obj[CIBLE] = {ALL: cible}
-    publicodes_obj[ELIGIBLE] = eligibilite
+
+    if eligibilite:
+        publicodes_obj[ELIGIBLE] = eligibilite
 
     publicodes_obj |= pc
 
-    set("publicodes", publicodes_obj, overwrite=False)
+    set("publicodes", publicodes_obj, overwrite=True)
 
     return convertToYaml(prog)
 
@@ -430,28 +423,6 @@ def pc_objPrioritaire(get):
             if keep
         ]
     }
-
-
-def pc_mode_transport(get):
-    modes = csv_to_list(get("Mode trajet domicile-travail"))
-
-    if len(modes) == 0:
-        return None
-
-    return {
-        ANY: [
-            f"mode de transport domicile-travail . est {mode.lower()}" for mode in modes
-        ]
-    }
-
-
-def pc_possede_vehicule(get):
-    possede_vehicule = valid(get("Véhicule motorisé"))
-
-    if not possede_vehicule:
-        return None
-
-    return True
 
 
 def pc_regions(get):
