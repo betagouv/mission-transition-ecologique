@@ -10,7 +10,7 @@ import { createFolderIfNotExists } from './helpers'
 const generateProgramType = (): void => {
   console.log('💥 generating typescript Program type from the json schema specification.\n')
 
-  const DEFAULT_SCHEMA_PATH = '../schemas/program-data-schema.json'
+  const DEFAULT_SCHEMA_PATH = '../schemas/program-with-publicodes-schema.json'
   const relativeSchemaPath: string = process.env.SCHEMA_PATH || DEFAULT_SCHEMA_PATH
 
   const schemaPath: string = path.join(__dirname, relativeSchemaPath)
