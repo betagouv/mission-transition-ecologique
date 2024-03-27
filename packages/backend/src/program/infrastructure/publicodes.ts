@@ -2,7 +2,6 @@ import Engine from 'publicodes'
 import { Result } from 'true-myth'
 import type { Program, QuestionnaireData } from '../domain/types'
 import type { PublicodesInputData } from './types'
-import { ensureError } from '../../common/domain/error/errors'
 import { filterObject } from '../../common/objects'
 import { preprocessInputForPublicodes } from './preprocessProgramsPublicodes'
 
@@ -13,22 +12,13 @@ import { preprocessInputForPublicodes } from './preprocessProgramsPublicodes'
  *   `undefined` if the input data does not allow to fully evaluate the rule) or
  *   the Error if any.
  */
-const evaluateRule = (
+export const evaluateRule = (
   rule: string,
+  engine: Engine,
   programData: Program,
   questionnaireData: QuestionnaireData,
   currentDate: string
 ): Result<boolean | undefined, Error> => {
-  const rules = programData.publicodes
-
-  let engine: Engine
-  try {
-    engine = new Engine(rules as object)
-  } catch (e) {
-    const err = ensureError(e)
-    return Result.err(err)
-  }
-
   const preprocessedData = preprocessInputForPublicodes(questionnaireData, programData, currentDate)
 
   const narrowedData = narrowInput(preprocessedData, engine)
@@ -42,10 +32,6 @@ const evaluateRule = (
     return Result.err(new Error(`"${rule}" is expected to be a boolean or undefined`))
   }
   return Result.ok(eligibility)
-}
-
-export const publicodesService = {
-  evaluate: evaluateRule
 }
 
 /** Narrows input data to keep only keys expected inside the rules

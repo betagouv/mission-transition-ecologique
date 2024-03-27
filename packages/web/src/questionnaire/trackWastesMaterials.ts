@@ -8,6 +8,15 @@ export const wastesMaterials: Track = {
   label: {
     fr: 'Avez-vous pour objectif de réduire vos pertes de matières premières ?'
   },
+  callout: {
+    header: { fr: 'Thématique' },
+    headerStyle: 'color: #3A3A3A;',
+    bgColor: '#FCA081',
+    title: { fr: 'Votre gestion des déchets' },
+    titleStyle: 'color: #000091;',
+    bigTitle: true,
+    imageLeft: 'images/thema/thema-dechets.svg'
+  },
   interface: {
     component: TrackComponent.Buttons
   },

@@ -1,13 +1,14 @@
 import { type Rules, makeProgramHelper, mockCurrentDateService, makeProgramsRepository } from './testing'
 import { FILTERING_RULE_NAME } from '../../src/program/domain/filterPrograms'
 import type { Program, QuestionnaireData } from '../../src/program/domain/types'
-import { expectToBeErr, expectToBeOk } from '../testing'
+import { expectToBeOk } from '../testing'
 import ProgramFeatures from '../../src/program/domain/programFeatures'
 import { type Result } from 'true-myth'
-import { publicodesService } from '../../src/program/infrastructure/publicodes'
+import { PublicodesService } from '../../src/program/infrastructure/publicodesService'
 
 const defaultFilterPrograms = (programs: Program[], inputData: QuestionnaireData): Result<Program[], Error> => {
-  const programService = new ProgramFeatures(makeProgramsRepository(programs), mockCurrentDateService, publicodesService)
+  PublicodesService.init(programs)
+  const programService = new ProgramFeatures(makeProgramsRepository(programs), mockCurrentDateService, PublicodesService.getInstance())
   return programService.getFilteredBy(inputData)
 }
 
@@ -17,7 +18,12 @@ const rulesBoilerplate = {
   [FILTERING_RULE_NAME]: 'entreprise . effectif > 0'
 }
 
-const makeProgram = (rules: Rules) => makeProgramHelper({ rules: rules })
+let id: number = 0
+
+const makeProgram = (rules: Rules) => {
+  id = id + 1
+  return makeProgramHelper({ id: 'id' + id.toString(), rules: rules })
+}
 
 // Helper function that performs type narrowing.
 // Not automatic in jest, see https://github.com/jestjs/jest/issues/10094
@@ -175,11 +181,9 @@ error`, () => {
 describe(`
   GIVEN  a rule
   WHEN   the rule is not valid Publicodes
-  EXPECT an explicit error
+  EXPECT the creation of ProgramFeature to fail with a thrown error
 `, () => {
   test('invalid rule', () => {
-    const result = defaultFilterPrograms([makeProgram({ [FILTERING_RULE_NAME]: 'invalid Publicode expression' })], {})
-
-    expectToBeErr(result)
+    expect(() => defaultFilterPrograms([makeProgram({ [FILTERING_RULE_NAME]: 'invalid Publicode expression' })], {})).toThrow()
   })
 })

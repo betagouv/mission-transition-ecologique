@@ -18,6 +18,15 @@ export const strategyAuditsSelect: Track = {
   category: 'myStrategy',
   title: { fr: 'Quels audits' },
   label: { fr: 'Le ou lesquels ?' },
+  callout: {
+    header: { fr: 'Thématique' },
+    headerStyle: 'color: white;',
+    bgColor: '#646EFA',
+    title: { fr: 'Votre stratégie environnementale' },
+    titleStyle: 'color: white;',
+    bigTitle: true,
+    imageLeft: 'images/thema/thema-strategie.svg'
+  },
   interface: {
     component: TrackComponent.Buttons
   },
