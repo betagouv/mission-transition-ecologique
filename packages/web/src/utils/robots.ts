@@ -1,8 +1,7 @@
 import dotenv from 'dotenv'
-import type { Plugin } from 'vite'
 import { readFileSync, writeFileSync } from 'fs'
 import { resolve } from 'path'
-import ProgramServiceJS from '@tee/backend/build/backend/src/program/application/programService'
+import ProgramService from '@tee/backend/src/program/application/programService'
 import type { Program } from '@tee/data/src/type/program'
 
 enum ChangeFreq {
@@ -87,7 +86,6 @@ function generateSitemapXml(): string {
     .filter((element) => element !== null)
     .join('\n')
 
-  const ProgramService = ProgramServiceJS.default
   ProgramService.init()
   const service = new ProgramService()
 
@@ -116,7 +114,7 @@ function generateSitemapXml(): string {
 function generateSitemap() {
   const sitemap: string = generateSitemapXml()
   try {
-    const inFilePath = resolve(process.cwd(), 'public', 'sitemap.xml')
+    const inFilePath = resolve(process.cwd(), '..', 'web', 'public', 'sitemap.xml')
     const fileContent = readFileSync(inFilePath, 'utf8')
     const newContent = fileContent.replace(/__SITEMAP_PLACEHOLDER_generation_in_utils_robotsts__/g, sitemap)
     const outFilePath = resolve(process.cwd(), 'dist', 'sitemap.xml')
@@ -126,16 +124,5 @@ function generateSitemap() {
   }
 }
 
-function sitemapPlugin(): Plugin[] {
-  return [
-    {
-      name: 'vite-plugin-sitemap',
-      closeBundle() {
-        generateRobots()
-        generateSitemap()
-      }
-    }
-  ]
-}
-
-export default sitemapPlugin
+generateRobots()
+generateSitemap()
