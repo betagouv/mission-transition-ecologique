@@ -25,7 +25,7 @@ const requestAllBrevoContacts = async () => {
 
   apiInstance.setApiKey(SibApiV3Sdk.AccountApiApiKeys.apiKey, token)
 
-  const limit = 50
+  const limit = 150
   const offset = 155
   const listIds = 2
 
@@ -117,10 +117,31 @@ const updateProgramId = (id) => {
   switch (id) {
     case 'formations-actions-baisse-les-watts':
       return 'baisse-les-watts'
+
     case 'etude-photovoltaique':
+      return 'etude-photovoltaique-cci'
+    case 'etude-photovoltaique-2':
       return 'etude-photovoltaique-ademe'
+
+    case 'visite-energie':
+      return 'visite-energie-cci'
+    case 'visite-energie-2':
+      return 'visite-energie-cma'
+
     case 'formations-rse':
       return 'formations-tee'
+    case 'audits-cle-verte':
+      return 'audits-clef-verte'
+
+    case 'etudes-ademe-photovoltaique':
+      return 'investissement-solaire-thermique'
+
+    case 'diag-ecoconception-2':
+      return 'diag-ecoconception'
+
+    case 'diag-decarbon-action-2':
+      return 'diag-decarbon-action'
+
     default:
       return id
   }
