@@ -2,6 +2,9 @@ import type { Plugin } from 'vite'
 import dotenv from 'dotenv'
 import { readFileSync, writeFileSync } from 'fs'
 import { resolve } from 'path'
+import path from 'path'
+import fs from 'fs'
+import { promisify } from 'util'
 
 enum ChangeFreq {
   Hourly = 'hourly',
@@ -52,14 +55,57 @@ function generateOnePathXml(path: string, changefreq: ChangeFreq, priority: Prio
   const VITE_DEPLOY_URL = process.env.VITE_DEPLOY_URL
 
   return `  <url>
-    <loc>${VITE_DEPLOY_URL + path}</loc>
+    <loc>${encodeURIComponent(VITE_DEPLOY_URL + path)}</loc>
     <lastmod>${lastModified}</lastmod>
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
   </url>`
 }
 
-function generateSitemapXml(): string {
+const readdir = promisify(fs.readdir)
+const readFile = promisify(fs.readFile)
+
+async function processProgramDirectory(directoryPath: string): Promise<string[]> {
+  const filesToInclude: string[] = []
+
+  try {
+    const filenames = await readdir(directoryPath)
+
+    for (const filename of filenames) {
+      const filePath: string = path.join(directoryPath, filename)
+      const fileContent = await readFile(filePath, 'utf-8')
+
+      if (hasValidExpiryDate(fileContent)) {
+        const expiryDate = extractExpiryDate(fileContent)
+        if (expiryDate > new Date()) {
+          filesToInclude.push(filename)
+        }
+      } else {
+        filesToInclude.push(filename)
+      }
+    }
+  } catch (error) {
+    console.error('Error reading directory in sitemap plugin:', error)
+  }
+
+  return filesToInclude
+}
+
+function hasValidExpiryDate(fileContent: string): boolean {
+  return /fin de validité: \d{2}\/\d{2}\/\d{4}/.test(fileContent)
+}
+
+function extractExpiryDate(fileContent: string): Date {
+  const match = /fin de validité: (\d{2}\/\d{2}\/\d{4})/.exec(fileContent)
+  if (match) {
+    const [, dateString] = match
+    const [day, month, year] = dateString.split('/').map(Number)
+    return new Date(year, month - 1, day) // month - 1 because months are 0-indexed in JavaScript
+  }
+  throw new Error('Expiry date not found')
+}
+
+async function generateSitemapXml(): Promise<string> {
   const staticRoutesFilePath = resolve(process.cwd(), 'src', 'router', 'routes.ts')
   const staticRoutesContent = readFileSync(staticRoutesFilePath, 'utf8')
   const regexMatches: RegExpMatchArray | null = staticRoutesContent.match(/path: '(.*)'/g)
@@ -81,16 +127,19 @@ function generateSitemapXml(): string {
     .filter((element) => element !== null)
     .join('\n')
 
-  const programElements = 'test'
-
+  const programList: string[] = await processProgramDirectory('../data/programs')
+  const programElements = programList
+    .map((path) => {
+      return generateOnePathXml('/aides-entreprise/' + path.slice(0, -5), ChangeFreq.Monthly, Priority.Mid)
+    })
+    .join('\n')
   return `<urlset>
   ${urlElements + '\n' + programElements}
 </urlset>`
 }
 
-function generateSitemap() {
-  const sitemap = generateSitemapXml()
-
+async function generateSitemap() {
+  const sitemap: string = await generateSitemapXml()
   try {
     const inFilePath = resolve(process.cwd(), 'public', 'sitemap.xml')
     const fileContent = readFileSync(inFilePath, 'utf8')
@@ -109,6 +158,10 @@ function sitemapPlugin(): Plugin[] {
       closeBundle() {
         generateRobots()
         generateSitemap()
+          .then(() => {})
+          .catch((error) => {
+            console.error('Error in the sitemap plugin:', error)
+          })
       }
     }
   ]
