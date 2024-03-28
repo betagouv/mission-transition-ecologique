@@ -40,7 +40,6 @@ export default class OpportunityFeatures {
     const opportunityResult = await this._opportunityRepository.create(contactIdResult.value.id, opportunity)
 
     if (!opportunityResult.isErr) {
-      console.log('opportunityResult > ok')
       this._sendReturnReceipt(opportunity, program)
       this._createOpportunityOnOperator(opportunityResult.value, opportunity, program)
     }
@@ -77,7 +76,6 @@ export default class OpportunityFeatures {
   }
 
   private _sendReturnReceipt(opportunity: Opportunity, program: Program | undefined) {
-    console.log('program', program)
     if (program) {
       void this._mailRepository.sendReturnReceipt(opportunity, program).then((mailResult) => {
         if (mailResult.isErr) {

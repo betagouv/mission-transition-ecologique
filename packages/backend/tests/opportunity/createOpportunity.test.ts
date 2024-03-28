@@ -8,13 +8,11 @@ import {
   OpportunityUpdateAttributes
 } from '../../src/opportunity/domain/types'
 import OpportunityFeatures from '../../src/opportunity/domain/opportunityFeatures'
-import ProgramService from '../../src/program/application/programService'
 import { expectToBeErr, expectToBeOk } from '../testing'
 import { fakeOpportunity } from './testing'
 import type { ContactRepository, OpportunityRepository } from '../../src/opportunity/domain/spi'
 import { ProgramRepository } from '../../src/program/domain/spi'
-
-ProgramService.init()
+import { Program } from '@tee/data/src/type/program'
 
 let addContactCalled: boolean
 let addOpportunityCalled: boolean
@@ -33,7 +31,6 @@ const dummyAddContact = (_contact: ContactDetails, _optIn: true): Promise<Result
 
 const dummyMailRepository: MailRepository = {
   sendReturnReceipt: async () => {
-    console.log('emailReceiptSent')
     emailReceiptSent = true
     return Promise.resolve(Result.ok(undefined))
   }
@@ -59,7 +56,7 @@ const makeCreateOpportunityFun = (contactRepository: ContactRepository, opportun
 
 const dummyProgramRepository: ProgramRepository = {
   getAll: () => [],
-  getById: (_id: string) => undefined
+  getById: (_id: string) => ({}) as Program
 }
 
 describe(`
