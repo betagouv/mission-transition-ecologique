@@ -19,12 +19,28 @@ export default class BrevoMail {
     opportunity: Opportunity,
     program: ProgramType
   ): Promise<Result<void, Error>> => {
+    try {
+      await this._api.sendTransacEmail(this._email(opportunity, program))
+
+      return Result.ok(undefined)
+    } catch (error: unknown) {
+      return Result.err(error as Error)
+    }
+  }
+
+  private _email(opportunity: Opportunity, program: ProgramType) {
     const email = new SendSmtpEmail()
 
     email.templateId = this._templateReceipt
     email.sender = { id: Config.BREVO_SENDER_ID }
     email.to = [{ email: opportunity.email, name: this._getFullName(opportunity) }]
-    email.params = {
+    email.params = this._params(opportunity, program)
+
+    return email
+  }
+
+  private _params(opportunity: Opportunity, program: ProgramType) {
+    return {
       programName: program.titre,
       prefixedProgramName: Program.getPrefixedProgramName(program),
       programLink: opportunity.programUrl,
@@ -36,14 +52,6 @@ export default class BrevoMail {
       phone: opportunity.phoneNumber,
       siret: opportunity.companySiret,
       date: new Date().toLocaleDateString('fr-FR', { year: 'numeric', month: 'numeric', day: 'numeric' })
-    }
-
-    try {
-      await this._api.sendTransacEmail(email)
-
-      return Result.ok(undefined)
-    } catch (error: unknown) {
-      return Result.err(error as Error)
     }
   }
 
