@@ -12,7 +12,6 @@ export default class BrevoMail {
 
   constructor() {
     this._api.setApiKey(TransactionalEmailsApiApiKeys.apiKey, Config.BREVO_API_TOKEN)
-    this._setHeaders()
   }
 
   sendReturnReceipt: MailRepository['sendReturnReceipt'] = async (
@@ -35,6 +34,8 @@ export default class BrevoMail {
     email.sender = { id: Config.BREVO_SENDER_ID }
     email.to = [{ email: opportunity.email, name: this._getFullName(opportunity) }]
     email.params = this._params(opportunity, program)
+
+    this._setHeaders(email)
 
     return email
   }
@@ -59,9 +60,9 @@ export default class BrevoMail {
     return `${opportunity.firstName} ${opportunity.lastName}`
   }
 
-  private _setHeaders() {
+  private _setHeaders(email: SendSmtpEmail) {
     if (Config.BREVO_SANDBOX) {
-      this._api.defaultHeaders = { 'X-Sib-Sandbox': 'drop' }
+      email.headers = { 'X-Sib-Sandbox': 'drop' }
     }
   }
 }
