@@ -106,11 +106,9 @@ function extractExpiryDate(fileContent: string): Date {
 }
 
 import ProgramServiceJS from '@tee/backend/build/backend/src/program/application/programService'
-async function generateSitemapXml(): Promise<string> {
-  const ProgramService = ProgramServiceJS.default
-  ProgramService.init()
-  const service = new ProgramService()
+import type { Program } from '@tee/data/src/type/program'
 
+async function generateSitemapXml(): Promise<string> {
   const staticRoutesFilePath = resolve(process.cwd(), 'src', 'router', 'routes.ts')
   const staticRoutesContent = readFileSync(staticRoutesFilePath, 'utf8')
   const regexMatches: RegExpMatchArray | null = staticRoutesContent.match(/path: '(.*)'/g)
@@ -132,12 +130,23 @@ async function generateSitemapXml(): Promise<string> {
     .filter((element) => element !== null)
     .join('\n')
 
-  const programList: string[] = await processProgramDirectory('../data/programs')
-  const programElements = programList
-    .map((path) => {
-      return generateOnePathXml('/aides-entreprise/' + path.slice(0, -5), ChangeFreq.Monthly, Priority.Mid)
+  const ProgramService = ProgramServiceJS.default
+  ProgramService.init()
+  const service = new ProgramService()
+
+  const allProgramsIds = service.getAll().map((program: Program) => program.id)
+  const activeProgramsIds = service.getFilteredBy({}).map((program: Program) => program.id)
+
+  const programElements = allProgramsIds
+    .map((id: string) => {
+      if (id in activeProgramsIds) {
+        return generateOnePathXml('/aides-entreprise/' + id, ChangeFreq.Monthly, Priority.Mid)
+      } else {
+        return generateOnePathXml('/aides-entreprise/' + id, ChangeFreq.Monthly, Priority.Lowest)
+      }
     })
     .join('\n')
+
   return `<urlset>
   ${urlElements + '\n' + programElements}
 </urlset>`

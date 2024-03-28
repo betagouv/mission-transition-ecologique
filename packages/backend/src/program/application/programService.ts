@@ -27,4 +27,8 @@ export default class ProgramService {
   public getFilteredPrograms(questionnaireData: QuestionnaireData): Result<Program[], Error> {
     return this._program.getFilteredBy(questionnaireData)
   }
+
+  public getAll(): Program[] {
+    return this._program.getAll()
+  }
 }

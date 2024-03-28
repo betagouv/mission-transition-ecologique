@@ -36,4 +36,9 @@ export default class ProgramFeatures {
     }
     return filteredPrograms
   }
+
+  public getAll(): Program[] {
+    return this._programRepository.getAll()
+  }
+
 }
