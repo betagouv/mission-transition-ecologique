@@ -34,7 +34,8 @@ export default class BrevoMail {
       firstname: opportunity.firstName,
       lastname: opportunity.lastName,
       phone: opportunity.phoneNumber,
-      siret: opportunity.companySiret
+      siret: opportunity.companySiret,
+      date: new Date().toLocaleDateString('fr-FR', { year: 'numeric', month: 'numeric', day: 'numeric' })
     }
 
     try {
