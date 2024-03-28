@@ -105,7 +105,12 @@ function extractExpiryDate(fileContent: string): Date {
   throw new Error('Expiry date not found')
 }
 
+import ProgramServiceJS from '@tee/backend/build/backend/src/program/application/programService'
 async function generateSitemapXml(): Promise<string> {
+  const ProgramService = ProgramServiceJS.default
+  ProgramService.init()
+  const service = new ProgramService()
+
   const staticRoutesFilePath = resolve(process.cwd(), 'src', 'router', 'routes.ts')
   const staticRoutesContent = readFileSync(staticRoutesFilePath, 'utf8')
   const regexMatches: RegExpMatchArray | null = staticRoutesContent.match(/path: '(.*)'/g)
