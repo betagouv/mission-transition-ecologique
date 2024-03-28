@@ -92,9 +92,6 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
       '@public': fileURLToPath(new URL('./public', import.meta.url))
     }
-  },
-  optimizeDeps: {
-    exclude: ['oh-vue-icons/icons']
   }
 })
 
