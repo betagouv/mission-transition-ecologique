@@ -13,6 +13,7 @@
     "cypress/**/*",
     "public/data/generated/dataset_out.json",
     "widget/**/*",
+    "plugin/**/*"
   ],
   "compilerOptions": {
     "rootDir": ".",
