@@ -22,7 +22,7 @@ function generateOnePathXML(path: string, changefreq: ChangeFreq, priority: Prio
   const VITE_DEPLOY_URL = process.env.VITE_DEPLOY_URL
 
   return `  <url>
-    <loc>${encodeURIComponent(VITE_DEPLOY_URL + path)}</loc>
+    <loc>${encodeURI(VITE_DEPLOY_URL + path)}</loc>
     <lastmod>${lastModified}</lastmod>
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
@@ -81,7 +81,7 @@ function generateSitemapXML(): string {
   const staticElements = generateStaticSitemap()
   const programElements = generateProgramSitemap()
 
-  return `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  return `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">  
   ${staticElements + '\n' + programElements}
 </urlset>`
 }
