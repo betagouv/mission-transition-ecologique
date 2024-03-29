@@ -81,7 +81,7 @@ function generateSitemapXML(): string {
   const staticElements = generateStaticSitemap()
   const programElements = generateProgramSitemap()
 
-  return `<urlset>
+  return `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   ${staticElements + '\n' + programElements}
 </urlset>`
 }

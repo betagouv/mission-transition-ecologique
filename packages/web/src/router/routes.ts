@@ -1,3 +1,6 @@
+import type { Component } from 'vue'
+import type { RouteLocationNormalized } from 'vue-router'
+
 import TeeHomePage from '../pages/TeeHomePage.vue'
 import TeeQuestionnairePage from '../pages/TeeQuestionnairePage.vue'
 import TeeCatalogPage from '../pages/TeeCatalogPage.vue'
@@ -11,7 +14,6 @@ import TeeProgramDetail from '@/components/program/TeeProgramDetail.vue'
 import { RouteName } from '@/types/routeType'
 import { redirections } from '@/router/redirection'
 import { TrackId } from '@/types'
-import type { Component } from 'vue'
 import { resetDetailProgram, resetTrackStore, setHelpAsTrackSeed, setResultsAsTrackSeed } from '@/router/hook'
 
 export const routes = [
@@ -52,7 +54,7 @@ export const routes = [
         path: ':programId',
         name: RouteName.CatalogDetail,
         component: TeeProgramDetail as Component,
-        props: (route) => ({
+        props: (route: RouteLocationNormalized) => ({
           programId: route.params.programId as string,
           trackId: TrackId.Results
         })
