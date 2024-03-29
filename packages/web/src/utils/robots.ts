@@ -1,8 +1,10 @@
+import type { Plugin } from 'vite'
 import dotenv from 'dotenv'
 import { readFileSync, writeFileSync } from 'fs'
 import { resolve } from 'path'
-import ProgramService from '@tee/backend/src/program/application/programService'
-import type { Program } from '@tee/data/src/type/program'
+import path from 'path'
+import fs from 'fs'
+import { promisify } from 'util'
 
 enum ChangeFreq {
   Hourly = 'hourly',
@@ -60,15 +62,57 @@ function generateOnePathXml(path: string, changefreq: ChangeFreq, priority: Prio
   </url>`
 }
 
-import { routes } from '../router/routes'
+const readdir = promisify(fs.readdir)
+const readFile = promisify(fs.readFile)
 
-function generateSitemapXml(): string {
+async function processProgramDirectory(directoryPath: string): Promise<string[]> {
+  const filesToInclude: string[] = []
+
+  try {
+    const filenames = await readdir(directoryPath)
+
+    for (const filename of filenames) {
+      const filePath: string = path.join(directoryPath, filename)
+      const fileContent = await readFile(filePath, 'utf-8')
+
+      if (hasValidExpiryDate(fileContent)) {
+        const expiryDate = extractExpiryDate(fileContent)
+        if (expiryDate > new Date()) {
+          filesToInclude.push(filename)
+        }
+      } else {
+        filesToInclude.push(filename)
+      }
+    }
+  } catch (error) {
+    console.error('Error reading directory in sitemap plugin:', error)
+  }
+
+  return filesToInclude
+}
+
+function hasValidExpiryDate(fileContent: string): boolean {
+  return /fin de validité: \d{2}\/\d{2}\/\d{4}/.test(fileContent)
+}
+
+function extractExpiryDate(fileContent: string): Date {
+  const match = /fin de validité: (\d{2}\/\d{2}\/\d{4})/.exec(fileContent)
+  if (match) {
+    const [, dateString] = match
+    const [day, month, year] = dateString.split('/').map(Number)
+    return new Date(year, month - 1, day) // month - 1 because months are 0-indexed in JavaScript
+  }
+  throw new Error('Expiry date not found')
+}
+
+import ProgramServiceJS from '@tee/backend/build/backend/src/program/application/programService'
+import type { Program } from '@tee/data/src/type/program'
+
+async function generateSitemapXml(): Promise<string> {
   const staticRoutesFilePath = resolve(process.cwd(), 'src', 'router', 'routes.ts')
   const staticRoutesContent = readFileSync(staticRoutesFilePath, 'utf8')
   const regexMatches: RegExpMatchArray | null = staticRoutesContent.match(/path: '(.*)'/g)
   const staticPaths = regexMatches?.map((match) => match.slice(7, -1))
-
-  const routesFromJSvariable = routes
 
   const urlElements = staticPaths
     ?.map((path) => {
@@ -90,15 +134,11 @@ function generateSitemapXml(): string {
   const service = new ProgramService()
 
   const allProgramsIds = service.getAll().map((program: Program) => program.id)
-  const activeProgramsResult = service.getFilteredPrograms({})
-  if (activeProgramsResult.isErr) {
-    throw activeProgramsResult.error
-  }
-  const activeProgramsIds = activeProgramsResult.value.map((p: Program) => p.id)
+  const activeProgramsIds = service.getFilteredBy({}).map((program: Program) => program.id)
 
   const programElements = allProgramsIds
     .map((id: string) => {
-      if (activeProgramsIds.includes(id)) {
+      if (id in activeProgramsIds) {
         return generateOnePathXml('/aides-entreprise/' + id, ChangeFreq.Monthly, Priority.Mid)
       } else {
         return generateOnePathXml('/aides-entreprise/' + id, ChangeFreq.Monthly, Priority.Lowest)
@@ -111,8 +151,8 @@ function generateSitemapXml(): string {
 </urlset>`
 }
 
-function generateSitemap() {
-  const sitemap: string = generateSitemapXml()
+async function generateSitemap() {
+  const sitemap: string = await generateSitemapXml()
   try {
     const inFilePath = resolve(process.cwd(), '..', 'web', 'public', 'sitemap.xml')
     const fileContent = readFileSync(inFilePath, 'utf8')
@@ -124,5 +164,20 @@ function generateSitemap() {
   }
 }
 
-generateRobots()
-generateSitemap()
+function sitemapPlugin(): Plugin[] {
+  return [
+    {
+      name: 'vite-plugin-sitemap',
+      closeBundle() {
+        generateRobots()
+        generateSitemap()
+          .then(() => {})
+          .catch((error) => {
+            console.error('Error in the sitemap plugin:', error)
+          })
+      }
+    }
+  ]
+}
+
+export default sitemapPlugin
