@@ -7,7 +7,7 @@ import ProgramFilter from '@/utils/program/programFilters'
 import { Result } from 'true-myth'
 import { computed, ref } from 'vue'
 import { acceptHMRUpdate, defineStore } from 'pinia'
-import { type programFiltersType, ProgramAidType, Objectives, type ProgramData } from '@/types'
+import { type programFiltersType, ProgramAidType, PublicodeObjectives, type ProgramData } from '@/types'
 import type { QuestionnaireData } from '@tee/backend/src/program/domain/types'
 
 export const useProgramStore = defineStore('program', () => {
@@ -42,7 +42,7 @@ export const useProgramStore = defineStore('program', () => {
     return programs.filter((program: ProgramData) => {
       return (
         ProgramFilter.filterProgramsByAidType(program, programFilters.value.programAidTypeSelected as ProgramAidType) &&
-        ProgramFilter.filterProgramsByObjective(program, programFilters.value.objectifTypeSelected as Objectives)
+        ProgramFilter.filterProgramsByObjective(program, programFilters.value.objectifTypeSelected as PublicodeObjectives)
       )
     })
   }

@@ -1,6 +1,6 @@
 import {
   Entreprise,
-  Objectives,
+  PublicodeObjectives,
   ProgramAidType,
   type ProgramData,
   type programFiltersType,
@@ -17,7 +17,7 @@ export default class ProgramFilter {
     return program["nature de l'aide"] === programAidTypeSelected
   }
 
-  static filterProgramsByObjective(program: ProgramData, objectiveTypeSelected: Objectives) {
+  static filterProgramsByObjective(program: ProgramData, objectiveTypeSelected: PublicodeObjectives) {
     if (!this.isValidFilterValue(objectiveTypeSelected)) {
       return true
     }

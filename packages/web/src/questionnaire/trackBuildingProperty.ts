@@ -1,11 +1,5 @@
 import type { Track } from '@/types'
-import { Entreprise, TrackComponent, TrackId, YesNo } from '@/types'
-
-export enum BuildingProperty {
-  Owns = 'owns',
-  Rents = 'rents',
-  OwnsAndRents = 'owns_and_rents'
-}
+import { TrackComponent, TrackId, BuildingProperty } from '@/types'
 
 export const buildingProperty: Track = {
   id: TrackId.BuildingProperty,
@@ -33,10 +27,7 @@ export const buildingProperty: Track = {
   options: [
     {
       value: BuildingProperty.Owns,
-      questionnaireData: {
-        structure_building_property: BuildingProperty.Owns,
-        [Entreprise.BuildingOwner]: YesNo.Yes
-      },
+      questionnaireData: { structure_building_property: BuildingProperty.Owns },
       title: { fr: 'Propriétaire' },
       label: { fr: '🔑 Propriétaire' },
       next: {
@@ -45,10 +36,7 @@ export const buildingProperty: Track = {
     },
     {
       value: BuildingProperty.Rents,
-      questionnaireData: {
-        structure_building_property: BuildingProperty.Rents,
-        [Entreprise.BuildingOwner]: YesNo.No
-      },
+      questionnaireData: { structure_building_property: BuildingProperty.Rents },
       title: { fr: 'Locataire' },
       label: { fr: '📝 Locataire ' },
       next: {
@@ -57,10 +45,7 @@ export const buildingProperty: Track = {
     },
     {
       value: BuildingProperty.OwnsAndRents,
-      questionnaireData: {
-        structure_building_property: BuildingProperty.OwnsAndRents,
-        [Entreprise.BuildingOwner]: YesNo.Yes
-      },
+      questionnaireData: { structure_building_property: BuildingProperty.OwnsAndRents },
       title: { fr: 'Propriétaire & locataire' },
       label: { fr: 'Je suis à la fois propriétaire et locataire sur mes différents locaux' },
       next: {

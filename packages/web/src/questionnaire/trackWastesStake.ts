@@ -1,5 +1,5 @@
 import type { Track } from '@/types'
-import { Objectives, TrackComponent, TrackId, YesNo } from '@/types'
+import { TrackComponent, TrackId, YesNo, WastePriority } from '@/types'
 
 export const wastesStake: Track = {
   id: TrackId.WastesStake,
@@ -27,7 +27,7 @@ export const wastesStake: Track = {
   options: [
     {
       value: YesNo.Yes,
-      questionnaireData: { wastes_stake: YesNo.Yes, [Objectives.WasteManagement]: YesNo.Yes },
+      questionnaireData: { wastes_priority: WastePriority.Yes },
       title: { fr: 'Oui' },
       label: { fr: '👍 Oui, j’aimerais faire mieux !' },
       next: {
@@ -36,7 +36,7 @@ export const wastesStake: Track = {
     },
     {
       value: 'maximum',
-      questionnaireData: { wastes_stake: 'no-max', [Objectives.WasteManagement]: YesNo.No },
+      questionnaireData: { wastes_priority: WastePriority.NoMax },
       title: { fr: 'Non' },
       label: { fr: '🤓 Non, je fais déja mon maximum' },
       next: {
@@ -45,7 +45,7 @@ export const wastesStake: Track = {
     },
     {
       value: YesNo.No,
-      questionnaireData: { wastes_stake: YesNo.No, [Objectives.WasteManagement]: YesNo.No },
+      questionnaireData: { wastes_priority: WastePriority.No },
       title: { fr: 'Non' },
       label: { fr: '👎 Non, la gestion des déchets n’est pas un enjeu pour moi ' },
       next: {
@@ -54,7 +54,7 @@ export const wastesStake: Track = {
     },
     {
       value: YesNo.Unknown,
-      questionnaireData: { wastes_stake: YesNo.Unknown, [Objectives.WasteManagement]: YesNo.Yes },
+      questionnaireData: { wastes_priority: WastePriority.Unknown },
       title: { fr: 'Aucune idée' },
       label: { fr: 'Aucune idée' },
       next: {

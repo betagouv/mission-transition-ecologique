@@ -1,5 +1,5 @@
 import type { Track } from '@/types'
-import { Objectives, TrackComponent, TrackId, YesNo } from '@/types'
+import { TrackComponent, TrackId, YesNo } from '@/types'
 
 export const strategyAudits: Track = {
   id: TrackId.StrategyAudits,
@@ -29,10 +29,7 @@ export const strategyAudits: Track = {
   options: [
     {
       value: YesNo.Yes,
-      questionnaireData: {
-        strategy_audits: YesNo.Yes,
-        [Objectives.EnvironmentalImpact]: YesNo.No
-      },
+      questionnaireData: { strategy_audits: YesNo.Yes },
       title: { fr: 'Oui' },
       label: { fr: '✅ Oui !' },
       next: {
@@ -41,10 +38,7 @@ export const strategyAudits: Track = {
     },
     {
       value: YesNo.No,
-      questionnaireData: {
-        strategy_audits: YesNo.No,
-        [Objectives.EnvironmentalImpact]: YesNo.Yes
-      },
+      questionnaireData: { strategy_audits: YesNo.No },
       title: { fr: 'Non' },
       label: { fr: '❌ Non' },
       next: {
@@ -53,10 +47,7 @@ export const strategyAudits: Track = {
     },
     {
       value: YesNo.Unknown,
-      questionnaireData: {
-        strategy_audits: YesNo.Unknown,
-        [Objectives.EnvironmentalImpact]: YesNo.Yes
-      },
+      questionnaireData: { strategy_audits: YesNo.Unknown },
       title: { fr: 'Je ne sais pas' },
       label: { fr: 'Je ne sais pas' },
       next: {

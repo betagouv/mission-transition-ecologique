@@ -4,7 +4,7 @@ export default interface EstablishmentType {
   codeNAF1: string
   ville: string
   codePostal: string
-  région: string | null
+  region: string | null
   structure_sizes: string
   denomination: string | null
   secteur: string | undefined

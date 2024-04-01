@@ -1,4 +1,3 @@
-// LEGACY
 export enum YesNo {
   Yes = 'oui',
   No = 'non',
@@ -42,7 +41,7 @@ export enum EntrepriseSector {
   Other = Entreprise.SectorActivity + Sector.Other
 }
 
-export const Sectors = {
+export const PublicodeSectors = {
   [EntrepriseSector.Craftsmanship]: YesNo.No,
   [EntrepriseSector.Industry]: YesNo.No,
   [EntrepriseSector.Tourism]: YesNo.No,
@@ -60,13 +59,13 @@ export const NAF1Letters = [...'ABCDEFGHIJKLMNOPQRSTU'] as const
 // publicodes variable initialization to "non"
 export const codesNAF1: { [p: string]: YesNo } = Object.fromEntries(NAF1Letters.map((l) => [NAF1ToVar(l), YesNo.No]))
 
-export const SectorByNAF = {
-  [EntrepriseSector.Craftsmanship]: ['C', 'F', 'G'],
-  [EntrepriseSector.Industry]: ['B', 'C', 'D', 'E'],
-  [EntrepriseSector.Tourism]: ['I'],
-  [EntrepriseSector.Tertiary]: ['G', 'H', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U'],
-  [EntrepriseSector.Agriculture]: ['A'],
-  [EntrepriseSector.Other]: ['D', 'E', 'F', 'H', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U']
+export const SectorToNAFSection = {
+  [Sector.Craftsmanship]: ['C', 'F', 'G'],
+  [Sector.Industry]: ['B', 'C', 'D', 'E'],
+  [Sector.Tourism]: ['I'],
+  [Sector.Tertiary]: ['G', 'H', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U'],
+  [Sector.Agriculture]: ['A'],
+  [Sector.Other]: ['D', 'E', 'F', 'H', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U']
 }
 
 export enum Objective {
@@ -83,7 +82,7 @@ export enum Objective {
   UnknownYet = 'je ne sais pas encore'
 }
 
-export enum Objectives {
+export enum PublicodeObjectives {
   EnvironmentalImpact = Questionnaire.priorityObjective + Objective.EnvironmentalImpact,
   EnergyPerformance = Questionnaire.priorityObjective + Objective.EnergyPerformance,
   WaterConsumption = Questionnaire.priorityObjective + Objective.WaterConsumption,
@@ -97,16 +96,16 @@ export enum Objectives {
   UnknownYet = Questionnaire.priorityObjective + Objective.UnknownYet
 }
 
-export const priorityObjectives = {
-  [Objectives.EnvironmentalImpact]: YesNo.No,
-  [Objectives.EnergyPerformance]: YesNo.No,
-  [Objectives.WaterConsumption]: YesNo.No,
-  [Objectives.BuildingRenovation]: YesNo.No,
-  [Objectives.SustainableMobility]: YesNo.No,
-  [Objectives.WasteManagement]: YesNo.No,
-  [Objectives.EcoDesign]: YesNo.No,
-  [Objectives.TrainOrRecruit]: YesNo.No,
-  [Objectives.MakeSavings]: YesNo.No,
-  [Objectives.DurablyInvest]: YesNo.No,
-  [Objectives.UnknownYet]: YesNo.No
+export const Objectives = {
+  [Objective.EnvironmentalImpact]: YesNo.No,
+  [Objective.EnergyPerformance]: YesNo.No,
+  [Objective.WaterConsumption]: YesNo.No,
+  [Objective.BuildingRenovation]: YesNo.No,
+  [Objective.SustainableMobility]: YesNo.No,
+  [Objective.WasteManagement]: YesNo.No,
+  [Objective.EcoDesign]: YesNo.No,
+  [Objective.TrainOrRecruit]: YesNo.No,
+  [Objective.MakeSavings]: YesNo.No,
+  [Objective.DurablyInvest]: YesNo.No,
+  [Objective.UnknownYet]: YesNo.No
 }

@@ -1,6 +1,6 @@
 // FOR AID PROGRAMS
 
-import { Entreprise, Objectives, PublicodesCondition } from '../index'
+import { Entreprise, PublicodeObjectives, PublicodesCondition } from '../index'
 import type { ProgramAidType } from '@tee/common/src/program/types'
 
 export interface ProgramData {
@@ -44,6 +44,6 @@ export type PublicodesProgramData = {
     | string
   [key: string]: unknown
   [Entreprise.hasObjective]?: {
-    [PublicodesCondition.oneOfThese]: Objectives[]
+    [PublicodesCondition.oneOfThese]: PublicodeObjectives[]
   }
 }

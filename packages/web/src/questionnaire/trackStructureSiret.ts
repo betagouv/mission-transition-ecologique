@@ -2,9 +2,6 @@
 // console.log(`questionnaire.trackSiret > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import {
-  codesNAF1,
-  NAF1Letters,
-  NAF1ToVar,
   CallbackActions,
   CallbackMethods,
   CleanerOperations,
@@ -24,7 +21,7 @@ const defaultQuestionnaireData: EstablishmentType = {
   codeNAF1: '',
   ville: '',
   codePostal: '',
-  région: null,
+  region: null,
   structure_sizes: '',
   denomination: '',
   secteur: undefined
@@ -93,33 +90,22 @@ export const siret: Track = {
               id: 'naf',
               help: 'https://www.insee.fr/fr/information/2120875',
               path: 'nafCode',
-              dataField: 'codeNaf',
+              dataField: 'codeNAF',
               onlyRemap: true
             },
             {
               from: DataMappingFrom.RawData,
               id: 'region',
               path: 'region',
-              dataField: 'région',
+              dataField: 'region',
               onlyRemap: true
             },
             {
               from: DataMappingFrom.RawData,
               id: 'codeNAF1',
               path: 'nafSectionCode',
-              dataField: '.',
-              onlyRemap: true,
-              cleaning: [
-                {
-                  operation: CleanerOperations.findFromDict,
-                  dict: Object.fromEntries(NAF1Letters.map((l) => [l, { [NAF1ToVar(l)]: 'oui' }]))
-                  // => { "entreprise . code NAF . est A": 'oui' }
-                },
-                {
-                  operation: CleanerOperations.injectInObject,
-                  object: { ...codesNAF1 }
-                }
-              ]
+              dataField: 'codeNAF1',
+              onlyRemap: true
             },
             {
               from: DataMappingFrom.RawData,
