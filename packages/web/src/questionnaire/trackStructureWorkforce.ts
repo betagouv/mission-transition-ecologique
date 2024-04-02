@@ -25,11 +25,11 @@ const nextTrackRuleSets: NextTrackRuleSet[] = [
     rules: [
       {
         from: DataMappingFrom.UsedTracks,
-        id: 'codeNaf',
-        dataField: 'codeNaf',
+        id: 'codeNAF',
+        dataField: 'codeNAF',
         conditions: [
           {
-            type: 'codeNaf',
+            type: 'codeNAF',
             operator: ConditionOperators.exists
           }
         ]
@@ -54,11 +54,11 @@ const nextTrackRuleSets: NextTrackRuleSet[] = [
     rules: [
       {
         from: DataMappingFrom.UsedTracks,
-        id: 'codeNaf',
-        dataField: 'codeNaf',
+        id: 'codeNAF',
+        dataField: 'codeNAF',
         conditions: [
           {
-            type: 'codeNaf',
+            type: 'codeNAF',
             operator: ConditionOperators.exists
           }
         ]

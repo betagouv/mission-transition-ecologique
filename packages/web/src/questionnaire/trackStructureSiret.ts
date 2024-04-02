@@ -7,6 +7,7 @@ import {
   CleanerOperations,
   DataMappingFrom,
   HasInputOptions,
+  SiretValue,
   TrackComponent,
   TrackId
   // Entreprise
@@ -17,18 +18,14 @@ import Validator from '@/utils/validator'
 
 const defaultQuestionnaireData: EstablishmentType = {
   siret: '',
-  codeNaf: '',
+  codeNAF: '',
   codeNAF1: '',
   ville: '',
   codePostal: '',
   region: null,
-  structure_sizes: '',
+  structure_size: '',
   denomination: '',
   secteur: undefined
-}
-
-export enum SiretValue {
-  Wildcard = 'wildcard'
 }
 
 export const siret: Track = {

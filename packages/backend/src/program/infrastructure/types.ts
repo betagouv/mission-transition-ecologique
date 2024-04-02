@@ -1,4 +1,4 @@
-import { Sector } from '@tee/data/src/type/publicodesTypes'
+import { Sector, PublicodesKeys } from '../../../../common/src/questionnaire/types'
 
 export interface PublicodesInputData {
   [PublicodesKeys.CodeNAF]?: string
@@ -16,20 +16,7 @@ export enum PublicodesQuestionnaireRoute {
   SpecificGoal = '"objectif précis"'
 }
 
-export enum PublicodesKeys {
-  ValidityStart = 'dispositif . début de validité',
-  ValidityEnd = 'dispositif . fin de validité',
-  QuestionnaireRoute = 'questionnaire . parcours',
-  CurrentDate = 'date du jour',
-  SectorActivity = "entreprise . secteur d'activité . est ",
-  CodeNAF = 'entreprise . code NAF',
-  CodeNAF1 = 'entreprise . code NAF niveau 1 . est ',
-  Workforce = 'entreprise . effectif',
-  BuildingOwner = 'entreprise . est propriétaire de ses locaux',
-  Goal = 'questionnaire . objectif prioritaire . est'
-}
-
-export const SectorToNafSection = {
+export const SectorToNAFSection = {
   [Sector.Craftsmanship]: ['C', 'F', 'G'],
   [Sector.Industry]: ['B', 'C', 'D', 'E'],
   [Sector.Tourism]: ['I'],
@@ -37,3 +24,12 @@ export const SectorToNafSection = {
   [Sector.Agriculture]: ['A'],
   [Sector.Other]: ['D', 'E', 'F', 'H', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U']
 }
+
+export const NAF1Letters = [...'ABCDEFGHIJKLMNOPQRSTU'] as const
+
+// NAF CODES
+// Associates a NAF1 (composed of 1 letter) to its expected publicode variable
+// export const NAF1ToVar = (letter: string): string => Entreprise.CodeNAF1 + letter
+
+// // publicodes variable initialization to "non"
+// export const codesNAF1: { [p: string]: YesNo } = Object.fromEntries(NAF1Letters.map((l) => [NAF1ToVar(l), YesNo.No]))

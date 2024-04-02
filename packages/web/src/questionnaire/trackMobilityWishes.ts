@@ -1,5 +1,5 @@
 import type { Track } from '@/types'
-import { Objective, TrackComponent, TrackId, YesNo } from '@/types'
+import { MobilityPriority, TrackComponent, TrackId, YesNo } from '@/types'
 
 export const mobilityWishes: Track = {
   id: TrackId.MobilityWishes,
@@ -29,7 +29,7 @@ export const mobilityWishes: Track = {
   options: [
     {
       value: YesNo.Yes,
-      questionnaireData: { [Objective.SustainableMobility]: YesNo.Yes },
+      questionnaireData: { sustainable_mobility_priority: MobilityPriority.Yes },
       title: { fr: 'Oui' },
       label: { fr: "👏 Oui, ça m'intéresse !" },
       next: {
@@ -38,7 +38,7 @@ export const mobilityWishes: Track = {
     },
     {
       value: 'maximum',
-      questionnaireData: { [Objective.SustainableMobility]: YesNo.No },
+      questionnaireData: { sustainable_mobility_priority: MobilityPriority.NoMax },
       title: { fr: 'Non, on fait le maximum' },
       label: { fr: '🚲 Non, on fait déjà le maximum sur le sujet' },
       next: {
@@ -47,7 +47,7 @@ export const mobilityWishes: Track = {
     },
     {
       value: 'pas un enjeu',
-      questionnaireData: { [Objective.SustainableMobility]: YesNo.No },
+      questionnaireData: { sustainable_mobility_priority: MobilityPriority.No },
       title: { fr: 'Non, pas un enjeu' },
       label: { fr: "❌ Non, ce n'est pas un enjeu pour moi" },
       next: {
@@ -56,7 +56,7 @@ export const mobilityWishes: Track = {
     },
     {
       value: YesNo.Unknown,
-      questionnaireData: { [Objective.SustainableMobility]: YesNo.Unknown },
+      questionnaireData: { sustainable_mobility_priority: MobilityPriority.Unknown },
       title: { fr: 'Ne sais pas' },
       label: { fr: 'Aucune idée' },
       next: {

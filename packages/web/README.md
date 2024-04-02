@@ -406,7 +406,7 @@ conditions:
     operator: "or"
     value: 
       - "*"
-  - type: structure_sizes
+  - type: structure_size
     operator: "or"
     value: 
       - pme

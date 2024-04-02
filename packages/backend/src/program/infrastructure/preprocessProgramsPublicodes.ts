@@ -1,7 +1,18 @@
-import { QuestionnaireRoute, SizeToWorkforce, WastePriority } from '../../../../common/src/questionnaire/types'
+import {
+  QuestionnaireRoute,
+  SizeToWorkforce,
+  WastePriority,
+  Sector,
+  StructureSize,
+  YesNo,
+  BuildingProperty,
+  PublicodeObjectives,
+  PublicodesKeys,
+  Objective,
+  MobilityPriority
+} from '../../../../common/src/questionnaire/types'
 import { type QuestionnaireData, Program } from '../domain/types'
-import { type PublicodesInputData, PublicodesKeys, PublicodesQuestionnaireRoute } from './types'
-import { Sector, SectorToNAFSection, NAF1Letters, YesNo, PublicodeObjectives } from '../../../../data/src/type/publicodesTypes'
+import { type PublicodesInputData, PublicodesQuestionnaireRoute, SectorToNAFSection, NAF1Letters } from './types'
 
 /** preprocesses the data gathered from the questionnaire into variables
  * needed by publicodes */
@@ -11,14 +22,15 @@ export const preprocessInputForPublicodes = (
   currentDate: string
 ): PublicodesInputData => {
   const publicodesData: PublicodesInputData = {
+    ...questionnaireData,
     [PublicodesKeys.CurrentDate]: currentDate,
-    [PublicodesKeys.Workforce]: SizeToWorkforce[questionnaireData.structure_size]
+    [PublicodesKeys.Workforce]: SizeToWorkforce[questionnaireData.structure_size as StructureSize]
   }
 
   if (questionnaireData.siret) publicodesData[PublicodesKeys.CodeNAF] = enquotePublicodesLiteralString(questionnaireData.codeNAF as string)
   publicodesData
 
-  if (questionnaireData.siret) {
+  if (questionnaireData.siret?.length == 14) {
     const codeNAF1 = questionnaireData.codeNAF1 as string
     // if we have the exact section value from the SIREN database
     // we put one value to Oui and all the others to No
@@ -35,11 +47,22 @@ export const preprocessInputForPublicodes = (
       const publicodeNAF1Key = 'entreprise . code NAF niveau 1 . est ' + NAF1
       publicodesData[publicodeNAF1Key] = 'oui'
     })
+    // at the same time, we add a "sector entry" that filter a lot of programs
+    // and that doesn't exists using the siret...
+    for (const sector of Object.values(Sector)) {
+      const sectorKey = "entreprise . secteur d'activité . est " + sector
+      publicodesData[sectorKey] = sector == questionnaireData.sector ? 'oui' : 'non'
+    }
+    publicodesData['secteur'] = questionnaireData.sector
   }
 
   if (questionnaireData.priority_objective) {
     // priority objective = 1 objective to 'oui',
     // all the others to 'non'
+    for (const objective of Object.values(Objective)) {
+      const publicodeObjectiveKey = 'questionnaire . objectif prioritaire . est ' + objective
+      publicodesData[publicodeObjectiveKey] = objective == questionnaireData.priority_objective ? 'oui' : 'non'
+    }
   } else {
     // here we set an objective only if we have specific data about this objectif
     // at least this would be logical.
@@ -69,14 +92,19 @@ export const preprocessInputForPublicodes = (
     } else {
       publicodesData[PublicodeObjectives.WaterConsumption] = YesNo.Yes
     }
-  }
 
-  // only if full questionnaire !
-  if (questionnaireData['structure_building_property']) {
-    if (questionnaireData['structure_building_property'].includes('owns')) {
-      publicodesData[PublicodesKeys.BuildingOwner] = 'oui'
+    if (questionnaireData.structure_building_property == BuildingProperty.Rents) {
+      publicodesData[PublicodesKeys.BuildingOwner] = YesNo.No
     } else {
-      publicodesData[PublicodesKeys.BuildingOwner] = 'non'
+      publicodesData[PublicodesKeys.BuildingOwner] = YesNo.Yes
+    }
+    if (
+      questionnaireData.sustainable_mobility_priority == MobilityPriority.No ||
+      questionnaireData.sustainable_mobility_priority == MobilityPriority.NoMax
+    ) {
+      publicodesData[PublicodeObjectives.SustainableMobility] = YesNo.No
+    } else {
+      publicodesData[PublicodeObjectives.SustainableMobility] = YesNo.Yes
     }
   }
 
@@ -90,6 +118,9 @@ export const preprocessInputForPublicodes = (
     publicodesData['dispositif . fin de validité'] = programData['fin de validité']
   }
 
+  publicodesData['région'] = questionnaireData.region
+
+  console.log(publicodesData)
   return publicodesData
 }
 
