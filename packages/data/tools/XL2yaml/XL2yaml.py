@@ -13,7 +13,7 @@ import yaml
 INPUT_XL_FILE = "./dispositifs.xlsx"
 WORKSHEET = "DataProd"
 SKIP_XL_LINES = 5
-OUTPUT_DIR = "../../../programs"
+OUTPUT_DIR = "../../programs"
 
 
 CIBLE = "entreprise . est ciblée"
