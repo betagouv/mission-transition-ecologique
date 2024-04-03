@@ -75,8 +75,8 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
   const usedTracksValues = computed<(string | number | object)[]>(() => {
     const usedTrackValues = completedUsedTracks.value
       .map((usedTrack: UsedTrack) => {
-        const values = usedTrack.selected?.map((s: UsedTrack) => s.value)
-        return toRaw(values.map((i) => toRaw(i)))
+        const values = usedTrack.selected?.map((s: TrackOptionsUnion) => s.value)
+        return toRaw(values.map((i: TrackOptionsUnion) => toRaw(i)))
       })
       .filter((i) => i?.length)
 
