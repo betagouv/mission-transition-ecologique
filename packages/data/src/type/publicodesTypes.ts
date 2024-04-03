@@ -2,7 +2,7 @@
 export enum YesNo {
   Yes = 'oui',
   No = 'non',
-  Unknown = 'unknown'
+  Unknown = 'je-ne-sais-pas'
 }
 
 export enum PublicodesCondition {

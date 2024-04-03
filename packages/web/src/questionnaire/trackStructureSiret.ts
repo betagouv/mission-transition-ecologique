@@ -31,7 +31,7 @@ const defaultQuestionnaireData: EstablishmentType = {
 }
 
 export enum SiretValue {
-  Wildcard = 'wildcard'
+  Wildcard = 'siret-non-renseigne'
 }
 
 export const siret: Track = {
