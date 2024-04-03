@@ -21,10 +21,9 @@ pip install pylightxl
 pip install pyyaml
 ```
 
-3. Supprimer les fichiers de programme à remplacer dans 
-   "./packages/data/programs"
+3. Adpater les paramètres `FORCE_ALL` et les arguments `overwrite` pour savoir ce qui doit être mis à jour ou non. 
 
-4. `./XL2yaml.py`
+4. Lancer dans le répertoire du script `./XL2yaml.py`
 
 ## Dispositifs avec interventions manuelles
 
