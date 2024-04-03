@@ -5,8 +5,8 @@ export enum YesNo {
 }
 
 export enum QuestionnaireRoute {
-  NoSpecificGoal = 'no_specific_goal',
-  SpecificGoal = 'specific_goal'
+  NoSpecificGoal = 'je-ne-sais-pas-par-ou-commencer',
+  SpecificGoal = 'j-ai-un-projet'
 }
 
 export enum BuildingProperty {

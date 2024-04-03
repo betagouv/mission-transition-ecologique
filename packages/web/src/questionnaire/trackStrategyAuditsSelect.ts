@@ -2,15 +2,15 @@ import type { Track } from '@/types'
 import { TrackComponent, TrackId } from '@/types'
 
 export enum StrategyAuditsSelect {
-  CarbonAudit = 'carbon_audit',
-  EnergeticPerformanceAudit = 'energetic_performance_audit',
-  EnergyConsumptionAudit = 'energy_consumption_audit',
-  WaterAudit = 'water_audit',
-  WastesAudit = 'wastes_audit',
-  RawMaterialsAudit = 'raw_materials_audit',
+  CarbonAudit = 'bilan-carbone',
+  EnergeticPerformanceAudit = 'performance-energetique',
+  EnergyConsumptionAudit = 'consommation-energie',
+  WaterAudit = 'eau',
+  WastesAudit = 'dechets',
+  RawMaterialsAudit = 'matieres-premieres',
   Certification = 'certification',
-  Other = 'other',
-  Unknown = 'unknown'
+  Other = 'autre',
+  Unknown = 'je-ne-sais-pas'
 }
 
 export const strategyAuditsSelect: Track = {

@@ -28,6 +28,10 @@ const defaultQuestionnaireData: EstablishmentType = {
   secteur: undefined
 }
 
+export enum SiretValue {
+  Wildcard = 'siret-non-renseigne'
+}
+
 export const siret: Track = {
   id: TrackId.Siret,
   category: 'myEntreprise',

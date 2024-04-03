@@ -80,6 +80,16 @@ const nextTrackRuleSets: NextTrackRuleSet[] = [
   }
 ]
 
+export enum Workforce {
+  TPE = 'TPE',
+  PME = 'PME',
+  PE = 'PE',
+  ME = 'ME',
+  ETI = 'ETI',
+  GE = 'GE',
+  ETI_GE = 'ETI_et_GE'
+}
+
 export const workforce: Track = {
   id: TrackId.StructureWorkforce,
   category: 'myEntreprise',
