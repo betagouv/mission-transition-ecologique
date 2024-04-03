@@ -17,7 +17,7 @@
 
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
-import { Objective, ProgramAidType, type programFiltersType } from '@/types'
+import { PublicodeObjectives, ProgramAidType, type programFiltersType } from '@/types'
 import { DsfrSelect } from '@gouvminint/vue-dsfr'
 import type { DsfrSelectProps } from '@gouvminint/vue-dsfr/types/components/DsfrSelect/DsfrSelect.types'
 
@@ -57,35 +57,35 @@ const objectifTypeOptions: DsfrSelectProps['options'] = [
   },
   {
     text: '🌱 Stratégie environnementale',
-    value: Objective.EnvironmentalImpact
+    value: PublicodeObjectives.EnvironmentalImpact
   },
   {
     text: '⚡️ Énergie',
-    value: Objective.EnergyPerformance
+    value: PublicodeObjectives.EnergyPerformance
   },
   {
     text: '💧 Eau',
-    value: Objective.WaterConsumption
+    value: PublicodeObjectives.WaterConsumption
   },
   {
     text: '🏢 Bâtiment',
-    value: Objective.BuildingRenovation
+    value: PublicodeObjectives.BuildingRenovation
   },
   {
     text: '🚲 Mobilité',
-    value: Objective.SustainableMobility
+    value: PublicodeObjectives.SustainableMobility
   },
   {
     text: '🗑 Déchets',
-    value: Objective.WasteManagement
+    value: PublicodeObjectives.WasteManagement
   },
   {
     text: '🏭 Production',
-    value: Objective.EcoDesign
+    value: PublicodeObjectives.EcoDesign
   },
   {
     text: '🧑‍🎓 RH',
-    value: Objective.TrainOrRecruit
+    value: PublicodeObjectives.TrainOrRecruit
   }
 ]
 </script>

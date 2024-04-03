@@ -23,7 +23,7 @@ export const preprocessInputForPublicodes = (
   const publicodesData: PublicodesInputData = {
     [PublicodesKeys.CurrentDate]: currentDate,
     [PublicodesKeys.Workforce]: SizeToWorkforce[questionnaireData.structure_size],
-    'région': questionnaireData.region
+    région: questionnaireData.region
   }
 
   if (questionnaireData.siret?.length == 14) {
@@ -62,8 +62,10 @@ export const preprocessInputForPublicodes = (
       publicodesData[PublicodeObjectives.EcoDesign] = YesNo.Yes
     }
 
-    if (questionnaireData.wastes_management_objective == WasteManagementStatus.No ||
-      questionnaireData.wastes_management_objective == WasteManagementStatus.NoMax) {
+    if (
+      questionnaireData.wastes_management_objective == WasteManagementStatus.No ||
+      questionnaireData.wastes_management_objective == WasteManagementStatus.NoMax
+    ) {
       publicodesData[PublicodeObjectives.WasteManagement] = YesNo.No
     } else {
       publicodesData[PublicodeObjectives.WasteManagement] = YesNo.Yes
