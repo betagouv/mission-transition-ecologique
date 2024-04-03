@@ -21,18 +21,22 @@ export const preprocessInputForPublicodes = (
   currentDate: string
 ): PublicodesInputData => {
   const publicodesData: PublicodesInputData = {
+    ...questionnaireData,
     [PublicodesKeys.CurrentDate]: currentDate,
-    [PublicodesKeys.Workforce]: SizeToWorkforce[questionnaireData.structure_size],
     région: questionnaireData.region
   }
 
-  if (questionnaireData.siret?.length == 14) {
-    publicodesData[PublicodesKeys.CodeNAF] = enquotePublicodesLiteralString(questionnaireData.codeNAF as string)
+  if (questionnaireData.structure_size) {
+    publicodesData[PublicodesKeys.Workforce] = SizeToWorkforce[questionnaireData.structure_size]
+  }
+
+  if (questionnaireData.codeNAF) {
+    publicodesData[PublicodesKeys.CodeNAF] = enquotePublicodesLiteralString(questionnaireData.codeNAF)
   }
 
   let codeNAF1s: string[] = []
-  if (questionnaireData.siret?.length == 14) {
-    codeNAF1s = [questionnaireData.codeNAF1 as string]
+  if (questionnaireData.codeNAF1) {
+    codeNAF1s = [questionnaireData.codeNAF1]
   } else {
     const sector = questionnaireData.sector as Sector
     codeNAF1s = SectorToNAFSection[sector]

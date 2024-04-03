@@ -15,9 +15,9 @@ export { type Operators } from '@tee/data/src/generated/program'
 
 export interface QuestionnaireData {
   questionnaire_route: QuestionnaireRoute
-  structure_size: StructureSize
   region: string
 
+  structure_size?: StructureSize // optional for testing !
   sector?: Sector
   priority_objective?: Objective
 
