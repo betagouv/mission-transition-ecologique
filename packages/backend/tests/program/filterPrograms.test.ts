@@ -1,10 +1,16 @@
-import { makeProgramHelper } from './testing'
-import { createService, FILTERING_RULE_NAME } from '../../src/program/domain/filterPrograms'
-import { ProgramData } from '@tee/web/src/types'
-import { expectToBeErr, expectToBeOk } from '../testing'
+import { type Rules, makeProgramHelper, mockCurrentDateService, makeProgramsRepository } from './testing'
+import { FILTERING_RULE_NAME } from '../../src/program/domain/filterPrograms'
+import type { Program, QuestionnaireData } from '../../src/program/domain/types'
+import { expectToBeOk } from '../testing'
+import ProgramFeatures from '../../src/program/domain/programFeatures'
+import { type Result } from 'true-myth'
+import { PublicodesService } from '../../src/program/infrastructure/publicodesService'
 
-const mockCurrentDateService = { get: () => '01/01/2024' }
-const filterPrograms = createService(mockCurrentDateService)
+const defaultFilterPrograms = (programs: Program[], inputData: QuestionnaireData): Result<Program[], Error> => {
+  PublicodesService.init(programs)
+  const programService = new ProgramFeatures(makeProgramsRepository(programs), mockCurrentDateService, PublicodesService.getInstance())
+  return programService.getFilteredBy(inputData)
+}
 
 const rulesBoilerplate = {
   entreprise: null,
@@ -12,7 +18,12 @@ const rulesBoilerplate = {
   [FILTERING_RULE_NAME]: 'entreprise . effectif > 0'
 }
 
-const makeProgram = (rules: object) => makeProgramHelper({ rules: rules })
+let id: number = 0
+
+const makeProgram = (rules: Rules) => {
+  id = id + 1
+  return makeProgramHelper({ id: 'id' + id.toString(), rules: rules })
+}
 
 // Helper function that performs type narrowing.
 // Not automatic in jest, see https://github.com/jestjs/jest/issues/10094
@@ -91,7 +102,7 @@ EXPECT that the filtering only keeps programs that are eligible (rule
     }
   ]
 
-  const makePrograms = (rules: string[]): ProgramData[] => {
+  const makePrograms = (rules: string[]): Program[] => {
     const progs = rules.map((r) => {
       const completeRules = { ...rulesBoilerplate, [FILTERING_RULE_NAME]: r }
       return makeProgram(completeRules)
@@ -103,7 +114,7 @@ EXPECT that the filtering only keeps programs that are eligible (rule
     test(`${tc.name}`, () => {
       const programs = makePrograms(tc.rules)
 
-      const result = filterPrograms(programs, tc.inputData)
+      const result = defaultFilterPrograms(programs, tc.inputData)
 
       expectToBeOk(result)
 
@@ -126,7 +137,7 @@ describe(`
     const programs = [makeProgram(rulesBoilerplate)]
     const inputData = {}
 
-    const result = filterPrograms(programs, inputData)
+    const result = defaultFilterPrograms(programs, inputData)
 
     expectToBeOk(result)
     expect(result.value.length).toBe(1)
@@ -141,7 +152,7 @@ describe(`
 error`, () => {
   type TestCase = {
     name: string
-    rules: object
+    rules: Rules
     inputData: Record<string, number>
   }
 
@@ -160,7 +171,7 @@ error`, () => {
 
   testCases.map((tc) => {
     test(`${tc.name}`, () => {
-      const result = filterPrograms([makeProgram(tc.rules)], tc.inputData)
+      const result = defaultFilterPrograms([makeProgram(tc.rules)], tc.inputData)
 
       expectToBeOk(result)
     })
@@ -170,11 +181,9 @@ error`, () => {
 describe(`
   GIVEN  a rule
   WHEN   the rule is not valid Publicodes
-  EXPECT an explicit error
+  EXPECT the creation of ProgramFeature to fail with a thrown error
 `, () => {
   test('invalid rule', () => {
-    const result = filterPrograms([makeProgram({ [FILTERING_RULE_NAME]: 'invalid Publicode expression' })], {})
-
-    expectToBeErr(result)
+    expect(() => defaultFilterPrograms([makeProgram({ [FILTERING_RULE_NAME]: 'invalid Publicode expression' })], {})).toThrow()
   })
 })

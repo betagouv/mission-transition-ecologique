@@ -5,6 +5,7 @@ import { ValidateError } from 'tsoa'
 import cors from 'cors'
 import Sentry from './plugin/sentry'
 import * as dotenv from 'dotenv'
+import ProgramService from './program/application/programService'
 
 dotenv.config()
 
@@ -21,6 +22,8 @@ app.use(cors())
 app.use('/api/docs', swaggerUi.serve, async (_req: Request, res: Response) => {
   return res.send(swaggerUi.generateHTML(await import('../generated/swagger.json')))
 })
+
+ProgramService.init()
 
 RegisterRoutes(app)
 

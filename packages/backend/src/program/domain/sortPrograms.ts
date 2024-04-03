@@ -1,18 +1,18 @@
-import type { ProgramData } from '@tee/web/src/types'
-import { ProgramAidType } from '@tee/web/src/types'
-import { QuestionnaireRoute } from '@tee/common/src/questionnaire/types'
+import { ProgramAidType } from '../../../../common/src/program/types'
+import { Program } from './types'
+import { QuestionnaireRoute } from '../../../../common/src/questionnaire/types'
 
 // sorts the programs according to a "sortProfile", which currently
 // only depends on the questionnaireRoute
-export const sortPrograms = (programs: ProgramData[], sortProfile: QuestionnaireRoute): ProgramData[] => {
+export const sortPrograms = (programs: Program[], sortProfile: QuestionnaireRoute): Program[] => {
   return programs.sort((p1, p2) => comparePrograms(p1, p2, sortProfile))
 }
 
-const comparePrograms = (program1: ProgramData, program2: ProgramData, route: QuestionnaireRoute): number => {
+const comparePrograms = (program1: Program, program2: Program, route: QuestionnaireRoute): number => {
   return Math.sign(getPriority(program1, route) - getPriority(program2, route))
 }
 
-const getPriority = (prog: ProgramData, route: QuestionnaireRoute): number => {
+const getPriority = (prog: Program, route: QuestionnaireRoute): number => {
   switch (route) {
     case QuestionnaireRoute.NoSpecificGoal:
       switch (true) {
@@ -52,10 +52,10 @@ const getPriority = (prog: ProgramData, route: QuestionnaireRoute): number => {
   }
 }
 
-const hasType = (aidType: ProgramAidType, program: ProgramData) => program["nature de l'aide"] == aidType
+const hasType = (aidType: ProgramAidType, program: Program) => program["nature de l'aide"] == aidType
 
-const isFree = (program: ProgramData) => program["coût de l'accompagnement"]?.toLowerCase() == 'gratuit'
+const isFree = (program: Program) => program["coût de l'accompagnement"]?.toLowerCase() == 'gratuit'
 
-const isMaybeFree = (program: ProgramData) => program["coût de l'accompagnement"]?.toLowerCase().includes('gratuit')
+const isMaybeFree = (program: Program) => program["coût de l'accompagnement"]?.toLowerCase().includes('gratuit')
 
-const isCoachingOrTraining = (program: ProgramData) => hasType(ProgramAidType.acc, program) || hasType(ProgramAidType.train, program)
+const isCoachingOrTraining = (program: Program) => hasType(ProgramAidType.acc, program) || hasType(ProgramAidType.train, program)
