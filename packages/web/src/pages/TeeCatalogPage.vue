@@ -7,7 +7,3 @@
   </div>
   <ContactHelp />
 </template>
-
-<script setup lang="ts">
-import ContactHelp from '@/components/contact/ContactHelp.vue'
-</script>

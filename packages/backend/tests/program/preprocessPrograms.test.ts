@@ -1,12 +1,15 @@
-import { ProgramData } from '@tee/web/src/types'
 import { QuestionnaireRoute } from '@tee/common/src/questionnaire/types'
 import { Entry, setObjectProperty } from '../../src/common/objects'
-import { PublicodesKeys, PublicodesQuestionnaireRoute, QuestionnaireData } from '../../src/program/domain/types'
-import { makeProgramHelper } from './testing'
-import { FILTERING_RULE_NAME, createService } from '../../src/program/domain/filterPrograms'
-import { expectToBeOk } from '../testing'
 
-const makeProgram = (rules: object) => makeProgramHelper({ rules: rules })
+import { Program, QuestionnaireData } from '../../src/program/domain/types'
+import { PublicodesKeys, PublicodesQuestionnaireRoute } from '../../src/program/infrastructure/types'
+import { makeProgramHelper, mockCurrentDateService, makeProgramsRepository } from './testing'
+import { FILTERING_RULE_NAME } from '../../src/program/domain/filterPrograms'
+import { expectToBeOk } from '../testing'
+import ProgramFeatures from '../../src/program/domain/programFeatures'
+import { PublicodesService } from '../../src/program/infrastructure/publicodesService'
+
+const makeProgram = (rules: object) => makeProgramHelper({ rules: { ...{ [FILTERING_RULE_NAME]: { valeur: 'oui' } }, ...rules } })
 
 enum DataSources {
   Questionnaire,
@@ -20,7 +23,7 @@ type QuestionnaireInputProperty = {
 }
 
 type ProgramInputProperty = {
-  inputDataEntry: Entry<ProgramData>
+  inputDataEntry: Entry<Program>
   inputDataSource: DataSources.Program
 }
 
@@ -32,7 +35,7 @@ type CurrentDateInput = {
 type PreprocessingTestCase = (QuestionnaireInputProperty | ProgramInputProperty | CurrentDateInput) & {
   title: string
   publicodesKey: string
-  filteringRule: string | object
+  filteringRule: string | { [k: string]: unknown }
   expectedKeep: boolean
 }
 
@@ -59,7 +62,7 @@ const testHelperPreprocessing = (testCase: PreprocessingTestCase) => {
     })
 
     const questionnaireData: QuestionnaireData = {}
-    let mockCurrentDateService = { get: () => '01/01/2024' } // default
+    let testCurrentDateService = mockCurrentDateService // by default
 
     // Set input data depending on data source
     if (
@@ -79,11 +82,16 @@ const testHelperPreprocessing = (testCase: PreprocessingTestCase) => {
     }
 
     if (testCase.inputDataSource === DataSources.CurrentDateService) {
-      mockCurrentDateService = { get: () => testCase.currentDate }
+      testCurrentDateService = { get: () => testCase.currentDate }
     }
 
-    const filterPrograms = createService(mockCurrentDateService)
-    const result = filterPrograms([program], questionnaireData)
+    const programs = [program]
+    PublicodesService.init(programs)
+    const result = new ProgramFeatures(
+      makeProgramsRepository(programs),
+      testCurrentDateService,
+      PublicodesService.getInstance()
+    ).getFilteredBy(questionnaireData)
 
     expectToBeOk(result)
 

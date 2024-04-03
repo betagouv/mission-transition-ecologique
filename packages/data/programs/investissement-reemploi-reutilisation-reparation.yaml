@@ -23,16 +23,17 @@ description longue: 'Pour bénéficier de cette aide, votre projet d''investisse
 
   La réalisation préalable d''une étude de faisablité est une condition d''éligibilité.'
 début de validité: 01/01/2023
-fin de validité: 31/12/2023
+fin de validité: 31/12/2024
 illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
-url: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/RRR%20hors%20emballages%20-%20Investissement%20-%20Conditions%20%C3%A9ligibilit%C3%A9%20financement%20-%202023.pdf
+url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/soutien-investissements-reemploi-reutilisation-reparation-hors-emballages
 nature de l'aide: financement
-montant du financement: Jusqu'à 55% des coûts, dans un maximum de 200 000 €
+montant du financement: Jusqu'à 60% des coûts, dans un maximum de 200 000 €
 objectifs:
+- Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME.
 - 'Déposez votre demande d''aide : informations administratives, description du projet,
-  détails techniques et financiers, étude de pertinence et de faisabilité, etc. A
-  ce stade, votre investissement ne doit pas avoir été realisé !'
+  détails techniques et financiers, étude de faisabilité, etc. A ce stade, votre investissement
+  ne doit pas avoir été realisé !'
 - L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat
   de financement précisant le montant d’aide maximum, les conditions et les modalités
   de versement.
@@ -42,11 +43,10 @@ conditions d'éligibilité:
   - Toutes tailles
   - Éligible aux micro-entreprises
   secteur géographique:
-  - Bourgogne-Franche-Comté, Grand Est, Pays de la Loire, Occitanie, Provence-Alpes-Côte
-    d'Azur, Corse, Guadeloupe, Guyane, La Réunion, Mayotte, Martinique, Île-de-France,
-    Centre-Val de Loire, Hauts-de-France, Saint-Barthélemy, Saint-Pierre-Et-Miquelon,
-    Nouvelle-Aquitaine, Wallis et Futuna, Terres australes et antarctiques françaises,
-    Saint-Martin, Polynésie française, Nouvelle-Calédonie, Ile de Clipperton, Normandie
+  - Bourgogne-Franche-Comté, Grand Est, Pays de la Loire, Occitanie, Guadeloupe, Guyane,
+    La Réunion, Martinique, Île-de-France, Centre-Val de Loire, Hauts-de-France, Nouvelle-Aquitaine,
+    Nouvelle-Calédonie, Normandie, Auvergne-Rhône-Alpes, Bretagne, Provence-Alpes-Côte
+    d'Azur, Mayotte, Polynésie française
   secteur d'activité:
   - Tous secteurs d’activité
   nombre d'années d'activité:
@@ -86,23 +86,18 @@ publicodes:
     - région = Grand Est
     - région = Pays de la Loire
     - région = Occitanie
-    - région = Provence-Alpes-Côte d'Azur
-    - région = Corse
     - région = Guadeloupe
     - région = Guyane
     - région = La Réunion
-    - région = Mayotte
     - région = Martinique
     - région = Île-de-France
     - région = Centre-Val de Loire
     - région = Hauts-de-France
-    - région = Saint-Barthélemy
-    - région = Saint-Pierre-Et-Miquelon
     - région = Nouvelle-Aquitaine
-    - région = Wallis et Futuna
-    - région = Terres australes et antarctiques françaises
-    - région = Saint-Martin
-    - région = Polynésie française
     - région = Nouvelle-Calédonie
-    - région = Ile de Clipperton
     - région = Normandie
+    - région = Auvergne-Rhône-Alpes
+    - région = Bretagne
+    - région = Provence-Alpes-Côte d'Azur
+    - région = Mayotte
+    - région = Polynésie française

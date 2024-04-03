@@ -1,6 +1,9 @@
 // CONSOLE LOG TEMPLATE
 //console.log(`router.index > FUNCTION_NAME > MSG_OR_VALUE :`)
 
+import TeeQuestionnaireResult from '@/components/questionnaire/TeeQuestionnaireResult.vue'
+import Hook from '@/router/hook'
+import { TrackId } from '@/types'
 import { createRouter, createWebHistory, type RouteLocationNormalized, type RouteLocationNormalizedLoaded } from 'vue-router'
 import TeeHomePage from '../pages/TeeHomePage.vue'
 import TeeQuestionnairePage from '../pages/TeeQuestionnairePage.vue'
@@ -10,13 +13,12 @@ import TeeLegalPage from '../pages/TeeLegalPage.vue'
 import TeeAccessibilityPage from '../pages/TeeAccessibilityPage.vue'
 import TeePersonalDataPage from '../pages/TeePersonalDataPage.vue'
 import ChatAdvisorPage from '@/pages/ChatAdvisorPage.vue'
-import TeeQuestionnaire from '@/components/TeeQuestionnaire.vue'
-import TeeProgramDetail from '@/components/program/TeeProgramDetail.vue'
+import TeeQuestionnaire from '@/components/questionnaire/TeeQuestionnaire.vue'
+import ProgramDetail from '@/components/program/detail/ProgramDetail.vue'
 import { RouteName } from '@/types/routeType'
 import { redirections } from '@/router/redirection'
-import { TrackId } from '@/types'
 import type { Component } from 'vue'
-import { resetDetailProgram, resetTrackStore, setHelpAsTrackSeed, setResultsAsTrackSeed } from '@/router/hook'
+import ProgramList from '@/components/program/list/ProgramList.vue'
 
 export const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
@@ -38,39 +40,52 @@ export const router = createRouter({
     {
       path: '/questionnaire',
       component: TeeQuestionnairePage as Component,
-      beforeEnter: [resetTrackStore, resetDetailProgram, setHelpAsTrackSeed],
       children: [
         {
           path: '',
-          name: 'questionnaire',
+          name: RouteName.QuestionnaireStart,
           component: TeeQuestionnaire as Component,
-          props: {
-            seed: TrackId.QuestionnaireRoute
-          }
+          beforeEnter: [Hook.resetUsedTrackStore, Hook.resetQueries],
+          props: { trackId: TrackId.QuestionnaireRoute }
+        },
+        {
+          path: ':trackId',
+          name: RouteName.Questionnaire,
+          component: TeeQuestionnaire as Component,
+          beforeEnter: [Hook.setUsedTracks, Hook.hasUsedTracks],
+          props: true
+        },
+        {
+          path: 'resultat',
+          name: RouteName.QuestionnaireResult,
+          component: TeeQuestionnaireResult as Component,
+          beforeEnter: [Hook.setUsedTracks, Hook.hasUsedTracks]
+        },
+        {
+          path: 'resultat/:programId',
+          name: RouteName.QuestionnaireResultDetail,
+          component: ProgramDetail as Component,
+          beforeEnter: [Hook.hasProgram, Hook.setUsedTracks, Hook.hasUsedTracks],
+          props: true
         }
       ]
     },
     {
       path: '/aides-entreprise',
       component: TeeCatalogPage as Component,
-      beforeEnter: [resetDetailProgram, resetTrackStore, setResultsAsTrackSeed],
+      beforeEnter: [Hook.resetUsedTrackStore, Hook.resetQueries, Hook.resetProgramFilters],
       children: [
         {
           path: '',
           name: RouteName.Catalog,
-          component: TeeQuestionnaire as Component,
-          props: {
-            seed: TrackId.Results
-          }
+          component: ProgramList as Component
         },
         {
           path: ':programId',
           name: RouteName.CatalogDetail,
-          component: TeeProgramDetail as Component,
-          props: (route) => ({
-            programId: route.params.programId as string,
-            trackId: TrackId.Results
-          })
+          component: ProgramDetail as Component,
+          beforeEnter: [Hook.hasProgram],
+          props: true
         }
       ]
     },

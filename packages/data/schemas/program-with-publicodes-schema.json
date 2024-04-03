@@ -1,0 +1,256 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Dispositif",
+  "description": "Données de dispositifs, avec des informations générales, relatifs à l'aide proposée et des données d'éligibilité.",
+  "type": "object",
+  "properties": {
+    "titre": {
+      "description": "Titre commercial du dispositif. Si pas de titre commercial clairement identifé, un titre générique du type \"Dispositif { opérateur de contact }\" peut être utilisé.",
+      "type": "string"
+    },
+    "promesse": {
+      "description": "TODO",
+      "type": "string"
+    },
+    "description": {
+      "description": "La description donne les principales informations du dispositif en quelques lignes",
+      "type": "string"
+    },
+    "description longue": {
+      "description": "La description longue La description longue est facultative. Elle peut être ajoutée si on juge que l'utilisateur ne dispose pas des informations suffisantes avec les seules autres informations. Elle peut être ajoutée par exemple pour définir un terme technique, pour détailler une loi à laquelle un dispositif fait référence ou pour détailler les projets concernés par un financement",
+      "type": "string"
+    },
+    "début de validité": {
+      "description": "Premier jour de validité de l'offre. Date au format JJ/MM/AAAA",
+      "type": "string",
+      "pattern": "^[0-3][0-9]\/[0-1][0-9]\/[0-9]{4}$"
+    },
+    "fin de validité": {
+      "description": "Dernier jour de validité de l'offre. Date au format JJ/MM/AAAA",
+      "type": "string",
+      "pattern": "^[0-3][0-9]\/[0-1][0-9]\/[0-9]{4}$"
+    },
+    "url": {
+      "description": "TODO",
+      "type": "string"
+    },
+    "illustration": {
+      "description": "TODO",
+      "type": "string"
+    },
+    "objectifs": {
+      "description": "TODO",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "opérateur de contact": {
+      "description": "L'opérateur de contact est l'opérateur à contacter pour obtenir des informations supplémentaires sur le dispositif.",
+      "type": "string",
+      "$ref": "#/$defs/operators"
+    },
+    "autres opérateurs": {
+      "description": "Les autres opérateurs peuvent être des opérateurs co-financeurs, ou des partenaires du dispositif. Ils doivent être différents de l'opérateur de contcat.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/operators"
+      },
+      "uniqueItems": true
+    },
+    "nature de l'aide": {
+      "description": "Précise s'il s'agit d'une aide financière, d'un accompagnement, ou d'un prêt. Un accompagnement se définit comme la réalisation d'une prestation intellectuelle, par un intervenant choisi par l'opérateur.",
+      "enum": [
+        "accompagnement",
+        "formation",
+        "financement",
+        "avantage fiscal",
+        "prêt"
+      ]
+    },
+    "coût de l'accompagnement": {
+      "description": "Uniquement pour les accompagnements. Ce champ est utile et requis uniquement si l'aide est de nature \"accompagnement\". Elle précise le coût reste à charge de l'utilisateur pour bénéficier de l'accompagnement. Il s'agit d'un champ texte, à des fins d'affichage.",
+      "type": "string"
+    },
+    "durée de l'accompagnement": {
+      "description": "Uniquement pour les accompagnements. Nombre de jours d'accompagnement du prestataire, suivi de l'étalement de son intervention le cas échéant. Par exemple : \"12 jours de prestation répartis sur 6 à 8 mois\"",
+      "type": "string"
+    },
+    "montant du financement": {
+      "description": "Ce champ est utile et requis uniquement si l'aide est de nature \"financement\". Elle précise le montant du financement, de préférence en €, à défaut en %. Il s'agit d'un champ texte, à des fins d'affichage.",
+      "type": "string"
+    },
+    "montant de l'avantage fiscal": {
+      "description": "Ce champ est utile et requis uniquement si l'aide est de nature \"avantage fiscal\". Elle précise le montant de l'avantage fiscal, en %. Il s'agit d'un champ texte, à des fins d'affichage.",
+      "type": "string"
+    },
+    "montant du prêt": {
+      "description": "Ce champ est utile et requis uniquement si l'aide est de nature \"prêt\". Il s'agit d'un champ texte, à des fins d'affichage.",
+      "type": "string"
+    },
+    "durée du prêt": {
+      "description": "Ce champ est utile et requis uniquement si l'aide est de nature \"prêt\". Il s'agit d'un champ texte, à des fins d'affichage.",
+      "type": "string"
+    },
+    "taux du prêt": {
+      "description": "Ce champ est utile uniquement si l'aide est de nature \"prêt\", mais facultatif. Il s'agit d'un champ texte, à des fins d'affichage.",
+      "type": "string"
+    },
+    "conditions d'éligibilité": {
+      "description": "Les conditions d'éligibilité, écrites en langage naturel, pour affichage sur la fiche de résultat",
+      "type": "object",
+      "properties": {
+        "secteur d'activité": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "secteur géographique": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "taille de l'entreprise": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 2
+        },
+        "nombre d'années d'activité": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "autres critères d'éligibilité": {
+          "type": "array",
+          "items": {
+             "type": "string"
+            },
+           "minItems": 1
+        }
+      },
+      "required": ["taille de l'entreprise", "secteur géographique", "secteur d'activité", "nombre d'années d'activité"]
+    },
+    "publicodes": {
+      "description": "Mécanismes publicodes (https://publi.codes/) associés au dispositif. Doit être en langage publicodes valide. Les données nécessaires à l'évaluation des règles (contrat d'interface) sont matérialisés par des clés sans valeurs.",
+      "type": "object",
+      "properties": {
+        "entreprise . est ciblée": {
+          "description": "Mécanisme pour évaluer si un dispositif doit être affiché à un utilisateur ou non. Est souvent plus restrictive que les mécanismes d'éligibilité",
+          "type": ["object", "string"]
+        }
+      },
+      "required": ["entreprise . est ciblée"]
+    }
+  },
+  "oneOf": [
+    {
+      "properties": {
+        "nature de l'aide": {
+          "oneOf": [
+          {"const": "accompagnement" },
+          {"const": "formation" }
+          ]
+        }
+      },
+      "required": ["coût de l'accompagnement", "durée de l'accompagnement"]
+    },
+    {
+      "properties": {
+        "nature de l'aide": { "const": "financement" }
+      },
+      "required": ["montant du financement"]
+    },
+    {
+      "properties": {
+        "nature de l'aide": { "const": "avantage fiscal" }
+      },
+      "required": ["montant de l'avantage fiscal"]
+    },
+    {
+      "properties": {
+        "nature de l'aide": { "const": "prêt" }
+      },
+      "required": ["durée du prêt", "montant du prêt"]
+    }
+  ],
+  "required": [
+    "titre",
+    "promesse",
+    "illustration",
+    "objectifs",
+    "opérateur de contact",
+    "nature de l'aide",
+    "conditions d'éligibilité",
+    "publicodes"
+  ],
+  "additionalProperties": false,
+
+  "$defs": {
+    "operators": {
+      "enum": [
+        "ADEME",
+        "ASP",
+        "Agence de l'Eau Adour-Garonne",
+        "Agence de l'Eau Artois-Picardie",
+        "Agence de l'Eau Loire-Bretagne",
+        "Agence de l'Eau Rhin-Meuse",
+        "Agence de l'Eau Rhône-Méditerranée-Corse",
+        "Agence de l'Eau Seine-Normandie",
+        "Agence de l'Eau",
+        "Bpifrance",
+        "Breizh Fab",
+        "CCI Auvergne-Rhône-Alpes",
+        "CCI Bretagne",
+        "CCI Centre-Val de Loire",
+        "CCI Grand-Est",
+        "CCI Hauts-de-France",
+        "CCI Loir-et-Cher",
+        "CCI Loiret",
+        "CCI Morbihan",
+        "CCI Normandie",
+        "CCI Occitanie",
+        "CCI ou CMA",
+        "CCI Île-de-France",
+        "CCI",
+        "CEE",
+        "CETIM",
+        "CMA Auvergne-Rhône-Alpes",
+        "CMA Bourgogne-Franche-Comté",
+        "CMA Bretagne",
+        "CMA Centre-Val de Loire",
+        "CMA Grand-Est",
+        "CMA Hauts-de-France",
+        "CMA La Réunion",
+        "CMA Loiret",
+        "CMA Normandie",
+        "CMA Nouvelle-Aquitaine",
+        "CMA Provence-Alpes-Côte-D'Azur",
+        "CMA Rhône",
+        "CMA Île-de-France",
+        "CMA",
+        "DDFIP",
+        "DREAL Bretagne",
+        "EcoCO2",
+        "France Rénov'",
+        "InvestEU",
+        "La Poste",
+        "Ministère de la Transition Écologique et Solidaire",
+        "ORACE en Pays de la Loire",
+        "Organisations professionnelles",
+        "Région Bretagne",
+        "Saur",
+        "Suez",
+        "UIMM",
+        "Véolia Eau"
+      ]
+    }
+  }
+}
