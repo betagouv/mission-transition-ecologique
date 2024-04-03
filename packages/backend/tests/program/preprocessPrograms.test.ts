@@ -110,41 +110,41 @@ describe(`
    WHEN  the rule is evaluated
  EXPECT  the program is properly kept or filtered out
 `, () => {
-  const testCodeNAF = (inputCodeNAF: string | undefined, keptCodeNAF: string, expectedKeep: boolean) => {
+  const testCodeNaf = (inputCodeNaf: string | undefined, keptCodeNaf: string, expectedKeep: boolean) => {
     testHelperPreprocessing({
       title: 'questionnaire "codeNAF" mapped to literal "entreprise . code NAF"',
-      inputDataEntry: ['codeNAF', inputCodeNAF],
+      inputDataEntry: ['codeNAF', inputCodeNaf],
       inputDataSource: DataSources.Questionnaire,
       publicodesKey: 'entreprise . code NAF',
-      filteringRule: `entreprise . code NAF = "${keptCodeNAF}"`,
+      filteringRule: `entreprise . code NAF = "${keptCodeNaf}"`,
       expectedKeep: expectedKeep
     })
   }
   const testCases = [
     {
-      inputCodeNAF: '12.34Z',
-      keptCodeNAF: '12.34Z',
+      inputCodeNaf: '12.34Z',
+      keptCodeNaf: '12.34Z',
       expectedKeep: true
     },
     {
-      inputCodeNAF: '34.12Z',
-      keptCodeNAF: '34.12Z',
+      inputCodeNaf: '34.12Z',
+      keptCodeNaf: '34.12Z',
       expectedKeep: true
     },
     {
-      inputCodeNAF: '11.11Z',
-      keptCodeNAF: '99.99Z',
+      inputCodeNaf: '11.11Z',
+      keptCodeNaf: '99.99Z',
       expectedKeep: false
     },
     {
-      inputCodeNAF: undefined,
-      keptCodeNAF: '99.99Z',
+      inputCodeNaf: undefined,
+      keptCodeNaf: '99.99Z',
       expectedKeep: true
     }
   ]
 
   for (const testCase of testCases) {
-    testCodeNAF(testCase.inputCodeNAF, testCase.keptCodeNAF, testCase.expectedKeep)
+    testCodeNaf(testCase.inputCodeNaf, testCase.keptCodeNaf, testCase.expectedKeep)
   }
 })
 

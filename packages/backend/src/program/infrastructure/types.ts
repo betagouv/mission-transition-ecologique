@@ -8,7 +8,7 @@ export interface PublicodesInputData {
   [PublicodesKeys.CurrentDate]: string
   [PublicodesKeys.QuestionnaireRoute]?: PublicodesQuestionnaireRoute
   [PublicodesKeys.Workforce]?: number
-  région: string
+  région?: string
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any
 }

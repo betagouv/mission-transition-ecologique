@@ -55,6 +55,12 @@ EXPECT that the filtering only keeps programs that are eligible (rule
 
   const testCases: TestCase[] = [
     {
+      name: 'empty',
+      inputData: {},
+      rules: [],
+      expectedProgramIndexes: []
+    },
+    {
       name: 'one true',
       inputData: {},
       rules: ['oui'],
