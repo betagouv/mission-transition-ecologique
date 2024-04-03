@@ -25,3 +25,19 @@ pip install pyyaml
    "./packages/data/programs"
 
 4. `./XL2yaml.py`
+
+## Dispositifs avec interventions manuelles
+
+Le bloc publicodes de certains dispositifs ont été modifié manuellement, il s'agit exclusivement des conditions sur le secteur d'activité. 
+
+Notamment, la règle "est dans un secteur d'activité éligible" est systématiquement renseignée manuellement. 
+
+Les dispositifs concernés à ce stade :
+
+- etude-diagnostic-serres
+- imprim-vert
+- pret-economies-d-energie-pee
+- pret-vert-ademe
+- pret-vert
+- repar-acteurs
+

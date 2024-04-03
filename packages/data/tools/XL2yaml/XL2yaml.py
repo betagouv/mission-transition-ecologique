@@ -92,7 +92,7 @@ def assembleProgramYAML(rawData, colNumbersByName, id):
         set("durée du prêt", get("Etalement"))
         set(
             "montant du prêt",
-            f'De {thousandSep(get("MontantMin aide"))} € à {thousandSep(get("MontantMax aide"))} €',
+            f'De {thousandSep(get("MontantMin aide"))} € à {thousandSep(get("MontantMax aide"))} €',
         )
     if nat == "avantage fiscal":
         set("montant de l'avantage fiscal", get("💰 Montant de l'aide"))
@@ -466,7 +466,7 @@ def pc_eligibility_applicability(validity_start, validity_end):
 
 
 def thousandSep(value):
-    return "{:,}".format(value).replace(",", " ")
+    return "{:,}".format(value).replace(",", " ")
 
 
 def convertToYaml(d: dict):
