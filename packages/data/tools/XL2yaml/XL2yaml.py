@@ -165,7 +165,7 @@ def assembleProgramYAML(rawData, colNumbersByName, id):
     if veh:
         cible.append(remove_namespace(POSSESSION_VEHICULES))
 
-    p360 = pc_onlyPrecise(get)
+    p360 = pc_questionnaireRoute(get)
     if p360:
         cible.append(PARCOURS_OBJ_PRECIS)
 
@@ -463,7 +463,7 @@ def pc_regions(get):
     return {ANY: [f"région = {region}" for region in regions]}
 
 
-def pc_onlyPrecise(get):
+def pc_questionnaireRoute(get):
     shouldShowOnPreciseOnly = not bool(
         get('Parcours "Je ne sais pas par où commencer"')
     )
@@ -522,7 +522,8 @@ if __name__ == "__main__":
     for i, row in enumerate(input.rows):
         if i <= headerRowIndex:
             pass
-        if row[6] == 1:
+        enProductionCol = row[7]
+        if enProductionCol == 1:
             id = row[1]
             if id == "":
                 id = forgeID(row[3])
