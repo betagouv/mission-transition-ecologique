@@ -135,6 +135,7 @@
           >
             Conditions Générales d'Utilisation </a
           >.
+        </span>
       </div>
     </div>
 
