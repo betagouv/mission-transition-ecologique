@@ -25,13 +25,13 @@ const requestAllBrevoContacts = async () => {
 
   apiInstance.setApiKey(SibApiV3Sdk.AccountApiApiKeys.apiKey, token)
 
-  const limit = 150
-  const offset = 155
-  const listIds = 2
+  const limit = 500
+  const offset = 500
+  const listId = 2
 
   let contacts
 
-  contacts = await apiInstance.getContacts(limit, offset, undefined, undefined, undefined, { listIds: listIds }).then(
+  contacts = await apiInstance.getContactsFromList(listId, undefined, limit, offset).then(
     function (data) {
       return data.body.contacts
     },
@@ -136,11 +136,24 @@ const updateProgramId = (id) => {
     case 'etudes-ademe-photovoltaique':
       return 'investissement-solaire-thermique'
 
+    case 'conseillers-renovation-petit-tertiaire-prive':
+      return 'renovation-petit-tertiaire-prive'
+
+    case 'etude-de-faisabilite-d-installation-solaire-thermique':
+      return 'etude-solaire-thermique'
+
+    case 'diag-ecoflux':
+      return 'diag-eco-flux'
+
+    case 'tpe-gagnantes':
+      return 'tpe-gagnantes-sur-tous-les-couts'
+
     case 'diag-ecoconception-2':
       return 'diag-ecoconception'
-
     case 'diag-decarbon-action-2':
       return 'diag-decarbon-action'
+    case 'diag-eco-flux-2':
+      return 'diag-eco-flux'
 
     default:
       return id
