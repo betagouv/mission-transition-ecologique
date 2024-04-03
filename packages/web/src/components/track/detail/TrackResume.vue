@@ -11,10 +11,7 @@
 
 <script setup lang="ts">
 import { useUsedTrackStore } from '@/stores/usedTrack'
-import type {
-  Track //
-  // FlatObject
-} from '@/types'
+import type { Track } from '@/types'
 import Translation from '@/utils/translation'
 
 interface Props {
