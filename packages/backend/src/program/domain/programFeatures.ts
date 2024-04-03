@@ -40,5 +40,4 @@ export default class ProgramFeatures {
   public getAll(): Program[] {
     return this._programRepository.getAll()
   }
-
 }
