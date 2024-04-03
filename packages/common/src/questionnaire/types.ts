@@ -1,7 +1,7 @@
 export enum YesNo {
   Yes = 'oui',
   No = 'non',
-  Unknown = 'unknown'
+  Unknown = 'je-ne-sais-pas'
 }
 
 export enum QuestionnaireRoute {
@@ -10,13 +10,13 @@ export enum QuestionnaireRoute {
 }
 
 export enum BuildingProperty {
-  Owns = 'owns',
-  Rents = 'rents',
-  OwnsAndRents = 'owns_and_rents'
+  Owns = 'proprietaire',
+  Rents = 'locataire',
+  OwnsAndRents = 'proprietaire-et-locataire'
 }
 
 export enum SiretValue {
-  Wildcard = 'wildcard'
+  Wildcard = 'siret-non-renseigne'
 }
 
 export enum StructureSize {
@@ -34,23 +34,23 @@ export const SizeToWorkforce = {
 }
 
 export enum WasteSortingStatus {
-  InPlace = 'in place',
-  CanImprove = 'can do better',
-  Unknown = 'unknown'
+  InPlace = 'en-place',
+  CanImprove = 'peut-mieux-faire',
+  Unknown = 'je-ne-sais-pas'
 }
 
 export enum WasteManagementStatus {
-  Yes = 'yes',
-  NoMax = 'no-max',
-  No = 'no',
-  Unknown = 'unknown'
+  Yes = 'oui',
+  NoMax = 'non-max',
+  No = 'non',
+  Unknown = 'je-ne-sais-pas'
 }
 
 export enum MobilityStatus {
-  Yes = 'yes',
-  NoMax = 'no-max',
-  No = 'no',
-  Unknown = 'unknown'
+  Yes = 'oui',
+  NoMax = 'non-max',
+  No = 'non',
+  Unknown = 'je-ne-sais-pas'
 }
 
 export enum Sector {
