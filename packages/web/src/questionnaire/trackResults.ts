@@ -14,8 +14,8 @@ export const results: Track = {
     // fr: "D’après les informations que vous avez renseignées, voici les accompagnements dont vous pouvez bénéficier pour diminuer l'empreinte écologique de votre entreprise."
     fr: 'Voici les accompagnements \
       dont vous pouvez bénéficier pour diminuer l’empreinte écologique \
-      de votre {structure_sizes} du secteur {secteur} \
-      en région {région}.'
+      de votre {effectif} du secteur {activite} \
+      en région {region}.'
   },
   interface: {
     component: TrackComponent.Results

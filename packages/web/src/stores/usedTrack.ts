@@ -9,8 +9,7 @@ import {
   type TrackOptions,
   type TrackOptionsUnion,
   type UsedTrack,
-  type UsedTrackValuePair,
-  type FlatObject
+  type UsedTrackValuePair
 } from '@/types'
 import { CheckNextTrackRules } from '@/utils/conditions'
 import { remapItem } from '@/utils/helpers'
@@ -63,35 +62,13 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
 
   const usedTracksValuesPairs = computed<UsedTrackValuePair[]>(() => {
     return usedTracks.value.map((usedTrack: UsedTrack) => {
-      const values = usedTrack.selected?.map((s) => s.value)
+      const values = usedTrack.selected?.map((s: TrackOptionsUnion) => s.value)
       return {
         currentId: usedTrack.id,
         completed: usedTrack.completed,
         selection: toRaw(values.map((i) => toRaw(i)))
       }
     })
-  })
-
-  const usedTracksValues = computed<(string | number | object)[]>(() => {
-    const usedTrackValues = completedUsedTracks.value
-      .map((usedTrack: UsedTrack) => {
-        const values = usedTrack.selected?.map((s: TrackOptionsUnion) => s.value)
-        return toRaw(values.map((i: TrackOptionsUnion) => toRaw(i)))
-      })
-      .filter((i) => i?.length)
-
-    return usedTrackValues.flat(1)
-  })
-
-  const usedTracksValuesSingleObject = computed<object>(() => {
-    const allTracksValues = usedTracksValues.value as FlatObject[]
-    const result: FlatObject = {}
-    allTracksValues.forEach((obj) => {
-      Object.entries(obj).forEach(([key, value]) => {
-        result[key] = value
-      })
-    })
-    return result
   })
 
   function setCurrent(track: UsedTrack | undefined) {
@@ -307,10 +284,9 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     currentComponent,
     usedTracks,
     usedTracksIds,
+    completedUsedTracks,
     completedQuestionnaireData,
     usedTracksValuesPairs,
-    usedTracksValues,
-    usedTracksValuesSingleObject,
     currentIsCompleted,
     setCurrent,
     setCurrentById,
