@@ -7,5 +7,3 @@
   </div>
   <ContactHelp />
 </template>
-
-<script setup lang="ts"></script>

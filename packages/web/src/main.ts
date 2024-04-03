@@ -18,7 +18,7 @@ const store = createPinia()
 const app: App = createApp(WebApp as Component)
 
 Sentry.init(app)
-// app.use(VueDsfr, { icons: listIcons() })
+
 app.use(store)
 app.use(router)
 app.mount('#app')
