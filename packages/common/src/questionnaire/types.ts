@@ -19,13 +19,6 @@ export enum SiretValue {
   Wildcard = 'wildcard'
 }
 
-export enum MobilityPriority {
-  Yes = 'yes',
-  NoMax = 'no-max',
-  No = 'no',
-  Unknown = 'unknown'
-}
-
 export enum StructureSize {
   TPE = 'TPE',
   PE = 'PE',
@@ -40,13 +33,20 @@ export const SizeToWorkforce = {
   [StructureSize.ETI_GE]: 251
 }
 
-export enum WasteSorting {
+export enum WasteSortingStatus {
   InPlace = 'in place',
   CanImprove = 'can do better',
   Unknown = 'unknown'
 }
 
-export enum WastePriority {
+export enum WasteManagementStatus {
+  Yes = 'yes',
+  NoMax = 'no-max',
+  No = 'no',
+  Unknown = 'unknown'
+}
+
+export enum MobilityStatus {
   Yes = 'yes',
   NoMax = 'no-max',
   No = 'no',
@@ -89,6 +89,7 @@ export const Objectives = {
   [Objective.DurablyInvest]: YesNo.No,
   [Objective.UnknownYet]: YesNo.No
 }
+
 export enum PublicodesKeys {
   ValidityStart = 'dispositif . début de validité',
   ValidityEnd = 'dispositif . fin de validité',

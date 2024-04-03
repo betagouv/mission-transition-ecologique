@@ -29,7 +29,7 @@ export const strategyAudits: Track = {
   options: [
     {
       value: YesNo.Yes,
-      questionnaireData: { strategy_audits: YesNo.Yes },
+      questionnaireData: { recently_audited: YesNo.Yes },
       title: { fr: 'Oui' },
       label: { fr: '✅ Oui !' },
       next: {
@@ -38,7 +38,7 @@ export const strategyAudits: Track = {
     },
     {
       value: YesNo.No,
-      questionnaireData: { strategy_audits: YesNo.No },
+      questionnaireData: { recently_audited: YesNo.No },
       title: { fr: 'Non' },
       label: { fr: '❌ Non' },
       next: {
@@ -47,7 +47,7 @@ export const strategyAudits: Track = {
     },
     {
       value: YesNo.Unknown,
-      questionnaireData: { strategy_audits: YesNo.Unknown },
+      questionnaireData: { recently_audited: YesNo.Unknown },
       title: { fr: 'Je ne sais pas' },
       label: { fr: 'Je ne sais pas' },
       next: {

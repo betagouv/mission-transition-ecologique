@@ -27,7 +27,7 @@ export const buildingProperty: Track = {
   options: [
     {
       value: BuildingProperty.Owns,
-      questionnaireData: { structure_building_property: BuildingProperty.Owns },
+      questionnaireData: { building_property: BuildingProperty.Owns },
       title: { fr: 'Propriétaire' },
       label: { fr: '🔑 Propriétaire' },
       next: {
@@ -36,7 +36,7 @@ export const buildingProperty: Track = {
     },
     {
       value: BuildingProperty.Rents,
-      questionnaireData: { structure_building_property: BuildingProperty.Rents },
+      questionnaireData: { building_property: BuildingProperty.Rents },
       title: { fr: 'Locataire' },
       label: { fr: '📝 Locataire ' },
       next: {
@@ -45,7 +45,7 @@ export const buildingProperty: Track = {
     },
     {
       value: BuildingProperty.OwnsAndRents,
-      questionnaireData: { structure_building_property: BuildingProperty.OwnsAndRents },
+      questionnaireData: { building_property: BuildingProperty.OwnsAndRents },
       title: { fr: 'Propriétaire & locataire' },
       label: { fr: 'Je suis à la fois propriétaire et locataire sur mes différents locaux' },
       next: {
