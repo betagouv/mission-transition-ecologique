@@ -1,5 +1,5 @@
 import {
-  Entreprise,
+  PublicodesKeys,
   PublicodeObjectives,
   ProgramAidType,
   type ProgramData,
@@ -22,8 +22,8 @@ export default class ProgramFilter {
       return true
     }
 
-    if (program.publicodes[Entreprise.hasObjective]) {
-      return program.publicodes[Entreprise.hasObjective][PublicodesCondition.oneOfThese].includes(objectiveTypeSelected)
+    if (program.publicodes[PublicodesKeys.hasObjective]) {
+      return program.publicodes[PublicodesKeys.hasObjective][PublicodesCondition.oneOfThese].includes(objectiveTypeSelected)
     }
 
     return true
