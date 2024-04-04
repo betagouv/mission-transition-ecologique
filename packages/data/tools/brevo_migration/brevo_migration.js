@@ -25,20 +25,24 @@ const requestAllBrevoContacts = async () => {
 
   apiInstance.setApiKey(SibApiV3Sdk.AccountApiApiKeys.apiKey, token)
 
-  const limit = 500
-  const offset = 500
-  const listId = 2
+  let contacts = []
 
-  let contacts
+  // It is not possible to fetch all in one query
+  for (offset of [0, 500]) {
+    const limit = 500
+    const listId = 2
 
-  contacts = await apiInstance.getContactsFromList(listId, undefined, limit, offset).then(
-    function (data) {
-      return data.body.contacts
-    },
-    function (error) {
-      console.error(error)
-    }
-  )
+    const contactBatch = await apiInstance.getContactsFromList(listId, undefined, limit, offset).then(
+      function (data) {
+        return data.body.contacts
+      },
+      function (error) {
+        console.error(error)
+      }
+    )
+
+    contacts.push(...contactBatch)
+  }
 
   return contacts
 }
@@ -77,7 +81,7 @@ const translateOneContactToOpportunity = (contact, service) => {
       created_at: contact.createdAt,
       last_updated_date: contact.modifiedAt,
       message: contact.attributes.FORM_NEEDS,
-      oprateur_de_contact: program ? program['opérateur de contact'] : undefined,
+      oprateur_de_contact: program ? program['opérateur de contact'] : deletedProgramOperator(updatedId),
       parcours: allResponses ? allResponses.user_help : 'annuaire',
       autres_donnes: contact.attributes.ALL_RESPONSES
     },
@@ -158,6 +162,16 @@ const updateProgramId = (id) => {
     default:
       return id
   }
+}
+
+const deletedProgramOperator = (programId) => {
+  if (programId == 'aides-aux-relais-et-aux-actions-ponctuelles') {
+    return 'ADEME'
+  } else if (programId == 'diag-impact') {
+    return 'Bpifrance'
+  }
+
+  return undefined
 }
 
 const sendOpportunitiesToBrevo = async (opportunities) => {
