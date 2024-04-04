@@ -27,7 +27,12 @@ const defaultQuestionnaireData: EstablishmentType = {
   région: null,
   structure_sizes: '',
   denomination: '',
-  secteur: undefined
+  secteur: undefined,
+  creationDate: ''
+}
+
+export enum SiretValue {
+  Wildcard = 'siret-non-renseigne'
 }
 
 export enum SiretValue {
@@ -148,6 +153,13 @@ export const siret: Track = {
               path: 'address.zipCode',
               dataField: 'codePostal',
               onlyRemap: true
+            },
+            {
+              from: DataMappingFrom.RawData,
+              id: 'creationDate',
+              path: 'creationDate',
+              dataField: 'creationDate',
+              onlyRemap: true
             }
           ],
           inputCleaning: [
@@ -190,7 +202,7 @@ export const siret: Track = {
               icon: 'fr-icon-map-pin-2-line'
             },
             {
-              respFields: ['raw.creationDate'],
+              respFields: ['data.creationDate'],
               label: 'Création le',
               // prefix: 'Création le ',
               icon: 'fr-icon-time-line',

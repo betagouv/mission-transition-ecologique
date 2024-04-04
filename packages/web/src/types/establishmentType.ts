@@ -8,6 +8,7 @@ export default interface EstablishmentType {
   structure_sizes: string
   denomination: string | null
   secteur: string | undefined
+  creationDate: string
 }
 
 export function isEstablishmentType(obj: unknown): obj is EstablishmentType {

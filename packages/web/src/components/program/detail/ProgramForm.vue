@@ -135,9 +135,6 @@
           >
             Conditions Générales d'Utilisation </a
           >.
-          <br />
-          <br />
-          Pour toute question, vous pouvez nous contacter à "france-transition(at)beta.gouv.fr"
         </span>
       </div>
     </div>

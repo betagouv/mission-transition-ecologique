@@ -2,9 +2,9 @@ import type { Track } from '@/types'
 import { Entreprise, TrackComponent, TrackId, YesNo } from '@/types'
 
 export enum BuildingProperty {
-  Owns = 'owns',
-  Rents = 'rents',
-  OwnsAndRents = 'owns_and_rents'
+  Owns = 'proprietaire',
+  Rents = 'locataire',
+  OwnsAndRents = 'proprietaire-et-locataire'
 }
 
 export const buildingProperty: Track = {

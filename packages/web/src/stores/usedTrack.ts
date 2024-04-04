@@ -15,7 +15,7 @@ import { CheckNextTrackRules } from '@/utils/conditions'
 import { remapItem } from '@/utils/helpers'
 import TrackSiret from '@/utils/track/TrackSiret'
 import Translation from '@/utils/translation'
-import type { QuestionnaireData } from '@tee/backend/build/backend/src/program/domain/types'
+import type { QuestionnaireData } from '@tee/backend/src/program/domain/types'
 import { acceptHMRUpdate, defineStore } from 'pinia'
 import { computed, ref, toRaw } from 'vue'
 
