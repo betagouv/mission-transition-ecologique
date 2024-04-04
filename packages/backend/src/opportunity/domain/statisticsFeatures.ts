@@ -1,13 +1,20 @@
 import { Result } from 'true-myth'
 
 import { Statistics } from './types'
+import { OpportunityRepository } from './spi'
 
 export default class StatisticsFeatures {
+  private readonly _opportunityRepository: OpportunityRepository
+
+  constructor(opportunityRepository: OpportunityRepository) {
+    this._opportunityRepository = opportunityRepository
+  }
+
   async computeStatistics(): Promise<Result<Statistics, Error>> {
     await new Promise((res) => setTimeout(res, 100))
 
     const fakeStatistics: Statistics = {
-      nProgramsActivated: 'unknown',
+      nProgramsActivated: null,
       nOpportunitiesCreated: 532,
       nProgramsProposed: 532,
       demandsTimeSeries: [
@@ -20,5 +27,15 @@ export default class StatisticsFeatures {
     }
 
     return Result.ok(fakeStatistics)
+  }
+
+  async getOpportunitiesCreated(): Promise<number | null> {
+    const countResult = await this._opportunityRepository.count()
+
+    if (countResult.isOk) {
+      return countResult.value
+    }
+
+    return null
   }
 }

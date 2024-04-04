@@ -89,3 +89,5 @@ const convertQuestionnaireRoute = (questionnaireRoute: QuestionnaireRoute | unde
       return BrevoQuestionnaireRoute.NO_SPECIFIC_GOAL
   }
 }
+
+export const brevoRepository: OpportunityRepository = { create: addBrevoDeal, update: updateBrevoDeal, count: TODO }
