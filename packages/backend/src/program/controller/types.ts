@@ -1,4 +1,4 @@
-import { Program } from '../domain/type/types'
+import { Program } from '../domain/types/types'
 
 interface OpenAPISafeEligibility {
   // Tsoa does not work well with TupleType due to some limitations

@@ -1,5 +1,5 @@
 import { Result } from 'true-myth'
-import { Operators, Program } from '../../program/domain/type/types'
+import { Operators, Program } from '../../program/domain/types/types'
 import { Opportunity } from '../../opportunity/domain/types'
 import { ContactId } from './types'
 

@@ -2,7 +2,7 @@ import { Result } from 'true-myth'
 import { Operators } from '@tee/data/src/generated/program'
 import { AxiosInstance } from 'axios'
 import { OperatorRepository } from '../../domain/spi'
-import { Program } from '../../../program/domain/type/types'
+import { Program } from '../../../program/domain/types/types'
 import { Opportunity } from '../../../opportunity/domain/types'
 import { ContactId } from '../../domain/types'
 

@@ -1,9 +1,9 @@
 import Engine from 'publicodes'
-import { QuestionnaireData } from '../domain/type/questionnaireData'
+import { QuestionnaireData } from '../domain/types/questionnaireData'
 import { evaluateRule } from './publicodes'
 import { Result } from 'true-myth'
 import { ensureError } from '../../common/domain/error/errors'
-import { Program } from '../domain/type/types'
+import { Program } from '../domain/types/types'
 
 export class PublicodesService {
   private static instance: PublicodesService

@@ -1,7 +1,7 @@
 import jsonPrograms from '@tee/web/public/data/generated/dataset_out.json'
 
 import { ProgramRepository } from '../domain/spi'
-import { Program } from '../domain/type/types'
+import { Program } from '../domain/types/types'
 
 export default class ProgramsJson implements ProgramRepository {
   private static instance: ProgramsJson

@@ -1,5 +1,5 @@
 import { Program } from '@tee/data/src/type/program'
-import { QuestionnaireData } from './type/questionnaireData'
+import { QuestionnaireData } from './types/questionnaireData'
 import { CurrentDateService, ProgramRepository, RulesService } from './spi'
 import { filterPrograms } from './filterPrograms'
 import { sortPrograms } from './sortPrograms'

@@ -1,5 +1,5 @@
 import { Opportunity } from '../../../../opportunity/domain/types'
-import { Program } from '../../../../program/domain/type/types'
+import { Program } from '../../../../program/domain/types/types'
 import { bpiOpportunityPayload } from './types'
 
 export default class OpportunityPayloadDTO {
