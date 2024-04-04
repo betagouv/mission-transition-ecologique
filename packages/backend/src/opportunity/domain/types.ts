@@ -43,8 +43,8 @@ export type DemandsTimeSeries = {
 }[]
 
 export interface Statistics {
-  nProgramsActivated: number
-  nProgramsUnknownOutcome: number
+  nProgramsActivated: string
+  nOpportunitiesCreated: number
   nProgramsProposed: number
   demandsTimeSeries: DemandsTimeSeries
 }
