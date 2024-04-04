@@ -14,7 +14,7 @@
     "outDir": "./build",
     "target": "ESNext",
     "paths": {
-      "@tee/common": ["../common"]
+      "@tee/common": ["../common"],
     },
     "composite": true,
     "declaration": true,

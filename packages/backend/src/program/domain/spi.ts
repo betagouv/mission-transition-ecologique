@@ -1,5 +1,6 @@
 import { Result } from 'true-myth'
-import { QuestionnaireData, type Program } from './types'
+import { QuestionnaireData } from './type/questionnaireData'
+import { type Program } from './type/types'
 
 export type CurrentDateService = {
   get: () => string // fr-FR formatted, e.g. "20/12/2023"

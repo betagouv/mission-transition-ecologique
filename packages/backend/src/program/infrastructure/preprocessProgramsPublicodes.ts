@@ -1,5 +1,6 @@
 import { QuestionnaireRoute } from '../../../../common/src/questionnaire/types'
-import { type QuestionnaireData, Program } from '../domain/types'
+import { QuestionnaireData } from '../domain/type/questionnaireData'
+import { Program } from '../domain/type/types'
 import { type PublicodesInputData, PublicodesKeys, PublicodesQuestionnaireRoute } from './types'
 
 /** preprocesses the data gathered from the questionnaire into variables
