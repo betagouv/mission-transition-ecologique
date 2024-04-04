@@ -11,10 +11,10 @@ const testPipeline = {
   deal_stage: 'C8DrOEJbVoiqtWZHQbMHyxF'
 }
 
-// const prod_pipeline = {
-//   pipeline: '65719d9023acb4f05e56e7eb',
-//   deal_stage: '659d15cff01695.94588187'
-// }
+const prodPipeline = {
+  pipeline: '65719d9023acb4f05e56e7eb',
+  deal_stage: '659d15cff01695.94588187'
+}
 
 let selectedPipeline = testPipeline
 
