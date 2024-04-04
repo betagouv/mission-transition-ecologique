@@ -9,6 +9,7 @@ import type {
   FormCallbackDataMapping,
   NextTrackRule,
   PropertyPath,
+  ReqResp,
   ResultsMapping
 } from '@/types'
 import { CleanerOperations, DataMappingFrom } from '@/types'
@@ -50,16 +51,16 @@ export const getFromOnePath = (from: any, selector: string) => {
   return val[0]
 }
 
-export const getFromResp = (from: any, resMap: ResultsMapping, lang: string = 'fr') => {
+export const getFromResp = (from: ReqResp, resMap: ResultsMapping, lang: string = 'fr') => {
   const selectors = resMap.respFields
-  let val = getFrom(from, selectors)
+  let values = getFrom(from, selectors)
   if (resMap.cleaning) {
-    val = val.map((v) => {
-      return cleanValue(v, resMap.cleaning as Cleaner[] | CleanerReplaceAll[] | CleanerDefaultIfNull[], lang)
+    values = values.map((value) => {
+      return cleanValue(value, resMap.cleaning as Cleaner[] | CleanerReplaceAll[] | CleanerDefaultIfNull[], lang)
     })
   }
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-  return val
+  return values
 }
 
 export const setIn = (obj: any, [head, ...rest]: string[], value: any) => {
