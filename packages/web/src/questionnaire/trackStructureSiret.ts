@@ -35,10 +35,6 @@ export enum SiretValue {
   Wildcard = 'siret-non-renseigne'
 }
 
-export enum SiretValue {
-  Wildcard = 'wildcard'
-}
-
 export const siret: Track = {
   id: TrackId.Siret,
   category: 'myEntreprise',
