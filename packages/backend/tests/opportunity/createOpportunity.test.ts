@@ -36,7 +36,11 @@ const dummyUpdateOpportunity = (_opportunitiyId: OpportunityId, _opportunitiy: O
   return Promise.resolve(Maybe.nothing<Error>())
 }
 
-const dummyOpportunityRepository: OpportunityRepository = { create: dummyAddOpportunity, update: dummyUpdateOpportunity }
+const dummycountOpportunity = (): Promise<Result<number, Error>> => {
+  return Promise.resolve(Result.ok(9999999))
+}
+
+const dummyOpportunityRepository: OpportunityRepository = { create: dummyAddOpportunity, update: dummyUpdateOpportunity, count: dummycountOpportunity }
 
 const makeCreateOpportunityFun = (contactRepository: ContactRepository, opportunityRepository: OpportunityRepository) => {
   return new OpportunityFeatures(contactRepository, opportunityRepository, [], dummyProgramRepository).createOpportunity
@@ -65,8 +69,8 @@ describe(`
    AND contact creation/update or opportunity creation goes wrong
 EXPECT createOpportunity to return an error (wrapped in Result)`, () => {
   // define test repositories that throw errors
-  class ContactError extends Error {}
-  class OpportunityError extends Error {}
+  class ContactError extends Error { }
+  class OpportunityError extends Error { }
   const addContactWithError = (_contact: ContactDetails, _optIn: true): Promise<Result<ContactId, Error>> => {
     return Promise.resolve(Result.err(new ContactError('contact error')))
   }
@@ -77,7 +81,7 @@ EXPECT createOpportunity to return an error (wrapped in Result)`, () => {
     return Promise.resolve(Result.err(new OpportunityError('opportunity error')))
   }
 
-  const errorOpportunityRepository = { create: addOpportunityWithError, update: dummyUpdateOpportunity }
+  const errorOpportunityRepository = { create: addOpportunityWithError, update: dummyUpdateOpportunity, count: dummycountOpportunity }
 
   test('createOpportunity escalates contact creation/update error', async () => {
     const createOpportunity = makeCreateOpportunityFun(errorContactRepository, dummyOpportunityRepository)

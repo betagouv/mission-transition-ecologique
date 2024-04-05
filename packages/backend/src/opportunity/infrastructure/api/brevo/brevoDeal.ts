@@ -7,7 +7,7 @@ import { DealAttributes, BrevoQuestionnaireRoute, QuestionnaireRoute, DealUpdate
 
 // "Opportunities" are called "Deals" in Brevo
 
-export const addBrevoDeal: OpportunityRepository['create'] = async (
+const addBrevoDeal: OpportunityRepository['create'] = async (
   contactId: number,
   domainOpportunity: OpportunityDetails
 ): Promise<Result<OpportunityId, Error>> => {
@@ -34,7 +34,7 @@ const requestCreateDeal = async (name: string, attributes: DealAttributes): Prom
   return dealId
 }
 
-export const updateBrevoDeal: OpportunityRepository['update'] = async (
+const updateBrevoDeal: OpportunityRepository['update'] = async (
   dealId: OpportunityId,
   updateAttributes: OpportunityUpdateAttributes
 ): Promise<Maybe<Error>> => {
@@ -90,4 +90,22 @@ const convertQuestionnaireRoute = (questionnaireRoute: QuestionnaireRoute | unde
   }
 }
 
-export const brevoRepository: OpportunityRepository = { create: addBrevoDeal, update: updateBrevoDeal, count: TODO }
+const countBrevoDeal = async (): Promise<Result<number, Error>> => {
+  const responsePatch = await new BrevoAPI().GetDealCount()
+  // result<axiosresponse<Any,any>Error>
+  if (responsePatch.isOk) {
+    console.log(responsePatch.value)
+    if (responsePatch.value.data.pager.total) {
+      return Result.ok(responsePatch.value.data.pager.total)
+    }
+    else {
+      return Result.err(new Error())
+    }
+  }
+  else {
+    return Result.err(responsePatch.error)
+
+  }
+}
+
+export const brevoRepository: OpportunityRepository = { create: addBrevoDeal, update: updateBrevoDeal, count: countBrevoDeal }

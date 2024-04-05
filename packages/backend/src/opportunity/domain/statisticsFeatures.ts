@@ -13,9 +13,11 @@ export default class StatisticsFeatures {
   async computeStatistics(): Promise<Result<Statistics, Error>> {
     await new Promise((res) => setTimeout(res, 100))
 
+    const nOpportunitiesCreated = await this.getOpportunitiesCreated()
+
     const fakeStatistics: Statistics = {
       nProgramsActivated: null,
-      nOpportunitiesCreated: 532,
+      nOpportunitiesCreated: nOpportunitiesCreated,
       nProgramsProposed: 532,
       demandsTimeSeries: [
         { year: '2023', month: '10', nDemands: 150 },
