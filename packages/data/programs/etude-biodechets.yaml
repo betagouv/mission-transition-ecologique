@@ -45,7 +45,7 @@ conditions d'éligibilité:
   secteur géographique:
   - France et territoires d'outre-mer
   secteur d'activité:
-  - Cette aide concerne les entreprises de restauration, de production ou de commerce
+  - cette aide concerne les entreprises de restauration, de production ou de commerce
     alimentaire et les opérateurs privés de traitement de biodéchets.
   - 'Section I : Hébergement et restauration / Section E Division 38 : Collecte, traitement
     et élimination des déchets ; récupération /  Section G classe 47.11 Commerce de
@@ -60,11 +60,8 @@ conditions d'éligibilité:
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
-    - est éligible
     - est dans un secteur d'activité ciblé
     - a un objectif ciblé
-  entreprise . est éligible:
-    valeur: oui
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
     - code NAF niveau 1 . est A
