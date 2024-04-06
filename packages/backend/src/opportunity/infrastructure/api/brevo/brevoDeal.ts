@@ -31,7 +31,7 @@ const requestCreateDeal = async (name: string, attributes: DealAttributes): Prom
     attributes: attributes
   }
   if (Config.BREVO_DEAL_PIPELINE) {
-    payload.pipeline = Config.BREVO_DEAL_PIPELINE
+    payload.attributes.pipeline = Config.BREVO_DEAL_PIPELINE
   }
   const responseResult = await new BrevoAPI().PostDeal(payload)
 
