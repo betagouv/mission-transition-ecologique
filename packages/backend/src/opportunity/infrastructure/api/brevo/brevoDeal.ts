@@ -3,7 +3,8 @@ import { Maybe, Result } from 'true-myth'
 import { OpportunityRepository } from '../../../domain/spi'
 import { OpportunityId, OpportunityDetails, OpportunityUpdateAttributes } from '../../../domain/types'
 import BrevoAPI from './brevoAPI'
-import { DealAttributes, BrevoQuestionnaireRoute, QuestionnaireRoute, DealUpdateAttributes } from './types'
+import { DealAttributes, BrevoQuestionnaireRoute, QuestionnaireRoute, DealUpdateAttributes, BrevoPostDealPayload } from './types'
+import Config from '../../../../config'
 
 // "Opportunities" are called "Deals" in Brevo
 
@@ -25,10 +26,14 @@ export const addBrevoDeal: OpportunityRepository['create'] = async (
 }
 
 const requestCreateDeal = async (name: string, attributes: DealAttributes): Promise<Result<OpportunityId, Error>> => {
-  const responseResult = await new BrevoAPI().PostDeal({
+  const payload: BrevoPostDealPayload = {
     name: name,
     attributes: attributes
-  })
+  }
+  if (Config.BREVO_DEAL_PIPELINE) {
+    payload.pipeline = Config.BREVO_DEAL_PIPELINE
+  }
+  const responseResult = await new BrevoAPI().PostDeal(payload)
 
   const dealId = responseResult.map((r) => r.data as OpportunityId)
   return dealId

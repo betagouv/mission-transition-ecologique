@@ -20,4 +20,11 @@ export default class Config extends ConfigCommon {
 
     return process.env['BPI_FRANCE_CLIENT_SECRET']
   }
+
+  public static get BREVO_DEAL_PIPELINE(): string | undefined {
+    if (!process.env['BREVO_DEAL_PIPELINE']) {
+      return undefined
+    }
+    return process.env['BREVO_DEAL_PIPELINE']
+  }
 }
