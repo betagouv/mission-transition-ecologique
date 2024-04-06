@@ -70,7 +70,8 @@ const associateBrevoDealToContact = async (dealId: OpportunityId, contactId: num
 
 const convertDomainToBrevoDeal = (domainAttributes: OpportunityDetails): DealAttributes => {
   return {
-    message: domainAttributes.message,
+    // Brevo does not handle newlines in attributes
+    message: replaceNewlinesWithSpaces(domainAttributes.message),
     parcours: convertQuestionnaireRoute(domainAttributes.questionnaireRoute),
     ...(domainAttributes.priorityObjectives && { objectifs_renseigns: domainAttributes.priorityObjectives.join(', ') }),
     ...(domainAttributes.programContactOperator && { oprateur_de_contact: domainAttributes.programContactOperator }),
@@ -93,4 +94,8 @@ const convertQuestionnaireRoute = (questionnaireRoute: QuestionnaireRoute | unde
     case QuestionnaireRoute.NoSpecificGoal:
       return BrevoQuestionnaireRoute.NO_SPECIFIC_GOAL
   }
+}
+
+const replaceNewlinesWithSpaces = (text: string): string => {
+  return text.replaceAll('\n', ' ')
 }
