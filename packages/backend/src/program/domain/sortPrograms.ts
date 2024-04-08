@@ -1,5 +1,5 @@
 import { ProgramAidType } from '../../../../common/src/program/types'
-import { Program } from './types'
+import { Program } from './types/types'
 import { QuestionnaireRoute } from '../../../../common/src/questionnaire/types'
 
 // sorts the programs according to a "sortProfile", which currently

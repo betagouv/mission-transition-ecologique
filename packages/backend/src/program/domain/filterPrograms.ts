@@ -1,5 +1,6 @@
 import { Result } from 'true-myth'
-import { Program, QuestionnaireData } from './types'
+import { QuestionnaireData } from './types/questionnaireData'
+import { Program } from './types/types'
 import { RulesService } from './spi'
 
 /** Expected rule to evaluate if a program should be displayed to the user or
