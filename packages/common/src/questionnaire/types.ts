@@ -26,13 +26,6 @@ export enum StructureSize {
   ETI_GE = 'ETI_et_GE'
 }
 
-export const SizeToWorkforce = {
-  [StructureSize.TPE]: 19,
-  [StructureSize.PE]: 49,
-  [StructureSize.ME]: 249,
-  [StructureSize.ETI_GE]: 251
-}
-
 export enum WasteSortingStatus {
   InPlace = 'en-place',
   CanImprove = 'peut-mieux-faire',

@@ -6,12 +6,19 @@ import {
   PublicodesKeys,
   QuestionnaireRoute,
   Sector,
-  SizeToWorkforce,
+  StructureSize,
   WasteManagementStatus,
   YesNo
 } from '../../../../common/src/questionnaire/types'
 import { type QuestionnaireData, Program } from '../domain/types'
 import { type PublicodesInputData, PublicodesQuestionnaireRoute, SectorToNAFSection, NAF1Letters } from './types'
+
+const SizeToWorkforce = {
+  [StructureSize.TPE]: 19,
+  [StructureSize.PE]: 49,
+  [StructureSize.ME]: 249,
+  [StructureSize.ETI_GE]: 251
+}
 
 /** preprocesses the data gathered from the questionnaire into variables
  * needed by publicodes */
