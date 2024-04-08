@@ -1,6 +1,4 @@
 import type { Component } from 'vue'
-import type { RouteLocationNormalized } from 'vue-router'
-
 import TeeHomePage from '../pages/TeeHomePage.vue'
 import TeeQuestionnairePage from '../pages/TeeQuestionnairePage.vue'
 import TeeCatalogPage from '../pages/TeeCatalogPage.vue'
@@ -9,12 +7,14 @@ import TeeLegalPage from '../pages/TeeLegalPage.vue'
 import TeeAccessibilityPage from '../pages/TeeAccessibilityPage.vue'
 import TeePersonalDataPage from '../pages/TeePersonalDataPage.vue'
 import ChatAdvisorPage from '@/pages/ChatAdvisorPage.vue'
-import TeeQuestionnaire from '@/components/TeeQuestionnaire.vue'
-import TeeProgramDetail from '@/components/program/TeeProgramDetail.vue'
 import { RouteName } from '@/types/routeType'
 import { redirections } from '@/router/redirection'
 import { TrackId } from '@/types'
-import { resetDetailProgram, resetTrackStore, setHelpAsTrackSeed, setResultsAsTrackSeed } from '@/router/hook'
+import Hook from '@/router/hook'
+import TeeQuestionnaire from '@/components/questionnaire/TeeQuestionnaire.vue'
+import TeeQuestionnaireResult from '@/components/questionnaire/TeeQuestionnaireResult.vue'
+import ProgramList from '@/components/program/list/ProgramList.vue'
+import ProgramDetail from '@/components/program/detail/ProgramDetail.vue'
 
 export const routes = [
   {
@@ -25,39 +25,52 @@ export const routes = [
   {
     path: '/questionnaire',
     component: TeeQuestionnairePage as Component,
-    beforeEnter: [resetTrackStore, resetDetailProgram, setHelpAsTrackSeed],
     children: [
       {
         path: '',
-        name: 'questionnaire',
+        name: RouteName.QuestionnaireStart,
         component: TeeQuestionnaire as Component,
-        props: {
-          seed: TrackId.QuestionnaireRoute
-        }
+        beforeEnter: [Hook.resetUsedTrackStore, Hook.resetQueries],
+        props: { trackId: TrackId.QuestionnaireRoute }
+      },
+      {
+        path: ':trackId',
+        name: RouteName.Questionnaire,
+        component: TeeQuestionnaire as Component,
+        beforeEnter: [Hook.setUsedTracks, Hook.hasUsedTracks],
+        props: true
+      },
+      {
+        path: 'resultat',
+        name: RouteName.QuestionnaireResult,
+        component: TeeQuestionnaireResult as Component,
+        beforeEnter: [Hook.setUsedTracks, Hook.hasUsedTracks]
+      },
+      {
+        path: 'resultat/:programId',
+        name: RouteName.QuestionnaireResultDetail,
+        component: ProgramDetail as Component,
+        beforeEnter: [Hook.hasProgram, Hook.setUsedTracks, Hook.hasUsedTracks],
+        props: true
       }
     ]
   },
   {
     path: '/aides-entreprise',
     component: TeeCatalogPage as Component,
-    beforeEnter: [resetDetailProgram, resetTrackStore, setResultsAsTrackSeed],
+    beforeEnter: [Hook.resetUsedTrackStore, Hook.resetQueries, Hook.resetProgramFilters],
     children: [
       {
         path: '',
         name: RouteName.Catalog,
-        component: TeeQuestionnaire as Component,
-        props: {
-          seed: TrackId.Results
-        }
+        component: ProgramList as Component
       },
       {
         path: ':programId',
         name: RouteName.CatalogDetail,
-        component: TeeProgramDetail as Component,
-        props: (route: RouteLocationNormalized) => ({
-          programId: route.params.programId as string,
-          trackId: TrackId.Results
-        })
+        component: ProgramDetail as Component,
+        beforeEnter: [Hook.hasProgram],
+        props: true
       }
     ]
   },
