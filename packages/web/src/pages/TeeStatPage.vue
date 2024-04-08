@@ -13,7 +13,7 @@
             Depuis le lancement : <strong>{{ statsData.nOpportunitiesCreated }}</strong> <br />
             Sur les 30 derniers jours :
             <strong>
-              {{ statsData.nOpportunitiesCreated }}
+              {{ 65 }}
             </strong>
           </p>
         </div>

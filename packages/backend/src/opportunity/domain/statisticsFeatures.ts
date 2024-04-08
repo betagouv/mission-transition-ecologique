@@ -18,13 +18,19 @@ export default class StatisticsFeatures {
     const fakeStatistics: Statistics = {
       nProgramsActivated: null,
       nOpportunitiesCreated: nOpportunitiesCreated,
-      nProgramsProposed: 532,
+      nProgramsProposed: 110,
       demandsTimeSeries: [
-        { year: '2023', month: '10', nDemands: 150 },
-        { year: '2023', month: '11', nDemands: 123 },
-        { year: '2023', month: '12', nDemands: 65 },
-        { year: '2024', month: '01', nDemands: 110 },
-        { year: '2024', month: '02', nDemands: 100 }
+        { year: '2023', month: '06', nDemands: 1 },
+        { year: '2023', month: '07', nDemands: 4 },
+        { year: '2023', month: '08', nDemands: 5 },
+        { year: '2024', month: '09', nDemands: 16 },
+        { year: '2024', month: '10', nDemands: 7 },
+        { year: '2023', month: '11', nDemands: 72 },
+        { year: '2023', month: '12', nDemands: 443 },
+        { year: '2024', month: '01', nDemands: 164 },
+        { year: '2024', month: '02', nDemands: 110 },
+        { year: '2024', month: '03', nDemands: 85 },
+        { year: '2024', month: '04', nDemands: 24 }
       ]
     }
 
