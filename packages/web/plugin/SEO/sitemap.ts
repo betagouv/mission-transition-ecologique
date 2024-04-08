@@ -13,7 +13,13 @@ const specificPathSettings: PathSettings[] = [
   { path: '/mentions-legales', changeFreq: ChangeFreq.Monthly, priority: Priority.Low },
   { path: '/donnees-personnelles', changeFreq: ChangeFreq.Monthly, priority: Priority.Low }
 ]
-const exclusionPaths = ['', '/:pathMatch(.*)*', ':programId']
+const exclusionPaths = ['/:pathMatch(.*)*']
+
+function invalidPath(path: string): boolean {
+  if (exclusionPaths.includes(path)) return true
+  if (path[0] != '/') return true
+  return false
+}
 
 function generateOnePathXML(path: string, changeFreq: ChangeFreq, priority: Priority): string {
   const lastModified = new Date().toISOString()
@@ -36,7 +42,7 @@ function generateStaticSitemap(): string | undefined {
 
   const urlElements = staticPaths
     ?.map((path) => {
-      if (exclusionPaths.includes(path)) {
+      if (invalidPath(path)) {
         return null
       } else {
         const specificPathSetting = specificPathSettings.find((specificPath) => specificPath.path === path)

@@ -16,6 +16,9 @@ import TeeQuestionnaireResult from '@/components/questionnaire/TeeQuestionnaireR
 import ProgramList from '@/components/program/list/ProgramList.vue'
 import ProgramDetail from '@/components/program/detail/ProgramDetail.vue'
 
+// please edit the sitemap.ts file if you add any path starting with /
+// that you don't want to be listed in the sitemap
+
 export const routes = [
   {
     path: '/',
