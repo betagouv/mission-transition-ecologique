@@ -1,6 +1,6 @@
 import { Program } from '@tee/data/src/type/program'
+import { QuestionnaireData } from './types/questionnaireData'
 import { CurrentDateService, ProgramRepository, RulesService } from './spi'
-import { QuestionnaireData } from './types'
 import { filterPrograms } from './filterPrograms'
 import { sortPrograms } from './sortPrograms'
 import { Result } from 'true-myth'

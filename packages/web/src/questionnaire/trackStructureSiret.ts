@@ -10,13 +10,15 @@ import {
   CleanerOperations,
   DataMappingFrom,
   HasInputOptions,
-  TrackComponents,
+  TrackComponent,
   TrackId
   // Entreprise
 } from '@/types'
 import type { Track } from '@/types'
+import type EstablishmentType from '@/types/establishmentType'
+import Validator from '@/utils/validator'
 
-const dataTarget = {
+const defaultQuestionnaireData: EstablishmentType = {
   siret: '',
   codeNaf: '',
   codeNAF1: '',
@@ -25,7 +27,12 @@ const dataTarget = {
   région: null,
   structure_sizes: '',
   denomination: '',
-  secteur: undefined
+  secteur: undefined,
+  creationDate: ''
+}
+
+export enum SiretValue {
+  Wildcard = 'siret-non-renseigne'
 }
 
 export const siret: Track = {
@@ -33,9 +40,8 @@ export const siret: Track = {
   category: 'myEntreprise',
   title: { fr: 'Mon SIRET' },
   label: { fr: 'Quelle est votre entreprise ?' },
-  // info: { fr: "Renseignez le SIRET de votre entreprise" },
   interface: {
-    component: TrackComponents.Input
+    component: TrackComponent.Siret
   },
   next: {
     default: TrackId.StructureWorkforce
@@ -44,7 +50,9 @@ export const siret: Track = {
     {
       id: 'search-siret',
       hasInput: HasInputOptions.Search,
-      value: { ...dataTarget },
+      value: undefined,
+      validation: Validator.validateSiret,
+      questionnaireData: { ...defaultQuestionnaireData },
       title: { fr: 'SIRET' },
       // label: { fr: 'Renseignez le SIRET de votre entreprise (14 chiffres)' },
       placeholder: { fr: 'Votre numéro SIRET (14 chiffres)' },
@@ -74,7 +82,7 @@ export const siret: Track = {
             'Content-Type': 'application/json'
           },
           dataPath: { siret: '' },
-          dataStructure: { ...dataTarget },
+          dataStructure: { ...defaultQuestionnaireData },
           dataMapping: [
             {
               from: DataMappingFrom.FormData,
@@ -141,6 +149,13 @@ export const siret: Track = {
               path: 'address.zipCode',
               dataField: 'codePostal',
               onlyRemap: true
+            },
+            {
+              from: DataMappingFrom.RawData,
+              id: 'creationDate',
+              path: 'creationDate',
+              dataField: 'creationDate',
+              onlyRemap: true
             }
           ],
           inputCleaning: [
@@ -183,7 +198,7 @@ export const siret: Track = {
               icon: 'fr-icon-map-pin-2-line'
             },
             {
-              respFields: ['raw.creationDate'],
+              respFields: ['data.creationDate'],
               label: 'Création le',
               // prefix: 'Création le ',
               icon: 'fr-icon-time-line',
@@ -201,6 +216,7 @@ export const siret: Track = {
       },
       wildcard: {
         label: { fr: 'je préfère compléter mes informations manuellement' },
+        value: SiretValue.Wildcard,
         next: {
           default: TrackId.StructureWorkforce
         }

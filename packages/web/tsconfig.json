@@ -1,7 +1,7 @@
 {
   "extends": [
-    "@tsconfig/node18/tsconfig.json",
-    "@vue/tsconfig/tsconfig.json"
+    "@tsconfig/node20/tsconfig.json",
+    "@vue/tsconfig/tsconfig.json",
   ],
   "include": [
     "src/env.d.ts",
@@ -9,11 +9,13 @@
     "vite.config.*",
     "vitest.config.*",
     "cypress.config.*",
-    "playwright.config.*",
     "cypress/**/*",
     "public/data/generated/dataset_out.json",
     "widget/**/*",
     "plugin/**/*"
+  ],
+  "exclude": [
+    "../backend/**/*",
   ],
   "compilerOptions": {
     "rootDir": ".",
@@ -21,6 +23,8 @@
     "declaration": true,
     "baseUrl": ".",
     "paths": {
+      "@tee/common/*": ["../common/src/*"],
+      "@tee/data/*": ["../data/src/*"],
       "@/*": ["./src/*"]
     },
     "isolatedModules": true,
