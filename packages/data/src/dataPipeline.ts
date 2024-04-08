@@ -9,7 +9,7 @@ import { Program, ProgramWithoutId } from './type/program'
 
 dotenv.config()
 
-const DEFAULT_OUTPUT_LOCATION = '../public/data/generated'
+const DEFAULT_OUTPUT_LOCATION = '../public/generated'
 
 /**
  * Build programs dataset from folder and yaml files
