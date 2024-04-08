@@ -19,6 +19,7 @@ import { RouteName } from '@/types/routeType'
 import { redirections } from '@/router/redirection'
 import type { Component } from 'vue'
 import ProgramList from '@/components/program/list/ProgramList.vue'
+import TeeStatPage from '@/pages/TeeStatPage.vue'
 
 export const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
@@ -67,6 +68,11 @@ export const router = createRouter({
           component: ProgramDetail as Component,
           beforeEnter: [Hook.hasProgram, Hook.setUsedTracks, Hook.hasUsedTracks],
           props: true
+        },
+        {
+          path: '/stats',
+          name: RouteName.Statistiques,
+          component: TeeStatPage as Component
         }
       ]
     },

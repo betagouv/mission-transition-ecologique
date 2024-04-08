@@ -62,11 +62,9 @@ export default class BrevoAPI {
     })
   }
 
-  public GetDealCount(startDate: Date = new Date(0),
-    endDate: Date = new Date(1898553601000)): Promise<Result<AxiosResponse, Error>> {
-
-    const formattedStartDate = startDate.getTime() / 1000;
-    const formattedEndDate = endDate.getTime() / 1000;
+  public GetDealCount(startDate: Date = new Date(0), endDate: Date = new Date(1898553601000)): Promise<Result<AxiosResponse, Error>> {
+    const formattedStartDate = startDate.getTime() / 1000
+    const formattedEndDate = endDate.getTime() / 1000
 
     // This is the smallest request which hold the total number of deals.
     return this._request({
@@ -74,8 +72,6 @@ export default class BrevoAPI {
       url: `/crm/deals?filters[attributes.created_at]=${formattedStartDate},${formattedEndDate}&limit=1`
     })
   }
-
-
 
   private async _request(data: BrevoRequestData): Promise<Result<AxiosResponse, Error>> {
     try {

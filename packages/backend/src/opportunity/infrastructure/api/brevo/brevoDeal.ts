@@ -94,17 +94,13 @@ const countBrevoDeal = async (): Promise<Result<number, Error>> => {
   const responsePatch = await new BrevoAPI().GetDealCount()
   // result<axiosresponse<Any,any>Error>
   if (responsePatch.isOk) {
-    console.log(responsePatch.value)
     if (responsePatch.value.data.pager.total) {
       return Result.ok(responsePatch.value.data.pager.total)
-    }
-    else {
+    } else {
       return Result.err(new Error())
     }
-  }
-  else {
+  } else {
     return Result.err(responsePatch.error)
-
   }
 }
 
