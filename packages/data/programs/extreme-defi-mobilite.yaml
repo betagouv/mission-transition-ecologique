@@ -36,7 +36,7 @@ opérateur de contact: ADEME
 url: https://airtable.com/apprjFOnbLySO8spa/shraH0xKsFZnkZOKw
 nature de l'aide: accompagnement
 coût de l'accompagnement: Gratuit
-durée de l'accompagnement: Jusqu'à 3 ans
+durée de l'accompagnement: Jusqu'à 3 ans d'accompagnement
 objectifs:
 - Participez à des sessions de créativité pour faire émerger de nouveaux concepts
   d'objets roulants.
@@ -62,11 +62,8 @@ conditions d'éligibilité:
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
-    - est éligible
     - est dans un secteur d'activité ciblé
     - a un objectif ciblé
-  entreprise . est éligible:
-    valeur: oui
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
     - code NAF niveau 1 . est C
