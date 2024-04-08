@@ -1,4 +1,4 @@
-import jsonPrograms from '@tee/web/public/data/generated/dataset_out.json'
+import jsonPrograms from '@tee/data/public/data/generated/dataset_out.json'
 
 import { ProgramRepository } from '../domain/spi'
 import { Program } from '../domain/types/types'

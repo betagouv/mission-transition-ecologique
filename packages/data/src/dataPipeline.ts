@@ -9,6 +9,8 @@ import { Program, ProgramWithoutId } from './type/program'
 
 dotenv.config()
 
+const DEFAULT_OUTPUT_LOCATION = '../public/data/generated'
+
 /**
  * Build programs dataset from folder and yaml files
  * Parse data folder to build list of programs
@@ -76,8 +78,6 @@ export const prependInterface = (programs: Program[], log: boolean = false): Pro
  * specified with `DATA_FRONT_GENERATED_DIR_PATH` environment variable.
  */
 export const buildJSONOutput = (programs: Program[]): void => {
-  const DEFAULT_OUTPUT_LOCATION = '../../web/public/data/generated'
-
   console.log('♺ Converting data to JSON')
   const dataAsJson: string = JSON.stringify(programs, null, 2)
 
