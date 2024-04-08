@@ -2,7 +2,7 @@ import {
   BuildingProperty,
   MobilityStatus,
   Objective,
-  PublicodeObjectives,
+  PublicodeObjective,
   PublicodesKeys,
   QuestionnaireRoute,
   Sector,
@@ -55,30 +55,30 @@ export const preprocessInputForPublicodes = (
   } else {
     // "Je ne sais pas par où commencer"
     if (questionnaireData.recently_audited == YesNo.Yes) {
-      publicodesData[PublicodeObjectives.EnvironmentalImpact] = YesNo.No
+      publicodesData[PublicodeObjective.EnvironmentalImpact] = YesNo.No
     } else {
-      publicodesData[PublicodeObjectives.EnvironmentalImpact] = YesNo.Yes
+      publicodesData[PublicodeObjective.EnvironmentalImpact] = YesNo.Yes
     }
 
     if (questionnaireData.wastes_materials_objective == YesNo.No) {
-      publicodesData[PublicodeObjectives.EcoDesign] = YesNo.No
+      publicodesData[PublicodeObjective.EcoDesign] = YesNo.No
     } else {
-      publicodesData[PublicodeObjectives.EcoDesign] = YesNo.Yes
+      publicodesData[PublicodeObjective.EcoDesign] = YesNo.Yes
     }
 
     if (
       questionnaireData.wastes_management_objective == WasteManagementStatus.No ||
       questionnaireData.wastes_management_objective == WasteManagementStatus.NoMax
     ) {
-      publicodesData[PublicodeObjectives.WasteManagement] = YesNo.No
+      publicodesData[PublicodeObjective.WasteManagement] = YesNo.No
     } else {
-      publicodesData[PublicodeObjectives.WasteManagement] = YesNo.Yes
+      publicodesData[PublicodeObjective.WasteManagement] = YesNo.Yes
     }
 
     if (questionnaireData.water_reduction_objective == YesNo.No) {
-      publicodesData[PublicodeObjectives.WaterConsumption] = YesNo.No
+      publicodesData[PublicodeObjective.WaterConsumption] = YesNo.No
     } else {
-      publicodesData[PublicodeObjectives.WaterConsumption] = YesNo.Yes
+      publicodesData[PublicodeObjective.WaterConsumption] = YesNo.Yes
     }
 
     if (questionnaireData.building_property == BuildingProperty.Rents) {
@@ -91,15 +91,15 @@ export const preprocessInputForPublicodes = (
       questionnaireData.sustainable_mobility_objective == MobilityStatus.No ||
       questionnaireData.sustainable_mobility_objective == MobilityStatus.NoMax
     ) {
-      publicodesData[PublicodeObjectives.SustainableMobility] = YesNo.No
+      publicodesData[PublicodeObjective.SustainableMobility] = YesNo.No
     } else {
-      publicodesData[PublicodeObjectives.SustainableMobility] = YesNo.Yes
+      publicodesData[PublicodeObjective.SustainableMobility] = YesNo.Yes
     }
 
     if (questionnaireData.energy_reduction_objective == YesNo.No) {
-      publicodesData[PublicodeObjectives.EnergyPerformance] = YesNo.No
+      publicodesData[PublicodeObjective.EnergyPerformance] = YesNo.No
     } else {
-      publicodesData[PublicodeObjectives.EnergyPerformance] = YesNo.Yes
+      publicodesData[PublicodeObjective.EnergyPerformance] = YesNo.Yes
     }
   }
 
