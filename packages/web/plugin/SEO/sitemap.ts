@@ -1,9 +1,8 @@
 import dotenv from 'dotenv'
 import { readFileSync, writeFileSync } from 'fs'
 import { resolve } from 'path'
-
 import { type PathSettings, ChangeFreq, Priority } from './type'
-import ProgramServiceJS from '@tee/backend/build/backend/src/program/application/programService'
+import ProgramService from '../../../backend/src/program/application/programService'
 import type { Program } from '@tee/data/src/type/program'
 
 const specificPathSettings: PathSettings[] = [
@@ -16,7 +15,7 @@ const specificPathSettings: PathSettings[] = [
 ]
 const exclusionPaths = ['', '/:pathMatch(.*)*', ':programId']
 
-function generateOnePathXML(path: string, changefreq: ChangeFreq, priority: Priority): string {
+function generateOnePathXML(path: string, changeFreq: ChangeFreq, priority: Priority): string {
   const lastModified = new Date().toISOString()
   dotenv.config()
   const VITE_DEPLOY_URL = process.env.VITE_DEPLOY_URL
@@ -24,7 +23,7 @@ function generateOnePathXML(path: string, changefreq: ChangeFreq, priority: Prio
   return `  <url>
     <loc>${encodeURI(VITE_DEPLOY_URL + path)}</loc>
     <lastmod>${lastModified}</lastmod>
-    <changefreq>${changefreq}</changefreq>
+    <changefreq>${changeFreq}</changefreq>
     <priority>${priority}</priority>
   </url>`
 }
@@ -54,7 +53,6 @@ function generateStaticSitemap(): string | undefined {
 }
 
 function generateProgramSitemap(): string | undefined {
-  const ProgramService = ProgramServiceJS.default
   ProgramService.init()
   const service = new ProgramService()
 
@@ -81,7 +79,7 @@ function generateSitemapXML(): string {
   const staticElements = generateStaticSitemap()
   const programElements = generateProgramSitemap()
 
-  return `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">  
+  return `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   ${staticElements + '\n' + programElements}
 </urlset>`
 }
