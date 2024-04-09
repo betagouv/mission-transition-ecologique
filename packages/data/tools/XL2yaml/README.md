@@ -17,8 +17,7 @@ d'un format à un autre.
 ```bash
 python -m venv .venv
 source .venv/bin/activate
-pip install pylightxl
-pip install pyyaml
+pip install pylightxl pyyaml validators requests
 ```
 
 3. Adpater les paramètres `FORCE_ALL` et les arguments `overwrite` pour savoir ce qui doit être mis à jour ou non. 

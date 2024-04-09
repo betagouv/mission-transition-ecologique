@@ -27,6 +27,11 @@ objectifs:
 - 'Réalisez votre audit énergétique : état des lieux de vos consommations, pistes
   d''amélioration, hierarchisation des actions en fonction de leur faisabilité et
   de leur temps de retour sur investissement.'
+liens:
+  Objectif1 lien1:
+    lien: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf
+    texte: Conditions éligibilité et financement
+    telechargement: non
 conditions d'éligibilité:
   taille de l'entreprise:
   - Toutes tailles

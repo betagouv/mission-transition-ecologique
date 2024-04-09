@@ -41,6 +41,11 @@ objectifs:
   de versement.
 - Réalisez votre étude. Il peut s'agir d'une étude générale, de diagnostic, d'accompagnement
   ou de faisabilité.
+liens:
+  Objectif1 lien1:
+    lien: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Subvention%20aux%20%C3%A9tudes%20d%27alimentation%20durable%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.docx
+    texte: Conditions éligibilité et financement
+    telechargement: non
 conditions d'éligibilité:
   taille de l'entreprise:
   - Toutes tailles

@@ -6,6 +6,8 @@ import re
 import sys
 from pathlib import Path
 from typing import Any, Optional
+import validators
+import requests
 
 import pylightxl
 import yaml
@@ -102,6 +104,21 @@ def assembleProgramYAML(rawData, colNumbersByName, id):
     )
     set("objectifs", objectifs)
 
+    possibleLinks = [
+        (1, 1),
+        (2, 1),
+        (3, 1),
+        (4, 1),
+        (4, 2),
+        (5, 1),
+        (5, 2),
+        (6, 1),
+        (6, 2),
+    ]
+    yamlLinkDict = createYamlLinks(possibleLinks, get)
+    if yamlLinkDict:
+        set("liens", yamlLinkDict)
+
     pc = {}
     cible = []  # Accumulateur des règles qui font parti du ciblage.
     eligibilite = []  # Accumulateur des règles qui font parti de l'éligibilité.
@@ -189,9 +206,46 @@ def assembleProgramYAML(rawData, colNumbersByName, id):
 
     publicodes_obj |= pc
 
-    set("publicodes", publicodes_obj, overwrite=True)
+    set("publicodes", publicodes_obj, overwrite=False)
 
     return convertToYaml(prog)
+
+
+def isValidLink(link, i, j):
+    if link == "":
+        return False
+
+    if not validators.url(link):
+        print(f"lien {i}{j} non valide")
+        return False
+
+    try:
+        response = requests.head(link)
+        if response.status_code == 200:
+            return True
+        else:
+            print(f"lien {i}{j}, status code :", response.status_code)
+        return False
+    except requests.exceptions.RequestException:
+        print(
+            f"lien {i}{j}, erreur durant la requète",
+            requests.exceptions.RequestException,
+        )
+        return False
+
+
+def createYamlLinks(indicesList, get):
+    linkDict = {}
+    for i, j in indicesList:
+        link = get(f"étape {i}/ lien{j}")
+        text = get(f"étape {i}/ nom du lien{j}")
+        download = get(f"étape {i}/lien {j}/ téléchargement ?")
+        telecharg = "oui" if download == "1" else "non"
+        if not isValidLink(link, i, j):
+            continue
+        key = f"Objectif{i} lien{j}"
+        linkDict[key] = {"lien": link, "texte": text, "telechargement": telecharg}
+    return linkDict
 
 
 def remove_special_chars(text: str) -> str:

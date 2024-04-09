@@ -24,6 +24,11 @@ objectifs:
 - Testez gratuitement le service d'alerte réglementaire, la veille personnalisée et
   la base de données juridiques pendant 2 mois. Puis, abonnez-vous aux services de
   votre choix.
+liens:
+  Objectif5 lien1:
+    lien: https://www.enviroveille.com/public/tester-gratuitement.html
+    texte: Demander un compte d'accès gratuit
+    telechargement: non
 conditions d'éligibilité:
   taille de l'entreprise:
   - Toutes tailles

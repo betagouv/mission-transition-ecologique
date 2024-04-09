@@ -55,6 +55,11 @@ objectifs:
   de versement.
 - Réalisez votre étude. Il peut s'agir d'une étude de potentiel, de faisabilité ou
   d'avant-projet.
+liens:
+  Objectif1 lien1:
+    lien: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20pour%20une%20installation%20hydro%C3%A9lectrique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf
+    texte: Conditions éligibilité et financement
+    telechargement: non
 conditions d'éligibilité:
   taille de l'entreprise:
   - Toutes tailles

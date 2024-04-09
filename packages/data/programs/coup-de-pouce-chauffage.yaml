@@ -46,6 +46,15 @@ objectifs:
   faites réaliser les travaux. Pensez à demander une facture qui mentionne la dépose
   de l’équipement existant en indiquant ses caractéristiques (type d’énergie, type
   d’équipement, marque, référence…)
+liens:
+  Objectif1 lien1:
+    lien: https://france-chaleur-urbaine.beta.gouv.fr/ressources/aides#contenu
+    texte: Réaliser le test
+    telechargement: non
+  Objectif2 lien1:
+    lien: https://france-renov.gouv.fr/petit-tertiaire-prive#quels-travaux-sont-concernes-par-le-coup-de-pouce-
+    texte: Liste des travaux éligibles
+    telechargement: non
 conditions d'éligibilité:
   taille de l'entreprise:
   - Toutes tailles

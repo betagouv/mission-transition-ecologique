@@ -39,6 +39,11 @@ objectifs:
   de financement précisant le montant d’aide maximum, les conditions et les modalités
   de versement. Le financement pourra se faire par le biais de subventions ou d'aides
   remboursables.
+liens:
+  Objectif2 lien1:
+    lien: https://www.appelsprojetsrecherche.fr/
+    texte: Liste des appels à projets
+    telechargement: non
 conditions d'éligibilité:
   taille de l'entreprise:
   - Toutes tailles

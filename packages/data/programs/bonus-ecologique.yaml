@@ -18,6 +18,11 @@ objectifs:
 - Constituez votre dossier avec les pièces justificatives demandées.
 - Envoyez le récapitulatif de votre demande et vos pièces justificatives par courrier
   au « service - Bonus écologique » de votre ASP de rattachement.
+liens:
+  Objectif2 lien1:
+    lien: https://www.primealaconversion.gouv.fr/dboneco/accueil/access.html
+    texte: Primealaconversion.gouv.fr
+    telechargement: non
 conditions d'éligibilité:
   taille de l'entreprise:
   - Toutes tailles

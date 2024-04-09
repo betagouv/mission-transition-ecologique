@@ -32,6 +32,15 @@ objectifs:
 - Votre demande de labellisation est étudiée. Si vous êtes éligible, vous êtes invité
   à transmettre des documents complémentaires.
 - Votre talent opère ses missions durant un minimum d'un an (ou 10 mois pour un alternant).
+liens:
+  Objectif1 lien1:
+    lien: https://www.emploi.vte-france.fr/company/signin/register
+    texte: Espace recruteur
+    telechargement: non
+  Objectif3 lien1:
+    lien: https://app.bel.bpifrance.fr/subscribe/aide-vte-label?pk_vid=a37ce807173eb2fb170834785823c481
+    texte: Demande de labellisation VTE
+    telechargement: non
 conditions d'éligibilité:
   taille de l'entreprise:
   - PME et ETI

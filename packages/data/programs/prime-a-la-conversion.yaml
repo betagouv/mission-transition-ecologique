@@ -23,6 +23,15 @@ objectifs:
 - Complétez le formulaire en ligne. Vous recevrez le récapitulatif de votre demande
   par mail.
 - Constituez votre dossier avec les pièces justificatives demandées.
+liens:
+  Objectif1 lien1:
+    lien: https://www.primealaconversion.gouv.fr/dboneco/accueil/faq.html
+    texte: Conditions d'éligibilité
+    telechargement: non
+  Objectif3 lien1:
+    lien: https://www.primealaconversion.gouv.fr/dboneco/accueil/access.html
+    texte: Primealaconversion.gouv.fr
+    telechargement: non
 conditions d'éligibilité:
   taille de l'entreprise:
   - Toutes tailles

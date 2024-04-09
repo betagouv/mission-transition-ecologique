@@ -47,6 +47,11 @@ objectifs:
   de financement précisant le montant d’aide maximum, les conditions et les modalités
   de versement.
 - Réalisez vos investissements.
+liens:
+  Objectif1 lien1:
+    lien: https://agence-cohesion-territoires.gouv.fr/sites/default/files/inline-images/perimetre_des_territoires_dindustrie_2023-2027_high_0.png
+    texte: Territoires d'industrie 2023-2027
+    telechargement: non
 conditions d'éligibilité:
   taille de l'entreprise:
   - Toutes tailles
