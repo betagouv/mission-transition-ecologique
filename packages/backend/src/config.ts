@@ -26,9 +26,6 @@ export default class Config extends ConfigCommon {
   }
 
   public static get BREVO_DEAL_PIPELINE(): string | undefined {
-    if (!process.env['BREVO_DEAL_PIPELINE']) {
-      return undefined
-    }
-    return process.env['BREVO_DEAL_PIPELINE']
+    return this.getEnvValue('BREVO_DEAL_PIPELINE')
   }
 }
