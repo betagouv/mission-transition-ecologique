@@ -37,4 +37,5 @@ export interface QuestionnaireData {
   codePostal?: string
   denomination?: string
   secteur?: string
+  creationDate?: string
 }
