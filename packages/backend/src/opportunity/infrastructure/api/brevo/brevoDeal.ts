@@ -80,9 +80,9 @@ const convertDomainToBrevoDealUpdate = (domainUpdateAttributes: OpportunityUpdat
 }
 
 const convertQuestionnaireRoute = (questionnaireRoute: QuestionnaireRoute | undefined): BrevoQuestionnaireRoute => {
-  if (!questionnaireRoute) return BrevoQuestionnaireRoute.DIRECTORY
-
   switch (questionnaireRoute) {
+    case undefined:
+      return BrevoQuestionnaireRoute.DIRECTORY
     case QuestionnaireRoute.SpecificGoal:
       return BrevoQuestionnaireRoute.SPECIFIC_GOAL
     case QuestionnaireRoute.NoSpecificGoal:
