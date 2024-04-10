@@ -153,7 +153,7 @@ const getColumnsWidth = computed(() => {
     return colsDebug
   } else if (trackStore.currentId === TrackId.Results || (usedTrackStore.currentStep === 1 && Widget.is)) {
     return colsStart
-  } else if ((currentUsedTrack && (currentUsedTrack.component as TrackComponent)) === TrackComponent.Results) {
+  } else if ((currentUsedTrack && currentUsedTrack.component) === TrackComponent.Results) {
     return colsResults
   } else {
     return colsTracks

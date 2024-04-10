@@ -1,4 +1,4 @@
-import { Program } from '../../program/domain/types'
+import { Program } from '../../program/domain/types/types'
 import { OperatorRepository } from './spi'
 import { Opportunity } from '../../opportunity/domain/types'
 import { Result } from 'true-myth'

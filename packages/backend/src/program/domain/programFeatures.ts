@@ -1,6 +1,6 @@
 import { Program } from '@tee/data/src/type/program'
+import { QuestionnaireData } from './types/questionnaireData'
 import { CurrentDateService, ProgramRepository, RulesService } from './spi'
-import { QuestionnaireData } from './types'
 import { filterPrograms } from './filterPrograms'
 import { sortPrograms } from './sortPrograms'
 import { Result } from 'true-myth'
@@ -35,5 +35,9 @@ export default class ProgramFeatures {
       filteredPrograms = filteredPrograms.map((programs) => sortPrograms(programs, route))
     }
     return filteredPrograms
+  }
+
+  public getAll(): Program[] {
+    return this._programRepository.getAll()
   }
 }
