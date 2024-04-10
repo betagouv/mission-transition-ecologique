@@ -13,6 +13,18 @@
         <span class="fr-tee-description-paragraph-content">
           {{ paragraph }}
         </span>
+        <span v-if="program.liens && haslink(idx)">
+          <br />
+          <template v-for="linkId in possibleLinkIds">
+            <a
+              v-if="program.liens[`Objectif${idx + 1} lien${linkId}`]"
+              :key="`link-${idx}-${linkId}`"
+              :href="program.liens[`Objectif${idx + 1} lien${linkId}`].lien"
+            >
+              {{ program.liens[`Objectif${idx + 1} lien${linkId}`].texte }}
+            </a>
+          </template>
+        </span>
       </p>
     </div>
   </div>
@@ -42,5 +54,16 @@ const getProgramObjectiveTitle = () => {
     case ProgramAidType.fund:
       return Translation.t('program.programObjective.title.applicationSteps')
   }
+}
+
+const possibleLinkIds = [1, 2, 3]
+
+const haslink = (objectiveId: number) => {
+  if (!props.program.liens) return false
+  for (const linkId of possibleLinkIds) {
+    const linkName = `Objectif${objectiveId + 1} lien${linkId}`
+    if (props.program.liens[linkName]) return true
+  }
+  return false
 }
 </script>

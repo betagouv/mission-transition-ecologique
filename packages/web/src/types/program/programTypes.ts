@@ -3,6 +3,12 @@
 import { Entreprise, Objectives, PublicodesCondition } from '../index'
 import type { ProgramAidType } from '@tee/common/src/program/types'
 
+interface ProgramObjectiveLink {
+  lien: string
+  texte: string
+  telechargement: string
+}
+
 export interface ProgramData {
   id: string
   titre: string
@@ -32,6 +38,7 @@ export interface ProgramData {
     "nombre d'années d'activité": string[]
     "autres critères d'éligibilité"?: string[]
   }
+  liens?: Record<string, ProgramObjectiveLink>
 
   publicodes: PublicodesProgramData
 }
