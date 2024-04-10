@@ -55,7 +55,8 @@
     "vite": "^5.2.8",
     "vitest": "^1.2.1",
     "vue": "^3.2.47",
-    "vue-router": "^4.2.5"
+    "vue-router": "^4.2.5",
+    "tsx": "^4.7.2"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.2.0",
@@ -74,7 +75,6 @@
     "rollup-plugin-postcss-lit": "^2.0.0",
     "sass": "^1.74.1",
     "start-server-and-test": "^2.0.0",
-    "tsx": "^4.7.2",
     "vite-plugin-eslint": "^1.8.1",
     "vue-tsc": "^2.0.7"
   }
