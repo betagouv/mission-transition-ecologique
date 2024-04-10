@@ -11,6 +11,6 @@ export type OpportunityRepository = {
   update: (dealId: OpportunityId, attributes: OpportunityUpdateAttributes) => Promise<Maybe<Error>>
 }
 
-export type MailRepository = {
-  sendReturnReceipt: (opportunity: Opportunity, program: Program) => Promise<Result<void, Error>>
+export type MailerService = {
+  sendReturnReceipt: (opportunity: Opportunity, program: Program) => Promise<Maybe<Error> | void>
 }

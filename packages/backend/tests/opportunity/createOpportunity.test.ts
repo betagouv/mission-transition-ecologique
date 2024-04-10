@@ -1,5 +1,5 @@
 import { Maybe, Result } from 'true-myth'
-import { MailRepository } from '../../src/opportunity/domain/spi'
+import { MailerService } from '../../src/opportunity/domain/spi'
 import {
   ContactDetails,
   ContactId,
@@ -29,7 +29,7 @@ const dummyAddContact = (_contact: ContactDetails, _optIn: true): Promise<Result
   return Promise.resolve(Result.ok({ id: 1 }))
 }
 
-const dummyMailRepository: MailRepository = {
+const dummyMailRepository: MailerService = {
   sendReturnReceipt: async () => {
     emailReceiptSent = true
     return Promise.resolve(Result.ok(undefined))

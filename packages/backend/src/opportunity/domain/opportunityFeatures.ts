@@ -1,5 +1,5 @@
 import { Maybe, Result } from 'true-myth'
-import type { ContactRepository, MailRepository, OpportunityRepository } from './spi'
+import type { ContactRepository, MailerService, OpportunityRepository } from './spi'
 import type { OpportunityId, Opportunity, ContactDetails } from './types'
 import OperatorFeatures from '../../operator/domain/operatorFeatures'
 import { OperatorRepository } from '../../operator/domain/spi'
@@ -12,14 +12,14 @@ export default class OpportunityFeatures {
   private readonly _opportunityRepository: OpportunityRepository
   private readonly _operatorRepositories: OperatorRepository[]
   private readonly _programRepository: ProgramRepository
-  private readonly _mailRepository: MailRepository
+  private readonly _mailRepository: MailerService
 
   constructor(
     contactRepository: ContactRepository,
     opportunityRepository: OpportunityRepository,
     operatorRepositories: OperatorRepository[],
     programRepository: ProgramRepository,
-    mailRepository: MailRepository
+    mailRepository: MailerService
   ) {
     this._contactRepository = contactRepository
     this._opportunityRepository = opportunityRepository
@@ -39,7 +39,7 @@ export default class OpportunityFeatures {
 
     const opportunityResult = await this._opportunityRepository.create(contactIdResult.value.id, opportunity)
 
-    if (!opportunityResult.isErr) {
+    if (!opportunityResult.isErr && program) {
       this._sendReturnReceipt(opportunity, program)
       this._createOpportunityOnOperator(opportunityResult.value, opportunity, program)
     }
@@ -47,17 +47,15 @@ export default class OpportunityFeatures {
     return opportunityResult
   }
 
-  private _createOpportunityOnOperator(opportunityId: OpportunityId, opportunity: Opportunity, program: Program | undefined) {
-    if (program) {
-      void new OperatorFeatures(this._operatorRepositories).createOpportunity(opportunity, program).then(async (operatorResult) => {
-        if (false !== operatorResult) {
-          const opportunityUpdateErr = await this._updateOpportunitySentToOperator(opportunityId, operatorResult.isOk)
-          if (opportunityUpdateErr.isJust) {
-            // TODO: Send an email to the admin: Opportunity not updated
-          }
+  private _createOpportunityOnOperator(opportunityId: OpportunityId, opportunity: Opportunity, program: Program) {
+    void new OperatorFeatures(this._operatorRepositories).createOpportunity(opportunity, program).then(async (operatorResult) => {
+      if (false !== operatorResult) {
+        const opportunityUpdateErr = await this._updateOpportunitySentToOperator(opportunityId, operatorResult.isOk)
+        if (opportunityUpdateErr.isJust) {
+          // TODO: Send an email to the admin: Opportunity not updated
         }
-      })
-    }
+      }
+    })
   }
 
   private async _updateOpportunitySentToOperator(opportunityId: OpportunityId, success: boolean): Promise<Maybe<Error>> {
@@ -75,13 +73,11 @@ export default class OpportunityFeatures {
     return new ProgramFeatures(this._programRepository).getById(id)
   }
 
-  private _sendReturnReceipt(opportunity: Opportunity, program: Program | undefined) {
-    if (program) {
-      void this._mailRepository.sendReturnReceipt(opportunity, program).then((mailResult) => {
-        if (mailResult.isErr) {
-          // TODO: Send an email to the admin: Receipt not sent or add error on sentry
-        }
-      })
-    }
+  private _sendReturnReceipt(opportunity: Opportunity, program: Program) {
+    void this._mailRepository.sendReturnReceipt(opportunity, program).then((hasError) => {
+      if (hasError) {
+        // TODO: Send an email to the admin: Receipt not sent or add error on sentry
+      }
+    })
   }
 }

@@ -1,9 +1,9 @@
 import { SendSmtpEmail, TransactionalEmailsApi, TransactionalEmailsApiApiKeys } from '@getbrevo/brevo'
-import { Result } from 'true-myth'
+import { Maybe } from 'true-myth'
 import Config from '../../../../config'
 import { Program as ProgramType } from '../../../../program/domain/types'
 import Program from '../../../../../../common/src/program/program'
-import { MailRepository } from '../../../domain/spi'
+import { MailerService } from '../../../domain/spi'
 import { Opportunity } from '../../../domain/types'
 
 export default class BrevoMail {
@@ -14,16 +14,14 @@ export default class BrevoMail {
     this._api.setApiKey(TransactionalEmailsApiApiKeys.apiKey, Config.BREVO_API_TOKEN)
   }
 
-  sendReturnReceipt: MailRepository['sendReturnReceipt'] = async (
+  sendReturnReceipt: MailerService['sendReturnReceipt'] = async (
     opportunity: Opportunity,
     program: ProgramType
-  ): Promise<Result<void, Error>> => {
+  ): Promise<Maybe<Error> | void> => {
     try {
       await this._api.sendTransacEmail(this._email(opportunity, program))
-
-      return Result.ok(undefined)
     } catch (error: unknown) {
-      return Result.err(error as Error)
+      return Maybe.just(error as Error)
     }
   }
 
@@ -44,7 +42,7 @@ export default class BrevoMail {
     return {
       programName: program.titre,
       prefixedProgramName: Program.getPrefixedProgramName(program),
-      programLink: opportunity.programUrl,
+      programLink: opportunity.linkToProgramPage,
       programPromise: program.promesse,
       operatorName: program['opérateur de contact'],
       needs: opportunity.message,

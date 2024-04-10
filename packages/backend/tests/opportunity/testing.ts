@@ -14,7 +14,7 @@ export const fakeOpportunityDetails = (): OpportunityDetails => {
   return {
     programId: 'accelerateur-decarbonation',
     message: 'Bonjour monde !',
-    programUrl: 'https://localhost'
+    linkToProgramPage: 'https://localhost'
   }
 }
 

@@ -413,7 +413,7 @@ const saveFormData = async () => {
       switch (callback.action) {
         case CallbackActions.CreateOpportunity:
           if (formData.value) {
-            formData.value.programUrl = new URL(route.fullPath, window.location.origin).href
+            formData.value.linkToProgramPage = new URL(route.fullPath, window.location.origin).href
           }
           resp = await sendApiRequest(callback, toRaw(formData.value), trackValues, props.dataProps, Translation.lang)
           break
