@@ -1,5 +1,5 @@
 import { useUsedTrackStore } from '@/stores/usedTrack'
-import { Entreprise, QuestionnaireRoute, TrackId } from '@/types'
+import { Entreprise, QuestionnaireDataEnum, QuestionnaireRoute, TrackId } from '@/types'
 import type { OpportunityBody, ReqResp, WithoutNullableKeys, opportunityFormType } from '@/types'
 import RequestApi from '@/service/api/requestApi'
 
@@ -60,7 +60,10 @@ export default class OpportunityApi extends RequestApi {
         companySize: (this.getFromUsedTrack(TrackId.StructureWorkforce, Entreprise.Workforce) as unknown as number) ?? undefined, // get from usedTrack
         programId: this._programId,
         message: this._opportunityForm.needs.value,
-        questionnaireRoute: this.getFromUsedTrack(TrackId.QuestionnaireRoute, 'user_help') as QuestionnaireRoute, // get from usedTrack
+        questionnaireRoute: this.getFromUsedTrack(
+          TrackId.QuestionnaireRoute,
+          QuestionnaireDataEnum.questionnaire_route as string
+        ) as QuestionnaireRoute, // get from usedTrack
         otherData: this.getAllValuesFromUsedTrack(),
         linkToProgramPage: this._opportunityForm.linkToProgramPage.value
       },

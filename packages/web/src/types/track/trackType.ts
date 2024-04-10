@@ -1,4 +1,12 @@
-import type { Translations, FormCallback, FormCallbackDataMapping, FormOptions, PropertyPath, TrackId } from '@tee/web/src/types'
+import type {
+  Translations,
+  FormCallback,
+  FormCallbackDataMapping,
+  FormOptions,
+  PropertyPath,
+  TrackId,
+  QuestionnaireData
+} from '@tee/web/src/types'
 import { ConditionOperators } from '@tee/web/src/types/conditionOperators'
 
 // FOR TRACKS
@@ -101,7 +109,7 @@ export interface TrackOptions {
   disabled?: boolean
   value?: string | number | object | Record<string, string | number>
   validation?: CallableFunction
-  questionnaireData?: object
+  questionnaireData?: QuestionnaireData
   required?: boolean
   title?: Translations
   label?: Translations
