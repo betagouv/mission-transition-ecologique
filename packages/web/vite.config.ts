@@ -1,5 +1,6 @@
 import { ohVueIconAutoimportPreset, vueDsfrAutoimportPreset, vueDsfrComponentResolver } from '@gouvminint/vue-dsfr'
 import { fileURLToPath, URL } from 'node:url'
+import { resolve } from 'path'
 import { type BuildOptions, defineConfig, type Plugin } from 'vite'
 import type { ServerOptions } from 'vite'
 import vue from '@vitejs/plugin-vue'
@@ -17,11 +18,22 @@ console.log('vite.config ...')
 const mode = process.env.NODE_ENV ?? 'development'
 const isProd = mode === 'production'
 
-type LibType = 'main'
+type LibType = 'main' | 'widget'
 const LIB: LibType = (process.env.LIB as LibType) ?? 'main'
 const libConfig: Record<LibType, BuildOptions> = {
   main: {
-    emptyOutDir: true
+    emptyOutDir: false
+  },
+  widget: {
+    emptyOutDir: false,
+    rollupOptions: {
+      input: resolve(__dirname, 'widget.html')
+    },
+    lib: {
+      name: 'gov-aid-tree-app',
+      entry: 'widget/widget.ce.ts',
+      fileName: 'widget'
+    }
   }
 }
 
