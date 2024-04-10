@@ -1,5 +1,17 @@
 import type { Track } from '@/types'
-import { HasInputOptions, TrackComponents, TrackId } from '@/types'
+import { TrackComponent, TrackId } from '@/types'
+
+export enum StrategyAuditsSelect {
+  CarbonAudit = 'bilan-carbone',
+  EnergeticPerformanceAudit = 'performance-energetique',
+  EnergyConsumptionAudit = 'consommation-energie',
+  WaterAudit = 'eau',
+  WastesAudit = 'dechets',
+  RawMaterialsAudit = 'matieres-premieres',
+  Certification = 'certification',
+  Other = 'autre',
+  Unknown = 'je-ne-sais-pas'
+}
 
 export const strategyAuditsSelect: Track = {
   id: TrackId.StrategyAuditsSelect,
@@ -16,7 +28,7 @@ export const strategyAuditsSelect: Track = {
     imageLeft: 'images/thema/thema-strategie.svg'
   },
   interface: {
-    component: TrackComponents.Buttons
+    component: TrackComponent.Buttons
   },
   behavior: {
     multipleChoices: true
@@ -26,7 +38,10 @@ export const strategyAuditsSelect: Track = {
   },
   options: [
     {
-      value: { strategy_audits_select: 'carbon_audit' },
+      value: StrategyAuditsSelect.CarbonAudit,
+      questionnaireData: {
+        strategy_audits_select: StrategyAuditsSelect.CarbonAudit
+      },
       title: { fr: 'Oui' },
       label: { fr: '🌱 Bilan de gaz à effet de serre ou bilan carbone' },
       next: {
@@ -34,7 +49,10 @@ export const strategyAuditsSelect: Track = {
       }
     },
     {
-      value: { strategy_audits_select: 'energetic_performance_audit' },
+      value: StrategyAuditsSelect.EnergeticPerformanceAudit,
+      questionnaireData: {
+        strategy_audits_select: StrategyAuditsSelect.EnergeticPerformanceAudit
+      },
       title: { fr: 'Performance énergétique' },
       label: { fr: '⚡️ Audit de performance énergétique des bâtiments ou Certification ISO 50001' },
       next: {
@@ -42,16 +60,21 @@ export const strategyAuditsSelect: Track = {
       }
     },
     {
-      value: { strategy_audits_select: 'energy_consumption_audit' },
+      value: StrategyAuditsSelect.EnergyConsumptionAudit,
+      questionnaireData: {
+        strategy_audits_select: StrategyAuditsSelect.EnergyConsumptionAudit
+      },
       title: { fr: "Consommation d'énergie" },
       label: { fr: '⚡️ Audit consommation d’énergie' },
       next: {
         default: TrackId.Results
       }
     },
-
     {
-      value: { strategy_audits_select: 'water_audit' },
+      value: StrategyAuditsSelect.WaterAudit,
+      questionnaireData: {
+        strategy_audits_select: StrategyAuditsSelect.WaterAudit
+      },
       title: { fr: 'Eau' },
       label: { fr: '💧 Audit eau' },
       next: {
@@ -59,7 +82,10 @@ export const strategyAuditsSelect: Track = {
       }
     },
     {
-      value: { strategy_audits_select: 'wastes_audit' },
+      value: StrategyAuditsSelect.WastesAudit,
+      questionnaireData: {
+        strategy_audits_select: StrategyAuditsSelect.WastesAudit
+      },
       title: { fr: 'Déchets' },
       label: { fr: '🗑 Audit déchets' },
       next: {
@@ -67,7 +93,10 @@ export const strategyAuditsSelect: Track = {
       }
     },
     {
-      value: { strategy_audits_select: 'raw_materials_audit' },
+      value: StrategyAuditsSelect.RawMaterialsAudit,
+      questionnaireData: {
+        strategy_audits_select: StrategyAuditsSelect.RawMaterialsAudit
+      },
       title: { fr: 'Matières premières' },
       label: { fr: '🧱 Audit matières premières' },
       next: {
@@ -75,25 +104,32 @@ export const strategyAuditsSelect: Track = {
       }
     },
     {
-      value: { strategy_audits_select: 'certification' },
+      value: StrategyAuditsSelect.Certification,
+      questionnaireData: {
+        strategy_audits_select: StrategyAuditsSelect.Certification
+      },
       title: { fr: 'Certification' },
       label: { fr: '🎖 Certification ISO 14001 ' },
       next: {
         default: TrackId.Results
       }
     },
-
     {
-      value: { strategy_audits_select: 'other' },
+      value: StrategyAuditsSelect.Other,
+      questionnaireData: {
+        strategy_audits_select: StrategyAuditsSelect.Other
+      },
       title: { fr: 'Autre' },
-      label: { fr: 'Autre : ' },
-      hasInput: HasInputOptions.Text,
+      label: { fr: 'Autre' },
       next: {
-        default: TrackId.WastesStake
+        default: TrackId.Results
       }
     },
     {
-      value: { strategy_audits_select: 'unknown' },
+      value: StrategyAuditsSelect.Unknown,
+      questionnaireData: {
+        strategy_audits_select: StrategyAuditsSelect.Unknown
+      },
       title: { fr: 'Je ne sais pas' },
       label: { fr: 'Je ne sais pas' },
       next: {

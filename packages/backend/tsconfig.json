@@ -15,7 +15,6 @@
     "target": "ESNext",
     "paths": {
       "@tee/common": ["../common"],
-      "@tee/data": ["../data"]
     },
     "composite": true,
     "declaration": true,
