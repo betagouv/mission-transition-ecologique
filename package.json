@@ -41,7 +41,8 @@
     "@tsconfig/node20": "^20.1.4",
     "dotenv": "^16.4.1",
     "true-myth": "^7.1.0",
-    "typescript": "^5.4.3"
+    "typescript": "^5.4.3",
+    "tsx": "^4.7.2"
   },
   "devDependencies": {
     "@types/cors": "^2.8.13",
@@ -53,7 +54,6 @@
     "eslint-formatter-summary-chart": "^0.3.0",
     "eslint-plugin-prettier": "^5.0.1",
     "prettier": "^3.0.3",
-    "ts-node": "^10.9.1",
-    "tsx": "^4.7.2"
+    "ts-node": "^10.9.1"
   }
 }
