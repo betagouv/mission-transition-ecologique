@@ -1,5 +1,5 @@
 import type { Maybe, Result } from 'true-myth'
-import { Program } from '../../program/domain/types'
+import { Program } from '../../program/domain/types/types'
 import type { ContactId, OpportunityId, ContactDetails, OpportunityDetails, OpportunityUpdateAttributes, Opportunity } from './types'
 
 export type ContactRepository = {

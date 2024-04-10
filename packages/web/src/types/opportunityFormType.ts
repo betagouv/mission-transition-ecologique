@@ -7,4 +7,5 @@ export interface opportunityFormType {
   siret: { required: true; value: string | undefined }
   needs: { required: true; value: string | undefined }
   cgu: { required: true; value: boolean }
+  linkToProgramPage: { required: true; value: string }
 }

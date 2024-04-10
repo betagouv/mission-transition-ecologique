@@ -32,7 +32,7 @@ const dummyAddContact = (_contact: ContactDetails, _optIn: true): Promise<Result
 const dummyMailRepository: MailerService = {
   sendReturnReceipt: async () => {
     emailReceiptSent = true
-    return Promise.resolve(Result.ok(undefined))
+    return Promise.resolve(void 0)
   }
 }
 

@@ -1,7 +1,7 @@
 import { SendSmtpEmail, TransactionalEmailsApi, TransactionalEmailsApiApiKeys } from '@getbrevo/brevo'
 import { Maybe } from 'true-myth'
 import Config from '../../../../config'
-import { Program as ProgramType } from '../../../../program/domain/types'
+import { Program as ProgramType } from '../../../../program/domain/types/types'
 import Program from '../../../../../../common/src/program/program'
 import { MailerService } from '../../../domain/spi'
 import { Opportunity } from '../../../domain/types'
