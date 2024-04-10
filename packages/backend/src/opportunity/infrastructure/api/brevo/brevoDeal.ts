@@ -3,7 +3,8 @@ import { Maybe, Result } from 'true-myth'
 import { OpportunityRepository } from '../../../domain/spi'
 import { OpportunityId, OpportunityDetails, OpportunityUpdateAttributes } from '../../../domain/types'
 import BrevoAPI from './brevoAPI'
-import { DealAttributes, BrevoQuestionnaireRoute, QuestionnaireRoute, DealUpdateAttributes } from './types'
+import { DealAttributes, BrevoQuestionnaireRoute, QuestionnaireRoute, DealUpdateAttributes, BrevoPostDealPayload } from './types'
+import Config from '../../../../config'
 
 // "Opportunities" are called "Deals" in Brevo
 
@@ -25,10 +26,14 @@ export const addBrevoDeal: OpportunityRepository['create'] = async (
 }
 
 const requestCreateDeal = async (name: string, attributes: DealAttributes): Promise<Result<OpportunityId, Error>> => {
-  const responseResult = await new BrevoAPI().PostDeal({
+  const payload: BrevoPostDealPayload = {
     name: name,
     attributes: attributes
-  })
+  }
+  if (Config.BREVO_DEAL_PIPELINE) {
+    payload.attributes.pipeline = Config.BREVO_DEAL_PIPELINE
+  }
+  const responseResult = await new BrevoAPI().PostDeal(payload)
 
   const dealId = responseResult.map((r) => r.data as OpportunityId)
   return dealId
@@ -65,7 +70,8 @@ const associateBrevoDealToContact = async (dealId: OpportunityId, contactId: num
 
 const convertDomainToBrevoDeal = (domainAttributes: OpportunityDetails): DealAttributes => {
   return {
-    message: domainAttributes.message,
+    // Brevo does not handle newlines in attributes
+    message: replaceNewlinesWithSpaces(domainAttributes.message),
     parcours: convertQuestionnaireRoute(domainAttributes.questionnaireRoute),
     ...(domainAttributes.priorityObjectives && { objectifs_renseigns: domainAttributes.priorityObjectives.join(', ') }),
     ...(domainAttributes.programContactOperator && { oprateur_de_contact: domainAttributes.programContactOperator }),
@@ -88,4 +94,8 @@ const convertQuestionnaireRoute = (questionnaireRoute: QuestionnaireRoute | unde
     case QuestionnaireRoute.NoSpecificGoal:
       return BrevoQuestionnaireRoute.NO_SPECIFIC_GOAL
   }
+}
+
+const replaceNewlinesWithSpaces = (text: string): string => {
+  return text.replaceAll('\n', ' ')
 }

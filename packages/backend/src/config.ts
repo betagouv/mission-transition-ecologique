@@ -24,4 +24,8 @@ export default class Config extends ConfigCommon {
   public static get BREVO_SENDER_ID(): number {
     return parseInt(this.getEnvValue('BREVO_SENDER_ID'))
   }
+
+  public static get BREVO_DEAL_PIPELINE(): string | undefined {
+    return this.getEnvValue('BREVO_DEAL_PIPELINE')
+  }
 }

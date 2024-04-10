@@ -8,6 +8,7 @@ declare global {
       readonly BREVO_SENDER_EMAIL: string
       readonly BREVO_SENDER_ID: string
       readonly BREVO_SANDBOX: string
+      readonly BREVO_DEAL_PIPELINE: string
       readonly BPI_FRANCE_CLIENT_ID: string
       readonly BPI_FRANCE_CLIENT_SECRET: string
       readonly SENTRY_DSN: string | undefined
