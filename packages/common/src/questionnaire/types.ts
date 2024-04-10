@@ -33,17 +33,17 @@ export enum WasteSortingStatus {
 }
 
 export enum WasteManagementStatus {
-  Yes = 'oui',
-  NoMax = 'non-max',
-  No = 'non',
-  Unknown = 'je-ne-sais-pas'
+  Yes = YesNo.Yes,
+  No = YesNo.No,
+  Unknown = YesNo.Unknown,
+  NoMax = 'non-max'
 }
 
 export enum MobilityStatus {
-  Yes = 'oui',
-  NoMax = 'non-max',
-  No = 'non',
-  Unknown = 'je-ne-sais-pas'
+  Yes = YesNo.Yes,
+  No = YesNo.No,
+  Unknown = YesNo.Unknown,
+  NoMax = 'non-max'
 }
 
 export enum Sector {
