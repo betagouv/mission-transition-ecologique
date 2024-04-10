@@ -61,7 +61,8 @@ export default class OpportunityApi extends RequestApi {
         programId: this._programId,
         message: this._opportunityForm.needs.value,
         questionnaireRoute: this.getFromUsedTrack(TrackId.QuestionnaireRoute, 'user_help') as QuestionnaireRoute, // get from usedTrack
-        otherData: this.getAllValuesFromUsedTrack()
+        otherData: this.getAllValuesFromUsedTrack(),
+        linkToProgramPage: this._opportunityForm.linkToProgramPage.value
       },
       optIn: this._opportunityForm.cgu.value
     }
