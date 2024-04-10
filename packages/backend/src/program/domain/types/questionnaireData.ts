@@ -8,14 +8,11 @@ import {
   Sector,
   YesNo,
   MobilityStatus
-} from '../../../../common/src/questionnaire/types'
-
-export { type Program } from '@tee/data/src/type/program'
-export { type Operators } from '@tee/data/src/generated/program'
+} from '@tee/common/src/questionnaire/types'
 
 export interface QuestionnaireData {
-  questionnaire_route: QuestionnaireRoute
-  region: string
+  questionnaire_route?: QuestionnaireRoute
+  region?: string
 
   structure_size?: StructureSize // optional for testing !
   sector?: Sector

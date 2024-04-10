@@ -10,7 +10,8 @@ import {
   WasteManagementStatus,
   YesNo
 } from '../../../../common/src/questionnaire/types'
-import { type QuestionnaireData, Program } from '../domain/types'
+import { type Program } from '@tee/data/src/type/program'
+import { QuestionnaireData } from '../domain/types/questionnaireData'
 import { type PublicodesInputData, PublicodesQuestionnaireRoute, SectorToNAFSection, NAF1Letters } from './types'
 
 const SizeToWorkforce = {
@@ -29,8 +30,11 @@ export const preprocessInputForPublicodes = (
 ): PublicodesInputData => {
   const publicodesData: PublicodesInputData = {
     ...questionnaireData,
-    [PublicodesKeys.CurrentDate]: currentDate,
-    région: questionnaireData.region
+    [PublicodesKeys.CurrentDate]: currentDate
+  }
+
+  if (questionnaireData.region) {
+    publicodesData['région'] = questionnaireData.region
   }
 
   if (questionnaireData.structure_size) {
@@ -110,8 +114,10 @@ export const preprocessInputForPublicodes = (
     }
   }
 
-  const route = questionnaireData.questionnaire_route
-  publicodesData[PublicodesKeys.QuestionnaireRoute] = convertQuestionnaireRoute(route)
+  if (questionnaireData.questionnaire_route) {
+    const route = questionnaireData.questionnaire_route
+    publicodesData[PublicodesKeys.QuestionnaireRoute] = convertQuestionnaireRoute(route)
+  }
 
   if (programData['début de validité']) {
     publicodesData['dispositif . début de validité'] = programData['début de validité']

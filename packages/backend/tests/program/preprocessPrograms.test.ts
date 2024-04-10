@@ -1,7 +1,8 @@
 import { PublicodesKeys, QuestionnaireRoute } from '@tee/common/src/questionnaire/types'
 import { Entry, setObjectProperty } from '../../src/common/objects'
 
-import { Program, QuestionnaireData } from '../../src/program/domain/types'
+import { type Program } from '@tee/data/src/type/program'
+import { QuestionnaireData } from '../../src/program/domain/types/questionnaireData'
 import { PublicodesQuestionnaireRoute } from '../../src/program/infrastructure/types'
 import { makeProgramHelper, mockCurrentDateService, makeProgramsRepository } from './testing'
 import { FILTERING_RULE_NAME } from '../../src/program/domain/filterPrograms'

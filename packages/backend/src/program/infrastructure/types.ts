@@ -18,7 +18,7 @@ export enum PublicodesQuestionnaireRoute {
   SpecificGoal = '"objectif précis"'
 }
 
-export const SectorToNAFSection = {
+export const SectorToNAFSection: Record<Sector, string[]> = {
   [Sector.Craftsmanship]: ['C', 'F', 'G'],
   [Sector.Industry]: ['B', 'C', 'D', 'E'],
   [Sector.Tourism]: ['I'],
