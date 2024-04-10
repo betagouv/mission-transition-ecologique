@@ -250,7 +250,8 @@ const opportunityForm = ref<opportunityFormType>({
       titreAide: props.program.titre
     })
   },
-  cgu: { required: true, value: false }
+  cgu: { required: true, value: false },
+  linkToProgramPage: { required: true, value: new URL(route.fullPath, window.location.origin).href }
 })
 const formIsSent = ref<boolean>(false)
 const requestResponse = ref<ReqResp>()
