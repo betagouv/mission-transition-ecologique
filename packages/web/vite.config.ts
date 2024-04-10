@@ -7,6 +7,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { dsnFromString } from '@sentry/utils'
 import * as dotenv from 'dotenv'
+import SEOPlugin from './plugin/SEO/index'
 
 dotenv.config()
 
@@ -27,6 +28,7 @@ const libConfig: Record<LibType, BuildOptions> = {
 const plugins = async () => {
   const basePlugins = [
     vue(),
+    SEOPlugin(),
     AutoImport({
       include: [/\.[tj]sx?$/, /\.vue$/, /\.vue\?vue/],
       imports: ['vue', 'vue-router', vueDsfrAutoimportPreset, ohVueIconAutoimportPreset],
