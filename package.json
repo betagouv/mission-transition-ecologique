@@ -53,6 +53,7 @@
     "eslint-formatter-summary-chart": "^0.3.0",
     "eslint-plugin-prettier": "^5.0.1",
     "prettier": "^3.0.3",
-    "ts-node": "^10.9.1"
+    "ts-node": "^10.9.1",
+    "tsx": "^4.7.2"
   }
 }
