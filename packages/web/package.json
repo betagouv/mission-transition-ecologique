@@ -23,7 +23,7 @@
     "copy-custom-css": "cp -a ./src/assets/custom.css ./public/css/custom.css",
     "update-styles": "npm run copy-dsfr-core-css && npm run copy-dsfr-fonts && npm run copy-custom-css",
     "dev": "npm run copy-custom-css && NODE_OPTIONS='--import tsx' vite --port 4242",
-    "build": "npm run update-styles && npm run build-main && npm run build-widget",
+    "build": "npm run update-styles && npm run build-main",
     "build-main": "NODE_OPTIONS='--import tsx' LIB=main vite build",
     "build-widget": "NODE_OPTIONS='--import tsx' LIB=widget vite build",
     "start": "echo 'STARTING FRONT WITH VITE' && npm run start-preview",
