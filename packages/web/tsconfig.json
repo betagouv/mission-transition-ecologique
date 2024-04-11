@@ -10,8 +10,8 @@
     "vitest.config.*",
     "cypress.config.*",
     "cypress/**/*",
-    "public/data/generated/dataset_out.json",
     "widget/**/*",
+    "plugin/**/*"
   ],
   "exclude": [
     "../backend/**/*",
@@ -22,8 +22,6 @@
     "declaration": true,
     "baseUrl": ".",
     "paths": {
-      "@tee/common/*": ["../common/src/*"],
-      "@tee/data/*": ["../data/src/*"],
       "@/*": ["./src/*"]
     },
     "isolatedModules": true,
@@ -37,7 +35,7 @@
     "types": ["node", "jsdom", "./src/env.d.ts"],
     "preserveValueImports": false,
     "importsNotUsedAsValues": "remove",
-    "verbatimModuleSyntax": true,
+    "verbatimModuleSyntax": false,
     "resolvePackageJsonImports": false,
     "resolvePackageJsonExports": false
   }
