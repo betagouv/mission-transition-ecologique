@@ -1,15 +1,16 @@
 import * as dotenv from 'dotenv'
-// requiring path and fs modules
 import * as path from 'path'
 import * as fs from 'fs'
 import * as yaml from 'js-yaml'
 import { createFolderIfNotExists } from './helpers'
-
 import { Program, ProgramWithoutId } from './type/program'
 
 dotenv.config()
 
-const DEFAULT_OUTPUT_LOCATION = '../public/generated'
+const OUTPUT_FOLDER_PATH = '../generated'
+const OUTPUT_FILENAME = 'dataset_out.json'
+const PROGRAMS_FOLDER_PATH = '../programs'
+const INTERFACE_PATH = './../common/interface.yaml'
 
 /**
  * Build programs dataset from folder and yaml files
@@ -24,13 +25,10 @@ const DEFAULT_OUTPUT_LOCATION = '../public/generated'
  * "packages/data/programs".
  */
 export const readPrograms = (log: boolean = false): Program[] => {
-  const DEFAULT_PROGRAMS_PATH = '../programs'
-
   const programs: Program[] = []
 
   // joining path of directory
-  const relativeDataDirPath: string = process.env.DATA_DIR_PATH || DEFAULT_PROGRAMS_PATH
-  const dataDirPath: string = path.join(__dirname, relativeDataDirPath)
+  const dataDirPath: string = path.join(__dirname, PROGRAMS_FOLDER_PATH)
 
   if (log) console.log('📂 Reading data at', dataDirPath, '\n')
 
@@ -56,9 +54,7 @@ export const readPrograms = (log: boolean = false): Program[] => {
  * "packages/data/common/interface.yaml")
  */
 export const prependInterface = (programs: Program[], log: boolean = false): Program[] => {
-  const CONSTANTS_PATH = './../common/interface.yaml'
-
-  const fullPath: string = path.join(__dirname, CONSTANTS_PATH)
+  const fullPath: string = path.join(__dirname, INTERFACE_PATH)
 
   if (log) console.log('🗎 reading constants at', fullPath)
   const file: string = fs.readFileSync(fullPath, 'utf8')
@@ -81,11 +77,11 @@ export const buildJSONOutput = (programs: Program[]): void => {
   console.log('♺ Converting data to JSON')
   const dataAsJson: string = JSON.stringify(programs, null, 2)
 
-  const dataBuiltOutputDir: string = path.join(__dirname, process.env.DATA_FRONT_GENERATED_DIR_PATH || DEFAULT_OUTPUT_LOCATION)
+  const dataBuiltOutputDir: string = path.join(__dirname, OUTPUT_FOLDER_PATH)
 
   createFolderIfNotExists(dataBuiltOutputDir)
 
-  const dataOutPath: string = `${dataBuiltOutputDir}/dataset_out.json`
+  const dataOutPath: string = `${dataBuiltOutputDir}/${OUTPUT_FILENAME}`
   fs.writeFileSync(dataOutPath, dataAsJson)
   console.log('🖊️  Data successfully written at', dataOutPath)
 }
