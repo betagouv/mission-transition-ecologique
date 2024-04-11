@@ -486,10 +486,6 @@ The `env` variables you can use for deployment are listed in the `.env.example` 
 # it overrides the `debug-switch` parameters to prohibit debug mode
 VITE_NO_DEBUG_SWITCH = false
 
-# Path of the dataset
-# Default : ../data/programs
-VITE_DATA_DIR_PATH = ../data/programs
-
 # To indicate built source while copying the widget
 VITE_DEPLOY_URL = https://tee-frontend.osc-fr1.scalingo.io
 
