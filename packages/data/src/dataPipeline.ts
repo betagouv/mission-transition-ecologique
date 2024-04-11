@@ -15,14 +15,11 @@ const INTERFACE_PATH = './../common/interface.yaml'
 /**
  * Build programs dataset from folder and yaml files
  * Parse data folder to build list of programs
- * Each program must must written as a distinct yaml file
+ * Each program must be written as a distinct yaml file
  */
 
-/** Reads all program data
- *
- * Program data is stored as yaml files, location of the files can be
- * specified with `DATA_DIR_PATH` environment variable. Default location is
- * "packages/data/programs".
+/**
+ * Reads all program data
  */
 export const readPrograms = (log: boolean = false): Program[] => {
   const programs: Program[] = []
@@ -68,10 +65,8 @@ export const prependInterface = (programs: Program[], log: boolean = false): Pro
   })
 }
 
-/** Converts program data to JSON and writes it to a file.
- *
- * Location defaults to `packages/web/public/data/generated` but can be
- * specified with `DATA_FRONT_GENERATED_DIR_PATH` environment variable.
+/**
+ * Converts program data to JSON and writes it to a file.
  */
 export const buildJSONOutput = (programs: Program[]): void => {
   console.log('♺ Converting data to JSON')
