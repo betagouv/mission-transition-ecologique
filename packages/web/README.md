@@ -356,19 +356,15 @@ npm run build-json-output
 npm run build-json-output-watch
 ```
 
-The generated `dataset_out.json` file is then created / updated in the `./packages/web/public/data/generated` folder.
+The generated `dataset_out.json` file is then created / updated in the `./packages/data/generated` folder.
 
 ```
-# in `./packages/web`
+# in `./packages/data`
 
 .
 ├── ...
-├── public
-|   ├── css
-|   ├── data
-|   |   └── generated
-|   |       └── dataset_out.json  <-- the json file used as a "database"
-|   └── fonts
+|   └── generated
+|          └── dataset_out.json  <-- the json file used as a "database"
 ├── ...
 └── README.md
 ```
