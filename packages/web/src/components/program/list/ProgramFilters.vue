@@ -7,21 +7,38 @@
       />
     </div>
     <div class="fr-col-12 fr-col-sm-6">
-      <DsfrSelect
+      <TeeDsfrTags
         v-model="programFilters.objectifTypeSelected"
-        :options="objectifTypeOptions"
+        :tags="objectiveTypeTags"
       />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { TeeDsfrTag } from '@/components/element/tag/TeeDsfrTags.vue'
 import { useProgramStore } from '@/stores/program'
 import { Objectives, ProgramAidType, type programFiltersType } from '@/types'
-import { DsfrSelect } from '@gouvminint/vue-dsfr'
-import type { DsfrSelectProps } from '@gouvminint/vue-dsfr/types/components/DsfrSelect/DsfrSelect.types'
+import { DsfrSelect, DsfrSelectProps } from '@gouvminint/vue-dsfr'
 
 const programFilters: programFiltersType = useProgramStore().programFilters
+
+const objectiveTypeTags = computed<TeeDsfrTag[]>((): TeeDsfrTag[] => {
+  const tags: TeeDsfrTag[] = []
+  for (const objectiveType of objectiveTypes) {
+    tags.push({
+      label: objectiveType.label,
+      tagName: 'button',
+      small: true,
+      'aria-pressed': programFilters.objectifTypeSelected === objectiveType.value,
+      class:
+        programFilters.objectifTypeSelected === objectiveType.value && objectiveType.color ? `fr-tag--${objectiveType.color}` : undefined,
+      value: objectiveType.value
+    })
+  }
+
+  return tags
+})
 
 const programAidTypeOptions: DsfrSelectProps['options'] = [
   {
@@ -50,42 +67,50 @@ const programAidTypeOptions: DsfrSelectProps['options'] = [
   }
 ]
 
-const objectifTypeOptions: DsfrSelectProps['options'] = [
+const objectiveTypes = [
   {
-    text: 'Filtrer par objectif',
+    label: 'Tous',
     value: ''
   },
   {
-    text: '🌱 Stratégie environnementale',
-    value: Objectives.EnvironmentalImpact
+    label: '🌱 Stratégie environnementale',
+    value: Objectives.EnvironmentalImpact,
+    color: 'blue'
   },
   {
-    text: '⚡️ Énergie',
-    value: Objectives.EnergyPerformance
+    label: '⚡️ Énergie',
+    value: Objectives.EnergyPerformance,
+    class: 'yellow'
   },
   {
-    text: '💧 Eau',
-    value: Objectives.WaterConsumption
+    label: '💧 Eau',
+    value: Objectives.WaterConsumption,
+    class: 'blue'
   },
   {
-    text: '🏢 Bâtiment',
-    value: Objectives.BuildingRenovation
+    label: '🏢 Bâtiment',
+    value: Objectives.BuildingRenovation,
+    class: 'red'
   },
   {
-    text: '🚲 Mobilité',
-    value: Objectives.SustainableMobility
+    label: '🚲 Mobilité',
+    value: Objectives.SustainableMobility,
+    class: 'green'
   },
   {
-    text: '🗑 Déchets',
-    value: Objectives.WasteManagement
+    label: '🗑 Déchets',
+    value: Objectives.WasteManagement,
+    class: 'red'
   },
   {
-    text: '🏭 Production',
-    value: Objectives.EcoDesign
+    label: '🏭 Production',
+    value: Objectives.EcoDesign,
+    class: 'green'
   },
   {
-    text: '🧑‍🎓 RH',
-    value: Objectives.TrainOrRecruit
+    label: '🧑‍🎓 RH',
+    value: Objectives.TrainOrRecruit,
+    class: 'yellow'
   }
 ]
 </script>
