@@ -2,7 +2,6 @@
 export interface ImportMetaEnv {
   readonly [key: string]: boolean | string | number
   readonly VITE_NO_DEBUG_SWITCH: string
-  readonly VITE_DATA_DIR_PATH: string
   readonly VITE_DEPLOY_URL: string
   readonly VITE_CONTACT_EMAIL: string
   readonly VITE_MATOMO_DEACTIVATE: string

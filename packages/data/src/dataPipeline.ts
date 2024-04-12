@@ -1,34 +1,31 @@
 import * as dotenv from 'dotenv'
-// requiring path and fs modules
 import * as path from 'path'
 import * as fs from 'fs'
 import * as yaml from 'js-yaml'
 import { createFolderIfNotExists } from './helpers'
-
 import { Program, ProgramWithoutId } from './type/program'
 
 dotenv.config()
 
+const OUTPUT_FOLDER_PATH = '../generated'
+const OUTPUT_FILENAME = 'dataset_out.json'
+const PROGRAMS_FOLDER_PATH = '../programs'
+const INTERFACE_PATH = './../common/interface.yaml'
+
 /**
  * Build programs dataset from folder and yaml files
  * Parse data folder to build list of programs
- * Each program must must written as a distinct yaml file
+ * Each program must be written as a distinct yaml file
  */
 
-/** Reads all program data
- *
- * Program data is stored as yaml files, location of the files can be
- * specified with `DATA_DIR_PATH` environment variable. Default location is
- * "packages/data/programs".
+/**
+ * Reads all program data
  */
 export const readPrograms = (log: boolean = false): Program[] => {
-  const DEFAULT_PROGRAMS_PATH = '../programs'
-
   const programs: Program[] = []
 
   // joining path of directory
-  const relativeDataDirPath: string = process.env.DATA_DIR_PATH || DEFAULT_PROGRAMS_PATH
-  const dataDirPath: string = path.join(__dirname, relativeDataDirPath)
+  const dataDirPath: string = path.join(__dirname, PROGRAMS_FOLDER_PATH)
 
   if (log) console.log('📂 Reading data at', dataDirPath, '\n')
 
@@ -54,9 +51,7 @@ export const readPrograms = (log: boolean = false): Program[] => {
  * "packages/data/common/interface.yaml")
  */
 export const prependInterface = (programs: Program[], log: boolean = false): Program[] => {
-  const CONSTANTS_PATH = './../common/interface.yaml'
-
-  const fullPath: string = path.join(__dirname, CONSTANTS_PATH)
+  const fullPath: string = path.join(__dirname, INTERFACE_PATH)
 
   if (log) console.log('🗎 reading constants at', fullPath)
   const file: string = fs.readFileSync(fullPath, 'utf8')
@@ -70,22 +65,18 @@ export const prependInterface = (programs: Program[], log: boolean = false): Pro
   })
 }
 
-/** Converts program data to JSON and writes it to a file.
- *
- * Location defaults to `packages/web/public/data/generated` but can be
- * specified with `DATA_FRONT_GENERATED_DIR_PATH` environment variable.
+/**
+ * Converts program data to JSON and writes it to a file.
  */
 export const buildJSONOutput = (programs: Program[]): void => {
-  const DEFAULT_OUTPUT_LOCATION = '../../web/public/data/generated'
-
   console.log('♺ Converting data to JSON')
   const dataAsJson: string = JSON.stringify(programs, null, 2)
 
-  const dataBuiltOutputDir: string = path.join(__dirname, process.env.DATA_FRONT_GENERATED_DIR_PATH || DEFAULT_OUTPUT_LOCATION)
+  const dataBuiltOutputDir: string = path.join(__dirname, OUTPUT_FOLDER_PATH)
 
   createFolderIfNotExists(dataBuiltOutputDir)
 
-  const dataOutPath: string = `${dataBuiltOutputDir}/dataset_out.json`
+  const dataOutPath: string = `${dataBuiltOutputDir}/${OUTPUT_FILENAME}`
   fs.writeFileSync(dataOutPath, dataAsJson)
   console.log('🖊️  Data successfully written at', dataOutPath)
 }

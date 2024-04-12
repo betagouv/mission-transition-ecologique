@@ -356,19 +356,15 @@ npm run build-json-output
 npm run build-json-output-watch
 ```
 
-The generated `dataset_out.json` file is then created / updated in the `./packages/web/public/data/generated` folder.
+The generated `dataset_out.json` file is then created / updated in the `./packages/data/generated` folder.
 
 ```
-# in `./packages/web`
+# in `./packages/data`
 
 .
 ├── ...
-├── public
-|   ├── css
-|   ├── data
-|   |   └── generated
-|   |       └── dataset_out.json  <-- the json file used as a "database"
-|   └── fonts
+|   └── generated
+|          └── dataset_out.json  <-- the json file used as a "database"
 ├── ...
 └── README.md
 ```
@@ -489,10 +485,6 @@ The `env` variables you can use for deployment are listed in the `.env.example` 
 # If this variable is set to 'true'
 # it overrides the `debug-switch` parameters to prohibit debug mode
 VITE_NO_DEBUG_SWITCH = false
-
-# Path of the dataset
-# Default : ../data/programs
-VITE_DATA_DIR_PATH = ../data/programs
 
 # To indicate built source while copying the widget
 VITE_DEPLOY_URL = https://tee-frontend.osc-fr1.scalingo.io
