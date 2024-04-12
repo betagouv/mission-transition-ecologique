@@ -10,8 +10,14 @@ import {
   MobilityStatus
 } from '@tee/common/src/questionnaire/types'
 
+export enum QuestionnaireDataEnum {
+  codeNaf = 'codeNaf',
+  questionnaire_route = 'questionnaire_route'
+}
+
 export interface QuestionnaireData {
-  questionnaire_route?: QuestionnaireRoute
+  codeNaf?: string
+  [QuestionnaireDataEnum.questionnaire_route]?: QuestionnaireRoute
   region?: string
 
   structure_size?: StructureSize // optional for testing !
