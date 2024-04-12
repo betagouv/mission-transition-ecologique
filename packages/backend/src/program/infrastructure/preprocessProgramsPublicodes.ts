@@ -9,12 +9,13 @@ import {
   StructureSize,
   WasteManagementStatus,
   YesNo
-} from '../../../../common/src/questionnaire/types'
+} from '@tee/common/src/questionnaire/types'
+
 import { type Program } from '@tee/data/src/type/program'
 import { QuestionnaireData } from '../domain/types/questionnaireData'
 import { type PublicodesInputData, PublicodesQuestionnaireRoute, SectorToNAFSection, NAF1Letters } from './types'
 
-const SizeToWorkforce = {
+const SizeToWorkforce: { [key in StructureSize]: number } = {
   [StructureSize.TPE]: 19,
   [StructureSize.PE]: 49,
   [StructureSize.ME]: 249,
@@ -33,18 +34,33 @@ export const preprocessInputForPublicodes = (
     [PublicodesKeys.CurrentDate]: currentDate
   }
 
+  setRegion(publicodesData, questionnaireData)
+  setStructureSize(publicodesData, questionnaireData)
+  setCodeNAF(publicodesData, questionnaireData)
+  setSectors(publicodesData, questionnaireData)
+  setObjectives(publicodesData, questionnaireData)
+  setQuestionnaireRoute(publicodesData, questionnaireData)
+  setDateValidity(publicodesData, programData)
+
+  return publicodesData
+}
+
+const setRegion = (publicodesData: PublicodesInputData, questionnaireData: QuestionnaireData) => {
   if (questionnaireData.region) {
     publicodesData['région'] = questionnaireData.region
   }
-
+}
+const setStructureSize = (publicodesData: PublicodesInputData, questionnaireData: QuestionnaireData) => {
   if (questionnaireData.structure_size) {
     publicodesData[PublicodesKeys.Workforce] = SizeToWorkforce[questionnaireData.structure_size]
   }
-
+}
+const setCodeNAF = (publicodesData: PublicodesInputData, questionnaireData: QuestionnaireData) => {
   if (questionnaireData.codeNAF) {
     publicodesData[PublicodesKeys.CodeNAF] = enquotePublicodesLiteralString(questionnaireData.codeNAF)
   }
-
+}
+const setSectors = (publicodesData: PublicodesInputData, questionnaireData: QuestionnaireData) => {
   let codeNAF1s: string[] = []
   if (questionnaireData.codeNAF1) {
     codeNAF1s = [questionnaireData.codeNAF1]
@@ -56,7 +72,9 @@ export const preprocessInputForPublicodes = (
     const publicodeNAF1Key = 'entreprise . code NAF niveau 1 . est ' + NAF1
     publicodesData[publicodeNAF1Key] = codeNAF1s.includes(NAF1) ? YesNo.Yes : YesNo.No
   })
+}
 
+const setObjectives = (publicodesData: PublicodesInputData, questionnaireData: QuestionnaireData) => {
   if (questionnaireData.priority_objective) {
     // "J'ai un objectif précis en tête"
     for (const objective of Object.values(Objective)) {
@@ -113,20 +131,20 @@ export const preprocessInputForPublicodes = (
       publicodesData[PublicodeObjective.EnergyPerformance] = YesNo.Yes
     }
   }
-
+}
+const setQuestionnaireRoute = (publicodesData: PublicodesInputData, questionnaireData: QuestionnaireData) => {
   if (questionnaireData.questionnaire_route) {
     const route = questionnaireData.questionnaire_route
     publicodesData[PublicodesKeys.QuestionnaireRoute] = convertQuestionnaireRoute(route)
   }
-
+}
+const setDateValidity = (publicodesData: PublicodesInputData, programData: Program) => {
   if (programData['début de validité']) {
     publicodesData['dispositif . début de validité'] = programData['début de validité']
   }
   if (programData['fin de validité']) {
     publicodesData['dispositif . fin de validité'] = programData['fin de validité']
   }
-
-  return publicodesData
 }
 
 const convertQuestionnaireRoute = (route: QuestionnaireRoute): PublicodesQuestionnaireRoute => {

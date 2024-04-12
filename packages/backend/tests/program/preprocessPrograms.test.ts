@@ -2,7 +2,7 @@ import { PublicodesKeys, QuestionnaireRoute } from '@tee/common/src/questionnair
 import { Entry, setObjectProperty } from '../../src/common/objects'
 
 import { type Program } from '@tee/data/src/type/program'
-import { QuestionnaireData } from '../../src/program/domain/types/questionnaireData'
+import { QuestionnaireData, QuestionnaireDataEnum } from '../../src/program/domain/types/questionnaireData'
 import { PublicodesQuestionnaireRoute } from '../../src/program/infrastructure/types'
 import { makeProgramHelper, mockCurrentDateService, makeProgramsRepository } from './testing'
 import { FILTERING_RULE_NAME } from '../../src/program/domain/filterPrograms'
@@ -279,7 +279,7 @@ EXPECT recovers the data properly`, () => {
     const rule = `${PublicodesKeys.QuestionnaireRoute} = ${keptQuestionnaireRoute}`
     testHelperPreprocessing({
       title: `questionnaireRoute (input: "${questionnaireRoute}", keep if converted to "${keptQuestionnaireRoute}")`,
-      inputDataEntry: ['questionnaire_route', questionnaireRoute],
+      inputDataEntry: [QuestionnaireDataEnum.questionnaire_route, questionnaireRoute],
       inputDataSource: DataSources.Questionnaire,
       publicodesKey: PublicodesKeys.QuestionnaireRoute,
       filteringRule: rule,
