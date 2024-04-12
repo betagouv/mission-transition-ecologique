@@ -1,12 +1,13 @@
+import { StructureSize } from '@tee/common/src/questionnaire/types'
 export default interface EstablishmentType {
   siret: string
   codeNAF: string
   codeNAF1: string
   ville: string
   codePostal: string
-  region: string | null
-  structure_size: string
-  denomination: string | null
+  region: string | undefined
+  structure_size: StructureSize | undefined
+  denomination: string | undefined
   secteur: string | undefined
   creationDate: string
 }

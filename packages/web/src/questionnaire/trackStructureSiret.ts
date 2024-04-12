@@ -21,8 +21,8 @@ const defaultQuestionnaireData: EstablishmentType = {
   codeNAF1: '',
   ville: '',
   codePostal: '',
-  region: null,
-  structure_size: '',
+  region: undefined,
+  structure_size: undefined,
   denomination: '',
   secteur: undefined,
   creationDate: ''
