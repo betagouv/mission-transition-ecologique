@@ -7,17 +7,17 @@
       <div
         v-for="(paragraph, idx) in program.objectifs"
         :key="`description-paragraph-${idx}`"
-        class="fr-mb-3v"
+        class="fr-mb-4v fr-mb-md-2v"
       >
-        <div>
+        <p class="fr-mb-2v fr-mb-md-1v">
           <span class="fr-tee-description-paragraph-marker"> {{ idx + 1 }} | </span>
           <span class="fr-tee-description-paragraph-content">
             {{ paragraph }}
           </span>
-        </div>
+        </p>
         <div
           v-if="program.liens && haslink(idx + 1)"
-          class="fr-mt-md-2v fr-ml-md-6w"
+          class="fr-ml-6w"
         >
           <template
             v-for="linkId in possibleLinkIds"
@@ -27,7 +27,6 @@
               v-if="program.liens[`Objectif${idx + 1} lien${linkId}`]"
               :key="`link-${idx}-${linkId}`"
               :href="program.liens[`Objectif${idx + 1} lien${linkId}`].lien"
-              :download="isDownload(idx + 1, linkId)"
               >{{ program.liens[`Objectif${idx + 1} lien${linkId}`].texte }}</TeeButtonLink
             >
           </template>
@@ -66,16 +65,15 @@ const getProgramObjectiveTitle = () => {
 const possibleLinkIds = [1, 2, 3] // To improve, may break in future versions
 
 const haslink = (objectiveId: number) => {
-  if (!props.program.liens) return false
+  if (!props.program.liens) {
+    return false
+  }
   for (const linkId of possibleLinkIds) {
     const linkName = `Objectif${objectiveId} lien${linkId}`
-    if (props.program.liens[linkName]) return true
+    if (props.program.liens[linkName]) {
+      return true
+    }
   }
   return false
-}
-
-const isDownload = (objectiveId: number, linkId: number) => {
-  const linkName = `Objectif${objectiveId} lien${linkId}`
-  return props.program.liens[linkName].telechargement == 'oui'
 }
 </script>
