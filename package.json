@@ -34,22 +34,22 @@
     "./packages/*"
   ],
   "engines": {
-    "node": "18.x",
-    "npm": ">=9.0 <11"
+    "node": "20.x",
+    "npm": ">=10.0 <11"
   },
   "dependencies": {
-    "@tsconfig/node18": "^18.2.2",
+    "@tsconfig/node20": "^20.1.4",
     "chart.js": "^4.4.2",
     "dotenv": "^16.4.1",
-    "typescript": "~5.2.2",
-    "true-myth": "^7.1.0"
+    "true-myth": "^7.1.0",
+    "typescript": "^5.4.3",
+    "concurrently": "^8.2.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.13",
-    "@types/node": "^18.18.13",
-    "@typescript-eslint/eslint-plugin": "^6.12.0",
-    "@typescript-eslint/parser": "^6.12.0",
-    "concurrently": "^8.2.0",
+    "@types/node": "^20.12.4",
+    "@typescript-eslint/eslint-plugin": "^7.5.0",
+    "@typescript-eslint/parser": "^7.5.0",
     "eslint": "^8.53.0",
     "eslint-formatter-summary-chart": "^0.3.0",
     "eslint-plugin-prettier": "^5.0.1",

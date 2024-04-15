@@ -28,7 +28,7 @@ export interface BrevoPostContactPayload {
 
 export interface BrevoPostDealPayload {
   name: string
-  attributes: DealAttributes
+  attributes: DealAttributes & { pipeline?: string }
 }
 
 export interface BrevoLinkDealPayload {

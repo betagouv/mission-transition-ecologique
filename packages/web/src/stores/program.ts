@@ -7,8 +7,7 @@ import ProgramFilter from '@/utils/program/programFilters'
 import { Result } from 'true-myth'
 import { computed, ref } from 'vue'
 import { acceptHMRUpdate, defineStore } from 'pinia'
-import { type programFiltersType, ProgramAidType, Objectives, type ProgramData } from '@/types'
-import type { QuestionnaireData } from '@tee/backend/src/program/domain/types'
+import { type programFiltersType, ProgramAidType, Objectives, type ProgramData, type QuestionnaireData } from '@/types'
 
 export const useProgramStore = defineStore('program', () => {
   const currentProgram = ref<ProgramData>()

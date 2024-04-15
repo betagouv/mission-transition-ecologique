@@ -27,7 +27,6 @@ declare module 'vue' {
     ProgramTile: typeof import('./components/program/detail/ProgramTile.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    TeeContact: typeof import('./components/home/TeeContact.vue')['default']
     TeeCredits: typeof import('./components/TeeCredits.vue')['default']
     TeeCta: typeof import('./components/home/TeeCta.vue')['default']
     TeeDsfrButton: typeof import('./components/element/TeeDsfrButton.vue')['default']

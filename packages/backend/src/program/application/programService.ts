@@ -2,7 +2,7 @@ import { Result } from 'true-myth'
 
 import { Program } from '@tee/data/src/type/program'
 import ProgramFeatures from '../domain/programFeatures'
-import { QuestionnaireData } from '../domain/types'
+import { QuestionnaireData } from '../domain/types/questionnaireData'
 
 import ProgramsJson from '../infrastructure/programsJson'
 import { currentDateService } from '../infrastructure/currentDate'
@@ -26,5 +26,9 @@ export default class ProgramService {
 
   public getFilteredPrograms(questionnaireData: QuestionnaireData): Result<Program[], Error> {
     return this._program.getFilteredBy(questionnaireData)
+  }
+
+  public getAll(): Program[] {
+    return this._program.getAll()
   }
 }
