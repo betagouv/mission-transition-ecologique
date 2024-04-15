@@ -20,14 +20,15 @@
           class="fr-ml-6w"
         >
           <template
-            v-for="linkId in possibleLinkIds"
+            v-for="linkId in maxLinkByObjective"
             :key="`link-${idx}-${linkId}`"
           >
-            <TeeButtonLink
+            <TeeButtonExternalLink
               v-if="program.liens[`Objectif${idx + 1} lien${linkId}`]"
               :key="`link-${idx}-${linkId}`"
               :href="program.liens[`Objectif${idx + 1} lien${linkId}`].lien"
-              >{{ program.liens[`Objectif${idx + 1} lien${linkId}`].texte }}</TeeButtonLink
+              class="fr-mb-1v fr-mr-md-2v"
+              >{{ program.liens[`Objectif${idx + 1} lien${linkId}`].texte }}</TeeButtonExternalLink
             >
           </template>
         </div>
@@ -39,7 +40,7 @@
 <script setup lang="ts">
 // CONSOLE LOG TEMPLATE
 // console.log(`ProgramObjective > FUNCTION_NAME > MSG_OR_VALUE :`)
-import TeeButtonLink from '@/components/element/TeeButtonLink.vue'
+import TeeButtonExternalLink from '@/components/element/TeeButtonExternalLink.vue'
 import Translation from '@/utils/translation'
 import type { ProgramData } from '@/types'
 import { ProgramAidType } from '@tee/common/src/program/types'
@@ -62,13 +63,13 @@ const getProgramObjectiveTitle = () => {
   }
 }
 
-const possibleLinkIds = [1, 2, 3] // To improve, may break in future versions
+const maxLinkByObjective = 5
 
 const haslink = (objectiveId: number) => {
   if (!props.program.liens) {
     return false
   }
-  for (const linkId of possibleLinkIds) {
+  for (let linkId = 1; linkId <= maxLinkByObjective; linkId++) {
     const linkName = `Objectif${objectiveId} lien${linkId}`
     if (props.program.liens[linkName]) {
       return true

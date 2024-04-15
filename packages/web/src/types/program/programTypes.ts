@@ -6,7 +6,6 @@ import type { ProgramAidType } from '@tee/common/src/program/types'
 interface ProgramObjectiveLink {
   lien: string
   texte: string
-  telechargement: string
 }
 
 export interface ProgramData {

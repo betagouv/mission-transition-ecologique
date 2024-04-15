@@ -35,7 +35,6 @@ liens:
   Objectif1 lien1:
     lien: https://entreprendre.service-public.fr/vosdroits/F35585
     texte: Pour quels types de dépenses ?
-    telechargement: non
 conditions d'éligibilité:
   taille de l'entreprise:
   - TPE et PME

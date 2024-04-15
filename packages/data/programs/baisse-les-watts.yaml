@@ -35,6 +35,10 @@ objectifs:
 - Inscrivez-vous à des formations dispensées par les CCI ou CMA sous forme d'ateliers
   collectifs, complétées par un suivi individuel dans vos locaux avec un conseiller
   énergie.
+liens:
+  Objectif1 lien1:
+    lien: https://www.baisseleswatts.fr/?mtm_campaign=missiontransitionecologique&mtm_source=missiontransitionecologique&mtm_medium=missiontransitionecologique&mtm_content=missiontransitionecologique
+    texte: Créer un compte
 conditions d'éligibilité:
   taille de l'entreprise:
   - TPE et PME

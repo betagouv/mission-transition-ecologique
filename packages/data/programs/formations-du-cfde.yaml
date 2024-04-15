@@ -20,6 +20,10 @@ objectifs:
   d'inscription, en précisant votre mode de financement.
 - Participez au stage (en présentiel ou à distance)
 - A l'issue du stage, recevez une attestation de formation personnalisée.
+liens:
+  Objectif1 lien1:
+    lien: https://www.cci.fr/ressources/developpement-durable/cfde/nos-formations
+    texte: Les formations du CFDE
 conditions d'éligibilité:
   taille de l'entreprise:
   - Toutes tailles

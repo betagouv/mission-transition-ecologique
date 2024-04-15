@@ -50,11 +50,12 @@ liens:
   Objectif1 lien1:
     lien: https://france-chaleur-urbaine.beta.gouv.fr/ressources/aides#contenu
     texte: Réaliser le test
-    telechargement: non
   Objectif2 lien1:
     lien: https://france-renov.gouv.fr/petit-tertiaire-prive#quels-travaux-sont-concernes-par-le-coup-de-pouce-
     texte: Liste des travaux éligibles
-    telechargement: non
+  Objectif3 lien1:
+    lien: https://www.ecologie.gouv.fr/sites/default/files/CdP%20Chauffage%20B%C3%A2timents%20r%C3%A9sidentiels%20collectifs%20et%20tertiaires%20-%20Les%20offres%20Coup%20de%20pouce.pdf
+    texte: Les signataires de la charte
 conditions d'éligibilité:
   taille de l'entreprise:
   - Toutes tailles

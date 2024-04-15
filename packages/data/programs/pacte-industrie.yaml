@@ -52,11 +52,9 @@ liens:
   Objectif1 lien1:
     lien: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Pacte%20Industrie%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf
     texte: Conditions éligibilité et financement
-    telechargement: non
   Objectif2 lien1:
     lien: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/PACTE%20Industrie%20-%20Annuaire%20prestataires%20-%202023-12-07.xlsx
     texte: Annuaire des prestataires
-    telechargement: non
 conditions d'éligibilité:
   taille de l'entreprise:
   - Toutes tailles

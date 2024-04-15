@@ -33,6 +33,10 @@ objectifs:
   tutos, exercices interactifs, ou interviews réalisés avec des experts.
 - Accédez à un outil d'autodiagnostic en ligne pour mesurer l’impact de votre activité
   sur l’environnement.
+liens:
+  Objectif1 lien1:
+    lien: https://universite.bpifrance.fr/Account/login
+    texte: Bpifrance Université
 conditions d'éligibilité:
   taille de l'entreprise:
   - Toutes tailles

@@ -45,6 +45,13 @@
         "type": "string"
       }
     },
+    "liens": {
+      "description": "TODO",
+      "type": "object",
+      "items": {
+        "type": "string"
+      }
+    },
     "opérateur de contact": {
       "description": "L'opérateur de contact est l'opérateur à contacter pour obtenir des informations supplémentaires sur le dispositif.",
       "type": "string",
@@ -131,9 +138,9 @@
         "autres critères d'éligibilité": {
           "type": "array",
           "items": {
-             "type": "string"
-            },
-           "minItems": 1
+            "type": "string"
+          },
+          "minItems": 1
         }
       },
       "required": ["taille de l'entreprise", "secteur géographique", "secteur d'activité", "nombre d'années d'activité"]

@@ -19,19 +19,28 @@ objectifs:
 - Louez ou achetez votre véhicule "propre" et déposez votre demande de Bonus écologique
   dans les six mois.
 - Créez votre dossier sur le site, en cliquant sur "Saisir ma demande par courrier"
-  en bas de page.
+  en bas de page. (rubrique "Vous représentez une personne morale ou vous souhaitez
+  faire une demande par courrier")
 - Complétez le formulaire en ligne. Vous recevrez le récapitulatif de votre demande
   par mail.
-- Constituez votre dossier avec les pièces justificatives demandées.
+- Constituez votre dossier avec les pièces justificatives demandées. (consultez les
+  pages n°2 destinées aux entreprises)
 liens:
   Objectif1 lien1:
     lien: https://www.primealaconversion.gouv.fr/dboneco/accueil/faq.html
-    texte: Conditions d'éligibilité
-    telechargement: non
+    texte: FAQ Prime à la conversion
   Objectif3 lien1:
     lien: https://www.primealaconversion.gouv.fr/dboneco/accueil/access.html
     texte: Primealaconversion.gouv.fr
-    telechargement: non
+  Objectif5 lien1:
+    lien: https://www.primealaconversion.gouv.fr/dboneco/accueil/media/documents/Hors_PJ.pdf
+    texte: Pièces justificatives - véhicule
+  Objectif5 lien2:
+    lien: https://www.primealaconversion.gouv.fr/dboneco/accueil/media/documents/Cycles_PJ.pdf
+    texte: Pièces justificatives - vélo
+  Objectif6 lien1:
+    lien: https://www.asp-public.fr/sites/default/files/content/aides/documents/bonus-eco/NOTICE_CONVENTIONNEMENT_BONUS_PRO.pdf
+    texte: Adresse postale (page 4)
 conditions d'éligibilité:
   taille de l'entreprise:
   - Toutes tailles

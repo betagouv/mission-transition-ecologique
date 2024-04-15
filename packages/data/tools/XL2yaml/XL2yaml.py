@@ -46,6 +46,12 @@ def assembleProgramYAML(rawData, colNumbersByName, id):
         value = rawData[colNumbersByName[name]]
         return curate(value)
 
+    def get_maybe(name):
+        if name not in colNumbersByName:
+            return False
+        value = rawData[colNumbersByName[name]]
+        return curate(value)
+
     try:
         existingProgram = readFromYaml(Path(OUTPUT_DIR, f"{id}.yaml"))
     except:  # noqa
@@ -104,18 +110,11 @@ def assembleProgramYAML(rawData, colNumbersByName, id):
     )
     set("objectifs", objectifs)
 
-    possibleLinks = [
-        (1, 1),
-        (2, 1),
-        (3, 1),
-        (4, 1),
-        (4, 2),
-        (5, 1),
-        (5, 2),
-        (6, 1),
-        (6, 2),
-    ]
-    yamlLinkDict = createYamlLinks(possibleLinks, get)
+    possibleLinks = []
+    for objectif in range(1, 20):
+        for linkNumber in range(1, 20):
+            possibleLinks.append((objectif, linkNumber))
+    yamlLinkDict = createYamlLinks(possibleLinks, get_maybe)
     if yamlLinkDict:
         set("liens", yamlLinkDict)
 
@@ -224,11 +223,11 @@ def isValidLink(link, i, j):
         if response.status_code == 200:
             return True
         else:
-            print(f"lien {i}{j}, status code :", response.status_code)
-        return False
+            print(f"Warning: lien {i}{j}, status code :", response.status_code)
+        return True
     except requests.exceptions.RequestException:
         print(
-            f"lien {i}{j}, erreur durant la requète",
+            f"Lien {i}{j}, erreur durant la requète, Lien non ajouté",
             requests.exceptions.RequestException,
         )
         return False
@@ -239,12 +238,10 @@ def createYamlLinks(indicesList, get):
     for i, j in indicesList:
         link = get(f"étape {i}/ lien{j}")
         text = get(f"étape {i}/ nom du lien{j}")
-        download = get(f"étape {i}/lien {j}/ téléchargement ?")
-        telecharg = "oui" if download == "1" else "non"
-        if not isValidLink(link, i, j):
+        if not link or not text or not isValidLink(link, i, j):
             continue
         key = f"Objectif{i} lien{j}"
-        linkDict[key] = {"lien": link, "texte": text, "telechargement": telecharg}
+        linkDict[key] = {"lien": link, "texte": text}
     return linkDict
 
 
