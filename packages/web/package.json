@@ -23,7 +23,7 @@
     "copy-custom-css": "cp -a ./src/assets/custom.css ./public/css/custom.css",
     "update-styles": "npm run copy-dsfr-core-css && npm run copy-dsfr-fonts && npm run copy-custom-css",
     "dev": "npm run copy-custom-css && NODE_OPTIONS='--import tsx' vite --port 4242",
-    "build": "npm run update-styles && npm run build-main && npm run build-widget",
+    "build": "npm run update-styles && npm run build-main",
     "build-main": "NODE_OPTIONS='--import tsx' LIB=main vite build",
     "build-widget": "NODE_OPTIONS='--import tsx' LIB=widget vite build",
     "start": "echo 'STARTING FRONT WITH VITE' && npm run start-preview",
@@ -55,7 +55,8 @@
     "vite": "^5.2.8",
     "vitest": "^1.2.1",
     "vue": "^3.2.47",
-    "vue-router": "^4.2.5"
+    "vue-router": "^4.2.5",
+    "tsx": "^4.7.2"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.2.0",
@@ -74,7 +75,6 @@
     "rollup-plugin-postcss-lit": "^2.0.0",
     "sass": "^1.74.1",
     "start-server-and-test": "^2.0.0",
-    "tsx": "^4.7.2",
     "vite-plugin-eslint": "^1.8.1",
     "vue-tsc": "^2.0.7"
   }
