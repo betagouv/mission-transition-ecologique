@@ -1,75 +1,99 @@
 <template>
   <div
     id="simple-page"
-    class="fr-container fr-my-8w"
+    class="fr-container fr-my-8w statistics"
   >
-    <h1>Statistiques</h1>
-    <div class="fr-mt-5w">
-      <h3>Mises en relations</h3>
-      <p class="subtitle">entre entreprises et administrations déployant des dispositifs d'aides</p>
-      <div v-if="statsData">
-        <div class="fr-highlight">
-          <p>
-            Depuis le lancement : <strong>{{ statsData.nOpportunitiesCreated }}</strong> <br />
-            Sur les 30 derniers jours :
-            <strong>
-              {{ 65 }}
-            </strong>
-          </p>
+    <div class="fr-mb-5w">
+      <h1 class="fr-mb-3w">Statistiques d'usage</h1>
+      <p>
+        Vous trouverez ici les statistiques d'utilisation du site Transition écologique des entreprises. Ces données nous permettent de
+        suivre les évolutions d'usage de la plateforme dans le temps mais également de mieux comprendre vos besoins et d'orienter nos
+        actions pour améliorer ce service.
+      </p>
+      <p>
+        Ces données étant en cours de construction, elles peuvent, dans certains cas, être incomplètes. Nous vous remercions de votre
+        compréhension.
+      </p>
+    </div>
+
+    <h2>Nombre de mises en relation</h2>
+    <div class="fr-grid-row fr-grid-row--center">
+      <div class="fr-col-md-6">
+        <h4>Depuis le lancement</h4>
+        <TeeCard
+          title="931"
+          description="Entreprises mises en relations avec un opérateur public sur un sujet de transition écologique depuis le lancement (mars 2023)."
+          class="fr-mr-md-3v"
+        ></TeeCard>
+      </div>
+      <div class="fr-col-md-6">
+        <h4 class="fr-ml-md-3v">Sur les 30 derniers jours</h4>
+        <TeeCard
+          title="65"
+          description="Entreprises mises en relations avec un opérateur public sur un sujet de transition écologique sur les 30 derniers jours."
+          class="fr-ml-md-3v"
+        ></TeeCard>
+      </div>
+    </div>
+    <div class="fr-col-12 fr-mt-md-6w fr-mb-md-10w">
+      <h4>Sur ces derniers mois</h4>
+      <canvas
+        ref="chartCanvas"
+        width="1200"
+        height="450"
+      ></canvas>
+    </div>
+    <div class="fr-mb-5w">
+      <h2>Nombre de dispositifs d'aide activés</h2>
+      <div class="fr-col-md-6">
+        <TeeCard
+          type="warning"
+          description="Nous travaillons actuellement sur cette mesure.
+Cette information sera disponible prochainement."
+          image="missingDataSvg"
+          class="fr-mr-md-3v"
+        ></TeeCard>
+      </div>
+    </div>
+    <div class="fr-mb-5w">
+      <h2>Nombre de dispositifs d'aide listés sur la plateforme</h2>
+      <div class="fr-grid-row fr-grid-row--center fr-mb-5w">
+        <div class="fr-col-md-6">
+          <h4>Depuis le lancement</h4>
+          <TeeCard
+            title="65"
+            description="Entreprises mises en relations avec un opérateur public sur un sujet de transition écologique sur les 30 derniers jours."
+            class="fr-mr-md-3v"
+          ></TeeCard>
         </div>
-      </div>
-      <div v-else>
-        <p>Loading...</p>
-      </div>
-      <h6>Nombre de mises en relations mensuelles</h6>
-      <div class="fr-grid-row fr-grid-row--center">
-        <div class="fr-col-md-10">
-          <canvas
-            ref="chartCanvas"
-            width="1200"
-            height="450"
-          ></canvas>
-        </div>
-      </div>
-      <div class="fr-mt-5w">
-        <h3>Nombre de dispositifs d'aide activés</h3>
-        <div class="fr-grid-row">
-          <div
-            class="fr-col-md-6"
-            style="padding-left: 2rem"
-          >
-            <DsfrAlert
-              title="Information non disponible"
-              type="error"
-            ></DsfrAlert>
-          </div>
+        <div class="fr-col-md-6">
+          <h4 class="fr-ml-md-3v">Actifs</h4>
+          <TeeCard
+            title="65"
+            description="Entreprises mises en relations avec un opérateur public sur un sujet de transition écologique sur les 30 derniers jours."
+            class="fr-ml-md-3v"
+          ></TeeCard>
         </div>
       </div>
     </div>
-    <div class="fr-mt-5w">
-      <h3>Dispositifs d'aide listés</h3>
-      <div v-if="statsData">
-        <div class="fr-highlight">
-          Depuis le lancement : <strong>{{ 105 }}</strong> <br />Actifs :
-          <strong>{{ 94 }}</strong>
-        </div>
-      </div>
-      <div v-else>
-        <p>Loading...</p>
+    <div class="fr-mb-5w">
+      <h2>Trafic web</h2>
+      <div class="fr-col-md-6">
+        <TeeCard
+          title="65"
+          description="Entreprises mises en relations avec un opérateur public sur un sujet de transition écologique sur les 30 derniers jours."
+          class="fr-mr-md-3v"
+        ></TeeCard>
       </div>
     </div>
-    <!-- <DsfrCard
-          description="description"
-          detail="Détails absolument essentiels"
-          detail-icon="Détails absolument essentiels icons"
-          end-detail="Autres détails absolument essentiels"
-          end-detail-icon="fr-icon-arrow-right-line"
-          title="Titre de la carte"
-          title-tag="h5"
-          size="large"
-          ratio-img="large"
-        >
-        </DsfrCard> -->
+
+    <div v-if="statsData">
+      Depuis le lancement : <strong>{{ statsData.nOpportunitiesCreated }}</strong> <br />
+      Sur les 30 derniers jours :
+    </div>
+    <div v-else>
+      <p>Loading...</p>
+    </div>
     <div class="fr-mt-5w">
       <h3>Traffic web</h3>
       <a
@@ -88,8 +112,7 @@ import { ref, onMounted } from 'vue'
 import Chart from 'chart.js/auto'
 import type StatsData from '@tee/common/src/stats/types'
 import StatsApi from '@/service/api/statsApi'
-import type { DsfrAlert } from '@gouvminint/vue-dsfr/types'
-// import type { DsfrCard } from '@gouvminint/vue-dsfr/types'
+// import missingDataSvg from '@tee/web/images/pictogrammes/missingData.svg' TODO
 
 const statsData = ref<StatsData | null>(null)
 const chartCanvas = ref<HTMLCanvasElement | null>(null)
@@ -140,9 +163,41 @@ onMounted(async () => {
 </script>
 
 <style scoped>
-.subtitle {
-  font-size: 0.8rem;
-  margin-top: -30px;
-  margin-left: 0px;
+.statistics h1 {
+  color: var(--light-background-action-high-blue-france, #000091);
+  font-family: Marianne;
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 3rem; /* 120% */
+}
+
+.statistics p {
+  color: #000;
+  font-family: Marianne;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5rem; /* 150% */
+}
+
+.statistics h2 {
+  color: var(--light-text-title-grey, #161616);
+  font-family: Marianne;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.5rem; /* 125% */
+  margin-bottom: 1rem;
+}
+
+.statistics h4 {
+  color: #6a6af4;
+  font-family: Marianne;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2rem; /* 160% */
+  margin-bottom: 0.75rem;
 }
 </style>
