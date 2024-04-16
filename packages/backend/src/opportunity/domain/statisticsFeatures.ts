@@ -1,6 +1,6 @@
 import { Result } from 'true-myth'
 
-import { Statistics } from './types'
+import StatsData from '@tee/common/src/stats/types'
 import { OpportunityRepository } from './spi'
 
 export default class StatisticsFeatures {
@@ -10,15 +10,16 @@ export default class StatisticsFeatures {
     this._opportunityRepository = opportunityRepository
   }
 
-  async computeStatistics(): Promise<Result<Statistics, Error>> {
+  async computeStatistics(): Promise<Result<StatsData, Error>> {
     await new Promise((res) => setTimeout(res, 100))
 
     const nOpportunitiesCreated = await this.getOpportunitiesCreated()
 
-    const fakeStatistics: Statistics = {
-      nProgramsActivated: null,
-      nOpportunitiesCreated: nOpportunitiesCreated,
-      nProgramsProposed: 110,
+    const fakeStatistics: StatsData = {
+      nProgramsTotal: 105,
+      nProgramsNow: 94,
+      nOpportunitiesTotal: nOpportunitiesCreated,
+      nOpportunities30Days: 65,
       demandsTimeSeries: [
         { year: '2023', month: '06', nDemands: 1 },
         { year: '2023', month: '07', nDemands: 4 },

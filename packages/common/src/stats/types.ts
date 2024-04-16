@@ -1,7 +1,8 @@
 export default interface StatsData {
-  nProgramsActivated: number | null
-  nOpportunitiesCreated: number | null
-  nProgramsProposed: number | null
+  nProgramsTotal: number | null
+  nProgramsNow: number | null
+  nOpportunitiesTotal: number | null
+  nOpportunities30Days: number | null
   demandsTimeSeries: {
     year: string
     month: string

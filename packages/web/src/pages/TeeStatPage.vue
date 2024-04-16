@@ -21,21 +21,21 @@
       <div class="fr-col-md-6">
         <h4>Depuis le lancement</h4>
         <TeeCard
-          title="931"
+          :title="statsData ? statsData.nOpportunitiesTotal || undefined : undefined"
           description="Entreprises mises en relations avec un opérateur public sur un sujet de transition écologique depuis le lancement (mars 2023)."
           class="fr-mr-md-3v"
         ></TeeCard>
       </div>
-      <div class="fr-col-md-6">
+      <div class="fr-col-md-6 fr-mt-3w fr-mt-md-0 extendShorterContentContainer">
         <h4 class="fr-ml-md-3v">Sur les 30 derniers jours</h4>
         <TeeCard
-          title="65"
+          :title="statsData ? statsData.nOpportunities30Days || undefined : undefined"
           description="Entreprises mises en relations avec un opérateur public sur un sujet de transition écologique sur les 30 derniers jours."
-          class="fr-ml-md-3v"
+          class="fr-ml-md-3v extendVertically"
         ></TeeCard>
       </div>
     </div>
-    <div class="fr-col-12 fr-mt-md-6w fr-mb-md-10w">
+    <div class="fr-col-12 fr-mt-3w fr-mt-md-6w fr-mb-md-10w">
       <h4>Sur ces derniers mois</h4>
       <canvas
         ref="chartCanvas"
@@ -43,14 +43,14 @@
         height="450"
       ></canvas>
     </div>
-    <div class="fr-mb-5w">
+    <div class="fr-mt-5w fr-mt-md-0 fr-mb-5w">
       <h2>Nombre de dispositifs d'aide activés</h2>
       <div class="fr-col-md-6">
         <TeeCard
-          type="warning"
+          :type="CardType.Warning"
           description="Nous travaillons actuellement sur cette mesure.
 Cette information sera disponible prochainement."
-          image="missingDataSvg"
+          imglink="../../../images/pictogrammes/missingData.svg"
           class="fr-mr-md-3v"
         ></TeeCard>
       </div>
@@ -61,17 +61,17 @@ Cette information sera disponible prochainement."
         <div class="fr-col-md-6">
           <h4>Depuis le lancement</h4>
           <TeeCard
-            title="65"
-            description="Entreprises mises en relations avec un opérateur public sur un sujet de transition écologique sur les 30 derniers jours."
+            :title="statsData ? statsData.nProgramsTotal || undefined : undefined"
+            description="Dispositifs d’aides référencés sur la plateforme depuis le lancement (mars 2023)."
             class="fr-mr-md-3v"
           ></TeeCard>
         </div>
-        <div class="fr-col-md-6">
+        <div class="fr-col-12 fr-col-md-6 fr-mt-3w fr-mt-md-0 extendShorterContentContainer">
           <h4 class="fr-ml-md-3v">Actifs</h4>
           <TeeCard
-            title="65"
-            description="Entreprises mises en relations avec un opérateur public sur un sujet de transition écologique sur les 30 derniers jours."
-            class="fr-ml-md-3v"
+            :title="statsData ? statsData.nProgramsNow || undefined : undefined"
+            description="Dispositifs d’aides actuellement référencés sur la plateforme."
+            class="fr-ml-md-3v extendVertically extendHor"
           ></TeeCard>
         </div>
       </div>
@@ -80,31 +80,15 @@ Cette information sera disponible prochainement."
       <h2>Trafic web</h2>
       <div class="fr-col-md-6">
         <TeeCard
-          title="65"
-          description="Entreprises mises en relations avec un opérateur public sur un sujet de transition écologique sur les 30 derniers jours."
+          description="Consultez toutes les statistiques de notre site sur le tableau de bord de notre outil de suivi Matomo."
           class="fr-mr-md-3v"
+          link="https://stats.beta.gouv.fr/index.php?module=CoreHome&action=index&idSite=23&period=day&date=yesterday#?period=day&date=yesterday&category=Dashboard_Dashboard&subcategory=1&idSite=23"
+          link-text="Tableau de bord Matomo"
         ></TeeCard>
       </div>
     </div>
-
-    <div v-if="statsData">
-      Depuis le lancement : <strong>{{ statsData.nOpportunitiesCreated }}</strong> <br />
-      Sur les 30 derniers jours :
-    </div>
-    <div v-else>
-      <p>Loading...</p>
-    </div>
-    <div class="fr-mt-5w">
-      <h3>Traffic web</h3>
-      <a
-        target="_blank"
-        href="https://stats.beta.gouv.fr/index.php?module=CoreHome&action=index&idSite=23&period=day&date=yesterday#?period=day&date=yesterday&category=Dashboard_Dashboard&subcategory=1&idSite=23"
-      >
-        Découvrez toutes les statistiques du site Transition écologique des entreprises sur le tableau de bord de notre outil de suivi
-        Matomo
-      </a>
-    </div>
   </div>
+  <ContactMail></ContactMail>
 </template>
 
 <script setup lang="ts">
@@ -112,7 +96,7 @@ import { ref, onMounted } from 'vue'
 import Chart from 'chart.js/auto'
 import type StatsData from '@tee/common/src/stats/types'
 import StatsApi from '@/service/api/statsApi'
-// import missingDataSvg from '@tee/web/images/pictogrammes/missingData.svg' TODO
+import { CardType } from '@/types/elementsPropsTypes'
 
 const statsData = ref<StatsData | null>(null)
 const chartCanvas = ref<HTMLCanvasElement | null>(null)
@@ -156,7 +140,7 @@ onMounted(async () => {
   if (result.isOk) {
     statsData.value = result.value
   } else {
-    console.error(result.error)
+    console.error('Error calling the stat API', result.error)
   }
   drawChart()
 })
@@ -199,5 +183,18 @@ onMounted(async () => {
   font-weight: 700;
   line-height: 2rem; /* 160% */
   margin-bottom: 0.75rem;
+}
+
+.statistics .extendShorterContentContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* Make flex items stretch vertically */
+}
+.statistics .extendVertically {
+  flex: 1;
+}
+
+.extendHor {
+  width: 100%;
 }
 </style>

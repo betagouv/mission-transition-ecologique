@@ -2,22 +2,23 @@
   <div :class="linkClasses">
     <!-- Image -->
     <div
-      v-if="image"
+      v-if="imglink"
       class="image-container"
     >
       <img
-        :src="image"
-        alt="Card Image"
+        :src="imglink"
+        :alt="imglink"
         class="image"
       />
     </div>
     <!-- Content -->
     <div class="content">
-      <h1>{{ title }}</h1>
+      <h1 v-if="title">{{ title }}</h1>
       <p>{{ description }}</p>
       <TeeButtonExternalLink
         v-if="link"
         :href="link"
+        class="fr-mt-3v"
         >{{ linkText }}</TeeButtonExternalLink
       >
     </div>
@@ -29,16 +30,21 @@ import { defineProps, withDefaults } from 'vue'
 import { CardType } from '@/types/elementsPropsTypes'
 
 interface Props {
-  type: CardType
-  title: string | number | undefined
-  description: string | undefined
-  link: string | undefined
-  linkText: string | undefined
-  image: string | undefined
+  type?: CardType
+  title?: string | number | undefined
+  description?: string | undefined
+  link?: string | undefined
+  linkText?: string | undefined
+  imglink?: string | undefined
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  type: CardType.Default
+  type: CardType.Default,
+  title: undefined,
+  description: undefined,
+  link: undefined,
+  linkText: undefined,
+  imglink: undefined
 })
 
 const linkClasses = {
@@ -85,6 +91,8 @@ p {
 
 .image-container {
   width: 25%;
+  margin-left: -1rem;
+  margin-right: 0.2rem;
 }
 
 .image {

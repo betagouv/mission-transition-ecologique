@@ -1,7 +1,7 @@
 import { Controller, Get, Res, Route, SuccessResponse, TsoaResponse } from 'tsoa'
 import { ErrorJSON } from '../../common/controller/jsonError'
 import StatisticsService from '../application/statisticsService'
-import { Statistics } from '../domain/types'
+import StatsData from '@tee/common/src/stats/types'
 
 @SuccessResponse('200', 'OK')
 @Route('opportunities')
@@ -10,7 +10,7 @@ export class StatisticsController extends Controller {
    * Request statistics about the opportunities
    */
   @Get('statistics')
-  public async get(@Res() requestFailedResponse: TsoaResponse<500, ErrorJSON>): Promise<Statistics> {
+  public async get(@Res() requestFailedResponse: TsoaResponse<500, ErrorJSON>): Promise<StatsData> {
     const opportunityResult = await new StatisticsService().get()
 
     if (opportunityResult.isErr) {
