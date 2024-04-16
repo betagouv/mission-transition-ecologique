@@ -9,7 +9,7 @@
         :key="`description-paragraph-${idx}`"
         class="fr-mb-4v fr-mb-md-2v"
       >
-        <p class="fr-mb-2v fr-mb-md-1v">
+        <p class="fr-mb-2v fr-mb-md-1v fr-ml-md-0 fr-ml-n2w">
           <span class="fr-tee-description-paragraph-marker"> {{ idx + 1 }} | </span>
           <span class="fr-tee-description-paragraph-content">
             {{ paragraph }}
@@ -17,7 +17,7 @@
         </p>
         <div
           v-if="program.liens && haslink(idx + 1)"
-          class="fr-ml-6w"
+          class="fr-ml-4w fr-ml-md-6w"
         >
           <template
             v-for="linkId in maxLinkByObjective"
