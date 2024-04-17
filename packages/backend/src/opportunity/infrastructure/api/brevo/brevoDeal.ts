@@ -3,7 +3,14 @@ import { Maybe, Result } from 'true-myth'
 import { OpportunityRepository } from '../../../domain/spi'
 import { OpportunityId, OpportunityDetails, OpportunityUpdateAttributes } from '../../../domain/types'
 import BrevoAPI from './brevoAPI'
-import { DealAttributes, BrevoQuestionnaireRoute, QuestionnaireRoute, DealUpdateAttributes, BrevoPostDealPayload } from './types'
+import {
+  DealAttributes,
+  BrevoQuestionnaireRoute,
+  QuestionnaireRoute,
+  DealUpdateAttributes,
+  BrevoPostDealPayload,
+  BrevoDealResponse
+} from './types'
 import Config from '../../../../config'
 
 // "Opportunities" are called "Deals" in Brevo
@@ -100,21 +107,24 @@ const replaceNewlinesWithSpaces = (text: string): string => {
   return text.replaceAll('\n', ' ')
 }
 
-const countBrevoDeal = async (): Promise<Result<number, Error>> => {
-  const responsePatch = await new BrevoAPI().GetDealCount()
-  // result<axiosresponse<Any,any>Error>
+const getBrevoCreationDates = async (): Promise<Result<Date[], Error>> => {
+  const responsePatch = await new BrevoAPI().GetDeals()
+
   if (responsePatch.isOk) {
-    // TODO real typing !
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    if (responsePatch.value.data.pager.total) {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      return Result.ok(responsePatch.value.data.pager.total)
-    } else {
-      return Result.err(new Error())
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    const brevoDealResponse: BrevoDealResponse = responsePatch.value.data
+    if (brevoDealResponse.items.length === 0) {
+      return Result.err(new Error('Brevo deal list is empty'))
     }
+    const dateList: Date[] = []
+    for (const deal of brevoDealResponse.items) {
+      const dealDate: Date = new Date(deal.attributes.created_at)
+      dateList.push(dealDate)
+    }
+    return Result.ok(dateList)
   } else {
     return Result.err(responsePatch.error)
   }
 }
 
-export const brevoRepository: OpportunityRepository = { create: addBrevoDeal, update: updateBrevoDeal, count: countBrevoDeal }
+export const brevoRepository: OpportunityRepository = { create: addBrevoDeal, update: updateBrevoDeal, readDates: getBrevoCreationDates }

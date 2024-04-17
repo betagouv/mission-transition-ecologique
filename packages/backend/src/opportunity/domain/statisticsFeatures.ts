@@ -11,35 +11,74 @@ export default class StatisticsFeatures {
   }
 
   async computeStatistics(): Promise<Result<StatsData, Error>> {
-    await new Promise((res) => setTimeout(res, 100))
+    const opportunitiesDate = await this.getOpportunitiesCreated()
 
-    const nOpportunitiesCreated = await this.getOpportunitiesCreated()
-
-    const fakeStatistics: StatsData = {
-      nProgramsTotal: 105,
-      nProgramsNow: 94,
-      nOpportunitiesTotal: nOpportunitiesCreated,
-      nOpportunities30Days: 65,
-      demandsTimeSeries: [
-        { year: '2023', month: '06', nDemands: 1 },
-        { year: '2023', month: '07', nDemands: 5 },
-        { year: '2023', month: '08', nDemands: 10 },
-        { year: '2024', month: '09', nDemands: 26 },
-        { year: '2024', month: '10', nDemands: 33 },
-        { year: '2023', month: '11', nDemands: 105 },
-        { year: '2023', month: '12', nDemands: 548 },
-        { year: '2024', month: '01', nDemands: 712 },
-        { year: '2024', month: '02', nDemands: 822 },
-        { year: '2024', month: '03', nDemands: 907 },
-        { year: '2024', month: '04', nDemands: 941 }
-      ]
+    const thirtyDaysAgo = new Date(new Date().getTime() - 30 * 24 * 60 * 60 * 1000)
+    let datesWithinLast30Days = 0
+    let timeSeries: { year: string; month: string; nDemands: number }[] = []
+    if (opportunitiesDate) {
+      datesWithinLast30Days = opportunitiesDate.filter((date) => date >= thirtyDaysAgo).length
+      timeSeries = this.convertDatesToCumulativeTimeSeries(opportunitiesDate)
     }
 
-    return Result.ok(fakeStatistics)
+    const statistics: StatsData = {
+      nProgramsTotal: 105,
+      nProgramsNow: 94,
+      nOpportunitiesTotal: opportunitiesDate ? opportunitiesDate.length : null,
+      nOpportunities30Days: opportunitiesDate ? datesWithinLast30Days : null,
+      demandsTimeSeries: timeSeries
+    }
+
+    return Result.ok(statistics)
   }
 
-  async getOpportunitiesCreated(): Promise<number | null> {
-    const countResult = await this._opportunityRepository.count()
+  convertDatesToCumulativeTimeSeries(opportunitiesDate: Date[]): { year: string; month: string; nDemands: number }[] {
+    const timeSerieArray: { year: string; month: string; nDemands: number }[] = []
+
+    for (const date of opportunitiesDate) {
+      const year = date.getFullYear().toString()
+      const month = (date.getMonth() + 1).toString().padStart(2, '0')
+
+      const existingEntryIndex = timeSerieArray.findIndex((entry) => entry.year === year && entry.month === month)
+      if (existingEntryIndex !== -1) {
+        const entry = timeSerieArray[existingEntryIndex] as { year: string; month: string; nDemands: number }
+        entry.nDemands++
+      } else {
+        timeSerieArray.push({ year, month, nDemands: 1 })
+      }
+    }
+
+    return this.convertToCumulativeTimeSeries(timeSerieArray)
+  }
+
+  convertToCumulativeTimeSeries(
+    timeSerieArray: { year: string; month: string; nDemands: number }[]
+  ): { year: string; month: string; nDemands: number }[] {
+    // Sort the array by year and month
+    const sortedArray = timeSerieArray.sort((a, b) => {
+      const yearComparison = a.year.localeCompare(b.year)
+      if (yearComparison !== 0) {
+        return yearComparison
+      } else {
+        return a.month.localeCompare(b.month)
+      }
+    })
+
+    // compute the cumulative sum
+    let cumulativeTotal = 0
+    return sortedArray.map((entry) => {
+      cumulativeTotal += entry.nDemands
+
+      return {
+        year: entry.year,
+        month: entry.month,
+        nDemands: cumulativeTotal
+      }
+    })
+  }
+
+  async getOpportunitiesCreated(): Promise<Date[] | null> {
+    const countResult = await this._opportunityRepository.readDates()
 
     if (countResult.isOk) {
       return countResult.value
