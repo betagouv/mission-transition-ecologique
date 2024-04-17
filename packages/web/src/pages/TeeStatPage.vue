@@ -37,7 +37,7 @@
         >
       </div>
     </div>
-    <div class="fr-col-12 fr-mt-3w fr-mt-md-6w fr-mb-md-10w">
+    <div class="fr-col-12 fr-mt-3w fr-mt-md-4w fr-mb-md-8w">
       <h4>Ces derniers mois</h4>
       <canvas
         ref="chartCanvas"

@@ -10,8 +10,6 @@ declare module 'vue' {
     ContactButton: typeof import('./components/contact/ContactButton.vue')['default']
     ContactHelp: typeof import('./components/contact/ContactHelp.vue')['default']
     ContactMail: typeof import('./components/contact/ContactMail.vue')['default']
-    copy: typeof import('./components/element/TeeDsfrButton copy.vue')['default']
-    DsfrAlert: typeof import('@gouvminint/vue-dsfr')['DsfrAlert']
     DsfrButton: typeof import('@gouvminint/vue-dsfr')['DsfrButton']
     DsfrSelect: typeof import('@gouvminint/vue-dsfr')['DsfrSelect']
     ProgramAccordion: typeof import('./components/program/detail/ProgramAccordion.vue')['default']
