@@ -22,8 +22,8 @@ export default class StatisticsFeatures {
     }
 
     const statistics: StatsData = {
-      nProgramsTotal: 105,
-      nProgramsNow: 94,
+      nProgramsTotal: -1,
+      nProgramsNow: -1,
       nOpportunitiesTotal: opportunitiesDate ? opportunitiesDate.length : null,
       nOpportunities30Days: opportunitiesDate ? datesWithinLast30Days : null,
       demandsTimeSeries: timeSeries

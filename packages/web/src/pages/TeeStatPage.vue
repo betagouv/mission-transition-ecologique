@@ -99,6 +99,8 @@ import Chart from 'chart.js/auto'
 import type StatsData from '@tee/common/src/stats/types'
 import StatsApi from '@/service/api/statsApi'
 import { CardType } from '@/types/elementsPropsTypes'
+import ProgramService from '@tee/backend/src/program/application/programService'
+import type { Program } from '@tee/data/src/type/program'
 
 const statsData = ref<StatsData | null>(null)
 const chartCanvas = ref<HTMLCanvasElement | null>(null)
@@ -145,6 +147,17 @@ onMounted(async () => {
     console.error('Error calling the stat API', result.error)
   }
   drawChart()
+  ProgramService.init()
+  const service = new ProgramService()
+
+  const allProgramsIds = service.getAll().map((program: Program) => program.id)
+  const activeProgramsResult = service.getFilteredPrograms({})
+  if (activeProgramsResult.isErr) {
+    throw activeProgramsResult.error
+  }
+  const activeProgramsIds = activeProgramsResult.value.map((p: Program) => p.id)
+  if (statsData.value) statsData.value.nProgramsTotal = allProgramsIds.length
+  if (statsData.value) statsData.value.nProgramsNow = activeProgramsIds.length
 })
 </script>
 
