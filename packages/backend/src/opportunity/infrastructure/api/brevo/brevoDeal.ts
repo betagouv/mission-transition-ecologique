@@ -104,7 +104,10 @@ const countBrevoDeal = async (): Promise<Result<number, Error>> => {
   const responsePatch = await new BrevoAPI().GetDealCount()
   // result<axiosresponse<Any,any>Error>
   if (responsePatch.isOk) {
+    // TODO real typing !
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     if (responsePatch.value.data.pager.total) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       return Result.ok(responsePatch.value.data.pager.total)
     } else {
       return Result.err(new Error())

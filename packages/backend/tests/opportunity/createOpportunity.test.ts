@@ -51,7 +51,11 @@ const dummycountOpportunity = (): Promise<Result<number, Error>> => {
   return Promise.resolve(Result.ok(9999999))
 }
 
-const dummyOpportunityRepository: OpportunityRepository = { create: dummyAddOpportunity, update: dummyUpdateOpportunity, count: dummycountOpportunity }
+const dummyOpportunityRepository: OpportunityRepository = {
+  create: dummyAddOpportunity,
+  update: dummyUpdateOpportunity,
+  count: dummycountOpportunity
+}
 
 const makeCreateOpportunityFun = (contactRepository: ContactRepository, opportunityRepository: OpportunityRepository) => {
   return new OpportunityFeatures(contactRepository, opportunityRepository, [], dummyProgramRepository, dummyMailRepository)
@@ -82,8 +86,8 @@ describe(`
    AND contact creation/update or opportunity creation goes wrong
 EXPECT createOpportunity to return an error (wrapped in Result) and emailReceipt not sent`, () => {
   // define test repositories that throw errors
-  class ContactError extends Error { }
-  class OpportunityError extends Error { }
+  class ContactError extends Error {}
+  class OpportunityError extends Error {}
   const addContactWithError = (_contact: ContactDetails, _optIn: true): Promise<Result<ContactId, Error>> => {
     return Promise.resolve(Result.err(new ContactError('contact error')))
   }
