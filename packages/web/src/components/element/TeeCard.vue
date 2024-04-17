@@ -14,7 +14,7 @@
     <!-- Content -->
     <div class="content">
       <h1 v-if="title">{{ title }}</h1>
-      <p>{{ description }}</p>
+      <p><slot></slot></p>
       <TeeButtonExternalLink
         v-if="link"
         :href="link"
@@ -32,7 +32,6 @@ import { CardType } from '@/types/elementsPropsTypes'
 interface Props {
   type?: CardType
   title?: string | number | undefined
-  description?: string | undefined
   link?: string | undefined
   linkText?: string | undefined
   imglink?: string | undefined
@@ -41,7 +40,6 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   type: CardType.Default,
   title: undefined,
-  description: undefined,
   link: undefined,
   linkText: undefined,
   imglink: undefined

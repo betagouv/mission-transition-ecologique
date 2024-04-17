@@ -22,17 +22,19 @@
         <h4>Depuis le lancement</h4>
         <TeeCard
           :title="statsData ? statsData.nOpportunitiesTotal || undefined : undefined"
-          description="Entreprises mises en relations avec un opérateur public sur un sujet de transition écologique depuis le lancement (mars 2023)."
           class="fr-mr-md-3v"
-        ></TeeCard>
+          >Demandes d'entreprises mises en relations avec un opérateur public sur un sujet de transition écologique depuis le lancement (été
+          2023).</TeeCard
+        >
       </div>
       <div class="fr-col-md-6 fr-mt-3w fr-mt-md-0 extendShorterContentContainer">
         <h4 class="fr-ml-md-3v">Sur les 30 derniers jours</h4>
         <TeeCard
           :title="statsData ? statsData.nOpportunities30Days || undefined : undefined"
-          description="Entreprises mises en relations avec un opérateur public sur un sujet de transition écologique sur les 30 derniers jours."
           class="fr-ml-md-3v extendVertically"
-        ></TeeCard>
+          >Demandes d'entreprises mises en relations avec un opérateur public sur un sujet de transition écologique sur les 30 derniers
+          jours.</TeeCard
+        >
       </div>
     </div>
     <div class="fr-col-12 fr-mt-3w fr-mt-md-6w fr-mb-md-10w">
@@ -48,11 +50,11 @@
       <div class="fr-col-md-6">
         <TeeCard
           :type="CardType.Warning"
-          description="Nous travaillons actuellement sur cette mesure.
-Cette information sera disponible prochainement."
           imglink="../../../images/pictogrammes/missingData.svg"
           class="fr-mr-md-3v"
-        ></TeeCard>
+          >Nous travaillons actuellement sur cette mesure.<br /><br />
+          Cette information sera disponible prochainement.</TeeCard
+        >
       </div>
     </div>
     <div class="fr-mb-5w">
@@ -62,17 +64,17 @@ Cette information sera disponible prochainement."
           <h4>Depuis le lancement</h4>
           <TeeCard
             :title="statsData ? statsData.nProgramsTotal || undefined : undefined"
-            description="Dispositifs d’aides référencés sur la plateforme depuis le lancement (mars 2023)."
             class="fr-mr-md-3v"
-          ></TeeCard>
+            >Dispositifs d’aides référencés sur la plateforme depuis le lancement (été 2023).</TeeCard
+          >
         </div>
         <div class="fr-col-12 fr-col-md-6 fr-mt-3w fr-mt-md-0 extendShorterContentContainer">
           <h4 class="fr-ml-md-3v">Actifs</h4>
           <TeeCard
             :title="statsData ? statsData.nProgramsNow || undefined : undefined"
-            description="Dispositifs d’aides actuellement référencés sur la plateforme."
             class="fr-ml-md-3v extendVertically extendHor"
-          ></TeeCard>
+            >Dispositifs d’aides actuellement référencés sur la plateforme.</TeeCard
+          >
         </div>
       </div>
     </div>
@@ -80,11 +82,11 @@ Cette information sera disponible prochainement."
       <h2>Trafic web</h2>
       <div class="fr-col-md-6">
         <TeeCard
-          description="Consultez toutes les statistiques de notre site sur le tableau de bord de notre outil de suivi Matomo."
           class="fr-mr-md-3v"
           link="https://stats.beta.gouv.fr/index.php?module=CoreHome&action=index&idSite=23&period=day&date=yesterday#?period=day&date=yesterday&category=Dashboard_Dashboard&subcategory=1&idSite=23"
           link-text="Tableau de bord Matomo"
-        ></TeeCard>
+          >Consultez toutes les statistiques de notre site sur le tableau de bord de notre outil de suivi Matomo.</TeeCard
+        >
       </div>
     </div>
   </div>
