@@ -2,8 +2,7 @@ import { Result } from 'true-myth'
 
 import StatsData from '@tee/common/src/stats/types'
 import { OpportunityRepository } from './spi'
-// import { Program } from '@tee/data/src/type/program'
-// import ProgramService from '@tee/backend/src/program/application/programService'
+import ProgramService from '../../program/application/programService'
 
 export default class StatisticsFeatures {
   private readonly _opportunityRepository: OpportunityRepository
@@ -52,21 +51,15 @@ export default class StatisticsFeatures {
   }
 
   getProgramStatistics(): { nProgramsTotal: number; nProgramsNow: number } {
-    // ProgramService.init()
-    // const service = new ProgramService()
-    // const allProgramsIds = service.getAll().map((program: Program) => program.id)
-    // const activeProgramsResult = service.getFilteredPrograms({})
-    // if (activeProgramsResult.isErr) {
-    //   throw activeProgramsResult.error
-    // }
-    // const activeProgramsIds = activeProgramsResult.value.map((p: Program) => p.id)
-    // return {
-    //   nProgramsTotal: allProgramsIds.length,
-    //   nProgramsNow: activeProgramsIds.length
-    // }
+    const service = new ProgramService()
+    const allPrograms = service.getAll()
+    const activeProgramsResult = service.getFilteredPrograms({})
+    if (activeProgramsResult.isErr) {
+      throw activeProgramsResult.error
+    }
     return {
-      nProgramsTotal: 12,
-      nProgramsNow: 24
+      nProgramsTotal: allPrograms.length,
+      nProgramsNow: activeProgramsResult.value.length
     }
   }
 
