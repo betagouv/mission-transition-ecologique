@@ -10,7 +10,7 @@
     >
       <img
         :src="imglink"
-        :alt="imglink"
+        alt=""
         class="image"
       />
     </div>
