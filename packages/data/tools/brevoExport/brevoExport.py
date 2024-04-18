@@ -155,7 +155,7 @@ def define_structure_size(deal):
             size = match.group(1)
     elif "Contact_STRUCTURE_SIZE" in deal:
         size = deal["Contact_STRUCTURE_SIZE"]
-    deal["Contact_size"] = size
+    deal["Contact_STRUCTURE_TAILLE"] = size
 
 
 def format_date(date):
@@ -168,9 +168,14 @@ def format_date(date):
 
 def improve_merge_data(data):
     for deal in data:
+        deal["dealId"] = deal.pop("_id")
         deal["créé le"] = format_date(deal["created_at"])
         define_structure_size(deal)
         deal["nom du dispositif"] = deal.pop("deal_name")
+        deal["lien du dispositif"] = (
+            "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/"
+            + deal["nom du dispositif"]
+        )
         deal["opérateur_de_contact"] = deal.pop("oprateur_de_contact")
         if deal["deal_stage"] == "f0f8a5c8-023b-46cc-9826-1c5da7abc1f0":
             deal["Etape de l'opportunité"] = "Nouvelle"
@@ -179,6 +184,143 @@ def improve_merge_data(data):
         else:
             deal["Etape de l'opportunité"] = "Inconnue"
             print("unexpected deal stage", deal["deal_stage"])
+        if "autres_donnes" in deal and deal["autres_donnes"] != "[]":
+            deal["Code Postal"] = get_code_postal(deal["autres_donnes"])
+            deal["Région"] = get_region(deal["autres_donnes"], deal["Code Postal"])
+            create_objectifs_columns(deal, deal["autres_donnes"])
+            deal["Code NAF"] = get_NAF(deal["autres_donnes"])
+
+REGIONS = {
+    "Auvergne-Rhône-Alpes": [
+        "01",
+        "03",
+        "07",
+        "15",
+        "26",
+        "38",
+        "42",
+        "43",
+        "63",
+        "69",
+        "73",
+        "74",
+    ],
+    "Bourgogne-Franche-Comté": ["21", "25", "39", "58", "70", "71", "89", "90"],
+    "Bretagne": ["35", "22", "56", "29"],
+    "Centre-Val de Loire": ["18", "28", "36", "37", "41", "45"],
+    "Corse": ["2A", "2B"],
+    "Grand Est": ["08", "10", "51", "52", "54", "55", "57", "67", "68", "88"],
+    "Guadeloupe": ["971"],
+    "Guyane": ["973"],
+    "Hauts-de-France": ["02", "59", "60", "62", "80"],
+    "Île-de-France": ["75", "77", "78", "91", "92", "93", "94", "95"],
+    "La Réunion": ["974"],
+    "Martinique": ["972"],
+    "Normandie": ["14", "27", "50", "61", "76"],
+    "Nouvelle-Aquitaine": [
+        "16",
+        "17",
+        "19",
+        "23",
+        "24",
+        "33",
+        "40",
+        "47",
+        "64",
+        "79",
+        "86",
+        "87",
+    ],
+    "Occitanie": [
+        "09",
+        "11",
+        "12",
+        "30",
+        "31",
+        "32",
+        "34",
+        "46",
+        "48",
+        "65",
+        "66",
+        "81",
+        "82",
+    ],
+    "Pays de la Loire": ["44", "49", "53", "72", "85"],
+    "Provence-Alpes-Côte d'Azur": ["04", "05", "06", "13", "83", "84"],
+}
+
+
+def get_region_from_postal_code(postal_code):
+    prefix = postal_code[:2]
+    for region, prefixes in REGIONS.items():
+        if prefix in prefixes:
+            return region
+    prefix = postal_code[:3]
+    for region, prefixes in REGIONS.items():
+        if prefix in prefixes:
+            return region
+        return None
+
+
+def get_region(s, codePostal):
+    region_pattern = r'(?i)r[eé]gion\s*:\s*"?([^"/]+)"?'
+    match = re.search(region_pattern, s)
+    if match:
+        region = match.group(1)
+        return region
+
+    region_pattern = r'"r[eé]gion":"([^"]+)"'
+    match = re.search(region_pattern, s)
+    if match:
+        region = match.group(1)
+        return region
+
+    if get_region_from_postal_code(codePostal):
+        return get_region_from_postal_code(codePostal)
+    return ""
+
+
+def get_NAF(s):
+    regex_pattern = r"\b\d{2}\.\d{2}[A-Z]\b"
+    matches = re.findall(regex_pattern, s)
+    if len(matches) == 0:
+        return ""
+    if len(matches) > 1:
+        print("warning, more than 1 NAF code found !")
+    return matches[0]
+
+
+objectifs = [
+    "mon impact environnemental",
+    "ma performance \u00e9nerg\u00e9tique",
+    "diminuer ma consommation d'eau",
+    "r\u00e9nover mon b\u00e2timent",
+    "la mobilit\u00e9 durable",
+    "la gestion des d\u00e9chets",
+    "l'\u00e9coconception",
+    "former ou recruter",
+]
+
+
+def create_objectifs_columns(deal, s):
+    for objectif in objectifs:
+        start_index = s.find(objectif)
+        if start_index != -1:
+            subset_s = s[start_index:]
+            match = re.search(r"(oui|non)", subset_s)
+            if match:
+                deal["Objectif: " + objectif] = match.group(0)
+
+
+def get_code_postal(s):
+    postal_code_pattern = r"\b\d{5}\b"
+    matches = re.findall(postal_code_pattern, s)
+    if len(matches) == 0:
+        return ""
+    if len(matches) > 1:
+        print("warning, more than 1 postal code found !")
+    return matches[0]
 
 
 def export_merge(merged_data, to_json, to_csv):
@@ -193,15 +335,28 @@ def export_merge(merged_data, to_json, to_csv):
             "Contact_PRENOM",
             "Contact_TEL",
             "Contact_SIRET",
+            "Code NAF",
             "Contact_DENOMINATION",
             "Contact_SECTEUR_D_ACTIVITE",
-            "Contact_size",
-            "autres_donnes",
+            "Contact_STRUCTURE_TAILLE",
+            "Code Postal",
+            "Région",
             "nom du dispositif",
+            "lien du dispositif",
             "opérateur_de_contact",
-            "message",
             "parcours",
         ]
+
+        for objectif in objectifs:
+            columns.append("Objectif: " + objectif)
+
+        columns.extend(
+            [
+                "message",
+                "autres_donnes",
+                "dealId",
+            ]
+        )
 
     with open(
         "deals_with_contact_info.csv", mode="w", newline="", encoding="utf-8"
