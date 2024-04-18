@@ -2,17 +2,41 @@ import { Result } from 'true-myth'
 
 import StatsData from '@tee/common/src/stats/types'
 import { OpportunityRepository } from './spi'
+import { Program } from '@tee/data/src/type/program'
+import ProgramService from '@tee/backend/src/program/application/programService'
 
 export default class StatisticsFeatures {
   private readonly _opportunityRepository: OpportunityRepository
+  private readonly _cache: StatisticsCache
 
   constructor(opportunityRepository: OpportunityRepository) {
     this._opportunityRepository = opportunityRepository
+    this._cache = StatisticsCache.getInstance()
   }
 
   async computeStatistics(): Promise<Result<StatsData, Error>> {
-    const opportunitiesDate = await this.getOpportunitiesCreated()
+    if (!this._cache.lastStats || !this._cache.isCacheValid()) {
+      const opportunityStats = await this.getOpportunityStatistics()
+      const programStats = this.getProgramStatistics()
 
+      const statistics: StatsData = {
+        ...programStats,
+        ...opportunityStats
+      }
+      this._cache.lastStats = {
+        statistics: statistics,
+        timestamp: Date.now()
+      }
+    }
+    return Result.ok(this._cache.lastStats.statistics)
+  }
+
+  async getOpportunityStatistics(): Promise<{
+    nOpportunitiesTotal: number | null
+    nOpportunities30Days: number | null
+    demandsTimeSeries: { year: string; month: string; nDemands: number }[]
+  }> {
+    const opportunitiesDate = await this.getOpportunitiesCreated()
     const thirtyDaysAgo = new Date(new Date().getTime() - 30 * 24 * 60 * 60 * 1000)
     let datesWithinLast30Days = 0
     let timeSeries: { year: string; month: string; nDemands: number }[] = []
@@ -20,16 +44,26 @@ export default class StatisticsFeatures {
       datesWithinLast30Days = opportunitiesDate.filter((date) => date >= thirtyDaysAgo).length
       timeSeries = this.convertDatesToCumulativeTimeSeries(opportunitiesDate)
     }
-
-    const statistics: StatsData = {
-      nProgramsTotal: -1,
-      nProgramsNow: -1,
+    return {
       nOpportunitiesTotal: opportunitiesDate ? opportunitiesDate.length : null,
       nOpportunities30Days: opportunitiesDate ? datesWithinLast30Days : null,
       demandsTimeSeries: timeSeries
     }
+  }
 
-    return Result.ok(statistics)
+  getProgramStatistics(): { nProgramsTotal: number; nProgramsNow: number } {
+    ProgramService.init()
+    const service = new ProgramService()
+    const allProgramsIds = service.getAll().map((program: Program) => program.id)
+    const activeProgramsResult = service.getFilteredPrograms({})
+    if (activeProgramsResult.isErr) {
+      throw activeProgramsResult.error
+    }
+    const activeProgramsIds = activeProgramsResult.value.map((p: Program) => p.id)
+    return {
+      nProgramsTotal: allProgramsIds.length,
+      nProgramsNow: activeProgramsIds.length
+    }
   }
 
   convertDatesToCumulativeTimeSeries(opportunitiesDate: Date[]): { year: string; month: string; nDemands: number }[] {
@@ -85,5 +119,26 @@ export default class StatisticsFeatures {
     }
 
     return null
+  }
+}
+
+class StatisticsCache {
+  private static instance: StatisticsCache
+  public lastStats?: { statistics: StatsData; timestamp: number }
+
+  public static getInstance(): StatisticsCache {
+    if (!StatisticsCache.instance) {
+      StatisticsCache.instance = new StatisticsCache()
+    }
+    return StatisticsCache.instance
+  }
+
+  public isCacheValid(): boolean {
+    if (!this.lastStats) {
+      return false
+    }
+    const expirationTime = 60 * 60 * 1000 // 1 hour in milliseconds
+    const currentTime = Date.now()
+    return currentTime - this.lastStats.timestamp < expirationTime
   }
 }

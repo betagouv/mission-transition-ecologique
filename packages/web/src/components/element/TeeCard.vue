@@ -1,9 +1,12 @@
 <template>
-  <div :class="linkClasses">
+  <div
+    class="fr-grid-row"
+    :class="linkClasses"
+  >
     <!-- Image -->
     <div
       v-if="imglink"
-      class="image-container"
+      class="image-container fr-col-12 fr-col-md-3 fr-mb-2v fr-mb-md-0"
     >
       <img
         :src="imglink"
@@ -12,7 +15,7 @@
       />
     </div>
     <!-- Content -->
-    <div class="content">
+    <div class="content fr-col-12">
       <h1 v-if="title">{{ title }}</h1>
       <p><slot></slot></p>
       <TeeButtonExternalLink
@@ -58,7 +61,6 @@ const linkClasses = {
 .baseCardClass {
   border-left: 4px solid;
   padding: 32px 48px 32px 32px;
-  display: flex;
 }
 
 .defaultCard {
@@ -73,7 +75,6 @@ const linkClasses = {
 
 h1 {
   color: var(--light-text-title-grey, #161616);
-  /* 0.Titres alternatifs/XS/Desktop */
   font-family: Marianne;
   font-size: 3rem;
   font-style: normal;
@@ -88,9 +89,10 @@ p {
 }
 
 .image-container {
-  width: 25%;
   margin-left: -1rem;
   margin-right: 0.2rem;
+  display: flex;
+  justify-content: center;
 }
 
 .image {

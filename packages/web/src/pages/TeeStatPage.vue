@@ -50,7 +50,7 @@
       <div class="fr-col-md-6">
         <TeeCard
           :type="CardType.Warning"
-          imglink="../../../images/pictogrammes/missingData.svg"
+          imglink="/images/TEE-missingData.svg"
           class="fr-mr-md-3v"
           >Nous travaillons actuellement sur cette mesure.<br /><br />
           Cette information sera disponible prochainement.</TeeCard
@@ -99,8 +99,6 @@ import Chart from 'chart.js/auto'
 import type StatsData from '@tee/common/src/stats/types'
 import StatsApi from '@/service/api/statsApi'
 import { CardType } from '@/types/elementsPropsTypes'
-import ProgramService from '@tee/backend/src/program/application/programService'
-import type { Program } from '@tee/data/src/type/program'
 
 const statsData = ref<StatsData | null>(null)
 const chartCanvas = ref<HTMLCanvasElement | null>(null)
@@ -111,7 +109,12 @@ const drawChart = () => {
     const data = statsData.value.demandsTimeSeries.map((item) => item.nDemands)
 
     if (!chartCanvas.value) return
+    const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+    if (screenWidth < 768) {
+      chartCanvas.value.height = 800
+    }
     const chartContext = chartCanvas.value.getContext('2d')
+    console.log(chartCanvas.value)
     if (!chartContext) return
 
     new Chart(chartContext, {
@@ -147,17 +150,6 @@ onMounted(async () => {
     console.error('Error calling the stat API', result.error)
   }
   drawChart()
-  ProgramService.init()
-  const service = new ProgramService()
-
-  const allProgramsIds = service.getAll().map((program: Program) => program.id)
-  const activeProgramsResult = service.getFilteredPrograms({})
-  if (activeProgramsResult.isErr) {
-    throw activeProgramsResult.error
-  }
-  const activeProgramsIds = activeProgramsResult.value.map((p: Program) => p.id)
-  if (statsData.value) statsData.value.nProgramsTotal = allProgramsIds.length
-  if (statsData.value) statsData.value.nProgramsNow = activeProgramsIds.length
 })
 </script>
 
