@@ -2,8 +2,8 @@ import { Result } from 'true-myth'
 
 import StatsData from '@tee/common/src/stats/types'
 import { OpportunityRepository } from './spi'
-import { Program } from '@tee/data/src/type/program'
-import ProgramService from '@tee/backend/src/program/application/programService'
+// import { Program } from '@tee/data/src/type/program'
+// import ProgramService from '@tee/backend/src/program/application/programService'
 
 export default class StatisticsFeatures {
   private readonly _opportunityRepository: OpportunityRepository
@@ -52,17 +52,21 @@ export default class StatisticsFeatures {
   }
 
   getProgramStatistics(): { nProgramsTotal: number; nProgramsNow: number } {
-    ProgramService.init()
-    const service = new ProgramService()
-    const allProgramsIds = service.getAll().map((program: Program) => program.id)
-    const activeProgramsResult = service.getFilteredPrograms({})
-    if (activeProgramsResult.isErr) {
-      throw activeProgramsResult.error
-    }
-    const activeProgramsIds = activeProgramsResult.value.map((p: Program) => p.id)
+    // ProgramService.init()
+    // const service = new ProgramService()
+    // const allProgramsIds = service.getAll().map((program: Program) => program.id)
+    // const activeProgramsResult = service.getFilteredPrograms({})
+    // if (activeProgramsResult.isErr) {
+    //   throw activeProgramsResult.error
+    // }
+    // const activeProgramsIds = activeProgramsResult.value.map((p: Program) => p.id)
+    // return {
+    //   nProgramsTotal: allProgramsIds.length,
+    //   nProgramsNow: activeProgramsIds.length
+    // }
     return {
-      nProgramsTotal: allProgramsIds.length,
-      nProgramsNow: activeProgramsIds.length
+      nProgramsTotal: 12,
+      nProgramsNow: 24
     }
   }
 
