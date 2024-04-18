@@ -6,9 +6,28 @@ from sib_api_v3_sdk.rest import ApiException
 from datetime import datetime
 import pytz
 import re
+import os
+
+brevo_token_file_path = "../../../backend/.env"
+refresh_contacts = True
+refresh_deals = True
 
 
-BREVO_API_KEY = ""
+def read_brevo_api_key(filepath):
+    if not os.path.isfile(filepath):
+        print(f"Error: env file '{filepath}' does not exist.")
+    with open(filepath, "r") as file:
+        lines = file.readlines()
+
+    for line in lines:
+        if line.startswith("BREVO_API_TOKEN="):
+            token = line.split("=")[1].strip()
+            return token
+    else:
+        print("Error: BREVO_API_TOKEN not found in the environment file.")
+
+
+BREVO_API_KEY = read_brevo_api_key(brevo_token_file_path)
 configuration = sib_api_v3_sdk.Configuration()
 configuration.api_key["api-key"] = BREVO_API_KEY
 
@@ -24,9 +43,9 @@ def read_json(filename):
         return data
 
 
-def get_brevo_contacts(origin=0):
+def get_brevo_contacts(origin):
     contact_list = []
-    if not origin:
+    if origin:
         api_instance = sib_api_v3_sdk.ContactsApi(
             sib_api_v3_sdk.ApiClient(configuration)
         )
@@ -59,9 +78,9 @@ def serialize_deal(deal):
         return str(deal)
 
 
-def get_brevo_deals(origin=0):
+def get_brevo_deals(origin):
     deal_list = []
-    if not origin:
+    if origin:
         api_instance = sib_api_v3_sdk.DealsApi(sib_api_v3_sdk.ApiClient(configuration))
         limit = 1000000  # Allowed value that largely exceed the nomber of deals we have
         offset = 0
@@ -220,12 +239,12 @@ def filter_deals(json_deal_list):
 
 if __name__ == "__main__":
     # Import, prepare, and export Contacts
-    json_contact_list = get_brevo_contacts(0)  # 0 = from API, 1 = from local file
+    json_contact_list = get_brevo_contacts(refresh_contacts)
     json_contact_list = [flatten_json(x, "attributes") for x in json_contact_list]
     export_to_csv(json_contact_list, "contact.csv")
 
     # Import, prepare, and export Deals
-    json_deal_list = get_brevo_deals(0)  # 0 = from API, 1 = from local file
+    json_deal_list = get_brevo_deals(refresh_deals)
     json_deal_list = [flatten_json(x, "_attributes") for x in json_deal_list]
     export_to_csv(json_deal_list, "deals.csv")
 
