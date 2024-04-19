@@ -134,7 +134,7 @@ class StatisticsCache {
     if (!this.lastStats) {
       return false
     }
-    const expirationTime = 60 * 60 * 1000 // 1 hour in milliseconds
+    const expirationTime = 24 * 60 * 60 * 1000 // 1 day in milliseconds
     const currentTime = Date.now()
     return currentTime - this.lastStats.timestamp < expirationTime
   }

@@ -7,7 +7,7 @@ import StatsData from '@tee/common/src/stats/types'
 @Route('opportunities')
 export class StatisticsController extends Controller {
   /**
-   * Request statistics about the opportunities
+   * Request statistics about the opportunities and programs
    */
   @Get('statistics')
   public async get(@Res() requestFailedResponse: TsoaResponse<500, ErrorJSON>): Promise<StatsData> {
