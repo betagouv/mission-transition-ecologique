@@ -16,7 +16,7 @@ const programFrDict = {
     programDuration: 'Prestation',
     programLoanDuration: 'Durée du prêt',
     programKnowMore: 'En savoir plus',
-    programAmIEligible: 'Suis-je éligible ?',
+    programAmIEligible: "Conditions d'éligibilité",
     form: {
       label: '{prefixAide} {natureAide} vous intéresse ?',
       hint: '👋 Envoyez votre demande, un conseiller {operator} vous contactera prochainement',
