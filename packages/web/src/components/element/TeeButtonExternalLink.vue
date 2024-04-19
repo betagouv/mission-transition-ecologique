@@ -1,7 +1,7 @@
 <template>
   <a
-    :href="href"
-    :class="linkClasses"
+    :href="props.href"
+    class="fr-btn fr-btn--secondary fr-btn--icon-left fr-icon-external-link-fill tee-external-link-button"
     target="_blank"
   >
     <slot></slot>
@@ -9,26 +9,12 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue'
-
 interface Props {
-  download: boolean
+  href: string
 }
 const props = withDefaults(defineProps<Props>(), {
-  download: false
+  href: ''
 })
-
-const linkClasses = {
-  'fr-btn': true,
-  'fr-btn--secondary': true,
-  'fr-btn--icon-left': !props.download,
-  'fr-btn--icon-right': props.download,
-  'fr-icon-external-link-fill': !props.download,
-  'fr-icon-download-line': props.download,
-  myclass: true
-}
-
-const href = props.download ? 'your-download-url' : 'your-normal-link-url'
 </script>
 
 <style scoped lang="scss">
@@ -41,7 +27,7 @@ const href = props.download ? 'your-download-url' : 'your-normal-link-url'
 [target='_blank'][class^='fr-icon-']:after {
   content: none;
 }
-a.myclass {
+.tee-external-link-button {
   box-shadow: inset 0 0 0 1px $secondary-purple;
   color: $secondary-purple !important;
   text-align: center;

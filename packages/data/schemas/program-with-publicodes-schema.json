@@ -46,7 +46,7 @@
       }
     },
     "liens": {
-      "description": "TODO",
+      "description": "Liens à suivre pour réaliser les objectifs",
       "type": "object",
       "items": {
         "type": "string"
