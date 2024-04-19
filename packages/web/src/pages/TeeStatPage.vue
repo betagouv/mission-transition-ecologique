@@ -38,11 +38,11 @@
       </div>
     </div>
     <div class="fr-col-12 fr-mt-3w fr-mt-md-4w fr-mb-md-8w">
-      <h4>Ces derniers mois</h4>
+      <h4>Demandes cumulées ces derniers mois</h4>
       <canvas
         ref="chartCanvas"
         width="1200"
-        height="450"
+        :height="isSmallScreen ? 700 : 450"
       ></canvas>
     </div>
     <div class="fr-mt-5w fr-mt-md-0 fr-mb-5w">
@@ -103,20 +103,17 @@ import { CardType } from '@/types/elementsPropsTypes'
 const statsData = ref<StatsData | null>(null)
 const chartCanvas = ref<HTMLCanvasElement | null>(null)
 
+const isSmallScreen = computed(() => window.innerWidth < 768)
+
 const drawChart = () => {
   if (statsData.value && statsData.value.demandsTimeSeries) {
     const labels = statsData.value.demandsTimeSeries.map((item) => `${item.month}/${item.year}`)
     const data = statsData.value.demandsTimeSeries.map((item) => item.nDemands)
 
     if (!chartCanvas.value) return
-    const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
-    if (screenWidth < 768) {
-      chartCanvas.value.height = 800
-    }
     const chartContext = chartCanvas.value.getContext('2d')
     console.log(chartCanvas.value)
     if (!chartContext) return
-
     new Chart(chartContext, {
       type: 'line',
       data: {
