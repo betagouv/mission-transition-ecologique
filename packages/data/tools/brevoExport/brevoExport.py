@@ -1,195 +1,31 @@
 #!/usr/bin/env python3
 import json
 import csv
-import sib_api_v3_sdk
-from sib_api_v3_sdk.rest import ApiException
+import os
+import re
 from datetime import datetime
 import pytz
-import re
-import os
+import sib_api_v3_sdk
+from sib_api_v3_sdk.rest import ApiException
 
-brevo_token_file_path = "../../../backend/.env"
-refresh_contacts = True
-refresh_deals = True
+# parameters
+BREVO_API_KEY_FILE_PATH = "../../../backend/.env"
+REFRESH_CONTACTS = True  # True = use brevo API, False = use local file
+REFRESH_DEALS = True  # True = use brevo API, False = use local file
+EXPORT_TO_JSON = True
+EXPORT_TO_CSV = True
 
-
-def read_brevo_api_key(filepath):
-    if not os.path.isfile(filepath):
-        print(f"Error: env file '{filepath}' does not exist.")
-    with open(filepath, "r") as file:
-        lines = file.readlines()
-
-    for line in lines:
-        if line.startswith("BREVO_API_TOKEN="):
-            token = line.split("=")[1].strip()
-            return token
-    else:
-        print("Error: BREVO_API_TOKEN not found in the environment file.")
-
-
-BREVO_API_KEY = read_brevo_api_key(brevo_token_file_path)
-configuration = sib_api_v3_sdk.Configuration()
-configuration.api_key["api-key"] = BREVO_API_KEY
-
-
-def write_json(data, filename):
-    with open(filename, "w") as file:
-        json.dump(data, file, indent=4)
-
-
-def read_json(filename):
-    with open(filename, "r") as file:
-        data = json.load(file)
-        return data
-
-
-def get_brevo_contacts(origin):
-    contact_list = []
-    if origin:
-        api_instance = sib_api_v3_sdk.ContactsApi(
-            sib_api_v3_sdk.ApiClient(configuration)
-        )
-        limit = 1000  # max value to reduce the number of queries (20max per sec)
-        offset = 0
-        try:
-            api_response = api_instance.get_contacts(limit=limit, offset=offset)
-            contact_list.extend(api_response.contacts)
-            while offset < api_response.count:
-                offset += limit
-                api_response = api_instance.get_contacts(limit=limit, offset=offset)
-                contact_list.extend(api_response.contacts)
-            write_json(contact_list, "brevoContacts.json")
-            print(f"Exported {len(contact_list)} brevo contacts")
-        except ApiException as e:
-            print("Exception when calling ContactsApi->get_contacts: %s\n" % e)
-    else:
-        contact_list = read_json("brevoContacts.json")
-        print(f"Read {len(contact_list)} brevo contacts")
-
-    return contact_list
-
-
-def serialize_deal(deal):
-    if isinstance(deal, dict):
-        return deal
-    elif hasattr(deal, "__dict__"):
-        return deal.__dict__
-    else:
-        return str(deal)
-
-
-def get_brevo_deals(origin):
-    deal_list = []
-    if origin:
-        api_instance = sib_api_v3_sdk.DealsApi(sib_api_v3_sdk.ApiClient(configuration))
-        limit = 1000000  # Allowed value that largely exceed the nomber of deals we have
-        offset = 0
-        try:
-            api_response = api_instance.crm_deals_get(limit=limit, offset=offset)
-            deal_list.extend(api_response.items)
-            json_data = json.dumps(
-                [serialize_deal(deal) for deal in deal_list], default=str, indent=4
-            )
-            with open("brevoDeals.json", "w") as file:
-                file.write(json_data)
-            print(f"Exported {len(deal_list)} brevo deals")
-        except ApiException as e:
-            print("Exception when calling DealApi->crm_deals_get: %s\n" % e)
-
-    deal_list = read_json("brevoDeals.json")
-    print(f"Read {len(deal_list)} brevo deals")
-    return deal_list
-
-
-def flatten_json(json_obj, obj_name):
-    flattened = {}
-    attributes = json_obj.pop(obj_name, {})
-    for key, value in attributes.items():
-        flattened[key] = value
-    flattened.update(json_obj)
-    return flattened
-
-
-def export_to_csv(data, csv_file_path):
-    keys = get_all_keys(data)
-    with open(csv_file_path, "w", newline="") as file:
-        writer = csv.DictWriter(file, fieldnames=keys)
-        writer.writeheader()
-        for obj in data:
-            writer.writerow(obj)
-
-
-def get_all_keys(json_list):
-    all_keys = set()
-    for obj in json_list:
-        all_keys.update(obj.keys())
-    return sorted(all_keys)
-
-
-def merge_contact_in_deal(json_deal_list, json_contact_list):
-    contact_dict = {contact["id"]: contact for contact in json_contact_list}
-
-    for deal in json_deal_list:
-        linked_contacts_ids = deal.get("_linked_contacts_ids", [])
-        if len(linked_contacts_ids) == 1:
-            contact_id = linked_contacts_ids[0]
-            if contact_id in contact_dict:
-                contact_entry = contact_dict[contact_id]
-                prefixed_contact_entry = {
-                    "Contact_" + key: value for key, value in contact_entry.items()
-                }
-                deal.update(prefixed_contact_entry)
-            else:
-                print(f"Deal {deal.get('_id')} : Contact Non found")
-
-
-def define_structure_size(deal):
-    size = ""
-    if "Contact_TAILLE" in deal and deal["Contact_TAILLE"] != "":
-        workforce_to_type = {"1": "TPE", "2": "PME", "3": "PME", "4": "ETI,GE"}
-        size = workforce_to_type[deal["Contact_TAILLE"]]
-    elif "autres_donnes" in deal and deal["autres_donnes"] != "":
-        pattern = r"/ structure_sizes: (.+?) /"
-        match = re.search(pattern, deal["autres_donnes"])
-        if match:
-            size = match.group(1)
-    elif "Contact_STRUCTURE_SIZE" in deal:
-        size = deal["Contact_STRUCTURE_SIZE"]
-    deal["Contact_STRUCTURE_TAILLE"] = size
-
-
-def format_date(date):
-    dt_obj = datetime.strptime(date, "%Y-%m-%dT%H:%M:%SZ")
-    utc_timezone = pytz.utc
-    paris_timezone = pytz.timezone("Europe/Paris")
-    dt_obj_paris = dt_obj.astimezone(paris_timezone)
-    return dt_obj_paris.strftime("%Y-%m-%d à %H-%M")
-
-
-def improve_merge_data(data):
-    for deal in data:
-        deal["dealId"] = deal.pop("_id")
-        deal["créé le"] = format_date(deal["created_at"])
-        define_structure_size(deal)
-        deal["nom du dispositif"] = deal.pop("deal_name")
-        deal["lien du dispositif"] = (
-            "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/"
-            + deal["nom du dispositif"]
-        )
-        deal["opérateur_de_contact"] = deal.pop("oprateur_de_contact")
-        if deal["deal_stage"] == "f0f8a5c8-023b-46cc-9826-1c5da7abc1f0":
-            deal["Etape de l'opportunité"] = "Nouvelle"
-        elif deal["deal_stage"] == "659d15cff01695.94588187":
-            deal["Etape de l'opportunité"] = "Transmise"
-        else:
-            deal["Etape de l'opportunité"] = "Inconnue"
-            print("unexpected deal stage", deal["deal_stage"])
-        if "autres_donnes" in deal and deal["autres_donnes"] != "[]":
-            deal["Code Postal"] = get_code_postal(deal["autres_donnes"])
-            deal["Région"] = get_region(deal["autres_donnes"], deal["Code Postal"])
-            create_objectifs_columns(deal, deal["autres_donnes"])
-            deal["Code NAF"] = get_NAF(deal["autres_donnes"])
-
+# cosntants
+OBJECTIFS = [
+    "mon impact environnemental",
+    "ma performance \u00e9nerg\u00e9tique",
+    "diminuer ma consommation d'eau",
+    "r\u00e9nover mon b\u00e2timent",
+    "la mobilit\u00e9 durable",
+    "la gestion des d\u00e9chets",
+    "l'\u00e9coconception",
+    "former ou recruter",
+]
 REGIONS = {
     "Auvergne-Rhône-Alpes": [
         "01",
@@ -251,6 +87,191 @@ REGIONS = {
 }
 
 
+def read_brevo_api_key(filepath: str) -> str:
+    """Reads Brevo API key from the specified file."""
+
+    if not os.path.isfile(filepath):
+        print(f"Error: env file '{filepath}' does not exist.")
+    with open(filepath, "r") as file:
+        lines = file.readlines()
+    for line in lines:
+        if line.startswith("BREVO_API_TOKEN="):
+            token = line.split("=")[1].strip()
+            return token
+
+    print("Error: BREVO_API_TOKEN not found in the environment file.")
+    return ""
+
+
+def initialize_brevo_configuration() -> sib_api_v3_sdk.Configuration:
+    """Initializes Brevo API configuration."""
+    BREVO_API_KEY = read_brevo_api_key(BREVO_API_KEY_FILE_PATH)
+    configuration = sib_api_v3_sdk.Configuration()
+    configuration.api_key["api-key"] = BREVO_API_KEY
+    return configuration
+
+
+def write_json(data, filename):
+    with open(filename, "w") as file:
+        json.dump(data, file, indent=4)
+
+
+def read_json(filename):
+    with open(filename, "r") as file:
+        data = json.load(file)
+        return data
+
+
+def get_brevo_contacts(api_config, origin):
+    """Retrieves contacts from Brevo API or from a JSON file."""
+    contact_list = []
+    if origin:
+        api_instance = sib_api_v3_sdk.ContactsApi(sib_api_v3_sdk.ApiClient(api_config))
+        limit = 1000  # max value to reduce the number of queries (20max per sec)
+        offset = 0
+        try:
+            api_response = api_instance.get_contacts(limit=limit, offset=offset)
+            contact_list.extend(api_response.contacts)
+            while offset < api_response.count:
+                offset += limit
+                api_response = api_instance.get_contacts(limit=limit, offset=offset)
+                contact_list.extend(api_response.contacts)
+            write_json(contact_list, "brevoContacts.json")
+            print(f"Importé {len(contact_list)} Brevo contacts")
+        except ApiException as e:
+            print("Exception when calling ContactsApi->get_contacts: %s\n" % e)
+    else:
+        contact_list = read_json("brevoContacts.json")
+        print(f"Read {len(contact_list)} Brevo contacts")
+
+    return contact_list
+
+
+def serialize_deal(deal):
+    if isinstance(deal, dict):
+        return deal
+    elif hasattr(deal, "__dict__"):
+        return deal.__dict__
+    else:
+        return str(deal)
+
+
+def get_brevo_deals(api_config, origin):
+    """Retrieves Brevo deals from Brevo API or from a JSON file."""
+    deal_list = []
+    if origin:
+        api_instance = sib_api_v3_sdk.DealsApi(sib_api_v3_sdk.ApiClient(api_config))
+        limit = 100000  # Allowed value that largely exceed the nomber of deals we have
+        offset = 0
+        try:
+            api_response = api_instance.crm_deals_get(limit=limit, offset=offset)
+            deal_list.extend(api_response.items)
+            deal_list = [serialize_deal(deal) for deal in deal_list]
+            write_json(deal_list, "brevoDeals.json")
+            print(f"Importé {len(deal_list)} Brevo deals")
+        except ApiException as e:
+            print("Exception when calling DealApi->crm_deals_get: %s\n" % e)
+    else:
+        deal_list = read_json("brevoDeals.json")
+        print(f"Read {len(deal_list)} Brevo deals")
+    return deal_list
+
+
+def flatten_json(json_obj, obj_name):
+    flattened = {}
+    attributes = json_obj.pop(obj_name, {})
+    for key, value in attributes.items():
+        flattened[key] = value
+    flattened.update(json_obj)
+    return flattened
+
+
+def filter_deals(json_deal_list):
+    "Keep the deals only if they are on the production pipeline"
+    filtered_deals = []
+    for deal in json_deal_list:
+        if deal["pipeline"] == "65719d9023acb4f05e56e7eb":
+            filtered_deals.append(deal)
+    return filtered_deals
+
+
+def merge_contact_in_deal(json_deal_list, json_contact_list):
+    contact_dict = {contact["id"]: contact for contact in json_contact_list}
+
+    for deal in json_deal_list:
+        linked_contacts_ids = deal.get("_linked_contacts_ids", [])
+        if len(linked_contacts_ids) == 1:
+            contact_id = linked_contacts_ids[0]
+            if contact_id in contact_dict:
+                contact_entry = contact_dict[contact_id]
+                prefixed_contact_entry = {
+                    "Contact_" + key: value for key, value in contact_entry.items()
+                }
+                deal.update(prefixed_contact_entry)
+            else:
+                print(f"Deal {deal.get('_id')} : Contact Non found")
+        else:
+            print(f"Deal {deal.get('_id')} : 0 ou plus d'un contact associé au deal!")
+
+
+def improve_merge_data(data):
+    for deal in data:
+        # basic column renaming
+        deal["dealId"] = deal.pop("_id")
+        deal["nom du dispositif"] = deal.pop("deal_name")
+        deal["opérateur_de_contact"] = deal.pop("oprateur_de_contact")
+
+        # simple reformatting
+        deal["créé le"] = format_date(deal["created_at"])
+        deal["lien du dispositif"] = (
+            "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/"
+            + deal["nom du dispositif"]
+        )
+        deal["Etape de l'opportunité"] = format_deal_stage(deal["deal_stage"])
+
+        # complex data parsing
+        deal["Contact_STRUCTURE_TAILLE"] = define_structure_size(deal)
+        if "autres_donnes" in deal and deal["autres_donnes"] != "[]":
+            deal["Code Postal"] = get_code_postal(deal["autres_donnes"])
+            deal["Région"] = get_region(deal["autres_donnes"], deal["Code Postal"])
+            create_objectifs_columns(deal, deal["autres_donnes"])
+            deal["Code NAF"] = get_NAF(deal["autres_donnes"])
+
+
+def format_deal_stage(deal_stage):
+    if deal_stage == "f0f8a5c8-023b-46cc-9826-1c5da7abc1f0":
+        return "Nouvelle"
+    elif deal_stage == "659d15cff01695.94588187":
+        return "Transmise"
+    else:
+        print("unexpected deal stage", deal["deal_stage"])
+        return "Inconnue"
+
+
+def define_structure_size(deal):
+    """Get the structure size using all possible encoding of it."""
+    size = ""
+    if "Contact_TAILLE" in deal and deal["Contact_TAILLE"] != "":
+        workforce_to_type = {"1": "TPE", "2": "PME", "3": "PME", "4": "ETI,GE"}
+        size = workforce_to_type[deal["Contact_TAILLE"]]
+    elif "autres_donnes" in deal and deal["autres_donnes"] != "":
+        pattern = r"/ structure_sizes: (.+?) /"
+        match = re.search(pattern, deal["autres_donnes"])
+        if match:
+            size = match.group(1)
+    elif "Contact_STRUCTURE_SIZE" in deal:
+        size = deal["Contact_STRUCTURE_SIZE"]
+    return size
+
+
+def format_date(date):
+    dt_obj = datetime.strptime(date, "%Y-%m-%dT%H:%M:%SZ")
+    utc_timezone = pytz.utc
+    paris_timezone = pytz.timezone("Europe/Paris")
+    dt_obj_paris = dt_obj.astimezone(paris_timezone)
+    return dt_obj_paris.strftime("%Y-%m-%d à %H-%M")
+
+
 def get_region_from_postal_code(postal_code):
     prefix = postal_code[:2]
     for region, prefixes in REGIONS.items():
@@ -264,6 +285,8 @@ def get_region_from_postal_code(postal_code):
 
 
 def get_region(s, codePostal):
+    """Get region using all possible data pattern.
+    Fallback on using the postal code if we have it."""
     region_pattern = r'(?i)r[eé]gion\s*:\s*"?([^"/]+)"?'
     match = re.search(region_pattern, s)
     if match:
@@ -291,26 +314,17 @@ def get_NAF(s):
     return matches[0]
 
 
-objectifs = [
-    "mon impact environnemental",
-    "ma performance \u00e9nerg\u00e9tique",
-    "diminuer ma consommation d'eau",
-    "r\u00e9nover mon b\u00e2timent",
-    "la mobilit\u00e9 durable",
-    "la gestion des d\u00e9chets",
-    "l'\u00e9coconception",
-    "former ou recruter",
-]
-
-
 def create_objectifs_columns(deal, s):
-    for objectif in objectifs:
+    for objectif in OBJECTIFS:
         start_index = s.find(objectif)
         if start_index != -1:
-            subset_s = s[start_index:]
+            stop_index = min(start_index + 40, len(s))
+            subset_s = s[start_index:stop_index]
             match = re.search(r"(oui|non)", subset_s)
             if match:
                 deal["Objectif: " + objectif] = match.group(0)
+        else:
+            deal["Objectif: " + objectif] = "Non spécifié"
 
 
 def get_code_postal(s):
@@ -347,7 +361,7 @@ def export_merge(merged_data, to_json, to_csv):
             "parcours",
         ]
 
-        for objectif in objectifs:
+        for objectif in OBJECTIFS:
             columns.append("Objectif: " + objectif)
 
         columns.extend(
@@ -357,7 +371,6 @@ def export_merge(merged_data, to_json, to_csv):
                 "dealId",
             ]
         )
-
     with open(
         "deals_with_contact_info.csv", mode="w", newline="", encoding="utf-8"
     ) as file:
@@ -366,51 +379,24 @@ def export_merge(merged_data, to_json, to_csv):
         for item in merged_data:
             row = {column: item.get(column, "") for column in columns}
             writer.writerow(row)
-
-
-def filter_deals(json_deal_list):
-    filtered_deals = []
-    filtered_pipeline_counts = {}
-
-    for deal in json_deal_list:
-        if (
-            deal["pipeline"] == "65719d9023acb4f05e56e7eb"
-            and deal["deal_stage"] != "C8DrOEJbVoiqtWZHQbMHyxF"
-        ):
-            filtered_deals.append(deal)
-        else:
-            if deal["pipeline"] == "65719d9023acb4f05e56e7eb":
-                print("filtergint with the stage", deal["deal_stage"])
-            pipeline_number = deal["pipeline"]
-            if pipeline_number in filtered_pipeline_counts:
-                filtered_pipeline_counts[pipeline_number] += 1
-            else:
-                filtered_pipeline_counts[pipeline_number] = 1
-
-    print("Number of filtered elements:", len(json_deal_list) - len(filtered_deals))
-    print("Détail des deals filtrés par pipeline :", filtered_pipeline_counts)
-    return filtered_deals
+    print("Brevo data exporté dans deals_with_contact_info.*")
 
 
 if __name__ == "__main__":
-    # Import, prepare, and export Contacts
-    json_contact_list = get_brevo_contacts(refresh_contacts)
+    brevo_config = initialize_brevo_configuration()
+
+    # Import and prepare Contacts
+    json_contact_list = get_brevo_contacts(brevo_config, REFRESH_CONTACTS)
     json_contact_list = [flatten_json(x, "attributes") for x in json_contact_list]
-    export_to_csv(json_contact_list, "contact.csv")
 
-    # Import, prepare, and export Deals
-    json_deal_list = get_brevo_deals(refresh_deals)
+    # Import and prepare Deals
+    json_deal_list = get_brevo_deals(brevo_config, REFRESH_DEALS)
     json_deal_list = [flatten_json(x, "_attributes") for x in json_deal_list]
-    export_to_csv(json_deal_list, "deals.csv")
 
-    json_deal_list = filter_deals(
-        json_deal_list
-    )  # keep only the deals NOT DELETED on the prod pipeline
+    # keep only the deals on the prod pipeline
+    json_deal_list = filter_deals(json_deal_list)
+
     # Merging
-
     merge_contact_in_deal(json_deal_list, json_contact_list)
-
     improve_merge_data(json_deal_list)
-    to_json = True
-    to_csv = True
-    export_merge(json_deal_list, to_json, to_csv)
+    export_merge(json_deal_list, EXPORT_TO_JSON, EXPORT_TO_CSV)
