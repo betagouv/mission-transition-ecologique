@@ -5,11 +5,11 @@ import { QuestionnaireRoute } from '../../../../common/src/questionnaire/types'
 // sorts the programs according to a "sortProfile", which currently
 // only depends on the questionnaireRoute
 export const sortPrograms = (programs: Program[], sortProfile: QuestionnaireRoute): Program[] => {
-  let sortedPrograms = programs.sort((p1, p2) => compareProgramsByType(p1, p2, sortProfile))
+  programs.sort((p1, p2) => compareProgramsByType(p1, p2, sortProfile))
   if (sortProfile == QuestionnaireRoute.SpecificGoal) {
-    sortedPrograms = sortedPrograms.sort((p1, p2) => compareProgramsByObjectiveNumber(p1, p2))
+    programs.sort((p1, p2) => compareProgramsByObjectiveNumber(p1, p2))
   }
-  return sortedPrograms
+  return programs
 }
 
 const compareProgramsByObjectiveNumber = (program1: Program, program2: Program): number => {
