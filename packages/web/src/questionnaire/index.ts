@@ -1,12 +1,9 @@
 import { questionnaireRoute } from './trackQuestionnaireRoute'
-
 import { siret } from './trackStructureSiret'
 import { workforce } from './trackStructureWorkforce'
 import { sectors } from './trackStructureSectors'
 import { regions } from './trackStructureRegion'
-
 import { goals } from './trackGoals'
-
 import { buildingProperty } from './trackBuildingProperty'
 import { mobilityWishes } from './trackMobilityWishes'
 import { wastesStake } from './trackWastesStake'
@@ -16,8 +13,6 @@ import { waterStake } from './trackWaterStake'
 import { energyReductionPriority } from './trackEnergyReduction'
 import { strategyAudits } from './trackStrategyAudits'
 import { strategyAuditsSelect } from './trackStrategyAuditsSelect'
-
-import { results } from './trackResults'
 import type { Track } from '@/types'
 
 export const tracks: Track[] = [
@@ -26,9 +21,7 @@ export const tracks: Track[] = [
   workforce,
   sectors,
   regions,
-
   goals,
-
   buildingProperty,
   mobilityWishes,
   wastesStake,
@@ -37,7 +30,5 @@ export const tracks: Track[] = [
   waterStake,
   energyReductionPriority,
   strategyAudits,
-  strategyAuditsSelect,
-
-  results
+  strategyAuditsSelect
 ]

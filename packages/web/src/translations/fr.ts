@@ -66,6 +66,10 @@ export const frDict = {
     loanRate: 'Taux du prêt',
     taxAdvantage: 'Avantage fiscal'
   },
+  programResults: {
+    resume:
+      'Voici les accompagnements dont vous pouvez bénéficier pour diminuer l’empreinte écologique de votre {effectif} du secteur {secteur} en région {region}.'
+  },
   enterprise: {
     select: 'Sélectionnez votre entreprise',
     noStructureFound: "Aucune structure n'a été trouvée."
