@@ -35,10 +35,9 @@ export default class ProgramApi extends RequestApi {
 
   get query(): string {
     const queryString: { [key: string]: string } = {}
-    Object.entries(this.questionnaireData).forEach(([key, value]) => {
+    Object.entries(this.questionnaireData).forEach(([key, value]: [string, string | string[] | undefined]) => {
       let stringValue: string
       if (value !== undefined) {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
         stringValue = value.toString()
       } else {
         stringValue = ''

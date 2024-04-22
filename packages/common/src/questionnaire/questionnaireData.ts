@@ -8,7 +8,7 @@ import {
   Sector,
   YesNo,
   MobilityStatus
-} from '@tee/common/src/questionnaire/types'
+} from './types'
 
 export enum QuestionnaireDataEnum {
   codeNaf = 'codeNaf',
@@ -17,7 +17,7 @@ export enum QuestionnaireDataEnum {
 
 export interface QuestionnaireData {
   codeNaf?: string
-  [QuestionnaireDataEnum.questionnaire_route]?: QuestionnaireRoute
+  questionnaire_route?: QuestionnaireRoute
   region?: string
 
   structure_size?: StructureSize // optional for testing !

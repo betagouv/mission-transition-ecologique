@@ -1,7 +1,6 @@
-import { QuestionnaireData } from '../../src/program/domain/types/questionnaireData'
 import { type Rules, makeProgramHelper, mockCurrentDateService, makeProgramsRepository } from './testing'
 import { FILTERING_RULE_NAME } from '../../src/program/domain/filterPrograms'
-import type { Program } from '../../src/program/domain/types/types'
+import type { Program, QuestionnaireData } from '../../src/program/domain/types/types'
 import { expectToBeOk } from '../testing'
 import ProgramFeatures from '../../src/program/domain/programFeatures'
 import { type Result } from 'true-myth'

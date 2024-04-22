@@ -5,14 +5,13 @@ import {
   PublicodeObjective,
   PublicodesKeys,
   QuestionnaireRoute,
-  Sector,
   StructureSize,
   WasteManagementStatus,
   YesNo
-} from '@tee/common/src/questionnaire/types'
+} from '../../../../common/src/questionnaire/types'
 
 import { type Program } from '@tee/data/src/type/program'
-import { QuestionnaireData } from '../domain/types/questionnaireData'
+import { QuestionnaireData } from '../domain/types/types'
 import { type PublicodesInputData, PublicodesQuestionnaireRoute, SectorToNAFSection, NAF1Letters } from './types'
 
 const SizeToWorkforce: { [key in StructureSize]: number } = {
@@ -64,10 +63,14 @@ const setSectors = (publicodesData: PublicodesInputData, questionnaireData: Ques
   let codeNAF1s: string[] = []
   if (questionnaireData.codeNAF1) {
     codeNAF1s = [questionnaireData.codeNAF1]
-  } else {
-    const sector = questionnaireData.sector as Sector
-    codeNAF1s = SectorToNAFSection[sector]
+  } else if (questionnaireData.sector) {
+    codeNAF1s = SectorToNAFSection[questionnaireData.sector]
   }
+
+  if (!codeNAF1s) {
+    return
+  }
+
   NAF1Letters.forEach((NAF1) => {
     const publicodeNAF1Key = 'entreprise . code NAF niveau 1 . est ' + NAF1
     publicodesData[publicodeNAF1Key] = codeNAF1s.includes(NAF1) ? YesNo.Yes : YesNo.No

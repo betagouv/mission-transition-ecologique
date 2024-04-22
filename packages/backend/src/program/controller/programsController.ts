@@ -1,6 +1,6 @@
 import { Controller, Get, Path, Queries, Res, Route, SuccessResponse, TsoaResponse } from 'tsoa'
 import ProgramService from '../application/programService'
-import { QuestionnaireData } from '../domain/types/questionnaireData'
+import type { QuestionnaireData } from '../domain/types/types'
 import { OpenAPISafeProgram } from './types'
 import { ErrorJSON } from '../../common/controller/jsonError'
 import { Err } from 'true-myth/dist/es/result'

@@ -1,5 +1,5 @@
 import Engine from 'publicodes'
-import { QuestionnaireData } from '../domain/types/questionnaireData'
+import { QuestionnaireData } from '../domain/types/types'
 import { evaluateRule } from './publicodes'
 import { Result } from 'true-myth'
 import { ensureError } from '../../common/domain/error/errors'
