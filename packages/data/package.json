@@ -4,7 +4,7 @@
   "description": "Package in charge of storing and building TEE datasets",
   "scripts": {
     "build-json-output": "npx ts-node src/generateProgramType.ts && npx ts-node src/buildJsonOutput.ts",
-    "build-json-output-watch": "nodemon --exec \"npx ts-node src/generateProgramType.ts && npx ts-node src/buildJsonOutput.ts\" --ext yaml,json,ts --ignore src/generated ",
+    "build-json-output-watch": "nodemon --exec \"npx ts-node src/generateProgramType.ts && npx ts-node src/buildJsonOutput.ts\" --ext yaml,json,ts --ignore src/generated --ignore public/data --ignore generated",
     "test": "jest",
     "lint": "eslint . --fix"
   },
@@ -27,7 +27,6 @@
   },
   "homepage": "https://github.com/betagouv/transition-ecologique-entreprises-widget#readme",
   "dependencies": {
-    "dotenv": "^16.3.1",
     "fs": "^0.0.1-security",
     "js-yaml": "^4.1.0",
     "json-schema-to-typescript": "^13.1.1",
@@ -36,7 +35,6 @@
   "devDependencies": {
     "@types/jest": "^29.5.2",
     "ajv": "^8.12.0",
-    "concurrently": "^8.2.0",
     "jest": "^29.7.0",
     "nodemon": "^3.0.1",
     "publicodes": "1.0.0-beta.77",

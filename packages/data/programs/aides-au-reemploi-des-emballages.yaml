@@ -11,13 +11,12 @@ description longue: 'Les dépenses éligibles sont :
 
   •  Les diagnostics et études de faisabilité.'
 début de validité: 01/01/2023
-fin de validité: 31/12/2023
+fin de validité: 31/12/2024
 illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
-url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/aides-reemploi-emballages-contenants?cible=79
+url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/aides-reemploi-emballages-contenants?cible=79
 nature de l'aide: financement
-montant du financement: Jusqu'à 70% du coût de l'étude ou 55% de l'investissement,
-  dans un maximum de 1 000 000 €
+montant du financement: Jusqu'à 80% du coût de l'étude ou 60% de l'investissement
 objectifs:
 - Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME.
 - Si vous souhaitez financer une étude, commencez par choisir le prestataire qui va
@@ -36,7 +35,10 @@ conditions d'éligibilité:
   - Toutes tailles
   - Éligible aux micro-entreprises
   secteur géographique:
-  - France et territoires d'outre-mer
+  - Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Centre-Val de Loire,
+    Grand Est, Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La Réunion, Martinique,
+    Mayotte, Nouvelle-Aquitaine, Nouvelle-Calédonie, Occitanie, Pays de la Loire,
+    Polynésie française, Provence-Alpes-Côte d'Azur
   secteur d'activité:
   - Tous secteurs d’activité
   nombre d'années d'activité:
@@ -56,7 +58,8 @@ publicodes:
       toutes ces conditions:
       - dispositif . début de validité <= date du jour
       - date du jour <= dispositif . fin de validité
-    valeur: oui
+    toutes ces conditions:
+    - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
     - code NAF niveau 1 . est A
@@ -80,3 +83,23 @@ publicodes:
   entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est la gestion des déchets
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+    - région = Auvergne-Rhône-Alpes
+    - région = Bourgogne-Franche-Comté
+    - région = Bretagne
+    - région = Centre-Val de Loire
+    - région = Grand Est
+    - région = Guadeloupe
+    - région = Guyane
+    - région = Hauts-de-France
+    - région = Île-de-France
+    - région = La Réunion
+    - région = Martinique
+    - région = Mayotte
+    - région = Nouvelle-Aquitaine
+    - région = Nouvelle-Calédonie
+    - région = Occitanie
+    - région = Pays de la Loire
+    - région = Polynésie française
+    - région = Provence-Alpes-Côte d'Azur

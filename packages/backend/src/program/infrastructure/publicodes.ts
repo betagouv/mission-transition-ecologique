@@ -1,6 +1,7 @@
 import Engine from 'publicodes'
 import { Result } from 'true-myth'
-import type { Program, QuestionnaireData } from '../domain/types'
+import { QuestionnaireData } from '../domain/types/questionnaireData'
+import type { Program } from '../domain/types/types'
 import type { PublicodesInputData } from './types'
 import { filterObject } from '../../common/objects'
 import { preprocessInputForPublicodes } from './preprocessProgramsPublicodes'
