@@ -22,7 +22,7 @@ export const getEstablishment: EstablishmentRepository['get'] = async (siret) =>
  * @arg siret - siret number of the company to fetch
  */
 export const requestSireneAPI = async (token: string, siret: string): Promise<Result<EstablishmentDetails, Error>> => {
-  const api_sirene_url = `https://api.insee.fr/entreprises/sirene/V3/siret/${siret}`
+  const api_sirene_url = `https://api.insee.fr/entreprises/sirene/V3.11/siret/${siret}`
 
   try {
     const response: AxiosResponse<EstablishmentDocument> = await axios.get(api_sirene_url, {
