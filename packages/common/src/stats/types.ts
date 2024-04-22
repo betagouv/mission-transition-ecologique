@@ -3,9 +3,11 @@ export default interface StatsData {
   nProgramsNow: number | null
   nOpportunitiesTotal: number | null
   nOpportunities30Days: number | null
-  demandsTimeSeries: {
-    year: string
-    month: string
-    nDemands: number
-  }[]
+  demandsTimeSeries: DemandsAtTime[]
+}
+
+export type DemandsAtTime = {
+  year: number
+  month: number
+  nDemands: number
 }

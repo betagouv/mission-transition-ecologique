@@ -23,18 +23,20 @@
         <TeeCard
           :title="statsData ? statsData.nOpportunitiesTotal || undefined : undefined"
           class="fr-mr-md-3v"
-          >Demandes d'entreprises mises en relations avec un opérateur public sur un sujet de transition écologique depuis le lancement (été
-          2023).</TeeCard
         >
+          Demandes d'entreprises mises en relations avec un opérateur public sur un sujet de transition écologique depuis le lancement (été
+          2023).
+        </TeeCard>
       </div>
       <div class="fr-col-md-6 fr-mt-3w fr-mt-md-0 extendShorterContentContainer">
         <h4 class="fr-ml-md-3v">Sur les 30 derniers jours</h4>
         <TeeCard
           :title="statsData ? statsData.nOpportunities30Days || undefined : undefined"
           class="fr-ml-md-3v extendVertically"
-          >Demandes d'entreprises mises en relations avec un opérateur public sur un sujet de transition écologique sur les 30 derniers
-          jours.</TeeCard
         >
+          Demandes d'entreprises mises en relations avec un opérateur public sur un sujet de transition écologique sur les 30 derniers
+          jours.
+        </TeeCard>
       </div>
     </div>
     <div class="fr-col-12 fr-mt-3w fr-mt-md-4w fr-mb-md-8w">
@@ -52,9 +54,10 @@
           :type="CardType.Warning"
           imglink="/images/TEE-missingData.svg"
           class="fr-mr-md-3v"
-          >Nous travaillons actuellement sur cette mesure.<br /><br />
-          Cette information sera disponible prochainement.</TeeCard
         >
+          Nous travaillons actuellement sur cette mesure.<br /><br />
+          Cette information sera disponible prochainement.
+        </TeeCard>
       </div>
     </div>
     <div class="fr-mb-5w">
@@ -65,16 +68,18 @@
           <TeeCard
             :title="statsData ? statsData.nProgramsTotal || undefined : undefined"
             class="fr-mr-md-3v"
-            >Dispositifs d’aides référencés sur la plateforme depuis le lancement (été 2023).</TeeCard
           >
+            Dispositifs d’aides référencés sur la plateforme depuis le lancement (été 2023).
+          </TeeCard>
         </div>
         <div class="fr-col-12 fr-col-md-6 fr-mt-3w fr-mt-md-0 extendShorterContentContainer">
           <h4 class="fr-ml-md-3v">Actifs</h4>
           <TeeCard
             :title="statsData ? statsData.nProgramsNow || undefined : undefined"
             class="fr-ml-md-3v extendVertically extendHor"
-            >Dispositifs d’aides actuellement référencés sur la plateforme.</TeeCard
           >
+            Dispositifs d’aides actuellement référencés sur la plateforme.
+          </TeeCard>
         </div>
       </div>
     </div>
@@ -85,8 +90,9 @@
           class="fr-mr-md-3v"
           link="https://stats.beta.gouv.fr/index.php?module=CoreHome&action=index&idSite=23&period=day&date=yesterday#?period=day&date=yesterday&category=Dashboard_Dashboard&subcategory=1&idSite=23"
           link-text="Tableau de bord Matomo"
-          >Consultez toutes les statistiques de notre site sur le tableau de bord de notre outil de suivi Matomo.</TeeCard
         >
+          Consultez toutes les statistiques de notre site sur le tableau de bord de notre outil de suivi Matomo.
+        </TeeCard>
       </div>
     </div>
   </div>

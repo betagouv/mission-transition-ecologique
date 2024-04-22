@@ -20,8 +20,9 @@
         v-if="link"
         :href="link"
         class="fr-mt-3v"
-        >{{ linkText }}</TeeButtonExternalLink
       >
+        {{ linkText }}
+      </TeeButtonExternalLink>
     </div>
   </div>
 </template>
