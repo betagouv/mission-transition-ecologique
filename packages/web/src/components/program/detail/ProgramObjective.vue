@@ -28,8 +28,9 @@
               :key="`link-${idx}-${linkId}`"
               :href="program.liens[`Objectif${idx + 1} lien${linkId}`].lien"
               class="fr-mb-1v fr-mr-md-2v"
-              >{{ program.liens[`Objectif${idx + 1} lien${linkId}`].texte }}</TeeButtonExternalLink
             >
+              {{ program.liens[`Objectif${idx + 1} lien${linkId}`].texte }}
+            </TeeButtonExternalLink>
           </template>
         </div>
       </div>
