@@ -1,7 +1,7 @@
 import { Result } from 'true-myth'
 
 import StatsData from '@tee/common/src/stats/types'
-import { OpportunityRepository } from './spi'
+import { OpportunityRepository } from '../../opportunity/domain/spi'
 import ProgramService from '../../program/application/programService'
 
 export default class StatisticsFeatures {

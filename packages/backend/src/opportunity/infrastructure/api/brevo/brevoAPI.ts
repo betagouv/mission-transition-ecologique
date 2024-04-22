@@ -63,7 +63,7 @@ export default class BrevoAPI {
     })
   }
 
-  public GetDeals(startDate: Date = new Date(0), endDate: Date = new Date(1898553601000)): Promise<Result<AxiosResponse, Error>> {
+  public GetDeals(startDate: Date = new Date('2022-01-01'), endDate: Date = new Date('2040-01-01')): Promise<Result<AxiosResponse, Error>> {
     const formattedStartDate = startDate.getTime() / 1000
     const formattedEndDate = endDate.getTime() / 1000
 
@@ -78,7 +78,6 @@ export default class BrevoAPI {
       const response: AxiosResponse = await this.axios.request(data)
       return Result.ok(response)
     } catch (err: unknown) {
-      console.log(handleException(err))
       return Result.err(handleException(err))
     }
   }
