@@ -228,6 +228,9 @@ def createYamlObjectives(get):
     possibleObjective = ["1er", "2ème", "3ème", "4ème", "5ème", "6ème"]
     i = 0
     while i < 6 and get(f"🎯 {possibleObjective[i]} étape"):
+        if get(f"🎯 {possibleObjective[i]} étape") == "-":
+            i += 1
+            continue
         currentObjective = {}
         currentObjective["description"] = get(f"🎯 {possibleObjective[i]} étape")
         linkList = []
