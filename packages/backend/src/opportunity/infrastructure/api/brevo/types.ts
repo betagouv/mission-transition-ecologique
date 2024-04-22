@@ -106,5 +106,5 @@ export interface BrevoDealResponse {
     total: number
     max: number
   }
-  refs: Record<string, string> // Assuming refs can have dynamic keys with any value type
+  refs: Record<string, string>
 }

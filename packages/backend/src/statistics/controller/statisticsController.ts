@@ -4,12 +4,12 @@ import StatisticsService from '../application/statisticsService'
 import StatsData from '@tee/common/src/stats/types'
 
 @SuccessResponse('200', 'OK')
-@Route('opportunities')
+@Route('statistics')
 export class StatisticsController extends Controller {
   /**
    * Request statistics about the opportunities and programs
    */
-  @Get('statistics')
+  @Get()
   public async get(@Res() requestFailedResponse: TsoaResponse<500, ErrorJSON>): Promise<StatsData> {
     const opportunityResult = await new StatisticsService().get()
 

@@ -3,7 +3,6 @@
     class="fr-grid-row"
     :class="linkClasses"
   >
-    <!-- Image -->
     <div
       v-if="imglink"
       class="image-container fr-col-12 fr-col-md-3 fr-mb-2v fr-mb-md-0"
@@ -14,7 +13,6 @@
         class="image"
       />
     </div>
-    <!-- Content -->
     <div class="content fr-col-12">
       <h1 v-if="title">{{ title }}</h1>
       <p><slot></slot></p>
@@ -49,7 +47,6 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const linkClasses = {
-  // 'fr-callout': true, //TODO check if i let it or not
   baseCardClass: true,
   defaultCard: props.type === CardType.Default,
   warningCard: props.type === CardType.Warning
@@ -65,11 +62,11 @@ const linkClasses = {
 
 .defaultCard {
   background: var(--light-background-alt-blue-france, #f5f5fe);
-  border-color: var(--light-border-default-blue-france, #6a6af4);
+  border-color: #{$secondary-purple};
 }
 
 .warningCard {
-  border-color: #fca081;
+  border-color: #{$base-red};
   background: rgba(252, 160, 129, 0.2);
 }
 

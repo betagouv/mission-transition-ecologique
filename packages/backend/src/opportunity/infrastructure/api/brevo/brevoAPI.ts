@@ -63,6 +63,7 @@ export default class BrevoAPI {
     })
   }
 
+  // https://developers.brevo.com/reference/get_crm-pipeline-details-all
   public GetDeals(startDate: Date = new Date('2022-01-01'), endDate: Date = new Date('2040-01-01')): Promise<Result<AxiosResponse, Error>> {
     const formattedStartDate = startDate.getTime() / 1000
     const formattedEndDate = endDate.getTime() / 1000
