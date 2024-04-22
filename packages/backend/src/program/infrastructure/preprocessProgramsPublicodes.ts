@@ -5,6 +5,7 @@ import {
   PublicodeObjective,
   PublicodesKeys,
   QuestionnaireRoute,
+  Sector,
   StructureSize,
   WasteManagementStatus,
   YesNo
@@ -63,8 +64,8 @@ const setSectors = (publicodesData: PublicodesInputData, questionnaireData: Ques
   let codeNAF1s: string[] = []
   if (questionnaireData.codeNAF1) {
     codeNAF1s = [questionnaireData.codeNAF1]
-  } else if (questionnaireData.sector) {
-    codeNAF1s = SectorToNAFSection[questionnaireData.sector]
+  } else {
+    codeNAF1s = SectorToNAFSection[questionnaireData.sector as Sector]
   }
 
   if (!codeNAF1s) {
