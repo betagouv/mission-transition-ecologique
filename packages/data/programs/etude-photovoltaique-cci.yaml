@@ -1,4 +1,4 @@
-titre: Étude "photovoltaïque" CCI
+titre: Étude d'opportunité photovoltaïque
 promesse: Découvrez le potentiel du photovoltaïque pour votre entreprise avec une
   étude d’opportunité
 description: 'Disposez de tous les éléments indispensables à la prise de décision
@@ -15,12 +15,12 @@ url: ''
 nature de l'aide: financement
 montant du financement: ''
 objectifs:
-- Réalisez une analyse rapide de la consommation de votre site.
-- Obtenez une analyse réglementaire ainsi que les points d’attention à prendre en
-  compte (raccordement au réseau, structure de la toiture, étanchéité, charpente,
-  etc.)
-- Bénéficiez d'un pré-chiffrage des travaux, calculez le temps de retour sur investissement
-  et identifiez les financements possibles.
+- description: Réalisez une analyse rapide de la consommation de votre site.
+- description: Obtenez une analyse réglementaire ainsi que les points d’attention
+    à prendre en compte (raccordement au réseau, structure de la toiture, étanchéité,
+    charpente, etc.)
+- description: Bénéficiez d'un pré-chiffrage des travaux, calculez le temps de retour
+    sur investissement et identifiez les financements possibles.
 conditions d'éligibilité:
   taille de l'entreprise:
   - PME

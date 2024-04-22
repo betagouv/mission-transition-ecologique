@@ -38,20 +38,20 @@ nature de l'aide: accompagnement
 coût de l'accompagnement: Gratuit
 durée de l'accompagnement: Jusqu'à 3 ans d'accompagnement
 objectifs:
-- Participez à des sessions de créativité pour faire émerger de nouveaux concepts
-  d'objets roulants.
-- Prototypez les véhicules et expérimentez en continu auprès d'utilisateurs dans les
-  territoires partenaires du défi.
-- 'Passez en phase d''industrialisation : production, assemblage, réparation, reconditionnement,
-  et affinez le design des véhicules en répétant phases d''idéation et prototypage.'
-- Identifiez des sources de financement de votre région, de l’ADEME ou au niveau national
-  sur l'ensemble des phases.
-- 'Intégrez la communauté de l''eXtrême Défi et bénéficiez des nombreuses expertises
-  du réseau : mécanique, design, électronique, urbanisme, ecoconception, modèles économiques,
-  communication, marketing, etc.'
-liens:
-  Objectif5 lien1:
-    lien: https://airtable.com/apprjFOnbLySO8spa/shraH0xKsFZnkZOKw
+- description: Participez à des sessions de créativité pour faire émerger de nouveaux
+    concepts d'objets roulants.
+- description: Prototypez les véhicules et expérimentez en continu auprès d'utilisateurs
+    dans les territoires partenaires du défi.
+- description: 'Passez en phase d''industrialisation : production, assemblage, réparation,
+    reconditionnement, et affinez le design des véhicules en répétant phases d''idéation
+    et prototypage.'
+- description: Identifiez des sources de financement de votre région, de l’ADEME ou
+    au niveau national sur l'ensemble des phases.
+- description: 'Intégrez la communauté de l''eXtrême Défi et bénéficiez des nombreuses
+    expertises du réseau : mécanique, design, électronique, urbanisme, ecoconception,
+    modèles économiques, communication, marketing, etc.'
+  liens:
+  - lien: https://airtable.com/apprjFOnbLySO8spa/shraH0xKsFZnkZOKw
     texte: Rejoignez l'extrême Défi
 conditions d'éligibilité:
   taille de l'entreprise:

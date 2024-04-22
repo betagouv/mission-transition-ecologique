@@ -12,18 +12,18 @@ nature de l'aide: formation
 coût de l'accompagnement: Sur devis, selon la formation choisie
 durée de l'accompagnement: Selon la formation choisie
 objectifs:
-- Découvrez le catalogue de formation en transition écologique et énergétique que
-  propose le CFDE aux entreprises.
-- Sollicitez si vous le souhaitez, une prise en charge auprès d'un organisme de financement
-  de votre choix. Cette demande doit être réalisée préalablement à l'inscription.
-- Complétez le bulletin d'inscription sur le site de la CCI pour faire votre demande
-  d'inscription, en précisant votre mode de financement.
-- Participez au stage (en présentiel ou à distance)
-- A l'issue du stage, recevez une attestation de formation personnalisée.
-liens:
-  Objectif1 lien1:
-    lien: https://www.cci.fr/ressources/developpement-durable/cfde/nos-formations
+- description: Découvrez le catalogue de formation en transition écologique et énergétique
+    que propose le CFDE aux entreprises.
+  liens:
+  - lien: https://www.cci.fr/ressources/developpement-durable/cfde/nos-formations
     texte: Les formations du CFDE
+- description: Sollicitez si vous le souhaitez, une prise en charge auprès d'un organisme
+    de financement de votre choix. Cette demande doit être réalisée préalablement
+    à l'inscription.
+- description: Complétez le bulletin d'inscription sur le site de la CCI pour faire
+    votre demande d'inscription, en précisant votre mode de financement.
+- description: Participez au stage (en présentiel ou à distance)
+- description: A l'issue du stage, recevez une attestation de formation personnalisée.
 conditions d'éligibilité:
   taille de l'entreprise:
   - Toutes tailles

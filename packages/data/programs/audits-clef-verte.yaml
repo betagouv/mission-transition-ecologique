@@ -30,20 +30,19 @@ nature de l'aide: accompagnement
 coût de l'accompagnement: De 350 à 450 € HT selon votre activité
 durée de l'accompagnement: 1 jour dont 1/2 journée sur site
 objectifs:
-- Créez un compte et réalisez un auto-diagnostic pour évaluer l'éligibilité de votre
-  établissement au label. Cette étape est gratuite et sans engagement.
-- Définissez votre plan d'action et validez votre candidature en ligne.
-- Recevez la visite d'un auditeur Clef Verte dans votre établissement. Obtenez un
-  compte-rendu des pistes d'améliorations à mettre en oeuvre.
-- Bénéficiez d'un accompagnement par l'équipe Clef Verte pour faire progresser votre
-  démarche et présenter un dossier le plus qualitatif possible au Jury de fin d'année
-  (rapport d'audit, actions engagées et pièces justificatives, synthèse du suivi,
-  etc.)
-- Attribution du label par un jury indépendant pour une durée d'un an.
-liens:
-  Objectif1 lien1:
-    lien: https://pro.laclefverte.org/
+- description: Créez un compte et réalisez un auto-diagnostic pour évaluer l'éligibilité
+    de votre établissement au label. Cette étape est gratuite et sans engagement.
+  liens:
+  - lien: https://pro.laclefverte.org/
     texte: Créez un compte
+- description: Définissez votre plan d'action et validez votre candidature en ligne.
+- description: Recevez la visite d'un auditeur Clef Verte dans votre établissement.
+    Obtenez un compte-rendu des pistes d'améliorations à mettre en oeuvre.
+- description: Bénéficiez d'un accompagnement par l'équipe Clef Verte pour faire progresser
+    votre démarche et présenter un dossier le plus qualitatif possible au Jury de
+    fin d'année (rapport d'audit, actions engagées et pièces justificatives, synthèse
+    du suivi, etc.)
+- description: Attribution du label par un jury indépendant pour une durée d'un an.
 conditions d'éligibilité:
   taille de l'entreprise:
   - TPE et PME

@@ -12,12 +12,14 @@ nature de l'aide: accompagnement
 coût de l'accompagnement: Gratuit (sauf en PACA à partir de 650€ HT)
 durée de l'accompagnement: 1 jour dont 1/2 journée avec l'entreprise
 objectifs:
-- Réalisez un état des lieux à 360° afin d’évaluer la maturité écologique de votre
-  entreprise.
-- Identifiez les enjeux prioritaires de votre entreprise et élaborez un plan d'action
-  de transformation.
-- Menez un bouquet d'actions simples ou plus engageantes pour transformer votre entreprise
-  et optimiser vos coûts.
+- description: Réalisez un état des lieux à 360° afin d’évaluer la maturité écologique
+    de votre entreprise.
+- description: Identifiez les enjeux prioritaires de votre entreprise et élaborez
+    un plan d'action de transformation.
+- description: Menez un bouquet d'actions simples ou plus engageantes pour transformer
+    votre entreprise et optimiser vos coûts.
+- description: '-'
+- description: '-'
 conditions d'éligibilité:
   taille de l'entreprise:
   - TPE et PME

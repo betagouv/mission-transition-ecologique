@@ -12,11 +12,14 @@ nature de l'aide: accompagnement
 coût de l'accompagnement: Selon les territoires
 durée de l'accompagnement: 1 journée
 objectifs:
-- Recueillir vos données sur l'ensemble des champs de la RSE (gouvernance, social,
-  sociétal, environnemental, économique)
-- Dresser l’état des lieux des forces et faiblesses de votre entreprise
-- Obtenez un plan d’action adapté à vos enjeux et à vos ressources pour vous aider
-  à mettre en œuvre efficacement votre démarche RSE au sein de votre entreprise
+- description: Recueillir vos données sur l'ensemble des champs de la RSE (gouvernance,
+    social, sociétal, environnemental, économique)
+- description: Dresser l’état des lieux des forces et faiblesses de votre entreprise
+- description: Obtenez un plan d’action adapté à vos enjeux et à vos ressources pour
+    vous aider à mettre en œuvre efficacement votre démarche RSE au sein de votre
+    entreprise
+- description: '-'
+- description: '-'
 conditions d'éligibilité:
   taille de l'entreprise:
   - PME

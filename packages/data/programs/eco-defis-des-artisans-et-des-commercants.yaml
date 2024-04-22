@@ -11,13 +11,14 @@ nature de l'aide: accompagnement
 coût de l'accompagnement: Gratuit
 durée de l'accompagnement: 2 jours de prestation répartis sur 12 mois
 objectifs:
-- Faire le point sur vos pratiques et choisir les 3 éco-défis à relever par votre
-  entreprise.
-- Mettre en place vos défis et bénéficier de conseils personnalisés pour améliorer
-  vos performances économiques, environnementales et sociétales.
-- Valoriser l’engagement environnemental de votre entreprise par l’obtention d'un
-  label.
-- Profiter d’une communication gratuite dans le cadre de cette opération.
+- description: Faire le point sur vos pratiques et choisir les 3 éco-défis à relever
+    par votre entreprise.
+- description: Mettre en place vos défis et bénéficier de conseils personnalisés pour
+    améliorer vos performances économiques, environnementales et sociétales.
+- description: Valoriser l’engagement environnemental de votre entreprise par l’obtention
+    d'un label.
+- description: Profiter d’une communication gratuite dans le cadre de cette opération.
+- description: '-'
 conditions d'éligibilité:
   taille de l'entreprise:
   - TPE et PME

@@ -11,22 +11,21 @@ nature de l'aide: accompagnement
 coût de l'accompagnement: de 150 à 800 € HT (sur abonnement)
 durée de l'accompagnement: 12 mois
 objectifs:
-- Recevez une alerte réglementaire une fois tous les 15 jours, comme premier niveau
-  d'information sur l'actualité réglementaire.
-- Bénéficiez d'une veille personnalisée sur les activités qui vous concernent et recevez
-  une fois par mois l'actualité juridique complète qui s'y rapporte.
-- 'Accédez à une base de données juridiques : textes réglementaires, jurisprudence,
-  projets de textes européens et nationaux.'
-- 'Recevez un bimestriel dématérialisé qui recense les textes les plus importants
-  sur les différentes thématiques de la transition écologique : déchets, énergie,
-  eau, biodiversité, air, sites et sols pollués, installations classées pour la protection
-  de l’environnement.'
-- Testez gratuitement le service d'alerte réglementaire, la veille personnalisée et
-  la base de données juridiques pendant 2 mois. Puis, abonnez-vous aux services de
-  votre choix.
-liens:
-  Objectif5 lien1:
-    lien: https://www.enviroveille.com/public/tester-gratuitement.html
+- description: Recevez une alerte réglementaire une fois tous les 15 jours, comme
+    premier niveau d'information sur l'actualité réglementaire.
+- description: Bénéficiez d'une veille personnalisée sur les activités qui vous concernent
+    et recevez une fois par mois l'actualité juridique complète qui s'y rapporte.
+- description: 'Accédez à une base de données juridiques : textes réglementaires,
+    jurisprudence, projets de textes européens et nationaux.'
+- description: 'Recevez un bimestriel dématérialisé qui recense les textes les plus
+    importants sur les différentes thématiques de la transition écologique : déchets,
+    énergie, eau, biodiversité, air, sites et sols pollués, installations classées
+    pour la protection de l’environnement.'
+- description: Testez gratuitement le service d'alerte réglementaire, la veille personnalisée
+    et la base de données juridiques pendant 2 mois. Puis, abonnez-vous aux services
+    de votre choix.
+  liens:
+  - lien: https://www.enviroveille.com/public/tester-gratuitement.html
     texte: Demander un compte d'accès gratuit
 conditions d'éligibilité:
   taille de l'entreprise:

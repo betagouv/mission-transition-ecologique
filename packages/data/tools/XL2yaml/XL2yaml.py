@@ -105,18 +105,8 @@ def assembleProgramYAML(rawData, colNumbersByName, id):
     if nat == "avantage fiscal":
         set("montant de l'avantage fiscal", get("💰 Montant de l'aide"))
 
-    objectifs = makeObj(
-        [get(f"🎯 {i} étape") for i in ["1er", "2ème", "3ème", "4ème", "5ème"]]
-    )
-    set("objectifs", objectifs)
-
-    possibleLinks = []
-    for objectif in range(1, 20):
-        for linkNumber in range(1, 20):
-            possibleLinks.append((objectif, linkNumber))
-    yamlLinkDict = createYamlLinks(possibleLinks, get_maybe)
-    if yamlLinkDict:
-        set("liens", yamlLinkDict)
+    objectives = createYamlObjectives(get_maybe)
+    set("objectifs", objectives)
 
     pc = {}
     cible = []  # Accumulateur des règles qui font parti du ciblage.
@@ -233,16 +223,27 @@ def isValidLink(link, i, j):
         return False
 
 
-def createYamlLinks(indicesList, get):
-    linkDict = {}
-    for i, j in indicesList:
-        link = get(f"étape {i}/ lien{j}")
-        text = get(f"étape {i}/ nom du lien{j}")
-        if not link or not text or not isValidLink(link, i, j):
-            continue
-        key = f"Objectif{i} lien{j}"
-        linkDict[key] = {"lien": link, "texte": text}
-    return linkDict
+def createYamlObjectives(get):
+    objectiveList = []
+    possibleObjective = ["1er", "2ème", "3ème", "4ème", "5ème", "6ème"]
+    i = 0
+    while i < 6 and get(f"🎯 {possibleObjective[i]} étape"):
+        currentObjective = {}
+        currentObjective["description"] = get(f"🎯 {possibleObjective[i]} étape")
+        linkList = []
+        j = 1
+        while get(f"étape {i+1}/ lien{j}"):
+            link = get(f"étape {i+1}/ lien{j}")
+            text = get(f"étape {i+1}/ nom du lien{j}")
+            j += 1
+            if not link or not text or not isValidLink(link, i, j):
+                continue
+            linkList.append({"lien": link, "texte": text})
+        if linkList:
+            currentObjective["liens"] = linkList
+        objectiveList.append(currentObjective)
+        i += 1
+    return objectiveList
 
 
 def remove_special_chars(text: str) -> str:

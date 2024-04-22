@@ -11,18 +11,18 @@ url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/tr
 nature de l'aide: financement
 montant du financement: de 5 000 € HT à 200 000 € HT
 objectifs:
-- Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME.
-- 'Accédez à des aides forfaitaires dans de nombreux domaines de la transition écologique
-  : décarbonation, éco-conception, économie circulaire, gestion des déchets, la chaleur
-  et le froid renouvelable pour les bâtiments (hors logement), l''efficacité énergétique
-  de serres chauffées ou la mobilité durable.'
-- Déposez un seul dossier pour plusieurs études ou investissements.
-- Réalisez votre investissement et votre étude dans les 18 mois du contrat.
-- Obtenez un paiement final sur attestation et justificatifs.
-liens:
-  Objectif1 lien1:
-    lien: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Tremplin%20pour%20la%20transition%20%C3%A9cologique%20des%20PME%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf
+- description: Vérifiez l’éligibilité de votre projet en parcourant la documentation
+    de l’ADEME.
+  liens:
+  - lien: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Tremplin%20pour%20la%20transition%20%C3%A9cologique%20des%20PME%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf
     texte: Conditions éligibilité et financement
+- description: 'Accédez à des aides forfaitaires dans de nombreux domaines de la transition
+    écologique : décarbonation, éco-conception, économie circulaire, gestion des déchets,
+    la chaleur et le froid renouvelable pour les bâtiments (hors logement), l''efficacité
+    énergétique de serres chauffées ou la mobilité durable.'
+- description: Déposez un seul dossier pour plusieurs études ou investissements.
+- description: Réalisez votre investissement et votre étude dans les 18 mois du contrat.
+- description: Obtenez un paiement final sur attestation et justificatifs.
 conditions d'éligibilité:
   taille de l'entreprise:
   - TPE et PME

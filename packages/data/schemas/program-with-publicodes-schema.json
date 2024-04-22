@@ -39,17 +39,32 @@
       "type": "string"
     },
     "objectifs": {
-      "description": "TODO",
+      "description": "Objectifs intermédiaires à réaliser pour mettre en place le dispositif",
       "type": "array",
       "items": {
-        "type": "string"
-      }
-    },
-    "liens": {
-      "description": "Liens à suivre pour réaliser les objectifs",
-      "type": "object",
-      "items": {
-        "type": "string"
+        "type": "object",
+        "properties": {
+          "description": {
+            "description": "Explication de l'objectif intermédiaire à réaliser",
+            "type": "string"
+          },
+          "liens": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "lien": {
+                  "description": "TODO",
+                  "type": "string"
+                },
+                "texte": {
+                  "description": "TODO",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
       }
     },
     "opérateur de contact": {

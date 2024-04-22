@@ -17,12 +17,15 @@ url: https://www.service-public.fr/particuliers/vosdroits/F36875
 nature de l'aide: financement
 montant du financement: jusqu'à 9 000 €
 objectifs:
-- Faites transformer le moteur thermique de votre véhicule en moteur électrique à
-  batterie ou à pile à combustible. Votre voiture doit avoir plus de 5 ans.
-- Choisissez un professionnel habilité parmi les professionnels de l’industrie du
-  rétrofit électrique.
-- Au moment de la facturation, le professionnel qui réalise la transformation du moteur
-  vous fait l'avance de l'aide. Cette avance doit apparaître sur la facture.
+- description: Faites transformer le moteur thermique de votre véhicule en moteur
+    électrique à batterie ou à pile à combustible. Votre voiture doit avoir plus de
+    5 ans.
+- description: Choisissez un professionnel habilité parmi les professionnels de l’industrie
+    du rétrofit électrique.
+- description: Au moment de la facturation, le professionnel qui réalise la transformation
+    du moteur vous fait l'avance de l'aide. Cette avance doit apparaître sur la facture.
+- description: '-'
+- description: '-'
 conditions d'éligibilité:
   taille de l'entreprise:
   - Toutes tailles

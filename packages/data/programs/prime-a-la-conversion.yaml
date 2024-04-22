@@ -15,31 +15,31 @@ url: ''
 nature de l'aide: financement
 montant du financement: jusqu’à 9 000 €, selon le véhicule
 objectifs:
-- Vérifiez l'égibilité à la mise au rebut de votre vieux véhicule.
-- Louez ou achetez votre véhicule "propre" et déposez votre demande de Bonus écologique
-  dans les six mois.
-- Créez votre dossier sur le site, en cliquant sur "Saisir ma demande par courrier"
-  en bas de page. (rubrique "Vous représentez une personne morale ou vous souhaitez
-  faire une demande par courrier")
-- Complétez le formulaire en ligne. Vous recevrez le récapitulatif de votre demande
-  par mail.
-- Constituez votre dossier avec les pièces justificatives demandées. (consultez les
-  pages n°2 destinées aux entreprises)
-liens:
-  Objectif1 lien1:
-    lien: https://www.primealaconversion.gouv.fr/dboneco/accueil/faq.html
+- description: Vérifiez l'égibilité à la mise au rebut de votre vieux véhicule.
+  liens:
+  - lien: https://www.primealaconversion.gouv.fr/dboneco/accueil/faq.html
     texte: FAQ Prime à la conversion
-  Objectif3 lien1:
-    lien: https://www.primealaconversion.gouv.fr/dboneco/accueil/access.html
+- description: Louez ou achetez votre véhicule "propre" et déposez votre demande de
+    Bonus écologique dans les six mois.
+- description: Créez votre dossier sur le site, en cliquant sur "Saisir ma demande
+    par courrier" en bas de page. (rubrique "Vous représentez une personne morale
+    ou vous souhaitez faire une demande par courrier")
+  liens:
+  - lien: https://www.primealaconversion.gouv.fr/dboneco/accueil/access.html
     texte: Primealaconversion.gouv.fr
-  Objectif5 lien1:
-    lien: https://www.primealaconversion.gouv.fr/dboneco/accueil/media/documents/Hors_PJ.pdf
+- description: Complétez le formulaire en ligne. Vous recevrez le récapitulatif de
+    votre demande par mail.
+- description: Constituez votre dossier avec les pièces justificatives demandées.
+    (consultez les pages n°2 destinées aux entreprises)
+  liens:
+  - lien: https://www.primealaconversion.gouv.fr/dboneco/accueil/media/documents/Hors_PJ.pdf
     texte: Pièces justificatives - véhicule
-  Objectif5 lien2:
-    lien: https://www.primealaconversion.gouv.fr/dboneco/accueil/media/documents/Cycles_PJ.pdf
+  - lien: https://www.primealaconversion.gouv.fr/dboneco/accueil/media/documents/Cycles_PJ.pdf
     texte: Pièces justificatives - vélo
-  Objectif6 lien1:
-    lien: https://www.asp-public.fr/sites/default/files/content/aides/documents/bonus-eco/NOTICE_CONVENTIONNEMENT_BONUS_PRO.pdf
+- description: Envoyez le récapitulatif de votre demande et vos pièces justificatives
+    par courrier au « service - Bonus écologique » de votre ASP de rattachement.
+  liens:
+  - lien: https://www.asp-public.fr/sites/default/files/content/aides/documents/bonus-eco/NOTICE_CONVENTIONNEMENT_BONUS_PRO.pdf
     texte: Adresse postale (page 4)
 conditions d'éligibilité:
   taille de l'entreprise:

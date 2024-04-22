@@ -10,10 +10,13 @@ nature de l'aide: prêt
 durée du prêt: de 3 à 7 ans, avec un différé d’amortissement en capital de 2 ans maximum
 montant du prêt: De 10 000 € à 500 000 €
 objectifs:
-- Réalisez votre demande de prêt pour votre investissement.
-- 'L’investissement peut porter sur des équipements qui visent l’amélioration des
-  postes suivants : éclairage, froid, chauffage, climatisation, motorisation électrique.'
-- Ce prêt est éligible aux certificats d'économies d'énergie (CEE)
+- description: Réalisez votre demande de prêt pour votre investissement.
+- description: 'L’investissement peut porter sur des équipements qui visent l’amélioration
+    des postes suivants : éclairage, froid, chauffage, climatisation, motorisation
+    électrique.'
+- description: Ce prêt est éligible aux certificats d'économies d'énergie (CEE)
+- description: '-'
+- description: '-'
 conditions d'éligibilité:
   taille de l'entreprise:
   - Moins de 50 salariés
