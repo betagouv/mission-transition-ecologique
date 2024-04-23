@@ -1,7 +1,7 @@
 <template>
   <a
     :href="props.href"
-    class="fr-btn fr-btn--secondary fr-btn--icon-left fr-icon-external-link-fill tee-external-link-button"
+    class="fr-btn fr-btn--secondary fr-btn--icon-left fr-icon-external-link-fill"
     target="_blank"
   >
     <slot></slot>
@@ -27,10 +27,10 @@ const props = withDefaults(defineProps<Props>(), {
 [target='_blank'][class^='fr-icon-']:after {
   content: none;
 }
-.tee-external-link-button {
+a {
   box-shadow: inset 0 0 0 1px $secondary-purple;
-  color: $secondary-purple !important;
+  color: $secondary-purple;
   text-align: center;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 </style>
