@@ -37,9 +37,7 @@
 </template>
 
 <script setup lang="ts">
-// CONSOLE LOG TEMPLATE
-// console.log(`ProgramObjective > FUNCTION_NAME > MSG_OR_VALUE :`)
-// import TeeButtonExternalLink from '@/components/element/TeeButtonExternalLink.vue'
+import TeeButtonExternalLink from '@/components/element/TeeButtonExternalLink.vue'
 import Translation from '@/utils/translation'
 import type { ProgramData } from '@/types'
 import { ProgramAidType } from '@tee/common/src/program/types'
@@ -61,19 +59,4 @@ const getProgramObjectiveTitle = () => {
       return Translation.t('program.programObjective.title.applicationSteps')
   }
 }
-
-// const maxLinkByObjective = 5
-
-// const haslink = (objectiveId: number) => {
-//   if (!props.program.liens) {
-//     return false
-//   }
-//   for (let linkId = 1; linkId <= maxLinkByObjective; linkId++) {
-//     const linkName = `Objectif${objectiveId} lien${linkId}`
-//     if (props.program.liens[linkName]) {
-//       return true
-//     }
-//   }
-//   return false
-// }
 </script>
