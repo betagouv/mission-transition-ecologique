@@ -39,3 +39,6 @@ Les dispositifs concernés à ce stade :
 - pret-vert
 - repar-acteurs
 
+## Points de vigilence 
+- Le script ne fonctionne que sur 6 objectifs.
+- vérifier manuellement tous les changements sur les yamls car il y a souvent des erreurs dans l'excel ! 
