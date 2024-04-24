@@ -1,5 +1,4 @@
-import { Objectives } from '@tee/data/src/type/publicodesTypes'
-import { QuestionnaireRoute } from '@tee/common/src/questionnaire/types'
+import { QuestionnaireRoute, PublicodeObjective } from '@tee/common/src/questionnaire/types'
 import { type Operators } from '@tee/data/src/generated/program'
 
 export type Opportunity = ContactDetails & OpportunityDetails
@@ -21,7 +20,7 @@ export interface OpportunityDetails {
   linkToProgramPage: string
   message: string
   questionnaireRoute?: QuestionnaireRoute
-  priorityObjectives?: Objectives[]
+  priorityObjectives?: PublicodeObjective[]
   otherData?: string
 }
 

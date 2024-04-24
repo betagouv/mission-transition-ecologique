@@ -1,5 +1,5 @@
 import type { Track } from '@/types'
-import { Objective, Objectives, priorityObjectives, TrackComponent, TrackId, YesNo } from '@/types'
+import { Objective, TrackComponent, TrackId } from '@/types'
 
 export const goals: Track = {
   id: TrackId.Goals,
@@ -18,12 +18,8 @@ export const goals: Track = {
   },
   options: [
     {
-      // WIP
       value: Objective.EnvironmentalImpact,
-      questionnaireData: {
-        ...priorityObjectives,
-        [Objectives.EnvironmentalImpact]: YesNo.Yes
-      },
+      questionnaireData: { priority_objective: Objective.EnvironmentalImpact },
       title: { fr: 'Impact environnemental' },
       label: { fr: '🌱 Mesurer mon impact environnemental et le réduire' },
       next: {
@@ -32,10 +28,7 @@ export const goals: Track = {
     },
     {
       value: Objective.EnergyPerformance,
-      questionnaireData: {
-        ...priorityObjectives,
-        [Objectives.EnergyPerformance]: YesNo.Yes
-      },
+      questionnaireData: { priority_objective: Objective.EnergyPerformance },
       title: { fr: "Gestion de l'énergie" },
       label: { fr: '⚡️ Améliorer la performance énergétique de mon entreprise' },
       next: {
@@ -44,10 +37,7 @@ export const goals: Track = {
     },
     {
       value: Objective.WaterConsumption,
-      questionnaireData: {
-        ...priorityObjectives,
-        [Objectives.WaterConsumption]: YesNo.Yes
-      },
+      questionnaireData: { priority_objective: Objective.WaterConsumption },
       title: { fr: "Gestion de l'eau" },
       label: { fr: "💧 Diminuer ma consommation d'eau" },
       next: {
@@ -56,10 +46,7 @@ export const goals: Track = {
     },
     {
       value: Objective.BuildingRenovation,
-      questionnaireData: {
-        ...priorityObjectives,
-        [Objectives.BuildingRenovation]: YesNo.Yes
-      },
+      questionnaireData: { priority_objective: Objective.BuildingRenovation },
       title: { fr: 'Rénovation du bâtiment' },
       label: { fr: '🏢 Rénover mon bâtiment' },
       next: {
@@ -68,10 +55,7 @@ export const goals: Track = {
     },
     {
       value: Objective.SustainableMobility,
-      questionnaireData: {
-        ...priorityObjectives,
-        [Objectives.SustainableMobility]: YesNo.Yes
-      },
+      questionnaireData: { priority_objective: Objective.SustainableMobility },
       title: { fr: 'Mobilité durable' },
       label: { fr: '🚲 Engager une démarche de mobilité durable' },
       next: {
@@ -80,10 +64,7 @@ export const goals: Track = {
     },
     {
       value: Objective.WasteManagement,
-      questionnaireData: {
-        ...priorityObjectives,
-        [Objectives.WasteManagement]: YesNo.Yes
-      },
+      questionnaireData: { priority_objective: Objective.WasteManagement },
       title: { fr: 'Gestion des déchets' },
       label: { fr: '🗑 Mieux gérer mes déchets' },
       next: {
@@ -92,10 +73,7 @@ export const goals: Track = {
     },
     {
       value: Objective.EcoDesign,
-      questionnaireData: {
-        ...priorityObjectives,
-        [Objectives.EcoDesign]: YesNo.Yes
-      },
+      questionnaireData: { priority_objective: Objective.EcoDesign },
       title: { fr: 'Eco-conception' },
       label: { fr: '🏭 Améliorer la performance environnementale de mes produits et services' },
       next: {
@@ -104,10 +82,7 @@ export const goals: Track = {
     },
     {
       value: Objective.TrainOrRecruit,
-      questionnaireData: {
-        ...priorityObjectives,
-        [Objectives.TrainOrRecruit]: YesNo.Yes
-      },
+      questionnaireData: { priority_objective: Objective.TrainOrRecruit },
       title: { fr: 'Formation' },
       label: { fr: '🧑‍🎓 Former ou recruter sur la transition écologique' },
       next: {

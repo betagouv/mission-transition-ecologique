@@ -1,16 +1,23 @@
-import { QuestionnaireData } from '../../src/program/domain/types/questionnaireData'
 import { type Rules, makeProgramHelper, mockCurrentDateService, makeProgramsRepository } from './testing'
 import { FILTERING_RULE_NAME } from '../../src/program/domain/filterPrograms'
-import type { Program } from '../../src/program/domain/types/types'
+import type { Program, QuestionnaireData } from '../../src/program/domain/types/types'
 import { expectToBeOk } from '../testing'
 import ProgramFeatures from '../../src/program/domain/programFeatures'
 import { type Result } from 'true-myth'
 import { PublicodesService } from '../../src/program/infrastructure/publicodesService'
+import { QuestionnaireRoute } from '@tee/common/src/questionnaire/types'
 
-const defaultFilterPrograms = (programs: Program[], inputData: QuestionnaireData): Result<Program[], Error> => {
+const defaultFilterPrograms = (programs: Program[], inputData: Record<string, number>): Result<Program[], Error> => {
   PublicodesService.init(programs)
   const programService = new ProgramFeatures(makeProgramsRepository(programs), mockCurrentDateService, PublicodesService.getInstance())
-  return programService.getFilteredBy(inputData)
+  const questionnaireData: QuestionnaireData = {
+    questionnaire_route: QuestionnaireRoute.NoSpecificGoal,
+    region: 'Corse',
+    codeNAF1: 'J',
+    ...inputData
+  }
+
+  return programService.getFilteredBy(questionnaireData)
 }
 
 const rulesBoilerplate = {

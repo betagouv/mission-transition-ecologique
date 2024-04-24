@@ -1,6 +1,6 @@
 import {
-  Entreprise,
-  Objectives,
+  PublicodesKeys,
+  PublicodeObjective,
   ProgramAidType,
   type ProgramData,
   type programFiltersType,
@@ -17,13 +17,13 @@ export default class ProgramFilter {
     return program["nature de l'aide"] === programAidTypeSelected
   }
 
-  static filterProgramsByObjective(program: ProgramData, objectiveTypeSelected: Objectives) {
+  static filterProgramsByObjective(program: ProgramData, objectiveTypeSelected: PublicodeObjective) {
     if (!this.isValidFilterValue(objectiveTypeSelected)) {
       return true
     }
 
-    if (program.publicodes[Entreprise.hasObjective]) {
-      return program.publicodes[Entreprise.hasObjective][PublicodesCondition.oneOfThese].includes(objectiveTypeSelected)
+    if (program.publicodes[PublicodesKeys.hasObjective]) {
+      return program.publicodes[PublicodesKeys.hasObjective][PublicodesCondition.oneOfThese].includes(objectiveTypeSelected)
     }
 
     return true

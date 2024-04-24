@@ -40,7 +40,7 @@ export const strategyAuditsSelect: Track = {
     {
       value: StrategyAuditsSelect.CarbonAudit,
       questionnaireData: {
-        strategy_audits_select: StrategyAuditsSelect.CarbonAudit
+        recent_audits: StrategyAuditsSelect.CarbonAudit
       },
       title: { fr: 'Oui' },
       label: { fr: '🌱 Bilan de gaz à effet de serre ou bilan carbone' },
@@ -51,7 +51,7 @@ export const strategyAuditsSelect: Track = {
     {
       value: StrategyAuditsSelect.EnergeticPerformanceAudit,
       questionnaireData: {
-        strategy_audits_select: StrategyAuditsSelect.EnergeticPerformanceAudit
+        recent_audits: StrategyAuditsSelect.EnergeticPerformanceAudit
       },
       title: { fr: 'Performance énergétique' },
       label: { fr: '⚡️ Audit de performance énergétique des bâtiments ou Certification ISO 50001' },
@@ -62,7 +62,7 @@ export const strategyAuditsSelect: Track = {
     {
       value: StrategyAuditsSelect.EnergyConsumptionAudit,
       questionnaireData: {
-        strategy_audits_select: StrategyAuditsSelect.EnergyConsumptionAudit
+        recent_audits: StrategyAuditsSelect.EnergyConsumptionAudit
       },
       title: { fr: "Consommation d'énergie" },
       label: { fr: '⚡️ Audit consommation d’énergie' },
@@ -73,7 +73,7 @@ export const strategyAuditsSelect: Track = {
     {
       value: StrategyAuditsSelect.WaterAudit,
       questionnaireData: {
-        strategy_audits_select: StrategyAuditsSelect.WaterAudit
+        recent_audits: StrategyAuditsSelect.WaterAudit
       },
       title: { fr: 'Eau' },
       label: { fr: '💧 Audit eau' },
@@ -84,7 +84,7 @@ export const strategyAuditsSelect: Track = {
     {
       value: StrategyAuditsSelect.WastesAudit,
       questionnaireData: {
-        strategy_audits_select: StrategyAuditsSelect.WastesAudit
+        recent_audits: StrategyAuditsSelect.WastesAudit
       },
       title: { fr: 'Déchets' },
       label: { fr: '🗑 Audit déchets' },
@@ -95,7 +95,7 @@ export const strategyAuditsSelect: Track = {
     {
       value: StrategyAuditsSelect.RawMaterialsAudit,
       questionnaireData: {
-        strategy_audits_select: StrategyAuditsSelect.RawMaterialsAudit
+        recent_audits: StrategyAuditsSelect.RawMaterialsAudit
       },
       title: { fr: 'Matières premières' },
       label: { fr: '🧱 Audit matières premières' },
@@ -106,7 +106,7 @@ export const strategyAuditsSelect: Track = {
     {
       value: StrategyAuditsSelect.Certification,
       questionnaireData: {
-        strategy_audits_select: StrategyAuditsSelect.Certification
+        recent_audits: StrategyAuditsSelect.Certification
       },
       title: { fr: 'Certification' },
       label: { fr: '🎖 Certification ISO 14001 ' },
@@ -117,7 +117,7 @@ export const strategyAuditsSelect: Track = {
     {
       value: StrategyAuditsSelect.Other,
       questionnaireData: {
-        strategy_audits_select: StrategyAuditsSelect.Other
+        recent_audits: StrategyAuditsSelect.Other
       },
       title: { fr: 'Autre' },
       label: { fr: 'Autre' },
@@ -128,7 +128,7 @@ export const strategyAuditsSelect: Track = {
     {
       value: StrategyAuditsSelect.Unknown,
       questionnaireData: {
-        strategy_audits_select: StrategyAuditsSelect.Unknown
+        recent_audits: StrategyAuditsSelect.Unknown
       },
       title: { fr: 'Je ne sais pas' },
       label: { fr: 'Je ne sais pas' },
