@@ -2,7 +2,7 @@ import { Result } from 'true-myth'
 
 import { Program } from '@tee/data/src/type/program'
 import ProgramFeatures from '../domain/programFeatures'
-import { QuestionnaireData } from '../domain/types/questionnaireData'
+import { QuestionnaireData } from '../domain/types/types'
 
 import ProgramsJson from '../infrastructure/programsJson'
 import { currentDateService } from '../infrastructure/currentDate'

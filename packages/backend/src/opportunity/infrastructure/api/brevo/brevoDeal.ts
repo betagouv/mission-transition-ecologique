@@ -3,12 +3,19 @@ import { Maybe, Result } from 'true-myth'
 import { OpportunityRepository } from '../../../domain/spi'
 import { OpportunityId, OpportunityDetails, OpportunityUpdateAttributes } from '../../../domain/types'
 import BrevoAPI from './brevoAPI'
-import { DealAttributes, BrevoQuestionnaireRoute, QuestionnaireRoute, DealUpdateAttributes, BrevoPostDealPayload } from './types'
+import {
+  DealAttributes,
+  BrevoQuestionnaireRoute,
+  QuestionnaireRoute,
+  DealUpdateAttributes,
+  BrevoPostDealPayload,
+  BrevoDealResponse
+} from './types'
 import Config from '../../../../config'
 
 // "Opportunities" are called "Deals" in Brevo
 
-export const addBrevoDeal: OpportunityRepository['create'] = async (
+const addBrevoDeal: OpportunityRepository['create'] = async (
   contactId: number,
   domainOpportunity: OpportunityDetails
 ): Promise<Result<OpportunityId, Error>> => {
@@ -39,7 +46,7 @@ const requestCreateDeal = async (name: string, attributes: DealAttributes): Prom
   return dealId
 }
 
-export const updateBrevoDeal: OpportunityRepository['update'] = async (
+const updateBrevoDeal: OpportunityRepository['update'] = async (
   dealId: OpportunityId,
   updateAttributes: OpportunityUpdateAttributes
 ): Promise<Maybe<Error>> => {
@@ -99,3 +106,26 @@ const convertQuestionnaireRoute = (questionnaireRoute: QuestionnaireRoute | unde
 const replaceNewlinesWithSpaces = (text: string): string => {
   return text.replaceAll('\n', ' ')
 }
+
+const getBrevoCreationDates = async (): Promise<Result<Date[], Error>> => {
+  const responsePatch = await new BrevoAPI().GetDeals()
+
+  if (responsePatch.isOk) {
+    const brevoDealResponse: BrevoDealResponse = responsePatch.value.data as BrevoDealResponse
+    if (!brevoDealResponse.items) {
+      return Result.err(new Error('No Items field in Brevo API'))
+    } else if (brevoDealResponse.items.length === 0) {
+      return Result.err(new Error('Brevo deal list is empty'))
+    }
+    const dateList: Date[] = []
+    for (const deal of brevoDealResponse.items) {
+      const dealDate: Date = new Date(deal.attributes.created_at)
+      dateList.push(dealDate)
+    }
+    return Result.ok(dateList)
+  } else {
+    return Result.err(responsePatch.error)
+  }
+}
+
+export const brevoRepository: OpportunityRepository = { create: addBrevoDeal, update: updateBrevoDeal, readDates: getBrevoCreationDates }

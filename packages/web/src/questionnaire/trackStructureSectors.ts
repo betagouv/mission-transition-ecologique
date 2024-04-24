@@ -1,4 +1,4 @@
-import { Sectors, SectorByNAF, NAF1ToVar, codesNAF1, EntrepriseSector, YesNo, Sector, TrackComponent, TrackId } from '@/types'
+import { Sector, TrackComponent, TrackId } from '@/types'
 import type { Track } from '@/types'
 
 export const sectors: Track = {
@@ -16,18 +16,7 @@ export const sectors: Track = {
   options: [
     {
       value: Sector.Craftsmanship,
-      questionnaireData: {
-        secteur: Sector.Craftsmanship,
-        ...Sectors,
-        [EntrepriseSector.Craftsmanship]: YesNo.Yes,
-        ...codesNAF1,
-        ...(Object.assign(
-          {},
-          ...SectorByNAF[EntrepriseSector.Craftsmanship].map((letter) => {
-            return { [NAF1ToVar(letter)]: YesNo.Yes }
-          })
-        ) as object)
-      },
+      questionnaireData: { sector: Sector.Craftsmanship },
       title: { fr: 'Artisanat' },
       label: { fr: '👩‍🎨 J’ai une activité artisanale' },
       next: {
@@ -36,18 +25,7 @@ export const sectors: Track = {
     },
     {
       value: Sector.Industry,
-      questionnaireData: {
-        secteur: Sector.Industry,
-        ...Sectors,
-        [EntrepriseSector.Industry]: YesNo.Yes,
-        ...codesNAF1,
-        ...(Object.assign(
-          {},
-          ...SectorByNAF[EntrepriseSector.Industry].map((letter) => {
-            return { [NAF1ToVar(letter)]: YesNo.Yes }
-          })
-        ) as object)
-      },
+      questionnaireData: { sector: Sector.Industry },
       title: { fr: 'Industrie' },
       label: { fr: '👩‍🔧 J’ai une activité industrielle, fabrication, production' },
       next: {
@@ -56,18 +34,7 @@ export const sectors: Track = {
     },
     {
       value: Sector.Tourism,
-      questionnaireData: {
-        secteur: Sector.Tourism,
-        ...Sectors,
-        [EntrepriseSector.Tourism]: YesNo.Yes,
-        ...codesNAF1,
-        ...(Object.assign(
-          {},
-          ...SectorByNAF[EntrepriseSector.Tourism].map((letter) => {
-            return { [NAF1ToVar(letter)]: YesNo.Yes }
-          })
-        ) as object)
-      },
+      questionnaireData: { sector: Sector.Tourism },
       title: { fr: 'Tourisme' },
       label: { fr: '🤵‍♂️ J’ai une activité de tourisme, restauration' },
       next: {
@@ -76,18 +43,7 @@ export const sectors: Track = {
     },
     {
       value: Sector.Tertiary,
-      questionnaireData: {
-        secteur: Sector.Tertiary,
-        ...Sectors,
-        [EntrepriseSector.Tertiary]: YesNo.Yes,
-        ...codesNAF1,
-        ...(Object.assign(
-          {},
-          ...SectorByNAF[EntrepriseSector.Tertiary].map((letter) => {
-            return { [NAF1ToVar(letter)]: YesNo.Yes }
-          })
-        ) as object)
-      },
+      questionnaireData: { sector: Sector.Tertiary },
       title: { fr: 'Tertiaire' },
       label: { fr: '🧑‍⚖️ J’ai une activité tertiaire, de services' },
       next: {
@@ -96,18 +52,7 @@ export const sectors: Track = {
     },
     {
       value: Sector.Agriculture,
-      questionnaireData: {
-        secteur: Sector.Agriculture,
-        ...Sectors,
-        [EntrepriseSector.Agriculture]: YesNo.Yes,
-        ...codesNAF1,
-        ...(Object.assign(
-          {},
-          ...SectorByNAF[EntrepriseSector.Agriculture].map((letter) => {
-            return { [NAF1ToVar(letter)]: YesNo.Yes }
-          })
-        ) as object)
-      },
+      questionnaireData: { sector: Sector.Agriculture },
       title: { fr: 'Agriculture' },
       label: { fr: '👩‍🌾 J’ai une activité agricole' },
       next: {
@@ -116,18 +61,7 @@ export const sectors: Track = {
     },
     {
       value: Sector.Other,
-      questionnaireData: {
-        secteur: Sector.Other,
-        ...Sectors,
-        [EntrepriseSector.Other]: YesNo.Yes,
-        ...codesNAF1,
-        ...(Object.assign(
-          {},
-          ...SectorByNAF[EntrepriseSector.Other].map((letter) => {
-            return { [NAF1ToVar(letter)]: YesNo.Yes }
-          })
-        ) as object)
-      },
+      questionnaireData: { sector: Sector.Other },
       title: { fr: 'Autre' },
       label: { fr: "Je suis dans un autre secteur d'activité" },
       next: {

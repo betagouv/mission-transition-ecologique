@@ -34,6 +34,13 @@ export default class ProgramApi extends RequestApi {
   }
 
   get query(): string {
-    return new URLSearchParams(this.questionnaireData).toString()
+    const queryString: { [key: string]: string } = {}
+    Object.entries(this.questionnaireData).forEach(([key, value]: [string, string | string[] | undefined]) => {
+      if (value !== undefined) {
+        queryString[key] = value.toString()
+      }
+    })
+
+    return new URLSearchParams(queryString).toString()
   }
 }

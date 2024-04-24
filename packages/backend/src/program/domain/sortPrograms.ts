@@ -5,14 +5,22 @@ import { QuestionnaireRoute } from '../../../../common/src/questionnaire/types'
 // sorts the programs according to a "sortProfile", which currently
 // only depends on the questionnaireRoute
 export const sortPrograms = (programs: Program[], sortProfile: QuestionnaireRoute): Program[] => {
-  return programs.sort((p1, p2) => comparePrograms(p1, p2, sortProfile))
+  programs.sort((p1, p2) => compareProgramsByType(p1, p2, sortProfile))
+  if (sortProfile == QuestionnaireRoute.SpecificGoal) {
+    programs.sort((p1, p2) => compareProgramsByObjectiveNumber(p1, p2))
+  }
+  return programs
 }
 
-const comparePrograms = (program1: Program, program2: Program, route: QuestionnaireRoute): number => {
-  return Math.sign(getPriority(program1, route) - getPriority(program2, route))
+const compareProgramsByObjectiveNumber = (program1: Program, program2: Program): number => {
+  return Math.sign(objectifsNumber(program1) - objectifsNumber(program2))
 }
 
-const getPriority = (prog: Program, route: QuestionnaireRoute): number => {
+const compareProgramsByType = (program1: Program, program2: Program, route: QuestionnaireRoute): number => {
+  return Math.sign(getTypePriority(program1, route) - getTypePriority(program2, route))
+}
+
+const getTypePriority = (prog: Program, route: QuestionnaireRoute): number => {
   switch (route) {
     case QuestionnaireRoute.NoSpecificGoal:
       switch (true) {
@@ -59,3 +67,14 @@ const isFree = (program: Program) => program["coût de l'accompagnement"]?.toLow
 const isMaybeFree = (program: Program) => program["coût de l'accompagnement"]?.toLowerCase().includes('gratuit')
 
 const isCoachingOrTraining = (program: Program) => hasType(ProgramAidType.acc, program) || hasType(ProgramAidType.train, program)
+
+const objectifsNumber = (program: Program) => {
+  if (
+    program['publicodes']['entreprise . a un objectif ciblé'] &&
+    program['publicodes']['entreprise . a un objectif ciblé']['une de ces conditions']
+  )
+    return program['publicodes']['entreprise . a un objectif ciblé']['une de ces conditions'].length
+  else {
+    return 1000
+  }
+}

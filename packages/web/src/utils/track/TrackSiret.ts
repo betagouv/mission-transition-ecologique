@@ -1,4 +1,4 @@
-import { SiretValue } from '@/questionnaire/trackStructureSiret'
+import { SiretValue } from '@/types'
 import type { Track, TrackOptionItem, TrackOptionsUnion } from '@/types'
 import type EstablishmentType from '@/types/establishmentType'
 import TrackCallback from '@/utils/track/TrackCallback'

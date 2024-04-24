@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "@tsconfig/node20": "^20.1.4",
+    "chart.js": "^4.4.2",
     "dotenv": "^16.4.1",
     "true-myth": "^7.1.0",
     "typescript": "^5.4.3",

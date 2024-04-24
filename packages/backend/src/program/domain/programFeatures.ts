@@ -1,5 +1,4 @@
-import { Program } from '@tee/data/src/type/program'
-import { QuestionnaireData } from './types/questionnaireData'
+import { Program, QuestionnaireData } from './types/types'
 import { CurrentDateService, ProgramRepository, RulesService } from './spi'
 import { filterPrograms } from './filterPrograms'
 import { sortPrograms } from './sortPrograms'
@@ -29,6 +28,7 @@ export default class ProgramFeatures {
     if (!this._currentDateService || !this._rulesService) {
       return Result.err(new Error('currentDateService and rulesService should be defined to filter programs'))
     }
+
     let filteredPrograms = filterPrograms(allPrograms, questionnaireData, this._currentDateService.get(), this._rulesService)
     const route = questionnaireData.questionnaire_route
     if (route) {

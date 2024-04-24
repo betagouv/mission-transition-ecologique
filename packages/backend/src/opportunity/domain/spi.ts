@@ -9,6 +9,7 @@ export type ContactRepository = {
 export type OpportunityRepository = {
   create: (contactId: number, opportunity: OpportunityDetails) => Promise<Result<OpportunityId, Error>>
   update: (dealId: OpportunityId, attributes: OpportunityUpdateAttributes) => Promise<Maybe<Error>>
+  readDates: () => Promise<Result<Date[], Error>>
 }
 
 export type MailerService = {

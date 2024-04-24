@@ -18,7 +18,7 @@
 <script setup lang="ts">
 import { TeeDsfrTag } from '@/components/element/tag/TeeDsfrTags.vue'
 import { useProgramStore } from '@/stores/program'
-import { Objectives, ProgramAidType, type programFiltersType } from '@/types'
+import { PublicodeObjective, ProgramAidType, type programFiltersType } from '@/types'
 import { DsfrSelect, DsfrSelectProps } from '@gouvminint/vue-dsfr'
 
 const programFilters: programFiltersType = useProgramStore().programFilters
@@ -74,42 +74,42 @@ const objectiveTypes = [
   },
   {
     label: '🌱 Stratégie environnementale',
-    value: Objectives.EnvironmentalImpact,
+    value: PublicodeObjective.EnvironmentalImpact,
     color: 'blue'
   },
   {
     label: '⚡️ Énergie',
-    value: Objectives.EnergyPerformance,
+    value: PublicodeObjective.EnergyPerformance,
     class: 'yellow'
   },
   {
     label: '💧 Eau',
-    value: Objectives.WaterConsumption,
+    value: PublicodeObjective.WaterConsumption,
     class: 'blue'
   },
   {
     label: '🏢 Bâtiment',
-    value: Objectives.BuildingRenovation,
+    value: PublicodeObjective.BuildingRenovation,
     class: 'red'
   },
   {
     label: '🚲 Mobilité',
-    value: Objectives.SustainableMobility,
+    value: PublicodeObjective.SustainableMobility,
     class: 'green'
   },
   {
     label: '🗑 Déchets',
-    value: Objectives.WasteManagement,
+    value: PublicodeObjective.WasteManagement,
     class: 'red'
   },
   {
     label: '🏭 Production',
-    value: Objectives.EcoDesign,
+    value: PublicodeObjective.EcoDesign,
     class: 'green'
   },
   {
     label: '🧑‍🎓 RH',
-    value: Objectives.TrainOrRecruit,
+    value: PublicodeObjective.TrainOrRecruit,
     class: 'yellow'
   }
 ]
