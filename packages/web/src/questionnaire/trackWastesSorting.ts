@@ -1,5 +1,5 @@
 import type { Track } from '@/types'
-import { TrackComponent, TrackId, YesNo } from '@/types'
+import { TrackComponent, TrackId, YesNo, WasteSortingStatus } from '@/types'
 
 export const wastesSorting: Track = {
   id: TrackId.WastesSorting,
@@ -27,7 +27,7 @@ export const wastesSorting: Track = {
   options: [
     {
       value: YesNo.Yes,
-      questionnaireData: { wastes_sorting: YesNo.Yes },
+      questionnaireData: { wastes_sorting_objective: WasteSortingStatus.InPlace },
       title: { fr: 'Oui' },
       label: { fr: '✅ Oui, j’ai déjà mis en place un système de tri' },
       next: {
@@ -36,7 +36,7 @@ export const wastesSorting: Track = {
     },
     {
       value: YesNo.No,
-      questionnaireData: { wastes_sorting: 'can do better' },
+      questionnaireData: { wastes_sorting_objective: WasteSortingStatus.CanImprove },
       title: { fr: 'Je peux faire mieux' },
       label: { fr: '🗑 Je peux faire mieux !' },
       next: {
@@ -45,7 +45,7 @@ export const wastesSorting: Track = {
     },
     {
       value: YesNo.Unknown,
-      questionnaireData: { wastes_sorting: YesNo.Unknown },
+      questionnaireData: { wastes_sorting_objective: WasteSortingStatus.Unknown },
       title: { fr: 'Je ne sais pas' },
       label: { fr: 'Je ne sais pas' },
       next: {

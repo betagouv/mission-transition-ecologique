@@ -1,5 +1,5 @@
 import type { Track } from '@/types'
-import { Objectives, TrackComponent, TrackId, YesNo } from '@/types'
+import { TrackComponent, TrackId, YesNo } from '@/types'
 
 export const waterStake: Track = {
   id: TrackId.WaterStake,
@@ -27,7 +27,7 @@ export const waterStake: Track = {
   options: [
     {
       value: YesNo.Yes,
-      questionnaireData: { water_stake: YesNo.Yes, [Objectives.WaterConsumption]: YesNo.Yes },
+      questionnaireData: { water_reduction_objective: YesNo.Yes },
       title: { fr: 'Oui' },
       label: { fr: "👍 Oui, je pense que c'est un enjeu pour mon entreprise" },
       next: {
@@ -36,7 +36,7 @@ export const waterStake: Track = {
     },
     {
       value: YesNo.No,
-      questionnaireData: { water_stake: YesNo.No, [Objectives.WaterConsumption]: YesNo.No },
+      questionnaireData: { water_reduction_objective: YesNo.No },
       title: { fr: 'Non' },
       label: { fr: '👎 Non, pas vraiment' },
       next: {
@@ -45,7 +45,7 @@ export const waterStake: Track = {
     },
     {
       value: YesNo.Unknown,
-      questionnaireData: { water_stake: 'unknown', [Objectives.WaterConsumption]: YesNo.Yes },
+      questionnaireData: { water_reduction_objective: YesNo.Unknown },
       title: { fr: 'Je ne sais pas' },
       label: { fr: 'Aucune idée !' },
       next: {

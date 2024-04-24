@@ -47,7 +47,15 @@ const dummyUpdateOpportunity = (_opportunitiyId: OpportunityId, _opportunitiy: O
   return Promise.resolve(Maybe.nothing<Error>())
 }
 
-const dummyOpportunityRepository: OpportunityRepository = { create: dummyAddOpportunity, update: dummyUpdateOpportunity }
+const dummycountOpportunity = (): Promise<Result<Date[], Error>> => {
+  return Promise.resolve(Result.ok([new Date(2024, 0, 1)]))
+}
+
+const dummyOpportunityRepository: OpportunityRepository = {
+  create: dummyAddOpportunity,
+  update: dummyUpdateOpportunity,
+  readDates: dummycountOpportunity
+}
 
 const makeCreateOpportunityFun = (contactRepository: ContactRepository, opportunityRepository: OpportunityRepository) => {
   return new OpportunityFeatures(contactRepository, opportunityRepository, [], dummyProgramRepository, dummyMailRepository)
@@ -90,7 +98,7 @@ EXPECT createOpportunity to return an error (wrapped in Result) and emailReceipt
     return Promise.resolve(Result.err(new OpportunityError('opportunity error')))
   }
 
-  const errorOpportunityRepository = { create: addOpportunityWithError, update: dummyUpdateOpportunity }
+  const errorOpportunityRepository = { create: addOpportunityWithError, update: dummyUpdateOpportunity, readDates: dummycountOpportunity }
 
   test('createOpportunity escalates contact creation/update error', async () => {
     const createOpportunity = makeCreateOpportunityFun(errorContactRepository, dummyOpportunityRepository)

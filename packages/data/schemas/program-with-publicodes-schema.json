@@ -167,6 +167,18 @@
         "entreprise . est ciblée": {
           "description": "Mécanisme pour évaluer si un dispositif doit être affiché à un utilisateur ou non. Est souvent plus restrictive que les mécanismes d'éligibilité",
           "type": ["object", "string"]
+        },
+        "entreprise . a un objectif ciblé": {
+          "description": "Le nombre d'objectifs prioritaires auquel répond le dispositif.",
+          "type": "object",
+          "properties": {
+            "une de ces conditions": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
         }
       },
       "required": ["entreprise . est ciblée"]

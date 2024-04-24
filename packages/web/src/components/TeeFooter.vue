@@ -240,7 +240,7 @@ const mainLinks = [
   },
   {
     label: 'Statistiques',
-    href: 'https://stats.beta.gouv.fr/index.php?module=CoreHome&action=index&idSite=23&period=day&date=yesterday#?period=day&date=yesterday&category=Dashboard_Dashboard&subcategory=1&idSite=23'
+    to: { name: RouteName.Statistiques }
   },
   {
     label: 'Ajouter une aide',

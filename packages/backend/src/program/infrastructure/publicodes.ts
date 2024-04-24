@@ -1,6 +1,6 @@
 import Engine from 'publicodes'
 import { Result } from 'true-myth'
-import { QuestionnaireData } from '../domain/types/questionnaireData'
+import { QuestionnaireData } from '../domain/types/types'
 import type { Program } from '../domain/types/types'
 import type { PublicodesInputData } from './types'
 import { filterObject } from '../../common/objects'
