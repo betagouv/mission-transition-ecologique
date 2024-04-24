@@ -36,13 +36,9 @@ export default class ProgramApi extends RequestApi {
   get query(): string {
     const queryString: { [key: string]: string } = {}
     Object.entries(this.questionnaireData).forEach(([key, value]: [string, string | string[] | undefined]) => {
-      let stringValue: string
       if (value !== undefined) {
-        stringValue = value.toString()
-      } else {
-        stringValue = ''
+        queryString[key] = value.toString()
       }
-      queryString[key] = stringValue
     })
 
     return new URLSearchParams(queryString).toString()
