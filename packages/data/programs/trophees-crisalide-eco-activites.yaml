@@ -15,15 +15,21 @@ nature de l'aide: accompagnement
 coût de l'accompagnement: Gratuit
 durée de l'accompagnement: Un parcours sur 3 mois
 objectifs:
-- Déposez votre candidature à l'appel à projets en complétant un formulaire en ligne.
-- Intégrez le parcours Crisalide et bénéficiez d'un accompagnement pour accélérer
-  votre projet éco-innovant.
-- Challengez votre projet au travers d'ateliers et d'une session de pitch devant  un
-  jury d'experts.
-- Accédez à un réseau de compétences et de savoir-faire (mise en relation qualifiées
-  et adaptées à votre projet - financements, partenariats,...)
-- 'Valorisez votre projet et donnez lui de la visibilité : book des solutions, site
-  internet, réseaux sociaux,etc.'
+- description: Déposez votre candidature à l'appel à projets en complétant un formulaire
+    en ligne.
+  liens:
+  - lien: https://www.crisalide-ecoactivites.fr/
+    texte: Candidater
+- description: Intégrez le parcours Crisalide et bénéficiez d'un accompagnement pour
+    accélérer votre projet éco-innovant.
+- description: Challengez votre projet au travers d'ateliers et d'une session de pitch
+    devant  un jury d'experts.
+- description: Accédez à un réseau de compétences et de savoir-faire (mise en relation
+    qualifiées et adaptées à votre projet - financements, partenariats,...)
+- description: 'Valorisez votre projet et donnez lui de la visibilité : book des solutions,
+    site internet, réseaux sociaux,etc.'
+- description: Concourez pour remporter le Trophée Crisalide Eco-activités et bénéficiez
+    de la promotion liée à la médiatisation du concours.
 conditions d'éligibilité:
   taille de l'entreprise:
   - Toutes tailles

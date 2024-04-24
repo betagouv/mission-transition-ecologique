@@ -1,10 +1,11 @@
-titre: ACT Pas à Pas
+titre: Programme Volontaire Français ACT
 promesse: Développez votre stratégie bas carbone et mettez en œuvre votre plan de
   transition
-description: Élaborez un modèle économique compatible avec une trajectoire bas carbone
-  grâce à la méthode ACT Pas à Pas (Assessing Low Carbon Transition). Cette démarche
-  est une méthode structurante, progressive et sur le long terme pour aider les entreprises
-  à réduire significativement leurs émissions de gaz à effet de serre.
+description: "L’ADEME soutient financièrement les entreprises volontaires dans la\
+  \ mise en œuvre d'un modèle économique compatible avec une trajectoire bas carbone.\
+  \ \nVous serez accompagné avec la méthode ACT Pas à Pas (Assessing Low Carbon Transition),\
+  \ une méthode structurante, progressive et sur le long terme qui aide les entreprises\
+  \ à réduire significativement leurs émissions de gaz à effet de serre."
 description longue: "L'étude ACT Pas à Pas se déroule en 12 à 18 mois selon les entreprises.\
   \ Les grandes étapes de l'étude sont les suivantes :  \n\n• Analyser la maturité\
   \ initiale de l'entreprise sur des bases carbone.\n\n• Exposer les enjeux et  réaliser\
@@ -21,15 +22,18 @@ nature de l'aide: financement
 montant du financement: Jusqu'à 80% du coût de l'étude, dans un maximum de 15 000
   €
 objectifs:
-- Choisissez le prestataire qui va vous accompagner pour mener l'étude méthodologie
-  ACT.
-- 'Déposez votre demande d''aide : informations administratives, description du projet,
-  détails techniques et financiers, etc. A ce stade, votre projet ne doit pas avoir
-  commencé !'
-- L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat
-  de financement précisant le montant d’aide maximum, les conditions et les modalités
-  de versement.
-- Réalisez votre étude ACT Pas à Pas.
+- description: Choisissez le prestataire qui va vous accompagner pour mener l'étude
+    méthodologie ACT.
+  liens:
+  - lien: https://actinitiative.org/fr/find-an-advisor/
+    texte: Prestataires "ACT Pas à pas"
+- description: 'Déposez votre demande d''aide : informations administratives, description
+    du projet, détails techniques et financiers, etc. A ce stade, votre projet ne
+    doit pas avoir commencé !'
+- description: L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
+    recevez un contrat de financement précisant le montant d’aide maximum, les conditions
+    et les modalités de versement.
+- description: Réalisez votre étude ACT Pas à Pas.
 conditions d'éligibilité:
   taille de l'entreprise:
   - Toutes tailles

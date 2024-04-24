@@ -14,14 +14,16 @@ nature de l'aide: accompagnement
 coût de l'accompagnement: Gratuit
 durée de l'accompagnement: 3 jours
 objectifs:
-- Analyser les évènements climatiques passés ayant déjà affecté votre secteur, et
-  les tendances futures sur la base des projections climatiques.
-- Identifier les impacts directs sur vos activités ainsi que des impacts indirects
-  (financiers et sociaux) et leurs évolutions à court, moyen et long terme.
-- 'Mettre en évidence les menaces posées par le changement climatique et les
+- description: Analyser les évènements climatiques passés ayant déjà affecté votre
+    secteur, et les tendances futures sur la base des projections climatiques.
+- description: Identifier les impacts directs sur vos activités ainsi que des impacts
+    indirects (financiers et sociaux) et leurs évolutions à court, moyen et long terme.
+- description: 'Mettre en évidence les menaces posées par le changement climatique
+    et les
 
-  opportunités potentiellement pour vos activités, produits et services.'
-- Disposer d’un plan d’adaptation pour les risques climatiques au sein de votre entreprise.
+    opportunités potentiellement pour vos activités, produits et services.'
+- description: Disposer d’un plan d’adaptation pour les risques climatiques au sein
+    de votre entreprise.
 conditions d'éligibilité:
   taille de l'entreprise:
   - PME

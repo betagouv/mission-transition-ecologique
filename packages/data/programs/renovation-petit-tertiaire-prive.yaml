@@ -15,13 +15,15 @@ nature de l'aide: accompagnement
 coût de l'accompagnement: Gratuit
 durée de l'accompagnement: 2h
 objectifs:
-- Réalisez un premier rendez-vous par téléphone pour échanger sur votre projet de
-  rénovation énergétique.
-- 'Benéficiez d''un rendez-vous dans vos locaux pour aborder votre projet dans son
-  ensemble : vos besoins et attentes, les travaux d’amélioration du bâtiment et des
-  systèmes envisagés, ainsi que les éventuelles contraintes à prendre en compte.'
-- A l’issu de ce rendez-vous, obtenez un compte-rendu détaillé vous permettant d’évaluer
-  les travaux à envisager ainsi que les aides financières mobilisables.
+- description: Réalisez un premier rendez-vous par téléphone avec un expert en transition
+    énergétique référencé par l'ADEME pour échanger sur votre projet de rénovation
+    de vos locaux.
+- description: 'Benéficiez d''un rendez-vous de l''expert en transition énergétique
+    dans vos locaux pour aborder votre projet dans son ensemble : vos besoins et attentes,
+    les travaux d’amélioration du bâtiment et des systèmes envisagés, ainsi que les
+    éventuelles contraintes à prendre en compte.'
+- description: A l’issu de ce rendez-vous, obtenez un compte-rendu détaillé vous permettant
+    d’évaluer les travaux à envisager ainsi que les aides financières mobilisables.
 conditions d'éligibilité:
   taille de l'entreprise:
   - TPE et PME

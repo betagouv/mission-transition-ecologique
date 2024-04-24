@@ -17,14 +17,15 @@ nature de l'aide: accompagnement
 coût de l'accompagnement: Gratuit
 durée de l'accompagnement: Selon l'entreprise
 objectifs:
-- Établir un diagnostic personnalisé des consommations et usages dans votre entreprise.
-- Identifier les potentiels d'économie d'eau et de réutilisation des eaux usées traitées
-  (REUSE/REUT).
-- Bénéficier d'un plan d'action dédié à votre entreprise.
-- Être conseillé dans la recherche de solutions et de financements pour vos projets
-  d'investissement.
-- Mettre en place les préconisations et réduisez vos consommations d'eau d'au moins
-  10%.
+- description: Bénéficiez d'un diagnostic personnalisé des consommations et usages
+    dans votre entreprise, réalisé par un expert de la CCI.
+- description: Identifiez les potentiels d'économie d'eau et de réutilisation des
+    eaux usées traitées (REUSE/REUT).
+- description: Bénéficiez d'un plan d'action dédié à votre entreprise.
+- description: Profitez d'un appui dans la recherche de solutions et de financements
+    pour vos projets d'investissement.
+- description: Mettez en place les préconisations et réduisez vos consommations d'eau
+    d'au moins 10%.
 conditions d'éligibilité:
   taille de l'entreprise:
   - Toutes tailles
