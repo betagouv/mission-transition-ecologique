@@ -11,15 +11,16 @@ nature de l'aide: accompagnement
 coût de l'accompagnement: Gratuit
 durée de l'accompagnement: 1 journée
 objectifs:
-- Faites le point sur votre consommation énergétique avec un expert lors d'une visite
-  sur site.
-- Identifiez les postes d’énergie les plus consommateurs et découvrez les bonnes pratiques
-  pour optimiser vos coûts.
-- Définissez des solutions concrètes à travers un plan d’action détaillé sur du court,
-  moyen ou long terme, avec un retour sur investissement rapide et significatif.
-- Optimisez le type de contrat souscrit avec vos fournisseurs d’énergie et votre parc
-  d’éclairage.
-- Bénéficiez d'un suivi de votre plan d'action.
+- description: Faites le point sur votre consommation énergétique avec un expert de
+    la Chambre des Métiers de l'Artisanat lors d'une visite sur site.
+- description: Identifiez les postes d’énergie les plus consommateurs et découvrez
+    les bonnes pratiques pour optimiser vos coûts.
+- description: Définissez des solutions concrètes à travers un plan d’action détaillé
+    sur du court, moyen ou long terme, avec un retour sur investissement rapide et
+    significatif.
+- description: Optimisez le type de contrat souscrit avec vos fournisseurs d’énergie
+    et votre parc d’éclairage.
+- description: Bénéficiez d'un suivi de votre plan d'action.
 conditions d'éligibilité:
   taille de l'entreprise:
   - TPE et PME

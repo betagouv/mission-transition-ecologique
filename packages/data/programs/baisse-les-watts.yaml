@@ -26,15 +26,20 @@ nature de l'aide: accompagnement
 coût de l'accompagnement: Gratuit
 durée de l'accompagnement: 2 jours
 objectifs:
-- Créez votre compte entreprise sur le site de Baisse les Watts.
-- Visualisez votre consommation d'énergie par équipement en ouvrant un "Carnet de
-  bord Energie".
-- Identifiez des écogestes spécifiques à votre activité afin de baisser votre facture
-  énergétique.
-- Bénéficiez d'un accompagnement personnalisé avec le suivi d’un conseiller.
-- Inscrivez-vous à des formations dispensées par les CCI ou CMA sous forme d'ateliers
-  collectifs, complétées par un suivi individuel dans vos locaux avec un conseiller
-  énergie.
+- description: Créez votre compte entreprise sur le site de Baisse les Watts.
+  liens:
+  - lien: https://www.baisseleswatts.fr/?mtm_campaign=missiontransitionecologique&mtm_source=missiontransitionecologique&mtm_medium=missiontransitionecologique&mtm_content=missiontransitionecologique
+    texte: Créer un compte
+- description: Visualisez votre consommation d'énergie par équipement en ouvrant un
+    "Carnet de bord Energie".
+- description: Identifiez des écogestes spécifiques à votre activité afin de baisser
+    votre facture énergétique.
+- description: Bénéficiez d'un accompagnement personnalisé avec le suivi d’un conseiller.
+- description: Inscrivez-vous à des formations dispensées par les CCI ou CMA sous
+    forme d'ateliers collectifs, complétées par un suivi individuel dans vos locaux
+    avec un conseiller énergie.
+- description: Suivez à votre rythme un parcours de formation en ligne personnalisé
+    selon votre secteur d’activité.
 conditions d'éligibilité:
   taille de l'entreprise:
   - TPE et PME

@@ -11,10 +11,10 @@ url: https://les-aides.fr/aide/QScvGSwMDA4vGRUgJA/ddfip/deduction-exceptionnelle
 nature de l'aide: avantage fiscal
 montant de l'avantage fiscal: 20% à 60% du coût du véhicule
 objectifs:
-- Vérifiez l'éligibilité du véhicule lourd que vous souhaitez acquérir.
-- Déduisez l'aide de vos résultats imposables.
-- Bénéficiez d'une déduction exceptionnelle sur votre résultat imposable, de 20% à
-  60% de la valeur du véhicule.
+- description: Vérifiez l'éligibilité du véhicule lourd que vous souhaitez acquérir.
+- description: Déduisez l'aide de vos résultats imposables.
+- description: Bénéficiez d'une déduction exceptionnelle sur votre résultat imposable,
+    de 20% à 60% de la valeur du véhicule.
 conditions d'éligibilité:
   taille de l'entreprise:
   - Toutes tailles

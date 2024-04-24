@@ -13,11 +13,12 @@ coût de l'accompagnement: Gratuit sauf en Hauts-de-France et en Pays de la Loir
   € HT)
 durée de l'accompagnement: Selon le projet
 objectifs:
-- Identifier les flux à partager, mutualiser et valoriser auprès des entreprises locales.
-- Détecter des entreprises cibles, les possibilités de mutualisation et les gains
-  en terme de coûts de production et de fonctionnement.
-- Solliciter et mobiliser les acteurs ressources les plus adaptés.
-- Mettre en œuvre un contrat d’alliance et de synergies inter-entreprises.
+- description: Identifier les flux à partager, mutualiser et valoriser auprès des
+    entreprises locales.
+- description: Détecter des entreprises cibles, les possibilités de mutualisation
+    et les gains en terme de coûts de production et de fonctionnement.
+- description: Solliciter et mobiliser les acteurs ressources les plus adaptés.
+- description: Mettre en œuvre un contrat d’alliance et de synergies inter-entreprises.
 conditions d'éligibilité:
   taille de l'entreprise:
   - PME

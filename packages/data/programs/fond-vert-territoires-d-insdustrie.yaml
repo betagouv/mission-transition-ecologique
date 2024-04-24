@@ -37,16 +37,19 @@ url: https://www.demarches-simplifiees.fr/commencer/fonds-vert-3-territoires-ind
 nature de l'aide: financement
 montant du financement: Variable selon le projet
 objectifs:
-- Vérifiez votre éligibilité géographique. Cette aide s'adresse aux entreprises situées
-  dans le périmètre d’un "Territoire d’industrie".
-- Confirmez l'éligibilité de votre projet en prenant contact avec l'ADEME.
-- 'Déposez votre demande d''aide : informations administratives, description du projet,
-  détails techniques et financiers, étude de faisabilité, etc. A ce stade, votre investissement
-  ne doit pas avoir été realisé !'
-- L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat
-  de financement précisant le montant d’aide maximum, les conditions et les modalités
-  de versement.
-- Réalisez vos investissements.
+- description: Vérifiez votre éligibilité géographique. Cette aide s'adresse aux entreprises
+    situées dans le périmètre d’un "Territoire d’industrie".
+  liens:
+  - lien: https://agence-cohesion-territoires.gouv.fr/sites/default/files/inline-images/perimetre_des_territoires_dindustrie_2023-2027_high_0.png
+    texte: Territoires d'industrie 2023-2027
+- description: Confirmez l'éligibilité de votre projet en prenant contact avec l'ADEME.
+- description: 'Déposez votre demande d''aide : informations administratives, description
+    du projet, détails techniques et financiers, étude de faisabilité, etc. A ce stade,
+    votre investissement ne doit pas avoir été realisé !'
+- description: L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
+    recevez un contrat de financement précisant le montant d’aide maximum, les conditions
+    et les modalités de versement.
+- description: Réalisez vos investissements.
 conditions d'éligibilité:
   taille de l'entreprise:
   - Toutes tailles

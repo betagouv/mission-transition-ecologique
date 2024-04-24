@@ -1,7 +1,7 @@
 import { Opportunity, OpportunityId } from '../domain/types'
 import OpportuntiyFeatures from '../domain/opportunityFeatures'
 import { Result } from 'true-myth'
-import { addBrevoDeal, updateBrevoDeal } from '../infrastructure/api/brevo/brevoDeal'
+import { brevoRepository } from '../infrastructure/api/brevo/brevoDeal'
 import { addBrevoContact } from '../infrastructure/api/brevo/brevoContact'
 import { OperatorRepository } from '../../operator/domain/spi'
 import { BpiFrance } from '../../operator/infrastructure/api/bpi/bpiFrance'
@@ -37,7 +37,7 @@ export default class OpportunityService {
   }
 
   private _getOpportunityRepository(): OpportunityRepository {
-    return { create: addBrevoDeal, update: updateBrevoDeal }
+    return brevoRepository
   }
 
   private _getOperatorRepositories(): OperatorRepository[] {

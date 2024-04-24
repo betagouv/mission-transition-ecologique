@@ -4,8 +4,8 @@ description: Vous souhaitez investir dans des engins mobiles non routiers foncti
   aux énergies alternatives (gaz naturel, énergie électrique, hydrogène, hybride...)
   ? Bénéficiez d'une déduction fiscale pour votre achat.
 description longue: "La déduction s’applique :\n• aux entreprises du bâtiment et de\
-  \ travaux publics,\n•  aux entreprises produisant des substances minérales solides,\n\
-  •  aux exploitants aéroportuaires,\n•  aux exploitants de remontées mécaniques et\
+  \ travaux publics,\n• aux entreprises produisant des substances minérales solides,\n\
+  • aux exploitants aéroportuaires,\n• aux exploitants de remontées mécaniques et\
   \ de domaines skiables.\n\nSont éligibles :\n•  Les engins \"non routiers\", c'est-à-dire\
   \ n'ayant pas reçu d'autorisation pour circuler sur la voie publique et n'étant\
   \ pas immatriculés.\n•  Les engins non routiers inscrits à l'actif immobilisé et\
@@ -22,10 +22,10 @@ url: https://les-aides.fr/aide/VxMvGSwMDA4vGRUgJA/ddfip/suramortissement-des-inv
 nature de l'aide: avantage fiscal
 montant de l'avantage fiscal: 40% à 60% du prix de l'engin
 objectifs:
-- Vérifiez l'éligibilité de l'engin que vous souhaitez acquérir.
-- Déduisez l'aide de vos résultats imposables.
-- Bénéficiez d'une déduction exceptionnelle sur votre résultat imposable, de 40% à
-  60% du prix de revient de votre engin.
+- description: Vérifiez l'éligibilité de l'engin que vous souhaitez acquérir.
+- description: Déduisez l'aide de vos résultats imposables.
+- description: Bénéficiez d'une déduction exceptionnelle sur votre résultat imposable,
+    de 40% à 60% du prix de revient de votre engin.
 conditions d'éligibilité:
   taille de l'entreprise:
   - Toutes tailles

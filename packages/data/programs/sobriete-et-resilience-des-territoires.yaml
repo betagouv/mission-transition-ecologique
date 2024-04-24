@@ -23,14 +23,14 @@ url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023041
 nature de l'aide: financement
 montant du financement: Selon projet
 objectifs:
-- 'Rejoignez la communauté de l’Appel à Communs : créez un compte, renseignez votre
-  fiche entreprise, signez la charte, etc.'
-- Découvrez les challenges déjà identifiés et rejoignez, si vous le souhaitez ,une
-  idée de commun existante.
-- Si votre idée de commun est nouvelle, proposez un projet de commun en le décrivant
-  via le formulaire "créer un commun"
-- Si votre projet est séléctionné, déposez-le sur le site de l'ADEME pour faire une
-  demande de financement.
+- description: 'Rejoignez la communauté de l’Appel à Communs : créez un compte, renseignez
+    votre fiche entreprise, signez la charte, etc.'
+- description: Découvrez les challenges déjà identifiés et rejoignez, si vous le souhaitez
+    ,une idée de commun existante.
+- description: Si votre idée de commun est nouvelle, proposez un projet de commun
+    en le décrivant via le formulaire "créer un commun"
+- description: Si votre projet est séléctionné, déposez-le sur le site de l'ADEME
+    pour faire une demande de financement.
 conditions d'éligibilité:
   taille de l'entreprise:
   - Toutes tailles

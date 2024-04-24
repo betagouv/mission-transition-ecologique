@@ -1,7 +1,17 @@
 // FOR AID PROGRAMS
 
-import { Entreprise, Objectives, PublicodesCondition } from '../index'
+import { PublicodesKeys, PublicodeObjective, PublicodesCondition } from '../index'
 import type { ProgramAidType } from '@tee/common/src/program/types'
+
+interface ProgramObjectiveLink {
+  lien: string
+  texte: string
+}
+
+interface ProgramObjective {
+  description: string
+  liens: ProgramObjectiveLink[]
+}
 
 export interface ProgramData {
   id: string
@@ -12,7 +22,7 @@ export interface ProgramData {
   'début de validité'?: string
   'fin de validité'?: string
   illustration: string
-  objectifs: string[]
+  objectifs: ProgramObjective[]
   'opérateur de contact': string
   'autres opérateurs'?: string[]
   "nature de l'aide": ProgramAidType
@@ -37,13 +47,13 @@ export interface ProgramData {
 }
 
 export type PublicodesProgramData = {
-  [Entreprise.isTargeted]:
+  [PublicodesKeys.isTargeted]:
     | {
         [k: string]: unknown
       }
     | string
   [key: string]: unknown
-  [Entreprise.hasObjective]?: {
-    [PublicodesCondition.oneOfThese]: Objectives[]
+  [PublicodesKeys.hasObjective]?: {
+    [PublicodesCondition.oneOfThese]: PublicodeObjective[]
   }
 }

@@ -1,4 +1,4 @@
-titre: Rénovation énergétique
+titre: Crédit d'Impôt Rénovation Énergétique (CIRE)
 promesse: Bénéficiez d'un crédit d’impôt pour la rénovation énergétique de vos bâtiments
 description: Vous bénéficiez d’un crédit d’impôt pour la rénovation énergétique (travaux
   d’isolation, chauffe-eau solaire, pompe à chaleur, ventilation mécanique…) de vos
@@ -26,11 +26,15 @@ url: https://entreprendre.service-public.fr/vosdroits/F35585
 nature de l'aide: avantage fiscal
 montant de l'avantage fiscal: 30% des dépenses, dans la limite de 25 000 €
 objectifs:
-- Vérifiez l'égibilité de vos dépenses de rénovation.
-- Faites réaliser vos travaux de rénovation par un professionnel.
-- Déclarez le crédit d'impôt au moment de la déclaration de vos résultats ou de vos
-  revenus.
-- Recevez une aide en crédit d'impôt à hauteur de 30% des dépenses de rénovation engagées.
+- description: Vérifiez l'égibilité de vos dépenses de rénovation.
+  liens:
+  - lien: https://entreprendre.service-public.fr/vosdroits/F35585
+    texte: Pour quels types de dépenses ?
+- description: Faites réaliser vos travaux de rénovation par un professionnel.
+- description: Déclarez le crédit d'impôt au moment de la déclaration de vos résultats
+    ou de vos revenus.
+- description: Recevez une aide en crédit d'impôt à hauteur de 30% des dépenses de
+    rénovation engagées.
 conditions d'éligibilité:
   taille de l'entreprise:
   - TPE et PME

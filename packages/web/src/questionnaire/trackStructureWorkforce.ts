@@ -1,5 +1,5 @@
 import type { NextTrackRuleSet, Track } from '@/types'
-import { ConditionOperators, DataMappingFrom, TrackComponent, TrackId, Entreprise } from '@/types'
+import { ConditionOperators, DataMappingFrom, TrackComponent, TrackId, StructureSize } from '@/types'
 import { QuestionnaireRoute } from '@tee/common/src/questionnaire/types'
 
 const nextTrackRuleSets: NextTrackRuleSet[] = [
@@ -25,11 +25,11 @@ const nextTrackRuleSets: NextTrackRuleSet[] = [
     rules: [
       {
         from: DataMappingFrom.UsedTracks,
-        id: 'codeNaf',
-        dataField: 'codeNaf',
+        id: 'codeNAF',
+        dataField: 'codeNAF',
         conditions: [
           {
-            type: 'codeNaf',
+            type: 'codeNAF',
             operator: ConditionOperators.exists
           }
         ]
@@ -54,11 +54,11 @@ const nextTrackRuleSets: NextTrackRuleSet[] = [
     rules: [
       {
         from: DataMappingFrom.UsedTracks,
-        id: 'codeNaf',
-        dataField: 'codeNaf',
+        id: 'codeNAF',
+        dataField: 'codeNAF',
         conditions: [
           {
-            type: 'codeNaf',
+            type: 'codeNAF',
             operator: ConditionOperators.exists
           }
         ]
@@ -103,9 +103,8 @@ export const workforce: Track = {
   },
   options: [
     {
-      disabled: false,
-      value: Workforce.TPE,
-      questionnaireData: { [Entreprise.Workforce]: 1, structure_sizes: ['Entreprise Individuelle'] },
+      value: 'TODO',
+      questionnaireData: { structure_size: ['Entreprise Individuelle'] },
       title: { fr: 'Entreprise individuelle' },
       label: { fr: '‍️🧍Je suis un entrepreneur individuel' },
       next: {
@@ -114,9 +113,8 @@ export const workforce: Track = {
       }
     },
     {
-      disabled: false,
-      value: Workforce.TPE,
-      questionnaireData: { [Entreprise.Workforce]: 19, structure_sizes: [Workforce.TPE] },
+      value: StructureSize.TPE,
+      questionnaireData: { structure_size: StructureSize.TPE },
       title: { fr: 'Moins de 20 employés' },
       label: { fr: '‍️👫 Moins de 20 employés' },
       next: {
@@ -125,8 +123,8 @@ export const workforce: Track = {
       }
     },
     {
-      value: Workforce.PE,
-      questionnaireData: { [Entreprise.Workforce]: 49, structure_sizes: [Workforce.PME] },
+      value: StructureSize.PE,
+      questionnaireData: { structure_size: StructureSize.PE },
       title: { fr: 'Entre 20 et 49 employés' },
       label: { fr: '‍️👫👫 Entre 20 et 49 employés' },
       next: {
@@ -135,8 +133,8 @@ export const workforce: Track = {
       }
     },
     {
-      value: Workforce.ME,
-      questionnaireData: { [Entreprise.Workforce]: 249, structure_sizes: [Workforce.PME] },
+      value: StructureSize.ME,
+      questionnaireData: { structure_size: StructureSize.ME },
       title: { fr: 'Entre 50 et 250 employés' },
       label: { fr: '‍️👫👭👫 Entre 50 et 250 employés' },
       next: {
@@ -145,8 +143,8 @@ export const workforce: Track = {
       }
     },
     {
-      value: Workforce.ETI_GE,
-      questionnaireData: { [Entreprise.Workforce]: 251, structure_sizes: [Workforce.ETI, Workforce.GE] },
+      value: StructureSize.ETI_GE,
+      questionnaireData: { structure_size: StructureSize.ETI_GE },
       title: { fr: '+250 employés' },
       label: { fr: '👫👭👫👫 Plus de 250 employés' },
       next: {

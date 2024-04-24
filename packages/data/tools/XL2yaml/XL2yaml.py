@@ -6,6 +6,8 @@ import re
 import sys
 from pathlib import Path
 from typing import Any, Optional
+import validators
+import requests
 
 import pylightxl
 import yaml
@@ -41,6 +43,12 @@ def remove_namespace(s):
 
 def assembleProgramYAML(rawData, colNumbersByName, id):
     def get(name):
+        value = rawData[colNumbersByName[name]]
+        return curate(value)
+
+    def get_maybe(name):
+        if name not in colNumbersByName:
+            return False
         value = rawData[colNumbersByName[name]]
         return curate(value)
 
@@ -97,10 +105,8 @@ def assembleProgramYAML(rawData, colNumbersByName, id):
     if nat == "avantage fiscal":
         set("montant de l'avantage fiscal", get("💰 Montant de l'aide"))
 
-    objectifs = makeObj(
-        [get(f"🎯 {i} étape") for i in ["1er", "2ème", "3ème", "4ème", "5ème"]]
-    )
-    set("objectifs", objectifs)
+    objectives = createYamlObjectives(get_maybe)
+    set("objectifs", objectives)
 
     pc = {}
     cible = []  # Accumulateur des règles qui font parti du ciblage.
@@ -189,9 +195,58 @@ def assembleProgramYAML(rawData, colNumbersByName, id):
 
     publicodes_obj |= pc
 
-    set("publicodes", publicodes_obj, overwrite=True)
+    set("publicodes", publicodes_obj, overwrite=False)
 
     return convertToYaml(prog)
+
+
+def isValidLink(link, i, j):
+    if link == "":
+        return False
+
+    if not validators.url(link):
+        print(f"lien {i}{j} non valide")
+        return False
+
+    try:
+        response = requests.head(link)
+        if response.status_code == 200:
+            return True
+        else:
+            print(f"Warning: lien {i}{j}, status code :", response.status_code)
+        return True
+    except requests.exceptions.RequestException:
+        print(
+            f"Lien {i}{j}, erreur durant la requète, Lien non ajouté",
+            requests.exceptions.RequestException,
+        )
+        return False
+
+
+def createYamlObjectives(get):
+    objectiveList = []
+    possibleObjective = ["1er", "2ème", "3ème", "4ème", "5ème", "6ème"]
+    i = 0
+    while i < 6 and get(f"🎯 {possibleObjective[i]} étape"):
+        if get(f"🎯 {possibleObjective[i]} étape") == "-":
+            i += 1
+            continue
+        currentObjective = {}
+        currentObjective["description"] = get(f"🎯 {possibleObjective[i]} étape")
+        linkList = []
+        j = 1
+        while get(f"étape {i+1}/ lien{j}"):
+            link = get(f"étape {i+1}/ lien{j}")
+            text = get(f"étape {i+1}/ nom du lien{j}")
+            j += 1
+            if not link or not text or not isValidLink(link, i, j):
+                continue
+            linkList.append({"lien": link, "texte": text})
+        if linkList:
+            currentObjective["liens"] = linkList
+        objectiveList.append(currentObjective)
+        i += 1
+    return objectiveList
 
 
 def remove_special_chars(text: str) -> str:

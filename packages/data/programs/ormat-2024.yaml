@@ -29,16 +29,21 @@ url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024011
 nature de l'aide: financement
 montant du financement: Jusqu'à 100 000 € HT pour une étude
 objectifs:
-- Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME.
-- Choisissez le prestataire qui va vous accompagner pour mener l'étude (si vous sollicitez
-  une aide aux diagnostics, études de faisabilité et essais / expérimentation).
-- 'Déposez votre demande d''aide : informations administratives, description du projet,
-  détails techniques et financiers, etc. A ce stade, votre projet ne doit pas avoir
-  commencé !'
-- L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat
-  de financement précisant le montant d’aide maximum, les conditions et les modalités
-  de versement.
-- Réalisez votre étude ou votre investissement.
+- description: Vérifiez l’éligibilité de votre projet en parcourant la documentation
+    de l’ADEME.
+  liens:
+  - lien: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Fonds%20%C3%89conomie%20Circulaire%20ORMAT%20-%20Cahier%20des%20charges%20-%202024.pdf
+    texte: Conditions éligibilité et financement
+- description: Choisissez le prestataire qui va vous accompagner pour mener l'étude
+    (si vous sollicitez une aide aux diagnostics, études de faisabilité et essais
+    / expérimentation).
+- description: 'Déposez votre demande d''aide : informations administratives, description
+    du projet, détails techniques et financiers, etc. A ce stade, votre projet ne
+    doit pas avoir commencé !'
+- description: L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
+    recevez un contrat de financement précisant le montant d’aide maximum, les conditions
+    et les modalités de versement.
+- description: Réalisez votre étude ou votre investissement.
 conditions d'éligibilité:
   taille de l'entreprise:
   - Toutes tailles

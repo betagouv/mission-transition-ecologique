@@ -1,9 +1,9 @@
-import { QuestionnaireRoute } from '@tee/common/src/questionnaire/types'
+import { PublicodesKeys, QuestionnaireRoute } from '@tee/common/src/questionnaire/types'
 import { Entry, setObjectProperty } from '../../src/common/objects'
-import { QuestionnaireData } from '../../src/program/domain/types/questionnaireData'
 
-import { Program } from '../../src/program/domain/types/types'
-import { PublicodesKeys, PublicodesQuestionnaireRoute } from '../../src/program/infrastructure/types'
+import { type Program } from '@tee/data/src/type/program'
+import { QuestionnaireData, QuestionnaireDataEnum } from '../../src/program/domain/types/types'
+import { PublicodesQuestionnaireRoute } from '../../src/program/infrastructure/types'
 import { makeProgramHelper, mockCurrentDateService, makeProgramsRepository } from './testing'
 import { FILTERING_RULE_NAME } from '../../src/program/domain/filterPrograms'
 import { expectToBeOk } from '../testing'
@@ -62,7 +62,11 @@ const testHelperPreprocessing = (testCase: PreprocessingTestCase) => {
       [FILTERING_RULE_NAME]: fileringRule
     })
 
-    const questionnaireData: QuestionnaireData = {}
+    const questionnaireData: QuestionnaireData = {
+      questionnaire_route: QuestionnaireRoute.NoSpecificGoal,
+      region: 'Corse',
+      codeNAF1: 'J'
+    }
     let testCurrentDateService = mockCurrentDateService // by default
 
     // Set input data depending on data source
@@ -110,7 +114,7 @@ describe(`
   const testCodeNaf = (inputCodeNaf: string | undefined, keptCodeNaf: string, expectedKeep: boolean) => {
     testHelperPreprocessing({
       title: 'questionnaire "codeNAF" mapped to literal "entreprise . code NAF"',
-      inputDataEntry: ['codeNaf', inputCodeNaf],
+      inputDataEntry: ['codeNAF', inputCodeNaf],
       inputDataSource: DataSources.Questionnaire,
       publicodesKey: 'entreprise . code NAF',
       filteringRule: `entreprise . code NAF = "${keptCodeNaf}"`,
@@ -268,14 +272,14 @@ describe(`
   WHEN evaluating the rule
 EXPECT recovers the data properly`, () => {
   const testQuestionnaireRoute = (
-    questionnaireRoute: QuestionnaireRoute | undefined,
+    questionnaireRoute: QuestionnaireRoute,
     keptQuestionnaireRoute: PublicodesQuestionnaireRoute,
     expectedKeep: boolean
   ) => {
     const rule = `${PublicodesKeys.QuestionnaireRoute} = ${keptQuestionnaireRoute}`
     testHelperPreprocessing({
       title: `questionnaireRoute (input: "${questionnaireRoute}", keep if converted to "${keptQuestionnaireRoute}")`,
-      inputDataEntry: ['questionnaire_route', questionnaireRoute],
+      inputDataEntry: [QuestionnaireDataEnum.questionnaire_route, questionnaireRoute],
       inputDataSource: DataSources.Questionnaire,
       publicodesKey: PublicodesKeys.QuestionnaireRoute,
       filteringRule: rule,
@@ -286,6 +290,4 @@ EXPECT recovers the data properly`, () => {
   testQuestionnaireRoute(QuestionnaireRoute.SpecificGoal, PublicodesQuestionnaireRoute.SpecificGoal, true)
   testQuestionnaireRoute(QuestionnaireRoute.NoSpecificGoal, PublicodesQuestionnaireRoute.NoSpecificGoal, true)
   testQuestionnaireRoute(QuestionnaireRoute.SpecificGoal, PublicodesQuestionnaireRoute.NoSpecificGoal, false)
-  testQuestionnaireRoute(undefined, PublicodesQuestionnaireRoute.NoSpecificGoal, true)
-  testQuestionnaireRoute(undefined, PublicodesQuestionnaireRoute.SpecificGoal, true)
 })

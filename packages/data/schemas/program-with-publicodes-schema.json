@@ -39,10 +39,32 @@
       "type": "string"
     },
     "objectifs": {
-      "description": "TODO",
+      "description": "Objectifs intermédiaires à réaliser pour mettre en place le dispositif",
       "type": "array",
       "items": {
-        "type": "string"
+        "type": "object",
+        "properties": {
+          "description": {
+            "description": "Explication de l'objectif intermédiaire à réaliser",
+            "type": "string"
+          },
+          "liens": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "lien": {
+                  "description": "TODO",
+                  "type": "string"
+                },
+                "texte": {
+                  "description": "TODO",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
       }
     },
     "opérateur de contact": {
@@ -131,9 +153,9 @@
         "autres critères d'éligibilité": {
           "type": "array",
           "items": {
-             "type": "string"
-            },
-           "minItems": 1
+            "type": "string"
+          },
+          "minItems": 1
         }
       },
       "required": ["taille de l'entreprise", "secteur géographique", "secteur d'activité", "nombre d'années d'activité"]

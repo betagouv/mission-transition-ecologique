@@ -21,17 +21,26 @@ url: https://www.vte-france.fr/aide-vte-vert/
 nature de l'aide: financement
 montant du financement: 50% des dépenses engagées dans la limite de 8000 €
 objectifs:
-- Vous n'avez pas encore trouvé votre talent VTE ? Créez votre espace recruteur sur
-  le site vte-france. Depuis votre espace, vous pourrez publier une annonce et accéder
-  à la CVthèque des candidats.
-- Si vous avez déjà recruté votre talent, vous pouvez demander la labellisation VTE
-  Vert du contrat au plus tard dans les 6 mois de l'embauche en respectant les critères
-  et l'impact vert de la mission.
-- Créez un compte ou connectez-vous sur le site Bpifrance pour effectuez votre demande
-  de labellisation.
-- Votre demande de labellisation est étudiée. Si vous êtes éligible, vous êtes invité
-  à transmettre des documents complémentaires.
-- Votre talent opère ses missions durant un minimum d'un an (ou 10 mois pour un alternant).
+- description: Vous n'avez pas encore trouvé votre talent VTE ? Créez votre espace
+    recruteur sur le site vte-france. Depuis votre espace, vous pourrez publier une
+    annonce et accéder à la CVthèque des candidats.
+  liens:
+  - lien: https://www.emploi.vte-france.fr/company/signin/register
+    texte: Espace recruteur
+- description: Si vous avez déjà recruté votre talent, vous pouvez demander la labellisation
+    VTE Vert du contrat au plus tard dans les 6 mois de l'embauche en respectant les
+    critères et l'impact vert de la mission.
+- description: Créez un compte ou connectez-vous sur le site Bpifrance pour effectuez
+    votre demande de labellisation.
+  liens:
+  - lien: https://app.bel.bpifrance.fr/subscribe/aide-vte-label?pk_vid=a37ce807173eb2fb170834785823c481
+    texte: Demande de labellisation VTE
+- description: Votre demande de labellisation est étudiée. Si vous êtes éligible,
+    vous êtes invité à transmettre des documents complémentaires.
+- description: Votre talent opère ses missions durant un minimum d'un an (ou 10 mois
+    pour un alternant).
+- description: Après 12 mois, partagez vos justificatifs pour vous permettre de percevoir
+    l'aide VTE Vert.
 conditions d'éligibilité:
   taille de l'entreprise:
   - PME et ETI
