@@ -20,6 +20,7 @@ export enum SiretValue {
 }
 
 export enum StructureSize {
+  EI = 'entreprise individuelle',
   TPE = 'TPE',
   PE = 'PE',
   ME = 'ME',
