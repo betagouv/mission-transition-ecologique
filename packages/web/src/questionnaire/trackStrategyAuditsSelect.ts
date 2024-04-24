@@ -1,5 +1,6 @@
-import type { Track } from '@/types'
+import { PublicodeObjective, Track } from '@/types'
 import { TrackComponent, TrackId } from '@/types'
+import Objective from '@/utils/Objective'
 
 export enum StrategyAuditsSelect {
   CarbonAudit = 'bilan-carbone',
@@ -18,6 +19,7 @@ export const strategyAuditsSelect: Track = {
   category: 'myStrategy',
   title: { fr: 'Quels audits' },
   label: { fr: 'Le ou lesquels ?' },
+  objective: PublicodeObjective.EnvironmentalImpact,
   callout: {
     header: { fr: 'Thématique' },
     headerStyle: 'color: white;',
@@ -25,7 +27,7 @@ export const strategyAuditsSelect: Track = {
     title: { fr: 'Votre stratégie environnementale' },
     titleStyle: 'color: white;',
     bigTitle: true,
-    imageLeft: 'images/thema/thema-strategie.svg'
+    imageLeft: Objective.getImageByObjective(PublicodeObjective.EnvironmentalImpact)
   },
   interface: {
     component: TrackComponent.Buttons

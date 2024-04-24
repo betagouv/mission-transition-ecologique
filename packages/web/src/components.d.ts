@@ -40,6 +40,7 @@ declare module 'vue' {
     TeeHomeInfos: typeof import('./components/home/TeeHomeInfos.vue')['default']
     TeeHomeSteps: typeof import('./components/home/TeeHomeSteps.vue')['default']
     TeeMatomo: typeof import('./components/TeeMatomo.vue')['default']
+    TeeObjectiveCard: typeof import('./components/element/TeeObjectiveCard.vue')['default']
     TeeQuestionnaire: typeof import('./components/questionnaire/TeeQuestionnaire.vue')['default']
     TeeQuestionnaireResult: typeof import('./components/questionnaire/TeeQuestionnaireResult.vue')['default']
     TeeSpinner: typeof import('./components/element/TeeSpinner.vue')['default']

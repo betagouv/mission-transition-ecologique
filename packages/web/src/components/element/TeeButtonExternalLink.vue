@@ -18,7 +18,7 @@ const props = withDefaults(defineProps<Props>(), {
 </script>
 
 <style scoped lang="scss">
-@import '../../assets/scss/_colors.scss';
+@import '../../assets/scss/_color.scss';
 [target='_blank']:after,
 [target='_blank'][class*=' fr-fi-']:after,
 [target='_blank'][class*=' fr-icon-']:after,

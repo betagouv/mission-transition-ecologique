@@ -5,10 +5,12 @@ a, button {
     &[aria-pressed="true"] {
       &.fr-tag--sm {
         &.fr-tag {
-          @each $color, $value in $colors {
+          @each $color, $properties in $colors {
             &--#{$color} {
-              background-image: radial-gradient(circle at 100% .1875rem, transparent .4475rem, $value .5rem);
-              color: var(--text-action-high-blue-france);
+              @if type-of($properties) == map {
+                background-image: radial-gradient(circle at 100% .1875rem, transparent .4475rem, map-get($properties, "background-color") .5rem);
+                color: map-get($properties, "color");
+              }
             }
           }
         }

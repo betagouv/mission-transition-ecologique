@@ -7,7 +7,15 @@ import ProgramFilter from '@/utils/program/programFilters'
 import { Result } from 'true-myth'
 import { computed, ref } from 'vue'
 import { acceptHMRUpdate, defineStore } from 'pinia'
-import { type programFiltersType, ProgramAidType, PublicodeObjective, type ProgramData } from '@/types'
+import {
+  type programFiltersType,
+  ProgramAidType,
+  PublicodeObjective,
+  type ProgramData,
+  TrackId,
+  QuestionnaireDataEnum,
+  QuestionnaireRoute
+} from '@/types'
 import type { QuestionnaireData } from '@/types'
 
 export const useProgramStore = defineStore('program', () => {
@@ -16,7 +24,7 @@ export const useProgramStore = defineStore('program', () => {
 
   const programFilters = ref<programFiltersType>({
     programAidTypeSelected: '',
-    objectifTypeSelected: ''
+    objectiveTypeSelected: ''
   })
 
   const programs = computed(async () => {
@@ -42,9 +50,18 @@ export const useProgramStore = defineStore('program', () => {
     return programs.filter((program: ProgramData) => {
       return (
         ProgramFilter.filterProgramsByAidType(program, programFilters.value.programAidTypeSelected as ProgramAidType) &&
-        ProgramFilter.filterProgramsByObjective(program, programFilters.value.objectifTypeSelected as PublicodeObjective)
+        ProgramFilter.filterProgramsByObjective(program, programFilters.value.objectiveTypeSelected as PublicodeObjective)
       )
     })
+  }
+
+  function hasObjectiveTypeFilter() {
+    return (
+      useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(
+        TrackId.QuestionnaireRoute,
+        QuestionnaireDataEnum.questionnaire_route as string
+      ) === QuestionnaireRoute.NoSpecificGoal
+    )
   }
 
   async function getProgramById(id: string): Promise<Result<ProgramData, Error>> {
@@ -76,7 +93,7 @@ export const useProgramStore = defineStore('program', () => {
   function resetFilters() {
     programFilters.value = {
       programAidTypeSelected: '',
-      objectifTypeSelected: ''
+      objectiveTypeSelected: ''
     }
   }
 
@@ -86,6 +103,7 @@ export const useProgramStore = defineStore('program', () => {
     programFilters,
     programsByUsedTracks,
     getProgramsByFilters,
+    hasObjectiveTypeFilter,
     getProgramById,
     resetFilters
   }

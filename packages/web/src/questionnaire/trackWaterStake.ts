@@ -1,11 +1,13 @@
-import type { Track } from '@/types'
+import { PublicodeObjective, Track } from '@/types'
 import { TrackComponent, TrackId, YesNo } from '@/types'
+import Objective from '@/utils/Objective'
 
 export const waterStake: Track = {
   id: TrackId.WaterStake,
   category: 'myWater',
   title: { fr: 'Enjeu' },
   label: { fr: "Pensez-vous avoir un enjeu important sur votre consommation d'eau ?" },
+  objective: PublicodeObjective.WaterConsumption,
   callout: {
     header: { fr: 'Thématique' },
     headerStyle: 'color: #3A3A3A;',
@@ -13,7 +15,7 @@ export const waterStake: Track = {
     title: { fr: "Votre gestion de l'eau" },
     titleStyle: 'color: #000091;',
     bigTitle: true,
-    imageLeft: 'images/thema/thema-eau.svg'
+    imageLeft: Objective.getImageByObjective(PublicodeObjective.WaterConsumption)
   },
   interface: {
     component: TrackComponent.Buttons

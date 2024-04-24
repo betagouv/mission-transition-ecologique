@@ -1,11 +1,13 @@
-import type { Track } from '@/types'
+import { PublicodeObjective, Track } from '@/types'
 import { TrackComponent, TrackId, YesNo, WasteManagementStatus } from '@/types'
+import Objective from '@/utils/Objective'
 
 export const wastesStake: Track = {
   id: TrackId.WastesStake,
   category: 'myWastes',
   title: { fr: 'Enjeu' },
   label: { fr: 'Aimeriez-vous améliorer la gestion des déchets de votre activité ? ' },
+  objective: PublicodeObjective.WasteManagement,
   callout: {
     header: { fr: 'Thématique' },
     headerStyle: 'color: #3A3A3A;',
@@ -13,7 +15,7 @@ export const wastesStake: Track = {
     title: { fr: 'Votre gestion des déchets' },
     titleStyle: 'color: #000091;',
     bigTitle: true,
-    imageLeft: 'images/thema/thema-dechets.svg'
+    imageLeft: Objective.getImageByObjective(PublicodeObjective.WasteManagement)
   },
   interface: {
     component: TrackComponent.Buttons

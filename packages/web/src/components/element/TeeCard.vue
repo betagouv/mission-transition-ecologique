@@ -55,7 +55,7 @@ const linkClasses = {
 </script>
 
 <style scoped lang="scss">
-@import '../../assets/scss/_colors.scss';
+@import '../../assets/scss/_color.scss';
 .baseCardClass {
   border-left: 4px solid;
   padding: 32px 48px 32px 32px;

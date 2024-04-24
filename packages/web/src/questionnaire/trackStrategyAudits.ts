@@ -1,5 +1,6 @@
-import type { Track } from '@/types'
+import { PublicodeObjective, Track } from '@/types'
 import { TrackComponent, TrackId, YesNo } from '@/types'
+import Objective from '@/utils/Objective'
 
 export const strategyAudits: Track = {
   id: TrackId.StrategyAudits,
@@ -8,6 +9,7 @@ export const strategyAudits: Track = {
   label: {
     fr: 'Pour finir, avez-vous déjà réalisé des audits environnementaux ces 2 dernières années ?'
   },
+  objective: PublicodeObjective.EnvironmentalImpact,
   callout: {
     header: { fr: 'Thématique' },
     headerStyle: 'color: white;',
@@ -15,7 +17,7 @@ export const strategyAudits: Track = {
     title: { fr: 'Votre stratégie environnementale' },
     titleStyle: 'color: white;',
     bigTitle: true,
-    imageLeft: 'images/thema/thema-strategie.svg'
+    imageLeft: Objective.getImageByObjective(PublicodeObjective.EnvironmentalImpact)
   },
   interface: {
     component: TrackComponent.Buttons

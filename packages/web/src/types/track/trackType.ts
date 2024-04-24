@@ -1,11 +1,12 @@
-import type {
+import {
   Translations,
   FormCallback,
   FormCallbackDataMapping,
   FormOptions,
   PropertyPath,
   TrackId,
-  QuestionnaireData
+  QuestionnaireData,
+  PublicodeObjective
 } from '@tee/web/src/types'
 import { ConditionOperators } from '@tee/web/src/types/conditionOperators'
 
@@ -178,6 +179,7 @@ export interface Track {
   hint?: Translations
   resume?: Translations
   callout?: TrackCallout
+  objective?: PublicodeObjective
   interface?: TrackInterface
   behavior?: TrackBehavior
   config?: TrackResultsConfig
