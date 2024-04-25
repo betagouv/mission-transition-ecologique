@@ -29,7 +29,9 @@ import Translation from '@/utils/translation'
 
 const usedTrackStore = useUsedTrackStore()
 const resume: string = Translation.t('programResults.resume', {
-  effectif: usedTrackStore.findInQuestionnaireDataByTrackIdAndKey(TrackId.StructureWorkforce, 'structure_size')?.toString(),
+  effectif: Translation.t(
+    'enterprise.structureSize.' + usedTrackStore.findInQuestionnaireDataByTrackIdAndKey(TrackId.StructureWorkforce, 'structure_size')
+  ),
   secteur:
     usedTrackStore.findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'secteur') ??
     usedTrackStore.findInQuestionnaireDataByTrackIdAndKey(TrackId.Sectors, 'sector'),

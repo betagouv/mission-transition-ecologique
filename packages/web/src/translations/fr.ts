@@ -68,11 +68,18 @@ export const frDict = {
   },
   programResults: {
     resume:
-      'Voici les accompagnements dont vous pouvez bénéficier pour diminuer l’empreinte écologique de votre <i>{effectif}</i> du secteur <i>{secteur}</i> en région <i>{region}</i>.'
+      'Voici les accompagnements dont vous pouvez bénéficier pour diminuer l’empreinte écologique de votre {effectif} du secteur {secteur} en région {region}.'
   },
   enterprise: {
     select: 'Sélectionnez votre entreprise',
-    noStructureFound: "Aucune structure n'a été trouvée."
+    noStructureFound: "Aucune structure n'a été trouvée.",
+    structureSize: {
+      EI: 'Entreprise individuelle',
+      TPE: 'TPE',
+      PE: 'PME',
+      ME: 'PME',
+      ETI_GE: 'ETI ou Grande Entreprise'
+    }
   },
   categories: {
     start: '🏁 Questionnaire',
