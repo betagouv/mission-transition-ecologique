@@ -284,7 +284,6 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     currentComponent,
     usedTracks,
     usedTracksIds,
-    // completedUsedTracks,
     completedQuestionnaireData,
     usedTracksValuesPairs,
     currentIsCompleted,

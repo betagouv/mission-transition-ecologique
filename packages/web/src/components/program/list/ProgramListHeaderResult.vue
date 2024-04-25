@@ -17,9 +17,7 @@
       </p>
     </div>
     <div class="fr-mt-5v fr-col-12">
-      <p>
-        {{ resume }}
-      </p>
+      <p v-html="resume"></p>
     </div>
   </div>
 </template>
@@ -29,10 +27,14 @@ import { useUsedTrackStore } from '@/stores/usedTrack'
 import { TrackId } from '@/types'
 import Translation from '@/utils/translation'
 
-const useUsedTrack = useUsedTrackStore()
+const usedTrackStore = useUsedTrackStore()
 const resume: string = Translation.t('programResults.resume', {
-  effectif: useUsedTrack.findInQuestionnaireDataByTrackIdAndKey(TrackId.StructureWorkforce, 'structure_size')?.toString(),
-  secteur: useUsedTrack.findInQuestionnaireDataByTrackIdAndKey(TrackId.Sectors, 'sector'),
-  region: useUsedTrack.findInQuestionnaireDataByTrackIdAndKey(TrackId.StructureRegion, 'region')
+  effectif: usedTrackStore.findInQuestionnaireDataByTrackIdAndKey(TrackId.StructureWorkforce, 'structure_size')?.toString(),
+  secteur:
+    usedTrackStore.findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'secteur') ??
+    usedTrackStore.findInQuestionnaireDataByTrackIdAndKey(TrackId.Sectors, 'sector'),
+  region:
+    usedTrackStore.findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'region') ??
+    usedTrackStore.findInQuestionnaireDataByTrackIdAndKey(TrackId.StructureRegion, 'region')
 })
 </script>

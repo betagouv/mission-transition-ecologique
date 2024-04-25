@@ -68,7 +68,7 @@ export const frDict = {
   },
   programResults: {
     resume:
-      'Voici les accompagnements dont vous pouvez bénéficier pour diminuer l’empreinte écologique de votre {effectif} du secteur {secteur} en région {region}.'
+      'Voici les accompagnements dont vous pouvez bénéficier pour diminuer l’empreinte écologique de votre <i>{effectif}</i> du secteur <i>{secteur}</i> en région <i>{region}</i>.'
   },
   enterprise: {
     select: 'Sélectionnez votre entreprise',
