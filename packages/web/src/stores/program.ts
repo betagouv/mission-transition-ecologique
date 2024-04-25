@@ -7,7 +7,15 @@ import ProgramFilter from '@/utils/program/programFilters'
 import { Result } from 'true-myth'
 import { computed, ref } from 'vue'
 import { acceptHMRUpdate, defineStore } from 'pinia'
-import { type programFiltersType, ProgramAidType, PublicodeObjective, type ProgramData } from '@/types'
+import {
+  type programFiltersType,
+  ProgramAidType,
+  PublicodeObjective,
+  type ProgramData,
+  TrackId,
+  QuestionnaireDataEnum,
+  QuestionnaireRoute
+} from '@/types'
 import type { QuestionnaireData } from '@/types'
 
 export const useProgramStore = defineStore('program', () => {
@@ -73,6 +81,15 @@ export const useProgramStore = defineStore('program', () => {
     return result
   }
 
+  function hasObjectiveTypeFilter() {
+    return (
+      useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(
+        TrackId.QuestionnaireRoute,
+        QuestionnaireDataEnum.questionnaire_route as string
+      ) !== QuestionnaireRoute.SpecificGoal
+    )
+  }
+
   function resetFilters() {
     programFilters.value = {
       programAidTypeSelected: '',
@@ -87,6 +104,7 @@ export const useProgramStore = defineStore('program', () => {
     programsByUsedTracks,
     getProgramsByFilters,
     getProgramById,
+    hasObjectiveTypeFilter,
     resetFilters
   }
 })
