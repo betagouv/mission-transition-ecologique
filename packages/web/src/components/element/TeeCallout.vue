@@ -29,10 +29,10 @@
 
 <script setup lang="ts">
 import { defineProps, withDefaults } from 'vue'
-import { CardType } from '@/types/elementsPropsTypes'
+import { CalloutType } from '@/types/elementsPropsTypes'
 
 interface Props {
-  type?: CardType
+  type: CalloutType
   title?: string | number | undefined
   link?: string | undefined
   linkText?: string | undefined
@@ -40,7 +40,7 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  type: CardType.Default,
+  type: CalloutType.Default,
   title: undefined,
   link: undefined,
   linkText: undefined,
@@ -48,22 +48,22 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const linkClasses = {
-  baseCardClass: true,
-  defaultCard: props.type === CardType.Default,
-  warningCard: props.type === CardType.Warning
+  baseCard: true,
+  defaultCard: props.type === CalloutType.Default,
+  warningCard: props.type === CalloutType.Warning
 }
 </script>
 
 <style scoped lang="scss">
 @import '../../assets/scss/_colors.scss';
-.baseCardClass {
+.baseCard {
   border-left: 4px solid;
   padding: 32px 48px 32px 32px;
 }
 
 .defaultCard {
   background: var(--light-background-alt-blue-france, #f5f5fe);
-  border-color: #{$secondary-purple};
+  border-color: $secondary-purple;
 }
 
 .warningCard {

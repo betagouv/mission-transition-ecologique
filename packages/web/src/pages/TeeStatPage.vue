@@ -1,8 +1,5 @@
 <template>
-  <div
-    id="simple-page"
-    class="fr-container fr-my-8w statistics"
-  >
+  <div class="fr-container fr-my-8w statistics">
     <div class="fr-mb-5w">
       <h1 class="fr-mb-3w">Statistiques d'usage</h1>
       <p>
@@ -20,23 +17,23 @@
     <div class="fr-grid-row fr-grid-row--center">
       <div class="fr-col-md-6">
         <h4>Depuis le lancement</h4>
-        <TeeCard
-          :title="statsData ? statsData.nOpportunitiesTotal || undefined : undefined"
+        <TeeCallout
+          :title="statsData ? statsData.countOpportunitiesTotal || undefined : undefined"
           class="fr-mr-md-3v"
         >
           Demandes d'entreprises mises en relations avec un opérateur public sur un sujet de transition écologique depuis le lancement (été
           2023).
-        </TeeCard>
+        </TeeCallout>
       </div>
       <div class="fr-col-md-6 fr-mt-3w fr-mt-md-0 extendShorterContentContainer">
         <h4 class="fr-ml-md-3v">Sur les 30 derniers jours</h4>
-        <TeeCard
-          :title="statsData ? statsData.nOpportunities30Days || undefined : undefined"
+        <TeeCallout
+          :title="statsData ? statsData.countOpportunities30Days || undefined : undefined"
           class="fr-ml-md-3v extendVertically"
         >
           Demandes d'entreprises mises en relations avec un opérateur public sur un sujet de transition écologique sur les 30 derniers
           jours.
-        </TeeCard>
+        </TeeCallout>
       </div>
     </div>
     <div class="fr-col-12 fr-mt-3w fr-mt-md-4w fr-mb-md-8w">
@@ -50,14 +47,14 @@
     <div class="fr-mt-5w fr-mt-md-0 fr-mb-5w">
       <h2>Nombre de dispositifs d'aide activés</h2>
       <div class="fr-col-md-6">
-        <TeeCard
-          :type="CardType.Warning"
+        <TeeCallout
+          :type="CalloutType.Warning"
           imglink="/images/TEE-missingData.svg"
           class="fr-mr-md-3v"
         >
           Nous travaillons actuellement sur cette mesure.<br /><br />
           Cette information sera disponible prochainement.
-        </TeeCard>
+        </TeeCallout>
       </div>
     </div>
     <div class="fr-mb-5w">
@@ -65,34 +62,34 @@
       <div class="fr-grid-row fr-grid-row--center fr-mb-5w">
         <div class="fr-col-md-6">
           <h4>Depuis le lancement</h4>
-          <TeeCard
-            :title="statsData ? statsData.nProgramsTotal || undefined : undefined"
+          <TeeCallout
+            :title="statsData ? statsData.countProgramsTotal || undefined : undefined"
             class="fr-mr-md-3v"
           >
             Dispositifs d’aides référencés sur la plateforme depuis le lancement (été 2023).
-          </TeeCard>
+          </TeeCallout>
         </div>
         <div class="fr-col-12 fr-col-md-6 fr-mt-3w fr-mt-md-0 extendShorterContentContainer">
           <h4 class="fr-ml-md-3v">Actifs</h4>
-          <TeeCard
-            :title="statsData ? statsData.nProgramsNow || undefined : undefined"
+          <TeeCallout
+            :title="statsData ? statsData.countProgramsNow || undefined : undefined"
             class="fr-ml-md-3v extendVertically extendHor"
           >
             Dispositifs d’aides actuellement référencés sur la plateforme.
-          </TeeCard>
+          </TeeCallout>
         </div>
       </div>
     </div>
     <div class="fr-mb-5w">
       <h2>Trafic web</h2>
       <div class="fr-col-md-6">
-        <TeeCard
+        <TeeCallout
           class="fr-mr-md-3v"
           link="https://stats.beta.gouv.fr/index.php?module=CoreHome&action=index&idSite=23&period=day&date=yesterday#?period=day&date=yesterday&category=Dashboard_Dashboard&subcategory=1&idSite=23"
           link-text="Tableau de bord Matomo"
         >
           Consultez toutes les statistiques de notre site sur le tableau de bord de notre outil de suivi Matomo.
-        </TeeCard>
+        </TeeCallout>
       </div>
     </div>
   </div>
@@ -104,7 +101,7 @@ import { ref, onMounted } from 'vue'
 import Chart from 'chart.js/auto'
 import type StatsData from '@tee/common/src/stats/types'
 import StatsApi from '@/service/api/statsApi'
-import { CardType } from '@/types/elementsPropsTypes'
+import { CalloutType } from '@/types/elementsPropsTypes'
 
 const statsData = ref<StatsData | null>(null)
 const chartCanvas = ref<HTMLCanvasElement | null>(null)
@@ -118,7 +115,6 @@ const drawChart = () => {
 
     if (!chartCanvas.value) return
     const chartContext = chartCanvas.value.getContext('2d')
-    console.log(chartCanvas.value)
     if (!chartContext) return
     new Chart(chartContext, {
       type: 'line',
@@ -157,7 +153,7 @@ onMounted(async () => {
 </script>
 
 <style scoped>
-.statistics h1 {
+h1 {
   color: var(--light-background-action-high-blue-france, #000091);
   font-family: Marianne;
   font-size: 2.5rem;
@@ -166,7 +162,7 @@ onMounted(async () => {
   line-height: 3rem; /* 120% */
 }
 
-.statistics p {
+p {
   color: #000;
   font-family: Marianne;
   font-size: 1rem;
@@ -175,7 +171,7 @@ onMounted(async () => {
   line-height: 1.5rem; /* 150% */
 }
 
-.statistics h2 {
+h2 {
   color: var(--light-text-title-grey, #161616);
   font-family: Marianne;
   font-size: 2rem;
@@ -185,7 +181,7 @@ onMounted(async () => {
   margin-bottom: 1rem;
 }
 
-.statistics h4 {
+h4 {
   color: #6a6af4;
   font-family: Marianne;
   font-size: 1.25rem;
@@ -195,12 +191,12 @@ onMounted(async () => {
   margin-bottom: 0.75rem;
 }
 
-.statistics .extendShorterContentContainer {
+.extendShorterContentContainer {
   display: flex;
   flex-direction: column;
   align-items: stretch; /* Make flex items stretch vertically */
 }
-.statistics .extendVertically {
+.extendVertically {
   flex: 1;
 }
 
