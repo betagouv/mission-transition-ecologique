@@ -1,0 +1,16 @@
+$border-radius-root: 1rem !default;
+
+$rounded: (
+  '0': 0,
+  'sm': $border-radius-root * .5,
+  null: $border-radius-root,
+  'md': $border-radius-root,
+  'lg': $border-radius-root * 2.5,
+);
+
+$corner: (
+  'tl': 'top-left',
+  'tr': 'top-right',
+  'br': 'bottom-right',
+  'bl': 'bottom-left',
+);

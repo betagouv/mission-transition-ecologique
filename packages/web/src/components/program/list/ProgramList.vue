@@ -8,19 +8,17 @@
       </div>
 
       <div
-        v-if="programStore.hasObjectiveTypeFilter()"
+        v-if="hasObjectiveFilter"
         class="fr-col-12"
       >
         <TeeObjectiveCard
-          v-if="hasObjectiveFilter"
           :objective="programStore.programFilters.objectiveTypeSelected as PublicodeObjective"
+          radius-corner="tr"
+          radius-size="lg"
         />
       </div>
       <div class="fr-mt-4v fr-mb-2v fr-col-12">
-        <div
-          v-if="havePrograms && countPrograms > 1"
-          class="tee-text-light"
-        >
+        <div v-if="havePrograms && countPrograms > 1">
           {{ countFilteredPrograms }}
           {{ countFilteredPrograms > 1 ? Translation.t('results.results') : Translation.t('results.result') }}
         </div>
@@ -99,7 +97,7 @@ const hasSpinner = computed(() => {
 })
 
 const hasObjectiveFilter = computed(() => {
-  return programStore.programFilters.objectiveTypeSelected !== ''
+  return programStore.hasObjectiveTypeFilter() && programStore.programFilters.objectiveTypeSelected !== ''
 })
 
 const getRouteToProgramDetail = (programId: string): RouteLocationRaw => {

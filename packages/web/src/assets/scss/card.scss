@@ -1,11 +1,11 @@
-@import "color";
+@use 'setting';
 
 .fr-card {
   :hover {
     cursor: pointer;
   }
 
-  @each $color, $properties in $colors {
+  @each $color, $properties in setting.$colors {
     &--#{$color} {
       &:hover {
         cursor: auto !important;

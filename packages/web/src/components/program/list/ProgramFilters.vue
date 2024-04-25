@@ -1,5 +1,5 @@
 <template>
-  <div class="fr-grid-row fr-grid-row--gutters fr-mb-4v">
+  <div class="fr-grid-row fr-grid-row--gutters">
     <div class="fr-col-12 fr-col-sm-6">
       <DsfrSelect
         v-model="programFilters.programAidTypeSelected"

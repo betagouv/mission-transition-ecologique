@@ -1,11 +1,11 @@
-@import "color";
+@use "setting";
 
 a, button {
   &.fr-tag {
     &[aria-pressed="true"] {
       &.fr-tag--sm {
         &.fr-tag {
-          @each $color, $properties in $colors {
+          @each $color, $properties in setting.$colors {
             &--#{$color} {
               @if type-of($properties) == map {
                 background-image: radial-gradient(circle at 100% .1875rem, transparent .4475rem, map-get($properties, "background-color") .5rem);
