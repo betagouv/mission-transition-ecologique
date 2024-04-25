@@ -4,24 +4,40 @@
       {{ getProgramObjectiveTitle() }}
     </h3>
     <div class="fr-tee-description-list">
-      <p
-        v-for="(paragraph, idx) in program.objectifs"
+      <div
+        v-for="(content, idx) in program.objectifs"
         :key="`description-paragraph-${idx}`"
-        class="fr-mb-3v"
+        class="fr-mb-4v fr-mb-md-2v"
       >
-        <span class="fr-tee-description-paragraph-marker"> {{ idx + 1 }} | </span>
-        <span class="fr-tee-description-paragraph-content">
-          {{ paragraph }}
-        </span>
-      </p>
+        <p class="fr-mb-2v fr-mb-md-1v fr-ml-md-0 fr-ml-n2w">
+          <span class="fr-tee-description-paragraph-marker"> {{ idx + 1 }} | </span>
+          <span class="fr-tee-description-paragraph-content">
+            {{ content.description }}
+          </span>
+        </p>
+        <div
+          v-if="content.liens"
+          class="fr-ml-4w fr-ml-md-6w"
+        >
+          <template
+            v-for="(link, linkId) in content.liens"
+            :key="`link-${idx}-${linkId}`"
+          >
+            <TeeButtonExternalLink
+              :href="link.lien"
+              class="fr-mb-1v fr-mr-md-2v"
+            >
+              {{ link.texte }}
+            </TeeButtonExternalLink>
+          </template>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-// CONSOLE LOG TEMPLATE
-// console.log(`ProgramObjective > FUNCTION_NAME > MSG_OR_VALUE :`)
-
+import TeeButtonExternalLink from '@/components/element/TeeButtonExternalLink.vue'
 import Translation from '@/utils/translation'
 import type { ProgramData } from '@/types'
 import { ProgramAidType } from '@tee/common/src/program/types'

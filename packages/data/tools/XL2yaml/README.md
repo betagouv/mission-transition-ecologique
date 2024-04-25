@@ -17,8 +17,7 @@ d'un format à un autre.
 ```bash
 python -m venv .venv
 source .venv/bin/activate
-pip install pylightxl
-pip install pyyaml
+pip install pylightxl pyyaml validators requests
 ```
 
 3. Adpater les paramètres `FORCE_ALL` et les arguments `overwrite` pour savoir ce qui doit être mis à jour ou non. 
@@ -40,3 +39,6 @@ Les dispositifs concernés à ce stade :
 - pret-vert
 - repar-acteurs
 
+## Points de vigilence 
+- Le script ne fonctionne que sur 6 objectifs.
+- vérifier manuellement tous les changements sur les yamls car il y a souvent des erreurs dans l'excel ! 

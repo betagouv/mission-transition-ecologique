@@ -10,14 +10,16 @@ nature de l'aide: accompagnement
 coût de l'accompagnement: Gratuit
 durée de l'accompagnement: 5 jours de prestation répartis sur 12 mois
 objectifs:
-- Votre expert de la CMA réalise un état des lieux pour identifier les flux, les pertes
-  cachées et calculer leurs coûts. Il les compare aux moyennes du secteur d’activité.
-- Obtenez un plan d’action avec une rentabilité immédiate (moins de 12 mois), des
-  préconisations simples et opérationnelles en chiffrant les économies réalisables.
-  En moyenne, les plans d’actions proposés aboutissent à des économies allant de 2
-  000 à 5 000 € par an.
-- Mettez en oeuvre votre plan d’action et soyez accompagné par un expert sur un an.
-- Evaluez les résultats et les économies financières réalisées.
+- description: 'Bénéficiez d''un état des lieux des flux par un expert de la Chambre
+    de Métiers et de l''Artisanat : identification des flux, des pertes cachées,  calcul
+    de leurs coûts et comparaison aux moyennes du secteur d’activité.'
+- description: Obtenez un plan d’action avec une rentabilité immédiate (moins de 12
+    mois), des préconisations simples et opérationnelles en chiffrant les économies
+    réalisables. En moyenne, les plans d’actions proposés aboutissent à des économies
+    allant de 2 000 à 5 000 € par an.
+- description: Mettez en oeuvre votre plan d’action et soyez accompagné par un expert
+    sur un an.
+- description: Evaluez les résultats et les économies financières réalisées.
 conditions d'éligibilité:
   taille de l'entreprise:
   - Moins de 20 salariés

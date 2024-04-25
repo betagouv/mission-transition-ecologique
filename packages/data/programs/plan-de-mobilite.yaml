@@ -27,12 +27,15 @@ nature de l'aide: accompagnement
 coût de l'accompagnement: de 3 000 € à 10 000 € en fonction de la taille de l'entreprise
 durée de l'accompagnement: 6 à 12 jours
 objectifs:
-- Mobiliser les acteurs et planifier, structurer la démarche de plan de mobilité.
-- Réaliser un diagnostic à l'échelle territoriale et une enquête auprès de vos salariés.
-- Elaborer un plan d'action sous la forme d'un atelier participatif avec les salariés.
-- Mettre en oeuvre les différentes actions et mobiliser les collaborateurs à chaque
-  étape.
-- Planifier et suivre les actions sur trois ans.
+- description: Mobiliser les acteurs et planifier, structurer la démarche de plan
+    de mobilité.
+- description: Réaliser un diagnostic à l'échelle territoriale et une enquête auprès
+    de vos salariés.
+- description: Elaborer un plan d'action sous la forme d'un atelier participatif avec
+    les salariés.
+- description: Mettre en oeuvre les différentes actions et mobiliser les collaborateurs
+    à chaque étape.
+- description: Planifier et suivre les actions sur trois ans.
 conditions d'éligibilité:
   taille de l'entreprise:
   - PME

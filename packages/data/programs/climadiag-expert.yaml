@@ -17,12 +17,12 @@ nature de l'aide: accompagnement
 coût de l'accompagnement: Gratuit
 durée de l'accompagnement: 5 à 10 jours selon la taille de l'entreprise
 objectifs:
-- Réalisez un diagnostic sur site pour évaluer et hierarchiser l'ensemble des risques
-  encourus par votre entreprise.
-- 'Identifiez l''impact sur votre écosystème : concurrents & sources d''insatisfaction
-  client liées aux changements climatiques.'
-- Concevez un plan d'actions à mettre en oeuvre.
-- Identifiez des financements possibles.
+- description: Réalisez un diagnostic sur site pour évaluer et hierarchiser l'ensemble
+    des risques encourus par votre entreprise.
+- description: 'Identifiez l''impact sur votre écosystème : concurrents & sources
+    d''insatisfaction client liées aux changements climatiques.'
+- description: Concevez un plan d'actions à mettre en oeuvre.
+- description: Identifiez des financements possibles.
 conditions d'éligibilité:
   taille de l'entreprise:
   - PME

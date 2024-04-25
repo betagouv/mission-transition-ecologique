@@ -24,15 +24,19 @@ nature de l'aide: formation
 coût de l'accompagnement: Gratuit
 durée de l'accompagnement: 1h
 objectifs:
-- Créez votre compte sur la plateforme Bpifrance Université dédiée aux dirigeants
-  d'entreprises.
-- Accédez à un catalogue d'une cinquantaine de formations gratuites sur la thématique
-  de la transition écologique et énergétique.
-- Visionnez vos formations à votre rythme et en toute autonomie. Elles peuvent prendre
-  la forme de modules e-learning, webinaires live et replay, podcasts, digital guides,
-  tutos, exercices interactifs, ou interviews réalisés avec des experts.
-- Accédez à un outil d'autodiagnostic en ligne pour mesurer l’impact de votre activité
-  sur l’environnement.
+- description: Créez votre compte sur la plateforme Bpifrance Université dédiée aux
+    dirigeants d'entreprises.
+  liens:
+  - lien: https://universite.bpifrance.fr/Account/login
+    texte: Bpifrance Université
+- description: Accédez à un catalogue d'une cinquantaine de formations gratuites sur
+    la thématique de la transition écologique et énergétique.
+- description: Visionnez vos formations à votre rythme et en toute autonomie. Elles
+    peuvent prendre la forme de modules e-learning, webinaires live et replay, podcasts,
+    digital guides, tutos, exercices interactifs, ou interviews réalisés avec des
+    experts.
+- description: Accédez à un outil d'autodiagnostic en ligne pour mesurer l’impact
+    de votre activité sur l’environnement.
 conditions d'éligibilité:
   taille de l'entreprise:
   - Toutes tailles
