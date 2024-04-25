@@ -6,7 +6,10 @@
         :options="programAidTypeOptions"
       />
     </div>
-    <div class="fr-col-12 fr-col-sm-6">
+    <div
+      v-if="programStore.hasObjectiveTypeFilter()"
+      class="fr-col-12 fr-col-sm-6"
+    >
       <DsfrSelect
         v-model="programFilters.objectifTypeSelected"
         :options="objectifTypeOptions"
@@ -22,6 +25,8 @@ import { DsfrSelect } from '@gouvminint/vue-dsfr'
 import type { DsfrSelectProps } from '@gouvminint/vue-dsfr/types/components/DsfrSelect/DsfrSelect.types'
 
 const programFilters: programFiltersType = useProgramStore().programFilters
+
+const programStore = useProgramStore()
 
 const programAidTypeOptions: DsfrSelectProps['options'] = [
   {
