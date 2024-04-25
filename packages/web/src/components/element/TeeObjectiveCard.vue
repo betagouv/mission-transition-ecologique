@@ -31,15 +31,3 @@ const classes = computed(() => {
   return ['fr-card--' + Objective.getColorByObjective(props.objective), 'fr-card--horizontal-tier', 'fr-card--no-border']
 })
 </script>
-
-<style scoped lang="scss">
-.fr-card {
-  &:hover {
-    cursor: auto !important;
-  }
-
-  :hover {
-    cursor: auto !important;
-  }
-}
-</style>
