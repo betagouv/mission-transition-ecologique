@@ -35,8 +35,8 @@ export default class ProgramApi extends RequestApi {
 
   get query(): string {
     const queryString: { [key: string]: string } = {}
-    Object.entries(this.questionnaireData).forEach(([key, value]: [string, string | string[] | undefined]) => {
-      if (value !== undefined) {
+    Object.entries(this.questionnaireData).forEach(([key, value]: [string, string | string[] | undefined | null]) => {
+      if (value !== undefined && value !== null) {
         queryString[key] = value.toString()
       }
     })
