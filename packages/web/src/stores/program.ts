@@ -55,15 +55,6 @@ export const useProgramStore = defineStore('program', () => {
     })
   }
 
-  function hasObjectiveTypeFilter() {
-    return (
-      useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(
-        TrackId.QuestionnaireRoute,
-        QuestionnaireDataEnum.questionnaire_route as string
-      ) === QuestionnaireRoute.NoSpecificGoal
-    )
-  }
-
   async function getProgramById(id: string): Promise<Result<ProgramData, Error>> {
     currentProgram.value = undefined
 
@@ -90,6 +81,15 @@ export const useProgramStore = defineStore('program', () => {
     return result
   }
 
+  function hasObjectiveTypeFilter() {
+    return (
+      useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(
+        TrackId.QuestionnaireRoute,
+        QuestionnaireDataEnum.questionnaire_route as string
+      ) !== QuestionnaireRoute.SpecificGoal
+    )
+  }
+
   function resetFilters() {
     programFilters.value = {
       programAidTypeSelected: '',
@@ -103,8 +103,8 @@ export const useProgramStore = defineStore('program', () => {
     programFilters,
     programsByUsedTracks,
     getProgramsByFilters,
-    hasObjectiveTypeFilter,
     getProgramById,
+    hasObjectiveTypeFilter,
     resetFilters
   }
 })
