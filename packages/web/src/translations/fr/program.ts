@@ -8,6 +8,7 @@ const programFrDict = {
       }
     },
     programProviders: 'Contact',
+    CTAButton: 'Contactez un conseiller',
     programType: "Nature de l'aide",
     programEndValidity: 'Date de fin',
     programAvailable: 'Aide disponible',
@@ -18,7 +19,7 @@ const programFrDict = {
     programKnowMore: 'En savoir plus',
     programAmIEligible: 'Suis-je éligible ?',
     form: {
-      label: '{prefixAide} {natureAide} vous intéresse ?',
+      label: 'Contactez un conseiller',
       hint: '👋 Envoyez votre demande, un conseiller {operator} vous contactera prochainement',
       needs: `Bonjour,
 

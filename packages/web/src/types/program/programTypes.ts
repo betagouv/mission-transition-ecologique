@@ -26,6 +26,7 @@ export interface ProgramData {
   'opérateur de contact': string
   'autres opérateurs'?: string[]
   "nature de l'aide": ProgramAidType
+  'activable en autonomie'?: string
   "coût de l'accompagnement"?: string
   "durée de l'accompagnement"?: string
   'montant du financement'?: string
