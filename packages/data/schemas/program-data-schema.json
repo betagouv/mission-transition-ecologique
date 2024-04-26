@@ -156,7 +156,6 @@
       "description": "Précise s'il s'agit d'un dispositif en autonomie ou s'il y aura des interactions avec l'opérateur.",
       "type": "string"
     },
-
     "coût de l'accompagnement": {
       "description": "Uniquement si l'aide est de type \"accompagnement\". Le coût reste à charge correspond au montant que devra payer l'entreprise pour bénéficier d'un accompagnement, après déduction de la subvention.\n\n Formulation :\n- 10 mots max\n- selon le format \"x € HT après subvention de x%\"\n- écriture des chiffres en unités numériques\n- ne pas utiliser d'abréviations (ex : utiliser jour et non l'abréviation \"j.\")",
       "examples": ["4 000 € HT après subvention de 60%"],
