@@ -20,7 +20,7 @@
 import { TeeDsfrTag } from '@/components/element/tag/TeeDsfrTags.vue'
 import { useProgramStore } from '@/stores/program'
 import { ProgramAidType, type programFiltersType } from '@/types'
-import Objective from '@/utils/Objective'
+import Objective from '@/utils/objective'
 import { DsfrSelect, DsfrSelectProps } from '@gouvminint/vue-dsfr'
 
 const programStore = useProgramStore()

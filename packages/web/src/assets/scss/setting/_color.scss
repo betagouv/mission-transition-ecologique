@@ -1,8 +1,9 @@
 $base-yellow: #FACF35;
 $base-green: #1EBE8E;
 $base-blue: #6672F8;
+$base-blue-light: #E8EDFF;
 $base-red: #FCA081;
-$secondary-purple: #6A62F4;
+$base-purple: #6A62F4;
 
 $colors: (
   "yellow": (
@@ -15,11 +16,16 @@ $colors: (
   ),
   "blue": (
     "background-color": $base-blue,
-    "color": var(--text-inverted-blue-france)
+    "color": var(--text-inverted-blue-france),
+    "is-inverted": true,
+  ),
+  "blue-light": (
+    "background-color": $base-blue-light,
+    "color": var(--text-action-high-blue-france)
   ),
   "red": (
     "background-color": $base-red,
     "color": var(--text-action-high-blue-france)
   ),
-  "secondary-purple" : $secondary-purple
+  "secondary-purple" : $base-purple
 );

@@ -64,7 +64,7 @@ const linkClasses = {
 
 .defaultCard {
   background: var(--light-background-alt-blue-france, #f5f5fe);
-  border-color: #{$secondary-purple};
+  border-color: #{$base-purple};
 }
 
 .warningCard {

@@ -1,6 +1,4 @@
-import { PublicodeObjective, Track } from '@/types'
-import { MobilityStatus, TrackComponent, TrackId, YesNo } from '@/types'
-import Objective from '@/utils/Objective'
+import { MobilityStatus, TrackComponent, TrackId, YesNo, PublicodeObjective, Track } from '@/types'
 
 export const mobilityWishes: Track = {
   id: TrackId.MobilityWishes,
@@ -10,15 +8,6 @@ export const mobilityWishes: Track = {
     fr: 'Souhaitez-vous favoriser des déplacements plus écologiques pour vous et vos employés ?'
   },
   objective: PublicodeObjective.SustainableMobility,
-  callout: {
-    header: { fr: 'Thématique' },
-    headerStyle: 'color: #3A3A3A;',
-    bgColor: '#1EBE8E',
-    title: { fr: 'La mobilité dans votre entreprise' },
-    titleStyle: 'color: #000091;',
-    bigTitle: true,
-    imageLeft: Objective.getImageByObjective(PublicodeObjective.SustainableMobility)
-  },
   interface: {
     component: TrackComponent.Buttons
   },

@@ -1,4 +1,6 @@
 @use 'setting';
+@use '@gouvfr/dsfr/module/media-query';
+@use '@gouvfr/dsfr/module/media-query/variable/breakpoints';
 
 .fr-card {
   :hover {
@@ -15,6 +17,8 @@
         cursor: auto !important;
       }
 
+      flex-direction: row;
+
       @if type-of($properties) == map {
         background-color: map-get($properties, "background-color");
         color: map-get($properties, "color");
@@ -24,19 +28,47 @@
         justify-content: center;
       }
 
-      .fr-card__title {
-        @if type-of($properties) == map {
-          color: map-get($properties, "color");
-          font-weight: 400;
+      .fr-card__header {
+        flex: 0 0 33.3333333333%;
+        width: 33.3333333333%;
+        align-self: center;
+
+        .fr-card__img {
+          height: 100%;
+
+          img {
+            object-fit: fill;
+
+            .fr-responsive-img {
+              height: 100%;
+              max-width: 100%;
+              max-height: 150px;
+            }
+          }
         }
+      }
+
+      .fr-card__title {
+        @if type-of($properties) == map and map-has-key($properties, "is-inverted") and map-get($properties, "is-inverted") == true {
+          color: map-get($properties, "color");
+        } @else {
+          color: var(--text-default-grey);
+        }
+        font-weight: 400;
         font-size: 0.75rem;
         line-height: 1.25rem;
       }
 
       .fr-card__desc {
-        font-size: 2.5rem;
-        line-height: 2.5rem;
-        font-weight: 700;
+        @include media-query.respond-from(xs) {
+          font-size: 1rem;
+          line-height: 1.5rem;
+        }
+        @include media-query.respond-from(sm) {
+          font-size: 2.5rem;
+          line-height: 2.5rem;
+          font-weight: 700;
+        }
       }
     }
   }

@@ -1,6 +1,4 @@
-import { PublicodeObjective, Track } from '@/types'
-import { TrackComponent, TrackId, BuildingProperty } from '@/types'
-import Objective from '@/utils/Objective'
+import { TrackComponent, TrackId, BuildingProperty, PublicodeObjective, Track } from '@/types'
 
 export const buildingProperty: Track = {
   id: TrackId.BuildingProperty,
@@ -8,15 +6,6 @@ export const buildingProperty: Track = {
   title: { fr: 'Mon statut' },
   label: { fr: 'Parlons de vos locaux. Vous êtes :' },
   objective: PublicodeObjective.BuildingRenovation,
-  callout: {
-    header: { fr: 'Thématique' },
-    headerStyle: 'color: white;',
-    bgColor: '#6672F8',
-    title: { fr: 'Zoom sur vos bâtiments' },
-    titleStyle: 'color: white;',
-    bigTitle: true,
-    imageLeft: Objective.getImageByObjective(PublicodeObjective.BuildingRenovation)
-  },
   interface: {
     component: TrackComponent.Buttons
   },
