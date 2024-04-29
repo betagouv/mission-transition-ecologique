@@ -1,5 +1,5 @@
 <template>
-  <div class="fr-container fr-my-8w statistics">
+  <div class="fr-container fr-my-8w">
     <div class="fr-mb-5w">
       <h1 class="fr-mb-3w">Statistiques d'usage</h1>
       <p>
@@ -155,16 +155,13 @@ onMounted(async () => {
 <style scoped>
 h1 {
   color: var(--light-background-action-high-blue-france, #000091);
-  font-family: Marianne;
   font-size: 2.5rem;
   font-style: normal;
-  font-weight: 700;
   line-height: 3rem; /* 120% */
 }
 
 p {
   color: #000;
-  font-family: Marianne;
   font-size: 1rem;
   font-style: normal;
   font-weight: 400;
@@ -173,17 +170,12 @@ p {
 
 h2 {
   color: var(--light-text-title-grey, #161616);
-  font-family: Marianne;
-  font-size: 2rem;
   font-style: normal;
-  font-weight: 700;
-  line-height: 2.5rem; /* 125% */
   margin-bottom: 1rem;
 }
 
 h4 {
   color: #6a6af4;
-  font-family: Marianne;
   font-size: 1.25rem;
   font-style: normal;
   font-weight: 700;
