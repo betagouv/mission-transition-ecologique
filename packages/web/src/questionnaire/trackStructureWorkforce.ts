@@ -80,16 +80,6 @@ const nextTrackRuleSets: NextTrackRuleSet[] = [
   }
 ]
 
-export enum Workforce {
-  TPE = 'TPE',
-  PME = 'PME',
-  PE = 'PE',
-  ME = 'ME',
-  ETI = 'ETI',
-  GE = 'GE',
-  ETI_GE = 'ETI_et_GE'
-}
-
 export const workforce: Track = {
   id: TrackId.StructureWorkforce,
   category: 'myEntreprise',
@@ -103,10 +93,20 @@ export const workforce: Track = {
   },
   options: [
     {
+      value: StructureSize.EI,
+      questionnaireData: { structure_size: StructureSize.EI },
+      title: { fr: 'Entreprise individuelle' },
+      label: { fr: '‍️🧍Je suis un entrepreneur individuel' },
+      next: {
+        default: TrackId.Sectors,
+        ruleSet: nextTrackRuleSets
+      }
+    },
+    {
       value: StructureSize.TPE,
       questionnaireData: { structure_size: StructureSize.TPE },
       title: { fr: 'Moins de 20 employés' },
-      label: { fr: '‍️🧍‍ Moins de 20 employés' },
+      label: { fr: '‍️👫 Moins de 20 employés' },
       next: {
         default: TrackId.Sectors,
         ruleSet: nextTrackRuleSets
@@ -116,7 +116,7 @@ export const workforce: Track = {
       value: StructureSize.PE,
       questionnaireData: { structure_size: StructureSize.PE },
       title: { fr: 'Entre 20 et 49 employés' },
-      label: { fr: '‍️👫 Entre 20 et 49 employés' },
+      label: { fr: '‍️👫👫 Entre 20 et 49 employés' },
       next: {
         default: TrackId.Sectors,
         ruleSet: nextTrackRuleSets
@@ -126,7 +126,7 @@ export const workforce: Track = {
       value: StructureSize.ME,
       questionnaireData: { structure_size: StructureSize.ME },
       title: { fr: 'Entre 50 et 250 employés' },
-      label: { fr: '‍️👫👭 Entre 50 et 250 employés' },
+      label: { fr: '‍️👫👭👫 Entre 50 et 250 employés' },
       next: {
         default: TrackId.Sectors,
         ruleSet: nextTrackRuleSets
@@ -136,7 +136,7 @@ export const workforce: Track = {
       value: StructureSize.ETI_GE,
       questionnaireData: { structure_size: StructureSize.ETI_GE },
       title: { fr: '+250 employés' },
-      label: { fr: '👫👭👫 Plus de 250 employés' },
+      label: { fr: '👫👭👫👫 Plus de 250 employés' },
       next: {
         default: TrackId.Sectors,
         ruleSet: nextTrackRuleSets

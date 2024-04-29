@@ -17,12 +17,26 @@
       </p>
     </div>
     <div class="fr-mt-5v fr-col-12">
-      <p>
-        D’après les informations que vous avez renseignées, voici les accompagnements dont vous pouvez bénéficier pour diminuer l'empreinte
-        écologique de votre entreprise.
-      </p>
+      <p v-html="resume"></p>
     </div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useUsedTrackStore } from '@/stores/usedTrack'
+import { TrackId } from '@/types'
+import Translation from '@/utils/translation'
+
+const usedTrackStore = useUsedTrackStore()
+const resume: string = Translation.t('programResults.resume', {
+  effectif: Translation.t(
+    'enterprise.structureSize.' + usedTrackStore.findInQuestionnaireDataByTrackIdAndKey(TrackId.StructureWorkforce, 'structure_size')
+  ),
+  secteur:
+    usedTrackStore.findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'secteur') ??
+    usedTrackStore.findInQuestionnaireDataByTrackIdAndKey(TrackId.Sectors, 'sector'),
+  region:
+    usedTrackStore.findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'region') ??
+    usedTrackStore.findInQuestionnaireDataByTrackIdAndKey(TrackId.StructureRegion, 'region')
+})
+</script>
