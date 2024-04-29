@@ -5,6 +5,8 @@ import type { EstablishmentDetails, Siret } from '../domain/types'
 import { Result } from 'true-myth'
 import { COG2023Mapping } from '../infrastructure/json/cityToRegionMapping'
 import { NAF_JSONMapping } from '../infrastructure/json/nafMapping'
+import { EstablishementDisplay } from '@tee/common/src/establishement/types'
+import { RechercheEntreprise } from '../infrastructure/api/recherche-entreprise/recherche-entreprise'
 
 export default class EstablishmentService {
   private _establishmentFeatures: EstablishmentFeatures
@@ -17,12 +19,17 @@ export default class EstablishmentService {
     )
   }
 
+  public search(query: string): Promise<Result<EstablishementDisplay[], Error>> {
+    return this._establishmentFeatures.search(query)
+  }
+
   public getBySiret(siret: Siret): Promise<Result<EstablishmentDetails, Error>> {
     return this._establishmentFeatures.getBySiret(siret)
   }
 
   private _getEstablishmentRepository(): EstablishmentRepository {
-    return { get: getEstablishment }
+    const rechercheEntreprise = new RechercheEntreprise()
+    return { get: getEstablishment, search: rechercheEntreprise.searchEstablishment }
   }
 
   private _getCityToRegionMapping(): CityToRegionMapping {

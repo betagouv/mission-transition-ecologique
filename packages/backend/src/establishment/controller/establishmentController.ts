@@ -2,6 +2,7 @@ import { Controller, Route, SuccessResponse, TsoaResponse, Res, Example, Get, Pa
 import EstablishmentService from '../application/establishmentService'
 import { EstablishmentNotFoundError, Establishment } from '../domain/types'
 import { ErrorJSON, ValidateErrorJSON } from '../../common/controller/jsonError'
+import { EstablishementDisplay } from '@tee/common/src/establishement/types'
 
 interface EstablishmentNotFoundErrorJSON {
   message: 'Establishment not found'
@@ -36,23 +37,23 @@ const exampleEstablishment = {
 @Route('establishments')
 export class SireneController extends Controller {
   /**
-   * Retrieves information of an Establishment ("Établissement").
-   * Supply the SIRET and receive the corresponding establishment details.
+   * Retrieve information of an Establishment if search by SIRET
+   * or search for an establishment using any string and retrieve core informations of up to 5 possible matches
    *
-   * @summary Retrieves information of an "Établissement"
+   * @summary Retrieves information of 1 or more "Établissement"
    *
-   * @example requestBody: {"siret": "83014132100034"}
+   * @example requestBody: {"string": "siret, nom, adresse..."}
    */
 
   @Example<Establishment>(exampleEstablishment)
-  @Get('{siret}')
+  @Get('{query}')
   public async getEstablishmentBySiret(
-    @Path() siret: Siret,
+    @Path() query: string,
     @Res() requestFailedResponse: TsoaResponse<500, ErrorJSON>,
     @Res() _validationFailedResponse: TsoaResponse<422, ValidateErrorJSON>,
     @Res() notFoundResponse: TsoaResponse<404, EstablishmentNotFoundErrorJSON>
-  ): Promise<Establishment> {
-    const establishmentResult = await new EstablishmentService().getBySiret(siret)
+  ): Promise<EstablishementDisplay[]> {
+    const establishmentResult = await new EstablishmentService().search(query)
 
     if (establishmentResult.isErr) {
       const err = establishmentResult.error
