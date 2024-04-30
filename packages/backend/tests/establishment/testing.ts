@@ -19,8 +19,18 @@ const testEstablishment = {
   }
 }
 
+const testDisplayEstablishment = {
+  siret: '83014132100034',
+  creationDate: '2021-12-01',
+  name: 'MULTI',
+  region: 'todo',
+  address: '116 RUE DALAYRAC, 94120 FONTENAY-SOUS-BOIS',
+  sector: 'todo'
+}
+
 export const dummyEstablishmentRepository: EstablishmentRepository = {
-  get: (_siret: string) => Promise.resolve(Result.ok(testEstablishment))
+  get: (_siret: string) => Promise.resolve(Result.ok(testEstablishment)),
+  search: (_siret: string) => Promise.resolve(Result.ok([testDisplayEstablishment]))
 }
 
 export const nothingRegionMapping: COG2023Mapping = {
