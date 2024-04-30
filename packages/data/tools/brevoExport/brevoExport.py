@@ -234,7 +234,7 @@ def improve_merge_data(data):
         if "autres_donnes" in deal and deal["autres_donnes"] != "[]":
             deal["Code Postal"] = get_code_postal(deal["autres_donnes"])
             deal["Région"] = get_region(deal["autres_donnes"], deal["Code Postal"])
-            create_objectifs_columns(deal, deal["autres_donnes"])
+            create_objectifs_columns(deal)
             deal["Code NAF"] = get_NAF(deal["autres_donnes"])
 
 
@@ -259,6 +259,11 @@ def define_structure_size(deal):
         match = re.search(pattern, deal["autres_donnes"])
         if match:
             size = match.group(1)
+        else:
+            pattern = r'"structure_size":"([^"]+)"'
+            match = re.search(pattern, deal["autres_donnes"])
+            if match:
+                size = match.group(1)
     elif "Contact_STRUCTURE_SIZE" in deal:
         size = deal["Contact_STRUCTURE_SIZE"]
     return size
@@ -314,12 +319,79 @@ def get_NAF(s):
     return matches[0]
 
 
-def create_objectifs_columns(deal, s):
+def flatten_list_of_dicts(data):
+    """
+    Flatten a list of dictionaries into a single dictionary.
+    """
+    flattened_dict = {}
+    for d in data:
+        flattened_dict.update(d)
+    return flattened_dict
+
+
+def create_objectifs_columns(deal):
+    other_data = deal["autres_donnes"]
+    # option 1 : the format I get is the most recent json
+    try:
+        other_data_json = json.loads(other_data)
+        other_data_dict = flatten_list_of_dicts(other_data_json)
+        if "priority_objective" in other_data_dict:
+            priority_objective = other_data_dict["priority_objective"]
+            for objectif in OBJECTIFS:
+                if priority_objective == objectif:
+                    deal["Objectif: " + objectif] = "oui"
+                else:
+                    deal["Objectif: " + objectif] = "non"
+            return
+        if "energy_reduction_objective" in other_data_dict:
+            if other_data_dict["recently_audited"] == "non":
+                deal["Objectif: mon impact environnemental"] = "oui"
+            else:
+                deal["Objectif: mon impact environnemental"] = "non"
+
+            if other_data_dict["wastes_materials_objective"] == "non":
+                deal["Objectif: l'écoconception"] = "non"
+            else:
+                deal["Objectif: l'écoconception"] = "oui"
+
+            if (
+                other_data_dict["wastes_management_objective"] == "non"
+                or other_data_dict["wastes_management_objective"] == "non-max"
+            ):
+                deal["Objectif: la gestion des déchets"] = "oui"
+            else:
+                deal["Objectif: la gestion des déchets"] = "non"
+
+            if other_data_dict["water_reduction_objective"] == "non":
+                deal["Objectif: diminuer ma consommation d'eau"] = "non"
+            else:
+                deal["Objectif: diminuer ma consommation d'eau"] = "oui"
+
+            if (
+                other_data_dict["sustainable_mobility_objective"] == "non"
+                or other_data_dict["sustainable_mobility_objective"] == "non-max"
+            ):
+                deal["Objectif: la mobilité durable"] = "oui"
+            else:
+                deal["Objectif: la mobilité durable"] = "non"
+
+            deal["Objectif: rénover mon bâtiment"] = "Non spécifié"
+            deal["Objectif: former ou recruter"] = "Non spécifié"
+
+            if other_data_dict["energy_reduction_objective"] == "non":
+                deal["Objectif: ma performance énergétique"] = "non"
+            else:
+                deal["Objectif: ma performance énergétique"] = "oui"
+            return
+    except json.JSONDecodeError:
+        pass
+
+    # option 2 : old formats
     for objectif in OBJECTIFS:
-        start_index = s.find(objectif)
+        start_index = other_data.find(objectif)
         if start_index != -1:
-            stop_index = min(start_index + 40, len(s))
-            subset_s = s[start_index:stop_index]
+            stop_index = min(start_index + 40, len(other_data))
+            subset_s = other_data[start_index:stop_index]
             match = re.search(r"(oui|non)", subset_s)
             if match:
                 deal["Objectif: " + objectif] = match.group(0)

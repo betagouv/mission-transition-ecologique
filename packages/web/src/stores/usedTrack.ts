@@ -62,7 +62,7 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
 
   const usedTracksValuesPairs = computed<UsedTrackValuePair[]>(() => {
     return usedTracks.value.map((usedTrack: UsedTrack) => {
-      const values = usedTrack.selected?.map((s) => s.value)
+      const values = usedTrack.selected?.map((s: TrackOptionsUnion) => s.value)
       return {
         currentId: usedTrack.id,
         completed: usedTrack.completed,

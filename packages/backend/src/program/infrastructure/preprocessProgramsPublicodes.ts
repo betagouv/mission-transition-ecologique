@@ -16,6 +16,7 @@ import { QuestionnaireData } from '../domain/types/types'
 import { type PublicodesInputData, PublicodesQuestionnaireRoute, SectorToNAFSection, NAF1Letters } from './types'
 
 const SizeToWorkforce: { [key in StructureSize]: number } = {
+  [StructureSize.EI]: 1,
   [StructureSize.TPE]: 19,
   [StructureSize.PE]: 49,
   [StructureSize.ME]: 249,

@@ -246,7 +246,7 @@ const opportunityForm = ref<opportunityFormType>({
     value: Translation.t('program.form.needs', {
       secteur:
         usedTrack.findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'secteur') ??
-        usedTrack.findInQuestionnaireDataByTrackIdAndKey(TrackId.Sectors, 'secteur'),
+        usedTrack.findInQuestionnaireDataByTrackIdAndKey(TrackId.Sectors, 'sector'),
       titreAide: props.program.titre
     })
   },

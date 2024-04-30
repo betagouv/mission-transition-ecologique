@@ -6,9 +6,8 @@
         :options="programAidTypeOptions"
       />
     </div>
-    <div class="fr-col-12 fr-col-sm-6">
+    <div class="fr-col-12 fr-col-sm-6" v-if="programStore.hasObjectiveTypeFilter()">
       <TeeDsfrTags
-        v-if="programStore.hasObjectiveTypeFilter()"
         v-model="programFilters.objectiveTypeSelected"
         :tags="objectiveTypeTags"
       />

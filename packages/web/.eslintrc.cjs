@@ -16,7 +16,8 @@ module.exports = {
   },
   rules: {
     'prettier/prettier': 'error',
-    '@typescript-eslint/no-explicit-any': 'off'
+    '@typescript-eslint/no-explicit-any': 'off',
+    'vue/no-v-html': 'off'
   },
   ignorePatterns: [
     '../backend/src/domain/eligibility.ts',
