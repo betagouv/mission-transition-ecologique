@@ -13,7 +13,6 @@ import {
 } from '@/types'
 import type { Track } from '@/types'
 import type EstablishmentType from '@/types/establishmentType'
-import Validator from '@tee/common/src/establishement/validator'
 
 const defaultQuestionnaireData: EstablishmentType = {
   siret: '',
@@ -44,7 +43,6 @@ export const siret: Track = {
       id: 'search-siret',
       hasInput: HasInputOptions.Search,
       value: undefined,
-      validation: Validator.validateSiret,
       questionnaireData: { ...defaultQuestionnaireData },
       title: { fr: 'SIRET' },
       placeholder: { fr: 'Votre numéro SIRET (14 chiffres)' },
