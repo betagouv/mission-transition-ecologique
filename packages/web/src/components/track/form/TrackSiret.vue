@@ -10,79 +10,60 @@
   />
 
   <!-- RESPONSES -->
+  <h6 v-show="selection >= 0 && requestResponses.length > 1">
+    X résultats trouvés. Sélectionnez votre entreprise parmi les résultats affichés ou affinez votre recherche.
+  </h6>
   <div
     v-if="requestResponses.length"
     class="fr-mt-4v"
   >
-    <!-- CARDS -->
     <div
       v-for="(response, i) in requestResponses"
       :key="`resp-input-${i}`"
-      class="fr-card fr-card-result fr-card--no-arrow fr-card--shadow"
+      class="fr-card fr-card-result fr-card--no-arrow fr-card--shadow fr-my-2v"
       :style="`border: ${isSelected(i) ? 'solid thin #000091;' : 'solid thin #C4C4C4'};`"
       @click="selectItem(i)"
     >
       <div class="fr-card__body">
-        <div class="fr-card__content fr-py-4v fr-px-4v">
-          <!-- TITLE -->
+        <div class="fr-card__content fr-py-2v fr-px-4v">
           <h3
-            :class="`fr-card__title fr-mb-2v`"
+            class="fr-card__title"
             :style="`${isSelected(i) ? 'color: #000091;' : ''}`"
           >
-            <span> {{ response.name }} - SIRET {{ response.siret }} </span>
+            <span> {{ response.siret }} - {{ response.name || 'Entreprise individuelle' }} </span>
           </h3>
-          <div class="fr-card__desc tee-resp-info-block">
-            <p
-              :key="`resp-input-${i}-field-${i}`"
-              :class="'fr-mb-2v'"
-            >
-              <!-- ICON -->
+          <div class="fr-card__desc">
+            <div>
               <span
                 class="fr-icon-briefcase-line fr-mr-8v"
                 aria-hidden="true"
               >
               </span>
-              <!-- TITLE -->
-              <span class="fr-mr-1v"> Secteur d'activité : </span>
+              <span class="fr-mr-3v"> Secteur d'activité : </span>
               <span>
                 {{ response.sector }}
               </span>
-            </p>
-          </div>
-          <div class="fr-card__desc tee-resp-info-block">
-            <p
-              :key="`resp-input-${i}-field-${i}`"
-              :class="'fr-mb-2v'"
-            >
-              <!-- ICON -->
+            </div>
+            <div>
+              <!-- right margin differ to compensate for the icon size-->
               <span
-                class="fr-icon-map-pin-2-line fr-mr-8v"
+                class="fr-icon-map-pin-2-line fr-mr-9v"
                 aria-hidden="true"
               >
               </span>
-              <!-- TITLE -->
               <span>
                 {{ response.address }}
               </span>
-            </p>
-          </div>
-          <div class="fr-card__desc tee-resp-info-block">
-            <p
-              :key="`resp-input-${i}-field-${i}`"
-              :class="'fr-mb-2v'"
-            >
-              <!-- ICON -->
+            </div>
+            <div>
               <span
                 class="fr-icon-time-line fr-mr-8v"
                 aria-hidden="true"
               >
               </span>
-              <!-- TITLE -->
-              <span class="fr-mr-1v"> Création le </span>
-              <span>
-                {{ response.creationDate }}
-              </span>
-            </p>
+              <span> Création le </span>
+              <span> {{ new Date(response.creationDate).toLocaleDateString('fr') }} </span>
+            </div>
           </div>
         </div>
       </div>
@@ -106,14 +87,12 @@
 </template>
 
 <script setup lang="ts">
-// CONSOLE LOG TEMPLATE
-// console.log(`TeeDsfrSearchBar > FUNCTION_NAME > MSG_OR_VALUE :`)
-
 import { useTrackStore } from '@/stores/track'
 import { type TrackOptionItem, type TrackOptionsInput } from '@/types'
 import { RouteName } from '@/types/routeType'
 import Matomo from '@/utils/matomo'
 import Navigation from '@/utils/navigation'
+import TrackSiret from '@/utils/track/TrackSiret'
 import Translation from '@/utils/translation'
 import { ref, computed } from 'vue'
 import EstablishmentApi from '@/service/api/establishmentApi'
@@ -127,7 +106,7 @@ const props = defineProps<Props>()
 const queryValue = ref<string>()
 const isLoading = ref<boolean>(false)
 const requestResponses = ref<EstablishementDisplay[]>([])
-const selection = ref<number>(0)
+const selection = ref<number>(-1)
 const errorMessage = ref<string>()
 
 const emit = defineEmits<{
@@ -145,11 +124,12 @@ const isSelected = (id: number) => {
 
 const resetSelection = () => {
   requestResponses.value = []
-  selection.value = 0
+  selection.value = -1
 }
 
 const selectItem = (id: number) => {
   selection.value = id
+  emit('updateSelection', createData())
 }
 
 const processInput = async () => {
@@ -158,12 +138,15 @@ const processInput = async () => {
   resetSelection()
 
   const searchResult = await new EstablishmentApi().get(queryValue.value as string)
-  console.log(searchResult)
 
   if (searchResult.isErr) {
     errorMessage.value = Translation.t('enterprise.noStructureFound')
+  } else if (searchResult.value.length == 0) {
+    errorMessage.value = Translation.t('enterprise.noStructureFound')
   } else {
     requestResponses.value = searchResult.value
+    selection.value = 0
+    emit('updateSelection', createData())
   }
 
   isLoading.value = false
@@ -181,7 +164,12 @@ const goToNextTrack = () => {
     option.next = props.option.wildcard.next
     option.value = props.option.wildcard.value
   }
-  // emit('updateSelection', createData()) TODO
   emit('goToNextTrack', option)
+}
+
+function createData(): TrackOptionItem {
+  const siretValue = selection.value >= 0 ? requestResponses.value[selection.value].siret : ''
+  console.log(props.option, siretValue, selection.value)
+  return TrackSiret.createData(props.option, siretValue, undefined, false)
 }
 </script>
