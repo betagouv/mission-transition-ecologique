@@ -548,7 +548,7 @@ VITE_TEE_BACKEND_URL=https://tee-backend.osc-fr1.scalingo.io
 - Others
   - https://www.entreprises.gouv.fr/files/files/secteurs-d-activite/industrie/decarbonation/transition-ecologique-guidedes-aides-pour-les-tpe-pme.pdf
   - https://www.gouvernement.fr/france-nation-verte
-  - https://place-des-entreprises.beta.gouv.fr/aide-entreprise/accueil/theme/environnement-transition-ecologique
+  - https://conseillers-entreprises.service-public.fr/aide-entreprise/accueil/theme/environnement-transition-ecologique
   - https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2022/tremplin-transition-ecologique-pme
 
 ---
