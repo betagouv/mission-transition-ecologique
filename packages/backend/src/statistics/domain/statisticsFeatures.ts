@@ -3,6 +3,7 @@ import { Result } from 'true-myth'
 import StatsData, { DemandsAtTime, OpportunityStats, ProgramStats } from '@tee/common/src/stats/types'
 import { OpportunityRepository } from '../../opportunity/domain/spi'
 import ProgramService from '../../program/application/programService'
+import StatisticsCache from './statisticsCache'
 
 export default class StatisticsFeatures {
   private readonly _opportunityRepository: OpportunityRepository
@@ -110,26 +111,5 @@ export default class StatisticsFeatures {
     console.log(opportunitiesDates.error)
     // TODO: improve error handling
     return null
-  }
-}
-
-class StatisticsCache {
-  private static instance: StatisticsCache
-  public statistics?: { statistics: StatsData; timestamp: number }
-
-  public static getInstance(): StatisticsCache {
-    if (!StatisticsCache.instance) {
-      StatisticsCache.instance = new StatisticsCache()
-    }
-    return StatisticsCache.instance
-  }
-
-  public isValid(): boolean {
-    if (!this.statistics) {
-      return false
-    }
-    const expirationTime = 24 * 60 * 60 * 1000 // 1 day in milliseconds
-    const currentTime = Date.now()
-    return currentTime - this.statistics.timestamp < expirationTime
   }
 }
