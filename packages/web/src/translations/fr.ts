@@ -68,7 +68,8 @@ export const frDict = {
   },
   enterprise: {
     select: 'Sélectionnez votre entreprise',
-    noStructureFound: "Aucune structure n'a été trouvée."
+    noStructureFound: "Aucune structure n'a été trouvée.",
+    searchTooShort: '3 caractères minimums.'
   },
   categories: {
     start: '🏁 Questionnaire',

@@ -98,6 +98,11 @@ import { ref, computed } from 'vue'
 import EstablishmentApi from '@/service/api/establishmentApi'
 import { EstablishementDisplay } from '@tee/common/src/establishement/types'
 
+// Functionnal note :
+// We send data update to the parent component each time the data selection change.
+// This is to stay coherent with the rest of the track and more importantly
+// because the activation of the nextStep button is computed somewhere in the parents.)
+
 interface Props {
   option: TrackOptionsInput
 }
@@ -125,11 +130,11 @@ const isSelected = (id: number) => {
 const resetSelection = () => {
   requestResponses.value = []
   selection.value = -1
+  emit('updateSelection', createData())
 }
 
 const selectItem = (id: number) => {
   selection.value = id
-  emit('updateSelection', createData())
   emit('updateSelection', createData())
 }
 
@@ -138,16 +143,20 @@ const processInput = async () => {
   errorMessage.value = undefined
   resetSelection()
 
-  const searchResult = await new EstablishmentApi().get(queryValue.value as string)
-
-  if (searchResult.isErr) {
-    errorMessage.value = Translation.t('enterprise.noStructureFound')
-  } else if (searchResult.value.length == 0) {
-    errorMessage.value = Translation.t('enterprise.noStructureFound')
+  if (!queryValue.value || queryValue.value.length < 3) {
+    errorMessage.value = Translation.t('enterprise.searchTooShort')
   } else {
-    requestResponses.value = searchResult.value
-    selection.value = 0
-    emit('updateSelection', createData())
+    const searchResult = await new EstablishmentApi().get(queryValue.value)
+
+    if (searchResult.isErr) {
+      errorMessage.value = Translation.t('enterprise.noStructureFound')
+    } else if (searchResult.value.length == 0) {
+      errorMessage.value = Translation.t('enterprise.noStructureFound')
+    } else {
+      requestResponses.value = searchResult.value
+      selection.value = 0
+      emit('updateSelection', createData())
+    }
   }
 
   isLoading.value = false
@@ -170,7 +179,7 @@ const goToNextTrack = () => {
 
 function createData(): TrackOptionItem {
   const siretValue = selection.value >= 0 ? requestResponses.value[selection.value].siret : ''
-  console.log(props.option, siretValue, selection.value)
-  return TrackSiret.createData(props.option, siretValue, undefined, false)
+  const hasSelection = selection.value >= 0
+  return TrackSiret.createData(props.option, siretValue, undefined, !hasSelection, hasSelection)
 }
 </script>

@@ -114,7 +114,7 @@
             <TrackSiret
               v-if="TrackComponent.isSiret(usedTrack, option)"
               :option="option"
-              @update-selection="updateSelection($event.option, idx, $event.remove)"
+              @update-selection="updateSelection($event.option, idx, $event.remove, $event.forceKeep)"
               @go-to-next-track="updateAndSave($event, idx)"
             />
           </div>
@@ -223,10 +223,10 @@ const isActiveChoice = (index: number) => {
   return selectedOptionsIndexes.value.includes(index)
 }
 
-const updateSelection = async (option: TrackOptionsUnion, index: number, forceRemove: boolean = false) => {
+const updateSelection = async (option: TrackOptionsUnion, index: number, forceRemove: boolean = false, forceKeep = false) => {
   const isActive = isActiveChoice(index)
   let remove = false
-  if (!isActive && !forceRemove) {
+  if ((!isActive && !forceRemove) || forceKeep) {
     selectedOptionsIndexes.value = allowMultiple ? [...selectedOptionsIndexes.value, index] : [index]
     selectedOptions.value = allowMultiple ? [...selectedOptions.value, option] : [option]
 

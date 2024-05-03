@@ -8,7 +8,7 @@ import { EstablishementDisplay } from '@tee/common/src/establishement/types'
 
 export class RechercheEntreprise {
   public searchEstablishment: EstablishmentRepository['search'] = async (query) => {
-    const api_url = `https://recherche-entreprises.api.gouv.fr/search?q=${query}&per_page=3`
+    const api_url = `https://recherche-entreprises.api.gouv.fr/search?q=${query}&per_page=3&etat_administratif=A`
 
     try {
       const response: AxiosResponse<RechercheEntrepriseSearch> = await axios.get(api_url)

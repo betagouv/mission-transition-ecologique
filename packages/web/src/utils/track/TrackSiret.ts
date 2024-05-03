@@ -4,14 +4,21 @@ import type EstablishmentType from '@/types/establishmentType'
 import TrackCallback from '@/utils/track/TrackCallback'
 
 export default class TrackSiret {
-  static createData(option: TrackOptionsUnion, value?: string, questionnaireData?: EstablishmentType, remove = false): TrackOptionItem {
+  static createData(
+    option: TrackOptionsUnion,
+    value?: string,
+    questionnaireData?: EstablishmentType,
+    remove = false,
+    forceKeep = false
+  ): TrackOptionItem {
     return {
       option: {
         ...option,
         value: value,
         questionnaireData: questionnaireData || option.questionnaireData
       } as TrackOptionsUnion,
-      remove: remove
+      remove: remove,
+      forceKeep: forceKeep
     }
   }
 
