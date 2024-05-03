@@ -10,28 +10,33 @@
   />
 
   <!-- RESPONSES -->
-  <h6 v-show="selection >= 0 && requestResponses.length > 1">
-    X résultats trouvés. Sélectionnez votre entreprise parmi les résultats affichés ou affinez votre recherche.
-  </h6>
+  <div
+    v-show="selection >= 0 && requestResponses.length > 1"
+    class="fr-mt-n2w"
+  >
+    <span class="result-number">X résultats trouvés</span>
+    <h6 class="fr-mt-3v">Sélectionnez votre entreprise:</h6>
+  </div>
   <div
     v-if="requestResponses.length"
-    class="fr-mt-4v"
+    class="fr-mt-n2w"
   >
     <div
       v-for="(response, i) in requestResponses"
       :key="`resp-input-${i}`"
-      class="fr-card fr-card-result fr-card--no-arrow fr-card--shadow fr-my-2v"
-      :style="`border: ${isSelected(i) ? 'solid thin #000091;' : 'solid thin #C4C4C4'};`"
+      class="fr-card fr-card-result fr-card--no-arrow fr-mb-4v fr-card--shadow custom-border"
+      :class="{ 'is-selected': isSelected(i) }"
       @click="selectItem(i)"
     >
       <div class="fr-card__body">
         <div class="fr-card__content fr-py-2v fr-px-4v">
-          <h3
+          <div
             class="fr-card__title"
-            :style="`${isSelected(i) ? 'color: #000091;' : ''}`"
+            :class="{ 'is-title-selected': isSelected(i) }"
           >
-            <span> {{ response.siret }} - {{ response.name || 'Entreprise individuelle' }} </span>
-          </h3>
+            {{ response.name || 'Entreprise individuelle' }}
+            <span class="thiner-text">- SIRET {{ response.siret }}</span>
+          </div>
           <div class="fr-card__desc">
             <div>
               <span
@@ -39,10 +44,7 @@
                 aria-hidden="true"
               >
               </span>
-              <span class="fr-mr-3v"> Secteur d'activité : </span>
-              <span>
-                {{ response.sector }}
-              </span>
+              <span class="fr-mr-3v">Secteur d'activité : {{ response.sector || 'Non Renseigné' }}</span>
             </div>
             <div>
               <!-- right margin differ to compensate for the icon size-->
@@ -183,3 +185,28 @@ function createData(): TrackOptionItem {
   return TrackSiret.createData(props.option, siretValue, undefined, !hasSelection, hasSelection)
 }
 </script>
+
+<style scoped>
+.custom-border {
+  border: solid thin #c4c4c4;
+}
+
+.is-selected {
+  border: solid thin #000091;
+  color: #000091;
+  background-color: rgb(245, 245, 245);
+}
+
+.is-title-selected {
+  color: #000091;
+}
+
+.thiner-text {
+  font-weight: normal;
+}
+
+.result-number {
+  font-style: italic;
+  color: #000091;
+}
+</style>
