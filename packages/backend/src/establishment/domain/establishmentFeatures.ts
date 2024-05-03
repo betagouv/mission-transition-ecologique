@@ -1,8 +1,7 @@
 import { Result } from 'true-myth'
 import type { CityToRegionMapping, EstablishmentRepository, NafMapping } from './spi'
-import { Establishment, EstablishmentDetails, Siret } from './types'
-import Validator from '@tee/common/src/establishement/validator'
-import { EstablishementDisplay } from '@tee/common/src/establishement/types'
+import { Establishment, EstablishmentDetails, Siret, EstablishementDisplay } from './types'
+import Validator from '../../../../common/src/establishement/validator'
 
 export default class EstablishmentFeatures {
   private readonly _establishmentRepository: EstablishmentRepository

@@ -33,3 +33,5 @@ export interface SectorDetails {
 }
 
 export class EstablishmentNotFoundError extends CustomError {}
+
+export { EstablishementDisplay } from '../../../../common/src/establishement/types'
