@@ -130,6 +130,7 @@ const resetSelection = () => {
 const selectItem = (id: number) => {
   selection.value = id
   emit('updateSelection', createData())
+  emit('updateSelection', createData())
 }
 
 const processInput = async () => {
