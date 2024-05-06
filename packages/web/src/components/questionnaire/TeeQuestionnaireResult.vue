@@ -16,6 +16,7 @@
           style="height: 100%"
         >
           <TrackSidebar />
+          <ProgramFilterByType />
         </div>
 
         <div
