@@ -36,7 +36,7 @@ export const siret: Track = {
       value: undefined,
       questionnaireData: { ...defaultQuestionnaireData },
       title: { fr: 'SIRET' },
-      placeholder: { fr: 'Dénomination, Adresse, SIRET, Nom des dirigeants...' },
+      placeholder: { fr: 'Recherche par dénomination, adresse, SIRET, nom des dirigeants...' },
       next: {
         default: TrackId.StructureWorkforce
       },
