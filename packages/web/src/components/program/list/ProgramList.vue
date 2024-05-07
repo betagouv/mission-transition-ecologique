@@ -15,7 +15,6 @@
       <div class="fr-col-12">
         <ProgramFilters v-if="havePrograms && countPrograms > 1" />
       </div>
-
       <div class="fr-col-12 fr-text-center">
         <TeeSpinner
           v-if="hasSpinner"
@@ -32,16 +31,27 @@
           :email="Contact.email"
         />
       </div>
-
-      <router-link
-        v-for="program in filteredPrograms"
-        :id="program.id"
-        :key="program.id"
-        :to="getRouteToProgramDetail(program.id)"
-        class="fr-col-12 fr-card fr-enlarge-link fr-card--horizontal-tier fr-mb-10v"
+      <div
+        v-if="navigationStore.isCatalog() && !hasSpinner"
+        class="fr-mt-10v fr-col-3 fr-col-md-4 fr-col-lg-3 fr-col-xl-2 fr-col-sm-hide"
       >
-        <ProgramCard :program="program" />
-      </router-link>
+        <ProgramFilterByType />
+      </div>
+      <div class="fr-col">
+        <div class="fr-container">
+          <div class="fr-grid-row">
+            <router-link
+              v-for="program in filteredPrograms"
+              :id="program.id"
+              :key="program.id"
+              :to="getRouteToProgramDetail(program.id)"
+              class="fr-col-12 fr-card fr-enlarge-link fr-card--horizontal-tier fr-mb-10v"
+            >
+              <ProgramCard :program="program" />
+            </router-link>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>

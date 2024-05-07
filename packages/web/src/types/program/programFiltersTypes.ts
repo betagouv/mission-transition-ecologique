@@ -1,5 +1,5 @@
 export type programFiltersType = {
-  [key: string]: string
-  programAidTypeSelected: string
+  programAidTypesSelected: string[]
   objectifTypeSelected: string
+  [key: string]: string | string[]
 }

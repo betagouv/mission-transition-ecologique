@@ -1,7 +1,8 @@
 <template>
-  <div class="fr-col-12 fr-col-sm-6">
-    <DsfrSelect
-      v-model="programFilters.programAidTypeSelected"
+  <div class="fr-mb-6v">
+    <DsfrCheckboxSet
+      v-model="programFilters.programAidTypesSelected"
+      legend="Filtrer par nature de l'aide"
       :options="programAidTypeOptions"
     />
   </div>
@@ -10,35 +11,36 @@
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
 import { ProgramAidType, type programFiltersType } from '@/types'
-import { DsfrSelect } from '@gouvminint/vue-dsfr'
-import type { DsfrSelectProps } from '@gouvminint/vue-dsfr/types/components/DsfrSelect/DsfrSelect.types'
+import { DsfrCheckboxSetProps } from '@gouvminint/vue-dsfr/types/components/DsfrCheckbox/DsfrCheckbox.types'
+import { DsfrCheckboxSet } from '@gouvminint/vue-dsfr'
 
 const programFilters: programFiltersType = useProgramStore().programFilters
 
-const programAidTypeOptions: DsfrSelectProps['options'] = [
+const programAidTypeOptions: DsfrCheckboxSetProps['options'] = [
   {
-    text: "Filtrer par nature de l'aide",
-    value: ''
+    label: 'Accompagnement',
+    id: ProgramAidType.acc,
+    name: 'accompagnement'
   },
   {
-    text: 'Accompagnement',
-    value: ProgramAidType.acc
+    label: 'Financement',
+    name: 'financement',
+    id: ProgramAidType.fund
   },
   {
-    text: 'Financement',
-    value: ProgramAidType.fund
+    label: 'Prêt',
+    name: 'pret',
+    id: ProgramAidType.loan
   },
   {
-    text: 'Prêt',
-    value: ProgramAidType.loan
+    label: 'Avantage fiscal',
+    name: 'avantage-fiscal',
+    id: ProgramAidType.tax
   },
   {
-    text: 'Avantage fiscal',
-    value: ProgramAidType.tax
-  },
-  {
-    text: 'Formation',
-    value: ProgramAidType.train
+    label: 'Formation',
+    id: ProgramAidType.train,
+    name: 'formation'
   }
 ]
 </script>
