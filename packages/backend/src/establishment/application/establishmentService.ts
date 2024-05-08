@@ -1,7 +1,7 @@
 import EstablishmentFeatures from '../domain/establishmentFeatures'
 import { getEstablishment } from '../infrastructure/api/sirene/sirene'
 import { CityToRegionMapping, EstablishmentRepository, NafMapping } from '../domain/spi'
-import type { EstablishmentDetails, Siret } from '../domain/types'
+import type { Establishment, EstablishmentDetails, Siret } from '../domain/types'
 import { Result } from 'true-myth'
 import { COG2023Mapping } from '../infrastructure/json/cityToRegionMapping'
 import { NAF_JSONMapping } from '../infrastructure/json/nafMapping'
@@ -18,6 +18,10 @@ export default class EstablishmentService {
   }
 
   public getBySiret(siret: Siret): Promise<Result<EstablishmentDetails, Error>> {
+    return this._establishmentFeatures.getBySiret(siret)
+  }
+
+  public getFullDataBySiret(siret: Siret): Promise<Result<Establishment, Error>> {
     return this._establishmentFeatures.getBySiret(siret)
   }
 

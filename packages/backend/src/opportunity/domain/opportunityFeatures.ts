@@ -6,6 +6,8 @@ import { OperatorRepository } from '../../operator/domain/spi'
 import { ProgramRepository } from '../../program/domain/spi'
 import ProgramFeatures from '../../program/domain/programFeatures'
 import { Program } from '@tee/data/src/type/program'
+import Validator from '@tee/common/src/establishment/validator'
+import EstablishmentService from '../../establishment/application/establishmentService'
 
 export default class OpportunityFeatures {
   private readonly _contactRepository: ContactRepository
@@ -29,6 +31,7 @@ export default class OpportunityFeatures {
   }
 
   createOpportunity = async (opportunity: Opportunity, optIn: true): Promise<Result<OpportunityId, Error>> => {
+    opportunity = await this._verifyAndAddEstablishmentData(opportunity)
     const contactIdResult = await this._contactRepository.createOrUpdate(opportunity as ContactDetails, optIn)
     if (contactIdResult.isErr) {
       return Result.err(contactIdResult.error)
@@ -79,5 +82,30 @@ export default class OpportunityFeatures {
         // TODO: Send an email to the admin: Receipt not sent or add error on sentry
       }
     })
+  }
+
+  private async _verifyAndAddEstablishmentData(opportunity: Opportunity): Promise<Opportunity> {
+    if (!Validator.validateSiret(opportunity.companySiret)) {
+      opportunity.companySiret = 'INVALID SIRET: "' + opportunity.companySiret + '"'
+      return opportunity
+    }
+    const establishmentInfos = await new EstablishmentService().getFullDataBySiret(opportunity.companySiret)
+    if (establishmentInfos.isErr) {
+      return opportunity
+    }
+    opportunity.companyName = establishmentInfos.value.denomination
+    opportunity.companySector = establishmentInfos.value.nafLabel || ''
+
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    const otherDataObj = JSON.parse(opportunity.otherData || '{}')
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    otherDataObj.nafCode = establishmentInfos.value.nafCode
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    otherDataObj.address = establishmentInfos.value.address
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    otherDataObj.region = establishmentInfos.value.region || ''
+    opportunity.otherData = JSON.stringify(otherDataObj)
+
+    return opportunity
   }
 }
