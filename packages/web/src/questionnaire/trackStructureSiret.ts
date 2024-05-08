@@ -13,7 +13,7 @@ import {
 } from '@/types'
 import type { Track } from '@/types'
 import type EstablishmentType from '@/types/establishmentType'
-import Validator from '../../../common/src/establishment/validator'
+import Validator from '@tee/common/src/establishment/validator'
 
 const defaultQuestionnaireData: EstablishmentType = {
   siret: '',
