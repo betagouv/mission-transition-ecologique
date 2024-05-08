@@ -3,7 +3,7 @@
 
 import { HasInputOptions, SiretValue, TrackComponent, TrackId } from '@/types'
 import type { Track } from '@/types'
-import type EstablishmentType from '@/types/establishmentType'
+import type { EstablishmentType } from '@/types/establishmentType'
 
 const defaultQuestionnaireData: EstablishmentType = {
   siret: '',

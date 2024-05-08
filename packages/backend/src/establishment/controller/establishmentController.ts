@@ -2,7 +2,7 @@ import { Controller, Route, SuccessResponse, TsoaResponse, Res, Example, Get, Pa
 import EstablishmentService from '../application/establishmentService'
 import { EstablishmentNotFoundError, Establishment } from '../domain/types'
 import { ErrorJSON, ValidateErrorJSON } from '../../common/controller/jsonError'
-import { EstablishementDisplay } from '@tee/common/src/establishement/types'
+import { EstablishmentSearch } from '@tee/common/src/establishement/types'
 
 interface EstablishmentNotFoundErrorJSON {
   message: 'Establishment not found'
@@ -52,7 +52,7 @@ export class SireneController extends Controller {
     @Res() requestFailedResponse: TsoaResponse<500, ErrorJSON>,
     @Res() _validationFailedResponse: TsoaResponse<422, ValidateErrorJSON>,
     @Res() notFoundResponse: TsoaResponse<404, EstablishmentNotFoundErrorJSON>
-  ): Promise<EstablishementDisplay[]> {
+  ): Promise<EstablishmentSearch> {
     const establishmentResult = await new EstablishmentService().search(query)
 
     if (establishmentResult.isErr) {

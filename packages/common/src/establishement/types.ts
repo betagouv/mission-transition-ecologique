@@ -1,11 +1,22 @@
+import { StructureSize } from '../questionnaire/types'
+
 export interface EstablishmentId {
   siret: string
 }
 
-export interface EstablishementDisplay extends EstablishmentId {
+export default interface EstablishmentFront extends EstablishmentId {
+  codeNAF: string
+  codeNAF1: string
+  ville: string
+  codePostal: string
+  region: string | undefined
+  structure_size: StructureSize | undefined
+  denomination: string | undefined
+  secteur: string
   creationDate: string
-  address: string
-  sector: string
-  name: string
-  region: string
+}
+
+export interface EstablishmentSearch {
+  establishments: EstablishmentFront[]
+  resultCount: number
 }

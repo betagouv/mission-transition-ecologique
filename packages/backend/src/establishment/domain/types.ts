@@ -34,4 +34,9 @@ export interface SectorDetails {
 
 export class EstablishmentNotFoundError extends CustomError {}
 
-export { EstablishementDisplay } from '../../../../common/src/establishement/types'
+export { EstablishmentSearch } from '../../../../common/src/establishement/types'
+
+export interface SearchResult {
+  resultCount: number
+  establishments: EstablishmentDetails[]
+}

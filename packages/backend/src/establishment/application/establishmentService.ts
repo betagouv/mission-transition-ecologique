@@ -1,11 +1,10 @@
 import EstablishmentFeatures from '../domain/establishmentFeatures'
 import { getEstablishment } from '../infrastructure/api/sirene/sirene'
 import { CityToRegionMapping, EstablishmentRepository, NafMapping } from '../domain/spi'
-import type { EstablishmentDetails, Siret } from '../domain/types'
+import type { EstablishmentDetails, EstablishmentSearch, Siret } from '../domain/types'
 import { Result } from 'true-myth'
 import { COG2023Mapping } from '../infrastructure/json/cityToRegionMapping'
 import { NAF_JSONMapping } from '../infrastructure/json/nafMapping'
-import { EstablishementDisplay } from '@tee/common/src/establishement/types'
 import { RechercheEntreprise } from '../infrastructure/api/recherche-entreprise/recherche-entreprise'
 
 export default class EstablishmentService {
@@ -19,7 +18,7 @@ export default class EstablishmentService {
     )
   }
 
-  public search(query: string): Promise<Result<EstablishementDisplay[], Error>> {
+  public search(query: string): Promise<Result<EstablishmentSearch, Error>> {
     return this._establishmentFeatures.search(query)
   }
 

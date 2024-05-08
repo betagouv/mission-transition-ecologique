@@ -1,10 +1,9 @@
-import { EstablishmentNotFoundError } from '../../../domain/types'
+import { EstablishmentNotFoundError, SearchResult } from '../../../domain/types'
 import axios, { AxiosError, AxiosResponse } from 'axios'
 import { Result } from 'true-myth'
 import { EstablishmentRepository } from '../../../domain/spi'
 import { ensureError } from '../../../../common/domain/error/errors'
 import { RechercheEntrepriseEstablishement, RechercheEntrepriseSearch } from './type'
-import { EstablishementDisplay } from '@tee/common/src/establishement/types'
 
 export class RechercheEntreprise {
   public searchEstablishment: EstablishmentRepository['search'] = async (query) => {
@@ -13,7 +12,7 @@ export class RechercheEntreprise {
     try {
       const response: AxiosResponse<RechercheEntrepriseSearch> = await axios.get(api_url)
 
-      const establishmentList = this._convertToEsblishmentDisplay(response.data)
+      const establishmentList = this._convertToSearchResult(response.data)
       return Result.ok(establishmentList)
     } catch (err: unknown) {
       let error = ensureError(err)
@@ -28,20 +27,33 @@ export class RechercheEntreprise {
     }
   }
 
-  private _convertToEsblishmentDisplay(rechercheEntrepriseSearch: RechercheEntrepriseSearch): EstablishementDisplay[] {
+  private _convertToSearchResult(rechercheEntrepriseSearch: RechercheEntrepriseSearch): SearchResult {
     if (!rechercheEntrepriseSearch.results) {
-      return []
+      return {
+        establishments: [],
+        resultCount: 0
+      }
     }
 
-    return rechercheEntrepriseSearch.results.map((result: RechercheEntrepriseEstablishement) => ({
+    const establishmentList = rechercheEntrepriseSearch.results.map((result: RechercheEntrepriseEstablishement) => ({
       siret: result.siege.siret,
+      siren: result.siege.siret.substring(0, 9),
+      nic: result.siege.siret.substring(9),
       creationDate: result.date_creation,
-      address: `${result.siege.numero_voie + ' ' || ''}${result.siege.type_voie + ' ' || ''}${result.siege.libelle_voie + ', ' || ''}${result.siege.code_postal} ${result.siege.libelle_commune}`,
-      sector: result.activite_principale, //TODO map from nafCode TO naflabel
-      name: result.nom_raison_sociale,
-      region: result.siege.commune //TODO map from codepostal TO region
-      // create another intermediary type from infra to domain.
-      // then do the conversions inside the domain.
+      denomination: result.nom_raison_sociale,
+      nafCode: result.activite_principale,
+      address: {
+        streetNumber: result.siege.numero_voie,
+        streetType: result.siege.type_voie,
+        streetLabel: result.siege.libelle_voie,
+        zipCode: result.siege.code_postal,
+        cityLabel: result.siege.libelle_commune,
+        cityCode: result.siege.commune
+      }
     }))
+    return {
+      establishments: establishmentList,
+      resultCount: rechercheEntrepriseSearch.total_results
+    }
   }
 }

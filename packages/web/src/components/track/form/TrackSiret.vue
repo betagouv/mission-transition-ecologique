@@ -11,18 +11,18 @@
 
   <!-- RESPONSES -->
   <div
-    v-show="selection >= 0 && requestResponses.length > 1"
+    v-show="selection >= 0 && requestResponses.establishments.length > 1"
     class="fr-mt-n2w"
   >
-    <span class="result-number">X résultats trouvés</span>
+    <span class="result-number">{{ requestResponses.resultCount }} résultats trouvés</span>
     <h6 class="fr-mt-3v">Sélectionnez votre entreprise:</h6>
   </div>
   <div
-    v-if="requestResponses.length"
+    v-if="requestResponses.establishments.length"
     class="fr-mt-n2w"
   >
     <div
-      v-for="(response, i) in requestResponses"
+      v-for="(response, i) in requestResponses.establishments"
       :key="`resp-input-${i}`"
       class="fr-card fr-card-result fr-card--no-arrow fr-mb-4v fr-card--shadow custom-border"
       :class="{ 'is-selected': isSelected(i) }"
@@ -34,36 +34,33 @@
             class="fr-card__title"
             :class="{ 'is-title-selected': isSelected(i) }"
           >
-            {{ response.name || 'Entreprise individuelle' }}
+            {{ response.denomination || 'Entreprise individuelle' }}
             <span class="thiner-text">- SIRET {{ response.siret }}</span>
           </div>
           <div class="fr-card__desc">
             <div>
               <span
-                class="fr-icon-briefcase-line fr-mr-8v"
+                class="fr-icon-briefcase-line fr-mr-9v"
                 aria-hidden="true"
               >
               </span>
-              <span class="fr-mr-3v">Secteur d'activité : {{ response.sector || 'Non Renseigné' }}</span>
+              <span class="fr-mr-3v">Secteur d'activité : {{ response.secteur || 'Non Renseigné' }}</span>
             </div>
             <div>
-              <!-- right margin differ to compensate for the icon size-->
               <span
                 class="fr-icon-map-pin-2-line fr-mr-9v"
                 aria-hidden="true"
               >
               </span>
-              <span>
-                {{ response.address }}
-              </span>
+              <span>{{ response.codePostal }} {{ response.ville }}</span>
             </div>
             <div>
               <span
-                class="fr-icon-time-line fr-mr-8v"
+                class="fr-icon-time-line fr-mr-9v"
                 aria-hidden="true"
               >
               </span>
-              <span> Création le </span>
+              <span>Création le</span>
               <span> {{ new Date(response.creationDate).toLocaleDateString('fr') }} </span>
             </div>
           </div>
@@ -98,7 +95,7 @@ import TrackSiret from '@/utils/track/TrackSiret'
 import Translation from '@/utils/translation'
 import { ref, computed } from 'vue'
 import EstablishmentApi from '@/service/api/establishmentApi'
-import { EstablishementDisplay } from '@tee/common/src/establishement/types'
+import { EstablishmentSearch } from '@tee/common/src/establishement/types'
 
 // Functionnal note :
 // We send data update to the parent component each time the data selection change.
@@ -110,9 +107,14 @@ interface Props {
 }
 const props = defineProps<Props>()
 
+const defaultSearchValue = {
+  establishments: [],
+  resultCount: -1
+}
+
 const queryValue = ref<string>()
 const isLoading = ref<boolean>(false)
-const requestResponses = ref<EstablishementDisplay[]>([])
+const requestResponses = ref<EstablishmentSearch>(defaultSearchValue)
 const selection = ref<number>(-1)
 const errorMessage = ref<string>()
 
@@ -122,7 +124,7 @@ const emit = defineEmits<{
 }>()
 
 const hasHint = computed(() => {
-  return Boolean(props.option.hint) && !requestResponses.value.length
+  return Boolean(props.option.hint) && requestResponses.value.resultCount != defaultSearchValue.resultCount
 })
 
 const isSelected = (id: number) => {
@@ -130,7 +132,7 @@ const isSelected = (id: number) => {
 }
 
 const resetSelection = () => {
-  requestResponses.value = []
+  requestResponses.value = defaultSearchValue
   selection.value = -1
   emit('updateSelection', createData())
 }
@@ -152,7 +154,7 @@ const processInput = async () => {
 
     if (searchResult.isErr) {
       errorMessage.value = Translation.t('enterprise.noStructureFound')
-    } else if (searchResult.value.length == 0) {
+    } else if (searchResult.value.resultCount == 0) {
       errorMessage.value = Translation.t('enterprise.noStructureFound')
     } else {
       requestResponses.value = searchResult.value
@@ -180,9 +182,15 @@ const goToNextTrack = () => {
 }
 
 function createData(): TrackOptionItem {
-  const siretValue = selection.value >= 0 ? requestResponses.value[selection.value].siret : ''
+  const siretValue = selection.value >= 0 ? requestResponses.value.establishments[selection.value].siret : ''
   const hasSelection = selection.value >= 0
-  return TrackSiret.createData(props.option, siretValue, undefined, !hasSelection, hasSelection)
+  return TrackSiret.createData(
+    props.option,
+    siretValue,
+    requestResponses.value.establishments[selection.value],
+    !hasSelection,
+    hasSelection
+  )
 }
 </script>
 

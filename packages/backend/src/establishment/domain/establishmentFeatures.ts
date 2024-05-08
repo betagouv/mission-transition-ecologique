@@ -1,7 +1,8 @@
 import { Result } from 'true-myth'
 import type { CityToRegionMapping, EstablishmentRepository, NafMapping } from './spi'
-import { Establishment, EstablishmentDetails, Siret, EstablishementDisplay } from './types'
+import { Establishment, EstablishmentDetails, EstablishmentSearch, SearchResult, Siret } from './types'
 import Validator from '../../../../common/src/establishement/validator'
+import EstablishmentFront from '@tee/common/src/establishement/types'
 
 export default class EstablishmentFeatures {
   private readonly _establishmentRepository: EstablishmentRepository
@@ -14,29 +15,22 @@ export default class EstablishmentFeatures {
     this._nafMapping = nafMapping
   }
 
-  public async search(query: string): Promise<Result<EstablishementDisplay[], Error>> {
+  public async search(query: string): Promise<Result<EstablishmentSearch, Error>> {
     if (Validator.validateSiret(query)) {
       const resultEstablishement = await this.getBySiret(query)
       if (resultEstablishement.isErr) {
         return Result.err(resultEstablishement.error)
       }
-      const establishmentDisplay = this._convertEstablishmentToDisplay(resultEstablishement.value)
-      return Result.ok([establishmentDisplay])
+      const establishmentSearch = this._convertEstablishmentToSearch(resultEstablishement.value)
+      return Result.ok(establishmentSearch)
     }
 
     const results = await this._establishmentRepository.search(query)
     if (results.isOk) {
-      const mappedResults = results.value.map((establishment: EstablishementDisplay) => {
-        const mappedRegion = this._cityToRegionMapping.getRegion(establishment.region)
-        establishment.region = mappedRegion.isJust ? mappedRegion.value : ''
-
-        const maybeLabel = this._nafMapping.getLabel(establishment.sector)
-        establishment.sector = maybeLabel.isJust ? maybeLabel.value : ''
-        return establishment
-      })
-      return Result.ok(mappedResults)
+      const establishmentsSearch = this._convertEstablishmentDetailsToSearch(results.value)
+      return Result.ok(establishmentsSearch)
     }
-    return results
+    return Result.err(results.error)
   }
 
   public async getBySiret(siret: Siret): Promise<Result<Establishment, Error>> {
@@ -76,14 +70,34 @@ export default class EstablishmentFeatures {
     }
   }
 
-  private _convertEstablishmentToDisplay(establishment: Establishment): EstablishementDisplay {
+  private _convertEstablishmentToFront(establishment: Establishment): EstablishmentFront {
     return {
       siret: establishment.siret,
-      creationDate: establishment.creationDate,
-      address: `${establishment.address.streetNumber} ${establishment.address.streetType} ${establishment.address.streetLabel}, ${establishment.address.zipCode} ${establishment.address.cityLabel}`,
-      sector: establishment.nafLabel || '',
-      name: establishment.denomination,
-      region: establishment.region || ''
+      codeNAF: establishment.nafCode,
+      codeNAF1: establishment.nafSectionCode || '',
+      ville: establishment.address.cityLabel,
+      codePostal: establishment.address.zipCode,
+      region: establishment.region || '',
+      structure_size: undefined,
+      denomination: establishment.denomination,
+      secteur: establishment.nafLabel || '',
+      creationDate: establishment.creationDate
     }
+  }
+
+  private _convertEstablishmentToSearch(establishment: Establishment): EstablishmentSearch {
+    return {
+      resultCount: 1,
+      establishments: [this._convertEstablishmentToFront(establishment)]
+    }
+  }
+
+  private _convertEstablishmentDetailsToSearch(result: SearchResult): EstablishmentSearch {
+    const transformedEstablishments = result.establishments.map((establishmentDetails) => {
+      let establishment = this._addRegionToEstablishment(establishmentDetails)
+      establishment = this._addSectorDetailsToEstablishment(establishment)
+      return this._convertEstablishmentToFront(establishment)
+    })
+    return { resultCount: result.resultCount, establishments: transformedEstablishments }
   }
 }
