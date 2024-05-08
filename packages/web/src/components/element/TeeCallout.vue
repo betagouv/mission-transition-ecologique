@@ -14,7 +14,7 @@
       />
     </div>
     <div class="content fr-col-12">
-      <h1 v-if="title">{{ title }}</h1>
+      <h5 v-if="title">{{ title }}</h5>
       <p><slot></slot></p>
       <TeeButtonExternalLink
         v-if="link"
@@ -29,10 +29,10 @@
 
 <script setup lang="ts">
 import { defineProps, withDefaults } from 'vue'
-import { CardType } from '@/types/elementsPropsTypes'
+import { CalloutType } from '@/types/elementsPropsTypes'
 
 interface Props {
-  type?: CardType
+  type?: CalloutType
   title?: string | number | undefined
   link?: string | undefined
   linkText?: string | undefined
@@ -40,7 +40,7 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  type: CardType.Default,
+  type: CalloutType.Default,
   title: undefined,
   link: undefined,
   linkText: undefined,
@@ -48,32 +48,31 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const linkClasses = {
-  baseCardClass: true,
-  defaultCard: props.type === CardType.Default,
-  warningCard: props.type === CardType.Warning
+  baseCallout: true,
+  defaultCallout: props.type === CalloutType.Default,
+  warningCallout: props.type === CalloutType.Warning
 }
 </script>
 
 <style scoped lang="scss">
 @import '../../assets/scss/_colors.scss';
-.baseCardClass {
+.baseCallout {
   border-left: 4px solid;
   padding: 32px 48px 32px 32px;
 }
 
-.defaultCard {
+.defaultCallout {
   background: var(--light-background-alt-blue-france, #f5f5fe);
-  border-color: #{$secondary-purple};
+  border-color: $secondary-purple;
 }
 
-.warningCard {
+.warningCallout {
   border-color: #{$base-red};
   background: rgba(252, 160, 129, 0.2);
 }
 
-h1 {
+h5 {
   color: var(--light-text-title-grey, #161616);
-  font-family: Marianne;
   font-size: 3rem;
   font-style: normal;
   font-weight: 700;

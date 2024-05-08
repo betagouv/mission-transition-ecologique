@@ -74,7 +74,7 @@
               :href="mainPartner.href"
             >
               <img
-                class="fr-footer__logo tee-home-step-operator-logo tee-footer-operator-main"
+                class="fr-footer__logo tee-home-step-operator-logo tee-footer-operator-main fr-responsive-img"
                 :src="mainPartner.img"
                 :alt="mainPartner.label"
               />
@@ -205,8 +205,8 @@ const gouvLinks = [
 
 const mainPartner = {
   label: 'Place des entreprises',
-  img: '/images/logos/place-des-entreprises.svg',
-  href: 'https://place-des-entreprises.beta.gouv.fr'
+  img: '/images/logos/conseillers-entreprises.service-public.fr.svg',
+  href: 'https://conseillers-entreprises.service-public.fr'
 }
 // {
 //   label: 'Aides-territoires',

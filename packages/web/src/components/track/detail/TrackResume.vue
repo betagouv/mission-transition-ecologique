@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="!useUsedTrackStore().currentIsFirst && track?.resume"
+    v-if="!usedTrackStore.currentIsFirst && track?.resume"
     class="fr-px-4v fr-px-md-0v fr-col-12"
   >
     <p class="fr-mb-0">
@@ -18,4 +18,6 @@ interface Props {
   track: Track
 }
 defineProps<Props>()
+
+const usedTrackStore = useUsedTrackStore()
 </script>

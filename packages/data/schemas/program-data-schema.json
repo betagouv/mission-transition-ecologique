@@ -18,20 +18,27 @@
     "promesse": {
       "title": "Promesse, résumé court du dispositif",
       "description": "La promesse a pour objectif de :\n- résumer le dispositif de manière claire & simple en quelques mots\n- distinguer les offres les unes des autres.\n\nFormulation :\n- 6 à 12 mots.\n- La promesse commence par un verbe à l'impératif\n- rédigée sous l'angle du bénéfice utilisateur, s'adressant à lui par le pluriel de politesse \"vous\" \"votre entreprise\" \n- pas de point à la fin de la promesse (sauf point d'exclamation cf ex.2)",
-      "examples": ["Mesurez votre maturité écologique et créez un plan d’action personnalisé avec à un conseiller", "Rejoignez un réseau de professionnels de la réparation, devenez artisan Répar’acteurs !"],
+      "examples": [
+        "Mesurez votre maturité écologique et créez un plan d’action personnalisé avec à un conseiller",
+        "Rejoignez un réseau de professionnels de la réparation, devenez artisan Répar’acteurs !"
+      ],
       "type": "string"
     },
     "description": {
       "title": "Description courte de l'objectif du dispositif",
       "description": "Qu'est-ce que l'entreprise gagne à bénéficier de cette aide ?\n\nFormulation :\n- 15 à 40 mots\n- rédigée sous l'angle du bénéfice utilisateur, s'adressant à lui par le pluriel de politesse \"vous\" \"votre entreprise\"\n- La description courte est ponctuée par un point",
-      "examples": ["Bénéficiez des conseils d'un expert pour mesurer les émissions de gaz à effet de serre de votre entreprise, définissez un plan d’actions pour les réduire de manière durable, mettez en œuvre vos premières actions et valorisez-les.",
-        "Les Répar’acteurs référencent les professionnels de la réparation et du dépannage partout en France. Rejoignez le réseau et devenez un ambassadeur de l’économie circulaire auprès de vos clients et au sein de votre territoire."],
+      "examples": [
+        "Bénéficiez des conseils d'un expert pour mesurer les émissions de gaz à effet de serre de votre entreprise, définissez un plan d’actions pour les réduire de manière durable, mettez en œuvre vos premières actions et valorisez-les.",
+        "Les Répar’acteurs référencent les professionnels de la réparation et du dépannage partout en France. Rejoignez le réseau et devenez un ambassadeur de l’économie circulaire auprès de vos clients et au sein de votre territoire."
+      ],
       "type": "string"
     },
     "description longue": {
       "title": "Description longue du dispositif",
       "description": "- La description longue est facultative. Elle peut être ajoutée si on juge que l'utilisateur ne dispose pas des informations suffisantes avec les seules autres informations. Elle peut être ajoutée par exemple :\n- pour définir un terme technique\n- pour détailler une loi à laquelle un dispositif fait référence\n- pour détailler les projets concernés par un financement\n\nFormulation :\n- 15 à 100 mots",
-      "examples": ["La marque Imprim'vert® a pour objectif de favoriser la mise en place par les entreprises exerçant les activités d'impression, d'actions concrètes conduisant à une diminution des impacts de l'activité sur l'environnement.\nLe cahier des charges Imprim’Vert® est fondé sur cinq critères simples : la bonne gestion des déchets dangereux, la sécurisation de stockage des liquides dangereux, la non utilisation de certains produits CMR, la sensibilisation environnementale des salariés et de la clientèle, et le suivi des consommations énergétiques du site."],
+      "examples": [
+        "La marque Imprim'vert® a pour objectif de favoriser la mise en place par les entreprises exerçant les activités d'impression, d'actions concrètes conduisant à une diminution des impacts de l'activité sur l'environnement.\nLe cahier des charges Imprim’Vert® est fondé sur cinq critères simples : la bonne gestion des déchets dangereux, la sécurisation de stockage des liquides dangereux, la non utilisation de certains produits CMR, la sensibilisation environnementale des salariés et de la clientèle, et le suivi des consommations énergétiques du site."
+      ],
       "type": "string"
     },
     "thématiques": {
@@ -56,7 +63,11 @@
             "title": "Description de l'étape",
             "type": "string",
             "description": "Formulation :\n- les étapes sont à rédiger à l'impératif\n- rédigés sous l'angle du bénéfice utilisateur, s'adressant à lui par le pluriel de politesse \"vous\" \"votre entreprise\"\n- Elles sont ponctuées par un point.",
-            "examples": ["Mesurez les émissions de gaz à effet de serre de votre entreprise sur l'ensemble de votre chaîne de valeur (scopes 1, 2 et 3).", "Élaborez votre plan d'action pour décarboner votre activité.", "Mettez en place les premières actions de la conduite du changement au sein de votre entreprise (alignement des équipes, formation, communication, etc.) et avec vos principaux clients et fournisseurs."]
+            "examples": [
+              "Mesurez les émissions de gaz à effet de serre de votre entreprise sur l'ensemble de votre chaîne de valeur (scopes 1, 2 et 3).",
+              "Élaborez votre plan d'action pour décarboner votre activité.",
+              "Mettez en place les premières actions de la conduite du changement au sein de votre entreprise (alignement des équipes, formation, communication, etc.) et avec vos principaux clients et fournisseurs."
+            ]
           },
           "url étape": {
             "title": "URL d'une ressource utile pour l'étape",
@@ -106,12 +117,12 @@
     "début de validité": {
       "description": "Premier jour de validité de l'offre. Date au format JJ/MM/AAAA",
       "type": "string",
-      "pattern": "^[0-3][0-9]\/[0-1][0-9]\/[0-9]{4}$"
+      "pattern": "^[0-3][0-9]/[0-1][0-9]/[0-9]{4}$"
     },
     "fin de validité": {
       "description": "Dernier jour de validité de l'offre. Date au format JJ/MM/AAAA",
       "type": "string",
-      "pattern": "^[0-3][0-9]\/[0-1][0-9]\/[0-9]{4}$"
+      "pattern": "^[0-3][0-9]/[0-1][0-9]/[0-9]{4}$"
     },
     "url": {
       "title": "URL de la page présentant le dispositif",
@@ -139,13 +150,11 @@
     },
     "type de l'aide": {
       "description": "Précise s'il s'agit d'une aide financière, d'un accompagnement, ou d'un prêt, d'une formation ou d'un avantage fiscal. Un accompagnement se définit comme la réalisation d'une prestation intellectuelle, par un intervenant choisi par l'opérateur.",
-      "enum": [
-        "accompagnement",
-        "formation",
-        "financement",
-        "avantage fiscal",
-        "prêt"
-      ]
+      "enum": ["accompagnement", "formation", "financement", "avantage fiscal", "prêt"]
+    },
+    "activable en autonomie": {
+      "description": "Précise s'il s'agit d'un dispositif en autonomie ou s'il y aura des interactions avec l'opérateur.",
+      "type": "string"
     },
     "coût de l'accompagnement": {
       "description": "Uniquement si l'aide est de type \"accompagnement\". Le coût reste à charge correspond au montant que devra payer l'entreprise pour bénéficier d'un accompagnement, après déduction de la subvention.\n\n Formulation :\n- 10 mots max\n- selon le format \"x € HT après subvention de x%\"\n- écriture des chiffres en unités numériques\n- ne pas utiliser d'abréviations (ex : utiliser jour et non l'abréviation \"j.\")",
@@ -226,7 +235,7 @@
         "secteur géographique": {
           "title": "Conditions d'éligibilité relatives au secteur géographique",
           "type": "object",
-          "default": {"description": ["France et territoires d'outre-mer"]},
+          "default": { "description": ["France et territoires d'outre-mer"] },
           "properties": {
             "description": {
               "title": "Description en langage naturel des conditions d'éligibilité relatives au secteur géographique",
@@ -278,7 +287,7 @@
         "taille de l'entreprise": {
           "type": "object",
           "title": "Conditions d'éligibilité relatives à la taille de l'entreprise",
-          "default": {"description": ["Toutes tailles"]},
+          "default": { "description": ["Toutes tailles"] },
           "properties": {
             "description": {
               "title": "Description en langage naturel des conditions d'éligibilité relatives à la taille de l'entreprise",
@@ -317,7 +326,7 @@
         "nombre d'années d'activité": {
           "type": "object",
           "title": "Conditions d'éligibilité relatives au nombre d'années d'activité",
-          "default": {"description": ["Éligible à toutes les entreprises"]},
+          "default": { "description": ["Éligible à toutes les entreprises"] },
           "properties": {
             "description": {
               "title": "Description en langage naturel des conditions d'éligibilité relatives au nombre d'années d'activité",

@@ -12,7 +12,7 @@
           >
             <div class="tee-track-callout fr-grid-row fr-grid-row--gutters">
               <div class="fr-col">
-                <h2 class="tee-track-callout-header">TPE, PME,</h2>
+                <h2 class="tee-track-callout-header">TPE, PME</h2>
                 <h1 class="fr-mb-3 tee-track-callout-big-title">Trouvez comment allier écologie avec économies</h1>
                 <p class="fr-callout__text tee-track-callout-description">
                   Je complète mon profil en moins de 2 minutes, et j’accède à des propositions d’accompagnements et de financements pour

@@ -4,6 +4,8 @@ Cet outil est un script qui facilite l'export de donnée brevo en particulier en
 
 Il nous permet aussi d'harmoniser certaines des données exportées et de compenser certaines des modifications de format qui ont eu lieue depuis la création de la base de donnée BREVO.
 
+Cet outil est temporaire et devra évoluer une fois la qualité de l'export brevo améliorée ! 
+
 ## Mode d'emploi
 
 1. Se placer dans le dossier courant ou hors du repo git. 

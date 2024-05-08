@@ -20,10 +20,11 @@ export enum SiretValue {
 }
 
 export enum StructureSize {
+  EI = 'EI',
   TPE = 'TPE',
   PE = 'PE',
   ME = 'ME',
-  ETI_GE = 'ETI_et_GE'
+  ETI_GE = 'ETI_GE'
 }
 
 export enum WasteSortingStatus {
