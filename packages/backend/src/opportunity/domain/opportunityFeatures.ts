@@ -6,7 +6,7 @@ import { OperatorRepository } from '../../operator/domain/spi'
 import { ProgramRepository } from '../../program/domain/spi'
 import ProgramFeatures from '../../program/domain/programFeatures'
 import { Program } from '@tee/data/src/type/program'
-import Validator from '@tee/common/src/establishment/validator'
+import Validator from '../../../../common/src/establishment/validator'
 import EstablishmentService from '../../establishment/application/establishmentService'
 
 export default class OpportunityFeatures {
