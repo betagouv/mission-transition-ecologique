@@ -1,7 +1,7 @@
 import { Result } from 'true-myth'
 import type { CityToRegionMapping, EstablishmentRepository, NafMapping } from './spi'
 import { Establishment, EstablishmentDetails, EstablishmentSearch, SearchResult, EstablishmentFront, Siret } from './types'
-import Validator from '../../../../common/src/establishement/validator'
+import Validator from '../../../../common/src/establishment/validator'
 
 export default class EstablishmentFeatures {
   private readonly _establishmentRepository: EstablishmentRepository
@@ -16,11 +16,11 @@ export default class EstablishmentFeatures {
 
   public async search(query: string): Promise<Result<EstablishmentSearch, Error>> {
     if (Validator.validateSiret(query)) {
-      const resultEstablishement = await this.getBySiret(query)
-      if (resultEstablishement.isErr) {
-        return Result.err(resultEstablishement.error)
+      const resultEstablishment = await this.getBySiret(query)
+      if (resultEstablishment.isErr) {
+        return Result.err(resultEstablishment.error)
       }
-      const establishmentSearch = this._convertEstablishmentToSearch(resultEstablishement.value)
+      const establishmentSearch = this._convertEstablishmentToSearch(resultEstablishment.value)
       return Result.ok(establishmentSearch)
     }
 

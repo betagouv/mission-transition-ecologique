@@ -1,12 +1,12 @@
 export interface RechercheEntrepriseSearch {
-  results?: RechercheEntrepriseEstablishement[] | null
+  results?: RechercheEntrepriseEstablishment[] | null
   total_results: number
   page: number
   per_page: number
   total_pages: number
 }
 
-export interface RechercheEntrepriseEstablishement {
+export interface RechercheEntrepriseEstablishment {
   siren: string
   nom_raison_sociale: string
 

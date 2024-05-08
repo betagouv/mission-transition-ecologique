@@ -2,7 +2,7 @@ import { Controller, Route, SuccessResponse, TsoaResponse, Res, Example, Get, Pa
 import EstablishmentService from '../application/establishmentService'
 import { EstablishmentNotFoundError, Establishment } from '../domain/types'
 import { ErrorJSON, ValidateErrorJSON } from '../../common/controller/jsonError'
-import { EstablishmentSearch } from '@tee/common/src/establishement/types'
+import { EstablishmentSearch } from '@tee/common/src/establishment/types'
 
 interface EstablishmentNotFoundErrorJSON {
   message: 'Establishment not found'
@@ -39,10 +39,10 @@ export class SireneController extends Controller {
   /**
    * Retrieve establishments informations used in front end
    * for a single establishment using the SIRENE API if search by SIRET
-   * or for up to 3 establishements using the Recherche-entreprise API otherwise.
+   * or for up to 3 establishments using the Recherche-entreprise API otherwise.
    * Also return the number of matches found
    *
-   * @summary Search for establishements from a query
+   * @summary Search for establishments from a query
    *
    * @example requestBody: {"string": "siret, nom, adresse..."}
    */

@@ -34,21 +34,27 @@
             class="fr-card__title"
             :class="{ 'is-title-selected': isSelected(i) }"
           >
-            {{ response.denomination || 'Entreprise individuelle' }}
-            <span class="thiner-text">- SIRET {{ response.siret }}</span>
+            <div class="fr-hidden fr-unhidden-md">
+              {{ response.denomination || 'Entreprise individuelle' }}
+              <span class="thinner-text"> - SIRET {{ response.siret }} </span>
+            </div>
+            <div class="fr-hidden-md">
+              <div>{{ response.denomination || 'Entreprise individuelle' }}</div>
+              <div class="thinner-text">SIRET {{ response.siret }}</div>
+            </div>
           </div>
-          <div class="fr-card__desc">
+          <div class="fr-card__desc tee-resp-info-block">
             <div>
               <span
-                class="fr-icon-briefcase-line fr-mr-9v"
+                class="fr-icon-briefcase-line fr-mr-8v"
                 aria-hidden="true"
               >
               </span>
-              <span class="fr-mr-3v">Secteur d'activité : {{ response.secteur || 'Non Renseigné' }}</span>
+              <span>Secteur d'activité : {{ response.secteur || 'Non Renseigné' }}</span>
             </div>
             <div>
               <span
-                class="fr-icon-map-pin-2-line fr-mr-9v"
+                class="fr-icon-map-pin-2-line fr-mr-8v"
                 aria-hidden="true"
               >
               </span>
@@ -56,12 +62,11 @@
             </div>
             <div>
               <span
-                class="fr-icon-time-line fr-mr-9v"
+                class="fr-icon-time-line fr-mr-8v"
                 aria-hidden="true"
               >
               </span>
-              <span>Création le</span>
-              <span> {{ new Date(response.creationDate).toLocaleDateString('fr') }} </span>
+              <span>Création le {{ new Date(response.creationDate).toLocaleDateString('fr') }}</span>
             </div>
           </div>
         </div>
@@ -208,7 +213,7 @@ function createData(): TrackOptionItem {
   color: #000091;
 }
 
-.thiner-text {
+.thinner-text {
   font-weight: normal;
 }
 

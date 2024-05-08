@@ -3,7 +3,7 @@ import axios, { AxiosError, AxiosResponse } from 'axios'
 import { Result } from 'true-myth'
 import { EstablishmentRepository } from '../../../domain/spi'
 import { ensureError } from '../../../../common/domain/error/errors'
-import { RechercheEntrepriseEstablishement, RechercheEntrepriseSearch } from './type'
+import { RechercheEntrepriseEstablishment, RechercheEntrepriseSearch } from './type'
 
 export class RechercheEntreprise {
   public searchEstablishment: EstablishmentRepository['search'] = async (query) => {
@@ -35,7 +35,7 @@ export class RechercheEntreprise {
       }
     }
 
-    const establishmentList = rechercheEntrepriseSearch.results.map((result: RechercheEntrepriseEstablishement) => ({
+    const establishmentList = rechercheEntrepriseSearch.results.map((result: RechercheEntrepriseEstablishment) => ({
       siret: result.siege.siret,
       siren: result.siege.siret.substring(0, 9),
       nic: result.siege.siret.substring(9),
