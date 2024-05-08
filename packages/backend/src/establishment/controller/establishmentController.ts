@@ -37,10 +37,12 @@ const exampleEstablishment = {
 @Route('establishments')
 export class SireneController extends Controller {
   /**
-   * Retrieve information of an Establishment if search by SIRET
-   * or search for an establishment using any string and retrieve core informations of up to 5 possible matches
+   * Retrieve establishments informations used in front end
+   * for a single establishment using the SIRENE API if search by SIRET
+   * or for up to 3 establishements using the Recherche-entreprise API otherwise.
+   * Also return the number of matches found
    *
-   * @summary Retrieves information of 1 or more "Établissement"
+   * @summary Search for establishements from a query
    *
    * @example requestBody: {"string": "siret, nom, adresse..."}
    */

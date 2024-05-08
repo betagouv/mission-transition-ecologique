@@ -1,8 +1,7 @@
 import { Result } from 'true-myth'
 import type { CityToRegionMapping, EstablishmentRepository, NafMapping } from './spi'
-import { Establishment, EstablishmentDetails, EstablishmentSearch, SearchResult, Siret } from './types'
+import { Establishment, EstablishmentDetails, EstablishmentSearch, SearchResult, EstablishmentFront, Siret } from './types'
 import Validator from '../../../../common/src/establishement/validator'
-import EstablishmentFront from '@tee/common/src/establishement/types'
 
 export default class EstablishmentFeatures {
   private readonly _establishmentRepository: EstablishmentRepository
@@ -27,7 +26,7 @@ export default class EstablishmentFeatures {
 
     const results = await this._establishmentRepository.search(query)
     if (results.isOk) {
-      const establishmentsSearch = this._convertEstablishmentDetailsToSearch(results.value)
+      const establishmentsSearch = this._enrichAndConvertToEstablishmentSearch(results.value)
       return Result.ok(establishmentsSearch)
     }
     return Result.err(results.error)
@@ -92,7 +91,7 @@ export default class EstablishmentFeatures {
     }
   }
 
-  private _convertEstablishmentDetailsToSearch(result: SearchResult): EstablishmentSearch {
+  private _enrichAndConvertToEstablishmentSearch(result: SearchResult): EstablishmentSearch {
     const transformedEstablishments = result.establishments.map((establishmentDetails) => {
       let establishment = this._addRegionToEstablishment(establishmentDetails)
       establishment = this._addSectorDetailsToEstablishment(establishment)

@@ -14,7 +14,7 @@ const defaultQuestionnaireData: EstablishmentType = {
   region: undefined,
   structure_size: undefined,
   denomination: '',
-  secteur: undefined,
+  secteur: '',
   creationDate: ''
 }
 

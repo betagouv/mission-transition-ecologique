@@ -11,7 +11,7 @@
 
   <!-- RESPONSES -->
   <div
-    v-show="selection >= 0 && requestResponses.establishments.length > 1"
+    v-show="requestResponses.establishments.length > 1"
     class="fr-mt-n2w"
   >
     <span class="result-number">{{ requestResponses.resultCount }} résultats trouvés</span>
@@ -95,7 +95,7 @@ import TrackSiret from '@/utils/track/TrackSiret'
 import Translation from '@/utils/translation'
 import { ref, computed } from 'vue'
 import EstablishmentApi from '@/service/api/establishmentApi'
-import { EstablishmentSearch } from '@tee/common/src/establishement/types'
+import { EstablishmentSearch } from '@/types/establishmentType'
 
 // Functionnal note :
 // We send data update to the parent component each time the data selection change.
@@ -162,7 +162,6 @@ const processInput = async () => {
       emit('updateSelection', createData())
     }
   }
-
   isLoading.value = false
 
   // analytics / send event

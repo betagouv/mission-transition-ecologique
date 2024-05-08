@@ -1,6 +1,7 @@
 import EstablishmentFront from '@tee/common/src/establishement/types'
-
 export type EstablishmentType = EstablishmentFront
+
+export type { EstablishmentSearch } from '@tee/common/src/establishement/types'
 
 export function isEstablishmentType(obj: unknown): obj is EstablishmentType {
   const keys = ['siret', 'codeNAF', 'codeNAF1', 'ville', 'codePostal', 'region', 'structure_size', 'denomination', 'secteur']
