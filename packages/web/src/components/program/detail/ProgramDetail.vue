@@ -93,7 +93,7 @@
               :program="program"
             ></ProgramObjective>
             <DsfrButton
-              v-if="programNonAutonomy"
+              v-if="!isProgramAutonomous"
               size="lg"
               icon="fr-icon-mail-line"
               class="fr-ml-md-3v"
@@ -304,11 +304,11 @@ const columnTiles = computed(() => {
   const colsSize = Math.round(12 / infoBlocks.length)
   return `fr-col fr-col-xs-12 fr-col-sm-12 fr-col-md-${colsSize} fr-tee-detail-info-tile`
 })
-const programNonAutonomy = computed(() => {
+const isProgramAutonomous = computed(() => {
   if (program.value?.[`activable en autonomie`] == 'oui') {
-    return false
+    return true
   }
-  return true
+  return false
 })
 
 // functions
