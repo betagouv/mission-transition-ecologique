@@ -23,12 +23,12 @@
     "début de validité": {
       "description": "Premier jour de validité de l'offre. Date au format JJ/MM/AAAA",
       "type": "string",
-      "pattern": "^[0-3][0-9]\/[0-1][0-9]\/[0-9]{4}$"
+      "pattern": "^[0-3][0-9]/[0-1][0-9]/[0-9]{4}$"
     },
     "fin de validité": {
       "description": "Dernier jour de validité de l'offre. Date au format JJ/MM/AAAA",
       "type": "string",
-      "pattern": "^[0-3][0-9]\/[0-1][0-9]\/[0-9]{4}$"
+      "pattern": "^[0-3][0-9]/[0-1][0-9]/[0-9]{4}$"
     },
     "url": {
       "description": "TODO",
@@ -82,13 +82,11 @@
     },
     "nature de l'aide": {
       "description": "Précise s'il s'agit d'une aide financière, d'un accompagnement, ou d'un prêt. Un accompagnement se définit comme la réalisation d'une prestation intellectuelle, par un intervenant choisi par l'opérateur.",
-      "enum": [
-        "accompagnement",
-        "formation",
-        "financement",
-        "avantage fiscal",
-        "prêt"
-      ]
+      "enum": ["accompagnement", "formation", "financement", "avantage fiscal", "prêt"]
+    },
+    "activable en autonomie": {
+      "description": "Précise s'il s'agit d'un dispositif en autonomie ou s'il y aura des interactions avec l'opérateur.",
+      "type": "string"
     },
     "coût de l'accompagnement": {
       "description": "Uniquement pour les accompagnements. Ce champ est utile et requis uniquement si l'aide est de nature \"accompagnement\". Elle précise le coût reste à charge de l'utilisateur pour bénéficier de l'accompagnement. Il s'agit d'un champ texte, à des fins d'affichage.",
