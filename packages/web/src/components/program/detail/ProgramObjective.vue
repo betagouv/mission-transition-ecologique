@@ -1,5 +1,5 @@
 <template>
-  <div class="fr-mb-0v fr-mb-md-12v fr-mr-4v fr-mr-md-0">
+  <div class="fr-mb-0v fr-mb-md-6v fr-mr-4v fr-mr-md-0">
     <h3>
       {{ getProgramObjectiveTitle() }}
     </h3>

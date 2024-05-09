@@ -123,11 +123,11 @@ function buildHeaders() {
       "font-src 'self';" +
       "img-src 'self' data:;" +
       "object-src 'self';" +
-      `connect-src 'self' https://place-des-entreprises.beta.gouv.fr https://stats.beta.gouv.fr ${sentryData?.domain ? sentryData.domain : ''} https://embed.typeform.com https://api.typeform.com;` +
+      `connect-src 'self' https://conseillers-entreprises.service-public.fr https://stats.beta.gouv.fr ${sentryData?.domain ? sentryData.domain : ''} https://embed.typeform.com https://api.typeform.com;` +
       "worker-src 'self' blob:;" +
-      "frame-src 'self' https://place-des-entreprises.beta.gouv.fr https://form.typeform.com;" +
-      "frame-ancestors 'self' https://place-des-entreprises.beta.gouv.fr;",
-    'X-Frame-Options': 'ALLOW-FROM https://place-des-entreprises.beta.gouv.fr',
+      "frame-src 'self' https://conseillers-entreprises.service-public.fr https://form.typeform.com;" +
+      "frame-ancestors 'self' https://conseillers-entreprises.service-public.fr;",
+    'X-Frame-Options': 'ALLOW-FROM https://conseillers-entreprises.service-public.fr',
     'X-Content-Type-Options': 'nosniff'
   }
 
