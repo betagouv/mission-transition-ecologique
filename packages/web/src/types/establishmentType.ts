@@ -1,4 +1,4 @@
-import { StructureSize } from '@tee/common/src/questionnaire/types'
+import { StructureSize } from '@tee/common/src/questionnaire/types/types'
 export default interface EstablishmentType {
   siret: string
   codeNAF: string

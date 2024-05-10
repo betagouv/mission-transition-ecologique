@@ -1,8 +1,8 @@
-import Color from '@/types/color'
-import { PublicodeObjective } from '@tee/common/src/questionnaire/types'
+import { PublicodeObjective, Objective as ObjectiveEnum, PublicodesKeys, ObjectiveType, Color } from '@/types'
+import UsedTrack from '@/utils/track/UsedTrack'
 
 export default class Objective {
-  static objectives: { title: string; tagLabel: string; value: PublicodeObjective; image: string; color: string }[] = [
+  static objectives: ObjectiveType[] = [
     {
       title: 'Analyses environnementales',
       tagLabel: '🌱 analyses',
@@ -77,17 +77,44 @@ export default class Objective {
     return this.getObjective(objective)?.color || ''
   }
 
-  static getTags() {
-    return [
+  static getTags(): (ObjectiveType | { tagLabel: string; value: string })[] {
+    const tags = [
       {
         tagLabel: 'Tous',
         value: ''
-      },
-      ...this.objectives
+      }
     ]
+
+    if (UsedTrack.isNoSpecificGoal()) {
+      UsedTrack.isEnvironmentalImpactObjective()
+        ? tags.push(this.getObjective(PublicodeObjective.EnvironmentalImpact) as ObjectiveType)
+        : undefined
+      UsedTrack.isEcoDesignObjective() ? tags.push(this.getObjective(PublicodeObjective.EcoDesign) as ObjectiveType) : undefined
+      UsedTrack.isEnergyObjective() ? tags.push(this.getObjective(PublicodeObjective.EnergyPerformance) as ObjectiveType) : undefined
+      UsedTrack.isWasteObjective() ? tags.push(this.getObjective(PublicodeObjective.WasteManagement) as ObjectiveType) : undefined
+      UsedTrack.isWaterObjective() ? tags.push(this.getObjective(PublicodeObjective.WaterConsumption) as ObjectiveType) : undefined
+      UsedTrack.isMobilityObjective() ? tags.push(this.getObjective(PublicodeObjective.SustainableMobility) as ObjectiveType) : undefined
+
+      return tags
+    }
+    tags.push(...this.objectives)
+
+    return tags
   }
 
   static isPublicodeObjective(objective: PublicodeObjective | ''): objective is PublicodeObjective {
     return objective !== ''
+  }
+
+  static getPublicodeObjectiveByObjective(objective: ObjectiveEnum): PublicodeObjective | undefined {
+    const key = Object.keys(PublicodeObjective).find(
+      (key) => PublicodeObjective[key as keyof typeof PublicodeObjective] === ((PublicodesKeys.Goal + objective) as PublicodeObjective)
+    ) as keyof typeof PublicodeObjective | undefined
+
+    if (!key) {
+      return undefined
+    }
+
+    return PublicodeObjective[key]
   }
 }

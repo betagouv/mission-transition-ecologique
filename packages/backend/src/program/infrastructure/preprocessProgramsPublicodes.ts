@@ -1,3 +1,4 @@
+import ObjectiveChecker from '../../../../common/src/questionnaire/objectiveChecker'
 import {
   BuildingProperty,
   MobilityStatus,
@@ -9,7 +10,7 @@ import {
   StructureSize,
   WasteManagementStatus,
   YesNo
-} from '../../../../common/src/questionnaire/types'
+} from '../../../../common/src/questionnaire/types/types'
 
 import { type Program } from '@tee/data/src/type/program'
 import { QuestionnaireData } from '../domain/types/types'
@@ -88,53 +89,41 @@ const setObjectives = (publicodesData: PublicodesInputData, questionnaireData: Q
     }
   } else {
     // "Je ne sais pas par où commencer"
-    if (questionnaireData.recently_audited == YesNo.Yes) {
-      publicodesData[PublicodeObjective.EnvironmentalImpact] = YesNo.No
-    } else {
-      publicodesData[PublicodeObjective.EnvironmentalImpact] = YesNo.Yes
-    }
+    publicodesData[PublicodeObjective.EnvironmentalImpact] = ObjectiveChecker.isEnvironmentalImpact(
+      questionnaireData.recently_audited as YesNo
+    )
+      ? YesNo.Yes
+      : YesNo.No
 
-    if (questionnaireData.wastes_materials_objective == YesNo.No) {
-      publicodesData[PublicodeObjective.EcoDesign] = YesNo.No
-    } else {
-      publicodesData[PublicodeObjective.EcoDesign] = YesNo.Yes
-    }
+    publicodesData[PublicodeObjective.EcoDesign] = ObjectiveChecker.isEcoDesign(questionnaireData.wastes_materials_objective as YesNo)
+      ? YesNo.Yes
+      : YesNo.No
 
-    if (
-      questionnaireData.wastes_management_objective == WasteManagementStatus.No ||
-      questionnaireData.wastes_management_objective == WasteManagementStatus.NoMax
-    ) {
-      publicodesData[PublicodeObjective.WasteManagement] = YesNo.No
-    } else {
-      publicodesData[PublicodeObjective.WasteManagement] = YesNo.Yes
-    }
+    publicodesData[PublicodeObjective.WasteManagement] = ObjectiveChecker.isWasteManagement(
+      questionnaireData.wastes_management_objective as WasteManagementStatus
+    )
+      ? YesNo.Yes
+      : YesNo.No
 
-    if (questionnaireData.water_reduction_objective == YesNo.No) {
-      publicodesData[PublicodeObjective.WaterConsumption] = YesNo.No
-    } else {
-      publicodesData[PublicodeObjective.WaterConsumption] = YesNo.Yes
-    }
+    publicodesData[PublicodeObjective.WaterConsumption] = ObjectiveChecker.isWaterConsumption(
+      questionnaireData.water_reduction_objective as YesNo
+    )
+      ? YesNo.Yes
+      : YesNo.No
 
-    if (questionnaireData.building_property == BuildingProperty.Rents) {
-      publicodesData[PublicodesKeys.BuildingOwner] = YesNo.No
-    } else {
-      publicodesData[PublicodesKeys.BuildingOwner] = YesNo.Yes
-    }
+    publicodesData[PublicodeObjective.SustainableMobility] = ObjectiveChecker.isSustainableMobility(
+      questionnaireData.sustainable_mobility_objective as MobilityStatus
+    )
+      ? YesNo.Yes
+      : YesNo.No
 
-    if (
-      questionnaireData.sustainable_mobility_objective == MobilityStatus.No ||
-      questionnaireData.sustainable_mobility_objective == MobilityStatus.NoMax
-    ) {
-      publicodesData[PublicodeObjective.SustainableMobility] = YesNo.No
-    } else {
-      publicodesData[PublicodeObjective.SustainableMobility] = YesNo.Yes
-    }
+    publicodesData[PublicodeObjective.EnergyPerformance] = ObjectiveChecker.isEnergyPerformance(
+      questionnaireData.energy_reduction_objective as YesNo
+    )
+      ? YesNo.Yes
+      : YesNo.No
 
-    if (questionnaireData.energy_reduction_objective == YesNo.No) {
-      publicodesData[PublicodeObjective.EnergyPerformance] = YesNo.No
-    } else {
-      publicodesData[PublicodeObjective.EnergyPerformance] = YesNo.Yes
-    }
+    publicodesData[PublicodesKeys.BuildingOwner] = questionnaireData.building_property == BuildingProperty.Rents ? YesNo.No : YesNo.Yes
   }
 }
 const setQuestionnaireRoute = (publicodesData: PublicodesInputData, questionnaireData: QuestionnaireData) => {
