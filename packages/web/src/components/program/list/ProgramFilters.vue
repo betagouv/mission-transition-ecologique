@@ -1,12 +1,15 @@
 <template>
   <div class="fr-grid-row fr-grid-row--gutters">
-    <div class="fr-col-12 fr-col-sm-6">
+    <div class="fr-col-12 fr-col-md-6">
       <DsfrSelect
         v-model="programFilters.programAidTypeSelected"
         :options="programAidTypeOptions"
       />
     </div>
-    <div class="fr-col-12 fr-col-sm-6" v-if="programStore.hasObjectiveTypeFilter()">
+    <div
+      v-if="programStore.hasObjectiveTypeFilter()"
+      class="fr-col-12 fr-col-md-6"
+    >
       <TeeDsfrTags
         v-model="programFilters.objectiveTypeSelected"
         :tags="objectiveTypeTags"
@@ -16,7 +19,7 @@
 </template>
 
 <script setup lang="ts">
-import { TeeDsfrTag } from '@/components/element/tag/TeeDsfrTags.vue'
+import { TeeDsfrTagProps } from '@/components/element/tag/TeeDsfrTags.vue'
 import { useProgramStore } from '@/stores/program'
 import { ProgramAidType, type programFiltersType } from '@/types'
 import Objective from '@/utils/objective'
@@ -26,13 +29,12 @@ const programStore = useProgramStore()
 
 const programFilters: programFiltersType = programStore.programFilters
 
-const objectiveTypeTags = computed<TeeDsfrTag[]>((): TeeDsfrTag[] => {
-  const tags: TeeDsfrTag[] = []
+const objectiveTypeTags = computed<TeeDsfrTagProps[]>((): TeeDsfrTagProps[] => {
+  const tags: TeeDsfrTagProps[] = []
   for (const objectiveTag of Objective.getTags()) {
     tags.push({
       label: objectiveTag.tagLabel,
       tagName: 'button',
-      small: true,
       'aria-pressed': programFilters.objectiveTypeSelected === objectiveTag.value,
       class:
         programFilters.objectiveTypeSelected === objectiveTag.value && 'color' in objectiveTag

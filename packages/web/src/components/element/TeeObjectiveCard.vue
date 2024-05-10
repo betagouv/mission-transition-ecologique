@@ -14,7 +14,7 @@
 <script setup lang="ts">
 import Objective from '@/utils/objective'
 import { DsfrCard } from '@gouvminint/vue-dsfr'
-import { PublicodeObjective } from '@tee/common/src/questionnaire/types'
+import { PublicodeObjective } from '@/types'
 
 interface Props {
   objective: PublicodeObjective | ''
@@ -39,6 +39,7 @@ const classes = computed(() => {
   if (!Objective.isPublicodeObjective(props.objective)) {
     return []
   }
+
   return ['fr-card--' + Objective.getColorByObjective(props.objective), 'fr-card--horizontal-tier', 'fr-card--no-border', getRadiusClass()]
 })
 </script>

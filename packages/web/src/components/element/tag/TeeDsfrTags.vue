@@ -15,16 +15,16 @@
 <script lang="ts" setup>
 import { DsfrTag, DsfrTagProps } from '@gouvminint/vue-dsfr'
 
-export interface TeeDsfrTag extends DsfrTagProps {
+export interface TeeDsfrTagProps extends DsfrTagProps {
   'aria-pressed'?: boolean
   class?: string
   value?: string | number
 }
 
-export interface TeeDsfrTags {
-  tags: TeeDsfrTag[]
+export interface TeeDsfrTagsProps {
+  tags: TeeDsfrTagProps[]
 }
-withDefaults(defineProps<TeeDsfrTags>(), {
+withDefaults(defineProps<TeeDsfrTagsProps>(), {
   tags: () => []
 })
 

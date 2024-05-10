@@ -3,7 +3,7 @@
 a, button {
   &.fr-tag {
     &[aria-pressed="true"] {
-      &.fr-tag--sm {
+      &.fr-tag {
         &.fr-tag {
           @each $color, $properties in setting.$colors {
             &--#{$color} {
