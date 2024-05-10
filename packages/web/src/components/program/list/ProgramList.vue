@@ -3,16 +3,16 @@
   <div class="fr-container fr-px-4v fr-mb-0 fr-mt-6v fr-px-md-4w">
     <ProgramListHeaderResult v-if="!navigationStore.isCatalog() && !hasSpinner" />
     <div class="fr-grid-row">
-      <div class="fr-col-12">
+      <div class="fr-col-12 fr-mb-3v">
         <ProgramFilters v-if="havePrograms && countPrograms > 1" />
       </div>
 
       <div
-        v-if="hasObjectiveFilter"
+        v-if="hasObjectiveCard && !hasSpinner"
         class="fr-col-12"
       >
         <TeeObjectiveCard
-          :objective="programStore.programFilters.objectiveTypeSelected as PublicodeObjective"
+          :objective="objective as PublicodeObjective"
           radius-corner="tr"
           radius-size="lg"
         />
@@ -65,6 +65,8 @@ import { useUsedTrackStore } from '@/stores/usedTrack'
 import { type ProgramData, PublicodeObjective, TrackId } from '@/types'
 import { RouteName } from '@/types/routeType'
 import Matomo from '@/utils/matomo'
+import Objective from '@/utils/objective'
+import UsedTrack from '@/utils/track/UsedTrack'
 import Translation from '@/utils/translation'
 import { computed, onBeforeMount } from 'vue'
 import { type RouteLocationRaw } from 'vue-router'
@@ -96,8 +98,20 @@ const hasSpinner = computed(() => {
   return programs.value === undefined && !hasError.value
 })
 
-const hasObjectiveFilter = computed(() => {
-  return programStore.hasObjectiveTypeFilter() && programStore.programFilters.objectiveTypeSelected !== ''
+const hasObjectiveCard = computed(() => {
+  return programStore.hasObjectiveTypeSelected() || (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityObjective())
+})
+
+const objective = computed(() => {
+  if (programStore.hasObjectiveTypeSelected()) {
+    return programStore.programFilters.objectiveTypeSelected
+  }
+
+  if (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityObjective()) {
+    return Objective.getPublicodeObjectiveByObjective(UsedTrack.getPriorityObjective())
+  }
+
+  return ''
 })
 
 const getRouteToProgramDetail = (programId: string): RouteLocationRaw => {
