@@ -1,5 +1,5 @@
 <template>
-  <ul class="fr-tags-group">
+  <ul class="fr-tags-group fr-justify-center">
     <li
       v-for="({ value, ...tagProps }, i) in tags"
       :key="i"

@@ -2,10 +2,10 @@ $border-radius-root: 1rem !default;
 
 $rounded: (
   '0': 0,
-  'sm': $border-radius-root * .5,
+  '0-5v': $border-radius-root * .5,
   null: $border-radius-root,
-  'md': $border-radius-root,
-  'lg': $border-radius-root * 2.5,
+  '1v': $border-radius-root,
+  '2-5v': $border-radius-root * 2.5,
 );
 
 $corner: (

@@ -4,13 +4,14 @@ a, button {
   &.fr-tag {
     &[aria-pressed="true"] {
       &.fr-tag {
-        &.fr-tag {
-          @each $color, $properties in setting.$colors {
-            &--#{$color} {
-              @if type-of($properties) == map {
-                background-image: radial-gradient(circle at 100% .1875rem, transparent .4475rem, map-get($properties, "background-color") .5rem);
-                color: map-get($properties, "color");
+        @each $color, $properties in setting.$colors {
+          &--#{$color} {
+            @if type-of($properties) == map {
+              &.fr-tag--sm {
+                background-image: radial-gradient(circle at 100% .1875rem, transparent .4475rem, map-get($properties, "background-color") .5rem) !important;
               }
+              background-image: radial-gradient(circle at 100% .25rem, transparent .578125rem, map-get($properties, "background-color") .625rem) !important;
+              color: map-get($properties, "color");
             }
           }
         }

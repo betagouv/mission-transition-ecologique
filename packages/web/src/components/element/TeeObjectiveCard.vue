@@ -19,7 +19,7 @@ import { PublicodeObjective } from '@/types'
 interface Props {
   objective: PublicodeObjective | ''
   radiusCorner?: 'tl' | 'tr' | 'bl' | 'br'
-  radiusSize?: 'sm' | 'md' | 'lg' | '0'
+  radiusSize?: '0' | '0-5v' | '1v' | '2-5v'
 }
 const props = defineProps<Props>()
 

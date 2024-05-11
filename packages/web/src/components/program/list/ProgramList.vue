@@ -1,6 +1,6 @@
 <template>
   <!-- PROGRAMS AS LIST OF CARDS -->
-  <div class="fr-container fr-px-4v fr-mb-0 fr-mt-6v fr-px-md-4w">
+  <div class="fr-container fr-px-0 fr-mb-0 fr-mt-6v fr-px-md-4w">
     <ProgramListHeaderResult v-if="!navigationStore.isCatalog() && !hasSpinner" />
     <div class="fr-grid-row">
       <div class="fr-col-12 fr-mb-3v">
@@ -14,10 +14,10 @@
         <TeeObjectiveCard
           :objective="objective as PublicodeObjective"
           radius-corner="tr"
-          radius-size="lg"
+          radius-size="2-5v"
         />
       </div>
-      <div class="fr-mt-4v fr-mb-2v fr-col-12">
+      <div class="fr-mt-4v fr-pl-2w fr-pl-md-0 fr-mb-2v fr-col-12">
         <div v-if="havePrograms && countPrograms > 1">
           {{ countFilteredPrograms }}
           {{ countFilteredPrograms > 1 ? Translation.t('results.results') : Translation.t('results.result') }}
