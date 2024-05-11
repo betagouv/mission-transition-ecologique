@@ -9,19 +9,26 @@
 
   @each $color, $properties in setting.$colors {
     &--#{$color} {
-      &:hover {
-        cursor: auto !important;
-      }
-
-      :hover {
-        cursor: auto !important;
-      }
-
       flex-direction: row;
+
+      @include media-query.respond-from(xs) {
+        height: 100px !important;
+      }
+      @include media-query.respond-from(sm) {
+        max-height: 200px;
+        height: 100% !important;
+      }
 
       @if type-of($properties) == map {
         background-color: map-get($properties, "background-color");
         color: map-get($properties, "color");
+      }
+
+      &:hover {
+        cursor: auto !important;
+      }
+      :hover {
+        cursor: auto !important;
       }
 
       .fr-card__content {
