@@ -56,17 +56,23 @@
         font-weight: 400;
         font-size: 0.75rem;
         line-height: 1.25rem;
+        @include media-query.respond-from(xs) {
+          display: none;
+        }
+        @include media-query.respond-from(sm) {
+          display: inherit;
+        }
       }
 
       .fr-card__desc {
+        font-weight: 700;
         @include media-query.respond-from(xs) {
-          font-size: 1rem;
+          font-size: 1.25rem;
           line-height: 1.5rem;
         }
         @include media-query.respond-from(sm) {
           font-size: 2.5rem;
           line-height: 2.5rem;
-          font-weight: 700;
         }
       }
     }
