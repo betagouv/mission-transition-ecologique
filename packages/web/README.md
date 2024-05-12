@@ -1,33 +1,107 @@
-# <img src="./images/logos/logo-gov-aid-tree-cropped.png" height="30px"> TEE-FRONTEND
-
-**Decision tree interfaces + fit user's decision with a database**
-
----
-
-**A web component to help french entreprises finding public aid programs for their ecological transition.**
-
-A project from the `transition-ecologique-entreprises` SE team.
-
----
-
-<div style="display: flex; flex-direction: row;">
-  <img src="./images/logos/republique_francaise_rvb-1536x1392.webp" height="100px">
-  <img src="./images/logos/logoademe2020_gb_rvb.webp" height="100px">
-  <img src="./images/logos/95886_289860.webp" height="100px">
-  <img src="./images/logos/logo_twitter_image-2019.jpg" height="75px">
+<div align="center">
+  <img src="./public/images/logos/mission-transition-logo-alone.png" height="80px">
+  <h3 align="center">
+	<big>FRONTEND - Mission transition écologique</big>
+  </h3>
+  <p align="center">
+   <a href="https://github.com/betagouv/mission-transition-ecologique/issues">Report Bug</a>
+   •
+   <a href="https://mission-transition-ecologique.beta.gouv.fr/">mission-transition-ecologique.beta.gouv.fr</a>
+  </p>
 </div>
 
 ---
 
-## Screenshots
+## CSS - SCSS
+### Les couleurs
+La plupart des couleurs utilisées dans le projet sont celles du [Design System de l'Etat](https://design-system.gouv.fr/): [Palette de couleurs du dsfr](https://www.systeme-de-design.gouv.fr/elements-d-interface/fondamentaux-de-l-identite-de-l-etat/couleurs-palette)
 
-![](./images/screenshots/screenshot-240326-a.png)
+#### [Les couleurs personnalisées](./src/assets/scss/setting/_color.scss)
+Certaines couleurs ont été ajoutées pour les besoins du projet. Et sont gérées dans le fichier `src/assets/scss/setting/_color.scss`.  
 
----
+Pour utiliser les couleurs personnalisées, vous pouvez indiquer leur nom de variable. Voici comment faire :
 
-![](./images/screenshots/screenshot-240326-b.png)
+1. Utilisation directe : Vous pouvez utiliser directement la couleur en la référençant par son nom de variable. Par exemple, pour utiliser `$base-yellow` comme couleur de fond, vous pouvez écrire :
 
----
+```scss
+@use './src/assets/scss/setting';
+
+.element {
+  background-color: setting.$base-yellow;
+}
+```
+
+2. Utilisation à travers le tableau `$colors` et de la fonction `map-get`. 
+
+Exemple, pour obtenir la couleur de fond pour "yellow" :
+```scss
+@use './src/assets/scss/setting';
+
+.element {
+  background-color: map-get(map-get(setting.$colors, "yellow"), "background-color");
+}
+```
+
+3. Utilisation avec une boucle via le tableau `$colors`:
+
+Exemple, pour définir la couleur de fond pour chaque couleur :
+```scss
+@use './src/assets/scss/setting';
+
+@each $color, $properties in setting.$colors {
+  .element-#{$color} {
+    background-color: map-get($properties, "background-color");
+  }
+}
+```
+
+### L'arrondie des coins
+La classe `.fr-radius-[corner]` permet d'appliquer un rayon de bordure à un coin spécifique d'un élément. Voici comment l'utiliser :
+
+Valeurs possibles pour `[corner]`:
+- `tl` : coin supérieur gauche
+- `tr` : coin supérieur droit
+- `bl` : coin inférieur gauche
+- `br` : coin inférieur droit
+- `t` : coins supérieurs
+- `b` : coins inférieurs
+- `l` : coins gauches
+- `r` : coins droits
+- `a` : tous les coins
+
+1. Utilisation de base : avec la classe `.fr-radius-[corner]` à ajouter à l'élément HTML.  
+
+Exemple, pour appliquer un rayon de bordure au coin supérieur gauche d'un élément :
+```html
+<div class="fr-radius-tl">...</div>
+```
+
+2. Utilisation avec différentes tailles : avec la classe `.fr-radius-[corner]-[rounded]` afin de preciser la taille de rayon.
+
+Valeurs possibles pour `[rounded]`:
+- `0` : rayon de 0rem
+- `0-5v` : rayon de 0.5rem
+- `1v` : rayon de 1rem
+- `1-5v` : rayon de 1.5rem
+- `2v` : rayon de 2rem
+- `2-5v` : rayon de 2.5rem
+
+Exemple, pour appliquer un petit rayon au coin supérieur droit :
+```html
+<div class="fr-radius-tr-0-5v">...</div>
+```
+
+### Les tags de couleurs
+L'utilisation de la classe `.fr-tag--[color]` en combinaison avec `.fr-tag`  permet de changer la couleur de fond du tag lorsque le tag a été sélectionné. Remplacez [color] par le nom de la couleur souhaitée.
+
+Exemple, pour un tag avec une couleur de fond bleue lorsqu'il est sélectionné :
+```html
+<div class="fr-tag fr-tag--blue">...</div>
+```
+
+### Les cartes de couleurs
+L'utilisation de la classe `.fr-card--[color]` en combinant avec `.fr-card` permet de changer la couleur de fond de la carte. Remplacez [color] par le nom de la couleur souhaitée.  
+Cette classe est, par exemple, utilisée pour l'affichage des cartes Objectif sur le component [`TeeObjectiveCard`](./src/components/element/TeeObjectiveCard.vue).
 
 ## Why this web component ?
 
