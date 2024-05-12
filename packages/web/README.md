@@ -103,6 +103,11 @@ Exemple, pour un tag avec une couleur de fond bleue lorsqu'il est sélectionné 
 L'utilisation de la classe `.fr-card--[color]` en combinant avec `.fr-card` permet de changer la couleur de fond de la carte. Remplacez [color] par le nom de la couleur souhaitée.  
 Cette classe est, par exemple, utilisée pour l'affichage des cartes Objectif sur le component [`TeeObjectiveCard`](./src/components/element/TeeObjectiveCard.vue).
 
+Exemple, pour une carte avec une couleur de fond bleue :
+```html
+<div class="fr-card fr-card--blue">...</div>
+```
+
 ## Why this web component ?
 
 This project aims to implement a flexible but simple way to display a questionnaire in a portable web component, and use the user's choices to select a subset from a dataset.
