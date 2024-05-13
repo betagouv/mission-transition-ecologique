@@ -97,8 +97,8 @@ export default class Objective {
 
       return tags
     }
-    tags.push(...this.objectives)
 
+    tags.push(...this.objectives)
     return tags
   }
 
