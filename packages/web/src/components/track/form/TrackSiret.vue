@@ -100,7 +100,7 @@ import TrackSiret from '@/utils/track/TrackSiret'
 import Translation from '@/utils/translation'
 import { ref, computed } from 'vue'
 import EstablishmentApi from '@/service/api/establishmentApi'
-import { EstablishmentSearch } from '@/types/establishmentType'
+import { EstablishmentSearch } from '@/types'
 
 // Functionnal note :
 // We send data update to the parent component each time the data selection change.
@@ -198,19 +198,21 @@ function createData(): TrackOptionItem {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import '@/assets/scss/_colors.scss';
+
 .custom-border {
   border: solid thin #c4c4c4;
 }
 
 .is-selected {
-  border: solid thin #000091;
-  color: #000091;
-  background-color: rgb(245, 245, 245);
+  border: solid thin $dark-blue;
+  color: $dark-blue;
+  background-color: #f5f5f5;
 }
 
 .is-title-selected {
-  color: #000091;
+  color: $dark-blue;
 }
 
 .thinner-text {
@@ -219,6 +221,6 @@ function createData(): TrackOptionItem {
 
 .result-number {
   font-style: italic;
-  color: #000091;
+  color: $dark-blue;
 }
 </style>

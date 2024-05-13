@@ -16,20 +16,9 @@ export default class EstablishmentFeatures {
 
   public async search(query: string): Promise<Result<EstablishmentSearch, Error>> {
     if (Validator.validateSiret(query)) {
-      const resultEstablishment = await this.getBySiret(query)
-      if (resultEstablishment.isErr) {
-        return Result.err(resultEstablishment.error)
-      }
-      const establishmentSearch = this._convertEstablishmentToSearch(resultEstablishment.value)
-      return Result.ok(establishmentSearch)
+      return await this._searchBySiret(query)
     }
-
-    const results = await this._establishmentRepository.search(query)
-    if (results.isOk) {
-      const establishmentsSearch = this._enrichAndConvertToEstablishmentSearch(results.value)
-      return Result.ok(establishmentsSearch)
-    }
-    return Result.err(results.error)
+    return await this._searchByQuery(query)
   }
 
   public async getBySiret(siret: Siret): Promise<Result<Establishment, Error>> {
@@ -43,6 +32,24 @@ export default class EstablishmentFeatures {
     establishment = this._addSectorDetailsToEstablishment(establishment)
 
     return Result.ok(establishment)
+  }
+
+  private async _searchBySiret(siret: string): Promise<Result<EstablishmentSearch, Error>> {
+    const resultEstablishment = await this.getBySiret(siret)
+    if (resultEstablishment.isErr) {
+      return Result.err(resultEstablishment.error)
+    }
+    const establishmentSearch = this._convertEstablishmentToSearch(resultEstablishment.value)
+    return Result.ok(establishmentSearch)
+  }
+
+  private async _searchByQuery(query: string): Promise<Result<EstablishmentSearch, Error>> {
+    const results = await this._establishmentRepository.search(query)
+    if (results.isOk) {
+      const establishmentsSearch = this._enrichAndConvertToEstablishmentSearch(results.value)
+      return Result.ok(establishmentsSearch)
+    }
+    return Result.err(results.error)
   }
 
   private _addRegionToEstablishment(establishment: Establishment): Establishment {

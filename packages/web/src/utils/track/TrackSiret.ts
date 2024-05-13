@@ -1,6 +1,6 @@
 import { SiretValue } from '@/types'
 import type { Track, TrackOptionItem, TrackOptionsUnion } from '@/types'
-import type { EstablishmentType } from '@/types/establishmentType'
+import type { EstablishmentType } from '@/types'
 import TrackCallback from '@/utils/track/TrackCallback'
 
 export default class TrackSiret {

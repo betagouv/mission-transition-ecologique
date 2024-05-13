@@ -1,6 +1,6 @@
 import RequestApi from '@/service/api/requestApi'
 import { Result } from 'true-myth'
-import { EstablishmentSearch } from '@/types/establishmentType'
+import { EstablishmentSearch } from '@/types'
 
 export default class EstablishmentApi extends RequestApi {
   private readonly url = '/api/establishments/'
