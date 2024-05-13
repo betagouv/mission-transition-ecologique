@@ -17,10 +17,9 @@
         >
           <div
             class="fr-tee-add-padding fr-mt-10v fr-col-3 fr-col-md-4 fr-col-lg-3 fr-col-xl-2 fr-col-sm-hide"
-            style="position: fixed; max-height: 60vh; overflow: hidden scroll; top: 25vh"
+            style="position: fixed; top: 25vh"
           >
             <ProgramFilterByType />
-            <TrackSidebar />
           </div>
         </div>
         <div
@@ -41,6 +40,5 @@
 
 <script setup lang="ts">
 import ProgramList from '@/components/program/list/ProgramList.vue'
-import TrackSidebar from '@/components/track/TrackSidebar.vue'
 import { RouteName } from '@/types/routeType'
 </script>
