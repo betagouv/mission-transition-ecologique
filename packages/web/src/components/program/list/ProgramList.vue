@@ -3,6 +3,12 @@
   <div class="fr-container fr-px-4v fr-mb-0 fr-mt-6v fr-px-md-4w">
     <ProgramListHeaderResult v-if="!navigationStore.isCatalog() && !hasSpinner" />
     <div class="fr-grid-row">
+      <div
+        v-if="navigationStore.isCatalog() && !hasSpinner"
+        class="fr-col-offset-10 fr-hidden-md fr-hidden-lg fr-hidden-xl"
+      >
+        <ProgramMobileFilter />
+      </div>
       <div class="fr-mt-4v fr-mb-2v fr-col-12">
         <div
           v-if="havePrograms && countPrograms > 1"
@@ -35,7 +41,7 @@
         v-if="navigationStore.isCatalog() && !hasSpinner"
         class="fr-mt-10v fr-col-3 fr-col-md-4 fr-col-lg-3 fr-col-xl-2 fr-col-sm-hide"
       >
-        <ProgramFilterByType />
+        <ProgramFilterByType legend="Filtrer par nature de l'aide" />
       </div>
       <div class="fr-col">
         <div class="fr-container">
@@ -58,6 +64,7 @@
 
 <script setup lang="ts">
 import ProgramCard from '@/components/program/list/ProgramCard.vue'
+import ProgramMobileFilter from './ProgramMobileFilter.vue'
 import ProgramFilters from '@/components/program/list/ProgramFilters.vue'
 import ProgramListHeaderResult from '@/components/program/list/ProgramListHeaderResult.vue'
 import Contact from '@/utils/contact'

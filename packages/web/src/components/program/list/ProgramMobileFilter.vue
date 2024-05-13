@@ -1,35 +1,35 @@
 <template>
   <DsfrButton
-    ref="modalOrigin"
     label="Filtrer"
     tertiary
     no-outline
-    style="float: right"
     size="sm"
     @click="open()"
   />
   <DsfrModal
     ref="modal"
     :opened="opened"
-    title="Filtrer"
-    :origin="$refs.modalOrigin"
+    title=""
     size="sm"
     @close="close()"
   >
-    <DsfrAccordionsGroup>
-      <li
-        v-for="filter in filters"
-        :key="filter.id"
-      >
-        <DsfrAccordion
-          :title="filter.title"
-          :expanded-id="expandedId"
-          @expand="expandedId = $event"
+    <template #default>
+      <div class="fr-h5 tee-text-blue fr-text-center">Filtrer</div>
+      <DsfrAccordionsGroup>
+        <li
+          v-for="filter in filters"
+          :key="filter.id"
         >
-          <component :is="filter.component" />
-        </DsfrAccordion>
-      </li>
-    </DsfrAccordionsGroup>
+          <DsfrAccordion
+            :title="filter.title"
+            :expanded-id="expandedId"
+            @expand="expandFilter"
+          >
+            <component :is="filter.component" />
+          </DsfrAccordion>
+        </li>
+      </DsfrAccordionsGroup>
+    </template>
   </DsfrModal>
 </template>
 <script setup lang="ts">
@@ -47,7 +47,11 @@ const open = () => {
   opened.value = true
 }
 
-const expandedId = ref<string>('')
+const expandedId = ref<string | undefined>()
+
+const expandFilter = (id: string | undefined) => {
+  expandedId.value = id
+}
 
 interface FilterItem {
   title: string

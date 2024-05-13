@@ -13,14 +13,9 @@
       >
         <div
           class="fr-tee-add-padding fr-mt-10v fr-col-3 fr-col-md-4 fr-col-lg-3 fr-col-xl-2 fr-col-sm-hide"
-          style="height: 100%"
+          style="top: 0; height: 100vh; position: sticky"
         >
-          <div
-            class="fr-tee-add-padding fr-mt-10v fr-col-3 fr-col-md-4 fr-col-lg-3 fr-col-xl-2 fr-col-sm-hide"
-            style="position: fixed; top: 25vh"
-          >
-            <ProgramFilterByType />
-          </div>
+          <ProgramFilterByType legend="Filtrer par nature de l'aide" />
         </div>
         <div
           id="tee-app-tracks"
