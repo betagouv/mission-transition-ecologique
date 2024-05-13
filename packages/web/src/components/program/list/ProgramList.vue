@@ -41,7 +41,12 @@
         v-if="navigationStore.isCatalog() && !hasSpinner"
         class="fr-mt-10v fr-col-3 fr-col-md-4 fr-col-lg-3 fr-col-xl-2 fr-col-sm-hide"
       >
-        <ProgramFilterByType legend="Filtrer par nature de l'aide" />
+        <nav
+          role="navigation"
+          class="fr-sidemenu fr-sidemenu--sticky-full-height"
+        >
+          <ProgramFilterByType legend="Filtrer par nature de l'aide" />
+        </nav>
       </div>
       <div class="fr-col">
         <div class="fr-container">
