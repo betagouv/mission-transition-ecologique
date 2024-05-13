@@ -47,8 +47,7 @@ export const siret: Track = {
       validation: Validator.validateSiret,
       questionnaireData: { ...defaultQuestionnaireData },
       title: { fr: 'SIRET' },
-      // label: { fr: 'Renseignez le SIRET de votre entreprise (14 chiffres)' },
-      placeholder: { fr: 'Votre numéro SIRET (14 chiffres)' },
+      label: { fr: 'Renseignez le SIRET de votre entreprise (14 chiffres)' },
       hint: {
         fr: `Besoin d'aide pour retrouver votre SIRET ? <a href="https://annuaire-entreprises.data.gouv.fr/" target="_blank">Cliquez ici</a>`
       },
