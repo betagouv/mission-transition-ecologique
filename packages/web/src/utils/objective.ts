@@ -66,24 +66,19 @@ export default class Objective {
   }
 
   static getTitleByObjective(objective: PublicodeObjective) {
-    return this.getObjective(objective)?.title || ''
+    return this.getObjective(objective)?.title ?? ''
   }
 
   static getImageByObjective(objective: PublicodeObjective) {
-    return this.getObjective(objective)?.image || ''
+    return this.getObjective(objective)?.image ?? ''
   }
 
   static getColorByObjective(objective: PublicodeObjective) {
-    return this.getObjective(objective)?.color || ''
+    return this.getObjective(objective)?.color ?? ''
   }
 
-  static getTags(): (ObjectiveType | { tagLabel: string; value: string })[] {
-    const tags = [
-      {
-        tagLabel: 'Tous',
-        value: ''
-      }
-    ]
+  static getTags(): ObjectiveType[] {
+    const tags = []
 
     if (UsedTrack.isNoSpecificGoal()) {
       UsedTrack.isEnvironmentalImpactObjective()

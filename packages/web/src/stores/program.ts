@@ -94,6 +94,10 @@ export const useProgramStore = defineStore('program', () => {
     return programFilters.value.objectiveTypeSelected !== ''
   }
 
+  function setObjectiveTypeSelected(objectiveType: string | undefined | number) {
+    programFilters.value.objectiveTypeSelected = objectiveType
+  }
+
   function resetFilters() {
     programFilters.value = {
       programAidTypeSelected: '',
@@ -110,6 +114,7 @@ export const useProgramStore = defineStore('program', () => {
     getProgramById,
     hasObjectiveTypeFilter,
     hasObjectiveTypeSelected,
+    setObjectiveTypeSelected,
     resetFilters
   }
 })

@@ -21,7 +21,7 @@
 <script setup lang="ts">
 import { TeeDsfrTagProps } from '@/components/element/tag/TeeDsfrTags.vue'
 import { useProgramStore } from '@/stores/program'
-import { ProgramAidType, type programFiltersType } from '@/types'
+import { ObjectiveType, ProgramAidType, type programFiltersType } from '@/types'
 import Objective from '@/utils/objective'
 import { DsfrSelect, DsfrSelectProps } from '@gouvminint/vue-dsfr'
 
@@ -30,18 +30,30 @@ const programStore = useProgramStore()
 const programFilters: programFiltersType = programStore.programFilters
 
 const objectiveTypeTags = computed<TeeDsfrTagProps[]>((): TeeDsfrTagProps[] => {
+  const allTag: TeeDsfrTagProps = {
+    label: 'Tous',
+    tagName: 'button',
+    value: '',
+    'aria-pressed': programFilters.objectiveTypeSelected === ''
+  }
+
   const tags: TeeDsfrTagProps[] = []
+
   for (const objectiveTag of Objective.getTags()) {
     tags.push({
       label: objectiveTag.tagLabel,
       tagName: 'button',
-      'aria-pressed': programFilters.objectiveTypeSelected === objectiveTag.value,
-      class:
-        programFilters.objectiveTypeSelected === objectiveTag.value && 'color' in objectiveTag
-          ? `fr-tag--${objectiveTag.color}`
-          : undefined,
-      value: objectiveTag.value
+      'aria-pressed': isActive(objectiveTag),
+      class: isActive(objectiveTag) && 'color' in objectiveTag ? `fr-tag--${objectiveTag.color}` : undefined,
+      value: objectiveTag.value as string
     })
+  }
+
+  if (tags.length === 1) {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    programStore.setObjectiveTypeSelected((tags.shift() as TeeDsfrTagProps).value as string)
+  } else if (tags.length > 1) {
+    tags.unshift(allTag)
   }
 
   return tags
@@ -73,4 +85,8 @@ const programAidTypeOptions: DsfrSelectProps['options'] = [
     value: ProgramAidType.train
   }
 ]
+
+function isActive(objectiveTag: ObjectiveType) {
+  return Objective.getTags().length === 1 || programFilters.objectiveTypeSelected === (objectiveTag.value as string)
+}
 </script>
