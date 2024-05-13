@@ -1,5 +1,6 @@
 <template>
   <div class="fr-grid-row">
+    <div class="fr-col-12 fr-hidden-md fr-hidden-lg fr-hidden-xl"><ProgramMobileFilter /></div>
     <div class="fr-col-12">
       <h3
         class="fr-mb-2v"

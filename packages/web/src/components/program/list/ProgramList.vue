@@ -12,7 +12,7 @@
           {{ countFilteredPrograms > 1 ? Translation.t('results.results') : Translation.t('results.result') }}
         </div>
       </div>
-      <div class="fr-col-12">
+      <div class="fr-col-12 fr-col-sm-hide">
         <ProgramFilters v-if="havePrograms && countPrograms > 1" />
       </div>
       <div class="fr-col-12 fr-text-center">
