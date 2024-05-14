@@ -47,7 +47,7 @@ export const siret: Track = {
       validation: Validator.validateSiret,
       questionnaireData: { ...defaultQuestionnaireData },
       title: { fr: 'SIRET' },
-      label: { fr: 'Renseignez le SIRET de votre entreprise (14 chiffres)' },
+      hintLabel: { fr: 'ex : "Boucherie Sanzot" ou N° SIRET "13002526500013"' },
       hint: {
         fr: `Besoin d'aide pour retrouver votre SIRET ? <a href="https://annuaire-entreprises.data.gouv.fr/" target="_blank">Cliquez ici</a>`
       },

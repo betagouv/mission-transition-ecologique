@@ -38,7 +38,7 @@
             :model-value="opportunityForm.name.value"
             label-visible
             :required="opportunityForm.name.required"
-            label="Prénom"
+            :label="opportunityForm.name.label"
             @update:model-value="updateOpportunityForm($event, 'name')"
           >
           </DsfrInput>
@@ -51,7 +51,7 @@
             :model-value="opportunityForm.surname.value"
             label-visible
             :required="opportunityForm.surname.required"
-            label="Nom"
+            :label="opportunityForm.surname.label"
             @update:model-value="updateOpportunityForm($event, 'surname')"
           >
           </DsfrInput>
@@ -64,7 +64,7 @@
             :model-value="opportunityForm.email.value"
             label-visible
             :required="opportunityForm.email.required"
-            label="Email"
+            :label="opportunityForm.email.label"
             @update:model-value="updateOpportunityForm($event, 'email')"
           >
           </DsfrInput>
@@ -77,7 +77,7 @@
             :model-value="opportunityForm.tel.value"
             label-visible
             :required="opportunityForm.tel.required"
-            label="Téléphone"
+            :label="opportunityForm.tel.label"
             @update:model-value="updateOpportunityForm($event, 'tel')"
           >
           </DsfrInput>
@@ -90,7 +90,8 @@
             :model-value="opportunityForm.siret.value"
             label-visible
             :required="opportunityForm.siret.required"
-            label="SIRET de votre entreprise"
+            :label="opportunityForm.siret.label"
+            :hint="opportunityForm.siret.hint"
             @update:model-value="updateOpportunityForm($event, 'siret')"
           >
           </DsfrInput>
@@ -105,7 +106,7 @@
             :model-value="opportunityForm.needs.value"
             label-visible
             :required="opportunityForm.needs.required"
-            label="Quel est votre besoin ?"
+            :label="opportunityForm.needs.label"
             @update:model-value="updateOpportunityForm($event, 'needs')"
           >
           </DsfrInput>
@@ -119,7 +120,7 @@
           @update:model-value="updateOpportunityForm($event, 'cgu')"
         >
           <template #label>
-            <span> J'accepte d'être recontacté par l'équipe de Transition Écologique des Entreprises <code>*</code></span>
+            <span> {{ opportunityForm.cgu.label }} <code>*</code></span>
           </template>
         </DsfrCheckbox>
 
@@ -236,11 +237,16 @@ interface Props {
 const props = defineProps<Props>()
 
 const opportunityForm = ref<opportunityFormType>({
-  name: { required: true, value: undefined },
-  surname: { required: true, value: undefined },
-  tel: { required: true, value: undefined },
-  email: { required: true, value: undefined },
-  siret: { required: true, value: usedTrack.findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'siret') },
+  name: { required: true, value: undefined, label: 'Prénom', hint: undefined },
+  surname: { required: true, value: undefined, label: 'Nom', hint: undefined },
+  tel: { required: true, value: undefined, label: 'Téléphone', hint: undefined },
+  email: { required: true, value: undefined, label: 'Email', hint: undefined },
+  siret: {
+    required: true,
+    value: usedTrack.findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'siret'),
+    label: 'SIRET de votre entreprise',
+    hint: 'Format attendu: 14 chiffres'
+  },
   needs: {
     required: true,
     value: Translation.t('program.form.needs', {
@@ -248,10 +254,22 @@ const opportunityForm = ref<opportunityFormType>({
         usedTrack.findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'secteur') ??
         usedTrack.findInQuestionnaireDataByTrackIdAndKey(TrackId.Sectors, 'sector'),
       titreAide: props.program.titre
-    })
+    }),
+    label: 'Quel est votre besoin ?',
+    hint: undefined
   },
-  cgu: { required: true, value: false },
-  linkToProgramPage: { required: true, value: new URL(route.fullPath, window.location.origin).href }
+  cgu: {
+    required: true,
+    value: false,
+    label: "J'accepte d'être recontacté par l'équipe de Transition Écologique des Entreprises",
+    hint: undefined
+  },
+  linkToProgramPage: {
+    required: true,
+    value: new URL(route.fullPath, window.location.origin).href,
+    label: undefined,
+    hint: undefined
+  }
 })
 const formIsSent = ref<boolean>(false)
 const requestResponse = ref<ReqResp>()

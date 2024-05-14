@@ -7,6 +7,12 @@
     >
       {{ option.label[Translation.lang] }}
     </label>
+    <span
+      v-if="option.hintLabel"
+      class="fr-hint-text fr-mb-2v"
+    >
+      {{ option?.hintLabel?.[Translation.lang] }}
+    </span>
     <div
       id="header-search"
       class="fr-search-bar"
