@@ -65,6 +65,7 @@
             label-visible
             :required="opportunityForm.email.required"
             :label="opportunityForm.email.label"
+            :hint="opportunityForm.email.hint"
             @update:model-value="updateOpportunityForm($event, 'email')"
           >
           </DsfrInput>
@@ -78,6 +79,7 @@
             label-visible
             :required="opportunityForm.tel.required"
             :label="opportunityForm.tel.label"
+            :hint="opportunityForm.tel.hint"
             @update:model-value="updateOpportunityForm($event, 'tel')"
           >
           </DsfrInput>
@@ -239,13 +241,13 @@ const props = defineProps<Props>()
 const opportunityForm = ref<opportunityFormType>({
   name: { required: true, value: undefined, label: 'Prénom', hint: undefined },
   surname: { required: true, value: undefined, label: 'Nom', hint: undefined },
-  tel: { required: true, value: undefined, label: 'Téléphone', hint: undefined },
-  email: { required: true, value: undefined, label: 'Email', hint: undefined },
+  tel: { required: true, value: undefined, label: 'Téléphone', hint: 'Format attendu : 01 22 33 44 55' },
+  email: { required: true, value: undefined, label: 'Email', hint: 'Format attendu : nom@domaine.fr' },
   siret: {
     required: true,
     value: usedTrack.findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'siret'),
     label: 'SIRET de votre entreprise',
-    hint: 'Format attendu: 14 chiffres'
+    hint: 'Format attendu : 14 chiffres'
   },
   needs: {
     required: true,
