@@ -35,8 +35,7 @@
 <script setup lang="ts">
 import { DsfrModal } from '@gouvminint/vue-dsfr'
 import { ref } from 'vue'
-import ProgramFilterByTypeComponent from './ProgramFilterByType.vue'
-import type { ComponentPublicInstance } from 'vue'
+import ProgramFilterByType from './ProgramFilterByType.vue'
 
 const close = () => {
   opened.value = false
@@ -53,18 +52,18 @@ const expandedId = ref<string | undefined>()
 const expandFilter = (id: string | undefined) => {
   expandedId.value = id
 }
+
 interface FilterItem {
   title: string
   id: string
-  component: ComponentPublicInstance
+  component: unknown
 }
 
 const filters: FilterItem[] = [
   {
     title: "Types d'aides",
     id: 'type-aid',
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-assignment
-    component: new ProgramFilterByTypeComponent()
+    component: ProgramFilterByType
   }
 ]
 </script>
