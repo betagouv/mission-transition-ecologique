@@ -19,11 +19,11 @@
 </template>
 
 <script setup lang="ts">
-import { TeeDsfrTagProps } from '@/components/element/tag/TeeDsfrTags.vue'
 import { useProgramStore } from '@/stores/program'
 import { ObjectiveType, ProgramAidType, type programFiltersType } from '@/types'
 import Objective from '@/utils/objective'
 import { DsfrSelect, DsfrSelectProps } from '@gouvminint/vue-dsfr'
+import { TeeDsfrTagProps } from '@/components/element/tag/TeeDsfrTag.vue'
 
 const programStore = useProgramStore()
 
@@ -44,7 +44,7 @@ const objectiveTypeTags = computed<TeeDsfrTagProps[]>((): TeeDsfrTagProps[] => {
       label: objectiveTag.tagLabel,
       tagName: 'button',
       'aria-pressed': isActive(objectiveTag),
-      class: isActive(objectiveTag) && 'color' in objectiveTag ? `fr-tag--${objectiveTag.color}` : undefined,
+      color: isActive(objectiveTag) && 'color' in objectiveTag ? objectiveTag.color : undefined,
       value: objectiveTag.value as string
     })
   }

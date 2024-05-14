@@ -32,6 +32,7 @@ declare module 'vue' {
     TeeCta: typeof import('./components/home/TeeCta.vue')['default']
     TeeDsfrButton: typeof import('./components/element/TeeDsfrButton.vue')['default']
     TeeDsfrSearchBar: typeof import('./components/element/TeeDsfrSearchBar.vue')['default']
+    TeeDsfrTag: typeof import('./components/element/tag/TeeDsfrTag.vue')['default']
     TeeDsfrTags: typeof import('./components/element/tag/TeeDsfrTags.vue')['default']
     TeeError: typeof import('./components/element/TeeError.vue')['default']
     TeeFooter: typeof import('./components/TeeFooter.vue')['default']

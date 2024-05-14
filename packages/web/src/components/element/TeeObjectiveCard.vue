@@ -18,8 +18,8 @@ import { PublicodeObjective } from '@/types'
 
 interface Props {
   objective: PublicodeObjective | ''
-  radiusCorner?: 'tl' | 'tr' | 'bl' | 'br'
-  radiusSize?: '0' | '0-5v' | '1v' | '2-5v'
+  radiusCorner?: 'tl' | 'tr' | 'bl' | 'br' | 't' | 'r' | 'b' | 'l' | 'a'
+  radiusSize?: '0' | '0-5v' | '1v' | '2v' | '2-5v'
 }
 const props = defineProps<Props>()
 
@@ -40,6 +40,12 @@ const classes = computed(() => {
     return []
   }
 
-  return ['fr-card--' + Objective.getColorByObjective(props.objective), 'fr-card--horizontal-tier', 'fr-card--no-border', getRadiusClass()]
+  return [
+    'fr-card-banner',
+    'fr-card--' + Objective.getColorByObjective(props.objective),
+    'fr-card--horizontal-tier',
+    'fr-card--no-border',
+    getRadiusClass()
+  ]
 })
 </script>

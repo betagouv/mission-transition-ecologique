@@ -1,14 +1,12 @@
 import ObjectiveChecker from '../../../../common/src/questionnaire/objectiveChecker'
 import {
   BuildingProperty,
-  MobilityStatus,
   Objective,
   PublicodeObjective,
   PublicodesKeys,
   QuestionnaireRoute,
   Sector,
   StructureSize,
-  WasteManagementStatus,
   YesNo
 } from '../../../../common/src/questionnaire/types/types'
 
@@ -85,40 +83,34 @@ const setObjectives = (publicodesData: PublicodesInputData, questionnaireData: Q
     // "J'ai un objectif précis en tête"
     for (const objective of Object.values(Objective)) {
       const publicodeObjectiveKey = 'questionnaire . objectif prioritaire . est ' + objective
-      publicodesData[publicodeObjectiveKey] = objective == questionnaireData.priority_objective ? YesNo.Yes : YesNo.No
+      publicodesData[publicodeObjectiveKey] = objective === questionnaireData.priority_objective ? YesNo.Yes : YesNo.No
     }
   } else {
     // "Je ne sais pas par où commencer"
-    publicodesData[PublicodeObjective.EnvironmentalImpact] = ObjectiveChecker.isEnvironmentalImpact(
-      questionnaireData.recently_audited as YesNo
-    )
+    publicodesData[PublicodeObjective.EnvironmentalImpact] = ObjectiveChecker.isEnvironmentalImpact(questionnaireData.recently_audited)
       ? YesNo.Yes
       : YesNo.No
 
-    publicodesData[PublicodeObjective.EcoDesign] = ObjectiveChecker.isEcoDesign(questionnaireData.wastes_materials_objective as YesNo)
+    publicodesData[PublicodeObjective.EcoDesign] = ObjectiveChecker.isEcoDesign(questionnaireData.wastes_materials_objective)
       ? YesNo.Yes
       : YesNo.No
 
-    publicodesData[PublicodeObjective.WasteManagement] = ObjectiveChecker.isWasteManagement(
-      questionnaireData.wastes_management_objective as WasteManagementStatus
-    )
+    publicodesData[PublicodeObjective.WasteManagement] = ObjectiveChecker.isWasteManagement(questionnaireData.wastes_management_objective)
       ? YesNo.Yes
       : YesNo.No
 
-    publicodesData[PublicodeObjective.WaterConsumption] = ObjectiveChecker.isWaterConsumption(
-      questionnaireData.water_reduction_objective as YesNo
-    )
+    publicodesData[PublicodeObjective.WaterConsumption] = ObjectiveChecker.isWaterConsumption(questionnaireData.water_reduction_objective)
       ? YesNo.Yes
       : YesNo.No
 
     publicodesData[PublicodeObjective.SustainableMobility] = ObjectiveChecker.isSustainableMobility(
-      questionnaireData.sustainable_mobility_objective as MobilityStatus
+      questionnaireData.sustainable_mobility_objective
     )
       ? YesNo.Yes
       : YesNo.No
 
     publicodesData[PublicodeObjective.EnergyPerformance] = ObjectiveChecker.isEnergyPerformance(
-      questionnaireData.energy_reduction_objective as YesNo
+      questionnaireData.energy_reduction_objective
     )
       ? YesNo.Yes
       : YesNo.No

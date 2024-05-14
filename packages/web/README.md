@@ -55,6 +55,38 @@ Exemple, pour définir la couleur de fond pour chaque couleur :
 }
 ```
 
+### Outils d'affichage
+
+#### Alignement des textes  
+Les classes `.fr-text-[align]` permettent de définir l'alignement du texte. Voici comment les utiliser :
+
+Valeurs possibles pour `[align]`:
+- `left` : alignement à gauche
+- `center` : alignement au centre
+- `right` : alignement à droite
+- `justify` : justifié
+
+1. Utilisation de base : avec la classe `.fr-text-[align]` à ajouter à l'élément HTML.
+
+Exemple, pour aligner un texte à droite :
+```html
+<p class="fr-text-right">...</p>
+```
+
+2. Utilisation avec des breakpoints différentes : avec la classe `.fr-text-[align]-[breakpoint]`.
+
+Valeurs possibles pour `[breakpoint]`:
+- `xs` : pour les écrans de très petite taille
+- `sm` : pour les écrans de petite taille
+- `md` : pour les écrans de taille moyenne
+- `lg` : pour les écrans de grande taille
+- `xl` : pour les écrans très grands
+
+Exemple, pour aligner un texte à gauche sur les écrans de taille moyenne et plus :
+```html
+<p class="fr-text-left-md">...</p>
+```
+
 ### L'arrondie des coins
 La classe `.fr-radius-[corner]` permet d'appliquer un rayon de bordure à un coin spécifique d'un élément. Voici comment l'utiliser :
 

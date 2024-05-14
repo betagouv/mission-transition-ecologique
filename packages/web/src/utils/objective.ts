@@ -1,5 +1,5 @@
 import { PublicodeObjective, Objective as ObjectiveEnum, PublicodesKeys, ObjectiveType, Color } from '@/types'
-import UsedTrack from '@/utils/track/UsedTrack'
+import UsedTrack from '@/utils/track/usedTrack'
 
 export default class Objective {
   static objectives: ObjectiveType[] = [

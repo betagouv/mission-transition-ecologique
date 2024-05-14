@@ -4,7 +4,7 @@
       v-for="({ value, ...tagProps }, i) in tags"
       :key="i"
     >
-      <DsfrTag
+      <TeeDsfrTag
         v-bind="tagProps"
         @click="model = value"
       />
@@ -13,13 +13,7 @@
 </template>
 
 <script lang="ts" setup>
-import { DsfrTag, DsfrTagProps } from '@gouvminint/vue-dsfr'
-
-export interface TeeDsfrTagProps extends DsfrTagProps {
-  'aria-pressed'?: boolean
-  class?: string
-  value?: string | number
-}
+import { TeeDsfrTagProps } from '@/components/element/tag/TeeDsfrTag.vue'
 
 export interface TeeDsfrTagsProps {
   tags: TeeDsfrTagProps[]

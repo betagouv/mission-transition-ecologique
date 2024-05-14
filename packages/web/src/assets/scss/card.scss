@@ -7,51 +7,78 @@
     cursor: pointer;
   }
 
-  @each $color, $properties in setting.$colors {
-    &--#{$color} {
-      flex-direction: row;
+  &-banner {
+    flex-direction: row;
 
+    @include media-query.respond-from(xs) {
+      height: 100px !important;
+    }
+    @include media-query.respond-from(sm) {
+      max-height: 200px;
+      height: 100% !important;
+    }
+
+    &:hover {
+      cursor: auto !important;
+    }
+
+    :hover {
+      cursor: auto !important;
+    }
+
+    .fr-card__content {
+      justify-content: center;
+    }
+
+    .fr-card__header {
+      flex: 0 0 33.3333333333%;
+      width: 33.3333333333%;
+      height: 100%;
+
+      .fr-card__img {
+        height: 100%;
+        align-content: center;
+
+        img {
+          object-fit: fill;
+
+          &.fr-responsive-img {
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    .fr-card__title {
+      font-weight: 400;
+      font-size: 0.75rem;
+      line-height: 1.25rem;
       @include media-query.respond-from(xs) {
-        height: 100px !important;
+        display: none;
       }
       @include media-query.respond-from(sm) {
-        max-height: 200px;
-        height: 100% !important;
+        display: inherit;
       }
+    }
 
+    .fr-card__desc {
+      font-weight: 700;
+      @include media-query.respond-from(xs) {
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+      }
+      @include media-query.respond-from(sm) {
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+      }
+    }
+  }
+
+  @each $color, $properties in setting.$colors {
+    &--#{$color} {
       @if type-of($properties) == map {
         background-color: map-get($properties, "background-color");
         color: map-get($properties, "color");
-      }
-
-      &:hover {
-        cursor: auto !important;
-      }
-      :hover {
-        cursor: auto !important;
-      }
-
-      .fr-card__content {
-        justify-content: center;
-      }
-
-      .fr-card__header {
-        flex: 0 0 33.3333333333%;
-        width: 33.3333333333%;
-        height: 100%;
-
-        .fr-card__img {
-          height: 100%;
-          align-content: center;
-
-          img {
-            object-fit: fill;
-
-            &.fr-responsive-img {
-              height: 100%;
-            }
-          }
-        }
       }
 
       .fr-card__title {
@@ -59,27 +86,6 @@
           color: map-get($properties, "color");
         } @else {
           color: var(--text-default-grey);
-        }
-        font-weight: 400;
-        font-size: 0.75rem;
-        line-height: 1.25rem;
-        @include media-query.respond-from(xs) {
-          display: none;
-        }
-        @include media-query.respond-from(sm) {
-          display: inherit;
-        }
-      }
-
-      .fr-card__desc {
-        font-weight: 700;
-        @include media-query.respond-from(xs) {
-          font-size: 1.25rem;
-          line-height: 1.5rem;
-        }
-        @include media-query.respond-from(sm) {
-          font-size: 2.5rem;
-          line-height: 2.5rem;
         }
       }
     }

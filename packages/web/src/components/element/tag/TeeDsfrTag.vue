@@ -1,0 +1,26 @@
+<template>
+  <DsfrTag
+    v-bind="props"
+    :class="classes"
+  />
+</template>
+
+<script lang="ts" setup>
+import { DsfrTag, DsfrTagProps } from '@gouvminint/vue-dsfr'
+
+export interface TeeDsfrTagProps extends DsfrTagProps {
+  'aria-pressed'?: boolean
+  color?: string
+  value?: string | number
+}
+
+const props = defineProps<TeeDsfrTagProps>()
+
+const classes = computed(() => {
+  return {
+    'fr-tag': true,
+    'fr-tag--active': props['aria-pressed'],
+    [`fr-tag--${props.color}`]: props.color
+  }
+})
+</script>

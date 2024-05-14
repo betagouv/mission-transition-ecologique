@@ -1,27 +1,29 @@
 import { MobilityStatus, WasteManagementStatus, YesNo } from './types/types'
 
 export default class ObjectiveChecker {
-  static isEnvironmentalImpact(audited: YesNo) {
+  static isEnvironmentalImpact(audited: YesNo | undefined) {
     return audited !== YesNo.Yes
   }
 
-  static isEcoDesign(wastesMaterials: YesNo) {
+  static isEcoDesign(wastesMaterials: YesNo | undefined) {
     return wastesMaterials !== YesNo.No
   }
 
-  static isWasteManagement(wastesManagement: WasteManagementStatus) {
-    return wastesManagement === WasteManagementStatus.Yes || wastesManagement === WasteManagementStatus.Unknown
+  static isWasteManagement(wastesManagement: WasteManagementStatus | undefined) {
+    return (
+      wastesManagement === WasteManagementStatus.Yes || wastesManagement === WasteManagementStatus.Unknown || wastesManagement === undefined
+    )
   }
 
-  static isWaterConsumption(waterReduction: YesNo) {
+  static isWaterConsumption(waterReduction: YesNo | undefined) {
     return waterReduction !== YesNo.No
   }
 
-  static isSustainableMobility(mobilityObjective: MobilityStatus) {
-    return mobilityObjective === MobilityStatus.Yes || mobilityObjective === MobilityStatus.Unknown
+  static isSustainableMobility(mobilityObjective: MobilityStatus | undefined) {
+    return mobilityObjective === MobilityStatus.Yes || mobilityObjective === MobilityStatus.Unknown || mobilityObjective === undefined
   }
 
-  static isEnergyPerformance(energyReduction: YesNo) {
+  static isEnergyPerformance(energyReduction: YesNo | undefined) {
     return energyReduction !== YesNo.No
   }
 }

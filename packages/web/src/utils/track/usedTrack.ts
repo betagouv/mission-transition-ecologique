@@ -13,12 +13,12 @@ import ObjectiveChecker from '@tee/common/src/questionnaire/objectiveChecker'
 type QuestionnaireDataReturnType = {
   [QuestionnaireDataEnum.questionnaire_route]: QuestionnaireRoute
   [QuestionnaireDataEnum.priority_objective]: ObjectiveType
-  [QuestionnaireDataEnum.sustainable_mobility_objective]: MobilityStatus
-  [QuestionnaireDataEnum.energy_reduction_objective]: YesNo
-  [QuestionnaireDataEnum.wastes_management_objective]: WasteManagementStatus
-  [QuestionnaireDataEnum.water_reduction_objective]: YesNo
-  [QuestionnaireDataEnum.wastes_materials_objective]: YesNo
-  [QuestionnaireDataEnum.recently_audited]: YesNo
+  [QuestionnaireDataEnum.sustainable_mobility_objective]: MobilityStatus | undefined
+  [QuestionnaireDataEnum.energy_reduction_objective]: YesNo | undefined
+  [QuestionnaireDataEnum.wastes_management_objective]: WasteManagementStatus | undefined
+  [QuestionnaireDataEnum.water_reduction_objective]: YesNo | undefined
+  [QuestionnaireDataEnum.wastes_materials_objective]: YesNo | undefined
+  [QuestionnaireDataEnum.recently_audited]: YesNo | undefined
 }
 
 export default class UsedTrack {

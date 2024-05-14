@@ -8,13 +8,12 @@
 @each $corner, $corner-name in setting.$corner {
   @each $radius, $radius-value in setting.$rounded {
     @include media-query.respond-from(md) {
-      @if $radius == null {
         .fr-radius-#{$corner} {
           @include tool.border-radius($radius-value, $corner-name, true);
-        }
-      } @else {
-        .fr-radius-#{$corner}-#{$radius} {
-          @include tool.border-radius($radius-value, $corner-name, true);
+          @if $radius != null {
+            &-#{$radius} {
+              @include tool.border-radius($radius-value, $corner-name, true);
+            }
         }
       }
     }
