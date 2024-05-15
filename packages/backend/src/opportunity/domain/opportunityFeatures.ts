@@ -35,7 +35,6 @@ export default class OpportunityFeatures {
       return Result.err(maybeFullopportunity.error)
     }
     opportunity = maybeFullopportunity.value
-    console.log(opportunity)
     const contactIdResult = await this._contactRepository.createOrUpdate(opportunity as ContactDetails, optIn)
     if (contactIdResult.isErr) {
       return Result.err(contactIdResult.error)
@@ -102,8 +101,8 @@ export default class OpportunityFeatures {
 
     const dics = JSON.parse(opportunity.otherData || '[]') as Dic[]
     const newDic = {} as Dic
-    if (!this._updateValueInDics(dics, 'nafCode', establishmentInfos.value.nafCode)) {
-      newDic['nafCode'] = establishmentInfos.value.nafCode
+    if (!this._updateValueInDics(dics, 'codeNAF', establishmentInfos.value.nafCode)) {
+      newDic['codeNAF'] = establishmentInfos.value.nafCode
     }
     if (!this._updateValueInDics(dics, 'codePostal', establishmentInfos.value.address.zipCode)) {
       newDic['codePostal'] = establishmentInfos.value.address.zipCode
