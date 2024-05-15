@@ -25,7 +25,10 @@
             :expanded-id="expandedId"
             @expand="expandFilter"
           >
-            <component :is="filter.component" />
+            <component
+              :is="filter.component"
+              legend=""
+            />
           </DsfrAccordion>
         </li>
       </DsfrAccordionsGroup>
@@ -35,7 +38,7 @@
 <script setup lang="ts">
 import { DsfrModal } from '@gouvminint/vue-dsfr'
 import { ref } from 'vue'
-import ProgramFilterByType from './ProgramFilterByType.vue'
+import ProgramFilterByAidType from './ProgramFilterByAidType.vue'
 
 const close = () => {
   opened.value = false
@@ -63,7 +66,7 @@ const filters: FilterItem[] = [
   {
     title: "Types d'aides",
     id: 'type-aid',
-    component: ProgramFilterByType
+    component: ProgramFilterByAidType
   }
 ]
 </script>

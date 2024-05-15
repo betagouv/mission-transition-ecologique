@@ -12,12 +12,11 @@
         class="fr-grid-row fr-grid-row-gutters fr-justify-center"
       >
         <div class="fr-tee-add-padding fr-mt-10v fr-col-3 fr-col-md-4 fr-col-lg-3 fr-col-xl-2 fr-col-sm-hide">
-          <nav
-            role="navigation"
-            class="fr-sidemenu fr-sidemenu--sticky-full-height"
-          >
-            <ProgramFilterByType legend="Filtrer par nature de l'aide" />
-          </nav>
+          <div class="fr-sidemenu fr-sidemenu--sticky-full-height">
+            <div class="fr-mb-6v">
+              <ProgramFilterByAidType />
+            </div>
+          </div>
         </div>
         <div
           id="tee-app-tracks"

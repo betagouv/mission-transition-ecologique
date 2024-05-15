@@ -7,7 +7,7 @@
         v-if="navigationStore.isCatalog() && !hasSpinner"
         class="fr-col-offset-10 fr-hidden-md fr-hidden-lg fr-hidden-xl"
       >
-        <ProgramMobileFilter />
+        <ProgramModalFilter />
       </div>
       <div class="fr-mt-4v fr-mb-2v fr-col-12">
         <div
@@ -18,8 +18,8 @@
           {{ countFilteredPrograms > 1 ? Translation.t('results.results') : Translation.t('results.result') }}
         </div>
       </div>
-      <div class="fr-col-12 fr-col-sm-hide">
-        <ProgramFilters v-if="havePrograms && countPrograms > 1" />
+      <div class="fr-col-12">
+        <ProgramFilterByTheme v-if="havePrograms && countPrograms > 1" />
       </div>
       <div class="fr-col-12 fr-text-center">
         <TeeSpinner
@@ -41,12 +41,11 @@
         v-if="navigationStore.isCatalog() && !hasSpinner"
         class="fr-mt-10v fr-col-3 fr-col-md-4 fr-col-lg-3 fr-col-xl-2 fr-col-sm-hide"
       >
-        <nav
-          role="navigation"
-          class="fr-sidemenu fr-sidemenu--sticky-full-height"
-        >
-          <ProgramFilterByType legend="Filtrer par nature de l'aide" />
-        </nav>
+        <div class="fr-sidemenu fr-sidemenu--sticky-full-height">
+          <div class="fr-mb-6v">
+            <ProgramFilterByAidType />
+          </div>
+        </div>
       </div>
       <div class="fr-col">
         <div class="fr-container">
@@ -69,8 +68,7 @@
 
 <script setup lang="ts">
 import ProgramCard from '@/components/program/list/ProgramCard.vue'
-import ProgramMobileFilter from './ProgramMobileFilter.vue'
-import ProgramFilters from '@/components/program/list/ProgramFilters.vue'
+import ProgramFilterByTheme from '@/components/program/list/filters/ProgramFilterByTheme.vue'
 import ProgramListHeaderResult from '@/components/program/list/ProgramListHeaderResult.vue'
 import Contact from '@/utils/contact'
 import ProgramListNoResults from '@/components/program/list/ProgramListNoResults.vue'
