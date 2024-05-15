@@ -164,6 +164,7 @@ export type TrackOptionItem = {
   option: TrackOptionsUnion
   index?: number
   remove?: boolean
+  forceKeep?: boolean
 }
 
 export interface Track {
