@@ -33,3 +33,10 @@ export interface SectorDetails {
 }
 
 export class EstablishmentNotFoundError extends CustomError {}
+
+export { EstablishmentSearch, default as EstablishmentFront } from '@tee/common/src/establishment/types'
+
+export interface SearchResult {
+  resultCount: number
+  establishments: EstablishmentDetails[]
+}

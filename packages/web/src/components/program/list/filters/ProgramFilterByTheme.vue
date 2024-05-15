@@ -1,12 +1,12 @@
 <template>
-  <div class="fr-grid-row fr-grid-row--gutters fr-mb-4v">
+  <div class="fr-grid-row fr-grid-row--gutters">
     <div
       v-if="programStore.hasObjectiveTypeFilter()"
-      class="fr-col-12 fr-col-sm-6"
+      class="fr-col-12"
     >
-      <DsfrSelect
-        v-model="programFilters.objectifTypeSelected"
-        :options="objectifTypeOptions"
+      <TeeDsfrTags
+        v-model="programFilters.objectiveTypeSelected"
+        :tags="objectiveTypeTags"
       />
     </div>
   </div>
@@ -14,50 +14,45 @@
 
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
-import { PublicodeObjective, type programFiltersType } from '@/types'
-import { DsfrSelect } from '@gouvminint/vue-dsfr'
-import type { DsfrSelectProps } from '@gouvminint/vue-dsfr/types/components/DsfrSelect/DsfrSelect.types'
-
-const programFilters: programFiltersType = useProgramStore().programFilters
+import { ObjectiveType, type programFiltersType } from '@/types'
+import Objective from '@/utils/objective'
+import { TeeDsfrTagProps } from '@/components/element/tag/TeeDsfrTag.vue'
 
 const programStore = useProgramStore()
 
-const objectifTypeOptions: DsfrSelectProps['options'] = [
-  {
-    text: 'Filtrer par objectif',
-    value: ''
-  },
-  {
-    text: '🌱 Stratégie environnementale',
-    value: PublicodeObjective.EnvironmentalImpact
-  },
-  {
-    text: '⚡️ Énergie',
-    value: PublicodeObjective.EnergyPerformance
-  },
-  {
-    text: '💧 Eau',
-    value: PublicodeObjective.WaterConsumption
-  },
-  {
-    text: '🏢 Bâtiment',
-    value: PublicodeObjective.BuildingRenovation
-  },
-  {
-    text: '🚲 Mobilité',
-    value: PublicodeObjective.SustainableMobility
-  },
-  {
-    text: '🗑 Déchets',
-    value: PublicodeObjective.WasteManagement
-  },
-  {
-    text: '🏭 Production',
-    value: PublicodeObjective.EcoDesign
-  },
-  {
-    text: '🧑‍🎓 RH',
-    value: PublicodeObjective.TrainOrRecruit
+const programFilters: programFiltersType = programStore.programFilters
+
+const objectiveTypeTags = computed<TeeDsfrTagProps[]>((): TeeDsfrTagProps[] => {
+  const allTag: TeeDsfrTagProps = {
+    label: 'Tous',
+    tagName: 'button',
+    value: '',
+    ariaPressed: programFilters.objectiveTypeSelected === ''
   }
-]
+
+  const tags: TeeDsfrTagProps[] = []
+
+  for (const objectiveTag of Objective.getTags()) {
+    tags.push({
+      label: objectiveTag.tagLabel,
+      tagName: 'button',
+      ariaPressed: isActive(objectiveTag),
+      color: isActive(objectiveTag) && 'color' in objectiveTag ? objectiveTag.color : undefined,
+      value: objectiveTag.value as string
+    })
+  }
+
+  if (tags.length === 1) {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    programStore.setObjectiveTypeSelected((tags.shift() as TeeDsfrTagProps).value as string)
+  } else if (tags.length > 1) {
+    tags.unshift(allTag)
+  }
+
+  return tags
+})
+
+function isActive(objectiveTag: ObjectiveType) {
+  return Objective.getTags().length === 1 || programFilters.objectiveTypeSelected === (objectiveTag.value as string)
+}
 </script>

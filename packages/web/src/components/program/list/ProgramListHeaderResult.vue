@@ -3,6 +3,8 @@
     <div class="fr-col-offset-10 fr-hidden-md fr-hidden-lg fr-hidden-xl">
       <ProgramModalFilter />
     </div>
+  </div>
+  <div class="fr-grid-row fr-text-center fr-text-left-md">
     <div class="fr-col-12">
       <h3
         class="fr-mb-2v"
@@ -19,7 +21,7 @@
         🎉 Félicitations, vous avez terminé !
       </p>
     </div>
-    <div class="fr-mt-5v fr-col-12">
+    <div class="fr-mt-5v fr-col-12 fr-px-2v fr-px-md-0">
       <p v-html="resume"></p>
     </div>
   </div>

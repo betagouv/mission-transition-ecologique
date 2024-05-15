@@ -1,0 +1,17 @@
+@use '@gouvfr/dsfr/module/media-query';
+@use '@gouvfr/dsfr/module/media-query/variable/breakpoints';
+@use 'setting';
+
+@each $align in setting.$aligns {
+  .fr-text-#{$align} {
+    text-align: $align;
+    @each $breakpoint, $value in breakpoints.$values {
+      &-#{$breakpoint} {
+        @include media-query.respond-from($breakpoint) {
+          text-align: $align;
+        }
+      }
+    }
+  }
+}
+

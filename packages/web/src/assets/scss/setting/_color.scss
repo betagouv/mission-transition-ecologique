@@ -1,0 +1,34 @@
+$base-yellow: #FACF35;
+$base-green: #1EBE8E;
+$base-blue: #6672F8;
+$base-blue-light: #E8EDFF;
+$base-red: #FCA081;
+$base-purple: #6A62F4;
+$dark-blue: #000091;
+
+// !!!important!! New color added need to be added to the typescript enum `packages/web/src/types/color.ts`
+$colors: (
+  "yellow": (
+    "background-color": $base-yellow,
+    "color": var(--text-action-high-blue-france)
+  ),
+  "green": (
+    "background-color": $base-green,
+    "color": var(--text-action-high-blue-france)
+  ),
+  "blue": (
+    "background-color": $base-blue,
+    "color": var(--text-inverted-blue-france),
+    "is-inverted": true,
+  ),
+  "blue-light": (
+    "background-color": $base-blue-light,
+    "color": var(--text-action-high-blue-france)
+  ),
+  "red": (
+    "background-color": $base-red,
+    "color": var(--text-action-high-blue-france)
+  ),
+  "secondary-purple" : $base-purple,
+  "dark-blue" : $dark-blue
+);

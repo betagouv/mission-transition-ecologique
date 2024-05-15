@@ -1,6 +1,6 @@
 <template>
   <TeeDsfrSearchBar
-    v-model.trim="siretValue"
+    v-model.trim="queryValue"
     :option="props.option"
     :is-loading="isLoading"
     :error-message="errorMessage"
@@ -11,76 +11,96 @@
 
   <!-- RESPONSES -->
   <div
-    v-if="requestResponses.length"
-    class="fr-mt-4v"
+    v-show="requestResponses.establishments.length > 1"
+    class="fr-mt-n2w"
   >
-    <h6 v-show="!hasSelection && requestResponses.length > 1">
-      {{ Translation.t('enterprise.select') }}
-    </h6>
-    <!-- CARDS -->
+    <div v-if="requestResponses.resultCount < 4">
+      <span class="result-number">{{ requestResponses.resultCount }} résultats trouvés</span>
+      <h6 class="fr-mt-3v">Sélectionnez votre entreprise :</h6>
+    </div>
+    <div v-else>
+      <span class="result-number">3 résultats affichés sur {{ requestResponses.resultCount }} trouvés</span>
+
+      <h6 class="fr-mt-3v">Sélectionnez votre entreprise ou précisez votre recherche</h6>
+    </div>
+  </div>
+  <div
+    v-if="requestResponses.establishments.length"
+    class="fr-mt-n2w"
+  >
     <div
-      v-for="(response, i) in requestResponses"
+      v-for="(response, i) in requestResponses.establishments"
       :key="`resp-input-${i}`"
-      class="fr-card fr-card-result fr-card--no-arrow fr-card--shadow"
-      :style="`border: ${isSelected(response) ? 'solid thin #000091;' : 'solid thin #C4C4C4'};`"
-      @click="canSelect && selectItem(response)"
+      class="fr-card fr-card-result fr-card--no-arrow fr-mb-2v fr-card--shadow custom-border"
+      :class="{ 'is-selected': isSelected(i) }"
+      @click="selectItem(i)"
     >
       <div class="fr-card__body">
-        <div class="fr-card__content fr-py-4v fr-px-4v">
-          <!-- TITLE -->
-          <template
-            v-for="(resultMapping, idx) in response.resultsMapping"
-            :key="`resp-input-${i}-field-title-${idx}`"
+        <div class="fr-card__content fr-py-2v fr-px-4v">
+          <div
+            class="fr-card__title"
+            :class="{ 'is-title-selected': isSelected(i) }"
           >
-            <h3
-              v-if="resultMapping.position === 'title'"
-              :class="`fr-card__title ${resultMapping.class || 'fr-mb-2v'}`"
-              :style="`${isSelected(response) ? 'color: #000091;' : ''}`"
-            >
-              <span>
-                {{ getFromFields(response, resultMapping) }}
-              </span>
-            </h3>
-          </template>
-
+            <div class="fr-hidden fr-unhidden-md">
+              {{ response.denomination || 'Entreprise individuelle' }}
+              <span class="thinner-text"> - SIRET {{ response.siret }} </span>
+            </div>
+            <div class="fr-hidden-md">
+              <div>{{ response.denomination || 'Entreprise individuelle' }}</div>
+              <div class="thinner-text">SIRET {{ response.siret }}</div>
+            </div>
+          </div>
           <div class="fr-card__desc tee-resp-info-block">
-            <p
-              v-for="(resultMapping, idx) in response.resultsMapping?.filter((i) => i.position !== 'title')"
-              :key="`resp-input-${i}-field-${idx}`"
-              :class="resultMapping.class || 'fr-mb-2v'"
-            >
-              <!-- ICON -->
+            <div>
               <span
-                v-if="resultMapping.icon"
-                :class="`${resultMapping.icon} fr-mr-8v`"
+                class="fr-icon-briefcase-line fr-mr-8v"
                 aria-hidden="true"
               >
               </span>
-              <!-- TITLE -->
+              <span>Secteur d'activité : {{ response.secteur || 'Non Renseigné' }}</span>
+            </div>
+            <div>
               <span
-                v-if="resultMapping.label"
-                class="fr-mr-1v"
+                class="fr-icon-map-pin-2-line fr-mr-8v"
+                aria-hidden="true"
               >
-                {{ resultMapping.label }}
               </span>
-              <span :style="resultMapping.style">
-                {{ getFromFields(response, resultMapping) }}
+              <span>{{ response.codePostal }} {{ response.ville }}</span>
+            </div>
+            <div>
+              <span
+                class="fr-icon-time-line fr-mr-8v"
+                aria-hidden="true"
+              >
               </span>
-            </p>
+              <span>Création le {{ new Date(response.creationDate).toLocaleDateString('fr') }}</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
+  <div
+    v-if="requestResponses.resultCount > 3"
+    class="fr-mt-4v"
+  >
+    <span
+      >Besoin d'aide pour retrouver votre SIRET ?
+      <a
+        href="https://annuaire-entreprises.data.gouv.fr/"
+        target="_blank"
+        >Cliquez ici</a
+      ></span
+    >
+  </div>
   <!-- WILDCARD -->
   <p
     v-if="option.wildcard"
-    class="fr-mt-8v"
+    class="fr-mt-8v fr-text--sm"
   >
     {{ Translation.t('or') }}
     <a
-      class="fr-link tee-input-wildcard"
+      class="fr-link tee-input-wildcard fr-text--sm"
       :href="Navigation.hashByRouteName(RouteName.Questionnaire)"
       @click="goToNextTrack"
     >
@@ -90,30 +110,36 @@
 </template>
 
 <script setup lang="ts">
-// CONSOLE LOG TEMPLATE
-// console.log(`TeeDsfrSearchBar > FUNCTION_NAME > MSG_OR_VALUE :`)
-
 import { useTrackStore } from '@/stores/track'
-import { type ReqResp, type ResultsMapping, type TrackOptionItem, type TrackOptionsInput } from '@/types'
-import type EstablishmentType from '@/types/establishmentType'
+import { type TrackOptionItem, type TrackOptionsInput } from '@/types'
 import { RouteName } from '@/types/routeType'
-import { getFromResp } from '@/utils/helpers'
 import Matomo from '@/utils/matomo'
 import Navigation from '@/utils/navigation'
-import TrackCallback from '@/utils/track/TrackCallback'
 import TrackSiret from '@/utils/track/TrackSiret'
 import Translation from '@/utils/translation'
 import { ref, computed } from 'vue'
+import EstablishmentApi from '@/service/api/establishmentApi'
+import { EstablishmentSearch } from '@/types'
+
+// Functionnal note :
+// We send data update to the parent component each time the data selection change.
+// This is to stay coherent with the rest of the track and more importantly
+// because the activation of the nextStep button is computed somewhere in the parents.)
 
 interface Props {
   option: TrackOptionsInput
 }
 const props = defineProps<Props>()
 
-const siretValue = ref<string>()
+const defaultSearchValue = {
+  establishments: [],
+  resultCount: -1
+}
+
+const queryValue = ref<string>()
 const isLoading = ref<boolean>(false)
-const requestResponses = ref<ReqResp[]>([])
-const selection = ref<any>()
+const requestResponses = ref<EstablishmentSearch>(defaultSearchValue)
+const selection = ref<number>(-1)
 const errorMessage = ref<string>()
 
 const emit = defineEmits<{
@@ -121,31 +147,22 @@ const emit = defineEmits<{
   goToNextTrack: [TrackOptionsInput]
 }>()
 
-const hasSelection = computed(() => {
-  return Boolean(selection.value)
-})
-
-const canSelect = computed(() => {
-  return requestResponses.value.length !== 1
-})
-
 const hasHint = computed(() => {
-  return Boolean(props.option.hint) && !requestResponses.value.length
+  return Boolean(props.option.hint) && requestResponses.value.resultCount != defaultSearchValue.resultCount
 })
 
-// getters
-const getFromFields = (resp: ReqResp, resMap: ResultsMapping) => {
-  const rawValues = getFromResp(resp, resMap)
-  return rawValues.join(resMap.sep || ' ')
-}
-
-const isSelected = (item: ReqResp) => {
-  return Boolean(item === selection.value)
+const isSelected = (id: number) => {
+  return Boolean(id === selection.value)
 }
 
 const resetSelection = () => {
-  requestResponses.value = []
-  selection.value = undefined
+  requestResponses.value = defaultSearchValue
+  selection.value = -1
+  emit('updateSelection', createData())
+}
+
+const selectItem = (id: number) => {
+  selection.value = id
   emit('updateSelection', createData())
 }
 
@@ -154,27 +171,21 @@ const processInput = async () => {
   errorMessage.value = undefined
   resetSelection()
 
-  if (props.option?.validation) {
-    // const isValid = false
-    if (!props.option.validation(siretValue.value)) {
-      errorMessage.value = "Le numéro SIRET n'est pas valide"
-      isLoading.value = false
-      return
+  if (!queryValue.value || queryValue.value.length < 3) {
+    errorMessage.value = Translation.t('enterprise.searchTooShort')
+  } else {
+    const searchResult = await new EstablishmentApi().get(queryValue.value)
+
+    if (searchResult.isErr) {
+      errorMessage.value = Translation.t('enterprise.noStructureFound')
+    } else if (searchResult.value.resultCount == 0) {
+      errorMessage.value = Translation.t('enterprise.noStructureFound')
+    } else {
+      requestResponses.value = searchResult.value
+      selection.value = 0
+      emit('updateSelection', createData())
     }
   }
-
-  const { responses, errors } = await TrackCallback.applies(siretValue.value as string, props.option?.callbacks)
-
-  if (responses.length === 1) {
-    selectItem(responses[0])
-  }
-
-  requestResponses.value = responses
-
-  if (errors.length) {
-    errorMessage.value = Translation.t('enterprise.noStructureFound')
-  }
-
   isLoading.value = false
 
   // analytics / send event
@@ -193,12 +204,42 @@ const goToNextTrack = () => {
   emit('goToNextTrack', option)
 }
 
-const selectItem = (item: ReqResp) => {
-  selection.value = hasSelection.value ? undefined : item
-  emit('updateSelection', createData(item.data as EstablishmentType))
-}
-
-function createData(questionnaireData?: EstablishmentType): TrackOptionItem {
-  return TrackSiret.createData(props.option, siretValue.value, questionnaireData, !hasSelection.value)
+function createData(): TrackOptionItem {
+  const siretValue = selection.value >= 0 ? requestResponses.value.establishments[selection.value].siret : ''
+  const hasSelection = selection.value >= 0
+  return TrackSiret.createData(
+    props.option,
+    siretValue,
+    requestResponses.value.establishments[selection.value],
+    !hasSelection,
+    hasSelection
+  )
 }
 </script>
+
+<style lang="scss" scoped>
+@import '@/assets/scss/setting/_color.scss';
+
+.custom-border {
+  border: solid thin #c4c4c4;
+}
+
+.is-selected {
+  border: solid thin $dark-blue;
+  color: $dark-blue;
+  background-color: #f5f5f5;
+}
+
+.is-title-selected {
+  color: $dark-blue;
+}
+
+.thinner-text {
+  font-weight: normal;
+}
+
+.result-number {
+  font-style: italic;
+  color: $dark-blue;
+}
+</style>

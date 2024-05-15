@@ -24,7 +24,7 @@ export const useProgramStore = defineStore('program', () => {
 
   const programFilters = ref<programFiltersType>({
     programAidTypesSelected: [],
-    objectifTypeSelected: ''
+    objectiveTypeSelected: ''
   })
 
   const programs = computed(async () => {
@@ -50,7 +50,7 @@ export const useProgramStore = defineStore('program', () => {
     return programs.filter((program: ProgramData) => {
       return (
         ProgramFilter.filterProgramsByAidType(program, programFilters.value.programAidTypesSelected as ProgramAidType[]) &&
-        ProgramFilter.filterProgramsByObjective(program, programFilters.value.objectifTypeSelected as PublicodeObjective)
+        ProgramFilter.filterProgramsByObjective(program, programFilters.value.objectiveTypeSelected as PublicodeObjective)
       )
     })
   }
@@ -90,10 +90,18 @@ export const useProgramStore = defineStore('program', () => {
     )
   }
 
+  function hasObjectiveTypeSelected() {
+    return programFilters.value.objectiveTypeSelected !== ''
+  }
+
+  function setObjectiveTypeSelected(objectiveType: string) {
+    programFilters.value.objectiveTypeSelected = objectiveType
+  }
+
   function resetFilters() {
     programFilters.value = {
       programAidTypesSelected: [],
-      objectifTypeSelected: ''
+      objectiveTypeSelected: ''
     }
   }
 
@@ -105,6 +113,8 @@ export const useProgramStore = defineStore('program', () => {
     getProgramsByFilters,
     getProgramById,
     hasObjectiveTypeFilter,
+    hasObjectiveTypeSelected,
+    setObjectiveTypeSelected,
     resetFilters
   }
 })

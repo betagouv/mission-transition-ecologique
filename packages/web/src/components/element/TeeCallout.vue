@@ -28,7 +28,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, withDefaults } from 'vue'
+import { withDefaults } from 'vue'
 import { CalloutType } from '@/types/elementsPropsTypes'
 
 interface Props {
@@ -55,7 +55,8 @@ const linkClasses = {
 </script>
 
 <style scoped lang="scss">
-@import '../../assets/scss/_colors.scss';
+@import '../../assets/scss/setting/color';
+
 .baseCallout {
   border-left: 4px solid;
   padding: 32px 48px 32px 32px;
@@ -63,7 +64,7 @@ const linkClasses = {
 
 .defaultCallout {
   background: var(--light-background-alt-blue-france, #f5f5fe);
-  border-color: $secondary-purple;
+  border-color: #{$base-purple};
 }
 
 .warningCallout {
