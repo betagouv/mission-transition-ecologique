@@ -1,3 +1,4 @@
+import CatalogResult from '@/components/program/list/CatalogResult.vue'
 import type { Component } from 'vue'
 import TeeHomePage from '../pages/TeeHomePage.vue'
 import TeeQuestionnairePage from '../pages/TeeQuestionnairePage.vue'
@@ -13,7 +14,6 @@ import { TrackId } from '@/types'
 import Hook from '@/router/hook'
 import TeeQuestionnaire from '@/components/questionnaire/TeeQuestionnaire.vue'
 import TeeQuestionnaireResult from '@/components/questionnaire/TeeQuestionnaireResult.vue'
-import ProgramList from '@/components/program/list/ProgramList.vue'
 import ProgramDetail from '@/components/program/detail/ProgramDetail.vue'
 import TeeStatPage from '@/pages/TeeStatPage.vue'
 
@@ -67,7 +67,7 @@ export const routes = [
       {
         path: '',
         name: RouteName.Catalog,
-        component: ProgramList as Component
+        component: CatalogResult as Component
       },
       {
         path: ':programId',

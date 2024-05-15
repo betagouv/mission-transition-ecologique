@@ -44,16 +44,6 @@
           :email="Contact.email"
         />
       </div>
-      <div
-        v-if="navigationStore.isCatalog() && !hasSpinner"
-        class="fr-mt-10v fr-col-3 fr-col-md-4 fr-col-lg-3 fr-col-xl-2 fr-col-sm-hide"
-      >
-        <div class="fr-sidemenu fr-sidemenu--sticky-full-height">
-          <div class="fr-mb-6v">
-            <ProgramFilterByAidType />
-          </div>
-        </div>
-      </div>
       <div class="fr-col">
         <div class="fr-container--fluid">
           <div class="fr-grid-row">
