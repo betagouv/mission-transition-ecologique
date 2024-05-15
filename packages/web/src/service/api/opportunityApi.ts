@@ -1,6 +1,6 @@
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { PublicodesKeys, QuestionnaireDataEnum, QuestionnaireRoute, TrackId } from '@/types'
-import type { OpportunityBody, ReqResp, WithoutNullableKeys, opportunityFormType } from '@/types'
+import type { OpportunityBody, ReqResp, WithoutNullableKeys, OpportunityFormType } from '@/types'
 import RequestApi from '@/service/api/requestApi'
 
 export default class OpportunityApi extends RequestApi {
@@ -12,14 +12,14 @@ export default class OpportunityApi extends RequestApi {
 
   private usedTrackStore = useUsedTrackStore()
 
-  private _opportunityForm: WithoutNullableKeys<opportunityFormType>
+  private _opportunityForm: WithoutNullableKeys<OpportunityFormType>
 
   constructor(
-    opportunityForm: opportunityFormType,
+    opportunityForm: OpportunityFormType,
     private _programId: string
   ) {
     super()
-    this._opportunityForm = opportunityForm as WithoutNullableKeys<opportunityFormType>
+    this._opportunityForm = opportunityForm as WithoutNullableKeys<OpportunityFormType>
   }
 
   async fetch() {

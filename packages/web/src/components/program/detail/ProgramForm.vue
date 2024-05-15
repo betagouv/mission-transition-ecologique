@@ -58,7 +58,7 @@
         </DsfrInputGroup>
       </div>
       <div class="fr-col-12 fr-col-md-12">
-        <DsfrInputGroup>
+        <DsfrInputGroup :error-message="getErrorMessage(opportunityForm.email)">
           <DsfrInput
             type="email"
             :model-value="opportunityForm.email.value"
@@ -71,7 +71,7 @@
         </DsfrInputGroup>
       </div>
       <div class="fr-col-12 fr-col-md-12">
-        <DsfrInputGroup>
+        <DsfrInputGroup :error-message="getErrorMessage(opportunityForm.tel)">
           <DsfrInput
             type="tel"
             :model-value="opportunityForm.tel.value"
@@ -84,7 +84,7 @@
         </DsfrInputGroup>
       </div>
       <div class="fr-col-12 fr-col-md-12">
-        <DsfrInputGroup>
+        <DsfrInputGroup :error-message="getErrorMessage(opportunityForm.siret)">
           <DsfrInput
             type="text"
             :model-value="opportunityForm.siret.value"
@@ -157,11 +157,11 @@
       >
         <TeeDsfrButton
           :label="Translation.t('send')"
-          :disabled="!isValidForm"
+          :disabled="!isFormFilled"
           icon="ri-arrow-right-line"
           icon-right
           :loading="isLoading"
-          @click="saveOpportunityForm()"
+          @click="submitOpportunityForm()"
         />
       </div>
     </div>
@@ -213,8 +213,15 @@
 <script setup lang="ts">
 import { scrollToElementCenter } from '@/utils/helpers'
 import { useUsedTrackStore } from '@/stores/usedTrack'
-import { computed, ref } from 'vue'
-import { type ProgramData, type ReqResp, TrackId } from '@/types'
+import { computed, ComputedRef, ref } from 'vue'
+import {
+  BooleanFieldInputType,
+  type ProgramData,
+  type ReqResp,
+  StringFieldInputType,
+  TrackId,
+  ValidatedStringFieldInputType
+} from '@/types'
 import Translation from '@/utils/translation'
 import TeeDsfrButton from '@/components/element/TeeDsfrButton.vue'
 import { DsfrInput, DsfrInputGroup, DsfrCheckbox } from '@gouvminint/vue-dsfr'
@@ -223,8 +230,11 @@ import { RouteName } from '@/types/routeType'
 import { useRoute } from 'vue-router'
 import Format from '@/utils/format'
 import OpportunityApi from '@/service/api/opportunityApi'
-import type { opportunityFormType } from '@/types/opportunityFormType'
+import type { OpportunityFormType } from '@/types/opportunityFormType'
 import Contact from '@/utils/contact'
+import SiretValidator from '@/utils/validator/siretValidator'
+import PhoneValidator from '@/utils/validator/phoneValidator'
+import EmailValidator from '@/utils/validator/emailValidator'
 
 const route = useRoute()
 const usedTrack = useUsedTrackStore()
@@ -233,14 +243,30 @@ interface Props {
   program: ProgramData
   formContainerRef: HTMLElement | null | undefined
 }
+
 const props = defineProps<Props>()
 
-const opportunityForm = ref<opportunityFormType>({
+const opportunityForm = ref<OpportunityFormType>({
   name: { required: true, value: undefined },
   surname: { required: true, value: undefined },
-  tel: { required: true, value: undefined },
-  email: { required: true, value: undefined },
-  siret: { required: true, value: usedTrack.findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'siret') },
+  tel: {
+    required: true,
+    value: undefined,
+    validation: PhoneValidator.validatePhoneNumber,
+    errorMessage: "Le numéro de téléphone n'est pas valide."
+  },
+  email: {
+    required: true,
+    value: undefined,
+    validation: EmailValidator.validateEmail,
+    errorMessage: "L'adresse email n'est pas valide."
+  },
+  siret: {
+    required: true,
+    value: usedTrack.findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'siret'),
+    validation: SiretValidator.validateSiret,
+    errorMessage: "Le numéro SIRET n'est pas valide."
+  },
   needs: {
     required: true,
     value: Translation.t('program.form.needs', {
@@ -256,12 +282,17 @@ const opportunityForm = ref<opportunityFormType>({
 const formIsSent = ref<boolean>(false)
 const requestResponse = ref<ReqResp>()
 const isLoading = ref<boolean>(false)
+const isValidForm: ComputedRef<boolean> = computed(() => {
+  return Object.values(opportunityForm.value).every((prop) => {
+    return 'isValid' in prop ? prop.isValid : true
+  })
+})
 
-const isValidForm = computed(() => {
-  const isValid = []
+const isFormFilled = computed(() => {
+  const isFilled = []
   for (const key in opportunityForm.value) {
     if (opportunityForm.value[key].required) {
-      isValid.push(
+      isFilled.push(
         !(
           opportunityForm.value[key].value === undefined ||
           opportunityForm.value[key].value === '' ||
@@ -270,7 +301,7 @@ const isValidForm = computed(() => {
       )
     }
   }
-  return isValid.every((v) => v)
+  return isFilled.every((v) => v)
 })
 
 const hasValidResponse = computed(() => {
@@ -307,6 +338,33 @@ const updateOpportunityForm = (ev: string | boolean, id: string) => {
   }
 }
 
+const submitOpportunityForm = async () => {
+  await validateForm().then(async () => {
+    if (isValidForm.value) {
+      await saveOpportunityForm()
+    }
+  })
+}
+
+const validateForm = async (): Promise<void> => {
+  return new Promise((resolve) => {
+    if (formHasValidators()) {
+      Object.values(opportunityForm.value).forEach((prop: StringFieldInputType | BooleanFieldInputType | ValidatedStringFieldInputType) => {
+        if ('validation' in prop) {
+          prop.isValid = prop.validation(prop.value) as boolean
+        }
+      })
+    }
+    resolve()
+  })
+}
+
+const formHasValidators = () => {
+  return Object.values(opportunityForm.value).some((prop: StringFieldInputType | BooleanFieldInputType) => {
+    return Object.hasOwn(prop, 'validation')
+  })
+}
+
 const saveOpportunityForm = async () => {
   try {
     isLoading.value = true
@@ -327,5 +385,9 @@ const scrollToFormContainer = () => {
   if (element) {
     scrollToElementCenter(element)
   }
+}
+
+const getErrorMessage = (prop: ValidatedStringFieldInputType): string => {
+  return prop.isValid === false ? prop.errorMessage : ''
 }
 </script>
