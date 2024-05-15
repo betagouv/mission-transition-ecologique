@@ -73,6 +73,7 @@ export const frDict = {
   enterprise: {
     select: 'Sélectionnez votre entreprise',
     noStructureFound: "Aucune structure n'a été trouvée.",
+    searchTooShort: '3 caractères minimums.',
     structureSize: {
       EI: 'Entreprise individuelle',
       TPE: 'TPE',
