@@ -21,12 +21,14 @@
           :key="filter.id"
         >
           <DsfrAccordion
+            class="fr-accordion-modal-filter"
             :title="filter.title"
             :expanded-id="expandedId"
             @expand="expandFilter"
           >
             <component
               :is="filter.component"
+              class="fr-ml-5w"
               legend=""
             />
           </DsfrAccordion>

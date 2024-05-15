@@ -1,13 +1,22 @@
-.fr-accordion__btn {
-  &[aria-expanded='true'] {
-    background-color: unset;
+.fr-accordion {
+  &__btn {
+    color: var(--text-title-grey);
+    &[aria-expanded='true'] {
+      background-color: unset;
 
-    :hover {
-      background-color: inherit;
+      :hover {
+        background-color: inherit;
+      }
     }
   }
-
   h3 {
     line-height: 3.75rem;
   }
+
+  &-modal-filter {
+    .fr-collapse--expanded {
+      background: $base-blue-light
+    }
+  }
 }
+
