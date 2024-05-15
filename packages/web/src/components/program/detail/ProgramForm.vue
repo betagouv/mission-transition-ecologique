@@ -339,24 +339,20 @@ const updateOpportunityForm = (ev: string | boolean, id: string) => {
 }
 
 const submitOpportunityForm = async () => {
-  await validateForm().then(async () => {
-    if (isValidForm.value) {
-      await saveOpportunityForm()
-    }
-  })
+  validateForm()
+  if (isValidForm.value) {
+    await saveOpportunityForm()
+  }
 }
 
-const validateForm = async (): Promise<void> => {
-  return new Promise((resolve) => {
-    if (formHasValidators()) {
-      Object.values(opportunityForm.value).forEach((prop: StringFieldInputType | BooleanFieldInputType | ValidatedStringFieldInputType) => {
-        if ('validation' in prop) {
-          prop.isValid = prop.validation(prop.value) as boolean
-        }
-      })
-    }
-    resolve()
-  })
+const validateForm = (): void => {
+  if (formHasValidators()) {
+    Object.values(opportunityForm.value).forEach((prop: StringFieldInputType | BooleanFieldInputType | ValidatedStringFieldInputType) => {
+      if ('validation' in prop) {
+        prop.isValid = prop.validation(prop.value) as boolean
+      }
+    })
+  }
 }
 
 const formHasValidators = () => {
