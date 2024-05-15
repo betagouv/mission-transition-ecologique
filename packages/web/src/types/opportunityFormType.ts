@@ -13,7 +13,7 @@ export interface OpportunityFormType {
 type DefaultFieldFormType = {
   required: true
   label: string | undefined
-  hint: string | undefined
+  hint?: string | undefined
 }
 
 export type StringFieldInputType = DefaultFieldFormType & { value: string | undefined }

@@ -243,7 +243,7 @@ interface Props {
 const props = defineProps<Props>()
 
 const opportunityForm = ref<OpportunityFormType>({
-  name: { required: true, value: undefined, label: 'Prénom' },
+  name: { required: true, value: undefined, label: 'Prénom'},
   surname: { required: true, value: undefined, label: 'Nom' },
   tel: {
     required: true,
@@ -253,25 +253,21 @@ const opportunityForm = ref<OpportunityFormType>({
     validation: PhoneValidator.validatePhoneNumber,
     errorMessage: "Le numéro de téléphone n'est pas valide."
   },
-  email: { required: true, value: undefined,
-    label: 'Email', hint: 'Format attendu : nom@domaine.fr' },
   email: {
     required: true,
     value: undefined,
+    label: 'Email',
+    hint: 'Format attendu : nom@domaine.fr',
     validation: EmailValidator.validateEmail,
     errorMessage: "L'adresse email n'est pas valide."
   },
   siret: {
     required: true,
     value: usedTrack.findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'siret'),
+    label: 'SIRET de votre entreprise',
+    hint: 'Format attendu : 14 chiffres',
     validation: SiretValidator.validateSiret,
     errorMessage: "Le numéro SIRET n'est pas valide."
-  },
-  siret: {
-    required: true,
-    value: usedTrack.findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'siret'),
-    label: 'SIRET de votre entreprise',
-    hint: 'Format attendu : 14 chiffres'
   },
   needs: {
     required: true,
