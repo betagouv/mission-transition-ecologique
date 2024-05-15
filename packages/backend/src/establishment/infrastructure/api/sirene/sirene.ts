@@ -26,7 +26,8 @@ export const requestSireneAPI = async (token: string, siret: string): Promise<Re
 
   try {
     const response: AxiosResponse<EstablishmentDocument> = await axios.get(api_sirene_url, {
-      headers: makeHeaders(token)
+      headers: makeHeaders(token),
+      timeout: 3000
     })
     return Result.ok(parseEstablishment(response.data))
   } catch (err: unknown) {
