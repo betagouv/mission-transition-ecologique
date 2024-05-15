@@ -28,6 +28,6 @@ export default class Contact {
   }
 
   static get iframeSrc() {
-    return `https://place-des-entreprises.beta.gouv.fr/aide-entreprise/france-transition-ecologique/theme/environnement-transition-ecologique`
+    return `https://conseillers-entreprises.service-public.fr/aide-entreprise/france-transition-ecologique/theme/environnement-transition-ecologique`
   }
 }

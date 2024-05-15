@@ -114,7 +114,8 @@ const getBrevoCreationDates = async (): Promise<Result<Date[], Error>> => {
     const brevoDealResponse: BrevoDealResponse = responsePatch.value.data as BrevoDealResponse
     if (!brevoDealResponse.items) {
       return Result.err(new Error('No Items field in Brevo API'))
-    } else if (brevoDealResponse.items.length === 0) {
+    }
+    if (brevoDealResponse.items.length === 0) {
       return Result.err(new Error('Brevo deal list is empty'))
     }
     const dateList: Date[] = []

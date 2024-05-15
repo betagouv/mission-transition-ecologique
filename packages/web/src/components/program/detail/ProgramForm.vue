@@ -15,14 +15,7 @@
   >
     <!-- FORM LABEL -->
     <h3 class="fr-text-center">
-      {{
-        Format.capitalize(
-          Translation.t('program.form.label', {
-            prefixAide: findPrefix(program["nature de l'aide"], 'this'),
-            natureAide: program["nature de l'aide"]
-          }) || ''
-        )
-      }}
+      {{ Format.capitalize(Translation.t('program.form.label') || '') }}
     </h3>
     <!-- FORM HINT -->
     <p class="fr-text-center fr-pb-10v">
@@ -326,10 +319,6 @@ SIRET : ${siretValue}`
   }
 
   return ''
-}
-
-const findPrefix = (str: string, prefixCode: string = 'of') => {
-  return Translation.t(`articles.${str}.${prefixCode}`)
 }
 
 const updateOpportunityForm = (ev: string | boolean, id: string) => {
