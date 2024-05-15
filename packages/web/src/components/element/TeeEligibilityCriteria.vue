@@ -23,21 +23,21 @@
             />
             {{ siretValue }}
           </div>
-          <div class="fr-col-2 fr-bg--blue--light fr-col-content--middle">
+          <div class="fr-col-2 fr-bg--blue--light fr-col-content--middle fr-col-justify--center">
             <span
               class="fr-icon-check-line fr-icon--sm fr-mr-1-5v"
               aria-hidden="true"
             />
             {{ size }}
           </div>
-          <div class="fr-col-2 fr-bg--blue--light fr-col-content--middle">
+          <div class="fr-col-2 fr-bg--blue--light fr-col-content--middle fr-col-justify--center">
             <span
               class="fr-icon-check-line fr-icon--sm fr-mr-1-5v"
               aria-hidden="true"
             />
             {{ sector }}
           </div>
-          <div class="fr-col-2 fr-bg--blue--light fr-col-content--middle">
+          <div class="fr-col-2 fr-bg--blue--light fr-col-content--middle fr-col-justify--center">
             <span
               class="fr-icon-check-line fr-icon--sm fr-mr-1-5v"
               aria-hidden="true"
