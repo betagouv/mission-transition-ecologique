@@ -14,6 +14,12 @@
       {{ option?.hintLabel?.[Translation.lang] }}
     </span>
     <div
+      v-if="option?.placeholder"
+      class="fr-mb-1v placeholder-text"
+    >
+      {{ option?.placeholder?.[Translation.lang] }}
+    </div>
+    <div
       id="header-search"
       class="fr-search-bar"
       role="search"
@@ -23,7 +29,7 @@
         v-model="model"
         :name="`input-${option.id}`"
         :disabled="isLoading"
-        :placeholder="option?.placeholder?.[Translation.lang]"
+        :hint="option?.placeholder?.[Translation.lang]"
         class="fr-input tee-input-large"
         type="search"
         @keyup.enter="onClick"
@@ -91,3 +97,10 @@ const onClear = () => {
   emit('onClear')
 }
 </script>
+
+<style scoped>
+.placeholder-text {
+  color: #777;
+  font-style: italic;
+}
+</style>

@@ -54,7 +54,7 @@
     <div class="fr-grid-row fr-grid-row-gutters">
       <div class="fr-col">
         <!-- PROGRAM DETAILS -->
-        <div class="fr-grid-row fr-grid-row--gutters fr-mb-8v">
+        <div class="fr-grid-row fr-grid-row--gutters fr-mb-12v">
           <!-- IMAGE -->
           <div class="fr-col-md-4 fr-col-lg-3 fr-col-xl-3 fr-col-sm-12 fr-text-right fr-tee-program-detail-img">
             <img
@@ -92,6 +92,15 @@
               v-if="program"
               :program="program"
             ></ProgramObjective>
+            <DsfrButton
+              v-if="!isProgramAutonomous"
+              size="lg"
+              icon="fr-icon-mail-line"
+              class="fr-ml-md-3v"
+              :on-click="scrollToProgramForm"
+            >
+              {{ Translation.t('program.CTAButton') }}
+            </DsfrButton>
           </div>
         </div>
 
@@ -295,6 +304,12 @@ const columnTiles = computed(() => {
   const colsSize = Math.round(12 / infoBlocks.length)
   return `fr-col fr-col-xs-12 fr-col-sm-12 fr-col-md-${colsSize} fr-tee-detail-info-tile`
 })
+const isProgramAutonomous = computed(() => {
+  if (program.value?.[`activable en autonomie`] == 'oui') {
+    return true
+  }
+  return false
+})
 
 // functions
 const resetDetailResult = async () => {
@@ -315,4 +330,10 @@ onBeforeMount(() => {
 const programIsAvailable = computed(() => {
   return Program.isAvailable(programsStore.currentProgram)
 })
+
+const scrollToProgramForm = () => {
+  if (TeeProgramFormContainer.value) {
+    TeeProgramFormContainer.value.scrollIntoView({ behavior: 'smooth' })
+  }
+}
 </script>

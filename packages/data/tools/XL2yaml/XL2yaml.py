@@ -105,6 +105,9 @@ def assembleProgramYAML(rawData, colNumbersByName, id):
     if nat == "avantage fiscal":
         set("montant de l'avantage fiscal", get("💰 Montant de l'aide"))
 
+    if get("Dispositif activable en autonomie") == 1:
+        set("activable en autonomie", "oui")
+
     objectives = createYamlObjectives(get_maybe)
     set("objectifs", objectives)
 
