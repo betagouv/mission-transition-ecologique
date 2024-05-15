@@ -37,6 +37,7 @@ export default class OpportunityFeatures {
       return Result.err(maybeFullopportunity.error)
     }
     opportunity = maybeFullopportunity.value
+    console.log(opportunity)
     const contactIdResult = await this._contactRepository.createOrUpdate(opportunity as ContactDetails, optIn)
     if (contactIdResult.isErr) {
       return Result.err(contactIdResult.error)
