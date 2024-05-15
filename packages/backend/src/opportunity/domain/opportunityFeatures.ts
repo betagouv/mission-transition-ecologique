@@ -8,8 +8,6 @@ import ProgramFeatures from '../../program/domain/programFeatures'
 import { Program } from '@tee/data/src/type/program'
 import Validator from '../../../../common/src/establishment/validator'
 import EstablishmentService from '../../establishment/application/establishmentService'
-import { Address } from '../../establishment/domain/types'
-
 export default class OpportunityFeatures {
   private readonly _contactRepository: ContactRepository
   private readonly _opportunityRepository: OpportunityRepository
