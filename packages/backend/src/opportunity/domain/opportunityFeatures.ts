@@ -102,23 +102,33 @@ export default class OpportunityFeatures {
     opportunity.companyName = establishmentInfos.value.denomination
     opportunity.companySector = establishmentInfos.value.nafLabel || ''
 
-    let otherDataObj = {} as OpportunityData
-    if (opportunity.otherData != '[]') {
-      otherDataObj = JSON.parse(opportunity.otherData || '{}') as OpportunityData
+    const dics = JSON.parse(opportunity.otherData || '[]') as Dic[]
+    const newDic = {} as Dic
+    if (!this._updateValueInDics(dics, 'nafCode', establishmentInfos.value.nafCode)) {
+      newDic['nafCode'] = establishmentInfos.value.nafCode
     }
-    otherDataObj.nafCode = establishmentInfos.value.nafCode
-    otherDataObj.address = establishmentInfos.value.address
-    otherDataObj.region = establishmentInfos.value.region || ''
-    opportunity.otherData = JSON.stringify(otherDataObj)
+    if (!this._updateValueInDics(dics, 'codePostal', establishmentInfos.value.address.zipCode)) {
+      newDic['codePostal'] = establishmentInfos.value.address.zipCode
+    }
+    if (!this._updateValueInDics(dics, 'region', establishmentInfos.value.region || '')) {
+      newDic['region'] = establishmentInfos.value.region || ''
+    }
+    if (newDic) dics.push(newDic)
+    opportunity.otherData = JSON.stringify(dics)
 
     return Result.ok(opportunity)
   }
+
+  private _updateValueInDics(dics: Dic[], key: string, val: string): boolean {
+    for (const oneDic of dics) {
+      if (key in oneDic) {
+        oneDic[key] = val
+        return true
+      }
+    }
+    return false
+  }
 }
 
-interface OpportunityData {
-  nafCode?: string
-  address?: Address
-  region?: string
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  [key: string]: any
-}
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type Dic = Record<string, any>
