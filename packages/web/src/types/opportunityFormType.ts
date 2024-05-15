@@ -1,13 +1,21 @@
-export interface opportunityFormType {
-  [key: string]:
-    | { required: boolean; value: string | undefined; label: string | undefined; hint: string | undefined }
-    | { required: boolean; value: boolean; label: string | undefined; hint: string | undefined }
-  name: { required: true; value: string | undefined; label: string | undefined; hint: string | undefined }
-  surname: { required: true; value: string | undefined; label: string | undefined; hint: string | undefined }
-  tel: { required: true; value: string | undefined; label: string | undefined; hint: string | undefined }
-  email: { required: true; value: string | undefined; label: string | undefined; hint: string | undefined }
-  siret: { required: true; value: string | undefined; label: string | undefined; hint: string | undefined }
-  needs: { required: true; value: string | undefined; label: string | undefined; hint: string | undefined }
-  cgu: { required: true; value: boolean; label: string | undefined; hint: string | undefined }
-  linkToProgramPage: { required: true; value: string; label: string | undefined; hint: string | undefined }
+export interface OpportunityFormType {
+  [key: string]: MandatoryStringFieldFormType | StringFieldFormType | BooleanFieldFormType
+  name: StringFieldFormType
+  surname: StringFieldFormType
+  tel: StringFieldFormType
+  email: StringFieldFormType
+  siret: StringFieldFormType
+  needs: StringFieldFormType
+  cgu: BooleanFieldFormType
+  linkToProgramPage: MandatoryStringFieldFormType
 }
+
+type DefaultFieldFormType = {
+  required: true
+  label: string | undefined
+  hint: string | undefined
+}
+
+export type StringFieldFormType = DefaultFieldFormType & { value: string | undefined }
+export type MandatoryStringFieldFormType = DefaultFieldFormType & { value: string }
+export type BooleanFieldFormType = DefaultFieldFormType & { value: boolean }

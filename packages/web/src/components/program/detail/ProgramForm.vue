@@ -219,7 +219,7 @@ import { RouteName } from '@/types/routeType'
 import { useRoute } from 'vue-router'
 import Format from '@/utils/format'
 import OpportunityApi from '@/service/api/opportunityApi'
-import type { opportunityFormType } from '@/types/opportunityFormType'
+import type { OpportunityFormType } from '@/types/opportunityFormType'
 import Contact from '@/utils/contact'
 
 const route = useRoute()
@@ -231,7 +231,7 @@ interface Props {
 }
 const props = defineProps<Props>()
 
-const opportunityForm = ref<opportunityFormType>({
+const opportunityForm = ref<OpportunityFormType>({
   name: { required: true, value: undefined, label: 'Prénom', hint: undefined },
   surname: { required: true, value: undefined, label: 'Nom', hint: undefined },
   tel: { required: true, value: undefined, label: 'Téléphone', hint: 'Format attendu : 01 22 33 44 55' },
