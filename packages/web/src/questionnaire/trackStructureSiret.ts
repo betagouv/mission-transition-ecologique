@@ -1,20 +1,9 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`questionnaire.trackSiret > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import {
-  CallbackActions,
-  CallbackMethods,
-  CleanerOperations,
-  DataMappingFrom,
-  HasInputOptions,
-  SiretValue,
-  TrackComponent,
-  TrackId
-} from '@/types'
-import type { Track } from '@/types'
-import type EstablishmentType from '@/types/establishmentType'
+import { HasInputOptions, SiretValue, TrackComponent, TrackId } from '@/types'
+import type { Track, EstablishmentType } from '@/types'
 import SiretValidator from '@/utils/validator/siretValidator'
-
 
 const defaultQuestionnaireData: EstablishmentType = {
   siret: '',
