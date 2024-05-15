@@ -37,7 +37,7 @@ export const siret: Track = {
       validation: SiretValidator.validateSiret,
       questionnaireData: { ...defaultQuestionnaireData },
       title: { fr: 'SIRET' },
-      placeholder: { fr: 'ex : "Fromagerie Sanzot Angers" ou N° SIRET "130 025 265 00013"' },
+      hintLabel: { fr: 'ex : "Fromagerie Sanzot Angers" ou N° SIRET "130 025 265 00013"' },
       next: {
         default: TrackId.StructureWorkforce
       },

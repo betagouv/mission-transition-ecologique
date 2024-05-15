@@ -1,5 +1,5 @@
 export interface OpportunityFormType {
-  [key: string]: StringFieldInputType | BooleanFieldInputType | ValidatedStringFieldInputType
+  [key: string]: StringFieldInputType | MandatoryStringFieldFormType | BooleanFieldInputType | ValidatedStringFieldInputType
   name: StringFieldInputType
   surname: StringFieldInputType
   tel: ValidatedStringFieldInputType
@@ -7,13 +7,18 @@ export interface OpportunityFormType {
   siret: ValidatedStringFieldInputType
   needs: StringFieldInputType
   cgu: BooleanFieldInputType
-  linkToProgramPage: StringFieldInputType
+  linkToProgramPage: MandatoryStringFieldFormType
 }
 
-type defaultFieldInputType = { required: true }
+type DefaultFieldFormType = {
+  required: true
+  label: string | undefined
+  hint: string | undefined
+}
 
-export type StringFieldInputType = defaultFieldInputType & { value: string | undefined }
-export type BooleanFieldInputType = defaultFieldInputType & { value: boolean }
+export type StringFieldInputType = DefaultFieldFormType & { value: string | undefined }
+export type BooleanFieldInputType = DefaultFieldFormType & { value: boolean }
+export type MandatoryStringFieldFormType = DefaultFieldFormType & { value: string }
 export type ValidatedStringFieldInputType = StringFieldInputType & {
   validation: CallableFunction
   errorMessage: string
