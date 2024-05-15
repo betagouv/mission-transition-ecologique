@@ -243,7 +243,7 @@ interface Props {
 const props = defineProps<Props>()
 
 const opportunityForm = ref<OpportunityFormType>({
-  name: { required: true, value: undefined, label: 'Prénom'},
+  name: { required: true, value: undefined, label: 'Prénom' },
   surname: { required: true, value: undefined, label: 'Nom' },
   tel: {
     required: true,
