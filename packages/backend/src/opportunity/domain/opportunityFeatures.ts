@@ -102,7 +102,7 @@ export default class OpportunityFeatures {
     opportunity.companyName = establishmentInfos.value.denomination
     opportunity.companySector = establishmentInfos.value.nafLabel || ''
 
-    const otherDataObj = JSON.parse(opportunity.otherData || '{}') as OpportunityData
+    const otherDataObj = (JSON.parse(opportunity.otherData || '{}') || {}) as OpportunityData
     otherDataObj.nafCode = establishmentInfos.value.nafCode
     otherDataObj.address = establishmentInfos.value.address
     otherDataObj.region = establishmentInfos.value.region || ''
