@@ -1,4 +1,10 @@
 <template>
+  <TeeEligibilityCriteria
+    v-if="!isCatalogDetail"
+    bg-color="green"
+    bg-light
+    :previous-route="routeToPrograms"
+  />
   <div class="fr-container-fluid fr-px-0 fr-px-md-20v fr-mt-3v">
     <div class="fr-grid-row fr-grid-row-gutters">
       <div class="fr-col">
@@ -313,11 +319,13 @@ const isProgramAutonomous = computed(() => {
 
 // functions
 const resetDetailResult = async () => {
-  await router.push({
-    name: isCatalogDetail ? RouteName.Catalog : RouteName.QuestionnaireResult,
-    hash: '#' + props.programId,
-    query: isCatalogDetail ? undefined : navigationStore.query
-  })
+  await router.push(routeToPrograms)
+}
+
+const routeToPrograms = {
+  name: isCatalogDetail ? RouteName.Catalog : RouteName.QuestionnaireResult,
+  hash: '#' + props.programId,
+  query: isCatalogDetail ? undefined : navigationStore.query
 }
 
 onBeforeMount(() => {

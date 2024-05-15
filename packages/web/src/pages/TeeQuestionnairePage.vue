@@ -1,6 +1,6 @@
 <template>
   <div
-    class="fr-container--fluid fr-px-0v fr-px-md-2v fr-mt-0 fr-mb-10v"
+    class="fr-container--fluid fr-px-0v fr-mt-0 fr-mb-10v"
     style="min-height: 800px"
   >
     <router-view :key="useRoute().path" />

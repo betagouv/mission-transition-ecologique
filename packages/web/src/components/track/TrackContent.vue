@@ -241,7 +241,7 @@ const saveSelection = async (needRemove = false) => {
 }
 
 const backToPreviousTrack = async () => {
-  const trackId = usedTrackStore.usedTracksIds.slice(-2).reverse().pop()
+  const trackId = usedTrackStore.getPreviousCompletedUsedTrackId()
   usedTrackStore.setCurrentToUncompleted()
   if (trackId) {
     usedTrackStore.removeFurtherUsedTracks(trackId)
