@@ -1,11 +1,11 @@
 <template>
   <div
     ref="trackElement"
-    class="fr-container"
+    class="fr-container--fluid fr-container--fluid--no-overflow"
   >
     <div
       :id="RouteName.QuestionnaireResult"
-      class="fr-container"
+      class="fr-container--fluid fr-container--fluid--no-overflow"
     >
       <div
         ref="tee-app-tracks"
