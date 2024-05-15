@@ -94,7 +94,7 @@ export default class OpportunityFeatures {
       return Result.err(new Error('invalid SIRET')) //since there is a validator in the front end,
       // it means this is a direct query which we can ignore if poorly formatted
     }
-    const establishmentInfos = await new EstablishmentService().getFullDataBySiret(opportunity.companySiret)
+    const establishmentInfos = await new EstablishmentService().getBySiret(opportunity.companySiret)
     if (establishmentInfos.isErr) {
       return Result.ok(opportunity) // if we don't suceed in enhancing the data, we still we to create an opportunity
     }
