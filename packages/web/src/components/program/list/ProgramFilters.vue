@@ -34,7 +34,7 @@ const objectiveTypeTags = computed<TeeDsfrTagProps[]>((): TeeDsfrTagProps[] => {
     label: 'Tous',
     tagName: 'button',
     value: '',
-    'aria-pressed': programFilters.objectiveTypeSelected === ''
+    ariaPressed: programFilters.objectiveTypeSelected === ''
   }
 
   const tags: TeeDsfrTagProps[] = []
@@ -43,7 +43,7 @@ const objectiveTypeTags = computed<TeeDsfrTagProps[]>((): TeeDsfrTagProps[] => {
     tags.push({
       label: objectiveTag.tagLabel,
       tagName: 'button',
-      'aria-pressed': isActive(objectiveTag),
+      ariaPressed: isActive(objectiveTag),
       color: isActive(objectiveTag) && 'color' in objectiveTag ? objectiveTag.color : undefined,
       value: objectiveTag.value as string
     })

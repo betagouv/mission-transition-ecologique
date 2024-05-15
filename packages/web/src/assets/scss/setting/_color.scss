@@ -4,6 +4,7 @@ $base-blue: #6672F8;
 $base-blue-light: #E8EDFF;
 $base-red: #FCA081;
 $base-purple: #6A62F4;
+$dark-blue: #000091;
 
 // !!!important!! New color added need to be added to the typescript enum `packages/web/src/types/color.ts`
 $colors: (
@@ -28,5 +29,6 @@ $colors: (
     "background-color": $base-red,
     "color": var(--text-action-high-blue-france)
   ),
-  "secondary-purple" : $base-purple
+  "secondary-purple" : $base-purple,
+  "dark-blue" : $dark-blue
 );

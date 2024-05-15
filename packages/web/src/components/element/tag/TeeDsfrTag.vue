@@ -9,7 +9,7 @@
 import { DsfrTag, DsfrTagProps } from '@gouvminint/vue-dsfr'
 
 export interface TeeDsfrTagProps extends DsfrTagProps {
-  'aria-pressed'?: boolean
+  ariaPressed?: boolean
   color?: string
   value?: string | number
 }
@@ -18,8 +18,6 @@ const props = defineProps<TeeDsfrTagProps>()
 
 const classes = computed(() => {
   return {
-    'fr-tag': true,
-    'fr-tag--active': props['aria-pressed'],
     [`fr-tag--${props.color}`]: props.color
   }
 })

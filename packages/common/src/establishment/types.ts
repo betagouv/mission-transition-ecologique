@@ -1,4 +1,4 @@
-import { StructureSize } from '../questionnaire/types'
+import { StructureSize } from '../questionnaire/types/types'
 
 export interface EstablishmentId {
   siret: string
