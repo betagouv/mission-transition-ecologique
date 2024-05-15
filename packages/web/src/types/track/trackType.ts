@@ -114,6 +114,7 @@ export interface TrackOptions {
   required?: boolean
   title?: Translations
   label?: Translations
+  hintLabel?: Translations
   resume?: Translations
   hint?: Translations
   hintImageIcon?: string
