@@ -2,19 +2,18 @@
 @use 'sass:color';
 
 @each $color, $properties in setting.$colors {
-  @if type-of($properties) == map {
-    .fr-bg--#{$color} {
+  .fr-bg--#{$color} {
+    @if type-of($properties) == map {
       background-color: map-get($properties, "background-color");
-    }
-    .fr-bg--#{$color}--light {
-      background-color: color.scale(map-get($properties, "background-color"), $alpha: -50%);
-    }
-  } @else {
-    .fr-bg--#{$color} {
+    } @else {
       background-color: $properties;
     }
-    .fr-bg--#{$color}--light {
-      background-color: color.scale($properties, $alpha: -50%);
+    &--light {
+      @if type-of($properties) == map {
+        background-color: color.scale(map-get($properties, "background-color"), $alpha: -50%);
+      } @else {
+        background-color: color.scale($properties, $alpha: -50%);
+      }
     }
   }
 }

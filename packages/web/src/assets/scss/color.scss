@@ -1,0 +1,13 @@
+@use 'setting';
+
+.fr-text {
+  @each $color, $properties in setting.$colors {
+    &--#{$color} {
+      @if type-of($properties) == map {
+        color: map-get($properties, "color");
+      } @else {
+        color: $properties;
+      }
+    }
+  }
+}

@@ -1,3 +1,6 @@
+@use '@gouvfr/dsfr/module/color/variable/static' as color;
+@forward '@gouvfr/dsfr/module/color/variable/static';
+
 $base-yellow: #FACF35;
 $base-green: #1EBE8E;
 $base-blue: #6672F8;
@@ -28,5 +31,6 @@ $colors: (
     "background-color": $base-red,
     "color": var(--text-action-high-blue-france)
   ),
-  "secondary-purple" : $base-purple
+  "secondary-purple" : $base-purple,
+  "blue-france": color.$blue-france,
 );
