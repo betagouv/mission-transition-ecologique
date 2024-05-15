@@ -55,7 +55,7 @@
         </div>
       </div>
       <div class="fr-col">
-        <div class="fr-container">
+        <div class="fr-container--fluid">
           <div class="fr-grid-row">
             <router-link
               v-for="program in filteredPrograms"
