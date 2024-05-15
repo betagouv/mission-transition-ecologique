@@ -8,6 +8,7 @@ import ProgramFeatures from '../../program/domain/programFeatures'
 import { Program } from '@tee/data/src/type/program'
 import Validator from '../../../../common/src/establishment/validator'
 import EstablishmentService from '../../establishment/application/establishmentService'
+import { Address } from '../../establishment/domain/types'
 
 export default class OpportunityFeatures {
   private readonly _contactRepository: ContactRepository
@@ -31,7 +32,11 @@ export default class OpportunityFeatures {
   }
 
   createOpportunity = async (opportunity: Opportunity, optIn: true): Promise<Result<OpportunityId, Error>> => {
-    opportunity = await this._verifyAndAddEstablishmentData(opportunity)
+    const maybeFullopportunity = await this._verifyAndAddEstablishmentData(opportunity)
+    if (maybeFullopportunity.isErr) {
+      return Result.err(maybeFullopportunity.error)
+    }
+    opportunity = maybeFullopportunity.value
     const contactIdResult = await this._contactRepository.createOrUpdate(opportunity as ContactDetails, optIn)
     if (contactIdResult.isErr) {
       return Result.err(contactIdResult.error)
@@ -84,28 +89,32 @@ export default class OpportunityFeatures {
     })
   }
 
-  private async _verifyAndAddEstablishmentData(opportunity: Opportunity): Promise<Opportunity> {
+  private async _verifyAndAddEstablishmentData(opportunity: Opportunity): Promise<Result<Opportunity, Error>> {
     if (!Validator.validateSiret(opportunity.companySiret)) {
-      opportunity.companySiret = 'INVALID SIRET: "' + opportunity.companySiret + '"'
-      return opportunity
+      return Result.err(new Error('invalid SIRET')) //since there is a validator in the front end,
+      // it means this is a direct query which we can ignore if poorly formatted
     }
     const establishmentInfos = await new EstablishmentService().getFullDataBySiret(opportunity.companySiret)
     if (establishmentInfos.isErr) {
-      return opportunity
+      return Result.ok(opportunity) // if we don't suceed in enhancing the data, we still we to create an opportunity
     }
     opportunity.companyName = establishmentInfos.value.denomination
     opportunity.companySector = establishmentInfos.value.nafLabel || ''
 
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    const otherDataObj = JSON.parse(opportunity.otherData || '{}')
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    const otherDataObj = JSON.parse(opportunity.otherData || '{}') as OpportunityData
     otherDataObj.nafCode = establishmentInfos.value.nafCode
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     otherDataObj.address = establishmentInfos.value.address
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     otherDataObj.region = establishmentInfos.value.region || ''
     opportunity.otherData = JSON.stringify(otherDataObj)
 
-    return opportunity
+    return Result.ok(opportunity)
   }
+}
+
+interface OpportunityData {
+  nafCode?: string
+  address?: Address
+  region?: string
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  [key: string]: any
 }

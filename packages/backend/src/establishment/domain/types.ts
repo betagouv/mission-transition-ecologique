@@ -11,16 +11,18 @@ export interface EstablishmentDetails {
   creationDate: string
   denomination: string
   nafCode: string
-  address: {
-    streetNumber: string
-    streetType: string
-    streetLabel: string
-    zipCode: string
-    cityLabel: string
-    // Code officiel géographique de l'INSEE
-    // https://www.insee.fr/fr/information/2560452
-    cityCode: string
-  }
+  address: Address
+}
+
+export interface Address {
+  streetNumber: string
+  streetType: string
+  streetLabel: string
+  zipCode: string
+  cityLabel: string
+  // Code officiel géographique de l'INSEE
+  // https://www.insee.fr/fr/information/2560452
+  cityCode: string
 }
 
 export interface GeographicDetails {
