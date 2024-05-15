@@ -1,11 +1,21 @@
-export interface opportunityFormType {
-  [key: string]: { required: boolean; value: string | undefined } | { required: boolean; value: boolean }
-  name: { required: true; value: string | undefined }
-  surname: { required: true; value: string | undefined }
-  tel: { required: true; value: string | undefined }
-  email: { required: true; value: string | undefined }
-  siret: { required: true; value: string | undefined }
-  needs: { required: true; value: string | undefined }
-  cgu: { required: true; value: boolean }
-  linkToProgramPage: { required: true; value: string }
+export interface OpportunityFormType {
+  [key: string]: MandatoryStringFieldFormType | StringFieldFormType | BooleanFieldFormType
+  name: StringFieldFormType
+  surname: StringFieldFormType
+  tel: StringFieldFormType
+  email: StringFieldFormType
+  siret: StringFieldFormType
+  needs: StringFieldFormType
+  cgu: BooleanFieldFormType
+  linkToProgramPage: MandatoryStringFieldFormType
 }
+
+type DefaultFieldFormType = {
+  required: true
+  label: string | undefined
+  hint: string | undefined
+}
+
+export type StringFieldFormType = DefaultFieldFormType & { value: string | undefined }
+export type MandatoryStringFieldFormType = DefaultFieldFormType & { value: string }
+export type BooleanFieldFormType = DefaultFieldFormType & { value: boolean }
