@@ -218,7 +218,7 @@ function createData(): TrackOptionItem {
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/scss/_colors.scss';
+@import '@/assets/scss/setting/_color.scss';
 
 .custom-border {
   border: solid thin #c4c4c4;

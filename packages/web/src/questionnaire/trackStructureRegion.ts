@@ -3,7 +3,7 @@
 
 import type { Track, TrackOptionsUnion } from '@/types'
 import { TrackComponent, TrackId, ConditionOperators, DataMappingFrom } from '@/types'
-import { QuestionnaireRoute } from '@tee/common/src/questionnaire/types'
+import { QuestionnaireRoute } from '@tee/common/src/questionnaire/types/types'
 import type { NextTrackRuleSet } from '@/types'
 
 // note : based on authorized values in "/packages/data/common/interface.yaml"

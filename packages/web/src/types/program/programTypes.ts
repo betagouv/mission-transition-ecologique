@@ -1,7 +1,5 @@
 // FOR AID PROGRAMS
-
-import { PublicodesKeys, PublicodeObjective, PublicodesCondition } from '../index'
-import type { ProgramAidType } from '@tee/common/src/program/types'
+import { PublicodesKeys, PublicodeObjective, PublicodesCondition, ProgramAidType } from '@/types'
 
 interface ProgramObjectiveLink {
   lien: string

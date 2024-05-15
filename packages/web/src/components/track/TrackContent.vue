@@ -1,64 +1,4 @@
 <template>
-  <!-- DEBUGGING -->
-  <div
-    v-if="debugStore.is"
-    class="vue-debug"
-  >
-    <h5>DEBUG - TeeTrack</h5>
-    <div class="fr-grid-row fr-grid-row--gutters fr-mb-3v">
-      <div class="fr-col-3">
-        <h6 class="fr-mb-1v">
-          step : <code>{{ usedTrack.step }} </code>
-        </h6>
-        <h6 class="fr-mb-1v">
-          trackId : <code>{{ usedTrack.id }} </code>
-        </h6>
-        <h6 class="fr-mb-1v">
-          isCompleted : <code>{{ usedTrack.completed }} </code>
-        </h6>
-      </div>
-      <div class="fr-col-4">
-        <h6 class="fr-mb-1v">
-          renderAs : <code>{{ trackStore.currentComponent }} </code>
-        </h6>
-        <h6 class="fr-mb-1v">
-          allowMultiple : <code>{{ allowMultiple }} </code>
-        </h6>
-        <h6 class="fr-mb-1v">
-          colsWidth : <code>{{ currentColumnWidth() }} </code>
-        </h6>
-        <h6 class="fr-mb-1v">selectionValues :</h6>
-        <code>
-          <pre>{{ selectionValues }}</pre>
-        </code>
-      </div>
-      <!-- <div class="fr-col-3"> -->
-      <!-- <h6 class="fr-mb-1v"> selection : </h6>
-        <code>{{ selection }} </code> -->
-      <!-- <h6 class="fr-mb-1v"> selectionTitles : </h6>
-        <code>{{ selectionTitles }} </code> -->
-      <!-- </div> -->
-      <div class="fr-col-5">
-        <!-- <h6 class="fr-mb-1v"> selectedOption : </h6>
-        <code>{{ selectedOption }} </code> -->
-        <h6 class="fr-mb-1v">selectedOptions :</h6>
-        <code>
-          <pre>{{ selectedOptions }}</pre>
-        </code>
-      </div>
-
-      <div
-        v-if="false"
-        class="fr-col-6"
-      >
-        <h4>optionsArray (values) :</h4>
-        <code>
-          <pre>{{ trackStore.currentOptions.map((o) => o.value) }}</pre>
-        </code>
-      </div>
-    </div>
-  </div>
-
   <div
     v-if="track"
     :id="usedTrack.id"
@@ -66,6 +6,12 @@
     class="fr-grid-row"
   >
     <TrackCallout :track="track" />
+    <div
+      v-if="track.objective"
+      class="fr-col-12 fr-px-0v fr-px-md-4v"
+    >
+      <TeeObjectiveCard :objective="track.objective" />
+    </div>
 
     <div class="fr-col">
       <div :class="`fr-px-4v fr-px-md-0v fr-grid-row fr-grid-row--gutters ${track?.bgColor ? 'fr-p-5v fr-p-sm-8v fr-p-md-20v' : ''}`">
@@ -151,7 +97,6 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`TrackContent > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import { useDebugStore } from '@/stores/debug'
 import { useNavigationStore } from '@/stores/navigation'
 import { useTrackStore } from '@/stores/track'
 import { useUsedTrackStore } from '@/stores/usedTrack'
@@ -180,7 +125,6 @@ const props = defineProps<Props>()
 
 const router = useRouter()
 const trackStore = useTrackStore()
-const debugStore = useDebugStore()
 const usedTrackStore = useUsedTrackStore()
 const navigationStore = useNavigationStore()
 
@@ -192,13 +136,6 @@ const track: Track | undefined = trackStore.getTrack(usedTrack.id)
 trackStore.setCurrentTrack(track)
 
 const allowMultiple: boolean = !!track?.behavior?.multipleChoices
-
-const selectionValues = computed(() => {
-  if (selectedOptions.value.length === 0) {
-    return []
-  }
-  return selectedOptions.value.map((selectedOption) => selectedOption?.value)
-})
 
 const hasSubmitButton = computed(() => {
   return !usedTrackStore.currentIsFirst
