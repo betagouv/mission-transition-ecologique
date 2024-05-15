@@ -2,8 +2,7 @@
 // console.log(`questionnaire.trackSiret > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import { HasInputOptions, SiretValue, TrackComponent, TrackId } from '@/types'
-import type { Track } from '@/types'
-import type { EstablishmentType } from '@/types'
+import type { Track, EstablishmentType } from '@/types'
 
 const defaultQuestionnaireData: EstablishmentType = {
   siret: '',
@@ -36,7 +35,7 @@ export const siret: Track = {
       value: undefined,
       questionnaireData: { ...defaultQuestionnaireData },
       title: { fr: 'SIRET' },
-      placeholder: { fr: 'Recherche par dénomination, adresse, SIRET, nom des dirigeants...' },
+      placeholder: { fr: 'ex : "Fromagerie Sanzot Angers" ou N° SIRET "130 025 265 00013"' },
       next: {
         default: TrackId.StructureWorkforce
       },

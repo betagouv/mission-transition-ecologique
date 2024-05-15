@@ -14,8 +14,15 @@
     v-show="requestResponses.establishments.length > 1"
     class="fr-mt-n2w"
   >
-    <span class="result-number">{{ requestResponses.resultCount }} résultats trouvés</span>
-    <h6 class="fr-mt-3v">Sélectionnez votre entreprise:</h6>
+    <div v-if="requestResponses.resultCount < 4">
+      <span class="result-number">{{ requestResponses.resultCount }} résultats trouvés</span>
+      <h6 class="fr-mt-3v">Sélectionnez votre entreprise :</h6>
+    </div>
+    <div v-else>
+      <span class="result-number">3 résultats affichés sur {{ requestResponses.resultCount }} trouvés</span>
+
+      <h6 class="fr-mt-3v">Sélectionnez votre entreprise ou précisez votre recherche</h6>
+    </div>
   </div>
   <div
     v-if="requestResponses.establishments.length"
@@ -24,7 +31,7 @@
     <div
       v-for="(response, i) in requestResponses.establishments"
       :key="`resp-input-${i}`"
-      class="fr-card fr-card-result fr-card--no-arrow fr-mb-4v fr-card--shadow custom-border"
+      class="fr-card fr-card-result fr-card--no-arrow fr-mb-2v fr-card--shadow custom-border"
       :class="{ 'is-selected': isSelected(i) }"
       @click="selectItem(i)"
     >
@@ -73,15 +80,27 @@
       </div>
     </div>
   </div>
-
+  <div
+    v-if="requestResponses.resultCount > 3"
+    class="fr-mt-4v"
+  >
+    <span
+      >Besoin d'aide pour retrouver votre SIRET ?
+      <a
+        href="https://annuaire-entreprises.data.gouv.fr/"
+        target="_blank"
+        >Cliquez ici</a
+      ></span
+    >
+  </div>
   <!-- WILDCARD -->
   <p
     v-if="option.wildcard"
-    class="fr-mt-8v"
+    class="fr-mt-8v fr-text--sm"
   >
     {{ Translation.t('or') }}
     <a
-      class="fr-link tee-input-wildcard"
+      class="fr-link tee-input-wildcard fr-text--sm"
       :href="Navigation.hashByRouteName(RouteName.Questionnaire)"
       @click="goToNextTrack"
     >

@@ -9,6 +9,7 @@ export interface RechercheEntrepriseSearch {
 export interface RechercheEntrepriseEstablishment {
   siren: string
   nom_raison_sociale: string
+  nom_complet: string
 
   siege: Siege
   activite_principale: string // NafCode

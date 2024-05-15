@@ -40,7 +40,7 @@ export class RechercheEntreprise {
       siren: result.siege.siret.substring(0, 9),
       nic: result.siege.siret.substring(9),
       creationDate: result.date_creation,
-      denomination: result.nom_raison_sociale,
+      denomination: result.nom_raison_sociale || result.nom_complet,
       nafCode: result.activite_principale,
       address: {
         streetNumber: result.siege.numero_voie,
