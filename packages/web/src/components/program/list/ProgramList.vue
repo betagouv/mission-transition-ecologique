@@ -30,9 +30,12 @@
       </div>
       <div
         v-if="!hasSpinner"
-        class="fr-tee-add-padding fr-mt-10v fr-mr-8v fr-col-3 fr-col-md-4 fr-hidden-xs"
+        class="fr-mt-10v fr-mr-8v fr-col-3 fr-col-md-3 fr-hidden-xs"
       >
-        <ProgramFilterSideBar :programs="filteredPrograms" />
+        <div class="fr-sidemenu fr-sidemenu--sticky fr-sidemenu--sticky--top-15rem">
+          <div class="fr-h6 fr-text-left fr-mb-10v">Filtres</div>
+          <ProgramFilterAccordeon />
+        </div>
       </div>
       <div
         v-if="hasSpinner || hasError || !countFilteredPrograms"

@@ -20,6 +20,7 @@ declare module 'vue' {
     ProgramCard: typeof import('./components/program/list/ProgramCard.vue')['default']
     ProgramDetail: typeof import('./components/program/detail/ProgramDetail.vue')['default']
     ProgramEligibility: typeof import('./components/program/detail/ProgramEligibility.vue')['default']
+    ProgramFilterAccordeon: typeof import('./components/program/list/filters/ProgramFilterAccordeon.vue')['default']
     ProgramFilterByAidType: typeof import('./components/program/list/filters/ProgramFilterByAidType.vue')['default']
     ProgramFilterByOperator: typeof import('./components/program/list/filters/ProgramFilterByOperator.vue')['default']
     ProgramFilterByRegion: typeof import('./components/program/list/filters/ProgramFilterByRegion.vue')['default']

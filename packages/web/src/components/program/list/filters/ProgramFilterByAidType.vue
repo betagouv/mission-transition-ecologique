@@ -1,6 +1,7 @@
 <template>
   <DsfrCheckboxSet
     v-model="programFilters.programAidTypesSelected"
+    small
     :legend="legend"
     :options="programAidTypeOptions"
   />
