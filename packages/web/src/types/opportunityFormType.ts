@@ -24,3 +24,9 @@ export type ValidatedStringFieldInputType = StringFieldInputType & {
   errorMessage: string
   isValid?: boolean
 }
+
+export const isValidatedStringFieldInputType = (
+  field: StringFieldInputType | MandatoryStringFieldFormType | BooleanFieldInputType | ValidatedStringFieldInputType
+): field is ValidatedStringFieldInputType => {
+  return 'validation' in field
+}

@@ -210,14 +210,7 @@
 import { scrollToElementCenter } from '@/utils/helpers'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { computed, ComputedRef, ref } from 'vue'
-import {
-  BooleanFieldInputType,
-  type ProgramData,
-  type ReqResp,
-  StringFieldInputType,
-  TrackId,
-  ValidatedStringFieldInputType
-} from '@/types'
+import { isValidatedStringFieldInputType, type ProgramData, type ReqResp, TrackId, ValidatedStringFieldInputType } from '@/types'
 import Translation from '@/utils/translation'
 import TeeDsfrButton from '@/components/element/TeeDsfrButton.vue'
 import { DsfrInput, DsfrInputGroup, DsfrCheckbox } from '@gouvminint/vue-dsfr'
@@ -352,9 +345,9 @@ const submitOpportunityForm = async () => {
 }
 
 const validateForm = (): void => {
-  Object.values(opportunityForm.value).forEach((prop: StringFieldInputType | BooleanFieldInputType | ValidatedStringFieldInputType) => {
-    if ('validation' in prop) {
-      prop.isValid = prop.validation(prop.value) as boolean
+  Object.values(opportunityForm.value).forEach((field) => {
+    if (isValidatedStringFieldInputType(field)) {
+      field.isValid = field.validation(field.value) as boolean
     }
   })
 }
@@ -381,7 +374,7 @@ const scrollToFormContainer = () => {
   }
 }
 
-const getErrorMessage = (prop: ValidatedStringFieldInputType): string => {
-  return prop.isValid === false ? prop.errorMessage : ''
+const getErrorMessage = (field: ValidatedStringFieldInputType): string => {
+  return field.isValid === false ? field.errorMessage : ''
 }
 </script>
