@@ -15,6 +15,19 @@ export default class ProgramFilter {
     }
     return programAidTypesSelected.includes(program["nature de l'aide"])
   }
+  static filterProgramsByRegion(program: ProgramData, programAidTypesSelected: string[]) {
+    if (!this.isValidFilterValues(programAidTypesSelected)) {
+      return true
+    }
+    return programAidTypesSelected.includes(program["nature de l'aide"])
+  }
+
+  static filterProgramsByOperator(program: ProgramData, programOperatorsSelected: string[]) {
+    if (!this.isValidFilterValues(programOperatorsSelected)) {
+      return true
+    }
+    return programOperatorsSelected.includes(program['opérateur de contact'])
+  }
 
   static filterProgramsByObjective(program: ProgramData, objectiveTypeSelected: PublicodeObjective) {
     if (!this.isValidFilterValue(objectiveTypeSelected)) {
