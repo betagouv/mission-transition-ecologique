@@ -177,7 +177,7 @@ const processInput = async () => {
     const searchResult = await new EstablishmentApi().get(queryValue.value)
 
     if (searchResult.isErr) {
-      errorMessage.value = Translation.t('enterprise.noStructureFound')
+      errorMessage.value = Translation.t('enterprise.apiError')
     } else if (searchResult.value.resultCount == 0) {
       errorMessage.value = Translation.t('enterprise.noStructureFound')
     } else {

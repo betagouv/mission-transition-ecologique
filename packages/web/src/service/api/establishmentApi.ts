@@ -9,6 +9,9 @@ export default class EstablishmentApi extends RequestApi {
     const url: string = this.url + query
     try {
       const response = await fetch(url)
+      if (!response.ok) {
+        return Result.err(new Error())
+      }
       return Result.ok((await response.json()) as EstablishmentSearch)
     } catch (error: unknown) {
       return Result.err(error as Error)
