@@ -277,16 +277,16 @@ const opportunityForm = ref<OpportunityFormType>({
         usedTrack.findInQuestionnaireDataByTrackIdAndKey(TrackId.Sectors, 'sector'),
       titreAide: props.program.titre
     }),
-    label: 'Quel est votre besoin ?',
+    label: 'Quel est votre besoin ?'
   },
   cgu: {
     required: true,
     value: false,
-    label: "J'accepte d'être recontacté par l'équipe de Transition Écologique des Entreprises",
+    label: "J'accepte d'être recontacté par l'équipe de Transition Écologique des Entreprises"
   },
   linkToProgramPage: {
     required: true,
-    value: new URL(route.fullPath, window.location.origin).href,
+    value: new URL(route.fullPath, window.location.origin).href
   }
 })
 const formIsSent = ref<boolean>(false)
