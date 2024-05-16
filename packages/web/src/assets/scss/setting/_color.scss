@@ -33,6 +33,6 @@ $colors: (
     "color": var(--text-action-high-blue-france)
   ),
   "secondary-purple" : $base-purple,
-  "blue-france": color.$blue-france,
-  "dark-blue" : $dark-blue
+  "blue-france": color.$blue-france, // #000091
+  "dark-blue": $dark-blue,
 );

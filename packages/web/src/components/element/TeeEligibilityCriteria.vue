@@ -49,6 +49,12 @@
               class="fr-icon-pencil-fill fr-icon--sm fr-mr-1-5v fr-text--blue-france"
               aria-hidden="true"
             />
+            <span
+              class="fr-sr-only"
+              rel="noopener noreferrer"
+            >
+              Modifier
+            </span>
           </div>
         </div>
       </div>
