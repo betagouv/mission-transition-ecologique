@@ -183,7 +183,6 @@ const useDebug = useDebugStore()
 const sourceCodeHref = 'https://github.com/betagouv/transition-ecologique-entreprises-widget/tree/main'
 const licenceHref = 'https://github.com/betagouv/transition-ecologique-entreprises-widget/blob/main/LICENSE'
 const licenceName = 'GNU AGPL v.3'
-
 const gouvLinks = [
   {
     label: 'ecologie.gouv.fr',

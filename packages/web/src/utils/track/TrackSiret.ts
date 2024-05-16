@@ -1,8 +1,13 @@
+import EstablishmentApi from '@/service/api/establishmentApi'
 import { SiretValue } from '@/types'
 import type { Track, TrackOptionItem, TrackOptionsUnion, EstablishmentType } from '@/types'
-import TrackCallback from '@/utils/track/TrackCallback'
+import Validator from '@tee/common/src/establishment/validator'
 
 export default class TrackSiret {
+  static async search(query: string) {
+    return await new EstablishmentApi().get(query)
+  }
+
   static createData(
     option: TrackOptionsUnion,
     value?: string,
@@ -31,15 +36,16 @@ export default class TrackSiret {
     if (siret === (SiretValue.Wildcard as string)) {
       return TrackSiret.createData(option, siret).option
     }
-    if (!option?.validation || !option?.validation(siret)) {
+
+    if (!Validator.validateSiret(siret)) {
       return undefined
     }
 
-    const callBackReturn = await TrackCallback.applies(siret, option?.callbacks)
-    if (callBackReturn.responses.length === 0) {
+    const searchResult = await this.search(siret)
+    if (searchResult.isErr || searchResult.value.resultCount == 0) {
       return undefined
     }
 
-    return TrackSiret.createData(option, siret, callBackReturn.responses[0].data as EstablishmentType).option
+    return TrackSiret.createData(option, siret, searchResult.value.establishments[0]).option
   }
 }

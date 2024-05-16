@@ -17,8 +17,11 @@ export default class EstablishmentFeatures {
   public async search(query: string): Promise<Result<EstablishmentSearch, Error>> {
     if (Validator.validateSiret(query)) {
       const bySiretResult = await this._searchBySiret(query)
-      if (bySiretResult.isOk) return bySiretResult
+      if (bySiretResult.isOk) {
+        return bySiretResult
+      }
     }
+
     return await this._searchByQuery(query)
   }
 

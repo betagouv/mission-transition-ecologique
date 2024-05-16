@@ -1,19 +1,29 @@
 export default class Validator {
   static validateSiret = (siret: string): boolean => {
-    const trimmed = String(siret).replace(/[\s]/g, '')
-    const length = trimmed.length
-    if (length != 14) return false
+    const trimmed = this.trimSiret(siret)
+
+    if (!this.isValidSiretFormat(trimmed)) {
+      return false
+    }
+
+    return this.isValidSiretNumber(trimmed)
+  }
+
+  static isValidSiretFormat(siret: string): boolean {
+    const trimmed = this.trimSiret(siret)
+
+    return /^[0-9]+$/.test(trimmed) && trimmed.length === 14
+  }
+
+  static isValidSiretNumber(siret: string): boolean {
+    const trimmed = this.trimSiret(siret)
 
     let calc,
       calc2,
       total = 0,
       odd = false
 
-    if (!/^[0-9]+$/.test(trimmed)) {
-      return false
-    }
-
-    for (let i = length; i > 0; i--) {
+    for (let i = trimmed.length; i > 0; i--) {
       calc = parseInt(trimmed.charAt(i - 1))
       if (!odd) {
         total += calc
@@ -45,5 +55,9 @@ export default class Validator {
     }
 
     return total !== 0 && total % 10 === 0
+  }
+
+  static trimSiret = (siret: string): string => {
+    return siret.replace(/\s/g, '')
   }
 }
