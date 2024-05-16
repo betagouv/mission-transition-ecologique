@@ -356,18 +356,10 @@ const submitOpportunityForm = async () => {
 }
 
 const validateForm = (): void => {
-  if (formHasValidators()) {
-    Object.values(opportunityForm.value).forEach((prop: StringFieldInputType | BooleanFieldInputType | ValidatedStringFieldInputType) => {
-      if ('validation' in prop) {
-        prop.isValid = prop.validation(prop.value) as boolean
-      }
-    })
-  }
-}
-
-const formHasValidators = () => {
-  return Object.values(opportunityForm.value).some((prop: StringFieldInputType | BooleanFieldInputType) => {
-    return Object.hasOwn(prop, 'validation')
+  Object.values(opportunityForm.value).forEach((prop: StringFieldInputType | BooleanFieldInputType | ValidatedStringFieldInputType) => {
+    if ('validation' in prop) {
+      prop.isValid = prop.validation(prop.value) as boolean
+    }
   })
 }
 
