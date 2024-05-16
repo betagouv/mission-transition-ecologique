@@ -4,8 +4,8 @@
     <ProgramListHeaderResult v-if="!navigationStore.isCatalog() && !hasSpinner" />
     <div class="fr-grid-row">
       <div
-        v-if="navigationStore.isCatalog() && !hasSpinner"
-        class="fr-col-offset-10 fr-hidden-md fr-hidden-lg fr-hidden-xl"
+        v-if="countFilteredPrograms && !hasError"
+        class="fr-col-offset-10 fr-hidden-lg fr-hidden-xl fr-hidden-md fr-hidden-sm"
       >
         <ProgramModalFilter />
       </div>
@@ -28,7 +28,20 @@
           {{ countFilteredPrograms > 1 ? Translation.t('results.results') : Translation.t('results.result') }}
         </div>
       </div>
-      <div class="fr-col-12 fr-text-center">
+      <div
+        v-if="!hasSpinner"
+        class="fr-tee-add-padding fr-mt-10v fr-mr-8v fr-col-3 fr-col-md-4 fr-hidden-xs"
+      >
+        <div class="fr-sidemenu fr-sidemenu--sticky fr-sidemenu--sticky--top-15rem">
+          <div class="fr-mb-6v">
+            <ProgramFilterByAidType />
+          </div>
+        </div>
+      </div>
+      <div
+        v-if="hasSpinner || hasError || !countFilteredPrograms"
+        class="fr-col-7 fr-text-center"
+      >
         <TeeSpinner
           v-if="hasSpinner"
           scale="6"
