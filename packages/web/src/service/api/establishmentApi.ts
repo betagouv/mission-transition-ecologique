@@ -10,7 +10,6 @@ export default class EstablishmentApi extends RequestApi {
     try {
       const response = await fetch(url)
       if (!response.ok) {
-        console.log(`HTTP Error in establishement search API, ${response.status} - ${response.statusText}`)
         return Result.err(new Error())
       }
       return Result.ok((await response.json()) as EstablishmentSearch)
