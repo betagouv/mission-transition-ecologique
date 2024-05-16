@@ -12,8 +12,8 @@ export interface OpportunityFormType {
 
 type DefaultFieldFormType = {
   required: true
-  label: string | undefined
-  hint?: string | undefined
+  label?: string
+  hint?: string
 }
 
 export type StringFieldInputType = DefaultFieldFormType & { value: string | undefined }
@@ -22,5 +22,5 @@ export type MandatoryStringFieldFormType = DefaultFieldFormType & { value: strin
 export type ValidatedStringFieldInputType = StringFieldInputType & {
   validation: CallableFunction
   errorMessage: string
-  isValid?: boolean | undefined
+  isValid?: boolean
 }

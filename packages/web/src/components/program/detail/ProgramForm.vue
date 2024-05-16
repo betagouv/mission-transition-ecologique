@@ -278,19 +278,15 @@ const opportunityForm = ref<OpportunityFormType>({
       titreAide: props.program.titre
     }),
     label: 'Quel est votre besoin ?',
-    hint: undefined
   },
   cgu: {
     required: true,
     value: false,
     label: "J'accepte d'être recontacté par l'équipe de Transition Écologique des Entreprises",
-    hint: undefined
   },
   linkToProgramPage: {
     required: true,
     value: new URL(route.fullPath, window.location.origin).href,
-    label: undefined,
-    hint: undefined
   }
 })
 const formIsSent = ref<boolean>(false)
