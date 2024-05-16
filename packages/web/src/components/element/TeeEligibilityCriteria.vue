@@ -23,38 +23,26 @@
             />
             {{ siretValue }}
           </div>
-          <div class="fr-col-2 fr-bg--blue--light fr-col-content--middle fr-col-justify--center">
+          <div class="fr-col-3 fr-bg--blue--light fr-col-content--middle fr-col-justify--center">
             <span
               class="fr-icon-check-line fr-icon--sm fr-mr-1-5v"
               aria-hidden="true"
             />
             {{ size }}
           </div>
-          <div class="fr-col-2 fr-bg--blue--light fr-col-content--middle fr-col-justify--center">
+          <div class="fr-col-3 fr-bg--blue--light fr-col-content--middle fr-col-justify--center">
             <span
               class="fr-icon-check-line fr-icon--sm fr-mr-1-5v"
               aria-hidden="true"
             />
             {{ sector }}
           </div>
-          <div class="fr-col-2 fr-bg--blue--light fr-col-content--middle fr-col-justify--center">
+          <div class="fr-col-3 fr-bg--blue--light fr-radius-r-2v fr-col-content--middle fr-col-justify--center">
             <span
               class="fr-icon-check-line fr-icon--sm fr-mr-1-5v"
               aria-hidden="true"
             />
             {{ localisation }}
-          </div>
-          <div class="fr-col-1 fr-bg--blue--light fr-radius-r-2v fr-col-content--middle fr-col-justify--center">
-            <span
-              class="fr-icon-pencil-fill fr-icon--sm fr-mr-1-5v fr-text--blue-france"
-              aria-hidden="true"
-            />
-            <span
-              class="fr-sr-only"
-              rel="noopener noreferrer"
-            >
-              Modifier
-            </span>
           </div>
         </div>
       </div>
