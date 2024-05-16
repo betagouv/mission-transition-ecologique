@@ -26,7 +26,10 @@ export default class ProgramFilter {
     if (!this.isValidFilterValues(programOperatorsSelected)) {
       return true
     }
-    return programOperatorsSelected.includes(program['opérateur de contact'])
+    if (program['opérateur de contact']) {
+      return programOperatorsSelected.includes(program['opérateur de contact'])
+    }
+    return true
   }
 
   static filterProgramsByObjective(program: ProgramData, objectiveTypeSelected: PublicodeObjective) {

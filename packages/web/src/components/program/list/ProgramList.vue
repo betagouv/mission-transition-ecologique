@@ -34,7 +34,7 @@
       >
         <div class="fr-sidemenu fr-sidemenu--sticky fr-sidemenu--sticky--top-15rem">
           <div class="fr-h6 fr-text-left fr-mb-10v">Filtres</div>
-          <ProgramFilterAccordeon />
+          <ProgramFilterAccordeon :programs="filteredPrograms" />
         </div>
       </div>
       <div

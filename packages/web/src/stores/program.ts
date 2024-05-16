@@ -53,7 +53,6 @@ export const useProgramStore = defineStore('program', () => {
       return (
         ProgramFilter.filterProgramsByAidType(program, programFilters.value.programAidTypesSelected as ProgramAidType[]) &&
         ProgramFilter.filterProgramsByObjective(program, programFilters.value.objectiveTypeSelected as PublicodeObjective) &&
-        ProgramFilter.filterProgramsByRegion(program, programFilters.value.regionAidSelected) &&
         ProgramFilter.filterProgramsByOperator(program, programFilters.value.operatorAidSelected)
       )
     })
@@ -61,10 +60,6 @@ export const useProgramStore = defineStore('program', () => {
   function getProgramsOperators(programs: ProgramData[]) {
     const operators = programs.map((program: ProgramData) => program['opérateur de contact'])
     return [...new Set(operators)]
-  }
-
-  function getProgramsRegions(programs: ProgramData[]) {
-    const regions = programs.map((program: ProgramData) => program['opérateur de contact'])
   }
 
   async function getProgramById(id: string): Promise<Result<ProgramData, Error>> {
