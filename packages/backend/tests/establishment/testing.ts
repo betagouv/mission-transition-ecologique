@@ -19,8 +19,14 @@ const testEstablishment = {
   }
 }
 
+const searchResult = {
+  resultCount: 1,
+  establishments: [testEstablishment]
+}
+
 export const dummyEstablishmentRepository: EstablishmentRepository = {
-  get: (_siret: string) => Promise.resolve(Result.ok(testEstablishment))
+  get: (_siret: string) => Promise.resolve(Result.ok(testEstablishment)),
+  search: (_siret: string) => Promise.resolve(Result.ok(searchResult))
 }
 
 export const nothingRegionMapping: COG2023Mapping = {

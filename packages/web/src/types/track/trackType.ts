@@ -114,6 +114,7 @@ export interface TrackOptions {
   required?: boolean
   title?: Translations
   label?: Translations
+  hintLabel?: Translations
   resume?: Translations
   hint?: Translations
   hintImageIcon?: string
@@ -165,6 +166,7 @@ export type TrackOptionItem = {
   option: TrackOptionsUnion
   index?: number
   remove?: boolean
+  forceKeep?: boolean
 }
 
 export interface Track {
