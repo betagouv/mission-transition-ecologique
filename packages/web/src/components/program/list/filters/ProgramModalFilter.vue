@@ -21,7 +21,7 @@
           :key="filter.id"
         >
           <DsfrAccordion
-            class="fr-accordion-modal-filter"
+            class="fr-accordion-colored-background"
             :title="filter.title"
             :expanded-id="expandedId"
             @expand="expandFilter"
