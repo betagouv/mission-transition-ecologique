@@ -117,8 +117,8 @@ import Matomo from '@/utils/matomo'
 import Navigation from '@/utils/navigation'
 import TrackSiret from '@/utils/track/TrackSiret'
 import Translation from '@/utils/translation'
+import Validator from '@tee/common/src/establishment/validator'
 import { ref, computed } from 'vue'
-import EstablishmentApi from '@/service/api/establishmentApi'
 import { EstablishmentSearch } from '@/types'
 
 // Functionnal note :
@@ -173,11 +173,13 @@ const processInput = async () => {
 
   if (!queryValue.value || queryValue.value.length < 3) {
     errorMessage.value = Translation.t('enterprise.searchTooShort')
+  } else if (Validator.isValidSiretFormat(queryValue.value) && !Validator.isValidSiretNumber(queryValue.value)) {
+    errorMessage.value = "Le numéro SIRET n'est pas valide"
   } else {
-    const searchResult = await new EstablishmentApi().get(queryValue.value)
+    const searchResult = await TrackSiret.search(queryValue.value)
 
     if (searchResult.isErr) {
-      errorMessage.value = Translation.t('enterprise.noStructureFound')
+      errorMessage.value = Translation.t('enterprise.apiError')
     } else if (searchResult.value.resultCount == 0) {
       errorMessage.value = Translation.t('enterprise.noStructureFound')
     } else {

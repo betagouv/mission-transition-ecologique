@@ -73,6 +73,8 @@ export const frDict = {
   enterprise: {
     select: 'Sélectionnez votre entreprise',
     noStructureFound: "Aucune structure n'a été trouvée.",
+    apiError:
+      'Une erreur est survenue lors de la recherche. Veuillez essayer de nouveau en renseignant les 14 chiffres de votre numéro SIRET.',
     searchTooShort: '3 caractères minimums.',
     structureSize: {
       EI: 'Entreprise individuelle',
