@@ -250,7 +250,7 @@ const opportunityForm = ref<OpportunityFormType>({
     value: undefined,
     label: 'Téléphone',
     hint: 'Format attendu : 01 22 33 44 55',
-    validation: PhoneValidator.validatePhoneNumber,
+    validation: PhoneValidator.validate,
     errorMessage: "Le numéro de téléphone n'est pas valide."
   },
   email: {
@@ -258,7 +258,7 @@ const opportunityForm = ref<OpportunityFormType>({
     value: undefined,
     label: 'Email',
     hint: 'Format attendu : nom@domaine.fr',
-    validation: EmailValidator.validateEmail,
+    validation: EmailValidator.validate,
     errorMessage: "L'adresse email n'est pas valide."
   },
   siret: {
@@ -266,7 +266,7 @@ const opportunityForm = ref<OpportunityFormType>({
     value: usedTrack.findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'siret'),
     label: 'SIRET de votre entreprise',
     hint: 'Format attendu : 14 chiffres',
-    validation: SiretValidator.validateSiret,
+    validation: SiretValidator.validate,
     errorMessage: "Le numéro SIRET n'est pas valide."
   },
   needs: {

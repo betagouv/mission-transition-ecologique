@@ -1,5 +1,5 @@
 export default class SiretValidator {
-  static validateSiret = (siret: string): boolean => {
+  static validate = (siret: string): boolean => {
     const trimmed = String(siret).replace(/[\s]/g, '')
     const length = trimmed.length
 
