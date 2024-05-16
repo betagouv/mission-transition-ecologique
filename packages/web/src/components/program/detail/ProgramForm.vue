@@ -60,6 +60,7 @@
             :label="opportunityForm.email.label"
             :hint="opportunityForm.email.hint"
             @update:model-value="updateOpportunityForm($event, 'email')"
+            @focusout="validateFormField(opportunityForm.email)"
           >
           </DsfrInput>
         </DsfrInputGroup>
@@ -74,6 +75,7 @@
             :label="opportunityForm.tel.label"
             :hint="opportunityForm.tel.hint"
             @update:model-value="updateOpportunityForm($event, 'tel')"
+            @focusout="validateFormField(opportunityForm.tel)"
           >
           </DsfrInput>
         </DsfrInputGroup>
@@ -88,6 +90,7 @@
             :label="opportunityForm.siret.label"
             :hint="opportunityForm.siret.hint"
             @update:model-value="updateOpportunityForm($event, 'siret')"
+            @focusout="validateFormField(opportunityForm.siret)"
           >
           </DsfrInput>
         </DsfrInputGroup>
@@ -157,7 +160,7 @@
           icon="ri-arrow-right-line"
           icon-right
           :loading="isLoading"
-          @click="submitOpportunityForm()"
+          @click="saveOpportunityForm()"
         />
       </div>
     </div>
@@ -209,7 +212,7 @@
 <script setup lang="ts">
 import { scrollToElementCenter } from '@/utils/helpers'
 import { useUsedTrackStore } from '@/stores/usedTrack'
-import { computed, ComputedRef, ref } from 'vue'
+import { computed, ref } from 'vue'
 import { isValidatedStringFieldInputType, type ProgramData, type ReqResp, TrackId, ValidatedStringFieldInputType } from '@/types'
 import Translation from '@/utils/translation'
 import TeeDsfrButton from '@/components/element/TeeDsfrButton.vue'
@@ -285,11 +288,6 @@ const opportunityForm = ref<OpportunityFormType>({
 const formIsSent = ref<boolean>(false)
 const requestResponse = ref<ReqResp>()
 const isLoading = ref<boolean>(false)
-const isValidForm: ComputedRef<boolean> = computed(() => {
-  return Object.values(opportunityForm.value).every((prop) => {
-    return 'isValid' in prop ? prop.isValid : true
-  })
-})
 
 const isFormFilled = computed(() => {
   const isFilled = []
@@ -337,19 +335,10 @@ const updateOpportunityForm = (ev: string | boolean, id: string) => {
   }
 }
 
-const submitOpportunityForm = async () => {
-  validateForm()
-  if (isValidForm.value) {
-    await saveOpportunityForm()
+const validateFormField = (field: ValidatedStringFieldInputType): void => {
+  if (isValidatedStringFieldInputType(field)) {
+    field.isValid = field.validation(field.value) as boolean
   }
-}
-
-const validateForm = (): void => {
-  Object.values(opportunityForm.value).forEach((field) => {
-    if (isValidatedStringFieldInputType(field)) {
-      field.isValid = field.validation(field.value) as boolean
-    }
-  })
 }
 
 const saveOpportunityForm = async () => {
