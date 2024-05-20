@@ -38,8 +38,10 @@ const resume: string = Translation.t('programResults.resume', {
     'enterprise.structureSize.' + usedTrackStore.findInQuestionnaireDataByTrackIdAndKey(TrackId.StructureWorkforce, 'structure_size')
   ),
   secteur:
-    usedTrackStore.findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'secteur') ??
-    usedTrackStore.findInQuestionnaireDataByTrackIdAndKey(TrackId.Sectors, 'sector'),
+    usedTrackStore.findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'secteur') !== '' &&
+    usedTrackStore.findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'secteur') !== undefined
+      ? usedTrackStore.findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'secteur')
+      : usedTrackStore.findInQuestionnaireDataByTrackIdAndKey(TrackId.Sectors, 'sector'),
   region:
     usedTrackStore.findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'region') ??
     usedTrackStore.findInQuestionnaireDataByTrackIdAndKey(TrackId.StructureRegion, 'region')
