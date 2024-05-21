@@ -3,10 +3,13 @@
 .fr-sidemenu {
   &--sticky {
     @include media-query.respond-from(sm) {
-      top: 18em
+      top: 22em
     }
     @include media-query.respond-from(md) {
-      top: 26rem
+      top: 35rem
+    }
+    @include media-query.respond-from(lg) {
+      top: 34rem
     }
   }
 }
