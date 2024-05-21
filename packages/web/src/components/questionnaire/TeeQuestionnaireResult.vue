@@ -9,7 +9,7 @@
       class="fr-grid-row fr-justify-center"
     >
       <div class="fr-mt-10v fr-mr-5v fr-col-2 fr-col-sm-2 fr-col-md-3 fr-col-lg-2 fr-hidden-xs">
-        <div class="fr-sidemenu fr-sidemenu--sticky fr-sidemenu--sticky--top-15rem">
+        <div class="fr-sidemenu fr-sidemenu--sticky">
           <div class="fr-h7 fr-text-left fr-mb-3v">Filtres</div>
           <ProgramFilterAccordeon />
         </div>
