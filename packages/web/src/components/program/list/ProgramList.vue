@@ -4,7 +4,7 @@
     <ProgramListHeaderResult v-if="!navigationStore.isCatalog() && !hasSpinner" />
     <div class="fr-grid-row">
       <div
-        v-if="countFilteredPrograms && !hasError"
+        v-if="navigationStore.isCatalog() && !hasError"
         class="fr-col-offset-10 fr-hidden-lg fr-hidden-xl fr-hidden-md fr-hidden-sm"
       >
         <ProgramModalFilter />
@@ -29,17 +29,8 @@
         </div>
       </div>
       <div
-        v-if="!hasSpinner"
-        class="fr-mt-10v fr-mr-8v fr-col-3 fr-col-md-3 fr-hidden-xs"
-      >
-        <div class="fr-sidemenu fr-sidemenu--sticky fr-sidemenu--sticky--top-15rem">
-          <div class="fr-h7 fr-text-left fr-mb-3v">Filtres</div>
-          <ProgramFilterAccordeon />
-        </div>
-      </div>
-      <div
         v-if="hasSpinner || hasError || !countFilteredPrograms"
-        class="fr-col-7 fr-text-center"
+        class="fr-col-12 fr-text-center"
       >
         <TeeSpinner
           v-if="hasSpinner"
@@ -56,7 +47,7 @@
           :email="Contact.email"
         />
       </div>
-      <div class="fr-col">
+      <div class="fr-col-12">
         <div class="fr-container--fluid">
           <div class="fr-grid-row">
             <router-link

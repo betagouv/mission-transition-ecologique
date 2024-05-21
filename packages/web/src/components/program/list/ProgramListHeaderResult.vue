@@ -1,6 +1,6 @@
 <template>
   <div class="fr-grid-row">
-    <div class="fr-col-offset-10 fr-hidden-md fr-hidden-lg fr-hidden-xl">
+    <div class="fr-col-offset-10 fr-hidden-lg fr-hidden-xl fr-hidden-md fr-hidden-sm">
       <ProgramModalFilter />
     </div>
   </div>
