@@ -254,12 +254,11 @@ import Matomo from '@/utils/matomo'
 import Program from '@/utils/program/program'
 import Translation from '@/utils/translation'
 import { computed, onBeforeMount, ref } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { useRoute } from 'vue-router'
 
 const programsStore = useProgramStore()
 const navigationStore = useNavigationStore()
 const route = useRoute()
-const router = useRouter()
 
 const program = ref<ProgramType>()
 const TeeProgramFormContainer = ref<HTMLElement | null | undefined>(null)
