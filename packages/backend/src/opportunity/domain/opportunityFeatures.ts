@@ -118,10 +118,10 @@ export default class OpportunityFeatures {
     return Result.ok(opportunity)
   }
 
-  private _updateValueInDictionaries(dics: Dictionary[], key: string, val: string): boolean {
-    for (const oneDic of dics) {
-      if (key in oneDic) {
-        oneDic[key] = val
+  private _updateValueInDictionaries(dictionaries: Dictionary[], key: string, val: string): boolean {
+    for (const dictionary of dictionaries) {
+      if (key in dictionary) {
+        dictionary[key] = val
         return true
       }
     }
