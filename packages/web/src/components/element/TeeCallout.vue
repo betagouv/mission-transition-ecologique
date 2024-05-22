@@ -50,57 +50,11 @@ const props = withDefaults(defineProps<Props>(), {
 const linkClasses = {
   baseCallout: true,
   defaultCallout: props.type === CalloutType.Default,
-  warningCallout: props.type === CalloutType.Warning
+  warningCallout: props.type === CalloutType.Warning,
+  customCallout: props.type === CalloutType.Custom
 }
 </script>
 
 <style scoped lang="scss">
-@import '../../assets/scss/_colors.scss';
-.baseCallout {
-  border-left: 4px solid;
-  padding: 32px 48px 32px 32px;
-}
-
-.defaultCallout {
-  background: var(--light-background-alt-blue-france, #f5f5fe);
-  border-color: $secondary-purple;
-}
-
-.warningCallout {
-  border-color: #{$base-red};
-  background: rgba(252, 160, 129, 0.2);
-}
-
-h5 {
-  color: var(--light-text-title-grey, #161616);
-  font-size: 3rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 3.5rem; /* 116.667% */
-  margin-bottom: 0.75rem;
-}
-
-p {
-  margin-bottom: 0rem;
-  white-space: pre-wrap;
-}
-
-.image-container {
-  margin-left: -1rem;
-  margin-right: 0.2rem;
-  display: flex;
-  justify-content: center;
-}
-
-.image {
-  max-width: 100%;
-  height: auto;
-}
-
-.content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
+@import '@/assets/scss/teeCallout';
 </style>

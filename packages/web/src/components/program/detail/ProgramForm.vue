@@ -102,8 +102,29 @@
             label-visible
             :required="opportunityForm.needs.required"
             :label="opportunityForm.needs.label"
+            :wrapper-class="'fr-m-0'"
             @update:model-value="updateOpportunityForm($event, 'needs')"
           >
+            <template
+              v-if="opportunityForm.needs.callOut"
+              #label
+            >
+              {{ opportunityForm.needs.label }}
+              <slot name="required-tip">
+                <span
+                  v-if="opportunityForm.needs.required"
+                  class="required"
+                  >*</span
+                >
+              </slot>
+
+              <TeeCallout
+                :type="opportunityForm.needs.callOut.type"
+                :imglink="`${publicPath}${opportunityForm.needs.callOut.imgLink}`"
+              >
+                {{ opportunityForm.needs.callOut.content }}
+              </TeeCallout>
+            </template>
           </DsfrInput>
         </DsfrInputGroup>
       </div>
@@ -221,9 +242,12 @@ import Format from '@/utils/format'
 import OpportunityApi from '@/service/api/opportunityApi'
 import type { OpportunityFormType } from '@/types/opportunityFormType'
 import Contact from '@/utils/contact'
+import Config from '@/config'
+import { CalloutType } from '@/types/elementsPropsTypes'
 
 const route = useRoute()
 const usedTrack = useUsedTrackStore()
+const publicPath = Config.publicPath !== 'undefined/' ? Config.publicPath : '../../public/'
 
 interface Props {
   program: ProgramData
@@ -253,7 +277,14 @@ const opportunityForm = ref<OpportunityFormType>({
       titreAide: props.program.titre
     }),
     label: 'Quel est votre besoin ?',
-    hint: undefined
+    hint: undefined,
+    callOut: {
+      type: CalloutType.Custom,
+      content:
+        "Pour vous aider au mieux, nos conseillers ont besoin d'éléments de contexte.\n" +
+        'N’hésitez pas à nous détailler votre projet, vos besoins ou vos questionnements.',
+      imgLink: 'images/TEE-conseiller.png'
+    }
   },
   cgu: {
     required: true,
