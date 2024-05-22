@@ -6,6 +6,7 @@
     <TeeEligibilityCriteria
       v-if="linkToPreviousButton"
       bg-color="blue-light"
+      bg-bar-color="blue--light"
       :previous-route="linkToPreviousButton"
     />
     <div class="fr-grid-row fr-grid-row-gutters fr-justify-center">

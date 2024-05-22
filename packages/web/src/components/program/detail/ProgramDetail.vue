@@ -2,25 +2,12 @@
   <TeeEligibilityCriteria
     v-if="!isCatalogDetail"
     bg-color="green"
+    bg-bar-color="green"
     bg-light
     :previous-route="routeToPrograms"
   />
   <div class="fr-container-fluid fr-px-0 fr-px-md-20v fr-mt-3v">
     <div class="fr-grid-row fr-grid-row-gutters">
-      <div class="fr-col">
-        <!-- BACK TO RESULTS BTN -->
-        <button
-          class="fr-btn fr-btn--lg fr-btn--tertiary-no-outline fr-mb-3v fr-pl-2v"
-          @click="resetDetailResult"
-        >
-          <v-icon
-            name="ri-arrow-left-line"
-            aria-hidden="true"
-            class="fr-mr-2v"
-          ></v-icon>
-          {{ Translation.t('results.backToResults') }}
-        </button>
-      </div>
       <div
         v-if="!program"
         class="fr-col-12"
@@ -316,11 +303,6 @@ const isProgramAutonomous = computed(() => {
   }
   return false
 })
-
-// functions
-const resetDetailResult = async () => {
-  await router.push(routeToPrograms)
-}
 
 const routeToPrograms = {
   name: isCatalogDetail ? RouteName.Catalog : RouteName.QuestionnaireResult,

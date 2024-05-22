@@ -17,7 +17,7 @@
       <div class="fr-container">
         <TeeGroupBar
           :infos="criteria"
-          bg-color="blue--light"
+          :bg-color="bgBarColor"
           radius-size="2v"
         />
       </div>
@@ -31,7 +31,8 @@ import TrackStructure from '@/utils/track/trackStructure'
 import type { RouteLocationRaw } from 'vue-router'
 
 interface Props {
-  bgColor: string
+  bgColor?: string
+  bgBarColor?: string
   bgLight?: boolean
   previousRoute: RouteLocationRaw
 }

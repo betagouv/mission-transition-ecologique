@@ -1,7 +1,7 @@
 <template>
   <RouterLink
-    class="fr-btn fr-btn fr-btn--tertiary-no-outline fr-btn--icon-left"
-    :class="icon"
+    class="fr-btn fr-btn--tertiary-no-outline"
+    :class="[icon, ...classes]"
     :to="props.to"
   >
     <slot></slot>
@@ -19,7 +19,18 @@ interface Props {
 }
 const props = withDefaults(defineProps<Props>(), {
   iconOnly: false,
-  iconRight: false
+  iconRight: false,
+  icon: undefined
+})
+
+const classes = computed(() => {
+  return [
+    {
+      'fr-btn--icon-only': props.iconOnly,
+      'fr-btn--icon-right': !props.iconOnly && props.iconRight,
+      'fr-btn--icon-left': !props.iconOnly && !props.iconRight
+    }
+  ]
 })
 </script>
 
