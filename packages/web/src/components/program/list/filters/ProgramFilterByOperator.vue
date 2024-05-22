@@ -20,7 +20,6 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const programFilters: programFiltersType = useProgramStore().programFilters
-
 const programOperatorOptions: DsfrCheckboxSetProps['options'] = props.operators.map((operator: string) => ({
   label: operator,
   id: operator,

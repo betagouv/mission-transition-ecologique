@@ -1,5 +1,5 @@
 <template>
-  <DsfrAccordionsGroup>
+  <DsfrAccordionsGroup v-if="!hasSpinner">
     <li
       v-for="filter in filters"
       :key="filter.id"
@@ -13,7 +13,7 @@
         <component
           :is="filter.component"
           legend=""
-          :operators="operatorsPrograms"
+          :operators="operators"
         />
       </DsfrAccordion>
     </li>
@@ -23,18 +23,25 @@
 import { ref } from 'vue'
 import ProgramFilterByAidType from './ProgramFilterByAidType.vue'
 import ProgramFilterByOperator from './ProgramFilterByOperator.vue'
+import ProgramFilterByRegion from './ProgramFilterByRegion.vue'
 import { type ProgramData } from '@/types'
 import { useProgramStore } from '@/stores/program'
+import { useUsedTrackStore } from '@/stores/usedTrack'
 
 const expandedId = ref<string | undefined>()
 const programStore = useProgramStore()
+const programs = ref<ProgramData[]>()
+const operators = ref<string[]>()
+const regions = ref<string[]>()
+const hasSpinner = computed(() => {
+  return programs.value === undefined
+})
 
 const expandFilter = (id: string | undefined) => {
   expandedId.value = id
 }
 interface Props {
   class?: string
-  programs?: ProgramData[]
 }
 const props = defineProps<Props>()
 
@@ -44,8 +51,13 @@ interface FilterItem {
   component: unknown
 }
 
-const operatorsPrograms: ComputedRef<string[]> = computed(() => {
-  return props.programs ? programStore.getProgramsOperators(props.programs) : []
+onBeforeMount(async () => {
+  const result = useUsedTrackStore().hasUsedTracks() ? await programStore.programsByUsedTracks : await programStore.programs
+  if (result.isOk) {
+    programs.value = result.value
+    operators.value = programStore.getProgramsOperators(programs.value)
+    regions.value = programStore.getProgramsRegions(programs.value)
+  }
 })
 
 const filters: FilterItem[] = [
@@ -58,6 +70,11 @@ const filters: FilterItem[] = [
     title: 'Opérateurs',
     id: 'operator-aid',
     component: ProgramFilterByOperator
+  },
+  {
+    title: 'Régions',
+    id: 'region-aid',
+    component: ProgramFilterByRegion
   }
 ]
 </script>

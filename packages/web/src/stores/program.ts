@@ -57,11 +57,15 @@ export const useProgramStore = defineStore('program', () => {
       )
     })
   }
-  function getProgramsOperators(programs: ProgramData[]) {
+  function getProgramsOperators(programs: ProgramData[]): string[] {
     const operators = programs.map((program: ProgramData) => program['opérateur de contact'])
     return [...new Set(operators)]
   }
-
+  function getProgramsRegions(programs: ProgramData[]): string[] {
+    console.log('programs', programs)
+    const operators = programs.map((program: ProgramData) => program['opérateur de contact'])
+    return [...new Set(operators)]
+  }
   async function getProgramById(id: string): Promise<Result<ProgramData, Error>> {
     currentProgram.value = undefined
 
@@ -121,6 +125,7 @@ export const useProgramStore = defineStore('program', () => {
     programsByUsedTracks,
     getProgramsByFilters,
     getProgramsOperators,
+    getProgramsRegions,
     getProgramById,
     hasObjectiveTypeFilter,
     hasObjectiveTypeSelected,
