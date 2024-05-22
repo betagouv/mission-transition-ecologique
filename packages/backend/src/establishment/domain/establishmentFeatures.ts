@@ -22,7 +22,8 @@ export default class EstablishmentFeatures {
   }
 
   public async getBySiret(siret: Siret): Promise<Result<Establishment, Error>> {
-    const establishmentResult: Result<EstablishmentDetails, Error> = await this._establishmentRepository.get(siret)
+    const trimmedSiret = siret.replace(/[\s]/g, '')
+    const establishmentResult: Result<EstablishmentDetails, Error> = await this._establishmentRepository.get(trimmedSiret)
 
     if (establishmentResult.isErr) {
       return Result.err(establishmentResult.error)
@@ -35,9 +36,7 @@ export default class EstablishmentFeatures {
   }
 
   private async _searchBySiret(siret: string): Promise<Result<EstablishmentSearch, Error>> {
-    const trimmedSiret = siret.replace(/[\s]/g, '')
-
-    const resultEstablishment = await this.getBySiret(trimmedSiret)
+    const resultEstablishment = await this.getBySiret(siret)
     if (resultEstablishment.isErr) {
       return Result.err(resultEstablishment.error)
     }

@@ -99,24 +99,26 @@ export default class OpportunityFeatures {
     opportunity.companyName = establishmentInfos.value.denomination
     opportunity.companySector = establishmentInfos.value.nafLabel || ''
 
-    const dics = JSON.parse(opportunity.otherData || '[]') as Dic[]
-    const newDic = {} as Dic
-    if (!this._updateValueInDics(dics, 'codeNAF', establishmentInfos.value.nafCode)) {
-      newDic['codeNAF'] = establishmentInfos.value.nafCode
+    const dictionaries = JSON.parse(opportunity.otherData || '[]') as Dictionary[]
+    const newDictionary = {} as Dictionary
+    if (!this._updateValueInDictionaries(dictionaries, 'codeNAF', establishmentInfos.value.nafCode)) {
+      newDictionary['codeNAF'] = establishmentInfos.value.nafCode
     }
-    if (!this._updateValueInDics(dics, 'codePostal', establishmentInfos.value.address.zipCode)) {
-      newDic['codePostal'] = establishmentInfos.value.address.zipCode
+    if (!this._updateValueInDictionaries(dictionaries, 'codePostal', establishmentInfos.value.address.zipCode)) {
+      newDictionary['codePostal'] = establishmentInfos.value.address.zipCode
     }
-    if (!this._updateValueInDics(dics, 'region', establishmentInfos.value.region || '')) {
-      newDic['region'] = establishmentInfos.value.region || ''
+    if (!this._updateValueInDictionaries(dictionaries, 'region', establishmentInfos.value.region || '')) {
+      newDictionary['region'] = establishmentInfos.value.region || ''
     }
-    if (newDic) dics.push(newDic)
-    opportunity.otherData = JSON.stringify(dics)
+    if (Object.values(newDictionary).length > 0) {
+      dictionaries.push(newDictionary)
+    }
+    opportunity.otherData = JSON.stringify(dictionaries)
 
     return Result.ok(opportunity)
   }
 
-  private _updateValueInDics(dics: Dic[], key: string, val: string): boolean {
+  private _updateValueInDictionaries(dics: Dictionary[], key: string, val: string): boolean {
     for (const oneDic of dics) {
       if (key in oneDic) {
         oneDic[key] = val
@@ -128,4 +130,4 @@ export default class OpportunityFeatures {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-type Dic = Record<string, any>
+type Dictionary = Record<string, any>
