@@ -3,13 +3,25 @@ import { useUsedTrackStore } from '@/stores/usedTrack'
 import { StructureSize, TrackId } from '@/types'
 
 export default class TrackStructure {
+  static has(trackId: TrackId, key: string): boolean {
+    return (
+      useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(trackId, key) !== '' &&
+      useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(trackId, key) !== undefined
+    )
+  }
+
+  static hasSiret(): boolean {
+    return this.has(TrackId.Siret, 'siret')
+  }
+
   static getSiret(): string {
     return useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'siret') as string
   }
 
   static getSector(): string {
-    return (useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'secteur') ??
-      useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(TrackId.Sectors, 'sector')) as string
+    return this.has(TrackId.Siret, 'secteur')
+      ? (useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'secteur') as string)
+      : (useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(TrackId.Sectors, 'sector') as string)
   }
 
   static getSize(): StructureSize {
@@ -21,8 +33,7 @@ export default class TrackStructure {
   }
 
   static getLocalisation(): string {
-    const postalCode = this.getPostalCode()
-    return postalCode ? `${postalCode} ${this.getCity()}` : this.getRegion()
+    return this.has(TrackId.Siret, 'codePostal') ? `${this.getPostalCode()} ${this.getCity()}` : this.getRegion()
   }
 
   static getPostalCode(): string {
@@ -34,7 +45,8 @@ export default class TrackStructure {
   }
 
   static getRegion(): string {
-    const region = useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'region') as string
-    return region ?? (useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(TrackId.StructureRegion, 'region') as string)
+    return this.has(TrackId.Siret, 'region')
+      ? (useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'region') as string)
+      : (useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(TrackId.StructureRegion, 'region') as string)
   }
 }

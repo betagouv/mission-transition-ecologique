@@ -1,3 +1,5 @@
 @forward "color";
 @forward "radius";
 @forward "display";
+@forward "typography";
+@forward '@gouvfr/dsfr/module/media-query/variable/breakpoints' as breakpoints-*;

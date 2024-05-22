@@ -38,6 +38,7 @@ declare module 'vue' {
     TeeEligibilityCriteria: typeof import('./components/element/TeeEligibilityCriteria.vue')['default']
     TeeError: typeof import('./components/element/TeeError.vue')['default']
     TeeFooter: typeof import('./components/TeeFooter.vue')['default']
+    TeeGroupBar: typeof import('./components/element/TeeGroupBar.vue')['default']
     TeeHeader: typeof import('./components/TeeHeader.vue')['default']
     TeeHomeInfos: typeof import('./components/home/TeeHomeInfos.vue')['default']
     TeeHomeSteps: typeof import('./components/home/TeeHomeSteps.vue')['default']
