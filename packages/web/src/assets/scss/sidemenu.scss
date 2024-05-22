@@ -1,15 +1,5 @@
-@use '@gouvfr/dsfr/module/media-query';
-
 .fr-sidemenu {
   &--sticky {
-    @include media-query.respond-from(sm) {
-      top: 22em
-    }
-    @include media-query.respond-from(md) {
-      top: 35rem
-    }
-    @include media-query.respond-from(lg) {
-      top: 30rem
-    }
+    top: 50%
   }
 }
