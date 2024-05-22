@@ -1,30 +1,9 @@
 <template>
-  <!-- DEBUGGING -->
-  <div
-    v-if="useDebug.is"
-    class="vue-debug"
-  >
-    <h5>DEBUG - TeeAppFooter</h5>
-    <div
-      v-if="true"
-      class="fr-grid-row fr-grid-row--gutters"
-    >
-      <div class="fr-col-3">
-        <h6 class="fr-mb-1v">
-          Translation.lang : <code>{{ Translation.lang }} </code>
-        </h6>
-      </div>
-    </div>
-  </div>
-
   <!-- FOOTER -->
   <div :class="`fr-footer ${stickToBottom ? 'tee-footer-bottom' : ''}`">
     <div class="fr-container--fluid fr-mx-20v">
       <!-- FOOTER BODY -->
-      <div
-        class="fr-footer__body"
-        style=""
-      >
+      <div class="fr-footer__body">
         <div class="fr-footer__brand fr-enlarge-link">
           <p class="fr-logo">
             République
@@ -35,11 +14,11 @@
             to="/"
             title="Retour à l’accueil du site - Transition Ecologique des entreprises - République Française"
           >
-            <img
-              class="fr-footer__logo tee-footer-app-logo"
-              src="/images/logos/mission-transition-logo-alone.png"
-              alt="Transition Ecologique des entreprises"
-            />
+            <!--            <img-->
+            <!--              class="fr-footer__logo tee-footer-app-logo"-->
+            <!--              src="/images/logos/mission-transition-logo-alone.png"-->
+            <!--              alt="Transition Ecologique des entreprises"-->
+            <!--            />-->
             <!-- L’alternative de l’image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l’image -->
           </router-link>
         </div>
@@ -66,7 +45,7 @@
       <!-- FOOTER PARTNERS -->
       <div class="fr-footer__partners">
         <h4 class="fr-footer__partners-title">Nos partenaires</h4>
-        <div class="fr-footer__partners-logos">
+        <div class="fr-footer__partners-logos tee-align-items-center">
           <div class="fr-footer__partners-main">
             <a
               class="footer__partners-link fr-my-4v fr-mr-4v tee-router-link"
@@ -80,10 +59,7 @@
               />
             </a>
           </div>
-          <div
-            class="fr-footer__partners-sub fr-grid-row--middle"
-            style="align-items: center"
-          >
+          <div class="fr-footer__partners-sub fr-grid-row--middle tee-align-items-center">
             <ul
               v-for="operator in operators"
               :key="operator.label"
@@ -107,10 +83,7 @@
       </div>
 
       <!-- FOOTER BOTTOM -->
-      <div
-        class="fr-footer__bottom fr-mt-5v"
-        style="box-shadow: none"
-      >
+      <div class="fr-footer__bottom fr-mt-5v">
         <ul class="fr-footer__bottom-list">
           <li
             v-for="link in mainLinks"
@@ -171,14 +144,11 @@
 import Translation from '@/utils/translation'
 import { RouteName } from '@/types/routeType'
 import operators from '@/utils/operators'
-import { useDebugStore } from '@/stores/debug'
 
 interface Props {
   stickToBottom?: boolean
 }
 defineProps<Props>()
-
-const useDebug = useDebugStore()
 
 const sourceCodeHref = 'https://github.com/betagouv/transition-ecologique-entreprises-widget/tree/main'
 const licenceHref = 'https://github.com/betagouv/transition-ecologique-entreprises-widget/blob/main/LICENSE'
@@ -203,9 +173,9 @@ const gouvLinks = [
 ]
 
 const mainPartner = {
-  label: 'Place des entreprises',
-  img: '/images/logos/conseillers-entreprises.service-public.fr.svg',
-  href: 'https://conseillers-entreprises.service-public.fr'
+  label: 'Service public',
+  img: '/images/logos/service-public.fr.svg',
+  href: 'https://service-public.fr'
 }
 // {
 //   label: 'Aides-territoires',
@@ -252,3 +222,6 @@ const mainLinks = [
   }
 ]
 </script>
+<style scoped lang="scss">
+@import '@/assets/scss/footer.scss';
+</style>
