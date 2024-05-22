@@ -1,0 +1,38 @@
+@import "colors";
+
+/* FORM */
+.fr-tee-form {
+  max-width: 685px;
+  &-block {
+    background-color: $light-blue;
+    padding: 2em;
+    display: flex;
+    justify-content: center;
+    .fr-input {
+      background-color: white;
+    }
+
+  }
+  &-container {
+    @media screen and (max-width:48em) {
+      width: 100%;
+    }
+    width: 80%;
+  }
+  &-error {
+    text-align: center;
+  }
+}
+.tee-form-response {
+  font-size: 1.3rem;
+  line-height: 1.3rem;
+  &-blue {
+    color: $dark-blue;
+    a {
+      white-space: nowrap;
+    }
+  }
+  &-error {
+    color: $dark-red;
+  }
+}

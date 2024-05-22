@@ -1,21 +1,30 @@
 @import "colors";
+@import "../../../public/css/core.main.css";
 
 .customCallout {
   background-color: $base-blue;
   border: none !important;
   width: 100%;
-  padding: 0 1rem 0 0 !important;
+  padding: 0.5rem 1rem 0 1rem !important;
   margin-bottom: 0;
   height: 100%;
+  @media screen and (max-width: 48em) {
+    padding-bottom: 1rem !important;
+  }
 
   & p {
     color: white !important;
     font-weight: bold;
-    //font-size: 0.8rem !important; //TODO validate with team if font size should be adjust to fit one line
   }
 
   & .image-container {
     align-items: end !important;
+    //apply fr-col-xl-2 style
+    @media screen and (min-width: 78em) {
+      flex: 0 0 calc(200% / 12);
+      width: calc(200% / 12);
+      max-width: calc(200% / 12);
+    }
     & img {
       height: 5rem !important;
     }
@@ -68,5 +77,4 @@
     flex-direction: column;
     justify-content: space-evenly;
   }
-
 }

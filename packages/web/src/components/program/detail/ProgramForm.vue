@@ -11,7 +11,7 @@
   <!-- FORM -->
   <div
     v-if="!formIsSent"
-    class="fr-tee-form fr-my-4v"
+    class="fr-tee-form-container fr-my-4v"
   >
     <!-- FORM LABEL -->
     <h3 class="fr-text-center">
