@@ -94,7 +94,7 @@ export default class OpportunityFeatures {
     }
     const establishmentInfos = await new EstablishmentService().getBySiret(opportunity.companySiret)
     if (establishmentInfos.isErr) {
-      return Result.ok(opportunity) // if we don't suceed in enhancing the data, we still we to create an opportunity
+      return Result.ok(opportunity) // if we don't suceed in enhancing the data, we still want to create an opportunity
     }
     opportunity.companyName = establishmentInfos.value.denomination
     opportunity.companySector = establishmentInfos.value.nafLabel || ''
