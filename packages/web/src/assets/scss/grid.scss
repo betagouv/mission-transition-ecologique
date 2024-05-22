@@ -3,13 +3,13 @@
 @use 'setting';
 
 .fr-col {
-  @each $align-name, $align in setting.$horizontal-flex-aligns {
+  @each $align-name, $align in setting.$vertical-flex-aligns {
     &-content--#{$align-name} {
       display: flex;
       align-items: $align;
     }
   }
-  @each $align-name, $align in setting.$vertical-flex-aligns {
+  @each $align-name, $align in setting.$horizontal-flex-aligns {
     &-justify--#{$align-name} {
       display: flex;
       justify-content: $align;

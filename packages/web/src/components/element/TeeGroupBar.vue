@@ -36,11 +36,11 @@ const colClasses = (index: number) => {
   const col = ['fr-col-' + colLength()]
   if (props.radiusSize) {
     if (index === 0) {
-      col.push(' fr-radius-l-' + props.radiusSize)
+      col.push(' fr-radius-l--' + props.radiusSize)
     }
 
     if (index === props.infos.length - 1) {
-      col.push(' fr-radius-r-' + props.radiusSize)
+      col.push(' fr-radius-r--' + props.radiusSize)
     }
   }
 

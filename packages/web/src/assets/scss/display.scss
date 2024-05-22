@@ -14,19 +14,4 @@
       }
     }
   }
-  @each $color, $properties in setting.$colors {
-    &--#{$color} {
-      @if type-of($properties) == map {
-        color: map-get($properties, "color");
-      } @else {
-        color: $properties;
-      }
-    }
-  }
-
-  @each $name in setting.$line-heights {
-    &-line-height--#{$name} {
-        @include tool.line-height($name)
-    }
-  }
 }
