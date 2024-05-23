@@ -412,3 +412,12 @@ const getValidMessage = (field: InputFieldUnionType): string => {
   return field.isValid === true ? ' ' : ''
 }
 </script>
+<style scoped lang="scss">
+//override DsfrInput and DsfrInputGroup valid class
+:deep(.fr-valid-text:before) {
+  display: none !important;
+}
+.fr-input-group--valid:before {
+  display: none;
+}
+</style>
