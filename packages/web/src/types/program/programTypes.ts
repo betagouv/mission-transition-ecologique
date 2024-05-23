@@ -1,5 +1,5 @@
 // FOR AID PROGRAMS
-import { PublicodesKeys, PublicodeObjective, PublicodesCondition, ProgramAidType, ProgramOperatorType, Regions } from '@/types'
+import { PublicodesKeys, PublicodeObjective, PublicodesCondition, ProgramAidType, ProgramOperatorType } from '@/types'
 
 interface ProgramObjectiveLink {
   lien: string
@@ -36,7 +36,7 @@ export interface ProgramData {
 
   "conditions d'éligibilité": {
     "taille de l'entreprise": string[]
-    'secteur géographique': Regions[]
+    'secteur géographique': string[]
     "secteur d'activité": string[]
     "nombre d'années d'activité": string[]
     "autres critères d'éligibilité"?: string[]
