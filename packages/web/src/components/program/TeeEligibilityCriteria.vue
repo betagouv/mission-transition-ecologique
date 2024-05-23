@@ -8,6 +8,7 @@
         <TeeButtonLink
           :to="previousRoute"
           icon="fr-icon-arrow-left-line"
+          size="lg"
         >
           Retour
         </TeeButtonLink>
