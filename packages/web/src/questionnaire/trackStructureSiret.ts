@@ -3,7 +3,7 @@
 
 import { HasInputOptions, SiretValue, TrackComponent, TrackId } from '@/types'
 import type { Track, EstablishmentType } from '@/types'
-import SiretValidator from '@/utils/validator/siretValidator'
+import Validator from '@tee/common/src/establishment/validator'
 
 const defaultQuestionnaireData: EstablishmentType = {
   siret: '',
@@ -34,7 +34,7 @@ export const siret: Track = {
       id: 'search-siret',
       hasInput: HasInputOptions.Search,
       value: undefined,
-      validation: SiretValidator.validate,
+      validation: Validator.validateSiret,
       questionnaireData: { ...defaultQuestionnaireData },
       title: { fr: 'SIRET' },
       hintLabel: { fr: 'ex : "Fromagerie Sanzot Angers" ou N° SIRET "130 025 265 00013"' },

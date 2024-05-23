@@ -253,9 +253,9 @@ import Format from '@/utils/format'
 import OpportunityApi from '@/service/api/opportunityApi'
 import type { OpportunityFormType } from '@/types/opportunityFormType'
 import Contact from '@/utils/contact'
-import SiretValidator from '@/utils/validator/siretValidator'
 import PhoneValidator from '@/utils/validator/phoneValidator'
 import EmailValidator from '@/utils/validator/emailValidator'
+import Validator from '@tee/common/src/establishment/validator'
 
 const route = useRoute()
 const usedTrack = useUsedTrackStore()
@@ -294,7 +294,7 @@ const opportunityForm = ref<OpportunityFormType>({
     value: usedTrack.findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'siret'),
     label: 'SIRET de votre entreprise',
     hint: 'Format attendu : 14 chiffres',
-    validation: SiretValidator.validate,
+    validation: Validator.validateSiret,
     errorMessage: "Le numéro SIRET n'est pas valide."
   },
   needs: {
