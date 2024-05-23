@@ -302,8 +302,10 @@ const opportunityForm = ref<OpportunityFormType>({
     isValid: undefined,
     value: Translation.t('program.form.needs', {
       secteur:
-        usedTrack.findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'secteur') ??
-        usedTrack.findInQuestionnaireDataByTrackIdAndKey(TrackId.Sectors, 'sector'),
+        usedTrack.findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'secteur') !== '' &&
+        usedTrack.findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'secteur') !== undefined
+          ? usedTrack.findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'secteur')
+          : usedTrack.findInQuestionnaireDataByTrackIdAndKey(TrackId.Sectors, 'sector'),
       titreAide: props.program.titre
     }),
     label: 'Quel est votre besoin ?'
