@@ -22,7 +22,7 @@ export default class ProgramFilter {
       return true
     }
     const geoSectors = program["conditions d'éligibilité"]['secteur géographique']
-      .map((regionString: Region) => regionString.split(', '))
+      .map((regionString: string) => regionString.split(', '))
       .flat()
 
     if (geoSectors.includes("France et territoires d'outre-mer")) {
