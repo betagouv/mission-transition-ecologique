@@ -1,6 +1,7 @@
 <template>
   <DsfrCheckboxSet
     v-model="programFilters.regionAidSelected"
+    small
     :options="programRegionsOptions"
   />
 </template>

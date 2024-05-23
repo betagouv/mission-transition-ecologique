@@ -1,6 +1,7 @@
 <template>
   <DsfrCheckboxSet
     v-model="programFilters.operatorAidSelected"
+    small
     :options="programOperatorOptions"
   />
 </template>
