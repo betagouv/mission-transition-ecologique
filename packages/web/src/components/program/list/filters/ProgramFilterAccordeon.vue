@@ -1,5 +1,5 @@
 <template>
-  <DsfrAccordionsGroup v-if="!hasSpinner">
+  <DsfrAccordionsGroup>
     <li
       v-for="filter in filters"
       :key="filter.id"
@@ -10,11 +10,7 @@
         :expanded-id="expandedId"
         @expand="expandFilter"
       >
-        <component
-          :is="filter.component"
-          legend=""
-          :operators="operators"
-        />
+        <component :is="filter.component" />
       </DsfrAccordion>
     </li>
   </DsfrAccordionsGroup>
@@ -24,18 +20,8 @@ import { ref } from 'vue'
 import ProgramFilterByAidType from './ProgramFilterByAidType.vue'
 import ProgramFilterByOperator from './ProgramFilterByOperator.vue'
 import ProgramFilterByRegion from './ProgramFilterByRegion.vue'
-import { type ProgramData } from '@/types'
-import { useProgramStore } from '@/stores/program'
-import { useUsedTrackStore } from '@/stores/usedTrack'
 
 const expandedId = ref<string | undefined>()
-const programStore = useProgramStore()
-const programs = ref<ProgramData[]>()
-const operators = ref<string[]>()
-const regions = ref<string[]>()
-const hasSpinner = computed(() => {
-  return programs.value === undefined
-})
 
 const expandFilter = (id: string | undefined) => {
   expandedId.value = id
@@ -50,15 +36,6 @@ interface FilterItem {
   id: string
   component: unknown
 }
-
-onBeforeMount(async () => {
-  const result = useUsedTrackStore().hasUsedTracks() ? await programStore.programsByUsedTracks : await programStore.programs
-  if (result.isOk) {
-    programs.value = result.value
-    operators.value = programStore.getProgramsOperators(programs.value)
-    regions.value = programStore.getProgramsRegions(programs.value)
-  }
-})
 
 const filters: FilterItem[] = [
   {

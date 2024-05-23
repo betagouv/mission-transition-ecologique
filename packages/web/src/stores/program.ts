@@ -10,7 +10,9 @@ import { acceptHMRUpdate, defineStore } from 'pinia'
 import {
   type programFiltersType,
   ProgramAidType,
+  ProgramOperatorType,
   PublicodeObjective,
+  Regions,
   type ProgramData,
   TrackId,
   QuestionnaireDataEnum,
@@ -49,23 +51,17 @@ export const useProgramStore = defineStore('program', () => {
   }
 
   function getProgramsByFilters(programs: ProgramData[]) {
+    console.log(programs)
     return programs.filter((program: ProgramData) => {
       return (
         ProgramFilter.filterProgramsByAidType(program, programFilters.value.programAidTypesSelected as ProgramAidType[]) &&
         ProgramFilter.filterProgramsByObjective(program, programFilters.value.objectiveTypeSelected as PublicodeObjective) &&
-        ProgramFilter.filterProgramsByOperator(program, programFilters.value.operatorAidSelected)
+        ProgramFilter.filterProgramsByOperator(program, programFilters.value.operatorAidSelected as ProgramOperatorType[]) &&
+        ProgramFilter.filterProgramsByRegion(program, programFilters.value.regionAidSelected as Regions[])
       )
     })
   }
-  function getProgramsOperators(programs: ProgramData[]): string[] {
-    const operators = programs.map((program: ProgramData) => program['opérateur de contact'])
-    return [...new Set(operators)]
-  }
-  function getProgramsRegions(programs: ProgramData[]): string[] {
-    console.log('programs', programs)
-    const operators = programs.map((program: ProgramData) => program['opérateur de contact'])
-    return [...new Set(operators)]
-  }
+
   async function getProgramById(id: string): Promise<Result<ProgramData, Error>> {
     currentProgram.value = undefined
 
@@ -124,8 +120,6 @@ export const useProgramStore = defineStore('program', () => {
     programFilters,
     programsByUsedTracks,
     getProgramsByFilters,
-    getProgramsOperators,
-    getProgramsRegions,
     getProgramById,
     hasObjectiveTypeFilter,
     hasObjectiveTypeSelected,
