@@ -5,7 +5,7 @@
   >
     <div
       v-if="imglink"
-      class="image-container fr-col-12 fr-col-md-3 fr-mb-2v fr-mb-md-0"
+      class="image-container fr-col-md-2 fr-mb-2v fr-mb-md-0"
     >
       <img
         :src="imglink"

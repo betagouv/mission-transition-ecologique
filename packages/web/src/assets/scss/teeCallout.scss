@@ -8,25 +8,35 @@
   padding: 0.5rem 1rem 0 1rem !important;
   margin-bottom: 0;
   height: 100%;
-  @media screen and (max-width: 48em) {
-    padding-bottom: 1rem !important;
-  }
 
   & p {
+    margin-bottom: 0;
+    padding-bottom: 0.5rem;
+    white-space: pre-wrap;
     color: white !important;
     font-weight: bold;
+    @media screen and (max-width: 62em) {
+      //font-size: 1rem;
+      font-size: 0.9rem;
+      //font-size: 0.8rem;
+    }
   }
 
-  & .image-container {
-    align-items: end !important;
-    //apply fr-col-xl-2 style
-    @media screen and (min-width: 78em) {
-      flex: 0 0 calc(200% / 12);
-      width: calc(200% / 12);
-      max-width: calc(200% / 12);
-    }
-    & img {
-      height: 5rem !important;
+  & .image {
+    max-width: 100%;
+    height: auto;
+    &-container {
+      margin-left: -1rem;
+      margin-right: 0.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: end !important;
+      @media screen and (max-width: 62em) {
+        display: none;
+      }
+      & img {
+        height: 5rem !important;
+      }
     }
   }
 
@@ -52,23 +62,6 @@
     font-weight: 700;
     line-height: 3.5rem; /* 116.667% */
     margin-bottom: 0.75rem;
-  }
-
-  p {
-    margin-bottom: 0rem;
-    white-space: pre-wrap;
-  }
-
-  .image-container {
-    margin-left: -1rem;
-    margin-right: 0.2rem;
-    display: flex;
-    justify-content: center;
-  }
-
-  .image {
-    max-width: 100%;
-    height: auto;
   }
 
   .content {
