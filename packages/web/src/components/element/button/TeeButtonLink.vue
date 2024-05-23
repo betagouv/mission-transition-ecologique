@@ -1,6 +1,6 @@
 <template>
   <RouterLink
-    class="fr-btn fr-btn--tertiary-no-outline"
+    class="fr-btn fr-btn--tertiary-no-outline fr-btn-bg"
     :class="[icon, classes]"
     :to="props.to"
   >
@@ -36,12 +36,3 @@ const classes = computed(() => {
   }
 })
 </script>
-
-<style scoped lang="scss">
-.fr-btn {
-  &:hover,
-  &:active {
-    background-color: rgba(0, 0, 0, 0.05);
-  }
-}
-</style>
