@@ -1,4 +1,4 @@
-export enum Regions {
+export enum Region {
   AuvergneRhoneAlpes = 'Auvergne-Rhône-Alpes',
   BourgogneFrancheComte = 'Bourgogne-Franche-Comté',
   Bretagne = 'Bretagne',

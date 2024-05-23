@@ -12,7 +12,7 @@ import {
   ProgramAidType,
   ProgramOperatorType,
   PublicodeObjective,
-  Regions,
+  Region,
   type ProgramData,
   TrackId,
   QuestionnaireDataEnum,
@@ -57,7 +57,7 @@ export const useProgramStore = defineStore('program', () => {
         ProgramFilter.filterProgramsByAidType(program, programFilters.value.programAidTypesSelected as ProgramAidType[]) &&
         ProgramFilter.filterProgramsByObjective(program, programFilters.value.objectiveTypeSelected as PublicodeObjective) &&
         ProgramFilter.filterProgramsByOperator(program, programFilters.value.operatorAidSelected as ProgramOperatorType[]) &&
-        ProgramFilter.filterProgramsByRegion(program, programFilters.value.regionAidSelected as Regions[])
+        ProgramFilter.filterProgramsByRegion(program, programFilters.value.regionAidSelected as Region[])
       )
     })
   }

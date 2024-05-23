@@ -2,7 +2,7 @@ import {
   PublicodesKeys,
   PublicodeObjective,
   ProgramAidType,
-  Regions,
+  Region,
   ProgramOperatorType,
   type ProgramData,
   type programFiltersType,
@@ -17,13 +17,19 @@ export default class ProgramFilter {
     }
     return programAidTypesSelected.includes(program["nature de l'aide"])
   }
-  static filterProgramsByRegion(program: ProgramData, regionsSelected: Regions[]) {
-    console.log(regionsSelected, program["conditions d'éligibilité"]['secteur géographique'])
+  static filterProgramsByRegion(program: ProgramData, regionsSelected: Region[]) {
     if (!this.isValidFilterValues(regionsSelected)) {
       return true
     }
-    if ()
-    return true
+    const geoSectors = program["conditions d'éligibilité"]['secteur géographique']
+      .map((regionString: Region) => regionString.split(', '))
+      .flat()
+
+    if (geoSectors.includes("France et territoires d'outre-mer")) {
+      return true
+    }
+    const matchingRegions = regionsSelected.filter((regionString: Region) => geoSectors.includes(regionString))
+    return matchingRegions.length > 0
   }
 
   static filterProgramsByOperator(program: ProgramData, programOperatorsSelected: ProgramOperatorType[]) {
