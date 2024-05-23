@@ -1,14 +1,8 @@
 <template>
   <div class="fr-grid-row fr-grid-row--gutters">
-    <div class="fr-col-12 fr-col-md-6">
-      <DsfrSelect
-        v-model="programFilters.programAidTypeSelected"
-        :options="programAidTypeOptions"
-      />
-    </div>
     <div
       v-if="programStore.hasObjectiveTypeFilter()"
-      class="fr-col-12 fr-col-md-6"
+      class="fr-col-12"
     >
       <TeeDsfrTags
         v-model="programFilters.objectiveTypeSelected"
@@ -20,9 +14,8 @@
 
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
-import { ObjectiveType, ProgramAidType, type programFiltersType } from '@/types'
+import { ObjectiveType, type programFiltersType } from '@/types'
 import Objective from '@/utils/objective'
-import { DsfrSelect, DsfrSelectProps } from '@gouvminint/vue-dsfr'
 import { TeeDsfrTagProps } from '@/components/element/tag/TeeDsfrTag.vue'
 
 const programStore = useProgramStore()
@@ -58,33 +51,6 @@ const objectiveTypeTags = computed<TeeDsfrTagProps[]>((): TeeDsfrTagProps[] => {
 
   return tags
 })
-
-const programAidTypeOptions: DsfrSelectProps['options'] = [
-  {
-    text: "Filtrer par nature de l'aide",
-    value: ''
-  },
-  {
-    text: 'Accompagnement',
-    value: ProgramAidType.acc
-  },
-  {
-    text: 'Financement',
-    value: ProgramAidType.fund
-  },
-  {
-    text: 'Prêt',
-    value: ProgramAidType.loan
-  },
-  {
-    text: 'Avantage fiscal',
-    value: ProgramAidType.tax
-  },
-  {
-    text: 'Formation',
-    value: ProgramAidType.train
-  }
-]
 
 function isActive(objectiveTag: ObjectiveType) {
   return Objective.getTags().length === 1 || programFilters.objectiveTypeSelected === (objectiveTag.value as string)

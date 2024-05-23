@@ -9,12 +9,11 @@ import {
 } from '@/types'
 
 export default class ProgramFilter {
-  static filterProgramsByAidType(program: ProgramData, programAidTypeSelected: ProgramAidType) {
-    if (!this.isValidFilterValue(programAidTypeSelected)) {
+  static filterProgramsByAidType(program: ProgramData, programAidTypesSelected: ProgramAidType[]) {
+    if (!this.isValidFilterValues(programAidTypesSelected)) {
       return true
     }
-
-    return program["nature de l'aide"] === programAidTypeSelected
+    return programAidTypesSelected.includes(program["nature de l'aide"])
   }
 
   static filterProgramsByObjective(program: ProgramData, objectiveTypeSelected: PublicodeObjective) {
@@ -31,5 +30,8 @@ export default class ProgramFilter {
 
   static isValidFilterValue(programFilterValue: ValueOf<programFiltersType>) {
     return programFilterValue !== ''
+  }
+  static isValidFilterValues(programFilterValue: ValueOf<programFiltersType>) {
+    return programFilterValue.length > 0
   }
 }
