@@ -1,7 +1,7 @@
 <template>
   <div
     :id="RouteName.QuestionnaireResult"
-    class="fr-container--fluid"
+    class="fr-container--fluid fr-container--fluid--no-overflow"
   >
     <TeeEligibilityCriteria
       v-if="linkToPreviousButton"
@@ -9,15 +9,14 @@
       bg-bar-color="blue--light"
       :previous-route="linkToPreviousButton"
     />
-    <div class="fr-grid-row fr-grid-row-gutters fr-justify-center">
-      <div
-        class="fr-tee-add-padding fr-mt-10v fr-col-3 fr-col-md-4 fr-col-lg-3 fr-col-xl-2 fr-col-sm-hide"
-        style="height: 100%"
-      >
-        <TrackSidebar />
+    <div class="fr-grid-row fr-justify-center">
+      <div class="fr-mr-5v fr-col-2 fr-col-sm-2 fr-col-md-3 fr-col-lg-2 fr-hidden-xs">
+        <div class="fr-sidemenu fr-sidemenu--sticky">
+          <div class="fr-text--bold fr-text-left fr-mb-3v">Filtres</div>
+          <ProgramFiltersAccordeon />
+        </div>
       </div>
-
-      <div class="fr-grid-row--center fr-px-md-2v fr-col fr-col-sm-12 fr-col-md-8 fr-col-lg-9 fr-col-xl-8">
+      <div class="fr-grid-row--center fr-col fr-col-sm-9 fr-col-md-8 fr-col-lg-9 fr-col-xl-8">
         <ProgramList />
       </div>
     </div>
@@ -26,7 +25,6 @@
 
 <script setup lang="ts">
 import ProgramList from '@/components/program/list/ProgramList.vue'
-import TrackSidebar from '@/components/track/TrackSidebar.vue'
 import { RouteName } from '@/types/routeType'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { useNavigationStore } from '@/stores/navigation'

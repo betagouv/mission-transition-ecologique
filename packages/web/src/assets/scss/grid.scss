@@ -29,3 +29,22 @@
     }
   }
 }
+
+.fr-container {
+  @each $breakpoint, $value in breakpoints.$values {
+    $mod: '-#{$breakpoint}';
+
+    @if $breakpoint == xs {
+      $mod: '';
+    }
+    &#{$mod} {
+      &--fluid {
+        &--no-overflow {
+          @include media-query.respond-from($breakpoint) {
+            overflow: unset;
+          }
+        }
+      }
+    }
+  }
+}
