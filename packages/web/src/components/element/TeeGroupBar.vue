@@ -1,6 +1,6 @@
 <template>
   <div
-    class="fr-grid-row fr-py-1-5v"
+    class="fr-grid-row fr-py-1-5v fr-text--sm"
     :class="rowClass"
   >
     <template

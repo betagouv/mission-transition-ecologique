@@ -14,8 +14,20 @@
         </TeeButtonLink>
       </div>
     </div>
-    <div class="fr-px-md-2v fr-my-auto fr-col-hidden-xs fr-col-unhidden-md fr-col-md-8 fr-col-lg-9 fr-col-xl-8 fr-text--sm fr-px-0">
+    <div class="fr-px-md-2v fr-my-auto fr-col-hidden-xs fr-col-unhidden-md fr-col-md-8 fr-col-lg-9 fr-col-xl-8 fr-px-0 fr-text-left">
       <div class="fr-container">
+        <div
+          v-if="message"
+          class="fr-mb-1v fr-ml-2v fr-text--blue-france"
+        >
+          <span
+            v-if="messageIcon"
+            class="fr-mr-1-5v"
+            :class="messageIcon"
+            aria-hidden="true"
+          />
+          {{ message }}
+        </div>
         <TeeGroupBar
           :infos="criteria"
           :bg-color="bgBarColor"
@@ -36,6 +48,8 @@ interface Props {
   bgColor?: Color
   bgBarColor?: Color
   previousRoute: RouteLocationRaw
+  message?: string
+  messageIcon?: string
 }
 
 const props = defineProps<Props>()

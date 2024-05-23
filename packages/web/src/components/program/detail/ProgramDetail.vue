@@ -3,8 +3,9 @@
     v-if="!isCatalogDetail"
     :bg-color="Color.greenLightnessed"
     :bg-bar-color="Color.greenLighted"
-    bg-light
     :previous-route="routeToPrograms"
+    message="Cette aide correspond à vos critères d’éligibilité"
+    message-icon="fr-icon-checkbox-circle-fill"
   />
   <div class="fr-container-fluid fr-px-0 fr-px-md-20v fr-mt-3v">
     <div class="fr-grid-row fr-grid-row-gutters">
