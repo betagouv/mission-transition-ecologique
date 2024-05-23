@@ -5,7 +5,7 @@
     <div class="fr-grid-row">
       <div
         v-if="navigationStore.isCatalog() && !hasError"
-        class="fr-col-offset-10 fr-hidden-lg fr-hidden-xl fr-hidden-md fr-hidden-sm"
+        class="fr-col-offset-10 fr-hidden-sm"
       >
         <ProgramModalFilter />
       </div>
@@ -47,21 +47,15 @@
           :email="Contact.email"
         />
       </div>
-      <div class="fr-col-12">
-        <div class="fr-container--fluid">
-          <div class="fr-grid-row">
-            <router-link
-              v-for="program in filteredPrograms"
-              :id="program.id"
-              :key="program.id"
-              :to="getRouteToProgramDetail(program.id)"
-              class="fr-col-12 fr-card fr-enlarge-link fr-card--horizontal-tier fr-mb-10v"
-            >
-              <ProgramCard :program="program" />
-            </router-link>
-          </div>
-        </div>
-      </div>
+      <router-link
+        v-for="program in filteredPrograms"
+        :id="program.id"
+        :key="program.id"
+        :to="getRouteToProgramDetail(program.id)"
+        class="fr-col-12 fr-card fr-enlarge-link fr-card--horizontal-tier fr-mb-10v"
+      >
+        <ProgramCard :program="program" />
+      </router-link>
     </div>
   </div>
 </template>
