@@ -15,5 +15,12 @@
         background-color: color.scale($properties, $alpha: -50%);
       }
     }
+    &--lightness {
+      @if type-of($properties) == map {
+        background-color: color.scale(map-get($properties, "background-color"), $alpha: -75%);
+      } @else {
+        background-color: color.scale($properties, $alpha: -75%);
+      }
+    }
   }
 }

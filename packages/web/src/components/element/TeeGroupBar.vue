@@ -20,10 +20,12 @@
 </template>
 
 <script setup lang="ts">
+import { Color } from '@/types'
+
 interface Props {
   infos: { icon: string; text: string }[]
   radiusSize?: '2v' | '4v'
-  bgColor?: string
+  bgColor?: Color
 }
 
 const props = defineProps<Props>()

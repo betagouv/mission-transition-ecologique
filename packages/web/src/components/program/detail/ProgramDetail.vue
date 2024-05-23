@@ -1,8 +1,8 @@
 <template>
   <TeeEligibilityCriteria
     v-if="!isCatalogDetail"
-    bg-color="green"
-    bg-bar-color="green"
+    :bg-color="Color.greenLightnessed"
+    :bg-bar-color="Color.greenLighted"
     bg-light
     :previous-route="routeToPrograms"
   />
@@ -247,7 +247,7 @@ import ProgramTile from '@/components/program/detail/ProgramTile.vue'
 import Config from '@/config'
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
-import { type ProgramData as ProgramType } from '@/types'
+import { Color, type ProgramData as ProgramType } from '@/types'
 import { RouteName } from '@/types/routeType'
 import Contact from '@/utils/contact'
 import Matomo from '@/utils/matomo'

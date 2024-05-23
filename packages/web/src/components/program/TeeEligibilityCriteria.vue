@@ -26,14 +26,14 @@
 </template>
 
 <script setup lang="ts">
+import { Color } from '@/types'
 import Format from '@/utils/format'
 import TrackStructure from '@/utils/track/trackStructure'
 import type { RouteLocationRaw } from 'vue-router'
 
 interface Props {
-  bgColor?: string
-  bgBarColor?: string
-  bgLight?: boolean
+  bgColor?: Color
+  bgBarColor?: Color
   previousRoute: RouteLocationRaw
 }
 
@@ -63,7 +63,7 @@ if (TrackStructure.hasSiret()) {
 
 const bgClass = computed(() => {
   if (props.bgColor) {
-    return [`fr-bg--${props.bgColor}${props.bgLight ? '--light' : ''}`]
+    return [`fr-bg--${props.bgColor}`]
   }
 
   return []
