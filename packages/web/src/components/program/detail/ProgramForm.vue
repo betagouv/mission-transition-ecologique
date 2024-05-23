@@ -25,37 +25,51 @@
     <!-- FIELDS -->
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-2v">
       <div class="fr-col-12 fr-col-md-6">
-        <DsfrInputGroup>
+        <DsfrInputGroup
+          :error-message="getErrorMessage(opportunityForm.name)"
+          :valid-message="getValidMessage(opportunityForm.name)"
+        >
           <DsfrInput
             type="text"
             :model-value="opportunityForm.name.value"
             label-visible
+            :is-valid="opportunityForm.name.isValid"
             :required="opportunityForm.name.required"
             :label="opportunityForm.name.label"
             @update:model-value="updateOpportunityForm($event, 'name')"
+            @focusout="validateFormField(opportunityForm.name)"
           >
           </DsfrInput>
         </DsfrInputGroup>
       </div>
       <div class="fr-col-12 fr-col-md-6">
-        <DsfrInputGroup>
+        <DsfrInputGroup
+          :error-message="getErrorMessage(opportunityForm.surname)"
+          :valid-message="getValidMessage(opportunityForm.surname)"
+        >
           <DsfrInput
             type="text"
             :model-value="opportunityForm.surname.value"
             label-visible
+            :is-valid="opportunityForm.surname.isValid"
             :required="opportunityForm.surname.required"
             :label="opportunityForm.surname.label"
             @update:model-value="updateOpportunityForm($event, 'surname')"
+            @focusout="validateFormField(opportunityForm.surname)"
           >
           </DsfrInput>
         </DsfrInputGroup>
       </div>
       <div class="fr-col-12 fr-col-md-12">
-        <DsfrInputGroup :error-message="getErrorMessage(opportunityForm.email)">
+        <DsfrInputGroup
+          :error-message="getErrorMessage(opportunityForm.email)"
+          :valid-message="getValidMessage(opportunityForm.email)"
+        >
           <DsfrInput
             type="email"
             :model-value="opportunityForm.email.value"
             label-visible
+            :is-valid="opportunityForm.email.isValid"
             :required="opportunityForm.email.required"
             :label="opportunityForm.email.label"
             :hint="opportunityForm.email.hint"
@@ -66,11 +80,15 @@
         </DsfrInputGroup>
       </div>
       <div class="fr-col-12 fr-col-md-12">
-        <DsfrInputGroup :error-message="getErrorMessage(opportunityForm.tel)">
+        <DsfrInputGroup
+          :error-message="getErrorMessage(opportunityForm.tel)"
+          :valid-message="getValidMessage(opportunityForm.tel)"
+        >
           <DsfrInput
             type="tel"
             :model-value="opportunityForm.tel.value"
             label-visible
+            :is-valid="opportunityForm.tel.isValid"
             :required="opportunityForm.tel.required"
             :label="opportunityForm.tel.label"
             :hint="opportunityForm.tel.hint"
@@ -81,11 +99,15 @@
         </DsfrInputGroup>
       </div>
       <div class="fr-col-12 fr-col-md-12">
-        <DsfrInputGroup :error-message="getErrorMessage(opportunityForm.siret)">
+        <DsfrInputGroup
+          :error-message="getErrorMessage(opportunityForm.siret)"
+          :valid-message="getValidMessage(opportunityForm.siret)"
+        >
           <DsfrInput
             type="text"
             :model-value="opportunityForm.siret.value"
             label-visible
+            :is-valid="opportunityForm.siret.isValid"
             :required="opportunityForm.siret.required"
             :label="opportunityForm.siret.label"
             :hint="opportunityForm.siret.hint"
@@ -96,16 +118,21 @@
         </DsfrInputGroup>
       </div>
       <div class="fr-col-12 fr-col-md-12">
-        <DsfrInputGroup>
+        <DsfrInputGroup
+          :error-message="getErrorMessage(opportunityForm.needs)"
+          :valid-message="getValidMessage(opportunityForm.needs)"
+        >
           <DsfrInput
             type="textarea"
             is-textarea
             rows="8"
             :model-value="opportunityForm.needs.value"
             label-visible
+            :is-valid="opportunityForm.needs.isValid"
             :required="opportunityForm.needs.required"
             :label="opportunityForm.needs.label"
             @update:model-value="updateOpportunityForm($event, 'needs')"
+            @focusout="validateFormField(opportunityForm.needs)"
           >
           </DsfrInput>
         </DsfrInputGroup>
@@ -114,8 +141,10 @@
         <DsfrCheckbox
           :model-value="opportunityForm.cgu.value"
           name="cgu"
+          :is-valid="opportunityForm.cgu.isValid"
           :required="opportunityForm.cgu.required"
           @update:model-value="updateOpportunityForm($event, 'cgu')"
+          @focusout="validateFormField(opportunityForm.cgu)"
         >
           <template #label>
             <span> {{ opportunityForm.cgu.label }} <code>*</code></span>
@@ -213,10 +242,10 @@
 import { scrollToElementCenter } from '@/utils/helpers'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { computed, ref } from 'vue'
-import { isValidatedStringFieldInputType, type ProgramData, type ReqResp, TrackId, ValidatedStringFieldInputType } from '@/types'
+import { InputFieldUnionType, isValidatedStringFieldInputType, type ProgramData, type ReqResp, TrackId } from '@/types'
 import Translation from '@/utils/translation'
 import TeeDsfrButton from '@/components/element/TeeDsfrButton.vue'
-import { DsfrInput, DsfrInputGroup, DsfrCheckbox } from '@gouvminint/vue-dsfr'
+import { DsfrCheckbox, DsfrInput, DsfrInputGroup } from '@gouvminint/vue-dsfr'
 import Matomo from '@/utils/matomo'
 import { RouteName } from '@/types/routeType'
 import { useRoute } from 'vue-router'
@@ -239,10 +268,11 @@ interface Props {
 const props = defineProps<Props>()
 
 const opportunityForm = ref<OpportunityFormType>({
-  name: { required: true, value: undefined, label: 'Prénom' },
-  surname: { required: true, value: undefined, label: 'Nom' },
+  name: { required: true, value: undefined, label: 'Prénom', isValid: undefined },
+  surname: { required: true, value: undefined, label: 'Nom', isValid: undefined },
   tel: {
     required: true,
+    isValid: undefined,
     value: undefined,
     label: 'Téléphone',
     hint: 'Format attendu : 01 22 33 44 55',
@@ -251,6 +281,7 @@ const opportunityForm = ref<OpportunityFormType>({
   },
   email: {
     required: true,
+    isValid: undefined,
     value: undefined,
     label: 'Email',
     hint: 'Format attendu : nom@domaine.fr',
@@ -259,6 +290,7 @@ const opportunityForm = ref<OpportunityFormType>({
   },
   siret: {
     required: true,
+    isValid: undefined,
     value: usedTrack.findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'siret'),
     label: 'SIRET de votre entreprise',
     hint: 'Format attendu : 14 chiffres',
@@ -267,6 +299,7 @@ const opportunityForm = ref<OpportunityFormType>({
   },
   needs: {
     required: true,
+    isValid: undefined,
     value: Translation.t('program.form.needs', {
       secteur:
         usedTrack.findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'secteur') ??
@@ -277,11 +310,13 @@ const opportunityForm = ref<OpportunityFormType>({
   },
   cgu: {
     required: true,
+    isValid: undefined,
     value: false,
     label: "J'accepte d'être recontacté par l'équipe de Transition Écologique des Entreprises"
   },
   linkToProgramPage: {
     required: true,
+    isValid: undefined,
     value: new URL(route.fullPath, window.location.origin).href
   }
 })
@@ -293,13 +328,7 @@ const isFormFilled = computed(() => {
   const isFilled = []
   for (const key in opportunityForm.value) {
     if (opportunityForm.value[key].required) {
-      isFilled.push(
-        !(
-          opportunityForm.value[key].value === undefined ||
-          opportunityForm.value[key].value === '' ||
-          opportunityForm.value[key].value === false
-        )
-      )
+      isFilled.push(isFieldValid(opportunityForm.value[key]))
     }
   }
   return isFilled.every((v) => v)
@@ -335,9 +364,16 @@ const updateOpportunityForm = (ev: string | boolean, id: string) => {
   }
 }
 
-const validateFormField = (field: ValidatedStringFieldInputType): void => {
+const isFieldValid = (field: InputFieldUnionType): boolean => {
+  return field.value !== undefined && field.value !== '' && field.value !== false
+}
+
+const validateFormField = (field: InputFieldUnionType): void => {
   if (isValidatedStringFieldInputType(field)) {
-    field.isValid = field.validation(field.value) as boolean
+    if (field.label?.includes('SIRET')) field.isValid = field.validation(field.value, true) as boolean
+    else field.isValid = field.validation(field.value) as boolean
+  } else {
+    field.isValid = isFieldValid(field)
   }
 }
 
@@ -363,7 +399,14 @@ const scrollToFormContainer = () => {
   }
 }
 
-const getErrorMessage = (field: ValidatedStringFieldInputType): string => {
-  return field.isValid === false ? field.errorMessage : ''
+const getErrorMessage = (field: InputFieldUnionType): string => {
+  if (isValidatedStringFieldInputType(field)) {
+    return field.isValid === false ? field.errorMessage : ''
+  }
+  return field.isValid === false ? 'Ce champ est obligatoire.' : ''
+}
+
+const getValidMessage = (field: InputFieldUnionType): string => {
+  return field.isValid === true ? ' ' : ''
 }
 </script>
