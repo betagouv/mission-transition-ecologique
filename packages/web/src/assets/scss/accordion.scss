@@ -21,10 +21,10 @@
       &--#{$color} {
         .fr-collapse--expanded{
           @if type-of($properties) == map {
-          background: map-get($properties, "color");
-        } @else {
-          background: $properties;
-        }
+            background: map-get($properties, "color");
+          } @else {
+            background: $properties;
+          }
         }
       }
     }
