@@ -1,3 +1,48 @@
 .tee-align-items-center {
   align-items: center;
 }
+
+.fr-footer {
+  &__content {
+    flex-basis: fit-content;
+  }
+
+  &__partners-sub {
+    padding: 0;
+    display: flex;
+    justify-content: end;
+  }
+
+  @media screen and (max-width: 62rem) {
+    &__body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__content {
+      margin-left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &-list {
+        justify-content: center;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1275px) {
+    &__partners {
+      &-logos {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      &-sub {
+        width: 100%;
+        max-width: 100%;
+        justify-content: center;
+      }
+    }
+  }
+}

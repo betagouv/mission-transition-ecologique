@@ -3,27 +3,14 @@
   <div :class="`fr-footer ${stickToBottom ? 'tee-footer-bottom' : ''}`">
     <div class="fr-container--fluid fr-mx-20v">
       <!-- FOOTER BODY -->
-      <div class="fr-footer__body">
-        <div class="fr-footer__brand fr-enlarge-link">
+      <div class="fr-footer__body fr-grid-row">
+        <div class="fr-footer__brand fr-col-lg-3">
           <p class="fr-logo">
             République
             <br />Française
           </p>
-          <router-link
-            class="fr-footer__brand-link"
-            to="/"
-            title="Retour à l’accueil du site - Transition Ecologique des entreprises - République Française"
-          >
-            <!--            <img-->
-            <!--              class="fr-footer__logo tee-footer-app-logo"-->
-            <!--              src="/images/logos/mission-transition-logo-alone.png"-->
-            <!--              alt="Transition Ecologique des entreprises"-->
-            <!--            />-->
-            <!-- L’alternative de l’image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l’image -->
-          </router-link>
         </div>
-        <div class="fr-footer__content">
-          <!-- <p class="fr-footer__content-desc">Lorem [...] elit ut.</p> -->
+        <div class="fr-footer__content fr-col-lg-9">
           <ul class="fr-footer__content-list">
             <li
               v-for="link in gouvLinks"
@@ -45,8 +32,8 @@
       <!-- FOOTER PARTNERS -->
       <div class="fr-footer__partners">
         <h4 class="fr-footer__partners-title">Nos partenaires</h4>
-        <div class="fr-footer__partners-logos tee-align-items-center">
-          <div class="fr-footer__partners-main">
+        <div class="fr-footer__partners-logos tee-align-items-center fr-grid-row">
+          <div class="fr-footer__partners-main fr-col-xl-3 fr-col-12">
             <a
               class="footer__partners-link fr-my-4v fr-mr-4v tee-router-link"
               target="_blank"
@@ -59,7 +46,7 @@
               />
             </a>
           </div>
-          <div class="fr-footer__partners-sub fr-grid-row--middle tee-align-items-center">
+          <div class="fr-footer__partners-sub tee-align-items-center fr-col-xl-9 fr-col-12">
             <ul
               v-for="operator in operators"
               :key="operator.label"
@@ -175,19 +162,10 @@ const gouvLinks = [
 const mainPartner = {
   label: 'Service public',
   img: '/images/logos/service-public.fr.svg',
-  href: 'https://service-public.fr'
+  href: 'https://conseillers-entreprises.service-public.fr/'
 }
-// {
-//   label: 'Aides-territoires',
-//   img: '/images/logos/aides-territoires.png',
-//   href: 'https://aides-territoires.beta.gouv.fr/'
-// }
 
 const mainLinks = [
-  // {
-  //   label: 'Plan du site',
-  //   to: '/plan-du-site'
-  // },
   {
     // router ok
     label: 'Accessibilité : Non conforme',
