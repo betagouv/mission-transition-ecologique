@@ -12,7 +12,8 @@ export enum QuestionnaireRoute {
 export enum BuildingProperty {
   Owns = 'proprietaire',
   Rents = 'locataire',
-  OwnsAndRents = 'proprietaire-et-locataire'
+  OwnsAndRents = 'proprietaire-et-locataire',
+  NoProfessionalBuilding = 'ni-proprietaire-ni-locataire'
 }
 
 export enum SiretValue {

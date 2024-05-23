@@ -51,6 +51,15 @@ export const buildingProperty: Track = {
       next: {
         default: TrackId.MobilityWishes
       }
+    },
+    {
+      value: BuildingProperty.NoProfessionalBuilding,
+      questionnaireData: { building_property: BuildingProperty.NoProfessionalBuilding },
+      title: { fr: 'Pas de locaux' },
+      label: { fr: 'Je ne dispose pas de locaux professionnels' },
+      next: {
+        default: TrackId.MobilityWishes
+      }
     }
   ]
 }
