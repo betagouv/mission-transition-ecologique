@@ -25,6 +25,10 @@ export default class Config extends ConfigCommon {
     return parseInt(this.getEnvValue('BREVO_SENDER_ID'))
   }
 
+  public static get PDE_API_TOKEN(): string {
+    return this.getEnvValue('PDE_API_TOKEN')
+  }
+
   public static get BREVO_DEAL_PIPELINE(): string | undefined {
     try {
       return this.getEnvValue('BREVO_DEAL_PIPELINE')

@@ -1,5 +1,5 @@
 import { Maybe, Result } from 'true-myth'
-import type { ContactRepository, MailerService, OpportunityRepository } from './spi'
+import type { ContactRepository, MailerService, OpportunityRepository, PDEService } from './spi'
 import type { OpportunityId, Opportunity, ContactDetails } from './types'
 import OperatorFeatures from '../../operator/domain/operatorFeatures'
 import { OperatorRepository } from '../../operator/domain/spi'
@@ -13,19 +13,22 @@ export default class OpportunityFeatures {
   private readonly _operatorRepositories: OperatorRepository[]
   private readonly _programRepository: ProgramRepository
   private readonly _mailRepository: MailerService
+  private readonly _PDEservice: PDEService
 
   constructor(
     contactRepository: ContactRepository,
     opportunityRepository: OpportunityRepository,
     operatorRepositories: OperatorRepository[],
     programRepository: ProgramRepository,
-    mailRepository: MailerService
+    mailRepository: MailerService,
+    PDEservice: PDEService
   ) {
     this._contactRepository = contactRepository
     this._opportunityRepository = opportunityRepository
     this._operatorRepositories = operatorRepositories
     this._programRepository = programRepository
     this._mailRepository = mailRepository
+    this._PDEservice = PDEservice
   }
 
   createOpportunity = async (opportunity: Opportunity, optIn: true): Promise<Result<OpportunityId, Error>> => {
@@ -42,6 +45,12 @@ export default class OpportunityFeatures {
     if (!opportunityResult.isErr && program) {
       this._sendReturnReceipt(opportunity, program)
       this._createOpportunityOnOperator(opportunityResult.value, opportunity, program)
+      if (opportunity.programContactOperator && opportunity.programContactOperator !== 'Bpifrance') {
+        const PDEresult = await this._createOpportunityOnPDE(opportunity, program)
+        if (PDEresult.isErr) {
+          // TODO : send an email to the admin.
+        }
+      }
     }
 
     return opportunityResult
@@ -79,5 +88,13 @@ export default class OpportunityFeatures {
         // TODO: Send an email to the admin: Receipt not sent or add error on sentry
       }
     })
+  }
+
+  async getPDELandingID(): Promise<Result<number, Error>> {
+    return this._PDEservice.getLandingId()
+  }
+
+  private async _createOpportunityOnPDE(opportunity: Opportunity, program: Program): Promise<Result<true, Error>> {
+    return await this._PDEservice.createOpportunity(opportunity, program)
   }
 }

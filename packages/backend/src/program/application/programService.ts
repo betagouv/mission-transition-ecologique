@@ -7,6 +7,7 @@ import { QuestionnaireData } from '../domain/types/types'
 import ProgramsJson from '../infrastructure/programsJson'
 import { currentDateService } from '../infrastructure/currentDate'
 import { PublicodesService } from '../infrastructure/publicodesService'
+import { Objective } from '@tee/common/src/questionnaire/types'
 
 export default class ProgramService {
   private _program: ProgramFeatures
@@ -30,5 +31,9 @@ export default class ProgramService {
 
   public getAll(): Program[] {
     return this._program.getAll()
+  }
+
+  public getObjectives(id: string): Objective[] {
+    return this._program.getObjectives(id)
   }
 }

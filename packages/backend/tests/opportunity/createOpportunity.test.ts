@@ -10,7 +10,7 @@ import {
 import OpportunityFeatures from '../../src/opportunity/domain/opportunityFeatures'
 import { expectToBeErr, expectToBeOk } from '../testing'
 import { fakeOpportunity } from './testing'
-import type { ContactRepository, OpportunityRepository } from '../../src/opportunity/domain/spi'
+import type { ContactRepository, OpportunityRepository, PDEService } from '../../src/opportunity/domain/spi'
 import { ProgramRepository } from '../../src/program/domain/spi'
 import { Program } from '@tee/data/src/type/program'
 
@@ -51,14 +51,22 @@ const dummyOpportunitiesDates = (): Promise<Result<Date[], Error>> => {
   return Promise.resolve(Result.ok([new Date(2024, 0, 1)]))
 }
 
+const dummyPDELanding = (): Promise<Result<number, Error>> => {
+  return Promise.resolve(Result.ok(1))
+}
+
 const dummyOpportunityRepository: OpportunityRepository = {
   create: dummyAddOpportunity,
   update: dummyUpdateOpportunity,
   readDates: dummyOpportunitiesDates
 }
 
+const dummyPDEService: PDEService = {
+  getLandingId: dummyPDELanding
+}
+
 const makeCreateOpportunityFun = (contactRepository: ContactRepository, opportunityRepository: OpportunityRepository) => {
-  return new OpportunityFeatures(contactRepository, opportunityRepository, [], dummyProgramRepository, dummyMailRepository)
+  return new OpportunityFeatures(contactRepository, opportunityRepository, [], dummyProgramRepository, dummyMailRepository, dummyPDEService)
     .createOpportunity
 }
 

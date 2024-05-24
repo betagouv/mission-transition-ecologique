@@ -4,7 +4,7 @@ import { Body, Controller, Example, Post, Res, Route, SuccessResponse, TsoaRespo
 import { ErrorJSON, ValidateErrorJSON } from '../../common/controller/jsonError'
 import { Err } from 'true-myth/dist/es/result'
 import ServiceNotFoundError from '../../common/domain/api/serviceNotFoundError'
-import OpportunityService from '../application/opportunityService'
+import OpportunityInjector from '../application/opportunityService'
 
 @SuccessResponse('200', 'OK')
 @Route('opportunities')
@@ -23,7 +23,7 @@ export class OpportunityController extends Controller {
     @Res() _validationFailedResponse: TsoaResponse<422, ValidateErrorJSON>,
     @Res() notFoundResponse: TsoaResponse<404, ErrorJSON>
   ): Promise<OpportunityId | void> {
-    const opportunityResult = await new OpportunityService().createOpportunity(requestBody.opportunity, requestBody.optIn)
+    const opportunityResult = await new OpportunityInjector().createOpportunity(requestBody.opportunity, requestBody.optIn)
 
     if (opportunityResult.isErr) {
       this.throwErrorResponse(opportunityResult, notFoundResponse, requestFailedResponse)

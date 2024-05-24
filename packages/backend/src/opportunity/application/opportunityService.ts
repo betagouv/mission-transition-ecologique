@@ -4,13 +4,14 @@ import { Result } from 'true-myth'
 import { brevoRepository } from '../infrastructure/api/brevo/brevoDeal'
 import { addBrevoContact } from '../infrastructure/api/brevo/brevoContact'
 import { OperatorRepository } from '../../operator/domain/spi'
-import { BpiFrance } from '../../operator/infrastructure/api/bpi/bpiFrance'
-import { ContactRepository, MailerService, OpportunityRepository } from '../domain/spi'
+// import { BpiFrance } from '../../operator/infrastructure/api/bpi/bpiFrance'
+import { ContactRepository, MailerService, OpportunityRepository, PDEService } from '../domain/spi'
 import { ProgramRepository } from '../../program/domain/spi'
 import ProgramsJson from '../../program/infrastructure/programsJson'
 import BrevoMail from '../infrastructure/api/brevo/brevoMail'
+import { PDE } from '../infrastructure/api/pde/placeDesEntreprises'
 
-export default class OpportunityService {
+export default class OpportunityInjector {
   private _opportunityFeatures: OpportuntiyFeatures
 
   constructor() {
@@ -19,7 +20,8 @@ export default class OpportunityService {
       this._getOpportunityRepository(),
       this._getOperatorRepositories(),
       this._getProgramRepository(),
-      this._getMailRepository()
+      this._getMailRepository(),
+      this._getPDEService()
     )
   }
 
@@ -41,7 +43,7 @@ export default class OpportunityService {
   }
 
   private _getOperatorRepositories(): OperatorRepository[] {
-    return [new BpiFrance()]
+    return []
   }
 
   private _getProgramRepository(): ProgramRepository {
@@ -50,5 +52,13 @@ export default class OpportunityService {
 
   private _getMailRepository(): MailerService {
     return { sendReturnReceipt: new BrevoMail().sendReturnReceipt }
+  }
+
+  private _getPDEService(): PDEService {
+    return { getLandingId: new PDE().getLandingId }
+  }
+
+  public async getPDELandingID(): Promise<Result<number, Error>> {
+    return this._opportunityFeatures.getPDELandingID()
   }
 }
