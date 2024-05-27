@@ -13,7 +13,7 @@ export enum BuildingProperty {
   Owns = 'proprietaire',
   Rents = 'locataire',
   OwnsAndRents = 'proprietaire-et-locataire',
-  NoProfessionalBuilding = 'ni-proprietaire-ni-locataire'
+  No = 'non'
 }
 
 export enum SiretValue {

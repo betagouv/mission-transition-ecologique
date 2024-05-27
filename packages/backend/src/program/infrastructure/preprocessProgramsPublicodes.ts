@@ -115,7 +115,7 @@ const setObjectives = (publicodesData: PublicodesInputData, questionnaireData: Q
       publicodesData[PublicodeObjective.WaterConsumption] = YesNo.Yes
     }
 
-    if (questionnaireData.building_property == BuildingProperty.Rents) {
+    if (questionnaireData.building_property == BuildingProperty.Rents || questionnaireData.building_property == BuildingProperty.No) {
       publicodesData[PublicodesKeys.BuildingOwner] = YesNo.No
     } else {
       publicodesData[PublicodesKeys.BuildingOwner] = YesNo.Yes
