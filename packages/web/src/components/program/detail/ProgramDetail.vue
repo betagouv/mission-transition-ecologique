@@ -196,7 +196,7 @@
             <ProgramTile
               class="tee-no-hover"
               :title="Translation.t('program.programEndValidity')"
-              :image-path="`${publicPath}images/TEE-duree.svg`"
+              :image-path="`${publicPath}images/TEE-date-fin.png`"
               :description="
                 programEndValidity
                   ? Translation.t(Translation.t('program.programAvailableUntil'), { date: programEndValidity })
