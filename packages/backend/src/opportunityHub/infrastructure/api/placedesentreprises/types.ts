@@ -1,3 +1,4 @@
+export { Objective } from '@tee/common/src/questionnaire/types'
 export interface GetLandingResponseData {
   data: Landing[]
   metadata: Metadata
@@ -38,4 +39,25 @@ export const subjectToIdMapping: { [key in Subject]: number } = {
   [Subject.TransportMobilite]: 25,
   [Subject.Dechets]: 23,
   [Subject.BilanRSE]: 26
+}
+
+export interface CreateSolicitationApiBody {
+  solicitation: Solicitation
+}
+export interface Solicitation {
+  landing_id: number
+  landing_subject_id: number
+  description: string
+  full_name: string
+  email: string
+  phone_number: string
+  siret: string
+  location: string
+  api_calling_url: string
+  questions_additionnelles: AdditionalQuestion[]
+}
+
+interface AdditionalQuestion {
+  question_id: number
+  answer: boolean
 }
