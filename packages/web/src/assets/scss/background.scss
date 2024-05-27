@@ -1,4 +1,5 @@
 @use 'setting';
+@use 'tool';
 @use 'sass:color';
 
 @each $color, $properties in setting.$colors {
@@ -10,16 +11,16 @@
     }
     &--light {
       @if type-of($properties) == map {
-        background-color: color.scale(map-get($properties, "background-color"), $alpha: -50%);
+        background-color: tool.scaleAlphaToHex(map-get($properties, "background-color"), -50%);
       } @else {
-        background-color: color.scale($properties, $alpha: -50%);
+        background-color: tool.scaleAlphaToHex($properties, -50%);
       }
     }
     &--lightness {
       @if type-of($properties) == map {
-        background-color: color.scale(map-get($properties, "background-color"), $alpha: -75%);
+        background-color: tool.scaleAlphaToHex(map-get($properties, "background-color"), -75%);
       } @else {
-        background-color: color.scale($properties, $alpha: -75%);
+        background-color: tool.scaleAlphaToHex($properties, -75%);
       }
     }
   }

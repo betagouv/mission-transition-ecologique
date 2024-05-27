@@ -1,5 +1,6 @@
 <template>
   <div
+    ref="eligibilityCriteria"
     class="fr-grid-row fr-grid-row--center fr-text-center fr-grid-row--middle fr-my-auto fr-py-md-1w"
     :class="bgClass"
   >
@@ -41,6 +42,7 @@
 <script setup lang="ts">
 import { Color } from '@/types'
 import Format from '@/utils/format'
+import Sticky from '@/utils/sticky'
 import TrackStructure from '@/utils/track/trackStructure'
 import type { RouteLocationRaw } from 'vue-router'
 
@@ -53,19 +55,31 @@ interface Props {
 }
 
 const props = defineProps<Props>()
+const eligibilityCriteria = ref<HTMLElement>()
+const sticky = ref<Sticky | null>(null)
+
+onMounted(async () => {
+  await nextTick()
+  sticky.value = new Sticky(eligibilityCriteria.value, document.getElementById('tee-header'))
+  sticky.value.addEventListenerOnScroll()
+})
+
+onUnmounted(() => {
+  sticky.value?.removeEventListenerOnScroll()
+})
 
 const criteria = [
   {
     icon: 'fr-icon-check-line',
-    text: Format.truncate(TrackStructure.getSizeTitle(), 30)
+    text: truncate(TrackStructure.getSizeTitle())
   },
   {
     icon: 'fr-icon-check-line',
-    text: Format.capitalize(Format.truncate(TrackStructure.getSector(), 30))
+    text: truncate(TrackStructure.getSector())
   },
   {
     icon: 'fr-icon-check-line',
-    text: Format.truncate(TrackStructure.getLocalisation(), 30)
+    text: truncate(TrackStructure.getLocalisation())
   }
 ]
 
@@ -74,6 +88,10 @@ if (TrackStructure.hasSiret()) {
     icon: 'fr-icon-check-line',
     text: Format.truncate('SIRET ' + TrackStructure.getSiret(), 30)
   })
+}
+
+function truncate(text: string) {
+  return Format.truncate(text, 30)
 }
 
 const bgClass = computed(() => {
