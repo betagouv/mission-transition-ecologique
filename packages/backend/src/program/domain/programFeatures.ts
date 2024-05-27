@@ -1,9 +1,8 @@
-import { Program, QuestionnaireData } from './types/types'
+import { Program, QuestionnaireData, Objective } from './types/types'
 import { CurrentDateService, ProgramRepository, RulesService } from './spi'
 import { filterPrograms } from './filterPrograms'
 import { sortPrograms } from './sortPrograms'
 import { Result } from 'true-myth'
-// import { Objective } from '@tee/common/src/questionnaire/types'
 
 export default class ProgramFeatures {
   private _programRepository: ProgramRepository
@@ -42,22 +41,22 @@ export default class ProgramFeatures {
     return this._programRepository.getAll()
   }
 
-  // public getObjectives(id: string): Objective[] {
-  //   const program = this.getById(id)
-  //   if (program === undefined) {
-  //     return []
-  //   }
-  //   const publicodeObjectives = program.publicodes['entreprise . a un objectif ciblé']?.['une de ces conditions']
-  //   if (!publicodeObjectives) {
-  //     return []
-  //   }
-  //   const objectivesArray: Objective[] = []
-  //   publicodeObjectives.forEach((publicodeObjective) => {
-  //     const objectiveValue = Object.values(Objective).find((value) => publicodeObjective.includes(value))
-  //     if (objectiveValue) {
-  //       objectivesArray.push(objectiveValue as Objective)
-  //     }
-  //   })
-  //   return objectivesArray
-  // }
+  public getObjectives(id: string): Objective[] {
+    const program = this.getById(id)
+    if (program === undefined) {
+      return []
+    }
+    const publicodeObjectives = program.publicodes['entreprise . a un objectif ciblé']?.['une de ces conditions']
+    if (!publicodeObjectives) {
+      return []
+    }
+    const objectivesArray: Objective[] = []
+    publicodeObjectives.forEach((publicodeObjective) => {
+      const objectiveValue = Object.values(Objective).find((value) => publicodeObjective.includes(value))
+      if (objectiveValue) {
+        objectivesArray.push(objectiveValue as Objective)
+      }
+    })
+    return objectivesArray
+  }
 }
