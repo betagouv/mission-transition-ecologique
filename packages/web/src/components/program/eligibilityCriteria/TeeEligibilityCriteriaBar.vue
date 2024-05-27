@@ -4,7 +4,7 @@
     class="fr-grid-row fr-grid-row--center fr-text-center fr-grid-row--middle fr-my-auto fr-py-md-1w"
     :class="bgClass"
   >
-    <div class="fr-col-md-4 fr-col-lg-3 fr-col-xl-2 fr-col-hidden-xs fr-col-unhidden-md">
+    <div class="fr-col-md-4 fr-col-lg-3 fr-col-xl-2 fr-col-hidden fr-col-unhidden-md">
       <div class="fr-col-12">
         <TeeButtonLink
           :to="previousRoute"
@@ -15,7 +15,7 @@
         </TeeButtonLink>
       </div>
     </div>
-    <div class="fr-px-md-2v fr-my-auto fr-col-hidden-xs fr-col-unhidden-md fr-col-md-8 fr-col-lg-9 fr-col-xl-8 fr-px-0 fr-text-left">
+    <div class="fr-px-md-2v fr-my-auto fr-col-hidden fr-col-unhidden-md fr-col-md-8 fr-col-lg-9 fr-col-xl-8 fr-px-0 fr-text-left">
       <div class="fr-container">
         <div
           v-if="message"
