@@ -1,7 +1,7 @@
 import { Result } from 'true-myth'
 import type { CityToRegionMapping, EstablishmentRepository, NafMapping } from './spi'
 import { Establishment, EstablishmentDetails, EstablishmentSearch, SearchResult, EstablishmentFront, Siret } from './types'
-import SiretValidator from '@tee/common/src/establishment/validator/siretValidator'
+import SiretValidator from '../../../../common/src/establishment/validator/siretValidator'
 
 export default class EstablishmentFeatures {
   private readonly _establishmentRepository: EstablishmentRepository
