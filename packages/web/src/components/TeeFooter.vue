@@ -32,7 +32,7 @@
       <!-- FOOTER PARTNERS -->
       <div class="fr-footer__partners">
         <h4 class="fr-footer__partners-title">Nos partenaires</h4>
-        <div class="fr-footer__partners-logos tee-align-items-center fr-grid-row">
+        <div class="fr-footer__partners-logos fr-grid-row">
           <div class="fr-footer__partners-main fr-col-xl-3 fr-col-12">
             <a
               class="footer__partners-link fr-my-4v fr-mr-4v tee-router-link"
@@ -46,7 +46,7 @@
               />
             </a>
           </div>
-          <div class="fr-footer__partners-sub tee-align-items-center fr-col-xl-9 fr-col-12">
+          <div class="fr-footer__partners-sub fr-col-xl-9 fr-col-12">
             <ul
               v-for="operator in operators"
               :key="operator.label"
@@ -200,6 +200,3 @@ const mainLinks = [
   }
 ]
 </script>
-<style scoped lang="scss">
-@import '@/assets/scss/footer.scss';
-</style>

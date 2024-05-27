@@ -1,16 +1,18 @@
-.tee-align-items-center {
-  align-items: center;
-}
-
 .fr-footer {
   &__content {
     flex-basis: fit-content;
   }
 
-  &__partners-sub {
-    padding: 0;
-    display: flex;
-    justify-content: end;
+  &__partners {
+    &-logos {
+      align-items: center !important;
+    }
+    &-sub {
+      padding: 0;
+      display: flex;
+      justify-content: end;
+      align-items: center !important;;
+    }
   }
 
   @media screen and (max-width: 62rem) {
