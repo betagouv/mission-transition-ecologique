@@ -6,14 +6,14 @@
     >
       <li v-if="filter.if === undefined || filter.if">
         <DsfrAccordion
-          :class="props.class"
+          :class="[props.class, filter.accordionClass]"
           :title="filter.title"
           :expanded-id="expandedId"
           @expand="expandFilter"
         >
           <component
             :is="filter.component"
-            :class="filter.class"
+            :class="filter.componentClass"
             legend=""
           />
         </DsfrAccordion>
@@ -40,8 +40,9 @@ const props = defineProps<Props>()
 interface FilterItem {
   title: string
   id: string
+  accordionClass?: string
   component: unknown
-  class?: string
+  componentClass?: string
   if?: boolean
 }
 
@@ -50,13 +51,14 @@ const filters: FilterItem[] = [
     title: "Critères d'éligibilité",
     id: 'eligibility-criteria',
     component: TeeEligibilityCriteriaAccordeon,
-    if: !useNavigationStore().isCatalog()
+    if: !useNavigationStore().isCatalog(),
+    accordionClass: 'fr-hidden-md'
   },
   {
     title: "Types d'aides",
     id: 'type-aid',
     component: ProgramFilterByAidType,
-    class: 'fr-pl-2v'
+    componentClass: 'fr-pl-2v'
   }
 ]
 </script>
