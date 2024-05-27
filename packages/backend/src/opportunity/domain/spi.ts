@@ -15,8 +15,3 @@ export type OpportunityRepository = {
 export type MailerService = {
   sendReturnReceipt: (opportunity: Opportunity, program: Program) => Promise<Maybe<Error> | void>
 }
-
-export type PDEService = {
-  getLandingId: () => Promise<Result<number, Error>>
-  createOpportunity: (opportunity: Opportunity, program: Program) => Promise<Result<true, Error>>
-}
