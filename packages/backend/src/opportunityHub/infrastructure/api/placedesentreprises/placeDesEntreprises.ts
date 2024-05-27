@@ -3,10 +3,11 @@ import axios, { AxiosInstance, RawAxiosRequestHeaders } from 'axios'
 import AxiosHeaders from '../../../../common/infrastructure/api/axiosHeaders'
 import { handleException } from '../../../../common/domain/error/errors'
 import Config from '../../../../config'
-import { GetLandingResponseData, Landing, Subject, subjectToIdMapping, Objective, CreateSolicitationApiBody } from './types'
+import { GetLandingResponseData, Landing, Subject, subjectToIdMapping, CreateSolicitationApiBody } from './types'
 import { Opportunity } from '../../../../opportunity/domain/types'
 import { Operators, Program } from '../../../../program/domain/types/types'
 import OpportunityHubAbstract from '../opportunityHubAbstract'
+import { Objective } from '../../../../common/types'
 // import ProgramService from '../../../../program/application/programService'
 
 const allOperators: Operators[] = [
