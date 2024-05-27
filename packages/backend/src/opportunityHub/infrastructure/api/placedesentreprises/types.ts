@@ -1,4 +1,4 @@
-export { Objective } from '@tee/common/src/questionnaire/types'
+export { Objective } from '../../../../../../common/src/questionnaire/types'
 export interface GetLandingResponseData {
   data: Landing[]
   metadata: Metadata

@@ -3,8 +3,7 @@ import axios, { AxiosInstance, RawAxiosRequestHeaders } from 'axios'
 import AxiosHeaders from '../../../../common/infrastructure/api/axiosHeaders'
 import { handleException } from '../../../../common/domain/error/errors'
 import Config from '../../../../config'
-// import { GetLandingResponseData, Landing, Subject, subjectToIdMapping, Objective, CreateSolicitationApiBody } from './types'
-import { GetLandingResponseData, Landing, CreateSolicitationApiBody } from './types'
+import { GetLandingResponseData, Landing, Subject, subjectToIdMapping, Objective, CreateSolicitationApiBody } from './types'
 import { Opportunity } from '../../../../opportunity/domain/types'
 import { Operators, Program } from '../../../../program/domain/types/types'
 import OpportunityHubAbstract from '../opportunityHubAbstract'
@@ -109,30 +108,30 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     }
   }
 
-  // private _objectiveToSubjectIdMapping: { [key in Objective]: Subject } = {
-  //   [Objective.EnvironmentalImpact]: Subject.DemarcheEcologie,
-  //   [Objective.EnergyPerformance]: Subject.Energie,
-  //   [Objective.WaterConsumption]: Subject.Eau,
-  //   [Objective.BuildingRenovation]: Subject.Energie,
-  //   [Objective.SustainableMobility]: Subject.TransportMobilite,
-  //   [Objective.WasteManagement]: Subject.Dechets,
-  //   [Objective.EcoDesign]: Subject.DemarcheEcologie,
-  //   [Objective.TrainOrRecruit]: Subject.BilanRSE,
-  //   [Objective.MakeSavings]: Subject.DemarcheEcologie,
-  //   [Objective.DurablyInvest]: Subject.DemarcheEcologie,
-  //   [Objective.UnknownYet]: Subject.DemarcheEcologie
-  // }
+  private _objectiveToSubjectIdMapping: { [key in Objective]: Subject } = {
+    [Objective.EnvironmentalImpact]: Subject.DemarcheEcologie,
+    [Objective.EnergyPerformance]: Subject.Energie,
+    [Objective.WaterConsumption]: Subject.Eau,
+    [Objective.BuildingRenovation]: Subject.Energie,
+    [Objective.SustainableMobility]: Subject.TransportMobilite,
+    [Objective.WasteManagement]: Subject.Dechets,
+    [Objective.EcoDesign]: Subject.DemarcheEcologie,
+    [Objective.TrainOrRecruit]: Subject.BilanRSE,
+    [Objective.MakeSavings]: Subject.DemarcheEcologie,
+    [Objective.DurablyInvest]: Subject.DemarcheEcologie,
+    [Objective.UnknownYet]: Subject.DemarcheEcologie
+  }
 
-  // subjectMapping(programObjectives: Objective[]): number {
-  //   const defaultSubject = Subject.DemarcheEcologie
-  //   if (programObjectives.length === 1) {
-  //     const objective = programObjectives[0] as Objective
-  //     const subjectKey = this._objectiveToSubjectIdMapping[objective]
-  //     return subjectToIdMapping[subjectKey]
-  //   } else {
-  //     return subjectToIdMapping[defaultSubject]
-  //   }
-  // }
+  subjectMapping(programObjectives: Objective[]): number {
+    const defaultSubject = Subject.DemarcheEcologie
+    if (programObjectives.length === 1) {
+      const objective = programObjectives[0] as Objective
+      const subjectKey = this._objectiveToSubjectIdMapping[objective]
+      return subjectToIdMapping[subjectKey]
+    } else {
+      return subjectToIdMapping[defaultSubject]
+    }
+  }
 
   public createOpportunity = async (opportunity: Opportunity, program: Program): Promise<Maybe<Error>> => {
     const maybePayload = await this._createRequestBody(opportunity, program)
