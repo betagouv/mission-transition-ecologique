@@ -372,8 +372,7 @@ const isFieldValid = (field: InputFieldUnionType): boolean => {
 
 const validateFormField = (field: InputFieldUnionType): void => {
   if (isValidatedStringFieldInputType(field)) {
-    if (field.label?.includes('SIRET')) field.isValid = field.validation(field.value, true) as boolean
-    else field.isValid = field.validation(field.value) as boolean
+    field.isValid = field.validation(field.value, !!field.label?.includes('SIRET')) as boolean
   } else {
     field.isValid = isFieldValid(field)
   }
@@ -413,11 +412,5 @@ const getValidMessage = (field: InputFieldUnionType): string => {
 }
 </script>
 <style scoped lang="scss">
-//override DsfrInput and DsfrInputGroup valid class
-:deep(.fr-valid-text:before) {
-  display: none !important;
-}
-.fr-input-group--valid:before {
-  display: none;
-}
+@import 'src/assets/scss/input.scss';
 </style>

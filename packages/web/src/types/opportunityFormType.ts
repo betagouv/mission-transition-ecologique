@@ -31,8 +31,6 @@ export type InputFieldUnionType =
   | BooleanFieldInputType
   | ValidatedStringFieldInputType
 
-export const isValidatedStringFieldInputType = (
-  field: StringFieldInputType | MandatoryStringFieldFormType | BooleanFieldInputType | ValidatedStringFieldInputType
-): field is ValidatedStringFieldInputType => {
+export const isValidatedStringFieldInputType = (field: InputFieldUnionType): field is ValidatedStringFieldInputType => {
   return 'validation' in field
 }
