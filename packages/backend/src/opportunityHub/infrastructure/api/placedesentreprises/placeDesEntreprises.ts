@@ -8,7 +8,7 @@ import { Opportunity } from '../../../../opportunity/domain/types'
 import { Operators, Program } from '../../../../program/domain/types/types'
 import OpportunityHubAbstract from '../opportunityHubAbstract'
 import { Objective } from '../../../../common/types'
-// import ProgramService from '../../../../program/application/programService'
+import ProgramService from '../../../../program/application/programService'
 
 const allOperators: Operators[] = [
   'ADEME',
@@ -165,8 +165,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     return Result.ok({
       solicitation: {
         landing_id: landing_id.value,
-        // landing_subject_id: this.subjectMapping(new ProgramService().getObjectives(program.id)),
-        landing_subject_id: 21,
+        landing_subject_id: this.subjectMapping(new ProgramService().getObjectives(program.id)),
         description: opportunity.message,
         full_name: opportunity.firstName + ' ' + opportunity.lastName,
         email: opportunity.email,

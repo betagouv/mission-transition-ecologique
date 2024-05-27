@@ -2,12 +2,12 @@ import { Result } from 'true-myth'
 
 import { Program } from '@tee/data/src/type/program'
 import ProgramFeatures from '../domain/programFeatures'
-// import { QuestionnaireData, Objective } from '../domain/types/types'
 import { QuestionnaireData } from '../domain/types/types'
 
 import ProgramsJson from '../infrastructure/programsJson'
 import { currentDateService } from '../infrastructure/currentDate'
 import { PublicodesService } from '../infrastructure/publicodesService'
+import { Objective } from '../../common/types'
 
 export default class ProgramService {
   private _program: ProgramFeatures
@@ -33,7 +33,7 @@ export default class ProgramService {
     return this._program.getAll()
   }
 
-  // public getObjectives(id: string): Objective[] {
-  //   return this._program.getObjectives(id)
-  // }
+  public getObjectives(id: string): Objective[] {
+    return this._program.getObjectives(id)
+  }
 }
