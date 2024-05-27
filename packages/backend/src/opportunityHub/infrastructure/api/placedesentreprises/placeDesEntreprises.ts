@@ -3,11 +3,12 @@ import axios, { AxiosInstance, RawAxiosRequestHeaders } from 'axios'
 import AxiosHeaders from '../../../../common/infrastructure/api/axiosHeaders'
 import { handleException } from '../../../../common/domain/error/errors'
 import Config from '../../../../config'
-import { GetLandingResponseData, Landing, Subject, subjectToIdMapping, Objective, CreateSolicitationApiBody } from './types'
+// import { GetLandingResponseData, Landing, Subject, subjectToIdMapping, Objective, CreateSolicitationApiBody } from './types'
+import { GetLandingResponseData, Landing, CreateSolicitationApiBody } from './types'
 import { Opportunity } from '../../../../opportunity/domain/types'
 import { Operators, Program } from '../../../../program/domain/types/types'
 import OpportunityHubAbstract from '../opportunityHubAbstract'
-import ProgramService from '../../../../program/application/programService'
+// import ProgramService from '../../../../program/application/programService'
 
 const allOperators: Operators[] = [
   'ADEME',
@@ -108,40 +109,43 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     }
   }
 
-  private _objectiveToSubjectIdMapping: { [key in Objective]: Subject } = {
-    [Objective.EnvironmentalImpact]: Subject.DemarcheEcologie,
-    [Objective.EnergyPerformance]: Subject.Energie,
-    [Objective.WaterConsumption]: Subject.Eau,
-    [Objective.BuildingRenovation]: Subject.Energie,
-    [Objective.SustainableMobility]: Subject.TransportMobilite,
-    [Objective.WasteManagement]: Subject.Dechets,
-    [Objective.EcoDesign]: Subject.DemarcheEcologie,
-    [Objective.TrainOrRecruit]: Subject.BilanRSE,
-    [Objective.MakeSavings]: Subject.DemarcheEcologie,
-    [Objective.DurablyInvest]: Subject.DemarcheEcologie,
-    [Objective.UnknownYet]: Subject.DemarcheEcologie
-  }
+  // private _objectiveToSubjectIdMapping: { [key in Objective]: Subject } = {
+  //   [Objective.EnvironmentalImpact]: Subject.DemarcheEcologie,
+  //   [Objective.EnergyPerformance]: Subject.Energie,
+  //   [Objective.WaterConsumption]: Subject.Eau,
+  //   [Objective.BuildingRenovation]: Subject.Energie,
+  //   [Objective.SustainableMobility]: Subject.TransportMobilite,
+  //   [Objective.WasteManagement]: Subject.Dechets,
+  //   [Objective.EcoDesign]: Subject.DemarcheEcologie,
+  //   [Objective.TrainOrRecruit]: Subject.BilanRSE,
+  //   [Objective.MakeSavings]: Subject.DemarcheEcologie,
+  //   [Objective.DurablyInvest]: Subject.DemarcheEcologie,
+  //   [Objective.UnknownYet]: Subject.DemarcheEcologie
+  // }
 
-  subjectMapping(programObjectives: Objective[]): number {
-    const defaultSubject = Subject.DemarcheEcologie
-    if (programObjectives.length === 1) {
-      const objective = programObjectives[0] as Objective
-      const subjectKey = this._objectiveToSubjectIdMapping[objective]
-      return subjectToIdMapping[subjectKey]
-    } else {
-      return subjectToIdMapping[defaultSubject]
-    }
-  }
+  // subjectMapping(programObjectives: Objective[]): number {
+  //   const defaultSubject = Subject.DemarcheEcologie
+  //   if (programObjectives.length === 1) {
+  //     const objective = programObjectives[0] as Objective
+  //     const subjectKey = this._objectiveToSubjectIdMapping[objective]
+  //     return subjectToIdMapping[subjectKey]
+  //   } else {
+  //     return subjectToIdMapping[defaultSubject]
+  //   }
+  // }
 
   public createOpportunity = async (opportunity: Opportunity, program: Program): Promise<Maybe<Error>> => {
+    const maybePayload = await this._createRequestBody(opportunity, program)
+    if (maybePayload.isErr) {
+      return Maybe.of(maybePayload.error)
+    }
     try {
       const rawResponse = await this._axios.request<GetLandingResponseData>({
         method: 'POST',
         url: `/solicitations`,
-        data: this._createRequestBody(opportunity, program),
+        data: maybePayload.value,
         timeout: 3000
       })
-      console.log(rawResponse, opportunity, program)
       const status = rawResponse.status
       if (status != 200) {
         return Maybe.of(Error('PDE Api Error ' + status))
@@ -161,14 +165,15 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     return Result.ok({
       solicitation: {
         landing_id: landing_id.value,
-        landing_subject_id: this.subjectMapping(new ProgramService().getObjectives(program.id)),
+        // landing_subject_id: this.subjectMapping(new ProgramService().getObjectives(program.id)),
+        landing_subject_id: 21,
         description: opportunity.message,
         full_name: opportunity.firstName + ' ' + opportunity.lastName,
         email: opportunity.email,
         phone_number: opportunity.phoneNumber,
         siret: opportunity.companySiret,
-        location: '',
-        api_calling_url: '',
+        location: program.id, // TO delete, temporary, just to use program somewhere.
+        api_calling_url: 'TODO_A_remplir',
         questions_additionnelles: []
       }
     })
