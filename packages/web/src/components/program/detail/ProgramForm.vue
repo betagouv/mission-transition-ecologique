@@ -401,10 +401,10 @@ const scrollToFormContainer = () => {
 }
 
 const getErrorMessage = (field: InputFieldUnionType): string => {
-  if (isValidatedStringFieldInputType(field)) {
-    return field.isValid === false ? field.errorMessage : ''
+  if (!isValidatedStringFieldInputType(field) || !isFieldValid(field)) {
+    return field.isValid === false ? 'Ce champ est obligatoire.' : ''
   }
-  return field.isValid === false ? 'Ce champ est obligatoire.' : ''
+  return field.isValid === false ? field.errorMessage : ''
 }
 
 const getValidMessage = (field: InputFieldUnionType): string => {
