@@ -79,13 +79,14 @@ const viteServer: ServerOptions = {
       secure: false
     }
   },
-  headers: buildHeaders()
+  headers: mode === 'development' ? buildDevHeaders() : buildHeaders()
 }
 
 export default defineConfig({
   server: viteServer,
   plugins: [plugins()],
   build: currentConfig,
+
   define: {
     'process.env': process.env
   },
@@ -108,6 +109,14 @@ function getSentryData(): { domain: string; url: string } | undefined {
     domain: `https://${host}${path}`,
     url: `https://${host}${path}/api/${projectId}/security/?sentry_key=${dsnComponents.publicKey}`
   }
+}
+
+function buildDevHeaders(): Record<string, string> {
+  const headers = buildHeaders()
+
+  headers['Content-Security-Policy'] = "script-src 'self' 'unsafe-eval'; " + headers['Content-Security-Policy']
+
+  return headers
 }
 
 function buildHeaders() {
