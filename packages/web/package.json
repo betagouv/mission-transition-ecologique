@@ -22,7 +22,7 @@
     "copy-dsfr-fonts": "cp -a ../../node_modules/@gouvfr/dsfr/dist/fonts/. ./public/fonts",
     "copy-custom-css": "cp -a ./src/assets/custom.css ./public/css/custom.css",
     "update-styles": "npm run copy-dsfr-core-css && npm run copy-dsfr-fonts && npm run copy-custom-css",
-    "dev": "npm run copy-custom-css && NODE_OPTIONS='--import tsx' vite --port 4242",
+    "dev": "npm run copy-custom-css && NODE_OPTIONS='--import tsx' vite --port 4242 --debug",
     "build": "npm run update-styles && npm run build-main",
     "build-main": "NODE_OPTIONS='--import tsx' LIB=main vite build",
     "build-widget": "NODE_OPTIONS='--import tsx' LIB=widget vite build",
@@ -35,7 +35,8 @@
     "type-check": "vue-tsc --noEmit -p tsconfig.tc.json --composite false",
     "type-check-watch": "vue-tsc --watch --noEmit -p tsconfig.tc.json --composite false",
     "lint": "eslint . --fix",
-    "format": "prettier --write src/"
+    "format": "prettier --write src/",
+    "sass:watch": "sass --pkg-importer=node --load-path=../../node_modules --watch src/assets/main.scss:src/assets/main.css"
   },
   "dependencies": {
     "@gouvfr/dsfr": "^1.11.2",
