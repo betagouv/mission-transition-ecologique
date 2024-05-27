@@ -88,7 +88,7 @@ const convertDomainToBrevoDeal = (domainAttributes: OpportunityDetails): DealAtt
 
 const convertDomainToBrevoDealUpdate = (domainUpdateAttributes: OpportunityUpdateAttributes): DealUpdateAttributes => {
   return {
-    envoy: domainUpdateAttributes.sentToOperator
+    envoy: domainUpdateAttributes.sentToOpportunityHub
   }
 }
 

@@ -25,7 +25,7 @@ export interface OpportunityDetails {
 }
 
 export interface OpportunityUpdateAttributes {
-  sentToOperator: boolean
+  sentToOpportunityHub: boolean
 }
 
 export interface ContactId {

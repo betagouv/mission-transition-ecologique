@@ -1,8 +1,8 @@
 import { Maybe, Result } from 'true-myth'
-import type { ContactRepository, MailerService, OpportunityRepository, PDEService } from './spi'
+import type { ContactRepository, MailerService, OpportunityRepository } from './spi'
 import type { OpportunityId, Opportunity, ContactDetails } from './types'
-import OperatorFeatures from '../../operator/domain/operatorFeatures'
-import { OperatorRepository } from '../../operator/domain/spi'
+import OpportunityHubFeatures from '../../opportunityHub/domain/opportunityHubFeatures'
+import { OpportunityHubRepository } from '../../opportunityHub/domain/spi'
 import { ProgramRepository } from '../../program/domain/spi'
 import ProgramFeatures from '../../program/domain/programFeatures'
 import { Program } from '@tee/data/src/type/program'
@@ -10,30 +10,28 @@ import { Program } from '@tee/data/src/type/program'
 export default class OpportunityFeatures {
   private readonly _contactRepository: ContactRepository
   private readonly _opportunityRepository: OpportunityRepository
-  private readonly _operatorRepositories: OperatorRepository[]
+  private readonly _opportunityHubRepositories: OpportunityHubRepository[]
   private readonly _programRepository: ProgramRepository
   private readonly _mailRepository: MailerService
-  private readonly _PDEservice: PDEService
 
   constructor(
     contactRepository: ContactRepository,
     opportunityRepository: OpportunityRepository,
-    operatorRepositories: OperatorRepository[],
+    opportunityHubRepositories: OpportunityHubRepository[],
     programRepository: ProgramRepository,
-    mailRepository: MailerService,
-    PDEservice: PDEService
+    mailRepository: MailerService
   ) {
     this._contactRepository = contactRepository
     this._opportunityRepository = opportunityRepository
-    this._operatorRepositories = operatorRepositories
+    this._opportunityHubRepositories = opportunityHubRepositories
     this._programRepository = programRepository
     this._mailRepository = mailRepository
-    this._PDEservice = PDEservice
   }
 
   createOpportunity = async (opportunity: Opportunity, optIn: true): Promise<Result<OpportunityId, Error>> => {
     const contactIdResult = await this._contactRepository.createOrUpdate(opportunity as ContactDetails, optIn)
     if (contactIdResult.isErr) {
+      // TODO : Send an email to the admin: contact and opportunity not created!
       return Result.err(contactIdResult.error)
     }
 
@@ -41,34 +39,33 @@ export default class OpportunityFeatures {
     opportunity = this._addContactOperatorToOpportunity(opportunity, program)
 
     const opportunityResult = await this._opportunityRepository.create(contactIdResult.value.id, opportunity)
-
-    if (!opportunityResult.isErr && program) {
-      this._sendReturnReceipt(opportunity, program)
-      this._createOpportunityOnOperator(opportunityResult.value, opportunity, program)
-      if (opportunity.programContactOperator && opportunity.programContactOperator !== 'Bpifrance') {
-        const PDEresult = await this._createOpportunityOnPDE(opportunity, program)
-        if (PDEresult.isErr) {
-          // TODO : send an email to the admin.
-        }
-      }
+    if (opportunityResult.isErr || program == undefined) {
+      // TODO : Send an email to the admin: opportunity not created or opportunity created on an unknown program
+      return opportunityResult
     }
 
+    this._sendReturnReceipt(opportunity, program)
+    this._maybeTransmitOpportunityToHubs(opportunityResult.value, opportunity, program)
     return opportunityResult
   }
 
-  private _createOpportunityOnOperator(opportunityId: OpportunityId, opportunity: Opportunity, program: Program) {
-    void new OperatorFeatures(this._operatorRepositories).createOpportunity(opportunity, program).then(async (operatorResult) => {
-      if (false !== operatorResult) {
-        const opportunityUpdateErr = await this._updateOpportunitySentToOperator(opportunityId, operatorResult.isOk)
-        if (opportunityUpdateErr.isJust) {
-          // TODO: Send an email to the admin: Opportunity not updated
+  private _maybeTransmitOpportunityToHubs(opportunityId: OpportunityId, opportunity: Opportunity, program: Program) {
+    if (program['activable en autonomie']) return
+
+    void new OpportunityHubFeatures(this._opportunityHubRepositories)
+      .createOpportunity(opportunity, program)
+      .then(async (opportunityHubResult) => {
+        if (opportunityHubResult !== false) {
+          const opportunityUpdateErr = await this._updateOpportunitySentToHub(opportunityId, !opportunityHubResult.isJust)
+          if (opportunityUpdateErr.isJust) {
+            // TODO: Send an email to the admin: Opportunity not updated creating a missmatch between the status in the DB and the real opportunity status
+          }
         }
-      }
-    })
+      })
   }
 
-  private async _updateOpportunitySentToOperator(opportunityId: OpportunityId, success: boolean): Promise<Maybe<Error>> {
-    return await this._opportunityRepository.update(opportunityId, { sentToOperator: success })
+  private async _updateOpportunitySentToHub(opportunityId: OpportunityId, success: boolean): Promise<Maybe<Error>> {
+    return await this._opportunityRepository.update(opportunityId, { sentToOpportunityHub: success })
   }
 
   private _addContactOperatorToOpportunity(opportunity: Opportunity, program: Program | undefined): Opportunity {
@@ -88,13 +85,5 @@ export default class OpportunityFeatures {
         // TODO: Send an email to the admin: Receipt not sent or add error on sentry
       }
     })
-  }
-
-  async getPDELandingID(): Promise<Result<number, Error>> {
-    return this._PDEservice.getLandingId()
-  }
-
-  private async _createOpportunityOnPDE(opportunity: Opportunity, program: Program): Promise<Result<true, Error>> {
-    return await this._PDEservice.createOpportunity(opportunity, program)
   }
 }

@@ -1,18 +1,16 @@
-import { Result } from 'true-myth'
+import { Maybe, Result } from 'true-myth'
 import axios, { AxiosInstance } from 'axios'
 import type { TokenResponse } from './types'
-import { ContactResponse } from './types'
-import OperatorAbstract from '../operatorAbstract'
+import OpportunityHubAbstract from '../opportunityHubAbstract'
 import { Operators, Program } from '../../../../program/domain/types/types'
 import AxiosHeaders from '../../../../common/infrastructure/api/axiosHeaders'
 import { handleException } from '../../../../common/domain/error/errors'
 import { Opportunity } from '../../../../opportunity/domain/types'
-import { ContactId } from '../../../domain/types'
 import opportunityPayloadDTO from './opportunityPayloadDTO'
 import Config from '../../../../config'
 
-export class BpiFrance extends OperatorAbstract {
-  protected readonly _operatorName: Operators = 'Bpifrance'
+export class BpiFrance extends OpportunityHubAbstract {
+  protected readonly _operatorNames: Operators[] = ['Bpifrance']
   private readonly client_id = Config.BPI_FRANCE_CLIENT_ID
   private readonly client_secret = Config.BPI_FRANCE_CLIENT_SECRET
 
@@ -46,21 +44,24 @@ export class BpiFrance extends OperatorAbstract {
     }
   }
 
-  public createOpportunity = async (opportunity: Opportunity, program: Program): Promise<Result<ContactId, Error>> => {
+  public createOpportunity = async (opportunity: Opportunity, program: Program): Promise<Maybe<Error>> => {
     try {
       const tokenResult = await this._getToken()
       if (tokenResult.isErr) {
-        return Result.err(tokenResult.error)
+        return Maybe.of(tokenResult.error)
       }
 
       const contactPayloadDTO = new opportunityPayloadDTO(opportunity, program).getPayload()
       const response = await this.axios.post(this._contactUrl, contactPayloadDTO, {
         headers: AxiosHeaders.makeBearerHeader(tokenResult.value.access_token)
       })
-
-      return Result.ok(response.data as ContactResponse)
+      if (response.data) {
+        return Maybe.nothing()
+      } else {
+        return Maybe.of(new Error("Erreur à la création d'une opportunité chez BPI durant l'appel BPI. HTTP CODE:" + response.status))
+      }
     } catch (exception: unknown) {
-      return Result.err(handleException(exception))
+      return Maybe.of(handleException(exception))
     }
   }
 }

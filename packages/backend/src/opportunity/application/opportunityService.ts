@@ -1,27 +1,26 @@
 import { Opportunity, OpportunityId } from '../domain/types'
-import OpportuntiyFeatures from '../domain/opportunityFeatures'
+import OpportunityFeatures from '../domain/opportunityFeatures'
 import { Result } from 'true-myth'
 import { brevoRepository } from '../infrastructure/api/brevo/brevoDeal'
 import { addBrevoContact } from '../infrastructure/api/brevo/brevoContact'
-import { OperatorRepository } from '../../operator/domain/spi'
-// import { BpiFrance } from '../../operator/infrastructure/api/bpi/bpiFrance'
-import { ContactRepository, MailerService, OpportunityRepository, PDEService } from '../domain/spi'
+import { OpportunityHubRepository } from '../../opportunityHub/domain/spi'
+import { BpiFrance } from '../../opportunityHub/infrastructure/api/bpi/bpiFrance'
+import { ContactRepository, MailerService, OpportunityRepository } from '../domain/spi'
 import { ProgramRepository } from '../../program/domain/spi'
 import ProgramsJson from '../../program/infrastructure/programsJson'
 import BrevoMail from '../infrastructure/api/brevo/brevoMail'
-import { PDE } from '../infrastructure/api/pde/placeDesEntreprises'
+import { PlaceDesEntreprises } from '../../opportunityHub/infrastructure/api/placedesentreprises/placeDesEntreprises'
 
-export default class OpportunityInjector {
-  private _opportunityFeatures: OpportuntiyFeatures
+export default class OpportunityService {
+  private _opportunityFeatures: OpportunityFeatures
 
   constructor() {
-    this._opportunityFeatures = new OpportuntiyFeatures(
+    this._opportunityFeatures = new OpportunityFeatures(
       this._getContactRepository(),
       this._getOpportunityRepository(),
-      this._getOperatorRepositories(),
+      this._getOpportunityHubRepositories(),
       this._getProgramRepository(),
-      this._getMailRepository(),
-      this._getPDEService()
+      this._getMailRepository()
     )
   }
 
@@ -42,8 +41,8 @@ export default class OpportunityInjector {
     return brevoRepository
   }
 
-  private _getOperatorRepositories(): OperatorRepository[] {
-    return []
+  private _getOpportunityHubRepositories(): OpportunityHubRepository[] {
+    return [new BpiFrance(), new PlaceDesEntreprises()]
   }
 
   private _getProgramRepository(): ProgramRepository {
@@ -52,13 +51,5 @@ export default class OpportunityInjector {
 
   private _getMailRepository(): MailerService {
     return { sendReturnReceipt: new BrevoMail().sendReturnReceipt }
-  }
-
-  private _getPDEService(): PDEService {
-    return { getLandingId: new PDE().getLandingId }
-  }
-
-  public async getPDELandingID(): Promise<Result<number, Error>> {
-    return this._opportunityFeatures.getPDELandingID()
   }
 }
