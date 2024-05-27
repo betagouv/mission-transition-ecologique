@@ -14,6 +14,7 @@ export default class ProgramApi extends RequestApi {
 
     try {
       const response = await fetch(url)
+      console.log('Program Data Response', response)
       return Result.ok((await response.json()) as ProgramData[])
     } catch (error: unknown) {
       return Result.err(error as Error)
