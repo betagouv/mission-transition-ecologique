@@ -1,14 +1,16 @@
 <template>
   <!-- PROGRAMS AS LIST OF CARDS -->
   <div class="fr-container fr-px-0 fr-mb-0 fr-mt-6v fr-px-md-4w">
-    <ProgramListHeaderResult v-if="!navigationStore.isCatalog() && !hasSpinner" />
-    <div class="fr-grid-row">
-      <div
-        v-if="navigationStore.isCatalog() && !hasError"
-        class="fr-col-offset-10 fr-hidden-sm"
-      >
+    <div
+      v-if="!hasSpinner || !hasError"
+      class="fr-grid-row"
+    >
+      <div class="fr-col-offset-10 fr-col-hidden-md">
         <ProgramModalFilter />
       </div>
+    </div>
+    <ProgramListHeaderResult v-if="!navigationStore.isCatalog() && !hasSpinner" />
+    <div class="fr-grid-row">
       <div class="fr-col-12 fr-mb-3v">
         <ProgramFilterByTheme v-if="havePrograms && countPrograms > 1" />
       </div>

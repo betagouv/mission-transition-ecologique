@@ -1,9 +1,4 @@
 <template>
-  <div class="fr-grid-row">
-    <div class="fr-col-offset-10 fr-hidden-md">
-      <ProgramModalFilter />
-    </div>
-  </div>
   <div class="fr-grid-row fr-text-center fr-text-left-md">
     <div class="fr-col-12">
       <h3
