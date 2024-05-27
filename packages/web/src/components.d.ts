@@ -42,7 +42,7 @@ declare module 'vue' {
     TeeDsfrSearchBar: typeof import('./components/element/TeeDsfrSearchBar.vue')['default']
     TeeDsfrTag: typeof import('./components/element/tag/TeeDsfrTag.vue')['default']
     TeeDsfrTags: typeof import('./components/element/tag/TeeDsfrTags.vue')['default']
-    TeeEligibilityCriteriaAccordeon: typeof import('./components/program/eligibilityCriteria/TeeEligibilityCriteriaAccordeon.vue')['default']
+    TeeEligibilityCriteriaAccordion: typeof import('./components/program/eligibilityCriteria/TeeEligibilityCriteriaAccordion.vue')['default']
     TeeEligibilityCriteriaBar: typeof import('./components/program/eligibilityCriteria/TeeEligibilityCriteriaBar.vue')['default']
     TeeError: typeof import('./components/element/TeeError.vue')['default']
     TeeFooter: typeof import('./components/TeeFooter.vue')['default']

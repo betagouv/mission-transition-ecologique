@@ -22,7 +22,7 @@
   </DsfrAccordionsGroup>
 </template>
 <script setup lang="ts">
-import TeeEligibilityCriteriaAccordeon from '@/components/program/eligibilityCriteria/TeeEligibilityCriteriaAccordeon.vue'
+import TeeEligibilityCriteriaAccordion from '@/components/program/eligibilityCriteria/TeeEligibilityCriteriaAccordion.vue'
 import { useNavigationStore } from '@/stores/navigation'
 import { ref } from 'vue'
 import ProgramFilterByAidType from './ProgramFilterByAidType.vue'
@@ -50,7 +50,7 @@ const filters: FilterItem[] = [
   {
     title: "Critères d'éligibilité",
     id: 'eligibility-criteria',
-    component: TeeEligibilityCriteriaAccordeon,
+    component: TeeEligibilityCriteriaAccordion,
     if: !useNavigationStore().isCatalog(),
     accordionClass: 'fr-hidden-md'
   },
