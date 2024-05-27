@@ -7,7 +7,7 @@
           <ProgramFiltersAccordeon />
         </div>
       </div>
-      <div class="fr-grid-row--center fr-col-8 fr-col-sm-9 fr-col-md-8 fr-col-lg-9 fr-col-xl-8">
+      <div class="fr-grid-row--center fr-col-sm-9 fr-col-md-8 fr-col-lg-9 fr-col-xl-8">
         <ProgramList />
       </div>
     </div>

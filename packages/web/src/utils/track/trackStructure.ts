@@ -1,8 +1,34 @@
 import { workforce } from '@/questionnaire/trackStructureWorkforce'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { StructureSize, TrackId } from '@/types'
+import Format from '@/utils/format'
 
 export default class TrackStructure {
+  static getEligibilityCriteria() {
+    const criteria = [
+      {
+        icon: 'fr-icon-check-line',
+        text: Format.truncate(TrackStructure.getSizeTitle(), 30)
+      },
+      {
+        icon: 'fr-icon-check-line',
+        text: Format.truncate(TrackStructure.getSector(), 30)
+      },
+      {
+        icon: 'fr-icon-check-line',
+        text: Format.truncate(TrackStructure.getLocalisation(), 30)
+      }
+    ]
+
+    if (TrackStructure.hasSiret()) {
+      criteria.unshift({
+        icon: 'fr-icon-check-line',
+        text: Format.truncate('SIRET ' + TrackStructure.getSiret(), 30)
+      })
+    }
+
+    return criteria
+  }
   static has(trackId: TrackId, key: string): boolean {
     return (
       useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(trackId, key) !== '' &&

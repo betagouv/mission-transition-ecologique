@@ -41,7 +41,6 @@
 
 <script setup lang="ts">
 import { Color } from '@/types'
-import Format from '@/utils/format'
 import Sticky from '@/utils/sticky'
 import TrackStructure from '@/utils/track/trackStructure'
 import type { RouteLocationRaw } from 'vue-router'
@@ -57,6 +56,7 @@ interface Props {
 const props = defineProps<Props>()
 const eligibilityCriteria = ref<HTMLElement>()
 const sticky = ref<Sticky | null>(null)
+const criteria = TrackStructure.getEligibilityCriteria()
 
 onMounted(async () => {
   await nextTick()
@@ -67,32 +67,6 @@ onMounted(async () => {
 onUnmounted(() => {
   sticky.value?.removeEventListenerOnScroll()
 })
-
-const criteria = [
-  {
-    icon: 'fr-icon-check-line',
-    text: truncate(TrackStructure.getSizeTitle())
-  },
-  {
-    icon: 'fr-icon-check-line',
-    text: truncate(TrackStructure.getSector())
-  },
-  {
-    icon: 'fr-icon-check-line',
-    text: truncate(TrackStructure.getLocalisation())
-  }
-]
-
-if (TrackStructure.hasSiret()) {
-  criteria.unshift({
-    icon: 'fr-icon-check-line',
-    text: Format.truncate('SIRET ' + TrackStructure.getSiret(), 30)
-  })
-}
-
-function truncate(text: string) {
-  return Format.truncate(text, 30)
-}
 
 const bgClass = computed(() => {
   if (props.bgColor) {

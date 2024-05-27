@@ -3,7 +3,7 @@
     :id="RouteName.QuestionnaireResult"
     class="fr-container--fluid fr-container--fluid--no-overflow"
   >
-    <TeeEligibilityCriteria
+    <TeeEligibilityCriteriaBar
       v-if="linkToPreviousButton"
       bg-color="blue-light"
       bg-bar-color="blue--light"

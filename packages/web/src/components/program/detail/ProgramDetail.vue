@@ -1,5 +1,5 @@
 <template>
-  <TeeEligibilityCriteria
+  <TeeEligibilityCriteriaBar
     v-if="!isCatalogDetail"
     :bg-color="Color.greenLightnessed"
     :bg-bar-color="Color.greenLighted"

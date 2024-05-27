@@ -8,8 +8,8 @@
       :key="index"
     >
       <div
-        class="fr-px-2v fr-col-content--middle fr-col-justify--center"
-        :class="'fr-col-' + colLength()"
+        class="fr-px-2v fr-col-content--middle"
+        :class="colClass"
       >
         <span
           v-if="icon"
@@ -29,11 +29,22 @@ interface Props {
   infos: { icon: string; text: string }[]
   radiusSize?: '2v' | '4v'
   bgColor?: Color
+  fullLine?: boolean
+  justify?: 'center' | 'left' | 'right'
 }
 
-const props = defineProps<Props>()
+const props = withDefaults(defineProps<Props>(), {
+  radiusSize: undefined,
+  bgColor: undefined,
+  fullLine: false,
+  justify: 'center'
+})
 
 const colLength = () => {
+  if (props.fullLine) {
+    return 12
+  }
+
   return Math.floor(12 / props.infos.length)
 }
 
@@ -47,5 +58,14 @@ const rowClass = computed(() => {
   }
 
   return row.join(' ')
+})
+
+const colClass = computed(() => {
+  const col = ['fr-col-' + colLength()]
+  if (props.justify) {
+    col.push('fr-col-justify--' + props.justify)
+  }
+
+  return col.join(' ')
 })
 </script>
