@@ -1,4 +1,4 @@
-import CatalogResult from '@/components/program/list/CatalogResult.vue'
+import ProgramList from '@/components/program/list/ProgramList.vue'
 import type { Component } from 'vue'
 import TeeHomePage from '../pages/TeeHomePage.vue'
 import TeeQuestionnairePage from '../pages/TeeQuestionnairePage.vue'
@@ -67,7 +67,7 @@ export const routes = [
       {
         path: '',
         name: RouteName.Catalog,
-        component: CatalogResult as Component
+        component: ProgramList as Component
       },
       {
         path: ':programId',

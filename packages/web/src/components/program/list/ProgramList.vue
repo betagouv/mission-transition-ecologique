@@ -1,20 +1,22 @@
 <template>
   <!-- PROGRAMS AS LIST OF CARDS -->
-  <div class="fr-container fr-px-0 fr-mb-0 fr-mt-6v fr-px-md-4w">
-    <ProgramListHeaderResult v-if="!navigationStore.isCatalog() && !hasSpinner" />
-    <div class="fr-grid-row">
+  <div class="fr-container--fluid fr-container--fluid--no-overflow fr-px-0 fr-mb-0 fr-mt-6v fr-px-md-4w">
+    <div class="fr-grid-row fr-grid-row--center fr-justify-center">
+      <div class="fr-col-9 fr-col-offset-sm-2 fr-col-xs-12">
+        <ProgramListHeaderResult v-if="!navigationStore.isCatalog() && !hasSpinner" />
+      </div>
       <div
         v-if="navigationStore.isCatalog() && !hasError"
         class="fr-col-offset-10 fr-hidden-sm"
       >
         <ProgramModalFilter />
       </div>
-      <div class="fr-col-12 fr-mb-3v">
+      <div class="fr-col-9 fr-col-offset-sm-2 fr-mb-3v fr-col-xs-12">
         <ProgramFilterByTheme v-if="havePrograms && countPrograms > 1" />
       </div>
       <div
         v-if="hasObjectiveCard && !hasSpinner"
-        class="fr-col-12"
+        class="fr-col-9 fr-col-offset-sm-2 fr-col-xs-12"
       >
         <TeeObjectiveCard
           :objective="objective as PublicodeObjective"
@@ -22,15 +24,24 @@
           radius-size="2-5v"
         />
       </div>
-      <div class="fr-mt-4v fr-pl-2w fr-pl-md-0 fr-mb-2v fr-col-12">
+      <div class="fr-mt-4v fr-pl-2w fr-pl-md-0 fr-mb-2v fr-col-9 fr-col-offset-sm-2 fr-col-xs-12">
         <div v-if="havePrograms && countPrograms > 1">
           {{ countFilteredPrograms }}
           {{ countFilteredPrograms > 1 ? Translation.t('results.results') : Translation.t('results.result') }}
         </div>
       </div>
       <div
+        v-if="!hasSpinner"
+        class="fr-col-2 fr-hidden-xs"
+      >
+        <div class="fr-sidemenu fr-mr-3v">
+          <div class="fr-text--bold fr-text-left fr-mb-3v">Filtres</div>
+          <ProgramFiltersAccordeon />
+        </div>
+      </div>
+      <div
         v-if="hasSpinner || hasError || !countFilteredPrograms"
-        class="fr-col-12 fr-text-center"
+        class="fr-col-9 fr-text-center"
       >
         <TeeSpinner
           v-if="hasSpinner"
@@ -47,15 +58,21 @@
           :email="Contact.email"
         />
       </div>
-      <router-link
-        v-for="program in filteredPrograms"
-        :id="program.id"
-        :key="program.id"
-        :to="getRouteToProgramDetail(program.id)"
-        class="fr-col-12 fr-card fr-enlarge-link fr-card--horizontal-tier fr-mb-10v"
-      >
-        <ProgramCard :program="program" />
-      </router-link>
+      <div class="fr-col-9 fr-col-xs-12">
+        <div class="fr-container--fluid fr-container--fluid--no-overflow">
+          <div class="fr-grid-row fr-grid-row--center">
+            <router-link
+              v-for="program in filteredPrograms"
+              :id="program.id"
+              :key="program.id"
+              :to="getRouteToProgramDetail(program.id)"
+              class="fr-col-12 fr-card fr-enlarge-link fr-card--horizontal-tier fr-mb-10v"
+            >
+              <ProgramCard :program="program" />
+            </router-link>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
