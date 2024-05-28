@@ -1,0 +1,70 @@
+titre: Mission de Conseil RSE
+promesse: Bénéficiez d'un consultant expert pour définir et mettre en place votre
+  feuille de route RSE
+description: La Mission de Conseil RSE permet de bénéficier de 13 jours d'accompagnement
+  d'un consultant expert pour définir une ambition globale RSE et la traduire en plan
+  d'action.
+début de validité: 01/01/2018
+fin de validité: 31/12/2050
+illustration: images/TEE_eolienne.png
+opérateur de contact: Bpifrance
+url: ''
+nature de l'aide: accompagnement
+coût de l'accompagnement: 13 000 € HT après subvention de 50%
+durée de l'accompagnement: 13 jours de prestation répartis sur 6 à 8 semaines
+objectifs:
+- description: Définissez une ambition globale RSE pour l'entreprise et traduisez-la
+    en engagements à prendre.
+- description: Mobilisez une équipe projet autour de cette ambition pour engager l'ensemble
+    de vos collaborateurs.
+- description: Construisez un plan d'actions ciblé pour réussir à intégrer la RSE
+    dans l'activité de votre entreprise permettant de concrétiser rapidement les engagements.
+- description: 'Bénéficiez de données externes et de marché pour vous orienter dans
+    la prise de décision stratégique (ex: étude de marché, analyse de la concurrence...)'
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Plus de 10 salariés
+  - Éligible aux micro-entreprises
+  secteur géographique:
+  - France et territoires d'outre-mer
+  secteur d'activité:
+  - Tous secteurs d’activité
+  nombre d'années d'activité:
+  - Au moins 3 ans d’activité
+  autres critères d'éligibilité:
+  - Votre entreprise doit avoir une structuration suffisante pour que le parcours
+    conseil soit adapté (en général, minimum 5M€ de chiffres d'affaires, dérogations
+    acceptées)
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+    - est éligible
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+      - dispositif . début de validité <= date du jour
+      - date du jour <= dispositif . fin de validité
+    valeur: oui
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+    - code NAF niveau 1 . est B
+    - code NAF niveau 1 . est C
+    - code NAF niveau 1 . est D
+    - code NAF niveau 1 . est E
+    - code NAF niveau 1 . est F
+    - code NAF niveau 1 . est G
+    - code NAF niveau 1 . est H
+    - code NAF niveau 1 . est I
+    - code NAF niveau 1 . est J
+    - code NAF niveau 1 . est K
+    - code NAF niveau 1 . est L
+    - code NAF niveau 1 . est M
+    - code NAF niveau 1 . est N
+    - code NAF niveau 1 . est Q
+    - code NAF niveau 1 . est R
+    - code NAF niveau 1 . est S
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est mon impact environnemental
