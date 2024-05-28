@@ -1,50 +1,33 @@
+@use '@gouvfr/dsfr/module/media-query';
+
 .fr-footer {
   &__content {
     flex-basis: fit-content;
+    margin-left: 0;
+    &-list {
+      justify-content: center;
+    }
   }
 
   &__partners {
     &-logos {
-      align-items: center !important;
-    }
-    &-sub {
-      padding: 0;
-      display: flex;
-      justify-content: end;
-      align-items: center !important;;
-    }
-  }
-
-  @media screen and (max-width: 62rem) {
-    &__body {
-      display: flex;
       flex-direction: column;
       align-items: center;
+    @include media-query.respond-from('xl') {
+          flex-direction: row;
+        }
     }
-
-    &__content {
-      margin-left: 0;
-      display: flex;
+    &-sub {
       justify-content: center;
-      align-items: center;
-      &-list {
-        justify-content: center;
-      }
+      align-items: center !important;
     }
   }
 
-  @media screen and (max-width: 1275px) {
-    &__partners {
-      &-logos {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      &-sub {
-        width: 100%;
-        max-width: 100%;
-        justify-content: center;
-      }
+  &__body {
+    flex-direction: column;
+  @include media-query.respond-from('lg') {
+    flex-direction: row;
+    justify-content: space-between;
     }
   }
 }
