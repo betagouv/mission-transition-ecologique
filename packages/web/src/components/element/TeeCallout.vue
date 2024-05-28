@@ -54,7 +54,3 @@ const linkClasses = {
   customCallout: props.type === CalloutType.Custom
 }
 </script>
-
-<style scoped lang="scss">
-@import '@/assets/scss/teeCallout';
-</style>

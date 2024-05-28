@@ -1,5 +1,4 @@
 @import "colors";
-@import "../../../public/css/core.main.css";
 
 .customCallout {
   background-color: $base-blue;
@@ -16,9 +15,7 @@
     color: white !important;
     font-weight: bold;
     @media screen and (max-width: 62em) {
-      //font-size: 1rem;
       font-size: 0.9rem;
-      //font-size: 0.8rem;
     }
   }
 
