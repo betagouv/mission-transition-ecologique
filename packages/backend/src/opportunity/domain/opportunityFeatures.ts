@@ -129,5 +129,4 @@ export default class OpportunityFeatures {
   }
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-type Dictionary = Record<string, any>
+type Dictionary = Record<string, unknown>
