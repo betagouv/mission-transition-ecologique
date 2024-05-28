@@ -4,6 +4,7 @@
   &__content {
     flex-basis: fit-content;
     margin-left: 0;
+
     &-list {
       justify-content: center;
     }
@@ -13,10 +14,11 @@
     &-logos {
       flex-direction: column;
       align-items: center;
-    @include media-query.respond-from('xl') {
-          flex-direction: row;
-        }
+      @include media-query.respond-from('xl') {
+        flex-direction: row;
+      }
     }
+
     &-sub {
       justify-content: center;
       align-items: center !important;
@@ -25,9 +27,9 @@
 
   &__body {
     flex-direction: column;
-  @include media-query.respond-from('lg') {
-    flex-direction: row;
-    justify-content: space-between;
+    @include media-query.respond-from('lg') {
+      flex-direction: row;
+      justify-content: space-between;
     }
   }
 }
