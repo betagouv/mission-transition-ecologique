@@ -27,7 +27,6 @@
 import { onBeforeMount, onMounted, computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useNavigationStore } from './stores/navigation'
-import { useHead } from '@unhead/vue'
 
 import TeeHeader from './components/TeeHeader.vue'
 import TeeMatomo from './components/TeeMatomo.vue'

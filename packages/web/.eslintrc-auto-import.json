@@ -71,6 +71,14 @@
     "watch": true,
     "watchEffect": true,
     "watchPostEffect": true,
-    "watchSyncEffect": true
+    "watchSyncEffect": true,
+    "getActiveHead": true,
+    "injectHead": true,
+    "useHead": true,
+    "useHeadSafe": true,
+    "useSeoMeta": true,
+    "useServerHead": true,
+    "useServerHeadSafe": true,
+    "useServerSeoMeta": true
   }
 }

@@ -262,7 +262,6 @@ import Program from '@/utils/program/program'
 import Translation from '@/utils/translation'
 import { computed, onBeforeMount, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { useHead } from '@unhead/vue'
 
 const programsStore = useProgramStore()
 const navigationStore = useNavigationStore()
