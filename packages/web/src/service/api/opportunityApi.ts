@@ -2,6 +2,7 @@ import { useUsedTrackStore } from '@/stores/usedTrack'
 import { PublicodesKeys, QuestionnaireDataEnum, QuestionnaireRoute, TrackId } from '@/types'
 import type { OpportunityBody, ReqResp, WithoutNullableKeys, OpportunityFormType } from '@/types'
 import RequestApi from '@/service/api/requestApi'
+import TrackStructure from '@/utils/track/trackStructure'
 
 export default class OpportunityApi extends RequestApi {
   private readonly url = '/api/opportunities'
@@ -56,7 +57,7 @@ export default class OpportunityApi extends RequestApi {
         phoneNumber: this._opportunityForm.tel.value,
         companySiret: this._opportunityForm.siret.value,
         companyName: this.getFromUsedTrack(TrackId.Siret, 'denomination'),
-        companySector: this.getFromUsedTrack(TrackId.Siret, 'secteur') ?? this.getFromUsedTrack(TrackId.Sectors, 'secteur'), // get from usedTrack
+        companySector: TrackStructure.getSector(),
         companySize: (this.getFromUsedTrack(TrackId.StructureWorkforce, PublicodesKeys.Workforce) as unknown as number) ?? undefined, // get from usedTrack
         programId: this._programId,
         message: this._opportunityForm.needs.value,

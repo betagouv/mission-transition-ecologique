@@ -243,8 +243,10 @@ def format_deal_stage(deal_stage):
         return "Nouvelle"
     elif deal_stage == "659d15cff01695.94588187":
         return "Transmise"
+    elif deal_stage == 'c1d2ed92-8bc3-492d-a3ec-0284e214baa0':
+        return "Perdue"
     else:
-        print("unexpected deal stage", deal["deal_stage"])
+        print("unexpected deal stage", deal_stage)
         return "Inconnue"
 
 

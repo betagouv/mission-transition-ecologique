@@ -1,0 +1,18 @@
+@use 'setting';
+@use 'tool';
+
+.fr-text {
+  @each $align in setting.$aligns {
+    &-#{$align} {
+      text-align: $align;
+      @each $breakpoint, $value in setting.$breakpoints-values {
+        &-#{$breakpoint} {
+          @include tool.media-query-respond-from($breakpoint) {
+            text-align: $align;
+          }
+        }
+      }
+    }
+  }
+}
+

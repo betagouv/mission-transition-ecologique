@@ -1,50 +1,16 @@
 <template>
-  <!-- DEBUGGING -->
-  <div
-    v-if="useDebug.is"
-    class="vue-debug"
-  >
-    <h5>DEBUG - TeeAppFooter</h5>
-    <div
-      v-if="true"
-      class="fr-grid-row fr-grid-row--gutters"
-    >
-      <div class="fr-col-3">
-        <h6 class="fr-mb-1v">
-          Translation.lang : <code>{{ Translation.lang }} </code>
-        </h6>
-      </div>
-    </div>
-  </div>
-
   <!-- FOOTER -->
   <div :class="`fr-footer ${stickToBottom ? 'tee-footer-bottom' : ''}`">
-    <div class="fr-container--fluid fr-mx-20v">
+    <div class="fr-container--fluid fr-mx-md-20v fr-mx-8v">
       <!-- FOOTER BODY -->
-      <div
-        class="fr-footer__body"
-        style=""
-      >
-        <div class="fr-footer__brand fr-enlarge-link">
+      <div class="fr-footer__body fr-grid-row">
+        <div class="fr-footer__brand fr-col-lg-3">
           <p class="fr-logo">
             République
             <br />Française
           </p>
-          <router-link
-            class="fr-footer__brand-link"
-            to="/"
-            title="Retour à l’accueil du site - Transition Ecologique des entreprises - République Française"
-          >
-            <img
-              class="fr-footer__logo tee-footer-app-logo"
-              src="/images/logos/mission-transition-logo-alone.png"
-              alt="Transition Ecologique des entreprises"
-            />
-            <!-- L’alternative de l’image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l’image -->
-          </router-link>
         </div>
-        <div class="fr-footer__content">
-          <!-- <p class="fr-footer__content-desc">Lorem [...] elit ut.</p> -->
+        <div class="fr-footer__content fr-col-lg-9">
           <ul class="fr-footer__content-list">
             <li
               v-for="link in gouvLinks"
@@ -66,7 +32,7 @@
       <!-- FOOTER PARTNERS -->
       <div class="fr-footer__partners">
         <h4 class="fr-footer__partners-title">Nos partenaires</h4>
-        <div class="fr-footer__partners-logos">
+        <div class="fr-footer__partners-logos fr-grid-row">
           <div class="fr-footer__partners-main">
             <a
               class="footer__partners-link fr-my-4v fr-mr-4v tee-router-link"
@@ -80,10 +46,7 @@
               />
             </a>
           </div>
-          <div
-            class="fr-footer__partners-sub fr-grid-row--middle"
-            style="align-items: center"
-          >
+          <div class="fr-footer__partners-sub">
             <ul
               v-for="operator in operators"
               :key="operator.label"
@@ -107,10 +70,7 @@
       </div>
 
       <!-- FOOTER BOTTOM -->
-      <div
-        class="fr-footer__bottom fr-mt-5v"
-        style="box-shadow: none"
-      >
+      <div class="fr-footer__bottom fr-mt-5v">
         <ul class="fr-footer__bottom-list">
           <li
             v-for="link in mainLinks"
@@ -171,14 +131,11 @@
 import Translation from '@/utils/translation'
 import { RouteName } from '@/types/routeType'
 import operators from '@/utils/operators'
-import { useDebugStore } from '@/stores/debug'
 
 interface Props {
   stickToBottom?: boolean
 }
 defineProps<Props>()
-
-const useDebug = useDebugStore()
 
 const sourceCodeHref = 'https://github.com/betagouv/transition-ecologique-entreprises-widget/tree/main'
 const licenceHref = 'https://github.com/betagouv/transition-ecologique-entreprises-widget/blob/main/LICENSE'
@@ -203,21 +160,12 @@ const gouvLinks = [
 ]
 
 const mainPartner = {
-  label: 'Place des entreprises',
-  img: '/images/logos/conseillers-entreprises.service-public.fr.svg',
-  href: 'https://conseillers-entreprises.service-public.fr'
+  label: 'Service public',
+  img: '/images/logos/service-public.fr.svg',
+  href: 'https://conseillers-entreprises.service-public.fr/'
 }
-// {
-//   label: 'Aides-territoires',
-//   img: '/images/logos/aides-territoires.png',
-//   href: 'https://aides-territoires.beta.gouv.fr/'
-// }
 
 const mainLinks = [
-  // {
-  //   label: 'Plan du site',
-  //   to: '/plan-du-site'
-  // },
   {
     // router ok
     label: 'Accessibilité : Non conforme',
