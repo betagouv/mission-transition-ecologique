@@ -86,6 +86,7 @@ export default defineConfig({
   server: viteServer,
   plugins: [plugins()],
   build: currentConfig,
+
   define: {
     'process.env': process.env
   },
@@ -137,6 +138,10 @@ function buildHeaders() {
     // headers['Content-Security-Policy'] += `report-uri ${sentryData.url};`
     // headers['Public-Key-Pins'] = `default-src 'self' ${sentryData.domain};` + `report-uri ${sentryData.url};`
     headers['Expect-CT'] = `default-src 'self' ${sentryData.domain};` + `report-uri ${sentryData.url};`
+  }
+
+  if (mode === 'development') {
+    headers['Content-Security-Policy'] = "script-src 'self' 'unsafe-eval'; " + headers['Content-Security-Policy']
   }
 
   return headers
