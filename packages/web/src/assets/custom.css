@@ -10,12 +10,6 @@ WARNING :
 .fr-justify-center {
   justify-content: center;
 }
-.fr-text-center {
-  text-align: center;
-}
-.fr-text-right {
-  text-align: right;
-}
 .fr-card:hover {
   cursor: pointer !important;
 }

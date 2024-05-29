@@ -1,6 +1,5 @@
 // FOR AID PROGRAMS
-
-import { PublicodesKeys, PublicodeObjective, PublicodesCondition, ProgramAidType } from '../index'
+import { PublicodesKeys, PublicodeObjective, PublicodesCondition, ProgramAidType, ProgramOperatorType } from '@/types'
 
 interface ProgramObjectiveLink {
   lien: string
@@ -22,7 +21,7 @@ export interface ProgramData {
   'fin de validité'?: string
   illustration: string
   objectifs: ProgramObjective[]
-  'opérateur de contact': string
+  'opérateur de contact': ProgramOperatorType
   'autres opérateurs'?: string[]
   "nature de l'aide": ProgramAidType
   'activable en autonomie'?: string
