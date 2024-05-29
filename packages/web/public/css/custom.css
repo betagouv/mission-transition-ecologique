@@ -88,10 +88,6 @@ WARNING :
 button.fr-link:hover, .tee-router-link:hover {
   background-color: transparent !important;
 }
-.fr-responsive-img {
-  width: 100%;
-  height: 100% !important;
-}
 
 /* GLOBAL */
 .tee-no-hover {
