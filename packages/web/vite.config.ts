@@ -79,7 +79,7 @@ const viteServer: ServerOptions = {
       secure: false
     }
   },
-  headers: mode === 'development' ? buildDevHeaders() : buildHeaders()
+  headers: buildHeaders()
 }
 
 export default defineConfig({
@@ -111,14 +111,6 @@ function getSentryData(): { domain: string; url: string } | undefined {
   }
 }
 
-function buildDevHeaders(): Record<string, string> {
-  const headers = buildHeaders()
-
-  headers['Content-Security-Policy'] = "script-src 'self' 'unsafe-eval'; " + headers['Content-Security-Policy']
-
-  return headers
-}
-
 function buildHeaders() {
   const sentryData = getSentryData()
   const headers: Record<string, string> = {
@@ -146,6 +138,10 @@ function buildHeaders() {
     // headers['Content-Security-Policy'] += `report-uri ${sentryData.url};`
     // headers['Public-Key-Pins'] = `default-src 'self' ${sentryData.domain};` + `report-uri ${sentryData.url};`
     headers['Expect-CT'] = `default-src 'self' ${sentryData.domain};` + `report-uri ${sentryData.url};`
+  }
+
+  if (mode === 'development') {
+    headers['Content-Security-Policy'] = "script-src 'self' 'unsafe-eval'; " + headers['Content-Security-Policy']
   }
 
   return headers
