@@ -283,7 +283,7 @@ const opportunityForm = ref<OpportunityFormType>({
       content:
         "Pour vous aider au mieux, nos conseillers ont besoin d'éléments de contexte.\n" +
         'N’hésitez pas à nous détailler votre projet, vos besoins ou vos questionnements.',
-      imgLink: 'images/TEE-conseiller.png'
+      imgLink: 'images/TEE-conseiller.svg'
     }
   },
   cgu: {
