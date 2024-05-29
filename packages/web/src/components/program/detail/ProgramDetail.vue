@@ -10,6 +10,23 @@
   <div class="fr-container-fluid fr-px-0 fr-px-md-20v fr-mt-3v">
     <div class="fr-grid-row fr-grid-row-gutters">
       <div
+        v-if="isCatalogDetail"
+        class="fr-col"
+      >
+        <!-- BACK TO RESULTS BTN -->
+        <button
+          class="fr-btn fr-btn--lg fr-btn--tertiary-no-outline fr-mb-3v fr-pl-2v"
+          @click="goToPrograms"
+        >
+          <v-icon
+            name="ri-arrow-left-line"
+            aria-hidden="true"
+            class="fr-mr-2v"
+          ></v-icon>
+          {{ Translation.t('results.backToResults') }}
+        </button>
+      </div>
+      <div
         v-if="!program"
         class="fr-col-12"
       >
@@ -260,6 +277,7 @@ import { useRoute } from 'vue-router'
 const programsStore = useProgramStore()
 const navigationStore = useNavigationStore()
 const route = useRoute()
+const router = useRouter()
 
 const program = ref<ProgramType>()
 const TeeProgramFormContainer = ref<HTMLElement | null | undefined>(null)
@@ -308,6 +326,10 @@ const routeToPrograms = {
   name: isCatalogDetail ? RouteName.Catalog : RouteName.QuestionnaireResult,
   hash: '#' + props.programId,
   query: isCatalogDetail ? undefined : navigationStore.query
+}
+
+const goToPrograms = async () => {
+  await router.push(routeToPrograms)
 }
 
 onBeforeMount(() => {
