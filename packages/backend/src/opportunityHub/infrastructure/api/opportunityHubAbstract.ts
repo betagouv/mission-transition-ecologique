@@ -14,7 +14,7 @@ export default abstract class OpportunityHubAbstract implements OpportunityHubRe
 
   public abstract createOpportunity: (opportunity: Opportunity, Program: Program) => Promise<Maybe<Error>>
 
-  get operatorNames(): Operators[] {
+  get operatorNames(): Operators[] | Error {
     return this._operatorNames
   }
 

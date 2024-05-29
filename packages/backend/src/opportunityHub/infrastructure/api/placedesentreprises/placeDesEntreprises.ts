@@ -10,70 +10,16 @@ import OpportunityHubAbstract from '../opportunityHubAbstract'
 import { Objective } from '../../../../common/types'
 import ProgramService from '../../../../program/application/programService'
 
-const allOperators: Operators[] = [
-  'ADEME',
-  'ASP',
-  "Agence de l'Eau Adour-Garonne",
-  "Agence de l'Eau Artois-Picardie",
-  "Agence de l'Eau Loire-Bretagne",
-  "Agence de l'Eau Rhin-Meuse",
-  "Agence de l'Eau Rhône-Méditerranée-Corse",
-  "Agence de l'Eau Seine-Normandie",
-  "Agence de l'Eau",
-  'Bpifrance',
-  'Breizh Fab',
-  'CCI Auvergne-Rhône-Alpes',
-  'CCI Bretagne',
-  'CCI Centre-Val de Loire',
-  'CCI Grand-Est',
-  'CCI Hauts-de-France',
-  'CCI Loir-et-Cher',
-  'CCI Loiret',
-  'CCI Morbihan',
-  'CCI Normandie',
-  'CCI Occitanie',
-  'CCI ou CMA',
-  'CCI Île-de-France',
-  'CCI',
-  'CEE',
-  'CETIM',
-  'CMA Auvergne-Rhône-Alpes',
-  'CMA Bourgogne-Franche-Comté',
-  'CMA Bretagne',
-  'CMA Centre-Val de Loire',
-  'CMA Grand-Est',
-  'CMA Hauts-de-France',
-  'CMA La Réunion',
-  'CMA Loiret',
-  'CMA Normandie',
-  'CMA Nouvelle-Aquitaine',
-  "CMA Provence-Alpes-Côte-D'Azur",
-  'CMA Rhône',
-  'CMA Île-de-France',
-  'CMA',
-  'DDFIP',
-  'DREAL Bretagne',
-  'EcoCO2',
-  "France Rénov'",
-  'InvestEU',
-  'La Poste',
-  'Ministère de la Transition Écologique et Solidaire',
-  'ORACE en Pays de la Loire',
-  'Organisations professionnelles',
-  'Région Bretagne',
-  'Saur',
-  'Suez',
-  'UIMM',
-  'Véolia Eau'
-]
-
 export class PlaceDesEntreprises extends OpportunityHubAbstract {
   protected readonly _baseUrl = 'https://reso-staging.osc-fr1.scalingo.io/api/v1'
   protected _axios: AxiosInstance
-  _excludeOperatorsFromList = (exclude: Operators[]): Operators[] => {
-    return allOperators.filter((operator) => !exclude.includes(operator))
+
+  protected readonly _operatorNames = [] // warning, invalid but never used since we override all possible external uses of this value right below
+  override get operatorNames(): Operators[] | Error {
+    return new Error('Operator List non valid for Place des entreprises')
   }
-  protected readonly _operatorNames = this._excludeOperatorsFromList(['Bpifrance'])
+  override support = (program: Program) => (program['opérateur de contact'] as Operators) !== 'Bpifrance'
+
   constructor() {
     super()
     const token = Config.PDE_API_TOKEN
