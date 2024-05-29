@@ -4,8 +4,9 @@
 import { HasInputOptions, SiretValue, TrackComponent, TrackId } from '@/types'
 import type { Track, NextTrackRuleSet, EstablishmentType } from '@/types'
 import { ConditionOperators, DataMappingFrom } from '@/types'
-import { QuestionnaireRoute } from '@/types'
+import { QuestionnaireRoute, LegalCategory } from '@/types'
 
+// legalCategory == '1000' means it's an individual compagny
 const nextTrackRuleSets: NextTrackRuleSet[] = [
   {
     help: "Goes to track_goals if : legalCategory == '1000' AND questionnaire_route == 'specific_goal' (pro)",
@@ -18,7 +19,7 @@ const nextTrackRuleSets: NextTrackRuleSet[] = [
           {
             type: 'legalCategory',
             operator: ConditionOperators.is,
-            value: '1000'
+            value: LegalCategory.EI
           }
         ]
       },
@@ -48,7 +49,7 @@ const nextTrackRuleSets: NextTrackRuleSet[] = [
           {
             type: 'legalCategory',
             operator: ConditionOperators.is,
-            value: '1000'
+            value: LegalCategory.EI
           }
         ]
       },
