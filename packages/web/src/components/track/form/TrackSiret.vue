@@ -84,14 +84,15 @@
     v-if="requestResponses.resultCount > 3"
     class="fr-mt-4v"
   >
-    <span
-      >Besoin d'aide pour retrouver votre SIRET ?
+    <span>
+      Besoin d'aide pour retrouver votre SIRET ?
       <a
         href="https://annuaire-entreprises.data.gouv.fr/"
         target="_blank"
-        >Cliquez ici</a
-      ></span
-    >
+      >
+        Cliquez ici
+      </a>
+    </span>
   </div>
   <!-- WILDCARD -->
   <p
