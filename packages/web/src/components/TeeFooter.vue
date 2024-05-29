@@ -1,7 +1,7 @@
 <template>
   <!-- FOOTER -->
   <div :class="`fr-footer ${stickToBottom ? 'tee-footer-bottom' : ''}`">
-    <div class="fr-container--fluid fr-mx-20v">
+    <div class="fr-container--fluid fr-mx-md-20v fr-mx-8v">
       <!-- FOOTER BODY -->
       <div class="fr-footer__body fr-grid-row">
         <div class="fr-footer__brand fr-col-lg-3">
