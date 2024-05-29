@@ -72,7 +72,8 @@ const filters: FilterItem[] = [
     title: 'Régions',
     id: 'region-aid',
     component: ProgramFilterByRegion,
-    componentClass: 'fr-pl-2v'
+    componentClass: 'fr-pl-2v',
+    if: useNavigationStore().isCatalog()
   }
 ]
 </script>
