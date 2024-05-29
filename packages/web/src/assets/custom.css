@@ -116,7 +116,7 @@ button.fr-link:hover, .tee-router-link:hover {
 .tee-footer-operator-img {
   height: auto;
   max-height: 5.625rem;
-  width: 10rem !important;
+  max-width: 10rem !important;
 }
 .tee-footer-logo {
   box-shadow: none !important;
