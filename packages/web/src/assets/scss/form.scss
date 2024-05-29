@@ -1,9 +1,7 @@
-@import "colors";
-
 /* FORM */
 .fr-tee-form {
   &-block {
-    background-color: $light-blue;
+    background-color: $base-blue-light;
     padding: 2em;
     display: flex;
     justify-content: center;
@@ -26,12 +24,12 @@
   font-size: 1.3rem;
   line-height: 1.3rem;
   &-blue {
-    color: $dark-blue;
+    color: $blue-france;
     a {
       white-space: nowrap;
     }
   }
   &-error {
-    color: $dark-red;
+    color: $red-marianne;
   }
 }

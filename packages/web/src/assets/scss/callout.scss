@@ -1,4 +1,4 @@
-@import "colors";
+@import "setting/color";
 
 .customCallout {
   background-color: $base-blue;
@@ -44,7 +44,7 @@
 
   .defaultCallout {
     background: var(--light-background-alt-blue-france, #f5f5fe);
-    border-color: $secondary-purple;
+    border-color: $base-purple;
   }
 
   .warningCallout {

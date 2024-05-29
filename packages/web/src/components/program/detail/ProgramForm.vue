@@ -283,7 +283,6 @@ import Config from '@/config'
 import { CalloutType } from '@/types/elementsPropsTypes'
 
 const route = useRoute()
-const usedTrack = useUsedTrackStore()
 const publicPath = Config.publicPath !== 'undefined/' ? Config.publicPath : '../../public/'
 
 interface Props {
@@ -330,7 +329,7 @@ const opportunityForm = ref<OpportunityFormType>({
       secteur: TrackStructure.getSector(),
       titreAide: props.program.titre
     }),
-    label: 'Quel est votre besoin ?'
+    label: 'Quel est votre besoin ?',
     hint: undefined,
     callOut: {
       type: CalloutType.Custom,
@@ -441,6 +440,3 @@ const getValidMessage = (field: InputFieldUnionType): string => {
   return field.isValid === true ? ' ' : ''
 }
 </script>
-<style scoped lang="scss">
-@import 'src/assets/scss/input.scss';
-</style>
