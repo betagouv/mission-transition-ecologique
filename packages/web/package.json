@@ -56,7 +56,9 @@
     "vitest": "^1.2.1",
     "vue": "^3.2.47",
     "vue-router": "^4.2.5",
-    "tsx": "^4.7.2"
+    "tsx": "^4.7.2",
+    "chart.js": "^4.4.2",
+    "@unhead/vue": "^1.9.11"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.2.0",

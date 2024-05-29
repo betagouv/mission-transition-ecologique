@@ -262,13 +262,12 @@ import Program from '@/utils/program/program'
 import Translation from '@/utils/translation'
 import { computed, onBeforeMount, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-// import { useMeta } from 'vue-meta'
+import { useHead } from '@unhead/vue'
 
 const programsStore = useProgramStore()
 const navigationStore = useNavigationStore()
 const route = useRoute()
 const router = useRouter()
-// const { title, meta } = useMeta()
 
 const program = ref<ProgramType>()
 const TeeProgramFormContainer = ref<HTMLElement | null | undefined>(null)
@@ -291,7 +290,7 @@ const programDuration = computed(() => program.value?.[`durée de l'accompagneme
 const programLoanDuration = computed(() => program.value?.[`durée du prêt`])
 const programProvider = computed(() => program.value?.['opérateur de contact'])
 const programEndValidity = computed(() => program.value?.[`fin de validité`])
-const programPageTitle = computed(() => `Transition écologique - ${program.value?.[`titre`]}`)
+const programPageTitle = computed(() => `Transition écologique des TPE & PME - ${program.value?.[`titre`]}`)
 const programPageMeta = computed(() => program.value?.[`description`] || ' ')
 
 const columnTiles = computed(() => {
@@ -331,29 +330,15 @@ onBeforeMount(() => {
   Matomo.sendEvent('result_detail', route.name === RouteName.CatalogDetail ? 'show_detail_catalog' : 'show_detail', props.programId)
 })
 
-watch(programPageTitle, (newTitle) => {
-  document.title = newTitle
+useHead({
+  title: programPageTitle,
+  meta: [
+    {
+      name: 'description',
+      content: programPageMeta
+    }
+  ]
 })
-
-watch(programPageMeta, (newMeta) => {
-  let descriptionElement = document.querySelector('meta[name="description"]') as HTMLMetaElement
-  if (descriptionElement) {
-    descriptionElement.setAttribute('content', newMeta)
-  } else {
-    descriptionElement = document.createElement('meta')
-    descriptionElement.name = 'description'
-    descriptionElement.content = newMeta
-    document.getElementsByTagName('head')[0].appendChild(descriptionElement)
-  }
-})
-
-// title.value = programPageTitle
-// meta.value = [
-//   {
-//     name: 'description',
-//     content: programPageMeta
-//   }
-// ]
 
 const programIsAvailable = computed(() => {
   return Program.isAvailable(programsStore.currentProgram)

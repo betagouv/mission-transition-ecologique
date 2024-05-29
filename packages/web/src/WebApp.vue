@@ -27,6 +27,7 @@
 import { onBeforeMount, onMounted, computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useNavigationStore } from './stores/navigation'
+import { useHead } from '@unhead/vue'
 
 import TeeHeader from './components/TeeHeader.vue'
 import TeeMatomo from './components/TeeMatomo.vue'
@@ -50,5 +51,16 @@ onMounted(async () => {
   await router.isReady()
   navigationStore.setRouter(router)
   navigationStore.setRoute(route)
+})
+
+useHead({
+  title: 'Transition écologique - Aides et financements TPE & PME',
+  meta: [
+    {
+      name: 'description',
+      content:
+        'Service public pour les entreprises : Accédez simplement aux aides, accompagnements et financements pour réduire votre impact environnemental.'
+    }
+  ]
 })
 </script>
