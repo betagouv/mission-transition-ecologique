@@ -1,0 +1,5 @@
+@use 'sass:math';
+
+@mixin line-height($value) {
+  line-height: math.div($value, 1v) * 0.25rem;
+}

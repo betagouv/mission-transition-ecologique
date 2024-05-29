@@ -1,20 +1,14 @@
 <template>
+  <TeeEligibilityCriteriaBar
+    v-if="!isCatalogDetail"
+    :bg-color="Color.greenLightnessed"
+    :bg-bar-color="Color.greenLighted"
+    :previous-route="routeToPrograms"
+    message="Cette aide correspond à vos critères d’éligibilité"
+    message-icon="fr-icon-checkbox-circle-fill"
+  />
   <div class="fr-container-fluid fr-px-0 fr-px-md-20v fr-mt-3v">
     <div class="fr-grid-row fr-grid-row-gutters">
-      <div class="fr-col">
-        <!-- BACK TO RESULTS BTN -->
-        <button
-          class="fr-btn fr-btn--lg fr-btn--tertiary-no-outline fr-mb-3v fr-pl-2v"
-          @click="resetDetailResult"
-        >
-          <v-icon
-            name="ri-arrow-left-line"
-            aria-hidden="true"
-            class="fr-mr-2v"
-          ></v-icon>
-          {{ Translation.t('results.backToResults') }}
-        </button>
-      </div>
       <div
         v-if="!program"
         class="fr-col-12"
@@ -254,19 +248,18 @@ import ProgramTile from '@/components/program/detail/ProgramTile.vue'
 import Config from '@/config'
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
-import { type ProgramData as ProgramType } from '@/types'
+import { Color, type ProgramData as ProgramType } from '@/types'
 import { RouteName } from '@/types/routeType'
 import Contact from '@/utils/contact'
 import Matomo from '@/utils/matomo'
 import Program from '@/utils/program/program'
 import Translation from '@/utils/translation'
 import { computed, onBeforeMount, ref } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { useRoute } from 'vue-router'
 
 const programsStore = useProgramStore()
 const navigationStore = useNavigationStore()
 const route = useRoute()
-const router = useRouter()
 
 const program = ref<ProgramType>()
 const TeeProgramFormContainer = ref<HTMLElement | null | undefined>(null)
@@ -311,13 +304,10 @@ const isProgramAutonomous = computed(() => {
   return false
 })
 
-// functions
-const resetDetailResult = async () => {
-  await router.push({
-    name: isCatalogDetail ? RouteName.Catalog : RouteName.QuestionnaireResult,
-    hash: '#' + props.programId,
-    query: isCatalogDetail ? undefined : navigationStore.query
-  })
+const routeToPrograms = {
+  name: isCatalogDetail ? RouteName.Catalog : RouteName.QuestionnaireResult,
+  hash: '#' + props.programId,
+  query: isCatalogDetail ? undefined : navigationStore.query
 }
 
 onBeforeMount(() => {
