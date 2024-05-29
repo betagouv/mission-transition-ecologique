@@ -1,4 +1,4 @@
-import { Sector, PublicodesKeys } from '../../../../common/src/questionnaire/types'
+import { Sector, PublicodesKeys } from '../../../../common/src/questionnaire/types/types'
 
 export interface PublicodesInputData {
   [PublicodesKeys.CodeNAF]?: string

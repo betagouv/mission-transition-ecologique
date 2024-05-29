@@ -10,7 +10,9 @@ import { acceptHMRUpdate, defineStore } from 'pinia'
 import {
   type programFiltersType,
   ProgramAidType,
+  ProgramOperatorType,
   PublicodeObjective,
+  Region,
   type ProgramData,
   TrackId,
   QuestionnaireDataEnum,
@@ -23,8 +25,10 @@ export const useProgramStore = defineStore('program', () => {
   const hasPrograms = ref<boolean>(false)
 
   const programFilters = ref<programFiltersType>({
-    programAidTypeSelected: '',
-    objectifTypeSelected: ''
+    programAidTypesSelected: [],
+    regionAidSelected: [],
+    operatorAidSelected: [],
+    objectiveTypeSelected: ''
   })
 
   const programs = computed(async () => {
@@ -49,8 +53,10 @@ export const useProgramStore = defineStore('program', () => {
   function getProgramsByFilters(programs: ProgramData[]) {
     return programs.filter((program: ProgramData) => {
       return (
-        ProgramFilter.filterProgramsByAidType(program, programFilters.value.programAidTypeSelected as ProgramAidType) &&
-        ProgramFilter.filterProgramsByObjective(program, programFilters.value.objectifTypeSelected as PublicodeObjective)
+        ProgramFilter.filterProgramsByAidType(program, programFilters.value.programAidTypesSelected as ProgramAidType[]) &&
+        ProgramFilter.filterProgramsByObjective(program, programFilters.value.objectiveTypeSelected as PublicodeObjective) &&
+        ProgramFilter.filterProgramsByOperator(program, programFilters.value.operatorAidSelected as ProgramOperatorType[]) &&
+        ProgramFilter.filterProgramsByRegion(program, programFilters.value.regionAidSelected as Region[])
       )
     })
   }
@@ -90,10 +96,20 @@ export const useProgramStore = defineStore('program', () => {
     )
   }
 
+  function hasObjectiveTypeSelected() {
+    return programFilters.value.objectiveTypeSelected !== ''
+  }
+
+  function setObjectiveTypeSelected(objectiveType: string) {
+    programFilters.value.objectiveTypeSelected = objectiveType
+  }
+
   function resetFilters() {
     programFilters.value = {
-      programAidTypeSelected: '',
-      objectifTypeSelected: ''
+      programAidTypesSelected: [],
+      objectiveTypeSelected: '',
+      regionAidSelected: [],
+      operatorAidSelected: []
     }
   }
 
@@ -105,6 +121,8 @@ export const useProgramStore = defineStore('program', () => {
     getProgramsByFilters,
     getProgramById,
     hasObjectiveTypeFilter,
+    hasObjectiveTypeSelected,
+    setObjectiveTypeSelected,
     resetFilters
   }
 })
