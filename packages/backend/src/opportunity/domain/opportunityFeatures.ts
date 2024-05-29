@@ -6,7 +6,7 @@ import { OperatorRepository } from '../../operator/domain/spi'
 import { ProgramRepository } from '../../program/domain/spi'
 import ProgramFeatures from '../../program/domain/programFeatures'
 import { Program } from '@tee/data/src/type/program'
-import Validator from '../../../../common/src/establishment/validator'
+import SiretValidator from '../../../../common/src/establishment/validator/siretValidator'
 import EstablishmentService from '../../establishment/application/establishmentService'
 export default class OpportunityFeatures {
   private readonly _contactRepository: ContactRepository
@@ -88,7 +88,7 @@ export default class OpportunityFeatures {
   }
 
   private async _verifyAndAddEstablishmentData(opportunity: Opportunity): Promise<Result<Opportunity, Error>> {
-    if (!Validator.validateSiret(opportunity.companySiret)) {
+    if (!SiretValidator.validate(opportunity.companySiret)) {
       return Result.err(new Error('invalid SIRET')) //since there is a validator in the front end,
       // it means this is a direct query which we can ignore if poorly formatted
     }

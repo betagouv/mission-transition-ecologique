@@ -1,4 +1,4 @@
-import { PublicodesKeys, QuestionnaireRoute } from '@tee/common/src/questionnaire/types'
+import { PublicodesKeys, QuestionnaireRoute } from '@tee/common/src/questionnaire/types/types'
 import { Entry, setObjectProperty } from '../../src/common/objects'
 
 import { type Program } from '@tee/data/src/type/program'

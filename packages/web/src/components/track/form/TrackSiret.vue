@@ -118,7 +118,7 @@ import Matomo from '@/utils/matomo'
 import Navigation from '@/utils/navigation'
 import TrackSiret from '@/utils/track/TrackSiret'
 import Translation from '@/utils/translation'
-import Validator from '@tee/common/src/establishment/validator'
+import SiretValidator from '@tee/common/src/establishment/validator/siretValidator'
 import { ref, computed } from 'vue'
 import { EstablishmentSearch } from '@/types'
 
@@ -174,7 +174,7 @@ const processInput = async () => {
 
   if (!queryValue.value || queryValue.value.length < 3) {
     errorMessage.value = Translation.t('enterprise.searchTooShort')
-  } else if (Validator.isValidSiretFormat(queryValue.value) && !Validator.isValidSiretNumber(queryValue.value)) {
+  } else if (SiretValidator.isValidSiretFormat(queryValue.value) && !SiretValidator.isValidSiretNumber(queryValue.value)) {
     errorMessage.value = "Le numéro SIRET n'est pas valide"
   } else {
     const searchResult = await TrackSiret.search(queryValue.value)
@@ -221,20 +221,20 @@ function createData(): TrackOptionItem {
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/scss/_colors.scss';
+@use '@/assets/scss/setting';
 
 .custom-border {
   border: solid thin #c4c4c4;
 }
 
 .is-selected {
-  border: solid thin $dark-blue;
-  color: $dark-blue;
+  border: solid thin setting.$blue-france;
+  color: setting.$blue-france;
   background-color: #f5f5f5;
 }
 
 .is-title-selected {
-  color: $dark-blue;
+  color: setting.$blue-france;
 }
 
 .thinner-text {
@@ -243,6 +243,6 @@ function createData(): TrackOptionItem {
 
 .result-number {
   font-style: italic;
-  color: $dark-blue;
+  color: setting.$blue-france;
 }
 </style>

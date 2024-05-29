@@ -1,0 +1,7 @@
+@function modifierByBreakpoint($breakpoint) {
+  @if $breakpoint == xs {
+    @return '';
+  }
+
+  @return '-#{$breakpoint}';
+}
