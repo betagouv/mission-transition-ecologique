@@ -19,7 +19,7 @@
       <div class="fr-container">
         <div
           v-if="message"
-          class="fr-mb-1v fr-ml-2v fr-text--blue-france"
+          class="fr-mb-1v fr-ml-2v fr-text--blue-france fr-text--bold"
         >
           <span
             v-if="messageIcon"

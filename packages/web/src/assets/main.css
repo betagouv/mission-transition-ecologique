@@ -1056,4 +1056,34 @@ input[type=search]::-webkit-search-decoration, input[type=search]::-webkit-searc
   background-image: radial-gradient(at 5px 4px, transparent 4px, black 4px, black 5px, transparent 6px), linear-gradient(black, black), radial-gradient(at calc(100% - 5px) 4px, transparent 4px, black 4px, black 5px, transparent 6px), linear-gradient(black, black), radial-gradient(at calc(100% - 5px) calc(100% - 4px), transparent 4px, black 4px, black 5px, transparent 6px), linear-gradient(black, black), radial-gradient(at 5px calc(100% - 4px), transparent 4px, black 4px, black 5px, transparent 6px), linear-gradient(black, black), var(--data-uri-svg);
 }
 
+.fr-footer__content {
+  flex-basis: fit-content;
+  margin-left: 0;
+}
+.fr-footer__content-list {
+  justify-content: center;
+}
+.fr-footer__partners-logos {
+  flex-direction: column;
+  align-items: center;
+}
+@media (min-width: 78em) {
+  .fr-footer__partners-logos {
+    flex-direction: row;
+  }
+}
+.fr-footer__partners-sub {
+  justify-content: center;
+  align-items: center !important;
+}
+.fr-footer__body {
+  flex-direction: column;
+}
+@media (min-width: 62em) {
+  .fr-footer__body {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
 /*# sourceMappingURL=main.css.map */
