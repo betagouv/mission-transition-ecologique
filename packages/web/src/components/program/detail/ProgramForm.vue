@@ -187,42 +187,44 @@
   <!-- FORM CALLBACK -->
   <div
     v-if="formIsSent"
-    class="fr-mt-5v fr-tee-form"
+    class="fr-mt-5v fr-grid-row fr-grid-row--center fr-grid-row--middle"
   >
-    <!-- MESSAGE IF ERROR-->
-    <TeeError
-      v-if="!hasValidResponse"
-      :mailto="getMailTo()"
-      :email="Contact.email"
-    >
-      <h3 class="tee-form-response tee-form-response-error">
-        {{ Translation.t(`form.notSent`) }}
-      </h3>
-    </TeeError>
+    <div class="fr-col-12 fr-col-md-8">
+      <!-- MESSAGE IF ERROR-->
+      <TeeError
+        v-if="!hasValidResponse"
+        :mailto="getMailTo()"
+        :email="Contact.email"
+      >
+        <h3 class="tee-form-response tee-form-response-error">
+          {{ Translation.t(`form.notSent`) }}
+        </h3>
+      </TeeError>
 
-    <!-- MESSAGE IF 200 -->
-    <div
-      v-if="hasValidResponse"
-      class="fr-text-center"
-    >
-      <p class="tee-form-response tee-form-response-blue">
-        <v-icon
-          name="ri-checkbox-circle-fill"
-          aria-hidden="true"
-          scale="3"
-        ></v-icon>
-      </p>
-      <h3 class="tee-form-response tee-form-response-blue">
-        {{ Translation.t(`form.sent`) }}
-      </h3>
-      <h6 class="fr-mt-15v fr-mb-3v">
-        {{ Translation.t('form.nowWhat') }}
-      </h6>
-      <p class="fr-mb-15v">
-        <span>
-          {{ Translation.ti(Translation.t('form.phoneContact'), { operator: program['opérateur de contact'] }) }}
-        </span>
-      </p>
+      <!-- MESSAGE IF 200 -->
+      <div
+        v-if="hasValidResponse"
+        class="fr-text-center"
+      >
+        <p class="tee-form-response tee-form-response-blue">
+          <v-icon
+            name="ri-checkbox-circle-fill"
+            aria-hidden="true"
+            scale="3"
+          ></v-icon>
+        </p>
+        <h3 class="tee-form-response tee-form-response-blue">
+          {{ Translation.t(`form.sent`) }}
+        </h3>
+        <h6 class="fr-mt-15v fr-mb-3v">
+          {{ Translation.t('form.nowWhat') }}
+        </h6>
+        <p class="fr-mb-15v">
+          <span>
+            {{ Translation.ti(Translation.t('form.phoneContact'), { operator: program['opérateur de contact'] }) }}
+          </span>
+        </p>
+      </div>
     </div>
   </div>
 </template>

@@ -73,12 +73,6 @@ WARNING :
   display: flex;
   justify-content: center;
 }
-.fr-tee-form {
-  max-width: 685px;
-}
-.fr-tee-form-error {
-  text-align: center;
-}
 .fr-form-block .fr-input {
   background-color: white;
 }
