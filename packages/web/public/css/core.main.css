@@ -1770,7 +1770,7 @@ iframe[class*=" fr-ratio"] {
 
 .fr-responsive-img {
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 
 .fr-responsive-vid {
