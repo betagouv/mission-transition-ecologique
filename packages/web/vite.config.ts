@@ -118,7 +118,6 @@ function buildHeaders() {
       "default-src 'none';" +
       "base-uri 'self';" +
       "form-action 'self';" +
-      "script-src 'self' ;" +
       "script-src-elem 'self' 'unsafe-inline' https://stats.beta.gouv.fr  https://embed.typeform.com;" +
       "style-src 'self' 'unsafe-inline' https://embed.typeform.com;" +
       "font-src 'self';" +
@@ -142,6 +141,8 @@ function buildHeaders() {
 
   if (mode === 'development') {
     headers['Content-Security-Policy'] = "script-src 'self' 'unsafe-eval'; " + headers['Content-Security-Policy']
+  } else {
+    headers['Content-Security-Policy'] = "script-src 'self'; " + headers['Content-Security-Policy']
   }
 
   return headers
