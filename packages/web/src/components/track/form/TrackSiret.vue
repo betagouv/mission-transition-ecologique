@@ -84,14 +84,15 @@
     v-if="requestResponses.resultCount > 3"
     class="fr-mt-4v"
   >
-    <span
-      >Besoin d'aide pour retrouver votre SIRET ?
+    <span>
+      Besoin d'aide pour retrouver votre SIRET ?
       <a
         href="https://annuaire-entreprises.data.gouv.fr/"
         target="_blank"
-        >Cliquez ici</a
-      ></span
-    >
+      >
+        Cliquez ici
+      </a>
+    </span>
   </div>
   <!-- WILDCARD -->
   <p
@@ -220,20 +221,20 @@ function createData(): TrackOptionItem {
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/scss/setting/_color.scss';
+@use '@/assets/scss/setting';
 
 .custom-border {
   border: solid thin #c4c4c4;
 }
 
 .is-selected {
-  border: solid thin $dark-blue;
-  color: $dark-blue;
+  border: solid thin setting.$blue-france;
+  color: setting.$blue-france;
   background-color: #f5f5f5;
 }
 
 .is-title-selected {
-  color: $dark-blue;
+  color: setting.$blue-france;
 }
 
 .thinner-text {
@@ -242,6 +243,6 @@ function createData(): TrackOptionItem {
 
 .result-number {
   font-style: italic;
-  color: $dark-blue;
+  color: setting.$blue-france;
 }
 </style>

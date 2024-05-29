@@ -28,22 +28,12 @@
 </template>
 
 <script setup lang="ts">
-import { useUsedTrackStore } from '@/stores/usedTrack'
-import { TrackId } from '@/types'
+import TrackStructure from '@/utils/track/trackStructure'
 import Translation from '@/utils/translation'
 
-const usedTrackStore = useUsedTrackStore()
 const resume: string = Translation.t('programResults.resume', {
-  effectif: Translation.t(
-    'enterprise.structureSize.' + usedTrackStore.findInQuestionnaireDataByTrackIdAndKey(TrackId.StructureWorkforce, 'structure_size')
-  ),
-  secteur:
-    usedTrackStore.findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'secteur') !== '' &&
-    usedTrackStore.findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'secteur') !== undefined
-      ? usedTrackStore.findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'secteur')
-      : usedTrackStore.findInQuestionnaireDataByTrackIdAndKey(TrackId.Sectors, 'sector'),
-  region:
-    usedTrackStore.findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'region') ??
-    usedTrackStore.findInQuestionnaireDataByTrackIdAndKey(TrackId.StructureRegion, 'region')
+  effectif: Translation.t('enterprise.structureSize.' + TrackStructure.getSize()),
+  secteur: TrackStructure.getSector(),
+  region: TrackStructure.getRegion()
 })
 </script>

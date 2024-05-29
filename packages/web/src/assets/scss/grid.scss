@@ -1,14 +1,41 @@
 @use '@gouvfr/dsfr/module/media-query';
 @use '@gouvfr/dsfr/module/media-query/variable/breakpoints';
+@use 'setting';
+@use 'tool';
+
+.fr-col {
+  @each $align-name, $align in setting.$vertical-flex-aligns {
+    &-content--#{$align-name} {
+      display: flex;
+      align-items: $align;
+    }
+  }
+  @each $align-name, $align in setting.$horizontal-flex-aligns {
+    &-justify--#{$align-name} {
+      display: flex;
+      justify-content: $align;
+    }
+  }
+
+  @each $breakpoint, $value in breakpoints.$values {
+    $modifier: tool.modifierByBreakpoint($breakpoint);
+    &-hidden#{$modifier} {
+      @include media-query.respond-from($breakpoint) {
+        display: none !important;
+      }
+    }
+    &-unhidden#{$modifier} {
+      @include media-query.respond-from($breakpoint) {
+        display: unset !important;
+      }
+    }
+  }
+}
 
 .fr-container {
   @each $breakpoint, $value in breakpoints.$values {
-    $mod: '-#{$breakpoint}';
-
-    @if $breakpoint == xs {
-      $mod: '';
-    }
-    &#{$mod} {
+    $modifier: tool.modifierByBreakpoint($breakpoint);
+    &#{$modifier} {
       &--fluid {
         &--no-overflow {
           @include media-query.respond-from($breakpoint) {
@@ -18,4 +45,10 @@
       }
     }
   }
+}
+
+.fr-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }

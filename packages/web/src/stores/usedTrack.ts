@@ -51,6 +51,10 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     return usedTracks.value.filter((usedTrack: UsedTrack) => usedTrack?.completed).map((usedTrack: UsedTrack) => toRaw(usedTrack))
   })
 
+  const completedUsedTracksIds = computed(() => {
+    return usedTracks.value.filter((usedTrack: UsedTrack) => usedTrack?.completed).map((usedTrack: UsedTrack) => usedTrack.id)
+  })
+
   const completedQuestionnaireData = computed<(string | number | object | undefined)[]>(() => {
     return completedUsedTracks.value
       .map((usedTrack: UsedTrack) => {
@@ -162,6 +166,10 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
 
   function hasUsedTracks() {
     return usedTracks.value.length > 0
+  }
+
+  function getPreviousCompletedUsedTrackId() {
+    return completedUsedTracksIds.value.slice(-1).reverse().pop()
   }
 
   function removeFurtherUsedTracks(trackId: TrackId) {
@@ -294,6 +302,7 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     setCurrentToUncompleted,
     currentIsFirst,
     getUsedTrack,
+    getPreviousCompletedUsedTrackId,
     hasUsedTrack,
     hasUsedTracks,
     removeFurtherUsedTracks,

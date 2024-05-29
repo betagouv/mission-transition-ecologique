@@ -1,28 +1,18 @@
-@use '@gouvfr/dsfr/module/media-query';
-@use '@gouvfr/dsfr/module/media-query/variable/breakpoints';
 @use 'setting';
+@use 'tool';
 
-@each $align in setting.$aligns {
-  .fr-text-#{$align} {
-    text-align: $align;
-    @each $breakpoint, $value in breakpoints.$values {
-      &-#{$breakpoint} {
-        @include media-query.respond-from($breakpoint) {
-          text-align: $align;
+.fr-text {
+  @each $align in setting.$aligns {
+    &-#{$align} {
+      text-align: $align;
+      @each $breakpoint, $value in setting.$breakpoints-values {
+        &-#{$breakpoint} {
+          @include tool.media-query-respond-from($breakpoint) {
+            text-align: $align;
+          }
         }
       }
     }
   }
 }
 
-.fr-text {
-  @each $color, $properties in setting.$colors {
-    &--#{$color} {
-      @if type-of($properties) == map {
-        color: map-get($properties, "color");
-      } @else {
-        color: $properties;
-      }
-    }
-  }
-}

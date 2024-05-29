@@ -208,11 +208,11 @@
 
 <script setup lang="ts">
 import { scrollToElementCenter } from '@/utils/helpers'
-import { useUsedTrackStore } from '@/stores/usedTrack'
+import TrackStructure from '@/utils/track/trackStructure'
 import { computed, ref } from 'vue'
 import { type ProgramData, type ReqResp, TrackId } from '@/types'
 import Translation from '@/utils/translation'
-import TeeDsfrButton from '@/components/element/TeeDsfrButton.vue'
+import TeeDsfrButton from '@/components/element/button/TeeDsfrButton.vue'
 import { DsfrInput, DsfrInputGroup, DsfrCheckbox } from '@gouvminint/vue-dsfr'
 import Matomo from '@/utils/matomo'
 import { RouteName } from '@/types/routeType'
@@ -223,7 +223,6 @@ import type { OpportunityFormType } from '@/types/opportunityFormType'
 import Contact from '@/utils/contact'
 
 const route = useRoute()
-const usedTrack = useUsedTrackStore()
 
 interface Props {
   program: ProgramData
@@ -238,18 +237,14 @@ const opportunityForm = ref<OpportunityFormType>({
   email: { required: true, value: undefined, label: 'Email', hint: 'Format attendu : nom@domaine.fr' },
   siret: {
     required: true,
-    value: usedTrack.findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'siret'),
+    value: TrackStructure.getSiret(),
     label: 'SIRET de votre entreprise',
     hint: 'Format attendu : 14 chiffres'
   },
   needs: {
     required: true,
     value: Translation.t('program.form.needs', {
-      secteur:
-        usedTrack.findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'secteur') !== '' &&
-        usedTrack.findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'secteur') !== undefined
-          ? usedTrack.findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'secteur')
-          : usedTrack.findInQuestionnaireDataByTrackIdAndKey(TrackId.Sectors, 'sector'),
+      secteur: TrackStructure.getSector(),
       titreAide: props.program.titre
     }),
     label: 'Quel est votre besoin ?',
