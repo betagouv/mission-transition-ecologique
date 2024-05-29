@@ -51,7 +51,6 @@ export const useProgramStore = defineStore('program', () => {
   }
 
   function getProgramsByFilters(programs: ProgramData[]) {
-    console.log(programs)
     return programs.filter((program: ProgramData) => {
       return (
         ProgramFilter.filterProgramsByAidType(program, programFilters.value.programAidTypesSelected as ProgramAidType[]) &&

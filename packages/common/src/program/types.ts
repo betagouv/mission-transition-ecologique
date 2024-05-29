@@ -7,13 +7,13 @@ export enum ProgramAidType {
 }
 
 export enum ProgramOperatorType {
-  bpi = 'Bpifrance',
-  ademe = 'ADEME',
-  cci = 'CCI',
-  laposte = 'La Poste',
-  asp = 'ASP',
-  ministere_eco = 'Ministère de la Transition Écologique et Solidaire',
-  ddfip = 'DGFIP',
-  cma = 'CMA',
-  orace = 'ORACE'
+  ADEME = 'ADEME',
+  ASP = 'ASP',
+  BPI = 'Bpifrance',
+  CCI = 'CCI',
+  CMA = 'CMA',
+  DDFIP = 'DGFIP',
+  LAPOSTE = 'La Poste',
+  MTES = 'Ministère de la Transition Écologique et Solidaire',
+  ORACE = 'ORACE'
 }

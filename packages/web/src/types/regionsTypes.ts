@@ -1,3 +1,4 @@
+// note : based on authorized values in "/packages/data/common/interface.yaml"
 export enum Region {
   AuvergneRhoneAlpes = 'Auvergne-Rhône-Alpes',
   BourgogneFrancheComte = 'Bourgogne-Franche-Comté',

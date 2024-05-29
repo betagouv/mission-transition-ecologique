@@ -34,7 +34,7 @@
         v-if="!hasSpinner"
         class="fr-col-2 fr-hidden-xs"
       >
-        <div class="fr-sidemenu fr-mr-3v">
+        <div class="fr-sidemenu fr-pr-0 fr-mr-3v">
           <div class="fr-text--bold fr-text-left fr-mb-3v">Filtres</div>
           <ProgramFiltersAccordeon />
         </div>
