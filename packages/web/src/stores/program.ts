@@ -10,7 +10,9 @@ import { acceptHMRUpdate, defineStore } from 'pinia'
 import {
   type programFiltersType,
   ProgramAidType,
+  ProgramOperatorType,
   PublicodeObjective,
+  Region,
   type ProgramData,
   TrackId,
   QuestionnaireDataEnum,
@@ -24,6 +26,8 @@ export const useProgramStore = defineStore('program', () => {
 
   const programFilters = ref<programFiltersType>({
     programAidTypesSelected: [],
+    regionAidSelected: [],
+    operatorAidSelected: [],
     objectiveTypeSelected: ''
   })
 
@@ -50,7 +54,9 @@ export const useProgramStore = defineStore('program', () => {
     return programs.filter((program: ProgramData) => {
       return (
         ProgramFilter.filterProgramsByAidType(program, programFilters.value.programAidTypesSelected as ProgramAidType[]) &&
-        ProgramFilter.filterProgramsByObjective(program, programFilters.value.objectiveTypeSelected as PublicodeObjective)
+        ProgramFilter.filterProgramsByObjective(program, programFilters.value.objectiveTypeSelected as PublicodeObjective) &&
+        ProgramFilter.filterProgramsByOperator(program, programFilters.value.operatorAidSelected as ProgramOperatorType[]) &&
+        ProgramFilter.filterProgramsByRegion(program, programFilters.value.regionAidSelected as Region[])
       )
     })
   }
@@ -101,7 +107,9 @@ export const useProgramStore = defineStore('program', () => {
   function resetFilters() {
     programFilters.value = {
       programAidTypesSelected: [],
-      objectiveTypeSelected: ''
+      objectiveTypeSelected: '',
+      regionAidSelected: [],
+      operatorAidSelected: []
     }
   }
 

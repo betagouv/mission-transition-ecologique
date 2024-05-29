@@ -15,7 +15,7 @@
   >
     <template #default>
       <div class="fr-h5 tee-text-blue fr-text-center">Filtrer</div>
-      <ProgramFiltersAccordeon class="fr-accordion-bg--blue" />
+      <ProgramFiltersAccordion accordion-class="fr-accordion-bg--blue" />
     </template>
   </DsfrModal>
 </template>

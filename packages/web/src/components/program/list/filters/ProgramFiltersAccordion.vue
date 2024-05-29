@@ -6,7 +6,7 @@
     >
       <li v-if="filter.if === undefined || filter.if">
         <DsfrAccordion
-          :class="[props.class, filter.accordionClass]"
+          :class="[props.accordionClass, filter.accordionClass]"
           :title="filter.title"
           :expanded-id="expandedId"
           @expand="expandFilter"
@@ -22,10 +22,12 @@
   </DsfrAccordionsGroup>
 </template>
 <script setup lang="ts">
-import TeeEligibilityCriteriaAccordion from '@/components/program/eligibilityCriteria/TeeEligibilityCriteriaAccordion.vue'
 import { useNavigationStore } from '@/stores/navigation'
-import { ref } from 'vue'
+import TeeEligibilityCriteriaAccordion from '@/components/program/eligibilityCriteria/TeeEligibilityCriteriaAccordion.vue'
 import ProgramFilterByAidType from './ProgramFilterByAidType.vue'
+import ProgramFilterByOperator from './ProgramFilterByOperator.vue'
+import ProgramFilterByRegion from './ProgramFilterByRegion.vue'
+import { ref } from 'vue'
 
 const expandedId = ref<string | undefined>()
 
@@ -33,7 +35,7 @@ const expandFilter = (id: string | undefined) => {
   expandedId.value = id
 }
 interface Props {
-  class?: string
+  accordionClass?: string
 }
 const props = defineProps<Props>()
 
@@ -58,6 +60,18 @@ const filters: FilterItem[] = [
     title: "Types d'aides",
     id: 'type-aid',
     component: ProgramFilterByAidType,
+    componentClass: 'fr-pl-2v'
+  },
+  {
+    title: 'Opérateurs',
+    id: 'operator-aid',
+    component: ProgramFilterByOperator,
+    componentClass: 'fr-pl-2v'
+  },
+  {
+    title: 'Régions',
+    id: 'region-aid',
+    component: ProgramFilterByRegion,
     componentClass: 'fr-pl-2v'
   }
 ]

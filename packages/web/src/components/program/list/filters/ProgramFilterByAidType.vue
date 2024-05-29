@@ -2,7 +2,6 @@
   <DsfrCheckboxSet
     v-model="programFilters.programAidTypesSelected"
     small
-    :legend="legend"
     :options="programAidTypeOptions"
   />
 </template>
@@ -11,13 +10,6 @@
 import { useProgramStore } from '@/stores/program'
 import { ProgramAidType, type programFiltersType } from '@/types'
 import { DsfrCheckboxSetProps } from '@gouvminint/vue-dsfr/types/components/DsfrCheckbox/DsfrCheckbox.types'
-
-interface Props {
-  legend?: string
-}
-withDefaults(defineProps<Props>(), {
-  legend: "Filtrer par nature de l'aide"
-})
 
 const programFilters: programFiltersType = useProgramStore().programFilters
 const programAidTypeOptions: DsfrCheckboxSetProps['options'] = [

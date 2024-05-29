@@ -2,6 +2,8 @@ import {
   PublicodesKeys,
   PublicodeObjective,
   ProgramAidType,
+  Region,
+  ProgramOperatorType,
   type ProgramData,
   type programFiltersType,
   PublicodesCondition,
@@ -14,6 +16,27 @@ export default class ProgramFilter {
       return true
     }
     return programAidTypesSelected.includes(program["nature de l'aide"])
+  }
+  static filterProgramsByRegion(program: ProgramData, regionsSelected: Region[]) {
+    if (!this.isValidFilterValues(regionsSelected)) {
+      return true
+    }
+    const geoSectors = program["conditions d'éligibilité"]['secteur géographique']
+      .map((regionString: string) => regionString.split(', '))
+      .flat()
+
+    if (geoSectors.includes("France et territoires d'outre-mer")) {
+      return true
+    }
+    const matchingRegions = regionsSelected.filter((regionString: Region) => geoSectors.includes(regionString))
+    return matchingRegions.length > 0
+  }
+
+  static filterProgramsByOperator(program: ProgramData, programOperatorsSelected: ProgramOperatorType[]) {
+    if (!this.isValidFilterValues(programOperatorsSelected)) {
+      return true
+    }
+    return programOperatorsSelected.includes(program['opérateur de contact'])
   }
 
   static filterProgramsByObjective(program: ProgramData, objectiveTypeSelected: PublicodeObjective) {
@@ -31,6 +54,7 @@ export default class ProgramFilter {
   static isValidFilterValue(programFilterValue: ValueOf<programFiltersType>) {
     return programFilterValue !== ''
   }
+
   static isValidFilterValues(programFilterValue: ValueOf<programFiltersType>) {
     return programFilterValue.length > 0
   }

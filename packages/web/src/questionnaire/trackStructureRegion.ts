@@ -1,45 +1,10 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`questionnaire.trackStructureRegion > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import type { Track, TrackOptionsUnion } from '@/types'
+import { Region, Track, TrackOptionsUnion } from '@/types'
 import { TrackComponent, TrackId, ConditionOperators, DataMappingFrom } from '@/types'
 import { QuestionnaireRoute } from '@tee/common/src/questionnaire/types/types'
 import type { NextTrackRuleSet } from '@/types'
-
-// note : based on authorized values in "/packages/data/common/interface.yaml"
-const regionsList = [
-  //France métropolitaine
-  'Auvergne-Rhône-Alpes',
-  'Bourgogne-Franche-Comté',
-  'Bretagne',
-  'Centre-Val de Loire',
-  'Corse',
-  'Grand Est',
-  'Hauts-de-France',
-  'Normandie',
-  'Nouvelle-Aquitaine',
-  'Occitanie',
-  "Provence-Alpes-Côte d'Azur",
-  'Pays de la Loire',
-  'Île-de-France',
-
-  //DOM
-  'Guadeloupe',
-  'Guyane',
-  'La Réunion',
-  'Martinique',
-  'Mayotte',
-
-  //Collectivités d'outre-mer
-  'Ile de Clipperton',
-  'Nouvelle-Calédonie',
-  'Polynésie française',
-  'Saint-Barthélemy',
-  'Saint-Martin',
-  'Saint-Pierre-Et-Miquelon',
-  'Terres australes et antarctiques françaises',
-  'Wallis et Futuna'
-]
 
 const nextTrackRulesSet: NextTrackRuleSet[] = [
   {
@@ -80,12 +45,12 @@ const nextTrackRulesSet: NextTrackRuleSet[] = [
   }
 ]
 
-const regionsOptions: TrackOptionsUnion[] = regionsList.map((regName) => {
+const regionsOptions: TrackOptionsUnion[] = Object.values(Region).map((regionName) => {
   return {
-    value: regName,
-    questionnaireData: { region: regName },
-    title: { fr: regName },
-    label: { fr: regName },
+    value: regionName,
+    questionnaireData: { region: regionName },
+    title: { fr: regionName },
+    label: { fr: regionName },
     next: {
       default: TrackId.Goals,
       ruleSet: nextTrackRulesSet
