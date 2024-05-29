@@ -1,4 +1,4 @@
-export default class Sticky {
+export default class StickyWithOffset {
   private readonly class = 'fr-sticky'
 
   constructor(

@@ -41,7 +41,7 @@
 
 <script setup lang="ts">
 import { Color } from '@/types'
-import Sticky from '@/utils/sticky'
+import StickyWithOffset from '@/utils/stickyWithOffset'
 import TrackStructure from '@/utils/track/trackStructure'
 import type { RouteLocationRaw } from 'vue-router'
 
@@ -55,17 +55,17 @@ interface Props {
 
 const props = defineProps<Props>()
 const eligibilityCriteria = ref<HTMLElement>()
-const sticky = ref<Sticky | null>(null)
+const stickyWithOffset = ref<StickyWithOffset | null>(null)
 const criteria = TrackStructure.getEligibilityCriteria()
 
 onMounted(async () => {
   await nextTick()
-  sticky.value = new Sticky(eligibilityCriteria.value, document.getElementById('tee-header'))
-  sticky.value.addEventListenerOnScroll()
+  stickyWithOffset.value = new StickyWithOffset(eligibilityCriteria.value, document.getElementById('tee-header'))
+  stickyWithOffset.value.addEventListenerOnScroll()
 })
 
 onUnmounted(() => {
-  sticky.value?.removeEventListenerOnScroll()
+  stickyWithOffset.value?.removeEventListenerOnScroll()
 })
 
 const bgClass = computed(() => {
