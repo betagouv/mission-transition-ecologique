@@ -8,6 +8,10 @@ export enum Color {
   blueLightLighted = 'blue-light--light',
   blueLightLightnessed = 'blue-light--lightness',
 
+  blueFrance = 'blue-france',
+  blueFranceLighted = 'blue-france--light',
+  blueFranceLightnessed = 'blue-france--lightness',
+
   green = 'green',
   greenLighted = 'green--light',
   greenLightnessed = 'green--lightness',

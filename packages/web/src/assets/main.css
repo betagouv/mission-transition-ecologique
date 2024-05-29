@@ -60,7 +60,7 @@ a.fr-tag[aria-pressed=true].fr-tag--red.fr-tag--sm, button.fr-tag[aria-pressed=t
 .fr-accordion-bg--red .fr-collapse--expanded {
   background: var(--text-action-high-blue-france);
 }
-.fr-accordion-bg--secondary-purple .fr-collapse--expanded {
+.fr-accordion-bg--purple .fr-collapse--expanded {
   background: #6a62f4;
 }
 .fr-accordion-bg--blue-france .fr-collapse--expanded {
@@ -173,7 +173,7 @@ a.fr-tag[aria-pressed=true].fr-tag--red.fr-tag--sm, button.fr-tag[aria-pressed=t
 .fr-card--red .fr-card__title {
   color: var(--text-default-grey);
 }
-.fr-card--secondary-purple .fr-card__title {
+.fr-card--purple .fr-card__title {
   color: var(--text-default-grey);
 }
 .fr-card--blue-france .fr-card__title {
@@ -877,13 +877,13 @@ input[type=search]::-webkit-search-decoration, input[type=search]::-webkit-searc
   background-color: #fee7e0;
 }
 
-.fr-bg--secondary-purple {
+.fr-bg--purple {
   background-color: #6a62f4;
 }
-.fr-bg--secondary-purple--light {
+.fr-bg--purple--light {
   background-color: #b5b1fa;
 }
-.fr-bg--secondary-purple--lightness {
+.fr-bg--purple--lightness {
   background-color: #dad8fc;
 }
 
@@ -1019,7 +1019,7 @@ input[type=search]::-webkit-search-decoration, input[type=search]::-webkit-searc
 .fr-text--red {
   color: var(--text-action-high-blue-france);
 }
-.fr-text--secondary-purple {
+.fr-text--purple {
   color: #6a62f4;
 }
 .fr-text--blue-france {
