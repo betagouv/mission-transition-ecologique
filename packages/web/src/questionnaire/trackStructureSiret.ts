@@ -4,7 +4,7 @@
 import { HasInputOptions, SiretValue, TrackComponent, TrackId } from '@/types'
 import type { Track, NextTrackRuleSet, EstablishmentType } from '@/types'
 import { ConditionOperators, DataMappingFrom } from '@/types'
-import { QuestionnaireRoute } from '@tee/common/src/questionnaire/types'
+import { QuestionnaireRoute } from '@/types'
 
 const nextTrackRuleSets: NextTrackRuleSet[] = [
   {
