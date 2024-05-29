@@ -467,7 +467,7 @@ def pc_objPrioritaire(get):
         "⚡️\nEnergie": "est ma performance énergétique",
         "🧑‍🎓\nRH": "est former ou recruter",
         "🌱\nStratégie": "est mon impact environnemental",
-        "🏭\nProduction": "est l'écoconception",
+        "🏭\néco-conception": "est l'écoconception",
     }
 
     objPriInd = [bool(get(theme)) for theme in objPri.keys()]
