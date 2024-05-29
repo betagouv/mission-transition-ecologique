@@ -10,9 +10,17 @@ export default abstract class OpportunityHubAbstract implements OpportunityHubRe
   protected abstract readonly _baseUrl: string
   protected abstract readonly _operatorNames: Operators[]
 
-  support = (program: Program) => this.operatorNames.includes(program['opérateur de contact'] as Operators)
+  support = (program: Program) => {
+    if (this.operatorNames instanceof Error) {
+      return false
+    }
+    return this.operatorNames.includes(program['opérateur de contact'] as Operators)
+  }
+  shouldReceive = async (_: Opportunity, program: Program) => {
+    return Promise.resolve(this.support(program))
+  }
 
-  public abstract createOpportunity: (opportunity: Opportunity, Program: Program) => Promise<Maybe<Error>>
+  public abstract transmitOpportunity: (opportunity: Opportunity, Program: Program) => Promise<Maybe<Error>>
 
   get operatorNames(): Operators[] | Error {
     return this._operatorNames

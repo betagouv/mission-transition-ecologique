@@ -12,6 +12,7 @@ export interface ContactDetails {
   companyName?: string | null
   companySector?: string
   companySize?: number
+  contactId?: number
 }
 
 export interface OpportunityDetails {

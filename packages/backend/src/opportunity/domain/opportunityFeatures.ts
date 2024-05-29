@@ -44,16 +44,15 @@ export default class OpportunityFeatures {
       return opportunityResult
     }
 
+    opportunity = this._addContactIdToOpportunity(opportunity, contactIdResult.value.id)
     this._sendReturnReceipt(opportunity, program)
     this._maybeTransmitOpportunityToHubs(opportunityResult.value, opportunity, program)
     return opportunityResult
   }
 
   private _maybeTransmitOpportunityToHubs(opportunityId: OpportunityId, opportunity: Opportunity, program: Program) {
-    if (program['activable en autonomie']) return
-
     void new OpportunityHubFeatures(this._opportunityHubRepositories)
-      .createOpportunity(opportunity, program)
+      .maybeTransmitOpportunity(opportunity, program)
       .then(async (opportunityHubResult) => {
         if (opportunityHubResult !== false) {
           const opportunityUpdateErr = await this._updateOpportunitySentToHub(opportunityId, !opportunityHubResult.isJust)
@@ -72,6 +71,10 @@ export default class OpportunityFeatures {
     if (program) {
       opportunity.programContactOperator = program['opérateur de contact']
     }
+    return opportunity
+  }
+  private _addContactIdToOpportunity(opportunity: Opportunity, id: number): Opportunity {
+    opportunity.contactId = id
     return opportunity
   }
 

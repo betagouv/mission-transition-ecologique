@@ -13,13 +13,6 @@ import ProgramService from '../../../../program/application/programService'
 export class PlaceDesEntreprises extends OpportunityHubAbstract {
   protected readonly _baseUrl = 'https://reso-staging.osc-fr1.scalingo.io/api/v1'
   protected _axios: AxiosInstance
-
-  protected readonly _operatorNames = [] // warning, invalid but never used since we override all possible external uses of this value right below
-  override get operatorNames(): Operators[] | Error {
-    return new Error('Operator List non valid for Place des entreprises')
-  }
-  override support = (program: Program) => (program['opérateur de contact'] as Operators) !== 'Bpifrance'
-
   constructor() {
     super()
     const token = Config.PDE_API_TOKEN
@@ -27,6 +20,46 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
       baseURL: this._baseUrl,
       headers: this._makeHeaders(token)
     })
+  }
+  protected readonly _operatorNames = [] // warning, invalid but never used since we override all possible external uses of this value right below
+  override get operatorNames(): Operators[] | Error {
+    return new Error('Operator List non valid for Place des entreprises')
+  }
+  override support = (program: Program) => {
+    const validOperator = (program['opérateur de contact'] as Operators) !== 'Bpifrance'
+    const notAutonomous = !program['activable en autonomie']
+    return validOperator && notAutonomous
+  }
+  override shouldReceive = async (opportunity: Opportunity, program: Program) => {
+    // il faut check support et l'historique de création du contactId sous 24h.
+    return this.support(program) && (await !this._reachedDailyContactTransmissionLimit(opportunity))
+  }
+
+  public transmitOpportunity = async (opportunity: Opportunity, program: Program): Promise<Maybe<Error>> => {
+    const maybePayload = await this._createRequestBody(opportunity, program)
+    if (maybePayload.isErr) {
+      return Maybe.of(maybePayload.error)
+    }
+    try {
+      const rawResponse = await this._axios.request<GetLandingResponseData>({
+        method: 'POST',
+        url: `/solicitations`,
+        data: maybePayload.value,
+        timeout: 3000
+      })
+      const status = rawResponse.status
+      if (status != 200) {
+        return Maybe.of(Error('PDE Api Error ' + status))
+      } else {
+        return Maybe.nothing()
+      }
+    } catch (exception: unknown) {
+      return Maybe.of(handleException(exception))
+    }
+  }
+
+  private async _reachedDailyContactTransmissionLimit(_: Opportunity): Promise<boolean> {
+    return Promise.resolve(false)
   }
 
   private _getLandingId = async (): Promise<Result<number, Error>> => {
@@ -80,29 +113,6 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     }
   }
 
-  public createOpportunity = async (opportunity: Opportunity, program: Program): Promise<Maybe<Error>> => {
-    const maybePayload = await this._createRequestBody(opportunity, program)
-    if (maybePayload.isErr) {
-      return Maybe.of(maybePayload.error)
-    }
-    try {
-      const rawResponse = await this._axios.request<GetLandingResponseData>({
-        method: 'POST',
-        url: `/solicitations`,
-        data: maybePayload.value,
-        timeout: 3000
-      })
-      const status = rawResponse.status
-      if (status != 200) {
-        return Maybe.of(Error('PDE Api Error ' + status))
-      } else {
-        return Maybe.nothing()
-      }
-    } catch (exception: unknown) {
-      return Maybe.of(handleException(exception))
-    }
-  }
-
   private async _createRequestBody(opportunity: Opportunity, program: Program): Promise<Result<CreateSolicitationApiBody, Error>> {
     const landing_id = await this._getLandingId()
     if (landing_id.isErr) {
@@ -117,8 +127,8 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
         email: opportunity.email,
         phone_number: opportunity.phoneNumber,
         siret: opportunity.companySiret,
-        location: program.id, // TO delete, temporary, just to use program somewhere.
-        api_calling_url: 'TODO_A_remplir',
+        location: '',
+        origin_url: opportunity.linkToProgramPage,
         questions_additionnelles: []
       }
     })
