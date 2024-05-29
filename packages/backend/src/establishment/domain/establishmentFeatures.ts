@@ -27,7 +27,6 @@ export default class EstablishmentFeatures {
 
   public async getBySiret(siret: Siret): Promise<Result<Establishment, Error>> {
     const establishmentResult: Result<EstablishmentDetails, Error> = await this._establishmentRepository.get(siret)
-
     if (establishmentResult.isErr) {
       return Result.err(establishmentResult.error)
     }
@@ -90,6 +89,7 @@ export default class EstablishmentFeatures {
       ville: establishment.address.cityLabel,
       codePostal: establishment.address.zipCode,
       region: establishment.region || '',
+      legalCategory: establishment.legalCategory,
       structure_size: undefined,
       denomination: establishment.denomination,
       secteur: establishment.nafLabel || '',

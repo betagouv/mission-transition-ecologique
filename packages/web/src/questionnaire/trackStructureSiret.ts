@@ -4,21 +4,21 @@
 import { HasInputOptions, SiretValue, TrackComponent, TrackId } from '@/types'
 import type { Track, NextTrackRuleSet, EstablishmentType } from '@/types'
 import { ConditionOperators, DataMappingFrom } from '@/types'
-import { QuestionnaireRoute, StructureSize } from '@tee/common/src/questionnaire/types'
+import { QuestionnaireRoute } from '@tee/common/src/questionnaire/types'
 
 const nextTrackRuleSets: NextTrackRuleSet[] = [
   {
-    help: "Goes to track_goals if : structure_size == 'EI' AND questionnaire_route == 'specific_goal' (pro)",
+    help: "Goes to track_goals if : legalCategory == '1000' AND questionnaire_route == 'specific_goal' (pro)",
     rules: [
       {
         from: DataMappingFrom.UsedTracks,
-        id: 'structure_size',
-        dataField: 'structure_size',
+        id: 'legalCategory',
+        dataField: 'legalCategory',
         conditions: [
           {
-            type: 'structure_size',
+            type: 'legalCategory',
             operator: ConditionOperators.is,
-            value: StructureSize.EI
+            value: '1000'
           }
         ]
       },
@@ -38,17 +38,17 @@ const nextTrackRuleSets: NextTrackRuleSet[] = [
     next: { default: TrackId.Goals }
   },
   {
-    help: "Goes to track_structure_building_property if : structure_size == 'EI' AND questionnaire_route == 'no_specific_goal' (newbie)",
+    help: "Goes to track_structure_building_property if : legalCategory == '1000' AND questionnaire_route == 'no_specific_goal' (newbie)",
     rules: [
       {
         from: DataMappingFrom.UsedTracks,
-        id: 'structure_size',
-        dataField: 'structure_size',
+        id: 'legalCategory',
+        dataField: 'legalCategory',
         conditions: [
           {
-            type: 'structure_size',
+            type: 'legalCategory',
             operator: ConditionOperators.is,
-            value: StructureSize.EI
+            value: '1000'
           }
         ]
       },
@@ -73,6 +73,7 @@ const defaultQuestionnaireData: EstablishmentType = {
   codeNAF: '',
   codeNAF1: '',
   ville: '',
+  legalCategory: '',
   codePostal: '',
   region: undefined,
   structure_size: undefined,

@@ -177,7 +177,7 @@ const processInput = async () => {
     errorMessage.value = "Le numéro SIRET n'est pas valide"
   } else {
     const searchResult = await TrackSiret.search(queryValue.value)
-
+    console.log(searchResult)
     if (searchResult.isErr) {
       errorMessage.value = Translation.t('enterprise.apiError')
     } else if (searchResult.value.resultCount == 0) {
