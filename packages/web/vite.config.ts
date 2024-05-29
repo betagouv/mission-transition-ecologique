@@ -9,6 +9,7 @@ import Components from 'unplugin-vue-components/vite'
 import { dsnFromString } from '@sentry/utils'
 import * as dotenv from 'dotenv'
 import SEOPlugin from './plugin/SEO/index'
+import { unheadVueComposablesImports } from '@unhead/vue'
 
 dotenv.config()
 
@@ -43,7 +44,7 @@ const plugins = async () => {
     SEOPlugin(),
     AutoImport({
       include: [/\.[tj]sx?$/, /\.vue$/, /\.vue\?vue/],
-      imports: ['vue', 'vue-router', vueDsfrAutoimportPreset, ohVueIconAutoimportPreset],
+      imports: ['vue', 'vue-router', vueDsfrAutoimportPreset, ohVueIconAutoimportPreset, unheadVueComposablesImports],
       vueTemplate: true,
       dts: './src/auto-imports.d.ts',
       eslintrc: {

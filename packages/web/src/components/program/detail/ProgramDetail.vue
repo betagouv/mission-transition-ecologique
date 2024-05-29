@@ -300,6 +300,8 @@ const programDuration = computed(() => program.value?.[`durée de l'accompagneme
 const programLoanDuration = computed(() => program.value?.[`durée du prêt`])
 const programProvider = computed(() => program.value?.['opérateur de contact'])
 const programEndValidity = computed(() => program.value?.[`fin de validité`])
+const programPageTitle = computed(() => `Transition écologique des TPE & PME - ${program.value?.[`titre`]}`)
+const programPageMeta = computed(() => program.value?.[`description`] || ' ')
 
 const columnTiles = computed(() => {
   const infoBlocks = [
@@ -337,6 +339,16 @@ onBeforeMount(() => {
 
   // analytics / send event
   Matomo.sendEvent('result_detail', route.name === RouteName.CatalogDetail ? 'show_detail_catalog' : 'show_detail', props.programId)
+})
+
+useHead({
+  title: programPageTitle,
+  meta: [
+    {
+      name: 'description',
+      content: programPageMeta
+    }
+  ]
 })
 
 const programIsAvailable = computed(() => {
