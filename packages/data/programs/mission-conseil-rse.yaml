@@ -22,7 +22,7 @@ objectifs:
 conditions d'éligibilité:
   taille de l'entreprise:
   - Plus de 10 salariés
-  - Éligible aux micro-entreprises
+  - Non éligible aux micro-entreprises
   secteur géographique:
   - France et territoires d'outre-mer
   secteur d'activité:
