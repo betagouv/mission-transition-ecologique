@@ -10,7 +10,7 @@ const programFrDict = {
     programProviders: 'Contact',
     CTAButton: 'Contactez un conseiller',
     programType: "Nature de l'aide",
-    programEndValidity: 'Date de fin',
+    programEndValidity: "Date de fin de l'aide",
     programAvailable: 'Aide disponible',
     programNotAvailable: "Cette aide n'est plus disponible",
     programAvailableUntil: "Disponible jusqu'au {date}",
