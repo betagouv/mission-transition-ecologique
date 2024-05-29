@@ -9,6 +9,7 @@ import { Operators, Program } from '../../../../program/domain/types/types'
 import OpportunityHubAbstract from '../opportunityHubAbstract'
 import { Objective } from '../../../../common/types'
 import ProgramService from '../../../../program/application/programService'
+import OpportunityService from '../../../../opportunity/application/opportunityService'
 
 export class PlaceDesEntreprises extends OpportunityHubAbstract {
   protected readonly _baseUrl = 'https://reso-staging.osc-fr1.scalingo.io/api/v1'
@@ -58,8 +59,18 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     }
   }
 
-  private async _reachedDailyContactTransmissionLimit(_: Opportunity): Promise<boolean> {
-    return Promise.resolve(false)
+  private async _reachedDailyContactTransmissionLimit(opportunity: Opportunity): Promise<boolean> {
+    const contact = opportunity.contactId as number
+    const previousDailyOpportunities : Program[] = new OpportunityService.getdailyOpportunitiesByContactId(contact)
+    let toTransmit = true
+    for (const prevOpportunity of previousDailyOpportunities) {
+      const prevProgram = getProgramFromOpportunity(prevOpportunity)
+      if (this.support(prevProgram)) {
+        toTransmit = false
+        break
+      }
+    }
+    return Promise.resolve(toTransmit)
   }
 
   private _getLandingId = async (): Promise<Result<number, Error>> => {

@@ -50,6 +50,10 @@ export default class OpportunityFeatures {
     return opportunityResult
   }
 
+  getdailyOpportunitiesByContactId = async (contactId: number): Promise<Result<Opportunity[], Error>> => {
+    return await this._opportunityRepository.getdailyOpportunitiesByContactId(contactId)
+  }
+
   private _maybeTransmitOpportunityToHubs(opportunityId: OpportunityId, opportunity: Opportunity, program: Program) {
     void new OpportunityHubFeatures(this._opportunityHubRepositories)
       .maybeTransmitOpportunity(opportunity, program)

@@ -129,4 +129,33 @@ const getBrevoCreationDates = async (): Promise<Result<Date[], Error>> => {
   }
 }
 
-export const brevoRepository: OpportunityRepository = { create: addBrevoDeal, update: updateBrevoDeal, readDates: getBrevoCreationDates }
+const getdailyOpportunitiesByContactId = async (contactId: number): Promise<Result<Opportunity[], Error>> => {
+  const startDate = new Date()
+  startDate.setHours(0, 0, 0, 0)
+  const endDate = new Date()
+  endDate.setDate(endDate.getDate() + 1)
+
+  const responsePatch = await new BrevoAPI().GetDeals(startDate, endDate)
+  if (responsePatch.isOk) {
+    const brevoDealResponse: BrevoDealResponse = responsePatch.value.data as BrevoDealResponse
+    if (!brevoDealResponse.items || brevoDealResponse.items.length === 0) {
+      return Result.ok([])
+    }
+    const selectedDeals: Array = []
+    for (const deal of brevoDealResponse.items) {
+      if (deal.linkedcontactIds[0] === contactId) {
+        selectedDeals.push(deal)
+      }
+    }
+    return Result.ok(selectedDeals)
+  } else {
+    return Result.err(responsePatch.error)
+  }
+}
+
+export const brevoRepository: OpportunityRepository = {
+  create: addBrevoDeal,
+  update: updateBrevoDeal,
+  readDates: getBrevoCreationDates,
+  getdailyOpportunitiesByContactId: getdailyOpportunitiesByContactId
+}

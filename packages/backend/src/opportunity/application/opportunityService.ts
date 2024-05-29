@@ -31,6 +31,10 @@ export default class OpportunityService {
     return await this._opportunityFeatures.createOpportunity(opportunity, optIn)
   }
 
+  public async getdailyOpportunitiesByContactId(contactId: number): Promise<Result<Opportunity[], Error>> {
+    return await this.__opportunityFeatures.getdailyOpportunitiesByContactId(contactId)
+  }
+
   private _getContactRepository(): ContactRepository {
     return {
       createOrUpdate: addBrevoContact
