@@ -4,21 +4,19 @@
     <div class="fr-grid-row fr-grid-row--center fr-justify-center">
       <div
         v-if="!hasSpinner || !hasError"
-        class="fr-grid-row"
+        class="fr-col-9 fr-col-hidden-md fr-text-right fr-col-xs-12"
       >
-        <div class="fr-col-offset-10 fr-col-hidden-md">
-          <ProgramModalFilter />
-        </div>
+        <ProgramModalFilter />
       </div>
-      <div class="fr-col-9 fr-col-offset-sm-2 fr-col-xs-12">
+      <div class="fr-col-9 fr-col-offset-md-3 fr-col-offset-lg-2 fr-col-xs-12">
         <ProgramListHeaderResult v-if="!navigationStore.isCatalog() && !hasSpinner" />
       </div>
-      <div class="fr-col-9 fr-col-offset-sm-2 fr-mb-3v fr-col-xs-12">
+      <div class="fr-col-9 fr-col-offset-md-3 fr-col-offset-lg-2 fr-mb-3v fr-col-xs-12">
         <ProgramFilterByTheme v-if="havePrograms && countPrograms > 1" />
       </div>
       <div
         v-if="hasObjectiveCard && !hasSpinner"
-        class="fr-col-9 fr-col-offset-sm-2 fr-col-xs-12"
+        class="fr-col-9 fr-col-offset-md-3 fr-col-offset-lg-2 fr-col-xs-12"
       >
         <TeeObjectiveCard
           :objective="objective as PublicodeObjective"
@@ -26,7 +24,7 @@
           radius-size="2-5v"
         />
       </div>
-      <div class="fr-mt-4v fr-pl-2w fr-pl-md-0 fr-mb-2v fr-col-9 fr-col-offset-sm-2 fr-col-xs-12">
+      <div class="fr-mt-4v fr-pl-2w fr-pl-md-0 fr-mb-2v fr-col-9 fr-col-offset-sm-3 fr-col-offset-lg-2 fr-col-xs-12">
         <div v-if="havePrograms && countPrograms > 1">
           {{ countFilteredPrograms }}
           {{ countFilteredPrograms > 1 ? Translation.t('results.results') : Translation.t('results.result') }}
@@ -34,11 +32,11 @@
       </div>
       <div
         v-if="!hasSpinner"
-        class="fr-col-2 fr-hidden-xs"
+        class="fr-col-2 fr-col-md-3 fr-col-lg-2 fr-col-hidden fr-col-unhidden-md"
       >
         <div class="fr-sidemenu fr-pr-0 fr-mr-3v">
           <div class="fr-text--bold fr-text-left fr-mb-3v">Filtres</div>
-          <ProgramFiltersAccordeon />
+          <ProgramFiltersAccordion />
         </div>
       </div>
       <div
@@ -80,6 +78,7 @@
 </template>
 
 <script setup lang="ts">
+import ProgramFiltersAccordion from '@/components/program/list/filters/ProgramFiltersAccordion.vue'
 import ProgramCard from '@/components/program/list/ProgramCard.vue'
 import ProgramFilterByTheme from '@/components/program/list/filters/ProgramFilterByTheme.vue'
 import ProgramListHeaderResult from '@/components/program/list/ProgramListHeaderResult.vue'

@@ -54,4 +54,8 @@ export default class ProgramFilter {
   static isValidFilterValue(programFilterValue: ValueOf<programFiltersType>) {
     return programFilterValue !== ''
   }
+
+  static isValidFilterValues(programFilterValue: ValueOf<programFiltersType>) {
+    return programFilterValue.length > 0
+  }
 }

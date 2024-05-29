@@ -6,7 +6,7 @@
     >
       <li v-if="filter.if === undefined || filter.if">
         <DsfrAccordion
-          :class="[props.class, filter.accordionClass]"
+          :class="[props.accordionClass, filter.accordionClass]"
           :title="filter.title"
           :expanded-id="expandedId"
           @expand="expandFilter"
@@ -35,7 +35,7 @@ const expandFilter = (id: string | undefined) => {
   expandedId.value = id
 }
 interface Props {
-  class?: string
+  accordionClass?: string
 }
 const props = defineProps<Props>()
 

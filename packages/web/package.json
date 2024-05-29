@@ -22,7 +22,7 @@
     "copy-dsfr-fonts": "cp -a ../../node_modules/@gouvfr/dsfr/dist/fonts/. ./public/fonts",
     "copy-custom-css": "cp -a ./src/assets/custom.css ./public/css/custom.css",
     "update-styles": "npm run copy-dsfr-core-css && npm run copy-dsfr-fonts && npm run copy-custom-css",
-    "dev": "npm run copy-custom-css && NODE_OPTIONS='--import tsx' vite --port 4242 --debug",
+    "dev": "npm run copy-custom-css && NODE_OPTIONS='--import tsx' vite --port 4242",
     "build": "npm run update-styles && npm run build-main",
     "build-main": "NODE_OPTIONS='--import tsx' LIB=main vite build",
     "build-widget": "NODE_OPTIONS='--import tsx' LIB=widget vite build",
