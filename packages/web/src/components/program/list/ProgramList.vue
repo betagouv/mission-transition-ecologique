@@ -1,4 +1,12 @@
 <template>
+  <!-- PAGE BANNER -->
+  <TeeBanner
+    class="fr-container--fluid fr-bg--blue-light"
+    :title="teeBannerProps.title"
+    :description="teeBannerProps.description"
+  >
+  </TeeBanner>
+
   <!-- PROGRAMS AS LIST OF CARDS -->
   <div class="fr-container--fluid fr-container--fluid--no-overflow fr-px-0 fr-mb-0 fr-mt-6v fr-px-md-4w">
     <div class="fr-grid-row fr-grid-row--center fr-justify-center">
@@ -95,6 +103,7 @@ import UsedTrack from '@/utils/track/usedTrack'
 import Translation from '@/utils/translation'
 import { computed, onBeforeMount } from 'vue'
 import { type RouteLocationRaw } from 'vue-router'
+import { TeeBannerProps } from '@/components/element/TeeBanner.vue'
 
 const programStore = useProgramStore()
 const navigationStore = useNavigationStore()
@@ -102,6 +111,11 @@ const navigationStore = useNavigationStore()
 const isCatalog = navigationStore.isCatalog()
 const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)
+const teeBannerProps: TeeBannerProps = {
+  title: `L'annuaire des aides publiques à la transition écologique`,
+  description: `Réalisez une recherche parmi les accompagnements et financements à la transition écologique
+  des entreprises, proposés par l'ensemble des partenaires publiques: ADEME, Bpifrance, CCI, CMA, etc.`
+}
 
 const filteredPrograms = computed(() => {
   return programs.value ? programStore.getProgramsByFilters(programs.value) : undefined
