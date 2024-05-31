@@ -4,7 +4,7 @@ import { Result } from 'true-myth'
 import { brevoRepository } from '../infrastructure/api/brevo/brevoDeal'
 import { addBrevoContact } from '../infrastructure/api/brevo/brevoContact'
 import { OpportunityHubRepository } from '../../opportunityHub/domain/spi'
-import { BpiFrance } from '../../opportunityHub/infrastructure/api/bpi/bpiFrance'
+// import { BpiFrance } from '../../opportunityHub/infrastructure/api/bpi/bpiFrance'
 import { ContactRepository, MailerService, OpportunityRepository } from '../domain/spi'
 import { ProgramRepository } from '../../program/domain/spi'
 import ProgramsJson from '../../program/infrastructure/programsJson'
@@ -32,7 +32,7 @@ export default class OpportunityService {
   }
 
   public async getdailyOpportunitiesByContactId(contactId: number): Promise<Result<Opportunity[], Error>> {
-    return await this.__opportunityFeatures.getdailyOpportunitiesByContactId(contactId)
+    return await this._opportunityFeatures.getdailyOpportunitiesByContactId(contactId)
   }
 
   private _getContactRepository(): ContactRepository {
@@ -46,7 +46,7 @@ export default class OpportunityService {
   }
 
   private _getOpportunityHubRepositories(): OpportunityHubRepository[] {
-    return [new BpiFrance(), new PlaceDesEntreprises()]
+    return [new PlaceDesEntreprises()]
   }
 
   private _getProgramRepository(): ProgramRepository {

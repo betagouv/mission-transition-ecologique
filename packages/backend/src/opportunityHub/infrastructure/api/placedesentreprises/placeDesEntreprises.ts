@@ -3,7 +3,7 @@ import axios, { AxiosInstance, RawAxiosRequestHeaders } from 'axios'
 import AxiosHeaders from '../../../../common/infrastructure/api/axiosHeaders'
 import { handleException } from '../../../../common/domain/error/errors'
 import Config from '../../../../config'
-import { GetLandingResponseData, Landing, Subject, subjectToIdMapping, CreateSolicitationApiBody } from './types'
+import { GetLandingResponseData, Subject, subjectToIdMapping, CreateSolicitationApiBody } from './types'
 import { Opportunity } from '../../../../opportunity/domain/types'
 import { Operators, Program } from '../../../../program/domain/types/types'
 import OpportunityHubAbstract from '../opportunityHubAbstract'
@@ -12,7 +12,7 @@ import ProgramService from '../../../../program/application/programService'
 import OpportunityService from '../../../../opportunity/application/opportunityService'
 
 export class PlaceDesEntreprises extends OpportunityHubAbstract {
-  protected readonly _baseUrl = 'https://reso-staging.osc-fr1.scalingo.io/api/v1'
+  protected readonly _baseUrl = 'https://ce-staging.osc-fr1.scalingo.io/api/v1'
   protected _axios: AxiosInstance
   constructor() {
     super()
@@ -29,16 +29,24 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
   override support = (program: Program) => {
     const validOperator = (program['opérateur de contact'] as Operators) !== 'Bpifrance'
     const notAutonomous = !program['activable en autonomie']
+    console.log(validOperator && notAutonomous, notAutonomous)
     return validOperator && notAutonomous
   }
   override shouldReceive = async (opportunity: Opportunity, program: Program) => {
     // il faut check support et l'historique de création du contactId sous 24h.
-    return this.support(program) && (await !this._reachedDailyContactTransmissionLimit(opportunity))
+    if (!this.support(program)) {
+      return false
+    }
+    const reachTransmissionLimit = await this._reachedDailyContactTransmissionLimit(opportunity)
+    console.log('tranmission limit', reachTransmissionLimit)
+    return !reachTransmissionLimit
   }
 
   public transmitOpportunity = async (opportunity: Opportunity, program: Program): Promise<Maybe<Error>> => {
-    const maybePayload = await this._createRequestBody(opportunity, program)
+    console.log('in transmit opportunity')
+    const maybePayload = this._createRequestBody(opportunity, program)
     if (maybePayload.isErr) {
+      console.log('payload error!')
       return Maybe.of(maybePayload.error)
     }
     try {
@@ -48,6 +56,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
         data: maybePayload.value,
         timeout: 3000
       })
+      console.log('Réponse envoi pde :', rawResponse)
       const status = rawResponse.status
       if (status != 200) {
         return Maybe.of(Error('PDE Api Error ' + status))
@@ -55,42 +64,47 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
         return Maybe.nothing()
       }
     } catch (exception: unknown) {
+      console.log('bug envoi pde :', exception)
       return Maybe.of(handleException(exception))
     }
   }
 
   private async _reachedDailyContactTransmissionLimit(opportunity: Opportunity): Promise<boolean> {
     const contact = opportunity.contactId as number
-    const previousDailyOpportunities : Program[] = new OpportunityService.getdailyOpportunitiesByContactId(contact)
+    const previousDailyOpportunities = await new OpportunityService().getdailyOpportunitiesByContactId(contact)
     let toTransmit = true
-    for (const prevOpportunity of previousDailyOpportunities) {
-      const prevProgram = getProgramFromOpportunity(prevOpportunity)
-      if (this.support(prevProgram)) {
-        toTransmit = false
-        break
+    if (previousDailyOpportunities.isErr) {
+      toTransmit = false
+    } else {
+      for (const prevOpportunity of previousDailyOpportunities.value) {
+        const prevProgram = new ProgramService().getById(prevOpportunity.programId)
+        if (prevProgram && this.support(prevProgram)) {
+          toTransmit = false
+          break
+        }
       }
     }
-    return Promise.resolve(toTransmit)
+    return toTransmit
   }
 
-  private _getLandingId = async (): Promise<Result<number, Error>> => {
-    try {
-      const rawResponse = await this._axios.request<GetLandingResponseData>({
-        method: 'GET',
-        url: `/landings`,
-        timeout: 3000
-      })
-      const response = rawResponse.data
-      if (Array.isArray(response.data) && response.data.length > 0) {
-        const landingPage = response.data[0] as Landing
-        return Result.ok(landingPage.id)
-      } else {
-        return Result.err(Error('PDE landing ID not found'))
-      }
-    } catch (exception: unknown) {
-      return Result.err(handleException(exception))
-    }
-  }
+  // private _getLandingId = async (): Promise<Result<number, Error>> => {
+  //   try {
+  //     const rawResponse = await this._axios.request<GetLandingResponseData>({
+  //       method: 'GET',
+  //       url: `/landings`,
+  //       timeout: 3000
+  //     })
+  //     const response = rawResponse.data
+  //     if (Array.isArray(response.data) && response.data.length > 0) {
+  //       const landingPage = response.data[0] as Landing
+  //       return Result.ok(landingPage.id)
+  //     } else {
+  //       return Result.err(Error('PDE landing ID not found'))
+  //     }
+  //   } catch (exception: unknown) {
+  //     return Result.err(handleException(exception))
+  //   }
+  // }
 
   private _makeHeaders(token: string): RawAxiosRequestHeaders {
     return {
@@ -124,14 +138,14 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     }
   }
 
-  private async _createRequestBody(opportunity: Opportunity, program: Program): Promise<Result<CreateSolicitationApiBody, Error>> {
-    const landing_id = await this._getLandingId()
-    if (landing_id.isErr) {
-      return Result.err(landing_id.error)
-    }
+  private _createRequestBody(opportunity: Opportunity, program: Program): Result<CreateSolicitationApiBody, Error> {
+    // const landing_id = await this._getLandingId()
+    // if (landing_id.isErr) {
+    //   return Result.err(landing_id.error)
+    // }
     return Result.ok({
       solicitation: {
-        landing_id: landing_id.value,
+        landing_id: 114,
         landing_subject_id: this.subjectMapping(new ProgramService().getObjectives(program.id)),
         description: opportunity.message,
         full_name: opportunity.firstName + ' ' + opportunity.lastName,
@@ -139,7 +153,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
         phone_number: opportunity.phoneNumber,
         siret: opportunity.companySiret,
         location: '',
-        origin_url: opportunity.linkToProgramPage,
+        api_calling_url: opportunity.linkToProgramPage,
         questions_additionnelles: []
       }
     })

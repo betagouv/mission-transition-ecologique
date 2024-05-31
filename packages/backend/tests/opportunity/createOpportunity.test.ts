@@ -5,7 +5,8 @@ import {
   ContactId,
   OpportunityId,
   OpportunityDetails,
-  OpportunityUpdateAttributes
+  OpportunityUpdateAttributes,
+  Opportunity
 } from '../../src/opportunity/domain/types'
 import OpportunityFeatures from '../../src/opportunity/domain/opportunityFeatures'
 import { expectToBeErr, expectToBeOk } from '../testing'
@@ -51,10 +52,15 @@ const dummyOpportunitiesDates = (): Promise<Result<Date[], Error>> => {
   return Promise.resolve(Result.ok([new Date(2024, 0, 1)]))
 }
 
+const dummyDailyOpportunities = (): Promise<Result<Opportunity[], Error>> => {
+  return Promise.resolve(Result.ok([]))
+}
+
 const dummyOpportunityRepository: OpportunityRepository = {
   create: dummyAddOpportunity,
   update: dummyUpdateOpportunity,
-  readDates: dummyOpportunitiesDates
+  readDates: dummyOpportunitiesDates,
+  getdailyOpportunitiesByContactId: dummyDailyOpportunities
 }
 
 const makeCreateOpportunityFun = (contactRepository: ContactRepository, opportunityRepository: OpportunityRepository) => {
@@ -98,7 +104,12 @@ EXPECT createOpportunity to return an error (wrapped in Result) and emailReceipt
     return Promise.resolve(Result.err(new OpportunityError('opportunity error')))
   }
 
-  const errorOpportunityRepository = { create: addOpportunityWithError, update: dummyUpdateOpportunity, readDates: dummyOpportunitiesDates }
+  const errorOpportunityRepository = {
+    create: addOpportunityWithError,
+    update: dummyUpdateOpportunity,
+    readDates: dummyOpportunitiesDates,
+    getdailyOpportunitiesByContactId: dummyDailyOpportunities
+  }
 
   test('createOpportunity escalates contact creation/update error', async () => {
     const createOpportunity = makeCreateOpportunityFun(errorContactRepository, dummyOpportunityRepository)
