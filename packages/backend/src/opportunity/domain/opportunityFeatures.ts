@@ -1,6 +1,6 @@
 import { Maybe, Result } from 'true-myth'
 import type { ContactRepository, MailerService, OpportunityRepository } from './spi'
-import type { OpportunityId, Opportunity, ContactDetails } from './types'
+import type { OpportunityId, Opportunity, ContactDetails, OpportunityDetails } from './types'
 import OpportunityHubFeatures from '../../opportunityHub/domain/opportunityHubFeatures'
 import { OpportunityHubRepository } from '../../opportunityHub/domain/spi'
 import { ProgramRepository } from '../../program/domain/spi'
@@ -50,7 +50,7 @@ export default class OpportunityFeatures {
     return opportunityResult
   }
 
-  getdailyOpportunitiesByContactId = async (contactId: number): Promise<Result<Opportunity[], Error>> => {
+  getdailyOpportunitiesByContactId = async (contactId: number): Promise<Result<OpportunityDetails[], Error>> => {
     return await this._opportunityRepository.getdailyOpportunitiesByContactId(contactId)
   }
 

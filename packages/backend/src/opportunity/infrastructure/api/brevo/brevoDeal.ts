@@ -1,7 +1,7 @@
 import { Maybe, Result } from 'true-myth'
 
 import { OpportunityRepository } from '../../../domain/spi'
-import { OpportunityId, OpportunityDetails, OpportunityUpdateAttributes, Opportunity } from '../../../domain/types'
+import { OpportunityId, OpportunityDetails, OpportunityUpdateAttributes } from '../../../domain/types'
 import BrevoAPI from './brevoAPI'
 import {
   DealAttributes,
@@ -9,9 +9,11 @@ import {
   QuestionnaireRoute,
   DealUpdateAttributes,
   BrevoPostDealPayload,
-  BrevoDealResponse
+  BrevoDealResponse,
+  BrevoDealItem
 } from './types'
 import Config from '../../../../config'
+import { Operators } from '../../../../program/domain/types/types'
 
 // "Opportunities" are called "Deals" in Brevo
 
@@ -129,42 +131,39 @@ const getBrevoCreationDates = async (): Promise<Result<Date[], Error>> => {
   }
 }
 
-// const getdailyOpportunitiesByContactId = async (contactId: number): Promise<Result<OpportunityDetails[], Error>> => {
-const getdailyOpportunitiesByContactId = async (_: number): Promise<Result<Opportunity[], Error>> => {
+const getdailyOpportunitiesByContactId = async (contactId: number): Promise<Result<OpportunityDetails[], Error>> => {
   const startDate = new Date()
   startDate.setHours(0, 0, 0, 0)
-  const endDate = new Date()
-  endDate.setDate(endDate.getDate() + 1)
 
-  const responsePatch = await new BrevoAPI().GetDeals(startDate, endDate)
+  const responsePatch = await new BrevoAPI().GetDeals(startDate)
   if (responsePatch.isOk) {
     const brevoDealResponse: BrevoDealResponse = responsePatch.value.data as BrevoDealResponse
     if (!brevoDealResponse.items || brevoDealResponse.items.length === 0) {
       return Result.ok([])
     }
-    const selectedDeals = [] as Opportunity[]
-    // for (const deal of brevoDealResponse.items) {
-    //   if (deal.linkedContactsIds && deal.linkedContactsIds[0] === contactId) {
-    //     selectedDeals.push(convertBrevoDealToDomain(deal))
-    //   }
-    // }
+    const selectedDeals = [] as OpportunityDetails[]
+    for (const deal of brevoDealResponse.items) {
+      if (deal.linkedContactsIds && deal.linkedContactsIds[0] === contactId) {
+        selectedDeals.push(convertBrevoDealToDomain(deal))
+      }
+    }
     return Result.ok(selectedDeals)
   } else {
     return Result.err(responsePatch.error)
   }
 }
 
-// const convertBrevoDealToDomain = (brevoAttributes: BrevoDealItem): OpportunityDetails => {
-//   return {
-//     programId: brevoAttributes.attributes.deal_name,
-//     programContactOperator: brevoAttributes.attributes.operateur_de_contact as Operators,
-//     linkToProgramPage: 'not_available', // TO improve ?
-//     // en fait il faudrait modifier le backend program.
-//     // et séparer publicodes de simple traitement de fichiers.
-//     // Pour ne pas initialiser publicode tout le temps.
-//     message: brevoAttributes.attributes.message
-//   }
-// }
+const convertBrevoDealToDomain = (brevoAttributes: BrevoDealItem): OpportunityDetails => {
+  return {
+    programId: brevoAttributes.attributes.deal_name,
+    programContactOperator: brevoAttributes.attributes.operateur_de_contact as Operators,
+    linkToProgramPage: 'not_available', // TO improve ?
+    // en fait il faudrait modifier le backend program.
+    // et séparer publicodes de simple traitement de fichiers.
+    // Pour ne pas initialiser publicode tout le temps.
+    message: brevoAttributes.attributes.message
+  }
+}
 
 export const brevoRepository: OpportunityRepository = {
   create: addBrevoDeal,

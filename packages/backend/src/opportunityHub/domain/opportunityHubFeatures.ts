@@ -12,7 +12,9 @@ export default class OpportunityHubFeatures {
   public async maybeTransmitOpportunity(opportunity: Opportunity, program: Program): Promise<Maybe<Error> | false> {
     for (const opportunityHubRepository of this._opportunityHubRepositories) {
       if (await opportunityHubRepository.shouldReceive(opportunity, program)) {
-        return await opportunityHubRepository.transmitOpportunity(opportunity, program)
+        console.log('I should tranmist the opportunity (cancelled to avoid spamming')
+        return false
+        // return await opportunityHubRepository.transmitOpportunity(opportunity, program)
       }
     }
 

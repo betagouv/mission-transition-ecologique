@@ -1,4 +1,4 @@
-import { Opportunity, OpportunityId } from '../domain/types'
+import { Opportunity, OpportunityDetails, OpportunityId } from '../domain/types'
 import OpportunityFeatures from '../domain/opportunityFeatures'
 import { Result } from 'true-myth'
 import { brevoRepository } from '../infrastructure/api/brevo/brevoDeal'
@@ -31,7 +31,7 @@ export default class OpportunityService {
     return await this._opportunityFeatures.createOpportunity(opportunity, optIn)
   }
 
-  public async getdailyOpportunitiesByContactId(contactId: number): Promise<Result<Opportunity[], Error>> {
+  public async getdailyOpportunitiesByContactId(contactId: number): Promise<Result<OpportunityDetails[], Error>> {
     return await this._opportunityFeatures.getdailyOpportunitiesByContactId(contactId)
   }
 

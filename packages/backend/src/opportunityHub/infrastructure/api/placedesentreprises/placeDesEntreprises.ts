@@ -43,10 +43,8 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
   }
 
   public transmitOpportunity = async (opportunity: Opportunity, program: Program): Promise<Maybe<Error>> => {
-    console.log('in transmit opportunity')
     const maybePayload = this._createRequestBody(opportunity, program)
     if (maybePayload.isErr) {
-      console.log('payload error!')
       return Maybe.of(maybePayload.error)
     }
     try {
@@ -56,7 +54,6 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
         data: maybePayload.value,
         timeout: 3000
       })
-      console.log('Réponse envoi pde :', rawResponse)
       const status = rawResponse.status
       if (status != 200) {
         return Maybe.of(Error('PDE Api Error ' + status))
@@ -64,7 +61,6 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
         return Maybe.nothing()
       }
     } catch (exception: unknown) {
-      console.log('bug envoi pde :', exception)
       return Maybe.of(handleException(exception))
     }
   }
@@ -72,19 +68,22 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
   private async _reachedDailyContactTransmissionLimit(opportunity: Opportunity): Promise<boolean> {
     const contact = opportunity.contactId as number
     const previousDailyOpportunities = await new OpportunityService().getdailyOpportunitiesByContactId(contact)
-    let toTransmit = true
+    console.log(previousDailyOpportunities)
     if (previousDailyOpportunities.isErr) {
-      toTransmit = false
-    } else {
-      for (const prevOpportunity of previousDailyOpportunities.value) {
-        const prevProgram = new ProgramService().getById(prevOpportunity.programId)
-        if (prevProgram && this.support(prevProgram)) {
-          toTransmit = false
-          break
-        }
+      return false // To discuss.
+      // do we transmit if brevo is down ?
+    }
+
+    let tranmismissiblePrograms = 0
+    for (const prevOpportunity of previousDailyOpportunities.value) {
+      const prevProgram = new ProgramService().getById(prevOpportunity.programId)
+      if (prevProgram && this.support(prevProgram)) {
+        tranmismissiblePrograms += 1
       }
     }
-    return toTransmit
+    // The current opportunity being already created in brevo when we check the hub transmission, we count the current program.
+    // The question is do we have MORE than one tranmissible program which indicates older tranmissions.
+    return tranmismissiblePrograms > 1
   }
 
   // private _getLandingId = async (): Promise<Result<number, Error>> => {

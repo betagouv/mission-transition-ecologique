@@ -10,7 +10,7 @@ export type OpportunityRepository = {
   create: (contactId: number, opportunity: OpportunityDetails) => Promise<Result<OpportunityId, Error>>
   update: (dealId: OpportunityId, attributes: OpportunityUpdateAttributes) => Promise<Maybe<Error>>
   readDates: () => Promise<Result<Date[], Error>>
-  getdailyOpportunitiesByContactId: (contactId: number) => Promise<Result<Opportunity[], Error>>
+  getdailyOpportunitiesByContactId: (contactId: number) => Promise<Result<OpportunityDetails[], Error>>
 }
 
 export type MailerService = {

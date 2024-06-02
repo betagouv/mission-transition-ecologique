@@ -5,8 +5,7 @@ import {
   ContactId,
   OpportunityId,
   OpportunityDetails,
-  OpportunityUpdateAttributes,
-  Opportunity
+  OpportunityUpdateAttributes
 } from '../../src/opportunity/domain/types'
 import OpportunityFeatures from '../../src/opportunity/domain/opportunityFeatures'
 import { expectToBeErr, expectToBeOk } from '../testing'
@@ -52,7 +51,7 @@ const dummyOpportunitiesDates = (): Promise<Result<Date[], Error>> => {
   return Promise.resolve(Result.ok([new Date(2024, 0, 1)]))
 }
 
-const dummyDailyOpportunities = (): Promise<Result<Opportunity[], Error>> => {
+const dummyDailyOpportunities = (): Promise<Result<OpportunityDetails[], Error>> => {
   return Promise.resolve(Result.ok([]))
 }
 
