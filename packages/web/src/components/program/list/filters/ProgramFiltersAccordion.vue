@@ -66,7 +66,8 @@ const filters: FilterItem[] = [
     title: 'Opérateurs',
     id: 'operator-aid',
     component: ProgramFilterByOperator,
-    componentClass: 'fr-pl-2v'
+    componentClass: 'fr-pl-2v',
+    if: useNavigationStore().isCatalog()
   },
   {
     title: 'Régions',

@@ -1,7 +1,6 @@
-import { PublicodeObjective } from '@/types'
+import { PublicodeObjective } from '../questionnaire/types/types'
 
-export interface ObjectiveType {
-  id: string
+export interface Theme {
   title: string
   tagLabel: string
   value: PublicodeObjective
