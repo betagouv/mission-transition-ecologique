@@ -56,7 +56,6 @@
               :option="option"
               @click="updateAndSave(option, idx)"
             />
-
             <TrackSiret
               v-if="TrackComponent.isSiret(usedTrack, option)"
               :option="option"

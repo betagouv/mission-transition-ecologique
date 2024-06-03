@@ -5,10 +5,9 @@ export const goals: Track = {
   id: TrackId.Goals,
   category: 'myEntreprise',
   title: { fr: 'Mes objectifs' },
-  label: { fr: 'Quel est votre objectif prioritaire ?' },
-  hint: { fr: 'Je souhaite...' },
+  label: { fr: 'Choisissez la thématique de votre projet' },
   interface: {
-    component: TrackComponent.Buttons
+    component: TrackComponent.Cards
   },
   behavior: {
     multipleChoices: false
