@@ -31,7 +31,7 @@ export default class OpportunityFeatures {
   createOpportunity = async (opportunity: Opportunity, optIn: true): Promise<Result<OpportunityId, Error>> => {
     const contactIdResult = await this._contactRepository.createOrUpdate(opportunity as ContactDetails, optIn)
     if (contactIdResult.isErr) {
-      // TODO : Send an email to the admin: contact and opportunity not created!
+      // TODO : Send notif: contact and opportunity not created!
       return Result.err(contactIdResult.error)
     }
 
@@ -39,8 +39,8 @@ export default class OpportunityFeatures {
     opportunity = this._addContactOperatorToOpportunity(opportunity, program)
 
     const opportunityResult = await this._opportunityRepository.create(contactIdResult.value.id, opportunity)
-    if (opportunityResult.isErr || program == undefined) {
-      // TODO : Send an email to the admin: opportunity not created or opportunity created on an unknown program
+    if (opportunityResult.isErr || program === undefined) {
+      // TODO : Send notif: opportunity not created or opportunity created on an unknown program
       return opportunityResult
     }
 
@@ -61,7 +61,7 @@ export default class OpportunityFeatures {
         if (opportunityHubResult !== false) {
           const opportunityUpdateErr = await this._updateOpportunitySentToHub(opportunityId, !opportunityHubResult.isJust)
           if (opportunityUpdateErr.isJust) {
-            // TODO: Send an email to the admin: Opportunity not updated creating a missmatch between the status in the DB and the real opportunity status
+            // TODO: Send notif: Opportunity not updated in our DB creating a missmatch between the status in the DB and the real opportunity status
           }
         }
       })

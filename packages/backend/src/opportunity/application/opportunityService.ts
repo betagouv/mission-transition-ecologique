@@ -4,7 +4,7 @@ import { Result } from 'true-myth'
 import { brevoRepository } from '../infrastructure/api/brevo/brevoDeal'
 import { addBrevoContact } from '../infrastructure/api/brevo/brevoContact'
 import { OpportunityHubRepository } from '../../opportunityHub/domain/spi'
-// import { BpiFrance } from '../../opportunityHub/infrastructure/api/bpi/bpiFrance'
+import { BpiFrance } from '../../opportunityHub/infrastructure/api/bpi/bpiFrance'
 import { ContactRepository, MailerService, OpportunityRepository } from '../domain/spi'
 import { ProgramRepository } from '../../program/domain/spi'
 import ProgramsJson from '../../program/infrastructure/programsJson'
@@ -46,7 +46,7 @@ export default class OpportunityService {
   }
 
   private _getOpportunityHubRepositories(): OpportunityHubRepository[] {
-    return [new PlaceDesEntreprises()]
+    return [new BpiFrance(), new PlaceDesEntreprises()]
   }
 
   private _getProgramRepository(): ProgramRepository {

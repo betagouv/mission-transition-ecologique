@@ -53,7 +53,7 @@ export default class ProgramFeatures {
     }
     const objectivesArray: Objective[] = []
     publicodeObjectives.forEach((publicodeObjective) => {
-      const objectiveValue = Object.values(Objective).find((value) => publicodeObjective.includes(value))
+      const objectiveValue = Object.values(Objective).find((value) => publicodeObjective.includes(value as string))
       if (objectiveValue) {
         objectivesArray.push(objectiveValue as Objective)
       }

@@ -4,7 +4,7 @@ import { Maybe } from 'true-myth'
 
 export interface OpportunityHubRepository {
   get operatorNames(): Operators[] | Error
-  transmitOpportunity: (opporunity: Opportunity, program: Program) => Promise<Maybe<Error>>
+  transmitOpportunity: (opportunity: Opportunity, program: Program) => Promise<Maybe<Error>>
   support: (program: Program) => boolean
   shouldReceive: (opportunity: Opportunity, program: Program) => Promise<boolean>
 }

@@ -29,16 +29,14 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
   override support = (program: Program) => {
     const validOperator = (program['opérateur de contact'] as Operators) !== 'Bpifrance'
     const notAutonomous = !program['activable en autonomie']
-    console.log(validOperator && notAutonomous, notAutonomous)
     return validOperator && notAutonomous
   }
+
   override shouldReceive = async (opportunity: Opportunity, program: Program) => {
-    // il faut check support et l'historique de création du contactId sous 24h.
     if (!this.support(program)) {
       return false
     }
     const reachTransmissionLimit = await this._reachedDailyContactTransmissionLimit(opportunity)
-    console.log('tranmission limit', reachTransmissionLimit)
     return !reachTransmissionLimit
   }
 
@@ -66,9 +64,9 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
   }
 
   private async _reachedDailyContactTransmissionLimit(opportunity: Opportunity): Promise<boolean> {
-    const contact = opportunity.contactId as number
+    const contact = opportunity.contactId as number //I set contactID previously but it does seem like a bad practice.
+    // at the same time, i don't want to just tranmist an error above.
     const previousDailyOpportunities = await new OpportunityService().getdailyOpportunitiesByContactId(contact)
-    console.log(previousDailyOpportunities)
     if (previousDailyOpportunities.isErr) {
       return false // To discuss.
       // do we transmit if brevo is down ?
