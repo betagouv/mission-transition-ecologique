@@ -1,6 +1,7 @@
 <template>
   <!-- PAGE BANNER -->
   <TeeBanner
+    v-if="isCatalog"
     class="fr-container--fluid fr-bg--blue-light"
     :title="teeBannerProps.title"
     :description="teeBannerProps.description"
