@@ -6,7 +6,7 @@
       </div>
     </div>
     <div class="fr-grid-row fr-grid-row--center">
-      <div class="fr-col-xl-7 fr-col-10 fr-px-4w">
+      <div class="fr-col-xl-7 fr-col-10">
         <p :class="descriptionClass">
           {{ description }}
         </p>
