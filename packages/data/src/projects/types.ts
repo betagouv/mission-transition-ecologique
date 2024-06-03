@@ -1,8 +1,3 @@
-export interface Field {
-  id: number
-  name: string
-}
-
 export interface BaserowProject {
   id: number
   order: string
@@ -20,6 +15,10 @@ export interface BaserowProject {
   Dispositifs: unknown[]
 }
 
+import { Theme } from '@tee/common/src/theme/types'
+export interface CoreThemeType extends Omit<Theme, 'highlightProjects'> {}
+
+// objectif :
 // export interface Project {
 //   id: number
 //   title: string // titre

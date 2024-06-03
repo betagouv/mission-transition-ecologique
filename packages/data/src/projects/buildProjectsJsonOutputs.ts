@@ -69,3 +69,7 @@ async function getTableData(tableId: number) {
 //                 "height": 48
 //             }
 //         },
+
+// It should be restrained in baserow
+// but to be certain that my implem will not create any bugs
+// I will add a manual validation to check that all added highlightProjects Id are the ProjectJson.
