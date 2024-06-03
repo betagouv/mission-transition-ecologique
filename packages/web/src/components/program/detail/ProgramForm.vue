@@ -149,8 +149,11 @@
               </slot>
 
               <TeeCallout
+                class="fr-bg--blue fr-text--white fr-px-2v fr-pt-2v fr-pb-0 fr-font-weight--bold"
                 :type="opportunityForm.needs.callOut.type"
-                :imglink="`${publicPath}${opportunityForm.needs.callOut.imgLink}`"
+                :img="`${publicPath}${opportunityForm.needs.callOut.img}`"
+                :img-container-class="'fr-col-xl-2 fr-hidden fr-unhidden-lg'"
+                :content-class="'fr-pb-2v'"
               >
                 {{ opportunityForm.needs.callOut.content }}
               </TeeCallout>
@@ -332,11 +335,11 @@ const opportunityForm = ref<OpportunityFormType>({
     label: 'Quel est votre besoin ?',
     hint: undefined,
     callOut: {
-      type: CalloutType.Custom,
+      type: CalloutType.FormInput,
       content:
         "Pour vous aider au mieux, nos conseillers ont besoin d'éléments de contexte.\n" +
         'N’hésitez pas à nous détailler votre projet, vos besoins ou vos questionnements.',
-      imgLink: 'images/TEE-conseiller.svg'
+      img: 'images/TEE-conseiller.svg'
     }
   },
   cgu: {

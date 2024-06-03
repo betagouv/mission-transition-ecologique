@@ -1,56 +1,17 @@
 @import "setting/color";
 
-.customCallout {
-  background-color: $base-blue;
-  border: none !important;
-  width: 100%;
-  padding: 0.5rem 1rem 0 1rem !important;
-  margin-bottom: 0;
-  height: 100%;
-
-  & p {
-    margin-bottom: 0;
-    padding-bottom: 0.5rem;
-    white-space: pre-wrap;
-    color: white !important;
-    font-weight: bold;
-    @media screen and (max-width: 62em) {
-      font-size: 0.9rem;
-    }
-  }
-
-  & .image {
-    max-width: 100%;
-    height: auto;
-
-    &-container {
-      margin-left: -1rem;
-      margin-right: 0.2rem;
-      display: flex;
-      justify-content: center;
-      align-items: end !important;
-      @media screen and (max-width: 62em) {
-        display: none;
-      }
-
-      & img {
-        height: 5rem !important;
-      }
-    }
-  }
-}
-
 .baseCallout {
-  border-left: 4px solid;
   padding: 32px 48px 32px 32px;
 }
 
 .defaultCallout {
-  background: var(--light-background-alt-blue-france, #f5f5fe);
+  border-left: 4px solid;
   border-color: $base-purple;
+  background: var(--light-background-alt-blue-france, #f5f5fe);
 }
 
 .warningCallout {
+  border-left: 4px solid;
   border-color: #{$base-red};
   background: rgba(252, 160, 129, 0.2);
 }

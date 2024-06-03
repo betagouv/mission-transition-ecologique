@@ -18,3 +18,12 @@
     }
   }
 }
+
+.fr-font {
+  @each $scale, $value in setting.$font-weight-scale {
+    @debug($scale, $value);
+    &-weight--#{$scale} {
+      font-weight: $value;
+    }
+  }
+}

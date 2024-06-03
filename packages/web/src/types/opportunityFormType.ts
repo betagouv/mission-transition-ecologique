@@ -42,5 +42,5 @@ export type InputCalloutType = {
   type?: CalloutType
   content?: string
   containerClass?: string
-  imgLink?: string
+  img?: string
 }

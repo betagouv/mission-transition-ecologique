@@ -8,8 +8,13 @@ $base-green: #1ebe8e;
 $base-purple: #6a62f4;
 $base-red: #fca081;
 $base-yellow: #facf35;
+$white: #fff;
 
 $colors: (
+  "white": (
+    "background-color": $white,
+    "color": var(--text-inverted-grey),
+  ),
   "yellow": (
     "background-color": $base-yellow,
     "color": var(--text-action-high-blue-france)
