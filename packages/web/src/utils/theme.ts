@@ -1,6 +1,6 @@
 import { PublicodeObjective, Objective as ObjectiveEnum, PublicodesKeys, Theme as ThemeType } from '@/types'
 import UsedTrack from '@/utils/track/usedTrack'
-import ThemeCommon from '../../../common/src/theme/theme'
+import ThemeCommon from '@tee/common/src/theme/theme'
 
 export default class Theme extends ThemeCommon {
   static getTitleByValue(objective: PublicodeObjective) {
