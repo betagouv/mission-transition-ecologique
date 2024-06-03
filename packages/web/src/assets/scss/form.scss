@@ -1,5 +1,8 @@
 /* FORM */
 .fr-tee-form {
+  &-banner p {
+    white-space: pre-wrap;
+  }
   &-block {
     background-color: $base-blue-light;
     padding: 2em;
