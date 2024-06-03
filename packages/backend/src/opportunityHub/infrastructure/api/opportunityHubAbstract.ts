@@ -2,7 +2,7 @@ import { Operators } from '@tee/data/src/generated/program'
 import { AxiosInstance } from 'axios'
 import { OpportunityHubRepository } from '../../domain/spi'
 import { Program } from '../../../program/domain/types/types'
-import { Opportunity } from '../../../opportunity/domain/types'
+import { Opportunity, OpportunityWithContactId } from '../../../opportunity/domain/types'
 import { Maybe } from 'true-myth'
 
 export default abstract class OpportunityHubAbstract implements OpportunityHubRepository {
@@ -16,7 +16,7 @@ export default abstract class OpportunityHubAbstract implements OpportunityHubRe
     }
     return this.operatorNames.includes(program['opérateur de contact'] as Operators)
   }
-  shouldReceive = async (_: Opportunity, program: Program) => {
+  shouldTransmit = async (_: OpportunityWithContactId, program: Program) => {
     return Promise.resolve(this.support(program))
   }
 

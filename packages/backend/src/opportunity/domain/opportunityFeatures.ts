@@ -1,6 +1,6 @@
 import { Maybe, Result } from 'true-myth'
 import type { ContactRepository, MailerService, OpportunityRepository } from './spi'
-import type { OpportunityId, Opportunity, ContactDetails, OpportunityDetails } from './types'
+import type { OpportunityId, Opportunity, ContactDetails, OpportunityWithContactId, OpportunityDetailsShort } from './types'
 import OpportunityHubFeatures from '../../opportunityHub/domain/opportunityHubFeatures'
 import { OpportunityHubRepository } from '../../opportunityHub/domain/spi'
 import { ProgramRepository } from '../../program/domain/spi'
@@ -44,17 +44,21 @@ export default class OpportunityFeatures {
       return opportunityResult
     }
 
-    opportunity = this._addContactIdToOpportunity(opportunity, contactIdResult.value.id)
     this._sendReturnReceipt(opportunity, program)
-    this._maybeTransmitOpportunityToHubs(opportunityResult.value, opportunity, program)
+    this._maybeTransmitOpportunityToHubs(
+      opportunityResult.value,
+      this._addContactIdToOpportunity(opportunity, contactIdResult.value.id),
+      program
+    )
+
     return opportunityResult
   }
 
-  getdailyOpportunitiesByContactId = async (contactId: number): Promise<Result<OpportunityDetails[], Error>> => {
-    return await this._opportunityRepository.getdailyOpportunitiesByContactId(contactId)
+  getDailyOpportunitiesByContactId = async (contactId: number): Promise<Result<OpportunityDetailsShort[], Error>> => {
+    return await this._opportunityRepository.getDailyOpportunitiesByContactId(contactId)
   }
 
-  private _maybeTransmitOpportunityToHubs(opportunityId: OpportunityId, opportunity: Opportunity, program: Program) {
+  private _maybeTransmitOpportunityToHubs(opportunityId: OpportunityId, opportunity: OpportunityWithContactId, program: Program) {
     void new OpportunityHubFeatures(this._opportunityHubRepositories)
       .maybeTransmitOpportunity(opportunity, program)
       .then(async (opportunityHubResult) => {
@@ -77,9 +81,11 @@ export default class OpportunityFeatures {
     }
     return opportunity
   }
-  private _addContactIdToOpportunity(opportunity: Opportunity, id: number): Opportunity {
-    opportunity.contactId = id
-    return opportunity
+  private _addContactIdToOpportunity(opportunity: Opportunity, id: number): OpportunityWithContactId {
+    return {
+      ...opportunity,
+      contactId: id
+    }
   }
 
   private _getProgramById(id: string): Program | undefined {

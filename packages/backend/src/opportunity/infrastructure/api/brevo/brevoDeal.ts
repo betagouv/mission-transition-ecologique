@@ -1,7 +1,7 @@
 import { Maybe, Result } from 'true-myth'
 
 import { OpportunityRepository } from '../../../domain/spi'
-import { OpportunityId, OpportunityDetails, OpportunityUpdateAttributes } from '../../../domain/types'
+import { OpportunityId, OpportunityDetails, OpportunityUpdateAttributes, OpportunityDetailsShort } from '../../../domain/types'
 import BrevoAPI from './brevoAPI'
 import {
   DealAttributes,
@@ -131,7 +131,7 @@ const getBrevoCreationDates = async (): Promise<Result<Date[], Error>> => {
   }
 }
 
-const getdailyOpportunitiesByContactId = async (contactId: number): Promise<Result<OpportunityDetails[], Error>> => {
+const getDailyOpportunitiesByContactId = async (contactId: number): Promise<Result<OpportunityDetailsShort[], Error>> => {
   const startDate = new Date()
   startDate.setHours(0, 0, 0, 0)
 
@@ -141,7 +141,7 @@ const getdailyOpportunitiesByContactId = async (contactId: number): Promise<Resu
     if (!brevoDealResponse.items || brevoDealResponse.items.length === 0) {
       return Result.ok([])
     }
-    const selectedDeals = [] as OpportunityDetails[]
+    const selectedDeals = [] as OpportunityDetailsShort[]
     for (const deal of brevoDealResponse.items) {
       if (deal.linkedContactsIds && deal.linkedContactsIds[0] === contactId) {
         selectedDeals.push(convertBrevoDealToDomain(deal))
@@ -153,15 +153,10 @@ const getdailyOpportunitiesByContactId = async (contactId: number): Promise<Resu
   }
 }
 
-const convertBrevoDealToDomain = (brevoAttributes: BrevoDealItem): OpportunityDetails => {
+const convertBrevoDealToDomain = (brevoAttributes: BrevoDealItem): OpportunityDetailsShort => {
   return {
     programId: brevoAttributes.attributes.deal_name,
-    programContactOperator: brevoAttributes.attributes.operateur_de_contact as Operators,
-    linkToProgramPage: 'not_available', // TO improve ?
-    // en fait il faudrait modifier le backend program.
-    // et séparer publicodes de simple traitement de fichiers.
-    // Pour ne pas initialiser publicode tout le temps.
-    message: brevoAttributes.attributes.message
+    programContactOperator: brevoAttributes.attributes.operateur_de_contact as Operators
   }
 }
 
@@ -169,5 +164,5 @@ export const brevoRepository: OpportunityRepository = {
   create: addBrevoDeal,
   update: updateBrevoDeal,
   readDates: getBrevoCreationDates,
-  getdailyOpportunitiesByContactId: getdailyOpportunitiesByContactId
+  getDailyOpportunitiesByContactId: getDailyOpportunitiesByContactId
 }

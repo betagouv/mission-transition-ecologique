@@ -4,7 +4,7 @@ import AxiosHeaders from '../../../../common/infrastructure/api/axiosHeaders'
 import { handleException } from '../../../../common/domain/error/errors'
 import Config from '../../../../config'
 import { GetLandingResponseData, Subject, subjectToIdMapping, CreateSolicitationApiBody } from './types'
-import { Opportunity } from '../../../../opportunity/domain/types'
+import { Opportunity, OpportunityWithContactId } from '../../../../opportunity/domain/types'
 import { Operators, Program } from '../../../../program/domain/types/types'
 import OpportunityHubAbstract from '../opportunityHubAbstract'
 import { Objective } from '../../../../common/types'
@@ -12,7 +12,7 @@ import ProgramService from '../../../../program/application/programService'
 import OpportunityService from '../../../../opportunity/application/opportunityService'
 
 export class PlaceDesEntreprises extends OpportunityHubAbstract {
-  protected readonly _baseUrl = 'https://ce-staging.osc-fr1.scalingo.io/api/v1'
+  protected readonly _baseUrl = Config.PDE_API_BASEURL
   protected _axios: AxiosInstance
   constructor() {
     super()
@@ -32,7 +32,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     return validOperator && notAutonomous
   }
 
-  override shouldReceive = async (opportunity: Opportunity, program: Program) => {
+  override shouldTransmit = async (opportunity: OpportunityWithContactId, program: Program) => {
     if (!this.support(program)) {
       return false
     }
@@ -63,13 +63,11 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     }
   }
 
-  private async _reachedDailyContactTransmissionLimit(opportunity: Opportunity): Promise<boolean> {
-    const contact = opportunity.contactId as number //I set contactID previously but it does seem like a bad practice.
-    // at the same time, i don't want to just tranmist an error above.
-    const previousDailyOpportunities = await new OpportunityService().getdailyOpportunitiesByContactId(contact)
+  private async _reachedDailyContactTransmissionLimit(opportunity: OpportunityWithContactId): Promise<boolean> {
+    const contact = opportunity.contactId
+    const previousDailyOpportunities = await new OpportunityService().getDailyOpportunitiesByContactId(contact)
     if (previousDailyOpportunities.isErr) {
-      return false // To discuss.
-      // do we transmit if brevo is down ?
+      return false // TODO error handling
     }
 
     let tranmismissiblePrograms = 0
@@ -84,6 +82,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     return tranmismissiblePrograms > 1
   }
 
+  // waiting for confirmation by claire before cleaning this.
   // private _getLandingId = async (): Promise<Result<number, Error>> => {
   //   try {
   //     const rawResponse = await this._axios.request<GetLandingResponseData>({
@@ -106,7 +105,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
   private _makeHeaders(token: string): RawAxiosRequestHeaders {
     return {
       ...AxiosHeaders.makeJsonHeader(),
-      Authorization: `Bearer ${token}`
+      ...AxiosHeaders.makeBearerHeader(token)
     }
   }
 
@@ -142,7 +141,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     // }
     return Result.ok({
       solicitation: {
-        landing_id: 114,
+        landing_id: Config.PDE_LANDING_ID,
         landing_subject_id: this.subjectMapping(new ProgramService().getObjectives(program.id)),
         description: opportunity.message,
         full_name: opportunity.firstName + ' ' + opportunity.lastName,
