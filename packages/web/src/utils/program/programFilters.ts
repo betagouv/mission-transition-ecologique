@@ -39,7 +39,6 @@ export default class ProgramFilter {
     const matchingOperators = programOperatorsSelected.filter((operator: ProgramOperatorType) =>
       program['opérateur de contact'].includes(operator)
     )
-    console.log(program['opérateur de contact'], programOperatorsSelected, matchingOperators)
     return matchingOperators.length > 0
   }
 
