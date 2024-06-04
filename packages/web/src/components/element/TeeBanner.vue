@@ -21,8 +21,8 @@
 <script setup lang="ts">
 export interface TeeBannerProps {
   title: string
-  titleClass: string
-  titleContainerClass: string
+  titleClass?: string
+  titleContainerClass?: string
   description?: string | undefined
   descriptionClass?: string
   descriptionContainerClass?: string
