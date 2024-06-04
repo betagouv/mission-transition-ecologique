@@ -1,6 +1,6 @@
 import { PublicodeObjective } from '../questionnaire/types/types'
 import { Theme as ThemeType } from './types'
-import { Color } from '@tee/web/src/types/color'
+import { Color } from './color'
 
 export default class Theme {
   static themes: ThemeType[] = [

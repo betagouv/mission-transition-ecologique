@@ -17,6 +17,12 @@ export interface BaserowProject {
   Dispositifs: BaserowLinkedObject[]
 }
 
+export interface BaserowTheme {
+  id: number
+  Nom: string
+  'Nom (Tech)': string
+}
+
 export interface CoreThemeType extends Omit<Theme, 'highlightProjects'> {}
 
 export interface BaserowLinkedObject {

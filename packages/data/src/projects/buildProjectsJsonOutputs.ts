@@ -3,25 +3,32 @@ import dotenv from 'dotenv'
 import fs from 'fs'
 import path from 'path'
 
-import { BaserowImage, BaserowLinkedObject, BaserowProject, RawProject } from './types'
+import { BaserowImage, BaserowLinkedObject, BaserowProject, BaserowTheme, RawProject } from './types'
 
 dotenv.config()
 const API_TOKEN = process.env.BASEROW_TOKEN
 const BASE_URL = 'https://api.baserow.io/api'
 const databaseId = 114839
+// const updateImages = true
+
+const themeTableId = 305258
 
 export async function buildProjectsJSONOutputs(): Promise<void> {
-  const tableId = 305253
+  const projectTableId = 305253
 
-  const baserawProjects = (await getTableData(tableId)) as BaserowProject[]
+  const baserawProjects = (await getTableData(projectTableId)) as BaserowProject[]
+  const baserawThemes = (await getTableData(themeTableId)) as BaserowTheme[]
   const validBaserawProjects = baserawProjects.filter((value) => {
-    return !value.OK // To invert when we have a valid BD !
+    return !value.OK // TODO To invert when we have a valid BD !
   })
   const rawProjects = await Promise.all(
     validBaserawProjects.map(async (project) => {
-      return await convertToRawProjectType(project)
+      return await convertToRawProjectType(project, baserawThemes)
     })
   )
+
+  validateData(rawProjects)
+
   writeJson(rawProjects, './generated/projects.json')
   return
 }
@@ -44,7 +51,7 @@ async function getTableData(tableId: number) {
   }
 }
 
-async function convertToRawProjectType(baserowProject: BaserowProject): Promise<RawProject> {
+async function convertToRawProjectType(baserowProject: BaserowProject, baserawThemes: BaserowTheme[]): Promise<RawProject> {
   return {
     id: baserowProject.id,
     title: baserowProject.Titre,
@@ -52,24 +59,47 @@ async function convertToRawProjectType(baserowProject: BaserowProject): Promise<
     shortDescription: baserowProject['Description courte'],
     image: await handleImage(baserowProject.Image, baserowProject.id)
       .then(() => {
-        return 'done'
+        return `./generated/projectImages/${baserowProject.id}` //TODO check consistency with other static file path.
       })
       .catch(() => {
         return ''
       }),
     longDescription: baserowProject['Qu’est-ce que c’est ?'],
     moreDescription: baserowProject['Pour aller plus loin'],
-    themes: generateThemeList(baserowProject['Thématique principale'], baserowProject['Thématiques secondaires']),
-    mainTheme: baserowProject['Thématique principale'].length ? baserowProject['Thématique principale'][0].value : 'Non renseigné',
+    themes: generateThemeList(baserowProject['Thématique principale'], baserowProject['Thématiques secondaires'], baserawThemes),
+    mainTheme: generateMainTheme(baserowProject['Thématique principale'], baserawThemes),
     programs: generateProgramList(baserowProject.Dispositifs),
     linkedProjects: generateLinkedProjectList(baserowProject['Projets complémentaires'])
   }
 }
 
-function generateThemeList(mainTheme: BaserowLinkedObject[], secondaryThemes: BaserowLinkedObject[]): string[] {
-  const themeList = [mainTheme.length ? mainTheme[0].value : 'data expected']
+function generateMainTheme(mainTheme: BaserowLinkedObject[], baserawThemes: BaserowTheme[]): string {
+  if (mainTheme.length != 1) {
+    console.warn('Missing mainTheme Or mainTheme not unique in a field')
+  }
+  const themeId = mainTheme[0].id
+  const matchingTheme = baserawThemes.find((theme) => theme.id === themeId)
+  if (matchingTheme === undefined) {
+    console.warn('theme not found in baserow data (should not happen!)')
+    return ''
+  }
+  return matchingTheme['Nom (Tech)']
+}
+
+function generateThemeList(
+  mainTheme: BaserowLinkedObject[],
+  secondaryThemes: BaserowLinkedObject[],
+  baserawThemes: BaserowTheme[]
+): string[] {
+  const themeList = [generateMainTheme(mainTheme, baserawThemes)]
   secondaryThemes.forEach((element) => {
-    themeList.push(element.value)
+    const themeId = element.id
+    const matchingTheme = baserawThemes.find((theme) => theme.id === themeId)
+    if (matchingTheme) {
+      themeList.push(matchingTheme['Nom (Tech)'])
+    } else {
+      console.warn('theme not found in baserow data (should not happen!)')
+    }
   })
   return themeList
 }
@@ -88,9 +118,8 @@ function generateLinkedProjectList(projects: BaserowLinkedObject[]): number[] {
 
 async function handleImage(baserowImage: BaserowImage[], projectId: number): Promise<string> {
   if (!baserowImage.length) {
-    return ''
+    throw new Error('No image in baserow data')
   }
-  console.log('in handle image core code')
   const url = baserowImage[0].url
 
   try {
@@ -129,11 +158,54 @@ function writeJson(rawProjects: RawProject[], filePath: string) {
   })
 }
 
-// function validateIds(rawProject: RawProject): Project {
-//   throw new Error('Funcion not implemented.')
-// }
-// The main idea is to cheack that each id will properly link to an object and to display if it isn't the case.
-// I can also check if the programs are active.
+import jsonPrograms from '@tee/data/generated/dataset_out.json'
 
-// TODO : i shoud invert the logic. Instead of going every project i parallel, i think i should descend them vertically.
+import Theme from '@tee/common/src/theme/theme'
+import { Program } from '@/type/program'
+function validateData(rawProjects: RawProject[]) {
+  const programs = jsonPrograms as unknown as Program[]
+  rawProjects.forEach((project) => {
+    // validate Themes
+    project.themes.forEach((themeId) => {
+      const themeFound = Theme.themes.some((theme) => theme.id === themeId)
+      if (!themeFound) {
+        console.warn(`In Project "${project.title}", id ${project.id}, unknown theme-id: ${themeId}`)
+      }
+    })
+
+    // Validate linked Projects
+    project.linkedProjects.forEach((projectId) => {
+      const projectFound = rawProjects.some((project) => project.id === projectId)
+      if (!projectFound) {
+        console.warn(`In Project "${project.title}", id ${project.id}, unknown project-id: ${projectId}`)
+      }
+    })
+
+    // Validate Programs :
+    project.programs.forEach((programId) => {
+      const programFound = programs.some((program) => program.id === programId)
+      if (!programFound) {
+        console.warn(`In Project "${project.title}", id ${project.id}, unknown program-id: ${programId}`)
+      }
+    })
+  })
+  return
+}
+
 // TODO : swap to class
+// Separate baserow from generic code that would stay the same wo baserow !
+
+// Note : should be executed AFTER the program generation !
+
+// Questions :
+// 1
+// should i use the baserow field names ex "qu'est ce que c'est?" ou baserow field ids ?
+// Using fieldNames will break more often but seem more robust to check unwanted changes.
+// 2
+// I feel like that producing augmented themes will lead to complications :
+// how to let front end dev moke some change without regenerating the full data ?
+// The place where the data is defined by the devs and where its imported from will differ. That feels weird !
+// 3
+// image location ?
+//
+//
