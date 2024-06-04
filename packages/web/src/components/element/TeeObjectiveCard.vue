@@ -1,10 +1,10 @@
 <template>
   <DsfrCard
-    v-if="Objective.isPublicodeObjective(objective)"
+    v-if="Theme.isPublicodeObjective(objective)"
     horizontal
     title="Thématique"
-    :description="Objective.getTitleByObjective(objective)"
-    :img-src="Objective.getImageByObjective(objective)"
+    :description="Theme.getTitleByValue(objective)"
+    :img-src="Theme.getImageByValue(objective)"
     :class="classes"
     size="sm"
     no-arrow
@@ -12,7 +12,7 @@
 </template>
 
 <script setup lang="ts">
-import Objective from '@/utils/objective'
+import Theme from '@/utils/theme'
 import { DsfrCard } from '@gouvminint/vue-dsfr'
 import { PublicodeObjective } from '@/types'
 
@@ -36,13 +36,13 @@ function getRadiusClass() {
 }
 
 const classes = computed(() => {
-  if (!Objective.isPublicodeObjective(props.objective)) {
+  if (!Theme.isPublicodeObjective(props.objective)) {
     return []
   }
 
   return [
     'fr-card-banner',
-    'fr-card--' + Objective.getColorByObjective(props.objective),
+    'fr-card--' + Theme.getColorByValue(props.objective),
     'fr-card--horizontal-tier',
     'fr-card--no-border',
     getRadiusClass()
