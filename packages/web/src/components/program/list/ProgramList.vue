@@ -2,7 +2,7 @@
   <!-- PAGE BANNER -->
   <TeeBanner
     v-if="isCatalog"
-    class="fr-container--fluid fr-bg--blue-light"
+    class="fr-container--fluid fr-grid-row--center fr-grid-row--middle fr-bg--blue-light fr-pt-4v fr-py-md-6w fr-text-center"
     :title="teeBannerProps.title"
     :description="teeBannerProps.description"
   >
