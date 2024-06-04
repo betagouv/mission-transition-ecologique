@@ -7,7 +7,7 @@ import { QuestionnaireData } from '../domain/types/types'
 import ProgramsJson from '../infrastructure/programsJson'
 import { currentDateService } from '../infrastructure/currentDate'
 import { PublicodesService } from '../infrastructure/publicodesService'
-import { Objective } from '../../opportunityHub/infrastructure/api/placedesentreprises/types'
+// import { Objective } from '../../opportunityHub/infrastructure/api/placedesentreprises/types'
 
 export default class ProgramService {
   private _program: ProgramFeatures
@@ -33,7 +33,7 @@ export default class ProgramService {
     return this._program.getAll()
   }
 
-  public getObjectives(id: string): Objective[] {
-    return this._program.getObjectives(id)
-  }
+  // public getObjectives(id: string): Objective[] {
+  //   return this._program.getObjectives(id)
+  // }
 }
