@@ -3,11 +3,12 @@ import axios, { AxiosInstance, RawAxiosRequestHeaders } from 'axios'
 import AxiosHeaders from '../../../../common/infrastructure/api/axiosHeaders'
 import { handleException } from '../../../../common/domain/error/errors'
 import Config from '../../../../config'
-import { GetLandingResponseData, Subject, subjectToIdMapping, CreateSolicitationApiBody } from './types'
+import { GetLandingResponseData, CreateSolicitationApiBody } from './types'
+// import { GetLandingResponseData, Subject, subjectToIdMapping, CreateSolicitationApiBody } from './types'
 import { Opportunity, OpportunityWithContactId } from '../../../../opportunity/domain/types'
 import { Operators, Program } from '../../../../program/domain/types/types'
 import OpportunityHubAbstract from '../opportunityHubAbstract'
-import { Objective } from './types'
+// import { Objective } from './types'
 import ProgramService from '../../../../program/application/programService'
 import OpportunityService from '../../../../opportunity/application/opportunityService'
 
@@ -109,40 +110,42 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     }
   }
 
-  private _objectiveToSubjectIdMapping: { [key in Objective]: Subject } = {
-    [Objective.EnvironmentalImpact]: Subject.DemarcheEcologie,
-    [Objective.EnergyPerformance]: Subject.Energie,
-    [Objective.WaterConsumption]: Subject.Eau,
-    [Objective.BuildingRenovation]: Subject.Energie,
-    [Objective.SustainableMobility]: Subject.TransportMobilite,
-    [Objective.WasteManagement]: Subject.Dechets,
-    [Objective.EcoDesign]: Subject.DemarcheEcologie,
-    [Objective.TrainOrRecruit]: Subject.BilanRSE,
-    [Objective.MakeSavings]: Subject.DemarcheEcologie,
-    [Objective.DurablyInvest]: Subject.DemarcheEcologie,
-    [Objective.UnknownYet]: Subject.DemarcheEcologie
-  }
+  // private _objectiveToSubjectIdMapping: { [key in Objective]: Subject } = {
+  //   [Objective.EnvironmentalImpact]: Subject.DemarcheEcologie,
+  //   [Objective.EnergyPerformance]: Subject.Energie,
+  //   [Objective.WaterConsumption]: Subject.Eau,
+  //   [Objective.BuildingRenovation]: Subject.Energie,
+  //   [Objective.SustainableMobility]: Subject.TransportMobilite,
+  //   [Objective.WasteManagement]: Subject.Dechets,
+  //   [Objective.EcoDesign]: Subject.DemarcheEcologie,
+  //   [Objective.TrainOrRecruit]: Subject.BilanRSE,
+  //   [Objective.MakeSavings]: Subject.DemarcheEcologie,
+  //   [Objective.DurablyInvest]: Subject.DemarcheEcologie,
+  //   [Objective.UnknownYet]: Subject.DemarcheEcologie
+  // }
 
-  subjectMapping(programObjectives: Objective[]): number {
-    const defaultSubject = Subject.DemarcheEcologie
-    if (programObjectives.length === 1) {
-      const objective = programObjectives[0] as Objective
-      const subjectKey = this._objectiveToSubjectIdMapping[objective]
-      return subjectToIdMapping[subjectKey]
-    } else {
-      return subjectToIdMapping[defaultSubject]
-    }
-  }
+  // subjectMapping(programObjectives: Objective[]): number {
+  //   const defaultSubject = Subject.DemarcheEcologie
+  //   if (programObjectives.length === 1) {
+  //     const objective = programObjectives[0] as Objective
+  //     const subjectKey = this._objectiveToSubjectIdMapping[objective]
+  //     return subjectToIdMapping[subjectKey]
+  //   } else {
+  //     return subjectToIdMapping[defaultSubject]
+  //   }
+  // }
 
   private _createRequestBody(opportunity: Opportunity, program: Program): Result<CreateSolicitationApiBody, Error> {
     // const landing_id = await this._getLandingId()
     // if (landing_id.isErr) {
     //   return Result.err(landing_id.error)
     // }
+    console.log(program)
     return Result.ok({
       solicitation: {
         landing_id: Config.PDE_LANDING_ID,
-        landing_subject_id: this.subjectMapping(new ProgramService().getObjectives(program.id)),
+        // landing_subject_id: this.subjectMapping(new ProgramService().getObjectives(program.id)),
+        landing_subject_id: 22,
         description: opportunity.message,
         full_name: opportunity.firstName + ' ' + opportunity.lastName,
         email: opportunity.email,
