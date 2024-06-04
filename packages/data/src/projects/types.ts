@@ -1,9 +1,11 @@
+import { Project } from '@tee/common/src/project/types'
+import { Theme } from '@tee/common/src/theme/types'
 export interface BaserowProject {
   id: number
   order: string
   Nom: string
   'Description courte': string
-  Image: unknown[] //TODO
+  Image: BaserowImage[]
   'Qu’est-ce que c’est ?': string
   'Pour aller plus loin': string
   Titre: string
@@ -15,7 +17,6 @@ export interface BaserowProject {
   Dispositifs: BaserowLinkedObject[]
 }
 
-import { Theme } from '@tee/common/src/theme/types'
 export interface CoreThemeType extends Omit<Theme, 'highlightProjects'> {}
 
 export interface BaserowLinkedObject {
@@ -23,10 +24,25 @@ export interface BaserowLinkedObject {
   value: string
 }
 
-import { Project } from '@tee/common/src/project/types'
 export interface RawProject extends Omit<Project, 'themes' | 'mainTheme' | 'linkedProjects' | 'programs'> {
   themes: string[]
   mainTheme: string
   linkedProjects: number[]
   programs: string[]
+}
+
+export interface BaserowImage {
+  url: string
+  thumbnails: Thumbnails
+}
+
+interface Thumbnails {
+  tiny: Thumbnail
+  small: Thumbnail
+}
+
+interface Thumbnail {
+  url: string
+  width: number
+  height: number
 }
