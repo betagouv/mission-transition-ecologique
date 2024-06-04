@@ -24,7 +24,10 @@
           radius-size="2-5v"
         />
       </div>
-      <div class="fr-mt-4v fr-pl-2w fr-pl-md-0 fr-mb-2v fr-col-9 fr-col-offset-sm-3 fr-col-offset-lg-2 fr-col-xs-12">
+      <div class="fr-mt-md-4w fr-mt-4v fr-pt-2v fr-pl-2w fr-pl-md-0 fr-col-9 fr-col-offset-md-3 fr-col-offset-lg-2 fr-col-xs-12">
+        <h4>Quel est votre Projet ?</h4>
+      </div>
+      <div class="fr-mb-4v fr-pl-2w fr-pl-md-0 fr-col-9 fr-col-offset-md-3 fr-col-offset-lg-2 fr-col-xs-12">
         <div v-if="havePrograms && countPrograms > 1">
           {{ countFilteredPrograms }}
           {{ countFilteredPrograms > 1 ? Translation.t('results.results') : Translation.t('results.result') }}
