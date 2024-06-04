@@ -7,7 +7,7 @@ import { GetLandingResponseData, Subject, subjectToIdMapping, CreateSolicitation
 import { Opportunity, OpportunityWithContactId } from '../../../../opportunity/domain/types'
 import { Operators, Program } from '../../../../program/domain/types/types'
 import OpportunityHubAbstract from '../opportunityHubAbstract'
-import { Objective } from '../../../../opportunity/domain/type/types'
+import { Objective } from '@tee/common/src/questionnaire/types'
 import ProgramService from '../../../../program/application/programService'
 import OpportunityService from '../../../../opportunity/application/opportunityService'
 
