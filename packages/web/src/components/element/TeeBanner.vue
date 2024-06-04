@@ -23,9 +23,9 @@ export interface TeeBannerProps {
   title: string
   titleClass: string
   titleContainerClass: string
-  descriptionClass: string
-  descriptionContainerClass: string
   description?: string | undefined
+  descriptionClass?: string
+  descriptionContainerClass?: string
 }
 
 withDefaults(defineProps<TeeBannerProps>(), {
