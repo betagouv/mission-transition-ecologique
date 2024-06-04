@@ -9,7 +9,7 @@ import { Operators, Program } from '../../../../program/domain/types/types'
 import OpportunityHubAbstract from '../opportunityHubAbstract'
 import ProgramService from '../../../../program/application/programService'
 import OpportunityService from '../../../../opportunity/application/opportunityService'
-import { Objective } from '../../../../../../common/src/questionnaire/types'
+import { Objective } from './types'
 
 export class PlaceDesEntreprises extends OpportunityHubAbstract {
   protected readonly _baseUrl = Config.PDE_API_BASEURL
