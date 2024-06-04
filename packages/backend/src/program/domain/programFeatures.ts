@@ -3,7 +3,7 @@ import { CurrentDateService, ProgramRepository, RulesService } from './spi'
 import { filterPrograms } from './filterPrograms'
 import { sortPrograms } from './sortPrograms'
 import { Result } from 'true-myth'
-import { Objective } from '../../common/types'
+import { Objective } from '../../common/domain/types'
 
 export default class ProgramFeatures {
   private _programRepository: ProgramRepository
