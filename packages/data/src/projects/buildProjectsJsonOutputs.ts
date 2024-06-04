@@ -1,7 +1,9 @@
 import axios from 'axios'
 import dotenv from 'dotenv'
-import { BaserowImage, BaserowLinkedObject, BaserowProject, RawProject } from './types'
+import fs from 'fs'
 import path from 'path'
+
+import { BaserowImage, BaserowLinkedObject, BaserowProject, RawProject } from './types'
 
 dotenv.config()
 const API_TOKEN = process.env.BASEROW_TOKEN
@@ -15,10 +17,12 @@ export async function buildProjectsJSONOutputs(): Promise<void> {
   const validBaserawProjects = baserawProjects.filter((value) => {
     return !value.OK // To invert when we have a valid BD !
   })
-  const rawProjects = validBaserawProjects.map(async (project) => {
-    return await convertToRawProjectType(project)
-  })
-  console.log(rawProjects[0])
+  const rawProjects = await Promise.all(
+    validBaserawProjects.map(async (project) => {
+      return await convertToRawProjectType(project)
+    })
+  )
+  writeJson(rawProjects, './generated/projects.json')
   return
 }
 
@@ -82,7 +86,6 @@ function generateLinkedProjectList(projects: BaserowLinkedObject[]): number[] {
   })
 }
 
-import fs from 'fs'
 async function handleImage(baserowImage: BaserowImage[], projectId: number): Promise<string> {
   if (!baserowImage.length) {
     return ''
@@ -114,11 +117,23 @@ async function downloadImage(url: string, filename: string) {
   })
 }
 
-
-// It should be restrained in baserow
-// but to be certain that my implem will not create any bugs
-// I will add a manual validation to check that all added highlightProjects Id are the ProjectJson.
+function writeJson(rawProjects: RawProject[], filePath: string) {
+  const projectJson = JSON.stringify(rawProjects)
+  const fullPath = path.resolve(filePath)
+  fs.writeFile(fullPath, projectJson, (err) => {
+    if (err) {
+      console.log('Error writing file:', err)
+    } else {
+      console.log('Successfully wrote file')
+    }
+  })
+}
 
 // function validateIds(rawProject: RawProject): Project {
 //   throw new Error('Funcion not implemented.')
 // }
+// The main idea is to cheack that each id will properly link to an object and to display if it isn't the case.
+// I can also check if the programs are active.
+
+// TODO : i shoud invert the logic. Instead of going every project i parallel, i think i should descend them vertically.
+// TODO : swap to class
