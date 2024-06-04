@@ -1,17 +1,23 @@
 import axios from 'axios'
 import dotenv from 'dotenv'
+import { BaserowLinkedObject, BaserowProject, RawProject } from './types'
 
 dotenv.config()
-const API_TOKEN = process.env.BASEROW_TOKEN // Replace with your actual API token
+const API_TOKEN = process.env.BASEROW_TOKEN
 const BASE_URL = 'https://api.baserow.io/api'
 const databaseId = 114839
 
 export async function buildProjectsJSONOutputs(): Promise<void> {
   const tableId = 305253
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-  const data = await getTableData(tableId)
-  console.log(data)
+  const baserawProjects = (await getTableData(tableId)) as BaserowProject[]
+  const validBaserawProjects = baserawProjects.filter((value) => {
+    return !value.OK // To invert when we have a valid BD !
+  })
+  const rawProjects = validBaserawProjects.map((project) => {
+    return convertToRawProjectType(project)
+  })
+  console.log(rawProjects)
   return
 }
 
@@ -28,29 +34,54 @@ async function getTableData(tableId: number) {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access
     return response.data.results
   } catch (error) {
-    console.error('Error fetching table data:', error)
+    console.error('Error fetching project data from baserow:', error)
     return []
   }
 }
 
-// function remapFields(data: any[]): any[] {
-//   const fieldMappings: Record<string, string> = {
-//     Nom: 'Name',
-//     Titre: 'Title'
-//     // Add more mappings as needed
-//   }
+function convertToRawProjectType(baserowProject: BaserowProject): RawProject {
+  console.log(baserowProject)
+  return {
+    id: baserowProject.id,
+    title: baserowProject.Titre,
+    nameTag: baserowProject.NameTag,
+    shortDescription: baserowProject['Description courte'],
+    image: 'TODO',
+    longDescription: baserowProject['Qu’est-ce que c’est ?'],
+    moreDescription: baserowProject['Pour aller plus loin'],
+    themes: generateThemeList(baserowProject['Thématique principale'], baserowProject['Thématiques secondaires']),
+    mainTheme: baserowProject['Thématique principale'].length ? baserowProject['Thématique principale'][0].value : 'Non renseigné',
+    programs: generateProgramList(baserowProject.Dispositifs),
+    linkedProjects: generateLinkedProjectList(baserowProject['Projets complémentaires'])
+  }
+}
 
-//   return data.map((row) => {
-//     const remappedRow: Record<string, any> = {}
-//     for (const key in row) {
-//       if (fieldMappings[key]) {
-//         remappedRow[fieldMappings[key]] = row[key]
-//       } else {
-//         remappedRow[key] = row[key]
-//       }
-//     }
-//     return remappedRow
-//   })
+function generateThemeList(mainTheme: BaserowLinkedObject[], secondaryThemes: BaserowLinkedObject[]): string[] {
+  const themeList = [mainTheme.length ? mainTheme[0].value : 'data expected']
+  secondaryThemes.forEach((element) => {
+    themeList.push(element.value)
+  })
+  return themeList
+}
+
+function generateProgramList(programs: BaserowLinkedObject[]): string[] {
+  return programs.map((value) => {
+    return value.value
+  })
+}
+
+function generateLinkedProjectList(projects: BaserowLinkedObject[]): number[] {
+  return projects.map((value) => {
+    return value.id
+  })
+}
+
+// It should be restrained in baserow
+// but to be certain that my implem will not create any bugs
+// I will add a manual validation to check that all added highlightProjects Id are the ProjectJson.
+
+// function validateIds(rawProject: RawProject): Project {
+//   throw new Error('Funcion not implemented.')
 // }
 
 // image field :
@@ -69,7 +100,3 @@ async function getTableData(tableId: number) {
 //                 "height": 48
 //             }
 //         },
-
-// It should be restrained in baserow
-// but to be certain that my implem will not create any bugs
-// I will add a manual validation to check that all added highlightProjects Id are the ProjectJson.
