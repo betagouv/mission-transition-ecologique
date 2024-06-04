@@ -7,7 +7,7 @@ import { QuestionnaireData } from '../domain/types/types'
 import ProgramsJson from '../infrastructure/programsJson'
 import { currentDateService } from '../infrastructure/currentDate'
 import { PublicodesService } from '../infrastructure/publicodesService'
-import { Objective } from '../../../../common/src/questionnaire/types'
+import { Objective } from '../../opportunityHub/infrastructure/api/placedesentreprises/types'
 
 export default class ProgramService {
   private _program: ProgramFeatures
