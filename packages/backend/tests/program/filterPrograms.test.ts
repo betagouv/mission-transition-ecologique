@@ -5,7 +5,7 @@ import { expectToBeOk } from '../testing'
 import ProgramFeatures from '../../src/program/domain/programFeatures'
 import { type Result } from 'true-myth'
 import { PublicodesService } from '../../src/program/infrastructure/publicodesService'
-import { QuestionnaireRoute } from '@tee/common/src/questionnaire/types'
+import { QuestionnaireRoute } from '@tee/common/src/questionnaire/types/types'
 
 const defaultFilterPrograms = (programs: Program[], inputData: Record<string, number>): Result<Program[], Error> => {
   PublicodesService.init(programs)

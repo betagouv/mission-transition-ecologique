@@ -6,7 +6,8 @@ import { OpportunityHubRepository } from '../../opportunityHub/domain/spi'
 import { ProgramRepository } from '../../program/domain/spi'
 import ProgramFeatures from '../../program/domain/programFeatures'
 import { Program } from '@tee/data/src/type/program'
-
+import SiretValidator from '../../../../common/src/establishment/validator/siretValidator'
+import EstablishmentService from '../../establishment/application/establishmentService'
 export default class OpportunityFeatures {
   private readonly _contactRepository: ContactRepository
   private readonly _opportunityRepository: OpportunityRepository
@@ -29,6 +30,11 @@ export default class OpportunityFeatures {
   }
 
   createOpportunity = async (opportunity: Opportunity, optIn: true): Promise<Result<OpportunityId, Error>> => {
+    const maybeFullopportunity = await this._verifyAndAddEstablishmentData(opportunity)
+    if (maybeFullopportunity.isErr) {
+      return Result.err(maybeFullopportunity.error)
+    }
+    opportunity = maybeFullopportunity.value
     const contactIdResult = await this._contactRepository.createOrUpdate(opportunity as ContactDetails, optIn)
     if (contactIdResult.isErr) {
       // TODO : Send notif: contact and opportunity not created!
@@ -99,4 +105,47 @@ export default class OpportunityFeatures {
       }
     })
   }
+
+  private async _verifyAndAddEstablishmentData(opportunity: Opportunity): Promise<Result<Opportunity, Error>> {
+    if (!SiretValidator.validate(opportunity.companySiret)) {
+      return Result.err(new Error('invalid SIRET')) //since there is a validator in the front end,
+      // it means this is a direct query which we can ignore if poorly formatted
+    }
+    const establishmentInfos = await new EstablishmentService().getBySiret(opportunity.companySiret)
+    if (establishmentInfos.isErr) {
+      return Result.ok(opportunity) // if we don't suceed in enhancing the data, we still want to create an opportunity
+    }
+    opportunity.companyName = establishmentInfos.value.denomination
+    opportunity.companySector = establishmentInfos.value.nafLabel || ''
+
+    const dictionaries = JSON.parse(opportunity.otherData || '[]') as Dictionary[]
+    const newDictionary = {} as Dictionary
+    if (!this._updateValueInDictionaries(dictionaries, 'codeNAF', establishmentInfos.value.nafCode)) {
+      newDictionary['codeNAF'] = establishmentInfos.value.nafCode
+    }
+    if (!this._updateValueInDictionaries(dictionaries, 'codePostal', establishmentInfos.value.address.zipCode)) {
+      newDictionary['codePostal'] = establishmentInfos.value.address.zipCode
+    }
+    if (!this._updateValueInDictionaries(dictionaries, 'region', establishmentInfos.value.region || '')) {
+      newDictionary['region'] = establishmentInfos.value.region || ''
+    }
+    if (Object.values(newDictionary).length > 0) {
+      dictionaries.push(newDictionary)
+    }
+    opportunity.otherData = JSON.stringify(dictionaries)
+
+    return Result.ok(opportunity)
+  }
+
+  private _updateValueInDictionaries(dictionaries: Dictionary[], key: string, val: string): boolean {
+    for (const dictionary of dictionaries) {
+      if (key in dictionary) {
+        dictionary[key] = val
+        return true
+      }
+    }
+    return false
+  }
 }
+
+type Dictionary = Record<string, unknown>

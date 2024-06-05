@@ -1,21 +1,36 @@
 export interface OpportunityFormType {
-  [key: string]: MandatoryStringFieldFormType | StringFieldFormType | BooleanFieldFormType
-  name: StringFieldFormType
-  surname: StringFieldFormType
-  tel: StringFieldFormType
-  email: StringFieldFormType
-  siret: StringFieldFormType
-  needs: StringFieldFormType
-  cgu: BooleanFieldFormType
+  [key: string]: StringFieldInputType | MandatoryStringFieldFormType | BooleanFieldInputType | ValidatedStringFieldInputType
+  name: StringFieldInputType
+  surname: StringFieldInputType
+  tel: ValidatedStringFieldInputType
+  email: ValidatedStringFieldInputType
+  siret: ValidatedStringFieldInputType
+  needs: StringFieldInputType
+  cgu: BooleanFieldInputType
   linkToProgramPage: MandatoryStringFieldFormType
 }
 
 type DefaultFieldFormType = {
   required: true
-  label: string | undefined
-  hint: string | undefined
+  isValid: boolean | undefined
+  label?: string
+  hint?: string
 }
 
-export type StringFieldFormType = DefaultFieldFormType & { value: string | undefined }
+export type StringFieldInputType = DefaultFieldFormType & { value: string | undefined }
+export type BooleanFieldInputType = DefaultFieldFormType & { value: boolean }
 export type MandatoryStringFieldFormType = DefaultFieldFormType & { value: string }
-export type BooleanFieldFormType = DefaultFieldFormType & { value: boolean }
+export type ValidatedStringFieldInputType = StringFieldInputType & {
+  validation: CallableFunction
+  errorMessage: string
+}
+
+export type InputFieldUnionType =
+  | StringFieldInputType
+  | MandatoryStringFieldFormType
+  | BooleanFieldInputType
+  | ValidatedStringFieldInputType
+
+export const isValidatedStringFieldInputType = (field: InputFieldUnionType): field is ValidatedStringFieldInputType => {
+  return 'validation' in field
+}

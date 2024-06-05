@@ -1,0 +1,39 @@
+$border-radius-root: 1rem !default;
+
+$rounded: (
+  '0': 0,
+  '0-5v': $border-radius-root * .5,
+  '1v': $border-radius-root,
+  '1-5v': $border-radius-root * 1.5,
+  '2v': $border-radius-root * 2,
+  '2-5v': $border-radius-root * 2.5,
+);
+
+$corner: (
+  'tl': 'top-left',
+  'tr': 'top-right',
+  'br': 'bottom-right',
+  'bl': 'bottom-left',
+  't': (
+    'top-left',
+    'top-right',
+  ),
+  'r': (
+    'top-right',
+    'bottom-right',
+  ),
+  'b': (
+    'bottom-right',
+    'bottom-left',
+  ),
+  'l': (
+    'bottom-left',
+    'top-left',
+  ),
+  'a': (
+    'top-left',
+    'top-right',
+    'bottom-right',
+    'bottom-left',
+  ),
+);

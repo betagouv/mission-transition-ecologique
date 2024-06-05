@@ -1,7 +1,7 @@
 import { Result } from 'true-myth'
 import type { CityToRegionMapping, EstablishmentRepository, NafMapping } from './spi'
 import { Establishment, EstablishmentDetails, EstablishmentSearch, SearchResult, EstablishmentFront, Siret } from './types'
-import Validator from '../../../../common/src/establishment/validator'
+import SiretValidator from '../../../../common/src/establishment/validator/siretValidator'
 
 export default class EstablishmentFeatures {
   private readonly _establishmentRepository: EstablishmentRepository
@@ -15,7 +15,7 @@ export default class EstablishmentFeatures {
   }
 
   public async search(query: string): Promise<Result<EstablishmentSearch, Error>> {
-    if (Validator.validateSiret(query)) {
+    if (SiretValidator.validate(query)) {
       const bySiretResult = await this._searchBySiret(query)
       if (bySiretResult.isOk) {
         return bySiretResult
@@ -26,7 +26,8 @@ export default class EstablishmentFeatures {
   }
 
   public async getBySiret(siret: Siret): Promise<Result<Establishment, Error>> {
-    const establishmentResult: Result<EstablishmentDetails, Error> = await this._establishmentRepository.get(siret)
+    const trimmedSiret = siret.replace(/[\s]/g, '')
+    const establishmentResult: Result<EstablishmentDetails, Error> = await this._establishmentRepository.get(trimmedSiret)
 
     if (establishmentResult.isErr) {
       return Result.err(establishmentResult.error)
@@ -39,9 +40,7 @@ export default class EstablishmentFeatures {
   }
 
   private async _searchBySiret(siret: string): Promise<Result<EstablishmentSearch, Error>> {
-    const trimmedSiret = String(siret).replace(/[\s]/g, '')
-
-    const resultEstablishment = await this.getBySiret(trimmedSiret)
+    const resultEstablishment = await this.getBySiret(siret)
     if (resultEstablishment.isErr) {
       return Result.err(resultEstablishment.error)
     }
