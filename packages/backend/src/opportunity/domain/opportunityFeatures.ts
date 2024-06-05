@@ -1,6 +1,6 @@
 import { Maybe, Result } from 'true-myth'
 import type { ContactRepository, MailerService, OpportunityRepository } from './spi'
-import type { OpportunityId, Opportunity, ContactDetails } from './types'
+import type { OpportunityId, Opportunity, ContactDetails, OpportunityWithContactId, OpportunityDetailsShort } from './types'
 import OpportunityHubFeatures from '../../opportunityHub/domain/opportunityHubFeatures'
 import { OpportunityHubRepository } from '../../opportunityHub/domain/spi'
 import { ProgramRepository } from '../../program/domain/spi'
@@ -31,7 +31,7 @@ export default class OpportunityFeatures {
   createOpportunity = async (opportunity: Opportunity, optIn: true): Promise<Result<OpportunityId, Error>> => {
     const contactIdResult = await this._contactRepository.createOrUpdate(opportunity as ContactDetails, optIn)
     if (contactIdResult.isErr) {
-      // TODO : Send an email to the admin: contact and opportunity not created!
+      // TODO : Send notif: contact and opportunity not created!
       return Result.err(contactIdResult.error)
     }
 
@@ -39,26 +39,33 @@ export default class OpportunityFeatures {
     opportunity = this._addContactOperatorToOpportunity(opportunity, program)
 
     const opportunityResult = await this._opportunityRepository.create(contactIdResult.value.id, opportunity)
-    if (opportunityResult.isErr || program == undefined) {
-      // TODO : Send an email to the admin: opportunity not created or opportunity created on an unknown program
+    if (opportunityResult.isErr || program === undefined) {
+      // TODO : Send notif: opportunity not created or opportunity created on an unknown program
       return opportunityResult
     }
 
     this._sendReturnReceipt(opportunity, program)
-    this._maybeTransmitOpportunityToHubs(opportunityResult.value, opportunity, program)
+    this._maybeTransmitOpportunityToHubs(
+      opportunityResult.value,
+      this._addContactIdToOpportunity(opportunity, contactIdResult.value.id),
+      program
+    )
+
     return opportunityResult
   }
 
-  private _maybeTransmitOpportunityToHubs(opportunityId: OpportunityId, opportunity: Opportunity, program: Program) {
-    if (program['activable en autonomie']) return
+  getDailyOpportunitiesByContactId = async (contactId: number): Promise<Result<OpportunityDetailsShort[], Error>> => {
+    return await this._opportunityRepository.getDailyOpportunitiesByContactId(contactId)
+  }
 
+  private _maybeTransmitOpportunityToHubs(opportunityId: OpportunityId, opportunity: OpportunityWithContactId, program: Program) {
     void new OpportunityHubFeatures(this._opportunityHubRepositories)
-      .createOpportunity(opportunity, program)
+      .maybeTransmitOpportunity(opportunity, program)
       .then(async (opportunityHubResult) => {
         if (opportunityHubResult !== false) {
           const opportunityUpdateErr = await this._updateOpportunitySentToHub(opportunityId, !opportunityHubResult.isJust)
           if (opportunityUpdateErr.isJust) {
-            // TODO: Send an email to the admin: Opportunity not updated creating a missmatch between the status in the DB and the real opportunity status
+            // TODO: Send notif: Opportunity not updated in our DB creating a missmatch between the status in the DB and the real opportunity status
           }
         }
       })
@@ -73,6 +80,12 @@ export default class OpportunityFeatures {
       opportunity.programContactOperator = program['opérateur de contact']
     }
     return opportunity
+  }
+  private _addContactIdToOpportunity(opportunity: Opportunity, id: number): OpportunityWithContactId {
+    return {
+      ...opportunity,
+      contactId: id
+    }
   }
 
   private _getProgramById(id: string): Program | undefined {
