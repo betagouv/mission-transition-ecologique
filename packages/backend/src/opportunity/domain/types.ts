@@ -14,6 +14,10 @@ export interface ContactDetails {
   companySize?: number
 }
 
+export type OpportunityWithContactId = Opportunity & {
+  contactId: number
+}
+
 export interface OpportunityDetails {
   programId: string
   programContactOperator?: Operators
@@ -23,6 +27,8 @@ export interface OpportunityDetails {
   priorityObjectives?: PublicodeObjective[]
   otherData?: string
 }
+
+export type OpportunityDetailsShort = Omit<OpportunityDetails, 'linkToProgramPage' | 'message'>
 
 export interface OpportunityUpdateAttributes {
   sentToOpportunityHub: boolean

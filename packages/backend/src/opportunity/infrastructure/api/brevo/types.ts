@@ -77,26 +77,28 @@ export enum BrevoCompanySize {
   MORE_THAN_250
 }
 
+export interface BrevoDealItem {
+  id: string
+  attributes: {
+    autres_donnes: string
+    created_at: string
+    deal_name: string
+    deal_owner: string
+    deal_stage: string
+    message: string
+    operateur_de_contact: string
+    parcours: string
+    pipeline: string
+    stage_updated_at: string
+  }
+  linkedContactsIds: number[]
+  linkedCompaniesIds: number[]
+  createdBy: string
+  companyTimelineEnabledFrom: string | null
+}
+
 export interface BrevoDealResponse {
-  items: Array<{
-    id: string
-    attributes: {
-      autres_donnes: string
-      created_at: string
-      deal_name: string
-      deal_owner: string
-      deal_stage: string
-      message: string
-      operateur_de_contact: string
-      parcours: string
-      pipeline: string
-      stage_updated_at: string
-    }
-    linkedContactsIds: number[]
-    linkedCompaniesIds: number[]
-    createdBy: string
-    companyTimelineEnabledFrom: string | null
-  }>
+  items: BrevoDealItem[]
   pager: {
     current: number
     limit: number

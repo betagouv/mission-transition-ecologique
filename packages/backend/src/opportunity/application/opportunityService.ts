@@ -1,4 +1,4 @@
-import { Opportunity, OpportunityId } from '../domain/types'
+import { Opportunity, OpportunityDetailsShort, OpportunityId } from '../domain/types'
 import OpportunityFeatures from '../domain/opportunityFeatures'
 import { Result } from 'true-myth'
 import { brevoRepository } from '../infrastructure/api/brevo/brevoDeal'
@@ -29,6 +29,10 @@ export default class OpportunityService {
       return Result.err(new Error('opt-in is required for storing contact data'))
     }
     return await this._opportunityFeatures.createOpportunity(opportunity, optIn)
+  }
+
+  public async getDailyOpportunitiesByContactId(contactId: number): Promise<Result<OpportunityDetailsShort[], Error>> {
+    return await this._opportunityFeatures.getDailyOpportunitiesByContactId(contactId)
   }
 
   private _getContactRepository(): ContactRepository {

@@ -44,7 +44,7 @@ export class BpiFrance extends OpportunityHubAbstract {
     }
   }
 
-  public createOpportunity = async (opportunity: Opportunity, program: Program): Promise<Maybe<Error>> => {
+  public transmitOpportunity = async (opportunity: Opportunity, program: Program): Promise<Maybe<Error>> => {
     try {
       const tokenResult = await this._getToken()
       if (tokenResult.isErr) {

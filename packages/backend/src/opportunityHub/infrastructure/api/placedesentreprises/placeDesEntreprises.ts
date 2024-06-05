@@ -3,77 +3,16 @@ import axios, { AxiosInstance, RawAxiosRequestHeaders } from 'axios'
 import AxiosHeaders from '../../../../common/infrastructure/api/axiosHeaders'
 import { handleException } from '../../../../common/domain/error/errors'
 import Config from '../../../../config'
-import { GetLandingResponseData, Landing, Subject, subjectToIdMapping, CreateSolicitationApiBody } from './types'
-import { Opportunity } from '../../../../opportunity/domain/types'
+import { GetLandingResponseData, Subject, subjectToIdMapping, Objective, CreateSolicitationApiBody } from './types'
+import { Opportunity, OpportunityWithContactId } from '../../../../opportunity/domain/types'
 import { Operators, Program } from '../../../../program/domain/types/types'
 import OpportunityHubAbstract from '../opportunityHubAbstract'
-import { Objective } from '../../../../common/types'
 import ProgramService from '../../../../program/application/programService'
-
-const allOperators: Operators[] = [
-  'ADEME',
-  'ASP',
-  "Agence de l'Eau Adour-Garonne",
-  "Agence de l'Eau Artois-Picardie",
-  "Agence de l'Eau Loire-Bretagne",
-  "Agence de l'Eau Rhin-Meuse",
-  "Agence de l'Eau Rhône-Méditerranée-Corse",
-  "Agence de l'Eau Seine-Normandie",
-  "Agence de l'Eau",
-  'Bpifrance',
-  'Breizh Fab',
-  'CCI Auvergne-Rhône-Alpes',
-  'CCI Bretagne',
-  'CCI Centre-Val de Loire',
-  'CCI Grand-Est',
-  'CCI Hauts-de-France',
-  'CCI Loir-et-Cher',
-  'CCI Loiret',
-  'CCI Morbihan',
-  'CCI Normandie',
-  'CCI Occitanie',
-  'CCI ou CMA',
-  'CCI Île-de-France',
-  'CCI',
-  'CEE',
-  'CETIM',
-  'CMA Auvergne-Rhône-Alpes',
-  'CMA Bourgogne-Franche-Comté',
-  'CMA Bretagne',
-  'CMA Centre-Val de Loire',
-  'CMA Grand-Est',
-  'CMA Hauts-de-France',
-  'CMA La Réunion',
-  'CMA Loiret',
-  'CMA Normandie',
-  'CMA Nouvelle-Aquitaine',
-  "CMA Provence-Alpes-Côte-D'Azur",
-  'CMA Rhône',
-  'CMA Île-de-France',
-  'CMA',
-  'DDFIP',
-  'DREAL Bretagne',
-  'EcoCO2',
-  "France Rénov'",
-  'InvestEU',
-  'La Poste',
-  'Ministère de la Transition Écologique et Solidaire',
-  'ORACE en Pays de la Loire',
-  'Organisations professionnelles',
-  'Région Bretagne',
-  'Saur',
-  'Suez',
-  'UIMM',
-  'Véolia Eau'
-]
+import OpportunityService from '../../../../opportunity/application/opportunityService'
 
 export class PlaceDesEntreprises extends OpportunityHubAbstract {
-  protected readonly _baseUrl = 'https://reso-staging.osc-fr1.scalingo.io/api/v1'
+  protected readonly _baseUrl = Config.PDE_API_BASEURL
   protected _axios: AxiosInstance
-  _excludeOperatorsFromList = (exclude: Operators[]): Operators[] => {
-    return allOperators.filter((operator) => !exclude.includes(operator))
-  }
-  protected readonly _operatorNames = this._excludeOperatorsFromList(['Bpifrance'])
   constructor() {
     super()
     const token = Config.PDE_API_TOKEN
@@ -82,30 +21,90 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
       headers: this._makeHeaders(token)
     })
   }
+  protected readonly _operatorNames = [] // warning, invalid but never used since we override all possible external uses of this value right below
+  override get operatorNames(): Operators[] | Error {
+    return new Error('Operator List non valid for Place des entreprises')
+  }
+  override support = (program: Program) => {
+    const validOperator = (program['opérateur de contact'] as Operators) !== 'Bpifrance'
+    const notAutonomous = !program['activable en autonomie']
+    return validOperator && notAutonomous
+  }
 
-  private _getLandingId = async (): Promise<Result<number, Error>> => {
+  override shouldTransmit = async (opportunity: OpportunityWithContactId, program: Program) => {
+    if (!this.support(program)) {
+      return false
+    }
+    const reachTransmissionLimit = await this._reachedDailyContactTransmissionLimit(opportunity)
+    return !reachTransmissionLimit
+  }
+
+  public transmitOpportunity = async (opportunity: Opportunity, program: Program): Promise<Maybe<Error>> => {
+    const maybePayload = this._createRequestBody(opportunity, program)
+    if (maybePayload.isErr) {
+      return Maybe.of(maybePayload.error)
+    }
     try {
       const rawResponse = await this._axios.request<GetLandingResponseData>({
-        method: 'GET',
-        url: `/landings`,
+        method: 'POST',
+        url: `/solicitations`,
+        data: maybePayload.value,
         timeout: 3000
       })
-      const response = rawResponse.data
-      if (Array.isArray(response.data) && response.data.length > 0) {
-        const landingPage = response.data[0] as Landing
-        return Result.ok(landingPage.id)
+      const status = rawResponse.status
+      if (status != 200) {
+        return Maybe.of(Error('PDE Api Error ' + status))
       } else {
-        return Result.err(Error('PDE landing ID not found'))
+        return Maybe.nothing()
       }
     } catch (exception: unknown) {
-      return Result.err(handleException(exception))
+      return Maybe.of(handleException(exception))
     }
   }
+
+  private async _reachedDailyContactTransmissionLimit(opportunity: OpportunityWithContactId): Promise<boolean> {
+    const contact = opportunity.contactId
+    const previousDailyOpportunities = await new OpportunityService().getDailyOpportunitiesByContactId(contact)
+    if (previousDailyOpportunities.isErr) {
+      return false // TODO error handling
+    }
+
+    let tranmismissiblePrograms = 0
+    for (const prevOpportunity of previousDailyOpportunities.value) {
+      const prevProgram = new ProgramService().getById(prevOpportunity.programId)
+      if (prevProgram && this.support(prevProgram)) {
+        tranmismissiblePrograms += 1
+      }
+    }
+    // The current opportunity being already created in brevo when we check the hub transmission, we count the current program.
+    // The question is do we have MORE than one tranmissible program which indicates older tranmissions.
+    return tranmismissiblePrograms > 1
+  }
+
+  // waiting for confirmation by claire before cleaning this.
+  // private _getLandingId = async (): Promise<Result<number, Error>> => {
+  //   try {
+  //     const rawResponse = await this._axios.request<GetLandingResponseData>({
+  //       method: 'GET',
+  //       url: `/landings`,
+  //       timeout: 3000
+  //     })
+  //     const response = rawResponse.data
+  //     if (Array.isArray(response.data) && response.data.length > 0) {
+  //       const landingPage = response.data[0] as Landing
+  //       return Result.ok(landingPage.id)
+  //     } else {
+  //       return Result.err(Error('PDE landing ID not found'))
+  //     }
+  //   } catch (exception: unknown) {
+  //     return Result.err(handleException(exception))
+  //   }
+  // }
 
   private _makeHeaders(token: string): RawAxiosRequestHeaders {
     return {
       ...AxiosHeaders.makeJsonHeader(),
-      Authorization: `Bearer ${token}`
+      ...AxiosHeaders.makeBearerHeader(token)
     }
   }
 
@@ -134,45 +133,22 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     }
   }
 
-  public createOpportunity = async (opportunity: Opportunity, program: Program): Promise<Maybe<Error>> => {
-    const maybePayload = await this._createRequestBody(opportunity, program)
-    if (maybePayload.isErr) {
-      return Maybe.of(maybePayload.error)
-    }
-    try {
-      const rawResponse = await this._axios.request<GetLandingResponseData>({
-        method: 'POST',
-        url: `/solicitations`,
-        data: maybePayload.value,
-        timeout: 3000
-      })
-      const status = rawResponse.status
-      if (status != 200) {
-        return Maybe.of(Error('PDE Api Error ' + status))
-      } else {
-        return Maybe.nothing()
-      }
-    } catch (exception: unknown) {
-      return Maybe.of(handleException(exception))
-    }
-  }
-
-  private async _createRequestBody(opportunity: Opportunity, program: Program): Promise<Result<CreateSolicitationApiBody, Error>> {
-    const landing_id = await this._getLandingId()
-    if (landing_id.isErr) {
-      return Result.err(landing_id.error)
-    }
+  private _createRequestBody(opportunity: Opportunity, program: Program): Result<CreateSolicitationApiBody, Error> {
+    // const landing_id = await this._getLandingId()
+    // if (landing_id.isErr) {
+    //   return Result.err(landing_id.error)
+    // }
     return Result.ok({
       solicitation: {
-        landing_id: landing_id.value,
+        landing_id: Config.PDE_LANDING_ID,
         landing_subject_id: this.subjectMapping(new ProgramService().getObjectives(program.id)),
         description: opportunity.message,
         full_name: opportunity.firstName + ' ' + opportunity.lastName,
         email: opportunity.email,
         phone_number: opportunity.phoneNumber,
         siret: opportunity.companySiret,
-        location: program.id, // TO delete, temporary, just to use program somewhere.
-        api_calling_url: 'TODO_A_remplir',
+        location: '',
+        api_calling_url: opportunity.linkToProgramPage,
         questions_additionnelles: []
       }
     })
