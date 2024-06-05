@@ -45,7 +45,7 @@ export default class OpportunityFeatures {
     }
 
     this._sendReturnReceipt(opportunity, program)
-    this._maybeTransmitOpportunityToHubs(
+    this._transmitOpportunityToHubs(
       opportunityResult.value,
       this._addContactIdToOpportunity(opportunity, contactIdResult.value.id),
       program
@@ -58,7 +58,7 @@ export default class OpportunityFeatures {
     return await this._opportunityRepository.getDailyOpportunitiesByContactId(contactId)
   }
 
-  private _maybeTransmitOpportunityToHubs(opportunityId: OpportunityId, opportunity: OpportunityWithContactId, program: Program) {
+  private _transmitOpportunityToHubs(opportunityId: OpportunityId, opportunity: OpportunityWithContactId, program: Program) {
     void new OpportunityHubFeatures(this._opportunityHubRepositories)
       .maybeTransmitOpportunity(opportunity, program)
       .then(async (opportunityHubResult) => {
