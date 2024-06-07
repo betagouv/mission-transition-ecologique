@@ -191,21 +191,3 @@ function validateData(rawProjects: RawProject[]) {
   })
   return
 }
-
-// TODO : swap to class
-// Separate baserow from generic code that would stay the same wo baserow !
-
-// Note : should be executed AFTER the program generation !
-
-// Questions :
-// 1
-// should i use the baserow field names ex "qu'est ce que c'est?" ou baserow field ids ?
-// Using fieldNames will break more often but seem more robust to check unwanted changes.
-// 2
-// I feel like that producing augmented themes will lead to complications :
-// how to let front end dev moke some change without regenerating the full data ?
-// The place where the data is defined by the devs and where its imported from will differ. That feels weird !
-// 3
-// image location ?
-//
-//
