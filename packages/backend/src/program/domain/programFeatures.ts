@@ -3,7 +3,7 @@ import { CurrentDateService, ProgramRepository, RulesService } from './spi'
 import { filterPrograms } from './filterPrograms'
 import { sortPrograms } from './sortPrograms'
 import { Result } from 'true-myth'
-// import { Objective } from '../../opportunityHub/infrastructure/api/placedesentreprises/types'
+import { Objective } from '../../common/types'
 
 export default class ProgramFeatures {
   private _programRepository: ProgramRepository
@@ -42,22 +42,22 @@ export default class ProgramFeatures {
     return this._programRepository.getAll()
   }
 
-  // public getObjectives(id: string): Objective[] {
-  //   const program = this.getById(id)
-  //   if (program === undefined) {
-  //     return []
-  //   }
-  //   const publicodeObjectives = program.publicodes['entreprise . a un objectif ciblé']?.['une de ces conditions']
-  //   if (!publicodeObjectives) {
-  //     return []
-  //   }
-  //   const objectivesArray: Objective[] = []
-  //   publicodeObjectives.forEach((publicodeObjective) => {
-  //     const objectiveValue = Object.values(Objective).find((value) => publicodeObjective.includes(value as string))
-  //     if (objectiveValue) {
-  //       objectivesArray.push(objectiveValue as Objective)
-  //     }
-  //   })
-  //   return objectivesArray
-  // }
+  public getObjectives(id: string): Objective[] {
+    const program = this.getById(id)
+    if (program === undefined) {
+      return []
+    }
+    const publicodeObjectives = program.publicodes['entreprise . a un objectif ciblé']?.['une de ces conditions']
+    if (!publicodeObjectives) {
+      return []
+    }
+    const objectivesArray: Objective[] = []
+    publicodeObjectives.forEach((publicodeObjective) => {
+      const objectiveValue = Object.values(Objective).find((value) => publicodeObjective.includes(value as string))
+      if (objectiveValue) {
+        objectivesArray.push(objectiveValue as Objective)
+      }
+    })
+    return objectivesArray
+  }
 }

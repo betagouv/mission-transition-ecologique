@@ -1,5 +1,3 @@
-export { Objective } from '../../../../../../common/src/questionnaire/types'
-
 export interface GetLandingResponseData {
   data: Landing[]
   metadata: Metadata

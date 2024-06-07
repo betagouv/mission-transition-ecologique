@@ -9,8 +9,7 @@ import { Operators, Program } from '../../../../program/domain/types/types'
 import OpportunityHubAbstract from '../opportunityHubAbstract'
 import ProgramService from '../../../../program/application/programService'
 import OpportunityService from '../../../../opportunity/application/opportunityService'
-import { Objective } from './types'
-
+import { Objective } from '../../../../common/types'
 export class PlaceDesEntreprises extends OpportunityHubAbstract {
   protected readonly _baseUrl = Config.PDE_API_BASEURL
   protected _axios: AxiosInstance
@@ -82,26 +81,6 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     return tranmismissiblePrograms > 1
   }
 
-  // waiting for confirmation by claire before cleaning this.
-  // private _getLandingId = async (): Promise<Result<number, Error>> => {
-  //   try {
-  //     const rawResponse = await this._axios.request<GetLandingResponseData>({
-  //       method: 'GET',
-  //       url: `/landings`,
-  //       timeout: 3000
-  //     })
-  //     const response = rawResponse.data
-  //     if (Array.isArray(response.data) && response.data.length > 0) {
-  //       const landingPage = response.data[0] as Landing
-  //       return Result.ok(landingPage.id)
-  //     } else {
-  //       return Result.err(Error('PDE landing ID not found'))
-  //     }
-  //   } catch (exception: unknown) {
-  //     return Result.err(handleException(exception))
-  //   }
-  // }
-
   private _makeHeaders(token: string): RawAxiosRequestHeaders {
     return {
       ...AxiosHeaders.makeJsonHeader(),
@@ -135,16 +114,10 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
   }
 
   private _createRequestBody(opportunity: Opportunity, program: Program): Result<CreateSolicitationApiBody, Error> {
-    // const landing_id = await this._getLandingId()
-    // if (landing_id.isErr) {
-    //   return Result.err(landing_id.error)
-    // }
-    console.log(program)
     return Result.ok({
       solicitation: {
         landing_id: Config.PDE_LANDING_ID,
-        // landing_subject_id: this.subjectMapping(new ProgramService().getObjectives(program.id)),
-        landing_subject_id: this.subjectMapping([Objective.EcoDesign]),
+        landing_subject_id: this.subjectMapping(new ProgramService().getObjectives(program.id)),
         description: opportunity.message,
         full_name: opportunity.firstName + ' ' + opportunity.lastName,
         email: opportunity.email,
