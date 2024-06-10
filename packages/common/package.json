@@ -11,6 +11,7 @@
   },
   "scripts": {
     "build": "npx tsc --build --verbose",
-    "lint": "eslint . --fix"
+    "lint": "eslint . --fix",
+    "lint-check": "eslint ."
   }
 }

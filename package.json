@@ -25,14 +25,17 @@
     "dev": "npx concurrently \"npm run build-json-output-watch\" \"npm run dev -w packages/backend\" \"npm run dev -w packages/web\"",
     "dev-back": "npx concurrently \"npm run build-json-output-watch\" \"npm run dev -w packages/backend\"",
     "dev-front": "npx concurrently \"npm run build-json-output-watch\" \"npm run dev -w packages/web\"",
-    "test-data": "npm run test -w packages/data",
+    "test-data": "turbo run @tee/data#test",
+    "test-backend": "turbo run @tee/backend#test",
     "lint": "eslint . --fix",
-    "lint-check": "eslint .",
-    "lint-concurrently": "npx concurrently 'npm run lint -w packages/backend' 'npm run lint -w packages/web' 'npm run lint -w packages/data'"
+    "lint-check": "turbo run lint-check",
+    "lint-concurrently": "npx concurrently 'npm run lint -w packages/backend' 'npm run lint -w packages/web' 'npm run lint -w packages/data'",
+    "type-check": "turbo run type-check"
   },
   "workspaces": [
     "./packages/*"
   ],
+  "packageManager": "npm@10.7.0",
   "engines": {
     "node": "20.x",
     "npm": ">=10.0 <11"
@@ -40,10 +43,10 @@
   "dependencies": {
     "@tsconfig/node20": "^20.1.4",
     "chart.js": "^4.4.2",
+    "concurrently": "^8.2.0",
     "dotenv": "^16.4.1",
     "true-myth": "^7.1.0",
-    "typescript": "^5.4.3",
-    "concurrently": "^8.2.0"
+    "typescript": "^5.4.3"
   },
   "devDependencies": {
     "@types/cors": "^2.8.13",
@@ -54,6 +57,7 @@
     "eslint-formatter-summary-chart": "^0.3.0",
     "eslint-plugin-prettier": "^5.0.1",
     "prettier": "^3.0.3",
-    "ts-node": "^10.9.1"
+    "ts-node": "^10.9.1",
+    "turbo": "^2.0.3"
   }
 }

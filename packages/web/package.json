@@ -35,6 +35,7 @@
     "type-check": "vue-tsc --noEmit -p tsconfig.tc.json --composite false",
     "type-check-watch": "vue-tsc --watch --noEmit -p tsconfig.tc.json --composite false",
     "lint": "eslint . --fix",
+    "lint-check": "eslint .",
     "format": "prettier --write src/"
   },
   "dependencies": {
