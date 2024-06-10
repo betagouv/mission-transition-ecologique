@@ -1,5 +1,6 @@
 import { ThemeId } from '../theme/types'
 import { projects } from './mockData'
+import { ProgramData } from '@tee/web/src/types'
 
 export interface Project {
   id: number
@@ -11,7 +12,7 @@ export interface Project {
   moreDescription: string // Pour aller plus loin
   themes: ThemeId[] // liste tous les thèmes auxquels le projet appartient,
   mainTheme: ThemeId // nom du thème principal (pour l'instant, donne sa couleur dans la banèire)
-  programs: string[] // liste des programmes associés au projet
+  programs: ProgramData['id'][] // liste des programmes associés au projet
   linkedProjects: ProjectId[] // liste de projets à afficher dans projets complémentaires, en bas de la page Projet
 }
 
