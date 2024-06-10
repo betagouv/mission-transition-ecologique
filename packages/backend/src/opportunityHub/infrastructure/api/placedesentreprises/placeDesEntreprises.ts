@@ -13,6 +13,7 @@ import { Objective } from '../../../../common/types'
 export class PlaceDesEntreprises extends OpportunityHubAbstract {
   protected readonly _baseUrl = Config.PDE_API_BASEURL
   protected _axios: AxiosInstance
+
   constructor() {
     super()
     const token = Config.PDE_API_TOKEN
@@ -21,10 +22,12 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
       headers: this._makeHeaders(token)
     })
   }
+
   protected readonly _operatorNames = [] // warning, invalid but never used since we override all possible external uses of this value right below
   override get operatorNames(): Operators[] | Error {
     return new Error('Operator List non valid for Place des entreprises')
   }
+
   override support = (program: Program) => {
     const validOperator = (program['opérateur de contact'] as Operators) !== 'Bpifrance'
     const notAutonomous = !program['activable en autonomie']
@@ -45,13 +48,13 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
       return Maybe.of(maybePayload.error)
     }
     try {
-      const rawResponse = await this._axios.request<GetLandingResponseData>({
+      const response = await this._axios.request<GetLandingResponseData>({
         method: 'POST',
         url: `/solicitations`,
         data: maybePayload.value,
         timeout: 3000
       })
-      const status = rawResponse.status
+      const status = response.status
       if (status != 200) {
         return Maybe.of(Error('PDE Api Error ' + status))
       } else {

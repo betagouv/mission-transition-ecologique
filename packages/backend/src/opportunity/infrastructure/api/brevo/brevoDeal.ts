@@ -110,10 +110,10 @@ const replaceNewlinesWithSpaces = (text: string): string => {
 }
 
 const getBrevoCreationDates = async (): Promise<Result<Date[], Error>> => {
-  const responsePatch = await new BrevoAPI().GetDeals()
+  const response = await new BrevoAPI().GetDeals()
 
-  if (responsePatch.isOk) {
-    const brevoDealResponse: BrevoDealResponse = responsePatch.value.data as BrevoDealResponse
+  if (response.isOk) {
+    const brevoDealResponse: BrevoDealResponse = response.value.data as BrevoDealResponse
     if (!brevoDealResponse.items) {
       return Result.err(new Error('No Items field in Brevo API'))
     }
@@ -127,7 +127,7 @@ const getBrevoCreationDates = async (): Promise<Result<Date[], Error>> => {
     }
     return Result.ok(dateList)
   } else {
-    return Result.err(responsePatch.error)
+    return Result.err(response.error)
   }
 }
 
@@ -135,9 +135,9 @@ const getDailyOpportunitiesByContactId = async (contactId: number): Promise<Resu
   const startDate = new Date()
   startDate.setHours(0, 0, 0, 0)
 
-  const responsePatch = await new BrevoAPI().GetDeals(startDate)
-  if (responsePatch.isOk) {
-    const brevoDealResponse: BrevoDealResponse = responsePatch.value.data as BrevoDealResponse
+  const response = await new BrevoAPI().GetDeals(startDate)
+  if (response.isOk) {
+    const brevoDealResponse: BrevoDealResponse = response.value.data as BrevoDealResponse
     if (!brevoDealResponse.items || brevoDealResponse.items.length === 0) {
       return Result.ok([])
     }
@@ -149,7 +149,7 @@ const getDailyOpportunitiesByContactId = async (contactId: number): Promise<Resu
     }
     return Result.ok(selectedDeals)
   } else {
-    return Result.err(responsePatch.error)
+    return Result.err(response.error)
   }
 }
 
