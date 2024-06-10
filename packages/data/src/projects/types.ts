@@ -12,9 +12,10 @@ export interface BaserowProject {
   'Projets complémentaires': BaserowLinkedObject[]
   'Thématique principale': BaserowLinkedObject[]
   NameTag: string
-  OK: boolean
+  Publié: boolean
   'Thématiques secondaires': BaserowLinkedObject[]
   Dispositifs: BaserowLinkedObject[]
+  Prio: number
 }
 
 export interface BaserowTheme {

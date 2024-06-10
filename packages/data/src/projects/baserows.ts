@@ -13,11 +13,17 @@ export class Baserow {
   private databaseId = 114839
   private projectTableId = 305253
   private themeTableId = 305258
+  private _outputDirectory: string
+  private _imageSubDirectory: string = 'projectImages'
+
+  constructor(outputDirectory: string) {
+    this._outputDirectory = outputDirectory
+  }
 
   async getValidProjects(): Promise<RawProject[]> {
     const allBaserowProjects = await this._getTableData<BaserowProject>(this.projectTableId)
     const validBaserawProjects = allBaserowProjects.filter((value) => {
-      return !value.OK // TODO To invert when we have a valid BD !
+      return value.Publié || true // TODO delete or true when there will be real data in baserow !
     })
 
     const baserawThemes = await this._getTableData<BaserowTheme>(this.themeTableId)
@@ -55,8 +61,9 @@ export class Baserow {
       shortDescription: baserowProject['Description courte'],
       image: await this._handleImage(baserowProject.Image, baserowProject.id)
         .then(() => {
-          return `./generated/projectImages/${baserowProject.id}` //TODO check consistency with other static file path.
-        })
+          return 'data/' + path.relative(process.cwd(), this._imagePath(baserowProject.id))
+        }) // not sure about this.
+        // I wanted to avoid using relative path from the source file but is it really better ?
         .catch(() => {
           return ''
         }),
@@ -65,8 +72,13 @@ export class Baserow {
       themes: this.generateThemeList(baserowProject['Thématique principale'], baserowProject['Thématiques secondaires'], baserawThemes),
       mainTheme: this.generateMainTheme(baserowProject['Thématique principale'], baserawThemes),
       programs: this.generateProgramList(baserowProject.Dispositifs),
-      linkedProjects: this.generateLinkedProjectList(baserowProject['Projets complémentaires'])
+      linkedProjects: this.generateLinkedProjectList(baserowProject['Projets complémentaires']),
+      priority: baserowProject.Prio
     }
+  }
+
+  private _imagePath(projectId: number) {
+    return path.join(this._outputDirectory, this._imageSubDirectory, projectId.toString())
   }
 
   private async _handleImage(baserowImage: BaserowImage[], projectId: number): Promise<string> {
@@ -76,12 +88,11 @@ export class Baserow {
     const url = baserowImage[0].url
 
     try {
-      // Ensure the output directory exists
-      const directoryPath = path.resolve('./generated/projectImages')
+      const filePath = this._imagePath(projectId)
+      const directoryPath = path.dirname(filePath)
       if (!fs.existsSync(directoryPath)) {
         fs.mkdirSync(directoryPath, { recursive: true })
       }
-      const filePath = path.resolve(directoryPath, projectId.toString())
       await this.downloadImage(url, filePath)
       return filePath
     } catch (error) {

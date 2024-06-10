@@ -9,11 +9,12 @@ import jsonPrograms from '@tee/data/generated/dataset_out.json'
 import Theme from '@tee/common/src/theme/theme'
 
 export class ProjectFeatures {
-  projectPath: string = './generated/projects.json'
+  outputDirectory: string = path.join(__dirname, '../../generated/')
+
   async buildProjectsJSONOutputs(): Promise<void> {
-    const projects = await new Baserow().getValidProjects()
+    const projects = await new Baserow(this.outputDirectory).getValidProjects()
     this._validateData(projects)
-    this._writeJson(projects, projectPath)
+    this._writeJson(projects)
     return
   }
 
@@ -53,9 +54,9 @@ export class ProjectFeatures {
     })
   }
 
-  private _writeJson(rawProjects: RawProject[], filePath: string) {
+  private _writeJson(rawProjects: RawProject[]) {
     const projectJson = JSON.stringify(rawProjects)
-    const fullPath = path.resolve(filePath)
+    const fullPath = path.join(this.outputDirectory, 'project.json')
     fs.writeFile(fullPath, projectJson, (err) => {
       if (err) {
         console.log('Error writing file:', err)

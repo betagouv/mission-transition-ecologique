@@ -1,5 +1,5 @@
-import { buildProjectsJSONOutputs } from './projects/buildProjectsJsonOutputs'
 import { readPrograms, prependInterface, buildProgramJSONOutput } from './dataPipeline'
+import { ProjectFeatures } from './projects/project'
 // Script
 
 console.log('▶ Starting data consolidation (buildJsonOutput.ts)\n')
@@ -13,4 +13,14 @@ programs = prependInterface(programs, true)
 console.log()
 
 buildProgramJSONOutput(programs)
-buildProjectsJSONOutputs()
+
+console.log('Start the project data generation')
+
+new ProjectFeatures()
+  .buildProjectsJSONOutputs()
+  .then(() => {
+    console.log('Project data generated')
+  })
+  .catch((error) => {
+    console.error('Error during the project data generation:', error)
+  })
