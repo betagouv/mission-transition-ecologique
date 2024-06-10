@@ -5,7 +5,7 @@ import { Baserow } from './baserows'
 import { RawProject } from './types'
 import { Program } from '@/type/program'
 
-import jsonPrograms from '@tee/data/generated/dataset_out.json'
+import jsonPrograms from '../../generated/dataset_out.json'
 import Theme from '@tee/common/src/theme/theme'
 
 export class ProjectFeatures {
