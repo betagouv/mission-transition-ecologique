@@ -9,12 +9,11 @@
       bg-bar-color="blue--light"
       :previous-route="linkToPreviousButton"
     />
-    <ProgramList />
+    <ProjectList />
   </div>
 </template>
 
 <script setup lang="ts">
-import ProgramList from '@/components/program/list/ProgramList.vue'
 import { RouteName } from '@/types/routeType'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { useNavigationStore } from '@/stores/navigation'
