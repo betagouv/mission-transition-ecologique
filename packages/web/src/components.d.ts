@@ -34,7 +34,7 @@ declare module 'vue' {
     ProgramObjective: typeof import('./components/program/detail/ProgramObjective.vue')['default']
     ProgramTile: typeof import('./components/program/detail/ProgramTile.vue')['default']
     ProjectCard: typeof import('./components/project/list/ProjectCard.vue')['default']
-    ProjectList: typeof import('./components/project/list/ProjectList.vue')['default']
+    ProjectList: typeof import('./components/project/ProjectList.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TeeButtonExternalLink: typeof import('./components/element/button/TeeButtonExternalLink.vue')['default']
