@@ -1,0 +1,35 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "tasks": {
+    "dev": {
+      "persistent": true,
+      "cache": false
+    },
+    "build": {
+      "dependsOn": ["@tee/data#build-json-output"],
+      "outputs": ["dist/**"]
+    },
+    "@tee/data#build-json-output": {
+    },
+    "@tee/backend#spec-and-routes": {
+    },
+    "test": {
+      "dependsOn": ["@tee/data#build-json-output"]
+    },
+    "@tee/data#test": {
+      "dependsOn": ["@tee/data#build-json-output"]
+    },
+    "@tee/backend#test": {
+      "dependsOn": ["@tee/data#build-json-output"]
+    },
+    "lint": {
+      "dependsOn": ["@tee/backend#spec-and-routes", "^lint"]
+    },
+    "lint-check": {
+      "dependsOn": ["@tee/data#build-json-output", "@tee/backend#spec-and-routes", "^lint-check"]
+    },
+    "type-check": {
+      "dependsOn": ["@tee/data#build-json-output", "^type-check"]
+    }
+  }
+}
