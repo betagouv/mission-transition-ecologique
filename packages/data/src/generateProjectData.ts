@@ -1,8 +1,8 @@
-import { ProjectRepository } from './projects/project'
+import { ProjectFeatures } from './projects/project'
 
 console.log('Start the project data generation')
 
-new ProjectRepository()
+new ProjectFeatures()
   .buildProjectsJSONOutputs()
   .then(() => {
     console.log('Project data generated')

@@ -8,11 +8,12 @@ import { Program } from '@/type/program'
 import jsonPrograms from '@tee/data/generated/dataset_out.json'
 import Theme from '@tee/common/src/theme/theme'
 
-export class ProjectRepository {
+export class ProjectFeatures {
+  projectPath: string = './generated/projects.json'
   async buildProjectsJSONOutputs(): Promise<void> {
-    const rawProjects = await new Baserow().getValidProjects()
-    this._validateData(rawProjects)
-    this._writeJson(rawProjects, './generated/projects.json')
+    const projects = await new Baserow().getValidProjects()
+    this._validateData(projects)
+    this._writeJson(projects, projectPath)
     return
   }
 
