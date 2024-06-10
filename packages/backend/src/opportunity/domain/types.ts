@@ -1,4 +1,4 @@
-import { QuestionnaireRoute, PublicodeObjective } from '@tee/common/src/questionnaire/types'
+import { QuestionnaireRoute, PublicodeObjective } from '@tee/common/src/questionnaire/types/types'
 import { type Operators } from '@tee/data/src/generated/program'
 
 export type Opportunity = ContactDetails & OpportunityDetails

@@ -28,6 +28,10 @@ export enum StructureSize {
   ETI_GE = 'ETI_GE'
 }
 
+export enum LegalCategory {
+  EI = '1000'
+}
+
 export enum WasteSortingStatus {
   InPlace = 'en-place',
   CanImprove = 'peut-mieux-faire',

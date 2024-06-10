@@ -1,0 +1,11 @@
+export default class EmailValidator {
+  static readonly validate = (email: string | undefined): boolean => {
+    if (email === undefined) {
+      return false
+    }
+
+    const emailRegex: RegExp = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/
+
+    return emailRegex.test(email)
+  }
+}

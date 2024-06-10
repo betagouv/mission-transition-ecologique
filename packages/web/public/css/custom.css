@@ -10,12 +10,6 @@ WARNING :
 .fr-justify-center {
   justify-content: center;
 }
-.fr-text-center {
-  text-align: center;
-}
-.fr-text-right {
-  text-align: right;
-}
 .fr-card:hover {
   cursor: pointer !important;
 }
@@ -122,7 +116,7 @@ button.fr-link:hover, .tee-router-link:hover {
 .tee-footer-operator-img {
   height: auto;
   max-height: 5.625rem;
-  width: 10rem !important;
+  max-width: 10rem !important;
 }
 .tee-footer-logo {
   box-shadow: none !important;

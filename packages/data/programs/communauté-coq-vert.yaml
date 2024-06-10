@@ -1,0 +1,80 @@
+titre: Communauté du Coq Vert
+promesse: Rejoignez une communauté d'entrepreneurs engagés
+description: La Communauté du Coq Vert est une communauté de dirigeants et de dirigeantes
+  convaincus de la nécessité d’agir et déjà engagés dans la transition écologique
+  et énergétique. Lancée par Bpifrance, en partenariat avec l'ADEME et le ministère
+  de la Transition écologique, cette Communauté a vocation à favoriser le partage
+  d’expertise entre entrepreneurs engagés.
+début de validité: 01/06/2020
+fin de validité: 31/12/2050
+illustration: images/TEE_eolienne.png
+opérateur de contact: Bpifrance
+autres opérateurs:
+- ADEME
+url: https://www.bpifrance.fr/communaute-du-coq-vert
+nature de l'aide: formation
+coût de l'accompagnement: Gratuit
+durée de l'accompagnement: adaptable à votre besoin
+activable en autonomie: oui
+objectifs:
+- description: Rejoignez la communauté du Coq Vert.
+  liens:
+  - lien: https://www.bpifrance.fr/communaute-du-coq-vert
+    texte: candidater
+- description: 'Profitez de contenus de formation exclusifs en partenariat avec une
+    grande école : ressources sectorielles et règlementaires, webinaires, conférences
+    en présentiel, etc.'
+- description: Accédez à des mises en relation avec des pairs partageant vos problématiques,
+    des offreurs de solutions ou encore des experts dédiés.
+- description: 'Bénéficiez d''opportunités de valorisation de vos actions: évènements
+    Bpifrance, presse et partenariats médias, vidéos, réseaux sociaux...'
+- description: Participez à des évènements réguliers organisés dans votre région pour
+    échanger entre pairs.
+conditions d'éligibilité:
+  taille de l'entreprise:
+  - Toutes tailles
+  - Éligible aux micro-entreprises
+  secteur géographique:
+  - France et territoires d'outre-mer
+  secteur d'activité:
+  - Tous secteurs d’activité
+  nombre d'années d'activité:
+  - Au moins 1 an d’activité
+  autres critères d'éligibilité:
+  - Pour rejoindre la communauté, l'entreprise doit avoir déjà engagé sa transition
+    écologique (par exemple, avoir bénéficié d'une aide à la transition de l'ADEME
+    ou de Bpifrance dans les 3 ans, avoir obtenu un label, pouvoir expliquer les premières
+    actions concrètes déjà mises en place...)
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+    - est éligible
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+      - dispositif . début de validité <= date du jour
+      - date du jour <= dispositif . fin de validité
+    valeur: oui
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+    - code NAF niveau 1 . est A
+    - code NAF niveau 1 . est B
+    - code NAF niveau 1 . est C
+    - code NAF niveau 1 . est D
+    - code NAF niveau 1 . est E
+    - code NAF niveau 1 . est F
+    - code NAF niveau 1 . est G
+    - code NAF niveau 1 . est H
+    - code NAF niveau 1 . est I
+    - code NAF niveau 1 . est J
+    - code NAF niveau 1 . est L
+    - code NAF niveau 1 . est M
+    - code NAF niveau 1 . est P
+    - code NAF niveau 1 . est Q
+    - code NAF niveau 1 . est R
+    - code NAF niveau 1 . est S
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+    - questionnaire . objectif prioritaire . est mon impact environnemental
