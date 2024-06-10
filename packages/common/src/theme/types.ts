@@ -1,5 +1,5 @@
 import { PublicodeObjective } from '../questionnaire/types/types'
-import ThemeCommon from './theme'
+import ThemesValue from './theme'
 
 export interface Theme {
   id: string
@@ -11,4 +11,4 @@ export interface Theme {
   highlightProjects: number[]
 }
 
-export type ThemeId = (typeof ThemeCommon.themes)[number]['id']
+export type ThemeId = (typeof ThemesValue.themes)[number]['id']

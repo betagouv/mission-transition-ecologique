@@ -9,7 +9,7 @@ import jsonPrograms from '../../generated/dataset_out.json'
 import Theme from '@tee/common/src/theme/theme'
 
 export class ProjectFeatures {
-  outputDirectory: string = path.join(__dirname, '../../generated/')
+  outputDirectory: string = path.join(__dirname, '../../static/')
 
   async buildProjectsJSONOutputs(): Promise<void> {
     const projects = await new Baserow(this.outputDirectory).getValidProjects()
