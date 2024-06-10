@@ -1,0 +1,6 @@
+@use 'sass:color';
+
+@function scaleAlphaToHex($color, $alpha) {
+  $rgba: color.scale($color, $alpha: $alpha);
+  @return mix(rgb(red($rgba), green($rgba), blue($rgba)), #fff, alpha($rgba) * 100%);
+}

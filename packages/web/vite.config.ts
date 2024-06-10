@@ -9,6 +9,7 @@ import Components from 'unplugin-vue-components/vite'
 import { dsnFromString } from '@sentry/utils'
 import * as dotenv from 'dotenv'
 import SEOPlugin from './plugin/SEO/index'
+import { unheadVueComposablesImports } from '@unhead/vue'
 
 dotenv.config()
 
@@ -43,7 +44,7 @@ const plugins = async () => {
     SEOPlugin(),
     AutoImport({
       include: [/\.[tj]sx?$/, /\.vue$/, /\.vue\?vue/],
-      imports: ['vue', 'vue-router', vueDsfrAutoimportPreset, ohVueIconAutoimportPreset],
+      imports: ['vue', 'vue-router', vueDsfrAutoimportPreset, ohVueIconAutoimportPreset, unheadVueComposablesImports],
       vueTemplate: true,
       dts: './src/auto-imports.d.ts',
       eslintrc: {
@@ -86,6 +87,7 @@ export default defineConfig({
   server: viteServer,
   plugins: [plugins()],
   build: currentConfig,
+
   define: {
     'process.env': process.env
   },
@@ -117,7 +119,6 @@ function buildHeaders() {
       "default-src 'none';" +
       "base-uri 'self';" +
       "form-action 'self';" +
-      "script-src 'self' ;" +
       "script-src-elem 'self' 'unsafe-inline' https://stats.beta.gouv.fr  https://embed.typeform.com;" +
       "style-src 'self' 'unsafe-inline' https://embed.typeform.com;" +
       "font-src 'self';" +
@@ -137,6 +138,12 @@ function buildHeaders() {
     // headers['Content-Security-Policy'] += `report-uri ${sentryData.url};`
     // headers['Public-Key-Pins'] = `default-src 'self' ${sentryData.domain};` + `report-uri ${sentryData.url};`
     headers['Expect-CT'] = `default-src 'self' ${sentryData.domain};` + `report-uri ${sentryData.url};`
+  }
+
+  if (mode === 'development') {
+    headers['Content-Security-Policy'] = "script-src 'self' 'unsafe-eval'; " + headers['Content-Security-Policy']
+  } else {
+    headers['Content-Security-Policy'] = "script-src 'self'; " + headers['Content-Security-Policy']
   }
 
   return headers

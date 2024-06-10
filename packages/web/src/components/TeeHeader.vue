@@ -1,5 +1,6 @@
 <template>
   <DsfrHeader
+    id="tee-header"
     service-title="Transition écologique des entreprises"
     service-description="Allier écologie avec économies !"
     home-to="/"

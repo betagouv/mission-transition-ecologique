@@ -1,6 +1,6 @@
 import type { NextTrackRuleSet, Track } from '@/types'
 import { ConditionOperators, DataMappingFrom, TrackComponent, TrackId, StructureSize } from '@/types'
-import { QuestionnaireRoute } from '@tee/common/src/questionnaire/types'
+import { QuestionnaireRoute } from '@tee/common/src/questionnaire/types/types'
 
 const nextTrackRuleSets: NextTrackRuleSet[] = [
   {
@@ -135,7 +135,7 @@ export const workforce: Track = {
     {
       value: StructureSize.ETI_GE,
       questionnaireData: { structure_size: StructureSize.ETI_GE },
-      title: { fr: '+250 employés' },
+      title: { fr: 'Plus de 250 employés' },
       label: { fr: '👫👭👫👫 Plus de 250 employés' },
       next: {
         default: TrackId.Sectors,

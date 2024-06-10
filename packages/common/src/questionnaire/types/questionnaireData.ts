@@ -12,7 +12,16 @@ import {
 
 export enum QuestionnaireDataEnum {
   codeNaf = 'codeNaf',
-  questionnaire_route = 'questionnaire_route'
+  questionnaire_route = 'questionnaire_route',
+  priority_objective = 'priority_objective',
+  building_property = 'building_property',
+  energy_reduction_objective = 'energy_reduction_objective',
+  recently_audited = 'recently_audited',
+  sustainable_mobility_objective = 'sustainable_mobility_objective',
+  wastes_management_objective = 'wastes_management_objective',
+  wastes_materials_objective = 'wastes_materials_objective',
+  wastes_sorting_objective = 'wastes_sorting_objective',
+  water_reduction_objective = 'water_reduction_objective'
 }
 
 export interface QuestionnaireData {

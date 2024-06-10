@@ -1,5 +1,5 @@
 import { sortPrograms } from '@tee/backend/src/program/domain/sortPrograms'
-import { QuestionnaireRoute } from '@tee/common/src/questionnaire/types'
+import { QuestionnaireRoute } from '@tee/common/src/questionnaire/types/types'
 import { makeProgramHelper } from './testing'
 import { Program } from '../../src/program/domain/types/types'
 import { ProgramAidType } from '@tee/common/src/program/types'
