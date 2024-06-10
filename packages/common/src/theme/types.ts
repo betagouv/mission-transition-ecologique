@@ -1,11 +1,11 @@
-import { PublicodeObjective } from '../questionnaire/types/types'
+import { Objective } from '../questionnaire/types/types'
 import ThemeCommon from './theme'
 
 export interface Theme {
   id: string
   title: string
   tagLabel: string
-  value: PublicodeObjective
+  value: Objective
   image: string
   color?: string
   highlightProjects: number[]

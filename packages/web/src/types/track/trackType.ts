@@ -46,6 +46,7 @@ export interface TrackCallout {
 
 export enum TrackComponent {
   Cards = 'cards',
+  Themes = 'themes',
   Buttons = 'buttons',
   SimpleButtons = 'simpleButtons',
   Form = 'form',

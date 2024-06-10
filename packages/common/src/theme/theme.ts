@@ -1,14 +1,15 @@
-import { PublicodeObjective } from '../questionnaire/types/types'
 import { Theme as ThemeType } from './types'
 import { Color } from '@tee/web/src/types/color'
-
+import { Objective } from '../questionnaire/types/types'
+import { projects } from '../project/mockData'
+import { Project, ProjectId } from '../project/types'
 export default class Theme {
   static themes: ThemeType[] = [
     {
       id: 'environmental',
       title: 'Analyses environnementales',
       tagLabel: '🌱 analyses',
-      value: PublicodeObjective.EnvironmentalImpact,
+      value: Objective.EnvironmentalImpact,
       image: '/images/thematique/thematique-strategie.svg',
       color: Color.blue,
       highlightProjects: [1, 2]
@@ -17,7 +18,7 @@ export default class Theme {
       id: 'energy',
       title: 'Économies d’énergie',
       tagLabel: '⚡️ énergie',
-      value: PublicodeObjective.EnergyPerformance,
+      value: Objective.EnergyPerformance,
       image: '/images/thematique/thematique-energie.svg',
       color: Color.yellow,
       highlightProjects: [1, 2]
@@ -26,7 +27,7 @@ export default class Theme {
       id: 'water',
       title: 'Économies d’eau',
       tagLabel: '💧 eau',
-      value: PublicodeObjective.WaterConsumption,
+      value: Objective.WaterConsumption,
       image: '/images/thematique/thematique-eau.svg',
       color: Color.blueLight,
       highlightProjects: [1, 2]
@@ -35,7 +36,7 @@ export default class Theme {
       id: 'building',
       title: 'Construction & rénovation',
       tagLabel: '🏢 bâtiment',
-      value: PublicodeObjective.BuildingRenovation,
+      value: Objective.BuildingRenovation,
       image: '/images/thematique/thematique-batiments.svg',
       color: Color.blue,
       highlightProjects: [1, 2]
@@ -44,7 +45,7 @@ export default class Theme {
       id: 'mobility',
       title: 'Mobilité',
       tagLabel: '🚲 mobilité',
-      value: PublicodeObjective.SustainableMobility,
+      value: Objective.SustainableMobility,
       image: '/images/thematique/thematique-mobilite.svg',
       color: Color.green,
       highlightProjects: [1, 2]
@@ -53,7 +54,7 @@ export default class Theme {
       id: 'waste',
       title: 'Déchets & réemploi',
       tagLabel: '🗑 déchets',
-      value: PublicodeObjective.WasteManagement,
+      value: Objective.WasteManagement,
       image: '/images/thematique/thematique-dechets.svg',
       color: Color.red,
       highlightProjects: [1, 2]
@@ -62,7 +63,7 @@ export default class Theme {
       id: 'eco-design',
       title: 'Éco-conception',
       tagLabel: '🔁 écoconception',
-      value: PublicodeObjective.EcoDesign,
+      value: Objective.EcoDesign,
       image: '/images/thematique/thematique-eco-conception.svg',
       color: Color.green,
       highlightProjects: [1, 2]
@@ -71,14 +72,18 @@ export default class Theme {
       id: 'rh',
       title: 'Ressources humaines',
       tagLabel: '🧑‍🎓 RH',
-      value: PublicodeObjective.TrainOrRecruit,
+      value: Objective.TrainOrRecruit,
       image: '/images/thematique/thematique-ressources-humaines.svg',
       color: Color.yellow,
       highlightProjects: [1, 2]
     }
   ]
 
-  static getByValue(value: PublicodeObjective) {
+  static getByValue(value: Objective) {
     return this.themes.find((theme) => theme.value === value)
+  }
+
+  static getHighlightProjects(highlightProjects: ProjectId[]) {
+    return highlightProjects.map((projectId: ProjectId) => projects.find((project: Project) => project.id === projectId))
   }
 }

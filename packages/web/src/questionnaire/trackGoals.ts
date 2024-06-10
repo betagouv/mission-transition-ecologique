@@ -7,7 +7,7 @@ export const goals: Track = {
   title: { fr: 'Mes objectifs' },
   label: { fr: 'Choisissez la thématique de votre projet' },
   interface: {
-    component: TrackComponent.Cards
+    component: TrackComponent.Themes
   },
   behavior: {
     multipleChoices: false
