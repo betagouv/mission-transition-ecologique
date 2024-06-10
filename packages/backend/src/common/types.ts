@@ -1,1 +1,1 @@
-export { Objective } from '../../../common/src/questionnaire/types'
+export { Objective } from '../../../common/src/questionnaire/types/types'
