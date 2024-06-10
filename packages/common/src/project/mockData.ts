@@ -15,7 +15,7 @@ La loi AGEC fixe des objectifs ambitieux sur la réduction des emballages à usa
 - **Comment diminuer vos déchets plastiques?** Réduire collectivement nos déchets plastiques est une priorité et ce, même si les solutions de recyclage sont en plein développement. Tour d’horizon et conseils pour changer la donne"`,
     themes: ['ecoconception'],
     mainTheme: 'ecoconception',
-    programs: ['accelerateur-decarbonation', 'act-pas-a-pas'],
+    programs: ['formation-engager-entreprise-transition-ecologique'],
     linkedProjects: [1, 2]
   },
   {
@@ -32,7 +32,7 @@ La loi AGEC fixe des objectifs ambitieux sur la réduction des emballages à usa
 - **Comment diminuer vos déchets plastiques?** Réduire collectivement nos déchets plastiques est une priorité et ce, même si les solutions de recyclage sont en plein développement. Tour d’horizon et conseils pour changer la donne"`,
     themes: ['eau'],
     mainTheme: 'eau',
-    programs: ['accelerateur-decarbonation', 'act-pas-a-pas'],
+    programs: ['visite-energie-cma'],
     linkedProjects: []
   },
   {
@@ -49,7 +49,7 @@ La loi AGEC fixe des objectifs ambitieux sur la réduction des emballages à usa
 - **Comment diminuer vos déchets plastiques?** Réduire collectivement nos déchets plastiques est une priorité et ce, même si les solutions de recyclage sont en plein développement. Tour d’horizon et conseils pour changer la donne"`,
     themes: ['energie'],
     mainTheme: 'energie',
-    programs: ['accelerateur-decarbonation', 'act-pas-a-pas'],
+    programs: ['renovation-petit-tertiaire-prive'],
     linkedProjects: [5, 6, 7]
   },
   {
@@ -66,7 +66,7 @@ La loi AGEC fixe des objectifs ambitieux sur la réduction des emballages à usa
 - **Comment diminuer vos déchets plastiques?** Réduire collectivement nos déchets plastiques est une priorité et ce, même si les solutions de recyclage sont en plein développement. Tour d’horizon et conseils pour changer la donne"`,
     themes: ['batiment'],
     mainTheme: 'batiment',
-    programs: ['accelerateur-decarbonation', 'act-pas-a-pas'],
+    programs: ['accelerateur-test-false'],
     linkedProjects: [2, 4]
   },
   {
@@ -83,7 +83,7 @@ La loi AGEC fixe des objectifs ambitieux sur la réduction des emballages à usa
 - **Comment diminuer vos déchets plastiques?** Réduire collectivement nos déchets plastiques est une priorité et ce, même si les solutions de recyclage sont en plein développement. Tour d’horizon et conseils pour changer la donne"`,
     themes: ['energie'],
     mainTheme: 'energie',
-    programs: ['accelerateur-decarbonation', 'act-pas-a-pas'],
+    programs: ['accelerateur-test-false'],
     linkedProjects: [2, 3]
   },
   {
@@ -100,7 +100,7 @@ La loi AGEC fixe des objectifs ambitieux sur la réduction des emballages à usa
 - **Comment diminuer vos déchets plastiques?** Réduire collectivement nos déchets plastiques est une priorité et ce, même si les solutions de recyclage sont en plein développement. Tour d’horizon et conseils pour changer la donne"`,
     themes: ['rh'],
     mainTheme: 'rh',
-    programs: ['accelerateur-decarbonation', 'act-pas-a-pas'],
+    programs: ['accelerateur-test-false', 'act-pas-a-pas'],
     linkedProjects: []
   },
   {
@@ -117,7 +117,7 @@ La loi AGEC fixe des objectifs ambitieux sur la réduction des emballages à usa
 - **Comment diminuer vos déchets plastiques?** Réduire collectivement nos déchets plastiques est une priorité et ce, même si les solutions de recyclage sont en plein développement. Tour d’horizon et conseils pour changer la donne"`,
     themes: ['renovation'],
     mainTheme: 'renovation',
-    programs: ['accelerateur-decarbonation', 'act-pas-a-pas'],
+    programs: ['accelerateur-test-false', 'act-pas-a-pas'],
     linkedProjects: []
   },
   {
@@ -134,7 +134,7 @@ La loi AGEC fixe des objectifs ambitieux sur la réduction des emballages à usa
 - **Comment diminuer vos déchets plastiques?** Réduire collectivement nos déchets plastiques est une priorité et ce, même si les solutions de recyclage sont en plein développement. Tour d’horizon et conseils pour changer la donne"`,
     themes: ['mobilite'],
     mainTheme: 'mobilite',
-    programs: ['accelerateur-decarbonation', 'act-pas-a-pas'],
+    programs: ['accelerateur-test-false', 'act-pas-a-pas'],
     linkedProjects: [2]
   },
   {
@@ -170,23 +170,7 @@ La loi AGEC fixe des objectifs ambitieux sur la réduction des emballages à usa
 - **Comment diminuer vos déchets plastiques?** Réduire collectivement nos déchets plastiques est une priorité et ce, même si les solutions de recyclage sont en plein développement. Tour d’horizon et conseils pour changer la donne"`,
     themes: ['analyse', 'mobilite', 'energie', 'eau', 'batiment', 'renovation', 'ecoconception', 'rh'],
     mainTheme: 'energie',
-    programs: [
-      'accelerateur-decarbonation',
-      'act-pas-a-pas',
-      'aides-au-reemploi-des-emballages',
-      'audit-energetique-en-industrie',
-      'baisse-les-watts',
-      'diag-decarbon-action',
-      'diagnostic-transition-ecologique',
-      'eco-defis-des-artisans-et-des-commercants',
-      'etude-alimentation-durable',
-      'etude-chaufferie-biomasse',
-      'etude-faisabilite-hydrogene',
-      'etude-geothermie-de-surface-et-d-aerothermie',
-      'imprim-vert',
-      'investissement-chaleur-bois',
-      'investissement-ecoconception'
-    ],
+    programs: ['accelerateur-test-false', 'act-pas-a-pas-false'],
     linkedProjects: [0, 1, 2, 3, 4, 5, 6, 7, 8]
   }
 ]
