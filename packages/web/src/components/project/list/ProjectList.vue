@@ -1,16 +1,14 @@
 <template>
-  <!-- PROGRAMS AS LIST OF CARDS -->
+  <!--  List of project cards-->
+
   <div class="fr-container--fluid fr-container--fluid--no-overflow fr-px-0 fr-mb-0 fr-mt-6v fr-px-md-4w">
     <div class="fr-grid-row fr-grid-row--center fr-justify-center">
-      <div
-        v-if="!hasSpinner || !hasError"
-        class="fr-col-9 fr-col-hidden-md fr-text-right fr-col-xs-12"
-      >
-        <ProgramModalFilter />
-      </div>
       <div class="fr-col-9 fr-col-offset-md-3 fr-col-offset-lg-2 fr-col-xs-12">
         <ProgramListHeaderResult v-if="!navigationStore.isCatalog() && !hasSpinner" />
       </div>
+      <!--      <div class="fr-col-9 fr-col-offset-md-3 fr-col-offset-lg-2 fr-mb-3v fr-col-xs-10">-->
+      <!--        <DsfrTabs></DsfrTabs>-->
+      <!--      </div>-->
       <div class="fr-col-9 fr-col-offset-md-3 fr-col-offset-lg-2 fr-mb-3v fr-col-xs-10">
         <ProgramFilterByTheme class="fr-pl-md-3v" />
       </div>
@@ -24,19 +22,13 @@
           radius-size="2-5v"
         />
       </div>
-      <div class="fr-mb-4v fr-pl-2w fr-pl-md-0 fr-col-9 fr-col-offset-md-3 fr-col-offset-lg-2 fr-col-xs-12">
-        <div v-if="havePrograms && countPrograms > 1">
-          {{ countFilteredPrograms }}
-          {{ countFilteredPrograms > 1 ? Translation.t('results.results') : Translation.t('results.result') }}
-        </div>
+      <div class="fr-mt-md-4w fr-mt-4v fr-pt-2v fr-pl-2w fr-pl-md-0 fr-col-9 fr-col-offset-md-3 fr-col-offset-lg-2 fr-col-xs-12">
+        <h4>Quel est votre Projet ?</h4>
       </div>
-      <div
-        v-if="!hasSpinner"
-        class="fr-col-2 fr-col-md-3 fr-col-lg-2 fr-col-hidden fr-col-unhidden-md"
-      >
-        <div class="fr-sidemenu fr-pr-0 fr-mr-3v">
-          <div class="fr-text--bold fr-text-left fr-mb-3v">Filtres</div>
-          <ProgramFiltersAccordion />
+      <div class="fr-mb-4v fr-pl-2w fr-pl-md-0 fr-col-9 fr-col-offset-md-3 fr-col-offset-lg-2 fr-col-xs-12 fr-text--blue-france">
+        <div v-if="haveProjects && countProjects > 1">
+          {{ countProjects }}
+          {{ countProjects > 1 ? Translation.t('results.results') : Translation.t('results.result') }}
         </div>
       </div>
       <div
@@ -58,18 +50,19 @@
           :email="Contact.email"
         />
       </div>
-      <div class="fr-col-9 fr-col-xs-12">
+      <div
+        v-if="filteredPrograms"
+        class="fr-col-9 fr-col-xs-12 fr-col-offset-md-3 fr-col-offset-lg-2"
+      >
         <div class="fr-container--fluid fr-container--fluid--no-overflow">
-          <div class="fr-grid-row fr-grid-row--center">
-            <router-link
-              v-for="program in filteredPrograms"
-              :id="program.id"
-              :key="program.id"
-              :to="getRouteToProgramDetail(program.id)"
-              class="fr-col-12 fr-card fr-enlarge-link fr-card--horizontal-tier fr-mb-10v"
+          <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--left">
+            <div
+              v-for="project in projectsData"
+              :key="project.id"
+              class="fr-col-12 fr-col-md-6 fr-col-lg-4"
             >
-              <ProgramCard :program="program" />
-            </router-link>
+              <ProjectCard :project="project" />
+            </div>
           </div>
         </div>
       </div>
@@ -78,49 +71,54 @@
 </template>
 
 <script setup lang="ts">
-import ProgramFiltersAccordion from '@/components/program/list/filters/ProgramFiltersAccordion.vue'
-import ProgramCard from '@/components/program/list/ProgramCard.vue'
-import ProgramFilterByTheme from '@/components/program/list/filters/ProgramFilterByTheme.vue'
+import { projects } from '@tee/common/src/project/mockData'
+import { computed, onBeforeMount } from 'vue'
+import { useUsedTrackStore } from '@/stores/usedTrack'
+import Matomo from '@/utils/matomo'
+import { type ProgramData, PublicodeObjective, TrackId } from '@/types'
+import { useProgramStore } from '@/stores/program'
+import { useNavigationStore } from '@/stores/navigation'
 import ProgramListHeaderResult from '@/components/program/list/ProgramListHeaderResult.vue'
+import ProgramFilterByTheme from '@/components/program/list/filters/ProgramFilterByTheme.vue'
+import UsedTrack from '@/utils/track/usedTrack'
+import Theme from '@/utils/theme'
+import { Project } from '@tee/common/src/project/types'
+import Translation from '@/utils/translation'
 import Contact from '@/utils/contact'
 import ProgramListNoResults from '@/components/program/list/ProgramListNoResults.vue'
-import { useNavigationStore } from '@/stores/navigation'
-import { useProgramStore } from '@/stores/program'
-import { useUsedTrackStore } from '@/stores/usedTrack'
-import { type ProgramData, PublicodeObjective, TrackId } from '@/types'
-import { RouteName } from '@/types/routeType'
-import Matomo from '@/utils/matomo'
-import Theme from '@/utils/theme'
-import UsedTrack from '@/utils/track/usedTrack'
-import Translation from '@/utils/translation'
-import { computed, onBeforeMount } from 'vue'
-import { type RouteLocationRaw } from 'vue-router'
 
 const programStore = useProgramStore()
 const navigationStore = useNavigationStore()
 
-const isCatalog = navigationStore.isCatalog()
-const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)
+const programs = ref<ProgramData[]>()
+
+const hasSpinner = computed(() => {
+  return projectsData.value === undefined && !hasError.value
+})
 
 const filteredPrograms = computed(() => {
   return programs.value ? programStore.getProgramsByFilters(programs.value) : undefined
-})
-
-const countPrograms = computed(() => {
-  return programs.value?.length || 0
-})
-
-const havePrograms = computed(() => {
-  return countPrograms.value > 0
 })
 
 const countFilteredPrograms = computed(() => {
   return filteredPrograms.value?.length || 0
 })
 
-const hasSpinner = computed(() => {
-  return programs.value === undefined && !hasError.value
+const projectsData = computed(() => {
+  return filteredPrograms.value
+    ? projects.filter((project: Project) => {
+        return project.programs.some((program) => filteredPrograms.value!.some((res) => res.id === program))
+      })
+    : undefined
+})
+
+const countProjects = computed(() => {
+  return projectsData.value?.length || 0
+})
+
+const haveProjects = computed(() => {
+  return countProjects.value > 0
 })
 
 const hasObjectiveCard = computed(() => {
@@ -138,14 +136,6 @@ const objective = computed(() => {
 
   return ''
 })
-
-const getRouteToProgramDetail = (programId: string): RouteLocationRaw => {
-  return {
-    name: isCatalog ? RouteName.CatalogDetail : RouteName.QuestionnaireResultDetail,
-    params: { programId },
-    query: isCatalog ? undefined : navigationStore.query
-  }
-}
 
 onBeforeMount(async () => {
   const result = useUsedTrackStore().hasUsedTracks() ? await programStore.programsByUsedTracks : await programStore.programs

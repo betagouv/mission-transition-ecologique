@@ -1,6 +1,7 @@
 import { PublicodeObjective } from '../questionnaire/types/types'
+import ThemeCommon from './theme'
 
-export interface ObjectiveType {
+export interface Theme {
   id: string
   title: string
   tagLabel: string
@@ -8,5 +9,6 @@ export interface ObjectiveType {
   image: string
   color?: string
   highlightProjects: number[]
-  displayDots: boolean
 }
+
+export type ThemeId = (typeof ThemeCommon.themes)[number]['id']
