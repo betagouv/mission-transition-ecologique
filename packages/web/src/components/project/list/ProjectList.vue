@@ -6,9 +6,6 @@
       <div class="fr-col-9 fr-col-offset-md-3 fr-col-offset-lg-2 fr-col-xs-12">
         <ProgramListHeaderResult v-if="!navigationStore.isCatalog() && !hasSpinner" />
       </div>
-      <!--      <div class="fr-col-9 fr-col-offset-md-3 fr-col-offset-lg-2 fr-mb-3v fr-col-xs-10">-->
-      <!--        <DsfrTabs></DsfrTabs>-->
-      <!--      </div>-->
       <div class="fr-col-9 fr-col-offset-md-3 fr-col-offset-lg-2 fr-mb-3v fr-col-xs-10">
         <ProgramFilterByTheme class="fr-pl-md-3v" />
       </div>
@@ -61,7 +58,18 @@
               :key="project.id"
               class="fr-col-12 fr-col-md-6 fr-col-lg-4"
             >
-              <ProjectCard :project="project" />
+              <!--              <router-link-->
+              <!--                v-for="project in projectsData"-->
+              <!--                :id="project.id"-->
+              <!--                :key="project.id"-->
+              <!--                :to="getRouteToProjectDetail(project.id)"-->
+              <!--                class="fr-col-12 fr-col-md-6 fr-col-lg-4"-->
+              <!--              >-->
+              <ProjectCard
+                :project="project"
+                class="fr-radius-a--1v"
+              />
+              <!--              </router-link>-->
             </div>
           </div>
         </div>

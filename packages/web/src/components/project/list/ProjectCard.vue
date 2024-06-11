@@ -1,11 +1,10 @@
 <template>
   <DsfrCard
-    :class="'fr-radius-a--1v fr-card--shadow'"
+    :class="'fr-card--shadow'"
     :title="project.title"
     :description="project.shortDescription"
     :img-src="`${publicPath}${project.image}`"
     :alt-img="`image / ${project.title}`"
-    :link="`/project/${project.id}`"
     :no-arrow="true"
   ></DsfrCard>
 </template>

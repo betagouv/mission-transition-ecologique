@@ -67,6 +67,9 @@ a.fr-tag[aria-pressed=true].fr-tag--red.fr-tag--sm, button.fr-tag[aria-pressed=t
   background: #000091;
 }
 
+.fr-card {
+  overflow: hidden;
+}
 .fr-card :hover {
   cursor: pointer;
 }

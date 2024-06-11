@@ -3,6 +3,8 @@
 @use '@gouvfr/dsfr/module/media-query/variable/breakpoints';
 
 .fr-card {
+  overflow: hidden;
+
   :hover {
     cursor: pointer;
   }
@@ -41,7 +43,6 @@
 
         img {
           object-fit: fill;
-
           &.fr-responsive-img {
             height: 100%;
           }
