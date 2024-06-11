@@ -1047,6 +1047,13 @@ input[type=search]::-webkit-search-decoration, input[type=search]::-webkit-searc
   line-height: 2.25rem;
 }
 
+.fr-font-style--italic {
+  font-style: italic;
+}
+.fr-font-style--normal {
+  font-style: normal;
+}
+
 .fr-btn-bg:hover, .fr-btn-bg:active {
   background-color: rgba(0, 0, 0, 0.05) !important;
 }
