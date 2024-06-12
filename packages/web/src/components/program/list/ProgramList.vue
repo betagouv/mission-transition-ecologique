@@ -2,9 +2,10 @@
   <!-- PAGE BANNER -->
   <TeeBanner
     v-if="isCatalog"
-    class="fr-container--fluid fr-grid-row--center fr-grid-row--middle fr-bg--blue-light fr-pt-4v fr-py-md-6w fr-text-center"
+    class="fr-pt-4v fr-py-md-6w fr-text-center"
     :title="teeBannerProps.title"
     :description="teeBannerProps.description"
+    :bg-color="Color.blueLight"
   >
   </TeeBanner>
 
@@ -96,7 +97,7 @@ import ProgramListNoResults from '@/components/program/list/ProgramListNoResults
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
 import { useUsedTrackStore } from '@/stores/usedTrack'
-import { type ProgramData, PublicodeObjective, TrackId } from '@/types'
+import { Color, type ProgramData, PublicodeObjective, TrackId } from '@/types'
 import { RouteName } from '@/types/routeType'
 import Matomo from '@/utils/matomo'
 import Theme from '@/utils/theme'
