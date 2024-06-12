@@ -2,7 +2,7 @@ import { Maybe, Result } from 'true-myth'
 import type { ContactRepository, MailerManager, OpportunityRepository } from './spi'
 import type { OpportunityId, Opportunity, ContactDetails } from './types'
 import OperatorFeatures from '../../operator/domain/operatorFeatures'
-import { OperatorRepository } from '../../operator/domain/spi'
+import { OperatorManager } from '../../operator/domain/spi'
 import { ProgramRepository } from '../../program/domain/spi'
 import ProgramFeatures from '../../program/domain/programFeatures'
 import { Program } from '@tee/data/src/type/program'
@@ -11,14 +11,14 @@ import EstablishmentService from '../../establishment/application/establishmentS
 export default class OpportunityFeatures {
   private readonly _contactRepository: ContactRepository
   private readonly _opportunityRepository: OpportunityRepository
-  private readonly _operatorRepositories: OperatorRepository[]
+  private readonly _operatorRepositories: OperatorManager[]
   private readonly _programRepository: ProgramRepository
   private readonly _mailRepository: MailerManager
 
   constructor(
     contactRepository: ContactRepository,
     opportunityRepository: OpportunityRepository,
-    operatorRepositories: OperatorRepository[],
+    operatorRepositories: OperatorManager[],
     programRepository: ProgramRepository,
     mailRepository: MailerManager
   ) {

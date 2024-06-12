@@ -3,7 +3,7 @@ import OpportuntiyFeatures from '../domain/opportunityFeatures'
 import { Result } from 'true-myth'
 import { brevoRepository } from '../infrastructure/api/brevo/brevoDeal'
 import { addBrevoContact } from '../infrastructure/api/brevo/brevoContact'
-import { OperatorRepository } from '../../operator/domain/spi'
+import { OperatorManager } from '../../operator/domain/spi'
 import { BpiFrance } from '../../operator/infrastructure/api/bpi/bpiFrance'
 import { ContactRepository, MailerManager, OpportunityRepository } from '../domain/spi'
 import { ProgramRepository } from '../../program/domain/spi'
@@ -40,7 +40,7 @@ export default class OpportunityService {
     return brevoRepository
   }
 
-  private _getOperatorRepositories(): OperatorRepository[] {
+  private _getOperatorRepositories(): OperatorManager[] {
     return [new BpiFrance()]
   }
 
