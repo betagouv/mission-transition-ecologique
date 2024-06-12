@@ -59,7 +59,7 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const linkClasses = {
-  baseCallout: true,
+  'fr-callout': true,
   defaultCallout: props.type === CalloutType.Default,
   warningCallout: props.type === CalloutType.Warning,
   customCallout: props.type === CalloutType.FormInput

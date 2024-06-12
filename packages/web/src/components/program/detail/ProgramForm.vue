@@ -149,7 +149,7 @@
               </slot>
 
               <TeeCallout
-                class="fr-bg--blue fr-text--white fr-px-2v fr-pt-2v fr-pb-0 fr-font-weight--bold"
+                class="fr-bg--blue fr-text--white fr-px-2v fr-pt-2v fr-pb-0 fr-text--bold"
                 :type="opportunityForm.needs.callOut.type"
                 :img="`${publicPath}${opportunityForm.needs.callOut.img}`"
                 :img-container-class="'fr-col-xl-2 fr-hidden fr-unhidden-lg'"
