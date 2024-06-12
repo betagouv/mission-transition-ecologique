@@ -5,7 +5,7 @@ import { brevoRepository } from '../infrastructure/api/brevo/brevoDeal'
 import { addBrevoContact } from '../infrastructure/api/brevo/brevoContact'
 import { OperatorRepository } from '../../operator/domain/spi'
 import { BpiFrance } from '../../operator/infrastructure/api/bpi/bpiFrance'
-import { ContactRepository, MailerService, OpportunityRepository } from '../domain/spi'
+import { ContactRepository, MailerManager, OpportunityRepository } from '../domain/spi'
 import { ProgramRepository } from '../../program/domain/spi'
 import ProgramsJson from '../../program/infrastructure/programsJson'
 import BrevoMail from '../infrastructure/api/brevo/brevoMail'
@@ -48,7 +48,7 @@ export default class OpportunityService {
     return ProgramsJson.getInstance()
   }
 
-  private _getMailRepository(): MailerService {
+  private _getMailRepository(): MailerManager {
     return { sendReturnReceipt: new BrevoMail().sendReturnReceipt }
   }
 }
