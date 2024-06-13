@@ -1,10 +1,12 @@
+@use "setting";
+
 /* FORM */
 .fr-tee-form {
   &-banner p {
     white-space: pre-wrap;
   }
   &-block {
-    background-color: $base-blue-light;
+    background-color: setting.$base-blue-light;
     padding: 2em;
     display: flex;
     justify-content: center;
@@ -27,12 +29,12 @@
   font-size: 1.3rem;
   line-height: 1.3rem;
   &-blue {
-    color: $blue-france;
+    color: setting.$blue-france;
     a {
       white-space: nowrap;
     }
   }
   &-error {
-    color: $red-marianne;
+    color: setting.$red-marianne;
   }
 }
