@@ -34,6 +34,7 @@ declare module 'vue' {
     ProgramTile: typeof import('./components/program/detail/ProgramTile.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    TeeBanner: typeof import('./components/element/TeeBanner.vue')['default']
     TeeButtonExternalLink: typeof import('./components/element/button/TeeButtonExternalLink.vue')['default']
     TeeButtonLink: typeof import('./components/element/button/TeeButtonLink.vue')['default']
     TeeCallout: typeof import('./components/element/TeeCallout.vue')['default']
