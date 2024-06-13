@@ -14,7 +14,7 @@
       <div class="fr-col-12 fr-col-lg-10 fr-col-xl-9 fr-px-1v">
         <p class="fr-text--md">
           Réalisez une recherche parmi les aides à la transition écologique des entreprises, proposées par l’ensemble des partenaires
-          publiques : ADEME, Bpifrance, CCI, CMA, etc.
+          publics : ADEME, Bpifrance, CCI, CMA, etc.
         </p>
       </div>
     </template>
