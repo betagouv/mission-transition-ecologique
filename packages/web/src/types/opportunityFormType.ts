@@ -1,3 +1,5 @@
+import { CalloutType } from '@/types/elementsPropsTypes'
+
 export interface OpportunityFormType {
   [key: string]: StringFieldInputType | MandatoryStringFieldFormType | BooleanFieldInputType | ValidatedStringFieldInputType
   name: StringFieldInputType
@@ -15,6 +17,7 @@ type DefaultFieldFormType = {
   isValid: boolean | undefined
   label?: string
   hint?: string
+  callOut?: InputCalloutType
 }
 
 export type StringFieldInputType = DefaultFieldFormType & { value: string | undefined }
@@ -33,4 +36,11 @@ export type InputFieldUnionType =
 
 export const isValidatedStringFieldInputType = (field: InputFieldUnionType): field is ValidatedStringFieldInputType => {
   return 'validation' in field
+}
+
+export type InputCalloutType = {
+  type?: CalloutType
+  content?: string
+  containerClass?: string
+  img?: string
 }
