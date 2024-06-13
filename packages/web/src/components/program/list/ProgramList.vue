@@ -90,7 +90,7 @@ import { useUsedTrackStore } from '@/stores/usedTrack'
 import { type ProgramData, PublicodeObjective, TrackId } from '@/types'
 import { RouteName } from '@/types/routeType'
 import Matomo from '@/utils/matomo'
-import Objective from '@/utils/objective'
+import Theme from '@/utils/theme'
 import UsedTrack from '@/utils/track/usedTrack'
 import Translation from '@/utils/translation'
 import { computed, onBeforeMount } from 'vue'
@@ -133,7 +133,7 @@ const objective = computed(() => {
   }
 
   if (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityObjective()) {
-    return Objective.getPublicodeObjectiveByObjective(UsedTrack.getPriorityObjective())
+    return Theme.getPublicodeObjectiveByObjective(UsedTrack.getPriorityObjective())
   }
 
   return ''

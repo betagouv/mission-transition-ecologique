@@ -14,8 +14,8 @@
 
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
-import { ObjectiveType, type programFiltersType } from '@/types'
-import Objective from '@/utils/objective'
+import { Theme as ThemeType, type programFiltersType } from '@/types'
+import Theme from '@/utils/theme'
 import { TeeDsfrTagProps } from '@/components/element/tag/TeeDsfrTag.vue'
 
 const programStore = useProgramStore()
@@ -32,13 +32,13 @@ const objectiveTypeTags = computed<TeeDsfrTagProps[]>((): TeeDsfrTagProps[] => {
 
   const tags: TeeDsfrTagProps[] = []
 
-  for (const objectiveTag of Objective.getTags()) {
+  for (const tag of Theme.getTags()) {
     tags.push({
-      label: objectiveTag.tagLabel,
+      label: tag.tagLabel,
       tagName: 'button',
-      ariaPressed: isActive(objectiveTag),
-      color: isActive(objectiveTag) && 'color' in objectiveTag ? objectiveTag.color : undefined,
-      value: objectiveTag.value as string
+      ariaPressed: isActive(tag),
+      color: isActive(tag) && 'color' in tag ? tag.color : undefined,
+      value: tag.value as string
     })
   }
 
@@ -52,7 +52,7 @@ const objectiveTypeTags = computed<TeeDsfrTagProps[]>((): TeeDsfrTagProps[] => {
   return tags
 })
 
-function isActive(objectiveTag: ObjectiveType) {
-  return Objective.getTags().length === 1 || programFilters.objectiveTypeSelected === (objectiveTag.value as string)
+function isActive(tag: ThemeType) {
+  return Theme.getTags().length === 1 || programFilters.objectiveTypeSelected === (tag.value as string)
 }
 </script>
