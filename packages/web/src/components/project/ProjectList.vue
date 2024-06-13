@@ -56,13 +56,15 @@
       >
         <div class="fr-container--fluid fr-container--fluid--no-overflow">
           <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--left">
-            <div
+            <router-link
               v-for="project in projectsData"
+              :id="project.id"
               :key="project.id"
+              :to="getRouteToProjectDetail(project.id)"
               class="fr-col-12 fr-col-md-6 fr-col-lg-4"
             >
               <ProjectCard :project="project" />
-            </div>
+            </router-link>
           </div>
         </div>
       </div>
@@ -82,10 +84,12 @@ import ProgramListHeaderResult from '@/components/program/list/ProgramListHeader
 import ProgramFilterByTheme from '@/components/program/list/filters/ProgramFilterByTheme.vue'
 import UsedTrack from '@/utils/track/usedTrack'
 import Theme from '@/utils/theme'
-import { Project } from '@tee/common/src/project/types'
+import { Project, ProjectId } from '@tee/common/src/project/types'
 import Translation from '@/utils/translation'
 import Contact from '@/utils/contact'
 import ProgramListNoResults from '@/components/program/list/ProgramListNoResults.vue'
+import { type RouteLocationRaw } from 'vue-router'
+import { RouteName } from '@/types/routeType'
 
 const programStore = useProgramStore()
 const navigationStore = useNavigationStore()
@@ -124,6 +128,14 @@ const haveProjects = computed(() => {
 const hasObjectiveCard = computed(() => {
   return programStore.hasObjectiveTypeSelected() || (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityObjective())
 })
+
+const getRouteToProjectDetail = (projectId: ProjectId): RouteLocationRaw => {
+  return {
+    name: RouteName.ProjectResultDetail,
+    params: { projectId },
+    query: navigationStore.query
+  }
+}
 
 const objective = computed(() => {
   if (programStore.hasObjectiveTypeSelected()) {

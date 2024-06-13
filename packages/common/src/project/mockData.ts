@@ -11,10 +11,10 @@ export const projects: Project[] = [
 Moins de matières premières extraites, transportées et transformées, donc moins de déchets d’emballages à gérer après usage.
 
 La loi AGEC fixe des objectifs ambitieux sur la réduction des emballages à usage unique et notamment la fin de la mise sur le marché d'emballages en plastique à usage unique d'ici à 2040. Les entreprises sont encouragées à mettre en oeuvre des actions pour la réduction, la réutilisation, le réemploi et le recyclage des emballages en plastique à usage unique.`,
-    moreDescription: `"- [**Site - L’observatoire du réemploi et de la réutilisation**](https://filieres-rep.ademe.fr/observatoire-reemploi-reutilisation/presentation)**.** Cet observatoire a pour ambition d’être une structure d’expertise et d’aide à la décision sur les questions de réemploi et de réutilisation des produits et emballages soumis au principe de REP (responsabilité élargie des producteurs).
-- **Comment diminuer vos déchets plastiques?** Réduire collectivement nos déchets plastiques est une priorité et ce, même si les solutions de recyclage sont en plein développement. Tour d’horizon et conseils pour changer la donne"`,
-    themes: ['ecoconception'],
-    mainTheme: 'ecoconception',
+    moreDescription: `- [**Site - L’observatoire du réemploi et de la réutilisation**](https://filieres-rep.ademe.fr/observatoire-reemploi-reutilisation/presentation)**.** Cet observatoire a pour ambition d’être une structure d’expertise et d’aide à la décision sur les questions de réemploi et de réutilisation des produits et emballages soumis au principe de REP (responsabilité élargie des producteurs).
+- **Comment diminuer vos déchets plastiques?** Réduire collectivement nos déchets plastiques est une priorité et ce, même si les solutions de recyclage sont en plein développement. Tour d’horizon et conseils pour changer la donne`,
+    themes: ['eco-design'],
+    mainTheme: 'eco-design',
     programs: ['formation-engager-entreprise-transition-ecologique'],
     linkedProjects: [1, 2]
   },
@@ -28,8 +28,8 @@ La loi AGEC fixe des objectifs ambitieux sur la réduction des emballages à usa
 Moins de matières premières extraites, transportées et transformées, donc moins de déchets d’emballages à gérer après usage.
 
 La loi AGEC fixe des objectifs ambitieux sur la réduction des emballages à usage unique et notamment la fin de la mise sur le marché d'emballages en plastique à usage unique d'ici à 2040. Les entreprises sont encouragées à mettre en oeuvre des actions pour la réduction, la réutilisation, le réemploi et le recyclage des emballages en plastique à usage unique.`,
-    moreDescription: `"- [**Site - L’observatoire du réemploi et de la réutilisation**](https://filieres-rep.ademe.fr/observatoire-reemploi-reutilisation/presentation)**.** Cet observatoire a pour ambition d’être une structure d’expertise et d’aide à la décision sur les questions de réemploi et de réutilisation des produits et emballages soumis au principe de REP (responsabilité élargie des producteurs).
-- **Comment diminuer vos déchets plastiques?** Réduire collectivement nos déchets plastiques est une priorité et ce, même si les solutions de recyclage sont en plein développement. Tour d’horizon et conseils pour changer la donne"`,
+    moreDescription: `- [**Site - L’observatoire du réemploi et de la réutilisation**](https://filieres-rep.ademe.fr/observatoire-reemploi-reutilisation/presentation)**.** Cet observatoire a pour ambition d’être une structure d’expertise et d’aide à la décision sur les questions de réemploi et de réutilisation des produits et emballages soumis au principe de REP (responsabilité élargie des producteurs).
+- **Comment diminuer vos déchets plastiques?** Réduire collectivement nos déchets plastiques est une priorité et ce, même si les solutions de recyclage sont en plein développement. Tour d’horizon et conseils pour changer la donne`,
     themes: ['eau'],
     mainTheme: 'eau',
     programs: ['visite-energie-cma'],
@@ -45,10 +45,10 @@ La loi AGEC fixe des objectifs ambitieux sur la réduction des emballages à usa
 Moins de matières premières extraites, transportées et transformées, donc moins de déchets d’emballages à gérer après usage.
 
 La loi AGEC fixe des objectifs ambitieux sur la réduction des emballages à usage unique et notamment la fin de la mise sur le marché d'emballages en plastique à usage unique d'ici à 2040. Les entreprises sont encouragées à mettre en oeuvre des actions pour la réduction, la réutilisation, le réemploi et le recyclage des emballages en plastique à usage unique.`,
-    moreDescription: `"- [**Site - L’observatoire du réemploi et de la réutilisation**](https://filieres-rep.ademe.fr/observatoire-reemploi-reutilisation/presentation)**.** Cet observatoire a pour ambition d’être une structure d’expertise et d’aide à la décision sur les questions de réemploi et de réutilisation des produits et emballages soumis au principe de REP (responsabilité élargie des producteurs).
-- **Comment diminuer vos déchets plastiques?** Réduire collectivement nos déchets plastiques est une priorité et ce, même si les solutions de recyclage sont en plein développement. Tour d’horizon et conseils pour changer la donne"`,
-    themes: ['energie'],
-    mainTheme: 'energie',
+    moreDescription: `- [**Site - L’observatoire du réemploi et de la réutilisation**](https://filieres-rep.ademe.fr/observatoire-reemploi-reutilisation/presentation)**.** Cet observatoire a pour ambition d’être une structure d’expertise et d’aide à la décision sur les questions de réemploi et de réutilisation des produits et emballages soumis au principe de REP (responsabilité élargie des producteurs).
+- **Comment diminuer vos déchets plastiques?** Réduire collectivement nos déchets plastiques est une priorité et ce, même si les solutions de recyclage sont en plein développement. Tour d’horizon et conseils pour changer la donne`,
+    themes: ['energy'],
+    mainTheme: 'energy',
     programs: ['renovation-petit-tertiaire-prive'],
     linkedProjects: [5, 6, 7]
   },
@@ -62,8 +62,8 @@ La loi AGEC fixe des objectifs ambitieux sur la réduction des emballages à usa
 Moins de matières premières extraites, transportées et transformées, donc moins de déchets d’emballages à gérer après usage.
 
 La loi AGEC fixe des objectifs ambitieux sur la réduction des emballages à usage unique et notamment la fin de la mise sur le marché d'emballages en plastique à usage unique d'ici à 2040. Les entreprises sont encouragées à mettre en oeuvre des actions pour la réduction, la réutilisation, le réemploi et le recyclage des emballages en plastique à usage unique.`,
-    moreDescription: `"- [**Site - L’observatoire du réemploi et de la réutilisation**](https://filieres-rep.ademe.fr/observatoire-reemploi-reutilisation/presentation)**.** Cet observatoire a pour ambition d’être une structure d’expertise et d’aide à la décision sur les questions de réemploi et de réutilisation des produits et emballages soumis au principe de REP (responsabilité élargie des producteurs).
-- **Comment diminuer vos déchets plastiques?** Réduire collectivement nos déchets plastiques est une priorité et ce, même si les solutions de recyclage sont en plein développement. Tour d’horizon et conseils pour changer la donne"`,
+    moreDescription: `- [**Site - L’observatoire du réemploi et de la réutilisation**](https://filieres-rep.ademe.fr/observatoire-reemploi-reutilisation/presentation)**.** Cet observatoire a pour ambition d’être une structure d’expertise et d’aide à la décision sur les questions de réemploi et de réutilisation des produits et emballages soumis au principe de REP (responsabilité élargie des producteurs).
+- **Comment diminuer vos déchets plastiques?** Réduire collectivement nos déchets plastiques est une priorité et ce, même si les solutions de recyclage sont en plein développement. Tour d’horizon et conseils pour changer la donne`,
     themes: ['batiment'],
     mainTheme: 'batiment',
     programs: ['accelerateur-test-false'],
@@ -79,10 +79,10 @@ La loi AGEC fixe des objectifs ambitieux sur la réduction des emballages à usa
 Moins de matières premières extraites, transportées et transformées, donc moins de déchets d’emballages à gérer après usage.
 
 La loi AGEC fixe des objectifs ambitieux sur la réduction des emballages à usage unique et notamment la fin de la mise sur le marché d'emballages en plastique à usage unique d'ici à 2040. Les entreprises sont encouragées à mettre en oeuvre des actions pour la réduction, la réutilisation, le réemploi et le recyclage des emballages en plastique à usage unique.`,
-    moreDescription: `"- [**Site - L’observatoire du réemploi et de la réutilisation**](https://filieres-rep.ademe.fr/observatoire-reemploi-reutilisation/presentation)**.** Cet observatoire a pour ambition d’être une structure d’expertise et d’aide à la décision sur les questions de réemploi et de réutilisation des produits et emballages soumis au principe de REP (responsabilité élargie des producteurs).
-- **Comment diminuer vos déchets plastiques?** Réduire collectivement nos déchets plastiques est une priorité et ce, même si les solutions de recyclage sont en plein développement. Tour d’horizon et conseils pour changer la donne"`,
-    themes: ['energie'],
-    mainTheme: 'energie',
+    moreDescription: `- [**Site - L’observatoire du réemploi et de la réutilisation**](https://filieres-rep.ademe.fr/observatoire-reemploi-reutilisation/presentation)**.** Cet observatoire a pour ambition d’être une structure d’expertise et d’aide à la décision sur les questions de réemploi et de réutilisation des produits et emballages soumis au principe de REP (responsabilité élargie des producteurs).
+- **Comment diminuer vos déchets plastiques?** Réduire collectivement nos déchets plastiques est une priorité et ce, même si les solutions de recyclage sont en plein développement. Tour d’horizon et conseils pour changer la donne`,
+    themes: ['energy'],
+    mainTheme: 'energy',
     programs: ['accelerateur-test-false'],
     linkedProjects: [2, 3]
   },
@@ -96,8 +96,8 @@ La loi AGEC fixe des objectifs ambitieux sur la réduction des emballages à usa
 Moins de matières premières extraites, transportées et transformées, donc moins de déchets d’emballages à gérer après usage.
 
 La loi AGEC fixe des objectifs ambitieux sur la réduction des emballages à usage unique et notamment la fin de la mise sur le marché d'emballages en plastique à usage unique d'ici à 2040. Les entreprises sont encouragées à mettre en oeuvre des actions pour la réduction, la réutilisation, le réemploi et le recyclage des emballages en plastique à usage unique.`,
-    moreDescription: `"- [**Site - L’observatoire du réemploi et de la réutilisation**](https://filieres-rep.ademe.fr/observatoire-reemploi-reutilisation/presentation)**.** Cet observatoire a pour ambition d’être une structure d’expertise et d’aide à la décision sur les questions de réemploi et de réutilisation des produits et emballages soumis au principe de REP (responsabilité élargie des producteurs).
-- **Comment diminuer vos déchets plastiques?** Réduire collectivement nos déchets plastiques est une priorité et ce, même si les solutions de recyclage sont en plein développement. Tour d’horizon et conseils pour changer la donne"`,
+    moreDescription: `- [**Site - L’observatoire du réemploi et de la réutilisation**](https://filieres-rep.ademe.fr/observatoire-reemploi-reutilisation/presentation)**.** Cet observatoire a pour ambition d’être une structure d’expertise et d’aide à la décision sur les questions de réemploi et de réutilisation des produits et emballages soumis au principe de REP (responsabilité élargie des producteurs).
+- **Comment diminuer vos déchets plastiques?** Réduire collectivement nos déchets plastiques est une priorité et ce, même si les solutions de recyclage sont en plein développement. Tour d’horizon et conseils pour changer la donne`,
     themes: ['rh'],
     mainTheme: 'rh',
     programs: ['accelerateur-test-false', 'act-pas-a-pas'],
@@ -113,8 +113,8 @@ La loi AGEC fixe des objectifs ambitieux sur la réduction des emballages à usa
 Moins de matières premières extraites, transportées et transformées, donc moins de déchets d’emballages à gérer après usage.
 
 La loi AGEC fixe des objectifs ambitieux sur la réduction des emballages à usage unique et notamment la fin de la mise sur le marché d'emballages en plastique à usage unique d'ici à 2040. Les entreprises sont encouragées à mettre en oeuvre des actions pour la réduction, la réutilisation, le réemploi et le recyclage des emballages en plastique à usage unique.`,
-    moreDescription: `"- [**Site - L’observatoire du réemploi et de la réutilisation**](https://filieres-rep.ademe.fr/observatoire-reemploi-reutilisation/presentation)**.** Cet observatoire a pour ambition d’être une structure d’expertise et d’aide à la décision sur les questions de réemploi et de réutilisation des produits et emballages soumis au principe de REP (responsabilité élargie des producteurs).
-- **Comment diminuer vos déchets plastiques?** Réduire collectivement nos déchets plastiques est une priorité et ce, même si les solutions de recyclage sont en plein développement. Tour d’horizon et conseils pour changer la donne"`,
+    moreDescription: `- [**Site - L’observatoire du réemploi et de la réutilisation**](https://filieres-rep.ademe.fr/observatoire-reemploi-reutilisation/presentation)**.** Cet observatoire a pour ambition d’être une structure d’expertise et d’aide à la décision sur les questions de réemploi et de réutilisation des produits et emballages soumis au principe de REP (responsabilité élargie des producteurs).
+- **Comment diminuer vos déchets plastiques?** Réduire collectivement nos déchets plastiques est une priorité et ce, même si les solutions de recyclage sont en plein développement. Tour d’horizon et conseils pour changer la donne`,
     themes: ['renovation'],
     mainTheme: 'renovation',
     programs: ['accelerateur-test-false', 'act-pas-a-pas'],
@@ -130,8 +130,8 @@ La loi AGEC fixe des objectifs ambitieux sur la réduction des emballages à usa
 Moins de matières premières extraites, transportées et transformées, donc moins de déchets d’emballages à gérer après usage.
 
 La loi AGEC fixe des objectifs ambitieux sur la réduction des emballages à usage unique et notamment la fin de la mise sur le marché d'emballages en plastique à usage unique d'ici à 2040. Les entreprises sont encouragées à mettre en oeuvre des actions pour la réduction, la réutilisation, le réemploi et le recyclage des emballages en plastique à usage unique.`,
-    moreDescription: `"- [**Site - L’observatoire du réemploi et de la réutilisation**](https://filieres-rep.ademe.fr/observatoire-reemploi-reutilisation/presentation)**.** Cet observatoire a pour ambition d’être une structure d’expertise et d’aide à la décision sur les questions de réemploi et de réutilisation des produits et emballages soumis au principe de REP (responsabilité élargie des producteurs).
-- **Comment diminuer vos déchets plastiques?** Réduire collectivement nos déchets plastiques est une priorité et ce, même si les solutions de recyclage sont en plein développement. Tour d’horizon et conseils pour changer la donne"`,
+    moreDescription: `- [**Site - L’observatoire du réemploi et de la réutilisation**](https://filieres-rep.ademe.fr/observatoire-reemploi-reutilisation/presentation)**.** Cet observatoire a pour ambition d’être une structure d’expertise et d’aide à la décision sur les questions de réemploi et de réutilisation des produits et emballages soumis au principe de REP (responsabilité élargie des producteurs).
+- **Comment diminuer vos déchets plastiques?** Réduire collectivement nos déchets plastiques est une priorité et ce, même si les solutions de recyclage sont en plein développement. Tour d’horizon et conseils pour changer la donne`,
     themes: ['mobilite'],
     mainTheme: 'mobilite',
     programs: ['accelerateur-test-false', 'act-pas-a-pas'],
@@ -164,12 +164,12 @@ La loi AGEC fixe des objectifs ambitieux sur la réduction des emballages à usa
 Moins de matières premières extraites, transportées et transformées, donc moins de déchets d’emballages à gérer après usage.
 
 La loi AGEC fixe des objectifs ambitieux sur la réduction des emballages à usage unique et notamment la fin de la mise sur le marché d'emballages en plastique à usage unique d'ici à 2040. Les entreprises sont encouragées à mettre en oeuvre des actions pour la réduction, la réutilisation, le réemploi et le recyclage des emballages en plastique à usage unique.`,
-    moreDescription: `"- [**Site - L’observatoire du réemploi et de la réutilisation**](https://filieres-rep.ademe.fr/observatoire-reemploi-reutilisation/presentation)**.** Cet observatoire a pour ambition d’être une structure d’expertise et d’aide à la décision sur les questions de réemploi et de réutilisation des produits et emballages soumis au principe de REP (responsabilité élargie des producteurs).
+    moreDescription: `- [**Site - L’observatoire du réemploi et de la réutilisation**](https://filieres-rep.ademe.fr/observatoire-reemploi-reutilisation/presentation)**.** Cet observatoire a pour ambition d’être une structure d’expertise et d’aide à la décision sur les questions de réemploi et de réutilisation des produits et emballages soumis au principe de REP (responsabilité élargie des producteurs).
 - **Comment diminuer vos déchets plastiques?** Réduire collectivement nos déchets plastiques est une priorité et ce, même si les solutions de recyclage sont en plein développement. Tour d’horizon et conseils pour changer la donne
 - [**Site - L’observatoire du réemploi et de la réutilisation**](https://filieres-rep.ademe.fr/observatoire-reemploi-reutilisation/presentation)**.** Cet observatoire a pour ambition d’être une structure d’expertise et d’aide à la décision sur les questions de réemploi et de réutilisation des produits et emballages soumis au principe de REP (responsabilité élargie des producteurs).
-- **Comment diminuer vos déchets plastiques?** Réduire collectivement nos déchets plastiques est une priorité et ce, même si les solutions de recyclage sont en plein développement. Tour d’horizon et conseils pour changer la donne"`,
-    themes: ['analyse', 'mobilite', 'energie', 'eau', 'batiment', 'renovation', 'ecoconception', 'rh'],
-    mainTheme: 'energie',
+- **Comment diminuer vos déchets plastiques?** Réduire collectivement nos déchets plastiques est une priorité et ce, même si les solutions de recyclage sont en plein développement. Tour d’horizon et conseils pour changer la donne`,
+    themes: ['analyse', 'mobilite', 'energy', 'eau', 'batiment', 'renovation', 'eco-design', 'rh'],
+    mainTheme: 'energy',
     programs: ['accelerateur-test-false', 'act-pas-a-pas-false'],
     linkedProjects: [0, 1, 2, 3, 4, 5, 6, 7, 8]
   }

@@ -53,6 +53,10 @@ export default class Hook {
     }
   }
 
+  static readonly hasProject = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
+    next()
+  }
+
   private static readonly hasQuery = (route: RouteLocationNormalized) => {
     return Object.keys(route.query).length
   }

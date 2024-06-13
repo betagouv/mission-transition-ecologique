@@ -10,8 +10,22 @@ export interface OpportunityFormType {
   linkToProgramPage: MandatoryStringFieldFormType
 }
 
+export interface ProjectFormType {
+  name: StringFieldInputType
+  surname: StringFieldInputType
+  tel: ValidatedStringFieldInputType
+  email: ValidatedStringFieldInputType
+  project: DefaultFieldFormType
+  siret: ValidatedStringFieldInputType
+  needs: StringFieldInputType
+  cgu: DefaultFieldFormType
+  linkToProjectPage: MandatoryStringFieldFormType
+}
+
 type DefaultFieldFormType = {
   required: true
+  disabled?: boolean
+  value?: string | undefined
   isValid: boolean | undefined
   label?: string
   hint?: string
