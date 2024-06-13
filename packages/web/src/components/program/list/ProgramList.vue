@@ -1,4 +1,25 @@
 <template>
+  <!-- PAGE BANNER -->
+  <TeeBanner
+    v-if="isCatalog"
+    class="fr-pt-4v fr-py-md-6w fr-text-center"
+    :bg-color="Color.blueLight"
+  >
+    <template #title>
+      <div class="fr-col-10 fr-col-lg-8">
+        <h1 class="fr-text--blue-france">L'annuaire des aides publiques à la transition écologique</h1>
+      </div>
+    </template>
+    <template #description>
+      <div class="fr-col-12 fr-col-lg-10 fr-col-xl-9 fr-px-1v">
+        <p class="fr-text--md">
+          Réalisez une recherche parmi les aides à la transition écologique des entreprises, proposées par l’ensemble des partenaires
+          publics : ADEME, Bpifrance, CCI, CMA, etc.
+        </p>
+      </div>
+    </template>
+  </TeeBanner>
+
   <!-- PROGRAMS AS LIST OF CARDS -->
   <div class="fr-container--fluid fr-container--fluid--no-overflow fr-px-0 fr-mb-0 fr-mt-6v fr-px-md-4w">
     <div class="fr-grid-row fr-grid-row--center fr-justify-center">
@@ -87,7 +108,7 @@ import ProgramListNoResults from '@/components/program/list/ProgramListNoResults
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
 import { useUsedTrackStore } from '@/stores/usedTrack'
-import { type ProgramData, PublicodeObjective, TrackId } from '@/types'
+import { Color, type ProgramData, PublicodeObjective, TrackId } from '@/types'
 import { RouteName } from '@/types/routeType'
 import Matomo from '@/utils/matomo'
 import Theme from '@/utils/theme'
