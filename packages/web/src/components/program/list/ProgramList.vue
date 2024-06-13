@@ -7,6 +7,20 @@
     :description="teeBannerProps.description"
     :bg-color="Color.blueLight"
   >
+    <template #title>
+      <div class="fr-col-10 fr-col-lg-8">
+        <h1 class="fr-text--blue-france">
+          {{ teeBannerProps.title }}
+        </h1>
+      </div>
+    </template>
+    <template #description>
+      <div class="fr-col-12 fr-col-lg-10 fr-col-xl-9 fr-px-1v">
+        <p class="fr-text--md">
+          {{ teeBannerProps.description }}
+        </p>
+      </div>
+    </template>
   </TeeBanner>
 
   <!-- PROGRAMS AS LIST OF CARDS -->
