@@ -20,7 +20,7 @@
       :class="contentClass"
     >
       <h5 v-if="title">{{ title }}</h5>
-      <p class="fr-mb-0"><slot></slot></p>
+      <p><slot></slot></p>
       <TeeButtonExternalLink
         v-if="link"
         :href="link"

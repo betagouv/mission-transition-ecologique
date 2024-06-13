@@ -157,12 +157,12 @@ a.fr-tag[aria-pressed=true].fr-tag--red.fr-tag--sm, button.fr-tag[aria-pressed=t
 .fr-callout {
   padding: 32px 48px 32px 32px;
 }
-.fr-callout .defaultCallout {
+.fr-callout.defaultCallout {
   border-left: 4px solid;
   border-color: #6a62f4;
   background: var(--light-background-alt-blue-france, #f5f5fe);
 }
-.fr-callout .warningCallout {
+.fr-callout.warningCallout {
   border-left: 4px solid;
   border-color: #fca081;
   background: rgba(252, 160, 129, 0.2);
