@@ -16,14 +16,10 @@
 import { Color } from '@/types'
 
 export interface TeeBannerProps {
-  title: string
-  description?: string | undefined
   bgColor?: Color
 }
 
 const props = withDefaults(defineProps<TeeBannerProps>(), {
-  title: '',
-  description: undefined,
   bgColor: undefined
 })
 

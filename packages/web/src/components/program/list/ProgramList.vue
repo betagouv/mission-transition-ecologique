@@ -3,21 +3,18 @@
   <TeeBanner
     v-if="isCatalog"
     class="fr-pt-4v fr-py-md-6w fr-text-center"
-    :title="teeBannerProps.title"
-    :description="teeBannerProps.description"
     :bg-color="Color.blueLight"
   >
     <template #title>
       <div class="fr-col-10 fr-col-lg-8">
-        <h1 class="fr-text--blue-france">
-          {{ teeBannerProps.title }}
-        </h1>
+        <h1 class="fr-text--blue-france">L'annuaire des aides publiques à la transition écologique</h1>
       </div>
     </template>
     <template #description>
       <div class="fr-col-12 fr-col-lg-10 fr-col-xl-9 fr-px-1v">
         <p class="fr-text--md">
-          {{ teeBannerProps.description }}
+          Réalisez une recherche parmi les aides à la transition écologique des entreprises, proposées par l’ensemble des partenaires
+          publiques : ADEME, Bpifrance, CCI, CMA, etc.
         </p>
       </div>
     </template>
@@ -119,7 +116,6 @@ import UsedTrack from '@/utils/track/usedTrack'
 import Translation from '@/utils/translation'
 import { computed, onBeforeMount } from 'vue'
 import { type RouteLocationRaw } from 'vue-router'
-import { TeeBannerProps } from '@/components/element/TeeBanner.vue'
 
 const programStore = useProgramStore()
 const navigationStore = useNavigationStore()
@@ -127,11 +123,6 @@ const navigationStore = useNavigationStore()
 const isCatalog = navigationStore.isCatalog()
 const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)
-const teeBannerProps: TeeBannerProps = {
-  title: `L'annuaire des aides publiques à la transition écologique`,
-  description: `Réalisez une recherche parmi les accompagnements et financements à la transition écologique
-  des entreprises, proposés par l'ensemble des partenaires publiques: ADEME, Bpifrance, CCI, CMA, etc.`
-}
 
 const filteredPrograms = computed(() => {
   return programs.value ? programStore.getProgramsByFilters(programs.value) : undefined
