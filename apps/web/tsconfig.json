@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "preserve",
+    "jsxImportSource": "vue",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "paths": {
+      "@/*": ["apps/web/src/*"],
+      "@tee/backend-ddd": ["libs/backend-ddd/src/index.ts"],
+      "@tee/common": ["libs/common/src/index.ts"],
+      "@tee/data": ["libs/data/src/index.ts"],
+      "@tee/data/references": ["libs/data/references/index.ts"],
+      "@tee/data/generated": ["libs/data/generated/index.ts"]
+    },
+  },
+  "types": ["node", "jsdom", "./src/env.d.ts"],
+  "files": [],
+  "include": [],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.spec.json"
+    }
+  ],
+  "extends": "../../tsconfig.base.json"
+}
