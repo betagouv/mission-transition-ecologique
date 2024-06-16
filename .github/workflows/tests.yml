@@ -24,8 +24,27 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-
       - run: npm clean-install
 
       - run: npx nx run @tee/data:generate-program
       - run: npx nx run @tee/data:test
+
+  lint:
+    name: Run eslint
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ '20.x' ]
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - run: npm clean-install
+
+      - run: npx nx run @tee/data:generate-program
+      - run: npx nx run @tee/backend:spec-and-routes
+      - run: npx nx run-many -t lint
