@@ -2,6 +2,7 @@
   "name": "@tee/root",
   "version": "1.0.0",
   "license": "AGPL-3.0",
+  "private": true,
   "scripts": {
     "dev": "nx run-many -t serve --verbose",
     "build": "nx run-many -t build",
@@ -12,7 +13,10 @@
     "lint": "nx run-many -t lint",
     "lint:fix": "nx run-many -t lint --fix"
   },
-  "private": true,
+  "engines": {
+    "node": "20.x",
+    "npm": ">=10.0 <11"
+  },
   "dependencies": {
     "@getbrevo/brevo": "^2.1.1",
     "@gouvfr/dsfr": "^1.11.2",
