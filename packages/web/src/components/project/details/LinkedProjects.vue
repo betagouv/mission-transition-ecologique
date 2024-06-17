@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="fr-h2">Projets complémentaires</div>
+    <div class="fr-h3">Projets complémentaires</div>
     <TeeDsfrTags :tags="relatedProjectsTags" />
   </div>
 </template>

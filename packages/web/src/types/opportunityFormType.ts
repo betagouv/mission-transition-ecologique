@@ -15,17 +15,16 @@ export interface ProjectFormType {
   surname: StringFieldInputType
   tel: ValidatedStringFieldInputType
   email: ValidatedStringFieldInputType
-  project: DefaultFieldFormType
+  project: StringFieldInputType
   siret: ValidatedStringFieldInputType
   needs: StringFieldInputType
-  cgu: DefaultFieldFormType
+  cgu: BooleanFieldInputType
   linkToProjectPage: MandatoryStringFieldFormType
 }
 
 type DefaultFieldFormType = {
-  required: true
+  required: boolean
   disabled?: boolean
-  value?: string | undefined
   isValid: boolean | undefined
   label?: string
   hint?: string

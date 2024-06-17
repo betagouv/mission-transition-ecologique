@@ -5,7 +5,7 @@
       :alt="`image / ${projectTitle}`"
     />
     <div
-      class="fr-h1 fr-text-center projectTitle"
+      class="fr-h1 fr-mb-4v fr-text-center projectTitle"
       :style="{ '--gradient-color': color }"
     >
       {{ projectTitle }}

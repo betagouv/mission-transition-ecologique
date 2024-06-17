@@ -6,7 +6,10 @@
     :expanded-id="expandedId"
     @expand="expandDetails"
   >
-    <div v-html="formatProjectDescription(projectDescription)" />
+    <div
+      class="fr-mx-8v"
+      v-html="formatProjectDescription(projectDescription)"
+    />
   </DsfrAccordion>
 
   <DsfrAccordion
@@ -16,7 +19,10 @@
     :expanded-id="expandedMoreId"
     @expand="expandMoreDetails"
   >
-    <div v-html="formatProjectDescription(projectMoreDescription)" />
+    <div
+      class="fr-mx-8v"
+      v-html="formatProjectDescription(projectMoreDescription)"
+    />
   </DsfrAccordion>
 </template>
 <script setup lang="ts">

@@ -266,7 +266,7 @@ import { Project } from '@tee/common/src/project/types'
 const route = useRoute()
 
 interface Props {
-  project: Project | undefined
+  project: Project
   formContainerRef: HTMLElement | null | undefined
 }
 

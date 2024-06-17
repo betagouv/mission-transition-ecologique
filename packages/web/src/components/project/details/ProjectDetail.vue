@@ -5,9 +5,9 @@
     :project-img="projectImg"
     :color="theme?.color"
   />
-  <div class="fr-col-12 fr-container">
+  <div class="fr-col-12 fr-container--fluid">
     <div class="fr-grid-row fr-pt-4v">
-      <div class="fr-col-3">
+      <div class="fr-col-3 fr-col-sm-3 fr-hidden-xs">
         <DsfrButton
           label="Copier le lien"
           size="sm"
@@ -17,17 +17,19 @@
         />
         <ProjectSideNav />
       </div>
-      <div class="fr-col-8 fr-mx-8v">
+      <div class="fr-col-8 fr-col-xs-12 fr-col-sm-9">
         <ProjectDescription
           :project-description="projectDescription"
           :project-more-description="projectMoreDescription"
         />
+        <ProjectPrograms :objective="themeObjective" />
         <div
           id="project-contact"
           ref="TeeProjectFormContainer"
           class="fr-tee-form-block fr-tee-form-container"
         >
           <ProjectForm
+            v-if="project"
             :project="project"
             :form-container-ref="TeeProjectFormContainer"
           />
@@ -67,6 +69,7 @@ const projectImg = computed(() => project.value?.image)
 const projectDescription = computed(() => project.value?.longDescription)
 const projectMoreDescription = computed(() => project.value?.moreDescription)
 const TeeProjectFormContainer = ref<HTMLElement | null | undefined>(null)
+const themeObjective = computed(() => theme.value?.value)
 
 onBeforeMount(() => {
   const selectedProject = getProjectById(props.projectId)
