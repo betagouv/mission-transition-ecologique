@@ -1,4 +1,3 @@
-import { Operators } from '@tee/data'
 import { PublicodeObjective, QuestionnaireRoute } from '../questionnaire/types'
 
 export type Opportunity = ContactDetails & OpportunityDetails
@@ -16,7 +15,6 @@ export interface ContactDetails {
 
 export interface OpportunityDetails {
   programId: string
-  programContactOperator?: Operators
   linkToProgramPage: string
   message: string
   questionnaireRoute?: QuestionnaireRoute

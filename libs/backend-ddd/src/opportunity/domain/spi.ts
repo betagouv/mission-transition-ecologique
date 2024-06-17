@@ -1,5 +1,5 @@
 import type { Maybe, Result } from 'true-myth'
-import type { ContactId, OpportunityId, OpportunityUpdateAttributes, OpportunityDetailsShort } from './types'
+import { ContactId, OpportunityId, OpportunityUpdateAttributes, OpportunityDetailsShort, OpportunityWithOperatorContact } from './types'
 import { ContactDetails, Opportunity, OpportunityDetails } from '@tee/common'
 import { Program } from '@tee/data'
 
@@ -8,7 +8,7 @@ export type ContactRepository = {
 }
 
 export type OpportunityRepository = {
-  create: (contactId: number, opportunity: OpportunityDetails) => Promise<Result<OpportunityId, Error>>
+  create: (contactId: number, opportunity: OpportunityWithOperatorContact) => Promise<Result<OpportunityId, Error>>
   update: (dealId: OpportunityId, attributes: OpportunityUpdateAttributes) => Promise<Maybe<Error>>
   readDates: () => Promise<Result<Date[], Error>>
   getDailyOpportunitiesByContactId: (contactId: number) => Promise<Result<OpportunityDetailsShort[], Error>>

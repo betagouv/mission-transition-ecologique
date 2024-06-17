@@ -1,6 +1,6 @@
 import { Maybe, Result } from 'true-myth'
 import type { ContactRepository, MailerService, OpportunityRepository } from './spi'
-import type { OpportunityId, OpportunityWithContactId, OpportunityDetailsShort } from './types'
+import { OpportunityId, OpportunityWithContactId, OpportunityDetailsShort, OpportunityWithOperatorContact } from './types'
 import OpportunityHubFeatures from '../../opportunityHub/domain/opportunityHubFeatures'
 import { OpportunityHubRepository } from '../../opportunityHub/domain/spi'
 import { ProgramRepository } from '../../program/domain/spi'
@@ -37,9 +37,11 @@ export default class OpportunityFeatures {
     }
 
     const program = this._getProgramById(opportunity.programId)
-    opportunity = this._addContactOperatorToOpportunity(opportunity, program)
 
-    const opportunityResult = await this._opportunityRepository.create(contactIdResult.value.id, opportunity)
+    const opportunityResult = await this._opportunityRepository.create(
+      contactIdResult.value.id,
+      this._addContactOperatorToOpportunity(opportunity, program)
+    )
     if (opportunityResult.isErr || program === undefined) {
       // TODO : Send notif: opportunity not created or opportunity created on an unknown program
       return opportunityResult
@@ -76,11 +78,11 @@ export default class OpportunityFeatures {
     return await this._opportunityRepository.update(opportunityId, { sentToOpportunityHub: success })
   }
 
-  private _addContactOperatorToOpportunity(opportunity: Opportunity, program: Program | undefined): Opportunity {
-    if (program) {
-      opportunity.programContactOperator = program['opérateur de contact']
+  private _addContactOperatorToOpportunity(opportunity: Opportunity, program: Program | undefined): OpportunityWithOperatorContact {
+    return {
+      ...opportunity,
+      programContactOperator: program?.['opérateur de contact']
     }
-    return opportunity
   }
   private _addContactIdToOpportunity(opportunity: Opportunity, id: number): OpportunityWithContactId {
     return {

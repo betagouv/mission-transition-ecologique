@@ -12,11 +12,11 @@ lerna-debug.log*
 build
 dist-ssr
 *.tsbuildinfo
-generated/
 # compiled output
 dist
 tmp
 /out-tsc
+*timestamp-*.mjs
 
 # dependencies
 node_modules
@@ -31,7 +31,7 @@ node_modules
 *.sublime-workspace
 
 # IDE - VSCode
-.vscode/*
+.vscode/
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
@@ -63,3 +63,7 @@ dispositifs.xlsx
 # nx
 .nx/cache
 .nx/workspace-data
+
+
+generated/*
+!generated/index.ts

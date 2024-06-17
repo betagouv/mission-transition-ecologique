@@ -1,6 +1,6 @@
 import { Maybe, Result } from 'true-myth'
 import { OpportunityRepository } from '../../../domain/spi'
-import { OpportunityId, OpportunityUpdateAttributes, OpportunityDetailsShort } from '../../../domain/types'
+import { OpportunityId, OpportunityUpdateAttributes, OpportunityDetailsShort, OpportunityWithOperatorContact } from '../../../domain/types'
 import BrevoAPI from './brevoAPI'
 import {
   DealAttributes,
@@ -18,7 +18,7 @@ import { Operators } from '@tee/data'
 
 const addBrevoDeal: OpportunityRepository['create'] = async (
   contactId: number,
-  domainOpportunity: OpportunityDetails
+  domainOpportunity: OpportunityWithOperatorContact
 ): Promise<Result<OpportunityId, Error>> => {
   const brevoDeal = convertDomainToBrevoDeal(domainOpportunity)
 
@@ -76,7 +76,7 @@ const associateBrevoDealToContact = async (dealId: OpportunityId, contactId: num
   else return Maybe.nothing()
 }
 
-const convertDomainToBrevoDeal = (domainAttributes: OpportunityDetails): DealAttributes => {
+const convertDomainToBrevoDeal = (domainAttributes: OpportunityWithOperatorContact): DealAttributes => {
   return {
     // Brevo does not handle newlines in attributes
     message: replaceNewlinesWithSpaces(domainAttributes.message),
