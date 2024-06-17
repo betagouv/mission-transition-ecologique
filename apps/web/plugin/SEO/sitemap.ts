@@ -1,3 +1,4 @@
+import { ProgramService } from '@tee/backend-ddd'
 import dotenv from 'dotenv'
 import { readFileSync, writeFileSync } from 'fs'
 import { resolve } from 'path'
@@ -16,14 +17,14 @@ const exclusionPaths = ['/:pathMatch(.*)*']
 
 function invalidPath(path: string): boolean {
   if (exclusionPaths.includes(path)) return true
-  if (path[0] != '/') return true
-  return false
+
+  return path[0] != '/'
 }
 
 function generateOnePathXML(path: string, changeFreq: ChangeFreq, priority: Priority): string {
   const lastModified = new Date().toISOString()
   dotenv.config()
-  const VITE_DEPLOY_URL = process.env.VITE_DEPLOY_URL
+  const VITE_DEPLOY_URL = process.env['VITE_DEPLOY_URL']
 
   return `  <url>
     <loc>${encodeURI(VITE_DEPLOY_URL + path)}</loc>
@@ -57,10 +58,10 @@ function generateStaticSitemap(): string | undefined {
   return urlElements
 }
 
-async function generateProgramSitemap(): Promise<string | undefined> {
-  const backend = await import('@tee/backend-ddd')
-  backend.ProgramService.init()
-  const service = new backend.ProgramService()
+function generateProgramSitemap(): string | undefined {
+  ProgramService.init()
+  const service = new ProgramService()
+
   const allProgramsIds = service.getAll().map((program: Program) => program.id)
   const activeProgramsResult = service.getFilteredPrograms({})
   if (activeProgramsResult.isErr) {
@@ -79,20 +80,20 @@ async function generateProgramSitemap(): Promise<string | undefined> {
     .join('\n')
 }
 
-async function generateSitemapXML(): Promise<string> {
+function generateSitemapXML(): string {
   const staticElements = generateStaticSitemap()
-  const programElements = await generateProgramSitemap()
+  const programElements = generateProgramSitemap()
 
   return `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   ${staticElements + '\n' + programElements}
 </urlset>`
 }
 
-export default async function generateSitemap() {
-  const sitemapXML: string = await generateSitemapXML()
-  const inFilePath = resolve(process.cwd(), 'public', 'sitemap.xml')
+export default function generateSitemap() {
+  const sitemapXML = generateSitemapXML()
+  const inFilePath = resolve(process.cwd(), 'public', 'sitemap.placeholder.xml')
   const fileContent = readFileSync(inFilePath, 'utf8')
   const newContent = fileContent.replace(/__SITEMAP_PLACEHOLDER__generation_in_plugin_SEO__/g, sitemapXML)
-  const outFilePath = resolve(process.cwd(), '../../', 'dist/apps/web', 'sitemap.xml')
+  const outFilePath = resolve(process.cwd(), 'public', 'sitemap.xml')
   writeFileSync(outFilePath, newContent, 'utf8')
 }

@@ -7,7 +7,6 @@ import Components from 'unplugin-vue-components/vite'
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import { fileURLToPath } from 'url'
 import { resolve } from 'path'
-import SEOPlugin from './plugin/SEO'
 import { dsnFromString } from '@sentry/utils'
 
 const mode = process.env.NODE_ENV ?? 'development'
@@ -40,7 +39,6 @@ const libBuildConfig: Record<LibType, BuildOptions> = {
 const plugins = async () => {
   const basePlugins = [
     vue(),
-    SEOPlugin(),
     nxViteTsPaths(),
     AutoImport({
       include: [/\.[tj]sx?$/, /\.vue$/, /\.vue\?vue/],

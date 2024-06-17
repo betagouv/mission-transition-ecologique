@@ -10,5 +10,5 @@
     "src/**/*.spec.vue",
     "src/**/*.test.vue"
   ],
-  "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.vue", "plugin/**/*.ts"]
+  "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.vue"]
 }

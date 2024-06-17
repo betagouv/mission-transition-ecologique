@@ -9,6 +9,7 @@
     "start": "nx run-many -t start --port $PORT",
     "build:start:dev": "npm run build && PORT=4242 npm run start",
     "generate:program": "nx run @tee/data:generate-program",
+    "generate:seo": "nx run @tee/web:generate-seo",
     "test": "nx run-many -t test -p @tee/data @tee/backend-ddd",
     "lint": "nx run-many -t lint",
     "lint:fix": "nx run-many -t lint --fix"

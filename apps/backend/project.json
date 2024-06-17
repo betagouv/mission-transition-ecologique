@@ -13,7 +13,13 @@
       }
     },
     "build": {
-      "dependsOn": ["spec-and-routes"]
+      "dependsOn": [
+        "spec-and-routes",
+        {
+          "target": "generate-program",
+          "projects": "@tee/data"
+        }
+      ]
     },
     "start": {
       "executor": "nx:run-commands",
