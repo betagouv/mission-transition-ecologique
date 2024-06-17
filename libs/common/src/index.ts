@@ -2,7 +2,6 @@ export { default as ConfigCommon } from './config/configCommon'
 export * from './config/types'
 export * from './establishment/types'
 export { default as Validator } from './establishment/validator'
-// export * from './opportunity/opportunityTypes';
 export { default as Program } from './program/program'
 export * from './program/types'
 export * from './questionnaire/questionnaireData'

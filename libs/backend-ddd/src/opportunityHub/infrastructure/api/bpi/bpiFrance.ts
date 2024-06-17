@@ -6,7 +6,7 @@ import AxiosHeaders from '../../../../common/infrastructure/api/axiosHeaders'
 import { handleException } from '../../../../common/domain/error/errors'
 import opportunityPayloadDTO from './opportunityPayloadDTO'
 import Config from '../../../../config'
-import { Operators, Program } from '@tee/data'
+import { Operators, ProgramType } from '@tee/data'
 import { Opportunity } from '@tee/common'
 
 export class BpiFrance extends OpportunityHubAbstract {
@@ -44,7 +44,7 @@ export class BpiFrance extends OpportunityHubAbstract {
     }
   }
 
-  public transmitOpportunity = async (opportunity: Opportunity, program: Program): Promise<Maybe<Error>> => {
+  public transmitOpportunity = async (opportunity: Opportunity, program: ProgramType): Promise<Maybe<Error>> => {
     try {
       const tokenResult = await this._getToken()
       if (tokenResult.isErr) {

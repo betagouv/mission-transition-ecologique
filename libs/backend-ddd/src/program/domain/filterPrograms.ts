@@ -1,6 +1,6 @@
 import { Result } from 'true-myth'
 import { RulesService } from './spi'
-import { Program } from '@tee/data'
+import { ProgramType } from '@tee/data'
 import { QuestionnaireData } from '@tee/common'
 
 /** Expected rule to evaluate if a program should be displayed to the user or
@@ -18,12 +18,12 @@ export const FILTERING_RULE_NAME = 'entreprise . est ciblée'
  *   `undefined`, for instance with missing data)
  */
 export const filterPrograms = (
-  programs: Program[],
+  programs: ProgramType[],
   inputData: QuestionnaireData,
   currentDate: string,
   rulesService: RulesService
-): Result<Program[], Error> => {
-  const filteredPrograms: Program[] = []
+): Result<ProgramType[], Error> => {
+  const filteredPrograms: ProgramType[] = []
 
   for (const program of programs) {
     const evaluation = rulesService.evaluate(FILTERING_RULE_NAME, program, inputData, currentDate)

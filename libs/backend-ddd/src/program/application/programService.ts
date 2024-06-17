@@ -1,5 +1,5 @@
 import { Result } from 'true-myth'
-import { Program } from '@tee/data'
+import { ProgramType } from '@tee/data'
 import ProgramFeatures from '../domain/programFeatures'
 import ProgramsJson from '../infrastructure/programsJson'
 import { currentDateService } from '../infrastructure/currentDate'
@@ -18,15 +18,15 @@ export class ProgramService {
     this._program = new ProgramFeatures(programsService, currentDateService, PublicodesService.getInstance())
   }
 
-  public getById(id: string): Program | undefined {
+  public getById(id: string): ProgramType | undefined {
     return this._program.getById(id)
   }
 
-  public getFilteredPrograms(questionnaireData: QuestionnaireData): Result<Program[], Error> {
+  public getFilteredPrograms(questionnaireData: QuestionnaireData): Result<ProgramType[], Error> {
     return this._program.getFilteredBy(questionnaireData)
   }
 
-  public getAll(): Program[] {
+  public getAll(): ProgramType[] {
     return this._program.getAll()
   }
 

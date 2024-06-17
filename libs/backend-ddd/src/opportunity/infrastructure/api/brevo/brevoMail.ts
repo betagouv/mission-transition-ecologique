@@ -4,7 +4,7 @@ import Config from '../../../../config'
 // import { Program as ProgramType } from '../../../../program/domain/types/types';
 import { MailerService } from '../../../domain/spi'
 import { Opportunity } from '@tee/common'
-import { Program as ProgramType } from '@tee/data'
+import { ProgramType as ProgramType } from '@tee/data'
 import { Program } from '@tee/common'
 
 export default class BrevoMail {

@@ -5,7 +5,7 @@ import { expectToBeErr, expectToBeOk } from '../testing'
 import { fakeOpportunity } from './testing'
 import type { ContactRepository, OpportunityRepository } from '../../src/opportunity/domain/spi'
 import { ProgramRepository } from '../../src/program/domain/spi'
-import { Program } from '@tee/data'
+import { ProgramType } from '@tee/data'
 import { ContactId, OpportunityDetailsShort, OpportunityId } from '../../src/index'
 
 let addContactCalled: boolean
@@ -63,7 +63,7 @@ const makeCreateOpportunityFun = (contactRepository: ContactRepository, opportun
 
 const dummyProgramRepository: ProgramRepository = {
   getAll: () => [],
-  getById: () => ({} as Program)
+  getById: () => ({} as ProgramType)
 }
 
 describe(`

@@ -1,5 +1,5 @@
 import { Result } from 'true-myth'
-import { Program } from '@tee/data'
+import { ProgramType } from '@tee/data'
 import { QuestionnaireData } from '@tee/common'
 
 export type CurrentDateService = {
@@ -7,14 +7,14 @@ export type CurrentDateService = {
 }
 
 export interface ProgramRepository {
-  getById: (id: string) => Program | undefined
-  getAll: () => Program[]
+  getById: (id: string) => ProgramType | undefined
+  getAll: () => ProgramType[]
 }
 
 export interface RulesService {
   evaluate: (
     ruleName: string,
-    program: Program,
+    program: ProgramType,
     questionnaireData: QuestionnaireData,
     currentDate: string
   ) => Result<boolean | undefined, Error>

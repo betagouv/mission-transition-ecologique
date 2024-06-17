@@ -1,4 +1,4 @@
-import { Operators, Program } from '@tee/data'
+import { Operators, ProgramType } from '@tee/data'
 import { AxiosInstance } from 'axios'
 import { OpportunityHubRepository } from '../../domain/spi'
 import { OpportunityWithContactId } from '../../../opportunity/domain/types'
@@ -10,17 +10,17 @@ export default abstract class OpportunityHubAbstract implements OpportunityHubRe
   protected abstract readonly _baseUrl: string
   protected abstract readonly _operatorNames: Operators[]
 
-  support = (program: Program) => {
+  support = (program: ProgramType) => {
     if (this.operatorNames instanceof Error) {
       return false
     }
     return this.operatorNames.includes(program['opérateur de contact'] as Operators)
   }
-  shouldTransmit = async (_: OpportunityWithContactId, program: Program) => {
+  shouldTransmit = async (_: OpportunityWithContactId, program: ProgramType) => {
     return Promise.resolve(this.support(program))
   }
 
-  public abstract transmitOpportunity: (opportunity: Opportunity, Program: Program) => Promise<Maybe<Error>>
+  public abstract transmitOpportunity: (opportunity: Opportunity, Program: ProgramType) => Promise<Maybe<Error>>
 
   get operatorNames(): Operators[] | Error {
     return this._operatorNames

@@ -1,5 +1,5 @@
 import { ProgramAidType } from './types'
-import { Program as ProgramType } from '@tee/data'
+import { ProgramType } from '@tee/data'
 
 export default class Program {
   public static getPrefixedProgramName(program: ProgramType) {

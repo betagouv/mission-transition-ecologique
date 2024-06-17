@@ -1,5 +1,5 @@
 import { bpiOpportunityPayload } from './types'
-import { Program } from '@tee/data'
+import { ProgramType } from '@tee/data'
 import { Opportunity } from '@tee/common'
 
 export default class OpportunityPayloadDTO {
@@ -14,10 +14,10 @@ export default class OpportunityPayloadDTO {
   private readonly _lastName: string
   private readonly _firstName: string
   private readonly _email: string
-  private readonly _program: Program
+  private readonly _program: ProgramType
   private readonly _message: string
 
-  constructor(opportunity: Opportunity, program: Program) {
+  constructor(opportunity: Opportunity, program: ProgramType) {
     this._email = opportunity.email
     this._firstName = opportunity.firstName
     this._lastName = opportunity.lastName
@@ -85,7 +85,7 @@ export default class OpportunityPayloadDTO {
     return this._message
   }
 
-  get program(): Program {
+  get program(): ProgramType {
     return this._program
   }
 

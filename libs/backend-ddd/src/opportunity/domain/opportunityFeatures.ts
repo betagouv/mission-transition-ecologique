@@ -5,7 +5,7 @@ import OpportunityHubFeatures from '../../opportunityHub/domain/opportunityHubFe
 import { OpportunityHubRepository } from '../../opportunityHub/domain/spi'
 import { ProgramRepository } from '../../program/domain/spi'
 import ProgramFeatures from '../../program/domain/programFeatures'
-import { Program } from '@tee/data'
+import { ProgramType } from '@tee/data'
 import { ContactDetails, Opportunity } from '@tee/common'
 
 export default class OpportunityFeatures {
@@ -61,7 +61,7 @@ export default class OpportunityFeatures {
     return await this._opportunityRepository.getDailyOpportunitiesByContactId(contactId)
   }
 
-  private _transmitOpportunityToHubs(opportunityId: OpportunityId, opportunity: OpportunityWithContactId, program: Program) {
+  private _transmitOpportunityToHubs(opportunityId: OpportunityId, opportunity: OpportunityWithContactId, program: ProgramType) {
     void new OpportunityHubFeatures(this._opportunityHubRepositories)
       .maybeTransmitOpportunity(opportunity, program)
       .then(async (opportunityHubResult) => {
@@ -78,7 +78,7 @@ export default class OpportunityFeatures {
     return await this._opportunityRepository.update(opportunityId, { sentToOpportunityHub: success })
   }
 
-  private _addContactOperatorToOpportunity(opportunity: Opportunity, program: Program | undefined): OpportunityWithOperatorContact {
+  private _addContactOperatorToOpportunity(opportunity: Opportunity, program: ProgramType | undefined): OpportunityWithOperatorContact {
     return {
       ...opportunity,
       programContactOperator: program?.['opérateur de contact']
@@ -91,11 +91,11 @@ export default class OpportunityFeatures {
     }
   }
 
-  private _getProgramById(id: string): Program | undefined {
+  private _getProgramById(id: string): ProgramType | undefined {
     return new ProgramFeatures(this._programRepository).getById(id)
   }
 
-  private _sendReturnReceipt(opportunity: Opportunity, program: Program) {
+  private _sendReturnReceipt(opportunity: Opportunity, program: ProgramType) {
     void this._mailRepository.sendReturnReceipt(opportunity, program).then((hasError) => {
       if (hasError) {
         // TODO: Send an email to the admin: Receipt not sent or add error on sentry

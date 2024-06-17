@@ -100,7 +100,7 @@
               v-if="TrackComponent.isButtonInput(usedTrack, option)"
               :is-active="isActiveChoice(idx)"
               :is-checkbox="allowMultiple"
-              :option="option"
+              :option="option as TrackOptionsInput"
               @update-selection="updateSelection($event.option, idx, $event.remove)"
               @update-value="updateSelectionValueFromButtonInput"
             />
@@ -113,7 +113,7 @@
 
             <TrackSiret
               v-if="TrackComponent.isSiret(usedTrack, option)"
-              :option="option"
+              :option="option as TrackOptionsInput"
               @update-selection="updateSelection($event.option, idx, $event.remove, $event.forceKeep)"
               @go-to-next-track="updateAndSave($event, idx)"
             />

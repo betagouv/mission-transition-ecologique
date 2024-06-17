@@ -2,9 +2,9 @@
 // console.log(`questionnaire.trackSiret > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import { HasInputOptions, SiretValue, TrackComponent, TrackId } from '@/types'
-import type { Track, EstablishmentType } from '@/types'
+import type { Track, EstablishmentFront } from '@/types'
 
-const defaultQuestionnaireData: EstablishmentType = {
+const defaultQuestionnaireData: EstablishmentFront = {
   siret: '',
   codeNAF: '',
   codeNAF1: '',

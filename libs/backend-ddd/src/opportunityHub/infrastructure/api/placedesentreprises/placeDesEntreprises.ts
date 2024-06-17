@@ -9,7 +9,7 @@ import OpportunityHubAbstract from '../opportunityHubAbstract'
 import { ProgramService } from '../../../../program/application/programService'
 import OpportunityService from '../../../../opportunity/application/opportunityService'
 import { Objective } from '../../../../common/types'
-import { Operators, Program } from '@tee/data'
+import { Operators, ProgramType } from '@tee/data'
 import { Opportunity } from '@tee/common'
 export class PlaceDesEntreprises extends OpportunityHubAbstract {
   protected readonly _baseUrl = Config.PDE_API_BASEURL
@@ -29,13 +29,13 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     return new Error('Operator List non valid for Place des entreprises')
   }
 
-  override support = (program: Program) => {
+  override support = (program: ProgramType) => {
     const validOperator = (program['opérateur de contact'] as Operators) !== 'Bpifrance'
     const notAutonomous = !program['activable en autonomie']
     return validOperator && notAutonomous
   }
 
-  override shouldTransmit = async (opportunity: OpportunityWithContactId, program: Program) => {
+  override shouldTransmit = async (opportunity: OpportunityWithContactId, program: ProgramType) => {
     if (!this.support(program)) {
       return false
     }
@@ -43,7 +43,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     return !reachTransmissionLimit
   }
 
-  public transmitOpportunity = async (opportunity: Opportunity, program: Program): Promise<Maybe<Error>> => {
+  public transmitOpportunity = async (opportunity: Opportunity, program: ProgramType): Promise<Maybe<Error>> => {
     const maybePayload = this._createRequestBody(opportunity, program)
     if (maybePayload.isErr) {
       return Maybe.of(maybePayload.error)
@@ -117,7 +117,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     }
   }
 
-  private _createRequestBody(opportunity: Opportunity, program: Program): Result<CreateSolicitationApiBody, Error> {
+  private _createRequestBody(opportunity: Opportunity, program: ProgramType): Result<CreateSolicitationApiBody, Error> {
     return Result.ok({
       solicitation: {
         landing_id: Config.PDE_LANDING_ID,

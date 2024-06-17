@@ -1,6 +1,6 @@
 import RequestApi from '@/service/api/requestApi'
 import { Result } from 'true-myth'
-import type StatsData from '@tee/common/src/stats/types'
+import { StatsData } from '@tee/common'
 
 export default class StatApi extends RequestApi {
   private readonly url = '/api/statistics'

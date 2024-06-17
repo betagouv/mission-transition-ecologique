@@ -15,7 +15,7 @@
 <script setup lang="ts">
 import Contact from '@/utils/contact'
 import type { Directive, DirectiveBinding } from 'vue'
-import { type IFrameOptions, iframeResizer } from 'iframe-resizer'
+import { IFrameOptions, iframeResizer } from 'iframe-resizer'
 // To make it global see https://github.com/davidjbradshaw/iframe-resizer/blob/master/docs/use_with/vue.md#vue3-with-typescript
 
 interface ResizableHTMLElement extends HTMLElement {

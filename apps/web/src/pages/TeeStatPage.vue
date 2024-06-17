@@ -99,9 +99,9 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import Chart from 'chart.js/auto'
-import type StatsData from '@tee/common/src/stats/types'
 import StatsApi from '@/service/api/statsApi'
 import { CalloutType } from '@/types/elementsPropsTypes'
+import { StatsData } from '@tee/common'
 
 const statsData = ref<StatsData | null>(null)
 const chartCanvas = ref<HTMLCanvasElement | null>(null)
