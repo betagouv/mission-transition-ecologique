@@ -22,7 +22,10 @@
           :project-description="projectDescription"
           :project-more-description="projectMoreDescription"
         />
-        <ProjectPrograms :objective="themeObjective" />
+        <ProjectPrograms
+          id="project-aids"
+          :objective="themeObjective"
+        />
         <div
           id="project-contact"
           ref="TeeProjectFormContainer"
@@ -81,7 +84,6 @@ onBeforeMount(() => {
     theme.value = Theme.getById(project.value?.mainTheme)
   }
   relatedProjects.value = project.value?.linkedProjects.map((projectId: ProjectId) => getProjectById(projectId))
-  console.log('project', project, theme)
 })
 </script>
 <style scoped>
