@@ -65,7 +65,7 @@ jobs:
           cache: 'npm'
       - run: npm clean-install
 
-      - run: npx nx run @tee/vue:vue-type-check
+      - run: npx nx run @tee/web:vue-type-check
 
   unit-test:
     name: Run unit tests
