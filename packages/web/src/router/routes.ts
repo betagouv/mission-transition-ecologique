@@ -59,7 +59,7 @@ export const routes = [
         props: true
       },
       {
-        path: 'resultat/:projectId',
+        path: 'resultat/projets/:projectId',
         component: ProjectDetail as Component,
         name: RouteName.ProjectResultDetail,
         beforeEnter: [Hook.hasProject, Hook.setUsedTracks, Hook.hasUsedTracks],

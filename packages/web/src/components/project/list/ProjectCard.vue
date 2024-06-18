@@ -5,7 +5,6 @@
     :description="project.shortDescription"
     :img-src="`${publicPath}${project.image}`"
     :alt-img="`image / ${project.title}`"
-    :link="`/project/${project.id}`"
     :no-arrow="true"
   ></DsfrCard>
 </template>

@@ -2,7 +2,7 @@
   <div class="fr-my-4v">
     <div class="fr-h3 fr-my-8v">💰 Mes aides</div>
     <DsfrHighlight
-      v-if="siret === undefined"
+      v-if="!siret || siret === ''"
       class="fr-highlight-border--yellow fr-highlight-bg--yellow-light fr-m-0 fr-p-0"
       :large="true"
     >
@@ -16,12 +16,16 @@
             />
             <div class="fr-col-9 fr-col-xs-8">
               <div class="fr-pb-2v">Complétez votre profil en 2 minutes et accédez aux aides éligibles pour votre entreprise.</div>
-              <DsfrButton
-                label="Compléter mon profil"
-                :secondary="true"
-                size="sm"
-                @click="completeProfile"
-              />
+              <router-link
+                class="tee-btn-sidebar fr-btn fr-btn--tertiary-no-outline"
+                :to="navigationStore.routeByTrackId(TrackId.Siret)"
+              >
+                <DsfrButton
+                  label="Compléter mon profil"
+                  :secondary="true"
+                  size="sm"
+                />
+              </router-link>
             </div>
           </div>
         </div>
@@ -69,7 +73,7 @@
 import Config from '@/config'
 import TrackStructure from '@/utils/track/trackStructure'
 import { useProgramStore } from '@/stores/program'
-import { type ProgramData, PublicodeObjective } from '@/types'
+import { type ProgramData, PublicodeObjective, TrackId } from '@/types'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import Contact from '@/utils/contact'
 import { RouteName } from '@/types/routeType'
@@ -113,9 +117,5 @@ const getRouteToProgramDetail = (programId: string): RouteLocationRaw => {
     params: { programId },
     query: navigationStore.query
   }
-}
-
-const completeProfile = () => {
-
 }
 </script>

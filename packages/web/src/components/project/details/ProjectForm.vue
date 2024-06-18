@@ -24,138 +24,138 @@
           <div class="fr-grid-row fr-grid-row--gutters fr-mb-2v">
             <div class="fr-col-12 fr-col-md-12">
               <DsfrInput
-                :model-value="opportunityForm.project.value"
+                :model-value="projectForm.project.value"
                 label-visible
-                :is-valid="opportunityForm.project.isValid"
-                :required="opportunityForm.project.required"
-                :label="opportunityForm.project.label"
-                :disabled="opportunityForm.project.disabled"
+                :is-valid="projectForm.project.isValid"
+                :required="projectForm.project.required"
+                :label="projectForm.project.label"
+                :disabled="projectForm.project.disabled"
               />
             </div>
             <div class="fr-col-12 fr-col-md-6">
               <DsfrInputGroup
-                :error-message="getErrorMessage(opportunityForm.name)"
-                :valid-message="getValidMessage(opportunityForm.name)"
+                :error-message="getErrorMessage(projectForm.name)"
+                :valid-message="getValidMessage(projectForm.name)"
               >
                 <DsfrInput
                   type="text"
-                  :model-value="opportunityForm.name.value"
+                  :model-value="projectForm.name.value"
                   label-visible
-                  :is-valid="opportunityForm.name.isValid"
-                  :required="opportunityForm.name.required"
-                  :label="opportunityForm.name.label"
-                  @update:model-value="updateOpportunityForm($event, 'name')"
-                  @focusout="validateFormField(opportunityForm.name)"
+                  :is-valid="projectForm.name.isValid"
+                  :required="projectForm.name.required"
+                  :label="projectForm.name.label"
+                  @update:model-value="updateProjectForm($event, 'name')"
+                  @focusout="validateFormField(projectForm.name)"
                 >
                 </DsfrInput>
               </DsfrInputGroup>
             </div>
             <div class="fr-col-12 fr-col-md-6">
               <DsfrInputGroup
-                :error-message="getErrorMessage(opportunityForm.surname)"
-                :valid-message="getValidMessage(opportunityForm.surname)"
+                :error-message="getErrorMessage(projectForm.surname)"
+                :valid-message="getValidMessage(projectForm.surname)"
               >
                 <DsfrInput
                   type="text"
-                  :model-value="opportunityForm.surname.value"
+                  :model-value="projectForm.surname.value"
                   label-visible
-                  :is-valid="opportunityForm.surname.isValid"
-                  :required="opportunityForm.surname.required"
-                  :label="opportunityForm.surname.label"
-                  @update:model-value="updateOpportunityForm($event, 'surname')"
-                  @focusout="validateFormField(opportunityForm.surname)"
+                  :is-valid="projectForm.surname.isValid"
+                  :required="projectForm.surname.required"
+                  :label="projectForm.surname.label"
+                  @update:model-value="updateProjectForm($event, 'surname')"
+                  @focusout="validateFormField(projectForm.surname)"
                 >
                 </DsfrInput>
               </DsfrInputGroup>
             </div>
             <div class="fr-col-12 fr-col-md-12">
               <DsfrInputGroup
-                :error-message="getErrorMessage(opportunityForm.email)"
-                :valid-message="getValidMessage(opportunityForm.email)"
+                :error-message="getErrorMessage(projectForm.email)"
+                :valid-message="getValidMessage(projectForm.email)"
               >
                 <DsfrInput
                   type="email"
-                  :model-value="opportunityForm.email.value"
+                  :model-value="projectForm.email.value"
                   label-visible
-                  :is-valid="opportunityForm.email.isValid"
-                  :required="opportunityForm.email.required"
-                  :label="opportunityForm.email.label"
-                  :hint="opportunityForm.email.hint"
-                  @update:model-value="updateOpportunityForm($event, 'email')"
-                  @focusout="validateFormField(opportunityForm.email)"
+                  :is-valid="projectForm.email.isValid"
+                  :required="projectForm.email.required"
+                  :label="projectForm.email.label"
+                  :hint="projectForm.email.hint"
+                  @update:model-value="updateProjectForm($event, 'email')"
+                  @focusout="validateFormField(projectForm.email)"
                 >
                 </DsfrInput>
               </DsfrInputGroup>
             </div>
             <div class="fr-col-12 fr-col-md-12">
               <DsfrInputGroup
-                :error-message="getErrorMessage(opportunityForm.tel)"
-                :valid-message="getValidMessage(opportunityForm.tel)"
+                :error-message="getErrorMessage(projectForm.tel)"
+                :valid-message="getValidMessage(projectForm.tel)"
               >
                 <DsfrInput
                   type="tel"
-                  :model-value="opportunityForm.tel.value"
+                  :model-value="projectForm.tel.value"
                   label-visible
-                  :is-valid="opportunityForm.tel.isValid"
-                  :required="opportunityForm.tel.required"
-                  :label="opportunityForm.tel.label"
-                  :hint="opportunityForm.tel.hint"
-                  @update:model-value="updateOpportunityForm($event, 'tel')"
-                  @focusout="validateFormField(opportunityForm.tel)"
+                  :is-valid="projectForm.tel.isValid"
+                  :required="projectForm.tel.required"
+                  :label="projectForm.tel.label"
+                  :hint="projectForm.tel.hint"
+                  @update:model-value="updateProjectForm($event, 'tel')"
+                  @focusout="validateFormField(projectForm.tel)"
                 >
                 </DsfrInput>
               </DsfrInputGroup>
             </div>
             <div class="fr-col-12 fr-col-md-12">
               <DsfrInputGroup
-                :error-message="getErrorMessage(opportunityForm.siret)"
-                :valid-message="getValidMessage(opportunityForm.siret)"
+                :error-message="getErrorMessage(projectForm.siret)"
+                :valid-message="getValidMessage(projectForm.siret)"
               >
                 <DsfrInput
                   type="text"
-                  :model-value="opportunityForm.siret.value"
+                  :model-value="projectForm.siret.value"
                   label-visible
-                  :is-valid="opportunityForm.siret.isValid"
-                  :required="opportunityForm.siret.required"
-                  :label="opportunityForm.siret.label"
-                  :hint="opportunityForm.siret.hint"
-                  @update:model-value="updateOpportunityForm($event, 'siret')"
-                  @focusout="validateFormField(opportunityForm.siret)"
+                  :is-valid="projectForm.siret.isValid"
+                  :required="projectForm.siret.required"
+                  :label="projectForm.siret.label"
+                  :hint="projectForm.siret.hint"
+                  @update:model-value="updateProjectForm($event, 'siret')"
+                  @focusout="validateFormField(projectForm.siret)"
                 >
                 </DsfrInput>
               </DsfrInputGroup>
             </div>
             <div class="fr-col-12 fr-col-md-12">
               <DsfrInputGroup
-                :error-message="getErrorMessage(opportunityForm.needs)"
-                :valid-message="getValidMessage(opportunityForm.needs)"
+                :error-message="getErrorMessage(projectForm.needs)"
+                :valid-message="getValidMessage(projectForm.needs)"
               >
                 <DsfrInput
                   type="textarea"
                   is-textarea
                   rows="8"
-                  :model-value="opportunityForm.needs.value"
+                  :model-value="projectForm.needs.value"
                   label-visible
-                  :is-valid="opportunityForm.needs.isValid"
-                  :required="opportunityForm.needs.required"
-                  :label="opportunityForm.needs.label"
-                  @update:model-value="updateOpportunityForm($event, 'needs')"
-                  @focusout="validateFormField(opportunityForm.needs)"
+                  :is-valid="projectForm.needs.isValid"
+                  :required="projectForm.needs.required"
+                  :label="projectForm.needs.label"
+                  @update:model-value="updateProjectForm($event, 'needs')"
+                  @focusout="validateFormField(projectForm.needs)"
                 >
                 </DsfrInput>
               </DsfrInputGroup>
             </div>
             <div class="fr-col-12 fr-col-md-12">
               <DsfrCheckbox
-                :model-value="opportunityForm.cgu.value"
+                :model-value="projectForm.cgu.value"
                 name="cgu"
-                :is-valid="opportunityForm.cgu.isValid"
-                :required="opportunityForm.cgu.required"
-                @update:model-value="updateOpportunityForm($event, 'cgu')"
-                @focusout="validateFormField(opportunityForm.cgu)"
+                :is-valid="projectForm.cgu.isValid"
+                :required="projectForm.cgu.required"
+                @update:model-value="updateProjectForm($event, 'cgu')"
+                @focusout="validateFormField(projectForm.cgu)"
               >
                 <template #label>
-                  <span> {{ opportunityForm.cgu.label }} <code>*</code></span>
+                  <span> {{ projectForm.cgu.label }} <code>*</code></span>
                 </template>
               </DsfrCheckbox>
 
@@ -197,7 +197,7 @@
                 icon="ri-arrow-right-line"
                 icon-right
                 :loading="isLoading"
-                @click="saveOpportunityForm()"
+                @click="saveProjectForm()"
               />
             </div>
           </div>
@@ -255,8 +255,8 @@ import { DsfrInput, DsfrInputGroup, DsfrCheckbox } from '@gouvminint/vue-dsfr'
 import Matomo from '@/utils/matomo'
 import { RouteName } from '@/types/routeType'
 import { useRoute } from 'vue-router'
-import OpportunityApi from '@/service/api/opportunityApi'
-import type { ProjectFormType } from '@/types/opportunityFormType'
+import ProjectApi from '@/service/api/projectApi'
+import type { ProjectFormType } from '@/types/formsType'
 import Contact from '@/utils/contact'
 import PhoneValidator from '@tee/common/src/establishment/validator/phoneValidator'
 import EmailValidator from '@tee/common/src/establishment/validator/emailValidator'
@@ -271,7 +271,7 @@ interface Props {
 }
 
 const props = defineProps<Props>()
-const opportunityForm = ref<ProjectFormType>({
+const projectForm = ref<ProjectFormType>({
   project: { required: true, value: props.project?.title, label: 'Quel est votre projet?', disabled: true, isValid: true },
   name: { required: true, value: undefined, label: 'Prénom', isValid: undefined },
   surname: { required: true, value: undefined, label: 'Nom', isValid: undefined },
@@ -328,9 +328,9 @@ const isLoading = ref<boolean>(false)
 
 const isFormFilled = computed(() => {
   const isFilled = []
-  for (const key in opportunityForm.value) {
-    if (opportunityForm.value[key].required) {
-      isFilled.push(isFieldValid(opportunityForm.value[key]))
+  for (const key in projectForm.value) {
+    if (projectForm.value[key].required) {
+      isFilled.push(isFieldValid(projectForm.value[key]))
     }
   }
   return isFilled.every((v) => v)
@@ -341,12 +341,12 @@ const hasValidResponse = computed(() => {
 })
 
 const getMailTo = (): string => {
-  if (opportunityForm.value) {
-    const needsValue = opportunityForm.value.needs.value ? opportunityForm.value.needs.value : ''
-    const nameValue = opportunityForm.value.name.value ? opportunityForm.value.name.value : ''
-    const surnameValue = opportunityForm.value.surname.value ? opportunityForm.value.surname.value : ''
-    const telValue = opportunityForm.value.tel.value ? opportunityForm.value.tel.value : ''
-    const siretValue = opportunityForm.value.siret.value ? opportunityForm.value.siret.value : ''
+  if (projectForm.value) {
+    const needsValue = projectForm.value.needs.value ? projectForm.value.needs.value : ''
+    const nameValue = projectForm.value.name.value ? projectForm.value.name.value : ''
+    const surnameValue = projectForm.value.surname.value ? projectForm.value.surname.value : ''
+    const telValue = projectForm.value.tel.value ? projectForm.value.tel.value : ''
+    const siretValue = projectForm.value.siret.value ? projectForm.value.siret.value : ''
     return Contact.getMailtoUrl(
       Translation.t('form.errorEmail.subject', { project: props.project.title }),
       `${needsValue}
@@ -360,9 +360,9 @@ SIRET : ${siretValue}`
   return ''
 }
 
-const updateOpportunityForm = (ev: string | boolean, id: string) => {
-  if (opportunityForm.value) {
-    opportunityForm.value[id].value = ev
+const updateProjectForm = (ev: string | boolean, id: string) => {
+  if (projectForm.value) {
+    projectForm.value[id].value = ev
   }
 }
 
@@ -378,11 +378,11 @@ const validateFormField = (field: InputFieldUnionType): void => {
   }
 }
 
-const saveOpportunityForm = async () => {
+const saveProjectForm = async () => {
   try {
     isLoading.value = true
-    const opportunity = new OpportunityApi(opportunityForm.value, props.project.id)
-    requestResponse.value = await opportunity.fetch()
+    const project = new ProjectApi(projectForm.value, props.project.id)
+    requestResponse.value = await project.fetch()
 
     // analytics / send event
     Matomo.sendEvent(TrackId.Results, route.name === RouteName.CatalogDetail ? 'send_form_catalog' : 'send_form')
