@@ -2,7 +2,10 @@
   <!-- PROGRAMS AS LIST OF CARDS -->
   <div class="fr-container--fluid fr-container--fluid--no-overflow fr-mt-6v">
     <div class="fr-grid-row fr-grid-row--center">
-      <div class="fr-col-9 fr-col-xs-12 fr-col-offset-md-3 fr-col-offset-lg-2 fr-mb-3v fr-pl-3v">
+      <div
+        v-if="(!hasObjectiveCard || programStore.hasObjectiveTypeSelected()) && !hasSpinner"
+        class="fr-col-9 fr-col-xs-12 fr-col-offset-md-3 fr-col-offset-lg-2 fr-mb-3v fr-pl-3v"
+      >
         <ProgramFilterByTheme v-if="havePrograms && countPrograms > 1" />
       </div>
       <div
@@ -20,6 +23,7 @@
         class="fr-col-3 fr-col-lg-2 fr-pt-12w fr-col-hidden fr-col-unhidden-md"
       >
         <img
+          v-if="!hasObjectiveCard"
           :src="`${publicPath}images/TEE_project_priority.svg`"
           alt=""
           class="fr-responsive-img fr-col-10 fr-col-xl-8 fr-col-hidden fr-col-unhidden-lg fr-pt-10w"

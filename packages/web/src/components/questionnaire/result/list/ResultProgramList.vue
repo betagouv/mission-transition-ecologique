@@ -8,7 +8,10 @@
       >
         <ProgramModalFilter />
       </div>
-      <div class="fr-col-9 fr-col-offset-md-3 fr-col-offset-lg-2 fr-mb-3v fr-col-xs-12 fr-pl-3v">
+      <div
+        v-if="(!hasObjectiveCard || programStore.hasObjectiveTypeSelected()) && !hasSpinner"
+        class="fr-col-9 fr-col-offset-md-3 fr-col-offset-lg-2 fr-mb-3v fr-col-xs-12 fr-pl-3v"
+      >
         <ProgramFilterByTheme v-if="havePrograms && countPrograms > 1" />
       </div>
       <div
