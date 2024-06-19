@@ -104,10 +104,10 @@
 import { computed } from 'vue'
 import { type ProgramData } from '@/types'
 import { Project } from '@tee/common/src/project/types'
+import projectData from '@tee/data/static/project.json'
 import UsedTrack from '@/utils/track/usedTrack'
 import { useProgramStore } from '@/stores/program'
 import Config from '@/config'
-import projectData from '@tee/data/static/project.json'
 import Theme from '@/utils/theme'
 
 interface ProjectListProps {
