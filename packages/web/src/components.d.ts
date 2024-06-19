@@ -7,6 +7,7 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    CatalogList: typeof import('./components/catalog/CatalogList.vue')['default']
     ContactButton: typeof import('./components/contact/ContactButton.vue')['default']
     ContactHelp: typeof import('./components/contact/ContactHelp.vue')['default']
     ContactMail: typeof import('./components/contact/ContactMail.vue')['default']
@@ -35,6 +36,9 @@ declare module 'vue' {
     ProgramTile: typeof import('./components/program/detail/ProgramTile.vue')['default']
     ProjectCard: typeof import('./components/project/list/ProjectCard.vue')['default']
     ProjectList: typeof import('./components/project/list/ProjectList.vue')['default']
+    ResultHeader: typeof import('./components/questionnaire/result/list/ResultHeader.vue')['default']
+    ResultList: typeof import('./components/questionnaire/result/list/ResultList.vue')['default']
+    ResultListNoResults: typeof import('./components/questionnaire/result/list/ResultListNoResults.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TeeBanner: typeof import('./components/element/TeeBanner.vue')['default']
