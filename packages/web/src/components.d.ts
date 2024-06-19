@@ -39,6 +39,8 @@ declare module 'vue' {
     ResultHeader: typeof import('./components/questionnaire/result/list/ResultHeader.vue')['default']
     ResultList: typeof import('./components/questionnaire/result/list/ResultList.vue')['default']
     ResultListNoResults: typeof import('./components/questionnaire/result/list/ResultListNoResults.vue')['default']
+    ResultProgramList: typeof import('./components/questionnaire/result/list/ResultProgramList.vue')['default']
+    ResultProjectList: typeof import('./components/questionnaire/result/list/ResultProjectList.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TeeBanner: typeof import('./components/element/TeeBanner.vue')['default']

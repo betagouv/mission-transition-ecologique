@@ -5,6 +5,10 @@
 .fr-card {
   overflow: hidden;
 
+  &-priority {
+    border: solid 0.20rem setting.$base-green;
+  }
+
   :hover {
     cursor: pointer;
   }

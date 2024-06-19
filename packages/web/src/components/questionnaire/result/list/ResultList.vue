@@ -1,33 +1,12 @@
 <template>
   <div class="fr-container--fluid fr-container--fluid--no-overflow fr-px-0 fr-mb-0 fr-mt-6v fr-mr-lg-6v">
     <div class="fr-grid-row fr-grid-row--center fr-justify-center">
-      <div class="fr-col-9 fr-col-offset-md-2 fr-col-xs-12 fr-px-0 fr-px-md-4v">
+      <div class="fr-col-9 fr-col-offset-md-3 fr-col-offset-lg-2 fr-mb-3v fr-col-xs-12 fr-pl-3v">
         <ResultHeader v-if="!navigationStore.isCatalog()" />
-      </div>
-      <ProgramFilters
-        v-if="(!hasSpinner || !hasError) && selectedTabIndex === 1"
-        :has-error="hasError"
-        :has-spinner="hasSpinner"
-      />
-      <div
-        v-if="selectedTabIndex === 0"
-        class="fr-col-2"
-      >
-        <div
-          v-if="!hasSpinner || !hasError"
-          class="fr-col-hidden fr-col-unhidden-lg"
-        >
-          <img
-            :src="`${publicPath}images/TEE_project_priority.svg`"
-            alt=""
-            class="fr-responsive-img"
-            :style="imgInlineStyle"
-          />
-        </div>
       </div>
       <DsfrTabs
         ref="tabs"
-        class="fr-col-9 fr-col-xs-12 fr-px-0"
+        class="fr-col-12 fr-px-0"
         :class="!hasSpinner || !hasError"
         :tab-list-name="tabListName"
         :tab-titles="tabTitles"
@@ -41,10 +20,7 @@
           :selected="selectedTabIndex === 0"
           :asc="asc"
         >
-          <ProjectList
-            :filtered-programs="filteredPrograms"
-            @window-resize="defineProjectPriorityImagePosition"
-          />
+          <ResultProjectList :filtered-programs="filteredPrograms" />
         </DsfrTabContent>
 
         <DsfrTabContent
@@ -54,7 +30,7 @@
           :selected="selectedTabIndex === 1"
           :asc="asc"
         >
-          <ProgramList :filtered-programs="filteredPrograms" />
+          <ResultProgramList :filtered-programs="filteredPrograms" />
         </DsfrTabContent>
       </DsfrTabs>
     </div>
@@ -68,16 +44,12 @@ import { useProgramStore } from '@/stores/program'
 import { ProgramData, TrackId } from '@/types'
 import { computed, onBeforeMount } from 'vue'
 import Matomo from '@/utils/matomo'
-import Config from '@/config'
 
 const navigationStore = useNavigationStore()
 const programStore = useProgramStore()
 
-const publicPath = Config.publicPath
-
 const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)
-const imgPosition = ref<string>('')
 
 const hasSpinner = computed(() => {
   return programs.value === undefined && !hasError.value
@@ -97,14 +69,6 @@ const selectTab = (idx: number) => {
   asc.value = selectedTabIndex.value < idx
   selectedTabIndex.value = idx
 }
-const defineProjectPriorityImagePosition = (position: string) => {
-  console.log('position', position)
-  imgPosition.value = position
-}
-const imgInlineStyle = computed(() => {
-  console.log('imgPosition', imgPosition.value)
-  return `position: relative; left: 0; top: ${imgPosition.value}px; max-height: 18rem`
-})
 
 onBeforeMount(async () => {
   const result = useUsedTrackStore().hasUsedTracks() ? await programStore.programsByUsedTracks : await programStore.programs

@@ -32,12 +32,12 @@
       <div class="fr-col-9 fr-col-offset-md-3 fr-col-offset-lg-2 fr-col-xs-12">
         <ResultHeader v-if="!navigationStore.isCatalog() && !hasSpinner" />
       </div>
-      <div class="fr-col-9 fr-col-offset-md-3 fr-col-offset-lg-2 fr-mb-3v fr-col-xs-12">
+      <div class="fr-col-9 fr-col-offset-md-3 fr-col-offset-lg-2 fr-my-2w fr-col-xs-12 fr-pl-3v">
         <ProgramFilterByTheme v-if="havePrograms && countPrograms > 1" />
       </div>
       <div
         v-if="hasObjectiveCard && !hasSpinner"
-        class="fr-col-9 fr-col-offset-md-3 fr-col-offset-lg-2 fr-col-xs-12"
+        class="fr-col-9 fr-col-offset-md-3 fr-col-offset-lg-2 fr-col-xs-12 fr-mt-1w"
       >
         <TeeObjectiveCard
           :objective="objective as PublicodeObjective"
@@ -45,36 +45,15 @@
           radius-size="2-5v"
         />
       </div>
-      <!--      <div class="fr-mt-4v fr-pl-2w fr-pl-md-0 fr-mb-2v fr-col-9 fr-col-offset-sm-3 fr-col-offset-lg-2 fr-col-xs-12">-->
-      <!--        <div v-if="havePrograms && countPrograms > 1">-->
-      <!--          {{ countFilteredPrograms }}-->
-      <!--          {{ countFilteredPrograms > 1 ? Translation.t('results.results') : Translation.t('results.result') }}-->
-      <!--        </div>-->
-      <!--      </div>-->
       <div
         v-if="!hasSpinner"
         class="fr-col-2 fr-col-md-3 fr-col-lg-2 fr-col-hidden fr-col-unhidden-md"
       >
         <div class="fr-sidemenu fr-pr-0 fr-mr-3v">
-          <div class="fr-text--bold fr-text-left fr-mb-3v">Filtres</div>
+          <div class="fr-text--bold fr-text-left fr-mb-3v fr-mt-6w">Filtres</div>
           <ProgramFiltersAccordion />
         </div>
       </div>
-      <!--      <div class="fr-col-9 fr-col-xs-12">-->
-      <!--        <div class="fr-container&#45;&#45;fluid fr-container&#45;&#45;fluid&#45;&#45;no-overflow">-->
-      <!--          <div class="fr-grid-row fr-grid-row&#45;&#45;center">-->
-      <!--            <router-link-->
-      <!--              v-for="program in filteredPrograms"-->
-      <!--              :id="program.id"-->
-      <!--              :key="program.id"-->
-      <!--              :to="getRouteToProgramDetail(program.id)"-->
-      <!--              class="fr-col-12 fr-card fr-enlarge-link fr-card&#45;&#45;horizontal-tier fr-mb-10v"-->
-      <!--            >-->
-      <!--              <ProgramCard :program="program" />-->
-      <!--            </router-link>-->
-      <!--          </div>-->
-      <!--        </div>-->
-      <!--      </div>-->
       <div class="fr-col-9 fr-col-xs-12">
         <ProgramList :filtered-programs="filteredPrograms" />
       </div>
