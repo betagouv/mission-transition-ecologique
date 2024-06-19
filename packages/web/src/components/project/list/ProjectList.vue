@@ -69,17 +69,6 @@ const countFilteredPrograms = computed(() => {
 })
 
 const sortedProjects = computed(() => {
-  if (props.filteredPrograms) {
-    console.log(
-      'Projects',
-      (projectData as unknown as Project[])
-        .filter((project: Project) => {
-          return project.programs.some((program) => props.filteredPrograms!.some((res) => res.id === program))
-        })
-        .sort((a, b) => b.priority - a.priority)
-    )
-  }
-
   return props.filteredPrograms
     ? (projectData as unknown as Project[])
         .filter((project: Project) => {
