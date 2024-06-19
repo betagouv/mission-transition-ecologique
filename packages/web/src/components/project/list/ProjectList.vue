@@ -51,12 +51,15 @@ import Translation from '@/utils/translation'
 import projectData from '@tee/data/static/project.json'
 import UsedTrack from '@/utils/track/usedTrack'
 import Theme from '@/utils/theme'
+import { useProgramStore } from '@/stores/program'
 
 interface ProjectListProps {
   filteredPrograms?: ProgramData[]
 }
 
 const props = defineProps<ProjectListProps>()
+
+const programStore = useProgramStore()
 
 const hasError = ref<boolean>(false)
 
@@ -86,8 +89,13 @@ const haveProjects = computed(() => {
   return countProjects.value > 0
 })
 
+const hasObjectiveSelected = computed(() => {
+  return programStore.hasObjectiveTypeSelected()
+})
+
 const priorityProject = computed(() => {
-  return sortedProjects.value ? sortedProjects.value.slice(0, 3) : undefined
+  const projectQty = hasObjectiveSelected.value ? 1 : 3
+  return sortedProjects.value ? sortedProjects.value.slice(0, projectQty) : undefined
 })
 
 const isPriorityProject = (project: Project) => {
