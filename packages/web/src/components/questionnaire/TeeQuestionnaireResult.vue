@@ -5,8 +5,8 @@
   >
     <TeeEligibilityCriteriaBar
       v-if="linkToPreviousButton"
-      bg-color="blue-light"
-      bg-bar-color="blue--light"
+      :bg-color="Color.blueLight"
+      :bg-bar-color="Color.blueLight"
       :previous-route="linkToPreviousButton"
     />
     <ResultList />
@@ -19,6 +19,7 @@ import { useUsedTrackStore } from '@/stores/usedTrack'
 import { useNavigationStore } from '@/stores/navigation'
 import { computed } from 'vue'
 import TeeEligibilityCriteriaBar from '@/components/program/eligibilityCriteria/TeeEligibilityCriteriaBar.vue'
+import { Color } from '@/types'
 
 const navigationStore = useNavigationStore()
 const usedTrackStore = useUsedTrackStore()
