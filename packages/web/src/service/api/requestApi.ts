@@ -1,9 +1,4 @@
-import { Result } from 'true-myth'
-
-export default abstract class RequestApi<T> {
-  protected url: string = ''
-  protected query: string = ''
-
+export default class RequestApi {
   public static buildUrl(url: string, dataPath?: Record<string, string>): string {
     if (!dataPath) {
       return url
@@ -18,15 +13,5 @@ export default abstract class RequestApi<T> {
 
   protected static buildPath(url: string, placeholderName: string, placeholderData: string): string {
     return url.replace('{' + placeholderName + '}', placeholderData)
-  }
-
-  async get(): Promise<Result<T[], Error>> {
-    const url: string = this.url + '?' + this.query
-    try {
-      const response = await fetch(url)
-      return Result.ok((await response.json()) as T[])
-    } catch (error: unknown) {
-      return Result.err(error as Error)
-    }
   }
 }
