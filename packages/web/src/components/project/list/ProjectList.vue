@@ -44,13 +44,13 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onBeforeMount } from 'vue'
+import { computed } from 'vue'
 import { type ProgramData } from '@/types'
 import { Project } from '@tee/common/src/project/types'
 import Translation from '@/utils/translation'
+import projectData from '@tee/data/static/project.json'
 import UsedTrack from '@/utils/track/usedTrack'
 import Theme from '@/utils/theme'
-import { useProjectStore } from '@/stores/project'
 
 interface ProjectListProps {
   filteredPrograms?: ProgramData[]
@@ -58,8 +58,6 @@ interface ProjectListProps {
 
 const props = defineProps<ProjectListProps>()
 
-const projectStore = useProjectStore()
-const projects = ref<Project[]>()
 const hasError = ref<boolean>(false)
 
 const hasSpinner = computed(() => {
@@ -71,8 +69,19 @@ const countFilteredPrograms = computed(() => {
 })
 
 const sortedProjects = computed(() => {
-  return props.filteredPrograms && projects.value
-    ? projects.value
+  if (props.filteredPrograms) {
+    console.log(
+      'Projects',
+      (projectData as unknown as Project[])
+        .filter((project: Project) => {
+          return project.programs.some((program) => props.filteredPrograms!.some((res) => res.id === program))
+        })
+        .sort((a, b) => b.priority - a.priority)
+    )
+  }
+
+  return props.filteredPrograms
+    ? (projectData as unknown as Project[])
         .filter((project: Project) => {
           return project.programs.some((program) => props.filteredPrograms!.some((res) => res.id === program))
         })
@@ -102,12 +111,5 @@ const objective = computed(() => {
   }
 
   return ''
-})
-
-onBeforeMount(async () => {
-  const result = await projectStore.projects
-  if (result.isOk) {
-    projects.value = result.value as unknown as Project[]
-  }
 })
 </script>
