@@ -8,8 +8,9 @@ export default class ProjectApi extends RequestApi<Project> {
 
   async get(): Promise<Result<Project[], Error>> {
     //TODO replace with api call once the endpoint is available
-    return new Promise((resolve) => {
-      return resolve(projectData)
+    return new Promise((resolve, reject) => {
+      if (!projectData) reject(new Error('No project data'))
+      else resolve(Result.ok(projectData as unknown as Project[]))
     })
   }
   async getOne(id: string): Promise<Result<Project, Error>> {
