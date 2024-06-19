@@ -11,6 +11,7 @@ $base-yellow: #facf35;
 $base-yellow-light:#fef7da;
 
 $colors: (
+  "white": color.$white,
   "yellow": (
     "background-color": $base-yellow,
     "color": var(--text-action-high-blue-france)

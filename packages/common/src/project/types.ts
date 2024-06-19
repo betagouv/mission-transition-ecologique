@@ -15,6 +15,7 @@ export interface Project {
   mainTheme: ThemeId // nom du thème principal (pour l'instant, donne sa couleur dans la banèire)
   programs: ProgramData['id'][] // liste des programmes associés au projet
   linkedProjects: ProjectId[] // liste de projets à afficher dans projets complémentaires, en bas de la page Projet
+  priority: number
 }
 
 export type ProjectId = (typeof projects)[number]['id']
