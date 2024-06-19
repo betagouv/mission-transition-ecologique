@@ -2,10 +2,11 @@
   <ProjectHeader
     class="fr-col-12"
     :project-title="projectTitle"
+    :project-id="projectId"
     :project-img="projectImg"
     :color="theme?.color"
   />
-  <div class="fr-col-12 fr-container--fluid fr-px-16v">
+  <div class="fr-col-12 fr-container--fluid fr-px-md-16v">
     <div class="fr-grid-row fr-pt-4v">
       <div class="fr-col-3 fr-col-sm-3 fr-hidden-xs">
         <DsfrButton
@@ -18,31 +19,21 @@
         <ProjectSideNav />
       </div>
       <div class="fr-col-8 fr-col-xs-12 fr-col-sm-9">
-        <ProjectDescription
-          :project-description="projectDescription"
-          :project-more-description="projectMoreDescription"
-        />
-        <ProjectPrograms
-          id="project-aids"
-          :objective="themeObjective"
-        />
-        <div
-          id="project-contact"
-          ref="TeeProjectFormContainer"
-          class="fr-tee-form-block fr-tee-form-container"
-        >
-          <ProjectForm
-            v-if="project"
-            :project="project"
-            :form-container-ref="TeeProjectFormContainer"
+        <DsfrAccordionsGroup>
+          <ProjectDescription
+            :project-description="projectDescription"
+            :project-more-description="projectMoreDescription"
           />
-        </div>
-        <hr class="divider fr-my-2v" />
-        <LinkedProjects
-          v-if="relatedProjects.length > 0"
-          id="project-linked-projects"
-          :related-projects="relatedProjects"
-        />
+          <ProjectPrograms
+            :objective="themeObjective"
+            :project="project"
+          />
+          <LinkedProjects
+            v-if="relatedProjects.length > 0"
+            id="project-linked-projects"
+            :related-projects="relatedProjects"
+          />
+        </DsfrAccordionsGroup>
       </div>
     </div>
   </div>
@@ -71,7 +62,6 @@ const projectTitle = computed(() => project.value?.title)
 const projectImg = computed(() => project.value?.image)
 const projectDescription = computed(() => project.value?.longDescription)
 const projectMoreDescription = computed(() => project.value?.moreDescription)
-const TeeProjectFormContainer = ref<HTMLElement | null | undefined>(null)
 const themeObjective = computed(() => theme.value?.value)
 
 onBeforeMount(() => {
@@ -86,8 +76,3 @@ onBeforeMount(() => {
   relatedProjects.value = project.value?.linkedProjects.map((projectId: ProjectId) => getProjectById(projectId))
 })
 </script>
-<style scoped>
-.divider {
-  border-top: 1px solid #ccc;
-}
-</style>

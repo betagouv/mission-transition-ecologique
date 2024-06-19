@@ -1,6 +1,11 @@
 <template>
-  <div class="fr-my-4v">
-    <div class="fr-h3 fr-my-8v">💰 Mes aides</div>
+  <DsfrAccordion
+    id="project-aids"
+    title="💰 Mes aides"
+    title-tag="h2"
+    :expanded-id="expandedId"
+    @expand="expandPrograms"
+  >
     <DsfrHighlight
       v-if="!siret || siret === ''"
       class="fr-highlight-border--yellow fr-highlight-bg--yellow-light fr-m-0 fr-p-0"
@@ -67,7 +72,18 @@
         </router-link>
       </div>
     </div>
-  </div>
+    <div
+      id="project-contact"
+      ref="TeeProjectFormContainer"
+      class="fr-tee-form-block fr-tee-form-container"
+    >
+      <ProjectForm
+        v-if="project"
+        :project="project"
+        :form-container-ref="TeeProjectFormContainer"
+      />
+    </div>
+  </DsfrAccordion>
 </template>
 <script setup lang="ts">
 import Config from '@/config'
@@ -79,11 +95,14 @@ import Contact from '@/utils/contact'
 import { RouteName } from '@/types/routeType'
 import { type RouteLocationRaw } from 'vue-router'
 import { useNavigationStore } from '@/stores/navigation'
+import { Project } from '@tee/common/src/project/types'
 
 interface Props {
   objective: PublicodeObjective | undefined
+  project: Project | undefined
 }
 const props = defineProps<Props>()
+const expandedId = ref<string | undefined>('project-aids')
 
 const publicPath: string = Config.publicPath
 const siret: undefined | string = TrackStructure.getSiret()
@@ -91,6 +110,7 @@ const programStore = useProgramStore()
 const imgPath: string = '/images/tracks/ecriture.svg'
 const programs = ref<ProgramData[]>()
 const navigationStore = useNavigationStore()
+const TeeProjectFormContainer = ref<HTMLElement | null | undefined>(null)
 
 const hasError = ref<boolean>(false)
 
@@ -103,7 +123,9 @@ const countFilteredPrograms = computed(() => {
 const filteredPrograms = computed(() => {
   return programs.value && props.objective ? programStore.getProgramsByObjective(programs.value, props.objective) : undefined
 })
-
+const expandPrograms = (id: string | undefined) => {
+  expandedId.value = id
+}
 onBeforeMount(async () => {
   const result = useUsedTrackStore().hasUsedTracks() ? await programStore.programsByUsedTracks : await programStore.programs
   if (result.isOk) {

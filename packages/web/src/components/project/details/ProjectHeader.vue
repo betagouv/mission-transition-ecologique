@@ -1,4 +1,11 @@
 <template>
+  <TeeEligibilityCriteriaBar
+    :bg-color="Color.blueLightnessed"
+    :bg-bar-color="Color.blueLighted"
+    :previous-route="routeToProjects"
+    message=""
+    message-icon=""
+  />
   <div class="backgroundProjectTitle">
     <img
       :src="`${publicPath}${projectImg}`"
@@ -14,14 +21,28 @@
 </template>
 <script setup lang="ts">
 import Config from '@/config'
+import TrackStructure from '@/utils/track/trackStructure'
+import { Color } from '@/types'
+import { RouteName } from '@/types/routeType'
+import { useNavigationStore } from '@/stores/navigation'
 
 interface Props {
   projectTitle: string | undefined
+  projectId: string | undefined
   projectImg: string | undefined
   color: string | undefined
 }
-defineProps<Props>()
+const props = defineProps<Props>()
 const publicPath = Config.publicPath
+const siret: undefined | string = TrackStructure.getSiret()
+const navigationStore = useNavigationStore()
+
+const routeToProjects = {
+  name: RouteName.QuestionnaireResult,
+  hash: '#' + props.projectId,
+  query: navigationStore.query
+}
+console.log(siret)
 </script>
 
 <style scoped>
