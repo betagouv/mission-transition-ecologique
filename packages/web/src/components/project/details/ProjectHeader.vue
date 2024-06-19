@@ -12,7 +12,7 @@
       :alt="`image / ${projectTitle}`"
     />
     <div
-      class="fr-h1 fr-mb-4v fr-text-center projectTitle"
+      class="fr-h1 fr-mb-4v fr-text-center fr-pb-8v projectTitle"
       :style="{ '--gradient-color': color }"
     >
       {{ projectTitle }}
@@ -46,7 +46,7 @@ const routeToProjects = {
 .backgroundProjectTitle {
   position: relative;
   width: 100%;
-  height: 300px;
+  height: 400px;
   overflow: hidden;
 }
 .backgroundProjectTitle img {
