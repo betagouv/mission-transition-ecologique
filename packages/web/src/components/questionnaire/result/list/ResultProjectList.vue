@@ -23,7 +23,7 @@
         class="fr-col-3 fr-col-lg-2 fr-pt-12w fr-col-hidden fr-col-unhidden-md"
       >
         <img
-          v-if="!hasObjectiveCard"
+          v-if="!hasObjectiveCard || programStore.hasObjectiveTypeSelected()"
           :src="`${publicPath}images/TEE_project_priority.svg`"
           alt=""
           class="fr-responsive-img fr-col-10 fr-col-xl-8 fr-col-hidden fr-col-unhidden-lg fr-pt-10w"

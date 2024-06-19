@@ -19,7 +19,7 @@
             <div
               v-for="project in sortedProjects"
               :key="project.id"
-              class="fr-col-10 fr-col-md-6 fr-col-lg-4"
+              class="fr-col-11 fr-col-sm-12 fr-col-md-6 fr-col-lg-4"
             >
               <!--              <router-link-->
               <!--                v-for="project in sortedProjects"-->
@@ -30,9 +30,9 @@
               <!--              >-->
               <ProjectCard
                 :project="project"
-                :is-priority-project="isPriorityProject(project)"
+                :is-priority-project="isPriorityProject(project) && objective === ''"
                 class="fr-radius-a--1v fr-card--shadow"
-                :class="{ 'fr-card-priority': isPriorityProject(project) }"
+                :class="{ 'fr-card-priority': isPriorityProject(project) && objective === '' }"
               />
               <!--              </router-link>-->
             </div>
@@ -49,6 +49,8 @@ import { type ProgramData } from '@/types'
 import { Project } from '@tee/common/src/project/types'
 import Translation from '@/utils/translation'
 import projectData from '@tee/data/static/project.json'
+import UsedTrack from '@/utils/track/usedTrack'
+import Theme from '@/utils/theme'
 
 interface ProjectListProps {
   filteredPrograms?: ProgramData[]
@@ -102,4 +104,12 @@ const priorityProject = computed(() => {
 const isPriorityProject = (project: Project) => {
   return priorityProject.value!.includes(project)
 }
+
+const objective = computed(() => {
+  if (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityObjective()) {
+    return Theme.getPublicodeObjectiveByObjective(UsedTrack.getPriorityObjective())
+  }
+
+  return ''
+})
 </script>
