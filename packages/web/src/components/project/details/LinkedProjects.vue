@@ -1,11 +1,11 @@
 <template>
   <DsfrAccordion
     id="project-linked-projects"
-    title="Projets complémentaires"
-    title-tag="h2"
     :expanded-id="expandedId"
     @expand="expandRelatedProjects"
   >
+    <template #title><div class="fr-h3">Projets complémentaires</div></template>
+
     <TeeDsfrTags :tags="relatedProjectsTags" />
   </DsfrAccordion>
 </template>

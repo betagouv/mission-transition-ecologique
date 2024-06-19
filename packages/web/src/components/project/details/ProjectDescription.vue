@@ -1,28 +1,20 @@
 <template>
   <DsfrAccordion
     id="project-details"
-    title="❓ Qu'est ce que c'est ?"
-    title-tag="h2"
     :expanded-id="expandedId"
     @expand="expandDetails"
   >
-    <div
-      class="fr-mx-8v"
-      v-html="formatProjectDescription(projectDescription)"
-    />
+    <template #title><div class="fr-h3">❓ Qu'est ce que c'est ?</div></template>
+    <div v-html="formatProjectDescription(projectDescription)" />
   </DsfrAccordion>
 
   <DsfrAccordion
     id="project-more-details"
-    title="📚 Pour aller plus loin"
-    title-tag="h2"
     :expanded-id="expandedMoreId"
     @expand="expandMoreDetails"
   >
-    <div
-      class="fr-mx-8v"
-      v-html="formatProjectDescription(projectMoreDescription)"
-    />
+    <template #title><div class="fr-h3">📚 Pour aller plus loin</div></template>
+    <div v-html="formatProjectDescription(projectMoreDescription)" />
   </DsfrAccordion>
 </template>
 <script setup lang="ts">

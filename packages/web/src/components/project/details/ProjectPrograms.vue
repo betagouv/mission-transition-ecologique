@@ -1,11 +1,10 @@
 <template>
   <DsfrAccordion
     id="project-aids"
-    title="💰 Mes aides"
-    title-tag="h2"
     :expanded-id="expandedId"
     @expand="expandPrograms"
   >
+    <template #title><div class="fr-h3">💰 Mes aides</div></template>
     <DsfrHighlight
       v-if="!siret || siret === ''"
       class="fr-highlight-border--yellow fr-highlight-bg--yellow-light fr-m-0 fr-p-0"
