@@ -1,4 +1,4 @@
-import { CalloutType } from '@/types/elementsPropsTypes'
+import { CalloutType } from '@tee/web/src/types/elementsPropsTypes'
 
 export interface OpportunityFormType {
   [key: string]: StringFieldInputType | MandatoryStringFieldFormType | BooleanFieldInputType | ValidatedStringFieldInputType
