@@ -21,7 +21,6 @@
 </template>
 <script setup lang="ts">
 import Config from '@/config'
-import TrackStructure from '@/utils/track/trackStructure'
 import { Color } from '@/types'
 import { RouteName } from '@/types/routeType'
 import { useNavigationStore } from '@/stores/navigation'
@@ -34,7 +33,6 @@ interface Props {
 }
 const props = defineProps<Props>()
 const publicPath = Config.publicPath
-const siret: undefined | string = TrackStructure.getSiret()
 const navigationStore = useNavigationStore()
 
 const routeToProjects = {
@@ -42,7 +40,6 @@ const routeToProjects = {
   hash: '#' + props.projectId,
   query: navigationStore.query
 }
-console.log(siret)
 </script>
 
 <style scoped>
