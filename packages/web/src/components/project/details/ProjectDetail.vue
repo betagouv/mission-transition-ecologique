@@ -40,7 +40,7 @@
 </template>
 <script setup lang="ts">
 import { Project, ProjectId } from '@tee/common/src/project/types'
-import { projects } from '@tee/common/src/project/mockData'
+import projectData from '@tee/data/static/project.json'
 import { Theme as ThemeType } from '@/types'
 import Theme from '@tee/common/src/theme/theme'
 import { DsfrButton } from '@gouvminint/vue-dsfr'
@@ -49,7 +49,7 @@ interface Props {
 }
 const props = defineProps<Props>()
 const getProjectById = (id: string | ProjectId) => {
-  return projects.find((project: Project) => project.id === Number(id))
+  return (projectData as unknown as Project[]).find((project: Project) => project.id === Number(id))
 }
 const copyUrl = async () => {
   const pageUrl = window.location.href
@@ -70,6 +70,7 @@ onBeforeMount(() => {
     project.value = selectedProject
   }
   const themeProject = Theme.getById(project.value?.mainTheme)
+  console.log(themeProject, project, props.projectId)
   if (themeProject) {
     theme.value = Theme.getById(project.value?.mainTheme)
   }
