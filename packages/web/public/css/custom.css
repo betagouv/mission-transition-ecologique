@@ -10,12 +10,6 @@ WARNING :
 .fr-justify-center {
   justify-content: center;
 }
-.fr-text-center {
-  text-align: center;
-}
-.fr-text-right {
-  text-align: right;
-}
 .fr-card:hover {
   cursor: pointer !important;
 }
@@ -73,12 +67,6 @@ WARNING :
   display: flex;
   justify-content: center;
 }
-.fr-tee-form {
-  max-width: 685px;
-}
-.fr-tee-form-error {
-  text-align: center;
-}
 .fr-form-block .fr-input {
   background-color: white;
 }
@@ -122,7 +110,7 @@ button.fr-link:hover, .tee-router-link:hover {
 .tee-footer-operator-img {
   height: auto;
   max-height: 5.625rem;
-  width: 10rem !important;
+  max-width: 10rem !important;
 }
 .tee-footer-logo {
   box-shadow: none !important;
@@ -441,37 +429,6 @@ button.fr-link:hover, .tee-router-link:hover {
     height: 4rem;
   }
 }
-
-/* FORM */
-.fr-tee-form {
-  max-width: 685px;
-}
-.fr-tee-form-block {
-  background-color: #E8EDFF;
-  padding: 2em;
-  display: flex;
-  justify-content: center;
-}
-.fr-tee-form-block .fr-input {
-  background-color: white;
-}
-.fr-tee-form-error {
-  text-align: center;
-}
-.tee-form-response {
-  font-size: 1.3rem;
-  line-height: 1.3rem;
-}
-.tee-form-response-blue a {
-  white-space: nowrap;
-}
-.tee-form-response-blue {
-  color: #000091;
-}
-.tee-form-response-error {
-  color: #CE0500;
-}
-
 /* DEBUGGING STYLES */
 code {
   color: red !important;

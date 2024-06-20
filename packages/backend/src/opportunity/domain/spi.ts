@@ -21,6 +21,6 @@ export type OpportunityRepository = {
   getDailyOpportunitiesByContactId: (contactId: number) => Promise<Result<OpportunityDetailsShort[], Error>>
 }
 
-export type MailerService = {
+export type MailerManager = {
   sendReturnReceipt: (opportunity: Opportunity, program: Program) => Promise<Maybe<Error> | void>
 }

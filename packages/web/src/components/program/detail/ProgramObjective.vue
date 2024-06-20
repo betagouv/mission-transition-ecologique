@@ -37,7 +37,7 @@
 </template>
 
 <script setup lang="ts">
-import TeeButtonExternalLink from '@/components/element/TeeButtonExternalLink.vue'
+import TeeButtonExternalLink from '@/components/element/button/TeeButtonExternalLink.vue'
 import Translation from '@/utils/translation'
 import type { ProgramData } from '@/types'
 import { ProgramAidType } from '@tee/common/src/program/types'

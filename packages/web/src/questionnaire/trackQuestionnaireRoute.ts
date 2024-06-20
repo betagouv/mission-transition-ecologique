@@ -1,6 +1,6 @@
 import type { Track } from '@/types'
 import { TrackComponent, TrackId } from '@/types'
-import { QuestionnaireRoute } from '@tee/common/src/questionnaire/types'
+import { QuestionnaireRoute } from '@tee/common/src/questionnaire/types/types'
 
 export const questionnaireRoute: Track = {
   id: TrackId.QuestionnaireRoute,

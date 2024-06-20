@@ -1,0 +1,13 @@
+@mixin border-radius($radius, $corner, $important: false) {
+  @if (type-of($corner) == list) {
+    @each $corner-name in $corner {
+      @include border-corner-name-radius($radius, $corner-name, $important);
+    }
+  } @else {
+    @include border-corner-name-radius($radius, $corner, $important);
+  }
+}
+
+@mixin border-corner-name-radius($radius, $corner-name, $important: false) {
+  border-#{$corner-name}-radius: $radius if($important, !important, null);
+}

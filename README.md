@@ -51,8 +51,13 @@ height="75px">
 
 - [NodeJS](https://nodejs.org/) (v18)
 - Back: [Express](http://expressjs.com/) (v4)
+  - [tsoa](https://tsoa-community.github.io/docs/) (v5)
 - Front: [VueJS](https://vuejs.org/) (v3)
   - Design system: [DSFR](https://www.systeme-de-design.gouv.fr/) 
+     - Vue-dsfr: 
+        - https://github.com/dnum-mi/vue-dsfr/tree/main
+        - https://vue-dsfr.netlify.app/ (doc complete en cours de migration)
+        - https://docs.vue-ds.fr/ (nouvelle doc en cours de rédaction)
 
 ### Description
 
