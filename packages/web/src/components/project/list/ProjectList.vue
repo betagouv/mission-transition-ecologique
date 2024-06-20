@@ -21,20 +21,20 @@
               :key="project.id"
               class="fr-col-11 fr-col-sm-12 fr-col-md-6 fr-col-lg-4"
             >
-              <!--              <router-link-->
-              <!--                v-for="project in sortedProjects"-->
-              <!--                :id="project.id"-->
-              <!--                :key="project.id"-->
-              <!--                :to="getRouteToProjectDetail(project.id)"-->
-              <!--                class="fr-col-12 fr-col-md-6 fr-col-lg-4"-->
-              <!--              >-->
-              <ProjectCard
-                :project="project"
-                :is-priority-project="isPriorityProject(project) && objective === ''"
-                class="fr-radius-a--1v fr-card--shadow"
-                :class="{ 'fr-card-priority': isPriorityProject(project) && objective === '' }"
-              />
-              <!--              </router-link>-->
+              <router-link
+                v-for="project in sortedProjects"
+                :id="project.id"
+                :key="project.id"
+                :to="getRouteToProjectDetail(project.id)"
+                class="fr-col-12 fr-col-md-6 fr-col-lg-4"
+              >
+                <ProjectCard
+                  :project="project"
+                  :is-priority-project="isPriorityProject(project) && objective === ''"
+                  class="fr-radius-a--1v fr-card--shadow"
+                  :class="{ 'fr-card-priority': isPriorityProject(project) && objective === '' }"
+                />
+              </router-link>
             </div>
           </div>
         </div>
@@ -46,18 +46,22 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { type ProgramData } from '@/types'
-import { Project } from '@tee/common/src/project/types'
 import Translation from '@/utils/translation'
 import projectData from '@tee/data/static/project.json'
 import UsedTrack from '@/utils/track/usedTrack'
 import Theme from '@/utils/theme'
 import { useProgramStore } from '@/stores/program'
+import { RouteName } from '@/types/routeType'
+import { Project, ProjectId } from '@tee/common/src/project/types'
+import { useNavigationStore } from '@/stores/navigation'
+import { type RouteLocationRaw } from 'vue-router'
 
 interface ProjectListProps {
   filteredPrograms?: ProgramData[]
 }
 
 const props = defineProps<ProjectListProps>()
+const navigationStore = useNavigationStore()
 
 const programStore = useProgramStore()
 
@@ -109,5 +113,12 @@ const objective = computed(() => {
 
   return ''
 })
-</script>
 
+const getRouteToProjectDetail = (projectId: ProjectId): RouteLocationRaw => {
+  return {
+    name: RouteName.ProjectResultDetail,
+    params: { projectId },
+    query: navigationStore.query
+  }
+}
+</script>
