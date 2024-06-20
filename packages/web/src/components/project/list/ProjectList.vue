@@ -21,7 +21,7 @@
               :id="project.id"
               :key="project.id"
               :to="getRouteToProjectDetail(project.id)"
-              class="fr-col-11 fr-col-sm-12 fr-col-md-6 fr-col-lg-4"
+              class="fr-col-11 fr-col-sm-12 fr-col-md-6 fr-col-lg-4 no-outline"
             >
               <ProjectCard
                 :project="project"
