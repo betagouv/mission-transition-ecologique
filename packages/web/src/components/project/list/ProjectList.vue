@@ -16,26 +16,20 @@
       <div class="fr-col-12">
         <div class="fr-container--fluid fr-container--fluid--no-overflow">
           <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-grid-row-md--left">
-            <div
+            <router-link
               v-for="project in sortedProjects"
+              :id="project.id"
               :key="project.id"
+              :to="getRouteToProjectDetail(project.id)"
               class="fr-col-11 fr-col-sm-12 fr-col-md-6 fr-col-lg-4"
             >
-              <router-link
-                v-for="project in sortedProjects"
-                :id="project.id"
-                :key="project.id"
-                :to="getRouteToProjectDetail(project.id)"
-                class="fr-col-12 fr-col-md-6 fr-col-lg-4"
-              >
-                <ProjectCard
-                  :project="project"
-                  :is-priority-project="isPriorityProject(project) && objective === ''"
-                  class="fr-radius-a--1v fr-card--shadow"
-                  :class="{ 'fr-card-priority': isPriorityProject(project) && objective === '' }"
-                />
-              </router-link>
-            </div>
+              <ProjectCard
+                :project="project"
+                :is-priority-project="isPriorityProject(project) && objective === ''"
+                class="fr-radius-a--1v fr-card--shadow"
+                :class="{ 'fr-card-priority': isPriorityProject(project) && objective === '' }"
+              />
+            </router-link>
           </div>
         </div>
       </div>
