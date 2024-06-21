@@ -1,5 +1,5 @@
 import { Maybe, Result } from 'true-myth'
-import { MailerService } from '../../src/opportunity/domain/spi'
+import { MailerManager } from '../../src/opportunity/domain/spi'
 import OpportunityFeatures from '../../src/opportunity/domain/opportunityFeatures'
 import { expectToBeErr, expectToBeOk } from '../testing'
 import { fakeOpportunity } from './testing'
@@ -23,7 +23,7 @@ const dummyAddContact = (): Promise<Result<ContactId, Error>> => {
   return Promise.resolve(Result.ok({ id: 1 }))
 }
 
-const dummyMailRepository: MailerService = {
+const dummyMailRepository: MailerManager = {
   sendReturnReceipt: async () => {
     emailReceiptSent = true
     return Promise.resolve(void 0)

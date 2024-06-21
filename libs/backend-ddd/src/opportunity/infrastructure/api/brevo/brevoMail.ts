@@ -1,11 +1,9 @@
 import { SendSmtpEmail, TransactionalEmailsApi, TransactionalEmailsApiApiKeys } from '@getbrevo/brevo'
 import { Maybe } from 'true-myth'
 import Config from '../../../../config'
-// import { Program as ProgramType } from '../../../../program/domain/types/types';
-import { MailerService } from '../../../domain/spi'
-import { Opportunity } from '@tee/common'
-import { ProgramType as ProgramType } from '@tee/data'
-import { Program } from '@tee/common'
+import { MailerManager } from '../../../domain/spi'
+import { ProgramType } from '@tee/data'
+import { Program, Opportunity } from '@tee/common'
 
 export default class BrevoMail {
   private readonly _templateReceipt = 11
@@ -15,7 +13,7 @@ export default class BrevoMail {
     this._api.setApiKey(TransactionalEmailsApiApiKeys.apiKey, Config.BREVO_API_TOKEN)
   }
 
-  sendReturnReceipt: MailerService['sendReturnReceipt'] = async (
+  sendReturnReceipt: MailerManager['sendReturnReceipt'] = async (
     opportunity: Opportunity,
     program: ProgramType
   ): Promise<Maybe<Error> | void> => {

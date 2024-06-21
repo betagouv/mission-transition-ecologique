@@ -64,8 +64,7 @@
                 v-if="track.callout.hintIcon"
                 :class="track.callout.hintIcon"
                 aria-hidden="true"
-              >
-              </span>
+              />
               {{ track.callout.hint[Translation.lang] }}
             </i>
           </p>

@@ -1,5 +1,5 @@
 import { Result } from 'true-myth'
-import { RulesService } from './spi'
+import { RulesManager } from './spi'
 import { ProgramType } from '@tee/data'
 import { QuestionnaireData } from '@tee/common'
 
@@ -21,7 +21,7 @@ export const filterPrograms = (
   programs: ProgramType[],
   inputData: QuestionnaireData,
   currentDate: string,
-  rulesService: RulesService
+  rulesService: RulesManager
 ): Result<ProgramType[], Error> => {
   const filteredPrograms: ProgramType[] = []
 

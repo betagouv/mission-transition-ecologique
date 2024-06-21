@@ -37,7 +37,7 @@
             <span
               class="fr-icon-external-link-line fr-mr-1v"
               aria-hidden="true"
-            ></span>
+            />
             <a
               :href="link.href"
               class="fr-footer__content-link"

@@ -10,12 +10,12 @@
     <h3 class="tee-form-response tee-form-response-error fr-mb-2v">
       {{ Translation.t(`form.sorryError`) }}
     </h3>
-    <slot></slot>
+    <slot />
     <h6 class="tee-form-response-blue fr-mt-15v fr-mb-3v">
       {{ Translation.t('form.nowWhat') }}
     </h6>
     <p class="tee-form-response-blue fr-mb-15v">
-      <span v-html="Translation.ti(Translation.t('form.errorMsg'), { mailto: mailto, email: email })"></span>
+      <span v-html="Translation.ti(Translation.t('form.errorMsg'), { mailto: mailto, email: email })" />
     </p>
   </div>
 </template>

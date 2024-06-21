@@ -1,4 +1,13 @@
-import type { Translations, FormCallback, FormCallbackDataMapping, FormOptions, PropertyPath, TrackId, QuestionnaireData } from '@/types'
+import {
+  Translations,
+  FormCallback,
+  FormCallbackDataMapping,
+  FormOptions,
+  PropertyPath,
+  TrackId,
+  QuestionnaireData,
+  PublicodeObjective
+} from '@/types'
 import { ConditionOperators } from '@/types/conditionOperators'
 
 // FOR TRACKS
@@ -172,6 +181,7 @@ export interface Track {
   hint?: Translations
   resume?: Translations
   callout?: TrackCallout
+  objective?: PublicodeObjective
   interface?: TrackInterface
   behavior?: TrackBehavior
   config?: TrackResultsConfig

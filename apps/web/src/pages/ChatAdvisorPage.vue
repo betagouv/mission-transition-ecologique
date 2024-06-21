@@ -8,7 +8,7 @@
       title="Place des entreprise - france-transition-ecologique"
       sandbox="allow-forms allow-scripts allow-same-origin"
       width="100%"
-    ></iframe>
+    />
   </div>
 </template>
 

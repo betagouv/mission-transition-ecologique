@@ -17,8 +17,7 @@
           <span
             class="fr-icon-money-euro-circle-line"
             aria-hidden="true"
-          >
-          </span>
+          />
           {{ getCostInfos() }}
         </p>
       </div>

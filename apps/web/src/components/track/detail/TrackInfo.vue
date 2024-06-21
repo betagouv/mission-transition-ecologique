@@ -7,7 +7,7 @@
       <span
         class="fr-icon-info-fill"
         aria-hidden="true"
-      ></span>
+      />
       {{ track.info[Translation.lang] }}
     </p>
   </div>

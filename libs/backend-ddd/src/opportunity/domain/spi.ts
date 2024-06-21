@@ -1,6 +1,6 @@
 import type { Maybe, Result } from 'true-myth'
 import { ContactId, OpportunityId, OpportunityUpdateAttributes, OpportunityDetailsShort, OpportunityWithOperatorContact } from './types'
-import { ContactDetails, Opportunity, OpportunityDetails } from '@tee/common'
+import { ContactDetails, Opportunity } from '@tee/common'
 import { ProgramType } from '@tee/data'
 
 export type ContactRepository = {
@@ -14,6 +14,6 @@ export type OpportunityRepository = {
   getDailyOpportunitiesByContactId: (contactId: number) => Promise<Result<OpportunityDetailsShort[], Error>>
 }
 
-export type MailerService = {
+export type MailerManager = {
   sendReturnReceipt: (opportunity: Opportunity, program: ProgramType) => Promise<Maybe<Error> | void>
 }

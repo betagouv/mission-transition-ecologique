@@ -11,7 +11,7 @@ import {
   BrevoDealItem
 } from './types'
 import Config from '../../../../config'
-import { OpportunityDetails, QuestionnaireRoute } from '@tee/common'
+import { QuestionnaireRoute } from '@tee/common'
 import { Operators } from '@tee/data'
 
 // "Opportunities" are called "Deals" in Brevo

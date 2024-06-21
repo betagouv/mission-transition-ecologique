@@ -42,14 +42,14 @@
         ref="chartCanvas"
         width="1200"
         :height="isSmallScreen ? 700 : 450"
-      ></canvas>
+      />
     </div>
     <div class="fr-mt-5w fr-mt-md-0 fr-mb-5w">
       <h2>Nombre de dispositifs d'aide activés</h2>
       <div class="fr-col-md-6">
         <TeeCallout
           :type="CalloutType.Warning"
-          imglink="/images/TEE-missingData.svg"
+          img="/images/TEE-missingData.svg"
           class="fr-mr-md-3v"
         >
           Nous travaillons actuellement sur cette mesure.<br /><br />
@@ -93,7 +93,7 @@
       </div>
     </div>
   </div>
-  <ContactMail></ContactMail>
+  <ContactMail />
 </template>
 
 <script setup lang="ts">

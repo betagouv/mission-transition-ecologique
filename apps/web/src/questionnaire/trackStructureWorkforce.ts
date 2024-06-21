@@ -135,7 +135,7 @@ export const workforce: Track = {
     {
       value: StructureSize.ETI_GE,
       questionnaireData: { structure_size: StructureSize.ETI_GE },
-      title: { fr: '+250 employés' },
+      title: { fr: 'Plus de 250 employés' },
       label: { fr: '👫👭👫👫 Plus de 250 employés' },
       next: {
         default: TrackId.Sectors,

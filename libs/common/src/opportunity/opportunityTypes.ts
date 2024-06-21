@@ -1,4 +1,4 @@
-import { PublicodeObjective, QuestionnaireRoute } from '../questionnaire/types'
+import { PublicodeObjective, QuestionnaireRoute } from '../questionnaire/types/types'
 
 export type Opportunity = ContactDetails & OpportunityDetails
 

@@ -1,8 +1,8 @@
-// sorts the programs according to a "sortProfile", which currently
-// only depends on the questionnaireRoute
 import { ProgramType } from '@tee/data'
 import { ProgramAidType, QuestionnaireRoute } from '@tee/common'
 
+// sorts the programs according to a "sortProfile", which currently
+// only depends on the questionnaireRoute
 export const sortPrograms = (programs: ProgramType[], sortProfile: QuestionnaireRoute): ProgramType[] => {
   programs.sort((p1, p2) => compareProgramsByType(p1, p2, sortProfile))
   if (sortProfile == QuestionnaireRoute.SpecificGoal) {

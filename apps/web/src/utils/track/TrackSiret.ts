@@ -1,6 +1,7 @@
 import EstablishmentApi from '@/service/api/establishmentApi'
-import { EstablishmentFront, SiretValue, Validator } from '@/types'
+import { EstablishmentFront, SiretValue } from '@/types'
 import type { Track, TrackOptionItem, TrackOptionsUnion } from '@/types'
+import { SiretValidator } from '@tee/common'
 
 export default class TrackSiret {
   static async search(query: string) {
@@ -36,7 +37,7 @@ export default class TrackSiret {
       return TrackSiret.createData(option, siret).option
     }
 
-    if (!Validator.validateSiret(siret)) {
+    if (!SiretValidator.validate(siret)) {
       return undefined
     }
 

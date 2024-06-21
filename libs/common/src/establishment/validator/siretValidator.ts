@@ -1,5 +1,5 @@
-export default class Validator {
-  static validateSiret = (siret: string): boolean => {
+export class SiretValidator {
+  static validate = (siret: string): boolean => {
     const trimmed = this.trimSiret(siret)
 
     if (!this.isValidSiretFormat(trimmed)) {

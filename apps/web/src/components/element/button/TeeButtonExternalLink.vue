@@ -4,7 +4,7 @@
     class="fr-btn fr-btn--secondary fr-btn--icon-left fr-icon-external-link-fill"
     target="_blank"
   >
-    <slot></slot>
+    <slot />
   </a>
 </template>
 
@@ -18,7 +18,7 @@ const props = withDefaults(defineProps<Props>(), {
 </script>
 
 <style scoped lang="scss">
-@import '../../assets/scss/_colors.scss';
+@import '../../../assets/scss/setting/color';
 
 [target='_blank']:after,
 [target='_blank'][class*=' fr-fi-']:after,
@@ -28,8 +28,8 @@ const props = withDefaults(defineProps<Props>(), {
   content: none;
 }
 a {
-  box-shadow: inset 0 0 0 1px $secondary-purple;
-  color: $secondary-purple;
+  box-shadow: inset 0 0 0 1px $base-purple;
+  color: $base-purple;
   text-align: center;
   font-size: 0.875rem;
 }

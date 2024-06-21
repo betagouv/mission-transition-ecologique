@@ -58,7 +58,7 @@ Thumbs.db
 .venv
 pyrightconfig.json
 .flake8
-dispositifs.xlsx
+dispositifs*.xlsx
 
 # nx
 .nx/cache

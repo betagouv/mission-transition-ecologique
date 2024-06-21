@@ -1,17 +1,28 @@
 <template>
+  <TeeEligibilityCriteriaBar
+    v-if="!isCatalogDetail"
+    :bg-color="Color.greenLightnessed"
+    :bg-bar-color="Color.greenLighted"
+    :previous-route="routeToPrograms"
+    message="Cette aide correspond à vos critères d’éligibilité"
+    message-icon="fr-icon-checkbox-circle-fill"
+  />
   <div class="fr-container-fluid fr-px-0 fr-px-md-20v fr-mt-3v">
     <div class="fr-grid-row fr-grid-row-gutters">
-      <div class="fr-col">
+      <div
+        v-if="isCatalogDetail"
+        class="fr-col"
+      >
         <!-- BACK TO RESULTS BTN -->
         <button
           class="fr-btn fr-btn--lg fr-btn--tertiary-no-outline fr-mb-3v fr-pl-2v"
-          @click="resetDetailResult"
+          @click="goToPrograms"
         >
           <v-icon
             name="ri-arrow-left-line"
             aria-hidden="true"
             class="fr-mr-2v"
-          ></v-icon>
+          />
           {{ Translation.t('results.backToResults') }}
         </button>
       </div>
@@ -38,7 +49,7 @@
           <span
             class="fr-icon-information-line"
             aria-hidden="true"
-          ></span>
+          />
           {{ Translation.t('program.programNotAvailable') }}
         </p>
         <p class="fr-notice__subtitle">{{ Translation.t('program.programEndValidity') }} : {{ program?.[`fin de validité`] }}</p>
@@ -82,16 +93,16 @@
             <h2
               :style="`color: ${blockColor}`"
               v-html="program?.promesse"
-            ></h2>
+            />
             <p
               class="fr-mb-12v"
               style="color: #000091"
               v-html="program?.description"
-            ></p>
+            />
             <ProgramObjective
               v-if="program"
               :program="program"
-            ></ProgramObjective>
+            />
             <DsfrButton
               v-if="!isProgramAutonomous"
               size="lg"
@@ -187,8 +198,7 @@
               :title="Translation.t('program.programProviders')"
               :image-path="`${publicPath}images/TEE-porteur.svg`"
               :description="Translation.to(programProvider)"
-            >
-            </ProgramTile>
+            />
           </div>
 
           <!-- PROGRAM END VALIDITY -->
@@ -196,7 +206,7 @@
             <ProgramTile
               class="tee-no-hover"
               :title="Translation.t('program.programEndValidity')"
-              :image-path="`${publicPath}images/TEE-duree.svg`"
+              :image-path="`${publicPath}images/TEE-date-fin.svg`"
               :description="
                 programEndValidity
                   ? Translation.t(Translation.t('program.programAvailableUntil'), { date: programEndValidity })
@@ -212,7 +222,7 @@
           :accordion-id="`${program.id}-eligibility`"
           :title="Translation.t('program.programAmIEligible')"
         >
-          <ProgramEligibility :program="program"></ProgramEligibility>
+          <ProgramEligibility :program="program" />
         </ProgramAccordion>
 
         <!-- LONG DESCRIPTION -->
@@ -221,7 +231,7 @@
           :accordion-id="`${program.id}-long-description`"
           :title="Translation.t('program.programKnowMore')"
         >
-          <ProgramLongDescription :program="program"></ProgramLongDescription>
+          <ProgramLongDescription :program="program" />
         </ProgramAccordion>
         <hr class="fr-mb-9v fr-pb-1v" />
       </div>
@@ -230,7 +240,7 @@
     <!-- PROGRAM FORM -->
     <div
       ref="TeeProgramFormContainer"
-      class="fr-tee-form-block fr-tee-form-container"
+      class="fr-tee-form-block"
     >
       <ProgramForm
         v-if="program"
@@ -254,14 +264,14 @@ import ProgramTile from '@/components/program/detail/ProgramTile.vue'
 import Config from '@/config'
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
-import { type ProgramData as ProgramType } from '@/types'
+import { Color, type ProgramData as ProgramType } from '@/types'
 import { RouteName } from '@/types/routeType'
 import Contact from '@/utils/contact'
 import Matomo from '@/utils/matomo'
 import Program from '@/utils/program/program'
 import Translation from '@/utils/translation'
 import { computed, onBeforeMount, ref } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { useRoute } from 'vue-router'
 
 const programsStore = useProgramStore()
 const navigationStore = useNavigationStore()
@@ -289,6 +299,8 @@ const programDuration = computed(() => program.value?.[`durée de l'accompagneme
 const programLoanDuration = computed(() => program.value?.[`durée du prêt`])
 const programProvider = computed(() => program.value?.['opérateur de contact'])
 const programEndValidity = computed(() => program.value?.[`fin de validité`])
+const programPageTitle = computed(() => `Transition écologique des TPE & PME - ${program.value?.[`titre`]}`)
+const programPageMeta = computed(() => program.value?.[`description`] || ' ')
 
 const columnTiles = computed(() => {
   const infoBlocks = [
@@ -311,13 +323,14 @@ const isProgramAutonomous = computed(() => {
   return false
 })
 
-// functions
-const resetDetailResult = async () => {
-  await router.push({
-    name: isCatalogDetail ? RouteName.Catalog : RouteName.QuestionnaireResult,
-    hash: '#' + props.programId,
-    query: isCatalogDetail ? undefined : navigationStore.query
-  })
+const routeToPrograms = {
+  name: isCatalogDetail ? RouteName.Catalog : RouteName.QuestionnaireResult,
+  hash: '#' + props.programId,
+  query: isCatalogDetail ? undefined : navigationStore.query
+}
+
+const goToPrograms = async () => {
+  await router.push(routeToPrograms)
 }
 
 onBeforeMount(() => {
@@ -325,6 +338,16 @@ onBeforeMount(() => {
 
   // analytics / send event
   Matomo.sendEvent('result_detail', route.name === RouteName.CatalogDetail ? 'show_detail_catalog' : 'show_detail', props.programId)
+})
+
+useHead({
+  title: programPageTitle,
+  meta: [
+    {
+      name: 'description',
+      content: programPageMeta
+    }
+  ]
 })
 
 const programIsAvailable = computed(() => {

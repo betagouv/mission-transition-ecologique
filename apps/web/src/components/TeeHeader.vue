@@ -1,5 +1,6 @@
 <template>
   <DsfrHeader
+    id="tee-header"
     service-title="Transition écologique des entreprises"
     service-description="Allier écologie avec économies !"
     home-to="/"
@@ -9,8 +10,7 @@
     :operator-img-src="`/images/logos/mission-transition-logo-alone.png`"
     operator-img-alt="Transition Ecologique des Entreprises - ADEME"
     operator-img-style="width:3.5rem;"
-  >
-  </DsfrHeader>
+  />
 </template>
 
 <script setup lang="ts">

@@ -11,7 +11,7 @@
         <span v-if="description">
           {{ description }}
         </span>
-        <slot name="description"></slot>
+        <slot name="description" />
       </p>
     </div>
 

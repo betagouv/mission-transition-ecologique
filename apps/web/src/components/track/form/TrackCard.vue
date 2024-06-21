@@ -24,8 +24,7 @@
               v-if="option.hintImageIcon"
               :class="option.hintImageIcon"
               aria-hidden="true"
-            >
-            </span>
+            />
             {{ option.hintImage[Translation.lang] }}
           </p>
           <h3 class="fr-card__title">
@@ -50,8 +49,7 @@
             v-if="option.hintIcon"
             :class="option.hintIcon"
             aria-hidden="true"
-          >
-          </span>
+          />
           {{ option.hint[Translation.lang] }}
         </p>
         <p

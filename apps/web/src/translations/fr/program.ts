@@ -10,7 +10,7 @@ const programFrDict = {
     programProviders: 'Contact',
     CTAButton: 'Contactez un conseiller',
     programType: "Nature de l'aide",
-    programEndValidity: 'Date de fin',
+    programEndValidity: "Date de fin de l'aide",
     programAvailable: 'Aide disponible',
     programNotAvailable: "Cette aide n'est plus disponible",
     programAvailableUntil: "Disponible jusqu'au {date}",
@@ -24,8 +24,10 @@ const programFrDict = {
       needs: `Bonjour,
 
 Mon entreprise a une activité de type "{secteur}".
-Le dispositif "{titreAide}" pourrait m'intéresser car j'ai pour projet de ...
+J'ai pour projet de ...
 J'ai besoin d'être accompagné(e) sur ...
+
+Le dispositif "{titreAide}" pourrait m'intéresser.
 
 Merci d'avance pour votre retour`
     }

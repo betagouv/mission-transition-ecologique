@@ -8,6 +8,13 @@ import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import { fileURLToPath } from 'url'
 import { resolve } from 'path'
 import { dsnFromString } from '@sentry/utils'
+import * as dotenv from 'dotenv'
+import { unheadVueComposablesImports } from '@unhead/vue'
+
+dotenv.config()
+
+console.log('Starting ...')
+console.log('vite.config ...')
 
 const mode = process.env.NODE_ENV ?? 'development'
 const isProd = mode === 'production'
@@ -42,7 +49,7 @@ const plugins = async () => {
     nxViteTsPaths(),
     AutoImport({
       include: [/\.[tj]sx?$/, /\.vue$/, /\.vue\?vue/],
-      imports: ['vue', 'vue-router', vueDsfrAutoimportPreset, ohVueIconAutoimportPreset],
+      imports: ['vue', 'vue-router', vueDsfrAutoimportPreset, ohVueIconAutoimportPreset, unheadVueComposablesImports],
       vueTemplate: true,
       dts: './src/auto-imports.d.ts',
       eslintrc: {
@@ -62,11 +69,7 @@ const plugins = async () => {
   if (isProd) {
     return basePlugins
   } else {
-    // const eslintPlugin = await import('vite-plugin-eslint')
-    return [
-      ...basePlugins
-      // eslintPlugin.default()
-    ] as Plugin[]
+    return [...basePlugins] as Plugin[]
   }
 }
 
@@ -141,7 +144,6 @@ function buildHeaders() {
       "default-src 'none';" +
       "base-uri 'self';" +
       "form-action 'self';" +
-      "script-src 'self' ;" +
       "script-src-elem 'self' 'unsafe-inline' https://stats.beta.gouv.fr  https://embed.typeform.com;" +
       "style-src 'self' 'unsafe-inline' https://embed.typeform.com;" +
       "font-src 'self';" +
@@ -163,6 +165,12 @@ function buildHeaders() {
     // headers['Content-Security-Policy'] += `report-uri ${sentryData.url};`
     // headers['Public-Key-Pins'] = `default-src 'self' ${sentryData.domain};` + `report-uri ${sentryData.url};`
     headers['Expect-CT'] = `default-src 'self' ${sentryData.domain};` + `report-uri ${sentryData.url};`
+  }
+
+  if (!isProd) {
+    headers['Content-Security-Policy'] = "script-src 'self' 'unsafe-eval'; " + headers['Content-Security-Policy']
+  } else {
+    headers['Content-Security-Policy'] = "script-src 'self'; " + headers['Content-Security-Policy']
   }
 
   return headers

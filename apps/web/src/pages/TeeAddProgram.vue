@@ -3,7 +3,7 @@
   <div
     data-tf-live="01HNJQ5V7EYXZTQAY755QPMA4R"
     class="tee-typeform-widget"
-  ></div>
+  />
 </template>
 
 <script setup lang="ts">

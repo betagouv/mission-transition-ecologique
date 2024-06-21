@@ -8,7 +8,7 @@
       class="fr-btn-fullwidth fr-btn-fixed-height fr-btn-sm-align-left fr-btn-grey tee-btn-input"
       :style="`outline-color: #929292; font-weight: 500; ${isActive ? 'background-color: #eeeeee' : ''}`"
     >
-      <v-icon :name="Button.getIcon(isActive, isCheckbox)"> </v-icon>
+      <v-icon :name="Button.getIcon(isActive, isCheckbox)" />
       <span
         v-if="isTextInput"
         class="fr-pr-3v"

@@ -55,24 +55,21 @@
               <span
                 class="fr-icon-briefcase-line fr-mr-8v"
                 aria-hidden="true"
-              >
-              </span>
+              />
               <span>Secteur d'activité : {{ response.secteur || 'Non Renseigné' }}</span>
             </div>
             <div>
               <span
                 class="fr-icon-map-pin-2-line fr-mr-8v"
                 aria-hidden="true"
-              >
-              </span>
+              />
               <span>{{ response.codePostal }} {{ response.ville }}</span>
             </div>
             <div>
               <span
                 class="fr-icon-time-line fr-mr-8v"
                 aria-hidden="true"
-              >
-              </span>
+              />
               <span>Création le {{ new Date(response.creationDate).toLocaleDateString('fr') }}</span>
             </div>
           </div>
@@ -84,14 +81,15 @@
     v-if="requestResponses.resultCount > 3"
     class="fr-mt-4v"
   >
-    <span
-      >Besoin d'aide pour retrouver votre SIRET ?
+    <span>
+      Besoin d'aide pour retrouver votre SIRET ?
       <a
         href="https://annuaire-entreprises.data.gouv.fr/"
         target="_blank"
-        >Cliquez ici</a
-      ></span
-    >
+      >
+        Cliquez ici
+      </a>
+    </span>
   </div>
   <!-- WILDCARD -->
   <p
@@ -117,7 +115,7 @@ import Matomo from '@/utils/matomo'
 import Navigation from '@/utils/navigation'
 import TrackSiret from '@/utils/track/TrackSiret'
 import Translation from '@/utils/translation'
-import { Validator } from '@tee/common'
+import { SiretValidator } from '@tee/common'
 import { ref, computed } from 'vue'
 import { EstablishmentSearch } from '@/types'
 
@@ -173,11 +171,10 @@ const processInput = async () => {
 
   if (!queryValue.value || queryValue.value.length < 3) {
     errorMessage.value = Translation.t('enterprise.searchTooShort')
-  } else if (Validator.isValidSiretFormat(queryValue.value) && !Validator.isValidSiretNumber(queryValue.value)) {
+  } else if (SiretValidator.isValidSiretFormat(queryValue.value) && !SiretValidator.isValidSiretNumber(queryValue.value)) {
     errorMessage.value = "Le numéro SIRET n'est pas valide"
   } else {
     const searchResult = await TrackSiret.search(queryValue.value)
-
     if (searchResult.isErr) {
       errorMessage.value = Translation.t('enterprise.apiError')
     } else if (searchResult.value.resultCount == 0) {
@@ -220,20 +217,20 @@ function createData(): TrackOptionItem {
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/scss/_colors.scss';
+@use '@/assets/scss/setting';
 
 .custom-border {
   border: solid thin #c4c4c4;
 }
 
 .is-selected {
-  border: solid thin $dark-blue;
-  color: $dark-blue;
+  border: solid thin setting.$blue-france;
+  color: setting.$blue-france;
   background-color: #f5f5f5;
 }
 
 .is-title-selected {
-  color: $dark-blue;
+  color: setting.$blue-france;
 }
 
 .thinner-text {
@@ -242,6 +239,6 @@ function createData(): TrackOptionItem {
 
 .result-number {
   font-style: italic;
-  color: $dark-blue;
+  color: setting.$blue-france;
 }
 </style>

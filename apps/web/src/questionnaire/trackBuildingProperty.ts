@@ -1,20 +1,11 @@
-import type { Track } from '@/types'
-import { TrackComponent, TrackId, BuildingProperty } from '@/types'
+import { TrackComponent, TrackId, BuildingProperty, PublicodeObjective, Track, YesNo } from '@/types'
 
 export const buildingProperty: Track = {
   id: TrackId.BuildingProperty,
   category: 'myBuildings',
   title: { fr: 'Mon statut' },
   label: { fr: 'Parlons de vos locaux. Vous êtes :' },
-  callout: {
-    header: { fr: 'Thématique' },
-    headerStyle: 'color: white;',
-    bgColor: '#6672F8',
-    title: { fr: 'Zoom sur vos bâtiments' },
-    titleStyle: 'color: white;',
-    bigTitle: true,
-    imageLeft: 'images/thema/thema-batiments.svg'
-  },
+  objective: PublicodeObjective.BuildingRenovation,
   interface: {
     component: TrackComponent.Buttons
   },
@@ -47,7 +38,16 @@ export const buildingProperty: Track = {
       value: BuildingProperty.OwnsAndRents,
       questionnaireData: { building_property: BuildingProperty.OwnsAndRents },
       title: { fr: 'Propriétaire & locataire' },
-      label: { fr: 'Je suis à la fois propriétaire et locataire sur mes différents locaux' },
+      label: { fr: '🏢 Je suis à la fois propriétaire et locataire sur mes différents locaux' },
+      next: {
+        default: TrackId.MobilityWishes
+      }
+    },
+    {
+      value: YesNo.No,
+      questionnaireData: { building_property: BuildingProperty.No },
+      title: { fr: 'Pas de locaux' },
+      label: { fr: '❌ Je ne dispose pas de locaux professionnels' },
       next: {
         default: TrackId.MobilityWishes
       }
