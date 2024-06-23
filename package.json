@@ -21,7 +21,8 @@
     "test": "nx run-many -t test -p @tee/data @tee/backend-ddd",
     "lint": "nx run-many -t lint --verbose",
     "lint:fix": "nx run-many -t lint --fix --verbose",
-    "vue:type:check": "nx run @tee/web:vue-type-check"
+    "vue:type:check": "nx run @tee/web:vue-type-check",
+    "sass:watch": "nx run @tee/web:sass-watch"
   },
   "engines": {
     "node": "20.x",
@@ -74,7 +75,7 @@
     "pinia": "^2.1.7",
     "prettier": "^2.6.2",
     "publicodes": "^1.0.0-beta.73",
-    "sass": "^1.62.1",
+    "sass": "^1.77.6",
     "swagger-ui-express": "^5.0.1",
     "true-myth": "^7.3.0",
     "ts-jest": "^29.1.0",

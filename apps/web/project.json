@@ -38,6 +38,15 @@
         ],
         "parallel": false
       }
+    },
+    "sass-watch": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/web",
+        "commands": [
+          "sass --pkg-importer=node --load-path=../../node_modules --watch src/assets/main.scss:src/assets/main.css"
+        ]
+      }
     }
   }
 }
