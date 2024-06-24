@@ -18,7 +18,7 @@
       "visite-energie-cma",
       "baisse-les-watts"
     ],
-    "linkedProjects": [],
+    "linkedProjects": [2,5,3],
     "priority": "5"
   },
   {

@@ -32,6 +32,7 @@
             v-if="relatedProjects.length > 0"
             id="project-linked-projects"
             :related-projects="relatedProjects"
+            :color="themeColor"
           />
         </DsfrAccordionsGroup>
       </div>

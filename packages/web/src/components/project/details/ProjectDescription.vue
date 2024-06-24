@@ -1,5 +1,6 @@
 <template>
   <DsfrAccordion
+    v-if="projectDescription"
     id="project-details"
     :expanded-id="expandedId"
     @expand="expandDetails"
@@ -9,6 +10,7 @@
   </DsfrAccordion>
 
   <DsfrAccordion
+    v-if="projectMoreDescription"
     id="project-more-details"
     :expanded-id="expandedMoreId"
     @expand="expandMoreDetails"

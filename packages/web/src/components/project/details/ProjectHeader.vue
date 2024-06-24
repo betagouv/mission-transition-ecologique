@@ -58,6 +58,6 @@ const routeToProjects = {
   position: relative;
 }
 .projectTitle {
-  z-index: 1000;
+  z-index: 100;
 }
 </style>
