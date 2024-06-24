@@ -1,6 +1,6 @@
 <template>
   <DsfrAccordion
-    v-if="projectDescription"
+    v-if="projectDescription.length > 0"
     id="project-details"
     :expanded-id="expandedId"
     @expand="expandDetails"
@@ -10,7 +10,7 @@
   </DsfrAccordion>
 
   <DsfrAccordion
-    v-if="projectMoreDescription"
+    v-if="projectMoreDescription.length > 0"
     id="project-more-details"
     :expanded-id="expandedMoreId"
     @expand="expandMoreDetails"
@@ -23,8 +23,8 @@
 import { marked } from 'marked'
 
 interface Props {
-  projectDescription: string | undefined
-  projectMoreDescription: string | undefined
+  projectDescription: string
+  projectMoreDescription: string
 }
 defineProps<Props>()
 const expandedId = ref<string | undefined>('project-details')

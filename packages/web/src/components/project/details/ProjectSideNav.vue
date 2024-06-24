@@ -1,20 +1,57 @@
 <template>
-  <DsfrSideMenu
-    class="fr-ml-4v"
-    :menu-items="menuItems"
-  />
+  <DsfrSideMenu class="fr-ml-4v">
+    <template #default>
+      <a
+        v-for="item in menuItems"
+        :key="item.id"
+        :href="item.href"
+        class="router-link-active router-link-exact-active fr-sidemenu__link"
+        @click="scrollTo(item.to)"
+      >
+        {{ item.text }}
+      </a>
+    </template>
+  </DsfrSideMenu>
 </template>
 <script setup lang="ts">
-import { DsfrSideMenuListProps } from '@gouvminint/vue-dsfr/types/components/DsfrSideMenu/DsfrSideMenu.types'
-import { useNavigationStore } from '@/stores/navigation'
+import { Project } from '@tee/common/src/project/types'
 
-const route = useNavigationStore().route
-const fullPath = route?.fullPath.split('#')[0]
-const menuItems: DsfrSideMenuListProps['menuItems'] = [
-  { id: 'project', to: `${fullPath}#project-details`, text: 'Le projet' },
-  { id: 'project-more', to: `${fullPath}#project-more-details`, text: 'Pour aller plus loin' },
-  { id: 'aids', to: `${fullPath}#project-aids`, text: 'Mes aides' },
-  { id: 'contact', to: `${fullPath}#project-contact`, text: 'Contact' },
-  { id: 'linked-project', to: `${fullPath}#project-linked-projects`, text: 'Projets complémentaires' }
+interface Props {
+  project: Project
+}
+const props = defineProps<Props>()
+const scrollTo = (id: string) => {
+  const element = document.getElementById(id)
+  if (element) {
+    setTimeout(() => {
+      element.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    }, 100)
+  }
+}
+const menuItems = computed(() => allMenuItems.filter((item) => item.condition !== false))
+const allMenuItems = [
+  {
+    id: 'project',
+    href: '#project-details',
+    to: `project-details`,
+    text: 'Le projet',
+    condition: props.project.longDescription.length > 0
+  },
+  {
+    id: 'project-more',
+    href: '#project-more-details',
+    to: `project-more-details`,
+    text: 'Pour aller plus loin',
+    condition: props.project.moreDescription.length > 0
+  },
+  { id: 'aids', href: '#project-aids', to: `project-aids`, text: 'Mes aides' },
+  { id: 'contact', href: '#project-contact', to: `project-contact`, text: 'Contact' },
+  {
+    id: 'linked-project',
+    href: '#project-linked-projects',
+    to: `project-linked-projects`,
+    text: 'Projets complémentaires',
+    condition: props.project.linkedProjects.length > 0
+  }
 ]
 </script>

@@ -6,7 +6,10 @@
     :project-img="projectImg"
     :theme-color="themeColor"
   />
-  <div class="fr-col-12 fr-container--fluid fr-px-md-16v">
+  <div
+    v-if="project"
+    class="fr-col-12 fr-container--fluid fr-px-md-16v"
+  >
     <div class="fr-grid-row fr-pt-4v">
       <div class="fr-col-3 fr-col-sm-3 fr-hidden-xs">
         <DsfrButton
@@ -16,7 +19,7 @@
           icon="fr-icon-link"
           @click="copyUrl"
         />
-        <ProjectSideNav />
+        <ProjectSideNav :project="project" />
       </div>
       <div class="fr-col-8 fr-col-xs-12 fr-col-sm-9">
         <DsfrAccordionsGroup>
@@ -66,8 +69,8 @@ const theme = ref<ThemeType>()
 const relatedProjects = ref()
 const projectTitle = computed(() => project.value?.title)
 const projectImg = computed(() => project.value?.image)
-const projectDescription = computed(() => project.value?.longDescription)
-const projectMoreDescription = computed(() => project.value?.moreDescription)
+const projectDescription = computed(() => project.value?.longDescription || '')
+const projectMoreDescription = computed(() => project.value?.moreDescription || '')
 const themeObjective = computed(() => theme.value?.value)
 const themeColor = computed<string>(() => theme.value?.color || '')
 const buttonLabel = computed<string>(() => {
