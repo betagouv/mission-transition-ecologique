@@ -74,7 +74,7 @@
     <div
       id="project-contact"
       ref="TeeProjectFormContainer"
-      class="fr-tee-form-block fr-tee-form-container"
+      class="fr-tee-form-block fr-m-auto"
     >
       <ProjectForm
         v-if="project"

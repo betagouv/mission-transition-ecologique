@@ -4,7 +4,7 @@
     :project-title="projectTitle"
     :project-id="projectId"
     :project-img="projectImg"
-    :color="theme?.color"
+    :theme-color="themeColor"
   />
   <div class="fr-col-12 fr-container--fluid fr-px-md-16v">
     <div class="fr-grid-row fr-pt-4v">
@@ -63,6 +63,7 @@ const projectImg = computed(() => project.value?.image)
 const projectDescription = computed(() => project.value?.longDescription)
 const projectMoreDescription = computed(() => project.value?.moreDescription)
 const themeObjective = computed(() => theme.value?.value)
+const themeColor = computed<string>(() => theme.value?.color || '')
 
 onBeforeMount(() => {
   const selectedProject = getProjectById(props.projectId)
@@ -70,7 +71,6 @@ onBeforeMount(() => {
     project.value = selectedProject
   }
   const themeProject = Theme.getById(project.value?.mainTheme)
-  console.log(themeProject, project, props.projectId)
   if (themeProject) {
     theme.value = Theme.getById(project.value?.mainTheme)
   }

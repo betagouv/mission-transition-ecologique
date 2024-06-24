@@ -6,16 +6,15 @@
     message=""
     message-icon=""
   />
-  <div class="backgroundProjectTitle">
+  <div class="fr-container--fluid fr-mb-4v backgroundProjectTitle">
     <img
       :src="`${publicPath}${projectImg}`"
       :alt="`image / ${projectTitle}`"
     />
-    <div
-      class="fr-h1 fr-mb-4v fr-text-center fr-pb-8v projectTitle"
-      :style="{ '--gradient-color': color }"
-    >
-      {{ projectTitle }}
+    <div :class="`fr-grid-row fr-grid-row--bottom fr-px-md-16v fr-gradient--${themeColor} projectTitleGradient`">
+      <div class="fr-col-9 fr-col-sm-9 fr-col-xs-12 fr-col-offset-sm-3 fr-h1 fr-text-left fr-pb-8v projectTitle">
+        {{ projectTitle }}
+      </div>
     </div>
   </div>
 </template>
@@ -29,9 +28,10 @@ interface Props {
   projectTitle: string | undefined
   projectId: string | undefined
   projectImg: string | undefined
-  color: string | undefined
+  themeColor: string
 }
 const props = defineProps<Props>()
+console.log(props.themeColor)
 const publicPath = Config.publicPath
 const navigationStore = useNavigationStore()
 
@@ -45,24 +45,19 @@ const routeToProjects = {
 <style scoped>
 .backgroundProjectTitle {
   position: relative;
-  width: 100%;
   height: 400px;
-  overflow: hidden;
 }
 .backgroundProjectTitle img {
   width: 100%;
   height: 100%;
+  position: absolute;
   object-fit: cover;
 }
-.projectTitle {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+.projectTitleGradient {
   height: 100%;
-  display: flex;
-  align-items: end;
-  background-image: linear-gradient(to bottom, transparent, var(--gradient-color));
-  justify-content: center;
+  position: relative;
+}
+.projectTitle {
+  z-index: 1000;
 }
 </style>
