@@ -23,14 +23,22 @@
           <!-- FIELDS -->
           <div class="fr-grid-row fr-grid-row--gutters fr-mb-2v">
             <div class="fr-col-12 fr-col-md-12">
-              <DsfrInput
-                :model-value="projectForm.project.value"
-                label-visible
-                :is-valid="projectForm.project.isValid"
-                :required="projectForm.project.required"
-                :label="projectForm.project.label"
-                :disabled="projectForm.project.disabled"
-              />
+              <DsfrInputGroup
+                :error-message="getErrorMessage(projectForm.project)"
+                :valid-message="getValidMessage(projectForm.project)"
+                >
+                <DsfrInput
+                  type="text"
+                  :model-value="projectForm.project.value"
+                  label-visible
+                  :is-valid="projectForm.project.isValid"
+                  :required="projectForm.project.required"
+                  :label="projectForm.project.label"
+                  :disabled="projectForm.project.disabled"
+                  @update:model-value="updateProjectForm($event, 'project')"
+                  @focusout="validateFormField(projectForm.project)"
+                />
+              </DsfrInputGroup>
             </div>
             <div class="fr-col-12 fr-col-md-6">
               <DsfrInputGroup
@@ -272,7 +280,7 @@ interface Props {
 
 const props = defineProps<Props>()
 const projectForm = ref<ProjectFormType>({
-  project: { required: true, value: props.project?.title, label: 'Quel est votre projet?', disabled: true, isValid: true },
+  project: { required: true, value: props.project?.title, label: 'Quel est votre projet?', isValid: true },
   name: { required: true, value: undefined, label: 'Prénom', isValid: undefined },
   surname: { required: true, value: undefined, label: 'Nom', isValid: undefined },
   tel: {
