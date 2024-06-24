@@ -1,5 +1,6 @@
 <template>
   <DsfrAccordion
+    v-if="relatedProjects.length > 0"
     id="project-linked-projects"
     :expanded-id="expandedId"
     @expand="expandRelatedProjects"

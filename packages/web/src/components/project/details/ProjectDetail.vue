@@ -10,9 +10,9 @@
     <div class="fr-grid-row fr-pt-4v">
       <div class="fr-col-3 fr-col-sm-3 fr-hidden-xs">
         <DsfrButton
-          label="Copier le lien"
+          :label="buttonLabel"
           size="sm"
-          class="fr-m-4v fr-radius-a--2v"
+          :class="`fr-m-4v fr-radius-a--2v ${linkCopied ? `fr-bg--green` : ''}`"
           icon="fr-icon-link"
           @click="copyUrl"
         />
@@ -49,12 +49,17 @@ interface Props {
   projectId: string
 }
 const props = defineProps<Props>()
+const linkCopied = ref<boolean>(false)
 const getProjectById = (id: string | ProjectId) => {
   return (projectData as unknown as Project[]).find((project: Project) => project.id === Number(id))
 }
 const copyUrl = async () => {
   const pageUrl = window.location.href
   await navigator.clipboard.writeText(pageUrl)
+  linkCopied.value = true
+  setTimeout(() => {
+    linkCopied.value = false
+  }, 2000)
 }
 const project = ref<Project>()
 const theme = ref<ThemeType>()
@@ -65,7 +70,12 @@ const projectDescription = computed(() => project.value?.longDescription)
 const projectMoreDescription = computed(() => project.value?.moreDescription)
 const themeObjective = computed(() => theme.value?.value)
 const themeColor = computed<string>(() => theme.value?.color || '')
-
+const buttonLabel = computed<string>(() => {
+  if (linkCopied.value) {
+    return 'Lien copié'
+  }
+  return 'Copier le lien'
+})
 onBeforeMount(() => {
   const selectedProject = getProjectById(props.projectId)
   if (selectedProject) {
