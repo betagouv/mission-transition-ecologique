@@ -37,6 +37,7 @@ declare module 'vue' {
     ProgramObjective: typeof import('./components/program/detail/ProgramObjective.vue')['default']
     ProgramTile: typeof import('./components/program/detail/ProgramTile.vue')['default']
     ProjectCard: typeof import('./components/project/list/ProjectCard.vue')['default']
+    ProjectCounter: typeof import('./components/project/list/ProjectCounter.vue')['default']
     ProjectList: typeof import('./components/project/list/ProjectList.vue')['default']
     ResultHeader: typeof import('./components/questionnaire/result/list/ResultHeader.vue')['default']
     ResultList: typeof import('./components/questionnaire/result/list/ResultList.vue')['default']

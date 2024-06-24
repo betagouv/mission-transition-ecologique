@@ -41,7 +41,7 @@ a.fr-tag[aria-pressed=true].fr-tag--red.fr-tag--sm, button.fr-tag[aria-pressed=t
 }
 .fr-tabs__list {
   box-shadow: none;
-  margin-left: 20.33333%;
+  margin-left: 19.66667%;
 }
 @media (max-width: 62rem) {
   .fr-tabs__list {

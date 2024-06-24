@@ -1,7 +1,7 @@
 <template>
   <div class="fr-container--fluid fr-container--fluid--no-overflow fr-px-0 fr-mb-0 fr-mt-6v fr-mr-lg-6v">
     <div class="fr-grid-row fr-grid-row--center fr-justify-center">
-      <div class="fr-col-9 fr-col-offset-md-3 fr-col-offset-lg-2 fr-mb-3v fr-col-xs-12 fr-pl-3v">
+      <div class="fr-col-9 fr-col-offset-md-3 fr-col-offset-lg-2 fr-mb-3v fr-col-xs-12">
         <ResultHeader v-if="!navigationStore.isCatalog()" />
       </div>
       <DsfrTabs
@@ -14,7 +14,7 @@
         @select-tab="selectTab"
       >
         <DsfrTabContent
-          class="fr-px-0 fr-px-md-4v"
+          class="fr-px-0"
           panel-id="tab-content-0"
           tab-id="tab-0"
           :selected="selectedTabIndex === 0"
@@ -24,7 +24,7 @@
         </DsfrTabContent>
 
         <DsfrTabContent
-          class="fr-px-0 fr-px-md-4v"
+          class="fr-px-0"
           panel-id="tab-content-1"
           tab-id="tab-1"
           :selected="selectedTabIndex === 1"

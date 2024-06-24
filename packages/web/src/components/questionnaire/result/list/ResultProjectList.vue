@@ -3,36 +3,31 @@
   <div class="fr-container--fluid fr-container--fluid--no-overflow fr-mt-6v">
     <div class="fr-grid-row fr-grid-row--center">
       <div
-        v-if="(!hasObjectiveCard || programStore.hasObjectiveTypeSelected()) && !hasSpinner"
+        v-if="(!hasObjectiveCard || hasObjectiveSelected) && !hasSpinner"
         class="fr-col-9 fr-col-xs-12 fr-col-offset-md-3 fr-col-offset-lg-2 fr-mb-3v fr-pl-3v"
       >
         <ProgramFilterByTheme v-if="havePrograms && countPrograms > 1" />
       </div>
-      <div
-        v-if="hasObjectiveCard && !hasSpinner"
-        class="fr-col-9 fr-col-xs-12 fr-col-offset-md-3 fr-col-offset-lg-2"
-      >
-        <TeeObjectiveCard
-          :objective="objective as PublicodeObjective"
-          radius-corner="tr"
-          radius-size="2-5v"
-        />
-      </div>
-      <div
-        v-if="!hasSpinner || !hasError"
-        class="fr-col-3 fr-col-lg-2 fr-pt-12w fr-col-hidden fr-col-unhidden-md"
-      >
-        <img
-          v-if="!hasObjectiveCard || !programStore.hasObjectiveTypeSelected()"
-          :src="`${publicPath}images/TEE_project_priority.svg`"
-          alt=""
-          class="fr-responsive-img fr-col-10 fr-col-xl-8 fr-col-hidden fr-col-unhidden-lg fr-pt-10w"
-        />
-      </div>
-      <div class="fr-col-9 fr-col-xs-12">
-        <ProjectList :filtered-programs="filteredPrograms" />
+    </div>
+    <div
+      v-if="hasObjectiveCard && !hasSpinner"
+      class="fr-grid-row fr-grid-row--center"
+    >
+      <div class="fr-col-12 fr-col-md-9 fr-col-offset-md-3 fr-col-offset-lg-2">
+        <div class="fr-container fr-m-0 fr-p-0 fr-pr-md-4w">
+          <TeeObjectiveCard
+            :objective="objective as PublicodeObjective"
+            radius-corner="tr"
+            radius-size="2-5v"
+          />
+        </div>
       </div>
     </div>
+    <ProjectList
+      v-if="havePrograms && !hasSpinner"
+      :filtered-projects="sortedProjects"
+      :filtered-programs="props.filteredPrograms"
+    />
   </div>
 </template>
 
@@ -43,7 +38,8 @@ import ProgramFilterByTheme from '@/components/program/list/filters/ProgramFilte
 import UsedTrack from '@/utils/track/usedTrack'
 import Theme from '@/utils/theme'
 import { useProgramStore } from '@/stores/program'
-import Config from '@/config'
+import { Project } from '@tee/common/src/project/types'
+import projectData from '@tee/data/static/project.json'
 
 interface ProgramListProps {
   filteredPrograms?: ProgramData[]
@@ -52,8 +48,6 @@ interface ProgramListProps {
 const props = defineProps<ProgramListProps>()
 
 const programStore = useProgramStore()
-
-const publicPath = Config.publicPath
 
 const hasError = ref<boolean>(false)
 
@@ -83,5 +77,19 @@ const objective = computed(() => {
   }
 
   return ''
+})
+
+const hasObjectiveSelected = computed(() => {
+  return programStore.hasObjectiveTypeSelected()
+})
+
+const sortedProjects = computed(() => {
+  return props.filteredPrograms
+    ? (projectData as unknown as Project[])
+        .filter((project: Project) => {
+          return project.programs.some((program) => props.filteredPrograms!.some((res) => res.id === program))
+        })
+        .sort((a, b) => b.priority - a.priority)
+    : undefined
 })
 </script>
