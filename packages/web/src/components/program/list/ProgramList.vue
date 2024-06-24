@@ -1,6 +1,6 @@
 <template>
   <!-- PROGRAMS AS LIST OF CARDS -->
-  <div class="fr-container--fluid fr-container--fluid--no-overflow fr-mt-6v">
+  <div class="fr-container--fluid fr-mt-6v">
     <div class="fr-grid-row fr-grid-row--center">
       <div class="fr-mb-4v fr-pl-2w fr-pl-md-0 fr-col-12 fr-text--blue-france fr-font-style--italic">
         <div v-if="havePrograms && countPrograms > 1">
@@ -14,17 +14,19 @@
         :count-filtered-programs="countPrograms"
       />
       <div class="fr-col-12">
-        <div class="fr-container--fluid fr-container--fluid--no-overflow">
-          <div class="fr-grid-row fr-grid-row--center">
-            <router-link
-              v-for="program in filteredPrograms"
-              :id="program.id"
-              :key="program.id"
-              :to="getRouteToProgramDetail(program.id)"
-              class="fr-col-12 fr-card fr-enlarge-link fr-card--horizontal-tier fr-mb-10v"
-            >
-              <ProgramCard :program="program" />
-            </router-link>
+        <div class="fr-container--fluid">
+          <div class="fr-container fr-p-0 fr-m-0 fr-pr-md-4w">
+            <div class="fr-grid-row fr-grid-row--center fr-grid-row-lg--left">
+              <router-link
+                v-for="program in filteredPrograms"
+                :id="program.id"
+                :key="program.id"
+                :to="getRouteToProgramDetail(program.id)"
+                class="fr-col-12 fr-card fr-enlarge-link fr-card--horizontal-tier fr-mb-10v"
+              >
+                <ProgramCard :program="program" />
+              </router-link>
+            </div>
           </div>
         </div>
       </div>

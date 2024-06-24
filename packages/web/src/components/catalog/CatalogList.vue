@@ -21,40 +21,48 @@
   </TeeBanner>
 
   <!-- PROGRAMS AS LIST OF CARDS -->
-  <div class="fr-container--fluid fr-container--fluid--no-overflow fr-px-0 fr-mb-0 fr-mt-6v fr-px-md-4w">
-    <div class="fr-grid-row fr-grid-row--center fr-justify-center">
+  <div class="fr-container--fluid fr-container--fluid--no-overflow fr-mt-6v">
+    <div class="fr-grid-row fr-grid-row--center">
       <div
         v-if="!hasSpinner || !hasError"
-        class="fr-col-9 fr-col-hidden-md fr-text-right fr-col-xs-12"
+        class="fr-col-9 fr-col-hidden-md fr-text-right fr-col-xs-12 fr-mb-3v"
       >
         <ProgramModalFilter />
       </div>
       <div class="fr-col-9 fr-col-offset-md-3 fr-col-offset-lg-2 fr-col-xs-12">
         <ResultHeader v-if="!navigationStore.isCatalog() && !hasSpinner" />
       </div>
-      <div class="fr-col-9 fr-col-offset-md-3 fr-col-offset-lg-2 fr-my-2w fr-col-xs-12 fr-pl-3v">
-        <ProgramFilterByTheme v-if="havePrograms && countPrograms > 1" />
+      <div class="fr-col-12 fr-col-md-9 fr-col-offset-md-3 fr-col-offset-lg-2 fr-mb-3v">
+        <div class="fr-container fr-m-0 fr-p-0 fr-pr-md-4w fr-pl-3v">
+          <ProgramFilterByTheme v-if="havePrograms && countPrograms > 1" />
+        </div>
       </div>
-      <div
-        v-if="hasObjectiveCard && !hasSpinner"
-        class="fr-col-9 fr-col-offset-md-3 fr-col-offset-lg-2 fr-col-xs-12 fr-mt-1w"
-      >
-        <TeeObjectiveCard
-          :objective="objective as PublicodeObjective"
-          radius-corner="tr"
-          radius-size="2-5v"
-        />
+    </div>
+    <div
+      v-if="hasObjectiveCard && !hasSpinner"
+      class="fr-grid-row fr-grid-row--center"
+    >
+      <div class="fr-col-12 fr-col-md-9 fr-col-offset-md-3 fr-col-offset-lg-2">
+        <div class="fr-container fr-m-0 fr-p-0 fr-pr-md-4w">
+          <TeeObjectiveCard
+            :objective="objective as PublicodeObjective"
+            radius-corner="tr"
+            radius-size="2-5v"
+          />
+        </div>
       </div>
+    </div>
+    <div class="fr-grid-row fr-grid-row--center">
       <div
         v-if="!hasSpinner"
         class="fr-col-2 fr-col-md-3 fr-col-lg-2 fr-col-hidden fr-col-unhidden-md"
       >
-        <div class="fr-sidemenu fr-pr-0 fr-mr-3v">
+        <div class="fr-sidemenu fr-pr-0 fr-mx-3v">
           <div class="fr-text--bold fr-text-left fr-mb-3v fr-mt-6w">Filtres</div>
           <ProgramFiltersAccordion />
         </div>
       </div>
-      <div class="fr-col-9 fr-col-xs-12">
+      <div class="fr-col-12 fr-col-md-9 fr-px-0">
         <ProgramList :filtered-programs="filteredPrograms" />
       </div>
     </div>

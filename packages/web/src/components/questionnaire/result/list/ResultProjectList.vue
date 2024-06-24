@@ -1,10 +1,10 @@
 <template>
   <!-- PROGRAMS AS LIST OF CARDS -->
-  <div class="fr-container--fluid fr-container--fluid--no-overflow fr-mt-6v">
+  <div class="fr-container--fluid fr-container--fluid--no-overflow fr-mt-2v">
     <div class="fr-grid-row fr-grid-row--center">
       <div
         v-if="(!hasObjectiveCard || hasObjectiveSelected) && !hasSpinner"
-        class="fr-col-9 fr-col-xs-12 fr-col-offset-md-3 fr-col-offset-lg-2 fr-mb-3v fr-pl-3v"
+        class="fr-col-12 fr-col-md-9 fr-col-offset-md-3 fr-col-offset-lg-2 fr-pl-3v"
       >
         <ProgramFilterByTheme v-if="havePrograms && countPrograms > 1" />
       </div>
@@ -13,7 +13,7 @@
       v-if="hasObjectiveCard && !hasSpinner"
       class="fr-grid-row fr-grid-row--center"
     >
-      <div class="fr-col-12 fr-col-md-9 fr-col-offset-md-3 fr-col-offset-lg-2">
+      <div class="fr-col-12 fr-col-md-9 fr-col-offset-md-3 fr-col-offset-lg-2 fr-mt-3w">
         <div class="fr-container fr-m-0 fr-p-0 fr-pr-md-4w">
           <TeeObjectiveCard
             :objective="objective as PublicodeObjective"

@@ -1,6 +1,6 @@
 <template>
   <!-- PROGRAMS AS LIST OF CARDS -->
-  <div class="fr-container--fluid fr-container--fluid--no-overflow fr-mt-6v">
+  <div class="fr-container--fluid fr-container--fluid--no-overflow fr-mt-2v">
     <div class="fr-grid-row fr-grid-row--center">
       <div
         v-if="!hasSpinner || !hasError"
@@ -9,31 +9,37 @@
         <ProgramModalFilter />
       </div>
       <div
-        v-if="(!hasObjectiveCard || programStore.hasObjectiveTypeSelected()) && !hasSpinner"
-        class="fr-col-9 fr-col-offset-md-3 fr-col-offset-lg-2 fr-mb-3v fr-col-xs-12 fr-pl-3v"
+        v-if="(!hasObjectiveCard || hasObjectiveSelected) && !hasSpinner"
+        class="fr-col-9 fr-col-xs-12 fr-col-offset-md-3 fr-col-offset-lg-2 fr-pl-3v"
       >
         <ProgramFilterByTheme v-if="havePrograms && countPrograms > 1" />
       </div>
-      <div
-        v-if="hasObjectiveCard && !hasSpinner"
-        class="fr-col-9 fr-col-offset-md-3 fr-col-offset-lg-2 fr-col-xs-12"
-      >
-        <TeeObjectiveCard
-          :objective="objective as PublicodeObjective"
-          radius-corner="tr"
-          radius-size="2-5v"
-        />
+    </div>
+    <div
+      v-if="hasObjectiveCard && !hasSpinner"
+      class="fr-grid-row fr-grid-row--center"
+    >
+      <div class="fr-col-12 fr-col-md-9 fr-col-offset-md-3 fr-col-offset-lg-2 fr-mt-3w">
+        <div class="fr-container fr-m-0 fr-p-0 fr-pr-md-4w">
+          <TeeObjectiveCard
+            :objective="objective as PublicodeObjective"
+            radius-corner="tr"
+            radius-size="2-5v"
+          />
+        </div>
       </div>
+    </div>
+    <div class="fr-grid-row fr-grid-row--center">
       <div
         v-if="!hasSpinner"
         class="fr-col-2 fr-col-md-3 fr-col-lg-2 fr-col-hidden fr-col-unhidden-md"
       >
-        <div class="fr-sidemenu fr-pr-0 fr-mr-3v">
+        <div class="fr-sidemenu fr-pr-0 fr-mx-3v">
           <div class="fr-text--bold fr-text-left fr-mb-3v fr-mt-6w">Filtres</div>
           <ProgramFiltersAccordion />
         </div>
       </div>
-      <div class="fr-col-9 fr-col-xs-12">
+      <div class="fr-col-12 fr-col-md-9 fr-px-0">
         <ProgramList :filtered-programs="filteredPrograms" />
       </div>
     </div>
@@ -73,6 +79,10 @@ const hasSpinner = computed(() => {
 
 const hasObjectiveCard = computed(() => {
   return programStore.hasObjectiveTypeSelected() || (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityObjective())
+})
+
+const hasObjectiveSelected = computed(() => {
+  return programStore.hasObjectiveTypeSelected()
 })
 
 const objective = computed(() => {
