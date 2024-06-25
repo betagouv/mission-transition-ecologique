@@ -34,7 +34,7 @@ const allMenuItems = [
     id: 'project',
     href: '#project-details',
     to: `project-details`,
-    text: 'Le projet',
+    text: "QU'est ce que c'est ?",
     condition: props.project.longDescription.length > 0
   },
   {

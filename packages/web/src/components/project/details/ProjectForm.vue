@@ -389,6 +389,7 @@ const validateFormField = (field: InputFieldUnionType): void => {
 const saveProjectForm = async () => {
   try {
     isLoading.value = true
+    console.log(projectForm, props.project.id)
     const project = new ProjectApi(projectForm.value, props.project.id)
     requestResponse.value = await project.fetch()
 
