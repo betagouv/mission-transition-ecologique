@@ -15,6 +15,7 @@ declare module 'vue' {
     DsfrButton: typeof import('@gouvminint/vue-dsfr')['DsfrButton']
     DsfrCheckboxSet: typeof import('@gouvminint/vue-dsfr')['DsfrCheckboxSet']
     DsfrSelect: typeof import('@gouvminint/vue-dsfr')['DsfrSelect']
+    LegalNotice: typeof import('./components/legalComponent/LegalNotice.vue')['default']
     ProgramAccordion: typeof import('./components/program/detail/ProgramAccordion.vue')['default']
     ProgramCard: typeof import('./components/program/list/ProgramCard.vue')['default']
     ProgramDetail: typeof import('./components/program/detail/ProgramDetail.vue')['default']
