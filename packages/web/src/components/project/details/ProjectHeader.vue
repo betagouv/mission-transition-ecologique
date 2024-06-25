@@ -31,7 +31,6 @@ interface Props {
   themeColor: string
 }
 const props = defineProps<Props>()
-console.log(props.themeColor)
 const publicPath = Config.publicPath
 const navigationStore = useNavigationStore()
 
