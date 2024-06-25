@@ -19,9 +19,9 @@
               alt="image / ecriture"
             />
             <div class="fr-col-9 fr-col-xs-8">
-              <div class="fr-pb-2v">Complétez votre profil en 2 minutes et accédez aux aides éligibles pour votre entreprise.</div>
+              <div class="fr-pb-2v fr-pl-2v">Complétez votre profil en 2 minutes et accédez aux aides éligibles pour votre entreprise.</div>
               <router-link
-                class="tee-btn-sidebar fr-btn fr-btn--tertiary-no-outline"
+                class="tee-btn-sidebar fr-btn fr-btn--tertiary-no-outline fr-pl-2v"
                 :to="navigationStore.routeByTrackId(TrackId.Siret)"
               >
                 <DsfrButton
