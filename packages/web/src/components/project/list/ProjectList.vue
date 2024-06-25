@@ -121,7 +121,6 @@ import { Project } from '@tee/common/src/project/types'
 import UsedTrack from '@/utils/track/usedTrack'
 import { useProgramStore } from '@/stores/program'
 import Config from '@/config'
-import Theme from '@/utils/theme'
 
 interface ProjectListProps {
   filteredProjects?: Project[]
@@ -149,7 +148,8 @@ const hasPriorityProjects = computed(() => {
 })
 
 const isPriorityProject = (project: Project) => {
-  return !objective.value ? priorityProjects.value!.includes(project) : false
+  console.log('is priority project : ', !UsedTrack.isSpecificGoal() ? priorityProjects.value!.includes(project) : false, project.id)
+  return !UsedTrack.isSpecificGoal() ? priorityProjects.value!.includes(project) : false
 }
 
 const sortedProjects = computed(() => {
@@ -177,17 +177,5 @@ const hasObjectiveCard = computed(() => {
 
 const hasObjectiveSelected = computed(() => {
   return programStore.hasObjectiveTypeSelected()
-})
-
-const objective = computed(() => {
-  if (programStore.hasObjectiveTypeSelected()) {
-    return programStore.programFilters.objectiveTypeSelected
-  }
-
-  if (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityObjective()) {
-    return Theme.getPublicodeObjectiveByObjective(UsedTrack.getPriorityObjective())
-  }
-
-  return ''
 })
 </script>
