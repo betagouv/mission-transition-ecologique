@@ -1,0 +1,22 @@
+.fr-tabs {
+  box-shadow: none;
+  &::before {
+    box-shadow: none;
+  }
+  &__list {
+    box-shadow: none;
+    margin-left: 20.33333%;
+    @media (max-width: 62rem){
+      margin-left: 24%;
+    }
+    @media (max-width: 48rem){
+      margin-left: 10%;
+    }
+    @media (max-width: 36rem){
+      margin-left: 0;
+    }
+  }
+  &__tab {
+    box-shadow: none;
+  }
+}

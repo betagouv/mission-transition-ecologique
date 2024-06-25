@@ -16,3 +16,7 @@ export interface Project {
 }
 
 export type ProjectId = (typeof projects)[number]['id']
+export interface ProjectBody {
+  project: ProjectOpportunity
+  optIn: boolean
+}
