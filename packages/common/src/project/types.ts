@@ -1,6 +1,6 @@
 import { ThemeId } from '../theme/types'
 import { projects } from './mockData'
-
+import { ProjectOpportunity } from '@tee/backend/src/project/domain/types'
 export interface Project {
   id: number
   title: string // titre

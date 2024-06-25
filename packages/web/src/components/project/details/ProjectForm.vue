@@ -280,7 +280,7 @@ interface Props {
 
 const props = defineProps<Props>()
 const projectForm = ref<ProjectFormType>({
-  project: { required: true, value: props.project?.title, label: 'Quel est votre projet?', isValid: true },
+  project: { required: true, value: props.project.title, label: 'Quel est votre projet?', isValid: true },
   name: { required: true, value: undefined, label: 'Prénom', isValid: undefined },
   surname: { required: true, value: undefined, label: 'Nom', isValid: undefined },
   tel: {
