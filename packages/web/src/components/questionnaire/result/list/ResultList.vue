@@ -23,7 +23,7 @@
           :asc="asc"
         >
           <ResultProjectList
-            :projects="projects"
+            :filtered-projects="filteredProjects"
             :filtered-programs="filteredPrograms"
           />
         </DsfrTabContent>
@@ -66,6 +66,10 @@ const hasSpinner = computed(() => {
 
 const filteredPrograms = computed(() => {
   return programs.value ? programStore.getProgramsByFilters(programs.value) : undefined
+})
+
+const filteredProjects = computed(() => {
+  return projects.value ? projectStore.getProjectsByObjective(projects.value, programStore.programFilters.objectiveTypeSelected) : undefined
 })
 
 const initialSelectedIndex = 0

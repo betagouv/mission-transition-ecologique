@@ -43,7 +43,7 @@ import { useProgramStore } from '@/stores/program'
 import { Project } from '@tee/common/src/project/types'
 
 interface ProjectListProps {
-  projects?: Project[]
+  filteredProjects?: Project[]
   filteredPrograms?: ProgramData[]
 }
 
@@ -87,7 +87,7 @@ const hasObjectiveSelected = computed(() => {
 
 const sortedProjects = computed(() => {
   return props.filteredPrograms
-    ? (props.projects as unknown as Project[])
+    ? (props.filteredProjects as unknown as Project[])
         .filter((project: Project) => {
           return project.programs.some((program) => props.filteredPrograms!.some((res) => res.id === program))
         })
