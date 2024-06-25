@@ -12,7 +12,10 @@
         <div
           class="fr-mb-2v fr-mt-6v fr-pl-2w fr-pl-md-2v fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-text--blue-france fr-font-style--italic"
         >
-          <ProjectCounter :filtered-programs="filteredPrograms" />
+          <ProjectCounter
+            :sorted-projects="sortedProjects"
+            :filtered-programs="filteredPrograms"
+          />
         </div>
       </div>
     </div>
@@ -38,6 +41,9 @@
           <div class="fr-col-12 fr-col-md-10 fr-px-0 fr-pr-md-2v">
             <div class="fr-container fr-p-0 fr-m-0">
               <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-grid-row-md--left">
+                <div class="fr-pt-2w fr-pl-2w fr-text--bold fr-text--blue-france">
+                  Voici les actions par lesquelles commencer pour votre TPE du secteur Hôtels et hébergement similaire :
+                </div>
                 <div
                   v-for="project in priorityProjects"
                   :key="project.id"
@@ -123,7 +129,7 @@ import { useProgramStore } from '@/stores/program'
 import Config from '@/config'
 
 interface ProjectListProps {
-  filteredProjects?: Project[]
+  sortedProjects?: Project[]
   filteredPrograms?: ProgramData[]
 }
 
@@ -136,7 +142,7 @@ const publicPath = Config.publicPath
 const hasError = ref<boolean>(false)
 
 const hasSpinner = computed(() => {
-  return sortedProjects.value === undefined && !hasError.value
+  return props.sortedProjects === undefined && !hasError.value
 })
 
 const countFilteredPrograms = computed(() => {
@@ -148,27 +154,16 @@ const hasPriorityProjects = computed(() => {
 })
 
 const isPriorityProject = (project: Project) => {
-  console.log('is priority project : ', !UsedTrack.isSpecificGoal() ? priorityProjects.value!.includes(project) : false, project.id)
   return !UsedTrack.isSpecificGoal() ? priorityProjects.value!.includes(project) : false
 }
 
-const sortedProjects = computed(() => {
-  return props.filteredPrograms
-    ? (props.filteredProjects as unknown as Project[])
-        .filter((project: Project) => {
-          return project.programs.some((program) => props.filteredPrograms!.some((res) => res.id === program))
-        })
-        .sort((a, b) => b.priority - a.priority)
-    : undefined
-})
-
 const priorityProjects = computed(() => {
   const projectQty = hasObjectiveSelected.value ? 1 : 3
-  return sortedProjects.value ? sortedProjects.value.slice(0, projectQty) : undefined
+  return props.sortedProjects ? props.sortedProjects.slice(0, projectQty) : undefined
 })
 
 const nonPriorityProjects = computed(() => {
-  return sortedProjects.value ? sortedProjects.value.slice(3) : undefined
+  return props.sortedProjects ? props.sortedProjects.slice(3) : undefined
 })
 
 const hasObjectiveCard = computed(() => {

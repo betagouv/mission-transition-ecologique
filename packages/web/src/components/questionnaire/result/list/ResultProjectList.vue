@@ -27,7 +27,7 @@
     </div>
     <ProjectList
       v-if="havePrograms && !hasSpinner"
-      :filtered-projects="sortedProjects"
+      :sorted-projects="sortedProjects"
       :filtered-programs="props.filteredPrograms"
     />
   </div>
@@ -91,7 +91,7 @@ const sortedProjects = computed(() => {
         .filter((project: Project) => {
           return project.programs.some((program) => props.filteredPrograms!.some((res) => res.id === program))
         })
-        .sort((a, b) => b.priority - a.priority)
+        .sort((a, b) => a.priority - b.priority)
     : undefined
 })
 </script>
