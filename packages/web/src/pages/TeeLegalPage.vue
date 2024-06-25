@@ -13,7 +13,8 @@
       site-name="Mission Transition Écologique"
       date="17/06/2024"
       :third-parties="thirdParties"
-    ></LegalNotice>
+      :contact-email="Contact.email"
+    />
   </div>
   <ContactMail />
 </template>
@@ -21,13 +22,8 @@
 <script setup lang="ts">
 // CONSOLE LOG TEMPLATE
 // console.log(`TeeLegalPage > FUNCTION_NAME > MSG_OR_VALUE :`)
-// const privacyPolicy = new URL(useRouter().resolve({ name: RouteName.PersonalData }).href, window.location.origin).href
-//
-// const RELEASE_DATE = '17/06/2024'
-
-import ContactMail from '@/components/contact/ContactMail.vue'
-import LegalNotice from '@/components/legalComponent/LegalNotice.vue'
 import { RouteName } from '@/types/routeType'
+import Contact from '@/utils/contact'
 
 const privacyPolicy = new URL(useRouter().resolve({ name: RouteName.PersonalData }).href, window.location.origin).href
 const siteUrl = new URL(useRouter().resolve({ name: RouteName.Homepage }).href, window.location.origin).href

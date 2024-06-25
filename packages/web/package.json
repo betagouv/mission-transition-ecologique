@@ -41,7 +41,7 @@
   "dependencies": {
     "@gouvfr/dsfr": "^1.11.2",
     "@gouvminint/vue-dsfr": "^5.11.0",
-    "@incubateur-ademe/legal-pages-markdown": "^0.2.0",
+    "@incubateur-ademe/legal-pages-markdown": "^0.3.0",
     "@sentry/utils": "^7.99.0",
     "@sentry/vue": "^7.93.0",
     "@unhead/vue": "^1.9.11",

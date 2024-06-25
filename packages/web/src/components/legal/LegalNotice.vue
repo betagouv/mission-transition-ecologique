@@ -2,7 +2,7 @@
   <render />
 </template>
 <script setup lang="ts">
-import { defineProps, compile } from 'vue'
+import { defineProps, compile, PropType } from 'vue'
 import { LegalNoticeProps } from '@incubateur-ademe/legal-pages-markdown'
 import html from '@incubateur-ademe/legal-pages-markdown/html/LegalNotice.html?raw'
 
@@ -36,6 +36,10 @@ const props = defineProps({
     type: Object as PropType<LegalNoticeProps['siteHost']>,
     required: false,
     default: () => ({})
+  },
+  contactEmail: {
+    type: String,
+    required: true
   }
 })
 
@@ -50,5 +54,8 @@ if (props.thirdParties) {
   }
 }
 
-const render = h({ render: compile(html.replace('{{element_thirdParties}}', element_thirdParties)), setup: () => props })
+const render = h({
+  render: compile(html.replace('{{element_thirdParties}}', element_thirdParties).replace('{{contactEmail}}', props.contactEmail)),
+  setup: () => props
+})
 </script>
