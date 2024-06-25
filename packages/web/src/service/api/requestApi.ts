@@ -20,7 +20,7 @@ export default abstract class RequestApi<T> {
     return url.replace('{' + placeholderName + '}', placeholderData)
   }
 
-  async get(): Promise<Result<T[], Error>> {
+  public async get(): Promise<Result<T[], Error>> {
     const url: string = this.url + '?' + this.query
     try {
       const response = await fetch(url)

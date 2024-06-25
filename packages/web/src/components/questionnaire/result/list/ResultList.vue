@@ -20,7 +20,10 @@
           :selected="selectedTabIndex === 0"
           :asc="asc"
         >
-          <ResultProjectList :filtered-programs="filteredPrograms" />
+          <ResultProjectList
+            :filtered-projects="projects"
+            :filtered-programs="filteredPrograms"
+          />
         </DsfrTabContent>
 
         <DsfrTabContent
@@ -44,11 +47,15 @@ import { useProgramStore } from '@/stores/program'
 import { ProgramData, TrackId } from '@/types'
 import { computed, onBeforeMount } from 'vue'
 import Matomo from '@/utils/matomo'
+import { useProjectStore } from '@/stores/project'
+import { Project } from '@tee/common/src/project/types'
 
 const navigationStore = useNavigationStore()
 const programStore = useProgramStore()
+const projectStore = useProjectStore()
 
 const programs = ref<ProgramData[]>()
+const projects = ref<Project[]>()
 const hasError = ref<boolean>(false)
 
 const hasSpinner = computed(() => {
@@ -71,14 +78,28 @@ const selectTab = (idx: number) => {
 }
 
 onBeforeMount(async () => {
-  const result = useUsedTrackStore().hasUsedTracks() ? await programStore.programsByUsedTracks : await programStore.programs
-  if (result.isOk) {
-    programs.value = result.value
-  } else {
-    hasError.value = true
-  }
+  await getPrograms()
+  await getProjects()
 
   // analytics / send event
   Matomo.sendEvent(TrackId.Results, navigationStore.isCatalog() ? 'show_results_catalog' : 'show_results')
 })
+
+const getPrograms = async () => {
+  const programResult = useUsedTrackStore().hasUsedTracks() ? await programStore.programsByUsedTracks : await programStore.programs
+  if (programResult.isOk) {
+    programs.value = programResult.value
+  } else {
+    hasError.value = true
+  }
+}
+
+const getProjects = async () => {
+  const projectResult = await projectStore.projects
+  if (projectResult.isOk) {
+    projects.value = projectResult.value
+  } else {
+    hasError.value = true
+  }
+}
 </script>

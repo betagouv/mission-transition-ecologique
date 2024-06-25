@@ -104,7 +104,6 @@
 import { computed } from 'vue'
 import { type ProgramData } from '@/types'
 import { Project } from '@tee/common/src/project/types'
-import projectData from '@tee/data/static/project.json'
 import UsedTrack from '@/utils/track/usedTrack'
 import { useProgramStore } from '@/stores/program'
 import Config from '@/config'
@@ -141,7 +140,7 @@ const isPriorityProject = (project: Project) => {
 
 const sortedProjects = computed(() => {
   return props.filteredPrograms
-    ? (projectData as unknown as Project[])
+    ? (props.filteredProjects as unknown as Project[])
         .filter((project: Project) => {
           return project.programs.some((program) => props.filteredPrograms!.some((res) => res.id === program))
         })
