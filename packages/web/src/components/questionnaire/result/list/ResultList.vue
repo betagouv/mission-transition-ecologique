@@ -6,7 +6,7 @@
           <ResultHeader v-if="!navigationStore.isCatalog()" />
         </div>
       </div>
-      <DsfrTabs
+      <TeeTabs
         ref="tabs"
         class="fr-col-12 fr-px-0"
         :class="!hasSpinner || !hasError"
@@ -37,7 +37,7 @@
         >
           <ResultProgramList :filtered-programs="filteredPrograms" />
         </DsfrTabContent>
-      </DsfrTabs>
+      </TeeTabs>
     </div>
   </div>
 </template>

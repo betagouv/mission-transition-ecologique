@@ -35,24 +35,12 @@ a.fr-tag[aria-pressed=true].fr-tag--red.fr-tag--sm, button.fr-tag[aria-pressed=t
 }
 .fr-tabs {
   box-shadow: none;
-  display: flex;
-  justify-content: center;
 }
 .fr-tabs::before {
   box-shadow: none;
 }
-.fr-tabs ul {
-  max-width: 78rem;
-}
-@media (max-width: 78rem) {
-  .fr-tabs ul {
-    max-width: 100%;
-  }
-}
 .fr-tabs__list {
   box-shadow: none;
-  display: flex;
-  justify-content: center;
 }
 .fr-tabs__tab {
   box-shadow: none;
