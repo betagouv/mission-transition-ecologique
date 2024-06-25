@@ -149,12 +149,12 @@ const hasObjectiveCard = computed(() => {
 })
 
 const objective = computed(() => {
-  if (programStore.hasObjectiveTypeSelected()) {
-    return programStore.programFilters.objectiveTypeSelected
-  }
-
   if (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityObjective()) {
     return Theme.getPublicodeObjectiveByObjective(UsedTrack.getPriorityObjective())
+  }
+
+  if (programStore.hasObjectiveTypeSelected()) {
+    return programStore.programFilters.objectiveTypeSelected
   }
 
   return ''
