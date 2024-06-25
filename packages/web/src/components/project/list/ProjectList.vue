@@ -14,7 +14,7 @@
   </div>
   <!--      PRIORITY PROJECTS -->
   <div
-    v-if="hasPriorityProjects && (!hasObjectiveCard || !hasObjectiveSelected)"
+    v-if="hasPriorityProjects && !hasObjectiveCard && !hasObjectiveSelected"
     class="fr-mt-3v fr-bg-lg--green--lightness fr-hidden fr-unhidden-lg"
   >
     <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-m-0 fr-p-0">
@@ -48,7 +48,7 @@
     </div>
   </div>
   <div
-    v-if="hasPriorityProjects && (!hasObjectiveCard || !hasObjectiveSelected)"
+    v-if="hasPriorityProjects && !hasObjectiveCard && !hasObjectiveSelected"
     class="fr-mt-3v fr-hidden fr-unhidden-lg"
   >
     <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-m-0 fr-p-0">
@@ -75,7 +75,7 @@
   <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-m-0 fr-p-0">
     <div
       class="fr-col-12 fr-col-md-9 fr-col-offset-md-3 fr-col-offset-lg-2 fr-px-0"
-      :class="{ 'fr-hidden-lg': !hasObjectiveCard || !hasObjectiveSelected }"
+      :class="{ 'fr-hidden-lg': !hasObjectiveCard && !hasObjectiveSelected }"
     >
       <div class="fr-container fr-p-0 fr-m-0 fr-pr-md-4w">
         <div
@@ -108,6 +108,7 @@ import UsedTrack from '@/utils/track/usedTrack'
 import { useProgramStore } from '@/stores/program'
 import Config from '@/config'
 import projectData from '@tee/data/static/project.json'
+import Theme from '@/utils/theme'
 
 interface ProjectListProps {
   filteredProjects?: Project[]
@@ -135,7 +136,7 @@ const hasPriorityProjects = computed(() => {
 })
 
 const isPriorityProject = (project: Project) => {
-  return priorityProjects.value!.includes(project)
+  return !objective.value ? priorityProjects.value!.includes(project) : false
 }
 
 const sortedProjects = computed(() => {
@@ -163,5 +164,17 @@ const hasObjectiveCard = computed(() => {
 
 const hasObjectiveSelected = computed(() => {
   return programStore.hasObjectiveTypeSelected()
+})
+
+const objective = computed(() => {
+  if (programStore.hasObjectiveTypeSelected()) {
+    return programStore.programFilters.objectiveTypeSelected
+  }
+
+  if (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityObjective()) {
+    return Theme.getPublicodeObjectiveByObjective(UsedTrack.getPriorityObjective())
+  }
+
+  return ''
 })
 </script>
