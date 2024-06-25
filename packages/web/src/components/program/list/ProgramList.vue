@@ -14,20 +14,16 @@
         :count-filtered-programs="countPrograms"
       />
       <div class="fr-col-12">
-        <div class="fr-container--fluid">
-          <div class="fr-container fr-p-0 fr-m-0 fr-pr-md-4w">
-            <div class="fr-grid-row fr-grid-row--center fr-grid-row-lg--left">
-              <router-link
-                v-for="program in filteredPrograms"
-                :id="program.id"
-                :key="program.id"
-                :to="getRouteToProgramDetail(program.id)"
-                class="fr-col-12 fr-card fr-enlarge-link fr-card--horizontal-tier fr-mb-10v"
-              >
-                <ProgramCard :program="program" />
-              </router-link>
-            </div>
-          </div>
+        <div class="fr-grid-row fr-grid-row--center fr-grid-row-lg--left">
+          <router-link
+            v-for="program in filteredPrograms"
+            :id="program.id"
+            :key="program.id"
+            :to="getRouteToProgramDetail(program.id)"
+            class="fr-col-12 fr-card fr-enlarge-link fr-card--horizontal-tier fr-mb-10v"
+          >
+            <ProgramCard :program="program" />
+          </router-link>
         </div>
       </div>
     </div>

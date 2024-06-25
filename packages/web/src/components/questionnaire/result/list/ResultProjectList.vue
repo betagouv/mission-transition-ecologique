@@ -2,19 +2,21 @@
   <!-- PROGRAMS AS LIST OF CARDS -->
   <div class="fr-container--fluid fr-container--fluid--no-overflow fr-mt-2v">
     <div class="fr-grid-row fr-grid-row--center">
-      <div
-        v-if="(!hasObjectiveCard || hasObjectiveSelected) && !hasSpinner"
-        class="fr-col-12 fr-col-md-9 fr-col-offset-md-3 fr-col-offset-lg-2 fr-pl-3v"
-      >
-        <ProgramFilterByTheme v-if="havePrograms && countPrograms > 1" />
+      <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
+        <div
+          v-if="(!hasObjectiveCard || hasObjectiveSelected) && !hasSpinner"
+          class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-my-3v fr-pl-3v"
+        >
+          <ProgramFilterByTheme v-if="havePrograms && countPrograms > 1" />
+        </div>
       </div>
     </div>
     <div
       v-if="hasObjectiveCard && !hasSpinner"
       class="fr-grid-row fr-grid-row--center"
     >
-      <div class="fr-col-12 fr-col-md-9 fr-col-offset-md-3 fr-col-offset-lg-2 fr-mt-3w">
-        <div class="fr-container fr-m-0 fr-p-0 fr-pr-md-4w">
+      <div class="fr-container fr-m-0 fr-p-0 fr-px-md-2v fr-mt-3v">
+        <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2">
           <TeeObjectiveCard
             :objective="objective as PublicodeObjective"
             radius-corner="tr"
@@ -40,12 +42,12 @@ import Theme from '@/utils/theme'
 import { useProgramStore } from '@/stores/program'
 import { Project } from '@tee/common/src/project/types'
 
-interface ProgramListProps {
+interface ProjectListProps {
   projects?: Project[]
   filteredPrograms?: ProgramData[]
 }
 
-const props = defineProps<ProgramListProps>()
+const props = defineProps<ProjectListProps>()
 
 const programStore = useProgramStore()
 
