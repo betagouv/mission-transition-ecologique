@@ -1,8 +1,8 @@
 <template>
-  <render />
+  <div v-html="htmlWithProps"></div>
 </template>
 <script setup lang="ts">
-import { defineProps, compile, PropType } from 'vue'
+import { defineProps, PropType } from 'vue'
 import { LegalNoticeProps } from '@incubateur-ademe/legal-pages-markdown'
 import html from '@incubateur-ademe/legal-pages-markdown/html/LegalNotice.html?raw'
 
@@ -54,8 +54,22 @@ if (props.thirdParties) {
   }
 }
 
-const render = h({
-  render: compile(html.replace('{{element_thirdParties}}', element_thirdParties).replace('{{contactEmail}}', props.contactEmail)),
-  setup: () => props
-})
+const htmlWithProps = html
+  .replace('{{contactEmail}}', props.contactEmail)
+  .replace('{{siteName}}', props.siteName)
+  .replaceAll('{{siteUrl}}', props.siteUrl)
+  .replaceAll('{{licenceUrl}}', props.licenceUrl)
+  .replaceAll('{{privacyPolicyUrl}}', props.privacyPolicyUrl)
+  .replace('{{date}}', props.date)
+  .replace('{{siteHost.name}}', props.siteHost.name)
+  .replaceAll('{{siteHost.email}}', props.siteHost?.email ?? '')
+  .replace('{{siteHost.address}}', props.siteHost.address)
+  .replace('{{siteHost.country}}', props.siteHost.country)
+  .replace('{{element_thirdParties}}', element_thirdParties)
+
+// const render = h({
+//   render: compile(html.replace('{{element_thirdParties}}', element_thirdParties).replace('{{contactEmail}}', props.contactEmail)),
+//   setup: () => props
+// })
+// console.log(render)
 </script>

@@ -94,8 +94,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
-      '@public': fileURLToPath(new URL('./public', import.meta.url)),
-      vue: 'vue/dist/vue.esm-bundler'
+      '@public': fileURLToPath(new URL('./public', import.meta.url))
     }
   }
 })
@@ -142,7 +141,7 @@ function buildHeaders() {
   }
 
   if (mode === 'development') {
-    headers['Content-Security-Policy'] = "script-src 'self' 'unsafe-eval'; " + headers['Content-Security-Policy']
+    headers['Content-Security-Policy'] = "script-src 'self'; " + headers['Content-Security-Policy']
   } else {
     headers['Content-Security-Policy'] = "script-src 'self'; " + headers['Content-Security-Policy']
   }

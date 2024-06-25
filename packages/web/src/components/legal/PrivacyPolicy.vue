@@ -1,9 +1,9 @@
 <template>
-  <render />
+  <div v-html="htmlWithProps"></div>
 </template>
 
 <script setup lang="ts">
-import { defineProps, compile, PropType } from 'vue'
+import { defineProps, PropType } from 'vue'
 import { PrivacyPolicyProps } from '@incubateur-ademe/legal-pages-markdown'
 import html from '@incubateur-ademe/legal-pages-markdown/html/PrivacyPolicy.html?raw'
 
@@ -107,8 +107,15 @@ if (props.cookies) {
   `
 }
 
-const render = h({
-  render: compile(html.replace('{{table_thirdParties}}', tableThirdParties).replace('{{table_cookies}}', tableCookies)),
-  setup: () => props
-})
+const htmlWithProps = html
+  .replace('{{siteName}}', props.siteName)
+  .replace('{{date}}', props.date)
+  .replace('{{table_thirdParties}}', tableThirdParties)
+  .replace('{{table_cookies}}', tableCookies)
+  .replace('{{cookieConsentButton}}', props.cookieConsentButton)
+
+// const render = h({
+//   render: compile(html.replace('{{table_thirdParties}}', tableThirdParties).replace('{{table_cookies}}', tableCookies)),
+//   setup: () => props
+// })
 </script>
