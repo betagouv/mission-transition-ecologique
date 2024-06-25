@@ -8,7 +8,7 @@
   />
   <div
     v-if="project"
-    class="fr-col-12 fr-container--fluid fr-px-md-16v"
+    class="fr-col-12 fr-px-md-16v"
   >
     <div class="fr-grid-row fr-pt-4v">
       <div class="fr-col-3 fr-col-sm-3 fr-hidden-xs">

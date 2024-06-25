@@ -1,5 +1,5 @@
 <template>
-  <DsfrSideMenu class="fr-ml-4v">
+  <DsfrSideMenu class="fr-ml-4v fr-pt-8v fr-sticky">
     <template #default>
       <a
         v-for="item in menuItems"
@@ -34,7 +34,7 @@ const allMenuItems = [
     id: 'project',
     href: '#project-details',
     to: `project-details`,
-    text: "QU'est ce que c'est ?",
+    text: "Qu'est ce que c'est ?",
     condition: props.project.longDescription.length > 0
   },
   {
