@@ -64,6 +64,6 @@ dispositifs*.xlsx
 .nx/cache
 .nx/workspace-data
 
-
-generated/*
+# Global
+**/generated/*
 !generated/index.ts
