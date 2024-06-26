@@ -50,6 +50,7 @@ const classes = computed(() => {
     'fr-card--' + Theme.getColorByValue(props.objective),
     'fr-card--horizontal-tier',
     'fr-card--no-border',
+    'fr-col-content--middle',
     getRadiusClass()
   ]
 })
