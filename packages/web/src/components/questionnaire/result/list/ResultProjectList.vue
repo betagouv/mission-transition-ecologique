@@ -103,6 +103,8 @@ const hasObjectiveSelected = computed(() => {
 })
 
 const sortedProjects = computed(() => {
-  return props.filteredPrograms ? (props.filteredProjects as unknown as Project[]).sort((a, b) => a.priority - b.priority) : undefined
+  return props.filteredPrograms
+    ? (props.filteredProjects as unknown as Project[]).sort((a, b) => (a.priority && b.priority ? a.priority - b.priority : 0))
+    : undefined
 })
 </script>

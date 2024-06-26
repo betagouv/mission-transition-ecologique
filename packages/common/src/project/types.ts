@@ -4,6 +4,7 @@ import { QuestionnaireRoute, PublicodeObjective } from '@tee/common/src/question
 
 export interface Project {
   id: number
+  priority?: number
   title: string // titre
   nameTag: string // Affichage du projet s'il doit être mis en avant dans une thématique (étape "quel est votre objectif prioritaire")
   shortDescription: string // texte affiché sur les cartes projets (carte présentes sur l'annuaire)
