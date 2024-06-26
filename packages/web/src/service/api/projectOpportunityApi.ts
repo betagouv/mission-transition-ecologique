@@ -9,7 +9,6 @@ import { Result } from 'true-myth'
 import { Project } from '@tee/common/src/project/types'
 import projectData from '@tee/data/static/project.json'
 // TO DO : needs backend to connect with brevo and create special project opportunities
-
 export default class ProjectOpportunityApi extends RequestApi<Project> {
   protected readonly url = '/api/projects'
   private readonly headers = {

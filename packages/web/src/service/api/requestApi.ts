@@ -1,6 +1,6 @@
 import { Result } from 'true-myth'
 
-export default abstract class RequestApi<T> {
+export default abstract class RequestApi<StatsData> {
   protected url: string = ''
   protected query: string = ''
 
@@ -20,11 +20,11 @@ export default abstract class RequestApi<T> {
     return url.replace('{' + placeholderName + '}', placeholderData)
   }
 
-  public async get(): Promise<Result<T[], Error>> {
+  public async get(): Promise<Result<StatsData[], Error>> {
     const url: string = this.url + '?' + this.query
     try {
       const response = await fetch(url)
-      return Result.ok((await response.json()) as T[])
+      return Result.ok((await response.json()) as StatsData[])
     } catch (error: unknown) {
       return Result.err(error as Error)
     }
