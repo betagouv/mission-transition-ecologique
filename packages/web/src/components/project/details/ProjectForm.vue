@@ -1,7 +1,12 @@
 <template>
   <div class="fr-container--fluid">
     <div class="fr-grid-row">
-      <div class="fr-h3 fr-col-12 fr-text-center">Contactez un conseiller</div>
+      <div
+        id="project-form-title"
+        class="fr-h3 fr-col-12 fr-text-center"
+      >
+        Contactez un conseiller
+      </div>
       <div class="fr-col-12 fr-text-center">
         👋 Expliquez nous votre projet, nous vous mettrons en relation avec un conseiller compétent pour votre demande sur votre territoire.
       </div>
@@ -26,7 +31,7 @@
               <DsfrInputGroup
                 :error-message="getErrorMessage(projectForm.project)"
                 :valid-message="getValidMessage(projectForm.project)"
-                >
+              >
                 <DsfrInput
                   type="text"
                   :model-value="projectForm.project.value"

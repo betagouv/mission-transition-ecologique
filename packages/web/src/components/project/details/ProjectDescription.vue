@@ -5,7 +5,14 @@
     :expanded-id="expandedId"
     @expand="expandDetails"
   >
-    <template #title><div class="fr-h3">❓ Qu'est ce que c'est ?</div></template>
+    <template #title>
+      <div
+        id="project-details-title"
+        class="fr-h3"
+      >
+        ❓ Qu'est ce que c'est ?
+      </div>
+    </template>
     <div v-html="formatProjectDescription(projectDescription)" />
   </DsfrAccordion>
 
@@ -15,7 +22,14 @@
     :expanded-id="expandedMoreId"
     @expand="expandMoreDetails"
   >
-    <template #title><div class="fr-h3">📚 Pour aller plus loin</div></template>
+    <template #title>
+      <div
+        id="project-more-details-title"
+        class="fr-h3"
+      >
+        📚 Pour aller plus loin
+      </div>
+    </template>
     <div v-html="formatProjectDescription(projectMoreDescription)" />
   </DsfrAccordion>
 </template>

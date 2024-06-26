@@ -5,7 +5,14 @@
     :expanded-id="expandedId"
     @expand="expandRelatedProjects"
   >
-    <template #title><div class="fr-h3">Projets complémentaires</div></template>
+    <template #title>
+      <div
+        id="project-linked-projects-title"
+        class="fr-h3"
+      >
+        Projets complémentaires
+      </div>
+    </template>
     <LinkedProjectButton
       v-for="project in relatedProjectsTags"
       :id="project.id"

@@ -1,7 +1,7 @@
 <template>
   <DsfrSideMenu class="fr-ml-4v fr-pt-8v fr-sticky">
     <template #default>
-      <a
+      <button
         v-for="item in menuItems"
         :key="item.id"
         :href="item.href"
@@ -9,7 +9,7 @@
         @click="scrollTo(item.to)"
       >
         {{ item.text }}
-      </a>
+      </button>
     </template>
   </DsfrSideMenu>
 </template>
@@ -22,6 +22,7 @@ interface Props {
 const props = defineProps<Props>()
 const scrollTo = (id: string) => {
   const element = document.getElementById(id)
+  console.log(element)
   if (element) {
     setTimeout(() => {
       element.scrollIntoView({ behavior: 'smooth', block: 'center' })
@@ -32,24 +33,24 @@ const menuItems = computed(() => allMenuItems.filter((item) => item.condition !=
 const allMenuItems = [
   {
     id: 'project',
-    href: '#project-details',
-    to: `project-details`,
+    href: '#project-details-title',
+    to: `project-details-title`,
     text: "Qu'est ce que c'est ?",
     condition: props.project.longDescription.length > 0
   },
   {
     id: 'project-more',
-    href: '#project-more-details',
-    to: `project-more-details`,
+    href: '#project-more-details-title',
+    to: `project-more-details-title`,
     text: 'Pour aller plus loin',
     condition: props.project.moreDescription.length > 0
   },
-  { id: 'aids', href: '#project-aids', to: `project-aids`, text: 'Mes aides' },
-  { id: 'contact', href: '#project-contact', to: `project-contact`, text: 'Contact' },
+  { id: 'aids', href: '#project-aids-title', to: `project-aids-title`, text: 'Mes aides' },
+  { id: 'contact', href: '#project-form-title', to: `project-form-title`, text: 'Contact' },
   {
     id: 'linked-project',
-    href: '#project-linked-projects',
-    to: `project-linked-projects`,
+    href: '#project-linked-projects-title',
+    to: `project-linked-projects-title`,
     text: 'Projets complémentaires',
     condition: props.project.linkedProjects.length > 0
   }
