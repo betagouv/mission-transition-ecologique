@@ -16,7 +16,7 @@
         @select-tab="selectTab"
       >
         <DsfrTabContent
-          class="fr-px-0"
+          class="fr-p-0"
           panel-id="tab-content-0"
           tab-id="tab-0"
           :selected="selectedTabIndex === 0"
@@ -29,7 +29,7 @@
         </DsfrTabContent>
 
         <DsfrTabContent
-          class="fr-px-0"
+          class="fr-p-0"
           panel-id="tab-content-1"
           tab-id="tab-1"
           :selected="selectedTabIndex === 1"
