@@ -23,6 +23,13 @@
   <!-- PROGRAMS AS LIST OF CARDS -->
   <div class="fr-container--fluid fr-container--fluid--no-overflow fr-mt-6v">
     <div class="fr-grid-row fr-grid-row--center">
+      <ResultListNoResults
+        :has-error="hasError"
+        :has-spinner="hasSpinner"
+        :count-items="countPrograms"
+      />
+    </div>
+    <div class="fr-grid-row fr-grid-row--center">
       <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
         <div
           v-if="!hasSpinner || !hasError"

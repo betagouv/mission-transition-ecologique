@@ -8,11 +8,6 @@
           {{ countPrograms > 1 ? Translation.t('results.results') : Translation.t('results.result') }}
         </div>
       </div>
-      <ResultListNoResults
-        :has-error="hasError"
-        :has-spinner="hasSpinner"
-        :count-filtered-programs="countPrograms"
-      />
       <div class="fr-col-12">
         <div class="fr-grid-row fr-grid-row--center fr-grid-row-lg--left">
           <router-link
@@ -47,8 +42,6 @@ const props = defineProps<ProgramListProps>()
 
 const navigationStore = useNavigationStore()
 
-const hasError = ref<boolean>(false)
-
 const isCatalog = navigationStore.isCatalog()
 
 const havePrograms = computed(() => {
@@ -57,10 +50,6 @@ const havePrograms = computed(() => {
 
 const countPrograms = computed(() => {
   return props.filteredPrograms?.length || 0
-})
-
-const hasSpinner = computed(() => {
-  return props.filteredPrograms === undefined && !hasError.value
 })
 
 const getRouteToProgramDetail = (programId: string): RouteLocationRaw => {

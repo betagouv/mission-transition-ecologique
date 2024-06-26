@@ -2,12 +2,6 @@
   <!--  List of project cards-->
   <div class="fr-grid-row fr-grid-row--center">
     <div class="fr-container fr-m-0 fr-p-0">
-      <ResultListNoResults
-        :has-error="hasError"
-        :has-spinner="hasSpinner"
-        :count-filtered-programs="countFilteredPrograms"
-      />
-
       <div class="fr-grid-row fr-grid-row--center">
         <div
           class="fr-mb-2v fr-mt-6v fr-pl-2w fr-pl-md-2v fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-text--blue-france fr-font-style--italic"
@@ -143,10 +137,6 @@ const hasError = ref<boolean>(false)
 
 const hasSpinner = computed(() => {
   return props.sortedProjects === undefined && !hasError.value
-})
-
-const countFilteredPrograms = computed(() => {
-  return props.filteredPrograms?.length || 0
 })
 
 const hasPriorityProjects = computed(() => {

@@ -61,7 +61,7 @@ const projects = ref<Project[]>()
 const hasError = ref<boolean>(false)
 
 const hasSpinner = computed(() => {
-  return programs.value === undefined && !hasError.value
+  return (programs.value === undefined || projects.value === undefined) && !hasError.value
 })
 
 const filteredPrograms = computed(() => {

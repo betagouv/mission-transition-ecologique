@@ -2,12 +2,19 @@
   <!-- PROGRAMS AS LIST OF CARDS -->
   <div class="fr-container--fluid fr-container--fluid--no-overflow fr-mt-2v">
     <div class="fr-grid-row fr-grid-row--center">
+      <ResultListNoResults
+        :has-error="hasError"
+        :has-spinner="hasSpinner"
+        :count-items="countProjects"
+      />
+    </div>
+    <div class="fr-grid-row fr-grid-row--center">
       <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
         <div
           v-if="(!hasObjectiveCard || hasObjectiveSelected) && !hasSpinner"
           class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-my-3v fr-pl-3v"
         >
-          <ProgramFilterByTheme v-if="havePrograms && countPrograms > 1" />
+          <ProgramFilterByTheme v-if="hasProjects && countProjects >= 1" />
         </div>
       </div>
     </div>
@@ -36,7 +43,7 @@
       </div>
     </div>
     <ProjectList
-      v-if="havePrograms && !hasSpinner"
+      v-if="hasProjects && !hasSpinner"
       :sorted-projects="sortedProjects"
       :filtered-programs="props.filteredPrograms"
     />
@@ -63,16 +70,16 @@ const programStore = useProgramStore()
 
 const hasError = ref<boolean>(false)
 
-const havePrograms = computed(() => {
-  return countPrograms.value > 0
+const hasProjects = computed(() => {
+  return countProjects.value > 0
 })
 
-const countPrograms = computed(() => {
-  return props.filteredPrograms?.length || 0
+const countProjects = computed(() => {
+  return props.filteredProjects?.length || 0
 })
 
 const hasSpinner = computed(() => {
-  return props.filteredPrograms === undefined && !hasError.value
+  return props.filteredProjects === undefined && !hasError.value
 })
 
 const hasObjectiveCard = computed(() => {
