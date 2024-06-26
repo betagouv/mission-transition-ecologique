@@ -260,12 +260,10 @@
 import { scrollToElementCenter } from '@/utils/helpers'
 import TrackStructure from '@/utils/track/trackStructure'
 import { computed, ref } from 'vue'
-import { InputFieldUnionType, isValidatedStringFieldInputType, type ReqResp, TrackId } from '@/types'
+import { InputFieldUnionType, isValidatedStringFieldInputType, type ReqResp } from '@/types'
 import Translation from '@/utils/translation'
 import TeeDsfrButton from '@/components/element/button/TeeDsfrButton.vue'
 import { DsfrInput, DsfrInputGroup, DsfrCheckbox } from '@gouvminint/vue-dsfr'
-import Matomo from '@/utils/matomo'
-import { RouteName } from '@/types/routeType'
 import { useRoute } from 'vue-router'
 import { ProjectFormType } from '@/types'
 import Contact from '@/utils/contact'
@@ -273,6 +271,7 @@ import PhoneValidator from '@tee/common/src/establishment/validator/phoneValidat
 import EmailValidator from '@tee/common/src/establishment/validator/emailValidator'
 import SiretValidator from '@tee/common/src/establishment/validator/siretValidator'
 import { Project } from '@tee/common/src/project/types'
+import ProjectOpportunityApi from '@/service/api/projectOpportunityApi'
 
 const route = useRoute()
 
@@ -389,14 +388,14 @@ const validateFormField = (field: InputFieldUnionType): void => {
   }
 }
 
-const saveProjectForm = () => {
+const saveProjectForm = async () => {
   try {
     isLoading.value = true
-    // const opportunity = new OpportunityApi(projectForm.value, props.project.id)
-    // requestResponse.value = await opportunity.fetch()
+    const opportunity = new ProjectOpportunityApi(projectForm.value, props.project.id)
+    requestResponse.value = await opportunity.fetch()
 
     // analytics / send event
-    Matomo.sendEvent(TrackId.Results, route.name === RouteName.CatalogDetail ? 'send_form_catalog' : 'send_form')
+    // Matomo.sendEvent(TrackId.Results, route.name === RouteName.CatalogDetail ? 'send_form_catalog' : 'send_form')
   } finally {
     isLoading.value = false
     formIsSent.value = true

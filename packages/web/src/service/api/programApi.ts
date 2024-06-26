@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+
 import RequestApi from '@/service/api/requestApi'
 import type { ProgramData, QuestionnaireData } from '@/types'
 import { Result } from 'true-myth'

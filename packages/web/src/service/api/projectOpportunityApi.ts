@@ -1,13 +1,17 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { PublicodesKeys, QuestionnaireDataEnum, QuestionnaireRoute, TrackId } from '@/types'
-import type { OpportunityBody, ReqResp, WithoutNullableKeys, OpportunityFormType } from '@/types'
+import type { ReqResp, WithoutNullableKeys, ProjectFormType } from '@/types'
 import RequestApi from '@/service/api/requestApi'
 import TrackStructure from '@/utils/track/trackStructure'
-import { Opportunity } from '@tee/backend/src/opportunity/domain/types'
+import { ProjectBody } from '@tee/common/src/project/types'
+import { Result } from 'true-myth'
+import { Project } from '@tee/common/src/project/types'
+import projectData from '@tee/data/static/project.json'
+// TO DO : needs backend to connect with brevo and create special project opportunities
 
-export default class OpportunityApi extends RequestApi<Opportunity> {
-  protected readonly url = '/api/opportunities'
+export default class ProjectOpportunityApi extends RequestApi<Project> {
+  protected readonly url = '/api/projects'
   private readonly headers = {
     accept: 'application/json',
     'content-type': 'application/json'
@@ -15,14 +19,22 @@ export default class OpportunityApi extends RequestApi<Opportunity> {
 
   private usedTrackStore = useUsedTrackStore()
 
-  private _opportunityForm: WithoutNullableKeys<OpportunityFormType>
+  private _projectForm: WithoutNullableKeys<ProjectFormType>
 
   constructor(
-    opportunityForm: OpportunityFormType,
-    private _programId: string
+    projectForm: ProjectFormType,
+    private _projectId: number
   ) {
     super()
-    this._opportunityForm = opportunityForm as WithoutNullableKeys<OpportunityFormType>
+    this._projectForm = projectForm as WithoutNullableKeys<ProjectFormType>
+  }
+
+  async get(): Promise<Result<Project[], Error>> {
+    //TODO replace with api call once the endpoint is available
+    return new Promise((resolve, reject) => {
+      if (!projectData) reject(new Error('No project data'))
+      else resolve(Result.ok(projectData as unknown as Project[]))
+    })
   }
 
   async fetch() {
@@ -40,6 +52,7 @@ export default class OpportunityApi extends RequestApi<Opportunity> {
       resp.statusText = response.statusText
       resp.url = response.url
     } catch (error: unknown) {
+      console.log('ERROR SEND')
       resp.ok = false
       resp.status = 500
       resp.statusText = 'Internal server error'
@@ -50,27 +63,27 @@ export default class OpportunityApi extends RequestApi<Opportunity> {
     return resp
   }
 
-  payload(): OpportunityBody {
+  payload(): ProjectBody {
     return {
-      opportunity: {
-        firstName: this._opportunityForm.name.value,
-        lastName: this._opportunityForm.surname.value,
-        email: this._opportunityForm.email.value,
-        phoneNumber: this._opportunityForm.tel.value,
-        companySiret: this._opportunityForm.siret.value,
+      project: {
+        firstName: this._projectForm.name.value,
+        lastName: this._projectForm.surname.value,
+        email: this._projectForm.email.value,
+        phoneNumber: this._projectForm.tel.value,
+        companySiret: this._projectForm.siret.value,
         companyName: this.getFromUsedTrack(TrackId.Siret, 'denomination'),
         companySector: TrackStructure.getSector(),
         companySize: (this.getFromUsedTrack(TrackId.StructureWorkforce, PublicodesKeys.Workforce) as unknown as number) ?? undefined, // get from usedTrack
-        programId: this._programId,
-        message: this._opportunityForm.needs.value,
+        projectId: this._projectId,
+        message: this._projectForm.needs.value,
         questionnaireRoute: this.getFromUsedTrack(
           TrackId.QuestionnaireRoute,
           QuestionnaireDataEnum.questionnaire_route as string
         ) as QuestionnaireRoute, // get from usedTrack
         otherData: this.getAllValuesFromUsedTrack(),
-        linkToProgramPage: this._opportunityForm.linkToProgramPage.value
+        linkToProjectPage: this._projectForm.linkToProjectPage.value
       },
-      optIn: this._opportunityForm.cgu.value
+      optIn: this._projectForm.cgu.value
     }
   }
 
