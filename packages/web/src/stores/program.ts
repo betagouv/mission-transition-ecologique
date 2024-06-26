@@ -51,6 +51,12 @@ export const useProgramStore = defineStore('program', () => {
     })
   }
 
+  function getProgramsByObjective(programs: ProgramData[], objective: PublicodeObjective) {
+    return programs.filter((program: ProgramData) => {
+      return ProgramFilter.filterProgramsByObjective(program, objective)
+    })
+  }
+
   async function getProgramById(id: string): Promise<Result<ProgramData, Error>> {
     currentProgram.value = undefined
 
@@ -100,6 +106,7 @@ export const useProgramStore = defineStore('program', () => {
     programFilters,
     programsByUsedTracks,
     getProgramsByFilters,
+    getProgramsByObjective,
     getProgramById,
     hasObjectiveTypeSelected,
     setObjectiveTypeSelected,

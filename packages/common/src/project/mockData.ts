@@ -16,8 +16,7 @@ La loi AGEC fixe des objectifs ambitieux sur la réduction des emballages à usa
     themes: ['ecoconception'],
     mainTheme: 'ecoconception',
     programs: ['accelerateur-decarbonation', 'act-pas-a-pas'],
-    linkedProjects: [1, 2],
-    priority: 12
+    linkedProjects: [1, 2]
   },
   {
     id: 1,
@@ -34,8 +33,7 @@ La loi AGEC fixe des objectifs ambitieux sur la réduction des emballages à usa
     themes: ['eau'],
     mainTheme: 'eau',
     programs: ['accelerateur-decarbonation', 'act-pas-a-pas'],
-    linkedProjects: [],
-    priority: 1
+    linkedProjects: []
   },
   {
     id: 2,
@@ -52,8 +50,7 @@ La loi AGEC fixe des objectifs ambitieux sur la réduction des emballages à usa
     themes: ['energie'],
     mainTheme: 'energie',
     programs: ['accelerateur-decarbonation', 'act-pas-a-pas'],
-    linkedProjects: [5, 6, 7],
-    priority: 100
+    linkedProjects: [5, 6, 7]
   },
   {
     id: 3,
@@ -70,8 +67,7 @@ La loi AGEC fixe des objectifs ambitieux sur la réduction des emballages à usa
     themes: ['batiment'],
     mainTheme: 'batiment',
     programs: ['accelerateur-decarbonation', 'act-pas-a-pas'],
-    linkedProjects: [2, 4],
-    priority: 22
+    linkedProjects: [2, 4]
   },
   {
     id: 4,
@@ -88,8 +84,7 @@ La loi AGEC fixe des objectifs ambitieux sur la réduction des emballages à usa
     themes: ['energie'],
     mainTheme: 'energie',
     programs: ['accelerateur-decarbonation', 'act-pas-a-pas'],
-    linkedProjects: [2, 3],
-    priority: 34
+    linkedProjects: [2, 3]
   },
   {
     id: 5,
@@ -106,8 +101,7 @@ La loi AGEC fixe des objectifs ambitieux sur la réduction des emballages à usa
     themes: ['rh'],
     mainTheme: 'rh',
     programs: ['accelerateur-decarbonation', 'act-pas-a-pas'],
-    linkedProjects: [],
-    priority: 98
+    linkedProjects: []
   },
   {
     id: 6,
@@ -124,8 +118,7 @@ La loi AGEC fixe des objectifs ambitieux sur la réduction des emballages à usa
     themes: ['renovation'],
     mainTheme: 'renovation',
     programs: ['accelerateur-decarbonation', 'act-pas-a-pas'],
-    linkedProjects: [],
-    priority: 98
+    linkedProjects: []
   },
   {
     id: 7,
@@ -142,8 +135,7 @@ La loi AGEC fixe des objectifs ambitieux sur la réduction des emballages à usa
     themes: ['mobilite'],
     mainTheme: 'mobilite',
     programs: ['accelerateur-decarbonation', 'act-pas-a-pas'],
-    linkedProjects: [2],
-    priority: 19
+    linkedProjects: [2]
   },
   {
     id: 8,
@@ -156,8 +148,7 @@ La loi AGEC fixe des objectifs ambitieux sur la réduction des emballages à usa
     themes: ['mobilite'],
     mainTheme: 'mobilite',
     programs: ['act-pas-a-pas'],
-    linkedProjects: [],
-    priority: 11
+    linkedProjects: []
   },
   {
     id: 9,
@@ -196,7 +187,6 @@ La loi AGEC fixe des objectifs ambitieux sur la réduction des emballages à usa
       'investissement-chaleur-bois',
       'investissement-ecoconception'
     ],
-    linkedProjects: [0, 1, 2, 3, 4, 5, 6, 7, 8],
-    priority: 18
+    linkedProjects: [0, 1, 2, 3, 4, 5, 6, 7, 8]
   }
 ]

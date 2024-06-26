@@ -1,4 +1,5 @@
 import programFrDict from '@/translations/fr/program'
+import projectFrDict from '@/translations/fr/project'
 
 export const frDict = {
   next: 'Suivant',
@@ -123,5 +124,6 @@ export const frDict = {
       of: 'de la'
     }
   },
-  ...programFrDict
+  ...programFrDict,
+  ...projectFrDict
 }

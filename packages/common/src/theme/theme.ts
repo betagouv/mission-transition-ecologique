@@ -1,5 +1,5 @@
 import { PublicodeObjective } from '../questionnaire/types/types'
-import { Theme as ThemeType } from './types'
+import { ThemeId, Theme as ThemeType } from './types'
 import { Color } from './color'
 
 export default class Theme {
@@ -80,5 +80,9 @@ export default class Theme {
 
   static getByValue(value: PublicodeObjective) {
     return this.themes.find((theme) => theme.value === value)
+  }
+
+  static getById(id: ThemeId | undefined) {
+    return this.themes.find((theme) => theme.id === id)
   }
 }
