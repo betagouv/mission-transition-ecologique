@@ -39,7 +39,6 @@
                   :is-valid="projectForm.project.isValid"
                   :required="projectForm.project.required"
                   :label="projectForm.project.label"
-                  :disabled="projectForm.project.disabled"
                   @update:model-value="updateProjectForm($event, 'project')"
                   @focusout="validateFormField(projectForm.project)"
                 />
@@ -268,8 +267,7 @@ import { DsfrInput, DsfrInputGroup, DsfrCheckbox } from '@gouvminint/vue-dsfr'
 import Matomo from '@/utils/matomo'
 import { RouteName } from '@/types/routeType'
 import { useRoute } from 'vue-router'
-import ProjectApi from '@/service/api/projectApi'
-import type { ProjectFormType } from '@/types/formsType'
+import { ProjectFormType } from '@/types'
 import Contact from '@/utils/contact'
 import PhoneValidator from '@tee/common/src/establishment/validator/phoneValidator'
 import EmailValidator from '@tee/common/src/establishment/validator/emailValidator'
@@ -391,12 +389,11 @@ const validateFormField = (field: InputFieldUnionType): void => {
   }
 }
 
-const saveProjectForm = async () => {
+const saveProjectForm = () => {
   try {
     isLoading.value = true
-    console.log(projectForm, props.project.id)
-    const project = new ProjectApi(projectForm.value, props.project.id)
-    requestResponse.value = await project.fetch()
+    // const opportunity = new OpportunityApi(projectForm.value, props.project.id)
+    // requestResponse.value = await opportunity.fetch()
 
     // analytics / send event
     Matomo.sendEvent(TrackId.Results, route.name === RouteName.CatalogDetail ? 'send_form_catalog' : 'send_form')

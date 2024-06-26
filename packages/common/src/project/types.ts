@@ -1,6 +1,5 @@
 import { ThemeId } from '../theme/types'
-import { projects } from './mockData'
-import { ProjectOpportunity } from '@tee/backend/src/project/domain/types'
+import projects from '@tee/data/static/project.json'
 export interface Project {
   id: number
   title: string // titre
@@ -16,7 +15,3 @@ export interface Project {
 }
 
 export type ProjectId = (typeof projects)[number]['id']
-export interface ProjectBody {
-  project: ProjectOpportunity
-  optIn: boolean
-}

@@ -22,7 +22,6 @@ interface Props {
 const props = defineProps<Props>()
 const scrollTo = (id: string) => {
   const element = document.getElementById(id)
-  console.log(element)
   if (element) {
     setTimeout(() => {
       element.scrollIntoView({ behavior: 'smooth', block: 'center' })

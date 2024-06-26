@@ -1,6 +1,8 @@
 import { CalloutType } from '@tee/web/src/types/elementsPropsTypes'
 
-export interface OpportunityFormType {
+export type ProjectFormType = FormType & { project: StringFieldInputType; linkToProjectPage: MandatoryStringFieldFormType }
+export type OpportunityFormType = FormType & { linkToProgramPage: MandatoryStringFieldFormType }
+export interface FormType {
   [key: string]: StringFieldInputType | MandatoryStringFieldFormType | BooleanFieldInputType | ValidatedStringFieldInputType
   name: StringFieldInputType
   surname: StringFieldInputType
@@ -9,24 +11,10 @@ export interface OpportunityFormType {
   siret: ValidatedStringFieldInputType
   needs: StringFieldInputType
   cgu: BooleanFieldInputType
-  linkToProgramPage: MandatoryStringFieldFormType
-}
-
-export interface ProjectFormType {
-  name: StringFieldInputType
-  surname: StringFieldInputType
-  tel: ValidatedStringFieldInputType
-  email: ValidatedStringFieldInputType
-  project: StringFieldInputType
-  siret: ValidatedStringFieldInputType
-  needs: StringFieldInputType
-  cgu: BooleanFieldInputType
-  linkToProjectPage: MandatoryStringFieldFormType
 }
 
 type DefaultFieldFormType = {
-  required: boolean
-  disabled?: boolean
+  required: true
   isValid: boolean | undefined
   label?: string
   hint?: string
