@@ -11,7 +11,7 @@ export const useProjectStore = defineStore('project', () => {
   })
 
   async function getProjects() {
-    return (await new ProjectApi().get()) || []
+    return await new ProjectApi().get()
   }
 
   function getProjectsByObjective(projects: Project[], objectiveType: string): Project[] {

@@ -2,6 +2,9 @@
 
 import RequestApi from '@/service/api/requestApi'
 import type { QuestionnaireData } from '@/types'
+import projectData from '@tee/data/static/project.json'
+import { Result } from 'true-myth'
+
 import { Project } from '@tee/common/src/project/types'
 
 export default class ProjectApi extends RequestApi<Project> {
@@ -11,6 +14,14 @@ export default class ProjectApi extends RequestApi<Project> {
   constructor(private questionnaireData: QuestionnaireData = {}) {
     super()
     this.query = this.buildQuery
+  }
+
+  async get(): Promise<Result<Project[], Error>> {
+    //TODO replace with api call once the endpoint is available
+    return new Promise((resolve, reject) => {
+      if (!projectData) reject(new Error('No project data'))
+      else resolve(Result.ok(projectData as unknown as Project[]))
+    })
   }
 
   getOne(id: string) {
