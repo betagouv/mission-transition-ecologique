@@ -24,7 +24,7 @@ export default class ProjectApi extends RequestApi<Project> {
     private _projectId: number
   ) {
     super()
-    this._projectForm = projectForm as WithoutNullableKeys<ProjectFormType>
+    this._projectForm = projectForm
   }
 
   async get(): Promise<Result<Project[], Error>> {
@@ -37,6 +37,7 @@ export default class ProjectApi extends RequestApi<Project> {
 
   async fetch() {
     let resp: ReqResp = {}
+    try {
       const response = await fetch(this.url, {
         method: 'POST',
         headers: this.headers,
@@ -48,11 +49,16 @@ export default class ProjectApi extends RequestApi<Project> {
       resp.status = response.status
       resp.statusText = response.statusText
       resp.url = response.url
+    } catch (error: unknown) {
       resp.ok = false
       resp.status = 500
       resp.statusText = 'Internal server error'
       // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
       resp.message = `${error}`
+    }
+
+    return resp
+  }
 
   payload(): ProjectBody {
     return {

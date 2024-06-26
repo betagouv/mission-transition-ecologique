@@ -26,7 +26,7 @@
               <DsfrInputGroup
                 :error-message="getErrorMessage(projectForm.project)"
                 :valid-message="getValidMessage(projectForm.project)"
-                >
+              >
                 <DsfrInput
                   type="text"
                   :model-value="projectForm.project.value"

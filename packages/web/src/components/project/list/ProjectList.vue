@@ -39,7 +39,7 @@
                   Voici les actions par lesquelles commencer pour votre TPE du secteur Hôtels et hébergement similaire :
                 </div>
                 <router-link
-                  v-for="project in sortedProjects"
+                  v-for="project in priorityProjects"
                   :id="project.id"
                   :key="project.id"
                   :to="getRouteToProjectDetail(project.id)"
@@ -68,7 +68,7 @@
           <div class="fr-container fr-p-0 fr-m-0">
             <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-grid-row-md--left">
               <router-link
-                v-for="project in sortedProjects"
+                v-for="project in nonPriorityProjects"
                 :id="project.id"
                 :key="project.id"
                 :to="getRouteToProjectDetail(project.id)"
