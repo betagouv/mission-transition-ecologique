@@ -31,12 +31,6 @@
     </div>
     <div class="fr-grid-row fr-grid-row--center">
       <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
-        <div
-          v-if="!hasSpinner || !hasError"
-          class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-col-hidden-md fr-text-right fr-mb-3v"
-        >
-          <ProgramModalFilter />
-        </div>
         <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2">
           <ResultHeader v-if="!navigationStore.isCatalog() && !hasSpinner" />
         </div>
