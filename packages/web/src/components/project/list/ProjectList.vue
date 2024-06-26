@@ -1,35 +1,118 @@
 <template>
   <!--  List of project cards-->
-  <div class="fr-container--fluid fr-container--fluid--no-overflow fr-px-0 fr-mb-0 fr-mt-6v">
-    <div class="fr-grid-row fr-grid-row--center">
-      <div class="fr-mb-4v fr-pl-2w fr-pl-md-0 fr-col-12 fr-text--blue-france fr-font-style--italic">
-        <div v-if="haveProjects && countProjects > 1">
-          {{ countProjects }}
-          {{ countProjects > 1 ? Translation.t('results.results') : Translation.t('results.result') }}
+  <div class="fr-grid-row fr-grid-row--center">
+    <div class="fr-container fr-m-0 fr-p-0">
+      <div class="fr-grid-row fr-grid-row--center">
+        <div
+          class="fr-mb-2v fr-mt-6v fr-pl-2w fr-pl-md-2v fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-text--blue-france fr-font-style--italic"
+        >
+          <ProjectCounter
+            :sorted-projects="sortedProjects"
+            :filtered-programs="filteredPrograms"
+          />
         </div>
       </div>
-      <ResultListNoResults
-        :has-error="hasError"
-        :has-spinner="hasSpinner"
-        :count-filtered-programs="countFilteredPrograms"
-      />
-      <div class="fr-col-12">
-        <div class="fr-container--fluid fr-container--fluid--no-overflow">
-          <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-grid-row-md--left">
-            <router-link
-              v-for="project in sortedProjects"
-              :id="project.id"
-              :key="project.id"
-              :to="getRouteToProjectDetail(project.id)"
-              class="fr-col-11 fr-col-sm-12 fr-col-md-6 fr-col-lg-4 no-outline"
+    </div>
+  </div>
+  <!--      PRIORITY PROJECTS -->
+  <div
+    v-if="hasPriorityProjects && !hasObjectiveCard && !hasObjectiveSelected"
+    class="fr-mt-3v fr-bg-lg--green--lightness fr-hidden fr-unhidden-lg"
+  >
+    <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-m-0 fr-p-0">
+      <div class="fr-container fr-m-0 fr-p-0">
+        <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-m-0 fr-p-0">
+          <div
+            v-if="!hasSpinner || !hasError"
+            class="fr-col-3 fr-col-lg-2 fr-col-content--bottom fr-pb-6w"
+          >
+            <img
+              :src="`${publicPath}images/TEE_project_priority.svg`"
+              alt=""
+              class="fr-responsive-img fr-col-12 fr-pt-6w"
+            />
+          </div>
+          <div class="fr-col-12 fr-col-md-10 fr-px-0 fr-pr-md-2v">
+            <div class="fr-container fr-p-0 fr-m-0">
+              <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-grid-row-md--left">
+                <div class="fr-pt-2w fr-pl-2w fr-text--bold fr-text--blue-france">
+                  Voici les actions par lesquelles commencer pour votre TPE du secteur Hôtels et hébergement similaire :
+                </div>
+                <router-link
+                  v-for="project in priorityProjects"
+                  :id="project.id"
+                  :key="project.id"
+                  :to="getRouteToProjectDetail(project.id)"
+                  class="fr-col-11 fr-col-sm-12 fr-col-md-6 fr-col-lg-4 no-outline"
+                >
+                  <ProjectCard
+                    :project="project"
+                    :is-priority-project="true"
+                    class="fr-radius-a--1v fr-card--shadow fr-card-priority fr-px-0"
+                  />
+                </router-link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    v-if="hasPriorityProjects && !hasObjectiveCard && !hasObjectiveSelected"
+    class="fr-mt-3v fr-hidden fr-unhidden-lg"
+  >
+    <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-m-0 fr-p-0">
+      <div class="fr-container fr-m-0 fr-p-0">
+        <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-px-0 fr-pr-md-2v">
+          <div class="fr-container fr-p-0 fr-m-0">
+            <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-grid-row-md--left">
+              <router-link
+                v-for="project in nonPriorityProjects"
+                :id="project.id"
+                :key="project.id"
+                :to="getRouteToProjectDetail(project.id)"
+                class="fr-col-11 fr-col-sm-12 fr-col-md-6 fr-col-lg-4 no-outline"
+              >
+                <ProjectCard
+                  :project="project"
+                  class="fr-radius-a--1v fr-card--shadow"
+                />
+              </router-link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- LIST DISPLAY FOR MD SIZE -->
+
+  <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-m-0 fr-p-0">
+    <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
+      <div class="fr-grid-row fr-grid-row--center">
+        <div class="fr-container fr-m-0 fr-p-0">
+          <div class="fr-grid-row fr-grid-row--center">
+            <div
+              class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-pr-md-2v"
+              :class="{ 'fr-hidden-lg': !hasObjectiveCard && !hasObjectiveSelected }"
             >
-              <ProjectCard
-                :project="project"
-                :is-priority-project="isPriorityProject(project) && objective === ''"
-                class="fr-radius-a--1v fr-card--shadow"
-                :class="{ 'fr-card-priority': isPriorityProject(project) && objective === '' }"
-              />
-            </router-link>
+              <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-grid-row-md--left">
+                <router-link
+                  v-for="project in sortedProjects"
+                  :id="project.id"
+                  :key="project.id"
+                  :to="getRouteToProjectDetail(project.id)"
+                  class="fr-col-11 fr-col-sm-12 fr-col-md-6 fr-col-lg-4 no-outline"
+                >
+                  <ProjectCard
+                    :project="project"
+                    :is-priority-project="isPriorityProject(project)"
+                    class="fr-radius-a--1v fr-card--shadow"
+                    :class="{ 'fr-card-priority': isPriorityProject(project) }"
+                  />
+                </router-link>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -40,72 +123,55 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { type ProgramData } from '@/types'
-import Translation from '@/utils/translation'
-import projectData from '@tee/data/static/project.json'
 import UsedTrack from '@/utils/track/usedTrack'
-import Theme from '@/utils/theme'
 import { useProgramStore } from '@/stores/program'
+import Config from '@/config'
 import { RouteName } from '@/types/routeType'
 import { Project, ProjectId } from '@tee/common/src/project/types'
 import { useNavigationStore } from '@/stores/navigation'
 import { type RouteLocationRaw } from 'vue-router'
 
 interface ProjectListProps {
+  sortedProjects?: Project[]
   filteredPrograms?: ProgramData[]
 }
 
 const props = defineProps<ProjectListProps>()
-const navigationStore = useNavigationStore()
 
+const navigationStore = useNavigationStore()
 const programStore = useProgramStore()
+
+const publicPath = Config.publicPath
 
 const hasError = ref<boolean>(false)
 
 const hasSpinner = computed(() => {
-  return sortedProjects.value === undefined && !hasError.value
+  return props.sortedProjects === undefined && !hasError.value
 })
 
-const countFilteredPrograms = computed(() => {
-  return props.filteredPrograms?.length || 0
+const hasPriorityProjects = computed(() => {
+  return priorityProjects.value ? priorityProjects.value?.length > 0 : false
 })
 
-const sortedProjects = computed(() => {
-  return props.filteredPrograms
-    ? (projectData as unknown as Project[])
-        .filter((project: Project) => {
-          return project.programs.some((program) => props.filteredPrograms!.some((res) => res.id === program))
-        })
-        .sort((a, b) => b.priority - a.priority)
-    : undefined
+const isPriorityProject = (project: Project) => {
+  return !UsedTrack.isSpecificGoal() ? priorityProjects.value!.includes(project) : false
+}
+
+const priorityProjects = computed(() => {
+  const projectQty = hasObjectiveSelected.value ? 1 : 3
+  return props.sortedProjects ? props.sortedProjects.slice(0, projectQty) : undefined
 })
 
-const countProjects = computed(() => {
-  return sortedProjects.value?.length || 0
+const nonPriorityProjects = computed(() => {
+  return props.sortedProjects ? props.sortedProjects.slice(3) : undefined
 })
 
-const haveProjects = computed(() => {
-  return countProjects.value > 0
+const hasObjectiveCard = computed(() => {
+  return programStore.hasObjectiveTypeSelected() || (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityObjective())
 })
 
 const hasObjectiveSelected = computed(() => {
   return programStore.hasObjectiveTypeSelected()
-})
-
-const priorityProject = computed(() => {
-  const projectQty = hasObjectiveSelected.value ? 1 : 3
-  return sortedProjects.value ? sortedProjects.value.slice(0, projectQty) : undefined
-})
-
-const isPriorityProject = (project: Project) => {
-  return priorityProject.value!.includes(project)
-}
-
-const objective = computed(() => {
-  if (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityObjective()) {
-    return Theme.getPublicodeObjectiveByObjective(UsedTrack.getPriorityObjective())
-  }
-
-  return ''
 })
 
 const getRouteToProjectDetail = (projectId: ProjectId): RouteLocationRaw => {

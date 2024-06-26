@@ -1,20 +1,22 @@
 .fr-tabs {
   box-shadow: none;
+  //display: flex;
+  //justify-content: center;
   &::before {
     box-shadow: none;
   }
+  //ul {
+  //  max-width: 78rem;
+  //  display: flex;
+  //  justify-content: start;
+  //  @media(max-width: 78rem) {
+  //  max-width: 100%;
+  //  }
+  //}
   &__list {
     box-shadow: none;
-    margin-left: 20.33333%;
-    @media (max-width: 62rem){
-      margin-left: 24%;
-    }
-    @media (max-width: 48rem){
-      margin-left: 10%;
-    }
-    @media (max-width: 36rem){
-      margin-left: 0;
-    }
+    //display: flex;
+    //justify-content: center;
   }
   &__tab {
     box-shadow: none;

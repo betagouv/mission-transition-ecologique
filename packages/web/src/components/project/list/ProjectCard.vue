@@ -1,7 +1,7 @@
 <template>
   <DsfrCard
     :title="project.title"
-    :description="project.shortDescription + ' ' + project.priority + ' ' + project.id"
+    :description="project.shortDescription"
     :img-src="`${publicPath}${project.image}`"
     :alt-img="`image / ${project.title}`"
     :no-arrow="true"

@@ -1,38 +1,52 @@
 <template>
   <!-- PROGRAMS AS LIST OF CARDS -->
-  <div class="fr-container--fluid fr-container--fluid--no-overflow fr-mt-6v">
+  <div class="fr-container--fluid fr-container--fluid--no-overflow fr-mt-2v">
     <div class="fr-grid-row fr-grid-row--center">
-      <div
-        v-if="(!hasObjectiveCard || programStore.hasObjectiveTypeSelected()) && !hasSpinner"
-        class="fr-col-9 fr-col-xs-12 fr-col-offset-md-3 fr-col-offset-lg-2 fr-mb-3v fr-pl-3v"
-      >
-        <ProgramFilterByTheme v-if="havePrograms && countPrograms > 1" />
-      </div>
-      <div
-        v-if="hasObjectiveCard && !hasSpinner"
-        class="fr-col-9 fr-col-xs-12 fr-col-offset-md-3 fr-col-offset-lg-2"
-      >
-        <TeeObjectiveCard
-          :objective="objective as PublicodeObjective"
-          radius-corner="tr"
-          radius-size="2-5v"
-        />
-      </div>
-      <div
-        v-if="!hasSpinner || !hasError"
-        class="fr-col-3 fr-col-lg-2 fr-pt-12w fr-col-hidden fr-col-unhidden-md"
-      >
-        <img
-          v-if="!hasObjectiveCard || !programStore.hasObjectiveTypeSelected()"
-          :src="`${publicPath}images/TEE_project_priority.svg`"
-          alt=""
-          class="fr-responsive-img fr-col-10 fr-col-xl-8 fr-col-hidden fr-col-unhidden-lg fr-pt-10w"
-        />
-      </div>
-      <div class="fr-col-9 fr-col-xs-12">
-        <ProjectList :filtered-programs="filteredPrograms" />
+      <ResultListNoResults
+        :has-error="hasError"
+        :has-spinner="hasSpinner"
+        :count-items="countProjects"
+      />
+    </div>
+    <div class="fr-grid-row fr-grid-row--center">
+      <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
+        <div
+          v-if="(!hasObjectiveCard || hasObjectiveSelected) && !hasSpinner"
+          class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-my-3v fr-pl-3v"
+        >
+          <ProgramFilterByTheme v-if="hasProjects && countProjects >= 1" />
+        </div>
       </div>
     </div>
+    <div
+      v-if="hasObjectiveCard && !hasSpinner"
+      class="fr-grid-row fr-grid-row--center"
+    >
+      <div class="fr-container fr-m-0 fr-p-0 fr-px-md-2v fr-mt-3v">
+        <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2">
+          <TeeObjectiveCard
+            :objective="objective as PublicodeObjective"
+            radius-corner="tr"
+            radius-size="2-5v"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      v-if="hasObjectiveCard && !hasSpinner && UsedTrack.isSpecificGoal()"
+      class="fr-grid-row fr-grid-row--center"
+    >
+      <div class="fr-container fr-m-0 fr-p-0 fr-px-md-2v fr-mt-4w">
+        <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2">
+          <h2 class="fr-text--bold fr-mb-0">Quel est votre projet ?</h2>
+        </div>
+      </div>
+    </div>
+    <ProjectList
+      v-if="hasProjects && !hasSpinner"
+      :sorted-projects="sortedProjects"
+      :filtered-programs="props.filteredPrograms"
+    />
   </div>
 </template>
 
@@ -43,30 +57,29 @@ import ProgramFilterByTheme from '@/components/program/list/filters/ProgramFilte
 import UsedTrack from '@/utils/track/usedTrack'
 import Theme from '@/utils/theme'
 import { useProgramStore } from '@/stores/program'
-import Config from '@/config'
+import { Project } from '@tee/common/src/project/types'
 
-interface ProgramListProps {
+interface ProjectListProps {
+  filteredProjects?: Project[]
   filteredPrograms?: ProgramData[]
 }
 
-const props = defineProps<ProgramListProps>()
+const props = defineProps<ProjectListProps>()
 
 const programStore = useProgramStore()
 
-const publicPath = Config.publicPath
-
 const hasError = ref<boolean>(false)
 
-const havePrograms = computed(() => {
-  return countPrograms.value > 0
+const hasProjects = computed(() => {
+  return countProjects.value > 0
 })
 
-const countPrograms = computed(() => {
-  return props.filteredPrograms?.length || 0
+const countProjects = computed(() => {
+  return props.filteredProjects?.length || 0
 })
 
 const hasSpinner = computed(() => {
-  return props.filteredPrograms === undefined && !hasError.value
+  return props.filteredProjects === undefined && !hasError.value
 })
 
 const hasObjectiveCard = computed(() => {
@@ -83,5 +96,13 @@ const objective = computed(() => {
   }
 
   return ''
+})
+
+const hasObjectiveSelected = computed(() => {
+  return programStore.hasObjectiveTypeSelected()
+})
+
+const sortedProjects = computed(() => {
+  return props.filteredPrograms ? (props.filteredProjects as unknown as Project[]).sort((a, b) => a.priority - b.priority) : undefined
 })
 </script>

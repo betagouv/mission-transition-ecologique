@@ -4,9 +4,12 @@ import type { ReqResp, WithoutNullableKeys, ProjectFormType } from '@/types'
 import RequestApi from '@/service/api/requestApi'
 import TrackStructure from '@/utils/track/trackStructure'
 import { ProjectBody } from '@tee/common/src/project/types'
+import { Result } from 'true-myth'
+import { Project } from '@tee/common/src/project/types'
+import projectData from '@tee/data/static/project.json'
 
-export default class ProjectApi extends RequestApi {
-  private readonly url = '/api/projects'
+export default class ProjectApi extends RequestApi<Project> {
+  protected readonly url = '/api/projects'
   private readonly headers = {
     accept: 'application/json',
     'content-type': 'application/json'
@@ -21,7 +24,15 @@ export default class ProjectApi extends RequestApi {
     private _projectId: number
   ) {
     super()
-    this._projectForm = projectForm as WithoutNullableKeys<ProjectFormType>
+    this._projectForm = projectForm
+  }
+
+  async get(): Promise<Result<Project[], Error>> {
+    //TODO replace with api call once the endpoint is available
+    return new Promise((resolve, reject) => {
+      if (!projectData) reject(new Error('No project data'))
+      else resolve(Result.ok(projectData as unknown as Project[]))
+    })
   }
 
   async fetch() {
