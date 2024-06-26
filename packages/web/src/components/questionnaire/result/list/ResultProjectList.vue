@@ -96,12 +96,6 @@ const hasObjectiveSelected = computed(() => {
 })
 
 const sortedProjects = computed(() => {
-  return props.filteredPrograms
-    ? (props.filteredProjects as unknown as Project[])
-        .filter((project: Project) => {
-          return project.programs.some((program) => props.filteredPrograms!.some((res) => res.id === program))
-        })
-        .sort((a, b) => a.priority - b.priority)
-    : undefined
+  return props.filteredPrograms ? (props.filteredProjects as unknown as Project[]).sort((a, b) => a.priority - b.priority) : undefined
 })
 </script>
