@@ -1,8 +1,8 @@
-import { PublicodeObjective, Objective as ObjectiveEnum, PublicodesKeys, ObjectiveType, Color } from '@/types'
+import { PublicodeObjective, Objective as ObjectiveEnum, PublicodesKeys, Theme, Color } from '@/types'
 import UsedTrack from '@/utils/track/usedTrack'
 
 export default class Objective {
-  static objectives: ObjectiveType[] = [
+  static objectives: Theme[] = [
     {
       id: 'analyse',
       title: 'Analyses environnementales',
@@ -101,18 +101,16 @@ export default class Objective {
     return this.getObjective(objective)?.color ?? ''
   }
 
-  static getTags(): ObjectiveType[] {
+  static getTags(): Objective[] {
     const tags = []
 
     if (UsedTrack.isNoSpecificGoal()) {
-      UsedTrack.isEnvironmentalImpactObjective()
-        ? tags.push(this.getObjective(PublicodeObjective.EnvironmentalImpact) as ObjectiveType)
-        : undefined
-      UsedTrack.isEcoDesignObjective() ? tags.push(this.getObjective(PublicodeObjective.EcoDesign) as ObjectiveType) : undefined
-      UsedTrack.isEnergyObjective() ? tags.push(this.getObjective(PublicodeObjective.EnergyPerformance) as ObjectiveType) : undefined
-      UsedTrack.isWasteObjective() ? tags.push(this.getObjective(PublicodeObjective.WasteManagement) as ObjectiveType) : undefined
-      UsedTrack.isWaterObjective() ? tags.push(this.getObjective(PublicodeObjective.WaterConsumption) as ObjectiveType) : undefined
-      UsedTrack.isMobilityObjective() ? tags.push(this.getObjective(PublicodeObjective.SustainableMobility) as ObjectiveType) : undefined
+      UsedTrack.isEnvironmentalImpactObjective() ? tags.push(this.getObjective(PublicodeObjective.EnvironmentalImpact) as Theme) : undefined
+      UsedTrack.isEcoDesignObjective() ? tags.push(this.getObjective(PublicodeObjective.EcoDesign) as Theme) : undefined
+      UsedTrack.isEnergyObjective() ? tags.push(this.getObjective(PublicodeObjective.EnergyPerformance) as Theme) : undefined
+      UsedTrack.isWasteObjective() ? tags.push(this.getObjective(PublicodeObjective.WasteManagement) as Theme) : undefined
+      UsedTrack.isWaterObjective() ? tags.push(this.getObjective(PublicodeObjective.WaterConsumption) as Theme) : undefined
+      UsedTrack.isMobilityObjective() ? tags.push(this.getObjective(PublicodeObjective.SustainableMobility) as Theme) : undefined
 
       return tags
     }

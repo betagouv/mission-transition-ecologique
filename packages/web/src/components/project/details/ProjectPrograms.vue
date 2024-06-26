@@ -127,8 +127,9 @@ const countFilteredPrograms = computed(() => {
   return filteredPrograms.value?.length || 0
 })
 const filteredPrograms = computed(() => {
-  return programs.value && props.objective ? programStore.getProgramsByObjective(programs.value, props.objective) : undefined
+  return programs.value && props.project ? programs.value.filter((program) => props.project?.programs.includes(program.id)) : []
 })
+
 const expandPrograms = (id: string | undefined) => {
   expandedId.value = id
 }

@@ -9,6 +9,7 @@ export interface Theme {
   value: PublicodeObjective
   image: string
   color?: string
+  displayDots?: boolean
   highlightProjects: ProjectId[]
 }
 
