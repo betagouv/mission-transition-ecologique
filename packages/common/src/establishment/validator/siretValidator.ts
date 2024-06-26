@@ -1,5 +1,8 @@
 export default class SiretValidator {
   static validate = (siret: string): boolean => {
+    if (siret === undefined) {
+      return false
+    }
     const trimmed = this.trimSiret(siret)
 
     if (!this.isValidSiretFormat(trimmed)) {
