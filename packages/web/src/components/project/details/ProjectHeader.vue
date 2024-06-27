@@ -23,10 +23,11 @@ import Config from '@/config'
 import { Color } from '@/types'
 import { RouteName } from '@/types/routeType'
 import { useNavigationStore } from '@/stores/navigation'
+import { ProjectId } from '@tee/common/src/project/types'
 
 interface Props {
   projectTitle: string | undefined
-  projectId: string | undefined
+  projectId: ProjectId
   projectImg: string | undefined
   themeColor: string
 }

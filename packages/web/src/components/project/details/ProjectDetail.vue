@@ -44,18 +44,20 @@
 </template>
 <script setup lang="ts">
 import { Project, ProjectId } from '@tee/common/src/project/types'
-import projectData from '@tee/data/static/project.json'
 import { Theme as ThemeType } from '@/types'
 import Theme from '@tee/common/src/theme/theme'
 import { DsfrButton } from '@gouvminint/vue-dsfr'
+import { useProjectStore } from '@/stores/project'
+
+const projectStore = useProjectStore()
+
 interface Props {
-  projectId: string
+  projectId: ProjectId
 }
+
 const props = defineProps<Props>()
 const linkCopied = ref<boolean>(false)
-const getProjectById = (id: string | ProjectId) => {
-  return (projectData as unknown as Project[]).find((project: Project) => project.id === Number(id))
-}
+
 const copyUrl = async () => {
   const pageUrl = window.location.href
   await navigator.clipboard.writeText(pageUrl)
@@ -79,15 +81,21 @@ const buttonLabel = computed<string>(() => {
   }
   return 'Copier le lien'
 })
-onBeforeMount(() => {
-  const selectedProject = getProjectById(props.projectId)
-  if (selectedProject) {
-    project.value = selectedProject
+onBeforeMount(async () => {
+  const projectResult = await projectStore.projects
+  if (projectResult.isOk) {
+    const selectedProject = projectStore.getProjectById(projectResult.value, props.projectId)
+    if (selectedProject) {
+      project.value = selectedProject
+    }
+    const themeProject = Theme.getById(project.value?.mainTheme)
+    if (themeProject) {
+      theme.value = Theme.getById(project.value?.mainTheme)
+    }
+
+    relatedProjects.value = project.value?.linkedProjects.map((projectId: ProjectId) =>
+      projectStore.getProjectById(projectResult.value, projectId)
+    )
   }
-  const themeProject = Theme.getById(project.value?.mainTheme)
-  if (themeProject) {
-    theme.value = Theme.getById(project.value?.mainTheme)
-  }
-  relatedProjects.value = project.value?.linkedProjects.map((projectId: ProjectId) => getProjectById(projectId))
 })
 </script>
