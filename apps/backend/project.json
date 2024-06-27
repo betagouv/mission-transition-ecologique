@@ -1,0 +1,47 @@
+{
+  "name": "@tee/backend",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/backend/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "spec-and-routes": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/backend",
+        "command": "npx tsoa spec-and-routes"
+      }
+    },
+    "build": {
+      "dependsOn": [
+        "spec-and-routes",
+        {
+          "target": "generate-program",
+          "projects": "@tee/data"
+        }
+      ]
+    },
+    "start": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node dist/apps/backend/main.js"
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "@tee/backend:build"
+      },
+      "dependsOn": ["spec-and-routes"],
+      "configurations": {
+        "development": {
+          "buildTarget": "@tee/backend:build:development"
+        },
+        "production": {
+          "buildTarget": "@tee/backend:build:production"
+        }
+      }
+    }
+  }
+}

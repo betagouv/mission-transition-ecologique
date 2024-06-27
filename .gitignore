@@ -1,4 +1,4 @@
-
+# See http://help.github.com/ignore-files/ for more about ignoring files.
 # Logs
 logs
 *.log
@@ -10,25 +10,46 @@ lerna-debug.log*
 
 # Build artifacts
 build
-dist
 dist-ssr
 *.tsbuildinfo
-generated/
+# compiled output
+dist
+tmp
+/out-tsc
+*timestamp-*.mjs
 
+# dependencies
 node_modules
-.DS_Store
-coverage
-*.local
 
-# Editor directories and files
-.vscode/*
-/packages/*/.vscode
-.idea
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+
+# System Files
+.DS_Store
+Thumbs.db
 
 # Default env variables
 .env
@@ -37,4 +58,12 @@ coverage
 .venv
 pyrightconfig.json
 .flake8
-dispositifs.xlsx
+dispositifs*.xlsx
+
+# nx
+.nx/cache
+.nx/workspace-data
+
+# Global
+**/generated/*
+!generated/index.ts
