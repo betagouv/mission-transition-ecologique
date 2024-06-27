@@ -3,6 +3,7 @@ export default class SiretValidator {
     if (siret === undefined) {
       return false
     }
+
     const trimmed = this.trimSiret(siret)
 
     if (!this.isValidSiretFormat(trimmed)) {
