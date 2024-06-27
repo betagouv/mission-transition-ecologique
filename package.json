@@ -29,7 +29,7 @@
     "npm": ">=10.0 <11"
   },
   "dependencies": {
-    "@getbrevo/brevo": "^2.1.1",
+    "@getbrevo/brevo": "^2.2.0",
     "@gouvfr/dsfr": "^1.11.2",
     "@gouvminint/vue-dsfr": "^5.17.4",
     "@nx/eslint": "19.2.3",
