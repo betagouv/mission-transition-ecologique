@@ -41,5 +41,18 @@
         }
       }
     }
+    @media (min-width: 0) and (max-width: 575px){
+      &-xs{
+        &--#{$color} {
+          @include backgroundColor($properties);
+            &--light {
+              @include backgroundColor($properties, -50%);
+            }
+            &--lightness {
+              @include backgroundColor($properties, -75%);
+            }
+        }
+      }
+    }
   }
 }

@@ -21,7 +21,7 @@
         <TrackResume :track="track" />
 
         <!-- TRACK Translation {{ renderAs }} / EXCEPT SELECT-->
-        <template v-if="!TrackComponent.isSelect(usedTrack)">
+        <template v-if="!TrackComponent.isSelect(usedTrack) && !TrackComponent.isThemeInterface(usedTrack)">
           <div
             v-for="(option, idx) in trackStore.currentOptions"
             :key="`track-${usedTrack.step}-${usedTrack.id}-option-${idx}`"

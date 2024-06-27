@@ -1,36 +1,22 @@
 <template>
-  <router-link
-    :id="id"
-    :to="getRouteToProjectDetail(id)"
-    class="no-outline"
-  >
-    <DsfrButton
-      :label="label"
-      secondary
-      size="sm"
-      :class="`fr-radius-a--2v fr-btn--secondary--${color}`"
-    />
-  </router-link>
+  <DsfrButton
+    :label="project?.nameTag"
+    secondary
+    size="sm"
+    :class="`fr-radius-a--2v fr-mx-1v fr-btn--secondary--${color}`"
+  />
 </template>
 <script setup lang="ts">
-import { type RouteLocationRaw } from 'vue-router'
-import { RouteName } from '@/types/routeType'
-import { useNavigationStore } from '@/stores/navigation'
-import { ProjectId } from '@tee/common/src/project/types'
+import { ProjectId, Project } from '@tee/common/src/project/types'
+import { useProjectStore } from '@/stores/project'
 
 interface Props {
-  label: string | undefined
-  color: string
-  id: number
+  projects: Project[]
+  projectId: ProjectId
+  color: string | undefined
 }
-const navigationStore = useNavigationStore()
+const projectStore = useProjectStore()
 
-defineProps<Props>()
-const getRouteToProjectDetail = (projectId: ProjectId): RouteLocationRaw => {
-  return {
-    name: RouteName.ProjectResultDetail,
-    params: { projectId },
-    query: navigationStore.query
-  }
-}
+const props = defineProps<Props>()
+const project = computed(() => projectStore.getProjectById(props.projects, props.projectId))
 </script>

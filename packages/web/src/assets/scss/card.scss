@@ -99,18 +99,16 @@
   &__header {
     @each $color, $properties in setting.$colors {
       &--#{$color} {
-        .fr-card__header {
-          @if type-of($properties) == map {
-            background-color: tool.scaleAlphaToHex(map-get($properties, "background-color"), -50%);
-          }
-          @else {
-            background-color: tool.scaleAlphaToHex($properties, -50%);
-          }
-          .fr-card__img img {
-            object-fit: contain;
-          }
+        @if type-of($properties) == map {
+          background-color: tool.scaleAlphaToHex(map-get($properties, "background-color"), -50%);
+        }
+        @else {
+          background-color: tool.scaleAlphaToHex($properties, -50%);
         }
       }
+    }
+    .fr-card__img img {
+      object-fit: contain;
     }
   }
 }

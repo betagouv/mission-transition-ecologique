@@ -1,11 +1,15 @@
 <template>
-  <div class="fr-grid-row fr-grid-row--center">
+  <div class="fr-grid-row fr-grid-row--gutters">
     <div
       v-for="opt in options"
       :key="opt.value"
-      class="fr-col-3 fr-mx-1v"
+      class="fr-col-4 fr-col-sm-6 fr-col-md-4 fr-col-xs-12"
     >
-      <ThemeCard :option="opt" />
+      <ThemeCard
+        v-if="projects"
+        :option="opt"
+        :projects="projects"
+      />
     </div>
   </div>
 </template>
@@ -31,7 +35,7 @@ export interface ThemeObjective {
   title: string
   imgSrc: string
   altImg: string
-  tags: (Project | undefined)[]
+  highlightProjects: ProjectId[]
   color: string | undefined
 }
 const options = computed<ThemeObjective[]>(() => {
@@ -45,17 +49,13 @@ const options = computed<ThemeObjective[]>(() => {
     )
     const themeOption: ThemeType | undefined = Theme.getByValue(optionPublicodeObjective)
     if (themeOption) {
-      const highlightedProjects = themeOption.highlightProjects.map((projectId: ProjectId) =>
-        projectStore.getProjectById(projects.value, projectId)
-      )
-      console.log(highlightedProjects)
       options.push({
         value: themeOption.value,
         title: themeOption.title,
         color: themeOption.color,
         imgSrc: themeOption.image,
         altImg: themeOption.tagLabel,
-        tags: highlightedProjects
+        highlightProjects: themeOption.highlightProjects
       })
     }
   }
