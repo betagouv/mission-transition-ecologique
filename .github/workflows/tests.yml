@@ -2,9 +2,13 @@ name: Run tests
 
 on:
   push:
-    branches: [ main, preprod ]
+    branches:
+      - main
   pull_request:
-    branches: [ main, preprod ]
+
+permissions:
+  actions: read
+  contents: read
 
 jobs:
   validate-data:
