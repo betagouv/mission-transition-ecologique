@@ -1,7 +1,7 @@
 <template>
   <div>
     <DsfrCard
-      :description="option.description"
+      description=""
       :title="option.title"
       :img-src="option.imgSrc"
       img-ratio="lg"
@@ -17,16 +17,18 @@
           v-for="project in option.tags"
           :id="project.id"
           :key="project.id"
-          :label="project.label"
-          :color="project.color"
+          :label="project.nameTag"
+          :color="option.color"
         />
       </template>
     </DsfrCard>
   </div>
 </template>
 <script setup lang="ts">
+import { ThemeObjective } from './ThemeSelect.vue'
+
 interface Props {
-  option: object
+  option: ThemeObjective
 }
 defineProps<Props>()
 </script>

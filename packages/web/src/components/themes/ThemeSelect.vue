@@ -10,51 +10,55 @@
   </div>
 </template>
 <script setup lang="ts">
-import { Project } from '../../../../common/src/project/types'
+import { Project, ProjectId } from '@tee/common/src/project/types'
 import { useTrackStore } from '@/stores/track'
 import { useUsedTrackStore } from '@/stores/usedTrack'
-import type { TrackOptionItem } from '@/types'
+import type { PublicodeObjective, TrackOptionItem } from '@/types'
 import { computed } from 'vue'
 import { Theme as ThemeType } from '@/types'
-import { TeeDsfrTagProps } from '@/components/element/tag/TeeDsfrTag.vue'
 import Theme from '@/utils/theme'
+import { useProjectStore } from '@/stores/project'
 
 const currentUsedTrack = useUsedTrackStore().current
 const currentTrack = useTrackStore().current
 console.log(currentTrack, currentUsedTrack)
-
+const projectStore = useProjectStore()
+const projects = ref<Project[]>()
 const emit = defineEmits(['updateSelection'])
 
-const options = computed<
-  (string | { value: string; title: string; imgSrc: string; altImg: string; tags: TeeDsfrTagProps[]; color: string | undefined })[]
->(() => {
-  const options: (
-    | string
-    | { value: string; title: string; imgSrc: string; altImg: string; tags: TeeDsfrTagProps[]; color: string | undefined }
-  )[] = []
+export interface ThemeObjective {
+  value: string
+  title: string
+  imgSrc: string
+  altImg: string
+  tags: (Project | undefined)[]
+  color: string | undefined
+}
+const options = computed<ThemeObjective[]>(() => {
+  const options: ThemeObjective[] = []
   if (!currentTrack?.options) {
     return options
   }
   for (const option of currentTrack.options) {
-    const optionPublicodeObjective = option.questionnaireData?.priority_objective
-      ? Theme.getPublicodeObjectiveByObjective(option.questionnaireData?.priority_objective)
-      : undefined
-    if (optionPublicodeObjective) {
-      const themeOption: ThemeType | undefined = Theme.getByValue(optionPublicodeObjective)
-      const projects: Project[] = []
-      if (option.label && themeOption) {
-        options.push({
-          value: themeOption.value,
-          title: themeOption.title,
-          color: themeOption.color,
-          imgSrc: themeOption.image,
-          altImg: themeOption.tagLabel,
-          tags: projects.map((project: Project) => ({ label: project.nameTag, id: project.id, color: themeOption.color }))
-        })
-      }
+    const optionPublicodeObjective: PublicodeObjective | undefined = Theme.getPublicodeObjectiveByObjective(
+      option.questionnaireData?.priority_objective
+    )
+    const themeOption: ThemeType | undefined = Theme.getByValue(optionPublicodeObjective)
+    if (themeOption) {
+      const highlightedProjects = themeOption.highlightProjects.map((projectId: ProjectId) =>
+        projectStore.getProjectById(projects.value, projectId)
+      )
+      console.log(highlightedProjects)
+      options.push({
+        value: themeOption.value,
+        title: themeOption.title,
+        color: themeOption.color,
+        imgSrc: themeOption.image,
+        altImg: themeOption.tagLabel,
+        tags: highlightedProjects
+      })
     }
   }
-  console.log(options)
   return options
 })
 
@@ -77,6 +81,13 @@ const value = computed({
       remove: selectedOption === undefined
     } as TrackOptionItem
     emit('updateSelection', data)
+  }
+})
+
+onBeforeMount(async () => {
+  const projectResult = await projectStore.projects
+  if (projectResult.isOk) {
+    projects.value = projectResult.value
   }
 })
 </script>

@@ -1,36 +1,36 @@
 <template>
   <router-link
     :id="id"
-    to=""
+    :to="getRouteToProjectDetail(id)"
     class="no-outline"
   >
     <DsfrButton
       :label="label"
       secondary
       size="sm"
-      :class="`fr-m-4v fr-radius-a--2v fr-btn--secondary--${color}`"
+      :class="`fr-radius-a--2v fr-btn--secondary--${color}`"
     />
   </router-link>
 </template>
 <script setup lang="ts">
-/* import { type RouteLocationRaw } from 'vue-router'
+import { type RouteLocationRaw } from 'vue-router'
 import { RouteName } from '@/types/routeType'
 import { useNavigationStore } from '@/stores/navigation'
-import { ProjectId } from '@tee/common/src/project/types' */
+import { ProjectId } from '@tee/common/src/project/types'
 
 interface Props {
   label: string | undefined
   color: string
   id: number
 }
-// const navigationStore = useNavigationStore()
+const navigationStore = useNavigationStore()
 
 defineProps<Props>()
-/* const getRouteToProjectDetail = (projectId: ProjectId): RouteLocationRaw => {
+const getRouteToProjectDetail = (projectId: ProjectId): RouteLocationRaw => {
   return {
     name: RouteName.ProjectResultDetail,
     params: { projectId },
     query: navigationStore.query
   }
-} */
+}
 </script>

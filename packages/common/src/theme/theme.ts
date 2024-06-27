@@ -78,7 +78,7 @@ export default class Theme {
     }
   ]
 
-  static getByValue(value: PublicodeObjective) {
+  static getByValue(value: PublicodeObjective | undefined) {
     return this.themes.find((theme) => theme.value === value)
   }
 

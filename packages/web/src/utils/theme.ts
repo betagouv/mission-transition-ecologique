@@ -40,7 +40,7 @@ export default class Theme extends ThemeCommon {
     return objective !== ''
   }
 
-  static getPublicodeObjectiveByObjective(objective: ObjectiveEnum): PublicodeObjective | undefined {
+  static getPublicodeObjectiveByObjective(objective: ObjectiveEnum | undefined): PublicodeObjective | undefined {
     const key = Object.keys(PublicodeObjective).find(
       (key) => PublicodeObjective[key as keyof typeof PublicodeObjective] === ((PublicodesKeys.Goal + objective) as PublicodeObjective)
     ) as keyof typeof PublicodeObjective | undefined

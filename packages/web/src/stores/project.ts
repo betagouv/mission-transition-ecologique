@@ -3,7 +3,7 @@ import ProjectFilters from '@/utils/project/projectFilters'
 import { defineStore } from 'pinia'
 import { computed } from 'vue'
 import { PublicodeObjective } from '@/types'
-import { Project } from '@tee/common/src/project/types'
+import { Project, ProjectId } from '@tee/common/src/project/types'
 
 export const useProjectStore = defineStore('project', () => {
   const projects = computed(async () => {
@@ -19,9 +19,13 @@ export const useProjectStore = defineStore('project', () => {
       return ProjectFilters.filterProgramsByTheme(project, objectiveType as PublicodeObjective)
     })
   }
+  function getProjectById(projects: Project[] | undefined, projectId: string | ProjectId): Project | undefined {
+    return (projects || []).find((project: Project) => project.id.toString() === projectId.toString())
+  }
 
   return {
     projects,
-    getProjectsByObjective
+    getProjectsByObjective,
+    getProjectById
   }
 })
