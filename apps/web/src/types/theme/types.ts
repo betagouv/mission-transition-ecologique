@@ -1,15 +1,11 @@
-import { ProjectId } from '@/project/types'
+import { Color, ThemeId } from '@/types'
 import { PublicodeObjective } from '@tee/common'
-import ThemeCommon from './theme'
 
 export interface ThemeType {
-  id: string
+  id: ThemeId
   title: string
   tagLabel: string
   value: PublicodeObjective
   image: string
-  color?: string
-  highlightProjects: ProjectId[]
+  color: Color
 }
-
-export type ThemeId = (typeof ThemeCommon.themes)[number]['id']
