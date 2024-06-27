@@ -14,6 +14,8 @@ import { Opportunity } from '@tee/common'
 export class PlaceDesEntreprises extends OpportunityHubAbstract {
   protected readonly _baseUrl = Config.PDE_API_BASEURL
   protected _axios: AxiosInstance
+  protected readonly _operatorNames = [] // warning, invalid but never used since we override all possible external uses of this value right below
+  private readonly _pdeLanding = 114
 
   constructor() {
     super()
@@ -24,7 +26,6 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     })
   }
 
-  protected readonly _operatorNames = [] // warning, invalid but never used since we override all possible external uses of this value right below
   override get operatorNames(): Operators[] | Error {
     return new Error('Operator List non valid for Place des entreprises')
   }
@@ -109,7 +110,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
   subjectMapping(programObjectives: Objective[]): number {
     const defaultSubject = Subject.DemarcheEcologie
     if (programObjectives.length === 1) {
-      const objective = programObjectives[0] as Objective
+      const objective = programObjectives[0]
       const subjectKey = this._objectiveToSubjectIdMapping[objective]
       return subjectToIdMapping[subjectKey]
     } else {
@@ -120,7 +121,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
   private _createRequestBody(opportunity: Opportunity, program: ProgramType): Result<CreateSolicitationApiBody, Error> {
     return Result.ok({
       solicitation: {
-        landing_id: Config.PDE_LANDING_ID,
+        landing_id: this._pdeLanding,
         landing_subject_id: this.subjectMapping(new ProgramService().getObjectives(program.id)),
         description: opportunity.message,
         full_name: opportunity.firstName + ' ' + opportunity.lastName,

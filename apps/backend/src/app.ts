@@ -42,6 +42,7 @@ app.use(function errorHandler(err: unknown, req: Request, res: Response, next: N
   }
 
   if (err instanceof Error) {
+    console.error(err.message, err.stack)
     return res.status(500).json({
       message: 'Internal Server Error'
     })

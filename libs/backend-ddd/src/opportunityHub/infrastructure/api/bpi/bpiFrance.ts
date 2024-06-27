@@ -10,15 +10,13 @@ import { Operators, ProgramType } from '@tee/data'
 import { Opportunity } from '@tee/common'
 
 export class BpiFrance extends OpportunityHubAbstract {
+  protected _axios: AxiosInstance
+  protected readonly _baseUrl = 'https://bpifrance.my.salesforce.com/services'
   protected readonly _operatorNames: Operators[] = ['Bpifrance']
   private readonly client_id = Config.BPI_FRANCE_CLIENT_ID
   private readonly client_secret = Config.BPI_FRANCE_CLIENT_SECRET
-
-  protected readonly _baseUrl = 'https://bpifrance.my.salesforce.com/services'
   private readonly _tokenUrl = '/oauth2/token'
   private readonly _contactUrl = '/data/v55.0/sobjects/Case'
-
-  protected _axios: AxiosInstance
 
   constructor() {
     super()
