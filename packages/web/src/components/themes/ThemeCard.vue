@@ -5,7 +5,7 @@
       :title="option.title"
       :img-src="option.imgSrc"
       title-tag="h4"
-      :class="`fr-card__header--${option.color}`"
+      :class="`fr-bg--${option.color}--light`"
       :horizontal="false"
     >
       <template #end-details>
