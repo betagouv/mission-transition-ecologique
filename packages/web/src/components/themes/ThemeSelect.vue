@@ -1,18 +1,15 @@
 <template>
-  <div class="fr-container">
-    <div class="fr-grid-row fr-grid-row--center fr-justify-center">
-      <div
-        v-for="opt in options"
-        :key="opt.value"
-        class="fr-col-4 fr-mx-1v"
-      >
-        <ThemeCard :option="opt" />
-      </div>
+  <div class="fr-grid-row fr-grid-row--center">
+    <div
+      v-for="opt in options"
+      :key="opt.value"
+      class="fr-col-3 fr-mx-1v"
+    >
+      <ThemeCard :option="opt" />
     </div>
   </div>
 </template>
 <script setup lang="ts">
-import Theme from '../../../../common/src/theme/theme'
 import { Project } from '../../../../common/src/project/types'
 import { useTrackStore } from '@/stores/track'
 import { useUsedTrackStore } from '@/stores/usedTrack'
@@ -20,6 +17,7 @@ import type { TrackOptionItem } from '@/types'
 import { computed } from 'vue'
 import { Theme as ThemeType } from '@/types'
 import { TeeDsfrTagProps } from '@/components/element/tag/TeeDsfrTag.vue'
+import Theme from '@/utils/theme'
 
 const currentUsedTrack = useUsedTrackStore().current
 const currentTrack = useTrackStore().current
@@ -38,19 +36,22 @@ const options = computed<
     return options
   }
   for (const option of currentTrack.options) {
-    console.log('option', option)
-    const themeOption: ThemeType = Theme.getByValue(option.questionnaireData?.priority_objective)
-    const projects: Project[] = Theme.getHighlightProjects(themeOption.highlightProjects)
-    console.log(themeOption)
-    if (option.label) {
-      options.push({
-        value: themeOption.value,
-        title: themeOption.title,
-        color: themeOption.color,
-        imgSrc: themeOption.image,
-        altImg: themeOption.tagLabel,
-        tags: projects.map((project: Project) => ({ label: project.nameTag, id: project.id, color: themeOption.color }))
-      })
+    const optionPublicodeObjective = option.questionnaireData?.priority_objective
+      ? Theme.getPublicodeObjectiveByObjective(option.questionnaireData?.priority_objective)
+      : undefined
+    if (optionPublicodeObjective) {
+      const themeOption: ThemeType | undefined = Theme.getByValue(optionPublicodeObjective)
+      const projects: Project[] = []
+      if (option.label && themeOption) {
+        options.push({
+          value: themeOption.value,
+          title: themeOption.title,
+          color: themeOption.color,
+          imgSrc: themeOption.image,
+          altImg: themeOption.tagLabel,
+          tags: projects.map((project: Project) => ({ label: project.nameTag, id: project.id, color: themeOption.color }))
+        })
+      }
     }
   }
   console.log(options)

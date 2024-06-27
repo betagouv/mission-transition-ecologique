@@ -75,11 +75,11 @@
           @update-selection="updateSelection($event.option, $event.index, $event.remove)"
         />
       </div>
-      <div v-if="TrackComponent.isThemeInterface(usedTrack)">
-        <ThemeSelect
-          class="fr-grid-row"
-          @update-selection="updateSelection($event.option, $event.index, $event.remove)"
-        />
+      <div
+        v-if="TrackComponent.isThemeInterface(usedTrack)"
+        class="fr-container--fluid"
+      >
+        <ThemeSelect @update-selection="updateSelection($event.option, $event.index, $event.remove)" />
       </div>
       <div
         v-if="hasSubmitButton"
