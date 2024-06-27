@@ -4,6 +4,7 @@
       v-for="opt in options"
       :key="opt.value"
       class="fr-col-4 fr-col-sm-6 fr-col-md-4 fr-col-xs-12"
+      @click="updateSelectOption(opt)"
     >
       <ThemeCard
         v-if="projects"
@@ -23,15 +24,13 @@ import { Theme as ThemeType } from '@/types'
 import Theme from '@/utils/theme'
 import { useProjectStore } from '@/stores/project'
 
-const currentUsedTrack = useUsedTrackStore().current
 const currentTrack = useTrackStore().current
-console.log(currentTrack, currentUsedTrack)
 const projectStore = useProjectStore()
 const projects = ref<Project[]>()
 const emit = defineEmits(['updateSelection'])
 
 export interface ThemeObjective {
-  value: string
+  value: string | undefined
   title: string
   imgSrc: string
   altImg: string
@@ -50,7 +49,7 @@ const options = computed<ThemeObjective[]>(() => {
     const themeOption: ThemeType | undefined = Theme.getByValue(optionPublicodeObjective)
     if (themeOption) {
       options.push({
-        value: themeOption.value,
+        value: option.questionnaireData?.priority_objective,
         title: themeOption.title,
         color: themeOption.color,
         imgSrc: themeOption.image,
@@ -62,32 +61,27 @@ const options = computed<ThemeObjective[]>(() => {
   return options
 })
 
-const value = computed({
-  get() {
-    return currentUsedTrack?.selected.find(() => true)?.value as string | undefined
-  },
-  set(value: string | undefined) {
-    const selectedOptionIndex = currentTrack?.options?.findIndex((option) => option.value === value)
-    const selectedOption =
-      selectedOptionIndex !== undefined && selectedOptionIndex !== -1 ? currentTrack?.options?.[selectedOptionIndex] : undefined
-
-    if (selectedOption) {
-      useUsedTrackStore().setCurrentSelectedOptions([selectedOption])
-    }
-
-    const data = {
-      option: selectedOption,
-      index: selectedOptionIndex,
-      remove: selectedOption === undefined
-    } as TrackOptionItem
-    emit('updateSelection', data)
-  }
-})
-
 onBeforeMount(async () => {
   const projectResult = await projectStore.projects
   if (projectResult.isOk) {
     projects.value = projectResult.value
   }
 })
+const updateSelectOption = (opt: ThemeObjective) => {
+  console.log(opt)
+  const selectedOptionIndex = currentTrack?.options?.findIndex((option) => option.value === opt.value)
+  const selectedOption =
+    selectedOptionIndex !== undefined && selectedOptionIndex !== -1 ? currentTrack?.options?.[selectedOptionIndex] : undefined
+  if (selectedOption) {
+    useUsedTrackStore().setCurrentSelectedOptions([selectedOption])
+  }
+
+  const data = {
+    option: selectedOption,
+    index: selectedOptionIndex,
+    remove: selectedOption === undefined
+  } as TrackOptionItem
+  console.log(data)
+  emit('updateSelection', data)
+}
 </script>
