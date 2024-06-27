@@ -27,8 +27,13 @@ console.log(currentTrack, currentUsedTrack)
 
 const emit = defineEmits(['updateSelection'])
 
-const options = computed<(string | { value: string; title: string; imgSrc: string; altImg: string; tags: TeeDsfrTagProps[] })[]>(() => {
-  const options: (string | { value: string; title: string; imgSrc: string; altImg: string; tags: TeeDsfrTagProps[] })[] = []
+const options = computed<
+  (string | { value: string; title: string; imgSrc: string; altImg: string; tags: TeeDsfrTagProps[]; color: string | undefined })[]
+>(() => {
+  const options: (
+    | string
+    | { value: string; title: string; imgSrc: string; altImg: string; tags: TeeDsfrTagProps[]; color: string | undefined }
+  )[] = []
   if (!currentTrack?.options) {
     return options
   }
@@ -41,13 +46,14 @@ const options = computed<(string | { value: string; title: string; imgSrc: strin
       options.push({
         value: themeOption.value,
         title: themeOption.title,
+        color: themeOption.color,
         imgSrc: themeOption.image,
         altImg: themeOption.tagLabel,
-        tags: projects.map((project: Project) => ({ label: project.nameTag }))
+        tags: projects.map((project: Project) => ({ label: project.nameTag, id: project.id, color: themeOption.color }))
       })
     }
   }
-
+  console.log(options)
   return options
 })
 

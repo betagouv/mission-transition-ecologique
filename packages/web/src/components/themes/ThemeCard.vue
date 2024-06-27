@@ -5,12 +5,16 @@
       :title="option.title"
       :img-src="option.imgSrc"
       title-tag="h4"
+      :class="`fr-card__header--${option.color}`"
       :horizontal="false"
     >
       <template #end-details>
-        <TeeDsfrTags
-          v-model="selectedProject"
-          :tags="option.tags"
+        <ThemeProjectTag
+          v-for="project in option.tags"
+          :id="project.id"
+          :key="project.id"
+          :label="project.label"
+          :color="project.color"
         />
       </template>
     </DsfrCard>
@@ -21,5 +25,4 @@ interface Props {
   option: object
 }
 defineProps<Props>()
-const selectedProject: string = ''
 </script>
