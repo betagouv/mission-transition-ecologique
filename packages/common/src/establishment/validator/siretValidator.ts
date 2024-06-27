@@ -1,5 +1,5 @@
 export default class SiretValidator {
-  static validate = (siret: string): boolean => {
+  static readonly validate = (siret: string | undefined): boolean => {
     if (siret === undefined) {
       return false
     }
