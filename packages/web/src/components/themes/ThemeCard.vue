@@ -1,5 +1,5 @@
 <template>
-  <div :class="`fr-card fr-mx-md-0 fr-mx-2v themeCard fr-bg-xs--${option.color}--light`">
+  <div :class="`fr-card fr-mx-md-0 fr-mx-2v themeCard fr-bg-xs--${option.color}--light ${isSelected ? 'selectedCard' : ''} `">
     <div class="fr-card__body fr-py-1v">
       <div class="fr-card__content fr-p-2v">
         <div class="fr-card__title">
@@ -32,10 +32,11 @@
 </template>
 <script setup lang="ts">
 import { Project } from '@tee/common/src/project/types'
-import { ThemeObjective } from './ThemeSelect.vue'
+import { ThemeOption } from './ThemeSelect.vue'
 
 interface Props {
-  option: ThemeObjective
+  option: ThemeOption
+  isSelected: boolean
   projects: Project[]
 }
 defineProps<Props>()
@@ -50,5 +51,12 @@ defineProps<Props>()
 }
 .themeCard {
   height: 100%;
+}
+.selectedCard {
+  background-size:
+    100% 4px,
+    4px 100%,
+    4px 100%,
+    100% 4px !important;
 }
 </style>

@@ -8,6 +8,7 @@
     >
       <ThemeCard
         v-if="projects"
+        :is-selected="opt.value === themeSelectedOption?.value"
         :option="opt"
         :projects="projects"
       />
@@ -27,9 +28,10 @@ import { useProjectStore } from '@/stores/project'
 const currentTrack = useTrackStore().current
 const projectStore = useProjectStore()
 const projects = ref<Project[]>()
+const themeSelectedOption = ref<ThemeOption>()
 const emit = defineEmits(['updateSelection'])
 
-export interface ThemeObjective {
+export interface ThemeOption {
   value: string | undefined
   title: string
   imgSrc: string
@@ -37,8 +39,8 @@ export interface ThemeObjective {
   highlightProjects: ProjectId[]
   color: string | undefined
 }
-const options = computed<ThemeObjective[]>(() => {
-  const options: ThemeObjective[] = []
+const options = computed<ThemeOption[]>(() => {
+  const options: ThemeOption[] = []
   if (!currentTrack?.options) {
     return options
   }
@@ -67,21 +69,19 @@ onBeforeMount(async () => {
     projects.value = projectResult.value
   }
 })
-const updateSelectOption = (opt: ThemeObjective) => {
-  console.log(opt)
+const updateSelectOption = (opt: ThemeOption) => {
   const selectedOptionIndex = currentTrack?.options?.findIndex((option) => option.value === opt.value)
   const selectedOption =
     selectedOptionIndex !== undefined && selectedOptionIndex !== -1 ? currentTrack?.options?.[selectedOptionIndex] : undefined
   if (selectedOption) {
     useUsedTrackStore().setCurrentSelectedOptions([selectedOption])
   }
-
+  themeSelectedOption.value = opt
   const data = {
     option: selectedOption,
     index: selectedOptionIndex,
     remove: selectedOption === undefined
   } as TrackOptionItem
-  console.log(data)
   emit('updateSelection', data)
 }
 </script>
