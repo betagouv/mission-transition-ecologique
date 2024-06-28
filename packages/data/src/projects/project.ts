@@ -1,7 +1,7 @@
 import path from 'path'
 import fs from 'fs'
 
-import { Baserow } from './baserows'
+import { Baserow } from '../common/baserow/baserow'
 import { RawProject } from './types'
 import { Program } from '@/type/program'
 

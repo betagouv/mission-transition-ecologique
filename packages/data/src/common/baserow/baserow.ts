@@ -3,36 +3,47 @@ import dotenv from 'dotenv'
 import fs from 'fs'
 import path from 'path'
 
-import { BaserowImage, BaserowLinkedObject, BaserowProject, BaserowTheme, RawProject } from './types'
-
+import { Image, LinkedObject, Operator, Program, Project, Theme } from './types'
+import { RawProject as DataProject } from '../../projects/types'
+import { Program as DataProgram } from '../../programs/types'
 dotenv.config()
 
 export class Baserow {
   private API_TOKEN = process.env.BASEROW_TOKEN
   private BASE_URL = 'https://api.baserow.io/api'
-  private databaseId = 114839
-  private projectTableId = 305253
-  private themeTableId = 305258
+  private _databaseId = 114839
+  private _projectTableId = 305253
+  private _programTableId = 314437
+  private _themeTableId = 305258
+  private _operatorTableId = 314410
   private _outputDirectory: string
   private _imageSubDirectory: string = 'projectImages'
-
   constructor(outputDirectory: string) {
     this._outputDirectory = outputDirectory
   }
 
-  async getValidProjects(): Promise<RawProject[]> {
-    const allBaserowProjects = await this._getTableData<BaserowProject>(this.projectTableId)
+  async getValidProjects(): Promise<DataProject[]> {
+    const allBaserowProjects = await this._getTableData<Project>(this._projectTableId)
     const validBaserawProjects = allBaserowProjects.filter((value) => {
       return value.Publié || true // TODO delete or true when there will be real data in baserow !
     })
-
-    const baserawThemes = await this._getTableData<BaserowTheme>(this.themeTableId)
+    const baserawThemes = await this._getTableData<Theme>(this._themeTableId)
 
     return await Promise.all(
       validBaserawProjects.map(async (project) => {
         return await this._convertToRawProjectType(project, baserawThemes)
       })
     )
+  }
+
+  async getPrograms(): Promise<DataProgram[]> {
+    const allBaserowPrograms = await this._getTableData<Program>(this._programTableId)
+    return allBaserowPrograms.map((program) => this._convertToRawProgram(program))
+  }
+  
+  async getOperators(): Promise<string[]> {
+    const operators = await this._getTableData<Operator>(this._operatorTableId)
+    return operators.map((operator) => operator.Nom)
   }
 
   private async _getTableData<T>(tableId: number): Promise<T[]> {
@@ -42,7 +53,7 @@ export class Baserow {
           Authorization: `Token ${this.API_TOKEN}`
         },
         params: {
-          database_id: this.databaseId
+          database_id: this._databaseId
         }
       })
       // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access
@@ -53,7 +64,7 @@ export class Baserow {
     }
   }
 
-  private async _convertToRawProjectType(baserowProject: BaserowProject, baserawThemes: BaserowTheme[]): Promise<RawProject> {
+  private async _convertToRawProjectType(baserowProject: Project, baserawThemes: Theme[]): Promise<DataProject> {
     return {
       id: baserowProject.id,
       title: baserowProject.Titre,
@@ -77,11 +88,12 @@ export class Baserow {
     }
   }
 
+
   private _imagePath(projectId: number) {
     return path.join(this._outputDirectory, this._imageSubDirectory, projectId.toString())
   }
 
-  private async _handleImage(baserowImage: BaserowImage[], projectId: number): Promise<string> {
+  private async _handleImage(baserowImage: Image[], projectId: number): Promise<string> {
     if (!baserowImage.length) {
       throw new Error('No image in baserow data')
     }
@@ -110,7 +122,7 @@ export class Baserow {
     })
   }
 
-  generateMainTheme(mainTheme: BaserowLinkedObject[], baserawThemes: BaserowTheme[]): string {
+  generateMainTheme(mainTheme: LinkedObject[], baserawThemes: Theme[]): string {
     if (mainTheme.length != 1) {
       console.warn('Missing mainTheme Or mainTheme not unique in a field')
     }
@@ -123,7 +135,7 @@ export class Baserow {
     return matchingTheme['Nom (Tech)']
   }
 
-  generateThemeList(mainTheme: BaserowLinkedObject[], secondaryThemes: BaserowLinkedObject[], baserawThemes: BaserowTheme[]): string[] {
+  generateThemeList(mainTheme: LinkedObject[], secondaryThemes: LinkedObject[], baserawThemes: Theme[]): string[] {
     const themeList = [this.generateMainTheme(mainTheme, baserawThemes)]
     secondaryThemes.forEach((element) => {
       const themeId = element.id
@@ -137,15 +149,19 @@ export class Baserow {
     return themeList
   }
 
-  generateProgramList(programs: BaserowLinkedObject[]): string[] {
+  generateProgramList(programs: LinkedObject[]): string[] {
     return programs.map((value) => {
       return value.value
     })
   }
 
-  generateLinkedProjectList(projects: BaserowLinkedObject[]): number[] {
+  generateLinkedProjectList(projects: LinkedObject[]): number[] {
     return projects.map((value) => {
       return value.id
     })
+  }
+
+  private _convertToRawProgram(program: Program): any {
+    throw new Error('Method not implemented.')
   }
 }

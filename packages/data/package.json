@@ -5,6 +5,7 @@
   "scripts": {
     "build-json-output": "npx ts-node src/generateProgramType.ts && npx ts-node src/buildProgramJsonOutput.ts",
     "build-projects": "npx ts-node src/buildProjectJsonOutput.ts",
+    "build-operators": "npx ts-node src/buildOperatorJsonSchema.ts",
     "build-json-output-watch": "nodemon --exec \"npx ts-node src/generateProgramType.ts && npx ts-node src/buildProgramJsonOutput.ts\" --ext yaml,json,ts --ignore src/generated --ignore public/data --ignore generated",
     "test": "jest",
     "lint": "eslint . --fix"
