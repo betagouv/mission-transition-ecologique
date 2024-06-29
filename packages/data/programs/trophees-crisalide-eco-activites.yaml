@@ -1,13 +1,18 @@
 titre: Trophées Crisalide Eco-activités
 promesse: Accélérez le développement de vos projets éco-innovants
-description: Crisalide Eco-Activités est un appel à projets créé pour soutenir les
-  entreprises de l'ouest dans leurs projets éco-innovants.
-description longue: "Pour être éligible, votre projet doit répondre à l'un des défis\
-  \ suivants : \n• DEFI 1 : Reconcevoir des offres allégées en\nressources naturelles\n\
-  • DEFI 2 : Réussir la transition énergétique\n• DEFI 3 : Cohabiter avec notre capital\
-  \ naturel\n• DEFI 4 : Imaginer des solutions sans impact\nsur notre environnement\
-  \ et notre santé\n• DEFI 5 : Prendre en compte les consom’acteurs\n• DEFI 6 : Construire\
-  \ la résilience écologique"
+description: >-
+  Crisalide Eco-Activités est un appel à projets créé pour soutenir les
+  entreprises de l'ouest dans leurs projets éco-innovants. 
+description longue: |-
+  Pour être éligible, votre projet doit répondre à l'un des défis suivants : 
+  • DEFI 1 : Reconcevoir des offres allégées en
+  ressources naturelles
+  • DEFI 2 : Réussir la transition énergétique
+  • DEFI 3 : Cohabiter avec notre capital naturel
+  • DEFI 4 : Imaginer des solutions sans impact
+  sur notre environnement et notre santé
+  • DEFI 5 : Prendre en compte les consom’acteurs
+  • DEFI 6 : Construire la résilience écologique
 illustration: images/TEE_eolienne.png
 opérateur de contact: CCI
 url: https://www.crisalide-ecoactivites.fr/
@@ -16,27 +21,33 @@ coût de l'accompagnement: Gratuit
 durée de l'accompagnement: Un parcours sur 3 mois
 activable en autonomie: oui
 objectifs:
-- description: Déposez votre candidature à l'appel à projets en complétant un formulaire
-    en ligne.
+- description: >-
+    Déposez votre candidature à l'appel à projets en complétant un formulaire en
+    ligne.
   liens:
   - lien: https://www.crisalide-ecoactivites.fr/
     texte: Candidater
-- description: Intégrez le parcours Crisalide et bénéficiez d'un accompagnement pour
+- description: >-
+    Intégrez le parcours Crisalide et bénéficiez d'un accompagnement pour
     accélérer votre projet éco-innovant.
-- description: Challengez votre projet au travers d'ateliers et d'une session de pitch
+- description: >-
+    Challengez votre projet au travers d'ateliers et d'une session de pitch
     devant  un jury d'experts.
-- description: Accédez à un réseau de compétences et de savoir-faire (mise en relation
+- description: >-
+    Accédez à un réseau de compétences et de savoir-faire (mise en relation
     qualifiées et adaptées à votre projet - financements, partenariats,...)
-- description: 'Valorisez votre projet et donnez lui de la visibilité : book des solutions,
-    site internet, réseaux sociaux,etc.'
-- description: Concourez pour remporter le Trophée Crisalide Eco-activités et bénéficiez
-    de la promotion liée à la médiatisation du concours.
+- description: >-
+    Valorisez votre projet et donnez lui de la visibilité : book des solutions,
+    site internet, réseaux sociaux,etc.
+- description: >-
+    Concourez pour remporter le Trophée Crisalide Eco-activités et bénéficiez de
+    la promotion liée à la médiatisation du concours.
 conditions d'éligibilité:
   taille de l'entreprise:
   - Toutes tailles
   - Éligible aux micro-entreprises
   secteur géographique:
-  - Bretagne, Pays de la Loire, Normandie
+  - Bretagne, Normandie, Pays de la Loire
   secteur d'activité:
   - Industrie et Services aux entreprises
   nombre d'années d'activité:
@@ -88,5 +99,5 @@ publicodes:
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
     - région = Bretagne
-    - région = Pays de la Loire
     - région = Normandie
+    - région = Pays de la Loire

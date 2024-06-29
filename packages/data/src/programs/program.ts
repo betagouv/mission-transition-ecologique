@@ -19,11 +19,10 @@ export class ProgramYamlGenerator {
 
   async createProgramYamls(): Promise<void> {
     const programs = await new Baserow(this.outputDirectory).getPrograms()
-    // // fs.writeFileSync('program_tmp.json', JSON.stringify(programs, null, 2))
+    // fs.writeFileSync('program_tmp.json', JSON.stringify(programs, null, 2))
     // const data = fs.readFileSync('program_tmp.json', 'utf-8')
     // const programs: Program[] = JSON.parse(data)
-    const selectPrograms = programs.slice(0, 10)
-    selectPrograms.forEach((program) => {
+    programs.forEach((program) => {
       if (!program.Statuts.includes(Status.InProd)) {
         return
       }
@@ -79,8 +78,10 @@ export class ProgramYamlGenerator {
     this._setEligibility(fileContent, program)
     this._setPublicodes(fileContent, program)
 
-    const yamlStr = yaml.dump(fileContent, { noArrayIndent: true })
-    fs.writeFileSync(filePath, yamlStr, 'utf8')
+    let yamlString = yaml.dump(fileContent, { noArrayIndent: true, lineWidth: 80 })
+    // yamlString = yamlString.replace(/>-?\n\s*/g, '')
+    // yamlString = yamlString.replace(/\|-?\n\s*/g, '')
+    fs.writeFileSync(filePath, yamlString, 'utf8')
   }
   private _setRandomIllustration(): any {
     const illustrations = ['images/TEE_energie_verte.png', 'images/TEE_ampoule.png', 'images/TEE_eolienne.png']
@@ -152,7 +153,6 @@ export class ProgramYamlGenerator {
       eligibility_conditions["autres critères d'éligibilité"] = program['Eligibilité Spécifique']
         .split('\n')
         .map((criteria) => criteria.substring(2))
-
     }
     fileContent["conditions d'éligibilité"] = eligibility_conditions
     return

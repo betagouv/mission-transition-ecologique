@@ -1,10 +1,11 @@
 titre: Étude "Solaire thermique"
 promesse: Étudiez la faisabilité d'une installation solaire thermique pour votre site
-description: Vous souhaitez mettre en place une installation solaire thermique ? L'ADEME
-  vous apporte une aide pour une étude de faisabilité, étape nécessaire avant tout
-  investissement.
-description longue: 'Cette étude de faisabilité peut être liée à la mise en œuvre
-  :
+description: >-
+  Vous souhaitez mettre en place une installation solaire thermique ? L'ADEME
+  vous apporte une aide pour une étude de faisabilité, étape nécessaire avant
+  tout investissement.
+description longue: >
+  Cette étude de faisabilité peut être liée à la mise en œuvre :
 
   •  d’installations dédiées sur bâtiment ou process
 
@@ -15,61 +16,74 @@ description longue: 'Cette étude de faisabilité peut être liée à la mise en
 
   L’étude de faisabilité vous permettra de :
 
-  • Vérifier la faisabilité technique et économique du projet d’implantation d’une
-  installation solaire.
+  • Vérifier la faisabilité technique et économique du projet d’implantation
+  d’une installation solaire.
 
-  • Proposer des solutions techniques adaptées au contexte et aux possibilités du
-  site d’implantation, et assurer le dimensionnement et la pérennité de l’installation.
+  • Proposer des solutions techniques adaptées au contexte et aux possibilités
+  du site d’implantation, et assurer le dimensionnement et la pérennité de
+  l’installation.
 
-  • Explorer des solutions pour le financement de l’opération et le montage administratif
-  et juridique.'
+  • Explorer des solutions pour le financement de l’opération et le montage
+  administratif et juridique.
 début de validité: 01/01/2023
 fin de validité: 31/12/2024
 illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
-url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/etude-faisabilite-dinstallation-solaire-thermique
+url: >-
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/etude-faisabilite-dinstallation-solaire-thermique
 nature de l'aide: financement
-montant du financement: Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000
-  €
+montant du financement: Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €
 objectifs:
-- description: Vérifiez l’éligibilité de votre projet en parcourant la documentation
-    de l’ADEME.
+- description: >-
+    Vérifiez l’éligibilité de votre projet en parcourant la documentation de
+    l’ADEME.
   liens:
-  - lien: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf
+  - lien: >-
+      https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf
     texte: Conditions éligibilité et financement
-- description: Choisissez un prestataire "Reconnu Garant de l'Environnement" (RGE)
-    ou équivalent, et obtenez un devis.
+- description: >-
+    Choisissez un prestataire "Reconnu Garant de l'Environnement" (RGE) ou
+    équivalent, et obtenez un devis.
   liens:
-  - lien: https://france-renov.gouv.fr/annuaires-professionnels/artisan-rge-architecte
+  - lien: >-
+      https://france-renov.gouv.fr/annuaires-professionnels/artisan-rge-architecte
     texte: Annuaire des professionnels RGE
-- description: 'Déposez votre demande d''aide : informations administratives, description
-    du projet, détails techniques et financiers, etc. A ce stade, votre projet ne
-    doit pas avoir commencé !'
-- description: L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
-    recevez un contrat de financement précisant le montant d’aide maximum, les conditions
-    et les modalités de versement.
-- description: Réalisez votre étude pour vérifier la faisabilité technique et économique
-    de votre projet d’implantation d’une installation solaire.
-- description: A la fin de l'étude, bénéficiez de solutions techniques adaptées aux
-    possibilités du site d’implantation et de solutions pour le financement de l’opération
-    et le montage administratif et juridique.
+- description: >-
+    Déposez votre demande d'aide : informations administratives, description du
+    projet, détails techniques et financiers, etc. A ce stade, votre projet ne
+    doit pas avoir commencé !
+- description: >-
+    L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez
+    un contrat de financement précisant le montant d’aide maximum, les
+    conditions et les modalités de versement.
+- description: >-
+    Réalisez votre étude pour vérifier la faisabilité technique et économique de
+    votre projet d’implantation d’une installation solaire.
+- description: >-
+    A la fin de l'étude, bénéficiez de solutions techniques adaptées aux
+    possibilités du site d’implantation et de solutions pour le financement de
+    l’opération et le montage administratif et juridique.
 conditions d'éligibilité:
   taille de l'entreprise:
   - Toutes tailles
   - Éligible aux micro-entreprises
   secteur géographique:
-  - Centre-Val de Loire, Bourgogne-Franche-Comté, Normandie, Hauts-de-France, Grand
-    Est, Pays de la Loire, Bretagne, Nouvelle-Aquitaine, Occitanie, Auvergne-Rhône-Alpes,
-    Provence-Alpes-Côte d'Azur, Corse, Saint-Pierre-Et-Miquelon, Polynésie française,
-    Guadeloupe, Martinique, Guyane, La Réunion, Mayotte, Île-de-France
+  - >-
+    Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Centre-Val de
+    Loire, Corse, Grand Est, Guadeloupe, Guyane, Hauts-de-France, Île-de-France,
+    La Réunion, Martinique, Mayotte, Normandie, Nouvelle-Aquitaine, Occitanie,
+    Pays de la Loire, Polynésie française, Provence-Alpes-Côte d'Azur,
+    Saint-Pierre-Et-Miquelon
   secteur d'activité:
   - Tous secteurs d’activité
   nombre d'années d'activité:
   - Éligible à toutes les entreprises
   autres critères d'éligibilité:
-  - 'L''opération pour laquelle vous sollicitez une aide financière ne doit pas avoir
-    commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque
-    forme que ce soit : marché signé, commande signée, devis accepté…)'
+  - >-
+    L'opération pour laquelle vous sollicitez une aide financière ne doit pas
+    avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes
+    (sous quelque forme que ce soit : marché signé, commande signée, devis
+    accepté…)
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
@@ -111,23 +125,23 @@ publicodes:
     - questionnaire . objectif prioritaire . est ma performance énergétique
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
-    - région = Centre-Val de Loire
+    - région = Auvergne-Rhône-Alpes
     - région = Bourgogne-Franche-Comté
-    - région = Normandie
-    - région = Hauts-de-France
-    - région = Grand Est
-    - région = Pays de la Loire
     - région = Bretagne
+    - région = Centre-Val de Loire
+    - région = Corse
+    - région = Grand Est
+    - région = Guadeloupe
+    - région = Guyane
+    - région = Hauts-de-France
+    - région = Île-de-France
+    - région = La Réunion
+    - région = Martinique
+    - région = Mayotte
+    - région = Normandie
     - région = Nouvelle-Aquitaine
     - région = Occitanie
-    - région = Auvergne-Rhône-Alpes
-    - région = Provence-Alpes-Côte d'Azur
-    - région = Corse
-    - région = Saint-Pierre-Et-Miquelon
+    - région = Pays de la Loire
     - région = Polynésie française
-    - région = Guadeloupe
-    - région = Martinique
-    - région = Guyane
-    - région = La Réunion
-    - région = Mayotte
-    - région = Île-de-France
+    - région = Provence-Alpes-Côte d'Azur
+    - région = Saint-Pierre-Et-Miquelon

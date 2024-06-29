@@ -1,15 +1,18 @@
 titre: Diagnostic Eco-conception Île-de-France
 promesse: Développez des produits et services éco-responsables
-description: 'Vous souhaitez vous interroger sur l’impact environnemental global de
-  votre produit : choix des matières premières, poids et encombrement, impact énergétique,
-  à tous les niveaux (fabrication, transport, usage, fin de vie, etc.). La CCI vous
-  accompagne dans votre démarche.'
-description longue: 'L’éco-conception vise à prendre en compte et réduire les impacts
-  environnementaux dans toutes les étapes du cycle de vie d’un produit ou service
-  : extraction de matières premières, fabrication, transport, usage, traitement en
-  fin de vie, etc.
+description: >-
+  Vous souhaitez vous interroger sur l’impact environnemental global de votre
+  produit : choix des matières premières, poids et encombrement, impact
+  énergétique, à tous les niveaux (fabrication, transport, usage, fin de vie,
+  etc.). La CCI vous accompagne dans votre démarche.
+description longue: >-
+  L’éco-conception vise à prendre en compte et réduire les impacts
+  environnementaux dans toutes les étapes du cycle de vie d’un produit ou
+  service : extraction de matières premières, fabrication, transport, usage,
+  traitement en fin de vie, etc.
 
-  L’éco-conception s’applique aux produits matériels mais également aux services.'
+  L’éco-conception s’applique aux produits matériels mais également aux
+  services.
 début de validité: 01/01/2023
 fin de validité: 31/12/2025
 illustration: images/TEE_energie_verte.png
@@ -17,21 +20,25 @@ opérateur de contact: CCI
 autres opérateurs:
 - ADEME
 - Bpifrance
-url: https://www.cci-paris-idf.fr/fr/entreprises/actualites/accompagnement-eco-conception-performance-environnementale
+url: >-
+  https://www.cci-paris-idf.fr/fr/entreprises/actualites/accompagnement-eco-conception-performance-environnementale
 nature de l'aide: accompagnement
-coût de l'accompagnement: de 3 000 € à 6 000 € HT en fonction de la taille de l'entreprise,
-  avec prise en charge possible jusqu'à 50%
+coût de l'accompagnement: >-
+  de 3 000 € à 6 000 € HT en fonction de la taille de l'entreprise, avec prise
+  en charge possible jusqu'à 50%
 durée de l'accompagnement: 6 à 12 jours de prestation
 objectifs:
-- description: Identifiez vos priorités en termes d’accompagnement lors d’un premier
+- description: >-
+    Identifiez vos priorités en termes d’accompagnement lors d’un premier
     entretien avec votre conseiller CCI.
-- description: Bénéficiez d'une étude d'éco-conception par un consultant expert  (phase
-    1)
-- description: Elaborez différents scénarii de processus de fabrication et quantifier
-    leurs impacts environnementaux.
-- description: 'En fonction de la maturité de votre projet, continuez avec une phase
-    de pré-industrialisation : étude de faisabilité, essai, prototypage, recherche
-    de partenaires techniques, etc. (phase 2)'
+- description: Bénéficiez d'une étude d'éco-conception par un consultant expert  (phase 1)
+- description: >-
+    Elaborez différents scénarii de processus de fabrication et quantifier leurs
+    impacts environnementaux.
+- description: >-
+    En fonction de la maturité de votre projet, continuez avec une phase de
+    pré-industrialisation : étude de faisabilité, essai, prototypage, recherche
+    de partenaires techniques, etc. (phase 2)
 conditions d'éligibilité:
   taille de l'entreprise:
   - TPE, PME et ETI

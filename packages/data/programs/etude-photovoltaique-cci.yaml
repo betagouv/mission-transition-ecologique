@@ -1,26 +1,33 @@
 titre: Étude d'opportunité photovoltaïque
-promesse: Découvrez le potentiel du photovoltaïque pour votre entreprise avec une
-  étude d’opportunité
-description: 'Disposez de tous les éléments indispensables à la prise de décision
-  avant l’installation de panneaux photovoltaïques : montant de l’investissement et
-  aides financières, économies réalisées par la vente de l’électricité et/ou par l’auto-consommation,
-  points de vigilance, temps de retour sur investissement et rentabilité.'
+promesse: >-
+  Découvrez le potentiel du photovoltaïque pour votre entreprise avec une étude
+  d’opportunité
+description: >-
+  Disposez de tous les éléments indispensables à la prise de décision avant
+  l’installation de panneaux photovoltaïques : montant de l’investissement et
+  aides financières, économies réalisées par la vente de l’électricité et/ou par
+  l’auto-consommation, points de vigilance, temps de retour sur investissement
+  et rentabilité.
 début de validité: 01/10/2023
 fin de validité: 01/06/2026
 illustration: images/TEE_energie_verte.png
 opérateur de contact: CCI
 autres opérateurs:
 - ADEME
-url: https://www.saone-doubs.cci.fr/produit/etude-dopportunite-sur-votre-potentiel-photovoltaique
-nature de l'aide: financement
-montant du financement: ''
+url: >-
+  https://www.saone-doubs.cci.fr/produit/etude-dopportunite-sur-votre-potentiel-photovoltaique
+nature de l'aide: accompagnement
+coût de l'accompagnement: Gratuit
+durée de l'accompagnement: 1/2 à 1 journée
 objectifs:
 - description: Réalisez une analyse rapide de la consommation de votre site.
-- description: Obtenez une analyse réglementaire ainsi que les points d’attention
-    à prendre en compte (raccordement au réseau, structure de la toiture, étanchéité,
+- description: >-
+    Obtenez une analyse réglementaire ainsi que les points d’attention à prendre
+    en compte (raccordement au réseau, structure de la toiture, étanchéité,
     charpente, etc.)
-- description: Bénéficiez d'un pré-chiffrage des travaux, calculez le temps de retour
-    sur investissement et identifiez les financements possibles.
+- description: >-
+    Bénéficiez d'un pré-chiffrage des travaux, calculez le temps de retour sur
+    investissement et identifiez les financements possibles.
 conditions d'éligibilité:
   taille de l'entreprise:
   - PME

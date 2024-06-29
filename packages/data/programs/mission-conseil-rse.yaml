@@ -1,11 +1,12 @@
 titre: Mission de Conseil RSE
-promesse: Bénéficiez d'un consultant expert pour définir et mettre en place votre
+promesse: >-
+  Bénéficiez d'un consultant expert pour définir et mettre en place votre
   feuille de route RSE
-description: La Mission de Conseil RSE permet de bénéficier de 13 jours d'accompagnement
-  d'un consultant expert pour définir une ambition globale RSE et la traduire en plan
-  d'action.
+description: >-
+  La Mission de Conseil RSE permet de bénéficier de 13 jours d'accompagnement
+  d'un consultant expert pour définir une ambition globale RSE et la traduire en
+  plan d'action.
 début de validité: 01/01/2018
-fin de validité: 31/12/2050
 illustration: images/TEE_eolienne.png
 opérateur de contact: Bpifrance
 url: https://www.bpifrance.fr/catalogue-offres/mission-de-conseil-rse
@@ -13,12 +14,19 @@ nature de l'aide: accompagnement
 coût de l'accompagnement: 13 000 € HT après subvention de 50%
 durée de l'accompagnement: 13 jours de prestation répartis sur 6 à 8 semaines
 objectifs:
-- description: Définissez une ambition globale RSE pour l'entreprise et traduisez-la
-    en engagements à prendre.
-- description: Mobilisez une équipe projet autour de cette ambition pour engager l'ensemble de vos collaborateurs.
-- description: Construisez un plan d'action ciblé pour réussir à intégrer la RSE dans l'activité de votre entreprise permettant de concrétiser rapidement les engagements.
-- description: 'Bénéficiez de données externes et de marché pour vous orienter dans
-    la prise de décision stratégique (ex: étude de marché, analyse de la concurrence...)'
+- description: >-
+    Définissez une ambition globale RSE pour l'entreprise et traduisez-la en
+    engagements à prendre.
+- description: >-
+    Mobilisez une équipe projet autour de cette ambition pour engager l'ensemble
+    de vos collaborateurs.
+- description: >-
+    Construisez un plan d'action ciblé pour réussir à intégrer la RSE dans
+    l'activité de votre entreprise permettant de concrétiser rapidement les
+    engagements.
+- description: >-
+    Bénéficiez de données externes et de marché pour vous orienter dans la prise
+    de décision stratégique (ex: étude de marché, analyse de la concurrence...)
 conditions d'éligibilité:
   taille de l'entreprise:
   - Plus de 10 salariés
@@ -30,9 +38,10 @@ conditions d'éligibilité:
   nombre d'années d'activité:
   - Au moins 3 ans d’activité
   autres critères d'éligibilité:
-  - Votre entreprise doit avoir une structuration suffisante pour que le parcours
-    conseil soit adapté (en général, minimum 5M€ de chiffres d'affaires, dérogations
-    acceptées)
+  - >-
+    Votre entreprise doit avoir une structuration suffisante pour que le
+    parcours conseil soit adapté (en général, minimum 5M€ de chiffres
+    d'affaires, dérogations acceptées)
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
@@ -40,10 +49,7 @@ publicodes:
     - est dans un secteur d'activité ciblé
     - a un objectif ciblé
   entreprise . est éligible:
-    applicable si:
-      toutes ces conditions:
-      - dispositif . début de validité <= date du jour
-      - date du jour <= dispositif . fin de validité
+    applicable si: dispositif . début de validité <= date du jour
     valeur: oui
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:

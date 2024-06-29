@@ -1,32 +1,44 @@
 titre: Prêt Vert
-promesse: Financez votre projet de transition écologique et énergétique grâce au Prêt
+promesse: >-
+  Financez votre projet de transition écologique et énergétique grâce au Prêt
   Vert
-description: 'Le "Prêt Vert" est destiné à accompagner les projets sur différents
-  champs de la transition écologique : mobilité douce, économie circulaire, énergies
-  renouvelables, etc.'
-description longue: "En co-financement avec une banque privée, le prêt Vert soutient\
-  \ les projets visant à : \n• optimiser les procédés, ou améliorer la performance\
-  \ (énergie, eau, matière,) afin de mieux maîtriser ou de diminuer les impacts sur\
-  \ l’environnement, en ce compris des procédés d’économie circulaire ;\n• favoriser\
-  \ la mobilité “zéro carbone” pour les salariés, les marchandises et les produits\
-  \ ;\n• innover pour mettre sur le marché des produits ou des services en matière\
-  \ de protection de l’environnement, d’économie circulaire et/ou permettant une réduction\
-  \ de la consommation de ressources, renouvelables ou non, (énergie, matières premières,\
-  \ eau, etc. ; en ce compris la dédieselisation, l’allongement de la durée de vie\
-  \ des produits, l’intégration de recyclé, la recyclabilité, la réutilisation ou\
-  \ le réemploi) ;\n• favoriser un mix énergétique plus vertueux en intégrant davantage\
-  \ d’énergies renouvelables."
+description: >-
+  Le "Prêt Vert" est destiné à accompagner les projets sur différents champs de
+  la transition écologique : mobilité douce, économie circulaire, énergies
+  renouvelables, etc.
+description longue: >-
+  En co-financement avec une banque privée, le prêt Vert soutient les projets
+  visant à :
+
+  • optimiser les procédés, ou améliorer la performance (énergie, eau, matière,)
+  afin de mieux maîtriser ou de diminuer les impacts sur l’environnement, en ce
+  compris des procédés d’économie circulaire ;
+
+  • favoriser la mobilité “zéro carbone” pour les salariés, les marchandises et
+  les produits ;
+
+  • innover pour mettre sur le marché des produits ou des services en matière de
+  protection de l’environnement, d’économie circulaire et/ou permettant une
+  réduction de la consommation de ressources, renouvelables ou non, (énergie,
+  matières premières, eau, etc. ; en ce compris la dédieselisation,
+  l’allongement de la durée de vie des produits, l’intégration de recyclé, la
+  recyclabilité, la réutilisation ou le réemploi) ;
+
+  • favoriser un mix énergétique plus vertueux en intégrant davantage d’énergies
+  renouvelables.
 illustration: images/TEE_ampoule.png
 opérateur de contact: Bpifrance
-url: https://www.bpifrance.fr/catalogue-offres/transition-ecologique-et-energetique/pret-vert
+url: >-
+  https://www.bpifrance.fr/catalogue-offres/transition-ecologique-et-energetique/pret-vert
 nature de l'aide: prêt
-durée du prêt: de 2 à 10 ans, avec un différé d’amortissement en capital de 2 ans
-  maximum
-montant du prêt: De 50 000 € à 5 000 000 €
+durée du prêt: de 2 à 10 ans, avec un différé d’amortissement en capital de 2 ans maximum
+montant du prêt: De 50 000 € € à 5 000 000 € €
 objectifs:
-- description: Exprimez votre intérêt pour ce prêt à Bpifrance grâce au formulaire
+- description: >-
+    Exprimez votre intérêt pour ce prêt à Bpifrance grâce au formulaire
     ci-dessous.
-- description: Obtenez un rendez-vous de financement auprès d'un chargé d'affaires
+- description: >-
+    Obtenez un rendez-vous de financement auprès d'un chargé d'affaires
     Bpifrance.
 - description: Bpifrance étudie votre demande de prêt.
 conditions d'éligibilité:
@@ -47,7 +59,9 @@ conditions d'éligibilité:
   - Au moins 3 ans d’activité
   autres critères d'éligibilité:
   - Ce prêt est obligatoirement associé à un concours bancaire du même montant
-  - Sont exclues les entreprises en difficulté au sens de la définition européenne
+  - >-
+    Sont exclues les entreprises en difficulté au sens de la définition
+    européenne
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

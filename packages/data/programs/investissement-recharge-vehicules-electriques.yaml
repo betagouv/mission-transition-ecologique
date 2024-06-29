@@ -1,40 +1,49 @@
 titre: Investissement "recharge véhicules électriques"
-promesse: Financer vos bornes de recharge pour véhicules électriques au sein de votre
+promesse: >-
+  Financer vos bornes de recharge pour véhicules électriques au sein de votre
   station-service indépendante
-description: Vous avez pour projet de créer des bornes de recharge pour véhicules
-  électrique au sein de votre station service indépendante ?  L’ADEME peut accompagner
-  financièrement la réalisation de votre installation.
-description longue: 'Le dispositif concerne les entreprises distribuant du carburant
-  à usage routier, disposant d’un numéro de SIRET, dont les exploitants sont propriétaires
-  de leur fonds de commerce, qui porte le projet d’investissement dans une infrastructure
-  de recharge et vendant moins de 2 500 m³ de carburant (tous les types de carburants
-  confondus pour les véhicules légers) par an et par station-service.
+description: >-
+  Vous avez pour projet de créer des bornes de recharge pour véhicules
+  électrique au sein de votre station service indépendante ?  L’ADEME peut
+  accompagner financièrement la réalisation de votre installation.
+description longue: >-
+  Le dispositif concerne les entreprises distribuant du carburant à usage
+  routier, disposant d’un numéro de SIRET, dont les exploitants sont
+  propriétaires de leur fonds de commerce, qui porte le projet d’investissement
+  dans une infrastructure de recharge et vendant moins de 2 500 m³ de carburant
+  (tous les types de carburants confondus pour les véhicules légers) par an et
+  par station-service.
 
 
-  Par station-service, est éligible aux subventions de ce programme, une seule infrastructure
-  de recharge composée au minimum de deux points de recharge avec connecteurs CCS
-  haute puissance (24 kW minimum) en courant continu ainsi que, pour respecter la
-  réglementation en vigueur, d’un connecteur de 22 kW en courant alternatif. Si toutefois
-  un point de recharge de 22 kW en courant alternatif conforme à la réglementation
-  est déjà en place, les coûts associés à ce point de charge ne seront pas éligibles.
-  Au moins un des points de recharge doit être accessible aux personnes à mobilité
-  réduite, sauf en cas d’impossibilités techniques qui devront être justifiées.'
+  Par station-service, est éligible aux subventions de ce programme, une seule
+  infrastructure de recharge composée au minimum de deux points de recharge avec
+  connecteurs CCS haute puissance (24 kW minimum) en courant continu ainsi que,
+  pour respecter la réglementation en vigueur, d’un connecteur de 22 kW en
+  courant alternatif. Si toutefois un point de recharge de 22 kW en courant
+  alternatif conforme à la réglementation est déjà en place, les coûts associés
+  à ce point de charge ne seront pas éligibles. Au moins un des points de
+  recharge doit être accessible aux personnes à mobilité réduite, sauf en cas
+  d’impossibilités techniques qui devront être justifiées.
 début de validité: 01/12/2022
 fin de validité: 31/12/2023
 illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
-url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2022/infrastructures-recharge-vehicules-electriques-stations-service
+url: >-
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2022/infrastructures-recharge-vehicules-electriques-stations-service
 nature de l'aide: financement
 montant du financement: Selon la puissance de l’installation
 objectifs:
-- description: Vérifiez l’éligibilité de votre projet en parcourant la documentation
-    de l’ADEME.
-- description: 'Déposez votre demande d''aide : informations administratives, description
-    du projet, détails techniques et financiers, étude de faisabilité, etc. A ce stade,
-    votre investissement ne doit pas avoir été realisé !'
-- description: L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
-    recevez un contrat de financement précisant le montant d’aide maximum, les conditions
-    et les modalités de versement.
+- description: >-
+    Vérifiez l’éligibilité de votre projet en parcourant la documentation de
+    l’ADEME.
+- description: >-
+    Déposez votre demande d'aide : informations administratives, description du
+    projet, détails techniques et financiers, étude de faisabilité, etc. A ce
+    stade, votre investissement ne doit pas avoir été realisé !
+- description: >-
+    L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez
+    un contrat de financement précisant le montant d’aide maximum, les
+    conditions et les modalités de versement.
 - description: Réalisez vos investissements.
 conditions d'éligibilité:
   taille de l'entreprise:
@@ -44,18 +53,21 @@ conditions d'éligibilité:
   - France et territoires d'outre-mer
   secteur d'activité:
   - Stations-service indépendantes
-  - '47.30Z : Commerce de détail de carburants en magasin spécialisé'
   nombre d'années d'activité:
   - Éligible à toutes les entreprises
   autres critères d'éligibilité:
-  - Le dispositif concerne les entreprises distribuant du carburant à usage routier,
-    disposant d’un numéro de SIRET, dont les exploitants sont propriétaires de leur
-    fonds de commerce, qui porte le projet d’investissement dans une infrastructure
-    de recharge et vendant moins de 2 500 m³ de carburant (tous les types de carburants
-    confondus pour les véhicules légers) par an et par station-service.
-  - 'L''opération pour laquelle vous sollicitez une aide financière ne doit pas avoir
-    commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque
-    forme que ce soit : marché signé, commande signée, devis accepté…)'
+  - >-
+    Le dispositif concerne les entreprises distribuant du carburant à usage
+    routier, disposant d’un numéro de SIRET, dont les exploitants sont
+    propriétaires de leur fonds de commerce, qui porte le projet
+    d’investissement dans une infrastructure de recharge et vendant moins de 2
+    500 m³ de carburant (tous les types de carburants confondus pour les
+    véhicules légers) par an et par station-service.
+  - >-
+    L'opération pour laquelle vous sollicitez une aide financière ne doit pas
+    avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes
+    (sous quelque forme que ce soit : marché signé, commande signée, devis
+    accepté…)
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

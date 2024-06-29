@@ -46,7 +46,13 @@ export class Baserow {
     const geographicAreas = await this._getTableData<GeographicAreas>(this._geographicAreasTableId)
     const themes = await this._getTableData<Theme>(this._themeTableId)
 
-    return allBaserowPrograms.map((program) => this._convertToRawProgram(program, operators, geographicCoverages, geographicAreas, themes))
+    const programs: DataProgram[] = []
+    allBaserowPrograms.forEach((program) => {
+      try {
+        programs.push(this._convertToRawProgram(program, operators, geographicCoverages, geographicAreas, themes))
+      } catch {}
+    })
+    return programs
   }
 
   async getOperators(): Promise<string[]> {
@@ -65,11 +71,30 @@ export class Baserow {
         }
       })
       // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access
-      return response.data.results
+      let results = response.data.results
+      let next = response.data.next
+      while (next) {
+        await this._delay(200)
+        const newResponse = await axios.get(next, {
+          headers: {
+            Authorization: `Token ${this.API_TOKEN}`
+          },
+          params: {
+            database_id: this._databaseId
+          }
+        })
+        results = results.concat(newResponse.data.results)
+        next = newResponse.data.next
+      }
+      return results
     } catch (error) {
       console.error('Error fetching project data from baserow:', error)
       return []
     }
+  }
+
+  private async _delay(ms: number): Promise<void> {
+    return new Promise((resolve) => setTimeout(resolve, ms))
   }
 
   private async _convertToRawProjectType(baserowProject: Project, baserawThemes: Theme[]): Promise<DataProject> {
@@ -227,13 +252,5 @@ export class Baserow {
     }
 
     return rawProgram
-
-    // Statuts
-    // Natude de l'aide
-    // Opérateur de contact
-    // Autres opérateurs
-    // Couverture géographique
-    // Zones géographiques
-    // Thèmes Ciblés
   }
 }

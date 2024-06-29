@@ -1,33 +1,45 @@
 titre: Gestion des biodéchets
 promesse: Valorisez les biodéchets de votre entreprise
-description: Vous produisez des biodéchets et vous aimeriez trouver des solutions
-  pour les réduire ou les valoriser ? la CCI Hauts-de-France vous propose un accompagnement
-  à la gestion des biodéchets.
-description longue: "Qu’est-ce qu’un biodéchet ?\nL’article L. 541-1-1 du code de\
-  \ l’environnement définit les biodéchets comme : « Les déchets non dangereux biodégradables\
-  \ de jardin ou de parc, les déchets alimentaires ou de cuisine provenant des ménages,\
-  \ des bureaux, des restaurants, du commerce de gros, des cantines, des traiteurs\
-  \ ou des magasins de vente au détail, ainsi que les déchets comparables provenant\
-  \ des usines de transformation de denrées alimentaires. ».\n\nEn pratique, les biodéchets\
-  \ à traiter sont :\n \nDéchets verts : tontes de pelouse et fauchage, feuilles mortes,\
-  \ tailles d’arbustes, haies et brindilles ou encore déchets ligneux issus de l’élagage\
-  \ et de l’abattage d’arbres et de haies.\nDéchets alimentaires : restes de repas\
-  \ ou de préparation de repas ou produits périmés non consommés."
+description: >-
+  Vous produisez des biodéchets et vous aimeriez trouver des solutions pour les
+  réduire ou les valoriser ? la CCI Hauts-de-France vous propose un
+  accompagnement à la gestion des biodéchets.
+description longue: >-
+  Qu’est-ce qu’un biodéchet ?
+
+  L’article L. 541-1-1 du code de l’environnement définit les biodéchets comme :
+  « Les déchets non dangereux biodégradables de jardin ou de parc, les déchets
+  alimentaires ou de cuisine provenant des ménages, des bureaux, des
+  restaurants, du commerce de gros, des cantines, des traiteurs ou des magasins
+  de vente au détail, ainsi que les déchets comparables provenant des usines de
+  transformation de denrées alimentaires. ».
+
+
+  En pratique, les biodéchets à traiter sont :
+
+  Déchets verts : tontes de pelouse et fauchage, feuilles mortes, tailles
+  d’arbustes, haies et brindilles ou encore déchets ligneux issus de l’élagage
+  et de l’abattage d’arbres et de haies.
+
+  Déchets alimentaires : restes de repas ou de préparation de repas ou produits
+  périmés non consommés.
 illustration: images/TEE_eolienne.png
 opérateur de contact: CCI
 url: https://hautsdefrance.cci.fr/solutions/accompagnement-gestion-biodechets/
 nature de l'aide: accompagnement
 coût de l'accompagnement: De 750 à 3 500 € HT
-durée de l'accompagnement: De 1 à 5 jours selon la taille et le secteur d'activité
-  de l'entreprise
+durée de l'accompagnement: De 1 à 5 jours selon la taille et le secteur d'activité de l'entreprise
 objectifs:
-- description: 'Analyser votre production de biodéchets : volume, fréquence, situation
-    géographique, nature, etc.'
-- description: Identifier les solutions de valorisation associées, disponibles à proximité
+- description: >-
+    Analyser votre production de biodéchets : volume, fréquence, situation
+    géographique, nature, etc.
+- description: >-
+    Identifier les solutions de valorisation associées, disponibles à proximité
     (compostage, méthanisation, etc).
 - description: Répertorier les biodéchets sur une plateforme géolocalisée.
-- description: 'Obtenir un outil d’aide à la décision : solutions techniques, dispositifs
-    de financements, contacts associés.'
+- description: >-
+    Obtenir un outil d’aide à la décision : solutions techniques, dispositifs de
+    financements, contacts associés.
 conditions d'éligibilité:
   taille de l'entreprise:
   - TPE, PME et ETI
@@ -35,8 +47,9 @@ conditions d'éligibilité:
   secteur géographique:
   - Hauts-de-France
   secteur d'activité:
-  - Entreprises produisant des biodéchets (industries agro-alimentaires, Hotellerie
-    restauration, Grande & moyennes surfaces...)
+  - >-
+    Entreprises produisant des biodéchets (industries agro-alimentaires,
+    Hotellerie restauration, Grande & moyennes surfaces...)
   nombre d'années d'activité:
   - Éligible à toutes les entreprises
 publicodes:

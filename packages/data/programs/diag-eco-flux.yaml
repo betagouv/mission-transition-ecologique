@@ -1,9 +1,11 @@
-titre: Diag Eco-Flux
-promesse: Bénéficiez d’un état des lieux sur vos flux pour vous aider à faire des
+titre: 'Diag Eco-Flux '
+promesse: >-
+  Bénéficiez d’un état des lieux sur vos flux pour vous aider à faire des
   économies
-description: Bénéficiez des conseils d'un expert environnement référencé par Bpifrance
-  pour réaliser rapidement des économies durables en suivant une méthodologie élaborée
-  avec l'ADEME.
+description: >-
+  Bénéficiez des conseils d'un expert environnement référencé par Bpifrance pour
+  réaliser rapidement des économies durables en suivant une méthodologie
+  élaborée avec l'ADEME. 
 illustration: images/TEE_energie_verte.png
 opérateur de contact: Bpifrance
 autres opérateurs:
@@ -13,13 +15,16 @@ nature de l'aide: accompagnement
 coût de l'accompagnement: de 2 000 € HT à 3 000 € HT après subvention de 50%
 durée de l'accompagnement: 6 à 8 jours de prestation répartis sur 15 à 18 mois
 objectifs:
-- description: Faites un état des lieux de vos flux (déchets et pertes en énergie,
-    matière et eau) et identifiez les axes prioritaires d’économies.
-- description: Mettez en place un plan d'action simple pour réduire vos déchets et
-    votre consommation d'énergie, de matières et d'eau.
+- description: >-
+    Faites un état des lieux de vos flux (déchets et pertes en énergie, matière
+    et eau) et identifiez les axes prioritaires d’économies.
+- description: >-
+    Mettez en place un plan d'action simple pour réduire vos déchets et votre
+    consommation d'énergie, de matières et d'eau.
 - description: Lancez vos premières actions.
-- description: Réalisez en moyenne 45 000 € d'économies par an et par site de production
-    ou établissement (sur la base de 678 missions restituées).
+- description: >-
+    Réalisez en moyenne 45 000 € d'économies par an et par site de production ou
+    établissement (sur la base de 678 missions restituées).
 conditions d'éligibilité:
   taille de l'entreprise:
   - De 20 à 250 salariés

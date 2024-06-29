@@ -1,36 +1,45 @@
 titre: Étude "Économie de la fonctionnalité"
-promesse: Réalisez une étude sur le modèle de l'économie de la fonctionnalité pour
-  votre produit
-description: Vous souhaitez développer un service innovant en alternative à la fourniture
-  d’un produit ? L’ADEME peut vous aider à financer une étude pour vous aider à définir
-  votre nouvelle offre de services.
-description longue: L’économie de la fonctionnalité s’inscrit pleinement dans la démarche
-  de transition vers une économie verte. Elle consiste à remplacer la notion de vente
-  du bien par celle de la vente de l’usage du bien. Ainsi, l’échange économique ne
-  repose plus sur le transfert de propriété de biens, qui restent la propriété du
-  producteur tout au long de son cycle de vie, mais sur le consentement des usagers
-  à payer une valeur d’usage.
+promesse: >-
+  Réalisez une étude sur le modèle de l'économie de la fonctionnalité pour votre
+  produit
+description: >-
+  Vous souhaitez développer un service innovant en alternative à la fourniture
+  d’un produit ? L’ADEME peut vous aider à financer une étude pour vous aider à
+  définir votre nouvelle offre de services.
+description longue: >-
+  L’économie de la fonctionnalité s’inscrit pleinement dans la démarche de
+  transition vers une économie verte. Elle consiste à remplacer la notion de
+  vente du bien par celle de la vente de l’usage du bien. Ainsi, l’échange
+  économique ne repose plus sur le transfert de propriété de biens, qui restent
+  la propriété du producteur tout au long de son cycle de vie, mais sur le
+  consentement des usagers à payer une valeur d’usage.
 début de validité: 01/01/2023
 fin de validité: 31/12/2024
 illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
-url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/etude-associee-a-demarche-projet-deconomie-fonctionnalite
+url: >-
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/etude-associee-a-demarche-projet-deconomie-fonctionnalite
 nature de l'aide: financement
 montant du financement: Jusqu'à 80% du coût de l'étude
 objectifs:
-- description: Vérifiez l’éligibilité de votre projet en parcourant la documentation
-    de l’ADEME.
+- description: >-
+    Vérifiez l’éligibilité de votre projet en parcourant la documentation de
+    l’ADEME.
   liens:
-  - lien: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Soutien%20%C3%A9conomie%20fonctionnalit%C3%A9%20et%20coop%C3%A9ration%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.docx
+  - lien: >-
+      https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Soutien%20%C3%A9conomie%20fonctionnalit%C3%A9%20et%20coop%C3%A9ration%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.docx
     texte: Conditions éligibilité et financement
-- description: Choisissez le prestataire qui va vous accompagner pour mener votre
-    étude et obtenez un devis.
-- description: 'Déposez votre demande d''aide : informations administratives, description
-    du projet, détails techniques et financiers, etc. A ce stade, votre projet ne
-    doit pas avoir commencé !'
-- description: L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
-    recevez un contrat de financement précisant le montant d’aide maximum, les conditions
-    et les modalités de versement.
+- description: >-
+    Choisissez le prestataire qui va vous accompagner pour mener votre étude et
+    obtenez un devis.
+- description: >-
+    Déposez votre demande d'aide : informations administratives, description du
+    projet, détails techniques et financiers, etc. A ce stade, votre projet ne
+    doit pas avoir commencé !
+- description: >-
+    L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez
+    un contrat de financement précisant le montant d’aide maximum, les
+    conditions et les modalités de versement.
 - description: Réalisez votre étude de diagnostic ou d'accompagnement.
 conditions d'éligibilité:
   taille de l'entreprise:
@@ -43,9 +52,11 @@ conditions d'éligibilité:
   nombre d'années d'activité:
   - Éligible à toutes les entreprises
   autres critères d'éligibilité:
-  - 'L''opération pour laquelle vous sollicitez une aide financière ne doit pas avoir
-    commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque
-    forme que ce soit : marché signé, commande signée, devis accepté…)'
+  - >-
+    L'opération pour laquelle vous sollicitez une aide financière ne doit pas
+    avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes
+    (sous quelque forme que ce soit : marché signé, commande signée, devis
+    accepté…)
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
@@ -57,8 +68,7 @@ publicodes:
       toutes ces conditions:
       - dispositif . début de validité <= date du jour
       - date du jour <= dispositif . fin de validité
-    toutes ces conditions:
-    - entreprise . est dans une zone géographique éligible
+    valeur: oui
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
     - code NAF niveau 1 . est A
@@ -86,24 +96,3 @@ publicodes:
     - questionnaire . objectif prioritaire . est la gestion des déchets
     - questionnaire . objectif prioritaire . est mon impact environnemental
     - questionnaire . objectif prioritaire . est l'écoconception
-  entreprise . est dans une zone géographique éligible:
-    une de ces conditions:
-    - région = Île-de-France
-    - région = Centre-Val de Loire
-    - région = Bourgogne-Franche-Comté
-    - région = Normandie
-    - région = Hauts-de-France
-    - région = Grand Est
-    - région = Bretagne
-    - région = Nouvelle-Aquitaine
-    - région = Occitanie
-    - région = Auvergne-Rhône-Alpes
-    - région = Corse
-    - région = Saint-Pierre-Et-Miquelon
-    - région = Polynésie française
-    - région = Guadeloupe
-    - région = Martinique
-    - région = Guyane
-    - région = La Réunion
-    - région = Mayotte
-    - région = Pays de la Loire

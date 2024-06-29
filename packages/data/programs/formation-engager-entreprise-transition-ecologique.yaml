@@ -1,29 +1,42 @@
 titre: Formations ADEME
 promesse: Engager son entreprise dans la transition écologique
-description: Plongez au cœur des enjeux écologiques et des scénarios de transition
-  de l'ADEME pour (re)découvrir leurs conséquences et leurs opportunités pour votre
+description: >-
+  Plongez au cœur des enjeux écologiques et des scénarios de transition de
+  l'ADEME pour (re)découvrir leurs conséquences et leurs opportunités pour votre
   entreprise
-description longue: "A la fin de la formation, les participants sauront/seront capables\
-  \ de :\n\n- Avoir la conviction qu'il faut agir,\n- Identifier les principales transformations\
-  \ de la société, de l'économie, des territoires et les enjeux pour leur entreprise,\n\
-  - Anticiper le changement, les risques et les opportunités, \n- Identifier les premiers\
-  \ leviers d’action pour se mettre en mouvement."
+description longue: >-
+  A la fin de la formation, les participants sauront/seront capables de :
+
+
+  - Avoir la conviction qu'il faut agir,
+
+  - Identifier les principales transformations de la société, de l'économie, des
+  territoires et les enjeux pour leur entreprise,
+
+  - Anticiper le changement, les risques et les opportunités,
+
+  - Identifier les premiers leviers d’action pour se mettre en mouvement.
 début de validité: 01/01/2024
 fin de validité: 31/12/2024
 illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
-url: https://formations.ademe.fr/formations_transition-ecologique-:-approche-transversale_engager-son-entreprise-dans-la-transition-ecologique_s5227.html
+url: >-
+  https://formations.ademe.fr/formations_transition-ecologique-:-approche-transversale_engager-son-entreprise-dans-la-transition-ecologique_s5227.html
 nature de l'aide: formation
 coût de l'accompagnement: Gratuit
-durée de l'accompagnement: 2h15
+durée de l'accompagnement: |-
+
+
+  2h15
 activable en autonomie: oui
 objectifs:
 - description: Créez votre compte sur la plateforme ADEME Formations.
   liens:
   - lien: https://formations.ademe.fr/solutions/beforeregister.php?sessionid=7866
     texte: formations.ademe.fr
-- description: Ajoutez un ou plusieurs participants, ainsi que les coordonnées de
-    votre entreprise.
+- description: >-
+    Ajoutez un ou plusieurs participants, ainsi que les coordonnées de votre
+    entreprise.
 - description: Vous pourrez nous signaler tout besoin spécifique ou situation de handicap.
 - description: Recevez votre récapitulatif de votre formation et une validation.
 - description: Réalisez votre formation auprès des experts de l'ADEME

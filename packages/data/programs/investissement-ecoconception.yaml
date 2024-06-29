@@ -1,60 +1,79 @@
 titre: Investissement "Ecoconception"
-promesse: Obtenez un soutien pour vous aider à réduire les impacts environnementaux
-  de vos produits ou services
-description: L’ADEME offre une aide financière pour encourager les démarches d’amélioration
-  de la performance environnementale des produits et services des entreprises françaises.
-description longue: "L’ADEME soutient les travaux et investissements issus d’un diagnostic\
-  \ et s’intégrant dans une démarche de mise en œuvre de l’écoconception. \n• Les\
-  \ investissements doivent viser la fabrication d’un produit écoconçu, l’obtention\
-  \ d’un produit ou service certifié Ecolabel européen, ou l’amélioration d’une note\
-  \ d’affichage environnemental.\n\n• Dans le domaine de l’alimentation, les investissements\
-  \ d’optimisation des outils de transformation, ainsi que ceux permettant la mise\
-  \ sur le marché d’une nouvelle gamme de produits sous labels AB (Agriculture Biologique)\
-  \ ou HVE-niveau 3 (Haute Valeur Environnementale-Niveau 3) sont éligibles.\n\n•\
-  \ L’ADEME soutient aussi les projets comportant une innovation de rupture, qui permettra\
-  \ au fabricant de développer une offre globale produit/service, créatrice de valeur\
-  \ non plus sur la multiplication des volumes de ventes, mais sur la fidélisation\
-  \ des clients, par les performances d’usage du produit."
+promesse: >-
+  Obtenez un soutien pour vous aider à réduire les impacts environnementaux de
+  vos produits ou services
+description: >-
+  L’ADEME offre une aide financière pour encourager les démarches d’amélioration
+  de la performance environnementale des produits et services des entreprises
+  françaises.
+description longue: >-
+  L’ADEME soutient les travaux et investissements issus d’un diagnostic et
+  s’intégrant dans une démarche de mise en œuvre de l’écoconception. 
+
+  • Les investissements doivent viser la fabrication d’un produit écoconçu,
+  l’obtention d’un produit ou service certifié Ecolabel européen, ou
+  l’amélioration d’une note d’affichage environnemental.
+
+
+  • Dans le domaine de l’alimentation, les investissements d’optimisation des
+  outils de transformation, ainsi que ceux permettant la mise sur le marché
+  d’une nouvelle gamme de produits sous labels AB (Agriculture Biologique) ou
+  HVE-niveau 3 (Haute Valeur Environnementale-Niveau 3) sont éligibles.
+
+
+  • L’ADEME soutient aussi les projets comportant une innovation de rupture, qui
+  permettra au fabricant de développer une offre globale produit/service,
+  créatrice de valeur non plus sur la multiplication des volumes de ventes, mais
+  sur la fidélisation des clients, par les performances d’usage du produit. 
 début de validité: 01/01/2023
 fin de validité: 31/12/2024
 illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
-url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/investissements-decoconception-ameliorer-performance-environnementale?cible=79
+url: >-
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/investissements-decoconception-ameliorer-performance-environnementale?cible=79
 nature de l'aide: financement
-montant du financement: Entre 15 % à 55 % selon le projet, dans un maximum de 300
-  000 €
+montant du financement: 'Entre 15 % à 55 % selon le projet, dans un maximum de 300 000 € '
 objectifs:
-- description: Vérifiez l’éligibilité de votre projet en parcourant la documentation
-    de l’ADEME.
+- description: >-
+    Vérifiez l’éligibilité de votre projet en parcourant la documentation de
+    l’ADEME.
   liens:
-  - lien: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Travaux%20investissements%20%C3%A9coconception%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.docx
+  - lien: >-
+      https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Travaux%20investissements%20%C3%A9coconception%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.docx
     texte: Conditions éligibilité et financement
-- description: 'Déposez votre demande d''aide : informations administratives, description
-    du projet, détails techniques et financiers, étude de faisabilité, etc. A ce stade,
-    votre investissement ne doit pas avoir été realisé !'
-- description: L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
-    recevez un contrat de financement précisant le montant d’aide maximum, les conditions
-    et les modalités de versement.
+- description: >-
+    Déposez votre demande d'aide : informations administratives, description du
+    projet, détails techniques et financiers, étude de faisabilité, etc. A ce
+    stade, votre investissement ne doit pas avoir été realisé !
+- description: >-
+    L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez
+    un contrat de financement précisant le montant d’aide maximum, les
+    conditions et les modalités de versement.
 - description: Réalisez vos investissements.
 conditions d'éligibilité:
   taille de l'entreprise:
   - Toutes tailles
   - Éligible aux micro-entreprises
   secteur géographique:
-  - Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Centre-Val de Loire,
-    Grand Est, Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La Réunion, Martinique,
-    Mayotte, Normandie, Nouvelle-Aquitaine, Occitanie, Nouvelle-Calédonie, Pays de
-    la Loire, Polynésie française, Provence-Alpes-Côte d'Azur
+  - >-
+    Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Centre-Val de
+    Loire, Grand Est, Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La
+    Réunion, Martinique, Mayotte, Normandie, Nouvelle-Aquitaine,
+    Nouvelle-Calédonie, Occitanie, Pays de la Loire, Polynésie française,
+    Provence-Alpes-Côte d'Azur
   secteur d'activité:
   - Tous secteurs d’activité
   nombre d'années d'activité:
   - Éligible à toutes les entreprises
   autres critères d'éligibilité:
-  - Avoir réalisé au préalable un diagnostic d’écoconception identifiant les travaux
-    et investissements nécessaires
-  - 'L''opération pour laquelle vous sollicitez une aide financière ne doit pas avoir
-    commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque
-    forme que ce soit : marché signé, commande signée, devis accepté…)'
+  - >-
+    Avoir réalisé au préalable un diagnostic d’écoconception identifiant les
+    travaux et investissements nécessaires
+  - >-
+    L'opération pour laquelle vous sollicitez une aide financière ne doit pas
+    avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes
+    (sous quelque forme que ce soit : marché signé, commande signée, devis
+    accepté…)
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
@@ -96,8 +115,8 @@ publicodes:
     - région = Mayotte
     - région = Normandie
     - région = Nouvelle-Aquitaine
-    - région = Occitanie
     - région = Nouvelle-Calédonie
+    - région = Occitanie
     - région = Pays de la Loire
     - région = Polynésie française
     - région = Provence-Alpes-Côte d'Azur
