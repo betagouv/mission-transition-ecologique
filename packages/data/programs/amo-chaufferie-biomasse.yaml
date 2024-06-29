@@ -1,79 +1,89 @@
-titre: AMO chaufferie biomasse
-promesse: Financez une prestation d’assistance à maîtrise d’ouvrage pour la mise en
+titre: 'AMO chaufferie biomasse '
+promesse: >-
+  Financez une prestation d’assistance à maîtrise d’ouvrage pour la mise en
   place d'une chaufferie biomasse
-description: Vous avez pour projet de mettre en place une chaufferie biomasse dans
-  votre entreprise? Afin de garantir la bonne exécution de votre projet, l’ADEME vous
+description: >-
+  Vous avez pour projet de mettre en place une chaufferie biomasse dans votre
+  entreprise? Afin de garantir la bonne exécution de votre projet, l’ADEME vous
   aide à financer des prestations d’assistance à maîtrise d’ouvrage (AMO).
-description longue: 'Les missions d’assistance à maitrise d’ouvrage vous permettront
-  :
+description longue: >-
+  Les missions d’assistance à maitrise d’ouvrage vous permettront :
 
-  • d’assurer la qualité du projet à travers une vision globale et en coordination
-  avec les différents acteurs du projet ;
+  • d’assurer la qualité du projet à travers une vision globale et en
+  coordination avec les différents acteurs du projet ;
 
-  • de mettre en œuvre les différentes étapes du projet et de rédiger les cahiers
-  des charges si nécessaire (bureau d’études, maîtrise d’œuvre) ;
+  • de mettre en œuvre les différentes étapes du projet et de rédiger les
+  cahiers des charges si nécessaire (bureau d’études, maîtrise d’œuvre) ;
 
   • de s’assurer de la conformité réglementaire et technique de l’installation ;
 
-  • de s’assurer du bon fonctionnement de l’installation et des modalités de maintenance.'
+  • de s’assurer du bon fonctionnement de l’installation et des modalités de
+  maintenance.
 début de validité: 01/01/2023
 fin de validité: 31/12/2024
 illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
-url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/assistance-a-maitrise-douvrage-mise-place-dune-chaufferie-biomasse
+url: >-
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/assistance-a-maitrise-douvrage-mise-place-dune-chaufferie-biomasse
 nature de l'aide: financement
-montant du financement: Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000
-  €
+montant du financement: Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €
 objectifs:
-- description: Vérifiez l’éligibilité de votre projet en parcourant la documentation
-    de l’ADEME.
-  liens:
-  - lien: https://agirpourlatransition.ademe.fr/entreprises/entreprises/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf
-    texte: Conditions éligibilité et financement
-- description: Choisissez votre assistant maître d'ouvrage "Reconnu Garant de l'Environnement"
-    (RGE), et obtenez un devis.
-  liens:
-  - lien: https://france-renov.gouv.fr/annuaires-professionnels/artisan-rge-architecte
-    texte: Annuaire des professionnels RGE
-- description: 'Déposez votre demande d''aide : informations administratives, description
-    du projet, détails techniques et financiers, etc. A ce stade, votre projet ne
-    doit pas avoir commencé !'
-- description: L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
-    recevez un contrat de financement précisant le montant d’aide maximum, les conditions
-    et les modalités de versement.
-- description: Démarrez la mission d’assistance à maitrise d’ouvrage.
+  - description: >-
+      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
+      l’ADEME.
+    liens:
+      - lien: >-
+          https://agirpourlatransition.ademe.fr/entreprises/entreprises/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf
+        texte: Conditions éligibilité et financement
+  - description: >-
+      Choisissez votre assistant maître d'ouvrage "Reconnu Garant de
+      l'Environnement" (RGE), et obtenez un devis.
+    liens:
+      - lien: >-
+          https://france-renov.gouv.fr/annuaires-professionnels/artisan-rge-architecte
+        texte: Annuaire des professionnels RGE
+  - description: >-
+      Déposez votre demande d'aide : informations administratives, description
+      du projet, détails techniques et financiers, etc. A ce stade, votre projet
+      ne doit pas avoir commencé !
+  - description: >-
+      L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
+      recevez un contrat de financement précisant le montant d’aide maximum, les
+      conditions et les modalités de versement.
+  - description: Démarrez la mission d’assistance à maitrise d’ouvrage.
 conditions d'éligibilité:
   taille de l'entreprise:
-  - Toutes tailles
-  - Éligible aux micro-entreprises
+    - Toutes tailles
+    - Éligible aux micro-entreprises
   secteur géographique:
-  - France et territoires d'outre-mer
+    - France et territoires d'outre-mer
   secteur d'activité:
-  - Tous secteurs d’activité
+    - Tous secteurs d’activité
   nombre d'années d'activité:
-  - Éligible à toutes les entreprises
-  autres critères d'éligibilité:
-  - 'L''opération pour laquelle vous sollicitez une aide financière ne doit pas avoir
-    commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque
-    forme que ce soit : marché signé, commande signée, devis accepté…)'
+    - Éligible à toutes les entreprises
+  autres critères d'éligibilité: >-
+    - L'opération pour laquelle vous sollicitez une aide financière ne doit pas
+    avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes
+    (sous quelque forme que ce soit : marché signé, commande signée, devis
+    accepté…)
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
-    - est éligible
-    - est dans un secteur d'activité ciblé
-    - a un objectif ciblé
-    - questionnaire . parcours = objectif précis
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+      - questionnaire . parcours = objectif précis
   entreprise . est éligible:
     applicable si:
       toutes ces conditions:
-      - dispositif . début de validité <= date du jour
-      - date du jour <= dispositif . fin de validité
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     valeur: oui
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - code NAF niveau 1 . est A
-    - code NAF niveau 1 . est C
-    - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est E
   entreprise . a un objectif ciblé:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est ma performance énergétique
+      - questionnaire . objectif prioritaire . est ma performance énergétique

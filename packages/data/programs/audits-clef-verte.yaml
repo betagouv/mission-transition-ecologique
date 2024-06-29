@@ -1,78 +1,101 @@
 titre: Audit label Clef Verte
-promesse: Restaurateurs & hébergeurs, obtenez un label pour valoriser l'engagement
+promesse: >-
+  Restaurateurs & hébergeurs, obtenez un label pour valoriser l'engagement
   environnemental de votre entreprise
-description: Réalisez un audit pour vous aider à obtenir le Label Clef verte, le premier
-  ecolabel de tourisme durable destiné aux hébergements touristiques et restaurants.
-  Ce label certifie l'engagement de votre établissement en faveur d'un tourisme plus
-  durable.
-description longue: "Le label Clef Verte atteste que la démarche environnementale\
-  \ de l'hébergement touristique ou du restaurant répond à plus d'une centaine de\
-  \ critères dans tous les domaines de la gestion touristique durable. Ces critères\
-  \ permettent aux établissements de réduire leur impact environnemental et de s’engager\
-  \ en faveur de la réalisation des Objectifs de Développement Durable de l’ONU. Les\
-  \ critères du label Clef Verte / Green Key sont établis au niveau international\
-  \ par la Foundation for Environmental Education et revus tous les 4 ans pour tenir\
-  \ compte des progrès technologiques et des enjeux environnementaux. \n\nLes thématiques\
-  \ des critères Clef Verte sont les suivantes :\n• Gestion environnementale générale,\
-  \ formation des employés, responsabilité sociale\n• Information aux hôtes, activités\
-  \ nature, affichage d'éco-gestes\n• Gestion de la ressource eau et assainissement,\
-  \ capacités des robinetteries, arrosage\n• Tri des déchets, réduction des volumes,\
-  \ \n• Gestion des ressources en énergie , chaleur et rafraichissement, équipement\
-  \ domestique, éclairage\n• Achats responsables : alimentaire, entretien, papeterie,\
-  \ mobilier, autres achats\n• Environnement intérieur, environnement extérieur"
+description: >-
+  Réalisez un audit pour vous aider à obtenir le Label Clef verte, le premier
+  ecolabel de tourisme durable destiné aux hébergements touristiques et
+  restaurants. Ce label certifie l'engagement de votre établissement en faveur
+  d'un tourisme plus durable.
+description longue: >-
+  Le label Clef Verte atteste que la démarche environnementale de l'hébergement
+  touristique ou du restaurant répond à plus d'une centaine de critères dans
+  tous les domaines de la gestion touristique durable. Ces critères permettent
+  aux établissements de réduire leur impact environnemental et de s’engager en
+  faveur de la réalisation des Objectifs de Développement Durable de l’ONU. Les
+  critères du label Clef Verte / Green Key sont établis au niveau international
+  par la Foundation for Environmental Education et revus tous les 4 ans pour
+  tenir compte des progrès technologiques et des enjeux environnementaux. 
+
+
+  Les thématiques des critères Clef Verte sont les suivantes :
+
+  • Gestion environnementale générale, formation des employés, responsabilité
+  sociale
+
+  • Information aux hôtes, activités nature, affichage d'éco-gestes
+
+  • Gestion de la ressource eau et assainissement, capacités des robinetteries,
+  arrosage
+
+  • Tri des déchets, réduction des volumes, 
+
+  • Gestion des ressources en énergie , chaleur et rafraichissement, équipement
+  domestique, éclairage
+
+  • Achats responsables : alimentaire, entretien, papeterie, mobilier, autres
+  achats
+
+  • Environnement intérieur, environnement extérieur
 début de validité: 01/05/2023
 fin de validité: 31/12/2026
 illustration: images/TEE_energie_verte.png
 opérateur de contact: CCI
-url: https://www.cci.fr/offre/valorisez-les-demarches-environnementales-de-votre-entreprise
-  et https://www.cci.fr/ressources/developpement-durable/contacts-developpement-durable
+url: >-
+  https://www.cci.fr/offre/valorisez-les-demarches-environnementales-de-votre-entreprise
+  et
+  https://www.cci.fr/ressources/developpement-durable/contacts-developpement-durable
 nature de l'aide: accompagnement
 coût de l'accompagnement: De 350 à 450 € HT selon votre activité
 durée de l'accompagnement: 1 jour dont 1/2 journée sur site
 activable en autonomie: oui
 objectifs:
-- description: Créez un compte et réalisez un auto-diagnostic pour évaluer l'éligibilité
-    de votre établissement au label. Cette étape est gratuite et sans engagement.
-  liens:
-  - lien: https://pro.laclefverte.org/
-    texte: Créez un compte
-- description: Définissez votre plan d'action et validez votre candidature en ligne.
-- description: Recevez la visite d'un auditeur Clef Verte dans votre établissement.
-    Obtenez un compte-rendu des pistes d'améliorations à mettre en oeuvre.
-- description: Bénéficiez d'un accompagnement par l'équipe Clef Verte pour faire progresser
-    votre démarche et présenter un dossier le plus qualitatif possible au Jury de
-    fin d'année (rapport d'audit, actions engagées et pièces justificatives, synthèse
-    du suivi, etc.)
-- description: Attribution du label par un jury indépendant pour une durée d'un an.
+  - description: >-
+      Créez un compte et réalisez un auto-diagnostic pour évaluer l'éligibilité
+      de votre établissement au label. Cette étape est gratuite et sans
+      engagement.
+    liens:
+      - lien: https://pro.laclefverte.org/
+        texte: Créez un compte
+  - description: Définissez votre plan d'action et validez votre candidature en ligne.
+  - description: >-
+      Recevez la visite d'un auditeur Clef Verte dans votre établissement.
+      Obtenez un compte-rendu des pistes d'améliorations à mettre en oeuvre.
+  - description: >-
+      Bénéficiez d'un accompagnement par l'équipe Clef Verte pour faire
+      progresser votre démarche et présenter un dossier le plus qualitatif
+      possible au Jury de fin d'année (rapport d'audit, actions engagées et
+      pièces justificatives, synthèse du suivi, etc.)
+  - description: Attribution du label par un jury indépendant pour une durée d'un an.
 conditions d'éligibilité:
   taille de l'entreprise:
-  - TPE et PME
-  - Éligible aux micro-entreprises
+    - TPE et PME
+    - Éligible aux micro-entreprises
   secteur géographique:
-  - France et territoires d'outre-mer
+    - France et territoires d'outre-mer
   secteur d'activité:
-  - Hôtellerie & restauration
+    - Hôtellerie & restauration
   nombre d'années d'activité:
-  - Éligible à toutes les entreprises
+    - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
-    - est éligible
-    - est dans un secteur d'activité ciblé
-    - a un objectif ciblé
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
   entreprise . est éligible:
     applicable si:
       toutes ces conditions:
-      - dispositif . début de validité <= date du jour
-      - date du jour <= dispositif . fin de validité
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
-    - a un effectif éligible
+      - a un effectif éligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
-    - effectif <= 499
+      - effectif <= 499
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est I
   entreprise . a un objectif ciblé:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est mon impact environnemental
+      - questionnaire . objectif prioritaire . est mon impact environnemental

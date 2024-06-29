@@ -1,7 +1,7 @@
 import path from 'path'
 import fs from 'fs'
 import * as yaml from 'js-yaml'
-// import { Baserow } from '../common/baserow/baserow'
+import { Baserow } from '../common/baserow/baserow'
 import { Program, ProgramType, Publicodes, Status } from './types'
 import { ThemeType } from '../common/baserow/types'
 
@@ -18,19 +18,19 @@ export class ProgramYamlGenerator {
   outputDirectory: string = path.join(__dirname, '../../programs/')
 
   async createProgramYamls(): Promise<void> {
-    // const programs = await new Baserow(this.outputDirectory).getPrograms()
-    // fs.writeFileSync('program_tmp.json', JSON.stringify(programs, null, 2))
-    const data = fs.readFileSync('program_tmp.json', 'utf-8')
-    const programs: Program[] = JSON.parse(data)
-    this._writeYaml(programs[6])
-    // programs.forEach((program) => {
-    //   if (!program.Statuts.includes(Status.InProd)) {
-    //     return
-    //   }
-    //   console.log('Working on program' + program['Id fiche dispositif'])
-    //   this._validateData(program)
-    //   this._writeYaml(program)
-    // })
+    const programs = await new Baserow(this.outputDirectory).getPrograms()
+    // // fs.writeFileSync('program_tmp.json', JSON.stringify(programs, null, 2))
+    // const data = fs.readFileSync('program_tmp.json', 'utf-8')
+    // const programs: Program[] = JSON.parse(data)
+    const selectPrograms = programs.slice(0, 10)
+    selectPrograms.forEach((program) => {
+      if (!program.Statuts.includes(Status.InProd)) {
+        return
+      }
+      console.log('Working on program ' + program['Id fiche dispositif'])
+      // this._validateData(program)
+      this._writeYaml(program)
+    })
     return
   }
 
@@ -49,7 +49,7 @@ export class ProgramYamlGenerator {
     let fileContent: { [key: string]: any } = {}
 
     const addField = (key: string, value: any) => {
-      if (value) {
+      if (value && (!Array.isArray(value) || value.length > 0)) {
         fileContent[key] = value
       }
     }
@@ -78,10 +78,9 @@ export class ProgramYamlGenerator {
     this._setObjectives(fileContent, program)
     this._setEligibility(fileContent, program)
     this._setPublicodes(fileContent, program)
-    console.log(fileContent)
 
     const yamlStr = yaml.dump(fileContent)
-    fs.writeFileSync('programs/' + program['Id fiche dispositif'] + '2.yml', yamlStr, 'utf8')
+    fs.writeFileSync(filePath, yamlStr, 'utf8')
   }
   private _setRandomIllustration(): any {
     const illustrations = ['images/TEE_energie_verte.png', 'images/TEE_ampoule.png', 'images/TEE_eolienne.png']
@@ -175,7 +174,12 @@ export class ProgramYamlGenerator {
       console.log('Zone géographique spécifique, YAML à modifier manuellement')
     }
 
-    return program['Zones géographiques'].map((geographicArea) => geographicArea.Name)
+    return [
+      program['Zones géographiques']
+        .map((geographicArea) => geographicArea.Name)
+        .sort((a, b) => a.localeCompare(b, 'fr-FR'))
+        .join(', ')
+    ]
   }
 
   private _setEligibilitySize(program: Program): string {
@@ -209,15 +213,6 @@ export class ProgramYamlGenerator {
     let eligibilityConditions: any = []
     publicodes[Publicodes.CIBLE] = { [Publicodes.ALL]: cibles }
 
-    // est éligible:
-    // applicable si:
-    // les dates
-    // toutes ces conditions :
-    // - a un effectif éligible
-    // - entreprise . est dans une zone géographique éligible
-    // - est dans un secteur d'activité éligible
-    // ou valeur: oui
-
     if (program.DISPOSITIF_DATE_DEBUT || program.DISPOSITIF_DATE_FIN) {
       if (program.DISPOSITIF_DATE_DEBUT && program.DISPOSITIF_DATE_FIN) {
         eligibility['applicable si'] = {
@@ -237,15 +232,15 @@ export class ProgramYamlGenerator {
       eligibilityConditions.push(Publicodes.ZONE_GEO) // TOFIX : mistake in original script; check consequences
     }
 
-    if (eligibilityConditions) {
+    if (eligibilityConditions.length > 0) {
       eligibility[Publicodes.ALL] = eligibilityConditions
     } else if (eligibility['applicable si']) {
       eligibility['valeur'] = 'oui'
     }
 
-    if (eligibility) {
+    if (Object.keys(eligibility).length !== 0) {
       publicodes[Publicodes.ELIGIBLE] = eligibility
-      cibles.push('est eligible')
+      cibles.push('est éligible')
     }
 
     if (this._pcEffectif(program)) {
@@ -257,16 +252,16 @@ export class ProgramYamlGenerator {
       cibles.push("est dans un secteur d'activité ciblé")
     }
 
-    // pc_regions
-    if (program['Couverture géographique'].Name == 'Régional') {
-      publicodes[Publicodes.ZONE_GEO] = {
-        [Publicodes.ANY]: program['Zones géographiques'].map((zone) => `région = ${zone.Name}`)
-      }
-    }
-
     if (this._pcObjectif(program)) {
       publicodes[Publicodes.OBJECTIF] = this._pcObjectif(program)
       cibles.push('a un objectif ciblé')
+    }
+
+    // pc_regions
+    if (program['Couverture géographique'].Name == 'Régional') {
+      publicodes[Publicodes.ZONE_GEO] = {
+        [Publicodes.ANY]: program['Zones géographiques'].map((zone) => `région = ${zone.Name}`).sort((a, b) => a.localeCompare(b, 'fr-FR'))
+      }
     }
 
     if (!program['Parcours "Je ne sais pas par où commencer"']) {
@@ -278,7 +273,6 @@ export class ProgramYamlGenerator {
     }
 
     fileContent['publicodes'] = publicodes
-    console.log(publicodes)
     return
   }
   private _pcObjectif(program: Program) {
@@ -344,7 +338,7 @@ export class ProgramYamlGenerator {
   }
 
   private _pcEffectif(program: Program) {
-    if (program.minEff || program.maxEff) {
+    if (program.minEff > 0 || program.maxEff) {
       let constraint = []
       if (program.minEff > 0) {
         constraint.push(`effectif >= ${program.minEff}`)
