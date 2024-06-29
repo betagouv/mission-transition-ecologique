@@ -150,6 +150,9 @@ export class ProgramYamlGenerator {
     }
     if (program['Eligibilité Spécifique']) {
       eligibility_conditions["autres critères d'éligibilité"] = program['Eligibilité Spécifique']
+        .split('\n')
+        .map((criteria) => criteria.substring(2))
+
     }
     fileContent["conditions d'éligibilité"] = eligibility_conditions
     return
@@ -200,7 +203,7 @@ export class ProgramYamlGenerator {
   }
 
   private _setMicroEntreprise(program: Program) {
-    if (program.microEntreprise) {
+    if (program.microEntreprise == 'oui') {
       return 'Éligible aux micro-entreprises'
     }
     return 'Non éligible aux micro-entreprises'

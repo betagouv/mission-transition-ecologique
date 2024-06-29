@@ -57,17 +57,18 @@ conditions d'éligibilité:
   - Industrie
   nombre d'années d'activité:
   - Éligible à toutes les entreprises
-  autres critères d'éligibilité: >-
-    - L'opération pour laquelle vous sollicitez une aide financière ne doit pas
+  autres critères d'éligibilité:
+  - >-
+    L'opération pour laquelle vous sollicitez une aide financière ne doit pas
     avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes
     (sous quelque forme que ce soit : marché signé, commande signée, devis
     accepté…)
-
-    - Eligible pour les sites de moins de 250 salariés des grandes entreprises,
+  - >-
+    Eligible pour les sites de moins de 250 salariés des grandes entreprises,
     dès lors que l’entreprise est à jour de ses obligations vis-à-vis de l’audit
     énergétique réglementaire
-
-    - Ne sont pas éligibles : les sites de moins de 250 salariés des grandes
+  - >-
+    Ne sont pas éligibles : les sites de moins de 250 salariés des grandes
     entreprises dès lors que l'échéance de renouvellement de l'audit énergétique
     réglementaire est inférieure à 1 an, ainsi que les locaux d’activité
     tertiaire seuls.
@@ -90,5 +91,5 @@ publicodes:
   entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est ma performance énergétique
-    - questionnaire . objectif prioritaire . est l'écoconception
     - questionnaire . objectif prioritaire . est mon impact environnemental
+    - questionnaire . objectif prioritaire . est l'écoconception

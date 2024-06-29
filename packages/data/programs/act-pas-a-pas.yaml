@@ -61,8 +61,9 @@ conditions d'éligibilité:
   - Tous secteurs d’activité
   nombre d'années d'activité:
   - Éligible à toutes les entreprises
-  autres critères d'éligibilité: >-
-    - Pour accéder à cette étude, vous devez avoir déjà réalisé un premier bilan
+  autres critères d'éligibilité:
+  - >-
+    Pour accéder à cette étude, vous devez avoir déjà réalisé un premier bilan
     de gaz à effet de serre.
 publicodes:
   entreprise . est ciblée:
