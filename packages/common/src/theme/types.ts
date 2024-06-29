@@ -8,7 +8,6 @@ export interface Theme {
   value: PublicodeObjective
   image: string
   color?: string
-  highlightProjects: number[]
 }
 
 export type ThemeId = (typeof ThemesValue.themes)[number]['id']

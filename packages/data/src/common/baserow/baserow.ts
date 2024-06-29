@@ -3,9 +3,9 @@ import dotenv from 'dotenv'
 import fs from 'fs'
 import path from 'path'
 
-import { Image, LinkedObject, Operator, Program, Project, Theme } from './types'
+import { Image, LinkedObject, Program, Project, Theme } from './types'
 import { RawProject as DataProject } from '../../projects/types'
-import { Program as DataProgram } from '../../programs/types'
+import { Program as DataProgram, Status, ProgramType, Operator, GeographicCoverage, GeographicAreas } from '../../programs/types'
 dotenv.config()
 
 export class Baserow {
@@ -16,6 +16,8 @@ export class Baserow {
   private _programTableId = 314437
   private _themeTableId = 305258
   private _operatorTableId = 314410
+  private _geographicCoverageTableId = 314470
+  private _geographicAreasTableId = 314474
   private _outputDirectory: string
   private _imageSubDirectory: string = 'projectImages'
   constructor(outputDirectory: string) {
@@ -38,9 +40,15 @@ export class Baserow {
 
   async getPrograms(): Promise<DataProgram[]> {
     const allBaserowPrograms = await this._getTableData<Program>(this._programTableId)
-    return allBaserowPrograms.map((program) => this._convertToRawProgram(program))
+
+    const operators = await this._getTableData<Operator>(this._operatorTableId)
+    const geographicCoverages = await this._getTableData<GeographicCoverage>(this._geographicCoverageTableId)
+    const geographicAreas = await this._getTableData<GeographicAreas>(this._geographicAreasTableId)
+    const themes = await this._getTableData<Theme>(this._themeTableId)
+
+    return allBaserowPrograms.map((program) => this._convertToRawProgram(program, operators, geographicCoverages, geographicAreas, themes))
   }
-  
+
   async getOperators(): Promise<string[]> {
     const operators = await this._getTableData<Operator>(this._operatorTableId)
     return operators.map((operator) => operator.Nom)
@@ -87,7 +95,6 @@ export class Baserow {
       priority: baserowProject.Prio
     }
   }
-
 
   private _imagePath(projectId: number) {
     return path.join(this._outputDirectory, this._imageSubDirectory, projectId.toString())
@@ -161,7 +168,72 @@ export class Baserow {
     })
   }
 
-  private _convertToRawProgram(program: Program): any {
-    throw new Error('Method not implemented.')
+  private _convertToRawProgram(
+    program: Program,
+    operators: Operator[],
+    geographicCoverages: GeographicCoverage[],
+    geographicAreas: GeographicAreas[],
+    themes: Theme[]
+  ): any {
+    const {
+      Statuts,
+      "Nature de l'aide": aidTypes,
+      'Opérateur de contact': contactOperator,
+      'Autres opérateurs': otherOperator,
+      'Couverture géographique': geographicCoverage,
+      'Zones géographiques': programGeographicAreas,
+      'Thèmes Ciblés': programThemes,
+      ...nonModifiedFields
+    } = program
+    const rawStatuts = Statuts.map((linkedObj) => linkedObj.value as Status)
+
+    const domainContactOperator = contactOperator
+      .map((contact) => {
+        return operators.find((operator) => operator.id === contact.id)
+      })
+      .filter((operator) => operator !== undefined) as Operator[]
+
+    const domainOtherOperator = otherOperator
+      .map((contact) => {
+        return operators.find((operator) => operator.id === contact.id)
+      })
+      .filter((operator) => operator !== undefined) as Operator[]
+
+    const domainGeographicCoverage = geographicCoverage
+      .map((contact) => {
+        return geographicCoverages.find((operator) => operator.id === contact.id)
+      })
+      .filter((operator) => operator !== undefined) as GeographicCoverage[]
+    const domainProgramGeographicAreas = programGeographicAreas
+      .map((contact) => {
+        return geographicAreas.find((operator) => operator.id === contact.id)
+      })
+      .filter((operator) => operator !== undefined) as GeographicAreas[]
+    const domainProgramThemes = programThemes
+      .map((contact) => {
+        return themes.find((operator) => operator.id === contact.id)
+      })
+      .filter((operator) => operator !== undefined) as Theme[]
+
+    const rawProgram: DataProgram = {
+      ...nonModifiedFields,
+      Statuts: rawStatuts,
+      'Opérateur de contact': domainContactOperator,
+      'Autres opérateurs': domainOtherOperator,
+      "Nature de l'aide": aidTypes.value as ProgramType,
+      'Zones géographiques': domainProgramGeographicAreas,
+      'Couverture géographique': domainGeographicCoverage[0],
+      'Thèmes Ciblés': domainProgramThemes
+    }
+
+    return rawProgram
+
+    // Statuts
+    // Natude de l'aide
+    // Opérateur de contact
+    // Autres opérateurs
+    // Couverture géographique
+    // Zones géographiques
+    // Thèmes Ciblés
   }
 }
