@@ -79,7 +79,7 @@ export class ProgramYamlGenerator {
     this._setEligibility(fileContent, program)
     this._setPublicodes(fileContent, program)
 
-    const yamlStr = yaml.dump(fileContent)
+    const yamlStr = yaml.dump(fileContent, { noArrayIndent: true })
     fs.writeFileSync(filePath, yamlStr, 'utf8')
   }
   private _setRandomIllustration(): any {

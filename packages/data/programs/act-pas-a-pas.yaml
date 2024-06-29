@@ -36,69 +36,69 @@ opérateur de contact: ADEME
 nature de l'aide: financement
 montant du financement: Jusqu'à 80% du coût de l'étude, dans un maximum de 15 000 €
 objectifs:
-  - description: >-
-      Choisissez le prestataire qui va vous accompagner pour mener l'étude
-      méthodologie ACT.
-    liens:
-      - lien: https://actinitiative.org/fr/find-an-advisor/
-        texte: Prestataires "ACT Pas à pas"
-  - description: >-
-      Déposez votre demande d'aide : informations administratives, description
-      du projet, détails techniques et financiers, etc. A ce stade, votre projet
-      ne doit pas avoir commencé !
-  - description: >-
-      L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
-      recevez un contrat de financement précisant le montant d’aide maximum, les
-      conditions et les modalités de versement.
-  - description: Réalisez votre étude ACT Pas à Pas.
+- description: >-
+    Choisissez le prestataire qui va vous accompagner pour mener l'étude
+    méthodologie ACT.
+  liens:
+  - lien: https://actinitiative.org/fr/find-an-advisor/
+    texte: Prestataires "ACT Pas à pas"
+- description: >-
+    Déposez votre demande d'aide : informations administratives, description du
+    projet, détails techniques et financiers, etc. A ce stade, votre projet ne
+    doit pas avoir commencé !
+- description: >-
+    L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez
+    un contrat de financement précisant le montant d’aide maximum, les
+    conditions et les modalités de versement.
+- description: Réalisez votre étude ACT Pas à Pas.
 conditions d'éligibilité:
   taille de l'entreprise:
-    - Toutes tailles
-    - Éligible aux micro-entreprises
+  - Toutes tailles
+  - Éligible aux micro-entreprises
   secteur géographique:
-    - France et territoires d'outre-mer
+  - France et territoires d'outre-mer
   secteur d'activité:
-    - Tous secteurs d’activité
+  - Tous secteurs d’activité
   nombre d'années d'activité:
-    - Éligible à toutes les entreprises
+  - Éligible à toutes les entreprises
   autres critères d'éligibilité: >-
     - Pour accéder à cette étude, vous devez avoir déjà réalisé un premier bilan
     de gaz à effet de serre.
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
-      - est éligible
-      - est dans un secteur d'activité ciblé
-      - a un objectif ciblé
+    - est éligible
+    - est dans un secteur d'activité ciblé
+    - a un objectif ciblé
   entreprise . est éligible:
     applicable si:
       toutes ces conditions:
-        - dispositif . début de validité <= date du jour
-        - date du jour <= dispositif . fin de validité
+      - dispositif . début de validité <= date du jour
+      - date du jour <= dispositif . fin de validité
     valeur: oui
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-      - code NAF niveau 1 . est A
-      - code NAF niveau 1 . est B
-      - code NAF niveau 1 . est C
-      - code NAF niveau 1 . est D
-      - code NAF niveau 1 . est E
-      - code NAF niveau 1 . est F
-      - code NAF niveau 1 . est G
-      - code NAF niveau 1 . est H
-      - code NAF niveau 1 . est I
-      - code NAF niveau 1 . est J
-      - code NAF niveau 1 . est K
-      - code NAF niveau 1 . est L
-      - code NAF niveau 1 . est M
-      - code NAF niveau 1 . est N
-      - code NAF niveau 1 . est O
-      - code NAF niveau 1 . est P
-      - code NAF niveau 1 . est Q
-      - code NAF niveau 1 . est R
-      - code NAF niveau 1 . est S
-      - code NAF niveau 1 . est T
-      - code NAF niveau 1 . est U
+    - code NAF niveau 1 . est A
+    - code NAF niveau 1 . est B
+    - code NAF niveau 1 . est C
+    - code NAF niveau 1 . est D
+    - code NAF niveau 1 . est E
+    - code NAF niveau 1 . est F
+    - code NAF niveau 1 . est G
+    - code NAF niveau 1 . est H
+    - code NAF niveau 1 . est I
+    - code NAF niveau 1 . est J
+    - code NAF niveau 1 . est K
+    - code NAF niveau 1 . est L
+    - code NAF niveau 1 . est M
+    - code NAF niveau 1 . est N
+    - code NAF niveau 1 . est O
+    - code NAF niveau 1 . est P
+    - code NAF niveau 1 . est Q
+    - code NAF niveau 1 . est R
+    - code NAF niveau 1 . est S
+    - code NAF niveau 1 . est T
+    - code NAF niveau 1 . est U
   entreprise . a un objectif ciblé:
     une de ces conditions:
-      - questionnaire . objectif prioritaire . est mon impact environnemental
+    - questionnaire . objectif prioritaire . est mon impact environnemental
