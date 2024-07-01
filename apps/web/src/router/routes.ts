@@ -34,7 +34,7 @@ export const routes = [
         path: '',
         name: RouteName.QuestionnaireStart,
         component: TeeQuestionnaire as Component,
-        beforeEnter: [Hook.resetUsedTrackStore, Hook.resetQueries],
+        beforeEnter: [Hook.resetUsedTrackStore, Hook.resetQueries, Hook.resetProgramFilters],
         props: { trackId: TrackId.QuestionnaireRoute }
       },
       {
