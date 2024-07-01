@@ -69,8 +69,13 @@ const filteredPrograms = computed(() => {
 })
 
 const filteredProjects = computed(() => {
-  //TODO : add filter by filteredPrograms
-  return projects.value ? projectStore.getProjectsByObjective(projects.value, programStore.programFilters.objectiveTypeSelected) : undefined
+  return projects.value
+    ? projectStore.getProjectsByObjectiveAndEligibility(
+        projects.value,
+        programStore.programFilters.objectiveTypeSelected,
+        filteredPrograms.value ?? undefined
+      )
+    : undefined
 })
 
 const initialSelectedIndex = 0

@@ -2,7 +2,7 @@ import ProjectApi from '@/service/api/projectApi'
 import ProjectFilters from '@/utils/project/projectFilters'
 import { defineStore } from 'pinia'
 import { computed } from 'vue'
-import { PublicodeObjective } from '@/types'
+import { ProgramData, PublicodeObjective } from '@/types'
 import { Project } from '@tee/common/src/project/types'
 
 export const useProjectStore = defineStore('project', () => {
@@ -14,14 +14,30 @@ export const useProjectStore = defineStore('project', () => {
     return await new ProjectApi().get()
   }
 
+  function getProjectsByObjectiveAndEligibility(projects: Project[], objectiveType: string, filteredPrograms?: ProgramData[]): Project[] {
+    return projects.filter((project: Project) => {
+      return ProjectFilters.filterProjectsByTheme(project, objectiveType as PublicodeObjective) && filteredPrograms
+        ? ProjectFilters.filterProjectsByEligibility(project, filteredPrograms)
+        : true
+    })
+  }
+
   function getProjectsByObjective(projects: Project[], objectiveType: string): Project[] {
     return projects.filter((project: Project) => {
-      return ProjectFilters.filterProgramsByTheme(project, objectiveType as PublicodeObjective)
+      return ProjectFilters.filterProjectsByTheme(project, objectiveType as PublicodeObjective)
+    })
+  }
+
+  function getProjectsByEligibility(projects: Project[], filteredPrograms: ProgramData[]): Project[] {
+    return projects.filter((project: Project) => {
+      return ProjectFilters.filterProjectsByEligibility(project, filteredPrograms)
     })
   }
 
   return {
     projects,
-    getProjectsByObjective
+    getProjectsByObjective,
+    getProjectsByEligibility,
+    getProjectsByObjectiveAndEligibility
   }
 })
