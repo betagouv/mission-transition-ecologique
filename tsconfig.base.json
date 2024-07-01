@@ -1,14 +1,29 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
-
+  "compileOnSave": false,
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "commonjs",
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": true,
     "moduleResolution": "node",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true
+    "importHelpers": true,
+    "resolveJsonModule": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": ["ESNext", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@tee/backend-ddd": ["libs/backend-ddd/src/index.ts"],
+      "@tee/common": ["libs/common/src/index.ts"],
+      "@tee/data": ["libs/data/src/index.ts"],
+      "@tee/data/references": ["libs/data/references/index.ts"],
+      "@tee/data/generated": ["libs/data/generated/index.ts"]
+    }
   },
+  "exclude": ["node_modules", "tmp"]
 }

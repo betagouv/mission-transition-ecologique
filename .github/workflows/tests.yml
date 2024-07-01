@@ -1,10 +1,13 @@
 name: Run tests
-
 on:
   push:
-    branches: [ main, preprod ]
+    branches:
+      - main
   pull_request:
-    branches: [ main, preprod ]
+
+permissions:
+  actions: read
+  contents: read
 
 jobs:
   validate-data:
@@ -12,18 +15,19 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: ['20.x']
-#
+        node-version: [ '20.x' ]
+
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-
+          cache: 'npm'
       - run: npm clean-install
 
-      - run: npm run build-json-output && npm run test -w packages/data
+      - run: npx nx run @tee/data:generate-program
+      - run: npx nx run @tee/data:test
 
   lint:
     name: Run eslint
@@ -35,29 +39,33 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+          cache: 'npm'
       - run: npm clean-install
-      - run: npm run build-json-output
-      - run: npm run spec-and-routes -w packages/backend
-      - run: npm run lint-check
 
-  type-check:
-    name: Run typescript types check
+      - run: npx nx run @tee/data:generate-program
+      - run: npx nx run @tee/backend:spec-and-routes
+      - run: npx nx run-many -t lint
+
+  vue-type-check:
+    name: Run vue-tsc
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: ['20.x']
+        node-version: [ '20.x' ]
 
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+          cache: 'npm'
       - run: npm clean-install
-      - run: npm run build-json-output && npm run type-check -w packages/web
+
+      - run: npx nx run @tee/web:vue-type-check
 
   unit-test:
     name: Run unit tests
@@ -65,14 +73,15 @@ jobs:
     strategy:
       matrix:
         node-version: ['20.x']
-#
+
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-
+          cache: 'npm'
       - run: npm clean-install
-      - run: npm run build-json-output
-      - run: npm run test -w packages/backend
+
+      - run: npx nx run @tee/data:generate-program
+      - run: npx nx run @tee/backend-ddd:test

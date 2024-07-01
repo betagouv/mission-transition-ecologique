@@ -63,7 +63,7 @@ height="75px">
 
 This repository is a monorepo, based on [npm workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces/) composed of two workspaces:
 
-- the ["web" workspace](./packages/web/README.md) contains the front-end implementations.
+- the ["web" workspace](apps/web/README.md) contains the front-end implementations.
 - the ["backend" workspace](./packages/backend/README.md) contains the back-end implementations.
 - the ["data" workspace](./packages/data/README.md) contains the datasets and common files for datasets builds.
 
@@ -176,7 +176,7 @@ More scripts are defined for each workspace: checkout their respective documenta
 
 - backend: [README](./packages/backend/README.md) / [package.json](./packages/backend/package.json)
 - data: [README](./packages/data/README.md) / [package.json](./packages/data/package.json)
-- web: [README](./packages/web/README.md) / [package.json](./packages/web/package.json)
+- web: [README](apps/web/README.md) / [package.json](./packages/web/package.json)
 
 Scripts can be triggered with:
 

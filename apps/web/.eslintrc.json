@@ -1,0 +1,21 @@
+{
+  "parser": "vue-eslint-parser",
+  "extends": [
+    "plugin:vue/vue3-recommended",
+    "eslint:recommended",
+    "@vue/eslint-config-typescript",
+    "@vue/eslint-config-prettier/skip-formatting",
+    "../../.eslintrc.json"
+  ],
+  "ignorePatterns": ["!**/*", "auto-imports.d.ts", "vite.config.mts"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx", "*.vue"],
+      "rules": {
+        "vue/multi-word-component-names": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "vue/no-v-html": "off"
+      }
+    }
+  ]
+}

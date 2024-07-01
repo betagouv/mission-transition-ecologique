@@ -1,0 +1,22 @@
+{
+  "entryFile": "src/main.ts",
+  "noImplicitAdditionalProperties": "throw-on-extras",
+  "controllerPathGlobs": ["src/**/*Controller.ts"],
+  "spec": {
+    "outputDirectory": "generated",
+    "specVersion": 3,
+    "basePath": "/api"
+  },
+  "routes": {
+    "routesDir": "generated",
+    "basePath": "/api"
+  },
+  "compilerOptions": {
+    "paths": {
+      "@tee/backend-ddd": ["../../libs/backend-ddd/src/index.ts"],
+      "@tee/common": ["../../libs/common/src/index.ts"],
+      "@tee/data": ["../../libs/data/src/index.ts"],
+      "@tee/data/references": ["../../libs/data/references/index.ts"]
+    }
+  }
+}
