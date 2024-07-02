@@ -7,7 +7,7 @@
     <DsfrButton
       :label="label"
       secondary
-      :class="`fr-m-4v fr-radius-a--2v fr-btn--secondary--${color}`"
+      :class="`fr-m-4v fr-radius-md-a--2v fr-btn--secondary--${color}`"
     />
   </router-link>
 </template>

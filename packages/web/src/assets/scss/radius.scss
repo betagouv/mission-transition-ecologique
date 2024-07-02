@@ -3,19 +3,28 @@
 @use '@gouvfr/dsfr/module/media-query';
 @use '@gouvfr/dsfr/module/media-query/variable/breakpoints';
 
+@mixin fr-radius($radius, $radius-value, $corner-name, $important: true) {
+  @include tool.border-radius($radius-value, $corner-name, $important);
+  @if $radius != null {
+    &--#{$radius} {
+      @include tool.border-radius($radius-value, $corner-name, $important);
+    }
+  }
+}
 
 // class for border-radius with important like .fr-radius--tr--sm (small, top , right) or .fr-radius--bl--lg (large, bottom, left)
 @each $corner, $corner-name in setting.$corner {
   @each $radius, $radius-value in setting.$rounded {
-    @include media-query.respond-from(md) {
-        .fr-radius-#{$corner} {
-          @include tool.border-radius($radius-value, $corner-name, true);
-          @if $radius != null {
-            &--#{$radius} {
-              @include tool.border-radius($radius-value, $corner-name, true);
-            }
+    .fr-radius-#{$corner} {
+      @include fr-radius($radius, $radius-value, $corner-name);
+    }
+    @each $breakpoint, $value in setting.$breakpoints-values {
+      .fr-radius-#{$breakpoint}-#{$corner} {
+        @include media-query.respond-from($breakpoint) {
+          @include fr-radius($radius, $radius-value, $corner-name);
         }
       }
     }
   }
 }
+

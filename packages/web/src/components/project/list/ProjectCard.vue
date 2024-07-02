@@ -10,6 +10,9 @@
       v-if="isPriorityProject"
       #start-details
     >
+      <div class="fr-card__header--priority fr-hidden fr-unhidden-lg">
+        {{ priorityOrder }}
+      </div>
       <div class="fr-mb-1v">
         <DsfrBadge
           :label="priorityTag"
@@ -22,15 +25,17 @@
 </template>
 
 <script setup lang="ts">
-import { DsfrCard } from '@gouvminint/vue-dsfr'
 import { Project } from '@tee/common/src/project/types'
 import Config from '@/config'
+import { DsfrCard } from '@gouvminint/vue-dsfr'
 
 const publicPath = Config.publicPath
 
 interface Props {
   project: Project
   isPriorityProject?: boolean
+  isUniquePriority?: boolean
+  priorityOrder?: number
 }
 
 withDefaults(defineProps<Props>(), {

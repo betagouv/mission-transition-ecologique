@@ -34,10 +34,10 @@ function getRadiusClass() {
     return null
   }
   if (radiusSize) {
-    return `fr-radius-${radiusCorner}--${radiusSize}`
+    return `fr-radius-md-${radiusCorner}--${radiusSize}`
   }
 
-  return `fr-radius-${radiusCorner}`
+  return `fr-radius-md-${radiusCorner}`
 }
 
 const classes = computed(() => {

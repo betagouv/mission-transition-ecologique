@@ -15,7 +15,7 @@
         <DsfrButton
           :label="buttonLabel"
           size="sm"
-          :class="`fr-m-4v fr-radius-a--2v ${linkCopied ? `fr-bg--green` : ''}`"
+          :class="`fr-m-4v fr-radius-md-a--2v ${linkCopied ? `fr-bg--green` : ''}`"
           icon="fr-icon-link"
           @click="copyUrl"
         />
