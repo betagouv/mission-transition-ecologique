@@ -10,7 +10,10 @@
       v-if="isPriorityProject"
       #start-details
     >
-      <div class="fr-card__header--priority fr-hidden fr-unhidden-lg">
+      <div
+        v-if="!isUniquePriority"
+        class="fr-card__header--priority fr-hidden fr-unhidden-lg"
+      >
         {{ priorityOrder }}
       </div>
       <div class="fr-mb-1v">
