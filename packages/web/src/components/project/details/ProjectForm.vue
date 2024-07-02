@@ -337,7 +337,9 @@ const isLoading = ref<boolean>(false)
 const isFormFilled = computed(() => {
   const isFilled = []
   for (const key in projectForm.value) {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     if (projectForm.value[key].required) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       isFilled.push(isFieldValid(projectForm.value[key]))
     }
   }
@@ -370,6 +372,7 @@ SIRET : ${siretValue}`
 
 const updateProjectForm = (ev: string | boolean, id: string) => {
   if (projectForm.value) {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     projectForm.value[id].value = ev
   }
 }

@@ -3,7 +3,7 @@
   <div class="fr-grid-row fr-grid-row--center">
     <div class="fr-container fr-m-0 fr-p-0">
       <div class="fr-grid-row fr-grid-row--center">
-        <div class="fr-mt-3v fr-pl-2w fr-pl-md-2v fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-text--blue-france fr-font-style--italic">
+        <div class="fr-mt-4v fr-pl-2w fr-pl-md-2v fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-text--blue-france fr-font-style--italic">
           <ProjectCounter
             :sorted-projects="sortedProjects"
             :filtered-programs="filteredPrograms"
@@ -15,7 +15,7 @@
   <!--  PRIORITY PROJECTS -->
   <div
     v-if="hasPriorityProjects && !hasObjectiveCard && !hasObjectiveSelected"
-    class="fr-mt-4v fr-bg-lg--green--lightness fr-hidden fr-unhidden-lg"
+    class="fr-mt-2v fr-bg-lg--green--lightness fr-hidden fr-unhidden-lg"
   >
     <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-m-0 fr-p-0">
       <div class="fr-container fr-m-0 fr-p-0">
@@ -84,7 +84,7 @@
   </div>
 
   <!-- LIST DISPLAY FOR MD SIZE AND/OR HAS SELECTED THEME -->
-  <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-m-0 fr-p-0 fr-mt-4v">
+  <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-m-0 fr-p-0 fr-mt-2v">
     <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
       <div class="fr-grid-row fr-grid-row--center">
         <div
