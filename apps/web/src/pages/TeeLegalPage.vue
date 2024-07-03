@@ -24,15 +24,21 @@
 // console.log(`TeeLegalPage > FUNCTION_NAME > MSG_OR_VALUE :`)
 import { RouteName } from '@/types/routeType'
 import Contact from '@/utils/contact'
+import { LegalNoticePropsThirdParty } from '@incubateur-ademe/legal-pages-markdown'
 
 const privacyPolicy = new URL(useRouter().resolve({ name: RouteName.PersonalData }).href, window.location.origin).href
 const siteUrl = new URL(useRouter().resolve({ name: RouteName.Homepage }).href, window.location.origin).href
-//
-const thirdParties = [
+
+const thirdParties: LegalNoticePropsThirdParty[] = [
   {
     name: 'API recherche entreprise',
     url: 'https://api.gouv.fr/les-api/api-recherche-entreprises',
     text: "La recherche d'entreprise est effectuée via l'"
+  },
+  {
+    name: 'API Sirene',
+    url: 'https://api.gouv.fr/les-api/sirene_v3',
+    text: "Les données sont ensuite précisées via l'"
   }
 ]
 </script>

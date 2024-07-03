@@ -5,6 +5,7 @@
       site-name="Mission Transition Écologique"
       :third-parties="thirdParties"
       :cookies="cookies"
+      cookie-consent-button=""
     />
   </div>
   <ContactMail />
@@ -14,9 +15,9 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`TeePersonalDataPage > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import { PrivacyPolicyProps } from '@incubateur-ademe/legal-pages-markdown'
+import { PrivacyPolicyPropsCookie, PrivacyPolicyPropsThirdParty } from '@incubateur-ademe/legal-pages-markdown'
 
-const thirdParties = [
+const thirdParties: PrivacyPolicyPropsThirdParty[] = [
   {
     name: 'Scalingo',
     country: 'France',
@@ -26,7 +27,7 @@ const thirdParties = [
   }
 ]
 
-const cookies: PrivacyPolicyProps['cookies'] = [
+const cookies: PrivacyPolicyPropsCookie[] = [
   {
     category: 'Mesure d’audience anonymisée',
     name: 'Matomo',
