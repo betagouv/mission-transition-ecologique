@@ -1,0 +1,9 @@
+{
+  "name": "@tee/backend-ddd",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/backend-ddd/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project @tee/backend-ddd --web",
+  "targets": {}
+}
