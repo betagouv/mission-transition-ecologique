@@ -126,7 +126,7 @@ const getBrevoCreationDates = async (): Promise<Result<Date[], Error>> => {
 
   if (response.isOk) {
     const brevoDealResponse: BrevoDealResponse = response.value.data as BrevoDealResponse
-    if (!brevoDealResponse.items && brevoDealResponse.items.length === 0) {
+    if (!brevoDealResponse.items || brevoDealResponse.items.length === 0) {
       Sentry.captureMessage("Brevo deal list doesn't exist or is empty empty" + brevoDealResponse, "error")
       return Result.err(new Error("Brevo deal list doesn't exist or is empty empty"))
     }
