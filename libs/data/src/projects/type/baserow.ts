@@ -1,5 +1,3 @@
-import { Project } from '@tee/common'
-
 export interface BaserowProject {
   id: number
   order: string
@@ -27,13 +25,6 @@ export interface BaserowTheme {
 export interface BaserowLinkedObject {
   id: number
   value: string
-}
-
-export interface RawProject extends Omit<Project, 'themes' | 'mainTheme' | 'linkedProjects' | 'programs'> {
-  themes: string[]
-  mainTheme: string
-  linkedProjects: number[]
-  programs: string[]
 }
 
 export interface BaserowImageTable {

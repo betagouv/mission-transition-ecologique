@@ -3,7 +3,7 @@ import * as path from 'path'
 import * as fs from 'fs'
 import * as yaml from 'js-yaml'
 import { createFolderIfNotExists } from './helpers'
-import { ProgramType, ProgramWithoutId } from './type/program'
+import { ProgramType, ProgramWithoutId } from './program/program'
 
 dotenv.config()
 
