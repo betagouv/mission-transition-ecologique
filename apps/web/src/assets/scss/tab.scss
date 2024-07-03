@@ -1,0 +1,21 @@
+.fr-tabs {
+  box-shadow: none;
+
+  &::before {
+    box-shadow: none;
+  }
+
+  &__list {
+    box-shadow: none;
+  }
+
+  &__tab {
+    box-shadow: none;
+  }
+
+  .slide-fade-enter-from,
+  .slide-fade-leave-to {
+    opacity: 0;
+    transform: none;
+  }
+}
