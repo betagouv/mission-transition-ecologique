@@ -24,7 +24,7 @@ export class OpportunityController extends Controller {
     const opportunityResult = await new OpportunityService().createOpportunity(requestBody.opportunity, requestBody.optIn)
 
     if (opportunityResult.isErr) {
-      Sentry.captureMessage('Error in createOpportunity, ' + requestBody + ' ' + opportunityResult.error, "error")
+      Sentry.captureMessage('Error in createOpportunity, ' + requestBody + ' ' + opportunityResult.error, 'error')
       this.throwErrorResponse(opportunityResult, notFoundResponse, requestFailedResponse)
 
       return

@@ -39,7 +39,7 @@ export default class OpportunityFeatures {
     opportunity = maybeFullopportunity.value
     const contactIdResult = await this._contactRepository.createOrUpdate(opportunity as ContactDetails, optIn)
     if (contactIdResult.isErr) {
-      Sentry.captureMessage('Error during contact creation ' + contactIdResult.error, "error")
+      Sentry.captureMessage('Error during contact creation ' + contactIdResult.error, 'error')
       return Result.err(contactIdResult.error)
     }
 
@@ -50,11 +50,10 @@ export default class OpportunityFeatures {
       this._addContactOperatorToOpportunity(opportunity, program)
     )
     if (opportunityResult.isErr || program === undefined) {
-      if ( opportunityResult.isErr) {
-        Sentry.captureMessage('Error during Opportunity Creation ' + opportunityResult.error, "error")
-      }
-      else {
-        Sentry.captureMessage('Error during Opportunity Creation, program undefined', "error")
+      if (opportunityResult.isErr) {
+        Sentry.captureMessage('Error during Opportunity Creation ' + opportunityResult.error, 'error')
+      } else {
+        Sentry.captureMessage('Error during Opportunity Creation, program undefined', 'error')
       }
       return opportunityResult
     }
@@ -80,7 +79,7 @@ export default class OpportunityFeatures {
         if (opportunityHubResult == Maybe.nothing()) {
           const opportunityUpdateErr = await this._updateOpportunitySentToHub(opportunityId, !opportunityHubResult.isJust)
           if (opportunityUpdateErr.isJust) {
-            Sentry.captureMessage('Opportunity status not updated after a transmission to a Hub ' + opportunityUpdateErr.value, "warning")
+            Sentry.captureMessage('Opportunity status not updated after a transmission to a Hub ' + opportunityUpdateErr.value, 'warning')
           }
         }
       })
@@ -111,7 +110,7 @@ export default class OpportunityFeatures {
   private _sendReturnReceipt(opportunity: Opportunity, program: ProgramType) {
     void this._mailRepository.sendReturnReceipt(opportunity, program).then((hasError) => {
       if (hasError) {
-        Sentry.captureMessage('Error while sending a return receipt ' + hasError, "warning")
+        Sentry.captureMessage('Error while sending a return receipt ' + hasError, 'warning')
       }
     })
   }

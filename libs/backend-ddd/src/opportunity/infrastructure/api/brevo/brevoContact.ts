@@ -18,7 +18,7 @@ export const addBrevoContact: ContactRepository['createOrUpdate'] = async (conta
 }
 
 const requestCreateContact = async (listIds: number[], contact: ContactDetails, optIn: true): Promise<Result<ContactId, Error>> => {
-  const requestPayload : BrevoPostContactPayload = {
+  const requestPayload: BrevoPostContactPayload = {
     email: contact.email,
     updateEnabled: true,
     listIds: listIds,
@@ -27,7 +27,7 @@ const requestCreateContact = async (listIds: number[], contact: ContactDetails, 
   const responseResult = await new BrevoAPI().PostContact(requestPayload)
 
   if (responseResult.isErr) {
-    Sentry.captureMessage('Error in Brevo CreateContact api call ' + requestPayload + ' ' + responseResult.error, "error")
+    Sentry.captureMessage('Error in Brevo CreateContact api call ' + requestPayload + ' ' + responseResult.error, 'error')
     return Result.err(responseResult.error)
   }
 
@@ -47,7 +47,7 @@ const requestCreateContact = async (listIds: number[], contact: ContactDetails, 
 const retrieveExistingContactId = async (email: string): Promise<Result<ContactId, Error>> => {
   const responseResult = await new BrevoAPI().GetContact(email)
   if (responseResult.isErr) {
-    Sentry.captureMessage('Error in Brevo GetContact api call ' + email + ' ' + responseResult.error, "error")
+    Sentry.captureMessage('Error in Brevo GetContact api call ' + email + ' ' + responseResult.error, 'error')
     return Result.err(responseResult.error)
   }
 

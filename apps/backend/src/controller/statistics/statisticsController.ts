@@ -15,7 +15,7 @@ export class StatisticsController extends Controller {
 
     if (statisticsResult.isErr) {
       const err = statisticsResult.error
-      Sentry.captureMessage('Error in get statistics, ' + statisticsResult.error, "error")
+      Sentry.captureMessage('Error in get statistics, ' + statisticsResult.error, 'error')
 
       // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       return requestFailedResponse(500, { message: `Server internal error: ${err.message}` })

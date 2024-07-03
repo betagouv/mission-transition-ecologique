@@ -60,13 +60,13 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
       })
       const status = response.status
       if (status != 200) {
-        Sentry.captureMessage('Error creating an opportunity at CE during CE API Call ' + response, "error")
+        Sentry.captureMessage('Error creating an opportunity at CE during CE API Call ' + response, 'error')
         return Maybe.of(Error('PDE Api Error ' + status))
       } else {
         return Maybe.nothing()
       }
     } catch (exception: unknown) {
-      Sentry.captureMessage('Error creating an opportunity at CE ' + exception, "error")
+      Sentry.captureMessage('Error creating an opportunity at CE ' + exception, 'error')
       return Maybe.of(handleException(exception))
     }
   }

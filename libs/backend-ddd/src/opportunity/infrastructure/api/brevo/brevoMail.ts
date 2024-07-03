@@ -21,7 +21,7 @@ export default class BrevoMail {
     try {
       await this._api.sendTransacEmail(this._email(opportunity, program))
     } catch (error: unknown) {
-      Sentry.captureMessage('Error in Brevo SendTransacEmail api call ' + this._email(opportunity, program) + ' ' + error, "error")
+      Sentry.captureMessage('Error in Brevo SendTransacEmail api call ' + this._email(opportunity, program) + ' ' + error, 'error')
       return Maybe.just(error as Error)
     }
   }

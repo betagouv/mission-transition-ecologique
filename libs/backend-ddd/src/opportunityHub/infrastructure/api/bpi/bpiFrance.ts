@@ -39,7 +39,7 @@ export class BpiFrance extends OpportunityHubAbstract {
       })
       return Result.ok(response.data)
     } catch (exception: unknown) {
-      Sentry.captureMessage('Error in BPI getToken ' + exception, "error")
+      Sentry.captureMessage('Error in BPI getToken ' + exception, 'error')
       return Result.err(handleException(exception))
     }
   }
@@ -58,11 +58,11 @@ export class BpiFrance extends OpportunityHubAbstract {
       if (response.data) {
         return Maybe.nothing()
       } else {
-        Sentry.captureMessage('Error creating an opportunity at BPI during BPI API Call ' + response, "error")
+        Sentry.captureMessage('Error creating an opportunity at BPI during BPI API Call ' + response, 'error')
         return Maybe.of(new Error("Erreur à la création d'une opportunité chez BPI durant l'appel BPI. HTTP CODE:" + response.status))
       }
     } catch (exception: unknown) {
-      Sentry.captureMessage('Error creating an opportunity at BPI' + exception, "error")
+      Sentry.captureMessage('Error creating an opportunity at BPI' + exception, 'error')
       return Maybe.of(handleException(exception))
     }
   }

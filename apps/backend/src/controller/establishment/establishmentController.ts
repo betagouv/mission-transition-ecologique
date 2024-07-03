@@ -59,7 +59,7 @@ export class SireneController extends Controller {
 
     if (establishmentResult.isErr) {
       const err = establishmentResult.error
-      Sentry.captureMessage('Error in getEstablishmentBySiret, ' + query + ', '  + err, "error")
+      Sentry.captureMessage('Error in getEstablishmentBySiret, ' + query + ', ' + err, 'error')
 
       if (err instanceof EstablishmentNotFoundError) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-return

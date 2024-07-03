@@ -17,7 +17,7 @@ export class RechercheEntreprise {
       return Result.ok(establishmentList)
     } catch (err: unknown) {
       let error = ensureError(err)
-      Sentry.captureMessage('Error in recherche-entreprise get api call ' + query + ' ' + err, "error")
+      Sentry.captureMessage('Error in recherche-entreprise get api call ' + query + ' ' + err, 'error')
 
       if (error instanceof AxiosError) {
         if (error.response && error.response.status == 404) {
