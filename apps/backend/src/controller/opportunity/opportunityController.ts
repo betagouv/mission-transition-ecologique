@@ -2,6 +2,7 @@ import { OpportunityBody } from '@tee/common'
 import { Body, Controller, Example, Post, Res, Route, SuccessResponse, TsoaResponse } from 'tsoa'
 import { Err } from 'true-myth/dist/es/result'
 import { ErrorJSON, OpportunityId, OpportunityService, ValidateErrorJSON, ServiceNotFoundError } from '@tee/backend-ddd'
+import * as Sentry from '@sentry/node'
 
 @SuccessResponse('200', 'OK')
 @Route('opportunities')
@@ -23,6 +24,7 @@ export class OpportunityController extends Controller {
     const opportunityResult = await new OpportunityService().createOpportunity(requestBody.opportunity, requestBody.optIn)
 
     if (opportunityResult.isErr) {
+      Sentry.captureMessage('Error in createOpportunity, ' + requestBody + ' ' + opportunityResult.error, "error")
       this.throwErrorResponse(opportunityResult, notFoundResponse, requestFailedResponse)
 
       return

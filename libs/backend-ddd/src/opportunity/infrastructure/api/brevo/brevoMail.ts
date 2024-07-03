@@ -4,6 +4,7 @@ import Config from '../../../../config'
 import { MailerManager } from '../../../domain/spi'
 import { ProgramType } from '@tee/data'
 import { Program, Opportunity } from '@tee/common'
+import * as Sentry from '@sentry/node'
 
 export default class BrevoMail {
   private readonly _templateReceipt = 11
@@ -20,6 +21,7 @@ export default class BrevoMail {
     try {
       await this._api.sendTransacEmail(this._email(opportunity, program))
     } catch (error: unknown) {
+      Sentry.captureMessage('Error in Brevo SendTransacEmail api call ' + this._email(opportunity, program) + ' ' + error, "error")
       return Maybe.just(error as Error)
     }
   }

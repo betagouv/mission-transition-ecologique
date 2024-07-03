@@ -11,6 +11,8 @@ import OpportunityService from '../../../../opportunity/application/opportunityS
 import { Objective } from '../../../../common/types'
 import { Operators, ProgramType } from '@tee/data'
 import { Opportunity } from '@tee/common'
+import * as Sentry from '@sentry/node'
+
 export class PlaceDesEntreprises extends OpportunityHubAbstract {
   protected readonly _baseUrl = Config.PDE_API_BASEURL
   protected _axios: AxiosInstance
@@ -58,11 +60,13 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
       })
       const status = response.status
       if (status != 200) {
+        Sentry.captureMessage('Error creating an opportunity at CE during CE API Call ' + response, "error")
         return Maybe.of(Error('PDE Api Error ' + status))
       } else {
         return Maybe.nothing()
       }
     } catch (exception: unknown) {
+      Sentry.captureMessage('Error creating an opportunity at CE ' + exception, "error")
       return Maybe.of(handleException(exception))
     }
   }
@@ -71,7 +75,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     const contact = opportunity.contactId
     const previousDailyOpportunities = await new OpportunityService().getDailyOpportunitiesByContactId(contact)
     if (previousDailyOpportunities.isErr) {
-      return false // TODO error handling
+      return false
     }
 
     let tranmismissiblePrograms = 0

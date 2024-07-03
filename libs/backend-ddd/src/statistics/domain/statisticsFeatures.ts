@@ -3,7 +3,7 @@ import { ProgramService } from '../../program/application/programService'
 import { Result } from 'true-myth'
 import { OpportunityRepository } from '../../opportunity/domain/spi'
 import StatisticsCache from './statisticsCache'
-
+import * as Sentry from '@sentry/node'
 export default class StatisticsFeatures {
   private readonly _opportunityRepository: OpportunityRepository
   private readonly _cache: StatisticsCache
@@ -52,6 +52,7 @@ export default class StatisticsFeatures {
     const allPrograms = this._programService.getAll()
     const activeProgramsResult = this._programService.getFilteredPrograms({})
     if (activeProgramsResult.isErr) {
+      Sentry.captureMessage('Error generating program statistics ' + activeProgramsResult.error, "error")
       throw activeProgramsResult.error
     }
     return {
@@ -106,9 +107,7 @@ export default class StatisticsFeatures {
     if (opportunitiesDates.isOk) {
       return opportunitiesDates.value
     }
-
-    console.log(opportunitiesDates.error)
-    // TODO: improve error handling
+    Sentry.captureMessage('Error generating Opportunities dates ' + opportunitiesDates.error, "error")
     return null
   }
 }

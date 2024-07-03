@@ -4,6 +4,7 @@ import { Result } from 'true-myth'
 import { EstablishmentRepository } from '../../../domain/spi'
 import { ensureError } from '../../../../common/domain/error/errors'
 import { RechercheEntrepriseEstablishment, RechercheEntrepriseSearch } from './type'
+import * as Sentry from '@sentry/node'
 
 export class RechercheEntreprise {
   public searchEstablishment: EstablishmentRepository['search'] = async (query) => {
@@ -16,6 +17,7 @@ export class RechercheEntreprise {
       return Result.ok(establishmentList)
     } catch (err: unknown) {
       let error = ensureError(err)
+      Sentry.captureMessage('Error in recherche-entreprise get api call ' + query + ' ' + err, "error")
 
       if (error instanceof AxiosError) {
         if (error.response && error.response.status == 404) {
