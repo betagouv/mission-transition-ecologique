@@ -17,11 +17,13 @@
     "start:dev": "PORT=4242 npm run start",
     "build:start:dev": "npm run build && npm run start:dev",
     "generate:program": "nx run @tee/data:generate-program",
+    "generate:projects": "nx run @tee/data:generate-projects",
     "generate:seo": "nx run @tee/web:generate-seo",
     "test": "nx run-many -t test -p @tee/data @tee/backend-ddd",
     "lint": "nx run-many -t lint --verbose",
     "lint:fix": "nx run-many -t lint --fix --verbose",
-    "vue:type:check": "nx run @tee/web:vue-type-check",
+    "type:check": "nx run-many -t type-check --verbose --parallel=false",
+    "type:check:vue": "nx run @tee/web:vue-type-check --verbose",
     "sass:watch": "nx run @tee/web:sass-watch"
   },
   "engines": {
@@ -89,7 +91,8 @@
     "vite": "^5.0.0",
     "vitest": "^1.3.1",
     "vue": "^3.3.4",
-    "vue-router": "^4.3.3"
+    "vue-router": "^4.3.3",
+    "sharp": "^0.33.4"
   },
   "devDependencies": {
     "@nx/express": "^19.2.3",

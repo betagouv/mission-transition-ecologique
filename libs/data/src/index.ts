@@ -1,3 +1,5 @@
-export * from './type/program'
+export * from './program/program'
+export * from './program/types'
 export * from './type/publicodesTypes'
 export * from './generated/program'
+export * from './theme/themes'

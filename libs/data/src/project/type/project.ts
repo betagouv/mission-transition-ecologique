@@ -1,5 +1,5 @@
-import { ThemeId } from '../theme/types'
-import { projects } from './mockData'
+import { ThemeId } from '../../theme/themes'
+import { projects } from '../../../static'
 
 export interface Project {
   id: number
@@ -13,6 +13,14 @@ export interface Project {
   mainTheme: ThemeId // nom du thème principal (pour l'instant, donne sa couleur dans la banèire)
   programs: string[] // liste des programmes associés au projet
   linkedProjects: ProjectId[] // liste de projets à afficher dans projets complémentaires, en bas de la page Projet
+  priority: number // priorité d'affichage
 }
 
 export type ProjectId = (typeof projects)[number]['id']
+
+export interface RawProject extends Omit<Project, 'themes' | 'mainTheme' | 'linkedProjects' | 'programs'> {
+  themes: string[]
+  mainTheme: string
+  linkedProjects: number[]
+  programs: string[]
+}
