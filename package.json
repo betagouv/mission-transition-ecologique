@@ -22,7 +22,7 @@
     "test": "nx run-many -t test -p @tee/data @tee/backend-ddd",
     "lint": "nx run-many -t lint --verbose",
     "lint:fix": "nx run-many -t lint --fix --verbose",
-    "type:check": "nx run-many -t type-check --verbose",
+    "type:check": "nx run-many -t type-check --verbose --parallel=false",
     "type:check:vue": "nx run @tee/web:vue-type-check --verbose",
     "sass:watch": "nx run @tee/web:sass-watch"
   },
