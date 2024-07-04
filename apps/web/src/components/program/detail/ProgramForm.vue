@@ -121,7 +121,7 @@
             <DsfrInput
               type="textarea"
               is-textarea
-              rows="8"
+              rows="10"
               :model-value="opportunityForm.needs.value"
               label-visible
               :is-valid="opportunityForm.needs.isValid"
@@ -145,7 +145,7 @@
                 </slot>
 
                 <TeeCallout
-                  class="fr-bg--blue fr-text--white fr-px-2v fr-pt-2v fr-pb-0 fr-text--bold"
+                  class="fr-bg--blue fr-text--white fr-px-2v fr-pt-2v fr-pb-0 fr-mb-0 fr-text--bold"
                   :type="opportunityForm.needs.callOut.type"
                   :img="`${publicPath}${opportunityForm.needs.callOut.img}`"
                   :img-container-class="'fr-col-xl-2 fr-hidden fr-unhidden-lg'"
