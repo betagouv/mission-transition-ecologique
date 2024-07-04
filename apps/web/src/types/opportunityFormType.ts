@@ -1,4 +1,4 @@
-import { CalloutType } from '@tee/web/src/types/elementsPropsTypes'
+import { CalloutType } from '@/types'
 
 export type ProjectFormType = FormType & { project: StringFieldInputType; linkToProjectPage: MandatoryStringFieldFormType }
 export type OpportunityFormType = FormType & { linkToProgramPage: MandatoryStringFieldFormType }

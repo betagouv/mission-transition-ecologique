@@ -43,11 +43,10 @@
   </div>
 </template>
 <script setup lang="ts">
-import { ThemeType } from '@/types'
+import { ThemeType, ProjectId, Project } from '@/types'
 import { Theme } from '@/utils/theme'
 import { DsfrButton } from '@gouvminint/vue-dsfr'
 import { useProjectStore } from '@/stores/project'
-import { ProjectId } from '@tee/common'
 
 const projectStore = useProjectStore()
 

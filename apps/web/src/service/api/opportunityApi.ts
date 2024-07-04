@@ -1,20 +1,25 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 import { useUsedTrackStore } from '@/stores/usedTrack'
-import { PublicodesKeys, QuestionnaireDataEnum, QuestionnaireRoute, TrackId } from '@/types'
-import type { OpportunityBody, ReqResp, WithoutNullableKeys, OpportunityFormType } from '@/types'
+import {
+  PublicodesKeys,
+  QuestionnaireDataEnum,
+  QuestionnaireRoute,
+  TrackId,
+  OpportunityBody,
+  ReqResp,
+  WithoutNullableKeys,
+  OpportunityFormType
+} from '@/types'
 import RequestApi from '@/service/api/requestApi'
 import TrackStructure from '@/utils/track/trackStructure'
-import { Opportunity } from '@tee/backend/src/opportunity/domain/types'
 
-export default class OpportunityApi extends RequestApi<Opportunity> {
+export default class OpportunityApi extends RequestApi {
   protected readonly url = '/api/opportunities'
-  private readonly headers = {
+  private readonly _headers = {
     accept: 'application/json',
     'content-type': 'application/json'
   }
-
-  private usedTrackStore = useUsedTrackStore()
-
+  private _usedTrackStore = useUsedTrackStore()
   private _opportunityForm: WithoutNullableKeys<OpportunityFormType>
 
   constructor(opportunityForm: OpportunityFormType, private _programId: string) {
@@ -27,7 +32,7 @@ export default class OpportunityApi extends RequestApi<Opportunity> {
     try {
       const response = await fetch(this.url, {
         method: 'POST',
-        headers: this.headers,
+        headers: this._headers,
         body: JSON.stringify(this.payload())
       })
 
@@ -72,10 +77,10 @@ export default class OpportunityApi extends RequestApi<Opportunity> {
   }
 
   private getFromUsedTrack(trackId: TrackId, key: string) {
-    return this.usedTrackStore.findInQuestionnaireDataByTrackIdAndKey(trackId, key)
+    return this._usedTrackStore.findInQuestionnaireDataByTrackIdAndKey(trackId, key)
   }
 
   private getAllValuesFromUsedTrack() {
-    return JSON.stringify(this.usedTrackStore.completedQuestionnaireData)
+    return JSON.stringify(this._usedTrackStore.completedQuestionnaireData)
   }
 }

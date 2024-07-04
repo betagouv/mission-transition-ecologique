@@ -2,8 +2,7 @@ import ProjectApi from '@/service/api/projectApi'
 import ProjectFilters from '@/utils/project/projectFilters'
 import { defineStore } from 'pinia'
 import { computed } from 'vue'
-import { PublicodeObjective } from '@/types'
-import { Project, ProjectId } from '@tee/common/src/project/types'
+import { PublicodeObjective, Project, ProjectId } from '@/types'
 
 export const useProjectStore = defineStore('project', () => {
   const projects = computed(async () => {

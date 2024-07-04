@@ -23,7 +23,7 @@
   </DsfrAccordion>
 </template>
 <script setup lang="ts">
-import { Project } from '@tee/common/src/project/types'
+import { Project } from '@/types'
 
 interface Props {
   relatedProjects: Project[]

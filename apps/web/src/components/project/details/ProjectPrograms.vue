@@ -95,13 +95,12 @@
 import Config from '@/config'
 import TrackStructure from '@/utils/track/trackStructure'
 import { useProgramStore } from '@/stores/program'
-import { type ProgramData, PublicodeObjective, TrackId } from '@/types'
+import { type ProgramData, PublicodeObjective, TrackId, Project } from '@/types'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import Contact from '@/utils/contact'
 import { RouteName } from '@/types/routeType'
 import { type RouteLocationRaw } from 'vue-router'
 import { useNavigationStore } from '@/stores/navigation'
-import { Project } from '@tee/common/src/project/types'
 
 interface Props {
   objective: PublicodeObjective | undefined

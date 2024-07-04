@@ -2,7 +2,7 @@ import RequestApi from '@/service/api/requestApi'
 import { Result } from 'true-myth'
 import { EstablishmentSearch } from '@/types'
 
-export default class EstablishmentApi extends RequestApi<EstablishmentSearch> {
+export default class EstablishmentApi extends RequestApi {
   protected readonly url = '/api/establishments/'
 
   async getOne(query: string): Promise<Result<EstablishmentSearch, Error>> {

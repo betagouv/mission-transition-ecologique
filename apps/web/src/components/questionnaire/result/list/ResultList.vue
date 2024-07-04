@@ -46,11 +46,10 @@
 import { useNavigationStore } from '@/stores/navigation'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { useProgramStore } from '@/stores/program'
-import { ProgramData, TrackId } from '@/types'
+import { ProgramData, TrackId, Project } from '@/types'
 import { computed, onBeforeMount } from 'vue'
 import Matomo from '@/utils/matomo'
 import { useProjectStore } from '@/stores/project'
-import { Project } from '@tee/common/src/project/types'
 
 const navigationStore = useNavigationStore()
 const programStore = useProgramStore()

@@ -88,7 +88,7 @@ import { useProgramStore } from '@/stores/program'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { Color, type ProgramData, PublicodeObjective, TrackId } from '@/types'
 import Matomo from '@/utils/matomo'
-import Theme from '@/utils/theme'
+import { Theme } from '@/utils/theme'
 import UsedTrack from '@/utils/track/usedTrack'
 import { computed, onBeforeMount } from 'vue'
 

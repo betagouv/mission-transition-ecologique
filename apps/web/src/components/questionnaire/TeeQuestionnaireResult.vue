@@ -14,7 +14,6 @@
 </template>
 
 <script setup lang="ts">
-import ProgramList from '@/components/program/list/ProgramList.vue'
 import { Color } from '@/types'
 import { RouteName } from '@/types/routeType'
 import { useUsedTrackStore } from '@/stores/usedTrack'

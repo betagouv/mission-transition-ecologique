@@ -15,7 +15,7 @@
 import { type RouteLocationRaw } from 'vue-router'
 import { RouteName } from '@/types/routeType'
 import { useNavigationStore } from '@/stores/navigation'
-import { ProjectId } from '@tee/common/src/project/types'
+import { ProjectId } from '@/types'
 
 interface Props {
   label: string | undefined

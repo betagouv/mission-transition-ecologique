@@ -51,13 +51,12 @@
 </template>
 
 <script setup lang="ts">
-import { type ProgramData, PublicodeObjective } from '@/types'
+import { type ProgramData, PublicodeObjective, Project } from '@/types'
 import { computed } from 'vue'
 import ProgramFilterByTheme from '@/components/program/list/filters/ProgramFilterByTheme.vue'
 import UsedTrack from '@/utils/track/usedTrack'
-import Theme from '@/utils/theme'
+import { Theme } from '@/utils/theme'
 import { useProgramStore } from '@/stores/program'
-import { Project } from '@tee/common/src/project/types'
 
 interface ProjectListProps {
   filteredProjects?: Project[]

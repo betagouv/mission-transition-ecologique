@@ -122,12 +122,10 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { type ProgramData } from '@/types'
+import { type ProgramData, RouteName, Project, ProjectId } from '@/types'
 import UsedTrack from '@/utils/track/usedTrack'
 import { useProgramStore } from '@/stores/program'
 import Config from '@/config'
-import { RouteName } from '@/types/routeType'
-import { Project, ProjectId } from '@tee/common/src/project/types'
 import { useNavigationStore } from '@/stores/navigation'
 import { type RouteLocationRaw } from 'vue-router'
 

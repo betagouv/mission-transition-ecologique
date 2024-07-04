@@ -20,11 +20,11 @@
     "generate:program": "nx run @tee/data:generate-program",
     "generate:projects": "nx run @tee/data:generate-projects",
     "generate:seo": "nx run @tee/web:generate-seo",
-    "test": "nx run-many -t test -p @tee/data @tee/backend-ddd",
+    "test": "nx run-many -t test -p @tee/data @tee/backend-ddd --verbose",
     "lint": "nx run-many -t lint --verbose",
     "lint:fix": "nx run-many -t lint --fix --verbose",
     "type:check": "nx run-many -t type-check --verbose --parallel=false",
-    "type:check:vue": "nx run @tee/web:vue-type-check --verbose",
+    "type:check:vue": "nx run @tee/web:type-check --verbose",
     "sass:watch": "nx run @tee/web:sass-watch"
   },
   "engines": {

@@ -1,15 +1,17 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-
 import RequestApi from '@/service/api/requestApi'
 import type { ProgramData, QuestionnaireData } from '@/types'
 import { Result } from 'true-myth'
 
-export default class ProgramApi extends RequestApi<ProgramData> {
+export default class ProgramApi extends RequestApi {
   protected readonly url = '/api/programs'
 
   constructor(private questionnaireData: QuestionnaireData = {}) {
     super()
     this.query = this.buildQuery
+  }
+
+  async get(): Promise<Result<ProgramData[], Error>> {
+    return super.getJson<ProgramData[]>()
   }
 
   async getOne(id: string): Promise<Result<ProgramData, Error>> {

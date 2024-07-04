@@ -23,7 +23,7 @@
 
 <script setup lang="ts">
 import { DsfrCard } from '@gouvminint/vue-dsfr'
-import { Project } from '@tee/common/src/project/types'
+import { Project } from '@/types'
 import Config from '@/config'
 
 const publicPath = Config.publicPath

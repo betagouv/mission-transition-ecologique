@@ -61,11 +61,11 @@
 
 <script setup lang="ts">
 import { type ProgramData, PublicodeObjective } from '@/types'
+import { Theme } from '@/utils/theme'
 import { computed } from 'vue'
 import ProgramFilterByTheme from '@/components/program/list/filters/ProgramFilterByTheme.vue'
 import ProgramFiltersAccordion from '@/components/program/list/filters/ProgramFiltersAccordion.vue'
 import UsedTrack from '@/utils/track/usedTrack'
-import Theme from '@/utils/theme'
 import { useProgramStore } from '@/stores/program'
 
 interface ProgramListProps {

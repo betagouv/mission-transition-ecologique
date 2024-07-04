@@ -1,5 +1,5 @@
 import { ThemeId } from '../../theme/themes'
-import { projects } from '../../../static'
+import { projects } from '@tee/data/static'
 
 export interface Project {
   id: number

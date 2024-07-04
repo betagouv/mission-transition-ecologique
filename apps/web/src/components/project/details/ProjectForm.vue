@@ -260,14 +260,21 @@
 import { scrollToElementCenter } from '@/utils/helpers'
 import TrackStructure from '@/utils/track/trackStructure'
 import { computed, ref } from 'vue'
-import { InputFieldUnionType, isValidatedStringFieldInputType, type ReqResp } from '@/types'
+import {
+  InputFieldUnionType,
+  isValidatedStringFieldInputType,
+  type ReqResp,
+  PhoneValidator,
+  EmailValidator,
+  SiretValidator,
+  Project
+} from '@/types'
 import Translation from '@/utils/translation'
 import TeeDsfrButton from '@/components/element/button/TeeDsfrButton.vue'
 import { DsfrInput, DsfrInputGroup, DsfrCheckbox } from '@gouvminint/vue-dsfr'
 import { useRoute } from 'vue-router'
 import { ProjectFormType } from '@/types'
 import Contact from '@/utils/contact'
-import { PhoneValidator, EmailValidator, SiretValidator, Project } from '@tee/common'
 import ProjectOpportunityApi from '@/service/api/projectOpportunityApi'
 
 const route = useRoute()

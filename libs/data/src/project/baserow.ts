@@ -3,7 +3,7 @@ import dotenv from 'dotenv'
 import fs from 'fs'
 import path from 'path'
 import sharp from 'sharp'
-import { BaserowImageTable, BaserowLinkedObject, BaserowProject, BaserowTheme, RawProject } from './type'
+import { BaserowImageTable, BaserowLinkedObject, BaserowProject, BaserowTheme, RawProject } from './index'
 
 dotenv.config()
 

@@ -1,11 +1,9 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-
 import RequestApi from '@/service/api/requestApi'
 import type { Project, QuestionnaireData } from '@/types'
-import projectData from '@tee/data/static/project.json'
+import { projects } from '@tee/data/static'
 import { Result } from 'true-myth'
 
-export default class ProjectApi extends RequestApi<Project> {
+export default class ProjectApi extends RequestApi {
   protected override readonly url = '/api/projects'
 
   constructor(private questionnaireData: QuestionnaireData = {}) {
@@ -15,8 +13,8 @@ export default class ProjectApi extends RequestApi<Project> {
   async get(): Promise<Result<Project[], Error>> {
     //TODO replace with api call once the endpoint is available
     return new Promise((resolve, reject) => {
-      if (!projectData) reject(new Error('No project data'))
-      else resolve(Result.ok(projectData as unknown as Project[]))
+      if (!projects) reject(new Error('No project data'))
+      else resolve(Result.ok(projects as unknown as Project[]))
     })
   }
 
