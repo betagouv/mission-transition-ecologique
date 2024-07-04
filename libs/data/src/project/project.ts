@@ -4,11 +4,11 @@ import { Baserow } from './baserow'
 import { RawProject } from './type/project'
 import { jsonPrograms } from '../../generated/index'
 import { ProgramType } from '../index'
-import { ThemeId } from '@tee/common'
+import { ThemeId } from '../theme/themes'
 
 export class ProjectFeatures {
   private readonly _outputDirectory: string = path.join(__dirname, '../../static/')
-  private readonly _outputImageDirectory: string = path.join(__dirname, '../../../../apps/web/public/images/projects')
+  private readonly _outputImageDirectory: string = path.join(__dirname, '../../../../apps/web/public/images/projet')
   private _programs: ProgramType[] = []
 
   constructor() {
