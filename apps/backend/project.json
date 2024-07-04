@@ -5,6 +5,13 @@
   "projectType": "application",
   "tags": [],
   "targets": {
+    "type-check": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/backend",
+        "command": "tsc --noEmit -p tsconfig.app.json --composite false"
+      }
+    },
     "spec-and-routes": {
       "executor": "nx:run-commands",
       "options": {
@@ -14,11 +21,7 @@
     },
     "build": {
       "dependsOn": [
-        "spec-and-routes",
-        {
-          "target": "generate-program",
-          "projects": "@tee/data"
-        }
+        "spec-and-routes"
       ]
     },
     "start": {

@@ -1,3 +1,4 @@
 export * from './program/program'
+export * from './program/types'
 export * from './type/publicodesTypes'
 export * from './generated/program'

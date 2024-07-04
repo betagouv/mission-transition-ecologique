@@ -16,7 +16,8 @@
         ],
         "parallel": false
       }
-    },"generate-projects": {
+    },
+    "generate-projects": {
       "executor": "nx:run-commands",
       "options": {
         "cwd": "libs/data",

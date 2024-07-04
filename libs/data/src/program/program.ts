@@ -1,6 +1,6 @@
 import { ProgramAidType } from './types'
 
-export default class Program {
+export class Program {
   public static getPrefixedProgramName(program: ProgramType) {
     let prefix = ''
     switch (program["nature de l'aide"]) {
