@@ -12,7 +12,7 @@ export interface Project {
   themes: ThemeId[] // liste tous les thèmes auxquels le projet appartient,
   mainTheme: ThemeId // nom du thème principal (pour l'instant, donne sa couleur dans la banèire)
   programs: string[] // liste des programmes associés au projet
-  linkedProjects: ProjectId // liste de projets à afficher dans projets complémentaires, en bas de la page Projet
+  linkedProjects: ProjectId[] // liste de projets à afficher dans projets complémentaires, en bas de la page Projet
   priority: number // priorité d'affichage
 }
 
