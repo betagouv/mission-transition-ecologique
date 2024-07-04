@@ -49,7 +49,7 @@ jobs:
       - run: npm run lint
 
   type-check:
-    name: Run vue-tsc
+    name: Run type-check
     runs-on: ubuntu-latest
     strategy:
       matrix:

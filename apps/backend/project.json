@@ -7,6 +7,9 @@
   "targets": {
     "type-check": {
       "executor": "nx:run-commands",
+      "dependsOn": [
+        "spec-and-routes"
+      ],
       "options": {
         "cwd": "apps/backend",
         "command": "tsc --noEmit -p tsconfig.app.json --composite false"
