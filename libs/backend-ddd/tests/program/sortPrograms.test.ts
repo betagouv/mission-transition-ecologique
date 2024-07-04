@@ -1,6 +1,6 @@
 import { sortPrograms } from '../../src/program/domain/sortPrograms'
-import { QuestionnaireRoute, ProgramAidType } from '@tee/common'
-import { ProgramType } from '@tee/data'
+import { QuestionnaireRoute } from '@tee/common'
+import { ProgramType, ProgramAidType } from '@tee/data'
 import { makeProgramHelper } from './testing'
 
 const makeProgram = (id: string, nature: ProgramAidType, cost = '') =>

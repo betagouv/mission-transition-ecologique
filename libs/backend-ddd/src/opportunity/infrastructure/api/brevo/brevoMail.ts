@@ -2,8 +2,8 @@ import { SendSmtpEmail, TransactionalEmailsApi, TransactionalEmailsApiApiKeys } 
 import { Maybe } from 'true-myth'
 import Config from '../../../../config'
 import { MailerManager } from '../../../domain/spi'
-import { ProgramType } from '@tee/data'
-import { Program, Opportunity } from '@tee/common'
+import { ProgramType, Program } from '@tee/data'
+import { Opportunity } from '@tee/common'
 
 export default class BrevoMail {
   private readonly _templateReceipt = 11
