@@ -1,5 +1,5 @@
-import { ProgramData, PublicodeObjective, Theme as ThemeType } from '@/types'
-import { Project } from '@tee/common/src/project/types'
+import { ProgramData, PublicodeObjective, ThemeType } from '@/types'
+import { Project } from '@tee/common'
 import Theme from '@/utils/theme'
 
 export default class ProjectFilters {

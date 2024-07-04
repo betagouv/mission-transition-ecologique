@@ -1,8 +1,8 @@
 import { Result } from 'true-myth'
 
 export default abstract class RequestApi<T> {
-  protected url: string = ''
-  protected query: string = ''
+  protected url = ''
+  protected query = ''
 
   public static buildUrl(url: string, dataPath?: Record<string, string>): string {
     if (!dataPath) {

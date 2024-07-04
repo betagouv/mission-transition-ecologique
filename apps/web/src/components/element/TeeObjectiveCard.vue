@@ -12,7 +12,7 @@
 </template>
 
 <script setup lang="ts">
-import { Theme } from '@/utils/theme'
+import Theme from '@/utils/theme'
 import { DsfrCard } from '@gouvminint/vue-dsfr'
 import { PublicodeObjective } from '@/types'
 import { useNavigationStore } from '@/stores/navigation'

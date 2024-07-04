@@ -122,7 +122,7 @@ import UsedTrack from '@/utils/track/usedTrack'
 import { useProgramStore } from '@/stores/program'
 import Config from '@/config'
 import { RouteName } from '@/types/routeType'
-import { Project, ProjectId } from '@tee/common/src/project/types'
+import { Project, ProjectId } from '@tee/common'
 import { useNavigationStore } from '@/stores/navigation'
 import { type RouteLocationRaw } from 'vue-router'
 

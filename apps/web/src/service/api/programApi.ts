@@ -4,7 +4,7 @@ import { Result } from 'true-myth'
 
 export default class ProgramApi extends RequestApi<ProgramData> {
   protected readonly url = '/api/programs'
-  protected query: string = ''
+  protected query = ''
 
   constructor(private questionnaireData: QuestionnaireData = {}) {
     super()

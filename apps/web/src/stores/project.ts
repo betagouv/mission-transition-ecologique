@@ -3,7 +3,7 @@ import ProjectFilters from '@/utils/project/projectFilters'
 import { defineStore } from 'pinia'
 import { computed } from 'vue'
 import { ProgramData, PublicodeObjective } from '@/types'
-import { Project } from '@tee/common/src/project/types'
+import { Project } from '../../../../libs/common/src/project/types'
 
 export const useProjectStore = defineStore('project', () => {
   const projects = computed(async () => {

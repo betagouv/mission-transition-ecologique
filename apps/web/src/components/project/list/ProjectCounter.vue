@@ -8,7 +8,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { type ProgramData } from '@/types'
-import { Project } from '@tee/common/src/project/types'
+import { Project } from '@tee/common'
 import Translation from '@/utils/translation'
 
 interface ProjectListProps {
