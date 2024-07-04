@@ -3,7 +3,7 @@ import * as path from 'path'
 import * as fs from 'fs'
 import * as yaml from 'js-yaml'
 import { createFolderIfNotExists } from './helpers'
-import { ProgramType, ProgramWithoutId } from './type/program'
+import { ProgramType, ProgramWithoutId } from './program/program'
 
 dotenv.config()
 
@@ -68,7 +68,7 @@ export const prependInterface = (programs: ProgramType[], log = false): ProgramT
 /**
  * Converts program data to JSON and writes it to a file.
  */
-export const buildProgramJSONOutput = (programs: ProgramType[]): void => {
+export const buildProgramJson = (programs: ProgramType[]): void => {
   console.log('♺ Converting data to JSON')
   const dataAsJson: string = JSON.stringify(programs, null, 2)
 

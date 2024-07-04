@@ -1,10 +1,8 @@
-import { ContactDetails } from '../opportunity/opportunityTypes'
-import { ThemeId } from '../theme/types'
-import projects from '@tee/data/static'
+import { ThemeId } from '../../theme/themes'
+import { projects } from '../../../static'
 
 export interface Project {
   id: number
-  priority?: number
   title: string // titre
   nameTag: string // Affichage du projet s'il doit être mis en avant dans une thématique (étape "quel est votre objectif prioritaire")
   shortDescription: string // texte affiché sur les cartes projets (carte présentes sur l'annuaire)
@@ -15,6 +13,14 @@ export interface Project {
   mainTheme: ThemeId // nom du thème principal (pour l'instant, donne sa couleur dans la banèire)
   programs: string[] // liste des programmes associés au projet
   linkedProjects: ProjectId[] // liste de projets à afficher dans projets complémentaires, en bas de la page Projet
+  priority: number // priorité d'affichage
 }
 
 export type ProjectId = (typeof projects)[number]['id']
+
+export interface RawProject extends Omit<Project, 'themes' | 'mainTheme' | 'linkedProjects' | 'programs'> {
+  themes: string[]
+  mainTheme: string
+  linkedProjects: number[]
+  programs: string[]
+}
