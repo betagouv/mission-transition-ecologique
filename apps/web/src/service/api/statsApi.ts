@@ -6,6 +6,6 @@ export default class StatApi extends RequestApi {
   protected readonly url = '/api/statistics'
 
   async get(): Promise<Result<StatsData, Error>> {
-    return super.getJson<StatsData>()
+    return this.getJson<StatsData>()
   }
 }

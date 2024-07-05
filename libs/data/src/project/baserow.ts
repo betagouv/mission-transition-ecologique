@@ -3,7 +3,8 @@ import dotenv from 'dotenv'
 import fs from 'fs'
 import path from 'path'
 import sharp from 'sharp'
-import { BaserowImageTable, BaserowLinkedObject, BaserowProject, BaserowTheme, RawProject } from './index'
+import { RawProject } from '../project/type/project'
+import { BaserowImageTable, BaserowLinkedObject, BaserowProject, BaserowTheme } from './type/baserow'
 
 dotenv.config()
 
@@ -19,6 +20,7 @@ export class Baserow {
     }
   }
   private readonly _defaultImageName = 'plan-transition-bas-carbone.webp'
+  private readonly _imagePath = '/images/projet/'
 
   constructor(private readonly _imageDirectory: string) {}
 
@@ -76,7 +78,7 @@ export class Baserow {
       title: baserowProject.Titre,
       nameTag: baserowProject.NameTag,
       shortDescription: baserowProject['Description courte'],
-      image: 'images/projects/' + imageName,
+      image: this._imagePath + imageName,
       longDescription: baserowProject['Qu’est-ce que c’est ?'],
       moreDescription: baserowProject['Pour aller plus loin'],
       themes: this._generateThemeList(baserowProject['Thématique principale'], baserowProject['Thématiques secondaires'], baserawThemes),
