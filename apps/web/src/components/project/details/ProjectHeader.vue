@@ -3,8 +3,6 @@
     :bg-color="Color.blueLightnessed"
     :bg-bar-color="Color.blueLighted"
     :previous-route="routeToProjects"
-    message=""
-    message-icon=""
   />
   <div class="fr-container--fluid fr-mb-4v backgroundProjectTitle">
     <img
@@ -25,7 +23,7 @@ import { useNavigationStore } from '@/stores/navigation'
 
 interface Props {
   project: Project
-  themeColor: string
+  themeColor?: Color
 }
 const props = defineProps<Props>()
 const navigationStore = useNavigationStore()

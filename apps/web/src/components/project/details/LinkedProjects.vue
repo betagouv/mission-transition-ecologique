@@ -18,9 +18,7 @@
       :key="linkedProject.id"
     >
       <LinkedProjectButton
-        v-if="linkedProject"
-        :id="linkedProject.id"
-        :label="linkedProject.nameTag || linkedProject.title"
+        :project="linkedProject"
         :color="color"
       />
     </template>
@@ -28,11 +26,11 @@
 </template>
 <script setup lang="ts">
 import { useProjectStore } from '@/stores/project'
-import { Project } from '@/types'
+import { Color, Project } from '@/types'
 
 interface Props {
   project: Project
-  color: string
+  color?: Color
 }
 defineProps<Props>()
 

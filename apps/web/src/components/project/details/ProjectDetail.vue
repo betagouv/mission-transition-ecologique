@@ -38,7 +38,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { ThemeType, Project } from '@/types'
+import { ThemeType, Project, Color } from '@/types'
 import { Theme } from '@/utils/theme'
 import { DsfrButton } from '@gouvminint/vue-dsfr'
 import { useProjectStore } from '@/stores/project'
@@ -51,7 +51,7 @@ const project = ref<Project>()
 const theme = ref<ThemeType>()
 
 const themeObjective = computed(() => theme.value?.value)
-const themeColor = computed<string>(() => theme.value?.color || '')
+const themeColor = computed<Color | undefined>(() => theme.value?.color)
 
 const copyUrl = async () => {
   const pageUrl = window.location.href

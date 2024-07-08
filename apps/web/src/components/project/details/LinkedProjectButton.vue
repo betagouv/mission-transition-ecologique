@@ -1,11 +1,11 @@
 <template>
   <router-link
-    :id="id"
-    :to="getRouteToProjectDetail(id)"
+    :id="project.slug"
+    :to="getRouteToProjectDetail()"
     class="no-outline"
   >
     <DsfrButton
-      :label="label"
+      :label="project.nameTag || project.title"
       secondary
       :class="`fr-m-4v fr-radius-a--2v fr-btn--secondary--${color}`"
     />
@@ -15,20 +15,20 @@
 import { type RouteLocationRaw } from 'vue-router'
 import { RouteName } from '@/types/routeType'
 import { useNavigationStore } from '@/stores/navigation'
-import { ProjectId } from '@/types'
+import { Color, Project } from '@/types'
 
 interface Props {
-  label: string | undefined
-  color: string
-  id: ProjectId
+  color?: Color
+  project: Project
 }
+const props = defineProps<Props>()
+
 const navigationStore = useNavigationStore()
 
-defineProps<Props>()
-const getRouteToProjectDetail = (projectId: ProjectId): RouteLocationRaw => {
+const getRouteToProjectDetail = (): RouteLocationRaw => {
   return {
     name: RouteName.ProjectResultDetail,
-    params: { projectId },
+    params: { projectSlug: props.project.slug },
     query: navigationStore.query
   }
 }
