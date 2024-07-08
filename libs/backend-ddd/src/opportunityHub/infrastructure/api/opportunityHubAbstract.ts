@@ -20,7 +20,7 @@ export default abstract class OpportunityHubAbstract implements OpportunityHubRe
     return Promise.resolve(this.support(program))
   }
 
-  public abstract transmitOpportunity: (opportunity: Opportunity, Program: ProgramType) => Promise<Maybe<Error>>
+  public abstract transmitProgramOpportunity: (opportunity: Opportunity, Program: ProgramType) => Promise<Maybe<Error>>
 
   get operatorNames(): Operators[] | Error {
     return this._operatorNames

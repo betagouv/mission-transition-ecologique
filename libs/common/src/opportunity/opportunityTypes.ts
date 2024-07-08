@@ -13,9 +13,15 @@ export interface ContactDetails {
   companySize?: number
 }
 
+export enum OpportunityType {
+  Program = 'program',
+  Project = 'project'
+}
+
 export interface OpportunityDetails {
-  programId: string
-  linkToProgramPage: string
+  type: OpportunityType
+  id: string
+  linkToPage: string
   message: string
   questionnaireRoute?: QuestionnaireRoute
   priorityObjectives?: PublicodeObjective[]

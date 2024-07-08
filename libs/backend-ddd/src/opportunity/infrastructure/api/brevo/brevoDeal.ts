@@ -22,7 +22,7 @@ const addBrevoDeal: OpportunityRepository['create'] = async (
 ): Promise<Result<OpportunityId, Error>> => {
   const brevoDeal = convertDomainToBrevoDeal(domainOpportunity)
 
-  const dealId = await requestCreateDeal(domainOpportunity.programId, brevoDeal)
+  const dealId = await requestCreateDeal(domainOpportunity.id, brevoDeal)
 
   if (!dealId.isErr) {
     const maybeError = await associateBrevoDealToContact(dealId.value, contactId)
@@ -154,7 +154,7 @@ const getDailyOpportunitiesByContactId = async (contactId: number): Promise<Resu
 
 const convertBrevoDealToDomain = (brevoAttributes: BrevoDealItem): OpportunityDetailsShort => {
   return {
-    programId: brevoAttributes.attributes.deal_name,
+    id: brevoAttributes.attributes.deal_name,
     programContactOperator: brevoAttributes.attributes.operateur_de_contact as Operators
   }
 }
