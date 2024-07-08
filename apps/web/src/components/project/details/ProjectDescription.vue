@@ -3,7 +3,7 @@
     v-if="project.longDescription.length > 0"
     id="project-details"
     :expanded-id="expandedId"
-    @expand="expandDetails"
+    @expand="(id: string | undefined) => (expandedId = id)"
   >
     <template #title>
       <div
@@ -13,14 +13,17 @@
         ❓ Qu'est ce que c'est ?
       </div>
     </template>
-    <div v-html="markdownToHtml(project.longDescription)" />
+    <div
+      class="fr-mx-4v"
+      v-html="markdownToHtml(project.longDescription)"
+    />
   </DsfrAccordion>
 
   <DsfrAccordion
     v-if="project.moreDescription.length > 0"
     id="project-more-details"
     :expanded-id="expandedMoreId"
-    @expand="expandMoreDetails"
+    @expand="(id: string | undefined) => (expandedMoreId = id)"
   >
     <template #title>
       <div
@@ -30,7 +33,10 @@
         📚 Pour aller plus loin
       </div>
     </template>
-    <div v-html="markdownToHtml(project.moreDescription)" />
+    <div
+      class="fr-mx-4v"
+      v-html="markdownToHtml(project.moreDescription)"
+    />
   </DsfrAccordion>
 </template>
 <script setup lang="ts">
@@ -43,14 +49,6 @@ interface Props {
 defineProps<Props>()
 const expandedId = ref<string | undefined>('project-details')
 const expandedMoreId = ref<string | undefined>('project-more-details')
-
-const expandDetails = (id: string | undefined) => {
-  expandedId.value = id
-}
-
-const expandMoreDetails = (id: string | undefined) => {
-  expandedMoreId.value = id
-}
 
 const markdownToHtml = (text: string | undefined) => {
   if (text) {

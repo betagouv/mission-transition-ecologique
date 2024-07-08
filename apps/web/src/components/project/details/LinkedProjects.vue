@@ -3,7 +3,7 @@
     v-if="linkedProjectsTags.length > 0"
     id="project-linked-projects"
     :expanded-id="expandedId"
-    @expand="expandRelatedProjects"
+    @expand="(id: string | undefined) => (expandedId = id)"
   >
     <template #title>
       <div
@@ -13,15 +13,18 @@
         Projets complémentaires
       </div>
     </template>
-    <template
-      v-for="linkedProject in linkedProjectsTags"
-      :key="linkedProject.id"
-    >
-      <LinkedProjectButton
-        :project="linkedProject"
-        :color="color"
-      />
-    </template>
+
+    <div class="fr-grid-row fr-grid-row--center fr-grid-row-md--left">
+      <template
+        v-for="linkedProject in linkedProjectsTags"
+        :key="linkedProject.id"
+      >
+        <LinkedProjectButton
+          :project="linkedProject"
+          :color="color"
+        />
+      </template>
+    </div>
   </DsfrAccordion>
 </template>
 <script setup lang="ts">
@@ -36,10 +39,6 @@ defineProps<Props>()
 
 const expandedId = ref<string | undefined>('project-linked-projects')
 const linkedProjectsTags = ref<Project[]>([])
-
-const expandRelatedProjects = (id: string | undefined) => {
-  expandedId.value = id
-}
 
 onMounted(async () => {
   linkedProjectsTags.value = await useProjectStore().getLinkedProjectsFromCurrent()

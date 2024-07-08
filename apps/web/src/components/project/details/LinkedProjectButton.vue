@@ -1,15 +1,12 @@
 <template>
-  <router-link
+  <TeeButtonLink
     :id="project.slug"
     :to="getRouteToProjectDetail()"
-    class="no-outline"
+    class="fr-my-1-5v fr-mx-2v fr-radius-a--2v"
+    :class="`fr-btn--secondary--${color}`"
   >
-    <DsfrButton
-      :label="project.nameTag || project.title"
-      secondary
-      :class="`fr-m-4v fr-radius-a--2v fr-btn--secondary--${color}`"
-    />
-  </router-link>
+    {{ project.nameTag || project.title }}
+  </TeeButtonLink>
 </template>
 <script setup lang="ts">
 import { type RouteLocationRaw } from 'vue-router'

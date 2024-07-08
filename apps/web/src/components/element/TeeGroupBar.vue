@@ -27,7 +27,7 @@ import { Color } from '@/types'
 
 interface Props {
   infos: { icon: string; text: string }[]
-  radiusSize?: '2v' | '4v'
+  radiusSize?: '0' | '1v' | '2v' | '2-5v'
   bgColor?: Color
   fullLine?: boolean
   justify?: 'center' | 'left' | 'right'

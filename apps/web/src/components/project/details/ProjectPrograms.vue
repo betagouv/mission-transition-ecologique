@@ -2,7 +2,7 @@
   <DsfrAccordion
     id="project-aids"
     :expanded-id="expandedId"
-    @expand="expandPrograms"
+    @expand="(id: string | undefined) => (expandedId = id)"
   >
     <template #title
       ><div
@@ -129,9 +129,6 @@ const filteredPrograms = computed(() => {
   return programs.value && props.project ? programs.value.filter((program) => props.project?.programs.includes(program.id)) : []
 })
 
-const expandPrograms = (id: string | undefined) => {
-  expandedId.value = id
-}
 onBeforeMount(async () => {
   const result = useUsedTrackStore().hasUsedTracks() ? await programStore.programsByUsedTracks : await programStore.programs
   if (result.isOk) {

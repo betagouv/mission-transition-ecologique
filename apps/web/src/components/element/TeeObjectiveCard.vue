@@ -21,7 +21,7 @@ import { RouteName } from '@/types/routeType'
 interface Props {
   objective: PublicodeObjective | ''
   radiusCorner?: 'tl' | 'tr' | 'bl' | 'br' | 't' | 'r' | 'b' | 'l' | 'a'
-  radiusSize?: '0' | '0-5v' | '1v' | '2v' | '2-5v'
+  radiusSize?: '0' | '1v' | '2v' | '2-5v'
 }
 const props = defineProps<Props>()
 
@@ -34,10 +34,10 @@ function getRadiusClass() {
     return null
   }
   if (radiusSize) {
-    return `fr-radius-${radiusCorner}--${radiusSize}`
+    return `fr-radius-md-${radiusCorner}--${radiusSize}`
   }
 
-  return `fr-radius-${radiusCorner}`
+  return `fr-radius-md-${radiusCorner}`
 }
 
 const classes = computed(() => {
