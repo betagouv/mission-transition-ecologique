@@ -16,9 +16,10 @@ export const useProjectStore = defineStore('project', () => {
 
   function getProjectsByObjectiveAndEligibility(projects: Project[], objectiveType: string, filteredPrograms?: ProgramData[]): Project[] {
     return projects.filter((project: Project) => {
-      return ProjectFilters.filterProjectsByTheme(project, objectiveType as PublicodeObjective) && filteredPrograms
-        ? ProjectFilters.filterProjectsByEligibility(project, filteredPrograms)
-        : true
+      return (
+        ProjectFilters.filterProjectsByTheme(project, objectiveType as PublicodeObjective) &&
+        (filteredPrograms ? ProjectFilters.filterProjectsByEligibility(project, filteredPrograms) : true)
+      )
     })
   }
 
