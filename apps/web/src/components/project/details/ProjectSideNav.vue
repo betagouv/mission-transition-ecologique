@@ -20,6 +20,9 @@ interface Props {
   project: Project
 }
 const props = defineProps<Props>()
+
+const menuItems = computed(() => allMenuItems.filter((item) => item.condition !== false))
+
 const scrollTo = (id: string) => {
   const element = document.getElementById(id)
   if (element) {
@@ -28,7 +31,7 @@ const scrollTo = (id: string) => {
     }, 100)
   }
 }
-const menuItems = computed(() => allMenuItems.filter((item) => item.condition !== false))
+
 const allMenuItems = [
   {
     id: 'project',

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import {
   PublicodesKeys,
@@ -8,13 +7,10 @@ import {
   ReqResp,
   WithoutNullableKeys,
   ProjectFormType,
-  ProjectBody,
-  Project
+  ProjectBody
 } from '@/types'
 import RequestApi from '@/service/api/requestApi'
 import TrackStructure from '@/utils/track/trackStructure'
-import { Result } from 'true-myth'
-import { projects } from '@tee/data/static'
 
 // TO DO : needs backend to connect with brevo and create special project opportunities
 export default class ProjectOpportunityApi extends RequestApi {
@@ -31,14 +27,6 @@ export default class ProjectOpportunityApi extends RequestApi {
   constructor(projectForm: ProjectFormType, private _projectId: number) {
     super()
     this._projectForm = projectForm as WithoutNullableKeys<ProjectFormType>
-  }
-
-  async get(): Promise<Result<Project[], Error>> {
-    //TODO replace with api call once the endpoint is available
-    return new Promise((resolve, reject) => {
-      if (!projects) reject(new Error('No project data'))
-      else resolve(Result.ok(projects as unknown as Project[]))
-    })
   }
 
   async fetch() {

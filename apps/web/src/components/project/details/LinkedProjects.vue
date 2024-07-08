@@ -1,6 +1,6 @@
 <template>
   <DsfrAccordion
-    v-if="relatedProjects.length > 0"
+    v-if="linkedProjectsTags.length > 0"
     id="project-linked-projects"
     :expanded-id="expandedId"
     @expand="expandRelatedProjects"
@@ -13,28 +13,37 @@
         Projets complémentaires
       </div>
     </template>
-    <LinkedProjectButton
-      v-for="project in relatedProjectsTags"
-      :id="project.id"
-      :key="project.label"
-      :label="project.label"
-      :color="color"
-    />
+    <template
+      v-for="linkedProject in linkedProjectsTags"
+      :key="linkedProject.id"
+    >
+      <LinkedProjectButton
+        v-if="linkedProject"
+        :id="linkedProject.id"
+        :label="linkedProject.nameTag || linkedProject.title"
+        :color="color"
+      />
+    </template>
   </DsfrAccordion>
 </template>
 <script setup lang="ts">
+import { useProjectStore } from '@/stores/project'
 import { Project } from '@/types'
 
 interface Props {
-  relatedProjects: Project[]
+  project: Project
   color: string
 }
-const props = defineProps<Props>()
+defineProps<Props>()
+
 const expandedId = ref<string | undefined>('project-linked-projects')
+const linkedProjectsTags = ref<Project[]>([])
+
 const expandRelatedProjects = (id: string | undefined) => {
   expandedId.value = id
 }
-const relatedProjectsTags = props.relatedProjects.map((project: Project) => {
-  return { label: project.nameTag || project.title, id: project.id }
+
+onMounted(async () => {
+  linkedProjectsTags.value = await useProjectStore().getLinkedProjectsFromCurrent()
 })
 </script>

@@ -8,35 +8,31 @@
   />
   <div class="fr-container--fluid fr-mb-4v backgroundProjectTitle">
     <img
-      :src="`${publicPath}${projectImg}`"
-      :alt="`image / ${projectTitle}`"
+      :src="project.image"
+      :alt="`image / ${project.title}`"
     />
     <div :class="`fr-grid-row fr-grid-row--bottom fr-px-md-16v fr-gradient--${themeColor} projectTitleGradient`">
       <div class="fr-col-9 fr-col-sm-9 fr-col-xs-12 fr-col-offset-sm-3 fr-h1 fr-text-left fr-pb-8v projectTitle">
-        {{ projectTitle }}
+        {{ project.title }}
       </div>
     </div>
   </div>
 </template>
 <script setup lang="ts">
-import Config from '@/config'
-import { Color, ProjectId } from '@/types'
+import { Color, Project } from '@/types'
 import { RouteName } from '@/types/routeType'
 import { useNavigationStore } from '@/stores/navigation'
 
 interface Props {
-  projectTitle: string | undefined
-  projectId: ProjectId
-  projectImg: string | undefined
+  project: Project
   themeColor: string
 }
 const props = defineProps<Props>()
-const publicPath = Config.publicPath
 const navigationStore = useNavigationStore()
 
 const routeToProjects = {
   name: RouteName.QuestionnaireResult,
-  hash: '#' + props.projectId,
+  hash: '#' + props.project.id,
   query: navigationStore.query
 }
 </script>

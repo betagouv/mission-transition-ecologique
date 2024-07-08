@@ -14,13 +14,18 @@ export default class ProjectApi extends RequestApi {
     //TODO replace with api call once the endpoint is available
     return new Promise((resolve, reject) => {
       if (!projects) reject(new Error('No project data'))
-      else resolve(Result.ok(projects as unknown as Project[]))
+      else resolve(Result.ok(projects))
     })
   }
 
-  getOne(id: string) {
+  async getOne(id: string): Promise<Result<Project, Error>> {
     // TO DO : api to get projects when backend is ready
-    const url: string = this.url + '/' + id
-    console.log('REQUESTED URL', url)
+    // const url: string = this.url + '/' + id
+    const project = projects.find((project) => (project as unknown as Project).id === parseInt(id))
+    if (project) {
+      return Result.ok(project)
+    }
+
+    return Result.err(new Error('Project not found'))
   }
 }

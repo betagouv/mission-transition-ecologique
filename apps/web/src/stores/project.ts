@@ -1,12 +1,21 @@
 import ProjectApi from '@/service/api/projectApi'
 import ProjectFilters from '@/utils/project/projectFilters'
 import { defineStore } from 'pinia'
-import { computed } from 'vue'
-import { PublicodeObjective, Project, ProjectId } from '@/types'
+import { Result } from 'true-myth'
+import { computed, ref } from 'vue'
+import { PublicodeObjective, Project } from '@/types'
 
 export const useProjectStore = defineStore('project', () => {
+  const currentProject = ref<Project>()
+  const hasProjects = ref<boolean>(false)
+
   const projects = computed(async () => {
-    return await getProjects()
+    const result = await getProjects()
+    if (result.isOk) {
+      hasProjects.value = result.value.length > 0
+    }
+
+    return result
   })
 
   async function getProjects() {
@@ -18,13 +27,50 @@ export const useProjectStore = defineStore('project', () => {
       return ProjectFilters.filterProgramsByTheme(project, objectiveType as PublicodeObjective)
     })
   }
-  function getProjectById(projects: Project[], projectId: string | ProjectId): Project | undefined {
-    return projects.find((project: Project) => project.id.toString() === projectId.toString())
+
+  async function getProjectById(id: string): Promise<Result<Project, Error>> {
+    currentProject.value = undefined
+    if (hasProjects.value) {
+      const result = await projects.value
+      if (result.isOk) {
+        console.log(result.value)
+        const program = result.value.find((program) => program.id === parseInt(id))
+        if (program) {
+          currentProject.value = program
+          return Result.ok(currentProject.value)
+        }
+
+        return Result.err(new Error('Project not found'))
+      }
+
+      return Result.err(result.error)
+    }
+
+    const result = await new ProjectApi().getOne(id)
+    if (result.isOk) {
+      currentProject.value = result.value
+    }
+
+    return result
+  }
+
+  async function getLinkedProjectsFromCurrent() {
+    const resultProjects = await projects.value
+    const project = currentProject.value
+    if (resultProjects.isOk && project) {
+      return resultProjects.value.filter((resultProject) => {
+        return project.linkedProjects.includes(resultProject.id)
+      })
+    }
+
+    return []
   }
 
   return {
     projects,
+    currentProject,
     getProjectsByObjective,
-    getProjectById
+    getProjectById,
+    getLinkedProjectsFromCurrent
   }
 })
