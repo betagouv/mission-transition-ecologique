@@ -276,7 +276,7 @@ import Format from '@/utils/format'
 import OpportunityApi from '@/service/api/opportunityApi'
 import type { OpportunityFormType } from '@/types/opportunityFormType'
 import Contact from '@/utils/contact'
-import { PhoneValidator } from '@tee/common'
+import { OpportunityType, PhoneValidator } from '@tee/common'
 import { EmailValidator } from '@tee/common'
 import { SiretValidator } from '@tee/common'
 import Config from '@/config'
@@ -410,7 +410,7 @@ const validateFormField = (field: InputFieldUnionType): void => {
 const saveOpportunityForm = async () => {
   try {
     isLoading.value = true
-    const opportunity = new OpportunityApi(opportunityForm.value, props.program.id)
+    const opportunity = new OpportunityApi(opportunityForm.value, props.program.id, OpportunityType.Project)
     requestResponse.value = await opportunity.fetch()
 
     // analytics / send event

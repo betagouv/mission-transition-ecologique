@@ -76,6 +76,8 @@ export default class OpportunityFeatures {
       return Result.err(new Error('Project with id ' + opportunity.id + 'not found'))
     }
 
+    opportunity.id = project.slug // consistency with program in database.
+
     const opportunityWithOperator = {
       ...opportunity,
       programContactOperator: 'TEE' as Operators

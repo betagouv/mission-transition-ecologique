@@ -83,7 +83,8 @@ const convertDomainToBrevoDeal = (domainAttributes: OpportunityWithOperatorConta
     parcours: convertQuestionnaireRoute(domainAttributes.questionnaireRoute),
     ...(domainAttributes.priorityObjectives && { objectifs_renseigns: domainAttributes.priorityObjectives.join(', ') }),
     ...(domainAttributes.programContactOperator && { oprateur_de_contact: domainAttributes.programContactOperator }),
-    ...(domainAttributes.otherData && { autres_donnes: domainAttributes.otherData })
+    ...(domainAttributes.otherData && { autres_donnes: domainAttributes.otherData }),
+    type: domainAttributes.type
   }
 }
 
