@@ -50,7 +50,7 @@ import { ProgramData, TrackId } from '@/types'
 import { computed, onBeforeMount } from 'vue'
 import Matomo from '@/utils/matomo'
 import { useProjectStore } from '@/stores/project'
-import { Project } from '@tee/common'
+import { Project } from '@tee/data'
 
 const navigationStore = useNavigationStore()
 const programStore = useProgramStore()

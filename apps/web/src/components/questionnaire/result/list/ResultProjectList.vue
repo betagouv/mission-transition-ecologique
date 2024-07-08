@@ -57,7 +57,7 @@ import ProgramFilterByTheme from '@/components/program/list/filters/ProgramFilte
 import UsedTrack from '@/utils/track/usedTrack'
 import Theme from '@/utils/theme'
 import { useProgramStore } from '@/stores/program'
-import { Project } from '@tee/common'
+import { Project } from '@tee/data'
 
 interface ProjectListProps {
   filteredProjects?: Project[]

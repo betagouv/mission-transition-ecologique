@@ -28,7 +28,7 @@
 </template>
 
 <script setup lang="ts">
-import { Project } from '@tee/common'
+import { Project } from '@tee/data'
 import Config from '@/config'
 import { DsfrCard } from '@gouvminint/vue-dsfr'
 
