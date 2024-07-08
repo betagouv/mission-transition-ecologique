@@ -50,7 +50,7 @@ const dummyDailyOpportunities = (): Promise<Result<OpportunityDetailsShort[], Er
 }
 
 const dummyOpportunityRepository: OpportunityRepository = {
-  createFromProgram: dummyAddOpportunity,
+  create: dummyAddOpportunity,
   update: dummyUpdateOpportunity,
   readDates: dummyOpportunitiesDates,
   getDailyOpportunitiesByContactId: dummyDailyOpportunities

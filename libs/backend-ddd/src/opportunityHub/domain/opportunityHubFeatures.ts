@@ -3,6 +3,7 @@ import { OpportunityWithContactId } from '../../opportunity/domain/types'
 import { Maybe } from 'true-myth'
 import { ProgramType, Project } from '@tee/data'
 import { PlaceDesEntreprises } from '../infrastructure/api/placedesentreprises/placeDesEntreprises'
+
 export default class OpportunityHubFeatures {
   private readonly _opportunityHubRepositories: OpportunityHubRepository[]
   constructor(opportunityHubRepositories: OpportunityHubRepository[]) {
