@@ -19,6 +19,7 @@ export class Baserow {
       Authorization: `Token ${this._apiToken}`
     }
   }
+  private readonly _imagePath = '/images/projet/'
   private readonly _defaultImageName = 'plan-transition-bas-carbone.webp'
   private readonly _imagePath = '/images/projet/'
 
@@ -75,6 +76,7 @@ export class Baserow {
 
     return {
       id: baserowProject.id,
+      slug: baserowProject.Nom,
       title: baserowProject.Titre,
       nameTag: baserowProject.NameTag,
       shortDescription: baserowProject['Description courte'],
