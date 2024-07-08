@@ -34,7 +34,7 @@
         <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2">
           <ResultHeader v-if="!navigationStore.isCatalog() && !hasSpinner" />
         </div>
-        <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-my-3v fr-pl-3v">
+        <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-col-justify--left fr-my-3v">
           <ProgramFilterByTheme v-if="havePrograms && countPrograms > 1" />
         </div>
       </div>

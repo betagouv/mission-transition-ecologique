@@ -12,7 +12,7 @@
       <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
         <div
           v-if="(!hasObjectiveCard || hasObjectiveSelected) && !hasSpinner"
-          class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-pl-3v fr-mt-3w"
+          class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-col-justify--left fr-mt-3w"
         >
           <ProgramFilterByTheme v-if="hasProjects && countProjects >= 1" />
         </div>
