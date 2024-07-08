@@ -18,6 +18,7 @@ export class Baserow {
       Authorization: `Token ${this._apiToken}`
     }
   }
+  private readonly _imagePath = '/images/projet/'
   private readonly _defaultImageName = 'plan-transition-bas-carbone.webp'
 
   constructor(private readonly _imageDirectory: string) {}
@@ -73,10 +74,11 @@ export class Baserow {
 
     return {
       id: baserowProject.id,
+      slug: baserowProject.Nom,
       title: baserowProject.Titre,
       nameTag: baserowProject.NameTag,
       shortDescription: baserowProject['Description courte'],
-      image: 'images/projects/' + imageName,
+      image: this._imagePath + imageName,
       longDescription: baserowProject['Qu’est-ce que c’est ?'],
       moreDescription: baserowProject['Pour aller plus loin'],
       themes: this._generateThemeList(baserowProject['Thématique principale'], baserowProject['Thématiques secondaires'], baserawThemes),

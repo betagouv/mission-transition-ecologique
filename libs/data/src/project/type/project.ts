@@ -4,6 +4,7 @@ import { projects } from '../../../static'
 export interface Project {
   id: number
   title: string // titre
+  slug: string
   nameTag: string // Affichage du projet s'il doit être mis en avant dans une thématique (étape "quel est votre objectif prioritaire")
   shortDescription: string // texte affiché sur les cartes projets (carte présentes sur l'annuaire)
   image: string // image associée au projet (par exemple affichée sur la carte présente sur l'annuaire)
