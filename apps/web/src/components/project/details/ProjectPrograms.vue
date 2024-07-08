@@ -27,16 +27,13 @@
             />
             <div class="fr-col-9 fr-col-xs-8">
               <div class="fr-pb-2v">Complétez votre profil en 2 minutes et accédez aux aides éligibles pour votre entreprise.</div>
-              <router-link
-                class="tee-btn-sidebar fr-btn fr-btn--tertiary-no-outline fr-p-0"
+              <TeeButtonLink
                 :to="navigationStore.routeByTrackId(TrackId.Siret)"
+                size="sm"
+                secondary
               >
-                <DsfrButton
-                  label="Compléter mon profil"
-                  :secondary="true"
-                  size="sm"
-                />
-              </router-link>
+                Compléter mon profil
+              </TeeButtonLink>
             </div>
           </div>
         </div>

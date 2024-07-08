@@ -21,7 +21,6 @@ export class Baserow {
   }
   private readonly _imagePath = '/images/projet/'
   private readonly _defaultImageName = 'plan-transition-bas-carbone.webp'
-  private readonly _imagePath = '/images/projet/'
 
   constructor(private readonly _imageDirectory: string) {}
 

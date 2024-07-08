@@ -69,7 +69,7 @@ export const useProjectStore = defineStore('project', () => {
     projects,
     currentProject,
     getProjectsByObjective,
-    getProjectById: getProjectBySlug,
+    getProjectBySlug,
     getLinkedProjectsFromCurrent
   }
 })

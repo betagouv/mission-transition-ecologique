@@ -15,8 +15,8 @@ import { useNavigationStore } from '@/stores/navigation'
 import { Color, Project } from '@/types'
 
 interface Props {
-  color?: Color
   project: Project
+  color?: Color
 }
 const props = defineProps<Props>()
 
