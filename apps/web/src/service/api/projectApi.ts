@@ -18,10 +18,10 @@ export default class ProjectApi extends RequestApi {
     })
   }
 
-  async getOne(id: string): Promise<Result<Project, Error>> {
+  async getOne(slug: string): Promise<Result<Project, Error>> {
     // TO DO : api to get projects when backend is ready
-    // const url: string = this.url + '/' + id
-    const project = projects.find((project) => (project as unknown as Project).id === parseInt(id))
+    // const url: string = this.url + '/' + slug
+    const project = projects.find((project) => project.slug === slug)
     if (project) {
       return Result.ok(project)
     }

@@ -28,13 +28,12 @@ export const useProjectStore = defineStore('project', () => {
     })
   }
 
-  async function getProjectById(id: string): Promise<Result<Project, Error>> {
+  async function getProjectBySlug(slug: string): Promise<Result<Project, Error>> {
     currentProject.value = undefined
     if (hasProjects.value) {
       const result = await projects.value
       if (result.isOk) {
-        console.log(result.value)
-        const program = result.value.find((program) => program.id === parseInt(id))
+        const program = result.value.find((program) => program.slug === slug)
         if (program) {
           currentProject.value = program
           return Result.ok(currentProject.value)
@@ -46,7 +45,7 @@ export const useProjectStore = defineStore('project', () => {
       return Result.err(result.error)
     }
 
-    const result = await new ProjectApi().getOne(id)
+    const result = await new ProjectApi().getOne(slug)
     if (result.isOk) {
       currentProject.value = result.value
     }
@@ -70,7 +69,7 @@ export const useProjectStore = defineStore('project', () => {
     projects,
     currentProject,
     getProjectsByObjective,
-    getProjectById,
+    getProjectById: getProjectBySlug,
     getLinkedProjectsFromCurrent
   }
 })

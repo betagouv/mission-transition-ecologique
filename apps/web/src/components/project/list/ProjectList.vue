@@ -42,7 +42,7 @@
                   v-for="project in priorityProjects"
                   :id="project.id"
                   :key="project.id"
-                  :to="getRouteToProjectDetail(project.id)"
+                  :to="getRouteToProjectDetail(project)"
                   class="fr-col-11 fr-col-sm-12 fr-col-md-6 fr-col-lg-4 no-outline"
                 >
                   <ProjectCard
@@ -71,7 +71,7 @@
                 v-for="project in nonPriorityProjects"
                 :id="project.id"
                 :key="project.id"
-                :to="getRouteToProjectDetail(project.id)"
+                :to="getRouteToProjectDetail(project)"
                 class="fr-col-11 fr-col-sm-12 fr-col-md-6 fr-col-lg-4 no-outline"
               >
                 <ProjectCard
@@ -101,7 +101,7 @@
                   v-for="project in sortedProjects"
                   :id="project.id"
                   :key="project.id"
-                  :to="getRouteToProjectDetail(project.id)"
+                  :to="getRouteToProjectDetail(project)"
                   class="fr-col-11 fr-col-sm-12 fr-col-md-6 fr-col-lg-4 no-outline"
                 >
                   <ProjectCard
@@ -122,7 +122,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { type ProgramData, RouteName, Project, ProjectId } from '@/types'
+import { type ProgramData, RouteName, Project } from '@/types'
 import UsedTrack from '@/utils/track/usedTrack'
 import { useProgramStore } from '@/stores/program'
 import Config from '@/config'
@@ -172,10 +172,10 @@ const hasObjectiveSelected = computed(() => {
   return programStore.hasObjectiveTypeSelected()
 })
 
-const getRouteToProjectDetail = (projectId: ProjectId): RouteLocationRaw => {
+const getRouteToProjectDetail = (project: Project): RouteLocationRaw => {
   return {
     name: RouteName.ProjectResultDetail,
-    params: { projectId },
+    params: { projectSlug: project.slug },
     query: navigationStore.query
   }
 }

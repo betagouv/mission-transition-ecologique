@@ -57,7 +57,7 @@ export default class Hook {
   }
 
   static readonly hasProject = async (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
-    if (to.params.projectId && (await useProjectStore().getProjectById(to.params.projectId as string)).isOk) {
+    if (to.params.projectSlug && (await useProjectStore().getProjectById(to.params.projectSlug as string)).isOk) {
       next()
     } else {
       next(to.name === RouteName.ProjectResultDetail ? { name: RouteName.QuestionnaireStart } : { name: RouteName.Homepage })
