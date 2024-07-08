@@ -262,7 +262,7 @@
 </template>
 
 <script setup lang="ts">
-import { scrollToElementCenter } from '@/utils/helpers'
+import { Scroll } from '@/utils/scroll'
 import TrackStructure from '@/utils/track/trackStructure'
 import { computed, ref } from 'vue'
 import { InputFieldUnionType, isValidatedStringFieldInputType, type ProgramData, type ReqResp, TrackId } from '@/types'
@@ -425,7 +425,7 @@ const saveOpportunityForm = async () => {
 const scrollToFormContainer = () => {
   const element = props.formContainerRef
   if (element) {
-    scrollToElementCenter(element)
+    Scroll.toBlockCenter(element)
   }
 }
 

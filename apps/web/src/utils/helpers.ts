@@ -249,39 +249,6 @@ export const remapItem = (
   return data
 }
 
-// UX HELPERS
-export const scrollToTop = (element: Element) => {
-  console.log(element, Widget.is)
-  if (!Widget.is) {
-    element.scrollIntoView()
-  } else {
-    setTimeout(() => {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }, 100)
-  }
-}
-
-export const scrollToElementCenter = (element: HTMLElement) => {
-  if (!Widget.is) {
-    setTimeout(() => {
-      const docHeight = document.documentElement.clientHeight
-      const { offsetTop, clientHeight } = element
-      window.scrollTo({ top: offsetTop + clientHeight / 2 - docHeight / 2 })
-    }, 100)
-  } else {
-    setTimeout(() => {
-      element.scrollIntoView({ behavior: 'smooth', block: 'center' })
-    }, 100)
-  }
-}
-
-export const scrollToId = (elementId: string) => {
-  setTimeout(() => {
-    const element = document.getElementById(elementId)
-    element?.scrollIntoView()
-  }, 100)
-}
-
 // TEXT HELPERS
 
 export const consolidateAmounts = (str: string | undefined) => {

@@ -257,7 +257,7 @@
 </template>
 
 <script setup lang="ts">
-import { scrollToElementCenter } from '@/utils/helpers'
+import { Scroll } from '@/utils/scroll'
 import TrackStructure from '@/utils/track/trackStructure'
 import { computed, ref } from 'vue'
 import {
@@ -410,7 +410,7 @@ const saveProjectForm = async () => {
 const scrollToFormContainer = () => {
   const element = props.formContainerRef
   if (element) {
-    scrollToElementCenter(element)
+    Scroll.toBlockCenter(element)
   }
 }
 

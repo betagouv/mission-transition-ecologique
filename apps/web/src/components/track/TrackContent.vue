@@ -110,9 +110,9 @@ import {
   type UsedTrack
 } from '@/types'
 import { RouteName } from '@/types/routeType'
-import { scrollToTop } from '@/utils/helpers'
 import Matomo from '@/utils/matomo'
 import Navigation from '@/utils/navigation'
+import { Scroll } from '@/utils/scroll'
 import TrackColOption from '@/utils/track/TrackColOption'
 import TrackComponent from '@/utils/track/TrackComponent'
 import { computed, ref } from 'vue'
@@ -237,7 +237,7 @@ const saveSelection = async (needRemove = false) => {
     usedTrackStore.removeFurtherUsedTracks(usedTrack.id)
   }
 
-  scrollToTop(props.trackElement)
+  Scroll.to(props.trackElement)
 }
 
 const backToPreviousTrack = async () => {

@@ -13,7 +13,7 @@
         <DsfrButton
           :label="linkCopied ? 'Lien copié' : 'Copier le lien'"
           size="sm"
-          :class="`fr-m-4v fr-radius-a--2v ${linkCopied ? `fr-bg--green` : ''}`"
+          :class="`fr-m-4v fr-radius-a--2v fr-ml-7v ${linkCopied ? `fr-bg--green` : ''}`"
           icon="fr-icon-link"
           @click="copyUrl"
         />

@@ -13,7 +13,7 @@
         ❓ Qu'est ce que c'est ?
       </div>
     </template>
-    <div v-html="formatProjectDescription(project.longDescription)" />
+    <div v-html="markdownToHtml(project.longDescription)" />
   </DsfrAccordion>
 
   <DsfrAccordion
@@ -30,12 +30,12 @@
         📚 Pour aller plus loin
       </div>
     </template>
-    <div v-html="formatProjectDescription(project.moreDescription)" />
+    <div v-html="markdownToHtml(project.moreDescription)" />
   </DsfrAccordion>
 </template>
 <script setup lang="ts">
 import { Project } from '@/types'
-import { marked } from 'marked'
+import { Marked } from '@/utils/marked'
 
 interface Props {
   project: Project
@@ -52,9 +52,9 @@ const expandMoreDetails = (id: string | undefined) => {
   expandedMoreId.value = id
 }
 
-const formatProjectDescription = (text: string | undefined) => {
+const markdownToHtml = (text: string | undefined) => {
   if (text) {
-    return marked.parse(text)
+    return Marked.toHtml(text)
   }
   return ''
 }
