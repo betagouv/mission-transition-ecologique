@@ -1,38 +1,41 @@
 <template>
-  <ProjectHeader
-    v-if="project"
-    :project="project"
-    :theme-color="themeColor"
-  />
+  <div v-if="project" class="fr-col-12">
+    <ProjectHeader
+      :project="project"
+      :theme-color="themeColor"
+    />
+  </div>
   <div
     v-if="project"
-    class="fr-col-12 fr-px-md-16v"
+    class="fr-col-12"
   >
-    <div class="fr-grid-row fr-pt-4v">
-      <div class="fr-col-3 fr-col-sm-3 fr-hidden-xs">
-        <DsfrButton
-          :label="linkCopied ? 'Lien copié' : 'Copier le lien'"
-          size="sm"
-          class="fr-m-4v fr-radius-a--2v fr-ml-4w"
-          :class="linkCopied ? 'fr-bg--green' : ''"
-          icon="fr-icon-link"
-          @click="copyUrl"
-        />
-        <ProjectSideNav :project="project" />
-      </div>
-      <div class="fr-col-8 fr-col-xs-12 fr-col-sm-9">
-        <DsfrAccordionsGroup>
-          <ProjectDescription :project="project" />
-          <ProjectPrograms
-            :objective="themeObjective"
-            :project="project"
+    <div class="fr-container">
+      <div class="fr-grid-row fr-pt-4v">
+        <div class="fr-col-3 fr-col-sm-3 fr-hidden-xs">
+          <DsfrButton
+            :label="linkCopied ? 'Lien copié' : 'Copier le lien'"
+            size="sm"
+            class="fr-m-4v fr-radius-a--2v"
+            :class="linkCopied ? 'fr-bg--green' : ''"
+            icon="fr-icon-link"
+            @click="copyUrl"
           />
-          <LinkedProjects
-            v-if="project.linkedProjects.length > 0"
-            :project="project"
-            :color="themeColor"
-          />
-        </DsfrAccordionsGroup>
+          <ProjectSideNav :project="project" />
+        </div>
+        <div class="fr-col-8 fr-col-xs-12 fr-col-sm-9">
+          <DsfrAccordionsGroup>
+            <ProjectDescription :project="project" />
+            <ProjectPrograms
+              :objective="themeObjective"
+              :project="project"
+            />
+            <LinkedProjects
+              v-if="project.linkedProjects.length > 0"
+              :project="project"
+              :color="themeColor"
+            />
+          </DsfrAccordionsGroup>
+        </div>
       </div>
     </div>
   </div>

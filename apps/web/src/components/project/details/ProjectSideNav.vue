@@ -1,5 +1,5 @@
 <template>
-  <DsfrSideMenu class="fr-ml-4v fr-pt-8v fr-sticky">
+  <DsfrSideMenu class="fr-mr-2v fr-pr-0 fr-sticky">
     <template #default>
       <a
         v-for="item in menuItems"
