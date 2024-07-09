@@ -9,7 +9,10 @@
       :src="project.image"
       :alt="`image / ${project.title}`"
     />
-    <div class="projectTitleGradient" :class="`fr-gradient--${themeColor}`">
+    <div
+      class="projectTitleGradient"
+      :class="`fr-gradient--${themeColor}`"
+    >
       <div class="fr-container-md">
         <div class="fr-grid-row fr-grid-row--bottom">
           <div class="fr-col-9 fr-col-sm-9 fr-col-xs-12 fr-col-offset-sm-3 fr-h1 fr-text-left fr-pb-8v projectTitle">

@@ -1,5 +1,8 @@
 <template>
-  <div v-if="project" class="fr-col-12">
+  <div
+    v-if="project"
+    class="fr-col-12"
+  >
     <ProjectHeader
       :project="project"
       :theme-color="themeColor"
