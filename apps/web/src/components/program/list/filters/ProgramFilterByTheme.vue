@@ -14,7 +14,7 @@
 
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
-import { ThemeType as ThemeType, type programFiltersType } from '@/types'
+import { ThemeType, type programFiltersType } from '@/types'
 import { Theme } from '@/utils/theme'
 import { TeeDsfrTagProps } from '@/components/element/tag/TeeDsfrTag.vue'
 
