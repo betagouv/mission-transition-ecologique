@@ -7,17 +7,6 @@ export class Scroll {
     const topBar = document.getElementById('eligibility-criteria-bar')
     if (topBar) {
       const top = element.getBoundingClientRect().top + window.scrollY - topBar.offsetHeight
-      console.log(`utils.scroll > toWithTopBarOffset > element:`, element)
-      console.log(`utils.scroll > toWithTopBarOffset > element.getBoundingClientRect() :`, element.getBoundingClientRect())
-      console.log(`utils.scroll > toWithTopBarOffset > top :`, top)
-      console.log(`utils.scroll > toWithTopBarOffset > topBar.offsetHeight :`, topBar.offsetHeight)
-      console.log(`utils.scroll > toWithTopBarOffset > window.scrollY :`, window.scrollY)
-      console.log(`utils.scroll > toWithTopBarOffset > element.getBoundingClientRect().top :`, element.getBoundingClientRect().top)
-      console.log(`utils.scroll > toWithTopBarOffset > window.scrollY - topBar.offsetHeight :`, window.scrollY - topBar.offsetHeight)
-      console.log(
-        `utils.scroll > toWithTopBarOffset > element.getBoundingClientRect().top + window.scrollY - topBar.offsetHeight :`,
-        element.getBoundingClientRect().top + window.scrollY - topBar.offsetHeight
-      )
       window.scrollTo({ top: top, ...this._defaultOptions })
     }
   }

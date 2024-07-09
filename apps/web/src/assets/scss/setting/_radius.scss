@@ -3,8 +3,8 @@ $border-radius-root: 1rem !default;
 $rounded: (
   '0': 0,
   '1v': $border-radius-root,
-  '2v': $border-radius-root * 2, // keep
-  '2-5v': $border-radius-root * 2.5, // keep
+  '2v': $border-radius-root * 2,
+  '2-5v': $border-radius-root * 2.5,
 );
 
 $corner: (
