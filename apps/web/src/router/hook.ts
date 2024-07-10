@@ -32,8 +32,6 @@ export default class Hook {
       next(
         to.name === RouteName.QuestionnaireResultDetail
           ? { name: RouteName.CatalogDetail, params: { programId: to.params.programId } }
-          : to.name === RouteName.ProjectResultDetail
-          ? { name: RouteName.CatalogDetail, params: { projectId: to.params.projectId } }
           : { name: RouteName.QuestionnaireStart }
       )
     }

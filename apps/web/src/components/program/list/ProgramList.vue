@@ -1,14 +1,17 @@
 <template>
   <!-- PROGRAMS AS LIST OF CARDS -->
-  <div class="fr-container--fluid fr-mt-6v">
+  <div class="fr-container--fluid fr-mt-4v">
     <div class="fr-grid-row fr-grid-row--center">
-      <div class="fr-mb-4v fr-pl-2w fr-pl-md-0 fr-col-12 fr-text--blue-france fr-font-style--italic">
-        <div v-if="havePrograms && countPrograms > 1">
+      <div class="fr-pl-2v fr-pl-md-0 fr-col-3 fr-col-md-12 fr-col-content--middle fr-text--blue-france fr-font-style--italic">
+        <span v-if="havePrograms && countPrograms > 1">
           {{ countPrograms }}
           {{ countPrograms > 1 ? Translation.t('results.results') : Translation.t('results.result') }}
-        </div>
+        </span>
       </div>
-      <div class="fr-col-12">
+      <div class="fr-col-9 fr-col-hidden-md fr-text-right">
+        <ProgramModalFilter />
+      </div>
+      <div class="fr-col-12 fr-mt-2v">
         <div class="fr-grid-row fr-grid-row--center fr-grid-row-lg--left">
           <router-link
             v-for="program in filteredPrograms"

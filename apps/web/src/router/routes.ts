@@ -16,7 +16,6 @@ import TeeQuestionnaireResult from '@/components/questionnaire/TeeQuestionnaireR
 import ProgramDetail from '@/components/program/detail/ProgramDetail.vue'
 import TeeStatPage from '@/pages/TeeStatPage.vue'
 import CatalogList from '@/components/catalog/CatalogList.vue'
-import ProjectDetail from '@/components/project/details/ProjectDetail.vue'
 
 // please edit the sitemap.ts file if you add any path starting with /
 // that you don't want to be listed in the sitemap

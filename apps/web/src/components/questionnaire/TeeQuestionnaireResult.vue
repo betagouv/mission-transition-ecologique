@@ -18,10 +18,9 @@ import { Color } from '@/types'
 import { RouteName } from '@/types/routeType'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { useNavigationStore } from '@/stores/navigation'
-import { computed } from 'vue'
 
-const usedTrackStore = useUsedTrackStore()
 const navigationStore = useNavigationStore()
+const usedTrackStore = useUsedTrackStore()
 
 const linkToPreviousButton = computed(() => {
   const trackId = usedTrackStore.getPreviousCompletedUsedTrackId()

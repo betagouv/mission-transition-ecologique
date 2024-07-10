@@ -10,6 +10,12 @@
       v-if="isPriorityProject"
       #start-details
     >
+      <div
+        v-if="!isUniquePriority"
+        class="fr-card__header--priority fr-hidden fr-unhidden-lg"
+      >
+        {{ priorityOrder }}
+      </div>
       <div class="fr-mb-1v">
         <DsfrBadge
           :label="priorityTag"
@@ -31,6 +37,8 @@ const publicPath = Config.publicPath
 interface Props {
   project: Project
   isPriorityProject?: boolean
+  isUniquePriority?: boolean
+  priorityOrder?: number
 }
 
 withDefaults(defineProps<Props>(), {

@@ -1,7 +1,7 @@
 import { Color, Objective as ObjectiveEnum, PublicodeObjective, PublicodesKeys, ThemeId, ThemeType } from '@/types'
 import UsedTrack from '@/utils/track/usedTrack'
 
-export class Theme {
+export default class Theme {
   static themes: ThemeType[] = [
     {
       id: ThemeId.Environmental,

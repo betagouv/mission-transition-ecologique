@@ -13,7 +13,6 @@
           $modifier: tool.modifierByBreakpoint($breakpoint);
           &#{$modifier} {
             &-#{$corner} {
-
               @include tool.border-radius($radius-value, $corner-name, true);
               @if $radius != null {
                 &--#{$radius} {

@@ -16,7 +16,7 @@
         @select-tab="selectTab"
       >
         <DsfrTabContent
-          class="fr-px-0"
+          class="fr-p-0"
           panel-id="tab-content-0"
           tab-id="tab-0"
           :selected="selectedTabIndex === 0"
@@ -29,7 +29,7 @@
         </DsfrTabContent>
 
         <DsfrTabContent
-          class="fr-px-0"
+          class="fr-p-0"
           panel-id="tab-content-1"
           tab-id="tab-1"
           :selected="selectedTabIndex === 1"
@@ -46,10 +46,12 @@
 import { useNavigationStore } from '@/stores/navigation'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { useProgramStore } from '@/stores/program'
-import { ProgramData, TrackId, Project } from '@/types'
+import { ProgramData, PublicodeObjective, QuestionnaireDataEnum, TrackId, Project } from '@/types'
 import { computed, onBeforeMount } from 'vue'
 import Matomo from '@/utils/matomo'
 import { useProjectStore } from '@/stores/project'
+import UsedTrack from '@/utils/track/usedTrack'
+import { Theme } from '@/utils/theme'
 
 const navigationStore = useNavigationStore()
 const programStore = useProgramStore()
@@ -68,9 +70,22 @@ const filteredPrograms = computed(() => {
 })
 
 const filteredProjects = computed(() => {
-  //TODO : add filter by filteredPrograms
-  return projects.value ? projectStore.getProjectsByObjective(projects.value, programStore.programFilters.objectiveTypeSelected) : undefined
+  if (!projects.value) {
+    return undefined
+  }
+
+  return projectStore.getProjectsByPublicodeObjectiveAndEligibility(
+    projects.value,
+    getObjectiveForProjectFiltering(),
+    filteredPrograms.value ?? undefined
+  )
 })
+
+const getObjectiveForProjectFiltering = () => {
+  return programStore.programFilters.objectiveTypeSelected !== ''
+    ? (programStore.programFilters.objectiveTypeSelected as PublicodeObjective)
+    : Theme.getPublicodeObjectiveByObjective(UsedTrack.getPriorityObjective())
+}
 
 const initialSelectedIndex = 0
 const tabListName = 'Liste d’onglet'

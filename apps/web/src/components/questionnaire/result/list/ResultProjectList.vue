@@ -1,20 +1,13 @@
 <template>
   <!-- PROGRAMS AS LIST OF CARDS -->
   <div class="fr-container--fluid fr-container--fluid--no-overflow fr-mt-2v">
-    <div class="fr-grid-row fr-grid-row--center">
-      <ResultListNoResults
-        :has-error="hasError"
-        :has-spinner="hasSpinner"
-        :count-items="countProjects"
-      />
-    </div>
-    <div class="fr-grid-row fr-grid-row--center">
+    <div class="fr-grid-row fr-grid-row--center fr-mt-2w">
       <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
         <div
           v-if="(!hasObjectiveCard || hasObjectiveSelected) && !hasSpinner"
-          class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-my-3v fr-pl-3v"
+          class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-col-justify--left fr-mt-3w"
         >
-          <ProgramFilterByTheme v-if="hasProjects && countProjects >= 1" />
+          <ProgramFilterByTheme v-if="(hasProjects && countProjects >= 1) || hasObjectiveSelected" />
         </div>
       </div>
     </div>
@@ -32,12 +25,23 @@
         </div>
       </div>
     </div>
+    <div class="fr-grid-row fr-grid-row--center">
+      <div class="fr-container fr-m-0 fr-p-0 fr-px-md-2v fr-mt-3v">
+        <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-col-justify--center">
+          <ResultListNoResults
+            :has-error="hasError"
+            :has-spinner="hasSpinner"
+            :count-items="countProjects"
+          />
+        </div>
+      </div>
+    </div>
     <div
       v-if="hasObjectiveCard && !hasSpinner && UsedTrack.isSpecificGoal()"
       class="fr-grid-row fr-grid-row--center"
     >
       <div class="fr-container fr-m-0 fr-p-0 fr-px-md-2v fr-mt-4w">
-        <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2">
+        <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-pl-2w fr-pl-md-0">
           <h2 class="fr-text--bold fr-mb-0">Quel est votre projet ?</h2>
         </div>
       </div>

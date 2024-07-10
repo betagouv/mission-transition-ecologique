@@ -2,11 +2,13 @@ import RequestApi from '@/service/api/requestApi'
 import type { Project, QuestionnaireData } from '@/types'
 import { projects } from '@tee/data/static'
 import { Result } from 'true-myth'
+import { Project } from '@tee/data'
+import { projects } from '@tee/data/static'
 
 export default class ProjectApi extends RequestApi {
   protected override readonly url = '/api/projects'
 
-  constructor(private questionnaireData: QuestionnaireData = {}) {
+  constructor() {
     super()
   }
 

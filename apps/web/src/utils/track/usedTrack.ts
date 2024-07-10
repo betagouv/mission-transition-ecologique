@@ -79,8 +79,6 @@ export default class UsedTrack {
   }
 
   static isEnvironmentalImpactObjective(): boolean {
-    return ObjectiveChecker.isEnvironmentalImpact(
-      this.findInQuestionnaireData(TrackId.StrategyAudits, QuestionnaireDataEnum.recently_audited)
-    )
+    return ObjectiveChecker.isEnvironmentalImpact(this.findInQuestionnaireData(TrackId.Goals, QuestionnaireDataEnum.recently_audited))
   }
 }

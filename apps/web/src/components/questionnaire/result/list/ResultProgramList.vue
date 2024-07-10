@@ -8,17 +8,11 @@
         :count-items="countPrograms"
       />
     </div>
-    <div class="fr-grid-row fr-grid-row--center">
+    <div class="fr-grid-row fr-grid-row--center fr-mt-1w">
       <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
         <div
-          v-if="!hasSpinner || !hasError"
-          class="fr-col-9 fr-col-hidden-md fr-text-right fr-col-xs-12 fr-mb-3v"
-        >
-          <ProgramModalFilter />
-        </div>
-        <div
           v-if="(!hasObjectiveCard || hasObjectiveSelected) && !hasSpinner"
-          class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-my-3v fr-pl-3v"
+          class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-col-justify--left fr-mt-3w"
         >
           <ProgramFilterByTheme v-if="havePrograms && countPrograms > 1" />
         </div>

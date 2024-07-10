@@ -5,10 +5,6 @@
 .fr-card {
   overflow: hidden;
 
-  &-priority {
-    border: solid 0.20rem setting.$base-green;
-  }
-
   :hover {
     cursor: pointer;
   }
@@ -47,6 +43,7 @@
 
         img {
           object-fit: fill;
+
           &.fr-responsive-img {
             height: 100%;
           }
@@ -77,6 +74,36 @@
         line-height: 2.5rem;
       }
     }
+  }
+
+  &-priority {
+    border: solid 0.20rem setting.$base-green;
+
+    &--highlighted {
+      .fr-card__header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-left: 5rem solid transparent;
+        border-top: 5rem solid setting.$base-green;
+        width: 0;
+      }
+    }
+  }
+
+  &__header--priority {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      color: setting.$white;
+      font-size: 2rem;
+      font-weight: bold;
+  }
+
+  .fr-badge--success {
+    background-color: setting.$base-green;
+    color: setting.$white
   }
 
   @each $color, $properties in setting.$colors {

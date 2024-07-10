@@ -54,7 +54,7 @@ const rowClass = computed(() => {
     row.push('fr-bg--' + props.bgColor)
   }
   if (props.radiusSize) {
-    row.push('fr-radius-a--' + props.radiusSize)
+    row.push('fr-radius-md-a--' + props.radiusSize)
   }
 
   return row.join(' ')
