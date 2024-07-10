@@ -1,10 +1,4 @@
-<<<<<<< HEAD:packages/web/src/types/program/programTypes.ts
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-// FOR AID PROGRAMS
-import { PublicodesKeys, PublicodeObjective, PublicodesCondition, ProgramAidType, ProgramOperatorType } from '../../types'
-=======
 import { PublicodesKeys, PublicodeObjective, PublicodesCondition, ProgramOperatorType, ProgramAidType } from '@/types'
->>>>>>> origin/release/project:apps/web/src/types/program/programTypes.ts
 
 interface ProgramObjectiveLink {
   lien: string

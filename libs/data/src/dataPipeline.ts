@@ -68,11 +68,7 @@ export const prependInterface = (programs: ProgramType[], log = false): ProgramT
 /**
  * Converts program data to JSON and writes it to a file.
  */
-<<<<<<< HEAD:packages/data/src/dataPipeline.ts
-export const buildProgramJSONOutput = (programs: Program[]): void => {
-=======
 export const buildProgramJson = (programs: ProgramType[]): void => {
->>>>>>> origin/release/project:libs/data/src/dataPipeline.ts
   console.log('♺ Converting data to JSON')
   const dataAsJson: string = JSON.stringify(programs, null, 2)
 

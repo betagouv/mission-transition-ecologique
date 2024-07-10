@@ -1,12 +1,6 @@
-<<<<<<< HEAD:packages/common/src/project/types.ts
-import { ThemeId } from '../theme/types'
-import { projects } from './mockData'
-import { ProjectOpportunity } from '@tee/backend/src/project/domain/types'
-=======
 import { ThemeId } from '../../theme/themes'
 import { projects } from '../../../static'
 
->>>>>>> origin/release/project:libs/data/src/project/type/project.ts
 export interface Project {
   id: number
   title: string // titre
@@ -24,16 +18,10 @@ export interface Project {
 }
 
 export type ProjectId = (typeof projects)[number]['id']
-<<<<<<< HEAD:packages/common/src/project/types.ts
-export interface ProjectBody {
-  project: ProjectOpportunity
-  optIn: boolean
-=======
 
 export interface RawProject extends Omit<Project, 'themes' | 'mainTheme' | 'linkedProjects' | 'programs'> {
   themes: string[]
   mainTheme: string
   linkedProjects: number[]
   programs: string[]
->>>>>>> origin/release/project:libs/data/src/project/type/project.ts
 }

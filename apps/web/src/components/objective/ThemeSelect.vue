@@ -7,27 +7,22 @@
       @click="updateSelectOption(opt)"
     >
       <ThemeCard
-        v-if="projects"
         :is-selected="opt.value === themeSelectedOption?.value"
         :option="opt"
-        :projects="projects"
       />
     </div>
   </div>
 </template>
 <script setup lang="ts">
-import { Project, ProjectId } from '@tee/common/src/project/types'
 import { useTrackStore } from '@/stores/track'
 import { useUsedTrackStore } from '@/stores/usedTrack'
-import type { PublicodeObjective, TrackOptionItem } from '@/types'
+import type { TrackOptionItem } from '@/types'
 import { computed } from 'vue'
-import { Theme as ThemeType } from '@/types'
-import Theme from '@/utils/theme'
-import { useProjectStore } from '@/stores/project'
+import { Theme } from '@/utils/theme'
+import { Color } from '@/types'
+import { ProjectId } from '@tee/data'
 
 const currentTrack = useTrackStore().current
-const projectStore = useProjectStore()
-const projects = ref<Project[]>()
 const themeSelectedOption = ref<ThemeOption>()
 const emit = defineEmits(['updateSelection'])
 
@@ -37,7 +32,7 @@ export interface ThemeOption {
   imgSrc: string
   altImg: string
   highlightProjects: ProjectId[]
-  color: string | undefined
+  color: Color
 }
 const options = computed<ThemeOption[]>(() => {
   const options: ThemeOption[] = []
@@ -45,30 +40,26 @@ const options = computed<ThemeOption[]>(() => {
     return options
   }
   for (const option of currentTrack.options) {
-    const optionPublicodeObjective: PublicodeObjective | undefined = Theme.getPublicodeObjectiveByObjective(
-      option.questionnaireData?.priority_objective
-    )
-    const themeOption: ThemeType | undefined = Theme.getByValue(optionPublicodeObjective)
-    if (themeOption) {
-      options.push({
-        value: option.questionnaireData?.priority_objective,
-        title: themeOption.title,
-        color: themeOption.color,
-        imgSrc: themeOption.image,
-        altImg: themeOption.tagLabel,
-        highlightProjects: themeOption.highlightProjects
-      })
+    if (option.questionnaireData?.priority_objective) {
+      const optionPublicodeObjective = Theme.getPublicodeObjectiveByObjective(option.questionnaireData?.priority_objective)
+      if (optionPublicodeObjective) {
+        const themeOption = Theme.getByValue(optionPublicodeObjective)
+        if (themeOption) {
+          options.push({
+            value: option.questionnaireData?.priority_objective,
+            title: themeOption.title,
+            color: themeOption.color,
+            imgSrc: themeOption.image,
+            altImg: themeOption.tagLabel,
+            highlightProjects: []
+          })
+        }
+      }
     }
   }
   return options
 })
 
-onBeforeMount(async () => {
-  const projectResult = await projectStore.projects
-  if (projectResult.isOk) {
-    projects.value = projectResult.value
-  }
-})
 const updateSelectOption = (opt: ThemeOption) => {
   const selectedOptionIndex = currentTrack?.options?.findIndex((option) => option.value === opt.value)
   const selectedOption =

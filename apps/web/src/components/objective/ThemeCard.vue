@@ -11,7 +11,6 @@
             v-for="projectId in option.highlightProjects"
             :key="projectId"
             :color="option.color"
-            :projects="projects"
             :project-id="projectId"
           />
           <span>...</span>
@@ -31,13 +30,11 @@
   </div>
 </template>
 <script setup lang="ts">
-import { Project } from '@tee/common/src/project/types'
 import { ThemeOption } from './ThemeSelect.vue'
 
 interface Props {
   option: ThemeOption
   isSelected: boolean
-  projects: Project[]
 }
 defineProps<Props>()
 </script>
@@ -53,10 +50,6 @@ defineProps<Props>()
   height: 100%;
 }
 .selectedCard {
-  background-size:
-    100% 4px,
-    4px 100%,
-    4px 100%,
-    100% 4px !important;
+  background-size: 100% 4px, 4px 100%, 4px 100%, 100% 4px !important;
 }
 </style>

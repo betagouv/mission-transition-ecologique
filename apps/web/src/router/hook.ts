@@ -31,9 +31,7 @@ export default class Hook {
       next(
         to.name === RouteName.QuestionnaireResultDetail
           ? { name: RouteName.CatalogDetail, params: { programId: to.params.programId } }
-          : to.name === RouteName.ProjectResultDetail
-            ? { name: RouteName.CatalogDetail, params: { projectId: to.params.projectId } }
-            : { name: RouteName.QuestionnaireStart }
+          : { name: RouteName.QuestionnaireStart }
       )
     }
   }
@@ -52,14 +50,6 @@ export default class Hook {
       next()
     } else {
       next(to.name === RouteName.QuestionnaireResultDetail ? { name: RouteName.QuestionnaireStart } : { name: RouteName.Homepage })
-    }
-  }
-
-  static readonly hasProject = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
-    if (to.params.projectId) {
-      next()
-    } else {
-      next(to.name === RouteName.ProjectResultDetail ? { name: RouteName.QuestionnaireStart } : { name: RouteName.Homepage })
     }
   }
 
