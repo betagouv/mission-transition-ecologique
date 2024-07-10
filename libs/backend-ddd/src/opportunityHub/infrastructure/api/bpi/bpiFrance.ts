@@ -6,8 +6,8 @@ import AxiosHeaders from '../../../../common/infrastructure/api/axiosHeaders'
 import { handleException } from '../../../../common/domain/error/errors'
 import opportunityPayloadDTO from './opportunityPayloadDTO'
 import Config from '../../../../config'
-import { Operators, ProgramType } from '@tee/data'
-import { Opportunity } from '@tee/common'
+import { Operators, ProgramType, Project } from '@tee/data'
+import { Opportunity, OpportunityType } from '@tee/common'
 
 export class BpiFrance extends OpportunityHubAbstract {
   protected _axios: AxiosInstance
@@ -42,14 +42,17 @@ export class BpiFrance extends OpportunityHubAbstract {
     }
   }
 
-  public transmitProgramOpportunity = async (opportunity: Opportunity, program: ProgramType): Promise<Maybe<Error>> => {
+  public transmitOpportunity = async (opportunity: Opportunity, programOrProject: ProgramType | Project): Promise<Maybe<Error>> => {
+    if (opportunity.type === OpportunityType.Project) {
+      return Maybe.of(Error("BPI shouldn't transfer be transfered Project type opportunities."))
+    }
     try {
       const tokenResult = await this._getToken()
       if (tokenResult.isErr) {
         return Maybe.of(tokenResult.error)
       }
 
-      const contactPayloadDTO = new opportunityPayloadDTO(opportunity, program).getPayload()
+      const contactPayloadDTO = new opportunityPayloadDTO(opportunity, programOrProject as ProgramType).getPayload()
       const response = await this.axios.post(this._contactUrl, contactPayloadDTO, {
         headers: AxiosHeaders.makeBearerHeader(tokenResult.value.access_token)
       })

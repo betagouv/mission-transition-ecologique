@@ -10,7 +10,7 @@ import { ProgramService } from '../../../../program/application/programService'
 import OpportunityService from '../../../../opportunity/application/opportunityService'
 import { Objective } from '../../../../common/types'
 import { Operators, ProgramType } from '@tee/data'
-import { Opportunity } from '@tee/common'
+import { Opportunity, OpportunityType } from '@tee/common'
 import { Project } from '@tee/data'
 
 export class PlaceDesEntreprises extends OpportunityHubAbstract {
@@ -46,16 +46,19 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     return !reachTransmissionLimit
   }
 
-  public transmitProgramOpportunity = async (opportunity: Opportunity, program: ProgramType): Promise<Maybe<Error>> => {
-    const maybePayload = this._createProgramRequestBody(opportunity, program)
-    if (maybePayload.isErr) {
-      return Maybe.of(maybePayload.error)
-    }
-    return await this._sendOpportunity(maybePayload.value)
-  }
+  public transmitOpportunity = async (opportunity: Opportunity, programOrProject: ProgramType | Project): Promise<Maybe<Error>> => {
+    let maybePayload
+    switch (opportunity.type) {
+      case OpportunityType.Program:
+        maybePayload = this._createProgramRequestBody(opportunity, programOrProject as ProgramType)
+        break
+      case OpportunityType.Project:
+        maybePayload = this._createProjectRequestBody(opportunity, programOrProject as Project)
+        break
 
-  public transmitProjectOpportunity = async (opportunity: Opportunity, project: Project): Promise<Maybe<Error>> => {
-    const maybePayload = this._createProjectRequestBody(opportunity, project)
+      default:
+        return Maybe.of(Error("Canno't tranmist an opportunity of unknown type"))
+    }
     if (maybePayload.isErr) {
       return Maybe.of(maybePayload.error)
     }

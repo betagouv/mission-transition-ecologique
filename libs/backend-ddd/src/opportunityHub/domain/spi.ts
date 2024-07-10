@@ -5,7 +5,7 @@ import { Opportunity } from '@tee/common'
 
 export interface OpportunityHubRepository {
   get operatorNames(): Operators[] | Error
-  transmitProgramOpportunity: (opportunity: Opportunity, program: ProgramType) => Promise<Maybe<Error>>
+  transmitOpportunity: (opportunity: Opportunity, program: ProgramType) => Promise<Maybe<Error>>
   support: (program: ProgramType) => boolean
   shouldTransmit: (opportunity: OpportunityWithContactId, program: ProgramType) => Promise<boolean>
 }

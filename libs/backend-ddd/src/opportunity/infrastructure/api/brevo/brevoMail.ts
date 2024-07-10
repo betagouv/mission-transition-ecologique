@@ -38,6 +38,8 @@ export default class BrevoMail {
         email.templateId = this._projectTemplateReceipt
         email.params = this._paramsProject(opportunity, programOrProject as Project)
         break
+      default:
+        throw new Error(`Unsupported Opportunity Type in brevo mail receipt`)
     }
     email.sender = { id: Config.BREVO_SENDER_ID }
     email.to = [{ email: opportunity.email, name: this._getFullName(opportunity) }]

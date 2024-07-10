@@ -13,7 +13,7 @@ export default class OpportunityHubFeatures {
   public async maybeTransmitOpportunity(opportunity: OpportunityWithContactId, program: ProgramType): Promise<Maybe<Error> | false> {
     for (const opportunityHubRepository of this._opportunityHubRepositories) {
       if (await opportunityHubRepository.shouldTransmit(opportunity, program)) {
-        return await opportunityHubRepository.transmitProgramOpportunity(opportunity, program)
+        return await opportunityHubRepository.transmitOpportunity(opportunity, program)
       }
     }
 
@@ -24,7 +24,7 @@ export default class OpportunityHubFeatures {
     for (const opportunityHubRepository of this._opportunityHubRepositories) {
       if (opportunityHubRepository instanceof PlaceDesEntreprises) {
         if (!(await opportunityHubRepository.reachedDailyContactTransmissionLimit(opportunity.contactId))) {
-          return await opportunityHubRepository.transmitProjectOpportunity(opportunity, project)
+          return await opportunityHubRepository.transmitOpportunity(opportunity, project)
         }
       }
     }

@@ -410,7 +410,7 @@ const validateFormField = (field: InputFieldUnionType): void => {
 const saveOpportunityForm = async () => {
   try {
     isLoading.value = true
-    const opportunity = new OpportunityApi(opportunityForm.value, props.program.id, OpportunityType.Project)
+    const opportunity = new OpportunityApi(opportunityForm.value, props.program.id, OpportunityType.Program)
     requestResponse.value = await opportunity.fetch()
 
     // analytics / send event
