@@ -46,11 +46,13 @@
 import { useNavigationStore } from '@/stores/navigation'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { useProgramStore } from '@/stores/program'
-import { ProgramData, TrackId } from '@/types'
+import { ProgramData, PublicodeObjective, QuestionnaireDataEnum, TrackId } from '@/types'
 import { computed, onBeforeMount } from 'vue'
 import Matomo from '@/utils/matomo'
 import { useProjectStore } from '@/stores/project'
 import { Project } from '@tee/data'
+import UsedTrack from '@/utils/track/usedTrack'
+import Theme from '@/utils/theme'
 
 const navigationStore = useNavigationStore()
 const programStore = useProgramStore()
@@ -69,14 +71,22 @@ const filteredPrograms = computed(() => {
 })
 
 const filteredProjects = computed(() => {
-  return projects.value
-    ? projectStore.getProjectsByObjectiveAndEligibility(
-        projects.value,
-        programStore.programFilters.objectiveTypeSelected,
-        filteredPrograms.value ?? undefined
-      )
-    : undefined
+  if (!projects.value) {
+    return undefined
+  }
+
+  return projectStore.getProjectsByPublicodeObjectiveAndEligibility(
+    projects.value,
+    getObjectiveForProjectFiltering(),
+    filteredPrograms.value ?? undefined
+  )
 })
+
+const getObjectiveForProjectFiltering = () => {
+  return programStore.programFilters.objectiveTypeSelected !== ''
+    ? (programStore.programFilters.objectiveTypeSelected as PublicodeObjective)
+    : Theme.getPublicodeObjectiveByObjective(UsedTrack.getPriorityObjective())
+}
 
 const initialSelectedIndex = 0
 const tabListName = 'Liste d’onglet'

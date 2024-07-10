@@ -16,9 +16,9 @@ import {
   type ProgramData,
   TrackId,
   QuestionnaireDataEnum,
-  QuestionnaireRoute
+  QuestionnaireRoute,
+  QuestionnaireData
 } from '@/types'
-import type { QuestionnaireData } from '@/types'
 
 export const useProgramStore = defineStore('program', () => {
   const currentProgram = ref<ProgramData>()
@@ -58,12 +58,6 @@ export const useProgramStore = defineStore('program', () => {
         ProgramFilter.filterProgramsByOperator(program, programFilters.value.operatorAidSelected as ProgramOperatorType[]) &&
         ProgramFilter.filterProgramsByRegion(program, programFilters.value.regionAidSelected as Region[])
       )
-    })
-  }
-
-  function getProgramsByObjective(programs: ProgramData[], objective: PublicodeObjective) {
-    return programs.filter((program: ProgramData) => {
-      return ProgramFilter.filterProgramsByObjective(program, objective)
     })
   }
 
@@ -125,7 +119,6 @@ export const useProgramStore = defineStore('program', () => {
     programFilters,
     programsByUsedTracks,
     getProgramsByFilters,
-    getProgramsByObjective,
     getProgramById,
     hasObjectiveTypeFilter,
     hasObjectiveTypeSelected,

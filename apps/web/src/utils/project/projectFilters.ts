@@ -10,7 +10,7 @@ export default class ProjectFilters {
       return project.themes.includes(themeSelected.id)
     }
 
-    return true
+    return false
   }
   static filterProjectsByEligibility(project: Project, filteredPrograms: ProgramData[]) {
     return project.programs.some((programId) => filteredPrograms.some(({ id }) => id === programId))
