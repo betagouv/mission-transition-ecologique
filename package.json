@@ -12,19 +12,19 @@
   "private": true,
   "scripts": {
     "dev": "nx run-many -t serve --verbose",
+    "dev:start": "PORT=4242 npm run start",
+    "dev:build:start": "npm run build && npm run start:dev",
     "build": "nx run-many -t build",
     "start": "nx run-many -t start --port $PORT",
-    "start:dev": "PORT=4242 npm run start",
-    "build:start:dev": "npm run build && npm run start:dev",
     "generate:program": "nx run @tee/data:generate-program",
     "generate:seo": "nx run @tee/web:generate-seo",
     "test": "nx run-many -t test -p @tee/data @tee/backend-ddd",
     "lint": "nx run-many -t lint --verbose",
     "lint:fix": "nx run-many -t lint --fix --verbose",
+    "lint:sass": "nx run @tee/web:sass-lint",
+    "lint:sass:fix": "nx run @tee/web:sass-lint --fix",
     "vue:type:check": "nx run @tee/web:vue-type-check",
-    "sass:watch": "nx run @tee/web:sass-watch",
-    "sass:lint": "nx run @tee/web:sass-lint",
-    "sass:lint:fix": "nx run @tee/web:sass-lint --fix"
+    "sass:watch": "nx run @tee/web:sass-watch"
   },
   "engines": {
     "node": "20.x",
