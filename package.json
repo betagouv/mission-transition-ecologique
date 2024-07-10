@@ -22,7 +22,9 @@
     "lint": "nx run-many -t lint --verbose",
     "lint:fix": "nx run-many -t lint --fix --verbose",
     "vue:type:check": "nx run @tee/web:vue-type-check",
-    "sass:watch": "nx run @tee/web:sass-watch"
+    "sass:watch": "nx run @tee/web:sass-watch",
+    "sass:lint": "nx run @tee/web:sass-lint",
+    "sass:lint:fix": "nx run @tee/web:sass-lint --fix"
   },
   "engines": {
     "node": "20.x",
@@ -106,6 +108,8 @@
     "@vue/test-utils": "^2.4.1",
     "json-schema-to-typescript": "^14.0.5",
     "react-refresh": "^0.10.0",
+    "stylelint": "^16.6.1",
+    "stylelint-config-standard-scss": "^13.1.0",
     "vue-tsc": "^2.0.21",
     "webpack-cli": "^5.1.4"
   }

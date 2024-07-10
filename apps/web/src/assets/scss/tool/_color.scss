@@ -2,5 +2,6 @@
 
 @function scaleAlphaToHex($color, $alpha) {
   $rgba: color.scale($color, $alpha: $alpha);
-  @return mix(rgb(red($rgba), green($rgba), blue($rgba)), #fff, alpha($rgba) * 100%);
+
+  @return color.mix(rgb(color.red($rgba), color.green($rgba), color.blue($rgba)), #fff, alpha($rgba) * 100%);
 }

@@ -47,6 +47,15 @@
           "sass --pkg-importer=node --load-path=../../node_modules --watch src/assets/main.scss:src/assets/main.css"
         ]
       }
+    },
+    "sass-lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/web",
+        "commands": [
+          "stylelint \"**/*.scss\""
+        ]
+      }
     }
   }
 }

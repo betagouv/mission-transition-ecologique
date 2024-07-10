@@ -1,24 +1,28 @@
+@use 'sass:color';
+@use 'sass:meta';
+@use 'sass:map';
 @use 'setting';
 @use 'tool';
-@use 'sass:color';
 
 @each $color, $properties in setting.$colors {
   .fr-bg--#{$color} {
-    @if type-of($properties) == map {
-      background-color: map-get($properties, "background-color");
+    @if meta.type-of($properties) == map {
+      background-color: map.get($properties, "background-color");
     } @else {
       background-color: $properties;
     }
+
     &--light {
-      @if type-of($properties) == map {
-        background-color: tool.scaleAlphaToHex(map-get($properties, "background-color"), -50%);
+      @if meta.type-of($properties) == map {
+        background-color: tool.scaleAlphaToHex(map.get($properties, "background-color"), -50%);
       } @else {
         background-color: tool.scaleAlphaToHex($properties, -50%);
       }
     }
+
     &--lightness {
-      @if type-of($properties) == map {
-        background-color: tool.scaleAlphaToHex(map-get($properties, "background-color"), -75%);
+      @if meta.type-of($properties) == map {
+        background-color: tool.scaleAlphaToHex(map.get($properties, "background-color"), -75%);
       } @else {
         background-color: tool.scaleAlphaToHex($properties, -75%);
       }

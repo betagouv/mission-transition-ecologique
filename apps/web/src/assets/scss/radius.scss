@@ -10,7 +10,8 @@
     @include media-query.respond-from(md) {
         .fr-radius-#{$corner} {
           @include tool.border-radius($radius-value, $corner-name, true);
-          @if $radius != null {
+
+          @if $radius {
             &--#{$radius} {
               @include tool.border-radius($radius-value, $corner-name, true);
             }
