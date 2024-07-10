@@ -40,8 +40,8 @@ defineProps<Props>()
 </script>
 <style scoped>
 .themeDivider {
-  height: 6px;
-  width: 30%;
+  height: 4px;
+  width: 15%;
 }
 .themeProjectsTag {
   flex-direction: row-reverse;

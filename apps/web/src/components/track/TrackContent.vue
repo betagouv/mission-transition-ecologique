@@ -14,7 +14,7 @@
     </div>
 
     <div class="fr-col">
-      <div :class="`fr-px-4v fr-px-md-0v fr-grid-row fr-grid-row--gutters ${track?.bgColor ? 'fr-p-5v fr-p-sm-8v fr-p-md-20v' : ''}`">
+      <div :class="`fr-pl-2v fr-pl-md-0 ${track?.bgColor ? 'fr-p-5v fr-p-sm-8v fr-p-md-20v' : ''}`">
         <TrackLabel :track="track" />
         <TrackInfo :track="track" />
         <TrackHint :track="track" />
