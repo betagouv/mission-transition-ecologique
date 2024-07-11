@@ -3,7 +3,7 @@
   <!--  Project counter -->
   <div class="fr-grid-row fr-grid-row--center">
     <div class="fr-container fr-m-0 fr-p-0">
-      <div class="fr-pl-2w fr-pl-md-2v fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-text--blue-france fr-font-style--italic">
+      <div class="fr-pl-2w fr-pl-md-2v fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-text--blue-france tee-font-style--italic">
         <ProjectCounter
           :sorted-projects="sortedProjects"
           :filtered-programs="filteredPrograms"
