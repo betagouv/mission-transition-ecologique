@@ -43,7 +43,7 @@ export default class Config extends ConfigCommon {
   }
 
   static get publicPath() {
-    return this.isDevelopment ? this.baseUrl : `${this.deployUrl}/`
+    return `${this.deployUrl}/`
   }
 
   static get matomoUrl() {
