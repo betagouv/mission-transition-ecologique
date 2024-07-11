@@ -1,34 +1,11 @@
 <template>
   <!-- PROGRAMS AS LIST OF CARDS -->
-  <div class="fr-container--fluid fr-container--fluid--no-overflow fr-mt-2v">
-    <div class="fr-grid-row fr-grid-row--center fr-mt-2w">
-      <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
-        <div
-          v-if="(!hasObjectiveCard || hasObjectiveSelected) && !hasSpinner"
-          class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-col-justify--left fr-mt-3w"
-        >
-          <ProgramFilterByTheme v-if="(hasProjects && countProjects >= 1) || hasObjectiveSelected" />
-        </div>
-      </div>
-    </div>
-    <div
-      v-if="hasObjectiveCard && !hasSpinner"
-      class="fr-grid-row fr-grid-row--center"
-    >
-      <div class="fr-container fr-m-0 fr-p-0 fr-px-md-2v fr-mt-3v">
-        <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2">
-          <TeeObjectiveCard
-            :objective="objective as PublicodeObjective"
-            radius-corner="tr"
-            radius-size="2-5v"
-          />
-        </div>
-      </div>
-    </div>
+  <div class="fr-container--fluid fr-container--fluid--no-overflow">
     <div class="fr-grid-row fr-grid-row--center">
       <div class="fr-container fr-m-0 fr-p-0 fr-px-md-2v fr-mt-3v">
         <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-col-justify--center">
           <ResultListNoResults
+            v-if="showNoResultsComponent"
             :has-error="hasError"
             :has-spinner="hasSpinner"
             :count-items="countProjects"
@@ -37,17 +14,16 @@
       </div>
     </div>
     <div
-      v-if="hasObjectiveCard && !hasSpinner && UsedTrack.isSpecificGoal()"
+      v-if="showProjectListComponent"
       class="fr-grid-row fr-grid-row--center"
     >
-      <div class="fr-container fr-m-0 fr-p-0 fr-px-md-2v fr-mt-4w">
+      <div class="fr-container fr-m-0 fr-p-0 fr-px-md-2v fr-mb-2v">
         <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-pl-2w fr-pl-md-0">
           <h2 class="fr-text--bold fr-mb-0">Quel est votre projet ?</h2>
         </div>
       </div>
     </div>
     <ProjectList
-      v-if="hasProjects && !hasSpinner"
       :sorted-projects="sortedProjects"
       :filtered-programs="props.filteredPrograms"
     />
@@ -57,9 +33,7 @@
 <script setup lang="ts">
 import { type ProgramData, PublicodeObjective, Project } from '@/types'
 import { computed } from 'vue'
-import ProgramFilterByTheme from '@/components/program/list/filters/ProgramFilterByTheme.vue'
 import UsedTrack from '@/utils/track/usedTrack'
-import { Theme } from '@/utils/theme'
 import { useProgramStore } from '@/stores/program'
 
 interface ProjectListProps {
@@ -89,25 +63,17 @@ const hasObjectiveCard = computed(() => {
   return programStore.hasObjectiveTypeSelected() || (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityObjective())
 })
 
-const objective = computed(() => {
-  if (programStore.hasObjectiveTypeSelected()) {
-    return programStore.programFilters.objectiveTypeSelected
-  }
-
-  if (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityObjective()) {
-    return Theme.getPublicodeObjectiveByObjective(UsedTrack.getPriorityObjective())
-  }
-
-  return ''
-})
-
-const hasObjectiveSelected = computed(() => {
-  return programStore.hasObjectiveTypeSelected()
-})
-
 const sortedProjects = computed(() => {
   return props.filteredPrograms
     ? (props.filteredProjects as unknown as Project[]).sort((a, b) => (a.priority && b.priority ? a.priority - b.priority : 0))
     : undefined
+})
+
+const showNoResultsComponent = computed(() => {
+  return hasSpinner.value || hasError.value || !countProjects.value
+})
+
+const showProjectListComponent = computed(() => {
+  return hasObjectiveCard.value && !hasSpinner.value && UsedTrack.isSpecificGoal() && hasProjects.value
 })
 </script>

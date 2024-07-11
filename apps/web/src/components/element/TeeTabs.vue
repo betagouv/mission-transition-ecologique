@@ -48,6 +48,7 @@
       </p>
     </DsfrTabContent>
 
+    <slot name="tab-content-header" />
     <!-- @slot Slot par défaut pour le contenu des onglets -->
     <slot />
   </div>
@@ -97,7 +98,10 @@ const renderTabs = () => {
   }
   const selectedTabHeight = (selectedTab as HTMLElement).offsetHeight
 
-  $el.value?.style.setProperty('--tabs-height', `${tablistHeight + selectedTabHeight}px`)
+  const tabContentHeader = $el.value?.querySelector('#tab-content-header')
+  const tabContentHeaderHeight = tabContentHeader ? (tabContentHeader as HTMLElement).offsetHeight : 0
+
+  $el.value?.style.setProperty('--tabs-height', `${tablistHeight + selectedTabHeight + tabContentHeaderHeight}px`)
 }
 
 const getIdFromIndex = (idx: number) => {

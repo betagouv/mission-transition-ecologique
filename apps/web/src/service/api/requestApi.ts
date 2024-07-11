@@ -21,7 +21,7 @@ export default abstract class RequestApi {
   }
 
   public async getJson<T>(): Promise<Result<T, Error>> {
-    const url: string = this.url + '?' + this.query
+    const url: string = this.query ? `${this.url}?${this.query}` : this.url
     try {
       const response = await fetch(url)
       return Result.ok((await response.json()) as T)

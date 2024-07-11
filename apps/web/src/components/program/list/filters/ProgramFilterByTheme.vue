@@ -12,7 +12,7 @@ import { useProgramStore } from '@/stores/program'
 import { ThemeType, type programFiltersType, PublicodeObjective } from '@/types'
 import { Theme } from '@/utils/theme'
 import { TeeDsfrTagProps } from '@/components/element/tag/TeeDsfrTag.vue'
-import { computed } from 'vue'
+import { computed, onBeforeMount } from 'vue'
 
 interface Props {
   objective?: PublicodeObjective | ''
@@ -58,7 +58,7 @@ function isActive(tag: ThemeType) {
   return Theme.getTags().length === 1 || programFilters.objectiveTypeSelected === (tag.value as string)
 }
 
-onMounted(() => {
+onBeforeMount(() => {
   if (props.objective) {
     programFilters.objectiveTypeSelected = props.objective
   }

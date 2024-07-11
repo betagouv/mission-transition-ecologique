@@ -31,9 +31,8 @@ export const useProjectStore = defineStore('project', () => {
     return projects.filter((project: Project) => {
       const hasTheme = objectiveType
         ? ProjectFilters.filterProjectsByTheme(project, objectiveType)
-        : project.themes.some((themeId) => Theme.getTags().some((theme) => theme.id === themeId))
+        : project.themes.some((themeId) => Theme.getTags().some(({ id }) => id === themeId))
 
-      console.log('Has theme : ', hasTheme)
       return hasTheme && (filteredPrograms ? ProjectFilters.filterProjectsByEligibility(project, filteredPrograms) : true)
     })
   }

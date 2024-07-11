@@ -1,9 +1,9 @@
 <template>
   <!-- PROGRAMS AS LIST OF CARDS -->
-  <div class="fr-container--fluid fr-mt-4v">
+  <div class="fr-container--fluid fr-mt-3v">
     <div class="fr-grid-row fr-grid-row--center">
-      <div class="fr-pl-2v fr-pl-md-0 fr-col-3 fr-col-md-12 fr-col-content--middle fr-text--blue-france fr-font-style--italic">
-        <span v-if="havePrograms && countPrograms > 1">
+      <div class="fr-pl-2v fr-pl-md-0 fr-col-3 fr-col-md-12 fr-col-content--middle fr-text--blue-france tee-font-style--italic">
+        <span v-if="showProgramCounter">
           {{ countPrograms }}
           {{ countPrograms > 1 ? Translation.t('results.results') : Translation.t('results.result') }}
         </span>
@@ -53,6 +53,10 @@ const havePrograms = computed(() => {
 
 const countPrograms = computed(() => {
   return props.filteredPrograms?.length || 0
+})
+
+const showProgramCounter = computed(() => {
+  return havePrograms.value && countPrograms.value > 1
 })
 
 const getRouteToProgramDetail = (programId: string): RouteLocationRaw => {
