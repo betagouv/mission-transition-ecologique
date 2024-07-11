@@ -44,16 +44,35 @@ export const useProjectStore = defineStore('project', () => {
     })
   }
 
-  function getProjectsByObjective(projects: Project[], objectiveType: string): Project[] {
-    return projects.filter((project: Project) => {
-      return ProjectFilters.filterProgramsByTheme(project, objectiveType as PublicodeObjective)
-    })
-  }
-
   function getProjectsByEligibility(projects: Project[], filteredPrograms: ProgramData[]): Project[] {
     return projects.filter((project: Project) => {
       return filteredPrograms ? ProjectFilters.filterProjectsByEligibility(project, filteredPrograms) : true
     })
+  }
+
+  async function getProjectBySlug(slug: string): Promise<Result<Project, Error>> {
+    currentProject.value = undefined
+    if (hasProjects.value) {
+      const result = await projects.value
+      if (result.isOk) {
+        const program = result.value.find((program) => program.slug === slug)
+        if (program) {
+          currentProject.value = program
+          return Result.ok(currentProject.value)
+        }
+
+        return Result.err(new Error('Project not found'))
+      }
+
+      return Result.err(result.error)
+    }
+
+    const result = await new ProjectApi().getOne(slug)
+    if (result.isOk) {
+      currentProject.value = result.value
+    }
+
+    return result
   }
 
   async function getLinkedProjectsFromCurrent() {

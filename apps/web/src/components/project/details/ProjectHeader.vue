@@ -37,7 +37,7 @@ const navigationStore = useNavigationStore()
 
 const routeToProjects = {
   name: RouteName.QuestionnaireResult,
-  hash: '#' + props.project.id,
+  hash: '#' + props.project.slug,
   query: navigationStore.query
 }
 </script>

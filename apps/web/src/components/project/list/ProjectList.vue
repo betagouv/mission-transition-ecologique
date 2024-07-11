@@ -36,19 +36,9 @@
                 <div class="fr-pt-2w fr-pl-2w fr-text--bold fr-text--blue-france">
                   Voici les actions par lesquelles commencer pour votre TPE du secteur Hôtels et hébergement similaire :
                 </div>
-                <!--            TODO uncomment before merging in release branch -->
-
-                <!--                <router-link-->
-                <!--                  v-for="(project, index) in priorityProjects"-->
-                <!--                  :id="project.id"-->
-                <!--                  :key="project.id"-->
-                <!--                  :to="getRouteToProjectDetail(project.id)"-->
-                <!--                  class="fr-col-11 fr-col-sm-12 fr-col-md-6 fr-col-lg-4 no-outline"-->
-                <!--                >-->
-
-                <!--            TODO remove following div before merging in release branch -->
-                <div
+                <router-link
                   v-for="(project, index) in priorityProjects"
+                  :id="project.slug"
                   :key="project.id"
                   :to="getRouteToProjectDetail(project)"
                   class="fr-col-11 fr-col-sm-12 fr-col-md-6 fr-col-lg-4 no-outline"
@@ -59,8 +49,7 @@
                     :priority-order="index + 1"
                     class="fr-radius-a--1v fr-card--shadow fr-card-priority fr-card-priority--highlighted fr-px-0"
                   />
-                </div>
-                <!--                </router-link>-->
+                </router-link>
               </div>
             </div>
           </div>
@@ -76,26 +65,18 @@
       <div class="fr-container fr-m-0 fr-p-0">
         <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-px-0 fr-pr-md-2v">
           <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-grid-row-md--left">
-            <!--            TODO uncomment before merging in release branch -->
-            <!--            <router-link-->
-            <!--              v-for="project in nonPriorityProjects"-->
-            <!--              :id="project.id"-->
-            <!--              :key="project.id"-->
-            <!--              :to="getRouteToProjectDetail(project.id)"-->
-            <!--              class="fr-col-11 fr-col-sm-12 fr-col-md-6 fr-col-lg-4 no-outline"-->
-            <!--            >-->
-            <!--            TODO remove following div before merging in release branch -->
-            <div
+            <router-link
               v-for="project in nonPriorityProjects"
+              :id="project.slug"
               :key="project.id"
+              :to="getRouteToProjectDetail(project)"
               class="fr-col-11 fr-col-sm-12 fr-col-md-6 fr-col-lg-4 no-outline"
             >
               <ProjectCard
                 :project="project"
                 class="fr-radius-a--1v fr-card--shadow"
               />
-            </div>
-            <!--            </router-link>-->
+            </router-link>
           </div>
         </div>
       </div>
@@ -112,18 +93,11 @@
           :class="{ 'fr-hidden-lg': !hasObjectiveCard && !hasObjectiveSelected }"
         >
           <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-grid-row-md--left fr-px-2w fr-px-md-0">
-            <!--            TODO uncomment before merging in release branch -->
-            <!--            <router-link-->
-            <!--              v-for="project in sortedProjects"-->
-            <!--              :id="project.id"-->
-            <!--              :key="project.id"-->
-            <!--              :to="getRouteToProjectDetail(project.id)"-->
-            <!--              class="fr-col-12 fr-col-md-6 fr-col-lg-4 no-outline"-->
-            <!--            >-->
-            <!--            TODO remove following div before merging in release branch -->
-            <div
+            <router-link
               v-for="project in sortedProjects"
+              :id="project.slug"
               :key="project.id"
+              :to="getRouteToProjectDetail(project)"
               class="fr-col-12 fr-col-md-6 fr-col-lg-4 no-outline"
             >
               <ProjectCard
@@ -134,8 +108,7 @@
                 class="fr-radius-a--1v fr-card--shadow"
                 :class="{ 'fr-card-priority': isPriorityProject(project) }"
               />
-            </div>
-            <!--            </router-link>-->
+            </router-link>
           </div>
         </div>
       </div>
@@ -202,12 +175,12 @@ const hasObjectiveCard = computed(() => {
 const hasObjectiveSelected = computed(() => {
   return programStore.hasObjectiveTypeSelected()
 })
-// TODO : uncomment before merging in release branch
-// const getRouteToProjectDetail = (project: Project): RouteLocationRaw => {
-//   return {
-//     name: RouteName.ProjectResultDetail,
-//     params: { projectSlug: project.slug },
-//     query: navigationStore.query
-//   }
-// }
+
+const getRouteToProjectDetail = (project: Project): RouteLocationRaw => {
+  return {
+    name: RouteName.ProjectResultDetail,
+    params: { projectSlug: project.slug },
+    query: navigationStore.query
+  }
+}
 </script>
