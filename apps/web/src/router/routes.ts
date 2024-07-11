@@ -55,7 +55,8 @@ export const routes = [
         path: 'resultat/projets/:projectSlug',
         component: ProjectDetail as Component,
         name: RouteName.ProjectResultDetail,
-        beforeEnter: [Hook.hasProject, Hook.setUsedTracks, Hook.hasUsedTracks]
+        beforeEnter: [Hook.hasProject, Hook.setUsedTracks, Hook.hasUsedTracks],
+        props: true
       },
       {
         path: 'resultat/:programId',
