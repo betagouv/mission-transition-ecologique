@@ -121,8 +121,7 @@ export class Baserow {
     let imageSharp = sharp(imageBuffer)
     const metadata = await imageSharp.metadata()
     if (metadata.width && metadata.width > 1280) {
-      const width = Math.min(Math.round(metadata.width / 2), 1280)
-      imageSharp = imageSharp.resize(width)
+      imageSharp = imageSharp.resize(1280)
     }
     return await imageSharp.webp({ quality: 50 }).toBuffer()
   }
