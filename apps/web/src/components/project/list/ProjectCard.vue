@@ -2,7 +2,7 @@
   <DsfrCard
     :title="project.title"
     :description="project.shortDescription"
-    :img-src="project.image"
+    :img-src="`${publicPath}${project.image}`"
     :alt-img="`image / ${project.title}`"
     :no-arrow="true"
   >
@@ -30,6 +30,9 @@
 <script setup lang="ts">
 import { DsfrCard } from '@gouvminint/vue-dsfr'
 import { Project } from '@/types'
+import Config from '@/config'
+
+const publicPath = Config.publicPath
 
 interface Props {
   project: Project
@@ -39,7 +42,8 @@ interface Props {
 }
 
 withDefaults(defineProps<Props>(), {
-  isPriorityProject: false
+  isPriorityProject: false,
+  priorityOrder: undefined
 })
 
 const priorityTag: string = 'A FAIRE EN PRIORITÉ'

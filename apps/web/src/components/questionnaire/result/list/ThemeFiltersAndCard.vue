@@ -46,10 +46,6 @@ const hasObjectiveCard = computed(() => {
   return programStore.hasObjectiveTypeSelected() || (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityObjective())
 })
 
-const hasObjectiveSelected = computed(() => {
-  return programStore.hasObjectiveTypeSelected()
-})
-
 const objective = computed(() => {
   if (programStore.hasObjectiveTypeSelected()) {
     return programStore.programFilters.objectiveTypeSelected

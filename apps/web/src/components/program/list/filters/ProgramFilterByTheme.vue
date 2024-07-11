@@ -1,9 +1,14 @@
 <template>
   <div class="fr-grid-row fr-grid-row--gutters">
-    <TeeDsfrTags
-      v-model="programFilters.objectiveTypeSelected"
-      :tags="objectiveTypeTags"
-    />
+    <div
+      v-if="programStore.hasObjectiveTypeFilter()"
+      class="fr-col-12"
+    >
+      <TeeDsfrTags
+        v-model="programFilters.objectiveTypeSelected"
+        :tags="objectiveTypeTags"
+      />
+    </div>
   </div>
 </template>
 

@@ -31,7 +31,7 @@
 </template>
 
 <script setup lang="ts">
-import { type ProgramData, PublicodeObjective } from '@/types'
+import { type ProgramData } from '@/types'
 import { computed } from 'vue'
 import ProgramFiltersAccordion from '@/components/program/list/filters/ProgramFiltersAccordion.vue'
 

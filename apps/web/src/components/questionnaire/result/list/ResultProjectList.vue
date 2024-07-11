@@ -31,7 +31,7 @@
 </template>
 
 <script setup lang="ts">
-import { type ProgramData, PublicodeObjective, Project } from '@/types'
+import { type ProgramData, Project } from '@/types'
 import { computed } from 'vue'
 import UsedTrack from '@/utils/track/usedTrack'
 import { useProgramStore } from '@/stores/program'

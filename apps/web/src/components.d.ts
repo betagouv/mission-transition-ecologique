@@ -30,7 +30,6 @@ declare module 'vue' {
     ProgramFilterByOperator: typeof import('./components/program/list/filters/ProgramFilterByOperator.vue')['default']
     ProgramFilterByRegion: typeof import('./components/program/list/filters/ProgramFilterByRegion.vue')['default']
     ProgramFilterByTheme: typeof import('./components/program/list/filters/ProgramFilterByTheme.vue')['default']
-    ProgramFilters: typeof import('./components/program/list/filters/ProgramFilters.vue')['default']
     ProgramFiltersAccordion: typeof import('./components/program/list/filters/ProgramFiltersAccordion.vue')['default']
     ProgramForm: typeof import('./components/program/detail/ProgramForm.vue')['default']
     ProgramList: typeof import('./components/program/list/ProgramList.vue')['default']

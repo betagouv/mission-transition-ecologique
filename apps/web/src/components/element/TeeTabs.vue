@@ -66,6 +66,7 @@ const props = withDefaults(defineProps<DsfrTabsProps>(), {
   initialSelectedIndex: 0
 })
 
+//eslint-disable-next-line
 const emit = defineEmits<{ (e: 'selectTab', payload: number): void }>()
 
 const selectedIndex = ref(props.initialSelectedIndex || 0)

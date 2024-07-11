@@ -32,20 +32,20 @@
             <div class="fr-pt-2w fr-pl-2w fr-text--bold fr-text--blue-france">
               Voici les actions par lesquelles commencer pour votre TPE du secteur Hôtels et hébergement similaire :
             </div>
-              <router-link
-                v-for="(project, index) in priorityProjects"
-                :id="project.slug"
-                :key="project.id"
-                :to="getRouteToProjectDetail(project)"
-                class="fr-col-12 fr-col-md-6 fr-col-lg-4 no-outline"
-              >
+            <router-link
+              v-for="(project, index) in priorityProjects"
+              :id="project.slug"
+              :key="project.id"
+              :to="getRouteToProjectDetail(project)"
+              class="fr-col-12 fr-col-md-6 fr-col-lg-4 no-outline"
+            >
               <ProjectCard
                 :project="project"
                 :is-priority-project="true"
                 :priority-order="index + 1"
                 class="fr-radius-a--1v fr-card--shadow fr-card-priority fr-card-priority--highlighted fr-px-0"
               />
-              </router-link>
+            </router-link>
           </div>
         </div>
       </div>
@@ -60,23 +60,18 @@
     <div class="fr-container fr-m-0 fr-p-0 fr-mt-2w fr-hidden fr-unhidden-lg">
       <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2">
         <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-px-2w fr-px-md-2v">
-          <div
+          <router-link
             v-for="project in nonPriorityProjects"
+            :id="project.slug"
             :key="project.id"
+            :to="getRouteToProjectDetail(project)"
             class="fr-col-12 fr-col-md-6 fr-col-lg-4 no-outline"
           >
-            <router-link
-              v-for="project in nonPriorityProjects"
-              :id="project.slug"
-              :key="project.id"
-              :to="getRouteToProjectDetail(project)"
-              class="fr-col-12 fr-col-md-6 fr-col-lg-4 no-outline"
-            >
             <ProjectCard
               :project="project"
               class="fr-radius-a--1v fr-card--shadow"
             />
-            </router-link>
+          </router-link>
         </div>
       </div>
     </div>
@@ -90,13 +85,13 @@
     <div class="fr-container fr-m-0 fr-p-0 fr-mt-2v">
       <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2">
         <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-grid-row-md--left fr-px-2w fr-px-md-2v">
-            <router-link
-              v-for="project in sortedProjects"
-              :id="project.slug"
-              :key="project.id"
-              :to="getRouteToProjectDetail(project)"
-              class="fr-col-12 fr-col-md-6 fr-col-lg-4 no-outline"
-            >
+          <router-link
+            v-for="project in sortedProjects"
+            :id="project.slug"
+            :key="project.id"
+            :to="getRouteToProjectDetail(project)"
+            class="fr-col-12 fr-col-md-6 fr-col-lg-4 no-outline"
+          >
             <ProjectCard
               :project="project"
               :is-priority-project="isPriorityProject(project)"
@@ -105,7 +100,7 @@
               class="fr-radius-a--1v fr-card--shadow"
               :class="{ 'fr-card-priority': isPriorityProject(project) }"
             />
-            </router-link>
+          </router-link>
         </div>
       </div>
     </div>
@@ -132,12 +127,6 @@ const navigationStore = useNavigationStore()
 const programStore = useProgramStore()
 
 const publicPath = Config.publicPath
-
-const hasError = ref<boolean>(false)
-
-const hasSpinner = computed(() => {
-  return props.sortedProjects === undefined && !hasError.value
-})
 
 const hasPriorityProjects = computed(() => {
   return priorityProjects.value ? priorityProjects.value?.length > 0 : false

@@ -57,7 +57,6 @@ import Matomo from '@/utils/matomo'
 import { useProjectStore } from '@/stores/project'
 import UsedTrack from '@/utils/track/usedTrack'
 import { Theme } from '@/utils/theme'
-import ProgramFilterByTheme from '@/components/program/list/filters/ProgramFilterByTheme.vue'
 
 const navigationStore = useNavigationStore()
 const programStore = useProgramStore()
@@ -103,34 +102,6 @@ const selectTab = (idx: number) => {
   asc.value = selectedTabIndex.value < idx
   selectedTabIndex.value = idx
 }
-
-const hasObjectiveCard = computed(() => {
-  return programStore.hasObjectiveTypeSelected() || (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityObjective())
-})
-
-const hasObjectiveSelected = computed(() => {
-  return programStore.hasObjectiveTypeSelected()
-})
-
-const objective = computed(() => {
-  if (programStore.hasObjectiveTypeSelected()) {
-    return programStore.programFilters.objectiveTypeSelected
-  }
-
-  if (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityObjective()) {
-    return Theme.getPublicodeObjectiveByObjective(UsedTrack.getPriorityObjective())
-  }
-
-  return ''
-})
-
-const showThemeFilterComponent = computed(() => {
-  return (!hasObjectiveCard.value || hasObjectiveSelected.value) && !hasSpinner.value
-})
-
-const showObjectiveCardComponent = computed(() => {
-  return hasObjectiveCard.value && !hasSpinner.value
-})
 
 onBeforeMount(async () => {
   const programResult = useUsedTrackStore().hasUsedTracks() ? await programStore.programsByUsedTracks : await programStore.programs
