@@ -123,7 +123,7 @@ export class Baserow {
     if (metadata.width && metadata.width > 1280) {
       imageSharp = imageSharp.resize(1280)
     }
-    return await imageSharp.webp({ quality: 50 }).toBuffer()
+    return await imageSharp.webp({ quality: 60 }).toBuffer()
   }
 
   private _generateMainTheme(mainTheme: BaserowLinkedObject[], baserowThemes: BaserowTheme[]): string {
