@@ -2,7 +2,7 @@ import ProjectApi from '@/service/api/projectApi'
 import ProjectFilters from '@/utils/project/projectFilters'
 import { defineStore } from 'pinia'
 import { computed } from 'vue'
-import { ProgramData, PublicodeObjective } from '@/types'
+import { ProgramData, PublicodeObjective, ThemeId } from '@/types'
 import { Project } from '@tee/data'
 import Theme from '@/utils/theme'
 
@@ -23,9 +23,8 @@ export const useProjectStore = defineStore('project', () => {
     return projects.filter((project: Project) => {
       const hasTheme = objectiveType
         ? ProjectFilters.filterProjectsByTheme(project, objectiveType)
-        : project.themes.some((themeId) => Theme.getTags().some((theme) => theme.id === themeId))
+        : project.themes.some((themeId) => Theme.getTags().some(({ id }) => id === themeId))
 
-      console.log('Has theme : ', hasTheme)
       return hasTheme && (filteredPrograms ? ProjectFilters.filterProjectsByEligibility(project, filteredPrograms) : true)
     })
   }
