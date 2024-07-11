@@ -2,7 +2,7 @@ import ProjectApi from '@/service/api/projectApi'
 import ProjectFilters from '@/utils/project/projectFilters'
 import { defineStore } from 'pinia'
 import { computed } from 'vue'
-import { ProgramData, PublicodeObjective, ThemeId } from '@/types'
+import { ProgramData, PublicodeObjective } from '@/types'
 import { Project } from '@tee/data'
 import Theme from '@/utils/theme'
 
