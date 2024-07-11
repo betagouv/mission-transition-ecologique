@@ -1,7 +1,6 @@
 <template>
   <!-- PAGE BANNER -->
   <TeeBanner
-    v-if="isCatalog"
     class="fr-pt-4v fr-py-md-6w fr-text-center"
     :bg-color="Color.blueLight"
   >
@@ -31,9 +30,6 @@
     </div>
     <div class="fr-grid-row fr-grid-row--center">
       <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
-        <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2">
-          <ResultHeader v-if="!navigationStore.isCatalog() && !hasSpinner" />
-        </div>
         <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-col-justify--left fr-my-3v">
           <ProgramFilterByTheme v-if="havePrograms && countPrograms > 1" />
         </div>
@@ -77,7 +73,6 @@
 <script setup lang="ts">
 import ProgramFiltersAccordion from '@/components/program/list/filters/ProgramFiltersAccordion.vue'
 import ProgramFilterByTheme from '@/components/program/list/filters/ProgramFilterByTheme.vue'
-import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { Color, type ProgramData, PublicodeObjective, TrackId } from '@/types'
@@ -87,9 +82,7 @@ import UsedTrack from '@/utils/track/usedTrack'
 import { computed, onBeforeMount } from 'vue'
 
 const programStore = useProgramStore()
-const navigationStore = useNavigationStore()
 
-const isCatalog = navigationStore.isCatalog()
 const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)
 
@@ -134,6 +127,6 @@ onBeforeMount(async () => {
   }
 
   // analytics / send event
-  Matomo.sendEvent(TrackId.Results, navigationStore.isCatalog() ? 'show_results_catalog' : 'show_results')
+  Matomo.sendEvent(TrackId.Results, 'show_results_catalog')
 })
 </script>
