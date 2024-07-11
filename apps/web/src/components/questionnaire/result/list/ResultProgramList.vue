@@ -1,6 +1,6 @@
 <template>
   <!-- PROGRAMS AS LIST OF CARDS -->
-  <div class="fr-container--fluid fr-container--fluid--no-overflow fr-mt-2v">
+  <div class="fr-container--fluid fr-container--fluid--no-overflow">
     <div class="fr-grid-row fr-grid-row--center">
       <ResultListNoResults
         v-if="showNoResultsComponent"

@@ -63,7 +63,7 @@ const objective = computed(() => {
 })
 
 const showThemeFilterComponent = computed(() => {
-  return (!hasObjectiveCard.value || hasObjectiveSelected.value) && !props.hasSpinner
+  return !props.hasSpinner
 })
 
 const showObjectiveCardComponent = computed(() => {
