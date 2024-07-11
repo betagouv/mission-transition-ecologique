@@ -26,8 +26,7 @@ const getRouteToProjectDetail = (): RouteLocationRaw => {
   return {
     name: RouteName.ProjectResultDetail,
     params: { projectSlug: props.project.slug },
-    query: navigationStore.query,
-    force: true
+    query: navigationStore.query
   }
 }
 </script>
