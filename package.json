@@ -24,6 +24,7 @@
     "lint:fix": "nx run-many -t lint --fix --verbose",
     "type:check": "nx run-many -t type-check --verbose --parallel=false",
     "type:check:vue": "nx run @tee/web:vue-type-check --verbose",
+    "ci": "npm run test && npm run lint && npm run type:check",
     "sass:watch": "nx run @tee/web:sass-watch"
   },
   "engines": {
