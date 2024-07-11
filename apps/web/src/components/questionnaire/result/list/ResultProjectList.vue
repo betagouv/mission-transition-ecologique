@@ -41,7 +41,7 @@
       v-if="showProjectListComponent"
       class="fr-grid-row fr-grid-row--center"
     >
-      <div class="fr-container fr-m-0 fr-p-0 fr-px-md-2v fr-mt-4w">
+      <div class="fr-container fr-m-0 fr-p-0 fr-px-md-2v">
         <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-pl-2w fr-pl-md-0">
           <h2 class="fr-text--bold fr-mb-0">Quel est votre projet ?</h2>
         </div>
