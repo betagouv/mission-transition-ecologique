@@ -1,18 +1,17 @@
 <template>
   <!--  LIST OF PROJECT CARDS-->
+  <!--  Project counter -->
   <div class="fr-grid-row fr-grid-row--center">
     <div class="fr-container fr-m-0 fr-p-0">
-      <div class="fr-grid-row fr-grid-row--center">
-        <div class="fr-mt-4v fr-pl-2w fr-pl-md-2v fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-text--blue-france fr-font-style--italic">
-          <ProjectCounter
-            :sorted-projects="sortedProjects"
-            :filtered-programs="filteredPrograms"
-          />
-        </div>
+      <div class="fr-mt-4v fr-pl-2w fr-pl-md-2v fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-text--blue-france fr-font-style--italic">
+        <ProjectCounter
+          :sorted-projects="sortedProjects"
+          :filtered-programs="filteredPrograms"
+        />
       </div>
     </div>
   </div>
-  <!--  PRIORITY PROJECTS -->
+  <!--  Priority projects list with green banner - only for LG screen size and larger -->
   <div
     v-if="hasPriorityProjects && !hasObjectiveCard && !hasObjectiveSelected"
     class="fr-mt-2v fr-bg-lg--green--lightness fr-hidden fr-unhidden-lg"
@@ -67,6 +66,7 @@
       </div>
     </div>
   </div>
+  <!--  Rest of projects list following top banner - only for LG screen size and larger -->
   <div
     v-if="hasPriorityProjects && !hasObjectiveCard && !hasObjectiveSelected"
     class="fr-mt-3v fr-hidden fr-unhidden-lg"
@@ -101,7 +101,7 @@
     </div>
   </div>
 
-  <!-- LIST DISPLAY FOR MD SIZE AND/OR HAS SELECTED THEME -->
+  <!-- Project list display for MD size and smaller AND/OR a theme is selected -->
   <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-m-0 fr-p-0 fr-mt-2v">
     <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
       <div class="fr-grid-row fr-grid-row--center">
