@@ -80,7 +80,7 @@
   >
     <div class="fr-container fr-m-0 fr-p-0 fr-mt-2v">
       <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2">
-        <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-px-2w fr-px-md-2v">
+        <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-grid-row-md--left fr-px-2w fr-px-md-2v">
           <div
             v-for="project in sortedProjects"
             :key="project.id"

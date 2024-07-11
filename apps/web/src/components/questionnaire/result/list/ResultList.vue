@@ -14,8 +14,12 @@
         :initial-selected-index="initialSelectedIndex"
         @select-tab="selectTab"
       >
-        <ThemeFiltersAndCard :has-spinner="hasSpinner" />
-
+        <template #tab-content-header>
+          <ThemeFiltersAndCard
+            id="tab-content-header"
+            :has-spinner="hasSpinner"
+          />
+        </template>
         <DsfrTabContent
           class="fr-p-0"
           panel-id="tab-content-0"
