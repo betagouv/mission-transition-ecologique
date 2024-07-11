@@ -23,7 +23,7 @@
   <div class="fr-container--fluid fr-container--fluid--no-overflow fr-mt-6v">
     <div class="fr-grid-row fr-grid-row--center">
       <ResultListNoResults
-        v-if="hasSpinner || hasError || !countPrograms"
+        v-if="showNoResultsComponent"
         :has-error="hasError"
         :has-spinner="hasSpinner"
         :count-items="countPrograms"
@@ -32,12 +32,12 @@
     <div class="fr-grid-row fr-grid-row--center">
       <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
         <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-col-justify--left fr-my-3v">
-          <ProgramFilterByTheme v-if="havePrograms && countPrograms > 1" />
+          <ProgramFilterByTheme v-if="showThemeFilterComponent" />
         </div>
       </div>
     </div>
     <div
-      v-if="hasObjectiveCard && !hasSpinner"
+      v-if="showObjectiveCardComponent"
       class="fr-grid-row fr-grid-row--center"
     >
       <div class="fr-container fr-m-0 fr-p-0 fr-px-md-2v fr-mt-3v">
@@ -117,6 +117,18 @@ const objective = computed(() => {
   }
 
   return ''
+})
+
+const showNoResultsComponent = computed(() => {
+  return hasSpinner.value || hasError.value || !countPrograms.value
+})
+
+const showThemeFilterComponent = computed(() => {
+  return havePrograms.value && countPrograms.value > 1
+})
+
+const showObjectiveCardComponent = computed(() => {
+  return hasObjectiveCard.value && !hasSpinner.value
 })
 
 onBeforeMount(async () => {

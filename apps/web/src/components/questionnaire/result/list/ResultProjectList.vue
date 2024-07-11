@@ -2,17 +2,17 @@
   <!-- PROGRAMS AS LIST OF CARDS -->
   <div class="fr-container--fluid fr-container--fluid--no-overflow fr-mt-2v">
     <div class="fr-grid-row fr-grid-row--center fr-mt-2w">
-      <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
+      <div class="fr-container fr-m-0 fr-p-0">
         <div
-          v-if="(!hasObjectiveCard || hasObjectiveSelected) && !hasSpinner"
-          class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-col-justify--left fr-mt-3w"
+          v-if="showThemeFilterComponent"
+          class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-col-justify--left fr-pl-md-1v fr-mt-3v"
         >
-          <ProgramFilterByTheme v-if="(hasProjects && countProjects >= 1) || hasObjectiveSelected" />
+          <ProgramFilterByTheme />
         </div>
       </div>
     </div>
     <div
-      v-if="hasObjectiveCard && !hasSpinner"
+      v-if="showObjectiveCardComponent"
       class="fr-grid-row fr-grid-row--center"
     >
       <div class="fr-container fr-m-0 fr-p-0 fr-px-md-2v fr-mt-3v">
@@ -29,7 +29,7 @@
       <div class="fr-container fr-m-0 fr-p-0 fr-px-md-2v fr-mt-3v">
         <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-col-justify--center">
           <ResultListNoResults
-            v-if="hasSpinner || hasError || !countProjects"
+            v-if="showNoResultsComponent"
             :has-error="hasError"
             :has-spinner="hasSpinner"
             :count-items="countProjects"
@@ -38,7 +38,7 @@
       </div>
     </div>
     <div
-      v-if="hasObjectiveCard && !hasSpinner && UsedTrack.isSpecificGoal()"
+      v-if="showProjectListComponent"
       class="fr-grid-row fr-grid-row--center"
     >
       <div class="fr-container fr-m-0 fr-p-0 fr-px-md-2v fr-mt-4w">
@@ -48,7 +48,6 @@
       </div>
     </div>
     <ProjectList
-      v-if="hasProjects && !hasSpinner"
       :sorted-projects="sortedProjects"
       :filtered-programs="props.filteredPrograms"
     />
@@ -109,5 +108,21 @@ const hasObjectiveSelected = computed(() => {
 
 const sortedProjects = computed(() => {
   return props.filteredPrograms ? (props.filteredProjects as unknown as Project[]).sort((a, b) => a.priority - b.priority) : undefined
+})
+
+const showNoResultsComponent = computed(() => {
+  return hasSpinner.value || hasError.value || !countProjects.value
+})
+
+const showThemeFilterComponent = computed(() => {
+  return (!hasObjectiveCard.value || hasObjectiveSelected.value) && !hasSpinner.value && countProjects.value > 1
+})
+
+const showObjectiveCardComponent = computed(() => {
+  return hasObjectiveCard.value && !hasSpinner.value
+})
+
+const showProjectListComponent = computed(() => {
+  return hasObjectiveCard.value && !hasSpinner.value && UsedTrack.isSpecificGoal() && hasProjects.value
 })
 </script>

@@ -1,5 +1,6 @@
 <template>
   <!--  LIST OF PROJECT CARDS-->
+
   <!--  Project counter -->
   <div class="fr-grid-row fr-grid-row--center">
     <div class="fr-container fr-m-0 fr-p-0">
@@ -11,9 +12,10 @@
       </div>
     </div>
   </div>
+
   <!--  Priority projects list with green banner - only for LG screen size and larger -->
   <div
-    v-if="hasPriorityProjects && !hasObjectiveCard && !hasObjectiveSelected"
+    v-if="showPriorityProjectListComponent"
     class="fr-grid-row fr-grid-row--center fr-m-0 fr-p-0 fr-pb-2w fr-bg-lg--green--lightness"
   >
     <div class="fr-container fr-m-0 fr-p-0 fr-mt-2v fr-hidden fr-unhidden-lg">
@@ -47,10 +49,10 @@
       </div>
     </div>
   </div>
-  <!--  Rest of projects list following top banner - only for LG screen size and larger -->
 
+  <!--  Rest of projects list following top banner - only for LG screen size and larger -->
   <div
-    v-if="hasPriorityProjects && !hasObjectiveCard && !hasObjectiveSelected"
+    v-if="showPriorityProjectListComponent"
     class="fr-grid-row fr-grid-row--center fr-m-0 fr-p-0"
   >
     <div class="fr-container fr-m-0 fr-p-0 fr-mt-2w fr-hidden fr-unhidden-lg">
@@ -74,7 +76,7 @@
   <!-- Project list display for MD size and smaller AND/OR a theme is selected -->
   <div
     class="fr-grid-row fr-grid-row--center fr-m-0 fr-p-0"
-    :class="{ 'fr-hidden-lg': !hasObjectiveCard && !hasObjectiveSelected }"
+    :class="{ 'fr-hidden-lg': hideMainProjectListComponent }"
   >
     <div class="fr-container fr-m-0 fr-p-0 fr-mt-2v">
       <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2">
@@ -155,5 +157,13 @@ const hasObjectiveCard = computed(() => {
 
 const hasObjectiveSelected = computed(() => {
   return programStore.hasObjectiveTypeSelected()
+})
+
+const showPriorityProjectListComponent = computed(() => {
+  return hasPriorityProjects.value && !hasObjectiveCard.value && !hasObjectiveSelected.value
+})
+
+const hideMainProjectListComponent = computed(() => {
+  return !hasObjectiveCard.value && !hasObjectiveSelected.value
 })
 </script>
