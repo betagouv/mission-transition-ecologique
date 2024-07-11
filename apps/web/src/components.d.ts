@@ -34,6 +34,7 @@ declare module 'vue' {
     ProgramFiltersAccordion: typeof import('./components/program/list/filters/ProgramFiltersAccordion.vue')['default']
     ProgramForm: typeof import('./components/program/detail/ProgramForm.vue')['default']
     ProgramList: typeof import('./components/program/list/ProgramList.vue')['default']
+    ProgramListHeaderResult: typeof import('./components/program/list/ProgramListHeaderResult.vue')['default']
     ProgramListNoResults: typeof import('./components/program/list/ProgramListNoResults.vue')['default']
     ProgramLongDescription: typeof import('./components/program/detail/ProgramLongDescription.vue')['default']
     ProgramModalFilter: typeof import('./components/program/list/filters/ProgramModalFilter.vue')['default']

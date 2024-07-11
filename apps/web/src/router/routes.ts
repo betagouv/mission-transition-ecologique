@@ -14,6 +14,7 @@ import Hook from '@/router/hook'
 import TeeQuestionnaire from '@/components/questionnaire/TeeQuestionnaire.vue'
 import TeeQuestionnaireResult from '@/components/questionnaire/TeeQuestionnaireResult.vue'
 import ProgramDetail from '@/components/program/detail/ProgramDetail.vue'
+import ProjectDetail from '@/components/project/details/ProjectDetail.vue'
 import TeeStatPage from '@/pages/TeeStatPage.vue'
 import CatalogList from '@/components/catalog/CatalogList.vue'
 

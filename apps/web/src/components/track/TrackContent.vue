@@ -237,7 +237,7 @@ const saveSelection = async (needRemove = false) => {
     usedTrackStore.removeFurtherUsedTracks(usedTrack.id)
   }
 
-  Scroll.to(props.trackElement)
+  Scroll.to(props.trackElement, false)
 }
 
 const backToPreviousTrack = async () => {

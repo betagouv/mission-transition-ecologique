@@ -11,27 +11,17 @@ export class Scroll {
     }
   }
 
-  static to(element: Element) {
-    if (!Widget.is) {
-      element.scrollIntoView()
-    } else {
-      setTimeout(() => {
-        element.scrollIntoView({ ...this._defaultOptions })
-      }, 100)
+  static to(element: Element, behaviorSmooth = true) {
+    const scrollOptions: ScrollOptions = {}
+    if (!behaviorSmooth) {
+      scrollOptions.behavior = 'instant'
     }
+    element.scrollIntoView({ ...this._defaultOptions, ...scrollOptions })
   }
 
   static toBlockCenter(element: HTMLElement) {
-    if (!Widget.is) {
-      setTimeout(() => {
-        const docHeight = document.documentElement.clientHeight
-        const { offsetTop, clientHeight } = element
-        window.scrollTo({ top: offsetTop + clientHeight / 2 - docHeight / 2 })
-      }, 100)
-    } else {
-      setTimeout(() => {
-        element.scrollIntoView({ ...this._defaultOptions, block: 'center' })
-      }, 100)
-    }
+    const docHeight = document.documentElement.clientHeight
+    const { offsetTop, clientHeight } = element
+    window.scrollTo({ top: offsetTop + clientHeight / 2 - docHeight / 2 })
   }
 }
