@@ -18,20 +18,23 @@ import { useTrackStore } from '@/stores/track'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import type { TrackOptionItem } from '@/types'
 import { computed } from 'vue'
-import { Theme } from '@/utils/theme'
+import Theme from '@/utils/theme'
 import { Color } from '@/types'
-import { ProjectId } from '@tee/data'
+import { Project } from '@tee/data'
+import { useProjectStore } from '@/stores/project'
 
 const currentTrack = useTrackStore().current
 const themeSelectedOption = ref<ThemeOption>()
 const emit = defineEmits(['updateSelection'])
+const projectStore = useProjectStore()
+const projects = ref<Project[]>()
 
 export interface ThemeOption {
   value: string | undefined
   title: string
   imgSrc: string
   altImg: string
-  highlightProjects: ProjectId[]
+  highlightProjects: Project[]
   color: Color
 }
 const options = computed<ThemeOption[]>(() => {
@@ -43,15 +46,17 @@ const options = computed<ThemeOption[]>(() => {
     if (option.questionnaireData?.priority_objective) {
       const optionPublicodeObjective = Theme.getPublicodeObjectiveByObjective(option.questionnaireData?.priority_objective)
       if (optionPublicodeObjective) {
-        const themeOption = Theme.getByValue(optionPublicodeObjective)
-        if (themeOption) {
+        const theme = Theme.getByValue(optionPublicodeObjective)
+        const objectiveProjects = projects.value ? projectStore.getProjectsByObjective(projects.value, optionPublicodeObjective) : []
+        const priorityProjects: Project[] = Theme.getPriorityProjects(objectiveProjects)
+        if (theme) {
           options.push({
             value: option.questionnaireData?.priority_objective,
-            title: themeOption.title,
-            color: themeOption.color,
-            imgSrc: themeOption.image,
-            altImg: themeOption.tagLabel,
-            highlightProjects: []
+            title: theme.title,
+            color: theme.color,
+            imgSrc: theme.image,
+            altImg: theme.tagLabel,
+            highlightProjects: priorityProjects
           })
         }
       }
@@ -75,4 +80,10 @@ const updateSelectOption = (opt: ThemeOption) => {
   } as TrackOptionItem
   emit('updateSelection', data)
 }
+onBeforeMount(async () => {
+  const projectResult = await projectStore.projects
+  if (projectResult.isOk) {
+    projects.value = projectResult.value
+  }
+})
 </script>

@@ -1,7 +1,8 @@
 import { Color, Objective as ObjectiveEnum, PublicodeObjective, PublicodesKeys, ThemeId, ThemeType } from '@/types'
 import UsedTrack from '@/utils/track/usedTrack'
+import { Project } from '@tee/data'
 
-export class Theme {
+export default class Theme {
   static themes: ThemeType[] = [
     {
       id: ThemeId.Energy,
@@ -108,6 +109,11 @@ export class Theme {
 
   static isPublicodeObjective(objective: PublicodeObjective | ''): objective is PublicodeObjective {
     return objective !== ''
+  }
+
+  static getPriorityProjects(projects: Project[] | undefined) {
+    const sortedProjects = (projects as unknown as Project[]).sort((a, b) => a.priority - b.priority)
+    return sortedProjects.slice(0, 3)
   }
 
   static getPublicodeObjectiveByObjective(objective: ObjectiveEnum): PublicodeObjective | undefined {

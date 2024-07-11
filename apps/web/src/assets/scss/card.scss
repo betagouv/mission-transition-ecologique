@@ -13,6 +13,11 @@
   :hover {
     cursor: pointer;
   }
+  &-objective {
+    .fr-card__title {
+      height: 40%;
+    }
+  }
 
   &-banner {
     flex-direction: row;
