@@ -1,8 +1,5 @@
 <template>
-  <div
-    v-if="hasSpinner || hasError || !countItems"
-    class="fr-col-9 fr-text-center"
-  >
+  <div class="fr-col-9 fr-text-center">
     <TeeSpinner
       v-if="hasSpinner"
       scale="6"

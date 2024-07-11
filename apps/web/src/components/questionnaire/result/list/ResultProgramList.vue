@@ -3,6 +3,7 @@
   <div class="fr-container--fluid fr-container--fluid--no-overflow fr-mt-2v">
     <div class="fr-grid-row fr-grid-row--center">
       <ResultListNoResults
+        v-if="hasSpinner || hasError || !countPrograms"
         :has-error="hasError"
         :has-spinner="hasSpinner"
         :count-items="countPrograms"
