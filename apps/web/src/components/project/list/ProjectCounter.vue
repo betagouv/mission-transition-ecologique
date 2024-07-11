@@ -1,5 +1,5 @@
 <template>
-  <div v-if="haveProjects && countProjects > 1">
+  <div v-if="haveProjects && countProjects >= 1">
     {{ countProjects }}
     {{ countProjects > 1 ? Translation.t('results.results') : Translation.t('results.result') }}
   </div>
