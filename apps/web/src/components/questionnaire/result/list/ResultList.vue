@@ -46,7 +46,7 @@
 import { useNavigationStore } from '@/stores/navigation'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { useProgramStore } from '@/stores/program'
-import { ProgramData, PublicodeObjective, QuestionnaireDataEnum, TrackId, Project } from '@/types'
+import { ProgramData, PublicodeObjective, TrackId, Project } from '@/types'
 import { computed, onBeforeMount } from 'vue'
 import Matomo from '@/utils/matomo'
 import { useProjectStore } from '@/stores/project'

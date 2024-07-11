@@ -14,7 +14,6 @@ import type {
 } from '@/types'
 import { CleanerOperations, DataMappingFrom } from '@/types'
 import type { ImportMetaEnv } from '../env'
-import Widget from '@/utils/widget'
 import Config from '@/config'
 
 // GENERIC HELPERS

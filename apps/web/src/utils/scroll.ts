@@ -1,5 +1,3 @@
-import Widget from '@/utils/widget'
-
 export class Scroll {
   private static readonly _defaultOptions: ScrollOptions = { behavior: 'smooth' }
 
