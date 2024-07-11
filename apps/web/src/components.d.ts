@@ -71,6 +71,7 @@ declare module 'vue' {
     TeeQuestionnaireResult: typeof import('./components/questionnaire/TeeQuestionnaireResult.vue')['default']
     TeeSpinner: typeof import('./components/element/TeeSpinner.vue')['default']
     TeeTabs: typeof import('./components/element/TeeTabs.vue')['default']
+    ThemeFiltersAndCard: typeof import('./components/questionnaire/result/list/ThemeFiltersAndCard.vue')['default']
     TrackButton: typeof import('./components/track/form/TrackButton.vue')['default']
     TrackButtonInput: typeof import('./components/track/form/TrackButtonInput.vue')['default']
     TrackCallout: typeof import('./components/track/detail/TrackCallout.vue')['default']
