@@ -31,7 +31,7 @@ import { PublicodeObjective } from '@tee/common'
 import ProgramFilterByTheme from '@/components/program/list/filters/ProgramFilterByTheme.vue'
 import { computed } from 'vue'
 import UsedTrack from '@/utils/track/usedTrack'
-import Theme from '@/utils/theme'
+import { Theme } from '@/utils/theme'
 import { useProgramStore } from '@/stores/program'
 
 interface Props {

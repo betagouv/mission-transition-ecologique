@@ -141,7 +141,7 @@ const drawChart = () => {
 }
 
 onMounted(async () => {
-  const result = await new StatsApi().getData()
+  const result = await new StatsApi().get()
   if (result.isOk) {
     statsData.value = result.value
   } else {
