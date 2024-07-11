@@ -7,13 +7,11 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { type ProgramData } from '@/types'
 import { Project } from '@tee/data'
 import Translation from '@/utils/translation'
 
 interface ProjectListProps {
   sortedProjects?: Project[]
-  filteredPrograms?: ProgramData[]
 }
 
 const props = defineProps<ProjectListProps>()
