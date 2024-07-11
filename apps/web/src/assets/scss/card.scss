@@ -93,12 +93,13 @@
   }
 
   &__header--priority {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      color: setting.$white;
-      font-size: 2rem;
-      font-weight: bold;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: setting.$white;
+    font-size: 2rem;
+    font-weight: bold;
+    z-index: 100;
   }
 
   .fr-badge--success {

@@ -1,6 +1,6 @@
 <template>
   <!-- PROGRAMS AS LIST OF CARDS -->
-  <div class="fr-container--fluid fr-mt-4v">
+  <div class="fr-container--fluid fr-mt-3v">
     <div class="fr-grid-row fr-grid-row--center">
       <div class="fr-pl-2v fr-pl-md-0 fr-col-3 fr-col-md-12 fr-col-content--middle fr-text--blue-france fr-font-style--italic">
         <span v-if="havePrograms && countPrograms > 1">

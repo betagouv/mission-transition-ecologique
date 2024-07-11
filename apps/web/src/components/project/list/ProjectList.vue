@@ -14,9 +14,9 @@
   <!--  Priority projects list with green banner - only for LG screen size and larger -->
   <div
     v-if="hasPriorityProjects && !hasObjectiveCard && !hasObjectiveSelected"
-    class="fr-grid-row fr-grid-row--center fr-m-0 fr-p-0 fr-mt-2v fr-pb-2w fr-bg-lg--green--lightness"
+    class="fr-grid-row fr-grid-row--center fr-m-0 fr-p-0 fr-pb-2w fr-bg-lg--green--lightness"
   >
-    <div class="fr-container fr-m-0 fr-p-0 fr-hidden fr-unhidden-lg">
+    <div class="fr-container fr-m-0 fr-p-0 fr-mt-2v fr-hidden fr-unhidden-lg">
       <div class="fr-grid-row fr-grid-row--center fr-m-0 fr-p-0">
         <div class="fr-col-3 fr-col-lg-2 fr-col-content--bottom fr-pb-6w">
           <img
@@ -51,9 +51,9 @@
 
   <div
     v-if="hasPriorityProjects && !hasObjectiveCard && !hasObjectiveSelected"
-    class="fr-grid-row fr-grid-row--center fr-m-0 fr-p-0 fr-mt-2w"
+    class="fr-grid-row fr-grid-row--center fr-m-0 fr-p-0"
   >
-    <div class="fr-container fr-m-0 fr-p-0 fr-hidden fr-unhidden-lg">
+    <div class="fr-container fr-m-0 fr-p-0 fr-mt-2w fr-hidden fr-unhidden-lg">
       <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2">
         <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-px-2w fr-px-md-2v">
           <div
@@ -73,10 +73,10 @@
 
   <!-- Project list display for MD size and smaller AND/OR a theme is selected -->
   <div
-    class="fr-grid-row fr-grid-row--center fr-m-0 fr-p-0 fr-mt-2v"
+    class="fr-grid-row fr-grid-row--center fr-m-0 fr-p-0"
     :class="{ 'fr-hidden-lg': !hasObjectiveCard && !hasObjectiveSelected }"
   >
-    <div class="fr-container fr-m-0 fr-p-0">
+    <div class="fr-container fr-m-0 fr-p-0 fr-mt-2v">
       <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2">
         <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-px-2w fr-px-md-2v">
           <div
