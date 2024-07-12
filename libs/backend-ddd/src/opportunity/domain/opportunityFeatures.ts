@@ -8,7 +8,7 @@ import ProgramFeatures from '../../program/domain/programFeatures'
 import { ProgramType } from '@tee/data'
 import { ContactDetails, Opportunity, SiretValidator } from '@tee/common'
 import EstablishmentService from '../../establishment/application/establishmentService'
-import * as Sentry from '@sentry/node'
+import Monitor from '../../common/domain/monitoring/monitor'
 
 export default class OpportunityFeatures {
   private readonly _contactRepository: ContactRepository
@@ -39,7 +39,8 @@ export default class OpportunityFeatures {
     opportunity = maybeFullopportunity.value
     const contactIdResult = await this._contactRepository.createOrUpdate(opportunity as ContactDetails, optIn)
     if (contactIdResult.isErr) {
-      Sentry.captureMessage('Error during contact creation ' + contactIdResult.error, 'error')
+      new Monitor().error('Error during contact creation ' + contactIdResult.error)
+
       return Result.err(contactIdResult.error)
     }
 
@@ -51,9 +52,9 @@ export default class OpportunityFeatures {
     )
     if (opportunityResult.isErr || program === undefined) {
       if (opportunityResult.isErr) {
-        Sentry.captureMessage('Error during Opportunity Creation ' + opportunityResult.error, 'error')
+        new Monitor().error('Error during Opportunity Creation ' + opportunityResult.error)
       } else {
-        Sentry.captureMessage('Error during Opportunity Creation, program undefined', 'error')
+        new Monitor().error('Error during Opportunity Creation, program undefined')
       }
       return opportunityResult
     }
@@ -79,7 +80,7 @@ export default class OpportunityFeatures {
         if (opportunityHubResult == Maybe.nothing()) {
           const opportunityUpdateErr = await this._updateOpportunitySentToHub(opportunityId, !opportunityHubResult.isJust)
           if (opportunityUpdateErr.isJust) {
-            Sentry.captureMessage('Opportunity status not updated after a transmission to a Hub ' + opportunityUpdateErr.value, 'warning')
+            new Monitor().warning('Opportunity status not updated after a transmission to a Hub ' + opportunityUpdateErr.value)
           }
         }
       })
@@ -110,7 +111,7 @@ export default class OpportunityFeatures {
   private _sendReturnReceipt(opportunity: Opportunity, program: ProgramType) {
     void this._mailRepository.sendReturnReceipt(opportunity, program).then((hasError) => {
       if (hasError) {
-        Sentry.captureMessage('Error while sending a return receipt ' + hasError, 'warning')
+        new Monitor().warning('Error while sending a return receipt ' + hasError)
       }
     })
   }

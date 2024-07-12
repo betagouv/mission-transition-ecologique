@@ -5,7 +5,7 @@ import { ContactRepository } from '../../../domain/spi'
 import { BrevoCompanySize, BrevoPostContactPayload, ContactAttributes } from './types'
 import BrevoAPI from './brevoAPI'
 import { ContactDetails } from '@tee/common'
-import * as Sentry from '@sentry/node'
+import Monitor from '../../../../common/domain/monitoring/monitor'
 
 const DEBUG_BREVO_LIST_ID = '4'
 
@@ -27,7 +27,7 @@ const requestCreateContact = async (listIds: number[], contact: ContactDetails, 
   const responseResult = await new BrevoAPI().PostContact(requestPayload)
 
   if (responseResult.isErr) {
-    Sentry.captureMessage('Error in Brevo CreateContact api call ' + requestPayload + ' ' + responseResult.error, 'error')
+    new Monitor().error('Error in Brevo CreateContact api call ' + requestPayload + ' ' + responseResult.error)
     return Result.err(responseResult.error)
   }
 
@@ -47,7 +47,8 @@ const requestCreateContact = async (listIds: number[], contact: ContactDetails, 
 const retrieveExistingContactId = async (email: string): Promise<Result<ContactId, Error>> => {
   const responseResult = await new BrevoAPI().GetContact(email)
   if (responseResult.isErr) {
-    Sentry.captureMessage('Error in Brevo GetContact api call ' + email + ' ' + responseResult.error, 'error')
+    new Monitor().error('Error in Brevo GetContact api call ' + email + ' ' + responseResult.error)
+
     return Result.err(responseResult.error)
   }
 

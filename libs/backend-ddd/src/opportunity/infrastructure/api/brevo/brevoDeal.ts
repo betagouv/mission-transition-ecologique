@@ -13,7 +13,7 @@ import {
 import Config from '../../../../config'
 import { QuestionnaireRoute } from '@tee/common'
 import { Operators } from '@tee/data'
-import * as Sentry from '@sentry/node'
+import Monitor from '../../../../common/domain/monitoring/monitor'
 
 // "Opportunities" are called "Deals" in Brevo
 
@@ -44,7 +44,8 @@ const requestCreateDeal = async (name: string, attributes: DealAttributes): Prom
   }
   const responseResult = await new BrevoAPI().PostDeal(payload)
   if (responseResult.isErr) {
-    Sentry.captureMessage('Error in Brevo PostDeal api call ' + payload + ' ' + responseResult.error, 'error')
+    new Monitor().error('Error in Brevo PostDeal api call ' + payload + ' ' + responseResult.error)
+
     return Result.err(responseResult.error)
   }
 
@@ -67,7 +68,7 @@ const requestUpdateDeal = async (dealId: OpportunityId, attributes: DealUpdateAt
   })
 
   if (responseResult.isErr) {
-    Sentry.captureMessage('Error in Brevo PatchDeal api call ' + dealId.id + ' ' + attributes + ' ' + responseResult.error, 'error')
+    new Monitor().error('Error in Brevo PatchDeal api call ' + dealId.id + ' ' + attributes + ' ' + responseResult.error)
   }
 
   return Maybe.of(responseResult.isErr ? responseResult.error : null)
@@ -82,10 +83,7 @@ const associateBrevoDealToContact = async (dealId: OpportunityId, contactId: num
   })
 
   if (responsePatch.isErr) {
-    Sentry.captureMessage(
-      'Error in Brevo LinkDeal (to contact) api call ' + dealIdStr + ' ' + contactId + ' ' + responsePatch.error,
-      'error'
-    )
+    new Monitor().error('Error in Brevo LinkDeal (to contact) api call ' + dealIdStr + ' ' + contactId + ' ' + responsePatch.error)
     return Maybe.of(responsePatch.error)
   } else {
     return Maybe.nothing()
@@ -130,7 +128,8 @@ const getBrevoCreationDates = async (): Promise<Result<Date[], Error>> => {
   if (response.isOk) {
     const brevoDealResponse: BrevoDealResponse = response.value.data as BrevoDealResponse
     if (!brevoDealResponse.items || brevoDealResponse.items.length === 0) {
-      Sentry.captureMessage("Brevo deal list doesn't exist or is empty empty" + brevoDealResponse, 'error')
+      new Monitor().error("Brevo deal list doesn't exist or is empty empty" + brevoDealResponse)
+
       return Result.err(new Error("Brevo deal list doesn't exist or is empty empty"))
     }
     const dateList: Date[] = []
@@ -140,7 +139,7 @@ const getBrevoCreationDates = async (): Promise<Result<Date[], Error>> => {
     }
     return Result.ok(dateList)
   } else {
-    Sentry.captureMessage('Error in brevo GetDeal api call, ' + response.error, 'error')
+    new Monitor().error('Error in brevo GetDeal api call, ' + response.error)
     return Result.err(response.error)
   }
 }
@@ -163,7 +162,7 @@ const getDailyOpportunitiesByContactId = async (contactId: number): Promise<Resu
     }
     return Result.ok(selectedDeals)
   } else {
-    Sentry.captureMessage('Error in brevo GetDeal api call, ' + response.error, 'error')
+    new Monitor().error('Error in brevo GetDeal api call, ' + response.error)
     return Result.err(response.error)
   }
 }

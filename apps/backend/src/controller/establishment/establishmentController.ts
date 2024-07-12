@@ -1,7 +1,6 @@
 import { Controller, Route, SuccessResponse, TsoaResponse, Res, Example, Get, Path } from 'tsoa'
-import { ErrorJSON, Establishment, EstablishmentNotFoundError, EstablishmentService, ValidateErrorJSON } from '@tee/backend-ddd'
+import { ErrorJSON, Establishment, EstablishmentNotFoundError, EstablishmentService, ValidateErrorJSON, Monitor } from '@tee/backend-ddd'
 import { EstablishmentSearch } from '@tee/common'
-import * as Sentry from '@sentry/node'
 
 interface EstablishmentNotFoundErrorJSON {
   message: 'Establishment not found'
@@ -59,7 +58,7 @@ export class SireneController extends Controller {
 
     if (establishmentResult.isErr) {
       const err = establishmentResult.error
-      Sentry.captureMessage('Error in getEstablishmentBySiret, ' + query + ', ' + err, 'error')
+      new Monitor().error('Error in getEstablishmentBySiret, ' + query + ', ' + err)
 
       if (err instanceof EstablishmentNotFoundError) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-return

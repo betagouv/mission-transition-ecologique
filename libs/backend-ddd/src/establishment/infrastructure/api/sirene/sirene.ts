@@ -5,7 +5,7 @@ import { Result } from 'true-myth'
 import { EstablishmentRepository } from '../../../domain/spi'
 import AxiosHeaders from '../../../../common/infrastructure/api/axiosHeaders'
 import { ensureError } from '../../../../common/domain/error/errors'
-import * as Sentry from '@sentry/node'
+import Monitor from '../../../../common/domain/monitoring/monitor'
 
 /**
  * getEstablishment reads the API token from an environment
@@ -33,7 +33,7 @@ export const requestSireneAPI = async (token: string, siret: string): Promise<Re
     return Result.ok(parseEstablishment(response.data))
   } catch (err: unknown) {
     let error = ensureError(err)
-    Sentry.captureMessage('Error in sirene get siret API call ' + siret + ' ' + err, 'error')
+    new Monitor().error('Error in sirene get siret API call ' + siret + ' ' + err)
 
     if (error instanceof AxiosError) {
       if (error.response && error.response.status == 404) {

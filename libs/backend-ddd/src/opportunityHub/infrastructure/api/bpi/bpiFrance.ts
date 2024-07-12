@@ -8,7 +8,7 @@ import opportunityPayloadDTO from './opportunityPayloadDTO'
 import Config from '../../../../config'
 import { Operators, ProgramType } from '@tee/data'
 import { Opportunity } from '@tee/common'
-import * as Sentry from '@sentry/node'
+import Monitor from '../../../../common/domain/monitoring/monitor'
 
 export class BpiFrance extends OpportunityHubAbstract {
   protected _axios: AxiosInstance
@@ -39,7 +39,7 @@ export class BpiFrance extends OpportunityHubAbstract {
       })
       return Result.ok(response.data)
     } catch (exception: unknown) {
-      Sentry.captureMessage('Error in BPI getToken ' + exception, 'error')
+      new Monitor().error('Error in BPI getToken ' + exception)
       return Result.err(handleException(exception))
     }
   }
@@ -58,11 +58,11 @@ export class BpiFrance extends OpportunityHubAbstract {
       if (response.data) {
         return Maybe.nothing()
       } else {
-        Sentry.captureMessage('Error creating an opportunity at BPI during BPI API Call ' + response, 'error')
+        new Monitor().error('Error creating an opportunity at BPI during BPI API Call ' + response)
         return Maybe.of(new Error("Erreur à la création d'une opportunité chez BPI durant l'appel BPI. HTTP CODE:" + response.status))
       }
     } catch (exception: unknown) {
-      Sentry.captureMessage('Error creating an opportunity at BPI' + exception, 'error')
+      new Monitor().error('Error creating an opportunity at BPI' + exception)
       return Maybe.of(handleException(exception))
     }
   }
