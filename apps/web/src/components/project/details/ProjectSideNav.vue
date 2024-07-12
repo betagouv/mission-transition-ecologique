@@ -27,7 +27,7 @@ const menuItems = computed(() => allMenuItems.filter((item) => item.condition !=
 const scrollTo = (id: string) => {
   const element = document.getElementById(id)
   if (element) {
-    Scroll.toWithTopBarOffset(element)
+    Scroll.to(element)
   }
 }
 

@@ -318,10 +318,7 @@ const columnTiles = computed(() => {
   return `fr-col fr-col-xs-12 fr-col-sm-12 fr-col-md-${colsSize} fr-tee-detail-info-tile`
 })
 const isProgramAutonomous = computed(() => {
-  if (program.value?.[`activable en autonomie`] == 'oui') {
-    return true
-  }
-  return false
+  return program.value?.[`activable en autonomie`] == 'oui'
 })
 
 const routeToPrograms = {
@@ -357,7 +354,7 @@ const programIsAvailable = computed(() => {
 
 const scrollToProgramForm = () => {
   if (TeeProgramFormContainer.value) {
-    Scroll.to(TeeProgramFormContainer.value)
+    Scroll.toWithTopBarOffset(TeeProgramFormContainer.value)
   }
 }
 </script>
