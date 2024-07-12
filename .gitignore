@@ -67,6 +67,3 @@ dispositifs*.xlsx
 # Global
 **/generated/*
 !generated/index.ts
-
-# Sentry Config File
-.env.sentry-build-plugin
