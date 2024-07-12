@@ -53,7 +53,7 @@
       "options": {
         "cwd": "apps/web",
         "commands": [
-          "stylelint \"**/*.scss\""
+          "stylelint \"**/*.{scss,vue}\""
         ]
       }
     }

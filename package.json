@@ -107,9 +107,11 @@
     "@vitest/coverage-v8": "^1.0.4",
     "@vue/test-utils": "^2.4.1",
     "json-schema-to-typescript": "^14.0.5",
+    "postcss-html": "^1.7.0",
     "react-refresh": "^0.10.0",
     "stylelint": "^16.6.1",
     "stylelint-config-standard-scss": "^13.1.0",
+    "stylelint-config-standard-vue": "^1.0.0",
     "vue-tsc": "^2.0.21",
     "webpack-cli": "^5.1.4"
   }

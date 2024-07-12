@@ -1,5 +1,14 @@
 {
   "extends": ["stylelint-config-standard-scss"],
+  "overrides": [
+    {
+      "files": ["**/*.vue"],
+      "extends": [
+        "stylelint-config-standard-vue/scss"
+      ]
+    }
+
+  ],
   "rules": {
     "selector-class-pattern": [
       "^[a-z]+(-[a-z]+)*(__[a-z]+(-[a-z]+)*)?(--[a-z]+(-[a-z]+)*)?$",
