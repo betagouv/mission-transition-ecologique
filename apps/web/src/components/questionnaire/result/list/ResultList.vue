@@ -9,7 +9,7 @@
       <TeeTabs
         ref="tabs"
         class="fr-col-12 fr-px-0"
-        :tab-list-name="tabListName"
+        tab-list-name="Liste d’onglet"
         :tab-titles="tabTitles"
         :initial-selected-index="selected"
         @select-tab="onSelectedTabChange"
@@ -61,11 +61,13 @@ import { Theme } from '@/utils/theme'
 const navigationStore = useNavigationStore()
 const programStore = useProgramStore()
 const projectStore = useProjectStore()
-const { ascendant, selected, select } = useTabs(true, navigationStore.tabSelectedOnList)
+const { ascendant, selected } = useTabs(true, navigationStore.tabSelectedOnList)
 
 const programs = ref<ProgramData[]>()
 const projects = ref<Project[]>()
 const hasError = ref<boolean>(false)
+
+const tabTitles = [{ title: "Des idées d'actions à mettre en place" }, { title: 'Vos aides financières' }]
 
 const hasSpinner = computed(() => {
   return (programs.value === undefined || projects.value === undefined) && !hasError.value
@@ -97,9 +99,6 @@ const getObjectiveForProjectFiltering = () => {
     ? (programStore.programFilters.objectiveTypeSelected as PublicodeObjective)
     : Theme.getPublicodeObjectiveByObjective(UsedTrack.getPriorityObjective())
 }
-
-const tabListName = 'Liste d’onglet'
-const tabTitles = [{ title: "Des idées d'actions à mettre en place" }, { title: 'Vos aides financières' }]
 
 onBeforeMount(async () => {
   const programResult = useUsedTrackStore().hasUsedTracks() ? await programStore.programsByUsedTracks : await programStore.programs
