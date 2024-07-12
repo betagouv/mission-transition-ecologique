@@ -21,6 +21,7 @@ export const useNavigationStore = defineStore('navigation', () => {
   const route = ref<RouteLocationNormalizedLoaded>()
   const searchParams = ref<URLSearchParams>(new URLSearchParams())
   const stringOfSearchParams = ref<string>('')
+  const tabSelectedOnList = ref<number>(0)
 
   const query = computed<Record<string, LocationQueryValue | LocationQueryValue[]>>(() => {
     let query: LocationQuery = {}
@@ -146,6 +147,7 @@ export const useNavigationStore = defineStore('navigation', () => {
     route,
     query,
     searchParams,
+    tabSelectedOnList,
     queryByUsedTrackId,
     isCatalog,
     isByRouteName,
