@@ -16,7 +16,7 @@ export class Marked {
       renderer: {
         link(token: Tokens.Link) {
           const text = this.parser.parseInline(token.tokens)
-          if (token.href) {
+          if (token.href === undefined) {
             return `${text}`
           }
           const localLink = token.href.startsWith(`${location.protocol}//${location.hostname}`)
