@@ -42,26 +42,6 @@
         >
           <ResultProgramList :filtered-programs="filteredPrograms" />
         </DsfrTabContent>
-
-        <DsfrTabContent
-          class="fr-p-0"
-          panel-id="tab-content-2"
-          tab-id="tab-2"
-          :selected="selectedTabIndex === 2"
-          :asc="asc"
-        >
-          Coucou 2
-        </DsfrTabContent>
-
-        <DsfrTabContent
-          class="fr-p-0"
-          panel-id="tab-content-3"
-          tab-id="tab-3"
-          :selected="selectedTabIndex === 3"
-          :asc="asc"
-        >
-          Coucou 3
-        </DsfrTabContent>
       </TeeTabs>
     </div>
   </div>
@@ -114,12 +94,7 @@ const getObjectiveForProjectFiltering = () => {
 
 const initialSelectedIndex = 0
 const tabListName = 'Liste d’onglet'
-const tabTitles = [
-  { title: "Des idées d'actions à mettre en place" },
-  { title: 'Vos aides financières' },
-  { title: 'Coucou 2' },
-  { title: 'Coucou 3' }
-]
+const tabTitles = [{ title: "Des idées d'actions à mettre en place" }, { title: 'Vos aides financières' }]
 const asc = ref(true)
 const selectedTabIndex = ref(initialSelectedIndex)
 
