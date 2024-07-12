@@ -114,9 +114,26 @@ const getIdFromIndex = (idx: number) => {
   return id
 }
 
+const scrollToTabItem = (idx: number, previousIdx: number) => {
+  const parent = tablist.value
+
+  if (!parent) {
+    return
+  }
+
+  const previousTab = parent.children[previousIdx] as HTMLElement
+
+  if (idx > previousIdx) {
+    parent.scrollLeft += previousTab.offsetWidth
+  } else {
+    parent.scrollLeft -= previousTab.offsetWidth
+  }
+}
 const selectIndex = (idx: number) => {
+  const previousIdx = selectedIndex.value
   asc.value = idx > selectedIndex.value
   selectedIndex.value = idx
+  scrollToTabItem(idx, previousIdx)
   emit('selectTab', idx)
 }
 const selectPrevious = () => {

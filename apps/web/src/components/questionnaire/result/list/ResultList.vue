@@ -2,7 +2,7 @@
   <div class="fr-container--fluid fr-container--fluid--no-overflow fr-px-0 fr-mb-0 fr-mt-6v fr-mr-lg-6v">
     <div class="fr-grid-row fr-grid-row--center fr-justify-center">
       <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
-        <div class="fr-col-9 fr-col-offset-md-3 fr-col-offset-lg-2 fr-mb-3v fr-col-xs-12">
+        <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-col-justify--left fr-pl-1v fr-mb-3v">
           <ResultHeader v-if="!navigationStore.isCatalog()" />
         </div>
       </div>
@@ -41,6 +41,26 @@
           :asc="asc"
         >
           <ResultProgramList :filtered-programs="filteredPrograms" />
+        </DsfrTabContent>
+
+        <DsfrTabContent
+          class="fr-p-0"
+          panel-id="tab-content-2"
+          tab-id="tab-2"
+          :selected="selectedTabIndex === 2"
+          :asc="asc"
+        >
+          Coucou 2
+        </DsfrTabContent>
+
+        <DsfrTabContent
+          class="fr-p-0"
+          panel-id="tab-content-3"
+          tab-id="tab-3"
+          :selected="selectedTabIndex === 3"
+          :asc="asc"
+        >
+          Coucou 3
         </DsfrTabContent>
       </TeeTabs>
     </div>
@@ -94,7 +114,12 @@ const getObjectiveForProjectFiltering = () => {
 
 const initialSelectedIndex = 0
 const tabListName = 'Liste d’onglet'
-const tabTitles = [{ title: "Des idées d'actions à mettre en place" }, { title: 'Vos aides financières' }]
+const tabTitles = [
+  { title: "Des idées d'actions à mettre en place" },
+  { title: 'Vos aides financières' },
+  { title: 'Coucou 2' },
+  { title: 'Coucou 3' }
+]
 const asc = ref(true)
 const selectedTabIndex = ref(initialSelectedIndex)
 

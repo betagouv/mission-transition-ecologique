@@ -2,7 +2,7 @@
   <DsfrCard
     :title="project.title"
     :description="project.shortDescription"
-    :img-src="`${publicPath}${project.image}`"
+    :img-src="project.image"
     :alt-img="`image / ${project.title}`"
     :no-arrow="true"
   >
@@ -30,9 +30,6 @@
 <script setup lang="ts">
 import { DsfrCard } from '@gouvminint/vue-dsfr'
 import { Project } from '@/types'
-import Config from '@/config'
-
-const publicPath = Config.publicPath
 
 interface Props {
   project: Project
