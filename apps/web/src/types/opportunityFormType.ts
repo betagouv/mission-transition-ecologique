@@ -9,7 +9,7 @@ export interface OpportunityFormType {
   siret: ValidatedStringFieldInputType
   needs: StringFieldInputType
   cgu: BooleanFieldInputType
-  linkToProgramPage: MandatoryStringFieldFormType
+  linkToPage: MandatoryStringFieldFormType
 }
 
 type DefaultFieldFormType = {

@@ -345,7 +345,7 @@ const opportunityForm = ref<OpportunityFormType>({
     value: false,
     label: "J'accepte d'être recontacté par l'équipe de Transition Écologique des Entreprises"
   },
-  linkToProgramPage: {
+  linkToPage: {
     required: true,
     isValid: undefined,
     value: new URL(route.fullPath, window.location.origin).href

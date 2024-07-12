@@ -8,7 +8,7 @@ import ProgramFeatures from '../../program/domain/programFeatures'
 import { Operators, ProgramType, Project } from '@tee/data'
 import { ContactDetails, Opportunity, OpportunityType, SiretValidator } from '@tee/common'
 import EstablishmentService from '../../establishment/application/establishmentService'
-import { projects } from '@tee/data/static'
+import { projects as untypedProjectsData } from '@tee/data/static'
 
 export default class OpportunityFeatures {
   private readonly _contactRepository: ContactRepository
@@ -70,26 +70,29 @@ export default class OpportunityFeatures {
   }
 
   private async _createProjectOpportunity(opportunity: Opportunity, contactId: ContactId): Promise<Result<OpportunityId, Error>> {
-    const projectss = projects as unknown as Project[]
-    const project = projectss.find((project) => project.id === +opportunity.id)
-    if (!project) {
+    const allProjects = untypedProjectsData as unknown as Project[]
+    const currentProject = allProjects.find((project) => project.id === +opportunity.id)
+    if (!currentProject) {
       return Result.err(new Error('Project with id ' + opportunity.id + 'not found'))
     }
 
-    opportunity.id = project.slug // consistency with program in database.
+    opportunity.id = currentProject.slug // consistency with program in database.
 
-    const opportunityWithOperator = {
+    const opportunityResult = await this._opportunityRepository.create(contactId.id, {
       ...opportunity,
       programContactOperator: 'TEE' as Operators
-    }
-    const opportunityResult = await this._opportunityRepository.create(contactId.id, opportunityWithOperator)
+    })
     if (opportunityResult.isErr) {
       // TODO : Send notif: opportunity not created
       return opportunityResult
     }
 
-    this._sendReturnReceipt(opportunity, project as Project, OpportunityType.Project)
-    this._transmitProjectOpportunityToHubs(opportunityResult.value, this._addContactIdToOpportunity(opportunity, contactId.id), project)
+    this._sendReturnReceipt(opportunity, currentProject as Project, OpportunityType.Project)
+    this._transmitProjectOpportunityToHubs(
+      opportunityResult.value,
+      this._addContactIdToOpportunity(opportunity, contactId.id),
+      currentProject
+    )
 
     return opportunityResult
   }

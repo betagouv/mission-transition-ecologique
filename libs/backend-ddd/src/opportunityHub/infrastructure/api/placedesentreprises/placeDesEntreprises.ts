@@ -57,7 +57,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
         break
 
       default:
-        return Maybe.of(Error("Canno't tranmist an opportunity of unknown type"))
+        return Maybe.of(Error("Canno't tranmist to PDE an opportunity of type" + opportunity.type))
     }
     if (maybePayload.isErr) {
       return Maybe.of(maybePayload.error)
