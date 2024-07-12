@@ -38,7 +38,6 @@ export default class OpportunityApi extends RequestApi {
       resp.ok = false
       resp.status = 500
       resp.statusText = 'Internal server error'
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
       resp.message = `${error}`
     }
 
