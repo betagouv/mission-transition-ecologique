@@ -1,5 +1,8 @@
 const projectFrDict = {
   project: {
+    result: {
+      resume: 'Voici les actions par lesquelles commencer pour votre {effectif} du secteur {secteur} en région {region} :'
+    },
     form: {
       needs: `Bonjour,
 

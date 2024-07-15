@@ -22,7 +22,7 @@
       <div class="fr-grid-row fr-grid-row--center fr-m-0 fr-p-0">
         <div class="fr-col-3 fr-col-lg-2 fr-col-content--bottom fr-pb-6w">
           <img
-            :src="`${publicPath}images/TEE_project_priority.svg`"
+            src="/images/TEE_project_priority.svg"
             alt=""
             class="fr-responsive-img fr-col-12 fr-pt-6w"
           />
@@ -30,7 +30,7 @@
         <div class="fr-col-10 fr-px-0 fr-pr-md-2v">
           <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--left fr-px-2w fr-px-md-2v">
             <div class="fr-pt-2w fr-pl-2w fr-text--bold fr-text--blue-france">
-              Voici les actions par lesquelles commencer pour votre TPE du secteur Hôtels et hébergement similaire :
+              {{ resume }}
             </div>
             <router-link
               v-for="(project, index) in priorityProjects"
@@ -108,11 +108,12 @@
 </template>
 
 <script setup lang="ts">
+import TrackStructure from '@/utils/track/trackStructure'
+import Translation from '@/utils/translation'
 import { computed } from 'vue'
 import { type ProgramData, RouteName, Project } from '@/types'
 import UsedTrack from '@/utils/track/usedTrack'
 import { useProgramStore } from '@/stores/program'
-import Config from '@/config'
 import { useNavigationStore } from '@/stores/navigation'
 import { type RouteLocationRaw } from 'vue-router'
 
@@ -126,7 +127,11 @@ const props = defineProps<ProjectListProps>()
 const navigationStore = useNavigationStore()
 const programStore = useProgramStore()
 
-const publicPath = Config.publicPath
+const resume: string = Translation.t('project.result.resume', {
+  effectif: Translation.t('enterprise.structureSize.' + TrackStructure.getSize()),
+  secteur: TrackStructure.getSector(),
+  region: TrackStructure.getRegion()
+})
 
 const hasPriorityProjects = computed(() => {
   return priorityProjects.value ? priorityProjects.value?.length > 0 : false
