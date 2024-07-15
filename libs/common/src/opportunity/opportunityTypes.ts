@@ -32,3 +32,19 @@ export interface OpportunityBody {
   opportunity: Opportunity
   optIn: boolean
 }
+
+export type ProjectOpportunity = ContactDetails & ProjectOpportunityDetails
+
+export interface ProjectOpportunityDetails {
+  projectId: number
+  linkToProjectPage: string
+  message: string
+  questionnaireRoute?: QuestionnaireRoute
+  priorityObjectives?: PublicodeObjective[]
+  otherData?: string
+}
+
+export interface ProjectBody {
+  project: ProjectOpportunity
+  optIn: boolean
+}

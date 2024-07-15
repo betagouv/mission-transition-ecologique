@@ -1,5 +1,6 @@
 <template>
   <div
+    id="eligibility-criteria-bar"
     ref="eligibilityCriteria"
     class="fr-grid-row fr-grid-row--center fr-text-center fr-grid-row--middle fr-my-auto fr-py-md-1w"
     :class="bgClass"

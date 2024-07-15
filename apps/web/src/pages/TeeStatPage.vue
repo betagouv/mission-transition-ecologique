@@ -100,8 +100,7 @@
 import { ref, onMounted } from 'vue'
 import Chart from 'chart.js/auto'
 import StatsApi from '@/service/api/statsApi'
-import { CalloutType } from '@/types/elementsPropsTypes'
-import { StatsData } from '@tee/common'
+import { CalloutType, StatsData } from '@/types'
 
 const statsData = ref<StatsData | null>(null)
 const chartCanvas = ref<HTMLCanvasElement | null>(null)

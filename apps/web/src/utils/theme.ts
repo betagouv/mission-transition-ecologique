@@ -69,6 +69,10 @@ export class Theme {
     }
   ]
 
+  static getById(id: ThemeId | undefined) {
+    return this.themes.find((theme) => theme.id === id)
+  }
+
   static getByValue(value: PublicodeObjective) {
     return this.themes.find((theme) => theme.value === value)
   }
