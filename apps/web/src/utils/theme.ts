@@ -13,7 +13,7 @@ export class Theme {
     },
     {
       id: ThemeId.Energy,
-      title: 'Économies d’énergie',
+      title: 'Énergie',
       tagLabel: '⚡️ énergie',
       value: PublicodeObjective.EnergyPerformance,
       image: '/images/thematique/thematique-energie.svg',
@@ -30,7 +30,7 @@ export class Theme {
     {
       id: ThemeId.Building,
       title: 'Construction & rénovation',
-      tagLabel: '🏢 bâtiment',
+      tagLabel: '🏢 rénovation',
       value: PublicodeObjective.BuildingRenovation,
       image: '/images/thematique/thematique-batiments.svg',
       color: Color.blue
