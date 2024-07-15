@@ -8,7 +8,7 @@ import ProgramFeatures from '../../program/domain/programFeatures'
 import { Operators, ProgramType, Project } from '@tee/data'
 import { ContactDetails, Opportunity, OpportunityType, SiretValidator } from '@tee/common'
 import EstablishmentService from '../../establishment/application/establishmentService'
-import { projects as untypedProjectsData } from '@tee/data/static'
+import { projects } from '@tee/data/static'
 
 export default class OpportunityFeatures {
   private readonly _contactRepository: ContactRepository
@@ -32,11 +32,11 @@ export default class OpportunityFeatures {
   }
 
   createOpportunity = async (opportunity: Opportunity, optIn: true): Promise<Result<OpportunityId, Error>> => {
-    const maybeFullopportunity = await this._verifyAndAddEstablishmentData(opportunity)
-    if (maybeFullopportunity.isErr) {
-      return Result.err(maybeFullopportunity.error)
+    const maybeFullOpportunity = await this._verifyAndAddEstablishmentData(opportunity)
+    if (maybeFullOpportunity.isErr) {
+      return Result.err(maybeFullOpportunity.error)
     }
-    opportunity = maybeFullopportunity.value
+    opportunity = maybeFullOpportunity.value
     const contactIdResult = await this._contactRepository.createOrUpdate(opportunity as ContactDetails, optIn)
     if (contactIdResult.isErr) {
       // TODO : Send notif: contact and opportunity not created!
@@ -63,15 +63,14 @@ export default class OpportunityFeatures {
       return opportunityResult
     }
 
-    this._sendReturnReceipt(opportunity, program, OpportunityType.Program)
+    this._sendReturnReceipt(opportunity, program)
     this._transmitProgramOpportunityToHubs(opportunityResult.value, this._addContactIdToOpportunity(opportunity, contactId.id), program)
 
     return opportunityResult
   }
 
   private async _createProjectOpportunity(opportunity: Opportunity, contactId: ContactId): Promise<Result<OpportunityId, Error>> {
-    const allProjects = untypedProjectsData as unknown as Project[]
-    const currentProject = allProjects.find((project) => project.id === +opportunity.id)
+    const currentProject = projects.find((project) => project.id === +opportunity.id)
     if (!currentProject) {
       return Result.err(new Error('Project with id ' + opportunity.id + 'not found'))
     }
@@ -87,7 +86,7 @@ export default class OpportunityFeatures {
       return opportunityResult
     }
 
-    this._sendReturnReceipt(opportunity, currentProject as Project, OpportunityType.Project)
+    this._sendReturnReceipt(opportunity, currentProject)
     this._transmitProjectOpportunityToHubs(
       opportunityResult.value,
       this._addContactIdToOpportunity(opportunity, contactId.id),
@@ -149,8 +148,8 @@ export default class OpportunityFeatures {
     return new ProgramFeatures(this._programRepository).getById(id)
   }
 
-  private _sendReturnReceipt(opportunity: Opportunity, programOrProject: ProgramType | Project, opportunityType: OpportunityType) {
-    void this._mailRepository.sendReturnReceipt(opportunity, programOrProject, opportunityType).then((hasError) => {
+  private _sendReturnReceipt(opportunity: Opportunity, programOrProject: ProgramType | Project) {
+    void this._mailRepository.sendReturnReceipt(opportunity, programOrProject).then((hasError) => {
       if (hasError) {
         // TODO: Send an email to the admin: Receipt not sent or add error on sentry
       }

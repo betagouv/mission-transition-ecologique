@@ -16,20 +16,19 @@ export default class BrevoMail {
 
   sendReturnReceipt: MailerManager['sendReturnReceipt'] = async (
     opportunity: Opportunity,
-    programOrProject: ProgramType | Project,
-    opportunityType: OpportunityType
+    programOrProject: ProgramType | Project
   ): Promise<Maybe<Error> | void> => {
     try {
-      await this._api.sendTransacEmail(this._email(opportunity, programOrProject, opportunityType))
+      await this._api.sendTransacEmail(this._email(opportunity, programOrProject))
     } catch (error: unknown) {
       return Maybe.just(error as Error)
     }
   }
 
-  private _email(opportunity: Opportunity, programOrProject: ProgramType | Project, opportunityType: OpportunityType) {
+  private _email(opportunity: Opportunity, programOrProject: ProgramType | Project) {
     const email = new SendSmtpEmail()
 
-    switch (opportunityType) {
+    switch (opportunity.type) {
       case OpportunityType.Program:
         email.templateId = this._programTemplateReceipt
         email.params = this._paramsProgram(opportunity, programOrProject as ProgramType)
