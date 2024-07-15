@@ -259,6 +259,9 @@
 
 <script setup lang="ts">
 import OpportunityApi from '@/service/api/opportunityApi'
+import { Scroll } from '@/utils/scroll'
+import TrackStructure from '@/utils/track/trackStructure'
+import { computed, ref } from 'vue'
 import {
   EmailValidator,
   InputFieldUnionType,
@@ -268,6 +271,8 @@ import {
   Project,
   ProjectFormType,
   type ReqResp,
+  PhoneValidator,
+  EmailValidator,
   SiretValidator,
   TrackId
 } from '@/types'
@@ -279,11 +284,14 @@ import Translation from '@/utils/translation'
 import { DsfrCheckbox, DsfrInput, DsfrInputGroup } from '@gouvminint/vue-dsfr'
 import { ref } from 'vue'
 import { useRoute } from 'vue-router'
+import { ProjectFormType } from '@/types'
+import Contact from '@/utils/contact'
 
 const route = useRoute()
 
 interface Props {
   project: Project
+  formContainerRef: HTMLElement | null | undefined
 }
 
 const props = defineProps<Props>()
