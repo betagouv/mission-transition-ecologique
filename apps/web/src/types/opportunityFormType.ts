@@ -1,6 +1,8 @@
-import { CalloutType } from '@/types/elementsPropsTypes'
+import { CalloutType } from '@/types'
 
-export interface OpportunityFormType {
+export type ProjectFormType = FormType & { project: StringFieldInputType }
+export type OpportunityFormType = FormType
+export interface FormType {
   [key: string]: StringFieldInputType | MandatoryStringFieldFormType | BooleanFieldInputType | ValidatedStringFieldInputType
   name: StringFieldInputType
   surname: StringFieldInputType

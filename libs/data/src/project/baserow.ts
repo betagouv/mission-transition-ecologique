@@ -3,7 +3,8 @@ import dotenv from 'dotenv'
 import fs from 'fs'
 import path from 'path'
 import sharp from 'sharp'
-import { BaserowImageTable, BaserowLinkedObject, BaserowProject, BaserowTheme, RawProject } from './type'
+import { RawProject } from '../project/type/project'
+import { BaserowImageTable, BaserowLinkedObject, BaserowProject, BaserowTheme } from './type/baserow'
 
 dotenv.config()
 
@@ -120,10 +121,9 @@ export class Baserow {
     let imageSharp = sharp(imageBuffer)
     const metadata = await imageSharp.metadata()
     if (metadata.width && metadata.width > 1280) {
-      const width = Math.min(Math.round(metadata.width / 2), 1280)
-      imageSharp = imageSharp.resize(width)
+      imageSharp = imageSharp.resize(1280)
     }
-    return await imageSharp.webp({ quality: 50 }).toBuffer()
+    return await imageSharp.webp({ quality: 60 }).toBuffer()
   }
 
   private _generateMainTheme(mainTheme: BaserowLinkedObject[], baserowThemes: BaserowTheme[]): string {

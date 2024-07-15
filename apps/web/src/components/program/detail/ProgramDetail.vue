@@ -269,6 +269,7 @@ import { RouteName } from '@/types/routeType'
 import Contact from '@/utils/contact'
 import Matomo from '@/utils/matomo'
 import Program from '@/utils/program/program'
+import { Scroll } from '@/utils/scroll'
 import Translation from '@/utils/translation'
 import { computed, onBeforeMount, ref } from 'vue'
 import { useRoute } from 'vue-router'
@@ -356,7 +357,7 @@ const programIsAvailable = computed(() => {
 
 const scrollToProgramForm = () => {
   if (TeeProgramFormContainer.value) {
-    TeeProgramFormContainer.value.scrollIntoView({ behavior: 'smooth' })
+    Scroll.to(TeeProgramFormContainer.value)
   }
 }
 </script>

@@ -262,7 +262,7 @@
 </template>
 
 <script setup lang="ts">
-import { scrollToElementCenter } from '@/utils/helpers'
+import { Scroll } from '@/utils/scroll'
 import TrackStructure from '@/utils/track/trackStructure'
 import { computed, ref } from 'vue'
 import { InputFieldUnionType, isValidatedStringFieldInputType, type ProgramData, type ReqResp, TrackId } from '@/types'
@@ -274,7 +274,7 @@ import { RouteName } from '@/types/routeType'
 import { useRoute } from 'vue-router'
 import Format from '@/utils/format'
 import OpportunityApi from '@/service/api/opportunityApi'
-import type { OpportunityFormType } from '@/types/opportunityFormType'
+import { OpportunityFormType } from '@/types'
 import Contact from '@/utils/contact'
 import { OpportunityType, PhoneValidator, EmailValidator, SiretValidator } from '@tee/common'
 import Config from '@/config'
@@ -423,7 +423,7 @@ const saveOpportunityForm = async () => {
 const scrollToFormContainer = () => {
   const element = props.formContainerRef
   if (element) {
-    scrollToElementCenter(element)
+    Scroll.toBlockCenter(element)
   }
 }
 
