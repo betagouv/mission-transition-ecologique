@@ -6,10 +6,7 @@
       class="fr-col-4 fr-col-sm-6 fr-col-md-4 fr-col-xs-12"
       @click="updateSelectOption(opt)"
     >
-      <ThemeCard
-        :is-selected="opt.value === themeSelectedOption?.value"
-        :option="opt"
-      />
+      <ThemeCard :option="opt" />
     </div>
   </div>
 </template>

@@ -1,11 +1,15 @@
 <template>
   <div
-    :class="`fr-card fr-card-objective fr-mx-md-0 fr-mx-2v themeCard fr-bg-xs--${option.color}--light ${isSelected ? 'selectedCard' : ''} `"
+    class="fr-card fr-card-objective fr-mx-md-0 fr-mx-2v themeCard"
+    :class="`fr-bg-xs--${option.color}--light`"
   >
     <div class="fr-card__body fr-py-1v">
       <div class="fr-card__content fr-p-2v">
         <div class="fr-card__title">
-          <div :class="`fr-p-0 fr-hidden-xs fr-my-2v fr-bg--${option.color} themeDivider`" />
+          <div
+            class="fr-p-0 fr-hidden-xs fr-my-2v themeDivider"
+            :class="`fr-bg--${option.color}`"
+          />
           <div class="fr-h5 fr-mb-1v">
             {{ option.title }}
           </div>
@@ -23,7 +27,10 @@
         </div>
       </div>
     </div>
-    <div :class="`fr-card__header fr-card__header--${option.color} fr-hidden-xs`">
+    <div
+      class="fr-hidden-xs fr-card__header"
+      :class="`fr-card__header--${option.color}`"
+    >
       <div class="fr-card__img">
         <img
           class="fr-responsive-img"
@@ -40,7 +47,6 @@ import { ThemeOption } from './ThemeSelect.vue'
 
 interface Props {
   option: ThemeOption
-  isSelected: boolean
 }
 defineProps<Props>()
 </script>
@@ -51,8 +57,5 @@ defineProps<Props>()
 }
 .themeCard {
   height: 100%;
-}
-.selectedCard {
-  background-size: 100% 4px, 4px 100%, 4px 100%, 100% 4px !important;
 }
 </style>

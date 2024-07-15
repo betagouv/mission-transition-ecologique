@@ -11,6 +11,7 @@
   <!-- BTN NEXT -->
   <div class="fr-col-6 fr-col-md-5 fr-col-lg-4 fr-col-xl-3">
     <DsfrButton
+      v-if="showNextButton"
       class="fr-btn-fullwidth fr-btn-sm-fullwidth"
       :label="Translation.t('next')"
       :disabled="selectedOptions.length === 0"
@@ -28,6 +29,7 @@ import type { DsfrButton } from '@gouvminint/vue-dsfr'
 
 interface Props {
   selectedOptions: TrackOptionsUnion[]
+  showNextButton: Boolean
 }
 defineProps<Props>()
 

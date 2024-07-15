@@ -79,7 +79,14 @@
         v-if="TrackComponent.isThemeInterface(usedTrack)"
         class="fr-container--fluid"
       >
-        <ThemeSelect @update-selection="updateSelection($event.option, $event.index, $event.remove)" />
+        <ThemeSelect
+          @update-selection="
+            ($event) => {
+              updateSelection($event.option, $event.index, $event.remove)
+              saveSelection()
+            }
+          "
+        />
       </div>
       <div
         v-if="hasSubmitButton"
@@ -89,6 +96,7 @@
         <!-- BTN PREVIOUS -->
         <TrackSubmitButton
           :selected-options="selectedOptions"
+          :show-next-button="!TrackComponent.isThemeInterface(usedTrack)"
           @previous="backToPreviousTrack"
           @next="saveSelection"
         />
