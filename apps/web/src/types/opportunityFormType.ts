@@ -1,7 +1,7 @@
 import { CalloutType } from '@/types'
 
-export type ProjectFormType = FormType & { project: StringFieldInputType; linkToProjectPage: MandatoryStringFieldFormType }
-export type OpportunityFormType = FormType & { linkToProgramPage: MandatoryStringFieldFormType }
+export type ProjectFormType = FormType & { project: StringFieldInputType }
+export type OpportunityFormType = FormType
 export interface FormType {
   [key: string]: StringFieldInputType | MandatoryStringFieldFormType | BooleanFieldInputType | ValidatedStringFieldInputType
   name: StringFieldInputType

@@ -257,6 +257,7 @@
 </template>
 
 <script setup lang="ts">
+import OpportunityApi from '@/service/api/opportunityApi'
 import { Scroll } from '@/utils/scroll'
 import TrackStructure from '@/utils/track/trackStructure'
 import { computed, ref } from 'vue'
@@ -267,7 +268,8 @@ import {
   PhoneValidator,
   EmailValidator,
   SiretValidator,
-  Project
+  Project,
+  OpportunityType
 } from '@/types'
 import Translation from '@/utils/translation'
 import TeeDsfrButton from '@/components/element/button/TeeDsfrButton.vue'
@@ -275,7 +277,6 @@ import { DsfrInput, DsfrInputGroup, DsfrCheckbox } from '@gouvminint/vue-dsfr'
 import { useRoute } from 'vue-router'
 import { ProjectFormType } from '@/types'
 import Contact from '@/utils/contact'
-import ProjectOpportunityApi from '@/service/api/projectOpportunityApi'
 
 const route = useRoute()
 
@@ -330,7 +331,7 @@ const projectForm = ref<ProjectFormType>({
     value: false,
     label: "J'accepte d'être recontacté par l'équipe de Transition Écologique des Entreprises"
   },
-  linkToProjectPage: {
+  linkToPage: {
     required: true,
     isValid: undefined,
     value: new URL(route.fullPath, window.location.origin).href
@@ -395,7 +396,7 @@ const validateFormField = (field: InputFieldUnionType): void => {
 const saveProjectForm = async () => {
   try {
     isLoading.value = true
-    const opportunity = new ProjectOpportunityApi(projectForm.value, props.project.id)
+    const opportunity = new OpportunityApi(projectForm.value, props.project.id, OpportunityType.Project)
     requestResponse.value = await opportunity.fetch()
 
     // analytics / send event
