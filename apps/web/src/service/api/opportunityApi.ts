@@ -8,7 +8,8 @@ import {
   OpportunityBody,
   ReqResp,
   WithoutNullableKeys,
-  OpportunityFormType
+  OpportunityFormType,
+  OpportunityType
 } from '@/types'
 import RequestApi from '@/service/api/requestApi'
 import TrackStructure from '@/utils/track/trackStructure'
@@ -22,7 +23,7 @@ export default class OpportunityApi extends RequestApi {
   private _usedTrackStore = useUsedTrackStore()
   private _opportunityForm: WithoutNullableKeys<OpportunityFormType>
 
-  constructor(opportunityForm: OpportunityFormType, private _programId: string) {
+  constructor(opportunityForm: OpportunityFormType, private _id: string | number, private _opportunityType: OpportunityType) {
     super()
     this._opportunityForm = opportunityForm as WithoutNullableKeys<OpportunityFormType>
   }
@@ -45,7 +46,6 @@ export default class OpportunityApi extends RequestApi {
       resp.ok = false
       resp.status = 500
       resp.statusText = 'Internal server error'
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
       resp.message = `${error}`
     }
 
@@ -55,6 +55,8 @@ export default class OpportunityApi extends RequestApi {
   payload(): OpportunityBody {
     return {
       opportunity: {
+        type: this._opportunityType,
+        id: `${this._id}`,
         firstName: this._opportunityForm.name.value,
         lastName: this._opportunityForm.surname.value,
         email: this._opportunityForm.email.value,
@@ -63,14 +65,13 @@ export default class OpportunityApi extends RequestApi {
         companyName: this.getFromUsedTrack(TrackId.Siret, 'denomination'),
         companySector: TrackStructure.getSector(),
         companySize: (this.getFromUsedTrack(TrackId.StructureWorkforce, PublicodesKeys.Workforce) as unknown as number) ?? undefined, // get from usedTrack
-        programId: this._programId,
         message: this._opportunityForm.needs.value,
         questionnaireRoute: this.getFromUsedTrack(
           TrackId.QuestionnaireRoute,
           QuestionnaireDataEnum.questionnaire_route as string
         ) as QuestionnaireRoute, // get from usedTrack
         otherData: this.getAllValuesFromUsedTrack(),
-        linkToProgramPage: this._opportunityForm.linkToProgramPage.value
+        linkToPage: this._opportunityForm.linkToPage.value
       },
       optIn: this._opportunityForm.cgu.value
     }

@@ -11,6 +11,7 @@ export interface FormType {
   siret: ValidatedStringFieldInputType
   needs: StringFieldInputType
   cgu: BooleanFieldInputType
+  linkToPage: MandatoryStringFieldFormType
 }
 
 type DefaultFieldFormType = {
