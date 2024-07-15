@@ -25,14 +25,14 @@ export class Baserow {
 
   async getValidProjects(): Promise<RawProject[]> {
     const baserowProjects = await this._getTableData<BaserowProject>(this._projectTableId)
-    const validBaserawProjects = baserowProjects.filter((value) => {
+    const validBaserowProjects = baserowProjects.filter((value) => {
       return value.Publié || true // TODO delete or true when there will be real data in baserow !
     })
 
     const baserawThemes = await this._getTableData<BaserowTheme>(this._themeTableId)
 
     const projects: RawProject[] = []
-    for (const project of validBaserawProjects) {
+    for (const project of validBaserowProjects) {
       try {
         const result = await this._convertToRawProjectType(project, baserawThemes)
         projects.push(result)
@@ -105,9 +105,9 @@ export class Baserow {
       console.log('Defaulting to the default image : ' + this._defaultImageName)
       return this._defaultImageName
     }
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+
     const imageBuffer = Buffer.from(imageDownloadResponse.data, 'binary')
-    const webpBuffer = await sharp(imageBuffer).webp().toBuffer()
+    const webpBuffer = await this._sharpImage(imageBuffer)
 
     const fileName = `${imageInfos['Image URL TEE']}.webp`
     const filePath = path.join(this._imageDirectory, fileName)
@@ -116,12 +116,22 @@ export class Baserow {
     return fileName
   }
 
-  private _generateMainTheme(mainTheme: BaserowLinkedObject[], baserawThemes: BaserowTheme[]): string {
+  private async _sharpImage(imageBuffer: Buffer): Promise<Buffer> {
+    let imageSharp = sharp(imageBuffer)
+    const metadata = await imageSharp.metadata()
+    if (metadata.width && metadata.width > 1280) {
+      const width = Math.min(Math.round(metadata.width / 2), 1280)
+      imageSharp = imageSharp.resize(width)
+    }
+    return await imageSharp.webp({ quality: 50 }).toBuffer()
+  }
+
+  private _generateMainTheme(mainTheme: BaserowLinkedObject[], baserowThemes: BaserowTheme[]): string {
     if (mainTheme.length != 1) {
       console.warn('Missing mainTheme Or mainTheme not unique in a field')
     }
     const themeId = mainTheme[0].id
-    const matchingTheme = baserawThemes.find((theme) => theme.id === themeId)
+    const matchingTheme = baserowThemes.find((theme) => theme.id === themeId)
     if (matchingTheme === undefined) {
       console.warn('theme not found in baserow data (should not happen!)')
       return ''
@@ -132,12 +142,12 @@ export class Baserow {
   private _generateThemeList(
     mainTheme: BaserowLinkedObject[],
     secondaryThemes: BaserowLinkedObject[],
-    baserawThemes: BaserowTheme[]
+    baserowThemes: BaserowTheme[]
   ): string[] {
-    const themeList = [this._generateMainTheme(mainTheme, baserawThemes)]
+    const themeList = [this._generateMainTheme(mainTheme, baserowThemes)]
     secondaryThemes.forEach((secondaryTheme) => {
       const themeId = secondaryTheme.id
-      const matchingTheme = baserawThemes.find((theme) => theme.id === themeId)
+      const matchingTheme = baserowThemes.find((theme) => theme.id === themeId)
       if (matchingTheme) {
         themeList.push(matchingTheme['Nom (Tech)'])
       } else {
