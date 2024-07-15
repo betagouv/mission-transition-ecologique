@@ -276,9 +276,7 @@ import Format from '@/utils/format'
 import OpportunityApi from '@/service/api/opportunityApi'
 import type { OpportunityFormType } from '@/types/opportunityFormType'
 import Contact from '@/utils/contact'
-import { PhoneValidator } from '@tee/common'
-import { EmailValidator } from '@tee/common'
-import { SiretValidator } from '@tee/common'
+import { OpportunityType, PhoneValidator, EmailValidator, SiretValidator } from '@tee/common'
 import Config from '@/config'
 import { CalloutType } from '@/types/elementsPropsTypes'
 
@@ -345,7 +343,7 @@ const opportunityForm = ref<OpportunityFormType>({
     value: false,
     label: "J'accepte d'être recontacté par l'équipe de Transition Écologique des Entreprises"
   },
-  linkToProgramPage: {
+  linkToPage: {
     required: true,
     isValid: undefined,
     value: new URL(route.fullPath, window.location.origin).href
@@ -410,7 +408,7 @@ const validateFormField = (field: InputFieldUnionType): void => {
 const saveOpportunityForm = async () => {
   try {
     isLoading.value = true
-    const opportunity = new OpportunityApi(opportunityForm.value, props.program.id)
+    const opportunity = new OpportunityApi(opportunityForm.value, props.program.id, OpportunityType.Program)
     requestResponse.value = await opportunity.fetch()
 
     // analytics / send event
