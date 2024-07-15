@@ -1,9 +1,9 @@
 import RequestApi from '@/service/api/requestApi'
-import { Result } from 'true-myth'
-import { Project } from '@tee/data'
+import type { Project } from '@/types'
 import { projects } from '@tee/data/static'
+import { Result } from 'true-myth'
 
-export default class ProjectApi extends RequestApi<Project> {
+export default class ProjectApi extends RequestApi {
   protected readonly url = '/api/projects'
 
   constructor() {
@@ -14,7 +14,7 @@ export default class ProjectApi extends RequestApi<Project> {
     //TODO replace with api call once the endpoint is available
     return new Promise((resolve, reject) => {
       if (!projects) reject(new Error('No project data'))
-      else resolve(Result.ok(projects as unknown as Project[]))
+      else resolve(Result.ok(projects))
     })
   }
 }
