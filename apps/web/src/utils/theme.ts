@@ -24,7 +24,7 @@ export class Theme {
       tagLabel: '💧 eau',
       value: PublicodeObjective.WaterConsumption,
       image: '/images/thematique/thematique-eau.svg',
-      color: Color.blueLight
+      color: Color.blueFrance
     },
     {
       title: 'Construction & rénovation',
