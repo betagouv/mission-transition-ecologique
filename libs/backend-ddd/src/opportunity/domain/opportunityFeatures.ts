@@ -70,12 +70,12 @@ export default class OpportunityFeatures {
   }
 
   private async _createProjectOpportunity(opportunity: Opportunity, contactId: ContactId): Promise<Result<OpportunityId, Error>> {
-    const currentProject = projects.find((project) => project.id === +opportunity.id)
-    if (!currentProject) {
+    const project = projects.find((project) => project.id === +opportunity.id)
+    if (!project) {
       return Result.err(new Error('Project with id ' + opportunity.id + 'not found'))
     }
 
-    opportunity.id = currentProject.slug // consistency with program in database.
+    opportunity.id = project.slug // consistency with program in database.
 
     const opportunityResult = await this._opportunityRepository.create(contactId.id, {
       ...opportunity,
@@ -86,12 +86,8 @@ export default class OpportunityFeatures {
       return opportunityResult
     }
 
-    this._sendReturnReceipt(opportunity, currentProject)
-    this._transmitProjectOpportunityToHubs(
-      opportunityResult.value,
-      this._addContactIdToOpportunity(opportunity, contactId.id),
-      currentProject
-    )
+    this._sendReturnReceipt(opportunity, project)
+    this._transmitProjectOpportunityToHubs(opportunityResult.value, this._addContactIdToOpportunity(opportunity, contactId.id), project)
 
     return opportunityResult
   }

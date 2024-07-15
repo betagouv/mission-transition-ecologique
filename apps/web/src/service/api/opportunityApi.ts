@@ -23,7 +23,7 @@ export default class OpportunityApi extends RequestApi {
   private _usedTrackStore = useUsedTrackStore()
   private _opportunityForm: WithoutNullableKeys<OpportunityFormType>
 
-  constructor(opportunityForm: OpportunityFormType, private _id: string | number, private _opportunityType: OpportunityType) {
+  constructor(opportunityForm: OpportunityFormType, private _id: string, private _opportunityType: OpportunityType) {
     super()
     this._opportunityForm = opportunityForm as WithoutNullableKeys<OpportunityFormType>
   }
@@ -56,7 +56,7 @@ export default class OpportunityApi extends RequestApi {
     return {
       opportunity: {
         type: this._opportunityType,
-        id: `${this._id}`,
+        id: this._id,
         firstName: this._opportunityForm.name.value,
         lastName: this._opportunityForm.surname.value,
         email: this._opportunityForm.email.value,

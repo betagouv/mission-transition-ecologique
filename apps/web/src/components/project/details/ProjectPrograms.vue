@@ -77,13 +77,11 @@
     </div>
     <div
       id="project-contact"
-      ref="TeeProjectFormContainer"
       class="fr-tee-form-block fr-m-auto"
     >
       <ProjectForm
         v-if="project"
         :project="project"
-        :form-container-ref="TeeProjectFormContainer"
       />
     </div>
   </DsfrAccordion>
@@ -112,7 +110,6 @@ const programStore = useProgramStore()
 const imgPath: string = '/images/tracks/ecriture.svg'
 const programs = ref<ProgramData[]>()
 const navigationStore = useNavigationStore()
-const TeeProjectFormContainer = ref<HTMLElement | null | undefined>(null)
 
 const hasError = ref<boolean>(false)
 
