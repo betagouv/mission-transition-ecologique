@@ -1,10 +1,10 @@
 <template>
   <div class="fr-col-12">
     <div class="fr-grid-row fr-grid-row--center fr-mt-2w">
-      <div class="fr-container fr-m-0 fr-p-0">
+      <div class="fr-container">
         <div
           v-if="showThemeFilterComponent"
-          class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-col-justify--left fr-pl-md-1v fr-mt-3v"
+          class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-mt-3v"
         >
           <ProgramFilterByTheme />
         </div>
@@ -14,7 +14,7 @@
       v-if="showObjectiveCardComponent"
       class="fr-grid-row fr-grid-row--center"
     >
-      <div class="fr-container fr-m-0 fr-p-0 fr-px-md-2v fr-mt-1v">
+      <div class="fr-container fr-mt-1v">
         <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2">
           <TeeObjectiveCard
             :objective="objective as PublicodeObjective"
