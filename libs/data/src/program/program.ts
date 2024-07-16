@@ -1,7 +1,6 @@
 import { ProgramAidType } from './types'
-import { ProgramType } from '@tee/data'
 
-export default class Program {
+export class Program {
   public static getPrefixedProgramName(program: ProgramType) {
     let prefix = ''
     switch (program["nature de l'aide"]) {
@@ -21,3 +20,8 @@ export default class Program {
     return `${prefix}${program["nature de l'aide"]} ${program.titre}`
   }
 }
+
+import type { Dispositif as ProgramWithoutId } from '../generated/program'
+
+export type { ProgramWithoutId }
+export type ProgramType = ProgramWithoutId & { id: string }

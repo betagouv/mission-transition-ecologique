@@ -21,6 +21,7 @@ export const useNavigationStore = defineStore('navigation', () => {
   const route = ref<RouteLocationNormalizedLoaded>()
   const searchParams = ref<URLSearchParams>(new URLSearchParams())
   const stringOfSearchParams = ref<string>('')
+  const tabSelectedOnList = ref<number>(0)
 
   const query = computed<Record<string, LocationQueryValue | LocationQueryValue[]>>(() => {
     let query: LocationQuery = {}
@@ -76,7 +77,10 @@ export const useNavigationStore = defineStore('navigation', () => {
     return isByRouteName(RouteName.Catalog)
   }
 
-  function isByRouteName(routeName: string) {
+  function isByRouteName(routeName: string | string[]) {
+    if (Array.isArray(routeName) && route.value?.name) {
+      return new Set(routeName).has(route.value.name as string)
+    }
     return route.value?.name === routeName
   }
 
@@ -143,6 +147,7 @@ export const useNavigationStore = defineStore('navigation', () => {
     route,
     query,
     searchParams,
+    tabSelectedOnList,
     queryByUsedTrackId,
     isCatalog,
     isByRouteName,

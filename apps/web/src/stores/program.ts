@@ -16,9 +16,9 @@ import {
   type ProgramData,
   TrackId,
   QuestionnaireDataEnum,
-  QuestionnaireRoute
+  QuestionnaireRoute,
+  QuestionnaireData
 } from '@/types'
-import type { QuestionnaireData } from '@/types'
 
 export const useProgramStore = defineStore('program', () => {
   const currentProgram = ref<ProgramData>()

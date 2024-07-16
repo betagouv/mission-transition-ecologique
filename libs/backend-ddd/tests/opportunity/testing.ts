@@ -1,4 +1,4 @@
-import { ContactDetails, Opportunity, OpportunityDetails } from '@tee/common'
+import { ContactDetails, Opportunity, OpportunityDetails, OpportunityType } from '@tee/common'
 
 export const fakeContact = (): ContactDetails => {
   return {
@@ -12,9 +12,10 @@ export const fakeContact = (): ContactDetails => {
 
 export const fakeOpportunityDetails = (): OpportunityDetails => {
   return {
-    programId: 'accelerateur-decarbonation',
+    type: OpportunityType.Program,
+    id: 'accelerateur-decarbonation',
     message: 'Bonjour monde !',
-    linkToProgramPage: 'https://localhost'
+    linkToPage: 'https://localhost'
   }
 }
 

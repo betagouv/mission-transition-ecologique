@@ -1,13 +1,14 @@
 import { Maybe, Result } from 'true-myth'
 import type { ContactRepository, MailerManager, OpportunityRepository } from './spi'
-import { OpportunityId, OpportunityWithContactId, OpportunityDetailsShort, OpportunityWithOperatorContact } from './types'
+import { OpportunityId, OpportunityWithContactId, OpportunityDetailsShort, OpportunityWithOperatorContact, ContactId } from './types'
 import OpportunityHubFeatures from '../../opportunityHub/domain/opportunityHubFeatures'
 import { OpportunityHubRepository } from '../../opportunityHub/domain/spi'
 import { ProgramRepository } from '../../program/domain/spi'
 import ProgramFeatures from '../../program/domain/programFeatures'
-import { ProgramType } from '@tee/data'
-import { ContactDetails, Opportunity, SiretValidator } from '@tee/common'
+import { Operators, ProgramType, Project } from '@tee/data'
+import { ContactDetails, Opportunity, OpportunityType, SiretValidator } from '@tee/common'
 import EstablishmentService from '../../establishment/application/establishmentService'
+import { projects } from '@tee/data/static'
 
 export default class OpportunityFeatures {
   private readonly _contactRepository: ContactRepository
@@ -31,21 +32,30 @@ export default class OpportunityFeatures {
   }
 
   createOpportunity = async (opportunity: Opportunity, optIn: true): Promise<Result<OpportunityId, Error>> => {
-    const maybeFullopportunity = await this._verifyAndAddEstablishmentData(opportunity)
-    if (maybeFullopportunity.isErr) {
-      return Result.err(maybeFullopportunity.error)
+    const maybeFullOpportunity = await this._verifyAndAddEstablishmentData(opportunity)
+    if (maybeFullOpportunity.isErr) {
+      return Result.err(maybeFullOpportunity.error)
     }
-    opportunity = maybeFullopportunity.value
+    opportunity = maybeFullOpportunity.value
     const contactIdResult = await this._contactRepository.createOrUpdate(opportunity as ContactDetails, optIn)
     if (contactIdResult.isErr) {
       // TODO : Send notif: contact and opportunity not created!
       return Result.err(contactIdResult.error)
     }
 
-    const program = this._getProgramById(opportunity.programId)
+    switch (opportunity.type) {
+      case OpportunityType.Program:
+        return this._createProgramOpportunity(opportunity, contactIdResult.value)
+      case OpportunityType.Project:
+        return this._createProjectOpportunity(opportunity, contactIdResult.value)
+    }
+  }
+
+  private async _createProgramOpportunity(opportunity: Opportunity, contactId: ContactId): Promise<Result<OpportunityId, Error>> {
+    const program = this._getProgramById(opportunity.id)
 
     const opportunityResult = await this._opportunityRepository.create(
-      contactIdResult.value.id,
+      contactId.id,
       this._addContactOperatorToOpportunity(opportunity, program)
     )
     if (opportunityResult.isErr || program === undefined) {
@@ -54,11 +64,30 @@ export default class OpportunityFeatures {
     }
 
     this._sendReturnReceipt(opportunity, program)
-    this._transmitOpportunityToHubs(
-      opportunityResult.value,
-      this._addContactIdToOpportunity(opportunity, contactIdResult.value.id),
-      program
-    )
+    this._transmitProgramOpportunityToHubs(opportunityResult.value, this._addContactIdToOpportunity(opportunity, contactId.id), program)
+
+    return opportunityResult
+  }
+
+  private async _createProjectOpportunity(opportunity: Opportunity, contactId: ContactId): Promise<Result<OpportunityId, Error>> {
+    const project = projects.find((project) => project.id === +opportunity.id)
+    if (!project) {
+      return Result.err(new Error('Project with id ' + opportunity.id + 'not found'))
+    }
+
+    opportunity.id = project.slug // consistency with program in database.
+
+    const opportunityResult = await this._opportunityRepository.create(contactId.id, {
+      ...opportunity,
+      programContactOperator: 'TEE' as Operators
+    })
+    if (opportunityResult.isErr) {
+      // TODO : Send notif: opportunity not created
+      return opportunityResult
+    }
+
+    this._sendReturnReceipt(opportunity, project)
+    this._transmitProjectOpportunityToHubs(opportunityResult.value, this._addContactIdToOpportunity(opportunity, contactId.id), project)
 
     return opportunityResult
   }
@@ -67,9 +96,22 @@ export default class OpportunityFeatures {
     return await this._opportunityRepository.getDailyOpportunitiesByContactId(contactId)
   }
 
-  private _transmitOpportunityToHubs(opportunityId: OpportunityId, opportunity: OpportunityWithContactId, program: ProgramType) {
+  private _transmitProgramOpportunityToHubs(opportunityId: OpportunityId, opportunity: OpportunityWithContactId, program: ProgramType) {
     void new OpportunityHubFeatures(this._opportunityHubRepositories)
       .maybeTransmitOpportunity(opportunity, program)
+      .then(async (opportunityHubResult) => {
+        if (opportunityHubResult == Maybe.nothing()) {
+          const opportunityUpdateErr = await this._updateOpportunitySentToHub(opportunityId, !opportunityHubResult.isJust)
+          if (opportunityUpdateErr.isJust) {
+            // TODO: Send notif: Opportunity not updated in our DB creating a missmatch between the status in the DB and the real opportunity status
+          }
+        }
+      })
+  }
+
+  private _transmitProjectOpportunityToHubs(opportunityId: OpportunityId, opportunity: OpportunityWithContactId, project: Project) {
+    void new OpportunityHubFeatures(this._opportunityHubRepositories)
+      .maybeTransmitProjectOpportunity(opportunity, project)
       .then(async (opportunityHubResult) => {
         if (opportunityHubResult == Maybe.nothing()) {
           const opportunityUpdateErr = await this._updateOpportunitySentToHub(opportunityId, !opportunityHubResult.isJust)
@@ -102,8 +144,8 @@ export default class OpportunityFeatures {
     return new ProgramFeatures(this._programRepository).getById(id)
   }
 
-  private _sendReturnReceipt(opportunity: Opportunity, program: ProgramType) {
-    void this._mailRepository.sendReturnReceipt(opportunity, program).then((hasError) => {
+  private _sendReturnReceipt(opportunity: Opportunity, programOrProject: ProgramType | Project) {
+    void this._mailRepository.sendReturnReceipt(opportunity, programOrProject).then((hasError) => {
       if (hasError) {
         // TODO: Send an email to the admin: Receipt not sent or add error on sentry
       }
