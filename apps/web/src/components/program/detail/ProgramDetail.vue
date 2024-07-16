@@ -354,7 +354,9 @@ const programIsAvailable = computed(() => {
 
 const scrollToProgramForm = () => {
   if (TeeProgramFormContainer.value) {
-    Scroll.toWithTopBarOffset(TeeProgramFormContainer.value)
+    navigationStore.isByRouteName(RouteName.CatalogDetail)
+      ? Scroll.to(TeeProgramFormContainer.value)
+      : Scroll.toWithTopBarOffset(TeeProgramFormContainer.value)
   }
 }
 </script>
