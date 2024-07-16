@@ -3,55 +3,44 @@
 @use 'setting';
 @use 'tool';
 
-.fr-col {
-  @each $align-name, $align in setting.$vertical-flex-aligns {
-    &-content--#{$align-name} {
-      display: flex;
-      align-items: $align;
-    }
-  }
-  @each $align-name, $align in setting.$horizontal-flex-aligns {
-    &-justify--#{$align-name} {
-      display: flex;
-      justify-content: $align;
-    }
-  }
+@each $breakpoint, $value in breakpoints.$values {
+  $modifier: tool.modifierByBreakpoint($breakpoint);
+  @include media-query.respond-from($breakpoint) {
+    .fr-col {
+      @each $align-name, $align in setting.$vertical-flex-aligns {
+        &-content#{$modifier}--#{$align-name} {
+          display: flex;
+          align-items: $align;
+        }
+      }
+      @each $align-name, $align in setting.$horizontal-flex-aligns {
+        &-justify#{$modifier}--#{$align-name} {
+          display: flex;
+          justify-content: $align;
+        }
+      }
 
-  @each $breakpoint, $value in breakpoints.$values {
-    $modifier: tool.modifierByBreakpoint($breakpoint);
-    &-hidden#{$modifier} {
-      @include media-query.respond-from($breakpoint) {
+      &-hidden#{$modifier} {
         display: none !important;
       }
-    }
-    &-unhidden#{$modifier} {
-      @include media-query.respond-from($breakpoint) {
+
+      &-unhidden#{$modifier} {
         display: unset !important;
       }
     }
-  }
-}
 
-.fr-grid-row {
-  @each $breakpoint, $value in breakpoints.$values {
-    $modifier: tool.modifierByBreakpoint($breakpoint);
-    @each $align-name, $align in setting.$horizontal-flex-aligns {
-      &#{$modifier}--#{$align-name} {
-        @include media-query.respond-from($breakpoint) {
+    .fr-grid-row {
+      @each $align-name, $align in setting.$horizontal-flex-aligns {
+        &#{$modifier}--#{$align-name} {
           justify-content: $align;
         }
       }
     }
-  }
-}
 
-.fr-container {
-  @each $breakpoint, $value in breakpoints.$values {
-    $modifier: tool.modifierByBreakpoint($breakpoint);
-    &#{$modifier} {
-      &--fluid {
-        &--no-overflow {
-          @include media-query.respond-from($breakpoint) {
+    .fr-container {
+      &#{$modifier} {
+        &--fluid {
+          &--no-overflow {
             overflow: unset;
           }
         }

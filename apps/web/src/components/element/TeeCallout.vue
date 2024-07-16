@@ -35,7 +35,6 @@
 </template>
 
 <script setup lang="ts">
-import { withDefaults } from 'vue'
 import { CalloutType } from '@/types/elementsPropsTypes'
 
 interface Props {
