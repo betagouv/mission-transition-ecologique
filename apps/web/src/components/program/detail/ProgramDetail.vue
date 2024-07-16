@@ -7,7 +7,7 @@
     message="Cette aide correspond à vos critères d’éligibilité"
     message-icon="fr-icon-checkbox-circle-fill"
   />
-  <div class="fr-container-fluid fr-px-0 fr-px-md-20v fr-mt-3v">
+  <div class="fr-container fr-mt-3v">
     <div class="fr-grid-row fr-grid-row-gutters">
       <div
         v-if="isCatalogDetail"
@@ -60,7 +60,7 @@
   <!-- PROGRAM INFOS -->
   <div
     v-if="program"
-    class="fr-container-fluid fr-px-0 fr-px-md-20v fr-mt-3v"
+    class="fr-container fr-mt-3v"
   >
     <div class="fr-grid-row fr-grid-row-gutters">
       <div class="fr-col">
