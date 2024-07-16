@@ -135,7 +135,7 @@ onMounted(() => {
    */
   if (window.ResizeObserver) {
     resizeObserver.value = new window.ResizeObserver(() => {
-      dsfrTabs.value?.renderTabs()
+      renderTabs()
     })
   }
 
