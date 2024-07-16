@@ -1,6 +1,9 @@
 <template>
-  <div class="fr-container--fluid">
-    <div class="fr-grid-row">
+  <div
+    ref="teeForm"
+    class="fr-grid-row fr-px-md-4w"
+  >
+    <div v-if="!formIsSent">
       <div
         id="project-form-title"
         class="fr-h3 fr-col-12 fr-text-center"
@@ -11,19 +14,10 @@
         👋 Expliquez nous votre projet, nous vous mettrons en relation avec un conseiller compétent pour votre demande sur votre territoire.
       </div>
       <div class="fr-col-12">
-        <!-- BACK TO FORM BTN -->
-        <TeeDsfrButton
-          v-show="formIsSent"
-          class="fr-btn fr-btn--tertiary-no-outline inline-flex fr-mb-3v fr-link fr-tee-form-arrow-back"
-          tertiary
-          no-outline
-          icon="ri-arrow-left-line"
-          @click="formIsSent = !formIsSent"
-        />
         <!-- FORM -->
         <div
           v-if="!formIsSent"
-          class="fr-tee-form fr-m-auto fr-mt-4v"
+          class="fr-tee-form fr-mt-4v"
         >
           <!-- FIELDS -->
           <div class="fr-grid-row fr-grid-row--gutters fr-mb-2v">
@@ -33,13 +27,12 @@
                 :valid-message="getValidMessage(projectForm.project)"
               >
                 <DsfrInput
+                  v-model="projectForm.project.value"
                   type="text"
-                  :model-value="projectForm.project.value"
                   label-visible
                   :is-valid="projectForm.project.isValid"
                   :required="projectForm.project.required"
                   :label="projectForm.project.label"
-                  @update:model-value="updateProjectForm($event, 'project')"
                   @focusout="validateFormField(projectForm.project)"
                 />
               </DsfrInputGroup>
@@ -50,13 +43,12 @@
                 :valid-message="getValidMessage(projectForm.name)"
               >
                 <DsfrInput
+                  v-model="projectForm.name.value"
                   type="text"
-                  :model-value="projectForm.name.value"
                   label-visible
                   :is-valid="projectForm.name.isValid"
                   :required="projectForm.name.required"
                   :label="projectForm.name.label"
-                  @update:model-value="updateProjectForm($event, 'name')"
                   @focusout="validateFormField(projectForm.name)"
                 >
                 </DsfrInput>
@@ -68,13 +60,12 @@
                 :valid-message="getValidMessage(projectForm.surname)"
               >
                 <DsfrInput
+                  v-model="projectForm.surname.value"
                   type="text"
-                  :model-value="projectForm.surname.value"
                   label-visible
                   :is-valid="projectForm.surname.isValid"
                   :required="projectForm.surname.required"
                   :label="projectForm.surname.label"
-                  @update:model-value="updateProjectForm($event, 'surname')"
                   @focusout="validateFormField(projectForm.surname)"
                 >
                 </DsfrInput>
@@ -86,14 +77,13 @@
                 :valid-message="getValidMessage(projectForm.email)"
               >
                 <DsfrInput
+                  v-model="projectForm.email.value"
                   type="email"
-                  :model-value="projectForm.email.value"
                   label-visible
                   :is-valid="projectForm.email.isValid"
                   :required="projectForm.email.required"
                   :label="projectForm.email.label"
                   :hint="projectForm.email.hint"
-                  @update:model-value="updateProjectForm($event, 'email')"
                   @focusout="validateFormField(projectForm.email)"
                 >
                 </DsfrInput>
@@ -105,14 +95,13 @@
                 :valid-message="getValidMessage(projectForm.tel)"
               >
                 <DsfrInput
+                  v-model="projectForm.tel.value"
                   type="tel"
-                  :model-value="projectForm.tel.value"
                   label-visible
                   :is-valid="projectForm.tel.isValid"
                   :required="projectForm.tel.required"
                   :label="projectForm.tel.label"
                   :hint="projectForm.tel.hint"
-                  @update:model-value="updateProjectForm($event, 'tel')"
                   @focusout="validateFormField(projectForm.tel)"
                 >
                 </DsfrInput>
@@ -124,14 +113,13 @@
                 :valid-message="getValidMessage(projectForm.siret)"
               >
                 <DsfrInput
+                  v-model="projectForm.siret.value"
                   type="text"
-                  :model-value="projectForm.siret.value"
                   label-visible
                   :is-valid="projectForm.siret.isValid"
                   :required="projectForm.siret.required"
                   :label="projectForm.siret.label"
                   :hint="projectForm.siret.hint"
-                  @update:model-value="updateProjectForm($event, 'siret')"
                   @focusout="validateFormField(projectForm.siret)"
                 >
                 </DsfrInput>
@@ -143,15 +131,14 @@
                 :valid-message="getValidMessage(projectForm.needs)"
               >
                 <DsfrInput
+                  v-model="projectForm.needs.value"
                   type="textarea"
                   is-textarea
                   rows="8"
-                  :model-value="projectForm.needs.value"
                   label-visible
                   :is-valid="projectForm.needs.isValid"
                   :required="projectForm.needs.required"
                   :label="projectForm.needs.label"
-                  @update:model-value="updateProjectForm($event, 'needs')"
                   @focusout="validateFormField(projectForm.needs)"
                 >
                 </DsfrInput>
@@ -159,11 +146,10 @@
             </div>
             <div class="fr-col-12 fr-col-md-12">
               <DsfrCheckbox
-                :model-value="projectForm.cgu.value"
+                v-model="projectForm.cgu.value"
                 name="cgu"
                 :is-valid="projectForm.cgu.isValid"
                 :required="projectForm.cgu.required"
-                @update:model-value="updateProjectForm($event, 'cgu')"
                 @focusout="validateFormField(projectForm.cgu)"
               >
                 <template #label>
@@ -177,32 +163,27 @@
                 Écologique des Entreprises dans le respect du RGPD, c'est-à-dire pour vous recontacter par email ou par téléphone afin de
                 vous aider à vous orienter et à vous conseiller dans votre recherche d'aides à la transition écologique de votre entreprise.
                 Voir également nos
-                <a
-                  href="https://mission-transition-ecologique.beta.gouv.fr/donnees-personnelles"
+                <router-link
+                  :to="{ name: RouteName.PersonalData }"
                   target="_blank"
                 >
-                  Conditions Générales d'Utilisation </a
-                >.
+                  Conditions Générales d'Utilisation
+                </router-link>
+                .
               </span>
             </div>
           </div>
 
           <!-- FORM HELPER -->
-          <h6
-            class="fr-mb-0"
-            style="font-size: 0.7em"
-          >
+          <h6 class="fr-mb-0 fr-text--xs">
             <code>*</code>
             &nbsp;
             {{ Translation.t('form.mandatory') }}
           </h6>
 
           <!-- SEND / NEXT BUTTON -->
-          <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-mt-5v">
-            <div
-              class="fr-col-12"
-              style="display: grid; justify-content: right"
-            >
+          <div class="fr-grid-row fr-grid-row--gutters fr-mt-5v">
+            <div class="fr-col-12 fr-col-justify--right">
               <TeeDsfrButton
                 :label="Translation.t('send')"
                 :disabled="!isFormFilled"
@@ -214,42 +195,53 @@
             </div>
           </div>
         </div>
-
-        <!-- FORM CALLBACK -->
-        <div
-          v-if="formIsSent"
-          class="fr-mt-5v fr-tee-form"
+      </div>
+    </div>
+    <div
+      v-else
+      class="fr-col-12 fr-text-center"
+    >
+      <!-- BACK TO FORM BTN -->
+      <TeeDsfrButton
+        v-show="formIsSent"
+        class="fr-btn fr-btn--tertiary-no-outline inline-flex fr-mb-3v fr-link fr-tee-form-arrow-back"
+        tertiary
+        no-outline
+        icon-only
+        icon="ri-arrow-left-line"
+        @click="formIsSent = !formIsSent"
+      />
+      <!-- FORM CALLBACK -->
+      <div
+        v-if="formIsSent"
+        class="fr-mt-5v fr-tee-form"
+      >
+        <!-- MESSAGE IF ERROR-->
+        <TeeError
+          v-if="!hasValidResponse"
+          :mailto="getMailTo()"
+          :email="Contact.email"
         >
-          <!-- MESSAGE IF ERROR-->
-          <TeeError
-            v-if="!hasValidResponse"
-            :mailto="getMailTo()"
-            :email="Contact.email"
-          >
-            <h3 class="tee-form-response tee-form-response-error">
-              {{ Translation.t(`form.notSent`) }}
-            </h3>
-          </TeeError>
+          <h3 class="tee-form-response tee-form-response-error">
+            {{ Translation.t(`form.notSent`) }}
+          </h3>
+        </TeeError>
 
-          <!-- MESSAGE IF 200 -->
-          <div
-            v-if="hasValidResponse"
-            class="fr-text-center"
-          >
-            <p class="tee-form-response tee-form-response-blue">
-              <v-icon
-                name="ri-checkbox-circle-fill"
-                aria-hidden="true"
-                scale="3"
-              ></v-icon>
-            </p>
-            <h3 class="tee-form-response tee-form-response-blue">
-              {{ Translation.t(`form.sent`) }}
-            </h3>
-            <h6 class="fr-mt-15v fr-mb-3v">
-              {{ Translation.t('form.nowWhat') }}
-            </h6>
-          </div>
+        <!-- MESSAGE IF 200 -->
+        <div
+          v-if="hasValidResponse"
+          class="fr-text-center"
+        >
+          <p class="tee-form-response tee-form-response-blue">
+            <v-icon
+              name="ri-checkbox-circle-fill"
+              aria-hidden="true"
+              scale="3"
+            ></v-icon>
+          </p>
+          <h3 class="tee-form-response tee-form-response-blue">
+            {{ Translation.t(`form.sent`) }}
+          </h3>
         </div>
       </div>
     </div>
@@ -258,34 +250,37 @@
 
 <script setup lang="ts">
 import OpportunityApi from '@/service/api/opportunityApi'
-import { Scroll } from '@/utils/scroll'
-import TrackStructure from '@/utils/track/trackStructure'
-import { computed, ref } from 'vue'
 import {
   InputFieldUnionType,
   isValidatedStringFieldInputType,
+  OpportunityType,
+  Project,
+  ProjectFormType,
   type ReqResp,
   PhoneValidator,
   EmailValidator,
   SiretValidator,
-  Project,
-  OpportunityType
+  TrackId,
+  RouteName
 } from '@/types'
+import Matomo from '@/utils/matomo'
+import { Scroll } from '@/utils/scroll'
+import TrackStructure from '@/utils/track/trackStructure'
 import Translation from '@/utils/translation'
-import TeeDsfrButton from '@/components/element/button/TeeDsfrButton.vue'
-import { DsfrInput, DsfrInputGroup, DsfrCheckbox } from '@gouvminint/vue-dsfr'
+import { DsfrCheckbox, DsfrInput, DsfrInputGroup } from '@gouvminint/vue-dsfr'
+import { ref } from 'vue'
 import { useRoute } from 'vue-router'
-import { ProjectFormType } from '@/types'
 import Contact from '@/utils/contact'
 
 const route = useRoute()
 
 interface Props {
   project: Project
-  formContainerRef: HTMLElement | null | undefined
 }
 
 const props = defineProps<Props>()
+const teeForm = ref<HTMLElement | null | undefined>(null)
+
 const projectForm = ref<ProjectFormType>({
   project: { required: true, value: props.project.title, label: 'Quel est votre projet?', isValid: true },
   name: { required: true, value: undefined, label: 'Prénom', isValid: undefined },
@@ -375,12 +370,6 @@ SIRET : ${siretValue}`
   return ''
 }
 
-const updateProjectForm = (ev: string | boolean, id: string) => {
-  if (projectForm.value) {
-    projectForm.value[id].value = ev
-  }
-}
-
 const isFieldValid = (field: InputFieldUnionType): boolean => {
   return field.value !== undefined && field.value !== '' && field.value !== false
 }
@@ -396,11 +385,11 @@ const validateFormField = (field: InputFieldUnionType): void => {
 const saveProjectForm = async () => {
   try {
     isLoading.value = true
-    const opportunity = new OpportunityApi(projectForm.value, props.project.id, OpportunityType.Project)
+    const opportunity = new OpportunityApi(projectForm.value, props.project.id.toString(), OpportunityType.Project)
     requestResponse.value = await opportunity.fetch()
 
     // analytics / send event
-    // Matomo.sendEvent(TrackId.Results, route.name === RouteName.CatalogDetail ? 'send_form_catalog' : 'send_form')
+    Matomo.sendEvent(TrackId.Results, 'send_project_form')
   } finally {
     isLoading.value = false
     formIsSent.value = true
@@ -409,9 +398,8 @@ const saveProjectForm = async () => {
 }
 
 const scrollToFormContainer = () => {
-  const element = props.formContainerRef
-  if (element) {
-    Scroll.toBlockCenter(element)
+  if (teeForm.value) {
+    Scroll.to(teeForm.value)
   }
 }
 

@@ -3,35 +3,33 @@
     ref="$el"
     class="fr-tabs"
   >
-    <div class="fr-col-12 fr-col-justify--center">
-      <div class="fr-container fr-m-0 fr-p-0">
-        <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2">
-          <ul
-            ref="tablist"
-            class="fr-tabs__list fr-px-0 fr-mx-0"
-            role="tablist"
-            :aria-label="tabListName"
-          >
-            <!-- @slot Slot nommé `tab-items` pour y mettre des Titres d’onglets personnalisés. S’il est rempli, la props `tabTitles° n’aura aucun effet -->
-            <slot name="tab-items">
-              <DsfrTabItem
-                v-for="(tabTitle, index) in tabTitles"
-                :key="index"
-                :icon="tabTitle.icon"
-                :panel-id="tabTitle.panelId || `${getIdFromIndex(index)}-panel`"
-                :tab-id="tabTitle.tabId || getIdFromIndex(index)"
-                :selected="isSelected(index)"
-                @click="selectIndex(index)"
-                @next="selectNext()"
-                @previous="selectPrevious()"
-                @first="selectFirst()"
-                @last="selectLast()"
-              >
-                {{ tabTitle.title }}
-              </DsfrTabItem>
-            </slot>
-          </ul>
-        </div>
+    <div class="fr-container">
+      <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2">
+        <ul
+          ref="tablist"
+          class="fr-tabs__list fr-px-0"
+          role="tablist"
+          :aria-label="tabListName"
+        >
+          <!-- @slot Slot nommé `tab-items` pour y mettre des Titres d’onglets personnalisés. S’il est rempli, la props `tabTitles° n’aura aucun effet -->
+          <slot name="tab-items">
+            <DsfrTabItem
+              v-for="(tabTitle, index) in tabTitles"
+              :key="index"
+              :icon="tabTitle.icon"
+              :panel-id="tabTitle.panelId || `${getIdFromIndex(index)}-panel`"
+              :tab-id="tabTitle.tabId || getIdFromIndex(index)"
+              :selected="selected === index"
+              @click="selectIndex(index)"
+              @next="selectNext()"
+              @previous="selectPrevious()"
+              @first="selectFirst()"
+              @last="selectLast()"
+            >
+              {{ tabTitle.title }}
+            </DsfrTabItem>
+          </slot>
+        </ul>
       </div>
     </div>
 
@@ -40,8 +38,8 @@
       :key="index"
       :panel-id="tabTitles?.[index]?.panelId || `${getIdFromIndex(index)}-panel`"
       :tab-id="tabTitles?.[index]?.tabId || getIdFromIndex(index)"
-      :selected="isSelected(index)"
-      :asc="asc"
+      :selected="selected === index"
+      :asc="ascendant"
     >
       <p>
         {{ tabContent }}
@@ -55,8 +53,7 @@
 </template>
 <script lang="ts" setup>
 import { ref, onMounted, onUnmounted, reactive } from 'vue'
-
-import { DsfrTabItem, DsfrTabContent, type DsfrTabsProps, getRandomId } from '@gouvminint/vue-dsfr'
+import { DsfrTabItem, DsfrTabContent, type DsfrTabsProps, getRandomId, DsfrTabs } from '@gouvminint/vue-dsfr'
 
 export type { DsfrTabsProps }
 
@@ -66,43 +63,23 @@ const props = withDefaults(defineProps<DsfrTabsProps>(), {
   initialSelectedIndex: 0
 })
 
-//eslint-disable-next-line
+const { ascendant, selected } = useTabs(true, props.initialSelectedIndex || 0)
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const emit = defineEmits<{ (e: 'selectTab', payload: number): void }>()
 
-const selectedIndex = ref(props.initialSelectedIndex || 0)
+const dsfrTabs = ref<InstanceType<typeof DsfrTabs> | null>(null)
 const generatedIds: Record<string, string> = reactive({})
-const asc = ref(true)
 const resizeObserver = ref<ResizeObserver | null>(null)
 const $el = ref<HTMLElement | null>(null)
 const tablist = ref<HTMLUListElement | null>(null)
-
-const isSelected = (idx: number) => {
-  return selectedIndex.value === idx
-}
 
 /*
  * Need to reimplement tab-height calc
  * @see https://github.com/GouvernementFR/dsfr/blob/main/src/component/tab/script/tab/tabs-group.js#L117
  */
 const renderTabs = () => {
-  if (selectedIndex.value < 0) {
-    return
-  }
-  if (!tablist.value || !tablist.value.offsetHeight) {
-    return
-  }
-  const tablistHeight = tablist.value.offsetHeight
-  // Need to manually select tabs-content in case of manual slot filling
-  const selectedTab = $el.value?.querySelectorAll('.fr-tabs__panel')[selectedIndex.value]
-  if (!selectedTab || !(selectedTab as HTMLElement).offsetHeight) {
-    return
-  }
-  const selectedTabHeight = (selectedTab as HTMLElement).offsetHeight
-
-  const tabContentHeader = $el.value?.querySelector('#tab-content-header')
-  const tabContentHeaderHeight = tabContentHeader ? (tabContentHeader as HTMLElement).offsetHeight : 0
-
-  $el.value?.style.setProperty('--tabs-height', `${tablistHeight + selectedTabHeight + tabContentHeaderHeight}px`)
+  dsfrTabs.value?.renderTabs()
 }
 
 const getIdFromIndex = (idx: number) => {
@@ -130,18 +107,18 @@ const scrollToTabItem = (idx: number, previousIdx: number) => {
   }
 }
 const selectIndex = (idx: number) => {
-  const previousIdx = selectedIndex.value
-  asc.value = idx > selectedIndex.value
-  selectedIndex.value = idx
+  const previousIdx = selected.value
+  ascendant.value = idx > selected.value
+  selected.value = idx
   scrollToTabItem(idx, previousIdx)
   emit('selectTab', idx)
 }
 const selectPrevious = () => {
-  const newIndex = selectedIndex.value === 0 ? props.tabTitles.length - 1 : selectedIndex.value - 1
+  const newIndex = selected.value === 0 ? props.tabTitles.length - 1 : selected.value - 1
   selectIndex(newIndex)
 }
 const selectNext = () => {
-  const newIndex = selectedIndex.value === props.tabTitles.length - 1 ? 0 : selectedIndex.value + 1
+  const newIndex = selected.value === props.tabTitles.length - 1 ? 0 : selected.value + 1
   selectIndex(newIndex)
 }
 const selectFirst = () => {
