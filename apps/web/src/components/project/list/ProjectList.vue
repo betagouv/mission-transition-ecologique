@@ -52,7 +52,7 @@
   <!--  Rest of projects list following top banner - only for LG screen size and larger -->
   <div
     v-if="showPriorityProjectListComponent"
-    class="fr-grid-row fr-grid-row--center"
+    class="fr-grid-row fr-grid-row--center fr-mb-1v"
   >
     <div class="fr-container fr-mt-2w fr-hidden fr-unhidden-lg">
       <div class="fr-col-10 fr-col-offset-2">
