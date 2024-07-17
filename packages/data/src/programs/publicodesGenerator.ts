@@ -3,8 +3,6 @@ import fs from 'fs'
 import { Program, Publicodes } from './types'
 import { ThemeType } from '../common/baserow/types'
 
-
-
 export class PublicodesGenerator {
   constructor(private program: Program) {}
 
@@ -22,7 +20,7 @@ export class PublicodesGenerator {
     return publicodes
   }
 
-   private _generatePublicodes() :  { [key: string]: any } {
+  private _generatePublicodes(): { [key: string]: any } {
     let publicodes: any = {}
     let cibles: string[] = []
     let eligibility: any = {}
@@ -74,10 +72,8 @@ export class PublicodesGenerator {
     }
 
     // pc_regions
-    if (this.program['Couverture géographique'].Name == 'Régional') {
-      publicodes[Publicodes.ZONE_GEO] = {
-        [Publicodes.ANY]: this.program['Zones géographiques'].map((zone) => `région = ${zone.Name}`).sort((a, b) => a.localeCompare(b, 'fr-FR'))
-      }
+    if (this._pcRegion(this.program)) {
+      publicodes[Publicodes.ZONE_GEO] = this._pcRegion(this.program)
     }
 
     if (!this.program['Parcours "Je ne sais pas par où commencer"']) {
@@ -90,6 +86,45 @@ export class PublicodesGenerator {
 
     return publicodes
   }
+
+  private _departToRegionMap: { [key: string]: string } = {
+    Vaucluse: "Provence-Alpes-Côte d'Azur"
+  }
+
+  private _pcRegion(program: Program) {
+    if (this.program['Couverture géographique'].Name == 'Régional') {
+      return {
+        [Publicodes.ANY]: this.program['Zones géographiques']
+          .map((zone) => `région = ${zone.Name}`)
+          .sort((a, b) => a.localeCompare(b, 'fr-FR'))
+      }
+    }
+    if (this.program['Couverture géographique'].Name == 'Départemental') {
+      const uniqueRegions = Array.from(
+        new Set(
+          this.program['Zones géographiques'].map((zone) => {
+            if (this._departToRegionMap.hasOwnProperty(zone.Name)) {
+              return this._departToRegionMap[zone.Name]
+            } else {
+              console.log(`Warning: ${zone.Name} must be added in departToRegionMap.`)
+              return null
+            }
+          })
+        )
+      )
+      return {
+        [Publicodes.ANY]: uniqueRegions.map((region) => `région = ${region}`).sort((a, b) => a.localeCompare(b, 'fr-FR'))
+      }
+    }
+    if (this.program['Couverture géographique'].Name == 'National') {
+      return null
+    }
+    console.log(
+      'Warning: Region type non handled in publicode automatic generator.\nYou either need to update the script or to handle your program manually.'
+    )
+    return null
+  }
+
   private _pcObjectif(program: Program) {
     const programThemes = program['Thèmes Ciblés']
     const themeToPublicodesMapping = {
