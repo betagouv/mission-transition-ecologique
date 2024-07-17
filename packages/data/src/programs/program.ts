@@ -165,6 +165,9 @@ export class ProgramYamlGenerator {
     if (!program['Eligibilité Sectorielle']) {
       console.log('Eligibilité sectorielle manquante !')
     }
+    if (program['Eligibilité Naf']){
+      return [program['Eligibilité Sectorielle'], program['Eligibilité Naf']]
+    }
     return [program['Eligibilité Sectorielle']]
   }
   private _setEligibilityGeography(program: Program) {
