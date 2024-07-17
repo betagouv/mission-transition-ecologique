@@ -3,220 +3,214 @@
     ref="teeForm"
     class="fr-grid-row fr-px-md-4w"
   >
+    <div v-if="!formIsSent">
+      <div
+        id="project-form-title"
+        class="fr-h3 fr-col-12 fr-text-center"
+      >
+        Contactez un conseiller
+      </div>
+      <div class="fr-col-12 fr-text-center">
+        👋 Expliquez nous votre projet, nous vous mettrons en relation avec un conseiller compétent pour votre demande sur votre territoire.
+      </div>
+      <div class="fr-col-12">
+        <!-- FORM -->
+        <div
+          v-if="!formIsSent"
+          class="fr-tee-form fr-mt-4v"
+        >
+          <!-- FIELDS -->
+          <div class="fr-grid-row fr-grid-row--gutters fr-mb-2v">
+            <div class="fr-col-12 fr-col-md-12">
+              <DsfrInputGroup
+                :error-message="getErrorMessage(projectForm.project)"
+                :valid-message="getValidMessage(projectForm.project)"
+              >
+                <DsfrInput
+                  v-model="projectForm.project.value"
+                  type="text"
+                  label-visible
+                  :is-valid="projectForm.project.isValid"
+                  :required="projectForm.project.required"
+                  :label="projectForm.project.label"
+                  @focusout="validateFormField(projectForm.project)"
+                />
+              </DsfrInputGroup>
+            </div>
+            <div class="fr-col-12 fr-col-md-6">
+              <DsfrInputGroup
+                :error-message="getErrorMessage(projectForm.name)"
+                :valid-message="getValidMessage(projectForm.name)"
+              >
+                <DsfrInput
+                  v-model="projectForm.name.value"
+                  type="text"
+                  label-visible
+                  :is-valid="projectForm.name.isValid"
+                  :required="projectForm.name.required"
+                  :label="projectForm.name.label"
+                  @focusout="validateFormField(projectForm.name)"
+                >
+                </DsfrInput>
+              </DsfrInputGroup>
+            </div>
+            <div class="fr-col-12 fr-col-md-6">
+              <DsfrInputGroup
+                :error-message="getErrorMessage(projectForm.surname)"
+                :valid-message="getValidMessage(projectForm.surname)"
+              >
+                <DsfrInput
+                  v-model="projectForm.surname.value"
+                  type="text"
+                  label-visible
+                  :is-valid="projectForm.surname.isValid"
+                  :required="projectForm.surname.required"
+                  :label="projectForm.surname.label"
+                  @focusout="validateFormField(projectForm.surname)"
+                >
+                </DsfrInput>
+              </DsfrInputGroup>
+            </div>
+            <div class="fr-col-12 fr-col-md-12">
+              <DsfrInputGroup
+                :error-message="getErrorMessage(projectForm.email)"
+                :valid-message="getValidMessage(projectForm.email)"
+              >
+                <DsfrInput
+                  v-model="projectForm.email.value"
+                  type="email"
+                  label-visible
+                  :is-valid="projectForm.email.isValid"
+                  :required="projectForm.email.required"
+                  :label="projectForm.email.label"
+                  :hint="projectForm.email.hint"
+                  @focusout="validateFormField(projectForm.email)"
+                >
+                </DsfrInput>
+              </DsfrInputGroup>
+            </div>
+            <div class="fr-col-12 fr-col-md-12">
+              <DsfrInputGroup
+                :error-message="getErrorMessage(projectForm.tel)"
+                :valid-message="getValidMessage(projectForm.tel)"
+              >
+                <DsfrInput
+                  v-model="projectForm.tel.value"
+                  type="tel"
+                  label-visible
+                  :is-valid="projectForm.tel.isValid"
+                  :required="projectForm.tel.required"
+                  :label="projectForm.tel.label"
+                  :hint="projectForm.tel.hint"
+                  @focusout="validateFormField(projectForm.tel)"
+                >
+                </DsfrInput>
+              </DsfrInputGroup>
+            </div>
+            <div class="fr-col-12 fr-col-md-12">
+              <DsfrInputGroup
+                :error-message="getErrorMessage(projectForm.siret)"
+                :valid-message="getValidMessage(projectForm.siret)"
+              >
+                <DsfrInput
+                  v-model="projectForm.siret.value"
+                  type="text"
+                  label-visible
+                  :is-valid="projectForm.siret.isValid"
+                  :required="projectForm.siret.required"
+                  :label="projectForm.siret.label"
+                  :hint="projectForm.siret.hint"
+                  @focusout="validateFormField(projectForm.siret)"
+                >
+                </DsfrInput>
+              </DsfrInputGroup>
+            </div>
+            <div class="fr-col-12 fr-col-md-12">
+              <DsfrInputGroup
+                :error-message="getErrorMessage(projectForm.needs)"
+                :valid-message="getValidMessage(projectForm.needs)"
+              >
+                <DsfrInput
+                  v-model="projectForm.needs.value"
+                  type="textarea"
+                  is-textarea
+                  rows="8"
+                  label-visible
+                  :is-valid="projectForm.needs.isValid"
+                  :required="projectForm.needs.required"
+                  :label="projectForm.needs.label"
+                  @focusout="validateFormField(projectForm.needs)"
+                >
+                </DsfrInput>
+              </DsfrInputGroup>
+            </div>
+            <div class="fr-col-12 fr-col-md-12">
+              <DsfrCheckbox
+                v-model="projectForm.cgu.value"
+                name="cgu"
+                :is-valid="projectForm.cgu.isValid"
+                :required="projectForm.cgu.required"
+                @focusout="validateFormField(projectForm.cgu)"
+              >
+                <template #label>
+                  <span> {{ projectForm.cgu.label }} <code>*</code></span>
+                </template>
+              </DsfrCheckbox>
+
+              <!-- CHECKBOX HINT -->
+              <span class="fr-hint-text fr-mt-5v">
+                Vos données à caractère personnel seront uniquement utilisées à des fins légitimes et nécessaires par l'équipe de Transition
+                Écologique des Entreprises dans le respect du RGPD, c'est-à-dire pour vous recontacter par email ou par téléphone afin de
+                vous aider à vous orienter et à vous conseiller dans votre recherche d'aides à la transition écologique de votre entreprise.
+                Voir également nos
+                <router-link
+                  :to="{ name: RouteName.PersonalData }"
+                  target="_blank"
+                >
+                  Conditions Générales d'Utilisation
+                </router-link>
+                .
+              </span>
+            </div>
+          </div>
+
+          <!-- FORM HELPER -->
+          <h6 class="fr-mb-0 fr-text--xs">
+            <code>*</code>
+            &nbsp;
+            {{ Translation.t('form.mandatory') }}
+          </h6>
+
+          <!-- SEND / NEXT BUTTON -->
+          <div class="fr-grid-row fr-grid-row--gutters fr-mt-5v">
+            <div class="fr-col-12 fr-col-justify--right">
+              <TeeDsfrButton
+                :label="Translation.t('send')"
+                :disabled="!isFormFilled"
+                icon="ri-arrow-right-line"
+                icon-right
+                :loading="isLoading"
+                @click="saveProjectForm()"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div
-      id="project-form-title"
-      class="fr-h3 fr-col-12 fr-text-center"
+      v-else
+      class="fr-col-12 fr-text-center"
     >
-      Contactez un conseiller
-    </div>
-    <div class="fr-col-12 fr-text-center">
-      👋 Expliquez nous votre projet, nous vous mettrons en relation avec un conseiller compétent pour votre demande sur votre territoire.
-    </div>
-    <div class="fr-col-12">
       <!-- BACK TO FORM BTN -->
       <TeeDsfrButton
         v-show="formIsSent"
         class="fr-btn fr-btn--tertiary-no-outline inline-flex fr-mb-3v fr-link fr-tee-form-arrow-back"
         tertiary
         no-outline
+        icon-only
         icon="ri-arrow-left-line"
         @click="formIsSent = !formIsSent"
       />
-      <!-- FORM -->
-      <div
-        v-if="!formIsSent"
-        class="fr-tee-form fr-mt-4v"
-      >
-        <!-- FIELDS -->
-        <div class="fr-grid-row fr-grid-row--gutters fr-mb-2v">
-          <div class="fr-col-12 fr-col-md-12">
-            <DsfrInputGroup
-              :error-message="getErrorMessage(projectForm.project)"
-              :valid-message="getValidMessage(projectForm.project)"
-            >
-              <DsfrInput
-                type="text"
-                :model-value="projectForm.project.value"
-                label-visible
-                :is-valid="projectForm.project.isValid"
-                :required="projectForm.project.required"
-                :label="projectForm.project.label"
-                @update:model-value="updateProjectForm($event, 'project')"
-                @focusout="validateFormField(projectForm.project)"
-              />
-            </DsfrInputGroup>
-          </div>
-          <div class="fr-col-12 fr-col-md-6">
-            <DsfrInputGroup
-              :error-message="getErrorMessage(projectForm.name)"
-              :valid-message="getValidMessage(projectForm.name)"
-            >
-              <DsfrInput
-                type="text"
-                :model-value="projectForm.name.value"
-                label-visible
-                :is-valid="projectForm.name.isValid"
-                :required="projectForm.name.required"
-                :label="projectForm.name.label"
-                @update:model-value="updateProjectForm($event, 'name')"
-                @focusout="validateFormField(projectForm.name)"
-              >
-              </DsfrInput>
-            </DsfrInputGroup>
-          </div>
-          <div class="fr-col-12 fr-col-md-6">
-            <DsfrInputGroup
-              :error-message="getErrorMessage(projectForm.surname)"
-              :valid-message="getValidMessage(projectForm.surname)"
-            >
-              <DsfrInput
-                type="text"
-                :model-value="projectForm.surname.value"
-                label-visible
-                :is-valid="projectForm.surname.isValid"
-                :required="projectForm.surname.required"
-                :label="projectForm.surname.label"
-                @update:model-value="updateProjectForm($event, 'surname')"
-                @focusout="validateFormField(projectForm.surname)"
-              >
-              </DsfrInput>
-            </DsfrInputGroup>
-          </div>
-          <div class="fr-col-12 fr-col-md-12">
-            <DsfrInputGroup
-              :error-message="getErrorMessage(projectForm.email)"
-              :valid-message="getValidMessage(projectForm.email)"
-            >
-              <DsfrInput
-                type="email"
-                :model-value="projectForm.email.value"
-                label-visible
-                :is-valid="projectForm.email.isValid"
-                :required="projectForm.email.required"
-                :label="projectForm.email.label"
-                :hint="projectForm.email.hint"
-                @update:model-value="updateProjectForm($event, 'email')"
-                @focusout="validateFormField(projectForm.email)"
-              >
-              </DsfrInput>
-            </DsfrInputGroup>
-          </div>
-          <div class="fr-col-12 fr-col-md-12">
-            <DsfrInputGroup
-              :error-message="getErrorMessage(projectForm.tel)"
-              :valid-message="getValidMessage(projectForm.tel)"
-            >
-              <DsfrInput
-                type="tel"
-                :model-value="projectForm.tel.value"
-                label-visible
-                :is-valid="projectForm.tel.isValid"
-                :required="projectForm.tel.required"
-                :label="projectForm.tel.label"
-                :hint="projectForm.tel.hint"
-                @update:model-value="updateProjectForm($event, 'tel')"
-                @focusout="validateFormField(projectForm.tel)"
-              >
-              </DsfrInput>
-            </DsfrInputGroup>
-          </div>
-          <div class="fr-col-12 fr-col-md-12">
-            <DsfrInputGroup
-              :error-message="getErrorMessage(projectForm.siret)"
-              :valid-message="getValidMessage(projectForm.siret)"
-            >
-              <DsfrInput
-                type="text"
-                :model-value="projectForm.siret.value"
-                label-visible
-                :is-valid="projectForm.siret.isValid"
-                :required="projectForm.siret.required"
-                :label="projectForm.siret.label"
-                :hint="projectForm.siret.hint"
-                @update:model-value="updateProjectForm($event, 'siret')"
-                @focusout="validateFormField(projectForm.siret)"
-              >
-              </DsfrInput>
-            </DsfrInputGroup>
-          </div>
-          <div class="fr-col-12 fr-col-md-12">
-            <DsfrInputGroup
-              :error-message="getErrorMessage(projectForm.needs)"
-              :valid-message="getValidMessage(projectForm.needs)"
-            >
-              <DsfrInput
-                type="textarea"
-                is-textarea
-                rows="8"
-                :model-value="projectForm.needs.value"
-                label-visible
-                :is-valid="projectForm.needs.isValid"
-                :required="projectForm.needs.required"
-                :label="projectForm.needs.label"
-                @update:model-value="updateProjectForm($event, 'needs')"
-                @focusout="validateFormField(projectForm.needs)"
-              >
-              </DsfrInput>
-            </DsfrInputGroup>
-          </div>
-          <div class="fr-col-12 fr-col-md-12">
-            <DsfrCheckbox
-              :model-value="projectForm.cgu.value"
-              name="cgu"
-              :is-valid="projectForm.cgu.isValid"
-              :required="projectForm.cgu.required"
-              @update:model-value="updateProjectForm($event, 'cgu')"
-              @focusout="validateFormField(projectForm.cgu)"
-            >
-              <template #label>
-                <span> {{ projectForm.cgu.label }} <code>*</code></span>
-              </template>
-            </DsfrCheckbox>
-
-            <!-- CHECKBOX HINT -->
-            <span class="fr-hint-text fr-mt-5v">
-              Vos données à caractère personnel seront uniquement utilisées à des fins légitimes et nécessaires par l'équipe de Transition
-              Écologique des Entreprises dans le respect du RGPD, c'est-à-dire pour vous recontacter par email ou par téléphone afin de vous
-              aider à vous orienter et à vous conseiller dans votre recherche d'aides à la transition écologique de votre entreprise. Voir
-              également nos
-              <a
-                href="https://mission-transition-ecologique.beta.gouv.fr/donnees-personnelles"
-                target="_blank"
-              >
-                Conditions Générales d'Utilisation </a
-              >.
-            </span>
-          </div>
-        </div>
-
-        <!-- FORM HELPER -->
-        <h6
-          class="fr-mb-0"
-          style="font-size: 0.7em"
-        >
-          <code>*</code>
-          &nbsp;
-          {{ Translation.t('form.mandatory') }}
-        </h6>
-
-        <!-- SEND / NEXT BUTTON -->
-        <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-mt-5v">
-          <div
-            class="fr-col-12"
-            style="display: grid; justify-content: right"
-          >
-            <TeeDsfrButton
-              :label="Translation.t('send')"
-              :disabled="!isFormFilled"
-              icon="ri-arrow-right-line"
-              icon-right
-              :loading="isLoading"
-              @click="saveProjectForm()"
-            />
-          </div>
-        </div>
-      </div>
-
       <!-- FORM CALLBACK -->
       <div
         v-if="formIsSent"
@@ -248,9 +242,6 @@
           <h3 class="tee-form-response tee-form-response-blue">
             {{ Translation.t(`form.sent`) }}
           </h3>
-          <h6 class="fr-mt-15v fr-mb-3v">
-            {{ Translation.t('form.nowWhat') }}
-          </h6>
         </div>
       </div>
     </div>
@@ -269,7 +260,8 @@ import {
   PhoneValidator,
   EmailValidator,
   SiretValidator,
-  TrackId
+  TrackId,
+  RouteName
 } from '@/types'
 import Matomo from '@/utils/matomo'
 import { Scroll } from '@/utils/scroll'
@@ -378,12 +370,6 @@ SIRET : ${siretValue}`
   return ''
 }
 
-const updateProjectForm = (ev: string | boolean, id: string) => {
-  if (projectForm.value) {
-    projectForm.value[id].value = ev
-  }
-}
-
 const isFieldValid = (field: InputFieldUnionType): boolean => {
   return field.value !== undefined && field.value !== '' && field.value !== false
 }
@@ -413,7 +399,7 @@ const saveProjectForm = async () => {
 
 const scrollToFormContainer = () => {
   if (teeForm.value) {
-    Scroll.toBlockCenter(teeForm.value)
+    Scroll.to(teeForm.value)
   }
 }
 

@@ -5,6 +5,7 @@
     class="fr-btn fr-btn--tertiary-no-outline inline-flex fr-mb-3v fr-link fr-tee-form-arrow-back"
     tertiary
     no-outline
+    icon-only
     icon="ri-arrow-left-line"
     @click="formIsSent = !formIsSent"
   />
@@ -31,13 +32,12 @@
             :valid-message="getValidMessage(opportunityForm.name)"
           >
             <DsfrInput
+              v-model="opportunityForm.name.value"
               type="text"
-              :model-value="opportunityForm.name.value"
               label-visible
               :is-valid="opportunityForm.name.isValid"
               :required="opportunityForm.name.required"
               :label="opportunityForm.name.label"
-              @update:model-value="updateOpportunityForm($event, 'name')"
               @focusout="validateFormField(opportunityForm.name)"
             />
           </DsfrInputGroup>
@@ -48,13 +48,12 @@
             :valid-message="getValidMessage(opportunityForm.surname)"
           >
             <DsfrInput
+              v-model="opportunityForm.surname.value"
               type="text"
-              :model-value="opportunityForm.surname.value"
               label-visible
               :is-valid="opportunityForm.surname.isValid"
               :required="opportunityForm.surname.required"
               :label="opportunityForm.surname.label"
-              @update:model-value="updateOpportunityForm($event, 'surname')"
               @focusout="validateFormField(opportunityForm.surname)"
             />
           </DsfrInputGroup>
@@ -65,14 +64,13 @@
             :valid-message="getValidMessage(opportunityForm.email)"
           >
             <DsfrInput
+              v-model="opportunityForm.email.value"
               type="email"
-              :model-value="opportunityForm.email.value"
               label-visible
               :is-valid="opportunityForm.email.isValid"
               :required="opportunityForm.email.required"
               :label="opportunityForm.email.label"
               :hint="opportunityForm.email.hint"
-              @update:model-value="updateOpportunityForm($event, 'email')"
               @focusout="validateFormField(opportunityForm.email)"
             />
           </DsfrInputGroup>
@@ -83,14 +81,13 @@
             :valid-message="getValidMessage(opportunityForm.tel)"
           >
             <DsfrInput
+              v-model="opportunityForm.tel.value"
               type="tel"
-              :model-value="opportunityForm.tel.value"
               label-visible
               :is-valid="opportunityForm.tel.isValid"
               :required="opportunityForm.tel.required"
               :label="opportunityForm.tel.label"
               :hint="opportunityForm.tel.hint"
-              @update:model-value="updateOpportunityForm($event, 'tel')"
               @focusout="validateFormField(opportunityForm.tel)"
             />
           </DsfrInputGroup>
@@ -101,14 +98,13 @@
             :valid-message="getValidMessage(opportunityForm.siret)"
           >
             <DsfrInput
+              v-model="opportunityForm.siret.value"
               type="text"
-              :model-value="opportunityForm.siret.value"
               label-visible
               :is-valid="opportunityForm.siret.isValid"
               :required="opportunityForm.siret.required"
               :label="opportunityForm.siret.label"
               :hint="opportunityForm.siret.hint"
-              @update:model-value="updateOpportunityForm($event, 'siret')"
               @focusout="validateFormField(opportunityForm.siret)"
             />
           </DsfrInputGroup>
@@ -119,16 +115,15 @@
             :valid-message="getValidMessage(opportunityForm.needs)"
           >
             <DsfrInput
+              v-model="opportunityForm.needs.value"
               type="textarea"
               is-textarea
               rows="10"
-              :model-value="opportunityForm.needs.value"
               label-visible
               :is-valid="opportunityForm.needs.isValid"
               :required="opportunityForm.needs.required"
               :label="opportunityForm.needs.label"
               :wrapper-class="'fr-m-0'"
-              @update:model-value="updateOpportunityForm($event, 'needs')"
               @focusout="validateFormField(opportunityForm.needs)"
             >
               <template
@@ -159,11 +154,10 @@
         </div>
         <div class="fr-col-12 fr-col-md-12">
           <DsfrCheckbox
-            :model-value="opportunityForm.cgu.value"
+            v-model="opportunityForm.cgu.value"
             name="cgu"
             :is-valid="opportunityForm.cgu.isValid"
             :required="opportunityForm.cgu.required"
-            @update:model-value="updateOpportunityForm($event, 'cgu')"
             @focusout="validateFormField(opportunityForm.cgu)"
           >
             <template #label>
@@ -177,21 +171,19 @@
             Écologique des Entreprises dans le respect du RGPD, c'est-à-dire pour vous recontacter par email ou par téléphone afin de vous
             aider à vous orienter et à vous conseiller dans votre recherche d'aides à la transition écologique de votre entreprise. Voir
             également nos
-            <a
-              href="https://mission-transition-ecologique.beta.gouv.fr/donnees-personnelles"
+            <router-link
+              :to="{ name: RouteName.PersonalData }"
               target="_blank"
             >
-              Conditions Générales d'Utilisation </a
-            >.
+              Conditions Générales d'Utilisation
+            </router-link>
+            .
           </span>
         </div>
       </div>
 
       <!-- FORM HELPER -->
-      <h6
-        class="fr-mb-0"
-        style="font-size: 0.7em"
-      >
+      <h6 class="fr-mb-0 fr-text--xs">
         <code>*</code>
         &nbsp;
         {{ Translation.t('form.mandatory') }}
@@ -199,10 +191,7 @@
 
       <!-- SEND / NEXT BUTTON -->
       <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-mt-5v">
-        <div
-          class="fr-col-12"
-          style="display: grid; justify-content: right"
-        >
+        <div class="fr-col-12 fr-col-justify--right">
           <TeeDsfrButton
             :label="Translation.t('send')"
             :disabled="!isFormFilled"
@@ -385,12 +374,6 @@ SIRET : ${siretValue}`
   }
 
   return ''
-}
-
-const updateOpportunityForm = (ev: string | boolean, id: string) => {
-  if (opportunityForm.value) {
-    opportunityForm.value[id].value = ev
-  }
 }
 
 const isFieldValid = (field: InputFieldUnionType): boolean => {

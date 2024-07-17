@@ -26,7 +26,7 @@
   <!-- PROGRAM INFOS -->
   <div
     v-if="program"
-    class="fr-container-fluid fr-px-0 fr-px-md-20v fr-mt-3v"
+    class="fr-container fr-mt-3v"
   >
     <div class="fr-grid-row fr-grid-row-gutters">
       <div class="fr-col">
@@ -232,6 +232,7 @@ import { useProgramStore } from '@/stores/program'
 import { useProjectStore } from '@/stores/project'
 import { type ProgramData as ProgramType, Project } from '@/types'
 import { RouteName } from '@/types/routeType'
+import { useNavigationStore } from '@/stores/navigation'
 import Matomo from '@/utils/matomo'
 import Program from '@/utils/program/program'
 import { Scroll } from '@/utils/scroll'
@@ -240,6 +241,8 @@ import { computed, onBeforeMount, ref } from 'vue'
 
 const programsStore = useProgramStore()
 const projectStore = useProjectStore()
+const navigationStore = useNavigationStore()
+
 const route = useRoute()
 const project = ref<Project>()
 const program = ref<ProgramType>()
@@ -284,7 +287,7 @@ const isProgramAutonomous = computed(() => {
   return program.value?.[`activable en autonomie`] == 'oui'
 })
 
-onBeforeMount(async () => {
+onBeforeMount(() => {
   program.value = programsStore.currentProgram
   project.value = projectStore.currentProject
   // analytics / send event
@@ -307,7 +310,9 @@ const programIsAvailable = computed(() => {
 
 const scrollToProgramForm = () => {
   if (TeeProgramFormContainer.value) {
-    Scroll.toWithTopBarOffset(TeeProgramFormContainer.value)
+    navigationStore.isByRouteName(RouteName.CatalogDetail)
+      ? Scroll.to(TeeProgramFormContainer.value)
+      : Scroll.toWithTopBarOffset(TeeProgramFormContainer.value)
   }
 }
 </script>

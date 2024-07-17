@@ -34,7 +34,6 @@ interface Props {
   project: Project
   themeColor?: Color
 }
-
 const props = defineProps<Props>()
 const navigationStore = useNavigationStore()
 
