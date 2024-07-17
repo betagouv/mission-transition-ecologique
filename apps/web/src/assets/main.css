@@ -624,12 +624,6 @@
 .fr-card {
   overflow: hidden;
 }
-<<<<<<< HEAD
-.fr-card-priority {
-  border: solid 0.2rem #1ebe8e;
-}
-=======
->>>>>>> origin/main
 .fr-card :hover {
   cursor: pointer;
 }
@@ -960,84 +954,6 @@
 }
 
 @media (min-width: 0) {
-<<<<<<< HEAD
-  .fr-grid-row--left {
-    justify-content: start;
-  }
-}
-@media (min-width: 0) {
-  .fr-grid-row--center {
-    justify-content: center;
-  }
-}
-@media (min-width: 0) {
-  .fr-grid-row--right {
-    justify-content: end;
-  }
-}
-@media (min-width: 36em) {
-  .fr-grid-row-sm--left {
-    justify-content: start;
-  }
-}
-@media (min-width: 36em) {
-  .fr-grid-row-sm--center {
-    justify-content: center;
-  }
-}
-@media (min-width: 36em) {
-  .fr-grid-row-sm--right {
-    justify-content: end;
-  }
-}
-@media (min-width: 48em) {
-  .fr-grid-row-md--left {
-    justify-content: start;
-  }
-}
-@media (min-width: 48em) {
-  .fr-grid-row-md--center {
-    justify-content: center;
-  }
-}
-@media (min-width: 48em) {
-  .fr-grid-row-md--right {
-    justify-content: end;
-  }
-}
-@media (min-width: 62em) {
-  .fr-grid-row-lg--left {
-    justify-content: start;
-  }
-}
-@media (min-width: 62em) {
-  .fr-grid-row-lg--center {
-    justify-content: center;
-  }
-}
-@media (min-width: 62em) {
-  .fr-grid-row-lg--right {
-    justify-content: end;
-  }
-}
-@media (min-width: 78em) {
-  .fr-grid-row-xl--left {
-    justify-content: start;
-  }
-}
-@media (min-width: 78em) {
-  .fr-grid-row-xl--center {
-    justify-content: center;
-  }
-}
-@media (min-width: 78em) {
-  .fr-grid-row-xl--right {
-    justify-content: end;
-  }
-}
-
-@media (min-width: 0) {
-=======
   .fr-col-content--top {
     display: flex;
     align-items: start;
@@ -1077,7 +993,6 @@
   .fr-grid-row--right {
     justify-content: end;
   }
->>>>>>> origin/main
   .fr-container--fluid--no-overflow {
     overflow: unset;
   }
@@ -2811,15 +2726,6 @@ a.fr-tag[aria-pressed=true].fr-tag--red.fr-tag--sm, button.fr-tag[aria-pressed=t
   line-height: 2.25rem;
 }
 
-<<<<<<< HEAD
-.fr-font-style--italic {
-  font-style: italic;
-}
-.fr-font-style--normal {
-  font-style: normal;
-}
-
-=======
 .tee-font-style--italic {
   font-style: italic;
 }
@@ -2857,5 +2763,4 @@ a.fr-tag[aria-pressed=true].fr-tag--red.fr-tag--sm, button.fr-tag[aria-pressed=t
   }
 }
 
->>>>>>> origin/main
 /*# sourceMappingURL=main.css.map */
