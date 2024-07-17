@@ -74,6 +74,9 @@ const plugins = async () => {
       url: "https://sentry.incubateur.net",
       release: {
         name: process.env.SENTRY_RELEASE_VERSION,
+        deploy: {
+          env: process.env.SENTRY_ENVIRONMENT,
+        }
       }
     })
   ]

@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       modified-branch-name: ${{ steps.env.outputs.MODIFIED_BRANCH_NAME }}
-    name: test-job
+    name: Set branch name
     steps:
       - name: Sets MODIFIED_BRANCH_NAME
         id: env
@@ -42,8 +42,8 @@ jobs:
           SENTRY_PROJECT: 'tee-frontend-vue'
           SENTRY_URL: https://sentry.incubateur.net
         with:
-          environment: ${{ needs.env-job.outputs.modified-branch-name }}
-          version: ${{ github.ref_name }}
+          version: ${{ needs.env-job.outputs.modified-branch-name }}
+          environment: ${{ github.ref == 'refs/heads/main' && 'prod' || 'preprod' }}
 
   build:
     name: Run build to send sourcemaps to sentry
@@ -66,3 +66,4 @@ jobs:
       - run: npm run build
         env:
           SENTRY_RELEASE_VERSION: ${{ needs.env-job.outputs.modified-branch-name }}
+          SENTRY_ENVIRONMENT: ${{ github.ref == 'refs/heads/main' && 'prod' || 'preprod' }}
