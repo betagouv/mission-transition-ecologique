@@ -25,11 +25,11 @@
           2023).
         </TeeCallout>
       </div>
-      <div class="fr-col-md-6 fr-mt-3w fr-mt-md-0 extendShorterContentContainer">
+      <div class="fr-col-md-6 fr-mt-3w fr-mt-md-0 extend-shorter-content-container">
         <h4 class="fr-ml-md-3v">Sur les 30 derniers jours</h4>
         <TeeCallout
           :title="statsData ? statsData.countOpportunities30Days || undefined : undefined"
-          class="fr-ml-md-3v extendVertically"
+          class="fr-ml-md-3v extend-vertically"
         >
           Demandes d'entreprises mises en relations avec un opérateur public sur un sujet de transition écologique sur les 30 derniers
           jours.
@@ -69,11 +69,11 @@
             Dispositifs d’aides référencés sur la plateforme depuis le lancement (été 2023).
           </TeeCallout>
         </div>
-        <div class="fr-col-12 fr-col-md-6 fr-mt-3w fr-mt-md-0 extendShorterContentContainer">
+        <div class="fr-col-12 fr-col-md-6 fr-mt-3w fr-mt-md-0 extend-shorter-content-container">
           <h4 class="fr-ml-md-3v">Actifs</h4>
           <TeeCallout
             :title="statsData ? statsData.countProgramsNow || undefined : undefined"
-            class="fr-ml-md-3v extendVertically extendHor"
+            class="fr-ml-md-3v extend-vertically extend-hor"
           >
             Dispositifs d’aides actuellement référencés sur la plateforme.
           </TeeCallout>
@@ -182,16 +182,17 @@ h4 {
   margin-bottom: 0.75rem;
 }
 
-.extendShorterContentContainer {
+.extend-shorter-content-container {
   display: flex;
   flex-direction: column;
   align-items: stretch; /* Make flex items stretch vertically */
 }
-.extendVertically {
+
+.extend-vertically {
   flex: 1;
 }
 
-.extendHor {
+.extend-hor {
   width: 100%;
 }
 </style>
