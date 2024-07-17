@@ -2,18 +2,8 @@ import path from 'path'
 import fs from 'fs'
 import * as yaml from 'js-yaml'
 import { Baserow } from '../common/baserow/baserow'
-import { Program, ProgramType, Publicodes, Status } from './types'
-import { ThemeType } from '../common/baserow/types'
+import { Objective, Program, ProgramType, Status } from './types'
 import { PublicodesGenerator } from './publicodesGenerator'
-
-interface Objective {
-  description: string
-  liens?: { lien: string; texte: string }[]
-}
-
-interface Output {
-  objectifs: Objective[]
-}
 
 // Gestion manuelle : fresque de la mobilité, etude-des-biodechets; + les 6 anciens
 

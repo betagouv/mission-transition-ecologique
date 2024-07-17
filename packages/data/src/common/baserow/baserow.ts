@@ -3,7 +3,7 @@ import dotenv from 'dotenv'
 import fs from 'fs'
 import path from 'path'
 
-import { Image, LinkedObject, Program, Project, Theme } from './types'
+import { Id, Image, LinkedObject as LinkObject, Program, Project, Theme } from './types'
 import { RawProject as DataProject } from '../../projects/types'
 import { Program as DataProgram, Status, ProgramType, Operator, GeographicCoverage, GeographicAreas } from '../../programs/types'
 dotenv.config()
@@ -41,27 +41,27 @@ export class Baserow {
   // Note : caching the downloaded data by default to nudge towards reducing the data transfer from baserow.
   async getPrograms(useLocalRawData:boolean): Promise<DataProgram[]> {
     if (useLocalRawData){
-      const data = fs.readFileSync('program_tmp.json', 'utf-8')
-      const programs: DataProgram[] = JSON.parse(data)
-      return programs
+      try {
+        const data = fs.readFileSync('program_tmp.json', 'utf-8')
+        return JSON.parse(data) as DataProgram[] 
+      } 
+      catch {}
     }
 
     const allBaserowPrograms = await this._getTableData<Program>(this._programTableId)
-
     const operators = await this._getTableData<Operator>(this._operatorTableId)
     const geographicCoverages = await this._getTableData<GeographicCoverage>(this._geographicCoverageTableId)
     const geographicAreas = await this._getTableData<GeographicAreas>(this._geographicAreasTableId)
     const themes = await this._getTableData<Theme>(this._themeTableId)
 
-    const programs: DataProgram[] = []
-    allBaserowPrograms.forEach((program) => {
-      try {
-        programs.push(this._convertToRawProgram(program, operators, geographicCoverages, geographicAreas, themes))
-      } catch {}
-    })
-    fs.writeFileSync('program_tmp.json', JSON.stringify(programs, null, 2))
+    const dataPrograms = allBaserowPrograms.map((baserowProgram) => this._convertToDataProgram(baserowProgram, operators, geographicCoverages, geographicAreas, themes))
 
-    return programs
+    try {
+      fs.writeFileSync('program_tmp.json', JSON.stringify(dataPrograms, null, 2))
+    } 
+    catch {}
+    
+    return dataPrograms
   }
 
   async getOperators(): Promise<string[]> {
@@ -79,11 +79,11 @@ export class Baserow {
           database_id: this._databaseId
         }
       })
+      await this._delay(100)
       // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access
       let results = response.data.results
       let next = response.data.next
       while (next) {
-        await this._delay(200)
         const newResponse = await axios.get(next, {
           headers: {
             Authorization: `Token ${this.API_TOKEN}`
@@ -92,6 +92,7 @@ export class Baserow {
             database_id: this._databaseId
           }
         })
+        await this._delay(100)
         results = results.concat(newResponse.data.results)
         next = newResponse.data.next
       }
@@ -124,8 +125,8 @@ export class Baserow {
       moreDescription: baserowProject['Pour aller plus loin'],
       themes: this.generateThemeList(baserowProject['Thématique principale'], baserowProject['Thématiques secondaires'], baserawThemes),
       mainTheme: this.generateMainTheme(baserowProject['Thématique principale'], baserawThemes),
-      programs: this.generateProgramList(baserowProject.Dispositifs),
-      linkedProjects: this.generateLinkedProjectList(baserowProject['Projets complémentaires']),
+      programs: baserowProject.Dispositifs.map((dispositif) => dispositif.value),
+      linkedProjects: baserowProject['Projets complémentaires'].map((project) => project.id),
       priority: baserowProject.Prio
     }
   }
@@ -163,7 +164,7 @@ export class Baserow {
     })
   }
 
-  generateMainTheme(mainTheme: LinkedObject[], baserawThemes: Theme[]): string {
+  generateMainTheme(mainTheme: LinkObject[], baserawThemes: Theme[]): string {
     if (mainTheme.length != 1) {
       console.warn('Missing mainTheme Or mainTheme not unique in a field')
     }
@@ -176,7 +177,7 @@ export class Baserow {
     return matchingTheme['Nom (Tech)']
   }
 
-  generateThemeList(mainTheme: LinkedObject[], secondaryThemes: LinkedObject[], baserawThemes: Theme[]): string[] {
+  generateThemeList(mainTheme: LinkObject[], secondaryThemes: LinkObject[], baserawThemes: Theme[]): string[] {
     const themeList = [this.generateMainTheme(mainTheme, baserawThemes)]
     secondaryThemes.forEach((element) => {
       const themeId = element.id
@@ -190,19 +191,17 @@ export class Baserow {
     return themeList
   }
 
-  generateProgramList(programs: LinkedObject[]): string[] {
-    return programs.map((value) => {
-      return value.value
-    })
+  private _replaceLinkedObjectbyTableData<T extends Id>(links: LinkObject[], referencedTableData: T[]): T[]{
+    const tableData = links.map((link) => referencedTableData.find((object) => link.id === object.id))
+    
+    if (tableData.includes(undefined)) {
+      console.log("warning, a baserow link isn't defined, it should never happen", links)
+    }
+
+    return tableData.filter((operator) => operator !== undefined) as T[]
   }
 
-  generateLinkedProjectList(projects: LinkedObject[]): number[] {
-    return projects.map((value) => {
-      return value.id
-    })
-  }
-
-  private _convertToRawProgram(
+  private _convertToDataProgram(
     program: Program,
     operators: Operator[],
     geographicCoverages: GeographicCoverage[],
@@ -219,42 +218,20 @@ export class Baserow {
       'Thèmes Ciblés': programThemes,
       ...nonModifiedFields
     } = program
+
     const rawStatuts = Statuts.map((linkedObj) => linkedObj.value as Status)
-
-    const domainContactOperator = contactOperator
-      .map((contact) => {
-        return operators.find((operator) => operator.id === contact.id)
-      })
-      .filter((operator) => operator !== undefined) as Operator[]
-
-    const domainOtherOperator = otherOperator
-      .map((contact) => {
-        return operators.find((operator) => operator.id === contact.id)
-      })
-      .filter((operator) => operator !== undefined) as Operator[]
-
-    const domainGeographicCoverage = geographicCoverage
-      .map((contact) => {
-        return geographicCoverages.find((operator) => operator.id === contact.id)
-      })
-      .filter((operator) => operator !== undefined) as GeographicCoverage[]
-    const domainProgramGeographicAreas = programGeographicAreas
-      .map((contact) => {
-        return geographicAreas.find((operator) => operator.id === contact.id)
-      })
-      .filter((operator) => operator !== undefined) as GeographicAreas[]
-    const domainProgramThemes = programThemes
-      .map((contact) => {
-        return themes.find((operator) => operator.id === contact.id)
-      })
-      .filter((operator) => operator !== undefined) as Theme[]
+    const domainContactOperator = this._replaceLinkedObjectbyTableData<Operator>(contactOperator, operators)
+    const domainOtherOperator = this._replaceLinkedObjectbyTableData<Operator>(otherOperator, operators)
+    const domainGeographicCoverage = this._replaceLinkedObjectbyTableData<GeographicCoverage>(geographicCoverage, geographicCoverages)
+    const domainProgramGeographicAreas = this._replaceLinkedObjectbyTableData<GeographicAreas>(programGeographicAreas, geographicAreas)
+    const domainProgramThemes = this._replaceLinkedObjectbyTableData<Theme>(programThemes, themes)
 
     const rawProgram: DataProgram = {
       ...nonModifiedFields,
       Statuts: rawStatuts,
       'Opérateur de contact': domainContactOperator,
       'Autres opérateurs': domainOtherOperator,
-      "Nature de l'aide": aidTypes.value as ProgramType,
+      "Nature de l'aide": aidTypes ? aidTypes.value as ProgramType : ProgramType.Undefined,
       'Zones géographiques': domainProgramGeographicAreas,
       'Couverture géographique': domainGeographicCoverage[0],
       'Thèmes Ciblés': domainProgramThemes

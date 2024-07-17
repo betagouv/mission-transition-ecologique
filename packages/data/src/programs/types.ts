@@ -7,7 +7,8 @@ export enum ProgramType {
   Loan = 'Prêt', // 81
   Training = 'Formation', // 82
   ActionTraining = 'Formation-Action', // 83
-  Awareness = 'Sensibilisation' // 84
+  Awareness = 'Sensibilisation', // 84
+  Undefined = 'Undefined'
 }
 
 export enum Status {
@@ -33,6 +34,10 @@ export interface GeographicAreas {
   Name: string
 }
 
+export interface Objective {
+  description: string
+  liens?: { lien: string; texte: string }[]
+}
 export interface Program {
   id: number
   'Id fiche dispositif': string
