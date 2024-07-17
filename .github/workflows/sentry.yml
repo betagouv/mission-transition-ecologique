@@ -27,7 +27,7 @@ jobs:
           SENTRY_URL: https://sentry.incubateur.net
         with:
           environment: ${{ github.ref == 'refs/heads/main' && 'prod' || 'preprod' }}
-          version: ${{ github.ref }}
+          version: ${{ github.ref_name }}
 
   build:
     name: Run build to send sourcemaps to sentry
