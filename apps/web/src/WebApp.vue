@@ -2,7 +2,7 @@
   <div>
     <TeeHeader />
     <TeeMatomo />
-
+    <button @click="throwError">Throw error</button>
     <router-view v-if="isReady" />
     <template v-else>
       <div class="fr-grid-row--center fr-my-10v">
@@ -40,6 +40,10 @@ const route = useRoute()
 const isReady = computed<boolean>(() => {
   return navigationStore.isReady
 })
+
+function throwError() {
+  throw new Error('Sentry Error')
+}
 
 onBeforeMount(() => {
   Translation.setLocale('fr')
