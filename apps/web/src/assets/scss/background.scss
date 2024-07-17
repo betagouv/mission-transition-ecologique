@@ -6,38 +6,14 @@
 @use 'setting';
 @use 'tool';
 
-$opacitySettings: (
-  --light: -50%,
-  --lightness: -75%
-);
+@each $breakpoint, $value in breakpoints.$values {
+  $modifier: tool.modifierByBreakpoint($breakpoint);
 
-@mixin getBackgroundColorByOpacity($properties, $opacity: 100%) {
-  @if meta.type-of($properties) == map {
-    background-color: tool.scaleAlphaToHex(map.get($properties, "background-color"), $opacity);
-  } @else {
-    background-color: tool.scaleAlphaToHex($properties, $opacity);
-  }
-}
-
-@mixin backgroundColor($color, $properties) {
-  &--#{$color} {
-    @include getBackgroundColorByOpacity($properties);
-    @each $name, $opacity in $opacitySettings {
-      &#{$name} {
-        @include getBackgroundColorByOpacity($properties, $opacity);
-      }
-    }
-  }
-}
-
-@each $color, $properties in setting.$colors {
-  .fr-bg {
-    @include backgroundColor($color, $properties);
-    @each $breakpoint, $value in breakpoints.$values {
-      $modifier: tool.modifierByBreakpoint($breakpoint);
-      &#{$modifier} {
-        @include media-query.respond-from($breakpoint) {
-          @include backgroundColor($color, $properties);
+  @include media-query.respond-from($breakpoint) {
+    @each $color, $properties in setting.$colors {
+      .fr-bg {
+        &#{$modifier} {
+          @include tool.background-color($color, $properties);
         }
       }
     }

@@ -1,6 +1,11 @@
 @use '@gouvfr/dsfr/module/color/variable/static' as color;
 @forward '@gouvfr/dsfr/module/color/variable/static';
 
+$opacities: (
+  --light: -50%,
+  --lightness: -75%
+);
+
 // !!!important!! New color added need to be added to the typescript enum `packages/web/src/types/color.ts`
 $base-blue: #6672f8;
 $base-blue-light: #e8edff;

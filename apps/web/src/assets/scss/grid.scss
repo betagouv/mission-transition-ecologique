@@ -5,6 +5,7 @@
 
 @each $breakpoint, $value in breakpoints.$values {
   $modifier: tool.modifierByBreakpoint($breakpoint);
+
   @include media-query.respond-from($breakpoint) {
     .fr-col {
       @each $align-name, $align in setting.$vertical-flex-aligns {
