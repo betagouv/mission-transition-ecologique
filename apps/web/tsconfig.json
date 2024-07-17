@@ -13,7 +13,8 @@
       "@tee/common": ["libs/common/src/index.ts"],
       "@tee/data": ["libs/data/src/index.ts"],
       "@tee/data/references": ["libs/data/references/index.ts"],
-      "@tee/data/generated": ["libs/data/generated/index.ts"]
+      "@tee/data/generated": ["libs/data/generated/index.ts"],
+      "@tee/data/static": ["libs/data/static/index.ts"]
     },
   },
   "types": ["node", "jsdom", "./src/env.d.ts"],
