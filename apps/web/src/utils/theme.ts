@@ -2,20 +2,36 @@ import { Color, Objective as ObjectiveEnum, PublicodeObjective, PublicodesKeys, 
 import UsedTrack from '@/utils/track/usedTrack'
 import { Project } from '@tee/data'
 
-export default class Theme {
+export class Theme {
   static themes: ThemeType[] = [
     {
+      id: ThemeId.Environmental,
+      title: 'Analyses environnementales',
+      tagLabel: '🌱 analyses',
+      value: PublicodeObjective.EnvironmentalImpact,
+      image: '/images/thematique/thematique-strategie.svg',
+      color: Color.blue
+    },
+    {
       id: ThemeId.Energy,
-      title: 'Économies d’énergie',
+      title: 'Énergie',
       tagLabel: '⚡️ énergie',
       value: PublicodeObjective.EnergyPerformance,
       image: '/images/thematique/thematique-energie.svg',
       color: Color.yellow
     },
     {
+      id: ThemeId.Water,
+      title: 'Économies d’eau',
+      tagLabel: '💧 eau',
+      value: PublicodeObjective.WaterConsumption,
+      image: '/images/thematique/thematique-eau.svg',
+      color: Color.blueLight
+    },
+    {
       id: ThemeId.Building,
       title: 'Construction & rénovation',
-      tagLabel: '🏢 bâtiment',
+      tagLabel: '🏢 rénovation',
       value: PublicodeObjective.BuildingRenovation,
       image: '/images/thematique/thematique-batiments.svg',
       color: Color.blue
@@ -29,12 +45,12 @@ export default class Theme {
       color: Color.green
     },
     {
-      id: ThemeId.Water,
-      title: 'Économies d’eau',
-      tagLabel: '💧 eau',
-      value: PublicodeObjective.WaterConsumption,
-      image: '/images/thematique/thematique-eau.svg',
-      color: Color.blueLight
+      id: ThemeId.Waste,
+      title: 'Déchets & réemploi',
+      tagLabel: '🗑 déchets',
+      value: PublicodeObjective.WasteManagement,
+      image: '/images/thematique/thematique-dechets.svg',
+      color: Color.red
     },
     {
       id: ThemeId.EcoDesign,
@@ -43,14 +59,6 @@ export default class Theme {
       value: PublicodeObjective.EcoDesign,
       image: '/images/thematique/thematique-eco-conception.svg',
       color: Color.green
-    },
-    {
-      id: ThemeId.Waste,
-      title: 'Déchets & réemploi',
-      tagLabel: '🗑 déchets',
-      value: PublicodeObjective.WasteManagement,
-      image: '/images/thematique/thematique-dechets.svg',
-      color: Color.red
     },
     {
       id: ThemeId.RH,
@@ -69,6 +77,10 @@ export default class Theme {
       color: Color.blue
     }
   ]
+
+  static getById(id: ThemeId | undefined) {
+    return this.themes.find((theme) => theme.id === id)
+  }
 
   static getByValue(value: PublicodeObjective) {
     return this.themes.find((theme) => theme.value === value)

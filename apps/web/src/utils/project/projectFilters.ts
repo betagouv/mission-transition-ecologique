@@ -1,6 +1,5 @@
-import { ProgramData, PublicodeObjective, ThemeType } from '@/types'
-import { Project } from '@tee/data'
-import Theme from '@/utils/theme'
+import { ProgramData, PublicodeObjective, ThemeType, Project } from '@/types'
+import { Theme } from '@/utils/theme'
 
 export default class ProjectFilters {
   static filterProjectsByTheme(project: Project, objectiveType: PublicodeObjective) {

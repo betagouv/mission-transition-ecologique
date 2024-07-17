@@ -58,6 +58,7 @@ export enum BrevoQuestionnaireRoute {
 
 export interface DealAttributes {
   message: string
+  type: string
   parcours: BrevoQuestionnaireRoute
   objectifs_renseigns?: string
   oprateur_de_contact?: Operators

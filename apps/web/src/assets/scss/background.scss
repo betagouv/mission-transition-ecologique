@@ -12,45 +12,38 @@
   }
 }
 
-@each $color, $properties in setting.$colors {
-  .fr-bg {
+$opacitySettings: (
+  --light: -50%,
+  --lightness: -75%
+);
 
-    &--#{$color} {
-      @include backgroundColor($properties);
-      &--light {
-        @include backgroundColor($properties, -50%);
-      }
-      &--lightness {
-        @include backgroundColor($properties, -75%);
+@mixin getBackgroundColorByOpacity($properties, $opacity: 100%) {
+  @if type-of($properties) == map {
+    background-color: tool.scaleAlphaToHex(map-get($properties, "background-color"), $opacity);
+  } @else {
+    background-color: tool.scaleAlphaToHex($properties, $opacity);
+  }
+}
+
+@mixin backgroundColor($color, $properties) {
+  &--#{$color} {
+    @include getBackgroundColorByOpacity($properties);
+    @each $name, $opacity in $opacitySettings {
+      &#{$name} {
+        @include getBackgroundColorByOpacity($properties, $opacity);
       }
     }
+  }
+}
 
+@each $color, $properties in setting.$colors {
+  .fr-bg {
+    @include backgroundColor($color, $properties);
     @each $breakpoint, $value in breakpoints.$values {
       $modifier: tool.modifierByBreakpoint($breakpoint);
       &#{$modifier} {
         @include media-query.respond-from($breakpoint) {
-          &--#{$color} {
-            @include backgroundColor($properties);
-            &--light {
-              @include backgroundColor($properties, -50%);
-            }
-            &--lightness {
-              @include backgroundColor($properties, -75%);
-            }
-          }
-        }
-      }
-    }
-    @media (min-width: 0) and (max-width: 575px){
-      &-xs{
-        &--#{$color} {
-          @include backgroundColor($properties);
-            &--light {
-              @include backgroundColor($properties, -50%);
-            }
-            &--lightness {
-              @include backgroundColor($properties, -75%);
-            }
+          @include backgroundColor($color, $properties);
         }
       }
     }

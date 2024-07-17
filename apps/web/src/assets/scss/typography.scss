@@ -19,7 +19,7 @@
   }
 }
 
-.fr-font {
+.tee-font {
   @each $style in setting.$font-styles {
     &-style--#{$style} {
       font-style: $style;

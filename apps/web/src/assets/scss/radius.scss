@@ -5,15 +5,22 @@
 
 
 // class for border-radius with important like .fr-radius--tr--sm (small, top , right) or .fr-radius--bl--lg (large, bottom, left)
-@each $corner, $corner-name in setting.$corner {
-  @each $radius, $radius-value in setting.$rounded {
-    @include media-query.respond-from(md) {
-        .fr-radius-#{$corner} {
-          @include tool.border-radius($radius-value, $corner-name, true);
-          @if $radius != null {
-            &--#{$radius} {
+.fr-radius {
+  @each $breakpoint, $value in breakpoints.$values {
+    @include media-query.respond-from($breakpoint) {
+      @each $corner, $corner-name in setting.$corner {
+        @each $radius, $radius-value in setting.$rounded {
+          $modifier: tool.modifierByBreakpoint($breakpoint);
+          &#{$modifier} {
+            &-#{$corner} {
               @include tool.border-radius($radius-value, $corner-name, true);
+              @if $radius != null {
+                &--#{$radius} {
+                  @include tool.border-radius($radius-value, $corner-name, true);
+                }
+              }
             }
+          }
         }
       }
     }

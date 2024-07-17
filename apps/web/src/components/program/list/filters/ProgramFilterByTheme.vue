@@ -14,9 +14,16 @@
 
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
-import { ThemeType as ThemeType, type programFiltersType } from '@/types'
-import Theme from '@/utils/theme'
+import { ThemeType, type programFiltersType, PublicodeObjective } from '@/types'
+import { Theme } from '@/utils/theme'
 import { TeeDsfrTagProps } from '@/components/element/tag/TeeDsfrTag.vue'
+import { computed, onBeforeMount } from 'vue'
+
+interface Props {
+  objective?: PublicodeObjective | ''
+}
+
+const props = defineProps<Props>()
 
 const programStore = useProgramStore()
 
@@ -55,4 +62,10 @@ const objectiveTypeTags = computed<TeeDsfrTagProps[]>((): TeeDsfrTagProps[] => {
 function isActive(tag: ThemeType) {
   return Theme.getTags().length === 1 || programFilters.objectiveTypeSelected === (tag.value as string)
 }
+
+onBeforeMount(() => {
+  if (props.objective) {
+    programFilters.objectiveTypeSelected = props.objective
+  }
+})
 </script>
