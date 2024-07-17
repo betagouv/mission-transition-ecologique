@@ -1,5 +1,4 @@
-import { PublicodesKeys, PublicodeObjective, PublicodesCondition, ProgramOperatorType } from '@/types'
-import type { ProgramAidType } from '@tee/common'
+import { PublicodesKeys, PublicodeObjective, PublicodesCondition, ProgramOperatorType, ProgramAidType } from '@/types'
 
 interface ProgramObjectiveLink {
   lien: string

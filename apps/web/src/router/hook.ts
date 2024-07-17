@@ -1,4 +1,5 @@
 import { useProgramStore } from '@/stores/program'
+import { useProjectStore } from '@/stores/project'
 import { RouteName } from '@/types/routeType'
 import type { NavigationGuardNext, RouteLocationNormalized } from 'vue-router'
 import { useNavigationStore } from '@/stores/navigation'
@@ -50,6 +51,14 @@ export default class Hook {
       next()
     } else {
       next(to.name === RouteName.QuestionnaireResultDetail ? { name: RouteName.QuestionnaireStart } : { name: RouteName.Homepage })
+    }
+  }
+
+  static readonly hasProject = async (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
+    if (to.params.projectSlug && (await useProjectStore().getProjectBySlug(to.params.projectSlug as string)).isOk) {
+      next()
+    } else {
+      next(to.name === RouteName.ProjectResultDetail ? { name: RouteName.QuestionnaireStart } : { name: RouteName.Homepage })
     }
   }
 
