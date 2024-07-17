@@ -47,7 +47,7 @@ export default class OpportunityService {
   }
 
   private _getOpportunityHubRepositories(): OpportunityHubRepository[] {
-    return [new BpiFrance(), new PlaceDesEntreprises()]
+    return [new PlaceDesEntreprises(), new BpiFrance()]
   }
 
   private _getProgramRepository(): ProgramRepository {

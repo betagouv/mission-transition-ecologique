@@ -1,5 +1,5 @@
-import { ProgramType } from '@tee/data'
-import { ProgramAidType, QuestionnaireRoute } from '@tee/common'
+import { ProgramType, ProgramAidType } from '@tee/data'
+import { QuestionnaireRoute } from '@tee/common'
 
 // sorts the programs according to a "sortProfile", which currently
 // only depends on the questionnaireRoute

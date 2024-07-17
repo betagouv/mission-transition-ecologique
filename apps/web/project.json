@@ -10,14 +10,8 @@
         "generate-seo"
       ]
     },
-    "vue-type-check": {
+    "type-check": {
       "executor": "nx:run-commands",
-      "dependsOn": [
-        {
-          "target": "generate-program",
-          "projects": "@tee/data"
-        }
-      ],
       "options": {
         "cwd": "apps/web",
         "command": "vue-tsc --noEmit -p tsconfig.app.json --composite false"

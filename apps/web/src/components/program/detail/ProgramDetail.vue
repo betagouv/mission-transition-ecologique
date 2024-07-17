@@ -7,7 +7,7 @@
     message="Cette aide correspond à vos critères d’éligibilité"
     message-icon="fr-icon-checkbox-circle-fill"
   />
-  <div class="fr-container-fluid fr-px-0 fr-px-md-20v fr-mt-3v">
+  <div class="fr-container fr-mt-3v">
     <div class="fr-grid-row fr-grid-row-gutters">
       <div
         v-if="isCatalogDetail"
@@ -60,7 +60,7 @@
   <!-- PROGRAM INFOS -->
   <div
     v-if="program"
-    class="fr-container-fluid fr-px-0 fr-px-md-20v fr-mt-3v"
+    class="fr-container fr-mt-3v"
   >
     <div class="fr-grid-row fr-grid-row-gutters">
       <div class="fr-col">
@@ -269,6 +269,7 @@ import { RouteName } from '@/types/routeType'
 import Contact from '@/utils/contact'
 import Matomo from '@/utils/matomo'
 import Program from '@/utils/program/program'
+import { Scroll } from '@/utils/scroll'
 import Translation from '@/utils/translation'
 import { computed, onBeforeMount, ref } from 'vue'
 import { useRoute } from 'vue-router'
@@ -317,10 +318,7 @@ const columnTiles = computed(() => {
   return `fr-col fr-col-xs-12 fr-col-sm-12 fr-col-md-${colsSize} fr-tee-detail-info-tile`
 })
 const isProgramAutonomous = computed(() => {
-  if (program.value?.[`activable en autonomie`] == 'oui') {
-    return true
-  }
-  return false
+  return program.value?.[`activable en autonomie`] == 'oui'
 })
 
 const routeToPrograms = {
@@ -356,7 +354,9 @@ const programIsAvailable = computed(() => {
 
 const scrollToProgramForm = () => {
   if (TeeProgramFormContainer.value) {
-    TeeProgramFormContainer.value.scrollIntoView({ behavior: 'smooth' })
+    navigationStore.isByRouteName(RouteName.CatalogDetail)
+      ? Scroll.to(TeeProgramFormContainer.value)
+      : Scroll.toWithTopBarOffset(TeeProgramFormContainer.value)
   }
 }
 </script>

@@ -1,30 +1,44 @@
 @use 'sass:color';
 @use 'sass:meta';
 @use 'sass:map';
+@use '@gouvfr/dsfr/module/media-query';
+@use '@gouvfr/dsfr/module/media-query/variable/breakpoints';
 @use 'setting';
 @use 'tool';
 
-@each $color, $properties in setting.$colors {
-  .fr-bg--#{$color} {
-    @if meta.type-of($properties) == map {
-      background-color: map.get($properties, "background-color");
-    } @else {
-      background-color: $properties;
-    }
+$opacitySettings: (
+  --light: -50%,
+  --lightness: -75%
+);
 
-    &--light {
-      @if meta.type-of($properties) == map {
-        background-color: tool.scaleAlphaToHex(map.get($properties, "background-color"), -50%);
-      } @else {
-        background-color: tool.scaleAlphaToHex($properties, -50%);
+@mixin getBackgroundColorByOpacity($properties, $opacity: 100%) {
+  @if meta.type-of($properties) == map {
+    background-color: tool.scaleAlphaToHex(map.get($properties, "background-color"), $opacity);
+  } @else {
+    background-color: tool.scaleAlphaToHex($properties, $opacity);
+  }
+}
+
+@mixin backgroundColor($color, $properties) {
+  &--#{$color} {
+    @include getBackgroundColorByOpacity($properties);
+    @each $name, $opacity in $opacitySettings {
+      &#{$name} {
+        @include getBackgroundColorByOpacity($properties, $opacity);
       }
     }
+  }
+}
 
-    &--lightness {
-      @if meta.type-of($properties) == map {
-        background-color: tool.scaleAlphaToHex(map.get($properties, "background-color"), -75%);
-      } @else {
-        background-color: tool.scaleAlphaToHex($properties, -75%);
+@each $color, $properties in setting.$colors {
+  .fr-bg {
+    @include backgroundColor($color, $properties);
+    @each $breakpoint, $value in breakpoints.$values {
+      $modifier: tool.modifierByBreakpoint($breakpoint);
+      &#{$modifier} {
+        @include media-query.respond-from($breakpoint) {
+          @include backgroundColor($color, $properties);
+        }
       }
     }
   }

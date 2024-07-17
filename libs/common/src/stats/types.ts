@@ -15,4 +15,4 @@ export interface OpportunityStats {
   demandsTimeSeries: DemandsAtTime[]
 }
 
-export interface StatsData extends ProgramStats, OpportunityStats {}
+export type StatsData = ProgramStats & OpportunityStats

@@ -3,9 +3,9 @@ import { Result } from 'true-myth'
 import { EstablishmentSearch } from '@/types'
 
 export default class EstablishmentApi extends RequestApi {
-  private readonly url = '/api/establishments/'
+  protected readonly url = '/api/establishments/'
 
-  async get(query: string): Promise<Result<EstablishmentSearch, Error>> {
+  async getByQuery(query: string): Promise<Result<EstablishmentSearch, Error>> {
     const url: string = this.url + query
     try {
       const response = await fetch(url)

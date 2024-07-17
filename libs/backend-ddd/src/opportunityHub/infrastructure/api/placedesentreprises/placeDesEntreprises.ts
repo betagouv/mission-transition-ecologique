@@ -10,7 +10,9 @@ import { ProgramService } from '../../../../program/application/programService'
 import OpportunityService from '../../../../opportunity/application/opportunityService'
 import { Objective } from '../../../../common/types'
 import { Operators, ProgramType } from '@tee/data'
-import { Opportunity } from '@tee/common'
+import { Opportunity, OpportunityType } from '@tee/common'
+import { Project } from '@tee/data'
+
 export class PlaceDesEntreprises extends OpportunityHubAbstract {
   protected readonly _baseUrl = Config.PDE_API_BASEURL
   protected _axios: AxiosInstance
@@ -40,20 +42,35 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     if (!this.support(program)) {
       return false
     }
-    const reachTransmissionLimit = await this._reachedDailyContactTransmissionLimit(opportunity)
+    const reachTransmissionLimit = await this.reachedDailyContactTransmissionLimit(opportunity.contactId)
     return !reachTransmissionLimit
   }
 
-  public transmitOpportunity = async (opportunity: Opportunity, program: ProgramType): Promise<Maybe<Error>> => {
-    const maybePayload = this._createRequestBody(opportunity, program)
+  public transmitOpportunity = async (opportunity: Opportunity, programOrProject: ProgramType | Project): Promise<Maybe<Error>> => {
+    let maybePayload
+    switch (opportunity.type) {
+      case OpportunityType.Program:
+        maybePayload = this._createProgramRequestBody(opportunity, programOrProject as ProgramType)
+        break
+      case OpportunityType.Project:
+        maybePayload = this._createProjectRequestBody(opportunity, programOrProject as Project)
+        break
+
+      default:
+        return Maybe.of(Error("Canno't tranmist to PDE an opportunity of type" + opportunity.type))
+    }
     if (maybePayload.isErr) {
       return Maybe.of(maybePayload.error)
     }
+    return await this._sendOpportunity(maybePayload.value)
+  }
+
+  private _sendOpportunity = async (payload: CreateSolicitationApiBody): Promise<Maybe<Error>> => {
     try {
       const response = await this._axios.request<GetLandingResponseData>({
         method: 'POST',
         url: `/solicitations`,
-        data: maybePayload.value,
+        data: payload,
         timeout: 3000
       })
       const status = response.status
@@ -67,8 +84,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     }
   }
 
-  private async _reachedDailyContactTransmissionLimit(opportunity: OpportunityWithContactId): Promise<boolean> {
-    const contact = opportunity.contactId
+  async reachedDailyContactTransmissionLimit(contact: number): Promise<boolean> {
     const previousDailyOpportunities = await new OpportunityService().getDailyOpportunitiesByContactId(contact)
     if (previousDailyOpportunities.isErr) {
       return false // TODO error handling
@@ -76,7 +92,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
 
     let tranmismissiblePrograms = 0
     for (const prevOpportunity of previousDailyOpportunities.value) {
-      const prevProgram = new ProgramService().getById(prevOpportunity.programId)
+      const prevProgram = new ProgramService().getById(prevOpportunity.id)
       if (prevProgram && this.support(prevProgram)) {
         tranmismissiblePrograms += 1
       }
@@ -118,7 +134,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     }
   }
 
-  private _createRequestBody(opportunity: Opportunity, program: ProgramType): Result<CreateSolicitationApiBody, Error> {
+  private _createProgramRequestBody(opportunity: Opportunity, program: ProgramType): Result<CreateSolicitationApiBody, Error> {
     return Result.ok({
       solicitation: {
         landing_id: this._pdeLanding,
@@ -129,7 +145,23 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
         phone_number: opportunity.phoneNumber,
         siret: opportunity.companySiret,
         location: '',
-        api_calling_url: opportunity.linkToProgramPage,
+        api_calling_url: opportunity.linkToPage,
+        questions_additionnelles: []
+      }
+    })
+  }
+  private _createProjectRequestBody(opportunity: Opportunity, project: Project): Result<CreateSolicitationApiBody, Error> {
+    return Result.ok({
+      solicitation: {
+        landing_id: this._pdeLanding,
+        landing_subject_id: subjectToIdMapping[Subject.DemarcheEcologie],
+        description: 'Demande via le projet ' + project.title + '\n\n' + opportunity.message,
+        full_name: opportunity.firstName + ' ' + opportunity.lastName,
+        email: opportunity.email,
+        phone_number: opportunity.phoneNumber,
+        siret: opportunity.companySiret,
+        location: '',
+        api_calling_url: opportunity.linkToPage,
         questions_additionnelles: []
       }
     })
