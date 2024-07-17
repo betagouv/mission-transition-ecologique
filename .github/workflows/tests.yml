@@ -26,7 +26,6 @@ jobs:
           cache: 'npm'
       - run: npm clean-install
 
-      - run: npx nx run @tee/data:generate-program
       - run: npx nx run @tee/data:test
 
   lint:
@@ -47,10 +46,10 @@ jobs:
 
       - run: npx nx run @tee/data:generate-program
       - run: npx nx run @tee/backend:spec-and-routes
-      - run: npx nx run-many -t lint
+      - run: npm run lint
 
-  vue-type-check:
-    name: Run vue-tsc
+  type-check:
+    name: Run type-check
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -65,7 +64,7 @@ jobs:
           cache: 'npm'
       - run: npm clean-install
 
-      - run: npx nx run @tee/web:vue-type-check
+      - run: npm run type:check
 
   unit-test:
     name: Run unit tests
@@ -83,5 +82,4 @@ jobs:
           cache: 'npm'
       - run: npm clean-install
 
-      - run: npx nx run @tee/data:generate-program
       - run: npx nx run @tee/backend-ddd:test

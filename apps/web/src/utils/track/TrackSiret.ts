@@ -5,7 +5,7 @@ import { SiretValidator } from '@tee/common'
 
 export default class TrackSiret {
   static async search(query: string) {
-    return await new EstablishmentApi().get(query)
+    return await new EstablishmentApi().getByQuery(query)
   }
 
   static createData(

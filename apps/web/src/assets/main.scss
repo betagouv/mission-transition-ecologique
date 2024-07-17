@@ -1,4 +1,3 @@
-@import "scss/tag";
 @import "scss/accordion";
 @import "scss/background";
 @import "scss/button";
@@ -6,11 +5,16 @@
 @import "scss/card";
 @import "scss/checkbox";
 @import "scss/display";
-@import 'scss/footer';
 @import "scss/form";
+@import "scss/gradient";
 @import "scss/grid";
+@import "scss/highlight";
 @import "scss/input";
 @import "scss/radius";
+@import "scss/router";
 @import "scss/searchBar";
 @import "scss/sidemenu";
+@import "scss/tab";
+@import "scss/tag";
 @import "scss/typography";
+@import 'scss/footer';
