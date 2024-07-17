@@ -15,7 +15,7 @@ import { useTrackStore } from '@/stores/track'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import type { TrackOptionItem } from '@/types'
 import { computed } from 'vue'
-import Theme from '@/utils/theme'
+import { Theme } from '@/utils/theme'
 import { Color } from '@/types'
 import { Project } from '@tee/data'
 import { useProjectStore } from '@/stores/project'
@@ -44,7 +44,9 @@ const options = computed<ThemeOption[]>(() => {
       const optionPublicodeObjective = Theme.getPublicodeObjectiveByObjective(option.questionnaireData?.priority_objective)
       if (optionPublicodeObjective) {
         const theme = Theme.getByValue(optionPublicodeObjective)
-        const objectiveProjects = projects.value ? projectStore.getProjectsByObjective(projects.value, optionPublicodeObjective) : []
+        const objectiveProjects = projects.value
+          ? projectStore.getProjectsByPublicodeObjective(projects.value, optionPublicodeObjective)
+          : []
         const priorityProjects: Project[] = Theme.getPriorityProjects(objectiveProjects)
         if (theme) {
           options.push({

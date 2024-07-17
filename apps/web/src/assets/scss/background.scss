@@ -4,14 +4,6 @@
 @use 'tool';
 @use 'sass:color';
 
-@mixin backgroundColor($properties, $opacity: 100%) {
-  @if type-of($properties) == map {
-    background-color: tool.scaleAlphaToHex(map-get($properties, "background-color"), $opacity);
-  } @else {
-    background-color: tool.scaleAlphaToHex($properties, $opacity);
-  }
-}
-
 $opacitySettings: (
   --light: -50%,
   --lightness: -75%

@@ -24,15 +24,5 @@
         }
       }
     }
-    @include media-query.respond-from(xs) {
-      .fr-radius-#{$corner} {
-        @include tool.border-radius($radius-value, $corner-name, true);
-        @if $radius != null {
-          &--#{$radius} {
-            @include tool.border-radius($radius-value, $corner-name, true);
-          }
-      }
-    }
-  }
   }
 }
