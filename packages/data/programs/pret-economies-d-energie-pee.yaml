@@ -3,7 +3,7 @@ promesse: Financez vos équipements pour améliorer votre efficacité énergéti
 description: >-
   Le Prêt Économies d’Énergie permet de financer le matériel éligible aux
   certificats d'économies d'énergie (CEE), et les dépenses liées au projet
-  d’efficience énergétique.
+  d’efficience énergétique. 
 illustration: images/TEE_eolienne.png
 opérateur de contact: Bpifrance
 url: >-
@@ -46,8 +46,7 @@ publicodes:
   entreprise . a un effectif éligible:
     toutes ces conditions:
     - effectif <= 49
-  entreprise . est dans un secteur d'activité éligible: est secteur d'activité exclu
-    = non
+  entreprise . est dans un secteur d'activité éligible: est secteur d'activité exclu = non
   est secteur d'activité exclu:
     une de ces conditions:
     - est activité d'intermédiation financière

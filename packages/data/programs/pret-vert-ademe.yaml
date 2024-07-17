@@ -5,13 +5,13 @@ description: >-
   transition écologique et énergétique, identifiés à l'issue d'un Diag Eco-Flux
   ou d'une aide de l'ADEME.
 description longue: >-
-  Le prêt Vert Ademe est destiné aux entreprises ayant bénéficié :
+  Le prêt Vert Ademe est destiné aux entreprises ayant bénéficié : 
 
-  • du diagnostic « Diag Eco-Flux »
+  • du diagnostic « Diag Eco-Flux » 
 
   ou
 
-  • d'une aide financière de l’ADEME au cours de 3 dernières années
+  • d'une aide financière de l’ADEME au cours de 3 dernières années 
 
 
   Les investissements doivent viser à :
@@ -89,8 +89,7 @@ publicodes:
     toutes ces conditions:
     - effectif >= 1
     - effectif <= 249
-  entreprise . est dans un secteur d'activité éligible: est secteur d'activité exclu
-    = non
+  entreprise . est dans un secteur d'activité éligible: est secteur d'activité exclu = non
   est secteur d'activité exclu:
     une de ces conditions:
     - est activité d'intermédiation financière

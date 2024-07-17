@@ -8,18 +8,18 @@ description: >-
   et de valorisation (déconditionnement, hygiénisation ou plateforme de
   compostage).
 description longue: >-
-  L'ADEME finance les études suivantes :
+  L'ADEME finance les études suivantes : 
 
 
   À destination des producteurs de déchets organiques ou des acteurs de la
-  collecte des biodéchets :
+  collecte des biodéchets : 
 
   • Les études de diagnostic des besoins en installations de tri et de
   valorisation des biodéchets. Ces études doivent être réalisée à l’échelle
   d’une zone de chalandise déterminée (quartier, ZI, ZAC, etc.).
 
 
-  À destination des producteurs de déchets organiques :
+  À destination des producteurs de déchets organiques : 
 
   • Les études préalables à la préparation des biodéchets.
 
@@ -30,7 +30,7 @@ description longue: >-
   collecte et le traitement des biodéchets :
 
   • Les études préalables à la réalisation d'installations ou d'ateliers visant
-  à déconditionner des produits.
+  à déconditionner des produits. 
 
   •  Les études préalables à la création de nouvelles plateformes de compostage
   ou l’adaptation de plateformes de compostage de déchets verts existantes à
@@ -38,11 +38,11 @@ description longue: >-
 
   • Les études préalables à la création / adaptation/hygiènisation de
   plateformes de valorisation des biodéchets classés Sous-Produits Animaux
-  (SPAN).
+  (SPAN). 
 
 
   Cette aide est plafonnée à 50 000 € HT pour une étude diagnostic, et 100 000 €
-  HT pour une étude de faisabilité préalable à un investissement.
+  HT pour une étude de faisabilité préalable à un investissement. 
 illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
 url: >-
@@ -72,9 +72,11 @@ conditions d'éligibilité:
   secteur géographique:
   - France et territoires d'outre-mer
   secteur d'activité:
-  - cette aide concerne les entreprises de restauration, de production ou de commerce
-    alimentaire et les opérateurs privés de traitement de biodéchets.
-  - 'Section I : Hébergement et restauration / Section E Division 38 : Collecte, traitement
+  - >-
+    cette aide concerne les entreprises de restauration, de production ou de
+    commerce alimentaire et les opérateurs privés de traitement de biodéchets.
+  - >-
+    'Section I : Hébergement et restauration / Section E Division 38 : Collecte, traitement
     et élimination des déchets ; récupération /  Section G classe 47.11 Commerce de
     détail en magasin non spécialisé à prédominance alimentaire / Section C division
     10 Industries alimentaires'
@@ -101,4 +103,3 @@ publicodes:
   entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est la gestion des déchets
-    - questionnaire . objectif prioritaire . est l'écoconception

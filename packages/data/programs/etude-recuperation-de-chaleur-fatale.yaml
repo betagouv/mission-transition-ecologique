@@ -3,18 +3,18 @@ promesse: Étudiez votre projet de récupération de chaleur perdue
 description: >-
   Vous pensez avoir de la chaleur perdue mais ne savez pas comment la valoriser
   ? Vous souhaitez mettre en place une installation de récupération de chaleur
-  fatale ?
+  fatale ? 
 
   L'ADEME vous apporte une aide pour une étude de faisabilité, étape nécessaire
   avant tout investissement.
 description longue: >-
   La chaleur de récupération (ou chaleur fatale) est la chaleur générée par un
   procédé dont l’objectif premier n’est pas la production d’énergie, et qui de
-  ce fait n’est pas nécessairement récupérée.
+  ce fait n’est pas nécessairement récupérée. 
 
 
   Il s’agit alors de capter puis transporter cette chaleur, qui serait perdue,
-  pour favoriser son exploitation sous forme thermique.
+  pour favoriser son exploitation sous forme thermique. 
 
 
   Dans un contexte de limitation progressive du recours aux ressources fossiles
@@ -96,4 +96,3 @@ publicodes:
   entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est ma performance énergétique
-    - questionnaire . objectif prioritaire . est l'écoconception

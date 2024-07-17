@@ -7,7 +7,7 @@ description: >-
 description longue: >-
   L'appel à communs mise sur les licences ouvertes et les communautés pour
   financer des solutions ouvertes – les communs – qui répondent aux besoins
-  partagés d’un grand nombre d’acteurs hétérogènes (public, privé, citoyen).
+  partagés d’un grand nombre d’acteurs hétérogènes (public, privé, citoyen). 
 
 
   Les projets éligibles répondent aux quatre critères suivants :
@@ -21,7 +21,7 @@ description longue: >-
   - ils répondent à au moins l'un des défis de l'appel à communs.
 
 
-  4 défis ont un caractère transversal :
+  4 défis ont un caractère transversal : 
 
   - Connaissances & ressources
 
@@ -40,11 +40,11 @@ description longue: >-
 
   - Alimentation & agriculture
 
-  - Energie et réseaux
+  - Energie et réseaux  
 
   - Mobilités & Logistique
 
-  - Bâtiment
+  - Bâtiment  
 début de validité: 02/05/2023
 fin de validité: 30/11/2024
 illustration: images/TEE_energie_verte.png
@@ -63,7 +63,9 @@ objectifs:
 - description: >-
     Si votre idée de commun est nouvelle, proposez un projet de commun en le
     décrivant via le formulaire "créer un commun"
-- description: ' Si votre projet est séléctionné, déposez-le sur le site de l''ADEME pour faire une demande de financement.'
+- description: >-
+    Si votre projet est séléctionné, déposez-le sur le site de l'ADEME pour
+    faire une demande de financement.
 conditions d'éligibilité:
   taille de l'entreprise:
   - Toutes tailles
@@ -117,11 +119,4 @@ publicodes:
     - code NAF niveau 1 . est U
   entreprise . a un objectif ciblé:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est rénover mon bâtiment
-    - questionnaire . objectif prioritaire . est la mobilité durable
-    - questionnaire . objectif prioritaire . est la gestion des déchets
-    - questionnaire . objectif prioritaire . est diminuer ma consommation d'eau
-    - questionnaire . objectif prioritaire . est ma performance énergétique
-    - questionnaire . objectif prioritaire . est former ou recruter
     - questionnaire . objectif prioritaire . est mon impact environnemental
-    - questionnaire . objectif prioritaire . est l'écoconception

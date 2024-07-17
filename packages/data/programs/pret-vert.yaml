@@ -8,7 +8,7 @@ description: >-
   renouvelables, etc.
 description longue: >-
   En co-financement avec une banque privée, le prêt Vert soutient les projets
-  visant à :
+  visant à : 
 
   • optimiser les procédés, ou améliorer la performance (énergie, eau, matière,)
   afin de mieux maîtriser ou de diminuer les impacts sur l’environnement, en ce
@@ -75,8 +75,7 @@ publicodes:
     toutes ces conditions:
     - effectif >= 1
     - effectif <= 4999
-  entreprise . est dans un secteur d'activité éligible: est secteur d'activité exclu
-    = non
+  entreprise . est dans un secteur d'activité éligible: est secteur d'activité exclu = non
   est secteur d'activité exclu:
     une de ces conditions:
     - est activité d'intermédiation financière

@@ -1,47 +1,48 @@
 titre: Étude "Performance énergétique" en industrie
 promesse: >-
-  Entreprise industrielle, réalisez une étude d'optimisation de la performance
-  énergétique de votre site de production
+  Réalisez une étude de faisabilité pour votre projet d’optimisation de la
+  performance énergétique de votre site de production
 description: >-
-  Vous avez mis en place des actions pour optimiser la performance énergétique
-  de votre entreprise ?
+  Vous avez réalisé un audit énergétique et vous avez identifié un projet pour
+  optimiser la performance énergétique de vos processus de production ?
 
-  Avec cette aide, l’ADEME vous permet d'améliorer vos actions en finançant des
-  études permettant la mesure, le suivi ou en vous aidant dans vos démarches
-  d’investissement.
+  L'ADEME peut vous aider à financer votre étude de faisabilité pour vérifier la
+  faisabilité technique et économique de votre projet et étudier les solutions
+  de montage financier et juridique.
 description longue: >-
-  Vous avez mis en place des actions pour optimiser la performance énergétique
-  de votre entreprise.
-
-  Avec cette aide, l’ADEME vous encourage à améliorer vos actions. Par exemple,
-  les actions éligibles peuvent porter sur :
+  Cette étude doit s’inscrire dans une démarche cohérente de décarbonation des
+  procédés de l'entreprise. Elle se décline en cinq étapes successives :
 
 
-  L’enrichissement des démarches de management de l’énergie :
+  1. Sobriété
 
-  - La conception et l’élaboration d’un plan de mesurage selon la norme EN
-  17267.
+  Le changement de comportement est le levier le moins coûteux et le plus
+  impactant pour réduire les consommations et baisser les émissions de gaz à
+  effet de serre.
 
-  - L’accompagnement au changement de comportement pour impliquer le personnel
-  de l’entreprise dans le processus d’amélioration continue.
+  2. Modification du mix matières
 
-  - La mise en œuvre de chantiers kaizen Énergie.
+  - Efficacité matière via l’incorporation de Matières Premières Recyclées et
+  valorisation des coproduits.
 
+  - Développement de procédés utilisant moins d’intrants, ou des intrants moins
+  émissifs.
 
-  La préparation des investissements dans l’efficacité énergétique et/ou la
-  décarbonation :
+  3. Amélioration de l’efficacité énergétique
 
-  - L’étude de la faisabilité d’un investissement de performance énergétique ou
-  de décarbonation (autre que ceux éligibles au Fonds Chaleur) sur les procédés
-  ou les utilités.
+  - Performance énergétique des technologies et procédés.
 
-  - La définition et le suivi d’un commissionnement, démarche intégrée pour la
-  maîtrise de l’efficacité de l’investissement de la phase étude à la
-  vérification des performances et à sa bonne utilisation.
+  - Adéquation des températures produites au regard des besoins finaux.
 
+  4. Substitution des énergies fossiles
 
-  L’apport des scénarios d’optimisation d’une utilité ou procédé en terme
-  d’efficacité énergétique et/ou de décarbonation
+  - Substitution des combustibles fossiles par des combustibles décarbonés ou
+  bas carbone (chaleur fatale, biomasse, biogaz, hydrogène décarboné,
+  combustibles solides de récupération, géothermie, solaire thermique, etc.).
+
+  - Electrification de la chaleur et des procédés.
+
+  5. Captage du CO₂ à la source
 début de validité: 01/01/2023
 fin de validité: 31/12/2024
 illustration: images/TEE_energie_verte.png
@@ -115,5 +116,3 @@ publicodes:
   entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est ma performance énergétique
-    - questionnaire . objectif prioritaire . est mon impact environnemental
-    - questionnaire . objectif prioritaire . est l'écoconception

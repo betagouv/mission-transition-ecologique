@@ -4,24 +4,27 @@ import * as yaml from 'js-yaml'
 import { Baserow } from '../common/baserow/baserow'
 import { Program, ProgramType, Publicodes, Status } from './types'
 import { ThemeType } from '../common/baserow/types'
+import { PublicodesGenerator } from './publicodesGenerator'
 
-interface Step {
+interface Objective {
   description: string
   liens?: { lien: string; texte: string }[]
 }
 
 interface Output {
-  objectifs: Step[]
+  objectifs: Objective[]
 }
+
+// Gestion manuelle : fresque de la mobilité, etude-des-biodechets; + les 6 anciens
 
 export class ProgramYamlGenerator {
   outputDirectory: string = path.join(__dirname, '../../programs/')
 
   async createProgramYamls(): Promise<void> {
-    const programs = await new Baserow(this.outputDirectory).getPrograms()
-    // fs.writeFileSync('program_tmp.json', JSON.stringify(programs, null, 2))
-    // const data = fs.readFileSync('program_tmp.json', 'utf-8')
-    // const programs: Program[] = JSON.parse(data)
+    // while working on the script, to avoid hitting Baserow API limits and to decrease our global impact, please cache locally the data : 
+    // on the first run use getPrograms(false) then for all following call use getPrograms(true)
+    const programs = await new Baserow(this.outputDirectory).getPrograms(false)
+
     programs.forEach((program) => {
       if (!program.Statuts.includes(Status.InProd)) {
         return
@@ -33,16 +36,12 @@ export class ProgramYamlGenerator {
     return
   }
 
-  private _validateData(program: Program) {
-    console.log('validate program todo', program)
-  }
-
   private _writeYaml(program: Program) {
     let filePath = 'programs/' + program['Id fiche dispositif'] + '.yaml'
     let yamlOldData: any
     try {
-      const fileContents = fs.readFileSync(filePath, 'utf8')
-      yamlOldData = yaml.load(fileContents)
+      const oldFileContent = fs.readFileSync(filePath, 'utf8')
+      yamlOldData = yaml.load(oldFileContent)
     } catch {}
 
     let fileContent: { [key: string]: any } = {}
@@ -76,11 +75,9 @@ export class ProgramYamlGenerator {
     }
     this._setObjectives(fileContent, program)
     this._setEligibility(fileContent, program)
-    this._setPublicodes(fileContent, program)
+    fileContent['publicodes'] = new PublicodesGenerator(program).setPublicodes()
 
     let yamlString = yaml.dump(fileContent, { noArrayIndent: true, lineWidth: 80 })
-    // yamlString = yamlString.replace(/>-?\n\s*/g, '')
-    // yamlString = yamlString.replace(/\|-?\n\s*/g, '')
     fs.writeFileSync(filePath, yamlString, 'utf8')
   }
   private _setRandomIllustration(): any {
@@ -111,7 +108,7 @@ export class ProgramYamlGenerator {
     return
   }
 
-  parseStep(step: string): Step {
+  parseStep(step: string): Objective {
     const lines = step.split('\n')
     const description = lines[0].substring(2)
 
@@ -130,7 +127,7 @@ export class ProgramYamlGenerator {
   }
 
   private _setObjectives(fileContent: { [key: string]: any }, program: Program) {
-    const objectifs: Step[] = []
+    const objectifs: Objective[] = []
 
     for (let i = 1; i <= 6; i++) {
       const step = program[`étape${i}` as keyof typeof program] as string
@@ -209,152 +206,4 @@ export class ProgramYamlGenerator {
     return 'Non éligible aux micro-entreprises'
   }
 
-  private _setPublicodes(fileContent: { [key: string]: any }, program: Program) {
-    let publicodes: any = {}
-    let cibles: string[] = []
-    let eligibility: any = {}
-    let eligibilityConditions: any = []
-    publicodes[Publicodes.CIBLE] = { [Publicodes.ALL]: cibles }
-
-    if (program.DISPOSITIF_DATE_DEBUT || program.DISPOSITIF_DATE_FIN) {
-      if (program.DISPOSITIF_DATE_DEBUT && program.DISPOSITIF_DATE_FIN) {
-        eligibility['applicable si'] = {
-          [Publicodes.ALL]: ['dispositif . début de validité <= date du jour', 'date du jour <= dispositif . fin de validité']
-        }
-      } else if (program.DISPOSITIF_DATE_DEBUT) {
-        eligibility['applicable si'] = 'dispositif . début de validité <= date du jour'
-      } else {
-        eligibility['applicable si'] = 'date du jour <= dispositif . fin de validité'
-      }
-    }
-
-    if (this._pcEffectif(program)) {
-      eligibilityConditions.push('a un effectif éligible')
-    }
-    if (program['Couverture géographique'].Name != 'National') {
-      eligibilityConditions.push(Publicodes.ZONE_GEO) // TOFIX : mistake in original script; check consequences
-    }
-
-    if (eligibilityConditions.length > 0) {
-      eligibility[Publicodes.ALL] = eligibilityConditions
-    } else if (eligibility['applicable si']) {
-      eligibility['valeur'] = 'oui'
-    }
-
-    if (Object.keys(eligibility).length !== 0) {
-      publicodes[Publicodes.ELIGIBLE] = eligibility
-      cibles.push('est éligible')
-    }
-
-    if (this._pcEffectif(program)) {
-      publicodes[Publicodes.EFFECTIF] = this._pcEffectif(program)
-    }
-
-    if (this._pcSector(program)) {
-      publicodes[Publicodes.SECTEUR] = this._pcSector(program)
-      cibles.push("est dans un secteur d'activité ciblé")
-    }
-
-    if (this._pcObjectif(program)) {
-      publicodes[Publicodes.OBJECTIF] = this._pcObjectif(program)
-      cibles.push('a un objectif ciblé')
-    }
-
-    // pc_regions
-    if (program['Couverture géographique'].Name == 'Régional') {
-      publicodes[Publicodes.ZONE_GEO] = {
-        [Publicodes.ANY]: program['Zones géographiques'].map((zone) => `région = ${zone.Name}`).sort((a, b) => a.localeCompare(b, 'fr-FR'))
-      }
-    }
-
-    if (!program['Parcours "Je ne sais pas par où commencer"']) {
-      cibles.push('questionnaire . parcours = objectif précis')
-    }
-
-    if (program.Propriétaire && program.Propriétaire != '*') {
-      cibles.push(Publicodes.PROPRIO)
-    }
-
-    fileContent['publicodes'] = publicodes
-    return
-  }
-  private _pcObjectif(program: Program) {
-    const programThemes = program['Thèmes Ciblés']
-    const themeToPublicodesMapping = {
-      [ThemeType.Building]: 'est rénover mon bâtiment',
-      [ThemeType.Mobility]: 'est la mobilité durable',
-      [ThemeType.Waste]: 'est la gestion des déchets',
-      [ThemeType.Water]: "est diminuer ma consommation d'eau",
-      [ThemeType.Energy]: 'est ma performance énergétique',
-      [ThemeType.RH]: 'est former ou recruter',
-      [ThemeType.Environmental]: 'est mon impact environnemental',
-      [ThemeType.EcoDesign]: "est l'écoconception"
-    }
-
-    if (!programThemes) {
-      return null
-    }
-    return {
-      [Publicodes.ANY]: programThemes.map(
-        (theme) => 'questionnaire . objectif prioritaire . ' + themeToPublicodesMapping[theme['Nom (Tech)']]
-      )
-    }
-  }
-
-  private _pcSector(program: Program) {
-    const secteurs = [
-      'AAgriculture, sylviculture et pêche',
-      'BIndustries extractives',
-      'CIndustrie manufacturière',
-      "DProduction et distribution d'électricité, de gaz, de vapeur et d'air conditionné",
-      "EProduction et distribution d'eau, assainissement, gestion des déchets et dépollution",
-      'FConstruction',
-      "GCommerce, réparation d'automobiles et de motocycles",
-      'HTransports et entreposage',
-      'IHébergement et restauration',
-      'JInformation et communication',
-      "KActivités financières et d'assurance",
-      'LActivités immobilières',
-      'MActivités spécialisées, scientifiques et techniques',
-      'NActivités de services administratifs et de soutien',
-      'OAdministration publique',
-      'PEnseignement',
-      'QSanté humaine et action sociale',
-      'RArts, spectacles et activités récréatives',
-      'SAutres activités de services',
-      "TActivités des ménages en tant qu'employeurs, activités indifférenciées des ménages en tant que producteurs de biens et services pour usage propre",
-      'UActivités extra-territoriales'
-    ]
-
-    const programNaf: string[] = []
-    secteurs.forEach((sector) => {
-      if (program[sector as keyof typeof program] == 1) {
-        programNaf.push(sector[0])
-      }
-    })
-    if (programNaf.length) {
-      return {
-        'une de ces conditions': programNaf.map((nafCode) => `code NAF niveau 1 . est ${nafCode}`)
-      }
-    }
-    return null
-  }
-
-  private _pcEffectif(program: Program) {
-    if (program.minEff > 0 || program.maxEff) {
-      let constraint = []
-      if (program.minEff > 0) {
-        constraint.push(`effectif >= ${program.minEff}`)
-      }
-      if (program.maxEff) {
-        constraint.push(`effectif <= ${program.maxEff}`)
-      }
-      if (constraint) {
-        return {
-          [Publicodes.ALL]: constraint
-        }
-      }
-    }
-    return null
-  }
 }

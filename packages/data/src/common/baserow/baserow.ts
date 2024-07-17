@@ -38,7 +38,14 @@ export class Baserow {
     )
   }
 
-  async getPrograms(): Promise<DataProgram[]> {
+  // Note : caching the downloaded data by default to nudge towards reducing the data transfer from baserow.
+  async getPrograms(useLocalRawData:boolean): Promise<DataProgram[]> {
+    if (useLocalRawData){
+      const data = fs.readFileSync('program_tmp.json', 'utf-8')
+      const programs: DataProgram[] = JSON.parse(data)
+      return programs
+    }
+
     const allBaserowPrograms = await this._getTableData<Program>(this._programTableId)
 
     const operators = await this._getTableData<Operator>(this._operatorTableId)
@@ -52,6 +59,8 @@ export class Baserow {
         programs.push(this._convertToRawProgram(program, operators, geographicCoverages, geographicAreas, themes))
       } catch {}
     })
+    fs.writeFileSync('program_tmp.json', JSON.stringify(programs, null, 2))
+
     return programs
   }
 

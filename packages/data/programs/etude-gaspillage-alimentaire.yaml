@@ -87,7 +87,6 @@ publicodes:
   entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est la gestion des déchets
-    - questionnaire . objectif prioritaire . est mon impact environnemental
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
     - région = Bourgogne-Franche-Comté

@@ -3,8 +3,14 @@ promesse: >-
   Entreprise industrielle, réalisez un audit énergétique de votre site de
   production
 description: >-
-  L’ADEME vous aide à financer votre audit énergétique, indispensable pour une
-  stratégie énergétique au service de la performance de votre entreprise.
+  L’ADEME vous aide à financer l'audit énergétique de votre site de production.
+
+  L'audit énergétique vous permet de réaliser un état des lieux complet de vos
+  consommations et d'identifier vos postes les plus émetteurs en terme de
+  dépenses énergétiques. Votre auditeur énergétique vous aidera ensuite a
+  identifier les actions les plus rentables et efficaces à mener et à les
+  hiérarchiser en fonction du temps de retour sur investissement et de leur
+  facilité de leur mise en œuvre.
 description longue: >-
   Les audits énergétiques offrent pour bénéfices 15 à 25 % d'économie sur un
   site en moyenne et des bases solides pour la mise en œuvre d'un Système de
@@ -45,8 +51,9 @@ objectifs:
     atelier ou process.
 - description: >-
     A la fin du diagnostic, bénéficiez d'un état des lieux complet de vos
-    consommations, des pistes d'amélioration ainsi que les gains économiques
-    associés et le temps de retour sur investissement ; et d'un plan d'actions.
+    consommations, des pistes d'amélioration sous forme de plan d'action ainsi
+    que les gains économiques associés et leurs temps de retour sur
+    investissement.
 conditions d'éligibilité:
   taille de l'entreprise:
   - Toutes tailles
@@ -91,5 +98,3 @@ publicodes:
   entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est ma performance énergétique
-    - questionnaire . objectif prioritaire . est mon impact environnemental
-    - questionnaire . objectif prioritaire . est l'écoconception
