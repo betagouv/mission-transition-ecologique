@@ -6,13 +6,13 @@ import { ThemeType } from '../common/baserow/types'
 export class PublicodesGenerator {
   constructor(private program: Program) {}
 
-  public setPublicodes(): { [key: string]: any } {
+  public generatePublicodes(): { [key: string]: any } {
     const filePath = path.join(__dirname, 'publicodesStaticData.json')
-    const jsonData = JSON.parse(fs.readFileSync(filePath, 'utf-8'))
+    const staticData = JSON.parse(fs.readFileSync(filePath, 'utf-8'))
 
     let publicodes: { [key: string]: any }
-    if (this.program['Id fiche dispositif'] in jsonData) {
-      publicodes = jsonData[this.program['Id fiche dispositif']]
+    if (this.program['Id fiche dispositif'] in staticData) {
+      publicodes = staticData[this.program['Id fiche dispositif']]
     } else {
       publicodes = this._generatePublicodes()
     }
@@ -39,11 +39,11 @@ export class PublicodesGenerator {
       }
     }
 
-    if (this._pcEffectif(this.program)) {
+    if (this._generateEffectifConditions(this.program)) {
       eligibilityConditions.push('a un effectif éligible')
     }
     if (this.program['Couverture géographique'].Name != 'National') {
-      eligibilityConditions.push(Publicodes.ZONE_GEO) // TOFIX : mistake in original script; check consequences
+      eligibilityConditions.push(Publicodes.ZONE_GEO)
     }
 
     if (eligibilityConditions.length > 0) {
@@ -57,23 +57,22 @@ export class PublicodesGenerator {
       cibles.push('est éligible')
     }
 
-    if (this._pcEffectif(this.program)) {
-      publicodes[Publicodes.EFFECTIF] = this._pcEffectif(this.program)
+    if (this._generateEffectifConditions(this.program)) {
+      publicodes[Publicodes.EFFECTIF] = this._generateEffectifConditions(this.program)
     }
 
-    if (this._pcSector(this.program)) {
-      publicodes[Publicodes.SECTEUR] = this._pcSector(this.program)
+    if (this._generateSectorConditions(this.program)) {
+      publicodes[Publicodes.SECTEUR] = this._generateSectorConditions(this.program)
       cibles.push("est dans un secteur d'activité ciblé")
     }
 
-    if (this._pcObjectif(this.program)) {
-      publicodes[Publicodes.OBJECTIF] = this._pcObjectif(this.program)
+    if (this._generateObjectifConditions(this.program)) {
+      publicodes[Publicodes.OBJECTIF] = this._generateObjectifConditions(this.program)
       cibles.push('a un objectif ciblé')
     }
 
-    // pc_regions
-    if (this._pcRegion(this.program)) {
-      publicodes[Publicodes.ZONE_GEO] = this._pcRegion(this.program)
+    if (this._generateGeographicConditions(this.program)) {
+      publicodes[Publicodes.ZONE_GEO] = this._generateGeographicConditions(this.program)
     }
 
     if (!this.program['Parcours "Je ne sais pas par où commencer"']) {
@@ -91,7 +90,7 @@ export class PublicodesGenerator {
     Vaucluse: "Provence-Alpes-Côte d'Azur"
   }
 
-  private _pcRegion(program: Program) {
+  private _generateGeographicConditions(program: Program) {
     if (this.program['Couverture géographique'].Name == 'Régional') {
       return {
         [Publicodes.ANY]: this.program['Zones géographiques']
@@ -125,7 +124,7 @@ export class PublicodesGenerator {
     return null
   }
 
-  private _pcObjectif(program: Program) {
+  private _generateObjectifConditions(program: Program) {
     const programThemes = program['Thèmes Ciblés']
     const themeToPublicodesMapping = {
       [ThemeType.Building]: 'est rénover mon bâtiment',
@@ -148,7 +147,7 @@ export class PublicodesGenerator {
     }
   }
 
-  private _pcSector(program: Program) {
+  private _generateSectorConditions(program: Program) {
     const secteurs = [
       'AAgriculture, sylviculture et pêche',
       'BIndustries extractives',
@@ -187,7 +186,7 @@ export class PublicodesGenerator {
     return null
   }
 
-  private _pcEffectif(program: Program) {
+  private _generateEffectifConditions(program: Program) {
     if (program.minEff > 0 || program.maxEff) {
       let constraint = []
       if (program.minEff > 0) {

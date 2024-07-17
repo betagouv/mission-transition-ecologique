@@ -5,8 +5,6 @@ import { Baserow } from '../common/baserow/baserow'
 import { Objective, Program, ProgramType, Status } from './types'
 import { PublicodesGenerator } from './publicodesGenerator'
 
-// Gestion manuelle : fresque de la mobilité, etude-des-biodechets; + les 6 anciens
-
 export class ProgramYamlGenerator {
   outputDirectory: string = path.join(__dirname, '../../programs/')
 
@@ -20,38 +18,38 @@ export class ProgramYamlGenerator {
         return
       }
       console.log('Working on program ' + program['Id fiche dispositif'])
-      // this._validateData(program)
-      this._writeYaml(program)
+      this._createProgramYaml(program)
     })
     return
   }
 
-  private _writeYaml(program: Program) {
-    let filePath = 'programs/' + program['Id fiche dispositif'] + '.yaml'
-    let yamlOldData: any
+  private _loadOldYamlContent(oldProgramId:string) : Program | null{
+    let filePath = 'programs/' + oldProgramId + '.yaml'
     try {
       const oldFileContent = fs.readFileSync(filePath, 'utf8')
-      yamlOldData = yaml.load(oldFileContent)
+      return yaml.load(oldFileContent) as Program
     } catch {}
+    return null
+  }
 
-    let fileContent: { [key: string]: any } = {}
+  private _createProgramYaml(program: Program) {    
+    let oldData = this._loadOldYamlContent(program['Id fiche dispositif'])
+    
+    let yamlContent: { [key: string]: any } = {}
 
     const addField = (key: string, value: any) => {
       if (value && (!Array.isArray(value) || value.length > 0)) {
-        fileContent[key] = value
+        yamlContent[key] = value
       }
     }
+
     addField('titre', program.Titre)
     addField('promesse', program.Promesse)
     addField('description', program['Description courte'])
     addField('description longue', program['Description longue'])
     addField('début de validité', program.DISPOSITIF_DATE_DEBUT)
     addField('fin de validité', program.DISPOSITIF_DATE_FIN)
-    if (yamlOldData && yamlOldData['illustration']) {
-      fileContent['illustration'] = yamlOldData['illustration']
-    } else {
-      fileContent['illustration'] = this._setRandomIllustration()
-    }
+    addField('illustration', this._setIllustration(oldData))
     addField('opérateur de contact', program['Opérateur de contact'][0].Nom)
     addField(
       'autres opérateurs',
@@ -59,17 +57,26 @@ export class ProgramYamlGenerator {
     )
     addField('url', program['URL externe'])
     addField("nature de l'aide", program["Nature de l'aide"].toLowerCase())
-    this._setFinancialData(fileContent, program)
+    this._setFinancialData(yamlContent, program)
     if (program['Dispositif activable en autonomie']) {
-      fileContent['activable en autonomie'] = 'oui'
+      addField('activable en autonomie', 'oui')
     }
-    this._setObjectives(fileContent, program)
-    this._setEligibility(fileContent, program)
-    fileContent['publicodes'] = new PublicodesGenerator(program).setPublicodes()
+    this._setObjectives(yamlContent, program)
+    this._setEligibility(yamlContent, program)
+    yamlContent['publicodes'] = new PublicodesGenerator(program).generatePublicodes()
 
-    let yamlString = yaml.dump(fileContent, { noArrayIndent: true, lineWidth: 80 })
-    fs.writeFileSync(filePath, yamlString, 'utf8')
+    let yamlString = yaml.dump(yamlContent, { noArrayIndent: true })
+    fs.writeFileSync('programs/' + program['Id fiche dispositif'] + '.yaml', yamlString, 'utf8')
   }
+
+  private _setIllustration(oldData: any): string {
+    if (oldData && oldData['illustration']) {
+      return oldData['illustration']
+    } else {
+      return this._setRandomIllustration()
+    }
+  }
+
   private _setRandomIllustration(): any {
     const illustrations = ['images/TEE_energie_verte.png', 'images/TEE_ampoule.png', 'images/TEE_eolienne.png']
     return illustrations[Math.floor(Math.random() * 3)]
@@ -87,7 +94,7 @@ export class ProgramYamlGenerator {
     }
     if (program["Nature de l'aide"] == ProgramType.Loan) {
       fileContent['durée du prêt'] = program['Prestation (durée + étalement)']
-      fileContent['montant du prêt'] = `De ${program['MontantMin aide']} € à ${program['MontantMax aide']} €` // TODO CLEAN VALUES
+      fileContent['montant du prêt'] = `De ${program['MontantMin aide']} € à ${program['MontantMax aide']} €`
       return
     }
     if (program["Nature de l'aide"] == ProgramType.TaxAdvantage) {
