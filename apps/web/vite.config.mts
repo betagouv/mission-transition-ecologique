@@ -72,6 +72,9 @@ const plugins = async () => {
       org: "betagouv",
       project: "tee-frontend-vue",
       url: "https://sentry.incubateur.net",
+      release: {
+        name: process.env.SENTRY_RELEASE_VERSION,
+      }
     })
   ]
   if (isProd) {

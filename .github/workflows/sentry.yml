@@ -5,11 +5,27 @@ on:
       - main
   pull_request:
 
+env:
+  BRANCH_NAME: ${{ github.ref_name }}
+
 permissions:
   actions: read
   contents: read
 
 jobs:
+  env-job:
+    runs-on: ubuntu-latest
+    outputs:
+      modified-branch-name: ${{ steps.env.outputs.MODIFIED_BRANCH_NAME }}
+    name: test-job
+    steps:
+      - name: Sets MODIFIED_BRANCH_NAME
+        id: env
+        env:
+          name: "${{env.BRANCH_NAME}}"
+        run: |
+          echo "MODIFIED_BRANCH_NAME=${name/\//-}" >> ${GITHUB_OUTPUT}
+
   sentry-release:
     name: Create Sentry release
     runs-on: ubuntu-latest
@@ -26,7 +42,7 @@ jobs:
           SENTRY_PROJECT: 'tee-frontend-vue'
           SENTRY_URL: https://sentry.incubateur.net
         with:
-          environment: ${{ github.ref == 'refs/heads/main' && 'prod' || 'preprod' }}
+          environment: ${{ needs.env-job.outputs.modified-branch-name }}
           version: ${{ github.ref_name }}
 
   build:
@@ -48,3 +64,5 @@ jobs:
       - run: npm clean-install
 
       - run: npm run build
+        env:
+          SENTRY_RELEASE_VERSION: ${{ needs.env-job.outputs.modified-branch-name }}
