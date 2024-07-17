@@ -27,6 +27,7 @@ jobs:
           echo "MODIFIED_BRANCH_NAME=${name/\//-}" >> ${GITHUB_OUTPUT}
 
   sentry-release:
+    needs: [env-job]
     name: Create Sentry release
     runs-on: ubuntu-latest
     steps:
@@ -46,6 +47,7 @@ jobs:
           environment: ${{ github.ref == 'refs/heads/main' && 'prod' || 'preprod' }}
 
   build:
+    needs: [env-job, sentry-release]
     name: Run build to send sourcemaps to sentry
     runs-on: ubuntu-latest
     env: # Or as an environment variable
