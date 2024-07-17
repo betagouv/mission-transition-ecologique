@@ -10,6 +10,7 @@ export enum RouteName {
   Questionnaire = 'questionnaire',
   QuestionnaireResult = 'questionnaire-resultat',
   QuestionnaireResultDetail = 'questionnaire-result-detail',
+  ProgramProjectResultDetail = 'program-project-result-detail',
   ProjectResultDetail = 'questionnaire-project-result-detail',
   Statistiques = 'statistics'
 }

@@ -132,8 +132,8 @@ onBeforeMount(async () => {
 
 const getRouteToProgramDetail = (programId: string): RouteLocationRaw => {
   return {
-    name: RouteName.QuestionnaireResultDetail,
-    params: { programId },
+    name: RouteName.ProgramProjectResultDetail,
+    params: { programId, projectSlug: props.project?.slug },
     query: navigationStore.query
   }
 }

@@ -45,7 +45,18 @@ export default class Hook {
 
     next()
   }
-
+  static readonly hasProjectAndProgram = async (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
+    if (
+      to.params.programId &&
+      to.params.projectSlug &&
+      (await useProgramStore().getProgramById(to.params.programId as string)).isOk &&
+      (await useProjectStore().getProjectBySlug(to.params.projectSlug as string)).isOk
+    ) {
+      next()
+    } else {
+      next(to.name === RouteName.QuestionnaireResultDetail ? { name: RouteName.QuestionnaireStart } : { name: RouteName.Homepage })
+    }
+  }
   static readonly hasProgram = async (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
     if (to.params.programId && (await useProgramStore().getProgramById(to.params.programId as string)).isOk) {
       next()

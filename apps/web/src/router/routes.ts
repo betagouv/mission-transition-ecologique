@@ -59,6 +59,13 @@ export const routes = [
         props: true
       },
       {
+        path: 'resultat/projets/:projectSlug/:programId',
+        name: RouteName.ProgramProjectResultDetail,
+        component: ProgramDetail as Component,
+        beforeEnter: [Hook.hasProjectAndProgram, Hook.setUsedTracks, Hook.hasUsedTracks],
+        props: true
+      },
+      {
         path: 'resultat/:programId',
         name: RouteName.QuestionnaireResultDetail,
         component: ProgramDetail as Component,
