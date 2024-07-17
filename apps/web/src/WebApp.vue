@@ -42,7 +42,7 @@ const isReady = computed<boolean>(() => {
 })
 
 function throwError() {
-  throw new Error('Sentry Error')
+  throw new Error('Sentry Error v2')
 }
 
 onBeforeMount(() => {

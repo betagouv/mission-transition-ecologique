@@ -1,0 +1,50 @@
+name: Sentry Integration
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  sentry-release:
+    name: Create Sentry release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Create Sentry release
+        uses: getsentry/action-release@v1
+        env:
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+          SENTRY_ORG: 'betagouv'
+          SENTRY_PROJECT: 'tee-frontend-vue'
+          SENTRY_URL: https://sentry.incubateur.net
+          with:
+            environment: ${{ github.ref == 'refs/heads/main' && 'prod' || 'preprod' }}
+            version: ${{ github.ref }}
+
+  build:
+    name: Run build to send sourcemaps to sentry
+    runs-on: ubuntu-latest
+    env: # Or as an environment variable
+      SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+    strategy:
+      matrix:
+        node-version: [ '20.x' ]
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - run: npm clean-install
+
+      - run: npm run build
