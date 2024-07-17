@@ -25,9 +25,9 @@ jobs:
           SENTRY_ORG: 'betagouv'
           SENTRY_PROJECT: 'tee-frontend-vue'
           SENTRY_URL: https://sentry.incubateur.net
-          with:
-            environment: ${{ github.ref == 'refs/heads/main' && 'prod' || 'preprod' }}
-            version: ${{ github.ref }}
+        with:
+          environment: ${{ github.ref == 'refs/heads/main' && 'prod' || 'preprod' }}
+          version: ${{ github.ref }}
 
   build:
     name: Run build to send sourcemaps to sentry
