@@ -6,7 +6,7 @@
   >
     <template #title>
       <div class="fr-col-10 fr-col-lg-8">
-        <h1 class="fr-text--blue-france">L'annuaire des aides publiques à la transition écologique</h1>
+        <h1 class="fr-text--base-blue-france">L'annuaire des aides publiques à la transition écologique</h1>
       </div>
     </template>
     <template #description>

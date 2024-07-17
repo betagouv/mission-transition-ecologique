@@ -8,7 +8,7 @@ $base-green: #1ebe8e;
 $base-purple: #6a62f4;
 $base-red: #fca081;
 $base-yellow: #facf35;
-
+$base-blue-france: (color.$blue-france);
 $colors: (
   "white": color.$white,
   "yellow": (
@@ -33,5 +33,10 @@ $colors: (
     "color": var(--text-action-high-blue-france)
   ),
   "purple" : $base-purple,
-  "blue-france": color.$blue-france, // #000091
+  "base-blue-france": $base-blue-france,
+  "blue-france": (
+    "background-color": $base-blue-france,
+    "color": var(--text-inverted-blue-france),
+    "is-inverted": true
+  )
 );

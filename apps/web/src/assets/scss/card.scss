@@ -112,9 +112,6 @@
       @if type-of($properties) == map {
         background-color: map-get($properties, "background-color");
         color: map-get($properties, "color");
-      } @else {
-        background-color: $properties;
-        color: white;
       }
 
       .fr-card__title {

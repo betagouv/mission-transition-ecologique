@@ -224,13 +224,13 @@ function createData(): TrackOptionItem {
 }
 
 .is-selected {
-  border: solid thin setting.$blue-france;
-  color: setting.$blue-france;
+  border: solid thin setting.$base-blue-france;
+  color: setting.$base-blue-france;
   background-color: #f5f5f5;
 }
 
 .is-title-selected {
-  color: setting.$blue-france;
+  color: setting.$base-blue-france;
 }
 
 .thinner-text {
@@ -239,6 +239,6 @@ function createData(): TrackOptionItem {
 
 .result-number {
   font-style: italic;
-  color: setting.$blue-france;
+  color: setting.$base-blue-france;
 }
 </style>
