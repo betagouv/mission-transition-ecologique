@@ -1,5 +1,4 @@
-import { readPrograms, prependInterface, buildJSONOutput } from './dataPipeline'
-// Script
+import { readPrograms, prependInterface, buildProgramJson } from './dataPipeline'
 
 console.log('▶ Starting data consolidation (buildJsonOutput.ts)\n')
 
@@ -11,4 +10,4 @@ programs = prependInterface(programs, true)
 
 console.log()
 
-buildJSONOutput(programs)
+buildProgramJson(programs)
