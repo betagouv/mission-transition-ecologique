@@ -1,23 +1,29 @@
 titre: Flotte de vélos à disposition
 promesse: Mettez à la disposition gratuite de vos salariés une flotte de vélos
-description: Bénéficiez d'une réduction d'impôt pour la mise à disposition gratuite
-  d'une flotte de vélos pour les déplacements de vos salariés entre leur domicile
-  et leur lieu de travail.
-description longue: Votre entreprise doit être soumise à l'impôt sur les sociétés
-  (IS). Si vous louez la flotte de vélos, le contrat de location doit être souscrit
-  pour une durée minimale de 3 ans.
+description: >-
+  Bénéficiez d'une réduction d'impôt pour la mise à disposition gratuite d'une
+  flotte de vélos pour les déplacements de vos salariés entre leur domicile et
+  leur lieu de travail.
+description longue: >-
+  Votre entreprise doit être soumise à l'impôt sur les sociétés (IS). Si vous
+  louez la flotte de vélos, le contrat de location doit être souscrit pour une
+  durée minimale de 3 ans.
 illustration: images/TEE_ampoule.png
 opérateur de contact: DDFIP
-url: https://les-aides.fr/aide/QXQvGSwMDA4vGRUgJA/ddfip/reduction-d-impot-pour-mise-a-disposition-d-une-flotte-de-velos.html
+url: >-
+  https://les-aides.fr/aide/QXQvGSwMDA4vGRUgJA/ddfip/reduction-d-impot-pour-mise-a-disposition-d-une-flotte-de-velos.html
 nature de l'aide: avantage fiscal
 montant de l'avantage fiscal: jusqu'à 25% de l'achat ou de la location
 objectifs:
-- description: Louez ou achetez une flotte de vélos et mettez-la gratuitement à disposition
+- description: >-
+    Louez ou achetez une flotte de vélos et mettez-la gratuitement à disposition
     de vos salariés.
-- description: Déclarez votre réduction d'impôt dans les mêmes délais que votre déclaration
+- description: >-
+    Déclarez votre réduction d'impôt dans les mêmes délais que votre déclaration
     de résultats, en fin d'exercice.
-- description: Bénéficiez d'une réduction d'impôt allant jusqu'à 25% du prix d'achat
-    ou de location de cette flotte de vélos, par exercice.
+- description: >-
+    Bénéficiez d'une réduction d'impôt allant jusqu'à 25% du prix d'achat ou de
+    location de cette flotte de vélos, par exercice.
 conditions d'éligibilité:
   taille de l'entreprise:
   - Toutes tailles
@@ -29,8 +35,9 @@ conditions d'éligibilité:
   nombre d'années d'activité:
   - Éligible à toutes les entreprises
   autres critères d'éligibilité:
-  - Cette réduction d'impôt ne concerne que les entreprises soumises à l'impôt sur
-    les sociétés (IS).
+  - >-
+    Cette réduction d'impôt ne concerne que les entreprises soumises à l'impôt
+    sur les sociétés (IS).
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

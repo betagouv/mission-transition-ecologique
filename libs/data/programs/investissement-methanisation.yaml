@@ -1,59 +1,70 @@
 titre: Investissement "Méthanisation"
 promesse: Financez votre installation de méthanisation
-description: Vous disposez d’une étude pour votre projet de méthanisation ? Vous souhaitez
-  investir pour le mettre en œuvre ? L’ADEME peut accompagner financièrement la réalisation
-  de votre installation.
-description longue: 'Les équipements financés sont les suivants :
+description: >-
+  Vous disposez d’une étude pour votre projet de méthanisation ? Vous souhaitez
+  investir pour le mettre en œuvre ? L’ADEME peut accompagner financièrement la
+  réalisation de votre installation.
+description longue: >-
+  Les équipements financés sont les suivants :
 
-  • Unités de méthanisation avec cogénération (< 500 kWe) ou injection de biométhane
-  :
+  • Unités de méthanisation avec cogénération (< 500 kWe) ou injection de
+  biométhane :
 
   - production de biogaz ;
 
-  - valorisation énergétique du biogaz : production de chaleur seule, cogénération
-  d’électricité et de chaleur, épuration du biogaz en biométhane, injection dans le
-  réseau public.
+  - valorisation énergétique du biogaz : production de chaleur seule,
+  cogénération d’électricité et de chaleur, épuration du biogaz en biométhane,
+  injection dans le réseau public.
 
-  • Stations d’épuration urbaines (STEU) : valorisation énergétique du biogaz comprenant
-  l’épuration en biométhane et l’injection dans le réseau public.
+  • Stations d’épuration urbaines (STEU) : valorisation énergétique du biogaz
+  comprenant l’épuration en biométhane et l’injection dans le réseau public.
 
-  La réalisation d''une étude de faisabilité préalable est une condition d''éligibilité.'
+  La réalisation d'une étude de faisabilité préalable est une condition
+  d'éligibilité.
 début de validité: 01/01/2023
 fin de validité: 31/12/2024
 illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
-url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/realisation-dinstallations-methanisation-injection-cogeneration-chaleur
+url: >-
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/realisation-dinstallations-methanisation-injection-cogeneration-chaleur
 nature de l'aide: financement
 montant du financement: Aide calculée selon le type d'installation
 objectifs:
-- description: Vérifiez l’éligibilité de votre projet en parcourant la documentation
-    de l’ADEME.
+- description: >-
+    Vérifiez l’éligibilité de votre projet en parcourant la documentation de
+    l’ADEME.
   liens:
-  - lien: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/R%C3%A9alisation%20d%27installations%20de%20m%C3%A9thanisation%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.docx
+  - lien: >-
+      https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/R%C3%A9alisation%20d%27installations%20de%20m%C3%A9thanisation%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.docx
     texte: Conditions éligibilité et financement
-- description: 'Déposez votre demande d''aide : informations administratives, description
-    du projet, détails techniques et financiers, étude de faisabilité, etc. A ce stade,
-    votre investissement ne doit pas avoir été realisé !'
-- description: L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
-    recevez un contrat de financement précisant le montant d’aide maximum, les conditions
-    et les modalités de versement.
+- description: >-
+    Déposez votre demande d'aide : informations administratives, description du
+    projet, détails techniques et financiers, étude de faisabilité, etc. A ce
+    stade, votre investissement ne doit pas avoir été realisé !
+- description: >-
+    L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez
+    un contrat de financement précisant le montant d’aide maximum, les
+    conditions et les modalités de versement.
 - description: Réalisez vos investissements.
 conditions d'éligibilité:
   taille de l'entreprise:
   - Toutes tailles
   - Éligible aux micro-entreprises
   secteur géographique:
-  - Corse, Centre-Val de Loire, Bourgogne-Franche-Comté, Provence-Alpes-Côte d'Azur,
-    Guadeloupe, Nouvelle-Aquitaine, Martinique, Occitanie, Guyane, La Réunion, Auvergne-Rhône-Alpes,
-    Hauts-de-France, Pays de la Loire
+  - >-
+    Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Centre-Val de Loire, Corse,
+    Guadeloupe, Guyane, Hauts-de-France, La Réunion, Martinique,
+    Nouvelle-Aquitaine, Occitanie, Pays de la Loire, Provence-Alpes-Côte d'Azur
   secteur d'activité:
   - Tous secteurs d’activité
   nombre d'années d'activité:
   - Éligible à toutes les entreprises
   autres critères d'éligibilité:
-  - 'L''opération pour laquelle vous sollicitez une aide financière ne doit pas avoir
-    commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque
-    forme que ce soit : marché signé, commande signée, devis accepté…)'
+  - >-
+    L'opération pour laquelle vous sollicitez une aide financière ne doit pas
+    avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes
+    (sous quelque forme que ce soit : marché signé, commande signée, devis
+    accepté…)
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
@@ -78,16 +89,16 @@ publicodes:
     - questionnaire . objectif prioritaire . est ma performance énergétique
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
-    - région = Corse
-    - région = Centre-Val de Loire
-    - région = Bourgogne-Franche-Comté
-    - région = Provence-Alpes-Côte d'Azur
-    - région = Guadeloupe
-    - région = Nouvelle-Aquitaine
-    - région = Martinique
-    - région = Occitanie
-    - région = Guyane
-    - région = La Réunion
     - région = Auvergne-Rhône-Alpes
+    - région = Bourgogne-Franche-Comté
+    - région = Centre-Val de Loire
+    - région = Corse
+    - région = Guadeloupe
+    - région = Guyane
     - région = Hauts-de-France
+    - région = La Réunion
+    - région = Martinique
+    - région = Nouvelle-Aquitaine
+    - région = Occitanie
     - région = Pays de la Loire
+    - région = Provence-Alpes-Côte d'Azur

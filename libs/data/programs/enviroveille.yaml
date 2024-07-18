@@ -1,8 +1,10 @@
 titre: Enviroveille
-promesse: Accédez à toute l’information réglementaire en matière d'environnement,
+promesse: >-
+  Accédez à toute l’information réglementaire en matière d'environnement,
   énergie et santé-sécurité au travail
-description: Abonnez vous au service de veille "Enviroveille" de la CCI pour avoir
-  accès à l’information réglementaire applicable à votre activité (environnement,
+description: >-
+  Abonnez vous au service de veille "Enviroveille" de la CCI pour avoir accès à
+  l’information réglementaire applicable à votre activité (environnement,
   énergie, santé-sécurité au travail) et suivre son évolution.
 illustration: images/TEE_eolienne.png
 opérateur de contact: CCI
@@ -12,19 +14,25 @@ coût de l'accompagnement: de 150 à 800 € HT (sur abonnement)
 durée de l'accompagnement: 12 mois
 activable en autonomie: oui
 objectifs:
-- description: Recevez une alerte réglementaire une fois tous les 15 jours, comme
-    premier niveau d'information sur l'actualité réglementaire.
-- description: Bénéficiez d'une veille personnalisée sur les activités qui vous concernent
-    et recevez une fois par mois l'actualité juridique complète qui s'y rapporte.
-- description: 'Accédez à une base de données juridiques : textes réglementaires,
-    jurisprudence, projets de textes européens et nationaux.'
-- description: 'Recevez un bimestriel dématérialisé qui recense les textes les plus
-    importants sur les différentes thématiques de la transition écologique : déchets,
-    énergie, eau, biodiversité, air, sites et sols pollués, installations classées
-    pour la protection de l’environnement.'
-- description: Testez gratuitement le service d'alerte réglementaire, la veille personnalisée
-    et la base de données juridiques pendant 2 mois. Puis, abonnez-vous aux services
-    de votre choix.
+- description: >-
+    Recevez une alerte réglementaire une fois tous les 15 jours, comme premier
+    niveau d'information sur l'actualité réglementaire.
+- description: >-
+    Bénéficiez d'une veille personnalisée sur les activités qui vous concernent
+    et recevez une fois par mois l'actualité juridique complète qui s'y
+    rapporte.
+- description: >-
+    Accédez à une base de données juridiques : textes réglementaires,
+    jurisprudence, projets de textes européens et nationaux.
+- description: >-
+    Recevez un bimestriel dématérialisé qui recense les textes les plus
+    importants sur les différentes thématiques de la transition écologique?:
+    déchets, énergie, eau, biodiversité, air, sites et sols pollués,
+    installations classées pour la protection de l’environnement.
+- description: >-
+    Testez gratuitement le service d'alerte réglementaire, la veille
+    personnalisée et la base de données juridiques pendant 2 mois. Puis,
+    abonnez-vous aux services de votre choix.
   liens:
   - lien: https://www.enviroveille.com/public/tester-gratuitement.html
     texte: Demander un compte d'accès gratuit

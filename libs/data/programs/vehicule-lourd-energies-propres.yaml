@@ -1,20 +1,24 @@
 titre: Véhicule lourd énergies propres
 promesse: Faites l'acquisition d'un véhicule lourd utilisant des énergies propres
-description: Bénéficiez d'une déduction fiscale à l'achat d'un véhicule lourd affecté
-  à l'activité de votre entreprise utilisant des énergies propres.
-description longue: Cet avantage fiscal est valable pour l'achat d'un véhicule lourd
-  (de 2,6 tonnes à 16 tonnes) neuf utilisant des énergies propres (gaz naturel, biométhane,
-  ED95, électricité, hydrogène...).
+description: >-
+  Bénéficiez d'une déduction fiscale à l'achat d'un véhicule lourd affecté à
+  l'activité de votre entreprise utilisant des énergies propres.
+description longue: >-
+  Cet avantage fiscal est valable pour l'achat d'un véhicule lourd (de 2,6
+  tonnes à 16 tonnes) neuf utilisant des énergies propres (gaz naturel,
+  biométhane, ED95, électricité, hydrogène...).
 illustration: images/TEE_ampoule.png
 opérateur de contact: DDFIP
-url: https://les-aides.fr/aide/QScvGSwMDA4vGRUgJA/ddfip/deduction-exceptionnelle-vehicules-lourds-utilisant-des-energies-propres.html
+url: >-
+  https://les-aides.fr/aide/QScvGSwMDA4vGRUgJA/ddfip/deduction-exceptionnelle-vehicules-lourds-utilisant-des-energies-propres.html
 nature de l'aide: avantage fiscal
-montant de l'avantage fiscal: 20% à 60% du coût du véhicule
+montant de l'avantage fiscal: '20% à 60% du coût du véhicule '
 objectifs:
 - description: Vérifiez l'éligibilité du véhicule lourd que vous souhaitez acquérir.
 - description: Déduisez l'aide de vos résultats imposables.
-- description: Bénéficiez d'une déduction exceptionnelle sur votre résultat imposable,
-    de 20% à 60% de la valeur du véhicule.
+- description: >-
+    Bénéficiez d'une déduction exceptionnelle sur votre résultat imposable, de
+    20% à 60% de la valeur du véhicule.
 conditions d'éligibilité:
   taille de l'entreprise:
   - Toutes tailles
@@ -26,8 +30,9 @@ conditions d'éligibilité:
   nombre d'années d'activité:
   - Éligible à toutes les entreprises
   autres critères d'éligibilité:
-  - Sont concernées les entreprises soumises à l'Impôt sur les Sociétés (IS) ou à
-    l'Impôt sur le Revenu (IR) selon un régime réel d'imposition.
+  - >-
+    Sont concernées les entreprises soumises à l'Impôt sur les Sociétés (IS) ou
+    à l'Impôt sur le Revenu (IR) selon un régime réel d'imposition.
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

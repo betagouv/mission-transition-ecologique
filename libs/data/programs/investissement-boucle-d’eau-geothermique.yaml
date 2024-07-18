@@ -1,37 +1,45 @@
 titre: Investissement "Boucle d’eau géothermique"
 promesse: Financez votre installation de boucle d’eau tempérée géothermique
-description: Vous disposez d’une étude pour votre projet d'installation de production
-  de chaleur et de froid à partir d’une boucle d’eau tempérée géothermique ? Vous
-  souhaitez investir pour le mettre en œuvre ? L’ADEME peut accompagner financièrement
-  la réalisation de votre installation.
-description longue: Une boucle d’eau tempérée repose sur un réseau de distribution
-  d’eau basse température (10 à 25 °C) reliant plusieurs bâtiments que l’on souhaite
-  chauffer voire rafraîchir ensemble. Chacun de ces bâtiments est raccordé à la boucle
-  au travers d’une sous-station, dans laquelle est installée une pompe à chaleur qui
-  assure les besoins de chauffage, d’eau chaude sanitaire et/ou de froid nécessaires
-  aux bâtiments. On parle alors de production « décentralisée ». La boucle d’eau tempérée
-  peut être alimentée par de multiples sources d’énergies renouvelables et de récupération
-  (géothermie, eaux usées, eau de mer, chaleur fatale…). Une étude préalable de faisabilité
-  est une condition d'éligibilité.
+description: >-
+  Vous disposez d’une étude pour votre projet d'installation de production de
+  chaleur et de froid à partir d’une boucle d’eau tempérée géothermique ? Vous
+  souhaitez investir pour le mettre en œuvre ? L’ADEME peut accompagner
+  financièrement la réalisation de votre installation.
+description longue: >-
+  Une boucle d’eau tempérée repose sur un réseau de distribution d’eau basse
+  température (10 à 25 °C) reliant plusieurs bâtiments que l’on souhaite
+  chauffer voire rafraîchir ensemble. Chacun de ces bâtiments est raccordé à la
+  boucle au travers d’une sous-station, dans laquelle est installée une pompe à
+  chaleur qui assure les besoins de chauffage, d’eau chaude sanitaire et/ou de
+  froid nécessaires aux bâtiments. On parle alors de production « décentralisée
+  ». La boucle d’eau tempérée peut être alimentée par de multiples sources
+  d’énergies renouvelables et de récupération (géothermie, eaux usées, eau de
+  mer, chaleur fatale…). Une étude préalable de faisabilité est une condition
+  d'éligibilité.
 début de validité: 01/01/2023
 fin de validité: 31/12/2024
 illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
-url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/installations-production-chaleur-froid-a-partir-boucle-deau-temperee
+url: >-
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/installations-production-chaleur-froid-a-partir-boucle-deau-temperee
 nature de l'aide: financement
 montant du financement: Aide calculée au cas par cas
 objectifs:
-- description: Vérifiez l’éligibilité de votre projet en parcourant la documentation
-    de l’ADEME.
+- description: >-
+    Vérifiez l’éligibilité de votre projet en parcourant la documentation de
+    l’ADEME.
   liens:
-  - lien: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Boucle%20d%27eau%20temp%C3%A9r%C3%A9e%20g%C3%A9othermique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf
+  - lien: >-
+      https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Boucle%20d%27eau%20temp%C3%A9r%C3%A9e%20g%C3%A9othermique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf
     texte: Conditions éligibilité et financement
-- description: 'Déposez votre demande d''aide : informations administratives, description
-    du projet, détails techniques et financiers, étude de faisabilité, etc. A ce stade,
-    votre investissement ne doit pas avoir été realisé !'
-- description: L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
-    recevez un contrat de financement précisant le montant d’aide maximum, les conditions
-    et les modalités de versement.
+- description: >-
+    Déposez votre demande d'aide : informations administratives, description du
+    projet, détails techniques et financiers, étude de faisabilité, etc. A ce
+    stade, votre investissement ne doit pas avoir été realisé !
+- description: >-
+    L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez
+    un contrat de financement précisant le montant d’aide maximum, les
+    conditions et les modalités de versement.
 - description: Réalisez vos investissements.
 conditions d'éligibilité:
   taille de l'entreprise:
@@ -44,9 +52,11 @@ conditions d'éligibilité:
   nombre d'années d'activité:
   - Éligible à toutes les entreprises
   autres critères d'éligibilité:
-  - 'L''opération pour laquelle vous sollicitez une aide financière ne doit pas avoir
-    commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque
-    forme que ce soit : marché signé, commande signée, devis accepté…)'
+  - >-
+    L'opération pour laquelle vous sollicitez une aide financière ne doit pas
+    avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes
+    (sous quelque forme que ce soit : marché signé, commande signée, devis
+    accepté…)
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

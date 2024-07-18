@@ -1,29 +1,36 @@
 titre: Diagnostic SARE
 promesse: Engagez la rénovation énergétique de votre local professionnel
-description: Vous souhaitez réaliser des économies d’énergie et améliorer le confort
-  de vos locaux professionnels ? Vous pouvez bénéficier d'un accompagnement pour vous
-  aider à identifier les solutions techniques les plus adaptées (isolation, climatisation,
-  eau chaude, ventilation, éclairage…) et rechercher les aides financières mobilisables.
+description: >-
+  Vous souhaitez réaliser des économies d’énergie et améliorer le confort de vos
+  locaux professionnels ? Vous pouvez bénéficier d'un accompagnement pour vous
+  aider à identifier les solutions techniques les plus adaptées (isolation,
+  climatisation, eau chaude, ventilation, éclairage…) et rechercher les aides
+  financières mobilisables. 
 illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
 autres opérateurs:
 - CCI
 - CMA
 - France Rénov'
-url: https://www.ecologie.gouv.fr/sites/default/files/211130_guide_METRO_COPIL_VF2.pdf
+url: >-
+  https://www.ecologie.gouv.fr/sites/default/files/211130_guide_METRO_COPIL_VF2.pdf
 nature de l'aide: accompagnement
 coût de l'accompagnement: Gratuit
 durée de l'accompagnement: 2h
 objectifs:
-- description: Réalisez un premier rendez-vous par téléphone avec un expert en transition
-    énergétique référencé par l'ADEME pour échanger sur votre projet de rénovation
-    de vos locaux.
-- description: 'Benéficiez d''un rendez-vous de l''expert en transition énergétique
-    dans vos locaux pour aborder votre projet dans son ensemble : vos besoins et attentes,
-    les travaux d’amélioration du bâtiment et des systèmes envisagés, ainsi que les
-    éventuelles contraintes à prendre en compte.'
-- description: A l’issu de ce rendez-vous, obtenez un compte-rendu détaillé vous permettant
-    d’évaluer les travaux à envisager ainsi que les aides financières mobilisables.
+- description: >-
+    Réalisez un premier rendez-vous par téléphone avec un expert en transition
+    énergétique référencé par l'ADEME pour échanger sur votre projet de
+    rénovation de vos locaux.
+- description: >-
+    Benéficiez d'un rendez-vous de l'expert en transition énergétique dans vos
+    locaux pour aborder votre projet dans son ensemble : vos besoins et
+    attentes, les travaux d’amélioration du bâtiment et des systèmes envisagés,
+    ainsi que les éventuelles contraintes à prendre en compte.
+- description: >-
+    A l’issu de ce rendez-vous, obtenez un compte-rendu détaillé vous permettant
+    d’évaluer les travaux à envisager ainsi que les aides financières
+    mobilisables.
 conditions d'éligibilité:
   taille de l'entreprise:
   - TPE et PME
@@ -67,5 +74,3 @@ publicodes:
   entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est rénover mon bâtiment
-    - questionnaire . objectif prioritaire . est ma performance énergétique
-    - questionnaire . objectif prioritaire . est mon impact environnemental

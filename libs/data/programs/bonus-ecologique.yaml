@@ -1,8 +1,9 @@
 titre: Bonus écologique
 promesse: Économisez sur l'achat d'un véhicule propre
-description: 'Bénéficiez d''une aide pour louer ou acheter un véhicule peu polluant,
-  neuf ou d''occasion : vélo, voiture, camionnette, 2 ou 3 roues motorisé, quadricycle
-  (électrique, hydrogène ou combinaison des deux).'
+description: >-
+  Bénéficiez d'une aide pour louer ou acheter un véhicule peu polluant, neuf ou
+  d'occasion : vélo, voiture, camionnette, 2 ou 3 roues motorisé, quadricycle
+  (électrique, hydrogène ou combinaison des deux).
 illustration: images/TEE_energie_verte.png
 opérateur de contact: ASP
 url: https://www.primealaconversion.gouv.fr/dboneco/accueil/access.html
@@ -10,27 +11,35 @@ nature de l'aide: financement
 montant du financement: jusqu’à 9 000 €, selon le véhicule
 activable en autonomie: oui
 objectifs:
-- description: Louez ou achetez votre véhicule "propre" et déposez votre demande de
-    Bonus écologique dans les six mois.
-- description: Créez votre dossier sur le site, en cliquant sur "Saisir ma demande
-    par courrier" en bas de page. (rubrique "Vous représentez une personne morale
-    ou vous souhaitez faire une demande par courrier")
+- description: >-
+    Louez ou achetez votre véhicule "propre" et déposez votre demande de Bonus
+    écologique dans les six mois.
+- description: >-
+    Créez votre dossier sur le site, en cliquant sur "Saisir ma demande par
+    courrier" en bas de page. (rubrique "Vous représentez une personne morale ou
+    vous souhaitez faire une demande par courrier")
   liens:
   - lien: https://www.primealaconversion.gouv.fr/dboneco/accueil/access.html
     texte: Primealaconversion.gouv.fr
-- description: Complétez le formulaire en ligne. Vous recevrez le récapitulatif de
-    votre demande par mail.
-- description: Constituez votre dossier avec les pièces justificatives demandées.
+- description: >-
+    Complétez le formulaire en ligne. Vous recevrez le récapitulatif de votre
+    demande par mail.
+- description: >-
+    Constituez votre dossier avec les pièces justificatives demandées.
     (consultez les pages n°2 destinées aux entreprises)
   liens:
-  - lien: https://www.primealaconversion.gouv.fr/dboneco/accueil/media/documents/Hors_PJ.pdf
+  - lien: >-
+      https://www.primealaconversion.gouv.fr/dboneco/accueil/media/documents/Hors_PJ.pdf
     texte: Pièces justificatives - véhicule
-  - lien: https://www.primealaconversion.gouv.fr/dboneco/accueil/media/documents/Cycles_PJ.pdf
+  - lien: >-
+      https://www.primealaconversion.gouv.fr/dboneco/accueil/media/documents/Cycles_PJ.pdf
     texte: Pièces justificatives - vélo
-- description: Envoyez le récapitulatif de votre demande et vos pièces justificatives
-    par courrier au « service - Bonus écologique » de votre ASP de rattachement.
+- description: >-
+    Envoyez le récapitulatif de votre demande et vos pièces justificatives par
+    courrier au « service - Bonus écologique » de votre ASP de rattachement. 
   liens:
-  - lien: https://www.asp-public.fr/sites/default/files/content/aides/documents/bonus-eco/NOTICE_CONVENTIONNEMENT_BONUS_PRO.pdf
+  - lien: >-
+      https://www.asp-public.fr/sites/default/files/content/aides/documents/bonus-eco/NOTICE_CONVENTIONNEMENT_BONUS_PRO.pdf
     texte: Adresse postale (page 4)
 - description: Recevez le bonus écologique !
 conditions d'éligibilité:

@@ -1,19 +1,22 @@
 titre: Prêt Économies d’Énergie (PEE)
 promesse: Financez vos équipements pour améliorer votre efficacité énergétique
-description: Le Prêt Économies d’Énergie permet de financer le matériel éligible aux
-  certificats d'économies d'énergie (CEE), et les dépenses liées au projet d’efficience
-  énergétique.
+description: >-
+  Le Prêt Économies d’Énergie permet de financer le matériel éligible aux
+  certificats d'économies d'énergie (CEE), et les dépenses liées au projet
+  d’efficience énergétique. 
 illustration: images/TEE_eolienne.png
 opérateur de contact: Bpifrance
-url: https://www.bpifrance.fr/catalogue-offres/transition-ecologique-et-energetique/pret-economies-denergie-pee
+url: >-
+  https://www.bpifrance.fr/catalogue-offres/transition-ecologique-et-energetique/pret-economies-denergie-pee
 nature de l'aide: prêt
-durée du prêt: de 3 à 7 ans, avec un différé d’amortissement en capital de 2 ans maximum
-montant du prêt: De 10 000 € à 500 000 €
+durée du prêt: ''
+montant du prêt: De 10 000 € € à 500 000 € €
 objectifs:
 - description: Réalisez votre demande de prêt pour votre investissement.
-- description: 'L’investissement peut porter sur des équipements qui visent l’amélioration
-    des postes suivants : éclairage, froid, chauffage, climatisation, motorisation
-    électrique.'
+- description: >-
+    L’investissement peut porter sur des équipements qui visent l’amélioration
+    des postes suivants : éclairage, froid, chauffage, climatisation,
+    motorisation électrique.
 - description: Ce prêt est éligible aux certificats d'économies d'énergie (CEE)
 conditions d'éligibilité:
   taille de l'entreprise:
@@ -23,12 +26,13 @@ conditions d'éligibilité:
   - France et territoires d'outre-mer
   secteur d'activité:
   - Tous secteurs d’activité
-  - 'Sont exclus: les activités d’intermédiation financière (NAF : section K64 sauf
-    64-2 pour les achats d’entreprises) ; les activités de promotion immobilière et
-    marchand de biens (NAF : section L68-1, L68-2 et F41-1) ; les entreprises des
-    secteurs agricoles identifiées par les code NAF section A01, et section A02 dont
-    le chiffre d’affaires est inférieur à 750 000 €, à l’exception des codes NAF 02.20Z
-    et 02.40Z (entreprises forestières)'
+  - >
+    Sont exclus: les activités d’intermédiation financière (NAF : section K64
+    sauf 64-2 pour les achats d’entreprises) ; les activités de promotion
+    immobilière et marchand de biens (NAF : section L68-1, L68-2 et F41-1) ; les
+    entreprises des secteurs agricoles identifiées par les code NAF section A01,
+    et section A02 dont le chiffre d’affaires est inférieur à 750 000 €, à
+    l’exception des codes NAF 02.20Z et 02.40Z (entreprises forestières) 
   nombre d'années d'activité:
   - Au moins 3 ans d’activité
 publicodes:
@@ -43,8 +47,7 @@ publicodes:
   entreprise . a un effectif éligible:
     toutes ces conditions:
     - effectif <= 49
-  entreprise . est dans un secteur d'activité éligible: est secteur d'activité exclu
-    = non
+  entreprise . est dans un secteur d'activité éligible: est secteur d'activité exclu = non
   est secteur d'activité exclu:
     une de ces conditions:
     - est activité d'intermédiation financière

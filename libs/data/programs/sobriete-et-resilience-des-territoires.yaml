@@ -1,36 +1,71 @@
-titre: Sobriété et Résilience des Territoires
+titre: 'Sobriété et Résilience des Territoires '
 promesse: Développez des ressources communes avec les acteurs de votre territoire
-description: Vous souhaitez agir localement avec d'autres acteurs pour renforcer l'adaptabilité
-  de votre territoire face aux changements climatiques ? Participez à l'Appel à Communs
-  "Sobriété et Résilience des territoires"
-description longue: "L'appel à communs mise sur les licences ouvertes et les communautés\
-  \ pour financer des solutions ouvertes – les communs – qui répondent aux besoins\
-  \ partagés d’un grand nombre d’acteurs hétérogènes (public, privé, citoyen). \n\n\
-  Les projets éligibles répondent aux quatre critères suivants :\n- ils sont développés\
-  \ en licences ouvertes ;\n- ils intègrent des communautés d'utilisateurs et de contributeurs\
-  \ ;\n- ils sont documentés sur le support public de l'appel à communs (le Wiki)\
-  \ ;\n- ils répondent à au moins l'un des défis de l'appel à communs.\n\n4 défis\
-  \ ont un caractère transversal : \n- Connaissances & ressources\n- Mise en récits\n\
-  - Gouvernance\n- Modèles économiques\n\n6 ont une entrée plus thématique :\n- Ecosystèmes\
-  \ et gestion des ressources naturelles\n- Planification et aménagement urbain\n\
-  - Alimentation & agriculture\n- Energie et réseaux  \n- Mobilités & Logistique\n\
-  - Bâtiment"
+description: >-
+  Vous souhaitez agir localement avec d'autres acteurs pour renforcer
+  l'adaptabilité de votre territoire face aux changements climatiques ?
+  Participez à l'Appel à Communs "Sobriété et Résilience des territoires"
+description longue: >-
+  L'appel à communs mise sur les licences ouvertes et les communautés pour
+  financer des solutions ouvertes – les communs – qui répondent aux besoins
+  partagés d’un grand nombre d’acteurs hétérogènes (public, privé, citoyen). 
+
+
+  Les projets éligibles répondent aux quatre critères suivants :
+
+  - ils sont développés en licences ouvertes ;
+
+  - ils intègrent des communautés d'utilisateurs et de contributeurs ;
+
+  - ils sont documentés sur le support public de l'appel à communs (le Wiki) ;
+
+  - ils répondent à au moins l'un des défis de l'appel à communs.
+
+
+  4 défis ont un caractère transversal : 
+
+  - Connaissances & ressources
+
+  - Mise en récits
+
+  - Gouvernance
+
+  - Modèles économiques
+
+
+  6 ont une entrée plus thématique :
+
+  - Ecosystèmes et gestion des ressources naturelles
+
+  - Planification et aménagement urbain
+
+  - Alimentation & agriculture
+
+  - Energie et réseaux  
+
+  - Mobilités & Logistique
+
+  - Bâtiment  
 début de validité: 02/05/2023
 fin de validité: 30/11/2024
 illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
-url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/20230418/sobriete-resilience-territoires?cible=79
+url: >-
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/20230418/sobriete-resilience-territoires?cible=79
 nature de l'aide: financement
 montant du financement: Selon projet
 objectifs:
-- description: 'Rejoignez la communauté de l’Appel à Communs : créez un compte, renseignez
-    votre fiche entreprise, signez la charte, etc.'
-- description: Découvrez les challenges déjà identifiés et rejoignez, si vous le souhaitez
+- description: >-
+    Rejoignez la communauté de l’Appel à Communs : créez un compte, renseignez
+    votre fiche entreprise, signez la charte, etc.
+- description: >-
+    Découvrez les challenges déjà identifiés et rejoignez, si vous le souhaitez
     ,une idée de commun existante.
-- description: Si votre idée de commun est nouvelle, proposez un projet de commun
-    en le décrivant via le formulaire "créer un commun"
-- description: Si votre projet est séléctionné, déposez-le sur le site de l'ADEME
-    pour faire une demande de financement.
+- description: >-
+    Si votre idée de commun est nouvelle, proposez un projet de commun en le
+    décrivant via le formulaire "créer un commun"
+- description: >-
+    Si votre projet est séléctionné, déposez-le sur le site de l'ADEME pour
+    faire une demande de financement.
 conditions d'éligibilité:
   taille de l'entreprise:
   - Toutes tailles
@@ -42,9 +77,11 @@ conditions d'éligibilité:
   nombre d'années d'activité:
   - Éligible à toutes les entreprises
   autres critères d'éligibilité:
-  - 'L''opération pour laquelle vous sollicitez une aide financière ne doit pas avoir
-    commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque
-    forme que ce soit : marché signé, commande signée, devis accepté…)'
+  - >-
+    L'opération pour laquelle vous sollicitez une aide financière ne doit pas
+    avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes
+    (sous quelque forme que ce soit : marché signé, commande signée, devis
+    accepté…)
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
@@ -82,11 +119,4 @@ publicodes:
     - code NAF niveau 1 . est U
   entreprise . a un objectif ciblé:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est rénover mon bâtiment
-    - questionnaire . objectif prioritaire . est la mobilité durable
-    - questionnaire . objectif prioritaire . est la gestion des déchets
-    - questionnaire . objectif prioritaire . est diminuer ma consommation d'eau
-    - questionnaire . objectif prioritaire . est ma performance énergétique
-    - questionnaire . objectif prioritaire . est former ou recruter
     - questionnaire . objectif prioritaire . est mon impact environnemental
-    - questionnaire . objectif prioritaire . est l'écoconception

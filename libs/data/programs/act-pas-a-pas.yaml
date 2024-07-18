@@ -1,38 +1,56 @@
 titre: Programme Volontaire Français ACT
-promesse: Développez votre stratégie bas carbone et mettez en œuvre votre plan de
+promesse: >-
+  Développez votre stratégie bas carbone et mettez en œuvre votre plan de
   transition
-description: "L’ADEME soutient financièrement les entreprises volontaires dans la\
-  \ mise en œuvre d'un modèle économique compatible avec une trajectoire bas carbone.\
-  \ \nVous serez accompagné avec la méthode ACT Pas à Pas (Assessing Low Carbon Transition),\
-  \ une méthode structurante, progressive et sur le long terme qui aide les entreprises\
-  \ à réduire significativement leurs émissions de gaz à effet de serre."
-description longue: "L'étude ACT Pas à Pas se déroule en 12 à 18 mois selon les entreprises.\
-  \ Les grandes étapes de l'étude sont les suivantes :  \n\n• Analyser la maturité\
-  \ initiale de l'entreprise sur des bases carbone.\n\n• Exposer les enjeux et  réaliser\
-  \ une analyse stratégique de l’entreprise dans un contexte de transition bas carbone.\n\
-  \n• Déterminer une vision d’entreprise et concevoir la feuille de route du plan\
-  \ de transition à court, moyen et long terme. \n\n• Elaborer des objectifs de performance\
-  \ carbone et définir une stratégie.\n\n • Mettre en oeuvre des actions de décarbonation."
+description: >-
+  L’ADEME soutient financièrement les entreprises qui souhaitent questionner
+  leur modèle économique pour identifier un nouveau modèle compatible avec une
+  trajectoire bas carbone. 
+
+  Vous serez accompagné avec la méthode ACT Pas à Pas (Assessing Low Carbon
+  Transition), une méthode structurante, progressive et sur le long terme qui
+  aide les entreprises à réduire significativement leurs émissions de gaz à
+  effet de serre.
+description longue: >-
+  L'étude ACT Pas à Pas se déroule en 12 à 18 mois selon les entreprises. Les
+  grandes étapes de l'étude sont les suivantes :  
+
+
+  • Analyser la maturité initiale de l'entreprise sur des bases carbone.
+
+
+  • Exposer les enjeux et  réaliser une analyse stratégique de l’entreprise dans
+  un contexte de transition bas carbone.
+
+
+  • Déterminer une vision d’entreprise et concevoir la feuille de route du plan
+  de transition à court, moyen et long terme. 
+
+
+  • Elaborer des objectifs de performance carbone et définir une stratégie.
+
+   • Mettre en oeuvre des actions de décarbonation.
 début de validité: 13/11/2023
 fin de validité: 30/06/2026
 illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
-url: ''
 nature de l'aide: financement
-montant du financement: Jusqu'à 80% du coût de l'étude, dans un maximum de 15 000
-  €
+montant du financement: Jusqu'à 80% du coût de l'étude, dans un maximum de 15 000 €
 objectifs:
-- description: Choisissez le prestataire qui va vous accompagner pour mener l'étude
+- description: >-
+    Choisissez le prestataire qui va vous accompagner pour mener l'étude
     méthodologie ACT.
   liens:
   - lien: https://actinitiative.org/fr/find-an-advisor/
     texte: Prestataires "ACT Pas à pas"
-- description: 'Déposez votre demande d''aide : informations administratives, description
-    du projet, détails techniques et financiers, etc. A ce stade, votre projet ne
-    doit pas avoir commencé !'
-- description: L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
-    recevez un contrat de financement précisant le montant d’aide maximum, les conditions
-    et les modalités de versement.
+- description: >-
+    Déposez votre demande d'aide : informations administratives, description du
+    projet, détails techniques et financiers, etc. A ce stade, votre projet ne
+    doit pas avoir commencé !
+- description: >-
+    L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez
+    un contrat de financement précisant le montant d’aide maximum, les
+    conditions et les modalités de versement.
 - description: Réalisez votre étude ACT Pas à Pas.
 conditions d'éligibilité:
   taille de l'entreprise:
@@ -45,8 +63,9 @@ conditions d'éligibilité:
   nombre d'années d'activité:
   - Éligible à toutes les entreprises
   autres critères d'éligibilité:
-  - Pour accéder à cette étude, vous devez avoir déjà réalisé un premier bilan de
-    gaz à effet de serre.
+  - >-
+    Pour accéder à cette étude, vous devez avoir déjà réalisé un premier bilan
+    de gaz à effet de serre.
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

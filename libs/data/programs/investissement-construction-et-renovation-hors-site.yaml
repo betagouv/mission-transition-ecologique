@@ -1,49 +1,56 @@
 titre: Investissement "construction et rénovation hors site"
-promesse: Développez vos usines, vos ateliers ainsi que vos projets de R&D de construction
-  écologique hors site
-description: Cet appel à projets  destiné aux entreprises de préfabrication ou d’assemblage,
-  vise à soutenir le développement du mode constructif « Hors Site » pour la construction
-  neuve et la rénovation sur tout le territoire français.
-description longue: 'Cet appel à projets à deux objectifs :
+promesse: >-
+  Développez vos usines, vos ateliers ainsi que vos projets de R&D de
+  construction écologique hors site
+description: >-
+  Cet appel à projets  destiné aux entreprises de préfabrication ou
+  d’assemblage, vise à soutenir le développement du mode constructif « Hors Site
+  » pour la construction neuve et la rénovation sur tout le territoire français.
+description longue: >-
+  Cet appel à projets à deux objectifs :
 
-  - Le soutien au développement d’usines et d’ateliers de préfabrication ou de lignes
-  de production pouvant permettre des sauts technologiques et s’inscrivant dans un
-  processus de construction hors site.
+  - Le soutien au développement d’usines et d’ateliers de préfabrication ou de
+  lignes de production pouvant permettre des sauts technologiques et
+  s’inscrivant dans un processus de construction hors site.
 
-  - Le soutien aux projets de R&D de construction hors site. Ceux-ci pourront s’appuyer
-  sur des démonstrateurs afin de permettre d’assurer la faisabilité de l’innovation
-  en condition réelle.
-
-
-  Dans cet appel à projet, on retiendra la définition suivante de la construction
-  hors site : « Processus de construction ou de rénovation intégrant la conception,
-  la préfabrication, la logistique, le contrôle qualité, la mise en œuvre sur le chantier
-  et la démontabilité en fin de vie, de sous-ensembles de bâtiments produits en dehors
-  du chantier »
+  - Le soutien aux projets de R&D de construction hors site. Ceux-ci pourront
+  s’appuyer sur des démonstrateurs afin de permettre d’assurer la faisabilité de
+  l’innovation en condition réelle.
 
 
-  Les projets devront intégrer une ou plusieurs thématiques de la construction ou
-  rénovation hors site parmi les sujets liés à la conception, la préfabrication, la
-  logistique, la mise en œuvre, la démontabilité.
+  Dans cet appel à projet, on retiendra la définition suivante de la
+  construction hors site : « Processus de construction ou de rénovation
+  intégrant la conception, la préfabrication, la logistique, le contrôle
+  qualité, la mise en œuvre sur le chantier et la démontabilité en fin de vie,
+  de sous-ensembles de bâtiments produits en dehors du chantier »
 
 
-  Dernière clôture de l''appel à projets : le 15/01/2024.'
+  Les projets devront intégrer une ou plusieurs thématiques de la construction
+  ou rénovation hors site parmi les sujets liés à la conception, la
+  préfabrication, la logistique, la mise en œuvre, la démontabilité.
+
+
+  Dernière clôture de l'appel à projets : le 15/01/2024.
 début de validité: 15/02/2023
 fin de validité: 15/01/2024
 illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
-url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/20230119/developpement-construction-renovation-hors-site-crhos?cible=79
+url: >-
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/20230119/developpement-construction-renovation-hors-site-crhos?cible=79
 nature de l'aide: financement
 montant du financement: Selon la taille de l'entreprise et la zone géographique
 objectifs:
-- description: Vérifiez l’éligibilité de votre projet en parcourant la documentation
-    de l’ADEME.
-- description: 'Déposez votre demande d''aide : informations administratives, description
-    du projet, détails techniques et financiers, étude de faisabilité, etc. A ce stade,
-    votre investissement ne doit pas avoir été realisé !'
-- description: L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
-    recevez un contrat de financement précisant le montant d’aide maximum, les conditions
-    et les modalités de versement.
+- description: >-
+    Vérifiez l’éligibilité de votre projet en parcourant la documentation de
+    l’ADEME.
+- description: >-
+    Déposez votre demande d'aide : informations administratives, description du
+    projet, détails techniques et financiers, étude de faisabilité, etc. A ce
+    stade, votre investissement ne doit pas avoir été realisé !
+- description: >-
+    L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez
+    un contrat de financement précisant le montant d’aide maximum, les
+    conditions et les modalités de versement.
 - description: Réalisez vos investissements.
 conditions d'éligibilité:
   taille de l'entreprise:
@@ -56,9 +63,11 @@ conditions d'éligibilité:
   nombre d'années d'activité:
   - Éligible à toutes les entreprises
   autres critères d'éligibilité:
-  - 'L''opération pour laquelle vous sollicitez une aide financière ne doit pas avoir
-    commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque
-    forme que ce soit : marché signé, commande signée, devis accepté…)'
+  - >-
+    L'opération pour laquelle vous sollicitez une aide financière ne doit pas
+    avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes
+    (sous quelque forme que ce soit : marché signé, commande signée, devis
+    accepté…)
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

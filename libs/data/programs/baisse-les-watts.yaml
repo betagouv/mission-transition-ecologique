@@ -1,19 +1,17 @@
 titre: Baisse Les Watts
 promesse: Bénéficiez d'outils et de formations pour économiser l'énergie en entreprise
-description: 'Le programme Baisse les Watts vous accompagne dans la maîtrise de votre
-  consommation d’énergie, à l''aide de trois dispositifs : le Carnet de bord Énergie,
-  un accompagnement téléphonique et un parcours de formations collectives et individuelles.'
-description longue: 'Baisse les Watts vous aide à réduire votre consommation en :
-
+description: >-
+  Le programme Baisse les Watts vous accompagne dans la maîtrise de votre
+  consommation d’énergie, à l'aide de trois dispositifs : le Carnet de bord
+  Énergie, un accompagnement téléphonique et un parcours de formations
+  collectives et individuelles.
+description longue: |-
+  Baisse les Watts vous aide à réduire votre consommation en :
   - Électricité,
-
   - Gaz,
-
   - Fioul,
-
   - GPL,
-
-  - RCU (Réseau de chaleur urbain) – hors carburants.'
+  - RCU (Réseau de chaleur urbain) – hors carburants.
 début de validité: 01/01/2023
 fin de validité: 31/12/2025
 illustration: images/TEE_eolienne.png
@@ -21,7 +19,8 @@ opérateur de contact: La Poste
 autres opérateurs:
 - CCI
 - CMA
-url: https://www.baisseleswatts.fr/?mtm_campaign=missiontransitionecologique&mtm_source=missiontransitionecologique&mtm_medium=missiontransitionecologique&mtm_content=missiontransitionecologique
+url: >-
+  https://www.baisseleswatts.fr/?mtm_campaign=missiontransitionecologique&mtm_source=missiontransitionecologique&mtm_medium=missiontransitionecologique&mtm_content=missiontransitionecologique
 nature de l'aide: accompagnement
 coût de l'accompagnement: Gratuit
 durée de l'accompagnement: 2 jours
@@ -29,18 +28,23 @@ activable en autonomie: oui
 objectifs:
 - description: Créez votre compte entreprise sur le site de Baisse les Watts.
   liens:
-  - lien: https://www.baisseleswatts.fr/?mtm_campaign=missiontransitionecologique&mtm_source=missiontransitionecologique&mtm_medium=missiontransitionecologique&mtm_content=missiontransitionecologique
+  - lien: >-
+      https://www.baisseleswatts.fr/?mtm_campaign=missiontransitionecologique&mtm_source=missiontransitionecologique&mtm_medium=missiontransitionecologique&mtm_content=missiontransitionecologique
     texte: Créer un compte
-- description: Visualisez votre consommation d'énergie par équipement en ouvrant un
-    "Carnet de bord Energie".
-- description: Identifiez des écogestes spécifiques à votre activité afin de baisser
-    votre facture énergétique.
+- description: >-
+    Visualisez votre consommation d'énergie par équipement en ouvrant un "Carnet
+    de bord Energie".
+- description: >-
+    Identifiez des écogestes spécifiques à votre activité afin de baisser votre
+    facture énergétique.
 - description: Bénéficiez d'un accompagnement personnalisé avec le suivi d’un conseiller.
-- description: Inscrivez-vous à des formations dispensées par les CCI ou CMA sous
-    forme d'ateliers collectifs, complétées par un suivi individuel dans vos locaux
+- description: >-
+    Inscrivez-vous à des formations dispensées par les CCI ou CMA sous forme
+    d'ateliers collectifs, complétées par un suivi individuel dans vos locaux
     avec un conseiller énergie.
-- description: Suivez à votre rythme un parcours de formation en ligne personnalisé
-    selon votre secteur d’activité.
+- description: >-
+    Suivez à votre rythme un parcours de formation en ligne personnalisé selon
+    votre secteur d’activité.
 conditions d'éligibilité:
   taille de l'entreprise:
   - TPE et PME

@@ -1,10 +1,12 @@
 titre: ClimaDiag expert
-promesse: Anticipez l’impact des changements climatiques pour votre entreprise et
+promesse: >-
+  Anticipez l’impact des changements climatiques pour votre entreprise et
   sécurisez votre activité
-description: Bénéficiez d'un accompagnement d'un expert CCI pour vous aider à évaluer
-  la vulnérabilité climatique de votre entreprise, prévenir les impacts du dérèglement
-  climatique et vous aider à limiter les coûts imprévus de canicule, inondation, sécheresse,
-  etc.
+description: >-
+  Bénéficiez d'un accompagnement d'un expert CCI pour vous aider à évaluer la
+  vulnérabilité climatique de votre entreprise, prévenir les impacts du
+  dérèglement climatique et vous aider à limiter les coûts imprévus de canicule,
+  inondation, sécheresse, etc.
 début de validité: 01/10/2023
 fin de validité: 01/08/2026
 illustration: images/TEE_energie_verte.png
@@ -17,10 +19,12 @@ nature de l'aide: accompagnement
 coût de l'accompagnement: Gratuit
 durée de l'accompagnement: 5 à 10 jours selon la taille de l'entreprise
 objectifs:
-- description: Réalisez un diagnostic sur site pour évaluer et hierarchiser l'ensemble
-    des risques encourus par votre entreprise.
-- description: 'Identifiez l''impact sur votre écosystème : concurrents & sources
-    d''insatisfaction client liées aux changements climatiques.'
+- description: >-
+    Réalisez un diagnostic sur site pour évaluer et hierarchiser l'ensemble des
+    risques encourus par votre entreprise.
+- description: >-
+    Identifiez l'impact sur votre écosystème : concurrents & sources
+    d'insatisfaction client liées aux changements climatiques.
 - description: Concevez un plan d'actions à mettre en oeuvre.
 - description: Identifiez des financements possibles.
 conditions d'éligibilité:

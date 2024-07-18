@@ -1,55 +1,68 @@
-titre: Étude "Autoconsommation photovoltaïque"
-promesse: Réalisez une étude de faisabilité pour votre projet d'installation de panneaux
+titre: 'Étude "Autoconsommation photovoltaïque" '
+promesse: >-
+  Réalisez une étude de faisabilité pour votre projet d'installation de panneaux
   solaires photovoltaïques
-description: Vous souhaitez mettre en place une toiture ou ombrière solaire photovoltaïque
-  en autoconsommation individuelle. L'ADEME vous apporte une aide pour une prestation
-  de conseil ou une assistance à maitrise d’ouvrage.
-description longue: Quand la consommation électrique de vos bâtiments, de vos équipements
-  intervient essentiellement de jour, il peut être intéressant pour vous d’étudier
-  la faisabilité de couvrir une partie de cette consommation au moyen d’électricité
-  solaire photovoltaïque. L’ADEME peut accompagner les prestations externes d’études
-  de faisabilité dans l'objectif d'évaluer et d'analyser le potentiel du projet en
-  révélant ses forces et  faiblesses, les perspectives et les menaces qu'il suppose,
-  et les ressources nécessaires pour le mener à bien.
+description: >-
+  Vous souhaitez mettre en place une toiture ou ombrière solaire photovoltaïque
+  en autoconsommation individuelle. L'ADEME vous apporte une aide pour une
+  prestation de conseil ou une assistance à maitrise d’ouvrage. 
+description longue: >-
+  Quand la consommation électrique de vos bâtiments, de vos équipements
+  intervient essentiellement de jour, il peut être intéressant pour vous
+  d’étudier la faisabilité de couvrir une partie de cette consommation au moyen
+  d’électricité solaire photovoltaïque. L’ADEME peut accompagner les prestations
+  externes d’études de faisabilité dans l'objectif d'évaluer et d'analyser le
+  potentiel du projet en révélant ses forces et  faiblesses, les perspectives et
+  les menaces qu'il suppose, et les ressources nécessaires pour le mener à bien.
 début de validité: 01/01/2023
 fin de validité: 31/12/2024
 illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
-url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/etudes-faisabilite-lautoconsommation-electrique-photovoltaique
+url: >-
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/etudes-faisabilite-lautoconsommation-electrique-photovoltaique
 nature de l'aide: financement
 montant du financement: jusqu'à 70% du coût de l'étude
 objectifs:
-- description: Vérifiez l’éligibilité de votre projet en parcourant la documentation
-    de l’ADEME.
+- description: >-
+    Vérifiez l’éligibilité de votre projet en parcourant la documentation de
+    l’ADEME.
   liens:
-  - lien: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20faisabilit%C3%A9%20autoconsommation%20photovolta%C3%AFque%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement.pdf
+  - lien: >-
+      https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20faisabilit%C3%A9%20autoconsommation%20photovolta%C3%AFque%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement.pdf
     texte: Conditions éligibilité et financement
-- description: Choisissez le bureau d'étude énergétique qui va vous accompagner pour
-    mener cette étude de faisabilité et faites réaliser un devis.
-- description: 'Déposez votre demande d''aide : informations administratives, description
-    du projet, détails techniques et financiers, etc. A ce stade, votre projet ne
-    doit pas avoir commencé !'
-- description: L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
-    recevez un contrat de financement précisant le montant d’aide maximum, les conditions
-    et les modalités de versement.
+- description: >-
+    Choisissez le bureau d'étude énergétique qui va vous accompagner pour mener
+    cette étude de faisabilité et faites réaliser un devis.
+- description: >-
+    Déposez votre demande d'aide : informations administratives, description du
+    projet, détails techniques et financiers, etc. A ce stade, votre projet ne
+    doit pas avoir commencé !
+- description: >-
+    L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez
+    un contrat de financement précisant le montant d’aide maximum, les
+    conditions et les modalités de versement.
 - description: Réalisez votre étude de faisabilité.
 conditions d'éligibilité:
   taille de l'entreprise:
   - Toutes tailles
   - Éligible aux micro-entreprises
   secteur géographique:
-  - Corse, Saint-Pierre-Et-Miquelon, Polynésie française, Guadeloupe, Martinique,
-    Guyane, Mayotte
+  - >-
+    Corse, Guadeloupe, Guyane, Martinique, Mayotte, Polynésie française,
+    Saint-Pierre-Et-Miquelon
   secteur d'activité:
   - Tous secteurs d’activité
   nombre d'années d'activité:
   - Éligible à toutes les entreprises
   autres critères d'éligibilité:
-  - Cette aide s’adresse aux Maîtres d’Ouvrages et propriétaires de bâtiments dans
-    l’investissement et la réalisation de travaux.
-  - 'L''opération pour laquelle vous sollicitez une aide financière ne doit pas avoir
-    commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque
-    forme que ce soit : marché signé, commande signée, devis accepté…)'
+  - >-
+    Cette aide s’adresse aux Maîtres d’Ouvrages et propriétaires de bâtiments
+    dans l’investissement et la réalisation de travaux.
+  - >-
+    L'opération pour laquelle vous sollicitez une aide financière ne doit pas
+    avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes
+    (sous quelque forme que ce soit : marché signé, commande signée, devis
+    accepté…)
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
@@ -89,14 +102,13 @@ publicodes:
     - code NAF niveau 1 . est U
   entreprise . a un objectif ciblé:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est rénover mon bâtiment
     - questionnaire . objectif prioritaire . est ma performance énergétique
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
     - région = Corse
-    - région = Saint-Pierre-Et-Miquelon
-    - région = Polynésie française
     - région = Guadeloupe
-    - région = Martinique
     - région = Guyane
+    - région = Martinique
     - région = Mayotte
+    - région = Polynésie française
+    - région = Saint-Pierre-Et-Miquelon
