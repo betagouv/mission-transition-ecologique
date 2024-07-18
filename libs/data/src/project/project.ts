@@ -1,10 +1,10 @@
 import path from 'path'
 import fs from 'fs'
-import { Baserow } from './baserow'
-import { RawProject } from './type/project'
+import { Baserow } from '../common/baserow/baserow'
+import { RawProject } from './types'
 import { jsonPrograms } from '../../generated/index'
 import { ProgramType } from '../index'
-import { ThemeId } from '../theme/themes'
+import { ThemeType } from '../theme/themes'
 
 export class ProjectFeatures {
   private readonly _outputDirectory: string = path.join(__dirname, '../../static/')
@@ -46,10 +46,10 @@ export class ProjectFeatures {
   }
 
   private _validateThemes(project: RawProject) {
-    const validThemeIds = Object.values(ThemeId)
+    const validThemeIds = Object.values(ThemeType)
 
     project.themes.forEach((themeId) => {
-      if (!validThemeIds.includes(themeId as ThemeId)) {
+      if (!validThemeIds.includes(themeId as ThemeType)) {
         console.warn(`In Project "${project['title']}", id ${project['id']}, unknown theme-id: ${themeId}`)
       }
     })
