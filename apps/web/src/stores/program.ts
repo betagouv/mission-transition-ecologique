@@ -3,7 +3,7 @@
 
 import ProgramApi from '@/service/api/programApi'
 import { useUsedTrackStore } from '@/stores/usedTrack'
-import ProgramFilter from '@/utils/program/programFilters'
+import ProgramFilter from '@/utils/program/programFilter'
 import { Result } from 'true-myth'
 import { computed, ref } from 'vue'
 import { acceptHMRUpdate, defineStore } from 'pinia'

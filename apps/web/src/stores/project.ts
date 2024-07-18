@@ -1,5 +1,5 @@
 import ProjectApi from '@/service/api/projectApi'
-import ProjectFilters from '@/utils/project/projectFilters'
+import ProjectFilter from '@/utils/project/projectFilter'
 import { defineStore } from 'pinia'
 import { Result } from 'true-myth'
 import { computed, ref } from 'vue'
@@ -30,10 +30,10 @@ export const useProjectStore = defineStore('project', () => {
   ): Project[] {
     return projects.filter((project: Project) => {
       const hasTheme = objectiveType
-        ? ProjectFilters.byTheme(project, objectiveType)
+        ? ProjectFilter.byTheme(project, objectiveType)
         : project.themes.some((themeId) => Theme.getTags().some(({ id }) => id === themeId))
 
-      return hasTheme && (filteredPrograms ? ProjectFilters.byPrograms(project, filteredPrograms) : true)
+      return hasTheme && (filteredPrograms ? ProjectFilter.byPrograms(project, filteredPrograms) : true)
     })
   }
 

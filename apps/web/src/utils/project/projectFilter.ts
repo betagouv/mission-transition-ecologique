@@ -1,7 +1,7 @@
 import { ProgramData, Objective, ThemeType, Project } from '@/types'
 import { Theme } from '@/utils/theme'
 
-export default class ProjectFilters {
+export default class ProjectFilter {
   static byTheme(project: Project, objectiveType: Objective) {
     const themeSelected: ThemeType | undefined = Theme.getByValue(objectiveType)
 
