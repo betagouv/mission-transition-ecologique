@@ -152,7 +152,6 @@ export const useNavigationStore = defineStore('navigation', () => {
     query,
     searchParams,
     tabSelectedOnList,
-    stringOfSearchParams,
     isCatalog,
     isByRouteName,
     resetSearchParams,
