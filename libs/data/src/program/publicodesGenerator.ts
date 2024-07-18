@@ -1,7 +1,7 @@
 import path from 'path'
 import fs from 'fs'
 import { DataProgram, Publicodes } from './types'
-import { ThemeType } from '../theme/themes'
+import { ThemeId } from '../theme/themes'
 
 export class PublicodesGenerator {
   constructor(private program: DataProgram) {}
@@ -127,14 +127,14 @@ export class PublicodesGenerator {
   private _generateObjectifConditions() {
     const programThemes = this.program['Thèmes Ciblés']
     const themeToPublicodesMapping = {
-      [ThemeType.Building]: 'est rénover mon bâtiment',
-      [ThemeType.Mobility]: 'est la mobilité durable',
-      [ThemeType.Waste]: 'est la gestion des déchets',
-      [ThemeType.Water]: "est diminuer ma consommation d'eau",
-      [ThemeType.Energy]: 'est ma performance énergétique',
-      [ThemeType.RH]: 'est former ou recruter',
-      [ThemeType.Environmental]: 'est mon impact environnemental',
-      [ThemeType.EcoDesign]: "est l'écoconception"
+      [ThemeId.Building]: 'est rénover mon bâtiment',
+      [ThemeId.Mobility]: 'est la mobilité durable',
+      [ThemeId.Waste]: 'est la gestion des déchets',
+      [ThemeId.Water]: "est diminuer ma consommation d'eau",
+      [ThemeId.Energy]: 'est ma performance énergétique',
+      [ThemeId.RH]: 'est former ou recruter',
+      [ThemeId.Environmental]: 'est mon impact environnemental',
+      [ThemeId.EcoDesign]: "est l'écoconception"
     }
 
     if (!programThemes) {

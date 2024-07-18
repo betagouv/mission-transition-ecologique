@@ -1,4 +1,4 @@
-export enum ThemeType {
+export enum ThemeId {
   Energy = 'energy',
   Environmental = 'environmental',
   Mobility = 'mobility',
@@ -12,5 +12,5 @@ export enum ThemeType {
 export interface Theme {
   id: number
   Nom: string
-  'Nom (Tech)': ThemeType
+  'Nom (Tech)': ThemeId
 }

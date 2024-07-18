@@ -3,16 +3,16 @@ import fs from 'fs'
 import { Baserow } from '../common/baserow/baserow'
 import { RawProject } from './types'
 import { jsonPrograms } from '../../generated/index'
-import { DataProgramType } from '../index'
-import { ThemeType } from '../theme/themes'
+import { ProgramType } from '../index'
+import { ThemeId } from '../theme/themes'
 
 export class ProjectFeatures {
   private readonly _outputDirectory: string = path.join(__dirname, '../../static/')
   private readonly _outputImageDirectory: string = path.join(__dirname, '../../../../apps/web/public/images/projet')
-  private _programs: DataProgramType[] = []
+  private _programs: ProgramType[] = []
 
   constructor() {
-    this._programs = jsonPrograms as unknown as DataProgramType[]
+    this._programs = jsonPrograms as unknown as ProgramType[]
   }
 
   async buildProjectsJSONOutputs(): Promise<void> {
@@ -46,10 +46,10 @@ export class ProjectFeatures {
   }
 
   private _validateThemes(project: RawProject) {
-    const validThemeIds = Object.values(ThemeType)
+    const validThemeIds = Object.values(ThemeId)
 
     project.themes.forEach((themeId) => {
-      if (!validThemeIds.includes(themeId as ThemeType)) {
+      if (!validThemeIds.includes(themeId as ThemeId)) {
         console.warn(`In Project "${project['title']}", id ${project['id']}, unknown theme-id: ${themeId}`)
       }
     })
@@ -64,7 +64,7 @@ export class ProjectFeatures {
     })
   }
 
-  private _validatePrograms(project: RawProject, programs: DataProgramType[]) {
+  private _validatePrograms(project: RawProject, programs: ProgramType[]) {
     project.programs.forEach((programId) => {
       const programFound = programs.some((program) => program.id === programId)
       if (!programFound) {
