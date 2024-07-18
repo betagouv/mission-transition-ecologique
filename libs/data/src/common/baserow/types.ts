@@ -1,4 +1,4 @@
-import { Program as DataProgram } from '../../program/types'
+import { DataProgram } from '../../program/types'
 
 export interface Project {
   id: number

@@ -3,16 +3,16 @@ import fs from 'fs'
 import { Baserow } from '../common/baserow/baserow'
 import { RawProject } from './types'
 import { jsonPrograms } from '../../generated/index'
-import { ProgramType } from '../index'
+import { DataProgramType } from '../index'
 import { ThemeType } from '../theme/themes'
 
 export class ProjectFeatures {
   private readonly _outputDirectory: string = path.join(__dirname, '../../static/')
   private readonly _outputImageDirectory: string = path.join(__dirname, '../../../../apps/web/public/images/projet')
-  private _programs: ProgramType[] = []
+  private _programs: DataProgramType[] = []
 
   constructor() {
-    this._programs = jsonPrograms as unknown as ProgramType[]
+    this._programs = jsonPrograms as unknown as DataProgramType[]
   }
 
   async buildProjectsJSONOutputs(): Promise<void> {
@@ -64,7 +64,7 @@ export class ProjectFeatures {
     })
   }
 
-  private _validatePrograms(project: RawProject, programs: ProgramType[]) {
+  private _validatePrograms(project: RawProject, programs: DataProgramType[]) {
     project.programs.forEach((programId) => {
       const programFound = programs.some((program) => program.id === programId)
       if (!programFound) {

@@ -1,10 +1,10 @@
 import path from 'path'
 import fs from 'fs'
-import { Program, Publicodes } from './types'
+import { DataProgram, Publicodes } from './types'
 import { ThemeType } from '../theme/themes'
 
 export class PublicodesGenerator {
-  constructor(private program: Program) {}
+  constructor(private program: DataProgram) {}
 
   public generatePublicodes(): { [key: string]: any } {
     const filePath = path.join(__dirname, 'publicodesStaticData.json')

@@ -1,7 +1,7 @@
 import path from 'path'
 import fs from 'fs'
 import * as yaml from 'js-yaml'
-import { Objective, Program, ProgramType, Status } from './types'
+import { Objective, DataProgram, DataProgramType, Status } from './types'
 import { Baserow } from '../common/baserow/baserow'
 import { PublicodesGenerator } from './publicodesGenerator'
 
@@ -23,18 +23,18 @@ export class ProgramYamlGenerator {
     return
   }
 
-  private _loadOldYamlContent(oldProgramId: string): Program | null {
+  private _loadOldYamlContent(oldProgramId: string): DataProgram | null {
     const filePath = 'programs/' + oldProgramId + '.yaml'
     try {
       const oldFileContent = fs.readFileSync(filePath, 'utf8')
-      return yaml.load(oldFileContent) as Program
+      return yaml.load(oldFileContent) as DataProgram
     } catch {
       // known empty bloc, comment for the linter!
     }
     return null
   }
 
-  private _createProgramYaml(program: Program) {
+  private _createProgramYaml(program: DataProgram) {
     const oldData = this._loadOldYamlContent(program['Id fiche dispositif'])
 
     const yamlContent: { [key: string]: any } = {}
@@ -84,22 +84,22 @@ export class ProgramYamlGenerator {
     return illustrations[Math.floor(Math.random() * 3)]
   }
 
-  private _setFinancialData(fileContent: { [key: string]: any }, program: Program) {
-    if (program["Nature de l'aide"] == ProgramType.Financing) {
+  private _setFinancialData(fileContent: { [key: string]: any }, program: DataProgram) {
+    if (program["Nature de l'aide"] == DataProgramType.Financing) {
       fileContent['montant du financement'] = program["Montant de l'aide"]
       return
     }
-    if (program["Nature de l'aide"] == ProgramType.Accompagnement || program["Nature de l'aide"] == ProgramType.Training) {
+    if (program["Nature de l'aide"] == DataProgramType.Accompagnement || program["Nature de l'aide"] == DataProgramType.Training) {
       fileContent["coût de l'accompagnement"] = program['Coût reste à charge']
       fileContent["durée de l'accompagnement"] = program['Prestation (durée + étalement)']
       return
     }
-    if (program["Nature de l'aide"] == ProgramType.Loan) {
+    if (program["Nature de l'aide"] == DataProgramType.Loan) {
       fileContent['durée du prêt'] = program['Prestation (durée + étalement)']
       fileContent['montant du prêt'] = `De ${program['MontantMin aide']}€ à ${program['MontantMax aide']}€`
       return
     }
-    if (program["Nature de l'aide"] == ProgramType.TaxAdvantage) {
+    if (program["Nature de l'aide"] == DataProgramType.TaxAdvantage) {
       fileContent["montant de l'avantage fiscal"] = program["Montant de l'aide"]
       return
     }
@@ -125,7 +125,7 @@ export class ProgramYamlGenerator {
     return { description, liens: liens.length > 0 ? liens : undefined }
   }
 
-  private _setObjectives(fileContent: { [key: string]: any }, program: Program) {
+  private _setObjectives(fileContent: { [key: string]: any }, program: DataProgram) {
     const objectifs: Objective[] = []
 
     for (let i = 1; i <= 6; i++) {
@@ -138,7 +138,7 @@ export class ProgramYamlGenerator {
     return
   }
 
-  private _setEligibility(fileContent: { [key: string]: any }, program: Program) {
+  private _setEligibility(fileContent: { [key: string]: any }, program: DataProgram) {
     const eligibility_conditions: { [key: string]: any } = {
       "taille de l'entreprise": [this._setEligibilitySize(program), this._setMicroEntreprise(program)],
       'secteur géographique': this._setEligibilityGeography(program),
@@ -153,14 +153,14 @@ export class ProgramYamlGenerator {
     fileContent["conditions d'éligibilité"] = eligibility_conditions
     return
   }
-  private _setEligibilityYears(program: Program): any {
+  private _setEligibilityYears(program: DataProgram): any {
     if (program['Eligibilité Existence']) {
       return [program['Eligibilité Existence']]
     }
     return ['Éligible à toutes les entreprises']
   }
 
-  private _setEligibilitySector(program: Program) {
+  private _setEligibilitySector(program: DataProgram) {
     if (!program['Eligibilité Sectorielle']) {
       console.log('Eligibilité sectorielle manquante !')
     }
@@ -169,7 +169,7 @@ export class ProgramYamlGenerator {
     }
     return [program['Eligibilité Sectorielle']]
   }
-  private _setEligibilityGeography(program: Program) {
+  private _setEligibilityGeography(program: DataProgram) {
     if (program['Couverture géographique'].Name == 'National') return ["France et territoires d'outre-mer"]
 
     if (program['Zones Spécifiques (géographie)']) {
@@ -184,7 +184,7 @@ export class ProgramYamlGenerator {
     ]
   }
 
-  private _setEligibilitySize(program: Program): string {
+  private _setEligibilitySize(program: DataProgram): string {
     if (program['Eligibilité Taille']) {
       return program['Eligibilité Taille']
     }
@@ -201,7 +201,7 @@ export class ProgramYamlGenerator {
     }
   }
 
-  private _setMicroEntreprise(program: Program) {
+  private _setMicroEntreprise(program: DataProgram) {
     if (program.microEntreprise == 'oui') {
       return 'Éligible aux micro-entreprises'
     }

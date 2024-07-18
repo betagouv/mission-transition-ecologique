@@ -5,7 +5,7 @@ import path from 'path'
 import sharp from 'sharp'
 import { RawProject } from '../../project/types'
 import { Id, ImageTable, LinkedObject as LinkObject, Program, Project } from './types'
-import { Program as DataProgram, Status, ProgramType, Operator, GeographicCoverage, GeographicAreas } from '../../program/types'
+import { DataProgram, Status, DataProgramType, Operator, GeographicCoverage, GeographicAreas } from '../../program/types'
 import { Theme } from '../../theme/themes'
 
 dotenv.config()
@@ -260,7 +260,7 @@ export class Baserow {
       Statuts: rawStatuts,
       'Opérateur de contact': domainContactOperator,
       'Autres opérateurs': domainOtherOperator,
-      "Nature de l'aide": aidTypes ? (aidTypes.value as ProgramType) : ProgramType.Undefined,
+      "Nature de l'aide": aidTypes ? (aidTypes.value as DataProgramType) : DataProgramType.Undefined,
       'Zones géographiques': domainProgramGeographicAreas,
       'Couverture géographique': domainGeographicCoverage[0],
       'Thèmes Ciblés': domainProgramThemes

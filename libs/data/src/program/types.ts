@@ -22,14 +22,14 @@ export enum ProgramOperatorType {
   ECOCO2 = 'EcoCO2'
 }
 
-export enum ProgramType {
+export enum DataProgramType {
   Accompagnement = 'Accompagnement', // 1724678
   TaxAdvantage = 'Avantage fiscal', // 1724679
-  Financing = 'Financement', // 80
-  Loan = 'Prêt', // 81
-  Training = 'Formation', // 82
-  ActionTraining = 'Formation-Action', // 83
-  Awareness = 'Sensibilisation', // 84
+  Financing = 'Financement', // 1724680
+  Loan = 'Prêt', // 1724681
+  Training = 'Formation', // 1724682
+  ActionTraining = 'Formation-Action', // 1724683
+  Awareness = 'Sensibilisation', // 1724684
   Undefined = 'Undefined'
 }
 
@@ -60,7 +60,7 @@ export interface Objective {
   description: string
   liens?: { lien: string; texte: string }[]
 }
-export interface Program {
+export interface DataProgram {
   id: number
   'Id fiche dispositif': string
   'Identifiant fonctionnel': string
@@ -177,7 +177,7 @@ export interface Program {
   étape4: string
   étape5: string
   étape6: string
-  "Nature de l'aide": ProgramType
+  "Nature de l'aide": DataProgramType
   Statuts: Status[]
 }
 
