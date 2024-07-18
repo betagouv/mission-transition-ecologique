@@ -1,7 +1,7 @@
 import path from 'path'
 import fs from 'fs'
 import * as yaml from 'js-yaml'
-import { Objective, DataProgram, DataProgramType, Status } from './types'
+import { YamlObjective, DataProgram, DataProgramType, Status } from './types'
 import { Baserow } from '../common/baserow/baserow'
 import { PublicodesGenerator } from './publicodesGenerator'
 
@@ -107,7 +107,7 @@ export class ProgramYamlGenerator {
     return
   }
 
-  parseStep(step: string): Objective {
+  parseStep(step: string): YamlObjective {
     const lines = step.split('\n')
     const description = lines[0].substring(2)
 
@@ -126,7 +126,7 @@ export class ProgramYamlGenerator {
   }
 
   private _setObjectives(fileContent: { [key: string]: any }, program: DataProgram) {
-    const objectifs: Objective[] = []
+    const objectifs: YamlObjective[] = []
 
     for (let i = 1; i <= 6; i++) {
       const step = program[`étape${i}` as keyof typeof program] as string

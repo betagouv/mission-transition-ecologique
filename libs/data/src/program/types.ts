@@ -56,10 +56,11 @@ export interface GeographicAreas {
   Name: string
 }
 
-export interface Objective {
+export interface YamlObjective {
   description: string
   liens?: { lien: string; texte: string }[]
 }
+
 export interface DataProgram {
   id: number
   'Id fiche dispositif': string
