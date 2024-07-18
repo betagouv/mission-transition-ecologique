@@ -63,10 +63,10 @@ function isActive(tag: ThemeType) {
   return Theme.getTags().length === 1 || programFilters.objectiveTypeSelected === (tag.value as string)
 }
 
-const updateObjectiveTypeSelected = async (value: string) => {
-  programStore.setObjectiveTypeSelected(value)
+const updateObjectiveTypeSelected = async (value: string | number) => {
+  programStore.setObjectiveTypeSelected(value as string)
   if (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityObjective()) {
-    await usedTrackStore.updateByTrackIdAndValue(TrackId.Goals, value)
+    await usedTrackStore.updateByTrackIdAndValue(TrackId.Goals, value as string)
     useNavigationStore().replaceBrowserHistory()
   }
 }
