@@ -90,7 +90,7 @@
 import Config from '@/config'
 import TrackStructure from '@/utils/track/trackStructure'
 import { useProgramStore } from '@/stores/program'
-import { type ProgramData, PublicodeObjective, TrackId, Project } from '@/types'
+import { type ProgramData, Objective, TrackId, Project } from '@/types'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import Contact from '@/utils/contact'
 import { RouteName } from '@/types/routeType'
@@ -98,7 +98,7 @@ import { type RouteLocationRaw } from 'vue-router'
 import { useNavigationStore } from '@/stores/navigation'
 
 interface Props {
-  objective: PublicodeObjective | undefined
+  objective: Objective | undefined
   project: Project | undefined
 }
 const props = defineProps<Props>()

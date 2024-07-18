@@ -43,7 +43,7 @@
       <div class="fr-container fr-m-0 fr-p-0 fr-px-md-2v fr-mt-3v">
         <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2">
           <TeeObjectiveCard
-            :objective="objective as PublicodeObjective"
+            :objective="objective as Objective"
             radius-corner="tr"
             radius-size="2-5v"
           />
@@ -76,7 +76,7 @@ import ProgramFiltersAccordion from '@/components/program/list/filters/ProgramFi
 import ProgramFilterByTheme from '@/components/program/list/filters/ProgramFilterByTheme.vue'
 import { useProgramStore } from '@/stores/program'
 import { useUsedTrackStore } from '@/stores/usedTrack'
-import { Color, type ProgramData, PublicodeObjective, TrackId } from '@/types'
+import { Color, Objective, type ProgramData, TrackId } from '@/types'
 import Matomo from '@/utils/matomo'
 import { Theme } from '@/utils/theme'
 import UsedTrack from '@/utils/track/usedTrack'

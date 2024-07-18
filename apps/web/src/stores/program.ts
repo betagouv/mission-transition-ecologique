@@ -11,12 +11,9 @@ import {
   type programFiltersType,
   ProgramAidType,
   ProgramOperatorType,
-  PublicodeObjective,
+  Objective,
   Region,
   type ProgramData,
-  TrackId,
-  QuestionnaireDataEnum,
-  QuestionnaireRoute,
   QuestionnaireData
 } from '@/types'
 
@@ -53,10 +50,10 @@ export const useProgramStore = defineStore('program', () => {
   function getProgramsByFilters(programs: ProgramData[]) {
     return programs.filter((program: ProgramData) => {
       return (
-        ProgramFilter.filterProgramsByAidType(program, programFilters.value.programAidTypesSelected as ProgramAidType[]) &&
-        ProgramFilter.filterProgramsByObjective(program, programFilters.value.objectiveTypeSelected as PublicodeObjective) &&
-        ProgramFilter.filterProgramsByOperator(program, programFilters.value.operatorAidSelected as ProgramOperatorType[]) &&
-        ProgramFilter.filterProgramsByRegion(program, programFilters.value.regionAidSelected as Region[])
+        ProgramFilter.byAidType(program, programFilters.value.programAidTypesSelected as ProgramAidType[]) &&
+        ProgramFilter.byObjective(program, programFilters.value.objectiveTypeSelected as Objective) &&
+        ProgramFilter.byOperator(program, programFilters.value.operatorAidSelected as ProgramOperatorType[]) &&
+        ProgramFilter.byRegion(program, programFilters.value.regionAidSelected as Region[])
       )
     })
   }
@@ -87,15 +84,6 @@ export const useProgramStore = defineStore('program', () => {
     return result
   }
 
-  function hasObjectiveTypeFilter() {
-    return (
-      useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(
-        TrackId.QuestionnaireRoute,
-        QuestionnaireDataEnum.questionnaire_route as string
-      ) !== QuestionnaireRoute.SpecificGoal
-    )
-  }
-
   function hasObjectiveTypeSelected() {
     return programFilters.value.objectiveTypeSelected !== ''
   }
@@ -120,7 +108,6 @@ export const useProgramStore = defineStore('program', () => {
     programsByUsedTracks,
     getProgramsByFilters,
     getProgramById,
-    hasObjectiveTypeFilter,
     hasObjectiveTypeSelected,
     setObjectiveTypeSelected,
     resetFilters

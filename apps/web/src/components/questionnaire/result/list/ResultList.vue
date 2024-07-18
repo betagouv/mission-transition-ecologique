@@ -48,7 +48,7 @@
 import { useNavigationStore } from '@/stores/navigation'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { useProgramStore } from '@/stores/program'
-import { ProgramData, PublicodeObjective, TrackId, Project } from '@/types'
+import { ProgramData, Objective, TrackId, Project } from '@/types'
 import { computed, onBeforeMount } from 'vue'
 import Matomo from '@/utils/matomo'
 import { useProjectStore } from '@/stores/project'
@@ -84,7 +84,7 @@ const filteredProjects = computed(() => {
     return undefined
   }
 
-  return projectStore.getProjectsByPublicodeObjectiveAndEligibility(
+  return projectStore.getProjectsByObjectiveAndEligibility(
     projects.value,
     getObjectiveForProjectFiltering(),
     filteredPrograms.value ?? undefined
@@ -93,8 +93,8 @@ const filteredProjects = computed(() => {
 
 const getObjectiveForProjectFiltering = () => {
   return programStore.programFilters.objectiveTypeSelected !== ''
-    ? (programStore.programFilters.objectiveTypeSelected as PublicodeObjective)
-    : Theme.getPublicodeObjectiveByObjective(UsedTrack.getPriorityObjective())
+    ? (programStore.programFilters.objectiveTypeSelected as Objective)
+    : Theme.getObjectiveByValue(UsedTrack.getPriorityObjective())
 }
 
 onBeforeMount(async () => {

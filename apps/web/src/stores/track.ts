@@ -4,7 +4,7 @@
 import { tracks as allTracks } from '@/questionnaire'
 import { type Track, TrackComponent, type TrackOptionsUnion, type Translations } from '@/types'
 import { TrackId } from '@/types'
-// cf : https://stackoverflow.com/questions/64917686/vue-array-converted-to-proxy-object
+import TrackSiret from '@/utils/track/TrackSiret'
 import { acceptHMRUpdate, defineStore } from 'pinia'
 import { computed, ref } from 'vue'
 
@@ -66,6 +66,26 @@ export const useTrackStore = defineStore('track', () => {
     setCurrentTrack(getTrack(trackId))
   }
 
+  async function getSelectedOptionsByTrackAndValue(track: Track, value: string | string[]): Promise<TrackOptionsUnion[]> {
+    let selectedOptions: TrackOptionsUnion[] = []
+    let selectedOption: TrackOptionsUnion | undefined = undefined
+    if (track.id === TrackId.Siret && !Array.isArray(value)) {
+      selectedOption = await TrackSiret.getOptionBySiret(track, value)
+    } else {
+      if (Array.isArray(value)) {
+        selectedOptions = value.map((value) => track.options?.find((option) => option.value === value) as TrackOptionsUnion)
+      } else {
+        selectedOption = track.options?.find((option) => option.value === value)
+      }
+    }
+
+    if (selectedOption) {
+      selectedOptions = [selectedOption]
+    }
+
+    return selectedOptions
+  }
+
   return {
     tracks,
     maxDepth,
@@ -80,7 +100,8 @@ export const useTrackStore = defineStore('track', () => {
     getTrackTitle,
     getTrackBgColor,
     setCurrentTrack,
-    setCurrentTrackById
+    setCurrentTrackById,
+    getSelectedOptionsByTrackAndValue
   }
 })
 

@@ -1,33 +1,35 @@
 <template>
   <div class="fr-grid-row fr-grid-row--gutters">
-    <div
-      v-if="programStore.hasObjectiveTypeFilter()"
-      class="fr-col-12"
-    >
+    <div class="fr-col-12">
       <TeeDsfrTags
-        v-model="programFilters.objectiveTypeSelected"
         :tags="objectiveTypeTags"
+        @update:model-value="updateObjectiveTypeSelected"
       />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
-import { ThemeType, type programFiltersType, PublicodeObjective } from '@/types'
+import { useUsedTrackStore } from '@/stores/usedTrack'
+import { ThemeType, type programFiltersType, Objective, TrackId } from '@/types'
 import { Theme } from '@/utils/theme'
 import { TeeDsfrTagProps } from '@/components/element/tag/TeeDsfrTag.vue'
+import UsedTrack from '@/utils/track/usedTrack'
 import { computed, onBeforeMount } from 'vue'
 
 interface Props {
-  objective?: PublicodeObjective | ''
+  objective?: Objective | ''
 }
-
 const props = defineProps<Props>()
 
 const programStore = useProgramStore()
+const usedTrackStore = useUsedTrackStore()
 
 const programFilters: programFiltersType = programStore.programFilters
+
+const hasAllTag = ref(true)
 
 const objectiveTypeTags = computed<TeeDsfrTagProps[]>((): TeeDsfrTagProps[] => {
   const allTag: TeeDsfrTagProps = {
@@ -50,9 +52,8 @@ const objectiveTypeTags = computed<TeeDsfrTagProps[]>((): TeeDsfrTagProps[] => {
   }
 
   if (tags.length === 1) {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     programStore.setObjectiveTypeSelected((tags.shift() as TeeDsfrTagProps).value as string)
-  } else if (tags.length > 1) {
+  } else if (tags.length > 1 && hasAllTag.value) {
     tags.unshift(allTag)
   }
 
@@ -63,9 +64,21 @@ function isActive(tag: ThemeType) {
   return Theme.getTags().length === 1 || programFilters.objectiveTypeSelected === (tag.value as string)
 }
 
+const updateObjectiveTypeSelected = async (value: string) => {
+  programStore.setObjectiveTypeSelected(value)
+  if (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityObjective()) {
+    await usedTrackStore.updateByTrackIdAndValue(TrackId.Goals, value)
+    useNavigationStore().replaceBrowserHistory()
+  }
+}
+
 onBeforeMount(() => {
   if (props.objective) {
     programFilters.objectiveTypeSelected = props.objective
+  }
+
+  if (UsedTrack.isSpecificGoal()) {
+    hasAllTag.value = false
   }
 })
 </script>

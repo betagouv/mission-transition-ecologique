@@ -3,7 +3,7 @@ import ProjectFilters from '@/utils/project/projectFilters'
 import { defineStore } from 'pinia'
 import { Result } from 'true-myth'
 import { computed, ref } from 'vue'
-import { ProgramData, PublicodeObjective, Project } from '@/types'
+import { ProgramData, Project, Objective } from '@/types'
 import { Theme } from '@/utils/theme'
 
 export const useProjectStore = defineStore('project', () => {
@@ -23,29 +23,17 @@ export const useProjectStore = defineStore('project', () => {
     return await new ProjectApi().get()
   }
 
-  function getProjectsByPublicodeObjectiveAndEligibility(
+  function getProjectsByObjectiveAndEligibility(
     projects: Project[],
-    objectiveType?: PublicodeObjective,
+    objectiveType?: Objective,
     filteredPrograms?: ProgramData[]
   ): Project[] {
     return projects.filter((project: Project) => {
       const hasTheme = objectiveType
-        ? ProjectFilters.filterProjectsByTheme(project, objectiveType)
+        ? ProjectFilters.byTheme(project, objectiveType)
         : project.themes.some((themeId) => Theme.getTags().some(({ id }) => id === themeId))
 
-      return hasTheme && (filteredPrograms ? ProjectFilters.filterProjectsByEligibility(project, filteredPrograms) : true)
-    })
-  }
-
-  function getProjectsByPublicodeObjective(projects: Project[], objectiveType?: PublicodeObjective): Project[] {
-    return projects.filter((project: Project) => {
-      return objectiveType ? ProjectFilters.filterProjectsByTheme(project, objectiveType) : true
-    })
-  }
-
-  function getProjectsByEligibility(projects: Project[], filteredPrograms: ProgramData[]): Project[] {
-    return projects.filter((project: Project) => {
-      return filteredPrograms ? ProjectFilters.filterProjectsByEligibility(project, filteredPrograms) : true
+      return hasTheme && (filteredPrograms ? ProjectFilters.byPrograms(project, filteredPrograms) : true)
     })
   }
 
@@ -89,9 +77,7 @@ export const useProjectStore = defineStore('project', () => {
   return {
     projects,
     currentProject,
-    getProjectsByPublicodeObjective,
-    getProjectsByEligibility,
-    getProjectsByPublicodeObjectiveAndEligibility,
+    getProjectsByObjectiveAndEligibility,
     getProjectBySlug,
     getLinkedProjectsFromCurrent
   }

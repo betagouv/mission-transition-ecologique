@@ -14,7 +14,6 @@ import {
 } from '@/types'
 import { CheckNextTrackRules } from '@/utils/conditions'
 import { remapItem } from '@/utils/helpers'
-import TrackSiret from '@/utils/track/TrackSiret'
 import Translation from '@/utils/translation'
 import { acceptHMRUpdate, defineStore } from 'pinia'
 import { computed, ref, toRaw } from 'vue'
@@ -220,6 +219,17 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     return usedTrack
   }
 
+  async function updateByTrackIdAndValue(trackId: TrackId, value: string | string[]) {
+    const track = useTrackStore().getTrack(TrackId.Goals)
+    if (track) {
+      const selectedOptions = await useTrackStore().getSelectedOptionsByTrackAndValue(track, value)
+      if (selectedOptions.length > 0) {
+        createOrUpdateUsedTrack(track, selectedOptions)
+        useNavigationStore().updateSearchParam({ name: TrackId.Goals, value: value })
+      }
+    }
+  }
+
   function findInQuestionnaireDataByTrackIdAndKey(trackId: TrackId, key: string): string | undefined {
     const usedTrack = usedTracks.value.find((usedTrack: UsedTrack) => usedTrack.id === trackId)
     if (usedTrack?.selected) {
@@ -257,21 +267,7 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
       }
 
       const value = useNavigationStore().query[trackId] as string | string[]
-      let selectedOptions: TrackOptionsUnion[] = []
-      let selectedOption: TrackOptionsUnion | undefined = undefined
-      if (track.id === TrackId.Siret && !Array.isArray(value)) {
-        selectedOption = await TrackSiret.getOptionBySiret(track, value)
-      } else {
-        if (Array.isArray(value)) {
-          selectedOptions = value.map((value) => track.options?.find((option) => option.value === value) as TrackOptionsUnion)
-        } else {
-          selectedOption = track.options?.find((option) => option.value === value)
-        }
-      }
-
-      if (selectedOption) {
-        selectedOptions = [selectedOption]
-      }
+      const selectedOptions: TrackOptionsUnion[] = await useTrackStore().getSelectedOptionsByTrackAndValue(track, value)
 
       if (selectedOptions.length === 0) {
         useNavigationStore().deleteSearchParam(trackId)
@@ -307,7 +303,7 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     hasUsedTracks,
     removeFurtherUsedTracks,
     currentStep,
-    replaceUsedTrack,
+    updateByTrackIdAndValue,
     add,
     resetUsedTracks,
     findInQuestionnaireDataByTrackIdAndKey,
