@@ -9,7 +9,7 @@ export class ProgramYamlGenerator {
   outputDirectory: string = path.join(__dirname, '../../programs/')
 
   async createProgramYamls(): Promise<void> {
-    // while working on the script, to avoid hitting Baserow API limits and to decrease our global impact, please cache locally the data : 
+    // while working on the script, to avoid hitting Baserow API limits and to decrease our global impact, please cache locally the data :
     // on the first run use getPrograms(false) then for all following call use getPrograms(true)
     const programs = await new Baserow(this.outputDirectory).getPrograms(false)
 
@@ -23,19 +23,21 @@ export class ProgramYamlGenerator {
     return
   }
 
-  private _loadOldYamlContent(oldProgramId:string) : Program | null{
-    let filePath = 'programs/' + oldProgramId + '.yaml'
+  private _loadOldYamlContent(oldProgramId: string): Program | null {
+    const filePath = 'programs/' + oldProgramId + '.yaml'
     try {
       const oldFileContent = fs.readFileSync(filePath, 'utf8')
       return yaml.load(oldFileContent) as Program
-    } catch {}
+    } catch {
+      // known empty bloc, comment for the linter!
+    }
     return null
   }
 
-  private _createProgramYaml(program: Program) {    
-    let oldData = this._loadOldYamlContent(program['Id fiche dispositif'])
-    
-    let yamlContent: { [key: string]: any } = {}
+  private _createProgramYaml(program: Program) {
+    const oldData = this._loadOldYamlContent(program['Id fiche dispositif'])
+
+    const yamlContent: { [key: string]: any } = {}
 
     const addField = (key: string, value: any) => {
       if (value && (!Array.isArray(value) || value.length > 0)) {
@@ -65,7 +67,7 @@ export class ProgramYamlGenerator {
     this._setEligibility(yamlContent, program)
     yamlContent['publicodes'] = new PublicodesGenerator(program).generatePublicodes()
 
-    let yamlString = yaml.dump(yamlContent, { noArrayIndent: true })
+    const yamlString = yaml.dump(yamlContent, { noArrayIndent: true })
     fs.writeFileSync('programs/' + program['Id fiche dispositif'] + '.yaml', yamlString, 'utf8')
   }
 
@@ -94,7 +96,7 @@ export class ProgramYamlGenerator {
     }
     if (program["Nature de l'aide"] == ProgramType.Loan) {
       fileContent['durée du prêt'] = program['Prestation (durée + étalement)']
-      fileContent['montant du prêt'] = `De ${program['MontantMin aide']} € à ${program['MontantMax aide']} €`
+      fileContent['montant du prêt'] = `De ${program['MontantMin aide']}€ à ${program['MontantMax aide']}€`
       return
     }
     if (program["Nature de l'aide"] == ProgramType.TaxAdvantage) {
@@ -137,7 +139,7 @@ export class ProgramYamlGenerator {
   }
 
   private _setEligibility(fileContent: { [key: string]: any }, program: Program) {
-    let eligibility_conditions: { [key: string]: any } = {
+    const eligibility_conditions: { [key: string]: any } = {
       "taille de l'entreprise": [this._setEligibilitySize(program), this._setMicroEntreprise(program)],
       'secteur géographique': this._setEligibilityGeography(program),
       "secteur d'activité": this._setEligibilitySector(program),
@@ -162,7 +164,7 @@ export class ProgramYamlGenerator {
     if (!program['Eligibilité Sectorielle']) {
       console.log('Eligibilité sectorielle manquante !')
     }
-    if (program['Eligibilité Naf']){
+    if (program['Eligibilité Naf']) {
       return [program['Eligibilité Sectorielle'], program['Eligibilité Naf']]
     }
     return [program['Eligibilité Sectorielle']]
@@ -205,5 +207,4 @@ export class ProgramYamlGenerator {
     }
     return 'Non éligible aux micro-entreprises'
   }
-
 }

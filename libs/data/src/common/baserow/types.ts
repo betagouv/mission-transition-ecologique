@@ -1,5 +1,4 @@
-import { Program as DataProgram } from "../../program/types"
-import { ThemeType } from "../../theme/themes"
+import { Program as DataProgram } from '../../program/types'
 
 export interface Project {
   id: number
@@ -39,14 +38,22 @@ export interface Image {
   url: string
 }
 
-export interface Program extends Omit<
-  DataProgram,
-  'Statuts' | "Nature de l'aide" | 'Opérateur de contact' | 'Autres opérateurs' | 'Couverture géographique' | 'Zones géographiques' | 'Thèmes Ciblés'> {
-  Statuts: LinkedObject[],
-  "Nature de l'aide": LinkedObject,
-  'Opérateur de contact': LinkedObject[],
-  'Autres opérateurs': LinkedObject[],
-  'Couverture géographique': LinkedObject[],
-  'Zones géographiques': LinkedObject[],
+export interface Program
+  extends Omit<
+    DataProgram,
+    | 'Statuts'
+    | "Nature de l'aide"
+    | 'Opérateur de contact'
+    | 'Autres opérateurs'
+    | 'Couverture géographique'
+    | 'Zones géographiques'
+    | 'Thèmes Ciblés'
+  > {
+  Statuts: LinkedObject[]
+  "Nature de l'aide": LinkedObject
+  'Opérateur de contact': LinkedObject[]
+  'Autres opérateurs': LinkedObject[]
+  'Couverture géographique': LinkedObject[]
+  'Zones géographiques': LinkedObject[]
   'Thèmes Ciblés': LinkedObject[]
 }

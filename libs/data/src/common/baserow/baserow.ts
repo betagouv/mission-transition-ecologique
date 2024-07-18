@@ -20,8 +20,6 @@ export class Baserow {
   private _geographicCoverageTableId = 314470
   private _geographicAreasTableId = 314474
   private _programTableId = 314437
-
-
   private readonly _axiosHeader = {
     headers: {
       Authorization: `Token ${this._apiToken}`
@@ -55,13 +53,14 @@ export class Baserow {
   }
 
   // Note : caching the downloaded data by default to nudge towards reducing the data transfer from baserow.
-  async getPrograms(useLocalRawData:boolean): Promise<DataProgram[]> {
-    if (useLocalRawData){
+  async getPrograms(useLocalRawData: boolean): Promise<DataProgram[]> {
+    if (useLocalRawData) {
       try {
         const data = fs.readFileSync('program_tmp.json', 'utf-8')
-        return JSON.parse(data) as DataProgram[] 
-      } 
-      catch {}
+        return JSON.parse(data) as DataProgram[]
+      } catch {
+        // known empty bloc, comment for the linter!
+      }
     }
 
     const allBaserowPrograms = await this._getTableData<Program>(this._programTableId)
@@ -70,13 +69,16 @@ export class Baserow {
     const geographicAreas = await this._getTableData<GeographicAreas>(this._geographicAreasTableId)
     const themes = await this._getTableData<Theme>(this._themeTableId)
 
-    const dataPrograms = allBaserowPrograms.map((baserowProgram) => this._convertToDataProgram(baserowProgram, operators, geographicCoverages, geographicAreas, themes))
+    const dataPrograms = allBaserowPrograms.map((baserowProgram) =>
+      this._convertToDataProgram(baserowProgram, operators, geographicCoverages, geographicAreas, themes)
+    )
 
     try {
       fs.writeFileSync('program_tmp.json', JSON.stringify(dataPrograms, null, 2))
-    } 
-    catch {}
-    
+    } catch {
+      // known empty bloc, comment for the linter!
+    }
+
     return dataPrograms
   }
 
@@ -99,7 +101,6 @@ export class Baserow {
       return []
     }
   }
-
 
   private async _getRowData<T>(tableId: number, rowId: number): Promise<T | null> {
     try {
@@ -182,11 +183,7 @@ export class Baserow {
     return matchingTheme['Nom (Tech)']
   }
 
-  private _generateThemeList(
-    mainTheme: LinkObject[],
-    secondaryThemes: LinkObject[],
-    baserowThemes: Theme[]
-  ): string[] {
+  private _generateThemeList(mainTheme: LinkObject[], secondaryThemes: LinkObject[], baserowThemes: Theme[]): string[] {
     const themeList = [this._generateMainTheme(mainTheme, baserowThemes)]
     secondaryThemes.forEach((secondaryTheme) => {
       const themeId = secondaryTheme.id
@@ -223,9 +220,9 @@ export class Baserow {
     throw Error('Baserow token not found.')
   }
 
-    private _replaceLinkedObjectbyTableData<T extends Id>(links: LinkObject[], referencedTableData: T[]): T[]{
+  private _replaceLinkedObjectbyTableData<T extends Id>(links: LinkObject[], referencedTableData: T[]): T[] {
     const tableData = links.map((link) => referencedTableData.find((object) => link.id === object.id))
-    
+
     if (tableData.includes(undefined)) {
       console.log("warning, a baserow link isn't defined, it should never happen", links)
     }
@@ -263,7 +260,7 @@ export class Baserow {
       Statuts: rawStatuts,
       'Opérateur de contact': domainContactOperator,
       'Autres opérateurs': domainOtherOperator,
-      "Nature de l'aide": aidTypes ? aidTypes.value as ProgramType : ProgramType.Undefined,
+      "Nature de l'aide": aidTypes ? (aidTypes.value as ProgramType) : ProgramType.Undefined,
       'Zones géographiques': domainProgramGeographicAreas,
       'Couverture géographique': domainGeographicCoverage[0],
       'Thèmes Ciblés': domainProgramThemes
@@ -271,6 +268,4 @@ export class Baserow {
 
     return rawProgram
   }
-
-
 }

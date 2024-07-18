@@ -21,10 +21,10 @@ export class PublicodesGenerator {
   }
 
   private _generatePublicodes(): { [key: string]: any } {
-    let publicodes: any = {}
-    let cibles: string[] = []
-    let eligibility: any = {}
-    let eligibilityConditions: any = []
+    const publicodes: any = {}
+    const cibles: string[] = []
+    const eligibility: any = {}
+    const eligibilityConditions: any = []
     publicodes[Publicodes.CIBLE] = { [Publicodes.ALL]: cibles }
 
     if (this.program.DISPOSITIF_DATE_DEBUT || this.program.DISPOSITIF_DATE_FIN) {
@@ -39,7 +39,7 @@ export class PublicodesGenerator {
       }
     }
 
-    if (this._generateEffectifConditions(this.program)) {
+    if (this._generateEffectifConditions()) {
       eligibilityConditions.push('a un effectif éligible')
     }
     if (this.program['Couverture géographique'].Name != 'National') {
@@ -57,22 +57,22 @@ export class PublicodesGenerator {
       cibles.push('est éligible')
     }
 
-    if (this._generateEffectifConditions(this.program)) {
-      publicodes[Publicodes.EFFECTIF] = this._generateEffectifConditions(this.program)
+    if (this._generateEffectifConditions()) {
+      publicodes[Publicodes.EFFECTIF] = this._generateEffectifConditions()
     }
 
-    if (this._generateSectorConditions(this.program)) {
-      publicodes[Publicodes.SECTEUR] = this._generateSectorConditions(this.program)
+    if (this._generateSectorConditions()) {
+      publicodes[Publicodes.SECTEUR] = this._generateSectorConditions()
       cibles.push("est dans un secteur d'activité ciblé")
     }
 
-    if (this._generateObjectifConditions(this.program)) {
-      publicodes[Publicodes.OBJECTIF] = this._generateObjectifConditions(this.program)
+    if (this._generateObjectifConditions()) {
+      publicodes[Publicodes.OBJECTIF] = this._generateObjectifConditions()
       cibles.push('a un objectif ciblé')
     }
 
-    if (this._generateGeographicConditions(this.program)) {
-      publicodes[Publicodes.ZONE_GEO] = this._generateGeographicConditions(this.program)
+    if (this._generateGeographicConditions()) {
+      publicodes[Publicodes.ZONE_GEO] = this._generateGeographicConditions()
     }
 
     if (!this.program['Parcours "Je ne sais pas par où commencer"']) {
@@ -90,7 +90,7 @@ export class PublicodesGenerator {
     Vaucluse: "Provence-Alpes-Côte d'Azur"
   }
 
-  private _generateGeographicConditions(program: Program) {
+  private _generateGeographicConditions() {
     if (this.program['Couverture géographique'].Name == 'Régional') {
       return {
         [Publicodes.ANY]: this.program['Zones géographiques']
@@ -102,7 +102,7 @@ export class PublicodesGenerator {
       const uniqueRegions = Array.from(
         new Set(
           this.program['Zones géographiques'].map((zone) => {
-            if (this._departToRegionMap.hasOwnProperty(zone.Name)) {
+            if (Object.prototype.hasOwnProperty.call(this._departToRegionMap, zone.Name)) {
               return this._departToRegionMap[zone.Name]
             } else {
               console.log(`Warning: ${zone.Name} must be added in departToRegionMap.`)
@@ -124,8 +124,8 @@ export class PublicodesGenerator {
     return null
   }
 
-  private _generateObjectifConditions(program: Program) {
-    const programThemes = program['Thèmes Ciblés']
+  private _generateObjectifConditions() {
+    const programThemes = this.program['Thèmes Ciblés']
     const themeToPublicodesMapping = {
       [ThemeType.Building]: 'est rénover mon bâtiment',
       [ThemeType.Mobility]: 'est la mobilité durable',
@@ -147,7 +147,7 @@ export class PublicodesGenerator {
     }
   }
 
-  private _generateSectorConditions(program: Program) {
+  private _generateSectorConditions() {
     const secteurs = [
       'AAgriculture, sylviculture et pêche',
       'BIndustries extractives',
@@ -174,7 +174,7 @@ export class PublicodesGenerator {
 
     const programNaf: string[] = []
     secteurs.forEach((sector) => {
-      if (program[sector as keyof typeof program] == 1) {
+      if (this.program[sector as keyof typeof this.program] == 1) {
         programNaf.push(sector[0])
       }
     })
@@ -186,14 +186,14 @@ export class PublicodesGenerator {
     return null
   }
 
-  private _generateEffectifConditions(program: Program) {
-    if (program.minEff > 0 || program.maxEff) {
-      let constraint = []
-      if (program.minEff > 0) {
-        constraint.push(`effectif >= ${program.minEff}`)
+  private _generateEffectifConditions() {
+    if (this.program.minEff > 0 || this.program.maxEff) {
+      const constraint = []
+      if (this.program.minEff > 0) {
+        constraint.push(`effectif >= ${this.program.minEff}`)
       }
-      if (program.maxEff) {
-        constraint.push(`effectif <= ${program.maxEff}`)
+      if (this.program.maxEff) {
+        constraint.push(`effectif <= ${this.program.maxEff}`)
       }
       if (constraint) {
         return {
