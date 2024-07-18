@@ -28,8 +28,7 @@ const programStore = useProgramStore()
 const usedTrackStore = useUsedTrackStore()
 
 const programFilters: programFiltersType = programStore.programFilters
-
-const hasAllTag = ref(true)
+let hasAllTag = true
 
 const objectiveTypeTags = computed<TeeDsfrTagProps[]>((): TeeDsfrTagProps[] => {
   const allTag: TeeDsfrTagProps = {
@@ -53,7 +52,7 @@ const objectiveTypeTags = computed<TeeDsfrTagProps[]>((): TeeDsfrTagProps[] => {
 
   if (tags.length === 1) {
     programStore.setObjectiveTypeSelected((tags.shift() as TeeDsfrTagProps).value as string)
-  } else if (tags.length > 1 && hasAllTag.value) {
+  } else if (tags.length > 1 && hasAllTag) {
     tags.unshift(allTag)
   }
 
@@ -78,7 +77,7 @@ onBeforeMount(() => {
   }
 
   if (UsedTrack.isSpecificGoal()) {
-    hasAllTag.value = false
+    hasAllTag = false
   }
 })
 </script>
