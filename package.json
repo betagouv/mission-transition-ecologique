@@ -13,7 +13,7 @@
   "scripts": {
     "dev": "nx run-many -t serve --verbose",
     "dev:start": "PORT=4242 npm run start",
-    "dev:build:start": "npm run build && npm run start:dev",
+    "dev:build:start": "npm run build && npm run dev:start",
     "build": "nx run-many -t build",
     "start": "nx run-many -t start --port $PORT",
     "generate:program": "nx run @tee/data:generate-program",
