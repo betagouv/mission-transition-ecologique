@@ -27,7 +27,7 @@ const requestCreateContact = async (listIds: number[], contact: ContactDetails, 
   const responseResult = await new BrevoAPI().PostContact(requestPayload)
 
   if (responseResult.isErr) {
-    new Monitor().error('Error in Brevo CreateContact api call ' + requestPayload + ' ' + responseResult.error)
+    Monitor.error('Error in Brevo CreateContact api call', { payload: requestPayload, error: responseResult.error })
     return Result.err(responseResult.error)
   }
 
@@ -47,7 +47,7 @@ const requestCreateContact = async (listIds: number[], contact: ContactDetails, 
 const retrieveExistingContactId = async (email: string): Promise<Result<ContactId, Error>> => {
   const responseResult = await new BrevoAPI().GetContact(email)
   if (responseResult.isErr) {
-    new Monitor().error('Error in Brevo GetContact api call ' + email + ' ' + responseResult.error)
+    Monitor.error('Error in Brevo GetContact api call', { payload: email, error: responseResult.error })
 
     return Result.err(responseResult.error)
   }

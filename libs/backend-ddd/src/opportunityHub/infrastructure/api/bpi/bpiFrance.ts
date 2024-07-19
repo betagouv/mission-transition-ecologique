@@ -39,7 +39,7 @@ export class BpiFrance extends OpportunityHubAbstract {
       })
       return Result.ok(response.data)
     } catch (exception: unknown) {
-      new Monitor().error('Error in BPI getToken ' + exception)
+      Monitor.error('Error in BPI getToken', { exception })
       return Result.err(handleException(exception))
     }
   }
@@ -61,11 +61,11 @@ export class BpiFrance extends OpportunityHubAbstract {
       if (response.data) {
         return Maybe.nothing()
       } else {
-        new Monitor().error('Error creating an opportunity at BPI during BPI API Call ' + response)
+        Monitor.error('Error creating an opportunity at BPI during BPI API Call', { BpiResponse: response })
         return Maybe.of(new Error("Erreur à la création d'une opportunité chez BPI durant l'appel BPI. HTTP CODE:" + response.status))
       }
     } catch (exception: unknown) {
-      new Monitor().error('Error creating an opportunity at BPI' + exception)
+      Monitor.error('Error creating an opportunity at BPI', { exception })
       return Maybe.of(handleException(exception))
     }
   }

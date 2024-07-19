@@ -33,7 +33,7 @@ export const requestSireneAPI = async (token: string, siret: string): Promise<Re
     return Result.ok(parseEstablishment(response.data))
   } catch (err: unknown) {
     let error = ensureError(err)
-    new Monitor().error('Error in sirene get siret API call ' + siret + ' ' + err)
+    Monitor.error('Error in sirene get siret API call', { query: siret, error: err })
 
     if (error instanceof AxiosError) {
       if (error.response && error.response.status == 404) {

@@ -76,14 +76,14 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
       })
       const status = response.status
       if (status != 200) {
-        new Monitor().error('Error creating an opportunity at CE during CE API Call ' + response)
+        Monitor.error('Error creating an opportunity at CE during CE API Call', { CeReponse: response })
 
         return Maybe.of(Error('PDE Api Error ' + status))
       } else {
         return Maybe.nothing()
       }
     } catch (exception: unknown) {
-      new Monitor().error('Error creating an opportunity at CE ' + exception)
+      Monitor.error('Error creating an opportunity at CE', { exception })
 
       return Maybe.of(handleException(exception))
     }

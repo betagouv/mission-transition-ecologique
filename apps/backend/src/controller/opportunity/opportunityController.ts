@@ -23,7 +23,7 @@ export class OpportunityController extends Controller {
     const opportunityResult = await new OpportunityService().createOpportunity(requestBody.opportunity, requestBody.optIn)
 
     if (opportunityResult.isErr) {
-      new Monitor().error('Error in createOpportunity, ' + requestBody + ' ' + opportunityResult.error)
+      Monitor.error('Error in createOpportunity', { query: requestBody, error: opportunityResult.error })
       this.throwErrorResponse(opportunityResult, notFoundResponse, requestFailedResponse)
 
       return

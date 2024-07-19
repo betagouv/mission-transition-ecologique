@@ -25,7 +25,7 @@ export class ProgramsController extends Controller {
     const programsResult = programService.getFilteredPrograms(questionnaireData)
 
     if (programsResult.isErr) {
-      new Monitor().error('Error in get programs, ' + questionnaireData + ' ' + programsResult.error)
+      Monitor.error('Error in get programs', { questionnaireData, error: programsResult.error })
       this.throwErrorResponse(programsResult, requestFailedResponse)
       return
     }
@@ -48,7 +48,7 @@ export class ProgramsController extends Controller {
 
     if (!program) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-      new Monitor().error('Error in get Program id, ' + programId)
+      Monitor.error('Error in get Program id', { programId })
       return notFoundResponse(404, { message: `Program with id "${programId}" could not be found` })
     }
 

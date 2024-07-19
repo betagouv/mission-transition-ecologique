@@ -58,7 +58,7 @@ export class SireneController extends Controller {
 
     if (establishmentResult.isErr) {
       const err = establishmentResult.error
-      new Monitor().error('Error in getEstablishmentBySiret, ' + query + ', ' + err)
+      Monitor.error('Error in getEstablishmentBySiret', { query, error: err })
 
       if (err instanceof EstablishmentNotFoundError) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-return

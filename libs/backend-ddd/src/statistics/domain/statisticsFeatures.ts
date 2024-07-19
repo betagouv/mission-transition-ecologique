@@ -53,7 +53,7 @@ export default class StatisticsFeatures {
     const allPrograms = this._programService.getAll()
     const activeProgramsResult = this._programService.getFilteredPrograms({})
     if (activeProgramsResult.isErr) {
-      new Monitor().error('Error generating program statistics ' + activeProgramsResult.error)
+      Monitor.error('Error generating program statistics', { error: activeProgramsResult.error })
       throw activeProgramsResult.error
     }
     return {
@@ -108,7 +108,7 @@ export default class StatisticsFeatures {
     if (opportunitiesDates.isOk) {
       return opportunitiesDates.value
     }
-    new Monitor().error('Error generating Opportunities dates ' + opportunitiesDates.error)
+    Monitor.error('Error generating Opportunities dates ', { error: opportunitiesDates.error })
     return null
   }
 }

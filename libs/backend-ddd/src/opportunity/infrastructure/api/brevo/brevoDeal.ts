@@ -44,7 +44,7 @@ const requestCreateDeal = async (name: string, attributes: DealAttributes): Prom
   }
   const responseResult = await new BrevoAPI().PostDeal(payload)
   if (responseResult.isErr) {
-    new Monitor().error('Error in Brevo PostDeal api call ' + payload + ' ' + responseResult.error)
+    Monitor.error('Error in Brevo PostDeal api call', { payload: payload, error: responseResult.error })
 
     return Result.err(responseResult.error)
   }
@@ -68,7 +68,7 @@ const requestUpdateDeal = async (dealId: OpportunityId, attributes: DealUpdateAt
   })
 
   if (responseResult.isErr) {
-    new Monitor().error('Error in Brevo PatchDeal api call ' + dealId.id + ' ' + attributes + ' ' + responseResult.error)
+    Monitor.error('Error in Brevo PatchDeal api call', { dealID: dealId.id, attributes, error: responseResult.error })
   }
 
   return Maybe.of(responseResult.isErr ? responseResult.error : null)
@@ -83,7 +83,7 @@ const associateBrevoDealToContact = async (dealId: OpportunityId, contactId: num
   })
 
   if (responsePatch.isErr) {
-    new Monitor().error('Error in Brevo LinkDeal (to contact) api call ' + dealIdStr + ' ' + contactId + ' ' + responsePatch.error)
+    Monitor.error('Error in Brevo LinkDeal (to contact) api call', { dealId: dealIdStr, contactId, error: responsePatch.error })
     return Maybe.of(responsePatch.error)
   } else {
     return Maybe.nothing()
@@ -129,9 +129,9 @@ const getBrevoCreationDates = async (): Promise<Result<Date[], Error>> => {
   if (response.isOk) {
     const brevoDealResponse: BrevoDealResponse = response.value.data as BrevoDealResponse
     if (!brevoDealResponse.items || brevoDealResponse.items.length === 0) {
-      new Monitor().error("Brevo deal list doesn't exist or is empty empty" + brevoDealResponse)
+      Monitor.error("Brevo deal list doesn't exist or is empty empty", { BrevoResponse: brevoDealResponse })
 
-      return Result.err(new Error("Brevo deal list doesn't exist or is empty empty"))
+      return Result.err(new Error("Brevo deal list doesn't exist or is empty"))
     }
     const dateList: Date[] = []
     for (const deal of brevoDealResponse.items) {
@@ -140,7 +140,7 @@ const getBrevoCreationDates = async (): Promise<Result<Date[], Error>> => {
     }
     return Result.ok(dateList)
   } else {
-    new Monitor().error('Error in brevo GetDeal api call, ' + response.error)
+    Monitor.error('Error in brevo GetDeal api call', { error: response.error })
     return Result.err(response.error)
   }
 }
@@ -163,7 +163,7 @@ const getDailyOpportunitiesByContactId = async (contactId: number): Promise<Resu
     }
     return Result.ok(selectedDeals)
   } else {
-    new Monitor().error('Error in brevo GetDeal api call, ' + response.error)
+    Monitor.error('Error in brevo GetDeal api call', { error: response.error })
     return Result.err(response.error)
   }
 }

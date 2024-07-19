@@ -40,7 +40,7 @@ export default class OpportunityFeatures {
     opportunity = maybeFullOpportunity.value
     const contactIdResult = await this._contactRepository.createOrUpdate(opportunity as ContactDetails, optIn)
     if (contactIdResult.isErr) {
-      new Monitor().error('Error during contact creation ' + contactIdResult.error)
+      Monitor.error('Error during contact creation', { error: contactIdResult.error })
 
       return Result.err(contactIdResult.error)
     }
@@ -62,9 +62,9 @@ export default class OpportunityFeatures {
     )
     if (opportunityResult.isErr || program === undefined) {
       if (opportunityResult.isErr) {
-        new Monitor().error('Error during Opportunity Creation ' + opportunityResult.error)
+        Monitor.error('Error during Opportunity Creation', { error: opportunityResult.error })
       } else {
-        new Monitor().error('Error during Opportunity Creation, program undefined')
+        Monitor.error('Error during Opportunity Creation, program undefined')
       }
       return opportunityResult
     }
@@ -109,7 +109,7 @@ export default class OpportunityFeatures {
         if (opportunityHubResult == Maybe.nothing()) {
           const opportunityUpdateErr = await this._updateOpportunitySentToHub(opportunityId, !opportunityHubResult.isJust)
           if (opportunityUpdateErr.isJust) {
-            new Monitor().warning('Opportunity status not updated after a transmission to a Hub ' + opportunityUpdateErr.value)
+            Monitor.warning('Opportunity status not updated after a transmission to a Hub', { error: opportunityUpdateErr.value })
           }
         }
       })
@@ -153,7 +153,7 @@ export default class OpportunityFeatures {
   private _sendReturnReceipt(opportunity: Opportunity, programOrProject: ProgramType | Project) {
     void this._mailRepository.sendReturnReceipt(opportunity, programOrProject).then((hasError) => {
       if (hasError) {
-        new Monitor().warning('Error while sending a return receipt ' + hasError)
+        Monitor.warning('Error while sending a return receipt', { error: hasError })
       }
     })
   }

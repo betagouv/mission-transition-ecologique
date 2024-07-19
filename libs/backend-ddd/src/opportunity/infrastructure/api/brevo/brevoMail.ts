@@ -22,7 +22,7 @@ export default class BrevoMail {
     try {
       await this._api.sendTransacEmail(this._email(opportunity, programOrProject))
     } catch (error: unknown) {
-      new Monitor().error('Error in Brevo SendTransacEmail api call ' + this._email(opportunity, program) + ' ' + error)
+      Monitor.error('Error in Brevo SendTransacEmail api call', { email: this._email(opportunity, programOrProject), error })
       return Maybe.just(error as Error)
     }
   }

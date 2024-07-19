@@ -2,15 +2,33 @@ import * as Sentry from '@sentry/node'
 import Config from '../../../config'
 
 export default class Monitor {
-  error(details: string) {
-    Sentry.captureMessage(details, 'error')
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  static error(message: string, data?: any) {
+    Sentry.captureMessage(message, (scope) =>
+      scope.addBreadcrumb({
+        type: 'error',
+        category: 'error',
+        level: 'error',
+        data: data
+      })
+    )
   }
-  warning(details: string) {
-    Sentry.captureMessage(details, 'warning')
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  static warning(message: string, data?: any) {
+    Sentry.captureMessage(message, (scope) =>
+      scope.addBreadcrumb({
+        type: 'warning',
+        category: 'warning',
+        level: 'warning',
+        data: data
+      })
+    )
   }
-  debug(details: string) {
+
+  static debug(message: string) {
     if (Config.DEBUG) {
-      console.log('debugging log : ', details)
+      console.log('debugging log : ', message)
     }
   }
 }
