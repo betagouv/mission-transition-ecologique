@@ -6,8 +6,8 @@ import { Theme } from '../../theme/themes'
 export class BaserowProject extends Baserow {
   private readonly _projectTableId = 305253
 
-  constructor(_imageDirectory: string) {
-    super(_imageDirectory)
+  constructor(imageDirectory: string) {
+    super(imageDirectory)
   }
 
   async getValidProjects(): Promise<RawProject[]> {
@@ -24,7 +24,7 @@ export class BaserowProject extends Baserow {
         const result = await this._convertToRawProjectType(project, baserowThemes)
         projects.push(result)
         console.info(`successfully loaded project ${project.id}`)
-        await this._delay(300)
+        await this._delay(100)
       } catch (error) {
         console.error(`Error processing project ${project.id}:`, error)
       }
