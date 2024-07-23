@@ -1,7 +1,7 @@
 import { Baserow } from './baserow'
-import { RawProject } from '../../project/types'
+import { RawProject } from '../../project/types/domain'
 import { LinkObject, Project } from './types'
-import { Theme } from '../../theme/themes'
+import { Theme } from '../../theme/types/domain'
 
 export class BaserowProject extends Baserow {
   private readonly _projectTableId = 305253

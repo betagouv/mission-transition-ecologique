@@ -1,10 +1,10 @@
 import path from 'path'
 import fs from 'fs'
 import { BaserowProject } from '../common/baserow/project'
-import { RawProject } from './types'
+import { RawProject } from './types/domain'
 import { jsonPrograms } from '../../generated/index'
 import { ProgramType } from '../index'
-import { ThemeId } from '../theme/themes'
+import { ThemeId } from '../theme/types/export'
 
 export class ProjectFeatures {
   private readonly _outputDirectory: string = path.join(__dirname, '../../static/')

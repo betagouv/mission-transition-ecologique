@@ -1,7 +1,10 @@
-import { DataProgram } from '../../program/types'
+import { DataProgram } from '../../program/types/domain'
 
-export interface Project {
+export interface Id {
   id: number
+}
+
+export interface Project extends Id {
   order: string
   Nom: string
   'Description courte': string
@@ -18,16 +21,11 @@ export interface Project {
   Prio: number
 }
 
-export interface Id {
-  id: number
-}
-export interface LinkObject {
-  id: number
+export interface LinkObject extends Id {
   value: string
 }
 
-export interface ImageTable {
-  id: number
+export interface ImageTable extends Id {
   Titre: string
   'Alt-text': string
   Image: Image[]

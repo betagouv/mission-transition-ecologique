@@ -8,9 +8,3 @@ export enum ThemeId {
   EcoDesign = 'eco-design',
   RH = 'rh'
 }
-
-export interface Theme {
-  id: number
-  Nom: string
-  'Nom (Tech)': ThemeId
-}

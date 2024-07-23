@@ -1,8 +1,8 @@
 import fs from 'fs'
 import { Baserow } from './baserow'
 import { Program } from './types'
-import { DataProgram, Status, DataProgramType, Operator, GeographicCoverage, GeographicAreas } from '../../program/types'
-import { Theme } from '../../theme/themes'
+import { DataProgram, Status, DataProgramType, Operator, GeographicCoverage, GeographicAreas } from '../../program/types/domain'
+import { Theme } from '../../theme/types/domain'
 
 export class BaserowProgram extends Baserow {
   private readonly _operatorTableId = 314410

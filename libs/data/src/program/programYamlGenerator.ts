@@ -1,7 +1,7 @@
 import path from 'path'
 import fs from 'fs'
 import * as yaml from 'js-yaml'
-import { YamlObjective, DataProgram, DataProgramType, Status, YamlImage } from './types'
+import { YamlObjective, DataProgram, DataProgramType, Status, YamlImage } from './types/domain'
 import { BaserowProgram } from '../common/baserow/program'
 import { PublicodesGenerator } from './publicodesGenerator'
 

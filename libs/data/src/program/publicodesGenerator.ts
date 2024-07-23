@@ -1,7 +1,7 @@
 import path from 'path'
 import fs from 'fs'
-import { DataProgram, Publicodes } from './types'
-import { ThemeId } from '../theme/themes'
+import { DataProgram, Publicodes } from './types/domain'
+import { ThemeId } from '../theme/types/export'
 
 export class PublicodesGenerator {
   constructor(private _program: DataProgram) {}

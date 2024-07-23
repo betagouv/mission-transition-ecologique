@@ -1,69 +1,4 @@
-import { Theme } from '../theme/themes'
-
-export enum ProgramAidType {
-  acc = 'accompagnement',
-  train = 'formation',
-  fund = 'financement',
-  loan = 'prêt',
-  tax = 'avantage fiscal'
-}
-
-export enum ProgramOperatorType {
-  ADEME = 'ADEME',
-  ASP = 'ASP',
-  BPI = 'Bpifrance',
-  CCI = 'CCI',
-  CMA = 'CMA',
-  DDFIP = 'DDFIP',
-  LAPOSTE = 'La Poste',
-  MTES = 'Ministère de la Transition Écologique et Solidaire',
-  ORACE = 'ORACE',
-  BREIZHFAB = 'Breizh Fab',
-  ECOCO2 = 'EcoCO2'
-}
-
-export enum DataProgramType {
-  Accompagnement = 'Accompagnement', // 1724678
-  TaxAdvantage = 'Avantage fiscal', // 1724679
-  Financing = 'Financement', // 1724680
-  Loan = 'Prêt', // 1724681
-  Training = 'Formation', // 1724682
-  ActionTraining = 'Formation-Action', // 1724683
-  Awareness = 'Sensibilisation', // 1724684
-  Undefined = 'Undefined'
-}
-
-export enum Status {
-  UxWritingValid = 'UX writing valid', // 1724685
-  TaxAdvantage = 'Data valid', // 1724686
-  ReadyForProd = 'Prêt pour la prod', // 1724687
-  InProd = 'En prod' // 1724688
-}
-
-export interface Operator {
-  id: number
-  Tag: string
-  Nom: string
-}
-
-export interface GeographicCoverage {
-  id: number
-  Name: string
-}
-
-export interface GeographicAreas {
-  id: number
-  Name: string
-}
-
-export interface YamlObjective {
-  description: string
-  liens?: { lien: string; texte: string }[]
-}
-
-export interface YamlImage {
-  illustration: string
-}
+import { Theme } from '../../theme/types/domain'
 
 export interface DataProgram {
   id: number
@@ -197,4 +132,47 @@ export enum Publicodes {
   PROPRIO = 'entreprise . est propriétaire de ses locaux',
   ALL = 'toutes ces conditions',
   ANY = 'une de ces conditions'
+}
+
+export interface YamlImage {
+  illustration: string
+}
+
+export interface YamlObjective {
+  description: string
+  liens?: { lien: string; texte: string }[]
+}
+
+export interface Operator {
+  id: number
+  Tag: string
+  Nom: string
+}
+
+export interface GeographicCoverage {
+  id: number
+  Name: string
+}
+
+export interface GeographicAreas {
+  id: number
+  Name: string
+}
+
+export enum DataProgramType {
+  Accompagnement = 'Accompagnement',
+  TaxAdvantage = 'Avantage fiscal',
+  Financing = 'Financement',
+  Loan = 'Prêt',
+  Training = 'Formation',
+  ActionTraining = 'Formation-Action',
+  Awareness = 'Sensibilisation',
+  Undefined = 'Undefined'
+}
+
+export enum Status {
+  UxWritingValid = 'UX writing valid',
+  TaxAdvantage = 'Data valid',
+  ReadyForProd = 'Prêt pour la prod',
+  InProd = 'En prod'
 }
