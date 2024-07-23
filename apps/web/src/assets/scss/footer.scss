@@ -14,6 +14,7 @@
     &-logos {
       flex-direction: column;
       align-items: center;
+
       @include media-query.respond-from('xl') {
         flex-direction: row;
       }
@@ -27,6 +28,7 @@
 
   &__body {
     flex-direction: column;
+
     @include media-query.respond-from('lg') {
       flex-direction: row;
       justify-content: space-between;
