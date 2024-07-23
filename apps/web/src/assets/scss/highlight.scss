@@ -7,7 +7,7 @@
     @each $color, $properties in setting.$colors {
       &--#{$color} {
         @if meta.type-of($properties) == map {
-          background-image: linear-gradient(0deg, map-get($properties, "background-color"), map-get($properties, "background-color"));
+          background-image: linear-gradient(0deg, map.get($properties, "background-color"), map.get($properties, "background-color"));
         } @else {
           background: linear-gradient(0deg, $properties, $properties);
         }
@@ -19,7 +19,7 @@
     @each $color, $properties in setting.$colors {
       &--#{$color} {
         @if meta.type-of($properties) == map {
-          background-color: map-get($properties, "background-color");
+          background-color: map.get($properties, "background-color");
         } @else {
           background-color: $properties;
         }

@@ -7,7 +7,7 @@
   @each $color, $properties in setting.$colors {
     &--#{$color} {
       @if meta.type-of($properties) == map {
-        color: map-get($properties, "color");
+        color: map.get($properties, "color");
       } @else {
         color: $properties;
       }

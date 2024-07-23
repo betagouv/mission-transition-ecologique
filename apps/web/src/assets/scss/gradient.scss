@@ -5,7 +5,7 @@
 @each $color, $properties in setting.$colors {
   .fr-gradient--#{$color} {
     @if meta.type-of($properties) == map {
-      background-image: linear-gradient(to bottom, transparent, map-get($properties, "background-color"));
+      background-image: linear-gradient(to bottom, transparent, map.get($properties, "background-color"));
     } @else {
       background-image: linear-gradient(to bottom, transparent, $properties);
     }

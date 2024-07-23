@@ -17,14 +17,14 @@ Pour utiliser les couleurs personnalisées, vous pouvez indiquer leur nom de var
 }
 ```
 
-2. Utilisation à travers le tableau `$colors` et de la fonction `map-get`. 
+2. Utilisation à travers le tableau `$colors` et de la fonction `map.get`. 
 
 Exemple, pour obtenir la couleur de fond pour "yellow" :
 ```scss
 @use './src/assets/scss/setting';
 
 .element {
-  background-color: map-get(map-get(setting.$colors, "yellow"), "background-color");
+  background-color: map.get(map.get(setting.$colors, "yellow"), "background-color");
 }
 ```
 
@@ -36,7 +36,7 @@ Exemple, pour définir la couleur de fond pour chaque couleur :
 
 @each $color, $properties in setting.$colors {
   .element-#{$color} {
-    background-color: map-get($properties, "background-color");
+    background-color: map.get($properties, "background-color");
   }
 }
 ```

@@ -225,13 +225,13 @@ function createData(): TrackOptionItem {
 }
 
 .is-selected {
-  border: solid thin map-get(map-get(setting.$colors, 'blue-france'), 'color');
-  color: map-get(map-get(setting.$colors, 'blue-france'), 'color');
+  border: solid thin map.get(map.get(setting.$colors, 'blue-france'), 'color');
+  color: map.get(map.get(setting.$colors, 'blue-france'), 'color');
   background-color: #f5f5f5;
 }
 
 .is-title-selected {
-  color: map-get(map-get(setting.$colors, 'blue-france'), 'color');
+  color: map.get(map.get(setting.$colors, 'blue-france'), 'color');
 }
 
 .thinner-text {
@@ -240,6 +240,6 @@ function createData(): TrackOptionItem {
 
 .result-number {
   font-style: italic;
-  color: map-get(map-get(setting.$colors, 'blue-france'), 'color');
+  color: map.get(map.get(setting.$colors, 'blue-france'), 'color');
 }
 </style>
