@@ -117,7 +117,6 @@ import { type RouteLocationRaw } from 'vue-router'
 interface ProjectListProps {
   sortedProjects?: Project[]
 }
-
 const props = defineProps<ProjectListProps>()
 
 const navigationStore = useNavigationStore()
