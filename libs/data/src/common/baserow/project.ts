@@ -6,6 +6,10 @@ import { Theme } from '../../theme/themes'
 export class BaserowProject extends Baserow {
   private readonly _projectTableId = 305253
 
+  constructor(_imageDirectory: string) {
+    super(_imageDirectory)
+  }
+
   async getValidProjects(): Promise<RawProject[]> {
     const baserowProjects = await this._getTableData<Project>(this._projectTableId)
     const validBaserowProjects = baserowProjects.filter((value) => {

@@ -15,7 +15,7 @@ export class ProjectFeatures {
     this._programs = jsonPrograms as unknown as ProgramType[]
   }
 
-  async buildProjectsJSONOutputs(): Promise<void> {
+  async generateProjectsJson(): Promise<void> {
     this._resetImageFolder()
 
     console.log(`Start loading Baserow data and creating the project images`)
