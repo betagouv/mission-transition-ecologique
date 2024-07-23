@@ -14,7 +14,7 @@
     @each $color, $properties in setting.$colors {
       &--#{$color} {
         @if meta.type-of($properties) == map {
-          box-shadow: inset 0 0 0 1px map.get($properties, "background-color");
+          box-shadow: inset 0 0 0 1px map-get($properties, "background-color");
         } @else {
           box-shadow: inset 0 0 0 1px $properties;
         }

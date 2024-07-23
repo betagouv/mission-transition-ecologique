@@ -11,7 +11,7 @@
 
 @mixin get-background-color-by-opacity($properties, $opacity: 100%) {
   @if meta.type-of($properties) == map {
-    background-color: scaleAlphaToHex(map.get($properties, "background-color"), $opacity);
+    background-color: scaleAlphaToHex(map-get($properties, "background-color"), $opacity);
   } @else {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
