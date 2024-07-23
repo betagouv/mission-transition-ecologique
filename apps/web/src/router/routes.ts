@@ -52,10 +52,17 @@ export const routes = [
         beforeEnter: [Hook.setUsedTracks, Hook.hasUsedTracks]
       },
       {
-        path: 'resultat/projets/:projectSlug',
+        path: 'resultat/projet/:projectSlug',
         component: ProjectDetail as Component,
         name: RouteName.ProjectResultDetail,
         beforeEnter: [Hook.hasProject, Hook.setUsedTracks, Hook.hasUsedTracks],
+        props: true
+      },
+      {
+        path: 'resultat/projet/:projectSlug/:programId',
+        component: ProgramDetail as Component,
+        name: RouteName.ProgramFromProjectDetail,
+        beforeEnter: [Hook.hasProject, Hook.hasProgram, Hook.setUsedTracks, Hook.hasUsedTracks],
         props: true
       },
       {

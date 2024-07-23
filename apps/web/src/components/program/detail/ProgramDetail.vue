@@ -3,7 +3,7 @@
     v-if="!isCatalogDetail"
     :bg-color="Color.greenLightnessed"
     :bg-bar-color="Color.greenLighted"
-    :previous-route="routeToPrograms"
+    :previous-route="getRouteToPreviousPage()"
     message="Cette aide correspond à vos critères d’éligibilité"
     message-icon="fr-icon-checkbox-circle-fill"
   />
@@ -288,6 +288,7 @@ const isCatalogDetail = navigationStore.isByRouteName(RouteName.CatalogDetail)
 
 interface Props {
   programId: string
+  projectSlug?: string
 }
 const props = defineProps<Props>()
 
@@ -321,14 +322,23 @@ const isProgramAutonomous = computed(() => {
   return program.value?.[`activable en autonomie`] == 'oui'
 })
 
-const routeToPrograms = {
-  name: isCatalogDetail ? RouteName.Catalog : RouteName.QuestionnaireResult,
-  hash: '#' + props.programId,
-  query: isCatalogDetail ? undefined : navigationStore.query
+const getRouteToPreviousPage = () => {
+  const routeToPrograms = {
+    hash: '#' + props.programId,
+    query: isCatalogDetail ? undefined : navigationStore.query
+  }
+  if (isCatalogDetail) {
+    return { ...routeToPrograms, name: RouteName.Catalog }
+  }
+  if (navigationStore.isByRouteName(RouteName.ProgramFromProjectDetail)) {
+    return { name: RouteName.ProjectResultDetail, params: { projectSlug: props.projectSlug }, ...routeToPrograms }
+  }
+
+  return { name: RouteName.QuestionnaireResult, ...routeToPrograms }
 }
 
 const goToPrograms = async () => {
-  await router.push(routeToPrograms)
+  await router.push(getRouteToPreviousPage())
 }
 
 onBeforeMount(() => {
