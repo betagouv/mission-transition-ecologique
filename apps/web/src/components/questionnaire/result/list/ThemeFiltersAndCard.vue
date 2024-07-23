@@ -2,10 +2,7 @@
   <div class="fr-col-12">
     <div class="fr-grid-row fr-grid-row--center fr-mt-2w">
       <div class="fr-container">
-        <div
-          v-if="showThemeFilterComponent"
-          class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-mt-3v"
-        >
+        <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-mt-3v">
           <ProgramFilterByTheme :objective="objective as Objective" />
         </div>
       </div>
@@ -34,12 +31,6 @@ import UsedTrack from '@/utils/track/usedTrack'
 import { Theme } from '@/utils/theme'
 import { useProgramStore } from '@/stores/program'
 
-interface Props {
-  hasSpinner?: boolean
-}
-
-const props = defineProps<Props>()
-
 const programStore = useProgramStore()
 
 const hasObjectiveCard = computed(() => {
@@ -58,11 +49,7 @@ const objective = computed(() => {
   return ''
 })
 
-const showThemeFilterComponent = computed(() => {
-  return !props.hasSpinner
-})
-
 const showObjectiveCardComponent = computed(() => {
-  return hasObjectiveCard.value && !props.hasSpinner
+  return hasObjectiveCard.value
 })
 </script>

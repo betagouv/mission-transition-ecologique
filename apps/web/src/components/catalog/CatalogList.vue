@@ -22,8 +22,12 @@
   <!-- PROGRAMS AS LIST OF CARDS -->
   <div class="fr-container--fluid fr-container--fluid--no-overflow fr-mt-6v">
     <div class="fr-grid-row fr-grid-row--center">
+      <TeeSpinner
+        v-if="hasSpinner"
+        scale="6"
+      />
       <ResultListNoResults
-        v-if="showNoResultsComponent"
+        v-else-if="showNoResultsComponent"
         :has-error="hasError"
         :has-spinner="hasSpinner"
         :count-items="countPrograms"
@@ -132,7 +136,7 @@ const showObjectiveCardComponent = computed(() => {
 })
 
 onBeforeMount(async () => {
-  const result = useUsedTrackStore().hasUsedTracks() ? await programStore.programsByUsedTracks : await programStore.programs
+  const result = await programStore.programs
   if (result.isOk) {
     programs.value = result.value
   } else {
