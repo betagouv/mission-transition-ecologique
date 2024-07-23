@@ -5,23 +5,23 @@ export interface Project {
   order: string
   Nom: string
   'Description courte': string
-  Image: LinkedObject[]
+  Image: LinkObject[]
   'Qu’est-ce que c’est ?': string
   'Pour aller plus loin': string
   Titre: string
-  'Projets complémentaires': LinkedObject[]
-  'Thématique principale': LinkedObject[]
+  'Projets complémentaires': LinkObject[]
+  'Thématique principale': LinkObject[]
   NameTag: string
   Publié: boolean
-  'Thématiques secondaires': LinkedObject[]
-  Dispositifs: LinkedObject[]
+  'Thématiques secondaires': LinkObject[]
+  Dispositifs: LinkObject[]
   Prio: number
 }
 
 export interface Id {
   id: number
 }
-export interface LinkedObject {
+export interface LinkObject {
   id: number
   value: string
 }
@@ -49,11 +49,11 @@ export interface Program
     | 'Zones géographiques'
     | 'Thèmes Ciblés'
   > {
-  Statuts: LinkedObject[]
-  "Nature de l'aide": LinkedObject
-  'Opérateur de contact': LinkedObject[]
-  'Autres opérateurs': LinkedObject[]
-  'Couverture géographique': LinkedObject[]
-  'Zones géographiques': LinkedObject[]
-  'Thèmes Ciblés': LinkedObject[]
+  Statuts: LinkObject[]
+  "Nature de l'aide": LinkObject
+  'Opérateur de contact': LinkObject[]
+  'Autres opérateurs': LinkObject[]
+  'Couverture géographique': LinkObject[]
+  'Zones géographiques': LinkObject[]
+  'Thèmes Ciblés': LinkObject[]
 }

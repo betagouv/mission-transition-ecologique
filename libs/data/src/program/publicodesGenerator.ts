@@ -4,15 +4,12 @@ import { DataProgram, Publicodes } from './types'
 import { ThemeId } from '../theme/themes'
 
 export class PublicodesGenerator {
-  constructor(private program: DataProgram) {}
+  constructor(private _program: DataProgram) {}
 
-  public generatePublicodes(): { [key: string]: any } {
-    const filePath = path.join(__dirname, 'publicodesStaticData.json')
-    const staticData = JSON.parse(fs.readFileSync(filePath, 'utf-8'))
-
-    let publicodes: { [key: string]: any }
-    if (this.program['Id fiche dispositif'] in staticData) {
-      publicodes = staticData[this.program['Id fiche dispositif']]
+  public generatePublicodes(): { [key: string]: unknown } {
+    let publicodes: { [key: string]: unknown }
+    if (this._isSpecialCase()) {
+      publicodes = this._isSpecialCase() as { [key: string]: unknown }
     } else {
       publicodes = this._generatePublicodes()
     }
@@ -20,19 +17,27 @@ export class PublicodesGenerator {
     return publicodes
   }
 
-  private _generatePublicodes(): { [key: string]: any } {
-    const publicodes: any = {}
+  private _isSpecialCase(): { [key: string]: unknown } | null {
+    const filePath = path.join(__dirname, 'publicodesStaticData.json')
+    const staticData = JSON.parse(fs.readFileSync(filePath, 'utf-8'))
+
+    if (this._program['Id fiche dispositif'] in staticData) return staticData[this._program['Id fiche dispositif']]
+    return null
+  }
+
+  private _generatePublicodes(): { [key: string]: unknown } {
+    const publicodes: { [key: string]: unknown } = {}
     const cibles: string[] = []
     const eligibility: any = {}
     const eligibilityConditions: any = []
     publicodes[Publicodes.CIBLE] = { [Publicodes.ALL]: cibles }
 
-    if (this.program.DISPOSITIF_DATE_DEBUT || this.program.DISPOSITIF_DATE_FIN) {
-      if (this.program.DISPOSITIF_DATE_DEBUT && this.program.DISPOSITIF_DATE_FIN) {
+    if (this._program.DISPOSITIF_DATE_DEBUT || this._program.DISPOSITIF_DATE_FIN) {
+      if (this._program.DISPOSITIF_DATE_DEBUT && this._program.DISPOSITIF_DATE_FIN) {
         eligibility['applicable si'] = {
           [Publicodes.ALL]: ['dispositif . début de validité <= date du jour', 'date du jour <= dispositif . fin de validité']
         }
-      } else if (this.program.DISPOSITIF_DATE_DEBUT) {
+      } else if (this._program.DISPOSITIF_DATE_DEBUT) {
         eligibility['applicable si'] = 'dispositif . début de validité <= date du jour'
       } else {
         eligibility['applicable si'] = 'date du jour <= dispositif . fin de validité'
@@ -42,7 +47,7 @@ export class PublicodesGenerator {
     if (this._generateEffectifConditions()) {
       eligibilityConditions.push('a un effectif éligible')
     }
-    if (this.program['Couverture géographique'].Name != 'National') {
+    if (this._program['Couverture géographique'].Name != 'National') {
       eligibilityConditions.push(Publicodes.ZONE_GEO)
     }
 
@@ -75,11 +80,11 @@ export class PublicodesGenerator {
       publicodes[Publicodes.ZONE_GEO] = this._generateGeographicConditions()
     }
 
-    if (!this.program['Parcours "Je ne sais pas par où commencer"']) {
+    if (!this._program['Parcours "Je ne sais pas par où commencer"']) {
       cibles.push('questionnaire . parcours = objectif précis')
     }
 
-    if (this.program.Propriétaire && this.program.Propriétaire != '*') {
+    if (this._program.Propriétaire && this._program.Propriétaire != '*') {
       cibles.push(Publicodes.PROPRIO)
     }
 
@@ -91,21 +96,21 @@ export class PublicodesGenerator {
   }
 
   private _generateGeographicConditions() {
-    if (this.program['Couverture géographique'].Name == 'Régional') {
+    if (this._program['Couverture géographique'].Name == 'Régional') {
       return {
-        [Publicodes.ANY]: this.program['Zones géographiques']
+        [Publicodes.ANY]: this._program['Zones géographiques']
           .map((zone) => `région = ${zone.Name}`)
           .sort((a, b) => a.localeCompare(b, 'fr-FR'))
       }
     }
-    if (this.program['Couverture géographique'].Name == 'Départemental') {
+    if (this._program['Couverture géographique'].Name == 'Départemental') {
       const uniqueRegions = Array.from(
         new Set(
-          this.program['Zones géographiques'].map((zone) => {
+          this._program['Zones géographiques'].map((zone) => {
             if (Object.prototype.hasOwnProperty.call(this._departToRegionMap, zone.Name)) {
               return this._departToRegionMap[zone.Name]
             } else {
-              console.log(`Warning: ${zone.Name} must be added in departToRegionMap.`)
+              console.error(`Error: ${zone.Name} must be added in departToRegionMap.`)
               return null
             }
           })
@@ -115,17 +120,17 @@ export class PublicodesGenerator {
         [Publicodes.ANY]: uniqueRegions.map((region) => `région = ${region}`).sort((a, b) => a.localeCompare(b, 'fr-FR'))
       }
     }
-    if (this.program['Couverture géographique'].Name == 'National') {
+    if (this._program['Couverture géographique'].Name == 'National') {
       return null
     }
-    console.log(
+    console.warn(
       'Warning: Region type non handled in publicode automatic generator.\nYou either need to update the script or to handle your program manually.'
     )
     return null
   }
 
   private _generateObjectifConditions() {
-    const programThemes = this.program['Thèmes Ciblés']
+    const programThemes = this._program['Thèmes Ciblés']
     const themeToPublicodesMapping = {
       [ThemeId.Building]: 'est rénover mon bâtiment',
       [ThemeId.Mobility]: 'est la mobilité durable',
@@ -174,7 +179,7 @@ export class PublicodesGenerator {
 
     const programNaf: string[] = []
     secteurs.forEach((sector) => {
-      if (this.program[sector as keyof typeof this.program] == 1) {
+      if (this._program[sector as keyof typeof this._program] == 1) {
         programNaf.push(sector[0])
       }
     })
@@ -187,13 +192,13 @@ export class PublicodesGenerator {
   }
 
   private _generateEffectifConditions() {
-    if (this.program.minEff > 0 || this.program.maxEff) {
+    if (this._program.minEff > 0 || this._program.maxEff) {
       const constraint = []
-      if (this.program.minEff > 0) {
-        constraint.push(`effectif >= ${this.program.minEff}`)
+      if (this._program.minEff > 0) {
+        constraint.push(`effectif >= ${this._program.minEff}`)
       }
-      if (this.program.maxEff) {
-        constraint.push(`effectif <= ${this.program.maxEff}`)
+      if (this._program.maxEff) {
+        constraint.push(`effectif <= ${this._program.maxEff}`)
       }
       if (constraint) {
         return {

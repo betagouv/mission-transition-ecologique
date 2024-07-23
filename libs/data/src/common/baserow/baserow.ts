@@ -4,7 +4,7 @@ import fs from 'fs'
 import path from 'path'
 import sharp from 'sharp'
 import { RawProject } from '../../project/types'
-import { Id, ImageTable, LinkedObject as LinkObject, Program, Project } from './types'
+import { Id, ImageTable, LinkObject, Program, Project } from './types'
 import { DataProgram, Status, DataProgramType, Operator, GeographicCoverage, GeographicAreas } from '../../program/types'
 import { Theme } from '../../theme/themes'
 
@@ -16,10 +16,10 @@ export class Baserow {
   private readonly _projectTableId = 305253
   private readonly _themeTableId = 305258
   private readonly _imageTableId = 315189
-  private _operatorTableId = 314410
-  private _geographicCoverageTableId = 314470
-  private _geographicAreasTableId = 314474
-  private _programTableId = 314437
+  private readonly _operatorTableId = 314410
+  private readonly _geographicCoverageTableId = 314470
+  private readonly _geographicAreasTableId = 314474
+  private readonly _programTableId = 314437
   private readonly _axiosHeader = {
     headers: {
       Authorization: `Token ${this._apiToken}`
@@ -33,15 +33,15 @@ export class Baserow {
   async getValidProjects(): Promise<RawProject[]> {
     const baserowProjects = await this._getTableData<Project>(this._projectTableId)
     const validBaserowProjects = baserowProjects.filter((value) => {
-      return value.Publié || true // TODO delete or true when there will be real data in baserow !
+      return value.Publié
     })
 
-    const baserawThemes = await this._getTableData<Theme>(this._themeTableId)
+    const baserowThemes = await this._getTableData<Theme>(this._themeTableId)
 
     const projects: RawProject[] = []
     for (const project of validBaserowProjects) {
       try {
-        const result = await this._convertToRawProjectType(project, baserawThemes)
+        const result = await this._convertToRawProjectType(project, baserowThemes)
         projects.push(result)
         console.info(`successfully loaded project ${project.id}`)
         await this._delay(300)
@@ -57,24 +57,28 @@ export class Baserow {
     if (useLocalRawData) {
       try {
         const data = fs.readFileSync('program_tmp.json', 'utf-8')
+        console.log('Using cached Baserow data')
         return JSON.parse(data) as DataProgram[]
       } catch {
-        // known empty bloc, comment for the linter!
+        console.log('Attempting to use cached baserow data but no cached data has been found.')
       }
     }
 
-    const allBaserowPrograms = await this._getTableData<Program>(this._programTableId)
+    const baserowPrograms = await this._getTableData<Program>(this._programTableId)
     const operators = await this._getTableData<Operator>(this._operatorTableId)
     const geographicCoverages = await this._getTableData<GeographicCoverage>(this._geographicCoverageTableId)
     const geographicAreas = await this._getTableData<GeographicAreas>(this._geographicAreasTableId)
     const themes = await this._getTableData<Theme>(this._themeTableId)
 
-    const dataPrograms = allBaserowPrograms.map((baserowProgram) =>
+    const dataPrograms = baserowPrograms.map((baserowProgram) =>
       this._convertToDataProgram(baserowProgram, operators, geographicCoverages, geographicAreas, themes)
     )
 
     try {
       fs.writeFileSync('program_tmp.json', JSON.stringify(dataPrograms, null, 2))
+      console.log(
+        'All baserow relevant data has been cached.\nIf you are working on the code, you can and should use the cached data by calling getPrograms with true (in ProgramYamlGenerator.ts, line 14'
+      )
     } catch {
       // known empty bloc, comment for the linter!
     }
@@ -220,11 +224,11 @@ export class Baserow {
     throw Error('Baserow token not found.')
   }
 
-  private _replaceLinkedObjectbyTableData<T extends Id>(links: LinkObject[], referencedTableData: T[]): T[] {
+  private _replaceLinkObjectByTableData<T extends Id>(links: LinkObject[], referencedTableData: T[]): T[] {
     const tableData = links.map((link) => referencedTableData.find((object) => link.id === object.id))
 
     if (tableData.includes(undefined)) {
-      console.log("warning, a baserow link isn't defined, it should never happen", links)
+      console.warn("warning, a baserow link isn't defined, it should never happen", links)
     }
 
     return tableData.filter((operator) => operator !== undefined) as T[]
@@ -236,7 +240,7 @@ export class Baserow {
     geographicCoverages: GeographicCoverage[],
     geographicAreas: GeographicAreas[],
     themes: Theme[]
-  ): any {
+  ): DataProgram {
     const {
       Statuts,
       "Nature de l'aide": aidTypes,
@@ -249,11 +253,11 @@ export class Baserow {
     } = program
 
     const rawStatuts = Statuts.map((linkedObj) => linkedObj.value as Status)
-    const domainContactOperator = this._replaceLinkedObjectbyTableData<Operator>(contactOperator, operators)
-    const domainOtherOperator = this._replaceLinkedObjectbyTableData<Operator>(otherOperator, operators)
-    const domainGeographicCoverage = this._replaceLinkedObjectbyTableData<GeographicCoverage>(geographicCoverage, geographicCoverages)
-    const domainProgramGeographicAreas = this._replaceLinkedObjectbyTableData<GeographicAreas>(programGeographicAreas, geographicAreas)
-    const domainProgramThemes = this._replaceLinkedObjectbyTableData<Theme>(programThemes, themes)
+    const domainContactOperator = this._replaceLinkObjectByTableData<Operator>(contactOperator, operators)
+    const domainOtherOperator = this._replaceLinkObjectByTableData<Operator>(otherOperator, operators)
+    const domainGeographicCoverage = this._replaceLinkObjectByTableData<GeographicCoverage>(geographicCoverage, geographicCoverages)
+    const domainProgramGeographicAreas = this._replaceLinkObjectByTableData<GeographicAreas>(programGeographicAreas, geographicAreas)
+    const domainProgramThemes = this._replaceLinkObjectByTableData<Theme>(programThemes, themes)
 
     const rawProgram: DataProgram = {
       ...nonModifiedFields,

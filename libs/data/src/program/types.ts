@@ -61,6 +61,10 @@ export interface YamlObjective {
   liens?: { lien: string; texte: string }[]
 }
 
+export interface YamlImage {
+  illustration: string
+}
+
 export interface DataProgram {
   id: number
   'Id fiche dispositif': string
