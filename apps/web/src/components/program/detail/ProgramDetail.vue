@@ -253,7 +253,6 @@ const publicPath = Config.publicPath
 
 interface Props {
   programId: string
-  projectSlug: string
 }
 const props = defineProps<Props>()
 

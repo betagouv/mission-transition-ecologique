@@ -4,7 +4,7 @@
     v-if="!isCatalogDetail"
     :bg-color="Color.greenLightnessed"
     :bg-bar-color="Color.greenLighted"
-    :previous-route="routeToPrograms"
+    :previous-route="props.project ? routeToProject : routeToPrograms"
     message="Cette aide correspond à vos critères d’éligibilité"
     message-icon="fr-icon-checkbox-circle-fill"
   />
@@ -64,19 +64,31 @@ const routeToPrograms = {
   query: isCatalogDetail ? undefined : navigationStore.query
 }
 
+const routeToProjects = {
+  name: RouteName.QuestionnaireResult,
+  hash: '#' + props.project?.slug,
+  query: navigationStore.query
+}
+
 const routeToProject = {
   name: RouteName.ProjectResultDetail,
   hash: '#' + props.project?.id,
   query: navigationStore.query
 }
 
-const links = ref<DsfrBreadcrumbProps['links']>([
-  { text: 'Vos résultats', to: routeToPrograms },
-  { text: props.project?.title || '', to: routeToProject },
-  { text: props.program?.titre || '' }
-])
+const links = computed<DsfrBreadcrumbProps['links']>(() => {
+  const links = [{ text: 'Vos résultats', to: props.project ? routeToProjects : routeToPrograms }]
+  if (props.project) {
+    links.push({ text: props.project?.title || '', to: routeToProject })
+  }
+  return [...links, { text: props.program?.titre || '' }]
+})
 
 const goToPrograms = async () => {
-  await router.push(routeToPrograms)
+  if (props.project) {
+    await router.push(routeToProjects)
+  } else {
+    await router.push(routeToPrograms)
+  }
 }
 </script>
