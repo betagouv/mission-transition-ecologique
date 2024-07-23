@@ -2,7 +2,7 @@
   <!-- PROGRAMS AS LIST OF CARDS -->
   <div class="fr-container--fluid fr-mt-2v fr-mt-md-3v">
     <div class="fr-grid-row fr-grid-row--center">
-      <div class="fr-pl-2v fr-pl-md-0 fr-col-3 fr-col-md-12 fr-col-content--middle fr-text--base-blue-france tee-font-style--italic">
+      <div class="fr-pl-2v fr-pl-md-0 fr-col-3 fr-col-md-12 fr-col-content--middle fr-text--blue-france tee-font-style--italic">
         <span v-if="showProgramCounter">
           {{ countPrograms }}
           {{ countPrograms > 1 ? Translation.t('results.results') : Translation.t('results.result') }}

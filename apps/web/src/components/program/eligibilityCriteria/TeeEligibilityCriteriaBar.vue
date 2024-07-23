@@ -19,7 +19,7 @@
       <div class="fr-px-md-2v fr-my-auto fr-col-hidden fr-col-unhidden-md fr-col-md-10 fr-col-lg-10 fr-col-xl-10 fr-px-0 fr-text-left">
         <div
           v-if="message"
-          class="fr-mb-1v fr-ml-2v fr-text--base-blue-france fr-text--bold"
+          class="fr-mb-1v fr-ml-2v fr-text--blue-france fr-text--bold"
         >
           <span
             v-if="messageIcon"

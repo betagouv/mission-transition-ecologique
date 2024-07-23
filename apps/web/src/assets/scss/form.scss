@@ -1,4 +1,5 @@
 @use "setting";
+@use 'sass:map';
 
 /* FORM */
 .fr-tee-form {
@@ -36,7 +37,7 @@
   line-height: 1.3rem;
 
   &-blue {
-    color: setting.$blue-france;
+    color: map-get(map-get(setting.$colors, "blue-france"), "color");
 
     a {
       white-space: nowrap;
@@ -44,6 +45,6 @@
   }
 
   &-error {
-    color: setting.$red-marianne;
+    color: map-get(map-get(setting.$colors, "red"), "color");
   }
 }

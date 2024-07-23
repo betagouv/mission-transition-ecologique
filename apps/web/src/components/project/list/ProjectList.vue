@@ -4,7 +4,7 @@
   <!--  Project counter -->
   <div class="fr-grid-row fr-grid-row--center">
     <div class="fr-container">
-      <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-text--base-blue-france tee-font-style--italic">
+      <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-text--blue-france tee-font-style--italic">
         <ProjectCounter :sorted-projects="sortedProjects" />
       </div>
     </div>
@@ -26,7 +26,7 @@
         </div>
         <div class="fr-col-10">
           <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--left">
-            <div class="fr-col-12 fr-pt-2w fr-text--bold fr-text--base-blue-france">
+            <div class="fr-col-12 fr-pt-2w fr-text--bold fr-text--blue-france">
               {{ resume }}
             </div>
             <router-link

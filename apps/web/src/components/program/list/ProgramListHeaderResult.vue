@@ -1,11 +1,11 @@
 <template>
   <div class="fr-grid-row fr-text-center fr-text-left-md">
     <div class="fr-col-12">
-      <h1 class="fr-mb-4v fr-text--base-blue-france">Vos résultats</h1>
+      <h1 class="fr-mb-4v fr-text--blue-france">Vos résultats</h1>
     </div>
     <div
       v-if="UsedTrack.isSpecificGoal()"
-      class="fr-hidden fr-unhidden-md fr-mb-2v fr-col-12 fr-px-2v fr-px-md-0 fr-text--base-blue-france"
+      class="fr-hidden fr-unhidden-md fr-mb-2v fr-col-12 fr-px-2v fr-px-md-0 fr-text--blue-france"
     >
       <p v-html="resume"></p>
     </div>
