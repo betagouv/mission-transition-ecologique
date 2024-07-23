@@ -2,7 +2,7 @@ import path from 'path'
 import fs from 'fs'
 import * as yaml from 'js-yaml'
 import { YamlObjective, DataProgram, DataProgramType, Status, YamlImage } from './types'
-import { Baserow } from '../common/baserow/baserow'
+import { BaserowProgram } from '../common/baserow/program'
 import { PublicodesGenerator } from './publicodesGenerator'
 
 export class ProgramYamlGenerator {
@@ -11,7 +11,7 @@ export class ProgramYamlGenerator {
   async createProgramYamls(): Promise<void> {
     // while working on the script, to avoid hitting Baserow API limits and to decrease our global impact, please cache locally the data :
     // on the first run use getPrograms(false) then for all following call use getPrograms(true)
-    const programs = await new Baserow(this.outputDirectory).getPrograms(false)
+    const programs = await new BaserowProgram(this.outputDirectory).getPrograms(false)
 
     programs.forEach((program) => {
       if (!program.Statuts.includes(Status.InProd)) {

@@ -1,6 +1,6 @@
 import path from 'path'
 import fs from 'fs'
-import { Baserow } from '../common/baserow/baserow'
+import { BaserowProject } from '../common/baserow/project'
 import { RawProject } from './types'
 import { jsonPrograms } from '../../generated/index'
 import { ProgramType } from '../index'
@@ -19,7 +19,7 @@ export class ProjectFeatures {
     this._resetImageFolder()
 
     console.log(`Start loading Baserow data and creating the project images`)
-    const projects = await new Baserow(this._outputImageDirectory).getValidProjects()
+    const projects = await new BaserowProject(this._outputImageDirectory).getValidProjects()
 
     console.log(`Baserow Data sucessfully downloaded.\nStarting to validate the project data and generating the project JSON.`)
     this._validateData(projects)
