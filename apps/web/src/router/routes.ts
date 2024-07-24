@@ -87,7 +87,6 @@ export const routes = [
       }
     ]
   },
-  ,
   {
     path: '/projets-entreprise',
     component: TeeCatalogPage as Component,
