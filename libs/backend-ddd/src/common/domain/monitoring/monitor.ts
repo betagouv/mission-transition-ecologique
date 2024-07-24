@@ -1,4 +1,5 @@
 import * as Sentry from '@sentry/node'
+import { SeverityLevel } from '@sentry/types/types/severity'
 import Config from '../../../config'
 
 export default class Monitor {
@@ -7,12 +8,14 @@ export default class Monitor {
 
   static error(message: string, data?: { [key: string]: unknown }) {
     Sentry.captureMessage(message, (scope) =>
-      scope.addBreadcrumb({
-        type: 'error',
-        category: 'error',
-        level: 'error',
-        data: data
-      })
+      scope
+        .addBreadcrumb({
+          type: 'error',
+          category: 'error',
+          level: 'error',
+          data: data
+        })
+        .setLevel('error')
     )
 
     this._message = message
@@ -21,14 +24,32 @@ export default class Monitor {
     return this
   }
 
-  static warning(message: string, data?: { [key: string]: unknown }) {
-    Sentry.captureMessage(message, (scope) =>
+  static exception(error: Error, data?: { [key: string]: unknown }) {
+    Sentry.captureException(error, (scope) =>
       scope.addBreadcrumb({
-        type: 'warning',
-        category: 'warning',
-        level: 'warning',
+        type: 'error',
+        category: 'error',
+        level: 'error',
         data: data
       })
+    )
+
+    this._message = error.message
+    this.log()
+
+    return this
+  }
+
+  static warning(message: string, data?: { [key: string]: unknown }) {
+    Sentry.captureMessage(message, (scope) =>
+      scope
+        .addBreadcrumb({
+          type: 'warning',
+          category: 'warning',
+          level: 'warning',
+          data: data
+        })
+        .setLevel('warning')
     )
 
     this._message = message
