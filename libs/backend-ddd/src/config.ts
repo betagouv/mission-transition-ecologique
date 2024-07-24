@@ -34,7 +34,7 @@ export default class Config extends ConfigCommon {
 
   public static get DEBUG(): string | undefined {
     try {
-      return this.getEnvValue('BREVO_DEAL_PIPELINE')
+      return this.getEnvValue('DEBUG')
     } catch (error) {
       return undefined
     }
