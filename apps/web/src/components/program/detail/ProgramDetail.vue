@@ -284,7 +284,7 @@ const TeeProgramFormContainer = ref<HTMLElement | null | undefined>(null)
 
 const blockColor = '#000091'
 const publicPath = Config.publicPath
-const isCatalogDetail = navigationStore.isByRouteName(RouteName.CatalogDetail)
+const isCatalogDetail = navigationStore.isByRouteName(RouteName.CatalogProgramDetail)
 
 interface Props {
   programId: string
@@ -322,7 +322,7 @@ const isProgramAutonomous = computed(() => {
 })
 
 const routeToPrograms = {
-  name: isCatalogDetail ? RouteName.Catalog : RouteName.QuestionnaireResult,
+  name: isCatalogDetail ? RouteName.CatalogPrograms : RouteName.QuestionnaireResult,
   hash: '#' + props.programId,
   query: isCatalogDetail ? undefined : navigationStore.query
 }
@@ -335,7 +335,7 @@ onBeforeMount(() => {
   program.value = programsStore.currentProgram
 
   // analytics / send event
-  Matomo.sendEvent('result_detail', route.name === RouteName.CatalogDetail ? 'show_detail_catalog' : 'show_detail', props.programId)
+  Matomo.sendEvent('result_detail', route.name === RouteName.CatalogProgramDetail ? 'show_detail_catalog' : 'show_detail', props.programId)
 })
 
 useHead({
@@ -354,7 +354,7 @@ const programIsAvailable = computed(() => {
 
 const scrollToProgramForm = () => {
   if (TeeProgramFormContainer.value) {
-    navigationStore.isByRouteName(RouteName.CatalogDetail)
+    navigationStore.isByRouteName(RouteName.CatalogProgramDetail)
       ? Scroll.to(TeeProgramFormContainer.value)
       : Scroll.toWithTopBarOffset(TeeProgramFormContainer.value)
   }

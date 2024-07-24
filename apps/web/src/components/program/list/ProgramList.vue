@@ -1,12 +1,8 @@
 <template>
-  <!-- PROGRAMS AS LIST OF CARDS -->
   <div class="fr-container--fluid fr-mt-2v fr-mt-md-3v">
     <div class="fr-grid-row fr-grid-row--center">
       <div class="fr-pl-2v fr-pl-md-0 fr-col-3 fr-col-md-12 fr-col-content--middle fr-text--blue-france tee-font-style--italic">
-        <span v-if="showProgramCounter">
-          {{ countPrograms }}
-          {{ countPrograms > 1 ? Translation.t('results.results') : Translation.t('results.result') }}
-        </span>
+        <TeeCounterResult :to-count="filteredPrograms" />
       </div>
       <div class="fr-col-9 fr-col-hidden-md fr-text-right">
         <ProgramModalFilter />
@@ -33,35 +29,20 @@ import ProgramCard from '@/components/program/list/ProgramCard.vue'
 import { useNavigationStore } from '@/stores/navigation'
 import { type ProgramData } from '@/types'
 import { RouteName } from '@/types/routeType'
-import Translation from '@/utils/translation'
-import { computed } from 'vue'
 import { type RouteLocationRaw } from 'vue-router'
 
-interface ProgramListProps {
+interface Props {
   filteredPrograms?: ProgramData[]
 }
-
-const props = defineProps<ProgramListProps>()
+defineProps<Props>()
 
 const navigationStore = useNavigationStore()
 
-const isCatalog = navigationStore.isCatalog()
-
-const havePrograms = computed(() => {
-  return countPrograms.value > 0
-})
-
-const countPrograms = computed(() => {
-  return props.filteredPrograms?.length || 0
-})
-
-const showProgramCounter = computed(() => {
-  return havePrograms.value && countPrograms.value > 1
-})
+const isCatalog = navigationStore.isCatalogPrograms()
 
 const getRouteToProgramDetail = (programId: string): RouteLocationRaw => {
   return {
-    name: isCatalog ? RouteName.CatalogDetail : RouteName.QuestionnaireResultDetail,
+    name: isCatalog ? RouteName.CatalogProgramDetail : RouteName.QuestionnaireResultDetail,
     params: { programId },
     query: isCatalog ? undefined : navigationStore.query
   }

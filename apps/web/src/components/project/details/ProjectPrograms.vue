@@ -14,7 +14,7 @@
     >
     <DsfrHighlight
       v-if="!siret || siret === ''"
-      class="fr-highlight-border--yellow fr-highlight-bg--yellow-light fr-m-0 fr-p-0"
+      class="fr-highlight-border--yellow fr-bg--yellow--lightness fr-m-0 fr-p-0"
       :large="true"
     >
       <template #default>
@@ -52,10 +52,9 @@
             v-if="hasSpinner"
             scale="6"
           />
-          <ProgramListNoResults
+          <TeeNoResult
             v-else-if="!countFilteredPrograms && !hasError"
-            image="images/tracks/no-results.svg"
-            :message="{ fr: 'Aucune aide n\'a pu être identifiée avec les critères choisis...' }"
+            message="Aucune aide n\'a pu être identifiée avec les critères choisis..."
           />
           <TeeError
             v-else-if="hasError"

@@ -74,8 +74,16 @@ export const useNavigationStore = defineStore('navigation', () => {
     return route
   }
 
+  function isCatalogPrograms() {
+    return isByRouteName(RouteName.CatalogPrograms)
+  }
+
+  function isCatalogProjects() {
+    return isByRouteName(RouteName.CatalogProjects)
+  }
+
   function isCatalog() {
-    return isByRouteName(RouteName.Catalog)
+    return isByRouteName([RouteName.CatalogPrograms, RouteName.CatalogProjects])
   }
 
   function isByRouteName(routeName: string | string[]) {
@@ -154,6 +162,8 @@ export const useNavigationStore = defineStore('navigation', () => {
     searchParams,
     tabSelectedOnList,
     hasSpinner,
+    isCatalogPrograms,
+    isCatalogProjects,
     isCatalog,
     isByRouteName,
     resetSearchParams,

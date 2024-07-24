@@ -6,7 +6,8 @@
 <script setup lang="ts">
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
-import { ProgramData, Objective, TrackId, Project } from '@/types'
+import { ProgramData, Objective, TrackId, Project as ProjectType } from '@/types'
+import { Project } from '@/utils/project/project'
 import { computed, onBeforeMount } from 'vue'
 import Matomo from '@/utils/matomo'
 import { useProjectStore } from '@/stores/project'
@@ -18,30 +19,20 @@ const projectStore = useProjectStore()
 const navigationStore = useNavigationStore()
 
 const programs = ref<ProgramData[]>([])
-const projects = ref<Project[]>()
+const projects = ref<ProjectType[]>()
 const hasError = ref<boolean>(false)
 
 const filteredPrograms = computed(() => {
   return programs.value ? programStore.getProgramsByFilters(programs.value) : undefined
 })
 
-const filteredProjects = computed(() => {
-  if (!projects.value) {
-    return undefined
-  }
-
-  return projectStore.getProjectsByObjectiveAndEligibility(
-    projects.value,
-    getObjectiveForProjectFiltering(),
-    filteredPrograms.value ?? undefined
-  )
-})
-
-const getObjectiveForProjectFiltering = () => {
+const objective = computed(() => {
   return programStore.programFilters.objectiveTypeSelected !== ''
     ? (programStore.programFilters.objectiveTypeSelected as Objective)
-    : Theme.getObjectiveByValue(UsedTrack.getPriorityObjective())
-}
+    : Theme.getObjectiveByValue(UsedTrack.getPriorityObjective()) ?? ''
+})
+
+const filteredProjects = Project.filter(projects, filteredPrograms, objective)
 
 onBeforeMount(async () => {
   navigationStore.hasSpinner = true
