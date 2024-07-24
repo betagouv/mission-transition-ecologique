@@ -14,7 +14,7 @@
     v-if="!formIsSent"
     class="fr-tee-form-container fr-my-4v"
   >
-    <div class="fr-container">
+    <div class="fr-container fr-p-0">
       <!-- FORM LABEL -->
       <h3 class="fr-text-center">
         {{ Format.capitalize(Translation.t('program.form.label') || '') }}

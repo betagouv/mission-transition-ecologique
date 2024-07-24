@@ -241,7 +241,7 @@
     <!-- PROGRAM FORM -->
     <div
       ref="TeeProgramFormContainer"
-      class="fr-tee-form-block"
+      class="fr-tee-form-block fr-p-4v"
     >
       <ProgramForm
         v-if="program"
