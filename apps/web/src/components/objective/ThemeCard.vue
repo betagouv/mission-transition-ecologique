@@ -1,13 +1,13 @@
 <template>
   <div
-    class="fr-card fr-mx-md-0 fr-mx-2v themeCard"
+    class="fr-card fr-mx-md-0 fr-mx-2v theme-card"
     :class="`fr-bg-xs--${option.color}--light`"
   >
     <div class="fr-card__body fr-py-1v">
       <div class="fr-card__content fr-p-2v">
-        <div class="fr-card__title themeCardTitle">
+        <div class="fr-card__title theme-card-title">
           <div
-            class="fr-p-0 fr-hidden-xs fr-my-2v themeDivider"
+            class="fr-p-0 fr-hidden-xs fr-my-2v theme-divider"
             :class="`fr-bg--${option.color}`"
           />
           <div class="fr-h4 fr-mb-1v fr-hidden-xs">
@@ -58,17 +58,20 @@ interface Props {
 defineProps<Props>()
 </script>
 <style scoped>
-.themeDivider {
+.theme-divider {
   height: 4px;
   width: 15%;
 }
-.themeCard {
+
+.theme-card {
   height: 100%;
 }
-.themeCard:hover {
-  box-shadow: 1px 2px 8px 2px rgba(0, 0, 0, 0.1);
+
+.theme-card:hover {
+  box-shadow: 1px 2px 8px 2px rgb(0 0 0 / 10%);
 }
-.themeCardTitle {
+
+.theme-card-title {
   height: 40%;
 }
 </style>

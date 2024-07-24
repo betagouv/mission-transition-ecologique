@@ -16,7 +16,8 @@
           @include tool.background-color($color, $properties);
         }
       }
-      @media (min-width: 0) and (max-width: 575px){
+
+      @media (width >= 0) and (width <= 575px){
         &-xs{
           @include backgroundColor($color, $properties);
         }

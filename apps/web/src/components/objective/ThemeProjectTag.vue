@@ -1,9 +1,9 @@
 <template>
   <div
-    class="fr-btn highlightedProject fr-btn--secondary fr-btn--sm inline-flex fr-radius-a--2v fr-mx-1v fr-my-1v fr-btn--secondary--green"
+    class="fr-btn highlighted-project fr-btn--secondary fr-btn--sm inline-flex fr-radius-a--2v fr-mx-1v fr-my-1v fr-btn--secondary--green"
     :class="`fr-btn--secondary--${color}`"
   >
-    <span class="highlightedProjectTag">{{ project.nameTag }}</span>
+    <span class="highlighted-project-tag">{{ project.nameTag }}</span>
   </div>
 </template>
 <script setup lang="ts">
@@ -17,12 +17,13 @@ interface Props {
 defineProps<Props>()
 </script>
 <style scoped>
-.highlightedProjectTag {
+.highlighted-project-tag {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.highlightedProject {
+
+.highlighted-project {
   max-width: 90%;
 }
 </style>
