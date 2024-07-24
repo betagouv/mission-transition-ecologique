@@ -10,7 +10,10 @@
             class="fr-p-0 fr-hidden-xs fr-my-2v themeDivider"
             :class="`fr-bg--${option.color}`"
           />
-          <div class="fr-h5 fr-mb-1v">
+          <div class="fr-h4 fr-mb-1v fr-hidden-xs">
+            {{ option.title }}
+          </div>
+          <div class="fr-h2 fr-mb-1v fr-hidden-sm">
             {{ option.title }}
           </div>
         </div>

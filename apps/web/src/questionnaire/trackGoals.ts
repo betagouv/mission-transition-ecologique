@@ -5,7 +5,7 @@ export const goals: Track = {
   id: TrackId.Goals,
   category: 'myEntreprise',
   title: { fr: 'Mes objectifs' },
-  label: { fr: 'Choisissez la thématique de votre projet' },
+  label: { fr: 'Choisissez la thématique de votre projet :' },
   interface: {
     component: TrackComponent.Themes
   },

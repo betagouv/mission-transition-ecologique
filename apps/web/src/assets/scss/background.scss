@@ -38,6 +38,11 @@ $opacitySettings: (
           @include backgroundColor($color, $properties);
         }
       }
+      @media (min-width: 0) and (max-width: 575px){
+        &-xs{
+          @include backgroundColor($color, $properties);
+        }
+      }
     }
   }
 }
