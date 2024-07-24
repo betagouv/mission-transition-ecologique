@@ -29,7 +29,7 @@ import type { DsfrButton } from '@gouvminint/vue-dsfr'
 
 interface Props {
   selectedOptions: TrackOptionsUnion[]
-  showNextButton: Boolean
+  showNextButton: boolean
 }
 defineProps<Props>()
 
