@@ -67,14 +67,6 @@ export class Theme {
       value: PublicodeObjective.TrainOrRecruit,
       image: '/images/thematique/thematique-ressources-humaines.svg',
       color: Color.yellow
-    },
-    {
-      id: ThemeId.Environmental,
-      title: 'Analyses environnementales',
-      tagLabel: '🌱 analyses',
-      value: PublicodeObjective.EnvironmentalImpact,
-      image: '/images/thematique/thematique-strategie.svg',
-      color: Color.blue
     }
   ]
 
@@ -125,10 +117,10 @@ export class Theme {
 
   static getPriorityProjects(projects: Project[] | undefined) {
     const sortedProjects = (projects as unknown as Project[]).sort((a, b) => a.priority - b.priority)
-    return sortedProjects.slice(0, 3)
+    return { projects: sortedProjects.slice(0, 3), moreThanThree: sortedProjects.length > 3 }
   }
 
-  static getPublicodeObjectiveByObjective(objective: ObjectiveEnum): PublicodeObjective | undefined {
+  static getPublicodeObjectiveByObjective(objective: ObjectiveEnum | undefined): PublicodeObjective | undefined {
     const key = Object.keys(PublicodeObjective).find(
       (key) => PublicodeObjective[key as keyof typeof PublicodeObjective] === ((PublicodesKeys.Goal + objective) as PublicodeObjective)
     ) as keyof typeof PublicodeObjective | undefined

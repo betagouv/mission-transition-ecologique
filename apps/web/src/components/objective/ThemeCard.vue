@@ -1,11 +1,11 @@
 <template>
   <div
-    class="fr-card fr-card-objective fr-mx-md-0 fr-mx-2v themeCard"
+    class="fr-card fr-mx-md-0 fr-mx-2v themeCard"
     :class="`fr-bg-xs--${option.color}--light`"
   >
     <div class="fr-card__body fr-py-1v">
       <div class="fr-card__content fr-p-2v">
-        <div class="fr-card__title">
+        <div class="fr-card__title themeCardTitle">
           <div
             class="fr-p-0 fr-hidden-xs fr-my-2v themeDivider"
             :class="`fr-bg--${option.color}`"
@@ -22,7 +22,11 @@
               :color="option.color"
               :project="project"
             />
-            <span class="fr-m-auto fr-ml-0">...</span>
+            <span
+              v-if="option.moreThanThree"
+              class="fr-m-auto fr-ml-0"
+              >...</span
+            >
           </ul>
         </div>
       </div>
@@ -57,5 +61,11 @@ defineProps<Props>()
 }
 .themeCard {
   height: 100%;
+}
+.themeCard:hover {
+  box-shadow: 1px 2px 8px 2px rgba(0, 0, 0, 0.1);
+}
+.themeCardTitle {
+  height: 40%;
 }
 </style>

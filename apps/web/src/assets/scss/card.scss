@@ -9,15 +9,6 @@
   :hover {
     cursor: pointer;
   }
-  &-objective {
-    .fr-card__title {
-      height: 40%;
-    }
-    &:hover {
-      box-shadow: 1px 2px 8px 2px rgba(0,0,0,0.1);
-    }
-
-  }
 
   &-banner {
     flex-direction: row;
