@@ -1,7 +1,10 @@
 export default class StickyWithOffset {
   private readonly class = 'fr-sticky'
 
-  constructor(private stickyElement?: HTMLElement, private offsetElement?: HTMLElement | null) {}
+  constructor(
+    private stickyElement?: HTMLElement,
+    private offsetElement?: HTMLElement | null
+  ) {}
 
   addEventListenerOnScroll(): void {
     window.addEventListener('scroll', this.handleScroll)

@@ -224,7 +224,7 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     const usedTrack = usedTracks.value.find((usedTrack: UsedTrack) => usedTrack.id === trackId)
     if (usedTrack?.selected) {
       for (const option of usedTrack.selected) {
-        if (option.questionnaireData && key in option.questionnaireData) {
+        if (option && option.questionnaireData && key in option.questionnaireData) {
           const questionnaireData = option.questionnaireData as Record<string, unknown>
           return questionnaireData[key] as string
         }
@@ -263,7 +263,11 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
         selectedOption = await TrackSiret.getOptionBySiret(track, value)
       } else {
         if (Array.isArray(value)) {
-          selectedOptions = value.map((value) => track.options?.find((option) => option.value === value) as TrackOptionsUnion)
+          selectedOptions = value
+            .map((value) => track.options?.find((option) => option.value === value))
+            .filter((trackOption: TrackOptionsUnion | undefined) => {
+              return trackOption !== undefined
+            }) as TrackOptionsUnion[]
         } else {
           selectedOption = track.options?.find((option) => option.value === value)
         }
@@ -275,9 +279,8 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
 
       if (selectedOptions.length === 0) {
         useNavigationStore().deleteSearchParam(trackId)
-        return
+        continue
       }
-
       createOrUpdateUsedTrack(track, selectedOptions)
     }
   }
