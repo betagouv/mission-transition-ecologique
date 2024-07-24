@@ -1,5 +1,5 @@
 import { Controller, Route, SuccessResponse, TsoaResponse, Res, Example, Get, Path } from 'tsoa'
-import { ErrorJSON, Establishment, EstablishmentNotFoundError, EstablishmentService, ValidateErrorJSON } from '@tee/backend-ddd'
+import { ErrorJSON, Establishment, EstablishmentNotFoundError, EstablishmentService, ValidateErrorJSON, Monitor } from '@tee/backend-ddd'
 import { EstablishmentSearch } from '@tee/common'
 
 interface EstablishmentNotFoundErrorJSON {
@@ -58,6 +58,7 @@ export class SireneController extends Controller {
 
     if (establishmentResult.isErr) {
       const err = establishmentResult.error
+      Monitor.error('Error in getEstablishmentBySiret', { query, error: err })
 
       if (err instanceof EstablishmentNotFoundError) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-return

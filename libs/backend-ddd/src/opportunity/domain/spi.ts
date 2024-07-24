@@ -1,6 +1,6 @@
 import type { Maybe, Result } from 'true-myth'
 import { ContactId, OpportunityId, OpportunityUpdateAttributes, OpportunityDetailsShort, OpportunityWithOperatorContact } from './types'
-import { ContactDetails, Opportunity, OpportunityType } from '@tee/common'
+import { ContactDetails, Opportunity } from '@tee/common'
 import { ProgramType, Project } from '@tee/data'
 
 export type ContactRepository = {

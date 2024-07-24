@@ -3,11 +3,12 @@ import axios, { AxiosInstance } from 'axios'
 import type { TokenResponse } from './types'
 import OpportunityHubAbstract from '../opportunityHubAbstract'
 import AxiosHeaders from '../../../../common/infrastructure/api/axiosHeaders'
-import { handleException } from '../../../../common/domain/error/errors'
+import { ensureError, handleException } from '../../../../common/domain/error/errors'
 import opportunityPayloadDTO from './opportunityPayloadDTO'
 import Config from '../../../../config'
 import { Operators, ProgramType, Project } from '@tee/data'
 import { Opportunity, OpportunityType } from '@tee/common'
+import Monitor from '../../../../common/domain/monitoring/monitor'
 
 export class BpiFrance extends OpportunityHubAbstract {
   protected _axios: AxiosInstance
@@ -38,6 +39,7 @@ export class BpiFrance extends OpportunityHubAbstract {
       })
       return Result.ok(response.data)
     } catch (exception: unknown) {
+      Monitor.exception(ensureError(exception))
       return Result.err(handleException(exception))
     }
   }
@@ -59,9 +61,11 @@ export class BpiFrance extends OpportunityHubAbstract {
       if (response.data) {
         return Maybe.nothing()
       } else {
+        Monitor.error('Error creating an opportunity at BPI during BPI API Call', { BpiResponse: response })
         return Maybe.of(new Error("Erreur à la création d'une opportunité chez BPI durant l'appel BPI. HTTP CODE:" + response.status))
       }
     } catch (exception: unknown) {
+      Monitor.exception(ensureError(exception))
       return Maybe.of(handleException(exception))
     }
   }

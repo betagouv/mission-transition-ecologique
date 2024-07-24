@@ -1,5 +1,5 @@
 .fr-checkbox-group {
-  input[type=checkbox]+label:before {
+  input[type="checkbox"]+label::before {
     background-image: radial-gradient(at 5px 4px, transparent 4px, black 4px, black 5px, transparent 6px),
     linear-gradient(black, black),
     radial-gradient(at calc(100% - 5px) 4px, transparent 4px, black 4px, black 5px, transparent 6px),

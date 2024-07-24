@@ -3,16 +3,16 @@
 .fr-callout {
   padding: 32px 48px 32px 32px;
 
-  &.defaultCallout {
+  &.default-callout {
     border-left: 4px solid;
     border-color: setting.$base-purple;
     background: var(--light-background-alt-blue-france, #f5f5fe);
   }
 
-  &.warningCallout {
+  &.warning-callout {
     border-left: 4px solid;
     border-color: setting.$base-red;
-    background: rgba(252, 160, 129, 0.2);
+    background: rgb(252 160 129 / 20%);
   }
 
   h5 {

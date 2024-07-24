@@ -2,7 +2,7 @@ import { Controller, Get, Path, Queries, Res, Route, SuccessResponse, TsoaRespon
 import { OpenAPISafeProgram } from './types'
 import { Err } from 'true-myth/dist/es/result'
 import { QuestionnaireData } from '@tee/common'
-import { ErrorJSON, ProgramService } from '@tee/backend-ddd'
+import { ErrorJSON, Monitor, ProgramService } from '@tee/backend-ddd'
 
 @SuccessResponse('200', 'OK')
 @Route('programs')
@@ -25,6 +25,7 @@ export class ProgramsController extends Controller {
     const programsResult = programService.getFilteredPrograms(questionnaireData)
 
     if (programsResult.isErr) {
+      Monitor.error('Error in get programs', { questionnaireData, error: programsResult.error })
       this.throwErrorResponse(programsResult, requestFailedResponse)
       return
     }
@@ -47,6 +48,7 @@ export class ProgramsController extends Controller {
 
     if (!program) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+      Monitor.error('Error in get Program id', { programId })
       return notFoundResponse(404, { message: `Program with id "${programId}" could not be found` })
     }
 
