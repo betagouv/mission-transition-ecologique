@@ -1,9 +1,9 @@
-import { Baserow } from './baserow'
+import { AbstractBaserow } from './abstractBaserow'
 import { RawProject } from '../../project/types/domain'
 import { LinkObject, Project } from './types'
 import { Theme } from '../../theme/types/domain'
 
-export class BaserowProject extends Baserow {
+export class ProjectBaserow extends AbstractBaserow {
   private readonly _projectTableId = 305253
 
   constructor(imageDirectory: string) {
@@ -32,7 +32,7 @@ export class BaserowProject extends Baserow {
     return projects
   }
 
-  private async _convertToRawProjectType(baserowProject: Project, baserawThemes: Theme[]): Promise<RawProject> {
+  private async _convertToRawProjectType(baserowProject: Project, baserowThemes: Theme[]): Promise<RawProject> {
     const imageName = await this._handleImage(baserowProject.Image)
 
     return {
@@ -44,8 +44,8 @@ export class BaserowProject extends Baserow {
       image: this._imagePath + imageName,
       longDescription: baserowProject['Qu’est-ce que c’est ?'],
       moreDescription: baserowProject['Pour aller plus loin'],
-      themes: this._generateThemeList(baserowProject['Thématique principale'], baserowProject['Thématiques secondaires'], baserawThemes),
-      mainTheme: this._generateMainTheme(baserowProject['Thématique principale'], baserawThemes),
+      themes: this._generateThemeList(baserowProject['Thématique principale'], baserowProject['Thématiques secondaires'], baserowThemes),
+      mainTheme: this._generateMainTheme(baserowProject['Thématique principale'], baserowThemes),
       programs: this._generateProgramList(baserowProject.Dispositifs),
       linkedProjects: this._generateLinkedProjectList(baserowProject['Projets complémentaires']),
       priority: baserowProject.Prio

@@ -7,7 +7,7 @@ import { Id, ImageTable, LinkObject } from './types'
 
 dotenv.config()
 
-export class Baserow {
+export abstract class AbstractBaserow {
   private readonly _apiToken = this._setBaserowToken()
   private readonly _baseUrl = 'https://api.baserow.io/api'
   protected readonly _themeTableId = 305258
@@ -20,7 +20,7 @@ export class Baserow {
   protected readonly _imagePath = '/images/projet/'
   private readonly _defaultImageName = 'plan-transition-bas-carbone.webp'
 
-  constructor(private readonly _imageDirectory: string) {}
+  constructor(private readonly _imageDirectory?: string) {}
 
   protected async _getTableData<T>(tableId: number): Promise<T[]> {
     try {
@@ -55,6 +55,11 @@ export class Baserow {
   }
 
   protected async _handleImage(baserowImage: LinkObject[]): Promise<string> {
+    if (!this._imageDirectory) {
+      console.error('Image directory not defined but attemping to download an image')
+      return ''
+    }
+
     if (!baserowImage.length) {
       console.log('No image found, defaulting to plan-transition-bas-carbone.webp')
       return this._defaultImageName

@@ -1,7 +1,7 @@
 import path from 'path'
 import fs from 'fs'
 import { DataProgram, Publicodes } from './types/domain'
-import { ThemeId } from '../theme/types/export'
+import { ThemeId } from '../theme/types/shared'
 
 export class PublicodesGenerator {
   constructor(private _program: DataProgram) {}
@@ -21,7 +21,10 @@ export class PublicodesGenerator {
     const filePath = path.join(__dirname, 'publicodesStaticData.json')
     const staticData = JSON.parse(fs.readFileSync(filePath, 'utf-8'))
 
-    if (this._program['Id fiche dispositif'] in staticData) return staticData[this._program['Id fiche dispositif']]
+    if (this._program['Id fiche dispositif'] in staticData) {
+      return staticData[this._program['Id fiche dispositif']]
+    }
+
     return null
   }
 

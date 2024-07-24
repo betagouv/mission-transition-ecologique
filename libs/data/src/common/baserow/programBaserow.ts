@@ -1,10 +1,10 @@
 import fs from 'fs'
-import { Baserow } from './baserow'
+import { AbstractBaserow } from './abstractBaserow'
 import { Program } from './types'
 import { DataProgram, Status, DataProgramType, Operator, GeographicCoverage, GeographicAreas } from '../../program/types/domain'
 import { Theme } from '../../theme/types/domain'
 
-export class BaserowProgram extends Baserow {
+export class ProgramBaserow extends AbstractBaserow {
   private readonly _operatorTableId = 314410
   private readonly _geographicCoverageTableId = 314470
   private readonly _geographicAreasTableId = 314474

@@ -1,4 +1,4 @@
-import { Project } from './export'
+import { Project } from './shared'
 
 export interface RawProject extends Omit<Project, 'themes' | 'mainTheme' | 'linkedProjects' | 'programs'> {
   themes: string[]

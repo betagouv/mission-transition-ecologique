@@ -1,4 +1,4 @@
-import { ThemeId } from '../../theme/types/export'
+import { ThemeId } from '../../theme/types/shared'
 import { projects } from '../../../static'
 
 export interface Project {

@@ -1,4 +1,4 @@
-import { ProgramAidType } from './types/export'
+import { ProgramAidType } from './types/shared'
 
 export class Program {
   public static getPrefixedProgramName(program: ProgramType) {

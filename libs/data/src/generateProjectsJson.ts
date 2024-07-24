@@ -1,4 +1,4 @@
-import { ProjectFeatures } from './project/project'
+import { ProjectFeatures } from './project/projectFeatures'
 
 console.log('Start the project data generation')
 
