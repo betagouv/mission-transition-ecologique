@@ -117,7 +117,7 @@
   @each $color, $properties in setting.$colors {
     &--#{$color} {
       @if meta.type-of($properties) == map {
-        background-color: map.get($properties, "background-color");
+        background-color: map.get($properties, "color");
         color: map.get($properties, "color-with-background");
       }
 

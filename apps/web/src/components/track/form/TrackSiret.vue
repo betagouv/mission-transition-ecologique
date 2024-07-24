@@ -218,20 +218,19 @@ function createData(): TrackOptionItem {
 
 <style lang="scss" scoped>
 @use '@/assets/scss/setting';
-@use 'sass:map';
 
 .custom-border {
   border: solid thin #c4c4c4;
 }
 
 .is-selected {
-  border: solid thin map.get(map.get(setting.$colors, 'blue-france'), 'color');
-  color: map.get(map.get(setting.$colors, 'blue-france'), 'color');
+  border: solid thin setting.$blue-france;
+  color: setting.$blue-france;
   background-color: #f5f5f5;
 }
 
 .is-title-selected {
-  color: map.get(map.get(setting.$colors, 'blue-france'), 'color');
+  color: setting.$blue-france;
 }
 
 .thinner-text {
@@ -240,6 +239,6 @@ function createData(): TrackOptionItem {
 
 .result-number {
   font-style: italic;
-  color: map.get(map.get(setting.$colors, 'blue-france'), 'color');
+  color: setting.$blue-france;
 }
 </style>
