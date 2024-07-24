@@ -15,13 +15,14 @@
         &#{$modifier} {
           @include tool.background-color($color, $properties);
         }
-      }
-
-      @media (width >= 0) and (width <= 575px){
-        &-xs{
-          @include backgroundColor($color, $properties);
+        @media (width >= 0) and (width <= 575px){
+          &-xs{
+            @include tool.background-color($color, $properties);
+          }
         }
       }
+
+
     }
   }
 }
