@@ -32,12 +32,8 @@ export default class Config extends ConfigCommon {
     return this.getEnvValue('PDE_API_BASEURL')
   }
 
-  public static get DEBUG(): string | undefined {
-    try {
-      return this.getEnvValue('DEBUG')
-    } catch (error) {
-      return undefined
-    }
+  public static get DEBUG(): boolean {
+    return this.getEnvValue('DEBUG', 'false') === 'true'
   }
 
   public static get BREVO_DEAL_PIPELINE(): string | undefined {

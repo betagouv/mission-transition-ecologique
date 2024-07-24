@@ -2,7 +2,7 @@ import * as Sentry from '@sentry/node'
 import Config from '../../../config'
 
 export default class Monitor {
-  private static _debug: boolean = Config.DEBUG as unknown as boolean
+  private static _debug: boolean = Config.DEBUG
   private static _message?: string
 
   static error(message: string, data?: { [key: string]: unknown }) {
