@@ -1,5 +1,4 @@
 import * as Sentry from '@sentry/node'
-import { SeverityLevel } from '@sentry/types/types/severity'
 import Config from '../../../config'
 
 export default class Monitor {

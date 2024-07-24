@@ -5,6 +5,7 @@ import { MailerManager } from '../../../domain/spi'
 import { ProgramType, Program, Project } from '@tee/data'
 import { Opportunity, OpportunityType } from '@tee/common'
 import Monitor from '../../../../common/domain/monitoring/monitor'
+import { ensureError } from '../../../../common/domain/error/errors'
 
 export default class BrevoMail {
   private readonly _programTemplateReceipt = 11
@@ -21,9 +22,10 @@ export default class BrevoMail {
   ): Promise<Maybe<Error> | void> => {
     try {
       await this._api.sendTransacEmail(this._email(opportunity, programOrProject))
-    } catch (error: unknown) {
-      Monitor.error('Error in Brevo SendTransacEmail api call', { email: this._email(opportunity, programOrProject), error })
-      return Maybe.just(error as Error)
+    } catch (err: unknown) {
+      const error = ensureError(err)
+      Monitor.exception(error, { email: this._email(opportunity, programOrProject) })
+      return Maybe.just(error)
     }
   }
 

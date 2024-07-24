@@ -1,7 +1,7 @@
 import { Maybe, Result } from 'true-myth'
 import axios, { AxiosInstance, RawAxiosRequestHeaders } from 'axios'
 import AxiosHeaders from '../../../../common/infrastructure/api/axiosHeaders'
-import { handleException } from '../../../../common/domain/error/errors'
+import { ensureError, handleException } from '../../../../common/domain/error/errors'
 import Config from '../../../../config'
 import { GetLandingResponseData, Subject, subjectToIdMapping, CreateSolicitationApiBody } from './types'
 import { OpportunityWithContactId } from '../../../../opportunity/domain/types'
@@ -83,7 +83,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
         return Maybe.nothing()
       }
     } catch (exception: unknown) {
-      Monitor.error('Error creating an opportunity at CE', { exception })
+      Monitor.exception(ensureError(exception))
 
       return Maybe.of(handleException(exception))
     }

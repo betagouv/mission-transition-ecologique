@@ -3,7 +3,7 @@ import axios, { AxiosInstance } from 'axios'
 import type { TokenResponse } from './types'
 import OpportunityHubAbstract from '../opportunityHubAbstract'
 import AxiosHeaders from '../../../../common/infrastructure/api/axiosHeaders'
-import { handleException } from '../../../../common/domain/error/errors'
+import { ensureError, handleException } from '../../../../common/domain/error/errors'
 import opportunityPayloadDTO from './opportunityPayloadDTO'
 import Config from '../../../../config'
 import { Operators, ProgramType, Project } from '@tee/data'
@@ -39,7 +39,7 @@ export class BpiFrance extends OpportunityHubAbstract {
       })
       return Result.ok(response.data)
     } catch (exception: unknown) {
-      Monitor.error('Error in BPI getToken', { exception })
+      Monitor.exception(ensureError(exception))
       return Result.err(handleException(exception))
     }
   }
@@ -65,7 +65,7 @@ export class BpiFrance extends OpportunityHubAbstract {
         return Maybe.of(new Error("Erreur à la création d'une opportunité chez BPI durant l'appel BPI. HTTP CODE:" + response.status))
       }
     } catch (exception: unknown) {
-      Monitor.error('Error creating an opportunity at BPI', { exception })
+      Monitor.exception(ensureError(exception))
       return Maybe.of(handleException(exception))
     }
   }

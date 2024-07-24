@@ -17,7 +17,7 @@ export class RechercheEntreprise {
       return Result.ok(establishmentList)
     } catch (err: unknown) {
       let error = ensureError(err)
-      Monitor.error('Error in recherche-entreprise get api call', { query, error: err })
+      Monitor.exception(error, { query })
 
       if (error instanceof AxiosError) {
         if (error.response && error.response.status == 404) {
