@@ -1,9 +1,9 @@
 <template>
-  <div class="fr-grid-row fr-grid-row--gutters fr-pt-3v">
+  <div class="fr-grid-row fr-grid-row--no-gutters fr-pt-3v">
     <div
       v-for="opt in options"
       :key="opt.value"
-      class="fr-col-4 fr-col-sm-6 fr-col-md-4 fr-col-xs-12"
+      class="fr-col-4 fr-col-sm-6 fr-col-md-4 fr-col-xs-12 fr-p-1v"
       @click="selectOption(opt)"
     >
       <ThemeCard :option="opt" />
