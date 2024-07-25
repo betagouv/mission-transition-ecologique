@@ -8,6 +8,7 @@ import ProgramFeatures from '../../program/domain/programFeatures'
 import { Operators, ProgramType, Project } from '@tee/data'
 import { ContactDetails, Opportunity, OpportunityType, SiretValidator } from '@tee/common'
 import EstablishmentService from '../../establishment/application/establishmentService'
+import Monitor from '../../common/domain/monitoring/monitor'
 import { projects } from '@tee/data/static'
 
 export default class OpportunityFeatures {
@@ -39,7 +40,8 @@ export default class OpportunityFeatures {
     opportunity = maybeFullOpportunity.value
     const contactIdResult = await this._contactRepository.createOrUpdate(opportunity as ContactDetails, optIn)
     if (contactIdResult.isErr) {
-      // TODO : Send notif: contact and opportunity not created!
+      Monitor.error('Error during contact creation', { error: contactIdResult.error })
+
       return Result.err(contactIdResult.error)
     }
 
@@ -59,7 +61,11 @@ export default class OpportunityFeatures {
       this._addContactOperatorToOpportunity(opportunity, program)
     )
     if (opportunityResult.isErr || program === undefined) {
-      // TODO : Send notif: opportunity not created or opportunity created on an unknown program
+      if (opportunityResult.isErr) {
+        Monitor.error('Error during Opportunity Creation', { error: opportunityResult.error })
+      } else {
+        Monitor.error('Error during Opportunity Creation, program undefined')
+      }
       return opportunityResult
     }
 
@@ -103,7 +109,7 @@ export default class OpportunityFeatures {
         if (opportunityHubResult == Maybe.nothing()) {
           const opportunityUpdateErr = await this._updateOpportunitySentToHub(opportunityId, !opportunityHubResult.isJust)
           if (opportunityUpdateErr.isJust) {
-            // TODO: Send notif: Opportunity not updated in our DB creating a missmatch between the status in the DB and the real opportunity status
+            Monitor.warning('Opportunity status not updated after a transmission to a Hub', { error: opportunityUpdateErr.value })
           }
         }
       })
@@ -147,7 +153,7 @@ export default class OpportunityFeatures {
   private _sendReturnReceipt(opportunity: Opportunity, programOrProject: ProgramType | Project) {
     void this._mailRepository.sendReturnReceipt(opportunity, programOrProject).then((hasError) => {
       if (hasError) {
-        // TODO: Send an email to the admin: Receipt not sent or add error on sentry
+        Monitor.warning('Error while sending a return receipt', { error: hasError })
       }
     })
   }

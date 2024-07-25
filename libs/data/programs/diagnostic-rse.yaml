@@ -1,10 +1,13 @@
 titre: Diagnostic RSE
-promesse: Intégrez la RSE (Responsabilité Sociétale des Entreprises) dans le fonctionnement
-  quotidien de votre entreprise
-description: 'Réalisez avec votre conseiller CCI un diagnostic RSE en abordant les
-  3 aspects de la responsabilité sociétale de l’entreprise : la performance économique,
-  la performance sociale et la performance environnementale. Repensez votre stratégie
-  RSE comme un levier d''innovation et un vecteur de création de valeur.'
+promesse: >-
+  Intégrez la RSE (Responsabilité Sociétale des Entreprises) dans le
+  fonctionnement quotidien de votre entreprise
+description: >-
+  Réalisez avec votre conseiller CCI un diagnostic RSE en abordant les 3 aspects
+  de la responsabilité sociétale de l’entreprise : la performance économique, la
+  performance sociale et la performance environnementale. Repensez votre
+  stratégie RSE comme un levier d'innovation et un vecteur de création de
+  valeur.
 illustration: images/TEE_eolienne.png
 opérateur de contact: CCI
 url: https://www.cci.fr/offre/evaluez-votre-maturite-aux-enjeux-de-la-rse?&cp=75013
@@ -12,56 +15,56 @@ nature de l'aide: accompagnement
 coût de l'accompagnement: Selon les territoires
 durée de l'accompagnement: 1 journée
 objectifs:
-- description: Recueillir vos données sur l'ensemble des champs de la RSE (gouvernance,
-    social, sociétal, environnemental, économique)
-- description: Dresser l’état des lieux des forces et faiblesses de votre entreprise
-- description: Obtenez un plan d’action adapté à vos enjeux et à vos ressources pour
-    vous aider à mettre en œuvre efficacement votre démarche RSE au sein de votre
-    entreprise
+  - description: >-
+      Recueillir vos données sur l'ensemble des champs de la RSE (gouvernance,
+      social, sociétal, environnemental, économique)
+  - description: Dresser l’état des lieux des forces et faiblesses de votre entreprise
+  - description: >-
+      Obtenez un plan d’action adapté à vos enjeux et à vos ressources pour vous
+      aider à mettre en œuvre efficacement votre démarche RSE au sein de votre
+      entreprise
 conditions d'éligibilité:
   taille de l'entreprise:
-  - PME
-  - Non éligible aux micro-entreprises
+    - PME
+    - Non éligible aux micro-entreprises
   secteur géographique:
-  - France et territoires d'outre-mer
+    - France et territoires d'outre-mer
   secteur d'activité:
-  - Tous secteurs d’activité
+    - Tous secteurs d’activité
   nombre d'années d'activité:
-  - Éligible à toutes les entreprises
+    - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
-    - est éligible
-    - est dans un secteur d'activité ciblé
-    - a un objectif ciblé
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
   entreprise . est éligible:
     toutes ces conditions:
-    - a un effectif éligible
+      - a un effectif éligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
-    - effectif >= 20
-    - effectif <= 499
+      - effectif >= 20
+      - effectif <= 499
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - code NAF niveau 1 . est A
-    - code NAF niveau 1 . est B
-    - code NAF niveau 1 . est C
-    - code NAF niveau 1 . est D
-    - code NAF niveau 1 . est E
-    - code NAF niveau 1 . est F
-    - code NAF niveau 1 . est G
-    - code NAF niveau 1 . est H
-    - code NAF niveau 1 . est I
-    - code NAF niveau 1 . est J
-    - code NAF niveau 1 . est K
-    - code NAF niveau 1 . est L
-    - code NAF niveau 1 . est M
-    - code NAF niveau 1 . est Q
-    - code NAF niveau 1 . est R
-    - code NAF niveau 1 . est S
-    - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
   entreprise . a un objectif ciblé:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est former ou recruter
-    - questionnaire . objectif prioritaire . est mon impact environnemental
-    - questionnaire . objectif prioritaire . est l'écoconception
+      - questionnaire . objectif prioritaire . est former ou recruter

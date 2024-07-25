@@ -6,14 +6,18 @@
   "tags": [],
   "// targets": "to see all targets run: nx show project @tee/data --web",
   "targets": {
+    "ci": {
+      "executor": "nx:noop",
+      "dependsOn": [
+        "lint",
+        "test"
+      ]
+    },
     "generate-program": {
       "executor": "nx:run-commands",
       "options": {
         "cwd": "libs/data",
-        "commands": [
-          "npx ts-node src/generateProgramType.ts",
-          "npx ts-node src/buildProgramJson.ts"
-        ],
+        "commands": ["npx ts-node src/generateProgramType.ts", "npx ts-node src/buildProgramJson.ts"],
         "parallel": false
       }
     },
@@ -21,9 +25,14 @@
       "executor": "nx:run-commands",
       "options": {
         "cwd": "libs/data",
-        "commands": [
-          "npx ts-node src/buildProjectsJson.ts"
-        ]
+        "commands": ["npx ts-node src/generateProjectsJson.ts"]
+      }
+    },
+    "generate-program-yaml": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/data",
+        "commands": ["npx ts-node src/generateProgramYaml.ts"]
       }
     }
   }

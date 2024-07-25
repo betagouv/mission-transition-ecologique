@@ -22,6 +22,7 @@ export const useNavigationStore = defineStore('navigation', () => {
   const searchParams = ref<URLSearchParams>(new URLSearchParams())
   const stringOfSearchParams = ref<string>('')
   const tabSelectedOnList = ref<number>(0)
+  const hasSpinner = ref<boolean>(false)
 
   const query = computed<Record<string, LocationQueryValue | LocationQueryValue[]>>(() => {
     let query: LocationQuery = {}
@@ -132,6 +133,10 @@ export const useNavigationStore = defineStore('navigation', () => {
     setStringOfSearchParams()
   }
 
+  function replaceBrowserHistory(): void {
+    history.replaceState({}, '', `?${stringOfSearchParams.value}`)
+  }
+
   function setStringOfSearchParams() {
     stringOfSearchParams.value = searchParams.value.toString()
   }
@@ -148,7 +153,7 @@ export const useNavigationStore = defineStore('navigation', () => {
     query,
     searchParams,
     tabSelectedOnList,
-    queryByUsedTrackId,
+    hasSpinner,
     isCatalog,
     isByRouteName,
     resetSearchParams,
@@ -157,7 +162,8 @@ export const useNavigationStore = defineStore('navigation', () => {
     setSearchParams,
     updateSearchParam,
     deleteSearchParam,
-    routeByTrackId
+    routeByTrackId,
+    replaceBrowserHistory
   }
 })
 

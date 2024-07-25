@@ -13,9 +13,10 @@
   "scripts": {
     "dev": "nx run-many -t serve --verbose",
     "dev:start": "PORT=4242 npm run start",
-    "dev:build:start": "npm run build && npm run start:dev",
+    "dev:build:start": "npm run build && npm run dev:start",
     "build": "nx run-many -t build",
     "start": "nx run-many -t start --port $PORT",
+    "generate:program-yaml": "nx run @tee/data:generate-program-yaml",
     "generate:program": "nx run @tee/data:generate-program",
     "generate:projects": "nx run @tee/data:generate-projects",
     "generate:seo": "nx run @tee/web:generate-seo",
@@ -26,7 +27,7 @@
     "lint:sass:fix": "nx run @tee/web:sass-lint --fix",
     "type:check": "nx run-many -t type-check --verbose --parallel=false",
     "type:check:vue": "nx run @tee/web:type-check --verbose",
-    "ci": "npm run test && npm run lint && npm run lint:sass && npm run type:check",
+    "ci": "nx run-many -t ci --verbose --parallel=false",
     "sass:watch": "nx run @tee/web:sass-watch"
   },
   "engines": {

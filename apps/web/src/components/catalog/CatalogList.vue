@@ -22,8 +22,12 @@
   <!-- PROGRAMS AS LIST OF CARDS -->
   <div class="fr-container--fluid fr-container--fluid--no-overflow fr-mt-6v">
     <div class="fr-grid-row fr-grid-row--center">
+      <TeeSpinner
+        v-if="hasSpinner"
+        scale="6"
+      />
       <ResultListNoResults
-        v-if="showNoResultsComponent"
+        v-else-if="showNoResultsComponent"
         :has-error="hasError"
         :has-spinner="hasSpinner"
         :count-items="countPrograms"
@@ -43,7 +47,7 @@
       <div class="fr-container fr-m-0 fr-p-0 fr-px-md-2v fr-mt-3v">
         <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2">
           <TeeObjectiveCard
-            :objective="objective as PublicodeObjective"
+            :objective="objective as Objective"
             radius-corner="tr"
             radius-size="2-5v"
           />
@@ -75,8 +79,7 @@
 import ProgramFiltersAccordion from '@/components/program/list/filters/ProgramFiltersAccordion.vue'
 import ProgramFilterByTheme from '@/components/program/list/filters/ProgramFilterByTheme.vue'
 import { useProgramStore } from '@/stores/program'
-import { useUsedTrackStore } from '@/stores/usedTrack'
-import { Color, type ProgramData, PublicodeObjective, TrackId } from '@/types'
+import { Color, Objective, type ProgramData, TrackId } from '@/types'
 import Matomo from '@/utils/matomo'
 import { Theme } from '@/utils/theme'
 import UsedTrack from '@/utils/track/usedTrack'
@@ -132,7 +135,7 @@ const showObjectiveCardComponent = computed(() => {
 })
 
 onBeforeMount(async () => {
-  const result = useUsedTrackStore().hasUsedTracks() ? await programStore.programsByUsedTracks : await programStore.programs
+  const result = await programStore.programs
   if (result.isOk) {
     programs.value = result.value
   } else {

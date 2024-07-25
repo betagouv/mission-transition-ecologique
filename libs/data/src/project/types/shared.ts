@@ -1,4 +1,4 @@
-import { ThemeId } from '../../theme/themes'
+import { ThemeId } from '../../theme/types/shared'
 import { projects } from '../../../static'
 
 export interface Project {
@@ -18,10 +18,3 @@ export interface Project {
 }
 
 export type ProjectId = (typeof projects)[number]['id']
-
-export interface RawProject extends Omit<Project, 'themes' | 'mainTheme' | 'linkedProjects' | 'programs'> {
-  themes: string[]
-  mainTheme: string
-  linkedProjects: number[]
-  programs: string[]
-}

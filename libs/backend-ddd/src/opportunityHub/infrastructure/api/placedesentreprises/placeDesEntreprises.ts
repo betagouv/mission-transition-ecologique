@@ -1,7 +1,7 @@
 import { Maybe, Result } from 'true-myth'
 import axios, { AxiosInstance, RawAxiosRequestHeaders } from 'axios'
 import AxiosHeaders from '../../../../common/infrastructure/api/axiosHeaders'
-import { handleException } from '../../../../common/domain/error/errors'
+import { ensureError, handleException } from '../../../../common/domain/error/errors'
 import Config from '../../../../config'
 import { GetLandingResponseData, Subject, subjectToIdMapping, CreateSolicitationApiBody } from './types'
 import { OpportunityWithContactId } from '../../../../opportunity/domain/types'
@@ -12,6 +12,7 @@ import { Objective } from '../../../../common/types'
 import { Operators, ProgramType } from '@tee/data'
 import { Opportunity, OpportunityType } from '@tee/common'
 import { Project } from '@tee/data'
+import Monitor from '../../../../common/domain/monitoring/monitor'
 
 export class PlaceDesEntreprises extends OpportunityHubAbstract {
   protected readonly _baseUrl = Config.PDE_API_BASEURL
@@ -75,11 +76,15 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
       })
       const status = response.status
       if (status != 200) {
+        Monitor.error('Error creating an opportunity at CE during CE API Call', { CeReponse: response })
+
         return Maybe.of(Error('PDE Api Error ' + status))
       } else {
         return Maybe.nothing()
       }
     } catch (exception: unknown) {
+      Monitor.exception(ensureError(exception))
+
       return Maybe.of(handleException(exception))
     }
   }
@@ -87,7 +92,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
   async reachedDailyContactTransmissionLimit(contact: number): Promise<boolean> {
     const previousDailyOpportunities = await new OpportunityService().getDailyOpportunitiesByContactId(contact)
     if (previousDailyOpportunities.isErr) {
-      return false // TODO error handling
+      return false
     }
 
     let tranmismissiblePrograms = 0

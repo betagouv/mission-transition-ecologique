@@ -1,0 +1,88 @@
+titre: Parcours Adaptation au changement climatique
+promesse: >-
+  Adaptez votre organisation face aux catastrophes naturelles et aux risques
+  industriels liés au changement climatique
+description: >-
+  Bénéficiez d'un accompagnement en trois modules pour vous aider à évaluer la
+  vulnérabilité climatique de votre entreprise, prévenir les impacts du
+  dérèglement climatique et limiter les coûts imprévus de canicule, inondation,
+  sécheresse, etc.
+illustration: images/TEE_eolienne.png
+opérateur de contact: CCI
+autres opérateurs:
+  - ADEME
+  - Région Bretagne
+url: >-
+  https://www.bretagne.cci.fr/developpement-durable/sadapter-au-changement-climatique/bretagne
+nature de l'aide: accompagnement
+coût de l'accompagnement: Gratuit
+durée de l'accompagnement: 8 heures de formation réparties sur quelques mois
+activable en autonomie: oui
+objectifs:
+  - description: >-
+      Inscrivez-vous au parcours de formation "Adaptation au Changement
+      Climatique"
+    liens:
+      - lien: >-
+          https://www.bretagne-competitivite.fr/adaptation-changement-climatique/
+        texte: inscription
+  - description: >-
+      Participez à un webinaire ou un atelier pour comprendre les enjeux du
+      changement climatique, anticipez les changements à horizon 2050 et
+      identifiez les impacts pour les entreprises Bretonnes. (1 à 2 heures)
+  - description: >-
+      Analysez la vulnérabilité de votre entreprise et mettez en évidence vos
+      enjeux stratégiques spécifiques à votre secteur. (2 à 3 heures)
+  - description: >-
+      Analysez les leviers pour imaginer de nouvelles offres de produits ou
+      services, renforcer la résilience de votre entreprise. (1/2 journée)
+  - description: >-
+      Repartez de ce parcours de formation avec votre autoévaluation et un
+      livret comprenant des contacts et ressources pour aller plus loin.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes taillles
+    - Non éligible aux micro-entreprises
+  secteur géographique:
+    - Bretagne
+  secteur d'activité:
+    - Tous secteurs d'activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est mon impact environnemental
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Bretagne
