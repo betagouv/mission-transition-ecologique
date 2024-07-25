@@ -29,7 +29,7 @@ const filteredPrograms = computed(() => {
 const objective = computed(() => {
   return programStore.programFilters.objectiveTypeSelected !== ''
     ? (programStore.programFilters.objectiveTypeSelected as Objective)
-    : Theme.getObjectiveByValue(UsedTrack.getPriorityObjective()) ?? ''
+    : (Theme.getObjectiveByValue(UsedTrack.getPriorityObjective()) ?? '')
 })
 
 const filteredProjects = Project.filter(projects, filteredPrograms, objective)
