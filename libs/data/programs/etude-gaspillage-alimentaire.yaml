@@ -1,90 +1,110 @@
 titre: Étude "Gaspillage alimentaire"
-promesse: Réalisez une étude pour réduire vos pertes dues au gaspillage alimentaire
-  ou invendus
-description: Vous souhaitez mettre en œuvre un projet de réduction de vos pertes dues
-  au gaspillage alimentaire à réduire le gaspillage alimentaire ou aux invendus non
+promesse: >-
+  Réalisez une étude pour réduire vos pertes dues au gaspillage alimentaire ou
+  invendus
+description: >-
+  Vous souhaitez mettre en œuvre un projet de réduction de vos pertes dues au
+  gaspillage alimentaire à réduire le gaspillage alimentaire ou aux invendus non
   alimentaires ? L’ADEME finance votre étude de diagnostic ou de faisabilité.
-description longue: "La loi AGEC, fixe comme objectif de réduire le gaspillage alimentaire\
-  \ de 50 % par rapport à son niveau de 2015 à l’horizon 2025 dans les domaines de\
-  \ la distribution alimentaire et de la restauration collective, et à l’horizon 2030\
-  \ dans les domaines de la consommation, de la production, de la transformation et\
-  \ de la restauration commerciale. \nConcernant le non alimentaire, cette même Loi\
-  \ AGEC interdit la destruction des invendus. En 2021 l’ADEME a publié une étude\
-  \ sur les 12 principaux secteurs d’activité révélant qu’en moyenne la part des invendus\
-  \ représentent plus de 4 milliards d'euros de valeur marchande."
+description longue: >-
+  La loi AGEC, fixe comme objectif de réduire le gaspillage alimentaire de 50 %
+  par rapport à son niveau de 2015 à l’horizon 2025 dans les domaines de la
+  distribution alimentaire et de la restauration collective, et à l’horizon 2030
+  dans les domaines de la consommation, de la production, de la transformation
+  et de la restauration commerciale. 
+
+  Concernant le non alimentaire, cette même Loi AGEC interdit la destruction des
+  invendus. En 2021 l’ADEME a publié une étude sur les 12 principaux secteurs
+  d’activité révélant qu’en moyenne la part des invendus représentent plus de 4
+  milliards d'euros de valeur marchande. 
 début de validité: 01/01/2023
 fin de validité: 31/12/2024
 illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
-url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/etudes-lutte-contre-gaspillage-alimentaire
+url: >-
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/etudes-lutte-contre-gaspillage-alimentaire
 nature de l'aide: financement
-montant du financement: Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000
-  €
+montant du financement: Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €
 objectifs:
-- description: Vérifiez l’éligibilité de votre projet en parcourant la documentation
-    de l’ADEME.
-  liens:
-  - lien: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20lutte%20contre%20le%20gaspillage%20alimentaire%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf
-    texte: Conditions éligibilité et financement
-- description: Choisissez le bureau d'étude qui va vous accompagner pour mener cette
-    étude de diagnostic ou de faisabilité, et faites réaliser un devis.
-- description: 'Déposez votre demande d''aide : informations administratives, description
-    du projet, détails  techniques et financiers, etc. A ce stade, votre projet ne
-    doit pas avoir commencé !'
-- description: L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
-    recevez un contrat de financement précisant le montant d’aide maximum, les conditions
-    et les modalités de versement.
-- description: Réalisez votre étude de diagnostic ou de faisabilité.
+  - description: >-
+      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
+      l’ADEME ou en contactant un conseiller.
+    liens:
+      - lien: >-
+          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20lutte%20contre%20le%20gaspillage%20alimentaire%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf
+        texte: Conditions éligibilité et financement
+  - description: >-
+      Choisissez le bureau d'étude qui va vous accompagner pour mener cette
+      étude de diagnostic ou de faisabilité, et faites réaliser un devis.
+  - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
+    liens:
+      - lien: https://agirpourlatransition.ademe.fr/user/register
+        texte: Créer mon compte ADEME
+  - description: >-
+      Déposez votre dossier : informations administratives, description du
+      projet, détails techniques et financiers, etc. À ce stade, votre projet ne
+      doit pas avoir commencé !
+    liens:
+      - lien: >-
+          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/etudes-lutte-contre-gaspillage-alimentaire
+        texte: Déposer mon dossier
+  - description: >-
+      L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
+      recevez un contrat de financement précisant le montant d’aide maximum, les
+      conditions et les modalités de versement.
+  - description: Réalisez votre étude de diagnostic ou de faisabilité.
 conditions d'éligibilité:
   taille de l'entreprise:
-  - Toutes tailles
-  - Éligible aux micro-entreprises
+    - Toutes tailles
+    - Éligible aux micro-entreprises
   secteur géographique:
-  - Île-de-France, Bourgogne-Franche-Comté, Centre-Val de Loire, Corse, Grand Est,
-    Mayotte, La Réunion, Martinique, Normandie, Nouvelle-Aquitaine, Provence-Alpes-Côte
-    d'Azur
+    - >-
+      Bourgogne-Franche-Comté, Centre-Val de Loire, Corse, Grand Est,
+      Hauts-de-France, La Réunion, Martinique, Mayotte, Normandie,
+      Nouvelle-Aquitaine, Provence-Alpes-Côte d'Azur
   secteur d'activité:
-  - Tous secteurs d’activité
+    - Tous secteurs d’activité
   nombre d'années d'activité:
-  - Éligible à toutes les entreprises
+    - Éligible à toutes les entreprises
   autres critères d'éligibilité:
-  - 'L''opération pour laquelle vous sollicitez une aide financière ne doit pas avoir
-    commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque
-    forme que ce soit : marché signé, commande signée, devis accepté…)'
+    - >-
+      L'opération pour laquelle vous sollicitez une aide financière ne doit pas
+      avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes
+      (sous quelque forme que ce soit : marché signé, commande signée, devis
+      accepté…)
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
-    - est éligible
-    - est dans un secteur d'activité ciblé
-    - a un objectif ciblé
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
   entreprise . est éligible:
     applicable si:
       toutes ces conditions:
-      - dispositif . début de validité <= date du jour
-      - date du jour <= dispositif . fin de validité
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
-    - entreprise . est dans une zone géographique éligible
+      - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - code NAF niveau 1 . est A
-    - code NAF niveau 1 . est C
-    - code NAF niveau 1 . est D
-    - code NAF niveau 1 . est G
-    - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est I
   entreprise . a un objectif ciblé:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est la gestion des déchets
-    - questionnaire . objectif prioritaire . est mon impact environnemental
+      - questionnaire . objectif prioritaire . est la gestion des déchets
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
-    - région = Île-de-France
-    - région = Bourgogne-Franche-Comté
-    - région = Centre-Val de Loire
-    - région = Corse
-    - région = Grand Est
-    - région = Mayotte
-    - région = La Réunion
-    - région = Martinique
-    - région = Normandie
-    - région = Nouvelle-Aquitaine
-    - région = Provence-Alpes-Côte d'Azur
+      - région = Bourgogne-Franche-Comté
+      - région = Centre-Val de Loire
+      - région = Corse
+      - région = Grand Est
+      - région = Hauts-de-France
+      - région = La Réunion
+      - région = Martinique
+      - région = Mayotte
+      - région = Normandie
+      - région = Nouvelle-Aquitaine
+      - région = Provence-Alpes-Côte d'Azur
