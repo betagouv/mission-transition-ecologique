@@ -42,9 +42,9 @@ export const useProjectStore = defineStore('project', () => {
     if (hasProjects.value) {
       const result = await projects.value
       if (result.isOk) {
-        const program = result.value.find((program) => program.slug === slug)
-        if (program) {
-          currentProject.value = program
+        const project = result.value.find((program) => program.slug === slug)
+        if (project) {
+          currentProject.value = project
           return Result.ok(currentProject.value)
         }
 

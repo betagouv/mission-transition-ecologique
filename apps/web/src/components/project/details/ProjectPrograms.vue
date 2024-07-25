@@ -13,7 +13,7 @@
       </div></template
     >
     <DsfrHighlight
-      v-if="!siret || siret === ''"
+      v-if="!hasSiret"
       class="fr-highlight-border--yellow fr-highlight-bg--yellow-light fr-m-0 fr-p-0"
       :large="true"
     >
@@ -22,7 +22,7 @@
           <div class="fr-grid-row fr-grid-row--middle">
             <img
               class="fr-col-2 fr-col-xs-2 fr-mr-8v"
-              :src="`${publicPath}${imgPath}`"
+              src="/images/tracks/ecriture.svg"
               alt="image / ecriture"
             />
             <div class="fr-col-9 fr-col-xs-8">
@@ -44,10 +44,7 @@
       class="fr-container--fluid"
     >
       <div class="fr-grid-row">
-        <div
-          v-if="hasSpinner || hasError || !countFilteredPrograms"
-          class="fr-col-12 fr-text-center"
-        >
+        <div class="fr-col-12 fr-text-center">
           <TeeSpinner
             v-if="hasSpinner"
             scale="6"
@@ -65,7 +62,6 @@
         </div>
         <router-link
           v-for="program in filteredPrograms"
-          v-else
           :id="program.id"
           :key="program.id"
           :to="getRouteToProgramDetail(program.id)"
@@ -87,11 +83,9 @@
   </DsfrAccordion>
 </template>
 <script setup lang="ts">
-import Config from '@/config'
 import TrackStructure from '@/utils/track/trackStructure'
 import { useProgramStore } from '@/stores/program'
 import { type ProgramData, Objective, TrackId, Project } from '@/types'
-import { useUsedTrackStore } from '@/stores/usedTrack'
 import Contact from '@/utils/contact'
 import { RouteName } from '@/types/routeType'
 import { type RouteLocationRaw } from 'vue-router'
@@ -102,32 +96,36 @@ interface Props {
   project: Project | undefined
 }
 const props = defineProps<Props>()
-const expandedId = ref<string | undefined>('project-aids')
 
-const publicPath: string = Config.publicPath
-const siret: undefined | string = TrackStructure.getSiret()
 const programStore = useProgramStore()
-const imgPath: string = '/images/tracks/ecriture.svg'
-const programs = ref<ProgramData[]>()
 const navigationStore = useNavigationStore()
 
+const expandedId = ref<string | undefined>('project-aids')
+const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)
 
-const hasSpinner = computed(() => {
-  return programs.value === undefined && !hasError.value
-})
+const siret: undefined | string = TrackStructure.getSiret()
+const hasSpinner = navigationStore.hasSpinner
+
+const hasSiret = computed(() => siret !== undefined && siret !== '')
+
 const countFilteredPrograms = computed(() => {
-  return filteredPrograms.value?.length || 0
+  return filteredPrograms.value.length || 0
 })
+
 const filteredPrograms = computed(() => {
   return programs.value && props.project ? programs.value.filter((program) => props.project?.programs.includes(program.id)) : []
 })
 
 onBeforeMount(async () => {
-  const result = useUsedTrackStore().hasUsedTracks() ? await programStore.programsByUsedTracks : await programStore.programs
+  navigationStore.hasSpinner = true
+  const result = await programStore.programsByUsedTracks
   if (result.isOk) {
     programs.value = result.value
+  } else {
+    hasError.value = true
   }
+  navigationStore.hasSpinner = false
 })
 
 const getRouteToProgramDetail = (programId: string): RouteLocationRaw => {

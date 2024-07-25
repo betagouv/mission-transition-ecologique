@@ -5,7 +5,7 @@
       <div class="fr-container fr-mt-3v">
         <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-col-justify--center">
           <ResultListNoResults
-            v-if="showNoResultsComponent"
+            v-if="showNoResults"
             :has-error="hasError"
             :count-items="countProjects"
           />
@@ -59,8 +59,8 @@ const sortedProjects = computed(() => {
     : undefined
 })
 
-const showNoResultsComponent = computed(() => {
-  return hasError.value || !countProjects.value
+const showNoResults = computed(() => {
+  return hasError.value || (!countProjects.value && props.filteredProjects !== undefined)
 })
 
 const showProjectListComponent = computed(() => {
