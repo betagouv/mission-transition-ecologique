@@ -1,5 +1,8 @@
 <template>
-  <TeeDsfrBreadcrumb :links="links" />
+  <TeeDsfrBreadcrumb
+    :links="links"
+    :result-hash="`#${project.slug}`"
+  />
   <TeeEligibilityCriteriaBar
     :bg-color="Color.blueLightnessed"
     :bg-bar-color="Color.blueLighted"
@@ -42,7 +45,7 @@ const routeToProjects = {
   hash: '#' + props.project.slug,
   query: navigationStore.query
 }
-const links = ref<DsfrBreadcrumbProps['links']>([{ text: 'Vos résultats', to: routeToProjects }, { text: props.project.title }])
+const links = ref<DsfrBreadcrumbProps['links']>([{ text: props.project.title }])
 </script>
 
 <style scoped lang="scss">

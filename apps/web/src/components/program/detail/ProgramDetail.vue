@@ -2,7 +2,7 @@
   <ProgramHeader
     :program-id="programId"
     :program="program"
-    :project="project"
+    :project-slug="projectSlug"
   />
   <!-- ALERT - PROGRAM NOT AVAILABLE ANYMORE -->
   <div
@@ -230,8 +230,7 @@ import ProgramObjective from '@/components/program/detail/ProgramObjective.vue'
 import ProgramTile from '@/components/program/detail/ProgramTile.vue'
 import Config from '@/config'
 import { useProgramStore } from '@/stores/program'
-import { useProjectStore } from '@/stores/project'
-import { type ProgramData as ProgramType, Project } from '@/types'
+import { type ProgramData as ProgramType } from '@/types'
 import { RouteName } from '@/types/routeType'
 import { useNavigationStore } from '@/stores/navigation'
 import Matomo from '@/utils/matomo'
@@ -241,11 +240,9 @@ import Translation from '@/utils/translation'
 import { computed, onBeforeMount, ref } from 'vue'
 
 const programsStore = useProgramStore()
-const projectStore = useProjectStore()
 const navigationStore = useNavigationStore()
 
 const route = useRoute()
-const project = ref<Project>()
 const program = ref<ProgramType>()
 const TeeProgramFormContainer = ref<HTMLElement | null | undefined>(null)
 
@@ -290,7 +287,6 @@ const isProgramAutonomous = computed(() => {
 
 onBeforeMount(() => {
   program.value = programsStore.currentProgram
-  project.value = projectStore.currentProject
   // analytics / send event
   Matomo.sendEvent('result_detail', route.name === RouteName.CatalogDetail ? 'show_detail_catalog' : 'show_detail', props.programId)
 })

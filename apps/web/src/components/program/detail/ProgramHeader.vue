@@ -1,10 +1,13 @@
 <template>
-  <TeeDsfrBreadcrumb :links="links" />
+  <TeeDsfrBreadcrumb
+    :links="links"
+    :result-hash="`#${programId}`"
+  />
   <TeeEligibilityCriteriaBar
     v-if="!isCatalogDetail"
     :bg-color="Color.greenLightnessed"
     :bg-bar-color="Color.greenLighted"
-    :previous-route="props.project ? routeToProject : routeToPrograms"
+    :previous-route="getRouteToPreviousPage"
     message="Cette aide correspond à vos critères d’éligibilité"
     message-icon="fr-icon-checkbox-circle-fill"
   />
@@ -44,51 +47,58 @@ import { Color, Project, type ProgramData as ProgramType } from '@/types'
 import { RouteName } from '@/types/routeType'
 import Contact from '@/utils/contact'
 import { useNavigationStore } from '@/stores/navigation'
+import { useProjectStore } from '@/stores/project'
 import type { DsfrBreadcrumbProps } from '@gouvminint/vue-dsfr'
 import Translation from '@/utils/translation'
 
 interface Props {
   programId: string
   program: ProgramType | undefined
-  project: Project | undefined
+  projectSlug: string | undefined
 }
 const props = defineProps<Props>()
-console.log(props.project)
+const project = ref<Project>()
+const projectStore = useProjectStore()
+
 const navigationStore = useNavigationStore()
 const isCatalogDetail = navigationStore.isByRouteName(RouteName.CatalogDetail)
 const router = useRouter()
 
-const routeToPrograms = {
+const routeToResults = {
   name: isCatalogDetail ? RouteName.Catalog : RouteName.QuestionnaireResult,
   hash: '#' + props.programId,
   query: isCatalogDetail ? undefined : navigationStore.query
 }
 
-const routeToProjects = {
-  name: RouteName.QuestionnaireResult,
-  hash: '#' + props.project?.slug,
-  query: navigationStore.query
-}
-
-const routeToProject = {
-  name: RouteName.ProjectResultDetail,
-  hash: '#' + props.project?.id,
-  query: navigationStore.query
-}
+const routeToProject = { ...routeToResults, name: RouteName.ProjectResultDetail, params: { projectSlug: props.projectSlug } }
 
 const links = computed<DsfrBreadcrumbProps['links']>(() => {
-  const links = [{ text: 'Vos résultats', to: props.project ? routeToProjects : routeToPrograms }]
-  if (props.project) {
-    links.push({ text: props.project?.title || '', to: routeToProject })
+  const links = []
+  if (navigationStore.isByRouteName(RouteName.ProgramFromProjectDetail)) {
+    links.push({ text: project.value?.title || '', to: routeToProject })
   }
   return [...links, { text: props.program?.titre || '' }]
 })
 
-const goToPrograms = async () => {
-  if (props.project) {
-    await router.push(routeToProjects)
-  } else {
-    await router.push(routeToPrograms)
+const getRouteToPreviousPage = () => {
+  const routeToPrograms = {
+    hash: '#' + props.programId,
+    query: isCatalogDetail ? undefined : navigationStore.query
   }
+  if (isCatalogDetail) {
+    return { ...routeToPrograms, name: RouteName.Catalog }
+  }
+  if (navigationStore.isByRouteName(RouteName.ProgramFromProjectDetail)) {
+    return { name: RouteName.ProjectResultDetail, params: { projectSlug: props.projectSlug }, ...routeToPrograms }
+  }
+
+  return { name: RouteName.QuestionnaireResult, ...routeToPrograms }
 }
+
+const goToPrograms = async () => {
+  await router.push(getRouteToPreviousPage())
+}
+onBeforeMount(() => {
+  project.value = projectStore.currentProject
+})
 </script>
