@@ -1,97 +1,140 @@
 titre: Étude "réhabilitation solaires thermiques collectives"
-promesse: Réhabilitez votre installation solaire thermique collective défectueuse
-  ou improductive
-description: Votre installation solaire thermique pour la production d'eau chaude
-  est défécteuse ou à l'arrêt ? L'ADEME vous apporte un soutien financier pour la
-  réalisation d'un audit de votre système d'installation solaire thermique, ainsi
-  que pour les travaux de réhabilitation.
-description longue: "Pour être éligible, votre installation doit : \n• être une installation\
-  \ solaire thermique pour la\nproduction d’eau chaude ;\n• avoir recours à l’installation\
-  \ de capteurs solaires thermiques vitrés à\ncirculation de liquide certifiés (CSTBat,\
-  \ SolarKeymark ou équivalents) ; \n• être à destination de logements collectifs,\
-  \ du secteurs tertiaire, industrie ou agriculture. \n• avoir moins de 20 ans depuis\
-  \ sa mise en service à la date de dépôt de la\ndemande d’aide.\n• Avoir une surface\
-  \ de capteurs solaires thermiques installée supérieure ou égale à 25 m² en métropole\
-  \ et 10 m² en DOM-TOM (en une seule installation ou en cumul de surface de plusieurs\
-  \ petites installations).\n• purgée de tous les moyens de recours contre les parties\
-  \ responsables de\nl’installation (Garantie de Parfait Achèvement, Dommage d’Ouvrage,\
-  \ Assurance décennale et autre...). \n\nLes installations prioritaires à ce dispositif\
-  \ sont les installations à l’arrêt ou ayant leur productivité en deçà de 50% de\
-  \ la valeur de référence.\n\nL’ADEME privilégiera les actions groupées d’installations\
-  \ ainsi que les consortiums/groupements de prestataire d’ingénierie, d’installateur\
-  \ et d’exploitant."
+promesse: >-
+  Réhabilitez votre installation solaire thermique collective défectueuse ou
+  improductive
+description: >-
+  Votre installation solaire thermique pour la production d'eau chaude est
+  défécteuse ou à l'arrêt ? L'ADEME vous apporte un soutien financier pour la
+  réalisation d'un audit de votre système d'installation solaire thermique,
+  ainsi que pour les travaux de réhabilitation.
+description longue: >-
+  Pour être éligible, votre installation doit : 
+
+  • être une installation solaire thermique pour la
+
+  production d’eau chaude ;
+
+  • avoir recours à l’installation de capteurs solaires thermiques vitrés à
+
+  circulation de liquide certifiés (CSTBat, SolarKeymark ou équivalents) ; 
+
+  • être à destination de logements collectifs, du secteurs tertiaire, industrie
+  ou agriculture. 
+
+  • avoir moins de 20 ans depuis sa mise en service à la date de dépôt de la
+
+  demande d’aide.
+
+  • Avoir une surface de capteurs solaires thermiques installée supérieure ou
+  égale à 25 m² en métropole et 10 m² en DOM-TOM (en une seule installation ou
+  en cumul de surface de plusieurs petites installations).
+
+  • purgée de tous les moyens de recours contre les parties responsables de
+
+  l’installation (Garantie de Parfait Achèvement, Dommage d’Ouvrage, Assurance
+  décennale et autre...). 
+
+
+  Les installations prioritaires à ce dispositif sont les installations à
+  l’arrêt ou ayant leur productivité en deçà de 50% de la valeur de référence.
+
+
+  L’ADEME privilégiera les actions groupées d’installations ainsi que les
+  consortiums/groupements de prestataire d’ingénierie, d’installateur et
+  d’exploitant.
 début de validité: 03/06/2019
 fin de validité: 31/12/2024
 illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
-url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/audit-rehabilitation-dinstallations-solaires-thermiques-collectives
+url: >-
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/audit-rehabilitation-dinstallations-solaires-thermiques-collectives
 nature de l'aide: financement
-montant du financement: Selon la surface et l'ancienneté de l’installation solaire,
-  dans un maximum de 30 000€ HT
+montant du financement: >-
+  Selon la surface et l'ancienneté de l’installation solaire, dans un maximum de
+  30 000€ HT
 objectifs:
-- description: Vérifiez l’éligibilité de votre projet en parcourant la documentation
-    de l’ADEME.
-  liens:
-  - lien: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Conditions%20%C3%A9ligibilit%C3%A9%20et%20financement%20-%20R%C3%A9habilitation%20Solaire%20thermique%202024.pdf
-    texte: Conditions éligibilité et financement
-- description: Choisissez un prestataire "Reconnu Garant de l'Environnement" (RGE)
-    ou équivalent, et obtenez un devis.
-- description: 'Déposez votre demande d''aide : informations administratives, description
-    du projet, détails techniques et financiers, étude de faisabilité, etc. A ce stade,
-    votre investissement ne doit pas avoir été realisé !'
-- description: L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
-    recevez un contrat de financement précisant le montant d’aide maximum, les conditions
-    et les modalités de versement.
+  - description: >-
+      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
+      l’ADEME ou en contactant un conseiller.
+    liens:
+      - lien: >-
+          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Conditions%20%C3%A9ligibilit%C3%A9%20et%20financement%20-%20R%C3%A9habilitation%20Solaire%20thermique%202024.pdf
+        texte: Conditions éligibilité et financement
+  - description: >-
+      Choisissez un prestataire "Reconnu Garant de l'Environnement" (RGE) ou
+      équivalent, et obtenez un devis.
+    liens:
+      - lien: >-
+          https://france-renov.gouv.fr/annuaires-professionnels/artisan-rge-architecte
+        texte: L'annuaire des professionnels RGE
+  - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
+    liens:
+      - lien: https://agirpourlatransition.ademe.fr/user/register
+        texte: Créer mon compte ADEME
+  - description: >-
+      Déposez votre demande d'aide : informations administratives, description
+      du projet, détails techniques et financiers, étude de faisabilité, etc. A
+      ce stade, votre investissement ne doit pas avoir été realisé !
+  - description: >-
+      L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
+      recevez un contrat de financement précisant le montant d’aide maximum, les
+      conditions et les modalités de versement.
+    liens:
+      - lien: >-
+          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/audit-rehabilitation-dinstallations-solaires-thermiques-collectives
+        texte: Déposer mon dossier
 conditions d'éligibilité:
   taille de l'entreprise:
-  - Toutes tailles
-  - Éligible aux micro-entreprises
+    - Toutes tailles
+    - Éligible aux micro-entreprises
   secteur géographique:
-  - Île-de-France, Centre-Val de Loire, Hauts-de-France, Pays de la Loire, Bretagne,
-    Nouvelle-Aquitaine, Occitanie, Auvergne-Rhône-Alpes, Guadeloupe, Martinique, Guyane,
-    La Réunion, Mayotte, Corse
+    - >-
+      Auvergne-Rhône-Alpes, Bretagne, Centre-Val de Loire, Corse, Guadeloupe,
+      Guyane, Hauts-de-France, Île-de-France, La Réunion, Martinique, Mayotte,
+      Nouvelle-Aquitaine, Occitanie, Pays de la Loire
   secteur d'activité:
-  - Tous secteurs d’activité
+    - Tous secteurs d’activité
   nombre d'années d'activité:
-  - Éligible à toutes les entreprises
+    - Éligible à toutes les entreprises
   autres critères d'éligibilité:
-  - La surface de capteurs solaires thermiques installée doit être supérieure ou égale
-    à  25 m² en métropole et 10 m² dans les DOM-TOM
+    - >-
+      La surface de capteurs solaires thermiques installée doit être supérieure
+      ou égale à 25 m² en métropole et 10 m² dans les DOM-TOM
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
-    - est éligible
-    - est dans un secteur d'activité ciblé
-    - a un objectif ciblé
-    - questionnaire . parcours = objectif précis
-    - entreprise . est propriétaire de ses locaux
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+      - questionnaire . parcours = objectif précis
+      - entreprise . est propriétaire de ses locaux
   entreprise . est éligible:
     applicable si:
       toutes ces conditions:
-      - dispositif . début de validité <= date du jour
-      - date du jour <= dispositif . fin de validité
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
-    - entreprise . est dans une zone géographique éligible
+      - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - code NAF niveau 1 . est L
-    - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est Q
   entreprise . a un objectif ciblé:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est ma performance énergétique
+      - questionnaire . objectif prioritaire . est ma performance énergétique
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
-    - région = Île-de-France
-    - région = Centre-Val de Loire
-    - région = Hauts-de-France
-    - région = Pays de la Loire
-    - région = Bretagne
-    - région = Nouvelle-Aquitaine
-    - région = Occitanie
-    - région = Auvergne-Rhône-Alpes
-    - région = Guadeloupe
-    - région = Martinique
-    - région = Guyane
-    - région = La Réunion
-    - région = Mayotte
-    - région = Corse
+      - région = Auvergne-Rhône-Alpes
+      - région = Bretagne
+      - région = Centre-Val de Loire
+      - région = Corse
+      - région = Guadeloupe
+      - région = Guyane
+      - région = Hauts-de-France
+      - région = Île-de-France
+      - région = La Réunion
+      - région = Martinique
+      - région = Mayotte
+      - région = Nouvelle-Aquitaine
+      - région = Occitanie
+      - région = Pays de la Loire

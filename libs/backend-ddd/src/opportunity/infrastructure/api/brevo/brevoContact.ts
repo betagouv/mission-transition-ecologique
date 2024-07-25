@@ -2,9 +2,10 @@ import { ContactId } from '../../../domain/types'
 import axios from 'axios'
 import { Result } from 'true-myth'
 import { ContactRepository } from '../../../domain/spi'
-import { BrevoCompanySize, ContactAttributes } from './types'
+import { BrevoCompanySize, BrevoPostContactPayload, ContactAttributes } from './types'
 import BrevoAPI from './brevoAPI'
 import { ContactDetails } from '@tee/common'
+import Monitor from '../../../../common/domain/monitoring/monitor'
 
 const DEBUG_BREVO_LIST_ID = '4'
 
@@ -17,14 +18,16 @@ export const addBrevoContact: ContactRepository['createOrUpdate'] = async (conta
 }
 
 const requestCreateContact = async (listIds: number[], contact: ContactDetails, optIn: true): Promise<Result<ContactId, Error>> => {
-  const responseResult = await new BrevoAPI().PostContact({
+  const requestPayload: BrevoPostContactPayload = {
     email: contact.email,
     updateEnabled: true,
     listIds: listIds,
     attributes: convertDomainToBrevoContact(contact, optIn)
-  })
+  }
+  const responseResult = await new BrevoAPI().PostContact(requestPayload)
 
   if (responseResult.isErr) {
+    Monitor.error('Error in Brevo CreateContact api call', { payload: requestPayload, error: responseResult.error })
     return Result.err(responseResult.error)
   }
 
@@ -43,6 +46,12 @@ const requestCreateContact = async (listIds: number[], contact: ContactDetails, 
 
 const retrieveExistingContactId = async (email: string): Promise<Result<ContactId, Error>> => {
   const responseResult = await new BrevoAPI().GetContact(email)
+  if (responseResult.isErr) {
+    Monitor.error('Error in Brevo GetContact api call', { payload: email, error: responseResult.error })
+
+    return Result.err(responseResult.error)
+  }
+
   const contactId = responseResult.map((r) => r.data as ContactId)
   return contactId
 }

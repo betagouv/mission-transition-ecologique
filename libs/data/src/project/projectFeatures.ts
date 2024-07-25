@@ -1,10 +1,10 @@
 import path from 'path'
 import fs from 'fs'
-import { Baserow } from './baserow'
-import { RawProject } from './type/project'
+import { ProjectBaserow } from '../common/baserow/projectBaserow'
+import { RawProject } from './types/domain'
 import { jsonPrograms } from '../../generated/index'
 import { ProgramType } from '../index'
-import { ThemeId } from '../theme/themes'
+import { ThemeId } from '../theme/types/shared'
 
 export class ProjectFeatures {
   private readonly _outputDirectory: string = path.join(__dirname, '../../static/')
@@ -15,11 +15,11 @@ export class ProjectFeatures {
     this._programs = jsonPrograms as unknown as ProgramType[]
   }
 
-  async buildProjectsJSONOutputs(): Promise<void> {
+  async generateProjectsJson(): Promise<void> {
     this._resetImageFolder()
 
     console.log(`Start loading Baserow data and creating the project images`)
-    const projects = await new Baserow(this._outputImageDirectory).getValidProjects()
+    const projects = await new ProjectBaserow(this._outputImageDirectory).getValidProjects()
 
     console.log(`Baserow Data sucessfully downloaded.\nStarting to validate the project data and generating the project JSON.`)
     this._validateData(projects)

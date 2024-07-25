@@ -73,7 +73,7 @@
     </div>
     <div
       id="project-contact"
-      class="fr-tee-form-block fr-m-auto"
+      class="fr-tee-form-block fr-p-4v"
     >
       <ProjectForm
         v-if="project"
