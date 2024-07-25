@@ -3,6 +3,7 @@ import { ProgramService } from '../../program/application/programService'
 import { Result } from 'true-myth'
 import { OpportunityRepository } from '../../opportunity/domain/spi'
 import StatisticsCache from './statisticsCache'
+import Monitor from '../../common/domain/monitoring/monitor'
 
 export default class StatisticsFeatures {
   private readonly _opportunityRepository: OpportunityRepository
@@ -52,6 +53,7 @@ export default class StatisticsFeatures {
     const allPrograms = this._programService.getAll()
     const activeProgramsResult = this._programService.getFilteredPrograms({})
     if (activeProgramsResult.isErr) {
+      Monitor.error('Error generating program statistics', { error: activeProgramsResult.error })
       throw activeProgramsResult.error
     }
     return {
@@ -106,9 +108,7 @@ export default class StatisticsFeatures {
     if (opportunitiesDates.isOk) {
       return opportunitiesDates.value
     }
-
-    console.log(opportunitiesDates.error)
-    // TODO: improve error handling
+    Monitor.error('Error generating Opportunities dates ', { error: opportunitiesDates.error })
     return null
   }
 }

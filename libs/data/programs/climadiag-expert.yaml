@@ -1,68 +1,71 @@
 titre: ClimaDiag expert
-promesse: Anticipez l’impact des changements climatiques pour votre entreprise et
+promesse: >-
+  Anticipez l’impact des changements climatiques pour votre entreprise et
   sécurisez votre activité
-description: Bénéficiez d'un accompagnement d'un expert CCI pour vous aider à évaluer
-  la vulnérabilité climatique de votre entreprise, prévenir les impacts du dérèglement
-  climatique et vous aider à limiter les coûts imprévus de canicule, inondation, sécheresse,
-  etc.
+description: >-
+  Bénéficiez d'un accompagnement d'un expert CCI pour vous aider à évaluer la
+  vulnérabilité climatique de votre entreprise, prévenir les impacts du
+  dérèglement climatique et vous aider à limiter les coûts imprévus de canicule,
+  inondation, sécheresse, etc.
 début de validité: 01/10/2023
 fin de validité: 01/08/2026
 illustration: images/TEE_energie_verte.png
 opérateur de contact: CCI
 autres opérateurs:
-- ADEME
-- Agence de l'Eau
+  - ADEME
+  - Agence de l'Eau
 url: https://www.grandest.cci.fr/produit/climadiag-expert
 nature de l'aide: accompagnement
 coût de l'accompagnement: Gratuit
 durée de l'accompagnement: 5 à 10 jours selon la taille de l'entreprise
 objectifs:
-- description: Réalisez un diagnostic sur site pour évaluer et hierarchiser l'ensemble
-    des risques encourus par votre entreprise.
-- description: 'Identifiez l''impact sur votre écosystème : concurrents & sources
-    d''insatisfaction client liées aux changements climatiques.'
-- description: Concevez un plan d'actions à mettre en oeuvre.
-- description: Identifiez des financements possibles.
+  - description: >-
+      Réalisez un diagnostic sur site pour évaluer et hierarchiser l'ensemble
+      des risques encourus par votre entreprise.
+  - description: >-
+      Identifiez l'impact sur votre écosystème : concurrents & sources
+      d'insatisfaction client liées aux changements climatiques.
+  - description: Concevez un plan d'actions à mettre en oeuvre.
+  - description: Identifiez des financements possibles.
 conditions d'éligibilité:
   taille de l'entreprise:
-  - PME
-  - Non éligible aux micro-entreprises
+    - PME
+    - Non éligible aux micro-entreprises
   secteur géographique:
-  - Bourgogne-Franche-Comté
+    - Bourgogne-Franche-Comté
   secteur d'activité:
-  - Industrie
+    - Industrie
   nombre d'années d'activité:
-  - Éligible à toutes les entreprises
+    - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
-    - est éligible
-    - est dans un secteur d'activité ciblé
-    - a un objectif ciblé
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
   entreprise . est éligible:
     applicable si:
       toutes ces conditions:
-      - dispositif . début de validité <= date du jour
-      - date du jour <= dispositif . fin de validité
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
-    - a un effectif éligible
-    - entreprise . est dans une zone géographique éligible
+      - a un effectif éligible
+      - entreprise . est dans une zone géographique éligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
-    - effectif >= 20
-    - effectif <= 499
+      - effectif >= 20
+      - effectif <= 499
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - code NAF niveau 1 . est B
-    - code NAF niveau 1 . est C
-    - code NAF niveau 1 . est D
-    - code NAF niveau 1 . est E
-    - code NAF niveau 1 . est F
-    - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est H
   entreprise . a un objectif ciblé:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est mon impact environnemental
-    - questionnaire . objectif prioritaire . est l'écoconception
+      - questionnaire . objectif prioritaire . est mon impact environnemental
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
-    - région = Bourgogne-Franche-Comté
+      - région = Bourgogne-Franche-Comté

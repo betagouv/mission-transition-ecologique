@@ -1,111 +1,145 @@
 titre: Étude "Alimentation durable"
 promesse: Réalisez une étude autour de l'alimentation durable
-description: Vous souhaitez engager une transition alimentaire sur votre territoire
-  ou dans votre entreprise ? L’ADEME soutient le financement d'études pour réduire
-  les impacts environnementaux des produits et pratiques alimentaires.
-description longue: "Face à l’augmentation des besoins à l’échelle de la planète,\
-  \ l’alimentation durable s’impose comme un défi collectif à relever et comme une\
-  \ voie d’avenir pour nos filières alimentaires.\n\nL'ADEME soutient les études autour\
-  \ de l'alimentation durable comportant une dimension environnementale forte, à savoir\
-  \ : \n• contribuer à une chaîne alimentaire durable : mise à disposition des consommateurs\
-  \ des aliments à faible impact environnemental (bio, local, de saison…), écoconception\
-  \ sur l’ensemble de la filière alimentaire (soutien à l’agroécologie, développement\
-  \ de plateforme logistique, réduction des emballages…) ;\n• faire évoluer les pratiques\
-  \ alimentaires : achats responsables en circuits de proximité, affichage environnemental\
-  \ des produits, respect de la saisonnalité des produits, rééquilibrage des régimes\
-  \ alimentaires (intégration des légumineuses et diminution des protéines d’origine\
-  \ animale) ;\n\nD'autres fonds ADEME sont disponibles pour financer les études concernant\
-  \ la lutte contre le gaspillage alimentaire et la gestion des biodéchets. \n\nPlusieurs\
-  \ types d'études peuvent être financées par ce financement : \n• Les études générales\
-  \ visant à acquérir ou approfondir les connaissances sur les systèmes alimentaires,\
-  \ \n• Les diagnostics d'état des lieux techniques ou organisationnel d' opérateur(s)\
-  \ de la filière alimentaire ou d'un territoire. \n• Les études de faisabilité d'une\
-  \ nouvelle démarche, projet ou investissement."
+description: >-
+  Vous souhaitez engager une transition alimentaire sur votre territoire ou dans
+  votre entreprise ? L’ADEME soutient le financement d'études pour réduire les
+  impacts environnementaux des produits et pratiques alimentaires.
+description longue: >-
+  Face à l’augmentation des besoins à l’échelle de la planète, l’alimentation
+  durable s’impose comme un défi collectif à relever et comme une voie d’avenir
+  pour nos filières alimentaires.
+
+
+  L'ADEME soutient les études autour de l'alimentation durable comportant une
+  dimension environnementale forte, à savoir : 
+
+  • contribuer à une chaîne alimentaire durable : mise à disposition des
+  consommateurs des aliments à faible impact environnemental (bio, local, de
+  saison…), écoconception sur l’ensemble de la filière alimentaire (soutien à
+  l’agroécologie, développement de plateforme logistique, réduction des
+  emballages…) ;
+
+  • faire évoluer les pratiques alimentaires : achats responsables en circuits
+  de proximité, affichage environnemental des produits, respect de la
+  saisonnalité des produits, rééquilibrage des régimes alimentaires (intégration
+  des légumineuses et diminution des protéines d’origine animale) ;
+
+
+  D'autres fonds ADEME sont disponibles pour financer les études concernant la
+  lutte contre le gaspillage alimentaire et la gestion des biodéchets. 
+
+
+  Plusieurs types d'études peuvent être financées par ce financement : 
+
+  • Les études générales visant à acquérir ou approfondir les connaissances sur
+  les systèmes alimentaires, 
+
+  • Les diagnostics d'état des lieux techniques ou organisationnel d'
+  opérateur(s) de la filière alimentaire ou d'un territoire. 
+
+  • Les études de faisabilité d'une nouvelle démarche, projet ou investissement.
 début de validité: 01/01/2023
 fin de validité: 31/12/2024
 illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
-url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/subvention-etudes-dalimentation-durable
+url: >-
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/subvention-etudes-dalimentation-durable
 nature de l'aide: financement
-montant du financement: Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000
-  €
+montant du financement: Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €
 objectifs:
-- description: Vérifiez l’éligibilité de votre projet en parcourant la documentation
-    de l’ADEME.
-  liens:
-  - lien: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Subvention%20aux%20%C3%A9tudes%20d%27alimentation%20durable%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.docx
-    texte: Conditions éligibilité et financement
-- description: Choisissez le prestataire qui va vous accompagner pour mener cette
-    étude et obtenez un devis.
-- description: 'Déposez votre demande d''aide : informations administratives, description
-    du projet, détails techniques et financiers, etc. A ce stade, votre projet ne
-    doit pas avoir commencé !'
-- description: L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
-    recevez un contrat de financement précisant le montant d’aide maximum, les conditions
-    et les modalités de versement.
-- description: Réalisez votre étude. Il peut s'agir d'une étude générale, de diagnostic,
-    d'accompagnement ou de faisabilité.
+  - description: >-
+      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
+      l’ADEME ou en contactant un conseiller.
+    liens:
+      - lien: >-
+          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Subvention%20aux%20%C3%A9tudes%20d%27alimentation%20durable%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.docx
+        texte: Conditions éligibilité et financement
+  - description: >-
+      Choisissez le prestataire qui va vous accompagner pour mener cette étude
+      et obtenez un devis.
+  - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
+    liens:
+      - lien: https://agirpourlatransition.ademe.fr/user/register
+        texte: Créer mon compte ADEME
+  - description: >-
+      Déposez votre dossier : informations administratives, description du
+      projet, détails techniques et financiers, etc. À ce stade, votre projet ne
+      doit pas avoir commencé !
+    liens:
+      - lien: >-
+          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/subvention-etudes-dalimentation-durable
+        texte: Déposer mon dossier
+  - description: >-
+      L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
+      recevez un contrat de financement précisant le montant d’aide maximum, les
+      conditions et les modalités de versement.
+  - description: >-
+      Réalisez votre étude. Il peut s'agir d'une étude générale, de diagnostic,
+      d'accompagnement ou de faisabilité.
 conditions d'éligibilité:
   taille de l'entreprise:
-  - Toutes tailles
-  - Éligible aux micro-entreprises
+    - Toutes tailles
+    - Éligible aux micro-entreprises
   secteur géographique:
-  - Grand Est, Pays de la Loire, Hauts-de-France, Saint-Pierre-Et-Miquelon, Saint-Barthélemy,
-    Mayotte, La Réunion, Guyane, Nouvelle-Calédonie, Occitanie, Martinique, Nouvelle-Aquitaine,
-    Guadeloupe, Provence-Alpes-Côte d'Azur, Normandie, Polynésie française, Bourgogne-Franche-Comté,
-    Île-de-France, Centre-Val de Loire, Corse
+    - >-
+      Bourgogne-Franche-Comté, Centre-Val de Loire, Corse, Grand Est,
+      Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La Réunion,
+      Martinique, Mayotte, Normandie, Nouvelle-Aquitaine, Nouvelle-Calédonie,
+      Occitanie, Pays de la Loire, Polynésie française, Provence-Alpes-Côte
+      d'Azur, Saint-Barthélemy, Saint-Pierre-Et-Miquelon
   secteur d'activité:
-  - Tous secteurs d’activité
+    - Tous secteurs d’activité
   nombre d'années d'activité:
-  - Éligible à toutes les entreprises
+    - Éligible à toutes les entreprises
   autres critères d'éligibilité:
-  - 'L''opération pour laquelle vous sollicitez une aide financière ne doit pas avoir
-    commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque
-    forme que ce soit : marché signé, commande signée, devis accepté…)'
+    - >-
+      L'opération pour laquelle vous sollicitez une aide financière ne doit pas
+      avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes
+      (sous quelque forme que ce soit : marché signé, commande signée, devis
+      accepté…)
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
-    - est éligible
-    - est dans un secteur d'activité ciblé
-    - a un objectif ciblé
-    - questionnaire . parcours = objectif précis
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+      - questionnaire . parcours = objectif précis
   entreprise . est éligible:
     applicable si:
       toutes ces conditions:
-      - dispositif . début de validité <= date du jour
-      - date du jour <= dispositif . fin de validité
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
-    - entreprise . est dans une zone géographique éligible
+      - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - code NAF niveau 1 . est A
-    - code NAF niveau 1 . est C
-    - code NAF niveau 1 . est D
-    - code NAF niveau 1 . est G
-    - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est I
   entreprise . a un objectif ciblé:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est la gestion des déchets
-    - questionnaire . objectif prioritaire . est mon impact environnemental
+      - questionnaire . objectif prioritaire . est mon impact environnemental
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
-    - région = Grand Est
-    - région = Pays de la Loire
-    - région = Hauts-de-France
-    - région = Saint-Pierre-Et-Miquelon
-    - région = Saint-Barthélemy
-    - région = Mayotte
-    - région = La Réunion
-    - région = Guyane
-    - région = Nouvelle-Calédonie
-    - région = Occitanie
-    - région = Martinique
-    - région = Nouvelle-Aquitaine
-    - région = Guadeloupe
-    - région = Provence-Alpes-Côte d'Azur
-    - région = Normandie
-    - région = Polynésie française
-    - région = Bourgogne-Franche-Comté
-    - région = Île-de-France
-    - région = Centre-Val de Loire
-    - région = Corse
+      - région = Bourgogne-Franche-Comté
+      - région = Centre-Val de Loire
+      - région = Corse
+      - région = Grand Est
+      - région = Guadeloupe
+      - région = Guyane
+      - région = Hauts-de-France
+      - région = Île-de-France
+      - région = La Réunion
+      - région = Martinique
+      - région = Mayotte
+      - région = Normandie
+      - région = Nouvelle-Aquitaine
+      - région = Nouvelle-Calédonie
+      - région = Occitanie
+      - région = Pays de la Loire
+      - région = Polynésie française
+      - région = Provence-Alpes-Côte d'Azur
+      - région = Saint-Barthélemy
+      - région = Saint-Pierre-Et-Miquelon

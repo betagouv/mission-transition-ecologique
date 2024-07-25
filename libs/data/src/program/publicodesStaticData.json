@@ -1,0 +1,407 @@
+{
+  "etude-diagnostic-serres": {
+    "entreprise . est ciblée": {
+      "toutes ces conditions": ["est éligible", "a un objectif ciblé", "entreprise . est propriétaire de ses locaux"]
+    },
+    "entreprise . est éligible": {
+      "applicable si": {
+        "toutes ces conditions": ["dispositif . début de validité <= date du jour", "date du jour <= dispositif . fin de validité"]
+      },
+      "toutes ces conditions": ["est dans un secteur d'activité éligible"]
+    },
+    "entreprise . est dans un secteur d'activité éligible": {
+      "toutes ces conditions": [
+        "code NAF niveau 1 . est A",
+        {
+          "une de ces conditions": [
+            "code NAF = \"01.11Z\"",
+            "code NAF = \"01.12Z\"",
+            "code NAF = \"01.13Z\"",
+            "code NAF = \"01.14Z\"",
+            "code NAF = \"01.15Z\"",
+            "code NAF = \"01.16Z\"",
+            "code NAF = \"01.19Z\"",
+            "code NAF = \"01.21Z\"",
+            "code NAF = \"01.22Z\"",
+            "code NAF = \"01.23Z\"",
+            "code NAF = \"01.24Z\"",
+            "code NAF = \"01.25Z\"",
+            "code NAF = \"01.26Z\"",
+            "code NAF = \"01.27Z\"",
+            "code NAF = \"01.28Z\"",
+            "code NAF = \"01.29Z\"",
+            "code NAF = \"01.30Z\""
+          ]
+        }
+      ]
+    },
+    "entreprise . a un objectif ciblé": {
+      "une de ces conditions": [
+        "questionnaire . objectif prioritaire . est rénover mon bâtiment",
+        "questionnaire . objectif prioritaire . est ma performance énergétique",
+        "questionnaire . objectif prioritaire . est mon impact environnemental"
+      ]
+    }
+  },
+  "imprim-vert": {
+    "entreprise . est ciblée": {
+      "toutes ces conditions": ["est éligible", "a un objectif ciblé"]
+    },
+    "entreprise . est éligible": {
+      "toutes ces conditions": ["a un effectif éligible", "est dans un secteur d'activité éligible"]
+    },
+    "entreprise . a un effectif éligible": {
+      "toutes ces conditions": ["effectif <= 249"]
+    },
+    "entreprise . est dans un secteur d'activité éligible": {
+      "toutes ces conditions": [
+        "code NAF niveau 1 . est C",
+        {
+          "une de ces conditions": [
+            "code NAF = \"17.11Z\"",
+            "code NAF = \"17.12Z\"",
+            "code NAF = \"17.21Z\"",
+            "code NAF = \"17.22Z\"",
+            "code NAF = \"17.23Z\"",
+            "code NAF = \"17.24Z\"",
+            "code NAF = \"17.29Z\"",
+            "code NAF = \"18.12A\"",
+            "code NAF = \"18.12B\"",
+            "code NAF = \"18.13A\"",
+            "code NAF = \"18.13B\"",
+            "code NAF = \"18.13C\"",
+            "code NAF = \"18.14Z\"",
+            "code NAF = \"18.20Z\"",
+            "code NAF = \"58.19P\""
+          ]
+        }
+      ]
+    },
+    "entreprise . a un objectif ciblé": {
+      "une de ces conditions": [
+        "questionnaire . objectif prioritaire . est la gestion des déchets",
+        "questionnaire . objectif prioritaire . est diminuer ma consommation d'eau",
+        "questionnaire . objectif prioritaire . est ma performance énergétique",
+        "questionnaire . objectif prioritaire . est mon impact environnemental",
+        "questionnaire . objectif prioritaire . est l'écoconception"
+      ]
+    }
+  },
+  "pret-economies-d-energie-pee": {
+    "entreprise . est ciblée": {
+      "toutes ces conditions": ["est éligible", "a un objectif ciblé"]
+    },
+    "entreprise . est éligible": {
+      "toutes ces conditions": ["a un effectif éligible", "est dans un secteur d'activité éligible"]
+    },
+    "entreprise . a un effectif éligible": {
+      "toutes ces conditions": ["effectif <= 49"]
+    },
+    "entreprise . est dans un secteur d'activité éligible": "est secteur d'activité exclu = non",
+    "est secteur d'activité exclu": {
+      "une de ces conditions": [
+        "est activité d'intermédiation financière",
+        "est activité de promotion immobilière et marchand de biens",
+        "est secteur agricole hors entreprises forestières"
+      ]
+    },
+    "est activité d'intermédiation financière": {
+      "une de ces conditions": [
+        "entreprise . code NAF = \"64.11Z\"",
+        "entreprise . code NAF = \"64.19Z\"",
+        "entreprise . code NAF = \"64.30Z\"",
+        "entreprise . code NAF = \"64.91Z\"",
+        "entreprise . code NAF = \"64.92Z\"",
+        "entreprise . code NAF = \"64.99Z\""
+      ]
+    },
+    "est activité de promotion immobilière et marchand de biens": {
+      "une de ces conditions": [
+        "entreprise . code NAF = \"68.10Z\"",
+        "entreprise . code NAF = \"68.20A\"",
+        "entreprise . code NAF = \"68.20B\"",
+        "entreprise . code NAF = \"41.10A\"",
+        "entreprise . code NAF = \"41.10B\"",
+        "entreprise . code NAF = \"41.10C\"",
+        "entreprise . code NAF = \"41.10D\""
+      ]
+    },
+    "est secteur agricole hors entreprises forestières": {
+      "une de ces conditions": [
+        "entreprise . code NAF = \"01.11Z\"",
+        "entreprise . code NAF = \"01.12Z\"",
+        "entreprise . code NAF = \"01.13Z\"",
+        "entreprise . code NAF = \"01.14Z\"",
+        "entreprise . code NAF = \"01.15Z\"",
+        "entreprise . code NAF = \"01.16Z\"",
+        "entreprise . code NAF = \"01.19Z\"",
+        "entreprise . code NAF = \"01.21Z\"",
+        "entreprise . code NAF = \"01.22Z\"",
+        "entreprise . code NAF = \"01.23Z\"",
+        "entreprise . code NAF = \"01.24Z\"",
+        "entreprise . code NAF = \"01.25Z\"",
+        "entreprise . code NAF = \"01.26Z\"",
+        "entreprise . code NAF = \"01.27Z\"",
+        "entreprise . code NAF = \"01.28Z\"",
+        "entreprise . code NAF = \"01.29Z\"",
+        "entreprise . code NAF = \"01.30Z\"",
+        "entreprise . code NAF = \"01.41Z\"",
+        "entreprise . code NAF = \"01.42Z\"",
+        "entreprise . code NAF = \"01.43Z\"",
+        "entreprise . code NAF = \"01.44Z\"",
+        "entreprise . code NAF = \"01.45Z\"",
+        "entreprise . code NAF = \"01.46Z\"",
+        "entreprise . code NAF = \"01.47Z\"",
+        "entreprise . code NAF = \"01.49Z\"",
+        "entreprise . code NAF = \"01.50Z\"",
+        "entreprise . code NAF = \"01.61Z\"",
+        "entreprise . code NAF = \"01.62Z\"",
+        "entreprise . code NAF = \"01.63Z\"",
+        "entreprise . code NAF = \"01.64Z\"",
+        "entreprise . code NAF = \"01.70Z\"",
+        "entreprise . code NAF = \"01.70Z\"",
+        "entreprise . code NAF = \"02.10Z\"",
+        "entreprise . code NAF = \"02.30Z\""
+      ]
+    },
+    "entreprise . a un objectif ciblé": {
+      "une de ces conditions": ["questionnaire . objectif prioritaire . est ma performance énergétique"]
+    }
+  },
+  "pret-vert": {
+    "entreprise . est ciblée": {
+      "toutes ces conditions": ["est éligible", "a un objectif ciblé"]
+    },
+    "entreprise . est éligible": {
+      "toutes ces conditions": ["a un effectif éligible", "est dans un secteur d'activité éligible"]
+    },
+    "entreprise . a un effectif éligible": {
+      "toutes ces conditions": ["effectif >= 1", "effectif <= 4999"]
+    },
+    "entreprise . est dans un secteur d'activité éligible": "est secteur d'activité exclu = non",
+    "est secteur d'activité exclu": {
+      "une de ces conditions": [
+        "est activité d'intermédiation financière",
+        "est activité de promotion immobilière et marchand de biens",
+        "est secteur agricole hors entreprises forestières"
+      ]
+    },
+    "est activité d'intermédiation financière": {
+      "une de ces conditions": [
+        "entreprise . code NAF = \"64.11Z\"",
+        "entreprise . code NAF = \"64.19Z\"",
+        "entreprise . code NAF = \"64.30Z\"",
+        "entreprise . code NAF = \"64.91Z\"",
+        "entreprise . code NAF = \"64.92Z\"",
+        "entreprise . code NAF = \"64.99Z\""
+      ]
+    },
+    "est activité de promotion immobilière et marchand de biens": {
+      "une de ces conditions": [
+        "entreprise . code NAF = \"68.10Z\"",
+        "entreprise . code NAF = \"68.20A\"",
+        "entreprise . code NAF = \"68.20B\"",
+        "entreprise . code NAF = \"41.10A\"",
+        "entreprise . code NAF = \"41.10B\"",
+        "entreprise . code NAF = \"41.10C\"",
+        "entreprise . code NAF = \"41.10D\""
+      ]
+    },
+    "est secteur agricole hors entreprises forestières": {
+      "une de ces conditions": [
+        "entreprise . code NAF = \"01.11Z\"",
+        "entreprise . code NAF = \"01.12Z\"",
+        "entreprise . code NAF = \"01.13Z\"",
+        "entreprise . code NAF = \"01.14Z\"",
+        "entreprise . code NAF = \"01.15Z\"",
+        "entreprise . code NAF = \"01.16Z\"",
+        "entreprise . code NAF = \"01.19Z\"",
+        "entreprise . code NAF = \"01.21Z\"",
+        "entreprise . code NAF = \"01.22Z\"",
+        "entreprise . code NAF = \"01.23Z\"",
+        "entreprise . code NAF = \"01.24Z\"",
+        "entreprise . code NAF = \"01.25Z\"",
+        "entreprise . code NAF = \"01.26Z\"",
+        "entreprise . code NAF = \"01.27Z\"",
+        "entreprise . code NAF = \"01.28Z\"",
+        "entreprise . code NAF = \"01.29Z\"",
+        "entreprise . code NAF = \"01.30Z\"",
+        "entreprise . code NAF = \"01.41Z\"",
+        "entreprise . code NAF = \"01.42Z\"",
+        "entreprise . code NAF = \"01.43Z\"",
+        "entreprise . code NAF = \"01.44Z\"",
+        "entreprise . code NAF = \"01.45Z\"",
+        "entreprise . code NAF = \"01.46Z\"",
+        "entreprise . code NAF = \"01.47Z\"",
+        "entreprise . code NAF = \"01.49Z\"",
+        "entreprise . code NAF = \"01.50Z\"",
+        "entreprise . code NAF = \"01.61Z\"",
+        "entreprise . code NAF = \"01.62Z\"",
+        "entreprise . code NAF = \"01.63Z\"",
+        "entreprise . code NAF = \"01.64Z\"",
+        "entreprise . code NAF = \"01.70Z\"",
+        "entreprise . code NAF = \"01.70Z\"",
+        "entreprise . code NAF = \"02.10Z\"",
+        "entreprise . code NAF = \"02.30Z\""
+      ]
+    },
+    "entreprise . a un objectif ciblé": {
+      "une de ces conditions": [
+        "questionnaire . objectif prioritaire . est rénover mon bâtiment",
+        "questionnaire . objectif prioritaire . est la mobilité durable",
+        "questionnaire . objectif prioritaire . est la gestion des déchets",
+        "questionnaire . objectif prioritaire . est diminuer ma consommation d'eau",
+        "questionnaire . objectif prioritaire . est ma performance énergétique",
+        "questionnaire . objectif prioritaire . est former ou recruter",
+        "questionnaire . objectif prioritaire . est mon impact environnemental",
+        "questionnaire . objectif prioritaire . est l'écoconception"
+      ]
+    }
+  },
+  "pret-vert-ademe": {
+    "entreprise . est ciblée": {
+      "toutes ces conditions": ["est éligible", "a un objectif ciblé", "questionnaire . parcours = objectif précis"]
+    },
+    "entreprise . est éligible": {
+      "toutes ces conditions": [
+        "a un effectif éligible",
+        "est dans un secteur d'activité éligible",
+        "date du jour <= dispositif . fin de validité"
+      ]
+    },
+    "entreprise . a un effectif éligible": {
+      "toutes ces conditions": ["effectif >= 1", "effectif <= 249"]
+    },
+    "entreprise . est dans un secteur d'activité éligible": "est secteur d'activité exclu = non",
+    "est secteur d'activité exclu": {
+      "une de ces conditions": [
+        "est activité d'intermédiation financière",
+        "est activité de promotion immobilière et marchand de biens",
+        "est secteur agricole hors entreprises forestières",
+        "est activité de pêche"
+      ]
+    },
+    "est activité d'intermédiation financière": {
+      "une de ces conditions": [
+        "entreprise . code NAF = \"64.11Z\"",
+        "entreprise . code NAF = \"64.19Z\"",
+        "entreprise . code NAF = \"64.30Z\"",
+        "entreprise . code NAF = \"64.91Z\"",
+        "entreprise . code NAF = \"64.92Z\"",
+        "entreprise . code NAF = \"64.99Z\""
+      ]
+    },
+    "est activité de promotion immobilière et marchand de biens": {
+      "une de ces conditions": [
+        "entreprise . code NAF = \"68.10Z\"",
+        "entreprise . code NAF = \"68.20A\"",
+        "entreprise . code NAF = \"68.20B\"",
+        "entreprise . code NAF = \"41.10A\"",
+        "entreprise . code NAF = \"41.10B\"",
+        "entreprise . code NAF = \"41.10C\"",
+        "entreprise . code NAF = \"41.10D\""
+      ]
+    },
+    "est secteur agricole hors entreprises forestières": {
+      "une de ces conditions": [
+        "entreprise . code NAF = \"01.11Z\"",
+        "entreprise . code NAF = \"01.12Z\"",
+        "entreprise . code NAF = \"01.13Z\"",
+        "entreprise . code NAF = \"01.14Z\"",
+        "entreprise . code NAF = \"01.15Z\"",
+        "entreprise . code NAF = \"01.16Z\"",
+        "entreprise . code NAF = \"01.19Z\"",
+        "entreprise . code NAF = \"01.21Z\"",
+        "entreprise . code NAF = \"01.22Z\"",
+        "entreprise . code NAF = \"01.23Z\"",
+        "entreprise . code NAF = \"01.24Z\"",
+        "entreprise . code NAF = \"01.25Z\"",
+        "entreprise . code NAF = \"01.26Z\"",
+        "entreprise . code NAF = \"01.27Z\"",
+        "entreprise . code NAF = \"01.28Z\"",
+        "entreprise . code NAF = \"01.29Z\"",
+        "entreprise . code NAF = \"01.30Z\"",
+        "entreprise . code NAF = \"01.41Z\"",
+        "entreprise . code NAF = \"01.42Z\"",
+        "entreprise . code NAF = \"01.43Z\"",
+        "entreprise . code NAF = \"01.44Z\"",
+        "entreprise . code NAF = \"01.45Z\"",
+        "entreprise . code NAF = \"01.46Z\"",
+        "entreprise . code NAF = \"01.47Z\"",
+        "entreprise . code NAF = \"01.49Z\"",
+        "entreprise . code NAF = \"01.50Z\"",
+        "entreprise . code NAF = \"01.61Z\"",
+        "entreprise . code NAF = \"01.62Z\"",
+        "entreprise . code NAF = \"01.63Z\"",
+        "entreprise . code NAF = \"01.64Z\"",
+        "entreprise . code NAF = \"01.70Z\"",
+        "entreprise . code NAF = \"01.70Z\"",
+        "entreprise . code NAF = \"02.10Z\"",
+        "entreprise . code NAF = \"02.30Z\""
+      ]
+    },
+    "est activité de pêche": {
+      "une de ces conditions": ["entreprise . code NAF = \"03.21Z\"", "entreprise . code NAF = \"46.38A\""]
+    },
+    "entreprise . a un objectif ciblé": {
+      "une de ces conditions": [
+        "questionnaire . objectif prioritaire . est rénover mon bâtiment",
+        "questionnaire . objectif prioritaire . est la mobilité durable",
+        "questionnaire . objectif prioritaire . est la gestion des déchets",
+        "questionnaire . objectif prioritaire . est diminuer ma consommation d'eau",
+        "questionnaire . objectif prioritaire . est ma performance énergétique",
+        "questionnaire . objectif prioritaire . est former ou recruter",
+        "questionnaire . objectif prioritaire . est mon impact environnemental",
+        "questionnaire . objectif prioritaire . est l'écoconception"
+      ]
+    }
+  },
+  "repar-acteurs": {
+    "entreprise . est ciblée": {
+      "toutes ces conditions": ["est éligible", "a un objectif ciblé"]
+    },
+    "entreprise . est éligible": {
+      "toutes ces conditions": ["est dans un secteur d'activité éligible", "a un effectif éligible"]
+    },
+    "entreprise . a un effectif éligible": {
+      "toutes ces conditions": ["effectif <= 249"]
+    },
+    "entreprise . est dans un secteur d'activité éligible": {
+      "toutes ces conditions": [
+        {
+          "une de ces conditions": ["code NAF niveau 1 . est C", "code NAF niveau 1 . est S"]
+        },
+        {
+          "une de ces conditions": [
+            "code NAF = \"14.13Z\"",
+            "code NAF = \"15.12Z\"",
+            "code NAF = \"16.29Z\"",
+            "code NAF = \"26.52Z\"",
+            "code NAF = \"31.09A\"",
+            "code NAF = \"31.09B\"",
+            "code NAF = \"32.12Z\"",
+            "code NAF = \"32.13Z\"",
+            "code NAF = \"32.20Z\"",
+            "code NAF = \"32.99Z\"",
+            "code NAF = \"33.11Z\"",
+            "code NAF = \"33.12Z\"",
+            "code NAF = \"33.13Z\"",
+            "code NAF = \"33.14Z\"",
+            "code NAF = \"33.19Z\"",
+            "code NAF = \"95.11Z\"",
+            "code NAF = \"95.12Z\"",
+            "code NAF = \"95.21Z\"",
+            "code NAF = \"95.22Z\"",
+            "code NAF = \"95.23Z\"",
+            "code NAF = \"95.24Z\"",
+            "code NAF = \"95.25Z\"",
+            "code NAF = \"95.29Z\""
+          ]
+        }
+      ]
+    },
+    "entreprise . a un objectif ciblé": {
+      "une de ces conditions": ["questionnaire . objectif prioritaire . est la gestion des déchets"]
+    }
+  }
+}

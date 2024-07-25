@@ -1,8 +1,10 @@
 titre: Enviroveille
-promesse: Accédez à toute l’information réglementaire en matière d'environnement,
+promesse: >-
+  Accédez à toute l’information réglementaire en matière d'environnement,
   énergie et santé-sécurité au travail
-description: Abonnez vous au service de veille "Enviroveille" de la CCI pour avoir
-  accès à l’information réglementaire applicable à votre activité (environnement,
+description: >-
+  Abonnez vous au service de veille "Enviroveille" de la CCI pour avoir accès à
+  l’information réglementaire applicable à votre activité (environnement,
   énergie, santé-sécurité au travail) et suivre son évolution.
 illustration: images/TEE_eolienne.png
 opérateur de contact: CCI
@@ -12,59 +14,65 @@ coût de l'accompagnement: de 150 à 800 € HT (sur abonnement)
 durée de l'accompagnement: 12 mois
 activable en autonomie: oui
 objectifs:
-- description: Recevez une alerte réglementaire une fois tous les 15 jours, comme
-    premier niveau d'information sur l'actualité réglementaire.
-- description: Bénéficiez d'une veille personnalisée sur les activités qui vous concernent
-    et recevez une fois par mois l'actualité juridique complète qui s'y rapporte.
-- description: 'Accédez à une base de données juridiques : textes réglementaires,
-    jurisprudence, projets de textes européens et nationaux.'
-- description: 'Recevez un bimestriel dématérialisé qui recense les textes les plus
-    importants sur les différentes thématiques de la transition écologique : déchets,
-    énergie, eau, biodiversité, air, sites et sols pollués, installations classées
-    pour la protection de l’environnement.'
-- description: Testez gratuitement le service d'alerte réglementaire, la veille personnalisée
-    et la base de données juridiques pendant 2 mois. Puis, abonnez-vous aux services
-    de votre choix.
-  liens:
-  - lien: https://www.enviroveille.com/public/tester-gratuitement.html
-    texte: Demander un compte d'accès gratuit
+  - description: >-
+      Recevez une alerte réglementaire une fois tous les 15 jours, comme premier
+      niveau d'information sur l'actualité réglementaire.
+  - description: >-
+      Bénéficiez d'une veille personnalisée sur les activités qui vous
+      concernent et recevez une fois par mois l'actualité juridique complète qui
+      s'y rapporte.
+  - description: >-
+      Accédez à une base de données juridiques : textes réglementaires,
+      jurisprudence, projets de textes européens et nationaux.
+  - description: >-
+      Recevez un bimestriel dématérialisé qui recense les textes les plus
+      importants sur les différentes thématiques de la transition écologique?:
+      déchets, énergie, eau, biodiversité, air, sites et sols pollués,
+      installations classées pour la protection de l’environnement.
+  - description: >-
+      Testez gratuitement le service d'alerte réglementaire, la veille
+      personnalisée et la base de données juridiques pendant 2 mois. Puis,
+      abonnez-vous aux services de votre choix.
+    liens:
+      - lien: https://www.enviroveille.com/public/tester-gratuitement.html
+        texte: Demander un compte d'accès gratuit
 conditions d'éligibilité:
   taille de l'entreprise:
-  - Toutes tailles
-  - Éligible aux micro-entreprises
+    - Toutes tailles
+    - Éligible aux micro-entreprises
   secteur géographique:
-  - France et territoires d'outre-mer
+    - France et territoires d'outre-mer
   secteur d'activité:
-  - Industrie et services aux entreprises
+    - Industrie et services aux entreprises
   nombre d'années d'activité:
-  - Éligible à toutes les entreprises
+    - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
-    - est éligible
-    - est dans un secteur d'activité ciblé
-    - a un objectif ciblé
-    - questionnaire . parcours = objectif précis
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+      - questionnaire . parcours = objectif précis
   entreprise . est éligible:
     toutes ces conditions:
-    - a un effectif éligible
+      - a un effectif éligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
-    - effectif <= 499
+      - effectif <= 499
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - code NAF niveau 1 . est A
-    - code NAF niveau 1 . est B
-    - code NAF niveau 1 . est C
-    - code NAF niveau 1 . est D
-    - code NAF niveau 1 . est E
-    - code NAF niveau 1 . est F
-    - code NAF niveau 1 . est K
-    - code NAF niveau 1 . est M
-    - code NAF niveau 1 . est N
-    - code NAF niveau 1 . est O
-    - code NAF niveau 1 . est P
-    - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
   entreprise . a un objectif ciblé:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est mon impact environnemental
+      - questionnaire . objectif prioritaire . est mon impact environnemental
