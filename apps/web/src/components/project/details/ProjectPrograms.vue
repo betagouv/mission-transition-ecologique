@@ -85,15 +85,14 @@
 <script setup lang="ts">
 import TrackStructure from '@/utils/track/trackStructure'
 import { useProgramStore } from '@/stores/program'
-import { type ProgramData, Objective, TrackId, Project } from '@/types'
+import { type ProgramData, TrackId, Project } from '@/types'
 import Contact from '@/utils/contact'
 import { RouteName } from '@/types/routeType'
 import { type RouteLocationRaw } from 'vue-router'
 import { useNavigationStore } from '@/stores/navigation'
 
 interface Props {
-  objective: Objective | undefined
-  project: Project | undefined
+  project: Project
 }
 const props = defineProps<Props>()
 
@@ -130,8 +129,8 @@ onBeforeMount(async () => {
 
 const getRouteToProgramDetail = (programId: string): RouteLocationRaw => {
   return {
-    name: RouteName.QuestionnaireResultDetail,
-    params: { programId },
+    name: RouteName.ProgramFromProjectDetail,
+    params: { programId: programId, projectSlug: props.project.slug },
     query: navigationStore.query
   }
 }
