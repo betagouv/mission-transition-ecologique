@@ -73,7 +73,11 @@ export const useTrackStore = defineStore('track', () => {
       selectedOption = await TrackSiret.getOptionBySiret(track, value)
     } else {
       if (Array.isArray(value)) {
-        selectedOptions = value.map((value) => track.options?.find((option) => option.value === value) as TrackOptionsUnion)
+        selectedOptions = value
+          .map((value) => track.options?.find((option) => option.value === value) as TrackOptionsUnion)
+          .filter((trackOption: TrackOptionsUnion | undefined) => {
+            return trackOption !== undefined
+          }) as TrackOptionsUnion[]
       } else {
         selectedOption = track.options?.find((option) => option.value === value)
       }

@@ -79,7 +79,6 @@
 import ProgramFiltersAccordion from '@/components/program/list/filters/ProgramFiltersAccordion.vue'
 import ProgramFilterByTheme from '@/components/program/list/filters/ProgramFilterByTheme.vue'
 import { useProgramStore } from '@/stores/program'
-import { useUsedTrackStore } from '@/stores/usedTrack'
 import { Color, Objective, type ProgramData, TrackId } from '@/types'
 import Matomo from '@/utils/matomo'
 import { Theme } from '@/utils/theme'
