@@ -25,9 +25,9 @@ export const useNavigationStore = defineStore('navigation', () => {
   const hasSpinner = ref<boolean>(false)
 
   const query = computed<Record<string, LocationQueryValue | LocationQueryValue[]>>(() => {
-    let query: LocationQuery = {}
+    const query: LocationQuery = {}
     for (const key of new URLSearchParams(stringOfSearchParams.value).keys()) {
-      query = addQueryByKey(key, query)
+      addQueryByKey(key, query)
     }
 
     return query
@@ -43,12 +43,12 @@ export const useNavigationStore = defineStore('navigation', () => {
   }
 
   function queryByUsedTrackId(usedTrackId: string) {
-    let query: LocationQuery = {}
+    const query: LocationQuery = {}
     for (const key of new URLSearchParams(stringOfSearchParams.value).keys()) {
       if (key === usedTrackId) {
         break
       }
-      query = addQueryByKey(key, query)
+      addQueryByKey(key, query)
     }
 
     return query
