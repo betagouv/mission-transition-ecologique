@@ -1,6 +1,6 @@
 <template>
   <div
-    class="fr-btn highlighted-project fr-btn--secondary fr-btn--sm inline-flex fr-radius-a--2v fr-mx-1v fr-my-1v fr-btn--secondary--green"
+    class="fr-btn highlighted-project fr-btn--secondary fr-btn--sm inline-flex fr-radius-a--2v fr-mx-1v fr-my-1v"
     :class="`fr-btn--secondary--${color}`"
   >
     <span class="highlighted-project-tag">{{ project.nameTag }}</span>
