@@ -8,58 +8,60 @@ description: >-
 illustration: images/TEE_energie_verte.png
 opérateur de contact: CCI
 autres opérateurs:
-- Agence de l'Eau Loire-Bretagne
-- DREAL Bretagne
-- Région Bretagne
-- Saur
-- Suez
-- Véolia Eau
+  - Agence de l'Eau Loire-Bretagne
+  - DREAL Bretagne
+  - Région Bretagne
+  - Saur
+  - Suez
+  - Véolia Eau
 url: >-
   https://www.bretagne.cci.fr/developper-son-entreprise/developpement-durable/le-programme-ecod-o
 nature de l'aide: accompagnement
 coût de l'accompagnement: Gratuit
 durée de l'accompagnement: Selon l'entreprise
 objectifs:
-- description: >-
-    Bénéficiez d'un diagnostic personnalisé des consommations et usages dans
-    votre entreprise, réalisé par un expert de la CCI.
-- description: >-
-    Identifiez les potentiels d'économie d'eau et de réutilisation des eaux
-    usées traitées (REUSE/REUT).
-- description: Bénéficiez d'un plan d'action dédié à votre entreprise.
-- description: >-
-    Profitez d'un appui dans la recherche de solutions et de financements pour
-    vos projets d'investissement.
-- description: >-
-    Mettez en place les préconisations et réduisez vos consommations d'eau d'au
-    moins 10%.
+  - description: >-
+      Bénéficiez d'un diagnostic personnalisé des consommations et usages dans
+      votre entreprise, réalisé par un expert de la CCI.
+  - description: >-
+      Identifiez les potentiels d'économie d'eau et de réutilisation des eaux
+      usées traitées (REUSE/REUT).
+  - description: Bénéficiez d'un plan d'action dédié à votre entreprise.
+  - description: >-
+      Profitez d'un appui dans la recherche de solutions et de financements pour
+      vos projets d'investissement.
+  - description: >-
+      Mettez en place les préconisations et réduisez vos consommations d'eau
+      d'au moins 10%.
 conditions d'éligibilité:
   taille de l'entreprise:
-  - Toutes tailles
-  - Non éligible aux micro-entreprises
+    - Toutes tailles
+    - Non éligible aux micro-entreprises
   secteur géographique:
-  - Bretagne
+    - Bretagne
   secteur d'activité:
-  - Industrie, hôtellerie & restauration
+    - Industrie, hôtellerie & restauration
   nombre d'années d'activité:
-  - Éligible à toutes les entreprises
+    - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
-    - est éligible
-    - est dans un secteur d'activité ciblé
-    - a un objectif ciblé
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
   entreprise . est éligible:
     toutes ces conditions:
-    - entreprise . est dans une zone géographique éligible
+      - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - code NAF niveau 1 . est C
-    - code NAF niveau 1 . est D
-    - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est I
   entreprise . a un objectif ciblé:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est diminuer ma consommation d'eau
+      - >-
+        questionnaire . objectif prioritaire . est diminuer ma consommation
+        d'eau
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
-    - région = Bretagne
+      - région = Bretagne

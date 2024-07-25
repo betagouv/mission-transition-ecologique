@@ -18,8 +18,8 @@ fin de validité: 31/12/2025
 illustration: images/TEE_energie_verte.png
 opérateur de contact: CCI
 autres opérateurs:
-- ADEME
-- Bpifrance
+  - ADEME
+  - Bpifrance
 url: >-
   https://www.cci-paris-idf.fr/fr/entreprises/actualites/accompagnement-eco-conception-performance-environnementale
 nature de l'aide: accompagnement
@@ -28,52 +28,54 @@ coût de l'accompagnement: >-
   en charge possible jusqu'à 50%
 durée de l'accompagnement: 6 à 12 jours de prestation
 objectifs:
-- description: >-
-    Identifiez vos priorités en termes d’accompagnement lors d’un premier
-    entretien avec votre conseiller CCI.
-- description: Bénéficiez d'une étude d'éco-conception par un consultant expert  (phase 1)
-- description: >-
-    Elaborez différents scénarii de processus de fabrication et quantifier leurs
-    impacts environnementaux.
-- description: >-
-    En fonction de la maturité de votre projet, continuez avec une phase de
-    pré-industrialisation : étude de faisabilité, essai, prototypage, recherche
-    de partenaires techniques, etc. (phase 2)
+  - description: >-
+      Identifiez vos priorités en termes d’accompagnement lors d’un premier
+      entretien avec votre conseiller CCI.
+  - description: >-
+      Bénéficiez d'une étude d'éco-conception par un consultant expert  (phase
+      1)
+  - description: >-
+      Elaborez différents scénarii de processus de fabrication et quantifier
+      leurs impacts environnementaux.
+  - description: >-
+      En fonction de la maturité de votre projet, continuez avec une phase de
+      pré-industrialisation : étude de faisabilité, essai, prototypage,
+      recherche de partenaires techniques, etc. (phase 2)
 conditions d'éligibilité:
   taille de l'entreprise:
-  - TPE, PME et ETI
-  - Éligible aux micro-entreprises
+    - TPE, PME et ETI
+    - Éligible aux micro-entreprises
   secteur géographique:
-  - Île-de-France
+    - Île-de-France
   secteur d'activité:
-  - Tous secteurs d’activité
+    - Tous secteurs d’activité
   nombre d'années d'activité:
-  - Éligible à toutes les entreprises
+    - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
-    - est éligible
-    - est dans un secteur d'activité ciblé
-    - a un objectif ciblé
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
   entreprise . est éligible:
     applicable si:
       toutes ces conditions:
-      - dispositif . début de validité <= date du jour
-      - date du jour <= dispositif . fin de validité
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
-    - a un effectif éligible
-    - entreprise . est dans une zone géographique éligible
+      - a un effectif éligible
+      - entreprise . est dans une zone géographique éligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
-    - effectif <= 499
+      - effectif <= 499
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - code NAF niveau 1 . est M
-    - code NAF niveau 1 . est R
-    - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
   entreprise . a un objectif ciblé:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est l'écoconception
+      - questionnaire . objectif prioritaire . est l'écoconception
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
-    - région = Île-de-France
+      - région = Île-de-France

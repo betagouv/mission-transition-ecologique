@@ -16,7 +16,7 @@ description longue: >-
 illustration: images/TEE_ampoule.png
 opérateur de contact: Bpifrance
 autres opérateurs:
-- ADEME
+  - ADEME
 url: >-
   https://www.bpifrance.fr/catalogue-offres/transition-ecologique-et-energetique/diag-perfimmo
 nature de l'aide: accompagnement
@@ -25,70 +25,70 @@ coût de l'accompagnement: >-
   montant HT, dans la limite de 6 800 € par site)
 durée de l'accompagnement: variable selon la surface et la complexité du site
 objectifs:
-- description: >-
-    Collecter et analyser des informations clés existantes (plans, équipements
-    techniques, occupation, données de consommation énergétique, etc.)
-- description: >-
-    Effectuer des observations sur site et réaliser des mesures complémentaires
-    si nécessaire.
-- description: >-
-    Etablir un bilan énergétique et définir des objectifs de performance
-    énergétique conformes aux exigences du Décret Tertiaire
-- description: >-
-    Elaborer des scénarios d’amélioration chiffrés pour l’atteinte de ces
-    objectifs
-- description: >-
-    Être accompagné dans la réalisation de la déclaration sur la plateforme
-    OPERAT le cas échéant
+  - description: >-
+      Collecter et analyser des informations clés existantes (plans, équipements
+      techniques, occupation, données de consommation énergétique, etc.)
+  - description: >-
+      Effectuer des observations sur site et réaliser des mesures
+      complémentaires si nécessaire.
+  - description: >-
+      Etablir un bilan énergétique et définir des objectifs de performance
+      énergétique conformes aux exigences du Décret Tertiaire
+  - description: >-
+      Elaborer des scénarios d’amélioration chiffrés pour l’atteinte de ces
+      objectifs
+  - description: >-
+      Être accompagné dans la réalisation de la déclaration sur la plateforme
+      OPERAT le cas échéant
 conditions d'éligibilité:
   taille de l'entreprise:
-  - Toutes tailles
-  - Non éligible aux micro-entreprises
+    - Toutes tailles
+    - Non éligible aux micro-entreprises
   secteur géographique:
-  - France et territoires d'outre-mer
+    - France et territoires d'outre-mer
   secteur d'activité:
-  - >-
-    Activités tertiaires privées (tourisme, commerce, santé, logistique,
-    services…)
+    - >-
+      Activités tertiaires privées (tourisme, commerce, santé, logistique,
+      services…)
   nombre d'années d'activité:
-  - Éligible à toutes les entreprises
+    - Éligible à toutes les entreprises
   autres critères d'éligibilité:
-  - >-
-    Être propriétaire de bâtiment(s) à usage tertiaire ou mixte
-    industriel-tertiaire et disposant des plans.
+    - >-
+      Être propriétaire de bâtiment(s) à usage tertiaire ou mixte
+      industriel-tertiaire et disposant des plans.
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
-    - est éligible
-    - est dans un secteur d'activité ciblé
-    - a un objectif ciblé
-    - entreprise . est propriétaire de ses locaux
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+      - entreprise . est propriétaire de ses locaux
   entreprise . est éligible:
     toutes ces conditions:
-    - a un effectif éligible
+      - a un effectif éligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
-    - effectif >= 1
+      - effectif >= 1
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - code NAF niveau 1 . est B
-    - code NAF niveau 1 . est C
-    - code NAF niveau 1 . est D
-    - code NAF niveau 1 . est E
-    - code NAF niveau 1 . est F
-    - code NAF niveau 1 . est G
-    - code NAF niveau 1 . est H
-    - code NAF niveau 1 . est I
-    - code NAF niveau 1 . est K
-    - code NAF niveau 1 . est L
-    - code NAF niveau 1 . est M
-    - code NAF niveau 1 . est N
-    - code NAF niveau 1 . est P
-    - code NAF niveau 1 . est Q
-    - code NAF niveau 1 . est R
-    - code NAF niveau 1 . est S
-    - code NAF niveau 1 . est T
-    - code NAF niveau 1 . est U
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
   entreprise . a un objectif ciblé:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est rénover mon bâtiment
+      - questionnaire . objectif prioritaire . est rénover mon bâtiment

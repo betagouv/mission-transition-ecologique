@@ -13,62 +13,62 @@ fin de validité: 01/06/2026
 illustration: images/TEE_energie_verte.png
 opérateur de contact: CCI
 autres opérateurs:
-- ADEME
+  - ADEME
 url: >-
   https://www.saone-doubs.cci.fr/produit/etude-dopportunite-sur-votre-potentiel-photovoltaique
 nature de l'aide: accompagnement
 coût de l'accompagnement: Gratuit
 durée de l'accompagnement: 1/2 à 1 journée
 objectifs:
-- description: Réalisez une analyse rapide de la consommation de votre site.
-- description: >-
-    Obtenez une analyse réglementaire ainsi que les points d’attention à prendre
-    en compte (raccordement au réseau, structure de la toiture, étanchéité,
-    charpente, etc.)
-- description: >-
-    Bénéficiez d'un pré-chiffrage des travaux, calculez le temps de retour sur
-    investissement et identifiez les financements possibles.
+  - description: Réalisez une analyse rapide de la consommation de votre site.
+  - description: >-
+      Obtenez une analyse réglementaire ainsi que les points d’attention à
+      prendre en compte (raccordement au réseau, structure de la toiture,
+      étanchéité, charpente, etc.)
+  - description: >-
+      Bénéficiez d'un pré-chiffrage des travaux, calculez le temps de retour sur
+      investissement et identifiez les financements possibles.
 conditions d'éligibilité:
   taille de l'entreprise:
-  - PME
-  - Éligible aux micro-entreprises
+    - PME
+    - Éligible aux micro-entreprises
   secteur géographique:
-  - Bourgogne-Franche-Comté
+    - Bourgogne-Franche-Comté
   secteur d'activité:
-  - Industrie
+    - Industrie
   nombre d'années d'activité:
-  - Éligible à toutes les entreprises
+    - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
-    - est éligible
-    - est dans un secteur d'activité ciblé
-    - a un objectif ciblé
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
   entreprise . est éligible:
     applicable si:
       toutes ces conditions:
-      - dispositif . début de validité <= date du jour
-      - date du jour <= dispositif . fin de validité
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
-    - a un effectif éligible
-    - entreprise . est dans une zone géographique éligible
+      - a un effectif éligible
+      - entreprise . est dans une zone géographique éligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
-    - effectif <= 499
+      - effectif <= 499
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - code NAF niveau 1 . est B
-    - code NAF niveau 1 . est C
-    - code NAF niveau 1 . est D
-    - code NAF niveau 1 . est E
-    - code NAF niveau 1 . est F
-    - code NAF niveau 1 . est G
-    - code NAF niveau 1 . est H
-    - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
   entreprise . a un objectif ciblé:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est rénover mon bâtiment
-    - questionnaire . objectif prioritaire . est ma performance énergétique
+      - questionnaire . objectif prioritaire . est rénover mon bâtiment
+      - questionnaire . objectif prioritaire . est ma performance énergétique
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
-    - région = Bourgogne-Franche-Comté
+      - région = Bourgogne-Franche-Comté

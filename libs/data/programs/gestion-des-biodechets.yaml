@@ -30,46 +30,46 @@ nature de l'aide: accompagnement
 coût de l'accompagnement: De 750 à 3 500 € HT
 durée de l'accompagnement: De 1 à 5 jours selon la taille et le secteur d'activité de l'entreprise
 objectifs:
-- description: >-
-    Analyser votre production de biodéchets : volume, fréquence, situation
-    géographique, nature, etc.
-- description: >-
-    Identifier les solutions de valorisation associées, disponibles à proximité
-    (compostage, méthanisation, etc).
-- description: Répertorier les biodéchets sur une plateforme géolocalisée.
-- description: >-
-    Obtenir un outil d’aide à la décision : solutions techniques, dispositifs de
-    financements, contacts associés.
+  - description: >-
+      Analyser votre production de biodéchets : volume, fréquence, situation
+      géographique, nature, etc.
+  - description: >-
+      Identifier les solutions de valorisation associées, disponibles à
+      proximité (compostage, méthanisation, etc).
+  - description: Répertorier les biodéchets sur une plateforme géolocalisée.
+  - description: >-
+      Obtenir un outil d’aide à la décision : solutions techniques, dispositifs
+      de financements, contacts associés.
 conditions d'éligibilité:
   taille de l'entreprise:
-  - TPE, PME et ETI
-  - Éligible aux micro-entreprises
+    - TPE, PME et ETI
+    - Éligible aux micro-entreprises
   secteur géographique:
-  - Hauts-de-France
+    - Hauts-de-France
   secteur d'activité:
-  - >-
-    Entreprises produisant des biodéchets (industries agro-alimentaires,
-    Hotellerie restauration, Grande & moyennes surfaces...)
+    - >-
+      Entreprises produisant des biodéchets (industries agro-alimentaires,
+      Hotellerie restauration, Grande & moyennes surfaces...)
   nombre d'années d'activité:
-  - Éligible à toutes les entreprises
+    - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
-    - est éligible
-    - est dans un secteur d'activité ciblé
-    - a un objectif ciblé
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
   entreprise . est éligible:
     toutes ces conditions:
-    - entreprise . est dans une zone géographique éligible
+      - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - code NAF niveau 1 . est A
-    - code NAF niveau 1 . est E
-    - code NAF niveau 1 . est G
-    - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est I
   entreprise . a un objectif ciblé:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est la gestion des déchets
+      - questionnaire . objectif prioritaire . est la gestion des déchets
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
-    - région = Hauts-de-France
+      - région = Hauts-de-France

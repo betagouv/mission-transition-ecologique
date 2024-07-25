@@ -10,57 +10,57 @@ description: >-
 illustration: images/TEE_ampoule.png
 opérateur de contact: CCI
 autres opérateurs:
-- ADEME
+  - ADEME
 nature de l'aide: accompagnement
 coût de l'accompagnement: Gratuit
 durée de l'accompagnement: 3 jours
 objectifs:
-- description: >-
-    Analyser les évènements climatiques passés ayant déjà affecté votre secteur,
-    et les tendances futures sur la base des projections climatiques.
-- description: >-
-    Identifier les impacts directs sur vos activités ainsi que des impacts
-    indirects (financiers et sociaux) et leurs évolutions à court, moyen et long
-    terme.
-- description: >-
-    Mettre en évidence les menaces posées par le changement climatique et les
-    opportunités potentiellement pour vos activités, produits et services.
-- description: >-
-    Disposer d’un plan d’adaptation pour les risques climatiques au sein de
-    votre entreprise.
+  - description: >-
+      Analyser les évènements climatiques passés ayant déjà affecté votre
+      secteur, et les tendances futures sur la base des projections climatiques.
+  - description: >-
+      Identifier les impacts directs sur vos activités ainsi que des impacts
+      indirects (financiers et sociaux) et leurs évolutions à court, moyen et
+      long terme.
+  - description: >-
+      Mettre en évidence les menaces posées par le changement climatique et les
+      opportunités potentiellement pour vos activités, produits et services.
+  - description: >-
+      Disposer d’un plan d’adaptation pour les risques climatiques au sein de
+      votre entreprise.
 conditions d'éligibilité:
   taille de l'entreprise:
-  - PME
-  - Éligible aux micro-entreprises
+    - PME
+    - Éligible aux micro-entreprises
   secteur géographique:
-  - Île-de-France
+    - Île-de-France
   secteur d'activité:
-  - Tous secteurs d’activité
+    - Tous secteurs d’activité
   nombre d'années d'activité:
-  - Éligible à toutes les entreprises
+    - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
-    - est éligible
-    - est dans un secteur d'activité ciblé
-    - a un objectif ciblé
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
   entreprise . est éligible:
     toutes ces conditions:
-    - a un effectif éligible
-    - entreprise . est dans une zone géographique éligible
+      - a un effectif éligible
+      - entreprise . est dans une zone géographique éligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
-    - effectif <= 249
+      - effectif <= 249
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - code NAF niveau 1 . est B
-    - code NAF niveau 1 . est C
-    - code NAF niveau 1 . est D
-    - code NAF niveau 1 . est E
-    - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
   entreprise . a un objectif ciblé:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est mon impact environnemental
+      - questionnaire . objectif prioritaire . est mon impact environnemental
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
-    - région = Île-de-France
+      - région = Île-de-France

@@ -45,46 +45,46 @@ coût de l'accompagnement: Gratuit
 durée de l'accompagnement: Jusqu'à 3 ans d'accompagnement
 activable en autonomie: oui
 objectifs:
-- description: >-
-    Participez à des sessions de créativité pour faire émerger de nouveaux
-    concepts d'objets roulants.
-- description: >-
-    Prototypez les véhicules et expérimentez en continu auprès d'utilisateurs
-    dans les territoires partenaires du défi.
-- description: >-
-    Passez en phase d'industrialisation : production, assemblage, réparation,
-    reconditionnement, et affinez le design des véhicules en répétant phases
-    d'idéation et prototypage.
-- description: >-
-    Identifiez des sources de financement de votre région, de l’ADEME ou au
-    niveau national sur l'ensemble des phases.
-- description: >-
-    Intégrez la communauté de l'eXtrême Défi et bénéficiez des nombreuses
-    expertises du réseau : mécanique, design, électronique, urbanisme,
-    ecoconception, modèles économiques, communication, marketing, etc.
-  liens:
-  - lien: https://airtable.com/apprjFOnbLySO8spa/shraH0xKsFZnkZOKw
-    texte: Rejoignez l'extrême Défi
+  - description: >-
+      Participez à des sessions de créativité pour faire émerger de nouveaux
+      concepts d'objets roulants.
+  - description: >-
+      Prototypez les véhicules et expérimentez en continu auprès d'utilisateurs
+      dans les territoires partenaires du défi.
+  - description: >-
+      Passez en phase d'industrialisation : production, assemblage, réparation,
+      reconditionnement, et affinez le design des véhicules en répétant phases
+      d'idéation et prototypage.
+  - description: >-
+      Identifiez des sources de financement de votre région, de l’ADEME ou au
+      niveau national sur l'ensemble des phases.
+  - description: >-
+      Intégrez la communauté de l'eXtrême Défi et bénéficiez des nombreuses
+      expertises du réseau : mécanique, design, électronique, urbanisme,
+      ecoconception, modèles économiques, communication, marketing, etc.
+    liens:
+      - lien: https://airtable.com/apprjFOnbLySO8spa/shraH0xKsFZnkZOKw
+        texte: Rejoignez l'extrême Défi
 conditions d'éligibilité:
   taille de l'entreprise:
-  - Toutes tailles
-  - Éligible aux micro-entreprises
+    - Toutes tailles
+    - Éligible aux micro-entreprises
   secteur géographique:
-  - France et territoires d'outre-mer
+    - France et territoires d'outre-mer
   secteur d'activité:
-  - Tous secteurs d’activité
+    - Tous secteurs d’activité
   nombre d'années d'activité:
-  - Éligible à toutes les entreprises
+    - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
-    - est dans un secteur d'activité ciblé
-    - a un objectif ciblé
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - code NAF niveau 1 . est C
-    - code NAF niveau 1 . est G
-    - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
   entreprise . a un objectif ciblé:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est la mobilité durable
+      - questionnaire . objectif prioritaire . est la mobilité durable

@@ -16,58 +16,59 @@ coût de l'accompagnement: Gratuit
 durée de l'accompagnement: 2h15
 activable en autonomie: oui
 objectifs:
-- description: Prenez connaissance du programme de la formation
-  liens:
-  - lien: >-
-      https://formations.ademe.fr/tmp/01001119-1720429428-9999999-9a7cecf0ea4d98c67fe5e83d4a1d40b9.pdf
-    texte: télécharger le programme
-- description: >-
-    Inscrivez-vous sur la plateforme ADEME Formations. Vous pouvez ajouter
-    plusieurs participants.
-  liens:
-  - lien: https://formations.ademe.fr/solutions/beforeregister.php?sessionid=7866
-    texte: formations.ademe.fr
-- description: >-
-    Obtenez le lien de la formation à réaliser en ligne en toute autonomie à
-    l'aide de vidéos et de quizz.
+  - description: Prenez connaissance du programme de la formation
+    liens:
+      - lien: >-
+          https://formations.ademe.fr/tmp/01001119-1720429428-9999999-9a7cecf0ea4d98c67fe5e83d4a1d40b9.pdf
+        texte: télécharger le programme
+  - description: >-
+      Inscrivez-vous sur la plateforme ADEME Formations. Vous pouvez ajouter
+      plusieurs participants.
+    liens:
+      - lien: >-
+          https://formations.ademe.fr/solutions/beforeregister.php?sessionid=7866
+        texte: formations.ademe.fr
+  - description: >-
+      Obtenez le lien de la formation à réaliser en ligne en toute autonomie à
+      l'aide de vidéos et de quizz.
 conditions d'éligibilité:
   taille de l'entreprise:
-  - Toutes tailles
-  - Éligible aux micro-entreprises
+    - Toutes tailles
+    - Éligible aux micro-entreprises
   secteur géographique:
-  - France et territoires d'outre-mer
+    - France et territoires d'outre-mer
   secteur d'activité:
-  - Tous secteurs d’activité
+    - Tous secteurs d’activité
   nombre d'années d'activité:
-  - Éligible à toutes les entreprises
+    - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
-    - est dans un secteur d'activité ciblé
-    - a un objectif ciblé
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - code NAF niveau 1 . est A
-    - code NAF niveau 1 . est B
-    - code NAF niveau 1 . est C
-    - code NAF niveau 1 . est D
-    - code NAF niveau 1 . est E
-    - code NAF niveau 1 . est F
-    - code NAF niveau 1 . est G
-    - code NAF niveau 1 . est H
-    - code NAF niveau 1 . est I
-    - code NAF niveau 1 . est J
-    - code NAF niveau 1 . est K
-    - code NAF niveau 1 . est L
-    - code NAF niveau 1 . est M
-    - code NAF niveau 1 . est N
-    - code NAF niveau 1 . est O
-    - code NAF niveau 1 . est P
-    - code NAF niveau 1 . est Q
-    - code NAF niveau 1 . est R
-    - code NAF niveau 1 . est S
-    - code NAF niveau 1 . est T
-    - code NAF niveau 1 . est U
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
   entreprise . a un objectif ciblé:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est former ou recruter
+      - questionnaire . objectif prioritaire . est former ou recruter

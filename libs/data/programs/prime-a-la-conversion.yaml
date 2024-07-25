@@ -19,85 +19,85 @@ nature de l'aide: financement
 montant du financement: jusqu’à 9 000 €, selon le véhicule
 activable en autonomie: oui
 objectifs:
-- description: Vérifiez l'égibilité à la mise au rebut de votre vieux véhicule.
-  liens:
-  - lien: https://www.primealaconversion.gouv.fr/dboneco/accueil/faq.html
-    texte: FAQ Prime à la conversion
-- description: >-
-    Louez ou achetez votre véhicule "propre" et déposez votre demande de Bonus
-    écologique dans les six mois.
-- description: >-
-    Créez votre dossier sur le site, en cliquant sur "Saisir ma demande par
-    courrier" en bas de page. (rubrique "Vous représentez une personne morale ou
-    vous souhaitez faire une demande par courrier")
-  liens:
-  - lien: https://www.primealaconversion.gouv.fr/dboneco/accueil/access.html
-    texte: Primealaconversion.gouv.fr
-- description: >-
-    Complétez le formulaire en ligne. Vous recevrez le récapitulatif de votre
-    demande par mail.
-- description: >-
-    Constituez votre dossier avec les pièces justificatives demandées.
-    (consultez les pages n°2 destinées aux entreprises)
-  liens:
-  - lien: >-
-      https://www.primealaconversion.gouv.fr/dboneco/accueil/media/documents/Hors_PJ.pdf
-    texte: Pièces justificatives - véhicule
-  - lien: >-
-      https://www.primealaconversion.gouv.fr/dboneco/accueil/media/documents/Cycles_PJ.pdf
-    texte: Pièces justificatives - vélo
-- description: >-
-    Envoyez le récapitulatif de votre demande et vos pièces justificatives par
-    courrier au « service - Bonus écologique » de votre ASP de rattachement. 
-  liens:
-  - lien: >-
-      https://www.asp-public.fr/sites/default/files/content/aides/documents/bonus-eco/NOTICE_CONVENTIONNEMENT_BONUS_PRO.pdf
-    texte: Adresse postale (page 4)
+  - description: Vérifiez l'égibilité à la mise au rebut de votre vieux véhicule.
+    liens:
+      - lien: https://www.primealaconversion.gouv.fr/dboneco/accueil/faq.html
+        texte: FAQ Prime à la conversion
+  - description: >-
+      Louez ou achetez votre véhicule "propre" et déposez votre demande de Bonus
+      écologique dans les six mois.
+  - description: >-
+      Créez votre dossier sur le site, en cliquant sur "Saisir ma demande par
+      courrier" en bas de page. (rubrique "Vous représentez une personne morale
+      ou vous souhaitez faire une demande par courrier")
+    liens:
+      - lien: https://www.primealaconversion.gouv.fr/dboneco/accueil/access.html
+        texte: Primealaconversion.gouv.fr
+  - description: >-
+      Complétez le formulaire en ligne. Vous recevrez le récapitulatif de votre
+      demande par mail.
+  - description: >-
+      Constituez votre dossier avec les pièces justificatives demandées.
+      (consultez les pages n°2 destinées aux entreprises)
+    liens:
+      - lien: >-
+          https://www.primealaconversion.gouv.fr/dboneco/accueil/media/documents/Hors_PJ.pdf
+        texte: Pièces justificatives - véhicule
+      - lien: >-
+          https://www.primealaconversion.gouv.fr/dboneco/accueil/media/documents/Cycles_PJ.pdf
+        texte: Pièces justificatives - vélo
+  - description: >-
+      Envoyez le récapitulatif de votre demande et vos pièces justificatives par
+      courrier au « service - Bonus écologique » de votre ASP de rattachement. 
+    liens:
+      - lien: >-
+          https://www.asp-public.fr/sites/default/files/content/aides/documents/bonus-eco/NOTICE_CONVENTIONNEMENT_BONUS_PRO.pdf
+        texte: Adresse postale (page 4)
 conditions d'éligibilité:
   taille de l'entreprise:
-  - Toutes tailles
-  - Éligible aux micro-entreprises
+    - Toutes tailles
+    - Éligible aux micro-entreprises
   secteur géographique:
-  - France et territoires d'outre-mer
+    - France et territoires d'outre-mer
   secteur d'activité:
-  - Tous secteurs d’activité
+    - Tous secteurs d’activité
   nombre d'années d'activité:
-  - Éligible à toutes les entreprises
+    - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
-    - est éligible
-    - est dans un secteur d'activité ciblé
-    - a un objectif ciblé
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
   entreprise . est éligible:
     toutes ces conditions:
-    - a un effectif éligible
+      - a un effectif éligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
-    - effectif <= 4999
+      - effectif <= 4999
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - code NAF niveau 1 . est A
-    - code NAF niveau 1 . est B
-    - code NAF niveau 1 . est C
-    - code NAF niveau 1 . est D
-    - code NAF niveau 1 . est E
-    - code NAF niveau 1 . est F
-    - code NAF niveau 1 . est G
-    - code NAF niveau 1 . est H
-    - code NAF niveau 1 . est I
-    - code NAF niveau 1 . est J
-    - code NAF niveau 1 . est K
-    - code NAF niveau 1 . est L
-    - code NAF niveau 1 . est M
-    - code NAF niveau 1 . est N
-    - code NAF niveau 1 . est O
-    - code NAF niveau 1 . est P
-    - code NAF niveau 1 . est Q
-    - code NAF niveau 1 . est R
-    - code NAF niveau 1 . est S
-    - code NAF niveau 1 . est T
-    - code NAF niveau 1 . est U
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
   entreprise . a un objectif ciblé:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est la mobilité durable
+      - questionnaire . objectif prioritaire . est la mobilité durable

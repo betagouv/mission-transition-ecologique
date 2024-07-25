@@ -13,50 +13,52 @@ nature de l'aide: accompagnement
 coût de l'accompagnement: Gratuit
 durée de l'accompagnement: 5 jours de prestation répartis sur 12 mois
 objectifs:
-- description: >-
-    Bénéficiez d'un état des lieux des flux par un expert de la Chambre de
-    Métiers et de l'Artisanat : identification des flux, des pertes cachées,
-    calcul de leurs coûts et comparaison aux moyennes du secteur d’activité.
-- description: >-
-    Obtenez un plan d’action avec une rentabilité immédiate (moins de 12 mois),
-    des préconisations simples et opérationnelles en chiffrant les économies
-    réalisables. En moyenne, les plans d’actions proposés aboutissent à des
-    économies allant de 2 000 à 5 000 € par an.
-- description: >-
-    Mettez en oeuvre votre plan d’action et soyez accompagné par un expert sur
-    un an.
-- description: Evaluez les résultats et les économies financières réalisées.
+  - description: >-
+      Bénéficiez d'un état des lieux des flux par un expert de la Chambre de
+      Métiers et de l'Artisanat : identification des flux, des pertes cachées,
+      calcul de leurs coûts et comparaison aux moyennes du secteur d’activité.
+  - description: >-
+      Obtenez un plan d’action avec une rentabilité immédiate (moins de 12
+      mois), des préconisations simples et opérationnelles en chiffrant les
+      économies réalisables. En moyenne, les plans d’actions proposés
+      aboutissent à des économies allant de 2 000 à 5 000 € par an.
+  - description: >-
+      Mettez en oeuvre votre plan d’action et soyez accompagné par un expert sur
+      un an.
+  - description: Evaluez les résultats et les économies financières réalisées.
 conditions d'éligibilité:
   taille de l'entreprise:
-  - Moins de 20 salariés
-  - Éligible aux micro-entreprises
+    - Moins de 20 salariés
+    - Éligible aux micro-entreprises
   secteur géographique:
-  - France et territoires d'outre-mer
+    - France et territoires d'outre-mer
   secteur d'activité:
-  - Artisan
+    - Artisan
   nombre d'années d'activité:
-  - Éligible à toutes les entreprises
+    - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
-    - est éligible
-    - est dans un secteur d'activité ciblé
-    - a un objectif ciblé
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
   entreprise . est éligible:
     toutes ces conditions:
-    - a un effectif éligible
+      - a un effectif éligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
-    - effectif <= 19
+      - effectif <= 19
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - code NAF niveau 1 . est C
-    - code NAF niveau 1 . est E
-    - code NAF niveau 1 . est F
-    - code NAF niveau 1 . est H
-    - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
   entreprise . a un objectif ciblé:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est la gestion des déchets
-    - questionnaire . objectif prioritaire . est diminuer ma consommation d'eau
-    - questionnaire . objectif prioritaire . est ma performance énergétique
+      - questionnaire . objectif prioritaire . est la gestion des déchets
+      - >-
+        questionnaire . objectif prioritaire . est diminuer ma consommation
+        d'eau
+      - questionnaire . objectif prioritaire . est ma performance énergétique

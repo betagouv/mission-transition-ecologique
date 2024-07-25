@@ -66,7 +66,7 @@ export class ProgramYamlGenerator {
     this._setEligibility(yamlContent, program)
     yamlContent['publicodes'] = new PublicodesGenerator(program).generatePublicodes()
 
-    const yamlString = yaml.dump(yamlContent, { noArrayIndent: true })
+    const yamlString = yaml.dump(yamlContent)
     fs.writeFileSync('programs/' + program['Id fiche dispositif'] + '.yaml', yamlString, 'utf8')
   }
 

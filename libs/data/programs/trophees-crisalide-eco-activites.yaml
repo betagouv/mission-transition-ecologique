@@ -21,76 +21,76 @@ coût de l'accompagnement: Gratuit
 durée de l'accompagnement: Un parcours sur 3 mois
 activable en autonomie: oui
 objectifs:
-- description: >-
-    Déposez votre candidature à l'appel à projets en complétant un formulaire en
-    ligne.
-  liens:
-  - lien: https://www.crisalide-ecoactivites.fr/
-    texte: Candidater
-- description: >-
-    Intégrez le parcours Crisalide et bénéficiez d'un accompagnement pour
-    accélérer votre projet éco-innovant.
-- description: >-
-    Challengez votre projet au travers d'ateliers et d'une session de pitch
-    devant  un jury d'experts.
-- description: >-
-    Accédez à un réseau de compétences et de savoir-faire (mise en relation
-    qualifiées et adaptées à votre projet - financements, partenariats,...)
-- description: >-
-    Valorisez votre projet et donnez lui de la visibilité : book des solutions,
-    site internet, réseaux sociaux,etc.
-- description: >-
-    Concourez pour remporter le Trophée Crisalide Eco-activités et bénéficiez de
-    la promotion liée à la médiatisation du concours.
+  - description: >-
+      Déposez votre candidature à l'appel à projets en complétant un formulaire
+      en ligne.
+    liens:
+      - lien: https://www.crisalide-ecoactivites.fr/
+        texte: Candidater
+  - description: >-
+      Intégrez le parcours Crisalide et bénéficiez d'un accompagnement pour
+      accélérer votre projet éco-innovant.
+  - description: >-
+      Challengez votre projet au travers d'ateliers et d'une session de pitch
+      devant  un jury d'experts.
+  - description: >-
+      Accédez à un réseau de compétences et de savoir-faire (mise en relation
+      qualifiées et adaptées à votre projet - financements, partenariats,...)
+  - description: >-
+      Valorisez votre projet et donnez lui de la visibilité : book des
+      solutions, site internet, réseaux sociaux,etc.
+  - description: >-
+      Concourez pour remporter le Trophée Crisalide Eco-activités et bénéficiez
+      de la promotion liée à la médiatisation du concours.
 conditions d'éligibilité:
   taille de l'entreprise:
-  - Toutes tailles
-  - Éligible aux micro-entreprises
+    - Toutes tailles
+    - Éligible aux micro-entreprises
   secteur géographique:
-  - Bretagne, Normandie, Pays de la Loire
+    - Bretagne, Normandie, Pays de la Loire
   secteur d'activité:
-  - Industrie et Services aux entreprises
+    - Industrie et Services aux entreprises
   nombre d'années d'activité:
-  - Éligible à toutes les entreprises
+    - Éligible à toutes les entreprises
   autres critères d'éligibilité:
-  - Réaliser ou maintenir au moins 3 emplois et 200 K€ de CA à 3 ans
+    - Réaliser ou maintenir au moins 3 emplois et 200 K€ de CA à 3 ans
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
-    - est éligible
-    - est dans un secteur d'activité ciblé
-    - a un objectif ciblé
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
   entreprise . est éligible:
     toutes ces conditions:
-    - a un effectif éligible
-    - entreprise . est dans une zone géographique éligible
+      - a un effectif éligible
+      - entreprise . est dans une zone géographique éligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
-    - effectif >= 3
+      - effectif >= 3
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - code NAF niveau 1 . est B
-    - code NAF niveau 1 . est C
-    - code NAF niveau 1 . est D
-    - code NAF niveau 1 . est E
-    - code NAF niveau 1 . est F
-    - code NAF niveau 1 . est G
-    - code NAF niveau 1 . est H
-    - code NAF niveau 1 . est I
-    - code NAF niveau 1 . est J
-    - code NAF niveau 1 . est K
-    - code NAF niveau 1 . est L
-    - code NAF niveau 1 . est M
-    - code NAF niveau 1 . est N
-    - code NAF niveau 1 . est P
-    - code NAF niveau 1 . est Q
-    - code NAF niveau 1 . est R
-    - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
   entreprise . a un objectif ciblé:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est mon impact environnemental
+      - questionnaire . objectif prioritaire . est mon impact environnemental
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
-    - région = Bretagne
-    - région = Normandie
-    - région = Pays de la Loire
+      - région = Bretagne
+      - région = Normandie
+      - région = Pays de la Loire

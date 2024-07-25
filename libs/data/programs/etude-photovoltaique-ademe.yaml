@@ -21,100 +21,100 @@ url: >-
 nature de l'aide: financement
 montant du financement: jusqu'à 70% du coût de l'étude
 objectifs:
-- description: >-
-    Vérifiez l’éligibilité de votre projet en parcourant la documentation de
-    l’ADEME ou en contactant un conseiller.
-  liens:
-  - lien: >-
-      https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20faisabilit%C3%A9%20autoconsommation%20photovolta%C3%AFque%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement.pdf
-    texte: Conditions éligibilité et financement
-- description: >-
-    Choisissez le bureau d'étude énergétique qui va vous accompagner pour mener
-    cette étude de faisabilité et faites réaliser un devis.
-- description: Créez un compte ADEME pour pouvoir déposer votre dossier.
-  liens:
-  - lien: https://agirpourlatransition.ademe.fr/user/register
-    texte: Créer mon compte ADEME
-- description: >-
-    Déposez votre dossier : informations administratives, description du projet,
-    détails techniques et financiers, etc. À ce stade, votre projet ne doit pas
-    avoir commencé !
-  liens:
-  - lien: >-
-      https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/etudes-faisabilite-lautoconsommation-electrique-photovoltaique
-    texte: Déposer mon dossier
-- description: >-
-    L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez
-    un contrat de financement précisant le montant d’aide maximum, les
-    conditions et les modalités de versement.
-- description: Réalisez votre étude de faisabilité.
+  - description: >-
+      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
+      l’ADEME ou en contactant un conseiller.
+    liens:
+      - lien: >-
+          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20faisabilit%C3%A9%20autoconsommation%20photovolta%C3%AFque%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement.pdf
+        texte: Conditions éligibilité et financement
+  - description: >-
+      Choisissez le bureau d'étude énergétique qui va vous accompagner pour
+      mener cette étude de faisabilité et faites réaliser un devis.
+  - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
+    liens:
+      - lien: https://agirpourlatransition.ademe.fr/user/register
+        texte: Créer mon compte ADEME
+  - description: >-
+      Déposez votre dossier : informations administratives, description du
+      projet, détails techniques et financiers, etc. À ce stade, votre projet ne
+      doit pas avoir commencé !
+    liens:
+      - lien: >-
+          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/etudes-faisabilite-lautoconsommation-electrique-photovoltaique
+        texte: Déposer mon dossier
+  - description: >-
+      L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
+      recevez un contrat de financement précisant le montant d’aide maximum, les
+      conditions et les modalités de versement.
+  - description: Réalisez votre étude de faisabilité.
 conditions d'éligibilité:
   taille de l'entreprise:
-  - Toutes tailles
-  - Éligible aux micro-entreprises
+    - Toutes tailles
+    - Éligible aux micro-entreprises
   secteur géographique:
-  - >-
-    Corse, Guadeloupe, Guyane, Martinique, Mayotte, Polynésie française,
-    Saint-Pierre-Et-Miquelon
+    - >-
+      Corse, Guadeloupe, Guyane, Martinique, Mayotte, Polynésie française,
+      Saint-Pierre-Et-Miquelon
   secteur d'activité:
-  - Tous secteurs d’activité
+    - Tous secteurs d’activité
   nombre d'années d'activité:
-  - Éligible à toutes les entreprises
+    - Éligible à toutes les entreprises
   autres critères d'éligibilité:
-  - >-
-    Cette aide s’adresse aux Maîtres d’Ouvrages et propriétaires de bâtiments
-    dans l’investissement et la réalisation de travaux.
-  - >-
-    L'opération pour laquelle vous sollicitez une aide financière ne doit pas
-    avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes
-    (sous quelque forme que ce soit : marché signé, commande signée, devis
-    accepté…)
+    - >-
+      Cette aide s’adresse aux Maîtres d’Ouvrages et propriétaires de bâtiments
+      dans l’investissement et la réalisation de travaux.
+    - >-
+      L'opération pour laquelle vous sollicitez une aide financière ne doit pas
+      avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes
+      (sous quelque forme que ce soit : marché signé, commande signée, devis
+      accepté…)
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
-    - est éligible
-    - est dans un secteur d'activité ciblé
-    - a un objectif ciblé
-    - entreprise . est propriétaire de ses locaux
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+      - entreprise . est propriétaire de ses locaux
   entreprise . est éligible:
     applicable si:
       toutes ces conditions:
-      - dispositif . début de validité <= date du jour
-      - date du jour <= dispositif . fin de validité
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
-    - entreprise . est dans une zone géographique éligible
+      - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - code NAF niveau 1 . est A
-    - code NAF niveau 1 . est B
-    - code NAF niveau 1 . est C
-    - code NAF niveau 1 . est D
-    - code NAF niveau 1 . est E
-    - code NAF niveau 1 . est F
-    - code NAF niveau 1 . est G
-    - code NAF niveau 1 . est H
-    - code NAF niveau 1 . est I
-    - code NAF niveau 1 . est J
-    - code NAF niveau 1 . est K
-    - code NAF niveau 1 . est L
-    - code NAF niveau 1 . est M
-    - code NAF niveau 1 . est N
-    - code NAF niveau 1 . est O
-    - code NAF niveau 1 . est P
-    - code NAF niveau 1 . est Q
-    - code NAF niveau 1 . est R
-    - code NAF niveau 1 . est S
-    - code NAF niveau 1 . est T
-    - code NAF niveau 1 . est U
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
   entreprise . a un objectif ciblé:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est ma performance énergétique
+      - questionnaire . objectif prioritaire . est ma performance énergétique
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
-    - région = Corse
-    - région = Guadeloupe
-    - région = Guyane
-    - région = Martinique
-    - région = Mayotte
-    - région = Polynésie française
-    - région = Saint-Pierre-Et-Miquelon
+      - région = Corse
+      - région = Guadeloupe
+      - région = Guyane
+      - région = Martinique
+      - région = Mayotte
+      - région = Polynésie française
+      - région = Saint-Pierre-Et-Miquelon

@@ -11,74 +11,74 @@ description: >-
 illustration: images/TEE_eolienne.png
 opérateur de contact: Bpifrance
 autres opérateurs:
-- InvestEU
+  - InvestEU
 url: >-
   https://www.bpifrance.fr/catalogue-offres/transition-ecologique-et-energetique/mission-strategie-environnement
 nature de l'aide: accompagnement
 coût de l'accompagnement: 5 000 € HT
 durée de l'accompagnement: 13 jours
 objectifs:
-- description: >-
-    Sensibiliser et renforcer les compétences de vos collaborateurs sur les
-    sujets liés la transition environnementale.
-- description: Définir la raison d’être de votre entreprise.
-- description: Evaluer les impacts de l’activité de votre entreprise sur l’environnement.
-- description: >-
-    Etablir les risques et opportunités de la transition environnementale sur
-    l’activité de votre entreprise.
-- description: >-
-    Définir la feuille de route jusqu’à 2030 de votre entreprise pour vous
-    guider dans la transition énergétique et écologique.
+  - description: >-
+      Sensibiliser et renforcer les compétences de vos collaborateurs sur les
+      sujets liés la transition environnementale.
+  - description: Définir la raison d’être de votre entreprise.
+  - description: Evaluer les impacts de l’activité de votre entreprise sur l’environnement.
+  - description: >-
+      Etablir les risques et opportunités de la transition environnementale sur
+      l’activité de votre entreprise.
+  - description: >-
+      Définir la feuille de route jusqu’à 2030 de votre entreprise pour vous
+      guider dans la transition énergétique et écologique.
 conditions d'éligibilité:
   taille de l'entreprise:
-  - PME et ETI
-  - Non éligible aux micro-entreprises
+    - PME et ETI
+    - Non éligible aux micro-entreprises
   secteur géographique:
-  - France et territoires d'outre-mer
+    - France et territoires d'outre-mer
   secteur d'activité:
-  - Tous secteurs d’activité
+    - Tous secteurs d’activité
   nombre d'années d'activité:
-  - Au moins 3 ans d’activité
+    - Au moins 3 ans d’activité
   autres critères d'éligibilité:
-  - >-
-    Réaliser au minimum 5M€ de chiffre d'affaires (les PME réalisant moins de
-    5M€ de CA peuvent être éligibles, sous condition de structuration suffisante
-    afin que le parcours conseil soit adapté)
+    - >-
+      Réaliser au minimum 5M€ de chiffre d'affaires (les PME réalisant moins de
+      5M€ de CA peuvent être éligibles, sous condition de structuration
+      suffisante afin que le parcours conseil soit adapté)
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
-    - est éligible
-    - est dans un secteur d'activité ciblé
-    - a un objectif ciblé
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
   entreprise . est éligible:
     toutes ces conditions:
-    - a un effectif éligible
+      - a un effectif éligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
-    - effectif >= 10
+      - effectif >= 10
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - code NAF niveau 1 . est A
-    - code NAF niveau 1 . est B
-    - code NAF niveau 1 . est C
-    - code NAF niveau 1 . est D
-    - code NAF niveau 1 . est E
-    - code NAF niveau 1 . est F
-    - code NAF niveau 1 . est G
-    - code NAF niveau 1 . est H
-    - code NAF niveau 1 . est I
-    - code NAF niveau 1 . est J
-    - code NAF niveau 1 . est K
-    - code NAF niveau 1 . est L
-    - code NAF niveau 1 . est M
-    - code NAF niveau 1 . est N
-    - code NAF niveau 1 . est O
-    - code NAF niveau 1 . est P
-    - code NAF niveau 1 . est Q
-    - code NAF niveau 1 . est R
-    - code NAF niveau 1 . est S
-    - code NAF niveau 1 . est T
-    - code NAF niveau 1 . est U
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
   entreprise . a un objectif ciblé:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est former ou recruter
+      - questionnaire . objectif prioritaire . est former ou recruter

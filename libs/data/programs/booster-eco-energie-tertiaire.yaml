@@ -31,98 +31,98 @@ url: >-
 nature de l'aide: financement
 montant du financement: Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €
 objectifs:
-- description: >-
-    Vérifiez l’éligibilité de votre projet en parcourant la documentation de
-    l’ADEME ou en contactant un conseiller.
-  liens:
-  - lien: >-
-      https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Booster%20Entreprises%20%C3%89co-%C3%89nergie%20Tertiaire%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.docx
-    texte: Conditions éligibilité et financement
-- description: >-
-    Identifiez le prestataire qui va vous accompagner pour réaliser l'audit
-    énergétique et faites réaliser un devis.
-- description: >-
-    Définissez la prestation nécessaire pour mettre en œuvre vos travaux : une
-    mission de maîtrise d’œuvre rénovation énergétique / ou une mission
-    d'assistance à maitrise d'ouvrage pour la mise en oeuvre d'un Contrat de
-    Performance Énergétique (CPE).
-- description: >-
-    Choisissez les prestataires qui vous accompagneront pour vos missions
-    d'ingénierie et faites réaliser des devis. Ces prestataires doivent répondre
-    aux critères de qualification et compétences décrits dans les cahiers des
-    charges de l'ADEME.
-- description: Créez un compte ADEME pour pouvoir déposer votre dossier.
-  liens:
-  - lien: https://agirpourlatransition.ademe.fr/user/register
-    texte: Créer mon compte ADEME
-- description: >-
-    Déposez votre demande d'aide auprès de l'ADEME : informations
-    administratives, description du projet, rapport d'audit énergétique, détails
-    techniques et financiers, etc. A ce stade, votre audit ou missions
-    d'ingénierie ne doivent pas avoir commencé !
-  liens:
-  - lien: >-
-      https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/booster-entreprises-reduire-facture-energetique-gagner-valeur-verte
-    texte: Déposer mon dossier
+  - description: >-
+      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
+      l’ADEME ou en contactant un conseiller.
+    liens:
+      - lien: >-
+          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Booster%20Entreprises%20%C3%89co-%C3%89nergie%20Tertiaire%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.docx
+        texte: Conditions éligibilité et financement
+  - description: >-
+      Identifiez le prestataire qui va vous accompagner pour réaliser l'audit
+      énergétique et faites réaliser un devis.
+  - description: >-
+      Définissez la prestation nécessaire pour mettre en œuvre vos travaux : une
+      mission de maîtrise d’œuvre rénovation énergétique / ou une mission
+      d'assistance à maitrise d'ouvrage pour la mise en oeuvre d'un Contrat de
+      Performance Énergétique (CPE).
+  - description: >-
+      Choisissez les prestataires qui vous accompagneront pour vos missions
+      d'ingénierie et faites réaliser des devis. Ces prestataires doivent
+      répondre aux critères de qualification et compétences décrits dans les
+      cahiers des charges de l'ADEME.
+  - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
+    liens:
+      - lien: https://agirpourlatransition.ademe.fr/user/register
+        texte: Créer mon compte ADEME
+  - description: >-
+      Déposez votre demande d'aide auprès de l'ADEME : informations
+      administratives, description du projet, rapport d'audit énergétique,
+      détails techniques et financiers, etc. A ce stade, votre audit ou missions
+      d'ingénierie ne doivent pas avoir commencé !
+    liens:
+      - lien: >-
+          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/booster-entreprises-reduire-facture-energetique-gagner-valeur-verte
+        texte: Déposer mon dossier
 conditions d'éligibilité:
   taille de l'entreprise:
-  - Toutes tailles
-  - Non éligible aux micro-entreprises
+    - Toutes tailles
+    - Non éligible aux micro-entreprises
   secteur géographique:
-  - Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Corse, Occitanie
+    - Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Corse, Occitanie
   secteur d'activité:
-  - Secteur tertiaire
+    - Secteur tertiaire
   nombre d'années d'activité:
-  - Éligible à toutes les entreprises
+    - Éligible à toutes les entreprises
   autres critères d'éligibilité:
-  - Être une entreprise privée ayant des bâtiments d'activités tertiaires
-  - >-
-    L'opération pour laquelle vous sollicitez une aide financière ne doit pas
-    avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes
-    (sous quelque forme que ce soit : marché signé, commande signée, devis
-    accepté…)
+    - Être une entreprise privée ayant des bâtiments d'activités tertiaires
+    - >-
+      L'opération pour laquelle vous sollicitez une aide financière ne doit pas
+      avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes
+      (sous quelque forme que ce soit : marché signé, commande signée, devis
+      accepté…)
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
-    - est éligible
-    - est dans un secteur d'activité ciblé
-    - a un objectif ciblé
-    - entreprise . est propriétaire de ses locaux
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+      - entreprise . est propriétaire de ses locaux
   entreprise . est éligible:
     applicable si:
       toutes ces conditions:
-      - dispositif . début de validité <= date du jour
-      - date du jour <= dispositif . fin de validité
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
-    - a un effectif éligible
-    - entreprise . est dans une zone géographique éligible
+      - a un effectif éligible
+      - entreprise . est dans une zone géographique éligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
-    - effectif <= 4999
+      - effectif <= 4999
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - code NAF niveau 1 . est G
-    - code NAF niveau 1 . est H
-    - code NAF niveau 1 . est I
-    - code NAF niveau 1 . est J
-    - code NAF niveau 1 . est K
-    - code NAF niveau 1 . est L
-    - code NAF niveau 1 . est M
-    - code NAF niveau 1 . est N
-    - code NAF niveau 1 . est P
-    - code NAF niveau 1 . est Q
-    - code NAF niveau 1 . est R
-    - code NAF niveau 1 . est S
-    - code NAF niveau 1 . est T
-    - code NAF niveau 1 . est U
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
   entreprise . a un objectif ciblé:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est rénover mon bâtiment
-    - questionnaire . objectif prioritaire . est ma performance énergétique
+      - questionnaire . objectif prioritaire . est rénover mon bâtiment
+      - questionnaire . objectif prioritaire . est ma performance énergétique
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
-    - région = Auvergne-Rhône-Alpes
-    - région = Bourgogne-Franche-Comté
-    - région = Bretagne
-    - région = Corse
-    - région = Occitanie
+      - région = Auvergne-Rhône-Alpes
+      - région = Bourgogne-Franche-Comté
+      - région = Bretagne
+      - région = Corse
+      - région = Occitanie
