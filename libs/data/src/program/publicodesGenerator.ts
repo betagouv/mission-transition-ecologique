@@ -95,7 +95,8 @@ export class PublicodesGenerator {
   }
 
   private _departToRegionMap: { [key: string]: string } = {
-    Vaucluse: "Provence-Alpes-Côte d'Azur"
+    Vaucluse: "Provence-Alpes-Côte d'Azur",
+    'Bouches-du-Rhône': "Provence-Alpes-Côte d'Azur"
   }
 
   private _generateGeographicConditions() {

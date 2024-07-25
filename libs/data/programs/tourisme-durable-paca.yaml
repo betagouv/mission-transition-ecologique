@@ -1,0 +1,57 @@
+titre: 'Formation référent tourisme durable '
+promesse: >-
+  Restaurateurs & hébergeurs, réalisez une formation pour initier une démarche
+  de tourisme durable.
+description: >-
+  Vous êtes directeur, manager d’établissement ou référent environnement et vous
+  souhaitez initier une démarche de tourisme durable ? La formation "référent
+  tourisme durable" vous permet d'acquérir les connaissances et les outils
+  nécessaires pour mettre en œuvre une gestion durable dans votre établissement.
+  Par ailleurs, elle répond aux critères de formation des référents
+  environnement dans le cadre de la labellisation Clef Verte.
+illustration: images/TEE_energie_verte.png
+opérateur de contact: CCI
+url: https://www.cciamp.com/produit/tourisme-durable-atelier-RSE
+nature de l'aide: accompagnement
+coût de l'accompagnement: à partir de 450 € HT par participant (ou financement OPCO)
+durée de l'accompagnement: 1 journée
+objectifs:
+  - description: >-
+      Découvrez les enjeux environnementaux spécifiques au secteur de
+      l'hôtellerie et du tourisme et identifiez les leviers de performance d’une
+      gestion responsable.
+  - description: >-
+      Découvrez comment mettre en œuvre une politique RSE ou une gestion
+      responsable dans votre établissement.
+  - description: >-
+      Assistez à une présentation du label Clef verte, premier label de tourisme
+      durable pour les hébergements touristiques et restaurants en France et
+      découvrez comment piloter votre démarche de labellisation.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Bouches-du-Rhône
+  secteur d'activité:
+    - Hôtellerie & restauration
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est I
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est former ou recruter
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Provence-Alpes-Côte d'Azur
