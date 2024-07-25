@@ -14,19 +14,19 @@
   background: #fff;
 }
 .fr-accordion-bg--yellow .fr-collapse--expanded {
-  background: var(--text-action-high-blue-france);
+  background: #facf35;
 }
 .fr-accordion-bg--green .fr-collapse--expanded {
-  background: var(--text-action-high-blue-france);
+  background: #1ebe8e;
 }
 .fr-accordion-bg--blue .fr-collapse--expanded {
-  background: var(--text-inverted-blue-france);
+  background: #6672f8;
 }
 .fr-accordion-bg--blue-light .fr-collapse--expanded {
-  background: var(--text-action-high-blue-france);
+  background: #e8edff;
 }
 .fr-accordion-bg--red .fr-collapse--expanded {
-  background: var(--text-action-high-blue-france);
+  background: #fca081;
 }
 .fr-accordion-bg--purple .fr-collapse--expanded {
   background: #6a62f4;
@@ -112,18 +112,12 @@
     background-color: #dad8fc;
   }
   .fr-bg--blue-france {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
     background-color: #000091;
   }
   .fr-bg--blue-france--light {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
     background-color: #8080c8;
   }
   .fr-bg--blue-france--lightness {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
     background-color: #bfbfe4;
   }
 }
@@ -204,18 +198,12 @@
     background-color: #dad8fc;
   }
   .fr-bg-sm--blue-france {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
     background-color: #000091;
   }
   .fr-bg-sm--blue-france--light {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
     background-color: #8080c8;
   }
   .fr-bg-sm--blue-france--lightness {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
     background-color: #bfbfe4;
   }
 }
@@ -296,18 +284,12 @@
     background-color: #dad8fc;
   }
   .fr-bg-md--blue-france {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
     background-color: #000091;
   }
   .fr-bg-md--blue-france--light {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
     background-color: #8080c8;
   }
   .fr-bg-md--blue-france--lightness {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
     background-color: #bfbfe4;
   }
 }
@@ -388,18 +370,12 @@
     background-color: #dad8fc;
   }
   .fr-bg-lg--blue-france {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
     background-color: #000091;
   }
   .fr-bg-lg--blue-france--light {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
     background-color: #8080c8;
   }
   .fr-bg-lg--blue-france--lightness {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
     background-color: #bfbfe4;
   }
 }
@@ -480,18 +456,12 @@
     background-color: #dad8fc;
   }
   .fr-bg-xl--blue-france {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
     background-color: #000091;
   }
   .fr-bg-xl--blue-france--light {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
     background-color: #8080c8;
   }
   .fr-bg-xl--blue-france--lightness {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
     background-color: #bfbfe4;
   }
 }
@@ -682,7 +652,7 @@
   color: var(--text-inverted-blue-france);
 }
 .fr-card--blue .fr-card__title {
-  color: var(--text-inverted-blue-france);
+  color: #6672f8;
 }
 .fr-card--blue-light {
   background-color: #e8edff;
@@ -701,8 +671,12 @@
 .fr-card--purple .fr-card__title {
   color: var(--text-default-grey);
 }
+.fr-card--blue-france {
+  background-color: #000091;
+  color: var(--text-inverted-blue-france);
+}
 .fr-card--blue-france .fr-card__title {
-  color: var(--text-default-grey);
+  color: #000091;
 }
 
 .fr-checkbox-group input[type=checkbox] + label::before {
@@ -828,6 +802,7 @@
 }
 .fr-tee-form-block {
   background-color: #e8edff;
+  padding: 2em;
   display: flex;
   justify-content: center;
 }
@@ -1140,7 +1115,7 @@
   background: linear-gradient(0deg, #6a62f4, #6a62f4);
 }
 .fr-highlight-border--blue-france {
-  background: linear-gradient(0deg, #000091, #000091);
+  background-image: linear-gradient(0deg, #000091, #000091);
 }
 .fr-highlight-bg--white {
   background-color: #fff;
@@ -2621,23 +2596,31 @@ a.fr-tag[aria-pressed=true].fr-tag--red, button.fr-tag[aria-pressed=true].fr-tag
 a.fr-tag[aria-pressed=true].fr-tag--red.fr-tag--sm, button.fr-tag[aria-pressed=true].fr-tag--red.fr-tag--sm {
   background-image: radial-gradient(circle at 100% 0.1875rem, transparent 0.4475rem, #fca081 0.5rem) !important;
 }
+a.fr-tag[aria-pressed=true].fr-tag--blue-france, button.fr-tag[aria-pressed=true].fr-tag--blue-france {
+  background-image: radial-gradient(circle at 100% 0.25rem, transparent 0.578125rem, #000091 0.625rem) !important;
+  color: var(--text-inverted-blue-france);
+}
+a.fr-tag[aria-pressed=true].fr-tag--blue-france.fr-tag--sm, button.fr-tag[aria-pressed=true].fr-tag--blue-france.fr-tag--sm {
+  background-image: radial-gradient(circle at 100% 0.1875rem, transparent 0.4475rem, #000091 0.5rem) !important;
+}
+
 .fr-text--white {
   color: #fff;
 }
 .fr-text--yellow {
-  color: var(--text-action-high-blue-france);
+  color: #facf35;
 }
 .fr-text--green {
-  color: var(--text-action-high-blue-france);
+  color: #1ebe8e;
 }
 .fr-text--blue {
-  color: var(--text-inverted-blue-france);
+  color: #6672f8;
 }
 .fr-text--blue-light {
-  color: var(--text-action-high-blue-france);
+  color: #e8edff;
 }
 .fr-text--red {
-  color: var(--text-action-high-blue-france);
+  color: #fca081;
 }
 .fr-text--purple {
   color: #6a62f4;

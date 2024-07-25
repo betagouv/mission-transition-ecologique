@@ -14,7 +14,7 @@ a, button {
               }
 
               background-image: radial-gradient(circle at 100% .25rem, transparent .578125rem, map.get($properties, "color") .625rem) !important;
-              color: map.get($properties, "color");
+              color: map.get($properties, "color-with-background");
             }
           }
         }
