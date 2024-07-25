@@ -14,7 +14,7 @@
       </div>
     </template>
     <div
-      class="fr-mx-4v"
+      class="fr-container"
       v-html="markdownToHtml(project.longDescription)"
     />
   </DsfrAccordion>
@@ -34,7 +34,7 @@
       </div>
     </template>
     <div
-      class="fr-mx-4v"
+      class="fr-container"
       v-html="markdownToHtml(project.moreDescription)"
     />
   </DsfrAccordion>
