@@ -16,7 +16,7 @@ montant du financement: de 5 000 € HT à 200 000 € HT
 objectifs:
 - description: >-
     Vérifiez l’éligibilité de votre projet en parcourant la documentation de
-    l’ADEME.
+    l’ADEME ou en contactant un conseiller.
   liens:
   - lien: >-
       https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Tremplin%20pour%20la%20transition%20%C3%A9cologique%20des%20PME%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf
@@ -27,7 +27,18 @@ objectifs:
     déchets, la chaleur et le froid renouvelable pour les bâtiments (hors
     logement), l'efficacité énergétique de serres chauffées ou la mobilité
     durable.
-- description: Déposez un seul dossier pour plusieurs études ou investissements.
+- description: Créez un compte ADEME pour pouvoir déposer votre dossier.
+  liens:
+  - lien: https://agirpourlatransition.ademe.fr/user/register
+    texte: Créer mon compte ADEME
+- description: >-
+    Déposez votre dossier : informations administratives, description du projet,
+    détails techniques et financiers, etc. À ce stade, votre projet ne doit pas
+    avoir commencé !
+  liens:
+  - lien: >-
+      https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/tremplin-transition-ecologique-pme
+    texte: Déposer mon dossier
 - description: Réalisez votre investissement et votre étude dans les 18 mois du contrat.
 - description: Obtenez un paiement final sur attestation et justificatifs.
 conditions d'éligibilité:

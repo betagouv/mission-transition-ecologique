@@ -3,7 +3,8 @@ promesse: >-
   Entreprise industrielle, réalisez un audit énergétique de votre site de
   production
 description: >-
-  L’ADEME vous aide à financer l'audit énergétique de votre site de production.
+  L’ADEME vous aide à financer l'audit énergétique sur le périmètre de votre
+  choix : site de production, atelier ou process. 
 
   L'audit énergétique vous permet de réaliser un état des lieux complet de vos
   consommations et d'identifier vos postes les plus émetteurs en terme de
@@ -26,7 +27,7 @@ montant du financement: Jusqu'à 80% du coût de l'étude, dans un maximum de 10
 objectifs:
 - description: >-
     Vérifiez l’éligibilité de votre projet en parcourant la documentation de
-    l’ADEME.
+    l’ADEME ou en contactant un conseiller.
   liens:
   - lien: >-
       https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf
@@ -38,22 +39,27 @@ objectifs:
   - lien: >-
       https://france-renov.gouv.fr/annuaires-professionnels/artisan-rge-architecte
     texte: Annuaire des professionnels RGE
+- description: Créez un compte ADEME pour pouvoir déposer votre dossier.
+  liens:
+  - lien: https://agirpourlatransition.ademe.fr/user/register
+    texte: Créer mon compte ADEME
 - description: >-
-    Déposez votre demande d'aide : informations administratives, description du
-    projet, détails techniques et financiers, etc. A ce stade, votre projet ne
-    doit pas avoir commencé !
+    Déposez votre dossier : informations administratives, description du projet,
+    détails techniques et financiers, etc. À ce stade, votre projet ne doit pas
+    avoir commencé !
+  liens:
+  - lien: >-
+      https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/audit-energetique-industrie
+    texte: Déposer mon dossier
 - description: >-
     L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez
     un contrat de financement précisant le montant d’aide maximum, les
     conditions et les modalités de versement.
 - description: >-
-    Réalisez votre audit énergétique sur le périmètre de votre choix : site,
-    atelier ou process.
-- description: >-
-    A la fin du diagnostic, bénéficiez d'un état des lieux complet de vos
-    consommations, des pistes d'amélioration sous forme de plan d'action ainsi
-    que les gains économiques associés et leurs temps de retour sur
-    investissement.
+    Réalisez votre audit énergétique. Vous disposerez d'un état des lieux
+    complet de vos consommations, des pistes d'amélioration sous forme de plan
+    d'action ainsi que les gains économiques associés et leurs temps de retour
+    sur investissement.
 conditions d'éligibilité:
   taille de l'entreprise:
   - Toutes tailles

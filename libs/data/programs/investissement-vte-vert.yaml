@@ -39,7 +39,7 @@ objectifs:
 - description: >-
     Vous n'avez pas encore trouvé votre talent VTE ? Créez votre espace
     recruteur sur le site vte-france. Depuis votre espace, vous pourrez publier
-    une annonce et accéder à la CVthèque des candidats. 
+    une annonce et accéder à la CVthèque des candidats.
   liens:
   - lien: https://www.emploi.vte-france.fr/company/signin/register
     texte: Espace recruteur
@@ -113,5 +113,3 @@ publicodes:
   entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est former ou recruter
-    - questionnaire . objectif prioritaire . est mon impact environnemental
-    - questionnaire . objectif prioritaire . est l'écoconception

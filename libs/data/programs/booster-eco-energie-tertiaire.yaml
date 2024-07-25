@@ -33,7 +33,7 @@ montant du financement: Jusqu'à 80% du coût de l'étude, dans un maximum de 10
 objectifs:
 - description: >-
     Vérifiez l’éligibilité de votre projet en parcourant la documentation de
-    l’ADEME.
+    l’ADEME ou en contactant un conseiller.
   liens:
   - lien: >-
       https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Booster%20Entreprises%20%C3%89co-%C3%89nergie%20Tertiaire%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.docx
@@ -51,17 +51,25 @@ objectifs:
     d'ingénierie et faites réaliser des devis. Ces prestataires doivent répondre
     aux critères de qualification et compétences décrits dans les cahiers des
     charges de l'ADEME.
+- description: Créez un compte ADEME pour pouvoir déposer votre dossier.
+  liens:
+  - lien: https://agirpourlatransition.ademe.fr/user/register
+    texte: Créer mon compte ADEME
 - description: >-
     Déposez votre demande d'aide auprès de l'ADEME : informations
     administratives, description du projet, rapport d'audit énergétique, détails
     techniques et financiers, etc. A ce stade, votre audit ou missions
     d'ingénierie ne doivent pas avoir commencé !
+  liens:
+  - lien: >-
+      https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/booster-entreprises-reduire-facture-energetique-gagner-valeur-verte
+    texte: Déposer mon dossier
 conditions d'éligibilité:
   taille de l'entreprise:
   - Toutes tailles
   - Non éligible aux micro-entreprises
   secteur géographique:
-  - Auvergne-Rhône-Alpes, Bretagne, Corse, Occitanie
+  - Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Corse, Occitanie
   secteur d'activité:
   - Secteur tertiaire
   nombre d'années d'activité:
@@ -114,6 +122,7 @@ publicodes:
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
     - région = Auvergne-Rhône-Alpes
+    - région = Bourgogne-Franche-Comté
     - région = Bretagne
     - région = Corse
     - région = Occitanie

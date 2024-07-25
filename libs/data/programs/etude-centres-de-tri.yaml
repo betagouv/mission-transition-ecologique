@@ -30,7 +30,7 @@ montant du financement: Jusqu'à 80% du coût de l'étude, dans un maximum de 50
 objectifs:
 - description: >-
     Vérifiez l’éligibilité de votre projet en parcourant la documentation de
-    l’ADEME.
+    l’ADEME ou en contactant un conseiller.
   liens:
   - lien: >-
       https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20centres%20de%20tri%20et%20pr%C3%A9paration%20d%C3%A9chets%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.docx
@@ -38,10 +38,18 @@ objectifs:
 - description: >-
     Choisissez le prestataire qui va vous accompagner pour mener votre étude et
     obtenez un devis.
+- description: Créez un compte ADEME pour pouvoir déposer votre dossier.
+  liens:
+  - lien: https://agirpourlatransition.ademe.fr/user/register
+    texte: Créer mon compte ADEME
 - description: >-
-    Déposez votre demande d'aide : informations administratives, description du
-    projet, détails techniques et financiers, etc. A ce stade, votre projet ne
-    doit pas avoir commencé !
+    Déposez votre dossier : informations administratives, description du projet,
+    détails techniques et financiers, etc. À ce stade, votre projet ne doit pas
+    avoir commencé !
+  liens:
+  - lien: >-
+      https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/realisation-detudes-creation-lextension-modernisation-centres-tri-dechets
+    texte: Déposer mon dossier
 - description: >-
     L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez
     un contrat de financement précisant le montant d’aide maximum, les

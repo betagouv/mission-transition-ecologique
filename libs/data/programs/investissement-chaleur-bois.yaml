@@ -23,15 +23,23 @@ montant du financement: Selon projet
 objectifs:
 - description: >-
     Vérifiez l’éligibilité de votre projet en parcourant la documentation de
-    l’ADEME.
+    l’ADEME ou en contactant un conseiller.
   liens:
   - lien: >-
       https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20des%20installations%20biomasse%20%C3%A9nergie%20-%202024.pdf
     texte: Conditions éligibilité et financement
+- description: Créez un compte ADEME pour pouvoir déposer votre dossier.
+  liens:
+  - lien: https://agirpourlatransition.ademe.fr/user/register
+    texte: Créer mon compte ADEME
 - description: >-
-    Déposez votre demande d'aide : informations administratives, description du
-    projet, détails techniques et financiers, étude de faisabilité, etc. A ce
-    stade, votre investissement ne doit pas avoir été realisé !
+    Déposez votre dossier : informations administratives, description du projet,
+    détails techniques et financiers, etc. À ce stade, votre projet ne doit pas
+    avoir commencé !
+  liens:
+  - lien: >-
+      https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/realisation-dinstallations-production-chaleur-biomasse-bois?cible=79
+    texte: Déposer mon dossier
 - description: >-
     L'ADEME étudie votre demande en fonction de l’étude du projet, de
     l’approvisionnement biomasse, de la quantité de chaleur produite et de ses

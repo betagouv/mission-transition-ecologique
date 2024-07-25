@@ -7,15 +7,17 @@ description: >-
   étape nécessaire avant tout investissement.
 description longue: >-
   La méthanisation est un processus naturel biologique de dégradation de la
-  matière organique en l'absence d'oxygène, grâce à l'action de
-  micro-organismes. Chargées dans un digesteur – chauffées et brassées en
-  l’absence d’oxygène
+  matière organique grâce à l'action de micro-organismes. Chargées dans un
+  digesteur, chauffées et brassées en l’absence d’oxygène pendant plusieurs
+  jours, ces matières produisent une énergie renouvelable, le biogaz et un
+  fertilisant, le digestat. 
 
-  pendant plusieurs jours – ces matières produisent une énergie renouvelable, le
-  biogaz et un fertilisant, le digestat.  Le biogaz produit peut ensuite être
-  valorisé et vendu sous différentes formes (chaleur, électricité, injection
-  dans le réseau de gaz naturel, carburant pour véhicules).
-   L'ADEME soutient le financement aux : 
+  Le biogaz produit peut ensuite être valorisé et vendu sous différentes formes
+  (chaleur, électricité, injection dans le réseau de gaz naturel, carburant pour
+  véhicules).
+   
+  L'ADEME soutient le financement aux : 
+
   • Études de diagnostic et d’accompagnement de projets (dont études de
   faisabilité) : unités de méthanisation à la ferme, centralisées, en industries
   agro-alimentaires, biodéchets des collectivités ou station d’épuration
@@ -48,7 +50,7 @@ montant du financement: Jusqu'à 70% du coût de l'étude, dans un maximum de 10
 objectifs:
 - description: >-
     Vérifiez l’éligibilité de votre projet en parcourant la documentation de
-    l’ADEME.
+    l’ADEME ou en contactant un conseiller.
   liens:
   - lien: >-
       https://agirpourlatransition.ademe.fr/entreprises/entreprises/sites/default/files/Etudes%20pr%C3%A9alables%20installation%20m%C3%A9thanisation%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.docx
@@ -58,10 +60,18 @@ objectifs:
     obtenez un devis. Il peut s'agir d'une étude de diagnostic, de faisabilité
     ou un accompagnement au montage projet. Les études de faisabilité devront
     être réalisées par un bureau d’étude certifié Qualimétha ou équivalent.
+- description: Créez un compte ADEME pour pouvoir déposer votre dossier.
+  liens:
+  - lien: https://agirpourlatransition.ademe.fr/user/register
+    texte: Créer mon compte ADEME
 - description: >-
-    Déposez votre demande d'aide : informations administratives, description du
-    projet, détails techniques et financiers, etc. A ce stade, votre projet ne
-    doit pas avoir commencé !
+    Déposez votre dossier : informations administratives, description du projet,
+    détails techniques et financiers, etc. À ce stade, votre projet ne doit pas
+    avoir commencé !
+  liens:
+  - lien: >-
+      https://agirpourlatransition.ademe.fr/entreprises/entreprises/aides-financieres/2024/etudes-prealables-a-construction-dune-installation-methanisation
+    texte: Déposer mon dossier
 - description: >-
     L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez
     un contrat de financement précisant le montant d’aide maximum, les

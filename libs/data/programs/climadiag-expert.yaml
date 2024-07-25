@@ -66,7 +66,6 @@ publicodes:
   entreprise . a un objectif ciblé:
     une de ces conditions:
     - questionnaire . objectif prioritaire . est mon impact environnemental
-    - questionnaire . objectif prioritaire . est l'écoconception
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
     - région = Bourgogne-Franche-Comté
