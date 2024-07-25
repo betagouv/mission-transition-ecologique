@@ -5,9 +5,12 @@
     </div>
     <div
       v-if="UsedTrack.isSpecificGoal()"
-      class="fr-hidden fr-unhidden-md fr-mb-2v fr-col-12 fr-px-2v fr-px-md-0 fr-text--blue-france"
+      class="fr-hidden fr-unhidden-md fr-col-12 fr-px-2v fr-px-md-0 fr-text--blue-france"
     >
-      <p v-html="resume"></p>
+      <p
+        class="fr-mb-0"
+        v-html="resume"
+      ></p>
     </div>
   </div>
 </template>
