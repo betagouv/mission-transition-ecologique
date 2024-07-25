@@ -49,7 +49,7 @@
           </div>
 
           <!-- TITLE & RESUME -->
-          <div class="fr-col fr-pl-10v">
+          <div class="fr-col">
             <!-- PROGRAM TITLE -->
             <p class="tee-program-title fr-mb-5v">
               {{ program?.titre }}
@@ -181,24 +181,25 @@
             />
           </div>
         </div>
+        <DsfrAccordionsGroup>
+          <!-- ELIGIBILITY -->
+          <ProgramAccordion
+            v-if="program && program['conditions d\'éligibilité']"
+            :accordion-id="`${program.id}-eligibility`"
+            :title="Translation.t('program.programAmIEligible')"
+          >
+            <ProgramEligibility :program="program" />
+          </ProgramAccordion>
 
-        <!-- ELIGIBILITY -->
-        <ProgramAccordion
-          v-if="program && program['conditions d\'éligibilité']"
-          :accordion-id="`${program.id}-eligibility`"
-          :title="Translation.t('program.programAmIEligible')"
-        >
-          <ProgramEligibility :program="program" />
-        </ProgramAccordion>
-
-        <!-- LONG DESCRIPTION -->
-        <ProgramAccordion
-          v-if="program && program['description longue']"
-          :accordion-id="`${program.id}-long-description`"
-          :title="Translation.t('program.programKnowMore')"
-        >
-          <ProgramLongDescription :program="program" />
-        </ProgramAccordion>
+          <!-- LONG DESCRIPTION -->
+          <ProgramAccordion
+            v-if="program && program['description longue']"
+            :accordion-id="`${program.id}-long-description`"
+            :title="Translation.t('program.programKnowMore')"
+          >
+            <ProgramLongDescription :program="program" />
+          </ProgramAccordion>
+        </DsfrAccordionsGroup>
         <hr class="fr-mb-9v fr-pb-1v" />
       </div>
     </div>
@@ -206,7 +207,7 @@
     <!-- PROGRAM FORM -->
     <div
       ref="TeeProgramFormContainer"
-      class="fr-tee-form-block"
+      class="fr-tee-form-block fr-p-4v"
     >
       <ProgramForm
         v-if="program"

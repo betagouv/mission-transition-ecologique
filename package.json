@@ -16,6 +16,7 @@
     "dev:build:start": "npm run build && npm run dev:start",
     "build": "nx run-many -t build",
     "start": "nx run-many -t start --port $PORT",
+    "generate:program-yaml": "nx run @tee/data:generate-program-yaml",
     "generate:program": "nx run @tee/data:generate-program",
     "generate:projects": "nx run @tee/data:generate-projects",
     "generate:seo": "nx run @tee/web:generate-seo",

@@ -1,0 +1,86 @@
+titre: Bonus Réparation
+promesse: >-
+  Faites bénéficier vos clients d'une remise sur la réparation d'un objet grâce
+  au "Bonus Réparation"
+description: >-
+  Votre entreprise effectue des réparations pour donner une seconde vie aux
+  produits ? Vous pouvez proposer le "Bonus Réparation" à vos clients pour leur
+  faire bénéficier d'une remise sur le coût de la réparation de leurs objets.
+  Vous pourrez ensuite récupérer le montant de cette ristourne auprès de
+  l'éco-organisme qui vous aura certifié.
+description longue: >-
+  Les professionnels pouvant faire bénéficier à leurs clients du bonus
+  réparation sont les entreprises effectuant des réparations sur les produits
+  suivants :
+
+  - Équipements électriques et électronique, qu'ils soient destinés à être
+  utilisés par les particuliers ou les professionnels ; 
+
+  - Éléments d’ameublement ;
+
+  - Produits textiles d'habillement, les chaussures ou le linge de maison
+  destinés aux particuliers et les produits textiles pour la maison ;
+
+  - Jouets ;
+
+  - Articles de sport et de loisirs, y compris les vélos et engins de
+  déplacements non motorisés (trottinettes, skateboard, etc.) ;
+
+  - Articles de bricolage et de jardin.
+
+
+  Les réparateurs labellisés s'engagent à :
+
+  -  Fournir une garantie commerciale d'au moins 3 mois au client bénéficiant de
+  la réparation
+
+  - Informer le consommateur des conditions de participation du fonds au
+  financement de la réparation, en procédant à un affichage lisible de
+  l'extérieur du local où la réparation est proposée, ainsi qu'une mention sur
+  le site internet du réparateur lorsqu'il en a un.
+illustration: images/TEE_energie_verte.png
+opérateur de contact: ADEME
+url: https://entreprendre.service-public.fr/vosdroits/F37980
+nature de l'aide: financement
+montant du financement: à partir de 10 % des coûts de la réparation du produit
+activable en autonomie: oui
+objectifs:
+  - description: >-
+      Repérez l’éco-organisme lié à votre activité et faites-vous labelliser
+      auprès de lui, pour pouvoir proposer le "bonus réparation".
+    liens:
+      - lien: https://filieres-rep.ademe.fr/eco-organismes
+        texte: La liste des éco-organismes
+  - description: >-
+      Une fois votre entreprise labellisée, effectuez la réparation d’un produit
+      en faisait bénéficier au client d’une ristourne correspondant au montant
+      du Bonus Réparation.
+  - description: >-
+      Envoyez la facture liée à l’opération de réparation à l’organisme qui vous
+      a labellisé.
+  - description: >-
+      Faites-vous rembourser le montant du Bonus Réparation dans un délai de 30
+      jours.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - "La labellisation est ouverte à tout type de réparateurs professionnels : les artisans réparateurs, les réparateurs industriels, les SAV de fabricants et des distributeurs et les acteurs de la réparation à distances\nIl doit s'agir de réparations sur les produits suivants\_: équipements électriques et électroniques (EEE), éléments d'ameublement, produits textiles d'habillement, les chaussures ou le linge de maison, jouets, articles de sport et de loisirs, articles de bricolage et de jardin."
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est S
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est la gestion des déchets
+      - questionnaire . objectif prioritaire . est l'écoconception

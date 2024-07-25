@@ -1,62 +1,66 @@
 titre: Diagnostic Transition Ecologique
-promesse: Intégrez la transition écologique dans le fonctionnement quotidien de votre
+promesse: >-
+  Intégrez la transition écologique dans le fonctionnement quotidien de votre
   entreprise
-description: 'Réalisez un diagnostic de transition écologique avec votre conseiller
-  CCI. Vous pourrez évoquer ces enjeux à travers le prisme du pilotage de votre activité
-  : la gestion de vos locaux, vos consommations d''énergie, la gestion de vos déchets,
-  vos achats et vos mobilités.'
+description: >-
+  Réalisez un diagnostic de transition écologique avec votre conseiller CCI.
+  Vous pourrez évoquer ces enjeux à travers le prisme du pilotage de votre
+  activité : la gestion de vos locaux, vos consommations d'énergie, la gestion
+  de vos déchets, vos achats et vos mobilités.
 illustration: images/TEE_ampoule.png
 opérateur de contact: CCI
-url: ''
 nature de l'aide: accompagnement
 coût de l'accompagnement: Gratuit (sauf en PACA à partir de 650€ HT)
 durée de l'accompagnement: 1 jour dont 1/2 journée avec l'entreprise
 objectifs:
-- description: Réalisez un état des lieux à 360° afin d’évaluer la maturité écologique
-    de votre entreprise.
-- description: Identifiez les enjeux prioritaires de votre entreprise et élaborez
-    un plan d'action de transformation.
-- description: Menez un bouquet d'actions simples ou plus engageantes pour transformer
-    votre entreprise et optimiser vos coûts.
+  - description: >-
+      Réalisez un état des lieux à 360° afin d’évaluer la maturité écologique de
+      votre entreprise.
+  - description: >-
+      Identifiez les enjeux prioritaires de votre entreprise et élaborez un plan
+      d'action de transformation.
+  - description: >-
+      Menez un bouquet d'actions simples ou plus engageantes pour transformer
+      votre entreprise et optimiser vos coûts.
 conditions d'éligibilité:
   taille de l'entreprise:
-  - TPE et PME
-  - Éligible aux micro-entreprises
+    - TPE et PME
+    - Éligible aux micro-entreprises
   secteur géographique:
-  - France et territoires d'outre-mer
+    - France et territoires d'outre-mer
   secteur d'activité:
-  - Tous secteurs d’activité
+    - Tous secteurs d’activité
   nombre d'années d'activité:
-  - Éligible à toutes les entreprises
+    - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
-    - est éligible
-    - est dans un secteur d'activité ciblé
-    - a un objectif ciblé
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
   entreprise . est éligible:
     toutes ces conditions:
-    - a un effectif éligible
+      - a un effectif éligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
-    - effectif <= 249
+      - effectif <= 249
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - code NAF niveau 1 . est B
-    - code NAF niveau 1 . est C
-    - code NAF niveau 1 . est D
-    - code NAF niveau 1 . est E
-    - code NAF niveau 1 . est F
-    - code NAF niveau 1 . est G
-    - code NAF niveau 1 . est H
-    - code NAF niveau 1 . est I
-    - code NAF niveau 1 . est J
-    - code NAF niveau 1 . est K
-    - code NAF niveau 1 . est L
-    - code NAF niveau 1 . est M
-    - code NAF niveau 1 . est N
-    - code NAF niveau 1 . est Q
-    - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
   entreprise . a un objectif ciblé:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est mon impact environnemental
+      - questionnaire . objectif prioritaire . est mon impact environnemental

@@ -1,104 +1,87 @@
 titre: Coup de pouce Chauffage
 promesse: Chauffez vos bâtiments grâce à une énergie renouvelable
-description: Bénéficiez d'une prime pour le remplacement de vos anciens équipements
-  à énergie fossile (charbon, fioul ou gaz) au profit d’un système de chauffage ou
-  de production d’eau chaude fonctionnant aux énergies renouvelables.
-description longue: '🏢 Pour être éligible au Coup de pouce Chauffage, votre bâtiment
-  doit :
-
-  - Être dédié à un usage tertiaire (vous devez en être propriétaire ou gestionnaire)
-
-  - Être inférieur à 1000 m2
-
-  - Être construit depuis au moins deux ans à la date d’engagement de l''opération
-
-  - Ne pas avoir été raccordé à un réseau de chaleur (dans un délai de cinq ans précédant
-  la date de l''engagement de l''opération)
-
-
-  💰 Les barèmes
-
-  - Le montant des primes dépend des offres commerciales de chaque signataire de la
-  charte, c’est pour cela qu’il est important de comparer les offres commerciales
-  avant de vous engager.
-
-  - Le montant des primes est établi en fonction de la surface du bâtiment, du type
-  d’équipement installé, du type d’équipement qui est remplacé, et du cours du marché
-  des Certificats d''économies d''énergie (CEE).'
+description: "Bénéficiez d'une prime pour le remplacement de vos anciens équipements à énergie fossile\_(charbon, fioul ou gaz) au profit d’un système de chauffage ou de production d’eau chaude fonctionnant aux énergies renouvelables."
+description longue: "Pour être éligible au Coup de pouce Chauffage, votre bâtiment doit :\n- Être dédié à un usage tertiaire (vous devez en être propriétaire ou gestionnaire)\n- Être inférieur à 1000 m2\n- Être construit depuis au moins deux ans à la date d’engagement de l'opération\n- Ne\_pas avoir été raccordé à un réseau de chaleur (dans un délai de cinq ans\_précédant la date de l'engagement de l'opération)\n\nLes barèmes\n- Le montant des primes dépend des offres commerciales de chaque signataire de la charte, c’est pour cela qu’il est important de comparer les offres commerciales avant de vous engager.\n- Le montant des primes est établi en fonction de la surface du bâtiment, du type d’équipement installé, du type d’équipement qui est remplacé, et du cours du marché des Certificats d'économies d'énergie (CEE)."
 illustration: images/TEE_eolienne.png
 opérateur de contact: Ministère de la Transition Écologique et Solidaire
-url: ''
 nature de l'aide: financement
 montant du financement: Variable selon le bâtiment et le type d'équipement
 activable en autonomie: oui
 objectifs:
-- description: Vérifiez votre éligibilité en réalisant le test “Votre bâtiment est-il
-    raccordable à un réseau de chaleur ?”. Si un réseau de chaleur passe à proximité
-    de votre adresse, vous avez le droit à une prime pour le raccordement de vos locaux
-    à ce réseau.
-  liens:
-  - lien: https://france-chaleur-urbaine.beta.gouv.fr/ressources/aides#contenu
-    texte: Réaliser le test
-- description: S’il n’y a pas de réseau de chaleur à proximité de votre adresse, vous
-    avez le droit à une prime pour la mise en place d’équipements de chauffage ou
-    de production d’eau chaude sanitaire ne consommant ni charbon ni fioul.
-  liens:
-  - lien: https://france-renov.gouv.fr/petit-tertiaire-prive#quels-travaux-sont-concernes-par-le-coup-de-pouce-
-    texte: Liste des travaux éligibles
-- description: Prenez contact avec des fournisseurs d’énergie signataires de la charte
-    "Coup de pouce chauffage" pour obtenir une estimation tarifaire et convenir du
-    mode de réglement de la prime. N’hésitez pas à comparer les offres entre plusieurs
-    fournisseurs d’énergie.
-  liens:
-  - lien: https://www.ecologie.gouv.fr/sites/default/files/CdP%20Chauffage%20B%C3%A2timents%20r%C3%A9sidentiels%20collectifs%20et%20tertiaires%20-%20Les%20offres%20Coup%20de%20pouce.pdf
-    texte: Les signataires de la charte
-- description: Acceptez l'offre d’un fournisseur d’énergie. Cette offre devra obligatoirement
-    comporter un document décrivant la proposition.
-- description: Signez le devis proposé par un professionnel pour la réalisation des
-    travaux et faites réaliser les travaux. Pensez à demander une facture qui mentionne
-    la dépose de l’équipement existant en indiquant ses caractéristiques (type d’énergie,
-    type d’équipement, marque, référence…)
-- description: Renvoyez les documents (factures, attestations, etc.) au fournisseur
-    d’énergie signataire de la charte dans les délais prévus.
+  - description: >-
+      Vérifiez votre éligibilité en réalisant le test “Votre bâtiment est-il
+      raccordable à un réseau de chaleur ?”. Si un réseau de chaleur passe à
+      proximité de votre adresse, vous avez le droit à une prime pour le
+      raccordement de vos locaux à ce réseau.
+    liens:
+      - lien: https://france-chaleur-urbaine.beta.gouv.fr/ressources/aides#contenu
+        texte: Réaliser le test
+  - description: >-
+      S’il n’y a pas de réseau de chaleur à proximité de votre adresse, vous
+      avez le droit à une prime pour la mise en place d’équipements de chauffage
+      ou de production d’eau chaude sanitaire ne consommant ni charbon ni fioul.
+    liens:
+      - lien: >-
+          https://france-renov.gouv.fr/petit-tertiaire-prive#quels-travaux-sont-concernes-par-le-coup-de-pouce-
+        texte: Liste des travaux éligibles
+  - description: >-
+      Prenez contact avec des fournisseurs d’énergie signataires de la charte
+      "Coup de pouce chauffage" pour obtenir une estimation tarifaire et
+      convenir du mode de réglement de la prime. N’hésitez pas à comparer les
+      offres entre plusieurs fournisseurs d’énergie.
+    liens:
+      - lien: >-
+          https://www.ecologie.gouv.fr/sites/default/files/CdP%20Chauffage%20B%C3%A2timents%20r%C3%A9sidentiels%20collectifs%20et%20tertiaires%20-%20Les%20offres%20Coup%20de%20pouce.pdf
+        texte: Les signataires de la charte
+  - description: >-
+      Acceptez l'offre d’un fournisseur d’énergie. Cette offre devra
+      obligatoirement comporter un document décrivant la proposition.
+  - description: >-
+      Signez le devis proposé par un professionnel pour la réalisation des
+      travaux et faites réaliser les travaux. Pensez à demander une facture qui
+      mentionne la dépose de l’équipement existant en indiquant ses
+      caractéristiques (type d’énergie, type d’équipement, marque, référence…)
+  - description: >-
+      Renvoyez les documents (factures, attestations, etc.) au fournisseur
+      d’énergie signataire de la charte dans les délais prévus.
 conditions d'éligibilité:
   taille de l'entreprise:
-  - Toutes tailles
-  - Éligible aux micro-entreprises
+    - Toutes tailles
+    - Éligible aux micro-entreprises
   secteur géographique:
-  - France et territoires d'outre-mer
+    - France et territoires d'outre-mer
   secteur d'activité:
-  - Secteur tertiaire
+    - Secteur tertiaire
   nombre d'années d'activité:
-  - Éligible à toutes les entreprises
+    - Éligible à toutes les entreprises
   autres critères d'éligibilité:
-  - Votre bâtiment doit être dédié à un usage tertiaire (vous devez en être propriétaire
-    ou gestionnaire)
-  - La superficie de votre  bâtiment doit être inférieur à 1000 m2
-  - Votre bâtiment doit être construit depuis au moins deux ans à la date d’engagement
-    des travaux et il ne doit pas avoir été raccordé à un réseau de chaleur (dans
-    un délai de cinq ans précédant la date de l'engagement de l'opération)
+    - >-
+      Votre bâtiment doit être dédié à un usage tertiaire (vous devez en être
+      propriétaire ou gestionnaire)
+    - La superficie de votre bâtiment doit être inférieur à 1000 m2
+    - "Votre bâtiment doit être construit depuis au moins deux ans à la date d’engagement des travaux et il ne doit\_pas avoir été raccordé à un réseau de chaleur (dans un délai de cinq ans\_précédant la date de l'engagement de l'opération)"
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
-    - est dans un secteur d'activité ciblé
-    - a un objectif ciblé
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - code NAF niveau 1 . est G
-    - code NAF niveau 1 . est H
-    - code NAF niveau 1 . est I
-    - code NAF niveau 1 . est J
-    - code NAF niveau 1 . est K
-    - code NAF niveau 1 . est L
-    - code NAF niveau 1 . est M
-    - code NAF niveau 1 . est N
-    - code NAF niveau 1 . est P
-    - code NAF niveau 1 . est Q
-    - code NAF niveau 1 . est R
-    - code NAF niveau 1 . est S
-    - code NAF niveau 1 . est T
-    - code NAF niveau 1 . est U
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
   entreprise . a un objectif ciblé:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est rénover mon bâtiment
-    - questionnaire . objectif prioritaire . est ma performance énergétique
+      - questionnaire . objectif prioritaire . est rénover mon bâtiment
+      - questionnaire . objectif prioritaire . est ma performance énergétique

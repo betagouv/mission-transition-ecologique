@@ -1,63 +1,67 @@
 titre: Diagnostic déchets
 promesse: Réduisez et valorisez les déchets de votre entreprise
-description: Ce diagnostic permet d’établir une vision globale de la gestion des déchets
-  dans votre entreprise pour optimiser les coûts associés et développer le recyclage
-  des déchets.
+description: >-
+  Ce diagnostic permet d’établir une vision globale de la gestion des déchets
+  dans votre entreprise pour optimiser les coûts associés et développer le
+  recyclage des déchets.
 illustration: images/TEE_eolienne.png
 opérateur de contact: CCI
-url: ''
 nature de l'aide: accompagnement
-coût de l'accompagnement: Gratuit selon les territoires ou reste à charge maximum
-  de 1500 € HT
+coût de l'accompagnement: Gratuit selon les territoires ou reste à charge maximum de 1500 € HT
 durée de l'accompagnement: 3 jours dont 0,5 avec l'entreprise
 objectifs:
-- description: Découvrez les enjeux et bénéfices d’une bonne gestion des déchets en
-    entreprise et vos obligations réglementaires.
-- description: Dresser un état des lieux de la production et des pratiques de gestion
-    des déchets dans votre entreprise.
-- description: Identifier les filières de collecte et de valorisation appropriées.
-- description: Identifier les pistes d'amélioration (tri, collecte, réemploi, mutualisation,etc.)
-    et les possibilités de financement.
-- description: Réaliser un plan d’action  et permettre la mise en conformité réglementaire.
+  - description: >-
+      Découvrez les enjeux et bénéfices d’une bonne gestion des déchets en
+      entreprise et vos obligations réglementaires.
+  - description: >-
+      Dresser un état des lieux de la production et des pratiques de gestion des
+      déchets dans votre entreprise.
+  - description: Identifier les filières de collecte et de valorisation appropriées.
+  - description: >-
+      Identifier les pistes d'amélioration (tri, collecte, réemploi,
+      mutualisation,etc.) et les possibilités de financement.
+  - description: >-
+      Réaliser un plan d’action  et permettre la mise en conformité
+      réglementaire.
 conditions d'éligibilité:
   taille de l'entreprise:
-  - TPE, PME et ETI
-  - Non éligible aux micro-entreprises
+    - TPE, PME et ETI
+    - Non éligible aux micro-entreprises
   secteur géographique:
-  - Provence-Alpes-Côte d'Azur
+    - Provence-Alpes-Côte d'Azur
   secteur d'activité:
-  - Tous secteurs d’activité
+    - Tous secteurs d’activité
   nombre d'années d'activité:
-  - Éligible à toutes les entreprises
+    - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
-    - est éligible
-    - est dans un secteur d'activité ciblé
-    - a un objectif ciblé
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
   entreprise . est éligible:
     toutes ces conditions:
-    - a un effectif éligible
-    - entreprise . est dans une zone géographique éligible
+      - a un effectif éligible
+      - entreprise . est dans une zone géographique éligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
-    - effectif >= 1
-    - effectif <= 499
+      - effectif >= 1
+      - effectif <= 499
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - code NAF niveau 1 . est B
-    - code NAF niveau 1 . est C
-    - code NAF niveau 1 . est D
-    - code NAF niveau 1 . est F
-    - code NAF niveau 1 . est G
-    - code NAF niveau 1 . est H
-    - code NAF niveau 1 . est I
-    - code NAF niveau 1 . est N
-    - code NAF niveau 1 . est R
-    - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
   entreprise . a un objectif ciblé:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est la gestion des déchets
+      - questionnaire . objectif prioritaire . est la gestion des déchets
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
-    - région = Provence-Alpes-Côte d'Azur
+      - région = Provence-Alpes-Côte d'Azur
