@@ -13,30 +13,33 @@ $base-green: #1ebe8e;
 $base-purple: #6a62f4;
 $base-red: #fca081;
 $base-yellow: #facf35;
-
 $colors: (
   "white": color.$white,
   "yellow": (
-    "background-color": $base-yellow,
-    "color": var(--text-action-high-blue-france)
+    "color": $base-yellow,
+    "color-with-background": var(--text-action-high-blue-france)
   ),
   "green": (
-    "background-color": $base-green,
-    "color": var(--text-action-high-blue-france)
+    "color": $base-green,
+    "color-with-background": var(--text-action-high-blue-france)
   ),
   "blue": (
-    "background-color": $base-blue,
-    "color": var(--text-inverted-blue-france),
+    "color": $base-blue,
+    "color-with-background": var(--text-inverted-blue-france),
     "is-inverted": true,
   ),
   "blue-light": (
-    "background-color": $base-blue-light,
-    "color": var(--text-action-high-blue-france)
+    "color": $base-blue-light,
+    "color-with-background": var(--text-action-high-blue-france)
   ),
   "red": (
-    "background-color": $base-red,
-    "color": var(--text-action-high-blue-france)
+    "color": $base-red,
+    "color-with-background": var(--text-action-high-blue-france)
   ),
   "purple" : $base-purple,
-  "blue-france": color.$blue-france, // #000091
+  "blue-france": (
+    "color-with-background": var(--text-inverted-blue-france),
+    "color": color.$blue-france,
+    "is-inverted": true
+  )
 );

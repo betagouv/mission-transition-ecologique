@@ -234,7 +234,7 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     const usedTrack = usedTracks.value.find((usedTrack: UsedTrack) => usedTrack.id === trackId)
     if (usedTrack?.selected) {
       for (const option of usedTrack.selected) {
-        if (option.questionnaireData && key in option.questionnaireData) {
+        if (option && option.questionnaireData && key in option.questionnaireData) {
           const questionnaireData = option.questionnaireData as Record<string, unknown>
           return questionnaireData[key] as string
         }
@@ -271,7 +271,7 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
 
       if (selectedOptions.length === 0) {
         useNavigationStore().deleteSearchParam(trackId)
-        return
+        continue
       }
 
       createOrUpdateUsedTrack(track, selectedOptions)

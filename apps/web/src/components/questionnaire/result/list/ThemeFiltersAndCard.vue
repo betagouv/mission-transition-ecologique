@@ -8,7 +8,7 @@
       </div>
     </div>
     <div
-      v-if="showObjectiveCardComponent"
+      v-if="hasThemeCard"
       class="fr-grid-row fr-grid-row--center"
     >
       <div class="fr-container fr-mt-1v">
@@ -32,7 +32,7 @@ import { useProgramStore } from '@/stores/program'
 
 const programStore = useProgramStore()
 
-const hasObjectiveCard = computed(() => {
+const hasThemeCard = computed(() => {
   return programStore.hasObjectiveTypeSelected() || (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityObjective())
 })
 
@@ -46,9 +46,5 @@ const objective = computed(() => {
   }
 
   return ''
-})
-
-const showObjectiveCardComponent = computed(() => {
-  return hasObjectiveCard.value
 })
 </script>

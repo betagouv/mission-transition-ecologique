@@ -1,105 +1,126 @@
 titre: Étude "Performance énergétique" en industrie
-promesse: Entreprise industrielle, réalisez une étude d'optimisation de la performance
-  énergétique de votre site de production
-description: 'Vous avez mis en place des actions pour optimiser la performance énergétique
-  de votre entreprise ?
+promesse: >-
+  Réalisez une étude de faisabilité pour votre projet d’optimisation de la
+  performance énergétique de votre site de production
+description: >-
+  Vous avez réalisé un audit énergétique et vous avez identifié un projet pour
+  optimiser la performance énergétique de vos processus de production ?
 
-  Avec cette aide, l’ADEME vous permet d''améliorer vos actions en finançant des études
-  permettant la mesure, le suivi ou en vous aidant dans vos démarches d’investissement.'
-description longue: 'Vous avez mis en place des actions pour optimiser la performance
-  énergétique de votre entreprise.
-
-  Avec cette aide, l’ADEME vous encourage à améliorer vos actions. Par exemple, les
-  actions éligibles peuvent porter sur :
-
-
-  L’enrichissement des démarches de management de l’énergie :
-
-  - La conception et l’élaboration d’un plan de mesurage selon la norme EN 17267.
-
-  - L’accompagnement au changement de comportement pour impliquer le personnel de
-  l’entreprise dans le processus d’amélioration continue.
-
-  - La mise en œuvre de chantiers kaizen Énergie.
+  L'ADEME peut vous aider à financer votre étude de faisabilité pour vérifier la
+  faisabilité technique et économique de votre projet et étudier les solutions
+  de montage financier et juridique.
+description longue: >-
+  Cette étude doit s’inscrire dans une démarche cohérente de décarbonation des
+  procédés de votre entreprise. Elle se décline en cinq étapes successives :
 
 
-  La préparation des investissements dans l’efficacité énergétique et/ou la décarbonation
-  :
+  1. Sobriété
 
-  - L’étude de la faisabilité d’un investissement de performance énergétique ou de
-  décarbonation (autre que ceux éligibles au Fonds Chaleur) sur les procédés ou les
-  utilités.
+  Le changement de comportement est le levier le moins coûteux et le plus
+  impactant pour réduire les consommations et baisser les émissions de gaz à
+  effet de serre.
 
-  - La définition et le suivi d’un commissionnement, démarche intégrée pour la maîtrise
-  de l’efficacité de l’investissement de la phase étude à la vérification des performances
-  et à sa bonne utilisation.
+  2. Modification du mix matières
 
+  - Efficacité matière via l’incorporation de Matières Premières Recyclées et
+  valorisation des coproduits.
 
-  L’apport des scénarios d’optimisation d’une utilité ou procédé en terme d’efficacité
-  énergétique et/ou de décarbonation'
+  - Développement de procédés utilisant moins d’intrants, ou des intrants moins
+  émissifs.
+
+  3. Amélioration de l’efficacité énergétique
+
+  - Performance énergétique des technologies et procédés.
+
+  - Adéquation des températures produites au regard des besoins finaux.
+
+  4. Substitution des énergies fossiles
+
+  - Substitution des combustibles fossiles par des combustibles décarbonés ou
+  bas carbone (chaleur fatale, biomasse, biogaz, hydrogène décarboné,
+  combustibles solides de récupération, géothermie, solaire thermique, etc.).
+
+  - Electrification de la chaleur et des procédés.
+
+  5. Captage du CO₂ à la source
 début de validité: 01/01/2023
 fin de validité: 31/12/2024
 illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
-url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/etudes-faisabilite-performance-energetique-decarbonation-dentreprises
+url: >-
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/etudes-faisabilite-performance-energetique-decarbonation-dentreprises
 nature de l'aide: financement
-montant du financement: Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000
-  €
+montant du financement: Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €
 objectifs:
-- description: Vérifiez l’éligibilité de votre projet en parcourant la documentation
-    de l’ADEME.
-  liens:
-  - lien: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf
-    texte: Conditions éligibilité et financement
-- description: Choisissez le prestataire qui va vous accompagner pour mener cette
-    étude et obtenez un devis.
-- description: 'Déposez votre demande d''aide : informations administratives, description
-    du projet, détails techniques et financiers, etc. A ce stade, votre projet ne
-    doit pas avoir commencé !'
-- description: L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
-    recevez un contrat de financement précisant le montant d’aide maximum, les conditions
-    et les modalités de versement.
-- description: Réalisez votre étude d'optimisation de la performance énergétique de
-    votre site de production.
+  - description: >-
+      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
+      l’ADEME ou en contactant un conseiller.
+    liens:
+      - lien: >-
+          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf
+        texte: Conditions éligibilité et financement
+  - description: >-
+      Choisissez le prestataire qui va vous accompagner pour mener cette étude
+      et obtenez un devis.
+  - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
+    liens:
+      - lien: https://agirpourlatransition.ademe.fr/user/register
+        texte: Créer mon compte ADEME
+  - description: >-
+      Déposez votre dossier : informations administratives, description du
+      projet, détails techniques et financiers, etc. À ce stade, votre projet ne
+      doit pas avoir commencé !
+    liens:
+      - lien: >-
+          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/etudes-faisabilite-performance-energetique-decarbonation-dentreprises
+        texte: Déposer mon dossier
+  - description: >-
+      L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
+      recevez un contrat de financement précisant le montant d’aide maximum, les
+      conditions et les modalités de versement.
+  - description: >-
+      Réalisez votre étude d'optimisation de la performance énergétique de votre
+      site de production.
 conditions d'éligibilité:
   taille de l'entreprise:
-  - TPE et PME
-  - Éligible aux micro-entreprises
+    - TPE et PME
+    - Éligible aux micro-entreprises
   secteur géographique:
-  - France et territoires d'outre-mer
+    - France et territoires d'outre-mer
   secteur d'activité:
-  - Industrie
+    - Industrie
   nombre d'années d'activité:
-  - Éligible à toutes les entreprises
+    - Éligible à toutes les entreprises
   autres critères d'éligibilité:
-  - 'L''opération pour laquelle vous sollicitez une aide financière ne doit pas avoir
-    commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque
-    forme que ce soit : marché signé, commande signée, devis accepté…)'
-  - Eligible pour les sites de moins de 250 salariés des grandes entreprises, dès
-    lors que l’entreprise est à jour de ses obligations vis-à-vis de l’audit énergétique
-    réglementaire
+    - >-
+      L'opération pour laquelle vous sollicitez une aide financière ne doit pas
+      avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes
+      (sous quelque forme que ce soit : marché signé, commande signée, devis
+      accepté…)
+    - >-
+      Eligible pour les sites de moins de 250 salariés des grandes entreprises,
+      dès lors que l’entreprise est à jour de ses obligations vis-à-vis de
+      l’audit énergétique réglementaire
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
-    - est éligible
-    - est dans un secteur d'activité ciblé
-    - a un objectif ciblé
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
   entreprise . est éligible:
     applicable si:
       toutes ces conditions:
-      - dispositif . début de validité <= date du jour
-      - date du jour <= dispositif . fin de validité
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
-    - a un effectif éligible
+      - a un effectif éligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
-    - effectif <= 250
+      - effectif <= 250
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - code NAF niveau 1 . est B
-    - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
   entreprise . a un objectif ciblé:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est ma performance énergétique
-    - questionnaire . objectif prioritaire . est mon impact environnemental
-    - questionnaire . objectif prioritaire . est l'écoconception
+      - questionnaire . objectif prioritaire . est ma performance énergétique

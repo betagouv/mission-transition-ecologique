@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import {
   PublicodesKeys,
@@ -23,7 +22,11 @@ export default class OpportunityApi extends RequestApi {
   private _usedTrackStore = useUsedTrackStore()
   private _opportunityForm: WithoutNullableKeys<OpportunityFormType>
 
-  constructor(opportunityForm: OpportunityFormType, private _id: string, private _opportunityType: OpportunityType) {
+  constructor(
+    opportunityForm: OpportunityFormType,
+    private _id: string,
+    private _opportunityType: OpportunityType
+  ) {
     super()
     this._opportunityForm = opportunityForm as WithoutNullableKeys<OpportunityFormType>
   }

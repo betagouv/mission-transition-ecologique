@@ -5,6 +5,13 @@
   "projectType": "application",
   "tags": [],
   "targets": {
+    "ci": {
+      "executor": "nx:noop",
+      "dependsOn": [
+        "lint",
+        "type-check"
+      ]
+    },
     "type-check": {
       "executor": "nx:run-commands",
       "dependsOn": [

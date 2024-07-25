@@ -1,10 +1,13 @@
 titre: Formations du CFDE
-promesse: Trouvez des formations pour vos collaborateurs sur des thématiques de la
+promesse: >-
+  Trouvez des formations pour vos collaborateurs sur des thématiques de la
   transition écologique
-description: 'Le Centre de Formation Durable et de l''Environnement (CFDE) propose
-  des formations sur des thématiques réglementaires et techniques dans les grands
-  domaines de la transition écologique et énergétique : eau, déchets, énergie, air
-  et climat, sites et sols pollués, risques naturels et technologiques, santé environnement.'
+description: >-
+  Le Centre de Formation Durable et de l'Environnement (CFDE) propose des
+  formations sur des thématiques réglementaires et techniques dans les grands
+  domaines de la transition écologique et énergétique : eau, déchets, énergie,
+  air et climat, sites et sols pollués, risques naturels et technologiques,
+  santé environnement.
 illustration: images/TEE_ampoule.png
 opérateur de contact: CCI
 url: https://www.cci.fr/ressources/developpement-durable/cfde
@@ -13,54 +16,58 @@ coût de l'accompagnement: Sur devis, selon la formation choisie
 durée de l'accompagnement: Selon la formation choisie
 activable en autonomie: oui
 objectifs:
-- description: Découvrez le catalogue de formation en transition écologique et énergétique
-    que propose le CFDE aux entreprises.
-  liens:
-  - lien: https://www.cci.fr/ressources/developpement-durable/cfde/nos-formations
-    texte: Les formations du CFDE
-- description: Sollicitez si vous le souhaitez, une prise en charge auprès d'un organisme
-    de financement de votre choix. Cette demande doit être réalisée préalablement
-    à l'inscription.
-- description: Complétez le bulletin d'inscription sur le site de la CCI pour faire
-    votre demande d'inscription, en précisant votre mode de financement.
-- description: Participez au stage (en présentiel ou à distance)
-- description: A l'issue du stage, recevez une attestation de formation personnalisée.
+  - description: >-
+      Découvrez le catalogue de formation en transition écologique et
+      énergétique que propose le CFDE aux entreprises.
+    liens:
+      - lien: >-
+          https://www.cci.fr/ressources/developpement-durable/cfde/nos-formations
+        texte: Les formations du CFDE
+  - description: >-
+      Sollicitez si vous le souhaitez, une prise en charge auprès d'un organisme
+      de financement de votre choix. Cette demande doit être réalisée
+      préalablement à l'inscription.
+  - description: >-
+      Complétez le bulletin d'inscription sur le site de la CCI pour faire votre
+      demande d'inscription, en précisant votre mode de financement.
+  - description: Participez au stage (en présentiel ou à distance)
+  - description: A l'issue du stage, recevez une attestation de formation personnalisée.
 conditions d'éligibilité:
   taille de l'entreprise:
-  - Toutes tailles
-  - Éligible aux micro-entreprises
+    - Toutes tailles
+    - Éligible aux micro-entreprises
   secteur géographique:
-  - France et territoires d'outre-mer
+    - France et territoires d'outre-mer
   secteur d'activité:
-  - Tous secteurs d’activité
+    - Tous secteurs d’activité
   nombre d'années d'activité:
-  - Éligible à toutes les entreprises
+    - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
-    - est éligible
-    - est dans un secteur d'activité ciblé
-    - a un objectif ciblé
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
   entreprise . est éligible:
     toutes ces conditions:
-    - a un effectif éligible
+      - a un effectif éligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
-    - effectif <= 499
+      - effectif <= 499
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - code NAF niveau 1 . est A
-    - code NAF niveau 1 . est B
-    - code NAF niveau 1 . est C
-    - code NAF niveau 1 . est D
-    - code NAF niveau 1 . est E
-    - code NAF niveau 1 . est F
-    - code NAF niveau 1 . est H
-    - code NAF niveau 1 . est K
-    - code NAF niveau 1 . est M
-    - code NAF niveau 1 . est O
-    - code NAF niveau 1 . est P
-    - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
   entreprise . a un objectif ciblé:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est former ou recruter
+      - questionnaire . objectif prioritaire . est former ou recruter

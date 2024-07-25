@@ -1,0 +1,57 @@
+titre: Formation écogestes
+promesse: >-
+  Restaurateurs & hébergeurs, construisez une charte d’écogestes adaptée à votre
+  établissement.
+description: >-
+  Cette formation permet à un établissement du secteur CHR et du tourisme
+  d'identifier ses postes principaux de consommation d’énergie, d'eau et de
+  production de déchets, et de co-construire une charte d’écogestes répondant
+  aux nouveaux critères obligatoires de classement hôtelier. 
+illustration: images/TEE_ampoule.png
+opérateur de contact: CCI
+url: https://www.cciamp.com/produit/ecogestes-chr
+nature de l'aide: formation
+coût de l'accompagnement: à partir de 200 € HT par participant (ou financement OPCO)
+durée de l'accompagnement: 1 demi-journée
+activable en autonomie: oui
+objectifs:
+  - description: Inscrivez-vous au parcours de formation "écogestes".
+    liens:
+      - lien: florence.colonna@cciamp.com
+        texte: inscription par mail
+  - description: Identifiez les enjeux eau, énergie, déchets du secteur CHR et du tourisme.
+  - description: >-
+      Identifiez les écogestes pour permettre à votre entreprise de réduire ses
+      déchets et ses consommations d’énergie et d'eau.
+  - description: >-
+      Construisez une charte d’écogestes adaptée à votre établissement, et
+      réflechissez à sa mise en place auprès des équipes.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Bouches-du-Rhône
+  secteur d'activité:
+    - Hôtellerie & restauration
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est la gestion des déchets
+      - >-
+        questionnaire . objectif prioritaire . est diminuer ma consommation
+        d'eau
+      - questionnaire . objectif prioritaire . est ma performance énergétique
+      - questionnaire . objectif prioritaire . est mon impact environnemental
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Provence-Alpes-Côte d'Azur

@@ -40,15 +40,18 @@ export class PublicodesService {
 }
 
 const initializePublicodesEngineForAllPrograms = (programs: ProgramType[]): Record<string, Engine> => {
-  return programs.reduce((accu, program) => {
-    const engineResult = initializePublicodesEngine(program.publicodes as object)
+  return programs.reduce(
+    (accu, program) => {
+      const engineResult = initializePublicodesEngine(program.publicodes as object)
 
-    if (engineResult.isErr) {
-      throw engineResult.error
-    }
-    accu[program.id] = engineResult.value
-    return accu
-  }, {} as Record<string, Engine>)
+      if (engineResult.isErr) {
+        throw engineResult.error
+      }
+      accu[program.id] = engineResult.value
+      return accu
+    },
+    {} as Record<string, Engine>
+  )
 }
 
 const initializePublicodesEngine = (rules: object): Result<Engine, Error> => {

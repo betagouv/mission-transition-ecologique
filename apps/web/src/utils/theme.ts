@@ -25,7 +25,7 @@ export class Theme {
       tagLabel: '💧 eau',
       value: Objective.WaterConsumption,
       image: '/images/thematique/thematique-eau.svg',
-      color: Color.blueLight
+      color: Color.blueFrance
     },
     {
       id: ThemeId.Building,
