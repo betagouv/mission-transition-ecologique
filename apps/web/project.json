@@ -5,6 +5,14 @@
   "sourceRoot": "apps/web/src",
   "// targets": "to see all targets run: nx show project @tee/web --web",
   "targets": {
+    "ci": {
+      "executor": "nx:noop",
+      "dependsOn": [
+        "lint",
+        "type-check",
+        "sass-lint"
+      ]
+    },
     "build": {
       "dependsOn": [
         "generate-seo"

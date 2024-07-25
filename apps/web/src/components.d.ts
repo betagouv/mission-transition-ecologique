@@ -52,6 +52,7 @@ declare module 'vue' {
     ProjectSideNav: typeof import('./components/project/details/ProjectSideNav.vue')['default']
     ResultHeader: typeof import('./components/questionnaire/result/list/ResultHeader.vue')['default']
     ResultList: typeof import('./components/questionnaire/result/list/ResultList.vue')['default']
+    ResultListInTabs: typeof import('./components/questionnaire/result/list/ResultListInTabs.vue')['default']
     ResultListNoResults: typeof import('./components/questionnaire/result/list/ResultListNoResults.vue')['default']
     ResultProgramList: typeof import('./components/questionnaire/result/list/ResultProgramList.vue')['default']
     ResultProjectList: typeof import('./components/questionnaire/result/list/ResultProjectList.vue')['default']

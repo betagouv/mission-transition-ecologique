@@ -5,9 +5,8 @@
       <div class="fr-container fr-mt-3v">
         <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-col-justify--center">
           <ResultListNoResults
-            v-if="showNoResultsComponent"
+            v-if="showNoResults"
             :has-error="hasError"
-            :has-spinner="hasSpinner"
             :count-items="countProjects"
           />
         </div>
@@ -50,10 +49,6 @@ const countProjects = computed(() => {
   return props.filteredProjects?.length || 0
 })
 
-const hasSpinner = computed(() => {
-  return props.filteredProjects === undefined && !hasError.value
-})
-
 const hasObjectiveCard = computed(() => {
   return programStore.hasObjectiveTypeSelected() || (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityObjective())
 })
@@ -64,11 +59,11 @@ const sortedProjects = computed(() => {
     : undefined
 })
 
-const showNoResultsComponent = computed(() => {
-  return hasSpinner.value || hasError.value || !countProjects.value
+const showNoResults = computed(() => {
+  return hasError.value || (!countProjects.value && props.filteredProjects !== undefined)
 })
 
 const showProjectListComponent = computed(() => {
-  return hasObjectiveCard.value && !hasSpinner.value && UsedTrack.isSpecificGoal() && hasProjects.value
+  return hasObjectiveCard.value && UsedTrack.isSpecificGoal() && hasProjects.value
 })
 </script>

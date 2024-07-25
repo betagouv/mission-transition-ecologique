@@ -6,6 +6,13 @@
   "tags": [],
   "// targets": "to see all targets run: nx show project @tee/data --web",
   "targets": {
+    "ci": {
+      "executor": "nx:noop",
+      "dependsOn": [
+        "lint",
+        "test"
+      ]
+    },
     "generate-program": {
       "executor": "nx:run-commands",
       "options": {

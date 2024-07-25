@@ -1,8 +1,8 @@
-import { ProgramData, PublicodeObjective, ThemeType, Project } from '@/types'
+import { ProgramData, Objective, ThemeType, Project } from '@/types'
 import { Theme } from '@/utils/theme'
 
-export default class ProjectFilters {
-  static filterProjectsByTheme(project: Project, objectiveType: PublicodeObjective) {
+export default class ProjectFilter {
+  static byTheme(project: Project, objectiveType: Objective) {
     const themeSelected: ThemeType | undefined = Theme.getByValue(objectiveType)
 
     if (themeSelected) {
@@ -11,7 +11,7 @@ export default class ProjectFilters {
 
     return false
   }
-  static filterProjectsByEligibility(project: Project, filteredPrograms: ProgramData[]) {
+  static byPrograms(project: Project, filteredPrograms: ProgramData[]) {
     return project.programs.some((programId) => filteredPrograms.some(({ id }) => id === programId))
   }
 }

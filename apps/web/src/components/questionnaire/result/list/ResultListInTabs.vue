@@ -1,6 +1,38 @@
 <template>
-  <ThemeFiltersAndCard id="tab-content-header" />
-  <ResultProjectList :filtered-projects="filteredProjects" />
+  <TeeTabs
+    ref="tabs"
+    class="fr-col-12"
+    tab-list-name="Liste d’onglet"
+    :tab-titles="tabTitles"
+    :initial-selected-index="selected"
+    @select-tab="onSelectedTabChange"
+  >
+    <template #tab-content-header>
+      <ThemeFiltersAndCard id="tab-content-header" />
+    </template>
+    <DsfrTabContent
+      class="fr-p-0"
+      panel-id="tab-content-0"
+      tab-id="tab-0"
+      :selected="selected === 0"
+      :asc="ascendant"
+    >
+      <ResultProjectList
+        :filtered-projects="filteredProjects"
+        :has-error="hasError"
+      />
+    </DsfrTabContent>
+
+    <DsfrTabContent
+      class="fr-p-0"
+      panel-id="tab-content-1"
+      tab-id="tab-1"
+      :selected="selected === 1"
+      :asc="ascendant"
+    >
+      <ResultProgramList :filtered-programs="filteredPrograms" />
+    </DsfrTabContent>
+  </TeeTabs>
 </template>
 
 <script setup lang="ts">
@@ -13,17 +45,25 @@ import { useProjectStore } from '@/stores/project'
 import UsedTrack from '@/utils/track/usedTrack'
 import { Theme } from '@/utils/theme'
 
+const navigationStore = useNavigationStore()
 const programStore = useProgramStore()
 const projectStore = useProjectStore()
-const navigationStore = useNavigationStore()
+const { ascendant, selected } = useTabs(true, navigationStore.tabSelectedOnList)
 
-const programs = ref<ProgramData[]>([])
+const programs = ref<ProgramData[]>()
 const projects = ref<Project[]>()
 const hasError = ref<boolean>(false)
+
+const tabTitles = [{ title: "Des idées d'actions à mettre en place" }, { title: 'Vos aides financières' }]
 
 const filteredPrograms = computed(() => {
   return programs.value ? programStore.getProgramsByFilters(programs.value) : undefined
 })
+
+const onSelectedTabChange = (tabSelected: number) => {
+  selected.value = tabSelected
+  navigationStore.tabSelectedOnList = tabSelected
+}
 
 const filteredProjects = computed(() => {
   if (!projects.value) {
@@ -53,8 +93,8 @@ onBeforeMount(async () => {
   } else {
     hasError.value = true
   }
-
   navigationStore.hasSpinner = false
+
   // analytics / send event
   Matomo.sendEvent(TrackId.Results, 'show_results')
 })
