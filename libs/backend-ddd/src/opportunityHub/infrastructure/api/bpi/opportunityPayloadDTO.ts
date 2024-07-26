@@ -43,10 +43,14 @@ export default class OpportunityPayloadDTO {
       SuppliedPhone: this.phoneNumber,
       SuppliedCompany: this.companyName,
       SIRET__c: this.companySiret,
-      Taille_de_lentreprise__c: this._companySize,
+      Taille_de_lentreprise__c: this.companySize,
       Description: this.description,
       Description_Complementaire__c: ''
     }
+  }
+
+  private get companySize(): string | number | undefined {
+    return this._companySize
   }
 
   private get companySiret(): string | undefined {
