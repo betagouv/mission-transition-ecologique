@@ -23,7 +23,7 @@ import CatalogProjects from '@/components/catalog/CatalogProjects.vue'
 // that you don't want to be listed in the sitemap
 
 export enum Path {
-  ProgramCatalog = '/aides-entreprise', 
+  ProgramCatalog = '/aides-entreprise',
   ProjectCatalog = '/projets-entreprise'
 }
 
