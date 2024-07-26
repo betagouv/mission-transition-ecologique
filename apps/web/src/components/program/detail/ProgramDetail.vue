@@ -216,7 +216,6 @@
           </div>
         </div>
         <DsfrAccordionsGroup>
-          <!-- ELIGIBILITY -->
           <ProgramAccordion
             v-if="program && program['conditions d\'éligibilité']"
             :accordion-id="`${program.id}-eligibility`"
@@ -224,8 +223,6 @@
           >
             <ProgramEligibility :program="program" />
           </ProgramAccordion>
-
-          <!-- LONG DESCRIPTION -->
           <ProgramAccordion
             v-if="program && program['description longue']"
             :accordion-id="`${program.id}-long-description`"
@@ -285,7 +282,7 @@ const TeeProgramFormContainer = ref<HTMLElement | null | undefined>(null)
 
 const blockColor = '#000091'
 const publicPath = Config.publicPath
-const isCatalogDetail = navigationStore.isByRouteName(RouteName.CatalogDetail)
+const isCatalogDetail = navigationStore.isByRouteName(RouteName.CatalogProgramDetail)
 
 interface Props {
   programId: string
@@ -329,7 +326,7 @@ const getRouteToPreviousPage = () => {
     query: isCatalogDetail ? undefined : navigationStore.query
   }
   if (isCatalogDetail) {
-    return { ...routeToPrograms, name: RouteName.Catalog }
+    return { ...routeToPrograms, name: RouteName.CatalogPrograms }
   }
   if (navigationStore.isByRouteName(RouteName.ProgramFromProjectDetail)) {
     return { name: RouteName.ProjectResultDetail, params: { projectSlug: props.projectSlug }, ...routeToPrograms }
@@ -346,7 +343,7 @@ onBeforeMount(() => {
   program.value = programsStore.currentProgram
 
   // analytics / send event
-  Matomo.sendEvent('result_detail', route.name === RouteName.CatalogDetail ? 'show_detail_catalog' : 'show_detail', props.programId)
+  Matomo.sendEvent('result_detail', route.name === RouteName.CatalogProgramDetail ? 'show_detail_catalog' : 'show_detail', props.programId)
 })
 
 useHead({
@@ -365,7 +362,7 @@ const programIsAvailable = computed(() => {
 
 const scrollToProgramForm = () => {
   if (TeeProgramFormContainer.value) {
-    navigationStore.isByRouteName(RouteName.CatalogDetail)
+    navigationStore.isByRouteName(RouteName.CatalogProgramDetail)
       ? Scroll.to(TeeProgramFormContainer.value)
       : Scroll.toWithTopBarOffset(TeeProgramFormContainer.value)
   }

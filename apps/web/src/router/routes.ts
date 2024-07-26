@@ -16,7 +16,8 @@ import TeeQuestionnaireResult from '@/components/questionnaire/TeeQuestionnaireR
 import ProgramDetail from '@/components/program/detail/ProgramDetail.vue'
 import ProjectDetail from '@/components/project/details/ProjectDetail.vue'
 import TeeStatPage from '@/pages/TeeStatPage.vue'
-import CatalogList from '@/components/catalog/CatalogList.vue'
+import CatalogPrograms from '@/components/catalog/CatalogPrograms.vue'
+import CatalogProjects from '@/components/catalog/CatalogProjects.vue'
 
 // please edit the sitemap.ts file if you add any path starting with /
 // that you don't want to be listed in the sitemap
@@ -81,14 +82,33 @@ export const routes = [
     children: [
       {
         path: '',
-        name: RouteName.Catalog,
-        component: CatalogList as Component
+        name: RouteName.CatalogPrograms,
+        component: CatalogPrograms as Component
       },
       {
         path: ':programId',
-        name: RouteName.CatalogDetail,
+        name: RouteName.CatalogProgramDetail,
         component: ProgramDetail as Component,
         beforeEnter: [Hook.hasProgram],
+        props: true
+      }
+    ]
+  },
+  {
+    path: '/projets-entreprise',
+    component: TeeCatalogPage as Component,
+    beforeEnter: [Hook.resetUsedTrackStore, Hook.resetQueries, Hook.resetProgramFilters],
+    children: [
+      {
+        path: '',
+        name: RouteName.CatalogProjects,
+        component: CatalogProjects as Component
+      },
+      {
+        path: ':projectSlug',
+        name: RouteName.CatalogProjectDetail,
+        component: ProjectDetail as Component,
+        beforeEnter: [Hook.hasProject],
         props: true
       }
     ]
