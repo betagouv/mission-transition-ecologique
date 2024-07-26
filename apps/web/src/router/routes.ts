@@ -22,6 +22,11 @@ import CatalogProjects from '@/components/catalog/CatalogProjects.vue'
 // please edit the sitemap.ts file if you add any path starting with /
 // that you don't want to be listed in the sitemap
 
+export enum Path {
+  ProgramCatalog = '/aides-entreprise', 
+  ProjectCatalog = '/projets-entreprise'
+}
+
 export const routes = [
   {
     path: '/',
@@ -76,7 +81,7 @@ export const routes = [
     ]
   },
   {
-    path: '/aides-entreprise',
+    path: Path.ProgramCatalog,
     component: TeeCatalogPage as Component,
     beforeEnter: [Hook.resetUsedTrackStore, Hook.resetQueries, Hook.resetProgramFilters],
     children: [
@@ -95,7 +100,7 @@ export const routes = [
     ]
   },
   {
-    path: '/projets-entreprise',
+    path: Path.ProjectCatalog,
     component: TeeCatalogPage as Component,
     beforeEnter: [Hook.resetUsedTrackStore, Hook.resetQueries, Hook.resetProgramFilters],
     children: [

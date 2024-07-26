@@ -12,6 +12,8 @@ import {
 } from '@/types'
 import RequestApi from '@/service/api/requestApi'
 import TrackStructure from '@/utils/track/trackStructure'
+import Config from '@/config'
+import { Path } from '@/router/routes'
 
 export default class OpportunityApi extends RequestApi {
   protected readonly url = '/api/opportunities'
@@ -25,6 +27,7 @@ export default class OpportunityApi extends RequestApi {
   constructor(
     opportunityForm: OpportunityFormType,
     private _id: string,
+    private _slug: string,
     private _opportunityType: OpportunityType
   ) {
     super()
@@ -82,14 +85,14 @@ export default class OpportunityApi extends RequestApi {
   }
 
   private _generateCatalogLink(): string {
-    if (this._opportunityType == OpportunityType.Program ){
-      return "TODO"
-    } 
-    if (this._opportunityType == OpportunityType.Project ){
-      return "TODO"
+    if (this._opportunityType == OpportunityType.Program) {
+      return Config.deployUrl + Path.ProgramCatalog + '/' + this._id
     }
-    console.error("catalog Link Generation Not Handled For The Current Opportunity Type") // TODO change it for the error handling method of the front end
-    return "catalogLinkGenerationNotHandledForTheCurrentOpportunityType"
+    if (this._opportunityType == OpportunityType.Project) {
+      return Config.deployUrl + Path.ProjectCatalog + '/' + this._slug
+    }
+    console.error('catalog Link Generation Not Handled For The Current Opportunity Type') // TODO change it for the error handling method of the front end
+    return 'catalogLinkGenerationNotHandledForTheCurrentOpportunityType'
   }
 
   private getFromUsedTrack(trackId: TrackId, key: string) {
