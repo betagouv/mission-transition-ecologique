@@ -74,10 +74,22 @@ export default class OpportunityApi extends RequestApi {
           QuestionnaireDataEnum.questionnaire_route as string
         ) as QuestionnaireRoute, // get from usedTrack
         otherData: this.getAllValuesFromUsedTrack(),
-        linkToPage: this._opportunityForm.linkToPage.value
+        linkToPage: this._opportunityForm.linkToPage.value,
+        linkToCatalog: this._generateCatalogLink()
       },
       optIn: this._opportunityForm.cgu.value
     }
+  }
+
+  private _generateCatalogLink(): string {
+    if (this._opportunityType == OpportunityType.Program ){
+      return "TODO"
+    } 
+    if (this._opportunityType == OpportunityType.Project ){
+      return "TODO"
+    }
+    console.error("catalog Link Generation Not Handled For The Current Opportunity Type") // TODO change it for the error handling method of the front end
+    return "catalogLinkGenerationNotHandledForTheCurrentOpportunityType"
   }
 
   private getFromUsedTrack(trackId: TrackId, key: string) {
