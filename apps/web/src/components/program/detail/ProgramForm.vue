@@ -389,11 +389,11 @@ const validateFormField = (field: InputFieldUnionType): void => {
 const saveOpportunityForm = async () => {
   try {
     isLoading.value = true
-    const opportunity = new OpportunityApi(opportunityForm.value, props.program.id, OpportunityType.Program)
+    const opportunity = new OpportunityApi(opportunityForm.value, props.program.id, props.program.id, OpportunityType.Program)
     requestResponse.value = await opportunity.fetch()
 
     // analytics / send event
-    Matomo.sendEvent(TrackId.Results, route.name === RouteName.CatalogDetail ? 'send_form_catalog' : 'send_form')
+    Matomo.sendEvent(TrackId.Results, route.name === RouteName.CatalogProgramDetail ? 'send_form_catalog' : 'send_form')
   } finally {
     isLoading.value = false
     formIsSent.value = true

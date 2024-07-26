@@ -5,7 +5,7 @@
   <div class="fr-grid-row fr-grid-row--center">
     <div class="fr-container">
       <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-text--blue-france tee-font-style--italic">
-        <ProjectCounter :sorted-projects="sortedProjects" />
+        <TeeCounterResult :to-count="sortedProjects" />
       </div>
     </div>
   </div>

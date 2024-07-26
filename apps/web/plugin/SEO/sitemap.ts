@@ -3,7 +3,8 @@ import dotenv from 'dotenv'
 import { readFileSync, writeFileSync } from 'fs'
 import { resolve } from 'path'
 import { ChangeFreq, type PathSettings, Priority } from './type'
-import { ProgramType } from '@tee/data'
+import { ProgramType, Project } from '@tee/data'
+import { projects } from '@tee/data/static'
 
 const specificPathSettings: PathSettings[] = [
   { path: '/', changeFreq: ChangeFreq.Weekly, priority: Priority.Highest },
@@ -80,12 +81,21 @@ function generateProgramSitemap(): string | undefined {
     .join('\n')
 }
 
+function generateProjectSitemap(): string | undefined {
+  return projects
+    .map((project: Project) => {
+      return generateOnePathXML('/projets-entreprise/' + project.slug, ChangeFreq.Monthly, Priority.MidHigh)
+    })
+    .join('\n')
+}
+
 function generateSitemapXML(): string {
   const staticElements = generateStaticSitemap()
   const programElements = generateProgramSitemap()
+  const projectElements = generateProjectSitemap()
 
   return `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  ${staticElements + '\n' + programElements}
+  ${staticElements + '\n' + programElements + '\n' + projectElements}
 </urlset>`
 }
 

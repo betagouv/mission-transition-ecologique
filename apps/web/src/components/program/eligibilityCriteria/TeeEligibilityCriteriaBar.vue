@@ -60,7 +60,7 @@ const stickyWithOffset = ref<StickyWithOffset | null>(null)
 const criteria = TrackStructure.getEligibilityCriteria()
 
 function isProgramDetailPage() {
-  return useNavigationStore().isByRouteName([RouteName.CatalogDetail, RouteName.QuestionnaireResultDetail])
+  return useNavigationStore().isByRouteName([RouteName.CatalogProgramDetail, RouteName.QuestionnaireResultDetail])
 }
 
 onMounted(async () => {

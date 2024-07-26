@@ -220,12 +220,12 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
   }
 
   async function updateByTrackIdAndValue(trackId: TrackId, value: string | string[]) {
-    const track = useTrackStore().getTrack(TrackId.Goals)
+    const track = useTrackStore().getTrack(trackId)
     if (track) {
       const selectedOptions = await useTrackStore().getSelectedOptionsByTrackAndValue(track, value)
       if (selectedOptions.length > 0) {
         createOrUpdateUsedTrack(track, selectedOptions)
-        useNavigationStore().updateSearchParam({ name: TrackId.Goals, value: value })
+        useNavigationStore().updateSearchParam({ name: trackId, value: value })
       }
     }
   }

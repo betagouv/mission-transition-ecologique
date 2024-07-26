@@ -140,6 +140,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
   }
 
   private _createProgramRequestBody(opportunity: Opportunity, program: ProgramType): Result<CreateSolicitationApiBody, Error> {
+    console.log(opportunity.linkToCatalog)
     return Result.ok({
       solicitation: {
         landing_id: this._pdeLanding,
@@ -150,12 +151,13 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
         phone_number: opportunity.phoneNumber,
         siret: opportunity.companySiret,
         location: '',
-        api_calling_url: opportunity.linkToPage,
+        api_calling_url: opportunity.linkToCatalog,
         questions_additionnelles: []
       }
     })
   }
   private _createProjectRequestBody(opportunity: Opportunity, project: Project): Result<CreateSolicitationApiBody, Error> {
+    console.log(opportunity.linkToCatalog)
     return Result.ok({
       solicitation: {
         landing_id: this._pdeLanding,
@@ -166,7 +168,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
         phone_number: opportunity.phoneNumber,
         siret: opportunity.companySiret,
         location: '',
-        api_calling_url: opportunity.linkToPage,
+        api_calling_url: opportunity.linkToCatalog,
         questions_additionnelles: []
       }
     })

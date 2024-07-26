@@ -22,6 +22,7 @@ export interface OpportunityDetails {
   type: OpportunityType
   id: string
   linkToPage: string
+  linkToCatalog: string
   message: string
   questionnaireRoute?: QuestionnaireRoute
   priorityObjectives?: PublicodeObjective[]

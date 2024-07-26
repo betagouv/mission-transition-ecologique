@@ -1,5 +1,6 @@
 <template>
   <TeeEligibilityCriteriaBar
+    v-if="!navigationStore.isByRouteName(RouteName.CatalogProjectDetail)"
     :bg-color="Color.blueLightnessed"
     :bg-bar-color="Color.blueLighted"
     :previous-route="routeToProjects"
