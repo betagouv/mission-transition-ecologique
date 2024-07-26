@@ -1,6 +1,6 @@
 import { bpiOpportunityPayload } from './types'
 import { ProgramType } from '@tee/data'
-import { Opportunity } from '@tee/common'
+import { Opportunity, StructureSize } from '@tee/common'
 
 export default class OpportunityPayloadDTO {
   private readonly Subject = 'Demande d’échange' as const
@@ -9,7 +9,7 @@ export default class OpportunityPayloadDTO {
   private readonly point_de_contact__c = 'Site Plateforme Etat TEE' as const
   private readonly _companySiret: string | undefined
   private readonly _companyName: string | undefined | null
-  private readonly _companySize: number | undefined
+  private readonly _companySize: StructureSize | undefined
   private readonly _phoneNumber: string
   private readonly _lastName: string
   private readonly _firstName: string
@@ -43,14 +43,10 @@ export default class OpportunityPayloadDTO {
       SuppliedPhone: this.phoneNumber,
       SuppliedCompany: this.companyName,
       SIRET__c: this.companySiret,
-      Taille_de_lentreprise__c: this.companySize,
+      Taille_de_lentreprise__c: this._companySize,
       Description: this.description,
       Description_Complementaire__c: ''
     }
-  }
-
-  private get companySize(): string | number | undefined {
-    return this._companySize
   }
 
   private get companySiret(): string | undefined {

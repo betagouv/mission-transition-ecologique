@@ -4,7 +4,7 @@ import { Result } from 'true-myth'
 import { ContactRepository } from '../../../domain/spi'
 import { BrevoCompanySize, BrevoPostContactPayload, ContactAttributes } from './types'
 import BrevoAPI from './brevoAPI'
-import { ContactDetails } from '@tee/common'
+import { ContactDetails, StructureSize } from '@tee/common'
 import Monitor from '../../../../common/domain/monitoring/monitor'
 
 const DEBUG_BREVO_LIST_ID = '4'
@@ -76,13 +76,26 @@ const convertDomainToBrevoContact = (contact: ContactDetails, optIn: true): Cont
   }
 }
 
-const convertCompanySize = (companySize: number): BrevoCompanySize => {
-  if (companySize < 20) {
-    return BrevoCompanySize.LESS_THAN_20
-  } else if (companySize <= 49) {
-    return BrevoCompanySize.FROM_20_TO_49
-  } else if (companySize <= 250) {
-    return BrevoCompanySize.FROM_50_TO_250
+const convertCompanySize = (companySize: StructureSize): BrevoCompanySize => {
+  switch (companySize) {
+    case StructureSize.EI:
+      return BrevoCompanySize.EI
+      break
+    case StructureSize.ETI_GE:
+      return BrevoCompanySize.MORE_THAN_250
+      break
+    case StructureSize.TPE:
+      return BrevoCompanySize.LESS_THAN_20
+      break
+    case StructureSize.PE:
+      return BrevoCompanySize.FROM_20_TO_49
+      break
+    case StructureSize.ME:
+      return BrevoCompanySize.FROM_50_TO_250
+      break
+    default:
+      Monitor.error('Company size not handled in brevoContact.')
+      return BrevoCompanySize.FROM_20_TO_49
+      break
   }
-  return BrevoCompanySize.MORE_THAN_250
 }
