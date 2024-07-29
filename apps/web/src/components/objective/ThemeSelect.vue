@@ -16,10 +16,12 @@ import { useUsedTrackStore } from '@/stores/usedTrack'
 import type { TrackOptionItem } from '@/types'
 import { computed } from 'vue'
 import { Theme } from '@/utils/theme'
-import { ProgramData, Color } from '@/types'
+import { ProgramData, Color, Objective } from '@/types'
 import { Project } from '@tee/data'
 import { useProjectStore } from '@/stores/project'
 import { useProgramStore } from '@/stores/program'
+import { useNavigationStore } from '@/stores/navigation'
+import ProgramFilter from '@/utils/program/programFilter'
 
 const currentTrack = useTrackStore().current
 const themeSelectedOption = ref<ThemeOption>()
@@ -28,9 +30,7 @@ const projectStore = useProjectStore()
 const projects = ref<Project[]>()
 const programs = ref<ProgramData[]>()
 const programStore = useProgramStore()
-const filteredPrograms = computed(() => {
-  return programs.value ? programStore.getProgramsByFilters(programs.value) : undefined
-})
+
 export interface ThemeOption {
   value: string | undefined
   title: string
@@ -40,19 +40,21 @@ export interface ThemeOption {
   color: Color
   moreThanThree: boolean
 }
+
+const filterPrograms = (objective: Objective) => {
+  return programs.value?.filter((program) => ProgramFilter.byObjective(program, objective))
+}
+
 const options = computed<ThemeOption[]>(() => {
   const options: ThemeOption[] = []
   if (!currentTrack?.options) {
     return options
   }
   for (const option of currentTrack.options) {
-    const objective = option.questionnaireData?.priority_objective
-    const theme = Theme.getByValue(objective)
-    const objectiveProjects = projects.value
-      ? projectStore.getProjectsByObjectiveAndEligibility(projects.value, objective, filteredPrograms.value ?? undefined)
-      : []
-    const projectsInfos: { projects: Project[]; moreThanThree: boolean } = Theme.getPriorityProjects(objectiveProjects)
-    if (theme) {
+    const theme = Theme.getByValue(option.questionnaireData?.priority_objective)
+    if (theme && projects.value) {
+      const objectiveProjects = projectStore.getProjectsByObjectiveAndEligibility(projects.value, theme.value, filterPrograms(theme.value))
+      const projectsInfos: { projects: Project[]; moreThanThree: boolean } = Theme.getPriorityProjects(objectiveProjects)
       options.push({
         value: option.questionnaireData?.priority_objective,
         title: theme.title,
@@ -82,12 +84,20 @@ const selectOption = (opt: ThemeOption) => {
   } as TrackOptionItem
   emit('updateSelection', data)
 }
+
+const hasError = ref<boolean>(false)
+
 onBeforeMount(async () => {
+  useNavigationStore().hasSpinner = true
+
   const projectResult = await projectStore.projects
-  const programResult = useUsedTrackStore().hasUsedTracks() ? await programStore.programsByUsedTracks : await programStore.programs
+  const programResult = await programStore.programsByUsedTracks
   if (programResult.isOk && projectResult.isOk) {
     projects.value = projectResult.value
     programs.value = programResult.value
+  } else {
+    hasError.value = true
   }
+  useNavigationStore().hasSpinner = false
 })
 </script>

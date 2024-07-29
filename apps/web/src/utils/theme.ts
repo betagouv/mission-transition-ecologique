@@ -45,14 +45,6 @@ export class Theme {
       color: Color.green
     },
     {
-      id: ThemeId.Waste,
-      title: 'Déchets & réemploi',
-      tagLabel: '🗑 déchets',
-      value: Objective.WasteManagement,
-      image: '/images/thematique/thematique-dechets.svg',
-      color: Color.red
-    },
-    {
       id: ThemeId.EcoDesign,
       title: 'Éco-conception',
       tagLabel: '🔁 écoconception',
@@ -75,14 +67,6 @@ export class Theme {
       value: Objective.TrainOrRecruit,
       image: '/images/thematique/thematique-ressources-humaines.svg',
       color: Color.yellow
-    },
-    {
-      id: ThemeId.Environmental,
-      title: 'Analyses environnementales',
-      tagLabel: '🌱 analyses',
-      value: Objective.EnvironmentalImpact,
-      image: '/images/thematique/thematique-strategie.svg',
-      color: Color.blue
     }
   ]
 
