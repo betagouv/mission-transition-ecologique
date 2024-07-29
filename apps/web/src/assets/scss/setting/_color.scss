@@ -13,10 +13,15 @@ $base-green: #1ebe8e;
 $base-purple: #6a62f4;
 $base-red: #fca081;
 $base-yellow: #facf35;
+$base-yellow-light: #fef7da;
 $colors: (
   "white": color.$white,
   "yellow": (
     "color": $base-yellow,
+    "color-with-background": var(--text-action-high-blue-france)
+  ),
+  "yellow-light": (
+    "color": $base-yellow-light,
     "color-with-background": var(--text-action-high-blue-france)
   ),
   "green": (

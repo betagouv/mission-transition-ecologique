@@ -8,6 +8,7 @@ export default class TrackColOption {
     [TrackComponent.Siret]: 12,
     [TrackComponent.Select]: 12,
     [TrackComponent.Cards]: 4,
+    [TrackComponent.Themes]: 12,
     [TrackComponent.Form]: 8,
     [TrackComponent.Results]: 10
   }
@@ -19,6 +20,7 @@ export default class TrackColOption {
     [TrackComponent.Siret]: 12,
     [TrackComponent.Select]: 12,
     [TrackComponent.Cards]: 6,
+    [TrackComponent.Themes]: 12,
     [TrackComponent.Form]: 8,
     [TrackComponent.Results]: 10
   }

@@ -2,6 +2,7 @@
 @use 'sass:map';
 @use '@gouvfr/dsfr/module/media-query';
 @use '@gouvfr/dsfr/module/media-query/variable/breakpoints';
+@use 'tool';
 @use 'setting';
 
 .fr-card {
@@ -9,6 +10,22 @@
 
   :hover {
     cursor: pointer;
+  }
+
+  &__header {
+    @each $color, $properties in setting.$colors {
+      &--#{$color} {
+        @if meta.type-of($properties) == map {
+          background-color: tool.scaleAlphaToHex(map.get($properties, "color"), -50%);
+        } @else {
+          background-color: tool.scaleAlphaToHex($properties, -50%);
+        }
+      }
+    }
+
+    .fr-card__img img {
+      object-fit: contain;
+    }
   }
 
   &-banner {

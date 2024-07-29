@@ -5,10 +5,9 @@ export const goals: Track = {
   id: TrackId.Goals,
   category: 'myEntreprise',
   title: { fr: 'Mes objectifs' },
-  label: { fr: 'Quel est votre objectif prioritaire ?' },
-  hint: { fr: 'Je souhaite...' },
+  label: { fr: 'Choisissez la thématique de votre projet :' },
   interface: {
-    component: TrackComponent.Buttons
+    component: TrackComponent.Themes
   },
   behavior: {
     multipleChoices: false
@@ -18,28 +17,10 @@ export const goals: Track = {
   },
   options: [
     {
-      value: Objective.EnvironmentalImpact,
-      questionnaireData: { priority_objective: Objective.EnvironmentalImpact },
-      title: { fr: 'Impact environnemental' },
-      label: { fr: '🌱 Mesurer mon impact environnemental et le réduire' },
-      next: {
-        default: TrackId.Results
-      }
-    },
-    {
       value: Objective.EnergyPerformance,
       questionnaireData: { priority_objective: Objective.EnergyPerformance },
       title: { fr: "Gestion de l'énergie" },
       label: { fr: '⚡️ Améliorer la performance énergétique de mon entreprise' },
-      next: {
-        default: TrackId.Results
-      }
-    },
-    {
-      value: Objective.WaterConsumption,
-      questionnaireData: { priority_objective: Objective.WaterConsumption },
-      title: { fr: "Gestion de l'eau" },
-      label: { fr: "💧 Diminuer ma consommation d'eau" },
       next: {
         default: TrackId.Results
       }
@@ -63,10 +44,10 @@ export const goals: Track = {
       }
     },
     {
-      value: Objective.WasteManagement,
-      questionnaireData: { priority_objective: Objective.WasteManagement },
-      title: { fr: 'Gestion des déchets' },
-      label: { fr: '🗑 Mieux gérer mes déchets' },
+      value: Objective.WaterConsumption,
+      questionnaireData: { priority_objective: Objective.WaterConsumption },
+      title: { fr: "Gestion de l'eau" },
+      label: { fr: "💧 Diminuer ma consommation d'eau" },
       next: {
         default: TrackId.Results
       }
@@ -81,10 +62,28 @@ export const goals: Track = {
       }
     },
     {
+      value: Objective.WasteManagement,
+      questionnaireData: { priority_objective: Objective.WasteManagement },
+      title: { fr: 'Gestion des déchets' },
+      label: { fr: '🗑 Mieux gérer mes déchets' },
+      next: {
+        default: TrackId.Results
+      }
+    },
+    {
       value: Objective.TrainOrRecruit,
       questionnaireData: { priority_objective: Objective.TrainOrRecruit },
       title: { fr: 'Formation' },
       label: { fr: '🧑‍🎓 Former ou recruter sur la transition écologique' },
+      next: {
+        default: TrackId.Results
+      }
+    },
+    {
+      value: Objective.EnvironmentalImpact,
+      questionnaireData: { priority_objective: Objective.EnvironmentalImpact },
+      title: { fr: 'Impact environnemental' },
+      label: { fr: '🌱 Mesurer mon impact environnemental et le réduire' },
       next: {
         default: TrackId.Results
       }
