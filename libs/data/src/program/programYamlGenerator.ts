@@ -91,13 +91,13 @@ export class ProgramYamlGenerator {
       return
     }
     if (program["Nature de l'aide"] == DataProgramType.Accompagnement || program["Nature de l'aide"] == DataProgramType.Training) {
-      fileContent["coût de l'accompagnement"] = program['Coût reste à charge']
-      fileContent["durée de l'accompagnement"] = program['Prestation (durée + étalement)']
+      fileContent["coût de l'accompagnement"] = program["Montant de l'aide"]
+      fileContent["durée de l'accompagnement"] = program["Durée de l'aide"]
       return
     }
     if (program["Nature de l'aide"] == DataProgramType.Loan) {
-      fileContent['durée du prêt'] = program['Prestation (durée + étalement)']
-      fileContent['montant du prêt'] = `De ${program['MontantMin aide']}€ à ${program['MontantMax aide']}€`
+      fileContent['montant du prêt'] = program["Montant de l'aide"]
+      fileContent['durée du prêt'] = program["Durée de l'aide"]
       return
     }
     if (program["Nature de l'aide"] == DataProgramType.TaxAdvantage) {

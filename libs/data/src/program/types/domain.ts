@@ -18,7 +18,7 @@ export interface DataProgram {
   'Aides financières': string
   'MontantMin aide': string
   'MontantMax aide': string
-  'Prestation (durée + étalement)': string
+  "Durée de l'aide": string
   "Durée estimé pour l'entreprise": string
   'Date de cloture intermédiaire': string
   DISPOSITIF_DATE_DEBUT: string
