@@ -99,9 +99,10 @@ export interface GeographicAreas {
 }
 
 export enum DataProgramType {
-  Accompagnement = 'Accompagnement',
+  Study = 'étude',
   TaxAdvantage = 'Avantage fiscal',
   Financing = 'Financement',
+  FinancingStudy = 'Financement-étude',
   Loan = 'Prêt',
   Training = 'Formation',
   ActionTraining = 'Formation-Action',

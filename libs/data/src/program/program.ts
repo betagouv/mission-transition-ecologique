@@ -4,7 +4,7 @@ export class Program {
   public static getPrefixedProgramName(program: ProgramType) {
     let prefix = ''
     switch (program["nature de l'aide"]) {
-      case ProgramAidType.acc:
+      case ProgramAidType.study:
         prefix = `l'`
         break
       case ProgramAidType.train:

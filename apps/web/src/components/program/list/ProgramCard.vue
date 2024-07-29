@@ -57,7 +57,7 @@ const getCostInfos = () => {
   let text: string | undefined = ''
 
   switch (program["nature de l'aide"]) {
-    case ProgramAidType.acc:
+    case ProgramAidType.study:
     case ProgramAidType.train:
       prefix = 'programCosts.costPrefix'
       text = program["coût de l'accompagnement"]
