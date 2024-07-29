@@ -64,7 +64,7 @@ export class Theme {
       id: ThemeId.Waste,
       title: 'Déchets & réemploi',
       tagLabel: '🗑 déchets',
-      value: PublicodeObjective.WasteManagement,
+      value: Objective.WasteManagement,
       image: '/images/thematique/thematique-dechets.svg',
       color: Color.red
     },
@@ -80,7 +80,7 @@ export class Theme {
       id: ThemeId.Environmental,
       title: 'Analyses environnementales',
       tagLabel: '🌱 analyses',
-      value: PublicodeObjective.EnvironmentalImpact,
+      value: Objective.EnvironmentalImpact,
       image: '/images/thematique/thematique-strategie.svg',
       color: Color.blue
     }
@@ -90,7 +90,7 @@ export class Theme {
     return this.themes.find((theme) => theme.id === id)
   }
 
-  static getByValue(value: Objective) {
+  static getByValue(value: Objective | undefined) {
     return this.themes.find((theme) => theme.value === value)
   }
 

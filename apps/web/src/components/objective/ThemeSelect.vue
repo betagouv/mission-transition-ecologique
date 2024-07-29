@@ -46,28 +46,22 @@ const options = computed<ThemeOption[]>(() => {
     return options
   }
   for (const option of currentTrack.options) {
-    const optionPublicodeObjective = Theme.getPublicodeObjectiveByObjective(option.questionnaireData?.priority_objective)
-    if (optionPublicodeObjective) {
-      const theme = Theme.getByValue(optionPublicodeObjective)
-      const objectiveProjects = projects.value
-        ? projectStore.getProjectsByPublicodeObjectiveAndEligibility(
-            projects.value,
-            optionPublicodeObjective,
-            filteredPrograms.value ?? undefined
-          )
-        : []
-      const projectsInfos: { projects: Project[]; moreThanThree: boolean } = Theme.getPriorityProjects(objectiveProjects)
-      if (theme) {
-        options.push({
-          value: option.questionnaireData?.priority_objective,
-          title: theme.title,
-          color: theme.color,
-          imgSrc: theme.image,
-          altImg: theme.tagLabel,
-          highlightProjects: projectsInfos.projects,
-          moreThanThree: projectsInfos.moreThanThree
-        })
-      }
+    const objective = option.questionnaireData?.priority_objective
+    const theme = Theme.getByValue(objective)
+    const objectiveProjects = projects.value
+      ? projectStore.getProjectsByObjectiveAndEligibility(projects.value, objective, filteredPrograms.value ?? undefined)
+      : []
+    const projectsInfos: { projects: Project[]; moreThanThree: boolean } = Theme.getPriorityProjects(objectiveProjects)
+    if (theme) {
+      options.push({
+        value: option.questionnaireData?.priority_objective,
+        title: theme.title,
+        color: theme.color,
+        imgSrc: theme.image,
+        altImg: theme.tagLabel,
+        highlightProjects: projectsInfos.projects,
+        moreThanThree: projectsInfos.moreThanThree
+      })
     }
   }
   return options
