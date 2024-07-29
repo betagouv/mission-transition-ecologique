@@ -1,11 +1,7 @@
 <template>
   <div class="fr-col-9 fr-text-center">
-    <TeeSpinner
-      v-if="hasSpinner"
-      scale="6"
-    />
     <ProgramListNoResults
-      v-else-if="!countItems && !hasError"
+      v-if="!countItems && !hasError"
       image="images/tracks/no-results.svg"
       :message="{ fr: 'Aucune aide n\'a pu être identifiée avec les critères choisis...' }"
     />
@@ -23,7 +19,6 @@ import ProgramListNoResults from '@/components/program/list/ProgramListNoResults
 
 interface Props {
   hasError?: boolean
-  hasSpinner?: boolean
   countItems?: number
 }
 defineProps<Props>()

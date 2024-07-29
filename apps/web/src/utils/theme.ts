@@ -1,22 +1,38 @@
-import { Color, Objective as ObjectiveEnum, PublicodeObjective, PublicodesKeys, ThemeId, ThemeType } from '@/types'
+import { Color, Objective, PublicodeObjective, PublicodesKeys, ThemeId, ThemeType } from '@/types'
 import UsedTrack from '@/utils/track/usedTrack'
 import { Project } from '@tee/data'
 
 export class Theme {
   static themes: ThemeType[] = [
     {
+      id: ThemeId.Environmental,
+      title: 'Analyses environnementales',
+      tagLabel: '🌱 analyses',
+      value: Objective.EnvironmentalImpact,
+      image: '/images/thematique/thematique-strategie.svg',
+      color: Color.blue
+    },
+    {
       id: ThemeId.Energy,
       title: 'Énergie',
       tagLabel: '⚡️ énergie',
-      value: PublicodeObjective.EnergyPerformance,
+      value: Objective.EnergyPerformance,
       image: '/images/thematique/thematique-energie.svg',
       color: Color.yellow
+    },
+    {
+      id: ThemeId.Water,
+      title: 'Économies d’eau',
+      tagLabel: '💧 eau',
+      value: Objective.WaterConsumption,
+      image: '/images/thematique/thematique-eau.svg',
+      color: Color.blueFrance
     },
     {
       id: ThemeId.Building,
       title: 'Construction & rénovation',
       tagLabel: '🏢 rénovation',
-      value: PublicodeObjective.BuildingRenovation,
+      value: Objective.BuildingRenovation,
       image: '/images/thematique/thematique-batiments.svg',
       color: Color.blue
     },
@@ -24,23 +40,23 @@ export class Theme {
       id: ThemeId.Mobility,
       title: 'Mobilité',
       tagLabel: '🚲 mobilité',
-      value: PublicodeObjective.SustainableMobility,
+      value: Objective.SustainableMobility,
       image: '/images/thematique/thematique-mobilite.svg',
       color: Color.green
     },
     {
-      id: ThemeId.Water,
-      title: 'Économies d’eau',
-      tagLabel: '💧 eau',
-      value: PublicodeObjective.WaterConsumption,
-      image: '/images/thematique/thematique-eau.svg',
-      color: Color.blueLight
+      id: ThemeId.Waste,
+      title: 'Déchets & réemploi',
+      tagLabel: '🗑 déchets',
+      value: Objective.WasteManagement,
+      image: '/images/thematique/thematique-dechets.svg',
+      color: Color.red
     },
     {
       id: ThemeId.EcoDesign,
       title: 'Éco-conception',
       tagLabel: '🔁 écoconception',
-      value: PublicodeObjective.EcoDesign,
+      value: Objective.EcoDesign,
       image: '/images/thematique/thematique-eco-conception.svg',
       color: Color.green
     },
@@ -56,7 +72,7 @@ export class Theme {
       id: ThemeId.RH,
       title: 'Ressources humaines',
       tagLabel: '🧑‍🎓 RH',
-      value: PublicodeObjective.TrainOrRecruit,
+      value: Objective.TrainOrRecruit,
       image: '/images/thematique/thematique-ressources-humaines.svg',
       color: Color.yellow
     },
@@ -74,19 +90,23 @@ export class Theme {
     return this.themes.find((theme) => theme.id === id)
   }
 
-  static getByValue(value: PublicodeObjective) {
+  static getByValue(value: Objective) {
     return this.themes.find((theme) => theme.value === value)
   }
 
-  static getTitleByValue(objective: PublicodeObjective) {
+  static getObjectiveByValue(value: Objective) {
+    return this.themes.find((theme) => theme.value === value)?.value
+  }
+
+  static getTitleByValue(objective: Objective) {
     return this.getByValue(objective)?.title ?? ''
   }
 
-  static getImageByValue(objective: PublicodeObjective) {
+  static getImageByValue(objective: Objective) {
     return this.getByValue(objective)?.image ?? ''
   }
 
-  static getColorByValue(objective: PublicodeObjective) {
+  static getColorByValue(objective: Objective) {
     return this.getByValue(objective)?.color ?? ''
   }
 
@@ -94,14 +114,12 @@ export class Theme {
     const tags = []
 
     if (UsedTrack.isNoSpecificGoal()) {
-      UsedTrack.isEnvironmentalImpactObjective()
-        ? tags.push(this.getByValue(PublicodeObjective.EnvironmentalImpact) as ThemeType)
-        : undefined
-      UsedTrack.isEcoDesignObjective() ? tags.push(this.getByValue(PublicodeObjective.EcoDesign) as ThemeType) : undefined
-      UsedTrack.isEnergyObjective() ? tags.push(this.getByValue(PublicodeObjective.EnergyPerformance) as ThemeType) : undefined
-      UsedTrack.isWasteObjective() ? tags.push(this.getByValue(PublicodeObjective.WasteManagement) as ThemeType) : undefined
-      UsedTrack.isWaterObjective() ? tags.push(this.getByValue(PublicodeObjective.WaterConsumption) as ThemeType) : undefined
-      UsedTrack.isMobilityObjective() ? tags.push(this.getByValue(PublicodeObjective.SustainableMobility) as ThemeType) : undefined
+      UsedTrack.isEnvironmentalImpactObjective() ? tags.push(this.getByValue(Objective.EnvironmentalImpact) as ThemeType) : undefined
+      UsedTrack.isEcoDesignObjective() ? tags.push(this.getByValue(Objective.EcoDesign) as ThemeType) : undefined
+      UsedTrack.isEnergyObjective() ? tags.push(this.getByValue(Objective.EnergyPerformance) as ThemeType) : undefined
+      UsedTrack.isWasteObjective() ? tags.push(this.getByValue(Objective.WasteManagement) as ThemeType) : undefined
+      UsedTrack.isWaterObjective() ? tags.push(this.getByValue(Objective.WaterConsumption) as ThemeType) : undefined
+      UsedTrack.isMobilityObjective() ? tags.push(this.getByValue(Objective.SustainableMobility) as ThemeType) : undefined
 
       return tags
     }
@@ -111,7 +129,7 @@ export class Theme {
     return tags
   }
 
-  static isPublicodeObjective(objective: PublicodeObjective | ''): objective is PublicodeObjective {
+  static isObjective(objective: Objective | ''): objective is Objective {
     return objective !== ''
   }
 
@@ -120,7 +138,7 @@ export class Theme {
     return { projects: sortedProjects.slice(0, 3), moreThanThree: sortedProjects.length > 3 }
   }
 
-  static getPublicodeObjectiveByObjective(objective: ObjectiveEnum | undefined): PublicodeObjective | undefined {
+  static getPublicodeObjectiveByObjective(objective: Objective | undefined): PublicodeObjective | undefined {
     const key = Object.keys(PublicodeObjective).find(
       (key) => PublicodeObjective[key as keyof typeof PublicodeObjective] === ((PublicodesKeys.Goal + objective) as PublicodeObjective)
     ) as keyof typeof PublicodeObjective | undefined

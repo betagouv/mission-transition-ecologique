@@ -29,7 +29,7 @@ RegisterRoutes(app)
 app.use(Sentry.errorHandler())
 
 app.use(function notFoundHandler(_req, res: Response) {
-  res.status(404).send({ message: 'Not Found test' })
+  res.status(404).send({ message: 'Not Found' })
 })
 
 app.use(function errorHandler(err: unknown, req: Request, res: Response, next: NextFunction): Response | void {

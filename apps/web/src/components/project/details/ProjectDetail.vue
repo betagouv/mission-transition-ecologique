@@ -25,7 +25,7 @@
           <DsfrAccordionsGroup>
             <ProjectDescription :project="project" />
             <ProjectPrograms
-              :objective="themeObjective"
+              v-if="project"
               :project="project"
             />
             <LinkedProjects
@@ -57,7 +57,6 @@ interface Props {
 }
 const props = defineProps<Props>()
 
-const themeObjective = computed(() => theme.value?.value)
 const themeColor = computed<Color | undefined>(() => theme.value?.color)
 
 const copyUrl = async () => {

@@ -3,7 +3,7 @@
     v-if="!isCatalogDetail"
     :bg-color="Color.greenLightnessed"
     :bg-bar-color="Color.greenLighted"
-    :previous-route="routeToPrograms"
+    :previous-route="getRouteToPreviousPage()"
     message="Cette aide correspond à vos critères d’éligibilité"
     message-icon="fr-icon-checkbox-circle-fill"
   />
@@ -83,7 +83,7 @@
           </div>
 
           <!-- TITLE & RESUME -->
-          <div class="fr-col fr-pl-10v">
+          <div class="fr-col">
             <!-- PROGRAM TITLE -->
             <p class="tee-program-title fr-mb-5v">
               {{ program?.titre }}
@@ -215,24 +215,25 @@
             />
           </div>
         </div>
+        <DsfrAccordionsGroup>
+          <!-- ELIGIBILITY -->
+          <ProgramAccordion
+            v-if="program && program['conditions d\'éligibilité']"
+            :accordion-id="`${program.id}-eligibility`"
+            :title="Translation.t('program.programAmIEligible')"
+          >
+            <ProgramEligibility :program="program" />
+          </ProgramAccordion>
 
-        <!-- ELIGIBILITY -->
-        <ProgramAccordion
-          v-if="program && program['conditions d\'éligibilité']"
-          :accordion-id="`${program.id}-eligibility`"
-          :title="Translation.t('program.programAmIEligible')"
-        >
-          <ProgramEligibility :program="program" />
-        </ProgramAccordion>
-
-        <!-- LONG DESCRIPTION -->
-        <ProgramAccordion
-          v-if="program && program['description longue']"
-          :accordion-id="`${program.id}-long-description`"
-          :title="Translation.t('program.programKnowMore')"
-        >
-          <ProgramLongDescription :program="program" />
-        </ProgramAccordion>
+          <!-- LONG DESCRIPTION -->
+          <ProgramAccordion
+            v-if="program && program['description longue']"
+            :accordion-id="`${program.id}-long-description`"
+            :title="Translation.t('program.programKnowMore')"
+          >
+            <ProgramLongDescription :program="program" />
+          </ProgramAccordion>
+        </DsfrAccordionsGroup>
         <hr class="fr-mb-9v fr-pb-1v" />
       </div>
     </div>
@@ -240,7 +241,7 @@
     <!-- PROGRAM FORM -->
     <div
       ref="TeeProgramFormContainer"
-      class="fr-tee-form-block"
+      class="fr-tee-form-block fr-p-4v"
     >
       <ProgramForm
         v-if="program"
@@ -288,6 +289,7 @@ const isCatalogDetail = navigationStore.isByRouteName(RouteName.CatalogDetail)
 
 interface Props {
   programId: string
+  projectSlug?: string
 }
 const props = defineProps<Props>()
 
@@ -321,14 +323,23 @@ const isProgramAutonomous = computed(() => {
   return program.value?.[`activable en autonomie`] == 'oui'
 })
 
-const routeToPrograms = {
-  name: isCatalogDetail ? RouteName.Catalog : RouteName.QuestionnaireResult,
-  hash: '#' + props.programId,
-  query: isCatalogDetail ? undefined : navigationStore.query
+const getRouteToPreviousPage = () => {
+  const routeToPrograms = {
+    hash: '#' + props.programId,
+    query: isCatalogDetail ? undefined : navigationStore.query
+  }
+  if (isCatalogDetail) {
+    return { ...routeToPrograms, name: RouteName.Catalog }
+  }
+  if (navigationStore.isByRouteName(RouteName.ProgramFromProjectDetail)) {
+    return { name: RouteName.ProjectResultDetail, params: { projectSlug: props.projectSlug }, ...routeToPrograms }
+  }
+
+  return { name: RouteName.QuestionnaireResult, ...routeToPrograms }
 }
 
 const goToPrograms = async () => {
-  await router.push(routeToPrograms)
+  await router.push(getRouteToPreviousPage())
 }
 
 onBeforeMount(() => {
