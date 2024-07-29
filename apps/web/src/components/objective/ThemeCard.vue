@@ -73,6 +73,7 @@ defineProps<Props>()
 
 .theme-card-title {
   height: 80px;
+
   @media (width >= 0) and (width <= 575px) {
     height: auto;
   }
