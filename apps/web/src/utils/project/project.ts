@@ -3,7 +3,7 @@ import { Objective, ProgramData, Project as ProjectType } from '@/types'
 import { ComputedRef, Ref } from 'vue'
 
 export class Project {
-  static filter = (
+  static readonly filter = (
     projects: Ref<ProjectType[] | undefined>,
     programs: Ref<ProgramData[] | undefined>,
     objective: ComputedRef<Objective | ''>
