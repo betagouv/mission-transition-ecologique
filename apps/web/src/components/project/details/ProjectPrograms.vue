@@ -13,7 +13,7 @@
       </div></template
     >
     <DsfrHighlight
-      v-if="!hasSiret"
+      v-if="isCatalogDetail"
       class="fr-highlight-border--yellow fr-highlight-bg--yellow-light fr-m-0 fr-p-0"
       :large="true"
     >
@@ -83,7 +83,6 @@
   </DsfrAccordion>
 </template>
 <script setup lang="ts">
-import TrackStructure from '@/utils/track/trackStructure'
 import { useProgramStore } from '@/stores/program'
 import { type ProgramData, TrackId, Project } from '@/types'
 import Contact from '@/utils/contact'
@@ -98,15 +97,13 @@ const props = defineProps<Props>()
 
 const programStore = useProgramStore()
 const navigationStore = useNavigationStore()
+const isCatalogDetail = navigationStore.isByRouteName(RouteName.CatalogProjects)
 
 const expandedId = ref<string | undefined>('project-aids')
 const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)
 
-const siret: undefined | string = TrackStructure.getSiret()
 const hasSpinner = navigationStore.hasSpinner
-
-const hasSiret = computed(() => siret !== undefined && siret !== '')
 
 const countFilteredPrograms = computed(() => {
   return filteredPrograms.value.length || 0
