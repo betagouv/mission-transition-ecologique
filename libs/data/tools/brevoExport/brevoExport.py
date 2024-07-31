@@ -9,7 +9,7 @@ import sib_api_v3_sdk
 from sib_api_v3_sdk.rest import ApiException
 
 # parameters
-BREVO_API_KEY_FILE_PATH = "../../../backend/.env"
+BREVO_API_KEY_FILE_PATH = "../../../../apps/backend/.env"
 REFRESH_CONTACTS = True  # True = use brevo API, False = use local file
 REFRESH_DEALS = True  # True = use brevo API, False = use local file
 EXPORT_TO_JSON = True
@@ -245,6 +245,8 @@ def format_deal_stage(deal_stage):
         return "Transmise"
     elif deal_stage == 'c1d2ed92-8bc3-492d-a3ec-0284e214baa0':
         return "Perdue"
+    elif deal_stage == '659d15cff06be7.98275409':
+        return "Aide Proposée"
     else:
         print("unexpected deal stage", deal_stage)
         return "Inconnue"
