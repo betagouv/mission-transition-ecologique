@@ -93,26 +93,27 @@ export class ProgramYamlGenerator {
   }
 
   private _setFinancialData(fileContent: { [key: string]: unknown }, program: DataProgram) {
-    if (program["Nature de l'aide"] == DataProgramType.Financing || program["Nature de l'aide"] == DataProgramType.FinancingStudy) {
-      fileContent['montant du financement'] = program["Montant de l'aide"]
-      return
+    switch (program["Nature de l'aide"]) {
+      case DataProgramType.Financing:
+      case DataProgramType.FinancingStudy:
+        fileContent['montant du financement'] = program["Montant de l'aide"]
+        return
+      case DataProgramType.Study:
+      case DataProgramType.Training:
+        fileContent["coût de l'accompagnement"] = program["Montant de l'aide"]
+        fileContent["durée de l'accompagnement"] = program["Durée de l'aide"]
+        return
+      case DataProgramType.Loan:
+        fileContent['montant du prêt'] = program["Montant de l'aide"]
+        fileContent['durée du prêt'] = program["Durée de l'aide"]
+        return
+      case DataProgramType.TaxAdvantage:
+        fileContent["montant de l'avantage fiscal"] = program["Montant de l'aide"]
+        return
+      default:
+        console.log("type d'aide non traitée dans les données financières")
+        return
     }
-    if (program["Nature de l'aide"] == DataProgramType.Study || program["Nature de l'aide"] == DataProgramType.Training) {
-      fileContent["coût de l'accompagnement"] = program["Montant de l'aide"]
-      fileContent["durée de l'accompagnement"] = program["Durée de l'aide"]
-      return
-    }
-    if (program["Nature de l'aide"] == DataProgramType.Loan) {
-      fileContent['montant du prêt'] = program["Montant de l'aide"]
-      fileContent['durée du prêt'] = program["Durée de l'aide"]
-      return
-    }
-    if (program["Nature de l'aide"] == DataProgramType.TaxAdvantage) {
-      fileContent["montant de l'avantage fiscal"] = program["Montant de l'aide"]
-      return
-    }
-    console.log("type d'aide non traitée dans les données financières")
-    return
   }
 
   private _parseStep(step: string): YamlObjective {
