@@ -1,13 +1,13 @@
-import { PublicodesKeys, Sector } from '@tee/common'
+import { PublicodesBaseKeys, Sector } from '@tee/common'
 
 export interface PublicodesInputData {
-  [PublicodesKeys.CodeNAF]?: string
-  [PublicodesKeys.CodeNAF1]?: string
-  [PublicodesKeys.ValidityStart]?: string
-  [PublicodesKeys.ValidityEnd]?: string
-  [PublicodesKeys.CurrentDate]: string
-  [PublicodesKeys.QuestionnaireRoute]?: PublicodesQuestionnaireRoute
-  [PublicodesKeys.Workforce]?: number
+  [PublicodesBaseKeys.CodeNAF]?: string
+  [PublicodesBaseKeys.CodeNAF1]?: string
+  [PublicodesBaseKeys.ValidityStart]?: string
+  [PublicodesBaseKeys.ValidityEnd]?: string
+  [PublicodesBaseKeys.CurrentDate]: string
+  [PublicodesBaseKeys.QuestionnaireRoute]?: PublicodesQuestionnaireRoute
+  [PublicodesBaseKeys.Workforce]?: number
   région?: string
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any

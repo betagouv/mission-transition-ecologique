@@ -1,4 +1,4 @@
-import { PublicodesKeys, QuestionnaireData, QuestionnaireDataEnum, QuestionnaireRoute } from '@tee/common'
+import { PublicodesBaseKeys, QuestionnaireData, QuestionnaireDataEnum, QuestionnaireRoute } from '@tee/common'
 import { Entry, setObjectProperty } from '../../src/common/objects'
 import { type ProgramType } from '@tee/data'
 import { PublicodesQuestionnaireRoute } from '../../src/program/infrastructure/types'
@@ -274,12 +274,12 @@ EXPECT recovers the data properly`, () => {
     keptQuestionnaireRoute: PublicodesQuestionnaireRoute,
     expectedKeep: boolean
   ) => {
-    const rule = `${PublicodesKeys.QuestionnaireRoute} = ${keptQuestionnaireRoute}`
+    const rule = `${PublicodesBaseKeys.QuestionnaireRoute} = ${keptQuestionnaireRoute}`
     testHelperPreprocessing({
       title: `questionnaireRoute (input: "${questionnaireRoute}", keep if converted to "${keptQuestionnaireRoute}")`,
       inputDataEntry: [QuestionnaireDataEnum.questionnaire_route, questionnaireRoute],
       inputDataSource: DataSources.Questionnaire,
-      publicodesKey: PublicodesKeys.QuestionnaireRoute,
+      publicodesKey: PublicodesBaseKeys.QuestionnaireRoute,
       filteringRule: rule,
       expectedKeep: expectedKeep
     })

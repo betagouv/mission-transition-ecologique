@@ -1,5 +1,5 @@
 import {
-  PublicodesKeys,
+  PublicodesBaseKeys,
   ProgramAidType,
   Region,
   ProgramOperatorType,
@@ -53,9 +53,9 @@ export default class ProgramFilter {
     }
 
     const publicodeObjective = Theme.getPublicodeObjectiveByObjective(objectiveTypeSelected)
-
-    if (program.publicodes[PublicodesKeys.hasObjective] && publicodeObjective) {
-      return program.publicodes[PublicodesKeys.hasObjective][PublicodesCondition.oneOfThese].includes(publicodeObjective)
+    console.log(publicodeObjective)
+    if (program.publicodes[PublicodesBaseKeys.hasObjective] && publicodeObjective) {
+      return program.publicodes[PublicodesBaseKeys.hasObjective][PublicodesCondition.oneOfThese].includes(publicodeObjective)
     }
 
     return true

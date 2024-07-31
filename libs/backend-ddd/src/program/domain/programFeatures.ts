@@ -31,6 +31,7 @@ export default class ProgramFeatures {
     }
 
     let filteredPrograms = filterPrograms(allPrograms, questionnaireData, this._currentDateService.get(), this._rulesService)
+    console.log('FILTERED PROGRAM', filteredPrograms)
     const route = questionnaireData.questionnaire_route
     if (route) {
       filteredPrograms = filteredPrograms.map((programs) => sortPrograms(programs, route))
@@ -54,6 +55,7 @@ export default class ProgramFeatures {
     const objectivesArray: Objective[] = []
     publicodeObjectives.forEach((publicodeObjective) => {
       const objectiveValue = Object.values(Objective).find((value) => publicodeObjective.includes(value as string))
+      console.log('OBJECTIVE VALUE', objectiveValue)
       if (objectiveValue) {
         objectivesArray.push(objectiveValue as Objective)
       }

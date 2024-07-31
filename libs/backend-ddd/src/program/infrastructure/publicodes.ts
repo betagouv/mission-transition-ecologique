@@ -4,7 +4,7 @@ import type { PublicodesInputData } from './types'
 import { filterObject } from '../../common/objects'
 import { preprocessInputForPublicodes } from './preprocessProgramsPublicodes'
 import { ProgramType } from '@tee/data'
-import { QuestionnaireData } from '@tee/common'
+import { QuestionnaireData, PublicodesKeys } from '@tee/common'
 
 /** Evaluates given program specific rules and user specific input data, if
  * the program should be displayed to the user.
@@ -43,4 +43,15 @@ const narrowInput = (data: PublicodesInputData, engine: Engine): Partial<Publico
   const allowed = Object.keys(parsedRules)
 
   return filterObject(data, (entry) => allowed.includes(entry[0]))
+}
+
+export const removePublicode = (program: ProgramType) => {
+  const publicodes = program.publicodes
+  const publicodesKeys = Object.keys(publicodes)
+  const formattedProgramPublicodes = publicodesKeys.reduce((acc, publicodeKey) => {
+    const formattedKey: string = PublicodesKeys[publicodeKey]
+    acc[formattedKey] = publicodes[publicodeKey]
+    return acc
+  }, {})
+  return { ...program, publicodes: formattedProgramPublicodes }
 }

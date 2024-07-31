@@ -89,7 +89,7 @@ export const Objectives = {
   [Objective.UnknownYet]: YesNo.No
 }
 
-export enum PublicodesKeys {
+export enum PublicodesBaseKeys {
   CodeNAF = 'entreprise . code NAF',
   ValidityStart = 'dispositif . début de validité',
   ValidityEnd = 'dispositif . fin de validité',
@@ -104,16 +104,32 @@ export enum PublicodesKeys {
   SectorActivity = "entreprise . secteur d'activité . est "
 }
 
+export const PublicodesKeys = {
+  [PublicodesBaseKeys.CodeNAF]: 'naf_code',
+  [PublicodesBaseKeys.ValidityStart]: 'start_validity',
+  [PublicodesBaseKeys.ValidityEnd]: 'end_validity',
+  [PublicodesBaseKeys.QuestionnaireRoute]: 'questionnaire_route',
+  [PublicodesBaseKeys.CurrentDate]: 'current_date',
+  [PublicodesBaseKeys.Workforce]: 'workforce',
+  [PublicodesBaseKeys.BuildingOwner]: 'building_owner',
+  [PublicodesBaseKeys.hasObjective]: 'objective',
+  [PublicodesBaseKeys.isTargeted]: 'targeted',
+  [PublicodesBaseKeys.CodeNAF1]: 'naf1',
+  [PublicodesBaseKeys.Goal]: 'goal',
+  [PublicodesBaseKeys.SectorActivity]: 'activity_sector',
+  entreprise: 'compagny'
+}
+
 export enum PublicodeObjective {
-  EnvironmentalImpact = PublicodesKeys.Goal + Objective.EnvironmentalImpact,
-  EnergyPerformance = PublicodesKeys.Goal + Objective.EnergyPerformance,
-  WaterConsumption = PublicodesKeys.Goal + Objective.WaterConsumption,
-  BuildingRenovation = PublicodesKeys.Goal + Objective.BuildingRenovation,
-  SustainableMobility = PublicodesKeys.Goal + Objective.SustainableMobility,
-  WasteManagement = PublicodesKeys.Goal + Objective.WasteManagement,
-  EcoDesign = PublicodesKeys.Goal + Objective.EcoDesign,
-  TrainOrRecruit = PublicodesKeys.Goal + Objective.TrainOrRecruit,
-  MakeSavings = PublicodesKeys.Goal + Objective.MakeSavings,
-  DurablyInvest = PublicodesKeys.Goal + Objective.DurablyInvest,
-  UnknownYet = PublicodesKeys.Goal + Objective.UnknownYet
+  EnvironmentalImpact = PublicodesBaseKeys.Goal + Objective.EnvironmentalImpact,
+  EnergyPerformance = PublicodesBaseKeys.Goal + Objective.EnergyPerformance,
+  WaterConsumption = PublicodesBaseKeys.Goal + Objective.WaterConsumption,
+  BuildingRenovation = PublicodesBaseKeys.Goal + Objective.BuildingRenovation,
+  SustainableMobility = PublicodesBaseKeys.Goal + Objective.SustainableMobility,
+  WasteManagement = PublicodesBaseKeys.Goal + Objective.WasteManagement,
+  EcoDesign = PublicodesBaseKeys.Goal + Objective.EcoDesign,
+  TrainOrRecruit = PublicodesBaseKeys.Goal + Objective.TrainOrRecruit,
+  MakeSavings = PublicodesBaseKeys.Goal + Objective.MakeSavings,
+  DurablyInvest = PublicodesBaseKeys.Goal + Objective.DurablyInvest,
+  UnknownYet = PublicodesBaseKeys.Goal + Objective.UnknownYet
 }

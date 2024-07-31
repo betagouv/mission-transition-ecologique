@@ -5,7 +5,7 @@ import {
   Objective,
   ObjectiveChecker,
   PublicodeObjective,
-  PublicodesKeys,
+  PublicodesBaseKeys,
   QuestionnaireData,
   QuestionnaireRoute,
   Sector,
@@ -30,7 +30,7 @@ export const preprocessInputForPublicodes = (
 ): PublicodesInputData => {
   const publicodesData: PublicodesInputData = {
     ...questionnaireData,
-    [PublicodesKeys.CurrentDate]: currentDate
+    [PublicodesBaseKeys.CurrentDate]: currentDate
   }
 
   setRegion(publicodesData, questionnaireData)
@@ -51,12 +51,12 @@ const setRegion = (publicodesData: PublicodesInputData, questionnaireData: Quest
 }
 const setStructureSize = (publicodesData: PublicodesInputData, questionnaireData: QuestionnaireData) => {
   if (questionnaireData.structure_size) {
-    publicodesData[PublicodesKeys.Workforce] = SizeToWorkforce[questionnaireData.structure_size]
+    publicodesData[PublicodesBaseKeys.Workforce] = SizeToWorkforce[questionnaireData.structure_size]
   }
 }
 const setCodeNAF = (publicodesData: PublicodesInputData, questionnaireData: QuestionnaireData) => {
   if (questionnaireData.codeNAF) {
-    publicodesData[PublicodesKeys.CodeNAF] = enquotePublicodesLiteralString(questionnaireData.codeNAF)
+    publicodesData[PublicodesBaseKeys.CodeNAF] = enquotePublicodesLiteralString(questionnaireData.codeNAF)
   }
 }
 const setSectors = (publicodesData: PublicodesInputData, questionnaireData: QuestionnaireData) => {
@@ -114,7 +114,7 @@ const setObjectives = (publicodesData: PublicodesInputData, questionnaireData: Q
       ? YesNo.Yes
       : YesNo.No
 
-    publicodesData[PublicodesKeys.BuildingOwner] =
+    publicodesData[PublicodesBaseKeys.BuildingOwner] =
       questionnaireData.building_property == BuildingProperty.Rents || questionnaireData.building_property == BuildingProperty.No
         ? YesNo.No
         : YesNo.Yes
@@ -123,7 +123,7 @@ const setObjectives = (publicodesData: PublicodesInputData, questionnaireData: Q
 const setQuestionnaireRoute = (publicodesData: PublicodesInputData, questionnaireData: QuestionnaireData) => {
   if (questionnaireData.questionnaire_route) {
     const route = questionnaireData.questionnaire_route
-    publicodesData[PublicodesKeys.QuestionnaireRoute] = convertQuestionnaireRoute(route)
+    publicodesData[PublicodesBaseKeys.QuestionnaireRoute] = convertQuestionnaireRoute(route)
   }
 }
 const setDateValidity = (publicodesData: PublicodesInputData, programData: ProgramType) => {
