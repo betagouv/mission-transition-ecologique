@@ -76,7 +76,7 @@ export const useNavigationStore = defineStore('navigation', () => {
   }
 
   function isCatalog() {
-    return isByRouteName(RouteName.Catalog)
+    return isByRouteName([RouteName.CatalogPrograms, RouteName.CatalogProjects])
   }
 
   function isByRouteName(routeName: string | string[]) {

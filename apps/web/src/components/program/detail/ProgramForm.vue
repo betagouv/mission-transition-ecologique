@@ -393,7 +393,7 @@ const saveOpportunityForm = async () => {
     requestResponse.value = await opportunity.fetch()
 
     // analytics / send event
-    Matomo.sendEvent(TrackId.Results, route.name === RouteName.CatalogDetail ? 'send_form_catalog' : 'send_form')
+    Matomo.sendEvent(TrackId.Results, route.name === RouteName.CatalogProgramDetail ? 'send_form_catalog' : 'send_form')
   } finally {
     isLoading.value = false
     formIsSent.value = true
