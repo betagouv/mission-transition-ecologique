@@ -288,7 +288,7 @@ const isProgramAutonomous = computed(() => {
 onBeforeMount(() => {
   program.value = programsStore.currentProgram
   // analytics / send event
-  Matomo.sendEvent('result_detail', route.name === RouteName.CatalogDetail ? 'show_detail_catalog' : 'show_detail', props.programId)
+  Matomo.sendEvent('result_detail', route.name === RouteName.CatalogProgramDetail ? 'show_detail_catalog' : 'show_detail', props.programId)
 })
 
 useHead({
@@ -307,7 +307,7 @@ const programIsAvailable = computed(() => {
 
 const scrollToProgramForm = () => {
   if (TeeProgramFormContainer.value) {
-    navigationStore.isByRouteName(RouteName.CatalogDetail)
+    navigationStore.isByRouteName(RouteName.CatalogProgramDetail)
       ? Scroll.to(TeeProgramFormContainer.value)
       : Scroll.toWithTopBarOffset(TeeProgramFormContainer.value)
   }

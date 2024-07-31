@@ -11,7 +11,7 @@
     message="Cette aide correspond à vos critères d’éligibilité"
     message-icon="fr-icon-checkbox-circle-fill"
   />
-  <div class="fr-container-fluid fr-px-0 fr-px-md-20v fr-mt-3v">
+  <div class="fr-container fr-mt-3v">
     <div class="fr-grid-row fr-grid-row-gutters">
       <div
         v-if="isCatalogDetail"
@@ -61,11 +61,11 @@ const project = ref<Project>()
 const projectStore = useProjectStore()
 
 const navigationStore = useNavigationStore()
-const isCatalogDetail = navigationStore.isByRouteName(RouteName.CatalogDetail)
+const isCatalogDetail = navigationStore.isByRouteName(RouteName.CatalogProgramDetail)
 const router = useRouter()
 
 const routeToResults = {
-  name: isCatalogDetail ? RouteName.Catalog : RouteName.QuestionnaireResult,
+  name: isCatalogDetail ? RouteName.CatalogPrograms : RouteName.QuestionnaireResult,
   hash: '#' + props.programId,
   query: isCatalogDetail ? undefined : navigationStore.query
 }

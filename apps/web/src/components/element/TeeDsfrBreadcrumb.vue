@@ -1,8 +1,7 @@
 <template>
-  <DsfrBreadcrumb
-    class="fr-pl-10v"
-    :links="allBreadcrumbs"
-  />
+  <div class="fr-container">
+    <DsfrBreadcrumb :links="allBreadcrumbs" />
+  </div>
 </template>
 <script setup lang="ts">
 import type { DsfrBreadcrumbProps } from '@gouvminint/vue-dsfr'
@@ -17,17 +16,39 @@ interface Props {
 const props = defineProps<Props>()
 const navigationStore = useNavigationStore()
 const usedTrackStore = useUsedTrackStore()
-const isCatalogDetail = navigationStore.isByRouteName(RouteName.CatalogDetail)
+const isProgramCatalogDetail = navigationStore.isByRouteName(RouteName.CatalogProgramDetail)
+const isProjectCatalogDetail = navigationStore.isByRouteName(RouteName.CatalogProjectDetail)
+const isCatalogDetail = isProgramCatalogDetail || isProjectCatalogDetail
 
-const routeToResults: RouteLocationAsRelativeGeneric = {
-  name: isCatalogDetail ? RouteName.Catalog : RouteName.QuestionnaireResult,
-  hash: '#' + props.resultHash,
+const getListText = () => {
+  if (isProgramCatalogDetail) {
+    return 'Liste des dispositifs'
+  } else if (isProjectCatalogDetail) {
+    return 'Liste des projets'
+  } else {
+    return 'Vos résultats'
+  }
+}
+const getBaseRouteName = () => {
+  if (isProgramCatalogDetail) {
+    return RouteName.CatalogPrograms
+  } else if (isProjectCatalogDetail) {
+    return RouteName.CatalogProjects
+  } else {
+    return RouteName.QuestionnaireResult
+  }
+}
+
+const routeToBaseList: RouteLocationAsRelativeGeneric = {
+  name: getBaseRouteName(),
+  hash: props.resultHash,
   query: isCatalogDetail ? undefined : navigationStore.query
 }
+
 const allBreadcrumbs = computed<DsfrBreadcrumbProps['links']>(() => {
   let baseLinks = [
     { text: 'Accueil', to: '/' },
-    { text: 'Vos résultats', to: routeToResults }
+    { text: getListText(), to: routeToBaseList }
   ]
   if (!isCatalogDetail) {
     const trackId = usedTrackStore.getPreviousCompletedUsedTrackId()
