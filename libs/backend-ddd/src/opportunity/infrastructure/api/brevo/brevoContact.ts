@@ -80,22 +80,16 @@ const convertCompanySize = (companySize: StructureSize): BrevoCompanySize => {
   switch (companySize) {
     case StructureSize.EI:
       return BrevoCompanySize.EI
-      break
     case StructureSize.ETI_GE:
       return BrevoCompanySize.MORE_THAN_250
-      break
     case StructureSize.TPE:
       return BrevoCompanySize.LESS_THAN_20
-      break
     case StructureSize.PE:
       return BrevoCompanySize.FROM_20_TO_49
-      break
     case StructureSize.ME:
       return BrevoCompanySize.FROM_50_TO_250
-      break
     default:
       Monitor.error('Company size not handled in brevoContact.')
       return BrevoCompanySize.FROM_20_TO_49
-      break
   }
 }
