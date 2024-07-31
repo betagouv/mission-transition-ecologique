@@ -1,5 +1,5 @@
 <template>
-  <DsfrHeader
+  <TeeDsfrHeader
     id="tee-header"
     service-title="Transition écologique des entreprises"
     service-description="Allier écologie avec économies !"
@@ -17,11 +17,10 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`TeeHeader > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import { DsfrHeader } from '@gouvminint/vue-dsfr'
 import { RouteName } from '@/types/routeType'
-import type { DsfrHeaderMenuLinkProps } from '@gouvminint/vue-dsfr/types/components/DsfrHeader/DsfrHeaderMenuLink.vue'
+import { TeeDsfrHeaderMenuLinkProps } from '@/components/header/TeeDsfrHeaderMenuLinks.vue'
 
-const quickLinks: DsfrHeaderMenuLinkProps[] = [
+const quickLinks: TeeDsfrHeaderMenuLinkProps[] = [
   {
     label: 'Accueil',
     to: {
@@ -29,10 +28,21 @@ const quickLinks: DsfrHeaderMenuLinkProps[] = [
     }
   },
   {
-    label: 'Annuaire',
-    to: {
-      name: RouteName.CatalogPrograms
-    }
+    label: 'Catalogue',
+    links: [
+      {
+        text: 'cataloque des aides',
+        to: {
+          name: RouteName.CatalogPrograms
+        }
+      },
+      {
+        text: 'catalogue des projets',
+        to: {
+          name: RouteName.CatalogProjects
+        }
+      }
+    ]
   }
 ]
 </script>

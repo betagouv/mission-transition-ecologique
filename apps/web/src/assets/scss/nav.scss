@@ -1,0 +1,10 @@
+@use 'setting';
+
+.tee-menu-secondary {
+  display: flex;
+  align-items: baseline;
+
+  button.fr-nav__btn {
+    color: setting.$blue-france;
+  }
+}
