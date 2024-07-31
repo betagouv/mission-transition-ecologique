@@ -1,6 +1,6 @@
 <template>
   <CatalogBanner>
-    <template #title> L'annuaire des aides publiques à la transition écologique </template>
+    <template #title> Le catalogue des aides publiques à la transition écologique </template>
     <template #description>
       Réalisez une recherche parmi les aides à la transition écologique des entreprises, proposées par l’ensemble des partenaires publics :
       ADEME, Bpifrance, CCI, CMA, etc.
