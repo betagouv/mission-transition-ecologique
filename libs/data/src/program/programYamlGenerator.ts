@@ -96,19 +96,19 @@ export class ProgramYamlGenerator {
     switch (program["Nature de l'aide"]) {
       case DataProgramType.Financing:
       case DataProgramType.FinancingStudy:
-        fileContent['montant du financement'] = program["Montant de l'aide"]
+        fileContent['montant du financement'] = program["Montant de l'aide ou coût"]
         return
       case DataProgramType.Study:
       case DataProgramType.Training:
-        fileContent["coût de l'accompagnement"] = program["Montant de l'aide"]
+        fileContent["coût de l'accompagnement"] = program["Montant de l'aide ou coût"]
         fileContent["durée de l'accompagnement"] = program["Durée de l'aide"]
         return
       case DataProgramType.Loan:
-        fileContent['montant du prêt'] = program["Montant de l'aide"]
+        fileContent['montant du prêt'] = program["Montant de l'aide ou coût"]
         fileContent['durée du prêt'] = program["Durée de l'aide"]
         return
       case DataProgramType.TaxAdvantage:
-        fileContent["montant de l'avantage fiscal"] = program["Montant de l'aide"]
+        fileContent["montant de l'avantage fiscal"] = program["Montant de l'aide ou coût"]
         return
       default:
         console.log("type d'aide non traitée dans les données financières")
