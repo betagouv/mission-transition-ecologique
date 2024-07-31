@@ -1,8 +1,8 @@
 <template>
-  <div class="fr-grid-row fr-my-10v">
+  <div class="fr-grid-row fr-grid-row--center fr-my-10v">
     <div
       v-if="image"
-      class="fr-col fr-col-6 fr-col-offset-3"
+      class="fr-col-5"
     >
       <img
         class="fr-responsive-img"
@@ -12,9 +12,9 @@
     </div>
     <div
       v-if="message"
-      class="fr-col fr-col-12"
+      class="fr-col-8"
     >
-      <p class="fr-text-center tee-text-no-result fr-mt-6v">
+      <p class="fr-text-center fr-h5 fr-text--blue-france fr-mt-6v">
         {{ message[Translation.lang] }}
       </p>
     </div>

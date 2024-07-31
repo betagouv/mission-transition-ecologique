@@ -2,8 +2,8 @@
   <div class="fr-col-9 fr-text-center">
     <ProgramListNoResults
       v-if="!countItems && !hasError"
-      image="images/tracks/no-results.svg"
-      :message="{ fr: 'Aucune aide n\'a pu être identifiée avec les critères choisis...' }"
+      image="images/tracks/no-results.png"
+      :message="{ fr: message }"
     />
     <TeeError
       v-else-if="hasError"
@@ -20,6 +20,7 @@ import ProgramListNoResults from '@/components/program/list/ProgramListNoResults
 interface Props {
   hasError?: boolean
   countItems?: number
+  message: string
 }
 defineProps<Props>()
 </script>

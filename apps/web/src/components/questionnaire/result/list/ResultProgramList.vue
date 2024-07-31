@@ -5,6 +5,7 @@
       <ResultListNoResults
         v-if="showNoResultsComponent"
         :has-error="hasError"
+        message="Aucune aide n\'a pu être identifiée sur cette thématique..."
         :count-items="countPrograms"
       />
     </div>

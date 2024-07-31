@@ -51,7 +51,7 @@
           />
           <ProgramListNoResults
             v-else-if="!countFilteredPrograms && !hasError"
-            image="images/tracks/no-results.svg"
+            image="images/tracks/no-results.png"
             :message="{ fr: 'Aucune aide n\'a pu être identifiée avec les critères choisis...' }"
           />
           <TeeError
