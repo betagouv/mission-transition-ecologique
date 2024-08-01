@@ -1,15 +1,13 @@
 import {
-  PublicodesBaseKeys,
   ProgramAidType,
   Region,
   ProgramOperatorType,
   type ProgramData,
   type programFiltersType,
-  PublicodesCondition,
   type ValueOf,
-  Objective
+  Objective,
+  FormattedPublicodesKeys
 } from '@/types'
-import { Theme } from '@/utils/theme'
 
 export default class ProgramFilter {
   static byAidType(program: ProgramData, programAidTypesSelected: ProgramAidType[]) {
@@ -52,10 +50,8 @@ export default class ProgramFilter {
       return true
     }
 
-    const publicodeObjective = Theme.getPublicodeObjectiveByObjective(objectiveTypeSelected)
-    console.log(publicodeObjective)
-    if (program.publicodes[PublicodesBaseKeys.hasObjective] && publicodeObjective) {
-      return program.publicodes[PublicodesBaseKeys.hasObjective][PublicodesCondition.oneOfThese].includes(publicodeObjective)
+    if (program.publicodes[FormattedPublicodesKeys.hasObjective]) {
+      return program.publicodes[FormattedPublicodesKeys.hasObjective].includes(objectiveTypeSelected)
     }
 
     return true
