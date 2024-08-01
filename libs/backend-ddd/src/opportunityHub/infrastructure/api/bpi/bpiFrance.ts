@@ -58,7 +58,7 @@ export class BpiFrance extends OpportunityHubAbstract {
       const response = await this.axios.post(this._contactUrl, contactPayloadDTO, {
         headers: AxiosHeaders.makeBearerHeader(tokenResult.value.access_token)
       })
-      if (response.data) {
+      if (response.status >= 200 && response.status < 300) {
         return Maybe.nothing()
       } else {
         Monitor.error('Error creating an opportunity at BPI during BPI API Call', { BpiResponse: response })
