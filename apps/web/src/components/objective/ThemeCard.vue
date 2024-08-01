@@ -38,7 +38,7 @@
       class="fr-hidden-xs fr-card__header"
       :class="`fr-card__header--${option.color}`"
     >
-      <div class="fr-card__img">
+      <div class="fr-card__img fr-card__img--contain">
         <img
           class="fr-responsive-img"
           height="200px"
