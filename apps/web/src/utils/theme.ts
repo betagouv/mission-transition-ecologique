@@ -1,5 +1,6 @@
 import { Color, Objective, PublicodeObjective, PublicodesKeys, ThemeId, ThemeType } from '@/types'
 import UsedTrack from '@/utils/track/usedTrack'
+import { Project } from '@tee/data'
 
 export class Theme {
   static themes: ThemeType[] = [
@@ -44,20 +45,20 @@ export class Theme {
       color: Color.green
     },
     {
-      id: ThemeId.Waste,
-      title: 'Déchets & réemploi',
-      tagLabel: '🗑 déchets',
-      value: Objective.WasteManagement,
-      image: '/images/thematique/thematique-dechets.svg',
-      color: Color.red
-    },
-    {
       id: ThemeId.EcoDesign,
       title: 'Éco-conception',
       tagLabel: '🔁 écoconception',
       value: Objective.EcoDesign,
       image: '/images/thematique/thematique-eco-conception.svg',
       color: Color.green
+    },
+    {
+      id: ThemeId.Waste,
+      title: 'Déchets & réemploi',
+      tagLabel: '🗑 déchets',
+      value: Objective.WasteManagement,
+      image: '/images/thematique/thematique-dechets.svg',
+      color: Color.red
     },
     {
       id: ThemeId.RH,
@@ -73,7 +74,7 @@ export class Theme {
     return this.themes.find((theme) => theme.id === id)
   }
 
-  static getByValue(value: Objective) {
+  static getByValue(value: Objective | undefined) {
     return this.themes.find((theme) => theme.value === value)
   }
 
@@ -116,7 +117,12 @@ export class Theme {
     return objective !== ''
   }
 
-  static getPublicodeObjectiveByObjective(objective: Objective): PublicodeObjective | undefined {
+  static getPriorityProjects(projects: Project[] | undefined) {
+    const sortedProjects = (projects as unknown as Project[]).sort((a, b) => a.priority - b.priority)
+    return { projects: sortedProjects.slice(0, 3), moreThanThree: sortedProjects.length > 3 }
+  }
+
+  static getPublicodeObjectiveByObjective(objective: Objective | undefined): PublicodeObjective | undefined {
     const key = Object.keys(PublicodeObjective).find(
       (key) => PublicodeObjective[key as keyof typeof PublicodeObjective] === ((PublicodesKeys.Goal + objective) as PublicodeObjective)
     ) as keyof typeof PublicodeObjective | undefined

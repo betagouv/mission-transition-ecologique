@@ -1,43 +1,9 @@
 <template>
-  <TeeEligibilityCriteriaBar
-    v-if="!isCatalogDetail"
-    :bg-color="Color.greenLightnessed"
-    :bg-bar-color="Color.greenLighted"
-    :previous-route="getRouteToPreviousPage()"
-    message="Cette aide correspond à vos critères d’éligibilité"
-    message-icon="fr-icon-checkbox-circle-fill"
+  <ProgramHeader
+    :program-id="programId"
+    :program="program"
+    :project-slug="projectSlug"
   />
-  <div class="fr-container fr-mt-3v">
-    <div class="fr-grid-row fr-grid-row-gutters">
-      <div
-        v-if="isCatalogDetail"
-        class="fr-col"
-      >
-        <!-- BACK TO RESULTS BTN -->
-        <button
-          class="fr-btn fr-btn--lg fr-btn--tertiary-no-outline fr-mb-3v fr-pl-2v"
-          @click="goToPrograms"
-        >
-          <v-icon
-            name="ri-arrow-left-line"
-            aria-hidden="true"
-            class="fr-mr-2v"
-          />
-          {{ Translation.t('results.backToResults') }}
-        </button>
-      </div>
-      <div
-        v-if="!program"
-        class="fr-col-12"
-      >
-        <TeeError
-          :mailto="Contact.email"
-          :email="Contact.email"
-        />
-      </div>
-    </div>
-  </div>
-
   <!-- ALERT - PROGRAM NOT AVAILABLE ANYMORE -->
   <div
     v-if="!programIsAvailable"
@@ -260,29 +226,25 @@ import ProgramLongDescription from '@/components/program/detail/ProgramLongDescr
 import ProgramObjective from '@/components/program/detail/ProgramObjective.vue'
 import ProgramTile from '@/components/program/detail/ProgramTile.vue'
 import Config from '@/config'
-import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
-import { Color, type ProgramData as ProgramType } from '@/types'
+import { type ProgramData as ProgramType } from '@/types'
 import { RouteName } from '@/types/routeType'
-import Contact from '@/utils/contact'
+import { useNavigationStore } from '@/stores/navigation'
 import Matomo from '@/utils/matomo'
 import Program from '@/utils/program/program'
 import { Scroll } from '@/utils/scroll'
 import Translation from '@/utils/translation'
 import { computed, onBeforeMount, ref } from 'vue'
-import { useRoute } from 'vue-router'
 
 const programsStore = useProgramStore()
 const navigationStore = useNavigationStore()
-const route = useRoute()
-const router = useRouter()
 
+const route = useRoute()
 const program = ref<ProgramType>()
 const TeeProgramFormContainer = ref<HTMLElement | null | undefined>(null)
 
 const blockColor = '#000091'
 const publicPath = Config.publicPath
-const isCatalogDetail = navigationStore.isByRouteName(RouteName.CatalogProgramDetail)
 
 interface Props {
   programId: string
@@ -320,28 +282,8 @@ const isProgramAutonomous = computed(() => {
   return program.value?.[`activable en autonomie`] == 'oui'
 })
 
-const getRouteToPreviousPage = () => {
-  const routeToPrograms = {
-    hash: '#' + props.programId,
-    query: isCatalogDetail ? undefined : navigationStore.query
-  }
-  if (isCatalogDetail) {
-    return { ...routeToPrograms, name: RouteName.CatalogPrograms }
-  }
-  if (navigationStore.isByRouteName(RouteName.ProgramFromProjectDetail)) {
-    return { name: RouteName.ProjectResultDetail, params: { projectSlug: props.projectSlug }, ...routeToPrograms }
-  }
-
-  return { name: RouteName.QuestionnaireResult, ...routeToPrograms }
-}
-
-const goToPrograms = async () => {
-  await router.push(getRouteToPreviousPage())
-}
-
 onBeforeMount(() => {
   program.value = programsStore.currentProgram
-
   // analytics / send event
   Matomo.sendEvent('result_detail', route.name === RouteName.CatalogProgramDetail ? 'show_detail_catalog' : 'show_detail', props.programId)
 })

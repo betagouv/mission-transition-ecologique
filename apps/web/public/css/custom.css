@@ -132,12 +132,6 @@ button.fr-link:hover, .tee-router-link:hover {
 .tee-text-blue {
   color: #000091;
 }
-.tee-text-no-result {
-  font-size: 2rem;
-  font-weight: bold;
-  line-height: 2.5rem;
-  color: #000091;
-}
 .tee-mb-none {
   margin-bottom: 0 !important
 }

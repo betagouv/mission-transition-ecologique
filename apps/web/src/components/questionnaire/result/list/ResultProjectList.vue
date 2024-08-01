@@ -7,6 +7,7 @@
           <ResultListNoResults
             v-if="showNoResults"
             :has-error="hasError"
+            message="Aucune idée d’action n’a pu être identifiée sur cette thématique..."
             :count-items="countProjects"
           />
         </div>

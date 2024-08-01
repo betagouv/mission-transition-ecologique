@@ -57,7 +57,7 @@ export class ProgramYamlGenerator {
       program['Autres opérateurs'].map((operator) => operator.Nom)
     )
     addField('url', program['URL externe'])
-    addField("nature de l'aide", program["Nature de l'aide"].toLowerCase())
+    this._setProgramType(yamlContent, program)
     this._setFinancialData(yamlContent, program)
     if (program['Dispositif activable en autonomie']) {
       addField('activable en autonomie', 'oui')
@@ -68,6 +68,13 @@ export class ProgramYamlGenerator {
 
     const yamlString = yaml.dump(yamlContent)
     fs.writeFileSync('programs/' + program['Id fiche dispositif'] + '.yaml', yamlString, 'utf8')
+  }
+  private _setProgramType(fileContent: { [key: string]: unknown }, program: DataProgram) {
+    let helpType = program["Nature de l'aide"].toLowerCase()
+    if (helpType === 'financement-étude') {
+      helpType = 'étude'
+    }
+    fileContent["nature de l'aide"] = helpType
   }
 
   private _setIllustration(programId: string): string {
@@ -86,26 +93,27 @@ export class ProgramYamlGenerator {
   }
 
   private _setFinancialData(fileContent: { [key: string]: unknown }, program: DataProgram) {
-    if (program["Nature de l'aide"] == DataProgramType.Financing) {
-      fileContent['montant du financement'] = program["Montant de l'aide"]
-      return
+    switch (program["Nature de l'aide"]) {
+      case DataProgramType.Financing:
+      case DataProgramType.FinancingStudy:
+        fileContent['montant du financement'] = program["Montant de l'aide ou coût"]
+        return
+      case DataProgramType.Study:
+      case DataProgramType.Training:
+        fileContent["coût de l'accompagnement"] = program["Montant de l'aide ou coût"]
+        fileContent["durée de l'accompagnement"] = program["Durée de l'aide"]
+        return
+      case DataProgramType.Loan:
+        fileContent['montant du prêt'] = program["Montant de l'aide ou coût"]
+        fileContent['durée du prêt'] = program["Durée de l'aide"]
+        return
+      case DataProgramType.TaxAdvantage:
+        fileContent["montant de l'avantage fiscal"] = program["Montant de l'aide ou coût"]
+        return
+      default:
+        console.log("type d'aide non traitée dans les données financières")
+        return
     }
-    if (program["Nature de l'aide"] == DataProgramType.Accompagnement || program["Nature de l'aide"] == DataProgramType.Training) {
-      fileContent["coût de l'accompagnement"] = program['Coût reste à charge']
-      fileContent["durée de l'accompagnement"] = program['Prestation (durée + étalement)']
-      return
-    }
-    if (program["Nature de l'aide"] == DataProgramType.Loan) {
-      fileContent['durée du prêt'] = program['Prestation (durée + étalement)']
-      fileContent['montant du prêt'] = `De ${program['MontantMin aide']}€ à ${program['MontantMax aide']}€`
-      return
-    }
-    if (program["Nature de l'aide"] == DataProgramType.TaxAdvantage) {
-      fileContent["montant de l'avantage fiscal"] = program["Montant de l'aide"]
-      return
-    }
-    console.log("type d'aide non traitée dans les données financières")
-    return
   }
 
   private _parseStep(step: string): YamlObjective {

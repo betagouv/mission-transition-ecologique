@@ -11,6 +11,7 @@ import {
   type LocationQueryValue,
   type RouteLocationNormalizedLoaded,
   type RouteLocationRaw,
+  type RouteLocationAsRelativeGeneric,
   type Router
 } from 'vue-router'
 import { RouteName } from '@/types/routeType'
@@ -54,7 +55,7 @@ export const useNavigationStore = defineStore('navigation', () => {
     return query
   }
 
-  function routeByTrackId(trackId: TrackId) {
+  function routeByTrackId(trackId: TrackId): RouteLocationAsRelativeGeneric {
     let route: RouteLocationRaw = {
       name: RouteName.Questionnaire,
       params: { trackId: trackId },

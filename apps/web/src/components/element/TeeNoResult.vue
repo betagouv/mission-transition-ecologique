@@ -1,17 +1,17 @@
 <template>
-  <div class="fr-grid-row fr-my-10v">
-    <div class="fr-col fr-col-6 fr-col-offset-3">
+  <div class="fr-grid-row fr-grid-row--center fr-my-10v">
+    <div class="fr-col-5">
       <img
         class="fr-responsive-img"
-        src="/images/tracks/no-results.svg"
+        src="/images/tracks/no-results.png"
         :alt="`image / pas de résultat`"
       />
     </div>
     <div
       v-if="message"
-      class="fr-col fr-col-12"
+      class="fr-col-8"
     >
-      <p class="fr-text-center tee-text-no-result fr-mt-6v">
+      <p class="fr-text-center fr-h5 fr-text--blue-france fr-mt-6v">
         {{ message }}
       </p>
     </div>

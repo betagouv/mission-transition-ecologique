@@ -16,6 +16,7 @@
       <ResultListNoResults
         v-else-if="showNoResultsComponent"
         :has-error="hasError"
+        message="Aucune aide n\'a pu être identifiée sur cette thématique..."
         :has-spinner="hasSpinner"
         :count-items="countPrograms"
       />

@@ -73,8 +73,8 @@
     "nameTag": "🧴 réduction emballages",
     "shortDescription": "Diminuer vos emballages plastiques et favoriser des solutions de réemploi.",
     "image": "/images/projet/reduction-emballages.webp",
-    "longDescription": "*“L’emballage le plus respectueux de l’environnement reste celui que l’on ne produit pas”*. \\\nMoins de matières premières extraites, transportées et transformées, donc moins de déchets d’emballages à gérer après usage. \\\n\\\nLa loi AGEC fixe des objectifs ambitieux sur la réduction des emballages à usage unique et notamment la fin de la mise sur le marché d'emballages en plastique à usage unique d'ici à 2040. Les entreprises sont encouragées à mettre en œuvre des actions pour la réduction, la réutilisation, le réemploi et le recyclage des emballages en plastique à usage unique.",
-    "moreDescription": "- [**L’observatoire du réemploi et de la réutilisation**](https://filieres-rep.ademe.fr/observatoire-reemploi-reutilisation/presentation)**.** Un site expert sur les questions de réemploi et de réutilisation des produits et emballages soumis au principe de REP (responsabilité élargie des producteurs).\n\n- [**Comprendre le concept du pollueur payeur**](https://www.ecologie.gouv.fr/sites/default/files/19049_Decryptons_Fili%C3%A8res_REP.pdf) : plus un produit est polluant, plus les coûts pour sa fin de vie sont importants pour le producteur.\n\n- [**Le paradoxe du plastique.**](https://librairie.ademe.fr/ged/6402/guide-paradoxe-plastique-10-questions.pdf) Pourquoi et comment sortir de notre dépendance aux plastiques ? Ce guide fait le tour de la question et des solutions.",
+    "longDescription": "*“L’emballage le plus respectueux de l’environnement reste celui que l’on ne produit pas”*. \\\nMoins de matières premières extraites, transportées et transformées, donc moins de déchets d’emballages à gérer après usage. \\\n\\\nLa loi AGEC fixe des objectifs ambitieux sur la réduction des emballages à usage unique et notamment la fin de la mise sur le marché d'emballages en plastique à usage unique d'ici à 2040. Les entreprises sont encouragées à mettre en œuvre des actions pour la réduction, la réutilisation, le réemploi et le recyclage des emballages en plastique à usage unique.\n\nLa Responsabilité Elargie du Producteur (REP) implique que les producteurs sont responsables de la gestion des déchets générés par les produits qu'ils mettent sur le marché.",
+    "moreDescription": "- [**Tout savoir sur la loi AGEC**](https://www.ecologie.gouv.fr/loi-anti-gaspillage-economie-circulaire) : La loi anti-gaspillage pour une économie circulaire.\n\n- [**Quelles sont les produits concernés par la Responsabilité Elargie du Producteur (REP)** ](https://filieres-rep.ademe.fr/filieres-rep)**?** par l’observatoire du réemploi et de la réutilisation.\n\n- [**Le paradoxe du plastique.**](https://librairie.ademe.fr/ged/6402/guide-paradoxe-plastique-10-questions.pdf) Pourquoi et comment sortir de notre dépendance aux plastiques ? Ce guide fait le tour de la question et des solutions.",
     "themes": [
       "waste",
       "eco-design"
@@ -102,6 +102,7 @@
     ],
     "mainTheme": "energy",
     "programs": [
+      "etude-solaire-thermique",
       "investissement-solaire-thermique",
       "investissement-solaire-thermique-outre-mer",
       "tremplin",
@@ -319,13 +320,15 @@
     "shortDescription": "L’isolation thermique permet de réduire les pertes de chaleur de vos locaux et de diminuer vos dépenses énergétiques.",
     "image": "/images/projet/isolation-thermique.webp",
     "longDescription": "L’isolation thermique des bâtiments permet de garantir le confort en été comme en hiver en limitant le recours à la climatisation et au chauffage. Un logement mal isolé génère des pertes conséquentes de chaleur en hiver et de fraîcheur en été par le toit, les murs, les portes, les fenêtres et le sol.\\\nGrâce à des travaux d’isolation, vous diminuez vos factures d’énergie et améliorez votre confort tout au long de l’année.",
-    "moreDescription": "- [**Les exigences réglementaires pour les travaux de rénovation**](https://librairie.ademe.fr/ged/8069/fiche-exigences-reglementaires-renovation.pdf), une fiche pratique de l'ADEME.\n- [**L'annuaire des professionnels RGE et des architectes,**](https://france-renov.gouv.fr/annuaires-professionnels/artisan-rge-architecte) trouver un professionnel RGE, compétent pour réaliser des travaux d'isolation thermique.",
+    "moreDescription": "- [**Les exigences réglementaires pour les travaux de rénovation**](https://librairie.ademe.fr/ged/8069/fiche-exigences-reglementaires-renovation.pdf), une fiche pratique de l'ADEME.\n- [**L'annuaire des professionnels RGE et des architectes,**](https://france-renov.gouv.fr/annuaires-professionnels/artisan-rge-architecte) trouver un professionnel RGE, compétent pour réaliser des travaux d'isolation thermique.\n- [**Guide pratique de l'ADEME** ](https://librairie.ademe.fr/ged/6488/guide-pratique-isoler-sa-maison.pdf)\"Isoler, la clé d’une rénovation réussie\"",
     "themes": [
       "building"
     ],
     "mainTheme": "building",
     "programs": [
       "fonds-tourisme-durable",
+      "renovation-energetique",
+      "renovation-petit-tertiaire-prive",
       "pret-economies-d-energie-pee",
       "pret-vert"
     ],
@@ -340,7 +343,7 @@
     "shortDescription": "Favorisez les déplacements durables des personnes et des biens liés à l’activité de votre entreprise.",
     "image": "/images/projet/plan-mobilite.webp",
     "longDescription": "Un plan de mobilité entreprise (PDE) est « *un ensemble de mesures qui vise à optimiser et augmenter l'efficacité des déplacements liés à l’activité d'une entreprise, pour diminuer les émissions polluantes et réduire le trafic routier* ». Il encourage l'usage des transports en commun, du covoiturage et des mobilités actives (marche, vélo, etc.)\n\nIl se base sur une analyse globale des déplacements de l’entreprise (trajets domicile-travail des employés, déplacements professionnels, mobilité des clients, fournisseurs et partenaires) pour proposer un plan d’action adapté aux caractéristiques de l’entreprise.\n\nParmi ses bénéfices, on compte l’amélioration de la qualité de vie des collaborateurs, la réduction de l’impact environnemental de votre activité et l’optimisation de vos coûts liés à la mobilité.",
-    "moreDescription": "- [**Un plan de mobilité dans mon entreprise**](https://librairie.ademe.fr/ged/1555/plan-mobilite-entreprise-010502.pdf)**,** une mise en oeuvre en 5 étapes.\n- [**Changer de mobilité dans le cadre de ses trajets domicile-travail**,](https://agirpourlatransition.ademe.fr/particuliers/bureau/deplacements/trajets-domicile-travail-aussi-optez-mobilite-plus-durable) témoignages d'employés ayant fait le choix de mobilités douces.\n- [**Boîte à outils Plan de mobilité employeur**](https://librairie.ademe.fr/mobilite-et-transport/231-boite-a-outils-plan-de-mobilite-employeur.html), des fiches pratiques pour réaliser un plan de mobilité en autonomie.",
+    "moreDescription": "- [**Un plan de mobilité dans mon entreprise**](https://librairie.ademe.fr/ged/1555/plan-mobilite-entreprise-010502.pdf)**,** une mise en oeuvre en 5 étapes.\n- [**Changer de mobilité dans le cadre de ses trajets domicile-travail**,](https://agirpourlatransition.ademe.fr/particuliers/bureau/deplacements/trajets-domicile-travail-aussi-optez-mobilite-plus-durable) témoignages d'employés ayant fait le choix de mobilités douces.\n- [**Boîte à outils Plan de mobilité employeur**](https://librairie.ademe.fr/mobilite-et-transport/231-boite-a-outils-plan-de-mobilite-employeur.html), des fiches pratiques pour réaliser un plan de mobilité en autonomie.\n- [**La mobilité de demain**](https://archives.qqf.fr/infographie/60/la-mobilite-de-demain), une infographie *\"Qu'est-ce qu'on fait ?!\"* proposée par l'ADEME.",
     "themes": [
       "mobility"
     ],
@@ -362,7 +365,7 @@
     "shortDescription": "Le rétrofit consiste à remplacer le moteur de son véhicule thermique par un moteur électrique.",
     "image": "/images/projet/retrofit.webp",
     "longDescription": "Depuis le 4 avril 2020, il est autorisé d’électrifier un véhicule thermique. Cette pratique, appelée rétrofit, consiste à retirer le moteur thermique (essence ou diesel) ainsi que le réservoir du véhicule et à les remplacer par un moteur électrique et une batterie.\n\nLe rétrofit électrique permet d’augmenter la part de voitures électriques en circulation et ainsi de diminuer les quantités de CO2 et de polluants atmosphériques émises lors des déplacements quotidiens.\n\nEn réhabilitant de vieux véhicules thermiques, le retrofit constitue également une alternative à la fabrication de nouveaux véhicules. Ainsi, il participe  à la réduction des émissions de gaz à effet de serre en diminuant les consommations de ressources nécessaires à la fabrication de véhicules électriques neufs.",
-    "moreDescription": "- [**Car labelling**](https://carlabelling.ademe.fr/), une fiche de l'ADEME pour comparer l'impact environnemental des véhicules neufs.\n-",
+    "moreDescription": "- [**Tout savoir sur le retrofit éléctrique**](https://www.ecologie.gouv.fr/politiques-publiques/savoir-retrofit-electrique)**.**",
     "themes": [
       "mobility"
     ],
@@ -384,7 +387,7 @@
     "shortDescription": "Un véhicule propre est un véhicule produisant peu d'émissions polluantes lors de son utilisation.",
     "image": "/images/projet/vehicule-propre.webp",
     "longDescription": "Vélo, véhicule électrique ou hybride, engin moins polluant… Faites-vous accompagner financièrement dans l'acquisition d'un véhicule propre pour vos déplacements professionnels, vos trajets domicile-travail, la mobilité de vos fournisseurs, ou les engins liés à la production. Ainsi, répondez à vos obligations légales, et pratiquez une mobilité verte.",
-    "moreDescription": "- [**Mon entreprise à l'heure des mobilités durables**](https://www.ecologie.gouv.fr/sites/default/files/documents/22061-3_Mobilite%20durable%20entrepriseA4_web.pdf)**,** les obligations et dispositifs de soutien dans le secteur privé\n- [**Voitures électriques et bornes de recharge**](https://librairie.ademe.fr/mobilite-et-transport/5877-avis-de-l-ademe-voitures-electriques-et-bornes-de-recharges.html), l'avis de l'ADEME",
+    "moreDescription": "- [**Mon entreprise à l'heure des mobilités durables**](https://www.ecologie.gouv.fr/sites/default/files/documents/22061-3_Mobilite%20durable%20entrepriseA4_web.pdf)**,** les obligations et dispositifs de soutien dans le secteur privé\n- [**Voitures électriques et bornes de recharge**](https://librairie.ademe.fr/mobilite-et-transport/5877-avis-de-l-ademe-voitures-electriques-et-bornes-de-recharges.html), l'avis de l'ADEME\n- [**Car labelling**](https://carlabelling.ademe.fr/), une fiche de l'ADEME pour comparer l'impact environnemental des véhicules neufs.",
     "themes": [
       "mobility"
     ],
@@ -431,7 +434,7 @@
     "shortDescription": "Amélioration de la performance environnementale de mon produit ou service.",
     "image": "/images/projet/plan-action-eau.webp",
     "longDescription": "Raréfaction de l'eau, restriction des consommations, augmentation des coûts : maîtriser sa consommation d’eau est un enjeu essentiel pour les entreprises.\n\nComment agir au sein de votre entreprise pour poursuivre votre activité et faire des économies d’eau ?\n\nFaites-vous accompagner par un expert, et réalisez un diagnostic global de vos flux (énergie, déchets, eau...) ou une étude ciblée de votre consommation d'eau.",
-    "moreDescription": "- [**10 conseils aux entreprises pour une sobriété en eau**](https://www.cci.fr/actualites/10-conseils-aux-entreprises-pour-une-sobriete-en-eau). Une fiche conseil proposée par la CCI, Chambre de Commerce et d’Industrie.",
+    "moreDescription": "- [**Eau secours, demain tous à sec**](https://www.qqf.fr/infographie/eau-secours-demain-tous-a-sec/), une infographie *\"Qu'est-ce qu'on fait ?!\"* proposée par l'ADEME.\n- [**10 conseils aux entreprises pour une sobriété en eau**](https://www.cci.fr/actualites/10-conseils-aux-entreprises-pour-une-sobriete-en-eau). Une fiche conseil proposée par la CCI, Chambre de Commerce et d’Industrie.",
     "themes": [
       "water"
     ],
@@ -470,7 +473,7 @@
     "shortDescription": "Mettre en place une stratégie de consommation ou de conception responsable du numérique.",
     "image": "/images/projet/numerique-responsable.webp",
     "longDescription": "Si le numérique semble virtuel, son impact est pourtant bien réel : que ce soit sur le plan énergétique, l’utilisation de matières premières nécessaires à la fabrication des équipements ou encore par les déchets électroniques qu’il génère.\n\nLes entreprises doivent mettre en œuvre des stratégies qui permettent de faire évoluer leurs politiques d’achats, d’allonger la durée de vie des équipements ou encore d’adopter une démarche de conception responsable des services numériques.\n\nPour encadrer ces pratiques, la loi AGEC fixe aux entreprises des dispositions pour rallonger la durée de vie des produits numériques et la loi REEN vise à limiter le renouvellement des appareils numériques en interdisant les pratiques d’obsolescence et en favorisant le réemploi et la réutilisation. Elle encourage également l'usage de centres de données et des réseaux moins énergivores.",
-    "moreDescription": "- [**L'impact des bonnes pratiques numériques écoresponsables au sein de votre organisation**](https://ecoresponsable.numerique.gouv.fr/publications/impact-bonnes-pratiques/)**.**\n\n- [**Le**](https://accessibilite.numerique.gouv.fr/) **numérique responsable,** vision d'ensemble du cadre législatif par le ministère de la transition écologique et de la cohésion des territoires. \n\n- [**Le Référentiel général d'écoconception de services numériques (RGESN)**](https://ecoresponsable.numerique.gouv.fr/publications/referentiel-general-ecoconception/). Il définit les critères de conception durable des services numériques afin d'en réduire l'empreinte environnementale.",
+    "moreDescription": "- [**L'impact des bonnes pratiques numériques écoresponsables au sein de votre organisation**](https://ecoresponsable.numerique.gouv.fr/publications/impact-bonnes-pratiques/)**.**\n\n- [**Pollution numérique**](https://archives.qqf.fr/infographie/69/pollution-numerique-du-clic-au-declic)**, du clic au déclic**, une infographie *\"Qu'est-ce qu'on fait ?!\"* \n\n- [**Le**](https://accessibilite.numerique.gouv.fr/) **numérique responsable,** vision d'ensemble du cadre législatif par le ministère de la transition écologique et de la cohésion des territoires.\n\n- [**Le Référentiel général d'écoconception de services numériques (RGESN)**](https://ecoresponsable.numerique.gouv.fr/publications/referentiel-general-ecoconception/). Il définit les critères de conception durable des services numériques afin d'en réduire l'empreinte environnementale.",
     "themes": [
       "eco-design"
     ],
@@ -560,7 +563,7 @@
     "shortDescription": "Sensibiliser votre équipe sur les enjeux environnementaux de votre activité et sur les éco-gestes à mettre en place au quotidien.",
     "image": "/images/projet/sensibilisation-equipes.webp",
     "longDescription": "La sensibilisation à l'environnement en entreprise est indispensable pour une mobilisation globale face aux défis climatiques. Cela peut se traduire par des ateliers collaboratifs et formations sur une thématique environnementale, des retours d'apprentissage d'autres entreprises, ou des défis à relever sous la forme d'un jeu en équipe.\n\nLa participation active des équipes est clé pour que chacun se sente connecté aux objectifs durables de l'entreprise et motivé pour faire évoluer ses pratiques.",
-    "moreDescription": "- [**Écoresponsable au bureau**](https://librairie.ademe.fr/ged/6698/guide-ecoresponsable-bureau-202209.pdf), un guide de bonnes pratiques proposé par l'ADEME.",
+    "moreDescription": "- [**Écoresponsable au bureau**](https://librairie.ademe.fr/ged/6698/guide-ecoresponsable-bureau-202209.pdf), un guide de bonnes pratiques proposé par l'ADEME.\n- [**Sensibilisation aux écogestes,**](https://www.economie.gouv.fr/mission-innovation/les-actions-vertes/sensibilisation-aux-ecogestes) par l'équipe du BercyLab.",
     "themes": [
       "rh"
     ],
@@ -574,7 +577,7 @@
   {
     "id": 27,
     "slug": "recrutement",
-    "title": "Recrutement RSE",
+    "title": "Recrutement",
     "nameTag": "🧍‍♂️recrutement",
     "shortDescription": "Recruter un profil sur des missions de transition écologique et énergétique.",
     "image": "/images/projet/recrutement.webp",
@@ -722,7 +725,7 @@
     "shortDescription": "Adaptez la stratégie et les actions de votre entreprise pour faire face aux évolutions du climat.",
     "image": "/images/projet/plan-adaptation-climat.webp",
     "longDescription": "Le plan d’adaptation au dérèglement climatique est un accompagnement qui vous permet d'évaluer la vulnérabilité climatique de votre entreprise face aux conséquences du changement climatique (canicule, sécheresse, inondations…), et de bâtir sa résilience. Ainsi, vous poursuivez votre activité en limitant les effets néfastes, et vous planifiez la réduction des émissions de gaz à effet de serre de votre entreprise.",
-    "moreDescription": "- [**Stratégie d’adaptation au changement climatique**](https://agirpourlatransition.ademe.fr/entreprises/strategie-adaptation#summaryAnchor_2)**,** pourquoi est-il important d’anticiper les impacts du changement climatique ?\n- [**Ils l'ont fait :**](https://librairie.ademe.fr/changement-climatique-et-energie/6728-en-entreprise-comment-s-engager-dans-un-parcours-d-adaptation-au-changement-climatique-.html) une sélection de 30 témoignages d'entreprises françaises qui se sont lancées.\n- [**Comment prendre des décisions pour s'adapter au changement climatique ?** ](https://librairie.ademe.fr/ged/6327/entreprise_comment_prendre_des_decisions.pdf)Un recueil de fiches méthodes et études de cas.",
+    "moreDescription": "- [**Stratégie d’adaptation au changement climatique**](https://agirpourlatransition.ademe.fr/entreprises/strategie-adaptation#summaryAnchor_2)**,** pourquoi est-il important d’anticiper les impacts du changement climatique ?\n- [**Changement climatique, il y a urgence à s'adapter**](https://archives.qqf.fr/infographie/90/changement-climatique-il-y-a-urgence-a-s-adapter) : une infographie *\"Qu'est-ce qu'on fait ?!\"* proposée par l'ADEME.\n- [**Ils l'ont fait :**](https://librairie.ademe.fr/changement-climatique-et-energie/6728-en-entreprise-comment-s-engager-dans-un-parcours-d-adaptation-au-changement-climatique-.html) une sélection de 30 témoignages d'entreprises françaises qui se sont lancées.\n- [**Comment prendre des décisions pour s'adapter au changement climatique ?** ](https://librairie.ademe.fr/ged/6327/entreprise_comment_prendre_des_decisions.pdf)Un recueil de fiches méthodes et études de cas.",
     "themes": [
       "environmental"
     ],
