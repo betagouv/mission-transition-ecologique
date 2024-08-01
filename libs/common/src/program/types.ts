@@ -1,4 +1,5 @@
-import { Objective, ProgramOperatorType, ProgramAidType, FormattedPublicodesKeys } from '@/types'
+import { Objective, FormattedPublicodesKeys } from '../questionnaire/types/types'
+import { ProgramOperatorType, ProgramAidType } from '@tee/data'
 
 interface ProgramObjectiveLink {
   lien: string
@@ -9,7 +10,6 @@ interface ProgramObjective {
   description: string
   liens: ProgramObjectiveLink[]
 }
-
 export interface ProgramData {
   id: string
   titre: string
