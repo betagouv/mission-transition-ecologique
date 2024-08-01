@@ -14,6 +14,6 @@ import { RouteName } from '@/types/routeType'
 
 const navigationStore = useNavigationStore()
 const isCatalogRoot = computed(() => {
-  return navigationStore.isByRouteName(RouteName.Catalog)
+  return navigationStore.isByRouteName(RouteName.CatalogPrograms)
 })
 </script>
