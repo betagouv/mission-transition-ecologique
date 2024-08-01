@@ -23,7 +23,7 @@
         <div class="fr-col-12 fr-col-justify--left fr-mt-3v">
           <ThemeFilter />
         </div>
-        <ThemeCard
+        <ThemeHeaderCard
           v-if="hasThemeCard"
           class="fr-col-12 fr-mt-3v"
           :objective="objective as Objective"

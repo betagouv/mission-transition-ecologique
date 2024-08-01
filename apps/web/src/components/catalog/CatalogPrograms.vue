@@ -34,7 +34,7 @@
     >
       <div class="fr-container fr-m-0 fr-p-0 fr-px-md-2v fr-mt-3v">
         <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2">
-          <ThemeCard
+          <ThemeHeaderCard
             :objective="objective as Objective"
             radius-corner="tr"
             radius-size="2-5v"
