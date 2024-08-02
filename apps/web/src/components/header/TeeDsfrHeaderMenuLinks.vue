@@ -11,14 +11,14 @@
         <li>
           <DsfrHeaderMenuLink
             v-if="!quickLink.links"
-            class="fr-mr-3w fr-p-md-2w"
+            class="fr-mr-md-2w fr-p-md-2w"
             v-bind="quickLink"
             @click="handleClick($event, quickLink)"
           />
           <template v-else>
             <!-- DROPDOWN MENU ITEM - DISPLAY WIDER THAN MD -->
             <DsfrNavigation
-              class="fr-hidden fr-unhidden-md tee-header-menu-sub-navigation"
+              class="fr-hidden fr-unhidden-lg tee-header-menu-sub-navigation fr-mr-2w fr-mr-lg-0"
               :nav-items="[{ title: 'Catalogue', links: quickLink.links }]"
               aria-label="Sous Menu secondaire"
             />
@@ -29,7 +29,7 @@
                 :key="childIndex"
               >
                 <DsfrHeaderMenuLink
-                  class="fr-hidden-md"
+                  class="fr-hidden-lg fr-p-md-2w"
                   v-bind="childLink"
                   @click="handleClick($event, childLink)"
                 />
