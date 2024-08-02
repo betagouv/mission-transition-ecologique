@@ -31,7 +31,7 @@ const quickLinks: TeeDsfrHeaderMenuLinkProps[] = [
     label: 'Catalogue',
     links: [
       {
-        text: 'cataloque des aides',
+        text: 'catalogue des aides',
         to: {
           name: RouteName.CatalogPrograms
         }
