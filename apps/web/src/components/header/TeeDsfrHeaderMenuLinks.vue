@@ -3,7 +3,7 @@
     role="navigation"
     :aria-label="navAriaLabel"
   >
-    <ul class="fr-btns-group tee-menu-secondary">
+    <ul class="fr-btns-group">
       <template
         v-for="(quickLink, index) in links"
         :key="index"
@@ -11,14 +11,14 @@
         <li>
           <DsfrHeaderMenuLink
             v-if="!quickLink.links"
-            class="fr-mr-3w"
+            class="fr-mr-3w fr-p-md-2w"
             v-bind="quickLink"
             @click="handleClick($event, quickLink)"
           />
           <template v-else>
             <!-- DROPDOWN MENU ITEM - DISPLAY WIDER THAN MD -->
             <DsfrNavigation
-              class="fr-hidden fr-unhidden-md"
+              class="fr-hidden fr-unhidden-md tee-header-menu-sub-navigation"
               :nav-items="[{ title: 'Catalogue', links: quickLink.links }]"
               aria-label="Sous Menu secondaire"
             />
