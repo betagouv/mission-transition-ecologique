@@ -1,113 +1,140 @@
 titre: Etude et Investissement "qualité de l’air"
-promesse: Bénéficiez d'un financement pour vos projets visant à améliorer la qualité
-  de l'air
-description: Vous travaillez dans une zone polluée et vous souhaitez réduire durablement
-  vos émissions de polluants atmosphériques ? L’ADEME peut accompagner financièrement
-  vos actions.
-description longue: "Les zones concernée sont : Martinique, Ile de France (ensemble\
-  \ de la région), agglomérations de Rouen, Strasbourg, Reims, Lyon, Saint Etienne,\
-  \ Clermont-Ferrand, Grenoble, Vallée de l’Arve, Vallée du Rhône (Valence), Marseille-Aix,\
-  \ Toulon, Nice, Toulouse et Montpellier. \nL’ADEME peut vous accompagner pour :\n\
-  \   - Des études permettant d’aboutir à une mise en place opérationnelle d’actions\
-  \ permettant de réduire les émissions de polluants atmosphériques réglementés pour\
-  \ les zones concernées.\n   - De la communication, animation, sensibilisation intégrant\
-  \ les changements pérennes de pratiques.\n   - Certains investissements comme ceux\
-  \ relatifs au renouvellement de véhicules, au branchement à quai des navires, aux\
-  \ alternatives au brûlage des déchets verts.\n\nLes projets pourront concerner notamment\
-  \ (liste non exhaustive)\n- la mobilité (active, partagée, report modal) ;\n- les\
-  \ transports (réduction des émissions de véhicules, logistique, maritime et fluvial)\
-  \ ;\n- les alternatives au brûlage des déchets verts ;\n- le soutien dans la mise\
-  \ en place de Zones à Faibles Emissions de mobilité (ZFE-m) hors études réglementaires\
-  \ et l’accompagnement des professionnels impactés par la mise en œuvre de la ZFE-m\
-  \ ;\n- l’urbanisme intégrant une moindre exposition aux émissions de polluants ;\n\
-  - la réduction des émissions industrielles ;\n- la réduction des émissions agricoles\
-  \ ;\n- l’accompagnement des changements de pratiques des particuliers ;\n- le chauffage\
-  \ domestique au bois : campagnes d’animation/sensibilisation vers les particuliers\
-  \ et/ou professionnels ou tout autre projet amenant des changements de pratiques\
-  \ à l’exception d’études de préfiguration d’un Fonds Air Bois et de sa mise en place,\
-  \ accompagnées via l’appel à projets dédié."
+promesse: >-
+  Bénéficiez d'un financement pour vos projets visant à améliorer la qualité de
+  l'air
+description: >-
+  Vous travaillez dans une zone polluée et vous souhaitez réduire durablement
+  vos émissions de polluants atmosphériques ? L’ADEME peut accompagner
+  financièrement vos actions. 
+description longue: >-
+  L’ADEME peut vous accompagner pour :
+     - Des études permettant d’aboutir à une mise en place opérationnelle d’actions permettant de réduire les émissions de polluants atmosphériques réglementés pour les zones concernées.
+     - De la communication, animation, sensibilisation intégrant les changements pérennes de pratiques.
+     - Certains investissements comme ceux relatifs au renouvellement de véhicules, au branchement à quai des navires, aux alternatives au brûlage des déchets verts.
+
+  Les projets pourront concerner notamment (liste non exhaustive)
+
+  - la mobilité (active, partagée, report modal) ;
+
+  - les transports (réduction des émissions de véhicules, logistique, maritime
+  et fluvial) ;
+
+  - les alternatives au brûlage des déchets verts ;
+
+  - le soutien dans la mise en place de Zones à Faibles Emissions de mobilité
+  (ZFE-m) hors études réglementaires et l’accompagnement des professionnels
+  impactés par la mise en œuvre de la ZFE-m ;
+
+  - l’urbanisme intégrant une moindre exposition aux émissions de polluants ;
+
+  - la réduction des émissions industrielles ;
+
+  - la réduction des émissions agricoles ;
+
+  - l’accompagnement des changements de pratiques des particuliers ;
+
+  - le chauffage domestique au bois : campagnes d’animation/sensibilisation vers
+  les particuliers et/ou professionnels ou tout autre projet amenant des
+  changements de pratiques à l’exception d’études de préfiguration d’un Fonds
+  Air Bois et de sa mise en place, accompagnées via l’appel à projets dédié.
 début de validité: 01/01/2023
 fin de validité: 31/12/2023
 illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
-url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/actions-qualite-lair-territoires-contentieux
-nature de l'aide: financement
+url: >-
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/actions-qualite-lair-territoires-contentieux
+nature de l'aide: étude
 montant du financement: Jusqu'à 70% pour une étude et 55% pour un investissement
 objectifs:
-- description: Vérifiez l’éligibilité de votre projet en parcourant la documentation
-    de l’ADEME.
-- description: 'Déposez votre demande d''aide : informations administratives, description
-    du projet, détails techniques et financiers, etc. À ce stade, votre projet ne
-    doit pas avoir commencé !'
-- description: L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
-    recevez un contrat de financement précisant le montant d’aide maximum, les conditions
-    et les modalités de versement.
-- description: Réalisez vos études ou investissements.
+  - description: >-
+      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
+      l’ADEME.
+  - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
+    liens:
+      - lien: https://agirpourlatransition.ademe.fr/user/register
+        texte: Créer mon compte ADEME
+  - description: >-
+      Déposez votre dossier : informations administratives, description du
+      projet, détails techniques et financiers, etc. À ce stade, votre projet ne
+      doit pas avoir commencé !
+    liens:
+      - lien: >-
+          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/actions-qualite-lair-territoires-contentieux
+        texte: Déposer mon dossier
+  - description: >-
+      L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
+      recevez un contrat de financement précisant le montant d’aide maximum, les
+      conditions et les modalités de versement.
+  - description: Réalisez vos études ou investissements.
 conditions d'éligibilité:
   taille de l'entreprise:
-  - Toutes tailles
-  - Éligible aux micro-entreprises
+    - Toutes tailles
+    - Éligible aux micro-entreprises
   secteur géographique:
-  - Île-de-France, Normandie, Grand Est, Occitanie, Auvergne-Rhône-Alpes, Provence-Alpes-Côte
-    d'Azur, Martinique
+    - >-
+      Auvergne-Rhône-Alpes, Grand Est, Île-de-France, Martinique, Normandie,
+      Occitanie, Provence-Alpes-Côte d'Azur
   secteur d'activité:
-  - Tous secteurs d’activité
+    - Tous secteurs d’activité
   nombre d'années d'activité:
-  - Éligible à toutes les entreprises
+    - Éligible à toutes les entreprises
   autres critères d'éligibilité:
-  - 'Zones éligibles : Martinique, Ile de France (ensemble de la région), agglomérations
-    de Rouen, Strasbourg, Reims, Lyon, Saint Etienne, Clermont-Ferrand, Grenoble,
-    Vallée de l’Arve, Vallée du Rhône (Valence), Marseille-Aix, Toulon, Nice, Toulouse
-    et Montpellier,'
-  - 'L''opération pour laquelle vous sollicitez une aide financière ne doit pas avoir
-    commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque
-    forme que ce soit : marché signé, commande signée, devis accepté…)'
+    - >-
+      Zones éligibles : Martinique, Ile de France (ensemble de la région),
+      agglomérations de Rouen, Strasbourg, Reims, Lyon, Saint Etienne,
+      Clermont-Ferrand, Grenoble, Vallée de l’Arve, Vallée du Rhône (Valence),
+      Marseille-Aix, Toulon, Nice, Toulouse et Montpellier,
+    - >-
+      L'opération pour laquelle vous sollicitez une aide financière ne doit pas
+      avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes
+      (sous quelque forme que ce soit : marché signé, commande signée, devis
+      accepté…)
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
-    - est éligible
-    - est dans un secteur d'activité ciblé
-    - a un objectif ciblé
-    - questionnaire . parcours = objectif précis
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+      - questionnaire . parcours = objectif précis
   entreprise . est éligible:
     applicable si:
       toutes ces conditions:
-      - dispositif . début de validité <= date du jour
-      - date du jour <= dispositif . fin de validité
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
-    - entreprise . est dans une zone géographique éligible
+      - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - code NAF niveau 1 . est A
-    - code NAF niveau 1 . est B
-    - code NAF niveau 1 . est C
-    - code NAF niveau 1 . est D
-    - code NAF niveau 1 . est E
-    - code NAF niveau 1 . est F
-    - code NAF niveau 1 . est G
-    - code NAF niveau 1 . est H
-    - code NAF niveau 1 . est I
-    - code NAF niveau 1 . est J
-    - code NAF niveau 1 . est K
-    - code NAF niveau 1 . est L
-    - code NAF niveau 1 . est M
-    - code NAF niveau 1 . est N
-    - code NAF niveau 1 . est O
-    - code NAF niveau 1 . est P
-    - code NAF niveau 1 . est Q
-    - code NAF niveau 1 . est R
-    - code NAF niveau 1 . est S
-    - code NAF niveau 1 . est T
-    - code NAF niveau 1 . est U
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
   entreprise . a un objectif ciblé:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est la mobilité durable
+      - questionnaire . objectif prioritaire . est la mobilité durable
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
-    - région = Île-de-France
-    - région = Normandie
-    - région = Grand Est
-    - région = Occitanie
-    - région = Auvergne-Rhône-Alpes
-    - région = Provence-Alpes-Côte d'Azur
-    - région = Martinique
+      - région = Auvergne-Rhône-Alpes
+      - région = Grand Est
+      - région = Île-de-France
+      - région = Martinique
+      - région = Normandie
+      - région = Occitanie
+      - région = Provence-Alpes-Côte d'Azur

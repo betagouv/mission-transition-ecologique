@@ -1,11 +1,13 @@
+@use 'sass:meta';
+@use 'sass:map';
 @use 'setting';
 @use 'tool';
 
 .fr-text {
   @each $color, $properties in setting.$colors {
     &--#{$color} {
-      @if type-of($properties) == map {
-        color: map-get($properties, "color");
+      @if meta.type-of($properties) == map {
+        color: map.get($properties, "color");
       } @else {
         color: $properties;
       }
@@ -15,6 +17,14 @@
   @each $size in setting.$line-heights {
     &-line-height--#{$size} {
       @include tool.line-height($size)
+    }
+  }
+}
+
+.tee-font {
+  @each $style in setting.$font-styles {
+    &-style--#{$style} {
+      font-style: $style;
     }
   }
 }

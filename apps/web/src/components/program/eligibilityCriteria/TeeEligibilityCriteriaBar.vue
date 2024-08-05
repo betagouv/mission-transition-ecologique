@@ -1,22 +1,22 @@
 <template>
   <div
+    id="eligibility-criteria-bar"
     ref="eligibilityCriteria"
-    class="fr-grid-row fr-grid-row--center fr-text-center fr-grid-row--middle fr-my-auto fr-py-md-1w"
     :class="bgClass"
   >
-    <div class="fr-col-md-4 fr-col-lg-3 fr-col-xl-2 fr-col-hidden fr-col-unhidden-md">
-      <div class="fr-col-12">
-        <TeeButtonLink
-          :to="previousRoute"
-          icon="fr-icon-arrow-left-line"
-          size="lg"
-        >
-          Retour
-        </TeeButtonLink>
+    <div class="fr-container fr-grid-row fr-grid-row--center fr-grid-row--middle fr-py-md-1w">
+      <div class="fr-col-md-2 fr-col-lg-2 fr-col-xl-2 fr-col-hidden fr-col-unhidden-md">
+        <div class="fr-col-12">
+          <TeeButtonLink
+            :to="previousRoute"
+            icon="fr-icon-arrow-left-line"
+            size="lg"
+          >
+            Retour
+          </TeeButtonLink>
+        </div>
       </div>
-    </div>
-    <div class="fr-px-md-2v fr-my-auto fr-col-hidden fr-col-unhidden-md fr-col-md-8 fr-col-lg-9 fr-col-xl-8 fr-px-0 fr-text-left">
-      <div class="fr-container">
+      <div class="fr-px-md-2v fr-my-auto fr-col-hidden fr-col-unhidden-md fr-col-md-10 fr-col-lg-10 fr-col-xl-10 fr-px-0 fr-text-left">
         <div
           v-if="message"
           class="fr-mb-1v fr-ml-2v fr-text--blue-france fr-text--bold"
@@ -40,7 +40,8 @@
 </template>
 
 <script setup lang="ts">
-import { Color } from '@/types'
+import { useNavigationStore } from '@/stores/navigation'
+import { Color, RouteName } from '@/types'
 import StickyWithOffset from '@/utils/stickyWithOffset'
 import TrackStructure from '@/utils/track/trackStructure'
 import type { RouteLocationRaw } from 'vue-router'
@@ -58,14 +59,22 @@ const eligibilityCriteria = ref<HTMLElement>()
 const stickyWithOffset = ref<StickyWithOffset | null>(null)
 const criteria = TrackStructure.getEligibilityCriteria()
 
+function isProgramDetailPage() {
+  return useNavigationStore().isByRouteName([RouteName.CatalogProgramDetail, RouteName.QuestionnaireResultDetail])
+}
+
 onMounted(async () => {
-  await nextTick()
-  stickyWithOffset.value = new StickyWithOffset(eligibilityCriteria.value, document.getElementById('tee-header'))
-  stickyWithOffset.value.addEventListenerOnScroll()
+  if (isProgramDetailPage()) {
+    await nextTick()
+    stickyWithOffset.value = new StickyWithOffset(eligibilityCriteria.value, document.getElementById('tee-header'))
+    stickyWithOffset.value.addEventListenerOnScroll()
+  }
 })
 
 onUnmounted(() => {
-  stickyWithOffset.value?.removeEventListenerOnScroll()
+  if (isProgramDetailPage()) {
+    stickyWithOffset.value?.removeEventListenerOnScroll()
+  }
 })
 
 const bgClass = computed(() => {

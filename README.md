@@ -148,26 +148,40 @@ npm run dev --workspace packages/web
 npm run dev --workspace packages/backend
 ```
 
-#### Linting
+#### Linting and type check
 
+- Linting is done with [eslint](https://eslint.org/) and type check with `tsc` or `vue-tsc` (typescript compiler).
 ```sh
-# All workspaces with fix
 npm run lint
-# All workspaces without fix
-npm run lint-check
+# With fix
+npm run lint:fix
 # Type check on web workspace
-npm run type-check --workspace packages/web
-# Type check on web workspace with watch mode
-npm run type-check-watch --workspace packages/web
+npm run vue:type:check
 ```
 
-### Preview front before deploying in production
+- Lint sass files with [stylelint](https://stylelint.io/)
 
+```shell
+npm run lint:sass
+
+# With fix
+npm run lint:sass:fix
+```
+
+##### IDE configuration:  
+  - Jetbrains  
+https://www.jetbrains.com/help/webstorm/using-stylelint-code-quality-tool.html
+
+  - Vsode  
+https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint
+
+
+#### Preview front before deploying in production
 ```sh
 # This script builds the front 
 # and previews the produced index.html file from the dist folder
 # on http://localhost:4242
-npm run build-and-preview-front
+npm run dev:build:start
 ```
 
 ### Commands for a specific workspace

@@ -13,6 +13,7 @@ import {
 import Config from '../../../../config'
 import { QuestionnaireRoute } from '@tee/common'
 import { Operators } from '@tee/data'
+import Monitor from '../../../../common/domain/monitoring/monitor'
 
 // "Opportunities" are called "Deals" in Brevo
 
@@ -22,7 +23,7 @@ const addBrevoDeal: OpportunityRepository['create'] = async (
 ): Promise<Result<OpportunityId, Error>> => {
   const brevoDeal = convertDomainToBrevoDeal(domainOpportunity)
 
-  const dealId = await requestCreateDeal(domainOpportunity.programId, brevoDeal)
+  const dealId = await requestCreateDeal(domainOpportunity.id, brevoDeal)
 
   if (!dealId.isErr) {
     const maybeError = await associateBrevoDealToContact(dealId.value, contactId)
@@ -42,6 +43,11 @@ const requestCreateDeal = async (name: string, attributes: DealAttributes): Prom
     payload.attributes.pipeline = Config.BREVO_DEAL_PIPELINE
   }
   const responseResult = await new BrevoAPI().PostDeal(payload)
+  if (responseResult.isErr) {
+    Monitor.error('Error in Brevo PostDeal api call', { payload: payload, error: responseResult.error })
+
+    return Result.err(responseResult.error)
+  }
 
   const dealId = responseResult.map((r) => r.data as OpportunityId)
   return dealId
@@ -61,6 +67,10 @@ const requestUpdateDeal = async (dealId: OpportunityId, attributes: DealUpdateAt
     attributes: attributes
   })
 
+  if (responseResult.isErr) {
+    Monitor.error('Error in Brevo PatchDeal api call', { dealID: dealId.id, attributes, error: responseResult.error })
+  }
+
   return Maybe.of(responseResult.isErr ? responseResult.error : null)
 }
 
@@ -72,8 +82,12 @@ const associateBrevoDealToContact = async (dealId: OpportunityId, contactId: num
     linkContactIds: [contactId]
   })
 
-  if (responsePatch.isErr) return Maybe.of(responsePatch.error)
-  else return Maybe.nothing()
+  if (responsePatch.isErr) {
+    Monitor.error('Error in Brevo LinkDeal (to contact) api call', { dealId: dealIdStr, contactId, error: responsePatch.error })
+    return Maybe.of(responsePatch.error)
+  } else {
+    return Maybe.nothing()
+  }
 }
 
 const convertDomainToBrevoDeal = (domainAttributes: OpportunityWithOperatorContact): DealAttributes => {
@@ -83,7 +97,8 @@ const convertDomainToBrevoDeal = (domainAttributes: OpportunityWithOperatorConta
     parcours: convertQuestionnaireRoute(domainAttributes.questionnaireRoute),
     ...(domainAttributes.priorityObjectives && { objectifs_renseigns: domainAttributes.priorityObjectives.join(', ') }),
     ...(domainAttributes.programContactOperator && { oprateur_de_contact: domainAttributes.programContactOperator }),
-    ...(domainAttributes.otherData && { autres_donnes: domainAttributes.otherData })
+    ...(domainAttributes.otherData && { autres_donnes: domainAttributes.otherData }),
+    type: domainAttributes.type
   }
 }
 
@@ -113,11 +128,10 @@ const getBrevoCreationDates = async (): Promise<Result<Date[], Error>> => {
 
   if (response.isOk) {
     const brevoDealResponse: BrevoDealResponse = response.value.data as BrevoDealResponse
-    if (!brevoDealResponse.items) {
-      return Result.err(new Error('No Items field in Brevo API'))
-    }
-    if (brevoDealResponse.items.length === 0) {
-      return Result.err(new Error('Brevo deal list is empty'))
+    if (!brevoDealResponse.items || brevoDealResponse.items.length === 0) {
+      Monitor.error("Brevo deal list doesn't exist or is empty empty", { BrevoResponse: brevoDealResponse })
+
+      return Result.err(new Error("Brevo deal list doesn't exist or is empty"))
     }
     const dateList: Date[] = []
     for (const deal of brevoDealResponse.items) {
@@ -126,6 +140,7 @@ const getBrevoCreationDates = async (): Promise<Result<Date[], Error>> => {
     }
     return Result.ok(dateList)
   } else {
+    Monitor.error('Error in brevo GetDeal api call', { error: response.error })
     return Result.err(response.error)
   }
 }
@@ -148,13 +163,14 @@ const getDailyOpportunitiesByContactId = async (contactId: number): Promise<Resu
     }
     return Result.ok(selectedDeals)
   } else {
+    Monitor.error('Error in brevo GetDeal api call', { error: response.error })
     return Result.err(response.error)
   }
 }
 
 const convertBrevoDealToDomain = (brevoAttributes: BrevoDealItem): OpportunityDetailsShort => {
   return {
-    programId: brevoAttributes.attributes.deal_name,
+    id: brevoAttributes.attributes.deal_name,
     programContactOperator: brevoAttributes.attributes.operateur_de_contact as Operators
   }
 }

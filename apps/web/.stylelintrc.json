@@ -1,0 +1,34 @@
+{
+  "extends": ["stylelint-config-standard-scss"],
+  "overrides": [
+    {
+      "files": ["**/*.vue"],
+      "extends": [
+        "stylelint-config-standard-vue/scss"
+      ]
+    }
+
+  ],
+  "rules": {
+    "selector-class-pattern": [
+      "^[a-z]+(-[a-z]+)*(__[a-z]+(-[a-z]+)*)?(--[a-z]+(-[a-z]+)*)?$",
+      {
+        "message": "Selector should be written in kebab-case, kebab-case--modifier, kebab-case__element."
+      }
+    ],
+    "number-max-precision": [ 6 ],
+    "scss/dollar-variable-empty-line-before": [
+      "always",
+      {
+        "except": ["first-nested"],
+        "ignore": ["after-comment", "inside-single-line-block", "after-dollar-variable"]
+      }
+    ],
+    "scss/at-function-pattern": [
+      "^[a-z]+([A-Z][a-z]+)*$",
+      {
+        "message": "Function names must be in camelCase."
+      }
+    ]
+  }
+}

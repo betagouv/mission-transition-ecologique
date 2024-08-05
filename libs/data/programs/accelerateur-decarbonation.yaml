@@ -1,80 +1,88 @@
 titre: Accélérateur décarbonation
 promesse: Définissez une stratégie bas carbone robuste
-description: 'L''accélérateur Décarbonation est un programme d''accompagnement pour
-  les dirigeants de PME et ETI animé par des experts environnement référencés par
-  Bpifrance.  L''objectif : définir la trajectoire de décarbonation de votre entreprise
-  en tenant compte de vos enjeux de développement.'
+description: >-
+  L'accélérateur Décarbonation est un programme d'accompagnement pour les
+  dirigeants de PME et ETI animé par des experts environnement référencés par
+  Bpifrance.  L'objectif : définir la trajectoire de décarbonation de votre
+  entreprise en tenant compte de vos enjeux de développement.
 début de validité: 06/02/2023
 fin de validité: 31/12/2025
 illustration: images/TEE_energie_verte.png
 opérateur de contact: Bpifrance
-url: https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-la-3e-promotion-de-laccelerateur-decarbonation
-nature de l'aide: accompagnement
+url: >-
+  https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-la-3e-promotion-de-laccelerateur-decarbonation 
+nature de l'aide: étude
 coût de l'accompagnement: 29 000 € HT
 durée de l'accompagnement: 39 jours de conseil et 8 jours de formation
 objectifs:
-- description: Identifiez les leviers et définissez la trajectoire de décarbonation
-    de votre entreprise en tenant compte de vos enjeux de développement.
-- description: Participez à 8 séminaires thématiques avec les Mines ParisTech (élaborer
-    sa stratégie de décarbonation, la financer, la valoriser, conduite du changement,
-    etc.)
-- description: Accédez à la communauté des 3 000 accélérés des précédentes promotions
-    et aux réseaux Bpifrance.
-- description: 'Bénéficiez d''un accompagnement premium de la part de Bpifrance pendant
-    toute la durée du programme : 39 jours de suivi séquencés sur les 2 années du
-    programme.'
+  - description: >-
+      Identifiez les leviers et définissez la trajectoire de décarbonation de
+      votre entreprise en tenant compte de vos enjeux de développement.
+  - description: >-
+      Participez à 8 séminaires thématiques avec les Mines ParisTech (élaborer
+      sa stratégie de décarbonation, la financer, la valoriser, conduite du
+      changement, etc.)
+  - description: >-
+      Accédez à la communauté des 3 000 accélérés des précédentes promotions et
+      aux réseaux Bpifrance.
+  - description: >-
+      Bénéficiez d'un accompagnement premium de la part de Bpifrance pendant
+      toute la durée du programme : 39 jours de suivi séquencés sur les 2 années
+      du programme.
 conditions d'éligibilité:
   taille de l'entreprise:
-  - PME ou ETI de plus de 50 salariés
-  - Non éligible aux micro-entreprises
+    - PME ou ETI de plus de 50 salariés
+    - Non éligible aux micro-entreprises
   secteur géographique:
-  - France et territoires d'outre-mer
+    - France et territoires d'outre-mer
   secteur d'activité:
-  - Tous secteurs d’activité
+    - Tous secteurs d’activité
   nombre d'années d'activité:
-  - Au moins 3 ans d’activité
+    - Au moins 3 ans d’activité
   autres critères d'éligibilité:
-  - Réaliser un chiffre d’affaires supérieur à 10 M€ et inférieur à 5 milliards d'euros
-  - Avoir réalisé un bilan carbone datant de moins de 2 ans
+    - >-
+      Réaliser un chiffre d’affaires supérieur à 10 M€ et inférieur à 5
+      milliards d'euros
+    - Avoir réalisé un bilan carbone datant de moins de 2 ans
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
-    - est éligible
-    - est dans un secteur d'activité ciblé
-    - a un objectif ciblé
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
   entreprise . est éligible:
     applicable si:
       toutes ces conditions:
-      - dispositif . début de validité <= date du jour
-      - date du jour <= dispositif . fin de validité
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
-    - a un effectif éligible
+      - a un effectif éligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
-    - effectif >= 50
+      - effectif >= 50
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - code NAF niveau 1 . est A
-    - code NAF niveau 1 . est B
-    - code NAF niveau 1 . est C
-    - code NAF niveau 1 . est D
-    - code NAF niveau 1 . est E
-    - code NAF niveau 1 . est F
-    - code NAF niveau 1 . est G
-    - code NAF niveau 1 . est H
-    - code NAF niveau 1 . est I
-    - code NAF niveau 1 . est J
-    - code NAF niveau 1 . est K
-    - code NAF niveau 1 . est L
-    - code NAF niveau 1 . est M
-    - code NAF niveau 1 . est N
-    - code NAF niveau 1 . est O
-    - code NAF niveau 1 . est P
-    - code NAF niveau 1 . est Q
-    - code NAF niveau 1 . est R
-    - code NAF niveau 1 . est S
-    - code NAF niveau 1 . est T
-    - code NAF niveau 1 . est U
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
   entreprise . a un objectif ciblé:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est mon impact environnemental
+      - questionnaire . objectif prioritaire . est mon impact environnemental

@@ -11,6 +11,7 @@ import {
   type LocationQueryValue,
   type RouteLocationNormalizedLoaded,
   type RouteLocationRaw,
+  type RouteLocationAsRelativeGeneric,
   type Router
 } from 'vue-router'
 import { RouteName } from '@/types/routeType'
@@ -21,6 +22,8 @@ export const useNavigationStore = defineStore('navigation', () => {
   const route = ref<RouteLocationNormalizedLoaded>()
   const searchParams = ref<URLSearchParams>(new URLSearchParams())
   const stringOfSearchParams = ref<string>('')
+  const tabSelectedOnList = ref<number>(0)
+  const hasSpinner = ref<boolean>(false)
 
   const query = computed<Record<string, LocationQueryValue | LocationQueryValue[]>>(() => {
     let query: LocationQuery = {}
@@ -52,7 +55,7 @@ export const useNavigationStore = defineStore('navigation', () => {
     return query
   }
 
-  function routeByTrackId(trackId: TrackId) {
+  function routeByTrackId(trackId: TrackId): RouteLocationAsRelativeGeneric {
     let route: RouteLocationRaw = {
       name: RouteName.Questionnaire,
       params: { trackId: trackId },
@@ -73,10 +76,13 @@ export const useNavigationStore = defineStore('navigation', () => {
   }
 
   function isCatalog() {
-    return isByRouteName(RouteName.Catalog)
+    return isByRouteName([RouteName.CatalogPrograms, RouteName.CatalogProjects])
   }
 
-  function isByRouteName(routeName: string) {
+  function isByRouteName(routeName: string | string[]) {
+    if (Array.isArray(routeName) && route.value?.name) {
+      return new Set(routeName).has(route.value.name as string)
+    }
     return route.value?.name === routeName
   }
 
@@ -128,6 +134,10 @@ export const useNavigationStore = defineStore('navigation', () => {
     setStringOfSearchParams()
   }
 
+  function replaceBrowserHistory(): void {
+    history.replaceState({}, '', `?${stringOfSearchParams.value}`)
+  }
+
   function setStringOfSearchParams() {
     stringOfSearchParams.value = searchParams.value.toString()
   }
@@ -143,7 +153,8 @@ export const useNavigationStore = defineStore('navigation', () => {
     route,
     query,
     searchParams,
-    queryByUsedTrackId,
+    tabSelectedOnList,
+    hasSpinner,
     isCatalog,
     isByRouteName,
     resetSearchParams,
@@ -152,7 +163,8 @@ export const useNavigationStore = defineStore('navigation', () => {
     setSearchParams,
     updateSearchParam,
     deleteSearchParam,
-    routeByTrackId
+    routeByTrackId,
+    replaceBrowserHistory
   }
 })
 

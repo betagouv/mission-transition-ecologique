@@ -1,62 +1,62 @@
 titre: Performa Environnement
-promesse: Mesurez votre maturité écologique et créez un plan d’action personnalisé
-  avec à un conseiller
-description: 'Réalisez un état des lieux à 360° pour évaluer l''impact de votre activité
-  sur l''environnement et réalisez des économies. Différents sujets sont abordés :
-  économie d’énergie, isolation des locaux, consommations d’eau, déchets, matières
-  premières, achats, mobilité, etc.'
+promesse: >-
+  Mesurez votre maturité écologique et créez un plan d’action personnalisé avec
+  un conseiller
+description: >-
+  Réalisez un état des lieux à 360° pour évaluer l'impact de votre activité sur
+  l'environnement et réalisez des économies. Différents sujets sont abordés :
+  économie d’énergie, isolation des locaux, consommations d’eau, déchets,
+  matières premières, achats, mobilité, etc.
 illustration: images/TEE_energie_verte.png
 opérateur de contact: CMA
-url: https://www.artisanat.fr/nous-connaitre/vous-accompagner/performa-environnement
-nature de l'aide: accompagnement
+url: >-
+  https://www.artisanat.fr/nous-connaitre/vous-accompagner/performa-environnement
+nature de l'aide: étude
 coût de l'accompagnement: Gratuit
 durée de l'accompagnement: 1 journée
 objectifs:
-- description: Bénéficiez d'un état des lieux d'un conseiller de la Chambre de Métiers
-    et de l’Artisanat pour évaluer l'empreinte environnementale de votre activité.
-- description: Obtenez un diagnostic complet et la proposition d'un plan d'action
-    pour maîtriser votre consommation énergétique et détecter de nouvelles sources
-    d'économies (énergie, isolation des locaux, consommations d’eau, déchets, matières
-    premières, mobilité...)
-- description: Valorisez votre démarche environnementale par l'obtention d'un label.
-- description: Identifiez une solution d'investissement, d'étude ou de formation,
-    et soyez accompagné dans le montage de votre demande de financement.
+  - description: >-
+      Bénéficiez d'un état des lieux d'un conseiller de la Chambre de Métiers et
+      de l’Artisanat pour évaluer l'empreinte environnementale de votre
+      activité.
+  - description: >-
+      Obtenez un diagnostic complet et la proposition d'un plan d'action pour
+      maîtriser votre consommation énergétique et détecter de nouvelles sources
+      d'économies (énergie, isolation des locaux, consommations d’eau, déchets,
+      matières premières, mobilité...)
+  - description: Valorisez votre démarche environnementale par l'obtention d'un label.
+  - description: >-
+      Identifiez une solution d'investissement, d'étude ou de formation, et
+      soyez accompagné dans le montage de votre demande de financement.
 conditions d'éligibilité:
   taille de l'entreprise:
-  - TPE et PME
-  - Éligible aux micro-entreprises
+    - TPE et PME
+    - Éligible aux micro-entreprises
   secteur géographique:
-  - France et territoires d'outre-mer
+    - France et territoires d'outre-mer
   secteur d'activité:
-  - Artisan
+    - Artisan
   nombre d'années d'activité:
-  - Éligible à toutes les entreprises
+    - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
-    - est éligible
-    - est dans un secteur d'activité ciblé
-    - a un objectif ciblé
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
   entreprise . est éligible:
     toutes ces conditions:
-    - a un effectif éligible
+      - a un effectif éligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
-    - effectif <= 249
+      - effectif <= 249
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - code NAF niveau 1 . est C
-    - code NAF niveau 1 . est D
-    - code NAF niveau 1 . est F
-    - code NAF niveau 1 . est G
-    - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est I
   entreprise . a un objectif ciblé:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est rénover mon bâtiment
-    - questionnaire . objectif prioritaire . est la mobilité durable
-    - questionnaire . objectif prioritaire . est la gestion des déchets
-    - questionnaire . objectif prioritaire . est diminuer ma consommation d'eau
-    - questionnaire . objectif prioritaire . est ma performance énergétique
-    - questionnaire . objectif prioritaire . est former ou recruter
-    - questionnaire . objectif prioritaire . est mon impact environnemental
-    - questionnaire . objectif prioritaire . est l'écoconception
+      - questionnaire . objectif prioritaire . est mon impact environnemental

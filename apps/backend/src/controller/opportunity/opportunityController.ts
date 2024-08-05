@@ -1,7 +1,7 @@
 import { OpportunityBody } from '@tee/common'
 import { Body, Controller, Example, Post, Res, Route, SuccessResponse, TsoaResponse } from 'tsoa'
 import { Err } from 'true-myth/dist/es/result'
-import { ErrorJSON, OpportunityId, OpportunityService, ValidateErrorJSON, ServiceNotFoundError } from '@tee/backend-ddd'
+import { ErrorJSON, OpportunityId, OpportunityService, ValidateErrorJSON, ServiceNotFoundError, Monitor } from '@tee/backend-ddd'
 
 @SuccessResponse('200', 'OK')
 @Route('opportunities')
@@ -23,6 +23,7 @@ export class OpportunityController extends Controller {
     const opportunityResult = await new OpportunityService().createOpportunity(requestBody.opportunity, requestBody.optIn)
 
     if (opportunityResult.isErr) {
+      Monitor.error('Error in createOpportunity', { query: requestBody, error: opportunityResult.error })
       this.throwErrorResponse(opportunityResult, notFoundResponse, requestFailedResponse)
 
       return

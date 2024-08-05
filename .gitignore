@@ -67,3 +67,6 @@ dispositifs*.xlsx
 # Global
 **/generated/*
 !generated/index.ts
+
+# local cache
+**/program_tmp.json

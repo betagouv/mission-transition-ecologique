@@ -2,9 +2,10 @@ import { ContactId } from '../../../domain/types'
 import axios from 'axios'
 import { Result } from 'true-myth'
 import { ContactRepository } from '../../../domain/spi'
-import { BrevoCompanySize, ContactAttributes } from './types'
+import { BrevoCompanySize, BrevoPostContactPayload, ContactAttributes } from './types'
 import BrevoAPI from './brevoAPI'
-import { ContactDetails } from '@tee/common'
+import { ContactDetails, StructureSize } from '@tee/common'
+import Monitor from '../../../../common/domain/monitoring/monitor'
 
 const DEBUG_BREVO_LIST_ID = '4'
 
@@ -17,14 +18,16 @@ export const addBrevoContact: ContactRepository['createOrUpdate'] = async (conta
 }
 
 const requestCreateContact = async (listIds: number[], contact: ContactDetails, optIn: true): Promise<Result<ContactId, Error>> => {
-  const responseResult = await new BrevoAPI().PostContact({
+  const requestPayload: BrevoPostContactPayload = {
     email: contact.email,
     updateEnabled: true,
     listIds: listIds,
     attributes: convertDomainToBrevoContact(contact, optIn)
-  })
+  }
+  const responseResult = await new BrevoAPI().PostContact(requestPayload)
 
   if (responseResult.isErr) {
+    Monitor.error('Error in Brevo CreateContact api call', { payload: requestPayload, error: responseResult.error })
     return Result.err(responseResult.error)
   }
 
@@ -43,6 +46,12 @@ const requestCreateContact = async (listIds: number[], contact: ContactDetails, 
 
 const retrieveExistingContactId = async (email: string): Promise<Result<ContactId, Error>> => {
   const responseResult = await new BrevoAPI().GetContact(email)
+  if (responseResult.isErr) {
+    Monitor.error('Error in Brevo GetContact api call', { payload: email, error: responseResult.error })
+
+    return Result.err(responseResult.error)
+  }
+
   const contactId = responseResult.map((r) => r.data as ContactId)
   return contactId
 }
@@ -67,13 +76,20 @@ const convertDomainToBrevoContact = (contact: ContactDetails, optIn: true): Cont
   }
 }
 
-const convertCompanySize = (companySize: number): BrevoCompanySize => {
-  if (companySize < 20) {
-    return BrevoCompanySize.LESS_THAN_20
-  } else if (companySize <= 49) {
-    return BrevoCompanySize.FROM_20_TO_49
-  } else if (companySize <= 250) {
-    return BrevoCompanySize.FROM_50_TO_250
+const convertCompanySize = (companySize: StructureSize): BrevoCompanySize => {
+  switch (companySize) {
+    case StructureSize.EI:
+      return BrevoCompanySize.EI
+    case StructureSize.ETI_GE:
+      return BrevoCompanySize.MORE_THAN_250
+    case StructureSize.TPE:
+      return BrevoCompanySize.LESS_THAN_20
+    case StructureSize.PE:
+      return BrevoCompanySize.FROM_20_TO_49
+    case StructureSize.ME:
+      return BrevoCompanySize.FROM_50_TO_250
+    default:
+      Monitor.error('Company size not handled in brevoContact.')
+      return BrevoCompanySize.FROM_20_TO_49
   }
-  return BrevoCompanySize.MORE_THAN_250
 }

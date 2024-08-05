@@ -1,90 +1,103 @@
 titre: PACTE Industrie
 promesse: Engagez votre industrie dans une démarche de décarbonation
-description: Le programme PACTE Industrie vise à former et accompagner les industriels
-  dans leur transition énergétique. L'accompagnement peut permettre de réaliser des
-  études d’opportunités du mix énergétique, l'élaboration d'une stratégie de décarbonation
-  et d'une Trajectoire d’Investissements Bas Carbone ou encore de la construction
-  d'un plan de financement.
-description longue: 'Plusieurs types d''accompagnement sont proposés :
+description: >-
+  Le programme PACTE Industrie vise à former et accompagner les industriels dans
+  leur transition énergétique. L'accompagnement peut permettre de réaliser des
+  études d’opportunités du mix énergétique, l'élaboration d'une stratégie de
+  décarbonation et d'une Trajectoire d’Investissements Bas Carbone ou encore de
+  la construction d'un plan de financement.
+description longue: >-
+  Plusieurs types d'accompagnement sont proposés :
 
 
-  • étude des leviers de décarbonation à l’échelle du site industriel : efficacité
-  énergétique, récupération de chaleur fatale, énergies renouvelables, ou encore électrification
-  et hydrogène.
+  • étude des leviers de décarbonation à l’échelle du site industriel :
+  efficacité énergétique, récupération de chaleur fatale, énergies
+  renouvelables, ou encore électrification et hydrogène.
 
 
-  • élaboration d''une stratégie de décarbonation ambitieuse et le plan de transition
-  associé (ACT pas à pas), à l’échelle du groupe.
+  • élaboration d'une stratégie de décarbonation ambitieuse et le plan de
+  transition associé (ACT pas à pas), à l’échelle du groupe.
 
 
-  • élaboration d''une Trajectoire d’Investissements Bas Carbone (TIBC) à l’échelle
-  du groupe pour obtenir un chiffrage des gains d’émissions de gaz à effet de serre
-  associés.
+  • élaboration d'une Trajectoire d’Investissements Bas Carbone (TIBC) à
+  l’échelle du groupe pour obtenir un chiffrage des gains d’émissions de gaz à
+  effet de serre associés.
 
 
-  • évaluation de l’ambition d’une stratégie de décarbonation et son alignement au
-  regard des objectifs de l’Accord de Paris (ACT évaluation).
+  • évaluation de l’ambition d’une stratégie de décarbonation et son alignement
+  au regard des objectifs de l’Accord de Paris (ACT évaluation).
 
 
-  • accompagnement pour les projets d’investissement bas carbone pour construire leurs
-  plans de financement.'
+  • accompagnement pour les projets d’investissement bas carbone pour construire
+  leurs plans de financement. 
 début de validité: 01/06/2023
 fin de validité: 30/06/2026
 illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
-url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/pacte-industrie-parcours-accompagnement-competences-transition-energetique-0
-nature de l'aide: financement
+url: >-
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/pacte-industrie-parcours-accompagnement-competences-transition-energetique-0
+nature de l'aide: étude
 montant du financement: Jusqu'à 80% du coût de l'étude selon la taille de l'entreprise
 objectifs:
-- description: Vérifiez l’éligibilité de votre projet en parcourant la documentation
-    de l’ADEME.
-  liens:
-  - lien: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Pacte%20Industrie%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf
-    texte: Conditions éligibilité et financement
-- description: 'Choisissez un bureau d''étude parmi les prestataires référencés dans
-    le cadre du programme PACTE
-
-    Industrie.'
-  liens:
-  - lien: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/PACTE%20Industrie%20-%20Annuaire%20prestataires%20-%202023-12-07.xlsx
-    texte: Annuaire des prestataires
-- description: 'Déposez votre demande d''aide : informations administratives, description
-    du projet, détails techniques et financiers, etc. A ce stade, votre projet ne
-    doit pas avoir commencé !'
-- description: L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
-    recevez un contrat de financement précisant le montant d’aide maximum, les conditions
-    et les modalités de versement.
-- description: Réalisez votre étude ou votre coaching.
+  - description: >-
+      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
+      l’ADEME ou en contactant un conseiller.
+    liens:
+      - lien: >-
+          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Pacte%20Industrie%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf
+        texte: Conditions éligibilité et financement
+  - description: >-
+      Choisissez un bureau d'étude parmi les prestataires référencés dans le
+      cadre du programme PACTE Industrie.
+    liens:
+      - lien: >-
+          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/PACTE%20Industrie%20-%20Annuaire%20prestataires%20-%202023-12-07.xlsx
+        texte: Annuaire des prestataires
+  - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
+    liens:
+      - lien: https://agirpourlatransition.ademe.fr/user/register
+        texte: Créer mon compte ADEME
+  - description: >-
+      Déposez votre dossier : informations administratives, description du
+      projet, détails techniques et financiers, etc. À ce stade, votre projet ne
+      doit pas avoir commencé !
+    liens:
+      - lien: >-
+          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/pacte-industrie-parcours-accompagnement-competences-transition-energetique-0
+        texte: Déposer mon dossier
+  - description: >-
+      L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
+      recevez un contrat de financement précisant le montant d’aide maximum, les
+      conditions et les modalités de versement.
+  - description: Réalisez votre étude ou votre coaching.
 conditions d'éligibilité:
   taille de l'entreprise:
-  - Toutes tailles
-  - Éligible aux micro-entreprises
+    - Toutes tailles
+    - Éligible aux micro-entreprises
   secteur géographique:
-  - France et territoires d'outre-mer
+    - France et territoires d'outre-mer
   secteur d'activité:
-  - Industrie
+    - Industrie
   nombre d'années d'activité:
-  - Éligible à toutes les entreprises
+    - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
-    - est éligible
-    - est dans un secteur d'activité ciblé
-    - a un objectif ciblé
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
   entreprise . est éligible:
     applicable si:
       toutes ces conditions:
-      - dispositif . début de validité <= date du jour
-      - date du jour <= dispositif . fin de validité
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     valeur: oui
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - code NAF niveau 1 . est B
-    - code NAF niveau 1 . est C
-    - code NAF niveau 1 . est D
-    - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
   entreprise . a un objectif ciblé:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est ma performance énergétique
-    - questionnaire . objectif prioritaire . est mon impact environnemental
-    - questionnaire . objectif prioritaire . est l'écoconception
+      - questionnaire . objectif prioritaire . est ma performance énergétique

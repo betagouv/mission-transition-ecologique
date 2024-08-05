@@ -5,19 +5,21 @@
   "sourceRoot": "apps/web/src",
   "// targets": "to see all targets run: nx show project @tee/web --web",
   "targets": {
+    "ci": {
+      "executor": "nx:noop",
+      "dependsOn": [
+        "lint",
+        "type-check",
+        "sass-lint"
+      ]
+    },
     "build": {
       "dependsOn": [
         "generate-seo"
       ]
     },
-    "vue-type-check": {
+    "type-check": {
       "executor": "nx:run-commands",
-      "dependsOn": [
-        {
-          "target": "generate-program",
-          "projects": "@tee/data"
-        }
-      ],
       "options": {
         "cwd": "apps/web",
         "command": "vue-tsc --noEmit -p tsconfig.app.json --composite false"
@@ -45,6 +47,15 @@
         "cwd": "apps/web",
         "commands": [
           "sass --pkg-importer=node --load-path=../../node_modules --watch src/assets/main.scss:src/assets/main.css"
+        ]
+      }
+    },
+    "sass-lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/web",
+        "commands": [
+          "stylelint \"**/*.{scss,vue}\""
         ]
       }
     }
