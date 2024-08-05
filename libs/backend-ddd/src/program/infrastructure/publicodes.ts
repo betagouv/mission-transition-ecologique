@@ -89,18 +89,21 @@ const narrowInput = (data: PublicodesInputData, engine: Engine): Partial<Publico
 
 export const convertProgramPublicodes = (program: ProgramType) => {
   const publicodes = program.publicodes
-  const convertedProgramPublicodes = Object.keys(publicodes).reduce<{ [key in FormattedPublicodesKeys]?: string[] }>(
-    (acc, publicodeKey) => {
-      const convertedKey: FormattedPublicodesKeys | undefined = getNoPublicodeKey(publicodeKey)
-      if (convertedKey) {
-        const convertedData = getNoPublicodeData(convertedKey, publicodes[publicodeKey])
-        if (convertedData) {
-          acc[convertedKey] = convertedData
+  if (publicodes) {
+    const convertedProgramPublicodes = Object.keys(publicodes).reduce<{ [key in FormattedPublicodesKeys]?: string[] }>(
+      (acc, publicodeKey) => {
+        const convertedKey: FormattedPublicodesKeys | undefined = getNoPublicodeKey(publicodeKey)
+        if (convertedKey) {
+          const convertedData = getNoPublicodeData(convertedKey, publicodes[publicodeKey])
+          if (convertedData) {
+            acc[convertedKey] = convertedData
+          }
         }
-      }
-      return acc
-    },
-    {}
-  )
-  return { ...program, publicodes: convertedProgramPublicodes }
+        return acc
+      },
+      {}
+    )
+    return { ...program, publicodes: convertedProgramPublicodes }
+  }
+  return program
 }
