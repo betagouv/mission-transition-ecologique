@@ -73,7 +73,6 @@ onMounted(async () => {
 
 onUnmounted(() => {
   if (isProgramDetailPage()) {
-    console.log('hello')
     stickyWithOffset.value?.removeEventListenerOnScroll()
   }
 })

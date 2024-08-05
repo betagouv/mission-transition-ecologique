@@ -4,6 +4,7 @@ import { sortPrograms } from './sortPrograms'
 import { Result } from 'true-myth'
 import { ProgramType } from '@tee/data'
 import { Objective, QuestionnaireData } from '@tee/common'
+import { convertProgramPublicodes } from '../infrastructure/publicodes'
 
 export default class ProgramFeatures {
   private _programRepository: ProgramRepository
@@ -21,7 +22,11 @@ export default class ProgramFeatures {
   }
 
   public getById(id: string): ProgramType | undefined {
-    return this._programRepository.getById(id)
+    const program = this._programRepository.getById(id)
+    if (program) {
+      return convertProgramPublicodes(program)
+    }
+    return program
   }
 
   public getFilteredBy(questionnaireData: QuestionnaireData): Result<ProgramType[], Error> {
@@ -31,7 +36,6 @@ export default class ProgramFeatures {
     }
 
     let filteredPrograms = filterPrograms(allPrograms, questionnaireData, this._currentDateService.get(), this._rulesService)
-    console.log('FILTERED PROGRAM', filteredPrograms)
     const route = questionnaireData.questionnaire_route
     if (route) {
       filteredPrograms = filteredPrograms.map((programs) => sortPrograms(programs, route))
@@ -55,7 +59,6 @@ export default class ProgramFeatures {
     const objectivesArray: Objective[] = []
     publicodeObjectives.forEach((publicodeObjective) => {
       const objectiveValue = Object.values(Objective).find((value) => publicodeObjective.includes(value as string))
-      console.log('OBJECTIVE VALUE', objectiveValue)
       if (objectiveValue) {
         objectivesArray.push(objectiveValue as Objective)
       }

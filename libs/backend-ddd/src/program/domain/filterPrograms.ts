@@ -25,7 +25,6 @@ export const filterPrograms = (
   rulesService: RulesManager
 ): Result<ProgramType[], Error> => {
   const filteredPrograms: ProgramType[] = []
-
   for (const program of programs) {
     const evaluation = rulesService.evaluate(FILTERING_RULE_NAME, program, inputData, currentDate)
     const convertedProgram = convertProgramPublicodes(program)
@@ -37,7 +36,6 @@ export const filterPrograms = (
       filteredPrograms.push(convertedProgram)
     }
   }
-
   return Result.ok(filteredPrograms)
 }
 
