@@ -1,6 +1,7 @@
 import Engine from 'publicodes'
 import { Result } from 'true-myth'
-import type { PublicodesInputData } from './types'
+import type { PublicodesInputData, ObjectivePublicodeData } from './types'
+import { PublicodeToObjectiveMapping } from './types'
 import { filterObject } from '../../common/objects'
 import { preprocessInputForPublicodes } from './preprocessProgramsPublicodes'
 import { ProgramType, PublicodesCondition } from '@tee/data'
@@ -34,46 +35,24 @@ export const evaluateRule = (
   }
   return Result.ok(eligibility)
 }
-const getNoPublicodeKey = (publicodeKey: string): FormattedPublicodesKeys | undefined => {
-  switch (publicodeKey) {
-    case PublicodesKeys.hasObjective:
-      return FormattedPublicodesKeys.hasObjective
-    default:
-      return undefined
+const getFormattedPublicodeKey = (publicodeKey: string): FormattedPublicodesKeys | undefined => {
+  if (publicodeKey === PublicodesKeys.hasObjective) {
+    return FormattedPublicodesKeys.hasObjective
   }
+  return undefined
 }
-type objectivePublicodeData = {
-  [key in PublicodesCondition]: PublicodeObjective[]
-}
-const isObjectivePublicodeData = (data: unknown): data is objectivePublicodeData => {
+
+const isObjectivePublicodeData = (data: unknown): data is ObjectivePublicodeData => {
   return typeof data === 'object' && data !== null && PublicodesCondition.oneOfThese in data
 }
-const getNoPublicodeObjective = (publicodeData: objectivePublicodeData): Objective[] | null => {
-  const publicodeToObjectiveMapping = {
-    [PublicodeObjective.EnvironmentalImpact]: Objective.EnvironmentalImpact,
-    [PublicodeObjective.EnergyPerformance]: Objective.EnergyPerformance,
-    [PublicodeObjective.WaterConsumption]: Objective.WaterConsumption,
-    [PublicodeObjective.BuildingRenovation]: Objective.BuildingRenovation,
-    [PublicodeObjective.SustainableMobility]: Objective.SustainableMobility,
-    [PublicodeObjective.WasteManagement]: Objective.WasteManagement,
-    [PublicodeObjective.EcoDesign]: Objective.EcoDesign,
-    [PublicodeObjective.TrainOrRecruit]: Objective.TrainOrRecruit,
-    [PublicodeObjective.MakeSavings]: Objective.MakeSavings,
-    [PublicodeObjective.DurablyInvest]: Objective.DurablyInvest,
-    [PublicodeObjective.UnknownYet]: Objective.UnknownYet
-  }
-
-  if (publicodeData) {
-    const objectives: PublicodeObjective[] = publicodeData[PublicodesCondition.oneOfThese]
-    return objectives.map((obj: PublicodeObjective) => publicodeToObjectiveMapping[obj])
-  }
-  return null
+const geFormattedObjective = (publicodeData: ObjectivePublicodeData): Objective[] => {
+  const objectives: PublicodeObjective[] = publicodeData[PublicodesCondition.oneOfThese]
+  return objectives.map((obj: PublicodeObjective) => PublicodeToObjectiveMapping[obj])
 }
 
-const getNoPublicodeData = (publicodeKey: FormattedPublicodesKeys, publicodeData: unknown) => {
+const getFormattedPublicodeData = (publicodeKey: FormattedPublicodesKeys, publicodeData: unknown) => {
   if (publicodeKey === FormattedPublicodesKeys.hasObjective && isObjectivePublicodeData(publicodeData)) {
-    const conditions = getNoPublicodeObjective(publicodeData)
-    return conditions
+    return geFormattedObjective(publicodeData)
   }
   return null
 }
@@ -92,9 +71,9 @@ export const convertProgramPublicodes = (program: ProgramType) => {
   if (publicodes) {
     const convertedProgramPublicodes = Object.keys(publicodes).reduce<{ [key in FormattedPublicodesKeys]?: string[] }>(
       (acc, publicodeKey) => {
-        const convertedKey: FormattedPublicodesKeys | undefined = getNoPublicodeKey(publicodeKey)
+        const convertedKey: FormattedPublicodesKeys | undefined = getFormattedPublicodeKey(publicodeKey)
         if (convertedKey) {
-          const convertedData = getNoPublicodeData(convertedKey, publicodes[publicodeKey])
+          const convertedData = getFormattedPublicodeData(convertedKey, publicodes[publicodeKey])
           if (convertedData) {
             acc[convertedKey] = convertedData
           }
