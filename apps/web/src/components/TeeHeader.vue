@@ -31,7 +31,7 @@ const quickLinks: DsfrHeaderMenuLinkProps[] = [
   {
     label: 'Annuaire',
     to: {
-      name: RouteName.Catalog
+      name: RouteName.CatalogPrograms
     }
   }
 ]

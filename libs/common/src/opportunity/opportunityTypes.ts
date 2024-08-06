@@ -1,4 +1,4 @@
-import { PublicodeObjective, QuestionnaireRoute } from '../questionnaire/types/types'
+import { PublicodeObjective, QuestionnaireRoute, StructureSize } from '../questionnaire/types/types'
 
 export type Opportunity = ContactDetails & OpportunityDetails
 
@@ -10,7 +10,7 @@ export interface ContactDetails {
   companySiret: string
   companyName?: string | null
   companySector?: string
-  companySize?: number
+  companySize?: StructureSize
 }
 
 export enum OpportunityType {

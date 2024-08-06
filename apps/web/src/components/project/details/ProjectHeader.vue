@@ -1,4 +1,8 @@
 <template>
+  <TeeDsfrBreadcrumb
+    :links="links"
+    :result-hash="`#${project.slug}`"
+  />
   <TeeEligibilityCriteriaBar
     :bg-color="Color.blueLightnessed"
     :bg-bar-color="Color.blueLighted"
@@ -27,6 +31,7 @@
 import { Color, Project } from '@/types'
 import { RouteName } from '@/types/routeType'
 import { useNavigationStore } from '@/stores/navigation'
+import type { DsfrBreadcrumbProps } from '@gouvminint/vue-dsfr'
 
 interface Props {
   project: Project
@@ -40,6 +45,7 @@ const routeToProjects = {
   hash: '#' + props.project.slug,
   query: navigationStore.query
 }
+const links = ref<DsfrBreadcrumbProps['links']>([{ text: props.project.title }])
 </script>
 
 <style scoped lang="scss">

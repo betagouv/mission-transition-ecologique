@@ -9,7 +9,7 @@ export const makeProgramHelper = ({
   id = '',
   rules = {},
   cost = '1000 €',
-  nature = ProgramAidType.acc
+  nature = ProgramAidType.study
 }: {
   id?: string
   rules?: Rules
