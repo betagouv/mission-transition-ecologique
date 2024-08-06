@@ -7,7 +7,7 @@ export type Rules = { [FILTERING_RULE_NAME]?: { [k: string]: unknown } | string;
 /** makes data for a mock program with given eligibility rules */
 export const makeProgramHelper = ({
   id = '',
-  rules = { [FILTERING_RULE_NAME]: { valeur: 'oui' } },
+  rules = {},
   cost = '1000 €',
   nature = ProgramAidType.acc
 }: {
