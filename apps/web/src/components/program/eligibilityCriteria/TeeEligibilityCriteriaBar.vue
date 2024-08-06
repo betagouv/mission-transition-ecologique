@@ -7,13 +7,14 @@
     <div class="fr-container fr-grid-row fr-grid-row--center fr-grid-row--middle fr-py-md-1w">
       <div class="fr-col-md-2 fr-col-lg-2 fr-col-xl-2 fr-col-hidden fr-col-unhidden-md">
         <div class="fr-col-12">
-          <TeeButtonLink
-            :to="previousRoute"
+          <TeeDsfrButton
+            :label="`Retour`"
             icon="fr-icon-arrow-left-line"
+            class="fr-btn fr-btn--tertiary-no-outline fr-btn-bg"
             size="lg"
+            @click="router.back()"
           >
-            Retour
-          </TeeButtonLink>
+          </TeeDsfrButton>
         </div>
       </div>
       <div class="fr-px-md-2v fr-my-auto fr-col-hidden fr-col-unhidden-md fr-col-md-10 fr-col-lg-10 fr-col-xl-10 fr-px-0 fr-text-left">
@@ -44,12 +45,10 @@ import { useNavigationStore } from '@/stores/navigation'
 import { Color, RouteName } from '@/types'
 import StickyWithOffset from '@/utils/stickyWithOffset'
 import TrackStructure from '@/utils/track/trackStructure'
-import type { RouteLocationRaw } from 'vue-router'
 
 interface Props {
   bgColor?: Color
   bgBarColor?: Color
-  previousRoute: RouteLocationRaw
   message?: string
   messageIcon?: string
 }
@@ -58,6 +57,7 @@ const props = defineProps<Props>()
 const eligibilityCriteria = ref<HTMLElement>()
 const stickyWithOffset = ref<StickyWithOffset | null>(null)
 const criteria = TrackStructure.getEligibilityCriteria()
+const router = useRouter()
 
 function isProgramDetailPage() {
   return useNavigationStore().isByRouteName([RouteName.CatalogProgramDetail, RouteName.QuestionnaireResultDetail])
