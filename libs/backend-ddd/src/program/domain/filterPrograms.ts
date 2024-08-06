@@ -2,6 +2,7 @@ import { Result } from 'true-myth'
 import { RulesManager } from './spi'
 import { ProgramType } from '@tee/data'
 import { QuestionnaireData } from '@tee/common'
+import { convertProgramPublicodes } from '../infrastructure/publicodes'
 
 /** Expected rule to evaluate if a program should be displayed to the user or
  * filtered out (in a program's `publicodes`
@@ -24,19 +25,17 @@ export const filterPrograms = (
   rulesService: RulesManager
 ): Result<ProgramType[], Error> => {
   const filteredPrograms: ProgramType[] = []
-
   for (const program of programs) {
     const evaluation = rulesService.evaluate(FILTERING_RULE_NAME, program, inputData, currentDate)
-
+    const convertedProgram = convertProgramPublicodes(program)
     if (evaluation.isErr) {
       return Result.err(addErrorDetails(evaluation.error, program.id))
     }
 
     if (shouldKeepProgram(evaluation)) {
-      filteredPrograms.push(program)
+      filteredPrograms.push(convertedProgram)
     }
   }
-
   return Result.ok(filteredPrograms)
 }
 

@@ -82,7 +82,6 @@ import ProgramFilterByTheme from '@/components/program/list/filters/ProgramFilte
 import { useProgramStore } from '@/stores/program'
 import { Color, Objective, type ProgramData, TrackId } from '@/types'
 import Matomo from '@/utils/matomo'
-import { Theme } from '@/utils/theme'
 import UsedTrack from '@/utils/track/usedTrack'
 import { computed, onBeforeMount } from 'vue'
 
@@ -117,7 +116,7 @@ const objective = computed(() => {
   }
 
   if (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityObjective()) {
-    return Theme.getPublicodeObjectiveByObjective(UsedTrack.getPriorityObjective())
+    return UsedTrack.getPriorityObjective()
   }
 
   return ''

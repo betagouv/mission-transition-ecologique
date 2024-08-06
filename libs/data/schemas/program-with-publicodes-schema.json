@@ -178,8 +178,7 @@
             }
           }
         }
-      },
-      "required": ["entreprise . est ciblée"]
+      }
     }
   },
   "oneOf": [

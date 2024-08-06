@@ -4,6 +4,7 @@ import { sortPrograms } from './sortPrograms'
 import { Result } from 'true-myth'
 import { ProgramType } from '@tee/data'
 import { Objective, QuestionnaireData } from '@tee/common'
+import { convertProgramPublicodes } from '../infrastructure/publicodes'
 
 export default class ProgramFeatures {
   private _programRepository: ProgramRepository
@@ -21,7 +22,11 @@ export default class ProgramFeatures {
   }
 
   public getById(id: string): ProgramType | undefined {
-    return this._programRepository.getById(id)
+    const program = this._programRepository.getById(id)
+    if (program) {
+      return convertProgramPublicodes(program)
+    }
+    return program
   }
 
   public getFilteredBy(questionnaireData: QuestionnaireData): Result<ProgramType[], Error> {

@@ -1,4 +1,4 @@
-import { PublicodesKeys, PublicodeObjective, PublicodesCondition, ProgramOperatorType, ProgramAidType } from '@/types'
+import { Objective, ProgramOperatorType, ProgramAidType, FormattedPublicodesKeys } from '@/types'
 
 interface ProgramObjectiveLink {
   lien: string
@@ -45,13 +45,6 @@ export interface ProgramData {
 }
 
 export type PublicodesProgramData = {
-  [PublicodesKeys.isTargeted]:
-    | {
-        [k: string]: unknown
-      }
-    | string
   [key: string]: unknown
-  [PublicodesKeys.hasObjective]?: {
-    [PublicodesCondition.oneOfThese]: PublicodeObjective[]
-  }
+  [FormattedPublicodesKeys.hasObjective]?: Objective[]
 }
