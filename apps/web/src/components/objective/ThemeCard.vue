@@ -19,11 +19,12 @@
         </div>
         <div class="fr-card__desc">
           <ul class="fr-tags-group">
-            <ThemeProjectTag
+            <ProjectButton
               v-for="project in option.highlightProjects"
               :key="project.id"
               :color="option.color"
               :project="project"
+              size="sm"
             />
             <span
               v-if="option.moreThanThree"
