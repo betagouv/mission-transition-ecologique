@@ -2,10 +2,11 @@
   <TeeButtonLink
     :id="project.slug"
     :to="getRouteToProjectDetail()"
-    class="fr-my-1-5v fr-mx-2v fr-radius-a--2v"
+    class="fr-my-1-5v fr-mx-1v fr-radius-a--2v"
     :class="`fr-btn--secondary--${color}`"
+    :size="size"
   >
-    {{ project.nameTag || project.title }}
+    <div class="project-button-text">{{ project.nameTag || project.title }}</div>
   </TeeButtonLink>
 </template>
 <script setup lang="ts">
@@ -17,6 +18,7 @@ import { Color, Project } from '@/types'
 interface Props {
   project: Project
   color?: Color
+  size?: 'sm' | 'md' | 'lg'
 }
 const props = defineProps<Props>()
 
@@ -30,3 +32,10 @@ const getRouteToProjectDetail = (): RouteLocationRaw => {
   }
 }
 </script>
+<style lang="scss">
+.project-button-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+</style>

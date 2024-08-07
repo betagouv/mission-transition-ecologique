@@ -19,7 +19,7 @@
         v-for="linkedProject in linkedProjectsTags"
         :key="linkedProject.id"
       >
-        <LinkedProjectButton
+        <ProjectButton
           :project="linkedProject"
           :color="color"
         />
