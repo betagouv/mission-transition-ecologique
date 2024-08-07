@@ -104,6 +104,7 @@ export class Theme {
       UsedTrack.isWasteObjective() ? tags.push(this.getByValue(Objective.WasteManagement) as ThemeType) : undefined
       UsedTrack.isWaterObjective() ? tags.push(this.getByValue(Objective.WaterConsumption) as ThemeType) : undefined
       UsedTrack.isMobilityObjective() ? tags.push(this.getByValue(Objective.SustainableMobility) as ThemeType) : undefined
+      tags.push(this.getByValue(Objective.TrainOrRecruit) as ThemeType)
 
       return tags
     }
