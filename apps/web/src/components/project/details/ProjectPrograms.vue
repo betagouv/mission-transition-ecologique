@@ -13,7 +13,7 @@
       </div></template
     >
     <DsfrHighlight
-      v-if="!hasSiret"
+      v-if="isCatalogDetail"
       class="fr-highlight-border--yellow fr-highlight-bg--yellow-light fr-m-0 fr-p-0"
       :large="true"
     >
@@ -28,9 +28,10 @@
             <div class="fr-col-9 fr-col-xs-8">
               <div class="fr-pb-2v">Complétez votre profil en 2 minutes et accédez aux aides éligibles pour votre entreprise.</div>
               <TeeButtonLink
-                :to="navigationStore.routeByTrackId(TrackId.Siret)"
+                :to="trackSiretTo()"
                 size="sm"
                 secondary
+                @click="onTrackSiretTo()"
               >
                 Compléter mon profil
               </TeeButtonLink>
@@ -49,10 +50,9 @@
             v-if="hasSpinner"
             scale="6"
           />
-          <ProgramListNoResults
+          <TeeNoResult
             v-else-if="!countFilteredPrograms && !hasError"
-            image="images/tracks/no-results.png"
-            :message="{ fr: 'Aucune aide n\'a pu être identifiée avec les critères choisis...' }"
+            message="Aucune aide n\'a pu être identifiée avec les critères choisis..."
           />
           <TeeError
             v-else-if="hasError"
@@ -83,9 +83,9 @@
   </DsfrAccordion>
 </template>
 <script setup lang="ts">
-import TrackStructure from '@/utils/track/trackStructure'
+import { useUsedTrackStore } from '@/stores/usedTrack'
 import { useProgramStore } from '@/stores/program'
-import { type ProgramData, TrackId, Project } from '@/types'
+import { type ProgramData, TrackId, Project, QuestionnaireRoute } from '@/types'
 import Contact from '@/utils/contact'
 import { RouteName } from '@/types/routeType'
 import { type RouteLocationRaw } from 'vue-router'
@@ -98,15 +98,13 @@ const props = defineProps<Props>()
 
 const programStore = useProgramStore()
 const navigationStore = useNavigationStore()
+const isCatalogDetail = navigationStore.isByRouteName(RouteName.CatalogProjectDetail)
 
 const expandedId = ref<string | undefined>('project-aids')
 const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)
 
-const siret: undefined | string = TrackStructure.getSiret()
 const hasSpinner = navigationStore.hasSpinner
-
-const hasSiret = computed(() => siret !== undefined && siret !== '')
 
 const countFilteredPrograms = computed(() => {
   return filteredPrograms.value.length || 0
@@ -132,6 +130,20 @@ const getRouteToProgramDetail = (programId: string): RouteLocationRaw => {
     name: RouteName.ProgramFromProjectDetail,
     params: { programId: programId, projectSlug: props.project.slug },
     query: navigationStore.query
+  }
+}
+
+const trackSiretTo = (): RouteLocationRaw => {
+  if (navigationStore.isByRouteName(RouteName.CatalogProjectDetail)) {
+    navigationStore.updateSearchParam({ name: TrackId.QuestionnaireRoute, value: QuestionnaireRoute.SpecificGoal })
+  }
+
+  return navigationStore.routeByTrackId(TrackId.Siret)
+}
+
+function onTrackSiretTo() {
+  if (navigationStore.isByRouteName(RouteName.CatalogProjectDetail)) {
+    useUsedTrackStore().updateByTrackIdAndValue(TrackId.QuestionnaireRoute, QuestionnaireRoute.SpecificGoal)
   }
 }
 </script>
