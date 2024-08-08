@@ -54,17 +54,14 @@
         <p class="fr-sm-hide">
           {{ c.text }}
         </p>
-        <router-link
-          class="tee-router-link"
-          :to="{ name: RouteName.QuestionnaireStart }"
-        >
-          <button
-            class="fr-link fr-text--bold fr-link--icon-right fr-icon-arrow-right-line"
-            aria-disabled="false"
-          >
-            Je me lance
-          </button>
-        </router-link>
+        <TeeDsfrButton
+          label="Je me lance"
+          aria-disabled="false"
+          icon="ri-arrow-right-line"
+          icon-right
+          class="fr-text--bold fr-btn--tertiary-no-outline"
+          @click="setObjective(c.value)"
+        />
       </div>
     </div>
   </div>
@@ -72,6 +69,14 @@
 
 <script setup lang="ts">
 import { RouteName } from '@/types/routeType'
+import { type RouteLocationAsRelativeGeneric } from 'vue-router'
+import { useProgramStore } from '@/stores/program'
+import { Objective } from '@tee/common'
+
+const routeToBaseList: RouteLocationAsRelativeGeneric = {
+  name: RouteName.CatalogProjects
+}
+const router = useRouter()
 
 const content = [
   {
@@ -81,6 +86,7 @@ const content = [
     img: '/images/home/electric.svg',
     imgSolo: '/images/home/electric-solo.svg',
     imgRight: false,
+    value: Objective.EnergyPerformance,
     text: 'Le prix de l’énergie ne cesse d’augmenter. \
         L’efficacité énergétique est un axe à court terme \
         vous permettant de générer des économies d’énergie, \
@@ -101,7 +107,8 @@ const content = [
         en climatisation et en éclairage ? Et si vous envisagiez de \
         rénover vos bâtiments pour en diminuer les besoins en énergie ? \
         Les entreprises qui s'engagent dans une démarche de rénovation \
-        moins polluante peuvent bénéficier de financements publics."
+        moins polluante peuvent bénéficier de financements publics.",
+    value: Objective.BuildingRenovation
   },
   {
     badge: '⚡️ Mobilité durable',
@@ -118,7 +125,8 @@ const content = [
         Pour s’inscrire pleinement dans la transition écologique, \
         il convient à chaque entreprise d’intégrer cette \
         réflexion à sa stratégie. Il existe des aides pour\
-        vous accompagner dans sa construction et le financement de sa mise en place ! '
+        vous accompagner dans sa construction et le financement de sa mise en place ! ',
+    value: Objective.SustainableMobility
   },
   {
     badge: '👷‍♀️ Gestion de l’eau',
@@ -127,10 +135,15 @@ const content = [
     img: '/images/home/water.png',
     imgSolo: '/images/home/water-solo.svg',
     imgRight: true,
+    value: Objective.WaterConsumption,
     text: 'L’eau a un coût, qui risque d’augmenter dans les années à venir. \
         La réglementation peut imposer à certaines activités de mettre \
         en place une réutilisation de l’eau, des circuits fermés. \
         Économiser dès maintenant, étudier les alternatives, c’est anticiper l’avenir. '
   }
 ]
+const setObjective = async (obj: Objective) => {
+  await router.push(routeToBaseList)
+  useProgramStore().setObjectiveTypeSelected(obj)
+}
 </script>
