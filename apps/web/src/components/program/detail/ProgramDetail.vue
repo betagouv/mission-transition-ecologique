@@ -182,7 +182,6 @@
           </div>
         </div>
         <DsfrAccordionsGroup>
-          <!-- ELIGIBILITY -->
           <ProgramAccordion
             v-if="program && program['conditions d\'éligibilité']"
             :accordion-id="`${program.id}-eligibility`"
@@ -190,8 +189,6 @@
           >
             <ProgramEligibility :program="program" />
           </ProgramAccordion>
-
-          <!-- LONG DESCRIPTION -->
           <ProgramAccordion
             v-if="program && program['description longue']"
             :accordion-id="`${program.id}-long-description`"

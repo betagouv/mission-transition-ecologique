@@ -26,9 +26,9 @@ export const useNavigationStore = defineStore('navigation', () => {
   const hasSpinner = ref<boolean>(false)
 
   const query = computed<Record<string, LocationQueryValue | LocationQueryValue[]>>(() => {
-    let query: LocationQuery = {}
+    const query: LocationQuery = {}
     for (const key of new URLSearchParams(stringOfSearchParams.value).keys()) {
-      query = addQueryByKey(key, query)
+      addQueryByKey(key, query)
     }
 
     return query
@@ -44,12 +44,12 @@ export const useNavigationStore = defineStore('navigation', () => {
   }
 
   function queryByUsedTrackId(usedTrackId: string) {
-    let query: LocationQuery = {}
+    const query: LocationQuery = {}
     for (const key of new URLSearchParams(stringOfSearchParams.value).keys()) {
       if (key === usedTrackId) {
         break
       }
-      query = addQueryByKey(key, query)
+      addQueryByKey(key, query)
     }
 
     return query
@@ -73,6 +73,18 @@ export const useNavigationStore = defineStore('navigation', () => {
     }
 
     return route
+  }
+
+  function isCatalogPrograms() {
+    return isByRouteName(RouteName.CatalogPrograms)
+  }
+
+  function isCatalogProjects() {
+    return isByRouteName(RouteName.CatalogProjects)
+  }
+
+  function isCatalogProjectDetail() {
+    return isByRouteName(RouteName.CatalogProjectDetail)
   }
 
   function isCatalog() {
@@ -155,6 +167,9 @@ export const useNavigationStore = defineStore('navigation', () => {
     searchParams,
     tabSelectedOnList,
     hasSpinner,
+    isCatalogPrograms,
+    isCatalogProjects,
+    isCatalogProjectDetail,
     isCatalog,
     isByRouteName,
     resetSearchParams,
