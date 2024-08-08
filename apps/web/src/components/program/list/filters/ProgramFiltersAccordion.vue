@@ -53,7 +53,7 @@ const filters: FilterItem[] = [
     title: "Critères d'éligibilité",
     id: 'eligibility-criteria',
     component: TeeEligibilityCriteriaAccordion,
-    if: !useNavigationStore().isCatalog(),
+    if: !useNavigationStore().isCatalogPrograms(),
     accordionClass: 'fr-hidden-md'
   },
   {
@@ -67,14 +67,14 @@ const filters: FilterItem[] = [
     id: 'operator-aid',
     component: ProgramFilterByOperator,
     componentClass: 'fr-pl-2v',
-    if: useNavigationStore().isCatalog()
+    if: useNavigationStore().isCatalogPrograms()
   },
   {
     title: 'Régions',
     id: 'region-aid',
     component: ProgramFilterByRegion,
     componentClass: 'fr-pl-2v',
-    if: useNavigationStore().isCatalog()
+    if: useNavigationStore().isCatalogPrograms()
   }
 ]
 </script>

@@ -10,7 +10,7 @@
       v-if="track.objective"
       class="fr-col-12 fr-px-0v fr-px-md-4v"
     >
-      <TeeObjectiveCard :objective="track.objective" />
+      <ThemeHeaderCard :objective="track.objective" />
     </div>
 
     <div class="fr-col">
