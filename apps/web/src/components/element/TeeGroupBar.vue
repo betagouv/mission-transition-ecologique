@@ -16,7 +16,7 @@
           :class="icon + ' fr-icon--sm fr-mr-1-5v'"
           aria-hidden="true"
         />
-        {{ text }}
+        <div class="info-text">{{ text }}</div>
       </div>
     </template>
   </div>
@@ -69,3 +69,10 @@ const colClass = computed(() => {
   return col.join(' ')
 })
 </script>
+<style lang="scss">
+.info-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+</style>
