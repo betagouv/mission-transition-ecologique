@@ -39,17 +39,17 @@ EXPECT that the programs respect a set of given rules
     },
     {
       name: 'single program',
-      programs: [makeProgram('1', ProgramAidType.acc)],
+      programs: [makeProgram('1', ProgramAidType.study)],
       expectedIdOrder: ['1']
     },
     {
       name: 'no reordering of coaching/training 1',
-      programs: [makeProgram('1', ProgramAidType.train), makeProgram('2', ProgramAidType.acc)],
+      programs: [makeProgram('1', ProgramAidType.train), makeProgram('2', ProgramAidType.study)],
       expectedIdOrder: ['1', '2']
     },
     {
       name: 'no reordering of coaching/training 2',
-      programs: [makeProgram('1', ProgramAidType.acc), makeProgram('2', ProgramAidType.train)],
+      programs: [makeProgram('1', ProgramAidType.study), makeProgram('2', ProgramAidType.train)],
       expectedIdOrder: ['1', '2']
     }
   ]
@@ -58,29 +58,29 @@ EXPECT that the programs respect a set of given rules
   const testCasesNoSpecificGoal: TestCase[] = [
     {
       name: 'free coaching first 1',
-      programs: [makeProgram('1', ProgramAidType.acc), makeProgram('2', ProgramAidType.acc, 'gratuit')],
+      programs: [makeProgram('1', ProgramAidType.study), makeProgram('2', ProgramAidType.study, 'gratuit')],
       expectedIdOrder: ['2', '1']
     },
     {
       name: 'free coaching first 2 (case insensitive)',
-      programs: [makeProgram('1', ProgramAidType.acc), makeProgram('2', ProgramAidType.acc, 'Gratuit')],
+      programs: [makeProgram('1', ProgramAidType.study), makeProgram('2', ProgramAidType.study, 'Gratuit')],
       expectedIdOrder: ['2', '1']
     },
     {
       name: 'possible free coaching second 1',
       programs: [
-        makeProgram('1', ProgramAidType.acc),
-        makeProgram('2', ProgramAidType.acc, 'Sur devis (gratuit en bretagne)'),
-        makeProgram('3', ProgramAidType.acc, 'gratuit')
+        makeProgram('1', ProgramAidType.study),
+        makeProgram('2', ProgramAidType.study, 'Sur devis (gratuit en bretagne)'),
+        makeProgram('3', ProgramAidType.study, 'gratuit')
       ],
       expectedIdOrder: ['3', '2', '1']
     },
     {
       name: 'possible free coaching second 2 (case insensitive)',
       programs: [
-        makeProgram('1', ProgramAidType.acc),
-        makeProgram('2', ProgramAidType.acc, 'Sur devis (Gratuit en bretagne)'),
-        makeProgram('3', ProgramAidType.acc, 'gratuit')
+        makeProgram('1', ProgramAidType.study),
+        makeProgram('2', ProgramAidType.study, 'Sur devis (Gratuit en bretagne)'),
+        makeProgram('3', ProgramAidType.study, 'gratuit')
       ],
       expectedIdOrder: ['3', '2', '1']
     },
@@ -91,9 +91,9 @@ EXPECT that the programs respect a set of given rules
         makeProgram('2', ProgramAidType.loan),
         makeProgram('3', ProgramAidType.fund),
         makeProgram('4', ProgramAidType.train),
-        makeProgram('5', ProgramAidType.acc),
-        makeProgram('6', ProgramAidType.acc, 'Sur devis (Gratuit en bretagne)'),
-        makeProgram('7', ProgramAidType.acc, 'gratuit')
+        makeProgram('5', ProgramAidType.study),
+        makeProgram('6', ProgramAidType.study, 'Sur devis (Gratuit en bretagne)'),
+        makeProgram('7', ProgramAidType.study, 'gratuit')
       ],
       expectedIdOrder: ['7', '6', '4', '5', '3', '2', '1']
     }
@@ -103,38 +103,38 @@ EXPECT that the programs respect a set of given rules
   const testCasesSpecificGoal: TestCase[] = [
     {
       name: 'free coaching last 1',
-      programs: [makeProgram('1', ProgramAidType.acc, 'gratuit'), makeProgram('2', ProgramAidType.acc)],
+      programs: [makeProgram('1', ProgramAidType.study, 'gratuit'), makeProgram('2', ProgramAidType.study)],
       expectedIdOrder: ['2', '1']
     },
     {
       name: 'free coaching last 2 (case insensitive)',
-      programs: [makeProgram('1', ProgramAidType.acc, 'Gratuit'), makeProgram('2', ProgramAidType.acc)],
+      programs: [makeProgram('1', ProgramAidType.study, 'Gratuit'), makeProgram('2', ProgramAidType.study)],
       expectedIdOrder: ['2', '1']
     },
     {
       name: 'possible free coaching second last 1',
       programs: [
-        makeProgram('1', ProgramAidType.acc, 'gratuit'),
-        makeProgram('2', ProgramAidType.acc, 'Sur devis (gratuit en bretagne)'),
-        makeProgram('3', ProgramAidType.acc)
+        makeProgram('1', ProgramAidType.study, 'gratuit'),
+        makeProgram('2', ProgramAidType.study, 'Sur devis (gratuit en bretagne)'),
+        makeProgram('3', ProgramAidType.study)
       ],
       expectedIdOrder: ['3', '2', '1']
     },
     {
       name: 'possible free coaching second last 2 (case insensitive)',
       programs: [
-        makeProgram('1', ProgramAidType.acc, 'gratuit'),
-        makeProgram('2', ProgramAidType.acc, 'Sur devis (Gratuit en bretagne)'),
-        makeProgram('3', ProgramAidType.acc)
+        makeProgram('1', ProgramAidType.study, 'gratuit'),
+        makeProgram('2', ProgramAidType.study, 'Sur devis (Gratuit en bretagne)'),
+        makeProgram('3', ProgramAidType.study)
       ],
       expectedIdOrder: ['3', '2', '1']
     },
     {
       name: 'correct ordering of types',
       programs: [
-        makeProgram('1', ProgramAidType.acc, 'gratuit'),
-        makeProgram('2', ProgramAidType.acc, 'Sur devis (Gratuit en bretagne)'),
-        makeProgram('3', ProgramAidType.acc),
+        makeProgram('1', ProgramAidType.study, 'gratuit'),
+        makeProgram('2', ProgramAidType.study, 'Sur devis (Gratuit en bretagne)'),
+        makeProgram('3', ProgramAidType.study),
         makeProgram('4', ProgramAidType.train),
         makeProgram('5', ProgramAidType.tax),
         makeProgram('6', ProgramAidType.loan),

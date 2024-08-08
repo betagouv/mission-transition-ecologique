@@ -1,6 +1,5 @@
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import {
-  PublicodesKeys,
   QuestionnaireDataEnum,
   QuestionnaireRoute,
   TrackId,
@@ -67,7 +66,7 @@ export default class OpportunityApi extends RequestApi {
         companySiret: this._opportunityForm.siret.value,
         companyName: this.getFromUsedTrack(TrackId.Siret, 'denomination'),
         companySector: TrackStructure.getSector(),
-        companySize: (this.getFromUsedTrack(TrackId.StructureWorkforce, PublicodesKeys.Workforce) as unknown as number) ?? undefined, // get from usedTrack
+        companySize: TrackStructure.getSize() ?? undefined,
         message: this._opportunityForm.needs.value,
         questionnaireRoute: this.getFromUsedTrack(
           TrackId.QuestionnaireRoute,

@@ -11,7 +11,7 @@ export interface DataProgram {
   'Dispositif activable en autonomie': boolean
   'Parcours "Je ne sais pas par où commencer"': boolean
   'URL externe': string
-  "Montant de l'aide": string
+  "Montant de l'aide ou coût": string
   "Durée de l'aide": string
   DISPOSITIF_DATE_DEBUT: string
   DISPOSITIF_DATE_FIN: string
@@ -99,9 +99,10 @@ export interface GeographicAreas {
 }
 
 export enum DataProgramType {
-  Accompagnement = 'Accompagnement',
+  Study = 'étude',
   TaxAdvantage = 'Avantage fiscal',
   Financing = 'Financement',
+  FinancingStudy = 'Financement-étude',
   Loan = 'Prêt',
   Training = 'Formation',
   ActionTraining = 'Formation-Action',

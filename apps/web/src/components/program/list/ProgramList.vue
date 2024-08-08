@@ -61,7 +61,7 @@ const showProgramCounter = computed(() => {
 
 const getRouteToProgramDetail = (programId: string): RouteLocationRaw => {
   return {
-    name: isCatalog ? RouteName.CatalogDetail : RouteName.QuestionnaireResultDetail,
+    name: isCatalog ? RouteName.CatalogProgramDetail : RouteName.QuestionnaireResultDetail,
     params: { programId },
     query: isCatalog ? undefined : navigationStore.query
   }

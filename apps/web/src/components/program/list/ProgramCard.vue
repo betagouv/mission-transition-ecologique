@@ -57,7 +57,15 @@ const getCostInfos = () => {
   let text: string | undefined = ''
 
   switch (program["nature de l'aide"]) {
-    case ProgramAidType.acc:
+    case ProgramAidType.study:
+      if (program["coût de l'accompagnement"]) {
+        text = program["coût de l'accompagnement"]
+        prefix = 'programCosts.costPrefix'
+      } else {
+        prefix = 'programCosts.aidPrefix'
+        text = program['montant du financement']
+      }
+      break
     case ProgramAidType.train:
       prefix = 'programCosts.costPrefix'
       text = program["coût de l'accompagnement"]

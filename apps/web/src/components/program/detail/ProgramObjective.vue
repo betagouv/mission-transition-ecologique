@@ -49,7 +49,7 @@ const props = defineProps<Props>()
 
 const getProgramObjectiveTitle = () => {
   switch (props.program["nature de l'aide"]) {
-    case ProgramAidType.acc:
+    case ProgramAidType.study:
     case ProgramAidType.train:
     case ProgramAidType.loan:
     case ProgramAidType.tax:

@@ -81,12 +81,12 @@ export const routes = [
     children: [
       {
         path: '',
-        name: RouteName.Catalog,
+        name: RouteName.CatalogPrograms,
         component: CatalogList as Component
       },
       {
         path: ':programId',
-        name: RouteName.CatalogDetail,
+        name: RouteName.CatalogProgramDetail,
         component: ProgramDetail as Component,
         beforeEnter: [Hook.hasProgram],
         props: true

@@ -14,9 +14,9 @@ import { DsfrCheckboxSetProps } from '@gouvminint/vue-dsfr'
 const programFilters: programFiltersType = useProgramStore().programFilters
 const programAidTypeOptions: DsfrCheckboxSetProps['options'] = [
   {
-    label: 'Accompagnement',
-    id: ProgramAidType.acc,
-    name: ProgramAidType.acc
+    label: 'Étude',
+    id: ProgramAidType.study,
+    name: ProgramAidType.study
   },
   {
     label: 'Financement',
