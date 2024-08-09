@@ -1,7 +1,7 @@
 <template>
   <TeeDsfrBreadcrumb :links="links" />
   <TeeEligibilityCriteriaBar
-    v-if="!navigationStore.isCatalogProjectDetail"
+    v-if="!navigationStore.isCatalogProjectDetail()"
     :bg-color="Color.blueLightnessed"
     :bg-bar-color="Color.blueLighted"
   />
