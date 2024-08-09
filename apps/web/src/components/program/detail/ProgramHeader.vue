@@ -1,13 +1,9 @@
 <template>
-  <TeeDsfrBreadcrumb
-    :links="links"
-    :result-hash="`#${programId}`"
-  />
+  <TeeDsfrBreadcrumb :links="links" />
   <TeeEligibilityCriteriaBar
     v-if="!isCatalogDetail"
     :bg-color="Color.greenLightnessed"
     :bg-bar-color="Color.greenLighted"
-    :previous-route="getRouteToPreviousPage()"
     message="Cette aide correspond à vos critères d’éligibilité"
     message-icon="fr-icon-checkbox-circle-fill"
   />
@@ -80,16 +76,8 @@ const links = computed<DsfrBreadcrumbProps['links']>(() => {
   return [...links, { text: props.program?.titre || '' }]
 })
 
-const getRouteToPreviousPage = () => {
-  if (navigationStore.isByRouteName(RouteName.ProgramFromProjectDetail)) {
-    return routeToProject
-  }
-
-  return routeToResults
-}
-
-const goToPrograms = async () => {
-  await router.push(getRouteToPreviousPage())
+const goToPrograms = () => {
+  router.back()
 }
 onBeforeMount(() => {
   project.value = projectStore.currentProject
