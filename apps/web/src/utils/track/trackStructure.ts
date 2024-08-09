@@ -2,6 +2,7 @@ import { workforce } from '@/questionnaire/trackStructureWorkforce'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { LegalCategory, StructureSize, TrackId } from '@/types'
 import Format from '@/utils/format'
+import { capitalize } from 'vue'
 
 export default class TrackStructure {
   static getEligibilityCriteria() {
@@ -15,7 +16,7 @@ export default class TrackStructure {
     if (this.getSector()) {
       criteria.push({
         icon: 'fr-icon-check-line',
-        text: Format.truncate(TrackStructure.getSector(), 30)
+        text: capitalize(Format.truncate(TrackStructure.getSector(), 30))
       })
     }
     if (this.getLocalisation()) {

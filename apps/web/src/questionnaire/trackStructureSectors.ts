@@ -18,7 +18,7 @@ export const sectors: Track = {
       value: Sector.Craftsmanship,
       questionnaireData: { sector: Sector.Craftsmanship },
       title: { fr: 'Artisanat' },
-      label: { fr: '👩‍🎨 J’ai une activité artisanale' },
+      label: { fr: '👩‍🎨 Activité artisanale' },
       next: {
         default: TrackId.StructureRegion
       }
@@ -27,7 +27,7 @@ export const sectors: Track = {
       value: Sector.Industry,
       questionnaireData: { sector: Sector.Industry },
       title: { fr: 'Industrie' },
-      label: { fr: '👩‍🔧 J’ai une activité industrielle, fabrication, production' },
+      label: { fr: '👩‍🔧 Industrie, fabrication, production' },
       next: {
         default: TrackId.StructureRegion
       }
@@ -36,7 +36,7 @@ export const sectors: Track = {
       value: Sector.Tourism,
       questionnaireData: { sector: Sector.Tourism },
       title: { fr: 'Tourisme' },
-      label: { fr: '🤵‍♂️ J’ai une activité de tourisme, restauration' },
+      label: { fr: '🤵‍♂️ Tourisme, restauration' },
       next: {
         default: TrackId.StructureRegion
       }
@@ -45,7 +45,7 @@ export const sectors: Track = {
       value: Sector.Tertiary,
       questionnaireData: { sector: Sector.Tertiary },
       title: { fr: 'Tertiaire' },
-      label: { fr: '🧑‍⚖️ J’ai une activité tertiaire, de services' },
+      label: { fr: '🧑‍⚖️ Tertiaire, services' },
       next: {
         default: TrackId.StructureRegion
       }
@@ -54,7 +54,7 @@ export const sectors: Track = {
       value: Sector.Agriculture,
       questionnaireData: { sector: Sector.Agriculture },
       title: { fr: 'Agriculture' },
-      label: { fr: '👩‍🌾 J’ai une activité agricole' },
+      label: { fr: '👩‍🌾 Agricole' },
       next: {
         default: TrackId.StructureRegion
       }
@@ -63,7 +63,7 @@ export const sectors: Track = {
       value: Sector.Other,
       questionnaireData: { sector: Sector.Other },
       title: { fr: 'Autre' },
-      label: { fr: "Je suis dans un autre secteur d'activité" },
+      label: { fr: "Autre secteur d'activité" },
       next: {
         default: TrackId.StructureRegion
       }
