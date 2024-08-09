@@ -14,7 +14,7 @@
             :id="program.id"
             :key="program.id"
             :to="getRouteToProgramDetail(program.id)"
-            class="fr-col-12 fr-card fr-enlarge-link fr-card--horizontal-tier fr-mb-10v"
+            class="fr-col-12 program-card fr-card fr-enlarge-link fr-card--horizontal-tier fr-mb-10v"
           >
             <ProgramCard :program="program" />
           </router-link>
@@ -48,3 +48,10 @@ const getRouteToProgramDetail = (programId: string): RouteLocationRaw => {
   }
 }
 </script>
+<style lang="scss">
+.program-card:active {
+  @media (width >= 0) and (width <= 767px) {
+    background-color: var(--background-default-grey-active);
+  }
+}
+</style>
