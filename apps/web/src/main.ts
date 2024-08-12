@@ -11,18 +11,17 @@ import WebApp from './WebApp.vue'
 import { addIcons } from './plugin/icons'
 import Sentry from './plugin/sentry'
 import { createHead } from '@unhead/vue'
-import posthog from 'posthog-js'
+import posthogPlugin from '../plugin/posthog'
 
 addIcons()
 
 const store = createPinia()
 
 const app: App = createApp(WebApp as Component)
+app.use(posthogPlugin)
 
 Sentry.init(app)
-posthog.init('YOUR_PROJECT_API_KEY', {
-  api_host: 'https://app.posthog.com/'
-})
+
 const head = createHead()
 app.use(head)
 app.use(store)

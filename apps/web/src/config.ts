@@ -53,4 +53,8 @@ export default class Config extends ConfigCommon {
   static get matomoAppId() {
     return this.metaEnv.VITE_MATOMO_APP_ID
   }
+
+  static get posthogApiKey() {
+    return this.metaEnv.POSTHOG_API_KEY as string
+  }
 }
