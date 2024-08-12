@@ -52,8 +52,9 @@
           <div class="fr-col">
             <!-- PROGRAM TITLE -->
             <div class="program-title fr-text--purple fr-h6 fr-text--bold fr-mb-5v">
-              <span>{{ program?.titre }}</span>
+              <div class="program-title-text">{{ program?.titre }}</div>
               <TeeCopyLinkButton
+                class="fr-pl-6v"
                 :tertiary="true"
                 :no-outline="true"
                 copy-class="fr-text--green"
@@ -320,5 +321,8 @@ const scrollToProgramForm = () => {
 .program-title {
   display: flex;
   align-items: center;
+}
+.program-title-text {
+  height: 32px;
 }
 </style>
