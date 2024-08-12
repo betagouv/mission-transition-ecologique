@@ -51,15 +51,15 @@
           <!-- TITLE & RESUME -->
           <div class="fr-col">
             <!-- PROGRAM TITLE -->
-            <p class="tee-program-title fr-mb-5v">
-              {{ program?.titre }}
+            <div class="program-title fr-text--purple fr-h6 fr-text--bold fr-mb-5v">
+              <span>{{ program?.titre }}</span>
               <TeeCopyLinkButton
                 :tertiary="true"
                 :no-outline="true"
                 copy-class="fr-text--green"
                 text-class="fr-text--black"
               />
-            </p>
+            </div>
 
             <!-- PROGRAM RESUME / TEXT-->
             <h2
@@ -316,3 +316,9 @@ const scrollToProgramForm = () => {
   }
 }
 </script>
+<style lang="scss" scoped>
+.program-title {
+  display: flex;
+  align-items: center;
+}
+</style>
