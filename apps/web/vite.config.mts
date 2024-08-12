@@ -151,7 +151,7 @@ function buildHeaders() {
       "object-src 'self';" +
       `connect-src 'self' https://conseillers-entreprises.service-public.fr https://stats.beta.gouv.fr ${
         sentryData?.domain ? sentryData.domain : ''
-      } https://embed.typeform.com https://api.typeform.com;` +
+      } https://embed.typeform.com https://eu.i.posthog.com https://api.typeform.com;` +
       "worker-src 'self' blob:;" +
       "frame-src 'self' https://conseillers-entreprises.service-public.fr https://form.typeform.com;" +
       "frame-ancestors 'self' https://conseillers-entreprises.service-public.fr;",

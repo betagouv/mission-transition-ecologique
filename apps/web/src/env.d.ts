@@ -15,6 +15,7 @@ export interface ImportMetaEnv {
   readonly DEV: boolean
   readonly PROD: boolean
   readonly SSR: boolean
+  readonly POSTHOG_API_KEY: string
   // more env variables...
 }
 
