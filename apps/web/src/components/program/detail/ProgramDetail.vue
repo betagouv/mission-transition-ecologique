@@ -322,6 +322,7 @@ const scrollToProgramForm = () => {
   display: flex;
   align-items: center;
 }
+
 .program-title-text {
   height: 32px;
 }
