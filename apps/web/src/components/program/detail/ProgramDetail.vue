@@ -53,6 +53,12 @@
             <!-- PROGRAM TITLE -->
             <p class="tee-program-title fr-mb-5v">
               {{ program?.titre }}
+              <TeeCopyLinkButton
+                :tertiary="true"
+                :no-outline="true"
+                copy-class="fr-text--green"
+                text-class="fr-text--black"
+              />
             </p>
 
             <!-- PROGRAM RESUME / TEXT-->
