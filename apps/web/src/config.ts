@@ -43,6 +43,6 @@ export default class Config extends ConfigCommon {
   }
 
   static get posthogApiKey() {
-    return this.metaEnv.POSTHOG_API_KEY as string
+    return this.metaEnv.VITE_POSTHOG_API_KEY
   }
 }
