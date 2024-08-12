@@ -66,7 +66,7 @@
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
 import { Objective, type ProgramData, TrackId } from '@/types'
-import Matomo from '@/utils/matomo'
+import Analytics from '@/utils/analytics'
 import { Theme } from '@/utils/theme'
 import UsedTrack from '@/utils/track/usedTrack'
 import posthog from 'posthog-js'
@@ -130,7 +130,7 @@ onBeforeMount(async () => {
   }
 
   // analytics / send event
-  Matomo.sendEvent(TrackId.Results, 'show_results_catalog')
+  Analytics.sendEvent(TrackId.Results, 'show_results_catalog')
   posthog.capture('show_results_catalog', { results: TrackId.Results })
 })
 </script>

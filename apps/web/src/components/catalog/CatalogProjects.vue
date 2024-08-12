@@ -67,7 +67,7 @@ import { useProgramStore } from '@/stores/program'
 import { useProjectStore } from '@/stores/project'
 import { Objective, type ProgramData, Project as ProjectType, RouteName, TrackId } from '@/types'
 import Contact from '@/utils/contact'
-import Matomo from '@/utils/matomo'
+import Analytics from '@/utils/analytics'
 import { Project } from '@/utils/project/project'
 import { computed, onBeforeMount } from 'vue'
 import type { RouteLocationRaw } from 'vue-router'
@@ -119,6 +119,6 @@ onBeforeMount(async () => {
   navigationStore.hasSpinner = false
 
   // analytics / send event
-  Matomo.sendEvent(TrackId.Results, 'show_results_catalog_projects')
+  Analytics.sendEvent(TrackId.Results, 'show_results_catalog_projects')
 })
 </script>

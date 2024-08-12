@@ -32,12 +32,9 @@ VITE_DEPLOY_URL = https://tee-frontend.osc-fr1.scalingo.io
 # To set up global contact email
 VITE_CONTACT_EMAIL = contact@mission-transition-ecologique.beta.gouv.fr
 
-# To set up Matomo analytics
-# Note : if VITE_MATOMO_DEACTIVATE is set to 'true' it prohibits the tracking
-# even if VITE_MATOMO_URL and VITE_MATOMO_APP_ID are correctly set
-VITE_MATOMO_DEACTIVATE = true
-VITE_MATOMO_URL = https://stats.beta.gouv.fr
-VITE_MATOMO_APP_ID = 42
+# To set up PostHog analytics
+# create a posthog account and use the corresponding API key
+POSTHOG_API_KEY = your_key
 
 # To indicate the backend url
 VITE_TEE_BACKEND_URL=https://tee-backend.osc-fr1.scalingo.io

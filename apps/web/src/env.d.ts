@@ -4,9 +4,6 @@ export interface ImportMetaEnv {
   readonly VITE_NO_DEBUG_SWITCH: string
   readonly VITE_DEPLOY_URL: string
   readonly VITE_CONTACT_EMAIL: string
-  readonly VITE_MATOMO_DEACTIVATE: string
-  readonly VITE_MATOMO_URL: string
-  readonly VITE_MATOMO_APP_ID: number
   readonly VITE_TEE_BACKEND_URL: string
   readonly VITE_SENTRY_DSN: string | undefined
   VITE_SENTRY_ENVIRONMENT: string

@@ -40,7 +40,7 @@ import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
 import { ProgramData, Objective, TrackId, Project } from '@/types'
 import { computed, onBeforeMount } from 'vue'
-import Matomo from '@/utils/matomo'
+import Analytics from '@/utils/analytics'
 import { useProjectStore } from '@/stores/project'
 import UsedTrack from '@/utils/track/usedTrack'
 import { Theme } from '@/utils/theme'
@@ -96,6 +96,6 @@ onBeforeMount(async () => {
   navigationStore.hasSpinner = false
 
   // analytics / send event
-  Matomo.sendEvent(TrackId.Results, 'show_results')
+  Analytics.sendEvent(TrackId.Results, 'show_results')
 })
 </script>

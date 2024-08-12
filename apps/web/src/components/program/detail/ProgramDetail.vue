@@ -230,7 +230,7 @@ import { useProgramStore } from '@/stores/program'
 import { type ProgramData as ProgramType } from '@/types'
 import { RouteName } from '@/types/routeType'
 import { useNavigationStore } from '@/stores/navigation'
-import Matomo from '@/utils/matomo'
+import Analytics from '@/utils/analytics'
 import Program from '@/utils/program/program'
 import { Scroll } from '@/utils/scroll'
 import Translation from '@/utils/translation'
@@ -285,7 +285,11 @@ const isProgramAutonomous = computed(() => {
 onBeforeMount(() => {
   program.value = programsStore.currentProgram
   // analytics / send event
-  Matomo.sendEvent('result_detail', route.name === RouteName.CatalogProgramDetail ? 'show_detail_catalog' : 'show_detail', props.programId)
+  Analytics.sendEvent(
+    'result_detail',
+    route.name === RouteName.CatalogProgramDetail ? 'show_detail_catalog' : 'show_detail',
+    props.programId
+  )
 })
 
 useHead({

@@ -38,9 +38,6 @@
       </div>
     </div>
 
-    <!-- MATOMO -->
-    <TeeMatomo />
-
     <!-- QUESTIONNAIRE -->
     <div
       v-show="!programs.currentProgram"
@@ -109,7 +106,6 @@ import { computed, onBeforeMount, ref } from 'vue'
 import Translation from '@/utils/translation'
 import { useProgramStore } from './stores/program'
 import { TrackComponent, TrackId } from './types'
-import TeeMatomo from './components/TeeMatomo.vue'
 import TrackSidebar from '@/components/track/TrackSidebar.vue'
 import ProgramDetail from './components/program/detail/ProgramDetail.vue'
 import Widget from '@/utils/widget'

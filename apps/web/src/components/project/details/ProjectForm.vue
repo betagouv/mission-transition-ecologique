@@ -263,7 +263,7 @@ import {
   TrackId,
   RouteName
 } from '@/types'
-import Matomo from '@/utils/matomo'
+import Analytics from '@/utils/analytics'
 import { Scroll } from '@/utils/scroll'
 import TrackStructure from '@/utils/track/trackStructure'
 import Translation from '@/utils/translation'
@@ -389,7 +389,7 @@ const saveProjectForm = async () => {
     requestResponse.value = await opportunity.fetch()
 
     // analytics / send event
-    Matomo.sendEvent(TrackId.Results, 'send_project_form')
+    Analytics.sendEvent(TrackId.Results, 'send_project_form')
   } finally {
     isLoading.value = false
     formIsSent.value = true
