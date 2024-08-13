@@ -4,14 +4,14 @@
     :expanded-id="expandedId"
     @expand="(id: string | undefined) => (expandedId = id)"
   >
-    <template #title
-      ><div
+    <template #title>
+      <div
         id="project-aids-title"
         class="fr-h3"
       >
         💰 Mes aides
-      </div></template
-    >
+      </div>
+    </template>
     <DsfrHighlight
       v-if="isCatalogDetail"
       class="fr-highlight-border--yellow fr-highlight-bg--yellow-light fr-m-0 fr-p-0"

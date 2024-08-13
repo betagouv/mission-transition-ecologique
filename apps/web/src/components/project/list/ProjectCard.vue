@@ -1,6 +1,7 @@
 <template>
   <DsfrCard
     :title="project.title"
+    :horizontal="horizontal"
     :description="project.shortDescription"
     :img-src="project.image"
     :alt-img="`image / ${project.title}`"
@@ -34,13 +35,15 @@ import { Project } from '@/types'
 interface Props {
   project: Project
   isPriorityProject?: boolean
+  horizontal?: boolean
   isUniquePriority?: boolean
   priorityOrder?: number
 }
 
 withDefaults(defineProps<Props>(), {
   isPriorityProject: false,
-  priorityOrder: undefined
+  priorityOrder: undefined,
+  horizontal: false
 })
 
 const priorityTag: string = 'A FAIRE EN PRIORITÉ'

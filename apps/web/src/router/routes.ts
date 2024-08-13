@@ -72,6 +72,13 @@ export const routes = [
         component: ProgramDetail as Component,
         beforeEnter: [Hook.hasProgram, Hook.setUsedTracks, Hook.hasUsedTracks],
         props: true
+      },
+      {
+        path: 'resultat/:programId/:projectSlug',
+        name: RouteName.ProgramFromProjectDetail,
+        component: ProjectDetail as Component,
+        beforeEnter: [Hook.hasProject, Hook.hasProgram, Hook.setUsedTracks, Hook.hasUsedTracks],
+        props: true
       }
     ]
   },
@@ -90,6 +97,13 @@ export const routes = [
         name: RouteName.CatalogProgramDetail,
         component: ProgramDetail as Component,
         beforeEnter: [Hook.hasProgram],
+        props: true
+      },
+      {
+        path: ':programId/:projectSlug',
+        name: RouteName.CatalogProjectFromProgramDetail,
+        component: ProjectDetail as Component,
+        beforeEnter: [Hook.hasProject, Hook.hasProgram],
         props: true
       }
     ]

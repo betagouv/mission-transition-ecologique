@@ -188,6 +188,7 @@
             :title="Translation.t('program.programAmIEligible')"
           >
             <ProgramEligibility :program="program" />
+            <ProgramProjects :program="program" />
           </ProgramAccordion>
           <ProgramAccordion
             v-if="program && program['description longue']"
@@ -195,13 +196,6 @@
             :title="Translation.t('program.programKnowMore')"
           >
             <ProgramLongDescription :program="program" />
-          </ProgramAccordion>
-          <ProgramAccordion
-            v-if="program"
-            :accordion-id="`${program.id}-project-examples`"
-            :title="Translation.t('program.programKnowMore')"
-          >
-            <ProgramProjects :program="program" />
           </ProgramAccordion>
         </DsfrAccordionsGroup>
         <hr class="fr-mb-9v fr-pb-1v" />

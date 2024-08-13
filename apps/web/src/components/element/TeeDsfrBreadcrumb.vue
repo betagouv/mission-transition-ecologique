@@ -17,10 +17,11 @@ const navigationStore = useNavigationStore()
 const usedTrackStore = useUsedTrackStore()
 const isProgramCatalogDetail = navigationStore.isByRouteName(RouteName.CatalogProgramDetail)
 const isProjectCatalogDetail = navigationStore.isByRouteName(RouteName.CatalogProjectDetail)
+const isProjectFromProgramCatalog = navigationStore.isByRouteName(RouteName.CatalogProjectFromProgramDetail)
 const isCatalogDetail = isProgramCatalogDetail || isProjectCatalogDetail
 
 const getListText = () => {
-  if (isProgramCatalogDetail) {
+  if (isProgramCatalogDetail || isProjectFromProgramCatalog) {
     return 'Liste des dispositifs'
   } else if (isProjectCatalogDetail) {
     return 'Liste des projets'
@@ -29,7 +30,7 @@ const getListText = () => {
   }
 }
 const getBaseRouteName = () => {
-  if (isProgramCatalogDetail) {
+  if (isProgramCatalogDetail || isProjectFromProgramCatalog) {
     return RouteName.CatalogPrograms
   } else if (isProjectCatalogDetail) {
     return RouteName.CatalogProjects
@@ -40,7 +41,7 @@ const getBaseRouteName = () => {
 
 const routeToBaseList: RouteLocationAsRelativeGeneric = {
   name: getBaseRouteName(),
-  query: isCatalogDetail ? undefined : navigationStore.query
+  query: isCatalogDetail || isProjectFromProgramCatalog ? undefined : navigationStore.query
 }
 
 const allBreadcrumbs = computed<DsfrBreadcrumbProps['links']>(() => {
@@ -48,7 +49,7 @@ const allBreadcrumbs = computed<DsfrBreadcrumbProps['links']>(() => {
     { text: 'Accueil', to: '/' },
     { text: getListText(), to: routeToBaseList }
   ]
-  if (!isCatalogDetail) {
+  if (!isCatalogDetail && !isProjectFromProgramCatalog) {
     const trackId = usedTrackStore.getPreviousCompletedUsedTrackId()
     if (trackId) {
       baseLinks = baseLinks.toSpliced(1, 0, {

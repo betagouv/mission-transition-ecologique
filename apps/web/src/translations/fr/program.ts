@@ -18,6 +18,7 @@ const programFrDict = {
     programLoanDuration: 'Durée du prêt',
     programKnowMore: 'En savoir plus',
     projectExamples: 'Quelques exemples de projets financés par cette aide',
+    projectExample: 'Un exemple de projet financé par cette aide',
     programAmIEligible: "Conditions d'éligibilité",
     form: {
       label: 'Contactez un conseiller',

@@ -25,19 +25,34 @@
   </div>
 </template>
 <script setup lang="ts">
-import { Color, Project } from '@/types'
+import { Color, Project, type ProgramData as ProgramType } from '@/types'
 import type { DsfrBreadcrumbProps } from '@gouvminint/vue-dsfr'
 import { useNavigationStore } from '@/stores/navigation'
+import { RouteName } from '@/types/routeType'
+import { useProgramStore } from '@/stores/program'
 
 interface Props {
   project: Project
+  programId: number | undefined
   themeColor?: Color
 }
 const props = defineProps<Props>()
-
+const programStore = useProgramStore()
+const program = ref<ProgramType>()
 const navigationStore = useNavigationStore()
 
-const links = ref<DsfrBreadcrumbProps['links']>([{ text: props.project.title }])
+const routeToProgram = { name: RouteName.CatalogProgramDetail, params: { programId: props.programId } }
+
+const links = computed<DsfrBreadcrumbProps['links']>(() => {
+  const links = []
+  if (navigationStore.isByRouteName(RouteName.CatalogProjectFromProgramDetail)) {
+    links.push({ text: program.value?.titre || '', to: routeToProgram })
+  }
+  return [...links, { text: props.project.title }]
+})
+onBeforeMount(() => {
+  program.value = programStore.currentProgram
+})
 </script>
 
 <style scoped lang="scss">
