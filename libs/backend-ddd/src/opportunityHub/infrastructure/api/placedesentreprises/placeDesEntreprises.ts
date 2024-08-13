@@ -150,7 +150,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
         phone_number: opportunity.phoneNumber,
         siret: opportunity.companySiret,
         location: '',
-        api_calling_url: opportunity.linkToPage,
+        api_calling_url: opportunity.linkToCatalog,
         questions_additionnelles: []
       }
     })
@@ -166,7 +166,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
         phone_number: opportunity.phoneNumber,
         siret: opportunity.companySiret,
         location: '',
-        api_calling_url: opportunity.linkToPage,
+        api_calling_url: opportunity.linkToCatalog,
         questions_additionnelles: []
       }
     })
