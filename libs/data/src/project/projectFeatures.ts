@@ -5,6 +5,7 @@ import { RawProject } from './types/domain'
 import { jsonPrograms } from '../../generated/index'
 import { ProgramType } from '../index'
 import { ThemeId } from '../theme/types/shared'
+import { SlugValidator } from '../common/validators/slugValidator'
 
 export class ProjectFeatures {
   private readonly _outputDirectory: string = path.join(__dirname, '../../static/')
@@ -39,18 +40,11 @@ export class ProjectFeatures {
 
   private _validateData(rawProjects: RawProject[]) {
     rawProjects.forEach((project) => {
-      this._validateSlug(project.slug)
+      SlugValidator.validate(project.slug)
       this._validateThemes(project)
       this._validateLinkedProjects(project, rawProjects)
       this._validatePrograms(project, this._programs)
     })
-  }
-
-  private _validateSlug(slug: string) {
-    const slugRegex = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
-    if (!slugRegex.test(slug)) {
-      console.warn('invalid slug : ', slug)
-    }
   }
 
   private _validateThemes(project: RawProject) {
