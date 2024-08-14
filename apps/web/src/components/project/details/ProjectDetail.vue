@@ -1,6 +1,7 @@
 <template>
   <ProjectHeader
     v-if="project"
+    :program-id="programId"
     :project="project"
     :theme-color="themeColor"
   />
@@ -54,6 +55,7 @@ const theme = ref<ThemeType>()
 
 interface Props {
   projectSlug: string
+  programId?: number
 }
 const props = defineProps<Props>()
 
