@@ -68,9 +68,13 @@ const getRouteToProgramDetail = (programId: string): RouteLocationRaw => {
 }
 </script>
 <style lang="scss">
+@import '../../../assets/scss/setting/color';
+
 .program-card:active {
   @media (width >= 0) and (width <= 767px) {
     background-color: var(--background-default-grey-active);
+    border: thin solid $base-blue;
+    border-radius: 8px;
   }
 }
 </style>
