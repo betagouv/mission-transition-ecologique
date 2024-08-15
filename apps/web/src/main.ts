@@ -26,3 +26,11 @@ app.use(store)
 app.use(posthogPlugin)
 app.use(router)
 app.mount('#app')
+
+router.afterEach((to, _, failure) => {
+  if (!failure) {
+    nextTick(() => {
+      app.config.globalProperties.$posthog.capture('$pageview', { path: to.fullPath })
+    })
+  }
+})

@@ -69,7 +69,6 @@ import { Objective, type ProgramData, TrackId } from '@/types'
 import Analytics from '@/utils/analytics'
 import { Theme } from '@/utils/theme'
 import UsedTrack from '@/utils/track/usedTrack'
-import posthog from 'posthog-js'
 import { computed, onBeforeMount } from 'vue'
 
 const programStore = useProgramStore()
@@ -131,6 +130,5 @@ onBeforeMount(async () => {
 
   // analytics / send event
   Analytics.sendEvent(TrackId.Results, 'show_results_catalog')
-  posthog.capture('show_results_catalog', { results: TrackId.Results })
 })
 </script>

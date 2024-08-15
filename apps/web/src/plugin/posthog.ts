@@ -6,7 +6,7 @@ export default {
     app.config.globalProperties['$posthog'] = posthog.init(Config.posthogApiKey, {
       api_host: 'https://eu.i.posthog.com',
       capture_pageview: false,
-      person_profiles: 'always'
+      person_profiles: 'identified_only'
     })
   }
 }
