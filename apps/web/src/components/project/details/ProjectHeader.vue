@@ -1,10 +1,21 @@
 <template>
   <TeeDsfrBreadcrumb :links="links" />
   <TeeEligibilityCriteriaBar
-    v-if="!navigationStore.isCatalogProjectDetail"
+    v-if="!isCatalogDetail"
     :bg-color="Color.blueLightnessed"
     :bg-bar-color="Color.blueLighted"
   />
+  <div
+    v-else
+    class="fr-container"
+  >
+    <TeeDsfrButton
+      :label="Translation.t('results.back')"
+      icon="fr-icon-arrow-left-line"
+      class="fr-btn fr-btn--tertiary-no-outline fr-mb-3v fr-pl-2v"
+      @click="router.back()"
+    />
+  </div>
   <div class="fr-mb-4v background-project-title">
     <img
       :src="project.image"
@@ -30,6 +41,9 @@ import type { DsfrBreadcrumbProps } from '@gouvminint/vue-dsfr'
 import { useNavigationStore } from '@/stores/navigation'
 import { RouteName } from '@/types/routeType'
 import { useProgramStore } from '@/stores/program'
+import Translation from '@/utils/translation'
+
+const router = useRouter()
 
 interface Props {
   project: Project
@@ -40,12 +54,26 @@ const props = defineProps<Props>()
 const programStore = useProgramStore()
 const program = ref<ProgramType>()
 const navigationStore = useNavigationStore()
+const isCatalogDetail = navigationStore.isCatalogProjectDetail() || navigationStore.isByRouteName(RouteName.CatalogProjectFromProgramDetail)
+const getRouteName = () => {
+  if (navigationStore.isByRouteName(RouteName.CatalogProjectFromProgramDetail)) {
+    return RouteName.CatalogProgramDetail
+  }
+  return RouteName.QuestionnaireResultDetail
+}
 
-const routeToProgram = { name: RouteName.CatalogProgramDetail, params: { programId: props.programId } }
+const routeToProgram = {
+  name: getRouteName(),
+  params: { programId: props.programId },
+  query: navigationStore.isByRouteName(RouteName.CatalogProjectFromProgramDetail) ? undefined : navigationStore.query
+}
 
 const links = computed<DsfrBreadcrumbProps['links']>(() => {
   const links = []
-  if (navigationStore.isByRouteName(RouteName.CatalogProjectFromProgramDetail)) {
+  if (
+    navigationStore.isByRouteName(RouteName.CatalogProjectFromProgramDetail) ||
+    navigationStore.isByRouteName(RouteName.ProjectFromProgramDetail)
+  ) {
     links.push({ text: program.value?.titre || '', to: routeToProgram })
   }
   return [...links, { text: props.project.title }]

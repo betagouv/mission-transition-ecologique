@@ -19,7 +19,8 @@
         v-for="linkedProject in linkedProjectsTags"
         :key="linkedProject.id"
       >
-        <LinkedProjectButton
+        <TeeProjectButton
+          class="fr-my-1-5v fr-mx-2v"
           :project="linkedProject"
           :color="color"
         />
