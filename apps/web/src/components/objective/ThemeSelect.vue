@@ -4,7 +4,7 @@
       v-for="opt in options"
       :key="opt.value"
       class="fr-col-4 fr-col-sm-6 fr-col-md-4 fr-col-xs-12 fr-p-1v"
-      @click="selectOption(opt)"
+      @click="selectOption(opt.value)"
     >
       <ThemeCard :option="opt" />
     </div>
@@ -16,7 +16,7 @@ import { useUsedTrackStore } from '@/stores/usedTrack'
 import type { TrackOptionItem } from '@/types'
 import { computed } from 'vue'
 import { Theme } from '@/utils/theme'
-import { ProgramData, Color, Objective } from '@/types'
+import { ProgramData, Color, Objective, TrackId } from '@/types'
 import { Project } from '@tee/data'
 import { useProjectStore } from '@/stores/project'
 import { useProgramStore } from '@/stores/program'
@@ -24,7 +24,6 @@ import { useNavigationStore } from '@/stores/navigation'
 import ProgramFilter from '@/utils/program/programFilter'
 
 const currentTrack = useTrackStore().current
-const themeSelectedOption = ref<ThemeOption>()
 const emit = defineEmits(['updateSelection'])
 const projectStore = useProjectStore()
 const projects = ref<Project[]>()
@@ -69,14 +68,13 @@ const options = computed<ThemeOption[]>(() => {
   return options
 })
 
-const selectOption = (opt: ThemeOption) => {
-  const selectedOptionIndex = currentTrack?.options?.findIndex((option) => option.value === opt.value)
+const selectOption = (opt: string | undefined) => {
+  const selectedOptionIndex = currentTrack?.options?.findIndex((option) => option.value === opt)
   const selectedOption =
     selectedOptionIndex !== undefined && selectedOptionIndex !== -1 ? currentTrack?.options?.[selectedOptionIndex] : undefined
   if (selectedOption) {
     useUsedTrackStore().setCurrentSelectedOptions([selectedOption])
   }
-  themeSelectedOption.value = opt
   const data = {
     option: selectedOption,
     index: selectedOptionIndex,
@@ -88,16 +86,20 @@ const selectOption = (opt: ThemeOption) => {
 const hasError = ref<boolean>(false)
 
 onBeforeMount(async () => {
-  useNavigationStore().hasSpinner = true
-
-  const projectResult = await projectStore.projects
-  const programResult = await programStore.programsByUsedTracks
-  if (programResult.isOk && projectResult.isOk) {
-    projects.value = projectResult.value
-    programs.value = programResult.value
+  const selectedOptionValue = useNavigationStore().query[TrackId.Goals]
+  if (selectedOptionValue) {
+    selectOption(selectedOptionValue as string)
   } else {
-    hasError.value = true
+    useNavigationStore().hasSpinner = true
+    const projectResult = await projectStore.projects
+    const programResult = await programStore.programsByUsedTracks
+    if (programResult.isOk && projectResult.isOk) {
+      projects.value = projectResult.value
+      programs.value = programResult.value
+    } else {
+      hasError.value = true
+    }
+    useNavigationStore().hasSpinner = false
   }
-  useNavigationStore().hasSpinner = false
 })
 </script>
