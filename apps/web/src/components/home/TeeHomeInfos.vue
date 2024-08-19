@@ -54,25 +54,25 @@
         <p class="fr-sm-hide">
           {{ c.text }}
         </p>
-        <TeeButtonLink
-          :to="trackSiretTo()"
-          class="fr-text--bold fr-btn--tertiary-no-outline"
-          icon="fr-icon-arrow-right-line"
+        <TeeDsfrButton
+          label="Je me lance"
+          aria-disabled="false"
+          icon="ri-arrow-right-line"
           icon-right
-        >
-          Je me lance
-        </TeeButtonLink>
+          class="fr-text--bold fr-btn--tertiary-no-outline"
+          @click="updateObjective(c.value)"
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { TrackId, QuestionnaireRoute } from '@/types'
+import { TrackId, QuestionnaireRoute, Objective } from '@/types'
 import { useUsedTrackStore } from '@/stores/usedTrack'
-import { type RouteLocationRaw } from 'vue-router'
 import { useNavigationStore } from '@/stores/navigation'
 
+const usedTrackStore = useUsedTrackStore()
 const navigationStore = useNavigationStore()
 
 const content = [
@@ -82,6 +82,7 @@ const content = [
     title: ' Diminuer votre facture d’éléctricité',
     img: '/images/home/electric.svg',
     imgSolo: '/images/home/electric-solo.svg',
+    value: Objective.EnergyPerformance,
     imgRight: false,
     text: 'Le prix de l’énergie ne cesse d’augmenter. \
         L’efficacité énergétique est un axe à court terme \
@@ -98,6 +99,7 @@ const content = [
     title: 'Rénovez vos locaux pour réduire vos dépenses',
     img: '/images/home/building.svg',
     imgSolo: '/images/home/building-solo.svg',
+    value: Objective.BuildingRenovation,
     imgRight: true,
     text: "Envie de locaux moins énergivores, moins coûteux en chauffage, \
         en climatisation et en éclairage ? Et si vous envisagiez de \
@@ -109,6 +111,7 @@ const content = [
     badge: '⚡️ Mobilité durable',
     badgeColor: '#6672F8',
     badgeTextColor: 'white',
+    value: Objective.SustainableMobility,
     title: 'Optez pour des modes de transport moins polluants',
     img: '/images/home/mobility.svg',
     imgSolo: '/images/home/mobility-solo.svg',
@@ -128,6 +131,7 @@ const content = [
     title: 'Faire des économies sur vos consommations d’eau',
     img: '/images/home/water.png',
     imgSolo: '/images/home/water-solo.svg',
+    value: Objective.WaterConsumption,
     imgRight: true,
     text: 'L’eau a un coût, qui risque d’augmenter dans les années à venir. \
         La réglementation peut imposer à certaines activités de mettre \
@@ -135,9 +139,13 @@ const content = [
         Économiser dès maintenant, étudier les alternatives, c’est anticiper l’avenir. '
   }
 ]
-const trackSiretTo = (): RouteLocationRaw => {
-  useUsedTrackStore().updateByTrackIdAndValue(TrackId.QuestionnaireRoute, QuestionnaireRoute.SpecificGoal)
-  navigationStore.updateSearchParam({ name: TrackId.QuestionnaireRoute, value: QuestionnaireRoute.SpecificGoal })
-  return navigationStore.routeByTrackId(TrackId.Siret)
+const router = useRouter()
+
+const updateObjective = async (obj: Objective) => {
+  usedTrackStore.resetUsedTracks()
+  await usedTrackStore.updateByTrackIdAndValue(TrackId.QuestionnaireRoute, QuestionnaireRoute.SpecificGoal)
+  await usedTrackStore.updateByTrackIdAndValue(TrackId.Goals, obj)
+
+  await router.push(navigationStore.routeByTrackId(TrackId.Siret))
 }
 </script>

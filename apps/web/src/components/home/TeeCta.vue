@@ -23,14 +23,12 @@
           </div>
         </div>
         <div class="fr-col-xl-8 fr-col-lg-10 fr-col-md-10 fr-col-sm-6 fr-col-xs-12 tee-home-cta-btn">
-          <router-link :to="{ name: RouteName.QuestionnaireStart }">
-            <button
-              class="fr-btn fr-btn--lg inline-flex fr-btn-fullwidth fr-btn-align-center"
-              aria-disabled="false"
-            >
-              <span> Je me lance ! </span>
-            </button>
-          </router-link>
+          <TeeDsfrButton
+            label="Je me lance !"
+            size="lg"
+            class="inline-flex fr-text--bold fr-text-xl fr-btn-fullwidth fr-btn-align-center"
+            @click="toQuestionnaire()"
+          />
         </div>
         <div class="tee-home-cta-sm-image-container fr-md-hide">
           <img
@@ -51,5 +49,15 @@
   </div>
 </template>
 <script setup lang="ts">
-import { RouteName } from '@/types/routeType.js'
+import { RouteName } from '@/types/routeType'
+import { type RouteLocationAsRelativeGeneric } from 'vue-router'
+
+const router = useRouter()
+
+const routeToBaseList: RouteLocationAsRelativeGeneric = {
+  name: RouteName.QuestionnaireStart
+}
+const toQuestionnaire = async () => {
+  await router.push(routeToBaseList)
+}
 </script>
