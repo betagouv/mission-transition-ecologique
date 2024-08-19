@@ -11,6 +11,8 @@ import {
 } from '@/types'
 import RequestApi from '@/service/api/requestApi'
 import TrackStructure from '@/utils/track/trackStructure'
+import Config from '@/config'
+import { Path } from '@/router/routes'
 
 export default class OpportunityApi extends RequestApi {
   protected readonly url = '/api/opportunities'
@@ -24,6 +26,7 @@ export default class OpportunityApi extends RequestApi {
   constructor(
     opportunityForm: OpportunityFormType,
     private _id: string,
+    private _slug: string,
     private _opportunityType: OpportunityType
   ) {
     super()
@@ -73,10 +76,22 @@ export default class OpportunityApi extends RequestApi {
           QuestionnaireDataEnum.questionnaire_route as string
         ) as QuestionnaireRoute, // get from usedTrack
         otherData: this.getAllValuesFromUsedTrack(),
-        linkToPage: this._opportunityForm.linkToPage.value
+        linkToPage: this._opportunityForm.linkToPage.value,
+        linkToCatalog: this._generateCatalogLink()
       },
       optIn: this._opportunityForm.cgu.value
     }
+  }
+
+  private _generateCatalogLink(): string {
+    if (this._opportunityType == OpportunityType.Program) {
+      return Config.deployUrl + Path.ProgramCatalog + '/' + this._id
+    }
+    if (this._opportunityType == OpportunityType.Project) {
+      return Config.deployUrl + Path.ProjectCatalog + '/' + this._slug
+    }
+    console.error('catalog Link Generation Not Handled For The Current Opportunity Type')
+    return 'catalogLinkGenerationNotHandledForTheCurrentOpportunityType'
   }
 
   private getFromUsedTrack(trackId: TrackId, key: string) {

@@ -12,14 +12,7 @@
     <div class="fr-container">
       <div class="fr-grid-row fr-pt-4v">
         <div class="fr-col-3 fr-col-sm-3 fr-hidden-xs">
-          <DsfrButton
-            :label="linkCopied ? 'Lien copié' : 'Copier le lien'"
-            size="sm"
-            class="fr-m-4v fr-radius-a--2v"
-            :class="linkCopied ? 'fr-bg--green' : ''"
-            icon="fr-icon-link"
-            @click="copyUrl"
-          />
+          <TeeCopyLinkButton class="fr-m-4v" />
           <ProjectSideNav :project="project" />
         </div>
         <div class="fr-col-8 fr-col-xs-12 fr-col-sm-9">
@@ -43,13 +36,11 @@
 <script setup lang="ts">
 import { ThemeType, Project, Color } from '@/types'
 import { Theme } from '@/utils/theme'
-import { DsfrButton } from '@gouvminint/vue-dsfr'
 import { useProjectStore } from '@/stores/project'
 import { onBeforeMount } from 'vue'
 
 const projectStore = useProjectStore()
 
-const linkCopied = ref<boolean>(false)
 const project = ref<Project>()
 const theme = ref<ThemeType>()
 
@@ -60,15 +51,6 @@ interface Props {
 const props = defineProps<Props>()
 
 const themeColor = computed<Color | undefined>(() => theme.value?.color)
-
-const copyUrl = async () => {
-  const pageUrl = window.location.href
-  await navigator.clipboard.writeText(pageUrl)
-  linkCopied.value = true
-  setTimeout(() => {
-    linkCopied.value = false
-  }, 2000)
-}
 
 onBeforeMount(async () => {
   if (props.projectSlug !== projectStore.currentProject?.slug) {

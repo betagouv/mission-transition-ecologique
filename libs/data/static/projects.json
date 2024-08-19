@@ -15,12 +15,13 @@
     "programs": [
       "baisse-les-watts",
       "fonds-tourisme-durable",
+      "renovation-petit-tertiaire-prive",
       "tpe-gagnantes-sur-tous-les-couts",
       "visite-energie-cci",
       "visite-energie-cma"
     ],
     "linkedProjects": [],
-    "priority": "5"
+    "priority": "4"
   },
   {
     "id": 2,
@@ -173,6 +174,7 @@
     ],
     "mainTheme": "energy",
     "programs": [
+      "amo-chaufferie-biomasse",
       "etude-chaufferie-biomasse",
       "fonds-tourisme-durable",
       "investissement-chaleur-bois",
@@ -262,7 +264,7 @@
       "etude-geothermie-de-surface-et-d-aerothermie",
       "etude-test-geothermie",
       "fonds-tourisme-durable",
-      "investissement-boucle-d’eau-geothermique",
+      "investissement-boucle-d-eau-geothermique",
       "investissement-geothermie-de-surface-et-d-aerothermie",
       "investissement-geothermie-profonde"
     ],
@@ -279,9 +281,10 @@
     "longDescription": "Les serres maraîchères et horticoles offrent une valorisation efficace de l’énergie solaire. En outre, elles permettent une protection naturelle des cultures contre les bioagresseurs, et permettent ainsi de réduire l’utilisation des pesticides.\n\nL’accompagnement des agriculteurs maraîchers dans la construction, la rénovation et l'amélioration des performances énergétiques des serres agricoles est donc au cœur des enjeux environnementaux.",
     "moreDescription": "- [**Guide de conception d'une serre bioclimatique**](https://librairie.ademe.fr/produire-autrement/4532-guide-de-conception-d-une-serre-bioclimatique.html)**,** destiné aux exploitants afin de réaliser et construire leur serre.",
     "themes": [
+      "energy",
       "building"
     ],
-    "mainTheme": "building",
+    "mainTheme": "energy",
     "programs": [
       "etude-diagnostic-serres",
       "tremplin",
@@ -300,9 +303,10 @@
     "longDescription": "Chauffage, isolation, eau chaude, climatisation, ventilation, éclairage… Un audit énergétique permet de faire expertiser des locaux professionnels et identifier des solutions et des financements afin de les rendre plus confortables, plus performants et de réaliser des économies durables.\n\nAinsi, mettez-vous en conformité avec les obligations réglementaires, comme le Dispositif Éco Énergie Tertiaire (DEET), communément appelé \"décret tertiaire\".",
     "moreDescription": "- [**Réglementation Audit énergétique,**](https://portail-rse.beta.gouv.fr/reglementations/audit-energetique) Un portail pour connaitre les obligations de votre entreprise.\n- [**Le Dispositif Éco Énergie Tertiaire (EET), qu'est-ce que c'est ?**](https://www.ecologie.gouv.fr/eco-energie-tertiaire-eet) Une page pour comprendre le cadre de la règlementation.",
     "themes": [
+      "energy",
       "building"
     ],
-    "mainTheme": "building",
+    "mainTheme": "energy",
     "programs": [
       "baisse-les-watts",
       "booster-eco-energie-tertiaire",
@@ -322,9 +326,10 @@
     "longDescription": "L’isolation thermique des bâtiments permet de garantir le confort en été comme en hiver en limitant le recours à la climatisation et au chauffage. Un logement mal isolé génère des pertes conséquentes de chaleur en hiver et de fraîcheur en été par le toit, les murs, les portes, les fenêtres et le sol.\\\nGrâce à des travaux d’isolation, vous diminuez vos factures d’énergie et améliorez votre confort tout au long de l’année.",
     "moreDescription": "- [**Les exigences réglementaires pour les travaux de rénovation**](https://librairie.ademe.fr/ged/8069/fiche-exigences-reglementaires-renovation.pdf), une fiche pratique de l'ADEME.\n- [**L'annuaire des professionnels RGE et des architectes,**](https://france-renov.gouv.fr/annuaires-professionnels/artisan-rge-architecte) trouver un professionnel RGE, compétent pour réaliser des travaux d'isolation thermique.\n- [**Guide pratique de l'ADEME** ](https://librairie.ademe.fr/ged/6488/guide-pratique-isoler-sa-maison.pdf)\"Isoler, la clé d’une rénovation réussie\"",
     "themes": [
+      "energy",
       "building"
     ],
-    "mainTheme": "building",
+    "mainTheme": "energy",
     "programs": [
       "fonds-tourisme-durable",
       "renovation-energetique",
@@ -355,7 +360,7 @@
     "linkedProjects": [
       19
     ],
-    "priority": "8"
+    "priority": "5"
   },
   {
     "id": 17,
@@ -443,7 +448,7 @@
       "programme-ecod-o"
     ],
     "linkedProjects": [],
-    "priority": "7"
+    "priority": "6"
   },
   {
     "id": 21,
@@ -473,7 +478,7 @@
     "shortDescription": "Mettre en place une stratégie de consommation ou de conception responsable du numérique.",
     "image": "/images/projet/numerique-responsable.webp",
     "longDescription": "Si le numérique semble virtuel, son impact est pourtant bien réel : que ce soit sur le plan énergétique, l’utilisation de matières premières nécessaires à la fabrication des équipements ou encore par les déchets électroniques qu’il génère.\n\nLes entreprises doivent mettre en œuvre des stratégies qui permettent de faire évoluer leurs politiques d’achats, d’allonger la durée de vie des équipements ou encore d’adopter une démarche de conception responsable des services numériques.\n\nPour encadrer ces pratiques, la loi AGEC fixe aux entreprises des dispositions pour rallonger la durée de vie des produits numériques et la loi REEN vise à limiter le renouvellement des appareils numériques en interdisant les pratiques d’obsolescence et en favorisant le réemploi et la réutilisation. Elle encourage également l'usage de centres de données et des réseaux moins énergivores.",
-    "moreDescription": "- [**L'impact des bonnes pratiques numériques écoresponsables au sein de votre organisation**](https://ecoresponsable.numerique.gouv.fr/publications/impact-bonnes-pratiques/)**.**\n\n- [**Pollution numérique**](https://archives.qqf.fr/infographie/69/pollution-numerique-du-clic-au-declic)**, du clic au déclic**, une infographie *\"Qu'est-ce qu'on fait ?!\"* \n\n- [**Le**](https://accessibilite.numerique.gouv.fr/) **numérique responsable,** vision d'ensemble du cadre législatif par le ministère de la transition écologique et de la cohésion des territoires.\n\n- [**Le Référentiel général d'écoconception de services numériques (RGESN)**](https://ecoresponsable.numerique.gouv.fr/publications/referentiel-general-ecoconception/). Il définit les critères de conception durable des services numériques afin d'en réduire l'empreinte environnementale.",
+    "moreDescription": "- [**L'impact des bonnes pratiques numériques écoresponsables au sein de votre organisation**](https://ecoresponsable.numerique.gouv.fr/publications/impact-bonnes-pratiques/)**.**\n\n- [**Pollution numérique**](https://archives.qqf.fr/infographie/69/pollution-numerique-du-clic-au-declic)**, du clic au déclic**, une infographie *\"Qu'est-ce qu'on fait ?!\"*\n\n- [**Le** **numérique responsable**](https://www.ecologie.gouv.fr/politiques-publiques/numerique-responsable)**,** vision d'ensemble du cadre législatif par le ministère de la transition écologique et de la cohésion des territoires.\n\n- [**Le Référentiel général d'écoconception de services numériques (RGESN)**](https://ecoresponsable.numerique.gouv.fr/publications/referentiel-general-ecoconception/). Il définit les critères de conception durable des services numériques afin d'en réduire l'empreinte environnementale.",
     "themes": [
       "eco-design"
     ],
@@ -541,7 +546,7 @@
     "shortDescription": "Limiter votre gaspillage alimentaire à tous les stades de la chaine de production.",
     "image": "/images/projet/lutte-gaspillage-alimentaire.webp",
     "longDescription": "Le gaspillage alimentaire est défini comme toute nourriture destinée à la consommation humaine qui, à une étape de la chaîne alimentaire, est perdue, jetée ou dégradée. En France, chaque année près de 20% de la nourriture produite finit à la poubelle. Cela représente 150 kg de nourriture par personne et par an, gaspillés tout au long de la chaîne alimentaire depuis le producteur jusqu'au consommateur.\n\nAu fil des années, le cadre réglementaire français s'est renforcé envers les entreprises, notamment avec la loi anti-gaspillage pour une économie circulaire (AGEC). Désormais, l’interdiction de rendre impropre à la consommation des denrées encore consommables s’applique aux industries agroalimentaires, aux grossistes, aux distributeurs et à la restauration collective. De même, ces acteurs ont l’obligation (au-delà d’un certain seuil) de proposer une convention de don à une association habilitée.",
-    "moreDescription": "- [**Les initiatives de lutte contre le gaspillage alimentaire**](https://agriculture.gouv.fr/telecharger/125530), des pistes d’action pour permettre aux acteurs de la chaîne alimentaire de s'engager dans la réduction du gaspillage alimentaire.",
+    "moreDescription": "- [**Consommateurs, producteurs, territoires, tous concernés par la lutte contre le gaspillage alimentaire.**](https://agriculture.gouv.fr/consommateurs-producteurs-territoires-tous-concernes-par-la-lutte-contre-le-gaspillage-alimentaire) Un dossier rassemblant tous les éléments à connaître sur la lutte contre le gaspillage alimentaire.\n- [**Tout savoir sur les lois qui encadrent la lutte contre le gaspillage alimentaire**](https://agriculture.gouv.fr/lutte-contre-le-gaspillage-alimentaire-les-lois-francaises) **en France.**",
     "themes": [
       "waste"
     ],
@@ -572,7 +577,7 @@
       "formation-engager-entreprise-transition-ecologique"
     ],
     "linkedProjects": [],
-    "priority": "4"
+    "priority": "2"
   },
   {
     "id": 27,
@@ -688,7 +693,7 @@
       20,
       21
     ],
-    "priority": "2"
+    "priority": "1"
   },
   {
     "id": 32,
@@ -756,7 +761,7 @@
     "mainTheme": "environmental",
     "programs": [
       "audits-clef-verte",
-      "communauté-coq-vert",
+      "communaute-coq-vert",
       "eco-defis-des-artisans-et-des-commercants",
       "fonds-tourisme-durable",
       "imprim-vert",
@@ -772,7 +777,7 @@
   },
   {
     "id": 36,
-    "slug": "écoconception",
+    "slug": "ecoconception",
     "title": "Éco-conception d’un produit ou service",
     "nameTag": "🔁 écoconception",
     "shortDescription": "Réduisez les impacts de votre produit ou service à toutes les étapes de son cycle de vie.",
@@ -793,5 +798,55 @@
       22
     ],
     "priority": "15"
+  },
+  {
+    "id": 71,
+    "slug": "recuperateur-eau-pluie",
+    "title": "Récupérateur d’eau de pluie",
+    "nameTag": "🌧 eau de pluie",
+    "shortDescription": "Un récupérateur d'eau de pluie permet permet de préserver cette ressource naturelle et de l'utiliser à des fins non potables.",
+    "image": "/images/projet/recuperateur-eau-pluie.webp",
+    "longDescription": "45% de l’eau que nous utilisons au quotidien ne nécessite pas d’être potable.\n\nLa récupération d'eau de pluie peut couvrir une partie de la consommation d'eau de votre entreprise. Elle peut être utilisée par exemple pour le nettoyage, l'arrosage, la préparation de produits industriels, les chasses d'eau ou même le lavage du linge, sous réserve de posséder un équipement spécifique.\n\nEn valorisant cette ressource gratuite et renouvelable, cela permet de limiter la consommation d’eau douce de votre entreprise : d’agir pour préserver la ressource en eau et de faire des économies financières !",
+    "moreDescription": "- [**Tout savoir sur la récupération de l'eau de pluie**](https://www.service-public.fr/particuliers/vosdroits/F31481)",
+    "themes": [
+      "water"
+    ],
+    "mainTheme": "water",
+    "programs": [
+      "fonds-tourisme-durable",
+      "pret-action-climat",
+      "programme-ecod-o",
+      "pret-vert"
+    ],
+    "linkedProjects": [
+      20,
+      72
+    ],
+    "priority": "20"
+  },
+  {
+    "id": 72,
+    "slug": "economisateurs-eau-sanitaires",
+    "title": "Économisateurs d’eau pour les sanitaires",
+    "nameTag": "💧 économisateur d'eau",
+    "shortDescription": "Des équipements ou rénovations de vos installations pour vous permettre de faire des économies d'eau.",
+    "image": "/images/projet/economisateurs-eau-sanitaires.webp",
+    "longDescription": "La mise en place d'équipements ou de travaux de rénovation de vos installations sanitaires peuvent vous permettre de réaliser des économies d'eau non négligeables. Vous pouvez opter par exemple pour : \n\n- des économiseurs d'eau ou de robinets mitigeurs à installer sur vos lavabos,\n- des chasses d’eau à double commande et de plaquettes à mettre dans le réservoir des toilettes,\n- des urinoirs avec écoulement déclenché en fonction de la présence ou d'urinoirs sans eau,\n- des toilettes sèches, qui ne requièrent aucune utilisation d'eau.\n- un équipement de suivi de vos consommations d'eau.\n\nEn complément de ces installations, pensez à sensibiliser vos équipes et vos clients aux bonnes pratiques d'économies d’eau !",
+    "moreDescription": "- [**Cycle de l'eau : attention aux fuites**](https://multimedia.ademe.fr/infographies/infographie-eau-douce-ademe/), une infographie *\"Qu'est-ce qu'on fait ?!\"* proposée par l'ADEME.\n- [**Quels équipements permettent d'économiser l'eau au quotidien ?**](https://www.cieau.com/le-metier-de-leau/usages-consommation-conseils/quels-equipements-permettent-deconomiser-leau-au-quotidien/) Une fiche pratique proposée par le centre d'information sur l'eau",
+    "themes": [
+      "water"
+    ],
+    "mainTheme": "water",
+    "programs": [
+      "fonds-tourisme-durable",
+      "pret-action-climat",
+      "programme-ecod-o",
+      "pret-vert"
+    ],
+    "linkedProjects": [
+      20,
+      71
+    ],
+    "priority": "12"
   }
 ]
