@@ -3,7 +3,7 @@
     <div class="fr-card__content">
       <!-- TITLE -->
       <div class="fr-card__start fr-mb-2v">
-        <p class="tee-program-title">
+        <p class="fr-text--purple fr-h6 fr-text--bold">
           {{ program.titre }}
         </p>
       </div>
