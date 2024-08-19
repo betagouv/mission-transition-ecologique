@@ -195,6 +195,12 @@
             :title="Translation.t('program.programAmIEligible')"
           >
             <ProgramEligibility :program="program" />
+          </ProgramAccordion>
+          <ProgramAccordion
+            v-if="program"
+            :accordion-id="`${program.id}-linked-projects`"
+            :title="Translation.t('program.projectExamples')"
+          >
             <ProgramProjects :program="program" />
           </ProgramAccordion>
           <ProgramAccordion

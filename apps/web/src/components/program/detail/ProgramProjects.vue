@@ -3,7 +3,6 @@
     v-if="projects.length > 0"
     class="fr-mt-2v"
   >
-    <div class="fr-h4">{{ !singleProject ? Translation.t('program.projectExamples') : Translation.t('program.projectExample') }}:</div>
     <div class="fr-grid-row fr-grid-row--center fr-grid-row-md--left">
       <template
         v-for="linkedProject in projects"
@@ -19,7 +18,6 @@
 </template>
 <script lang="ts" setup>
 import type { ProgramData, Project as ProjectType } from '@/types'
-import Translation from '@/utils/translation'
 import Program from '@/utils/program/program'
 import { useProjectStore } from '@/stores/project'
 import { useNavigationStore } from '@/stores/navigation'
@@ -30,10 +28,6 @@ interface Props {
 const props = defineProps<Props>()
 const projectStore = useProjectStore()
 const projects = ref<ProjectType[]>([])
-
-const singleProject = computed<boolean>(() => {
-  return projects.value.length === 1
-})
 
 onBeforeMount(async () => {
   useNavigationStore().hasSpinner = true
