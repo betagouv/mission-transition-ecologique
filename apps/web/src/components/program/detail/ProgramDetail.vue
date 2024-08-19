@@ -54,7 +54,7 @@
             <div class="program-title fr-text--purple fr-h6 fr-text--bold fr-mb-5v">
               <div class="program-title-text">{{ program?.titre }}</div>
               <TeeCopyLinkButton
-                class="fr-pl-6v"
+                class="fr-ml-6v"
                 :tertiary="true"
                 :no-outline="true"
                 copy-class="fr-text--green"
