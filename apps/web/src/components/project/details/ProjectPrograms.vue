@@ -98,7 +98,7 @@ const props = defineProps<Props>()
 
 const programStore = useProgramStore()
 const navigationStore = useNavigationStore()
-const isCatalogDetail = navigationStore.isByRouteName(RouteName.CatalogProjectDetail)
+const isCatalogDetail = navigationStore.isByRouteName(RouteName.CatalogProjectDetail)|| navigationStore.isByRouteName(RouteName.CatalogProjectFromProgramDetail) 
 
 const expandedId = ref<string | undefined>('project-aids')
 const programs = ref<ProgramData[]>()
