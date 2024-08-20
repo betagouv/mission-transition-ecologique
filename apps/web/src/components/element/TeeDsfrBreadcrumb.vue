@@ -11,7 +11,6 @@ import { RouteName } from '@/types/routeType'
 import { type RouteLocationAsRelativeGeneric } from 'vue-router'
 interface Props {
   links?: DsfrBreadcrumbProps['links']
-  resultHash?: string
 }
 const props = defineProps<Props>()
 const navigationStore = useNavigationStore()
@@ -41,7 +40,6 @@ const getBaseRouteName = () => {
 
 const routeToBaseList: RouteLocationAsRelativeGeneric = {
   name: getBaseRouteName(),
-  hash: props.resultHash,
   query: isCatalogDetail ? undefined : navigationStore.query
 }
 

@@ -151,11 +151,7 @@ button.fr-link:hover, .tee-router-link:hover {
   font-size: 1.3rem;
   line-height: 2rem;
 }
-.tee-home-cta-btn button {
-  font-weight: 1000;
-  min-height: 3.5rem;
-  font-size: 1.5rem;
-}
+
 .tee-home-info-block-figure.inverted-order {
   order: -1;
 }
@@ -268,11 +264,6 @@ button.fr-link:hover, .tee-router-link:hover {
 }
 
 /* RESULTS LIST */
-.tee-program-title {
-  color: #6A6AF4;
-  font-size: 1.2rem;
-  font-weight: bold;
-}
 .tee-program-resume {
   color: #000091;
   font-size: 1.7rem;

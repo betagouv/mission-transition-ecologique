@@ -1,0 +1,8 @@
+@use 'setting';
+
+.tee-header-menu-sub-navigation {
+  button.fr-nav__btn {
+    color: setting.$blue-france;
+    font-weight: 500;
+  }
+}

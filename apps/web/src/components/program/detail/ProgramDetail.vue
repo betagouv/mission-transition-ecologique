@@ -51,9 +51,16 @@
           <!-- TITLE & RESUME -->
           <div class="fr-col">
             <!-- PROGRAM TITLE -->
-            <p class="tee-program-title fr-mb-5v">
-              {{ program?.titre }}
-            </p>
+            <div class="program-title fr-text--purple fr-h6 fr-text--bold fr-mb-5v">
+              <div class="program-title-text">{{ program?.titre }}</div>
+              <TeeCopyLinkButton
+                class="fr-ml-6v"
+                :tertiary="true"
+                :no-outline="true"
+                copy-class="fr-text--green"
+                text-class="fr-text--black"
+              />
+            </div>
 
             <!-- PROGRAM RESUME / TEXT-->
             <h2
@@ -182,7 +189,6 @@
           </div>
         </div>
         <DsfrAccordionsGroup>
-          <!-- ELIGIBILITY -->
           <ProgramAccordion
             v-if="program && program['conditions d\'éligibilité']"
             :accordion-id="`${program.id}-eligibility`"
@@ -190,8 +196,6 @@
           >
             <ProgramEligibility :program="program" />
           </ProgramAccordion>
-
-          <!-- LONG DESCRIPTION -->
           <ProgramAccordion
             v-if="program && program['description longue']"
             :accordion-id="`${program.id}-long-description`"
@@ -313,3 +317,13 @@ const scrollToProgramForm = () => {
   }
 }
 </script>
+<style lang="scss" scoped>
+.program-title {
+  display: flex;
+  align-items: center;
+}
+
+.program-title-text {
+  height: 32px;
+}
+</style>

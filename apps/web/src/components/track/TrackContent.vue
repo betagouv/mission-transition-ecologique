@@ -10,7 +10,7 @@
       v-if="track.objective"
       class="fr-col-12 fr-px-0v fr-px-md-4v"
     >
-      <TeeObjectiveCard :objective="track.objective" />
+      <ThemeHeaderCard :objective="track.objective" />
     </div>
 
     <div class="fr-col">
@@ -225,9 +225,7 @@ const updateAndSave = async (option: TrackOptionsUnion, index: number) => {
 
 const saveSelection = async (needRemove = false) => {
   usedTrackStore.updateCurrent(selectedOptions.value)
-
   const next = usedTrackStore.current?.next
-
   if (!needRemove && next && next.default !== false) {
     if (next.default === TrackId.Results) {
       return await router.push({
