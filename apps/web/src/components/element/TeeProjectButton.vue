@@ -31,7 +31,7 @@ const getRouteName = () => {
   if (navigationStore.isCatalogProgramDetail()) {
     return RouteName.CatalogProjectFromProgramDetail
   }
-  if (navigationStore.isCatalogProjectDetail()) {
+  if (navigationStore.isCatalogProjectDetail() || navigationStore.isByRouteName(RouteName.CatalogProjectFromProgramDetail)) {
     return RouteName.CatalogProjectDetail
   }
   if (navigationStore.isByRouteName(RouteName.QuestionnaireResultDetail)) {
