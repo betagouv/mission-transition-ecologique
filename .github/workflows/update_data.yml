@@ -25,6 +25,8 @@ jobs:
       - run: npm run generate:program
 
       - name: Generate projects
+        env:
+          BASEROW_TOKEN: "${{secrets.BASEROW_TOKEN}}"
         run: npm run generate:projects
 
       - name: Create or update branch
