@@ -4,10 +4,11 @@ on:
   workflow_dispatch:
   pull_request:
   schedule:
+    # - cron: '0 0 * * *' # daily midnight run
     - cron: '*/10 * * * *' # Runs every 10 minutes for testing
 
 permissions:
-  contents: write # fsdf
+  contents: write
 
 jobs:
   update-projects:
@@ -32,19 +33,19 @@ jobs:
           BASEROW_TOKEN: "${{secrets.BASEROW_TOKEN}}"
         run: npm run generate:projects
 
-      - name: Create or update branch
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git checkout -B chore/update_projects
-          git add .
-          git commit -m "chore: update projects" || echo "No changes to commit"
-          git push --force origin chore/update_projects
+      # - name: Create or update branch
+      #   run: |
+      #     git config --global user.name 'github-actions[bot]'
+      #     git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+      #     git checkout -B chore/update_projects
+      #     git add .
+      #     git commit -m "chore: update projects" || echo "No changes to commit"
+      #     git push --force origin chore/update_projects
+      #     git checkout main
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
         with:
-          base: main
           branch: chore/update_projects
           commit-message: "chore: update projects"
           title: "chore: update projects"
@@ -53,6 +54,5 @@ jobs:
 
             Merci de bien vérifier les changements avant de merge.
 
-            En particulier, faire bien attention à l'ajout de projets liés. Bien vérifier l'existence des projets liés
+            En particulier, faire bien attention à l'ajout de projets liés. Bien vérifier l'existence des projets liés.
           draft: false
-          delete-branch: true
