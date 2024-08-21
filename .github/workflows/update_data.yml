@@ -1,0 +1,47 @@
+name: Update Data
+
+on:
+  schedule:
+    - cron: '*/10 * * * *' # Runs every 10 minutes for testing
+
+jobs:
+  update-projects:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ '20.x' ]
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: Generate projects
+        run: npm run generate:projects
+
+      - name: Create or update branch
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git checkout -B chore/update_projects
+          git add .
+          git commit -m "chore: update projects" || echo "No changes to commit"
+          git push --force origin chore/update_projects
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: chore/update_projects
+          commit-message: "chore: update projects"
+          title: "chore: update projects"
+          body: |
+            Cette pull request a été crée automatiquement pour mettre à jour les projets.
+
+            Merci de bien vérifier les changements avant de merge.
+
+            En particulier, faire bien attention à l'ajout de projets liés. Bien vérifier l'existence des projets liés
+          draft: false
+          delete-branch: true

@@ -58,11 +58,12 @@ export class ProjectFeatures {
   }
 
   private _validateLinkedProjects(project: RawProject, rawProjects: RawProject[]) {
-    project.linkedProjects.forEach((projectId) => {
+    project.linkedProjects = project.linkedProjects.filter((projectId) => {
       const projectFound = rawProjects.some((proj) => proj['id'] === projectId)
       if (!projectFound) {
-        console.warn(`In Project "${project['title']}", id ${project['id']}, unknown project-id: ${projectId}`)
+        console.warn(`In Project "${project['title']}", id ${project['id']}, unknown linked project-id: ${projectId}, link deleted`)
       }
+      return projectFound
     })
   }
 
@@ -76,7 +77,7 @@ export class ProjectFeatures {
   }
 
   private _writeJson(rawProjects: RawProject[]) {
-    const projectJson = JSON.stringify(rawProjects)
+    const projectJson = JSON.stringify(rawProjects, null, 2)
     const fullPath = path.join(this._outputDirectory, 'projects.json')
     fs.writeFile(fullPath, projectJson, (err) => {
       if (err) {
