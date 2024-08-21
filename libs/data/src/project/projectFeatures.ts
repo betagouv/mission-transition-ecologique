@@ -5,6 +5,7 @@ import { RawProject } from './types/domain'
 import { jsonPrograms } from '../../generated/index'
 import { ProgramType } from '../index'
 import { ThemeId } from '../theme/types/shared'
+import { SlugValidator } from '../common/validators/slugValidator'
 
 export class ProjectFeatures {
   private readonly _outputDirectory: string = path.join(__dirname, '../../static/')
@@ -21,7 +22,7 @@ export class ProjectFeatures {
     console.log(`Start loading Baserow data and creating the project images`)
     const projects = await new ProjectBaserow(this._outputImageDirectory).getValidProjects()
 
-    console.log(`Baserow Data sucessfully downloaded.\nStarting to validate the project data and generating the project JSON.`)
+    console.log(`Baserow Data sucessfully downloaded.\n\nStarting to validate the project data and generating the project JSON.`)
     this._validateData(projects)
     this._writeJson(projects)
     return
@@ -39,6 +40,7 @@ export class ProjectFeatures {
 
   private _validateData(rawProjects: RawProject[]) {
     rawProjects.forEach((project) => {
+      SlugValidator.validate(project.slug)
       this._validateThemes(project)
       this._validateLinkedProjects(project, rawProjects)
       this._validatePrograms(project, this._programs)
