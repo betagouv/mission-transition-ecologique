@@ -9,6 +9,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   update-projects:
@@ -46,6 +47,7 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
         with:
+          base: main
           branch: chore/update_projects
           commit-message: "chore: update projects"
           title: "chore: update projects"
