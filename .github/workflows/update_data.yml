@@ -22,6 +22,7 @@ jobs:
           cache: 'npm'
 
       - name: Generate projects
+        run: npm clean-install
         run: npm run generate:projects
 
       - name: Create or update branch
