@@ -7,7 +7,7 @@ on:
     - cron: '*/10 * * * *' # Runs every 10 minutes for testing
 
 permissions:
-  contents: write
+  contents: write # fsdf
 
 jobs:
   update-projects:
