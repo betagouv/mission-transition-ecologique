@@ -1,7 +1,6 @@
 name: Update Data
 
 on:
-  pull_request:
   workflow_dispatch:
   schedule:
     - cron: '12 3 * * *' # daily 3:12AM run
