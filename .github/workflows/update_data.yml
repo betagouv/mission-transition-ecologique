@@ -22,6 +22,8 @@ jobs:
           cache: 'npm'
 
       - run: npm clean-install
+      - run: npm run generate:program
+
       - name: Generate projects
         run: npm run generate:projects
 
