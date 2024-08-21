@@ -59,6 +59,54 @@ EXPECT that the filtering only keeps programs that are eligible (rule
       inputData: {},
       rules: [],
       expectedProgramIndexes: []
+    },
+    {
+      name: 'one true',
+      inputData: {},
+      rules: ['oui'],
+      expectedProgramIndexes: [0]
+    },
+    {
+      name: 'one false',
+      inputData: {},
+      rules: ['non'],
+      expectedProgramIndexes: []
+    },
+    {
+      name: 'eligible < 20 people company',
+      inputData: { 'entreprise . effectif': 12 },
+      rules: ['entreprise . effectif < 20'],
+      expectedProgramIndexes: [0]
+    },
+    {
+      name: 'non eligible >= 20 people company',
+      inputData: { 'entreprise . effectif': 25 },
+      rules: ['entreprise . effectif < 20'],
+      expectedProgramIndexes: []
+    },
+    {
+      name: 'eligible >= 20 people company',
+      inputData: { 'entreprise . effectif': 25 },
+      rules: ['entreprise . effectif >= 20'],
+      expectedProgramIndexes: [0]
+    },
+    {
+      name: 'both eligible',
+      inputData: { 'entreprise . effectif': 25 },
+      rules: ['entreprise . effectif >= 20', 'oui'],
+      expectedProgramIndexes: [0, 1]
+    },
+    {
+      name: 'both non eligible',
+      inputData: { 'entreprise . effectif': 25 },
+      rules: ['non', 'entreprise . effectif < 20'],
+      expectedProgramIndexes: []
+    },
+    {
+      name: 'one of each',
+      inputData: { 'entreprise . effectif': 12 },
+      rules: ['non', 'entreprise . effectif < 20'],
+      expectedProgramIndexes: [1]
     }
   ]
 

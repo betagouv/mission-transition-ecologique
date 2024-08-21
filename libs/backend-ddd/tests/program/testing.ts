@@ -2,12 +2,12 @@ import { FILTERING_RULE_NAME } from '../../src/program/domain/filterPrograms'
 import { ProgramType, ProgramAidType } from '@tee/data'
 import { ProgramRepository } from '../../src/program/domain/spi'
 
-export type Rules = { [FILTERING_RULE_NAME]?: { [k: string]: unknown } | string; [k: string]: unknown }
+export type Rules = { [FILTERING_RULE_NAME]: { [k: string]: unknown } | string; [k: string]: unknown }
 
 /** makes data for a mock program with given eligibility rules */
 export const makeProgramHelper = ({
   id = '',
-  rules = {},
+  rules = { [FILTERING_RULE_NAME]: { valeur: 'oui' } },
   cost = '1000 €',
   nature = ProgramAidType.study
 }: {
