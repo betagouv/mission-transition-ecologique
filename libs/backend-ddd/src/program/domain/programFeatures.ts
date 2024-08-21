@@ -21,8 +21,7 @@ export default class ProgramFeatures {
   }
 
   public getById(id: string): ProgramType | undefined {
-    const program = this._programRepository.getById(id)
-    return program
+    return this._programRepository.getById(id)
   }
 
   public getFilteredBy(questionnaireData: QuestionnaireData): Result<ProgramType[], Error> {

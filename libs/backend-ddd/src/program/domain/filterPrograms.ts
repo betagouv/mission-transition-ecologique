@@ -24,8 +24,10 @@ export const filterPrograms = (
   rulesService: RulesManager
 ): Result<ProgramType[], Error> => {
   const filteredPrograms: ProgramType[] = []
+
   for (const program of programs) {
     const evaluation = rulesService.evaluate(FILTERING_RULE_NAME, program, inputData, currentDate)
+
     if (evaluation.isErr) {
       return Result.err(addErrorDetails(evaluation.error, program.id))
     }
@@ -34,6 +36,7 @@ export const filterPrograms = (
       filteredPrograms.push(program)
     }
   }
+
   return Result.ok(filteredPrograms)
 }
 
