@@ -45,6 +45,5 @@ export interface ProgramData {
 }
 
 export type PublicodesProgramData = {
-  [key: string]: unknown
   [FormattedPublicodesKeys.hasObjective]?: Objective[]
 }
