@@ -67,6 +67,11 @@ export interface DealAttributes {
 
 export interface DealUpdateAttributes {
   envoy: boolean
+  deal_stage?: string
+}
+
+export enum BrevoStatus {
+  Transmitted = '659d15cff01695.94588187'
 }
 
 export enum BrevoCompanySize {

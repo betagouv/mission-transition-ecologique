@@ -8,7 +8,8 @@ import {
   DealUpdateAttributes,
   BrevoPostDealPayload,
   BrevoDealResponse,
-  BrevoDealItem
+  BrevoDealItem,
+  BrevoStatus
 } from './types'
 import Config from '../../../../config'
 import { QuestionnaireRoute } from '@tee/common'
@@ -103,8 +104,15 @@ const convertDomainToBrevoDeal = (domainAttributes: OpportunityWithOperatorConta
 }
 
 const convertDomainToBrevoDealUpdate = (domainUpdateAttributes: OpportunityUpdateAttributes): DealUpdateAttributes => {
-  return {
-    envoy: domainUpdateAttributes.sentToOpportunityHub
+  if (domainUpdateAttributes.sentToOpportunityHub) {
+    return {
+      envoy: domainUpdateAttributes.sentToOpportunityHub,
+      deal_stage: BrevoStatus.Transmitted
+    }
+  } else {
+    return {
+      envoy: domainUpdateAttributes.sentToOpportunityHub
+    }
   }
 }
 
