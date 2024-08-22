@@ -45,6 +45,7 @@ jobs:
             Merci de bien vérifier les changements avant de merge.
 
             En particulier, faire bien attention à l'ajout de liens vers d'autres projets ou d'autres dispositifs. Bien vérifier l'existence des nouveaux éléments liés.
+            Essayer aussi de limiter le rannoamge de slug. Chaque slug rennomé "casse" des liens que peuvent avoir conservés les utilisations.
           draft: false
 
   update-programs:
@@ -79,4 +80,6 @@ jobs:
             Cette pull request a été crée automatiquement pour mettre à jour les dispositifs.
 
             Merci de bien vérifier les changements avant de merge.
+
+            Attention en particulier aux changements de slugs qui vont créer de nouveaux dispositifs au lieu de reéécrire un dispositif existant.
           draft: false

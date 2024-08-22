@@ -50,10 +50,12 @@ export class ProjectFeatures {
   private _validateThemes(project: RawProject) {
     const validThemeIds = Object.values(ThemeId)
 
-    project.themes.forEach((themeId) => {
-      if (!validThemeIds.includes(themeId as ThemeId)) {
+    project.themes = project.themes.filter((themeId) => {
+      const isValidTheme = validThemeIds.includes(themeId as ThemeId)
+      if (!isValidTheme) {
         console.warn(`In Project "${project['title']}", id ${project['id']}, unknown theme-id: ${themeId}`)
       }
+      return isValidTheme
     })
   }
 
@@ -68,11 +70,12 @@ export class ProjectFeatures {
   }
 
   private _validatePrograms(project: RawProject, programs: ProgramType[]) {
-    project.programs.forEach((programId) => {
+    project.programs = project.programs.filter((programId) => {
       const programFound = programs.some((program) => program.id === programId)
       if (!programFound) {
         console.warn(`In Project "${project['title']}", id ${project['id']}, unknown program-id: ${programId}`)
       }
+      return programFound
     })
   }
 
