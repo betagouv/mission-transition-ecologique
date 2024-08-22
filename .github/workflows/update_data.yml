@@ -45,7 +45,7 @@ jobs:
             Merci de bien vérifier les changements avant de merge.
 
             En particulier, faire bien attention à l'ajout de liens vers d'autres projets ou d'autres dispositifs. Bien vérifier l'existence des nouveaux éléments liés.
-            Essayer aussi de limiter le rannoamge de slug. Chaque slug rennomé "casse" des liens que peuvent avoir conservés les utilisations.
+            Essayer aussi de limiter le rennomage de slug. Chaque slug rennomé "casse" des liens que peuvent avoir conservés les utilisations.
           draft: false
 
   update-programs:
