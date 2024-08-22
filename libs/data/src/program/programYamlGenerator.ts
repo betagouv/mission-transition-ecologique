@@ -19,13 +19,22 @@ export class ProgramYamlGenerator {
         return
       }
       console.log('Working on program ' + program['Id fiche dispositif'])
-      this._validateProgramData(program)
+      if (!this._validateProgramData(program)) {
+        return
+      }
       this._createProgramYaml(program)
     })
     return
   }
   private _validateProgramData(program: DataProgram) {
-    SlugValidator.validate(program['Id fiche dispositif'])
+    let valid = true
+    if (!SlugValidator.validate(program['Id fiche dispositif'])) {
+      valid = false
+    }
+    if (!valid) {
+      console.log(program['Id fiche dispositif'] + 'not valid, not generating the associated yaml.')
+    }
+    return valid
   }
 
   private _loadYamlImage(oldProgramId: string): string | null {
