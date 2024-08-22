@@ -4,6 +4,7 @@ import * as yaml from 'js-yaml'
 import { YamlObjective, DataProgram, DataProgramType, Status, YamlImage } from './types/domain'
 import { ProgramBaserow } from '../common/baserow/programBaserow'
 import { PublicodesGenerator } from './publicodesGenerator'
+import { SlugValidator } from '../common/validators/slugValidator'
 
 export class ProgramYamlGenerator {
   outputDirectory: string = path.join(__dirname, '../../programs/')
@@ -18,9 +19,13 @@ export class ProgramYamlGenerator {
         return
       }
       console.log('Working on program ' + program['Id fiche dispositif'])
+      this._validateProgramData(program)
       this._createProgramYaml(program)
     })
     return
+  }
+  private _validateProgramData(program: DataProgram) {
+    SlugValidator.validate(program['Id fiche dispositif'])
   }
 
   private _loadYamlImage(oldProgramId: string): string | null {

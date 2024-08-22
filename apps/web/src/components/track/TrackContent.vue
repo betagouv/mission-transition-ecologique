@@ -225,9 +225,7 @@ const updateAndSave = async (option: TrackOptionsUnion, index: number) => {
 
 const saveSelection = async (needRemove = false) => {
   usedTrackStore.updateCurrent(selectedOptions.value)
-
   const next = usedTrackStore.current?.next
-
   if (!needRemove && next && next.default !== false) {
     if (next.default === TrackId.Results) {
       return await router.push({
