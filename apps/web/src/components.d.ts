@@ -69,6 +69,7 @@ declare module 'vue' {
     TeeDsfrButton: typeof import('./components/element/button/TeeDsfrButton.vue')['default']
     TeeDsfrHeader: typeof import('./components/header/TeeDsfrHeader.vue')['default']
     TeeDsfrHeaderMenuLinks: typeof import('./components/header/TeeDsfrHeaderMenuLinks.vue')['default']
+    TeeDsfrNavigation: typeof import('./components/header/TeeDsfrNavigation.vue')['default']
     TeeDsfrSearchBar: typeof import('./components/element/TeeDsfrSearchBar.vue')['default']
     TeeDsfrTag: typeof import('./components/element/tag/TeeDsfrTag.vue')['default']
     TeeDsfrTags: typeof import('./components/element/tag/TeeDsfrTags.vue')['default']
