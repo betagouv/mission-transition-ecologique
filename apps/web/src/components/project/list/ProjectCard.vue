@@ -5,6 +5,7 @@
     :img-src="project.image"
     :alt-img="`image / ${project.title}`"
     :no-arrow="true"
+    class="playwright-project-target"
   >
     <template
       v-if="isPriorityProject"
