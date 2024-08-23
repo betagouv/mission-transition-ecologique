@@ -7,7 +7,10 @@ const queryUrls = [
   'aides-entreprise',
   'questionnaire/resultat?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=83014132100034&effectif=TPE&locaux=proprietaire&mobilite=oui&matieres-premieres=oui&tri-dechets=non&dechets=oui&gestion-eau=oui&energie=non&audit=non#questionnaire-resultat',
   'questionnaire/resultat/projet/isolation-thermique?choix-du-parcours=j-ai-un-projet&siret=83014132100034&effectif=TPE&objectifs=r%C3%A9nover+mon+b%C3%A2timent',
-  'questionnaire/resultat/projet/sensibilisation-equipes?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=83014132100034&effectif=TPE&locaux=proprietaire&mobilite=oui&matieres-premieres=oui&tri-dechets=non&dechets=oui&gestion-eau=oui&energie=non&audit=non'
+  'questionnaire/resultat/projet/sensibilisation-equipes?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=83014132100034&effectif=TPE&locaux=proprietaire&mobilite=oui&matieres-premieres=oui&tri-dechets=non&dechets=oui&gestion-eau=oui&energie=non&audit=non',
+  'questionnaire/resultat?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=78893947800020&locaux=locataire&mobilite=oui&matieres-premieres=oui&tri-dechets=oui&dechets=oui&gestion-eau=oui&energie=oui&audit=non#questionnaire-resultat',
+  'questionnaire/resultat?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=82141193100016&effectif=ME&locaux=proprietaire&mobilite=oui&matieres-premieres=oui&tri-dechets=non&dechets=oui&gestion-eau=oui&energie=oui&audit=oui&selection-audit=consommation-energie&selection-audit=eau&selection-audit=performance-energetique&selection-audit=bilan-carbone&selection-audit=certification&selection-audit=matieres-premieres&selection-audit=dechets#questionnaire-resultat',
+  'questionnaire/resultat?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=21490007800012&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non#questionnaire-resultat'
 ]
 
 queryUrls.forEach((queryUrl, id) => {
