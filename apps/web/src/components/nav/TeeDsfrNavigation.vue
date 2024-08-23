@@ -65,7 +65,7 @@ const props = withDefaults(defineProps<TeeDsfrNavigationProps>(), {
   label: 'Menu principal',
   navItems: () => [],
   menuAlignment: 'left',
-  textColor: 'black'
+  textColor: Color.black
 })
 
 const expandedMenuId = ref<string | undefined>(undefined)
