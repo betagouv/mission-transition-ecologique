@@ -28,5 +28,6 @@ export enum Color {
   yellowLighted = 'yellow--light',
   yellowLightnessed = 'yellow--lightness',
 
-  white = 'white'
+  white = 'white',
+  black = 'black'
 }
