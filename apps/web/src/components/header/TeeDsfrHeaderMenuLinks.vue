@@ -21,8 +21,8 @@
               class="fr-hidden fr-unhidden-lg fr-mr-2w fr-mr-lg-0"
               :nav-items="[{ title: 'Catalogue', links: quickLink.links }]"
               aria-label="Sous Menu secondaire"
-              :text-color="Color.blueFrance"
               :menu-alignment="'right'"
+              :text-color="Color.blueFrance"
             />
             <!-- DROPDOWN MENU ITEM - DISPLAY SMALLER THAN MD -->
             <ul>

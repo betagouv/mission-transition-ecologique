@@ -20,9 +20,10 @@
           @toggle-id="toggle($event)"
         />
         <!-- @vue-ignore -->
-        <DsfrNavigationMenu
+        <TeeDsfrNavigationMenu
           v-else-if="(navItem as DsfrNavigationMenuProps).title && (navItem as DsfrNavigationMenuProps).links"
           v-bind="navItem as DsfrNavigationMenuProps"
+          :text-color="textColor"
           :expanded-id="expandedMenuId"
           @toggle-id="toggle($event)"
         />
@@ -38,12 +39,11 @@
   </nav>
 </template>
 <script lang="ts" setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 import {
   DsfrNavigationItem,
   DsfrNavigationMegaMenu,
   DsfrNavigationMegaMenuProps,
-  DsfrNavigationMenu,
   DsfrNavigationMenuLink,
   DsfrNavigationMenuLinkProps,
   DsfrNavigationMenuLinks,
@@ -51,20 +51,21 @@ import {
   DsfrNavigationProps,
   getRandomId
 } from '@gouvminint/vue-dsfr'
+import { Color } from '@/types'
 
 export type { DsfrNavigationMenuLinks, DsfrNavigationProps }
 
 export type TeeDsfrNavigationProps = DsfrNavigationProps & {
-  textColor: string
   menuAlignment: 'left' | 'right' | 'center'
+  textColor?: Color
 }
 
 const props = withDefaults(defineProps<TeeDsfrNavigationProps>(), {
   id: () => getRandomId('menu'),
   label: 'Menu principal',
   navItems: () => [],
-  textColor: 'dark',
-  menuAlignment: 'left'
+  menuAlignment: 'left',
+  textColor: 'black'
 })
 
 const expandedMenuId = ref<string | undefined>(undefined)
@@ -127,10 +128,5 @@ onUnmounted(() => {
       right: -100%;
     }
   }
-}
-
-:deep(.fr-nav__btn) {
-  color: var(--text-active-blue-france);
-  font-weight: 500;
 }
 </style>
