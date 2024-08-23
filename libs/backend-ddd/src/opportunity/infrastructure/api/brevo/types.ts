@@ -71,7 +71,8 @@ export interface DealUpdateAttributes {
 }
 
 export enum BrevoStatus {
-  Transmitted = '659d15cff01695.94588187'
+  Transmitted = '659d15cff01695.94588187',
+  TestTransmitted = 'UklHvFVBzoDyjoTwk0Oqnf8' // Etape = gagné pour tester le changement de statut.
 }
 
 export enum BrevoCompanySize {

@@ -105,9 +105,14 @@ const convertDomainToBrevoDeal = (domainAttributes: OpportunityWithOperatorConta
 
 const convertDomainToBrevoDealUpdate = (domainUpdateAttributes: OpportunityUpdateAttributes): DealUpdateAttributes => {
   if (domainUpdateAttributes.sentToOpportunityHub) {
+    let deal_stage = BrevoStatus.Transmitted
+    if (Config.BREVO_DEAL_PIPELINE == '65ce1a5e59d96ff2630f06c8') {
+      // test value, already public in app/backend/.env.exemple
+      deal_stage = BrevoStatus.TestTransmitted
+    }
     return {
       envoy: domainUpdateAttributes.sentToOpportunityHub,
-      deal_stage: BrevoStatus.Transmitted
+      deal_stage: deal_stage
     }
   } else {
     return {

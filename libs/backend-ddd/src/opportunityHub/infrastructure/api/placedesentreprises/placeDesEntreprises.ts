@@ -91,17 +91,24 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
 
   async reachedDailyContactTransmissionLimit(contact: number): Promise<boolean> {
     const previousDailyOpportunities = await new OpportunityService().getDailyOpportunitiesByContactId(contact)
+    console.log('previous opportunities', previousDailyOpportunities)
     if (previousDailyOpportunities.isErr) {
       return false
     }
 
     let tranmismissiblePrograms = 0
     for (const prevOpportunity of previousDailyOpportunities.value) {
+      console.log(prevOpportunity)
       const prevProgram = new ProgramService().getById(prevOpportunity.id)
+      if (prevProgram === undefined) {
+        //we are working with a project, which are defined by CE
+        tranmismissiblePrograms += 1
+      }
       if (prevProgram && this.support(prevProgram)) {
         tranmismissiblePrograms += 1
       }
     }
+    console.log('nombre de programmes précédemment détectés ', tranmismissiblePrograms)
     // The current opportunity being already created in brevo when we check the hub transmission, we count the current program.
     // The question is do we have MORE than one tranmissible program which indicates older tranmissions.
     return tranmismissiblePrograms > 1
