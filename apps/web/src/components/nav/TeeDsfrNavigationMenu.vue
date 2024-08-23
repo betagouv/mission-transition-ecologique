@@ -47,7 +47,7 @@ const props = withDefaults(defineProps<TeeDsfrNavigationMenuProps>(), {
   id: () => getRandomId('menu'),
   links: () => [],
   expandedId: '',
-  textColor: 'black'
+  textColor: Color.black
 })
 
 defineEmits<{ (event: 'toggleId', id: string): void }>()
