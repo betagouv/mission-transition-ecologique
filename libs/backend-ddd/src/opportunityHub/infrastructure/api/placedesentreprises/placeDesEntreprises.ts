@@ -9,7 +9,7 @@ import OpportunityHubAbstract from '../opportunityHubAbstract'
 import { ProgramService } from '../../../../program/application/programService'
 import OpportunityService from '../../../../opportunity/application/opportunityService'
 import { Objective } from '../../../../common/types'
-import { Operators, ProgramType } from '@tee/data'
+import { Operators, ProgramType, ThemeId } from '@tee/data'
 import { Opportunity, OpportunityType } from '@tee/common'
 import { Project } from '@tee/data'
 import Monitor from '../../../../common/domain/monitoring/monitor'
@@ -155,11 +155,23 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
       }
     })
   }
+
+  private _themeToSubjectIdMapping: { [key in ThemeId]: Subject } = {
+    [ThemeId.Energy]: Subject.Energie,
+    [ThemeId.Water]: Subject.Eau,
+    [ThemeId.Waste]: Subject.Dechets,
+    [ThemeId.Mobility]: Subject.TransportMobilite,
+    [ThemeId.RH]: Subject.BilanRSE,
+    [ThemeId.Environmental]: Subject.DemarcheEcologie,
+    [ThemeId.Building]: Subject.DemarcheEcologie,
+    [ThemeId.EcoDesign]: Subject.DemarcheEcologie
+  }
+
   private _createProjectRequestBody(opportunity: Opportunity, project: Project): Result<CreateSolicitationApiBody, Error> {
     return Result.ok({
       solicitation: {
         landing_id: this._pdeLanding,
-        landing_subject_id: subjectToIdMapping[Subject.DemarcheEcologie],
+        landing_subject_id: subjectToIdMapping[this._themeToSubjectIdMapping[project.mainTheme]],
         description: 'Demande via le projet ' + project.title + '\n\n' + opportunity.message,
         full_name: opportunity.firstName + ' ' + opportunity.lastName,
         email: opportunity.email,
