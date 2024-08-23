@@ -99,7 +99,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     for (const prevOpportunity of previousDailyOpportunities.value) {
       const prevProgram = new ProgramService().getById(prevOpportunity.id)
       if (prevProgram === undefined) {
-        //we are working with a project, which are defined by CE
+        //we are working with a project, which we transmit to PDE and we have to count
         tranmismissiblePrograms += 1
       }
       if (prevProgram && this.support(prevProgram)) {
