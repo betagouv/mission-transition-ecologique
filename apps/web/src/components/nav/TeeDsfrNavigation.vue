@@ -122,6 +122,7 @@ onUnmounted(() => {
       right: -1rem;
     }
   }
+
   &--center {
     :deep(.fr-menu) {
       position: absolute;
