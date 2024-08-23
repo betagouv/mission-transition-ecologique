@@ -3,6 +3,9 @@ import { test, expect } from '@playwright/test'
 const productionUrl = 'https://mission-transition-ecologique.beta.gouv.fr/'
 const testUrl = 'http://localhost:4242/'
 
+// note : for all projects tests, "for je sais pas par ou commencer" , tag "all", 
+// the number of elements found is doubled because the mobile version is generated but hidden.
+
 const queryUrls = [
   'projets-entreprise',
   'questionnaire/resultat?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=83014132100034&effectif=TPE&locaux=proprietaire&mobilite=oui&matieres-premieres=oui&tri-dechets=non&dechets=oui&gestion-eau=oui&energie=non&audit=non#questionnaire-resultat',
@@ -11,7 +14,8 @@ const queryUrls = [
   'questionnaire/resultat?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=21490007800012&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non#questionnaire-resultat'
 ]
 
-// compare the results between the PR branch and the production
+// compare the results between the PR branch and the production 
+
 queryUrls.forEach((queryUrl, id) => {
   test(`Verify content and elements for query number ${id}`, async ({ page }) => {
     const fullProductionUrl = `${productionUrl}${queryUrl}`
@@ -36,6 +40,8 @@ queryUrls.forEach((queryUrl, id) => {
     const elementsLocal = await page.$$eval('.playwright-project-target h3', (els) => els.map((el) => el.innerHTML.trim()))
     console.log(elementsProduction.length)
     console.log(elementsLocal.length)
+    console.log(elementsLocal)
+    // note : this code check for all the projects card, displayed AND hidden. Since i test the order also. It is satisfactory for me.
 
     expect(elementsLocal.length).toBe(elementsProduction.length)
     for (let i = 0; i < elementsProduction.length; i++) {
@@ -44,4 +50,33 @@ queryUrls.forEach((queryUrl, id) => {
   })
 })
 
-// check that clicking on a tag or directly loading the page with a tag selected gives the same result
+test(`Check projects found while initially selecting different tags`, async ({ page }) => {
+  const urlTag1 = `${testUrl}questionnaire/resultat?choix-du-parcours=j-ai-un-projet&siret=83014132100034&effectif=TPE&objectifs=la+mobilité+durable`
+  const urlTag2 = `${testUrl}questionnaire/resultat?choix-du-parcours=j-ai-un-projet&siret=83014132100034&effectif=TPE&objectifs=rénover+mon+bâtiment`
+
+  await page.goto(urlTag1)
+  try {
+    await page.waitForSelector('.playwright-project-target', { timeout: 3000 })
+  } catch (error) {
+    // expected when no elements are found
+    // it also happen in some other tests cases where there are elements for an unknown reason
+  }
+  const elementsurlTag1 = await page.$$eval('.playwright-project-target h3', (els) => els.map((el) => el.innerHTML.trim()))
+  await page.goto(urlTag2)
+  try {
+    await page.waitForSelector('.playwright-project-target', { timeout: 3000 })
+  } catch (error) {
+    // expected when no elements are found
+    // it also happen in some other tests cases where there are elements for an unknown reason
+  }
+  await page.click('//button[normalize-space(.)="🚲 mobilité"]');
+
+  const elementsurlTag2 = await page.$$eval('.playwright-project-target h3', (els) => els.map((el) => el.innerHTML.trim()))
+  console.log(elementsurlTag1.length)
+
+  // note : this code check for all the projects card, displayed AND hidden. Since i test the order also. It is satisfactory for me.
+  expect(elementsurlTag1.length).toBe(elementsurlTag2.length)
+  for (let i = 0; i < elementsurlTag2.length; i++) {
+    expect(elementsurlTag1[i]).toBe(elementsurlTag2[i])
+  }
+})
