@@ -15,7 +15,7 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`TeePersonalDataPage > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import { PrivacyPolicyPropsCookie, PrivacyPolicyPropsThirdParty } from '@incubateur-ademe/legal-pages-markdown'
+import { PrivacyPolicyPropsCookie, PrivacyPolicyPropsThirdParty, PrivacyPolicy } from '@incubateur-ademe/legal-pages-vue3'
 
 const thirdParties: PrivacyPolicyPropsThirdParty[] = [
   {

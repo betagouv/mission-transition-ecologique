@@ -14,6 +14,7 @@
       date="17/06/2024"
       :third-parties="thirdParties"
       :contact-email="Contact.email"
+      :include-beta-gouv="true"
     />
   </div>
   <ContactMail />
@@ -24,7 +25,7 @@
 // console.log(`TeeLegalPage > FUNCTION_NAME > MSG_OR_VALUE :`)
 import { RouteName } from '@/types/routeType'
 import Contact from '@/utils/contact'
-import { LegalNoticePropsThirdParty } from '@incubateur-ademe/legal-pages-markdown'
+import { LegalNoticePropsThirdParty, LegalNotice } from '@incubateur-ademe/legal-pages-vue3'
 
 const privacyPolicy = new URL(useRouter().resolve({ name: RouteName.PersonalData }).href, window.location.origin).href
 const siteUrl = new URL(useRouter().resolve({ name: RouteName.Homepage }).href, window.location.origin).href
