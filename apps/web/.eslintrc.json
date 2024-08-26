@@ -18,5 +18,8 @@
         "@typescript-eslint/no-unused-vars": "off"
       }
     }
-  ]
+  ],
+  "globals": {
+    "tarteaucitron": true
+  }
 }

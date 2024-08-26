@@ -144,14 +144,14 @@ function buildHeaders() {
       "default-src 'none';" +
       "base-uri 'self';" +
       "form-action 'self';" +
-      "script-src-elem 'self' 'unsafe-inline' https://stats.beta.gouv.fr  https://embed.typeform.com;" +
-      "style-src 'self' 'unsafe-inline' https://embed.typeform.com;" +
-      "font-src 'self';" +
+      "script-src-elem 'self' 'unsafe-inline' https://stats.beta.gouv.fr https://eu.i.posthog.com  https://cdn.jsdelivr.net/ https://embed.typeform.com;" +
+      "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net/ https://embed.typeform.com;" +
+      "font-src 'self' data:;" +
       "img-src 'self' data:;" +
       "object-src 'self';" +
       `connect-src 'self' https://conseillers-entreprises.service-public.fr https://stats.beta.gouv.fr ${
         sentryData?.domain ? sentryData.domain : ''
-      } https://embed.typeform.com https://eu.i.posthog.com https://api.typeform.com;` +
+      } https://embed.typeform.com https://eu.i.posthog.com https://cdn.jsdelivr.net/ https://api.typeform.com;` +
       "worker-src 'self' blob:;" +
       "frame-src 'self' https://conseillers-entreprises.service-public.fr https://form.typeform.com;" +
       "frame-ancestors 'self' https://conseillers-entreprises.service-public.fr;",

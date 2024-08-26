@@ -11,7 +11,7 @@ import WebApp from './WebApp.vue'
 import { addIcons } from './plugin/icons'
 import Sentry from './plugin/sentry'
 import { createHead } from '@unhead/vue'
-import posthogPlugin from './plugin/posthog'
+import posthog from 'posthog-js'
 
 addIcons()
 
@@ -23,14 +23,16 @@ Sentry.init(app)
 const head = createHead()
 app.use(head)
 app.use(store)
-app.use(posthogPlugin)
 app.use(router)
 app.mount('#app')
 
 router.afterEach((to, _, failure) => {
   if (!failure) {
     nextTick(() => {
-      app.config.globalProperties.$posthog.capture('$pageview', { path: to.fullPath })
+      console.log(window)
+      if (window.posthog) {
+        posthog.capture('$pageview', { path: to.fullPath })
+      }
     })
   }
 })
