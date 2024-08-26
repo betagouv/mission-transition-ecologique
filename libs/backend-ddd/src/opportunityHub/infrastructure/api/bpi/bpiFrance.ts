@@ -3,11 +3,12 @@ import axios, { AxiosInstance } from 'axios'
 import type { TokenResponse } from './types'
 import OpportunityHubAbstract from '../opportunityHubAbstract'
 import AxiosHeaders from '../../../../common/infrastructure/api/axiosHeaders'
-import { handleException } from '../../../../common/domain/error/errors'
+import { ensureError, handleException } from '../../../../common/domain/error/errors'
 import opportunityPayloadDTO from './opportunityPayloadDTO'
 import Config from '../../../../config'
-import { Operators, ProgramType } from '@tee/data'
-import { Opportunity } from '@tee/common'
+import { Operators, ProgramType, Project } from '@tee/data'
+import { Opportunity, OpportunityType } from '@tee/common'
+import Monitor from '../../../../common/domain/monitoring/monitor'
 
 export class BpiFrance extends OpportunityHubAbstract {
   protected _axios: AxiosInstance
@@ -38,27 +39,33 @@ export class BpiFrance extends OpportunityHubAbstract {
       })
       return Result.ok(response.data)
     } catch (exception: unknown) {
+      Monitor.exception(ensureError(exception))
       return Result.err(handleException(exception))
     }
   }
 
-  public transmitOpportunity = async (opportunity: Opportunity, program: ProgramType): Promise<Maybe<Error>> => {
+  public transmitOpportunity = async (opportunity: Opportunity, programOrProject: ProgramType | Project): Promise<Maybe<Error>> => {
+    if (opportunity.type === OpportunityType.Project) {
+      return Maybe.of(Error("BPI shouldn't transfer be transfered Project type opportunities."))
+    }
     try {
       const tokenResult = await this._getToken()
       if (tokenResult.isErr) {
         return Maybe.of(tokenResult.error)
       }
 
-      const contactPayloadDTO = new opportunityPayloadDTO(opportunity, program).getPayload()
+      const contactPayloadDTO = new opportunityPayloadDTO(opportunity, programOrProject as ProgramType).getPayload()
       const response = await this.axios.post(this._contactUrl, contactPayloadDTO, {
         headers: AxiosHeaders.makeBearerHeader(tokenResult.value.access_token)
       })
-      if (response.data) {
+      if (response.status >= 200 && response.status < 300) {
         return Maybe.nothing()
       } else {
+        Monitor.error('Error creating an opportunity at BPI during BPI API Call', { BpiResponse: response })
         return Maybe.of(new Error("Erreur à la création d'une opportunité chez BPI durant l'appel BPI. HTTP CODE:" + response.status))
       }
     } catch (exception: unknown) {
+      Monitor.exception(ensureError(exception))
       return Maybe.of(handleException(exception))
     }
   }

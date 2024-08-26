@@ -1,21 +1,34 @@
 import { useUsedTrackStore } from '@/stores/usedTrack'
-import { PublicodesKeys, QuestionnaireDataEnum, QuestionnaireRoute, TrackId } from '@/types'
-import type { OpportunityBody, ReqResp, WithoutNullableKeys, OpportunityFormType } from '@/types'
+import {
+  QuestionnaireDataEnum,
+  QuestionnaireRoute,
+  TrackId,
+  OpportunityBody,
+  ReqResp,
+  WithoutNullableKeys,
+  OpportunityFormType,
+  OpportunityType
+} from '@/types'
 import RequestApi from '@/service/api/requestApi'
 import TrackStructure from '@/utils/track/trackStructure'
+import Config from '@/config'
+import { Path } from '@/router/routes'
 
 export default class OpportunityApi extends RequestApi {
-  private readonly url = '/api/opportunities'
-  private readonly headers = {
+  protected readonly url = '/api/opportunities'
+  private readonly _headers = {
     accept: 'application/json',
     'content-type': 'application/json'
   }
-
-  private usedTrackStore = useUsedTrackStore()
-
+  private _usedTrackStore = useUsedTrackStore()
   private _opportunityForm: WithoutNullableKeys<OpportunityFormType>
 
-  constructor(opportunityForm: OpportunityFormType, private _programId: string) {
+  constructor(
+    opportunityForm: OpportunityFormType,
+    private _id: string,
+    private _slug: string,
+    private _opportunityType: OpportunityType
+  ) {
     super()
     this._opportunityForm = opportunityForm as WithoutNullableKeys<OpportunityFormType>
   }
@@ -25,7 +38,7 @@ export default class OpportunityApi extends RequestApi {
     try {
       const response = await fetch(this.url, {
         method: 'POST',
-        headers: this.headers,
+        headers: this._headers,
         body: JSON.stringify(this.payload())
       })
 
@@ -38,7 +51,6 @@ export default class OpportunityApi extends RequestApi {
       resp.ok = false
       resp.status = 500
       resp.statusText = 'Internal server error'
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
       resp.message = `${error}`
     }
 
@@ -48,6 +60,8 @@ export default class OpportunityApi extends RequestApi {
   payload(): OpportunityBody {
     return {
       opportunity: {
+        type: this._opportunityType,
+        id: this._id,
         firstName: this._opportunityForm.name.value,
         lastName: this._opportunityForm.surname.value,
         email: this._opportunityForm.email.value,
@@ -55,25 +69,36 @@ export default class OpportunityApi extends RequestApi {
         companySiret: this._opportunityForm.siret.value,
         companyName: this.getFromUsedTrack(TrackId.Siret, 'denomination'),
         companySector: TrackStructure.getSector(),
-        companySize: (this.getFromUsedTrack(TrackId.StructureWorkforce, PublicodesKeys.Workforce) as unknown as number) ?? undefined, // get from usedTrack
-        programId: this._programId,
+        companySize: TrackStructure.getSize() ?? undefined,
         message: this._opportunityForm.needs.value,
         questionnaireRoute: this.getFromUsedTrack(
           TrackId.QuestionnaireRoute,
           QuestionnaireDataEnum.questionnaire_route as string
         ) as QuestionnaireRoute, // get from usedTrack
         otherData: this.getAllValuesFromUsedTrack(),
-        linkToProgramPage: this._opportunityForm.linkToProgramPage.value
+        linkToPage: this._opportunityForm.linkToPage.value,
+        linkToCatalog: this._generateCatalogLink()
       },
       optIn: this._opportunityForm.cgu.value
     }
   }
 
+  private _generateCatalogLink(): string {
+    if (this._opportunityType == OpportunityType.Program) {
+      return Config.deployUrl + Path.ProgramCatalog + '/' + this._id
+    }
+    if (this._opportunityType == OpportunityType.Project) {
+      return Config.deployUrl + Path.ProjectCatalog + '/' + this._slug
+    }
+    console.error('catalog Link Generation Not Handled For The Current Opportunity Type')
+    return 'catalogLinkGenerationNotHandledForTheCurrentOpportunityType'
+  }
+
   private getFromUsedTrack(trackId: TrackId, key: string) {
-    return this.usedTrackStore.findInQuestionnaireDataByTrackIdAndKey(trackId, key)
+    return this._usedTrackStore.findInQuestionnaireDataByTrackIdAndKey(trackId, key)
   }
 
   private getAllValuesFromUsedTrack() {
-    return JSON.stringify(this.usedTrackStore.completedQuestionnaireData)
+    return JSON.stringify(this._usedTrackStore.completedQuestionnaireData)
   }
 }

@@ -7,7 +7,9 @@ export type OpportunityWithContactId = Opportunity & {
 
 export type OpportunityWithOperatorContact = Opportunity & { programContactOperator?: Operators }
 
-export type OpportunityDetailsShort = Omit<OpportunityDetails, 'linkToProgramPage' | 'message'> & { programContactOperator?: Operators }
+export type OpportunityDetailsShort = Omit<OpportunityDetails, 'linkToPage' | 'linkToCatalog' | 'message' | 'type'> & {
+  programContactOperator?: Operators
+}
 
 export interface OpportunityUpdateAttributes {
   sentToOpportunityHub: boolean

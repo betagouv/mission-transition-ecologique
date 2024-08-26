@@ -1,14 +1,17 @@
 titre: Programme EVE
-promesse: Acteurs du transport et de la logistique, réduisez votre impact énergétique
-  et environnemental
-description: Le programme EVE (Engagements Volontaires pour l’Environnement) accompagne
-  des entreprises dans la réduction de l'impact énergétique et environnemental dans
+promesse: >-
+  Acteurs du transport et de la logistique, réduisez votre impact énergétique et
+  environnemental
+description: >-
+  Le programme EVE (Engagements Volontaires pour l’Environnement) accompagne des
+  entreprises dans la réduction de l'impact énergétique et environnemental dans
   leurs activités de transport et logistique.
-description longue: 'Par ses dispositifs dédiés, le programme apporte les solutions
-  adaptées aux besoins
+description longue: >-
+  Par ses dispositifs dédiés, le programme apporte les solutions adaptées aux
+  besoins
 
-  de chaque acteur (chargeur, commissionnaire de transport, transporteur de marchandises,
-  transporteur de voyageurs, grossiste).
+  de chaque acteur (chargeur, commissionnaire de transport, transporteur de
+  marchandises, transporteur de voyageurs, grossiste).
 
 
   • FRET21 accompagne les entreprises agissant en qualité
@@ -45,7 +48,8 @@ description longue: 'Par ses dispositifs dédiés, le programme apporte les solu
   - Démarche RSE
 
 
-  • Objectif CO2 soutient les transporteurs routiers dans leur démarche de réduction
+  • Objectif CO2 soutient les transporteurs routiers dans leur démarche de
+  réduction
 
   d’émissions de GES et de polluants atmosphériques.
 
@@ -57,55 +61,60 @@ description longue: 'Par ses dispositifs dédiés, le programme apporte les solu
 
   - Conducteurs
 
-  - Organisation des transports'
+  - Organisation des transports
 fin de validité: 31/12/2023
 illustration: images/TEE_energie_verte.png
 opérateur de contact: EcoCO2
 autres opérateurs:
-- ADEME
-- Organisations professionnelles
-- CEE
+  - ADEME
+  - CEE
+  - Organisations professionnelles
 url: visite
-nature de l'aide: accompagnement
+nature de l'aide: étude
 coût de l'accompagnement: Gratuit
 durée de l'accompagnement: Selon les projets
 objectifs:
-- description: Intégrez le programme EVE et engagez vous pour l'amélioration de l'environnement
-    dans une démarche volontaire, sur les traces de plus de 3200 entreprises engagées.
-- description: 'Bénéficiez d''un accompagnement sur-mesure pour votre activité et
-    des dispositifs dédiés : FRET21, EVcom et Objectif CO2'
-- description: Obtenez un plan d’actions pour réduire vos émissions de Gaz à effet
-    de serre (GES) sur 3 ans.
-- description: Bénéficiez d'outils opérationnels pour évaluer vos émissions de GES.
-- description: Valorisez votre performance en faveur de la transition énergétique
-    et écologique en obtenant le trophée du programme EVE, le label "Fret21" ou le
-    label "Objectif CO2".
+  - description: >-
+      Intégrez le programme EVE et engagez vous pour l'amélioration de
+      l'environnement dans une démarche volontaire, sur les traces de plus de
+      3200 entreprises engagées.
+  - description: >-
+      Bénéficiez d'un accompagnement sur-mesure pour votre activité et des
+      dispositifs dédiés : FRET21, EVcom et Objectif CO2
+  - description: >-
+      Obtenez un plan d’actions pour réduire vos émissions de Gaz à effet de
+      serre (GES) sur 3 ans.
+  - description: Bénéficiez d'outils opérationnels pour évaluer vos émissions de GES.
+  - description: >-
+      Valorisez votre performance en faveur de la transition énergétique et
+      écologique en obtenant le trophée du programme EVE, le label "Fret21" ou
+      le label "Objectif CO2".
 conditions d'éligibilité:
   taille de l'entreprise:
-  - Toutes tailles
-  - Éligible aux micro-entreprises
+    - Toutes tailles
+    - Éligible aux micro-entreprises
   secteur géographique:
-  - France et territoires d'outre-mer
+    - France et territoires d'outre-mer
   secteur d'activité:
-  - Transporteurs routiers (marchandises, grossistes, voyageurs), chargeurs et commissionnaires
-    de transport
+    - >-
+      Transporteurs routiers (marchandises, grossistes, voyageurs), chargeurs et
+      commissionnaires de transport
   nombre d'années d'activité:
-  - Éligible à toutes les entreprises
+    - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
-    - est éligible
-    - est dans un secteur d'activité ciblé
-    - a un objectif ciblé
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
   entreprise . est éligible:
     applicable si: date du jour <= dispositif . fin de validité
     valeur: oui
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - code NAF niveau 1 . est G
-    - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
   entreprise . a un objectif ciblé:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est la mobilité durable
-    - questionnaire . objectif prioritaire . est ma performance énergétique
-    - questionnaire . objectif prioritaire . est mon impact environnemental
+      - questionnaire . objectif prioritaire . est la mobilité durable
+      - questionnaire . objectif prioritaire . est mon impact environnemental

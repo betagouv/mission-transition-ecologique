@@ -1,11 +1,11 @@
-import { TrackComponent, TrackId, YesNo, WasteSortingStatus, PublicodeObjective, Track } from '@/types'
+import { TrackComponent, TrackId, YesNo, WasteSortingStatus, Objective, Track } from '@/types'
 
 export const wastesSorting: Track = {
   id: TrackId.WastesSorting,
   category: 'myWastes',
   title: { fr: 'Tri des déchets' },
   label: { fr: 'Avez-vous mis en place une solution de tri des déchets dans votre entreprise ?' },
-  objective: PublicodeObjective.WasteManagement,
+  objective: Objective.WasteManagement,
   interface: {
     component: TrackComponent.Buttons
   },

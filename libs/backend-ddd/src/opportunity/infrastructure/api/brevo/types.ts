@@ -58,6 +58,7 @@ export enum BrevoQuestionnaireRoute {
 
 export interface DealAttributes {
   message: string
+  type: string
   parcours: BrevoQuestionnaireRoute
   objectifs_renseigns?: string
   oprateur_de_contact?: Operators
@@ -72,7 +73,8 @@ export enum BrevoCompanySize {
   LESS_THAN_20 = 1,
   FROM_20_TO_49,
   FROM_50_TO_250,
-  MORE_THAN_250
+  MORE_THAN_250,
+  EI
 }
 
 export interface BrevoDealItem {

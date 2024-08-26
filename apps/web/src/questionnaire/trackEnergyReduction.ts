@@ -1,11 +1,11 @@
-import { PublicodeObjective, type Track, TrackComponent, TrackId, YesNo } from '@/types'
+import { Objective, type Track, TrackComponent, TrackId, YesNo } from '@/types'
 
 export const energyReductionPriority: Track = {
   id: TrackId.EnergyReductionPriority,
   category: 'myEnergy',
   title: { fr: 'Réduction de la consommation' },
   label: { fr: 'La réduction de vos consommations d’énergie est-elle une priorité pour vous ?' },
-  objective: PublicodeObjective.EnergyPerformance,
+  objective: Objective.EnergyPerformance,
   interface: {
     component: TrackComponent.Buttons
   },

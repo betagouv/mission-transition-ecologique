@@ -1,6 +1,6 @@
 <template>
   <div
-    class="fr-tile fr-tile--no-border fr-tile--horizontal fr-tile--vertical@md fr-enlarge-link fr-mx-4v fr-mx-md-0 fr-px-0v fr-py-4v fr-pt-md-10v fr-pb-md-0v"
+    class="fr-tile fr-tile--no-border fr-tile--horizontal fr-tile--vertical@md fr-enlarge-link fr-px-0v fr-py-4v fr-pt-md-10v fr-pb-md-0v"
   >
     <!-- TITLE -->
     <div class="fr-tile__body fr-pb-md-0v fr-pt-0">

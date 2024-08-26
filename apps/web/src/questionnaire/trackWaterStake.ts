@@ -1,11 +1,11 @@
-import { TrackComponent, TrackId, YesNo, PublicodeObjective, Track } from '@/types'
+import { TrackComponent, TrackId, YesNo, Objective, Track } from '@/types'
 
 export const waterStake: Track = {
   id: TrackId.WaterStake,
   category: 'myWater',
   title: { fr: 'Enjeu' },
   label: { fr: "Pensez-vous avoir un enjeu important sur votre consommation d'eau ?" },
-  objective: PublicodeObjective.WaterConsumption,
+  objective: Objective.WaterConsumption,
   interface: {
     component: TrackComponent.Buttons
   },

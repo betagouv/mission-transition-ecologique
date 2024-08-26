@@ -20,19 +20,19 @@ export const redirections: RouteRecordRaw[] = [
   {
     path: '/annuaire',
     redirect: () => {
-      return { name: RouteName.Catalog }
+      return { name: RouteName.CatalogPrograms }
     },
     children: [
       {
         path: '',
         redirect: () => {
-          return { name: RouteName.Catalog }
+          return { name: RouteName.CatalogPrograms }
         }
       },
       {
         path: ':programId',
         redirect: (route) => {
-          return { name: RouteName.CatalogDetail, params: { programId: route.params.programId } }
+          return { name: RouteName.CatalogProgramDetail, params: { programId: route.params.programId } }
         }
       }
     ]

@@ -1,7 +1,6 @@
 import { FILTERING_RULE_NAME } from '../../src/program/domain/filterPrograms'
-import { ProgramType } from '@tee/data'
+import { ProgramType, ProgramAidType } from '@tee/data'
 import { ProgramRepository } from '../../src/program/domain/spi'
-import { ProgramAidType } from '@tee/common'
 
 export type Rules = { [FILTERING_RULE_NAME]: { [k: string]: unknown } | string; [k: string]: unknown }
 
@@ -10,7 +9,7 @@ export const makeProgramHelper = ({
   id = '',
   rules = { [FILTERING_RULE_NAME]: { valeur: 'oui' } },
   cost = '1000 €',
-  nature = ProgramAidType.acc
+  nature = ProgramAidType.study
 }: {
   id?: string
   rules?: Rules

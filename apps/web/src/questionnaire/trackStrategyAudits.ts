@@ -1,4 +1,4 @@
-import { TrackComponent, TrackId, YesNo, PublicodeObjective, Track } from '@/types'
+import { TrackComponent, TrackId, YesNo, Objective, Track } from '@/types'
 
 export const strategyAudits: Track = {
   id: TrackId.StrategyAudits,
@@ -7,7 +7,7 @@ export const strategyAudits: Track = {
   label: {
     fr: 'Pour finir, avez-vous déjà réalisé des audits environnementaux ces 2 dernières années ?'
   },
-  objective: PublicodeObjective.EnvironmentalImpact,
+  objective: Objective.EnvironmentalImpact,
   interface: {
     component: TrackComponent.Buttons
   },

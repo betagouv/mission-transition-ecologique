@@ -1,0 +1,7 @@
+a[href].no-outline{
+  background-image: none;
+}
+
+a[href]:hover {
+  background-color: var(--hover);
+}
