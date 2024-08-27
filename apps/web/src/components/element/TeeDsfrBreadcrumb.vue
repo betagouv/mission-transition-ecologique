@@ -1,6 +1,9 @@
 <template>
   <div class="fr-container">
-    <DsfrBreadcrumb :links="allBreadcrumbs" />
+    <DsfrBreadcrumb
+      :links="allBreadcrumbs"
+      class="fr-mb-1-5v"
+    />
   </div>
 </template>
 <script setup lang="ts">
@@ -19,10 +22,14 @@ const isProgramCatalogDetail = navigationStore.isByRouteName(RouteName.CatalogPr
 const isProjectCatalogDetail = navigationStore.isByRouteName(RouteName.CatalogProjectDetail)
 const isCatalogDetail = isProgramCatalogDetail || isProjectCatalogDetail
 
+const isProgramCatalog = navigationStore.isCatalogPrograms()
+const isProjectCatalog = navigationStore.isCatalogProjects()
+const isCatalog = isProgramCatalog || isProjectCatalog
+
 const getListText = () => {
-  if (isProgramCatalogDetail) {
+  if (isProgramCatalogDetail || isProgramCatalog) {
     return 'Liste des dispositifs'
-  } else if (isProjectCatalogDetail) {
+  } else if (isProjectCatalogDetail || isProjectCatalog) {
     return 'Liste des projets'
   } else {
     return 'Vos résultats'
@@ -48,7 +55,7 @@ const allBreadcrumbs = computed<DsfrBreadcrumbProps['links']>(() => {
     { text: 'Accueil', to: '/' },
     { text: getListText(), to: routeToBaseList }
   ]
-  if (!isCatalogDetail) {
+  if (!isCatalogDetail && !isCatalog) {
     const trackId = usedTrackStore.getPreviousCompletedUsedTrackId()
     if (trackId) {
       baseLinks = baseLinks.toSpliced(1, 0, {
