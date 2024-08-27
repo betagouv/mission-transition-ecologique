@@ -1,6 +1,10 @@
+/* stylelint-disable selector-class-pattern */
+/* stylelint-disable selector-id-pattern */
+
 @use 'setting';
+
 @font-face {
-    font-family: "dsfr-tac-icons";
+    font-family: dsfr-tac-icons; /* stylelint-disable-line font-family-no-missing-generic-family-keyword */
     src: url("data:font/truetype;charset=utf-8;base64,d09GRgABAAAAAASYAAsAAAAABtgAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABHU1VCAAABCAAAADsAAABUIIslek9TLzIAAAFEAAAAQwAAAFY4wUKAY21hcAAAAYgAAABVAAABjOEvI+NnbHlmAAAB4AAAALEAAAC8RwSAoGhlYWQAAAKUAAAAMAAAADYcco6VaGhlYQAAAsQAAAAeAAAAJAgEA+1obXR4AAAC5AAAAA8AAAAQDhAAAGxvY2EAAAL0AAAACgAAAAoAcgAubWF4cAAAAwAAAAAeAAAAIAEQAChuYW1lAAADIAAAATEAAAIuRB1J2XBvc3QAAARUAAAAQwAAAF18Wox+eJxjYGRgYOBiMGCwY2BycfMJYeDLSSzJY5BiYGGAAJA8MpsxJzM9kYEDxgPKsYBpDiBmg4gCACY7BUgAeJxjYGRuYZzAwMrAwPST2YOBgWEFhGZyYLBiNAXSDKzMDFhBQJprCoPDA4YHTMwv/lsw5DC/YDgBFGYEyQEA8HwMsgB4nO2QsQ2AQAwDL59AgZiDipJJqBifTR4n/2Ng6SzZilIYWAAXpwiwByN1q7Xqna364KibyP5tvctJV47ylp9s5ddefs3kudSgtptoL+04wD9smw0NAAAAeJxjYGQAAuZpTL4MrAwMjObinIzmTBE/XP8d/nfIjTHsu/u/Q4x27kAlEHXTmc4xcIPVsYuzq7Orm6uDVX/74fbzu9u3726M1364/QCygPwfbgxMDAz/z7FIMQcxCDFIA3WJKgsqmhoLirApKyqpmQqamBmrCiqbMqozAokvv5jUUmRF/5aJysqKMgel/KtyY2x7xrQn5e+tX/+ugASZukRlp/0reAaWSQG6BgBlHzlCAAAAeJxjYGRgYADiImfHBfH8Nl8ZuFk2AEUY7sxZ8gRB/z/HIsUcBORyMDCBRAFWOQxBeJxjYGRgYH7x34KBgWUDAxCwSDEwMqACFgBU5AL7AAB4nGNgYGBg2YDAAA7gAh0AAAAAAAAUAC4AXgAAeJxjYGRgYGBhkGFgYgABEMkFhAwM/8F8BgALoAE5AAB4nG2RPU7DMBiG3/QP0UoIBGJh8QILavozdmRo9w7d08RJUyVx5LgVvQMn4BAcgoEzcAgOwVvzSZVQbcl+vsfvFysJgGt8IcBxBOj79ThauGD1x23SjXCH/CDcxQCPwj36sXAfz5gJD3ALzScEnUuaO7wKt3CFN+E2/btwh/wh3MU9PoV79N/CfazwIzzAU/CSNKkd5rGpmqXOdkVkT+JEK22b3FRqEo5PcqErbSOnE7U+qGafTZ1LVWpNqeamcroojKqt2erYhRvn6tlolIoPY1MiQYMUFkPkiGFQsV7yfTPsUCDiybnEObdil+We+1phgpDf81xywWTl0xEc94TpNQ5cG+x585TWsUv5ToOSNPe9x3TBaWhqf7alielDbHxXzf824kz/5UN/e/kLsDVkLAAAAHicY2BigAAeBuyAhZGJkZmRhZGVQTCxqCi/XDclvzxPt1g3JzMvlSs5J784FcwUSq0oSS3KS8wB8bLBQgwMANcAEdUA") format("truetype");
 }
 
@@ -18,19 +22,19 @@
 
 #tarteaucitronRoot {
     box-sizing: border-box;
-    color: setting.$black;;
-    font-family: "Marianne", arial, sans-serif;
-    text-rendering: optimizeSpeed;
+    color: setting.$black;
+    font-family: Marianne, arial, sans-serif;
+    text-rendering: optimizespeed;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
     ul, ol {
         list-style: none;
         padding: 0;
         margin: 0;
     }
+
     button {
-        -webkit-appearance: none;
-        -moz-appearance: none;
         appearance: none;
         font-family: inherit;
         border: none;
@@ -48,14 +52,13 @@
     margin: 0;
     z-index: 2147483647;
     bottom: 0;
-} 
 
-#tarteaucitron {
     @media (width >= 0) and (width <= 767px) {
         width: 100%;
         max-height: 100%;
         transform: translate(-50%, 0);
     }
+
     @media (width >= 768px) {
         width: 40rem;
         max-height: 60%;
@@ -77,10 +80,11 @@
     right: 1rem;
     top: 1rem;
     font-weight: bold;
-    outline-offset: 0px;
+    outline-offset: 0;
 }
+
 #tarteaucitronClosePanel::before {
-    font-family: dsfr-tac-icons !important;
+    font-family: dsfr-tac-icons !important; /* stylelint-disable-line font-family-no-missing-generic-family-keyword */
     font-style: normal;
     font-weight: normal !important;
     font-variant: normal;
@@ -116,6 +120,10 @@
     margin-right: .5rem;
 }
 
+.tarteaucitronIsAllowed .tarteaucitronAllow::after, .tarteaucitronIsDenied .tarteaucitronDeny::after {
+    opacity: 1 !important;
+}
+
 .tarteaucitronAllow:not(.tarteaucitronCTAButton, #tarteaucitronSaveButton)::after, .tarteaucitronDeny:not(.tarteaucitronCTAButton)::after {
     content: "";
     background: setting.$blue-france;
@@ -129,16 +137,14 @@
     opacity: 0;
 }
 
-.tarteaucitronIsAllowed .tarteaucitronAllow::after, .tarteaucitronIsDenied .tarteaucitronDeny::after {
-    opacity: 1 !important;
-}
-
 #tarteaucitronSave {
     float: right;
+
     #tarteaucitronSaveButton {
         background: setting.$blue-france;
         color: setting.$white;
         padding: 8px;
+
         ::before {
             display: none;
         }
@@ -153,6 +159,7 @@
 .tarteaucitronMainLine {
     padding-bottom: 1rem;
     box-shadow: inset 0 -1px 0 0 var(--border-default-grey);
+
     .tarteaucitronH1 {
         display: block;
         font-size: 1.5rem;
@@ -162,14 +169,16 @@
         width: 100%;
     }
 }
-.tarteaucitronLine:not(#posthogLine) {
-    box-shadow: inset 0 -1px 0 0 var(--border-default-grey);
-} 
+
 .tarteaucitronLine {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
 } 
+
+.tarteaucitronLine:not(#posthogLine) {
+    box-shadow: inset 0 -1px 0 0 var(--border-default-grey);
+}
+
 .tarteaucitronDetails, #tac_title, #tarteaucitronInfo, .tarteaucitronHidden,#tarteaucitronServicesTitle_other .tarteaucitronTitle, #tarteaucitronServices_mandatory .tarteaucitronAsk {
   display: none;
 }
@@ -196,6 +205,7 @@
         margin: 0;
         width: 100%;
     }
+
     .tarteaucitronLine {
         padding: 0;
     } 
@@ -204,6 +214,7 @@
 #tarteaucitronServices_other .tarteaucitronStatusInfo {
     width: 90%;
 } 
+
 .tarteaucitronIconBottomLeft {
     position: fixed;
     bottom: 0;
@@ -215,6 +226,7 @@
     line-height: 1.5rem;
     min-height: 2.5rem;
     font-size: inherit;
+
     img {
         display: none;
     }
