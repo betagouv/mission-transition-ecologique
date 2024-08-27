@@ -251,14 +251,14 @@
     content: "Cookies";
 }
 
-/*---------------------------------------------*/
+/* --------------------------------------------- */
 
 /**
   Styles du bandeau (#tarteaucitronAlertBig) et des éléments du bandeau 
  **/
 
 /*** Bandeau ***/
-.tarteaucitronBeforeVisible:before {
+.tarteaucitronBeforeVisible::before {
     opacity: 0.3 !important;
     background-color: var(--border-default-grey) !important;
 }
@@ -268,7 +268,6 @@
 }
 
 #tarteaucitronRoot #tarteaucitronAlertBig {
-    position: fixed;
     flex-wrap: wrap;
     justify-content: flex-end;
     width: 30% !important;
@@ -294,6 +293,7 @@
         left: 50% !important;
         margin: 0 !important;
     } 
+
     #tarteaucitronDisclaimerAlert {
         line-height: 1.5rem !important;
         margin: 0 0 1.5rem;
@@ -301,6 +301,7 @@
         font-size: .875rem !important;
         text-align: center;
     } 
+
     .tarteaucitronCTAButton, #tarteaucitronCloseAlert {
         margin: 1rem;
         align-items: center;
@@ -318,7 +319,7 @@
     } 
 }
   
-  @media screen and (min-width: 48em) {
+  @media screen and (width >= 48em) {
     #tarteaucitronAlertBig {
       max-height: initial;
       height: auto;
