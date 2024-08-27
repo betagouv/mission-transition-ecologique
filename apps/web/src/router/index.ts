@@ -8,10 +8,7 @@ export const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   scrollBehavior(to: RouteLocationNormalized, from: RouteLocationNormalizedLoaded, savedPosition) {
     if (savedPosition) {
-      return savedPosition
-    }
-    if (to.hash) {
-      return { el: to.hash }
+      return Promise.resolve(savedPosition)
     }
     return { top: 0 }
   },

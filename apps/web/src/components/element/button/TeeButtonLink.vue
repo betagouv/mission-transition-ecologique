@@ -17,12 +17,14 @@ interface Props {
   iconOnly?: boolean
   iconRight?: boolean
   size?: 'sm' | 'md' | 'lg'
+  secondary?: boolean
 }
 const props = withDefaults(defineProps<Props>(), {
   iconOnly: false,
   iconRight: false,
   icon: undefined,
-  size: 'md'
+  size: 'md',
+  secondary: false
 })
 
 const classes = computed(() => {
@@ -32,7 +34,8 @@ const classes = computed(() => {
     'fr-btn--icon-left': !props.iconOnly && !props.iconRight,
     'fr-btn--sm': props.size === 'sm',
     'fr-btn--lg': props.size === 'lg',
-    'fr-btn--md': props.size === 'md'
+    'fr-btn--md': props.size === 'md',
+    'fr-btn--secondary': props.secondary
   }
 })
 </script>

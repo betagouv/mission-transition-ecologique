@@ -1,85 +1,106 @@
 titre: Crédit d'Impôt Rénovation Énergétique (CIRE)
 promesse: Bénéficiez d'un crédit d’impôt pour la rénovation énergétique de vos bâtiments
-description: Vous bénéficiez d’un crédit d’impôt pour la rénovation énergétique (travaux
-  d’isolation, chauffe-eau solaire, pompe à chaleur, ventilation mécanique…) de vos
-  bâtiments à usage tertiaire.
-description longue: "Ce crédit d'impôt pour les PME s'applique aux dépenses de rénovation,\
-  \ engagées entre le 1er janvier 2023 et le 31 décembre 2024, sur des bâtiments du\
-  \ tertiaire dont la construction a été achevée il y a au moins 2 ans lorsque les\
-  \ travaux ont débuté.\n\nLes dépenses éligibles sont : \n\n- Acquisition et pose\
-  \ d'un système d'isolation thermique en rampant de toiture ou en plafonds de combles,\n\
-  - Acquisition et pose d'un système d'isolation thermique sur mur, en façade ou pignon,\
-  \ par l'extérieur ou l’intérieur,\n- Acquisition et pose d'un système d'isolation\
-  \ thermique en toiture terrasse ou couverture de pente inférieure à 5 %, \n- Acquisition\
-  \ et pose d'un chauffe-eau solaire collectif ou d'un dispositif solaire collectif\
-  \ pour la production d'eau chaude sanitaire,\n- Acquisition et pose d'une pompe\
-  \ à chaleur, autre que air/air, dont la finalité essentielle est d'assurer le chauffage\
-  \ des locaux,\n- Acquisition et pose d'un système de ventilation mécanique simple\
-  \ flux ou double flux,\nRaccordement à un réseau de chaleur ou de froid,\n- Acquisition\
-  \ et pose d'une chaudière biomasse,\n- Acquisition et pose d'un système de régulation\
-  \ ou de programmation du chauffage et de la ventilation."
+description: >-
+  Vous bénéficiez d’un crédit d’impôt pour la rénovation énergétique (travaux
+  d’isolation, chauffe-eau solaire, pompe à chaleur, ventilation mécanique…) de
+  vos bâtiments à usage tertiaire. 
+description longue: >-
+  Ce crédit d'impôt pour les PME s'applique aux dépenses de rénovation, engagées
+  entre le 1er janvier 2023 et le 31 décembre 2024, sur des bâtiments du
+  tertiaire dont la construction a été achevée il y a au moins 2 ans lorsque les
+  travaux ont débuté.
+
+
+  Les dépenses éligibles sont : 
+
+
+  - Acquisition et pose d'un système d'isolation thermique en rampant de toiture
+  ou en plafonds de combles,
+
+  - Acquisition et pose d'un système d'isolation thermique sur mur, en façade ou
+  pignon, par l'extérieur ou l’intérieur,
+
+  - Acquisition et pose d'un système d'isolation thermique en toiture terrasse
+  ou couverture de pente inférieure à 5 %, 
+
+  - Acquisition et pose d'un chauffe-eau solaire collectif ou d'un dispositif
+  solaire collectif pour la production d'eau chaude sanitaire,
+
+  - Acquisition et pose d'une pompe à chaleur, autre que air/air, dont la
+  finalité essentielle est d'assurer le chauffage des locaux,
+
+  - Acquisition et pose d'un système de ventilation mécanique simple flux ou
+  double flux,
+
+  Raccordement à un réseau de chaleur ou de froid,
+
+  - Acquisition et pose d'une chaudière biomasse,
+
+  - Acquisition et pose d'un système de régulation ou de programmation du
+  chauffage et de la ventilation.
 début de validité: 01/01/2023
 fin de validité: 31/12/2024
 illustration: images/TEE_eolienne.png
 opérateur de contact: DDFIP
 url: https://entreprendre.service-public.fr/vosdroits/F35585
 nature de l'aide: avantage fiscal
-montant de l'avantage fiscal: 30% des dépenses, dans la limite de 25 000 €
+montant de l'avantage fiscal: "30% des dépenses, dans la limite de 25 000\_€"
 objectifs:
-- description: Vérifiez l'égibilité de vos dépenses de rénovation.
-  liens:
-  - lien: https://entreprendre.service-public.fr/vosdroits/F35585
-    texte: Pour quels types de dépenses ?
-- description: Faites réaliser vos travaux de rénovation par un professionnel.
-- description: Déclarez le crédit d'impôt au moment de la déclaration de vos résultats
-    ou de vos revenus.
-- description: Recevez une aide en crédit d'impôt à hauteur de 30% des dépenses de
-    rénovation engagées.
+  - description: Vérifiez l'égibilité de vos dépenses de rénovation.
+    liens:
+      - lien: https://entreprendre.service-public.fr/vosdroits/F35585
+        texte: Pour quels types de dépenses ?
+  - description: Faites réaliser vos travaux de rénovation par un professionnel.
+  - description: >-
+      Déclarez le crédit d'impôt au moment de la déclaration de vos résultats ou
+      de vos revenus.
+  - description: >-
+      Recevez une aide en crédit d'impôt à hauteur de 30% des dépenses de
+      rénovation engagées.
 conditions d'éligibilité:
   taille de l'entreprise:
-  - TPE et PME
-  - Non éligible aux micro-entreprises
+    - TPE et PME
+    - Non éligible aux micro-entreprises
   secteur géographique:
-  - France et territoires d'outre-mer
+    - France et territoires d'outre-mer
   secteur d'activité:
-  - Secteur tertiaire
+    - Secteur tertiaire
   nombre d'années d'activité:
-  - Éligible à toutes les entreprises
+    - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
-    - est éligible
-    - est dans un secteur d'activité ciblé
-    - a un objectif ciblé
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
   entreprise . est éligible:
     applicable si:
       toutes ces conditions:
-      - dispositif . début de validité <= date du jour
-      - date du jour <= dispositif . fin de validité
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
-    - a un effectif éligible
+      - a un effectif éligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
-    - effectif <= 249
+      - effectif <= 249
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - code NAF niveau 1 . est C
-    - code NAF niveau 1 . est F
-    - code NAF niveau 1 . est G
-    - code NAF niveau 1 . est H
-    - code NAF niveau 1 . est I
-    - code NAF niveau 1 . est J
-    - code NAF niveau 1 . est K
-    - code NAF niveau 1 . est L
-    - code NAF niveau 1 . est M
-    - code NAF niveau 1 . est N
-    - code NAF niveau 1 . est P
-    - code NAF niveau 1 . est Q
-    - code NAF niveau 1 . est R
-    - code NAF niveau 1 . est S
-    - code NAF niveau 1 . est T
-    - code NAF niveau 1 . est U
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
   entreprise . a un objectif ciblé:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est rénover mon bâtiment
-    - questionnaire . objectif prioritaire . est ma performance énergétique
+      - questionnaire . objectif prioritaire . est rénover mon bâtiment

@@ -1,80 +1,74 @@
-titre: Formations ADEME
-promesse: Engager son entreprise dans la transition écologique
-description: Plongez au cœur des enjeux écologiques et des scénarios de transition
-  de l'ADEME pour (re)découvrir leurs conséquences et leurs opportunités pour votre
-  entreprise
-description longue: "A la fin de la formation, les participants sauront/seront capables\
-  \ de :\n\n- Avoir la conviction qu'il faut agir,\n- Identifier les principales transformations\
-  \ de la société, de l'économie, des territoires et les enjeux pour leur entreprise,\n\
-  - Anticiper le changement, les risques et les opportunités, \n- Identifier les premiers\
-  \ leviers d’action pour se mettre en mouvement."
-début de validité: 01/01/2024
-fin de validité: 31/12/2024
+titre: Formation ADEME
+promesse: Réalisez une initiation aux enjeux de la transition écologique
+description: >-
+  Suivez une formation en ligne pour initier la transition écologique de votre
+  entreprise. Vous découvrirez les principales transformations de la société, de
+  l'économie, des territoires et les enjeux de la transition écologique pour les
+  entreprises. Puis en seconde partie, vous serez invité à identifier les
+  risques et les opportunités pour votre entreprise ainsi que les premiers
+  leviers d’action pour se mettre en mouvement.
 illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
-url: https://formations.ademe.fr/formations_transition-ecologique-:-approche-transversale_engager-son-entreprise-dans-la-transition-ecologique_s5227.html
+url: >-
+  https://formations.ademe.fr/formations_transition-ecologique-:-approche-transversale_engager-son-entreprise-dans-la-transition-ecologique_s5227.html
 nature de l'aide: formation
 coût de l'accompagnement: Gratuit
 durée de l'accompagnement: 2h15
 activable en autonomie: oui
 objectifs:
-- description: Créez votre compte sur la plateforme ADEME Formations.
-  liens:
-  - lien: https://formations.ademe.fr/solutions/beforeregister.php?sessionid=7866
-    texte: formations.ademe.fr
-- description: Ajoutez un ou plusieurs participants, ainsi que les coordonnées de
-    votre entreprise.
-- description: Vous pourrez nous signaler tout besoin spécifique ou situation de handicap.
-- description: Recevez votre récapitulatif de votre formation et une validation.
-- description: Réalisez votre formation auprès des experts de l'ADEME
+  - description: Prenez connaissance du programme de la formation
+    liens:
+      - lien: >-
+          https://formations.ademe.fr/formations_transition-ecologique-:-approche-transversale_engager-son-entreprise-dans-la-transition-ecologique_s5227.html
+        texte: consulter le programme
+  - description: >-
+      Inscrivez-vous sur la plateforme ADEME Formations. Vous pouvez ajouter
+      plusieurs participants.
+    liens:
+      - lien: >-
+          https://formations.ademe.fr/solutions/beforeregister.php?sessionid=7866
+        texte: formations.ademe.fr
+  - description: >-
+      Obtenez le lien de la formation à réaliser en ligne en toute autonomie à
+      l'aide de vidéos et de quizz.
 conditions d'éligibilité:
   taille de l'entreprise:
-  - Toutes tailles
-  - Éligible aux micro-entreprises
+    - Toutes tailles
+    - Éligible aux micro-entreprises
   secteur géographique:
-  - France et territoires d'outre-mer
+    - France et territoires d'outre-mer
   secteur d'activité:
-  - Tous secteurs d’activité
+    - Tous secteurs d’activité
   nombre d'années d'activité:
-  - Éligible à toutes les entreprises
-  autres critères d'éligibilité:
-  - Aucun prérequis n'est exigé pour suivre cette formation
+    - Éligible à toutes les entreprises
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
-    - est éligible
-    - est dans un secteur d'activité ciblé
-    - a un objectif ciblé
-  entreprise . est éligible:
-    applicable si:
-      toutes ces conditions:
-      - dispositif . début de validité <= date du jour
-      - date du jour <= dispositif . fin de validité
-    valeur: oui
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - code NAF niveau 1 . est A
-    - code NAF niveau 1 . est B
-    - code NAF niveau 1 . est C
-    - code NAF niveau 1 . est D
-    - code NAF niveau 1 . est E
-    - code NAF niveau 1 . est F
-    - code NAF niveau 1 . est G
-    - code NAF niveau 1 . est H
-    - code NAF niveau 1 . est I
-    - code NAF niveau 1 . est J
-    - code NAF niveau 1 . est K
-    - code NAF niveau 1 . est L
-    - code NAF niveau 1 . est M
-    - code NAF niveau 1 . est N
-    - code NAF niveau 1 . est O
-    - code NAF niveau 1 . est P
-    - code NAF niveau 1 . est Q
-    - code NAF niveau 1 . est R
-    - code NAF niveau 1 . est S
-    - code NAF niveau 1 . est T
-    - code NAF niveau 1 . est U
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
   entreprise . a un objectif ciblé:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est former ou recruter
-    - questionnaire . objectif prioritaire . est mon impact environnemental
+      - questionnaire . objectif prioritaire . est former ou recruter

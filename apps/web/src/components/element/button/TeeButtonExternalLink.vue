@@ -20,13 +20,14 @@ const props = withDefaults(defineProps<Props>(), {
 <style scoped lang="scss">
 @import '../../../assets/scss/setting/color';
 
-[target='_blank']:after,
-[target='_blank'][class*=' fr-fi-']:after,
-[target='_blank'][class*=' fr-icon-']:after,
-[target='_blank'][class^='fr-fi-']:after,
-[target='_blank'][class^='fr-icon-']:after {
+[target='_blank']::after,
+[target='_blank'][class*=' fr-fi-']::after,
+[target='_blank'][class*=' fr-icon-']::after,
+[target='_blank'][class^='fr-fi-']::after,
+[target='_blank'][class^='fr-icon-']::after {
   content: none;
 }
+
 a {
   box-shadow: inset 0 0 0 1px $base-purple;
   color: $base-purple;

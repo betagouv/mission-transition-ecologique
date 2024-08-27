@@ -1,4 +1,4 @@
-import { Operators, ProgramType } from '@tee/data'
+import { Operators, ProgramType, Project } from '@tee/data'
 import { AxiosInstance } from 'axios'
 import { OpportunityHubRepository } from '../../domain/spi'
 import { OpportunityWithContactId } from '../../../opportunity/domain/types'
@@ -20,7 +20,7 @@ export default abstract class OpportunityHubAbstract implements OpportunityHubRe
     return Promise.resolve(this.support(program))
   }
 
-  public abstract transmitOpportunity: (opportunity: Opportunity, Program: ProgramType) => Promise<Maybe<Error>>
+  public abstract transmitOpportunity: (opportunity: Opportunity, programOrProject: ProgramType | Project) => Promise<Maybe<Error>>
 
   get operatorNames(): Operators[] | Error {
     return this._operatorNames

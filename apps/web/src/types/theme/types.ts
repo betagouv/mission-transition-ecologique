@@ -1,9 +1,10 @@
-import { PublicodeObjective } from '@tee/common'
+import { Color, ThemeId, Objective } from '@/types'
 
 export interface ThemeType {
+  id: ThemeId
   title: string
   tagLabel: string
-  value: PublicodeObjective
+  value: Objective
   image: string
-  color?: string
+  color: Color
 }

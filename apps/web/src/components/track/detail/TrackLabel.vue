@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="!useUsedTrackStore().currentIsFirst"
-    class="fr-px-4v fr-px-md-0v fr-mt-6v fr-col-12"
+    class="fr-p-0 fr-pb-2v fr-mt-6v"
   >
     <h3 :class="`${track?.info ? 'fr-mb-0' : 'fr-mb-2v'}`">
       {{ track.label[Translation.lang] }}

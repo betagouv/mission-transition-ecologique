@@ -1,113 +1,130 @@
 titre: Étude "Hydroélectricité"
 promesse: Étudiez votre projet de mise en place d'une installation hydroélectrique
-description: Vous avez un projet de projet d'installation hydroélectrique pour produire
-  de l'énergie par la force de l'eau ? Vous souhaitez réhabiliter, rénover, optimiser
-  ou créer une installation sur seuil existant ? L'ADEME vous apporte une aide pour
-  une étude de potentiel, de faisabilité ou d'avant-projet.
-description longue: 'Les aménagements concernés par cette étude sont les suivants
-  :
+description: >-
+  Vous avez un projet de projet d'installation hydroélectrique pour produire de
+  l'énergie par la force de l'eau ? Vous souhaitez réhabiliter, rénover,
+  optimiser ou créer une installation sur seuil existant ? L'ADEME vous apporte
+  une aide pour une étude de potentiel, de faisabilité ou d'avant-projet.
+description longue: >-
+  Les aménagements concernés par cette étude sont les suivants :
 
 
-  • Réalisation d’un aménagement neuf de production d''énergie sur un seuil existant
-  qui n’a jamais été équipé auparavant ;
+  • Réalisation d’un aménagement neuf de production d'énergie sur un seuil
+  existant qui n’a jamais été équipé auparavant ;
 
-  • Remise en service d’un équipement n’étant plus en activité, mais bénéficiant ou
-  pas d’un droit d’eau (fondé en titre, autorisation, etc.) et pouvant prouver l’existence
-  de la chute et des organes qui utilisent ou ont utilisés la force hydraulique ;
+  • Remise en service d’un équipement n’étant plus en activité, mais bénéficiant
+  ou pas d’un droit d’eau (fondé en titre, autorisation, etc.) et pouvant
+  prouver l’existence de la chute et des organes qui utilisent ou ont utilisés
+  la force hydraulique ;
 
-  • optimisation d’un équipement complémentaire sur un site actuellement exploité
-  ;
+  • optimisation d’un équipement complémentaire sur un site actuellement
+  exploité ;
 
   • le turbinage d’eau déjà captée (eau potable ou eaux usées).
 
 
-  3 types d''études peuvent être financées  :
+  3 types d'études peuvent être financées  :
 
 
-  • l’étude de potentiel devra déterminer le potentiel administratif, énergétique,
-  environnemental et économique des seuils/sites potentiels sur un territoire/cours
-  d’eau défini ;
+  • l’étude de potentiel devra déterminer le potentiel administratif,
+  énergétique, environnemental et économique des seuils/sites potentiels sur un
+  territoire/cours d’eau défini ;
 
-  • l’étude de faisabilité devra démontrer la faisabilité administrative, technique,
-  environnementale et économique d’une centrale hydroélectrique afin de fournir au
-  maître d’ouvrage des éléments clairs, fiables et chiffrés lui permettant d’apprécier
-  l’intérêt de réaliser ce projet ;
+  • l’étude de faisabilité devra démontrer la faisabilité administrative,
+  technique, environnementale et économique d’une centrale hydroélectrique afin
+  de fournir au maître d’ouvrage des éléments clairs, fiables et chiffrés lui
+  permettant d’apprécier l’intérêt de réaliser ce projet ;
 
-  • l’étude d’avant-projet devra préciser les conditions techniques et économique
-  de réalisation de l’installation au regard de l’implantation sur le site avec des
-  études de sol, des relevés topographiques précis.'
+  • l’étude d’avant-projet devra préciser les conditions techniques et
+  économique de réalisation de l’installation au regard de l’implantation sur le
+  site avec des études de sol, des relevés topographiques précis.
 début de validité: 01/01/2023
 fin de validité: 31/12/2024
 illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
-url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/etudes-installation-hydroelectrique?cible=79
-nature de l'aide: financement
-montant du financement: Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000
-  €
+url: >-
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/etudes-installation-hydroelectrique?cible=79
+nature de l'aide: étude
+montant du financement: Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €
 objectifs:
-- description: Vérifiez l’éligibilité de votre projet en parcourant la documentation
-    de l’ADEME.
-  liens:
-  - lien: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20pour%20une%20installation%20hydro%C3%A9lectrique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf
-    texte: Conditions éligibilité et financement
-- description: Choisissez le prestataire qui va vous accompagner pour mener votre
-    étude.
-- description: 'Déposez votre demande d''aide : informations administratives, description
-    du projet, détails techniques et financiers, etc. A ce stade, votre projet ne
-    doit pas avoir commencé !'
-- description: L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
-    recevez un contrat de financement précisant le montant d’aide maximum, les conditions
-    et les modalités de versement.
-- description: Réalisez votre étude. Il peut s'agir d'une étude de potentiel, de faisabilité
-    ou d'avant-projet.
+  - description: >-
+      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
+      l’ADEME ou en contactant un conseiller.
+    liens:
+      - lien: >-
+          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20pour%20une%20installation%20hydro%C3%A9lectrique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf
+        texte: Conditions éligibilité et financement
+  - description: Choisissez le prestataire qui va vous accompagner pour mener votre étude.
+  - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
+    liens:
+      - lien: https://agirpourlatransition.ademe.fr/user/register
+        texte: Créer mon compte ADEME
+  - description: >-
+      Déposez votre dossier : informations administratives, description du
+      projet, détails techniques et financiers, etc. À ce stade, votre projet ne
+      doit pas avoir commencé !
+    liens:
+      - lien: >-
+          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/etudes-installation-hydroelectrique?cible=79
+        texte: Déposer mon dossier
+  - description: >-
+      L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
+      recevez un contrat de financement précisant le montant d’aide maximum, les
+      conditions et les modalités de versement.
+  - description: Réalisez votre étude.
 conditions d'éligibilité:
   taille de l'entreprise:
-  - Toutes tailles
-  - Éligible aux micro-entreprises
+    - Toutes tailles
+    - Éligible aux micro-entreprises
   secteur géographique:
-  - Bourgogne-Franche-Comté, Nouvelle-Aquitaine, Auvergne-Rhône-Alpes, Provence-Alpes-Côte
-    d'Azur
+    - >-
+      Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Nouvelle-Aquitaine,
+      Provence-Alpes-Côte d'Azur
   secteur d'activité:
-  - Tous secteurs d’activité
+    - Tous secteurs d’activité
   nombre d'années d'activité:
-  - Éligible à toutes les entreprises
+    - Éligible à toutes les entreprises
   autres critères d'éligibilité:
-  - Pour les régions Bourgogne-Franche-Comté, Auvergne-Rhône-Alpes et Occitanie, les
-    trois types d'études sont éligibles. Pour les régions Provence-Alpes-Côte-d'Azur
-    et Nouvelle-Aquitaine,les études de potentiel et de faisabilité sont éligibles.
-    Les études d'avant-projet ne sont pas éligibles.
-  - 'L''opération pour laquelle vous sollicitez une aide financière ne doit pas avoir
-    commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque
-    forme que ce soit : marché signé, commande signée, devis accepté…)'
+    - >-
+      Pour les régions Bourgogne-Franche-Comté, Auvergne-Rhône-Alpes et
+      Occitanie, les trois types d'études sont éligibles. Pour les régions
+      Provence-Alpes-Côte-d'Azur et Nouvelle-Aquitaine,les études de potentiel
+      et de faisabilité sont éligibles. Les études d'avant-projet ne sont pas
+      éligibles.
+    - >-
+      L'opération pour laquelle vous sollicitez une aide financière ne doit pas
+      avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes
+      (sous quelque forme que ce soit : marché signé, commande signée, devis
+      accepté…)
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
-    - est éligible
-    - est dans un secteur d'activité ciblé
-    - a un objectif ciblé
-    - questionnaire . parcours = objectif précis
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+      - questionnaire . parcours = objectif précis
   entreprise . est éligible:
     applicable si:
       toutes ces conditions:
-      - dispositif . début de validité <= date du jour
-      - date du jour <= dispositif . fin de validité
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
-    - entreprise . est dans une zone géographique éligible
+      - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - code NAF niveau 1 . est A
-    - code NAF niveau 1 . est B
-    - code NAF niveau 1 . est C
-    - code NAF niveau 1 . est D
-    - code NAF niveau 1 . est E
-    - code NAF niveau 1 . est F
-    - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est I
   entreprise . a un objectif ciblé:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est ma performance énergétique
+      - questionnaire . objectif prioritaire . est ma performance énergétique
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
-    - région = Bourgogne-Franche-Comté
-    - région = Nouvelle-Aquitaine
-    - région = Auvergne-Rhône-Alpes
-    - région = Provence-Alpes-Côte d'Azur
+      - région = Auvergne-Rhône-Alpes
+      - région = Bourgogne-Franche-Comté
+      - région = Nouvelle-Aquitaine
+      - région = Provence-Alpes-Côte d'Azur

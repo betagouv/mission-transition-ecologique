@@ -1,0 +1,13 @@
+@use 'setting';
+@use 'sass:meta';
+@use 'sass:map';
+
+@each $color, $properties in setting.$colors {
+  .fr-gradient--#{$color} {
+    @if meta.type-of($properties) == map {
+      background-image: linear-gradient(to bottom, transparent, map.get($properties, "color"));
+    } @else {
+      background-image: linear-gradient(to bottom, transparent, $properties);
+    }
+  }
+}
