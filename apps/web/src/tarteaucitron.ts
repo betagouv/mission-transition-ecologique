@@ -1,4 +1,5 @@
 import Config from '@/config'
+declare const tarteaucitron: any
 
 tarteaucitron.init({
   privacyUrl: '' /* Privacy policy url */,

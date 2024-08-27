@@ -10,11 +10,6 @@
   ],
   "license": "AGPL-3.0",
   "private": true,
-  "eslintConfig": {
-    "globals": {
-        "tarteaucitron": true
-    }
-  },
   "scripts": {
     "dev": "nx run-many -t serve --verbose",
     "dev:start": "PORT=4242 npm run start",
@@ -93,7 +88,6 @@
     "sass": "^1.77.6",
     "sharp": "^0.33.4",
     "swagger-ui-express": "^5.0.1",
-    "tarteaucitronjs": "^1.19.0",
     "true-myth": "^7.3.0",
     "ts-jest": "^29.1.0",
     "ts-node": "^10.9.1",
