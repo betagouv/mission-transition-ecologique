@@ -29,7 +29,6 @@ app.mount('#app')
 router.afterEach((to, _, failure) => {
   if (!failure) {
     nextTick(() => {
-      console.log(window)
       if (window.posthog) {
         posthog.capture('$pageview', { path: to.fullPath })
       }
