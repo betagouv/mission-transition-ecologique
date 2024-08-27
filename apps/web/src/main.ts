@@ -18,6 +18,7 @@ addIcons()
 const store = createPinia()
 
 const app: App = createApp(WebApp as Component)
+
 Sentry.init(app)
 
 const head = createHead()

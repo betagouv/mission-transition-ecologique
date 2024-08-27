@@ -38,6 +38,9 @@
       </div>
     </div>
 
+    <!-- MATOMO -->
+    <TeeMatomo />
+
     <!-- QUESTIONNAIRE -->
     <div
       v-show="!programs.currentProgram"

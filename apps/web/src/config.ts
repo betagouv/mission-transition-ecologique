@@ -34,6 +34,10 @@ export default class Config extends ConfigCommon {
     return this.metaEnv.VITE_CONTACT_EMAIL ?? 'contact@mission-transition-ecologique.beta.gouv.fr'
   }
 
+  static get hasMatomo() {
+    return this.metaEnv.VITE_MATOMO_DEACTIVATE === 'false'
+  }
+
   static get baseUrl() {
     return this.metaEnv.BASE_URL
   }
@@ -44,5 +48,12 @@ export default class Config extends ConfigCommon {
 
   static get posthogApiKey() {
     return this.metaEnv.VITE_POSTHOG_API_KEY
+  }
+  static get matomoUrl() {
+    return this.metaEnv.VITE_MATOMO_URL
+  }
+
+  static get matomoAppId() {
+    return this.metaEnv.VITE_MATOMO_APP_ID
   }
 }

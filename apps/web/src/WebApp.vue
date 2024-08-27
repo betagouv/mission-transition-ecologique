@@ -1,6 +1,7 @@
 <template>
   <div>
     <TeeHeader />
+    <TeeMatomo />
 
     <router-view v-if="isReady" />
     <template v-else>
@@ -27,7 +28,6 @@ import { onBeforeMount, onMounted, computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useNavigationStore } from './stores/navigation'
 
-import TeeHeader from './components/TeeHeader.vue'
 import TeeFooter from './components/TeeFooter.vue'
 import Translation from './utils/translation'
 
