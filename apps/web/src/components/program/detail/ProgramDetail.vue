@@ -305,7 +305,6 @@ onBeforeMount(async () => {
   const projectResult = await projectStore.projects
   if (projectResult.isOk) {
     linkedProjects.value = Program.getLinkedProjects(program.value, projectResult.value)
-    console.log(linkedProjects.value)
   }
   useNavigationStore().hasSpinner = false
   // analytics / send event
