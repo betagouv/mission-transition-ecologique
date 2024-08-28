@@ -2,7 +2,6 @@ import { workforce } from '@/questionnaire/trackStructureWorkforce'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { LegalCategory, StructureSize, TrackId } from '@/types'
 import Format from '@/utils/format'
-import { capitalize } from 'vue'
 import { sectors } from '@/questionnaire/trackStructureSectors'
 
 export default class TrackStructure {
@@ -17,7 +16,7 @@ export default class TrackStructure {
     if (this.getSector()) {
       criteria.push({
         icon: 'fr-icon-check-line',
-        text: capitalize(Format.truncate(TrackStructure.getSectorShortLabel(), 30))
+        text: Format.capitalize(Format.truncate(TrackStructure.getSectorShortLabel(), 30))
       })
     }
     if (this.getLocalisation()) {
