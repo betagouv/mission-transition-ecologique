@@ -40,10 +40,16 @@ const getRouteName = () => {
   return RouteName.ProjectResultDetail
 }
 const getRouteToProjectDetail = (): RouteLocationRaw => {
+  const slug = props.project.slug
   return {
     name: getRouteName(),
-    params: { projectSlug: props.project.slug },
-    query: navigationStore.isCatalogProgramDetail() || navigationStore.isCatalogProjectDetail() ? undefined : navigationStore.query
+    params: { projectSlug: slug },
+    query:
+      navigationStore.isCatalogProgramDetail() ||
+      navigationStore.isCatalogProjectDetail() ||
+      navigationStore.isByRouteName(RouteName.CatalogProjectFromProgramDetail)
+        ? undefined
+        : navigationStore.query
   }
 }
 </script>

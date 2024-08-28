@@ -53,6 +53,7 @@ const props = defineProps<Props>()
 const themeColor = computed<Color | undefined>(() => theme.value?.color)
 
 onBeforeMount(async () => {
+  console.log('before mount')
   if (props.projectSlug !== projectStore.currentProject?.slug) {
     await projectStore.getProjectBySlug(props.projectSlug)
   }
@@ -60,6 +61,16 @@ onBeforeMount(async () => {
   project.value = projectStore.currentProject
   if (project.value) {
     theme.value = Theme.getById(project.value?.mainTheme)
+  }
+})
+
+onBeforeUpdate(async () => {
+  if (props.projectSlug !== projectStore.currentProject?.slug) {
+    await projectStore.getProjectBySlug(props.projectSlug)
+    project.value = projectStore.currentProject
+    if (project.value) {
+      theme.value = Theme.getById(project.value?.mainTheme)
+    }
   }
 })
 </script>
