@@ -15,6 +15,7 @@
     "programs": [
       "baisse-les-watts",
       "fonds-tourisme-durable",
+      "programme-breizh-fab",
       "renovation-petit-tertiaire-prive",
       "tpe-gagnantes-sur-tous-les-couts",
       "visite-energie-cci",
@@ -152,6 +153,7 @@
     "mainTheme": "environmental",
     "programs": [
       "diag-decarbon-action",
+      "programme-breizh-fab",
       "tremplin"
     ],
     "linkedProjects": [
@@ -264,6 +266,7 @@
       "etude-geothermie-de-surface-et-d-aerothermie",
       "etude-test-geothermie",
       "fonds-tourisme-durable",
+      "investissement-boucle-d-eau-geothermique",
       "investissement-geothermie-de-surface-et-d-aerothermie",
       "investissement-geothermie-profonde"
     ],
@@ -684,6 +687,7 @@
       "fonds-tourisme-durable",
       "diag-eco-flux",
       "performa-environnement",
+      "programme-breizh-fab",
       "tpe-gagnantes-sur-tous-les-couts"
     ],
     "linkedProjects": [
@@ -712,6 +716,7 @@
       "act-pas-a-pas",
       "fonds-tourisme-durable",
       "pacte-industrie",
+      "programme-breizh-fab",
       "programme-eve",
       "tremplin"
     ],
@@ -737,7 +742,8 @@
     "programs": [
       "act-pas-a-pas",
       "climadiag-expert",
-      "diagnostic-changement-climatique"
+      "diagnostic-changement-climatique",
+      "programme-breizh-fab"
     ],
     "linkedProjects": [
       1,
@@ -760,9 +766,11 @@
     "mainTheme": "environmental",
     "programs": [
       "audits-clef-verte",
+      "communaute-coq-vert",
       "eco-defis-des-artisans-et-des-commercants",
       "fonds-tourisme-durable",
       "imprim-vert",
+      "programme-breizh-fab",
       "programme-eve",
       "repar-acteurs",
       "tremplin"
@@ -789,6 +797,7 @@
     "programs": [
       "diag-ecoconception",
       "etude-performance-produits",
+      "programme-breizh-fab",
       "tremplin"
     ],
     "linkedProjects": [
