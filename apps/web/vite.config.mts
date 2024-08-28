@@ -16,7 +16,7 @@ dotenv.config()
 
 console.log('Starting ...')
 console.log('vite.config ...')
-console.log(process.env.NODE_ENV)
+console.log(process.env)
 const mode = process.env.NODE_ENV ?? 'development'
 const isProd = mode === 'production'
 
