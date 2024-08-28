@@ -72,6 +72,11 @@ const plugins = async () => {
       org: "betagouv",
       project: "tee-frontend-vue",
       url: "https://sentry.incubateur.net",
+      sourcemaps: {
+        filesToDeleteAfterUpload: [
+          "../../dist/apps/web/**/*.js.map",
+        ]
+      }
     })
   ]
   if (isProd) {
