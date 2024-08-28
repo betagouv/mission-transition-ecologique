@@ -3,6 +3,7 @@ import { useUsedTrackStore } from '@/stores/usedTrack'
 import { LegalCategory, StructureSize, TrackId } from '@/types'
 import Format from '@/utils/format'
 import { capitalize } from 'vue'
+import { sectors } from '@/questionnaire/trackStructureSectors'
 
 export default class TrackStructure {
   static getEligibilityCriteria() {
@@ -16,7 +17,7 @@ export default class TrackStructure {
     if (this.getSector()) {
       criteria.push({
         icon: 'fr-icon-check-line',
-        text: capitalize(Format.truncate(TrackStructure.getSector(), 30))
+        text: capitalize(Format.truncate(TrackStructure.getSectorShortLabel(), 30))
       })
     }
     if (this.getLocalisation()) {
@@ -54,6 +55,10 @@ export default class TrackStructure {
     return this.has(TrackId.Siret, 'secteur')
       ? (useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'secteur') as string)
       : (useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(TrackId.Sectors, 'sector') as string)
+  }
+
+  static getSectorShortLabel(): string {
+    return sectors.options?.find((option) => option.value === this.getSector())?.shortLabel?.fr || this.getSector()
   }
 
   static getSize(): StructureSize {

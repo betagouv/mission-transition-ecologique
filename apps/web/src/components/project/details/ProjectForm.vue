@@ -316,7 +316,7 @@ const projectForm = ref<ProjectFormType>({
     required: true,
     isValid: undefined,
     value: Translation.t('project.form.needs', {
-      secteur: TrackStructure.getSector()
+      secteur: TrackStructure.getSectorShortLabel()
     }),
     label: 'Quel est votre besoin ?'
   },
