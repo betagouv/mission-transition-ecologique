@@ -19,7 +19,7 @@ export const sectors: Track = {
       questionnaireData: { sector: Sector.Craftsmanship },
       title: { fr: 'Artisanat' },
       label: { fr: '👩‍🎨 J’ai une activité artisanale' },
-      shortLabel: { fr: 'activité artisanale' },
+      shortLabel: { fr: 'artisanale' },
       next: {
         default: TrackId.StructureRegion
       }
