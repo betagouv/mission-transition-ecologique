@@ -1,11 +1,8 @@
 <template>
-  <div
-    v-if="projects.length > 0"
-    class="fr-mt-2v"
-  >
+  <div class="fr-mt-2v">
     <div class="fr-grid-row fr-grid-row--center fr-grid-row-md--left">
       <template
-        v-for="linkedProject in projects"
+        v-for="linkedProject in linkedProjects"
         :key="linkedProject.id"
       >
         <TeeProjectButton
@@ -17,25 +14,10 @@
   </div>
 </template>
 <script lang="ts" setup>
-import type { ProgramData, Project as ProjectType } from '@/types'
-import Program from '@/utils/program/program'
-import { useProjectStore } from '@/stores/project'
-import { useNavigationStore } from '@/stores/navigation'
+import type { Project as ProjectType } from '@/types'
 
 interface Props {
-  program: ProgramData
+  linkedProjects: ProjectType[]
 }
-const props = defineProps<Props>()
-const projectStore = useProjectStore()
-const projects = ref<ProjectType[]>([])
-
-onBeforeMount(async () => {
-  useNavigationStore().hasSpinner = true
-
-  const projectResult = await projectStore.projects
-  if (projectResult.isOk) {
-    projects.value = Program.getLinkedProjects(props.program, projectResult.value)
-  }
-  useNavigationStore().hasSpinner = false
-})
+defineProps<Props>()
 </script>

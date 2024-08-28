@@ -16,9 +16,11 @@ export default class Program {
     return endDate !== undefined ? endDate >= new Date() : true
   }
 
-  static getLinkedProjects(program: ProgramType, projects: ProjectType[]) {
-    const programId: string = program.id
-    const linkedProjects: ProjectType[] = projects.filter((project: ProjectType) => project.programs.includes(programId))
-    return linkedProjects
+  static getLinkedProjects(program: ProgramType | undefined, projects: ProjectType[]) {
+    if (program) {
+      const programId: string = program.id
+      const linkedProjects: ProjectType[] = projects.filter((project: ProjectType) => project.programs.includes(programId))
+      return linkedProjects
+    }
   }
 }

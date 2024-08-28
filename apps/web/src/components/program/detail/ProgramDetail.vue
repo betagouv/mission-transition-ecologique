@@ -197,11 +197,11 @@
             <ProgramEligibility :program="program" />
           </ProgramAccordion>
           <ProgramAccordion
-            v-if="program"
+            v-if="program && linkedProjects && linkedProjects.length > 0"
             :accordion-id="`${program.id}-linked-projects`"
             :title="Translation.t('program.projectExamples')"
           >
-            <ProgramProjects :program="program" />
+            <ProgramProjects :linked-projects="linkedProjects" />
           </ProgramAccordion>
           <ProgramAccordion
             v-if="program && program['description longue']"
@@ -241,7 +241,7 @@ import ProgramObjective from '@/components/program/detail/ProgramObjective.vue'
 import ProgramTile from '@/components/program/detail/ProgramTile.vue'
 import Config from '@/config'
 import { useProgramStore } from '@/stores/program'
-import { type ProgramData as ProgramType } from '@/types'
+import { type ProgramData as ProgramType, Project as ProjectType } from '@/types'
 import { RouteName } from '@/types/routeType'
 import { useNavigationStore } from '@/stores/navigation'
 import Matomo from '@/utils/matomo'
@@ -249,12 +249,15 @@ import Program from '@/utils/program/program'
 import { Scroll } from '@/utils/scroll'
 import Translation from '@/utils/translation'
 import { computed, onBeforeMount, ref } from 'vue'
+import { useProjectStore } from '@/stores/project'
 
+const projectStore = useProjectStore()
 const programsStore = useProgramStore()
 const navigationStore = useNavigationStore()
 
 const route = useRoute()
 const program = ref<ProgramType>()
+const linkedProjects = ref<ProjectType[] | undefined>([])
 const TeeProgramFormContainer = ref<HTMLElement | null | undefined>(null)
 
 const blockColor = '#000091'
@@ -296,8 +299,15 @@ const isProgramAutonomous = computed(() => {
   return program.value?.[`activable en autonomie`] == 'oui'
 })
 
-onBeforeMount(() => {
+onBeforeMount(async () => {
+  useNavigationStore().hasSpinner = true
   program.value = programsStore.currentProgram
+  const projectResult = await projectStore.projects
+  if (projectResult.isOk) {
+    linkedProjects.value = Program.getLinkedProjects(program.value, projectResult.value)
+    console.log(linkedProjects.value)
+  }
+  useNavigationStore().hasSpinner = false
   // analytics / send event
   Matomo.sendEvent('result_detail', route.name === RouteName.CatalogProgramDetail ? 'show_detail_catalog' : 'show_detail', props.programId)
 })
