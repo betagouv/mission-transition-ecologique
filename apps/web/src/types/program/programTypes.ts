@@ -1,4 +1,4 @@
-import { Objective, ProgramOperatorType, ProgramAidType, FormattedPublicodesKeys } from '@/types'
+import { Objective, ProgramOperatorType, ProgramAidType, FormattedFiltersKeys } from '@/types'
 
 interface ProgramObjectiveLink {
   lien: string
@@ -41,9 +41,9 @@ export interface ProgramData {
     "autres critères d'éligibilité"?: string[]
   }
 
-  publicodes: PublicodesProgramData
+  filters: FiltersProgramData
 }
 
-export type PublicodesProgramData = {
-  [FormattedPublicodesKeys.hasObjective]?: Objective[]
+export type FiltersProgramData = {
+  [FormattedFiltersKeys.hasObjective]?: Objective[]
 }
