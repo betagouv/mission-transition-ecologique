@@ -264,7 +264,6 @@
       "etude-geothermie-de-surface-et-d-aerothermie",
       "etude-test-geothermie",
       "fonds-tourisme-durable",
-      "investissement-boucle-d-eau-geothermique",
       "investissement-geothermie-de-surface-et-d-aerothermie",
       "investissement-geothermie-profonde"
     ],
@@ -369,7 +368,7 @@
     "nameTag": "🚙 retrofit",
     "shortDescription": "Le rétrofit consiste à remplacer le moteur de son véhicule thermique par un moteur électrique.",
     "image": "/images/projet/retrofit.webp",
-    "longDescription": "Depuis le 4 avril 2020, il est autorisé d’électrifier un véhicule thermique. Cette pratique, appelée rétrofit, consiste à retirer le moteur thermique (essence ou diesel) ainsi que le réservoir du véhicule et à les remplacer par un moteur électrique et une batterie.\n\nLe rétrofit électrique permet d’augmenter la part de voitures électriques en circulation et ainsi de diminuer les quantités de CO2 et de polluants atmosphériques émises lors des déplacements quotidiens.\n\nEn réhabilitant de vieux véhicules thermiques, le retrofit constitue également une alternative à la fabrication de nouveaux véhicules. Ainsi, il participe  à la réduction des émissions de gaz à effet de serre en diminuant les consommations de ressources nécessaires à la fabrication de véhicules électriques neufs.",
+    "longDescription": "Depuis le 4 avril 2020, il est autorisé d’électrifier un véhicule thermique. Cette pratique, appelée rétrofit, consiste à retirer le moteur thermique (essence ou diesel) ainsi que le réservoir du véhicule et à les remplacer par un moteur électrique et une batterie.\n\nLe rétrofit électrique permet d’augmenter la part de voitures électriques en circulation et ainsi de diminuer les quantités de CO2 et de polluants atmosphériques émises lors des déplacements quotidiens.\n\nEn réhabilitant de vieux véhicules thermiques, le retrofit constitue également une alternative à la fabrication de nouveaux véhicules. Ainsi, il participe à la réduction des émissions de gaz à effet de serre en diminuant les consommations de ressources nécessaires à la fabrication de véhicules électriques neufs.",
     "moreDescription": "- [**Tout savoir sur le retrofit éléctrique**](https://www.ecologie.gouv.fr/politiques-publiques/savoir-retrofit-electrique)**.**",
     "themes": [
       "mobility"
@@ -761,7 +760,6 @@
     "mainTheme": "environmental",
     "programs": [
       "audits-clef-verte",
-      "communaute-coq-vert",
       "eco-defis-des-artisans-et-des-commercants",
       "fonds-tourisme-durable",
       "imprim-vert",
@@ -826,12 +824,12 @@
   },
   {
     "id": 72,
-    "slug": "economisateurs-eau-sanitaires",
-    "title": "Économisateurs d’eau pour les sanitaires",
-    "nameTag": "💧 économisateur d'eau",
+    "slug": "economiseurs-eau-sanitaires",
+    "title": "Économiseurs d’eau pour les sanitaires",
+    "nameTag": "💧 économiseur d'eau",
     "shortDescription": "Des équipements ou rénovations de vos installations pour vous permettre de faire des économies d'eau.",
-    "image": "/images/projet/economisateurs-eau-sanitaires.webp",
-    "longDescription": "La mise en place d'équipements ou de travaux de rénovation de vos installations sanitaires peuvent vous permettre de réaliser des économies d'eau non négligeables. Vous pouvez opter par exemple pour : \n\n- des économiseurs d'eau ou de robinets mitigeurs à installer sur vos lavabos,\n- des chasses d’eau à double commande et de plaquettes à mettre dans le réservoir des toilettes,\n- des urinoirs avec écoulement déclenché en fonction de la présence ou d'urinoirs sans eau,\n- des toilettes sèches, qui ne requièrent aucune utilisation d'eau.\n- un équipement de suivi de vos consommations d'eau.\n\nEn complément de ces installations, pensez à sensibiliser vos équipes et vos clients aux bonnes pratiques d'économies d’eau !",
+    "image": "/images/projet/economiseurs-eau-sanitaires.webp",
+    "longDescription": "La mise en place d'équipements ou de travaux de rénovation de vos installations sanitaires peuvent vous permettre de réaliser des économies d'eau non négligeables. Vous pouvez opter par exemple pour :\n\n- des économiseurs d'eau ou de robinets mitigeurs à installer sur vos lavabos,\n- des chasses d’eau à double commande et de plaquettes à mettre dans le réservoir des toilettes,\n- des urinoirs avec écoulement déclenché en fonction de la présence ou d'urinoirs sans eau,\n- des toilettes sèches, qui ne requièrent aucune utilisation d'eau.\n- un équipement de suivi de vos consommations d'eau.\n\nEn complément de ces installations, pensez à sensibiliser vos équipes et vos clients aux bonnes pratiques d'économies d’eau !",
     "moreDescription": "- [**Cycle de l'eau : attention aux fuites**](https://multimedia.ademe.fr/infographies/infographie-eau-douce-ademe/), une infographie *\"Qu'est-ce qu'on fait ?!\"* proposée par l'ADEME.\n- [**Quels équipements permettent d'économiser l'eau au quotidien ?**](https://www.cieau.com/le-metier-de-leau/usages-consommation-conseils/quels-equipements-permettent-deconomiser-leau-au-quotidien/) Une fiche pratique proposée par le centre d'information sur l'eau",
     "themes": [
       "water"
