@@ -17,12 +17,10 @@
           />
           <template v-else>
             <!-- DROPDOWN MENU ITEM - DISPLAY WIDER THAN MD -->
-            <TeeDsfrNavigation
+            <DsfrNavigation
               class="fr-hidden fr-unhidden-lg fr-mr-2w fr-mr-lg-0"
               :nav-items="[{ title: 'Catalogue', links: quickLink.links }]"
               aria-label="Sous Menu secondaire"
-              :menu-alignment="'right'"
-              :text-color="Color.blueFrance"
             />
             <!-- DROPDOWN MENU ITEM - DISPLAY SMALLER THAN MD -->
             <ul>
@@ -46,8 +44,7 @@
 
 <script lang="ts" setup>
 import type { OhVueIcon as VIcon } from 'oh-vue-icons'
-import { DsfrHeaderMenuLink, DsfrNavigationMenuLinkProps } from '@gouvminint/vue-dsfr'
-import { Color } from '@/types'
+import { DsfrHeaderMenuLink, DsfrNavigation, DsfrNavigationMenuLinkProps } from '@gouvminint/vue-dsfr'
 
 export type TeeDsfrHeaderMenuLinkProps = {
   button?: boolean
