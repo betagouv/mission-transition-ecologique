@@ -1,106 +1,125 @@
 titre: Investissement "Géothermie profonde"
-promesse: Financez votre installation de production de chaleur à partir de géothermie
+promesse: >-
+  Financez votre installation de production de chaleur à partir de géothermie
   profonde
-description: Vous disposez d’une étude pour votre projet d'installation de production
-  de chaleur à partir de géothermie profonde ? Vous souhaitez investir pour le mettre
-  en œuvre ? L’ADEME peut accompagner financièrement la réalisation de votre installation.
-description longue: 'Sont éligibles, toutes les opérations de valorisation thermique
-  de ressources géothermales profondes (profondeur
+description: >-
+  Vous disposez d’une étude pour votre projet d'installation de production de
+  chaleur à partir de géothermie profonde ? Vous souhaitez investir pour le
+  mettre en œuvre ? L’ADEME peut accompagner financièrement la réalisation de
+  votre installation.
+description longue: >-
+  Sont éligibles, toutes les opérations de valorisation thermique de ressources
+  géothermales profondes (profondeur
 
   supérieure à 200 mètres) :
 
-  • La réalisation d''un doublet de forages (ou autre configuration spécifique (triplet,
-  multi drains, ...) sur un
+  • La réalisation d'un doublet de forages (ou autre configuration spécifique
+  (triplet, multi drains, ...) sur un
 
   aquifère profond avec (ou sans) mise en place d’une pompe à chaleur.
 
-  • La mise en œuvre d''une réinjection en aquifère profond sur une opération existante
-  (exemple des
+  • La mise en œuvre d'une réinjection en aquifère profond sur une opération
+  existante (exemple des
 
   opérations de la région aquitaine).
 
-  • La transformation d''un ancien puits pétrolier pour une valorisation thermique
-  de l''eau chaude produite
+  • La transformation d'un ancien puits pétrolier pour une valorisation
+  thermique de l'eau chaude produite
 
   avec (ou sans) mise en place d’une pompe à chaleur.
 
-  • La mise en place uniquement d’une ou de plusieurs pompe(s) à chaleur sur un réseau
-  de chaleur
+  • La mise en place uniquement d’une ou de plusieurs pompe(s) à chaleur sur un
+  réseau de chaleur
 
   alimenté par une installation de géothermie profonde déjà existante.
 
-  La réalisation d’une étude préalable et l''adhésion au Fonds de garantie Géothermie
-  sont des conditions d''élibilité.'
+  La réalisation d’une étude préalable et l'adhésion au Fonds de garantie
+  Géothermie sont des conditions d'élibilité.
 début de validité: 01/01/2023
 fin de validité: 31/12/2024
 illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
-url: https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/installations-production-chaleur-a-partir-geothermie-profonde
+url: >-
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/installations-production-chaleur-a-partir-geothermie-profonde
 nature de l'aide: financement
 montant du financement: Aide calculée au cas par cas
 objectifs:
-- description: Vérifiez l’éligibilité de votre projet en parcourant la documentation
-    de l’ADEME.
-  liens:
-  - lien: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/G%C3%A9othermie%20profonde%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf
-    texte: Conditions éligibilité et financement
-- description: 'Déposez votre demande d''aide : informations administratives, description
-    du projet, détails techniques et financiers, étude de faisabilité, etc. A ce stade,
-    votre investissement ne doit pas avoir été realisé !'
-- description: L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
-    recevez un contrat de financement précisant le montant d’aide maximum, les conditions
-    et les modalités de versement.
-- description: Réalisez vos investissements.
+  - description: >-
+      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
+      l’ADEME ou en contactant un conseiller.
+    liens:
+      - lien: >-
+          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/G%C3%A9othermie%20profonde%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf
+        texte: Conditions éligibilité et financement
+  - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
+    liens:
+      - lien: https://agirpourlatransition.ademe.fr/user/register
+        texte: Créer mon compte ADEME
+  - description: >-
+      Déposez votre dossier : informations administratives, description du
+      projet, détails techniques et financiers, etc. À ce stade, votre projet ne
+      doit pas avoir commencé !
+    liens:
+      - lien: >-
+          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/installations-production-chaleur-a-partir-geothermie-profonde
+        texte: Déposer mon dossier
+  - description: >-
+      L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
+      recevez un contrat de financement précisant le montant d’aide maximum, les
+      conditions et les modalités de versement.
+  - description: Réalisez vos investissements.
 conditions d'éligibilité:
   taille de l'entreprise:
-  - Toutes tailles
-  - Éligible aux micro-entreprises
+    - Toutes tailles
+    - Éligible aux micro-entreprises
   secteur géographique:
-  - France et territoires d'outre-mer
+    - France et territoires d'outre-mer
   secteur d'activité:
-  - Tous secteurs d’activité
+    - Tous secteurs d’activité
   nombre d'années d'activité:
-  - Éligible à toutes les entreprises
+    - Éligible à toutes les entreprises
   autres critères d'éligibilité:
-  - 'L''opération pour laquelle vous sollicitez une aide financière ne doit pas avoir
-    commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque
-    forme que ce soit : marché signé, commande signée, devis accepté…)'
+    - >-
+      L'opération pour laquelle vous sollicitez une aide financière ne doit pas
+      avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes
+      (sous quelque forme que ce soit : marché signé, commande signée, devis
+      accepté…)
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
-    - est éligible
-    - est dans un secteur d'activité ciblé
-    - a un objectif ciblé
-    - questionnaire . parcours = objectif précis
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+      - questionnaire . parcours = objectif précis
   entreprise . est éligible:
     applicable si:
       toutes ces conditions:
-      - dispositif . début de validité <= date du jour
-      - date du jour <= dispositif . fin de validité
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     valeur: oui
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - code NAF niveau 1 . est A
-    - code NAF niveau 1 . est B
-    - code NAF niveau 1 . est C
-    - code NAF niveau 1 . est D
-    - code NAF niveau 1 . est E
-    - code NAF niveau 1 . est F
-    - code NAF niveau 1 . est G
-    - code NAF niveau 1 . est H
-    - code NAF niveau 1 . est I
-    - code NAF niveau 1 . est J
-    - code NAF niveau 1 . est K
-    - code NAF niveau 1 . est L
-    - code NAF niveau 1 . est M
-    - code NAF niveau 1 . est N
-    - code NAF niveau 1 . est O
-    - code NAF niveau 1 . est P
-    - code NAF niveau 1 . est Q
-    - code NAF niveau 1 . est R
-    - code NAF niveau 1 . est S
-    - code NAF niveau 1 . est T
-    - code NAF niveau 1 . est U
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
   entreprise . a un objectif ciblé:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est ma performance énergétique
+      - questionnaire . objectif prioritaire . est ma performance énergétique

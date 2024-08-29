@@ -1,6 +1,6 @@
 import { Maybe, Result } from 'true-myth'
-import { NafMappingType, type EstablishmentRepository } from '../../src/establishment/domain/spi'
-import { type CityToRegionMapping } from '../../src/establishment/infrastructure/json/cityToRegionMapping'
+import { NafMapping, type EstablishmentRepository } from '../../src/establishment/domain/spi'
+import { type COG2023Mapping } from '../../src/establishment/infrastructure/json/cityToRegionMapping'
 
 const testEstablishment = {
   siren: '830141321',
@@ -30,11 +30,11 @@ export const dummyEstablishmentRepository: EstablishmentRepository = {
   search: () => Promise.resolve(Result.ok(searchResult))
 }
 
-export const nothingRegionMapping: CityToRegionMapping = {
+export const nothingRegionMapping: COG2023Mapping = {
   getRegion: () => Maybe.nothing<string>()
 }
 
-export const nothingNafMapping: NafMappingType = {
+export const nothingNafMapping: NafMapping = {
   getLabel: () => Maybe.nothing<string>(),
   getSectionCode: () => Maybe.nothing<string>()
 }

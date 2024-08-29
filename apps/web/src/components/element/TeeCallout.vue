@@ -35,7 +35,6 @@
 </template>
 
 <script setup lang="ts">
-import { withDefaults } from 'vue'
 import { CalloutType } from '@/types/elementsPropsTypes'
 
 interface Props {
@@ -62,8 +61,8 @@ const props = withDefaults(defineProps<Props>(), {
 
 const linkClasses = {
   'fr-callout': true,
-  defaultCallout: props.type === CalloutType.Default,
-  warningCallout: props.type === CalloutType.Warning,
-  customCallout: props.type === CalloutType.FormInput
+  'default-callout': props.type === CalloutType.Default,
+  'warning-callout': props.type === CalloutType.Warning,
+  'custom-callout': props.type === CalloutType.FormInput
 }
 </script>

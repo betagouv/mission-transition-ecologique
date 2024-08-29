@@ -1,30 +1,31 @@
 import { workforce } from '@/questionnaire/trackStructureWorkforce'
 import { useUsedTrackStore } from '@/stores/usedTrack'
-import { StructureSize, TrackId } from '@/types'
+import { LegalCategory, StructureSize, TrackId } from '@/types'
 import Format from '@/utils/format'
+import { sectors } from '@/questionnaire/trackStructureSectors'
 
 export default class TrackStructure {
   static getEligibilityCriteria() {
     const criteria = []
-    if (TrackStructure.has(TrackId.StructureWorkforce, 'structure_size')) {
+    if (this.getSizeTitle() !== '') {
       criteria.push({
         icon: 'fr-icon-check-line',
-        text: Format.truncate(TrackStructure.getSizeTitle(), 30)
+        text: Format.truncate(this.getSizeTitle(), 30)
       })
     }
-    if (TrackStructure.getSector()) {
+    if (this.getSector()) {
       criteria.push({
         icon: 'fr-icon-check-line',
-        text: Format.truncate(TrackStructure.getSector(), 30)
+        text: Format.capitalize(Format.truncate(TrackStructure.getSectorShortLabel(), 30))
       })
     }
-    if (TrackStructure.getLocalisation()) {
+    if (this.getLocalisation()) {
       criteria.push({
         icon: 'fr-icon-check-line',
         text: Format.truncate(TrackStructure.getLocalisation(), 30)
       })
     }
-    if (TrackStructure.hasSiret()) {
+    if (this.hasSiret()) {
       criteria.unshift({
         icon: 'fr-icon-check-line',
         text: Format.truncate('SIRET ' + TrackStructure.getSiret(), 30)
@@ -55,8 +56,20 @@ export default class TrackStructure {
       : (useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(TrackId.Sectors, 'sector') as string)
   }
 
+  static getSectorShortLabel(): string {
+    return sectors.options?.find((option) => option.value === this.getSector())?.shortLabel?.fr || this.getSector()
+  }
+
   static getSize(): StructureSize {
-    return useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(TrackId.StructureWorkforce, 'structure_size') as StructureSize
+    const structureSize = useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(TrackId.StructureWorkforce, 'structure_size')
+    if (
+      structureSize === undefined &&
+      useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'legalCategory') === LegalCategory.EI
+    ) {
+      return StructureSize.EI
+    }
+
+    return structureSize as StructureSize
   }
 
   static getSizeTitle(): string {

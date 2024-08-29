@@ -32,8 +32,8 @@ export default class Config extends ConfigCommon {
     return this.getEnvValue('PDE_API_BASEURL')
   }
 
-  public static get PDE_LANDING_ID(): number {
-    return parseInt(this.getEnvValue('PDE_LANDING_ID'))
+  public static get DEBUG(): boolean {
+    return this.getEnvValue('DEBUG', 'false') === 'true'
   }
 
   public static get BREVO_DEAL_PIPELINE(): string | undefined {

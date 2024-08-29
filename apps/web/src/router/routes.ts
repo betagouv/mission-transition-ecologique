@@ -13,11 +13,18 @@ import { TrackId } from '@/types'
 import Hook from '@/router/hook'
 import TeeQuestionnaire from '@/components/questionnaire/TeeQuestionnaire.vue'
 import TeeQuestionnaireResult from '@/components/questionnaire/TeeQuestionnaireResult.vue'
-import ProgramList from '@/components/program/list/ProgramList.vue'
 import ProgramDetail from '@/components/program/detail/ProgramDetail.vue'
+import ProjectDetail from '@/components/project/details/ProjectDetail.vue'
 import TeeStatPage from '@/pages/TeeStatPage.vue'
+import CatalogPrograms from '@/components/catalog/CatalogPrograms.vue'
+import CatalogProjects from '@/components/catalog/CatalogProjects.vue'
 
-// please edit the sitemap.ts file if you add any path starting with /
+export enum Path {
+  ProgramCatalog = '/aides-entreprise',
+  ProjectCatalog = '/projets-entreprise'
+}
+
+// please edit the sitemap.ts file if you add any route starting with /
 // that you don't want to be listed in the sitemap
 
 export const routes = [
@@ -34,7 +41,7 @@ export const routes = [
         path: '',
         name: RouteName.QuestionnaireStart,
         component: TeeQuestionnaire as Component,
-        beforeEnter: [Hook.resetUsedTrackStore, Hook.resetQueries],
+        beforeEnter: [Hook.resetUsedTrackStore, Hook.resetQueries, Hook.resetProgramFilters],
         props: { trackId: TrackId.QuestionnaireRoute }
       },
       {
@@ -51,6 +58,20 @@ export const routes = [
         beforeEnter: [Hook.setUsedTracks, Hook.hasUsedTracks]
       },
       {
+        path: 'resultat/projet/:projectSlug',
+        component: ProjectDetail as Component,
+        name: RouteName.ProjectResultDetail,
+        beforeEnter: [Hook.hasProject, Hook.setUsedTracks, Hook.hasUsedTracks],
+        props: true
+      },
+      {
+        path: 'resultat/projet/:projectSlug/:programId',
+        component: ProgramDetail as Component,
+        name: RouteName.ProgramFromProjectDetail,
+        beforeEnter: [Hook.hasProject, Hook.hasProgram, Hook.setUsedTracks, Hook.hasUsedTracks],
+        props: true
+      },
+      {
         path: 'resultat/:programId',
         name: RouteName.QuestionnaireResultDetail,
         component: ProgramDetail as Component,
@@ -60,20 +81,39 @@ export const routes = [
     ]
   },
   {
-    path: '/aides-entreprise',
+    path: Path.ProgramCatalog,
     component: TeeCatalogPage as Component,
     beforeEnter: [Hook.resetUsedTrackStore, Hook.resetQueries, Hook.resetProgramFilters],
     children: [
       {
         path: '',
-        name: RouteName.Catalog,
-        component: ProgramList as Component
+        name: RouteName.CatalogPrograms,
+        component: CatalogPrograms as Component
       },
       {
         path: ':programId',
-        name: RouteName.CatalogDetail,
+        name: RouteName.CatalogProgramDetail,
         component: ProgramDetail as Component,
         beforeEnter: [Hook.hasProgram],
+        props: true
+      }
+    ]
+  },
+  {
+    path: Path.ProjectCatalog,
+    component: TeeCatalogPage as Component,
+    beforeEnter: [Hook.resetUsedTrackStore, Hook.resetQueries, Hook.resetProgramFilters],
+    children: [
+      {
+        path: '',
+        name: RouteName.CatalogProjects,
+        component: CatalogProjects as Component
+      },
+      {
+        path: ':projectSlug',
+        name: RouteName.CatalogProjectDetail,
+        component: ProjectDetail as Component,
+        beforeEnter: [Hook.hasProject],
         props: true
       }
     ]

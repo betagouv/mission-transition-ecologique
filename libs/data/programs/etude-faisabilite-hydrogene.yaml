@@ -1,69 +1,79 @@
 titre: Étude faisabilité "hydrogène"
 promesse: Étudiez votre projet de déploiement de l'hydrogène renouvelable
-description: Vous êtes intéressé par le potentiel de l’hydrogène renouvelable comme
-  solution de substitution aux énergies fossiles pour vos activités industrielles
-  ? L'ADEME vous apporte une aide pour une étude d'opportunité ou de faisabilité,
-  étapes nécessaires avant tout investissement.
-description longue: "• L’étude d’opportunité vise à accompagner les potentiels consommateurs\
-  \ d’hydrogène (mobilité, industrie, stationnaire) dans leur réflexion de décarbonation,\
-  \ collectivement sur l’ensemble d’un territoire (regroupement de collectivités,\
-  \ zone industrielle…). \n• L’étude de faisabilité se concentre sur le déploiement\
-  \ de l'hydrogène sur un territoire où une demande suffisante aura été préalablement\
-  \ identifiée."
+description: >-
+  Vous êtes intéressé par le potentiel de l’hydrogène renouvelable comme
+  solution de substitution aux énergies fossiles pour vos activités
+  industrielles ? L'ADEME vous apporte une aide pour une étude d'opportunité ou
+  de faisabilité, étapes nécessaires avant tout investissement.
+description longue: >-
+  • L’étude d’opportunité vise à accompagner les potentiels consommateurs
+  d’hydrogène (mobilité, industrie, stationnaire) dans leur réflexion de
+  décarbonation, collectivement sur l’ensemble d’un territoire (regroupement de
+  collectivités, zone industrielle…). 
+
+  • L’étude de faisabilité se concentre sur le déploiement de l'hydrogène sur un
+  territoire où une demande suffisante aura été préalablement identifiée. 
 début de validité: 01/01/2023
 fin de validité: 31/12/2023
 illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
-url: https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Opportunit%C3%A9%20et%20faisabilit%C3%A9%20d%C3%A9ploiement%20hydrog%C3%A8ne%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202023.pdf
-nature de l'aide: financement
-montant du financement: Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000
-  €
+url: >-
+  https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Opportunit%C3%A9%20et%20faisabilit%C3%A9%20d%C3%A9ploiement%20hydrog%C3%A8ne%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202023.pdf
+nature de l'aide: étude
+montant du financement: Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €
 objectifs:
-- description: Vérifiez l’éligibilité de votre projet en parcourant la documentation
-    de l’ADEME.
-- description: Choisissez le prestataire qui va vous accompagner pour mener votre
-    étude d'opportunité ou de faisabilité et obtenez un devis.
-- description: 'Déposez votre demande d''aide : informations administratives, description
-    du projet, détails techniques et financiers, etc. A ce stade, votre projet ne
-    doit pas avoir commencé !'
-- description: L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
-    recevez un contrat de financement précisant le montant d’aide maximum, les conditions
-    et les modalités de versement.
-- description: Réalisez votre étude.
-- description: A la fin de l'étude, vous déterminerez la pertinence de préparer un
-    projet de décarbonation via l’hydrogène. Une étude d’opportunité peut éventuellement
-    déboucher sur une étude de faisabilité.
+  - description: >-
+      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
+      l’ADEME.
+  - description: >-
+      Choisissez le prestataire qui va vous accompagner pour mener votre étude
+      d'opportunité ou de faisabilité et obtenez un devis.
+  - description: >-
+      Déposez votre demande d'aide : informations administratives, description
+      du projet, détails techniques et financiers, etc. A ce stade, votre projet
+      ne doit pas avoir commencé !
+  - description: >-
+      L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
+      recevez un contrat de financement précisant le montant d’aide maximum, les
+      conditions et les modalités de versement.
+  - description: Réalisez votre étude.
+  - description: >-
+      A la fin de l'étude, vous déterminerez la pertinence de préparer un projet
+      de décarbonation via l’hydrogène. Une étude d’opportunité peut
+      éventuellement déboucher sur une étude de faisabilité.
 conditions d'éligibilité:
   taille de l'entreprise:
-  - Toutes tailles
-  - Éligible aux micro-entreprises
+    - Toutes tailles
+    - Éligible aux micro-entreprises
   secteur géographique:
-  - France et territoires d'outre-mer
+    - France et territoires d'outre-mer
   secteur d'activité:
-  - Tous secteurs d’activité
+    - Tous secteurs d’activité
   nombre d'années d'activité:
-  - Éligible à toutes les entreprises
+    - Éligible à toutes les entreprises
   autres critères d'éligibilité:
-  - 'L''opération pour laquelle vous sollicitez une aide financière ne doit pas avoir
-    commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque
-    forme que ce soit : marché signé, commande signée, devis accepté…)'
+    - >-
+      L'opération pour laquelle vous sollicitez une aide financière ne doit pas
+      avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes
+      (sous quelque forme que ce soit : marché signé, commande signée, devis
+      accepté…)
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
-    - est éligible
-    - est dans un secteur d'activité ciblé
-    - a un objectif ciblé
-    - questionnaire . parcours = objectif précis
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+      - questionnaire . parcours = objectif précis
   entreprise . est éligible:
     applicable si:
       toutes ces conditions:
-      - dispositif . début de validité <= date du jour
-      - date du jour <= dispositif . fin de validité
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     valeur: oui
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-    - code NAF niveau 1 . est B
-    - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
   entreprise . a un objectif ciblé:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est ma performance énergétique
+      - questionnaire . objectif prioritaire . est ma performance énergétique

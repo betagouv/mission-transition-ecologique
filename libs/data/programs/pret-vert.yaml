@@ -1,133 +1,150 @@
 titre: Prêt Vert
-promesse: Financez votre projet de transition écologique et énergétique grâce au Prêt
+promesse: >-
+  Financez votre projet de transition écologique et énergétique grâce au Prêt
   Vert
-description: 'Le "Prêt Vert" est destiné à accompagner les projets sur différents
-  champs de la transition écologique : mobilité douce, économie circulaire, énergies
-  renouvelables, etc.'
-description longue: "En co-financement avec une banque privée, le prêt Vert soutient\
-  \ les projets visant à : \n• optimiser les procédés, ou améliorer la performance\
-  \ (énergie, eau, matière,) afin de mieux maîtriser ou de diminuer les impacts sur\
-  \ l’environnement, en ce compris des procédés d’économie circulaire ;\n• favoriser\
-  \ la mobilité “zéro carbone” pour les salariés, les marchandises et les produits\
-  \ ;\n• innover pour mettre sur le marché des produits ou des services en matière\
-  \ de protection de l’environnement, d’économie circulaire et/ou permettant une réduction\
-  \ de la consommation de ressources, renouvelables ou non, (énergie, matières premières,\
-  \ eau, etc. ; en ce compris la dédieselisation, l’allongement de la durée de vie\
-  \ des produits, l’intégration de recyclé, la recyclabilité, la réutilisation ou\
-  \ le réemploi) ;\n• favoriser un mix énergétique plus vertueux en intégrant davantage\
-  \ d’énergies renouvelables."
+description: >-
+  Le "Prêt Vert" est destiné à accompagner les projets sur différents champs de
+  la transition écologique : mobilité douce, économie circulaire, énergies
+  renouvelables, etc.
+description longue: >-
+  En co-financement avec une banque privée, le prêt Vert soutient les projets
+  visant à : 
+
+  • optimiser les procédés, ou améliorer la performance (énergie, eau, matière,)
+  afin de mieux maîtriser ou de diminuer les impacts sur l’environnement, en ce
+  compris des procédés d’économie circulaire ;
+
+  • favoriser la mobilité “zéro carbone” pour les salariés, les marchandises et
+  les produits ;
+
+  • innover pour mettre sur le marché des produits ou des services en matière de
+  protection de l’environnement, d’économie circulaire et/ou permettant une
+  réduction de la consommation de ressources, renouvelables ou non, (énergie,
+  matières premières, eau, etc. ; en ce compris la dédieselisation,
+  l’allongement de la durée de vie des produits, l’intégration de recyclé, la
+  recyclabilité, la réutilisation ou le réemploi) ;
+
+  • favoriser un mix énergétique plus vertueux en intégrant davantage d’énergies
+  renouvelables.
 illustration: images/TEE_ampoule.png
 opérateur de contact: Bpifrance
-url: https://www.bpifrance.fr/catalogue-offres/transition-ecologique-et-energetique/pret-vert
+url: >-
+  https://www.bpifrance.fr/catalogue-offres/transition-ecologique-et-energetique/pret-vert
 nature de l'aide: prêt
-durée du prêt: de 2 à 10 ans, avec un différé d’amortissement en capital de 2 ans
-  maximum
-montant du prêt: De 50 000 € à 5 000 000 €
+montant du prêt: De 50 000 € à 5 000 000 €
+durée du prêt: de 2 à 10 ans, avec un différé d’amortissement en capital de 2 ans maximum
 objectifs:
-- description: Exprimez votre intérêt pour ce prêt à Bpifrance grâce au formulaire
-    ci-dessous.
-- description: Obtenez un rendez-vous de financement auprès d'un chargé d'affaires
-    Bpifrance.
-- description: Bpifrance étudie votre demande de prêt.
+  - description: >-
+      Exprimez votre intérêt pour ce prêt à Bpifrance grâce au formulaire
+      ci-dessous.
+  - description: >-
+      Obtenez un rendez-vous de financement auprès d'un chargé d'affaires
+      Bpifrance.
+  - description: Bpifrance étudie votre demande de prêt.
 conditions d'éligibilité:
   taille de l'entreprise:
-  - PME et ETI
-  - Non éligible aux micro-entreprises
+    - PME et ETI
+    - Non éligible aux micro-entreprises
   secteur géographique:
-  - France et territoires d'outre-mer
+    - France et territoires d'outre-mer
   secteur d'activité:
-  - Tous secteurs d’activité
-  - 'Sont exclus : les activités d’intermédiation financière (NAF : section K64 sauf
-    64-2 pour les achats d’entreprises) ; les activités de promotion immobilière et
-    marchand de biens (NAF : section L68-1, L68-2 et F41-1) ; les entreprises des
-    secteurs agricoles identifiées par les code NAF section A01, et section A02 dont
-    le chiffre d’affaires est inférieur à 750 000 €, à l’exception des codes NAF 02.20Z
-    et 02.40Z (entreprises forestières)'
+    - Tous secteurs d’activité
+    - >-
+      Sont exclus : les activités d’intermédiation financière (NAF : section K64
+      sauf 64-2 pour les achats d’entreprises) ; les activités de promotion
+      immobilière et marchand de biens (NAF : section L68-1, L68-2 et F41-1) ;
+      les entreprises des secteurs agricoles identifiées par les code NAF
+      section A01, et section A02 dont le chiffre d’affaires est inférieur à 750
+      000 €, à l’exception des codes NAF 02.20Z et 02.40Z (entreprises
+      forestières) 
   nombre d'années d'activité:
-  - Au moins 3 ans d’activité
+    - Au moins 3 ans d’activité
   autres critères d'éligibilité:
-  - Ce prêt est obligatoirement associé à un concours bancaire du même montant
-  - Sont exclues les entreprises en difficulté au sens de la définition européenne
+    - Ce prêt est obligatoirement associé à un concours bancaire du même montant
+    - >-
+      Sont exclues les entreprises en difficulté au sens de la définition
+      européenne
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
-    - est éligible
-    - a un objectif ciblé
+      - est éligible
+      - a un objectif ciblé
   entreprise . est éligible:
     toutes ces conditions:
-    - a un effectif éligible
-    - est dans un secteur d'activité éligible
+      - a un effectif éligible
+      - est dans un secteur d'activité éligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
-    - effectif >= 1
-    - effectif <= 4999
-  entreprise . est dans un secteur d'activité éligible: est secteur d'activité exclu
-    = non
+      - effectif >= 1
+      - effectif <= 4999
+  entreprise . est dans un secteur d'activité éligible: est secteur d'activité exclu = non
   est secteur d'activité exclu:
     une de ces conditions:
-    - est activité d'intermédiation financière
-    - est activité de promotion immobilière et marchand de biens
-    - est secteur agricole hors entreprises forestières
+      - est activité d'intermédiation financière
+      - est activité de promotion immobilière et marchand de biens
+      - est secteur agricole hors entreprises forestières
   est activité d'intermédiation financière:
     une de ces conditions:
-    - entreprise . code NAF = "64.11Z"
-    - entreprise . code NAF = "64.19Z"
-    - entreprise . code NAF = "64.30Z"
-    - entreprise . code NAF = "64.91Z"
-    - entreprise . code NAF = "64.92Z"
-    - entreprise . code NAF = "64.99Z"
+      - entreprise . code NAF = "64.11Z"
+      - entreprise . code NAF = "64.19Z"
+      - entreprise . code NAF = "64.30Z"
+      - entreprise . code NAF = "64.91Z"
+      - entreprise . code NAF = "64.92Z"
+      - entreprise . code NAF = "64.99Z"
   est activité de promotion immobilière et marchand de biens:
     une de ces conditions:
-    - entreprise . code NAF = "68.10Z"
-    - entreprise . code NAF = "68.20A"
-    - entreprise . code NAF = "68.20B"
-    - entreprise . code NAF = "41.10A"
-    - entreprise . code NAF = "41.10B"
-    - entreprise . code NAF = "41.10C"
-    - entreprise . code NAF = "41.10D"
+      - entreprise . code NAF = "68.10Z"
+      - entreprise . code NAF = "68.20A"
+      - entreprise . code NAF = "68.20B"
+      - entreprise . code NAF = "41.10A"
+      - entreprise . code NAF = "41.10B"
+      - entreprise . code NAF = "41.10C"
+      - entreprise . code NAF = "41.10D"
   est secteur agricole hors entreprises forestières:
     une de ces conditions:
-    - entreprise . code NAF = "01.11Z"
-    - entreprise . code NAF = "01.12Z"
-    - entreprise . code NAF = "01.13Z"
-    - entreprise . code NAF = "01.14Z"
-    - entreprise . code NAF = "01.15Z"
-    - entreprise . code NAF = "01.16Z"
-    - entreprise . code NAF = "01.19Z"
-    - entreprise . code NAF = "01.21Z"
-    - entreprise . code NAF = "01.22Z"
-    - entreprise . code NAF = "01.23Z"
-    - entreprise . code NAF = "01.24Z"
-    - entreprise . code NAF = "01.25Z"
-    - entreprise . code NAF = "01.26Z"
-    - entreprise . code NAF = "01.27Z"
-    - entreprise . code NAF = "01.28Z"
-    - entreprise . code NAF = "01.29Z"
-    - entreprise . code NAF = "01.30Z"
-    - entreprise . code NAF = "01.41Z"
-    - entreprise . code NAF = "01.42Z"
-    - entreprise . code NAF = "01.43Z"
-    - entreprise . code NAF = "01.44Z"
-    - entreprise . code NAF = "01.45Z"
-    - entreprise . code NAF = "01.46Z"
-    - entreprise . code NAF = "01.47Z"
-    - entreprise . code NAF = "01.49Z"
-    - entreprise . code NAF = "01.50Z"
-    - entreprise . code NAF = "01.61Z"
-    - entreprise . code NAF = "01.62Z"
-    - entreprise . code NAF = "01.63Z"
-    - entreprise . code NAF = "01.64Z"
-    - entreprise . code NAF = "01.70Z"
-    - entreprise . code NAF = "01.70Z"
-    - entreprise . code NAF = "02.10Z"
-    - entreprise . code NAF = "02.30Z"
+      - entreprise . code NAF = "01.11Z"
+      - entreprise . code NAF = "01.12Z"
+      - entreprise . code NAF = "01.13Z"
+      - entreprise . code NAF = "01.14Z"
+      - entreprise . code NAF = "01.15Z"
+      - entreprise . code NAF = "01.16Z"
+      - entreprise . code NAF = "01.19Z"
+      - entreprise . code NAF = "01.21Z"
+      - entreprise . code NAF = "01.22Z"
+      - entreprise . code NAF = "01.23Z"
+      - entreprise . code NAF = "01.24Z"
+      - entreprise . code NAF = "01.25Z"
+      - entreprise . code NAF = "01.26Z"
+      - entreprise . code NAF = "01.27Z"
+      - entreprise . code NAF = "01.28Z"
+      - entreprise . code NAF = "01.29Z"
+      - entreprise . code NAF = "01.30Z"
+      - entreprise . code NAF = "01.41Z"
+      - entreprise . code NAF = "01.42Z"
+      - entreprise . code NAF = "01.43Z"
+      - entreprise . code NAF = "01.44Z"
+      - entreprise . code NAF = "01.45Z"
+      - entreprise . code NAF = "01.46Z"
+      - entreprise . code NAF = "01.47Z"
+      - entreprise . code NAF = "01.49Z"
+      - entreprise . code NAF = "01.50Z"
+      - entreprise . code NAF = "01.61Z"
+      - entreprise . code NAF = "01.62Z"
+      - entreprise . code NAF = "01.63Z"
+      - entreprise . code NAF = "01.64Z"
+      - entreprise . code NAF = "01.70Z"
+      - entreprise . code NAF = "01.70Z"
+      - entreprise . code NAF = "02.10Z"
+      - entreprise . code NAF = "02.30Z"
   entreprise . a un objectif ciblé:
     une de ces conditions:
-    - questionnaire . objectif prioritaire . est rénover mon bâtiment
-    - questionnaire . objectif prioritaire . est la mobilité durable
-    - questionnaire . objectif prioritaire . est la gestion des déchets
-    - questionnaire . objectif prioritaire . est diminuer ma consommation d'eau
-    - questionnaire . objectif prioritaire . est ma performance énergétique
-    - questionnaire . objectif prioritaire . est former ou recruter
-    - questionnaire . objectif prioritaire . est mon impact environnemental
-    - questionnaire . objectif prioritaire . est l'écoconception
+      - questionnaire . objectif prioritaire . est rénover mon bâtiment
+      - questionnaire . objectif prioritaire . est la mobilité durable
+      - questionnaire . objectif prioritaire . est la gestion des déchets
+      - >-
+        questionnaire . objectif prioritaire . est diminuer ma consommation
+        d'eau
+      - questionnaire . objectif prioritaire . est ma performance énergétique
+      - questionnaire . objectif prioritaire . est former ou recruter
+      - questionnaire . objectif prioritaire . est mon impact environnemental
+      - questionnaire . objectif prioritaire . est l'écoconception

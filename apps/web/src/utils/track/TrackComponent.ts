@@ -25,4 +25,8 @@ export default class TrackComponent {
   static isSimpleButtons(usedTrack: UsedTrack) {
     return usedTrack.component === TrackComponentType.SimpleButtons
   }
+
+  static isThemeInterface(usedTrack: UsedTrack) {
+    return usedTrack.component === TrackComponentType.Themes
+  }
 }

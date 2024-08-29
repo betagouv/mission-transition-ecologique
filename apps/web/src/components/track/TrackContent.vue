@@ -10,18 +10,18 @@
       v-if="track.objective"
       class="fr-col-12 fr-px-0v fr-px-md-4v"
     >
-      <TeeObjectiveCard :objective="track.objective" />
+      <ThemeHeaderCard :objective="track.objective" />
     </div>
 
     <div class="fr-col">
-      <div :class="`fr-px-4v fr-px-md-0v fr-grid-row fr-grid-row--gutters ${track?.bgColor ? 'fr-p-5v fr-p-sm-8v fr-p-md-20v' : ''}`">
+      <div :class="`fr-pl-4v fr-grid-row fr-grid-row--gutters ${track?.bgColor ? 'fr-p-5v fr-p-sm-8v fr-p-md-20v' : ''}`">
         <TrackLabel :track="track" />
         <TrackInfo :track="track" />
         <TrackHint :track="track" />
         <TrackResume :track="track" />
 
         <!-- TRACK Translation {{ renderAs }} / EXCEPT SELECT-->
-        <template v-if="!TrackComponent.isSelect(usedTrack)">
+        <template v-if="!TrackComponent.isSelect(usedTrack) && !TrackComponent.isThemeInterface(usedTrack)">
           <div
             v-for="(option, idx) in trackStore.currentOptions"
             :key="`track-${usedTrack.step}-${usedTrack.id}-option-${idx}`"
@@ -56,7 +56,6 @@
               :option="option"
               @click="updateAndSave(option, idx)"
             />
-
             <TrackSiret
               v-if="TrackComponent.isSiret(usedTrack, option)"
               :option="option as TrackOptionsInput"
@@ -76,7 +75,19 @@
           @update-selection="updateSelection($event.option, $event.index, $event.remove)"
         />
       </div>
-
+      <div
+        v-if="TrackComponent.isThemeInterface(usedTrack)"
+        class="fr-container--fluid"
+      >
+        <ThemeSelect
+          @update-selection="
+            ($event) => {
+              updateSelection($event.option, $event.index, $event.remove)
+              saveSelection()
+            }
+          "
+        />
+      </div>
       <div
         v-if="hasSubmitButton"
         class="fr-grid-row fr-grid-row--gutters fr-pt-8v fr-px-4v fr-px-md-0v"
@@ -85,6 +96,7 @@
         <!-- BTN PREVIOUS -->
         <TrackSubmitButton
           :selected-options="selectedOptions"
+          :show-next-button="!TrackComponent.isThemeInterface(usedTrack)"
           @previous="backToPreviousTrack"
           @next="saveSelection"
         />
@@ -110,9 +122,9 @@ import {
   type UsedTrack
 } from '@/types'
 import { RouteName } from '@/types/routeType'
-import { scrollToTop } from '@/utils/helpers'
 import Matomo from '@/utils/matomo'
 import Navigation from '@/utils/navigation'
+import { Scroll } from '@/utils/scroll'
 import TrackColOption from '@/utils/track/TrackColOption'
 import TrackComponent from '@/utils/track/TrackComponent'
 import { computed, ref } from 'vue'
@@ -213,9 +225,7 @@ const updateAndSave = async (option: TrackOptionsUnion, index: number) => {
 
 const saveSelection = async (needRemove = false) => {
   usedTrackStore.updateCurrent(selectedOptions.value)
-
   const next = usedTrackStore.current?.next
-
   if (!needRemove && next && next.default !== false) {
     if (next.default === TrackId.Results) {
       return await router.push({
@@ -237,7 +247,7 @@ const saveSelection = async (needRemove = false) => {
     usedTrackStore.removeFurtherUsedTracks(usedTrack.id)
   }
 
-  scrollToTop(props.trackElement)
+  Scroll.to(props.trackElement, false)
 }
 
 const backToPreviousTrack = async () => {

@@ -1,8 +1,11 @@
+@use 'sass:meta';
+@use 'sass:map';
 @use 'setting';
 
 .fr-accordion {
   &__btn {
     color: var(--text-title-grey);
+
     &[aria-expanded='true'] {
       background-color: unset;
 
@@ -11,17 +14,17 @@
       }
     }
   }
+
   h3 {
     line-height: 3.75rem;
   }
-
 
   &-bg {
     @each $color, $properties in setting.$colors {
       &--#{$color} {
         .fr-collapse--expanded{
-          @if type-of($properties) == map {
-            background: map-get($properties, "color");
+          @if meta.type-of($properties) == map {
+            background: map.get($properties, "color");
           } @else {
             background: $properties;
           }

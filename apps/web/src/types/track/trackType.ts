@@ -6,7 +6,7 @@ import {
   PropertyPath,
   TrackId,
   QuestionnaireData,
-  PublicodeObjective
+  Objective
 } from '@/types'
 import { ConditionOperators } from '@/types/conditionOperators'
 
@@ -46,6 +46,7 @@ export interface TrackCallout {
 
 export enum TrackComponent {
   Cards = 'cards',
+  Themes = 'themes',
   Buttons = 'buttons',
   SimpleButtons = 'simpleButtons',
   Form = 'form',
@@ -114,6 +115,7 @@ export interface TrackOptions {
   required?: boolean
   title?: Translations
   label?: Translations
+  shortLabel?: Translations
   hintLabel?: Translations
   resume?: Translations
   hint?: Translations
@@ -181,7 +183,7 @@ export interface Track {
   hint?: Translations
   resume?: Translations
   callout?: TrackCallout
-  objective?: PublicodeObjective
+  objective?: Objective
   interface?: TrackInterface
   behavior?: TrackBehavior
   config?: TrackResultsConfig

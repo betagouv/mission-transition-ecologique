@@ -1,0 +1,70 @@
+titre: Initiation éco-conception
+promesse: Sensibilisez vos équipes à une démarche d'éco-conception
+description: >-
+  Vous souhaitez faire connaître la notion d’éco-conception? au sein de votre
+  entreprise et impulser l'envie collective d’améliorer la performance
+  environnementale de vos produits et services ? Votre CCI vous accompagne dans
+  cette démarche.
+description longue: >-
+  L’éco-conception vise à prendre en compte et réduire les impacts
+  environnementaux dans toutes les étapes du cycle de vie d’un produit ou
+  service : extraction de matières premières, fabrication, transport, usage,
+  traitement en fin de vie, etc.
+
+  L’éco-conception s’applique aux produits matériels mais également aux
+  services.
+illustration: images/TEE_ampoule.png
+opérateur de contact: CCI
+url: >-
+  https://www.bretagne.cci.fr/developpement-durable/initier-une-demarche-deco-conception/bretagne
+nature de l'aide: étude
+coût de l'accompagnement: Selon le nombre de participants
+durée de l'accompagnement: De 1 à 3 jours de prestation répartis sur 1 à 3 mois
+objectifs:
+  - description: >-
+      Appréhender les principes de l’éco-conception et l’Analyse du Cycle de Vie
+      d’un produit ou d’un service.
+  - description: >-
+      Identifier votre maturité en matière d'écoconception et les impacts de
+      votre entreprise.
+  - description: >-
+      Sensibiliser les collaborateurs aux enjeux d'intégrer cette démarche pour
+      réduire l’impact d’un service ou d’un produit tout en conservant ses
+      qualités, sa fonctionnalité et ses performances.
+  - description: >-
+      Mettre en place une première démarche d’écoconception à travers un plan
+      d’action.
+  - description: Identifier les dispositifs d’accompagnement et financiers mobilisables?.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Non éligible aux micro-entreprises
+  secteur géographique:
+    - Bretagne
+  secteur d'activité:
+    - Tous secteurs d’activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est l'écoconception
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Bretagne

@@ -1,14 +1,14 @@
 import { Result } from 'true-myth'
-import type { CityToRegionMappingType, EstablishmentRepository, NafMappingType } from './spi'
+import type { CityToRegionMapping, EstablishmentRepository, NafMapping } from './spi'
 import { Establishment, EstablishmentDetails, SearchResult, Siret } from './types'
 import { EstablishmentFront, EstablishmentSearch, SiretValidator } from '@tee/common'
 
 export default class EstablishmentFeatures {
   private readonly _establishmentRepository: EstablishmentRepository
-  private readonly _cityToRegionMapping: CityToRegionMappingType
-  private readonly _nafMapping: NafMappingType
+  private readonly _cityToRegionMapping: CityToRegionMapping
+  private readonly _nafMapping: NafMapping
 
-  constructor(establishmentRepository: EstablishmentRepository, cityToRegionMapping: CityToRegionMappingType, nafMapping: NafMappingType) {
+  constructor(establishmentRepository: EstablishmentRepository, cityToRegionMapping: CityToRegionMapping, nafMapping: NafMapping) {
     this._establishmentRepository = establishmentRepository
     this._cityToRegionMapping = cityToRegionMapping
     this._nafMapping = nafMapping

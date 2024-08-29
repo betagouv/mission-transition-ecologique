@@ -1,10 +1,10 @@
 import EstablishmentFeatures from '../domain/establishmentFeatures'
 import { getEstablishment } from '../infrastructure/api/sirene/sirene'
-import { CityToRegionMappingType, EstablishmentRepository, NafMappingType } from '../domain/spi'
+import { CityToRegionMapping, EstablishmentRepository, NafMapping } from '../domain/spi'
 import type { Establishment, Siret } from '../domain/types'
 import { Result } from 'true-myth'
-import { CityToRegionMapping } from '../infrastructure/json/cityToRegionMapping'
-import { NafMapping } from '../infrastructure/json/nafMapping'
+import { COG2023Mapping } from '../infrastructure/json/cityToRegionMapping'
+import { NAF_JSONMapping } from '../infrastructure/json/nafMapping'
 import { RechercheEntreprise } from '../infrastructure/api/recherche-entreprise/recherche-entreprise'
 import { EstablishmentSearch } from '@tee/common'
 
@@ -32,11 +32,11 @@ export default class EstablishmentService {
     return { get: getEstablishment, search: rechercheEntreprise.searchEstablishment }
   }
 
-  private _getCityToRegionMapping(): CityToRegionMappingType {
-    return new CityToRegionMapping()
+  private _getCityToRegionMapping(): CityToRegionMapping {
+    return new COG2023Mapping()
   }
 
-  private _getNafMapping(): NafMappingType {
-    return new NafMapping()
+  private _getNafMapping(): NafMapping {
+    return new NAF_JSONMapping()
   }
 }

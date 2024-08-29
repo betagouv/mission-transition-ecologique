@@ -8,7 +8,7 @@
 
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
-import { DsfrCheckboxSetProps } from '@gouvminint/vue-dsfr/types/components/DsfrCheckbox/DsfrCheckbox.types'
+import { DsfrCheckboxSetProps } from '@gouvminint/vue-dsfr'
 import { ProgramOperatorType, type programFiltersType } from '@/types'
 
 const programFilters: programFiltersType = useProgramStore().programFilters
