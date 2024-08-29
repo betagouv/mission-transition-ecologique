@@ -46,7 +46,8 @@ export default class Matomo {
     return `
       var _paq = window._paq = window._paq || [];
       /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-
+      // makes matomo cookieless
+      _paq.push(['disableCookies']);
       // CNIL - code to paste before _paq.push(["trackPageView"]);
       _paq.push([function() {
         var self = this;
