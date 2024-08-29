@@ -4,6 +4,10 @@
     class="fr-container fr-my-8w"
   >
     <div class="fr-grid-row--gutters">
+      <TeeDsfrBreadcrumb
+        :links="[{ text: 'Données personnelles', to: '/donnees-personnelles' }]"
+        class="fr-p-0"
+      />
       <div class="fr-grid-col">
         <h1>Données personnelles (et gestion des cookies)</h1>
         <p>

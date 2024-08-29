@@ -4,6 +4,10 @@
     class="fr-container fr-my-8w"
   >
     <div class="fr-grid-row--gutters">
+      <TeeDsfrBreadcrumb
+        :links="[{ text: 'Mentions légales', to: '/mentions-legales' }]"
+        class="fr-p-0"
+      />
       <div class="fr-grid-col">
         <h1>Mentions légales</h1>
         <p>Mis à jour le 17 juin 2024</p>

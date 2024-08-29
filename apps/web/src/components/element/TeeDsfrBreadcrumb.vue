@@ -25,10 +25,20 @@ const isCatalogDetail = navigationStore.isCatalogDetail()
 
 const isProgramCatalog = navigationStore.isCatalogPrograms()
 const isProjectCatalog = navigationStore.isCatalogProjects()
-const isCatalog = navigationStore.isCatalog()
 
-const isStatPage = navigationStore.isByRouteName(RouteName.Statistiques)
-
+const isInfoPage = navigationStore.isByRouteName([
+  RouteName.Legal,
+  RouteName.PersonalData,
+  RouteName.Legal,
+  RouteName.Accessibility,
+  RouteName.Statistiques
+])
+const isQuestionnaire = navigationStore.isByRouteName([
+  RouteName.QuestionnaireResult,
+  RouteName.QuestionnaireResultDetail,
+  RouteName.ProgramFromProjectDetail,
+  RouteName.ProjectResultDetail
+])
 const getListText = () => {
   if (isProgramCatalogDetail || isProgramCatalog) {
     return 'Liste des dispositifs'
@@ -55,10 +65,10 @@ const routeToBaseList: RouteLocationRaw = {
 
 const allBreadcrumbs = computed(() => {
   let baseLinks: { text: string; to: RouteLocationRaw | string }[] = [{ text: 'Accueil', to: '/' }]
-  if (!isStatPage) {
+  if (!isInfoPage) {
     baseLinks.push({ text: getListText(), to: routeToBaseList })
   }
-  if (!isCatalogDetail && !isCatalog && !isStatPage) {
+  if (isQuestionnaire) {
     const trackId = usedTrackStore.getPreviousCompletedUsedTrackId()
     if (trackId) {
       baseLinks = baseLinks.toSpliced(1, 0, {
@@ -71,8 +81,6 @@ const allBreadcrumbs = computed(() => {
         to: '/questionnaire'
       })
     }
-  } else if (isStatPage) {
-    baseLinks.push({ text: 'Statistiques', to: '/stats' })
   }
   if (props.links) {
     return [...baseLinks, ...props.links]

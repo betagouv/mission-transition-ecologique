@@ -135,7 +135,7 @@ export const routes = [
   },
   {
     path: '/accessibilite',
-    name: 'accessibility',
+    name: RouteName.Accessibility,
     component: TeeAccessibilityPage as Component
   },
   {

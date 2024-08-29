@@ -14,5 +14,6 @@ export enum RouteName {
   QuestionnaireResultDetail = 'questionnaire-result-detail',
   ProgramFromProjectDetail = 'program-from-project-detail',
   ProjectResultDetail = 'questionnaire-project-result-detail',
-  Statistiques = 'statistics'
+  Statistiques = 'statistics',
+  Accessibility = 'accessibility'
 }
