@@ -132,7 +132,6 @@ const financePrograms = computed(() => {
       program["nature de l'aide"] === ProgramAidType.tax
   )
 })
-console.log(filteredPrograms)
 
 onBeforeMount(async () => {
   navigationStore.hasSpinner = true
