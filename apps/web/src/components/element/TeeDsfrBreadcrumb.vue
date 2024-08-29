@@ -11,20 +11,23 @@ import type { DsfrBreadcrumbProps } from '@gouvminint/vue-dsfr'
 import { useNavigationStore } from '@/stores/navigation'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { RouteName } from '@/types/routeType'
-import { type RouteLocationAsRelativeGeneric } from 'vue-router'
+import { type RouteLocationRaw } from 'vue-router'
 interface Props {
   links?: DsfrBreadcrumbProps['links']
 }
 const props = defineProps<Props>()
 const navigationStore = useNavigationStore()
 const usedTrackStore = useUsedTrackStore()
-const isProgramCatalogDetail = navigationStore.isByRouteName(RouteName.CatalogProgramDetail)
-const isProjectCatalogDetail = navigationStore.isByRouteName(RouteName.CatalogProjectDetail)
-const isCatalogDetail = isProgramCatalogDetail || isProjectCatalogDetail
+
+const isProgramCatalogDetail = navigationStore.isCatalogProgramDetail()
+const isProjectCatalogDetail = navigationStore.isCatalogProjectDetail()
+const isCatalogDetail = navigationStore.isCatalogDetail()
 
 const isProgramCatalog = navigationStore.isCatalogPrograms()
 const isProjectCatalog = navigationStore.isCatalogProjects()
-const isCatalog = isProgramCatalog || isProjectCatalog
+const isCatalog = navigationStore.isCatalog()
+
+const isStatPage = navigationStore.isByRouteName(RouteName.Statistiques)
 
 const getListText = () => {
   if (isProgramCatalogDetail || isProgramCatalog) {
@@ -45,17 +48,17 @@ const getBaseRouteName = () => {
   }
 }
 
-const routeToBaseList: RouteLocationAsRelativeGeneric = {
+const routeToBaseList: RouteLocationRaw = {
   name: getBaseRouteName(),
   query: isCatalogDetail ? undefined : navigationStore.query
 }
 
-const allBreadcrumbs = computed<DsfrBreadcrumbProps['links']>(() => {
-  let baseLinks = [
-    { text: 'Accueil', to: '/' },
-    { text: getListText(), to: routeToBaseList }
-  ]
-  if (!isCatalogDetail && !isCatalog) {
+const allBreadcrumbs = computed(() => {
+  let baseLinks: { text: string; to: RouteLocationRaw | string }[] = [{ text: 'Accueil', to: '/' }]
+  if (!isStatPage) {
+    baseLinks.push({ text: getListText(), to: routeToBaseList })
+  }
+  if (!isCatalogDetail && !isCatalog && !isStatPage) {
     const trackId = usedTrackStore.getPreviousCompletedUsedTrackId()
     if (trackId) {
       baseLinks = baseLinks.toSpliced(1, 0, {
@@ -68,6 +71,8 @@ const allBreadcrumbs = computed<DsfrBreadcrumbProps['links']>(() => {
         to: '/questionnaire'
       })
     }
+  } else if (isStatPage) {
+    baseLinks.push({ text: 'Statistiques', to: '/stats' })
   }
   if (props.links) {
     return [...baseLinks, ...props.links]

@@ -16,7 +16,7 @@ import { useUsedTrackStore } from '@/stores/usedTrack'
 import type { TrackOptionItem } from '@/types'
 import { computed } from 'vue'
 import { Theme } from '@/utils/theme'
-import { ProgramData, Color, Objective, TrackId } from '@/types'
+import { ProgramData, Color, Objective } from '@/types'
 import { Project } from '@tee/data'
 import { useProjectStore } from '@/stores/project'
 import { useProgramStore } from '@/stores/program'
@@ -86,20 +86,15 @@ const selectOption = (opt: string | undefined) => {
 const hasError = ref<boolean>(false)
 
 onBeforeMount(async () => {
-  const selectedOptionValue = useNavigationStore().query[TrackId.Goals]
-  if (selectedOptionValue) {
-    selectOption(selectedOptionValue as string)
+  useNavigationStore().hasSpinner = true
+  const projectResult = await projectStore.projects
+  const programResult = await programStore.programsByUsedTracks
+  if (programResult.isOk && projectResult.isOk) {
+    projects.value = projectResult.value
+    programs.value = programResult.value
   } else {
-    useNavigationStore().hasSpinner = true
-    const projectResult = await projectStore.projects
-    const programResult = await programStore.programsByUsedTracks
-    if (programResult.isOk && projectResult.isOk) {
-      projects.value = projectResult.value
-      programs.value = programResult.value
-    } else {
-      hasError.value = true
-    }
-    useNavigationStore().hasSpinner = false
+    hasError.value = true
   }
+  useNavigationStore().hasSpinner = false
 })
 </script>

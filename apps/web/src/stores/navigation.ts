@@ -87,8 +87,16 @@ export const useNavigationStore = defineStore('navigation', () => {
     return isByRouteName(RouteName.CatalogProjectDetail)
   }
 
+  function isCatalogProgramDetail() {
+    return isByRouteName(RouteName.CatalogProgramDetail)
+  }
+
   function isCatalog() {
     return isByRouteName([RouteName.CatalogPrograms, RouteName.CatalogProjects])
+  }
+
+  function isCatalogDetail() {
+    return isByRouteName([RouteName.CatalogProgramDetail, RouteName.CatalogProjectDetail])
   }
 
   function isByRouteName(routeName: string | string[]) {
@@ -170,7 +178,9 @@ export const useNavigationStore = defineStore('navigation', () => {
     isCatalogPrograms,
     isCatalogProjects,
     isCatalogProjectDetail,
+    isCatalogProgramDetail,
     isCatalog,
+    isCatalogDetail,
     isByRouteName,
     resetSearchParams,
     setRouter,
