@@ -311,7 +311,7 @@ const opportunityForm = ref<OpportunityFormType>({
     required: true,
     isValid: undefined,
     value: Translation.t('program.form.needs', {
-      secteur: TrackStructure.getSector(),
+      secteur: TrackStructure.getSectorShortLabel(),
       titreAide: props.program.titre
     }),
     label: 'Quel est votre besoin ?',
