@@ -25,15 +25,12 @@
         </div>
         <ThemeHeaderCard
           v-if="hasThemeCard"
-          class="fr-col-12 fr-mt-3v"
+          class="fr-col-12"
           :objective="objective as Objective"
           radius-corner="tr"
           radius-size="2-5v"
         />
         <div v-if="hasFilteredProjects">
-          <div class="fr-col-12 fr-mt-3v">
-            <h2 class="fr-text--bold fr-mb-0">Quel est votre projet ?</h2>
-          </div>
           <div class="fr-col-12 fr-text--blue-france tee-font-style--italic fr-mt-3v">
             <TeeCounterResult :to-count="filteredProjects" />
           </div>
