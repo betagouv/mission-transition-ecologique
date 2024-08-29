@@ -14,11 +14,12 @@ import { unheadVueComposablesImports } from '@unhead/vue'
 
 dotenv.config()
 
-console.log('Starting ...')
-console.log('vite.config ...')
+console.log('==== Vite Starting ... ====')
+console.log('- vite.config ...')
 const mode = process.env.NODE_ENV ?? 'development'
-const isReviewApp = process.env.IS_REVIEW_APP === 'true'
 const stack: string = process.env.STACK ?? ''
+const isReviewApp = process.env.IS_REVIEW_APP === 'true'
+
 const isProd = mode === 'production'
 const isScalingo = stack.includes('scalingo')
 
@@ -73,7 +74,7 @@ const plugins = async () => {
 
   ]
   if (hasSentryVitePlugin()) {
-    console.log('Adding sentry vite plugin for sourcemaps upload')
+    console.log('- Add sentry vite plugin for sourcemaps upload')
     const sentryData = getSentryData()
     const token = process.env.SENTRY_AUTH_TOKEN
 
