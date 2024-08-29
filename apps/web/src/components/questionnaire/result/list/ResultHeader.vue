@@ -9,18 +9,8 @@
     >
       <p
         class="fr-mb-0"
-<<<<<<<< HEAD:apps/web/src/components/program/list/ProgramListHeaderResult.vue
-        style="color: #000091"
-      >
-        🎉 Félicitations, vous avez terminé !
-      </p>
-    </div>
-    <div class="fr-mt-5v fr-col-12 fr-px-2v fr-px-md-0">
-      <p v-html="resume" />
-========
         v-html="resume"
       ></p>
->>>>>>>> main:apps/web/src/components/questionnaire/result/list/ResultHeader.vue
     </div>
   </div>
 </template>

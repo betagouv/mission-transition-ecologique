@@ -1,9 +1,4 @@
-<<<<<<<< HEAD:libs/common/src/program/program.ts
-import { ProgramAidType } from './types'
-import { ProgramType } from '@tee/data'
-========
 import { ProgramAidType } from './types/shared'
->>>>>>>> main:libs/data/src/program/program.ts
 
 export class Program {
   public static getPrefixedProgramName(program: ProgramType) {

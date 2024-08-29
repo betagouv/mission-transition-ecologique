@@ -12,12 +12,8 @@
 <script setup lang="ts">
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
-<<<<<<<< HEAD:apps/web/src/components/program/list/filters/ProgramFilterByTheme.vue
-import { ThemeType as ThemeType, type programFiltersType } from '@/types'
-========
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { ThemeType, type programFiltersType, Objective, TrackId } from '@/types'
->>>>>>>> main:apps/web/src/components/theme/ThemeFilter.vue
 import { Theme } from '@/utils/theme'
 import { TeeDsfrTagProps } from '@/components/element/tag/TeeDsfrTag.vue'
 import UsedTrack from '@/utils/track/usedTrack'
