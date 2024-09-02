@@ -3,7 +3,7 @@ import { NafMapping } from '../../src/establishment/domain/spi'
 import EstablishmentFeatures from '../../src/establishment/domain/establishmentFeatures'
 import { expectToBeOk } from '../testing'
 import { dummyEstablishmentRepository, nothingNafMapping, nothingRegionMapping } from './testing'
-import { COG2023Mapping } from '../../src/establishment/infrastructure/json/cityToRegionMapping'
+import { CityToRegionMapping } from '../../src/establishment/infrastructure/json/cityToRegionMapping'
 
 const DUMMY_SIRET = '00000000000000'
 
@@ -38,7 +38,7 @@ WHEN   fetching establishment data with 'getBySiret'
 EXPECT the result to have region data provided by the RegionMapping
 `, () => {
   const DUMMY_REGION = 'Pays de la Loire'
-  const dummyRegionMapping: COG2023Mapping = {
+  const dummyRegionMapping: CityToRegionMapping = {
     getRegion: () => Maybe.of(DUMMY_REGION)
   }
 
