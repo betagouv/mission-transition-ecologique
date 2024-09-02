@@ -268,7 +268,6 @@ import { Scroll } from '@/utils/scroll'
 import TrackStructure from '@/utils/track/trackStructure'
 import Translation from '@/utils/translation'
 import { DsfrCheckbox, DsfrInput, DsfrInputGroup } from '@gouvminint/vue-dsfr'
-import { computed, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import Contact from '@/utils/contact'
 
