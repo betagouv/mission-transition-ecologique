@@ -38,7 +38,7 @@
 <script setup lang="ts">
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
-import { ProgramData, Objective, TrackId, Project } from '@/types'
+import { ProgramType, Objective, TrackId, Project } from '@/types'
 import { computed, onBeforeMount } from 'vue'
 import Matomo from '@/utils/matomo'
 import { useProjectStore } from '@/stores/project'
@@ -50,7 +50,7 @@ const programStore = useProgramStore()
 const projectStore = useProjectStore()
 const { ascendant, selected } = useTabs(true, navigationStore.tabSelectedOnList)
 
-const programs = ref<ProgramData[]>()
+const programs = ref<ProgramType[]>()
 const projects = ref<Project[]>()
 const hasError = ref<boolean>(false)
 

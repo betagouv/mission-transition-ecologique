@@ -1,12 +1,12 @@
-import type { ProgramData as ProgramType } from '@/types'
+import type { ProgramType } from '@/types'
 
 export default class Program {
   static getEndDate(program: ProgramType | undefined): Date | undefined {
-    if (program === undefined || program['fin de validité'] === undefined) {
+    if (program === undefined || !program['fin de validité']) {
       return undefined
     }
 
-    const dateArr: string[] = program['fin de validité'].split('/')
+    const dateArr: string[] = (program['fin de validité'] as string).split('/')
     return new Date(`${dateArr[2]}/${dateArr[1]}/${dateArr[0]}`)
   }
 

@@ -27,12 +27,12 @@
 <script setup lang="ts">
 import ProgramCard from '@/components/program/list/ProgramCard.vue'
 import { useNavigationStore } from '@/stores/navigation'
-import { type ProgramData } from '@/types'
+import { type ProgramType } from '@/types'
 import { RouteName } from '@/types/routeType'
 import { type RouteLocationRaw } from 'vue-router'
 
 interface Props {
-  filteredPrograms?: ProgramData[]
+  filteredPrograms?: ProgramType[]
 }
 defineProps<Props>()
 

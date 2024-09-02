@@ -3,24 +3,24 @@ import {
   ProgramAidType,
   Region,
   ProgramOperatorType,
-  type ProgramData,
   type programFiltersType,
   PublicodesCondition,
   type ValueOf,
-  Objective
+  Objective,
+  ProgramType
 } from '@/types'
 import { Theme } from '@/utils/theme'
 
 export default class ProgramFilter {
-  static byAidType(program: ProgramData, programAidTypesSelected: ProgramAidType[]) {
+  static byAidType(program: ProgramType, programAidTypesSelected: ProgramAidType[]) {
     if (!this.isValidFilterValues(programAidTypesSelected)) {
       return true
     }
 
-    return programAidTypesSelected.includes(program["nature de l'aide"])
+    return programAidTypesSelected.includes(program["nature de l'aide"] as ProgramAidType)
   }
 
-  static byRegion(program: ProgramData, regionsSelected: Region[]) {
+  static byRegion(program: ProgramType, regionsSelected: Region[]) {
     if (!this.isValidFilterValues(regionsSelected)) {
       return true
     }
@@ -36,7 +36,7 @@ export default class ProgramFilter {
     return matchingRegions.length > 0
   }
 
-  static byOperator(program: ProgramData, programOperatorsSelected: ProgramOperatorType[]) {
+  static byOperator(program: ProgramType, programOperatorsSelected: ProgramOperatorType[]) {
     if (!this.isValidFilterValues(programOperatorsSelected)) {
       return true
     }
@@ -47,7 +47,7 @@ export default class ProgramFilter {
     return matchingOperators.length > 0
   }
 
-  static byObjective(program: ProgramData, objectiveTypeSelected: Objective) {
+  static byObjective(program: ProgramType, objectiveTypeSelected: Objective) {
     if (!this.isValidFilterValue(objectiveTypeSelected)) {
       return true
     }
@@ -55,7 +55,7 @@ export default class ProgramFilter {
     const publicodeObjective = Theme.getPublicodeObjectiveByObjective(objectiveTypeSelected)
 
     if (program.publicodes[PublicodesKeys.hasObjective] && publicodeObjective) {
-      return program.publicodes[PublicodesKeys.hasObjective][PublicodesCondition.oneOfThese].includes(publicodeObjective)
+      return program.publicodes[PublicodesKeys.hasObjective][PublicodesCondition.oneOfThese]?.includes(publicodeObjective)
     }
 
     return true

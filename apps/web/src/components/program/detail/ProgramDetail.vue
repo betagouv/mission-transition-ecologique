@@ -148,7 +148,7 @@
               class="tee-no-hover"
               :title="Translation.t('program.programDuration')"
               :image-path="`${publicPath}images/TEE-duree.svg`"
-              :description="programDuration"
+              :description="`${programDuration}`"
             />
           </div>
           <div
@@ -159,7 +159,7 @@
               class="tee-no-hover"
               :title="Translation.t('program.programLoanDuration')"
               :image-path="`${publicPath}images/TEE-duree.svg`"
-              :description="programLoanDuration"
+              :description="`${programLoanDuration}`"
             />
           </div>
 
@@ -182,7 +182,9 @@
               :image-path="`${publicPath}images/TEE-date-fin.svg`"
               :description="
                 programEndValidity
-                  ? Translation.t(Translation.t('program.programAvailableUntil'), { date: programEndValidity })
+                  ? Translation.t(Translation.t('program.programAvailableUntil'), {
+                      date: programEndValidity as string | number | undefined
+                    })
                   : Translation.t('program.programAvailable')
               "
             />
@@ -234,7 +236,7 @@ import ProgramObjective from '@/components/program/detail/ProgramObjective.vue'
 import ProgramTile from '@/components/program/detail/ProgramTile.vue'
 import Config from '@/config'
 import { useProgramStore } from '@/stores/program'
-import { type ProgramData as ProgramType } from '@/types'
+import { type ProgramType } from '@/types'
 import { RouteName } from '@/types/routeType'
 import { useNavigationStore } from '@/stores/navigation'
 import Matomo from '@/utils/matomo'
@@ -269,7 +271,7 @@ const programLoanDuration = computed(() => program.value?.[`durée du prêt`])
 const programProvider = computed(() => program.value?.['opérateur de contact'])
 const programEndValidity = computed(() => program.value?.[`fin de validité`])
 const programPageTitle = computed(() => `Transition écologique des TPE & PME - ${program.value?.[`titre`]}`)
-const programPageMeta = computed(() => program.value?.[`description`] || ' ')
+const programPageMeta = computed(() => (program.value?.[`description`] || ' ') as string)
 
 const columnTiles = computed(() => {
   const infoBlocks = [

@@ -252,7 +252,7 @@
 import { Scroll } from '@/utils/scroll'
 import TrackStructure from '@/utils/track/trackStructure'
 import { computed, ref } from 'vue'
-import { InputFieldUnionType, isValidatedStringFieldInputType, type ProgramData, type ReqResp, TrackId } from '@/types'
+import { InputFieldUnionType, isValidatedStringFieldInputType, type ProgramType, type ReqResp, TrackId } from '@/types'
 import Translation from '@/utils/translation'
 import TeeDsfrButton from '@/components/element/button/TeeDsfrButton.vue'
 import { DsfrInput, DsfrInputGroup, DsfrCheckbox } from '@gouvminint/vue-dsfr'
@@ -271,7 +271,7 @@ const route = useRoute()
 const publicPath = Config.publicPath !== 'undefined/' ? Config.publicPath : '../../public/'
 
 interface Props {
-  program: ProgramData
+  program: ProgramType
   formContainerRef: HTMLElement | null | undefined
 }
 

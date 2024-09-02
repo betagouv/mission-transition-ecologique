@@ -3,7 +3,7 @@ import ProjectFilter from '@/utils/project/projectFilter'
 import { defineStore } from 'pinia'
 import { Result } from 'true-myth'
 import { computed, ref } from 'vue'
-import { ProgramData, Project, Objective } from '@/types'
+import { ProgramType, Project, Objective } from '@/types'
 import { Theme } from '@/utils/theme'
 
 export const useProjectStore = defineStore('project', () => {
@@ -26,7 +26,7 @@ export const useProjectStore = defineStore('project', () => {
   function getProjectsByObjectiveAndEligibility(
     projects: Project[],
     objectiveType?: Objective,
-    filteredPrograms?: ProgramData[]
+    filteredPrograms?: ProgramType[]
   ): Project[] {
     return projects.filter((project: Project) => {
       const hasTheme = objectiveType

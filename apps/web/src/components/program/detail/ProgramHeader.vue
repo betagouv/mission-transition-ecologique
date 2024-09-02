@@ -39,7 +39,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { Color, Project, type ProgramData as ProgramType } from '@/types'
+import { Color, Project, type ProgramType } from '@/types'
 import { RouteName } from '@/types/routeType'
 import Contact from '@/utils/contact'
 import { useNavigationStore } from '@/stores/navigation'
@@ -73,7 +73,7 @@ const links = computed<DsfrBreadcrumbProps['links']>(() => {
   if (navigationStore.isByRouteName(RouteName.ProgramFromProjectDetail)) {
     links.push({ text: project.value?.title || '', to: routeToProject })
   }
-  return [...links, { text: props.program?.titre || '' }]
+  return [...links, { text: (props.program?.titre as string) || '' }]
 })
 
 const goToPrograms = () => {
