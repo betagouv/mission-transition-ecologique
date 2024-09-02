@@ -1,5 +1,5 @@
 import { Maybe } from 'true-myth'
-import { NafMapping } from '../../src/establishment/domain/spi'
+import { NafMappingType } from '../../src/establishment/domain/spi'
 import EstablishmentFeatures from '../../src/establishment/domain/establishmentFeatures'
 import { expectToBeOk } from '../testing'
 import { dummyEstablishmentRepository, nothingNafMapping, nothingRegionMapping } from './testing'
@@ -15,7 +15,7 @@ EXPECT the result to have Naf label information derived from the provided NafMap
   const DUMMY_SECTION_CODE = 'J'
   const DUMMY_NAF_LABEL = 'Programmation, conseil et autres activités informatiques'
 
-  const dummyNafMapping: NafMapping = {
+  const dummyNafMapping: NafMappingType = {
     getLabel: () => Maybe.of(DUMMY_NAF_LABEL),
     getSectionCode: () => Maybe.of(DUMMY_SECTION_CODE)
   }
