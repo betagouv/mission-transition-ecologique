@@ -19,3 +19,21 @@ export enum ProgramOperatorType {
   BREIZHFAB = 'Breizh Fab',
   ECOCO2 = 'EcoCO2'
 }
+
+import { Dispositif as ProgramWithoutId } from '../../generated/program'
+
+export interface ProgramTypeTest extends Omit<ProgramWithoutId, 'objectifs'> {
+  id: string
+  "nature de l'aide": ProgramAidType
+  objectifs: ProgramObjective[]
+}
+
+interface ProgramObjectiveLink {
+  lien: string
+  texte: string
+}
+
+interface ProgramObjective {
+  description: string
+  liens: ProgramObjectiveLink[]
+}
