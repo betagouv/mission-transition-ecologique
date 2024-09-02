@@ -1,8 +1,8 @@
 <template>
+  <TeeDsfrConsent />
   <div>
     <TeeHeader />
     <TeeMatomo />
-
     <router-view v-if="isReady" />
     <template v-else>
       <div class="fr-grid-row--center fr-my-10v">

@@ -144,7 +144,7 @@ function buildHeaders() {
       "default-src 'none';" +
       "base-uri 'self';" +
       "form-action 'self';" +
-      "script-src-elem 'self' 'unsafe-inline' https://stats.beta.gouv.fr https://eu.i.posthog.com https://embed.typeform.com;" +
+      "script-src-elem 'self' 'unsafe-inline' https://stats.beta.gouv.fr https://eu.i.posthog.com https://eu-assets.i.posthog.com https://embed.typeform.com;" +
       "style-src 'self' 'unsafe-inline' https://embed.typeform.com;" +
       "font-src 'self' data:;" +
       "img-src 'self' data:;" +
