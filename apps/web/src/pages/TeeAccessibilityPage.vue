@@ -1,13 +1,10 @@
 <template>
+  <TeeDsfrBreadcrumb :links="[{ text: 'Accessibilité', to: RouteName.Accessibility }]" />
   <div
     id="simple-page"
     class="fr-container fr-my-8w"
   >
-    <div class="fr-grid-row--gutters">
-      <TeeDsfrBreadcrumb
-        class="fr-p-0"
-        :links="[{ text: 'Accessibilité', to: RouteName.Accessibility }]"
-      />
+    <div class="fr-grid-row">
       <div class="fr-grid-col">
         <h1>Politique d’accessibilité - RGAA</h1>
         <p>

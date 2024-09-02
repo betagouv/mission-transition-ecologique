@@ -1,13 +1,10 @@
 <template>
+  <TeeDsfrBreadcrumb :links="[{ text: 'Données personnelles', to: RouteName.PersonalData }]" />
   <div
     id="simple-page"
     class="fr-container fr-my-8w"
   >
-    <div class="fr-grid-row--gutters">
-      <TeeDsfrBreadcrumb
-        :links="[{ text: 'Données personnelles', to: RouteName.PersonalData }]"
-        class="fr-p-0"
-      />
+    <div class="fr-grid-row">
       <div class="fr-grid-col">
         <h1>Données personnelles (et gestion des cookies)</h1>
         <p>
