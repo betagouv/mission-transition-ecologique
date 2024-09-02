@@ -62,14 +62,4 @@ onBeforeMount(async () => {
     theme.value = Theme.getById(project.value?.mainTheme)
   }
 })
-
-onBeforeUpdate(async () => {
-  if (project.value?.slug !== projectStore.currentProject?.slug) {
-    await projectStore.getProjectBySlug(props.projectSlug)
-    project.value = projectStore.currentProject
-    if (project.value) {
-      theme.value = Theme.getById(project.value?.mainTheme)
-    }
-  }
-})
 </script>

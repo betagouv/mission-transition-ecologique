@@ -2,6 +2,7 @@
   <RouterLink
     class="fr-btn fr-btn--tertiary-no-outline fr-btn-bg"
     :class="[icon, classes]"
+    :target="target"
     :to="props.to"
   >
     <slot />
@@ -15,6 +16,7 @@ interface Props {
   to: RouteLocationRaw
   icon?: string
   iconOnly?: boolean
+  target?: string
   iconRight?: boolean
   size?: 'sm' | 'md' | 'lg'
   secondary?: boolean
@@ -23,6 +25,7 @@ const props = withDefaults(defineProps<Props>(), {
   iconOnly: false,
   iconRight: false,
   icon: undefined,
+  target: '',
   size: 'md',
   secondary: false
 })

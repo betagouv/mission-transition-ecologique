@@ -7,6 +7,7 @@
       >
         <TeeProjectButton
           :project="linkedProject"
+          target="_blank"
           class="fr-my-1-5v fr-mx-2v"
         />
       </template>

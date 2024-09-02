@@ -3,6 +3,7 @@
     :id="project.slug"
     :to="getRouteToProjectDetail()"
     :size="size"
+    :target="target"
     class="fr-radius-a--2v"
     :class="`fr-btn--secondary--${color}`"
   >
@@ -18,24 +19,20 @@ import { Color, Project } from '@/types'
 interface Props {
   project: Project
   color?: Color
+  target?: string
   size?: 'sm' | 'md' | 'lg'
 }
 const props = withDefaults(defineProps<Props>(), {
   color: Color.green,
-  size: 'md'
+  size: 'md',
+  target: ''
 })
 
 const navigationStore = useNavigationStore()
 
 const getRouteName = () => {
-  if (navigationStore.isCatalogProgramDetail()) {
-    return RouteName.CatalogProjectFromProgramDetail
-  }
-  if (navigationStore.isCatalogProjectDetail() || navigationStore.isByRouteName(RouteName.CatalogProjectFromProgramDetail)) {
+  if (navigationStore.isCatalogProjectDetail() || navigationStore.isCatalogProgramDetail()) {
     return RouteName.CatalogProjectDetail
-  }
-  if (navigationStore.isByRouteName(RouteName.QuestionnaireResultDetail)) {
-    return RouteName.ProjectFromProgramDetail
   }
   return RouteName.ProjectResultDetail
 }
@@ -44,12 +41,7 @@ const getRouteToProjectDetail = (): RouteLocationRaw => {
   return {
     name: getRouteName(),
     params: { projectSlug: slug },
-    query:
-      navigationStore.isCatalogProgramDetail() ||
-      navigationStore.isCatalogProjectDetail() ||
-      navigationStore.isByRouteName(RouteName.CatalogProjectFromProgramDetail)
-        ? undefined
-        : navigationStore.query
+    query: navigationStore.isCatalogProgramDetail() || navigationStore.isCatalogProjectDetail() ? undefined : navigationStore.query
   }
 }
 </script>
