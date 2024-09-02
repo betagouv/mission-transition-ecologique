@@ -2,7 +2,9 @@
 // console.log(`store.navigation > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import { TrackId } from '@/types'
-import type { UrlParam } from '@/types/navigation'
+import type { UrlParam, CookieManager } from '@/types/navigation'
+import { CookieValue } from '@/types/navigation'
+
 import Navigation from '@/utils/navigation'
 import { ref, computed } from 'vue'
 import { acceptHMRUpdate, defineStore } from 'pinia'
@@ -24,7 +26,7 @@ export const useNavigationStore = defineStore('navigation', () => {
   const stringOfSearchParams = ref<string>('')
   const tabSelectedOnList = ref<number>(0)
   const hasSpinner = ref<boolean>(false)
-
+  const cookies = ref<CookieManager[]>([{ name: "Cookies d'analyse", value: CookieValue.Posthog, accepted: false }])
   const query = computed<Record<string, LocationQueryValue | LocationQueryValue[]>>(() => {
     const query: LocationQuery = {}
     for (const key of new URLSearchParams(stringOfSearchParams.value).keys()) {
@@ -33,6 +35,10 @@ export const useNavigationStore = defineStore('navigation', () => {
 
     return query
   })
+
+  function getCookieByValue(value: string): CookieManager | undefined {
+    return cookies.value.find((cookie: CookieManager) => cookie.value === value)
+  }
 
   function addQueryByKey(key: string, query: LocationQuery) {
     if (!(key in query)) {
@@ -161,12 +167,14 @@ export const useNavigationStore = defineStore('navigation', () => {
 
   return {
     isReady,
+    cookies,
     router,
     route,
     query,
     searchParams,
     tabSelectedOnList,
     hasSpinner,
+    getCookieByValue,
     isCatalogPrograms,
     isCatalogProjects,
     isCatalogProjectDetail,
