@@ -31,10 +31,15 @@ export default class ProgramApi extends RequestApi {
     const queryString: { [key: string]: string } = {}
     Object.entries(this.questionnaireData).forEach(([key, value]: [string, string | string[] | undefined | null]) => {
       if (value !== undefined && value !== null) {
-        queryString[key] = value.toString()
+        if (this.isValidQueryParam(key)) {
+          queryString[key] = value.toString()
+        }
       }
     })
-
     return new URLSearchParams(queryString).toString()
+  }
+
+  isValidQueryParam(key: string) {
+    return key !== 'priority_objective'
   }
 }
