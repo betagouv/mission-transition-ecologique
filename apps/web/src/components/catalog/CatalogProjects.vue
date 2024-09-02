@@ -1,4 +1,5 @@
 <template>
+  <TeeDsfrBreadcrumb />
   <CatalogBanner>
     <template #title> Le catalogue des projets de transition écologique </template>
     <template #description> Accédez à la liste des projets de transition écologique destinées aux entreprises. </template>
@@ -20,7 +21,6 @@
         :email="Contact.email"
       />
       <div v-else>
-        <TeeDsfrBreadcrumb class="fr-p-0" />
         <div class="fr-col-12 fr-col-justify--left fr-mt-3v">
           <ThemeFilter />
         </div>
