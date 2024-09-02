@@ -48,17 +48,14 @@ const breadcrumbs = computed(() => {
   }
   if (navigationStore.isQuestionnaire()) {
     const trackId = usedTrackStore.getPreviousCompletedUsedTrackId()
-    if (trackId) {
-      baseLinks = baseLinks.toSpliced(1, 0, {
+    baseLinks = [
+      ...baseLinks.slice(0, 1),
+      {
         text: 'Questionnaire',
-        to: navigationStore.routeByTrackId(trackId)
-      })
-    } else {
-      baseLinks = baseLinks.toSpliced(1, 0, {
-        text: 'Questionnaire',
-        to: '/questionnaire'
-      })
-    }
+        to: trackId ? navigationStore.routeByTrackId(trackId) : '/questionnaire'
+      },
+      ...baseLinks.slice(1)
+    ]
   }
   if (props.links) {
     return [...baseLinks, ...props.links]
