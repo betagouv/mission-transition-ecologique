@@ -50,11 +50,20 @@ publicodes:
       - effectif <= 19
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
+      - code NAF niveau 1 . est A
       - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
       - code NAF niveau 1 . est E
       - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
       - code NAF niveau 1 . est H
       - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
   entreprise . a un objectif ciblé:
     une de ces conditions:
       - questionnaire . objectif prioritaire . est la gestion des déchets

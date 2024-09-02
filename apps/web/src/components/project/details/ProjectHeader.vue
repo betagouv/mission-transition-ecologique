@@ -1,13 +1,9 @@
 <template>
-  <TeeDsfrBreadcrumb
-    :links="links"
-    :result-hash="`#${project.slug}`"
-  />
+  <TeeDsfrBreadcrumb :links="links" />
   <TeeEligibilityCriteriaBar
-    v-if="!navigationStore.isCatalogProjectDetail"
+    v-if="!navigationStore.isCatalogProjectDetail()"
     :bg-color="Color.blueLightnessed"
     :bg-bar-color="Color.blueLighted"
-    :previous-route="routeToProjects"
   />
   <div class="fr-mb-4v background-project-title">
     <img
@@ -30,22 +26,17 @@
 </template>
 <script setup lang="ts">
 import { Color, Project } from '@/types'
-import { RouteName } from '@/types/routeType'
-import { useNavigationStore } from '@/stores/navigation'
 import type { DsfrBreadcrumbProps } from '@gouvminint/vue-dsfr'
+import { useNavigationStore } from '@/stores/navigation'
 
 interface Props {
   project: Project
   themeColor?: Color
 }
 const props = defineProps<Props>()
+
 const navigationStore = useNavigationStore()
 
-const routeToProjects = {
-  name: RouteName.QuestionnaireResult,
-  hash: '#' + props.project.slug,
-  query: navigationStore.query
-}
 const links = ref<DsfrBreadcrumbProps['links']>([{ text: props.project.title }])
 </script>
 

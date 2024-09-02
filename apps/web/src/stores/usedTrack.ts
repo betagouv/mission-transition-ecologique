@@ -117,15 +117,12 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     const optionNext = current.value?.selected[0].next
     const nextTrackRulesSet = optionNext?.ruleSet
     const defaultNext = useTrackStore().current?.next
-
     let next = !optionNext || !!useTrackStore().current?.behavior?.multipleChoices ? defaultNext : optionNext
-
     if (nextTrackRulesSet) {
       // get current selection
       const selectedQuestionnaireData = current.value?.selected.map((item) => {
         return toRaw(item.questionnaireData)
       })
-
       nextTrackRulesSet.forEach((trackRule: NextTrackRuleSet) => {
         const item = remapItem(
           {},
@@ -141,7 +138,6 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
         next = bool ? trackRule.next : next
       })
     }
-
     return next
   }
 
