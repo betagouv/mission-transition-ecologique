@@ -193,7 +193,7 @@
       <div class="fr-col-12 fr-col-justify--right">
         <TeeDsfrButton
           :label="Translation.t('send')"
-          :disabled="!isFormFilled"
+          :disabled="!isFormFilled || !isFormValid"
           icon="ri-arrow-right-line"
           icon-right
           :loading="isLoading"
@@ -348,6 +348,16 @@ const isFormFilled = computed(() => {
     }
   }
   return isFilled.every((v) => v)
+})
+
+const isFormValid = computed(() => {
+  const isValid = []
+  for (const key in opportunityForm.value) {
+    if (opportunityForm.value[key].required) {
+      isValid.push(opportunityForm.value[key].isValid)
+    }
+  }
+  return isValid.every((v) => v !== false)
 })
 
 const hasValidResponse = computed(() => {

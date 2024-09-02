@@ -186,7 +186,7 @@
             <div class="fr-col-12 fr-col-justify--right">
               <TeeDsfrButton
                 :label="Translation.t('send')"
-                :disabled="!isFormFilled"
+                :disabled="!isFormFilled || !isFormValid"
                 icon="ri-arrow-right-line"
                 icon-right
                 :loading="isLoading"
@@ -268,7 +268,7 @@ import { Scroll } from '@/utils/scroll'
 import TrackStructure from '@/utils/track/trackStructure'
 import Translation from '@/utils/translation'
 import { DsfrCheckbox, DsfrInput, DsfrInputGroup } from '@gouvminint/vue-dsfr'
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import Contact from '@/utils/contact'
 
@@ -344,6 +344,16 @@ const isFormFilled = computed(() => {
     }
   }
   return isFilled.every((v) => v)
+})
+
+const isFormValid = computed(() => {
+  const isValid = []
+  for (const key in projectForm.value) {
+    if (projectForm.value[key].required) {
+      isValid.push(projectForm.value[key].isValid)
+    }
+  }
+  return isValid.every((v) => v !== false)
 })
 
 const hasValidResponse = computed(() => {
