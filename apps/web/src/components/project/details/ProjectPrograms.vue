@@ -119,17 +119,14 @@ const filteredPrograms = computed(() => {
 })
 
 const studyPrograms = computed(() => {
-  return filteredPrograms.value.filter(
-    (program: ProgramData) => program["nature de l'aide"] === ProgramAidType.study || program["nature de l'aide"] === ProgramAidType.train
+  return filteredPrograms.value.filter((program: ProgramData) =>
+    [ProgramAidType.study, ProgramAidType.train].includes(program["nature de l'aide"])
   )
 })
 
 const financePrograms = computed(() => {
-  return filteredPrograms.value.filter(
-    (program: ProgramData) =>
-      program["nature de l'aide"] === ProgramAidType.fund ||
-      program["nature de l'aide"] === ProgramAidType.loan ||
-      program["nature de l'aide"] === ProgramAidType.tax
+  return filteredPrograms.value.filter((program: ProgramData) =>
+    [ProgramAidType.fund, ProgramAidType.loan, ProgramAidType.tax].includes(program["nature de l'aide"])
   )
 })
 
