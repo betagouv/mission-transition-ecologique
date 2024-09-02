@@ -46,6 +46,15 @@
         "args": "after-used",
         "argsIgnorePattern": "^_"
       }
+    ],
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": ["enum", "class"],
+        "format": ["PascalCase"],
+        "leadingUnderscore": "forbid",
+        "trailingUnderscore": "forbid"
+      }
     ]
   }
 }
