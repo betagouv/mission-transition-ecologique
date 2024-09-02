@@ -5,7 +5,7 @@
   >
     <div class="fr-grid-row--gutters">
       <TeeDsfrBreadcrumb
-        :links="[{ text: 'Données personnelles', to: '/donnees-personnelles' }]"
+        :links="[{ text: 'Données personnelles', to: RouteName.PersonalData }]"
         class="fr-p-0"
       />
       <div class="fr-grid-col">

@@ -6,7 +6,7 @@
     <div class="fr-grid-row--gutters">
       <TeeDsfrBreadcrumb
         class="fr-p-0"
-        :links="[{ text: 'Accessibilité', to: '/accessibilite' }]"
+        :links="[{ text: 'Accessibilité', to: RouteName.Accessibility }]"
       />
       <div class="fr-grid-col">
         <h1>Politique d’accessibilité - RGAA</h1>
@@ -121,5 +121,6 @@
 // console.log(`TeeAccessibilityPage > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import ContactMail from '@/components/contact/ContactMail.vue'
+import { RouteName } from '@/types'
 import Contact from '@/utils/contact'
 </script>

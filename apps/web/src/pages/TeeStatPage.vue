@@ -2,7 +2,7 @@
   <div class="fr-container fr-my-8w">
     <TeeDsfrBreadcrumb
       class="fr-p-0"
-      :links="[{ text: 'Statistiques', to: '/stats' }]"
+      :links="[{ text: 'Statistiques', to: RouteName.Statistics }]"
     />
     <div class="fr-mb-5w">
       <h1 class="fr-mb-3w">Statistiques d'usage</h1>
@@ -104,7 +104,7 @@
 import { ref, onMounted } from 'vue'
 import Chart from 'chart.js/auto'
 import StatsApi from '@/service/api/statsApi'
-import { CalloutType, StatsData } from '@/types'
+import { CalloutType, RouteName, StatsData } from '@/types'
 
 const statsData = ref<StatsData | null>(null)
 const chartCanvas = ref<HTMLCanvasElement | null>(null)

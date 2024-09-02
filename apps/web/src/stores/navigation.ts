@@ -91,12 +91,36 @@ export const useNavigationStore = defineStore('navigation', () => {
     return isByRouteName(RouteName.CatalogProgramDetail)
   }
 
-  function isCatalog() {
+  function isCatalogAboutPrograms() {
+    return isCatalogPrograms() || isCatalogProgramDetail()
+  }
+
+  function isCatalogList() {
     return isByRouteName([RouteName.CatalogPrograms, RouteName.CatalogProjects])
   }
 
   function isCatalogDetail() {
-    return isByRouteName([RouteName.CatalogProgramDetail, RouteName.CatalogProjectDetail])
+    return isCatalogProgramDetail() || isCatalogProjectDetail()
+  }
+
+  function isCatalog() {
+    return isCatalogDetail() || isCatalogList()
+  }
+
+  function isQuestionnaire() {
+    return isQuestionnaireResult() || isQuestionnaireResultDetail()
+  }
+
+  function isQuestionnaireResult() {
+    return isByRouteName(RouteName.QuestionnaireResult)
+  }
+
+  function isQuestionnaireResultDetail() {
+    return isByRouteName([RouteName.QuestionnaireResultDetail, RouteName.ProgramFromProjectDetail, RouteName.ProjectResultDetail])
+  }
+
+  function isStaticPage() {
+    return !isQuestionnaire() && !isCatalog()
   }
 
   function isByRouteName(routeName: string | string[]) {
@@ -175,15 +199,21 @@ export const useNavigationStore = defineStore('navigation', () => {
     searchParams,
     tabSelectedOnList,
     hasSpinner,
+    isCatalog,
+    isCatalogAboutPrograms,
     isCatalogPrograms,
     isCatalogProjects,
     isCatalogProjectDetail,
     isCatalogProgramDetail,
-    isCatalog,
+    isCatalogList,
     isCatalogDetail,
     isByRouteName,
     resetSearchParams,
     setRouter,
+    isQuestionnaire,
+    isQuestionnaireResult,
+    isQuestionnaireResultDetail,
+    isStaticPage,
     setRoute,
     setSearchParams,
     updateSearchParam,

@@ -145,7 +145,7 @@ export const routes = [
   },
   {
     path: '/stats',
-    name: RouteName.Statistiques,
+    name: RouteName.Statistics,
     component: TeeStatPage as Component
   },
   {

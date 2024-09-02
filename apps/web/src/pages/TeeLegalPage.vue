@@ -5,7 +5,7 @@
   >
     <div class="fr-grid-row--gutters">
       <TeeDsfrBreadcrumb
-        :links="[{ text: 'Mentions légales', to: '/mentions-legales' }]"
+        :links="[{ text: 'Mentions légales', to: RouteName.Legal }]"
         class="fr-p-0"
       />
       <div class="fr-grid-col">
