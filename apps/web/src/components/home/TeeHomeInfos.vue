@@ -1,6 +1,6 @@
 <template>
   <!-- BLOCKS HEADER -->
-  <h2 class="tee-text-blue fr-mb-10v fr-mb-md-0 fr-px-10v fr-px-md-0">On vous aide à atteindre vos objectifs :</h2>
+  <h2 class="fr-text--blue-france fr-mb-10v fr-mb-md-0 fr-px-10v fr-px-md-0">On vous aide à atteindre vos objectifs :</h2>
 
   <!-- CONTENT BLOCKS -->
   <div
@@ -44,7 +44,7 @@
       <div :class="`fr-px-10v ${c.imgRight ? 'fr-pl-md-0' : ''} fr-pt-0 fr-pt-md-6v fr-pb-10v`">
         <p
           class="fr-badge fr-mb-6v fr-mt-4v fr-sm-hide"
-          :style="`background-color: ${c.badgeColor}; ${c.badgeTextColor ? 'color: ' + c.badgeTextColor : ''}`"
+          :class="`fr-bg--${c.badgeColor} ' ' ${getTextColorClass(c.badgeTextColor)}`"
         >
           {{ c.badge }}
         </p>
@@ -68,17 +68,29 @@
 </template>
 
 <script setup lang="ts">
-import { TrackId, QuestionnaireRoute, Objective } from '@/types'
+import { Color, Objective, QuestionnaireRoute, TrackId } from '@/types'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { useNavigationStore } from '@/stores/navigation'
 
 const usedTrackStore = useUsedTrackStore()
 const navigationStore = useNavigationStore()
 
-const content = [
+export type HomeTipsContent = {
+  badge: string
+  badgeColor: Color
+  badgeTextColor?: Color
+  title: string
+  img: string
+  imgSolo: string
+  value: Objective
+  imgRight: boolean
+  text: string
+}
+
+const content: HomeTipsContent[] = [
   {
     badge: '⚡️ Gestion énergétique',
-    badgeColor: '#FACF35',
+    badgeColor: Color.yellow,
     title: ' Diminuer votre facture d’éléctricité',
     img: '/images/home/electric.svg',
     imgSolo: '/images/home/electric-solo.svg',
@@ -95,7 +107,7 @@ const content = [
   },
   {
     badge: '👷‍♀️ Bâtiment durable',
-    badgeColor: '#1EBE8E',
+    badgeColor: Color.green,
     title: 'Rénovez vos locaux pour réduire vos dépenses',
     img: '/images/home/building.svg',
     imgSolo: '/images/home/building-solo.svg',
@@ -109,8 +121,8 @@ const content = [
   },
   {
     badge: '⚡️ Mobilité durable',
-    badgeColor: '#6672F8',
-    badgeTextColor: 'white',
+    badgeColor: Color.purple,
+    badgeTextColor: Color.white,
     value: Objective.SustainableMobility,
     title: 'Optez pour des modes de transport moins polluants',
     img: '/images/home/mobility.svg',
@@ -127,7 +139,7 @@ const content = [
   },
   {
     badge: '👷‍♀️ Gestion de l’eau',
-    badgeColor: '#FCA081',
+    badgeColor: Color.red,
     title: 'Faire des économies sur vos consommations d’eau',
     img: '/images/home/water.png',
     imgSolo: '/images/home/water-solo.svg',
@@ -147,5 +159,9 @@ const updateObjective = async (obj: Objective) => {
   await usedTrackStore.updateByTrackIdAndValue(TrackId.Goals, obj)
 
   await router.push(navigationStore.routeByTrackId(TrackId.Siret))
+}
+
+const getTextColorClass = (color?: Color): string => {
+  return color ? `fr-text--${color}` : ''
 }
 </script>

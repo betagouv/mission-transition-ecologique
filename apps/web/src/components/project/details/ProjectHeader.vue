@@ -2,8 +2,8 @@
   <TeeDsfrBreadcrumb :links="links" />
   <TeeEligibilityCriteriaBar
     v-if="!navigationStore.isCatalogProjectDetail()"
-    :bg-color="Color.blueLightnessed"
-    :bg-bar-color="Color.blueLighted"
+    :bg-color="Color.purpleLightnessed"
+    :bg-bar-color="Color.purpleLighted"
   />
   <div class="fr-mb-4v background-project-title">
     <img
@@ -16,7 +16,10 @@
     >
       <div class="fr-container">
         <div class="fr-grid-row fr-grid-row--bottom">
-          <div class="fr-col-9 fr-col-sm-9 fr-col-xs-12 fr-col-offset-sm-3 fr-h1 fr-text-left fr-pb-8v project-title">
+          <div
+            class="fr-col-9 fr-col-sm-9 fr-col-xs-12 fr-col-offset-sm-3 fr-h1 fr-text-left fr-pb-8v project-title"
+            :class="`fr-text--${themeTitleColor}`"
+          >
             {{ project.title }}
           </div>
         </div>
@@ -32,6 +35,7 @@ import { useNavigationStore } from '@/stores/navigation'
 interface Props {
   project: Project
   themeColor?: Color
+  themeTitleColor?: Color
 }
 const props = defineProps<Props>()
 

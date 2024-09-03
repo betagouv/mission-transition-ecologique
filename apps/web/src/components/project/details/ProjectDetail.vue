@@ -3,6 +3,7 @@
     v-if="project"
     :project="project"
     :theme-color="themeColor"
+    :theme-title-color="themeTitleColor"
   />
   <div
     v-if="project"
@@ -49,6 +50,7 @@ interface Props {
 const props = defineProps<Props>()
 
 const themeColor = computed<Color | undefined>(() => theme.value?.color)
+const themeTitleColor = computed<Color | undefined>(() => theme.value?.titleColor)
 
 onBeforeMount(async () => {
   if (props.projectSlug !== projectStore.currentProject?.slug) {

@@ -6,7 +6,8 @@ import {
   PropertyPath,
   TrackId,
   QuestionnaireData,
-  Objective
+  Objective,
+  Color
 } from '@/types'
 import { ConditionOperators } from '@/types/conditionOperators'
 
@@ -36,7 +37,7 @@ export interface TrackCallout {
   bigTitle: boolean
   description?: Translations
   descriptionStyle?: string
-  bgColor?: string
+  bgColor?: Color
   type?: TrackCalloutType
   imageLeft?: string
   imageRight?: string

@@ -7,4 +7,5 @@ export interface ThemeType {
   value: Objective
   image: string
   color: Color
+  titleColor?: Color
 }

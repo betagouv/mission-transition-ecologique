@@ -6,17 +6,8 @@
   &-banner p {
     white-space: pre-wrap;
   }
-
-  &-block {
-    background-color: setting.$base-blue-light;
-    padding: 2em;
-    display: flex;
-    justify-content: center;
-
-    .fr-input {
-      background-color: white;
-    }
-
+  .fr-input {
+    background-color: white;
   }
 
   &-container {

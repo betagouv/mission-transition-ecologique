@@ -10,7 +10,8 @@ export class Theme {
       tagLabel: '🌱 analyses',
       value: Objective.EnvironmentalImpact,
       image: '/images/thematique/thematique-strategie.svg',
-      color: Color.blue
+      color: Color.purple,
+      titleColor: Color.white
     },
     {
       id: ThemeId.Energy,
@@ -26,7 +27,8 @@ export class Theme {
       tagLabel: '💧 eau',
       value: Objective.WaterConsumption,
       image: '/images/thematique/thematique-eau.svg',
-      color: Color.blueFrance
+      color: Color.blueFrance,
+      titleColor: Color.white
     },
     {
       id: ThemeId.Building,
@@ -34,7 +36,8 @@ export class Theme {
       tagLabel: '🏢 rénovation',
       value: Objective.BuildingRenovation,
       image: '/images/thematique/thematique-batiments.svg',
-      color: Color.blue
+      color: Color.purple,
+      titleColor: Color.white
     },
     {
       id: ThemeId.Mobility,

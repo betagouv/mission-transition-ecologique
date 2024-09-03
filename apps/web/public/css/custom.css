@@ -126,12 +126,6 @@ button.fr-link:hover, .tee-router-link:hover {
   aspect-ratio: 1 !important;
   /* height: 100% !important; */
 }
-.tee-text-light {
-  color: #929292;
-}
-.tee-text-blue {
-  color: #000091;
-}
 .tee-mb-none {
   margin-bottom: 0 !important
 }

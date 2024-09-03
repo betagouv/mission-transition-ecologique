@@ -13,16 +13,6 @@
   }
 
   &__header {
-    @each $color, $properties in setting.$colors {
-      &--#{$color} {
-        @if meta.type-of($properties) == map {
-          background-color: tool.scaleAlphaToHex(map.get($properties, "color"), -50%);
-        } @else {
-          background-color: tool.scaleAlphaToHex($properties, -50%);
-        }
-      }
-    }
-
     .fr-card__img--contain img {
       object-fit: contain;
     }

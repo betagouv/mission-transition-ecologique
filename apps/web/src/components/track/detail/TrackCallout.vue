@@ -3,10 +3,7 @@
     v-if="track?.callout"
     :class="`fr-col-12 ${track.callout.bigTitle ? 'fr-mx-0' : ''} fr-px-0v fr-px-md-4v fr-mb-4v`"
   >
-    <div
-      :class="`${track.callout.bigTitle ? 'fr-px-2v' : 'fr-py-4v fr-px-4v'}`"
-      :style="`background-color: ${track.callout.bgColor || 'transparent'}`"
-    >
+    <div :class="`${track.callout.bigTitle ? 'fr-px-2v' : 'fr-py-4v fr-px-4v'} fr-bg--${track.callout.bgColor}`">
       <div class="tee-track-callout fr-grid-row fr-grid-row--gutters">
         <!-- CALLOUT IMAGE LEFT -->
         <div

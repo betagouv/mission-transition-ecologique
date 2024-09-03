@@ -51,8 +51,8 @@
           <!-- TITLE & RESUME -->
           <div class="fr-col">
             <!-- PROGRAM TITLE -->
-            <div class="program-title fr-text--purple fr-h6 fr-text--bold fr-mb-5v">
-              <div class="program-title-text">{{ program?.titre }}</div>
+            <div class="fr-col-justify--left fr-text--purple fr-h6 fr-text--bold fr-mb-5v">
+              <div class="fr-text-line-height--8v">{{ program?.titre }}</div>
               <TeeCopyLinkButton
                 class="fr-ml-6v"
                 :tertiary="true"
@@ -64,12 +64,11 @@
 
             <!-- PROGRAM RESUME / TEXT-->
             <h2
-              :style="`color: ${blockColor}`"
+              class="fr-text--blue-france"
               v-html="program?.promesse"
             />
             <p
-              class="fr-mb-12v"
-              style="color: #000091"
+              class="fr-mb-12v fr-text--blue-france"
               v-html="program?.description"
             />
             <ProgramObjective
@@ -211,7 +210,7 @@
     <!-- PROGRAM FORM -->
     <div
       ref="TeeProgramFormContainer"
-      class="fr-tee-form-block fr-p-4v"
+      class="fr-bg--blue-france--lightness fr-col-justify--center fr-p-2w"
     >
       <ProgramForm
         v-if="program"
@@ -250,7 +249,6 @@ const route = useRoute()
 const program = ref<ProgramType>()
 const TeeProgramFormContainer = ref<HTMLElement | null | undefined>(null)
 
-const blockColor = '#000091'
 const publicPath = Config.publicPath
 
 interface Props {
@@ -317,13 +315,3 @@ const scrollToProgramForm = () => {
   }
 }
 </script>
-<style lang="scss" scoped>
-.program-title {
-  display: flex;
-  align-items: center;
-}
-
-.program-title-text {
-  height: 32px;
-}
-</style>
