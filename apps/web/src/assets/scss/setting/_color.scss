@@ -25,7 +25,10 @@ $colors: (
     "color": $base-red,
     "color-with-background": var(--text-action-high-blue-france)
   ),
-  "purple" : $base-purple,
+  "purple" : (
+    "color": $base-purple,
+    "color-with-background": var(--text-inverted-blue-france)
+  ),
   "green": (
     "color": $base-green,
     "color-with-background": var(--text-action-high-blue-france)
