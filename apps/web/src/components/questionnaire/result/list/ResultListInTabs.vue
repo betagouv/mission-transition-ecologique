@@ -56,7 +56,7 @@ const projects = ref<Project[]>()
 const hasError = ref<boolean>(false)
 
 const tabTitles = [{ title: "Des idées d'actions à mettre en place" }, { title: 'Vos aides financières' }]
-const mobileTabTitles = [{ title: "Idées d'actions" }, { title: 'Vos aides financières' }]
+const mobileTabTitles = [{ title: "Idées d'actions" }, { title: 'Aides financières' }]
 const filteredPrograms = computed(() => {
   return programs.value ? programStore.getProgramsByFilters(programs.value) : undefined
 })

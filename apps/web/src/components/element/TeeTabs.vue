@@ -17,7 +17,7 @@
               v-for="(tabTitle, index) in tabTitles"
               :key="index"
               :icon="tabTitle.icon"
-              class="fr-unhidden-sm"
+              class="fr-unhidden-sm fr-hidden-xs"
               :panel-id="tabTitle.panelId || `${getIdFromIndex(index)}-panel`"
               :tab-id="tabTitle.tabId || getIdFromIndex(index)"
               :selected="selected === index"
