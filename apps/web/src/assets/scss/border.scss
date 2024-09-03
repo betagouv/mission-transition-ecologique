@@ -1,0 +1,17 @@
+@use 'setting';
+@use 'tool';
+
+@each $color, $properties in setting.$colors {
+  .fr-border {
+    @each $width in setting.$widths {
+      &--#{$width} {
+        @each $style, $style-value in setting.$styles {
+          &--#{$style} {
+            @include tool.border-color($color, $properties, $width, $style-value);
+          }
+        }
+      }
+    }
+    @include tool.border-color($color, $properties);
+  }
+}

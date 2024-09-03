@@ -1,0 +1,14 @@
+@use '@gouvfr/dsfr/module/color/variable/static' as color;
+@forward '@gouvfr/dsfr/module/color/variable/static';
+
+$styles: (
+  solid,
+  dashed,
+  dotted
+);
+
+$widths: (
+  thin,
+  medium,
+  thick
+);
