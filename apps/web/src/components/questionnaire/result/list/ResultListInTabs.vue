@@ -4,6 +4,7 @@
     class="fr-col-12"
     tab-list-name="Liste d’onglet"
     :tab-titles="tabTitles"
+    :mobile-titles="mobileTabTitles"
     :initial-selected-index="selected"
     @select-tab="onSelectedTabChange"
   >
@@ -55,7 +56,7 @@ const projects = ref<Project[]>()
 const hasError = ref<boolean>(false)
 
 const tabTitles = [{ title: "Des idées d'actions à mettre en place" }, { title: 'Vos aides financières' }]
-
+const mobileTabTitles = [{ title: "Idées d'actions" }, { title: 'Vos aides financières' }]
 const filteredPrograms = computed(() => {
   return programs.value ? programStore.getProgramsByFilters(programs.value) : undefined
 })

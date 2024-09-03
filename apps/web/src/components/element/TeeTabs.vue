@@ -17,6 +17,23 @@
               v-for="(tabTitle, index) in tabTitles"
               :key="index"
               :icon="tabTitle.icon"
+              class="fr-unhidden-sm"
+              :panel-id="tabTitle.panelId || `${getIdFromIndex(index)}-panel`"
+              :tab-id="tabTitle.tabId || getIdFromIndex(index)"
+              :selected="selected === index"
+              @click="selectIndex(index)"
+              @next="selectNext()"
+              @previous="selectPrevious()"
+              @first="selectFirst()"
+              @last="selectLast()"
+            >
+              {{ tabTitle.title }}
+            </DsfrTabItem>
+            <DsfrTabItem
+              v-for="(tabTitle, index) in mobileTitles"
+              :key="index"
+              class="fr-unhidden-xs fr-hidden-sm"
+              :icon="tabTitle.icon"
               :panel-id="tabTitle.panelId || `${getIdFromIndex(index)}-panel`"
               :tab-id="tabTitle.tabId || getIdFromIndex(index)"
               :selected="selected === index"
@@ -52,15 +69,24 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { ref, onMounted, onUnmounted, reactive } from 'vue'
 import { DsfrTabItem, DsfrTabContent, type DsfrTabsProps, getRandomId, DsfrTabs } from '@gouvminint/vue-dsfr'
 
 export type { DsfrTabsProps }
 
-const props = withDefaults(defineProps<DsfrTabsProps>(), {
+interface Props {
+  tabContents?: DsfrTabsProps['tabContents']
+  tabListName: DsfrTabsProps['tabListName']
+  tabTitles: DsfrTabsProps['tabTitles']
+  mobileTitles?: DsfrTabsProps['tabTitles']
+  initialSelectedIndex?: DsfrTabsProps['initialSelectedIndex']
+}
+
+const props = withDefaults(defineProps<Props>(), {
   tabContents: () => [],
   tabTitles: () => [],
-  initialSelectedIndex: 0
+  mobileTitles: () => [],
+  initialSelectedIndex: 0,
+  tabListName: ''
 })
 
 const { ascendant, selected } = useTabs(true, props.initialSelectedIndex || 0)
