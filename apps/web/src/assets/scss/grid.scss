@@ -11,10 +11,12 @@
       .fr-hidden-xs {
         display: none !important;
       }
+
       .fr-unhidden-xs {
         display: inherit !important;
       } 
     }
+
     .fr-col {
       @each $align-name, $align in setting.$vertical-flex-aligns {
         &-content#{$modifier}--#{$align-name} {
