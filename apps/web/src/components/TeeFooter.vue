@@ -97,6 +97,15 @@
               {{ link.label }}
             </a>
           </li>
+          <li class="fr-footer__bottom-item">
+            <button
+              class="fr-footer__bottom-link"
+              data-fr-opened="false"
+              aria-controls="fr-consent-modal"
+            >
+              Gestion des cookies
+            </button>
+          </li>
         </ul>
 
         <!-- LICENCE LINKS -->
