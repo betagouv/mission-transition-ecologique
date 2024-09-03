@@ -1,6 +1,6 @@
 <template>
   <TeeDsfrBreadcrumb :links="[{ text: 'Statistiques', to: RouteName.Statistics }]" />
-  <div class="fr-container fr-my-8w">
+  <div class="fr-container fr-mb-8w">
     <div class="fr-mb-5w">
       <h1 class="fr-mb-3w">Statistiques d'usage</h1>
       <p>

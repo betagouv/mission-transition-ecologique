@@ -2,7 +2,7 @@
   <TeeDsfrBreadcrumb :links="[{ text: 'Données personnelles', to: RouteName.PersonalData }]" />
   <div
     id="simple-page"
-    class="fr-container fr-my-8w"
+    class="fr-container fr-mb-8w"
   >
     <div class="fr-grid-row">
       <div class="fr-grid-col">
