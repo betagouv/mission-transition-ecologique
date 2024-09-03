@@ -1,5 +1,6 @@
 <template>
   <TeeDsfrConsent />
+  <TeeDsfrPersonalizeConsent />
   <div>
     <TeeHeader />
     <TeeMatomo />

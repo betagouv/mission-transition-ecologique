@@ -12,6 +12,8 @@ import { addIcons } from './plugin/icons'
 import Sentry from './plugin/sentry'
 import { createHead } from '@unhead/vue'
 import posthogPlugin from './plugin/posthog'
+import Cookie from '@/utils/cookies'
+import { CookieValue } from '@/types/cookies'
 
 addIcons()
 
@@ -31,7 +33,10 @@ app.mount('#app')
 router.afterEach((to, _, failure) => {
   if (!failure) {
     nextTick(() => {
-      app.config.globalProperties.$posthog.capture('$pageview', { path: to.fullPath })
+      const posthogCookie = Cookie.getCookieByValue(CookieValue.Posthog)
+      if (posthogCookie?.accepted) {
+        app.config.globalProperties.$posthog.capture('$pageview', { path: to.fullPath })
+      }
     })
   }
 })
