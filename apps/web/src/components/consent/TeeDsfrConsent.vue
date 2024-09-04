@@ -1,5 +1,6 @@
 <template>
   <div
+    id="tee-consent-popup"
     ref="$el"
     class="fr-consent-banner"
   >
@@ -31,9 +32,7 @@ const openCustomize = () => {
 }
 
 onMounted(() => {
-  console.log(document.cookie)
   if (document.cookie) {
-    console.log($el.value)
     $el.value?.classList.add('fr-hidden')
   }
 })

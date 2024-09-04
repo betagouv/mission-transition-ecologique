@@ -100,7 +100,7 @@
           <li class="fr-footer__bottom-item">
             <button
               class="fr-footer__bottom-link"
-              data-fr-opened="false"
+              @click="openConsent"
               aria-controls="fr-consent-modal"
             >
               Gestion des cookies
@@ -208,4 +208,11 @@ const mainLinks = [
     icon: 'fr-icon-chat-3-line'
   }
 ]
+
+const openConsent = () => {
+  const modal = document.getElementById('fr-consent-modal')
+  if (modal) {
+    modal.classList.add('fr-modal--opened')
+  }
+}
 </script>

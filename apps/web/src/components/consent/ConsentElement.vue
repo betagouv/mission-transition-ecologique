@@ -11,9 +11,9 @@
       {{ cookie.name }}
     </legend>
     <ConsentRadio
+      :status="cookie.accepted"
       :options="options"
       :name="`${cookie.name}_radio_button`"
-      :initial="cookie.accepted"
       @update:model-value="(status) => emit('update:modelValue', status)"
     />
     <p
@@ -31,13 +31,12 @@ import { DsfrRadioButtonSetProps } from '@gouvminint/vue-dsfr/types'
 interface Props {
   cookie: CookieManager
 }
-
+defineProps<Props>()
 const options: DsfrRadioButtonSetProps['options'] = [
   { label: 'Accepter', value: true },
   { label: 'Refuser', value: false }
 ]
 
-defineProps<Props>()
 const emit = defineEmits<{
   (e: 'update:modelValue', payload: boolean): void
 }>()

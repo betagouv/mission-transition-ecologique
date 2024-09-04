@@ -34,12 +34,13 @@
                     >
                       Préférences pour tous les services. <a :href="RouteName.PersonalData">Données personnelles</a>
                     </legend>
-                    <ConsentRadio
-                      :options="allOptions"
-                      name="all_consent_radio_button"
-                      :initial="true"
-                      @update:model-value="updateAllStatus"
-                    />
+                    <div class="fr-consent-service__radios">
+                      <DsfrButtonGroup
+                        :buttons="allButtons"
+                        inline-layout-when="medium"
+                        align="right"
+                      />
+                    </div>
                   </fieldset>
                 </div>
                 <div
@@ -75,12 +76,13 @@ import { RouteName } from '@/types'
 import { useNavigationStore } from '@/stores/navigation'
 import { type Cookies, type CookieManager, type CookieValue } from '@/types/cookies'
 import Cookie from '@/utils/cookies'
-import { DsfrRadioButtonSetProps } from '@gouvminint/vue-dsfr/types'
+import { DsfrButtonGroupProps } from '@gouvminint/vue-dsfr/types'
 
 const cookies = ref<Cookies>(useNavigationStore().cookies)
-const allOptions: DsfrRadioButtonSetProps['options'] = [
-  { label: 'Tout accepter', value: true },
-  { label: 'Tout refuser', value: false }
+const allStatus = ref<boolean>(false)
+const allButtons: DsfrButtonGroupProps['buttons'] = [
+  { label: 'Tout accepter', onClick: () => updateAllStatus(true) },
+  { label: 'Tout refuser', onClick: () => updateAllStatus(false), secondary: true }
 ]
 
 const closePersonalize = () => {
@@ -99,10 +101,12 @@ const updateAllStatus = (status: boolean) => {
     },
     { ...cookies.value }
   )
+  saveConsent()
 }
 
 const updateCookieStatus = (status: boolean, cookie: CookieValue) => {
   cookies.value[cookie].accepted = status
+  allStatus.value = status
 }
 
 const saveConsent = () => {

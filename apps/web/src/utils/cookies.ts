@@ -16,7 +16,7 @@ export default class Cookie {
       [CookieValue.Posthog]: {
         name: "Cookies d'analyse",
         value: CookieValue.Posthog,
-        accepted: cookiesStatus[CookieValue.Posthog],
+        accepted: cookiesStatus[CookieValue.Posthog] || false,
         description:
           "Ces cookies fournissent des informations statistiques sur notre site. Ils permettent de mesurer l'audience et les performances du site de manière anonyme afin d'en améliorer le fonctionnement. "
       }
@@ -52,7 +52,6 @@ export default class Cookie {
       },
       { ...useNavigationStore().cookies }
     )
-    console.log(newCookies)
     Cookie.saveCookies(newCookies)
   }
   static acceptCookie(cookieValue: CookieValue) {

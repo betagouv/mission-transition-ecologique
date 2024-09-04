@@ -1,11 +1,11 @@
 <template>
   <div class="fr-consent-service__radios">
     <DsfrRadioButtonSet
-      v-model="status"
+      v-model="localStatus"
       :name="name"
       :options="options"
       inline
-      @update:model-value="emit('update:modelValue', status)"
+      @update:model-value="emit('update:modelValue', localStatus)"
     />
   </div>
 </template>
@@ -14,15 +14,21 @@ import { DsfrRadioButtonSetProps } from '@gouvminint/vue-dsfr/types'
 
 interface Props {
   options: DsfrRadioButtonSetProps['options']
-  initial: boolean
+  status: boolean
   name: string
 }
 
+const props = defineProps<Props>()
+
+const localStatus = ref(props.status)
 const emit = defineEmits<{
   (e: 'update:modelValue', payload: boolean): void
 }>()
 
-const props = defineProps<Props>()
-
-const status = ref<boolean>(props.initial)
+watch(
+  () => props.status,
+  (newValue) => {
+    localStatus.value = newValue
+  }
+)
 </script>
