@@ -1,4 +1,5 @@
 <template>
+  <TeeDsfrBreadcrumb v-if="!hasSpinner" />
   <CatalogBanner>
     <template #title> Le catalogue des aides publiques à la transition écologique </template>
     <template #description>
