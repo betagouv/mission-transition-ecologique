@@ -34,7 +34,7 @@
           <div class="fr-col-12 fr-text--blue-france tee-font-style--italic fr-mt-3v">
             <TeeCounterResult :to-count="filteredProjects" />
           </div>
-          <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--left fr-mt-3v">
+          <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--left fr-mt-0">
             <router-link
               v-for="project in filteredProjects"
               :id="project.slug"
