@@ -100,8 +100,8 @@
           <li class="fr-footer__bottom-item">
             <button
               class="fr-footer__bottom-link"
-              @click="openConsent"
               aria-controls="fr-consent-modal"
+              @click="openConsent"
             >
               Gestion des cookies
             </button>
