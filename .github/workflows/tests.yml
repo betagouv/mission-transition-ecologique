@@ -24,7 +24,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - run: npm clean-install
+      - run: npm clean-install --foreground-scripts
 
       - run: npx nx run @tee/data:test
 
@@ -42,7 +42,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - run: npm clean-install
+      - run: npm clean-install --foreground-scripts
 
       - run: npx nx run @tee/data:generate-program
       - run: npx nx run @tee/backend:spec-and-routes
@@ -62,7 +62,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - run: npm clean-install
+      - run: npm clean-install --foreground-scripts
 
       - run: npx nx run @tee/web:sass-lint -f github
 
@@ -81,7 +81,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - run: npm clean-install
+      - run: npm clean-install --foreground-scripts
 
       - run: npm run type:check
 
@@ -99,6 +99,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - run: npm clean-install
+      - run: npm clean-install --foreground-scripts
 
       - run: npx nx run @tee/backend-ddd:test
