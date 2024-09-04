@@ -1,6 +1,6 @@
 <template>
   <div
-    ref="tee-consent-popup"
+    ref="$el"
     class="fr-consent-banner"
   >
     <DsfrConsent
@@ -15,7 +15,7 @@
 import { RouteName } from '@/types/routeType'
 import Cookie from '@/utils/cookies'
 
-const popup = ref<HTMLElement | null>(null)
+const $el = ref<HTMLElement | null>(null)
 
 const onAcceptAll = () => {
   Cookie.acceptAllCookies()
@@ -31,8 +31,10 @@ const openCustomize = () => {
 }
 
 onMounted(() => {
-  if (document.cookie && popup.value) {
-    popup.value.classList.add('fr-hidden')
+  console.log(document.cookie)
+  if (document.cookie) {
+    console.log($el.value)
+    $el.value?.classList.add('fr-hidden')
   }
 })
 </script>
