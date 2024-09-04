@@ -98,13 +98,12 @@
             </a>
           </li>
           <li class="fr-footer__bottom-item">
-            <button
-              class="fr-footer__bottom-link"
+            <TeeDsfrButton
+              label="Gestion des cookies"
               aria-controls="fr-consent-modal"
+              class="fr-footer__bottom-link fr-btn--tertiary-no-outline"
               @click="openConsent"
-            >
-              Gestion des cookies
-            </button>
+            />
           </li>
         </ul>
 
