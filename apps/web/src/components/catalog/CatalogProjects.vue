@@ -1,4 +1,5 @@
 <template>
+  <TeeDsfrBreadcrumb />
   <CatalogBanner>
     <template #title> Le catalogue des projets de transition écologique </template>
     <template #description> Accédez à la liste des projets de transition écologique destinées aux entreprises. </template>
