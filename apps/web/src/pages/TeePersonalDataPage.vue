@@ -1,4 +1,5 @@
 <template>
+  <TeeDsfrBreadcrumb :links="[{ text: 'Données personnelles', to: RouteName.PersonalData }]" />
   <div class="fr-container fr-my-4w">
     <PrivacyPolicy
       date="17/06/2024"

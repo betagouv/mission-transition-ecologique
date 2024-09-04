@@ -1,4 +1,5 @@
 <template>
+  <TeeDsfrBreadcrumb :links="[{ text: 'Mentions légales', to: RouteName.Legal }]" />
   <div class="fr-container fr-my-4w">
     <LegalNotice
       licence-url="https://github.com/betagouv/mission-transition-ecologique/blob/main/LICENSE"

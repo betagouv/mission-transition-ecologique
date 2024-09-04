@@ -18,7 +18,7 @@
           <template v-else>
             <!-- DROPDOWN MENU ITEM - DISPLAY WIDER THAN MD -->
             <DsfrNavigation
-              class="fr-hidden fr-unhidden-lg tee-header-menu-sub-navigation fr-mr-2w fr-mr-lg-0"
+              class="fr-hidden fr-unhidden-lg fr-mr-2w fr-mr-lg-0"
               :nav-items="[{ title: 'Catalogue', links: quickLink.links }]"
               aria-label="Sous Menu secondaire"
             />
