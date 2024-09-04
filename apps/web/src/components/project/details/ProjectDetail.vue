@@ -34,10 +34,12 @@
   </div>
 </template>
 <script setup lang="ts">
-import { ThemeType, Project, Color } from '@/types'
+import { ThemeType, Project, Color, Objective } from '@/types'
 import { Theme } from '@/utils/theme'
 import { useProjectStore } from '@/stores/project'
-import { onBeforeMount } from 'vue'
+import { computed, onBeforeMount } from 'vue'
+import UsedTrack from '@/utils/track/usedTrack'
+import { useProgramStore } from '@/stores/program'
 
 const projectStore = useProjectStore()
 
@@ -49,8 +51,16 @@ interface Props {
 }
 const props = defineProps<Props>()
 
+const programStore = useProgramStore()
+
 const themeColor = computed<Color | undefined>(() => theme.value?.color)
 const themeTitleColor = computed<Color | undefined>(() => theme.value?.titleColor)
+
+const objective = computed(() => {
+  return programStore.programFilters.objectiveTypeSelected !== ''
+    ? (programStore.programFilters.objectiveTypeSelected as Objective)
+    : (Theme.getObjectiveByValue(UsedTrack.getPriorityObjective()) ?? undefined)
+})
 
 onBeforeMount(async () => {
   if (props.projectSlug !== projectStore.currentProject?.slug) {
@@ -58,8 +68,13 @@ onBeforeMount(async () => {
   }
 
   project.value = projectStore.currentProject
+
   if (project.value) {
-    theme.value = Theme.getById(project.value?.mainTheme)
+    const themeId = objective.value
+      ? project.value?.themes.find((t) => Theme.getById(t) === Theme.getByValue(objective.value))
+      : project.value?.mainTheme
+
+    theme.value = Theme.getById(themeId)
   }
 })
 </script>
