@@ -114,7 +114,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     }
   }
 
-  private _objectiveToSubjectIdMapping: { [key in Objective]: Subject } = {
+  private _objectiveToPdeSubjectMapping: { [key in Objective]: Subject } = {
     [Objective.EnvironmentalImpact]: Subject.DemarcheEcologie,
     [Objective.EnergyPerformance]: Subject.Energie,
     [Objective.WaterConsumption]: Subject.Eau,
@@ -132,7 +132,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     const defaultSubject = Subject.DemarcheEcologie
     if (programObjectives.length === 1) {
       const objective = programObjectives[0]
-      const subjectKey = this._objectiveToSubjectIdMapping[objective]
+      const subjectKey = this._objectiveToPdeSubjectMapping[objective]
       return subjectToIdMapping[subjectKey]
     } else {
       return subjectToIdMapping[defaultSubject]
@@ -156,7 +156,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     })
   }
 
-  private _themeToSubjectIdMapping: { [key in ThemeId]: Subject } = {
+  private _themeToPdeSubjectMapping: { [key in ThemeId]: Subject } = {
     [ThemeId.Energy]: Subject.Energie,
     [ThemeId.Water]: Subject.Eau,
     [ThemeId.Waste]: Subject.Dechets,
@@ -171,7 +171,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     return Result.ok({
       solicitation: {
         landing_id: this._pdeLanding,
-        landing_subject_id: subjectToIdMapping[this._themeToSubjectIdMapping[project.mainTheme]],
+        landing_subject_id: subjectToIdMapping[this._themeToPdeSubjectMapping[project.mainTheme]],
         description: 'Demande via le projet ' + project.title + '\n\n' + opportunity.message,
         full_name: opportunity.firstName + ' ' + opportunity.lastName,
         email: opportunity.email,
