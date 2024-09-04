@@ -67,7 +67,7 @@ jobs:
       - run: npx nx run @tee/web:sass-lint -f github
 
 
-  vue-type-check:
+  type-check:
     name: Run type-check
     runs-on: ubuntu-latest
     strategy:

@@ -7,6 +7,9 @@
     "@vue/eslint-config-prettier/skip-formatting",
     "../../.eslintrc.json"
   ],
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser"
+  },
   "ignorePatterns": ["!**/*", "auto-imports.d.ts", "vite.config.mts"],
   "overrides": [
     {
