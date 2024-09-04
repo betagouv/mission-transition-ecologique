@@ -74,7 +74,7 @@
 <script lang="ts" setup>
 import { RouteName } from '@/types'
 import { useNavigationStore } from '@/stores/navigation'
-import { type Cookies, type CookieManager, type CookieValue } from '@/types/cookies'
+import { type Cookies, type CookieValue } from '@/types/cookies'
 import Cookie from '@/utils/cookies'
 import { DsfrButtonGroupProps } from '@gouvminint/vue-dsfr/types'
 
@@ -93,15 +93,12 @@ const closePersonalize = () => {
 }
 
 const updateAllStatus = (status: boolean) => {
-  const cookiesList: CookieManager[] = Object.values(cookies.value)
-  cookies.value = cookiesList.reduce(
-    (acc, cookie) => {
-      acc[cookie.value] = { ...cookie, accepted: status }
-      return acc
-    },
-    { ...cookies.value }
-  )
-  saveConsent()
+  if (status) {
+    Cookie.acceptAllCookies()
+  } else {
+    Cookie.refuseAllCookies()
+  }
+  closePersonalize()
 }
 
 const updateCookieStatus = (status: boolean, cookie: CookieValue) => {
