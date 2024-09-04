@@ -5,4 +5,8 @@ export default class ProjectFeatures {
   public getById(id: number): Project | undefined {
     return projects.find((project) => project.id === +id)
   }
+
+  public getBySlug(slug: string): Project | undefined {
+    return projects.find((project) => project.slug === slug)
+  }
 }

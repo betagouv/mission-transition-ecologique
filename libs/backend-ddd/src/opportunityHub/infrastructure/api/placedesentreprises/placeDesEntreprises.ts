@@ -102,13 +102,13 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
       if (prevProgram && this.support(prevProgram)) {
         transmissiblePrograms += 1
       }
-      if (new ProjectService().getById(+prevOpportunity.id)) {
+      if (new ProjectService().getBySlug(prevOpportunity.id)) {
         transmissiblePrograms += 1
       }
     }
 
     // The current opportunity being already created in brevo when we check the hub transmission, we count the current program.
-    // The question is do we have MORE than one tranmissible program which indicates older tranmissions.
+    // The question is do we have MORE than one transmissible opportunity which indicates older tranmissions.
     return transmissiblePrograms > 1
   }
 

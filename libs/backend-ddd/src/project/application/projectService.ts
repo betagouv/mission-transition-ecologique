@@ -11,4 +11,7 @@ export class ProjectService {
   public getById(id: number): Project | undefined {
     return this._project.getById(id)
   }
+  public getBySlug(id: string): Project | undefined {
+    return this._project.getBySlug(id)
+  }
 }
