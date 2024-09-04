@@ -32,7 +32,7 @@ const openCustomize = () => {
 }
 
 onMounted(() => {
-  if (document.cookie) {
+  if (Cookie.areCookiesSet()) {
     $el.value?.classList.add('fr-hidden')
   }
 })

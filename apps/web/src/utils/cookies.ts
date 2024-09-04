@@ -1,9 +1,22 @@
 import { type CookieManager, CookieValue, Cookies } from '@/types/cookies'
 import { useNavigationStore } from '@/stores/navigation'
+import { app } from '../main'
+import posthogPlugin from '../plugin/posthog'
 
 export default class Cookie {
   static getCookieByValue(value: CookieValue): CookieManager | undefined {
     return useNavigationStore().cookies[value]
+  }
+
+  static activateCookie(value: CookieValue) {
+    if (value === CookieValue.Posthog) {
+      posthogPlugin.activatePosthogCookie(app)
+    }
+  }
+  static deactivateCookie(value: CookieValue) {
+    if (value === CookieValue.Posthog) {
+      posthogPlugin.deactivatePosthogCookie(app)
+    }
   }
 
   static getCookies(): Cookies {
@@ -23,19 +36,16 @@ export default class Cookie {
     }
   }
 
-  static deleteAllCookies() {
-    const cookies = document.cookie.split(';')
-    cookies.forEach((cookie) => {
-      const cookieName = cookie.split('=')[0].trim()
-      document.cookie = cookieName + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/'
-    })
-  }
   static saveCookies(cookies: Cookies) {
-    Cookie.deleteAllCookies()
-    const cookieString = Object.values(cookies)
-      .map((cookie: CookieManager) => `${cookie.value}=${cookie.accepted}`)
-      .join(';')
-    document.cookie = cookieString
+    Object.values(cookies).forEach((cookie: CookieManager) => {
+      document.cookie = `${cookie.value}=${cookie.accepted}`
+      if (cookie.accepted) {
+        Cookie.activateCookie(cookie.value)
+      } else {
+        Cookie.deactivateCookie(cookie.value)
+      }
+    })
+    document.cookie = 'tee-accept-cookies=true'
     window.location.reload()
   }
 
@@ -69,5 +79,10 @@ export default class Cookie {
   static refuseCookie(cookieValue: CookieValue) {
     useNavigationStore().cookies[cookieValue].accepted = false
     Cookie.saveCookies(useNavigationStore().cookies)
+  }
+  static areCookiesSet() {
+    const match = document.cookie.match(new RegExp('(^| )tee-accept-cookies=([^;]+)'))
+    const cookieValue = match && match[2]
+    return cookieValue === 'true' || false
   }
 }
