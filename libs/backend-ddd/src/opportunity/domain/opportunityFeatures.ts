@@ -9,7 +9,7 @@ import { Operators, ProgramType, Project } from '@tee/data'
 import { ContactDetails, Opportunity, OpportunityType, SiretValidator } from '@tee/common'
 import EstablishmentService from '../../establishment/application/establishmentService'
 import Monitor from '../../common/domain/monitoring/monitor'
-import { projects } from '@tee/data/static'
+import { ProjectService } from '../../project/application/projectService'
 
 export default class OpportunityFeatures {
   private readonly _contactRepository: ContactRepository
@@ -76,7 +76,7 @@ export default class OpportunityFeatures {
   }
 
   private async _createProjectOpportunity(opportunity: Opportunity, contactId: ContactId): Promise<Result<OpportunityId, Error>> {
-    const project = projects.find((project) => project.id === +opportunity.id)
+    const project = new ProjectService().getById(+opportunity.id)
     if (!project) {
       return Result.err(new Error('Project with id ' + opportunity.id + 'not found'))
     }

@@ -13,6 +13,7 @@ import { Operators, ProgramType } from '@tee/data'
 import { Opportunity, OpportunityType } from '@tee/common'
 import { Project } from '@tee/data'
 import Monitor from '../../../../common/domain/monitoring/monitor'
+import { ProjectService } from '../../../../project/application/projectService'
 
 export class PlaceDesEntreprises extends OpportunityHubAbstract {
   protected readonly _baseUrl = Config.PDE_API_BASEURL
@@ -95,21 +96,20 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
       return false
     }
 
-    let tranmismissiblePrograms = 0
+    let transmissiblePrograms = 0
     for (const prevOpportunity of previousDailyOpportunities.value) {
       const prevProgram = new ProgramService().getById(prevOpportunity.id)
-      if (prevProgram === undefined) {
-        //we are working with a project, which we transmit to PDE and we have to count
-        tranmismissiblePrograms += 1
-      }
       if (prevProgram && this.support(prevProgram)) {
-        tranmismissiblePrograms += 1
+        transmissiblePrograms += 1
+      }
+      if (new ProjectService().getById(+prevOpportunity.id)) {
+        transmissiblePrograms += 1
       }
     }
 
     // The current opportunity being already created in brevo when we check the hub transmission, we count the current program.
     // The question is do we have MORE than one tranmissible program which indicates older tranmissions.
-    return tranmismissiblePrograms > 1
+    return transmissiblePrograms > 1
   }
 
   private _makeHeaders(token: string): RawAxiosRequestHeaders {
