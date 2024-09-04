@@ -2,8 +2,8 @@
 @forward '@gouvfr/dsfr/module/color/variable/static';
 
 $opacities: (
-  --light: -70%,
-  --lightness: -90%
+  --light: 71%,
+  --lightness: 93%
 );
 
 // !!!important!! New color added need to be added to the typescript enum `packages/web/src/types/color.ts`
