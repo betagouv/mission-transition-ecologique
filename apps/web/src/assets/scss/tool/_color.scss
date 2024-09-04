@@ -3,17 +3,17 @@
 @use 'sass:meta';
 @use '../setting';
 
-@function scaleAlphaToHex($color, $alpha) {
-  @return color.scale($color, $lightness: $alpha);
+@function scaleLightness($color, $lightness) {
+  @return color.scale($color, $lightness: $lightness);
 }
 
 @mixin get-background-color-by-opacity($properties, $opacity: 100%) {
   @if meta.type-of($properties) == map {
-    background-color: scaleAlphaToHex(map.get($properties, "color"), $opacity);
+    background-color: scaleLightness(map.get($properties, "color"), $opacity);
   } @else {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: scaleAlphaToHex($properties, $opacity);
+    background-color: scaleLightness($properties, $opacity);
   }
 }
 
