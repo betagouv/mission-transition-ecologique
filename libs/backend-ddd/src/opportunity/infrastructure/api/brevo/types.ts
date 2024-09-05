@@ -67,12 +67,6 @@ export interface DealAttributes {
 
 export interface DealUpdateAttributes {
   envoy: boolean
-  deal_stage?: BrevoDealStatus
-}
-
-export enum BrevoDealStatus {
-  Transmitted = '659d15cff01695.94588187',
-  TestTransmitted = 'UklHvFVBzoDyjoTwk0Oqnf8' // Statut "gagné" sur la pipeline de test
 }
 
 export enum BrevoCompanySize {
