@@ -20,4 +20,16 @@ export class Project {
       )
     })
   }
+
+  static readonly sort = (projects: ComputedRef<ProjectType[] | undefined>): ComputedRef<ProjectType[]> => {
+    return computed(() => {
+      if (!projects.value) {
+        return []
+      }
+
+      return projects.value.slice().sort((a, b) => {
+        return a.priority - b.priority
+      })
+    })
+  }
 }
