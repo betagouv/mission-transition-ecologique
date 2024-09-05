@@ -52,7 +52,7 @@
           />
           <TeeNoResult
             v-else-if="!countFilteredPrograms && !hasError"
-            message="Aucune aide n\'a pu être identifiée avec les critères choisis..."
+            message="Aucune aide n'a pu être identifiée avec les critères choisis..."
           />
           <TeeError
             v-else-if="hasError"
