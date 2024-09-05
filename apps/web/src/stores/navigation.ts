@@ -91,10 +91,6 @@ export const useNavigationStore = defineStore('navigation', () => {
     return isByRouteName(RouteName.CatalogProgramDetail)
   }
 
-  function isCatalogProgramDetail() {
-    return isByRouteName(RouteName.CatalogProgramDetail)
-  }
-
   function isCatalogAboutPrograms() {
     return isCatalogPrograms() || isCatalogProgramDetail()
   }
