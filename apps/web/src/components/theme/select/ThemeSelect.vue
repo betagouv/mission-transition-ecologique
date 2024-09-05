@@ -4,9 +4,11 @@
       v-for="opt in options"
       :key="opt.value"
       class="fr-col-4 fr-col-sm-6 fr-col-md-4 fr-col-xs-12 fr-p-1v"
-      @click="selectOption(opt.value)"
     >
-      <ThemeCard :option="opt" />
+      <ThemeCard
+        :option="opt"
+        @select-theme="selectOption"
+      />
     </div>
   </div>
 </template>

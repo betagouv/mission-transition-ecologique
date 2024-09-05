@@ -10,14 +10,20 @@
             class="fr-p-0 fr-hidden-xs fr-my-2v theme-divider"
             :class="`fr-bg--${option.color}`"
           />
-          <div class="fr-h5 fr-mb-1v fr-hidden-xs">
-            {{ option.title }}
-          </div>
-          <div class="fr-h2 fr-mb-1v fr-hidden-sm">
-            {{ option.title }}
-          </div>
+          <TeeDsfrButton
+            class="fr-h5 fr-mb-1v fr-hidden-xs fr-btn--tertiary-no-outline"
+            size="sm"
+            :label="option.title"
+            @click="emit('selectTheme', option.value)"
+          />
+          <TeeDsfrButton
+            class="fr-h2 fr-mb-1v fr-hidden-sm fr-btn--tertiary-no-outline"
+            size="sm"
+            :label="option.title"
+            @click="emit('selectTheme', option.value)"
+          />
         </div>
-        <div class="fr-card__desc">
+        <div class="fr-card__footer">
           <ul class="fr-tags-group">
             <ProjectButton
               v-for="project in option.highlightProjects"
@@ -38,6 +44,7 @@
     <div
       class="fr-hidden-xs fr-card__header"
       :class="`fr-card__header--${option.color}`"
+      @click="emit('selectTheme', option.value)"
     >
       <div class="fr-card__img fr-card__img--contain">
         <img
@@ -57,6 +64,7 @@ interface Props {
   option: ThemeOption
 }
 defineProps<Props>()
+const emit = defineEmits(['selectTheme'])
 </script>
 <style scoped>
 .theme-divider {
@@ -69,6 +77,10 @@ defineProps<Props>()
 }
 
 .theme-card:hover {
+  box-shadow: 1px 2px 8px 2px rgb(0 0 0 / 10%);
+}
+
+.theme-card:active {
   box-shadow: 1px 2px 8px 2px rgb(0 0 0 / 10%);
 }
 
