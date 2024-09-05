@@ -26,9 +26,9 @@ export const useNavigationStore = defineStore('navigation', () => {
   const hasSpinner = ref<boolean>(false)
 
   const query = computed<Record<string, LocationQueryValue | LocationQueryValue[]>>(() => {
-    let query: LocationQuery = {}
+    const query: LocationQuery = {}
     for (const key of new URLSearchParams(stringOfSearchParams.value).keys()) {
-      query = addQueryByKey(key, query)
+      addQueryByKey(key, query)
     }
 
     return query
@@ -44,12 +44,12 @@ export const useNavigationStore = defineStore('navigation', () => {
   }
 
   function queryByUsedTrackId(usedTrackId: string) {
-    let query: LocationQuery = {}
+    const query: LocationQuery = {}
     for (const key of new URLSearchParams(stringOfSearchParams.value).keys()) {
       if (key === usedTrackId) {
         break
       }
-      query = addQueryByKey(key, query)
+      addQueryByKey(key, query)
     }
 
     return query
@@ -75,8 +75,52 @@ export const useNavigationStore = defineStore('navigation', () => {
     return route
   }
 
-  function isCatalog() {
+  function isCatalogPrograms() {
+    return isByRouteName(RouteName.CatalogPrograms)
+  }
+
+  function isCatalogProjects() {
+    return isByRouteName(RouteName.CatalogProjects)
+  }
+
+  function isCatalogProjectDetail() {
+    return isByRouteName(RouteName.CatalogProjectDetail)
+  }
+
+  function isCatalogProgramDetail() {
+    return isByRouteName(RouteName.CatalogProgramDetail)
+  }
+
+  function isCatalogAboutPrograms() {
+    return isCatalogPrograms() || isCatalogProgramDetail()
+  }
+
+  function isCatalogList() {
     return isByRouteName([RouteName.CatalogPrograms, RouteName.CatalogProjects])
+  }
+
+  function isCatalogDetail() {
+    return isCatalogProgramDetail() || isCatalogProjectDetail()
+  }
+
+  function isCatalog() {
+    return isCatalogDetail() || isCatalogList()
+  }
+
+  function isQuestionnaire() {
+    return isQuestionnaireResult() || isQuestionnaireResultDetail()
+  }
+
+  function isQuestionnaireResult() {
+    return isByRouteName(RouteName.QuestionnaireResult)
+  }
+
+  function isQuestionnaireResultDetail() {
+    return isByRouteName([RouteName.QuestionnaireResultDetail, RouteName.ProgramFromProjectDetail, RouteName.ProjectResultDetail])
+  }
+
+  function isStaticPage() {
+    return !isQuestionnaire() && !isCatalog()
   }
 
   function isByRouteName(routeName: string | string[]) {
@@ -156,9 +200,20 @@ export const useNavigationStore = defineStore('navigation', () => {
     tabSelectedOnList,
     hasSpinner,
     isCatalog,
+    isCatalogAboutPrograms,
+    isCatalogPrograms,
+    isCatalogProjects,
+    isCatalogProjectDetail,
+    isCatalogProgramDetail,
+    isCatalogList,
+    isCatalogDetail,
     isByRouteName,
     resetSearchParams,
     setRouter,
+    isQuestionnaire,
+    isQuestionnaireResult,
+    isQuestionnaireResultDetail,
+    isStaticPage,
     setRoute,
     setSearchParams,
     updateSearchParam,

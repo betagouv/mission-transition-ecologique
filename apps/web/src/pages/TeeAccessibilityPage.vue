@@ -1,9 +1,10 @@
 <template>
+  <TeeDsfrBreadcrumb :links="[{ text: 'Accessibilité', to: RouteName.Accessibility }]" />
   <div
     id="simple-page"
-    class="fr-container fr-my-8w"
+    class="fr-container fr-mb-8w"
   >
-    <div class="fr-grid-row--gutters">
+    <div class="fr-grid-row">
       <div class="fr-grid-col">
         <h1>Politique d’accessibilité - RGAA</h1>
         <p>
@@ -117,5 +118,6 @@
 // console.log(`TeeAccessibilityPage > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import ContactMail from '@/components/contact/ContactMail.vue'
+import { RouteName } from '@/types'
 import Contact from '@/utils/contact'
 </script>

@@ -117,15 +117,12 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     const optionNext = current.value?.selected[0].next
     const nextTrackRulesSet = optionNext?.ruleSet
     const defaultNext = useTrackStore().current?.next
-
     let next = !optionNext || !!useTrackStore().current?.behavior?.multipleChoices ? defaultNext : optionNext
-
     if (nextTrackRulesSet) {
       // get current selection
       const selectedQuestionnaireData = current.value?.selected.map((item) => {
         return toRaw(item.questionnaireData)
       })
-
       nextTrackRulesSet.forEach((trackRule: NextTrackRuleSet) => {
         const item = remapItem(
           {},
@@ -141,7 +138,6 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
         next = bool ? trackRule.next : next
       })
     }
-
     return next
   }
 
@@ -220,12 +216,12 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
   }
 
   async function updateByTrackIdAndValue(trackId: TrackId, value: string | string[]) {
-    const track = useTrackStore().getTrack(TrackId.Goals)
+    const track = useTrackStore().getTrack(trackId)
     if (track) {
       const selectedOptions = await useTrackStore().getSelectedOptionsByTrackAndValue(track, value)
       if (selectedOptions.length > 0) {
         createOrUpdateUsedTrack(track, selectedOptions)
-        useNavigationStore().updateSearchParam({ name: TrackId.Goals, value: value })
+        useNavigationStore().updateSearchParam({ name: trackId, value: value })
       }
     }
   }

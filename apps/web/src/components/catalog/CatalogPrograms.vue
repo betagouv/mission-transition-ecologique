@@ -1,25 +1,13 @@
 <template>
-  <!-- PAGE BANNER -->
-  <TeeBanner
-    class="fr-pt-4v fr-py-md-6w fr-text-center"
-    :bg-color="Color.blueLight"
-  >
-    <template #title>
-      <div class="fr-col-10 fr-col-lg-8">
-        <h1 class="fr-text--blue-france">L'annuaire des aides publiques à la transition écologique</h1>
-      </div>
-    </template>
+  <TeeDsfrBreadcrumb v-if="!hasSpinner" />
+  <CatalogBanner>
+    <template #title> Le catalogue des aides publiques à la transition écologique </template>
     <template #description>
-      <div class="fr-col-12 fr-col-lg-10 fr-col-xl-9 fr-px-1v">
-        <p class="fr-text--md">
-          Réalisez une recherche parmi les aides à la transition écologique des entreprises, proposées par l’ensemble des partenaires
-          publics : ADEME, Bpifrance, CCI, CMA, etc.
-        </p>
-      </div>
+      Réalisez une recherche parmi les aides à la transition écologique des entreprises, proposées par l’ensemble des partenaires publics :
+      ADEME, Bpifrance, CCI, CMA, etc.
     </template>
-  </TeeBanner>
+  </CatalogBanner>
 
-  <!-- PROGRAMS AS LIST OF CARDS -->
   <div class="fr-container--fluid fr-container--fluid--no-overflow fr-mt-6v">
     <div class="fr-grid-row fr-grid-row--center">
       <TeeSpinner
@@ -36,18 +24,12 @@
     </div>
     <div class="fr-grid-row fr-grid-row--center">
       <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
-        <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-col-justify--left fr-my-3v">
-          <ProgramFilterByTheme v-if="showThemeFilterComponent" />
+        <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-col-justify--left fr-mt-3v">
+          <ThemeFilter v-if="hasThemeFilter" />
         </div>
-      </div>
-    </div>
-    <div
-      v-if="showObjectiveCardComponent"
-      class="fr-grid-row fr-grid-row--center"
-    >
-      <div class="fr-container fr-m-0 fr-p-0 fr-px-md-2v fr-mt-3v">
-        <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2">
-          <TeeObjectiveCard
+        <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-pr-md-2v">
+          <ThemeHeaderCard
+            v-if="hasThemeCard"
             :objective="objective as Objective"
             radius-corner="tr"
             radius-size="2-5v"
@@ -77,10 +59,8 @@
 </template>
 
 <script setup lang="ts">
-import ProgramFiltersAccordion from '@/components/program/list/filters/ProgramFiltersAccordion.vue'
-import ProgramFilterByTheme from '@/components/program/list/filters/ProgramFilterByTheme.vue'
 import { useProgramStore } from '@/stores/program'
-import { Color, Objective, type ProgramData, TrackId } from '@/types'
+import { Objective, type ProgramData, TrackId } from '@/types'
 import Matomo from '@/utils/matomo'
 import { Theme } from '@/utils/theme'
 import UsedTrack from '@/utils/track/usedTrack'
@@ -127,11 +107,11 @@ const showNoResultsComponent = computed(() => {
   return hasSpinner.value || hasError.value || !countPrograms.value
 })
 
-const showThemeFilterComponent = computed(() => {
+const hasThemeFilter = computed(() => {
   return havePrograms.value && countPrograms.value > 1
 })
 
-const showObjectiveCardComponent = computed(() => {
+const hasThemeCard = computed(() => {
   return hasObjectiveCard.value && !hasSpinner.value
 })
 

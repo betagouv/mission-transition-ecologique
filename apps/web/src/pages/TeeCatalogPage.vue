@@ -5,15 +5,14 @@
   >
     <router-view />
   </div>
-  <ContactHelp v-if="isCatalogRoot" />
+  <ContactHelp v-if="isCatalog" />
 </template>
 
 <script setup lang="ts">
 import { useNavigationStore } from '@/stores/navigation'
-import { RouteName } from '@/types/routeType'
 
 const navigationStore = useNavigationStore()
-const isCatalogRoot = computed(() => {
-  return navigationStore.isByRouteName(RouteName.CatalogPrograms)
+const isCatalog = computed(() => {
+  return navigationStore.isCatalogList()
 })
 </script>
