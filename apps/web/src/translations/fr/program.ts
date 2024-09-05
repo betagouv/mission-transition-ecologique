@@ -19,7 +19,6 @@ const programFrDict = {
     programKnowMore: 'En savoir plus',
     programAmIEligible: "Conditions d'éligibilité",
     form: {
-      label: 'Contactez un conseiller',
       hint: '👋 Envoyez votre demande, un conseiller {operator} vous contactera prochainement',
       needs: `Bonjour,
 

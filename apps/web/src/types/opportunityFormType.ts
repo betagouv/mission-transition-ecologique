@@ -1,6 +1,5 @@
 import { CalloutType } from '@/types'
 
-export type ProjectFormType = FormType & { project: StringFieldInputType }
 export type OpportunityFormType = FormType
 export interface FormType {
   [key: string]: StringFieldInputType | MandatoryStringFieldFormType | BooleanFieldInputType | ValidatedStringFieldInputType
@@ -30,13 +29,17 @@ export type ValidatedStringFieldInputType = StringFieldInputType & {
   errorMessage: string
 }
 
+export type TextFieldUnionType = ValidatedStringFieldInputType | StringFieldInputType
+
 export type InputFieldUnionType =
   | StringFieldInputType
   | MandatoryStringFieldFormType
   | BooleanFieldInputType
   | ValidatedStringFieldInputType
 
-export const isValidatedStringFieldInputType = (field: InputFieldUnionType): field is ValidatedStringFieldInputType => {
+export const isValidatedStringFieldInputType = (
+  field: InputFieldUnionType | TextFieldUnionType
+): field is ValidatedStringFieldInputType => {
   return 'validation' in field
 }
 

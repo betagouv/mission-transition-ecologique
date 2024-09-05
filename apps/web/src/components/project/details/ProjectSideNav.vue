@@ -45,7 +45,7 @@ const allMenuItems = [
     condition: props.project.moreDescription.length > 0
   },
   { id: 'aids', to: `project-aids-title`, text: 'Mes aides' },
-  { id: 'contact', to: `project-form-title`, text: 'Contact' },
+  { id: 'contact', to: `form-title`, text: 'Contact' },
   {
     id: 'linked-project',
     to: `project-linked-projects-title`,

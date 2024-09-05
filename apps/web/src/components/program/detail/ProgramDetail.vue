@@ -213,10 +213,21 @@
       ref="TeeProgramFormContainer"
       class="fr-tee-form-block fr-p-4v"
     >
-      <ProgramForm
+      <TeeForm
         v-if="program"
-        :program="program"
         :form-container-ref="TeeProgramFormContainer"
+        :data-id="program.id"
+        :data-slug="program.id"
+        :phone-callback="Translation.ti(Translation.t('form.phoneContact'), { operator: program['opérateur de contact'] })"
+        :form-type="OpportunityType.Program"
+        :error-email-subject="Translation.t('form.errorEmail.subject', { program: program.titre })"
+        :need="
+          Translation.t('program.form.needs', {
+            secteur: TrackStructure.getSectorShortLabel(),
+            titreAide: program.titre
+          })
+        "
+        :hint="Translation.t('program.form.hint', { operator: program['opérateur de contact'] })"
       />
     </div>
   </div>
@@ -228,13 +239,12 @@
 
 import ProgramAccordion from '@/components/program/detail/ProgramAccordion.vue'
 import ProgramEligibility from '@/components/program/detail/ProgramEligibility.vue'
-import ProgramForm from '@/components/program/detail/ProgramForm.vue'
 import ProgramLongDescription from '@/components/program/detail/ProgramLongDescription.vue'
 import ProgramObjective from '@/components/program/detail/ProgramObjective.vue'
 import ProgramTile from '@/components/program/detail/ProgramTile.vue'
 import Config from '@/config'
 import { useProgramStore } from '@/stores/program'
-import { type ProgramData as ProgramType } from '@/types'
+import { OpportunityType, type ProgramData as ProgramType } from '@/types'
 import { RouteName } from '@/types/routeType'
 import { useNavigationStore } from '@/stores/navigation'
 import Matomo from '@/utils/matomo'
@@ -242,6 +252,7 @@ import Program from '@/utils/program/program'
 import { Scroll } from '@/utils/scroll'
 import Translation from '@/utils/translation'
 import { computed, onBeforeMount, ref } from 'vue'
+import TrackStructure from '@/utils/track/trackStructure'
 
 const programsStore = useProgramStore()
 const navigationStore = useNavigationStore()

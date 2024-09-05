@@ -76,24 +76,40 @@
     </div>
     <div
       id="project-contact"
+      ref="TeeProjectFormContainer"
       class="fr-tee-form-block fr-p-4v"
     >
-      <ProjectForm
+      <TeeForm
         v-if="project"
-        :project="project"
-      />
+        :form-container-ref="TeeProjectFormContainer"
+        :form-type="OpportunityType.Project"
+        :data-id="project.id.toString()"
+        :data-slug="project.slug"
+        :hint="Translation.t('project.form.hint')"
+        :error-email-subject="Translation.t('form.errorEmail.subject', { project: props.project.title })"
+        :need="Translation.t('project.form.needs', { secteur: TrackStructure.getSectorShortLabel() })"
+      >
+        <template #customFields>
+          <TeeFormElement
+            class="fr-col-12 fr-col-md-6"
+            type="text"
+            :field="projectField"
+          />
+        </template>
+      </TeeForm>
     </div>
   </DsfrAccordion>
 </template>
 <script setup lang="ts">
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { useProgramStore } from '@/stores/program'
-import { type ProgramData, TrackId, Project, QuestionnaireRoute, ProgramAidType } from '@/types'
+import { type ProgramData, TrackId, Project, QuestionnaireRoute, ProgramAidType, OpportunityType, TextFieldUnionType } from '@/types'
 import Contact from '@/utils/contact'
 import { RouteName } from '@/types/routeType'
 import { type RouteLocationRaw } from 'vue-router'
 import { useNavigationStore } from '@/stores/navigation'
 import Translation from '@/utils/translation'
+import TrackStructure from '@/utils/track/trackStructure'
 
 interface Props {
   project: Project
@@ -103,6 +119,14 @@ const props = defineProps<Props>()
 const programStore = useProgramStore()
 const navigationStore = useNavigationStore()
 const isCatalogDetail = navigationStore.isByRouteName(RouteName.CatalogProjectDetail)
+const TeeProjectFormContainer = ref<HTMLElement | null | undefined>(null)
+
+const projectField = ref<TextFieldUnionType>({
+  required: true,
+  value: props.project.title,
+  label: 'Quel est votre projet?',
+  isValid: true
+})
 
 const expandedId = ref<string | undefined>('project-aids')
 const programs = ref<ProgramData[]>()
