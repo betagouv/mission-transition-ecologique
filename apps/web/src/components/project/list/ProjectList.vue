@@ -2,7 +2,10 @@
   <!--  LIST OF PROJECT CARDS-->
 
   <!--  Project counter -->
-  <div class="fr-grid-row fr-grid-row--center">
+  <div
+    v-if="!allTagSelected"
+    class="fr-grid-row fr-grid-row--center fr-mt-2v fr-mt-md-3v"
+  >
     <div class="fr-container">
       <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-text--blue-france tee-font-style--italic">
         <TeeCounterResult :to-count="sortedProjects" />
@@ -124,8 +127,11 @@ const programStore = useProgramStore()
 
 const resume: string = Translation.t('project.result.resume', {
   effectif: Translation.t('enterprise.structureSize.' + TrackStructure.getSize()),
-  secteur: TrackStructure.getSectorShortLabel(),
-  region: TrackStructure.getRegion()
+  secteur: TrackStructure.getSectorShortLabel()
+})
+
+const allTagSelected = computed(() => {
+  return programStore.programFilters.objectiveTypeSelected === ''
 })
 
 const hasPriorityProjects = computed(() => {
