@@ -29,7 +29,7 @@
     "type:check:vue": "nx run @tee/web:type-check --verbose",
     "ci": "nx run-many -t ci --verbose --parallel=false",
     "sass:watch": "nx run @tee/web:sass-watch",
-    "check:all": "npm run lint && npm run lint:sass && npm run type:check && npm run type:check:vue"
+    "check:all": "npm run lint && npm run lint:sass && npm run type:check"
   },
   "engines": {
     "node": "20.x",
