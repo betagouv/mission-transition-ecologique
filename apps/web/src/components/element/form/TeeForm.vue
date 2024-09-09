@@ -245,7 +245,6 @@ const isFieldValid = (field: InputFieldUnionType): boolean => {
 const saveOpportunityForm = async () => {
   try {
     isLoading.value = true
-    console.log(opportunityForm.value)
     const opportunity = new OpportunityApi(opportunityForm.value, props.dataId, props.dataSlug, props.formType)
     requestResponse.value = await opportunity.fetch()
 
