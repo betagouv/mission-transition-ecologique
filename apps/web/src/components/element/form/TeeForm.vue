@@ -114,25 +114,25 @@
         </div>
       </div>
     </div>
-    <TeeFormCallback
-      v-if="formIsSent"
-      :opportunity-form="opportunityForm"
-      :error-email-subject="errorEmailSubject"
-      :request-response="requestResponse"
-      class="fr-mt-5v fr-grid-row fr-grid-row--center fr-grid-row--middle"
-    >
-      <template
-        v-if="formType === OpportunityType.Program"
-        #phoneContact
-      >
-        <p class="fr-mb-15v">
-          <span>
-            {{ phoneCallback }}
-          </span>
-        </p>
-      </template>
-    </TeeFormCallback>
   </div>
+  <TeeFormCallback
+    v-if="formIsSent"
+    :opportunity-form="opportunityForm"
+    :error-email-subject="errorEmailSubject"
+    :request-response="requestResponse"
+    class="fr-mt-5v fr-grid-row fr-grid-row--center fr-grid-row--middle"
+  >
+    <template
+      v-if="formType === OpportunityType.Program"
+      #phoneContact
+    >
+      <p class="fr-mb-15v">
+        <span>
+          {{ phoneCallback }}
+        </span>
+      </p>
+    </template>
+  </TeeFormCallback>
 </template>
 
 <script setup lang="ts">
