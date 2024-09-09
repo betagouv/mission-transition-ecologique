@@ -30,16 +30,13 @@ const props = withDefaults(defineProps<Props>(), {
 
 const navigationStore = useNavigationStore()
 
-const getRouteName = () => {
-  if (navigationStore.isCatalogProjectDetail() || navigationStore.isCatalogProgramDetail()) {
-    return RouteName.CatalogProjectDetail
-  }
-  return RouteName.ProjectResultDetail
-}
 const getRouteToProjectDetail = (): RouteLocationRaw => {
   const slug = props.project.slug
   return {
-    name: getRouteName(),
+    name:
+      navigationStore.isCatalogProjectDetail() || navigationStore.isCatalogProgramDetail()
+        ? RouteName.CatalogProjectDetail
+        : RouteName.ProjectResultDetail,
     params: { projectSlug: slug },
     query: navigationStore.isCatalogProgramDetail() || navigationStore.isCatalogProjectDetail() ? undefined : navigationStore.query
   }

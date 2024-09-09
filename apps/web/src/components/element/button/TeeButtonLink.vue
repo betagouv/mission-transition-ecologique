@@ -25,7 +25,7 @@ const props = withDefaults(defineProps<Props>(), {
   iconOnly: false,
   iconRight: false,
   icon: undefined,
-  target: '',
+  target: undefined,
   size: 'md',
   secondary: false
 })

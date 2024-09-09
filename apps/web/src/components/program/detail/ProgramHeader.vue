@@ -16,6 +16,7 @@
         <TeeDsfrButton
           :label="Translation.t('results.back')"
           icon="fr-icon-arrow-left-line"
+          size="lg"
           class="fr-btn fr-btn--tertiary-no-outline fr-mb-3v fr-pl-2v"
           @click="router.back()"
         />
