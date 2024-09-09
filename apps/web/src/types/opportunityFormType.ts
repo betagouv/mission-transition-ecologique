@@ -13,6 +13,10 @@ export interface FormType {
   linkToPage: MandatoryStringFieldFormType
 }
 
+export interface CustomFormType {
+  [key: string]: InputFieldUnionTypeWithoutBoolean
+}
+
 type DefaultFieldFormType = {
   required: true
   isValid: boolean | undefined
@@ -29,7 +33,7 @@ export type ValidatedStringFieldInputType = StringFieldInputType & {
   errorMessage: string
 }
 
-export type TextFieldUnionType = ValidatedStringFieldInputType | StringFieldInputType
+export type InputFieldUnionTypeWithoutBoolean = Exclude<InputFieldUnionType, BooleanFieldInputType>
 
 export type InputFieldUnionType =
   | StringFieldInputType
@@ -37,9 +41,7 @@ export type InputFieldUnionType =
   | BooleanFieldInputType
   | ValidatedStringFieldInputType
 
-export const isValidatedStringFieldInputType = (
-  field: InputFieldUnionType | TextFieldUnionType
-): field is ValidatedStringFieldInputType => {
+export const isValidatedStringFieldInputType = (field: InputFieldUnionType): field is ValidatedStringFieldInputType => {
   return 'validation' in field
 }
 

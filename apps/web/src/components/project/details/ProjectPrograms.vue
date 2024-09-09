@@ -91,9 +91,10 @@
       >
         <template #customFields>
           <TeeFormElement
-            class="fr-col-12 fr-col-md-6"
+            v-for="customField in customFormFields"
+            :key="customField.label"
             type="text"
-            :field="projectField"
+            :field="customField"
           />
         </template>
       </TeeForm>
@@ -103,7 +104,7 @@
 <script setup lang="ts">
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { useProgramStore } from '@/stores/program'
-import { type ProgramData, TrackId, Project, QuestionnaireRoute, ProgramAidType, OpportunityType, TextFieldUnionType } from '@/types'
+import { type ProgramData, TrackId, Project, QuestionnaireRoute, ProgramAidType, OpportunityType, CustomFormType } from '@/types'
 import Contact from '@/utils/contact'
 import { RouteName } from '@/types/routeType'
 import { type RouteLocationRaw } from 'vue-router'
@@ -121,11 +122,13 @@ const navigationStore = useNavigationStore()
 const isCatalogDetail = navigationStore.isByRouteName(RouteName.CatalogProjectDetail)
 const TeeProjectFormContainer = ref<HTMLElement | null | undefined>(null)
 
-const projectField = ref<TextFieldUnionType>({
-  required: true,
-  value: props.project.title,
-  label: 'Quel est votre projet?',
-  isValid: true
+const customFormFields = ref<CustomFormType>({
+  projectTitle: {
+    required: true,
+    value: props.project.title,
+    label: 'Quel est votre projet?',
+    isValid: true
+  }
 })
 
 const expandedId = ref<string | undefined>('project-aids')

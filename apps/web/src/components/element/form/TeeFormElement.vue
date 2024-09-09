@@ -25,10 +25,10 @@
   </div>
 </template>
 <script setup lang="ts">
-import { TextFieldUnionType, isValidatedStringFieldInputType } from '@/types'
+import { InputFieldUnionTypeWithoutBoolean, isValidatedStringFieldInputType } from '@/types'
 
 interface Props {
-  field: TextFieldUnionType
+  field: InputFieldUnionTypeWithoutBoolean
   type: string
   size?: number
   rows?: number
@@ -42,9 +42,9 @@ const props = withDefaults(defineProps<Props>(), {
   isTextarea: false
 })
 
-const emit = defineEmits<{ (e: 'updateField', payload: TextFieldUnionType): void }>()
+const emit = defineEmits<{ (e: 'updateField', payload: InputFieldUnionTypeWithoutBoolean): void }>()
 
-const localField = ref<TextFieldUnionType>(props.field)
+const localField = ref<InputFieldUnionTypeWithoutBoolean>(props.field)
 
 const isFieldValid = (): boolean => {
   return localField.value.value !== undefined && localField.value.value !== ''

@@ -43,17 +43,17 @@
         <TeeFormElement
           type="email"
           :field="opportunityForm.email"
-          @update-field="(field: TextFieldUnionType) => (opportunityForm.email = field as ValidatedStringFieldInputType)"
+          @update-field="(field) => (opportunityForm.email = field as ValidatedStringFieldInputType)"
         />
         <TeeFormElement
           type="tel"
           :field="opportunityForm.tel"
-          @update-field="(field: TextFieldUnionType) => (opportunityForm.tel = field as ValidatedStringFieldInputType)"
+          @update-field="(field) => (opportunityForm.tel = field as ValidatedStringFieldInputType)"
         />
         <TeeFormElement
           type="text"
           :field="opportunityForm.siret"
-          @update-field="(field: TextFieldUnionType) => (opportunityForm.siret = field as ValidatedStringFieldInputType)"
+          @update-field="(field) => (opportunityForm.siret = field as ValidatedStringFieldInputType)"
         />
         <TeeFormElement
           type="textarea"
@@ -138,7 +138,7 @@
 <script setup lang="ts">
 import { Scroll } from '@/utils/scroll'
 import { computed, ref } from 'vue'
-import { InputFieldUnionType, type ReqResp, TrackId, ValidatedStringFieldInputType, TextFieldUnionType } from '@/types'
+import { InputFieldUnionType, type ReqResp, TrackId, ValidatedStringFieldInputType, CustomFormType, FormType } from '@/types'
 import Translation from '@/utils/translation'
 import TeeDsfrButton from '@/components/element/button/TeeDsfrButton.vue'
 import Matomo from '@/utils/matomo'
@@ -156,6 +156,7 @@ const route = useRoute()
 const publicPath = Config.publicPath !== 'undefined/' ? Config.publicPath : '../../public/'
 const navigation = useNavigationStore()
 interface Props {
+  customFields?: CustomFormType
   dataId: string
   dataSlug: string
   formType: OpportunityType
@@ -255,7 +256,8 @@ const isFieldValid = (field: InputFieldUnionType): boolean => {
 const saveOpportunityForm = async () => {
   try {
     isLoading.value = true
-    const opportunity = new OpportunityApi(opportunityForm.value, props.dataId, props.dataSlug, props.formType)
+    const fullOpportunity: FormType = { ...opportunityForm.value, ...props.customFields }
+    const opportunity = new OpportunityApi(fullOpportunity, props.dataId, props.dataSlug, props.formType)
     requestResponse.value = await opportunity.fetch()
 
     // analytics / send event
