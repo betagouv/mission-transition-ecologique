@@ -1,7 +1,6 @@
 <template>
   <ProjectHeader
     v-if="project"
-    :program-id="programId"
     :project="project"
     :theme-color="themeColor"
   />
