@@ -9,7 +9,7 @@ export class StatisticsController extends Controller {
    * Request statistics about the opportunities and programs
    */
   @Get()
-  public async get(@Res() requestFailedResponse: TsoaResponse<500, ErrorJSON>): Promise<StatsData> {
+  public async stats(@Res() requestFailedResponse: TsoaResponse<500, ErrorJSON>): Promise<StatsData> {
     const statisticsResult = await new StatisticsService().get()
 
     if (statisticsResult.isErr) {

@@ -4,6 +4,11 @@ import { Err } from 'true-myth/dist/es/result'
 import { QuestionnaireData } from '@tee/common'
 import { ErrorJSON, Monitor, ProgramService } from '@tee/backend-ddd'
 
+interface PaginatedQuery extends QuestionnaireData {
+  pageSize?: number
+  page?: number
+}
+
 @SuccessResponse('200', 'OK')
 @Route('programs')
 export class ProgramsController extends Controller {
@@ -15,17 +20,23 @@ export class ProgramsController extends Controller {
    * @summary Get relevant programs given input data
    */
   @Get()
-  public get(
-    @Queries() questionnaireData: QuestionnaireData,
+  public getPrograms(
+    @Queries() queryParams: PaginatedQuery,
     @Res() requestFailedResponse: TsoaResponse<500, ErrorJSON>
   ): OpenAPISafeProgram[] | void {
     const programService = new ProgramService()
     this.setStatus(200)
 
-    const programsResult = programService.getFilteredPrograms(questionnaireData)
+    let programsResult
+    queryParams.page = 1 // TODO delete before putting it on prod.
+    if (!queryParams.page) {
+      programsResult = programService.getFilteredPrograms(queryParams as QuestionnaireData)
+    } else {
+      programsResult = programService.getPaginatedPrograms(queryParams as QuestionnaireData, queryParams.page, queryParams.pageSize || 10)
+    }
 
     if (programsResult.isErr) {
-      Monitor.error('Error in get programs', { questionnaireData, error: programsResult.error })
+      Monitor.error('Error in get programs', { queryParams, error: programsResult.error })
       this.throwErrorResponse(programsResult, requestFailedResponse)
       return
     }
@@ -41,7 +52,7 @@ export class ProgramsController extends Controller {
    * @summary Get relevant programs given input data
    */
   @Get('{programId}')
-  public getOne(@Path() programId: string, @Res() notFoundResponse: TsoaResponse<404, ErrorJSON>): OpenAPISafeProgram {
+  public getOneProgram(@Path() programId: string, @Res() notFoundResponse: TsoaResponse<404, ErrorJSON>): OpenAPISafeProgram {
     this.setStatus(200)
 
     const program = new ProgramService().getById(programId)

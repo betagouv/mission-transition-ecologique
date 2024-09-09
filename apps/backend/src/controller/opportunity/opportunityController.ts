@@ -14,7 +14,7 @@ export class OpportunityController extends Controller {
    */
   @Example<OpportunityId>({ id: '42' })
   @Post()
-  public async post(
+  public async createOpportunity(
     @Body() requestBody: OpportunityBody,
     @Res() requestFailedResponse: TsoaResponse<500, ErrorJSON>,
     @Res() _validationFailedResponse: TsoaResponse<422, ValidateErrorJSON>,

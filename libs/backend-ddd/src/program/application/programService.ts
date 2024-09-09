@@ -5,9 +5,11 @@ import ProgramsJson from '../infrastructure/programsJson'
 import { currentDateService } from '../infrastructure/currentDate'
 import { PublicodesService } from '../infrastructure/publicodesService'
 import { Objective, QuestionnaireData } from '@tee/common'
+import ProgramCache from './programCache'
 
 export class ProgramService {
   private _program: ProgramFeatures
+  private _cache = ProgramCache.getInstance()
 
   public static init(): void {
     PublicodesService.init(ProgramsJson.getInstance().getAll())
@@ -23,11 +25,32 @@ export class ProgramService {
   }
 
   public getFilteredPrograms(questionnaireData: QuestionnaireData): Result<ProgramType[], Error> {
+    console.log('not using the cache')
     return this._program.getFilteredBy(questionnaireData)
   }
 
   public getAll(): ProgramType[] {
     return this._program.getAll()
+  }
+
+  public getPaginatedPrograms(questionnaireData: QuestionnaireData, page: number, pageSize: number): Result<ProgramType[], Error> {
+    const hash = this._cache.generateHash(questionnaireData)
+    let programs = this._cache.getCache(hash)
+
+    if (!programs) {
+      programs = this.getFilteredPrograms(questionnaireData)
+      if (programs.isOk) {
+        this._cache.setCache(hash, programs.value)
+      }
+    } else {
+      console.log('using cached data !')
+    }
+
+    if (programs.isErr) {
+      return programs
+    } else {
+      return Result.ok(programs.value.slice((page - 1) * pageSize, page * pageSize))
+    }
   }
 
   public getObjectives(id: string): Objective[] {
