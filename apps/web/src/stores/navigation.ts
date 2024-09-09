@@ -194,7 +194,7 @@ export const useNavigationStore = defineStore('navigation', () => {
 
   function getAbsoluteUrlByRouteName(routeName: RouteName, params: RouteParamsGeneric = {}): string | undefined {
     if (router.value) {
-      return new URL(router.value?.resolve({ name: routeName, params: params }).href, window.location.origin).href
+      return new URL(router.value.resolve({ name: routeName, params: params }).href, window.location.origin).href
     }
   }
 
