@@ -29,7 +29,7 @@
         </div>
         <div class="fr-col-10">
           <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--left">
-            <div class="fr-col-12 fr-pt-2w fr-text--bold fr-text--blue-france">
+            <div class="fr-col-12 fr-pt-3w fr-pb-2v fr-text--bold fr-text--blue-france">
               {{ resume }}
             </div>
             <router-link
