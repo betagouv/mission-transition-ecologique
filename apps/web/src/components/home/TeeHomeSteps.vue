@@ -57,9 +57,9 @@ const content = [
     text: 'En fonction de mes objectifs et des enjeux de mon entreprise : bâtiment, mobilité, déchets, eau, énergie...'
   },
   {
-    title: 'J’accède aux aides dont mon entreprise peut bénéficier',
+    title: 'J’accède aux projets de transition écologique pour mon entreprise',
     img: '/images/home/3.svg',
-    text: 'Des propositions d’accompagnements et de financements issues de l’ensemble des partenaires : ADEME, Bpifrance, CCI, CMA, etc.',
+    text: 'Et je découvre les études et aides financières proposées par l’ensemble des partenaires : ADEME, Bpifrance, CCI, CMA, etc.',
     logos: {
       label: 'Partenaires',
       img: '/images/logos/logos-operators.png'

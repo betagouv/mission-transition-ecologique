@@ -1,4 +1,5 @@
 <template>
+  <TeeDsfrBreadcrumb v-if="!hasSpinner" />
   <CatalogBanner>
     <template #title> Le catalogue des aides publiques à la transition écologique </template>
     <template #description>
@@ -16,25 +17,19 @@
       <ResultListNoResults
         v-else-if="showNoResultsComponent"
         :has-error="hasError"
-        message="Aucune aide n\'a pu être identifiée sur cette thématique..."
+        message="Aucune aide n'a pu être identifiée sur cette thématique..."
         :has-spinner="hasSpinner"
         :count-items="countPrograms"
       />
     </div>
     <div class="fr-grid-row fr-grid-row--center">
       <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
-        <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-col-justify--left fr-my-3v">
+        <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-col-justify--left fr-mt-3v">
           <ThemeFilter v-if="hasThemeFilter" />
         </div>
-      </div>
-    </div>
-    <div
-      v-if="showObjectiveCardComponent"
-      class="fr-grid-row fr-grid-row--center"
-    >
-      <div class="fr-container fr-m-0 fr-p-0 fr-px-md-2v fr-mt-3v">
-        <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2">
+        <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-pr-md-2v">
           <ThemeHeaderCard
+            v-if="hasThemeCard"
             :objective="objective as Objective"
             radius-corner="tr"
             radius-size="2-5v"
@@ -116,7 +111,7 @@ const hasThemeFilter = computed(() => {
   return havePrograms.value && countPrograms.value > 1
 })
 
-const showObjectiveCardComponent = computed(() => {
+const hasThemeCard = computed(() => {
   return hasObjectiveCard.value && !hasSpinner.value
 })
 

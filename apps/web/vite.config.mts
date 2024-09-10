@@ -8,16 +8,20 @@ import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import { fileURLToPath } from 'url'
 import { resolve } from 'path'
 import { dsnFromString } from '@sentry/utils'
+import { sentryVitePlugin } from "@sentry/vite-plugin";
 import * as dotenv from 'dotenv'
 import { unheadVueComposablesImports } from '@unhead/vue'
 
 dotenv.config()
 
-console.log('Starting ...')
-console.log('vite.config ...')
-
+console.log('==== Vite Starting ... ====')
+console.log('- vite.config ...')
 const mode = process.env.NODE_ENV ?? 'development'
+const stack: string = process.env.STACK ?? ''
+const isReviewApp = process.env.IS_REVIEW_APP === 'true'
+
 const isProd = mode === 'production'
+const isScalingo = stack.includes('scalingo')
 
 type LibType = 'main' | 'widget'
 const LIB: LibType = (process.env.LIB as LibType) ?? 'main'
@@ -28,7 +32,8 @@ const libBuildConfig: Record<LibType, BuildOptions> = {
     reportCompressedSize: true,
     commonjsOptions: {
       transformMixedEsModules: true
-    }
+    },
+    sourcemap: true
   },
   widget: {
     emptyOutDir: false,
@@ -42,9 +47,10 @@ const libBuildConfig: Record<LibType, BuildOptions> = {
     }
   }
 }
+const currentBuildConfig = libBuildConfig[LIB]
 
 const plugins = async () => {
-  const basePlugins = [
+  const plugins = [
     vue(),
     nxViteTsPaths(),
     AutoImport({
@@ -64,16 +70,31 @@ const plugins = async () => {
       include: [/\.vue$/, /\.vue\?vue/],
       dts: './src/components.d.ts',
       resolvers: [vueDsfrComponentResolver]
-    }) as Plugin
-  ]
-  if (isProd) {
-    return basePlugins
-  } else {
-    return [...basePlugins] as Plugin[]
-  }
-}
+    }) as Plugin,
 
-const currentBuildConfig = libBuildConfig[LIB]
+  ]
+  if (hasSentryVitePlugin()) {
+    console.log('- Add sentry vite plugin for sourcemaps upload')
+    const sentryData = getSentryData()
+    const token = process.env.SENTRY_AUTH_TOKEN
+
+    if (token) {
+      plugins.push(sentryVitePlugin({
+        authToken: process.env.SENTRY_AUTH_TOKEN,
+        org: "betagouv",
+        project: "tee-frontend-vue",
+        url: sentryData?.domain,
+        sourcemaps: {
+          filesToDeleteAfterUpload: [
+            "../../dist/apps/web/**/*.js.map",
+          ]
+        }
+      }))
+    }
+  }
+
+  return plugins
+}
 
 const viteServer: ServerOptions = {
   host: '0.0.0.0',
@@ -174,4 +195,8 @@ function buildHeaders() {
   }
 
   return headers
+}
+
+function hasSentryVitePlugin() {
+  return isProd && isScalingo && !isReviewApp
 }
