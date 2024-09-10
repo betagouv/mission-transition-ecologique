@@ -33,12 +33,9 @@ const navigationStore = useNavigationStore()
 const getRouteToProjectDetail = (): RouteLocationRaw => {
   const slug = props.project.slug
   return {
-    name:
-      navigationStore.isCatalogProjectDetail() || navigationStore.isCatalogProgramDetail()
-        ? RouteName.CatalogProjectDetail
-        : RouteName.ProjectResultDetail,
+    name: navigationStore.isCatalogDetail() ? RouteName.CatalogProjectDetail : RouteName.ProjectResultDetail,
     params: { projectSlug: slug },
-    query: navigationStore.isCatalogProgramDetail() || navigationStore.isCatalogProjectDetail() ? undefined : navigationStore.query
+    query: navigationStore.isCatalogDetail() ? undefined : navigationStore.query
   }
 }
 </script>
