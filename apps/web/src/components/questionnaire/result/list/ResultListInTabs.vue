@@ -55,8 +55,13 @@ const programs = ref<ProgramData[]>()
 const projects = ref<Project[]>()
 const hasError = ref<boolean>(false)
 
-const tabTitles = computed<{ title: string; size: BreakpointKeys }[]>(() => {
-  const titles: { title: string; size: BreakpointKeys }[] = [
+interface TabTitle {
+  title: string
+  size: BreakpointKeys
+}
+
+const tabTitles = computed<TabTitle[]>(() => {
+  const titles: TabTitle[] = [
     { title: "Des idées d'actions à mettre en place", size: 'sm' },
     { title: 'Vos aides financières', size: 'sm' },
     { title: "Idées d'actions", size: 'xs' },
