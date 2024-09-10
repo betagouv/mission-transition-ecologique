@@ -5,7 +5,7 @@
   >
     <div class="fr-grid-row--gutters">
       <div class="fr-grid-col">
-        <h1>Données personnelles (et gestion des cookies)</h1>
+        <h1>Données personnelles</h1>
         <p>
           Le site
           <RouterLink
@@ -52,34 +52,34 @@
           <li>Directeur de publication : Monsieur Thomas Lesueur</li>
         </ul>
 
-        <h4 class="fr-mt-3w">Le site de la société Matomo</h4>
+        <h4 class="fr-mt-3w">Le site de la société Posthog</h4>
         <p>
           <a
-            href="https://fr.matomo.org/"
+            href="https://posthog.com/eu"
             target="_blank"
-            >CONSULTER SITE SOCIÉTÉ MATOMO</a
+            >CONSULTER SITE SOCIÉTÉ POSTHOG</a
           >
         </p>
         <div class="fr-mt-3w">
           <p>
-            Pour s’informer sur le traitement des données réalisé par la société Matomo et/ou modifier vos préférences quant à la
-            (dés)activation des cookies Matomo sur votre navigateur :
+            Pour s’informer sur le traitement des données réalisé par la société Posthog et/ou modifier vos préférences quant à la
+            (dés)activation des cookies Posthog sur votre navigateur :
           </p>
           <p>
             <a
-              href="https://fr.matomo.org/privacy/"
+              href="https://posthog.com/privacy"
               target="_blank"
-              >CONSULTER MATOMO : PROTECTION DE LA VIE PRIVÉE</a
+              >CONSULTER POSTHOG : PROTECTION DE LA VIE PRIVÉE</a
             >
           </p>
         </div>
         <div class="fr-mt-3w">
-          <p>Pour s'informer sur la propriété des données par la société Matomo :</p>
+          <p>Pour s'informer sur la propriété des données par la société Posthog :</p>
           <p>
             <a
-              href="https://fr.matomo.org/100-data-ownership/"
+              href="https://posthog.com/terms"
               target="_blank"
-              >CONSULTER MATOMO : PROPRIÉTÉ DES DONNÉES</a
+              >CONSULTER POSTHOG : PROPRIÉTÉ DES DONNÉES</a
             >
           </p>
         </div>
