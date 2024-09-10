@@ -32,7 +32,8 @@
                       id="finality-legend"
                       class="fr-consent-service__title"
                     >
-                      Préférences pour tous les services. <a :href="RouteName.PersonalData">Données personnelles</a>
+                      Préférences pour tous les services.
+                      <router-link :to="{ name: RouteName.PersonalData }"> Données personnelles </router-link>
                     </legend>
                     <div class="fr-consent-service__radios">
                       <DsfrButtonGroup

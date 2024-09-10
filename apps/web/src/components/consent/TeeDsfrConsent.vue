@@ -5,7 +5,7 @@
     class="fr-consent-banner"
   >
     <DsfrConsent
-      :url="RouteName.PersonalData"
+      url="/donnees-personnelles"
       @accept-all="onAcceptAll()"
       @refuse-all="onRefuseAll()"
       @customize="openCustomize()"
@@ -13,7 +13,6 @@
   </div>
 </template>
 <script setup lang="ts">
-import { RouteName } from '@/types/routeType'
 import Cookie from '@/utils/cookies'
 
 const $el = ref<HTMLElement | null>(null)

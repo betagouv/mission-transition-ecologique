@@ -97,14 +97,7 @@
               {{ link.label }}
             </a>
           </li>
-          <li class="fr-footer__bottom-item">
-            <TeeDsfrButton
-              label="Gestion des cookies"
-              aria-controls="fr-consent-modal"
-              class="fr-footer__bottom-link fr-btn--tertiary-no-outline"
-              @click="openConsent"
-            />
-          </li>
+          <TeeFooterCookiesButton />
         </ul>
 
         <!-- LICENCE LINKS -->
@@ -207,11 +200,4 @@ const mainLinks = [
     icon: 'fr-icon-chat-3-line'
   }
 ]
-
-const openConsent = () => {
-  const modal = document.getElementById('fr-consent-modal')
-  if (modal) {
-    modal.classList.add('fr-modal--opened')
-  }
-}
 </script>

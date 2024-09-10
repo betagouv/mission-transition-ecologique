@@ -1,6 +1,9 @@
 import posthog from 'posthog-js'
 import Config from '@/config'
 import { type App } from 'vue'
+import Cookie from '@/utils/cookies'
+import { CookieValue } from '@/types/cookies'
+import { RouteLocationNormalized } from 'vue-router'
 
 export default {
   install(app: App) {
@@ -21,5 +24,11 @@ export default {
   },
   deactivatePosthogCookie(app: App) {
     app.config.globalProperties['$posthog'].opt_out_capturing()
+  },
+  capturePageView(app: App, to: RouteLocationNormalized) {
+    const posthogCookie = Cookie.getCookieByValue(CookieValue.Posthog)
+    if (posthogCookie?.accepted) {
+      app.config.globalProperties.$posthog.capture('$pageview', { path: to.fullPath })
+    }
   }
 }

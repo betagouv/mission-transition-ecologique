@@ -84,6 +84,7 @@ declare module 'vue' {
     TeeEligibilityCriteriaBar: typeof import('./components/program/eligibilityCriteria/TeeEligibilityCriteriaBar.vue')['default']
     TeeError: typeof import('./components/element/TeeError.vue')['default']
     TeeFooter: typeof import('./components/TeeFooter.vue')['default']
+    TeeFooterCookiesButton: typeof import('./components/TeeFooterCookiesButton.vue')['default']
     TeeGroupBar: typeof import('./components/element/TeeGroupBar.vue')['default']
     TeeHeader: typeof import('./components/TeeHeader.vue')['default']
     TeeHomeInfos: typeof import('./components/home/TeeHomeInfos.vue')['default']
