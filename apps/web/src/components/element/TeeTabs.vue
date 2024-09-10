@@ -17,23 +17,6 @@
               v-for="(tabTitle, index) in tabTitles"
               :key="index"
               :icon="tabTitle.icon"
-              class="fr-unhidden-sm fr-hidden-xs"
-              :panel-id="tabTitle.panelId || `${getIdFromIndex(index)}-panel`"
-              :tab-id="tabTitle.tabId || getIdFromIndex(index)"
-              :selected="selected === index"
-              @click="selectIndex(index)"
-              @next="selectNext()"
-              @previous="selectPrevious()"
-              @first="selectFirst()"
-              @last="selectLast()"
-            >
-              {{ tabTitle.title }}
-            </DsfrTabItem>
-            <DsfrTabItem
-              v-for="(tabTitle, index) in mobileTitles"
-              :key="index"
-              class="fr-unhidden-xs fr-hidden-sm"
-              :icon="tabTitle.icon"
               :panel-id="tabTitle.panelId || `${getIdFromIndex(index)}-panel`"
               :tab-id="tabTitle.tabId || getIdFromIndex(index)"
               :selected="selected === index"
@@ -73,18 +56,13 @@ import { DsfrTabItem, DsfrTabContent, type DsfrTabsProps, getRandomId, DsfrTabs 
 
 export type { DsfrTabsProps }
 
-interface Props {
-  tabContents?: DsfrTabsProps['tabContents']
-  tabListName: DsfrTabsProps['tabListName']
-  tabTitles: DsfrTabsProps['tabTitles']
-  mobileTitles?: DsfrTabsProps['tabTitles']
-  initialSelectedIndex?: DsfrTabsProps['initialSelectedIndex']
+interface TeeDsfrTabs extends Omit<DsfrTabsProps, 'tabTitles'> {
+  tabTitles?: (Omit<DsfrTabsProps['tabTitles'][number], 'title'> & { title: string | { title: string; size: string }[] })[]
 }
 
-const props = withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<TeeDsfrTabs>(), {
   tabContents: () => [],
   tabTitles: () => [],
-  mobileTitles: () => [],
   initialSelectedIndex: 0,
   tabListName: ''
 })

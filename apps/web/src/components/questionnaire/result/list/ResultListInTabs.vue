@@ -4,7 +4,6 @@
     class="fr-col-12"
     tab-list-name="Liste d’onglet"
     :tab-titles="tabTitles"
-    :mobile-titles="mobileTabTitles"
     :initial-selected-index="selected"
     @select-tab="onSelectedTabChange"
   >
@@ -39,12 +38,13 @@
 <script setup lang="ts">
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
-import { ProgramData, Objective, TrackId, Project } from '@/types'
+import { ProgramData, Objective, TrackId, Project, BreakpointKeys } from '@/types'
 import { computed, onBeforeMount } from 'vue'
 import Matomo from '@/utils/matomo'
 import { useProjectStore } from '@/stores/project'
 import UsedTrack from '@/utils/track/usedTrack'
 import { Theme } from '@/utils/theme'
+import Breakpoint from '@/utils/breakpoints'
 
 const navigationStore = useNavigationStore()
 const programStore = useProgramStore()
@@ -55,8 +55,19 @@ const programs = ref<ProgramData[]>()
 const projects = ref<Project[]>()
 const hasError = ref<boolean>(false)
 
-const tabTitles = [{ title: "Des idées d'actions à mettre en place" }, { title: 'Vos aides financières' }]
-const mobileTabTitles = [{ title: "Idées d'actions" }, { title: 'Aides financières' }]
+const tabTitles = computed<{ title: string; size: BreakpointKeys }[]>(() => {
+  const titles: { title: string; size: BreakpointKeys }[] = [
+    { title: "Des idées d'actions à mettre en place", size: 'sm' },
+    { title: 'Vos aides financières', size: 'sm' },
+    { title: "Idées d'actions", size: 'xs' },
+    { title: 'Aides financières', size: 'xs' }
+  ]
+  if (Breakpoint.isMobile()) {
+    return titles.filter((el) => el.size === 'xs')
+  }
+  return titles.filter((el) => el.size === 'sm')
+})
+
 const filteredPrograms = computed(() => {
   return programs.value ? programStore.getProgramsByFilters(programs.value) : undefined
 })
