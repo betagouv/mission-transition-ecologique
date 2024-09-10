@@ -1,0 +1,78 @@
+titre: Véhicules lourds électriques
+promesse: Financez votre véhicule lourd électrique
+description: >-
+  Candidatez et, si votre projet est retenu, recevez une aide financière pour
+  l'achat ou la location d'un véhicule électrique lourd, destiné au transport de
+  marchandises ou de voyageurs. Cette aide peut également financer la conversion
+  de votre ancien véhicule thermique routier en véhicule électrique (rétrofit).
+description longue: >-
+  Les véhicules éligibles pour les entreprises dont l’activité du transport de
+  marchandises ou de voyageurs sont : 
+
+  - Les poids lourds de type porteur 100 % électriques à batterie (catégories N2
+  dont le PTAC est supérieur ou égal à 7,5t et N3),
+
+  - Les poids lourds de type tracteur routier 100 % électriques à batterie
+  (catégories N3),
+
+  - Les autocars 100 % électriques à batterie (catégories M2 et M3).
+début de validité: 26/08/2024
+fin de validité: 07/10/2024
+illustration: images/TEE_energie_verte.png
+opérateur de contact: ADEME
+url: >-
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/20240703/appel-a-projets-vehicules-lourds-electriques-2024-programme-cee-e-trans
+nature de l'aide: financement
+montant du financement: Jusqu'à 90 000 € HT par véhicule
+activable en autonomie: oui
+objectifs:
+  - description: Préparez votre dossier et ses pièces justificatives.
+    liens:
+      - lien: >-
+          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/E-trans%20-%20Cahier%20des%20charges%20-%20V2%20-%202024.pdf
+        texte: Liste des critères et des pièces justificatives
+  - description: Créer un compte ADEME pour pouvoir déposer votre dossier.
+    liens:
+      - lien: https://agirpourlatransition.ademe.fr/user/register
+        texte: Créer mon compte ADEME
+  - description: >-
+      Déposez votre dossier et ses pièces justificatives impérativement avant le
+      07/10/24 à 17h. À ce stade, vous ne devez pas encore avoir loué ni
+      commandé le véhicule lourd.
+    liens:
+      - lien: >-
+          https://vosaides.ademe.fr/create-assistant?id_dispo=1ef3910a-971f-6622-a9e6-fd2cbb0506c4&id_liste=1ef3910a-9720-6784-902c-fd2cbb0506c4&dossier_aide_type=INVES
+        texte: Déposer mon dossier
+  - description: >-
+      L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
+      recevez un contrat de financement précisant le montant d’aide maximum, les
+      conditions et les modalités de versement.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - Activité de transport de marchandises ou de voyageurs
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+      - questionnaire . parcours = objectif précis
+  entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
+    valeur: oui
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est H
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est la mobilité durable

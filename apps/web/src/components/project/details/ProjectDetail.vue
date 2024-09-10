@@ -10,11 +10,11 @@
   >
     <div class="fr-container">
       <div class="fr-grid-row fr-pt-4v">
-        <div class="fr-col-3 fr-col-sm-3 fr-hidden-xs">
+        <div class="fr-col-3 fr-col-hidden fr-col-unhidden-md">
           <TeeCopyLinkButton class="fr-m-4v" />
           <ProjectSideNav :project="project" />
         </div>
-        <div class="fr-col-8 fr-col-xs-12 fr-col-sm-9">
+        <div class="fr-col-12 fr-col-md-9">
           <DsfrAccordionsGroup>
             <ProjectDescription :project="project" />
             <ProjectPrograms
