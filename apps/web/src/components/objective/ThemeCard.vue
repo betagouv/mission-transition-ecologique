@@ -10,10 +10,10 @@
             class="fr-p-0 fr-hidden-xs fr-my-2v theme-divider"
             :class="`fr-bg--${option.color}`"
           />
-          <div class="fr-h5 fr-mb-1v fr-hidden-xs">
-            {{ option.title }}
-          </div>
-          <div class="fr-h2 fr-mb-1v fr-hidden-sm">
+          <div
+            class="fr-mb-1v"
+            :class="currentBreakpoint === 'xs' ? 'fr-h2' : 'fr-h5'"
+          >
             {{ option.title }}
           </div>
         </div>
@@ -51,6 +51,9 @@
 </template>
 <script setup lang="ts">
 import { ThemeOption } from './ThemeSelect.vue'
+import Breakpoint from '@/utils/breakpoints'
+
+const currentBreakpoint = Breakpoint.getCurrentBreakpoint()
 
 interface Props {
   option: ThemeOption
