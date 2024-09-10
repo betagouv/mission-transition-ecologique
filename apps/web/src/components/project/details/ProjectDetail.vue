@@ -45,6 +45,7 @@ const theme = ref<ThemeType>()
 
 interface Props {
   projectSlug: string
+  programId?: number
 }
 const props = defineProps<Props>()
 
