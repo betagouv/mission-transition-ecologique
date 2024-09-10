@@ -26,7 +26,7 @@
   <!-- PROGRAM INFOS -->
   <div
     v-if="program"
-    class="fr-container fr-mt-3v"
+    class="fr-container fr-mt-0 fr-mt-md-3v"
   >
     <div class="fr-grid-row fr-grid-row-gutters">
       <div class="fr-col">
@@ -51,10 +51,10 @@
           <!-- TITLE & RESUME -->
           <div class="fr-col">
             <!-- PROGRAM TITLE -->
-            <div class="program-title fr-text--purple fr-h6 fr-text--bold fr-mb-5v">
-              <div class="program-title-text">{{ program?.titre }}</div>
+            <div class="fr-col--middle fr-col-content--middle fr-text--purple fr-h6 fr-text--bold fr-mb-2v fr-mb-md-5v">
+              <div>{{ program?.titre }}</div>
               <TeeCopyLinkButton
-                class="fr-ml-6v"
+                class="fr-ml-6v fr-hidden fr-unhidden-md"
                 :tertiary="true"
                 :no-outline="true"
                 copy-class="fr-text--green"
@@ -317,13 +317,3 @@ const scrollToProgramForm = () => {
   }
 }
 </script>
-<style lang="scss" scoped>
-.program-title {
-  display: flex;
-  align-items: center;
-}
-
-.program-title-text {
-  height: 32px;
-}
-</style>
