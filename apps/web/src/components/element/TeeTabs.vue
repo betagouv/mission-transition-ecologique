@@ -52,12 +52,11 @@
   </div>
 </template>
 <script lang="ts" setup>
+import { BreakpointNameType } from '@/types'
 import { DsfrTabItem, DsfrTabContent, type DsfrTabsProps, getRandomId, DsfrTabs } from '@gouvminint/vue-dsfr'
 
-export type { DsfrTabsProps }
-
-interface TeeDsfrTabs extends Omit<DsfrTabsProps, 'tabTitles'> {
-  tabTitles?: (Omit<DsfrTabsProps['tabTitles'][number], 'title'> & { title: string | { title: string; size: string }[] })[]
+export interface TeeDsfrTabs extends Omit<DsfrTabsProps, 'tabTitles'> {
+  tabTitles?: (Omit<DsfrTabsProps['tabTitles'][number], 'title'> & { title: string | { title: string; size?: BreakpointNameType }[] })[]
 }
 
 const props = withDefaults(defineProps<TeeDsfrTabs>(), {

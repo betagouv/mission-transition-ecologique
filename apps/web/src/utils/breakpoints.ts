@@ -1,12 +1,12 @@
 import { useBreakpoints } from '@vueuse/core'
-import { BreakpointTypes } from '@/types'
+import { BreakpointNameType, BreakpointSizeTypes } from '@/types'
 export default class Breakpoint {
   private static readonly _breakpoints = useBreakpoints({
-    xs: BreakpointTypes.xs,
-    sm: BreakpointTypes.sm,
-    md: BreakpointTypes.md,
-    lg: BreakpointTypes.lg,
-    xl: BreakpointTypes.xl
+    [BreakpointNameType.xs]: BreakpointSizeTypes.xs,
+    [BreakpointNameType.sm]: BreakpointSizeTypes.sm,
+    [BreakpointNameType.md]: BreakpointSizeTypes.md,
+    [BreakpointNameType.lg]: BreakpointSizeTypes.lg,
+    [BreakpointNameType.xl]: BreakpointSizeTypes.xl
   })
 
   static getCurrentBreakpoint() {
@@ -15,6 +15,6 @@ export default class Breakpoint {
 
   static isMobile() {
     const currentBreakpoint = this.getCurrentBreakpoint()
-    return this._breakpoints.isSmaller('xs') || currentBreakpoint.value === 'xs'
+    return currentBreakpoint.value === BreakpointNameType.xs
   }
 }

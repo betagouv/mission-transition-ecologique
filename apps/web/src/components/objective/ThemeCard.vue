@@ -12,7 +12,7 @@
           />
           <div
             class="fr-mb-1v"
-            :class="currentBreakpoint === 'xs' ? 'fr-h2' : 'fr-h5'"
+            :class="Breakpoint.isMobile() ? 'fr-h2' : 'fr-h5'"
           >
             {{ option.title }}
           </div>
@@ -52,8 +52,6 @@
 <script setup lang="ts">
 import { ThemeOption } from './ThemeSelect.vue'
 import Breakpoint from '@/utils/breakpoints'
-
-const currentBreakpoint = Breakpoint.getCurrentBreakpoint()
 
 interface Props {
   option: ThemeOption

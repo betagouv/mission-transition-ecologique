@@ -3,7 +3,7 @@
     ref="tabs"
     class="fr-col-12"
     tab-list-name="Liste d’onglet"
-    :tab-titles="tabTitles"
+    :tab-titles="titles"
     :initial-selected-index="selected"
     @select-tab="onSelectedTabChange"
   >
@@ -36,15 +36,15 @@
 </template>
 
 <script setup lang="ts">
+import { TeeDsfrTabs } from '@/components/element/TeeTabs.vue'
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
-import { ProgramData, Objective, TrackId, Project, BreakpointKeys } from '@/types'
+import { ProgramData, Objective, TrackId, Project, BreakpointNameType } from '@/types'
 import { computed, onBeforeMount } from 'vue'
 import Matomo from '@/utils/matomo'
 import { useProjectStore } from '@/stores/project'
 import UsedTrack from '@/utils/track/usedTrack'
 import { Theme } from '@/utils/theme'
-import Breakpoint from '@/utils/breakpoints'
 
 const navigationStore = useNavigationStore()
 const programStore = useProgramStore()
@@ -55,23 +55,10 @@ const programs = ref<ProgramData[]>()
 const projects = ref<Project[]>()
 const hasError = ref<boolean>(false)
 
-interface TabTitle {
-  title: string
-  size: BreakpointKeys
-}
-
-const tabTitles = computed<TabTitle[]>(() => {
-  const titles: TabTitle[] = [
-    { title: "Des idées d'actions à mettre en place", size: 'sm' },
-    { title: 'Vos aides financières', size: 'sm' },
-    { title: "Idées d'actions", size: 'xs' },
-    { title: 'Aides financières', size: 'xs' }
-  ]
-  if (Breakpoint.isMobile()) {
-    return titles.filter((el) => el.size === 'xs')
-  }
-  return titles.filter((el) => el.size === 'sm')
-})
+const titles: TeeDsfrTabs['tabTitles'] = [
+  { title: [{ title: "Des idées d'actions à mettre en place", size: BreakpointNameType.sm }, { title: "Idées d'actions" }] },
+  { title: [{ title: 'Vos aides financières', size: BreakpointNameType.sm }, { title: 'Aides financières' }] }
+]
 
 const filteredPrograms = computed(() => {
   return programs.value ? programStore.getProgramsByFilters(programs.value) : undefined
