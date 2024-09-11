@@ -1,4 +1,4 @@
-import { PublicodesKeys, Sector, PublicodeObjective, Objective } from '@tee/common'
+import { PublicodesKeys, Sector, PublicodeObjective } from '@tee/common'
 import { PublicodesCondition } from '@tee/data'
 export interface PublicodesInputData {
   [PublicodesKeys.CodeNAF]?: string
@@ -28,20 +28,6 @@ export const SectorToNAFSection: Record<Sector, string[]> = {
 }
 
 export const NAF1Letters = [...'ABCDEFGHIJKLMNOPQRSTU'] as const
-
-export const PublicodeToObjectiveMapping = {
-  [PublicodeObjective.EnvironmentalImpact]: Objective.EnvironmentalImpact,
-  [PublicodeObjective.EnergyPerformance]: Objective.EnergyPerformance,
-  [PublicodeObjective.WaterConsumption]: Objective.WaterConsumption,
-  [PublicodeObjective.BuildingRenovation]: Objective.BuildingRenovation,
-  [PublicodeObjective.SustainableMobility]: Objective.SustainableMobility,
-  [PublicodeObjective.WasteManagement]: Objective.WasteManagement,
-  [PublicodeObjective.EcoDesign]: Objective.EcoDesign,
-  [PublicodeObjective.TrainOrRecruit]: Objective.TrainOrRecruit,
-  [PublicodeObjective.MakeSavings]: Objective.MakeSavings,
-  [PublicodeObjective.DurablyInvest]: Objective.DurablyInvest,
-  [PublicodeObjective.UnknownYet]: Objective.UnknownYet
-} as const
 
 export type ObjectivePublicodeData = {
   [key in PublicodesCondition]: PublicodeObjective[]

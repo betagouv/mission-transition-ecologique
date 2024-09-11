@@ -1,4 +1,4 @@
-import { Color, Objective, PublicodeObjective, PublicodesKeys, ThemeId, ThemeType } from '@/types'
+import { Color, Objective, ThemeId, ThemeType } from '@/types'
 import UsedTrack from '@/utils/track/usedTrack'
 import { Project } from '@tee/data'
 
@@ -121,17 +121,5 @@ export class Theme {
   static getPriorityProjects(projects: Project[] | undefined) {
     const sortedProjects = (projects as unknown as Project[]).sort((a, b) => a.priority - b.priority)
     return { projects: sortedProjects.slice(0, 3), moreThanThree: sortedProjects.length > 3 }
-  }
-
-  static getPublicodeObjectiveByObjective(objective: Objective | undefined): PublicodeObjective | undefined {
-    const key = Object.keys(PublicodeObjective).find(
-      (key) => PublicodeObjective[key as keyof typeof PublicodeObjective] === ((PublicodesKeys.Goal + objective) as PublicodeObjective)
-    ) as keyof typeof PublicodeObjective | undefined
-
-    if (!key) {
-      return undefined
-    }
-
-    return PublicodeObjective[key]
   }
 }

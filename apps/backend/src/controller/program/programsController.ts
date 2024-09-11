@@ -29,7 +29,7 @@ export class ProgramsController extends Controller {
       return
     }
 
-    return programsResult.value.map((program) => programService.domainToFront(program))
+    return programsResult.value.map((program) => programService.convertDomainToFront(program))
   }
 
   /**
@@ -51,7 +51,7 @@ export class ProgramsController extends Controller {
       return notFoundResponse(404, { message: `Program with id "${programId}" could not be found` })
     }
 
-    return programService.domainToFront(program)
+    return programService.convertDomainToFront(program)
   }
 
   private throwErrorResponse(programsResult: Err<OpenAPISafeProgram[], Error>, requestFailedResponse: TsoaResponse<500, ErrorJSON>) {

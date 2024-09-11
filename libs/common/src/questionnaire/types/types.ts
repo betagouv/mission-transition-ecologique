@@ -104,7 +104,7 @@ export enum PublicodesKeys {
   SectorActivity = "entreprise . secteur d'activité . est "
 }
 
-export enum FormattedFiltersKeys {
+export enum FiltersKeys {
   hasObjective = 'objective'
 }
 

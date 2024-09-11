@@ -6,7 +6,7 @@ import {
   type programFiltersType,
   type ValueOf,
   Objective,
-  FormattedFiltersKeys
+  FiltersKeys
 } from '@/types'
 
 export default class ProgramFilter {
@@ -50,8 +50,8 @@ export default class ProgramFilter {
       return true
     }
 
-    if (program.filters[FormattedFiltersKeys.hasObjective]) {
-      return program.filters[FormattedFiltersKeys.hasObjective].includes(objectiveTypeSelected)
+    if (program.filters[FiltersKeys.hasObjective]) {
+      return program.filters[FiltersKeys.hasObjective].includes(objectiveTypeSelected)
     }
 
     return true

@@ -1,4 +1,4 @@
-import { Objective, ProgramOperatorType, ProgramAidType, FormattedFiltersKeys } from '@/types'
+import { Objective, ProgramOperatorType, ProgramAidType, FiltersKeys } from '@/types'
 
 interface ProgramObjectiveLink {
   lien: string
@@ -45,5 +45,5 @@ export interface ProgramData {
 }
 
 export type FiltersProgramData = {
-  [FormattedFiltersKeys.hasObjective]?: Objective[]
+  [FiltersKeys.hasObjective]?: Objective[]
 }
