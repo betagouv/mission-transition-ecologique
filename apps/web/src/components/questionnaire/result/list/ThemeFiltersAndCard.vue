@@ -1,19 +1,13 @@
 <template>
   <div class="fr-col-12">
     <div class="fr-grid-row fr-grid-row--center fr-mt-2w">
-      <div class="fr-container">
+      <div class="fr-container fr-px-0 fr-px-md-3w">
         <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-mt-3v">
           <ThemeFilter :theme="theme as Objective" />
         </div>
-      </div>
-    </div>
-    <div
-      v-if="hasThemeCard"
-      class="fr-grid-row fr-grid-row--center"
-    >
-      <div class="fr-container fr-p-0 fr-mt-1v">
         <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2">
           <ThemeHeaderCard
+            v-if="hasThemeCard"
             :theme="theme as Objective"
             radius-corner="tr"
             radius-size="2-5v"

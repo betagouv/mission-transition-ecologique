@@ -193,7 +193,7 @@
       <div class="fr-col-12 fr-col-justify--right">
         <TeeDsfrButton
           :label="Translation.t('send')"
-          :disabled="!isFormFilled"
+          :disabled="!isFormFilled || !isFormValid"
           icon="ri-arrow-right-line"
           icon-right
           :loading="isLoading"
@@ -251,7 +251,6 @@
 <script setup lang="ts">
 import { Scroll } from '@/utils/scroll'
 import TrackStructure from '@/utils/track/trackStructure'
-import { computed, ref } from 'vue'
 import { InputFieldUnionType, isValidatedStringFieldInputType, type ProgramData, type ReqResp, TrackId } from '@/types'
 import Translation from '@/utils/translation'
 import TeeDsfrButton from '@/components/element/button/TeeDsfrButton.vue'
@@ -311,7 +310,7 @@ const opportunityForm = ref<OpportunityFormType>({
     required: true,
     isValid: undefined,
     value: Translation.t('program.form.needs', {
-      secteur: TrackStructure.getSector(),
+      secteur: TrackStructure.getSectorShortLabel(),
       titreAide: props.program.titre
     }),
     label: 'Quel est votre besoin ?',
@@ -348,6 +347,16 @@ const isFormFilled = computed(() => {
     }
   }
   return isFilled.every((v) => v)
+})
+
+const isFormValid = computed(() => {
+  const isValid = []
+  for (const key in opportunityForm.value) {
+    if (opportunityForm.value[key].required) {
+      isValid.push(opportunityForm.value[key].isValid)
+    }
+  }
+  return isValid.every((v) => v !== false)
 })
 
 const hasValidResponse = computed(() => {

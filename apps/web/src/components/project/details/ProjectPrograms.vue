@@ -4,14 +4,14 @@
     :expanded-id="expandedId"
     @expand="(id: string | undefined) => (expandedId = id)"
   >
-    <template #title
-      ><div
+    <template #title>
+      <div
         id="project-aids-title"
         class="fr-h3"
       >
         💰 Mes aides
-      </div></template
-    >
+      </div>
+    </template>
     <DsfrHighlight
       v-if="isCatalogDetail"
       class="fr-highlight-border--yellow fr-highlight-bg--yellow-light fr-m-0 fr-p-0"
@@ -52,7 +52,7 @@
           />
           <TeeNoResult
             v-else-if="!countFilteredPrograms && !hasError"
-            message="Aucune aide n\'a pu être identifiée avec les critères choisis..."
+            message="Aucune aide n'a pu être identifiée avec les critères choisis..."
           />
           <TeeError
             v-else-if="hasError"
@@ -60,15 +60,18 @@
             :email="Contact.email"
           />
         </div>
-        <router-link
-          v-for="program in filteredPrograms"
-          :id="program.id"
-          :key="program.id"
-          :to="getRouteToProgramDetail(program.id)"
-          class="fr-col-12 fr-card fr-enlarge-link fr-card--horizontal-tier fr-mb-10v"
-        >
-          <ProgramCard :program="program" />
-        </router-link>
+        <ProjectProgramsList
+          v-if="studyPrograms.length > 0"
+          :title="Translation.t('project.studyPrograms')"
+          :programs="studyPrograms"
+          :project="project"
+        />
+        <ProjectProgramsList
+          v-if="financePrograms.length > 0"
+          :title="Translation.t('project.financePrograms')"
+          :programs="financePrograms"
+          :project="project"
+        />
       </div>
     </div>
     <div
@@ -85,11 +88,12 @@
 <script setup lang="ts">
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { useProgramStore } from '@/stores/program'
-import { type ProgramData, TrackId, Project, QuestionnaireRoute } from '@/types'
+import { type ProgramData, TrackId, Project, QuestionnaireRoute, ProgramAidType } from '@/types'
 import Contact from '@/utils/contact'
 import { RouteName } from '@/types/routeType'
 import { type RouteLocationRaw } from 'vue-router'
 import { useNavigationStore } from '@/stores/navigation'
+import Translation from '@/utils/translation'
 
 interface Props {
   project: Project
@@ -98,7 +102,7 @@ const props = defineProps<Props>()
 
 const programStore = useProgramStore()
 const navigationStore = useNavigationStore()
-const isCatalogDetail = navigationStore.isByRouteName(RouteName.CatalogProjectDetail)
+const isCatalogDetail = navigationStore.isCatalogProjectDetail()
 
 const expandedId = ref<string | undefined>('project-aids')
 const programs = ref<ProgramData[]>()
@@ -114,6 +118,18 @@ const filteredPrograms = computed(() => {
   return programs.value && props.project ? programs.value.filter((program) => props.project?.programs.includes(program.id)) : []
 })
 
+const studyPrograms = computed(() => {
+  return filteredPrograms.value.filter((program: ProgramData) =>
+    [ProgramAidType.study, ProgramAidType.train].includes(program["nature de l'aide"])
+  )
+})
+
+const financePrograms = computed(() => {
+  return filteredPrograms.value.filter((program: ProgramData) =>
+    [ProgramAidType.fund, ProgramAidType.loan, ProgramAidType.tax].includes(program["nature de l'aide"])
+  )
+})
+
 onBeforeMount(async () => {
   navigationStore.hasSpinner = true
   const result = await programStore.programsByUsedTracks
@@ -124,14 +140,6 @@ onBeforeMount(async () => {
   }
   navigationStore.hasSpinner = false
 })
-
-const getRouteToProgramDetail = (programId: string): RouteLocationRaw => {
-  return {
-    name: RouteName.ProgramFromProjectDetail,
-    params: { programId: programId, projectSlug: props.project.slug },
-    query: navigationStore.query
-  }
-}
 
 const trackSiretTo = (): RouteLocationRaw => {
   if (navigationStore.isByRouteName(RouteName.CatalogProjectDetail)) {

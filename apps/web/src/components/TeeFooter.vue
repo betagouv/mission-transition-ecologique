@@ -187,7 +187,7 @@ const mainLinks = [
   },
   {
     label: 'Statistiques',
-    to: { name: RouteName.Statistiques }
+    to: { name: RouteName.Statistics }
   },
   {
     label: 'Ajouter une aide',

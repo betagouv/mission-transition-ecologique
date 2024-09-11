@@ -124,7 +124,7 @@ const programStore = useProgramStore()
 
 const resume: string = Translation.t('project.result.resume', {
   effectif: Translation.t('enterprise.structureSize.' + TrackStructure.getSize()),
-  secteur: TrackStructure.getSector(),
+  secteur: TrackStructure.getSectorShortLabel(),
   region: TrackStructure.getRegion()
 })
 
