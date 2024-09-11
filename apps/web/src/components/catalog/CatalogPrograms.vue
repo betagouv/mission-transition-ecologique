@@ -29,8 +29,8 @@
         </div>
         <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-pr-md-2v">
           <ThemeHeaderCard
-            v-if="hasThemeCard"
-            :objective="objective as Objective"
+            v-if="showThemeCard"
+            :theme="theme as Objective"
             radius-corner="tr"
             radius-size="2-5v"
           />
@@ -110,8 +110,8 @@ const hasThemeFilter = computed(() => {
   return havePrograms.value && countPrograms.value > 1
 })
 
-const hasThemeCard = computed(() => {
-  return hasObjectiveCard.value && !hasSpinner.value
+const showThemeCard = computed(() => {
+  return hasThemeCard.value && !hasSpinner.value
 })
 
 onBeforeMount(async () => {

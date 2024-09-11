@@ -92,7 +92,7 @@ declare module 'vue' {
     ThemeFilter: typeof import('./components/theme/ThemeFilter.vue')['default']
     ThemeFiltersAndCard: typeof import('./components/questionnaire/result/list/ThemeFiltersAndCard.vue')['default']
     ThemeHeaderCard: typeof import('./components/theme/ThemeHeaderCard.vue')['default']
-    ThemeSelect: typeof import('./components/Theme/ThemeSelect.vue')['default']
+    ThemeSelect: typeof import('./components/theme/ThemeSelect.vue')['default']
     TrackButton: typeof import('./components/track/form/TrackButton.vue')['default']
     TrackButtonInput: typeof import('./components/track/form/TrackButtonInput.vue')['default']
     TrackCallout: typeof import('./components/track/detail/TrackCallout.vue')['default']
