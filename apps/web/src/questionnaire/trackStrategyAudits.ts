@@ -7,7 +7,7 @@ export const strategyAudits: Track = {
   label: {
     fr: 'Pour finir, avez-vous déjà réalisé des audits environnementaux ces 2 dernières années ?'
   },
-  objective: Objective.EnvironmentalImpact,
+  theme: Objective.EnvironmentalImpact,
   interface: {
     component: TrackComponent.Buttons
   },

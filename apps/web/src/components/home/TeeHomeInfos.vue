@@ -60,7 +60,7 @@
           icon="ri-arrow-right-line"
           icon-right
           class="fr-text--bold fr-btn--tertiary-no-outline"
-          @click="updateObjective(c.value)"
+          @click="updateTheme(c.value)"
         />
       </div>
     </div>
@@ -141,7 +141,7 @@ const content = [
 ]
 const router = useRouter()
 
-const updateObjective = async (obj: Objective) => {
+const updateTheme = async (obj: Objective) => {
   usedTrackStore.resetUsedTracks()
   await usedTrackStore.updateByTrackIdAndValue(TrackId.QuestionnaireRoute, QuestionnaireRoute.SpecificGoal)
   await usedTrackStore.updateByTrackIdAndValue(TrackId.Goals, obj)

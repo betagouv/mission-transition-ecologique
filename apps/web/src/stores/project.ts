@@ -23,14 +23,10 @@ export const useProjectStore = defineStore('project', () => {
     return await new ProjectApi().get()
   }
 
-  function getProjectsByObjectiveAndEligibility(
-    projects: Project[],
-    objectiveType?: Objective,
-    filteredPrograms?: ProgramData[]
-  ): Project[] {
+  function getProjectsByThemeAndEligibility(projects: Project[], themeType?: Objective, filteredPrograms?: ProgramData[]): Project[] {
     return projects.filter((project: Project) => {
-      const hasTheme = objectiveType
-        ? ProjectFilter.byTheme(project, objectiveType)
+      const hasTheme = themeType
+        ? ProjectFilter.byTheme(project, themeType)
         : project.themes.some((themeId) => Theme.getTags().some(({ id }) => id === themeId))
       return hasTheme && (filteredPrograms ? ProjectFilter.byPrograms(project, filteredPrograms) : true)
     })
@@ -76,7 +72,7 @@ export const useProjectStore = defineStore('project', () => {
   return {
     projects,
     currentProject,
-    getProjectsByObjectiveAndEligibility,
+    getProjectsByThemeAndEligibility,
     getProjectBySlug,
     getLinkedProjectsFromCurrent
   }

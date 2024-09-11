@@ -17,7 +17,7 @@ export const strategyAuditsSelect: Track = {
   category: 'myStrategy',
   title: { fr: 'Quels audits' },
   label: { fr: 'Le ou lesquels ?' },
-  objective: Objective.EnvironmentalImpact,
+  theme: Objective.EnvironmentalImpact,
   interface: {
     component: TrackComponent.Buttons
   },

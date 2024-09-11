@@ -26,7 +26,7 @@
         <ThemeHeaderCard
           v-if="hasThemeCard"
           class="fr-col-12 fr-mt-3v"
-          :objective="objective as Objective"
+          :theme="theme as Objective"
           radius-corner="tr"
           radius-size="2-5v"
         />
@@ -80,18 +80,18 @@ const projects = ref<ProjectType[]>()
 const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)
 
-const objective = computed(() => {
-  return programStore.hasObjectiveTypeSelected() ? (programStore.programFilters.objectiveTypeSelected as Objective) : ''
+const theme = computed(() => {
+  return programStore.hasThemeTypeSelected() ? (programStore.programFilters.themeTypeSelected as Objective) : ''
 })
 
-const filteredProjects = Project.filter(projects, programs, objective)
+const filteredProjects = Project.filter(projects, programs, theme)
 
 const hasSpinner = computed(() => {
   return navigationStore.hasSpinner
 })
 
 const hasThemeCard = computed(() => {
-  return programStore.hasObjectiveTypeSelected() && !hasSpinner.value
+  return programStore.hasThemeTypeSelected() && !hasSpinner.value
 })
 
 const hasFilteredProjects = computed(() => {

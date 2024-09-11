@@ -1,10 +1,10 @@
 <template>
   <DsfrCard
-    v-if="Theme.isObjective(objective) || !isResultPage"
+    v-if="Theme.isTheme(theme) || !isResultPage"
     horizontal
     title="Thématique"
-    :description="Theme.getTitleByValue(objective as Objective)"
-    :img-src="Theme.getImageByValue(objective as Objective)"
+    :description="Theme.getTitleByValue(theme as Objective)"
+    :img-src="Theme.getImageByValue(theme as Objective)"
     :class="classes"
     size="sm"
     no-arrow
@@ -19,7 +19,7 @@ import { useNavigationStore } from '@/stores/navigation'
 import { RouteName } from '@/types/routeType'
 
 interface Props {
-  objective: Objective | ''
+  theme: Objective | ''
   radiusCorner?: 'tl' | 'tr' | 'bl' | 'br' | 't' | 'r' | 'b' | 'l' | 'a'
   radiusSize?: '0' | '1v' | '2v' | '2-5v'
 }
@@ -41,13 +41,13 @@ function getRadiusClass() {
 }
 
 const classes = computed(() => {
-  if (!Theme.isObjective(props.objective)) {
+  if (!Theme.isTheme(props.theme)) {
     return []
   }
 
   return [
     'fr-card-banner',
-    'fr-card--' + Theme.getColorByValue(props.objective),
+    'fr-card--' + Theme.getColorByValue(props.theme),
     'fr-card--horizontal-tier',
     'fr-card--no-border',
     'fr-col-content--middle',

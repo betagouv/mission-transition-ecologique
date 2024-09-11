@@ -45,5 +45,5 @@ export interface ProgramData {
 }
 
 export type FiltersProgramData = {
-  [FiltersKeys.hasObjective]?: Objective[]
+  [FiltersKeys.hasTheme]?: Objective[]
 }

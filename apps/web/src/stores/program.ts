@@ -25,7 +25,7 @@ export const useProgramStore = defineStore('program', () => {
     programAidTypesSelected: [],
     regionAidSelected: [],
     operatorAidSelected: [],
-    objectiveTypeSelected: ''
+    themeTypeSelected: ''
   })
 
   const programs = computed(async () => {
@@ -51,7 +51,7 @@ export const useProgramStore = defineStore('program', () => {
     return programs.filter((program: ProgramData) => {
       return (
         ProgramFilter.byAidType(program, programFilters.value.programAidTypesSelected as ProgramAidType[]) &&
-        ProgramFilter.byObjective(program, programFilters.value.objectiveTypeSelected as Objective) &&
+        ProgramFilter.byTheme(program, programFilters.value.themeTypeSelected as Objective) &&
         ProgramFilter.byOperator(program, programFilters.value.operatorAidSelected as ProgramOperatorType[]) &&
         ProgramFilter.byRegion(program, programFilters.value.regionAidSelected as Region[])
       )
@@ -84,18 +84,18 @@ export const useProgramStore = defineStore('program', () => {
     return result
   }
 
-  function hasObjectiveTypeSelected() {
-    return programFilters.value.objectiveTypeSelected !== ''
+  function hasThemeTypeSelected() {
+    return programFilters.value.themeTypeSelected !== ''
   }
 
-  function setObjectiveTypeSelected(objectiveType: string) {
-    programFilters.value.objectiveTypeSelected = objectiveType
+  function setThemeTypeSelected(themeType: string) {
+    programFilters.value.themeTypeSelected = themeType
   }
 
   function resetFilters() {
     programFilters.value = {
       programAidTypesSelected: [],
-      objectiveTypeSelected: '',
+      themeTypeSelected: '',
       regionAidSelected: [],
       operatorAidSelected: []
     }
@@ -108,8 +108,8 @@ export const useProgramStore = defineStore('program', () => {
     programsByUsedTracks,
     getProgramsByFilters,
     getProgramById,
-    hasObjectiveTypeSelected,
-    setObjectiveTypeSelected,
+    hasThemeTypeSelected,
+    setThemeTypeSelected,
     resetFilters
   }
 })

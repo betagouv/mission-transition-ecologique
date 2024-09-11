@@ -29,13 +29,13 @@
       </div>
     </div>
     <div
-      v-if="showObjectiveCardComponent"
+      v-if="showThemeCardComponent"
       class="fr-grid-row fr-grid-row--center"
     >
       <div class="fr-container fr-m-0 fr-p-0 fr-px-md-2v fr-mt-3v">
         <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2">
           <ThemeHeaderCard
-            :objective="objective as Objective"
+            :theme="theme as Objective"
             radius-corner="tr"
             radius-size="2-5v"
           />
@@ -91,17 +91,17 @@ const hasSpinner = computed(() => {
   return programs.value === undefined && !hasError.value
 })
 
-const hasObjectiveCard = computed(() => {
-  return programStore.hasObjectiveTypeSelected() || (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityObjective())
+const hasThemeCard = computed(() => {
+  return programStore.hasThemeTypeSelected() || (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityTheme())
 })
 
-const objective = computed(() => {
-  if (programStore.hasObjectiveTypeSelected()) {
-    return programStore.programFilters.objectiveTypeSelected
+const theme = computed(() => {
+  if (programStore.hasThemeTypeSelected()) {
+    return programStore.programFilters.themeTypeSelected
   }
 
-  if (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityObjective()) {
-    return UsedTrack.getPriorityObjective()
+  if (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityTheme()) {
+    return UsedTrack.getPriorityTheme()
   }
 
   return ''
@@ -115,8 +115,8 @@ const hasThemeFilter = computed(() => {
   return havePrograms.value && countPrograms.value > 1
 })
 
-const showObjectiveCardComponent = computed(() => {
-  return hasObjectiveCard.value && !hasSpinner.value
+const showThemeCardComponent = computed(() => {
+  return hasThemeCard.value && !hasSpinner.value
 })
 
 onBeforeMount(async () => {

@@ -182,7 +182,7 @@ export interface Track {
   hint?: Translations
   resume?: Translations
   callout?: TrackCallout
-  objective?: Objective
+  theme?: Objective
   interface?: TrackInterface
   behavior?: TrackBehavior
   config?: TrackResultsConfig

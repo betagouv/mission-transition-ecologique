@@ -5,7 +5,7 @@ export const wastesStake: Track = {
   category: 'myWastes',
   title: { fr: 'Enjeu' },
   label: { fr: 'Aimeriez-vous améliorer la gestion des déchets de votre activité ? ' },
-  objective: Objective.WasteManagement,
+  theme: Objective.WasteManagement,
   interface: {
     component: TrackComponent.Buttons
   },

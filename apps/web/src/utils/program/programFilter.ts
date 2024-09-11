@@ -45,13 +45,13 @@ export default class ProgramFilter {
     return matchingOperators.length > 0
   }
 
-  static byObjective(program: ProgramData, objectiveTypeSelected: Objective) {
-    if (!this.isValidFilterValue(objectiveTypeSelected)) {
+  static byTheme(program: ProgramData, themeTypeSelected: Objective) {
+    if (!this.isValidFilterValue(themeTypeSelected)) {
       return true
     }
 
-    if (program.filters[FiltersKeys.hasObjective]) {
-      return program.filters[FiltersKeys.hasObjective].includes(objectiveTypeSelected)
+    if (program.filters[FiltersKeys.hasTheme]) {
+      return program.filters[FiltersKeys.hasTheme].includes(themeTypeSelected)
     }
 
     return true

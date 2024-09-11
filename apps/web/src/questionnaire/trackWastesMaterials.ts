@@ -7,7 +7,7 @@ export const wastesMaterials: Track = {
   label: {
     fr: 'Avez-vous pour objectif de réduire vos pertes de matières premières ?'
   },
-  objective: Objective.WasteManagement,
+  theme: Objective.WasteManagement,
   interface: {
     component: TrackComponent.Buttons
   },

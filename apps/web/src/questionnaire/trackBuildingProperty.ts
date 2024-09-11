@@ -5,7 +5,7 @@ export const buildingProperty: Track = {
   category: 'myBuildings',
   title: { fr: 'Mon statut' },
   label: { fr: 'Parlons de vos locaux. Vous êtes :' },
-  objective: Objective.BuildingRenovation,
+  theme: Objective.BuildingRenovation,
   interface: {
     component: TrackComponent.Buttons
   },

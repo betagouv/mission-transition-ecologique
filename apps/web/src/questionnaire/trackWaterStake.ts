@@ -5,7 +5,7 @@ export const waterStake: Track = {
   category: 'myWater',
   title: { fr: 'Enjeu' },
   label: { fr: "Pensez-vous avoir un enjeu important sur votre consommation d'eau ?" },
-  objective: Objective.WaterConsumption,
+  theme: Objective.WaterConsumption,
   interface: {
     component: TrackComponent.Buttons
   },

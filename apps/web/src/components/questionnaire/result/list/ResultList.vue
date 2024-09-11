@@ -26,13 +26,13 @@ const filteredPrograms = computed(() => {
   return programs.value ? programStore.getProgramsByFilters(programs.value) : undefined
 })
 
-const objective = computed(() => {
-  return programStore.programFilters.objectiveTypeSelected !== ''
-    ? (programStore.programFilters.objectiveTypeSelected as Objective)
-    : (Theme.getObjectiveByValue(UsedTrack.getPriorityObjective()) ?? '')
+const theme = computed(() => {
+  return programStore.programFilters.themeTypeSelected !== ''
+    ? (programStore.programFilters.themeTypeSelected as Objective)
+    : (Theme.getThemeByValue(UsedTrack.getPriorityTheme()) ?? '')
 })
 
-const filteredProjects = Project.filter(projects, filteredPrograms, objective)
+const filteredProjects = Project.filter(projects, filteredPrograms, theme)
 
 onBeforeMount(async () => {
   navigationStore.hasSpinner = true

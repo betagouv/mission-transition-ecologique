@@ -70,17 +70,13 @@ const filteredProjects = computed(() => {
     return undefined
   }
 
-  return projectStore.getProjectsByObjectiveAndEligibility(
-    projects.value,
-    getObjectiveForProjectFiltering(),
-    filteredPrograms.value ?? undefined
-  )
+  return projectStore.getProjectsByThemeAndEligibility(projects.value, getThemeForProjectFiltering(), filteredPrograms.value ?? undefined)
 })
 
-const getObjectiveForProjectFiltering = () => {
-  return programStore.programFilters.objectiveTypeSelected !== ''
-    ? (programStore.programFilters.objectiveTypeSelected as Objective)
-    : Theme.getObjectiveByValue(UsedTrack.getPriorityObjective())
+const getThemeForProjectFiltering = () => {
+  return programStore.programFilters.themeTypeSelected !== ''
+    ? (programStore.programFilters.themeTypeSelected as Objective)
+    : Theme.getThemeByValue(UsedTrack.getPriorityTheme())
 }
 
 onBeforeMount(async () => {

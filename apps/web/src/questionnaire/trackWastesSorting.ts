@@ -5,7 +5,7 @@ export const wastesSorting: Track = {
   category: 'myWastes',
   title: { fr: 'Tri des déchets' },
   label: { fr: 'Avez-vous mis en place une solution de tri des déchets dans votre entreprise ?' },
-  objective: Objective.WasteManagement,
+  theme: Objective.WasteManagement,
   interface: {
     component: TrackComponent.Buttons
   },

@@ -72,7 +72,7 @@
               style="color: #000091"
               v-html="program?.description"
             />
-            <ProgramObjective
+            <ProgramTheme
               v-if="program"
               :program="program"
             />
@@ -230,7 +230,6 @@ import ProgramAccordion from '@/components/program/detail/ProgramAccordion.vue'
 import ProgramEligibility from '@/components/program/detail/ProgramEligibility.vue'
 import ProgramForm from '@/components/program/detail/ProgramForm.vue'
 import ProgramLongDescription from '@/components/program/detail/ProgramLongDescription.vue'
-import ProgramObjective from '@/components/program/detail/ProgramObjective.vue'
 import ProgramTile from '@/components/program/detail/ProgramTile.vue'
 import Config from '@/config'
 import { useProgramStore } from '@/stores/program'

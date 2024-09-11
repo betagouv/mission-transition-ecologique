@@ -17,9 +17,9 @@ const PublicodeToObjectiveMapping = {
 }
 
 class FrontConverter {
-  private _getPublicodeKey(publicodeKey: string): FiltersKeys | undefined {
+  private _getFilterKey(publicodeKey: string): FiltersKeys | undefined {
     if (publicodeKey === PublicodesKeys.hasObjective) {
-      return FiltersKeys.hasObjective
+      return FiltersKeys.hasTheme
     }
     return undefined
   }
@@ -28,14 +28,14 @@ class FrontConverter {
     return data instanceof Object && PublicodesCondition.oneOfThese in data
   }
 
-  private _getObjective(publicodeData: ObjectivePublicodeData): Objective[] {
+  private _getTheme(publicodeData: ObjectivePublicodeData): Objective[] {
     const objectives: PublicodeObjective[] = publicodeData[PublicodesCondition.oneOfThese]
     return objectives.map((obj: PublicodeObjective) => PublicodeToObjectiveMapping[obj])
   }
 
-  private _getPublicodeData(publicodeKey: FiltersKeys, publicodeData: unknown) {
-    if (publicodeKey === FiltersKeys.hasObjective && this._isObjectivePublicodeData(publicodeData)) {
-      return this._getObjective(publicodeData)
+  private _getFilterData(publicodeData: unknown) {
+    if (this._isObjectivePublicodeData(publicodeData)) {
+      return this._getTheme(publicodeData)
     }
     return null
   }
@@ -43,17 +43,17 @@ class FrontConverter {
   public convertDomainToFront(program: ProgramType) {
     const { publicodes, ...frontProgram } = program
     if (publicodes) {
-      const convertedProgramPublicodes = Object.keys(publicodes).reduce<{ [key in FiltersKeys]?: string[] }>((acc, publicodeKey) => {
-        const convertedKey = this._getPublicodeKey(publicodeKey)
-        if (convertedKey) {
-          const convertedData = this._getPublicodeData(convertedKey, publicodes[publicodeKey])
+      const programFilters = Object.keys(publicodes).reduce<{ [key in FiltersKeys]?: string[] }>((acc, publicodeKey) => {
+        const filterKey = this._getFilterKey(publicodeKey)
+        if (filterKey) {
+          const convertedData = this._getFilterData(publicodes[publicodeKey])
           if (convertedData) {
-            acc[convertedKey] = convertedData
+            acc[filterKey] = convertedData
           }
         }
         return acc
       }, {})
-      return { ...frontProgram, filters: convertedProgramPublicodes }
+      return { ...frontProgram, filters: programFilters }
     }
     return program
   }

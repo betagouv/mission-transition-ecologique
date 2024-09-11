@@ -40,45 +40,45 @@ export default class UsedTrack {
     )
   }
 
-  static getPriorityObjective(): ObjectiveType {
+  static getPriorityTheme(): ObjectiveType {
     return this.findInQuestionnaireData(TrackId.Goals, QuestionnaireDataEnum.priority_objective)
   }
 
-  static hasPriorityObjective(): boolean {
+  static hasPriorityTheme(): boolean {
     return this.findInQuestionnaireData(TrackId.Goals, QuestionnaireDataEnum.priority_objective) !== undefined
   }
 
-  static isMobilityObjective(): boolean {
+  static isMobilityTheme(): boolean {
     return ObjectiveChecker.isSustainableMobility(
       this.findInQuestionnaireData(TrackId.MobilityWishes, QuestionnaireDataEnum.sustainable_mobility_objective)
     )
   }
 
-  static isEnergyObjective(): boolean {
+  static isEnergyTheme(): boolean {
     return ObjectiveChecker.isEnergyPerformance(
       this.findInQuestionnaireData(TrackId.EnergyReductionPriority, QuestionnaireDataEnum.energy_reduction_objective)
     )
   }
 
-  static isWasteObjective(): boolean {
+  static isWasteTheme(): boolean {
     return ObjectiveChecker.isWasteManagement(
       this.findInQuestionnaireData(TrackId.WastesStake, QuestionnaireDataEnum.wastes_management_objective)
     )
   }
 
-  static isWaterObjective(): boolean {
+  static isWaterTheme(): boolean {
     return ObjectiveChecker.isWaterConsumption(
       this.findInQuestionnaireData(TrackId.WaterStake, QuestionnaireDataEnum.water_reduction_objective)
     )
   }
 
-  static isEcoDesignObjective(): boolean {
+  static isEcoDesignTheme(): boolean {
     return ObjectiveChecker.isEcoDesign(
       this.findInQuestionnaireData(TrackId.WastesMaterials, QuestionnaireDataEnum.wastes_materials_objective)
     )
   }
 
-  static isEnvironmentalImpactObjective(): boolean {
+  static isEnvironmentalImpactTheme(): boolean {
     return ObjectiveChecker.isEnvironmentalImpact(this.findInQuestionnaireData(TrackId.Goals, QuestionnaireDataEnum.recently_audited))
   }
 }

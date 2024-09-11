@@ -50,8 +50,8 @@ const countProjects = computed(() => {
   return props.filteredProjects?.length || 0
 })
 
-const hasObjectiveCard = computed(() => {
-  return programStore.hasObjectiveTypeSelected() || (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityObjective())
+const hasThemeCard = computed(() => {
+  return programStore.hasThemeTypeSelected() || (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityTheme())
 })
 
 const sortedProjects = computed(() => {
@@ -65,6 +65,6 @@ const showNoResults = computed(() => {
 })
 
 const showProjectListComponent = computed(() => {
-  return hasObjectiveCard.value && UsedTrack.isSpecificGoal() && hasProjects.value
+  return hasThemeCard.value && UsedTrack.isSpecificGoal() && hasProjects.value
 })
 </script>

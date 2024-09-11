@@ -78,32 +78,32 @@ export class Theme {
     return this.themes.find((theme) => theme.value === value)
   }
 
-  static getObjectiveByValue(value: Objective) {
+  static getThemeByValue(value: Objective) {
     return this.themes.find((theme) => theme.value === value)?.value
   }
 
-  static getTitleByValue(objective: Objective) {
-    return this.getByValue(objective)?.title ?? ''
+  static getTitleByValue(theme: Objective) {
+    return this.getByValue(theme)?.title ?? ''
   }
 
-  static getImageByValue(objective: Objective) {
-    return this.getByValue(objective)?.image ?? ''
+  static getImageByValue(theme: Objective) {
+    return this.getByValue(theme)?.image ?? ''
   }
 
-  static getColorByValue(objective: Objective) {
-    return this.getByValue(objective)?.color ?? ''
+  static getColorByValue(theme: Objective) {
+    return this.getByValue(theme)?.color ?? ''
   }
 
   static getTags(): ThemeType[] {
     const tags = []
 
     if (UsedTrack.isNoSpecificGoal()) {
-      UsedTrack.isEnvironmentalImpactObjective() ? tags.push(this.getByValue(Objective.EnvironmentalImpact) as ThemeType) : undefined
-      UsedTrack.isEcoDesignObjective() ? tags.push(this.getByValue(Objective.EcoDesign) as ThemeType) : undefined
-      UsedTrack.isEnergyObjective() ? tags.push(this.getByValue(Objective.EnergyPerformance) as ThemeType) : undefined
-      UsedTrack.isWasteObjective() ? tags.push(this.getByValue(Objective.WasteManagement) as ThemeType) : undefined
-      UsedTrack.isWaterObjective() ? tags.push(this.getByValue(Objective.WaterConsumption) as ThemeType) : undefined
-      UsedTrack.isMobilityObjective() ? tags.push(this.getByValue(Objective.SustainableMobility) as ThemeType) : undefined
+      UsedTrack.isEnvironmentalImpactTheme() ? tags.push(this.getByValue(Objective.EnvironmentalImpact) as ThemeType) : undefined
+      UsedTrack.isEcoDesignTheme() ? tags.push(this.getByValue(Objective.EcoDesign) as ThemeType) : undefined
+      UsedTrack.isEnergyTheme() ? tags.push(this.getByValue(Objective.EnergyPerformance) as ThemeType) : undefined
+      UsedTrack.isWasteTheme() ? tags.push(this.getByValue(Objective.WasteManagement) as ThemeType) : undefined
+      UsedTrack.isWaterTheme() ? tags.push(this.getByValue(Objective.WaterConsumption) as ThemeType) : undefined
+      UsedTrack.isMobilityTheme() ? tags.push(this.getByValue(Objective.SustainableMobility) as ThemeType) : undefined
       tags.push(this.getByValue(Objective.TrainOrRecruit) as ThemeType)
 
       return tags
@@ -114,8 +114,8 @@ export class Theme {
     return tags
   }
 
-  static isObjective(objective: Objective | ''): objective is Objective {
-    return objective !== ''
+  static isTheme(theme: Objective | ''): theme is Objective {
+    return theme !== ''
   }
 
   static getPriorityProjects(projects: Project[] | undefined) {

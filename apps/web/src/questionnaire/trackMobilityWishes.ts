@@ -7,7 +7,7 @@ export const mobilityWishes: Track = {
   label: {
     fr: 'Souhaitez-vous favoriser des déplacements plus écologiques pour vous et vos employés ?'
   },
-  objective: Objective.SustainableMobility,
+  theme: Objective.SustainableMobility,
   interface: {
     component: TrackComponent.Buttons
   },

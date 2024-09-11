@@ -41,7 +41,7 @@ export interface ThemeOption {
 }
 
 const filterPrograms = (objective: Objective) => {
-  return programs.value?.filter((program) => ProgramFilter.byObjective(program, objective))
+  return programs.value?.filter((program) => ProgramFilter.byTheme(program, objective))
 }
 
 const options = computed<ThemeOption[]>(() => {
@@ -52,8 +52,8 @@ const options = computed<ThemeOption[]>(() => {
   for (const option of currentTrack.options) {
     const theme = Theme.getByValue(option.questionnaireData?.priority_objective)
     if (theme && projects.value) {
-      const objectiveProjects = projectStore.getProjectsByObjectiveAndEligibility(projects.value, theme.value, filterPrograms(theme.value))
-      const projectsInfos: { projects: Project[]; moreThanThree: boolean } = Theme.getPriorityProjects(objectiveProjects)
+      const themeProjects = projectStore.getProjectsByThemeAndEligibility(projects.value, theme.value, filterPrograms(theme.value))
+      const projectsInfos: { projects: Project[]; moreThanThree: boolean } = Theme.getPriorityProjects(themeProjects)
       options.push({
         value: option.questionnaireData?.priority_objective,
         title: theme.title,

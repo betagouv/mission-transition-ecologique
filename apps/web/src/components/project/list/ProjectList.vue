@@ -137,7 +137,7 @@ const isUniquePriority = computed(() => {
 })
 
 const priorityProjects = computed(() => {
-  const projectQty = hasObjectiveSelected.value ? 1 : 3
+  const projectQty = hasThemeSelected.value ? 1 : 3
   return props.sortedProjects ? props.sortedProjects.slice(0, projectQty) : undefined
 })
 
@@ -145,20 +145,20 @@ const nonPriorityProjects = computed(() => {
   return props.sortedProjects ? props.sortedProjects.slice(3) : undefined
 })
 
-const hasObjectiveCard = computed(() => {
-  return programStore.hasObjectiveTypeSelected() || (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityObjective())
+const hasThemeCard = computed(() => {
+  return programStore.hasThemeTypeSelected() || (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityTheme())
 })
 
-const hasObjectiveSelected = computed(() => {
-  return programStore.hasObjectiveTypeSelected()
+const hasThemeSelected = computed(() => {
+  return programStore.hasThemeTypeSelected()
 })
 
 const showPriorityProjectListComponent = computed(() => {
-  return hasPriorityProjects.value && !hasObjectiveCard.value && !hasObjectiveSelected.value
+  return hasPriorityProjects.value && !hasThemeCard.value && !hasThemeSelected.value
 })
 
 const hideMainProjectListComponent = computed(() => {
-  return !hasObjectiveCard.value && !hasObjectiveSelected.value
+  return !hasThemeCard.value && !hasThemeSelected.value
 })
 
 const isPriorityProject = (project: Project) => {

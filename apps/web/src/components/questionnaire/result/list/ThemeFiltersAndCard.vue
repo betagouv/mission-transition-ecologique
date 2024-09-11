@@ -3,7 +3,7 @@
     <div class="fr-grid-row fr-grid-row--center fr-mt-2w">
       <div class="fr-container">
         <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-mt-3v">
-          <ThemeFilter :objective="objective as Objective" />
+          <ThemeFilter :theme="theme as Objective" />
         </div>
       </div>
     </div>
@@ -14,7 +14,7 @@
       <div class="fr-container fr-p-0 fr-mt-1v">
         <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2">
           <ThemeHeaderCard
-            :objective="objective as Objective"
+            :theme="theme as Objective"
             radius-corner="tr"
             radius-size="2-5v"
           />
@@ -33,16 +33,16 @@ import { useProgramStore } from '@/stores/program'
 const programStore = useProgramStore()
 
 const hasThemeCard = computed(() => {
-  return programStore.hasObjectiveTypeSelected() || (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityObjective())
+  return programStore.hasThemeTypeSelected() || (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityTheme())
 })
 
-const objective = computed(() => {
-  if (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityObjective()) {
-    return Theme.getObjectiveByValue(UsedTrack.getPriorityObjective())
+const theme = computed(() => {
+  if (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityTheme()) {
+    return Theme.getThemeByValue(UsedTrack.getPriorityTheme())
   }
 
-  if (programStore.hasObjectiveTypeSelected()) {
-    return programStore.programFilters.objectiveTypeSelected
+  if (programStore.hasThemeTypeSelected()) {
+    return programStore.programFilters.themeTypeSelected
   }
 
   return ''

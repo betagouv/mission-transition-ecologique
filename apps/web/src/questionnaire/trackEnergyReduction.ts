@@ -5,7 +5,7 @@ export const energyReductionPriority: Track = {
   category: 'myEnergy',
   title: { fr: 'Réduction de la consommation' },
   label: { fr: 'La réduction de vos consommations d’énergie est-elle une priorité pour vous ?' },
-  objective: Objective.EnergyPerformance,
+  theme: Objective.EnergyPerformance,
   interface: {
     component: TrackComponent.Buttons
   },
