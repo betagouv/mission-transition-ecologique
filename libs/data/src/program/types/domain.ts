@@ -116,3 +116,11 @@ export enum Status {
   ReadyForProd = 'Prêt pour la prod',
   InProd = 'En prod'
 }
+
+export interface ConditionnalValues {
+  'Dispositif concerné': string
+  'Type de condition': string
+  'valeur de la condition géographique': string[]
+  'Champ à modifier 1': string
+  'Valeur 1': string
+}

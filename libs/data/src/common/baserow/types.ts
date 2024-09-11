@@ -55,3 +55,11 @@ export interface Program
   'Zones géographiques': LinkObject[]
   'Thèmes Ciblés': LinkObject[]
 }
+
+export interface ConditionnalValues {
+  'Dispositif concerné': LinkObject[]
+  'Type de condition': LinkObject
+  'valeur de la condition géographique': LinkObject[]
+  'Champ à modifier 1': LinkObject
+  'Valeur 1': string
+}

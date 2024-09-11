@@ -1,7 +1,15 @@
 import fs from 'fs'
 import { AbstractBaserow } from './abstractBaserow'
-import { Program } from './types'
-import { DataProgram, Status, DataProgramType, Operator, GeographicCoverage, GeographicAreas } from '../../program/types/domain'
+import { ConditionnalValues, Program } from './types'
+import {
+  DataProgram,
+  Status,
+  DataProgramType,
+  Operator,
+  GeographicCoverage,
+  GeographicAreas,
+  ConditionnalValues as DataConditionnalValues
+} from '../../program/types/domain'
 import { Theme } from '../../theme/types/domain'
 
 export class ProgramBaserow extends AbstractBaserow {
@@ -9,6 +17,7 @@ export class ProgramBaserow extends AbstractBaserow {
   private readonly _geographicCoverageTableId = 314470
   private readonly _geographicAreasTableId = 314474
   private readonly _programTableId = 314437
+  private readonly _conditionnalValuesTableId = 351202
 
   // Note : caching the downloaded data by default to nudge towards reducing the data transfer from baserow.
   async getPrograms(useLocalRawData: boolean): Promise<DataProgram[]> {
@@ -27,10 +36,13 @@ export class ProgramBaserow extends AbstractBaserow {
     const geographicCoverages = await this._getTableData<GeographicCoverage>(this._geographicCoverageTableId)
     const geographicAreas = await this._getTableData<GeographicAreas>(this._geographicAreasTableId)
     const themes = await this._getTableData<Theme>(this._themeTableId)
+    const conditionnalValues = await this._getTableData<ConditionnalValues>(this._themeTableId)
 
     const dataPrograms = baserowPrograms.map((baserowProgram) =>
       this._convertToDataProgram(baserowProgram, operators, geographicCoverages, geographicAreas, themes)
     )
+
+    this._enrichDataProgramsWithConditionnals(conditionnalValues)
 
     try {
       fs.writeFileSync('program_tmp.json', JSON.stringify(dataPrograms, null, 2))
@@ -81,5 +93,9 @@ export class ProgramBaserow extends AbstractBaserow {
     }
 
     return rawProgram
+  }
+
+  private _enrichDataProgramsWithConditionnals(conditionnalValues: ConditionnalValues[]) {
+    conditionnalValues.forEach((conditionnalValue) => {})
   }
 }
