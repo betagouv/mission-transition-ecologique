@@ -28,6 +28,12 @@
     }
   }
 
+  &.fr-enlarge-link {
+    .fr-card__content {
+      padding-bottom: 2rem !important;
+    }
+  }
+
   &-banner {
     flex-direction: row;
 

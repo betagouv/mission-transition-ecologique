@@ -40,7 +40,7 @@
                 :project="project"
                 :is-priority-project="true"
                 :priority-order="index + 1"
-                class="fr-radius-a--1v fr-card--shadow fr-card-priority fr-card-priority--highlighted"
+                class="fr-radius-a--1v fr-card--shadow fr-card-priority fr-card-priority--highlighted fr-enlarge-link"
               />
             </router-link>
           </div>
@@ -66,7 +66,7 @@
           >
             <ProjectCard
               :project="project"
-              class="fr-radius-a--1v fr-card--shadow"
+              class="fr-radius-a--1v fr-card--shadow fr-enlarge-link"
             />
           </router-link>
         </div>

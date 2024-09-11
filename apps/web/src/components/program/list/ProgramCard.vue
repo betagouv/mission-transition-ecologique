@@ -1,45 +1,39 @@
 <template>
-  <div class="fr-card__body">
-    <div class="fr-card__content">
-      <!-- TITLE -->
-      <div class="fr-card__start fr-mb-2v">
-        <p class="fr-text--purple fr-h6 fr-text--bold">
-          {{ program.titre }}
-        </p>
-      </div>
-      <!-- CONTENT -->
-      <h2 class="fr-card__title tee-program-resume fr-mb-3v">
-        {{ program.promesse }}
-      </h2>
-      <!-- END -->
-      <div class="fr-card__end">
-        <p class="fr-mb-0 tee-program-info">
-          <span
-            class="fr-icon-money-euro-circle-line"
-            aria-hidden="true"
-          />
-          {{ getCostInfos() }}
-        </p>
-      </div>
-    </div>
-  </div>
-  <div
-    v-if="program.illustration"
-    class="fr-card__header"
+  <DsfrCard
+    :img-src="`${publicPath}${program.illustration}`"
+    :alt-img="`image / ${program.titre}`"
+    :no-arrow="true"
+    :horizontal="true"
   >
-    <div class="fr-card__img">
-      <img
-        class="fr-responsive-img"
-        :src="`${publicPath}${program.illustration}`"
-        :alt="`image / ${program.titre}`"
-      />
-    </div>
-    <ul class="fr-badges-group">
-      <p class="fr-badge tee-program-badge-image">
-        {{ program["nature de l'aide"] }}
+    <template #start-details>
+      <!-- HEADER BADGE -->
+      <div class="fr-mb-1v">
+        <DsfrBadge
+          :label="program['nature de l\'aide']"
+          :no-icon="true"
+          class="tee-program-badge-image"
+        />
+      </div>
+      <!-- TITLE -->
+      <p class="fr-text--purple fr-h6 fr-text--bold">
+        {{ program.titre }}
       </p>
-    </ul>
-  </div>
+      <!-- CONTENT -->
+      <div class="fr-card__title">
+        <h2 class="fr-text--blue-france fr-h3">
+          {{ program.promesse }}
+        </h2>
+      </div>
+      <!-- END -->
+      <p class="fr-mb-0 tee-program-info">
+        <span
+          class="fr-icon-money-euro-circle-line"
+          aria-hidden="true"
+        />
+        {{ getCostInfos() }}
+      </p>
+    </template>
+  </DsfrCard>
 </template>
 
 <script setup lang="ts">
@@ -47,6 +41,7 @@ import Config from '@/config'
 import { ProgramAidType, type ProgramData } from '@/types'
 import { consolidateAmounts } from '@/utils/helpers'
 import Translation from '@/utils/translation'
+import { DsfrCard } from '@gouvminint/vue-dsfr'
 
 const { program } = defineProps<{ program: ProgramData }>()
 

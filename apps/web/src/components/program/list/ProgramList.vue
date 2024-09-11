@@ -14,9 +14,12 @@
             :id="program.id"
             :key="program.id"
             :to="getRouteToProgramDetail(program.id)"
-            class="fr-col-12 program-card fr-card fr-enlarge-link fr-card--horizontal-tier fr-mb-6v"
+            class="fr-col-12 no-outline fr-mb-2w"
           >
-            <ProgramCard :program="program" />
+            <ProgramCard
+              :program="program"
+              class="fr-enlarge-link fr-card--horizontal-tier"
+            />
           </router-link>
         </div>
       </div>
