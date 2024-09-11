@@ -5,6 +5,7 @@ import { YamlObjective, DataProgram, DataProgramType, Status, YamlImage } from '
 import { ProgramBaserow } from '../common/baserow/programBaserow'
 import { PublicodesGenerator } from './publicodesGenerator'
 import { SlugValidator } from '../common/validators/slugValidator'
+import axios from 'axios'
 
 export class ProgramYamlGenerator {
   outputDirectory: string = path.join(__dirname, '../../programs/')
@@ -12,28 +13,26 @@ export class ProgramYamlGenerator {
   async createProgramYamls(): Promise<void> {
     // while working on the script, to avoid hitting Baserow API limits and to decrease our global impact, please cache locally the data :
     // on the first run use getPrograms(false) then for all following call use getPrograms(true)
-    const programs = await new ProgramBaserow().getPrograms(false)
+    const programs = await new ProgramBaserow().getPrograms(true)
 
-    programs.forEach((program) => {
+    for (const program of programs) {
       if (!program.Statuts.includes(Status.InProd)) {
-        return
+        continue
       }
-      console.log('Working on program ' + program['Id fiche dispositif'])
-      if (!this._validateProgramData(program)) {
-        return
+      if (!(await this._validateProgramData(program))) {
+        continue
       }
       this._createProgramYaml(program)
-    })
+    }
     return
   }
-  private _validateProgramData(program: DataProgram) {
+  private async _validateProgramData(program: DataProgram) {
     let valid = true
     if (!SlugValidator.validate(program['Id fiche dispositif'])) {
+      this._log(program['Id fiche dispositif'] + 'slug not valid, not generating the associated yaml.')
       valid = false
     }
-    if (!valid) {
-      console.log(program['Id fiche dispositif'] + 'not valid, not generating the associated yaml.')
-    }
+    await this._validateLinks(program)
     return valid
   }
 
@@ -125,7 +124,7 @@ export class ProgramYamlGenerator {
         fileContent["montant de l'avantage fiscal"] = program["Montant de l'aide ou coût"]
         return
       default:
-        console.log("type d'aide non traitée dans les données financières")
+        this._log(program['Id fiche dispositif'] + ": type d'aide non traitée dans les données financières")
         return
     }
   }
@@ -169,12 +168,22 @@ export class ProgramYamlGenerator {
       "nombre d'années d'activité": this._setEligibilityYears(program)
     }
     if (program['Eligibilité Spécifique']) {
-      eligibility_conditions["autres critères d'éligibilité"] = program['Eligibilité Spécifique']
-        .split('\n')
-        .map((criteria) => criteria.substring(2))
+      const otherEligibilities = this._setOtherEligibilityCriteria(program)
+      if (otherEligibilities.length) {
+        eligibility_conditions["autres critères d'éligibilité"] = otherEligibilities
+      }
     }
     fileContent["conditions d'éligibilité"] = eligibility_conditions
     return
+  }
+
+  private _setOtherEligibilityCriteria(program: DataProgram): string[] {
+    const criteriaList = program['Eligibilité Spécifique'].split('\n').map((criteria) => criteria.trim())
+    if (criteriaList.filter((criteria) => !criteria.startsWith('- ')).length) {
+      this._log(program['Id fiche dispositif'] + ': problème de format du champ "éligibilité spécifique" qui doit être une liste !')
+      return []
+    }
+    return criteriaList.map((criteria) => criteria.substring(2))
   }
 
   private _setEligibilityYears(program: DataProgram): string[] {
@@ -186,7 +195,7 @@ export class ProgramYamlGenerator {
 
   private _setEligibilitySector(program: DataProgram) {
     if (!program['Eligibilité Sectorielle']) {
-      console.log('Eligibilité sectorielle manquante !')
+      this._log(program['Id fiche dispositif'] + ':Eligibilité sectorielle manquante !')
     }
     if (program['Eligibilité Naf']) {
       return [program['Eligibilité Sectorielle'], program['Eligibilité Naf']]
@@ -197,7 +206,7 @@ export class ProgramYamlGenerator {
     if (program['Couverture géographique'].Name == 'National') return ["France et territoires d'outre-mer"]
 
     if (program['Zones Spécifiques (géographie)']) {
-      console.log('Zone géographique spécifique, YAML à modifier manuellement')
+      this._log(program['Id fiche dispositif'] + ': Zone géographique spécifique, YAML à modifier manuellement')
     }
 
     return [
@@ -230,5 +239,59 @@ export class ProgramYamlGenerator {
       return 'Éligible aux micro-entreprises'
     }
     return 'Non éligible aux micro-entreprises'
+  }
+
+  private async _validateLinks(program: DataProgram) {
+    if (program['Id fiche dispositif'] == 'baisse-les-watts') return
+    if (program['URL externe']) {
+      if (!(await this._isValidLink(program['URL externe']))) {
+        this._log(program['Id fiche dispositif'] + ': problème de validation du lien du champ URL externe')
+      }
+    }
+
+    for (let i = 1; i <= 6; i++) {
+      const step = program[`étape${i}` as keyof typeof program] as string
+      if (step) {
+        const objectives = this._parseStep(step)
+        if (!objectives.liens) {
+          continue
+        }
+        for (const lien of objectives.liens) {
+          if (!(await this._isValidLink(lien.lien))) {
+            this._log(program['Id fiche dispositif'] + ": problème de validation d'un lien du champ étape " + i)
+          }
+        }
+      }
+    }
+  }
+
+  private _exceptionLinks = [
+    'https://www.baisseleswatts.fr/?mtm_campaign=missiontransitionecologique&mtm_source=missiontransitionecologique&mtm_medium=missiontransitionecologique&mtm_content=missiontransitionecologique',
+    'https://www.cci.fr/ressources/developpement-durable/cfde/nos-formations',
+    'https://www.impots.gouv.fr/sites/default/files/formulaires/2079-bio-sd/2024/2079-bio-sd_4636.pdf'
+  ]
+
+  private async _isValidLink(link: string) {
+    if (this._exceptionLinks.includes(link)) {
+      return true
+    }
+    try {
+      const response = await axios.head(link, { timeout: 2000 })
+      if (response.status === 200) {
+        return true
+      } else {
+        return false
+      }
+    } catch (error) {
+      return false
+    } finally {
+      // Add a 100ms delay
+      await new Promise((resolve) => setTimeout(resolve, 100))
+    }
+  }
+
+  private _log(message: string): void {
+    console.log(message)
+    fs.appendFileSync('programYamlLog.log', message + '\n', { encoding: 'utf-8' })
   }
 }
