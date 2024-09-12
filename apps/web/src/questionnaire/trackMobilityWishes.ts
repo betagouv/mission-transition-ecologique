@@ -1,8 +1,8 @@
-import { MobilityStatus, TrackComponent, TrackId, YesNo, Objective, Track } from '@/types'
+import { MobilityStatus, TrackComponent, TrackId, YesNo, Objective, Track, TrackCategory } from '@/types'
 
 export const mobilityWishes: Track = {
   id: TrackId.MobilityWishes,
-  category: 'myMobility',
+  category: TrackCategory.myMobility,
   title: { fr: 'Mobilité douce' },
   label: {
     fr: 'Souhaitez-vous favoriser des déplacements plus écologiques pour vous et vos employés ?'

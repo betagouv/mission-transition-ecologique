@@ -1,9 +1,9 @@
-import type { Track } from '@/types'
+import { Track, TrackCategory } from '@/types'
 import { Objective, TrackComponent, TrackId } from '@/types'
 
 export const goals: Track = {
   id: TrackId.Goals,
-  category: 'myEntreprise',
+  category: TrackCategory.myEntreprise,
   title: { fr: 'Mes objectifs' },
   label: { fr: 'Choisissez la thématique de votre projet :' },
   interface: {

@@ -1,8 +1,8 @@
-import { TrackComponent, TrackId, YesNo, WasteManagementStatus, Objective, Track } from '@/types'
+import { TrackComponent, TrackId, YesNo, WasteManagementStatus, Objective, Track, TrackCategory } from '@/types'
 
 export const wastesStake: Track = {
   id: TrackId.WastesStake,
-  category: 'myWastes',
+  category: TrackCategory.myWastes,
   title: { fr: 'Enjeu' },
   label: { fr: 'Aimeriez-vous améliorer la gestion des déchets de votre activité ? ' },
   objective: Objective.WasteManagement,
