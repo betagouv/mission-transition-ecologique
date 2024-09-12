@@ -36,13 +36,13 @@ export class ProgramBaserow extends AbstractBaserow {
     const geographicCoverages = await this._getTableData<GeographicCoverage>(this._geographicCoverageTableId)
     const geographicAreas = await this._getTableData<GeographicAreas>(this._geographicAreasTableId)
     const themes = await this._getTableData<Theme>(this._themeTableId)
-    const conditionnalValues = await this._getTableData<ConditionnalValues>(this._themeTableId)
+    const conditionnalValues = await this._getTableData<ConditionnalValues>(this._conditionnalValuesTableId)
 
     const dataPrograms = baserowPrograms.map((baserowProgram) =>
       this._convertToDataProgram(baserowProgram, operators, geographicCoverages, geographicAreas, themes)
     )
 
-    this._enrichDataProgramsWithConditionnals(conditionnalValues)
+    this._enrichDataProgramsWithConditionnals(dataPrograms, conditionnalValues)
 
     try {
       fs.writeFileSync('program_tmp.json', JSON.stringify(dataPrograms, null, 2))
@@ -95,7 +95,31 @@ export class ProgramBaserow extends AbstractBaserow {
     return rawProgram
   }
 
-  private _enrichDataProgramsWithConditionnals(conditionnalValues: ConditionnalValues[]) {
-    conditionnalValues.forEach((conditionnalValue) => {})
+  private _enrichDataProgramsWithConditionnals(programs: DataProgram[], conditionnalValues: ConditionnalValues[]) {
+    conditionnalValues.forEach((conditionnalValue) => {
+      if (!conditionnalValue['Dispositif concerné'].length) {
+        return
+      }
+      const dataConditionnal = this._convertToDataConditionnalValue(conditionnalValue)
+      const matchingProgram = programs.find((program) => program['Id fiche dispositif'] === dataConditionnal['Dispositif concerné'])
+      if (matchingProgram) {
+        if (!matchingProgram.conditionnalData) {
+          matchingProgram.conditionnalData = []
+        }
+        matchingProgram.conditionnalData.push(dataConditionnal)
+      }
+    })
+  }
+
+  private _convertToDataConditionnalValue(conditionnalValue: ConditionnalValues) {
+    console.log(conditionnalValue)
+    const dataCondionnal: DataConditionnalValues = {
+      'Dispositif concerné': conditionnalValue['Dispositif concerné'][0].value,
+      'Type de condition': conditionnalValue['Type de condition'].value,
+      'valeur de la condition géographique': conditionnalValue['valeur de la condition géographique'].map((obj) => obj.value),
+      'Champ à modifier 1': conditionnalValue['Champ à modifier 1'].value,
+      'Valeur 1': conditionnalValue['Valeur 1']
+    }
+    return dataCondionnal
   }
 }

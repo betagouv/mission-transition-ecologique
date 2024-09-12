@@ -58,6 +58,7 @@ export interface DataProgram {
   étape6: string
   "Nature de l'aide": DataProgramType
   Statuts: Status[]
+  conditionnalData?: ConditionnalValues[]
 }
 
 export enum Publicodes {

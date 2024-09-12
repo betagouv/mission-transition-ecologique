@@ -12,7 +12,7 @@ export class ProgramYamlGenerator {
   async createProgramYamls(): Promise<void> {
     // while working on the script, to avoid hitting Baserow API limits and to decrease our global impact, please cache locally the data :
     // on the first run use getPrograms(false) then for all following call use getPrograms(true)
-    const programs = await new ProgramBaserow().getPrograms(false)
+    const programs = await new ProgramBaserow().getPrograms(true)
 
     programs.forEach((program) => {
       if (!program.Statuts.includes(Status.InProd)) {
@@ -79,10 +79,12 @@ export class ProgramYamlGenerator {
     this._setObjectives(yamlContent, program)
     this._setEligibility(yamlContent, program)
     yamlContent['publicodes'] = new PublicodesGenerator(program).generatePublicodes()
+    this._setConditionnalData(yamlContent, program)
 
     const yamlString = yaml.dump(yamlContent)
     fs.writeFileSync('programs/' + program['Id fiche dispositif'] + '.yaml', yamlString, 'utf8')
   }
+
   private _setProgramType(fileContent: { [key: string]: unknown }, program: DataProgram) {
     let helpType = program["Nature de l'aide"].toLowerCase()
     if (helpType === 'financement-étude') {
@@ -230,5 +232,35 @@ export class ProgramYamlGenerator {
       return 'Éligible aux micro-entreprises'
     }
     return 'Non éligible aux micro-entreprises'
+  }
+
+  private _setConditionnalData(yamlContent: { [key: string]: unknown }, program: DataProgram) {
+    if (!program.conditionnalData || !program.conditionnalData.length) {
+      return
+    }
+
+    const champsConditionnels: any = []
+    program.conditionnalData.forEach((conditionnal) => {
+      if (conditionnal['Type de condition'] != 'géographique') {
+        console.log('Warning, type de donnée conditionnelle non gérée et donc non prise en compte')
+        return
+      }
+      const conditionGeographique = conditionnal['valeur de la condition géographique']
+      const champAModifier1 = conditionnal['Champ à modifier 1']
+      const valeurDeRemplacement1 = conditionnal['Valeur 1']
+
+      const uneDeCesConditions = conditionGeographique.map((region) => {
+        return 'région = ' + region
+      })
+
+      const conditionnelEntry = {
+        'une de ces conditions': uneDeCesConditions,
+        [champAModifier1]: valeurDeRemplacement1
+      }
+
+      champsConditionnels.push(conditionnelEntry)
+    })
+
+    yamlContent['champs conditionnels'] = champsConditionnels
   }
 }
