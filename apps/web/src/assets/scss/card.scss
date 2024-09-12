@@ -28,12 +28,6 @@
     }
   }
 
-  &.fr-enlarge-link {
-    .fr-card__content {
-      padding-bottom: 2rem !important;
-    }
-  }
-
   &-banner {
     flex-direction: row;
 
@@ -131,6 +125,12 @@
     font-size: 2rem;
     font-weight: bold;
     z-index: 100;
+  }
+
+  &.fr-enlarge-link {
+    .fr-card__content {
+      padding-bottom: 2rem !important;
+    }
   }
 
   .fr-badge--success {
