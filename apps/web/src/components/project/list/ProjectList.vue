@@ -102,18 +102,15 @@
 import TrackStructure from '@/utils/track/trackStructure'
 import Translation from '@/utils/translation'
 import { computed } from 'vue'
-import { RouteName, Project } from '@/types'
+import { Project } from '@/types'
 import UsedTrack from '@/utils/track/usedTrack'
 import { useProgramStore } from '@/stores/program'
-import { useNavigationStore } from '@/stores/navigation'
-import { type RouteLocationRaw } from 'vue-router'
 
 interface ProjectListProps {
   sortedProjects?: Project[]
 }
 const props = defineProps<ProjectListProps>()
 
-const navigationStore = useNavigationStore()
 const programStore = useProgramStore()
 
 const resume: string = Translation.t('project.result.resume', {
@@ -124,10 +121,6 @@ const resume: string = Translation.t('project.result.resume', {
 
 const hasPriorityProjects = computed(() => {
   return priorityProjects.value ? priorityProjects.value?.length > 0 : false
-})
-
-const isUniquePriority = computed(() => {
-  return priorityProjects.value ? priorityProjects.value.length === 1 : false
 })
 
 const priorityProjects = computed(() => {
@@ -161,13 +154,5 @@ const isPriorityProject = (project: Project) => {
 
 const getPriorityOrder = (project: Project) => {
   return priorityProjects.value ? priorityProjects.value.indexOf(project) + 1 : undefined
-}
-
-const getRouteToProjectDetail = (project: Project): RouteLocationRaw => {
-  return {
-    name: RouteName.ProjectResultDetail,
-    params: { projectSlug: project.slug },
-    query: navigationStore.query
-  }
 }
 </script>
