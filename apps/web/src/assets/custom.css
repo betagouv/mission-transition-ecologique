@@ -279,10 +279,6 @@ button.fr-link:hover, .tee-router-link:hover {
   --icon-size: 1rem;
 }
 .tee-program-badge-image {
-  /* modifications en attendant la montée de version du vue-dsfr vers la v 6.0.0.*/
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
   text-transform: inherit;
   color: white;
   background-color: #000091;

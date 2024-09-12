@@ -2,8 +2,9 @@
   <DsfrCard
     :img-src="`${publicPath}${program.illustration}`"
     :alt-img="`image / ${program.titre}`"
-    :no-arrow="true"
     :horizontal="true"
+    :no-arrow="true"
+    :link="getRouteToProgramDetail(program.id)"
   >
     <template #start-details>
       <!-- HEADER BADGE -->
@@ -38,10 +39,12 @@
 
 <script setup lang="ts">
 import Config from '@/config'
-import { ProgramAidType, type ProgramData } from '@/types'
+import { ProgramAidType, type ProgramData, RouteName } from '@/types'
 import { consolidateAmounts } from '@/utils/helpers'
 import Translation from '@/utils/translation'
 import { DsfrCard } from '@gouvminint/vue-dsfr'
+import type { RouteLocationRaw } from 'vue-router'
+import { useNavigationStore } from '@/stores/navigation'
 
 const { program } = defineProps<{ program: ProgramData }>()
 
@@ -85,4 +88,27 @@ const getCostInfos = () => {
 
   return `${prefix} : ${text}`
 }
+
+const navigationStore = useNavigationStore()
+
+const isCatalog = navigationStore.isCatalogPrograms()
+
+const getRouteToProgramDetail = (programId: string): RouteLocationRaw => {
+  return {
+    name: isCatalog ? RouteName.CatalogProgramDetail : RouteName.QuestionnaireResultDetail,
+    params: { programId },
+    query: isCatalog ? undefined : navigationStore.query
+  }
+}
 </script>
+<style lang="scss" scoped>
+.tee-program-badge-image {
+  /* modifications en attendant la montée de version du vue-dsfr vers la v 6.0.0.*/
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+:deep(.fr-card__title a::after) {
+  display: none !important;
+}
+</style>

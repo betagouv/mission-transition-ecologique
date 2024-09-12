@@ -9,18 +9,16 @@
       </div>
       <div class="fr-col-12 fr-mt-2v">
         <div class="fr-grid-row fr-grid-row--center fr-grid-row-lg--left">
-          <router-link
+          <div
             v-for="program in filteredPrograms"
-            :id="program.id"
             :key="program.id"
-            :to="getRouteToProgramDetail(program.id)"
             class="fr-col-12 no-outline fr-mb-2w"
           >
             <ProgramCard
               :program="program"
               class="fr-enlarge-link fr-card--horizontal-tier"
             />
-          </router-link>
+          </div>
         </div>
       </div>
     </div>
@@ -29,27 +27,12 @@
 
 <script setup lang="ts">
 import ProgramCard from '@/components/program/list/ProgramCard.vue'
-import { useNavigationStore } from '@/stores/navigation'
 import { type ProgramData } from '@/types'
-import { RouteName } from '@/types/routeType'
-import { type RouteLocationRaw } from 'vue-router'
 
 interface Props {
   filteredPrograms?: ProgramData[]
 }
 defineProps<Props>()
-
-const navigationStore = useNavigationStore()
-
-const isCatalog = navigationStore.isCatalogPrograms()
-
-const getRouteToProgramDetail = (programId: string): RouteLocationRaw => {
-  return {
-    name: isCatalog ? RouteName.CatalogProgramDetail : RouteName.QuestionnaireResultDetail,
-    params: { programId },
-    query: isCatalog ? undefined : navigationStore.query
-  }
-}
 </script>
 <style lang="scss">
 @import '../../../assets/scss/setting/color';

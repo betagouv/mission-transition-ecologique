@@ -36,18 +36,16 @@
             <TeeCounterResult :to-count="filteredProjects" />
           </div>
           <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--left fr-mt-0">
-            <router-link
+            <div
               v-for="project in filteredProjects"
-              :id="project.slug"
               :key="project.id"
-              :to="getRouteToProjectDetail(project)"
               class="fr-col-12 fr-col-sm-6 fr-col-md-6 fr-col-lg-4 no-outline"
             >
               <ProjectCard
                 :project="project"
-                class="fr-radius-a--1v fr-card--shadow"
+                class="fr-radius-a--1v fr-card--shadow fr-enlarge-link"
               />
-            </router-link>
+            </div>
           </div>
         </div>
         <TeeNoResult
@@ -63,12 +61,11 @@
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
 import { useProjectStore } from '@/stores/project'
-import { Objective, type ProgramData, Project as ProjectType, RouteName, TrackId } from '@/types'
+import { Objective, type ProgramData, Project as ProjectType, TrackId } from '@/types'
 import Contact from '@/utils/contact'
 import Matomo from '@/utils/matomo'
 import { Project } from '@/utils/project/project'
 import { computed, onBeforeMount } from 'vue'
-import type { RouteLocationRaw } from 'vue-router'
 
 const projectStore = useProjectStore()
 const programStore = useProgramStore()
@@ -95,13 +92,6 @@ const hasThemeCard = computed(() => {
 const hasFilteredProjects = computed(() => {
   return filteredProjects.value?.length
 })
-
-const getRouteToProjectDetail = (project: ProjectType): RouteLocationRaw => {
-  return {
-    name: RouteName.CatalogProjectDetail,
-    params: { projectSlug: project.slug }
-  }
-}
 
 onBeforeMount(async () => {
   navigationStore.hasSpinner = true
