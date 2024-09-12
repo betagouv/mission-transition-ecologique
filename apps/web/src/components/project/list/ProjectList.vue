@@ -3,7 +3,7 @@
 
   <!--  Project counter -->
   <div
-    v-if="!allTagSelected"
+    v-if="programStore.hasObjectiveTypeSelected()"
     class="fr-grid-row fr-grid-row--center fr-mt-2v fr-mt-md-3v"
   >
     <div class="fr-container">
@@ -128,10 +128,6 @@ const programStore = useProgramStore()
 const resume: string = Translation.t('project.result.resume', {
   effectif: Translation.t('enterprise.structureSize.' + TrackStructure.getSize()),
   secteur: TrackStructure.getSectorShortLabel()
-})
-
-const allTagSelected = computed(() => {
-  return programStore.programFilters.objectiveTypeSelected === ''
 })
 
 const hasPriorityProjects = computed(() => {
