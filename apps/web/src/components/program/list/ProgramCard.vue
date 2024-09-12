@@ -103,11 +103,12 @@ const getRouteToProgramDetail = (programId: string): RouteLocationRaw => {
 </script>
 <style lang="scss" scoped>
 .tee-program-badge-image {
-  /* modifications en attendant la montée de version du vue-dsfr vers la v 6.0.0.*/
+  /* modifications en attendant la montée de version du vue-dsfr vers la v 6.0.0. */
   position: absolute;
   top: 1rem;
   left: 1rem;
 }
+
 :deep(.fr-card__title a::after) {
   display: none !important;
 }
