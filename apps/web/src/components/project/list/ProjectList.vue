@@ -86,7 +86,7 @@
             <ProjectCard
               :project="project"
               :is-priority-project="isPriorityProject(project)"
-              :is-unique-priority="isUniquePriodivrity"
+              :is-unique-priority="isUniquePriority"
               :priority-order="getPriorityOrder(project)"
               class="fr-radius-a--1v fr-card--shadow fr-enlarge-link"
               :class="{ 'fr-card-priority': isPriorityProject(project) }"
@@ -121,6 +121,10 @@ const resume: string = Translation.t('project.result.resume', {
 
 const hasPriorityProjects = computed(() => {
   return priorityProjects.value ? priorityProjects.value?.length > 0 : false
+})
+
+const isUniquePriority = computed(() => {
+  return priorityProjects.value ? priorityProjects.value.length === 1 : false
 })
 
 const priorityProjects = computed(() => {
