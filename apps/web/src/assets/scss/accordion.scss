@@ -15,10 +15,6 @@
     }
   }
 
-  h3 {
-    line-height: 3.75rem;
-  }
-
   &-bg {
     @each $color, $properties in setting.$colors {
       &--#{$color} {
