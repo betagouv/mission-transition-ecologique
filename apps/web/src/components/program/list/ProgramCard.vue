@@ -108,8 +108,4 @@ const getRouteToProgramDetail = (programId: string): RouteLocationRaw => {
   top: 1rem;
   left: 1rem;
 }
-
-:deep(.fr-card__title a::after) {
-  display: none !important;
-}
 </style>

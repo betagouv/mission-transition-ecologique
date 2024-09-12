@@ -63,9 +63,5 @@ const getRouteToProjectDetail = (project: Project): RouteLocationRaw => {
 <style lang="scss" scoped>
 :deep(.fr-card__title a) {
   color: black;
-
-  &::after {
-    display: none !important;
-  }
 }
 </style>
