@@ -12,6 +12,7 @@
         }
       }
     }
+
     @include tool.border-color($color, $properties);
   }
 }
