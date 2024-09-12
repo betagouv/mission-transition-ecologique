@@ -24,5 +24,5 @@ interface Props {
   project: Project
   title: string
 }
-const props = defineProps<Props>()
+defineProps<Props>()
 </script>
