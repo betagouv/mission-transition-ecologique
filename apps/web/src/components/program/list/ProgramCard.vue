@@ -1,5 +1,7 @@
 <template>
   <DsfrCard
+    :title="''"
+    :description="''"
     :img-src="`${publicPath}${program.illustration}`"
     :alt-img="`image / ${program.titre}`"
     :horizontal="true"
