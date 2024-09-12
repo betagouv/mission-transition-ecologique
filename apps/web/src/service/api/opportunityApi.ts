@@ -1,3 +1,4 @@
+import { useNavigationStore } from '@/stores/navigation'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import {
   QuestionnaireDataEnum,
@@ -7,12 +8,13 @@ import {
   ReqResp,
   WithoutNullableKeys,
   OpportunityFormType,
-  OpportunityType
+  OpportunityType,
+  RouteName,
+  ProgramData,
+  Project
 } from '@/types'
 import RequestApi from '@/service/api/requestApi'
 import TrackStructure from '@/utils/track/trackStructure'
-import Config from '@/config'
-import { Path } from '@/router/routes'
 
 export default class OpportunityApi extends RequestApi {
   protected readonly url = '/api/opportunities'
@@ -25,8 +27,8 @@ export default class OpportunityApi extends RequestApi {
 
   constructor(
     opportunityForm: OpportunityFormType,
-    private _id: string,
-    private _slug: string,
+    private _id: ProgramData['id'] | Project['id'],
+    private _slug: ProgramData['id'] | Project['slug'],
     private _opportunityType: OpportunityType
   ) {
     super()
@@ -61,7 +63,7 @@ export default class OpportunityApi extends RequestApi {
     return {
       opportunity: {
         type: this._opportunityType,
-        id: this._id,
+        id: this._id.toString(),
         firstName: this._opportunityForm.name.value,
         lastName: this._opportunityForm.surname.value,
         email: this._opportunityForm.email.value,
@@ -85,10 +87,18 @@ export default class OpportunityApi extends RequestApi {
 
   private _generateCatalogLink(): string {
     if (this._opportunityType == OpportunityType.Program) {
-      return Config.deployUrl + Path.ProgramCatalog + '/' + this._id
+      return (
+        useNavigationStore().getAbsoluteUrlByRouteName(RouteName.CatalogProgramDetail, {
+          programId: this._slug
+        }) ?? ''
+      )
     }
     if (this._opportunityType == OpportunityType.Project) {
-      return Config.deployUrl + Path.ProjectCatalog + '/' + this._slug
+      return (
+        useNavigationStore().getAbsoluteUrlByRouteName(RouteName.CatalogProjectDetail, {
+          projectSlug: this._slug
+        }) ?? ''
+      )
     }
     console.error('catalog Link Generation Not Handled For The Current Opportunity Type')
     return 'catalogLinkGenerationNotHandledForTheCurrentOpportunityType'

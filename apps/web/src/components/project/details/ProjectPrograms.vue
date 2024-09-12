@@ -4,14 +4,14 @@
     :expanded-id="expandedId"
     @expand="(id: string | undefined) => (expandedId = id)"
   >
-    <template #title
-      ><div
+    <template #title>
+      <div
         id="project-aids-title"
         class="fr-h3"
       >
         💰 Mes aides
-      </div></template
-    >
+      </div>
+    </template>
     <DsfrHighlight
       v-if="isCatalogDetail"
       class="fr-highlight-border--yellow fr-highlight-bg--yellow--lightness fr-m-0 fr-p-0"
@@ -52,7 +52,7 @@
           />
           <TeeNoResult
             v-else-if="!countFilteredPrograms && !hasError"
-            message="Aucune aide n\'a pu être identifiée avec les critères choisis..."
+            message="Aucune aide n'a pu être identifiée avec les critères choisis..."
           />
           <TeeError
             v-else-if="hasError"
@@ -102,7 +102,7 @@ const props = defineProps<Props>()
 
 const programStore = useProgramStore()
 const navigationStore = useNavigationStore()
-const isCatalogDetail = navigationStore.isByRouteName(RouteName.CatalogProjectDetail)
+const isCatalogDetail = navigationStore.isCatalogProjectDetail()
 
 const expandedId = ref<string | undefined>('project-aids')
 const programs = ref<ProgramData[]>()

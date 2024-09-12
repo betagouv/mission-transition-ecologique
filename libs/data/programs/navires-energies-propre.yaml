@@ -1,0 +1,84 @@
+titre: Navires utilisant des énergies propres
+promesse: Investissez dans l'équipement énergétique écologique de votre navire
+description: >-
+  Vous utilisez des navires et bateaux de transport de marchandises ou de
+  passagers, et vous avez des projets d'investissement liées à l'utilisation
+  d'énergies propres ?
+
+  Vous pouvez bénéficier d'un crédit d'impôt.
+description longue: >-
+  Exemples d'investissements éligibles pour équiper vos navires et bateaux de
+  transport de marchandises  ou de passagers, affectés à votre activité :
+
+
+  - installation d'équipements permettant l'utilisation d'hydrogène et de toute
+  autre propulsion décarbonée comme énergie propulsive principale de vos
+  navires.
+
+
+  - installation d'équipements permettant l'utilisation du gaz naturel liquéfié
+  comme énergie propulsive principale de vos navires.
+
+
+  - installation d'équipements permettant l'utilisation du gaz de pétrole
+  liquéfié, du gaz naturel comprimé, de l'ammoniac, du méthanol, de l'éthanol ou
+  du diméthyl éther comme énergie propulsive principale  de vos navires.
+
+
+  - l'installation des biens destinés au traitement des oxydes de soufre, oxydes
+  d'azote et particules fines contenus dans les gaz d'échappement en vue de les
+  installer sur un navire pour améliorer le niveau d'exigence environnementale.
+
+
+  - l'acquisition de biens destinés à l'alimentation électrique durant l'escale
+  par le réseau terrestre ou au moyen de moteurs auxiliaires utilisant le gaz
+  naturel liquéfié ou une énergie décarbonée, ou de biens destinés à compléter
+  la propulsion principale du navire ou du bateau par une propulsion décarbonée.
+fin de validité: 31/12/2024
+illustration: images/TEE_ampoule.png
+opérateur de contact: DDFIP
+url: >-
+  https://les-aides.fr/aide/UxUv3w/ddfip/deduction-pour-investissements-en-navires-de-transports-utilisant-les-energies-renouvelables.html
+nature de l'aide: avantage fiscal
+montant de l'avantage fiscal: selon le type d'investissement
+activable en autonomie: oui
+objectifs:
+  - description: Contactez nos conseillers pour vérifier l'éligibilité de vos dépenses.
+  - description: Réalisez vos investissements jusqu'au 31 décembre 2024.
+  - description: Déclarez le crédit d'impôt au moment de la déclaration de vos résultats.
+  - description: Recevez une aide en crédit d'impôt.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - >-
+      A destination des entreprises utilisant des navires et bateaux de
+      transport de marchandises ou de passagers d'un des Etats membres de
+      l'Union européenne ou d'un autre Etat partie à l'accord sur l'Espace
+      économique.
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+      - questionnaire . parcours = objectif précis
+  entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
+    valeur: oui
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est H
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est ma performance énergétique

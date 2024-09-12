@@ -102,7 +102,7 @@ const content: HomeTipsContent[] = [
         d’optimiser vos consommations énergétiques, \
         de réduire vos émissions carbones et surtout d’assurer \
         votre rentabilité. Des dizaines d’actions rapides \
-        peuvent être mises en places dès à présent pour \
+        peuvent être mises en place dès à présent pour \
         réduire la consommation d’électricité ou de gaz d’une entreprise. '
   },
   {
