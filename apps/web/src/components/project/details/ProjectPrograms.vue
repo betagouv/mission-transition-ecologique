@@ -1,17 +1,15 @@
 <template>
-  <DsfrAccordion
+  <div
     id="project-aids"
-    :expanded-id="expandedId"
-    @expand="(id: string | undefined) => (expandedId = id)"
+    class="fr-container fr-pt-3v fr-pb-4v"
+    style="border-bottom: solid 1px #e5e5e5"
   >
-    <template #title>
-      <div
-        id="project-aids-title"
-        class="fr-h3"
-      >
-        💰 Mes aides
-      </div>
-    </template>
+    <div
+      id="project-aids-title"
+      class="fr-h3"
+    >
+      💰 Mes aides
+    </div>
     <DsfrHighlight
       v-if="isCatalogDetail"
       class="fr-highlight-border--yellow fr-highlight-bg--yellow-light fr-m-0 fr-p-0"
@@ -83,7 +81,7 @@
         :project="project"
       />
     </div>
-  </DsfrAccordion>
+  </div>
 </template>
 <script setup lang="ts">
 import { useUsedTrackStore } from '@/stores/usedTrack'
@@ -104,7 +102,6 @@ const programStore = useProgramStore()
 const navigationStore = useNavigationStore()
 const isCatalogDetail = navigationStore.isCatalogProjectDetail()
 
-const expandedId = ref<string | undefined>('project-aids')
 const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)
 
