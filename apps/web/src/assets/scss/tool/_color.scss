@@ -30,23 +30,3 @@
     background-color: scaleAlphaToHex($properties, $opacity);
   }
 }
-
-@mixin border-color($color, $properties, $width: thin, $style: solid) {
-  &--#{$color} {
-    @include get-border-color-by-opacity($properties, $width, $style);
-
-    @each $name, $opacity in setting.$opacities {
-      &#{$name} {
-        @include get-border-color-by-opacity($properties, $width, $style, $opacity);
-      }
-    }
-  }
-}
-
-@mixin get-border-color-by-opacity($properties, $width, $style, $opacity: 100%) {
-  $values: if(meta.type-of($properties) == map, map.get($properties, "color"), $properties);
-
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: $width $style scaleAlphaToHex($values, $opacity);
-}
