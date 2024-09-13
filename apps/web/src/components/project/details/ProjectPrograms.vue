@@ -2,7 +2,6 @@
   <div
     id="project-aids"
     class="fr-container fr-pt-3v fr-pb-4v"
-    style="border-bottom: solid 1px #e5e5e5"
   >
     <div
       id="project-aids-title"
