@@ -29,8 +29,9 @@ export default class ProgramFeatures {
     if (!this._currentDateService || !this._rulesService) {
       return Result.err(new Error('currentDateService and rulesService should be defined to filter programs'))
     }
+    const allPersonalizedPrograms = this._programRepository.personalizePrograms(allPrograms, questionnaireData)
 
-    let filteredPrograms = filterPrograms(allPrograms, questionnaireData, this._currentDateService.get(), this._rulesService)
+    let filteredPrograms = filterPrograms(allPersonalizedPrograms, questionnaireData, this._currentDateService.get(), this._rulesService)
     const route = questionnaireData.questionnaire_route
     if (route) {
       filteredPrograms = filteredPrograms.map((programs) => sortPrograms(programs, route))

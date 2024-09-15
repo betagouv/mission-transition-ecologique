@@ -180,6 +180,26 @@
         }
       },
       "required": ["entreprise . est ciblée"]
+    },
+    "champs conditionnels": {
+      "description": "Certains programmes ont des caractéristiques différentes en fonction de différents paramètres tel que la région ou le domaine d'activité. Ces champs conditionnels permettent de gérer ces modifications par rapport au cas le plus commun.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "une de ces conditions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^région = .+$"
+            }
+          }
+        },
+        "required": [
+          "une de ces conditions"
+        ],
+        "additionalProperties": true
+      }
     }
   },
   "oneOf": [

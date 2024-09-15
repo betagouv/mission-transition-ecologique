@@ -67,6 +67,6 @@ publicodes:
       - questionnaire . objectif prioritaire . est mon impact environnemental
 champs conditionnels:
   - une de ces conditions:
-      - région = Auvergne-Rhône-Alpes
-    URL externe: >-
+      - région = Île-de-France
+    promesse: >-
       https://www.cma-auvergnerhonealpes.fr/sinformer/actualites/accelerez-votre-transition-ecologique-et-faites-des-economies-avec-performa
