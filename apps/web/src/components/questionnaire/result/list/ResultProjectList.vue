@@ -32,6 +32,7 @@ import { Project } from '@/types'
 import { computed } from 'vue'
 import UsedTrack from '@/utils/track/usedTrack'
 import { useProgramStore } from '@/stores/program'
+import { Project as UtilsProject } from '@/utils/project/project'
 
 interface ProjectListProps {
   filteredProjects?: Project[]
@@ -54,11 +55,7 @@ const hasObjectiveCard = computed(() => {
   return programStore.hasObjectiveTypeSelected() || (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityObjective())
 })
 
-const sortedProjects = computed(() => {
-  return props.filteredProjects
-    ? (props.filteredProjects as unknown as Project[]).sort((a, b) => (a.priority && b.priority ? a.priority - b.priority : 0))
-    : undefined
-})
+const sortedProjects = UtilsProject.sort(computed(() => props.filteredProjects))
 
 const showNoResults = computed(() => {
   return hasError.value || (!countProjects.value && props.filteredProjects !== undefined)
