@@ -16,28 +16,26 @@ export default class BrevoMail {
     this._api.setApiKey(TransactionalEmailsApiApiKeys.apiKey, Config.BREVO_API_TOKEN)
   }
 
-  sendReturnReceipt: MailerManager['sendReturnReceipt'] = async (
-    opportunity: Opportunity,
-    programOrProject: ProgramType | Project
-  ): Promise<Maybe<Error> | void> => {
+  sendReturnReceipt: MailerManager['sendReturnReceipt'] = async (opportunity: Opportunity): Promise<Maybe<Error> | void> => {
     try {
-      await this._api.sendTransacEmail(this._email(opportunity, programOrProject))
+      await this._api.sendTransacEmail(this._email(opportunity))
     } catch (err: unknown) {
       const error = ensureError(err)
-      Monitor.exception(error, { email: this._email(opportunity, programOrProject) })
+      Monitor.exception(error, { email: this._email(opportunity) })
       return Maybe.just(error)
     }
   }
 
-  private _email(opportunity: Opportunity, programOrProject: ProgramType | Project) {
+  private _email(opportunity: Opportunity) {
     const email = new SendSmtpEmail()
 
     switch (opportunity.type) {
       case OpportunityType.Program:
         email.templateId = this._programTemplateReceipt
-        email.params = this._paramsProgram(opportunity, programOrProject as ProgramType)
+        email.params = this._paramsProgram(opportunity)
         break
       case OpportunityType.Project:
+      case OpportunityType.CustomProject:
         email.templateId = this._projectTemplateReceipt
         email.params = this._paramsProject(opportunity, programOrProject as Project)
         break
@@ -52,7 +50,8 @@ export default class BrevoMail {
     return email
   }
 
-  private _paramsProgram(opportunity: Opportunity, program: ProgramType) {
+  private _paramsProgram(opportunity: Opportunity) {
+    const program =
     return {
       programName: program.titre,
       prefixedProgramName: Program.getPrefixedProgramName(program),

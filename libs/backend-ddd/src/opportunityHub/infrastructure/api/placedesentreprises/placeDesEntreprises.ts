@@ -13,7 +13,6 @@ import { Operators, ProgramType, ThemeId } from '@tee/data'
 import { Opportunity, OpportunityType } from '@tee/common'
 import { Project } from '@tee/data'
 import Monitor from '../../../../common/domain/monitoring/monitor'
-import { ProjectService } from '../../../../project/application/projectService'
 
 export class PlaceDesEntreprises extends OpportunityHubAbstract {
   protected readonly _baseUrl = Config.PDE_API_BASEURL
@@ -55,6 +54,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
         maybePayload = this._createProgramRequestBody(opportunity, programOrProject as ProgramType)
         break
       case OpportunityType.Project:
+      case OpportunityType.CustomProject:
         maybePayload = this._createProjectRequestBody(opportunity, programOrProject as Project)
         break
 
@@ -101,8 +101,8 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
       const prevProgram = new ProgramService().getById(prevOpportunity.id)
       if (prevProgram && this.support(prevProgram)) {
         transmissiblePrograms += 1
-      }
-      if (new ProjectService().getBySlug(prevOpportunity.id)) {
+      } else {
+        // this loop account for both projects and CustomProjects
         transmissiblePrograms += 1
       }
     }

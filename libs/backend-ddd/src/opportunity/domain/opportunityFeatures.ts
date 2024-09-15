@@ -41,59 +41,23 @@ export default class OpportunityFeatures {
     const contactIdResult = await this._contactRepository.createOrUpdate(opportunity as ContactDetails, optIn)
     if (contactIdResult.isErr) {
       Monitor.error('Error during contact creation', { error: contactIdResult.error })
-
       return Result.err(contactIdResult.error)
     }
 
-    switch (opportunity.type) {
-      case OpportunityType.Program:
-        return this._createProgramOpportunity(opportunity, contactIdResult.value)
-      case OpportunityType.Project:
-        return this._createProjectOpportunity(opportunity, contactIdResult.value)
-    }
-  }
-
-  private async _createProgramOpportunity(opportunity: Opportunity, contactId: ContactId): Promise<Result<OpportunityId, Error>> {
-    const program = this._getProgramById(opportunity.id)
-
-    const opportunityResult = await this._opportunityRepository.create(
-      contactId.id,
-      this._addContactOperatorToOpportunity(opportunity, program)
-    )
-    if (opportunityResult.isErr || program === undefined) {
-      if (opportunityResult.isErr) {
-        Monitor.error('Error during Opportunity Creation', { error: opportunityResult.error })
-      } else {
-        Monitor.error('Error during Opportunity Creation, program undefined')
-      }
-      return opportunityResult
+    this._addContactOperatorToOpportunity(opportunity)
+    const maybeError = this._defineOpportunityDatabaseId(opportunity)
+    if (maybeError.isJust) {
+      return Result.err(maybeError.value)
     }
 
-    this._sendReturnReceipt(opportunity, program)
-    this._transmitProgramOpportunityToHubs(opportunityResult.value, this._addContactIdToOpportunity(opportunity, contactId.id), program)
-
-    return opportunityResult
-  }
-
-  private async _createProjectOpportunity(opportunity: Opportunity, contactId: ContactId): Promise<Result<OpportunityId, Error>> {
-    const project = new ProjectService().getById(+opportunity.id)
-    if (!project) {
-      return Result.err(new Error('Project with id ' + opportunity.id + 'not found'))
-    }
-
-    opportunity.id = project.slug // consistency with program in database.
-
-    const opportunityResult = await this._opportunityRepository.create(contactId.id, {
-      ...opportunity,
-      programContactOperator: 'TEE' as Operators
-    })
+    const opportunityResult = await this._opportunityRepository.create(contactIdResult.value.id, opportunity)
     if (opportunityResult.isErr) {
-      // TODO : Send notif: opportunity not created
+      Monitor.error('Error during Opportunity Creation', { error: opportunityResult.error })
       return opportunityResult
     }
-
-    this._sendReturnReceipt(opportunity, project)
-    this._transmitProjectOpportunityToHubs(opportunityResult.value, this._addContactIdToOpportunity(opportunity, contactId.id), project)
+    this._addContactIdToOpportunity(opportunity, contactIdResult.value.id)
+    this._sendReturnReceipt(opportunity)
+    this._transmitOpportunityToHubs(opportunityResult.value, opportunity)
 
     return opportunityResult
   }
@@ -102,41 +66,73 @@ export default class OpportunityFeatures {
     return await this._opportunityRepository.getDailyOpportunitiesByContactId(contactId)
   }
 
-  private _transmitProgramOpportunityToHubs(opportunityId: OpportunityId, opportunity: OpportunityWithContactId, program: ProgramType) {
-    void new OpportunityHubFeatures(this._opportunityHubRepositories)
-      .maybeTransmitOpportunity(opportunity, program)
-      .then(async (opportunityHubResult) => {
-        if (opportunityHubResult == Maybe.nothing()) {
-          const opportunityUpdateErr = await this._updateOpportunitySentToHub(opportunityId, !opportunityHubResult.isJust)
-          if (opportunityUpdateErr.isJust) {
-            Monitor.warning('Opportunity status not updated after a transmission to a Hub', { error: opportunityUpdateErr.value })
-          }
-        }
-      })
-  }
+  private _transmitOpportunityToHubs(opportunityId: OpportunityId, opportunity: OpportunityWithContactId, program: ProgramType) {
+    switch (opportunity.type) {
+      case OpportunityType.Program:
+        void new OpportunityHubFeatures(this._opportunityHubRepositories)
+          .maybeTransmitOpportunity(opportunity, program)
+          .then(async (opportunityHubResult) => {
+            if (opportunityHubResult == Maybe.nothing()) {
+              const opportunityUpdateErr = await this._updateOpportunitySentToHub(opportunityId, !opportunityHubResult.isJust)
+              if (opportunityUpdateErr.isJust) {
+                Monitor.warning('Opportunity status not updated after a transmission to a Hub', { error: opportunityUpdateErr.value })
+              }
+            }
+          })
 
-  private _transmitProjectOpportunityToHubs(opportunityId: OpportunityId, opportunity: OpportunityWithContactId, project: Project) {
-    void new OpportunityHubFeatures(this._opportunityHubRepositories)
-      .maybeTransmitProjectOpportunity(opportunity, project)
-      .then(async (opportunityHubResult) => {
-        if (opportunityHubResult == Maybe.nothing()) {
-          const opportunityUpdateErr = await this._updateOpportunitySentToHub(opportunityId, !opportunityHubResult.isJust)
-          if (opportunityUpdateErr.isJust) {
-            // TODO: Send notif: Opportunity not updated in our DB creating a missmatch between the status in the DB and the real opportunity status
-          }
-        }
-      })
+        break
+
+      case OpportunityType.Project:
+        void new OpportunityHubFeatures(this._opportunityHubRepositories)
+          .maybeTransmitProjectOpportunity(opportunity, project)
+          .then(async (opportunityHubResult) => {
+            if (opportunityHubResult == Maybe.nothing()) {
+              const opportunityUpdateErr = await this._updateOpportunitySentToHub(opportunityId, !opportunityHubResult.isJust)
+              if (opportunityUpdateErr.isJust) {
+                // TODO: Send notif: Opportunity not updated in our DB creating a missmatch between the status in the DB and the real opportunity status
+              }
+            }
+          })
+        break
+
+      default:
+        break
+    }
   }
 
   private async _updateOpportunitySentToHub(opportunityId: OpportunityId, success: boolean): Promise<Maybe<Error>> {
     return await this._opportunityRepository.update(opportunityId, { sentToOpportunityHub: success })
   }
 
-  private _addContactOperatorToOpportunity(opportunity: Opportunity, program: ProgramType | undefined): OpportunityWithOperatorContact {
-    return {
-      ...opportunity,
-      programContactOperator: program?.['opérateur de contact']
+  private _addContactOperatorToOpportunity(opportunity: Opportunity): OpportunityWithOperatorContact {
+    switch (opportunity.type) {
+      case OpportunityType.Program:
+        // TODO handle case progrma undefined
+        //         Monitor.error('Error during Opportunity Creation, program undefined')
+
+        return {
+          ...opportunity,
+          programContactOperator: this._getProgramById(opportunity.id)?.['opérateur de contact']
+        }
+      case OpportunityType.Project:
+      case OpportunityType.CustomProject:
+        return {
+          ...opportunity,
+          programContactOperator: 'TEE' as Operators
+        }
     }
+  }
+
+  private _defineOpportunityDatabaseId(opportunity: Opportunity): Maybe<Error> {
+    if (opportunity.type === OpportunityType.Project) {
+      const project = new ProjectService().getById(+opportunity.id)
+      if (!project) {
+        return Maybe.just(new Error('Project with id ' + opportunity.id + 'not found'))
+      }
+      opportunity.id = project.slug
+    }
+    // do nothing in all the other type for which the databaseId is already the domainId.
+    return Maybe.nothing()
   }
 
   private _addContactIdToOpportunity(opportunity: Opportunity, id: number): OpportunityWithContactId {

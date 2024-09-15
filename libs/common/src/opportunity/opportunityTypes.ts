@@ -15,7 +15,8 @@ export interface ContactDetails {
 
 export enum OpportunityType {
   Program = 'program',
-  Project = 'project'
+  Project = 'project',
+  CustomProject = 'customProject'
 }
 
 export interface OpportunityDetails {

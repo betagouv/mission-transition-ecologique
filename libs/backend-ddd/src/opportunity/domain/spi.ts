@@ -15,5 +15,5 @@ export type OpportunityRepository = {
 }
 
 export type MailerManager = {
-  sendReturnReceipt: (opportunity: Opportunity, programOrProject: ProgramType | Project) => Promise<Maybe<Error> | void>
+  sendReturnReceipt: (opportunity: Opportunity, programOrProject?: ProgramType | Project) => Promise<Maybe<Error> | void>
 }
