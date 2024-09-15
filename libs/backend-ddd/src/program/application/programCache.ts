@@ -7,10 +7,12 @@ class ProgramCache {
   private static instance: ProgramCache
   private cachedElements: Map<string, { data: ProgramType[]; timestamp: number }>
   private ttl: number
+  private maxSize: number
 
   private constructor() {
     this.cachedElements = new Map()
     this.ttl = 10 * 60 * 1000 // 10 minutes
+    this.maxSize = 1000
     this._startCleanupTask()
   }
 
@@ -28,6 +30,11 @@ class ProgramCache {
   }
 
   public setCache(hash: string, data: ProgramType[]): void {
+    if (this.cachedElements.size >= this.maxSize) {
+      const oldestKey = this.cachedElements.keys().next().value
+      this.cachedElements.delete(oldestKey)
+    }
+
     this.cachedElements.set(hash, { data, timestamp: Date.now() })
   }
 
