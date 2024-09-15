@@ -1,13 +1,8 @@
 import { Controller, Get, Path, Queries, Res, Route, SuccessResponse, TsoaResponse } from 'tsoa'
 import { OpenAPISafeProgram } from './types'
 import { Err } from 'true-myth/dist/es/result'
-import { QuestionnaireData } from '@tee/common'
+import { PaginatedQuery, QuestionnaireData } from '@tee/common'
 import { ErrorJSON, Monitor, ProgramService } from '@tee/backend-ddd'
-
-interface PaginatedQuery extends QuestionnaireData {
-  pageSize?: number
-  page?: number
-}
 
 @SuccessResponse('200', 'OK')
 @Route('programs')
@@ -28,7 +23,6 @@ export class ProgramsController extends Controller {
     this.setStatus(200)
 
     let programsResult
-    queryParams.page = 1 // TODO delete before putting it on prod.
     if (!queryParams.page) {
       programsResult = programService.getFilteredPrograms(queryParams as QuestionnaireData)
     } else {

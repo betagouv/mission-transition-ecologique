@@ -54,3 +54,8 @@ export interface QuestionnaireData {
   secteur?: string
   creationDate?: string
 }
+
+export interface PaginatedQuery extends QuestionnaireData {
+  pageSize?: number
+  page?: number
+}

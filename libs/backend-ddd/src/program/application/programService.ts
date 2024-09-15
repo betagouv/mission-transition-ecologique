@@ -25,7 +25,6 @@ export class ProgramService {
   }
 
   public getFilteredPrograms(questionnaireData: QuestionnaireData): Result<ProgramType[], Error> {
-    console.log('not using the cache')
     return this._program.getFilteredBy(questionnaireData)
   }
 
@@ -42,13 +41,12 @@ export class ProgramService {
       if (programs.isOk) {
         this._cache.setCache(hash, programs.value)
       }
-    } else {
-      console.log('using cached data !')
     }
 
     if (programs.isErr) {
       return programs
     } else {
+      console.log(page, pageSize)
       return Result.ok(programs.value.slice((page - 1) * pageSize, page * pageSize))
     }
   }
