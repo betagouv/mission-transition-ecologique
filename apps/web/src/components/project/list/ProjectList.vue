@@ -3,7 +3,7 @@
 
   <!--  Project counter -->
   <div
-    v-if="programStore.hasObjectiveTypeSelected()"
+    v-if="programStore.hasThemeTypeSelected()"
     class="fr-grid-row fr-grid-row--center fr-mt-2v fr-mt-md-3v"
   >
     <div class="fr-container">

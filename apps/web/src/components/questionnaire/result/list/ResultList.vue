@@ -30,7 +30,6 @@ const theme = computed(() => {
     ? (programStore.programFilters.themeTypeSelected as ThemeId)
     : (UsedTrack.getPriorityTheme() ?? '')
 })
-
 const filteredProjects = Project.filter(projects, filteredPrograms, theme)
 
 onBeforeMount(async () => {

@@ -21,7 +21,6 @@
 import { ThemeId } from '@/types'
 import { computed } from 'vue'
 import UsedTrack from '@/utils/track/usedTrack'
-import { Theme } from '@/utils/theme'
 import { useProgramStore } from '@/stores/program'
 
 const programStore = useProgramStore()
@@ -32,7 +31,7 @@ const hasThemeCard = computed(() => {
 
 const theme = computed(() => {
   if (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityTheme()) {
-    return Theme.getById(UsedTrack.getPriorityTheme())
+    return UsedTrack.getPriorityTheme()
   }
 
   if (programStore.hasThemeTypeSelected()) {

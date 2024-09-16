@@ -24,7 +24,6 @@ interface Props {
   radiusSize?: '0' | '1v' | '2v' | '2-5v'
 }
 const props = defineProps<Props>()
-
 const navigationStore = useNavigationStore()
 const isResultPage = navigationStore.isByRouteName(RouteName.QuestionnaireResult)
 
