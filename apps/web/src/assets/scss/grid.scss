@@ -7,12 +7,6 @@
   $modifier: tool.modifierByBreakpoint($breakpoint);
 
   @include media-query.respond-from($breakpoint) {
-    @media (width >= 0) and (width <= 575px){
-      .fr-hidden-xs {
-        display: none !important;
-      }
-    }
-
     .fr-col {
       @each $align-name, $align in setting.$vertical-flex-aligns {
         &-content#{$modifier}--#{$align-name} {

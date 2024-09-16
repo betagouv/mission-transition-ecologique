@@ -7,7 +7,7 @@
       <div class="fr-card__content fr-p-2v">
         <div class="fr-card__title theme-card-title">
           <div
-            class="fr-p-0 fr-hidden-xs fr-my-2v theme-divider"
+            class="fr-p-0 fr-hidden fr-unhidden-sm fr-my-2v theme-divider"
             :class="`fr-bg--${option.color}`"
           />
           <div
@@ -35,7 +35,7 @@
       </div>
     </div>
     <div
-      class="fr-hidden-xs fr-card__header"
+      class="fr-hidden fr-unhidden-sm fr-card__header"
       :class="`fr-card__header--${option.color}`"
     >
       <div class="fr-card__img fr-card__img--contain">

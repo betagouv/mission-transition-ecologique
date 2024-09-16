@@ -10,7 +10,7 @@
   >
     <div class="fr-container">
       <div class="fr-grid-row fr-pt-4v">
-        <div class="fr-col-3 fr-col-sm-3 fr-hidden-xs">
+        <div class="fr-col-3 fr-col-sm-3 fr-unhidden-sm fr-hidden">
           <TeeCopyLinkButton class="fr-m-4v" />
           <ProjectSideNav :project="project" />
         </div>
