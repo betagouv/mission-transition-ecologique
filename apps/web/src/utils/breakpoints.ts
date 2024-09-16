@@ -13,6 +13,11 @@ export default class Breakpoint {
     return this._breakpoints.active()
   }
 
+  static isLargerOrEqual(size: BreakpointNameType) {
+    const currentBreakpoint = this.getCurrentBreakpoint()
+    return currentBreakpoint.value === size || this._breakpoints.isGreater(size)
+  }
+
   static isMobile() {
     const currentBreakpoint = this.getCurrentBreakpoint()
     return currentBreakpoint.value === BreakpointNameType.xs
