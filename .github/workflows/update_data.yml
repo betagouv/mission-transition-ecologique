@@ -71,7 +71,10 @@ jobs:
 
       - name: Read Log File
         id: read-log
-        run: echo "log_content=$(cat libs/data/programYamlLog.log)" >> $GITHUB_ENV
+        run: |
+          echo "log_content<<EOF" >> $GITHUB_ENV
+          cat libs/data/programYamlLog.log >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
