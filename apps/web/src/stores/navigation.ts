@@ -12,7 +12,8 @@ import {
   type RouteLocationNormalizedLoaded,
   type RouteLocationRaw,
   type RouteLocationAsRelativeGeneric,
-  type Router
+  type Router,
+  RouteParamsGeneric
 } from 'vue-router'
 import { RouteName } from '@/types/routeType'
 
@@ -87,8 +88,40 @@ export const useNavigationStore = defineStore('navigation', () => {
     return isByRouteName(RouteName.CatalogProjectDetail)
   }
 
-  function isCatalog() {
+  function isCatalogProgramDetail() {
+    return isByRouteName(RouteName.CatalogProgramDetail)
+  }
+
+  function isCatalogAboutPrograms() {
+    return isCatalogPrograms() || isCatalogProgramDetail()
+  }
+
+  function isCatalogList() {
     return isByRouteName([RouteName.CatalogPrograms, RouteName.CatalogProjects])
+  }
+
+  function isCatalogDetail() {
+    return isCatalogProgramDetail() || isCatalogProjectDetail()
+  }
+
+  function isCatalog() {
+    return isCatalogDetail() || isCatalogList()
+  }
+
+  function isQuestionnaire() {
+    return isQuestionnaireResult() || isQuestionnaireResultDetail()
+  }
+
+  function isQuestionnaireResult() {
+    return isByRouteName(RouteName.QuestionnaireResult)
+  }
+
+  function isQuestionnaireResultDetail() {
+    return isByRouteName([RouteName.QuestionnaireResultDetail, RouteName.ProgramFromProjectDetail, RouteName.ProjectResultDetail])
+  }
+
+  function isStaticPage() {
+    return !isQuestionnaire() && !isCatalog()
   }
 
   function isByRouteName(routeName: string | string[]) {
@@ -159,6 +192,12 @@ export const useNavigationStore = defineStore('navigation', () => {
     stringOfSearchParams.value = ''
   }
 
+  function getAbsoluteUrlByRouteName(routeName: RouteName, params: RouteParamsGeneric = {}): string | undefined {
+    if (router.value) {
+      return new URL(router.value.resolve({ name: routeName, params: params }).href, window.location.origin).href
+    }
+  }
+
   return {
     isReady,
     router,
@@ -167,19 +206,28 @@ export const useNavigationStore = defineStore('navigation', () => {
     searchParams,
     tabSelectedOnList,
     hasSpinner,
+    isCatalog,
+    isCatalogAboutPrograms,
     isCatalogPrograms,
     isCatalogProjects,
     isCatalogProjectDetail,
-    isCatalog,
+    isCatalogProgramDetail,
+    isCatalogList,
+    isCatalogDetail,
     isByRouteName,
     resetSearchParams,
     setRouter,
+    isQuestionnaire,
+    isQuestionnaireResult,
+    isQuestionnaireResultDetail,
+    isStaticPage,
     setRoute,
     setSearchParams,
     updateSearchParam,
     deleteSearchParam,
     routeByTrackId,
-    replaceBrowserHistory
+    replaceBrowserHistory,
+    getAbsoluteUrlByRouteName
   }
 })
 

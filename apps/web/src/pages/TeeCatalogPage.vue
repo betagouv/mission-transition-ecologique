@@ -13,6 +13,6 @@ import { useNavigationStore } from '@/stores/navigation'
 
 const navigationStore = useNavigationStore()
 const isCatalog = computed(() => {
-  return navigationStore.isCatalog()
+  return navigationStore.isCatalogList()
 })
 </script>

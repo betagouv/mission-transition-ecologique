@@ -19,10 +19,12 @@
         </div>
         <div class="fr-card__desc">
           <ul class="fr-tags-group">
-            <ThemeProjectTag
+            <TeeProjectButton
               v-for="project in option.highlightProjects"
               :key="project.id"
+              class="highlighted-project fr-mx-1v fr-my-1v inline-flex"
               :color="option.color"
+              size="sm"
               :project="project"
             />
             <span
@@ -78,5 +80,9 @@ defineProps<Props>()
   @media (width >= 0) and (width <= 575px) {
     height: auto;
   }
+}
+
+.highlighted-project {
+  max-width: 90%;
 }
 </style>

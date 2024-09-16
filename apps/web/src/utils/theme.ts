@@ -5,28 +5,12 @@ import { Project } from '@tee/data'
 export class Theme {
   static themes: ThemeType[] = [
     {
-      id: ThemeId.Environmental,
-      title: 'Analyses environnementales',
-      tagLabel: '🌱 analyses',
-      value: Objective.EnvironmentalImpact,
-      image: '/images/thematique/thematique-strategie.svg',
-      color: Color.blue
-    },
-    {
       id: ThemeId.Energy,
       title: 'Énergie',
       tagLabel: '⚡️ énergie',
       value: Objective.EnergyPerformance,
       image: '/images/thematique/thematique-energie.svg',
       color: Color.yellow
-    },
-    {
-      id: ThemeId.Water,
-      title: 'Économies d’eau',
-      tagLabel: '💧 eau',
-      value: Objective.WaterConsumption,
-      image: '/images/thematique/thematique-eau.svg',
-      color: Color.blueFrance
     },
     {
       id: ThemeId.Building,
@@ -43,6 +27,14 @@ export class Theme {
       value: Objective.SustainableMobility,
       image: '/images/thematique/thematique-mobilite.svg',
       color: Color.green
+    },
+    {
+      id: ThemeId.Water,
+      title: 'Économies d’eau',
+      tagLabel: '💧 eau',
+      value: Objective.WaterConsumption,
+      image: '/images/thematique/thematique-eau.svg',
+      color: Color.blueFrance
     },
     {
       id: ThemeId.EcoDesign,
@@ -67,6 +59,14 @@ export class Theme {
       value: Objective.TrainOrRecruit,
       image: '/images/thematique/thematique-ressources-humaines.svg',
       color: Color.yellow
+    },
+    {
+      id: ThemeId.Environmental,
+      title: 'Analyses environnementales',
+      tagLabel: '🌱 analyses',
+      value: Objective.EnvironmentalImpact,
+      image: '/images/thematique/thematique-strategie.svg',
+      color: Color.blue
     }
   ]
 
@@ -98,13 +98,14 @@ export class Theme {
     const tags = []
 
     if (UsedTrack.isNoSpecificGoal()) {
-      UsedTrack.isEnvironmentalImpactObjective() ? tags.push(this.getByValue(Objective.EnvironmentalImpact) as ThemeType) : undefined
-      UsedTrack.isEcoDesignObjective() ? tags.push(this.getByValue(Objective.EcoDesign) as ThemeType) : undefined
       UsedTrack.isEnergyObjective() ? tags.push(this.getByValue(Objective.EnergyPerformance) as ThemeType) : undefined
-      UsedTrack.isWasteObjective() ? tags.push(this.getByValue(Objective.WasteManagement) as ThemeType) : undefined
-      UsedTrack.isWaterObjective() ? tags.push(this.getByValue(Objective.WaterConsumption) as ThemeType) : undefined
+      tags.push(this.getByValue(Objective.BuildingRenovation) as ThemeType)
       UsedTrack.isMobilityObjective() ? tags.push(this.getByValue(Objective.SustainableMobility) as ThemeType) : undefined
+      UsedTrack.isWaterObjective() ? tags.push(this.getByValue(Objective.WaterConsumption) as ThemeType) : undefined
+      UsedTrack.isEcoDesignObjective() ? tags.push(this.getByValue(Objective.EcoDesign) as ThemeType) : undefined
+      UsedTrack.isWasteObjective() ? tags.push(this.getByValue(Objective.WasteManagement) as ThemeType) : undefined
       tags.push(this.getByValue(Objective.TrainOrRecruit) as ThemeType)
+      UsedTrack.isEnvironmentalImpactObjective() ? tags.push(this.getByValue(Objective.EnvironmentalImpact) as ThemeType) : undefined
 
       return tags
     }
