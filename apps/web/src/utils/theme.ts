@@ -5,25 +5,11 @@ import { Project } from '@tee/data'
 export class Theme {
   static themes: ThemeType[] = [
     {
-      id: ThemeId.Environmental,
-      title: 'Analyses environnementales',
-      tagLabel: '🌱 analyses',
-      image: '/images/thematique/thematique-strategie.svg',
-      color: Color.blue
-    },
-    {
       id: ThemeId.Energy,
       title: 'Énergie',
       tagLabel: '⚡️ énergie',
       image: '/images/thematique/thematique-energie.svg',
       color: Color.yellow
-    },
-    {
-      id: ThemeId.Water,
-      title: 'Économies d’eau',
-      tagLabel: '💧 eau',
-      image: '/images/thematique/thematique-eau.svg',
-      color: Color.blueFrance
     },
     {
       id: ThemeId.Building,
@@ -43,7 +29,6 @@ export class Theme {
       id: ThemeId.Water,
       title: 'Économies d’eau',
       tagLabel: '💧 eau',
-      value: Objective.WaterConsumption,
       image: '/images/thematique/thematique-eau.svg',
       color: Color.blueFrance
     },
@@ -72,7 +57,6 @@ export class Theme {
       id: ThemeId.Environmental,
       title: 'Analyses environnementales',
       tagLabel: '🌱 analyses',
-      value: Objective.EnvironmentalImpact,
       image: '/images/thematique/thematique-strategie.svg',
       color: Color.blue
     }
@@ -98,13 +82,14 @@ export class Theme {
     const tags = []
 
     if (UsedTrack.isNoSpecificGoal()) {
-      UsedTrack.isEnvironmentalImpactTheme() ? tags.push(this.getById(ThemeId.Environmental) as ThemeType) : undefined
-      UsedTrack.isEcoDesignTheme() ? tags.push(this.getById(ThemeId.EcoDesign) as ThemeType) : undefined
       UsedTrack.isEnergyTheme() ? tags.push(this.getById(ThemeId.Energy) as ThemeType) : undefined
-      UsedTrack.isWasteTheme() ? tags.push(this.getById(ThemeId.Waste) as ThemeType) : undefined
-      UsedTrack.isWaterTheme() ? tags.push(this.getById(ThemeId.Water) as ThemeType) : undefined
+      tags.push(this.getById(ThemeId.Building) as ThemeType)
       UsedTrack.isMobilityTheme() ? tags.push(this.getById(ThemeId.Mobility) as ThemeType) : undefined
+      UsedTrack.isWaterTheme() ? tags.push(this.getById(ThemeId.Water) as ThemeType) : undefined
+      UsedTrack.isEcoDesignTheme() ? tags.push(this.getById(ThemeId.EcoDesign) as ThemeType) : undefined
+      UsedTrack.isWasteTheme() ? tags.push(this.getById(ThemeId.Waste) as ThemeType) : undefined
       tags.push(this.getById(ThemeId.RH) as ThemeType)
+      UsedTrack.isEnvironmentalImpactTheme() ? tags.push(this.getById(ThemeId.Environmental) as ThemeType) : undefined
 
       return tags
     }
