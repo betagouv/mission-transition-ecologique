@@ -39,12 +39,11 @@
 import { TeeDsfrTabs } from '@/components/element/TeeTabs.vue'
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
-import { ProgramData, Objective, TrackId, Project, BreakpointNameType } from '@/types'
+import { ProgramData, ThemeId, TrackId, Project, BreakpointNameType } from '@/types'
 import { computed, onBeforeMount } from 'vue'
 import Matomo from '@/utils/matomo'
 import { useProjectStore } from '@/stores/project'
 import UsedTrack from '@/utils/track/usedTrack'
-import { Theme } from '@/utils/theme'
 
 const navigationStore = useNavigationStore()
 const programStore = useProgramStore()
@@ -74,17 +73,13 @@ const filteredProjects = computed(() => {
     return undefined
   }
 
-  return projectStore.getProjectsByObjectiveAndEligibility(
-    projects.value,
-    getObjectiveForProjectFiltering(),
-    filteredPrograms.value ?? undefined
-  )
+  return projectStore.getProjectsByThemeAndEligibility(projects.value, getThemeForProjectFiltering(), filteredPrograms.value ?? undefined)
 })
 
-const getObjectiveForProjectFiltering = () => {
-  return programStore.programFilters.objectiveTypeSelected !== ''
-    ? (programStore.programFilters.objectiveTypeSelected as Objective)
-    : Theme.getObjectiveByValue(UsedTrack.getPriorityObjective())
+const getThemeForProjectFiltering = () => {
+  return programStore.programFilters.themeTypeSelected !== ''
+    ? (programStore.programFilters.themeTypeSelected as ThemeId)
+    : UsedTrack.getPriorityTheme()
 }
 
 onBeforeMount(async () => {

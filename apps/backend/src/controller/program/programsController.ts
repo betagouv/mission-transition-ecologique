@@ -3,7 +3,6 @@ import { OpenAPISafeProgram } from './types'
 import { Err } from 'true-myth/dist/es/result'
 import { QuestionnaireData } from '@tee/common'
 import { ErrorJSON, Monitor, ProgramService } from '@tee/backend-ddd'
-
 @SuccessResponse('200', 'OK')
 @Route('programs')
 export class ProgramsController extends Controller {
@@ -30,7 +29,7 @@ export class ProgramsController extends Controller {
       return
     }
 
-    return programsResult.value
+    return programsResult.value.map((program) => programService.convertDomainToFront(program))
   }
 
   /**
@@ -43,8 +42,8 @@ export class ProgramsController extends Controller {
   @Get('{programId}')
   public getOne(@Path() programId: string, @Res() notFoundResponse: TsoaResponse<404, ErrorJSON>): OpenAPISafeProgram {
     this.setStatus(200)
-
-    const program = new ProgramService().getById(programId)
+    const programService = new ProgramService()
+    const program = programService.getById(programId)
 
     if (!program) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-return
@@ -52,7 +51,7 @@ export class ProgramsController extends Controller {
       return notFoundResponse(404, { message: `Program with id "${programId}" could not be found` })
     }
 
-    return program
+    return programService.convertDomainToFront(program)
   }
 
   private throwErrorResponse(programsResult: Err<OpenAPISafeProgram[], Error>, requestFailedResponse: TsoaResponse<500, ErrorJSON>) {
