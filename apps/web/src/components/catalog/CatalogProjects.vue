@@ -37,7 +37,7 @@
           </div>
           <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--left fr-mt-0">
             <router-link
-              v-for="project in filteredProjects"
+              v-for="project in sortedProjects"
               :id="project.slug"
               :key="project.id"
               :to="getRouteToProjectDetail(project)"
@@ -83,6 +83,7 @@ const theme = computed(() => {
 })
 
 const filteredProjects = Project.filter(projects, programs, theme)
+const sortedProjects = Project.sort(filteredProjects)
 
 const hasSpinner = computed(() => {
   return navigationStore.hasSpinner
