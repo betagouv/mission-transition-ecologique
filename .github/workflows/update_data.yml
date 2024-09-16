@@ -32,6 +32,14 @@ jobs:
           BASEROW_TOKEN: "${{secrets.BASEROW_TOKEN}}"
         run: npm run generate:projects
 
+      - name: Read Log File
+        id: read-log
+        run: |
+          echo "log_content<<EOF" >> $GITHUB_ENV
+          cat libs/data/projectGeneration.log >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+
+
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
         with:
@@ -46,6 +54,11 @@ jobs:
 
             En particulier, faire bien attention à l'ajout de liens vers d'autres projets ou d'autres dispositifs. Bien vérifier l'existence des nouveaux éléments liés.
             Essayer aussi de limiter le rennomage de slug. Chaque slug rennomé "casse" des liens que peuvent avoir conservés les utilisations.
+
+            Liste de points problématiques automatiquement détectés:
+
+            ${{ env.log_content }}
+
           draft: false
 
   update-programs:
@@ -73,7 +86,7 @@ jobs:
         id: read-log
         run: |
           echo "log_content<<EOF" >> $GITHUB_ENV
-          cat libs/data/programYamlLog.log >> $GITHUB_ENV
+          cat libs/data/programYaml.log >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
 
       - name: Create Pull Request
@@ -91,5 +104,6 @@ jobs:
             Attention en particulier aux changements de slugs qui vont créer de nouveaux dispositifs au lieu de reéécrire un dispositif existant.
 
             Liste de points problématiques automatiquement détectés:
+
             ${{ env.log_content }}
           draft: false

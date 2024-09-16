@@ -269,6 +269,6 @@ export class ProgramYamlGenerator {
 
   private _log(message: string): void {
     console.log(message)
-    fs.appendFileSync('programYamlLog.log', message + '\n', { encoding: 'utf-8' })
+    fs.appendFileSync('programYaml.log', message + '\n', { encoding: 'utf-8' })
   }
 }
