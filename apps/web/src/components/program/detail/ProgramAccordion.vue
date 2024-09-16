@@ -6,7 +6,7 @@
     @expand="expandedId = $event"
   >
     <template #title>
-      <h3>{{ title }}</h3>
+      <h3 class="fr-text-line-height--15v">{{ title }}</h3>
     </template>
     <slot />
   </DsfrAccordion>

@@ -1,10 +1,9 @@
-import { Color, ThemeId, Objective } from '@/types'
+import { Color, ThemeId } from '@/types'
 
 export interface ThemeType {
   id: ThemeId
   title: string
   tagLabel: string
-  value: Objective
   image: string
   color: Color
 }

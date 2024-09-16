@@ -186,7 +186,7 @@
             <div class="fr-col-12 fr-col-justify--right">
               <TeeDsfrButton
                 :label="Translation.t('send')"
-                :disabled="!isFormFilled"
+                :disabled="!isFormFilled || !isFormValid"
                 icon="ri-arrow-right-line"
                 icon-right
                 :loading="isLoading"
@@ -268,7 +268,6 @@ import { Scroll } from '@/utils/scroll'
 import TrackStructure from '@/utils/track/trackStructure'
 import Translation from '@/utils/translation'
 import { DsfrCheckbox, DsfrInput, DsfrInputGroup } from '@gouvminint/vue-dsfr'
-import { ref } from 'vue'
 import { useRoute } from 'vue-router'
 import Contact from '@/utils/contact'
 
@@ -346,6 +345,16 @@ const isFormFilled = computed(() => {
   return isFilled.every((v) => v)
 })
 
+const isFormValid = computed(() => {
+  const isValid = []
+  for (const key in projectForm.value) {
+    if (projectForm.value[key].required) {
+      isValid.push(projectForm.value[key].isValid)
+    }
+  }
+  return isValid.every((v) => v !== false)
+})
+
 const hasValidResponse = computed(() => {
   return !requestResponse.value || requestResponse.value.status === 200 || requestResponse.value.status === 201
 })
@@ -385,7 +394,7 @@ const validateFormField = (field: InputFieldUnionType): void => {
 const saveProjectForm = async () => {
   try {
     isLoading.value = true
-    const opportunity = new OpportunityApi(projectForm.value, props.project.id.toString(), props.project.slug, OpportunityType.Project)
+    const opportunity = new OpportunityApi(projectForm.value, props.project.id, props.project.slug, OpportunityType.Project)
     requestResponse.value = await opportunity.fetch()
 
     // analytics / send event

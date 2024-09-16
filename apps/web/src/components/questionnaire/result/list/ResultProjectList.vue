@@ -1,11 +1,13 @@
 <template>
   <!-- PROGRAMS AS LIST OF CARDS -->
   <div class="fr-container--fluid fr-container--fluid--no-overflow">
-    <div class="fr-grid-row fr-grid-row--center">
+    <div
+      v-if="showNoResults"
+      class="fr-grid-row fr-grid-row--center"
+    >
       <div class="fr-container fr-mt-3v">
         <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-col-justify--center">
           <ResultListNoResults
-            v-if="showNoResults"
             :has-error="hasError"
             message="Aucune idée d’action n’a pu être identifiée sur cette thématique..."
             :count-items="countProjects"
@@ -51,8 +53,8 @@ const countProjects = computed(() => {
   return props.filteredProjects?.length || 0
 })
 
-const hasObjectiveCard = computed(() => {
-  return programStore.hasObjectiveTypeSelected() || (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityObjective())
+const hasThemeCard = computed(() => {
+  return programStore.hasThemeTypeSelected() || (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityTheme())
 })
 
 const sortedProjects = UtilsProject.sort(computed(() => props.filteredProjects))
@@ -62,6 +64,6 @@ const showNoResults = computed(() => {
 })
 
 const showProjectListComponent = computed(() => {
-  return hasObjectiveCard.value && UsedTrack.isSpecificGoal() && hasProjects.value
+  return hasThemeCard.value && UsedTrack.isSpecificGoal() && hasProjects.value
 })
 </script>

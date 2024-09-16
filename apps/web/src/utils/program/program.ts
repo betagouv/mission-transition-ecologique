@@ -1,4 +1,4 @@
-import type { ProgramData as ProgramType } from '@/types'
+import type { ProgramData as ProgramType, Project as ProjectType } from '@/types'
 
 export default class Program {
   static getEndDate(program: ProgramType | undefined): Date | undefined {
@@ -14,5 +14,13 @@ export default class Program {
     const endDate = this.getEndDate(program)
 
     return endDate !== undefined ? endDate >= new Date() : true
+  }
+
+  static getLinkedProjects(program: ProgramType | undefined, projects: ProjectType[]) {
+    if (program) {
+      const programId: string = program.id
+      const linkedProjects: ProjectType[] = projects.filter((project: ProjectType) => project.programs.includes(programId))
+      return linkedProjects
+    }
   }
 }
