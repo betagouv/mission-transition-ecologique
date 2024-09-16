@@ -5,7 +5,7 @@
       <ResultListNoResults
         v-if="showNoResultsComponent"
         :has-error="hasError"
-        message="Aucune aide n\'a pu être identifiée sur cette thématique..."
+        message="Aucune aide n'a pu être identifiée sur cette thématique..."
         :count-items="countPrograms"
       />
     </div>
@@ -18,7 +18,7 @@
               <ProgramFiltersAccordion />
             </div>
           </div>
-          <div class="fr-col-12 fr-col-md-10 fr-pr-md-2v">
+          <div class="fr-col-12 fr-col-md-10 fr-pl-md-2v fr-pr-md-6v">
             <ProgramList :filtered-programs="filteredPrograms" />
           </div>
         </div>

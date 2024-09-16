@@ -31,8 +31,8 @@ export class PublicodesGenerator {
   private _generatePublicodes(): { [key: string]: unknown } {
     const publicodes: { [key: string]: unknown } = {}
     const cibles: string[] = []
-    const eligibility: any = {}
-    const eligibilityConditions: any = []
+    const eligibility: { 'applicable si'?: string | { [Publicodes.ALL]: string[] }; [Publicodes.ALL]?: string[]; valeur?: string } = {}
+    const eligibilityConditions: string[] = []
     publicodes[Publicodes.CIBLE] = { [Publicodes.ALL]: cibles }
 
     if (this._program.DISPOSITIF_DATE_DEBUT || this._program.DISPOSITIF_DATE_FIN) {

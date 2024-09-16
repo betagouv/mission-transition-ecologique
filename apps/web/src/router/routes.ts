@@ -81,7 +81,7 @@ export const routes = [
     ]
   },
   {
-    path: Path.ProgramCatalog,
+    path: '/aides-entreprise',
     component: TeeCatalogPage as Component,
     beforeEnter: [Hook.resetUsedTrackStore, Hook.resetQueries, Hook.resetProgramFilters],
     children: [
@@ -100,7 +100,7 @@ export const routes = [
     ]
   },
   {
-    path: Path.ProjectCatalog,
+    path: '/projets-entreprise',
     component: TeeCatalogPage as Component,
     beforeEnter: [Hook.resetUsedTrackStore, Hook.resetQueries, Hook.resetProgramFilters],
     children: [
@@ -135,7 +135,7 @@ export const routes = [
   },
   {
     path: '/accessibilite',
-    name: 'accessibility',
+    name: RouteName.Accessibility,
     component: TeeAccessibilityPage as Component
   },
   {
@@ -145,7 +145,7 @@ export const routes = [
   },
   {
     path: '/stats',
-    name: RouteName.Statistiques,
+    name: RouteName.Statistics,
     component: TeeStatPage as Component
   },
   {

@@ -15,7 +15,7 @@
                 <h2 class="tee-track-callout-header">TPE, PME</h2>
                 <h1 class="fr-mb-3 tee-track-callout-big-title">Trouvez comment allier écologie avec économies</h1>
                 <p class="fr-callout__text tee-track-callout-description">
-                  Je complète mon profil en moins de 2 minutes, et j’accède à propositions d’actions et de financements pour m'aider à
+                  Je complète mon profil en moins de 2 minutes, et j’accède à des propositions d’actions et de financements pour m'aider à
                   réduire mon impact environnemental.
                 </p>
               </div>

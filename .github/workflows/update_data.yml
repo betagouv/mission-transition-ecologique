@@ -24,7 +24,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
 
-      - run: npm clean-install
+      - run: npm clean-install --foreground-scripts
       - run: npm run generate:program
 
       - name: Generate projects
@@ -62,7 +62,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
 
-      - run: npm clean-install
+      - run: npm clean-install --foreground-scripts
 
       - name: Generate programs yamls
         env:
