@@ -51,7 +51,7 @@
           <!-- TITLE & RESUME -->
           <div class="fr-col">
             <!-- PROGRAM TITLE -->
-            <div class="fr-col-justify--left fr-text--purple fr-h6 fr-text--bold fr-mb-5v">
+            <div class="fr-col-justify--left fr-mb-5v fr-h6 fr-text--purple">
               <div class="fr-text-line-height--8v">{{ program?.titre }}</div>
               <TeeCopyLinkButton
                 class="fr-ml-6v"
@@ -315,3 +315,7 @@ const scrollToProgramForm = () => {
   }
 }
 </script>
+<style lang="scss" scoped>
+.program-title {
+}
+</style>
