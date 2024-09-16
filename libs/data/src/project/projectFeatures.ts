@@ -91,7 +91,9 @@ export class ProjectFeatures {
     const links = [...markdownText.matchAll(linkRegex)].map((match) => match[1] || match[0])
     for (const link of links) {
       if (!(await LinkValidator.isValidLink(link))) {
-        this._log(`Majeur: dans le projet "${project['title']}", id ${project['id']} 'dans le champs "pour aller plus loin"`)
+        this._log(
+          `Majeur: dans le projet "${project['title']}", id ${project['id']} 'erreur de validation de lien dans le champs "pour aller plus loin", ${link}`
+        )
       }
     }
   }

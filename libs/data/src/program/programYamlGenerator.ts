@@ -26,10 +26,11 @@ export class ProgramYamlGenerator {
     }
     return
   }
+
   private async _validateProgramData(program: DataProgram) {
     let valid = true
     if (!SlugValidator.validate(program['Id fiche dispositif'])) {
-      this._log('critique: ' + program['Id fiche dispositif'] + 'slug not valid, not generating the associated yaml.')
+      this._log('Critique: ' + program['Id fiche dispositif'] + 'slug non valide, yaml non généré.')
       valid = false
     }
     await this._validateLinks(program)
@@ -181,7 +182,7 @@ export class ProgramYamlGenerator {
     const criteriaList = program['Eligibilité Spécifique'].split('\n').map((criteria) => criteria.trim())
     if (criteriaList.filter((criteria) => !criteria.startsWith('- ')).length) {
       this._log(
-        'critique: ' + program['Id fiche dispositif'] + ': problème de format du champ "éligibilité spécifique" qui doit être une liste !'
+        'Majeur: ' + program['Id fiche dispositif'] + ': problème de format du champ "éligibilité spécifique" qui doit être une liste !'
       )
       return []
     }
@@ -208,7 +209,7 @@ export class ProgramYamlGenerator {
     if (program['Couverture géographique'].Name == 'National') return ["France et territoires d'outre-mer"]
 
     if (program['Zones Spécifiques (géographie)']) {
-      this._log(program['Id fiche dispositif'] + ': Zone géographique spécifique, YAML à modifier manuellement')
+      this._log('Info: ' + program['Id fiche dispositif'] + ': Zone géographique spécifique, YAML à modifier manuellement')
     }
 
     return [
@@ -244,10 +245,11 @@ export class ProgramYamlGenerator {
   }
 
   private async _validateLinks(program: DataProgram) {
-    if (program['Id fiche dispositif'] == 'baisse-les-watts') return
-    if (program['URL externe']) {
+    if (program['URL externe'] != '') {
       if (!(await LinkValidator.isValidLink(program['URL externe']))) {
-        this._log('Mineur: ' + program['Id fiche dispositif'] + ': problème de validation du lien du champ URL externe')
+        this._log(
+          'Mineur: ' + program['Id fiche dispositif'] + ': problème de validation du lien du champ URL externe ' + program['URL externe']
+        )
       }
     }
 
@@ -260,7 +262,9 @@ export class ProgramYamlGenerator {
         }
         for (const lien of objectives.liens) {
           if (!(await LinkValidator.isValidLink(lien.lien))) {
-            this._log('Majeur: ' + program['Id fiche dispositif'] + ": problème de validation d'un lien du champ étape " + i)
+            this._log(
+              'Majeur: ' + program['Id fiche dispositif'] + ": problème de validation d'un lien du champ étape " + i + ' ' + lien.lien
+            )
           }
         }
       }
