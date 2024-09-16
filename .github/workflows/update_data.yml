@@ -69,6 +69,10 @@ jobs:
           BASEROW_TOKEN: "${{secrets.BASEROW_TOKEN}}"
         run: npm run generate:program-yaml
 
+      - name: Read Log File
+        id: read-log
+        run: echo "log_content=$(cat libs/data/programYamlLog.log)" >> $GITHUB_ENV
+
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
         with:
@@ -82,4 +86,7 @@ jobs:
             Merci de bien vérifier les changements avant de merge.
 
             Attention en particulier aux changements de slugs qui vont créer de nouveaux dispositifs au lieu de reéécrire un dispositif existant.
+
+            Liste de points problématiques automatiquement détectés:
+            ${{ env.log_content }}
           draft: false

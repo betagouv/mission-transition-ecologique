@@ -5,7 +5,7 @@ import { YamlObjective, DataProgram, DataProgramType, Status, YamlImage } from '
 import { ProgramBaserow } from '../common/baserow/programBaserow'
 import { PublicodesGenerator } from './publicodesGenerator'
 import { SlugValidator } from '../common/validators/slugValidator'
-import axios from 'axios'
+import { LinkValidator } from '../common/validators/linkValidators'
 
 export class ProgramYamlGenerator {
   outputDirectory: string = path.join(__dirname, '../../programs/')
@@ -29,7 +29,7 @@ export class ProgramYamlGenerator {
   private async _validateProgramData(program: DataProgram) {
     let valid = true
     if (!SlugValidator.validate(program['Id fiche dispositif'])) {
-      this._log(program['Id fiche dispositif'] + 'slug not valid, not generating the associated yaml.')
+      this._log('critique: ' + program['Id fiche dispositif'] + 'slug not valid, not generating the associated yaml.')
       valid = false
     }
     await this._validateLinks(program)
@@ -124,7 +124,7 @@ export class ProgramYamlGenerator {
         fileContent["montant de l'avantage fiscal"] = program["Montant de l'aide ou coût"]
         return
       default:
-        this._log(program['Id fiche dispositif'] + ": type d'aide non traitée dans les données financières")
+        this._log('critique: ' + program['Id fiche dispositif'] + ": type d'aide non traitée dans les données financières")
         return
     }
   }
@@ -180,7 +180,9 @@ export class ProgramYamlGenerator {
   private _setOtherEligibilityCriteria(program: DataProgram): string[] {
     const criteriaList = program['Eligibilité Spécifique'].split('\n').map((criteria) => criteria.trim())
     if (criteriaList.filter((criteria) => !criteria.startsWith('- ')).length) {
-      this._log(program['Id fiche dispositif'] + ': problème de format du champ "éligibilité spécifique" qui doit être une liste !')
+      this._log(
+        'critique: ' + program['Id fiche dispositif'] + ': problème de format du champ "éligibilité spécifique" qui doit être une liste !'
+      )
       return []
     }
     return criteriaList.map((criteria) => criteria.substring(2))
@@ -195,7 +197,7 @@ export class ProgramYamlGenerator {
 
   private _setEligibilitySector(program: DataProgram) {
     if (!program['Eligibilité Sectorielle']) {
-      this._log(program['Id fiche dispositif'] + ':Eligibilité sectorielle manquante !')
+      this._log('Critique: ' + program['Id fiche dispositif'] + ':Eligibilité sectorielle manquante !')
     }
     if (program['Eligibilité Naf']) {
       return [program['Eligibilité Sectorielle'], program['Eligibilité Naf']]
@@ -244,8 +246,8 @@ export class ProgramYamlGenerator {
   private async _validateLinks(program: DataProgram) {
     if (program['Id fiche dispositif'] == 'baisse-les-watts') return
     if (program['URL externe']) {
-      if (!(await this._isValidLink(program['URL externe']))) {
-        this._log(program['Id fiche dispositif'] + ': problème de validation du lien du champ URL externe')
+      if (!(await LinkValidator.isValidLink(program['URL externe']))) {
+        this._log('Mineur: ' + program['Id fiche dispositif'] + ': problème de validation du lien du champ URL externe')
       }
     }
 
@@ -257,36 +259,11 @@ export class ProgramYamlGenerator {
           continue
         }
         for (const lien of objectives.liens) {
-          if (!(await this._isValidLink(lien.lien))) {
-            this._log(program['Id fiche dispositif'] + ": problème de validation d'un lien du champ étape " + i)
+          if (!(await LinkValidator.isValidLink(lien.lien))) {
+            this._log('Majeur: ' + program['Id fiche dispositif'] + ": problème de validation d'un lien du champ étape " + i)
           }
         }
       }
-    }
-  }
-
-  private _exceptionLinks = [
-    'https://www.baisseleswatts.fr/?mtm_campaign=missiontransitionecologique&mtm_source=missiontransitionecologique&mtm_medium=missiontransitionecologique&mtm_content=missiontransitionecologique',
-    'https://www.cci.fr/ressources/developpement-durable/cfde/nos-formations',
-    'https://www.impots.gouv.fr/sites/default/files/formulaires/2079-bio-sd/2024/2079-bio-sd_4636.pdf'
-  ]
-
-  private async _isValidLink(link: string) {
-    if (this._exceptionLinks.includes(link)) {
-      return true
-    }
-    try {
-      const response = await axios.head(link, { timeout: 2000 })
-      if (response.status === 200) {
-        return true
-      } else {
-        return false
-      }
-    } catch (error) {
-      return false
-    } finally {
-      // Add a 100ms delay
-      await new Promise((resolve) => setTimeout(resolve, 100))
     }
   }
 
