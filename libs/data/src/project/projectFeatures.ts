@@ -92,7 +92,7 @@ export class ProjectFeatures {
     for (const link of links) {
       if (!(await LinkValidator.isValidLink(link))) {
         this._log(
-          `Majeur: dans le projet "${project['title']}", id ${project['id']} 'erreur de validation de lien dans le champs "pour aller plus loin", ${link}`
+          `Majeur: dans le projet "${project['title']}", id ${project['id']} erreur de validation de lien dans le champ "pour aller plus loin", ${link}`
         )
       }
     }
