@@ -31,46 +31,46 @@
         <TeeFormElement
           type="text"
           :size="6"
-          :field="opportunityForm.name"
-          @update-field="(field) => (opportunityForm.name = field)"
+          :field="form.name"
+          @update-field="(field) => (form.name = field)"
         />
         <TeeFormElement
           type="text"
           :size="6"
-          :field="opportunityForm.surname"
-          @update-field="(field) => (opportunityForm.surname = field)"
+          :field="form.surname"
+          @update-field="(field) => (form.surname = field)"
         />
         <TeeFormElement
           type="email"
-          :field="opportunityForm.email"
-          @update-field="(field) => (opportunityForm.email = field as ValidatedStringFieldInputType)"
+          :field="form.email"
+          @update-field="(field) => (form.email = field as ValidatedStringFieldInputType)"
         />
         <TeeFormElement
           type="tel"
-          :field="opportunityForm.tel"
-          @update-field="(field) => (opportunityForm.tel = field as ValidatedStringFieldInputType)"
+          :field="form.tel"
+          @update-field="(field) => (form.tel = field as ValidatedStringFieldInputType)"
         />
         <TeeFormElement
           type="text"
-          :field="opportunityForm.siret"
-          @update-field="(field) => (opportunityForm.siret = field as ValidatedStringFieldInputType)"
+          :field="form.siret"
+          @update-field="(field) => (form.siret = field as ValidatedStringFieldInputType)"
         />
         <TeeFormElement
           type="textarea"
           :rows="10"
-          :field="opportunityForm.needs"
+          :field="form.needs"
           :is-textarea="true"
           :wrapper-class="'fr-m-0'"
-          @update-field="(field) => (opportunityForm.needs = field)"
+          @update-field="(field) => (form.needs = field)"
         >
           <template
-            v-if="opportunityForm.needs.callOut"
+            v-if="form.needs.callOut"
             #label
           >
-            {{ opportunityForm.needs.label }}
+            {{ form.needs.label }}
             <slot name="required-tip">
               <span
-                v-if="opportunityForm.needs.required"
+                v-if="form.needs.required"
                 class="required"
                 >*</span
               >
@@ -78,18 +78,18 @@
 
             <TeeCallout
               class="fr-bg--blue fr-text--white fr-px-2v fr-pt-2v fr-pb-0 fr-mb-0 fr-text--bold"
-              :type="opportunityForm.needs.callOut.type"
-              :img="`${publicPath}${opportunityForm.needs.callOut.img}`"
+              :type="form.needs.callOut.type"
+              :img="`${publicPath}${form.needs.callOut.img}`"
               :img-container-class="'fr-col-xl-2 fr-hidden fr-unhidden-lg'"
               :content-class="'fr-pb-2v fr-tee-form-banner fr-px-3v fr-px-lg-0'"
             >
-              {{ opportunityForm.needs.callOut.content }}
+              {{ form.needs.callOut.content }}
             </TeeCallout>
           </template>
         </TeeFormElement>
         <TeeFormCgu
-          :field="opportunityForm.cgu"
-          @update-field="(field) => (opportunityForm.cgu = field)"
+          :field="form.cgu"
+          @update-field="(field) => (form.cgu = field)"
         />
       </div>
 
@@ -109,7 +109,7 @@
             icon="ri-arrow-right-line"
             icon-right
             :loading="isLoading"
-            @click="saveOpportunityForm()"
+            @click="saveForm()"
           />
         </div>
       </div>
@@ -117,13 +117,13 @@
   </div>
   <TeeFormCallback
     v-if="formIsSent"
-    :opportunity-form="opportunityForm"
+    :opportunity-form="form"
     :error-email-subject="errorEmailSubject"
     :request-response="requestResponse"
     class="fr-mt-5v fr-grid-row fr-grid-row--center fr-grid-row--middle"
   >
     <template
-      v-if="formType === OpportunityType.Program"
+      v-if="formType === FormType.Program"
       #phoneContact
     >
       <p class="fr-mb-15v">
@@ -138,15 +138,14 @@
 <script setup lang="ts">
 import { Scroll } from '@/utils/scroll'
 import { computed, ref } from 'vue'
-import { InputFieldUnionType, type ReqResp, TrackId, ValidatedStringFieldInputType, CustomFormType, FormType } from '@/types'
+import { InputFieldUnionType, type ReqResp, TrackId, ValidatedStringFieldInputType, CustomFormType, FormDataType } from '@/types'
 import Translation from '@/utils/translation'
 import TeeDsfrButton from '@/components/element/button/TeeDsfrButton.vue'
 import Matomo from '@/utils/matomo'
 import { useRoute } from 'vue-router'
 import Format from '@/utils/format'
 import OpportunityApi from '@/service/api/opportunityApi'
-import { OpportunityFormType } from '@/types'
-import { OpportunityType, PhoneValidator, EmailValidator, SiretValidator } from '@tee/common'
+import { FormType, PhoneValidator, EmailValidator, SiretValidator } from '@tee/common'
 import Config from '@/config'
 import TrackStructure from '@/utils/track/trackStructure'
 import { CalloutType } from '@/types/elementsPropsTypes'
@@ -159,7 +158,7 @@ interface Props {
   customFields?: CustomFormType
   dataId: string
   dataSlug: string
-  formType: OpportunityType
+  formType: FormType
   hint: string
   errorEmailSubject: string
   need: string
@@ -169,7 +168,7 @@ interface Props {
 
 const props = defineProps<Props>()
 
-const opportunityForm = ref<OpportunityFormType>({
+const form = ref<FormDataType>({
   name: { required: true, value: undefined, label: 'Prénom', isValid: undefined },
   surname: { required: true, value: undefined, label: 'Nom', isValid: undefined },
   tel: {
@@ -231,9 +230,9 @@ const isLoading = ref<boolean>(false)
 
 const isFormFilled = computed(() => {
   const isFilled = []
-  for (const key in opportunityForm.value) {
-    if (opportunityForm.value[key].required) {
-      isFilled.push(isFieldValid(opportunityForm.value[key]))
+  for (const key in form.value) {
+    if (form.value[key].required) {
+      isFilled.push(isFieldValid(form.value[key]))
     }
   }
   return isFilled.every((v) => v)
@@ -241,9 +240,9 @@ const isFormFilled = computed(() => {
 
 const isFormValid = computed(() => {
   const isValid = []
-  for (const key in opportunityForm.value) {
-    if (opportunityForm.value[key].required) {
-      isValid.push(opportunityForm.value[key].isValid)
+  for (const key in form.value) {
+    if (form.value[key].required) {
+      isValid.push(form.value[key].isValid)
     }
   }
   return isValid.every((v) => v !== false)
@@ -253,11 +252,11 @@ const isFieldValid = (field: InputFieldUnionType): boolean => {
   return field.value !== undefined && field.value !== '' && field.value !== false
 }
 
-const saveOpportunityForm = async () => {
+const saveForm = async () => {
   try {
     isLoading.value = true
-    const fullOpportunity: FormType = { ...opportunityForm.value, ...props.customFields }
-    const opportunity = new OpportunityApi(fullOpportunity, props.dataId, props.dataSlug, props.formType)
+    const fullForm: FormDataType = { ...form.value, ...props.customFields }
+    const opportunity = new OpportunityApi(fullForm, props.dataId, props.dataSlug, props.formType)
     requestResponse.value = await opportunity.fetch()
 
     // analytics / send event

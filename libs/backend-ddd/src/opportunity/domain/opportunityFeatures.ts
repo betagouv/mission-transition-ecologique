@@ -6,7 +6,7 @@ import { OpportunityHubRepository } from '../../opportunityHub/domain/spi'
 import { ProgramRepository } from '../../program/domain/spi'
 import ProgramFeatures from '../../program/domain/programFeatures'
 import { Operators, ProgramType, Project } from '@tee/data'
-import { ContactDetails, Opportunity, OpportunityType, SiretValidator } from '@tee/common'
+import { ContactDetails, Opportunity, FormType, SiretValidator } from '@tee/common'
 import EstablishmentService from '../../establishment/application/establishmentService'
 import Monitor from '../../common/domain/monitoring/monitor'
 import { ProjectService } from '../../project/application/projectService'
@@ -46,9 +46,9 @@ export default class OpportunityFeatures {
     }
 
     switch (opportunity.type) {
-      case OpportunityType.Program:
+      case FormType.Program:
         return this._createProgramOpportunity(opportunity, contactIdResult.value)
-      case OpportunityType.Project:
+      case FormType.Project:
         return this._createProjectOpportunity(opportunity, contactIdResult.value)
     }
   }

@@ -7,8 +7,8 @@ import {
   OpportunityBody,
   ReqResp,
   WithoutNullableKeys,
-  OpportunityFormType,
-  OpportunityType,
+  FormDataType,
+  FormType,
   RouteName,
   ProgramData,
   Project
@@ -23,16 +23,16 @@ export default class OpportunityApi extends RequestApi {
     'content-type': 'application/json'
   }
   private _usedTrackStore = useUsedTrackStore()
-  private _opportunityForm: WithoutNullableKeys<OpportunityFormType>
+  private _opportunityForm: WithoutNullableKeys<FormDataType>
 
   constructor(
-    opportunityForm: OpportunityFormType,
+    opportunityForm: FormDataType,
     private _id: ProgramData['id'] | Project['id'],
     private _slug: ProgramData['id'] | Project['slug'],
-    private _opportunityType: OpportunityType
+    private _opportunityType: FormType
   ) {
     super()
-    this._opportunityForm = opportunityForm as WithoutNullableKeys<OpportunityFormType>
+    this._opportunityForm = opportunityForm as WithoutNullableKeys<FormDataType>
   }
 
   async fetch() {
@@ -86,14 +86,14 @@ export default class OpportunityApi extends RequestApi {
   }
 
   private _generateCatalogLink(): string {
-    if (this._opportunityType == OpportunityType.Program) {
+    if (this._opportunityType == FormType.Program) {
       return (
         useNavigationStore().getAbsoluteUrlByRouteName(RouteName.CatalogProgramDetail, {
           programId: this._slug
         }) ?? ''
       )
     }
-    if (this._opportunityType == OpportunityType.Project) {
+    if (this._opportunityType == FormType.Project) {
       return (
         useNavigationStore().getAbsoluteUrlByRouteName(RouteName.CatalogProjectDetail, {
           projectSlug: this._slug

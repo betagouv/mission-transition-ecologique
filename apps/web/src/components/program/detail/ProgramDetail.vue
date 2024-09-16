@@ -226,7 +226,7 @@
         :data-id="program.id"
         :data-slug="program.id"
         :phone-callback="Translation.ti(Translation.t('form.phoneContact'), { operator: program['opérateur de contact'] })"
-        :form-type="OpportunityType.Program"
+        :form-type="FormType.Program"
         :error-email-subject="Translation.t('form.errorEmail.subject', { program: program.titre })"
         :need="
           Translation.t('program.form.needs', {
@@ -250,7 +250,7 @@ import ProgramLongDescription from '@/components/program/detail/ProgramLongDescr
 import ProgramTile from '@/components/program/detail/ProgramTile.vue'
 import Config from '@/config'
 import { useProgramStore } from '@/stores/program'
-import { OpportunityType, type ProgramData as ProgramType, Project as ProjectType } from '@/types'
+import { FormType, type ProgramData as ProgramType, Project as ProjectType } from '@/types'
 import { RouteName } from '@/types/routeType'
 import { useNavigationStore } from '@/stores/navigation'
 import Matomo from '@/utils/matomo'

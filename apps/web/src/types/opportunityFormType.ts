@@ -1,7 +1,6 @@
 import { CalloutType } from '@/types'
 
-export type OpportunityFormType = FormType
-export interface FormType {
+export interface FormDataType {
   [key: string]: StringFieldInputType | MandatoryStringFieldFormType | BooleanFieldInputType | ValidatedStringFieldInputType
   name: StringFieldInputType
   surname: StringFieldInputType

@@ -7,7 +7,7 @@ import { ensureError, handleException } from '../../../../common/domain/error/er
 import opportunityPayloadDTO from './opportunityPayloadDTO'
 import Config from '../../../../config'
 import { Operators, ProgramType, Project } from '@tee/data'
-import { Opportunity, OpportunityType } from '@tee/common'
+import { Opportunity, FormType } from '@tee/common'
 import Monitor from '../../../../common/domain/monitoring/monitor'
 
 export class BpiFrance extends OpportunityHubAbstract {
@@ -45,7 +45,7 @@ export class BpiFrance extends OpportunityHubAbstract {
   }
 
   public transmitOpportunity = async (opportunity: Opportunity, programOrProject: ProgramType | Project): Promise<Maybe<Error>> => {
-    if (opportunity.type === OpportunityType.Project) {
+    if (opportunity.type === FormType.Project) {
       return Maybe.of(Error("BPI shouldn't transfer be transfered Project type opportunities."))
     }
     try {

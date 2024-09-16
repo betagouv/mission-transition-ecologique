@@ -82,7 +82,7 @@
       <TeeForm
         v-if="project"
         :form-container-ref="TeeProjectFormContainer"
-        :form-type="OpportunityType.Project"
+        :form-type="FormType.Project"
         :data-id="project.id.toString()"
         :data-slug="project.slug"
         :hint="Translation.t('project.form.hint')"
@@ -104,7 +104,7 @@
 <script setup lang="ts">
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { useProgramStore } from '@/stores/program'
-import { type ProgramData, TrackId, Project, QuestionnaireRoute, ProgramAidType, OpportunityType, CustomFormType } from '@/types'
+import { type ProgramData, TrackId, Project, QuestionnaireRoute, ProgramAidType, FormType, CustomFormType } from '@/types'
 import Contact from '@/utils/contact'
 import { RouteName } from '@/types/routeType'
 import { type RouteLocationRaw } from 'vue-router'

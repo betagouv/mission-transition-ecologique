@@ -13,13 +13,13 @@ export interface ContactDetails {
   companySize?: StructureSize
 }
 
-export enum OpportunityType {
+export enum FormType {
   Program = 'program',
   Project = 'project'
 }
 
 export interface OpportunityDetails {
-  type: OpportunityType
+  type: FormType
   id: string
   linkToPage: string
   linkToCatalog: string
