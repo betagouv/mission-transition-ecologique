@@ -3,7 +3,7 @@ const projectFrDict = {
     studyPrograms: 'Pour étudier votre projet :',
     financePrograms: 'Pour financer votre investissement :',
     result: {
-      resume: 'Voici les actions par lesquelles commencer pour votre {effectif} du secteur {secteur} en région {region} :'
+      resume: 'Voici les actions par lesquelles commencer pour votre {effectif} du secteur {secteur} :'
     },
     form: {
       hint: '👋 Expliquez nous votre projet, nous vous mettrons en relation avec un conseiller compétent pour votre demande sur votre territoire.',
