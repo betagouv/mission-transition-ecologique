@@ -81,7 +81,7 @@ export const routes = [
     ]
   },
   {
-    path: Path.ProgramCatalog,
+    path: '/aides-entreprise',
     component: TeeCatalogPage as Component,
     beforeEnter: [Hook.resetUsedTrackStore, Hook.resetQueries, Hook.resetProgramFilters],
     children: [
@@ -100,7 +100,7 @@ export const routes = [
     ]
   },
   {
-    path: Path.ProjectCatalog,
+    path: '/projets-entreprise',
     component: TeeCatalogPage as Component,
     beforeEnter: [Hook.resetUsedTrackStore, Hook.resetQueries, Hook.resetProgramFilters],
     children: [

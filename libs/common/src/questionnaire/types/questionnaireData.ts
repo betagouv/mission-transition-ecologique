@@ -4,11 +4,12 @@ import {
   BuildingProperty,
   WasteSortingStatus,
   WasteManagementStatus,
-  Objective,
   Sector,
   YesNo,
   MobilityStatus
 } from './types'
+
+import { ThemeId } from '@tee/data'
 
 export enum QuestionnaireDataEnum {
   codeNaf = 'codeNaf',
@@ -31,7 +32,7 @@ export interface QuestionnaireData {
 
   structure_size?: StructureSize // optional for testing !
   sector?: Sector
-  priority_objective?: Objective
+  priority_objective?: ThemeId
 
   building_property?: BuildingProperty
   sustainable_mobility_objective?: MobilityStatus
