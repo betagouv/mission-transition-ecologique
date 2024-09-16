@@ -74,7 +74,7 @@
             />
             <ProgramObjective
               v-if="program"
-              :program="program"
+              :program="program as unknown as ProgramTypeTest"
             />
             <DsfrButton
               v-if="!isProgramAutonomous"
@@ -241,7 +241,7 @@ import ProgramObjective from '@/components/program/detail/ProgramObjective.vue'
 import ProgramTile from '@/components/program/detail/ProgramTile.vue'
 import Config from '@/config'
 import { useProgramStore } from '@/stores/program'
-import { type ProgramData as ProgramType, Project as ProjectType } from '@/types'
+import { type ProgramData as ProgramType, Project as ProjectType, ProgramTypeTest } from '@/types'
 import { RouteName } from '@/types/routeType'
 import { useNavigationStore } from '@/stores/navigation'
 import Matomo from '@/utils/matomo'
