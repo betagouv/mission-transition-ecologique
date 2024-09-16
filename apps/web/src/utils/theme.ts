@@ -1,4 +1,4 @@
-import { Color, Objective, ThemeId, ThemeType } from '@/types'
+import { Color, ThemeId, ThemeType } from '@/types'
 import UsedTrack from '@/utils/track/usedTrack'
 import { Project } from '@tee/data'
 
@@ -8,7 +8,6 @@ export class Theme {
       id: ThemeId.Environmental,
       title: 'Analyses environnementales',
       tagLabel: '🌱 analyses',
-      value: Objective.EnvironmentalImpact,
       image: '/images/thematique/thematique-strategie.svg',
       color: Color.blue
     },
@@ -16,7 +15,6 @@ export class Theme {
       id: ThemeId.Energy,
       title: 'Énergie',
       tagLabel: '⚡️ énergie',
-      value: Objective.EnergyPerformance,
       image: '/images/thematique/thematique-energie.svg',
       color: Color.yellow
     },
@@ -24,7 +22,6 @@ export class Theme {
       id: ThemeId.Water,
       title: 'Économies d’eau',
       tagLabel: '💧 eau',
-      value: Objective.WaterConsumption,
       image: '/images/thematique/thematique-eau.svg',
       color: Color.blueFrance
     },
@@ -32,7 +29,6 @@ export class Theme {
       id: ThemeId.Building,
       title: 'Construction & rénovation',
       tagLabel: '🏢 rénovation',
-      value: Objective.BuildingRenovation,
       image: '/images/thematique/thematique-batiments.svg',
       color: Color.blue
     },
@@ -40,7 +36,6 @@ export class Theme {
       id: ThemeId.Mobility,
       title: 'Mobilité',
       tagLabel: '🚲 mobilité',
-      value: Objective.SustainableMobility,
       image: '/images/thematique/thematique-mobilite.svg',
       color: Color.green
     },
@@ -48,7 +43,6 @@ export class Theme {
       id: ThemeId.EcoDesign,
       title: 'Éco-conception',
       tagLabel: '🔁 écoconception',
-      value: Objective.EcoDesign,
       image: '/images/thematique/thematique-eco-conception.svg',
       color: Color.green
     },
@@ -56,7 +50,6 @@ export class Theme {
       id: ThemeId.Waste,
       title: 'Déchets & réemploi',
       tagLabel: '🗑 déchets',
-      value: Objective.WasteManagement,
       image: '/images/thematique/thematique-dechets.svg',
       color: Color.red
     },
@@ -64,7 +57,6 @@ export class Theme {
       id: ThemeId.RH,
       title: 'Ressources humaines',
       tagLabel: '🧑‍🎓 RH',
-      value: Objective.TrainOrRecruit,
       image: '/images/thematique/thematique-ressources-humaines.svg',
       color: Color.yellow
     }
@@ -74,37 +66,29 @@ export class Theme {
     return this.themes.find((theme) => theme.id === id)
   }
 
-  static getByValue(value: Objective | undefined) {
-    return this.themes.find((theme) => theme.value === value)
+  static getTitleById(themeId: ThemeId) {
+    return this.getById(themeId)?.title ?? ''
   }
 
-  static getThemeByValue(value: Objective) {
-    return this.themes.find((theme) => theme.value === value)?.value
+  static getImageById(themeId: ThemeId) {
+    return this.getById(themeId)?.image ?? ''
   }
 
-  static getTitleByValue(theme: Objective) {
-    return this.getByValue(theme)?.title ?? ''
-  }
-
-  static getImageByValue(theme: Objective) {
-    return this.getByValue(theme)?.image ?? ''
-  }
-
-  static getColorByValue(theme: Objective) {
-    return this.getByValue(theme)?.color ?? ''
+  static getColorById(themeId: ThemeId) {
+    return this.getById(themeId)?.color ?? ''
   }
 
   static getTags(): ThemeType[] {
     const tags = []
 
     if (UsedTrack.isNoSpecificGoal()) {
-      UsedTrack.isEnvironmentalImpactTheme() ? tags.push(this.getByValue(Objective.EnvironmentalImpact) as ThemeType) : undefined
-      UsedTrack.isEcoDesignTheme() ? tags.push(this.getByValue(Objective.EcoDesign) as ThemeType) : undefined
-      UsedTrack.isEnergyTheme() ? tags.push(this.getByValue(Objective.EnergyPerformance) as ThemeType) : undefined
-      UsedTrack.isWasteTheme() ? tags.push(this.getByValue(Objective.WasteManagement) as ThemeType) : undefined
-      UsedTrack.isWaterTheme() ? tags.push(this.getByValue(Objective.WaterConsumption) as ThemeType) : undefined
-      UsedTrack.isMobilityTheme() ? tags.push(this.getByValue(Objective.SustainableMobility) as ThemeType) : undefined
-      tags.push(this.getByValue(Objective.TrainOrRecruit) as ThemeType)
+      UsedTrack.isEnvironmentalImpactTheme() ? tags.push(this.getById(ThemeId.Environmental) as ThemeType) : undefined
+      UsedTrack.isEcoDesignTheme() ? tags.push(this.getById(ThemeId.EcoDesign) as ThemeType) : undefined
+      UsedTrack.isEnergyTheme() ? tags.push(this.getById(ThemeId.Energy) as ThemeType) : undefined
+      UsedTrack.isWasteTheme() ? tags.push(this.getById(ThemeId.Waste) as ThemeType) : undefined
+      UsedTrack.isWaterTheme() ? tags.push(this.getById(ThemeId.Water) as ThemeType) : undefined
+      UsedTrack.isMobilityTheme() ? tags.push(this.getById(ThemeId.Mobility) as ThemeType) : undefined
+      tags.push(this.getById(ThemeId.RH) as ThemeType)
 
       return tags
     }
@@ -114,7 +98,7 @@ export class Theme {
     return tags
   }
 
-  static isTheme(theme: Objective | ''): theme is Objective {
+  static isTheme(theme: ThemeId | ''): theme is ThemeId {
     return theme !== ''
   }
 

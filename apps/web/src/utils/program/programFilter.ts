@@ -5,7 +5,7 @@ import {
   type ProgramData,
   type programFiltersType,
   type ValueOf,
-  Objective,
+  ThemeId,
   FiltersKeys
 } from '@/types'
 
@@ -45,13 +45,13 @@ export default class ProgramFilter {
     return matchingOperators.length > 0
   }
 
-  static byTheme(program: ProgramData, themeTypeSelected: Objective) {
+  static byTheme(program: ProgramData, themeTypeSelected: ThemeId) {
     if (!this.isValidFilterValue(themeTypeSelected)) {
       return true
     }
 
-    if (program.filters[FiltersKeys.hasTheme]) {
-      return program.filters[FiltersKeys.hasTheme].includes(themeTypeSelected)
+    if (program.filters[FiltersKeys.Theme]) {
+      return program.filters[FiltersKeys.Theme].includes(themeTypeSelected)
     }
 
     return true

@@ -1,25 +1,25 @@
-import { PublicodesKeys, FiltersKeys, PublicodeObjective, Objective } from '@tee/common'
-import { ProgramType, PublicodesCondition } from '@tee/data'
+import { PublicodesKeys, FiltersKeys, PublicodeObjective } from '@tee/common'
+import { ProgramType, PublicodesCondition, ThemeId } from '@tee/data'
 import type { ObjectivePublicodeData } from './types'
 
-const PublicodeToObjectiveMapping = {
-  [PublicodeObjective.EnvironmentalImpact]: Objective.EnvironmentalImpact,
-  [PublicodeObjective.EnergyPerformance]: Objective.EnergyPerformance,
-  [PublicodeObjective.WaterConsumption]: Objective.WaterConsumption,
-  [PublicodeObjective.BuildingRenovation]: Objective.BuildingRenovation,
-  [PublicodeObjective.SustainableMobility]: Objective.SustainableMobility,
-  [PublicodeObjective.WasteManagement]: Objective.WasteManagement,
-  [PublicodeObjective.EcoDesign]: Objective.EcoDesign,
-  [PublicodeObjective.TrainOrRecruit]: Objective.TrainOrRecruit,
-  [PublicodeObjective.MakeSavings]: Objective.MakeSavings,
-  [PublicodeObjective.DurablyInvest]: Objective.DurablyInvest,
-  [PublicodeObjective.UnknownYet]: Objective.UnknownYet
-}
-
 class FrontConverter {
+  private _publicodeToThemeMapping = {
+    [PublicodeObjective.EnvironmentalImpact]: ThemeId.Environmental,
+    [PublicodeObjective.EnergyPerformance]: ThemeId.Energy,
+    [PublicodeObjective.WaterConsumption]: ThemeId.Water,
+    [PublicodeObjective.BuildingRenovation]: ThemeId.Building,
+    [PublicodeObjective.SustainableMobility]: ThemeId.Mobility,
+    [PublicodeObjective.WasteManagement]: ThemeId.Waste,
+    [PublicodeObjective.EcoDesign]: ThemeId.EcoDesign,
+    [PublicodeObjective.TrainOrRecruit]: ThemeId.RH,
+    [PublicodeObjective.MakeSavings]: ThemeId.Environmental,
+    [PublicodeObjective.DurablyInvest]: ThemeId.Environmental,
+    [PublicodeObjective.UnknownYet]: ThemeId.Environmental
+  }
+
   private _getFilterKey(publicodeKey: string): FiltersKeys | undefined {
     if (publicodeKey === PublicodesKeys.hasObjective) {
-      return FiltersKeys.hasTheme
+      return FiltersKeys.Theme
     }
     return undefined
   }
@@ -28,9 +28,9 @@ class FrontConverter {
     return data instanceof Object && PublicodesCondition.oneOfThese in data
   }
 
-  private _getTheme(publicodeData: ObjectivePublicodeData): Objective[] {
+  private _getTheme(publicodeData: ObjectivePublicodeData): ThemeId[] {
     const objectives: PublicodeObjective[] = publicodeData[PublicodesCondition.oneOfThese]
-    return objectives.map((obj: PublicodeObjective) => PublicodeToObjectiveMapping[obj])
+    return objectives.map((obj: PublicodeObjective) => this._publicodeToThemeMapping[obj])
   }
 
   private _getFilterData(publicodeData: unknown) {

@@ -1,4 +1,4 @@
-import { MobilityStatus, TrackComponent, TrackId, YesNo, Objective, Track } from '@/types'
+import { MobilityStatus, TrackComponent, TrackId, YesNo, ThemeId, Track } from '@/types'
 
 export const mobilityWishes: Track = {
   id: TrackId.MobilityWishes,
@@ -7,7 +7,7 @@ export const mobilityWishes: Track = {
   label: {
     fr: 'Souhaitez-vous favoriser des déplacements plus écologiques pour vous et vos employés ?'
   },
-  theme: Objective.SustainableMobility,
+  theme: ThemeId.Mobility,
   interface: {
     component: TrackComponent.Buttons
   },

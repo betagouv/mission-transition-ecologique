@@ -72,7 +72,7 @@
               style="color: #000091"
               v-html="program?.description"
             />
-            <ProgramTheme
+            <ProgramObjective
               v-if="program"
               :program="program"
             />

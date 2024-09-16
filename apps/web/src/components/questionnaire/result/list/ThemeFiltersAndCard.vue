@@ -3,12 +3,12 @@
     <div class="fr-grid-row fr-grid-row--center fr-mt-2w">
       <div class="fr-container fr-px-0 fr-px-md-3w">
         <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-mt-3v">
-          <ThemeFilter :theme="theme as Objective" />
+          <ThemeFilter :theme="theme as ThemeId" />
         </div>
         <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2">
           <ThemeHeaderCard
             v-if="hasThemeCard"
-            :theme="theme as Objective"
+            :theme="theme as ThemeId"
             radius-corner="tr"
             radius-size="2-5v"
           />
@@ -18,7 +18,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { Objective } from '@/types'
+import { ThemeId } from '@/types'
 import { computed } from 'vue'
 import UsedTrack from '@/utils/track/usedTrack'
 import { Theme } from '@/utils/theme'
@@ -32,7 +32,7 @@ const hasThemeCard = computed(() => {
 
 const theme = computed(() => {
   if (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityTheme()) {
-    return Theme.getThemeByValue(UsedTrack.getPriorityTheme())
+    return Theme.getById(UsedTrack.getPriorityTheme())
   }
 
   if (programStore.hasThemeTypeSelected()) {

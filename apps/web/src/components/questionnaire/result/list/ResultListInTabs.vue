@@ -38,12 +38,11 @@
 <script setup lang="ts">
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
-import { ProgramData, Objective, TrackId, Project } from '@/types'
+import { ProgramData, ThemeId, TrackId, Project } from '@/types'
 import { computed, onBeforeMount } from 'vue'
 import Matomo from '@/utils/matomo'
 import { useProjectStore } from '@/stores/project'
 import UsedTrack from '@/utils/track/usedTrack'
-import { Theme } from '@/utils/theme'
 
 const navigationStore = useNavigationStore()
 const programStore = useProgramStore()
@@ -75,8 +74,8 @@ const filteredProjects = computed(() => {
 
 const getThemeForProjectFiltering = () => {
   return programStore.programFilters.themeTypeSelected !== ''
-    ? (programStore.programFilters.themeTypeSelected as Objective)
-    : Theme.getThemeByValue(UsedTrack.getPriorityTheme())
+    ? (programStore.programFilters.themeTypeSelected as ThemeId)
+    : UsedTrack.getPriorityTheme()
 }
 
 onBeforeMount(async () => {

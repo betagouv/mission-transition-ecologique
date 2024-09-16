@@ -6,13 +6,12 @@
 <script setup lang="ts">
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
-import { ProgramData, Objective, TrackId, Project as ProjectType } from '@/types'
+import { ProgramData, TrackId, Project as ProjectType, ThemeId } from '@/types'
 import { Project } from '@/utils/project/project'
 import { computed, onBeforeMount } from 'vue'
 import Matomo from '@/utils/matomo'
 import { useProjectStore } from '@/stores/project'
 import UsedTrack from '@/utils/track/usedTrack'
-import { Theme } from '@/utils/theme'
 
 const programStore = useProgramStore()
 const projectStore = useProjectStore()
@@ -28,8 +27,8 @@ const filteredPrograms = computed(() => {
 
 const theme = computed(() => {
   return programStore.programFilters.themeTypeSelected !== ''
-    ? (programStore.programFilters.themeTypeSelected as Objective)
-    : (Theme.getThemeByValue(UsedTrack.getPriorityTheme()) ?? '')
+    ? (programStore.programFilters.themeTypeSelected as ThemeId)
+    : (UsedTrack.getPriorityTheme() ?? '')
 })
 
 const filteredProjects = Project.filter(projects, filteredPrograms, theme)

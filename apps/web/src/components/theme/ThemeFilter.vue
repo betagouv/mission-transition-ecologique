@@ -13,14 +13,14 @@
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
 import { useUsedTrackStore } from '@/stores/usedTrack'
-import { ThemeType, type programFiltersType, Objective, TrackId } from '@/types'
+import { ThemeType, type programFiltersType, TrackId, ThemeId } from '@/types'
 import { Theme } from '@/utils/theme'
 import { TeeDsfrTagProps } from '@/components/element/tag/TeeDsfrTag.vue'
 import UsedTrack from '@/utils/track/usedTrack'
 import { computed, onBeforeMount } from 'vue'
 
 interface Props {
-  theme?: Objective | ''
+  theme?: ThemeId
 }
 const props = defineProps<Props>()
 
@@ -46,7 +46,7 @@ const themeTypeTags = computed<TeeDsfrTagProps[]>((): TeeDsfrTagProps[] => {
       tagName: 'button',
       ariaPressed: isActive(tag),
       color: isActive(tag) && 'color' in tag ? tag.color : undefined,
-      value: tag.value as string
+      value: tag.id
     })
   }
 
@@ -60,7 +60,7 @@ const themeTypeTags = computed<TeeDsfrTagProps[]>((): TeeDsfrTagProps[] => {
 })
 
 function isActive(tag: ThemeType) {
-  return Theme.getTags().length === 1 || programFilters.themeTypeSelected === (tag.value as string)
+  return Theme.getTags().length === 1 || programFilters.themeTypeSelected === (tag.id as string)
 }
 
 const updateThemeTypeSelected = async (value: string | number) => {

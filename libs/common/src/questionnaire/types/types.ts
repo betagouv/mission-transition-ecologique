@@ -105,7 +105,7 @@ export enum PublicodesKeys {
 }
 
 export enum FiltersKeys {
-  hasTheme = 'theme'
+  Theme = 'theme'
 }
 
 export enum PublicodeObjective {

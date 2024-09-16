@@ -27,7 +27,7 @@
         <ThemeHeaderCard
           v-if="hasThemeCard"
           class="fr-col-12"
-          :theme="theme as Objective"
+          :theme="theme as ThemeId"
           radius-corner="tr"
           radius-size="2-5v"
         />
@@ -63,7 +63,7 @@
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
 import { useProjectStore } from '@/stores/project'
-import { Objective, type ProgramData, Project as ProjectType, RouteName, TrackId } from '@/types'
+import { type ProgramData, Project as ProjectType, RouteName, TrackId, ThemeId } from '@/types'
 import Contact from '@/utils/contact'
 import Matomo from '@/utils/matomo'
 import { Project } from '@/utils/project/project'
@@ -79,7 +79,7 @@ const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)
 
 const theme = computed(() => {
-  return programStore.hasThemeTypeSelected() ? (programStore.programFilters.themeTypeSelected as Objective) : ''
+  return programStore.hasThemeTypeSelected() ? (programStore.programFilters.themeTypeSelected as ThemeId) : ''
 })
 
 const filteredProjects = Project.filter(projects, programs, theme)

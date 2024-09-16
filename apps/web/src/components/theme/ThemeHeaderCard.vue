@@ -3,8 +3,8 @@
     v-if="Theme.isTheme(theme) || !isResultPage"
     horizontal
     title="Thématique"
-    :description="Theme.getTitleByValue(theme as Objective)"
-    :img-src="Theme.getImageByValue(theme as Objective)"
+    :description="Theme.getTitleById(theme as ThemeId)"
+    :img-src="Theme.getImageById(theme as ThemeId)"
     :class="classes"
     size="sm"
     no-arrow
@@ -14,12 +14,12 @@
 <script setup lang="ts">
 import { Theme } from '@/utils/theme'
 import { DsfrCard } from '@gouvminint/vue-dsfr'
-import { Objective } from '@/types'
+import { ThemeId } from '@/types'
 import { useNavigationStore } from '@/stores/navigation'
 import { RouteName } from '@/types/routeType'
 
 interface Props {
-  theme: Objective | ''
+  theme: ThemeId
   radiusCorner?: 'tl' | 'tr' | 'bl' | 'br' | 't' | 'r' | 'b' | 'l' | 'a'
   radiusSize?: '0' | '1v' | '2v' | '2-5v'
 }
@@ -47,7 +47,7 @@ const classes = computed(() => {
 
   return [
     'fr-card-banner',
-    'fr-card--' + Theme.getColorByValue(props.theme),
+    'fr-card--' + Theme.getColorById(props.theme),
     'fr-card--horizontal-tier',
     'fr-card--no-border',
     'fr-col-content--middle',

@@ -30,7 +30,7 @@
         <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-pr-md-2v">
           <ThemeHeaderCard
             v-if="showThemeCard"
-            :theme="theme as Objective"
+            :theme="theme as ThemeId"
             radius-corner="tr"
             radius-size="2-5v"
           />
@@ -60,7 +60,7 @@
 
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
-import { Objective, type ProgramData, TrackId } from '@/types'
+import { type ProgramData, TrackId, ThemeId } from '@/types'
 import Matomo from '@/utils/matomo'
 import UsedTrack from '@/utils/track/usedTrack'
 import { computed, onBeforeMount } from 'vue'

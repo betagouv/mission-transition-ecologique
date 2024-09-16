@@ -1,18 +1,10 @@
 import { useUsedTrackStore } from '@/stores/usedTrack'
-import {
-  MobilityStatus,
-  Objective as ObjectiveType,
-  QuestionnaireDataEnum,
-  QuestionnaireRoute,
-  TrackId,
-  WasteManagementStatus,
-  YesNo
-} from '@/types'
+import { MobilityStatus, ThemeId, QuestionnaireDataEnum, QuestionnaireRoute, TrackId, WasteManagementStatus, YesNo } from '@/types'
 import { ObjectiveChecker } from '@tee/common'
 
 type QuestionnaireDataReturnType = {
   [QuestionnaireDataEnum.questionnaire_route]: QuestionnaireRoute
-  [QuestionnaireDataEnum.priority_objective]: ObjectiveType
+  [QuestionnaireDataEnum.priority_objective]: ThemeId
   [QuestionnaireDataEnum.sustainable_mobility_objective]: MobilityStatus | undefined
   [QuestionnaireDataEnum.energy_reduction_objective]: YesNo | undefined
   [QuestionnaireDataEnum.wastes_management_objective]: WasteManagementStatus | undefined
@@ -40,7 +32,7 @@ export default class UsedTrack {
     )
   }
 
-  static getPriorityTheme(): ObjectiveType {
+  static getPriorityTheme(): ThemeId {
     return this.findInQuestionnaireData(TrackId.Goals, QuestionnaireDataEnum.priority_objective)
   }
 
