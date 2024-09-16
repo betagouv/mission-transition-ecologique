@@ -3,7 +3,7 @@
     ref="tabs"
     class="fr-col-12"
     tab-list-name="Liste d’onglet"
-    :tab-titles="tabTitles"
+    :tab-titles="titles"
     :initial-selected-index="selected"
     @select-tab="onSelectedTabChange"
   >
@@ -36,9 +36,10 @@
 </template>
 
 <script setup lang="ts">
+import { TeeDsfrTabs } from '@/components/element/TeeTabs.vue'
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
-import { ProgramData, ThemeId, TrackId, Project } from '@/types'
+import { ProgramData, ThemeId, TrackId, Project, BreakpointNameType } from '@/types'
 import { computed, onBeforeMount } from 'vue'
 import Matomo from '@/utils/matomo'
 import { useProjectStore } from '@/stores/project'
@@ -53,7 +54,10 @@ const programs = ref<ProgramData[]>()
 const projects = ref<Project[]>()
 const hasError = ref<boolean>(false)
 
-const tabTitles = [{ title: "Des idées d'actions à mettre en place" }, { title: 'Vos aides financières' }]
+const titles: TeeDsfrTabs['tabTitles'] = [
+  { title: [{ title: "Des idées d'actions à mettre en place", size: BreakpointNameType.sm }, { title: "Idées d'actions" }] },
+  { title: [{ title: 'Vos aides financières', size: BreakpointNameType.sm }, { title: 'Aides financières' }] }
+]
 
 const filteredPrograms = computed(() => {
   return programs.value ? programStore.getProgramsByFilters(programs.value) : undefined
