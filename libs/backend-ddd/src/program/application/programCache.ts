@@ -6,13 +6,11 @@ import { Result } from 'true-myth'
 class ProgramCache {
   private static instance: ProgramCache
   private cachedElements: Map<string, { data: ProgramType[]; timestamp: number }>
-  private ttl: number
-  private maxSize: number
+  private _ttl = 10 * 60 * 1000
+  private _maxSize = 1000
 
   private constructor() {
     this.cachedElements = new Map()
-    this.ttl = 10 * 60 * 1000 // 10 minutes
-    this.maxSize = 1000
     this._startCleanupTask()
   }
 
@@ -30,7 +28,7 @@ class ProgramCache {
   }
 
   public setCache(hash: string, data: ProgramType[]): void {
-    if (this.cachedElements.size >= this.maxSize) {
+    if (this.cachedElements.size >= this._maxSize) {
       const oldestKey = this.cachedElements.keys().next().value
       this.cachedElements.delete(oldestKey)
     }
@@ -40,7 +38,7 @@ class ProgramCache {
 
   public getCache(hash: string): Result<ProgramType[], Error> | null {
     const cached = this.cachedElements.get(hash)
-    if (cached && Date.now() - cached.timestamp < this.ttl) {
+    if (cached && Date.now() - cached.timestamp < this._ttl) {
       return Result.ok(cached.data)
     }
     return null
@@ -50,11 +48,12 @@ class ProgramCache {
     setInterval(() => {
       const now = Date.now()
       this.cachedElements.forEach((value, key) => {
-        if (now - value.timestamp >= this.ttl) {
+        if (now - value.timestamp >= this._ttl) {
           this.cachedElements.delete(key)
         }
       })
-    }, this.ttl + 5)
+      // TODO : need to be test
+    }, this._ttl + 5)
   }
 }
 
