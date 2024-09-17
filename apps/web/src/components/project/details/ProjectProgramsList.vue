@@ -15,13 +15,13 @@
 </template>
 
 <script setup lang="ts">
-import { type ProgramData, Project } from '@/types'
+import { ProgramType, Project } from '@/types'
 import { type RouteLocationRaw } from 'vue-router'
 import { RouteName } from '@/types/routeType'
 import { useNavigationStore } from '@/stores/navigation'
 
 interface Props {
-  programs: ProgramData[]
+  programs: ProgramType[]
   project: Project
   title: string
 }

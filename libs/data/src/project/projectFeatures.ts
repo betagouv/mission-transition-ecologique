@@ -3,17 +3,17 @@ import fs from 'fs'
 import { ProjectBaserow } from '../common/baserow/projectBaserow'
 import { RawProject } from './types/domain'
 import { jsonPrograms } from '../../generated/index'
-import { ProgramType } from '../index'
+import { ProgramTypeWithPublicode } from '../index'
 import { ThemeId } from '../theme/types/shared'
 import { SlugValidator } from '../common/validators/slugValidator'
 
 export class ProjectFeatures {
   private readonly _outputDirectory: string = path.join(__dirname, '../../static/')
   private readonly _outputImageDirectory: string = path.join(__dirname, '../../../../apps/web/public/images/projet')
-  private _programs: ProgramType[] = []
+  private _programs: ProgramTypeWithPublicode[] = []
 
   constructor() {
-    this._programs = jsonPrograms as unknown as ProgramType[]
+    this._programs = jsonPrograms as unknown as ProgramTypeWithPublicode[]
   }
 
   async generateProjectsJson(): Promise<void> {
@@ -69,7 +69,7 @@ export class ProjectFeatures {
     })
   }
 
-  private _validatePrograms(project: RawProject, programs: ProgramType[]) {
+  private _validatePrograms(project: RawProject, programs: ProgramTypeWithPublicode[]) {
     project.programs = project.programs.filter((programId) => {
       const programFound = programs.some((program) => program.id === programId)
       if (!programFound) {

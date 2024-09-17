@@ -1,7 +1,7 @@
 import { ProgramAidType } from './types/shared'
 
 export class Program {
-  public static getPrefixedProgramName(program: ProgramType) {
+  public static getPrefixedProgramName(program: ProgramTypeWithPublicode) {
     let prefix = ''
     switch (program["nature de l'aide"]) {
       case ProgramAidType.study:
@@ -24,4 +24,4 @@ export class Program {
 import type { Dispositif as ProgramWithoutId } from '../generated/program'
 
 export type { ProgramWithoutId }
-export type ProgramType = ProgramWithoutId & { id: string }
+export type ProgramTypeWithPublicode = ProgramWithoutId & { id: string }

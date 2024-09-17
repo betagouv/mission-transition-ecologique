@@ -2,7 +2,7 @@ import { SendSmtpEmail, TransactionalEmailsApi, TransactionalEmailsApiApiKeys } 
 import { Maybe } from 'true-myth'
 import Config from '../../../../config'
 import { MailerManager } from '../../../domain/spi'
-import { ProgramType, Program, Project } from '@tee/data'
+import { ProgramTypeWithPublicode, Program, Project } from '@tee/data'
 import { Opportunity, OpportunityType } from '@tee/common'
 import Monitor from '../../../../common/domain/monitoring/monitor'
 import { ensureError } from '../../../../common/domain/error/errors'
@@ -18,7 +18,7 @@ export default class BrevoMail {
 
   sendReturnReceipt: MailerManager['sendReturnReceipt'] = async (
     opportunity: Opportunity,
-    programOrProject: ProgramType | Project
+    programOrProject: ProgramTypeWithPublicode | Project
   ): Promise<Maybe<Error> | void> => {
     try {
       await this._api.sendTransacEmail(this._email(opportunity, programOrProject))
@@ -29,13 +29,13 @@ export default class BrevoMail {
     }
   }
 
-  private _email(opportunity: Opportunity, programOrProject: ProgramType | Project) {
+  private _email(opportunity: Opportunity, programOrProject: ProgramTypeWithPublicode | Project) {
     const email = new SendSmtpEmail()
 
     switch (opportunity.type) {
       case OpportunityType.Program:
         email.templateId = this._programTemplateReceipt
-        email.params = this._paramsProgram(opportunity, programOrProject as ProgramType)
+        email.params = this._paramsProgram(opportunity, programOrProject as ProgramTypeWithPublicode)
         break
       case OpportunityType.Project:
         email.templateId = this._projectTemplateReceipt
@@ -52,7 +52,7 @@ export default class BrevoMail {
     return email
   }
 
-  private _paramsProgram(opportunity: Opportunity, program: ProgramType) {
+  private _paramsProgram(opportunity: Opportunity, program: ProgramTypeWithPublicode) {
     return {
       programName: program.titre,
       prefixedProgramName: Program.getPrefixedProgramName(program),

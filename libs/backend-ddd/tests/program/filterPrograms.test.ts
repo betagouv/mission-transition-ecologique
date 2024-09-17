@@ -1,13 +1,16 @@
 import { type Rules, makeProgramHelper, mockCurrentDateService, makeProgramsRepository } from './testing'
 import { FILTERING_RULE_NAME } from '../../src/program/domain/filterPrograms'
-import type { ProgramType } from '@tee/data'
+import type { ProgramTypeWithPublicode } from '@tee/data'
 import { expectToBeOk } from '../testing'
 import ProgramFeatures from '../../src/program/domain/programFeatures'
 import { type Result } from 'true-myth'
 import { PublicodesService } from '../../src/program/infrastructure/publicodesService'
 import { QuestionnaireRoute, QuestionnaireData } from '@tee/common'
 
-const defaultFilterPrograms = (programs: ProgramType[], inputData: Record<string, number>): Result<ProgramType[], Error> => {
+const defaultFilterPrograms = (
+  programs: ProgramTypeWithPublicode[],
+  inputData: Record<string, number>
+): Result<ProgramTypeWithPublicode[], Error> => {
   PublicodesService.init(programs)
   const programService = new ProgramFeatures(makeProgramsRepository(programs), mockCurrentDateService, PublicodesService.getInstance())
   const questionnaireData: QuestionnaireData = {
@@ -110,7 +113,7 @@ EXPECT that the filtering only keeps programs that are eligible (rule
     }
   ]
 
-  const makePrograms = (rules: string[]): ProgramType[] => {
+  const makePrograms = (rules: string[]): ProgramTypeWithPublicode[] => {
     const progs = rules.map((r) => {
       const completeRules = { ...rulesBoilerplate, [FILTERING_RULE_NAME]: r }
       return makeProgram(completeRules)

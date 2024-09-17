@@ -9,7 +9,7 @@ import OpportunityHubAbstract from '../opportunityHubAbstract'
 import { ProgramService } from '../../../../program/application/programService'
 import OpportunityService from '../../../../opportunity/application/opportunityService'
 import { Objective } from '../../../../common/types'
-import { Operators, ProgramType, ThemeId } from '@tee/data'
+import { Operators, ProgramTypeWithPublicode, ThemeId } from '@tee/data'
 import { Opportunity, OpportunityType } from '@tee/common'
 import { Project } from '@tee/data'
 import Monitor from '../../../../common/domain/monitoring/monitor'
@@ -34,13 +34,13 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     return new Error('Operator List non valid for Place des entreprises')
   }
 
-  override support = (program: ProgramType) => {
+  override support = (program: ProgramTypeWithPublicode) => {
     const validOperator = (program['opérateur de contact'] as Operators) !== 'Bpifrance'
     const notAutonomous = !program['activable en autonomie']
     return validOperator && notAutonomous
   }
 
-  override shouldTransmit = async (opportunity: OpportunityWithContactId, program: ProgramType) => {
+  override shouldTransmit = async (opportunity: OpportunityWithContactId, program: ProgramTypeWithPublicode) => {
     if (!this.support(program)) {
       return false
     }
@@ -48,11 +48,14 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     return !reachTransmissionLimit
   }
 
-  public transmitOpportunity = async (opportunity: Opportunity, programOrProject: ProgramType | Project): Promise<Maybe<Error>> => {
+  public transmitOpportunity = async (
+    opportunity: Opportunity,
+    programOrProject: ProgramTypeWithPublicode | Project
+  ): Promise<Maybe<Error>> => {
     let maybePayload
     switch (opportunity.type) {
       case OpportunityType.Program:
-        maybePayload = this._createProgramRequestBody(opportunity, programOrProject as ProgramType)
+        maybePayload = this._createProgramRequestBody(opportunity, programOrProject as ProgramTypeWithPublicode)
         break
       case OpportunityType.Project:
         maybePayload = this._createProjectRequestBody(opportunity, programOrProject as Project)
@@ -144,7 +147,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     }
   }
 
-  private _createProgramRequestBody(opportunity: Opportunity, program: ProgramType): Result<CreateSolicitationApiBody, Error> {
+  private _createProgramRequestBody(opportunity: Opportunity, program: ProgramTypeWithPublicode): Result<CreateSolicitationApiBody, Error> {
     return Result.ok({
       solicitation: {
         landing_id: this._pdeLanding,

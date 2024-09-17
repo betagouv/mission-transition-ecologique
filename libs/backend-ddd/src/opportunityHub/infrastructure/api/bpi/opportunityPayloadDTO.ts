@@ -1,5 +1,5 @@
 import { bpiOpportunityPayload } from './types'
-import { ProgramType } from '@tee/data'
+import { ProgramTypeWithPublicode } from '@tee/data'
 import { Opportunity, StructureSize } from '@tee/common'
 
 export default class OpportunityPayloadDTO {
@@ -14,10 +14,10 @@ export default class OpportunityPayloadDTO {
   private readonly _lastName: string
   private readonly _firstName: string
   private readonly _email: string
-  private readonly _program: ProgramType
+  private readonly _program: ProgramTypeWithPublicode
   private readonly _message: string
 
-  constructor(opportunity: Opportunity, program: ProgramType) {
+  constructor(opportunity: Opportunity, program: ProgramTypeWithPublicode) {
     this._email = opportunity.email
     this._firstName = opportunity.firstName
     this._lastName = opportunity.lastName
@@ -85,7 +85,7 @@ export default class OpportunityPayloadDTO {
     return this._message
   }
 
-  get program(): ProgramType {
+  get program(): ProgramTypeWithPublicode {
     return this._program
   }
 

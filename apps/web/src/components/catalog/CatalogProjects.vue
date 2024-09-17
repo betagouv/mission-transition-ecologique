@@ -63,7 +63,7 @@
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
 import { useProjectStore } from '@/stores/project'
-import { type ProgramData, Project as ProjectType, RouteName, TrackId, ThemeId } from '@/types'
+import { type ProgramType, Project as ProjectType, RouteName, TrackId, ThemeId } from '@/types'
 import Contact from '@/utils/contact'
 import Matomo from '@/utils/matomo'
 import { Project } from '@/utils/project/project'
@@ -75,7 +75,7 @@ const programStore = useProgramStore()
 const navigationStore = useNavigationStore()
 
 const projects = ref<ProjectType[]>()
-const programs = ref<ProgramData[]>()
+const programs = ref<ProgramType[]>()
 const hasError = ref<boolean>(false)
 
 const theme = computed(() => {

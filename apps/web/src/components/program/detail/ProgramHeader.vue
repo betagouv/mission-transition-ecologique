@@ -34,7 +34,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { Color, Project, type ProgramType } from '@/types'
+import { Color, Project, type ProgramTypeWithPublicode } from '@/types'
 import { RouteName } from '@/types/routeType'
 import Contact from '@/utils/contact'
 import { useNavigationStore } from '@/stores/navigation'
@@ -44,7 +44,7 @@ import Translation from '@/utils/translation'
 
 interface Props {
   programId: string
-  program: ProgramType | undefined
+  program: ProgramTypeWithPublicode | undefined
   projectSlug: string | undefined
 }
 const props = defineProps<Props>()

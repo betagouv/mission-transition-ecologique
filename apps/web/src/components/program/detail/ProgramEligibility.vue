@@ -34,9 +34,9 @@
 // console.log(`ProgramEligibility > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import { computed } from 'vue'
-import type { ProgramType } from '@/types'
+import type { ProgramTypeWithPublicode } from '@/types'
 
-type EligibilityCategory = keyof ProgramType["conditions d'éligibilité"]
+type EligibilityCategory = keyof ProgramTypeWithPublicode["conditions d'éligibilité"]
 
 type Emojis = Record<EligibilityCategory, string>
 
@@ -67,7 +67,7 @@ const getFieldsForColumn = (columnNumber: number): EligibilityCategory[] => {
 }
 
 interface Props {
-  program: ProgramType
+  program: ProgramTypeWithPublicode
 }
 
 const props = defineProps<Props>()

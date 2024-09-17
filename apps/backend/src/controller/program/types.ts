@@ -1,4 +1,4 @@
-import { ProgramType } from '@tee/data'
+import { ProgramTypeWithPublicode } from '@tee/data'
 
 interface OpenAPISafeEligibility {
   // Tsoa does not work well with TupleType due to some limitations
@@ -13,4 +13,4 @@ interface OpenAPISafeEligibility {
   }
 }
 
-export type OpenAPISafeProgram = Omit<ProgramType, "conditions d'éligibilité"> & OpenAPISafeEligibility
+export type OpenAPISafeProgram = Omit<ProgramTypeWithPublicode, "conditions d'éligibilité"> & OpenAPISafeEligibility

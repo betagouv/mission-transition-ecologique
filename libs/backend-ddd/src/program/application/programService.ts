@@ -1,5 +1,5 @@
 import { Result } from 'true-myth'
-import { ProgramType } from '@tee/data'
+import { ProgramTypeWithPublicode } from '@tee/data'
 import ProgramFeatures from '../domain/programFeatures'
 import ProgramsJson from '../infrastructure/programsJson'
 import { currentDateService } from '../infrastructure/currentDate'
@@ -18,19 +18,19 @@ export class ProgramService {
     this._program = new ProgramFeatures(programsService, currentDateService, PublicodesService.getInstance())
   }
 
-  public getById(id: string): ProgramType | undefined {
+  public getById(id: string): ProgramTypeWithPublicode | undefined {
     return this._program.getById(id)
   }
 
-  public getFilteredPrograms(questionnaireData: QuestionnaireData): Result<ProgramType[], Error> {
+  public getFilteredPrograms(questionnaireData: QuestionnaireData): Result<ProgramTypeWithPublicode[], Error> {
     return this._program.getFilteredBy(questionnaireData)
   }
 
-  public convertDomainToFront(program: ProgramType) {
+  public convertDomainToFront(program: ProgramTypeWithPublicode) {
     return new FrontConverter().convertDomainToFront(program)
   }
 
-  public getAll(): ProgramType[] {
+  public getAll(): ProgramTypeWithPublicode[] {
     return this._program.getAll()
   }
 

@@ -1,5 +1,5 @@
 import { PublicodesKeys, FiltersKeys, PublicodeObjective } from '@tee/common'
-import { ProgramType, PublicodesCondition, ThemeId } from '@tee/data'
+import { ProgramTypeWithPublicode, PublicodesCondition, ThemeId } from '@tee/data'
 import type { ObjectivePublicodeData } from './types'
 
 class FrontConverter {
@@ -40,7 +40,7 @@ class FrontConverter {
     return null
   }
 
-  public convertDomainToFront(program: ProgramType) {
+  public convertDomainToFront(program: ProgramTypeWithPublicode) {
     const { publicodes, ...frontProgram } = program
     if (publicodes) {
       const programFilters = Object.keys(publicodes).reduce<{ [key in FiltersKeys]?: string[] }>((acc, publicodeKey) => {

@@ -16,7 +16,7 @@ import { useUsedTrackStore } from '@/stores/usedTrack'
 import type { TrackOptionItem } from '@/types'
 import { computed } from 'vue'
 import { Theme } from '@/utils/theme'
-import { ProgramType, TrackId, TrackOptionItem, Color, ThemeId } from '@/types'
+import { ProgramTypeWithPublicode, TrackOptionItem, Color, ThemeId } from '@/types'
 import { Project } from '@tee/data'
 import { useProjectStore } from '@/stores/project'
 import { useProgramStore } from '@/stores/program'
@@ -27,7 +27,7 @@ const currentTrack = useTrackStore().current
 const emit = defineEmits(['updateSelection'])
 const projectStore = useProjectStore()
 const projects = ref<Project[]>()
-const programs = ref<ProgramType[]>()
+const programs = ref<ProgramTypeWithPublicode[]>()
 const programStore = useProgramStore()
 
 export interface ThemeOption {

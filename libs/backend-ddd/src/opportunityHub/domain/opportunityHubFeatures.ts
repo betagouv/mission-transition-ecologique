@@ -1,7 +1,7 @@
 import { OpportunityHubRepository } from './spi'
 import { OpportunityWithContactId } from '../../opportunity/domain/types'
 import { Maybe } from 'true-myth'
-import { ProgramType, Project } from '@tee/data'
+import { ProgramTypeWithPublicode, Project } from '@tee/data'
 import { PlaceDesEntreprises } from '../infrastructure/api/placedesentreprises/placeDesEntreprises'
 
 export default class OpportunityHubFeatures {
@@ -10,7 +10,10 @@ export default class OpportunityHubFeatures {
     this._opportunityHubRepositories = opportunityHubRepositories
   }
 
-  public async maybeTransmitOpportunity(opportunity: OpportunityWithContactId, program: ProgramType): Promise<Maybe<Error> | false> {
+  public async maybeTransmitOpportunity(
+    opportunity: OpportunityWithContactId,
+    program: ProgramTypeWithPublicode
+  ): Promise<Maybe<Error> | false> {
     for (const opportunityHubRepository of this._opportunityHubRepositories) {
       if (await opportunityHubRepository.shouldTransmit(opportunity, program)) {
         return await opportunityHubRepository.transmitOpportunity(opportunity, program)

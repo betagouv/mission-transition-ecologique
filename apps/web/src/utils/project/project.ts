@@ -1,11 +1,11 @@
 import { useProjectStore } from '@/stores/project'
-import { ThemeId, ProgramData, Project as ProjectType } from '@/types'
+import { ThemeId, ProgramType, Project as ProjectType } from '@/types'
 import { ComputedRef, Ref } from 'vue'
 
 export class Project {
   static readonly filter = (
     projects: Ref<ProjectType[] | undefined>,
-    programs: Ref<ProgramData[] | undefined>,
+    programs: Ref<ProgramType[] | undefined>,
     theme: ComputedRef<ThemeId | ''>
   ) => {
     return computed(() => {

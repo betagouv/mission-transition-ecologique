@@ -3,7 +3,7 @@ import dotenv from 'dotenv'
 import { readFileSync, writeFileSync } from 'fs'
 import { resolve } from 'path'
 import { ChangeFreq, type PathSettings, Priority } from './type'
-import { ProgramType, Project } from '@tee/data'
+import { ProgramTypeWithPublicode, Project } from '@tee/data'
 import { projects } from '@tee/data/static'
 
 const specificPathSettings: PathSettings[] = [
@@ -63,12 +63,12 @@ function generateProgramSitemap(): string | undefined {
   ProgramService.init()
   const service = new ProgramService()
 
-  const allProgramsIds = service.getAll().map((program: ProgramType) => program.id)
+  const allProgramsIds = service.getAll().map((program: ProgramTypeWithPublicode) => program.id)
   const activeProgramsResult = service.getFilteredPrograms({})
   if (activeProgramsResult.isErr) {
     throw activeProgramsResult.error
   }
-  const activeProgramsIds = activeProgramsResult.value.map((p: ProgramType) => p.id)
+  const activeProgramsIds = activeProgramsResult.value.map((p: ProgramTypeWithPublicode) => p.id)
 
   return allProgramsIds
     .map((id: string) => {

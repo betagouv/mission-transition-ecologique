@@ -44,11 +44,11 @@
 
 <script setup lang="ts">
 import Config from '@/config'
-import { ProgramAidType, type ProgramType } from '@/types'
+import { ProgramAidType, type ProgramTypeWithPublicode } from '@/types'
 import { consolidateAmounts } from '@/utils/helpers'
 import Translation from '@/utils/translation'
 
-const { program } = defineProps<{ program: ProgramType }>()
+const { program } = defineProps<{ program: ProgramTypeWithPublicode }>()
 
 const publicPath = Config.publicPath
 

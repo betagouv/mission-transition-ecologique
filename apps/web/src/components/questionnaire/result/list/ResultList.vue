@@ -6,7 +6,7 @@
 <script setup lang="ts">
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
-import { ProgramType, TrackId, Project as ProjectType, ThemeId } from '@/types'
+import { ProgramTypeWithPublicode, TrackId, Project as ProjectType, ThemeId } from '@/types'
 import { Project } from '@/utils/project/project'
 import { computed, onBeforeMount } from 'vue'
 import Matomo from '@/utils/matomo'
@@ -17,7 +17,7 @@ const programStore = useProgramStore()
 const projectStore = useProjectStore()
 const navigationStore = useNavigationStore()
 
-const programs = ref<ProgramType[]>([])
+const programs = ref<ProgramTypeWithPublicode[]>([])
 const projects = ref<ProjectType[]>()
 const hasError = ref<boolean>(false)
 

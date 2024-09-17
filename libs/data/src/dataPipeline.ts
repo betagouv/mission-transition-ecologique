@@ -3,7 +3,7 @@ import * as path from 'path'
 import * as fs from 'fs'
 import * as yaml from 'js-yaml'
 import { createFolderIfNotExists } from './helpers'
-import { ProgramType, ProgramWithoutId } from './program/program'
+import { ProgramTypeWithPublicode, ProgramWithoutId } from './program/program'
 
 dotenv.config()
 
@@ -21,8 +21,8 @@ const INTERFACE_PATH = './../common/interface.yaml'
 /**
  * Reads all program data
  */
-export const readPrograms = (log = false): ProgramType[] => {
-  const programs: ProgramType[] = []
+export const readPrograms = (log = false): ProgramTypeWithPublicode[] => {
+  const programs: ProgramTypeWithPublicode[] = []
 
   // joining path of directory
   const dataDirPath: string = path.join(__dirname, PROGRAMS_FOLDER_PATH)
@@ -39,7 +39,7 @@ export const readPrograms = (log = false): ProgramType[] => {
     const yamlFilePath = `${dataDirPath}/${file}`
     const yamlFile: string = fs.readFileSync(yamlFilePath, 'utf8')
 
-    const program: ProgramType = { ...(yaml.load(yamlFile) as ProgramWithoutId), id: id }
+    const program: ProgramTypeWithPublicode = { ...(yaml.load(yamlFile) as ProgramWithoutId), id: id }
 
     programs.push(program)
   })
@@ -50,7 +50,7 @@ export const readPrograms = (log = false): ProgramType[] => {
 /** Prepends publicodes with a publicodes snippet common to all programs (stored in
  * "packages/data/common/interface.yaml")
  */
-export const prependInterface = (programs: ProgramType[], log = false): ProgramType[] => {
+export const prependInterface = (programs: ProgramTypeWithPublicode[], log = false): ProgramTypeWithPublicode[] => {
   const fullPath: string = path.join(__dirname, INTERFACE_PATH)
 
   if (log) console.log('🗎 reading constants at', fullPath)
@@ -68,7 +68,7 @@ export const prependInterface = (programs: ProgramType[], log = false): ProgramT
 /**
  * Converts program data to JSON and writes it to a file.
  */
-export const buildProgramJson = (programs: ProgramType[]): void => {
+export const buildProgramJson = (programs: ProgramTypeWithPublicode[]): void => {
   console.log('♺ Converting data to JSON')
   const dataAsJson: string = JSON.stringify(programs, null, 2)
 

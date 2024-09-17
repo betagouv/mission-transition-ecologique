@@ -1,3 +1,6 @@
+// eslint-disable-next-line @nx/enforce-module-boundaries
+import { FiltersKeys, Override, ThemeId } from '../../../../../apps/web/src/types'
+
 export enum ProgramAidType {
   study = 'étude',
   train = 'formation',
@@ -22,10 +25,19 @@ export enum ProgramOperatorType {
 
 import { Dispositif as ProgramWithoutId } from '../../generated/program'
 
-export interface ProgramTypeTest extends Omit<ProgramWithoutId, 'objectifs'> {
-  id: string
-  "nature de l'aide": ProgramAidType
-  objectifs: ProgramObjective[]
+export type ProgramType = Override<
+  ProgramWithoutId,
+  {
+    id: string
+    "nature de l'aide": ProgramAidType
+    'opérateur de contact': ProgramOperatorType
+    objectifs: ProgramObjective[]
+    filters: FiltersProgramData
+  }
+>
+
+export type FiltersProgramData = {
+  [FiltersKeys.Theme]?: ThemeId[]
 }
 
 interface ProgramObjectiveLink {

@@ -10,7 +10,7 @@ import {
   OpportunityFormType,
   OpportunityType,
   RouteName,
-  ProgramData,
+  ProgramType,
   Project
 } from '@/types'
 import RequestApi from '@/service/api/requestApi'
@@ -27,8 +27,8 @@ export default class OpportunityApi extends RequestApi {
 
   constructor(
     opportunityForm: OpportunityFormType,
-    private _id: ProgramData['id'] | Project['id'],
-    private _slug: ProgramData['id'] | Project['slug'],
+    private _id: ProgramType['id'] | Project['id'],
+    private _slug: ProgramType['id'] | Project['slug'],
     private _opportunityType: OpportunityType
   ) {
     super()

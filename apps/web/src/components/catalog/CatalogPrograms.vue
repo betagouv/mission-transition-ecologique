@@ -60,14 +60,14 @@
 
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
-import { type ProgramData, TrackId, ThemeId } from '@/types'
+import { type ProgramType, TrackId, ThemeId } from '@/types'
 import Matomo from '@/utils/matomo'
 import UsedTrack from '@/utils/track/usedTrack'
 import { computed, onBeforeMount } from 'vue'
 
 const programStore = useProgramStore()
 
-const programs = ref<ProgramData[]>()
+const programs = ref<ProgramType[]>()
 const hasError = ref<boolean>(false)
 
 const filteredPrograms = computed(() => {
