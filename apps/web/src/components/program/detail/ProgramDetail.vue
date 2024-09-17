@@ -226,14 +226,9 @@
         :data-id="program.id"
         :data-slug="program.id"
         :phone-callback="Translation.ti(Translation.t('form.phoneContact'), { operator: program['opérateur de contact'] })"
+        :form="Opportunity.getProgramFormFields(program)"
         :form-type="FormType.Program"
         :error-email-subject="Translation.t('form.errorEmail.subject', { program: program.titre })"
-        :need="
-          Translation.t('program.form.needs', {
-            secteur: TrackStructure.getSectorShortLabel(),
-            titreAide: program.titre
-          })
-        "
         :hint="Translation.t('program.form.hint', { operator: program['opérateur de contact'] })"
       />
     </div>
@@ -258,8 +253,8 @@ import Program from '@/utils/program/program'
 import { Scroll } from '@/utils/scroll'
 import Translation from '@/utils/translation'
 import { computed, onBeforeMount, ref } from 'vue'
-import TrackStructure from '@/utils/track/trackStructure'
 import { useProjectStore } from '@/stores/project'
+import Opportunity from '@/utils/opportunity'
 
 const projectStore = useProjectStore()
 const programsStore = useProgramStore()
@@ -290,7 +285,6 @@ const programProvider = computed(() => program.value?.['opérateur de contact'])
 const programEndValidity = computed(() => program.value?.[`fin de validité`])
 const programPageTitle = computed(() => `Transition écologique des TPE & PME - ${program.value?.[`titre`]}`)
 const programPageMeta = computed(() => program.value?.[`description`] || ' ')
-
 const columnTiles = computed(() => {
   const infoBlocks = [
     !!programCost.value,
@@ -312,6 +306,7 @@ const isProgramAutonomous = computed(() => {
 onBeforeMount(async () => {
   useNavigationStore().hasSpinner = true
   program.value = programsStore.currentProgram
+  console.log(program.value ? Opportunity.getProgramFormFields(program.value) : '')
   const projectResult = await projectStore.projects
   if (projectResult.isOk) {
     linkedProjects.value = Program.getLinkedProjects(program.value, projectResult.value)

@@ -80,7 +80,6 @@ declare module 'vue' {
     TeeFooter: typeof import('./components/TeeFooter.vue')['default']
     TeeForm: typeof import('./components/element/form/TeeForm.vue')['default']
     TeeFormCallback: typeof import('./components/element/form/TeeFormCallback.vue')['default']
-    TeeFormCgu: typeof import('./components/element/form/TeeFormCgu.vue')['default']
     TeeFormElement: typeof import('./components/element/form/TeeFormElement.vue')['default']
     TeeGroupBar: typeof import('./components/element/TeeGroupBar.vue')['default']
     TeeHeader: typeof import('./components/TeeHeader.vue')['default']

@@ -5,6 +5,7 @@ import {
   FormOptions,
   PropertyPath,
   TrackId,
+  FieldType,
   QuestionnaireData,
   ThemeId
 } from '@/types'
@@ -67,20 +68,7 @@ export interface TrackOptionsField {
   label: Translations
   hint?: Translations
   required?: boolean
-  type: TrackFieldType
-}
-
-export enum TrackFieldType {
-  Text = 'text',
-  Number = 'number',
-  Select = 'select',
-  Radio = 'radio',
-  Checkbox = 'checkbox',
-  Textarea = 'textarea',
-  Email = 'email',
-  Tel = 'tel',
-  Date = 'date',
-  Search = 'search'
+  type: FieldType
 }
 
 export interface TrackNext {
@@ -100,10 +88,10 @@ export interface NextTrackRule extends FormCallbackDataMapping {
 }
 
 export enum HasInputOptions {
-  Number = TrackFieldType.Number,
-  Date = TrackFieldType.Date,
-  Text = TrackFieldType.Text,
-  Search = TrackFieldType.Search
+  Number = FieldType.Number,
+  Date = FieldType.Date,
+  Text = FieldType.Text,
+  Search = FieldType.Search
 }
 
 export interface TrackOptions {

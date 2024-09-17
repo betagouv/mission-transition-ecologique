@@ -36,10 +36,10 @@
 <script setup lang="ts">
 import Translation from '@/utils/translation'
 import Contact from '@/utils/contact'
-import { OpportunityFormType, type ReqResp } from '@/types'
+import { FormDataType, type ReqResp } from '@/types'
 
 interface Props {
-  opportunityForm: OpportunityFormType
+  form: FormDataType
   requestResponse: ReqResp | undefined
   errorEmailSubject: string
 }
@@ -50,12 +50,12 @@ const hasValidResponse = computed(() => {
 })
 
 const getMailTo = (): string => {
-  if (props.opportunityForm.value) {
-    const needsValue = props.opportunityForm.needs.value ? props.opportunityForm.needs.value : ''
-    const nameValue = props.opportunityForm.name.value ? props.opportunityForm.name.value : ''
-    const surnameValue = props.opportunityForm.surname.value ? props.opportunityForm.surname.value : ''
-    const telValue = props.opportunityForm.tel.value ? props.opportunityForm.tel.value : ''
-    const siretValue = props.opportunityForm.siret.value ? props.opportunityForm.siret.value : ''
+  if (props.form.value) {
+    const needsValue = props.form.needs.value ? props.form.needs.value : ''
+    const nameValue = props.form.name.value ? props.form.name.value : ''
+    const surnameValue = props.form.surname.value ? props.form.surname.value : ''
+    const telValue = props.form.tel.value ? props.form.tel.value : ''
+    const siretValue = props.form.siret.value ? props.form.siret.value : ''
     return Contact.getMailtoUrl(
       props.errorEmailSubject,
       `${needsValue}
