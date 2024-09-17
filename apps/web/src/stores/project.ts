@@ -3,7 +3,7 @@ import ProjectFilter from '@/utils/project/projectFilter'
 import { defineStore } from 'pinia'
 import { Result } from 'true-myth'
 import { computed, ref } from 'vue'
-import { ProgramType, Project, Objective } from '@/types'
+import { ProgramData, Project, ThemeId } from '@/types'
 import { Theme } from '@/utils/theme'
 
 export const useProjectStore = defineStore('project', () => {
@@ -23,14 +23,10 @@ export const useProjectStore = defineStore('project', () => {
     return await new ProjectApi().get()
   }
 
-  function getProjectsByObjectiveAndEligibility(
-    projects: Project[],
-    objectiveType?: Objective,
-    filteredPrograms?: ProgramType[]
-  ): Project[] {
+  function getProjectsByThemeAndEligibility(projects: Project[], themeType?: ThemeId, filteredPrograms?: ProgramData[]): Project[] {
     return projects.filter((project: Project) => {
-      const hasTheme = objectiveType
-        ? ProjectFilter.byTheme(project, objectiveType)
+      const hasTheme = themeType
+        ? ProjectFilter.byTheme(project, themeType)
         : project.themes.some((themeId) => Theme.getTags().some(({ id }) => id === themeId))
       return hasTheme && (filteredPrograms ? ProjectFilter.byPrograms(project, filteredPrograms) : true)
     })
@@ -76,7 +72,7 @@ export const useProjectStore = defineStore('project', () => {
   return {
     projects,
     currentProject,
-    getProjectsByObjectiveAndEligibility,
+    getProjectsByThemeAndEligibility,
     getProjectBySlug,
     getLinkedProjectsFromCurrent
   }

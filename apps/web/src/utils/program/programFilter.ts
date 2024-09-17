@@ -1,18 +1,16 @@
 import {
-  PublicodesKeys,
   ProgramAidType,
   Region,
   ProgramOperatorType,
+  type ProgramData,
   type programFiltersType,
-  PublicodesCondition,
   type ValueOf,
-  Objective,
-  ProgramType
+  ThemeId,
+  FiltersKeys
 } from '@/types'
-import { Theme } from '@/utils/theme'
 
 export default class ProgramFilter {
-  static byAidType(program: ProgramType, programAidTypesSelected: ProgramAidType[]) {
+  static byAidType(program: ProgramData, programAidTypesSelected: ProgramAidType[]) {
     if (!this.isValidFilterValues(programAidTypesSelected)) {
       return true
     }
@@ -20,7 +18,7 @@ export default class ProgramFilter {
     return programAidTypesSelected.includes(program["nature de l'aide"] as ProgramAidType)
   }
 
-  static byRegion(program: ProgramType, regionsSelected: Region[]) {
+  static byRegion(program: ProgramData, regionsSelected: Region[]) {
     if (!this.isValidFilterValues(regionsSelected)) {
       return true
     }
@@ -36,7 +34,7 @@ export default class ProgramFilter {
     return matchingRegions.length > 0
   }
 
-  static byOperator(program: ProgramType, programOperatorsSelected: ProgramOperatorType[]) {
+  static byOperator(program: ProgramData, programOperatorsSelected: ProgramOperatorType[]) {
     if (!this.isValidFilterValues(programOperatorsSelected)) {
       return true
     }
@@ -47,15 +45,13 @@ export default class ProgramFilter {
     return matchingOperators.length > 0
   }
 
-  static byObjective(program: ProgramType, objectiveTypeSelected: Objective) {
-    if (!this.isValidFilterValue(objectiveTypeSelected)) {
+  static byTheme(program: ProgramData, themeTypeSelected: ThemeId) {
+    if (!this.isValidFilterValue(themeTypeSelected)) {
       return true
     }
 
-    const publicodeObjective = Theme.getPublicodeObjectiveByObjective(objectiveTypeSelected)
-
-    if (program.publicodes[PublicodesKeys.hasObjective] && publicodeObjective) {
-      return program.publicodes[PublicodesKeys.hasObjective][PublicodesCondition.oneOfThese]?.includes(publicodeObjective)
+    if (program.filters[FiltersKeys.Theme]) {
+      return program.filters[FiltersKeys.Theme].includes(themeTypeSelected)
     }
 
     return true

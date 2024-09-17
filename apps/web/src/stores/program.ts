@@ -7,17 +7,17 @@ import ProgramFilter from '@/utils/program/programFilter'
 import { Result } from 'true-myth'
 import { computed, ref } from 'vue'
 import { acceptHMRUpdate, defineStore } from 'pinia'
-import { type programFiltersType, ProgramAidType, ProgramOperatorType, Objective, Region, ProgramType, QuestionnaireData } from '@/types'
+import { type programFiltersType, ProgramAidType, ProgramOperatorType, ThemeId, Region, type ProgramData, QuestionnaireData } from '@/types'
 
 export const useProgramStore = defineStore('program', () => {
-  const currentProgram = ref<ProgramType>()
+  const currentProgram = ref<ProgramData>()
   const hasPrograms = ref<boolean>(false)
 
   const programFilters = ref<programFiltersType>({
     programAidTypesSelected: [],
     regionAidSelected: [],
     operatorAidSelected: [],
-    objectiveTypeSelected: ''
+    themeTypeSelected: ''
   })
 
   const programs = computed(async () => {
@@ -39,18 +39,18 @@ export const useProgramStore = defineStore('program', () => {
     return await new ProgramApi(questionnaireData).get()
   }
 
-  function getProgramsByFilters(programs: ProgramType[]) {
-    return programs.filter((program: ProgramType) => {
+  function getProgramsByFilters(programs: ProgramData[]) {
+    return programs.filter((program: ProgramData) => {
       return (
         ProgramFilter.byAidType(program, programFilters.value.programAidTypesSelected as ProgramAidType[]) &&
-        ProgramFilter.byObjective(program, programFilters.value.objectiveTypeSelected as Objective) &&
+        ProgramFilter.byTheme(program, programFilters.value.themeTypeSelected as ThemeId) &&
         ProgramFilter.byOperator(program, programFilters.value.operatorAidSelected as ProgramOperatorType[]) &&
         ProgramFilter.byRegion(program, programFilters.value.regionAidSelected as Region[])
       )
     })
   }
 
-  async function getProgramById(id: string): Promise<Result<ProgramType, Error>> {
+  async function getProgramById(id: string): Promise<Result<ProgramData, Error>> {
     currentProgram.value = undefined
 
     if (hasPrograms.value) {
@@ -76,18 +76,18 @@ export const useProgramStore = defineStore('program', () => {
     return result
   }
 
-  function hasObjectiveTypeSelected() {
-    return programFilters.value.objectiveTypeSelected !== ''
+  function hasThemeTypeSelected() {
+    return programFilters.value.themeTypeSelected !== ''
   }
 
-  function setObjectiveTypeSelected(objectiveType: string) {
-    programFilters.value.objectiveTypeSelected = objectiveType
+  function setThemeTypeSelected(themeType: string) {
+    programFilters.value.themeTypeSelected = themeType
   }
 
   function resetFilters() {
     programFilters.value = {
       programAidTypesSelected: [],
-      objectiveTypeSelected: '',
+      themeTypeSelected: '',
       regionAidSelected: [],
       operatorAidSelected: []
     }
@@ -100,8 +100,8 @@ export const useProgramStore = defineStore('program', () => {
     programsByUsedTracks,
     getProgramsByFilters,
     getProgramById,
-    hasObjectiveTypeSelected,
-    setObjectiveTypeSelected,
+    hasThemeTypeSelected,
+    setThemeTypeSelected,
     resetFilters
   }
 })

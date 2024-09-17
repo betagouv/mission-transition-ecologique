@@ -1,12 +1,4 @@
-import {
-  PublicodesKeys,
-  PublicodeObjective,
-  PublicodesCondition,
-  ProgramOperatorType,
-  ProgramAidType,
-  ProgramType,
-  Operators
-} from '@/types'
+import { ThemeId, ProgramOperatorType, ProgramAidType, FiltersKeys } from '@/types'
 
 interface ProgramObjectiveLink {
   lien: string
@@ -17,33 +9,6 @@ interface ProgramObjective {
   description: string
   liens: ProgramObjectiveLink[]
 }
-
-export type ProgramDataType = Omit<
-  ProgramType,
-  "nature de l'aide" | 'opérateur de contact' | 'objectifs' | 'publicodes' | "conditions d'éligibilité"
-> & {
-  "nature de l'aide": ProgramAidType
-  'opérateur de contact': Operators
-  objectifs: ProgramObjective[]
-  publicodes: PublicodesProgramData
-  "conditions d'éligibilité": {
-    "taille de l'entreprise": [string, string, ...string[]]
-    'secteur géographique': [string, ...string[]]
-    "secteur d'activité": [string, ...string[]]
-    "nombre d'années d'activité": [string, ...string[]]
-    "autres critères d'éligibilité"?: [string, ...string[]]
-  }
-}
-// //
-// export type ProgramOverrideType = Override<
-//   ProgramType,
-//   {
-//     "nature de l'aide": ProgramAidType
-//     'opérateur de contact': Operators
-//     objectifs: ProgramObjective[]
-//     publicodes: PublicodesProgramData
-//   }
-// >
 
 export interface ProgramData {
   id: string
@@ -76,17 +41,9 @@ export interface ProgramData {
     "autres critères d'éligibilité"?: string[]
   }
 
-  publicodes: PublicodesProgramData
+  filters: FiltersProgramData
 }
 
-export type PublicodesProgramData = {
-  [PublicodesKeys.isTargeted]:
-    | {
-        [k: string]: unknown
-      }
-    | string
-  [key: string]: unknown
-  [PublicodesKeys.hasObjective]?: {
-    [PublicodesCondition.oneOfThese]: PublicodeObjective[]
-  }
+export type FiltersProgramData = {
+  [FiltersKeys.Theme]?: ThemeId[]
 }

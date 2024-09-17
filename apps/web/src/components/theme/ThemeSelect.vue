@@ -13,9 +13,10 @@
 <script setup lang="ts">
 import { useTrackStore } from '@/stores/track'
 import { useUsedTrackStore } from '@/stores/usedTrack'
-import type { ProgramType, TrackId, TrackOptionItem, Color, Objective } from '@/types'
+import type { TrackOptionItem } from '@/types'
 import { computed } from 'vue'
 import { Theme } from '@/utils/theme'
+import { ProgramType, TrackId, TrackOptionItem, Color, ThemeId } from '@/types'
 import { Project } from '@tee/data'
 import { useProjectStore } from '@/stores/project'
 import { useProgramStore } from '@/stores/program'
@@ -39,8 +40,8 @@ export interface ThemeOption {
   moreThanThree: boolean
 }
 
-const filterPrograms = (objective: Objective) => {
-  return programs.value?.filter((program) => ProgramFilter.byObjective(program, objective))
+const filterPrograms = (theme: ThemeId) => {
+  return programs.value?.filter((program) => ProgramFilter.byTheme(program, theme))
 }
 
 const options = computed<ThemeOption[]>(() => {
@@ -49,10 +50,10 @@ const options = computed<ThemeOption[]>(() => {
     return options
   }
   for (const option of currentTrack.options) {
-    const theme = Theme.getByValue(option.questionnaireData?.priority_objective)
+    const theme = Theme.getById(option.questionnaireData?.priority_objective)
     if (theme && projects.value) {
-      const objectiveProjects = projectStore.getProjectsByObjectiveAndEligibility(projects.value, theme.value, filterPrograms(theme.value))
-      const projectsInfos: { projects: Project[]; moreThanThree: boolean } = Theme.getPriorityProjects(objectiveProjects)
+      const themeProjects = projectStore.getProjectsByThemeAndEligibility(projects.value, theme.id, filterPrograms(theme.id))
+      const projectsInfos: { projects: Project[]; moreThanThree: boolean } = Theme.getPriorityProjects(themeProjects)
       options.push({
         value: option.questionnaireData?.priority_objective,
         title: theme.title,
@@ -85,20 +86,15 @@ const selectOption = (opt: string | undefined) => {
 const hasError = ref<boolean>(false)
 
 onBeforeMount(async () => {
-  const selectedOptionValue = useNavigationStore().query[TrackId.Goals]
-  if (selectedOptionValue) {
-    selectOption(selectedOptionValue as string)
+  useNavigationStore().hasSpinner = true
+  const projectResult = await projectStore.projects
+  const programResult = await programStore.programsByUsedTracks
+  if (programResult.isOk && projectResult.isOk) {
+    projects.value = projectResult.value
+    programs.value = programResult.value
   } else {
-    useNavigationStore().hasSpinner = true
-    const projectResult = await projectStore.projects
-    const programResult = await programStore.programsByUsedTracks
-    if (programResult.isOk && projectResult.isOk) {
-      projects.value = projectResult.value
-      programs.value = programResult.value
-    } else {
-      hasError.value = true
-    }
-    useNavigationStore().hasSpinner = false
+    hasError.value = true
   }
+  useNavigationStore().hasSpinner = false
 })
 </script>
