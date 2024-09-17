@@ -1,0 +1,101 @@
+titre: Entreprises engagées pour la nature
+promesse: Initiez un plan d'action pour la biodiversité
+description: >-
+  Le programme "Entreprises engagées pour la nature" vous accompagne pour mettre
+  faire émerger et valoriser des plans d'actions en faveur de la biodiversité.
+  Grâce à un parcours en trois étapes – adhésion, engagement, et évaluation –
+  vous pourrez mesurer l'impact de votre activité sur la nature et mettre en
+  œuvre des actions concrètes, mesurables et ayant un effet positif sur la
+  biodiversité. Les entreprises engagées pour la nature peuvent valoriser leur
+  "tampon" auprès du grand public et bénéficient d'une mise en lumière par
+  l'Office Français de la Biodiversité lors de salons dédiés au monde de
+  l'entreprise et de la biodiversité.
+illustration: images/TEE_ampoule.png
+opérateur de contact: Office Française de la Biodiversité
+url: https://engagespourlanature.ofb.fr/entreprises
+nature de l'aide: étude
+coût de l'accompagnement: Gratuit
+durée de l'accompagnement: Plusieurs années
+activable en autonomie: oui
+objectifs:
+  - description: >-
+      Adhérez au programme via la signature d'une charte contenant les 10
+      principes communs de l'initiative "Engagé pour la nature".
+    liens:
+      - lien: >-
+          https://engagespourlanature.ofb.fr/sites/default/files/2021-12/EEN_Les%20_10_principes_communs_%C3%A0_signer.pdf
+        texte: Signer la charte
+  - description: >-
+      Créez un compte ou connectez-vous sur Démarches Simplifiées, pour adhérer
+      au programme et déposer la charte signée.
+    liens:
+      - lien: >-
+          https://www.demarches-simplifiees.fr/commencer/entreprises-engagees-pour-la-nature-etape-1
+        texte: Déposer mon formulaire
+  - description: >-
+      Vous disposez ensuite d'un an pour dresser un état des lieux initial et
+      construire un plan d'action volontaire pour la biodiversité. Ce plan
+      d'action sera à déposer auprès de l'Office Français de la Biodiversité
+      (OFB).
+    liens:
+      - lien: https://engagespourlanature.ofb.fr/entreprises/rejoindre-le-programme
+        texte: Voir le calendrier de dépôt du plan d'action
+      - lien: >-
+          https://www.demarches-simplifiees.fr/commencer/entreprises-engagees-pour-la-nature-etape-2-engage-2
+        texte: Déposer le plan d'action (TPE-PME)
+      - lien: >-
+          https://www.demarches-simplifiees.fr/commencer/entreprises-engagees-pour-la-nature-etape-2-engage
+        texte: Déposer le plan d'action (ETI-Grandes entreprises)
+  - description: >-
+      Votre plan d'action est analysé par l'OFB pour en mesurer l'ambition et
+      l'adéquation vis à vis de vos activités. Une fois validé, vous pouvez le
+      communiquer et utiliser le tampon "Entreprises engagées pour la nature".
+  - description: >-
+      Bénéficiez d'une évaluation de votre plan d'action, deux ans après son
+      dépôt par un prestataire mandaté et financé par l'OFB et accédez à un
+      niveau de reconnaissance : en progrès, confirmé, ou exemplaire.
+  - description: >-
+      Tout au long du programme, vous disposez de guides pratiques et ressources
+      pour vous aider à élaborer et suivre votre plan d'action et vous profitez
+      de la communauté du "Club des entreprises engagées" lors de rendez-vous
+      mensuels en ligne.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - Tous secteurs d'activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . undefined
