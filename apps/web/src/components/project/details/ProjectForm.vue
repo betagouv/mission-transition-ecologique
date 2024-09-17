@@ -394,7 +394,7 @@ const validateFormField = (field: InputFieldUnionType): void => {
 const saveProjectForm = async () => {
   try {
     isLoading.value = true
-    const opportunity = new OpportunityApi(projectForm.value, props.project.id.toString(), props.project.slug, OpportunityType.Project)
+    const opportunity = new OpportunityApi(projectForm.value, props.project.id, props.project.slug, OpportunityType.Project)
     requestResponse.value = await opportunity.fetch()
 
     // analytics / send event

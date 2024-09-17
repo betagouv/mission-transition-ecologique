@@ -1,4 +1,4 @@
-import { PublicodesKeys, PublicodeObjective, PublicodesCondition, ProgramOperatorType, ProgramAidType } from '@/types'
+import { ThemeId, ProgramOperatorType, ProgramAidType, FiltersKeys } from '@/types'
 
 interface ProgramObjectiveLink {
   lien: string
@@ -41,17 +41,9 @@ export interface ProgramData {
     "autres critères d'éligibilité"?: string[]
   }
 
-  publicodes: PublicodesProgramData
+  filters: FiltersProgramData
 }
 
-export type PublicodesProgramData = {
-  [PublicodesKeys.isTargeted]:
-    | {
-        [k: string]: unknown
-      }
-    | string
-  [key: string]: unknown
-  [PublicodesKeys.hasObjective]?: {
-    [PublicodesCondition.oneOfThese]: PublicodeObjective[]
-  }
+export type FiltersProgramData = {
+  [FiltersKeys.Theme]?: ThemeId[]
 }

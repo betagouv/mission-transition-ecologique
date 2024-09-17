@@ -29,8 +29,8 @@
         </div>
         <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-pr-md-2v">
           <ThemeHeaderCard
-            v-if="hasThemeCard"
-            :objective="objective as Objective"
+            v-if="showThemeCard"
+            :theme="theme as ThemeId"
             radius-corner="tr"
             radius-size="2-5v"
           />
@@ -60,9 +60,8 @@
 
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
-import { Objective, type ProgramData, TrackId } from '@/types'
+import { type ProgramData, TrackId, ThemeId } from '@/types'
 import Analytics from '@/utils/analytics'
-import { Theme } from '@/utils/theme'
 import UsedTrack from '@/utils/track/usedTrack'
 import { computed, onBeforeMount } from 'vue'
 
@@ -87,17 +86,17 @@ const hasSpinner = computed(() => {
   return programs.value === undefined && !hasError.value
 })
 
-const hasObjectiveCard = computed(() => {
-  return programStore.hasObjectiveTypeSelected() || (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityObjective())
+const hasThemeCard = computed(() => {
+  return programStore.hasThemeTypeSelected() || (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityTheme())
 })
 
-const objective = computed(() => {
-  if (programStore.hasObjectiveTypeSelected()) {
-    return programStore.programFilters.objectiveTypeSelected
+const theme = computed(() => {
+  if (programStore.hasThemeTypeSelected()) {
+    return programStore.programFilters.themeTypeSelected
   }
 
-  if (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityObjective()) {
-    return Theme.getPublicodeObjectiveByObjective(UsedTrack.getPriorityObjective())
+  if (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityTheme()) {
+    return UsedTrack.getPriorityTheme()
   }
 
   return ''
@@ -111,8 +110,8 @@ const hasThemeFilter = computed(() => {
   return havePrograms.value && countPrograms.value > 1
 })
 
-const hasThemeCard = computed(() => {
-  return hasObjectiveCard.value && !hasSpinner.value
+const showThemeCard = computed(() => {
+  return hasThemeCard.value && !hasSpinner.value
 })
 
 onBeforeMount(async () => {

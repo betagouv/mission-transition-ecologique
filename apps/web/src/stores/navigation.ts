@@ -14,7 +14,8 @@ import {
   type RouteLocationNormalizedLoaded,
   type RouteLocationRaw,
   type RouteLocationAsRelativeGeneric,
-  type Router
+  type Router,
+  RouteParamsGeneric
 } from 'vue-router'
 import { RouteName } from '@/types/routeType'
 
@@ -193,6 +194,12 @@ export const useNavigationStore = defineStore('navigation', () => {
     stringOfSearchParams.value = ''
   }
 
+  function getAbsoluteUrlByRouteName(routeName: RouteName, params: RouteParamsGeneric = {}): string | undefined {
+    if (router.value) {
+      return new URL(router.value.resolve({ name: routeName, params: params }).href, window.location.origin).href
+    }
+  }
+
   return {
     isReady,
     cookies,
@@ -222,7 +229,8 @@ export const useNavigationStore = defineStore('navigation', () => {
     updateSearchParam,
     deleteSearchParam,
     routeByTrackId,
-    replaceBrowserHistory
+    replaceBrowserHistory,
+    getAbsoluteUrlByRouteName
   }
 })
 

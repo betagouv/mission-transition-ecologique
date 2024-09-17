@@ -27,7 +27,7 @@
         <ThemeHeaderCard
           v-if="hasThemeCard"
           class="fr-col-12"
-          :objective="objective as Objective"
+          :theme="theme as ThemeId"
           radius-corner="tr"
           radius-size="2-5v"
         />
@@ -37,7 +37,7 @@
           </div>
           <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--left fr-mt-0">
             <router-link
-              v-for="project in filteredProjects"
+              v-for="project in sortedProjects"
               :id="project.slug"
               :key="project.id"
               :to="getRouteToProjectDetail(project)"
@@ -63,7 +63,7 @@
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
 import { useProjectStore } from '@/stores/project'
-import { Objective, type ProgramData, Project as ProjectType, RouteName, TrackId } from '@/types'
+import { type ProgramData, Project as ProjectType, RouteName, TrackId, ThemeId } from '@/types'
 import Contact from '@/utils/contact'
 import Analytics from '@/utils/analytics'
 import { Project } from '@/utils/project/project'
@@ -78,18 +78,19 @@ const projects = ref<ProjectType[]>()
 const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)
 
-const objective = computed(() => {
-  return programStore.hasObjectiveTypeSelected() ? (programStore.programFilters.objectiveTypeSelected as Objective) : ''
+const theme = computed(() => {
+  return programStore.hasThemeTypeSelected() ? (programStore.programFilters.themeTypeSelected as ThemeId) : ''
 })
 
-const filteredProjects = Project.filter(projects, programs, objective)
+const filteredProjects = Project.filter(projects, programs, theme)
+const sortedProjects = Project.sort(filteredProjects)
 
 const hasSpinner = computed(() => {
   return navigationStore.hasSpinner
 })
 
 const hasThemeCard = computed(() => {
-  return programStore.hasObjectiveTypeSelected() && !hasSpinner.value
+  return programStore.hasThemeTypeSelected() && !hasSpinner.value
 })
 
 const hasFilteredProjects = computed(() => {
