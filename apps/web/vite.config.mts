@@ -167,7 +167,7 @@ function buildHeaders() {
       "form-action 'self';" +
       "script-src-elem 'self' 'unsafe-inline' https://stats.beta.gouv.fr https://eu.i.posthog.com https://eu-assets.i.posthog.com https://embed.typeform.com;" +
       "style-src 'self' 'unsafe-inline' https://embed.typeform.com;" +
-      "font-src 'self' data:;" +
+      "font-src 'self';" +
       "img-src 'self' data:;" +
       "object-src 'self';" +
       `connect-src 'self' https://conseillers-entreprises.service-public.fr https://stats.beta.gouv.fr ${

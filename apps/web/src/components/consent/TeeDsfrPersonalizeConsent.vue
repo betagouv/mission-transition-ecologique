@@ -25,25 +25,6 @@
                 Panneau de gestion des cookies
               </h1>
               <div class="fr-consent-manager">
-                <!-- Finalités -->
-                <div class="fr-consent-service fr-consent-manager__header">
-                  <fieldset class="fr-fieldset fr-fieldset--inline">
-                    <legend
-                      id="finality-legend"
-                      class="fr-consent-service__title"
-                    >
-                      Préférences pour tous les services.
-                      <router-link :to="{ name: RouteName.PersonalData }"> Données personnelles </router-link>
-                    </legend>
-                    <div class="fr-consent-service__radios">
-                      <DsfrButtonGroup
-                        :buttons="allButtons"
-                        inline-layout-when="medium"
-                        align="right"
-                      />
-                    </div>
-                  </fieldset>
-                </div>
                 <div
                   v-for="cookie in Object.values(cookies)"
                   :key="cookie.value"
@@ -73,33 +54,18 @@
   </dialog>
 </template>
 <script lang="ts" setup>
-import { RouteName } from '@/types'
 import { useNavigationStore } from '@/stores/navigation'
 import { type Cookies, type CookieValue } from '@/types/cookies'
 import Cookie from '@/utils/cookies'
-import { DsfrButtonGroupProps } from '@gouvminint/vue-dsfr/types'
 
 const cookies = ref<Cookies>(useNavigationStore().cookies)
 const allStatus = ref<boolean>(false)
-const allButtons: DsfrButtonGroupProps['buttons'] = [
-  { label: 'Tout accepter', onClick: () => updateAllStatus(true) },
-  { label: 'Tout refuser', onClick: () => updateAllStatus(false), secondary: true }
-]
 
 const closePersonalize = () => {
   const modal = document.getElementById('fr-consent-modal')
   if (modal) {
     modal.classList.remove('fr-modal--opened')
   }
-}
-
-const updateAllStatus = (status: boolean) => {
-  if (status) {
-    Cookie.acceptAllCookies()
-  } else {
-    Cookie.refuseAllCookies()
-  }
-  closePersonalize()
 }
 
 const updateCookieStatus = (status: boolean, cookie: CookieValue) => {
