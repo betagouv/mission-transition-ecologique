@@ -39,10 +39,10 @@
 <script setup lang="ts">
 import TeeButtonExternalLink from '@/components/element/button/TeeButtonExternalLink.vue'
 import Translation from '@/utils/translation'
-import { ProgramAidType, ProgramTypeTest } from '@/types'
+import { ProgramAidType, ProgramType } from '@/types'
 
 interface Props {
-  program: ProgramTypeTest
+  program: ProgramType
 }
 
 const props = defineProps<Props>()

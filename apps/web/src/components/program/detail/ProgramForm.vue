@@ -311,7 +311,7 @@ const opportunityForm = ref<OpportunityFormType>({
     isValid: undefined,
     value: Translation.t('program.form.needs', {
       secteur: TrackStructure.getSectorShortLabel(),
-      titreAide: props.program.titre
+      titreAide: props.program.titre as string
     }),
     label: 'Quel est votre besoin ?',
     hint: undefined,
@@ -371,7 +371,7 @@ const getMailTo = (): string => {
     const telValue = opportunityForm.value.tel.value ? opportunityForm.value.tel.value : ''
     const siretValue = opportunityForm.value.siret.value ? opportunityForm.value.siret.value : ''
     return Contact.getMailtoUrl(
-      Translation.t('form.errorEmail.subject', { program: props.program.titre }),
+      Translation.t('form.errorEmail.subject', { program: props.program.titre as string }),
       `${needsValue}
 
 ${nameValue} ${surnameValue}

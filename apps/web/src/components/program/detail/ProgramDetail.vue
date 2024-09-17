@@ -1,7 +1,7 @@
 <template>
   <ProgramHeader
     :program-id="programId"
-    :program="program"
+    :program="program as unknown as ProgramType"
     :project-slug="projectSlug"
   />
   <!-- ALERT - PROGRAM NOT AVAILABLE ANYMORE -->
@@ -74,7 +74,7 @@
             />
             <ProgramObjective
               v-if="program"
-              :program="program as unknown as ProgramTypeTest"
+              :program="program"
             />
             <DsfrButton
               v-if="!isProgramAutonomous"
@@ -148,7 +148,7 @@
               class="tee-no-hover"
               :title="Translation.t('program.programDuration')"
               :image-path="`${publicPath}images/TEE-duree.svg`"
-              :description="programDuration"
+              :description="`${programDuration}`"
             />
           </div>
           <div
@@ -159,7 +159,7 @@
               class="tee-no-hover"
               :title="Translation.t('program.programLoanDuration')"
               :image-path="`${publicPath}images/TEE-duree.svg`"
-              :description="programLoanDuration"
+              :description="`${programLoanDuration}`"
             />
           </div>
 
@@ -315,7 +315,7 @@ useHead({
   meta: [
     {
       name: 'description',
-      content: programPageMeta
+      content: programPageMeta.value as string
     }
   ]
 })

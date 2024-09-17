@@ -28,12 +28,12 @@
 </template>
 
 <script setup lang="ts">
-import { type ProgramTypeWithPublicode } from '@/types'
+import { type ProgramType } from '@/types'
 import { computed } from 'vue'
 import ProgramFiltersAccordion from '@/components/program/list/filters/ProgramFiltersAccordion.vue'
 
 interface ProgramListProps {
-  filteredPrograms?: ProgramTypeWithPublicode[]
+  filteredPrograms?: ProgramType[]
 }
 
 const props = defineProps<ProgramListProps>()

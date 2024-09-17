@@ -62,8 +62,8 @@
 import { useProgramStore } from '@/stores/program'
 import { type ProgramType, TrackId, ThemeId } from '@/types'
 import Matomo from '@/utils/matomo'
-import UsedTrack from '@/utils/track/usedTrack'
 import { computed, onBeforeMount } from 'vue'
+import UsedTrack from '@/utils/track/usedTrack'
 
 const programStore = useProgramStore()
 

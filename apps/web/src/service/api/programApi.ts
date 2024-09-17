@@ -1,5 +1,5 @@
 import RequestApi from '@/service/api/requestApi'
-import type { ProgramTypeWithPublicode, QuestionnaireData } from '@/types'
+import type { ProgramType, QuestionnaireData } from '@/types'
 import { Result } from 'true-myth'
 
 export default class ProgramApi extends RequestApi {
@@ -10,18 +10,18 @@ export default class ProgramApi extends RequestApi {
     this.query = this.buildQuery
   }
 
-  async get(): Promise<Result<ProgramTypeWithPublicode[], Error>> {
-    return super.getJson<ProgramTypeWithPublicode[]>()
+  async get(): Promise<Result<ProgramType[], Error>> {
+    return super.getJson<ProgramType[]>()
   }
 
-  async getOne(id: string): Promise<Result<ProgramTypeWithPublicode, Error>> {
+  async getOne(id: string): Promise<Result<ProgramType, Error>> {
     const url: string = this.url + '/' + id
     try {
       const response = await fetch(url)
       if (response.status === 404) {
         throw new Error('Program not found')
       }
-      return Result.ok((await response.json()) as ProgramTypeWithPublicode)
+      return Result.ok((await response.json()) as ProgramType)
     } catch (error: unknown) {
       return Result.err(error as Error)
     }

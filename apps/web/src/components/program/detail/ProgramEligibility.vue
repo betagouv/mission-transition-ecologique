@@ -13,7 +13,7 @@
         >
           <p class="fr-tee-eligigility-title fr-mb-1v">
             <span class="fr-mr-1v">{{ eligilityEmojis[field] }}</span>
-            {{ field.toString()[0].toUpperCase() + field.toString().slice(1) }}
+            {{ (field as string).toString()[0].toUpperCase() + (field as string).toString().slice(1) }}
           </p>
           <ul class="fr-tee-eligigility-list fr-mt-1v">
             <li
@@ -34,9 +34,9 @@
 // console.log(`ProgramEligibility > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import { computed } from 'vue'
-import type { ProgramTypeWithPublicode } from '@/types'
+import type { ProgramType } from '@/types'
 
-type EligibilityCategory = keyof ProgramTypeWithPublicode["conditions d'éligibilité"]
+type EligibilityCategory = keyof ProgramType["conditions d'éligibilité"]
 
 type Emojis = Record<EligibilityCategory, string>
 
@@ -48,13 +48,7 @@ const eligilityEmojis: Emojis = {
   "autres critères d'éligibilité": '💡'
 }
 
-const order: EligibilityCategory[] = [
-  "taille de l'entreprise",
-  'secteur géographique',
-  "nombre d'années d'activité",
-  "secteur d'activité",
-  "autres critères d'éligibilité"
-]
+const order: EligibilityCategory[] = programEligibility.value ? (Object.keys(programEligibility.value) as EligibilityCategory[]) : []
 
 const splitInTwo = (fields: EligibilityCategory[]): [EligibilityCategory[], EligibilityCategory[]] => {
   const mid: number = Math.ceil(fields.length / 2)
@@ -67,12 +61,12 @@ const getFieldsForColumn = (columnNumber: number): EligibilityCategory[] => {
 }
 
 interface Props {
-  program: ProgramTypeWithPublicode
+  program: ProgramType
 }
 
 const props = defineProps<Props>()
 
 const programEligibility = computed(() => {
-  return props.program["conditions d'éligibilité"]
+  return props.program["conditions d'éligibilité"] as string
 })
 </script>

@@ -1,22 +1,22 @@
-import type { ProgramTypeWithPublicode, Project as ProjectType } from '@/types'
+import type { ProgramType, Project as ProjectType } from '@/types'
 
 export default class Program {
-  static getEndDate(program: ProgramTypeWithPublicode | undefined): Date | undefined {
+  static getEndDate(program: ProgramType | undefined): Date | undefined {
     if (program === undefined || program['fin de validité'] === undefined) {
       return undefined
     }
 
-    const dateArr: string[] = program['fin de validité'].split('/')
+    const dateArr: string[] = (program['fin de validité'] as string).split('/')
     return new Date(`${dateArr[2]}/${dateArr[1]}/${dateArr[0]}`)
   }
 
-  static isAvailable(program: ProgramTypeWithPublicode | undefined) {
+  static isAvailable(program: ProgramType | undefined) {
     const endDate = this.getEndDate(program)
 
     return endDate !== undefined ? endDate >= new Date() : true
   }
 
-  static getLinkedProjects(program: ProgramTypeWithPublicode | undefined, projects: ProjectType[]) {
+  static getLinkedProjects(program: ProgramType | undefined, projects: ProjectType[]) {
     if (program) {
       const programId: string = program.id
       const linkedProjects: ProjectType[] = projects.filter((project: ProjectType) => project.programs.includes(programId))

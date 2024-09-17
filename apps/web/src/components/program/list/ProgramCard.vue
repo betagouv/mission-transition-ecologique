@@ -44,11 +44,11 @@
 
 <script setup lang="ts">
 import Config from '@/config'
-import { ProgramAidType, type ProgramTypeWithPublicode } from '@/types'
+import { ProgramAidType, type ProgramType } from '@/types'
 import { consolidateAmounts } from '@/utils/helpers'
 import Translation from '@/utils/translation'
 
-const { program } = defineProps<{ program: ProgramTypeWithPublicode }>()
+const { program } = defineProps<{ program: ProgramType }>()
 
 const publicPath = Config.publicPath
 
@@ -59,28 +59,28 @@ const getCostInfos = () => {
   switch (program["nature de l'aide"]) {
     case ProgramAidType.study:
       if (program["coût de l'accompagnement"]) {
-        text = program["coût de l'accompagnement"]
+        text = program["coût de l'accompagnement"] as string
         prefix = 'programCosts.costPrefix'
       } else {
         prefix = 'programCosts.aidPrefix'
-        text = program['montant du financement']
+        text = program['montant du financement'] as string
       }
       break
     case ProgramAidType.train:
       prefix = 'programCosts.costPrefix'
-      text = program["coût de l'accompagnement"]
+      text = program["coût de l'accompagnement"] as string
       break
     case ProgramAidType.fund:
       prefix = 'programCosts.aidPrefix'
-      text = program['montant du financement']
+      text = program['montant du financement'] as string
       break
     case ProgramAidType.loan:
       prefix = 'programCosts.loan'
-      text = program['montant du prêt']
+      text = program['montant du prêt'] as string
       break
     case ProgramAidType.tax:
       prefix = 'programCosts.taxAdvantage'
-      text = program["montant de l'avantage fiscal"]
+      text = program["montant de l'avantage fiscal"] as string
       break
   }
   // Translate prefix

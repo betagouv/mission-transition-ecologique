@@ -9,7 +9,6 @@ import {
   MobilityStatus
 } from './types'
 
-// eslint-disable-next-line @nx/enforce-module-boundaries
 import { ThemeId } from '@tee/data'
 
 export enum QuestionnaireDataEnum {

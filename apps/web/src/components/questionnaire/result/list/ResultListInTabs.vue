@@ -39,7 +39,7 @@
 import { TeeDsfrTabs } from '@/components/element/TeeTabs.vue'
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
-import { ProgramTypeWithPublicode, ThemeId, TrackId, Project, BreakpointNameType } from '@/types'
+import { ProgramType, ThemeId, TrackId, Project, BreakpointNameType } from '@/types'
 import { computed, onBeforeMount } from 'vue'
 import Matomo from '@/utils/matomo'
 import { useProjectStore } from '@/stores/project'
@@ -50,7 +50,7 @@ const programStore = useProgramStore()
 const projectStore = useProjectStore()
 const { ascendant, selected } = useTabs(true, navigationStore.tabSelectedOnList)
 
-const programs = ref<ProgramTypeWithPublicode[]>()
+const programs = ref<ProgramType[]>()
 const projects = ref<Project[]>()
 const hasError = ref<boolean>(false)
 

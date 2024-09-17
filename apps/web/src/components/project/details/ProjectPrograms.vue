@@ -88,7 +88,7 @@
 <script setup lang="ts">
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { useProgramStore } from '@/stores/program'
-import { type ProgramTypeWithPublicode, ProgramAidType, QuestionnaireRoute, TrackId, Project } from '@/types'
+import { type ProgramType, ProgramAidType, QuestionnaireRoute, TrackId, Project } from '@/types'
 import Contact from '@/utils/contact'
 import { RouteName } from '@/types/routeType'
 import { type RouteLocationRaw } from 'vue-router'
@@ -105,7 +105,7 @@ const navigationStore = useNavigationStore()
 const isCatalogDetail = navigationStore.isCatalogProjectDetail()
 
 const expandedId = ref<string | undefined>('project-aids')
-const programs = ref<ProgramTypeWithPublicode[]>()
+const programs = ref<ProgramType[]>()
 const hasError = ref<boolean>(false)
 
 const hasSpinner = navigationStore.hasSpinner
@@ -119,13 +119,13 @@ const filteredPrograms = computed(() => {
 })
 
 const studyPrograms = computed(() => {
-  return filteredPrograms.value.filter((program: ProgramTypeWithPublicode) =>
+  return filteredPrograms.value.filter((program: ProgramType) =>
     [ProgramAidType.study, ProgramAidType.train].includes(program["nature de l'aide"])
   )
 })
 
 const financePrograms = computed(() => {
-  return filteredPrograms.value.filter((program: ProgramTypeWithPublicode) =>
+  return filteredPrograms.value.filter((program: ProgramType) =>
     [ProgramAidType.fund, ProgramAidType.loan, ProgramAidType.tax].includes(program["nature de l'aide"])
   )
 })
