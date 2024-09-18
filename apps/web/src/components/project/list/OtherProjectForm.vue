@@ -6,7 +6,7 @@
   >
     <TeeForm
       :form-container-ref="TeeOtherProjectFormContainer"
-      :form-type="FormType.OtherProject"
+      :form-type="FormType.Project"
       :form="Opportunity.getOtherProjectFormFields()"
       data-id="other-project-id"
       data-slug="other-project-slug"
