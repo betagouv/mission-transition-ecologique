@@ -1,6 +1,7 @@
 import Cookie from '@/utils/cookies'
 import { CookieValue } from '@/types/cookies'
 import { app } from '../main'
+import Matomo from './matomo'
 
 export default class Analytics {
   static sendEvent(action: string, name: string | null = null, value?: string | number | object | Record<string, string | number>) {
@@ -8,5 +9,7 @@ export default class Analytics {
     if (posthogCookie?.accepted) {
       app.config.globalProperties['$posthog'].capture(name ? name : 'unnamed event', { action: action, value: value })
     }
+
+    Matomo.sendEvent(action, name, JSON.stringify(value))
   }
 }

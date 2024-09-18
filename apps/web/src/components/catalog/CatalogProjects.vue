@@ -66,7 +66,6 @@ import { useProjectStore } from '@/stores/project'
 import { type ProgramData, Project as ProjectType, RouteName, TrackId, ThemeId } from '@/types'
 import Contact from '@/utils/contact'
 import Analytics from '@/utils/analytics'
-import Matomo from '@/utils/matomo'
 import { Project } from '@/utils/project/project'
 import { computed, onBeforeMount } from 'vue'
 import type { RouteLocationRaw } from 'vue-router'
@@ -120,6 +119,5 @@ onBeforeMount(async () => {
 
   // analytics / send event
   Analytics.sendEvent(TrackId.Results, 'show_results_catalog_projects')
-  Matomo.sendEvent(TrackId.Results, 'show_results_catalog_projects')
 })
 </script>

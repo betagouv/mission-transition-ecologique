@@ -123,7 +123,6 @@ import {
 } from '@/types'
 import { RouteName } from '@/types/routeType'
 import Analytics from '@/utils/analytics'
-import Matomo from '@/utils/matomo'
 import Navigation from '@/utils/navigation'
 import { Scroll } from '@/utils/scroll'
 import TrackColOption from '@/utils/track/TrackColOption'
@@ -184,9 +183,6 @@ const updateSelection = async (option: TrackOptionsUnion, index: number, forceRe
     if (option.value) {
       // analytics / track event / only if positive choice
       Analytics.sendEvent(usedTrack.id, usedTrack.id, option.value)
-      for (const [key, value] of Object.entries(option.value)) {
-        Matomo.sendEvent(usedTrack.id, key, value as string | number)
-      }
     }
   } else {
     // remove from selection because is already active

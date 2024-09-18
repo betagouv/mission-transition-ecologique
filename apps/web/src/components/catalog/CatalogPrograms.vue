@@ -62,7 +62,6 @@
 import { useProgramStore } from '@/stores/program'
 import { type ProgramData, TrackId, ThemeId } from '@/types'
 import Analytics from '@/utils/analytics'
-import Matomo from '@/utils/matomo'
 import UsedTrack from '@/utils/track/usedTrack'
 import { computed, onBeforeMount } from 'vue'
 
@@ -125,6 +124,5 @@ onBeforeMount(async () => {
 
   // analytics / send event
   Analytics.sendEvent(TrackId.Results, 'show_results_catalog')
-  Matomo.sendEvent(TrackId.Results, 'show_results_catalog')
 })
 </script>

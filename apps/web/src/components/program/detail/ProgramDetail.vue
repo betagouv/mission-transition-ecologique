@@ -244,7 +244,6 @@ import { type ProgramData as ProgramType, Project as ProjectType } from '@/types
 import { RouteName } from '@/types/routeType'
 import { useNavigationStore } from '@/stores/navigation'
 import Analytics from '@/utils/analytics'
-import Matomo from '@/utils/matomo'
 import Program from '@/utils/program/program'
 import { Scroll } from '@/utils/scroll'
 import Translation from '@/utils/translation'
@@ -307,7 +306,6 @@ onBeforeMount(async () => {
     linkedProjects.value = Program.getLinkedProjects(program.value, projectResult.value)
   }
   useNavigationStore().hasSpinner = false
-  Matomo.sendEvent('result_detail', route.name === RouteName.CatalogProgramDetail ? 'show_detail_catalog' : 'show_detail', props.programId)
   // analytics / send event
   Analytics.sendEvent(
     'result_detail',

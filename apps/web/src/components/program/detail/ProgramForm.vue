@@ -256,7 +256,6 @@ import Translation from '@/utils/translation'
 import TeeDsfrButton from '@/components/element/button/TeeDsfrButton.vue'
 import { DsfrInput, DsfrInputGroup, DsfrCheckbox } from '@gouvminint/vue-dsfr'
 import Analytics from '@/utils/analytics'
-import Matomo from '@/utils/matomo'
 import { RouteName } from '@/types/routeType'
 import { useRoute } from 'vue-router'
 import Format from '@/utils/format'
@@ -403,7 +402,6 @@ const saveOpportunityForm = async () => {
     requestResponse.value = await opportunity.fetch()
 
     // analytics / send event
-    Matomo.sendEvent(TrackId.Results, route.name === RouteName.CatalogProgramDetail ? 'send_form_catalog' : 'send_form')
     Analytics.sendEvent(TrackId.Results, route.name === RouteName.CatalogProgramDetail ? 'send_form_catalog' : 'send_form')
   } finally {
     isLoading.value = false
