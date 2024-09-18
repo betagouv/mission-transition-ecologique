@@ -3,6 +3,5 @@ export enum BorderPosition {
   top = 'top',
   right = 'right',
   bottom = 'bottom',
-  left = 'left',
-  none = 'none'
+  left = 'left'
 }
