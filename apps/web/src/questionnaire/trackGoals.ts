@@ -1,5 +1,5 @@
 import type { Track } from '@/types'
-import { Objective, TrackComponent, TrackId } from '@/types'
+import { ThemeId, TrackComponent, TrackId } from '@/types'
 
 export const goals: Track = {
   id: TrackId.Goals,
@@ -17,8 +17,8 @@ export const goals: Track = {
   },
   options: [
     {
-      value: Objective.EnergyPerformance,
-      questionnaireData: { priority_objective: Objective.EnergyPerformance },
+      value: ThemeId.Energy,
+      questionnaireData: { priority_objective: ThemeId.Energy },
       title: { fr: "Gestion de l'énergie" },
       label: { fr: '⚡️ Améliorer la performance énergétique de mon entreprise' },
       next: {
@@ -26,8 +26,8 @@ export const goals: Track = {
       }
     },
     {
-      value: Objective.BuildingRenovation,
-      questionnaireData: { priority_objective: Objective.BuildingRenovation },
+      value: ThemeId.Building,
+      questionnaireData: { priority_objective: ThemeId.Building },
       title: { fr: 'Rénovation du bâtiment' },
       label: { fr: '🏢 Rénover mon bâtiment' },
       next: {
@@ -35,8 +35,8 @@ export const goals: Track = {
       }
     },
     {
-      value: Objective.SustainableMobility,
-      questionnaireData: { priority_objective: Objective.SustainableMobility },
+      value: ThemeId.Mobility,
+      questionnaireData: { priority_objective: ThemeId.Mobility },
       title: { fr: 'Mobilité durable' },
       label: { fr: '🚲 Engager une démarche de mobilité durable' },
       next: {
@@ -44,8 +44,8 @@ export const goals: Track = {
       }
     },
     {
-      value: Objective.WaterConsumption,
-      questionnaireData: { priority_objective: Objective.WaterConsumption },
+      value: ThemeId.Water,
+      questionnaireData: { priority_objective: ThemeId.Water },
       title: { fr: "Gestion de l'eau" },
       label: { fr: "💧 Diminuer ma consommation d'eau" },
       next: {
@@ -53,8 +53,8 @@ export const goals: Track = {
       }
     },
     {
-      value: Objective.EcoDesign,
-      questionnaireData: { priority_objective: Objective.EcoDesign },
+      value: ThemeId.EcoDesign,
+      questionnaireData: { priority_objective: ThemeId.EcoDesign },
       title: { fr: 'Eco-conception' },
       label: { fr: '🏭 Améliorer la performance environnementale de mes produits et services' },
       next: {
@@ -62,8 +62,8 @@ export const goals: Track = {
       }
     },
     {
-      value: Objective.WasteManagement,
-      questionnaireData: { priority_objective: Objective.WasteManagement },
+      value: ThemeId.Waste,
+      questionnaireData: { priority_objective: ThemeId.Waste },
       title: { fr: 'Gestion des déchets' },
       label: { fr: '🗑 Mieux gérer mes déchets' },
       next: {
@@ -71,8 +71,8 @@ export const goals: Track = {
       }
     },
     {
-      value: Objective.TrainOrRecruit,
-      questionnaireData: { priority_objective: Objective.TrainOrRecruit },
+      value: ThemeId.RH,
+      questionnaireData: { priority_objective: ThemeId.RH },
       title: { fr: 'Formation' },
       label: { fr: '🧑‍🎓 Former ou recruter sur la transition écologique' },
       next: {
@@ -80,10 +80,19 @@ export const goals: Track = {
       }
     },
     {
-      value: Objective.EnvironmentalImpact,
-      questionnaireData: { priority_objective: Objective.EnvironmentalImpact },
+      value: ThemeId.Environmental,
+      questionnaireData: { priority_objective: ThemeId.Environmental },
       title: { fr: 'Impact environnemental' },
       label: { fr: '🌱 Mesurer mon impact environnemental et le réduire' },
+      next: {
+        default: TrackId.Results
+      }
+    },
+    {
+      value: ThemeId.Biodiversity,
+      questionnaireData: { priority_objective: ThemeId.Biodiversity },
+      title: { fr: 'Biodiversité' },
+      label: { fr: 'Préserver la biodiversité' },
       next: {
         default: TrackId.Results
       }
