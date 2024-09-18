@@ -1,6 +1,8 @@
 import { Color, Objective, PublicodeObjective, PublicodesKeys, ThemeId, ThemeType } from '@/types'
 import UsedTrack from '@/utils/track/usedTrack'
 import { Project } from '@tee/data'
+import { useProgramStore } from '@/stores/program'
+import { ComputedRef } from 'vue'
 
 export class Theme {
   static themes: ThemeType[] = [
@@ -136,5 +138,19 @@ export class Theme {
     }
 
     return PublicodeObjective[key]
+  }
+
+  static getObjectiveFromSelectedObjective(): ComputedRef<Objective | undefined> {
+    return computed(() => {
+      return useProgramStore().hasObjectiveTypeSelected() ? (useProgramStore().getObjectiveTypeSelected() as Objective) : undefined
+    })
+  }
+
+  static getObjectiveFromSelectedOrPriorityObjective(): ComputedRef<Objective | undefined> {
+    return computed(() => {
+      return useProgramStore().hasObjectiveTypeSelected()
+        ? (useProgramStore().getObjectiveTypeSelected() as Objective)
+        : (this.getObjectiveByValue(UsedTrack.getPriorityObjective()) ?? undefined)
+    })
   }
 }

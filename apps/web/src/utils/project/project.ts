@@ -6,7 +6,7 @@ export class Project {
   static readonly filter = (
     projects: Ref<ProjectType[] | undefined>,
     programs: Ref<ProgramData[] | undefined>,
-    objective: ComputedRef<Objective | ''>
+    objective: ComputedRef<Objective | undefined>
   ) => {
     return computed(() => {
       if (!projects.value) {
@@ -15,7 +15,7 @@ export class Project {
 
       return useProjectStore().getProjectsByObjectiveAndEligibility(
         projects.value,
-        objective.value !== '' ? objective.value : undefined,
+        objective.value ?? undefined,
         programs.value ?? undefined
       )
     })

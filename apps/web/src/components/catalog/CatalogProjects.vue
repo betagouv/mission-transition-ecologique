@@ -69,6 +69,7 @@ import Matomo from '@/utils/matomo'
 import { Project } from '@/utils/project/project'
 import { computed, onBeforeMount } from 'vue'
 import type { RouteLocationRaw } from 'vue-router'
+import { Theme } from '@/utils/theme'
 
 const projectStore = useProjectStore()
 const programStore = useProgramStore()
@@ -78,9 +79,7 @@ const projects = ref<ProjectType[]>()
 const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)
 
-const objective = computed(() => {
-  return programStore.hasObjectiveTypeSelected() ? (programStore.programFilters.objectiveTypeSelected as Objective) : ''
-})
+const objective = Theme.getObjectiveFromSelectedObjective()
 
 const filteredProjects = Project.filter(projects, programs, objective)
 

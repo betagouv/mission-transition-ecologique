@@ -315,7 +315,3 @@ const scrollToProgramForm = () => {
   }
 }
 </script>
-<style lang="scss" scoped>
-.program-title {
-}
-</style>
