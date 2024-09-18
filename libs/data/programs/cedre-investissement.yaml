@@ -4,8 +4,8 @@ promesse: >-
   investissements
 description: >-
   Vous avez bénéficié d'un accompagnement dans le cadre du dispositif CEDRE
-  premier pas ? Vous pouvez maintenant faire une demande de subvention pour vous
-  aider à financer vos investissements. Cette subvention concerne les dépenses
+  premier pas ? Vous pouvez maintenant faire une demande de subvention pour
+  financer vos investissements. Cette subvention concerne les dépenses
   matérielles ou immatérielles liées aux actions de transition écologique
   identifiées lors de votre accompagnement CEDRE.
 description longue: >-
@@ -94,8 +94,8 @@ objectifs:
       l'accompagnateur-expert.
   - description: >-
       Pour finaliser votre demande de subvention, envoyez une copie de votre
-      dossier par mail à [cedre@maregionsud.fr](https://cedre@maregionsud.fr)
-      avec pour objet "Investissement CEDRE Premiers pas".
+      dossier par mail à cedre@maregionsud.fr avec pour objet "Investissement
+      CEDRE Premiers pas".
 conditions d'éligibilité:
   taille de l'entreprise:
     - TPE et PME
@@ -158,7 +158,7 @@ publicodes:
       - questionnaire . objectif prioritaire . est former ou recruter
       - questionnaire . objectif prioritaire . est mon impact environnemental
       - questionnaire . objectif prioritaire . est l'écoconception
-      - questionnaire . objectif prioritaire . undefined
+      - questionnaire . objectif prioritaire . est préserver la biodiversité
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
       - région = Provence-Alpes-Côte d'Azur
