@@ -7,30 +7,25 @@
       <div class="fr-card__content fr-p-2v">
         <div class="fr-card__title theme-card-title">
           <div
-            class="fr-p-0 fr-hidden-xs fr-my-2v theme-divider"
+            class="fr-p-0 fr-hidden fr-unhidden-sm fr-my-2v theme-divider"
             :class="`fr-bg--${option.color}`"
           />
-          <TeeDsfrButton
-            class="fr-h5 fr-mb-1v fr-hidden-xs fr-btn--tertiary-no-outline"
-            size="sm"
-            :label="option.title"
-            @click="emit('selectTheme', option.value)"
-          />
-          <TeeDsfrButton
-            class="fr-h2 fr-mb-1v fr-hidden-sm fr-btn--tertiary-no-outline"
-            size="sm"
-            :label="option.title"
-            @click="emit('selectTheme', option.value)"
-          />
+          <div
+            class="fr-mb-1v"
+            :class="Breakpoint.isMobile() ? 'fr-h2' : 'fr-h5'"
+          >
+            {{ option.title }}
+          </div>
         </div>
-        <div class="fr-card__footer">
+        <div class="fr-card__desc">
           <ul class="fr-tags-group">
-            <ProjectButton
+            <TeeProjectButton
               v-for="project in option.highlightProjects"
               :key="project.id"
+              class="highlighted-project fr-mx-1v fr-my-1v inline-flex"
               :color="option.color"
-              :project="project"
               size="sm"
+              :project="project"
             />
             <span
               v-if="option.moreThanThree"
@@ -42,9 +37,8 @@
       </div>
     </div>
     <div
-      class="fr-hidden-xs fr-card__header"
+      class="fr-hidden fr-unhidden-sm fr-card__header"
       :class="`fr-card__header--${option.color}`"
-      @click="emit('selectTheme', option.value)"
     >
       <div class="fr-card__img fr-card__img--contain">
         <img
@@ -59,12 +53,12 @@
 </template>
 <script setup lang="ts">
 import { ThemeOption } from './ThemeSelect.vue'
+import Breakpoint from '@/utils/breakpoints'
 
 interface Props {
   option: ThemeOption
 }
 defineProps<Props>()
-const emit = defineEmits(['selectTheme'])
 </script>
 <style scoped>
 .theme-divider {
@@ -80,15 +74,15 @@ const emit = defineEmits(['selectTheme'])
   box-shadow: 1px 2px 8px 2px rgb(0 0 0 / 10%);
 }
 
-.theme-card:active {
-  box-shadow: 1px 2px 8px 2px rgb(0 0 0 / 10%);
-}
-
 .theme-card-title {
   height: 80px;
 
   @media (width >= 0) and (width <= 575px) {
     height: auto;
   }
+}
+
+.highlighted-project {
+  max-width: 90%;
 }
 </style>
