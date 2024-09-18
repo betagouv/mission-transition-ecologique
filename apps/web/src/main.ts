@@ -31,7 +31,7 @@ app.mount('#app')
 router.afterEach((to, _, failure) => {
   if (!failure) {
     nextTick(() => {
-      app.config.globalProperties['$posthog'].capturePageView(app, to)
+      posthogPlugin.capturePageView(app, to)
     })
   }
 })

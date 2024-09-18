@@ -28,7 +28,7 @@ export default {
   capturePageView(app: App, to: RouteLocationNormalized) {
     const posthogCookie = Cookie.getCookieByValue(CookieValue.Posthog)
     if (posthogCookie?.accepted) {
-      app.config.globalProperties.$posthog.capture('$pageview', { path: to.fullPath })
+      app.config.globalProperties['$posthog'].capture('$pageview', { path: to.fullPath })
     }
   }
 }
