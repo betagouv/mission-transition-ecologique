@@ -70,9 +70,11 @@ defineProps<Props>()
 .theme-card {
   height: 100%;
 }
+
 .theme-card-body {
   height: 75%;
 }
+
 .theme-card-header {
   height: 35%;
 }
