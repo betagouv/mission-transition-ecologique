@@ -1,9 +1,10 @@
 <template>
   <div
+    tabindex="0"
     class="fr-card fr-mx-md-0 fr-mx-2v theme-card"
     :class="`fr-bg-xs--${option.color}--light`"
   >
-    <div class="fr-card__body fr-py-1v">
+    <div class="fr-card__body theme-card-body fr-py-1v">
       <div class="fr-card__content fr-p-2v">
         <div class="fr-card__title theme-card-title">
           <div
@@ -37,10 +38,10 @@
       </div>
     </div>
     <div
-      class="fr-hidden fr-unhidden-sm fr-card__header"
+      class="fr-hidden fr-unhidden-sm fr-card__header theme-card-header"
       :class="`fr-card__header--${option.color}`"
     >
-      <div class="fr-card__img fr-card__img--contain">
+      <div class="fr-card__img fr-card__img--contain fr-m-auto">
         <img
           class="fr-responsive-img"
           height="200px"
@@ -69,8 +70,16 @@ defineProps<Props>()
 .theme-card {
   height: 100%;
 }
+.theme-card-body {
+  height: 75%;
+}
+.theme-card-header {
+  height: 35%;
+}
 
-.theme-card:hover {
+.theme-card:hover,
+.theme-card:active,
+.highlighted-project:active {
   box-shadow: 1px 2px 8px 2px rgb(0 0 0 / 10%);
 }
 
