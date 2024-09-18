@@ -1,31 +1,49 @@
 <template>
-  <div
-    v-if="project.longDescription.length > 0"
-    id="project-details-title"
-    class="fr-container fr-pt-3v fr-pb-4v"
+  <TeeContentBlock
+    v-for="(description, index) in projectDescription"
+    :id="`project-${index}-details-title`"
+    :key="getRandomId(index)"
+    class="fr-pt-3v fr-pb-6v"
+    :title="description.title"
+    :border-position="[BorderPosition.bottom]"
   >
-    <div class="fr-h3">❓ Qu'est ce que c'est ?</div>
-    <div v-html="markdownToHtml(project.longDescription)" />
-  </div>
-
-  <div
-    v-if="project.moreDescription.length > 0"
-    id="project-more-details-title"
-    class="fr-container fr-pt-4v fr-pb-3w"
-  >
-    <div class="fr-h3">📚 Pour aller plus loin</div>
-    <div v-html="markdownToHtml(project.moreDescription)" />
-  </div>
+    <template #content>
+      <div v-html="markdownToHtml(description.details)" />
+    </template>
+  </TeeContentBlock>
 </template>
 <script setup lang="ts">
-import { Project } from '@/types'
+import { BorderPosition, Project } from '@/types'
 import { Marked } from '@/utils/marked'
+import { getRandomId } from '@gouvminint/vue-dsfr'
 
 interface Props {
   project: Project
 }
 
-defineProps<Props>()
+const props = defineProps<Props>()
+
+interface ContentProps {
+  description: {
+    title: string
+    details: string
+  }
+  more: {
+    title: string
+    details: string
+  }
+}
+
+const projectDescription = ref<ContentProps>({
+  description: {
+    title: "❓ Qu'est ce que c'est ?",
+    details: props.project.longDescription
+  },
+  more: {
+    title: '📚 Pour aller plus loin',
+    details: props.project.moreDescription
+  }
+})
 
 const markdownToHtml = (text: string | undefined) => {
   if (text) {
@@ -34,11 +52,3 @@ const markdownToHtml = (text: string | undefined) => {
   return ''
 }
 </script>
-<style lang="scss" scoped>
-@use '@/assets/scss/setting';
-
-#project-details-title,
-#project-more-details-title {
-  border-bottom: solid 1px var(--border-default-grey);
-}
-</style>
