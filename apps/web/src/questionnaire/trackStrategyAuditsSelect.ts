@@ -1,4 +1,4 @@
-import { TrackComponent, TrackId, Objective, Track, TrackCategory } from '@/types'
+import { TrackComponent, TrackId, ThemeId, Track, TrackCategory } from '@/types'
 
 export enum StrategyAuditsSelect {
   CarbonAudit = 'bilan-carbone',
@@ -17,7 +17,7 @@ export const strategyAuditsSelect: Track = {
   category: TrackCategory.myStrategy,
   title: { fr: 'Quels audits' },
   label: { fr: 'Le ou lesquels ?' },
-  objective: Objective.EnvironmentalImpact,
+  theme: ThemeId.Environmental,
   interface: {
     component: TrackComponent.Buttons
   },

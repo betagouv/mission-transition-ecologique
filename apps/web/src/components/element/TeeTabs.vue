@@ -14,7 +14,7 @@
           <!-- @slot Slot nommé `tab-items` pour y mettre des Titres d’onglets personnalisés. S’il est rempli, la props `tabTitles° n’aura aucun effet -->
           <slot name="tab-items">
             <DsfrTabItem
-              v-for="(tabTitle, index) in tabTitles"
+              v-for="(tabTitle, index) in titles"
               :key="index"
               :icon="tabTitle.icon"
               :panel-id="tabTitle.panelId || `${getIdFromIndex(index)}-panel`"
@@ -36,8 +36,8 @@
     <DsfrTabContent
       v-for="(tabContent, index) in tabContents"
       :key="index"
-      :panel-id="tabTitles?.[index]?.panelId || `${getIdFromIndex(index)}-panel`"
-      :tab-id="tabTitles?.[index]?.tabId || getIdFromIndex(index)"
+      :panel-id="titles?.[index]?.panelId || `${getIdFromIndex(index)}-panel`"
+      :tab-id="titles?.[index]?.tabId || getIdFromIndex(index)"
       :selected="selected === index"
       :asc="ascendant"
     >
@@ -52,15 +52,27 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { ref, onMounted, onUnmounted, reactive } from 'vue'
+import { BreakpointNameType } from '@/types'
+import Breakpoint from '@/utils/breakpoints'
 import { DsfrTabItem, DsfrTabContent, type DsfrTabsProps, getRandomId, DsfrTabs } from '@gouvminint/vue-dsfr'
 
-export type { DsfrTabsProps }
+export interface TeeDsfrTabs extends Omit<DsfrTabsProps, 'tabTitles'> {
+  tabTitles?: { title: TitleTab[] }[]
+}
 
-const props = withDefaults(defineProps<DsfrTabsProps>(), {
+interface TitleTab {
+  title: string
+  icon?: string
+  size?: BreakpointNameType
+  panelId?: string
+  tabId?: string
+}
+
+const props = withDefaults(defineProps<TeeDsfrTabs>(), {
   tabContents: () => [],
   tabTitles: () => [],
-  initialSelectedIndex: 0
+  initialSelectedIndex: 0,
+  tabListName: ''
 })
 
 const { ascendant, selected } = useTabs(true, props.initialSelectedIndex || 0)
@@ -73,7 +85,18 @@ const generatedIds: Record<string, string> = reactive({})
 const resizeObserver = ref<ResizeObserver | null>(null)
 const $el = ref<HTMLElement | null>(null)
 const tablist = ref<HTMLUListElement | null>(null)
+const titles = computed(() => {
+  const filteredTitles =
+    props.tabTitles?.map((tab) => {
+      return tab.title.filter((titleItem) => {
+        if (typeof titleItem !== 'string') {
+          return (titleItem.size && Breakpoint.isLargerOrEqual(titleItem.size)) || (!titleItem.size && Breakpoint.isMobile())
+        }
+      })
+    }) || []
 
+  return filteredTitles.flat()
+})
 /*
  * Need to reimplement tab-height calc
  * @see https://github.com/GouvernementFR/dsfr/blob/main/src/component/tab/script/tab/tabs-group.js#L117

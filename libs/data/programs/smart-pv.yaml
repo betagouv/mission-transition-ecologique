@@ -1,0 +1,126 @@
+titre: Plan Solaire Smart PV
+promesse: Financez votre projet d'autoconsommation d'énergie photovoltaïque
+description: >-
+  La Région Sud soutient financièrement les projets visant l'autoconsommation
+  d'énergie photovoltaïque. Que vous envisagiez un projet individuel, pour
+  consommer l’électricité produite localement ou collectif, en vue de la
+  partager, ce dispositif peut vous aider à concrétiser votre projet. Cette
+  subvention peut participer au financement de vos investissements matériels
+  (panneaux, rails, câblage...) ou à l'aide à la réalisation (pose, montage
+  financier).
+description longue: >-
+  Les investissements éligibles comprennent :
+
+
+  •  la fourniture (panneaux, rails, onduleurs, stockage, le cas échéant),
+
+  •  le câblage,
+
+  •  le monitoring,
+
+  •  les fonctions smart grid,
+
+  •  la gestion d’énergie et la pose,
+
+  •  les frais juridiques et administratifs en lien avec le montage de
+  l’opération. Le coût des structures d’ombrières est plafonné à 0,50 €/Wc.
+
+
+  En cas de besoin, pour l’accueil de l’installation photovoltaïque, de travaux
+  annexes nécessaires en toiture, du type « Solaire-ready » (notamment
+  désamiantage, renforcement de structure, reprise d’étanchéité, isolation de
+  toiture), vous pouvez solliciter le financement "Plan Solaire Ready".
+illustration: images/TEE_ampoule.png
+opérateur de contact: Région Sud PACA
+url: >-
+  https://www.maregionsud.fr/vos-aides/detail/plan-solaire-smart-pv-en-soutien-de-lautoconsommation-photovoltaique
+nature de l'aide: financement
+montant du financement: 20 à 25 % de l’assiette éligible du projet, dans un maximum de 100 000 €
+activable en autonomie: oui
+objectifs:
+  - description: >-
+      Faites le dépôt de la demande par voie dématérialisée sur le site de la
+      Région Sud. Choisissez la "subvention pour investissement".
+    liens:
+      - lien: https://subventionsenligne.maregionsud.fr/
+        texte: Déposer une demande
+  - description: Votre dossier est évalué par une commission.
+  - description: >-
+      Si vous êtes sélectionnez pour obtenir une subvention, recevez de premiers
+      versements et commencez vos travaux pour réaliser votre projet.
+  - description: >-
+      Vous devrez réaliser un rapport final de réalisation du projet pour
+      justifier les éléments techniques, financiers et juridiques engagés.
+  - description: Vous recevez le solde de la subvention.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Provence-Alpes-Côte d'Azur
+  secteur d'activité:
+    - Tous secteurs d'activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - >-
+      Votre projet doit se situer sur des sites raccordés à un réseau
+      d’électricité public ou privé (réseau fermé de distribution) ou à un
+      microgrid.
+    - Votre projet doit afficher une puissance &gt; à 10 kWc,
+    - >-
+      Votre projet doit être au minimum de 10% (taux d’autoproduction ou taux de
+      couverture),
+    - >-
+      Votre projet doit être avec et sans injection de surplus (en cas de vente
+      de surplus, elle doit se faire hors Obligation d'Achat (OA) et financer
+      des dispositifs d'efficacité énergétique),
+    - >-
+      Votre projet doit atteindre un temps de retour sur investissement dans une
+      plage de 7 à 15 ans toute(s) subventions(s) confondue(s),
+    - "respecter 5 critères\_:\\"
+    - − stratégie énergétique,\
+    - − analyse économique,\
+    - >-
+      − origine du matériel et des prestations (les circuits courts seront
+      favorisés),\
+    - − qualité environnementale, suivi de performance et pédagogie,\
+    - − montage juridico-financier.
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est ma performance énergétique
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Provence-Alpes-Côte d'Azur
