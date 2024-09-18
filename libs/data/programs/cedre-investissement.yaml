@@ -158,7 +158,7 @@ publicodes:
       - questionnaire . objectif prioritaire . est former ou recruter
       - questionnaire . objectif prioritaire . est mon impact environnemental
       - questionnaire . objectif prioritaire . est l'écoconception
-      - questionnaire . objectif prioritaire . undefined
+      - questionnaire . objectif prioritaire . est préserver la biodiversité
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
       - région = Provence-Alpes-Côte d'Azur

@@ -14,6 +14,7 @@ class FrontConverter {
     [PublicodeObjective.TrainOrRecruit]: ThemeId.RH,
     [PublicodeObjective.MakeSavings]: ThemeId.Environmental,
     [PublicodeObjective.DurablyInvest]: ThemeId.Environmental,
+    [PublicodeObjective.Biodiversity]: ThemeId.Biodiversity,
     [PublicodeObjective.UnknownYet]: ThemeId.Environmental
   }
 

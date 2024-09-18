@@ -59,6 +59,13 @@ export class Theme {
       tagLabel: '🌱 analyses',
       image: '/images/thematique/thematique-strategie.svg',
       color: Color.blue
+    },
+    {
+      id: ThemeId.Biodiversity,
+      title: 'Biodiversité',
+      tagLabel: '⚡️ biodiversité',
+      image: '/images/thematique/thematique-energie.svg',
+      color: Color.green
     }
   ]
 
