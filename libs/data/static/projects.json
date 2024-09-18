@@ -453,7 +453,7 @@
     "slug": "plan-action-eau",
     "title": "Plan d’action eau",
     "nameTag": "🎯 plan d’action eau",
-    "shortDescription": "Amélioration de la performance environnementale de votre produit ou service.",
+    "shortDescription": "Il met en évidence vos postes de consommation d'eau les plus importants et les pistes de solutions.",
     "image": "/images/projet/plan-action-eau.webp",
     "longDescription": "Raréfaction de l'eau, restriction des consommations, augmentation des coûts : maîtriser sa consommation d’eau est un enjeu essentiel pour les entreprises.\n\nComment agir au sein de votre entreprise pour poursuivre votre activité et faire des économies d’eau ?\n\nFaites-vous accompagner par un expert, et réalisez un diagnostic global de vos flux (énergie, déchets, eau...) ou une étude ciblée de votre consommation d'eau.",
     "moreDescription": "- [**Eau secours, demain tous à sec**](https://www.qqf.fr/infographie/eau-secours-demain-tous-a-sec/), une infographie *\"Qu'est-ce qu'on fait ?!\"* proposée par l'ADEME.\n- [**10 conseils aux entreprises pour une sobriété en eau**](https://www.cci.fr/actualites/10-conseils-aux-entreprises-pour-une-sobriete-en-eau). Une fiche conseil proposée par la CCI, Chambre de Commerce et d’Industrie.",
@@ -818,7 +818,7 @@
     "slug": "ecoconception",
     "title": "Éco-conception d’un produit ou service",
     "nameTag": "🔁 écoconception",
-    "shortDescription": "Réduisez les impacts de votre produit ou service à toutes les étapes de son cycle de vie.",
+    "shortDescription": "Réduire les impacts de votre produit ou service à toutes les étapes de son cycle de vie.",
     "image": "/images/projet/ecoconception.webp",
     "longDescription": "La démarche d'écoconception (ou conception écologique) est une approche de développement des produits et services respectueuse de l'environnement.\n\nElle consiste à analyser l'ensemble du cycle de vie d'un produit ou d'un service pour identifier comment diminuer son impact environnemental : extraction des matières premières, fabrication, utilisation, rejet dans les milieux naturels en fin de vie, etc.\n\nUne approche d'écoconception est nécessaire pour se questionner sur la fin de vie de vos produits et réorienter judicieusement vos choix de conception. Cela peut passer par exemple par un choix de matières premières plus robustes pour allonger la durée de vie de vos produits, anticiper la réparation ou la revalorisation des matières.\n\nIl s'agit d'une démarche encouragée par la loi anti-gaspillage pour une économie circulaire (AGEC) pour permettre aux entreprises de faire évoluer leur modèle de production.",
     "moreDescription": "- [**Gagnez en performance avec l’écoconception**](https://agirpourlatransition.ademe.fr/entreprises/ecoconception), une fiche ressource proposée par l’ADEME.\n- [**Les lignes directrices à suivre pour la réalisation d’un diagnostic d’éco-conception**](https://librairie.ademe.fr/dechets-economie-circulaire/4169-lignes-directrices-diagnostic-ecoconception.html)**.**\n- [**Analyse du cycle de vie**](https://bigmedia.bpifrance.fr/nos-dossiers/analyse-du-cycle-de-vie-definition-objectifs-etapes-de-realisation) : définition, objectifs, étapes de réalisation.",
@@ -897,7 +897,7 @@
     "slug": "seche-linge",
     "title": "Sèche-linge basse consommation",
     "nameTag": "🌬 sèche-linge",
-    "shortDescription": "Un sèche-linge professionnel de grande efficacité énergétique vous permet de réduire vos factures et de limiter votre empreinte carbone.",
+    "shortDescription": "Un sèche-linge professionnel de grande efficacité énergétique vous permet de réduire votre consommation d'énergie.",
     "image": "/images/projet/seche-linge.webp",
     "longDescription": "Un sèche-linge professionnel de grande efficacité énergétique est un sèche-linge dont l'énergie de séchage est inférieure à 0,3 kWh/kg de linge et dont le cycle de séchage ne dépasse pas 90 minutes. Cela concerne les sèche-linge à condensation et équipés d’une pompe à chaleur. Mettez au rebut vos anciens appareils à évacuation au profit d'un sèche-linge économe en énergie, et réduisez votre consommation électrique.",
     "moreDescription": "- [Les critères de sélection d'un sèche-linge pro](https://www.guidetopten.fr/grand-public/selection-criteria/criteres-de-selection-seche-linge-professionnels), proposé par Guide Topten, un comparateur soutenu par l'ADEME.\n- [Une sélection des sèche-linge les plus performants](https://www.guidetopten.fr/grand-public/selection-criteria/criteres-de-selection-seche-linge-professionnels) proposé par Guide Topten, un comparateur soutenu par l'ADEME.",
@@ -907,8 +907,7 @@
     ],
     "mainTheme": "energy",
     "programs": [
-      "fonds-tourisme-durable",
-      "cedre-investissement"
+      "fonds-tourisme-durable"
     ],
     "linkedProjects": [],
     "priority": "190"
@@ -931,8 +930,7 @@
       "etude-biodechets",
       "etude-gaspillage-alimentaire",
       "fonds-tourisme-durable",
-      "gestion-des-biodechets",
-      "cedre-investissement"
+      "gestion-des-biodechets"
     ],
     "linkedProjects": [],
     "priority": "240"
@@ -942,7 +940,7 @@
     "slug": "petite-refrigeration",
     "title": "Frigo basse consommation",
     "nameTag": "❄ frigo",
-    "shortDescription": "Des appareils de réfrigération de grand efficacité énergétique vous permettent de réduire votre consommation électrique et de limiter votre empreinte carbone.",
+    "shortDescription": "Des appareils de réfrigération de grand efficacité énergétique vous permettent de réduire votre consommation électrique.",
     "image": "/images/projet/frigo.webp",
     "longDescription": "Vitrines réfrigérées, petits frigos, armoires à boissons, comptoirs, congélateurs à glaces... : les meubles frigorifiques trop anciens sont source de gaspillage énergétique. Leur remplacement par des équipements neufs ou d'occasion de meilleur rendement énergétique peut réduire considérablement votre consommation et diminuer votre impact climatique.",
     "moreDescription": "- [**Diagnostic économies d'énergie réfrigération dans l'industrie**](https://librairie.ademe.fr/produire-autrement/712-diagnostic-economies-d-energie-refrigeration-dans-l-industrie.html), un guide de l'ADEME.\n- [**CO2 ou NH3 : Quel système de froid choisir ?**](https://www.greentechjournal.fr/refrigeration-ecologique/#La_disponibilite_des_systemes_de_froid_ecologiques), par GreenTech Journal.\n- [**Frigo basse consommation : gardez votre facture d’électricité au frais,**](https://www.baisseleswatts.fr/actualites/equipement-energetique/refrigerateur-et-congelateur-optimisez-votre-consommation) un article de Baisse les watts.",
@@ -952,8 +950,7 @@
     ],
     "mainTheme": "energy",
     "programs": [
-      "fonds-tourisme-durable",
-      "cedre-investissement"
+      "fonds-tourisme-durable"
     ],
     "linkedProjects": [],
     "priority": "210"
@@ -973,8 +970,7 @@
     "mainTheme": "water",
     "programs": [
       "fonds-tourisme-durable",
-      "programme-ecod-o",
-      "cedre-investissement"
+      "programme-ecod-o"
     ],
     "linkedProjects": [],
     "priority": "120"
@@ -988,13 +984,10 @@
     "image": "/images/projet/vegetalisation.webp",
     "longDescription": "La végétalisation est un recours efficace et économe en énergie pour limiter la hausse de la température de vos bâtiments en été. Ce rafraichissement s'explique par plusieurs raisons :\n\n- Les plantes libèrent de l'eau par le processus d'évapotranspiration, ce qui contribue à abaisser la température ambiante.\n- Les arbres et les grandes plantes fournissent de l'ombre, réduisant ainsi l'ensoleillement direct sur les sols et les bâtiments.\n- En remplaçant des surfaces comme le béton par de la végétation, on limite l'absorption de chaleur par ces matériaux qui retiennent la chaleur.\n- Les plantes filtrent les polluants de l'air et produisent de l'oxygène, ce qui contribue à créer un environnement plus sain et plus agréable.\n- Les espaces verts favorisent la biodiversité, ce qui peut contribuer à un meilleur équilibre des écosystèmes locaux, aidant à maintenir des températures agréables.\n\nLa végétalisation est une solution vertueuse qui est se présente comme un excellent moyen pour limiter l'usage de la climatisation et ainsi réduire votre consommation d'énergie. Elle peut être mise en place via des jardins partagés, des plans d’eau, des tapis de plantes grasses, des plantes grimpantes ou comestibles sur vos façades, des prairies végétales ou des potagers sur les toits de vos bâtiments.",
     "moreDescription": "- [**Des exemples de projets de végétalisation inspirants**](https://plusfraichemaville.fr/projet) proposés par Plus fraiche ma ville",
-    "themes": [
-      "biodiversite"
-    ],
+    "themes": [],
     "mainTheme": "biodiversite",
     "programs": [
-      "fonds-tourisme-durable",
-      "nature-ta-ville"
+      "fonds-tourisme-durable"
     ],
     "linkedProjects": [],
     "priority": "230"
@@ -1013,8 +1006,7 @@
     ],
     "mainTheme": "building",
     "programs": [
-      "fonds-tourisme-durable",
-      "cedre-investissement"
+      "fonds-tourisme-durable"
     ],
     "linkedProjects": [],
     "priority": "130"
@@ -1034,8 +1026,7 @@
     "mainTheme": "mobility",
     "programs": [
       "fonds-tourisme-durable",
-      "investissement-velotourisme",
-      "sites-touristiques-exemplaires"
+      "investissement-velotourisme"
     ],
     "linkedProjects": [],
     "priority": "250"
@@ -1049,18 +1040,12 @@
     "image": "/images/projet/biodiversite.webp",
     "longDescription": "La Stratégie nationale biodiversité 2030 promeut les initiatives pour faire progresser la prise en compte de la biodiversité dans les stratégies des entreprises. Il s'agit à la fois de minimiser l'impact des entreprises sur les écosystèmes et de renforcer la résilience de leur activité au changement climatique. \\\nLa préservation ou la restauration d'espèces en danger, de faune et de flore, réduire les pollutions, ramener de la nature en ville... sont autant de propositions qui visent à renforcer les liens avec les écosystèmes.",
     "moreDescription": "- [**Entreprises engagées pour la nature**](https://biodiversite.gouv.fr/sites/default/files/2024-03/OFB_GUIDE_EEN_2023.pdf), un guide gouvernemental.\n- [**9 mesures de la Stratégie nationale biodiversité 2030**](https://biodiversite.gouv.fr/les-mesures-de-la-snb?field_target%5B196%5D=196&op=) pour les entreprises.",
-    "themes": [
-      "biodiversite"
-    ],
+    "themes": [],
     "mainTheme": "biodiversite",
     "programs": [
       "fonds-tourisme-durable",
       "sobriete-et-resilience-des-territoires",
-      "certification-agriculture-biologique",
-      "cedre-premier-pas",
-      "entreprises-engagees-nature",
-      "charte-zero-dechet-plastique",
-      "mecenaturel"
+      "certification-agriculture-biologique"
     ],
     "linkedProjects": [],
     "priority": "200"
@@ -1079,8 +1064,7 @@
     ],
     "mainTheme": "waste",
     "programs": [
-      "fonds-tourisme-durable",
-      "cedre-investissement"
+      "fonds-tourisme-durable"
     ],
     "linkedProjects": [],
     "priority": "130"
@@ -1105,8 +1089,7 @@
       "fonds-tourisme-durable",
       "diag-eco-flux",
       "performa-environnement",
-      "tpe-gagnantes-sur-tous-les-couts",
-      "cedre-investissement"
+      "tpe-gagnantes-sur-tous-les-couts"
     ],
     "linkedProjects": [],
     "priority": "130"
