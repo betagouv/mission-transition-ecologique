@@ -20,7 +20,6 @@ const programFrDict = {
     projectExamples: 'Quelques exemples de projets financés par cette aide :',
     programAmIEligible: "Conditions d'éligibilité",
     form: {
-      label: 'Contactez un conseiller',
       hint: '👋 Envoyez votre demande, un conseiller {operator} vous contactera prochainement',
       needs: `Bonjour,
 

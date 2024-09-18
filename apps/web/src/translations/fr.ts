@@ -18,6 +18,7 @@ export const frDict = {
     selected: 'Sélectionné'
   },
   form: {
+    label: 'Contactez un conseiller',
     mandatory: 'Champs obligatoires',
     sent: 'Votre message a bien été envoyé !',
     sorryError: 'Nous sommes désolés, une erreur est survenue.',

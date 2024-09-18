@@ -76,11 +76,18 @@
     </div>
     <div
       id="project-contact"
+      ref="TeeProjectFormContainer"
       class="fr-tee-form-block fr-p-4v"
     >
-      <ProjectForm
+      <TeeForm
         v-if="project"
-        :project="project"
+        :form-container-ref="TeeProjectFormContainer"
+        :form-type="FormType.Project"
+        :form="Opportunity.getProjectFormFields(project)"
+        :data-id="project.id.toString()"
+        :data-slug="project.slug"
+        :hint="Translation.t('project.form.hint')"
+        :error-email-subject="Translation.t('form.errorEmail.subject', { project: props.project.title })"
       />
     </div>
   </DsfrAccordion>
@@ -88,12 +95,13 @@
 <script setup lang="ts">
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { useProgramStore } from '@/stores/program'
-import { type ProgramData, TrackId, Project, QuestionnaireRoute, ProgramAidType } from '@/types'
+import { type ProgramData, TrackId, Project, QuestionnaireRoute, ProgramAidType, FormType } from '@/types'
 import Contact from '@/utils/contact'
 import { RouteName } from '@/types/routeType'
 import { type RouteLocationRaw } from 'vue-router'
 import { useNavigationStore } from '@/stores/navigation'
 import Translation from '@/utils/translation'
+import Opportunity from '@/utils/opportunity'
 
 interface Props {
   project: Project
@@ -103,6 +111,7 @@ const props = defineProps<Props>()
 const programStore = useProgramStore()
 const navigationStore = useNavigationStore()
 const isCatalogDetail = navigationStore.isCatalogProjectDetail()
+const TeeProjectFormContainer = ref<HTMLElement | null | undefined>(null)
 
 const expandedId = ref<string | undefined>('project-aids')
 const programs = ref<ProgramData[]>()

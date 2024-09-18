@@ -1,8 +1,7 @@
-import { CalloutType } from '@/types'
+import { CalloutType, FieldType } from '@/types'
+import { RouteName } from '@/types/routeType'
 
-export type ProjectFormType = FormType & { project: StringFieldInputType }
-export type OpportunityFormType = FormType
-export interface FormType {
+export interface FormDataType {
   [key: string]: StringFieldInputType | MandatoryStringFieldFormType | BooleanFieldInputType | ValidatedStringFieldInputType
   name: StringFieldInputType
   surname: StringFieldInputType
@@ -16,9 +15,18 @@ export interface FormType {
 
 type DefaultFieldFormType = {
   required: true
+  type: FieldType
   isValid: boolean | undefined
+  hidden?: boolean
   label?: string
   hint?: string
+  hintLink?: {
+    route: RouteName
+    text: string
+  }
+  wrapperClass?: string
+  rows?: number
+  colSize?: number
   callOut?: InputCalloutType
 }
 
