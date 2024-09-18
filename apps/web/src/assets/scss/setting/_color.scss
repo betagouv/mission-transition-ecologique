@@ -32,7 +32,6 @@ $colors: (
   "blue": (
     "color": $base-blue,
     "color-with-background": var(--text-inverted-blue-france),
-    "is-inverted": true,
   ),
   "blue-light": (
     "color": $base-blue-light,
@@ -45,11 +44,9 @@ $colors: (
   "purple" : (
     "color": $base-purple,
     "color-with-background": var(--text-inverted-blue-france),
-    "is-inverted": true,
   ),
   "blue-france": (
     "color-with-background": var(--text-inverted-blue-france),
     "color": color.$blue-france,
-    "is-inverted": true
   )
 );
