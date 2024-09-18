@@ -14,39 +14,41 @@ $base-purple: #6a62f4;
 $base-red: #fca081;
 $base-yellow: #facf35;
 $base-yellow-light: #fef7da;
+$blue-france-inverted: var(--text-inverted-blue-france);
+
 $colors: (
   "white": color.$white,
   "black": color.$black,
   "yellow": (
     "color": $base-yellow,
-    "color-with-background": var(--text-action-high-blue-france)
+    "color-with-background": color.$blue-france
   ),
   "yellow-light": (
     "color": $base-yellow-light,
-    "color-with-background": var(--text-action-high-blue-france)
+    "color-with-background": color.$blue-france
   ),
   "green": (
     "color": $base-green,
-    "color-with-background": var(--text-action-high-blue-france)
+    "color-with-background": $blue-france-inverted
   ),
   "blue": (
     "color": $base-blue,
-    "color-with-background": var(--text-inverted-blue-france),
+    "color-with-background": $blue-france-inverted,
   ),
   "blue-light": (
     "color": $base-blue-light,
-    "color-with-background": var(--text-action-high-blue-france)
+    "color-with-background": color.$blue-france
   ),
   "red": (
     "color": $base-red,
-    "color-with-background": var(--text-action-high-blue-france)
+    "color-with-background": color.$blue-france
   ),
   "purple" : (
     "color": $base-purple,
-    "color-with-background": var(--text-inverted-blue-france),
+    "color-with-background": $blue-france-inverted,
   ),
   "blue-france": (
-    "color-with-background": var(--text-inverted-blue-france),
+    "color-with-background": $blue-france-inverted,
     "color": color.$blue-france,
   )
 );
