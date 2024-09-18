@@ -99,4 +99,7 @@ export default class Opportunity {
     })
     return baseFields
   }
+  static getOtherProjectFormFields(): FormDataType {
+    return this.getBaseOpportunityFormFields()
+  }
 }

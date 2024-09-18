@@ -15,7 +15,8 @@ export interface ContactDetails {
 
 export enum FormType {
   Program = 'program',
-  Project = 'project'
+  Project = 'project',
+  OtherProject = 'other-project'
 }
 
 export interface OpportunityDetails {
