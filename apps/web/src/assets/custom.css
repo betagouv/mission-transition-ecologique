@@ -537,13 +537,6 @@ code {
 
 /*! media sm */
 @media screen and (min-width: 0em) and (max-width: 36em) {
-  .fr-hidden-xs {
-    display: none !important;
-  }
-  .fr-unhidden-xs {
-    display: inherit !important;
-  }
-
   .fr-sr-only-xs {
     position: absolute;
     width: 1px;

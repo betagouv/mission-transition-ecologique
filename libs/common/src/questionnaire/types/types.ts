@@ -105,6 +105,10 @@ export enum PublicodesKeys {
   SectorActivity = "entreprise . secteur d'activité . est "
 }
 
+export enum FiltersKeys {
+  Theme = 'theme'
+}
+
 export enum PublicodeObjective {
   EnvironmentalImpact = PublicodesKeys.Goal + Objective.EnvironmentalImpact,
   EnergyPerformance = PublicodesKeys.Goal + Objective.EnergyPerformance,

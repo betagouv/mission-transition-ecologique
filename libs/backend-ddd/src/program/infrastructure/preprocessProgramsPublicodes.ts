@@ -1,8 +1,7 @@
-import { type ProgramType } from '@tee/data'
+import { type ProgramType, ThemeId } from '@tee/data'
 import { type PublicodesInputData, PublicodesQuestionnaireRoute, SectorToNAFSection, NAF1Letters } from './types'
 import {
   BuildingProperty,
-  Objective,
   ObjectiveChecker,
   PublicodeObjective,
   PublicodesKeys,
@@ -80,7 +79,7 @@ const setSectors = (publicodesData: PublicodesInputData, questionnaireData: Ques
 const setObjectives = (publicodesData: PublicodesInputData, questionnaireData: QuestionnaireData) => {
   if (questionnaireData.priority_objective) {
     // "J'ai un objectif précis en tête"
-    for (const objective of Object.values(Objective)) {
+    for (const objective of Object.values(ThemeId)) {
       const publicodeObjectiveKey = 'questionnaire . objectif prioritaire . est ' + objective
       publicodesData[publicodeObjectiveKey] = objective === questionnaireData.priority_objective ? YesNo.Yes : YesNo.No
     }
