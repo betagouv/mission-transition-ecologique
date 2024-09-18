@@ -29,8 +29,8 @@ const props = withDefaults(defineProps<Props>(), {
 }
 
 a {
-  box-shadow: inset 0 0 0 1px $base-purple;
-  color: $base-purple;
+  box-shadow: inset 0 0 0 1px $purple;
+  color: $purple;
   text-align: center;
   font-size: 0.875rem;
 }

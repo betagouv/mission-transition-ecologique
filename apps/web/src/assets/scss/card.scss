@@ -91,7 +91,7 @@
   }
 
   &-priority {
-    border: solid 0.20rem setting.$base-green;
+    border: solid 0.20rem setting.$green;
 
     &--highlighted {
       .fr-card__header::before {
@@ -100,7 +100,7 @@
         top: 0;
         right: 0;
         border-left: 5rem solid transparent;
-        border-top: 5rem solid setting.$base-green;
+        border-top: 5rem solid setting.$green;
         width: 0;
       }
     }
@@ -117,7 +117,7 @@
   }
 
   .fr-badge--success {
-    background-color: setting.$base-green;
+    background-color: setting.$green;
     color: setting.$white
   }
 

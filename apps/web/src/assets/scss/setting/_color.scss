@@ -7,39 +7,39 @@ $opacities: (
 );
 
 // !!!important!! New color added need to be added to the typescript enum `packages/web/src/types/color.ts`
-$base-yellow: #facf35;
-$base-red: #fca081;
-$base-purple: #6a62f4;
-$base-green: #1ebe8e;
-$base-blue-france: #001891;
-$base-grey: #777;
+$yellow: #facf35;
+$red: #fca081;
+$purple: #6a62f4;
+$green: #1ebe8e;
+$blue-france: #001891;
+$grey: #777;
 
 $colors: (
   "white": color.$white,
   "black": color.$black,
   "yellow": (
-    "color": $base-yellow,
+    "color": $yellow,
     "color-with-background": var(--text-action-high-blue-france)
   ),
   "red": (
-    "color": $base-red,
+    "color": $red,
     "color-with-background": var(--text-action-high-blue-france)
   ),
   "purple" : (
-    "color": $base-purple,
+    "color": $purple,
     "color-with-background": var(--text-inverted-blue-france)
   ),
   "green": (
-    "color": $base-green,
+    "color": $green,
     "color-with-background": var(--text-action-high-blue-france)
   ),
   "blue-france": (
-    "color": $base-blue-france,
+    "color": $blue-france,
     "color-with-background": var(--text-inverted-blue-france),
     "is-inverted": true
   ),
   "grey": (
-    "color": $base-grey,
+    "color": $grey,
     "color-with-background": var(--text-action-high-blue-france)
   ),
 );
