@@ -1,0 +1,164 @@
+titre: CEDRE Investissement
+promesse: >-
+  Entreprises de la communauté CEDRE, bénéficiez d'une subvention pour vos
+  investissements
+description: >-
+  Vous avez bénéficié d'un accompagnement dans le cadre du dispositif CEDRE
+  premier pas ? Vous pouvez maintenant faire une demande de subvention pour vous
+  aider à financer vos investissements. Cette subvention concerne les dépenses
+  matérielles ou immatérielles liées aux actions de transition écologique
+  identifiées lors de votre accompagnement CEDRE.
+description longue: >-
+  Sont éligibles : 
+
+
+  • Les dépenses liées au déploiement, à la mise en œuvre et à la continuité du
+  plan d’actions défini lors des parcours.
+
+  • Les dépenses portant sur des projets d’investissements liés à des dépenses.
+  matérielles et/ou immatérielles prenant en compte les enjeux de la transition
+  écologique et énergétique et de la décarbonation.
+
+
+  À titre d'exemple (non exhaustif) : 
+
+
+  • Équipements économes en ressources.
+
+  • Équipements permettant un meilleur tri des déchets ou de l’incorporation de
+  matières premières secondaires.
+
+  • Équipements de vrac.
+
+  • Équipements favorisant l'efficacité énergétique (machines moins énergivores,
+  éclairage plus performant, isolation).
+
+  • Récupérateurs d’eau.
+
+  • Études préalables à des investissements.
+
+  • Le matériel d’occasion est éligible, s’il est au prix du marché de
+  l’occasion et sur présentation d'une attestation d’achat accompagnée de la
+  facture initiale.
+
+
+  Sont exclus : 
+
+
+  • Travaux de construction de bâtiments, extensions, voirie.
+
+  • Travaux d’aménagement sauf ceux favorisant explicitement les économies
+  d’énergie avec des précisions sur les économies attendues.
+
+  • Climatisations.
+
+  • Acquisition de terrains ou de bâtiments.
+
+  • Équipements informatiques.
+
+  • Acquisitions effectuées par crédit-bail.
+
+  • Dépenses de R&D ou développement expérimental.
+
+  • Toutes dépenses de fonctionnement, y compris les dépenses de personnel ou
+  d’abonnements pouvant être liées au projet d’investissement.
+
+
+  • Les investissements portant sur l'installation de panneaux photovoltaïques,
+  pompes à chaleur géothermiques et le solaire thermique collectif sont
+  également exclus. Des dispositifs spécifiques sont mobilisables.
+illustration: images/TEE_ampoule.png
+opérateur de contact: Région Sud PACA
+url: https://www.maregionsud.fr/vos-aides/detail/cedre-investissement
+nature de l'aide: financement
+montant du financement: 7 000 € sur la base de dépenses d'un montant minimum de 10 000 € HT
+objectifs:
+  - description: >-
+      Vérifiez l’éligibilité de votre projet en parcourant la documentation et
+      en contactant un conseiller.
+    liens:
+      - lien: https://www.maregionsud.fr/vos-aides/detail/cedre-investissement
+        texte: Conditions éligibilité et financement
+  - description: >-
+      Créez ou connectez-vous à votre compte Région Sud pour réaliser votre
+      demande de subvention en ligne. Attention, transmettez votre dossier au
+      moins 3 mois avant le démarrage de vos investissements.
+    liens:
+      - lien: >-
+          https://sudconnect.maregionsud.fr/auth/realms/citoyen/protocol/openid-connect/auth?client_id=subventions-portail&redirect_uri=https%3A%2F%2Fsubventionsenligne.maregionsud.fr%2F&response_type=code&scope=openid&code_challenge=BvbZqS0TkFs0HXR3mJ7z--gI4ZmCKyJkriN8_PKk_wY&code_challenge_method=S256&state=OpenIdConnect.AuthenticationProperties%3D66mVFGAmopKRcP8-Sq00VKyfsH-vzqhM1y3mTn93k-5rbjjVAJSOBkCGZumW96GVcNeJWhlomf40A78uYVdWTOMTLzJPEIphtl4WN4ZeY9wotgGWhvyxf3GRglx_Qou9B4Q9_OGaa6kUvq-vh-L5j41wXzqGDJJITIFTyOWlJSbj6gbWWX84khaTxKZI9hEYcfPAFZN8mr_2i7JwyFC3fR10Y5JHyZKjn0xOTjxI80jNkAnI8gg2axwyIyqs-e5HE1MVdOkOztAPt6NVEhLTfBDSa4Rw6dPveteRJ7P-UEtNOxYRdgtlrLYLGfWDDUVnqO2k7qlj0Z1Y_TJEwc6Ajw&response_mode=form_post&nonce=638580127067827770.ODlmNGM3ODQtYTIwMS00N2YyLThhMmUtYzkzYTZjOGM0MmM4ZmI4MGM4YjgtN2VmZS00ZmI3LWIyYjEtOWM0YWM5NGM1M2Qw&x-client-SKU=ID_NET472&x-client-ver=7.3.1.0
+        texte: Déposer votre demande de subventions en ligne
+  - description: >-
+      Joignez les pièces justificatives à votre dossier en ligne et précisez
+      dans quelle mesure l’investissement est en lien avec le déploiement des
+      actions mises en œuvre lors de votre accompagnement avec
+      l'accompagnateur-expert.
+  - description: >-
+      Pour finaliser votre demande de subvention, envoyez une copie de votre
+      dossier par mail à [cedre@maregionsud.fr](https://cedre@maregionsud.fr)
+      avec pour objet "Investissement CEDRE Premiers pas".
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - TPE et PME
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Provence-Alpes-Côte d'Azur
+  secteur d'activité:
+    - Tous secteurs d'activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - >-
+      Avoir bénéficié d'un accompagnement préalable au titre de CEDRE Premier
+      Pas ou CEDRE Ambition.
+    - >-
+      Les dépenses éligibles sont liées au déploiement, à la mise en œuvre et à
+      la continuité du plan d’actions défini lors de l'accompagnement.
+    - >-
+      L'investissement pour laquelle vous sollicitez une aide financière ne doit
+      pas avoir été déjà réalisé.
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est rénover mon bâtiment
+      - questionnaire . objectif prioritaire . est la mobilité durable
+      - questionnaire . objectif prioritaire . est la gestion des déchets
+      - >-
+        questionnaire . objectif prioritaire . est diminuer ma consommation
+        d'eau
+      - questionnaire . objectif prioritaire . est ma performance énergétique
+      - questionnaire . objectif prioritaire . est former ou recruter
+      - questionnaire . objectif prioritaire . est mon impact environnemental
+      - questionnaire . objectif prioritaire . est l'écoconception
+      - questionnaire . objectif prioritaire . est préserver la biodiversité
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Provence-Alpes-Côte d'Azur

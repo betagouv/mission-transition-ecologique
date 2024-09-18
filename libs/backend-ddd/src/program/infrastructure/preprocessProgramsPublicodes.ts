@@ -114,6 +114,8 @@ const setObjectives = (publicodesData: PublicodesInputData, questionnaireData: Q
       ? YesNo.Yes
       : YesNo.No
 
+    publicodesData[PublicodeObjective.Biodiversity] = YesNo.Yes
+
     publicodesData[PublicodesKeys.BuildingOwner] =
       questionnaireData.building_property == BuildingProperty.Rents || questionnaireData.building_property == BuildingProperty.No
         ? YesNo.No

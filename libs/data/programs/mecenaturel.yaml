@@ -1,0 +1,102 @@
+titre: Mécénaturel
+promesse: >-
+  Devenez mécéne d'un projet-nature du réseau régional des espaces naturels de
+  Provence Alpes Côte d’Azur
+description: >-
+  Apportez le soutien de votre entreprise à des gestionnaires d’espaces naturels
+  régionaux, pour encourager des actions concrètes de préservation de la
+  biodiversité. Vous pouvez vous engager en tant que partenaire via un mécénat
+  financier en bénéficiant d'une déduction fiscale sur l'impôt des sociétés. Le
+  soutien peut aussi prendre la forme de mécénat en nature (un don de matériel,
+  le prêt d’une salle…), de compétences ou de prestations en mettant à
+  disposition l’expertise de ses salariés : juriste, graphiste, etc.
+description longue: >-
+  Votre soutien peut prendre différentes formes :
+
+  • Mécénat financier : don en numéraire, par chèque ou virement bancaire, etc.
+
+  Vous bénéficiez d'une déduction de 60 % du montant du don sur l’impôt sur les
+  sociétés
+
+  dans la limite de 20 000 € ou de 0,5 % du chiffre d’affaires annuel hors taxe
+  (avec report possible sur 5 ans). 
+
+  • Mécénat en nature : don de marchandise, de logiciel, prêt de salle ou de
+  matériel, etc.
+
+  • Mécénat de compétences ou de prestation : comptable, informaticien,
+  architecte, secrétaire, paysagiste, graphiste, avocat, bâtisseur, etc.
+illustration: images/TEE_ampoule.png
+opérateur de contact: Agence Régionale Biodiversité et Environnement
+url: https://www.arbe-regionsud.org/203-demarche-mecenaturel.html
+nature de l'aide: avantage fiscal
+montant de l'avantage fiscal: déduction de 60 % du montant du don
+objectifs:
+  - description: >-
+      Parcourez la documentation du dispositif Mécénaturel, et prenez contact
+      avec un conseiller pour vous accompagner dans votre démarche de mécénat
+      environnemental.
+    liens:
+      - lien: >-
+          https://www.arbe-regionsud.org/Block/download/?id=205527&filename=Mecenaturel-2020-OK.pdf
+        texte: Documentation Mécénaturel
+  - description: >-
+      Découvrez les projets ouverts au mécénat d’entreprise, déclinés sous les 5
+      axes suivants : sciences, protection de la biodiversité, éducation à
+      l’environnement, découverte durable, patrimoine culturel.
+  - description: >-
+      Signez une convention de mécénat avec le gestionnaire du projet-nature.
+      Elle précise votre rôle de partenaire et les privilèges qui vous sont
+      accordés (avantages pour les salariés, notoriété)
+  - description: >-
+      En tant qu'entreprise "mécéne de la nature", valorisez votre engagement
+      environnemental auprès de vos équipes, clients et partenaires, et
+      enrichissez votre stratégie RSE.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Provence-Alpes-Côte d'Azur
+  secteur d'activité:
+    - Tous secteurs d'activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est préserver la biodiversité
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Provence-Alpes-Côte d'Azur

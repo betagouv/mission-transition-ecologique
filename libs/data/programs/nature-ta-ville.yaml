@@ -1,0 +1,95 @@
+titre: Nature ta ville
+promesse: >-
+  Financez l’achat et la plantation d’arbres, d’arbustes et arbrisseaux en
+  milieu urbain
+description: >-
+  La présence de la nature en milieu urbain est reconnue dans son rôle de
+  préservation de la biodiversité, d'amélioration du cadre de vie,
+  d'attractivité, de lutte contre la pollution atmosphérique et d'atténuation
+  des effets du changement climatique. La Région Sud soutient financièrement
+  l’achat et la plantation d’arbres, d’arbustes et arbrisseaux dans pour les
+  entreprises localisées en milieu urbain. La région soutient également les
+  prestations de conseil et d’assistance techniques des opérations de plantation
+  et de restauration (localisation, choix des essences, périodes de
+  réalisation…) et la formation du personnel en charge de l’entretien des
+  espaces verts.
+description longue: >-
+  Il sera exigé des essences autochtones, de type « végétal local » ou
+  équivalent, dont les garanties de reprises sont optimales. La plantation ne
+  devra pas utiliser d’espèces exotiques envahissantes et d’espèces fortement
+  allergènes (cyprès).
+
+
+  Pour être éligible, votre investissement doit :
+
+  - s’inscrire dans une réflexion stratégique mettant en avant la politique de
+  biodiversité ancrée dans le projet de territoire, avec notamment un mode de
+  gestion détaillé et pérenne (gestion en eau raisonné, économe en moyen humain,
+  etc.).
+
+  - être intégré dans une politique globale de désimperméabilisation.
+
+  - être accompagné d’actions de communication & sensibilisation à destination à
+  minima du grand public.
+illustration: images/TEE_energie_verte.png
+opérateur de contact: Région Sud PACA
+url: https://www.maregionsud.fr/vos-aides/detail/nature-ta-ville
+nature de l'aide: financement
+montant du financement: >-
+  Jusqu'à 70% maximum des dépenses éligibles retenues, dans un maximum de 40 000
+  €
+activable en autonomie: oui
+objectifs:
+  - description: >-
+      Déposez votre demande de subvention tout au long de l’année sur le portail
+      Région dédié. À ce stade, votre projet ne doit pas avoir commencé !
+    liens:
+      - lien: https://subventionsenligne.maregionsud.fr/
+        texte: Déposer votre demande de subvention
+  - description: >-
+      Recevez votre réponse concernant votre demande. Si celle-ci est validée,
+      obtenez votre subvention.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Provence-Alpes-Côte d'Azur
+  secteur d'activité:
+    - Tous secteurs d'activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est préserver la biodiversité
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Provence-Alpes-Côte d'Azur

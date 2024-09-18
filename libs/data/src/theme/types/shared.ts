@@ -6,5 +6,6 @@ export enum ThemeId {
   Water = 'water',
   Waste = 'waste',
   EcoDesign = 'eco-design',
-  RH = 'rh'
+  RH = 'rh',
+  Biodiversity = 'biodiversite'
 }
