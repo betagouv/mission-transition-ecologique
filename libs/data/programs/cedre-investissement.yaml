@@ -67,7 +67,7 @@ description longue: >-
   • Les investissements portant sur l'installation de panneaux photovoltaïques,
   pompes à chaleur géothermiques et le solaire thermique collectif sont
   également exclus. Des dispositifs spécifiques sont mobilisables.
-illustration: images/TEE_ampoule.png
+illustration: images/TEE_eolienne.png
 opérateur de contact: Région Sud PACA
 url: https://www.maregionsud.fr/vos-aides/detail/cedre-investissement
 nature de l'aide: financement
@@ -158,7 +158,7 @@ publicodes:
       - questionnaire . objectif prioritaire . est former ou recruter
       - questionnaire . objectif prioritaire . est mon impact environnemental
       - questionnaire . objectif prioritaire . est l'écoconception
-      - questionnaire . objectif prioritaire . est préserver la biodiversité
+      - questionnaire . objectif prioritaire . undefined
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
       - région = Provence-Alpes-Côte d'Azur

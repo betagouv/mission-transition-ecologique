@@ -1,7 +1,7 @@
 titre: Charte "zéro déchet plastique"
 promesse: Engagez-vous dans une démarche de diminution des pollutions plastiques
 description: "Devenez signataire de la charte « zéro déchet plastique » et engagez votre entreprise sur un plan d'action de réduction de l’usage des plastiques à usage unique, sur l'optimisation de la gestion et du tri des déchets plastiques et l'adoption de solutions de réemploi. En adhérant à la charte \"zéro déchet plastique\" de votre région, vous intégrez\_la communauté des signataires animée par l’Agence Régionale pour la Biodiversité et l’Environnement (ARBE) et bénéficiez de ressources et retours d'expériences de autres signataires pour vous aider dans la mise en œuvre de vos actions."
-illustration: images/TEE_ampoule.png
+illustration: images/TEE_energie_verte.png
 opérateur de contact: Agence Régionale Biodiversité et Environnement
 url: >-
   https://www.arbe-regionsud.org/1375-2-chartes-zero-dechet-plastique.html#anchor147544
@@ -81,7 +81,7 @@ publicodes:
   entreprise . a un objectif ciblé:
     une de ces conditions:
       - questionnaire . objectif prioritaire . est la gestion des déchets
-      - questionnaire . objectif prioritaire . est préserver la biodiversité
+      - questionnaire . objectif prioritaire . undefined
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
       - région = Provence-Alpes-Côte d'Azur

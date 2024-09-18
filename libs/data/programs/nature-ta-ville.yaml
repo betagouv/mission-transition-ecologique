@@ -31,7 +31,7 @@ description longue: >-
 
   - être accompagné d’actions de communication & sensibilisation à destination à
   minima du grand public.
-illustration: images/TEE_energie_verte.png
+illustration: images/TEE_eolienne.png
 opérateur de contact: Région Sud PACA
 url: https://www.maregionsud.fr/vos-aides/detail/nature-ta-ville
 nature de l'aide: financement
@@ -89,7 +89,7 @@ publicodes:
       - code NAF niveau 1 . est S
   entreprise . a un objectif ciblé:
     une de ces conditions:
-      - questionnaire . objectif prioritaire . est préserver la biodiversité
+      - questionnaire . objectif prioritaire . undefined
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
       - région = Provence-Alpes-Côte d'Azur
