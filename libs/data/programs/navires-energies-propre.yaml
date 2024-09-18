@@ -1,9 +1,9 @@
 titre: Navires utilisant des énergies propres
-promesse: 'Investissez dans l''équipement énergétique écologique de votre navire '
+promesse: Investissez dans l'équipement énergétique écologique de votre navire
 description: >-
   Vous utilisez des navires et bateaux de transport de marchandises ou de
-  passagers, et vous avez des projets d'investissement  liées à l'utilisation
-  d'énergies propres  ?
+  passagers, et vous avez des projets d'investissement liées à l'utilisation
+  d'énergies propres ?
 
   Vous pouvez bénéficier d'un crédit d'impôt.
 description longue: >-
@@ -54,9 +54,21 @@ conditions d'éligibilité:
   secteur géographique:
     - France et territoires d'outre-mer
   secteur d'activité:
-    - Tous secteurs d’activité
+    - >-
+      A destination des entreprises utilisant des navires et bateaux de
+      transport de marchandises ou de passagers d'un des Etats membres de
+      l'Union européenne ou d'un autre Etat partie à l'accord sur l'Espace
+      économique.
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - 't avantage fiscal est destiné aux navires dont :'
+    - ''
+    - "les escales dans les ports français représentent plus de 30\_% du nombre des escales pour chaque année de la durée normale d'amortissement des navires,"
+    - "ou dont la durée de navigation dans la zone économique exclusive française représente plus de 30\_% du temps de navigation,"
+    - >-
+      ou les bateaux de transport de marchandises ou de passagers naviguant dans
+      les eaux intérieures et, le cas échéant, à ceux naviguant en mer.
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

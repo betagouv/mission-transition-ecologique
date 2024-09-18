@@ -6,7 +6,7 @@
     "nameTag": "🎯 plan d’action énergie",
     "shortDescription": "Il met en évidence vos postes d’énergie les plus consommateurs et les pistes de solutions.",
     "image": "/images/projet/plan-action-eco-energie.webp",
-    "longDescription": "La réalisation d'un plan d'action énergie est un premier pas indispensable à la mise en place d'une stratégie énergétique au sein de votre entreprise.\n\nDes accompagnements vous aideront à identifier les postes énergivores au sein de votre entreprise, identifier des bonnes pratiques faciles à mettre en oeuvre, et élaborer un plan d'action pour maîtriser durablement vos consommations. Ce plan d'action constitue souvent l'étape préalable indispensable à la mise en place d'un projet, pouvant aboutir à des études plus précises ou des investissements.",
+    "longDescription": "La réalisation d'un plan d'action énergie est un premier pas indispensable à la mise en place d'une stratégie énergétique au sein de votre entreprise.\n\nDes accompagnements vous aideront à identifier les postes énergivores au sein de votre entreprise, identifier des bonnes pratiques faciles à mettre en œuvre, et élaborer un plan d'action pour maîtriser durablement vos consommations. Ce plan d'action constitue souvent l'étape préalable indispensable à la mise en place d'un projet, pouvant aboutir à des études plus précises ou des investissements.",
     "moreDescription": "- [**Sobriété énergétique en entreprise,**](https://www.cci.fr/crise-energetique/entreprises-20-conseils-pour-faire-baisser-votre-facture-denergie) 20 conseils pour faire baisser votre facture d’énergie.",
     "themes": [
       "energy"
@@ -326,7 +326,7 @@
     "shortDescription": "L’isolation thermique permet de réduire les pertes de chaleur de vos locaux et de diminuer vos dépenses énergétiques.",
     "image": "/images/projet/isolation-thermique.webp",
     "longDescription": "L’isolation thermique des bâtiments permet de garantir le confort en été comme en hiver en limitant le recours à la climatisation et au chauffage. Un logement mal isolé génère des pertes conséquentes de chaleur en hiver et de fraîcheur en été par le toit, les murs, les portes, les fenêtres et le sol.\\\nGrâce à des travaux d’isolation, vous diminuez vos factures d’énergie et améliorez votre confort tout au long de l’année.",
-    "moreDescription": "- [**Les exigences réglementaires pour les travaux de rénovation**](https://librairie.ademe.fr/ged/8069/fiche-exigences-reglementaires-renovation.pdf), une fiche pratique de l'ADEME.\n- [**L'annuaire des professionnels RGE et des architectes,**](https://france-renov.gouv.fr/annuaires-professionnels/artisan-rge-architecte) trouver un professionnel RGE, compétent pour réaliser des travaux d'isolation thermique.\n- [**Guide pratique de l'ADEME** ](https://librairie.ademe.fr/ged/6488/guide-pratique-isoler-sa-maison.pdf)\"Isoler, la clé d’une rénovation réussie\"",
+    "moreDescription": "- [**Les exigences réglementaires pour les travaux de rénovation**](https://librairie.ademe.fr/ged/8069/fiche-exigences-reglementaires-renovation.pdf), une fiche pratique de l'ADEME.\n- [**Guide pratique de l'ADEME** ](https://librairie.ademe.fr/ged/6488/guide-pratique-isoler-sa-maison.pdf)\"Isoler, la clé d’une rénovation réussie\"\n- [**Quel est le meilleur isolant thermique pour une isolation efficace ?**](https://www.baisseleswatts.fr/actualites/equipement-energetique/quel-est-le-meilleur-isolant-thermique) un article proposé par Baisse les watts\n- [**L'annuaire des professionnels RGE et des architectes,**](https://france-renov.gouv.fr/annuaires-professionnels/artisan-rge-architecte) trouver un professionnel RGE, compétent pour réaliser des travaux d'isolation thermique.",
     "themes": [
       "energy",
       "building"
@@ -447,7 +447,9 @@
     ],
     "mainTheme": "water",
     "programs": [
-      "programme-ecod-o"
+      "diag-eco-flux",
+      "programme-ecod-o",
+      "tpe-gagnantes-sur-tous-les-couts"
     ],
     "linkedProjects": [],
     "priority": "6"
@@ -649,7 +651,7 @@
     "title": "Stratégie RSE",
     "nameTag": "🤝️ stratégie RSE",
     "shortDescription": "Construire une stratégie d’impact environnemental et sociétal RSE.",
-    "image": "/images/projet/sensibilisation-equipes.webp",
+    "image": "/images/projet/strategie-rse.webp",
     "longDescription": "La RSE (Responsabilité sociétale des entreprises) se définit comme la responsabilité des entreprises vis-à-vis des effets qu'elles exercent sur la société, sur trois plans principaux : environnemental, social et économique.\n\nEngager vos salariés autour d’une stratégie RSE permet de leur faire prendre conscience des enjeux et de changer les comportements, notamment en matière de transition écologique et de développement durable.\n\nGrâce à des expertises et l’élaboration d’un plan d’action, ou la formation de vos salariés, vous placez l’engagement et les valeurs environnementales au cœur de la culture de votre entreprise.",
     "moreDescription": "- [**Qu'est-ce que la RSE ?**](https://www.ecologie.gouv.fr/responsabilite-societale-des-entreprises) Cette page détaille le cadre réglementaire de la responsabilité sociétale des entreprises.\n- [**Le portail RSE**](https://portail-rse.beta.gouv.fr/)**.** Un portail unique pour comprendre à quelles règlementations votre entreprise est soumise, et piloter vos obligations depuis un tableau de bord.",
     "themes": [

@@ -1,4 +1,4 @@
-import { TrackComponent, TrackId, YesNo, Objective, Track } from '@/types'
+import { TrackComponent, TrackId, YesNo, ThemeId, Track } from '@/types'
 
 export const wastesMaterials: Track = {
   id: TrackId.WastesMaterials,
@@ -7,7 +7,7 @@ export const wastesMaterials: Track = {
   label: {
     fr: 'Avez-vous pour objectif de réduire vos pertes de matières premières ?'
   },
-  objective: Objective.WasteManagement,
+  theme: ThemeId.Waste,
   interface: {
     component: TrackComponent.Buttons
   },

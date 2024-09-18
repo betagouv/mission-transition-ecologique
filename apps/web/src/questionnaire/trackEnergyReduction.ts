@@ -1,11 +1,11 @@
-import { Objective, type Track, TrackComponent, TrackId, YesNo } from '@/types'
+import { ThemeId, type Track, TrackComponent, TrackId, YesNo } from '@/types'
 
 export const energyReductionPriority: Track = {
   id: TrackId.EnergyReductionPriority,
   category: 'myEnergy',
   title: { fr: 'Réduction de la consommation' },
   label: { fr: 'La réduction de vos consommations d’énergie est-elle une priorité pour vous ?' },
-  objective: Objective.EnergyPerformance,
+  theme: ThemeId.Energy,
   interface: {
     component: TrackComponent.Buttons
   },

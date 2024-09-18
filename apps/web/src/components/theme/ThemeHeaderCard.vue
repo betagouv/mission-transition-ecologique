@@ -1,10 +1,10 @@
 <template>
   <DsfrCard
-    v-if="Theme.isObjective(objective) || !isResultPage"
+    v-if="Theme.isTheme(theme) || !isResultPage"
     horizontal
     title="Thématique"
-    :description="Theme.getTitleByValue(objective as Objective)"
-    :img-src="Theme.getImageByValue(objective as Objective)"
+    :description="Theme.getTitleById(theme as ThemeId)"
+    :img-src="Theme.getImageById(theme as ThemeId)"
     :class="classes"
     size="sm"
     no-arrow
@@ -14,17 +14,16 @@
 <script setup lang="ts">
 import { Theme } from '@/utils/theme'
 import { DsfrCard } from '@gouvminint/vue-dsfr'
-import { Objective } from '@/types'
+import { ThemeId } from '@/types'
 import { useNavigationStore } from '@/stores/navigation'
 import { RouteName } from '@/types/routeType'
 
 interface Props {
-  objective: Objective | ''
+  theme: ThemeId
   radiusCorner?: 'tl' | 'tr' | 'bl' | 'br' | 't' | 'r' | 'b' | 'l' | 'a'
   radiusSize?: '0' | '1v' | '2v' | '2-5v'
 }
 const props = defineProps<Props>()
-
 const navigationStore = useNavigationStore()
 const isResultPage = navigationStore.isByRouteName(RouteName.QuestionnaireResult)
 
@@ -41,13 +40,13 @@ function getRadiusClass() {
 }
 
 const classes = computed(() => {
-  if (!Theme.isObjective(props.objective)) {
+  if (!Theme.isTheme(props.theme)) {
     return []
   }
 
   return [
     'fr-card-banner',
-    'fr-card--' + Theme.getColorByValue(props.objective),
+    'fr-card--' + Theme.getColorById(props.theme),
     'fr-card--horizontal-tier',
     'fr-card--no-border',
     'fr-col-content--middle',

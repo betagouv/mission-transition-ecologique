@@ -256,7 +256,7 @@ def define_structure_size(deal):
     """Get the structure size using all possible encoding of it."""
     size = ""
     if "Contact_TAILLE" in deal and deal["Contact_TAILLE"] != "":
-        workforce_to_type = {"1": "TPE", "2": "PME", "3": "PME", "4": "ETI,GE"}
+        workforce_to_type = {"1": "TPE", "2": "PME", "3": "PME", "4": "ETI,GE", "5": "EI"}
         size = workforce_to_type[deal["Contact_TAILLE"]]
     elif "autres_donnes" in deal and deal["autres_donnes"] != "":
         pattern = r"/ structure_sizes: (.+?) /"

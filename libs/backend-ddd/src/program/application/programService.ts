@@ -5,7 +5,7 @@ import ProgramsJson from '../infrastructure/programsJson'
 import { currentDateService } from '../infrastructure/currentDate'
 import { PublicodesService } from '../infrastructure/publicodesService'
 import { Objective, QuestionnaireData } from '@tee/common'
-
+import FrontConverter from '../infrastructure/frontConverter'
 export class ProgramService {
   private _program: ProgramFeatures
 
@@ -24,6 +24,10 @@ export class ProgramService {
 
   public getFilteredPrograms(questionnaireData: QuestionnaireData): Result<ProgramType[], Error> {
     return this._program.getFilteredBy(questionnaireData)
+  }
+
+  public convertDomainToFront(program: ProgramType) {
+    return new FrontConverter().convertDomainToFront(program)
   }
 
   public getAll(): ProgramType[] {
