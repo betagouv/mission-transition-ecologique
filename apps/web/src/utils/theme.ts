@@ -64,7 +64,6 @@ export class Theme {
       id: ThemeId.Biodiversity,
       title: 'Biodiversité',
       tagLabel: '⚡️ biodiversité',
-      value: Objective.Biodiversity,
       image: '/images/thematique/thematique-energie.svg',
       color: Color.green
     }
