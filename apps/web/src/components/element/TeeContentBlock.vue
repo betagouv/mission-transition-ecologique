@@ -55,20 +55,24 @@ const getBorderStyleClass = () => {
 }
 </script>
 <style lang="scss" scoped>
-//TODO : remove once border global refacto is implemented
+// TODO : remove once border global refacto is implemented
 .tee-border {
   &--top {
     border-top: solid 1px var(--border-default-grey);
   }
+
   &--bottom {
     border-bottom: solid 1px var(--border-default-grey);
   }
+
   &--right {
     border-right: solid 1px var(--border-default-grey);
   }
+
   &--left {
     border-left: solid 1px var(--border-default-grey);
   }
+
   border: solid 1px var(--border-default-grey);
 }
 </style>
