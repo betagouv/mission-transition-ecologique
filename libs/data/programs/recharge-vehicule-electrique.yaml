@@ -1,0 +1,115 @@
+titre: Recharges pour véhicules électriques
+promesse: >-
+  Financez l'installation de bornes de recharge de véhicules électriques
+  publiques
+description: >-
+  Vous avez pour projet de mettre en place des bornes de recharge pour les
+  véhicules électriques à proximité de votre entreprise ? La Région Sud soutient
+  financièrement le déploiement d’infrastructures de recharge pour véhicules
+  électriques (scooters, véhicules légers, véhicules utilitaires légers et
+  éventuellement poids lourds). Les bornes de recharge peuvent être à
+  destination du public ou des employés de bâtiments tertiaires. 
+
+  Cette évolution s’inscrit dans une dynamique de transition énergétique et de
+  mobilité durable, où les bornes de recharge sont indispensables pour soutenir
+  l’adoption des véhicules électriques.
+description longue: >-
+  Ce dispositif soutient les déploiements d’infrastructures de recharge
+  suivants  :
+
+  - les bornes situées sur des parkings de bâtiments tertiaires pour une mise à
+  disposition aux employés équipés de véhicules électriques. Cette aide est
+  attribuée sous la condition que l’entreprise ait entrepris la mutation de sa
+  propre flotte vers des véhicules propres et que l’employeur développe en
+  parallèle des incitations à la mobilité électrique. Les bornes publiques ou
+  mutualisant les besoins de plusieurs entreprises seront traitées en priorité.
+
+  - les bornes mutualisant l’usage de plusieurs acteurs : spécifiquement dédiées
+  aux activités logistiques, à l’activité de taxi ou d’autres activités
+  professionnelles dont les besoins ne sont pas couverts par les réseaux actuels
+  ;
+
+  - Les bornes de recharge publiques implantées sur des zones mal couvertes ou
+  répondant à une saturation d’une autre borne à proximité. 
+
+  - les bornes publiques sur des sites touristiques d’envergure régionale ;
+
+  - les bornes publiques sur des parkings relais (P+R), des Pôles d’Echange
+  Multimodaux
+
+  (PEM), des aires de covoiturage ;
+
+  - les bornes publiques à moins de 3km d’axes routiers d’envergure régionale
+  peu équipés
+
+  (pour des projets de bornes rapides ou ultra-rapides) et situées hors réseaux
+  concédés ;
+
+  - les bornes publiques spécifiques aux 2/3 roues ou quadricycles électriques
+  avec une zone de stationnement réservée à ces véhicules ;
+
+
+  Seuls les coûts d’investissement dans les bornes elles-mêmes et les travaux
+
+  d’aménagement de voirie seront pris en compte dans l’assiette éligible des
+  projets. Les
+
+  autres dépenses telles que les études amonts, coûts de raccordement et
+  d’installation,
+
+  communication ou la rémunération du personnel mobilisé ne pourront être
+  retenues
+
+  comme éligibles.
+illustration: images/TEE_eolienne.png
+opérateur de contact: Région Sud PACA
+url: >-
+  https://www.maregionsud.fr/vos-aides/detail/infrastructures-de-recharges-intelligentes-pour-vehicules-electriques
+nature de l'aide: financement
+montant du financement: Jusqu'à 20 000 € HT par borne ou 100 000 € HT par projet
+objectifs:
+  - description: >-
+      Prenez contact avec un conseiller afin de vérifier l'éligibilité de votre
+      projet.
+  - description: >-
+      Constituez votre dossier de candidature : présentation technique du
+      projet, acteurs impliqués, devis liés à l’opération, budget prévisionnel,
+      etc.
+  - description: Si votre dossier est retenu, vous pouvez réaliser vos travaux.
+  - description: >-
+      Le futur propriétaire et financeur des bornes avancent les frais de
+      travaux et fournit les justificatifs financiers prouvant la bonne
+      réalisation de l’opération pour pouvoir percevoir la somme accordée.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Provence-Alpes-Côte d'Azur
+  secteur d'activité:
+    - Tous secteurs d'activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est la mobilité durable
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Provence-Alpes-Côte d'Azur
