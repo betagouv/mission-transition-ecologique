@@ -52,13 +52,13 @@ const isCurrentCategory = (category: string) => {
 
 const getTextColorClass = (category: string) => {
   if (isCurrentCategory(category)) {
-    const objective = trackStore.getTrack(usedTrackStore.current?.id as TrackId)?.objective
+    const themeId = trackStore.getTrack(usedTrackStore.current?.id as TrackId)?.theme
 
-    if (!objective) {
+    if (!themeId) {
       return
     }
 
-    return 'fr-text--' + Theme.getColorByValue(objective)
+    return 'fr-text--' + Theme.getColorById(themeId)
   }
 }
 
