@@ -26,7 +26,7 @@ export class ConditionalDataGenerator {
     switch (oneConditional['Type de condition']) {
       case 'géographique':
         return this._generateGeographicCondition(oneConditional)
-      case "taille de l'entreprise":
+      case 'nombre de salariés':
         return this._generateCompanySizeCondition(oneConditional)
       default:
         console.log('Warning, type de donnée conditionnelle non gérée et donc non prise en compte')
@@ -54,7 +54,6 @@ export class ConditionalDataGenerator {
         `effectif <= ${oneConditional['Condition: nb max salaries']}`
       ]
     }
-
     this._valueReplacement(oneConditional, conditionalEntry)
     return conditionalEntry
   }

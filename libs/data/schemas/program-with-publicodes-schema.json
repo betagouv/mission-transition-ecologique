@@ -193,11 +193,15 @@
               "type": "string",
               "pattern": "^région = .+$"
             }
+          },
+          "toutes ces conditions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "effectif"
+            }
           }
         },
-        "required": [
-          "une de ces conditions"
-        ],
         "additionalProperties": true
       }
     }

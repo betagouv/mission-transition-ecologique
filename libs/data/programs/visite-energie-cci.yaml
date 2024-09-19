@@ -77,3 +77,31 @@ publicodes:
   entreprise . a un objectif ciblé:
     une de ces conditions:
       - questionnaire . objectif prioritaire . est ma performance énergétique
+champs conditionnels:
+  - une de ces conditions:
+      - région = Île-de-France
+      - région = Bretagne
+      - région = Normandie
+    Montant du dispositif: À partir de 1 500€ HT
+  - une de ces conditions:
+      - région = Provence-Alpes-Côte d'Azur
+      - région = Polynésie française
+      - région = Pays de la Loire
+      - région = Nouvelle-Calédonie
+      - région = Nouvelle-Aquitaine
+      - région = Mayotte
+      - région = Martinique
+      - région = La Réunion
+      - région = Hauts-de-France
+      - région = Guyane
+      - région = Guadeloupe
+      - région = Grand Est
+      - région = Centre-Val de Loire
+      - région = Bourgogne-Franche-Comté
+      - région = Auvergne-Rhône-Alpes
+      - région = Occitanie
+      - région = Corse
+      - région = Saint-Pierre-Et-Miquelon
+      - région = Saint-Barthélemy
+      - région = Saint-Martin
+    Montant du dispositif: Gratuit

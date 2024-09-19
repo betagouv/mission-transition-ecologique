@@ -68,3 +68,9 @@ publicodes:
   entreprise . a un objectif ciblé:
     une de ces conditions:
       - questionnaire . objectif prioritaire . est ma performance énergétique
+champs conditionnels:
+  - toutes ces conditions:
+      - effectif >= 250
+      - effectif <= 499
+    Montant du dispositif: 6 000 € HT après subvention de 40%
+    Eligibilité taille: De 250 à 500 salariés

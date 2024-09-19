@@ -67,6 +67,83 @@ publicodes:
       - questionnaire . objectif prioritaire . est mon impact environnemental
 champs conditionnels:
   - une de ces conditions:
-      - région = Île-de-France
-    promesse: >-
+      - région = Auvergne-Rhône-Alpes
+    autres opérateurs:
+      - CMA Auvergne-Rhône-Alpes
+    url: >-
       https://www.cma-auvergnerhonealpes.fr/sinformer/actualites/accelerez-votre-transition-ecologique-et-faites-des-economies-avec-performa
+    Durée du dispositif: 2 jours de prestation répartis sur 6 mois
+  - une de ces conditions:
+      - région = Bourgogne-Franche-Comté
+    autres opérateurs:
+      - CMA Bourgogne-Franche-Comté
+    url: https://www.artisanat-bfc.fr/article/connaitre-et-maitriser-mes-impacts
+    Durée du dispositif: 2 jours
+  - une de ces conditions:
+      - région = Bretagne
+    autres opérateurs:
+      - CMA Bretagne
+    url: >-
+      https://www.artisanat.fr/nous-connaitre/vous-accompagner/performa-environnement
+    Durée du dispositif: 1 journée de prestation répartie sur 2 mois
+  - une de ces conditions:
+      - région = Corse
+    autres opérateurs:
+      - CMA Corse
+  - une de ces conditions:
+      - région = Centre-Val de Loire
+    autres opérateurs:
+      - CMA Centre-Val de Loire
+    url: https://www.crma-centre.fr/actualite/diagnostic-performa-environnement
+    Durée du dispositif: 2 jours
+  - une de ces conditions:
+      - région = Grand Est
+    autres opérateurs:
+      - CMA Grand-Est
+    url: >-
+      https://cma-grandest.fr/wp-content/uploads/2023/05/2023-pass-durable_cle-environnement.pdf
+    Durée du dispositif: 2 jours
+  - une de ces conditions:
+      - région = Île-de-France
+    autres opérateurs:
+      - CMA Ile-de-France
+    url: >-
+      https://www.cma-idf.fr/fr/appui-aux-entreprises/vers-une-demarche-de-developpement-durable/diagnostic-transition-ecologique.html
+    Durée du dispositif: 2 jours
+  - une de ces conditions:
+      - région = La Réunion
+    autres opérateurs:
+      - CMA La Réunion
+    url: >-
+      https://www.artisanat974.re/la-chambre-de-metiers-et-de-lartisanat-de-la-reunion/#
+    Durée du dispositif: 2 jours
+  - une de ces conditions:
+      - région = Normandie
+    autres opérateurs:
+      - CMA Normandie
+    Durée du dispositif: 2 jours
+  - une de ces conditions:
+      - région = Nouvelle-Aquitaine
+    autres opérateurs:
+      - CMA Nouvelle-Aquitaine
+    url: >-
+      https://www.artisanat-nouvelle-aquitaine.fr/La-transition-ecologique-des-entreprises-artisanales-neo-aquitaines_a9124.html
+    Durée du dispositif: 2 jours
+  - une de ces conditions:
+      - région = Occitanie
+    autres opérateurs:
+      - CMA Occitanie
+    url: https://www.artisanat-occitanie.fr/transition-ecologique-2/
+    Durée du dispositif: 2 jours
+  - une de ces conditions:
+      - région = Pays de la Loire
+    autres opérateurs:
+      - CMA Pays-de-la-Loire
+    url: >-
+      https://www.artisanatpaysdelaloire.fr/detail-offre/engager-une-demarche-de-transition-ecologique
+    Durée du dispositif: 2 jours
+  - une de ces conditions:
+      - région = Provence-Alpes-Côte d'Azur
+    autres opérateurs:
+      - CMA Provence-Alpes-Côte-D'Azur
+    Durée du dispositif: 2 jours
