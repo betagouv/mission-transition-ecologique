@@ -58,7 +58,7 @@ export interface DataProgram {
   étape6: string
   "Nature de l'aide": DataProgramType
   Statuts: Status[]
-  conditionnalData?: ConditionnalValues[]
+  conditionalData?: ConditionalValues[]
 }
 
 export enum Publicodes {
@@ -118,10 +118,17 @@ export enum Status {
   InProd = 'En prod'
 }
 
-export interface ConditionnalValues {
+export interface ConditionalValues {
   'Dispositif concerné': string
   'Type de condition': string
-  'valeur de la condition géographique': string[]
-  'Champ à modifier 1': string
-  'Valeur 1': string
+  'valeur de la condition géographique': GeographicAreas[]
+  'Condition: nb min salaries': number
+  'Condition: nb max salaries': number
+  'Opérateur de contact': Operator[]
+  'Autres opérateurs': Operator[]
+  'URL externe': string
+  "Montant de l'aide ou coût": string
+  "Durée de l'aide": string
+  'Eligibilité taille': string
+  'Eligibilité Spécifique': string
 }

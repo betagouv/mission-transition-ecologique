@@ -1,6 +1,6 @@
 import fs from 'fs'
 import { AbstractBaserow } from './abstractBaserow'
-import { ConditionnalValues, Program } from './types'
+import { ConditionalValues, Program } from './types'
 import {
   DataProgram,
   Status,
@@ -8,7 +8,7 @@ import {
   Operator,
   GeographicCoverage,
   GeographicAreas,
-  ConditionnalValues as DataConditionnalValues
+  ConditionalValues as DomainConditionalValues
 } from '../../program/types/domain'
 import { Theme } from '../../theme/types/domain'
 
@@ -18,6 +18,14 @@ export class ProgramBaserow extends AbstractBaserow {
   private readonly _geographicAreasTableId = 314474
   private readonly _programTableId = 314437
   private readonly _conditionnalValuesTableId = 351202
+  private _operators: Operator[] = []
+  private _geographicAreas: GeographicCoverage[] = []
+
+  constructor() {
+    super()
+    this._operators = []
+    this._geographicAreas = []
+  }
 
   // Note : caching the downloaded data by default to nudge towards reducing the data transfer from baserow.
   async getPrograms(useLocalRawData: boolean): Promise<DataProgram[]> {
@@ -32,15 +40,14 @@ export class ProgramBaserow extends AbstractBaserow {
     }
 
     const baserowPrograms = await this._getTableData<Program>(this._programTableId)
-    const operators = await this._getTableData<Operator>(this._operatorTableId)
     const geographicCoverages = await this._getTableData<GeographicCoverage>(this._geographicCoverageTableId)
-    const geographicAreas = await this._getTableData<GeographicAreas>(this._geographicAreasTableId)
     const themes = await this._getTableData<Theme>(this._themeTableId)
-    const conditionnalValues = await this._getTableData<ConditionnalValues>(this._conditionnalValuesTableId)
+    const conditionnalValues = await this._getTableData<ConditionalValues>(this._conditionnalValuesTableId)
 
-    const dataPrograms = baserowPrograms.map((baserowProgram) =>
-      this._convertToDataProgram(baserowProgram, operators, geographicCoverages, geographicAreas, themes)
-    )
+    this._operators = await this._getTableData<Operator>(this._operatorTableId)
+    this._geographicAreas = await this._getTableData<GeographicAreas>(this._geographicAreasTableId)
+
+    const dataPrograms = baserowPrograms.map((baserowProgram) => this._convertToDataProgram(baserowProgram, geographicCoverages, themes))
 
     this._enrichDataProgramsWithConditionnals(dataPrograms, conditionnalValues)
 
@@ -56,13 +63,7 @@ export class ProgramBaserow extends AbstractBaserow {
     return dataPrograms
   }
 
-  private _convertToDataProgram(
-    program: Program,
-    operators: Operator[],
-    geographicCoverages: GeographicCoverage[],
-    geographicAreas: GeographicAreas[],
-    themes: Theme[]
-  ): DataProgram {
+  private _convertToDataProgram(program: Program, geographicCoverages: GeographicCoverage[], themes: Theme[]): DataProgram {
     const {
       Statuts,
       "Nature de l'aide": aidTypes,
@@ -75,10 +76,10 @@ export class ProgramBaserow extends AbstractBaserow {
     } = program
 
     const rawStatuts = Statuts.map((linkedObj) => linkedObj.value as Status)
-    const domainContactOperator = this._replaceLinkObjectByTableData<Operator>(contactOperator, operators)
-    const domainOtherOperator = this._replaceLinkObjectByTableData<Operator>(otherOperator, operators)
+    const domainContactOperator = this._replaceLinkObjectByTableData<Operator>(contactOperator, this._operators)
+    const domainOtherOperator = this._replaceLinkObjectByTableData<Operator>(otherOperator, this._operators)
     const domainGeographicCoverage = this._replaceLinkObjectByTableData<GeographicCoverage>(geographicCoverage, geographicCoverages)
-    const domainProgramGeographicAreas = this._replaceLinkObjectByTableData<GeographicAreas>(programGeographicAreas, geographicAreas)
+    const domainProgramGeographicAreas = this._replaceLinkObjectByTableData<GeographicAreas>(programGeographicAreas, this._geographicAreas)
     const domainProgramThemes = this._replaceLinkObjectByTableData<Theme>(programThemes, themes)
 
     const rawProgram: DataProgram = {
@@ -95,31 +96,40 @@ export class ProgramBaserow extends AbstractBaserow {
     return rawProgram
   }
 
-  private _enrichDataProgramsWithConditionnals(programs: DataProgram[], conditionnalValues: ConditionnalValues[]) {
+  private _enrichDataProgramsWithConditionnals(programs: DataProgram[], conditionnalValues: ConditionalValues[]) {
     conditionnalValues.forEach((conditionnalValue) => {
       if (!conditionnalValue['Dispositif concerné'].length) {
+        // TODO ajouter logging
         return
       }
       const dataConditionnal = this._convertToDataConditionnalValue(conditionnalValue)
       const matchingProgram = programs.find((program) => program['Id fiche dispositif'] === dataConditionnal['Dispositif concerné'])
       if (matchingProgram) {
-        if (!matchingProgram.conditionnalData) {
-          matchingProgram.conditionnalData = []
+        if (!matchingProgram.conditionalData) {
+          matchingProgram.conditionalData = []
         }
-        matchingProgram.conditionnalData.push(dataConditionnal)
+        matchingProgram.conditionalData.push(dataConditionnal)
       }
     })
   }
 
-  private _convertToDataConditionnalValue(conditionnalValue: ConditionnalValues) {
-    console.log(conditionnalValue)
-    const dataCondionnal: DataConditionnalValues = {
+  private _convertToDataConditionnalValue(conditionnalValue: ConditionalValues): DomainConditionalValues {
+    return {
       'Dispositif concerné': conditionnalValue['Dispositif concerné'][0].value,
       'Type de condition': conditionnalValue['Type de condition'].value,
-      'valeur de la condition géographique': conditionnalValue['valeur de la condition géographique'].map((obj) => obj.value),
-      'Champ à modifier 1': conditionnalValue['Champ à modifier 1'].value,
-      'Valeur 1': conditionnalValue['Valeur 1']
+      'valeur de la condition géographique': this._replaceLinkObjectByTableData<GeographicAreas>(
+        conditionnalValue['valeur de la condition géographique'],
+        this._geographicAreas
+      ),
+      'Condition: nb min salaries': conditionnalValue['Condition: nb min salaries'],
+      'Condition: nb max salaries': conditionnalValue['Condition: nb max salaries'],
+      'Opérateur de contact': this._replaceLinkObjectByTableData<Operator>(conditionnalValue['Opérateur de contact'], this._operators),
+      'Autres opérateurs': this._replaceLinkObjectByTableData<Operator>(conditionnalValue['Autres opérateurs'], this._operators),
+      'URL externe': conditionnalValue['URL externe'],
+      "Montant de l'aide ou coût": conditionnalValue["Montant de l'aide ou coût"],
+      "Durée de l'aide": conditionnalValue["Durée de l'aide"],
+      'Eligibilité taille': conditionnalValue['Eligibilité taille'],
+      'Eligibilité Spécifique': conditionnalValue['Eligibilité Spécifique']
     }
-    return dataCondionnal
   }
 }
