@@ -7,22 +7,24 @@
       <div class="fr-card__content fr-p-2v">
         <div class="fr-card__title theme-card-title">
           <div
-            class="fr-p-0 fr-hidden-xs fr-my-2v theme-divider"
+            class="fr-p-0 fr-hidden fr-unhidden-sm fr-my-2v theme-divider"
             :class="`fr-bg--${option.color}`"
           />
-          <div class="fr-h5 fr-mb-1v fr-hidden-xs">
-            {{ option.title }}
-          </div>
-          <div class="fr-h2 fr-mb-1v fr-hidden-sm">
+          <div
+            class="fr-mb-1v"
+            :class="Breakpoint.isMobile() ? 'fr-h2' : 'fr-h5'"
+          >
             {{ option.title }}
           </div>
         </div>
         <div class="fr-card__desc">
           <ul class="fr-tags-group">
-            <ThemeProjectTag
+            <TeeProjectButton
               v-for="project in option.highlightProjects"
               :key="project.id"
+              class="highlighted-project fr-mx-1v fr-my-1v inline-flex"
               :color="option.color"
+              size="sm"
               :project="project"
             />
             <span
@@ -35,7 +37,7 @@
       </div>
     </div>
     <div
-      class="fr-hidden-xs fr-card__header"
+      class="fr-hidden fr-unhidden-sm fr-card__header"
       :class="`fr-bg--${option.color}--light`"
     >
       <div class="fr-card__img fr-card__img--contain">
@@ -51,6 +53,7 @@
 </template>
 <script setup lang="ts">
 import { ThemeOption } from './ThemeSelect.vue'
+import Breakpoint from '@/utils/breakpoints'
 
 interface Props {
   option: ThemeOption
@@ -77,5 +80,9 @@ defineProps<Props>()
   @media (width >= 0) and (width <= 575px) {
     height: auto;
   }
+}
+
+.highlighted-project {
+  max-width: 90%;
 }
 </style>

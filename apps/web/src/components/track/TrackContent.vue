@@ -7,10 +7,10 @@
   >
     <TrackCallout :track="track" />
     <div
-      v-if="track.objective"
+      v-if="track.theme"
       class="fr-col-12 fr-px-0v fr-px-md-4v"
     >
-      <ThemeHeaderCard :objective="track.objective" />
+      <ThemeHeaderCard :theme="track.theme" />
     </div>
 
     <div class="fr-col fr-bg--blue-france">

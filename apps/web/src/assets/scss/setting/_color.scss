@@ -13,33 +13,33 @@ $purple: #6a62f4;
 $green: #1ebe8e;
 $blue-france: #001891;
 $grey: #777;
+$blue-france-inverted: var(--text-inverted-blue-france);
 
 $colors: (
   "white": color.$white,
   "black": color.$black,
   "yellow": (
     "color": $yellow,
-    "color-with-background": var(--text-action-high-blue-france)
+    "color-with-background": color.$blue-france
   ),
   "red": (
     "color": $red,
-    "color-with-background": var(--text-action-high-blue-france)
+    "color-with-background": color.$blue-france
   ),
   "purple" : (
     "color": $purple,
-    "color-with-background": var(--text-inverted-blue-france)
+    "color-with-background": $blue-france-inverted
   ),
   "green": (
     "color": $green,
-    "color-with-background": var(--text-action-high-blue-france)
+    "color-with-background": $blue-france-inverted
   ),
   "blue-france": (
     "color": $blue-france,
-    "color-with-background": var(--text-inverted-blue-france),
-    "is-inverted": true
+    "color-with-background": $blue-france-inverted,
   ),
   "grey": (
     "color": $grey,
-    "color-with-background": var(--text-action-high-blue-france)
+    "color-with-background": color.$blue-france
   ),
 );

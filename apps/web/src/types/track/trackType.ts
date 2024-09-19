@@ -6,7 +6,7 @@ import {
   PropertyPath,
   TrackId,
   QuestionnaireData,
-  Objective,
+  ThemeId,
   Color
 } from '@/types'
 import { ConditionOperators } from '@/types/conditionOperators'
@@ -184,7 +184,7 @@ export interface Track {
   hint?: Translations
   resume?: Translations
   callout?: TrackCallout
-  objective?: Objective
+  theme?: ThemeId
   interface?: TrackInterface
   behavior?: TrackBehavior
   config?: TrackResultsConfig

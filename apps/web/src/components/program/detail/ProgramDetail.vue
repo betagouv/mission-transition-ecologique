@@ -26,7 +26,7 @@
   <!-- PROGRAM INFOS -->
   <div
     v-if="program"
-    class="fr-container fr-mt-3v"
+    class="fr-container fr-mt-0 fr-mt-md-3v"
   >
     <div class="fr-grid-row fr-grid-row-gutters">
       <div class="fr-col">
@@ -54,7 +54,7 @@
             <div class="fr-col-justify--left fr-mb-5v fr-h6 fr-text--purple">
               <div class="fr-text-line-height--8v">{{ program?.titre }}</div>
               <TeeCopyLinkButton
-                class="fr-ml-6v"
+                class="fr-ml-6v fr-hidden fr-unhidden-md"
                 :tertiary="true"
                 :no-outline="true"
                 copy-class="fr-text--green"
@@ -196,6 +196,13 @@
             <ProgramEligibility :program="program" />
           </ProgramAccordion>
           <ProgramAccordion
+            v-if="program && linkedProjects && linkedProjects.length > 0"
+            :accordion-id="`${program.id}-linked-projects`"
+            :title="Translation.t('program.projectExamples')"
+          >
+            <ProgramProjects :linked-projects="linkedProjects" />
+          </ProgramAccordion>
+          <ProgramAccordion
             v-if="program && program['description longue']"
             :accordion-id="`${program.id}-long-description`"
             :title="Translation.t('program.programKnowMore')"
@@ -229,11 +236,10 @@ import ProgramAccordion from '@/components/program/detail/ProgramAccordion.vue'
 import ProgramEligibility from '@/components/program/detail/ProgramEligibility.vue'
 import ProgramForm from '@/components/program/detail/ProgramForm.vue'
 import ProgramLongDescription from '@/components/program/detail/ProgramLongDescription.vue'
-import ProgramObjective from '@/components/program/detail/ProgramObjective.vue'
 import ProgramTile from '@/components/program/detail/ProgramTile.vue'
 import Config from '@/config'
 import { useProgramStore } from '@/stores/program'
-import { type ProgramData as ProgramType } from '@/types'
+import { type ProgramData as ProgramType, Project as ProjectType } from '@/types'
 import { RouteName } from '@/types/routeType'
 import { useNavigationStore } from '@/stores/navigation'
 import Matomo from '@/utils/matomo'
@@ -241,12 +247,15 @@ import Program from '@/utils/program/program'
 import { Scroll } from '@/utils/scroll'
 import Translation from '@/utils/translation'
 import { computed, onBeforeMount, ref } from 'vue'
+import { useProjectStore } from '@/stores/project'
 
+const projectStore = useProjectStore()
 const programsStore = useProgramStore()
 const navigationStore = useNavigationStore()
 
 const route = useRoute()
 const program = ref<ProgramType>()
+const linkedProjects = ref<ProjectType[] | undefined>([])
 const TeeProgramFormContainer = ref<HTMLElement | null | undefined>(null)
 
 const publicPath = Config.publicPath
@@ -287,8 +296,14 @@ const isProgramAutonomous = computed(() => {
   return program.value?.[`activable en autonomie`] == 'oui'
 })
 
-onBeforeMount(() => {
+onBeforeMount(async () => {
+  useNavigationStore().hasSpinner = true
   program.value = programsStore.currentProgram
+  const projectResult = await projectStore.projects
+  if (projectResult.isOk) {
+    linkedProjects.value = Program.getLinkedProjects(program.value, projectResult.value)
+  }
+  useNavigationStore().hasSpinner = false
   // analytics / send event
   Matomo.sendEvent('result_detail', route.name === RouteName.CatalogProgramDetail ? 'show_detail_catalog' : 'show_detail', props.programId)
 })
