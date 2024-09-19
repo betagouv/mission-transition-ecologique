@@ -21,6 +21,9 @@ const programFrDict = {
     programAmIEligible: "Conditions d'éligibilité",
     form: {
       hint: '👋 Envoyez votre demande, un conseiller {operator} vous contactera prochainement',
+      errorEmail: {
+        subject: "[france-transition] Demande d'informations concernant le dispositif {program}"
+      },
       needs: `Bonjour,
 
 Mon entreprise a une activité de type "{secteur}".

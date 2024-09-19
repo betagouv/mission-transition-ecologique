@@ -77,7 +77,7 @@
     <div
       id="project-contact"
       ref="TeeProjectFormContainer"
-      class="fr-tee-form-block fr-p-4v"
+      class="fr-bg--blue-light fr-grid-row fr-grid-row--center fr-p-4v"
     >
       <TeeForm
         v-if="project"
@@ -87,7 +87,7 @@
         :data-id="project.id.toString()"
         :data-slug="project.slug"
         :hint="Translation.t('project.form.hint')"
-        :error-email-subject="Translation.t('form.errorEmail.subject', { project: props.project.title })"
+        :error-email-subject="Translation.t('project.form.errorEmail.subject', { titre: props.project.title })"
       />
     </div>
   </DsfrAccordion>

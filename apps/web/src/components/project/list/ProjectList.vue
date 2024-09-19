@@ -111,10 +111,7 @@
   >
     <div class="fr-container fr-mt-2v">
       <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2">
-        <OtherProjectCta
-          v-show="!otherProjectForm"
-          @click="openOtherProjectForm"
-        />
+        <OtherProjectCta @click="openOtherProjectForm" />
         <OtherProjectForm v-show="otherProjectForm" />
       </div>
     </div>
@@ -186,7 +183,7 @@ const getPriorityOrder = (project: Project) => {
 }
 
 const openOtherProjectForm = () => {
-  otherProjectForm.value = true
+  otherProjectForm.value = !otherProjectForm.value
 }
 
 const getRouteToProjectDetail = (project: Project): RouteLocationRaw => {

@@ -1,6 +1,6 @@
 <template>
   <TeeDsfrButton
-    class="fr-bg--blue-light fr-text--purple inline-flex fr-text--bold fr-text-xl fr-btn-fullwidth fr-btn-align-center"
+    class="fr-bg--blue-light fr-text--purple fr-text--bold fr-text-xl fr-btn-fullwidth fr-btn-align-center"
     size="lg"
   >
     <template #default>

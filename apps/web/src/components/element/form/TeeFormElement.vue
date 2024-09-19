@@ -38,6 +38,7 @@
     >
       <DsfrInput
         v-model="localTextValue"
+        class="fr-bg--white"
         :type="localField.type"
         label-visible
         :is-valid="localField.isValid"
@@ -67,7 +68,7 @@
             :type="localField.callOut.type"
             :img="`${publicPath}${localField.callOut.img}`"
             :img-container-class="'fr-col-xl-2 fr-hidden fr-unhidden-lg'"
-            :content-class="'fr-pb-2v fr-tee-form-banner fr-px-3v fr-px-lg-0'"
+            :content-class="'fr-pb-2v fr-px-3v fr-px-lg-0'"
           >
             {{ localField.callOut.content }}
           </TeeCallout>

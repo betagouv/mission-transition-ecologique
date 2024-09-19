@@ -2,7 +2,7 @@
   <!-- BACK TO FORM BTN -->
   <TeeDsfrButton
     v-show="formIsSent"
-    class="fr-btn fr-btn--tertiary-no-outline inline-flex fr-mb-3v fr-link fr-tee-form-arrow-back"
+    class="fr-btn fr-btn--tertiary-no-outline fr-col-10 fr-mb-3v fr-link"
     tertiary
     no-outline
     icon-only
@@ -110,7 +110,6 @@ const formIsSent = ref<boolean>(false)
 const requestResponse = ref<ReqResp>()
 const isLoading = ref<boolean>(false)
 const localForm = ref<FormDataType>(props.form)
-
 const isFormFilled = computed(() => {
   const isFilled = []
   for (const key in localForm.value) {

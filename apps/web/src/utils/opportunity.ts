@@ -100,6 +100,17 @@ export default class Opportunity {
     return baseFields
   }
   static getOtherProjectFormFields(): FormDataType {
-    return this.getBaseOpportunityFormFields()
+    const baseFields = this.getBaseOpportunityFormFields()
+    baseFields.needs.value = Translation.t('otherProject.form.needs', { secteur: TrackStructure.getSectorShortLabel() })
+    return {
+      projectTitle: {
+        required: true,
+        value: undefined,
+        label: 'Quel est le nom de votre projet?',
+        isValid: undefined,
+        type: FieldType.Text
+      },
+      ...baseFields
+    }
   }
 }

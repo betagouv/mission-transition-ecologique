@@ -2,22 +2,23 @@
   <div
     id="project-contact"
     ref="TeeOtherProjectFormContainer"
-    class="fr-tee-form-block fr-p-4v"
+    class="fr-bg--blue-light fr-grid-row fr-grid-row--center fr-p-4v"
   >
     <TeeForm
       :form-container-ref="TeeOtherProjectFormContainer"
       :form-type="FormType.Project"
       :form="Opportunity.getOtherProjectFormFields()"
       data-id="other-project-id"
+      :hint="Translation.t('otherProject.form.hint')"
+      :error-email-subject="Translation.t('form.errorEmail.subject', { titre: '' })"
       data-slug="other-project-slug"
-      hint="Test"
-      error-email-subject="Test"
     />
   </div>
 </template>
 <script setup lang="ts">
 import { FormType } from '@/types'
 import Opportunity from '@/utils/opportunity'
+import Translation from '@/utils/translation'
 
 const TeeOtherProjectFormContainer = ref<HTMLElement | null | undefined>(null)
 </script>

@@ -218,7 +218,7 @@
     <!-- PROGRAM FORM -->
     <div
       ref="TeeProgramFormContainer"
-      class="fr-tee-form-block fr-p-4v"
+      class="fr-bg--blue-light fr-grid-row fr-grid-row--center fr-p-4v"
     >
       <TeeForm
         v-if="program"
@@ -228,7 +228,7 @@
         :phone-callback="Translation.ti(Translation.t('form.phoneContact'), { operator: program['opérateur de contact'] })"
         :form="Opportunity.getProgramFormFields(program)"
         :form-type="FormType.Program"
-        :error-email-subject="Translation.t('form.errorEmail.subject', { program: program.titre })"
+        :error-email-subject="Translation.t('program.form.errorEmail.subject', { program: program.titre })"
         :hint="Translation.t('program.form.hint', { operator: program['opérateur de contact'] })"
       />
     </div>
