@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="localField.type === FieldType.Checkbox"
-    class="fr-col-12 fr-col-md-12"
+    :class="`fr-col-${localField.colSize || '12'} fr-col-md-${localField.colSize || '12'}`"
   >
     <DsfrCheckbox
       v-model="localCheckboxValue"
@@ -27,6 +27,24 @@
       </router-link>
       .
     </span>
+  </div>
+  <div
+    v-else-if="localField.type === FieldType.Select"
+    :class="`fr-col-${localField.colSize || '12'} fr-col-md-${localField.colSize || '12'}`"
+  >
+    <DsfrInputGroup
+      :error-message="getErrorMessage()"
+      :valid-message="getValidMessage()"
+    >
+      <DsfrSelect
+        v-model="localTextValue"
+        :label="localField.label"
+        class="fr-bg--white"
+        :required="localField.required"
+        :name="`form-select-${localField.label}`"
+        :options="localField.options"
+      />
+    </DsfrInputGroup>
   </div>
   <div
     v-else

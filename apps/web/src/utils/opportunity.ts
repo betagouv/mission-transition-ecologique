@@ -1,9 +1,9 @@
 import { PhoneValidator, EmailValidator, SiretValidator } from '@tee/common'
-import { FieldType, RouteName, type ProgramData as ProgramType, Project, FormDataType } from '@/types'
+import { FieldType, RouteName, type ProgramData as ProgramType, Project, FormDataType, ThemeType, ThemeId } from '@/types'
 import TrackStructure from '@/utils/track/trackStructure'
 import { CalloutType } from '@/types/elementsPropsTypes'
 import Translation from '@/utils/translation'
-
+import { Theme } from '@/utils/theme'
 export default class Opportunity {
   static getBaseOpportunityFormFields(): FormDataType {
     return {
@@ -101,7 +101,11 @@ export default class Opportunity {
   }
   static getOtherProjectFormFields(): FormDataType {
     const baseFields = this.getBaseOpportunityFormFields()
+    const selectedThemeId = TrackStructure.getTheme()
+    baseFields.needs.label = 'Quel est votre projet ?'
     baseFields.needs.value = Translation.t('otherProject.form.needs', { secteur: TrackStructure.getSectorShortLabel() })
+    const themes = Theme.themes
+    const selectedTheme = Theme.getById(selectedThemeId as ThemeId)
     return {
       projectTitle: {
         required: true,
@@ -109,6 +113,14 @@ export default class Opportunity {
         label: 'Quel est le nom de votre projet?',
         isValid: undefined,
         type: FieldType.Text
+      },
+      projectTheme: {
+        required: true,
+        value: { text: selectedTheme?.title || '', value: selectedThemeId },
+        label: 'Thématique',
+        isValid: true,
+        options: themes.map((theme: ThemeType) => ({ value: theme.id, text: theme.title })),
+        type: FieldType.Select
       },
       ...baseFields
     }

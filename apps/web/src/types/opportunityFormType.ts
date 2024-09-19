@@ -2,7 +2,12 @@ import { CalloutType, FieldType } from '@/types'
 import { RouteName } from '@/types/routeType'
 
 export interface FormDataType {
-  [key: string]: StringFieldInputType | MandatoryStringFieldFormType | BooleanFieldInputType | ValidatedStringFieldInputType
+  [key: string]:
+    | StringFieldInputType
+    | MandatoryStringFieldFormType
+    | BooleanFieldInputType
+    | ValidatedStringFieldInputType
+    | SelectFieldInputType
   name: StringFieldInputType
   surname: StringFieldInputType
   tel: ValidatedStringFieldInputType
@@ -27,10 +32,12 @@ type DefaultFieldFormType = {
   wrapperClass?: string
   rows?: number
   colSize?: number
+  options?: any[]
   callOut?: InputCalloutType
 }
 
 export type StringFieldInputType = DefaultFieldFormType & { value: string | undefined }
+export type SelectFieldInputType = DefaultFieldFormType & { value: { text: string; value: any } }
 export type BooleanFieldInputType = DefaultFieldFormType & { value: boolean }
 export type MandatoryStringFieldFormType = DefaultFieldFormType & { value: string }
 export type ValidatedStringFieldInputType = StringFieldInputType & {
