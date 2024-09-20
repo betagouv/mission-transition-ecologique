@@ -41,6 +41,7 @@ export const mockCurrentDateService = { get: () => '01/01/2024' }
 export const makeProgramsRepository = (programs: ProgramType[]): ProgramRepository => {
   return {
     getById: () => undefined,
-    getAll: () => programs
+    getAll: () => programs,
+    getAllPersonalizedPrograms: () => programs
   }
 }
