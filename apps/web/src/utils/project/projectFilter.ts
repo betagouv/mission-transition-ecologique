@@ -1,9 +1,9 @@
-import { ProgramData, Objective, ThemeType, Project } from '@/types'
+import { ProgramData, ThemeId, ThemeType, Project } from '@/types'
 import { Theme } from '@/utils/theme'
 
 export default class ProjectFilter {
-  static byTheme(project: Project, objectiveType: Objective) {
-    const themeSelected: ThemeType | undefined = Theme.getByValue(objectiveType)
+  static byTheme(project: Project, themeId: ThemeId) {
+    const themeSelected: ThemeType | undefined = Theme.getById(themeId)
 
     if (themeSelected) {
       return project.themes.includes(themeSelected.id)

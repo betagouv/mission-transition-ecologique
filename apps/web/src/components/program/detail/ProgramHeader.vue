@@ -7,24 +7,19 @@
     message="Cette aide correspond à vos critères d’éligibilité"
     message-icon="fr-icon-checkbox-circle-fill"
   />
-  <div class="fr-container fr-mt-3v">
+  <div class="fr-container fr-mt-0 fr-mt-md-3v">
     <div class="fr-grid-row fr-grid-row-gutters">
       <div
         v-if="isCatalogDetail"
         class="fr-col"
       >
-        <!-- BACK TO RESULTS BTN -->
-        <button
-          class="fr-btn fr-btn--lg fr-btn--tertiary-no-outline fr-mb-3v fr-pl-2v"
-          @click="goToPrograms"
-        >
-          <v-icon
-            name="ri-arrow-left-line"
-            aria-hidden="true"
-            class="fr-mr-2v"
-          />
-          {{ Translation.t('results.backToResults') }}
-        </button>
+        <TeeDsfrButton
+          :label="Translation.t('results.back')"
+          icon="fr-icon-arrow-left-line"
+          size="lg"
+          class="fr-btn fr-btn--tertiary-no-outline fr-mb-3v fr-pl-2v"
+          @click="router.back()"
+        />
       </div>
       <div
         v-if="!program"
@@ -75,10 +70,6 @@ const links = computed<DsfrBreadcrumbProps['links']>(() => {
   }
   return [...links, { text: props.program?.titre || '' }]
 })
-
-const goToPrograms = () => {
-  router.back()
-}
 onBeforeMount(() => {
   project.value = projectStore.currentProject
 })
