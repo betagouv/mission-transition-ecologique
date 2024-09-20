@@ -112,10 +112,6 @@
       "description": "Ce champ est utile et requis uniquement si l'aide est de nature \"prêt\". Il s'agit d'un champ texte, à des fins d'affichage.",
       "type": "string"
     },
-    "taux du prêt": {
-      "description": "Ce champ est utile uniquement si l'aide est de nature \"prêt\", mais facultatif. Il s'agit d'un champ texte, à des fins d'affichage.",
-      "type": "string"
-    },
     "conditions d'éligibilité": {
       "description": "Les conditions d'éligibilité, écrites en langage naturel, pour affichage sur la fiche de résultat",
       "type": "object",

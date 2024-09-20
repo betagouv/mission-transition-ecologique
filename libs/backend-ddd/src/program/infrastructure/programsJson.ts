@@ -1,7 +1,8 @@
 import { ProgramRepository } from '../domain/spi'
 import { jsonPrograms } from '@tee/data/generated'
 import { ProgramType } from '@tee/data'
-import { QuestionnaireData } from '@tee/common'
+import { QuestionnaireData, StructureSizeMap } from '@tee/common'
+import { ConditionalYaml } from './types'
 import { Monitor } from '../../common'
 
 export default class ProgramsJson implements ProgramRepository {
@@ -27,31 +28,14 @@ export default class ProgramsJson implements ProgramRepository {
     return this.getAll().find((programData: ProgramType) => programData.id === id)
   }
 
-  public personalizePrograms = (allPrograms: ProgramType[], questionnaireData: QuestionnaireData): ProgramType[] => {
-    console.log('dans personalize Programs')
-
+  public getAllPersonalizedPrograms(questionnaireData: QuestionnaireData): ProgramType[] {
+    const allPrograms = jsonPrograms as unknown as ProgramType[]
+    // new json reading to get new objects and avoid modifying this._programs.
     allPrograms.forEach((program) => {
       if (program['champs conditionnels']) {
-        for (const conditionnalChange of program['champs conditionnels']) {
-          console.log('checking une conditionnelle')
-          console.log(conditionnalChange)
-          if (!conditionnalChange['une de ces conditions']) {
-            Monitor.error('Program conditionnal not handled')
-          }
-          for (const oneCondition of conditionnalChange['une de ces conditions']) {
-            if (!oneCondition.startsWith('région = ')) {
-              Monitor.error('Program conditionnal not handled')
-            }
-
-            const regionCondition = oneCondition.replace('région = ', '').trim()
-            console.log(regionCondition)
-            if (questionnaireData.region === regionCondition) {
-              for (const key in conditionnalChange) {
-                if (key !== 'une de ces conditions') {
-                  this.rewriteProgramProperty(program, key, conditionnalChange[key])
-                }
-              }
-            }
+        for (const conditionalChange of program['champs conditionnels']) {
+          if (this._conditionalValid(conditionalChange as ConditionalYaml, questionnaireData)) {
+            this._rewriteProgramProperties(program, conditionalChange as ConditionalYaml)
           }
         }
       }
@@ -59,15 +43,110 @@ export default class ProgramsJson implements ProgramRepository {
     return allPrograms
   }
 
-  private rewriteProgramProperty = (program: ProgramType, key: string, value: unknown) => {
-    if (key == 'promesse') {
-      program.promesse = value as string
-      return
+  private _conditionalValid(conditionnalChange: ConditionalYaml, questionnaireData: QuestionnaireData): boolean {
+    if (!conditionnalChange['une de ces conditions'] && !conditionnalChange['toutes ces conditions']) {
+      Monitor.error('Format error in program conditionnal data')
+      return false
     }
-    if (key == 'URL externe') {
-      program.url = value as string
-      return
+    let conditionValid = true
+    if (
+      conditionnalChange['une de ces conditions'] &&
+      !conditionnalChange['une de ces conditions'].some((condition) => this._checkcondition(condition, questionnaireData))
+    ) {
+      conditionValid = false
     }
-    Monitor.error('Attempting to personalize a program property for which no rewrite method has been defined.')
+    if (
+      conditionnalChange['toutes ces conditions'] &&
+      !conditionnalChange['toutes ces conditions'].every((condition) => this._checkcondition(condition, questionnaireData))
+    ) {
+      conditionValid = false
+    }
+    return conditionValid
+  }
+
+  private _checkcondition(condition: string, questionnaireData: QuestionnaireData): boolean {
+    if (condition.startsWith('région = ')) {
+      const regionCondition = condition.replace('région = ', '').trim()
+      return questionnaireData.region === regionCondition
+    }
+
+    if (condition.startsWith('effectif')) {
+      if (!questionnaireData.structure_size) {
+        Monitor.error('In conditionalPrograms, impossible to assess the sizeCOndition, no structure_size available')
+        return false
+      }
+      const comparisonValue = parseInt(condition.split('=')[1].trim())
+      const conditionIncludeMathSign = condition.includes('<=') || condition.includes('>=')
+      if (comparisonValue === null || isNaN(comparisonValue) || !conditionIncludeMathSign) {
+        Monitor.error('Formatting error in a conditional Program condition', { condition })
+        return false
+      }
+      if (condition.includes('<=')) {
+        console.log('effectif' + questionnaireData.structure_size + '<=' + comparisonValue)
+        return StructureSizeMap[questionnaireData.structure_size] <= comparisonValue
+      } else if (condition.includes('>=')) {
+        return StructureSizeMap[questionnaireData.structure_size] >= comparisonValue
+      }
+    }
+
+    Monitor.error('Unknown condition type in conditional programs', { condition })
+    return false
+  }
+
+  private _rewriteProgramProperties = (program: ProgramType, conditionalChange: ConditionalYaml) => {
+    if (conditionalChange['opérateur de contact']) {
+      program['opérateur de contact'] = conditionalChange['opérateur de contact']
+    }
+
+    if (conditionalChange['autres opérateurs']) {
+      program['autres opérateurs'] = conditionalChange['autres opérateurs']
+    }
+
+    if (conditionalChange.url) {
+      program.url = conditionalChange.url
+    }
+
+    if (conditionalChange['Montant du dispositif']) {
+      this._rewriteFinancialData(program, conditionalChange['Montant du dispositif'])
+    }
+
+    if (conditionalChange['Durée du dispositif']) {
+      this._rewriteDurationData(program, conditionalChange['Durée du dispositif'])
+    }
+
+    if (conditionalChange['Eligibilité taille']) {
+      program["conditions d'éligibilité"]["taille de l'entreprise"][0] = conditionalChange['Eligibilité taille']
+    }
+
+    if (conditionalChange["autres critères d'éligibilité"] && conditionalChange["autres critères d'éligibilité"].length) {
+      program["conditions d'éligibilité"]["autres critères d'éligibilité"] = conditionalChange["autres critères d'éligibilité"] as [
+        string,
+        ...string[]
+      ]
+    }
+  }
+
+  private _rewriteDurationData(program: ProgramType, value: string) {
+    if (program['durée du prêt']) {
+      program['durée du prêt'] = value
+    }
+    if (program["durée de l'accompagnement"]) {
+      program["durée de l'accompagnement"] = value
+    }
+  }
+
+  private _rewriteFinancialData(program: ProgramType, value: string) {
+    if (program["coût de l'accompagnement"]) {
+      program["coût de l'accompagnement"] = value
+    }
+    if (program['montant du financement']) {
+      program['montant du financement'] = value
+    }
+    if (program["montant de l'avantage fiscal"]) {
+      program["montant de l'avantage fiscal"] = value
+    }
+    if (program['montant du prêt']) {
+      program['montant du prêt'] = value
+    }
   }
 }

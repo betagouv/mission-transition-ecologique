@@ -77,6 +77,10 @@ export class ConditionalDataGenerator {
     addField('Montant du dispositif', oneConditional["Montant de l'aide ou coût"])
     addField('Durée du dispositif', oneConditional["Durée de l'aide"])
     addField('Eligibilité taille', oneConditional['Eligibilité taille'])
-    addField('Eligibilité Spécifique', oneConditional['Eligibilité Spécifique'])
+    if (oneConditional['Eligibilité Spécifique']) {
+      conditionalEntry["autres critères d'éligibilité"] = oneConditional['Eligibilité Spécifique']
+        .split('\n')
+        .map((criteria) => criteria.substring(2))
+    }
   }
 }

@@ -9,7 +9,7 @@ autres opérateurs:
   - ADEME
 url: https://diag.bpifrance.fr/diag-decarbon-action
 nature de l'aide: étude
-coût de l'accompagnement: "4 000 € à 6 000 €\_HT après subvention de 60% à 40% selon la taille de l'entreprise"
+coût de l'accompagnement: "6 000 €\_HT après subvention de 40%"
 durée de l'accompagnement: 12 jours de prestation répartis sur 6 à 8 mois
 objectifs:
   - description: >-
@@ -68,9 +68,3 @@ publicodes:
   entreprise . a un objectif ciblé:
     une de ces conditions:
       - questionnaire . objectif prioritaire . est ma performance énergétique
-champs conditionnels:
-  - toutes ces conditions:
-      - effectif >= 250
-      - effectif <= 499
-    Montant du dispositif: 6 000 € HT après subvention de 40%
-    Eligibilité taille: De 250 à 500 salariés

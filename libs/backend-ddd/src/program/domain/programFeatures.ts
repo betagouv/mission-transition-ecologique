@@ -25,11 +25,10 @@ export default class ProgramFeatures {
   }
 
   public getFilteredBy(questionnaireData: QuestionnaireData): Result<ProgramType[], Error> {
-    const allPrograms = this._programRepository.getAll()
     if (!this._currentDateService || !this._rulesService) {
       return Result.err(new Error('currentDateService and rulesService should be defined to filter programs'))
     }
-    const allPersonalizedPrograms = this._programRepository.personalizePrograms(allPrograms, questionnaireData)
+    const allPersonalizedPrograms = this._programRepository.getAllPersonalizedPrograms(questionnaireData)
 
     let filteredPrograms = filterPrograms(allPersonalizedPrograms, questionnaireData, this._currentDateService.get(), this._rulesService)
     const route = questionnaireData.questionnaire_route

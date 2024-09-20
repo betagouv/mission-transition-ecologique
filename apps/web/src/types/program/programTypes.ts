@@ -25,12 +25,11 @@ export interface ProgramData {
   "nature de l'aide": ProgramAidType
   'activable en autonomie'?: string
   "coût de l'accompagnement"?: string
-  "durée de l'accompagnement"?: string
   'montant du financement'?: string
   "montant de l'avantage fiscal"?: string
   'montant du prêt'?: string
+  "durée de l'accompagnement"?: string
   'durée du prêt'?: string
-  'taux du prêt'?: string
   url?: string
 
   "conditions d'éligibilité": {
