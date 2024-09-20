@@ -7,15 +7,6 @@ import { ComputedRef } from 'vue'
 export class Theme {
   static themes: ThemeType[] = [
     {
-      id: ThemeId.Environmental,
-      title: 'Analyses environnementales',
-      tagLabel: '🌱 analyses',
-      value: Objective.EnvironmentalImpact,
-      image: '/images/thematique/thematique-strategie.svg',
-      color: Color.purple,
-      titleColor: Color.white
-    },
-    {
       id: ThemeId.Energy,
       title: 'Énergie',
       tagLabel: '⚡️ énergie',
@@ -23,21 +14,11 @@ export class Theme {
       color: Color.yellow
     },
     {
-      id: ThemeId.Water,
-      title: 'Économies d’eau',
-      tagLabel: '💧 eau',
-      value: Objective.WaterConsumption,
-      image: '/images/thematique/thematique-eau.svg',
-      color: Color.blueFrance,
-      titleColor: Color.white
-    },
-    {
       id: ThemeId.Building,
       title: 'Construction & rénovation',
       tagLabel: '🏢 rénovation',
       image: '/images/thematique/thematique-batiments.svg',
-      color: Color.purple,
-      titleColor: Color.white
+      color: Color.purple
     },
     {
       id: ThemeId.Mobility,
@@ -79,7 +60,7 @@ export class Theme {
       title: 'Analyses environnementales',
       tagLabel: '🌱 analyses',
       image: '/images/thematique/thematique-strategie.svg',
-      color: Color.blue
+      color: Color.purple
     },
     {
       id: ThemeId.Biodiversity,
@@ -145,8 +126,8 @@ export class Theme {
   static getThemeFromSelectedOrPriorityTheme(): ComputedRef<ThemeId | undefined> {
     return computed(() => {
       return useProgramStore().hasThemeTypeSelected()
-        ? (useProgramStore().getThemeTypeSelected() as Theme)
-        : (this.getThemeByValue(UsedTrack.getPriorityObjective()) ?? undefined)
+        ? (useProgramStore().getThemeTypeSelected() as ThemeId)
+        : (UsedTrack.getPriorityTheme() ?? undefined)
     })
   }
 }

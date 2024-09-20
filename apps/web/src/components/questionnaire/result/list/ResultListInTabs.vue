@@ -39,7 +39,7 @@
 import { TeeDsfrTabs } from '@/components/element/TeeTabs.vue'
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
-import { ProgramData, TrackId, Project } from '@/types'
+import { BreakpointNameType, ProgramData, Project, TrackId } from '@/types'
 import { computed, onBeforeMount } from 'vue'
 import Matomo from '@/utils/matomo'
 import { useProjectStore } from '@/stores/project'
@@ -75,8 +75,9 @@ const filteredProjects = computed(() => {
 
   return projectStore.getProjectsByThemeAndEligibility(
     projects.value,
-    Theme.getObjectiveFromSelectedOrPriorityObjective().value,
-    filteredPrograms.value ?? undefined)
+    Theme.getThemeFromSelectedOrPriorityTheme().value,
+    filteredPrograms.value ?? undefined
+  )
 })
 
 onBeforeMount(async () => {

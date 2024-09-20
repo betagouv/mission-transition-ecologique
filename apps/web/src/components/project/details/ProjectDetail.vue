@@ -2,8 +2,7 @@
   <ProjectHeader
     v-if="project"
     :project="project"
-    :theme-color="themeColor"
-    :theme-title-color="themeTitleColor"
+    :theme-color="themeColor as Color"
   />
   <div
     v-if="project"
@@ -25,7 +24,7 @@
             <LinkedProjects
               v-if="project.linkedProjects.length > 0"
               :project="project"
-              :color="themeColor"
+              :color="themeColor as Color"
             />
           </DsfrAccordionsGroup>
         </div>
@@ -34,24 +33,21 @@
   </div>
 </template>
 <script setup lang="ts">
-import { ThemeType, Project, Color } from '@/types'
+import { Project, Color, ThemeId } from '@/types'
 import { Theme } from '@/utils/theme'
 import { useProjectStore } from '@/stores/project'
-import { computed, onBeforeMount } from 'vue'
+import { onBeforeMount } from 'vue'
 
 const projectStore = useProjectStore()
 
 const project = ref<Project>()
-const theme = ref<ThemeType>()
+const themeColor = ref<Color | ''>()
 
 interface Props {
   projectSlug: string
   programId?: number
 }
 const props = defineProps<Props>()
-
-const themeColor = computed<Color | undefined>(() => theme.value?.color)
-const themeTitleColor = computed<Color | undefined>(() => theme.value?.titleColor)
 
 onBeforeMount(async () => {
   if (props.projectSlug !== projectStore.currentProject?.slug) {
@@ -60,14 +56,12 @@ onBeforeMount(async () => {
 
   project.value = projectStore.currentProject
 
-  const objective = Theme.getObjectiveFromSelectedOrPriorityObjective()
+  const selectedThemeId = Theme.getThemeFromSelectedOrPriorityTheme()
 
   if (project.value) {
-    const themeId = objective.value
-      ? project.value?.themes.find((t) => Theme.getById(t) === Theme.getByValue(objective.value))
-      : project.value?.mainTheme
+    const themeId = selectedThemeId.value ? project.value?.themes.find((t) => t === selectedThemeId.value) : project.value?.mainTheme
 
-    theme.value = Theme.getById(themeId)
+    themeColor.value = Theme.getColorById(themeId as ThemeId)
   }
 })
 </script>

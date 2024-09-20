@@ -82,7 +82,7 @@ export type HomeTipsContent = {
   title: string
   img: string
   imgSolo: string
-  value: Objective
+  value: ThemeId
   imgRight: boolean
   text: string
 }

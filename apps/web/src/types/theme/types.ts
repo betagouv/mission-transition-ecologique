@@ -6,5 +6,4 @@ export interface ThemeType {
   tagLabel: string
   image: string
   color: Color
-  titleColor?: Color
 }

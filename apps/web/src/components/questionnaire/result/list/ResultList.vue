@@ -25,7 +25,7 @@ const filteredPrograms = computed(() => {
   return programs.value ? programStore.getProgramsByFilters(programs.value) : undefined
 })
 
-const filteredProjects = Project.filter(projects, filteredPrograms, Theme.getObjectiveFromSelectedOrPriorityObjective())
+const filteredProjects = Project.filter(projects, filteredPrograms, Theme.getThemeFromSelectedOrPriorityTheme())
 
 onBeforeMount(async () => {
   navigationStore.hasSpinner = true

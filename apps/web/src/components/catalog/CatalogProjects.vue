@@ -79,7 +79,7 @@ const projects = ref<ProjectType[]>()
 const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)
 
-const theme = Theme.getObjectiveFromSelectedObjective()
+const theme = Theme.getThemeFromSelectedTheme()
 
 const filteredProjects = Project.filter(projects, programs, theme)
 const sortedProjects = Project.sort(filteredProjects)
