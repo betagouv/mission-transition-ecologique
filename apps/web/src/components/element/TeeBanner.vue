@@ -55,7 +55,6 @@ const bgClass = computed(() => {
 
 const styleClass = computed(() => {
   const style = [bgClass.value]
-  console.log(props.hasGradient)
   if (props.hasGradient) {
     style.push('tee-banner__gradient')
   }

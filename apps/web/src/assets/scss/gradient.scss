@@ -1,6 +1,7 @@
 @use 'setting';
 @use 'sass:meta';
 @use 'sass:map';
+
 .fr-gradient {
   @each $color, $properties in setting.$colors {
     &--#{$color} {
