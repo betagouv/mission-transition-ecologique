@@ -34,7 +34,7 @@
             v-if="!otherProjectForm && showProjectListComponent"
             @click="openOtherProjectForm"
           />
-          <OtherProjectForm v-else />
+          <OtherProjectForm v-else-if="showProjectListComponent" />
         </div>
       </div>
     </div>
