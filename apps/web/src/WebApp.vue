@@ -1,23 +1,18 @@
 <template>
-  <div>
-    <TeeHeader />
-    <TeeMatomo />
+  <TeeHeader />
+  <TeeMatomo />
 
-    <router-view v-if="isReady" />
-    <template v-else>
-      <div class="fr-grid-row--center fr-my-10v">
-        <div class="fr-col-12">
-          <div class="fr-text-center">
-            <TeeSpinner scale="6" />
-          </div>
+  <router-view v-if="isReady" />
+  <template v-else>
+    <div class="fr-grid-row--center fr-my-10v">
+      <div class="fr-col-12">
+        <div class="fr-text-center">
+          <TeeSpinner scale="6" />
         </div>
       </div>
-    </template>
-
-    <div class="fr-mt-0v">
-      <TeeFooter />
     </div>
-  </div>
+  </template>
+  <TeeFooter />
 </template>
 
 <script setup lang="ts">

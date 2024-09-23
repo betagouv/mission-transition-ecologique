@@ -1,15 +1,18 @@
 <template>
-  <TeeDsfrBreadcrumb v-if="!hasSpinner" />
-  <CatalogBanner>
-    <template #title> Le catalogue des aides publiques à la transition écologique </template>
-    <template #description>
-      Réalisez une recherche parmi les aides à la transition écologique des entreprises, proposées par l’ensemble des partenaires publics :
-      ADEME, Bpifrance, CCI, CMA, etc.
+  <Layout>
+    <template #top>
+      <CatalogBanner>
+        <template #title> Le catalogue des aides publiques à la transition écologique </template>
+        <template #description>
+          Réalisez une recherche parmi les aides à la transition écologique des entreprises, proposées par l’ensemble des partenaires
+          publics : ADEME, Bpifrance, CCI, CMA, etc.
+        </template>
+      </CatalogBanner>
     </template>
-  </CatalogBanner>
-
-  <div class="fr-container--fluid fr-container--fluid--no-overflow fr-mt-6v">
-    <div class="fr-grid-row fr-grid-row--center">
+    <div
+      v-if="hasSpinner || hasError"
+      class="fr-grid-row fr-grid-row--center"
+    >
       <TeeSpinner
         v-if="hasSpinner"
         scale="6"
@@ -17,13 +20,11 @@
       <ResultListNoResults
         v-else-if="showNoResultsComponent"
         :has-error="hasError"
-        message="Aucune aide n'a pu être identifiée sur cette thématique..."
-        :has-spinner="hasSpinner"
         :count-items="countPrograms"
       />
     </div>
-    <div class="fr-grid-row fr-grid-row--center">
-      <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
+    <template #beforeDefault>
+      <div class="fr-grid-row fr-grid-row--center fr-m-0 fr-p-0">
         <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-col-justify--left fr-mt-3v">
           <ThemeFilter v-if="hasThemeFilter" />
         </div>
@@ -36,29 +37,22 @@
           />
         </div>
       </div>
-    </div>
-    <div class="fr-grid-row fr-grid-row--center">
-      <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
-        <div class="fr-grid-row fr-grid-row--center">
-          <div
-            v-if="!hasSpinner"
-            class="fr-col-2 fr-col-hidden fr-col-unhidden-md"
-          >
-            <div class="fr-sidemenu fr-pr-0 fr-mx-3v">
-              <div class="fr-text--bold fr-text-left fr-mb-3v fr-mt-6w">Filtres</div>
-              <ProgramFiltersAccordion />
-            </div>
-          </div>
-          <div class="fr-col-12 fr-col-md-10 fr-pr-md-2v">
-            <ProgramList :filtered-programs="filteredPrograms" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+    </template>
+    <template
+      v-if="!hasSpinner"
+      #sidemenu
+    >
+      <div class="fr-text--bold fr-text-left fr-mb-3v fr-mt-6w">Filtres</div>
+      <ProgramFiltersAccordion />
+    </template>
+    <ProgramList :filtered-programs="filteredPrograms" />
+  </Layout>
+
+  <div class="fr-container--fluid fr-container--fluid--no-overflow fr-mt-6v"></div>
 </template>
 
 <script setup lang="ts">
+import Layout from '@/layout/Layout.vue'
 import { useProgramStore } from '@/stores/program'
 import { type ProgramData, TrackId, ThemeId } from '@/types'
 import Matomo from '@/utils/matomo'

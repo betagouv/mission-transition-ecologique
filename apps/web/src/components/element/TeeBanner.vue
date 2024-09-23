@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="fr-container--fluid"
-    :class="bgClass"
-  >
+  <div :class="bgClass">
     <div class="fr-container">
       <div class="fr-grid-row fr-grid-row--middle fr-grid-row--center">
         <slot name="title" />

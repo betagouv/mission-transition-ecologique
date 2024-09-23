@@ -82,7 +82,6 @@ export const routes = [
   },
   {
     path: '/aides-entreprise',
-    component: TeeCatalogPage as Component,
     beforeEnter: [Hook.resetUsedTrackStore, Hook.resetQueries, Hook.resetProgramFilters],
     children: [
       {

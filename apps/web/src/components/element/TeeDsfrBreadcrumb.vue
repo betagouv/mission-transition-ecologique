@@ -6,6 +6,7 @@
     />
   </div>
 </template>
+
 <script setup lang="ts">
 import type { DsfrBreadcrumbProps } from '@gouvminint/vue-dsfr'
 import { useNavigationStore } from '@/stores/navigation'
@@ -13,10 +14,12 @@ import { useUsedTrackStore } from '@/stores/usedTrack'
 import { TrackId } from '@/types'
 import { RouteName } from '@/types/routeType'
 import { type RouteLocationRaw } from 'vue-router'
-interface Props {
+
+export interface TeeDsfrBreadcrumbProps {
   links?: DsfrBreadcrumbProps['links']
 }
-const props = defineProps<Props>()
+const props = defineProps<TeeDsfrBreadcrumbProps>()
+
 const navigationStore = useNavigationStore()
 const usedTrackStore = useUsedTrackStore()
 
