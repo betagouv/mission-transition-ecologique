@@ -1,18 +1,5 @@
 <template>
-  <DsfrAccordion
-    v-if="isAccordion"
-    :title="title"
-    :expanded-id="expandedId"
-    @expand="(id: string | undefined) => (expandedId = id)"
-  >
-    <template #title>
-      <slot name="title" />
-    </template>
-    <slot name="content" />
-  </DsfrAccordion>
-
   <div
-    v-else
     class="fr-container"
     :class="getBorderStyleClass()"
   >
@@ -31,16 +18,12 @@ interface Props {
   title: string
   content?: string
   borderPosition?: BorderPosition[]
-  isAccordion?: boolean //NOTE: if accordion is true, this component must be nested in a DsfrAccordionsGroup component to work properly
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  isAccordion: false,
   content: undefined,
   borderPosition: undefined
 })
-
-const expandedId = ref<string | undefined>('details')
 
 const getBorderStyleClass = () => {
   if (!props.borderPosition) {
