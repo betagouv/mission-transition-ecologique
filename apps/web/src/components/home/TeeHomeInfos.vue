@@ -60,7 +60,7 @@
           icon="ri-arrow-right-line"
           icon-right
           class="fr-text--bold fr-btn--tertiary-no-outline"
-          @click="updateTheme(c.value)"
+          @click="updateTheme"
         />
       </div>
     </div>
@@ -68,7 +68,7 @@
 </template>
 
 <script setup lang="ts">
-import { TrackId, QuestionnaireRoute, ThemeId } from '@/types'
+import { TrackId, QuestionnaireRoute } from '@/types'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { useNavigationStore } from '@/stores/navigation'
 
@@ -82,7 +82,6 @@ const content = [
     title: ' Diminuer votre facture d’éléctricité',
     img: '/images/home/electric.svg',
     imgSolo: '/images/home/electric-solo.svg',
-    value: ThemeId.Energy,
     imgRight: false,
     text: 'Le prix de l’énergie ne cesse d’augmenter. \
         L’efficacité énergétique est un axe à court terme \
@@ -99,7 +98,6 @@ const content = [
     title: 'Rénovez vos locaux pour réduire vos dépenses',
     img: '/images/home/building.svg',
     imgSolo: '/images/home/building-solo.svg',
-    value: ThemeId.Building,
     imgRight: true,
     text: "Envie de locaux moins énergivores, moins coûteux en chauffage, \
         en climatisation et en éclairage ? Et si vous envisagiez de \
@@ -111,7 +109,6 @@ const content = [
     badge: '⚡️ Mobilité durable',
     badgeColor: '#6672F8',
     badgeTextColor: 'white',
-    value: ThemeId.Mobility,
     title: 'Optez pour des modes de transport moins polluants',
     img: '/images/home/mobility.svg',
     imgSolo: '/images/home/mobility-solo.svg',
@@ -131,7 +128,6 @@ const content = [
     title: 'Faire des économies sur vos consommations d’eau',
     img: '/images/home/water.png',
     imgSolo: '/images/home/water-solo.svg',
-    value: ThemeId.Water,
     imgRight: true,
     text: 'L’eau a un coût, qui risque d’augmenter dans les années à venir. \
         La réglementation peut imposer à certaines activités de mettre \
@@ -141,11 +137,9 @@ const content = [
 ]
 const router = useRouter()
 
-const updateTheme = async (theme: ThemeId) => {
+const updateTheme = async () => {
   usedTrackStore.resetUsedTracks()
   await usedTrackStore.updateByTrackIdAndValue(TrackId.QuestionnaireRoute, QuestionnaireRoute.SpecificGoal)
-  await usedTrackStore.updateByTrackIdAndValue(TrackId.Goals, theme)
-
   await router.push(navigationStore.routeByTrackId(TrackId.Siret))
 }
 </script>
