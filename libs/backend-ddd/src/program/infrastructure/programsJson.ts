@@ -127,26 +127,20 @@ export default class ProgramsJson implements ProgramRepository {
   }
 
   private _rewriteDurationData(program: ProgramType, value: string) {
-    if (program['durée du prêt']) {
-      program['durée du prêt'] = value
-    }
-    if (program["durée de l'accompagnement"]) {
-      program["durée de l'accompagnement"] = value
-    }
+    this._updateIfExists(program, "durée de l'accompagnement", value)
+    this._updateIfExists(program, 'durée du prêt', value)
   }
 
   private _rewriteFinancialData(program: ProgramType, value: string) {
-    if (program["coût de l'accompagnement"]) {
-      program["coût de l'accompagnement"] = value
-    }
-    if (program['montant du financement']) {
-      program['montant du financement'] = value
-    }
-    if (program["montant de l'avantage fiscal"]) {
-      program["montant de l'avantage fiscal"] = value
-    }
-    if (program['montant du prêt']) {
-      program['montant du prêt'] = value
+    this._updateIfExists(program, "coût de l'accompagnement", value)
+    this._updateIfExists(program, 'montant du financement', value)
+    this._updateIfExists(program, "montant de l'avantage fiscal", value)
+    this._updateIfExists(program, 'montant du prêt', value)
+  }
+
+  private _updateIfExists(program: ProgramType, key: string, value: string) {
+    if (program[key]) {
+      program[key] = value
     }
   }
 }
