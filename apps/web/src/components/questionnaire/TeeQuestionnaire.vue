@@ -69,10 +69,6 @@ const needSidebar = computed(() => {
   return trackStore.currentId !== TrackId.QuestionnaireRoute
 })
 
-// const setupFromUrl = async () => {
-//   await nav.updateQueries(usedTrackStore.usedTracksValuesPairs)
-// }
-
 onBeforeMount(() => {
   usedTrackStore.add(props.trackId, props.trackId)
 })

@@ -31,7 +31,6 @@ export enum TrackCalloutType {
 
 export interface TrackCallout {
   header?: Translations
-  headerStyle?: string
   title: Translations
   titleStyle?: string
   bigTitle: boolean
