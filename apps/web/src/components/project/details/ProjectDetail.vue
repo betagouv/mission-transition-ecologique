@@ -36,7 +36,7 @@
 import { ThemeType, Project, Color } from '@/types'
 import { Theme } from '@/utils/theme'
 import { useProjectStore } from '@/stores/project'
-import { onBeforeMount } from 'vue'
+import { computed, onBeforeMount } from 'vue'
 
 const projectStore = useProjectStore()
 
@@ -48,6 +48,20 @@ interface Props {
   programId?: number
 }
 const props = defineProps<Props>()
+
+const seoTitle = computed(() => `Transition écologique des TPE & PME${project.value?.title ? ` - ${project.value?.title}` : ''}`)
+const seoDescription = computed(() => project.value?.shortDescription || undefined)
+const seoImage = computed(() => (project.value?.image ? window.location.origin + project.value?.image : undefined))
+useSeoMeta({
+  title: seoTitle,
+  description: seoDescription,
+  ogTitle: seoTitle,
+  ogDescription: seoDescription,
+  ogImage: seoImage,
+  twitterTitle: seoTitle,
+  twitterDescription: seoDescription,
+  twitterImage: seoImage
+})
 
 const themeColor = computed<Color | undefined>(() => theme.value?.color)
 
