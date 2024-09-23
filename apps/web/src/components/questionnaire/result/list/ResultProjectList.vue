@@ -27,6 +27,17 @@
       </div>
     </div>
     <ProjectList :sorted-projects="sortedProjects" />
+    <div class="fr-grid-row fr-grid-row--center fr-mb-1v">
+      <div class="fr-container fr-mt-2v">
+        <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2">
+          <OtherProjectCta
+            v-if="!otherProjectForm && showProjectListComponent"
+            @click="openOtherProjectForm"
+          />
+          <OtherProjectForm v-else />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -41,7 +52,14 @@ interface ProjectListProps {
   filteredProjects?: Project[]
 }
 const props = defineProps<ProjectListProps>()
+const otherProjectForm = ref<boolean>(false)
 
+watch(
+  () => props.filteredProjects,
+  () => {
+    otherProjectForm.value = false
+  }
+)
 const programStore = useProgramStore()
 
 const hasError = ref<boolean>(false)
@@ -57,6 +75,10 @@ const countProjects = computed(() => {
 const hasThemeCard = computed(() => {
   return programStore.hasThemeTypeSelected() || (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityTheme())
 })
+
+const openOtherProjectForm = () => {
+  otherProjectForm.value = true
+}
 
 const sortedProjects = UtilsProject.sort(computed(() => props.filteredProjects))
 

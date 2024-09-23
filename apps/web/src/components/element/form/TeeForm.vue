@@ -31,8 +31,6 @@
           v-for="fieldKey in Object.keys(localForm)"
           v-show="!localForm[fieldKey].hidden"
           :key="fieldKey"
-          :text-value="getTextValue(localForm[fieldKey])"
-          :checkbox-value="getCheckboxValue(localForm[fieldKey])"
           :field="localForm[fieldKey]"
           @update-field="(field) => (localForm[fieldKey] = field)"
         />
@@ -83,7 +81,7 @@
 <script setup lang="ts">
 import { Scroll } from '@/utils/scroll'
 import { computed, ref } from 'vue'
-import { InputFieldUnionType, type ReqResp, TrackId, FormDataType, FieldType } from '@/types'
+import { DefaultFieldFormType, type ReqResp, TrackId, FormDataType } from '@/types'
 import Translation from '@/utils/translation'
 import TeeDsfrButton from '@/components/element/button/TeeDsfrButton.vue'
 import Matomo from '@/utils/matomo'
@@ -130,19 +128,8 @@ const isFormValid = computed(() => {
   return isValid.every((v) => v !== false)
 })
 
-const isFieldValid = (field: InputFieldUnionType): boolean => {
+const isFieldValid = (field: DefaultFieldFormType): boolean => {
   return field.value !== undefined && field.value !== '' && field.value !== false
-}
-
-const getTextValue = (field: InputFieldUnionType): string | undefined => {
-  if (field.type !== FieldType.Checkbox) {
-    return field.value as string | undefined
-  }
-}
-const getCheckboxValue = (field: InputFieldUnionType): boolean | undefined => {
-  if (field.type === FieldType.Checkbox) {
-    return field.value as boolean | undefined
-  }
 }
 
 const saveForm = async () => {

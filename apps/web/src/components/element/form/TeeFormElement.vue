@@ -4,7 +4,7 @@
     :class="`fr-col-${localField.colSize || '12'} fr-col-md-${localField.colSize || '12'}`"
   >
     <DsfrCheckbox
-      v-model="localCheckboxValue"
+      v-model="localField.value"
       :name="`form-checkbox-${localField.label}`"
       :is-valid="localField.isValid"
       :required="localField.required"
@@ -37,9 +37,8 @@
       :valid-message="getValidMessage()"
     >
       <DsfrSelect
-        v-model="localTextValue"
+        v-model="localField.value.value"
         :label="localField.label"
-        class="fr-bg--white"
         :required="localField.required"
         :name="`form-select-${localField.label}`"
         :options="localField.options"
@@ -55,7 +54,7 @@
       :valid-message="getValidMessage()"
     >
       <DsfrInput
-        v-model="localTextValue"
+        v-model="localField.value"
         class="fr-bg--white"
         :type="localField.type"
         label-visible
@@ -96,31 +95,25 @@
   </div>
 </template>
 <script setup lang="ts">
-import { FieldType, InputFieldUnionType, isValidatedStringFieldInputType } from '@/types'
+import { FieldType, DefaultFieldFormType } from '@/types'
 import Config from '@/config'
 
 const publicPath = Config.publicPath !== 'undefined/' ? Config.publicPath : '../../public/'
 
 interface Props {
-  field: InputFieldUnionType
-  checkboxValue?: boolean
-  textValue?: string
+  field: DefaultFieldFormType
 }
 const props = defineProps<Props>()
 
-const emit = defineEmits<{ (e: 'updateField', payload: InputFieldUnionType): void }>()
+const emit = defineEmits<{ (e: 'updateField', payload: DefaultFieldFormType): void }>()
 
-const localField = ref<InputFieldUnionType>(props.field)
-const localCheckboxValue = ref<boolean>(props.checkboxValue)
-const localTextValue = ref<string | undefined>(props.textValue)
-
+const localField = ref<DefaultFieldFormType>(props.field)
 const isFieldValid = (): boolean => {
   return localField.value.value !== undefined && localField.value.value !== '' && localField.value.value !== false
 }
 
 const validateFormField = (): void => {
-  updateFieldValue()
-  if (isValidatedStringFieldInputType(localField.value)) {
+  if (localField.value.validation) {
     localField.value.isValid = localField.value.validation(localField.value.value, !!localField.value.label?.includes('SIRET')) as boolean
   } else {
     localField.value.isValid = isFieldValid()
@@ -129,17 +122,13 @@ const validateFormField = (): void => {
 }
 
 const getErrorMessage = (): string => {
-  if (!isValidatedStringFieldInputType(localField.value) || !isFieldValid()) {
+  if (!localField.value.validation || !isFieldValid()) {
     return localField.value.isValid === false ? 'Ce champ est obligatoire.' : ''
   }
-  return localField.value.isValid === false ? localField.value.errorMessage : ''
+  return localField.value.isValid === false && localField.value.errorMessage ? localField.value.errorMessage : ''
 }
 
 const getValidMessage = (): string => {
   return localField.value.isValid === true ? ' ' : ''
-}
-
-const updateFieldValue = () => {
-  localField.value.value = localField.value.type === FieldType.Checkbox ? localCheckboxValue.value : localTextValue.value
 }
 </script>

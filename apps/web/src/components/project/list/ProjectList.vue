@@ -105,20 +105,6 @@
       </div>
     </div>
   </div>
-  <div
-    class="fr-grid-row fr-grid-row--center fr-mb-1v"
-    :class="{ 'fr-hidden-lg': hideMainProjectListComponent }"
-  >
-    <div class="fr-container fr-mt-2v">
-      <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2">
-        <OtherProjectCta
-          v-if="!otherProjectForm"
-          @click="openOtherProjectForm"
-        />
-        <OtherProjectForm v-else />
-      </div>
-    </div>
-  </div>
 </template>
 
 <script setup lang="ts">
@@ -138,7 +124,6 @@ const props = defineProps<ProjectListProps>()
 
 const navigationStore = useNavigationStore()
 const programStore = useProgramStore()
-const otherProjectForm = ref<boolean>(false)
 const resume: string = Translation.t('project.result.resume', {
   effectif: Translation.t('enterprise.structureSize.' + TrackStructure.getSize()),
   secteur: TrackStructure.getSectorShortLabel()
@@ -183,10 +168,6 @@ const isPriorityProject = (project: Project) => {
 
 const getPriorityOrder = (project: Project) => {
   return priorityProjects.value ? priorityProjects.value.indexOf(project) + 1 : undefined
-}
-
-const openOtherProjectForm = () => {
-  otherProjectForm.value = true
 }
 
 const getRouteToProjectDetail = (project: Project): RouteLocationRaw => {
