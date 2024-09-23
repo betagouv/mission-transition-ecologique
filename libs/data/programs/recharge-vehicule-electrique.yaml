@@ -61,7 +61,7 @@ description longue: >-
   retenues
 
   comme éligibles.
-illustration: images/TEE_ampoule.png
+illustration: images/TEE_eolienne.png
 opérateur de contact: Région Sud PACA
 url: >-
   https://www.maregionsud.fr/vos-aides/detail/infrastructures-de-recharges-intelligentes-pour-vehicules-electriques
@@ -87,7 +87,7 @@ conditions d'éligibilité:
   secteur géographique:
     - Provence-Alpes-Côte d'Azur
   secteur d'activité:
-    - ''
+    - Tous secteurs d'activité
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
 publicodes:

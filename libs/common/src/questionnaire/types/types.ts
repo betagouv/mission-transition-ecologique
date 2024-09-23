@@ -72,6 +72,7 @@ export enum Objective {
   TrainOrRecruit = 'former ou recruter',
   MakeSavings = 'faire des économies',
   DurablyInvest = 'investir durable',
+  Biodiversity = 'préserver la biodiversité',
   UnknownYet = 'je ne sais pas encore'
 }
 
@@ -119,5 +120,6 @@ export enum PublicodeObjective {
   TrainOrRecruit = PublicodesKeys.Goal + Objective.TrainOrRecruit,
   MakeSavings = PublicodesKeys.Goal + Objective.MakeSavings,
   DurablyInvest = PublicodesKeys.Goal + Objective.DurablyInvest,
+  Biodiversity = PublicodesKeys.Goal + Objective.Biodiversity,
   UnknownYet = PublicodesKeys.Goal + Objective.UnknownYet
 }
