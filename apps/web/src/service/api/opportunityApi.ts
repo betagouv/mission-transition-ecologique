@@ -15,7 +15,7 @@ import {
 } from '@/types'
 import RequestApi from '@/service/api/requestApi'
 import TrackStructure from '@/utils/track/trackStructure'
-
+import Opportunity from '@/utils/opportunity'
 export default class OpportunityApi extends RequestApi {
   protected readonly url = '/api/opportunities'
   private readonly _headers = {
@@ -27,8 +27,8 @@ export default class OpportunityApi extends RequestApi {
 
   constructor(
     opportunityForm: FormDataType,
-    private _id: ProgramData['id'] | Project['id'],
-    private _slug: ProgramData['id'] | Project['slug'],
+    private _id: ProgramData['id'] | Project['id'] | string,
+    private _slug: ProgramData['id'] | Project['slug'] | string,
     private _opportunityType: FormType
   ) {
     super()
@@ -79,7 +79,8 @@ export default class OpportunityApi extends RequestApi {
         ) as QuestionnaireRoute, // get from usedTrack
         otherData: this.getAllValuesFromUsedTrack(),
         linkToPage: this._opportunityForm.linkToPage.value,
-        linkToCatalog: this._generateCatalogLink()
+        linkToCatalog: this._generateCatalogLink(),
+        ...Opportunity.getOpportunityData(this._opportunityForm, this._opportunityType)
       },
       optIn: this._opportunityForm.cgu.value
     }

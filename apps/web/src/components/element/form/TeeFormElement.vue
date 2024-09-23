@@ -37,7 +37,7 @@
       :valid-message="getValidMessage()"
     >
       <DsfrSelect
-        v-model="localField.value.value"
+        v-model="localField.value"
         :label="localField.label"
         :required="localField.required"
         :name="`form-select-${localField.label}`"

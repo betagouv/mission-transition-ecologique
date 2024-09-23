@@ -1,5 +1,15 @@
 import { PhoneValidator, EmailValidator, SiretValidator } from '@tee/common'
-import { FieldType, RouteName, type ProgramData as ProgramType, Project, FormDataType, ThemeType, ThemeId } from '@/types'
+import {
+  FieldType,
+  RouteName,
+  type ProgramData as ProgramType,
+  Project,
+  FormDataType,
+  ThemeType,
+  ThemeId,
+  FormType,
+  WithoutNullableKeys
+} from '@/types'
 import TrackStructure from '@/utils/track/trackStructure'
 import { CalloutType } from '@/types/elementsPropsTypes'
 import Translation from '@/utils/translation'
@@ -116,13 +126,37 @@ export default class Opportunity {
       },
       projectTheme: {
         required: true,
-        value: { text: selectedTheme?.title || '', value: selectedThemeId },
+        value: selectedTheme?.title,
         label: 'Thématique',
         isValid: true,
-        options: themes.map((theme: ThemeType) => ({ value: theme.id, text: theme.title })),
+        options: themes.map((theme: ThemeType) => theme.title),
         type: FieldType.Select
       },
       ...baseFields
     }
+  }
+  static getCustomSlug(form: FormDataType, formType: FormType) {
+    // changer par custom projet
+    if (formType === FormType.Project) {
+      return form.projectTitle.value as string
+    }
+    return ''
+  }
+  static getCustomId(form: FormDataType, formType: FormType) {
+    // changer par custom projet
+    if (formType === FormType.Project) {
+      return form.projectTitle.value as string
+    }
+    return ''
+  }
+  static getOpportunityData(form: WithoutNullableKeys<FormDataType>, formType: FormType) {
+    // changer par custom projet
+    if (formType === FormType.Project) {
+      return {
+        projectTitle: form.projectTitle.value as string,
+        projectTheme: form.projectTheme.value as string
+      }
+    }
+    return {}
   }
 }

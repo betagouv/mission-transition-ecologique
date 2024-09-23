@@ -83,6 +83,7 @@ import { Scroll } from '@/utils/scroll'
 import { computed, ref } from 'vue'
 import { DefaultFieldFormType, type ReqResp, TrackId, FormDataType } from '@/types'
 import Translation from '@/utils/translation'
+import Opportunity from '@/utils/opportunity'
 import TeeDsfrButton from '@/components/element/button/TeeDsfrButton.vue'
 import Matomo from '@/utils/matomo'
 import Format from '@/utils/format'
@@ -92,8 +93,8 @@ import { useNavigationStore } from '@/stores/navigation'
 
 const navigation = useNavigationStore()
 interface Props {
-  dataId: string
-  dataSlug: string
+  dataId?: string
+  dataSlug?: string
   formType: FormType
   form: FormDataType
   hint: string
@@ -135,7 +136,17 @@ const isFieldValid = (field: DefaultFieldFormType): boolean => {
 const saveForm = async () => {
   try {
     isLoading.value = true
-    const opportunity = new OpportunityApi(localForm.value, props.dataId, props.dataSlug, props.formType)
+    let opportunity
+    if (props.dataId && props.dataSlug) {
+      opportunity = new OpportunityApi(localForm.value, props.dataId, props.dataSlug, props.formType)
+    } else {
+      opportunity = new OpportunityApi(
+        localForm.value,
+        Opportunity.getCustomId(localForm.value, props.formType),
+        Opportunity.getCustomSlug(localForm.value, props.formType),
+        props.formType
+      )
+    }
     requestResponse.value = await opportunity.fetch()
 
     // analytics / send event

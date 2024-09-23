@@ -8,10 +8,8 @@
       :form-container-ref="TeeOtherProjectFormContainer"
       :form-type="FormType.Project"
       :form="Opportunity.getOtherProjectFormFields()"
-      data-id="other-project-id"
       :hint="Translation.t('otherProject.form.hint')"
       :error-email-subject="Translation.t('form.errorEmail.subject', { titre: '' })"
-      data-slug="other-project-slug"
     />
   </div>
 </template>

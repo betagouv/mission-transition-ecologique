@@ -27,6 +27,8 @@ export interface OpportunityDetails {
   questionnaireRoute?: QuestionnaireRoute
   priorityObjectives?: PublicodeObjective[]
   otherData?: string
+  projectTitle?: string
+  projectTheme?: string
 }
 
 export interface OpportunityBody {

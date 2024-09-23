@@ -33,7 +33,6 @@ export type DefaultFieldFormType = {
 }
 
 export type StringFieldInputType = Omit<DefaultFieldFormType, 'value'> & { value: string | undefined }
-export type SelectFieldInputType = Omit<DefaultFieldFormType, 'value'> & { value: { text: string; value: any } }
 export type BooleanFieldInputType = Omit<DefaultFieldFormType, 'value'> & { value: boolean }
 export type MandatoryStringFieldFormType = Omit<DefaultFieldFormType, 'value'> & { value: string }
 export type ValidatedStringFieldInputType = StringFieldInputType & {
@@ -46,7 +45,6 @@ export type InputFieldUnionType =
   | MandatoryStringFieldFormType
   | BooleanFieldInputType
   | ValidatedStringFieldInputType
-  | SelectFieldInputType
 
 export const isValidatedStringFieldInputType = (field: InputFieldUnionType): field is ValidatedStringFieldInputType => {
   return 'validation' in field
