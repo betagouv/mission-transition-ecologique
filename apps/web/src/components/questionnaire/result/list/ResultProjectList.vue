@@ -12,6 +12,8 @@
             message="Aucune idée d’action n’a pu être identifiée sur cette thématique..."
             :count-items="countProjects"
           />
+        </div>
+        <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-col-justify--center">
           <OtherProjectForm />
         </div>
       </div>
