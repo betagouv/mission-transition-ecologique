@@ -1,7 +1,6 @@
 import { type CookieManager, CookieValue, Cookies } from '@/types/cookies'
 import { useNavigationStore } from '@/stores/navigation'
-import { app } from '../main'
-import posthogPlugin from '../plugin/posthog'
+import posthogPlugin from './analytic/posthog'
 
 export default class Cookie {
   static getCookieByValue(value: CookieValue): CookieManager | undefined {
@@ -10,12 +9,13 @@ export default class Cookie {
 
   static activateCookie(value: CookieValue) {
     if (value === CookieValue.Posthog) {
-      posthogPlugin.activatePosthogCookie(app)
+      posthogPlugin.activatePosthogCookie()
     }
   }
+
   static deactivateCookie(value: CookieValue) {
     if (value === CookieValue.Posthog) {
-      posthogPlugin.deactivatePosthogCookie(app)
+      posthogPlugin.deactivatePosthogCookie()
     }
   }
 

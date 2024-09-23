@@ -61,7 +61,7 @@
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
 import { type ProgramData, TrackId, ThemeId } from '@/types'
-import Analytics from '@/utils/analytics'
+import Analytics from '@/utils/analytic/analytics'
 import UsedTrack from '@/utils/track/usedTrack'
 import { computed, onBeforeMount } from 'vue'
 

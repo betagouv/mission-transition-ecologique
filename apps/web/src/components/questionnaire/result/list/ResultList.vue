@@ -9,7 +9,7 @@ import { useProgramStore } from '@/stores/program'
 import { ProgramData, TrackId, Project as ProjectType, ThemeId } from '@/types'
 import { Project } from '@/utils/project/project'
 import { computed, onBeforeMount } from 'vue'
-import Analytics from '@/utils/analytics'
+import Analytics from '@/utils/analytic/analytics'
 import { useProjectStore } from '@/stores/project'
 import UsedTrack from '@/utils/track/usedTrack'
 

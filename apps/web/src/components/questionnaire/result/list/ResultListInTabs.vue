@@ -41,7 +41,7 @@ import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
 import { ProgramData, ThemeId, TrackId, Project, BreakpointNameType } from '@/types'
 import { computed, onBeforeMount } from 'vue'
-import Analytics from '@/utils/analytics'
+import Analytics from '@/utils/analytic/analytics'
 import { useProjectStore } from '@/stores/project'
 import UsedTrack from '@/utils/track/usedTrack'
 

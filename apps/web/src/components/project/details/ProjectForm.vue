@@ -263,7 +263,7 @@ import {
   TrackId,
   RouteName
 } from '@/types'
-import Analytics from '@/utils/analytics'
+import Analytics from '@/utils/analytic/analytics'
 import { Scroll } from '@/utils/scroll'
 import TrackStructure from '@/utils/track/trackStructure'
 import Translation from '@/utils/translation'

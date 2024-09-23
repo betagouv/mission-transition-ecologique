@@ -255,7 +255,7 @@ import { InputFieldUnionType, isValidatedStringFieldInputType, type ProgramData,
 import Translation from '@/utils/translation'
 import TeeDsfrButton from '@/components/element/button/TeeDsfrButton.vue'
 import { DsfrInput, DsfrInputGroup, DsfrCheckbox } from '@gouvminint/vue-dsfr'
-import Analytics from '@/utils/analytics'
+import Analytics from '@/utils/analytic/analytics'
 import { RouteName } from '@/types/routeType'
 import { useRoute } from 'vue-router'
 import Format from '@/utils/format'

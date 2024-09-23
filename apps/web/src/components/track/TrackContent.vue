@@ -122,7 +122,7 @@ import {
   type UsedTrack
 } from '@/types'
 import { RouteName } from '@/types/routeType'
-import Analytics from '@/utils/analytics'
+import Analytics from '@/utils/analytic/analytics'
 import Navigation from '@/utils/navigation'
 import { Scroll } from '@/utils/scroll'
 import TrackColOption from '@/utils/track/TrackColOption'

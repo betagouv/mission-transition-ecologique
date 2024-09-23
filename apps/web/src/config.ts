@@ -6,10 +6,6 @@ export default class Config extends ConfigCommon {
   protected static override _sentryDsn = this.metaEnv.VITE_SENTRY_DSN
   protected static override _sentryEnvironment = this.metaEnv.VITE_SENTRY_ENVIRONMENT as Environment
 
-  static get isProduction() {
-    return this.metaEnv.PROD
-  }
-
   static get isDevelopment() {
     return this.metaEnv.DEV
   }
@@ -47,7 +43,7 @@ export default class Config extends ConfigCommon {
   }
 
   static get posthogApiKey() {
-    return this.metaEnv.VITE_POSTHOG_API_KEY
+    return this.metaEnv.VITE_POSTHOG_API_KEY || 'fake token'
   }
   static get matomoUrl() {
     return this.metaEnv.VITE_MATOMO_URL

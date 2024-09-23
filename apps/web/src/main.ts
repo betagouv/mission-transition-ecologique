@@ -11,7 +11,7 @@ import WebApp from './WebApp.vue'
 import { addIcons } from './plugin/icons'
 import Sentry from './plugin/sentry'
 import { createHead } from '@unhead/vue'
-import posthogPlugin from './plugin/posthog'
+import posthogPlugin from './plugin/postHogPlugin'
 
 addIcons()
 
@@ -27,11 +27,3 @@ app.use(store)
 app.use(router)
 app.use(posthogPlugin)
 app.mount('#app')
-
-router.afterEach((to, _, failure) => {
-  if (!failure) {
-    nextTick(() => {
-      posthogPlugin.capturePageView(app, to)
-    })
-  }
-})

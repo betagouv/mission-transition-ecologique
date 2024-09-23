@@ -11,17 +11,13 @@ import { dsnFromString } from '@sentry/utils'
 import { sentryVitePlugin } from "@sentry/vite-plugin";
 import * as dotenv from 'dotenv'
 import { unheadVueComposablesImports } from '@unhead/vue'
+import ConfigCommon from '../../libs/common/src/config/configCommon'
 
 dotenv.config()
 
 console.log('==== Vite Starting ... ====')
 console.log('- vite.config ...')
-const mode = process.env.NODE_ENV ?? 'development'
-const stack: string = process.env.STACK ?? ''
-const isReviewApp = process.env.IS_REVIEW_APP === 'true'
-
-const isProd = mode === 'production'
-const isScalingo = stack.includes('scalingo')
+const isProd = ConfigCommon.NODE_ENV === 'production'
 
 type LibType = 'main' | 'widget'
 const LIB: LibType = (process.env.LIB as LibType) ?? 'main'
@@ -73,7 +69,7 @@ const plugins = async () => {
     }) as Plugin,
 
   ]
-  if (hasSentryVitePlugin()) {
+  if (ConfigCommon.isProduction()) {
     console.log('- Add sentry vite plugin for sourcemaps upload')
     const sentryData = getSentryData()
     const token = process.env.SENTRY_AUTH_TOKEN
@@ -195,8 +191,4 @@ function buildHeaders() {
   }
 
   return headers
-}
-
-function hasSentryVitePlugin() {
-  return isProd && isScalingo && !isReviewApp
 }

@@ -111,7 +111,7 @@
 import { useTrackStore } from '@/stores/track'
 import { type TrackOptionItem, type TrackOptionsInput } from '@/types'
 import { RouteName } from '@/types/routeType'
-import Analytics from '@/utils/analytics'
+import Analytics from '@/utils/analytic/analytics'
 import Navigation from '@/utils/navigation'
 import TrackSiret from '@/utils/track/TrackSiret'
 import Translation from '@/utils/translation'
