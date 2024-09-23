@@ -95,7 +95,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { FieldType, DefaultFieldFormType } from '@/types'
+import { FieldType, DefaultFieldFormType, isValidatedStringFieldInputType } from '@/types'
 import Config from '@/config'
 
 const publicPath = Config.publicPath !== 'undefined/' ? Config.publicPath : '../../public/'
@@ -113,7 +113,7 @@ const isFieldValid = (): boolean => {
 }
 
 const validateFormField = (): void => {
-  if (localField.value.validation) {
+  if (isValidatedStringFieldInputType(localField.value)) {
     localField.value.isValid = localField.value.validation(localField.value.value, !!localField.value.label?.includes('SIRET')) as boolean
   } else {
     localField.value.isValid = isFieldValid()
@@ -122,10 +122,10 @@ const validateFormField = (): void => {
 }
 
 const getErrorMessage = (): string => {
-  if (!localField.value.validation || !isFieldValid()) {
+  if (!isValidatedStringFieldInputType(localField.value) || !isFieldValid()) {
     return localField.value.isValid === false ? 'Ce champ est obligatoire.' : ''
   }
-  return localField.value.isValid === false && localField.value.errorMessage ? localField.value.errorMessage : ''
+  return localField.value.isValid === false ? localField.value.errorMessage : ''
 }
 
 const getValidMessage = (): string => {

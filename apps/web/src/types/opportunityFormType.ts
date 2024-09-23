@@ -2,15 +2,15 @@ import { CalloutType, FieldType } from '@/types'
 import { RouteName } from '@/types/routeType'
 
 export interface FormDataType {
-  [key: string]: DefaultFieldFormType
-  name: DefaultFieldFormType
-  surname: DefaultFieldFormType
-  tel: DefaultFieldFormType
-  email: DefaultFieldFormType
-  siret: DefaultFieldFormType
-  needs: DefaultFieldFormType
-  cgu: DefaultFieldFormType
-  linkToPage: DefaultFieldFormType
+  [key: string]: InputFieldUnionType
+  name: StringFieldInputType
+  surname: StringFieldInputType
+  tel: ValidatedStringFieldInputType
+  email: ValidatedStringFieldInputType
+  siret: ValidatedStringFieldInputType
+  needs: StringFieldInputType
+  cgu: BooleanFieldInputType
+  linkToPage: MandatoryStringFieldFormType
 }
 
 export type DefaultFieldFormType = {
@@ -29,12 +29,26 @@ export type DefaultFieldFormType = {
   rows?: number
   colSize?: number
   options?: any[]
-  validation?: CallableFunction
-  errorMessage?: string
   callOut?: InputCalloutType
 }
 
-export const isValidatedStringFieldInputType = (field: DefaultFieldFormType) => {
+export type StringFieldInputType = Omit<DefaultFieldFormType, 'value'> & { value: string | undefined }
+export type SelectFieldInputType = Omit<DefaultFieldFormType, 'value'> & { value: { text: string; value: any } }
+export type BooleanFieldInputType = Omit<DefaultFieldFormType, 'value'> & { value: boolean }
+export type MandatoryStringFieldFormType = Omit<DefaultFieldFormType, 'value'> & { value: string }
+export type ValidatedStringFieldInputType = StringFieldInputType & {
+  validation: CallableFunction
+  errorMessage: string
+}
+
+export type InputFieldUnionType =
+  | StringFieldInputType
+  | MandatoryStringFieldFormType
+  | BooleanFieldInputType
+  | ValidatedStringFieldInputType
+  | SelectFieldInputType
+
+export const isValidatedStringFieldInputType = (field: InputFieldUnionType): field is ValidatedStringFieldInputType => {
   return 'validation' in field
 }
 
