@@ -2,7 +2,7 @@
   <TeeContentBlock
     v-for="(description, index) in projectDescription"
     :id="`project-${index}-details-title`"
-    :key="getRandomId(index)"
+    :key="`project-${index}-details-title`"
     class="fr-pt-3v fr-pb-6v"
     :title="description.title"
     :border-position="[BorderPosition.bottom]"
@@ -15,7 +15,6 @@
 <script setup lang="ts">
 import { BorderPosition, Project } from '@/types'
 import { Marked } from '@/utils/marked'
-import { getRandomId } from '@gouvminint/vue-dsfr'
 
 interface Props {
   project: Project
