@@ -20,10 +20,7 @@ interface Props {
   borderPosition?: BorderPosition[]
 }
 
-const props = withDefaults(defineProps<Props>(), {
-  content: undefined,
-  borderPosition: undefined
-})
+const props = defineProps<Props>()
 
 const getBorderStyleClass = () => {
   if (!props.borderPosition) {
