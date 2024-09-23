@@ -1,9 +1,6 @@
 import { test, expect } from '@playwright/test'
 
-const productionUrl = 'https://mission-transition-ecologique.beta.gouv.fr/'
-const testUrl = 'http://localhost:4242/'
-
-// note : for all projects tests, "for je sais pas par ou commencer" , tag "all", 
+// note : for all projects tests, "for je sais pas par ou commencer" , tag "all",
 // the number of elements found is doubled because the mobile version is generated but hidden.
 
 const queryUrls = [
@@ -14,12 +11,12 @@ const queryUrls = [
   'questionnaire/resultat?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=21490007800012&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non#questionnaire-resultat'
 ]
 
-// compare the results between the PR branch and the production 
+// compare the results between the PR branch and the production
 
 queryUrls.forEach((queryUrl, id) => {
   test(`Verify content and elements for query number ${id}`, async ({ page }) => {
-    const fullProductionUrl = `${productionUrl}${queryUrl}`
-    const fullLocalUrl = `${testUrl}${queryUrl}`
+    const fullProductionUrl = `${global.productionUrl}${queryUrl}`
+    const fullLocalUrl = `${global.testUrl}${queryUrl}`
 
     await page.goto(fullProductionUrl)
     try {
@@ -51,8 +48,8 @@ queryUrls.forEach((queryUrl, id) => {
 })
 
 test(`Check projects found while initially selecting different tags`, async ({ page }) => {
-  const urlTag1 = `${testUrl}questionnaire/resultat?choix-du-parcours=j-ai-un-projet&siret=83014132100034&effectif=TPE&objectifs=la+mobilité+durable`
-  const urlTag2 = `${testUrl}questionnaire/resultat?choix-du-parcours=j-ai-un-projet&siret=83014132100034&effectif=TPE&objectifs=rénover+mon+bâtiment`
+  const urlTag1 = `${global.testUrl}questionnaire/resultat?choix-du-parcours=j-ai-un-projet&siret=83014132100034&effectif=TPE&objectifs=la+mobilité+durable`
+  const urlTag2 = `${global.testUrl}questionnaire/resultat?choix-du-parcours=j-ai-un-projet&siret=83014132100034&effectif=TPE&objectifs=rénover+mon+bâtiment`
 
   await page.goto(urlTag1)
   try {
@@ -69,7 +66,7 @@ test(`Check projects found while initially selecting different tags`, async ({ p
     // expected when no elements are found
     // it also happen in some other tests cases where there are elements for an unknown reason
   }
-  await page.click('//button[normalize-space(.)="🚲 mobilité"]');
+  await page.click('//button[normalize-space(.)="🚲 mobilité"]')
 
   const elementsurlTag2 = await page.$$eval('.playwright-project-target h3', (els) => els.map((el) => el.innerHTML.trim()))
   console.log(elementsurlTag1.length)

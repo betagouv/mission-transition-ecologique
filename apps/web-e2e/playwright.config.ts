@@ -1,7 +1,7 @@
 import { defineConfig, devices } from '@playwright/test'
 
 export default defineConfig({
-  testDir: './apps/web-e2e',
+  testDir: './src',
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -42,7 +42,7 @@ export default defineConfig({
     {
       name: 'Mobile Chrome',
       use: { ...devices['Pixel 5'] }
-    },
+    }
     // {
     //   name: 'Mobile Safari',
     //   use: { ...devices['iPhone 12'] }
@@ -64,5 +64,7 @@ export default defineConfig({
     command: 'npm run dev:build:start',
     url: 'http://localhost:4242',
     reuseExistingServer: !process.env.CI
-  }
+  },
+
+  globalSetup: require.resolve('./global-setup')
 })

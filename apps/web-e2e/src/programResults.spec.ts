@@ -1,8 +1,5 @@
 import { test, expect } from '@playwright/test'
 
-const productionUrl = 'https://mission-transition-ecologique.beta.gouv.fr/'
-const testUrl = 'http://localhost:4242/'
-
 const queryUrls = [
   'aides-entreprise',
   'questionnaire/resultat?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=83014132100034&effectif=TPE&locaux=proprietaire&mobilite=oui&matieres-premieres=oui&tri-dechets=non&dechets=oui&gestion-eau=oui&energie=non&audit=non#questionnaire-resultat',
@@ -15,8 +12,8 @@ const queryUrls = [
 
 queryUrls.forEach((queryUrl, id) => {
   test(`Verify content and elements for query number ${id}`, async ({ page }) => {
-    const fullProductionUrl = `${productionUrl}${queryUrl}`
-    const fullLocalUrl = `${testUrl}${queryUrl}`
+    const fullProductionUrl = `${global.productionUrl}${queryUrl}`
+    const fullLocalUrl = `${global.testUrl}${queryUrl}`
 
     await page.goto(fullProductionUrl)
     try {
