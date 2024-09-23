@@ -6,12 +6,12 @@ import https from 'https'
 
 export class LinkValidator {
   public static async isValidLink(link: string) {
-    let result = await this._fetchValidation(link)
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-    if (!result) {
-      result = await this._axiosValidation(link)
-    }
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    const result = await this._fetchValidation(link)
+    await new Promise((resolve) => setTimeout(resolve, 10))
+    // if (!result) {
+    //   result = await this._axiosValidation(link)
+    // }
+    // await new Promise((resolve) => setTimeout(resolve, 1000))
 
     // if (!result) {
     // result = await this._playwrightValidation(link)
@@ -39,7 +39,8 @@ export class LinkValidator {
 
     try {
       const agent = new https.Agent({
-        // to accept poorly configured partner websites
+        // to accept poorly configured partner websites and diasable the codeQl CD Warning
+        // codeql[js/disabled-certificate-validation]: disable
         rejectUnauthorized: false
       })
       const headers = {
