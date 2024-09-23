@@ -150,8 +150,8 @@
       }
 
       .fr-card__title {
-        @if meta.type-of($properties) == map and map.has-key($properties, "is-inverted") and map.get($properties, "is-inverted") == true {
-          color: map.get($properties, "color");
+        @if meta.type-of($properties) == map {
+          color: map.get($properties, "color-with-background");
         } @else {
           color: var(--text-default-grey);
         }
