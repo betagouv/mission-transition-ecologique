@@ -12,38 +12,7 @@
         💰 Mes aides
       </div>
     </template>
-    <DsfrHighlight
-      v-if="isCatalogDetail"
-      class="fr-highlight-border--yellow fr-highlight-bg--yellow-light fr-m-0 fr-p-0"
-      :large="true"
-    >
-      <template #default>
-        <div class="fr-container--fluid fr-p-4v">
-          <div class="fr-grid-row fr-grid-row--middle">
-            <img
-              class="fr-col-2 fr-col-xs-2 fr-mr-8v"
-              src="/images/tracks/ecriture.svg"
-              alt="image / ecriture"
-            />
-            <div class="fr-col-9 fr-col-xs-8">
-              <div class="fr-pb-2v">Complétez votre profil en 2 minutes et accédez aux aides éligibles pour votre entreprise.</div>
-              <TeeButtonLink
-                :to="trackSiretTo()"
-                size="sm"
-                secondary
-                @click="onTrackSiretTo()"
-              >
-                Compléter mon profil
-              </TeeButtonLink>
-            </div>
-          </div>
-        </div>
-      </template>
-    </DsfrHighlight>
-    <div
-      v-else
-      class="fr-container--fluid"
-    >
+    <div class="fr-container--fluid">
       <div class="fr-grid-row">
         <div class="fr-col-12 fr-text-center">
           <TeeSpinner
@@ -74,7 +43,36 @@
         />
       </div>
     </div>
+    <DsfrHighlight
+      v-if="isCatalogDetail"
+      class="fr-highlight-border--yellow fr-highlight-bg--yellow-light fr-m-0 fr-p-0"
+      :large="true"
+    >
+      <template #default>
+        <div class="fr-container--fluid fr-p-4v">
+          <div class="fr-grid-row fr-grid-row--middle">
+            <img
+              class="fr-col-2 fr-col-xs-2 fr-mr-8v"
+              src="/images/tracks/ecriture.svg"
+              alt="image / ecriture"
+            />
+            <div class="fr-col-9 fr-col-xs-8">
+              <div class="fr-pb-2v">Complétez votre profil en 2 minutes et accédez aux aides éligibles pour votre entreprise.</div>
+              <TeeButtonLink
+                :to="trackSiretTo()"
+                size="sm"
+                secondary
+                @click="onTrackSiretTo()"
+              >
+                Compléter mon profil
+              </TeeButtonLink>
+            </div>
+          </div>
+        </div>
+      </template>
+    </DsfrHighlight>
     <div
+      v-if="!isCatalogDetail"
       id="project-contact"
       class="fr-tee-form-block fr-p-4v"
     >
