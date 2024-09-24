@@ -12,36 +12,34 @@
         💰 Mes aides
       </div>
     </template>
-    <div class="fr-container--fluid">
-      <div class="fr-grid-row">
-        <div class="fr-col-12 fr-text-center">
-          <TeeSpinner
-            v-if="hasSpinner"
-            scale="6"
-          />
-          <TeeNoResult
-            v-else-if="!countFilteredPrograms && !hasError"
-            message="Aucune aide n'a pu être identifiée avec les critères choisis..."
-          />
-          <TeeError
-            v-else-if="hasError"
-            :mailto="Contact.email"
-            :email="Contact.email"
-          />
-        </div>
-        <ProjectProgramsList
-          v-if="studyPrograms.length > 0"
-          :title="Translation.t('project.studyPrograms')"
-          :programs="studyPrograms"
-          :project="project"
+    <div class="fr-grid-row">
+      <div class="fr-col-12 fr-text-center">
+        <TeeSpinner
+          v-if="hasSpinner"
+          scale="6"
         />
-        <ProjectProgramsList
-          v-if="financePrograms.length > 0"
-          :title="Translation.t('project.financePrograms')"
-          :programs="financePrograms"
-          :project="project"
+        <TeeNoResult
+          v-else-if="!countFilteredPrograms && !hasError"
+          message="Aucune aide n'a pu être identifiée avec les critères choisis..."
+        />
+        <TeeError
+          v-else-if="hasError"
+          :mailto="Contact.email"
+          :email="Contact.email"
         />
       </div>
+      <ProjectProgramsList
+        v-if="studyPrograms.length > 0"
+        :title="Translation.t('project.studyPrograms')"
+        :programs="studyPrograms"
+        :project="project"
+      />
+      <ProjectProgramsList
+        v-if="financePrograms.length > 0"
+        :title="Translation.t('project.financePrograms')"
+        :programs="financePrograms"
+        :project="project"
+      />
     </div>
     <DsfrHighlight
       v-if="isCatalogDetail"
@@ -49,30 +47,28 @@
       :large="true"
     >
       <template #default>
-        <div class="fr-container--fluid fr-p-4v">
-          <div class="fr-grid-row fr-grid-row--middle">
-            <img
-              class="fr-col-2 fr-col-xs-2 fr-mr-8v"
-              src="/images/tracks/ecriture.svg"
-              alt="image / ecriture"
-            />
-            <div class="fr-col-9 fr-col-xs-8">
-              <div class="fr-pb-2v">Complétez votre profil en 2 minutes et accédez aux aides éligibles pour votre entreprise.</div>
-              <TeeButtonLink
-                :to="trackSiretTo()"
-                size="sm"
-                secondary
-                @click="onTrackSiretTo()"
-              >
-                Compléter mon profil
-              </TeeButtonLink>
-            </div>
+        <div class="fr-grid-row fr-grid-row--middle fr-p-4v">
+          <img
+            class="fr-col-2 fr-col-xs-2 fr-mr-8v"
+            src="/images/tracks/ecriture.svg"
+            alt="image / ecriture"
+          />
+          <div class="fr-col-9 fr-col-xs-8">
+            <div class="fr-pb-2v">Complétez votre profil en 2 minutes et accédez aux aides éligibles pour votre entreprise.</div>
+            <TeeButtonLink
+              :to="trackSiretTo()"
+              size="sm"
+              secondary
+              @click="onTrackSiretTo()"
+            >
+              Compléter mon profil
+            </TeeButtonLink>
           </div>
         </div>
       </template>
     </DsfrHighlight>
     <div
-      v-if="!isCatalogDetail"
+      v-else
       id="project-contact"
       class="fr-tee-form-block fr-p-4v"
     >
