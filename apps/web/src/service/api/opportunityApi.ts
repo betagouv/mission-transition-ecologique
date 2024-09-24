@@ -8,6 +8,7 @@ import {
   ReqResp,
   WithoutNullableKeys,
   FormDataType,
+  Opportunity,
   OpportunityType,
   RouteName,
   ProgramData,
@@ -61,28 +62,32 @@ export default class OpportunityApi extends RequestApi {
   }
 
   payload(): OpportunityBody {
+    const opportunity: Opportunity = {
+      type: this._opportunityType,
+      id: this._id.toString(),
+      firstName: this._opportunityForm.name.value,
+      lastName: this._opportunityForm.surname.value,
+      email: this._opportunityForm.email.value,
+      phoneNumber: this._opportunityForm.tel.value,
+      companySiret: this._opportunityForm.siret.value,
+      theme: this._opportunityForm.theme.value as ThemeId,
+      companyName: this.getFromUsedTrack(TrackId.Siret, 'denomination'),
+      companySector: TrackStructure.getSector(),
+      companySize: TrackStructure.getSize() ?? undefined,
+      message: this._opportunityForm.needs.value,
+      questionnaireRoute: this.getFromUsedTrack(
+        TrackId.QuestionnaireRoute,
+        QuestionnaireDataEnum.questionnaire_route as string
+      ) as QuestionnaireRoute, // get from usedTrack
+      otherData: this.getAllValuesFromUsedTrack(),
+      linkToPage: this._opportunityForm.linkToPage.value
+    }
+    const linkToCatalog = this._generateCatalogLink()
+    if (linkToCatalog === 'catalogLinkGenerationNotHandledForTheCurrentOpportunityType') {
+      opportunity.linkToCatalog = linkToCatalog
+    }
     return {
-      opportunity: {
-        type: this._opportunityType,
-        id: this._id.toString(),
-        firstName: this._opportunityForm.name.value,
-        lastName: this._opportunityForm.surname.value,
-        email: this._opportunityForm.email.value,
-        phoneNumber: this._opportunityForm.tel.value,
-        companySiret: this._opportunityForm.siret.value,
-        theme: this._opportunityForm.theme.value as ThemeId,
-        companyName: this.getFromUsedTrack(TrackId.Siret, 'denomination'),
-        companySector: TrackStructure.getSector(),
-        companySize: TrackStructure.getSize() ?? undefined,
-        message: this._opportunityForm.needs.value,
-        questionnaireRoute: this.getFromUsedTrack(
-          TrackId.QuestionnaireRoute,
-          QuestionnaireDataEnum.questionnaire_route as string
-        ) as QuestionnaireRoute, // get from usedTrack
-        otherData: this.getAllValuesFromUsedTrack(),
-        linkToPage: this._opportunityForm.linkToPage.value,
-        linkToCatalog: this._generateCatalogLink()
-      },
+      opportunity,
       optIn: this._opportunityForm.cgu.value
     }
   }
