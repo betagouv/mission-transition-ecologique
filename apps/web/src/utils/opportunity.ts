@@ -7,7 +7,7 @@ import {
   FormDataType,
   ThemeType,
   ThemeId,
-  FormType,
+  OpportunityType,
   WithoutNullableKeys
 } from '@/types'
 import TrackStructure from '@/utils/track/trackStructure'
@@ -135,23 +135,23 @@ export default class Opportunity {
       ...baseFields
     }
   }
-  static getCustomSlug(form: FormDataType, formType: FormType) {
+  static getCustomSlug(form: FormDataType, formType: OpportunityType) {
     // changer par custom projet
-    if (formType === FormType.Project) {
+    if (formType === OpportunityType.Project) {
       return form.projectTitle.value as string
     }
     return ''
   }
-  static getCustomId(form: FormDataType, formType: FormType) {
+  static getCustomId(form: FormDataType, formType: OpportunityType) {
     // changer par custom projet
-    if (formType === FormType.Project) {
+    if (formType === OpportunityType.Project) {
       return form.projectTitle.value as string
     }
     return ''
   }
-  static getOpportunityData(form: WithoutNullableKeys<FormDataType>, formType: FormType) {
+  static getOpportunityData(form: WithoutNullableKeys<FormDataType>, formType: OpportunityType) {
     // changer par custom projet
-    if (formType === FormType.Project) {
+    if (formType === OpportunityType.Project) {
       return {
         projectTitle: form.projectTitle.value as string,
         projectTheme: form.projectTheme.value as string

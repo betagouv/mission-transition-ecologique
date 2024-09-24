@@ -6,7 +6,7 @@
   >
     <TeeForm
       :form-container-ref="TeeOtherProjectFormContainer"
-      :form-type="FormType.Project"
+      :form-type="OpportunityType.Project"
       :form="Opportunity.getOtherProjectFormFields()"
       :hint="Translation.t('otherProject.form.hint')"
       :error-email-subject="Translation.t('form.errorEmail.subject', { titre: '' })"
@@ -14,7 +14,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { FormType } from '@/types'
+import { OpportunityType } from '@/types'
 import Opportunity from '@/utils/opportunity'
 import Translation from '@/utils/translation'
 
