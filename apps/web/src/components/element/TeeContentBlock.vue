@@ -28,31 +28,9 @@ const getBorderStyleClass = () => {
   }
 
   if (props.borderPosition.includes(BorderPosition.all)) {
-    return 'tee-border'
+    return 'fr-border--grey--light'
   }
 
-  return props.borderPosition.map((position) => `tee-border--${position}`).join(' ')
+  return props.borderPosition.map((position) => `fr-border-${position}--grey--light`).join(' ')
 }
 </script>
-<style lang="scss" scoped>
-// TODO : remove once border global refacto is implemented
-.tee-border {
-  &--top {
-    border-top: solid 1px var(--border-default-grey);
-  }
-
-  &--bottom {
-    border-bottom: solid 1px var(--border-default-grey);
-  }
-
-  &--right {
-    border-right: solid 1px var(--border-default-grey);
-  }
-
-  &--left {
-    border-left: solid 1px var(--border-default-grey);
-  }
-
-  border: solid 1px var(--border-default-grey);
-}
-</style>

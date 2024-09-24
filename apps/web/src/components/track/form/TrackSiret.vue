@@ -31,8 +31,8 @@
     <div
       v-for="(response, i) in requestResponses.establishments"
       :key="`resp-input-${i}`"
-      class="fr-card fr-card-result fr-card--no-arrow fr-mb-2v fr-card--shadow fr-border--"
-      :class="isSelected(i) ? 'fr-bg--grey--lightness fr-text--blue--france fr-border--blue-france' : 'fr-border--grey-lightness'"
+      class="fr-card fr-card-result fr-card--no-arrow fr-mb-2v fr-card--shadow"
+      :class="isSelected(i) ? 'fr-bg--grey--lightness fr-text--blue-france fr-border--blue-france' : 'fr-border--grey--light'"
       @click="selectItem(i)"
     >
       <div class="fr-card__body">

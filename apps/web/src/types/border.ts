@@ -1,7 +1,7 @@
 export enum BorderPosition {
   all = 'all',
-  top = 'top',
-  right = 'right',
-  bottom = 'bottom',
-  left = 'left'
+  top = 't',
+  right = 'r',
+  bottom = 'b',
+  left = 'l'
 }
