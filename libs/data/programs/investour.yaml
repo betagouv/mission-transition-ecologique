@@ -1,0 +1,101 @@
+titre: INVESTour
+promesse: >-
+  Bénéficiez d'un prêt pour votre projet contribuant à la création ou maintien
+  d’emplois pérennes
+description: >-
+  Vous êtes une entreprise du tourisme et vous avez un projet de développement :
+  diversification de votre activité, rénovation ou extension, modernisation,
+  investissement pour un développement durable, projet d’innovation, etc ? La
+  Région Sud souhaite apporter son soutient aux projets contribuant au
+  développement d'emplois pérennes ou au maintien d'emplois fragilisés dans la
+  région. Cette aide régionale prend la forme d’un prêt participatif ou
+  d'obligations convertibles.
+description longue: >-
+  L’aide régionale prend la forme d’un prêt participatif compris entre 50 000 et
+  350 000 euros ou d'obligations convertibles dans la limite de 500 000 euros.
+  Il intervient en fonds propres ou quasi fonds propres.
+
+
+  Intervenant en qualité de produit de cofinancement, la recherche de sources de
+  financement privées est obligatoire à raison de 1 pour 1 (ex : 50 000 euros
+  attribués si 50 000 euros investis par des fonds privés). L'attribution de
+  l'aide n'est pas conditionnée à un apport en fonds propres.
+
+
+  La période d’amortissement du capital est fixée à 5 ans, soit 8 ans au global
+  incluant le différé d’amortissement maximum de 3 ans et tout rééchelonnement
+  éventuel.
+
+
+
+  Sont éligibles :
+
+
+  - Les besoins en trésorerie non couvert par l’activité de l’entreprise
+  (reconstitution de stocks, réapprovisionnement en matière
+  premières/consommables, dettes fournisseurs et sous-traitants, etc.) si ces
+  besoins sont intégrés dans un plan de développement plus global.
+
+  - Les investissements immatériels (acquisition de logiciels, dépenses de
+  publicité et de formation des salariés, etc.) et corporels (outil de
+  production, matériels, etc.).
+illustration: images/TEE_ampoule.png
+opérateur de contact: Région Sud PACA
+url: https://entreprises.maregionsud.fr/financement/sud-entreprises/investour
+nature de l'aide: prêt
+montant du prêt: >-
+  Prêt entre 50 000 et 350 000 € - Obligations convertibles pour maximum 500 000
+  €
+durée du prêt: 8 ans maximum (dont 3 ans maximum de différé)
+objectifs:
+  - description: >-
+      Prenez contact avec un conseiller afin de vérifier vos conditions
+      d'éligibilité et pour le montage de votre dossier de candidature.
+      Attention, l'opération pour laquelle vous sollicitez une aide financière
+      ne doit pas avoir commencé.
+  - description: >-
+      Votre dossier fait l’objet d’un examen par un Comité technique de
+      pré-sélection. Les entreprises présélectionnées sont conviés à un comité
+      de sélection qui délibéra des projets retenus. Les comités ont lieu tous
+      les mois.
+  - description: Après avis et décision, recevez une réponse sous 24h.
+  - description: Recevez votre prêt et commencez vos investissements.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - TPE et PME
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Provence-Alpes-Côte d'Azur
+  secteur d'activité:
+    - >-
+      Secteur du tourisme ou toutes entreprises portant des projets dans le
+      champ du tourisme, à l'exception des applications numériques.
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - être en phase de création, de reprise ou transmission.
+    - >-
+      présenter des projets de financements structurants : diversification de
+      l’activité, rénovation, extension, modernisation, développement durable,
+      projet d’innovation, etc.
+    - ne pas être coté en bourse.
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est L
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est rénover mon bâtiment
+      - questionnaire . objectif prioritaire . est former ou recruter
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Provence-Alpes-Côte d'Azur

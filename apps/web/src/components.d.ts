@@ -62,6 +62,7 @@ declare module 'vue' {
     TeeButtonExternalLink: typeof import('./components/element/button/TeeButtonExternalLink.vue')['default']
     TeeButtonLink: typeof import('./components/element/button/TeeButtonLink.vue')['default']
     TeeCallout: typeof import('./components/element/TeeCallout.vue')['default']
+    TeeContentBlock: typeof import('./components/element/TeeContentBlock.vue')['default']
     TeeCopyLinkButton: typeof import('./components/element/TeeCopyLinkButton.vue')['default']
     TeeCounterResult: typeof import('./components/element/TeeCounterResult.vue')['default']
     TeeCredits: typeof import('./components/TeeCredits.vue')['default']

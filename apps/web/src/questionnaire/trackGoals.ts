@@ -87,6 +87,15 @@ export const goals: Track = {
       next: {
         default: TrackId.Results
       }
+    },
+    {
+      value: ThemeId.Biodiversity,
+      questionnaireData: { priority_objective: ThemeId.Biodiversity },
+      title: { fr: 'Biodiversité' },
+      label: { fr: 'Préserver la biodiversité' },
+      next: {
+        default: TrackId.Results
+      }
     }
   ]
 }
