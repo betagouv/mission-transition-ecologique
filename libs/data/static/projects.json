@@ -358,7 +358,7 @@
     "slug": "plan-mobilite",
     "title": "Plan d'action mobilité",
     "nameTag": "☄️ plan mobilité employeur",
-    "shortDescription": "Favorisez les déplacements durables des personnes et des biens liés à l’activité de votre entreprise.",
+    "shortDescription": "Favoriser les déplacements durables des personnes et des biens liés à l’activité de votre entreprise.",
     "image": "/images/projet/plan-mobilite.webp",
     "longDescription": "Un plan de mobilité entreprise (PDE) est « *un ensemble de mesures qui vise à optimiser et augmenter l'efficacité des déplacements liés à l’activité d'une entreprise, pour diminuer les émissions polluantes et réduire le trafic routier* ». Il encourage l'usage des transports en commun, du covoiturage et des mobilités actives (marche, vélo, etc.)\n\nIl se base sur une analyse globale des déplacements de l’entreprise (trajets domicile-travail des employés, déplacements professionnels, mobilité des clients, fournisseurs et partenaires) pour proposer un plan d’action adapté aux caractéristiques de l’entreprise.\n\nParmi ses bénéfices, on compte l’amélioration de la qualité de vie des collaborateurs, la réduction de l’impact environnemental de votre activité et l’optimisation de vos coûts liés à la mobilité.",
     "moreDescription": "- [**Un plan de mobilité dans mon entreprise**](https://librairie.ademe.fr/ged/1555/plan-mobilite-entreprise-010502.pdf)**,** une mise en oeuvre en 5 étapes.\n- [**Changer de mobilité dans le cadre de ses trajets domicile-travail**,](https://agirpourlatransition.ademe.fr/particuliers/bureau/deplacements/trajets-domicile-travail-aussi-optez-mobilite-plus-durable) témoignages d'employés ayant fait le choix de mobilités douces.\n- [**Boîte à outils Plan de mobilité employeur**](https://librairie.ademe.fr/mobilite-et-transport/231-boite-a-outils-plan-de-mobilite-employeur.html), des fiches pratiques pour réaliser un plan de mobilité en autonomie.\n- [**La mobilité de demain**](https://archives.qqf.fr/infographie/60/la-mobilite-de-demain), une infographie *\"Qu'est-ce qu'on fait ?!\"* proposée par l'ADEME.",
@@ -391,7 +391,6 @@
     "mainTheme": "mobility",
     "programs": [
       "pret-action-climat",
-      "prime-a-la-conversion",
       "retrofit-electrique",
       "pret-vert"
     ],
@@ -401,7 +400,7 @@
   {
     "id": 18,
     "slug": "vehicule-propre",
-    "title": "Acquérir un véhicule propre",
+    "title": "Acquisition d'un véhicule propre",
     "nameTag": "🚘 véhicule propre",
     "shortDescription": "Un véhicule propre est un véhicule produisant peu d'émissions polluantes lors de son utilisation.",
     "image": "/images/projet/vehicule-propre.webp",
@@ -428,7 +427,7 @@
   {
     "id": 19,
     "slug": "velo",
-    "title": "Acquérir un vélo",
+    "title": "Acquisition de vélos",
     "nameTag": "🚲 vélo",
     "shortDescription": "La mise à disposition de vélos est un moyen efficace de favoriser la mobilité douce en entreprise.",
     "image": "/images/projet/velo.webp",
@@ -454,7 +453,7 @@
     "slug": "plan-action-eau",
     "title": "Plan d’action eau",
     "nameTag": "🎯 plan d’action eau",
-    "shortDescription": "Amélioration de la performance environnementale de mon produit ou service.",
+    "shortDescription": "Il met en évidence vos postes de consommation d'eau les plus importants et les pistes de solutions.",
     "image": "/images/projet/plan-action-eau.webp",
     "longDescription": "Raréfaction de l'eau, restriction des consommations, augmentation des coûts : maîtriser sa consommation d’eau est un enjeu essentiel pour les entreprises.\n\nComment agir au sein de votre entreprise pour poursuivre votre activité et faire des économies d’eau ?\n\nFaites-vous accompagner par un expert, et réalisez un diagnostic global de vos flux (énergie, déchets, eau...) ou une étude ciblée de votre consommation d'eau.",
     "moreDescription": "- [**Eau secours, demain tous à sec**](https://www.qqf.fr/infographie/eau-secours-demain-tous-a-sec/), une infographie *\"Qu'est-ce qu'on fait ?!\"* proposée par l'ADEME.\n- [**10 conseils aux entreprises pour une sobriété en eau**](https://www.cci.fr/actualites/10-conseils-aux-entreprises-pour-une-sobriete-en-eau). Une fiche conseil proposée par la CCI, Chambre de Commerce et d’Industrie.",
@@ -476,7 +475,7 @@
     "slug": "plan-action-dechets",
     "title": "Plan d’action déchets & pertes matière",
     "nameTag": "🗑 plan d'action déchets",
-    "shortDescription": "Analysez le flux de déchets et les pertes de matières de votre entreprise afin de fixer un plan d’action.",
+    "shortDescription": "Améliorer la gestion de vos flux de déchets et limiter vos pertes de matières.",
     "image": "/images/projet/plan-action-dechets.webp",
     "longDescription": "Un diagnostic déchets est un excellent point de départ pour évaluer la production et gestion des déchets de votre entreprise et identifier un plan d’action pour les réduire à la source.\n\nVous pouvez vous faire accompagner par un expert pour faire le point sur vos usages, définir des objectifs de réduction et de gestion des déchets, et construire un plan d’action pour atteindre ces objectifs. Ce plan d'action est l'étape préalable indispensable à la mise en place d'un projet, pouvant aboutir à des études plus précises ou des investissements.",
     "moreDescription": "- [**Comment diminuer vos déchets plastiques** ](https://agirpourlatransition.ademe.fr/particuliers/maison/dechets/comment-diminuer-dechets-plastiques)**?** Tour d’horizon pour changer la donne.",
@@ -541,7 +540,7 @@
     "slug": "gestion-biodechets",
     "title": "Gestion des biodéchets",
     "nameTag": "🥕 biodéchets",
-    "shortDescription": "Réduire votre bilan carbone à travers la réduction du stockage, la combustion des déchets, et leur valorisation.",
+    "shortDescription": "Définir la méthode de gestion des déchets verts la plus adaptée à votre entreprise.",
     "image": "/images/projet/gestion-biodechets.webp",
     "longDescription": "Les biodéchets sont les déchets alimentaires (restes de repas, épluchures, produits périmés non consommés), ainsi que les déchets issus de l’entretien des parcs et jardins (feuilles mortes, tonte, taille).\n\nA partir du 1er janvier 2024, l’obligation de tri à la source des biodéchets s’applique à toutes les entreprises, quels que soient les volumes et l’activité des producteurs / détenteurs. Les entreprises peuvent opter pour une solution de compostage sur site pour transformer les biodéchets en compost utilisable localement ou pour une collecte des biodéchets en faisant appel à des prestataires extérieurs.\n\nL'objectif de cette mesure est de lutter contre le gaspillage alimentaire et de limiter les impacts environnementaux liés au traitement de nos ordures.\n\nEn effet, l’incinération des biodéchets est énergivore et polluante : pour chaque tonne de déchets incinérée, au moins une tonne de CO2 est émise.\n\nUne fois triés, les biodéchets peuvent être utilisés en engrais organiques pour une agriculture plus durable et respectueuse de l'environnement. Ils peuvent aussi être revalorisé pour produire du biogaz destiné à un usage local ou réinjecté dans le réseau de gaz naturel.",
     "moreDescription": "- [**Trier et valoriser les déchets alimentaires : comment et à quel coût ?** ](https://librairie.ademe.fr/dechets-economie-circulaire/5635-dechets-des-professionnels-etablissements-publics-guide.html)Un guide destiné aux producteurs de déchets alimentaires pour aider à la mise en œuvre du tri à la source dans leurs établissements.",
@@ -576,7 +575,6 @@
     ],
     "mainTheme": "waste",
     "programs": [
-      "etude-alimentation-durable",
       "etude-gaspillage-alimentaire",
       "fonds-tourisme-durable",
       "investissement-contre-le-gaspillage-alimentaire"
@@ -762,7 +760,7 @@
     "slug": "plan-adaptation-climat",
     "title": "Plan d’adaptation au dérèglement climatique",
     "nameTag": "🥵 adaptation climat",
-    "shortDescription": "Adaptez la stratégie et les actions de votre entreprise pour faire face aux évolutions du climat.",
+    "shortDescription": "Adapter la stratégie et les actions de votre entreprise pour faire face aux évolutions du climat.",
     "image": "/images/projet/plan-adaptation-climat.webp",
     "longDescription": "Le plan d’adaptation au dérèglement climatique est un accompagnement qui vous permet d'évaluer la vulnérabilité climatique de votre entreprise face aux conséquences du changement climatique (canicule, sécheresse, inondations…), et de bâtir sa résilience. Ainsi, vous poursuivez votre activité en limitant les effets néfastes, et vous planifiez la réduction des émissions de gaz à effet de serre de votre entreprise.",
     "moreDescription": "- [**Stratégie d’adaptation au changement climatique**](https://agirpourlatransition.ademe.fr/entreprises/strategie-adaptation#summaryAnchor_2)**,** pourquoi est-il important d’anticiper les impacts du changement climatique ?\n- [**Changement climatique, il y a urgence à s'adapter**](https://archives.qqf.fr/infographie/90/changement-climatique-il-y-a-urgence-a-s-adapter) : une infographie *\"Qu'est-ce qu'on fait ?!\"* proposée par l'ADEME.\n- [**Ils l'ont fait :**](https://librairie.ademe.fr/changement-climatique-et-energie/6728-en-entreprise-comment-s-engager-dans-un-parcours-d-adaptation-au-changement-climatique-.html) une sélection de 30 témoignages d'entreprises françaises qui se sont lancées.\n- [**Comment prendre des décisions pour s'adapter au changement climatique ?** ](https://librairie.ademe.fr/ged/6327/entreprise_comment_prendre_des_decisions.pdf)Un recueil de fiches méthodes et études de cas.",
@@ -806,7 +804,8 @@
       "programme-eve",
       "repar-acteurs",
       "tremplin",
-      "cedre-premier-pas"
+      "cedre-premier-pas",
+      "entreprises-engagees-nature"
     ],
     "linkedProjects": [
       27,
@@ -819,7 +818,7 @@
     "slug": "ecoconception",
     "title": "Éco-conception d’un produit ou service",
     "nameTag": "🔁 écoconception",
-    "shortDescription": "Réduisez les impacts de votre produit ou service à toutes les étapes de son cycle de vie.",
+    "shortDescription": "Réduire les impacts de votre produit ou service à toutes les étapes de son cycle de vie.",
     "image": "/images/projet/ecoconception.webp",
     "longDescription": "La démarche d'écoconception (ou conception écologique) est une approche de développement des produits et services respectueuse de l'environnement.\n\nElle consiste à analyser l'ensemble du cycle de vie d'un produit ou d'un service pour identifier comment diminuer son impact environnemental : extraction des matières premières, fabrication, utilisation, rejet dans les milieux naturels en fin de vie, etc.\n\nUne approche d'écoconception est nécessaire pour se questionner sur la fin de vie de vos produits et réorienter judicieusement vos choix de conception. Cela peut passer par exemple par un choix de matières premières plus robustes pour allonger la durée de vie de vos produits, anticiper la réparation ou la revalorisation des matières.\n\nIl s'agit d'une démarche encouragée par la loi anti-gaspillage pour une économie circulaire (AGEC) pour permettre aux entreprises de faire évoluer leur modèle de production.",
     "moreDescription": "- [**Gagnez en performance avec l’écoconception**](https://agirpourlatransition.ademe.fr/entreprises/ecoconception), une fiche ressource proposée par l’ADEME.\n- [**Les lignes directrices à suivre pour la réalisation d’un diagnostic d’éco-conception**](https://librairie.ademe.fr/dechets-economie-circulaire/4169-lignes-directrices-diagnostic-ecoconception.html)**.**\n- [**Analyse du cycle de vie**](https://bigmedia.bpifrance.fr/nos-dossiers/analyse-du-cycle-de-vie-definition-objectifs-etapes-de-realisation) : définition, objectifs, étapes de réalisation.",
@@ -898,9 +897,9 @@
     "slug": "seche-linge",
     "title": "Sèche-linge basse consommation",
     "nameTag": "🌬 sèche-linge",
-    "shortDescription": "Un sèche-linge professionnel de grande efficacité énergétique vous permet de réduire vos factures et de limiter votre empreinte carbone.",
+    "shortDescription": "Un sèche-linge professionnel de grande efficacité énergétique vous permet de réduire votre consommation d'énergie.",
     "image": "/images/projet/seche-linge.webp",
-    "longDescription": "Un sèche-linge professionnel de grande efficacité énergétique est un sèche-linge dont l'énergie de séchage est inférieure à 0,3 kWh/kg de linge et dont le cycle de séchage ne dépasse pas 90 minutes. Cela concerne les sèche-linge à condensation et équipés d’une pompe à chaleur. Mettez au rebut vos anciens appareils à évacuation au profit d'un sèche-linge économe en énergie, et réduisez votre consommation électrique.\n\nainsi que votre impact écologique.",
+    "longDescription": "Un sèche-linge professionnel de grande efficacité énergétique est un sèche-linge dont l'énergie de séchage est inférieure à 0,3 kWh/kg de linge et dont le cycle de séchage ne dépasse pas 90 minutes. Cela concerne les sèche-linge à condensation et équipés d’une pompe à chaleur. Mettez au rebut vos anciens appareils à évacuation au profit d'un sèche-linge économe en énergie, et réduisez votre consommation électrique.",
     "moreDescription": "- [Les critères de sélection d'un sèche-linge pro](https://www.guidetopten.fr/grand-public/selection-criteria/criteres-de-selection-seche-linge-professionnels), proposé par Guide Topten, un comparateur soutenu par l'ADEME.\n- [Une sélection des sèche-linge les plus performants](https://www.guidetopten.fr/grand-public/selection-criteria/criteres-de-selection-seche-linge-professionnels) proposé par Guide Topten, un comparateur soutenu par l'ADEME.",
     "themes": [
       "energy",
@@ -943,7 +942,7 @@
     "slug": "petite-refrigeration",
     "title": "Frigo basse consommation",
     "nameTag": "❄ frigo",
-    "shortDescription": "Des appareils de réfrigération de grand efficacité énergétique vous permettent de réduire votre consommation électrique et de limiter votre empreinte carbone.",
+    "shortDescription": "Des appareils de réfrigération de grand efficacité énergétique vous permettent de réduire votre consommation électrique.",
     "image": "/images/projet/frigo.webp",
     "longDescription": "Vitrines réfrigérées, petits frigos, armoires à boissons, comptoirs, congélateurs à glaces... : les meubles frigorifiques trop anciens sont source de gaspillage énergétique. Leur remplacement par des équipements neufs ou d'occasion de meilleur rendement énergétique peut réduire considérablement votre consommation et diminuer votre impact climatique.",
     "moreDescription": "- [**Diagnostic économies d'énergie réfrigération dans l'industrie**](https://librairie.ademe.fr/produire-autrement/712-diagnostic-economies-d-energie-refrigeration-dans-l-industrie.html), un guide de l'ADEME.\n- [**CO2 ou NH3 : Quel système de froid choisir ?**](https://www.greentechjournal.fr/refrigeration-ecologique/#La_disponibilite_des_systemes_de_froid_ecologiques), par GreenTech Journal.\n- [**Frigo basse consommation : gardez votre facture d’électricité au frais,**](https://www.baisseleswatts.fr/actualites/equipement-energetique/refrigerateur-et-congelateur-optimisez-votre-consommation) un article de Baisse les watts.",
@@ -987,7 +986,7 @@
     "nameTag": "🌿 végétalisation",
     "shortDescription": "La végétalisation contribue à réduire les îlots de chaleur tout en améliorant la qualité de vie de vos équipes.",
     "image": "/images/projet/vegetalisation.webp",
-    "longDescription": "Afin de limiter la hausse de la température des bâtiments en été, la végétalisation est un recours efficace et économe en énergie. Ainsi, vous limitez l'usage de la climatisation pour procurer à vos équipes de la fraîcheur, et vous contribuez à réduire votre impact climatique.\n\nLa végétalisation peut être mise en place via des jardins partagés, des plans d’eau, des tapis de plantes grasses, des prairies végétales ou des potagers sur les toits des bâtiments, des plantes grimpantes ou comestibles sur les façades des immeubles.",
+    "longDescription": "La végétalisation est un recours efficace et économe en énergie pour limiter la hausse de la température de vos bâtiments en été. Ce rafraichissement s'explique par plusieurs raisons :\n\n- Les plantes libèrent de l'eau par le processus d'évapotranspiration, ce qui contribue à abaisser la température ambiante.\n- Les arbres et les grandes plantes fournissent de l'ombre, réduisant ainsi l'ensoleillement direct sur les sols et les bâtiments.\n- En remplaçant des surfaces comme le béton par de la végétation, on limite l'absorption de chaleur par ces matériaux qui retiennent la chaleur.\n- Les plantes filtrent les polluants de l'air et produisent de l'oxygène, ce qui contribue à créer un environnement plus sain et plus agréable.\n- Les espaces verts favorisent la biodiversité, ce qui peut contribuer à un meilleur équilibre des écosystèmes locaux, aidant à maintenir des températures agréables.\n\nLa végétalisation est une solution vertueuse qui est se présente comme un excellent moyen pour limiter l'usage de la climatisation et ainsi réduire votre consommation d'énergie. Elle peut être mise en place via des jardins partagés, des plans d’eau, des tapis de plantes grasses, des plantes grimpantes ou comestibles sur vos façades, des prairies végétales ou des potagers sur les toits de vos bâtiments.",
     "moreDescription": "- [**Des exemples de projets de végétalisation inspirants**](https://plusfraichemaville.fr/projet) proposés par Plus fraiche ma ville",
     "themes": [
       "biodiversite"
@@ -1030,8 +1029,7 @@
     "longDescription": "La construction d'un abri à vélo muni d'emplacements sécurisés encourage les mobilités vertes de vos collaborateurs, et favorise l'accueil des cyclo-touristes.\n\nS'il est équipé de panneaux photovoltaïques, l'abri à vélo peut vous permettre de produire l'électricité nécessaire à la recharge des vélos à assistance électrique.",
     "moreDescription": "- [**Mon entreprise à l'heure des mobilités durables**](https://www.ecologie.gouv.fr/sites/default/files/documents/22061-3_Mobilite%20durable%20entrepriseA4_web.pdf)**,** les obligations et dispositifs de soutien dans le secteur privé.",
     "themes": [
-      "mobility",
-      "energy"
+      "mobility"
     ],
     "mainTheme": "mobility",
     "programs": [
@@ -1072,7 +1070,7 @@
     "slug": "composteur",
     "title": "Composteur",
     "nameTag": "🥬 composteur",
-    "shortDescription": "Le compostage permet une gestion durable et vertueuse de vos biodéchets.",
+    "shortDescription": "Le composteur transforme vos déchets verts en un engrais naturel.",
     "image": "/images/projet/composteur.webp",
     "longDescription": "Depuis le 1er janvier 2024, il est obligatoire pour tous, particuliers entreprises, de trier ses biodéchets, quel que soient les volumes produits.\n\nLes entreprises et les restaurateurs peuvent opter pour une solution de compostage sur site (bokashi, lombricomposteur, tambour rotatif...) pour transformer les biodéchets en compost utilisable localement. L'objectif de cette mesure est de lutter contre le gaspillage alimentaire et de limiter les impacts environnementaux liés au traitement de nos ordures.\n\nUne fois triés et compostés, les biodéchets peuvent être utilisés en engrais organiques pour une agriculture respectueuse de l'environnement.",
     "moreDescription": "- [**Comment réussir son compost**](https://librairie.ademe.fr/7447-comment-reussir-son-compost-.html), un guide de l'ADEME.\n- [**Trier et valoriser les déchets alimentaires : comment et à quel coût ?** ](https://librairie.ademe.fr/dechets-economie-circulaire/5635-dechets-des-professionnels-etablissements-publics-guide.html)Un guide destiné aux producteurs de déchets alimentaires.",
@@ -1094,7 +1092,7 @@
     "nameTag": "🌡️ thermostat",
     "shortDescription": "Un dispositif de régulation thermique peut permettre d'économiser jusqu'à 30 % d'énergie en chauffage.",
     "image": "/images/projet/thermostat.webp",
-    "longDescription": "D’ici à 2027, tous les bâtiments résidentiels et tertiaires devront équiper les systèmes de chauffage et de refroidissement de système de régulation thermique. Cette mesure vise à maintenir la consommation d'énergie à un niveau raisonnable. \\\n\\\nParmi les dispositifs de régulation thermique, vous pouvez opter par exemple pour :\n\n- des robinets thermostatiques de radiateur\n\n- un thermostat d’ambiance\n\n- un détecteur d'ouverture de fenêtre permettant d’interrompre le chauffage\n\n- un éclairage ou dispositif de détection de présence\n\n- un programmateur horaire\n\n- un système de gestion par chambre des consignes des radiateurs, pour les établissements de tourisme.\n\nEn complément de ces installations, les consignes de températures pour les établissements hôteliers préconisent 20°C à 22°C pour une chambre occupée ; 16°C à 18°C pour chambre inoccupée pendant une courte période.",
+    "longDescription": "D’ici à 2027, tous les bâtiments résidentiels et tertiaires devront équiper les systèmes de chauffage et de refroidissement de système de régulation thermique. Cette mesure vise à maintenir la consommation d'énergie à un niveau raisonnable. Parmi les dispositifs de régulation thermique, vous pouvez opter par exemple pour :\n\n- des robinets thermostatiques de radiateur\n- un thermostat d’ambiance\n- un détecteur d'ouverture de fenêtre permettant d’interrompre le chauffage\n- un éclairage ou dispositif de détection de présence\n- un programmateur horaire\n- un système de gestion par chambre des consignes des radiateurs, pour les établissements de tourisme.\n\nEn complément de ces installations, les consignes de températures pour les établissements hôteliers préconisent 20°C à 22°C pour une chambre occupée ; 16°C à 18°C pour chambre inoccupée pendant une courte période.",
     "moreDescription": "- [**Pourquoi passer au thermostat programmable ?**](https://librairie.ademe.fr/urbanisme/5792-pourquoi-passer-au-thermostat-programmable-.html) Une infographie de l'ADEME.\n- [**Énergie, chauffage et refroidissement des bâtiments : améliorez votre efficacité énergétique**](https://agirpourlatransition.ademe.fr/entreprises/energie-chauffage)**,** un état des lieux et des leviers d'action à destination des TPE et PME.",
     "themes": [
       "energy",
