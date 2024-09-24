@@ -3,6 +3,7 @@ import { RouteName } from '@/types/routeType'
 
 export interface FormDataType {
   [key: string]: InputFieldUnionType
+  theme: StringFieldInputType
   name: StringFieldInputType
   surname: StringFieldInputType
   tel: ValidatedStringFieldInputType

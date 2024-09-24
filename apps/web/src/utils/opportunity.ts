@@ -1,22 +1,22 @@
 import { PhoneValidator, EmailValidator, SiretValidator } from '@tee/common'
-import {
-  FieldType,
-  RouteName,
-  type ProgramData as ProgramType,
-  Project,
-  FormDataType,
-  ThemeType,
-  ThemeId,
-  OpportunityType,
-  WithoutNullableKeys
-} from '@/types'
+import { FieldType, RouteName, type ProgramData as ProgramType, Project, FormDataType, ThemeType, ThemeId, OpportunityType } from '@/types'
 import TrackStructure from '@/utils/track/trackStructure'
 import { CalloutType } from '@/types/elementsPropsTypes'
 import Translation from '@/utils/translation'
 import { Theme } from '@/utils/theme'
 export default class Opportunity {
   static getBaseOpportunityFormFields(): FormDataType {
+    const selectedThemeId = TrackStructure.getTheme()
+    const selectedTheme = Theme.getById(selectedThemeId as ThemeId)
     return {
+      theme: {
+        required: true,
+        hidden: true,
+        value: selectedTheme?.title,
+        label: 'Thématique',
+        isValid: true,
+        type: FieldType.Select
+      },
       name: { required: true, colSize: 6, type: FieldType.Text, value: undefined, label: 'Prénom', isValid: undefined },
       surname: { required: true, colSize: 6, type: FieldType.Text, value: undefined, label: 'Nom', isValid: undefined },
       email: {
@@ -111,11 +111,10 @@ export default class Opportunity {
   }
   static getOtherProjectFormFields(): FormDataType {
     const baseFields = this.getBaseOpportunityFormFields()
-    const selectedThemeId = TrackStructure.getTheme()
     baseFields.needs.label = 'Quel est votre projet ?'
     baseFields.needs.value = Translation.t('otherProject.form.needs', { secteur: TrackStructure.getSectorShortLabel() })
-    const themes = Theme.themes
-    const selectedTheme = Theme.getById(selectedThemeId as ThemeId)
+    baseFields.theme.options = Theme.themes.map((theme: ThemeType) => theme.title)
+    baseFields.theme.hidden = false
     return {
       projectTitle: {
         required: true,
@@ -124,39 +123,20 @@ export default class Opportunity {
         isValid: undefined,
         type: FieldType.Text
       },
-      projectTheme: {
-        required: true,
-        value: selectedTheme?.title,
-        label: 'Thématique',
-        isValid: true,
-        options: themes.map((theme: ThemeType) => theme.title),
-        type: FieldType.Select
-      },
       ...baseFields
     }
   }
   static getCustomSlug(form: FormDataType, formType: OpportunityType) {
-    // changer par custom projet
-    if (formType === OpportunityType.Project) {
+    if (formType === OpportunityType.CustomProject) {
       return form.projectTitle.value as string
     }
     return ''
   }
   static getCustomId(form: FormDataType, formType: OpportunityType) {
     // changer par custom projet
-    if (formType === OpportunityType.Project) {
+    if (formType === OpportunityType.CustomProject) {
       return form.projectTitle.value as string
     }
     return ''
-  }
-  static getOpportunityData(form: WithoutNullableKeys<FormDataType>, formType: OpportunityType) {
-    // changer par custom projet
-    if (formType === OpportunityType.Project) {
-      return {
-        projectTitle: form.projectTitle.value as string,
-        projectTheme: form.projectTheme.value as string
-      }
-    }
-    return {}
   }
 }

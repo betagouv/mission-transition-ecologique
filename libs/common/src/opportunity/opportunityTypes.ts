@@ -1,3 +1,4 @@
+import { ThemeId } from '@tee/data'
 import { PublicodeObjective, QuestionnaireRoute, StructureSize } from '../questionnaire/types/types'
 
 export type Opportunity = ContactDetails & OpportunityDetails
@@ -15,20 +16,20 @@ export interface ContactDetails {
 
 export enum OpportunityType {
   Program = 'program',
-  Project = 'project'
+  Project = 'project',
+  CustomProject = 'custom-project'
 }
 
 export interface OpportunityDetails {
   type: OpportunityType
   id: string
   linkToPage: string
-  linkToCatalog: string
+  linkToCatalog?: string
   message: string
   questionnaireRoute?: QuestionnaireRoute
   priorityObjectives?: PublicodeObjective[]
   otherData?: string
-  projectTitle?: string
-  projectTheme?: string
+  theme: ThemeId
 }
 
 export interface OpportunityBody {

@@ -15,7 +15,8 @@ import {
 } from '@/types'
 import RequestApi from '@/service/api/requestApi'
 import TrackStructure from '@/utils/track/trackStructure'
-import Opportunity from '@/utils/opportunity'
+import { ThemeId } from '@tee/data'
+
 export default class OpportunityApi extends RequestApi {
   protected readonly url = '/api/opportunities'
   private readonly _headers = {
@@ -69,6 +70,7 @@ export default class OpportunityApi extends RequestApi {
         email: this._opportunityForm.email.value,
         phoneNumber: this._opportunityForm.tel.value,
         companySiret: this._opportunityForm.siret.value,
+        theme: this._opportunityForm.theme.value as ThemeId,
         companyName: this.getFromUsedTrack(TrackId.Siret, 'denomination'),
         companySector: TrackStructure.getSector(),
         companySize: TrackStructure.getSize() ?? undefined,
@@ -79,8 +81,7 @@ export default class OpportunityApi extends RequestApi {
         ) as QuestionnaireRoute, // get from usedTrack
         otherData: this.getAllValuesFromUsedTrack(),
         linkToPage: this._opportunityForm.linkToPage.value,
-        linkToCatalog: this._generateCatalogLink(),
-        ...Opportunity.getOpportunityData(this._opportunityForm, this._opportunityType)
+        linkToCatalog: this._generateCatalogLink()
       },
       optIn: this._opportunityForm.cgu.value
     }
