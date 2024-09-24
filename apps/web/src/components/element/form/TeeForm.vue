@@ -66,7 +66,7 @@
     class="fr-mt-5v fr-grid-row fr-grid-row--center fr-grid-row--middle"
   >
     <template
-      v-if="formType === FormType.Program"
+      v-if="formType === OpportunityType.Program"
       #phoneContact
     >
       <p class="fr-mb-15v">
@@ -88,14 +88,14 @@ import TeeDsfrButton from '@/components/element/button/TeeDsfrButton.vue'
 import Matomo from '@/utils/matomo'
 import Format from '@/utils/format'
 import OpportunityApi from '@/service/api/opportunityApi'
-import { FormType } from '@tee/common'
+import { OpportunityType } from '@tee/common'
 import { useNavigationStore } from '@/stores/navigation'
 
 const navigation = useNavigationStore()
 interface Props {
   dataId?: string
   dataSlug?: string
-  formType: FormType
+  formType: OpportunityType
   form: FormDataType
   hint: string
   errorEmailSubject: string

@@ -227,8 +227,8 @@
         :data-slug="program.id"
         :phone-callback="Translation.ti(Translation.t('form.phoneContact'), { operator: program['opérateur de contact'] })"
         :form="Opportunity.getProgramFormFields(program)"
-        :form-type="FormType.Program"
-        :error-email-subject="Translation.t('program.form.errorEmail.subject', { program: program.titre })"
+        :form-type="OpportunityType.Program"
+        :error-email-subject="Translation.t('program.program.form.errorEmail.subject', { program: program.titre })"
         :hint="Translation.t('program.form.hint', { operator: program['opérateur de contact'] })"
       />
     </div>
@@ -245,7 +245,7 @@ import ProgramLongDescription from '@/components/program/detail/ProgramLongDescr
 import ProgramTile from '@/components/program/detail/ProgramTile.vue'
 import Config from '@/config'
 import { useProgramStore } from '@/stores/program'
-import { FormType, type ProgramData as ProgramType, Project as ProjectType } from '@/types'
+import { OpportunityType, type ProgramData as ProgramType, Project as ProjectType } from '@/types'
 import { RouteName } from '@/types/routeType'
 import { useNavigationStore } from '@/stores/navigation'
 import Matomo from '@/utils/matomo'
