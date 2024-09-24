@@ -2,7 +2,7 @@ import { CalloutType, FieldType } from '@/types'
 import { RouteName } from '@/types/routeType'
 
 export interface FormDataType {
-  [key: string]: StringFieldInputType | MandatoryStringFieldFormType | BooleanFieldInputType | ValidatedStringFieldInputType
+  [key: string]: InputFieldUnionType
   name: StringFieldInputType
   surname: StringFieldInputType
   tel: ValidatedStringFieldInputType
@@ -13,11 +13,12 @@ export interface FormDataType {
   linkToPage: MandatoryStringFieldFormType
 }
 
-type DefaultFieldFormType = {
+export type DefaultFieldFormType = {
   required: true
   type: FieldType
   isValid: boolean | undefined
   hidden?: boolean
+  value: any
   label?: string
   hint?: string
   hintLink?: {
@@ -27,12 +28,13 @@ type DefaultFieldFormType = {
   wrapperClass?: string
   rows?: number
   colSize?: number
+  options?: any[]
   callOut?: InputCalloutType
 }
 
-export type StringFieldInputType = DefaultFieldFormType & { value: string | undefined }
-export type BooleanFieldInputType = DefaultFieldFormType & { value: boolean }
-export type MandatoryStringFieldFormType = DefaultFieldFormType & { value: string }
+export type StringFieldInputType = Omit<DefaultFieldFormType, 'value'> & { value: string | undefined }
+export type BooleanFieldInputType = Omit<DefaultFieldFormType, 'value'> & { value: boolean }
+export type MandatoryStringFieldFormType = Omit<DefaultFieldFormType, 'value'> & { value: string }
 export type ValidatedStringFieldInputType = StringFieldInputType & {
   validation: CallableFunction
   errorMessage: string

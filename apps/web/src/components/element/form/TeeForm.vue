@@ -2,7 +2,7 @@
   <!-- BACK TO FORM BTN -->
   <TeeDsfrButton
     v-show="formIsSent"
-    class="fr-btn fr-btn--tertiary-no-outline inline-flex fr-mb-3v fr-link fr-tee-form-arrow-back"
+    class="fr-btn fr-btn--tertiary-no-outline fr-col-10 fr-mb-3v fr-link"
     tertiary
     no-outline
     icon-only
@@ -31,8 +31,6 @@
           v-for="fieldKey in Object.keys(localForm)"
           v-show="!localForm[fieldKey].hidden"
           :key="fieldKey"
-          :text-value="getTextValue(localForm[fieldKey])"
-          :checkbox-value="getCheckboxValue(localForm[fieldKey])"
           :field="localForm[fieldKey]"
           @update-field="(field) => (localForm[fieldKey] = field)"
         />
@@ -68,7 +66,7 @@
     class="fr-mt-5v fr-grid-row fr-grid-row--center fr-grid-row--middle"
   >
     <template
-      v-if="formType === FormType.Program"
+      v-if="formType === OpportunityType.Program"
       #phoneContact
     >
       <p class="fr-mb-15v">
@@ -83,20 +81,20 @@
 <script setup lang="ts">
 import { Scroll } from '@/utils/scroll'
 import { computed, ref } from 'vue'
-import { InputFieldUnionType, type ReqResp, TrackId, FormDataType, FieldType } from '@/types'
+import { DefaultFieldFormType, type ReqResp, TrackId, FormDataType } from '@/types'
 import Translation from '@/utils/translation'
 import TeeDsfrButton from '@/components/element/button/TeeDsfrButton.vue'
 import Matomo from '@/utils/matomo'
 import Format from '@/utils/format'
 import OpportunityApi from '@/service/api/opportunityApi'
-import { FormType } from '@tee/common'
+import { OpportunityType } from '@tee/common'
 import { useNavigationStore } from '@/stores/navigation'
 
 const navigation = useNavigationStore()
 interface Props {
   dataId: string
   dataSlug: string
-  formType: FormType
+  formType: OpportunityType
   form: FormDataType
   hint: string
   errorEmailSubject: string
@@ -110,7 +108,6 @@ const formIsSent = ref<boolean>(false)
 const requestResponse = ref<ReqResp>()
 const isLoading = ref<boolean>(false)
 const localForm = ref<FormDataType>(props.form)
-
 const isFormFilled = computed(() => {
   const isFilled = []
   for (const key in localForm.value) {
@@ -131,19 +128,8 @@ const isFormValid = computed(() => {
   return isValid.every((v) => v !== false)
 })
 
-const isFieldValid = (field: InputFieldUnionType): boolean => {
+const isFieldValid = (field: DefaultFieldFormType): boolean => {
   return field.value !== undefined && field.value !== '' && field.value !== false
-}
-
-const getTextValue = (field: InputFieldUnionType): string | undefined => {
-  if (field.type !== FieldType.Checkbox) {
-    return field.value as string | undefined
-  }
-}
-const getCheckboxValue = (field: InputFieldUnionType): boolean | undefined => {
-  if (field.type === FieldType.Checkbox) {
-    return field.value as boolean | undefined
-  }
 }
 
 const saveForm = async () => {

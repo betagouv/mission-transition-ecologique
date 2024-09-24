@@ -1,10 +1,10 @@
 <template>
   <div
     v-if="localField.type === FieldType.Checkbox"
-    class="fr-col-12 fr-col-md-12"
+    :class="`fr-col-${localField.colSize || '12'} fr-col-md-${localField.colSize || '12'}`"
   >
     <DsfrCheckbox
-      v-model="localCheckboxValue"
+      v-model="localField.value"
       :name="`form-checkbox-${localField.label}`"
       :is-valid="localField.isValid"
       :required="localField.required"
@@ -29,6 +29,23 @@
     </span>
   </div>
   <div
+    v-else-if="localField.type === FieldType.Select"
+    :class="`fr-col-${localField.colSize || '12'} fr-col-md-${localField.colSize || '12'}`"
+  >
+    <DsfrInputGroup
+      :error-message="getErrorMessage()"
+      :valid-message="getValidMessage()"
+    >
+      <DsfrSelect
+        v-model="localField.value"
+        :label="localField.label"
+        :required="localField.required"
+        :name="`form-select-${localField.label}`"
+        :options="localField.options"
+      />
+    </DsfrInputGroup>
+  </div>
+  <div
     v-else
     :class="`fr-col-${localField.colSize || '12'} fr-col-md-${localField.colSize || '12'}`"
   >
@@ -37,7 +54,8 @@
       :valid-message="getValidMessage()"
     >
       <DsfrInput
-        v-model="localTextValue"
+        v-model="localField.value"
+        class="fr-bg--white"
         :type="localField.type"
         label-visible
         :is-valid="localField.isValid"
@@ -67,7 +85,7 @@
             :type="localField.callOut.type"
             :img="`${publicPath}${localField.callOut.img}`"
             :img-container-class="'fr-col-xl-2 fr-hidden fr-unhidden-lg'"
-            :content-class="'fr-pb-2v fr-tee-form-banner fr-px-3v fr-px-lg-0'"
+            :content-class="'fr-pb-2v fr-px-3v fr-px-lg-0'"
           >
             {{ localField.callOut.content }}
           </TeeCallout>
@@ -77,30 +95,24 @@
   </div>
 </template>
 <script setup lang="ts">
-import { FieldType, InputFieldUnionType, isValidatedStringFieldInputType } from '@/types'
+import { FieldType, DefaultFieldFormType, isValidatedStringFieldInputType } from '@/types'
 import Config from '@/config'
 
 const publicPath = Config.publicPath !== 'undefined/' ? Config.publicPath : '../../public/'
 
 interface Props {
-  field: InputFieldUnionType
-  checkboxValue?: boolean
-  textValue?: string
+  field: DefaultFieldFormType
 }
 const props = defineProps<Props>()
 
-const emit = defineEmits<{ (e: 'updateField', payload: InputFieldUnionType): void }>()
+const emit = defineEmits<{ (e: 'updateField', payload: DefaultFieldFormType): void }>()
 
-const localField = ref<InputFieldUnionType>(props.field)
-const localCheckboxValue = ref<boolean>(props.checkboxValue)
-const localTextValue = ref<string | undefined>(props.textValue)
-
+const localField = ref<DefaultFieldFormType>(props.field)
 const isFieldValid = (): boolean => {
   return localField.value.value !== undefined && localField.value.value !== '' && localField.value.value !== false
 }
 
 const validateFormField = (): void => {
-  updateFieldValue()
   if (isValidatedStringFieldInputType(localField.value)) {
     localField.value.isValid = localField.value.validation(localField.value.value, !!localField.value.label?.includes('SIRET')) as boolean
   } else {
@@ -118,9 +130,5 @@ const getErrorMessage = (): string => {
 
 const getValidMessage = (): string => {
   return localField.value.isValid === true ? ' ' : ''
-}
-
-const updateFieldValue = () => {
-  localField.value.value = localField.value.type === FieldType.Checkbox ? localCheckboxValue.value : localTextValue.value
 }
 </script>

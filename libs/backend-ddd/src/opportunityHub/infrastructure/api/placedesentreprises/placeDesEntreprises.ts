@@ -10,7 +10,7 @@ import { ProgramService } from '../../../../program/application/programService'
 import OpportunityService from '../../../../opportunity/application/opportunityService'
 import { Objective } from '../../../../common/types'
 import { Operators, ProgramType, ThemeId } from '@tee/data'
-import { Opportunity, FormType } from '@tee/common'
+import { Opportunity, OpportunityType } from '@tee/common'
 import { Project } from '@tee/data'
 import Monitor from '../../../../common/domain/monitoring/monitor'
 import { ProjectService } from '../../../../project/application/projectService'
@@ -51,10 +51,10 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
   public transmitOpportunity = async (opportunity: Opportunity, programOrProject: ProgramType | Project): Promise<Maybe<Error>> => {
     let maybePayload
     switch (opportunity.type) {
-      case FormType.Program:
+      case OpportunityType.Program:
         maybePayload = this._createProgramRequestBody(opportunity, programOrProject as ProgramType)
         break
-      case FormType.Project:
+      case OpportunityType.Project:
         maybePayload = this._createProjectRequestBody(opportunity, programOrProject as Project)
         break
 

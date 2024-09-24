@@ -6,9 +6,9 @@
       :mailto="getMailTo()"
       :email="Contact.email"
     >
-      <h3 class="tee-form-response tee-form-response-error">
+      <h4 class="fr-text--red fr-m-0">
         {{ Translation.t(`form.notSent`) }}
-      </h3>
+      </h4>
     </TeeError>
 
     <!-- MESSAGE IF 200 -->
@@ -16,14 +16,14 @@
       v-if="hasValidResponse"
       class="fr-text-center"
     >
-      <p class="tee-form-response tee-form-response-blue">
+      <p class="fr-text--blue-france">
         <v-icon
           name="ri-checkbox-circle-fill"
           aria-hidden="true"
           scale="3"
         />
       </p>
-      <h3 class="tee-form-response tee-form-response-blue">
+      <h3 class="fr-text--blue-france">
         {{ Translation.t(`form.sent`) }}
       </h3>
       <h6 class="fr-mt-15v fr-mb-3v">

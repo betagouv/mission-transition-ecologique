@@ -3,7 +3,7 @@ import { Maybe } from 'true-myth'
 import Config from '../../../../config'
 import { MailerManager } from '../../../domain/spi'
 import { ProgramType, Program, Project } from '@tee/data'
-import { Opportunity, FormType } from '@tee/common'
+import { Opportunity, OpportunityType } from '@tee/common'
 import Monitor from '../../../../common/domain/monitoring/monitor'
 import { ensureError } from '../../../../common/domain/error/errors'
 
@@ -33,11 +33,11 @@ export default class BrevoMail {
     const email = new SendSmtpEmail()
 
     switch (opportunity.type) {
-      case FormType.Program:
+      case OpportunityType.Program:
         email.templateId = this._programTemplateReceipt
         email.params = this._paramsProgram(opportunity, programOrProject as ProgramType)
         break
-      case FormType.Project:
+      case OpportunityType.Project:
         email.templateId = this._projectTemplateReceipt
         email.params = this._paramsProject(opportunity, programOrProject as Project)
         break

@@ -8,7 +8,7 @@ import {
   ReqResp,
   WithoutNullableKeys,
   FormDataType,
-  FormType,
+  OpportunityType,
   RouteName,
   ProgramData,
   Project
@@ -29,7 +29,7 @@ export default class OpportunityApi extends RequestApi {
     opportunityForm: FormDataType,
     private _id: ProgramData['id'] | Project['id'],
     private _slug: ProgramData['id'] | Project['slug'],
-    private _opportunityType: FormType
+    private _opportunityType: OpportunityType
   ) {
     super()
     this._opportunityForm = opportunityForm as WithoutNullableKeys<FormDataType>
@@ -86,14 +86,14 @@ export default class OpportunityApi extends RequestApi {
   }
 
   private _generateCatalogLink(): string {
-    if (this._opportunityType == FormType.Program) {
+    if (this._opportunityType == OpportunityType.Program) {
       return (
         useNavigationStore().getAbsoluteUrlByRouteName(RouteName.CatalogProgramDetail, {
           programId: this._slug
         }) ?? ''
       )
     }
-    if (this._opportunityType == FormType.Project) {
+    if (this._opportunityType == OpportunityType.Project) {
       return (
         useNavigationStore().getAbsoluteUrlByRouteName(RouteName.CatalogProjectDetail, {
           projectSlug: this._slug
