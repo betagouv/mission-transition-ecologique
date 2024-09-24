@@ -143,7 +143,8 @@ export class PublicodesGenerator {
       [ThemeId.Energy]: 'est ma performance énergétique',
       [ThemeId.RH]: 'est former ou recruter',
       [ThemeId.Environmental]: 'est mon impact environnemental',
-      [ThemeId.EcoDesign]: "est l'écoconception"
+      [ThemeId.EcoDesign]: "est l'écoconception",
+      [ThemeId.Biodiversity]: 'est préserver la biodiversité'
     }
 
     if (!programThemes) {

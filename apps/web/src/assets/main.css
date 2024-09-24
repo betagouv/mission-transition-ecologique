@@ -19,20 +19,26 @@
 .fr-accordion-bg--yellow .fr-collapse--expanded {
   background: #facf35;
 }
+.fr-accordion-bg--yellow-light .fr-collapse--expanded {
+  background: #fef7da;
+}
+.fr-accordion-bg--green .fr-collapse--expanded {
+  background: #1ebe8e;
+}
+.fr-accordion-bg--blue .fr-collapse--expanded {
+  background: #6672f8;
+}
+.fr-accordion-bg--blue-light .fr-collapse--expanded {
+  background: #e8edff;
+}
 .fr-accordion-bg--red .fr-collapse--expanded {
   background: #fca081;
 }
 .fr-accordion-bg--purple .fr-collapse--expanded {
   background: #6a62f4;
 }
-.fr-accordion-bg--green .fr-collapse--expanded {
-  background: #1ebe8e;
-}
 .fr-accordion-bg--blue-france .fr-collapse--expanded {
-  background: #001891;
-}
-.fr-accordion-bg--grey .fr-collapse--expanded {
-  background: #777;
+  background: #000091;
 }
 
 @media (min-width: 0) {
@@ -78,12 +84,12 @@
   .fr-bg--black--light {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #b9b9b9;
+    background-color: #8b8b8b;
   }
   .fr-bg--black--lightness {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #e8e8e8;
+    background-color: #c5c5c5;
   }
 }
 @media (min-width: 0) and (width >= 0) and (width <= 575px) {
@@ -95,12 +101,12 @@
   .fr-bg-xs--black--light {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #b9b9b9;
+    background-color: #8b8b8b;
   }
   .fr-bg-xs--black--lightness {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #e8e8e8;
+    background-color: #c5c5c5;
   }
 }
 @media (min-width: 0) {
@@ -108,10 +114,10 @@
     background-color: #facf35;
   }
   .fr-bg--yellow--light {
-    background-color: #fef1c2;
+    background-color: #fde79a;
   }
   .fr-bg--yellow--lightness {
-    background-color: #fffaeb;
+    background-color: #fef3cd;
   }
 }
 @media (min-width: 0) and (width >= 0) and (width <= 575px) {
@@ -119,10 +125,98 @@
     background-color: #facf35;
   }
   .fr-bg-xs--yellow--light {
-    background-color: #fef1c2;
+    background-color: #fde79a;
   }
   .fr-bg-xs--yellow--lightness {
-    background-color: #fffaeb;
+    background-color: #fef3cd;
+  }
+}
+@media (min-width: 0) {
+  .fr-bg--yellow-light {
+    background-color: #fef7da;
+  }
+  .fr-bg--yellow-light--light {
+    background-color: #fffbed;
+  }
+  .fr-bg--yellow-light--lightness {
+    background-color: #fffdf6;
+  }
+}
+@media (min-width: 0) and (width >= 0) and (width <= 575px) {
+  .fr-bg-xs--yellow-light {
+    background-color: #fef7da;
+  }
+  .fr-bg-xs--yellow-light--light {
+    background-color: #fffbed;
+  }
+  .fr-bg-xs--yellow-light--lightness {
+    background-color: #fffdf6;
+  }
+}
+@media (min-width: 0) {
+  .fr-bg--green {
+    background-color: #1ebe8e;
+  }
+  .fr-bg--green--light {
+    background-color: #8fdfc7;
+  }
+  .fr-bg--green--lightness {
+    background-color: #c7efe3;
+  }
+}
+@media (min-width: 0) and (width >= 0) and (width <= 575px) {
+  .fr-bg-xs--green {
+    background-color: #1ebe8e;
+  }
+  .fr-bg-xs--green--light {
+    background-color: #8fdfc7;
+  }
+  .fr-bg-xs--green--lightness {
+    background-color: #c7efe3;
+  }
+}
+@media (min-width: 0) {
+  .fr-bg--blue {
+    background-color: #6672f8;
+  }
+  .fr-bg--blue--light {
+    background-color: #b3b9fc;
+  }
+  .fr-bg--blue--lightness {
+    background-color: #d9dcfd;
+  }
+}
+@media (min-width: 0) and (width >= 0) and (width <= 575px) {
+  .fr-bg-xs--blue {
+    background-color: #6672f8;
+  }
+  .fr-bg-xs--blue--light {
+    background-color: #b3b9fc;
+  }
+  .fr-bg-xs--blue--lightness {
+    background-color: #d9dcfd;
+  }
+}
+@media (min-width: 0) {
+  .fr-bg--blue-light {
+    background-color: #e8edff;
+  }
+  .fr-bg--blue-light--light {
+    background-color: #f4f6ff;
+  }
+  .fr-bg--blue-light--lightness {
+    background-color: #f9fbff;
+  }
+}
+@media (min-width: 0) and (width >= 0) and (width <= 575px) {
+  .fr-bg-xs--blue-light {
+    background-color: #e8edff;
+  }
+  .fr-bg-xs--blue-light--light {
+    background-color: #f4f6ff;
+  }
+  .fr-bg-xs--blue-light--lightness {
+    background-color: #f9fbff;
   }
 }
 @media (min-width: 0) {
@@ -130,10 +224,10 @@
     background-color: #fca081;
   }
   .fr-bg--red--light {
-    background-color: #fee3d9;
+    background-color: #fed0c0;
   }
   .fr-bg--red--lightness {
-    background-color: #fff6f2;
+    background-color: #fee7e0;
   }
 }
 @media (min-width: 0) and (width >= 0) and (width <= 575px) {
@@ -141,10 +235,10 @@
     background-color: #fca081;
   }
   .fr-bg-xs--red--light {
-    background-color: #fee3d9;
+    background-color: #fed0c0;
   }
   .fr-bg-xs--red--lightness {
-    background-color: #fff6f2;
+    background-color: #fee7e0;
   }
 }
 @media (min-width: 0) {
@@ -156,12 +250,12 @@
   .fr-bg--purple--light {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #d2d0fc;
+    background-color: #b5b1fa;
   }
   .fr-bg--purple--lightness {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #f0effe;
+    background-color: #dad8fc;
   }
 }
 @media (min-width: 0) and (width >= 0) and (width <= 575px) {
@@ -173,78 +267,34 @@
   .fr-bg-xs--purple--light {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #d2d0fc;
+    background-color: #b5b1fa;
   }
   .fr-bg-xs--purple--lightness {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #f0effe;
-  }
-}
-@media (min-width: 0) {
-  .fr-bg--green {
-    background-color: #1ebe8e;
-  }
-  .fr-bg--green--light {
-    background-color: #bcecdd;
-  }
-  .fr-bg--green--lightness {
-    background-color: #e9f9f4;
-  }
-}
-@media (min-width: 0) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--green {
-    background-color: #1ebe8e;
-  }
-  .fr-bg-xs--green--light {
-    background-color: #bcecdd;
-  }
-  .fr-bg-xs--green--lightness {
-    background-color: #e9f9f4;
+    background-color: #dad8fc;
   }
 }
 @media (min-width: 0) {
   .fr-bg--blue-france {
-    background-color: #001891;
+    background-color: #000091;
   }
   .fr-bg--blue-france--light {
-    background-color: #b3bade;
+    background-color: #8080c8;
   }
   .fr-bg--blue-france--lightness {
-    background-color: #e6e8f4;
+    background-color: #bfbfe4;
   }
 }
 @media (min-width: 0) and (width >= 0) and (width <= 575px) {
   .fr-bg-xs--blue-france {
-    background-color: #001891;
+    background-color: #000091;
   }
   .fr-bg-xs--blue-france--light {
-    background-color: #b3bade;
+    background-color: #8080c8;
   }
   .fr-bg-xs--blue-france--lightness {
-    background-color: #e6e8f4;
-  }
-}
-@media (min-width: 0) {
-  .fr-bg--grey {
-    background-color: #777777;
-  }
-  .fr-bg--grey--light {
-    background-color: #d6d6d6;
-  }
-  .fr-bg--grey--lightness {
-    background-color: #f1f1f1;
-  }
-}
-@media (min-width: 0) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--grey {
-    background-color: #777777;
-  }
-  .fr-bg-xs--grey--light {
-    background-color: #d6d6d6;
-  }
-  .fr-bg-xs--grey--lightness {
-    background-color: #f1f1f1;
+    background-color: #bfbfe4;
   }
 }
 @media (min-width: 36em) {
@@ -290,12 +340,12 @@
   .fr-bg-sm--black--light {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #b9b9b9;
+    background-color: #8b8b8b;
   }
   .fr-bg-sm--black--lightness {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #e8e8e8;
+    background-color: #c5c5c5;
   }
 }
 @media (min-width: 36em) and (width >= 0) and (width <= 575px) {
@@ -307,12 +357,12 @@
   .fr-bg-xs--black--light {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #b9b9b9;
+    background-color: #8b8b8b;
   }
   .fr-bg-xs--black--lightness {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #e8e8e8;
+    background-color: #c5c5c5;
   }
 }
 @media (min-width: 36em) {
@@ -320,10 +370,10 @@
     background-color: #facf35;
   }
   .fr-bg-sm--yellow--light {
-    background-color: #fef1c2;
+    background-color: #fde79a;
   }
   .fr-bg-sm--yellow--lightness {
-    background-color: #fffaeb;
+    background-color: #fef3cd;
   }
 }
 @media (min-width: 36em) and (width >= 0) and (width <= 575px) {
@@ -331,10 +381,98 @@
     background-color: #facf35;
   }
   .fr-bg-xs--yellow--light {
-    background-color: #fef1c2;
+    background-color: #fde79a;
   }
   .fr-bg-xs--yellow--lightness {
-    background-color: #fffaeb;
+    background-color: #fef3cd;
+  }
+}
+@media (min-width: 36em) {
+  .fr-bg-sm--yellow-light {
+    background-color: #fef7da;
+  }
+  .fr-bg-sm--yellow-light--light {
+    background-color: #fffbed;
+  }
+  .fr-bg-sm--yellow-light--lightness {
+    background-color: #fffdf6;
+  }
+}
+@media (min-width: 36em) and (width >= 0) and (width <= 575px) {
+  .fr-bg-xs--yellow-light {
+    background-color: #fef7da;
+  }
+  .fr-bg-xs--yellow-light--light {
+    background-color: #fffbed;
+  }
+  .fr-bg-xs--yellow-light--lightness {
+    background-color: #fffdf6;
+  }
+}
+@media (min-width: 36em) {
+  .fr-bg-sm--green {
+    background-color: #1ebe8e;
+  }
+  .fr-bg-sm--green--light {
+    background-color: #8fdfc7;
+  }
+  .fr-bg-sm--green--lightness {
+    background-color: #c7efe3;
+  }
+}
+@media (min-width: 36em) and (width >= 0) and (width <= 575px) {
+  .fr-bg-xs--green {
+    background-color: #1ebe8e;
+  }
+  .fr-bg-xs--green--light {
+    background-color: #8fdfc7;
+  }
+  .fr-bg-xs--green--lightness {
+    background-color: #c7efe3;
+  }
+}
+@media (min-width: 36em) {
+  .fr-bg-sm--blue {
+    background-color: #6672f8;
+  }
+  .fr-bg-sm--blue--light {
+    background-color: #b3b9fc;
+  }
+  .fr-bg-sm--blue--lightness {
+    background-color: #d9dcfd;
+  }
+}
+@media (min-width: 36em) and (width >= 0) and (width <= 575px) {
+  .fr-bg-xs--blue {
+    background-color: #6672f8;
+  }
+  .fr-bg-xs--blue--light {
+    background-color: #b3b9fc;
+  }
+  .fr-bg-xs--blue--lightness {
+    background-color: #d9dcfd;
+  }
+}
+@media (min-width: 36em) {
+  .fr-bg-sm--blue-light {
+    background-color: #e8edff;
+  }
+  .fr-bg-sm--blue-light--light {
+    background-color: #f4f6ff;
+  }
+  .fr-bg-sm--blue-light--lightness {
+    background-color: #f9fbff;
+  }
+}
+@media (min-width: 36em) and (width >= 0) and (width <= 575px) {
+  .fr-bg-xs--blue-light {
+    background-color: #e8edff;
+  }
+  .fr-bg-xs--blue-light--light {
+    background-color: #f4f6ff;
+  }
+  .fr-bg-xs--blue-light--lightness {
+    background-color: #f9fbff;
   }
 }
 @media (min-width: 36em) {
@@ -342,10 +480,10 @@
     background-color: #fca081;
   }
   .fr-bg-sm--red--light {
-    background-color: #fee3d9;
+    background-color: #fed0c0;
   }
   .fr-bg-sm--red--lightness {
-    background-color: #fff6f2;
+    background-color: #fee7e0;
   }
 }
 @media (min-width: 36em) and (width >= 0) and (width <= 575px) {
@@ -353,10 +491,10 @@
     background-color: #fca081;
   }
   .fr-bg-xs--red--light {
-    background-color: #fee3d9;
+    background-color: #fed0c0;
   }
   .fr-bg-xs--red--lightness {
-    background-color: #fff6f2;
+    background-color: #fee7e0;
   }
 }
 @media (min-width: 36em) {
@@ -368,12 +506,12 @@
   .fr-bg-sm--purple--light {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #d2d0fc;
+    background-color: #b5b1fa;
   }
   .fr-bg-sm--purple--lightness {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #f0effe;
+    background-color: #dad8fc;
   }
 }
 @media (min-width: 36em) and (width >= 0) and (width <= 575px) {
@@ -385,78 +523,34 @@
   .fr-bg-xs--purple--light {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #d2d0fc;
+    background-color: #b5b1fa;
   }
   .fr-bg-xs--purple--lightness {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #f0effe;
-  }
-}
-@media (min-width: 36em) {
-  .fr-bg-sm--green {
-    background-color: #1ebe8e;
-  }
-  .fr-bg-sm--green--light {
-    background-color: #bcecdd;
-  }
-  .fr-bg-sm--green--lightness {
-    background-color: #e9f9f4;
-  }
-}
-@media (min-width: 36em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--green {
-    background-color: #1ebe8e;
-  }
-  .fr-bg-xs--green--light {
-    background-color: #bcecdd;
-  }
-  .fr-bg-xs--green--lightness {
-    background-color: #e9f9f4;
+    background-color: #dad8fc;
   }
 }
 @media (min-width: 36em) {
   .fr-bg-sm--blue-france {
-    background-color: #001891;
+    background-color: #000091;
   }
   .fr-bg-sm--blue-france--light {
-    background-color: #b3bade;
+    background-color: #8080c8;
   }
   .fr-bg-sm--blue-france--lightness {
-    background-color: #e6e8f4;
+    background-color: #bfbfe4;
   }
 }
 @media (min-width: 36em) and (width >= 0) and (width <= 575px) {
   .fr-bg-xs--blue-france {
-    background-color: #001891;
+    background-color: #000091;
   }
   .fr-bg-xs--blue-france--light {
-    background-color: #b3bade;
+    background-color: #8080c8;
   }
   .fr-bg-xs--blue-france--lightness {
-    background-color: #e6e8f4;
-  }
-}
-@media (min-width: 36em) {
-  .fr-bg-sm--grey {
-    background-color: #777777;
-  }
-  .fr-bg-sm--grey--light {
-    background-color: #d6d6d6;
-  }
-  .fr-bg-sm--grey--lightness {
-    background-color: #f1f1f1;
-  }
-}
-@media (min-width: 36em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--grey {
-    background-color: #777777;
-  }
-  .fr-bg-xs--grey--light {
-    background-color: #d6d6d6;
-  }
-  .fr-bg-xs--grey--lightness {
-    background-color: #f1f1f1;
+    background-color: #bfbfe4;
   }
 }
 @media (min-width: 48em) {
@@ -502,12 +596,12 @@
   .fr-bg-md--black--light {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #b9b9b9;
+    background-color: #8b8b8b;
   }
   .fr-bg-md--black--lightness {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #e8e8e8;
+    background-color: #c5c5c5;
   }
 }
 @media (min-width: 48em) and (width >= 0) and (width <= 575px) {
@@ -519,12 +613,12 @@
   .fr-bg-xs--black--light {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #b9b9b9;
+    background-color: #8b8b8b;
   }
   .fr-bg-xs--black--lightness {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #e8e8e8;
+    background-color: #c5c5c5;
   }
 }
 @media (min-width: 48em) {
@@ -532,10 +626,10 @@
     background-color: #facf35;
   }
   .fr-bg-md--yellow--light {
-    background-color: #fef1c2;
+    background-color: #fde79a;
   }
   .fr-bg-md--yellow--lightness {
-    background-color: #fffaeb;
+    background-color: #fef3cd;
   }
 }
 @media (min-width: 48em) and (width >= 0) and (width <= 575px) {
@@ -543,10 +637,98 @@
     background-color: #facf35;
   }
   .fr-bg-xs--yellow--light {
-    background-color: #fef1c2;
+    background-color: #fde79a;
   }
   .fr-bg-xs--yellow--lightness {
-    background-color: #fffaeb;
+    background-color: #fef3cd;
+  }
+}
+@media (min-width: 48em) {
+  .fr-bg-md--yellow-light {
+    background-color: #fef7da;
+  }
+  .fr-bg-md--yellow-light--light {
+    background-color: #fffbed;
+  }
+  .fr-bg-md--yellow-light--lightness {
+    background-color: #fffdf6;
+  }
+}
+@media (min-width: 48em) and (width >= 0) and (width <= 575px) {
+  .fr-bg-xs--yellow-light {
+    background-color: #fef7da;
+  }
+  .fr-bg-xs--yellow-light--light {
+    background-color: #fffbed;
+  }
+  .fr-bg-xs--yellow-light--lightness {
+    background-color: #fffdf6;
+  }
+}
+@media (min-width: 48em) {
+  .fr-bg-md--green {
+    background-color: #1ebe8e;
+  }
+  .fr-bg-md--green--light {
+    background-color: #8fdfc7;
+  }
+  .fr-bg-md--green--lightness {
+    background-color: #c7efe3;
+  }
+}
+@media (min-width: 48em) and (width >= 0) and (width <= 575px) {
+  .fr-bg-xs--green {
+    background-color: #1ebe8e;
+  }
+  .fr-bg-xs--green--light {
+    background-color: #8fdfc7;
+  }
+  .fr-bg-xs--green--lightness {
+    background-color: #c7efe3;
+  }
+}
+@media (min-width: 48em) {
+  .fr-bg-md--blue {
+    background-color: #6672f8;
+  }
+  .fr-bg-md--blue--light {
+    background-color: #b3b9fc;
+  }
+  .fr-bg-md--blue--lightness {
+    background-color: #d9dcfd;
+  }
+}
+@media (min-width: 48em) and (width >= 0) and (width <= 575px) {
+  .fr-bg-xs--blue {
+    background-color: #6672f8;
+  }
+  .fr-bg-xs--blue--light {
+    background-color: #b3b9fc;
+  }
+  .fr-bg-xs--blue--lightness {
+    background-color: #d9dcfd;
+  }
+}
+@media (min-width: 48em) {
+  .fr-bg-md--blue-light {
+    background-color: #e8edff;
+  }
+  .fr-bg-md--blue-light--light {
+    background-color: #f4f6ff;
+  }
+  .fr-bg-md--blue-light--lightness {
+    background-color: #f9fbff;
+  }
+}
+@media (min-width: 48em) and (width >= 0) and (width <= 575px) {
+  .fr-bg-xs--blue-light {
+    background-color: #e8edff;
+  }
+  .fr-bg-xs--blue-light--light {
+    background-color: #f4f6ff;
+  }
+  .fr-bg-xs--blue-light--lightness {
+    background-color: #f9fbff;
   }
 }
 @media (min-width: 48em) {
@@ -554,10 +736,10 @@
     background-color: #fca081;
   }
   .fr-bg-md--red--light {
-    background-color: #fee3d9;
+    background-color: #fed0c0;
   }
   .fr-bg-md--red--lightness {
-    background-color: #fff6f2;
+    background-color: #fee7e0;
   }
 }
 @media (min-width: 48em) and (width >= 0) and (width <= 575px) {
@@ -565,10 +747,10 @@
     background-color: #fca081;
   }
   .fr-bg-xs--red--light {
-    background-color: #fee3d9;
+    background-color: #fed0c0;
   }
   .fr-bg-xs--red--lightness {
-    background-color: #fff6f2;
+    background-color: #fee7e0;
   }
 }
 @media (min-width: 48em) {
@@ -580,12 +762,12 @@
   .fr-bg-md--purple--light {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #d2d0fc;
+    background-color: #b5b1fa;
   }
   .fr-bg-md--purple--lightness {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #f0effe;
+    background-color: #dad8fc;
   }
 }
 @media (min-width: 48em) and (width >= 0) and (width <= 575px) {
@@ -597,78 +779,34 @@
   .fr-bg-xs--purple--light {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #d2d0fc;
+    background-color: #b5b1fa;
   }
   .fr-bg-xs--purple--lightness {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #f0effe;
-  }
-}
-@media (min-width: 48em) {
-  .fr-bg-md--green {
-    background-color: #1ebe8e;
-  }
-  .fr-bg-md--green--light {
-    background-color: #bcecdd;
-  }
-  .fr-bg-md--green--lightness {
-    background-color: #e9f9f4;
-  }
-}
-@media (min-width: 48em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--green {
-    background-color: #1ebe8e;
-  }
-  .fr-bg-xs--green--light {
-    background-color: #bcecdd;
-  }
-  .fr-bg-xs--green--lightness {
-    background-color: #e9f9f4;
+    background-color: #dad8fc;
   }
 }
 @media (min-width: 48em) {
   .fr-bg-md--blue-france {
-    background-color: #001891;
+    background-color: #000091;
   }
   .fr-bg-md--blue-france--light {
-    background-color: #b3bade;
+    background-color: #8080c8;
   }
   .fr-bg-md--blue-france--lightness {
-    background-color: #e6e8f4;
+    background-color: #bfbfe4;
   }
 }
 @media (min-width: 48em) and (width >= 0) and (width <= 575px) {
   .fr-bg-xs--blue-france {
-    background-color: #001891;
+    background-color: #000091;
   }
   .fr-bg-xs--blue-france--light {
-    background-color: #b3bade;
+    background-color: #8080c8;
   }
   .fr-bg-xs--blue-france--lightness {
-    background-color: #e6e8f4;
-  }
-}
-@media (min-width: 48em) {
-  .fr-bg-md--grey {
-    background-color: #777777;
-  }
-  .fr-bg-md--grey--light {
-    background-color: #d6d6d6;
-  }
-  .fr-bg-md--grey--lightness {
-    background-color: #f1f1f1;
-  }
-}
-@media (min-width: 48em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--grey {
-    background-color: #777777;
-  }
-  .fr-bg-xs--grey--light {
-    background-color: #d6d6d6;
-  }
-  .fr-bg-xs--grey--lightness {
-    background-color: #f1f1f1;
+    background-color: #bfbfe4;
   }
 }
 @media (min-width: 62em) {
@@ -714,12 +852,12 @@
   .fr-bg-lg--black--light {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #b9b9b9;
+    background-color: #8b8b8b;
   }
   .fr-bg-lg--black--lightness {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #e8e8e8;
+    background-color: #c5c5c5;
   }
 }
 @media (min-width: 62em) and (width >= 0) and (width <= 575px) {
@@ -731,12 +869,12 @@
   .fr-bg-xs--black--light {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #b9b9b9;
+    background-color: #8b8b8b;
   }
   .fr-bg-xs--black--lightness {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #e8e8e8;
+    background-color: #c5c5c5;
   }
 }
 @media (min-width: 62em) {
@@ -744,10 +882,10 @@
     background-color: #facf35;
   }
   .fr-bg-lg--yellow--light {
-    background-color: #fef1c2;
+    background-color: #fde79a;
   }
   .fr-bg-lg--yellow--lightness {
-    background-color: #fffaeb;
+    background-color: #fef3cd;
   }
 }
 @media (min-width: 62em) and (width >= 0) and (width <= 575px) {
@@ -755,10 +893,98 @@
     background-color: #facf35;
   }
   .fr-bg-xs--yellow--light {
-    background-color: #fef1c2;
+    background-color: #fde79a;
   }
   .fr-bg-xs--yellow--lightness {
-    background-color: #fffaeb;
+    background-color: #fef3cd;
+  }
+}
+@media (min-width: 62em) {
+  .fr-bg-lg--yellow-light {
+    background-color: #fef7da;
+  }
+  .fr-bg-lg--yellow-light--light {
+    background-color: #fffbed;
+  }
+  .fr-bg-lg--yellow-light--lightness {
+    background-color: #fffdf6;
+  }
+}
+@media (min-width: 62em) and (width >= 0) and (width <= 575px) {
+  .fr-bg-xs--yellow-light {
+    background-color: #fef7da;
+  }
+  .fr-bg-xs--yellow-light--light {
+    background-color: #fffbed;
+  }
+  .fr-bg-xs--yellow-light--lightness {
+    background-color: #fffdf6;
+  }
+}
+@media (min-width: 62em) {
+  .fr-bg-lg--green {
+    background-color: #1ebe8e;
+  }
+  .fr-bg-lg--green--light {
+    background-color: #8fdfc7;
+  }
+  .fr-bg-lg--green--lightness {
+    background-color: #c7efe3;
+  }
+}
+@media (min-width: 62em) and (width >= 0) and (width <= 575px) {
+  .fr-bg-xs--green {
+    background-color: #1ebe8e;
+  }
+  .fr-bg-xs--green--light {
+    background-color: #8fdfc7;
+  }
+  .fr-bg-xs--green--lightness {
+    background-color: #c7efe3;
+  }
+}
+@media (min-width: 62em) {
+  .fr-bg-lg--blue {
+    background-color: #6672f8;
+  }
+  .fr-bg-lg--blue--light {
+    background-color: #b3b9fc;
+  }
+  .fr-bg-lg--blue--lightness {
+    background-color: #d9dcfd;
+  }
+}
+@media (min-width: 62em) and (width >= 0) and (width <= 575px) {
+  .fr-bg-xs--blue {
+    background-color: #6672f8;
+  }
+  .fr-bg-xs--blue--light {
+    background-color: #b3b9fc;
+  }
+  .fr-bg-xs--blue--lightness {
+    background-color: #d9dcfd;
+  }
+}
+@media (min-width: 62em) {
+  .fr-bg-lg--blue-light {
+    background-color: #e8edff;
+  }
+  .fr-bg-lg--blue-light--light {
+    background-color: #f4f6ff;
+  }
+  .fr-bg-lg--blue-light--lightness {
+    background-color: #f9fbff;
+  }
+}
+@media (min-width: 62em) and (width >= 0) and (width <= 575px) {
+  .fr-bg-xs--blue-light {
+    background-color: #e8edff;
+  }
+  .fr-bg-xs--blue-light--light {
+    background-color: #f4f6ff;
+  }
+  .fr-bg-xs--blue-light--lightness {
+    background-color: #f9fbff;
   }
 }
 @media (min-width: 62em) {
@@ -766,10 +992,10 @@
     background-color: #fca081;
   }
   .fr-bg-lg--red--light {
-    background-color: #fee3d9;
+    background-color: #fed0c0;
   }
   .fr-bg-lg--red--lightness {
-    background-color: #fff6f2;
+    background-color: #fee7e0;
   }
 }
 @media (min-width: 62em) and (width >= 0) and (width <= 575px) {
@@ -777,10 +1003,10 @@
     background-color: #fca081;
   }
   .fr-bg-xs--red--light {
-    background-color: #fee3d9;
+    background-color: #fed0c0;
   }
   .fr-bg-xs--red--lightness {
-    background-color: #fff6f2;
+    background-color: #fee7e0;
   }
 }
 @media (min-width: 62em) {
@@ -792,12 +1018,12 @@
   .fr-bg-lg--purple--light {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #d2d0fc;
+    background-color: #b5b1fa;
   }
   .fr-bg-lg--purple--lightness {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #f0effe;
+    background-color: #dad8fc;
   }
 }
 @media (min-width: 62em) and (width >= 0) and (width <= 575px) {
@@ -809,78 +1035,34 @@
   .fr-bg-xs--purple--light {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #d2d0fc;
+    background-color: #b5b1fa;
   }
   .fr-bg-xs--purple--lightness {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #f0effe;
-  }
-}
-@media (min-width: 62em) {
-  .fr-bg-lg--green {
-    background-color: #1ebe8e;
-  }
-  .fr-bg-lg--green--light {
-    background-color: #bcecdd;
-  }
-  .fr-bg-lg--green--lightness {
-    background-color: #e9f9f4;
-  }
-}
-@media (min-width: 62em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--green {
-    background-color: #1ebe8e;
-  }
-  .fr-bg-xs--green--light {
-    background-color: #bcecdd;
-  }
-  .fr-bg-xs--green--lightness {
-    background-color: #e9f9f4;
+    background-color: #dad8fc;
   }
 }
 @media (min-width: 62em) {
   .fr-bg-lg--blue-france {
-    background-color: #001891;
+    background-color: #000091;
   }
   .fr-bg-lg--blue-france--light {
-    background-color: #b3bade;
+    background-color: #8080c8;
   }
   .fr-bg-lg--blue-france--lightness {
-    background-color: #e6e8f4;
+    background-color: #bfbfe4;
   }
 }
 @media (min-width: 62em) and (width >= 0) and (width <= 575px) {
   .fr-bg-xs--blue-france {
-    background-color: #001891;
+    background-color: #000091;
   }
   .fr-bg-xs--blue-france--light {
-    background-color: #b3bade;
+    background-color: #8080c8;
   }
   .fr-bg-xs--blue-france--lightness {
-    background-color: #e6e8f4;
-  }
-}
-@media (min-width: 62em) {
-  .fr-bg-lg--grey {
-    background-color: #777777;
-  }
-  .fr-bg-lg--grey--light {
-    background-color: #d6d6d6;
-  }
-  .fr-bg-lg--grey--lightness {
-    background-color: #f1f1f1;
-  }
-}
-@media (min-width: 62em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--grey {
-    background-color: #777777;
-  }
-  .fr-bg-xs--grey--light {
-    background-color: #d6d6d6;
-  }
-  .fr-bg-xs--grey--lightness {
-    background-color: #f1f1f1;
+    background-color: #bfbfe4;
   }
 }
 @media (min-width: 78em) {
@@ -926,12 +1108,12 @@
   .fr-bg-xl--black--light {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #b9b9b9;
+    background-color: #8b8b8b;
   }
   .fr-bg-xl--black--lightness {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #e8e8e8;
+    background-color: #c5c5c5;
   }
 }
 @media (min-width: 78em) and (width >= 0) and (width <= 575px) {
@@ -943,12 +1125,12 @@
   .fr-bg-xs--black--light {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #b9b9b9;
+    background-color: #8b8b8b;
   }
   .fr-bg-xs--black--lightness {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #e8e8e8;
+    background-color: #c5c5c5;
   }
 }
 @media (min-width: 78em) {
@@ -956,10 +1138,10 @@
     background-color: #facf35;
   }
   .fr-bg-xl--yellow--light {
-    background-color: #fef1c2;
+    background-color: #fde79a;
   }
   .fr-bg-xl--yellow--lightness {
-    background-color: #fffaeb;
+    background-color: #fef3cd;
   }
 }
 @media (min-width: 78em) and (width >= 0) and (width <= 575px) {
@@ -967,10 +1149,98 @@
     background-color: #facf35;
   }
   .fr-bg-xs--yellow--light {
-    background-color: #fef1c2;
+    background-color: #fde79a;
   }
   .fr-bg-xs--yellow--lightness {
-    background-color: #fffaeb;
+    background-color: #fef3cd;
+  }
+}
+@media (min-width: 78em) {
+  .fr-bg-xl--yellow-light {
+    background-color: #fef7da;
+  }
+  .fr-bg-xl--yellow-light--light {
+    background-color: #fffbed;
+  }
+  .fr-bg-xl--yellow-light--lightness {
+    background-color: #fffdf6;
+  }
+}
+@media (min-width: 78em) and (width >= 0) and (width <= 575px) {
+  .fr-bg-xs--yellow-light {
+    background-color: #fef7da;
+  }
+  .fr-bg-xs--yellow-light--light {
+    background-color: #fffbed;
+  }
+  .fr-bg-xs--yellow-light--lightness {
+    background-color: #fffdf6;
+  }
+}
+@media (min-width: 78em) {
+  .fr-bg-xl--green {
+    background-color: #1ebe8e;
+  }
+  .fr-bg-xl--green--light {
+    background-color: #8fdfc7;
+  }
+  .fr-bg-xl--green--lightness {
+    background-color: #c7efe3;
+  }
+}
+@media (min-width: 78em) and (width >= 0) and (width <= 575px) {
+  .fr-bg-xs--green {
+    background-color: #1ebe8e;
+  }
+  .fr-bg-xs--green--light {
+    background-color: #8fdfc7;
+  }
+  .fr-bg-xs--green--lightness {
+    background-color: #c7efe3;
+  }
+}
+@media (min-width: 78em) {
+  .fr-bg-xl--blue {
+    background-color: #6672f8;
+  }
+  .fr-bg-xl--blue--light {
+    background-color: #b3b9fc;
+  }
+  .fr-bg-xl--blue--lightness {
+    background-color: #d9dcfd;
+  }
+}
+@media (min-width: 78em) and (width >= 0) and (width <= 575px) {
+  .fr-bg-xs--blue {
+    background-color: #6672f8;
+  }
+  .fr-bg-xs--blue--light {
+    background-color: #b3b9fc;
+  }
+  .fr-bg-xs--blue--lightness {
+    background-color: #d9dcfd;
+  }
+}
+@media (min-width: 78em) {
+  .fr-bg-xl--blue-light {
+    background-color: #e8edff;
+  }
+  .fr-bg-xl--blue-light--light {
+    background-color: #f4f6ff;
+  }
+  .fr-bg-xl--blue-light--lightness {
+    background-color: #f9fbff;
+  }
+}
+@media (min-width: 78em) and (width >= 0) and (width <= 575px) {
+  .fr-bg-xs--blue-light {
+    background-color: #e8edff;
+  }
+  .fr-bg-xs--blue-light--light {
+    background-color: #f4f6ff;
+  }
+  .fr-bg-xs--blue-light--lightness {
+    background-color: #f9fbff;
   }
 }
 @media (min-width: 78em) {
@@ -978,10 +1248,10 @@
     background-color: #fca081;
   }
   .fr-bg-xl--red--light {
-    background-color: #fee3d9;
+    background-color: #fed0c0;
   }
   .fr-bg-xl--red--lightness {
-    background-color: #fff6f2;
+    background-color: #fee7e0;
   }
 }
 @media (min-width: 78em) and (width >= 0) and (width <= 575px) {
@@ -989,10 +1259,10 @@
     background-color: #fca081;
   }
   .fr-bg-xs--red--light {
-    background-color: #fee3d9;
+    background-color: #fed0c0;
   }
   .fr-bg-xs--red--lightness {
-    background-color: #fff6f2;
+    background-color: #fee7e0;
   }
 }
 @media (min-width: 78em) {
@@ -1004,12 +1274,12 @@
   .fr-bg-xl--purple--light {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #d2d0fc;
+    background-color: #b5b1fa;
   }
   .fr-bg-xl--purple--lightness {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #f0effe;
+    background-color: #dad8fc;
   }
 }
 @media (min-width: 78em) and (width >= 0) and (width <= 575px) {
@@ -1021,1288 +1291,36 @@
   .fr-bg-xs--purple--light {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #d2d0fc;
+    background-color: #b5b1fa;
   }
   .fr-bg-xs--purple--lightness {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #f0effe;
-  }
-}
-@media (min-width: 78em) {
-  .fr-bg-xl--green {
-    background-color: #1ebe8e;
-  }
-  .fr-bg-xl--green--light {
-    background-color: #bcecdd;
-  }
-  .fr-bg-xl--green--lightness {
-    background-color: #e9f9f4;
-  }
-}
-@media (min-width: 78em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--green {
-    background-color: #1ebe8e;
-  }
-  .fr-bg-xs--green--light {
-    background-color: #bcecdd;
-  }
-  .fr-bg-xs--green--lightness {
-    background-color: #e9f9f4;
+    background-color: #dad8fc;
   }
 }
 @media (min-width: 78em) {
   .fr-bg-xl--blue-france {
-    background-color: #001891;
+    background-color: #000091;
   }
   .fr-bg-xl--blue-france--light {
-    background-color: #b3bade;
+    background-color: #8080c8;
   }
   .fr-bg-xl--blue-france--lightness {
-    background-color: #e6e8f4;
+    background-color: #bfbfe4;
   }
 }
 @media (min-width: 78em) and (width >= 0) and (width <= 575px) {
   .fr-bg-xs--blue-france {
-    background-color: #001891;
+    background-color: #000091;
   }
   .fr-bg-xs--blue-france--light {
-    background-color: #b3bade;
+    background-color: #8080c8;
   }
   .fr-bg-xs--blue-france--lightness {
-    background-color: #e6e8f4;
+    background-color: #bfbfe4;
   }
 }
-@media (min-width: 78em) {
-  .fr-bg-xl--grey {
-    background-color: #777777;
-  }
-  .fr-bg-xl--grey--light {
-    background-color: #d6d6d6;
-  }
-  .fr-bg-xl--grey--lightness {
-    background-color: #f1f1f1;
-  }
-}
-@media (min-width: 78em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--grey {
-    background-color: #777777;
-  }
-  .fr-bg-xs--grey--light {
-    background-color: #d6d6d6;
-  }
-  .fr-bg-xs--grey--lightness {
-    background-color: #f1f1f1;
-  }
-}
-.fr-border--thin--solid--white {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin white;
-}
-.fr-border--thin--solid--white--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin white;
-}
-.fr-border--thin--solid--white--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin white;
-}
-.fr-border--thin--dashed--white {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin white;
-}
-.fr-border--thin--dashed--white--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin white;
-}
-.fr-border--thin--dashed--white--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin white;
-}
-.fr-border--thin--dotted--white {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin white;
-}
-.fr-border--thin--dotted--white--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin white;
-}
-.fr-border--thin--dotted--white--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin white;
-}
-.fr-border--medium--solid--white {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium white;
-}
-.fr-border--medium--solid--white--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium white;
-}
-.fr-border--medium--solid--white--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium white;
-}
-.fr-border--medium--dashed--white {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium white;
-}
-.fr-border--medium--dashed--white--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium white;
-}
-.fr-border--medium--dashed--white--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium white;
-}
-.fr-border--medium--dotted--white {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium white;
-}
-.fr-border--medium--dotted--white--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium white;
-}
-.fr-border--medium--dotted--white--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium white;
-}
-.fr-border--thick--solid--white {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick white;
-}
-.fr-border--thick--solid--white--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick white;
-}
-.fr-border--thick--solid--white--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick white;
-}
-.fr-border--thick--dashed--white {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick white;
-}
-.fr-border--thick--dashed--white--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick white;
-}
-.fr-border--thick--dashed--white--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick white;
-}
-.fr-border--thick--dotted--white {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick white;
-}
-.fr-border--thick--dotted--white--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick white;
-}
-.fr-border--thick--dotted--white--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick white;
-}
-.fr-border--white {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin solid white;
-}
-.fr-border--white--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin solid white;
-}
-.fr-border--white--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin solid white;
-}
-
-.fr-border--thin--solid--black {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #161616;
-}
-.fr-border--thin--solid--black--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #b9b9b9;
-}
-.fr-border--thin--solid--black--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #e8e8e8;
-}
-.fr-border--thin--dashed--black {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #161616;
-}
-.fr-border--thin--dashed--black--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #b9b9b9;
-}
-.fr-border--thin--dashed--black--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #e8e8e8;
-}
-.fr-border--thin--dotted--black {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #161616;
-}
-.fr-border--thin--dotted--black--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #b9b9b9;
-}
-.fr-border--thin--dotted--black--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #e8e8e8;
-}
-.fr-border--medium--solid--black {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #161616;
-}
-.fr-border--medium--solid--black--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #b9b9b9;
-}
-.fr-border--medium--solid--black--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #e8e8e8;
-}
-.fr-border--medium--dashed--black {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #161616;
-}
-.fr-border--medium--dashed--black--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #b9b9b9;
-}
-.fr-border--medium--dashed--black--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #e8e8e8;
-}
-.fr-border--medium--dotted--black {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #161616;
-}
-.fr-border--medium--dotted--black--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #b9b9b9;
-}
-.fr-border--medium--dotted--black--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #e8e8e8;
-}
-.fr-border--thick--solid--black {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #161616;
-}
-.fr-border--thick--solid--black--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #b9b9b9;
-}
-.fr-border--thick--solid--black--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #e8e8e8;
-}
-.fr-border--thick--dashed--black {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #161616;
-}
-.fr-border--thick--dashed--black--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #b9b9b9;
-}
-.fr-border--thick--dashed--black--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #e8e8e8;
-}
-.fr-border--thick--dotted--black {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #161616;
-}
-.fr-border--thick--dotted--black--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #b9b9b9;
-}
-.fr-border--thick--dotted--black--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #e8e8e8;
-}
-.fr-border--black {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin solid #161616;
-}
-.fr-border--black--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin solid #b9b9b9;
-}
-.fr-border--black--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin solid #e8e8e8;
-}
-
-.fr-border--thin--solid--yellow {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #facf35;
-}
-.fr-border--thin--solid--yellow--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #fef1c2;
-}
-.fr-border--thin--solid--yellow--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #fffaeb;
-}
-.fr-border--thin--dashed--yellow {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #facf35;
-}
-.fr-border--thin--dashed--yellow--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #fef1c2;
-}
-.fr-border--thin--dashed--yellow--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #fffaeb;
-}
-.fr-border--thin--dotted--yellow {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #facf35;
-}
-.fr-border--thin--dotted--yellow--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #fef1c2;
-}
-.fr-border--thin--dotted--yellow--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #fffaeb;
-}
-.fr-border--medium--solid--yellow {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #facf35;
-}
-.fr-border--medium--solid--yellow--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #fef1c2;
-}
-.fr-border--medium--solid--yellow--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #fffaeb;
-}
-.fr-border--medium--dashed--yellow {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #facf35;
-}
-.fr-border--medium--dashed--yellow--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #fef1c2;
-}
-.fr-border--medium--dashed--yellow--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #fffaeb;
-}
-.fr-border--medium--dotted--yellow {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #facf35;
-}
-.fr-border--medium--dotted--yellow--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #fef1c2;
-}
-.fr-border--medium--dotted--yellow--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #fffaeb;
-}
-.fr-border--thick--solid--yellow {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #facf35;
-}
-.fr-border--thick--solid--yellow--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #fef1c2;
-}
-.fr-border--thick--solid--yellow--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #fffaeb;
-}
-.fr-border--thick--dashed--yellow {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #facf35;
-}
-.fr-border--thick--dashed--yellow--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #fef1c2;
-}
-.fr-border--thick--dashed--yellow--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #fffaeb;
-}
-.fr-border--thick--dotted--yellow {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #facf35;
-}
-.fr-border--thick--dotted--yellow--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #fef1c2;
-}
-.fr-border--thick--dotted--yellow--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #fffaeb;
-}
-.fr-border--yellow {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin solid #facf35;
-}
-.fr-border--yellow--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin solid #fef1c2;
-}
-.fr-border--yellow--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin solid #fffaeb;
-}
-
-.fr-border--thin--solid--red {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #fca081;
-}
-.fr-border--thin--solid--red--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #fee3d9;
-}
-.fr-border--thin--solid--red--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #fff6f2;
-}
-.fr-border--thin--dashed--red {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #fca081;
-}
-.fr-border--thin--dashed--red--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #fee3d9;
-}
-.fr-border--thin--dashed--red--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #fff6f2;
-}
-.fr-border--thin--dotted--red {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #fca081;
-}
-.fr-border--thin--dotted--red--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #fee3d9;
-}
-.fr-border--thin--dotted--red--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #fff6f2;
-}
-.fr-border--medium--solid--red {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #fca081;
-}
-.fr-border--medium--solid--red--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #fee3d9;
-}
-.fr-border--medium--solid--red--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #fff6f2;
-}
-.fr-border--medium--dashed--red {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #fca081;
-}
-.fr-border--medium--dashed--red--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #fee3d9;
-}
-.fr-border--medium--dashed--red--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #fff6f2;
-}
-.fr-border--medium--dotted--red {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #fca081;
-}
-.fr-border--medium--dotted--red--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #fee3d9;
-}
-.fr-border--medium--dotted--red--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #fff6f2;
-}
-.fr-border--thick--solid--red {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #fca081;
-}
-.fr-border--thick--solid--red--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #fee3d9;
-}
-.fr-border--thick--solid--red--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #fff6f2;
-}
-.fr-border--thick--dashed--red {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #fca081;
-}
-.fr-border--thick--dashed--red--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #fee3d9;
-}
-.fr-border--thick--dashed--red--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #fff6f2;
-}
-.fr-border--thick--dotted--red {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #fca081;
-}
-.fr-border--thick--dotted--red--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #fee3d9;
-}
-.fr-border--thick--dotted--red--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #fff6f2;
-}
-.fr-border--red {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin solid #fca081;
-}
-.fr-border--red--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin solid #fee3d9;
-}
-.fr-border--red--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin solid #fff6f2;
-}
-
-.fr-border--thin--solid--purple {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #6a62f4;
-}
-.fr-border--thin--solid--purple--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #d2d0fc;
-}
-.fr-border--thin--solid--purple--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #f0effe;
-}
-.fr-border--thin--dashed--purple {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #6a62f4;
-}
-.fr-border--thin--dashed--purple--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #d2d0fc;
-}
-.fr-border--thin--dashed--purple--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #f0effe;
-}
-.fr-border--thin--dotted--purple {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #6a62f4;
-}
-.fr-border--thin--dotted--purple--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #d2d0fc;
-}
-.fr-border--thin--dotted--purple--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #f0effe;
-}
-.fr-border--medium--solid--purple {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #6a62f4;
-}
-.fr-border--medium--solid--purple--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #d2d0fc;
-}
-.fr-border--medium--solid--purple--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #f0effe;
-}
-.fr-border--medium--dashed--purple {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #6a62f4;
-}
-.fr-border--medium--dashed--purple--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #d2d0fc;
-}
-.fr-border--medium--dashed--purple--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #f0effe;
-}
-.fr-border--medium--dotted--purple {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #6a62f4;
-}
-.fr-border--medium--dotted--purple--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #d2d0fc;
-}
-.fr-border--medium--dotted--purple--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #f0effe;
-}
-.fr-border--thick--solid--purple {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #6a62f4;
-}
-.fr-border--thick--solid--purple--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #d2d0fc;
-}
-.fr-border--thick--solid--purple--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #f0effe;
-}
-.fr-border--thick--dashed--purple {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #6a62f4;
-}
-.fr-border--thick--dashed--purple--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #d2d0fc;
-}
-.fr-border--thick--dashed--purple--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #f0effe;
-}
-.fr-border--thick--dotted--purple {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #6a62f4;
-}
-.fr-border--thick--dotted--purple--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #d2d0fc;
-}
-.fr-border--thick--dotted--purple--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #f0effe;
-}
-.fr-border--purple {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin solid #6a62f4;
-}
-.fr-border--purple--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin solid #d2d0fc;
-}
-.fr-border--purple--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin solid #f0effe;
-}
-
-.fr-border--thin--solid--green {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #1ebe8e;
-}
-.fr-border--thin--solid--green--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #bcecdd;
-}
-.fr-border--thin--solid--green--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #e9f9f4;
-}
-.fr-border--thin--dashed--green {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #1ebe8e;
-}
-.fr-border--thin--dashed--green--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #bcecdd;
-}
-.fr-border--thin--dashed--green--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #e9f9f4;
-}
-.fr-border--thin--dotted--green {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #1ebe8e;
-}
-.fr-border--thin--dotted--green--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #bcecdd;
-}
-.fr-border--thin--dotted--green--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #e9f9f4;
-}
-.fr-border--medium--solid--green {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #1ebe8e;
-}
-.fr-border--medium--solid--green--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #bcecdd;
-}
-.fr-border--medium--solid--green--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #e9f9f4;
-}
-.fr-border--medium--dashed--green {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #1ebe8e;
-}
-.fr-border--medium--dashed--green--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #bcecdd;
-}
-.fr-border--medium--dashed--green--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #e9f9f4;
-}
-.fr-border--medium--dotted--green {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #1ebe8e;
-}
-.fr-border--medium--dotted--green--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #bcecdd;
-}
-.fr-border--medium--dotted--green--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #e9f9f4;
-}
-.fr-border--thick--solid--green {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #1ebe8e;
-}
-.fr-border--thick--solid--green--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #bcecdd;
-}
-.fr-border--thick--solid--green--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #e9f9f4;
-}
-.fr-border--thick--dashed--green {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #1ebe8e;
-}
-.fr-border--thick--dashed--green--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #bcecdd;
-}
-.fr-border--thick--dashed--green--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #e9f9f4;
-}
-.fr-border--thick--dotted--green {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #1ebe8e;
-}
-.fr-border--thick--dotted--green--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #bcecdd;
-}
-.fr-border--thick--dotted--green--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #e9f9f4;
-}
-.fr-border--green {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin solid #1ebe8e;
-}
-.fr-border--green--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin solid #bcecdd;
-}
-.fr-border--green--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin solid #e9f9f4;
-}
-
-.fr-border--thin--solid--blue-france {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #001891;
-}
-.fr-border--thin--solid--blue-france--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #b3bade;
-}
-.fr-border--thin--solid--blue-france--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #e6e8f4;
-}
-.fr-border--thin--dashed--blue-france {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #001891;
-}
-.fr-border--thin--dashed--blue-france--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #b3bade;
-}
-.fr-border--thin--dashed--blue-france--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #e6e8f4;
-}
-.fr-border--thin--dotted--blue-france {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #001891;
-}
-.fr-border--thin--dotted--blue-france--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #b3bade;
-}
-.fr-border--thin--dotted--blue-france--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #e6e8f4;
-}
-.fr-border--medium--solid--blue-france {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #001891;
-}
-.fr-border--medium--solid--blue-france--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #b3bade;
-}
-.fr-border--medium--solid--blue-france--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #e6e8f4;
-}
-.fr-border--medium--dashed--blue-france {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #001891;
-}
-.fr-border--medium--dashed--blue-france--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #b3bade;
-}
-.fr-border--medium--dashed--blue-france--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #e6e8f4;
-}
-.fr-border--medium--dotted--blue-france {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #001891;
-}
-.fr-border--medium--dotted--blue-france--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #b3bade;
-}
-.fr-border--medium--dotted--blue-france--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #e6e8f4;
-}
-.fr-border--thick--solid--blue-france {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #001891;
-}
-.fr-border--thick--solid--blue-france--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #b3bade;
-}
-.fr-border--thick--solid--blue-france--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #e6e8f4;
-}
-.fr-border--thick--dashed--blue-france {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #001891;
-}
-.fr-border--thick--dashed--blue-france--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #b3bade;
-}
-.fr-border--thick--dashed--blue-france--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #e6e8f4;
-}
-.fr-border--thick--dotted--blue-france {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #001891;
-}
-.fr-border--thick--dotted--blue-france--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #b3bade;
-}
-.fr-border--thick--dotted--blue-france--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #e6e8f4;
-}
-.fr-border--blue-france {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin solid #001891;
-}
-.fr-border--blue-france--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin solid #b3bade;
-}
-.fr-border--blue-france--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin solid #e6e8f4;
-}
-
-.fr-border--thin--solid--grey {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #777777;
-}
-.fr-border--thin--solid--grey--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #d6d6d6;
-}
-.fr-border--thin--solid--grey--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #f1f1f1;
-}
-.fr-border--thin--dashed--grey {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #777777;
-}
-.fr-border--thin--dashed--grey--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #d6d6d6;
-}
-.fr-border--thin--dashed--grey--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #f1f1f1;
-}
-.fr-border--thin--dotted--grey {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #777777;
-}
-.fr-border--thin--dotted--grey--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #d6d6d6;
-}
-.fr-border--thin--dotted--grey--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin #f1f1f1;
-}
-.fr-border--medium--solid--grey {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #777777;
-}
-.fr-border--medium--solid--grey--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #d6d6d6;
-}
-.fr-border--medium--solid--grey--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #f1f1f1;
-}
-.fr-border--medium--dashed--grey {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #777777;
-}
-.fr-border--medium--dashed--grey--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #d6d6d6;
-}
-.fr-border--medium--dashed--grey--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #f1f1f1;
-}
-.fr-border--medium--dotted--grey {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #777777;
-}
-.fr-border--medium--dotted--grey--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #d6d6d6;
-}
-.fr-border--medium--dotted--grey--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: medium #f1f1f1;
-}
-.fr-border--thick--solid--grey {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #777777;
-}
-.fr-border--thick--solid--grey--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #d6d6d6;
-}
-.fr-border--thick--solid--grey--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #f1f1f1;
-}
-.fr-border--thick--dashed--grey {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #777777;
-}
-.fr-border--thick--dashed--grey--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #d6d6d6;
-}
-.fr-border--thick--dashed--grey--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #f1f1f1;
-}
-.fr-border--thick--dotted--grey {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #777777;
-}
-.fr-border--thick--dotted--grey--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #d6d6d6;
-}
-.fr-border--thick--dotted--grey--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thick #f1f1f1;
-}
-.fr-border--grey {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin solid #777777;
-}
-.fr-border--grey--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin solid #d6d6d6;
-}
-.fr-border--grey--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  border: thin solid #f1f1f1;
-}
-
 .fr-btn-bg:hover, .fr-btn-bg:active {
   background-color: rgba(0, 0, 0, 0.05) !important;
 }
@@ -2315,20 +1333,26 @@
 .fr-btn--secondary--yellow {
   box-shadow: inset 0 0 0 1px #facf35;
 }
+.fr-btn--secondary--yellow-light {
+  box-shadow: inset 0 0 0 1px #fef7da;
+}
+.fr-btn--secondary--green {
+  box-shadow: inset 0 0 0 1px #1ebe8e;
+}
+.fr-btn--secondary--blue {
+  box-shadow: inset 0 0 0 1px #6672f8;
+}
+.fr-btn--secondary--blue-light {
+  box-shadow: inset 0 0 0 1px #e8edff;
+}
 .fr-btn--secondary--red {
   box-shadow: inset 0 0 0 1px #fca081;
 }
 .fr-btn--secondary--purple {
   box-shadow: inset 0 0 0 1px #6a62f4;
 }
-.fr-btn--secondary--green {
-  box-shadow: inset 0 0 0 1px #1ebe8e;
-}
 .fr-btn--secondary--blue-france {
-  box-shadow: inset 0 0 0 1px #001891;
-}
-.fr-btn--secondary--grey {
-  box-shadow: inset 0 0 0 1px #777;
+  box-shadow: inset 0 0 0 1px #000091;
 }
 
 .fr-callout {
@@ -2374,6 +1398,36 @@
 }
 .fr-card :hover {
   cursor: pointer;
+}
+.fr-card__header--white {
+  background-color: white;
+}
+.fr-card__header--black {
+  background-color: #8b8b8b;
+}
+.fr-card__header--yellow {
+  background-color: #fde79a;
+}
+.fr-card__header--yellow-light {
+  background-color: #fffbed;
+}
+.fr-card__header--green {
+  background-color: #8fdfc7;
+}
+.fr-card__header--blue {
+  background-color: #b3b9fc;
+}
+.fr-card__header--blue-light {
+  background-color: #f4f6ff;
+}
+.fr-card__header--red {
+  background-color: #fed0c0;
+}
+.fr-card__header--purple {
+  background-color: #b5b1fa;
+}
+.fr-card__header--blue-france {
+  background-color: #8080c8;
 }
 .fr-card__header .fr-card__img--contain img {
   object-fit: contain;
@@ -2484,6 +1538,34 @@
 .fr-card--yellow .fr-card__title {
   color: var(--text-default-grey);
 }
+.fr-card--yellow-light {
+  background-color: #fef7da;
+  color: var(--text-action-high-blue-france);
+}
+.fr-card--yellow-light .fr-card__title {
+  color: var(--text-default-grey);
+}
+.fr-card--green {
+  background-color: #1ebe8e;
+  color: var(--text-action-high-blue-france);
+}
+.fr-card--green .fr-card__title {
+  color: var(--text-default-grey);
+}
+.fr-card--blue {
+  background-color: #6672f8;
+  color: var(--text-inverted-blue-france);
+}
+.fr-card--blue .fr-card__title {
+  color: #6672f8;
+}
+.fr-card--blue-light {
+  background-color: #e8edff;
+  color: var(--text-action-high-blue-france);
+}
+.fr-card--blue-light .fr-card__title {
+  color: var(--text-default-grey);
+}
 .fr-card--red {
   background-color: #fca081;
   color: var(--text-action-high-blue-france);
@@ -2494,26 +1576,12 @@
 .fr-card--purple .fr-card__title {
   color: var(--text-default-grey);
 }
-.fr-card--green {
-  background-color: #1ebe8e;
-  color: var(--text-action-high-blue-france);
-}
-.fr-card--green .fr-card__title {
-  color: var(--text-default-grey);
-}
 .fr-card--blue-france {
-  background-color: #001891;
+  background-color: #000091;
   color: var(--text-inverted-blue-france);
 }
 .fr-card--blue-france .fr-card__title {
-  color: #001891;
-}
-.fr-card--grey {
-  background-color: #777;
-  color: var(--text-action-high-blue-france);
-}
-.fr-card--grey .fr-card__title {
-  color: var(--text-default-grey);
+  color: #000091;
 }
 
 .fr-checkbox-group input[type=checkbox] + label::before {
@@ -2637,7 +1705,13 @@
 .fr-tee-form-banner p {
   white-space: pre-wrap;
 }
-.fr-tee-form .fr-input {
+.fr-tee-form-block {
+  background-color: #e8edff;
+  padding: 2em;
+  display: flex;
+  justify-content: center;
+}
+.fr-tee-form-block .fr-input {
   background-color: white;
 }
 .fr-tee-form-container {
@@ -2678,6 +1752,22 @@
   background-image: linear-gradient(to bottom, transparent, #facf35);
 }
 
+.fr-gradient--yellow-light {
+  background-image: linear-gradient(to bottom, transparent, #fef7da);
+}
+
+.fr-gradient--green {
+  background-image: linear-gradient(to bottom, transparent, #1ebe8e);
+}
+
+.fr-gradient--blue {
+  background-image: linear-gradient(to bottom, transparent, #6672f8);
+}
+
+.fr-gradient--blue-light {
+  background-image: linear-gradient(to bottom, transparent, #e8edff);
+}
+
 .fr-gradient--red {
   background-image: linear-gradient(to bottom, transparent, #fca081);
 }
@@ -2686,19 +1776,17 @@
   background-image: linear-gradient(to bottom, transparent, #6a62f4);
 }
 
-.fr-gradient--green {
-  background-image: linear-gradient(to bottom, transparent, #1ebe8e);
-}
-
 .fr-gradient--blue-france {
-  background-image: linear-gradient(to bottom, transparent, #001891);
-}
-
-.fr-gradient--grey {
-  background-image: linear-gradient(to bottom, transparent, #777);
+  background-image: linear-gradient(to bottom, transparent, #000091);
 }
 
 @media (min-width: 0) {
+  .fr-hidden {
+    display: none !important;
+  }
+  .fr-unhidden {
+    display: inherit !important;
+  }
   .fr-col-content--top {
     display: flex;
     align-items: start;
@@ -2743,6 +1831,12 @@
   }
 }
 @media (min-width: 36em) {
+  .fr-hidden-sm {
+    display: none !important;
+  }
+  .fr-unhidden-sm {
+    display: inherit !important;
+  }
   .fr-col-content-sm--top {
     display: flex;
     align-items: start;
@@ -2787,6 +1881,12 @@
   }
 }
 @media (min-width: 48em) {
+  .fr-hidden-md {
+    display: none !important;
+  }
+  .fr-unhidden-md {
+    display: inherit !important;
+  }
   .fr-col-content-md--top {
     display: flex;
     align-items: start;
@@ -2831,6 +1931,12 @@
   }
 }
 @media (min-width: 62em) {
+  .fr-hidden-lg {
+    display: none !important;
+  }
+  .fr-unhidden-lg {
+    display: inherit !important;
+  }
   .fr-col-content-lg--top {
     display: flex;
     align-items: start;
@@ -2875,6 +1981,12 @@
   }
 }
 @media (min-width: 78em) {
+  .fr-hidden-xl {
+    display: none !important;
+  }
+  .fr-unhidden-xl {
+    display: inherit !important;
+  }
   .fr-col-content-xl--top {
     display: flex;
     align-items: start;
@@ -2945,110 +2057,56 @@
 .fr-highlight-border--yellow {
   background-image: linear-gradient(0deg, #facf35, #facf35);
 }
+.fr-highlight-border--yellow-light {
+  background-image: linear-gradient(0deg, #fef7da, #fef7da);
+}
+.fr-highlight-border--green {
+  background-image: linear-gradient(0deg, #1ebe8e, #1ebe8e);
+}
+.fr-highlight-border--blue {
+  background-image: linear-gradient(0deg, #6672f8, #6672f8);
+}
+.fr-highlight-border--blue-light {
+  background-image: linear-gradient(0deg, #e8edff, #e8edff);
+}
 .fr-highlight-border--red {
   background-image: linear-gradient(0deg, #fca081, #fca081);
 }
 .fr-highlight-border--purple {
   background: linear-gradient(0deg, #6a62f4, #6a62f4);
 }
-.fr-highlight-border--green {
-  background-image: linear-gradient(0deg, #1ebe8e, #1ebe8e);
-}
 .fr-highlight-border--blue-france {
-  background-image: linear-gradient(0deg, #001891, #001891);
-}
-.fr-highlight-border--grey {
-  background-image: linear-gradient(0deg, #777, #777);
+  background-image: linear-gradient(0deg, #000091, #000091);
 }
 .fr-highlight-bg--white {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  background-color: white;
-}
-.fr-highlight-bg--white--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  background-color: white;
-}
-.fr-highlight-bg--white--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  background-color: white;
+  background-color: #fff;
 }
 .fr-highlight-bg--black {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
   background-color: #161616;
-}
-.fr-highlight-bg--black--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  background-color: #b9b9b9;
-}
-.fr-highlight-bg--black--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  background-color: #e8e8e8;
 }
 .fr-highlight-bg--yellow {
   background-color: #facf35;
 }
-.fr-highlight-bg--yellow--light {
-  background-color: #fef1c2;
-}
-.fr-highlight-bg--yellow--lightness {
-  background-color: #fffaeb;
-}
-.fr-highlight-bg--red {
-  background-color: #fca081;
-}
-.fr-highlight-bg--red--light {
-  background-color: #fee3d9;
-}
-.fr-highlight-bg--red--lightness {
-  background-color: #fff6f2;
-}
-.fr-highlight-bg--purple {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  background-color: #6a62f4;
-}
-.fr-highlight-bg--purple--light {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  background-color: #d2d0fc;
-}
-.fr-highlight-bg--purple--lightness {
-  /* Wrong parsing on function name from stylelint, so next line is disable */
-  /* stylelint-disable-next-line function-name-case */
-  background-color: #f0effe;
+.fr-highlight-bg--yellow-light {
+  background-color: #fef7da;
 }
 .fr-highlight-bg--green {
   background-color: #1ebe8e;
 }
-.fr-highlight-bg--green--light {
-  background-color: #bcecdd;
+.fr-highlight-bg--blue {
+  background-color: #6672f8;
 }
-.fr-highlight-bg--green--lightness {
-  background-color: #e9f9f4;
+.fr-highlight-bg--blue-light {
+  background-color: #e8edff;
+}
+.fr-highlight-bg--red {
+  background-color: #fca081;
+}
+.fr-highlight-bg--purple {
+  background-color: #6a62f4;
 }
 .fr-highlight-bg--blue-france {
-  background-color: #001891;
-}
-.fr-highlight-bg--blue-france--light {
-  background-color: #b3bade;
-}
-.fr-highlight-bg--blue-france--lightness {
-  background-color: #e6e8f4;
-}
-.fr-highlight-bg--grey {
-  background-color: #777777;
-}
-.fr-highlight-bg--grey--light {
-  background-color: #d6d6d6;
-}
-.fr-highlight-bg--grey--lightness {
-  background-color: #f1f1f1;
+  background-color: #000091;
 }
 
 .fr-input-group--valid::before, .fr-valid-text::before {
@@ -4481,12 +3539,12 @@ a.fr-tag[aria-pressed=true].fr-tag--yellow, button.fr-tag[aria-pressed=true].fr-
 a.fr-tag[aria-pressed=true].fr-tag--yellow.fr-tag--sm, button.fr-tag[aria-pressed=true].fr-tag--yellow.fr-tag--sm {
   background-image: radial-gradient(circle at 100% 0.1875rem, transparent 0.4475rem, #facf35 0.5rem) !important;
 }
-a.fr-tag[aria-pressed=true].fr-tag--red, button.fr-tag[aria-pressed=true].fr-tag--red {
-  background-image: radial-gradient(circle at 100% 0.25rem, transparent 0.578125rem, #fca081 0.625rem) !important;
+a.fr-tag[aria-pressed=true].fr-tag--yellow-light, button.fr-tag[aria-pressed=true].fr-tag--yellow-light {
+  background-image: radial-gradient(circle at 100% 0.25rem, transparent 0.578125rem, #fef7da 0.625rem) !important;
   color: var(--text-action-high-blue-france);
 }
-a.fr-tag[aria-pressed=true].fr-tag--red.fr-tag--sm, button.fr-tag[aria-pressed=true].fr-tag--red.fr-tag--sm {
-  background-image: radial-gradient(circle at 100% 0.1875rem, transparent 0.4475rem, #fca081 0.5rem) !important;
+a.fr-tag[aria-pressed=true].fr-tag--yellow-light.fr-tag--sm, button.fr-tag[aria-pressed=true].fr-tag--yellow-light.fr-tag--sm {
+  background-image: radial-gradient(circle at 100% 0.1875rem, transparent 0.4475rem, #fef7da 0.5rem) !important;
 }
 a.fr-tag[aria-pressed=true].fr-tag--green, button.fr-tag[aria-pressed=true].fr-tag--green {
   background-image: radial-gradient(circle at 100% 0.25rem, transparent 0.578125rem, #1ebe8e 0.625rem) !important;
@@ -4495,19 +3553,33 @@ a.fr-tag[aria-pressed=true].fr-tag--green, button.fr-tag[aria-pressed=true].fr-t
 a.fr-tag[aria-pressed=true].fr-tag--green.fr-tag--sm, button.fr-tag[aria-pressed=true].fr-tag--green.fr-tag--sm {
   background-image: radial-gradient(circle at 100% 0.1875rem, transparent 0.4475rem, #1ebe8e 0.5rem) !important;
 }
+a.fr-tag[aria-pressed=true].fr-tag--blue, button.fr-tag[aria-pressed=true].fr-tag--blue {
+  background-image: radial-gradient(circle at 100% 0.25rem, transparent 0.578125rem, #6672f8 0.625rem) !important;
+  color: var(--text-inverted-blue-france);
+}
+a.fr-tag[aria-pressed=true].fr-tag--blue.fr-tag--sm, button.fr-tag[aria-pressed=true].fr-tag--blue.fr-tag--sm {
+  background-image: radial-gradient(circle at 100% 0.1875rem, transparent 0.4475rem, #6672f8 0.5rem) !important;
+}
+a.fr-tag[aria-pressed=true].fr-tag--blue-light, button.fr-tag[aria-pressed=true].fr-tag--blue-light {
+  background-image: radial-gradient(circle at 100% 0.25rem, transparent 0.578125rem, #e8edff 0.625rem) !important;
+  color: var(--text-action-high-blue-france);
+}
+a.fr-tag[aria-pressed=true].fr-tag--blue-light.fr-tag--sm, button.fr-tag[aria-pressed=true].fr-tag--blue-light.fr-tag--sm {
+  background-image: radial-gradient(circle at 100% 0.1875rem, transparent 0.4475rem, #e8edff 0.5rem) !important;
+}
+a.fr-tag[aria-pressed=true].fr-tag--red, button.fr-tag[aria-pressed=true].fr-tag--red {
+  background-image: radial-gradient(circle at 100% 0.25rem, transparent 0.578125rem, #fca081 0.625rem) !important;
+  color: var(--text-action-high-blue-france);
+}
+a.fr-tag[aria-pressed=true].fr-tag--red.fr-tag--sm, button.fr-tag[aria-pressed=true].fr-tag--red.fr-tag--sm {
+  background-image: radial-gradient(circle at 100% 0.1875rem, transparent 0.4475rem, #fca081 0.5rem) !important;
+}
 a.fr-tag[aria-pressed=true].fr-tag--blue-france, button.fr-tag[aria-pressed=true].fr-tag--blue-france {
-  background-image: radial-gradient(circle at 100% 0.25rem, transparent 0.578125rem, #001891 0.625rem) !important;
+  background-image: radial-gradient(circle at 100% 0.25rem, transparent 0.578125rem, #000091 0.625rem) !important;
   color: var(--text-inverted-blue-france);
 }
 a.fr-tag[aria-pressed=true].fr-tag--blue-france.fr-tag--sm, button.fr-tag[aria-pressed=true].fr-tag--blue-france.fr-tag--sm {
-  background-image: radial-gradient(circle at 100% 0.1875rem, transparent 0.4475rem, #001891 0.5rem) !important;
-}
-a.fr-tag[aria-pressed=true].fr-tag--grey, button.fr-tag[aria-pressed=true].fr-tag--grey {
-  background-image: radial-gradient(circle at 100% 0.25rem, transparent 0.578125rem, #777 0.625rem) !important;
-  color: var(--text-action-high-blue-france);
-}
-a.fr-tag[aria-pressed=true].fr-tag--grey.fr-tag--sm, button.fr-tag[aria-pressed=true].fr-tag--grey.fr-tag--sm {
-  background-image: radial-gradient(circle at 100% 0.1875rem, transparent 0.4475rem, #777 0.5rem) !important;
+  background-image: radial-gradient(circle at 100% 0.1875rem, transparent 0.4475rem, #000091 0.5rem) !important;
 }
 
 .fr-text--white {
@@ -4519,20 +3591,26 @@ a.fr-tag[aria-pressed=true].fr-tag--grey.fr-tag--sm, button.fr-tag[aria-pressed=
 .fr-text--yellow {
   color: #facf35;
 }
+.fr-text--yellow-light {
+  color: #fef7da;
+}
+.fr-text--green {
+  color: #1ebe8e;
+}
+.fr-text--blue {
+  color: #6672f8;
+}
+.fr-text--blue-light {
+  color: #e8edff;
+}
 .fr-text--red {
   color: #fca081;
 }
 .fr-text--purple {
   color: #6a62f4;
 }
-.fr-text--green {
-  color: #1ebe8e;
-}
 .fr-text--blue-france {
-  color: #001891;
-}
-.fr-text--grey {
-  color: #777;
+  color: #000091;
 }
 .fr-text-line-height--4v {
   line-height: 1rem;
