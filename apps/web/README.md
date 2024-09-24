@@ -34,7 +34,7 @@ VITE_CONTACT_EMAIL = contact@mission-transition-ecologique.beta.gouv.fr
 
 # To set up PostHog analytics
 # create a posthog account and use the corresponding API key
-POSTHOG_API_KEY = your_key
+VITE_POSTHOG_API_KEY = your_key
 # To set up Matomo analytics
 # Note : if VITE_MATOMO_DEACTIVATE is set to 'true' it prohibits the tracking
 # even if VITE_MATOMO_URL and VITE_MATOMO_APP_ID are correctly set
