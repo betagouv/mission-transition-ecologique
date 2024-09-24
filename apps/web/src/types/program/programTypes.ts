@@ -10,6 +10,10 @@ interface ProgramObjective {
   liens: ProgramObjectiveLink[]
 }
 
+export type FiltersProgramData = {
+  [FiltersKeys.Theme]?: ThemeId[]
+}
+
 export type ProgramType = Override<
   ProgramWithoutId,
   {
@@ -20,7 +24,3 @@ export type ProgramType = Override<
     filters: FiltersProgramData
   }
 >
-
-export type FiltersProgramData = {
-  [FiltersKeys.Theme]?: ThemeId[]
-}

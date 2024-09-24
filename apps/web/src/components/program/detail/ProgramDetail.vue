@@ -182,7 +182,7 @@
               :image-path="`${publicPath}images/TEE-date-fin.svg`"
               :description="
                 programEndValidity
-                  ? Translation.t(Translation.t('program.programAvailableUntil'), { date: programEndValidity })
+                  ? Translation.t(Translation.t('program.programAvailableUntil'), { date: programEndValidity as string })
                   : Translation.t('program.programAvailable')
               "
             />

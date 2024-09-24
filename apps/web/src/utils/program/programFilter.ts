@@ -22,7 +22,7 @@ export default class ProgramFilter {
     if (!this.isValidFilterValues(regionsSelected)) {
       return true
     }
-    const geoSectors = program["conditions d'éligibilité"]['secteur géographique']
+    const geoSectors = (program["conditions d'éligibilité"] as { [k: string]: string[] })['secteur géographique']
       .map((regionString: string) => regionString.split(', '))
       .flat()
 

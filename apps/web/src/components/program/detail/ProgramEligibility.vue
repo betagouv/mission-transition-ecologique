@@ -48,6 +48,10 @@ const eligilityEmojis: Emojis = {
   "autres critères d'éligibilité": '💡'
 }
 
+const programEligibility = computed(() => {
+  return props.program["conditions d'éligibilité"] as string[]
+})
+
 const order: EligibilityCategory[] = programEligibility.value ? (Object.keys(programEligibility.value) as EligibilityCategory[]) : []
 
 const splitInTwo = (fields: EligibilityCategory[]): [EligibilityCategory[], EligibilityCategory[]] => {
@@ -65,8 +69,4 @@ interface Props {
 }
 
 const props = defineProps<Props>()
-
-const programEligibility = computed(() => {
-  return props.program["conditions d'éligibilité"] as string
-})
 </script>
