@@ -123,7 +123,7 @@ const content: HomeTipsContent[] = [
     badge: '⚡️ Mobilité durable',
     badgeColor: Color.purple,
     badgeTextColor: Color.white,
-    value: ThemeId.SustainableMobility,
+    value: ThemeId.Mobility,
     title: 'Optez pour des modes de transport moins polluants',
     img: '/images/home/mobility.svg',
     imgSolo: '/images/home/mobility-solo.svg',
