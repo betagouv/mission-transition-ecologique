@@ -3,10 +3,8 @@
 
 @each $color, $properties in setting.$colors {
   .fr-border {
-
     @each $name, $position in setting.$positions {
       &-#{$name} {
-
         @each $width in setting.$widths {
           &--#{$width} {
             @each $style, $style-value in setting.$styles {

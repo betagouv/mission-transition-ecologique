@@ -19,7 +19,6 @@
 @mixin border-color-with-position($color, $properties, $position, $width: thin, $style: solid, $opacity: 100%) {
   @if $position {
     @include get-border-color-by-opacity($properties, $width, $style, $opacity, $position);
-
     @include border-color($color, $properties, $position: $position, $width: $width, $style: $style, $opacity: $opacity);
   }
 }
