@@ -9,24 +9,22 @@
     class="fr-col-12"
   >
     <div class="fr-container">
-      <div class="fr-grid-row fr-pt-4v">
-        <div class="fr-col-3 fr-col-hidden fr-col-unhidden-md">
-          <TeeCopyLinkButton class="fr-m-4v" />
+      <div class="fr-grid-row">
+        <div class="fr-col-3 fr-col-hidden fr-col-unhidden-md fr-mt-4v">
+          <TeeCopyLinkButton class="fr-mx-4v" />
           <ProjectSideNav :project="project" />
         </div>
         <div class="fr-col-12 fr-col-md-9">
-          <DsfrAccordionsGroup>
-            <ProjectDescription :project="project" />
-            <ProjectPrograms
-              v-if="project"
-              :project="project"
-            />
-            <LinkedProjects
-              v-if="project.linkedProjects.length > 0"
-              :project="project"
-              :color="themeColor"
-            />
-          </DsfrAccordionsGroup>
+          <ProjectDescription :project="project" />
+          <ProjectPrograms
+            v-if="project"
+            :project="project"
+          />
+          <LinkedProjects
+            v-if="project.linkedProjects.length > 0"
+            :project="project"
+            :color="themeColor"
+          />
         </div>
       </div>
     </div>
