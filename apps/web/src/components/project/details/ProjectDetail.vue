@@ -32,6 +32,7 @@
 </template>
 <script setup lang="ts">
 import { ThemeType, Project, Color } from '@/types'
+import { MetaSeo } from '@/utils/metaSeo'
 import { Theme } from '@/utils/theme'
 import { useProjectStore } from '@/stores/project'
 import { computed, onBeforeMount } from 'vue'
@@ -47,10 +48,6 @@ interface Props {
 }
 const props = defineProps<Props>()
 
-const seoTitle = computed(() => `Transition écologique des TPE & PME${project.value?.title ? ` - ${project.value?.title}` : ''}`)
-const seoDescription = computed(() => project.value?.shortDescription || undefined)
-const seoImage = computed(() => (project.value?.image ? window.location.origin + project.value?.image : undefined))
-
 const themeColor = computed<Color | undefined>(() => theme.value?.color)
 
 onBeforeMount(async () => {
@@ -63,15 +60,10 @@ onBeforeMount(async () => {
     theme.value = Theme.getById(project.value?.mainTheme)
   }
 
-  useSeoMeta({
-    title: seoTitle,
-    description: seoDescription,
-    ogTitle: seoTitle,
-    ogDescription: seoDescription,
-    ogImage: seoImage,
-    twitterTitle: seoTitle,
-    twitterDescription: seoDescription,
-    twitterImage: seoImage
-  })
+  useSeoMeta(MetaSeo.get(project.value?.title, project.value?.shortDescription, project.value?.image))
+})
+
+onBeforeRouteLeave(() => {
+  useSeoMeta(MetaSeo.default())
 })
 </script>

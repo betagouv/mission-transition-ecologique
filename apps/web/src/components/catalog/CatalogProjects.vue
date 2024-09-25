@@ -1,8 +1,8 @@
 <template>
   <TeeDsfrBreadcrumb />
   <CatalogBanner>
-    <template #title> Le catalogue des projets de transition écologique </template>
-    <template #description> Accédez à la liste des projets de transition écologique destinées aux entreprises. </template>
+    <template #title> {{ title }} </template>
+    <template #description> {{ description }} </template>
   </CatalogBanner>
 
   <div class="fr-container fr-mt-6v">
@@ -66,6 +66,7 @@ import { useProjectStore } from '@/stores/project'
 import { type ProgramData, Project as ProjectType, RouteName, TrackId, ThemeId } from '@/types'
 import Contact from '@/utils/contact'
 import Matomo from '@/utils/matomo'
+import { MetaSeo } from '@/utils/metaSeo'
 import { Project } from '@/utils/project/project'
 import { computed, onBeforeMount } from 'vue'
 import type { RouteLocationRaw } from 'vue-router'
@@ -77,6 +78,9 @@ const navigationStore = useNavigationStore()
 const projects = ref<ProjectType[]>()
 const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)
+
+const title = 'Le catalogue des projets de transition écologique'
+const description = 'Accédez à la liste des projets de transition écologique destinées aux entreprises.'
 
 const theme = computed(() => {
   return programStore.hasThemeTypeSelected() ? (programStore.programFilters.themeTypeSelected as ThemeId) : ''
@@ -105,6 +109,8 @@ const getRouteToProjectDetail = (project: ProjectType): RouteLocationRaw => {
 }
 
 onBeforeMount(async () => {
+  useSeoMeta(MetaSeo.get(title, description))
+
   navigationStore.hasSpinner = true
   const programResult = await programStore.programs
   const projectResult = await projectStore.projects
@@ -119,5 +125,9 @@ onBeforeMount(async () => {
 
   // analytics / send event
   Matomo.sendEvent(TrackId.Results, 'show_results_catalog_projects')
+})
+
+onBeforeRouteLeave(() => {
+  useSeoMeta(MetaSeo.default())
 })
 </script>
