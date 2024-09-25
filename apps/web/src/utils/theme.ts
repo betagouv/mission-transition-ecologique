@@ -16,7 +16,7 @@ export class Theme {
       title: 'Construction & rénovation',
       tagLabel: '🏢 rénovation',
       image: '/images/thematique/thematique-batiments.svg',
-      color: Color.purple,
+      color: Color.purple
     },
     {
       id: ThemeId.Mobility,
@@ -30,7 +30,7 @@ export class Theme {
       title: 'Économies d’eau',
       tagLabel: '💧 eau',
       image: '/images/thematique/thematique-eau.svg',
-      color: Color.blueFrance,
+      color: Color.blueFrance
     },
     {
       id: ThemeId.EcoDesign,
@@ -66,7 +66,6 @@ export class Theme {
       tagLabel: '🐝 biodiversité',
       image: '/images/thematique/thematique-biodiversite.svg',
       color: Color.green
-
     }
   ]
 
