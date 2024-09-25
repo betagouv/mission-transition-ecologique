@@ -52,16 +52,6 @@ const props = defineProps<Props>()
 const seoTitle = computed(() => `Transition écologique des TPE & PME${project.value?.title ? ` - ${project.value?.title}` : ''}`)
 const seoDescription = computed(() => project.value?.shortDescription || undefined)
 const seoImage = computed(() => (project.value?.image ? window.location.origin + project.value?.image : undefined))
-useSeoMeta({
-  title: seoTitle,
-  description: seoDescription,
-  ogTitle: seoTitle,
-  ogDescription: seoDescription,
-  ogImage: seoImage,
-  twitterTitle: seoTitle,
-  twitterDescription: seoDescription,
-  twitterImage: seoImage
-})
 
 const themeColor = computed<Color | undefined>(() => theme.value?.color)
 
@@ -74,5 +64,16 @@ onBeforeMount(async () => {
   if (project.value) {
     theme.value = Theme.getById(project.value?.mainTheme)
   }
+
+  useSeoMeta({
+    title: seoTitle,
+    description: seoDescription,
+    ogTitle: seoTitle,
+    ogDescription: seoDescription,
+    ogImage: seoImage,
+    twitterTitle: seoTitle,
+    twitterDescription: seoDescription,
+    twitterImage: seoImage
+  })
 })
 </script>
