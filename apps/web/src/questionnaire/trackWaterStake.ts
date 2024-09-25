@@ -2,7 +2,7 @@ import { TrackComponent, TrackId, YesNo, ThemeId, Track, TrackCategory } from '@
 
 export const waterStake: Track = {
   id: TrackId.WaterStake,
-  category: TrackCategory.myWater,
+  category: TrackCategory.MyWater,
   title: { fr: 'Enjeu' },
   label: { fr: "Pensez-vous avoir un enjeu important sur votre consommation d'eau ?" },
   theme: ThemeId.Water,

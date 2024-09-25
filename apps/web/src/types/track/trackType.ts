@@ -204,15 +204,16 @@ export interface UsedTrack {
 }
 
 export enum TrackCategory {
-  myEntreprise = 'myEntreprise',
-  ourHelp = 'ourHelp',
-  myEnergy = 'myEnergy',
-  myBuildings = 'myBuildings',
-  myTransport = 'myTransport',
-  myWastes = 'myWastes',
-  myWater = 'myWater',
-  myStrategy = 'myStrategy',
-  myMobility = 'myMobility'
+  MyEntreprise = 'myEntreprise',
+  OurHelp = 'ourHelp',
+  MyEnergy = 'myEnergy',
+  MyBuildings = 'myBuildings',
+  MyTransport = 'myTransport',
+  MyWastes = 'myWastes',
+  MyWater = 'myWater',
+  MyStrategy = 'myStrategy',
+  MyMobility = 'myMobility',
+  MyProject = 'myProject'
 }
 
 // FOR TRACK RESULTS

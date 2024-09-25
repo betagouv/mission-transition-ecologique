@@ -26,7 +26,7 @@
 import { useNavigationStore } from '@/stores/navigation'
 import { useTrackStore } from '@/stores/track'
 import { useUsedTrackStore } from '@/stores/usedTrack'
-import { TrackCategory, TrackId } from '@/types'
+import { Color, TrackCategory, TrackId } from '@/types'
 import { groupBy } from '@/utils/helpers'
 import { Theme } from '@/utils/theme'
 import Translation from '@/utils/translation'
@@ -40,18 +40,22 @@ const router = useRouter()
 
 const usedTracksRegrouped = computed(() => {
   const usedTracksByCategory = groupBy(usedTrackStore.usedTracks, 'category')
-  if (TrackCategory.ourHelp in usedTracksByCategory) {
-    delete usedTracksByCategory[TrackCategory.ourHelp]
+  if (TrackCategory.OurHelp in usedTracksByCategory) {
+    delete usedTracksByCategory[TrackCategory.OurHelp]
   }
   return usedTracksByCategory
 })
 
-const isCurrentCategory = (category: string) => {
+const isCurrentCategory = (category: TrackCategory) => {
   return usedTrackStore.current?.category === category
 }
 
-const getTextColorClass = (category: string) => {
+const getTextColorClass = (category: TrackCategory) => {
   if (isCurrentCategory(category)) {
+    if (category === TrackCategory.MyProject) {
+      return 'fr-text--' + Color.yellow
+    }
+
     const themeId = trackStore.getTrack(usedTrackStore.current?.id as TrackId)?.theme
 
     if (!themeId) {
@@ -62,7 +66,7 @@ const getTextColorClass = (category: string) => {
   }
 }
 
-const getRouteByCategory = (category: string) => {
+const getRouteByCategory = (category: TrackCategory) => {
   if (usedTracksRegrouped.value[category].length) {
     const trackId = usedTracksRegrouped.value[category].find(() => true)?.id
     if (trackId) {
@@ -72,6 +76,6 @@ const getRouteByCategory = (category: string) => {
 }
 
 const usedCategories = computed(() => {
-  return Object.keys(usedTracksRegrouped.value)
+  return Object.keys(usedTracksRegrouped.value) as TrackCategory[]
 })
 </script>

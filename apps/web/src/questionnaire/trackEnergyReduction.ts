@@ -2,7 +2,7 @@ import { ThemeId, type Track, TrackComponent, TrackId, YesNo, TrackCategory } fr
 
 export const energyReductionPriority: Track = {
   id: TrackId.EnergyReductionPriority,
-  category: TrackCategory.myEnergy,
+  category: TrackCategory.MyEnergy,
   title: { fr: 'Réduction de la consommation' },
   label: { fr: 'La réduction de vos consommations d’énergie est-elle une priorité pour vous ?' },
   theme: ThemeId.Energy,

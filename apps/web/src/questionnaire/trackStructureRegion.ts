@@ -60,7 +60,7 @@ const regionsOptions: TrackOptionsUnion[] = Object.values(Region).map((regionNam
 
 export const regions: Track = {
   id: TrackId.StructureRegion,
-  category: TrackCategory.myEntreprise,
+  category: TrackCategory.MyEntreprise,
   title: { fr: 'Ma localisation' },
   label: { fr: 'Où êtes-vous situé ?' },
   interface: {

@@ -2,7 +2,7 @@ import { TrackComponent, TrackId, YesNo, ThemeId, Track, TrackCategory } from '@
 
 export const strategyAudits: Track = {
   id: TrackId.StrategyAudits,
-  category: TrackCategory.myStrategy,
+  category: TrackCategory.MyStrategy,
   title: { fr: 'Audits' },
   label: {
     fr: 'Pour finir, avez-vous déjà réalisé des audits environnementaux ces 2 dernières années ?'
