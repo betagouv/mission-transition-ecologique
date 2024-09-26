@@ -2,7 +2,7 @@ import { MobilityStatus, TrackComponent, TrackId, YesNo, ThemeId, Track, TrackCa
 
 export const mobilityWishes: Track = {
   id: TrackId.MobilityWishes,
-  category: TrackCategory.myMobility,
+  category: TrackCategory.MyMobility,
   title: { fr: 'Mobilité douce' },
   label: {
     fr: 'Souhaitez-vous favoriser des déplacements plus écologiques pour vous et vos employés ?'

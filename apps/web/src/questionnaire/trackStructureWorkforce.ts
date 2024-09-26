@@ -82,7 +82,7 @@ const nextTrackRuleSets: NextTrackRuleSet[] = [
 
 export const workforce: Track = {
   id: TrackId.StructureWorkforce,
-  category: TrackCategory.myEntreprise,
+  category: TrackCategory.MyEntreprise,
   title: { fr: 'Mes effectifs' },
   label: { fr: 'Combien êtes-vous dans votre entreprise ?' },
   interface: {

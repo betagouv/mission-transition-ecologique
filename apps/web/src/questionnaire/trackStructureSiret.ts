@@ -87,7 +87,7 @@ const defaultQuestionnaireData: EstablishmentFront = {
 
 export const siret: Track = {
   id: TrackId.Siret,
-  category: TrackCategory.myEntreprise,
+  category: TrackCategory.MyEntreprise,
   title: { fr: 'Mon SIRET' },
   label: { fr: 'Quelle est votre entreprise ?' },
   interface: {

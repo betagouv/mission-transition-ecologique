@@ -4,7 +4,7 @@ import { QuestionnaireRoute } from '@tee/common'
 
 export const questionnaireRoute: Track = {
   id: TrackId.QuestionnaireRoute,
-  category: TrackCategory.ourHelp,
+  category: TrackCategory.OurHelp,
   title: { fr: 'Par où commencer ?' },
   label: { fr: 'Comment pouvons-nous vous aider ?' },
   callout: {

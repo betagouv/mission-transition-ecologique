@@ -2,7 +2,7 @@ import { TrackComponent, TrackId, YesNo, WasteManagementStatus, ThemeId, Track, 
 
 export const wastesStake: Track = {
   id: TrackId.WastesStake,
-  category: TrackCategory.myWastes,
+  category: TrackCategory.MyWastes,
   title: { fr: 'Enjeu' },
   label: { fr: 'Aimeriez-vous améliorer la gestion des déchets de votre activité ? ' },
   theme: ThemeId.Waste,

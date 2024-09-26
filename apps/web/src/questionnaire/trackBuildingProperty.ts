@@ -2,7 +2,7 @@ import { TrackComponent, TrackId, BuildingProperty, Track, YesNo, ThemeId, Track
 
 export const buildingProperty: Track = {
   id: TrackId.BuildingProperty,
-  category: TrackCategory.myBuildings,
+  category: TrackCategory.MyBuildings,
   title: { fr: 'Mon statut' },
   label: { fr: 'Parlons de vos locaux. Vous êtes :' },
   theme: ThemeId.Building,

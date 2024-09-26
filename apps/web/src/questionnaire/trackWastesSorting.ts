@@ -2,7 +2,7 @@ import { TrackComponent, TrackId, YesNo, WasteSortingStatus, ThemeId, Track, Tra
 
 export const wastesSorting: Track = {
   id: TrackId.WastesSorting,
-  category: TrackCategory.myWastes,
+  category: TrackCategory.MyWastes,
   title: { fr: 'Tri des déchets' },
   label: { fr: 'Avez-vous mis en place une solution de tri des déchets dans votre entreprise ?' },
   theme: ThemeId.Waste,

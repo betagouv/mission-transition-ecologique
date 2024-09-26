@@ -14,7 +14,7 @@ export enum StrategyAuditsSelect {
 
 export const strategyAuditsSelect: Track = {
   id: TrackId.StrategyAuditsSelect,
-  category: TrackCategory.myStrategy,
+  category: TrackCategory.MyStrategy,
   title: { fr: 'Quels audits' },
   label: { fr: 'Le ou lesquels ?' },
   theme: ThemeId.Environmental,
