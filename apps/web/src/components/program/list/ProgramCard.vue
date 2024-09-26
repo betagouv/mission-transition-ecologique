@@ -105,7 +105,7 @@ const getRouteToProgramDetail = (programId: string): RouteLocationRaw => {
 </script>
 <style lang="scss" scoped>
 .tee-program-badge-image {
-  /* modifications en attendant la montée de version du vue-dsfr vers la v 6.0.0. */
+  // TODO: supprimer cette classe css et son usage après montée de version du vue-dsfr vers la v 6.0.0.
   position: absolute;
   top: 1rem;
   left: 1rem;
