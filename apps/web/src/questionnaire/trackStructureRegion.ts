@@ -1,7 +1,7 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`questionnaire.trackStructureRegion > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import { Region, Track, TrackOptionsUnion } from '@/types'
+import { Region, Track, TrackCategory, TrackOptionsUnion } from '@/types'
 import { TrackComponent, TrackId, ConditionOperators, DataMappingFrom } from '@/types'
 import { QuestionnaireRoute } from '@tee/common'
 import type { NextTrackRuleSet } from '@/types'
@@ -60,7 +60,7 @@ const regionsOptions: TrackOptionsUnion[] = Object.values(Region).map((regionNam
 
 export const regions: Track = {
   id: TrackId.StructureRegion,
-  category: 'myEntreprise',
+  category: TrackCategory.myEntreprise,
   title: { fr: 'Ma localisation' },
   label: { fr: 'Où êtes-vous situé ?' },
   interface: {
