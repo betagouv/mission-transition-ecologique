@@ -1,8 +1,8 @@
-import { TrackComponent, TrackId, YesNo, ThemeId, Track } from '@/types'
+import { TrackComponent, TrackId, YesNo, ThemeId, Track, TrackCategory } from '@/types'
 
 export const strategyAudits: Track = {
   id: TrackId.StrategyAudits,
-  category: 'myStrategy',
+  category: TrackCategory.MyStrategy,
   title: { fr: 'Audits' },
   label: {
     fr: 'Pour finir, avez-vous déjà réalisé des audits environnementaux ces 2 dernières années ?'

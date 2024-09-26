@@ -1,3 +1,4 @@
+export * from './border'
 export * from './color'
 export * from './conditionOperators'
 export * from './elementsPropsTypes'

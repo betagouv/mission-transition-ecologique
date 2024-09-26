@@ -102,8 +102,13 @@
         border-left: 5rem solid transparent;
         border-top: 5rem solid setting.$green;
         width: 0;
+        z-index: 50;
       }
     }
+  }
+
+  &__title a::after {
+    display: none !important;
   }
 
   &__header--priority {
@@ -114,6 +119,12 @@
     font-size: 2rem;
     font-weight: bold;
     z-index: 100;
+  }
+
+  &.fr-enlarge-link {
+    .fr-card__content {
+      padding-bottom: 2rem !important;
+    }
   }
 
   .fr-badge--success {
