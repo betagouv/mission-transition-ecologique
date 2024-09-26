@@ -29,7 +29,6 @@
         >
           <div
             v-if="trackElement && usedTrackStore.current && trackStore.current"
-            :style="`${trackStore.current.bgColor ? 'padding: 0px; background-color:' + trackStore.current.bgColor : ''}`"
             :class="`fr-p-0 fr-mb-${debugStore.is ? '12v' : '0'}`"
           >
             <TrackContent :track-element="trackElement" />

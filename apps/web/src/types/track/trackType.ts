@@ -175,7 +175,6 @@ export interface Track {
   id: TrackId
   help?: string
   category?: string
-  bgColor?: string
   imageRight?: string
   title: Translations
   label: Translations
