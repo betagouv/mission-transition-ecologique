@@ -31,7 +31,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { ThemeType, Project, Color } from '@/types'
+import { Project, Color, ThemeId } from '@/types'
 import { Theme } from '@/utils/theme'
 import { useProjectStore } from '@/stores/project'
 import { onBeforeMount } from 'vue'
