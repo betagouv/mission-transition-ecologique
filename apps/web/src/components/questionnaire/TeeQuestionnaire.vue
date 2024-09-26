@@ -6,7 +6,7 @@
   >
     <div
       :id="RouteName.Questionnaire"
-      :class="`fr-container--fluid ${needSidebar ? 'fr-pt-0v' : ''}`"
+      :class="`fr-container ${needSidebar ? 'fr-pt-0v' : ''}`"
     >
       <!-- TRACKS INTERFACES -->
       <div
@@ -16,7 +16,7 @@
         <!-- SIDEBAR MENU (FIL D'ARIANE)-->
         <div
           v-if="needSidebar"
-          class="fr-tee-add-padding fr-mt-10v fr-col-3 fr-col-md-4 fr-col-lg-4 fr-col-xl-2 fr-col-sm-hide"
+          class="fr-mt-10v fr-col-md-4 fr-col-lg-3 fr-col-sm-hide"
           style="height: 100%"
         >
           <TrackSidebar />
@@ -25,7 +25,7 @@
         <!-- TRACKS -->
         <div
           id="tee-app-tracks"
-          class="fr-grid-row--center fr-col fr-col-sm-12 fr-col-md-8 fr-col-lg-8 fr-col-xl-6"
+          class="fr-grid-row--center fr-col fr-col-sm-12 fr-col-md-8 fr-col-lg-9"
         >
           <div
             v-if="trackElement && usedTrackStore.current && trackStore.current"
