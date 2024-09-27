@@ -14,7 +14,7 @@
     @close="close()"
   >
     <template #default>
-      <div class="fr-h5 tee-text-blue fr-text-center">Filtres</div>
+      <div class="fr-h5 fr-text--blue-france fr-text-center">Filtres</div>
       <ProgramFiltersAccordion accordion-class="fr-accordion-bg--blue" />
     </template>
   </DsfrModal>
