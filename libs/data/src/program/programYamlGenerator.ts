@@ -6,14 +6,20 @@ import { ProgramBaserow } from '../common/baserow/programBaserow'
 import { PublicodesGenerator } from './publicodesGenerator'
 import { SlugValidator } from '../common/validators/slugValidator'
 import { LinkValidator } from '../common/validators/linkValidators'
+import { Logger } from '../common/logger/logger'
 
 export class ProgramYamlGenerator {
   outputDirectory: string = path.join(__dirname, '../../programs/')
+  private _logger: Logger
+
+  constructor() {
+    this._logger = new Logger()
+  }
 
   async createProgramYamls(): Promise<void> {
     // while working on the script, to avoid hitting Baserow API limits and to decrease our global impact, please cache locally the data :
     // on the first run use getPrograms(false) then for all following call use getPrograms(true)
-    const programs = await new ProgramBaserow().getPrograms(true)
+    const programs = await new ProgramBaserow(this._logger).getPrograms(true)
 
     for (const program of programs) {
       if (!program.Statuts.includes(Status.InProd)) {
@@ -29,7 +35,7 @@ export class ProgramYamlGenerator {
 
   private async _validateProgramData(program: DataProgram) {
     let valid = true
-    if (!SlugValidator.validate(program['Id fiche dispositif'])) {
+    if (!SlugValidator.validate(program['Id fiche dispositif'], this._logger)) {
       this._log('Critique: ' + program['Id fiche dispositif'] + 'slug non valide, yaml non généré.')
       valid = false
     }
