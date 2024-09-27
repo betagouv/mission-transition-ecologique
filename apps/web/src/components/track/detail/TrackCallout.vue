@@ -3,7 +3,10 @@
     v-if="track?.callout"
     :class="`fr-col-12 ${track.callout.bigTitle ? 'fr-mx-0' : ''} fr-px-0v fr-px-md-4v fr-mb-4v`"
   >
-    <div :class="`${track.callout.bigTitle ? 'fr-px-2v' : 'fr-py-4v fr-px-4v'} fr-bg--${track.callout.bgColor}`">
+    <div
+      :class="`${track.callout.bigTitle ? 'fr-px-2v' : 'fr-py-4v fr-px-4v'}`"
+      :style="`background-color: ${track.callout.bgColor || 'transparent'}`"
+    >
       <div class="tee-track-callout fr-grid-row fr-grid-row--gutters">
         <!-- CALLOUT IMAGE LEFT -->
         <div
@@ -22,6 +25,7 @@
           <!-- CALLOUT HEADER -->
           <h2
             v-if="track.callout.header"
+            :style="`${track.callout.headerStyle || 'color: var(--text-default-info);'}`"
             class="tee-track-callout-header fr-sm-hide"
           >
             {{ track.callout.header[Translation.lang] }}
@@ -52,7 +56,8 @@
           <!-- CALLOUT HINT -->
           <p
             v-if="track.callout.hint"
-            class="fr-mt-2v fr-mb-1v tee-track-callout-hint fr-text--blue-france"
+            class="fr-mt-2v fr-mb-1v tee-track-callout-hint"
+            style="color: var(--text-active-blue-france)"
           >
             <i>
               <span

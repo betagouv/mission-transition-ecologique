@@ -2,23 +2,12 @@
 @use 'sass:meta';
 @use 'sass:map';
 
-.fr-gradient {
-  @each $color, $properties in setting.$colors {
-    &--#{$color} {
-      @if meta.type-of($properties) == map {
-        background-image: linear-gradient(to bottom, transparent, map.get($properties, "color"));
-        color: map.get($properties, "color-with-background");
-      } @else {
-        background-image: linear-gradient(to bottom, transparent, $properties);
-      }
-
-      .fr-gradient__title {
-        @if meta.type-of($properties) == map {
-          color: map.get($properties, "color-with-background");
-        } @else {
-          color: var(--text-default-grey);
-        }
-      }
+@each $color, $properties in setting.$colors {
+  .fr-gradient--#{$color} {
+    @if meta.type-of($properties) == map {
+      background-image: linear-gradient(to bottom, transparent, map.get($properties, "color"));
+    } @else {
+      background-image: linear-gradient(to bottom, transparent, $properties);
     }
   }
 }

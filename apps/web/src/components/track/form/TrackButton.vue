@@ -2,7 +2,7 @@
   <div class="fr-div-fixed-height">
     <DsfrButton
       class="fr-btn-fullwidth fr-btn-fixed-height fr-btn-sm-align-left fr-btn-grey"
-      :class="{ 'fr-bg--grey--lightness': isActive }"
+      :style="`outline-color: #929292; ${isActive ? 'background-color: #eeeeee' : ''}`"
       :label="option.label?.[Translation.lang]"
       :icon="Button.getIcon(isActive, isCheckbox)"
       :secondary="!isActive"

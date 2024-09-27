@@ -1,5 +1,4 @@
 @use 'setting';
-@use 'tool';
 @use 'sass:meta';
 @use 'sass:map';
 
@@ -18,7 +17,13 @@
 
   &-bg {
     @each $color, $properties in setting.$colors {
-        @include tool.background-color($color, $properties);
+      &--#{$color} {
+        @if meta.type-of($properties) == map {
+          background-color: map.get($properties, "color");
+        } @else {
+          background-color: $properties;
+        }
+      }
     }
   }
 }

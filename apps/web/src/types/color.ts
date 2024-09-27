@@ -1,5 +1,13 @@
 // !!!important!! New color added need to be added to the sass setting file `packages/web/src/assets/scss/setting/_color.scss`
 export enum Color {
+  blue = 'blue',
+  blueLighted = 'blue--light',
+  blueLightnessed = 'blue--lightness',
+
+  blueLight = 'blue-light',
+  blueLightLighted = 'blue-light--light',
+  blueLightLightnessed = 'blue-light--lightness',
+
   blueFrance = 'blue-france',
   blueFranceLighted = 'blue-france--light',
   blueFranceLightnessed = 'blue-france--lightness',
@@ -19,10 +27,6 @@ export enum Color {
   yellow = 'yellow',
   yellowLighted = 'yellow--light',
   yellowLightnessed = 'yellow--lightness',
-
-  grey = 'grey',
-  greyLighted = 'grey--light',
-  greyLightnessed = 'grey--lightness',
 
   white = 'white',
   black = 'black'
