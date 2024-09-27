@@ -80,6 +80,7 @@ const selectOption = (opt: string | undefined) => {
     index: selectedOptionIndex,
     remove: selectedOption === undefined
   } as TrackOptionItem
+
   emit('updateSelection', data)
 }
 

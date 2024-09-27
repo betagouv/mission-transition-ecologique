@@ -73,12 +73,7 @@
 
         <ThemeSelect
           v-if="TrackComponent.isThemeInterface(usedTrack)"
-          @update-selection="
-            ($event: TrackOptionItem) => {
-              updateSelection($event.option, $event.index, $event.remove)
-              saveSelection()
-            }
-          "
+          @update-selection="updateAndSave($event.option, $event.index, $event.remove)"
         />
       </div>
 
@@ -212,9 +207,9 @@ const updateSelectionValueFromButtonInput = (trackOptionItem: TrackOptionItem) =
   })
 }
 
-const updateAndSave = async (option: TrackOptionsUnion, index: number) => {
+const updateAndSave = async (option: TrackOptionsUnion, index: number, needRemove = false) => {
   await updateSelection(option, index)
-  await saveSelection()
+  await saveSelection(needRemove)
 }
 
 const saveSelection = async (needRemove = false) => {
