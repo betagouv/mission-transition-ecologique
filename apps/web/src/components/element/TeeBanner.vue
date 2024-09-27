@@ -1,6 +1,6 @@
 <template>
   <div
-    class="container-fluid tee-banner"
+    class="fr-container--fluid fr-banner"
     :class="bgClass"
   >
     <img
@@ -8,7 +8,7 @@
       :src="props.bgImage"
       :alt="props.imgAlt"
     />
-    <div :class="styleClass">
+    <div :class="[styleClass]">
       <div class="fr-container">
         <div class="fr-grid-row fr-grid-row--center fr-grid-row--middle">
           <slot name="title" />
@@ -43,26 +43,18 @@ const props = withDefaults(defineProps<TeeBannerProps>(), {
 })
 
 const bgClass = computed(() => {
-  if (props.bgColor) {
-    if (props.hasGradient) {
-      return `fr-gradient--${props.bgColor}`
-    }
-    return `fr-bg--${props.bgColor}`
+  return {
+    [`fr-gradient--${props.bgColor}`]: props.hasGradient && props.bgColor,
+    [`fr-bg--${props.bgColor}`]: !props.hasGradient && props.bgColor
   }
-
-  return ''
 })
 
 const styleClass = computed(() => {
-  const style = [bgClass.value]
-  if (props.hasGradient) {
-    style.push('tee-banner__gradient')
+  return {
+    ...bgClass.value,
+    'fr-banner__h100w100': props.hasGradient,
+    [`fr-col-content--${props.contentAlignment?.v}`]: props.contentAlignment?.v,
+    [`fr-col-justify--${props.contentAlignment?.h}`]: props.contentAlignment?.h
   }
-
-  if (props.contentAlignment) {
-    style.push(`fr-col-content--${props.contentAlignment.v}`, `fr-col-justify--${props.contentAlignment.h}`)
-  }
-
-  return style.join(' ')
 })
 </script>
