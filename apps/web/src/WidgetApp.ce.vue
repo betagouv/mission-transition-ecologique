@@ -71,6 +71,11 @@
           <div
             v-for="(track, index) in usedTrackStore.usedTracks"
             :key="track.id"
+            :style="`${
+              trackStore.getTrackBgColor(track.id as TrackId)
+                ? 'padding: 0px; background-color:' + trackStore.getTrackBgColor(track.id as TrackId)
+                : ''
+            }`"
             :class="`fr-p-0 fr-mb-${debugStore.is ? '12v' : '0'}`"
           >
             <TrackContent

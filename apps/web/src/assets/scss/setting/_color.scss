@@ -2,44 +2,53 @@
 @forward '@gouvfr/dsfr/module/color/variable/static';
 
 $opacities: (
-  --light: 70%,
-  --lightness: 90%
+  --light: -50%,
+  --lightness: -75%
 );
 
 // !!!important!! New color added need to be added to the typescript enum `packages/web/src/types/color.ts`
-$yellow: #facf35;
-$red: #fca081;
-$purple: #6a62f4;
-$green: #1ebe8e;
-$blue-france: #001891;
-$grey: #777;
+$base-blue: #6672f8;
+$base-blue-light: #e8edff;
+$base-green: #1ebe8e;
+$base-purple: #6a62f4;
+$base-red: #fca081;
+$base-yellow: #facf35;
+$base-yellow-light: #fef7da;
 $blue-france-inverted: var(--text-inverted-blue-france);
 
 $colors: (
   "white": color.$white,
   "black": color.$black,
   "yellow": (
-    "color": $yellow,
+    "color": $base-yellow,
+    "color-with-background": color.$blue-france
+  ),
+  "yellow-light": (
+    "color": $base-yellow-light,
+    "color-with-background": color.$blue-france
+  ),
+  "green": (
+    "color": $base-green,
+    "color-with-background": $blue-france-inverted
+  ),
+  "blue": (
+    "color": $base-blue,
+    "color-with-background": $blue-france-inverted,
+  ),
+  "blue-light": (
+    "color": $base-blue-light,
     "color-with-background": color.$blue-france
   ),
   "red": (
-    "color": $red,
+    "color": $base-red,
     "color-with-background": color.$blue-france
   ),
   "purple" : (
-    "color": $purple,
-    "color-with-background": $blue-france-inverted
-  ),
-  "green": (
-    "color": $green,
-    "color-with-background": $blue-france-inverted
-  ),
-  "blue-france": (
-    "color": $blue-france,
+    "color": $base-purple,
     "color-with-background": $blue-france-inverted,
   ),
-  "grey": (
-    "color": $grey,
-    "color-with-background": color.$blue-france
-  ),
+  "blue-france": (
+    "color-with-background": $blue-france-inverted,
+    "color": color.$blue-france,
+  )
 );

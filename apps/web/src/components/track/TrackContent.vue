@@ -13,8 +13,8 @@
       <ThemeHeaderCard :theme="track.theme" />
     </div>
 
-    <div class="fr-col fr-bg--blue-france">
-      <div class="fr-pl-4v fr-grid-row fr-grid-row--gutters">
+    <div class="fr-col">
+      <div :class="`fr-pl-4v fr-grid-row fr-grid-row--gutters ${track?.bgColor ? 'fr-p-5v fr-p-sm-8v fr-p-md-20v' : ''}`">
         <TrackLabel :track="track" />
         <TrackInfo :track="track" />
         <TrackHint :track="track" />

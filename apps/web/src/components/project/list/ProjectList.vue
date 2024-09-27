@@ -16,7 +16,7 @@
   <!--  Priority projects list with green banner - only for LG screen size and larger -->
   <div
     v-if="showPriorityProjectListComponent"
-    class="fr-grid-row fr-grid-row--center fr-bg-lg--green--light"
+    class="fr-grid-row fr-grid-row--center fr-bg-lg--green--lightness"
   >
     <div class="fr-container fr-pb-2w fr-mt-2v fr-hidden fr-unhidden-lg">
       <div class="fr-grid-row fr-grid-row--center">

@@ -13,7 +13,7 @@ Pour utiliser les couleurs personnalisées, vous pouvez indiquer leur nom de var
 @use './src/assets/scss/setting';
 
 .element {
-  background-color: setting.$yellow;
+  background-color: setting.$base-yellow;
 }
 ```
 

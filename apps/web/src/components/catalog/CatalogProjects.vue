@@ -66,7 +66,6 @@ import Contact from '@/utils/contact'
 import Matomo from '@/utils/matomo'
 import { Project } from '@/utils/project/project'
 import { computed, onBeforeMount } from 'vue'
-import { Theme } from '@/utils/theme'
 
 const projectStore = useProjectStore()
 const programStore = useProgramStore()
@@ -76,7 +75,9 @@ const projects = ref<ProjectType[]>()
 const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)
 
-const theme = Theme.getThemeFromSelectedTheme()
+const theme = computed(() => {
+  return programStore.hasThemeTypeSelected() ? (programStore.programFilters.themeTypeSelected as ThemeId) : ''
+})
 
 const filteredProjects = Project.filter(projects, programs, theme)
 const sortedProjects = Project.sort(filteredProjects)

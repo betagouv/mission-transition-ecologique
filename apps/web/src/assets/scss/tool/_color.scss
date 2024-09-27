@@ -3,17 +3,19 @@
 @use 'sass:meta';
 @use '../setting';
 
-@function scaleLightness($color, $lightness) {
-  @return color.scale($color, $lightness: $lightness);
+@function scaleAlphaToHex($color, $alpha) {
+  $rgba: color.scale($color, $alpha: $alpha);
+
+  @return color.mix(rgb(color.red($rgba), color.green($rgba), color.blue($rgba)), #fff, alpha($rgba) * 100%);
 }
 
-@mixin get-background-color-by-opacity($properties, $opacity: 0%) {
+@mixin get-background-color-by-opacity($properties, $opacity: 100%) {
   @if meta.type-of($properties) == map {
-    background-color: scaleLightness(map.get($properties, "color"), $opacity) !important;
+    background-color: scaleAlphaToHex(map.get($properties, "color"), $opacity);
   } @else {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: scaleLightness($properties, $opacity) !important;
+    background-color: scaleAlphaToHex($properties, $opacity);
   }
 }
 

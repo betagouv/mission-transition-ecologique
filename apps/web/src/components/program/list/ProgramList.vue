@@ -35,12 +35,12 @@ interface Props {
 defineProps<Props>()
 </script>
 <style lang="scss">
-@use '@/assets/scss/setting';
+@import '../../../assets/scss/setting/color';
 
 .program-card:active {
   @media (width >= 0) and (width <= 767px) {
     background-color: var(--background-default-grey-active);
-    border: thin solid setting.$purple;
+    border: thin solid $base-blue;
     border-radius: 8px;
   }
 }

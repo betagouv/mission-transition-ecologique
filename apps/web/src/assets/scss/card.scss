@@ -13,6 +13,16 @@
   }
 
   &__header {
+    @each $color, $properties in setting.$colors {
+      &--#{$color} {
+        @if meta.type-of($properties) == map {
+          background-color: tool.scaleAlphaToHex(map.get($properties, "color"), -50%);
+        } @else {
+          background-color: tool.scaleAlphaToHex($properties, -50%);
+        }
+      }
+    }
+
     .fr-card__img--contain img {
       object-fit: contain;
     }
@@ -91,7 +101,7 @@
   }
 
   &-priority {
-    border: solid 0.20rem setting.$green;
+    border: solid 0.20rem setting.$base-green;
 
     &--highlighted {
       .fr-card__header::before {
@@ -100,7 +110,7 @@
         top: 0;
         right: 0;
         border-left: 5rem solid transparent;
-        border-top: 5rem solid setting.$green;
+        border-top: 5rem solid setting.$base-green;
         width: 0;
         z-index: 50;
       }
@@ -128,7 +138,7 @@
   }
 
   .fr-badge--success {
-    background-color: setting.$green;
+    background-color: setting.$base-green;
     color: setting.$white
   }
 

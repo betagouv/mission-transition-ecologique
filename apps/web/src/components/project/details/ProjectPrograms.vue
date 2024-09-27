@@ -8,7 +8,7 @@
     <template #content>
       <DsfrHighlight
         v-if="isCatalogDetail"
-        class="fr-highlight-border--yellow fr-highlight-bg--yellow--lightness fr-m-0 fr-p-0"
+        class="fr-highlight-border--yellow fr-highlight-bg--yellow-light fr-m-0 fr-p-0"
         :large="true"
       >
         <template #default>
@@ -70,7 +70,7 @@
       </div>
       <div
         id="project-contact"
-        class="fr-bg--blue-france--lightness fr-col-justify--center fr-p-2w"
+        class="fr-tee-form-block fr-p-4v"
       >
         <ProjectForm
           v-if="project"

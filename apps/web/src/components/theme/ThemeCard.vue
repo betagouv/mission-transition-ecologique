@@ -38,7 +38,7 @@
     </div>
     <div
       class="fr-hidden fr-unhidden-sm fr-card__header"
-      :class="`fr-bg--${option.color}--light`"
+      :class="`fr-card__header--${option.color}`"
     >
       <div class="fr-card__img fr-card__img--contain">
         <img
