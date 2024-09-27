@@ -1,7 +1,7 @@
 import { ProgramRepository } from '../domain/spi'
 import { jsonPrograms } from '@tee/data/generated'
 import { ProgramType } from '@tee/data'
-import { QuestionnaireData, StructureSizeMap } from '@tee/common'
+import { QuestionnaireData, StructureSize, StructureSizeMap } from '@tee/common'
 import { ConditionalYaml } from './types'
 import { Monitor } from '../../common'
 
@@ -34,7 +34,7 @@ export default class ProgramsJson implements ProgramRepository {
     allPrograms.forEach((program) => {
       if (program['champs conditionnels']) {
         for (const conditionalChange of program['champs conditionnels']) {
-          if (this._conditionalValid(conditionalChange as ConditionalYaml, questionnaireData)) {
+          if (this._isConditionalValid(conditionalChange as ConditionalYaml, questionnaireData)) {
             this._rewriteProgramProperties(program, conditionalChange as ConditionalYaml)
           }
         }
@@ -43,7 +43,7 @@ export default class ProgramsJson implements ProgramRepository {
     return allPrograms
   }
 
-  private _conditionalValid(conditionnalChange: ConditionalYaml, questionnaireData: QuestionnaireData): boolean {
+  private _isConditionalValid(conditionnalChange: ConditionalYaml, questionnaireData: QuestionnaireData): boolean {
     if (!conditionnalChange['une de ces conditions'] && !conditionnalChange['toutes ces conditions']) {
       Monitor.error('Format error in program conditionnal data')
       return false
@@ -71,40 +71,48 @@ export default class ProgramsJson implements ProgramRepository {
     }
 
     if (condition.startsWith('effectif')) {
-      if (!questionnaireData.structure_size) {
-        Monitor.error('In conditionalPrograms, impossible to assess the sizeCOndition, no structure_size available')
-        return false
-      }
-      const comparisonValue = parseInt(condition.split('=')[1].trim())
-      const conditionIncludeMathSign = condition.includes('<=') || condition.includes('>=')
-      if (comparisonValue === null || isNaN(comparisonValue) || !conditionIncludeMathSign) {
-        Monitor.error('Formatting error in a conditional Program condition', { condition })
-        return false
-      }
-      if (condition.includes('<=')) {
-        console.log('effectif' + questionnaireData.structure_size + '<=' + comparisonValue)
-        return StructureSizeMap[questionnaireData.structure_size] <= comparisonValue
-      } else if (condition.includes('>=')) {
-        return StructureSizeMap[questionnaireData.structure_size] >= comparisonValue
-      }
+      this._checkStructureSizeCondition(condition, questionnaireData.structure_size)
     }
 
     Monitor.error('Unknown condition type in conditional programs', { condition })
     return false
   }
 
+  private _checkStructureSizeCondition(condition: string, structure_size: StructureSize | undefined) {
+    if (!structure_size) {
+      Monitor.error('In conditionalPrograms, impossible to assess the sizeCOndition, no structure_size available')
+      return false
+    }
+
+    const comparisonValue = this._getConditionSizeValue(condition)
+    const conditionIncludeMathSign = condition.includes('<=') || condition.includes('>=')
+    if (comparisonValue === null || !conditionIncludeMathSign) {
+      Monitor.error('Formatting error in a conditional program condition of type structure size', { condition })
+      return false
+    }
+
+    if (condition.includes('<=')) {
+      return StructureSizeMap[structure_size] <= comparisonValue
+    } else if (condition.includes('>=')) {
+      return StructureSizeMap[structure_size] >= comparisonValue
+    }
+
+    return false
+  }
+
+  private _getConditionSizeValue(condition: string): number | null {
+    const stringPart = condition.split('=')[1]?.trim()
+    const value = parseInt(stringPart, 10)
+    return isNaN(value) ? null : value
+  }
+
   private _rewriteProgramProperties = (program: ProgramType, conditionalChange: ConditionalYaml) => {
-    if (conditionalChange['opérateur de contact']) {
-      program['opérateur de contact'] = conditionalChange['opérateur de contact']
-    }
-
-    if (conditionalChange['autres opérateurs']) {
-      program['autres opérateurs'] = conditionalChange['autres opérateurs']
-    }
-
-    if (conditionalChange.url) {
-      program.url = conditionalChange.url
-    }
+    const simpleRewriteKeys = ['opérateur de contact', 'autres opérateurs', 'url']
+    simpleRewriteKeys.forEach((key) => {
+      if (conditionalChange[key as keyof ConditionalYaml]) {
+        program[key] = conditionalChange[key as keyof ConditionalYaml]
+      }
+    })
 
     if (conditionalChange['Montant du dispositif']) {
       this._rewriteFinancialData(program, conditionalChange['Montant du dispositif'])
