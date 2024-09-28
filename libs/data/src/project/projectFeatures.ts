@@ -30,6 +30,8 @@ export class ProjectFeatures {
     console.log(`Baserow Data sucessfully downloaded.\n\nStarting to validate the project data and generating the project JSON.`)
     const validProjects = await this._validateData(projects)
     this._writeJson(validProjects)
+    this._logger.write('projectGeneration.log')
+
     return
   }
 
@@ -84,8 +86,8 @@ export class ProjectFeatures {
       if (!projectFound) {
         this._logger.log(
           LogLevel.minor,
-          `${project['title']}, id ${project['id']}, projet liée inconnu, projet lié supprimé`,
-          'Id du projet inconnu' + projectId
+          `${project['title']}, id ${project['id']}, projet lié inconnu, projet lié supprimé`,
+          'Id du projet inconnu ' + projectId
         )
       }
       return projectFound
