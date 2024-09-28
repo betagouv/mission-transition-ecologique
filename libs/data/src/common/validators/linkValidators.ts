@@ -1,17 +1,17 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import axios, { AxiosError } from 'axios'
+import axios from 'axios'
 import fetch from 'node-fetch'
 import https from 'https'
 // import { chromium } from 'playwright'
 
 export class LinkValidator {
   public static async isValidLink(link: string) {
-    const result = await this._fetchValidation(link)
-    await new Promise((resolve) => setTimeout(resolve, 10))
-    // if (!result) {
-    //   result = await this._axiosValidation(link)
-    // }
-    // await new Promise((resolve) => setTimeout(resolve, 1000))
+    let result = await this._fetchValidation(link)
+    await new Promise((resolve) => setTimeout(resolve, 50))
+    if (!result) {
+      result = await this._axiosValidation(link)
+      await new Promise((resolve) => setTimeout(resolve, 50))
+    }
 
     // if (!result) {
     // result = await this._playwrightValidation(link)
@@ -25,50 +25,28 @@ export class LinkValidator {
       if (fetchResponse.ok) {
         return true
       } else {
-        console.log('fetch rejected with status ', fetchResponse.status, link)
         return false
       }
     } catch (error: any) {
-      console.log('fetch failed, ', (error as any).code, link)
+      // mandatory linter comment
     }
     return false
   }
 
   private static async _axiosValidation(link: string) {
-    await new Promise((resolve) => setTimeout(resolve, 2000))
-
     try {
       const agent = new https.Agent({
         // to accept poorly configured partner websites and diasable the codeQl CD Warning
         // codeql[js/disabled-certificate-validation]: disable
         rejectUnauthorized: false
       })
-      const headers = {
-        // to be recognized by partner websites that ban robots
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
-        Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-        'Accept-Language': 'en-US,en;q=0.5',
-        Referer: 'https://mission-transition-ecologique.beta.gouv.fr/',
-        Connection: 'keep-alive'
-      }
 
-      const response = await axios.get(link, { headers, timeout: 10000, httpsAgent: agent })
+      const response = await axios.get(link, { timeout: 2000, httpsAgent: agent })
       if (response.status < 300) {
         return true
-      } else {
-        console.log('link status : ', response.status, link)
       }
     } catch (error: any) {
-      console.log('2nd axios error: ', error.code, link)
-      const axiosError = error as AxiosError
-      if (axiosError.response) {
-        console.error(`Error accessing ${link}:`, axiosError.response.status, axiosError.response.statusText)
-        if (axiosError.response.status === 403) {
-          console.error(`Access denied (403) for ${link}.`)
-        }
-      } else {
-        console.error(`Error accessing ${link}:`, axiosError.message)
-      }
+      // mandatory linter comment
     }
     return false
   }

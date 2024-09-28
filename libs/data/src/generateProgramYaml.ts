@@ -1,8 +1,8 @@
-import { ProgramYamlGenerator } from './program/programYamlGenerator'
+import { ProgramYamlsGenerator } from './program/yamlGenerator/programYamlsGenerator'
 
 console.log('Start the program Yamls generation')
 
-new ProgramYamlGenerator()
+new ProgramYamlsGenerator()
   .createProgramYamls()
   .then(() => {
     console.log('Program Yamls generated')
