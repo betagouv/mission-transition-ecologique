@@ -25,6 +25,8 @@ jobs:
           cache: 'npm'
 
       - run: npm clean-install --foreground-scripts
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
       - run: npm run generate:program
 
       - name: Generate projects
@@ -76,6 +78,8 @@ jobs:
           cache: 'npm'
 
       - run: npm clean-install --foreground-scripts
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
 
       - name: Generate programs yamls
         env:
