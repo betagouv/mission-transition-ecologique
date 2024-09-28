@@ -7,14 +7,18 @@ import { ProgramType } from '../index'
 import { ThemeId } from '../theme/types/shared'
 import { SlugValidator } from '../common/validators/slugValidator'
 import { LinkValidator } from '../common/validators/linkValidators'
+import { Logger } from '../common/logger/logger'
+import { LogLevel } from '../common/logger/types'
 
 export class ProjectFeatures {
   private readonly _outputDirectory: string = path.join(__dirname, '../../static/')
   private readonly _outputImageDirectory: string = path.join(__dirname, '../../../../apps/web/public/images/projet')
   private _programs: ProgramType[] = []
+  private _logger: Logger
 
   constructor() {
     this._programs = jsonPrograms as unknown as ProgramType[]
+    this._logger = new Logger()
   }
 
   async generateProjectsJson(): Promise<void> {
@@ -24,8 +28,8 @@ export class ProjectFeatures {
     const projects = await new ProjectBaserow(this._outputImageDirectory).getValidProjects()
 
     console.log(`Baserow Data sucessfully downloaded.\n\nStarting to validate the project data and generating the project JSON.`)
-    await this._validateData(projects)
-    this._writeJson(projects)
+    const validProjects = await this._validateData(projects)
+    this._writeJson(validProjects)
     return
   }
 
@@ -40,13 +44,26 @@ export class ProjectFeatures {
   }
 
   private async _validateData(rawProjects: RawProject[]) {
+    const validProjects: RawProject[] = []
     for (const project of rawProjects) {
-      SlugValidator.validate(project.slug)
       this._validateThemes(project)
       this._validateLinkedProjects(project, rawProjects)
       this._validatePrograms(project, this._programs)
       await this._validateLinks(project)
+
+      if (this._validateSlug(project)) {
+        validProjects.push(project)
+      }
     }
+    return validProjects
+  }
+
+  private _validateSlug(project: RawProject) {
+    if (!SlugValidator.validate(project.slug)) {
+      this._logger.log(LogLevel.critic, project['title'] + ' slug non valide, yaml non généré.', 'slug à corriger: ' + project.slug)
+      return false
+    }
+    return true
   }
 
   private _validateThemes(project: RawProject) {
@@ -55,7 +72,7 @@ export class ProjectFeatures {
     project.themes = project.themes.filter((themeId) => {
       const isValidTheme = validThemeIds.includes(themeId as ThemeId)
       if (!isValidTheme) {
-        this._log(`Majeur : dans le projet "${project['title']}", id ${project['id']}, thème inconnu : ${themeId}, thème supprimé`)
+        this._logger.log(LogLevel.major, `${project['title']}, id ${project['id']}, thème inconnu, thème supprimé`, themeId)
       }
       return isValidTheme
     })
@@ -65,8 +82,10 @@ export class ProjectFeatures {
     project.linkedProjects = project.linkedProjects.filter((projectId) => {
       const projectFound = rawProjects.some((proj) => proj['id'] === projectId)
       if (!projectFound) {
-        this._log(
-          `Warning : dans le projet "${project['title']}", id ${project['id']}, projet liée inconnu : ${projectId}, projet lié supprimé`
+        this._logger.log(
+          LogLevel.minor,
+          `${project['title']}, id ${project['id']}, projet liée inconnu, projet lié supprimé`,
+          'Id du projet inconnu' + projectId
         )
       }
       return projectFound
@@ -77,8 +96,10 @@ export class ProjectFeatures {
     project.programs = project.programs.filter((programId) => {
       const programFound = programs.some((program) => program.id === programId)
       if (!programFound) {
-        this._log(
-          `Warning : dans le projet "${project['title']}", id ${project['id']}, programme liée inconnu : ${programId}, programme lié supprimé`
+        this._logger.log(
+          LogLevel.minor,
+          `${project['title']}, id ${project['id']}, programme liée inconnu et supprimé`,
+          'nom du programme ' + programId
         )
       }
       return programFound
@@ -91,8 +112,10 @@ export class ProjectFeatures {
     const links = [...markdownText.matchAll(linkRegex)].map((match) => match[1] || match[0])
     for (const link of links) {
       if (!(await LinkValidator.isValidLink(link))) {
-        this._log(
-          `Majeur: dans le projet "${project['title']}", id ${project['id']} erreur de validation de lien dans le champ "pour aller plus loin", ${link}`
+        this._logger.log(
+          LogLevel.major,
+          `${project['title']}, id ${project['id']}, erreur de validation de lien dans le champ "pour aller plus loin"`,
+          `[Lien cassé](${link})`
         )
       }
     }
@@ -108,10 +131,5 @@ export class ProjectFeatures {
         console.log('Successfully wrote file')
       }
     })
-  }
-
-  private _log(message: string): void {
-    console.log(message)
-    fs.appendFileSync('projectGeneration.log', message + '\n', { encoding: 'utf-8' })
   }
 }
