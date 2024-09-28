@@ -1,13 +1,19 @@
+import path from 'path'
 import { AbstractBaserow } from './abstractBaserow'
 import { RawProject } from '../../project/types/domain'
 import { LinkObject, Project } from './types'
 import { Theme } from '../../theme/types/domain'
+import { ImageBaserow } from './imageBaserow'
 
 export class ProjectBaserow extends AbstractBaserow {
   private readonly _projectTableId = 305253
+  private readonly _imagePath = '/images/projet/'
+  private readonly _logPath: string = path.join(__dirname, '../../../static/project_images_download_info.json')
+  private _imageDownloader: ImageBaserow
 
   constructor(imageDirectory: string) {
-    super(imageDirectory)
+    super()
+    this._imageDownloader = new ImageBaserow(imageDirectory, this._logPath)
   }
 
   async getValidProjects(): Promise<RawProject[]> {
@@ -29,11 +35,12 @@ export class ProjectBaserow extends AbstractBaserow {
         console.error(`Error processing project ${project.id}:`, error)
       }
     }
+    this._imageDownloader.cleanup()
     return projects
   }
 
   private async _convertToRawProjectType(baserowProject: Project, baserowThemes: Theme[]): Promise<RawProject> {
-    const imageName = await this._handleImage(baserowProject.Image)
+    const imageName = await this._imageDownloader.handleImage(baserowProject.Image)
 
     return {
       id: baserowProject.id,

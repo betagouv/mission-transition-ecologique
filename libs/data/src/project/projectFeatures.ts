@@ -17,8 +17,6 @@ export class ProjectFeatures {
   }
 
   async generateProjectsJson(): Promise<void> {
-    this._resetImageFolder()
-
     console.log(`Start loading Baserow data and creating the project images`)
     const projects = await new ProjectBaserow(this._outputImageDirectory).getValidProjects()
 
@@ -26,16 +24,6 @@ export class ProjectFeatures {
     this._validateData(projects)
     this._writeJson(projects)
     return
-  }
-
-  private _resetImageFolder() {
-    const projectDir = this._outputImageDirectory
-
-    if (fs.existsSync(projectDir)) {
-      fs.rmSync(projectDir, { recursive: true, force: true })
-    }
-    fs.mkdirSync(projectDir, { recursive: true })
-    console.log(`Created a fresh image directory : ${projectDir}.`)
   }
 
   private _validateData(rawProjects: RawProject[]) {
