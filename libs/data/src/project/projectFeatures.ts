@@ -6,9 +6,9 @@ import { jsonPrograms } from '../../generated/index'
 import { ProgramType } from '../index'
 import { ThemeId } from '../theme/types/shared'
 import { SlugValidator } from '../common/validators/slugValidator'
-import { LinkValidator } from '../common/validators/linkValidators'
+import { LinkValidator } from '../common/validators/linkValidator'
 import { Logger } from '../common/logger/logger'
-import { LogLevel } from '../common/logger/types'
+import { LoggerType, LogLevel } from '../common/logger/types'
 
 export class ProjectFeatures {
   private readonly _outputDirectory: string = path.join(__dirname, '../../static/')
@@ -18,7 +18,7 @@ export class ProjectFeatures {
 
   constructor() {
     this._programs = jsonPrograms as unknown as ProgramType[]
-    this._logger = new Logger()
+    this._logger = new Logger(LoggerType.Project)
   }
 
   async generateProjectsJson(): Promise<void> {
@@ -62,7 +62,13 @@ export class ProjectFeatures {
 
   private _validateSlug(project: RawProject) {
     if (!SlugValidator.validate(project.slug)) {
-      this._logger.log(LogLevel.critic, project['title'] + ' slug non valide, yaml non généré.', 'slug à corriger: ' + project.slug)
+      this._logger.log(
+        LogLevel.Critic,
+        'Slug non valide, yaml non généré.',
+        project['title'],
+        project.id,
+        'slug à corriger: ' + project.slug
+      )
       return false
     }
     return true
@@ -74,7 +80,7 @@ export class ProjectFeatures {
     project.themes = project.themes.filter((themeId) => {
       const isValidTheme = validThemeIds.includes(themeId as ThemeId)
       if (!isValidTheme) {
-        this._logger.log(LogLevel.major, `${project['title']}, id ${project['id']}, thème inconnu, thème supprimé`, themeId)
+        this._logger.log(LogLevel.Major, `Thème inconnu, thème supprimé`, project['title'], project.id, themeId)
       }
       return isValidTheme
     })
@@ -85,8 +91,10 @@ export class ProjectFeatures {
       const projectFound = rawProjects.some((proj) => proj['id'] === projectId)
       if (!projectFound) {
         this._logger.log(
-          LogLevel.minor,
-          `${project['title']}, id ${project['id']}, projet lié inconnu, projet lié supprimé`,
+          LogLevel.Minor,
+          `Projet lié inconnu, projet lié supprimé`,
+          project['title'],
+          project.id,
           'Id du projet inconnu ' + projectId
         )
       }
@@ -99,8 +107,10 @@ export class ProjectFeatures {
       const programFound = programs.some((program) => program.id === programId)
       if (!programFound) {
         this._logger.log(
-          LogLevel.minor,
-          `${project['title']}, id ${project['id']}, programme liée inconnu et supprimé`,
+          LogLevel.Minor,
+          `Programme liée inconnu et supprimé`,
+          project['title'],
+          project.id,
           'nom du programme ' + programId
         )
       }
@@ -115,8 +125,10 @@ export class ProjectFeatures {
     for (const link of links) {
       if (!(await LinkValidator.isValidLink(link))) {
         this._logger.log(
-          LogLevel.major,
-          `${project['title']}, id ${project['id']}, erreur de validation de lien dans le champ "pour aller plus loin"`,
+          LogLevel.Major,
+          `Erreur de validation de lien dans le champ "pour aller plus loin"`,
+          project['title'],
+          project.id,
           `[Lien cassé](${link})`
         )
       }

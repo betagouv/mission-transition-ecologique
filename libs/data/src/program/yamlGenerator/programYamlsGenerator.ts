@@ -5,13 +5,14 @@ import { DataProgram, Status } from '../types/domain'
 import { ProgramBaserow } from '../../common/baserow/programBaserow'
 import { Logger } from '../../common/logger/logger'
 import { CoreGenerator } from './coreGenerator'
+import { LoggerType } from '../../common/logger/types'
 
 export class ProgramYamlsGenerator {
   outputDirectory: string = path.join(__dirname, '../../programs/')
   private _logger: Logger
 
   constructor() {
-    this._logger = new Logger()
+    this._logger = new Logger(LoggerType.Program)
   }
 
   async createProgramYamls(): Promise<void> {

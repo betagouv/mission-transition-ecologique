@@ -5,7 +5,7 @@ import { LogLevel } from '../../common/logger/types'
 import { SlugValidator } from '../../common/validators/slugValidator'
 import { DataProgram, DataProgramType, YamlImage } from '../types/domain'
 import { ProgramAidType } from '../types/shared'
-import { validateExternalUrlLink } from './linksGenerator'
+import { validateExternalUrlLink } from './linksValidator'
 import { setOperators } from './operatorsGenerator'
 import { PublicodesGenerator } from './publicodesGenerator'
 import { setObjectives } from './objectiveGenerator'
@@ -51,8 +51,10 @@ export class CoreGenerator {
   private _validateSlug() {
     if (!SlugValidator.validate(this.program['Id fiche dispositif'])) {
       this.logger.log(
-        LogLevel.critic,
-        this.program['Id fiche dispositif'] + ' slug non valide, yaml non généré.',
+        LogLevel.Critic,
+        'Slug non valide, yaml non généré.',
+        this.program['Id fiche dispositif'],
+        this.program.id,
         'slug à corriger: ' + this.program['Id fiche dispositif']
       )
       this.valid = false
@@ -62,8 +64,10 @@ export class CoreGenerator {
   private _addSimpleField(key: string, value: unknown, mandatory = false) {
     if (mandatory && !value) {
       this.logger.log(
-        LogLevel.critic,
-        this.program['Id fiche dispositif'] + ': champ obligatoire "' + key + '"manquant. Dispositif non mis en ligne ou à jour'
+        LogLevel.Critic,
+        'champ obligatoire "' + key + '"manquant. Dispositif non mis en ligne ou à jour',
+        this.program['Id fiche dispositif'],
+        this.program.id
       )
       this.valid = false
       return
@@ -95,9 +99,8 @@ export class CoreGenerator {
       const oldContent = yaml.load(yamlContent) as YamlImage
       return oldContent.illustration
     } catch {
-      // known empty bloc, comment for the linter!
+      return null
     }
-    return null
   }
 
   private _setProgramType() {
@@ -107,8 +110,10 @@ export class CoreGenerator {
     }
     if (!Object.values(ProgramAidType).includes(helpType as ProgramAidType)) {
       this.logger.log(
-        LogLevel.critic,
-        this.program['Id fiche dispositif'] + ": type d'aide inconnue, dispositif non mis en ligne ou à jour",
+        LogLevel.Critic,
+        "type d'aide inconnue, dispositif non mis en ligne ou à jour",
+        this.program['Id fiche dispositif'],
+        this.program.id,
         this.program["Nature de l'aide"]
       )
       this.valid = false
@@ -136,9 +141,10 @@ export class CoreGenerator {
         return
       default:
         this.logger.log(
-          LogLevel.critic,
-          this.program['Id fiche dispositif'] +
-            ": type d'aide non traitée dans les données financières, dispositif non mis en ligne ou à jour",
+          LogLevel.Critic,
+          "Type d'aide non traitée dans les données financières, dispositif non mis en ligne ou à jour",
+          this.program['Id fiche dispositif'],
+          this.program.id,
           this.program["Nature de l'aide"]
         )
         this.valid = false

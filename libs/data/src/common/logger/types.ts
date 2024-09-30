@@ -1,18 +1,25 @@
 export enum LogLevel {
-  info = 30,
-  minor = 20,
-  major = 10,
-  critic = 1
+  Info = 30,
+  Minor = 20,
+  Major = 10,
+  Critic = 1
+}
+
+export enum LoggerType {
+  Program = 'Dispositif',
+  Project = 'Projet'
 }
 
 export const LogLevelDisplay: Record<LogLevel, string> = {
-  [LogLevel.info]: 'info',
-  [LogLevel.minor]: 'mineur',
-  [LogLevel.major]: 'important',
-  [LogLevel.critic]: 'critique'
+  [LogLevel.Info]: ':warning:',
+  [LogLevel.Minor]: ':fire:',
+  [LogLevel.Major]: ':fire: :fire:',
+  [LogLevel.Critic]: ':fire: :fire: :fire: :fire:'
 }
 
 export interface LogEvent {
+  name: string
+  baserowId: number
   criticity: LogLevel
   message: string
   data: unknown

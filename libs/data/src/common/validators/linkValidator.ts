@@ -12,7 +12,7 @@ export class LinkValidator {
       result = await this._axiosValidation(link)
       await new Promise((resolve) => setTimeout(resolve, 50))
     }
-    if (!result && this._disablePlayWright()) {
+    if (!result && this._isEnablePlaywright()) {
       result = await this._playwrightValidation(link)
     }
     return result
@@ -86,9 +86,9 @@ export class LinkValidator {
     }
   }
 
-  private static _disablePlayWright(): boolean {
-    if (process.env['LINK_VALIDATOR_PLAYWRIGHT_DISABLE']) {
-      return process.env['LINK_VALIDATOR_PLAYWRIGHT_DISABLE'] !== 'true'
+  private static _isEnablePlaywright(): boolean {
+    if (process.env['LINK_VALIDATOR_PLAYWRIGHT_ENABLE']) {
+      return process.env['LINK_VALIDATOR_PLAYWRIGHT_ENABLE'] != 'false'
     }
     return true
   }

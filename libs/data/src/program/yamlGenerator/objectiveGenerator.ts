@@ -1,6 +1,6 @@
 import { YamlObjective } from '../types/domain'
 import { CoreGenerator } from './coreGenerator'
-import { validateObjectiveLink } from './linksGenerator'
+import { validateObjectiveLink } from './linksValidator'
 
 export function setObjectives(generator: CoreGenerator) {
   const objectifs: YamlObjective[] = []

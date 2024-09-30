@@ -22,8 +22,10 @@ function setOtherEligibilityCriteria(generator: CoreGenerator): string[] {
   const criteriaList = generator.program['Eligibilité Spécifique'].split('\n').map((criteria) => criteria.trim())
   if (criteriaList.filter((criteria) => !criteria.startsWith('- ')).length) {
     generator.logger.log(
-      LogLevel.major,
-      generator.program['Id fiche dispositif'] + ': problème de format du champ "éligibilité spécifique" qui doit être une liste !',
+      LogLevel.Major,
+      'Problème de format du champ "éligibilité spécifique" qui doit être une liste !',
+      generator.program['Id fiche dispositif'],
+      generator.program.id,
       criteriaList
     )
     return []
@@ -40,7 +42,12 @@ function setEligibilityYears(program: DataProgram): string[] {
 
 function setEligibilitySector(generator: CoreGenerator) {
   if (!generator.program['Eligibilité Sectorielle']) {
-    generator.logger.log(LogLevel.critic, generator.program['Id fiche dispositif'] + ': Eligibilité sectorielle manquante.')
+    generator.logger.log(
+      LogLevel.Critic,
+      'Eligibilité sectorielle manquante.',
+      generator.program['Id fiche dispositif'],
+      generator.program.id
+    )
     generator.valid = false
   }
   if (generator.program['Eligibilité Naf']) {
@@ -54,9 +61,10 @@ function setEligibilityGeography(generator: CoreGenerator) {
 
   if (generator.program['Zones Spécifiques (géographie)']) {
     generator.logger.log(
-      LogLevel.major,
-      generator.program['Id fiche dispositif'] +
-        ": le champ zone géographique a été abandonné et n'est plus affiché. Merci de convertir la condition en un point de la liste du champ 'Eligibilité spécifique'",
+      LogLevel.Major,
+      "Le champ zone géographique a été abandonné et n'est plus affiché. Merci de convertir la condition en un point de la liste du champ 'Eligibilité spécifique'",
+      generator.program['Id fiche dispositif'],
+      generator.program.id,
       generator.program['Zones Spécifiques (géographie)']
     )
   }
