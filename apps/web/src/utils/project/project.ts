@@ -6,14 +6,18 @@ export class Project {
   static readonly filter = (
     projects: Ref<ProjectType[] | undefined>,
     programs: Ref<ProgramData[] | undefined>,
-    theme: ComputedRef<ThemeId | undefined>
+    theme: ComputedRef<ThemeId | ''>
   ) => {
     return computed(() => {
       if (!projects.value) {
         return undefined
       }
 
-      return useProjectStore().getProjectsByThemeAndEligibility(projects.value, theme.value ?? undefined, programs.value ?? undefined)
+      return useProjectStore().getProjectsByThemeAndEligibility(
+        projects.value,
+        theme.value !== '' ? theme.value : undefined,
+        programs.value ?? undefined
+      )
     })
   }
 

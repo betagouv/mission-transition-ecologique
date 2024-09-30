@@ -39,11 +39,11 @@
 import { TeeDsfrTabs } from '@/components/element/TeeTabs.vue'
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
-import { BreakpointNameType, ProgramData, Project, TrackId } from '@/types'
+import { ProgramData, ThemeId, TrackId, Project, BreakpointNameType } from '@/types'
 import { computed, onBeforeMount } from 'vue'
 import Matomo from '@/utils/matomo'
 import { useProjectStore } from '@/stores/project'
-import { Theme } from '@/utils/theme'
+import UsedTrack from '@/utils/track/usedTrack'
 
 const navigationStore = useNavigationStore()
 const programStore = useProgramStore()
@@ -73,12 +73,14 @@ const filteredProjects = computed(() => {
     return undefined
   }
 
-  return projectStore.getProjectsByThemeAndEligibility(
-    projects.value,
-    Theme.getThemeFromSelectedOrPriorityTheme().value,
-    filteredPrograms.value ?? undefined
-  )
+  return projectStore.getProjectsByThemeAndEligibility(projects.value, getThemeForProjectFiltering(), filteredPrograms.value ?? undefined)
 })
+
+const getThemeForProjectFiltering = () => {
+  return programStore.programFilters.themeTypeSelected !== ''
+    ? (programStore.programFilters.themeTypeSelected as ThemeId)
+    : UsedTrack.getPriorityTheme()
+}
 
 onBeforeMount(async () => {
   navigationStore.hasSpinner = true

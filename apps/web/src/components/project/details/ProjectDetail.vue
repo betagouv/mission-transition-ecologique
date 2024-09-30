@@ -2,7 +2,7 @@
   <ProjectHeader
     v-if="project"
     :project="project"
-    :theme-color="themeColor as Color"
+    :theme-color="themeColor"
   />
   <div
     v-if="project"
@@ -23,7 +23,7 @@
           <LinkedProjects
             v-if="project.linkedProjects.length > 0"
             :project="project"
-            :color="themeColor as Color"
+            :color="themeColor"
           />
         </div>
       </div>
@@ -31,7 +31,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { Project, Color, ThemeId } from '@/types'
+import { ThemeType, Project, Color } from '@/types'
 import { Theme } from '@/utils/theme'
 import { useProjectStore } from '@/stores/project'
 import { onBeforeMount } from 'vue'
@@ -39,7 +39,7 @@ import { onBeforeMount } from 'vue'
 const projectStore = useProjectStore()
 
 const project = ref<Project>()
-const themeColor = ref<Color | ''>()
+const theme = ref<ThemeType>()
 
 interface Props {
   projectSlug: string
@@ -47,19 +47,16 @@ interface Props {
 }
 const props = defineProps<Props>()
 
+const themeColor = computed<Color | undefined>(() => theme.value?.color)
+
 onBeforeMount(async () => {
   if (props.projectSlug !== projectStore.currentProject?.slug) {
     await projectStore.getProjectBySlug(props.projectSlug)
   }
 
   project.value = projectStore.currentProject
-
-  const selectedThemeId = Theme.getThemeFromSelectedOrPriorityTheme()
-
   if (project.value) {
-    const themeId = selectedThemeId.value ? project.value?.themes.find((t) => t === selectedThemeId.value) : project.value?.mainTheme
-
-    themeColor.value = Theme.getColorById(themeId as ThemeId)
+    theme.value = Theme.getById(project.value?.mainTheme)
   }
 })
 </script>

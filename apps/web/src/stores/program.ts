@@ -84,10 +84,6 @@ export const useProgramStore = defineStore('program', () => {
     programFilters.value.themeTypeSelected = themeType
   }
 
-  function getThemeTypeSelected() {
-    return programFilters.value.themeTypeSelected
-  }
-
   function resetFilters() {
     programFilters.value = {
       programAidTypesSelected: [],
@@ -106,7 +102,6 @@ export const useProgramStore = defineStore('program', () => {
     getProgramById,
     hasThemeTypeSelected,
     setThemeTypeSelected,
-    getThemeTypeSelected,
     resetFilters
   }
 })
