@@ -1,3 +1,3 @@
-// import { ContactId as contactIdFromContactDomain } from '../../opportunity/domain/types'
-// import { ContactId as contactIdFromopportunityHubDomain } from '../../opportunityHub/domain/types'
-// export type ContactId = contactIdFromContactDomain | contactIdFromopportunityHubDomain
+import { ProgramType, Project } from '@tee/data'
+
+export type ProgramOrProjectType = ProgramType | Project | undefined

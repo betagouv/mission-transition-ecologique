@@ -1,11 +1,12 @@
 import { Maybe, Result } from 'true-myth'
+import { ProgramOrProject } from '../../common/domain/programOrProject'
 import type { ContactRepository, MailerManager, OpportunityRepository } from './spi'
-import { OpportunityId, OpportunityWithContactId, OpportunityDetailsShort, OpportunityWithOperatorContact, ContactId } from './types'
+import { OpportunityId, OpportunityWithContactId, OpportunityDetailsShort, OpportunityWithOperatorContactAndContactId } from './types'
 import OpportunityHubFeatures from '../../opportunityHub/domain/opportunityHubFeatures'
 import { OpportunityHubRepository } from '../../opportunityHub/domain/spi'
 import { ProgramRepository } from '../../program/domain/spi'
 import ProgramFeatures from '../../program/domain/programFeatures'
-import { Operators, ProgramType, Project } from '@tee/data'
+import { Operators, ProgramType } from '@tee/data'
 import { ContactDetails, Opportunity, OpportunityType, SiretValidator } from '@tee/common'
 import EstablishmentService from '../../establishment/application/establishmentService'
 import Monitor from '../../common/domain/monitoring/monitor'
@@ -44,19 +45,23 @@ export default class OpportunityFeatures {
       return Result.err(contactIdResult.error)
     }
 
-    this._addContactOperatorToOpportunity(opportunity)
-    const maybeError = this._defineOpportunityDatabaseId(opportunity)
+    const opportunityWithContactId = this._addContactIdToOpportunity(opportunity, contactIdResult.value.id)
+    const opportunityWithOperatorAndContact = this._addContactOperatorToOpportunity(opportunityWithContactId)
+
+    const maybeError = this._defineOpportunityDatabaseId(opportunityWithOperatorAndContact)
     if (maybeError.isJust) {
       return Result.err(maybeError.value)
     }
 
-    const opportunityResult = await this._opportunityRepository.create(contactIdResult.value.id, opportunity)
+    const programOrProject = this._getProgramOrProject(opportunityWithOperatorAndContact)
+
+    const opportunityResult = await this._opportunityRepository.create(opportunityWithOperatorAndContact)
     if (opportunityResult.isErr) {
       Monitor.error('Error during Opportunity Creation', { error: opportunityResult.error })
       return opportunityResult
     }
-    this._addContactIdToOpportunity(opportunity, contactIdResult.value.id)
-    this._sendReturnReceipt(opportunity)
+
+    this._sendReturnReceipt(opportunity, programOrProject)
     this._transmitOpportunityToHubs(opportunityResult.value, opportunity)
 
     return opportunityResult
@@ -64,6 +69,17 @@ export default class OpportunityFeatures {
 
   getDailyOpportunitiesByContactId = async (contactId: number): Promise<Result<OpportunityDetailsShort[], Error>> => {
     return await this._opportunityRepository.getDailyOpportunitiesByContactId(contactId)
+  }
+
+  private _getProgramOrProject(opportunity: OpportunityWithOperatorContactAndContactId): ProgramOrProject {
+    switch (opportunity.type) {
+      case OpportunityType.Program:
+        return new ProgramOrProject(OpportunityType.Program, this._getProgramById(opportunity.id))
+      case OpportunityType.Project:
+        return new ProgramOrProject(OpportunityType.Project, new ProjectService().getById(+opportunity.id))
+      case OpportunityType.CustomProject:
+        return new ProgramOrProject(OpportunityType.CustomProject, undefined)
+    }
   }
 
   private _transmitOpportunityToHubs(opportunityId: OpportunityId, opportunity: OpportunityWithContactId, program: ProgramType) {
@@ -104,7 +120,7 @@ export default class OpportunityFeatures {
     return await this._opportunityRepository.update(opportunityId, { sentToOpportunityHub: success })
   }
 
-  private _addContactOperatorToOpportunity(opportunity: Opportunity): OpportunityWithOperatorContact {
+  private _addContactOperatorToOpportunity(opportunity: OpportunityWithContactId): OpportunityWithOperatorContactAndContactId {
     switch (opportunity.type) {
       case OpportunityType.Program:
         // TODO handle case progrma undefined
@@ -123,7 +139,7 @@ export default class OpportunityFeatures {
     }
   }
 
-  private _defineOpportunityDatabaseId(opportunity: Opportunity): Maybe<Error> {
+  private _defineOpportunityDatabaseId(opportunity: OpportunityWithOperatorContactAndContactId): Maybe<Error> {
     if (opportunity.type === OpportunityType.Project) {
       const project = new ProjectService().getById(+opportunity.id)
       if (!project) {
@@ -146,7 +162,7 @@ export default class OpportunityFeatures {
     return new ProgramFeatures(this._programRepository).getById(id)
   }
 
-  private _sendReturnReceipt(opportunity: Opportunity, programOrProject: ProgramType | Project) {
+  private _sendReturnReceipt(opportunity: Opportunity, programOrProject: ProgramOrProject) {
     void this._mailRepository.sendReturnReceipt(opportunity, programOrProject).then((hasError) => {
       if (hasError) {
         Monitor.warning('Error while sending a return receipt', { error: hasError })

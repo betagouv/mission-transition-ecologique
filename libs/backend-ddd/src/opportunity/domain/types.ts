@@ -7,6 +7,8 @@ export type OpportunityWithContactId = Opportunity & {
 
 export type OpportunityWithOperatorContact = Opportunity & { programContactOperator?: Operators }
 
+export type OpportunityWithOperatorContactAndContactId = OpportunityWithContactId & OpportunityWithOperatorContact
+
 export type OpportunityDetailsShort = Omit<OpportunityDetails, 'linkToPage' | 'linkToCatalog' | 'message' | 'type'> & {
   programContactOperator?: Operators
 }
