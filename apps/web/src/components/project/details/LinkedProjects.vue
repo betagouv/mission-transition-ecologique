@@ -1,35 +1,30 @@
 <template>
-  <DsfrAccordion
-    v-if="linkedProjectsTags.length > 0"
-    id="project-linked-projects"
-    :expanded-id="expandedId"
-    @expand="(id: string | undefined) => (expandedId = id)"
+  <TeeContentBlock
+    id="project-linked-projects-title"
+    class="fr-pt-3v fr-pb-4v"
+    title="Projets complémentaires"
+    :border-position="[BorderPosition.bottom]"
   >
-    <template #title>
-      <div
-        id="project-linked-projects-title"
-        class="fr-h3"
-      >
-        Projets complémentaires
+    <template #content>
+      <div class="fr-grid-row fr-grid-row--center fr-grid-row-md--left">
+        <template
+          v-for="linkedProject in linkedProjectsTags"
+          :key="linkedProject.id"
+        >
+          <TeeProjectButton
+            class="fr-my-1-5v fr-mx-2v"
+            target="_blank"
+            :project="linkedProject"
+            :color="color"
+          />
+        </template>
       </div>
     </template>
-
-    <div class="fr-grid-row fr-grid-row--center fr-grid-row-md--left">
-      <template
-        v-for="linkedProject in linkedProjectsTags"
-        :key="linkedProject.id"
-      >
-        <LinkedProjectButton
-          :project="linkedProject"
-          :color="color"
-        />
-      </template>
-    </div>
-  </DsfrAccordion>
+  </TeeContentBlock>
 </template>
 <script setup lang="ts">
 import { useProjectStore } from '@/stores/project'
-import { Color, Project } from '@/types'
+import { BorderPosition, Color, Project } from '@/types'
 
 interface Props {
   project: Project
@@ -37,7 +32,6 @@ interface Props {
 }
 defineProps<Props>()
 
-const expandedId = ref<string | undefined>('project-linked-projects')
 const linkedProjectsTags = ref<Project[]>([])
 
 onMounted(async () => {

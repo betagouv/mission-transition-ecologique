@@ -1,0 +1,88 @@
+titre: Certification en agriculture biologique
+promesse: >-
+  Certifiez votre activité en agriculture biologique et bénéficiez d'un crédit
+  d'impôt
+description: >-
+  Vous êtes une entreprise agricole et vous faites l'objet d'une certification
+  en agriculture biologique pour le passage au bio, ou pour son maintien?
+  Bénéficiez d'un crédit d'impôt sur vos dépenses de certification.
+description longue: >-
+  Le crédit d'impôt s'applique aux entreprises agricoles qui font l'objet d'une
+  certification en agriculture biologique et qui réalisent au moins 40% de leurs
+  recettes des activités listées ci-dessous :
+
+  - revenus tirés de l'exploitation de biens ruraux,
+
+  - production forestière,
+
+  - exploitation de champignonnières en galeries souterraines,
+
+  - exploitations apicoles,
+
+  - exploitations avicoles,
+
+  - exploitations piscicoles,
+
+  - exploitations ostréicoles,
+
+  - exploitations mytilicoles,
+
+  - obtention de nouvelles variétés végétales,
+
+  - préparation et entraînement des chevaux domestiques, en vue de leur
+  exploitation dans les activités autres que celles du spectacle.
+
+
+  Le crédit d'impôt pour dépenses de certification en agriculture biologique
+  concerne également les entreprises bénéficiant :
+
+  - d'une aide à la conversion à l'agriculture biologique,
+
+  -  d'une aide au maintien de l'agriculture biologique.
+fin de validité: 31/12/2025
+illustration: images/TEE_energie_verte.png
+opérateur de contact: DDFIP
+url: >-
+  https://les-aides.fr/aide/h0X9/ddfip/credit-d-impot-pour-depenses-de-certification-en-agriculture-biologique.html
+nature de l'aide: avantage fiscal
+montant de l'avantage fiscal: 4 500 € par an
+activable en autonomie: oui
+objectifs:
+  - description: >-
+      Consultez la rubrique "en savoir plus" pour prendre connaissance des
+      activités agricoles éligibles à ce crédit d'impôt.
+  - description: Remplissez le formulaire de demande de crédit d'impôt.
+    liens:
+      - lien: >-
+          https://www.impots.gouv.fr/sites/default/files/formulaires/2079-bio-sd/2024/2079-bio-sd_4636.pdf
+        texte: Télécharger le document cerfa
+  - description: >-
+      Déposez le document complété auprès du service des impôts des entreprises
+      avec votre déclaration de résultats.
+  - description: Recevez une aide en crédit d'impôt à hauteur de 4500 €/an.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - Entreprises agricoles
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
+    valeur: oui
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est mon impact environnemental
+      - questionnaire . objectif prioritaire . est l'écoconception

@@ -6,7 +6,7 @@
     "nameTag": "🎯 plan d’action énergie",
     "shortDescription": "Il met en évidence vos postes d’énergie les plus consommateurs et les pistes de solutions.",
     "image": "/images/projet/plan-action-eco-energie.webp",
-    "longDescription": "La réalisation d'un plan d'action énergie est un premier pas indispensable à la mise en place d'une stratégie énergétique au sein de votre entreprise.\n\nDes accompagnements vous aideront à identifier les postes énergivores au sein de votre entreprise, identifier des bonnes pratiques faciles à mettre en oeuvre, et élaborer un plan d'action pour maîtriser durablement vos consommations. Ce plan d'action constitue souvent l'étape préalable indispensable à la mise en place d'un projet, pouvant aboutir à des études plus précises ou des investissements.",
+    "longDescription": "La réalisation d'un plan d'action énergie est un premier pas indispensable à la mise en place d'une stratégie énergétique au sein de votre entreprise.\n\nDes accompagnements vous aideront à identifier les postes énergivores au sein de votre entreprise, identifier des bonnes pratiques faciles à mettre en œuvre, et élaborer un plan d'action pour maîtriser durablement vos consommations. Ce plan d'action constitue souvent l'étape préalable indispensable à la mise en place d'un projet, pouvant aboutir à des études plus précises ou des investissements.",
     "moreDescription": "- [**Sobriété énergétique en entreprise,**](https://www.cci.fr/crise-energetique/entreprises-20-conseils-pour-faire-baisser-votre-facture-denergie) 20 conseils pour faire baisser votre facture d’énergie.",
     "themes": [
       "energy"
@@ -15,13 +15,15 @@
     "programs": [
       "baisse-les-watts",
       "fonds-tourisme-durable",
+      "programme-breizh-fab",
       "renovation-petit-tertiaire-prive",
       "tpe-gagnantes-sur-tous-les-couts",
       "visite-energie-cci",
-      "visite-energie-cma"
+      "visite-energie-cma",
+      "cedre-premier-pas"
     ],
     "linkedProjects": [],
-    "priority": "4"
+    "priority": "40"
   },
   {
     "id": 2,
@@ -39,10 +41,11 @@
     "programs": [
       "fonds-tourisme-durable",
       "visite-energie-cci",
-      "visite-energie-cma"
+      "visite-energie-cma",
+      "cedre-investissement"
     ],
     "linkedProjects": [],
-    "priority": "21"
+    "priority": "220"
   },
   {
     "id": 5,
@@ -62,10 +65,11 @@
       "etude-photovoltaique-cci",
       "fonds-tourisme-durable",
       "pret-action-climat",
-      "pret-vert"
+      "pret-vert",
+      "solaire-ready"
     ],
     "linkedProjects": [],
-    "priority": "34"
+    "priority": "340"
   },
   {
     "id": 3,
@@ -84,10 +88,12 @@
     "programs": [
       "aides-au-reemploi-des-emballages",
       "fonds-tourisme-durable",
-      "tremplin"
+      "tremplin",
+      "cedre-investissement",
+      "charte-zero-dechet-plastique"
     ],
     "linkedProjects": [],
-    "priority": "10"
+    "priority": "100"
   },
   {
     "id": 6,
@@ -111,7 +117,7 @@
       "pret-vert"
     ],
     "linkedProjects": [],
-    "priority": "40"
+    "priority": "400"
   },
   {
     "id": 7,
@@ -135,7 +141,7 @@
       "pret-vert"
     ],
     "linkedProjects": [],
-    "priority": "90"
+    "priority": "900"
   },
   {
     "id": 1,
@@ -152,13 +158,15 @@
     "mainTheme": "environmental",
     "programs": [
       "diag-decarbon-action",
-      "tremplin"
+      "programme-breizh-fab",
+      "tremplin",
+      "cedre-premier-pas"
     ],
     "linkedProjects": [
       32,
       33
     ],
-    "priority": "11"
+    "priority": "110"
   },
   {
     "id": 8,
@@ -182,7 +190,7 @@
       "pret-vert"
     ],
     "linkedProjects": [],
-    "priority": "61"
+    "priority": "610"
   },
   {
     "id": 9,
@@ -204,7 +212,7 @@
       "pret-vert"
     ],
     "linkedProjects": [],
-    "priority": "91"
+    "priority": "910"
   },
   {
     "id": 10,
@@ -226,7 +234,7 @@
       "pret-vert"
     ],
     "linkedProjects": [],
-    "priority": "32"
+    "priority": "320"
   },
   {
     "id": 11,
@@ -245,7 +253,7 @@
       "etude-hydroelectricite"
     ],
     "linkedProjects": [],
-    "priority": "98"
+    "priority": "980"
   },
   {
     "id": 12,
@@ -269,7 +277,7 @@
       "investissement-geothermie-profonde"
     ],
     "linkedProjects": [],
-    "priority": "95"
+    "priority": "950"
   },
   {
     "id": 13,
@@ -291,7 +299,7 @@
       "pret-economies-d-energie-pee"
     ],
     "linkedProjects": [],
-    "priority": "50"
+    "priority": "500"
   },
   {
     "id": 14,
@@ -311,10 +319,11 @@
       "baisse-les-watts",
       "booster-eco-energie-tertiaire",
       "diag-perf-immo",
-      "renovation-petit-tertiaire-prive"
+      "renovation-petit-tertiaire-prive",
+      "cedre-premier-pas"
     ],
     "linkedProjects": [],
-    "priority": "14"
+    "priority": "140"
   },
   {
     "id": 15,
@@ -324,7 +333,7 @@
     "shortDescription": "L’isolation thermique permet de réduire les pertes de chaleur de vos locaux et de diminuer vos dépenses énergétiques.",
     "image": "/images/projet/isolation-thermique.webp",
     "longDescription": "L’isolation thermique des bâtiments permet de garantir le confort en été comme en hiver en limitant le recours à la climatisation et au chauffage. Un logement mal isolé génère des pertes conséquentes de chaleur en hiver et de fraîcheur en été par le toit, les murs, les portes, les fenêtres et le sol.\\\nGrâce à des travaux d’isolation, vous diminuez vos factures d’énergie et améliorez votre confort tout au long de l’année.",
-    "moreDescription": "- [**Les exigences réglementaires pour les travaux de rénovation**](https://librairie.ademe.fr/ged/8069/fiche-exigences-reglementaires-renovation.pdf), une fiche pratique de l'ADEME.\n- [**L'annuaire des professionnels RGE et des architectes,**](https://france-renov.gouv.fr/annuaires-professionnels/artisan-rge-architecte) trouver un professionnel RGE, compétent pour réaliser des travaux d'isolation thermique.\n- [**Guide pratique de l'ADEME** ](https://librairie.ademe.fr/ged/6488/guide-pratique-isoler-sa-maison.pdf)\"Isoler, la clé d’une rénovation réussie\"",
+    "moreDescription": "- [**Les exigences réglementaires pour les travaux de rénovation**](https://librairie.ademe.fr/ged/8069/fiche-exigences-reglementaires-renovation.pdf), une fiche pratique de l'ADEME.\n- [**Guide pratique de l'ADEME** ](https://librairie.ademe.fr/ged/6488/guide-pratique-isoler-sa-maison.pdf)\"Isoler, la clé d’une rénovation réussie\"\n- [**Quel est le meilleur isolant thermique pour une isolation efficace ?**](https://www.baisseleswatts.fr/actualites/equipement-energetique/quel-est-le-meilleur-isolant-thermique) un article proposé par Baisse les watts\n- [**L'annuaire des professionnels RGE et des architectes,**](https://france-renov.gouv.fr/annuaires-professionnels/artisan-rge-architecte) trouver un professionnel RGE, compétent pour réaliser des travaux d'isolation thermique.",
     "themes": [
       "energy",
       "building"
@@ -335,17 +344,21 @@
       "renovation-energetique",
       "renovation-petit-tertiaire-prive",
       "pret-economies-d-energie-pee",
-      "pret-vert"
+      "pret-vert",
+      "cedre-investissement",
+      "investour",
+      "sites-touristiques-exemplaires",
+      "solaire-ready"
     ],
     "linkedProjects": [],
-    "priority": "15"
+    "priority": "150"
   },
   {
     "id": 16,
     "slug": "plan-mobilite",
     "title": "Plan d'action mobilité",
     "nameTag": "☄️ plan mobilité employeur",
-    "shortDescription": "Favorisez les déplacements durables des personnes et des biens liés à l’activité de votre entreprise.",
+    "shortDescription": "Favoriser les déplacements durables des personnes et des biens liés à l’activité de votre entreprise.",
     "image": "/images/projet/plan-mobilite.webp",
     "longDescription": "Un plan de mobilité entreprise (PDE) est « *un ensemble de mesures qui vise à optimiser et augmenter l'efficacité des déplacements liés à l’activité d'une entreprise, pour diminuer les émissions polluantes et réduire le trafic routier* ». Il encourage l'usage des transports en commun, du covoiturage et des mobilités actives (marche, vélo, etc.)\n\nIl se base sur une analyse globale des déplacements de l’entreprise (trajets domicile-travail des employés, déplacements professionnels, mobilité des clients, fournisseurs et partenaires) pour proposer un plan d’action adapté aux caractéristiques de l’entreprise.\n\nParmi ses bénéfices, on compte l’amélioration de la qualité de vie des collaborateurs, la réduction de l’impact environnemental de votre activité et l’optimisation de vos coûts liés à la mobilité.",
     "moreDescription": "- [**Un plan de mobilité dans mon entreprise**](https://librairie.ademe.fr/ged/1555/plan-mobilite-entreprise-010502.pdf)**,** une mise en oeuvre en 5 étapes.\n- [**Changer de mobilité dans le cadre de ses trajets domicile-travail**,](https://agirpourlatransition.ademe.fr/particuliers/bureau/deplacements/trajets-domicile-travail-aussi-optez-mobilite-plus-durable) témoignages d'employés ayant fait le choix de mobilités douces.\n- [**Boîte à outils Plan de mobilité employeur**](https://librairie.ademe.fr/mobilite-et-transport/231-boite-a-outils-plan-de-mobilite-employeur.html), des fiches pratiques pour réaliser un plan de mobilité en autonomie.\n- [**La mobilité de demain**](https://archives.qqf.fr/infographie/60/la-mobilite-de-demain), une infographie *\"Qu'est-ce qu'on fait ?!\"* proposée par l'ADEME.",
@@ -355,12 +368,13 @@
     "mainTheme": "mobility",
     "programs": [
       "fresque-de-la-mobilite",
-      "plan-de-mobilite"
+      "plan-de-mobilite",
+      "cedre-premier-pas"
     ],
     "linkedProjects": [
       19
     ],
-    "priority": "5"
+    "priority": "50"
   },
   {
     "id": 17,
@@ -377,17 +391,16 @@
     "mainTheme": "mobility",
     "programs": [
       "pret-action-climat",
-      "prime-a-la-conversion",
       "retrofit-electrique",
       "pret-vert"
     ],
     "linkedProjects": [],
-    "priority": "55"
+    "priority": "550"
   },
   {
     "id": 18,
     "slug": "vehicule-propre",
-    "title": "Acquérir un véhicule propre",
+    "title": "Acquisition d'un véhicule propre",
     "nameTag": "🚘 véhicule propre",
     "shortDescription": "Un véhicule propre est un véhicule produisant peu d'émissions polluantes lors de son utilisation.",
     "image": "/images/projet/vehicule-propre.webp",
@@ -403,15 +416,18 @@
       "fonds-tourisme-durable",
       "pret-action-climat",
       "tremplin",
-      "pret-vert"
+      "pret-vert",
+      "sites-touristiques-exemplaires",
+      "cheque-transition-bioethanol",
+      "recharge-vehicule-electrique"
     ],
     "linkedProjects": [],
-    "priority": "20"
+    "priority": "190"
   },
   {
     "id": 19,
     "slug": "velo",
-    "title": "Acquérir un vélo",
+    "title": "Acquisition de vélos",
     "nameTag": "🚲 vélo",
     "shortDescription": "La mise à disposition de vélos est un moyen efficace de favoriser la mobilité douce en entreprise.",
     "image": "/images/projet/velo.webp",
@@ -426,17 +442,18 @@
       "flotte-de-velos-a-disposition",
       "fonds-tourisme-durable",
       "pret-action-climat",
-      "tremplin"
+      "tremplin",
+      "sites-touristiques-exemplaires"
     ],
     "linkedProjects": [],
-    "priority": "19"
+    "priority": "140"
   },
   {
     "id": 20,
     "slug": "plan-action-eau",
     "title": "Plan d’action eau",
     "nameTag": "🎯 plan d’action eau",
-    "shortDescription": "Amélioration de la performance environnementale de mon produit ou service.",
+    "shortDescription": "Il met en évidence vos postes de consommation d'eau les plus importants et les pistes de solutions.",
     "image": "/images/projet/plan-action-eau.webp",
     "longDescription": "Raréfaction de l'eau, restriction des consommations, augmentation des coûts : maîtriser sa consommation d’eau est un enjeu essentiel pour les entreprises.\n\nComment agir au sein de votre entreprise pour poursuivre votre activité et faire des économies d’eau ?\n\nFaites-vous accompagner par un expert, et réalisez un diagnostic global de vos flux (énergie, déchets, eau...) ou une étude ciblée de votre consommation d'eau.",
     "moreDescription": "- [**Eau secours, demain tous à sec**](https://www.qqf.fr/infographie/eau-secours-demain-tous-a-sec/), une infographie *\"Qu'est-ce qu'on fait ?!\"* proposée par l'ADEME.\n- [**10 conseils aux entreprises pour une sobriété en eau**](https://www.cci.fr/actualites/10-conseils-aux-entreprises-pour-une-sobriete-en-eau). Une fiche conseil proposée par la CCI, Chambre de Commerce et d’Industrie.",
@@ -445,17 +462,20 @@
     ],
     "mainTheme": "water",
     "programs": [
-      "programme-ecod-o"
+      "diag-eco-flux",
+      "programme-ecod-o",
+      "tpe-gagnantes-sur-tous-les-couts",
+      "cedre-premier-pas"
     ],
     "linkedProjects": [],
-    "priority": "6"
+    "priority": "60"
   },
   {
     "id": 21,
     "slug": "plan-action-dechets",
     "title": "Plan d’action déchets & pertes matière",
     "nameTag": "🗑 plan d'action déchets",
-    "shortDescription": "Analysez le flux de déchets et les pertes de matières de votre entreprise afin de fixer un plan d’action.",
+    "shortDescription": "Améliorer la gestion de vos flux de déchets et limiter vos pertes de matières.",
     "image": "/images/projet/plan-action-dechets.webp",
     "longDescription": "Un diagnostic déchets est un excellent point de départ pour évaluer la production et gestion des déchets de votre entreprise et identifier un plan d’action pour les réduire à la source.\n\nVous pouvez vous faire accompagner par un expert pour faire le point sur vos usages, définir des objectifs de réduction et de gestion des déchets, et construire un plan d’action pour atteindre ces objectifs. Ce plan d'action est l'étape préalable indispensable à la mise en place d'un projet, pouvant aboutir à des études plus précises ou des investissements.",
     "moreDescription": "- [**Comment diminuer vos déchets plastiques** ](https://agirpourlatransition.ademe.fr/particuliers/maison/dechets/comment-diminuer-dechets-plastiques)**?** Tour d’horizon pour changer la donne.",
@@ -465,10 +485,12 @@
     "mainTheme": "waste",
     "programs": [
       "diagnostic-dechets",
-      "tremplin"
+      "tremplin",
+      "cedre-premier-pas",
+      "charte-zero-dechet-plastique"
     ],
     "linkedProjects": [],
-    "priority": "9"
+    "priority": "90"
   },
   {
     "id": 22,
@@ -490,7 +512,7 @@
       "tremplin"
     ],
     "linkedProjects": [],
-    "priority": "80"
+    "priority": "800"
   },
   {
     "id": 23,
@@ -507,17 +529,18 @@
     "mainTheme": "waste",
     "programs": [
       "fonds-tourisme-durable",
-      "tremplin"
+      "tremplin",
+      "cedre-investissement"
     ],
     "linkedProjects": [],
-    "priority": "18"
+    "priority": "180"
   },
   {
     "id": 24,
     "slug": "gestion-biodechets",
     "title": "Gestion des biodéchets",
     "nameTag": "🥕 biodéchets",
-    "shortDescription": "Réduire votre bilan carbone à travers la réduction du stockage, la combustion des déchets, et leur valorisation.",
+    "shortDescription": "Définir la méthode de gestion des déchets verts la plus adaptée à votre entreprise.",
     "image": "/images/projet/gestion-biodechets.webp",
     "longDescription": "Les biodéchets sont les déchets alimentaires (restes de repas, épluchures, produits périmés non consommés), ainsi que les déchets issus de l’entretien des parcs et jardins (feuilles mortes, tonte, taille).\n\nA partir du 1er janvier 2024, l’obligation de tri à la source des biodéchets s’applique à toutes les entreprises, quels que soient les volumes et l’activité des producteurs / détenteurs. Les entreprises peuvent opter pour une solution de compostage sur site pour transformer les biodéchets en compost utilisable localement ou pour une collecte des biodéchets en faisant appel à des prestataires extérieurs.\n\nL'objectif de cette mesure est de lutter contre le gaspillage alimentaire et de limiter les impacts environnementaux liés au traitement de nos ordures.\n\nEn effet, l’incinération des biodéchets est énergivore et polluante : pour chaque tonne de déchets incinérée, au moins une tonne de CO2 est émise.\n\nUne fois triés, les biodéchets peuvent être utilisés en engrais organiques pour une agriculture plus durable et respectueuse de l'environnement. Ils peuvent aussi être revalorisé pour produire du biogaz destiné à un usage local ou réinjecté dans le réseau de gaz naturel.",
     "moreDescription": "- [**Trier et valoriser les déchets alimentaires : comment et à quel coût ?** ](https://librairie.ademe.fr/dechets-economie-circulaire/5635-dechets-des-professionnels-etablissements-publics-guide.html)Un guide destiné aux producteurs de déchets alimentaires pour aider à la mise en œuvre du tri à la source dans leurs établissements.",
@@ -536,7 +559,7 @@
       "pret-vert"
     ],
     "linkedProjects": [],
-    "priority": "33"
+    "priority": "330"
   },
   {
     "id": 25,
@@ -552,13 +575,12 @@
     ],
     "mainTheme": "waste",
     "programs": [
-      "etude-alimentation-durable",
       "etude-gaspillage-alimentaire",
       "fonds-tourisme-durable",
       "investissement-contre-le-gaspillage-alimentaire"
     ],
     "linkedProjects": [],
-    "priority": "44"
+    "priority": "440"
   },
   {
     "id": 26,
@@ -574,10 +596,11 @@
     ],
     "mainTheme": "rh",
     "programs": [
-      "formation-engager-entreprise-transition-ecologique"
+      "formation-engager-entreprise-transition-ecologique",
+      "investour"
     ],
     "linkedProjects": [],
-    "priority": "2"
+    "priority": "20"
   },
   {
     "id": 27,
@@ -595,10 +618,12 @@
     "programs": [
       "investissement-vte-vert",
       "pret-action-climat",
-      "pret-vert"
+      "pret-vert",
+      "investour",
+      "sud-pret-climat"
     ],
     "linkedProjects": [],
-    "priority": "17"
+    "priority": "170"
   },
   {
     "id": 28,
@@ -617,10 +642,12 @@
       "fonds-tourisme-durable",
       "formation-engager-entreprise-transition-ecologique",
       "formations-du-cfde",
-      "formations-tee"
+      "formations-tee",
+      "investour",
+      "sud-pret-climat"
     ],
     "linkedProjects": [],
-    "priority": "16"
+    "priority": "160"
   },
   {
     "id": 29,
@@ -639,7 +666,7 @@
       "etude-projet-de-recherche"
     ],
     "linkedProjects": [],
-    "priority": "89"
+    "priority": "890"
   },
   {
     "id": 30,
@@ -647,7 +674,7 @@
     "title": "Stratégie RSE",
     "nameTag": "🤝️ stratégie RSE",
     "shortDescription": "Construire une stratégie d’impact environnemental et sociétal RSE.",
-    "image": "/images/projet/sensibilisation-equipes.webp",
+    "image": "/images/projet/strategie-rse.webp",
     "longDescription": "La RSE (Responsabilité sociétale des entreprises) se définit comme la responsabilité des entreprises vis-à-vis des effets qu'elles exercent sur la société, sur trois plans principaux : environnemental, social et économique.\n\nEngager vos salariés autour d’une stratégie RSE permet de leur faire prendre conscience des enjeux et de changer les comportements, notamment en matière de transition écologique et de développement durable.\n\nGrâce à des expertises et l’élaboration d’un plan d’action, ou la formation de vos salariés, vous placez l’engagement et les valeurs environnementales au cœur de la culture de votre entreprise.",
     "moreDescription": "- [**Qu'est-ce que la RSE ?**](https://www.ecologie.gouv.fr/responsabilite-societale-des-entreprises) Cette page détaille le cadre réglementaire de la responsabilité sociétale des entreprises.\n- [**Le portail RSE**](https://portail-rse.beta.gouv.fr/)**.** Un portail unique pour comprendre à quelles règlementations votre entreprise est soumise, et piloter vos obligations depuis un tableau de bord.",
     "themes": [
@@ -658,14 +685,15 @@
     "programs": [
       "diagnostic-rse",
       "enviroveille",
-      "mission-conseil-rse"
+      "mission-conseil-rse",
+      "cedre-premier-pas"
     ],
     "linkedProjects": [
       27,
       31,
       32
     ],
-    "priority": "77"
+    "priority": "770"
   },
   {
     "id": 31,
@@ -685,7 +713,9 @@
       "fonds-tourisme-durable",
       "diag-eco-flux",
       "performa-environnement",
-      "tpe-gagnantes-sur-tous-les-couts"
+      "programme-breizh-fab",
+      "tpe-gagnantes-sur-tous-les-couts",
+      "cedre-premier-pas"
     ],
     "linkedProjects": [
       4,
@@ -693,7 +723,7 @@
       20,
       21
     ],
-    "priority": "1"
+    "priority": "10"
   },
   {
     "id": 32,
@@ -713,21 +743,24 @@
       "act-pas-a-pas",
       "fonds-tourisme-durable",
       "pacte-industrie",
+      "programme-breizh-fab",
       "programme-eve",
-      "tremplin"
+      "tremplin",
+      "cedre-premier-pas",
+      "sud-pret-climat"
     ],
     "linkedProjects": [
       1,
       33
     ],
-    "priority": "66"
+    "priority": "660"
   },
   {
     "id": 33,
     "slug": "plan-adaptation-climat",
     "title": "Plan d’adaptation au dérèglement climatique",
     "nameTag": "🥵 adaptation climat",
-    "shortDescription": "Adaptez la stratégie et les actions de votre entreprise pour faire face aux évolutions du climat.",
+    "shortDescription": "Adapter la stratégie et les actions de votre entreprise pour faire face aux évolutions du climat.",
     "image": "/images/projet/plan-adaptation-climat.webp",
     "longDescription": "Le plan d’adaptation au dérèglement climatique est un accompagnement qui vous permet d'évaluer la vulnérabilité climatique de votre entreprise face aux conséquences du changement climatique (canicule, sécheresse, inondations…), et de bâtir sa résilience. Ainsi, vous poursuivez votre activité en limitant les effets néfastes, et vous planifiez la réduction des émissions de gaz à effet de serre de votre entreprise.",
     "moreDescription": "- [**Stratégie d’adaptation au changement climatique**](https://agirpourlatransition.ademe.fr/entreprises/strategie-adaptation#summaryAnchor_2)**,** pourquoi est-il important d’anticiper les impacts du changement climatique ?\n- [**Changement climatique, il y a urgence à s'adapter**](https://archives.qqf.fr/infographie/90/changement-climatique-il-y-a-urgence-a-s-adapter) : une infographie *\"Qu'est-ce qu'on fait ?!\"* proposée par l'ADEME.\n- [**Ils l'ont fait :**](https://librairie.ademe.fr/changement-climatique-et-energie/6728-en-entreprise-comment-s-engager-dans-un-parcours-d-adaptation-au-changement-climatique-.html) une sélection de 30 témoignages d'entreprises françaises qui se sont lancées.\n- [**Comment prendre des décisions pour s'adapter au changement climatique ?** ](https://librairie.ademe.fr/ged/6327/entreprise_comment_prendre_des_decisions.pdf)Un recueil de fiches méthodes et études de cas.",
@@ -738,13 +771,15 @@
     "programs": [
       "act-pas-a-pas",
       "climadiag-expert",
-      "diagnostic-changement-climatique"
+      "diagnostic-changement-climatique",
+      "programme-breizh-fab",
+      "cedre-premier-pas"
     ],
     "linkedProjects": [
       1,
       32
     ],
-    "priority": "31"
+    "priority": "310"
   },
   {
     "id": 35,
@@ -765,22 +800,25 @@
       "eco-defis-des-artisans-et-des-commercants",
       "fonds-tourisme-durable",
       "imprim-vert",
+      "programme-breizh-fab",
       "programme-eve",
       "repar-acteurs",
-      "tremplin"
+      "tremplin",
+      "cedre-premier-pas",
+      "entreprises-engagees-nature"
     ],
     "linkedProjects": [
       27,
       31
     ],
-    "priority": "38"
+    "priority": "380"
   },
   {
     "id": 36,
     "slug": "ecoconception",
     "title": "Éco-conception d’un produit ou service",
     "nameTag": "🔁 écoconception",
-    "shortDescription": "Réduisez les impacts de votre produit ou service à toutes les étapes de son cycle de vie.",
+    "shortDescription": "Réduire les impacts de votre produit ou service à toutes les étapes de son cycle de vie.",
     "image": "/images/projet/ecoconception.webp",
     "longDescription": "La démarche d'écoconception (ou conception écologique) est une approche de développement des produits et services respectueuse de l'environnement.\n\nElle consiste à analyser l'ensemble du cycle de vie d'un produit ou d'un service pour identifier comment diminuer son impact environnemental : extraction des matières premières, fabrication, utilisation, rejet dans les milieux naturels en fin de vie, etc.\n\nUne approche d'écoconception est nécessaire pour se questionner sur la fin de vie de vos produits et réorienter judicieusement vos choix de conception. Cela peut passer par exemple par un choix de matières premières plus robustes pour allonger la durée de vie de vos produits, anticiper la réparation ou la revalorisation des matières.\n\nIl s'agit d'une démarche encouragée par la loi anti-gaspillage pour une économie circulaire (AGEC) pour permettre aux entreprises de faire évoluer leur modèle de production.",
     "moreDescription": "- [**Gagnez en performance avec l’écoconception**](https://agirpourlatransition.ademe.fr/entreprises/ecoconception), une fiche ressource proposée par l’ADEME.\n- [**Les lignes directrices à suivre pour la réalisation d’un diagnostic d’éco-conception**](https://librairie.ademe.fr/dechets-economie-circulaire/4169-lignes-directrices-diagnostic-ecoconception.html)**.**\n- [**Analyse du cycle de vie**](https://bigmedia.bpifrance.fr/nos-dossiers/analyse-du-cycle-de-vie-definition-objectifs-etapes-de-realisation) : définition, objectifs, étapes de réalisation.",
@@ -791,13 +829,16 @@
     "programs": [
       "diag-ecoconception",
       "etude-performance-produits",
-      "tremplin"
+      "programme-breizh-fab",
+      "tremplin",
+      "cedre-premier-pas",
+      "cedre-investissement"
     ],
     "linkedProjects": [
       3,
       22
     ],
-    "priority": "15"
+    "priority": "150"
   },
   {
     "id": 71,
@@ -816,13 +857,15 @@
       "fonds-tourisme-durable",
       "pret-action-climat",
       "programme-ecod-o",
-      "pret-vert"
+      "pret-vert",
+      "cedre-investissement",
+      "sites-touristiques-exemplaires"
     ],
     "linkedProjects": [
       20,
       72
     ],
-    "priority": "20"
+    "priority": "290"
   },
   {
     "id": 72,
@@ -830,7 +873,7 @@
     "title": "Économiseurs d’eau pour les sanitaires",
     "nameTag": "💧 économiseur d'eau",
     "shortDescription": "Des équipements ou rénovations de vos installations pour vous permettre de faire des économies d'eau.",
-    "image": "/images/projet/economisateurs-eau-sanitaires.webp",
+    "image": "/images/projet/economiseurs-eau-sanitaires.webp",
     "longDescription": "La mise en place d'équipements ou de travaux de rénovation de vos installations sanitaires peuvent vous permettre de réaliser des économies d'eau non négligeables. Vous pouvez opter par exemple pour :\n\n- des économiseurs d'eau ou de robinets mitigeurs à installer sur vos lavabos,\n- des chasses d’eau à double commande et de plaquettes à mettre dans le réservoir des toilettes,\n- des urinoirs avec écoulement déclenché en fonction de la présence ou d'urinoirs sans eau,\n- des toilettes sèches, qui ne requièrent aucune utilisation d'eau.\n- un équipement de suivi de vos consommations d'eau.\n\nEn complément de ces installations, pensez à sensibiliser vos équipes et vos clients aux bonnes pratiques d'économies d’eau !",
     "moreDescription": "- [**Cycle de l'eau : attention aux fuites**](https://multimedia.ademe.fr/infographies/infographie-eau-douce-ademe/), une infographie *\"Qu'est-ce qu'on fait ?!\"* proposée par l'ADEME.\n- [**Quels équipements permettent d'économiser l'eau au quotidien ?**](https://www.cieau.com/le-metier-de-leau/usages-consommation-conseils/quels-equipements-permettent-deconomiser-leau-au-quotidien/) Une fiche pratique proposée par le centre d'information sur l'eau",
     "themes": [
@@ -847,6 +890,225 @@
       20,
       71
     ],
-    "priority": "12"
+    "priority": "120"
+  },
+  {
+    "id": 137,
+    "slug": "seche-linge",
+    "title": "Sèche-linge basse consommation",
+    "nameTag": "🌬 sèche-linge",
+    "shortDescription": "Un sèche-linge professionnel de grande efficacité énergétique vous permet de réduire votre consommation d'énergie.",
+    "image": "/images/projet/seche-linge.webp",
+    "longDescription": "Un sèche-linge professionnel de grande efficacité énergétique est un sèche-linge dont l'énergie de séchage est inférieure à 0,3 kWh/kg de linge et dont le cycle de séchage ne dépasse pas 90 minutes. Cela concerne les sèche-linge à condensation et équipés d’une pompe à chaleur. Mettez au rebut vos anciens appareils à évacuation au profit d'un sèche-linge économe en énergie, et réduisez votre consommation électrique.",
+    "moreDescription": "- [Les critères de sélection d'un sèche-linge pro](https://www.guidetopten.fr/grand-public/selection-criteria/criteres-de-selection-seche-linge-professionnels), proposé par Guide Topten, un comparateur soutenu par l'ADEME.\n- [Une sélection des sèche-linge les plus performants](https://www.guidetopten.fr/grand-public/selection-criteria/criteres-de-selection-seche-linge-professionnels) proposé par Guide Topten, un comparateur soutenu par l'ADEME.",
+    "themes": [
+      "energy",
+      "building"
+    ],
+    "mainTheme": "energy",
+    "programs": [
+      "fonds-tourisme-durable",
+      "cedre-investissement"
+    ],
+    "linkedProjects": [],
+    "priority": "190"
+  },
+  {
+    "id": 138,
+    "slug": "restauration-durable",
+    "title": "Restauration durable",
+    "nameTag": "🍽 restauration",
+    "shortDescription": "Élaborer des menus préparés avec des produits sains, locaux et à faible impact écologique.",
+    "image": "/images/projet/alimentation-durable.webp",
+    "longDescription": "Équilibrer et diversifier les menus, ajouter des plats végétariens à la carte, favoriser les circuits d’approvisionnement courts ainsi que les produits de qualité, locaux et de saison... ces leviers d'actions vous permettent d’instaurer une restauration saine et durable attractive pour vos clients.",
+    "moreDescription": "- [**Restaurant Engagé : éco-responsabilité en restauration**](https://librairie.ademe.fr/7385-restaurant-engage-eco-responsabilite-en-restauration.html), un guide de l'ADEME.\n- [**Acteurs de la restauration : devenez un maillon engagé de l’alimentation durable**](https://agirpourlatransition.ademe.fr/entreprises/restauration-durable)",
+    "themes": [
+      "eco-design"
+    ],
+    "mainTheme": "eco-design",
+    "programs": [
+      "etude-alimentation-durable",
+      "etude-biodechets",
+      "etude-gaspillage-alimentaire",
+      "fonds-tourisme-durable",
+      "gestion-des-biodechets",
+      "cedre-investissement"
+    ],
+    "linkedProjects": [],
+    "priority": "240"
+  },
+  {
+    "id": 139,
+    "slug": "petite-refrigeration",
+    "title": "Frigo basse consommation",
+    "nameTag": "❄ frigo",
+    "shortDescription": "Des appareils de réfrigération de grand efficacité énergétique vous permettent de réduire votre consommation électrique.",
+    "image": "/images/projet/frigo.webp",
+    "longDescription": "Vitrines réfrigérées, petits frigos, armoires à boissons, comptoirs, congélateurs à glaces... : les meubles frigorifiques trop anciens sont source de gaspillage énergétique. Leur remplacement par des équipements neufs ou d'occasion de meilleur rendement énergétique peut réduire considérablement votre consommation et diminuer votre impact climatique.",
+    "moreDescription": "- [**Diagnostic économies d'énergie réfrigération dans l'industrie**](https://librairie.ademe.fr/produire-autrement/712-diagnostic-economies-d-energie-refrigeration-dans-l-industrie.html), un guide de l'ADEME.\n- [**CO2 ou NH3 : Quel système de froid choisir ?**](https://www.greentechjournal.fr/refrigeration-ecologique/#La_disponibilite_des_systemes_de_froid_ecologiques), par GreenTech Journal.\n- [**Frigo basse consommation : gardez votre facture d’électricité au frais,**](https://www.baisseleswatts.fr/actualites/equipement-energetique/refrigerateur-et-congelateur-optimisez-votre-consommation) un article de Baisse les watts.",
+    "themes": [
+      "energy",
+      "building"
+    ],
+    "mainTheme": "energy",
+    "programs": [
+      "fonds-tourisme-durable",
+      "cedre-investissement"
+    ],
+    "linkedProjects": [],
+    "priority": "210"
+  },
+  {
+    "id": 140,
+    "slug": "economies-d-eau-exterieur",
+    "title": "Économies d'eau en extérieur",
+    "nameTag": "🚿 arrosage",
+    "shortDescription": "Un système d'irrigation performant peut vous faire économiser l'eau.",
+    "image": "/images/projet/arrosage.webp",
+    "longDescription": "Terrasses, jardins et potagers sont gourmands en arrosage. Certains équipements limiteront votre consommation d'eau, comme par exemple :\n\n- un arrosage au goutte-à-goutte\n\n- un système de récupération d'eau de pluie\n\n- le paillage (qui limite l'évaporation)\n\n- la culture d’espèces peu gourmandes en eau et adaptées au climat local\n\n- le raccordement à un puits existant.",
+    "moreDescription": "- [**Un jardin au naturel**](https://agirpourlatransition.ademe.fr/particuliers/entreprises/maison/jardin-naturel), un guide de l'ADEME\n- [**Comment bien pailler au jardin**](https://librairie.ademe.fr/dechets-economie-circulaire/5486-comment-bien-pailler-au-jardin-.html), une fiche technique.",
+    "themes": [
+      "water"
+    ],
+    "mainTheme": "water",
+    "programs": [
+      "fonds-tourisme-durable",
+      "programme-ecod-o",
+      "cedre-investissement"
+    ],
+    "linkedProjects": [],
+    "priority": "120"
+  },
+  {
+    "id": 141,
+    "slug": "vegetalisation",
+    "title": "Végétalisation",
+    "nameTag": "🌿 végétalisation",
+    "shortDescription": "La végétalisation contribue à réduire les îlots de chaleur tout en améliorant la qualité de vie de vos équipes.",
+    "image": "/images/projet/vegetalisation.webp",
+    "longDescription": "La végétalisation est un recours efficace et économe en énergie pour limiter la hausse de la température de vos bâtiments en été. Ce rafraichissement s'explique par plusieurs raisons :\n\n- Les plantes libèrent de l'eau par le processus d'évapotranspiration, ce qui contribue à abaisser la température ambiante.\n- Les arbres et les grandes plantes fournissent de l'ombre, réduisant ainsi l'ensoleillement direct sur les sols et les bâtiments.\n- En remplaçant des surfaces comme le béton par de la végétation, on limite l'absorption de chaleur par ces matériaux qui retiennent la chaleur.\n- Les plantes filtrent les polluants de l'air et produisent de l'oxygène, ce qui contribue à créer un environnement plus sain et plus agréable.\n- Les espaces verts favorisent la biodiversité, ce qui peut contribuer à un meilleur équilibre des écosystèmes locaux, aidant à maintenir des températures agréables.\n\nLa végétalisation est une solution vertueuse qui est se présente comme un excellent moyen pour limiter l'usage de la climatisation et ainsi réduire votre consommation d'énergie. Elle peut être mise en place via des jardins partagés, des plans d’eau, des tapis de plantes grasses, des plantes grimpantes ou comestibles sur vos façades, des prairies végétales ou des potagers sur les toits de vos bâtiments.",
+    "moreDescription": "- [**Des exemples de projets de végétalisation inspirants**](https://plusfraichemaville.fr/projet) proposés par Plus fraiche ma ville",
+    "themes": [
+      "biodiversite"
+    ],
+    "mainTheme": "biodiversite",
+    "programs": [
+      "fonds-tourisme-durable",
+      "nature-ta-ville"
+    ],
+    "linkedProjects": [],
+    "priority": "230"
+  },
+  {
+    "id": 142,
+    "slug": "ouvrants-ombrages",
+    "title": "Ouvrants et ombrages",
+    "nameTag": "⛱ ombrages",
+    "shortDescription": "L'installation d'ouvrants et de structures d'ombrages permet de limiter le rayonnement solaire direct, et de conserver la fraîcheur en été.",
+    "image": "/images/projet/ombrage.webp",
+    "longDescription": "Volets, stores, films solaires, rideaux occultant, pergolas, voiles d'ombrages... ces dispositifs améliorent le confort thermique de vos bâtiments, que ce soit pour vos collaborateurs ou pour votre clientèle. Ainsi, vous conservez la fraîcheur tout en limitant l'usage de la climatisation. Du même coup, vous allégez votre facture et vous réduisez votre empreinte carbone.",
+    "moreDescription": "- [**Les différentes structures d'ombrage**](https://plusfraichemaville.fr/fiche-solution/structure-ombrage), les matériaux et les coûts, par Plus fraîche ma ville.\n- [**Les structures d'ombrage de façade**](https://plusfraichemaville.fr/fiche-solution/facade-structure-ombrage) (volets, stores, auvents...), par Plus fraîche ma ville.",
+    "themes": [
+      "building"
+    ],
+    "mainTheme": "building",
+    "programs": [
+      "fonds-tourisme-durable",
+      "cedre-investissement"
+    ],
+    "linkedProjects": [],
+    "priority": "130"
+  },
+  {
+    "id": 143,
+    "slug": "abris-velos",
+    "title": "Abris à vélos",
+    "nameTag": "🚲 abris vélos",
+    "shortDescription": "Il permet de conserver les vélos de vos collaborateurs et de vos clients à l'abri des intempéries.",
+    "image": "/images/projet/abris-velos.webp",
+    "longDescription": "La construction d'un abri à vélo muni d'emplacements sécurisés encourage les mobilités vertes de vos collaborateurs, et favorise l'accueil des cyclo-touristes.\n\nS'il est équipé de panneaux photovoltaïques, l'abri à vélo peut vous permettre de produire l'électricité nécessaire à la recharge des vélos à assistance électrique.",
+    "moreDescription": "- [**Mon entreprise à l'heure des mobilités durables**](https://www.ecologie.gouv.fr/sites/default/files/documents/22061-3_Mobilite%20durable%20entrepriseA4_web.pdf)**,** les obligations et dispositifs de soutien dans le secteur privé.",
+    "themes": [
+      "mobility"
+    ],
+    "mainTheme": "mobility",
+    "programs": [
+      "fonds-tourisme-durable",
+      "investissement-velotourisme",
+      "sites-touristiques-exemplaires"
+    ],
+    "linkedProjects": [],
+    "priority": "250"
+  },
+  {
+    "id": 144,
+    "slug": "biodiversite",
+    "title": "Biodiversité",
+    "nameTag": "🌳 biodiversité",
+    "shortDescription": "Comprendre et minimiser les impacts de l'activité de votre entreprise sur la faune et la flore.",
+    "image": "/images/projet/biodiversite.webp",
+    "longDescription": "La Stratégie nationale biodiversité 2030 promeut les initiatives pour faire progresser la prise en compte de la biodiversité dans les stratégies des entreprises. Il s'agit à la fois de minimiser l'impact des entreprises sur les écosystèmes et de renforcer la résilience de leur activité au changement climatique. \\\nLa préservation ou la restauration d'espèces en danger, de faune et de flore, réduire les pollutions, ramener de la nature en ville... sont autant de propositions qui visent à renforcer les liens avec les écosystèmes.",
+    "moreDescription": "- [**Entreprises engagées pour la nature**](https://biodiversite.gouv.fr/sites/default/files/2024-03/OFB_GUIDE_EEN_2023.pdf), un guide gouvernemental.\n- [**9 mesures de la Stratégie nationale biodiversité 2030**](https://biodiversite.gouv.fr/les-mesures-de-la-snb?field_target%5B196%5D=196&op=) pour les entreprises.",
+    "themes": [
+      "biodiversite"
+    ],
+    "mainTheme": "biodiversite",
+    "programs": [
+      "fonds-tourisme-durable",
+      "sobriete-et-resilience-des-territoires",
+      "certification-agriculture-biologique",
+      "cedre-premier-pas",
+      "entreprises-engagees-nature",
+      "charte-zero-dechet-plastique",
+      "mecenaturel"
+    ],
+    "linkedProjects": [],
+    "priority": "200"
+  },
+  {
+    "id": 145,
+    "slug": "composteur",
+    "title": "Composteur",
+    "nameTag": "🥬 composteur",
+    "shortDescription": "Le composteur transforme vos déchets verts en un engrais naturel.",
+    "image": "/images/projet/composteur.webp",
+    "longDescription": "Depuis le 1er janvier 2024, il est obligatoire pour tous, particuliers entreprises, de trier ses biodéchets, quel que soient les volumes produits.\n\nLes entreprises et les restaurateurs peuvent opter pour une solution de compostage sur site (bokashi, lombricomposteur, tambour rotatif...) pour transformer les biodéchets en compost utilisable localement. L'objectif de cette mesure est de lutter contre le gaspillage alimentaire et de limiter les impacts environnementaux liés au traitement de nos ordures.\n\nUne fois triés et compostés, les biodéchets peuvent être utilisés en engrais organiques pour une agriculture respectueuse de l'environnement.",
+    "moreDescription": "- [**Comment réussir son compost**](https://librairie.ademe.fr/7447-comment-reussir-son-compost-.html), un guide de l'ADEME.\n- [**Trier et valoriser les déchets alimentaires : comment et à quel coût ?** ](https://librairie.ademe.fr/dechets-economie-circulaire/5635-dechets-des-professionnels-etablissements-publics-guide.html)Un guide destiné aux producteurs de déchets alimentaires.",
+    "themes": [
+      "waste"
+    ],
+    "mainTheme": "waste",
+    "programs": [
+      "fonds-tourisme-durable",
+      "cedre-investissement"
+    ],
+    "linkedProjects": [],
+    "priority": "130"
+  },
+  {
+    "id": 146,
+    "slug": "maitrise-besoins-chauffage",
+    "title": "Maîtrise des besoins de chauffage",
+    "nameTag": "🌡️ thermostat",
+    "shortDescription": "Un dispositif de régulation thermique peut permettre d'économiser jusqu'à 30 % d'énergie en chauffage.",
+    "image": "/images/projet/thermostat.webp",
+    "longDescription": "D’ici à 2027, tous les bâtiments résidentiels et tertiaires devront équiper les systèmes de chauffage et de refroidissement de système de régulation thermique. Cette mesure vise à maintenir la consommation d'énergie à un niveau raisonnable. Parmi les dispositifs de régulation thermique, vous pouvez opter par exemple pour :\n\n- des robinets thermostatiques de radiateur\n- un thermostat d’ambiance\n- un détecteur d'ouverture de fenêtre permettant d’interrompre le chauffage\n- un éclairage ou dispositif de détection de présence\n- un programmateur horaire\n- un système de gestion par chambre des consignes des radiateurs, pour les établissements de tourisme.\n\nEn complément de ces installations, les consignes de températures pour les établissements hôteliers préconisent 20°C à 22°C pour une chambre occupée ; 16°C à 18°C pour chambre inoccupée pendant une courte période.",
+    "moreDescription": "- [**Pourquoi passer au thermostat programmable ?**](https://librairie.ademe.fr/urbanisme/5792-pourquoi-passer-au-thermostat-programmable-.html) Une infographie de l'ADEME.\n- [**Énergie, chauffage et refroidissement des bâtiments : améliorez votre efficacité énergétique**](https://agirpourlatransition.ademe.fr/entreprises/energie-chauffage)**,** un état des lieux et des leviers d'action à destination des TPE et PME.",
+    "themes": [
+      "energy",
+      "building"
+    ],
+    "mainTheme": "energy",
+    "programs": [
+      "baisse-les-watts",
+      "booster-eco-energie-tertiaire",
+      "fonds-tourisme-durable",
+      "diag-eco-flux",
+      "performa-environnement",
+      "tpe-gagnantes-sur-tous-les-couts",
+      "cedre-investissement"
+    ],
+    "linkedProjects": [],
+    "priority": "130"
   }
 ]

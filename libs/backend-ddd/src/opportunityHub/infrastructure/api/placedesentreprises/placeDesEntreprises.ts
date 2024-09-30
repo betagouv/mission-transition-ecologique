@@ -9,10 +9,11 @@ import OpportunityHubAbstract from '../opportunityHubAbstract'
 import { ProgramService } from '../../../../program/application/programService'
 import OpportunityService from '../../../../opportunity/application/opportunityService'
 import { Objective } from '../../../../common/types'
-import { Operators, ProgramType } from '@tee/data'
+import { Operators, ProgramType, ThemeId } from '@tee/data'
 import { Opportunity, OpportunityType } from '@tee/common'
 import { Project } from '@tee/data'
 import Monitor from '../../../../common/domain/monitoring/monitor'
+import { ProjectService } from '../../../../project/application/projectService'
 
 export class PlaceDesEntreprises extends OpportunityHubAbstract {
   protected readonly _baseUrl = Config.PDE_API_BASEURL
@@ -95,16 +96,20 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
       return false
     }
 
-    let tranmismissiblePrograms = 0
+    let transmissiblePrograms = 0
     for (const prevOpportunity of previousDailyOpportunities.value) {
       const prevProgram = new ProgramService().getById(prevOpportunity.id)
       if (prevProgram && this.support(prevProgram)) {
-        tranmismissiblePrograms += 1
+        transmissiblePrograms += 1
+      }
+      if (new ProjectService().getBySlug(prevOpportunity.id)) {
+        transmissiblePrograms += 1
       }
     }
+
     // The current opportunity being already created in brevo when we check the hub transmission, we count the current program.
-    // The question is do we have MORE than one tranmissible program which indicates older tranmissions.
-    return tranmismissiblePrograms > 1
+    // The question is do we have MORE than one transmissible opportunity which indicates older tranmissions.
+    return transmissiblePrograms > 1
   }
 
   private _makeHeaders(token: string): RawAxiosRequestHeaders {
@@ -114,7 +119,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     }
   }
 
-  private _objectiveToSubjectIdMapping: { [key in Objective]: Subject } = {
+  private _objectiveToPdeSubjectMapping: { [key in Objective]: Subject } = {
     [Objective.EnvironmentalImpact]: Subject.DemarcheEcologie,
     [Objective.EnergyPerformance]: Subject.Energie,
     [Objective.WaterConsumption]: Subject.Eau,
@@ -125,6 +130,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     [Objective.TrainOrRecruit]: Subject.BilanRSE,
     [Objective.MakeSavings]: Subject.DemarcheEcologie,
     [Objective.DurablyInvest]: Subject.DemarcheEcologie,
+    [Objective.Biodiversity]: Subject.DemarcheEcologie,
     [Objective.UnknownYet]: Subject.DemarcheEcologie
   }
 
@@ -132,7 +138,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     const defaultSubject = Subject.DemarcheEcologie
     if (programObjectives.length === 1) {
       const objective = programObjectives[0]
-      const subjectKey = this._objectiveToSubjectIdMapping[objective]
+      const subjectKey = this._objectiveToPdeSubjectMapping[objective]
       return subjectToIdMapping[subjectKey]
     } else {
       return subjectToIdMapping[defaultSubject]
@@ -155,11 +161,24 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
       }
     })
   }
+
+  private _themeToPdeSubjectMapping: { [key in ThemeId]: Subject } = {
+    [ThemeId.Energy]: Subject.Energie,
+    [ThemeId.Water]: Subject.Eau,
+    [ThemeId.Waste]: Subject.Dechets,
+    [ThemeId.Mobility]: Subject.TransportMobilite,
+    [ThemeId.RH]: Subject.BilanRSE,
+    [ThemeId.Environmental]: Subject.DemarcheEcologie,
+    [ThemeId.Building]: Subject.DemarcheEcologie,
+    [ThemeId.Biodiversity]: Subject.DemarcheEcologie,
+    [ThemeId.EcoDesign]: Subject.DemarcheEcologie
+  }
+
   private _createProjectRequestBody(opportunity: Opportunity, project: Project): Result<CreateSolicitationApiBody, Error> {
     return Result.ok({
       solicitation: {
         landing_id: this._pdeLanding,
-        landing_subject_id: subjectToIdMapping[Subject.DemarcheEcologie],
+        landing_subject_id: subjectToIdMapping[this._themeToPdeSubjectMapping[project.mainTheme]],
         description: 'Demande via le projet ' + project.title + '\n\n' + opportunity.message,
         full_name: opportunity.firstName + ' ' + opportunity.lastName,
         email: opportunity.email,

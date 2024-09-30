@@ -1,20 +1,14 @@
 <template>
   <div class="fr-col-12">
     <div class="fr-grid-row fr-grid-row--center fr-mt-2w">
-      <div class="fr-container">
+      <div class="fr-container fr-px-0 fr-px-md-3w">
         <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-mt-3v">
-          <ThemeFilter :objective="objective as Objective" />
+          <ThemeFilter :theme="theme as ThemeId" />
         </div>
-      </div>
-    </div>
-    <div
-      v-if="hasThemeCard"
-      class="fr-grid-row fr-grid-row--center"
-    >
-      <div class="fr-container fr-p-0 fr-mt-1v">
         <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2">
           <ThemeHeaderCard
-            :objective="objective as Objective"
+            v-if="hasThemeCard"
+            :theme="theme as ThemeId"
             radius-corner="tr"
             radius-size="2-5v"
           />
@@ -24,25 +18,24 @@
   </div>
 </template>
 <script setup lang="ts">
-import { Objective } from '@/types'
+import { ThemeId } from '@/types'
 import { computed } from 'vue'
 import UsedTrack from '@/utils/track/usedTrack'
-import { Theme } from '@/utils/theme'
 import { useProgramStore } from '@/stores/program'
 
 const programStore = useProgramStore()
 
 const hasThemeCard = computed(() => {
-  return programStore.hasObjectiveTypeSelected() || (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityObjective())
+  return programStore.hasThemeTypeSelected() || (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityTheme())
 })
 
-const objective = computed(() => {
-  if (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityObjective()) {
-    return Theme.getObjectiveByValue(UsedTrack.getPriorityObjective())
+const theme = computed(() => {
+  if (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityTheme()) {
+    return UsedTrack.getPriorityTheme()
   }
 
-  if (programStore.hasObjectiveTypeSelected()) {
-    return programStore.programFilters.objectiveTypeSelected
+  if (programStore.hasThemeTypeSelected()) {
+    return programStore.programFilters.themeTypeSelected
   }
 
   return ''

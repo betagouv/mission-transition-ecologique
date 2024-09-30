@@ -5,6 +5,7 @@
     :img-src="project.image"
     :alt-img="`image / ${project.title}`"
     :no-arrow="true"
+    :link="getRouteToProjectDetail(project)"
     class="playwright-project-target"
   >
     <template
@@ -30,7 +31,9 @@
 
 <script setup lang="ts">
 import { DsfrCard } from '@gouvminint/vue-dsfr'
-import { Project } from '@/types'
+import { Project, RouteName } from '@/types'
+import type { RouteLocationRaw } from 'vue-router'
+import { useNavigationStore } from '@/stores/navigation'
 
 interface Props {
   project: Project
@@ -45,4 +48,21 @@ withDefaults(defineProps<Props>(), {
 })
 
 const priorityTag: string = 'A FAIRE EN PRIORITÉ'
+
+const navigationStore = useNavigationStore()
+
+const isCatalog = navigationStore.isCatalogProjects()
+
+const getRouteToProjectDetail = (project: Project): RouteLocationRaw => {
+  return {
+    name: isCatalog ? RouteName.CatalogProjectDetail : RouteName.ProjectResultDetail,
+    params: { projectSlug: project.slug },
+    query: isCatalog ? undefined : navigationStore.query
+  }
+}
 </script>
+<style lang="scss" scoped>
+:deep(.fr-card__title a) {
+  color: black;
+}
+</style>

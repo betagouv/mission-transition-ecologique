@@ -43,6 +43,7 @@ export const frDict = {
     results: 'résultats',
     result: 'résultat',
     backToResults: 'Retour aux résultats',
+    back: 'Retour',
     // showForm: "Candidatez pour le dispositif {title}",
     knowMore: 'En savoir plus',
     showForm: 'En savoir plus sur {title}',
@@ -95,6 +96,7 @@ export const frDict = {
     myWastes: '🗑 Déchets',
     myEnergy: '⚡️ Energie',
     myStrategy: '🎲️ Stratégie',
+    myProject: '🎯 Mon projet',
     results: '✅ Résultats'
   },
   articles: {
