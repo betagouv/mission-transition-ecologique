@@ -93,7 +93,7 @@ import { useNavigationStore } from '@/stores/navigation'
 const navigation = useNavigationStore()
 interface Props {
   dataId: string
-  dataSlug: string
+  dataSlug?: string
   formType: OpportunityType
   form: FormDataType
   hint: string
@@ -135,7 +135,7 @@ const isFieldValid = (field: DefaultFieldFormType): boolean => {
 const saveForm = async () => {
   try {
     isLoading.value = true
-    const opportunity = new OpportunityApi(localForm.value, props.dataId, props.dataSlug, props.formType)
+    const opportunity = new OpportunityApi(localForm.value, props.dataId, props.dataSlug || props.dataId, props.formType)
     requestResponse.value = await opportunity.fetch()
 
     // analytics / send event
