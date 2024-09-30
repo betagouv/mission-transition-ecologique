@@ -1,8 +1,8 @@
-import { TrackComponent, TrackId, BuildingProperty, Track, YesNo, ThemeId } from '@/types'
+import { TrackComponent, TrackId, BuildingProperty, Track, YesNo, ThemeId, TrackCategory } from '@/types'
 
 export const buildingProperty: Track = {
   id: TrackId.BuildingProperty,
-  category: 'myBuildings',
+  category: TrackCategory.MyBuildings,
   title: { fr: 'Mon statut' },
   label: { fr: 'Parlons de vos locaux. Vous êtes :' },
   theme: ThemeId.Building,
