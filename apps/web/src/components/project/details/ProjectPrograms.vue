@@ -70,11 +70,18 @@
       </div>
       <div
         id="project-contact"
-        class="fr-tee-form-block fr-p-4v"
+        ref="TeeProjectFormContainer"
+        class="fr-bg--blue-light fr-grid-row fr-grid-row--center fr-p-4v"
       >
-        <ProjectForm
+        <TeeForm
           v-if="project"
-          :project="project"
+          :form-container-ref="TeeProjectFormContainer"
+          :form-type="OpportunityType.Project"
+          :form="Opportunity.getProjectFormFields(project)"
+          :data-id="project.id.toString()"
+          :data-slug="project.slug"
+          :hint="Translation.t('project.form.hint')"
+          :error-email-subject="Translation.t('project.form.errorEmail.subject', { titre: props.project.title })"
         />
       </div>
     </template>
@@ -83,7 +90,7 @@
 <script setup lang="ts">
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { useProgramStore } from '@/stores/program'
-import { BorderPosition, ProgramAidType, type ProgramData, Project, QuestionnaireRoute, TrackId } from '@/types'
+import { BorderPosition, ProgramAidType, type ProgramData, Project, QuestionnaireRoute, TrackId, OpportunityType } from '@/types'
 import Contact from '@/utils/contact'
 import { RouteName } from '@/types/routeType'
 import { type RouteLocationRaw } from 'vue-router'
