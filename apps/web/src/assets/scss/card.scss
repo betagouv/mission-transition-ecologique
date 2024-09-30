@@ -11,22 +11,7 @@
   :hover {
     cursor: pointer;
   }
-  &.theme-card {
-    height: 100%;
-    .fr-card__body {
-      height: 75%;
-      .fr-card__title {
-        height: 80px;
 
-        @media (width >= 0) and (width <= 575px) {
-          height: auto;
-        }
-      } 
-    }
-    .fr-card__header {
-      height: 35%;
-    }  
-  }  
   &__header {
     @each $color, $properties in setting.$colors {
       &--#{$color} {
@@ -161,5 +146,25 @@
         }
       }
     }
+  }
+
+  &.theme-card {
+    height: 100%;
+
+    .fr-card__body {
+      height: 75%;
+
+      .fr-card__title {
+        height: 80px;
+
+        @media (width >= 0) and (width <= 575px) {
+          height: auto;
+        }
+      } 
+    }
+
+    .fr-card__header {
+      height: 35%;
+    }  
   }
 }
