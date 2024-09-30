@@ -6,29 +6,11 @@ export class MetaSeo {
     'Service public pour les entreprises : Accédez simplement aux aides, accompagnements et financements pour réduire votre impact environnemental.'
 
   static readonly get = (title?: string, description?: string, image?: string) => {
-    return {
-      title: this._title(title),
-      description: this._description(description),
-      ogTitle: this._title(title),
-      ogDescription: this._description(description),
-      ogImage: this._image(image),
-      twitterTitle: this._title(title),
-      twitterDescription: this._description(description),
-      twitterImage: this._image(image)
-    }
+    return this._buildMeta(this._title(title), this._image(image), this._description(description))
   }
 
   static readonly default = () => {
-    return {
-      title: this._defaultTitle,
-      description: this._defaultDescription,
-      ogTitle: this._defaultTitle,
-      ogDescription: this._defaultDescription,
-      ogImage: this._image(),
-      twitterTitle: this._defaultTitle,
-      twitterDescription: this._defaultDescription,
-      twitterImage: this._image()
-    }
+    return this._buildMeta(this._title(this._defaultTitle), this._image(), this._defaultDescription)
   }
 
   private static readonly _title = (title?: string) => {
@@ -42,5 +24,18 @@ export class MetaSeo {
   private static readonly _image = (image?: string) => {
     image = image?.charAt(0) === '/' ? image : `/${image}`
     return location.origin + (image ?? this._defaultImage)
+  }
+
+  private static _buildMeta(title: string, image: string, description?: string) {
+    return {
+      title: title,
+      description: description,
+      ogTitle: title,
+      ogDescription: description,
+      ogImage: image,
+      twitterTitle: title,
+      twitterDescription: description,
+      twitterImage: image
+    }
   }
 }
