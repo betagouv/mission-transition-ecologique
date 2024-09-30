@@ -1432,6 +1432,9 @@
 .fr-card__header .fr-card__img--contain img {
   object-fit: contain;
 }
+.fr-card.fr-enlarge-link .fr-card__content {
+  padding-bottom: 2rem !important;
+}
 .fr-card-banner {
   flex-direction: row;
 }

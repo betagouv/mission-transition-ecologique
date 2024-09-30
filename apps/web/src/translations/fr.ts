@@ -97,6 +97,7 @@ export const frDict = {
     myWastes: '🗑 Déchets',
     myEnergy: '⚡️ Energie',
     myStrategy: '🎲️ Stratégie',
+    myProject: '🎯 Mon projet',
     results: '✅ Résultats'
   },
   articles: {

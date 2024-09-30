@@ -1,0 +1,87 @@
+titre: Charte "zéro déchet plastique"
+promesse: Engagez-vous dans une démarche de diminution des pollutions plastiques
+description: "Devenez signataire de la charte « zéro déchet plastique » et engagez votre entreprise sur un plan d'action de réduction de l’usage des plastiques à usage unique, sur l'optimisation de la gestion et du tri des déchets plastiques et l'adoption de solutions de réemploi. En adhérant à la charte \"zéro déchet plastique\" de votre région, vous intégrez\_la communauté des signataires animée par l’Agence Régionale pour la Biodiversité et l’Environnement (ARBE) et bénéficiez de ressources et retours d'expériences de autres signataires pour vous aider dans la mise en œuvre de vos actions."
+illustration: images/TEE_ampoule.png
+opérateur de contact: Agence Régionale Biodiversité et Environnement
+url: >-
+  https://www.arbe-regionsud.org/1375-2-chartes-zero-dechet-plastique.html#anchor147544
+nature de l'aide: étude
+coût de l'accompagnement: Gratuit
+durée de l'accompagnement: Plusieurs années
+activable en autonomie: oui
+objectifs:
+  - description: >-
+      Prenez connaissance et signez la charte « zéro déchet plastique » pour
+      engager votre entreprise dans cette démarche. Une fois signée,
+      transmettez-la à l'ARBE par mail à l'adresse :
+      c.poulin@arbe-regionsud.org.
+    liens:
+      - lien: >-
+          https://www.arbe-regionsud.org/Block/download/?id=236629&filename=Entreprises-et-Associations-Demarche-ecoexemplaire-Charte-052024.pdf
+        texte: Télécharger la charte
+  - description: >-
+      Mettez en place un groupe de travail interne "zéro déchet plastique" dans
+      votre entreprise pour assurer l'élaboration et le suivi d'un plan
+      d'action, et participer à la dynamique de la communauté.
+  - description: >-
+      Complétez votre fiche "plan d'action" et transmettez-la par mail à l’ARBE
+      dans les 3 mois suivants la signature de la charte.
+    liens:
+      - lien: >-
+          https://www.arbe-regionsud.org/Block/download/?id=236624&filename=Entreprises-et-Associations-Demarche-eco-exemplaire-Plan-dActions.docx
+        texte: Téléchargez le plan d'action à compléter
+  - description: L'ARBE se charge ensuite d'analyser votre candidature.
+  - description: >-
+      Deux ans après la signature de la Charte, évaluez les résultats de votre
+      plan d'action. Le bilan de cette évaluation nourrira une analyse globale
+      des actions mises en œuvre par les signataires en région, et la mise en
+      commun d'initiatives inspirantes.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Provence-Alpes-Côte d'Azur
+  secteur d'activité:
+    - Tous secteurs d'activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est la gestion des déchets
+      - questionnaire . objectif prioritaire . est préserver la biodiversité
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Provence-Alpes-Côte d'Azur

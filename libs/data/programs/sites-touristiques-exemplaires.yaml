@@ -1,0 +1,127 @@
+titre: Sites touristiques exemplaires
+promesse: Financez vos aménagements d'accueil du public sur votre site touristique
+description: >-
+  La région Provence-Alpes-Côte d’Azur possède de nombreux sites naturels,
+  culturels,
+
+  historiques et patrimoniaux exceptionnels qui concourent à l’attractivité de
+  la région.
+
+  Ces sites nécessitent souvent une amélioration de leur offre globale en termes
+
+  d’aménagements et de services, pour permettre aux visiteurs de profiter des
+  services offerts
+
+  sur place ou dans les environs immédiats, qu’il s’agisse d’accueil, de
+  sentiers aménagés, de
+
+  prestations d’accompagnement, etc. 
+
+  La Région Sud souhaite soutenir financièrement les investissements qui visent
+  à améliorer l'accueil du public sur ses sites touristiques dans le respect de
+  la préservation des patrimoines naturels régionaux.
+description longue: >-
+  Vous devrez présenter une réflexion globale incluant, lorsque cela s’avère
+  pertinent, des actions de promotion, de sensibilisation à la préservation des
+  territoires, voire des offres alternatives vers d’autres sites
+  complémentaires.
+
+
+  Dépenses éligibles :
+
+  • signalétique et pupitres d’interprétation ;
+
+  • cheminements, points d’entrée et d’accueil, appontements, aires paysagères
+  de stationnement, scénarisation de l’information, points d’eau, toilettes,
+  location de vélo, gardiennage ;
+
+  • accès aux personnes à mobilité réduite ;
+
+  • bornes de rechargement pour véhicules et vélos électriques ;
+
+  • schémas d’aménagement ;
+
+  • canalisation de la fréquentation ;
+
+  • achat et pose d’éco-compteurs ;
+
+  • outils d’interprétation par la réalité virtuelle et augmentée au cas par
+  cas.
+
+
+
+  Sont exclus : 
+
+  • les parkings (seul l’aménagement paysager est éligible) ;
+
+  • les frais de fonctionnement (frais de personnel, actions de communication,
+  frais occasionnés pour l’obtention de labels, etc.) ;
+
+  • les études relatives à la capacité de charge d’un site ;
+
+  • les schémas d’accueil et de visite ;
+
+  • les outils de réservation de navettes.
+
+
+  Les projets devront répondre aux priorités du SRADDET et du plan climat
+  régional
+
+  notamment pour ce qui concerne les bâtiments et les équipements (performance
+
+  énergétique, confort d’été, utilisation d’éco-matériaux) ainsi que
+  l’aménagement des
+
+  espaces (végétalisation, gestion des eaux pluviales).
+illustration: images/TEE_ampoule.png
+opérateur de contact: Région Sud PACA
+url: https://www.maregionsud.fr/vos-aides/detail/sites-touristiques-exemplaires
+nature de l'aide: financement
+montant du financement: Jusqu'à 40% des dépenses éligibles, dans un maximum de 200 000 €
+objectifs:
+  - description: >-
+      Prenez contact avec un conseiller afin de vérifier l'éligibilité de votre
+      projet.
+  - description: >-
+      Créez ou connectez-vous à votre compte Région Sud afin de déposer votre
+      dossier de candidature. A ce stade, l'opération pour laquelle vous
+      sollicitez une aide financière ne doit pas avoir commencé.
+    liens:
+      - lien: >-
+          https://sudconnect.maregionsud.fr/auth/realms/citoyen/protocol/openid-connect/auth?client_id=subventions-portail&redirect_uri=https%3A%2F%2Fsubventionsenligne.maregionsud.fr%2F&response_type=code&scope=openid&code_challenge=mZ_wKdTHJUqS-4fa5mWSC3_GbLZGSwPsyGKPh3IpvR0&code_challenge_method=S256&state=OpenIdConnect.AuthenticationProperties%3DfxXfmc6seuHFH3cV_Q5h91oDnvUlN-eTLB3HSYdoxp08UQ7d_8H_wWzStCKWiANJsw_jZsVn3SdLHPy2ODz-EQRSr75ZTiX-fkQaOUtQ9aXYk84pHiJmos8tKRNH-Nl-Ev7tcyyywQEJw8OwTeqZMqM_9HE6qmJhA3eFc2CIcrDJGvmNetWs2jz_kgUTTb8NpZ9wS9mHR1qAK_8Mlo2wFjqxnWmH_Zewk9qwulmneGu4fUT55NOn1OwrgEm1o1a7v9kPxMQvjKZG5mIlQoAlTADmVnaUJmYknsFVi2W_Z_2y9j2Wj_2FXS5J9-H9uY7rNYdyE5_hZemR8JMxWKgIjg&response_mode=form_post&nonce=638580254166862760.MWE3YzM3OWItYWM0Zi00ZjVmLWE2ZTAtZThhOTExNWU0MDZmOThiZTc2NDEtYzI1My00YTcxLWJkODgtM2RlZmJhZjFjOWEy&x-client-SKU=ID_NET472&x-client-ver=7.3.1.0
+        texte: Déposer un dossier
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Non éligible aux micro-entreprises
+  secteur géographique:
+    - Provence-Alpes-Côte d'Azur
+  secteur d'activité:
+    - Tous secteurs d'activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - >-
+      être gestionnaire d'un grand site touristique emblématique ou d'un site
+      "alternatif" de la région.
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est R
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est rénover mon bâtiment
+      - questionnaire . objectif prioritaire . est la mobilité durable
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Provence-Alpes-Côte d'Azur

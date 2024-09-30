@@ -1,9 +1,8 @@
-import type { Track } from '@/types'
-import { ThemeId, TrackComponent, TrackId } from '@/types'
+import { ThemeId, TrackComponent, TrackId, TrackCategory, Track } from '@/types'
 
 export const goals: Track = {
   id: TrackId.Goals,
-  category: 'myEntreprise',
+  category: TrackCategory.MyProject,
   title: { fr: 'Mes objectifs' },
   label: { fr: 'Choisissez la thématique de votre projet :' },
   interface: {
@@ -84,6 +83,15 @@ export const goals: Track = {
       questionnaireData: { priority_objective: ThemeId.Environmental },
       title: { fr: 'Impact environnemental' },
       label: { fr: '🌱 Mesurer mon impact environnemental et le réduire' },
+      next: {
+        default: TrackId.Results
+      }
+    },
+    {
+      value: ThemeId.Biodiversity,
+      questionnaireData: { priority_objective: ThemeId.Biodiversity },
+      title: { fr: 'Biodiversité' },
+      label: { fr: 'Préserver la biodiversité' },
       next: {
         default: TrackId.Results
       }
