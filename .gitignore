@@ -66,6 +66,7 @@ dispositifs*.xlsx
 
 # Global
 **/generated/*
+!**/generated/dataset_tests.json
 !generated/index.ts
 
 # local cache
