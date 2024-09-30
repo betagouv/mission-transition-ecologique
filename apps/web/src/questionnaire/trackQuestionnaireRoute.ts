@@ -1,10 +1,10 @@
-import type { Track } from '@/types'
+import { Track, TrackCategory } from '@/types'
 import { TrackComponent, TrackId } from '@/types'
 import { QuestionnaireRoute } from '@tee/common'
 
 export const questionnaireRoute: Track = {
   id: TrackId.QuestionnaireRoute,
-  category: 'ourHelp',
+  category: TrackCategory.OurHelp,
   title: { fr: 'Par où commencer ?' },
   label: { fr: 'Comment pouvons-nous vous aider ?' },
   callout: {

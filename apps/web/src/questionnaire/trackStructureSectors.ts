@@ -1,10 +1,10 @@
-import { Sector, TrackComponent, TrackId } from '@/types'
+import { Sector, TrackCategory, TrackComponent, TrackId } from '@/types'
 import type { Track } from '@/types'
 
 export const sectors: Track = {
   id: TrackId.Sectors,
   help: 'https://www.insee.fr/fr/metadonnees/nafr2',
-  category: 'myEntreprise',
+  category: TrackCategory.MyEntreprise,
   title: { fr: 'Mon activité' },
   label: { fr: 'Quelle est votre activité ?' },
   interface: {
