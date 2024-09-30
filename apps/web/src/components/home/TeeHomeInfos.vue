@@ -60,7 +60,7 @@
           icon="ri-arrow-right-line"
           icon-right
           class="fr-text--bold fr-btn--tertiary-no-outline"
-          @click="updateTheme"
+          @click="launchQuestionnaire"
         />
       </div>
     </div>
@@ -137,7 +137,7 @@ const content = [
 ]
 const router = useRouter()
 
-const updateTheme = async () => {
+const launchQuestionnaire = async () => {
   usedTrackStore.resetUsedTracks()
   await usedTrackStore.updateByTrackIdAndValue(TrackId.QuestionnaireRoute, QuestionnaireRoute.SpecificGoal)
   await router.push(navigationStore.routeByTrackId(TrackId.Siret))
