@@ -17,7 +17,7 @@ export class Logger {
     const sortedLogs = this._sortLogs()
 
     let markdownContent = `| Niveau de l'erreur | ${this._type} concerné | Lien Baserow | Message | Données |\n`
-    markdownContent += '| --- | --- | --- |\n'
+    markdownContent += '| --- | --- | --- | --- | --- |\n'
 
     sortedLogs.forEach((log) => {
       const baserowLink =
