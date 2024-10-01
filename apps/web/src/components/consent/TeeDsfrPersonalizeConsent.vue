@@ -26,7 +26,7 @@
               </h1>
               <div class="fr-consent-manager">
                 <div
-                  v-for="cookie in Object.values(cookies)"
+                  v-for="cookie in Object.values(cookies || {})"
                   :key="cookie.value"
                   class="fr-consent-service"
                 >
@@ -54,11 +54,10 @@
   </dialog>
 </template>
 <script lang="ts" setup>
-import { useNavigationStore } from '@/stores/navigation'
-import { type Cookies, type CookieValue } from '@/types/cookies'
+import { type CookieValue } from '@/types/cookies'
 import Cookie from '@/utils/cookies'
 
-const cookies = ref<Cookies>(useNavigationStore().cookies)
+const cookies = Cookie.cookies
 const allStatus = ref<boolean>(false)
 
 const closePersonalize = () => {
@@ -69,12 +68,16 @@ const closePersonalize = () => {
 }
 
 const updateCookieStatus = (status: boolean, cookie: CookieValue) => {
-  cookies.value[cookie].accepted = status
-  allStatus.value = status
+  if (cookies.value) {
+    cookies.value[cookie].accepted = status
+    allStatus.value = status
+  }
 }
 
 const saveConsent = () => {
-  Cookie.saveCookies(cookies.value)
-  closePersonalize()
+  if (cookies.value) {
+    Cookie.saveCookies(cookies.value)
+    closePersonalize()
+  }
 }
 </script>
