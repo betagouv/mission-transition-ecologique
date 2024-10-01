@@ -168,7 +168,7 @@ onBeforeMount(() => {
   setupGlobal()
 
   // inject style link in html head if not present
-  const href = Config.isProduction ? `${Config.deployUrl}/style.css` : ''
+  const href = Config.isProduction() ? `${Config.deployUrl}/style.css` : ''
   let needStyle = Widget.is
   // avoid duplicates
   const styleSheets = document.styleSheets.length
@@ -180,7 +180,7 @@ onBeforeMount(() => {
       }
     }
   }
-  if (needStyle && Config.isProduction) {
+  if (needStyle && Config.isProduction()) {
     const head = document.head
     const link = document.createElement('link')
     link.type = 'text/css'
