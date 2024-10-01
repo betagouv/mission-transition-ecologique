@@ -48,13 +48,13 @@ export class BpiFrance extends OpportunityHubAbstract {
     if (opportunity.type === OpportunityType.Project) {
       return Maybe.of(Error("BPI shouldn't transfer be transfered Project type opportunities."))
     }
+    const contactPayloadDTO = new opportunityPayloadDTO(opportunity, programOrProject as ProgramType).getPayload()
     try {
       const tokenResult = await this._getToken()
       if (tokenResult.isErr) {
         return Maybe.of(tokenResult.error)
       }
 
-      const contactPayloadDTO = new opportunityPayloadDTO(opportunity, programOrProject as ProgramType).getPayload()
       const response = await this.axios.post(this._contactUrl, contactPayloadDTO, {
         headers: AxiosHeaders.makeBearerHeader(tokenResult.value.access_token)
       })
@@ -65,7 +65,7 @@ export class BpiFrance extends OpportunityHubAbstract {
         return Maybe.of(new Error("Erreur à la création d'une opportunité chez BPI durant l'appel BPI. HTTP CODE:" + response.status))
       }
     } catch (exception: unknown) {
-      Monitor.exception(ensureError(exception))
+      Monitor.exception(ensureError(exception), { ...contactPayloadDTO })
       return Maybe.of(handleException(exception))
     }
   }

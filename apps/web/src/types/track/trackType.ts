@@ -162,7 +162,7 @@ export type TrackOptionItem = {
 export interface Track {
   id: TrackId
   help?: string
-  category?: string
+  category?: TrackCategory
   bgColor?: string
   imageRight?: string
   title: Translations
@@ -180,39 +180,28 @@ export interface Track {
   form?: FormOptions
 }
 
-export interface TracksList {
-  programs: Track[]
-}
-
 export interface UsedTrack {
   id: TrackId
   component: TrackComponent
-  category?: string
+  category?: TrackCategory
   final?: boolean
   completed: boolean
-  // updating: boolean,
   step: number
-  // values: any[] | null,
-  // titles?: Translations[],
-  // val: any[] | null,
-  // data: object,
   selected: TrackOptionsUnion[]
   next?: TrackNext
 }
 
-// FOR TRACKS - COMPONENTS
-
-export interface TrackOpt {
-  value: string
-  [name: string]: any
-}
-
-export interface TrackChoice {
-  id: string | number
-  step: number
-  values: string[] | object[]
-  // val: object[],
-  data?: object | object[]
+export enum TrackCategory {
+  MyEntreprise = 'myEntreprise',
+  OurHelp = 'ourHelp',
+  MyEnergy = 'myEnergy',
+  MyBuildings = 'myBuildings',
+  MyTransport = 'myTransport',
+  MyWastes = 'myWastes',
+  MyWater = 'myWater',
+  MyStrategy = 'myStrategy',
+  MyMobility = 'myMobility',
+  MyProject = 'myProject'
 }
 
 // FOR TRACK RESULTS

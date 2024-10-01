@@ -137,8 +137,8 @@ const saveForm = async () => {
   try {
     isLoading.value = true
     let opportunity
-    if (props.dataId && props.dataSlug) {
-      opportunity = new OpportunityApi(localForm.value, props.dataId, props.dataSlug, props.formType)
+    if (props.dataId) {
+      opportunity = new OpportunityApi(localForm.value, props.dataId, props.dataSlug || props.dataId, props.formType)
     } else {
       opportunity = new OpportunityApi(
         localForm.value,
