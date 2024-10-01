@@ -31,6 +31,7 @@ import { useNavigationStore } from './stores/navigation'
 
 import TeeFooter from './components/TeeFooter.vue'
 import Translation from './utils/translation'
+import Cookie from './utils/cookies'
 
 const navigationStore = useNavigationStore()
 const router = useRouter()
@@ -49,6 +50,7 @@ onMounted(async () => {
   await router.isReady()
   navigationStore.setRouter(router)
   navigationStore.setRoute(route)
+  Cookie.setCookies()
 })
 
 useHead({

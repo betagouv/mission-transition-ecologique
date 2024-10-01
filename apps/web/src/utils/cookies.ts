@@ -1,10 +1,17 @@
 import { type CookieManager, CookieValue, Cookies } from '@/types/cookies'
-import { useNavigationStore } from '@/stores/navigation'
 import posthogPlugin from './analytic/posthog'
 
 export default class Cookie {
+  static cookies = ref<Cookies | undefined>()
+
+  static setCookies() {
+    Cookie.cookies.value = Cookie.getCookies()
+  }
+
   static getCookieByValue(value: CookieValue): CookieManager | undefined {
-    return useNavigationStore().cookies[value]
+    if (Cookie.cookies.value) {
+      return Cookie.cookies.value[value]
+    }
   }
 
   static activateCookie(value: CookieValue) {
@@ -50,35 +57,43 @@ export default class Cookie {
   }
 
   static acceptAllCookies() {
-    const cookies: CookieManager[] = Object.values(useNavigationStore().cookies)
-    const newCookies: Cookies = cookies.reduce(
-      (acc, cookie) => {
-        acc[cookie.value] = { ...cookie, accepted: true }
-        return acc
-      },
-      { ...useNavigationStore().cookies }
-    )
-    Cookie.saveCookies(newCookies)
+    if (Cookie.cookies.value) {
+      const cookies: CookieManager[] = Object.values(Cookie.cookies.value)
+      const newCookies: Cookies = cookies.reduce(
+        (acc, cookie) => {
+          acc[cookie.value] = { ...cookie, accepted: true }
+          return acc
+        },
+        { ...Cookie.cookies.value }
+      )
+      Cookie.saveCookies(newCookies)
+    }
   }
 
   static refuseAllCookies() {
-    const cookies: CookieManager[] = Object.values(useNavigationStore().cookies)
-    const newCookies: Cookies = cookies.reduce(
-      (acc, cookie) => {
-        acc[cookie.value] = { ...cookie, accepted: false }
-        return acc
-      },
-      { ...useNavigationStore().cookies }
-    )
-    Cookie.saveCookies(newCookies)
+    if (Cookie.cookies.value) {
+      const cookies: CookieManager[] = Object.values(Cookie.cookies.value)
+      const newCookies: Cookies = cookies.reduce(
+        (acc, cookie) => {
+          acc[cookie.value] = { ...cookie, accepted: false }
+          return acc
+        },
+        { ...Cookie.cookies.value }
+      )
+      Cookie.saveCookies(newCookies)
+    }
   }
   static acceptCookie(cookieValue: CookieValue) {
-    useNavigationStore().cookies[cookieValue].accepted = true
-    Cookie.saveCookies(useNavigationStore().cookies)
+    if (Cookie.cookies.value) {
+      Cookie.cookies.value[cookieValue].accepted = true
+      Cookie.saveCookies(Cookie.cookies.value)
+    }
   }
   static refuseCookie(cookieValue: CookieValue) {
-    useNavigationStore().cookies[cookieValue].accepted = false
-    Cookie.saveCookies(useNavigationStore().cookies)
+    if (Cookie.cookies.value) {
+      Cookie.cookies.value[cookieValue].accepted = false
+      Cookie.saveCookies(Cookie.cookies.value)
+    }
   }
   static areCookiesSet() {
     const match = document.cookie.match(new RegExp('(^| )tee-accept-cookies=([^;]+)'))
