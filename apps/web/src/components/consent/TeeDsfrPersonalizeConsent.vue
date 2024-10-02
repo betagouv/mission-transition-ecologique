@@ -54,10 +54,10 @@
   </dialog>
 </template>
 <script lang="ts" setup>
-import { type CookieValue } from '@/types/cookies'
+import { Cookies, type CookieValue } from '@/types/cookies'
 import Cookie from '@/utils/cookies'
 
-const cookies = Cookie.cookies
+const cookies = ref<Cookies | undefined>()
 const allStatus = ref<boolean>(false)
 
 const closePersonalize = () => {
@@ -66,7 +66,9 @@ const closePersonalize = () => {
     modal.classList.remove('fr-modal--opened')
   }
 }
-
+onMounted(() => {
+  cookies.value = JSON.parse(JSON.stringify(Cookie.cookies.value))
+})
 const updateCookieStatus = (status: boolean, cookie: CookieValue) => {
   if (cookies.value) {
     cookies.value[cookie].accepted = status

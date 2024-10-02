@@ -43,17 +43,29 @@ export default class Cookie {
     }
   }
 
-  static saveCookies(cookies: Cookies) {
-    Object.values(cookies).forEach((cookie: CookieManager) => {
-      document.cookie = `${cookie.value}=${cookie.accepted}`
-      if (cookie.accepted) {
-        Cookie.activateCookie(cookie.value)
-      } else {
-        Cookie.deactivateCookie(cookie.value)
+  static saveCookies(newCookies: Cookies) {
+    if (Cookie.cookies.value) {
+      let hasChanged = false
+      const cookieNames = Object.keys(newCookies)
+      for (const name of cookieNames as CookieValue[]) {
+        if (Cookie.cookies.value[name].accepted !== newCookies[name].accepted) {
+          hasChanged = true
+          break
+        }
       }
-    })
-    document.cookie = 'tee-accept-cookies=true'
-    window.location.reload()
+      if (hasChanged) {
+        Object.values(newCookies).forEach((cookie: CookieManager) => {
+          document.cookie = `${cookie.value}=${cookie.accepted}`
+          if (cookie.accepted) {
+            Cookie.activateCookie(cookie.value)
+          } else {
+            Cookie.deactivateCookie(cookie.value)
+          }
+        })
+        document.cookie = 'tee-accept-cookies=true'
+        window.location.reload()
+      }
+    }
   }
 
   static acceptAllCookies() {

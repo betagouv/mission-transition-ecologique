@@ -43,6 +43,7 @@ const isReady = computed<boolean>(() => {
 
 onBeforeMount(() => {
   Translation.setLocale('fr')
+  Cookie.setCookies()
 })
 
 onMounted(async () => {
@@ -50,7 +51,6 @@ onMounted(async () => {
   await router.isReady()
   navigationStore.setRouter(router)
   navigationStore.setRoute(route)
-  Cookie.setCookies()
 })
 
 useHead({
