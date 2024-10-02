@@ -12,7 +12,6 @@
   <!-- FORM -->
   <div
     v-if="!formIsSent"
-    ref="teeForm"
     class="fr-grid-row fr-px-md-4w"
   >
     <div class="fr-col-12">
@@ -109,6 +108,7 @@ const formIsSent = ref<boolean>(false)
 const requestResponse = ref<ReqResp>()
 const isLoading = ref<boolean>(false)
 const localForm = ref<FormDataType>(props.form)
+
 const isFormFilled = computed(() => {
   const isFilled = []
   for (const key in localForm.value) {
@@ -161,9 +161,8 @@ const getRouteName = () => {
   return `send_${props.formType}_form${navigation.isCatalogDetail() ? '_catalog' : ''}`
 }
 const scrollToFormContainer = () => {
-  const element = props.formContainerRef
-  if (element) {
-    Scroll.toBlockCenter(element)
+  if (props.formContainerRef) {
+    Scroll.to(props.formContainerRef)
   }
 }
 </script>
