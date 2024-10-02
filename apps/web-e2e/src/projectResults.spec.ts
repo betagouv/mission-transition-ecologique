@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test'
 import { tests } from './projectResultsData'
 
 tests.forEach((singleTest) => {
-  test(`Verify content and elements for query number ${singleTest.id}`, async ({ page }) => {
+  test(`Verify content and elements for query ${singleTest.url}`, async ({ page }) => {
     await page.goto(singleTest.url)
     try {
       await page.waitForSelector('.teste2e-project-target', { timeout: 3000 })
