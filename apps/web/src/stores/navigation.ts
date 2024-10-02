@@ -227,7 +227,6 @@ export const useNavigationStore = defineStore('navigation', () => {
     isByRouteName,
     resetSearchParams,
     setRouter,
-    isProgramFromProject,
     isQuestionnaire,
     isQuestionnaireResult,
     isQuestionnaireResultDetail,
