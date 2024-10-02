@@ -42,7 +42,7 @@ export const tests = [
   },
   {
     id: 2,
-    url: 'questionnaire/resultat/projet/isolation-thermique?choix-du-parcours=j-ai-un-projet&siret=83014132100034&effectif=TPE&objectifs=r%C3%A9nover+mon+b%C3%A2timent',
+    url: 'questionnaire/resultat/projet/isolation-thermique?choix-du-parcours=j-ai-un-projet&siret=83014132100034&effectif=TPE&objectifs=building',
     count: 4,
     values: ['Diagnostic SARE', 'Prêt Économies d’Énergie (PEE)', "Crédit d'Impôt Rénovation Énergétique (CIRE)", 'Prêt Vert']
   },

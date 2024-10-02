@@ -21,8 +21,8 @@ tests.forEach((singleTest) => {
 })
 
 test(`Check projects found while initially selecting different tags`, async ({ page }) => {
-  const urlTag1 = 'questionnaire/resultat?choix-du-parcours=j-ai-un-projet&siret=83014132100034&effectif=TPE&objectifs=la+mobilité+durable'
-  const urlTag2 = 'questionnaire/resultat?choix-du-parcours=j-ai-un-projet&siret=83014132100034&effectif=TPE&objectifs=rénover+mon+bâtiment'
+  const urlTag1 = 'questionnaire/resultat?choix-du-parcours=j-ai-un-projet&siret=83014132100034&effectif=TPE&objectifs=mobility'
+  const urlTag2 = 'questionnaire/resultat?choix-du-parcours=j-ai-un-projet&siret=83014132100034&effectif=TPE&objectifs=building'
 
   await page.goto(urlTag1)
   try {
