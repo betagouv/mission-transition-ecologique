@@ -18,7 +18,7 @@
         />
       </div>
       <!-- TITLE -->
-      <p class="fr-text--purple fr-h6 fr-text--bold">
+      <p class="fr-text--purple fr-h6 fr-text--bold teste2e-program-target">
         {{ program.titre }}
       </p>
       <!-- CONTENT -->

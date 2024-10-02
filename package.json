@@ -28,7 +28,8 @@
     "type:check": "nx run-many -t type-check --verbose --parallel=false",
     "type:check:vue": "nx run @tee/web:type-check --verbose",
     "ci": "nx run-many -t ci --verbose --parallel=false",
-    "sass:watch": "nx run @tee/web:sass-watch"
+    "sass:watch": "nx run @tee/web:sass-watch",
+    "e2e": "TEST=true npx playwright test --config=apps/web-e2e/playwright.config.ts"
   },
   "engines": {
     "node": "20.x",
@@ -110,6 +111,7 @@
   "devDependencies": {
     "@nx/express": "^19.2.3",
     "@nx/node": "19.2.3",
+    "@playwright/test": "^1.45.3",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.7",
     "@svgr/webpack": "^8.0.1",
     "@types/cors": "^2.8.17",
