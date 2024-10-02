@@ -89,11 +89,15 @@ export const useNavigationStore = defineStore('navigation', () => {
   }
 
   function isCatalogProgramDetail() {
-    return isByRouteName(RouteName.CatalogProgramDetail)
+    return isByRouteName([RouteName.CatalogProgramDetail, RouteName.CatalogProgramFromCatalogProjectDetail])
   }
 
   function isCatalogAboutPrograms() {
     return isCatalogPrograms() || isCatalogProgramDetail()
+  }
+
+  function isCatalogAboutProjects() {
+    return isCatalogProjects() || isCatalogProjectDetail()
   }
 
   function isCatalogList() {
@@ -118,6 +122,10 @@ export const useNavigationStore = defineStore('navigation', () => {
 
   function isQuestionnaireResultDetail() {
     return isByRouteName([RouteName.QuestionnaireResultDetail, RouteName.ProgramFromProjectDetail, RouteName.ProjectResultDetail])
+  }
+
+  function isProgramFromProject() {
+    return isByRouteName([RouteName.ProgramFromProjectDetail, RouteName.CatalogProgramFromCatalogProjectDetail])
   }
 
   function isStaticPage() {
@@ -208,6 +216,7 @@ export const useNavigationStore = defineStore('navigation', () => {
     hasSpinner,
     isCatalog,
     isCatalogAboutPrograms,
+    isCatalogAboutProjects,
     isCatalogPrograms,
     isCatalogProjects,
     isCatalogProjectDetail,
@@ -217,6 +226,7 @@ export const useNavigationStore = defineStore('navigation', () => {
     isByRouteName,
     resetSearchParams,
     setRouter,
+    isProgramFromProject,
     isQuestionnaire,
     isQuestionnaireResult,
     isQuestionnaireResultDetail,
