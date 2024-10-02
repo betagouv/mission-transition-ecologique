@@ -95,15 +95,22 @@ const navigationStore = useNavigationStore()
 
 const isCatalog = navigationStore.isCatalogPrograms()
 
+const getRouteName = () => {
+  if (isCatalog) {
+    return RouteName.CatalogProgramDetail
+  } else if (navigationStore.isByRouteName(RouteName.ProjectResultDetail)) {
+    return RouteName.ProgramFromProjectDetail
+  } else if (navigationStore.isCatalogProjectDetail()) {
+    return RouteName.CatalogProgramFromCatalogProjectDetail
+  }
+  return RouteName.QuestionnaireResultDetail
+}
+
 const getRouteToProgramDetail = (programId: string): RouteLocationRaw => {
   return {
-    name: isCatalog
-      ? RouteName.CatalogProgramDetail
-      : navigationStore.isByRouteName(RouteName.ProjectResultDetail)
-        ? RouteName.ProgramFromProjectDetail
-        : RouteName.QuestionnaireResultDetail,
+    name: getRouteName(),
     params: { programId },
-    query: isCatalog ? undefined : navigationStore.query
+    query: isCatalog || navigationStore.isCatalogProjectDetail() ? undefined : navigationStore.query
   }
 }
 </script>

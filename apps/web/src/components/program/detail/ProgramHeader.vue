@@ -61,7 +61,11 @@ const routeToResults = {
   query: isCatalogDetail ? undefined : navigationStore.query
 }
 
-const routeToProject = { ...routeToResults, name: RouteName.ProjectResultDetail, params: { projectSlug: props.projectSlug } }
+const routeToProject = {
+  ...routeToResults,
+  name: isCatalogDetail ? RouteName.CatalogProjectDetail : RouteName.ProjectResultDetail,
+  params: { projectSlug: props.projectSlug }
+}
 
 const links = computed<DsfrBreadcrumbProps['links']>(() => {
   const links = []
