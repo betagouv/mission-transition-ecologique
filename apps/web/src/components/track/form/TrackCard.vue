@@ -14,7 +14,7 @@
         </div>
       </div>
       <div class="fr-card__body">
-        <div class="fr-card__content">
+        <div class="fr-card__content fr-mb-6w">
           <p
             v-if="option.hintImage"
             class="fr-card__desc fr-mt-0 fr-mb-2v"

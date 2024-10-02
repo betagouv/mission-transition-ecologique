@@ -34,7 +34,7 @@ const scrollTo = (id: string) => {
 const allMenuItems = [
   {
     id: 'project',
-    to: `project-details-title`,
+    to: `project-description-details-title`,
     text: "Qu'est ce que c'est ?",
     condition: props.project.longDescription.length > 0
   },

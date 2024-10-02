@@ -13,16 +13,6 @@
   }
 
   &__header {
-    @each $color, $properties in setting.$colors {
-      &--#{$color} {
-        @if meta.type-of($properties) == map {
-          background-color: tool.scaleAlphaToHex(map.get($properties, "color"), -50%);
-        } @else {
-          background-color: tool.scaleAlphaToHex($properties, -50%);
-        }
-      }
-    }
-
     .fr-card__img--contain img {
       object-fit: contain;
     }
@@ -101,7 +91,7 @@
   }
 
   &-priority {
-    border: solid 0.20rem setting.$base-green;
+    border: solid 0.20rem setting.$green;
 
     &--highlighted {
       .fr-card__header::before {
@@ -110,10 +100,15 @@
         top: 0;
         right: 0;
         border-left: 5rem solid transparent;
-        border-top: 5rem solid setting.$base-green;
+        border-top: 5rem solid setting.$green;
         width: 0;
+        z-index: 50;
       }
     }
+  }
+
+  &__title a::after {
+    display: none !important;
   }
 
   &__header--priority {
@@ -126,8 +121,14 @@
     z-index: 100;
   }
 
+  &.fr-enlarge-link {
+    .fr-card__content {
+      padding-bottom: 2rem !important;
+    }
+  }
+
   .fr-badge--success {
-    background-color: setting.$base-green;
+    background-color: setting.$green;
     color: setting.$white
   }
 

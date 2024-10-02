@@ -36,18 +36,16 @@
             <TeeCounterResult :to-count="filteredProjects" />
           </div>
           <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--left fr-mt-0">
-            <router-link
+            <div
               v-for="project in sortedProjects"
-              :id="project.slug"
               :key="project.id"
-              :to="getRouteToProjectDetail(project)"
               class="fr-col-12 fr-col-sm-6 fr-col-md-6 fr-col-lg-4 no-outline"
             >
               <ProjectCard
                 :project="project"
-                class="fr-radius-a--1v fr-card--shadow"
+                class="fr-radius-a--1v fr-card--shadow fr-enlarge-link"
               />
-            </router-link>
+            </div>
           </div>
         </div>
         <TeeNoResult
@@ -63,12 +61,12 @@
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
 import { useProjectStore } from '@/stores/project'
-import { type ProgramData, Project as ProjectType, RouteName, TrackId, ThemeId } from '@/types'
+import { type ProgramData, Project as ProjectType, TrackId, ThemeId } from '@/types'
 import Contact from '@/utils/contact'
-import Matomo from '@/utils/matomo'
+import Analytics from '@/utils/analytic/analytics'
 import { Project } from '@/utils/project/project'
 import { computed, onBeforeMount } from 'vue'
-import type { RouteLocationRaw } from 'vue-router'
+import { Theme } from '@/utils/theme'
 
 const projectStore = useProjectStore()
 const programStore = useProgramStore()
@@ -78,9 +76,7 @@ const projects = ref<ProjectType[]>()
 const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)
 
-const theme = computed(() => {
-  return programStore.hasThemeTypeSelected() ? (programStore.programFilters.themeTypeSelected as ThemeId) : ''
-})
+const theme = Theme.getThemeFromSelectedTheme()
 
 const filteredProjects = Project.filter(projects, programs, theme)
 const sortedProjects = Project.sort(filteredProjects)
@@ -97,13 +93,6 @@ const hasFilteredProjects = computed(() => {
   return filteredProjects.value?.length
 })
 
-const getRouteToProjectDetail = (project: ProjectType): RouteLocationRaw => {
-  return {
-    name: RouteName.CatalogProjectDetail,
-    params: { projectSlug: project.slug }
-  }
-}
-
 onBeforeMount(async () => {
   navigationStore.hasSpinner = true
   const programResult = await programStore.programs
@@ -118,6 +107,6 @@ onBeforeMount(async () => {
   navigationStore.hasSpinner = false
 
   // analytics / send event
-  Matomo.sendEvent(TrackId.Results, 'show_results_catalog_projects')
+  Analytics.sendEvent(TrackId.Results, 'show_results_catalog_projects')
 })
 </script>

@@ -1432,6 +1432,9 @@
 .fr-card__header .fr-card__img--contain img {
   object-fit: contain;
 }
+.fr-card.fr-enlarge-link .fr-card__content {
+  padding-bottom: 2rem !important;
+}
 .fr-card-banner {
   flex-direction: row;
 }
@@ -2111,6 +2114,11 @@
 
 .fr-input-group--valid::before, .fr-valid-text::before {
   display: none;
+}
+
+.tee-header-menu-sub-navigation button.fr-nav__btn {
+  color: #000091;
+  font-weight: 500;
 }
 
 @media (min-width: 0) {
