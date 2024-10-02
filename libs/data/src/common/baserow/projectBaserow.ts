@@ -4,14 +4,20 @@ import { RawProject } from '../../project/types/domain'
 import { LinkObject, Project } from './types'
 import { Theme } from '../../theme/types/domain'
 import { ImageBaserow } from './imageBaserow'
+import { Logger } from '../logger/logger'
+import { LogLevel } from '../logger/types'
 
 export class ProjectBaserow extends AbstractBaserow {
   private readonly _projectTableId = 305253
   private readonly _imagePath = '/images/projet/'
   private readonly _logPath: string = path.join(__dirname, '../../../static/project_images_download_info.json')
   private _imageDownloader: ImageBaserow
+  private readonly _defaultProjectImageName = 'plan-transition-bas-carbone.webp'
 
-  constructor(imageDirectory: string) {
+  constructor(
+    imageDirectory: string,
+    private _logger: Logger
+  ) {
     super()
     this._imageDownloader = new ImageBaserow(imageDirectory, this._logPath)
   }
@@ -40,7 +46,19 @@ export class ProjectBaserow extends AbstractBaserow {
   }
 
   private async _convertToRawProjectType(baserowProject: Project, baserowThemes: Theme[]): Promise<RawProject> {
-    const imageName = await this._imageDownloader.handleImage(baserowProject.Image)
+    const maybeImageName = await this._imageDownloader.handleImage(baserowProject.Image)
+    let imageName
+    if (maybeImageName.isErr) {
+      this._logger.log(
+        LogLevel.Major,
+        maybeImageName.error.message + '\n, defaulting to a default image',
+        baserowProject.Titre,
+        baserowProject.id
+      )
+      imageName = this._defaultProjectImageName
+    } else {
+      imageName = maybeImageName.value
+    }
 
     return {
       id: baserowProject.id,

@@ -4,13 +4,13 @@ import path from 'path'
 import sharp from 'sharp'
 import { AbstractBaserow } from './abstractBaserow'
 import { LinkObject, ImageTable } from './types'
+import { Result } from 'true-myth'
 
 interface ImageMetadata {
   [name: string]: string
 }
 
 export class ImageBaserow extends AbstractBaserow {
-  private readonly _defaultImageName = 'plan-transition-bas-carbone.webp'
   private readonly _imageTableId = 315189
   private _metadata: ImageMetadata = {}
   private _processedImages: Set<string> = new Set()
@@ -27,12 +27,11 @@ export class ImageBaserow extends AbstractBaserow {
    * Downloads the image if needed and returns the name of the image.
    *
    * @param baserowImage - A baserowLink object pointing to the image informations.
-   * @returns the name of the image in the local directory
+   * @returns the name of the image in the local directory or an error
    */
-  async handleImage(baserowImage: LinkObject[]): Promise<string> {
+  async handleImage(baserowImage: LinkObject[]): Promise<Result<string, Error>> {
     if (baserowImage.length != 1) {
-      console.log('A single image should be listed in the image field. Defaulting to ' + this._defaultImageName)
-      return this._defaultImageName
+      return Result.err(new Error('A single image should be listed in the image field.'))
     }
     const imageId = baserowImage[0].id
 
@@ -40,23 +39,21 @@ export class ImageBaserow extends AbstractBaserow {
     const imageInfos = (await this._getRowData<ImageTable>(this._imageTableId, imageId)) as ImageTable
 
     if (imageInfos.Image.length != 1) {
-      console.log('A single file should uploaded in the image field of the image table. Issue Row number ' + imageInfos.id)
+      return Result.err(new Error('A single file should uploaded in the image field of the image table. Issue Row number ' + imageInfos.id))
     }
 
     const imageName = this._generateImageName(imageInfos)
     if (this._imageAlreadyDownloaded(imageName, imageInfos.Image[0].uploaded_at)) {
       this._metadata[imageName] = imageInfos.Image[0].uploaded_at
       this._processedImages.add(imageName + '.webp')
-      return imageName + '.webp'
+      return Result.ok(imageName + '.webp')
     }
 
     let imageDownloadResponse
     try {
       imageDownloadResponse = await axios.get(imageInfos.Image[0].url, { responseType: 'arraybuffer' })
     } catch {
-      console.error('Error while trying to download the image ' + imageId)
-      console.log('Defaulting to the default image : ' + this._defaultImageName)
-      return this._defaultImageName
+      return Result.err(new Error('Error while trying to download the image ' + imageId))
     }
 
     const imageBuffer = Buffer.from(imageDownloadResponse.data, 'binary')
@@ -68,7 +65,7 @@ export class ImageBaserow extends AbstractBaserow {
     this._metadata[imageName] = imageInfos.Image[0].uploaded_at
     this._processedImages.add(fileName)
 
-    return fileName
+    return Result.ok(fileName)
   }
 
   cleanup() {

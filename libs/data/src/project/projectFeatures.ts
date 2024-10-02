@@ -23,7 +23,7 @@ export class ProjectFeatures {
 
   async generateProjectsJson(): Promise<void> {
     console.log(`Start loading Baserow data and creating the project images`)
-    const projects = await new ProjectBaserow(this._outputImageDirectory).getValidProjects()
+    const projects = await new ProjectBaserow(this._outputImageDirectory, this._logger).getValidProjects()
 
     console.log(`Baserow Data sucessfully downloaded.\n\nStarting to validate the project data and generating the project JSON.`)
     const validProjects = await this._validateData(projects)
