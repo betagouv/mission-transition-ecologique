@@ -101,8 +101,8 @@ export class ImageBaserow extends AbstractBaserow {
 
   private _generateImageName(imageData: ImageTable): string {
     let baseName = imageData['Image URL TEE']
-    if (!imageData.Titre) {
-      baseName = imageData.Image[0].name
+    if (!baseName) {
+      baseName = this._slugify(imageData.Titre)
     }
     if (!this._processedImages.has(baseName)) {
       return baseName
@@ -130,5 +130,15 @@ export class ImageBaserow extends AbstractBaserow {
       imageSharp = imageSharp.resize(1280)
     }
     return await imageSharp.webp({ quality: 60 }).toBuffer()
+  }
+
+  private _slugify(title: string): string {
+    return title
+      .toLowerCase()
+      .normalize('NFD') // Normalize the string to decompose accents from characters
+      .replace(/[\u0300-\u036f]/g, '') // Remove diacritical marks (accents)
+      .trim()
+      .replace(/[\s\W-]+/g, '-') // Replace spaces and non-alphanumeric characters with hyphens
+      .replace(/^-+|-+$/g, '') // Remove leading or trailing hyphens
   }
 }
