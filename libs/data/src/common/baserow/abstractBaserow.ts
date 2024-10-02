@@ -58,7 +58,7 @@ export abstract class AbstractBaserow {
       console.warn("warning, a baserow link isn't defined, it should never happen", links)
     }
 
-    return tableData.filter((operator) => operator !== undefined) as T[]
+    return tableData.filter((item) => item !== undefined) as T[]
   }
 
   private _setBaserowToken(): string {
