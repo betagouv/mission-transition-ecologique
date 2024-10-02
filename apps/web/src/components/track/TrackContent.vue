@@ -122,7 +122,7 @@ import {
   type UsedTrack
 } from '@/types'
 import { RouteName } from '@/types/routeType'
-import Matomo from '@/utils/matomo'
+import Analytics from '@/utils/analytic/analytics'
 import Navigation from '@/utils/navigation'
 import { Scroll } from '@/utils/scroll'
 import TrackColOption from '@/utils/track/TrackColOption'
@@ -136,6 +136,7 @@ interface Props {
 const props = defineProps<Props>()
 
 const router = useRouter()
+
 const trackStore = useTrackStore()
 const usedTrackStore = useUsedTrackStore()
 const navigationStore = useNavigationStore()
@@ -181,9 +182,7 @@ const updateSelection = async (option: TrackOptionsUnion, index: number, forceRe
 
     if (option.value) {
       // analytics / track event / only if positive choice
-      for (const [key, value] of Object.entries(option.value)) {
-        Matomo.sendEvent(usedTrack.id, key, value as string | number)
-      }
+      Analytics.sendEvent(usedTrack.id, usedTrack.id, option.value)
     }
   } else {
     // remove from selection because is already active

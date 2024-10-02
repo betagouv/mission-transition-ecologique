@@ -104,7 +104,6 @@ import { computed, onBeforeMount, ref } from 'vue'
 import Translation from '@/utils/translation'
 import { useProgramStore } from './stores/program'
 import { TrackComponent, TrackId } from './types'
-import TeeMatomo from './components/TeeMatomo.vue'
 import TrackSidebar from '@/components/track/TrackSidebar.vue'
 import ProgramDetail from './components/program/detail/ProgramDetail.vue'
 import Widget from '@/utils/widget'
@@ -164,7 +163,7 @@ onBeforeMount(() => {
   setupGlobal()
 
   // inject style link in html head if not present
-  const href = Config.isProduction ? `${Config.deployUrl}/style.css` : ''
+  const href = Config.isProduction() ? `${Config.deployUrl}/style.css` : ''
   let needStyle = Widget.is
   // avoid duplicates
   const styleSheets = document.styleSheets.length
@@ -176,7 +175,7 @@ onBeforeMount(() => {
       }
     }
   }
-  if (needStyle && Config.isProduction) {
+  if (needStyle && Config.isProduction()) {
     const head = document.head
     const link = document.createElement('link')
     link.type = 'text/css'

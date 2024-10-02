@@ -111,7 +111,7 @@
 import { useTrackStore } from '@/stores/track'
 import { type TrackOptionItem, type TrackOptionsInput } from '@/types'
 import { RouteName } from '@/types/routeType'
-import Matomo from '@/utils/matomo'
+import Analytics from '@/utils/analytic/analytics'
 import Navigation from '@/utils/navigation'
 import TrackSiret from '@/utils/track/TrackSiret'
 import Translation from '@/utils/translation'
@@ -190,7 +190,7 @@ const processInput = async () => {
   // analytics / send event
   const trackId = useTrackStore().currentId
   if (trackId) {
-    Matomo.sendEvent(trackId, 'processInput')
+    Analytics.sendEvent(trackId, 'processInput')
   }
 }
 

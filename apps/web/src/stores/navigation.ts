@@ -25,7 +25,6 @@ export const useNavigationStore = defineStore('navigation', () => {
   const stringOfSearchParams = ref<string>('')
   const tabSelectedOnList = ref<number>(0)
   const hasSpinner = ref<boolean>(false)
-
   const query = computed<Record<string, LocationQueryValue | LocationQueryValue[]>>(() => {
     const query: LocationQuery = {}
     for (const key of new URLSearchParams(stringOfSearchParams.value).keys()) {
