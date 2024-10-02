@@ -42,7 +42,6 @@
       <div class="fr-card__img fr-card__img--contain fr-m-auto">
         <img
           class="fr-responsive-img"
-          height="200px"
           :src="option.imgSrc"
           :alt="option.altImg"
         />
@@ -63,12 +62,6 @@ defineProps<Props>()
 .theme-divider {
   height: 4px;
   width: 15%;
-}
-
-.theme-card:hover,
-.theme-card:active,
-.highlighted-project:active {
-  box-shadow: 1px 2px 8px 2px rgb(0 0 0 / 10%);
 }
 
 .highlighted-project {

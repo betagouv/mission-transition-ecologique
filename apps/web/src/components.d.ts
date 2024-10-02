@@ -22,6 +22,7 @@ declare module 'vue' {
     DsfrButton: typeof import('@gouvminint/vue-dsfr')['DsfrButton']
     DsfrCheckboxSet: typeof import('@gouvminint/vue-dsfr')['DsfrCheckboxSet']
     DsfrHighlight: typeof import('@gouvminint/vue-dsfr')['DsfrHighlight']
+    DsfrRadioButtonSet: typeof import('@gouvminint/vue-dsfr')['DsfrRadioButtonSet']
     DsfrSelect: typeof import('@gouvminint/vue-dsfr')['DsfrSelect']
     DsfrSideMenu: typeof import('@gouvminint/vue-dsfr')['DsfrSideMenu']
     DsfrTabContent: typeof import('@gouvminint/vue-dsfr')['DsfrTabContent']
