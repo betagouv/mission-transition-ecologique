@@ -127,14 +127,15 @@ export default class Opportunity {
     }
   }
   static getCustomSlug(form: FormDataType, formType: OpportunityType) {
-    if (formType === OpportunityType.CustomProject) {
+    // a changer avec custom project
+    if (formType === OpportunityType.Project) {
       return form.projectTitle.value as string
     }
     return ''
   }
   static getCustomId(form: FormDataType, formType: OpportunityType) {
     // changer par custom projet
-    if (formType === OpportunityType.CustomProject) {
+    if (formType === OpportunityType.Project) {
       return form.projectTitle.value as string
     }
     return ''

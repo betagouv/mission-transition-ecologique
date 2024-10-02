@@ -14,10 +14,10 @@ export interface ContactDetails {
   companySize?: StructureSize
 }
 
+// ajouter custom project
 export enum OpportunityType {
   Program = 'program',
-  Project = 'project',
-  CustomProject = 'custom-project'
+  Project = 'project'
 }
 
 export interface OpportunityDetails {
