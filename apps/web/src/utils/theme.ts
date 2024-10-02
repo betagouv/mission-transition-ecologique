@@ -1,4 +1,4 @@
-import { Color, ThemeId, ThemeType } from '@/types'
+import { Color, ThemeId, ThemeType, BuildingProperty } from '@/types'
 import UsedTrack from '@/utils/track/usedTrack'
 import { Project } from '@tee/data'
 import { useProgramStore } from '@/stores/program'
@@ -92,7 +92,7 @@ export class Theme {
 
     if (UsedTrack.isNoSpecificGoal()) {
       UsedTrack.isEnergyTheme() ? tags.push(this.getById(ThemeId.Energy) as ThemeType) : undefined
-      tags.push(this.getById(ThemeId.Building) as ThemeType)
+      UsedTrack.checkBuildingPropertyStatus(BuildingProperty.No) ? undefined : tags.push(this.getById(ThemeId.Building) as ThemeType)
       UsedTrack.isMobilityTheme() ? tags.push(this.getById(ThemeId.Mobility) as ThemeType) : undefined
       UsedTrack.isWaterTheme() ? tags.push(this.getById(ThemeId.Water) as ThemeType) : undefined
       UsedTrack.isEcoDesignTheme() ? tags.push(this.getById(ThemeId.EcoDesign) as ThemeType) : undefined

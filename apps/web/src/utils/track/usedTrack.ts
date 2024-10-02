@@ -1,6 +1,6 @@
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { MobilityStatus, ThemeId, QuestionnaireDataEnum, QuestionnaireRoute, TrackId, WasteManagementStatus, YesNo } from '@/types'
-import { ObjectiveChecker } from '@tee/common'
+import { ObjectiveChecker, BuildingProperty } from '@tee/common'
 
 type QuestionnaireDataReturnType = {
   [QuestionnaireDataEnum.questionnaire_route]: QuestionnaireRoute
@@ -11,6 +11,7 @@ type QuestionnaireDataReturnType = {
   [QuestionnaireDataEnum.water_reduction_objective]: YesNo | undefined
   [QuestionnaireDataEnum.wastes_materials_objective]: YesNo | undefined
   [QuestionnaireDataEnum.recently_audited]: YesNo | undefined
+  [QuestionnaireDataEnum.building_property]: BuildingProperty
 }
 
 export default class UsedTrack {
@@ -30,6 +31,10 @@ export default class UsedTrack {
       this.findInQuestionnaireData(TrackId.QuestionnaireRoute, QuestionnaireDataEnum.questionnaire_route) ===
       QuestionnaireRoute.SpecificGoal
     )
+  }
+
+  static checkBuildingPropertyStatus(propertyStatus: BuildingProperty): boolean {
+    return this.findInQuestionnaireData(TrackId.BuildingProperty, QuestionnaireDataEnum.building_property) === propertyStatus
   }
 
   static getPriorityTheme(): ThemeId {
