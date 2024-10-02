@@ -151,10 +151,12 @@
 
   &.theme-card {
     height: 100%; 
+
     &:active,
     &:hover {
       box-shadow: 1px 2px 8px 2px rgb(0 0 0 / 10%);
     }
+
     .fr-card__body {
       height: 75%;
 
@@ -169,8 +171,10 @@
 
     .fr-card__header {
       height: 35%;
+
       .fr-card__img {
         height: 100%;
+
         img {
           height: 100%
         } 
