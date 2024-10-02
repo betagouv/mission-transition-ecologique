@@ -1,6 +1,6 @@
 import { SendSmtpEmail, TransactionalEmailsApi, TransactionalEmailsApiApiKeys } from '@getbrevo/brevo'
 import { Maybe } from 'true-myth'
-import { ProgramOrProject } from '../../../../common/domain/programOrProject'
+import { OpportunityObject } from '../../../domain/programOrProject'
 import Config from '../../../../config'
 import { MailerManager } from '../../../domain/spi'
 import { ProgramType, Program, Project } from '@tee/data'
@@ -19,7 +19,7 @@ export default class BrevoMail {
 
   sendReturnReceipt: MailerManager['sendReturnReceipt'] = async (
     opportunity: Opportunity,
-    programOrProject: ProgramOrProject
+    programOrProject: OpportunityObject
   ): Promise<Maybe<Error> | void> => {
     try {
       await this._api.sendTransacEmail(this._email(opportunity, programOrProject))
@@ -30,7 +30,7 @@ export default class BrevoMail {
     }
   }
 
-  private _email(opportunity: Opportunity, programOrProject: ProgramOrProject) {
+  private _email(opportunity: Opportunity, programOrProject: OpportunityObject) {
     const email = new SendSmtpEmail()
 
     switch (opportunity.type) {

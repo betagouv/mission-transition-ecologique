@@ -1,5 +1,5 @@
 import { Maybe, Result } from 'true-myth'
-import { ProgramOrProject } from '../../common/domain/programOrProject'
+import { OpportunityObject } from './programOrProject'
 import type { ContactRepository, MailerManager, OpportunityRepository } from './spi'
 import { OpportunityId, OpportunityWithContactId, OpportunityDetailsShort, OpportunityWithOperatorContactAndContactId } from './types'
 import OpportunityHubFeatures from '../../opportunityHub/domain/opportunityHubFeatures'
@@ -53,7 +53,7 @@ export default class OpportunityFeatures {
       return Result.err(maybeError.value)
     }
 
-    const programOrProject = this._getProgramOrProject(opportunityWithOperatorAndContact)
+    const opportunityAssociatedObject = this._getOpportunityAssociatedObject(opportunityWithOperatorAndContact)
 
     const opportunityResult = await this._opportunityRepository.create(opportunityWithOperatorAndContact)
     if (opportunityResult.isErr) {
@@ -61,7 +61,7 @@ export default class OpportunityFeatures {
       return opportunityResult
     }
 
-    this._sendReturnReceipt(opportunity, programOrProject)
+    this._sendReturnReceipt(opportunity, opportunityAssociatedObject)
     this._transmitOpportunityToHubs(opportunityResult.value, opportunity)
 
     return opportunityResult
@@ -71,14 +71,14 @@ export default class OpportunityFeatures {
     return await this._opportunityRepository.getDailyOpportunitiesByContactId(contactId)
   }
 
-  private _getProgramOrProject(opportunity: OpportunityWithOperatorContactAndContactId): ProgramOrProject {
+  private _getOpportunityAssociatedObject(opportunity: OpportunityWithOperatorContactAndContactId): OpportunityObject {
     switch (opportunity.type) {
       case OpportunityType.Program:
-        return new ProgramOrProject(OpportunityType.Program, this._getProgramById(opportunity.id))
+        return new OpportunityObject(OpportunityType.Program, this._getProgramById(opportunity.id))
       case OpportunityType.Project:
-        return new ProgramOrProject(OpportunityType.Project, new ProjectService().getById(+opportunity.id))
+        return new OpportunityObject(OpportunityType.Project, new ProjectService().getById(+opportunity.id))
       case OpportunityType.CustomProject:
-        return new ProgramOrProject(OpportunityType.CustomProject, undefined)
+        return new OpportunityObject(OpportunityType.CustomProject, undefined)
     }
   }
 
@@ -99,6 +99,7 @@ export default class OpportunityFeatures {
         break
 
       case OpportunityType.Project:
+      case OpportunityType.CustomProject:
         void new OpportunityHubFeatures(this._opportunityHubRepositories)
           .maybeTransmitProjectOpportunity(opportunity, project)
           .then(async (opportunityHubResult) => {
@@ -162,7 +163,7 @@ export default class OpportunityFeatures {
     return new ProgramFeatures(this._programRepository).getById(id)
   }
 
-  private _sendReturnReceipt(opportunity: Opportunity, programOrProject: ProgramOrProject) {
+  private _sendReturnReceipt(opportunity: Opportunity, programOrProject: OpportunityObject) {
     void this._mailRepository.sendReturnReceipt(opportunity, programOrProject).then((hasError) => {
       if (hasError) {
         Monitor.warning('Error while sending a return receipt', { error: hasError })

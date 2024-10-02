@@ -1,5 +1,5 @@
 import type { Maybe, Result } from 'true-myth'
-import { ProgramOrProject } from '../../common/domain/programOrProject'
+import { OpportunityObject } from './programOrProject'
 import {
   ContactId,
   OpportunityId,
@@ -21,5 +21,5 @@ export type OpportunityRepository = {
 }
 
 export type MailerManager = {
-  sendReturnReceipt: (opportunity: Opportunity, programOrProject: ProgramOrProject) => Promise<Maybe<Error> | void>
+  sendReturnReceipt: (opportunity: Opportunity, programOrProject: OpportunityObject) => Promise<Maybe<Error> | void>
 }

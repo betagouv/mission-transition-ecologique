@@ -1,7 +1,6 @@
 import { OpportunityHubRepository } from './spi'
-import { OpportunityWithContactId } from '../../opportunity/domain/types'
+import { OpportunityObjectDetails, OpportunityWithContactId } from '../../opportunity/domain/types'
 import { Maybe } from 'true-myth'
-import { ProgramType, Project } from '@tee/data'
 import { PlaceDesEntreprises } from '../infrastructure/api/placedesentreprises/placeDesEntreprises'
 import { OpportunityType } from '@tee/common'
 
@@ -13,21 +12,22 @@ export default class OpportunityHubFeatures {
 
   public async maybeTransmitOpportunity(
     opportunity: OpportunityWithContactId,
-    programOrProject?: ProgramType | Project
+    programOrProject: OpportunityObjectDetails
   ): Promise<Maybe<Error> | false> {
     switch (opportunity.type) {
       case OpportunityType.Program:
         for (const opportunityHubRepository of this._opportunityHubRepositories) {
-          if (await opportunityHubRepository.shouldTransmit(opportunity, programOrProject as ProgramType)) {
+          if (await opportunityHubRepository.shouldTransmit(opportunity, programOrProject)) {
             return await opportunityHubRepository.transmitOpportunity(opportunity, programOrProject)
           }
         }
         return false
       case OpportunityType.Project:
+      case OpportunityType.CustomProject:
         for (const opportunityHubRepository of this._opportunityHubRepositories) {
           if (opportunityHubRepository instanceof PlaceDesEntreprises) {
             if (!(await opportunityHubRepository.reachedDailyContactTransmissionLimit(opportunity.contactId))) {
-              return await opportunityHubRepository.transmitOpportunity(opportunity, programOrProject as Project)
+              return await opportunityHubRepository.transmitOpportunity(opportunity, programOrProject)
             }
           }
         }
@@ -36,17 +36,5 @@ export default class OpportunityHubFeatures {
       default:
         break
     }
-  }
-
-  public async maybeTransmitProjectOpportunity(opportunity: OpportunityWithContactId, project: Project): Promise<Maybe<Error> | false> {
-    for (const opportunityHubRepository of this._opportunityHubRepositories) {
-      if (opportunityHubRepository instanceof PlaceDesEntreprises) {
-        if (!(await opportunityHubRepository.reachedDailyContactTransmissionLimit(opportunity.contactId))) {
-          return await opportunityHubRepository.transmitOpportunity(opportunity, project)
-        }
-      }
-    }
-
-    return false
   }
 }

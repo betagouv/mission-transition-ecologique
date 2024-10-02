@@ -1,5 +1,6 @@
 import { Opportunity, OpportunityDetails } from '@tee/common'
 import { Operators } from '@tee/data'
+import { ProgramType, Project } from '@tee/data'
 
 export type OpportunityWithContactId = Opportunity & {
   contactId: number
@@ -23,4 +24,10 @@ export interface ContactId {
 
 export interface OpportunityId {
   id: string
+}
+
+export type OpportunityObjectDetails = ProgramType | Project | CustomProject
+
+export interface CustomProject {
+  titre: string
 }
