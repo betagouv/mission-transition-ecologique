@@ -52,7 +52,7 @@ const project = ref<Project>()
 const projectStore = useProjectStore()
 
 const navigationStore = useNavigationStore()
-const isCatalogDetail = navigationStore.isByRouteName(RouteName.CatalogProgramDetail)
+const isCatalogDetail = navigationStore.isCatalogProgramDetail()
 const router = useRouter()
 
 const routeToResults = {
@@ -65,7 +65,7 @@ const routeToProject = { ...routeToResults, name: RouteName.ProjectResultDetail,
 
 const links = computed<DsfrBreadcrumbProps['links']>(() => {
   const links = []
-  if (navigationStore.isByRouteName(RouteName.ProgramFromProjectDetail)) {
+  if (navigationStore.isProgramFromProject()) {
     links.push({ text: project.value?.title || '', to: routeToProject })
   }
   return [...links, { text: props.program?.titre || '' }]

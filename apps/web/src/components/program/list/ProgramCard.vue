@@ -97,7 +97,11 @@ const isCatalog = navigationStore.isCatalogPrograms()
 
 const getRouteToProgramDetail = (programId: string): RouteLocationRaw => {
   return {
-    name: isCatalog ? RouteName.CatalogProgramDetail : RouteName.QuestionnaireResultDetail,
+    name: isCatalog
+      ? RouteName.CatalogProgramDetail
+      : navigationStore.isByRouteName(RouteName.ProjectResultDetail)
+        ? RouteName.ProgramFromProjectDetail
+        : RouteName.QuestionnaireResultDetail,
     params: { programId },
     query: isCatalog ? undefined : navigationStore.query
   }

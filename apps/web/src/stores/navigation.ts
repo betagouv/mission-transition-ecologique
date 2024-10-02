@@ -120,6 +120,10 @@ export const useNavigationStore = defineStore('navigation', () => {
     return isByRouteName([RouteName.QuestionnaireResultDetail, RouteName.ProgramFromProjectDetail, RouteName.ProjectResultDetail])
   }
 
+  function isProgramFromProject() {
+    return isByRouteName(RouteName.ProgramFromProjectDetail)
+  }
+
   function isStaticPage() {
     return !isQuestionnaire() && !isCatalog()
   }
@@ -214,6 +218,7 @@ export const useNavigationStore = defineStore('navigation', () => {
     isCatalogProgramDetail,
     isCatalogList,
     isCatalogDetail,
+    isProgramFromProject,
     isByRouteName,
     resetSearchParams,
     setRouter,
