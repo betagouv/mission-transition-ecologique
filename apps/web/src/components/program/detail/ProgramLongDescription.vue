@@ -23,7 +23,7 @@ interface Props {
 const props = defineProps<Props>()
 
 const descriptionParagraphs = computed(() => {
-  const textRaw = props.program['description longue']
+  const textRaw = props.program['description longue'] || ''
   return (textRaw as string)?.split('\n') || []
 })
 </script>
