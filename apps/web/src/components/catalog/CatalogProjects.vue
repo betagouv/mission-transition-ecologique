@@ -66,6 +66,7 @@ import Contact from '@/utils/contact'
 import Analytics from '@/utils/analytic/analytics'
 import { Project } from '@/utils/project/project'
 import { computed, onBeforeMount } from 'vue'
+import { Theme } from '@/utils/theme'
 
 const projectStore = useProjectStore()
 const programStore = useProgramStore()
@@ -75,9 +76,7 @@ const projects = ref<ProjectType[]>()
 const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)
 
-const theme = computed(() => {
-  return programStore.hasThemeTypeSelected() ? (programStore.programFilters.themeTypeSelected as ThemeId) : ''
-})
+const theme = Theme.getThemeFromSelectedTheme()
 
 const filteredProjects = Project.filter(projects, programs, theme)
 const sortedProjects = Project.sort(filteredProjects)

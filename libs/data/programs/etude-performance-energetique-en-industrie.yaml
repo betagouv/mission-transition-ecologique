@@ -121,6 +121,7 @@ publicodes:
     une de ces conditions:
       - code NAF niveau 1 . est B
       - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est Q
   entreprise . a un objectif ciblé:
     une de ces conditions:
       - questionnaire . objectif prioritaire . est ma performance énergétique
