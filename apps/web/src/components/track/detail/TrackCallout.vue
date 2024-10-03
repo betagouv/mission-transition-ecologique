@@ -22,7 +22,6 @@
           <!-- CALLOUT HEADER -->
           <h2
             v-if="track.callout.header"
-            :style="`${track.callout.headerStyle || 'color: var(--text-default-info);'}`"
             class="tee-track-callout-header fr-sm-hide"
           >
             {{ track.callout.header[Translation.lang] }}
@@ -53,8 +52,7 @@
           <!-- CALLOUT HINT -->
           <p
             v-if="track.callout.hint"
-            class="fr-mt-2v fr-mb-1v tee-track-callout-hint"
-            style="color: var(--text-active-blue-france)"
+            class="fr-mt-2v fr-mb-1v tee-track-callout-hint fr-text--blue-france"
           >
             <i>
               <span

@@ -51,8 +51,8 @@
           <!-- TITLE & RESUME -->
           <div class="fr-col">
             <!-- PROGRAM TITLE -->
-            <div class="fr-col--middle fr-col-content--middle fr-text--purple fr-h6 fr-text--bold fr-mb-2v fr-mb-md-5v">
-              <div>{{ program?.titre }}</div>
+            <div class="fr-col-justify--left fr-mb-5v fr-h6 fr-text--purple">
+              <div class="fr-text-line-height--8v">{{ program?.titre }}</div>
               <TeeCopyLinkButton
                 class="fr-ml-6v fr-hidden fr-unhidden-md"
                 :tertiary="true"
@@ -242,7 +242,8 @@ import { useProgramStore } from '@/stores/program'
 import { type ProgramData as ProgramType, Project as ProjectType } from '@/types'
 import { RouteName } from '@/types/routeType'
 import { useNavigationStore } from '@/stores/navigation'
-import Matomo from '@/utils/matomo'
+import Analytics from '@/utils/analytic/analytics'
+import { MetaSeo } from '@/utils/metaSeo'
 import Program from '@/utils/program/program'
 import { Scroll } from '@/utils/scroll'
 import Translation from '@/utils/translation'
@@ -275,8 +276,6 @@ const programDuration = computed(() => program.value?.[`durée de l'accompagneme
 const programLoanDuration = computed(() => program.value?.[`durée du prêt`])
 const programProvider = computed(() => program.value?.['opérateur de contact'])
 const programEndValidity = computed(() => program.value?.[`fin de validité`])
-const programPageTitle = computed(() => `Transition écologique des TPE & PME - ${program.value?.[`titre`]}`)
-const programPageMeta = computed(() => program.value?.[`description`] || ' ')
 
 const columnTiles = computed(() => {
   const infoBlocks = [
@@ -303,19 +302,20 @@ onBeforeMount(async () => {
   if (projectResult.isOk) {
     linkedProjects.value = Program.getLinkedProjects(program.value, projectResult.value)
   }
+
+  useSeoMeta(MetaSeo.get(program.value?.titre, program.value?.description, program.value?.illustration))
+
   useNavigationStore().hasSpinner = false
   // analytics / send event
-  Matomo.sendEvent('result_detail', route.name === RouteName.CatalogProgramDetail ? 'show_detail_catalog' : 'show_detail', props.programId)
+  Analytics.sendEvent(
+    'result_detail',
+    route.name === RouteName.CatalogProgramDetail ? 'show_detail_catalog' : 'show_detail',
+    props.programId
+  )
 })
 
-useHead({
-  title: programPageTitle,
-  meta: [
-    {
-      name: 'description',
-      content: programPageMeta
-    }
-  ]
+onBeforeRouteLeave(() => {
+  useSeoMeta(MetaSeo.default())
 })
 
 const programIsAvailable = computed(() => {

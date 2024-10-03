@@ -1,7 +1,7 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`questionnaire.trackSiret > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import { HasInputOptions, SiretValue, TrackComponent, TrackId } from '@/types'
+import { HasInputOptions, SiretValue, TrackCategory, TrackComponent, TrackId } from '@/types'
 import type { Track, NextTrackRuleSet, EstablishmentFront } from '@/types'
 import { ConditionOperators, DataMappingFrom } from '@/types'
 import { QuestionnaireRoute, LegalCategory } from '@/types'
@@ -87,7 +87,7 @@ const defaultQuestionnaireData: EstablishmentFront = {
 
 export const siret: Track = {
   id: TrackId.Siret,
-  category: 'myEntreprise',
+  category: TrackCategory.MyEntreprise,
   title: { fr: 'Mon SIRET' },
   label: { fr: 'Quelle est votre entreprise ?' },
   interface: {
