@@ -2,7 +2,7 @@
   <div class="fr-grid-row fr-grid-row--center fr-my-10v">
     <div class="fr-col-5">
       <img
-        class="fr-responsive-img"
+        class="fr-responsive-img no-result-img"
         src="/images/tracks/no-results.png"
         :alt="`image / pas de résultat`"
       />
@@ -27,3 +27,9 @@ interface Props {
 }
 defineProps<Props>()
 </script>
+<style lang="scss" scoped>
+.no-result-img {
+  max-height: 200px;
+  object-fit: contain;
+}
+</style>

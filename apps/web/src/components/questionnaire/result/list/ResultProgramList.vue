@@ -17,7 +17,10 @@
               message="Aucune aide n'a pu être identifiée sur cette thématique..."
               :count-items="countPrograms"
             />
-            <ProgramList :filtered-programs="filteredPrograms" />
+            <ProgramList
+              v-else
+              :filtered-programs="filteredPrograms"
+            />
           </div>
         </div>
       </div>

@@ -12,7 +12,7 @@
     <div class="fr-grid-row fr-grid-row--center">
       <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
         <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-col-justify--left fr-mt-3v">
-          <ThemeFilter v-if="hasThemeFilter" />
+          <ThemeFilter />
         </div>
         <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-pr-md-2v">
           <ThemeHeaderCard
@@ -76,10 +76,6 @@ const countPrograms = computed(() => {
   return filteredPrograms.value?.length || 0
 })
 
-const havePrograms = computed(() => {
-  return countPrograms.value > 0
-})
-
 const hasSpinner = computed(() => {
   return programs.value === undefined && !hasError.value
 })
@@ -102,10 +98,6 @@ const theme = computed(() => {
 
 const showNoResultsComponent = computed(() => {
   return hasSpinner.value || hasError.value || !countPrograms.value
-})
-
-const hasThemeFilter = computed(() => {
-  return havePrograms.value && countPrograms.value > 1
 })
 
 const showThemeCard = computed(() => {

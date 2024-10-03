@@ -2,20 +2,6 @@
   <!-- PROGRAMS AS LIST OF CARDS -->
   <div class="fr-container--fluid fr-container--fluid--no-overflow">
     <div
-      v-if="showNoResults"
-      class="fr-grid-row fr-grid-row--center"
-    >
-      <div class="fr-container fr-mt-3v">
-        <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-col-justify--center">
-          <ResultListNoResults
-            :has-error="hasError"
-            message="Aucune idée d’action n’a pu être identifiée sur cette thématique..."
-            :count-items="countProjects"
-          />
-        </div>
-      </div>
-    </div>
-    <div
       v-if="showProjectListComponent"
       class="fr-grid-row fr-grid-row--center"
     >
@@ -25,6 +11,21 @@
         </div>
       </div>
     </div>
+    <div
+      v-if="showNoResults"
+      class="fr-grid-row fr-grid-row--center"
+    >
+      <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
+        <div class="fr-col-12 fr-col-offset-md-2 fr-col-md-10 fr-pl-md-2v fr-pr-md-6v">
+          <ResultListNoResults
+            :has-error="hasError"
+            message="Aucune idée d’action n’a pu être identifiée sur cette thématique..."
+            :count-items="countProjects"
+          />
+        </div>
+      </div>
+    </div>
+
     <ProjectList :sorted-projects="sortedProjects" />
   </div>
 </template>
