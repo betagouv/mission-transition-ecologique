@@ -20,18 +20,25 @@ const props = defineProps<Props>()
 const navigationStore = useNavigationStore()
 const usedTrackStore = useUsedTrackStore()
 
+const getListName = () => {
+  if (navigationStore.isProgramFromProject() || navigationStore.isCatalogAboutProjects()) {
+    return 'projets'
+  }
+  return 'dispositifs'
+}
+
 const getListText = () => {
   if (navigationStore.isCatalog()) {
-    return 'Liste des ' + (navigationStore.isCatalogAboutPrograms() ? 'dispositifs' : 'projets')
+    return 'Liste des ' + getListName()
   } else {
     return 'Vos résultats'
   }
 }
 const getBaseRouteName = () => {
-  if (navigationStore.isCatalogProgramDetail()) {
-    return RouteName.CatalogPrograms
-  } else if (navigationStore.isCatalogProjectDetail()) {
+  if (navigationStore.isProgramFromProject() || navigationStore.isCatalogAboutProjects()) {
     return RouteName.CatalogProjects
+  } else if (navigationStore.isCatalogAboutPrograms()) {
+    return RouteName.CatalogPrograms
   } else {
     return RouteName.QuestionnaireResult
   }
