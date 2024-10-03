@@ -42,10 +42,9 @@ export default class Cookie {
       }
     }
   }
-
-  static saveCookies(newCookies: Cookies) {
-    if (Cookie.cookies.value) {
-      let hasChanged = false
+  static hasChanged(newCookies: Cookies | undefined) {
+    let hasChanged = false
+    if (Cookie.cookies.value && newCookies) {
       const cookieNames = Object.keys(newCookies)
       for (const name of cookieNames as CookieValue[]) {
         if (Cookie.cookies.value[name].accepted !== newCookies[name].accepted) {
@@ -53,18 +52,21 @@ export default class Cookie {
           break
         }
       }
-      if (hasChanged) {
-        Object.values(newCookies).forEach((cookie: CookieManager) => {
-          document.cookie = `${cookie.value}=${cookie.accepted}`
-          if (cookie.accepted) {
-            Cookie.activateCookie(cookie.value)
-          } else {
-            Cookie.deactivateCookie(cookie.value)
-          }
-        })
-        document.cookie = 'tee-accept-cookies=true'
-        window.location.reload()
-      }
+    }
+    return hasChanged
+  }
+  static saveCookies(newCookies: Cookies) {
+    if (Cookie.cookies.value) {
+      Object.values(newCookies).forEach((cookie: CookieManager) => {
+        document.cookie = `${cookie.value}=${cookie.accepted}`
+        if (cookie.accepted) {
+          Cookie.activateCookie(cookie.value)
+        } else {
+          Cookie.deactivateCookie(cookie.value)
+        }
+      })
+      document.cookie = 'tee-accept-cookies=true'
+      window.location.reload()
     }
   }
 
