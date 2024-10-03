@@ -37,6 +37,7 @@
             </div>
           </div>
           <div class="fr-col-12 fr-col-md-10 fr-pr-md-2v">
+            <ProgramList :filtered-programs="filteredPrograms" />
             <TeeSpinner
               v-if="hasSpinner"
               scale="6"
@@ -48,7 +49,6 @@
               :has-spinner="hasSpinner"
               :count-items="countPrograms"
             />
-            <ProgramList :filtered-programs="filteredPrograms" />
           </div>
         </div>
       </div>
