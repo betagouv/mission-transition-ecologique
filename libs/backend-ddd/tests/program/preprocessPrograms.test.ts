@@ -1,6 +1,6 @@
 import { PublicodesKeys, QuestionnaireData, QuestionnaireDataEnum, QuestionnaireRoute } from '@tee/common'
 import { Entry, setObjectProperty } from '../../src/common/objects'
-import { type ProgramTypeWithPublicode } from '@tee/data'
+import { type ProgramType } from '@tee/data'
 import { PublicodesQuestionnaireRoute } from '../../src/program/infrastructure/types'
 import { makeProgramHelper, mockCurrentDateService, makeProgramsRepository } from './testing'
 import { FILTERING_RULE_NAME } from '../../src/program/domain/filterPrograms'
@@ -22,7 +22,7 @@ type QuestionnaireInputProperty = {
 }
 
 type ProgramInputProperty = {
-  inputDataEntry: Entry<ProgramTypeWithPublicode>
+  inputDataEntry: Entry<ProgramType>
   inputDataSource: DataSources.Program
 }
 

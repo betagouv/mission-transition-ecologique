@@ -1,13 +1,13 @@
 import { ProgramRepository } from '../domain/spi'
 import { jsonPrograms } from '@tee/data/generated'
-import { ProgramTypeWithPublicode } from '@tee/data'
+import { ProgramType } from '@tee/data'
 
 export default class ProgramsJson implements ProgramRepository {
   private static instance: ProgramsJson
-  private _programs: ProgramTypeWithPublicode[] = []
+  private _programs: ProgramType[] = []
 
   private constructor() {
-    this._programs = jsonPrograms as unknown as ProgramTypeWithPublicode[]
+    this._programs = jsonPrograms as unknown as ProgramType[]
   }
 
   public static getInstance(): ProgramsJson {
@@ -18,10 +18,10 @@ export default class ProgramsJson implements ProgramRepository {
     return ProgramsJson.instance
   }
 
-  public getAll(): ProgramTypeWithPublicode[] {
+  public getAll(): ProgramType[] {
     return this._programs
   }
-  public getById = (id: string): ProgramTypeWithPublicode | undefined => {
-    return this.getAll().find((programData: ProgramTypeWithPublicode) => programData.id === id)
+  public getById = (id: string): ProgramType | undefined => {
+    return this.getAll().find((programData: ProgramType) => programData.id === id)
   }
 }

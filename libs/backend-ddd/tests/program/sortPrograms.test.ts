@@ -1,6 +1,6 @@
 import { sortPrograms } from '../../src/program/domain/sortPrograms'
 import { QuestionnaireRoute } from '@tee/common'
-import { ProgramTypeWithPublicode, ProgramAidType } from '@tee/data'
+import { ProgramType, ProgramAidType } from '@tee/data'
 import { makeProgramHelper } from './testing'
 
 const makeProgram = (id: string, nature: ProgramAidType, cost = '') =>
@@ -12,7 +12,7 @@ const makeProgram = (id: string, nature: ProgramAidType, cost = '') =>
 
 type TestCase = {
   name: string
-  programs: ProgramTypeWithPublicode[]
+  programs: ProgramType[]
   expectedIdOrder: string[]
 }
 

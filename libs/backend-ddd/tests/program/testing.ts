@@ -1,5 +1,5 @@
 import { FILTERING_RULE_NAME } from '../../src/program/domain/filterPrograms'
-import { ProgramTypeWithPublicode, ProgramAidType } from '@tee/data'
+import { ProgramType, ProgramAidType } from '@tee/data'
 import { ProgramRepository } from '../../src/program/domain/spi'
 
 export type Rules = { [FILTERING_RULE_NAME]: { [k: string]: unknown } | string; [k: string]: unknown }
@@ -15,7 +15,7 @@ export const makeProgramHelper = ({
   rules?: Rules
   cost?: string
   nature?: ProgramAidType
-}): ProgramTypeWithPublicode => {
+}): ProgramType => {
   return {
     id: id,
     titre: '',
@@ -38,7 +38,7 @@ export const makeProgramHelper = ({
 
 export const mockCurrentDateService = { get: () => '01/01/2024' }
 
-export const makeProgramsRepository = (programs: ProgramTypeWithPublicode[]): ProgramRepository => {
+export const makeProgramsRepository = (programs: ProgramType[]): ProgramRepository => {
   return {
     getById: () => undefined,
     getAll: () => programs

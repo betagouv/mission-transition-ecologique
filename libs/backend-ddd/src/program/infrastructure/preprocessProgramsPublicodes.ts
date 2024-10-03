@@ -1,4 +1,4 @@
-import { type ProgramTypeWithPublicode, ThemeId } from '@tee/data'
+import { type ProgramType, ThemeId } from '@tee/data'
 import { type PublicodesInputData, PublicodesQuestionnaireRoute, SectorToNAFSection, NAF1Letters } from './types'
 import {
   BuildingProperty,
@@ -24,7 +24,7 @@ const SizeToWorkforce: { [key in StructureSize]: number } = {
  * needed by publicodes */
 export const preprocessInputForPublicodes = (
   questionnaireData: QuestionnaireData,
-  programData: ProgramTypeWithPublicode,
+  programData: ProgramType,
   currentDate: string
 ): PublicodesInputData => {
   const publicodesData: PublicodesInputData = {
@@ -127,7 +127,7 @@ const setQuestionnaireRoute = (publicodesData: PublicodesInputData, questionnair
     publicodesData[PublicodesKeys.QuestionnaireRoute] = convertQuestionnaireRoute(route)
   }
 }
-const setDateValidity = (publicodesData: PublicodesInputData, programData: ProgramTypeWithPublicode) => {
+const setDateValidity = (publicodesData: PublicodesInputData, programData: ProgramType) => {
   if (programData['début de validité']) {
     publicodesData['dispositif . début de validité'] = programData['début de validité']
   }

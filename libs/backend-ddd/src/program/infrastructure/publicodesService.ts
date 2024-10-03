@@ -2,7 +2,7 @@ import Engine from 'publicodes'
 import { evaluateRule } from './publicodes'
 import { Result } from 'true-myth'
 import { ensureError } from '../../common/domain/error/errors'
-import { ProgramTypeWithPublicode } from '@tee/data'
+import { ProgramType } from '@tee/data'
 import { QuestionnaireData } from '@tee/common'
 
 export class PublicodesService {
@@ -10,11 +10,11 @@ export class PublicodesService {
 
   private readonly _publicodeEngines: Record<string, Engine>
 
-  private constructor(programs: ProgramTypeWithPublicode[]) {
+  private constructor(programs: ProgramType[]) {
     this._publicodeEngines = initializePublicodesEngineForAllPrograms(programs)
   }
 
-  public static init(programs: ProgramTypeWithPublicode[]): void {
+  public static init(programs: ProgramType[]): void {
     PublicodesService.instance = new PublicodesService(programs)
   }
 
@@ -24,7 +24,7 @@ export class PublicodesService {
 
   public evaluate(
     rule: string,
-    program: ProgramTypeWithPublicode,
+    program: ProgramType,
     questionnaireData: QuestionnaireData,
     currentDate: string
   ): Result<boolean | undefined, Error> {
@@ -39,7 +39,7 @@ export class PublicodesService {
   }
 }
 
-const initializePublicodesEngineForAllPrograms = (programs: ProgramTypeWithPublicode[]): Record<string, Engine> => {
+const initializePublicodesEngineForAllPrograms = (programs: ProgramType[]): Record<string, Engine> => {
   return programs.reduce(
     (accu, program) => {
       const engineResult = initializePublicodesEngine(program.publicodes as object)

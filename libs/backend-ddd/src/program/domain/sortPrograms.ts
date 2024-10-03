@@ -1,9 +1,9 @@
-import { ProgramTypeWithPublicode, ProgramAidType } from '@tee/data'
+import { ProgramType, ProgramAidType } from '@tee/data'
 import { QuestionnaireRoute } from '@tee/common'
 
 // sorts the programs according to a "sortProfile", which currently
 // only depends on the questionnaireRoute
-export const sortPrograms = (programs: ProgramTypeWithPublicode[], sortProfile: QuestionnaireRoute): ProgramTypeWithPublicode[] => {
+export const sortPrograms = (programs: ProgramType[], sortProfile: QuestionnaireRoute): ProgramType[] => {
   programs.sort((p1, p2) => compareProgramsByType(p1, p2, sortProfile))
   if (sortProfile == QuestionnaireRoute.SpecificGoal) {
     programs.sort((p1, p2) => compareProgramsByObjectiveNumber(p1, p2))
@@ -11,19 +11,15 @@ export const sortPrograms = (programs: ProgramTypeWithPublicode[], sortProfile: 
   return programs
 }
 
-const compareProgramsByObjectiveNumber = (program1: ProgramTypeWithPublicode, program2: ProgramTypeWithPublicode): number => {
+const compareProgramsByObjectiveNumber = (program1: ProgramType, program2: ProgramType): number => {
   return Math.sign(objectifsNumber(program1) - objectifsNumber(program2))
 }
 
-const compareProgramsByType = (
-  program1: ProgramTypeWithPublicode,
-  program2: ProgramTypeWithPublicode,
-  route: QuestionnaireRoute
-): number => {
+const compareProgramsByType = (program1: ProgramType, program2: ProgramType, route: QuestionnaireRoute): number => {
   return Math.sign(getTypePriority(program1, route) - getTypePriority(program2, route))
 }
 
-const getTypePriority = (prog: ProgramTypeWithPublicode, route: QuestionnaireRoute): number => {
+const getTypePriority = (prog: ProgramType, route: QuestionnaireRoute): number => {
   switch (route) {
     case QuestionnaireRoute.NoSpecificGoal:
       switch (true) {
@@ -63,16 +59,15 @@ const getTypePriority = (prog: ProgramTypeWithPublicode, route: QuestionnaireRou
   }
 }
 
-const hasType = (aidType: ProgramAidType, program: ProgramTypeWithPublicode) => program["nature de l'aide"] == aidType
+const hasType = (aidType: ProgramAidType, program: ProgramType) => program["nature de l'aide"] == aidType
 
-const isFree = (program: ProgramTypeWithPublicode) => program["coût de l'accompagnement"]?.toLowerCase() == 'gratuit'
+const isFree = (program: ProgramType) => program["coût de l'accompagnement"]?.toLowerCase() == 'gratuit'
 
-const isMaybeFree = (program: ProgramTypeWithPublicode) => program["coût de l'accompagnement"]?.toLowerCase().includes('gratuit')
+const isMaybeFree = (program: ProgramType) => program["coût de l'accompagnement"]?.toLowerCase().includes('gratuit')
 
-const isCoachingOrTraining = (program: ProgramTypeWithPublicode) =>
-  hasType(ProgramAidType.study, program) || hasType(ProgramAidType.train, program)
+const isCoachingOrTraining = (program: ProgramType) => hasType(ProgramAidType.study, program) || hasType(ProgramAidType.train, program)
 
-const objectifsNumber = (program: ProgramTypeWithPublicode) => {
+const objectifsNumber = (program: ProgramType) => {
   if (
     program['publicodes']['entreprise . a un objectif ciblé'] &&
     program['publicodes']['entreprise . a un objectif ciblé']['une de ces conditions']

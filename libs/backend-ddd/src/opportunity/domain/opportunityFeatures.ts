@@ -5,7 +5,7 @@ import OpportunityHubFeatures from '../../opportunityHub/domain/opportunityHubFe
 import { OpportunityHubRepository } from '../../opportunityHub/domain/spi'
 import { ProgramRepository } from '../../program/domain/spi'
 import ProgramFeatures from '../../program/domain/programFeatures'
-import { Operators, ProgramTypeWithPublicode, Project } from '@tee/data'
+import { Operators, ProgramType, Project } from '@tee/data'
 import { ContactDetails, Opportunity, OpportunityType, SiretValidator } from '@tee/common'
 import EstablishmentService from '../../establishment/application/establishmentService'
 import Monitor from '../../common/domain/monitoring/monitor'
@@ -102,11 +102,7 @@ export default class OpportunityFeatures {
     return await this._opportunityRepository.getDailyOpportunitiesByContactId(contactId)
   }
 
-  private _transmitProgramOpportunityToHubs(
-    opportunityId: OpportunityId,
-    opportunity: OpportunityWithContactId,
-    program: ProgramTypeWithPublicode
-  ) {
+  private _transmitProgramOpportunityToHubs(opportunityId: OpportunityId, opportunity: OpportunityWithContactId, program: ProgramType) {
     void new OpportunityHubFeatures(this._opportunityHubRepositories)
       .maybeTransmitOpportunity(opportunity, program)
       .then(async (opportunityHubResult) => {
@@ -136,10 +132,7 @@ export default class OpportunityFeatures {
     return await this._opportunityRepository.update(opportunityId, { sentToOpportunityHub: success })
   }
 
-  private _addContactOperatorToOpportunity(
-    opportunity: Opportunity,
-    program: ProgramTypeWithPublicode | undefined
-  ): OpportunityWithOperatorContact {
+  private _addContactOperatorToOpportunity(opportunity: Opportunity, program: ProgramType | undefined): OpportunityWithOperatorContact {
     return {
       ...opportunity,
       programContactOperator: program?.['opérateur de contact']
@@ -153,11 +146,11 @@ export default class OpportunityFeatures {
     }
   }
 
-  private _getProgramById(id: string): ProgramTypeWithPublicode | undefined {
+  private _getProgramById(id: string): ProgramType | undefined {
     return new ProgramFeatures(this._programRepository).getById(id)
   }
 
-  private _sendReturnReceipt(opportunity: Opportunity, programOrProject: ProgramTypeWithPublicode | Project) {
+  private _sendReturnReceipt(opportunity: Opportunity, programOrProject: ProgramType | Project) {
     void this._mailRepository.sendReturnReceipt(opportunity, programOrProject).then((hasError) => {
       if (hasError) {
         Monitor.warning('Error while sending a return receipt', { error: hasError })

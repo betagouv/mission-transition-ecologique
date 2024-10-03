@@ -3,7 +3,7 @@ import { Result } from 'true-myth'
 import type { PublicodesInputData } from './types'
 import { filterObject } from '../../common/objects'
 import { preprocessInputForPublicodes } from './preprocessProgramsPublicodes'
-import { ProgramTypeWithPublicode } from '@tee/data'
+import { ProgramType } from '@tee/data'
 import { QuestionnaireData } from '@tee/common'
 
 /** Evaluates given program specific rules and user specific input data, if
@@ -16,7 +16,7 @@ import { QuestionnaireData } from '@tee/common'
 export const evaluateRule = (
   rule: string,
   engine: Engine,
-  programData: ProgramTypeWithPublicode,
+  programData: ProgramType,
   questionnaireData: QuestionnaireData,
   currentDate: string
 ): Result<boolean | undefined, Error> => {
