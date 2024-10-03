@@ -66,6 +66,12 @@ const closePersonalize = () => {
     modal.classList.remove('fr-modal--opened')
   }
 }
+const closeBaseConsent = () => {
+  const element = document.getElementById('tee-consent-popup')
+  if (element && !element.classList.contains('fr-hidden')) {
+    element.classList.add('fr-hidden')
+  }
+}
 onMounted(() => {
   cookies.value = JSON.parse(JSON.stringify(Cookie.cookies.value))
 })
@@ -80,6 +86,7 @@ const saveConsent = () => {
   if (cookies.value) {
     Cookie.saveCookies(cookies.value)
     closePersonalize()
+    closeBaseConsent()
   }
 }
 </script>
