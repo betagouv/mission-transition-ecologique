@@ -35,7 +35,7 @@ import { Project, Color, ThemeId } from '@/types'
 import { MetaSeo } from '@/utils/metaSeo'
 import { Theme } from '@/utils/theme'
 import { useProjectStore } from '@/stores/project'
-import { computed, onBeforeMount } from 'vue'
+import { onBeforeMount } from 'vue'
 
 const projectStore = useProjectStore()
 
