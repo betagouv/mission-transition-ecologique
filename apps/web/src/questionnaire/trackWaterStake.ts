@@ -1,8 +1,8 @@
-import { TrackComponent, TrackId, YesNo, ThemeId, Track } from '@/types'
+import { TrackComponent, TrackId, YesNo, ThemeId, Track, TrackCategory } from '@/types'
 
 export const waterStake: Track = {
   id: TrackId.WaterStake,
-  category: 'myWater',
+  category: TrackCategory.MyWater,
   title: { fr: 'Enjeu' },
   label: { fr: "Pensez-vous avoir un enjeu important sur votre consommation d'eau ?" },
   theme: ThemeId.Water,

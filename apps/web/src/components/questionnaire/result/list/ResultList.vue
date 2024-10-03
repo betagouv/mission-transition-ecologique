@@ -6,12 +6,12 @@
 <script setup lang="ts">
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
-import { ProgramType, TrackId, Project as ProjectType, ThemeId } from '@/types'
+import { ProgramType, TrackId, Project as ProjectType } from '@/types'
 import { Project } from '@/utils/project/project'
 import { computed, onBeforeMount } from 'vue'
-import Matomo from '@/utils/matomo'
+import Analytics from '@/utils/analytic/analytics'
 import { useProjectStore } from '@/stores/project'
-import UsedTrack from '@/utils/track/usedTrack'
+import { Theme } from '@/utils/theme'
 
 const programStore = useProgramStore()
 const projectStore = useProjectStore()
@@ -25,12 +25,7 @@ const filteredPrograms = computed(() => {
   return programs.value ? programStore.getProgramsByFilters(programs.value) : undefined
 })
 
-const theme = computed(() => {
-  return programStore.programFilters.themeTypeSelected !== ''
-    ? (programStore.programFilters.themeTypeSelected as ThemeId)
-    : (UsedTrack.getPriorityTheme() ?? '')
-})
-const filteredProjects = Project.filter(projects, filteredPrograms, theme)
+const filteredProjects = Project.filter(projects, filteredPrograms, Theme.getThemeFromSelectedOrPriorityTheme())
 
 onBeforeMount(async () => {
   navigationStore.hasSpinner = true
@@ -45,6 +40,6 @@ onBeforeMount(async () => {
 
   navigationStore.hasSpinner = false
   // analytics / send event
-  Matomo.sendEvent(TrackId.Results, 'show_results')
+  Analytics.sendEvent(TrackId.Results, 'show_results')
 })
 </script>

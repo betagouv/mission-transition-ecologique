@@ -1,0 +1,27 @@
+@use 'sass:meta';
+@use 'sass:map';
+@use '@gouvfr/dsfr/module/media-query';
+@use '@gouvfr/dsfr/module/media-query/variable/breakpoints';
+@use 'tool';
+@use 'setting';
+
+.fr-banner {
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+  }
+
+  .fr-grid-row {
+    height: 100%;
+  }
+
+  &__h100w100 {
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+}

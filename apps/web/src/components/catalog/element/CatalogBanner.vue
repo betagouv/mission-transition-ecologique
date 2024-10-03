@@ -1,7 +1,7 @@
 <template>
   <TeeBanner
     class="fr-pt-4v fr-py-md-6w fr-text-center"
-    :bg-color="bgColor ?? Color.blueLight"
+    :bg-color="bgColor ?? Color.blueFranceLightnessed"
   >
     <template #title>
       <div class="fr-col-10 fr-col-lg-8">
