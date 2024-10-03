@@ -83,10 +83,11 @@ const updateCookieStatus = (status: boolean, cookie: CookieValue) => {
 }
 
 const saveConsent = () => {
-  if (cookies.value) {
+  const hasChanged = Cookie.hasChanged(cookies.value)
+  if (cookies.value && (hasChanged || !Cookie.areCookiesSet())) {
     Cookie.saveCookies(cookies.value)
-    closePersonalize()
-    closeBaseConsent()
   }
+  closePersonalize()
+  closeBaseConsent()
 }
 </script>
