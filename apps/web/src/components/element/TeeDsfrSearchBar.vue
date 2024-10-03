@@ -15,7 +15,7 @@
     </span>
     <div
       v-if="option?.placeholder"
-      class="fr-mb-1v placeholder-text"
+      class="fr-mb-1v fr-bg--grey tee-font-style--italic"
     >
       {{ option?.placeholder?.[Translation.lang] }}
     </div>
@@ -97,10 +97,3 @@ const onClear = () => {
   emit('onClear')
 }
 </script>
-
-<style scoped>
-.placeholder-text {
-  color: #777;
-  font-style: italic;
-}
-</style>

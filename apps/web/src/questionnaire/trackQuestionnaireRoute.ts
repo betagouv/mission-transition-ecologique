@@ -1,4 +1,4 @@
-import { Track, TrackCategory } from '@/types'
+import { Color, Track, TrackCategory } from '@/types'
 import { TrackComponent, TrackId } from '@/types'
 import { QuestionnaireRoute } from '@tee/common'
 
@@ -8,7 +8,7 @@ export const questionnaireRoute: Track = {
   title: { fr: 'Par où commencer ?' },
   label: { fr: 'Comment pouvons-nous vous aider ?' },
   callout: {
-    bgColor: '#FACF35', // 'fr-callout--green-emeraude',
+    bgColor: Color.yellow,
     title: { fr: 'En avant !' },
     bigTitle: false,
     imageLeft: 'images/TEE-onboarding.png',

@@ -51,8 +51,8 @@
           <!-- TITLE & RESUME -->
           <div class="fr-col">
             <!-- PROGRAM TITLE -->
-            <div class="fr-col--middle fr-col-content--middle fr-text--purple fr-h6 fr-text--bold fr-mb-2v fr-mb-md-5v">
-              <div>{{ program?.titre }}</div>
+            <div class="fr-col-justify--left fr-mb-5v fr-h6 fr-text--purple">
+              <div class="fr-text-line-height--8v">{{ program?.titre }}</div>
               <TeeCopyLinkButton
                 class="fr-ml-6v fr-hidden fr-unhidden-md"
                 :tertiary="true"
@@ -64,12 +64,11 @@
 
             <!-- PROGRAM RESUME / TEXT-->
             <h2
-              :style="`color: ${blockColor}`"
+              class="fr-text--blue-france"
               v-html="program?.promesse"
             />
             <p
-              class="fr-mb-12v"
-              style="color: #000091"
+              class="fr-mb-12v fr-text--blue-france"
               v-html="program?.description"
             />
             <ProgramObjective
@@ -218,7 +217,7 @@
     <!-- PROGRAM FORM -->
     <div
       ref="TeeProgramFormContainer"
-      class="fr-tee-form-block fr-p-4v"
+      class="fr-bg--blue-france--lightness fr-col-justify--center fr-p-2w"
     >
       <ProgramForm
         v-if="program"
@@ -243,7 +242,7 @@ import { useProgramStore } from '@/stores/program'
 import { type ProgramData as ProgramType, Project as ProjectType } from '@/types'
 import { RouteName } from '@/types/routeType'
 import { useNavigationStore } from '@/stores/navigation'
-import Matomo from '@/utils/matomo'
+import Analytics from '@/utils/analytic/analytics'
 import Program from '@/utils/program/program'
 import { Scroll } from '@/utils/scroll'
 import Translation from '@/utils/translation'
@@ -259,7 +258,6 @@ const program = ref<ProgramType>()
 const linkedProjects = ref<ProjectType[] | undefined>([])
 const TeeProgramFormContainer = ref<HTMLElement | null | undefined>(null)
 
-const blockColor = '#000091'
 const publicPath = Config.publicPath
 
 interface Props {
@@ -307,7 +305,11 @@ onBeforeMount(async () => {
   }
   useNavigationStore().hasSpinner = false
   // analytics / send event
-  Matomo.sendEvent('result_detail', route.name === RouteName.CatalogProgramDetail ? 'show_detail_catalog' : 'show_detail', props.programId)
+  Analytics.sendEvent(
+    'result_detail',
+    route.name === RouteName.CatalogProgramDetail ? 'show_detail_catalog' : 'show_detail',
+    props.programId
+  )
 })
 
 useHead({

@@ -1,12 +1,12 @@
-import { ProgramYamlGenerator } from './program/programYamlGenerator'
+import { ProgramYamlsGenerator } from './program/yamlGenerator/programYamlsGenerator'
 
-console.log('Start the project data generation')
+console.log('Start the program Yamls generation')
 
-new ProgramYamlGenerator()
+new ProgramYamlsGenerator()
   .createProgramYamls()
   .then(() => {
-    console.log('Project data generated')
+    console.log('Program Yamls generated')
   })
   .catch((error) => {
-    console.error('Error during the project data generation:', error)
+    console.error('Error during the program Yamls generation:', error)
   })

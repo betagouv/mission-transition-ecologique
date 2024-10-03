@@ -5,13 +5,13 @@
 
   &.default-callout {
     border-left: 4px solid;
-    border-color: setting.$base-purple;
+    border-color: setting.$purple;
     background: var(--light-background-alt-blue-france, #f5f5fe);
   }
 
   &.warning-callout {
     border-left: 4px solid;
-    border-color: setting.$base-red;
+    border-color: setting.$red;
     background: rgb(252 160 129 / 20%);
   }
 

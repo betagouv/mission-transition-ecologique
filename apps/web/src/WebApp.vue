@@ -1,8 +1,9 @@
 <template>
+  <TeeDsfrConsent />
+  <TeeDsfrPersonalizeConsent />
   <div>
     <TeeHeader />
     <TeeMatomo />
-
     <router-view v-if="isReady" />
     <template v-else>
       <div class="fr-grid-row--center fr-my-10v">
@@ -28,10 +29,9 @@ import { onBeforeMount, onMounted, computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useNavigationStore } from './stores/navigation'
 
-import TeeHeader from './components/TeeHeader.vue'
-import TeeMatomo from './components/TeeMatomo.vue'
 import TeeFooter from './components/TeeFooter.vue'
 import Translation from './utils/translation'
+import Cookie from './utils/cookies'
 
 const navigationStore = useNavigationStore()
 const router = useRouter()
@@ -43,6 +43,7 @@ const isReady = computed<boolean>(() => {
 
 onBeforeMount(() => {
   Translation.setLocale('fr')
+  Cookie.setCookies()
 })
 
 onMounted(async () => {
