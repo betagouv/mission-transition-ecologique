@@ -8,13 +8,13 @@
     <TrackCallout :track="track" />
     <div
       v-if="track.theme"
-      class="fr-col-12 fr-px-0v fr-px-md-4v"
+      class="fr-col-12 fr-px-0v"
     >
       <ThemeHeaderCard :theme="track.theme" />
     </div>
 
     <div class="fr-col">
-      <div class="fr-pl-4v fr-grid-row fr-grid-row--gutters">
+      <div :class="`fr-pl-4v fr-grid-row ${useUsedTrackStore().currentIsFirst ? 'fr-grid-row--gutters' : ''}`">
         <TrackLabel :track="track" />
         <TrackInfo :track="track" />
         <TrackHint :track="track" />
@@ -64,30 +64,19 @@
             />
           </div>
         </template>
-      </div>
 
-      <div
-        v-if="TrackComponent.isSelect(usedTrack)"
-        class="fr-px-4v fr-px-md-0v fr-grid-row fr-grid-row--gutters"
-      >
         <TrackSelect
-          class="fr-px-2v fr-px-md-3v fr-mt-6v fr-col-12"
+          v-if="TrackComponent.isSelect(usedTrack)"
+          class="fr-col-12 fr-col-md-10 fr-col-lg-8"
           @update-selection="updateSelection($event.option, $event.index, $event.remove)"
         />
-      </div>
-      <div
-        v-if="TrackComponent.isThemeInterface(usedTrack)"
-        class="fr-container--fluid"
-      >
+
         <ThemeSelect
-          @update-selection="
-            ($event) => {
-              updateSelection($event.option, $event.index, $event.remove)
-              saveSelection()
-            }
-          "
+          v-if="TrackComponent.isThemeInterface(usedTrack)"
+          @update-selection="updateAndSave($event.option, $event.index, $event.remove)"
         />
       </div>
+
       <div
         v-if="hasSubmitButton"
         class="fr-grid-row fr-grid-row--gutters fr-pt-8v fr-px-4v fr-px-md-0v"
@@ -217,9 +206,9 @@ const updateSelectionValueFromButtonInput = (trackOptionItem: TrackOptionItem) =
   })
 }
 
-const updateAndSave = async (option: TrackOptionsUnion, index: number) => {
+const updateAndSave = async (option: TrackOptionsUnion, index: number, needRemove = false) => {
   await updateSelection(option, index)
-  await saveSelection()
+  await saveSelection(needRemove)
 }
 
 const saveSelection = async (needRemove = false) => {
