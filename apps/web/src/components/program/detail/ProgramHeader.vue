@@ -68,7 +68,7 @@ const links = computed<DsfrBreadcrumbProps['links']>(() => {
   if (navigationStore.isByRouteName(RouteName.ProgramFromProjectDetail)) {
     links.push({ text: project.value?.title || '', to: routeToProject })
   }
-  return [...links, { text: (props.program?.titre as string) || '' }]
+  return [...links, { text: props.program?.titre || '' }]
 })
 onBeforeMount(() => {
   project.value = projectStore.currentProject
