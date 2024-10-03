@@ -243,6 +243,7 @@ import { ProgramType, Project as ProjectType } from '@/types'
 import { RouteName } from '@/types/routeType'
 import { useNavigationStore } from '@/stores/navigation'
 import Analytics from '@/utils/analytic/analytics'
+import { MetaSeo } from '@/utils/metaSeo'
 import Program from '@/utils/program/program'
 import { Scroll } from '@/utils/scroll'
 import Translation from '@/utils/translation'
@@ -275,8 +276,6 @@ const programDuration = computed(() => program.value?.[`durée de l'accompagneme
 const programLoanDuration = computed(() => program.value?.[`durée du prêt`])
 const programProvider = computed(() => program.value?.['opérateur de contact'])
 const programEndValidity = computed(() => program.value?.[`fin de validité`])
-const programPageTitle = computed(() => `Transition écologique des TPE & PME - ${program.value?.[`titre`]}`)
-const programPageMeta = computed(() => program.value?.[`description`] || ' ')
 
 const columnTiles = computed(() => {
   const infoBlocks = [
@@ -303,6 +302,9 @@ onBeforeMount(async () => {
   if (projectResult.isOk) {
     linkedProjects.value = Program.getLinkedProjects(program.value, projectResult.value)
   }
+
+  useSeoMeta(MetaSeo.get(program.value?.titre, program.value?.description, program.value?.illustration))
+
   useNavigationStore().hasSpinner = false
   // analytics / send event
   Analytics.sendEvent(
@@ -312,14 +314,8 @@ onBeforeMount(async () => {
   )
 })
 
-useHead({
-  title: programPageTitle,
-  meta: [
-    {
-      name: 'description',
-      content: programPageMeta.value as string
-    }
-  ]
+onBeforeRouteLeave(() => {
+  useSeoMeta(MetaSeo.default())
 })
 
 const programIsAvailable = computed(() => {

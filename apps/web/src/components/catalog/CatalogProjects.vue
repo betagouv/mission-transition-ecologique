@@ -1,8 +1,8 @@
 <template>
   <TeeDsfrBreadcrumb />
   <CatalogBanner>
-    <template #title> Le catalogue des projets de transition écologique </template>
-    <template #description> Accédez à la liste des projets de transition écologique destinées aux entreprises. </template>
+    <template #title> {{ title }} </template>
+    <template #description> {{ description }} </template>
   </CatalogBanner>
 
   <div class="fr-container fr-mt-6v">
@@ -64,6 +64,7 @@ import { useProjectStore } from '@/stores/project'
 import { type ProgramType, Project as ProjectType, TrackId, ThemeId } from '@/types'
 import Contact from '@/utils/contact'
 import Analytics from '@/utils/analytic/analytics'
+import { MetaSeo } from '@/utils/metaSeo'
 import { Project } from '@/utils/project/project'
 import { computed, onBeforeMount } from 'vue'
 import { Theme } from '@/utils/theme'
@@ -75,6 +76,9 @@ const navigationStore = useNavigationStore()
 const projects = ref<ProjectType[]>()
 const programs = ref<ProgramType[]>()
 const hasError = ref<boolean>(false)
+
+const title = 'Le catalogue des projets de transition écologique'
+const description = 'Accédez à la liste des projets de transition écologique destinées aux entreprises.'
 
 const theme = Theme.getThemeFromSelectedTheme()
 
@@ -94,6 +98,8 @@ const hasFilteredProjects = computed(() => {
 })
 
 onBeforeMount(async () => {
+  useSeoMeta(MetaSeo.get(title, description))
+
   navigationStore.hasSpinner = true
   const programResult = await programStore.programs
   const projectResult = await projectStore.projects
@@ -108,5 +114,9 @@ onBeforeMount(async () => {
 
   // analytics / send event
   Analytics.sendEvent(TrackId.Results, 'show_results_catalog_projects')
+})
+
+onBeforeRouteLeave(() => {
+  useSeoMeta(MetaSeo.default())
 })
 </script>
