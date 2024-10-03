@@ -46,6 +46,7 @@ const onAcceptAll = () => {
 }
 const onRefuseAll = () => {
   Cookie.refuseAllCookies()
+  closeCustomize()
 }
 const openCustomize = () => {
   const modal = document.getElementById('fr-consent-modal')
@@ -53,10 +54,13 @@ const openCustomize = () => {
     modal.classList.add('fr-modal--opened')
   }
 }
+const closeCustomize = () => {
+  $el.value?.classList.add('fr-hidden')
+}
 
 onMounted(() => {
   if (Cookie.areCookiesSet()) {
-    $el.value?.classList.add('fr-hidden')
+    closeCustomize()
   }
 })
 </script>

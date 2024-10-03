@@ -1,5 +1,5 @@
 <template>
-  <div class="fr-grid-row fr-grid-row--no-gutters fr-pt-3v">
+  <div class="fr-grid-row fr-pt-3v">
     <div
       v-for="opt in options"
       :key="opt.value"
@@ -80,6 +80,7 @@ const selectOption = (opt: string | undefined) => {
     index: selectedOptionIndex,
     remove: selectedOption === undefined
   } as TrackOptionItem
+
   emit('updateSelection', data)
 }
 
