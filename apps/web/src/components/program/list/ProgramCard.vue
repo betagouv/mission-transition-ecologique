@@ -59,30 +59,31 @@ const getCostInfos = () => {
   switch (program["nature de l'aide"]) {
     case ProgramAidType.study:
       if (program["coût de l'accompagnement"]) {
-        text = program["coût de l'accompagnement"] as string
+        text = program["coût de l'accompagnement"]
         prefix = 'programCosts.costPrefix'
       } else {
         prefix = 'programCosts.aidPrefix'
-        text = program['montant du financement'] as string
+        text = program['montant du financement']
       }
       break
     case ProgramAidType.train:
       prefix = 'programCosts.costPrefix'
-      text = program["coût de l'accompagnement"] as string
+      text = program["coût de l'accompagnement"]
       break
     case ProgramAidType.fund:
       prefix = 'programCosts.aidPrefix'
-      text = program['montant du financement'] as string
+      text = program['montant du financement']
       break
     case ProgramAidType.loan:
       prefix = 'programCosts.loan'
-      text = program['montant du prêt'] as string
+      text = program['montant du prêt']
       break
     case ProgramAidType.tax:
       prefix = 'programCosts.taxAdvantage'
-      text = program["montant de l'avantage fiscal"] as string
+      text = program["montant de l'avantage fiscal"]
       break
   }
+  if (!text) text = ''
   // Translate prefix
   prefix = Translation.t(prefix)
 
