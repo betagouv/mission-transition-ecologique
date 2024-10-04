@@ -1,9 +1,8 @@
 <template>
   <TeeContentBlock
     id="project-aids-title"
-    class="fr-pt-3v fr-pb-4v"
+    class="fr-pt-3v fr-pb-4v fr-border-b--grey--light"
     title="💰 Mes aides"
-    :border-position="[BorderPosition.bottom]"
   >
     <template #content>
       <div class="fr-container--fluid fr-px-3v">
@@ -81,7 +80,7 @@
 <script setup lang="ts">
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { useProgramStore } from '@/stores/program'
-import { BorderPosition, ProgramAidType, type ProgramData, Project, QuestionnaireRoute, TrackId } from '@/types'
+import { ProgramAidType, type ProgramData, Project, QuestionnaireRoute, TrackId } from '@/types'
 import Contact from '@/utils/contact'
 import { RouteName } from '@/types/routeType'
 import { type RouteLocationRaw } from 'vue-router'
