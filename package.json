@@ -111,7 +111,7 @@
   "devDependencies": {
     "@nx/express": "^19.2.3",
     "@nx/node": "19.2.3",
-    "@playwright/test": "^1.45.3",
+    "@playwright/test": "^1.47.2",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.7",
     "@svgr/webpack": "^8.0.1",
     "@types/cors": "^2.8.17",

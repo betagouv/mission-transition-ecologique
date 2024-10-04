@@ -57,8 +57,8 @@ montant du prêt: De 10 000 € à 50 000 € HT
 durée du prêt: De 5 à 7 ans (dont 2 ans maximum de différé)
 objectifs:
   - description: >-
-      Vérifiez l’éligibilité de votre projet et les modalités du prêts en
-      prenant contact avec un conseiller.
+      Vérifiez l’éligibilité de votre projet et les modalités du prêt en prenant
+      contact avec un conseiller.
   - description: >-
       Réalisez votre demande de prêt sur Bpifrance, la Banque Publique
       d'Investissement dédiée aux entreprises, en charge.
@@ -94,11 +94,11 @@ conditions d'éligibilité:
     - "Avoir un\_chiffre d’affaires inférieur à 50 M€\_ou un\_total bilan inférieur à 43 M€."
     - >-
       Disposer d'un emprunt bancaire d'une durée de remboursement supérieure à 3
-      ans, pour mettre en place le
-      [cofinancement](https://aide.flash.bpifrance.fr/kb/guide/fr/comprendre-le-cofinancement-JYGuo2FmNj/Steps/2003850)
-      du prêt.
+      ans, pour mettre en place le cofinancement du prêt.
     - "Être une entreprise financièrement saine et à jour de vos\_obligations fiscales et sociales."
-    - "Cette aide est éligible au\_[régime de minimis](https://www.europe-en-france.gouv.fr/fr/aides-d-etat/les-aides-de-minimis)\_(Cumul d’aides publiques inférieur à 300 000 € sur les 3 dernières années)."
+    - >-
+      Cette aide est éligible au régime de minimis (Cumul d’aides publiques
+      inférieur à 300 000 € sur les 3 dernières années).
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

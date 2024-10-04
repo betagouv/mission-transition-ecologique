@@ -20,7 +20,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm clean-install
+    - run: npm clean-install --foreground-scripts
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
