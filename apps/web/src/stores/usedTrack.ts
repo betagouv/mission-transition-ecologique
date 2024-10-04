@@ -3,6 +3,7 @@ import { useTrackStore } from '@/stores/track'
 import {
   type NextTrackRuleSet,
   type QuestionnaireData,
+  RouteName,
   type Track,
   TrackComponent,
   TrackId,
@@ -17,6 +18,9 @@ import { remapItem } from '@/utils/helpers'
 import Translation from '@/utils/translation'
 import { acceptHMRUpdate, defineStore } from 'pinia'
 import { computed, ref, toRaw } from 'vue'
+import CompanyData from '@/utils/storage/companyData'
+import { useCompanyDataStore } from '@/stores/companyData'
+import { QuestionnaireDataKey } from '@/types/companyDataType'
 
 export const useUsedTrackStore = defineStore('usedTrack', () => {
   const current = ref<UsedTrack | undefined>()
@@ -105,6 +109,15 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
 
       if (value) {
         useNavigationStore().updateSearchParam({ name: current.value.id, value: value })
+      }
+
+      if (current.value.isPersisted) {
+        const questionnaireData = selectedOptions.map((selectedOption) => selectedOption.questionnaireData)
+        questionnaireData.forEach((questionnaireData) => {
+          Object.entries(questionnaireData as QuestionnaireData).forEach(([key, value]) => {
+            useCompanyDataStore().setItem(key as QuestionnaireDataKey, value)
+          })
+        })
       }
     }
   }
@@ -204,7 +217,8 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
       completed: Boolean(selectedOptions.length),
       step: usedTracks.value.length + 1,
       selected: selectedOptions,
-      next: next
+      next: next,
+      isPersisted: CompanyData.isPersisted(track.id)
     }
 
     // Check if already exists and replace it
@@ -249,6 +263,15 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
         })
       })
     })
+
+    if (CompanyData.hasData() && !useNavigationStore().isByRouteName([RouteName.Questionnaire, RouteName.QuestionnaireResult])) {
+      const companyData = useCompanyDataStore().getData() as { [k: string]: any }
+      Object.entries(companyData).forEach(([key, value]) => {
+        if (questionnaireData[key] === undefined) {
+          questionnaireData[key] = value
+        }
+      })
+    }
 
     return questionnaireData
   }

@@ -200,6 +200,7 @@ export interface UsedTrack {
   step: number
   selected: TrackOptionsUnion[]
   next?: TrackNext
+  isPersisted?: boolean
 }
 
 export enum TrackCategory {
