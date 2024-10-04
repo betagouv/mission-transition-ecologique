@@ -30,13 +30,16 @@ illustration: images/TEE_ampoule.png
 opérateur de contact: Agence Régionale Biodiversité et Environnement
 url: https://www.arbe-regionsud.org/203-demarche-mecenaturel.html
 nature de l'aide: avantage fiscal
-montant de l'avantage fiscal: déduction de 60 % du montant du don
+montant de l'avantage fiscal: Réduction de 60 % du montant du don
 objectifs:
   - description: >-
       Parcourez la documentation du dispositif Mécénaturel, et prenez contact
       avec un conseiller pour vous accompagner dans votre démarche de mécénat
       environnemental.
     liens:
+      - lien: >-
+          https://www.arbe-regionsud.org/203-demarche-mecenaturel.html#:~:text=M%C3%A9c%C3%A9naturel,%20la%20dynamique%20de%20m%C3%A9c%C3%A9nat%20environnemental%20du%20R%C3%A9seau%20r%C3%A9gional%20des
+        texte: Démarche Mécénaturel
       - lien: >-
           https://www.arbe-regionsud.org/Block/download/?id=205527&filename=Mecenaturel-2020-OK.pdf
         texte: Documentation Mécénaturel
@@ -46,8 +49,7 @@ objectifs:
       l’environnement, découverte durable, patrimoine culturel.
   - description: >-
       Signez une convention de mécénat avec le gestionnaire du projet-nature.
-      Elle précise votre rôle de partenaire et les privilèges qui vous sont
-      accordés (avantages pour les salariés, notoriété)
+      Elle précise votre rôle de partenaire.
   - description: >-
       En tant qu'entreprise "mécéne de la nature", valorisez votre engagement
       environnemental auprès de vos équipes, clients et partenaires, et
