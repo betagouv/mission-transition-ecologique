@@ -68,8 +68,8 @@
       <div
         v-else
         id="project-contact"
-        class="fr-bg--blue-france--lightness fr-col-justify--center fr-p-2w"
         ref="TeeProjectFormContainer"
+        class="fr-bg--blue-france--lightness fr-col-justify--center fr-grid-row fr-p-2w"
       >
         <TeeForm
           v-if="project"

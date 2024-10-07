@@ -37,12 +37,16 @@ export type ValidatedStringFieldInputType = StringFieldInputType & {
   validation: CallableFunction
   errorMessage: string
 }
+export type SelectFieldInputType = StringFieldInputType & { options: any }
+
+export type StringFieldUnionType = StringFieldInputType | MandatoryStringFieldFormType | ValidatedStringFieldInputType
 
 export type InputFieldUnionType =
   | StringFieldInputType
   | MandatoryStringFieldFormType
-  | BooleanFieldInputType
   | ValidatedStringFieldInputType
+  | BooleanFieldInputType
+  | SelectFieldInputType
 
 export const isValidatedStringFieldInputType = (field: InputFieldUnionType): field is ValidatedStringFieldInputType => {
   return 'validation' in field

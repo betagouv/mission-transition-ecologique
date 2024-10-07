@@ -1,44 +1,35 @@
 <template>
   <DsfrCheckbox
-    v-model="localField.value"
-    :name="`form-checkbox-${localField.label}`"
-    :is-valid="localField.isValid"
-    :required="localField.required"
-    @update:model-value="validateFormField"
-    @focusout="validateFormField"
+    v-model="model"
+    :name="`form-checkbox-${field.label}`"
+    :is-valid="field.isValid"
+    :required="field.required"
   >
     <template #label>
-      <span> {{ localField.label }} <code>*</code></span>
+      <span> {{ field.label }} <code>*</code></span>
     </template>
   </DsfrCheckbox>
   <!-- CHECKBOX HINT -->
   <span class="fr-hint-text fr-mt-5v">
-    {{ localField.hint }}
+    {{ field.hint }}
     <router-link
-      v-if="localField.hintLink"
-      :to="{ name: localField.hintLink.route }"
+      v-if="field.hintLink"
+      :to="{ name: field.hintLink.route }"
       target="_blank"
     >
-      {{ localField.hintLink.text }}
+      {{ field.hintLink.text }}
     </router-link>
     .
   </span>
 </template>
 <script lang="ts" setup>
-import { DefaultFieldFormType } from '@/types'
+import { BooleanFieldInputType } from '@/types'
 
 interface Props {
-  field: DefaultFieldFormType
+  field: BooleanFieldInputType
   publicPath: string
 }
 
-const props = defineProps<Props>()
-const localField = ref<DefaultFieldFormType>(props.field)
-
-const emit = defineEmits<{
-  updateField: [payload: DefaultFieldFormType['value']]
-}>()
-const validateFormField = (): void => {
-  emit('updateField', localField.value.value)
-}
+defineProps<Props>()
+const model = defineModel<BooleanFieldInputType['value']>()
 </script>

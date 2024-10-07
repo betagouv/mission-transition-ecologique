@@ -4,62 +4,53 @@
     :valid-message="getValidMessage()"
   >
     <DsfrInput
-      v-model="localField.value"
+      v-model="model"
       class="fr-bg--white"
-      :type="localField.type"
+      :type="field.type"
       label-visible
-      :is-valid="localField.isValid"
-      :required="localField.required"
-      :label="localField.label"
-      :rows="localField.rows"
-      :is-textarea="!!localField.rows"
-      :wrapper-class="localField.wrapperClass"
+      :is-valid="field.isValid"
+      :required="field.required"
+      :label="field.label"
+      :rows="field.rows"
+      :is-textarea="!!field.rows"
+      :wrapper-class="field.wrapperClass"
       :hint="field.hint"
-      @focusout="validateFormField"
     >
       <template
-        v-if="localField.callOut"
+        v-if="field.callOut"
         #label
       >
-        {{ localField.label }}
+        {{ field.label }}
         <slot name="required-tip">
           <span
-            v-if="localField.required"
+            v-if="field.required"
             class="required"
             >*</span
           >
         </slot>
 
         <TeeCallout
-          class="fr-bg--blue fr-text--white fr-px-2v fr-pt-2v fr-pb-0 fr-mb-0 fr-text--bold"
-          :type="localField.callOut.type"
-          :img="`${publicPath}${localField.callOut.img}`"
+          class="custom-callout fr-bg--purple fr-text--white fr-px-2v fr-pt-2v fr-pb-0 fr-mb-0 fr-text--bold"
+          :type="field.callOut.type"
+          :img="`${publicPath}${field.callOut.img}`"
           :img-container-class="'fr-col-xl-2 fr-hidden fr-unhidden-lg'"
           :content-class="'fr-pb-2v fr-px-3v fr-px-lg-0'"
         >
-          {{ localField.callOut.content }}
+          {{ field.callOut.content }}
         </TeeCallout>
       </template>
     </DsfrInput>
   </DsfrInputGroup>
 </template>
 <script lang="ts" setup>
-import { DefaultFieldFormType } from '@/types'
+import { StringFieldUnionType } from '@/types'
 
 interface Props {
-  field: DefaultFieldFormType
+  field: StringFieldUnionType
   publicPath: string
   getErrorMessage: () => ''
   getValidMessage: () => ''
 }
-
-const props = defineProps<Props>()
-const localField = ref<DefaultFieldFormType>(props.field)
-
-const emit = defineEmits<{
-  updateField: [payload: DefaultFieldFormType['value']]
-}>()
-const validateFormField = (): void => {
-  emit('updateField', localField.value.value)
-}
+defineProps<Props>()
+const model = defineModel<StringFieldUnionType['value']>()
 </script>

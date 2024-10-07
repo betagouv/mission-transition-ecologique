@@ -28,10 +28,9 @@
       <div class="fr-grid-row fr-grid-row--gutters fr-mb-2v fr-mt-4v">
         <TeeFormElement
           v-for="fieldKey in Object.keys(localForm)"
-          v-show="!localForm[fieldKey].hidden"
           :key="fieldKey"
           :field="localForm[fieldKey]"
-          @update-field="(field) => (localForm[fieldKey] = field)"
+          @update:model-value="(field) => (localForm[fieldKey] = field)"
         />
       </div>
 
@@ -80,10 +79,10 @@
 <script setup lang="ts">
 import { Scroll } from '@/utils/scroll'
 import { computed } from 'vue'
-import { DefaultFieldFormType, type ReqResp, TrackId, FormDataType } from '@/types'
+import { type ReqResp, TrackId, FormDataType, InputFieldUnionType } from '@/types'
 import Translation from '@/utils/translation'
 import TeeDsfrButton from '@/components/element/button/TeeDsfrButton.vue'
-import Matomo from '@/utils/matomo'
+import Matomo from '@/utils/analytic/matomo'
 import Format from '@/utils/format'
 import OpportunityApi from '@/service/api/opportunityApi'
 import { OpportunityType } from '@tee/common'
@@ -127,7 +126,7 @@ const isFormValid = computed(() => {
   return isValid.every((v) => v !== false)
 })
 
-const isFieldValid = (field: DefaultFieldFormType): boolean => {
+const isFieldValid = (field: InputFieldUnionType): boolean => {
   return field.value !== undefined && field.value !== '' && field.value !== false
 }
 

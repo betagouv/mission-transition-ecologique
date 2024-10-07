@@ -4,33 +4,24 @@
     :valid-message="getValidMessage()"
   >
     <DsfrSelect
-      v-model="localField.value"
-      :label="localField.label"
-      :required="localField.required"
-      :name="`form-select-${localField.label}`"
-      :options="localField.options"
-      @update:model-value="validateFormField"
+      v-model="model"
+      :label="field.label"
+      :required="field.required"
+      :name="`form-select-${field.label}`"
+      :options="field.options"
     />
   </DsfrInputGroup>
 </template>
 <script lang="ts" setup>
-import { DefaultFieldFormType } from '@/types'
+import { SelectFieldInputType } from '@/types'
 
 interface Props {
-  field: DefaultFieldFormType
+  field: SelectFieldInputType
   publicPath: string
   getErrorMessage: () => ''
   getValidMessage: () => ''
 }
 
-const props = defineProps<Props>()
-const localField = ref<DefaultFieldFormType>(props.field)
-
-const emit = defineEmits<{
-  updateField: [payload: DefaultFieldFormType['value']]
-}>()
-
-const validateFormField = (): void => {
-  emit('updateField', localField.value.value)
-}
+defineProps<Props>()
+const model = defineModel<SelectFieldInputType['value']>()
 </script>
