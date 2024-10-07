@@ -8,7 +8,7 @@ export default class CompanyData {
   }
 
   static hasData() {
-    const data = useCompanyDataStore().getData()
+    const data = useCompanyDataStore().data
     return data ? Object.entries(data).some((datum) => datum !== null) : false
   }
 }

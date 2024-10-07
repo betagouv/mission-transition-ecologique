@@ -3,12 +3,11 @@ import { LocalStorageHandler } from '@/utils/storage/localStorageHandler'
 import { QuestionnaireDataKey } from '@/types/companyDataType'
 import { StorageHandlerInterface } from '@/utils/storage/StorageHandlerInterface'
 
+//TODO: utiliser plutôt des méthodes static sur le handler ?
 const storageHandler: StorageHandlerInterface = new LocalStorageHandler()
 
 export const useCompanyDataStore = defineStore('companyData', () => {
-  function getData() {
-    return storageHandler.getAll()
-  }
+  const data = computed(() => storageHandler.getAll())
 
   function setItem(key: QuestionnaireDataKey, value: string): void {
     storageHandler.setItem(key, value)
@@ -27,7 +26,7 @@ export const useCompanyDataStore = defineStore('companyData', () => {
   }
 
   return {
-    getData,
+    data,
     setItem,
     getItem,
     removeItem,

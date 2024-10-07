@@ -265,7 +265,7 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     })
 
     if (CompanyData.hasData() && !useNavigationStore().isByRouteName([RouteName.Questionnaire, RouteName.QuestionnaireResult])) {
-      const companyData = useCompanyDataStore().getData() as { [k: string]: any }
+      const companyData = useCompanyDataStore().data as { [k: string]: string }
       Object.entries(companyData).forEach(([key, value]) => {
         if (questionnaireData[key] === undefined) {
           questionnaireData[key] = value
