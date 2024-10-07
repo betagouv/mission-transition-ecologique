@@ -63,7 +63,7 @@ const makeCreateOpportunityFun = (contactRepository: ContactRepository, opportun
 
 const dummyProgramRepository: ProgramRepository = {
   getAll: () => [],
-  getAllPersonalizedPrograms: () => [],
+  getEditablePrograms: () => [],
   getById: () => ({}) as ProgramType
 }
 
