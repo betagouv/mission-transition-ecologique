@@ -1,4 +1,4 @@
-import { ConditionalValues, DataProgram } from './types/domain'
+import { ConditionalValues, DataProgram } from '../types/domain'
 
 export class ConditionalDataGenerator {
   constructor(private _program: DataProgram) {}
