@@ -97,6 +97,7 @@
               {{ link.label }}
             </a>
           </li>
+          <TeeFooterCookiesButton />
         </ul>
 
         <!-- LICENCE LINKS -->

@@ -18,7 +18,7 @@
         />
       </div>
       <!-- TITLE -->
-      <p class="fr-text--purple fr-h6 fr-text--bold">
+      <p class="fr-text--purple fr-h6 fr-text--bold teste2e-program-target">
         {{ program.titre }}
       </p>
       <!-- CONTENT -->
@@ -95,11 +95,20 @@ const navigationStore = useNavigationStore()
 
 const isCatalog = navigationStore.isCatalogPrograms()
 
+const getRouteName = () => {
+  if (isCatalog) {
+    return RouteName.CatalogProgramDetail
+  } else if (navigationStore.isCatalogProjectDetail()) {
+    return RouteName.CatalogProgramFromCatalogProjectDetail
+  }
+  return RouteName.QuestionnaireResultDetail
+}
+
 const getRouteToProgramDetail = (programId: string): RouteLocationRaw => {
   return {
-    name: isCatalog ? RouteName.CatalogProgramDetail : RouteName.QuestionnaireResultDetail,
+    name: getRouteName(),
     params: { programId },
-    query: isCatalog ? undefined : navigationStore.query
+    query: isCatalog || navigationStore.isCatalogProjectDetail() ? undefined : navigationStore.query
   }
 }
 </script>

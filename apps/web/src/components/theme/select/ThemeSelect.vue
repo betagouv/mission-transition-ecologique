@@ -1,10 +1,11 @@
 <template>
-  <div class="fr-grid-row fr-grid-row--no-gutters fr-pt-3v">
+  <div class="fr-grid-row fr-pt-3v">
     <div
       v-for="opt in options"
       :key="opt.value"
       class="fr-col-4 fr-col-sm-6 fr-col-md-4 fr-col-xs-12 fr-p-1v"
       @click="selectOption(opt.value)"
+      @keydown.enter="selectOption(opt.value)"
     >
       <ThemeCard :option="opt" />
     </div>
@@ -80,6 +81,7 @@ const selectOption = (opt: string | undefined) => {
     index: selectedOptionIndex,
     remove: selectedOption === undefined
   } as TrackOptionItem
+
   emit('updateSelection', data)
 }
 

@@ -1,10 +1,9 @@
 <template>
   <TeeDsfrBreadcrumb v-if="!hasSpinner" />
   <CatalogBanner>
-    <template #title> Le catalogue des aides publiques à la transition écologique </template>
+    <template #title> {{ title }} </template>
     <template #description>
-      Réalisez une recherche parmi les aides à la transition écologique des entreprises, proposées par l’ensemble des partenaires publics :
-      ADEME, Bpifrance, CCI, CMA, etc.
+      {{ description }}
     </template>
   </CatalogBanner>
 
@@ -61,7 +60,8 @@
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
 import { type ProgramData, TrackId, ThemeId } from '@/types'
-import Matomo from '@/utils/matomo'
+import Analytics from '@/utils/analytic/analytics'
+import { MetaSeo } from '@/utils/metaSeo'
 import UsedTrack from '@/utils/track/usedTrack'
 import { computed, onBeforeMount } from 'vue'
 
@@ -69,6 +69,11 @@ const programStore = useProgramStore()
 
 const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)
+
+const title = 'Le catalogue des aides publiques à la transition écologique'
+const description =
+  'Réalisez une recherche parmi les aides à la transition écologique des entreprises, proposées par l’ensemble des partenaires publics :' +
+  'ADEME, Bpifrance, CCI, CMA, etc.'
 
 const filteredPrograms = computed(() => {
   return programs.value ? programStore.getProgramsByFilters(programs.value) : undefined
@@ -115,6 +120,8 @@ const showThemeCard = computed(() => {
 })
 
 onBeforeMount(async () => {
+  useSeoMeta(MetaSeo.get(title, description))
+
   const result = await programStore.programs
   if (result.isOk) {
     programs.value = result.value
@@ -123,6 +130,10 @@ onBeforeMount(async () => {
   }
 
   // analytics / send event
-  Matomo.sendEvent(TrackId.Results, 'show_results_catalog')
+  Analytics.sendEvent(TrackId.Results, 'show_results_catalog')
+})
+
+onBeforeRouteLeave(() => {
+  useSeoMeta(MetaSeo.default())
 })
 </script>

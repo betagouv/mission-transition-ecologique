@@ -1,8 +1,8 @@
 <template>
   <TeeDsfrBreadcrumb />
   <CatalogBanner>
-    <template #title> Le catalogue des projets de transition écologique </template>
-    <template #description> Accédez à la liste des projets de transition écologique destinées aux entreprises. </template>
+    <template #title> {{ title }} </template>
+    <template #description> {{ description }} </template>
   </CatalogBanner>
 
   <div class="fr-container fr-mt-6v">
@@ -63,9 +63,11 @@ import { useProgramStore } from '@/stores/program'
 import { useProjectStore } from '@/stores/project'
 import { type ProgramData, Project as ProjectType, TrackId, ThemeId } from '@/types'
 import Contact from '@/utils/contact'
-import Matomo from '@/utils/matomo'
+import Analytics from '@/utils/analytic/analytics'
+import { MetaSeo } from '@/utils/metaSeo'
 import { Project } from '@/utils/project/project'
 import { computed, onBeforeMount } from 'vue'
+import { Theme } from '@/utils/theme'
 
 const projectStore = useProjectStore()
 const programStore = useProgramStore()
@@ -75,9 +77,10 @@ const projects = ref<ProjectType[]>()
 const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)
 
-const theme = computed(() => {
-  return programStore.hasThemeTypeSelected() ? (programStore.programFilters.themeTypeSelected as ThemeId) : ''
-})
+const title = 'Le catalogue des projets de transition écologique'
+const description = 'Accédez à la liste des projets de transition écologique destinées aux entreprises.'
+
+const theme = Theme.getThemeFromSelectedTheme()
 
 const filteredProjects = Project.filter(projects, programs, theme)
 const sortedProjects = Project.sort(filteredProjects)
@@ -95,6 +98,8 @@ const hasFilteredProjects = computed(() => {
 })
 
 onBeforeMount(async () => {
+  useSeoMeta(MetaSeo.get(title, description))
+
   navigationStore.hasSpinner = true
   const programResult = await programStore.programs
   const projectResult = await projectStore.projects
@@ -108,6 +113,10 @@ onBeforeMount(async () => {
   navigationStore.hasSpinner = false
 
   // analytics / send event
-  Matomo.sendEvent(TrackId.Results, 'show_results_catalog_projects')
+  Analytics.sendEvent(TrackId.Results, 'show_results_catalog_projects')
+})
+
+onBeforeRouteLeave(() => {
+  useSeoMeta(MetaSeo.default())
 })
 </script>

@@ -1,9 +1,6 @@
 <template>
   <!-- MAIN APP COMPONENT  -->
-  <div
-    class="fr-container--fluid"
-    style="background-color: #e8edff"
-  >
+  <div class="fr-container--fluid fr-bg--blue-france--lightness">
     <div class="fr-container fr-py-2v">
       <TeeCta />
     </div>
@@ -15,10 +12,7 @@
   </div>
 
   <!-- INTRO / INFOS -->
-  <div
-    class="fr-container--fluid"
-    style="background-color: #e8edff"
-  >
+  <div class="fr-container--fluid fr-bg--blue-france--lightness">
     <div class="fr-container fr-pt-10v fr-pb-20v fr-px-0 fr-px-md-20v">
       <TeeHomeInfos />
     </div>

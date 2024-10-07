@@ -54,7 +54,7 @@
 // console.log(`TeeMatomo > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import { onMounted } from 'vue'
-import Matomo from '@/utils/matomo'
+import Matomo from '@/utils/analytic/matomo'
 import { useDebugStore } from '@/stores/debug'
 
 const debugStore = useDebugStore()

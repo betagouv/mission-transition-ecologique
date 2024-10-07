@@ -71,11 +71,6 @@
           <div
             v-for="(track, index) in usedTrackStore.usedTracks"
             :key="track.id"
-            :style="`${
-              trackStore.getTrackBgColor(track.id as TrackId)
-                ? 'padding: 0px; background-color:' + trackStore.getTrackBgColor(track.id as TrackId)
-                : ''
-            }`"
             :class="`fr-p-0 fr-mb-${debugStore.is ? '12v' : '0'}`"
           >
             <TrackContent
@@ -109,7 +104,6 @@ import { computed, onBeforeMount, ref } from 'vue'
 import Translation from '@/utils/translation'
 import { useProgramStore } from './stores/program'
 import { TrackComponent, TrackId } from './types'
-import TeeMatomo from './components/TeeMatomo.vue'
 import TrackSidebar from '@/components/track/TrackSidebar.vue'
 import ProgramDetail from './components/program/detail/ProgramDetail.vue'
 import Widget from '@/utils/widget'
@@ -169,7 +163,7 @@ onBeforeMount(() => {
   setupGlobal()
 
   // inject style link in html head if not present
-  const href = Config.isProduction ? `${Config.deployUrl}/style.css` : ''
+  const href = Config.isProduction() ? `${Config.deployUrl}/style.css` : ''
   let needStyle = Widget.is
   // avoid duplicates
   const styleSheets = document.styleSheets.length
@@ -181,7 +175,7 @@ onBeforeMount(() => {
       }
     }
   }
-  if (needStyle && Config.isProduction) {
+  if (needStyle && Config.isProduction()) {
     const head = document.head
     const link = document.createElement('link')
     link.type = 'text/css'

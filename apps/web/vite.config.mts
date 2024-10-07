@@ -11,17 +11,13 @@ import { dsnFromString } from '@sentry/utils'
 import { sentryVitePlugin } from "@sentry/vite-plugin";
 import * as dotenv from 'dotenv'
 import { unheadVueComposablesImports } from '@unhead/vue'
+import ConfigCommon from '../../libs/common/src/config/configCommon'
 
 dotenv.config()
 
 console.log('==== Vite Starting ... ====')
 console.log('- vite.config ...')
-const mode = process.env.NODE_ENV ?? 'development'
-const stack: string = process.env.STACK ?? ''
-const isReviewApp = process.env.IS_REVIEW_APP === 'true'
-
-const isProd = mode === 'production'
-const isScalingo = stack.includes('scalingo')
+const isProd = ConfigCommon.NODE_ENV === 'production'
 
 type LibType = 'main' | 'widget'
 const LIB: LibType = (process.env.LIB as LibType) ?? 'main'
@@ -73,7 +69,7 @@ const plugins = async () => {
     }) as Plugin,
 
   ]
-  if (hasSentryVitePlugin()) {
+  if (ConfigCommon.isProduction()) {
     console.log('- Add sentry vite plugin for sourcemaps upload')
     const sentryData = getSentryData()
     const token = process.env.SENTRY_AUTH_TOKEN
@@ -165,14 +161,14 @@ function buildHeaders() {
       "default-src 'none';" +
       "base-uri 'self';" +
       "form-action 'self';" +
-      "script-src-elem 'self' 'unsafe-inline' https://stats.beta.gouv.fr  https://embed.typeform.com;" +
+      "script-src-elem 'self' 'unsafe-inline' https://stats.beta.gouv.fr https://eu.i.posthog.com https://eu-assets.i.posthog.com https://embed.typeform.com;" +
       "style-src 'self' 'unsafe-inline' https://embed.typeform.com;" +
       "font-src 'self';" +
       "img-src 'self' data:;" +
       "object-src 'self';" +
       `connect-src 'self' https://conseillers-entreprises.service-public.fr https://stats.beta.gouv.fr ${
         sentryData?.domain ? sentryData.domain : ''
-      } https://embed.typeform.com https://api.typeform.com;` +
+      } https://embed.typeform.com https://eu.i.posthog.com https://api.typeform.com;` +
       "worker-src 'self' blob:;" +
       "frame-src 'self' https://conseillers-entreprises.service-public.fr https://form.typeform.com;" +
       "frame-ancestors 'self' https://conseillers-entreprises.service-public.fr;",
@@ -195,8 +191,4 @@ function buildHeaders() {
   }
 
   return headers
-}
-
-function hasSentryVitePlugin() {
-  return isProd && isScalingo && !isReviewApp
 }

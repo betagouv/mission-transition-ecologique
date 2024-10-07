@@ -2,7 +2,7 @@
   <ProjectHeader
     v-if="project"
     :project="project"
-    :theme-color="themeColor"
+    :theme-color="themeColor as Color"
   />
   <div
     v-if="project"
@@ -23,7 +23,7 @@
           <LinkedProjects
             v-if="project.linkedProjects.length > 0"
             :project="project"
-            :color="themeColor"
+            :color="themeColor as Color"
           />
         </div>
       </div>
@@ -31,7 +31,8 @@
   </div>
 </template>
 <script setup lang="ts">
-import { ThemeType, Project, Color } from '@/types'
+import { Project, Color, ThemeId } from '@/types'
+import { MetaSeo } from '@/utils/metaSeo'
 import { Theme } from '@/utils/theme'
 import { useProjectStore } from '@/stores/project'
 import { onBeforeMount } from 'vue'
@@ -39,7 +40,7 @@ import { onBeforeMount } from 'vue'
 const projectStore = useProjectStore()
 
 const project = ref<Project>()
-const theme = ref<ThemeType>()
+const themeColor = ref<Color | ''>()
 
 interface Props {
   projectSlug: string
@@ -47,16 +48,25 @@ interface Props {
 }
 const props = defineProps<Props>()
 
-const themeColor = computed<Color | undefined>(() => theme.value?.color)
-
 onBeforeMount(async () => {
   if (props.projectSlug !== projectStore.currentProject?.slug) {
     await projectStore.getProjectBySlug(props.projectSlug)
   }
 
   project.value = projectStore.currentProject
+
+  const selectedThemeId = Theme.getThemeFromSelectedOrPriorityTheme()
+
   if (project.value) {
-    theme.value = Theme.getById(project.value?.mainTheme)
+    const themeId = selectedThemeId.value ? project.value?.themes.find((t) => t === selectedThemeId.value) : project.value?.mainTheme
+
+    themeColor.value = Theme.getColorById(themeId as ThemeId)
   }
+
+  useSeoMeta(MetaSeo.get(project.value?.title, project.value?.shortDescription, project.value?.image))
+})
+
+onBeforeRouteLeave(() => {
+  useSeoMeta(MetaSeo.default())
 })
 </script>
