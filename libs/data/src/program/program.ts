@@ -25,3 +25,5 @@ import type { Dispositif as ProgramWithoutId } from '../generated/program'
 
 export type { ProgramWithoutId }
 export type ProgramType = ProgramWithoutId & { id: string }
+
+export type ConditionalYaml = Required<ProgramType['champs conditionnels'][]>[number][number]

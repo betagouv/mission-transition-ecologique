@@ -1,4 +1,5 @@
-import { ConditionalValues, DataProgram } from '../types/domain'
+import { ConditionalYaml, ProgramType } from '../program'
+import { CompanySizeCondition, ConditionalValues, DataProgram, RegionCondition } from '../types/domain'
 
 export class ConditionalDataGenerator {
   constructor(private _program: DataProgram) {}
@@ -8,8 +9,7 @@ export class ConditionalDataGenerator {
       return
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const champsConditionnels: any = []
+    const champsConditionnels: ProgramType['champs conditionnels'] = []
 
     this._program.conditionalData.forEach((conditional) => {
       const conditionalYaml = this._generateOneConditional(conditional)
@@ -21,8 +21,7 @@ export class ConditionalDataGenerator {
     yamlContent['champs conditionnels'] = champsConditionnels
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  private _generateOneConditional(oneConditional: ConditionalValues): any {
+  private _generateOneConditional(oneConditional: ConditionalValues): ConditionalYaml | undefined {
     switch (oneConditional['Type de condition']) {
       case 'géographique':
         return this._generateGeographicCondition(oneConditional)
@@ -34,12 +33,12 @@ export class ConditionalDataGenerator {
     }
   }
 
-  private _generateGeographicCondition(oneConditional: ConditionalValues): any {
-    const conditionGeographique = oneConditional['valeur de la condition géographique']
+  private _generateGeographicCondition(oneConditional: RegionCondition): ConditionalYaml {
+    const geographicCondition = oneConditional['valeur de la condition géographique']
 
-    const uneDeCesConditions = conditionGeographique.map((region) => `région = ${region.Name}`)
+    const uneDeCesConditions = geographicCondition.map((region) => `région = ${region.Name}`)
 
-    const conditionalEntry: any = {
+    const conditionalEntry = {
       'une de ces conditions': uneDeCesConditions
     }
 
@@ -47,8 +46,8 @@ export class ConditionalDataGenerator {
     return conditionalEntry
   }
 
-  private _generateCompanySizeCondition(oneConditional: ConditionalValues): any {
-    const conditionalEntry: any = {
+  private _generateCompanySizeCondition(oneConditional: CompanySizeCondition): ConditionalYaml {
+    const conditionalEntry = {
       'toutes ces conditions': [
         `effectif >= ${oneConditional['Condition: nb min salaries']}`,
         `effectif <= ${oneConditional['Condition: nb max salaries']}`
@@ -58,10 +57,9 @@ export class ConditionalDataGenerator {
     return conditionalEntry
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  private _valueReplacement(oneConditional: ConditionalValues, conditionalEntry: any): void {
+  private _valueReplacement(oneConditional: ConditionalValues, conditionalEntry: ConditionalYaml): void {
     const addField = (key: string, value: unknown) => {
-      if (value && (!Array.isArray(value) || value.length > 0)) {
+      if (conditionalEntry && value && (!Array.isArray(value) || value.length > 0)) {
         conditionalEntry[key] = value
       }
     }

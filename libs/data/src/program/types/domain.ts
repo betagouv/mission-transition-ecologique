@@ -118,12 +118,21 @@ export enum Status {
   InProd = 'En prod'
 }
 
-export interface ConditionalValues {
-  'Dispositif concerné': string
-  'Type de condition': string
-  'valeur de la condition géographique': GeographicAreas[]
+export type ConditionalValues = CompanySizeCondition | RegionCondition
+
+export interface CompanySizeCondition extends ModifiableFields {
+  'Type de condition': 'nombre de salariés'
   'Condition: nb min salaries': number
   'Condition: nb max salaries': number
+}
+
+export interface RegionCondition extends ModifiableFields {
+  'Type de condition': 'géographique'
+  'valeur de la condition géographique': GeographicAreas[]
+}
+
+interface ModifiableFields {
+  'Dispositif concerné': string
   'Opérateur de contact': Operator[]
   'Autres opérateurs': Operator[]
   'URL externe': string

@@ -7,7 +7,7 @@ export type CurrentDateProvider = {
 }
 
 export interface ProgramRepository {
-  getAllPersonalizedPrograms(questionnaireData: QuestionnaireData): ProgramType[]
+  getEditablePrograms(): ProgramType[]
   getById: (id: string) => ProgramType | undefined
   getAll: () => ProgramType[]
 }
