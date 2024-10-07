@@ -1,18 +1,14 @@
 import { acceptHMRUpdate, defineStore } from 'pinia'
 import { LocalStorageHandler } from '@/utils/storage/localStorageHandler'
-import { CompanyDataId, QuestionnaireDataKey } from '@/types/companyDataType'
+import { QuestionnaireDataKey } from '@/types/companyDataType'
 import { StorageHandlerInterface } from '@/utils/storage/StorageHandlerInterface'
 
 const storageHandler: StorageHandlerInterface = new LocalStorageHandler()
 
 export const useCompanyDataStore = defineStore('companyData', () => {
-  const siret = computed(() => {
-    return storageHandler.getItem(CompanyDataId.Siret)
-  })
-
-  const size = computed(() => {
-    return storageHandler.getItem(CompanyDataId.Size)
-  })
+  function getData() {
+    return storageHandler.getAll()
+  }
 
   function setItem(key: QuestionnaireDataKey, value: string): void {
     storageHandler.setItem(key, value)
@@ -30,18 +26,12 @@ export const useCompanyDataStore = defineStore('companyData', () => {
     storageHandler.clear()
   }
 
-  function getData() {
-    return storageHandler.getAll()
-  }
-
   return {
-    siret,
-    size,
+    getData,
     setItem,
     getItem,
     removeItem,
-    clear,
-    getData
+    clear
   }
 })
 
