@@ -42,6 +42,6 @@ export const makeProgramsRepository = (programs: ProgramType[]): ProgramReposito
   return {
     getById: () => undefined,
     getAll: () => programs,
-    getAllPersonalizedPrograms: () => programs
+    getEditablePrograms: () => programs
   }
 }
