@@ -19,7 +19,7 @@ export default class ProgramsJson implements ProgramRepository {
   }
 
   public getEditablePrograms(): ProgramType[] {
-    return jsonPrograms as unknown as ProgramType[]
+    return JSON.parse(JSON.stringify(this._programs)) as ProgramType[]
   }
 
   public getAll(): ProgramType[] {

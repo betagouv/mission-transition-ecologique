@@ -4,8 +4,8 @@ import { Monitor } from '../../common'
 import { ConditionalYaml } from '../infrastructure/types'
 
 export default class ProgramCustomizer {
-  public shouldRewritePrograms(questionnaireData: QuestionnaireData) {
-    return questionnaireData.structure_size && questionnaireData.region
+  public shouldRewritePrograms(questionnaireData: QuestionnaireData): boolean {
+    return !!questionnaireData.structure_size && !!questionnaireData.region
   }
 
   public getAllPersonalizedPrograms(programs: ProgramType[], questionnaireData: QuestionnaireData): ProgramType[] {
