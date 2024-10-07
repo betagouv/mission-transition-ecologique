@@ -6,7 +6,8 @@ import {
   PropertyPath,
   TrackId,
   QuestionnaireData,
-  ThemeId
+  ThemeId,
+  Color
 } from '@/types'
 import { ConditionOperators } from '@/types/conditionOperators'
 
@@ -30,13 +31,12 @@ export enum TrackCalloutType {
 
 export interface TrackCallout {
   header?: Translations
-  headerStyle?: string
   title: Translations
   titleStyle?: string
   bigTitle: boolean
   description?: Translations
   descriptionStyle?: string
-  bgColor?: string
+  bgColor?: Color
   type?: TrackCalloutType
   imageLeft?: string
   imageRight?: string
@@ -174,8 +174,7 @@ export type TrackOptionItem = {
 export interface Track {
   id: TrackId
   help?: string
-  category?: string
-  bgColor?: string
+  category?: TrackCategory
   imageRight?: string
   title: Translations
   label: Translations
@@ -192,39 +191,28 @@ export interface Track {
   form?: FormOptions
 }
 
-export interface TracksList {
-  programs: Track[]
-}
-
 export interface UsedTrack {
   id: TrackId
   component: TrackComponent
-  category?: string
+  category?: TrackCategory
   final?: boolean
   completed: boolean
-  // updating: boolean,
   step: number
-  // values: any[] | null,
-  // titles?: Translations[],
-  // val: any[] | null,
-  // data: object,
   selected: TrackOptionsUnion[]
   next?: TrackNext
 }
 
-// FOR TRACKS - COMPONENTS
-
-export interface TrackOpt {
-  value: string
-  [name: string]: any
-}
-
-export interface TrackChoice {
-  id: string | number
-  step: number
-  values: string[] | object[]
-  // val: object[],
-  data?: object | object[]
+export enum TrackCategory {
+  MyEntreprise = 'myEntreprise',
+  OurHelp = 'ourHelp',
+  MyEnergy = 'myEnergy',
+  MyBuildings = 'myBuildings',
+  MyTransport = 'myTransport',
+  MyWastes = 'myWastes',
+  MyWater = 'myWater',
+  MyStrategy = 'myStrategy',
+  MyMobility = 'myMobility',
+  MyProject = 'myProject'
 }
 
 // FOR TRACK RESULTS

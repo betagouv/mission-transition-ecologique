@@ -18,7 +18,7 @@ const props = withDefaults(defineProps<Props>(), {
 </script>
 
 <style scoped lang="scss">
-@import '../../../assets/scss/setting/color';
+@use '@/assets/scss/setting';
 
 [target='_blank']::after,
 [target='_blank'][class*=' fr-fi-']::after,
@@ -29,8 +29,8 @@ const props = withDefaults(defineProps<Props>(), {
 }
 
 a {
-  box-shadow: inset 0 0 0 1px $base-purple;
-  color: $base-purple;
+  box-shadow: inset 0 0 0 1px setting.$purple;
+  color: setting.$purple;
   text-align: center;
   font-size: 0.875rem;
 }

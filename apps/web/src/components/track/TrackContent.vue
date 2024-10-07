@@ -8,13 +8,13 @@
     <TrackCallout :track="track" />
     <div
       v-if="track.theme"
-      class="fr-col-12 fr-px-0v fr-px-md-4v"
+      class="fr-col-12 fr-px-0v"
     >
       <ThemeHeaderCard :theme="track.theme" />
     </div>
 
     <div class="fr-col">
-      <div :class="`fr-pl-4v fr-grid-row fr-grid-row--gutters ${track?.bgColor ? 'fr-p-5v fr-p-sm-8v fr-p-md-20v' : ''}`">
+      <div :class="`fr-pl-4v fr-grid-row ${useUsedTrackStore().currentIsFirst ? 'fr-grid-row--gutters' : ''}`">
         <TrackLabel :track="track" />
         <TrackInfo :track="track" />
         <TrackHint :track="track" />
@@ -64,30 +64,19 @@
             />
           </div>
         </template>
-      </div>
 
-      <div
-        v-if="TrackComponent.isSelect(usedTrack)"
-        class="fr-px-4v fr-px-md-0v fr-grid-row fr-grid-row--gutters"
-      >
         <TrackSelect
-          class="fr-px-2v fr-px-md-3v fr-mt-6v fr-col-12"
+          v-if="TrackComponent.isSelect(usedTrack)"
+          class="fr-col-12 fr-col-md-10 fr-col-lg-8"
           @update-selection="updateSelection($event.option, $event.index, $event.remove)"
         />
-      </div>
-      <div
-        v-if="TrackComponent.isThemeInterface(usedTrack)"
-        class="fr-container--fluid"
-      >
+
         <ThemeSelect
-          @update-selection="
-            ($event) => {
-              updateSelection($event.option, $event.index, $event.remove)
-              saveSelection()
-            }
-          "
+          v-if="TrackComponent.isThemeInterface(usedTrack)"
+          @update-selection="updateAndSave($event.option, $event.index, $event.remove)"
         />
       </div>
+
       <div
         v-if="hasSubmitButton"
         class="fr-grid-row fr-grid-row--gutters fr-pt-8v fr-px-4v fr-px-md-0v"
@@ -122,7 +111,7 @@ import {
   type UsedTrack
 } from '@/types'
 import { RouteName } from '@/types/routeType'
-import Matomo from '@/utils/matomo'
+import Analytics from '@/utils/analytic/analytics'
 import Navigation from '@/utils/navigation'
 import { Scroll } from '@/utils/scroll'
 import TrackColOption from '@/utils/track/TrackColOption'
@@ -136,6 +125,7 @@ interface Props {
 const props = defineProps<Props>()
 
 const router = useRouter()
+
 const trackStore = useTrackStore()
 const usedTrackStore = useUsedTrackStore()
 const navigationStore = useNavigationStore()
@@ -181,9 +171,7 @@ const updateSelection = async (option: TrackOptionsUnion, index: number, forceRe
 
     if (option.value) {
       // analytics / track event / only if positive choice
-      for (const [key, value] of Object.entries(option.value)) {
-        Matomo.sendEvent(usedTrack.id, key, value as string | number)
-      }
+      Analytics.sendEvent(usedTrack.id, usedTrack.id, option.value)
     }
   } else {
     // remove from selection because is already active
@@ -218,9 +206,9 @@ const updateSelectionValueFromButtonInput = (trackOptionItem: TrackOptionItem) =
   })
 }
 
-const updateAndSave = async (option: TrackOptionsUnion, index: number) => {
+const updateAndSave = async (option: TrackOptionsUnion, index: number, needRemove = false) => {
   await updateSelection(option, index)
-  await saveSelection()
+  await saveSelection(needRemove)
 }
 
 const saveSelection = async (needRemove = false) => {

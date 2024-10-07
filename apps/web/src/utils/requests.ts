@@ -1,6 +1,3 @@
-// CONSOLE LOG TEMPLATE
-// console.log(`utils.matomo > FUNCTION_NAME > MSG_OR_VALUE :`)
-
 import { CallbackMethods, type FormCallback, type ReqResp } from '@/types'
 import { remapItem } from './helpers'
 import Translation from '@/utils/translation'

@@ -54,7 +54,7 @@ export class ProgramBaserow extends AbstractBaserow {
     try {
       fs.writeFileSync('program_tmp.json', JSON.stringify(dataPrograms, null, 2))
       console.log(
-        'All baserow relevant data has been cached.\nIf you are working on the code, you can and should use the cached data by calling getPrograms with true (in ProgramYamlGenerator.ts, line 14'
+        'All baserow relevant data has been cached.\nIf you are working on the code, you can and should use the cached data by calling getPrograms with true (in ProgramYamlGenerator.ts, line 14\n'
       )
     } catch {
       // known empty bloc, comment for the linter!

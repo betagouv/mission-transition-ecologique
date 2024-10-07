@@ -34,6 +34,8 @@ export interface ImageTable extends Id {
 
 export interface Image {
   url: string
+  name: string
+  uploaded_at: string
 }
 
 export interface Program
