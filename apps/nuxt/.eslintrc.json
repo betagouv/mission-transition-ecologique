@@ -1,0 +1,10 @@
+{
+  "extends": ["@nuxt/eslint-config", "../../.eslintrc.json"],
+  "ignorePatterns": ["!**/*", ".nuxt/**", ".output/**", "node_modules"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx", "*.vue"],
+      "rules": {}
+    }
+  ]
+}
