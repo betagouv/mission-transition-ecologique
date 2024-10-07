@@ -109,6 +109,7 @@ publicodes:
       - code NAF niveau 1 . est H
       - code NAF niveau 1 . est I
       - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est Q
   entreprise . a un objectif ciblé:
     une de ces conditions:
       - questionnaire . objectif prioritaire . est ma performance énergétique

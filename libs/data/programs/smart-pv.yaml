@@ -31,7 +31,7 @@ description longue: >-
   désamiantage, renforcement de structure, reprise d’étanchéité, isolation de
   toiture), vous pouvez solliciter le financement "Plan Solaire Ready".
 illustration: images/TEE_ampoule.png
-opérateur de contact: Région Sud PACA
+opérateur de contact: Région Sud
 url: >-
   https://www.maregionsud.fr/vos-aides/detail/plan-solaire-smart-pv-en-soutien-de-lautoconsommation-photovoltaique
 nature de l'aide: financement
@@ -67,7 +67,7 @@ conditions d'éligibilité:
       Votre projet doit se situer sur des sites raccordés à un réseau
       d’électricité public ou privé (réseau fermé de distribution) ou à un
       microgrid.
-    - Votre projet doit afficher une puissance &gt; à 10 kWc,
+    - Votre projet doit afficher une puissance supérieure à 10 kWc,
     - >-
       Votre projet doit être au minimum de 10% (taux d’autoproduction ou taux de
       couverture),
@@ -78,14 +78,7 @@ conditions d'éligibilité:
     - >-
       Votre projet doit atteindre un temps de retour sur investissement dans une
       plage de 7 à 15 ans toute(s) subventions(s) confondue(s),
-    - "respecter 5 critères\_:\\"
-    - − stratégie énergétique,\
-    - − analyse économique,\
-    - >-
-      − origine du matériel et des prestations (les circuits courts seront
-      favorisés),\
-    - − qualité environnementale, suivi de performance et pédagogie,\
-    - − montage juridico-financier.
+    - "respecter 5 critères\_: stratégie énergétique, analyse économique, origine du matériel et des prestations (les circuits courts seront favorisés), qualité environnementale, suivi de performance et pédagogie, montage juridico-financier."
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

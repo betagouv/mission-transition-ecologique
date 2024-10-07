@@ -1,18 +1,20 @@
 titre: Charte "zéro déchet plastique"
 promesse: Engagez-vous dans une démarche de diminution des pollutions plastiques
 description: "Devenez signataire de la charte « zéro déchet plastique » et engagez votre entreprise sur un plan d'action de réduction de l’usage des plastiques à usage unique, sur l'optimisation de la gestion et du tri des déchets plastiques et l'adoption de solutions de réemploi. En adhérant à la charte \"zéro déchet plastique\" de votre région, vous intégrez\_la communauté des signataires animée par l’Agence Régionale pour la Biodiversité et l’Environnement (ARBE) et bénéficiez de ressources et retours d'expériences de autres signataires pour vous aider dans la mise en œuvre de vos actions."
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_ampoule.png
 opérateur de contact: Agence Régionale Biodiversité et Environnement
 url: >-
   https://www.arbe-regionsud.org/1375-2-chartes-zero-dechet-plastique.html#anchor147544
-nature de l'aide: undefined
+nature de l'aide: étude
+coût de l'accompagnement: Gratuit
+durée de l'accompagnement: Plusieurs années
 activable en autonomie: oui
 objectifs:
   - description: >-
       Prenez connaissance et signez la charte « zéro déchet plastique » pour
       engager votre entreprise dans cette démarche. Une fois signée,
       transmettez-la à l'ARBE par mail à l'adresse :
-      [c.poulin@arbe-regionsud.org](mailto:c.poulin@arbe-regionsud.org).
+      c.poulin@arbe-regionsud.org.
     liens:
       - lien: >-
           https://www.arbe-regionsud.org/Block/download/?id=236629&filename=Entreprises-et-Associations-Demarche-ecoexemplaire-Charte-052024.pdf
@@ -79,7 +81,7 @@ publicodes:
   entreprise . a un objectif ciblé:
     une de ces conditions:
       - questionnaire . objectif prioritaire . est la gestion des déchets
-      - questionnaire . objectif prioritaire . undefined
+      - questionnaire . objectif prioritaire . est préserver la biodiversité
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
       - région = Provence-Alpes-Côte d'Azur

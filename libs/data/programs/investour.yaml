@@ -39,8 +39,9 @@ description longue: >-
   - Les investissements immatériels (acquisition de logiciels, dépenses de
   publicité et de formation des salariés, etc.) et corporels (outil de
   production, matériels, etc.).
-illustration: images/TEE_energie_verte.png
-opérateur de contact: Région Sud PACA
+fin de validité: 01/11/2025
+illustration: images/TEE_ampoule.png
+opérateur de contact: Région Sud
 url: https://entreprises.maregionsud.fr/financement/sud-entreprises/investour
 nature de l'aide: prêt
 montant du prêt: >-
@@ -86,6 +87,7 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:

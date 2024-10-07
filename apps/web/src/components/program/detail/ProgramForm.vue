@@ -24,7 +24,7 @@
     </p>
 
     <!-- FIELDS -->
-    <div class="fr-grid-row fr-grid-row--gutters fr-mb-2v">
+    <div class="fr-tee-form fr-grid-row fr-grid-row--gutters fr-mb-2v">
       <div class="fr-col-12 fr-col-md-6">
         <DsfrInputGroup
           :error-message="getErrorMessage(opportunityForm.name)"
@@ -139,7 +139,7 @@
               </slot>
 
               <TeeCallout
-                class="fr-bg--blue fr-text--white fr-px-2v fr-pt-2v fr-pb-0 fr-mb-0 fr-text--bold"
+                class="fr-bg--purple fr-text--white fr-px-2v fr-pt-2v fr-pb-0 fr-mb-0 fr-text--bold"
                 :type="opportunityForm.needs.callOut.type"
                 :img="`${publicPath}${opportunityForm.needs.callOut.img}`"
                 :img-container-class="'fr-col-xl-2 fr-hidden fr-unhidden-lg'"
@@ -255,7 +255,7 @@ import { InputFieldUnionType, isValidatedStringFieldInputType, type ProgramData,
 import Translation from '@/utils/translation'
 import TeeDsfrButton from '@/components/element/button/TeeDsfrButton.vue'
 import { DsfrInput, DsfrInputGroup, DsfrCheckbox } from '@gouvminint/vue-dsfr'
-import Matomo from '@/utils/matomo'
+import Analytics from '@/utils/analytic/analytics'
 import { RouteName } from '@/types/routeType'
 import { useRoute } from 'vue-router'
 import Format from '@/utils/format'
@@ -402,7 +402,7 @@ const saveOpportunityForm = async () => {
     requestResponse.value = await opportunity.fetch()
 
     // analytics / send event
-    Matomo.sendEvent(TrackId.Results, route.name === RouteName.CatalogProgramDetail ? 'send_form_catalog' : 'send_form')
+    Analytics.sendEvent(TrackId.Results, route.name === RouteName.CatalogProgramDetail ? 'send_form_catalog' : 'send_form')
   } finally {
     isLoading.value = false
     formIsSent.value = true

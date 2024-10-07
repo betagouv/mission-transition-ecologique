@@ -61,8 +61,8 @@ description longue: >-
   retenues
 
   comme éligibles.
-illustration: images/TEE_ampoule.png
-opérateur de contact: Région Sud PACA
+illustration: images/TEE_eolienne.png
+opérateur de contact: Région Sud
 url: >-
   https://www.maregionsud.fr/vos-aides/detail/infrastructures-de-recharges-intelligentes-pour-vehicules-electriques
 nature de l'aide: financement
@@ -87,7 +87,7 @@ conditions d'éligibilité:
   secteur géographique:
     - Provence-Alpes-Côte d'Azur
   secteur d'activité:
-    - ''
+    - Tous secteurs d'activité
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
 publicodes:
@@ -105,6 +105,7 @@ publicodes:
       - code NAF niveau 1 . est I
       - code NAF niveau 1 . est L
       - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est Q
       - code NAF niveau 1 . est R
       - code NAF niveau 1 . est S
   entreprise . a un objectif ciblé:

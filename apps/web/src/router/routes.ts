@@ -115,6 +115,13 @@ export const routes = [
         component: ProjectDetail as Component,
         beforeEnter: [Hook.hasProject],
         props: true
+      },
+      {
+        path: ':projectSlug/:programId',
+        name: RouteName.CatalogProgramFromCatalogProjectDetail,
+        component: ProgramDetail as Component,
+        beforeEnter: [Hook.hasProject, Hook.hasProgram],
+        props: true
       }
     ]
   },

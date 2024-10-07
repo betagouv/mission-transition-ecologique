@@ -1,7 +1,7 @@
 import path from 'path'
 import fs from 'fs'
-import { DataProgram, Publicodes } from './types/domain'
-import { ThemeId } from '../theme/types/shared'
+import { DataProgram, Publicodes } from '../types/domain'
+import { ThemeId } from '../../theme/types/shared'
 
 export class PublicodesGenerator {
   constructor(private _program: DataProgram) {}
@@ -143,7 +143,8 @@ export class PublicodesGenerator {
       [ThemeId.Energy]: 'est ma performance énergétique',
       [ThemeId.RH]: 'est former ou recruter',
       [ThemeId.Environmental]: 'est mon impact environnemental',
-      [ThemeId.EcoDesign]: "est l'écoconception"
+      [ThemeId.EcoDesign]: "est l'écoconception",
+      [ThemeId.Biodiversity]: 'est préserver la biodiversité'
     }
 
     if (!programThemes) {

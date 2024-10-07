@@ -1,6 +1,8 @@
 import { Color, ThemeId, ThemeType } from '@/types'
 import UsedTrack from '@/utils/track/usedTrack'
 import { Project } from '@tee/data'
+import { useProgramStore } from '@/stores/program'
+import { ComputedRef } from 'vue'
 
 export class Theme {
   static themes: ThemeType[] = [
@@ -16,7 +18,7 @@ export class Theme {
       title: 'Construction & rénovation',
       tagLabel: '🏢 rénovation',
       image: '/images/thematique/thematique-batiments.svg',
-      color: Color.blue
+      color: Color.purple
     },
     {
       id: ThemeId.Mobility,
@@ -58,7 +60,14 @@ export class Theme {
       title: 'Analyses environnementales',
       tagLabel: '🌱 analyses',
       image: '/images/thematique/thematique-strategie.svg',
-      color: Color.blue
+      color: Color.purple
+    },
+    {
+      id: ThemeId.Biodiversity,
+      title: 'Biodiversité',
+      tagLabel: '🐝 biodiversité',
+      image: '/images/thematique/thematique-biodiversite.svg',
+      color: Color.green
     }
   ]
 
@@ -106,5 +115,19 @@ export class Theme {
   static getPriorityProjects(projects: Project[] | undefined) {
     const sortedProjects = (projects as unknown as Project[]).sort((a, b) => a.priority - b.priority)
     return { projects: sortedProjects.slice(0, 3), moreThanThree: sortedProjects.length > 3 }
+  }
+
+  static getThemeFromSelectedTheme(): ComputedRef<ThemeId | undefined> {
+    return computed(() => {
+      return useProgramStore().hasThemeTypeSelected() ? (useProgramStore().getThemeTypeSelected() as ThemeId) : undefined
+    })
+  }
+
+  static getThemeFromSelectedOrPriorityTheme(): ComputedRef<ThemeId | undefined> {
+    return computed(() => {
+      return useProgramStore().hasThemeTypeSelected()
+        ? (useProgramStore().getThemeTypeSelected() as ThemeId)
+        : (UsedTrack.getPriorityTheme() ?? undefined)
+    })
   }
 }
