@@ -35,8 +35,9 @@ interface Props {
 }
 const props = defineProps<Props>()
 
-const emit = defineEmits<{ (e: 'updateField', payload: DefaultFieldFormType): void }>()
-
+const emit = defineEmits<{
+  updateField: [payload: DefaultFieldFormType]
+}>()
 const localField = ref<DefaultFieldFormType>(props.field)
 const isFieldValid = (): boolean => {
   return localField.value.value !== undefined && localField.value.value !== '' && localField.value.value !== false

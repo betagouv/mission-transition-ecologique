@@ -26,7 +26,9 @@ interface Props {
 const props = defineProps<Props>()
 const localField = ref<DefaultFieldFormType>(props.field)
 
-const emit = defineEmits<{ (e: 'updateField', payload: DefaultFieldFormType['value']): void }>()
+const emit = defineEmits<{
+  updateField: [payload: DefaultFieldFormType['value']]
+}>()
 
 const validateFormField = (): void => {
   emit('updateField', localField.value.value)

@@ -10,7 +10,6 @@ export interface FormDataType {
   siret: ValidatedStringFieldInputType
   needs: StringFieldInputType
   cgu: BooleanFieldInputType
-  linkToPage: MandatoryStringFieldFormType
 }
 
 export type DefaultFieldFormType = {
@@ -28,7 +27,6 @@ export type DefaultFieldFormType = {
   wrapperClass?: string
   rows?: number
   colSize?: number
-  options?: any[]
   callOut?: InputCalloutType
 }
 

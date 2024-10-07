@@ -12,7 +12,6 @@
   <!-- FORM -->
   <div
     v-if="!formIsSent"
-    ref="teeForm"
     class="fr-grid-row fr-px-md-4w"
   >
     <div class="fr-col-12">
@@ -80,7 +79,7 @@
 
 <script setup lang="ts">
 import { Scroll } from '@/utils/scroll'
-import { computed, ref } from 'vue'
+import { computed } from 'vue'
 import { DefaultFieldFormType, type ReqResp, TrackId, FormDataType } from '@/types'
 import Translation from '@/utils/translation'
 import TeeDsfrButton from '@/components/element/button/TeeDsfrButton.vue'
