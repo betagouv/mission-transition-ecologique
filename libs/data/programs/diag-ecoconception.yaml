@@ -75,7 +75,7 @@ champs conditionnels:
       - Avoir réalisé moins de 10M€ de CA ou de total de bilan
   - toutes ces conditions:
       - effectif >= 50
-      - effectif <= 250
+      - effectif <= 249
     Montant du dispositif: 7 200 € HT après subvention de 60%
     Eligibilité taille: De 50 à 250 salariés
     autres critères d'éligibilité:

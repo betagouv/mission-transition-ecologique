@@ -68,4 +68,6 @@ export interface ConditionalValues
   'valeur de la condition géographique': LinkObject[]
   'Opérateur de contact': LinkObject[]
   'Autres opérateurs': LinkObject[]
+  'Condition: nb min salaries': number
+  'Condition: nb max salaries': number
 }

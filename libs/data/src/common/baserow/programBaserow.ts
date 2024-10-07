@@ -102,7 +102,7 @@ export class ProgramBaserow extends AbstractBaserow {
         // TODO ajouter logging
         return
       }
-      const dataConditionnal = this._convertToDataConditionnalValue(conditionnalValue)
+      const dataConditionnal = this._convertToDataConditionalValue(conditionnalValue)
       const matchingProgram = programs.find((program) => program['Id fiche dispositif'] === dataConditionnal['Dispositif concerné'])
       if (matchingProgram) {
         if (!matchingProgram.conditionalData) {
@@ -113,23 +113,23 @@ export class ProgramBaserow extends AbstractBaserow {
     })
   }
 
-  private _convertToDataConditionnalValue(conditionnalValue: ConditionalValues): DomainConditionalValues {
+  private _convertToDataConditionalValue(conditionalValue: ConditionalValues): DomainConditionalValues {
     return {
-      'Dispositif concerné': conditionnalValue['Dispositif concerné'][0].value,
-      'Type de condition': conditionnalValue['Type de condition'].value,
+      'Dispositif concerné': conditionalValue['Dispositif concerné'][0].value,
+      'Type de condition': conditionalValue['Type de condition'].value as 'géographique' | 'nombre de salariés',
       'valeur de la condition géographique': this._replaceLinkObjectByTableData<GeographicAreas>(
-        conditionnalValue['valeur de la condition géographique'],
+        conditionalValue['valeur de la condition géographique'],
         this._geographicAreas
       ),
-      'Condition: nb min salaries': conditionnalValue['Condition: nb min salaries'],
-      'Condition: nb max salaries': conditionnalValue['Condition: nb max salaries'],
-      'Opérateur de contact': this._replaceLinkObjectByTableData<Operator>(conditionnalValue['Opérateur de contact'], this._operators),
-      'Autres opérateurs': this._replaceLinkObjectByTableData<Operator>(conditionnalValue['Autres opérateurs'], this._operators),
-      'URL externe': conditionnalValue['URL externe'],
-      "Montant de l'aide ou coût": conditionnalValue["Montant de l'aide ou coût"],
-      "Durée de l'aide": conditionnalValue["Durée de l'aide"],
-      'Eligibilité taille': conditionnalValue['Eligibilité taille'],
-      'Eligibilité Spécifique': conditionnalValue['Eligibilité Spécifique']
+      'Condition: nb min salaries': conditionalValue['Condition: nb min salaries'],
+      'Condition: nb max salaries': conditionalValue['Condition: nb max salaries'],
+      'Opérateur de contact': this._replaceLinkObjectByTableData<Operator>(conditionalValue['Opérateur de contact'], this._operators),
+      'Autres opérateurs': this._replaceLinkObjectByTableData<Operator>(conditionalValue['Autres opérateurs'], this._operators),
+      'URL externe': conditionalValue['URL externe'],
+      "Montant de l'aide ou coût": conditionalValue["Montant de l'aide ou coût"],
+      "Durée de l'aide": conditionalValue["Durée de l'aide"],
+      'Eligibilité taille': conditionalValue['Eligibilité taille'],
+      'Eligibilité Spécifique': conditionalValue['Eligibilité Spécifique']
     }
   }
 }

@@ -77,6 +77,6 @@ champs conditionnels:
     Eligibilité taille: De 20 à 49 salariés
   - toutes ces conditions:
       - effectif >= 50
-      - effectif <= 250
+      - effectif <= 249
     Montant du dispositif: 3 000 € HT après subvention de 50%
     Eligibilité taille: De 50 à 250 salariés
