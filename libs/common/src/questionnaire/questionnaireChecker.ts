@@ -1,6 +1,6 @@
-import { MobilityStatus, WasteManagementStatus, YesNo } from './types/types'
+import { MobilityStatus, WasteManagementStatus, YesNo, BuildingProperty } from './types/types'
 
-export class ObjectiveChecker {
+export class QuestionnaireChecker {
   static isEnvironmentalImpact(audited: YesNo | undefined) {
     return audited !== YesNo.Yes
   }
@@ -13,6 +13,10 @@ export class ObjectiveChecker {
     return (
       wastesManagement === WasteManagementStatus.Yes || wastesManagement === WasteManagementStatus.Unknown || wastesManagement === undefined
     )
+  }
+
+  static isBuildingProperty(buildingStatus: BuildingProperty | undefined) {
+    return buildingStatus === BuildingProperty.Owns || buildingStatus === BuildingProperty.OwnsAndRents
   }
 
   static isWaterConsumption(waterReduction: YesNo | undefined) {
