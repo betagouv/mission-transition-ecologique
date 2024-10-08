@@ -2,7 +2,7 @@
   <!-- PROGRAMS AS LIST OF CARDS -->
   <div class="fr-container--fluid fr-container--fluid--no-overflow">
     <div
-      v-if="showProjectListComponent"
+      v-if="isSpecificGoal"
       class="fr-grid-row fr-grid-row--center"
     >
       <div class="fr-container fr-mb-2v">
@@ -25,8 +25,10 @@
         </div>
       </div>
     </div>
-
-    <ProjectList :sorted-projects="sortedProjects" />
+    <ProjectList
+      v-else
+      :sorted-projects="sortedProjects"
+    />
   </div>
 </template>
 
@@ -39,12 +41,11 @@ import { Project as UtilsProject } from '@/utils/project/project'
 
 interface ProjectListProps {
   filteredProjects?: Project[]
+  hasError: boolean
 }
 const props = defineProps<ProjectListProps>()
 
 const programStore = useProgramStore()
-
-const hasError = ref<boolean>(false)
 
 const hasProjects = computed(() => {
   return countProjects.value > 0
@@ -61,10 +62,10 @@ const hasThemeCard = computed(() => {
 const sortedProjects = UtilsProject.sort(computed(() => props.filteredProjects))
 
 const showNoResults = computed(() => {
-  return hasError.value || (!countProjects.value && props.filteredProjects !== undefined)
+  return props.hasError || (!countProjects.value && props.filteredProjects !== undefined)
 })
 
-const showProjectListComponent = computed(() => {
+const isSpecificGoal = computed(() => {
   return hasThemeCard.value && UsedTrack.isSpecificGoal() && hasProjects.value
 })
 </script>

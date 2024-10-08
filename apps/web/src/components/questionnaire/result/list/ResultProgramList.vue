@@ -35,17 +35,16 @@ import ProgramFiltersAccordion from '@/components/program/list/filters/ProgramFi
 
 interface ProgramListProps {
   filteredPrograms?: ProgramData[]
+  hasError: boolean
 }
 
 const props = defineProps<ProgramListProps>()
-
-const hasError = ref<boolean>(false)
 
 const countPrograms = computed(() => {
   return props.filteredPrograms?.length || 0
 })
 
 const showNoResultsComponent = computed(() => {
-  return hasError.value || !countPrograms.value
+  return props.hasError || !countPrograms.value
 })
 </script>
