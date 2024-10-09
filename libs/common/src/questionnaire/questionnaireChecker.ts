@@ -1,6 +1,6 @@
 import { MobilityStatus, WasteManagementStatus, YesNo, BuildingProperty } from './types/types'
 
-export class ObjectiveChecker {
+export class QuestionnaireChecker {
   static isEnvironmentalImpact(audited: YesNo | undefined) {
     return audited !== YesNo.Yes
   }

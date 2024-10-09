@@ -1,6 +1,6 @@
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { MobilityStatus, ThemeId, QuestionnaireDataEnum, QuestionnaireRoute, TrackId, WasteManagementStatus, YesNo } from '@/types'
-import { ObjectiveChecker, BuildingProperty } from '@tee/common'
+import { QuestionnaireChecker, BuildingProperty } from '@tee/common'
 
 type QuestionnaireDataReturnType = {
   [QuestionnaireDataEnum.questionnaire_route]: QuestionnaireRoute
@@ -42,7 +42,7 @@ export default class UsedTrack {
   }
 
   static hasBuildingProperty(): boolean {
-    return ObjectiveChecker.isBuildingProperty(
+    return QuestionnaireChecker.isBuildingProperty(
       this.findInQuestionnaireData(TrackId.BuildingProperty, QuestionnaireDataEnum.building_property)
     )
   }
@@ -52,36 +52,36 @@ export default class UsedTrack {
   }
 
   static hasMobilityTheme(): boolean {
-    return ObjectiveChecker.isSustainableMobility(
+    return QuestionnaireChecker.isSustainableMobility(
       this.findInQuestionnaireData(TrackId.MobilityWishes, QuestionnaireDataEnum.sustainable_mobility_objective)
     )
   }
 
   static hasEnergyTheme(): boolean {
-    return ObjectiveChecker.isEnergyPerformance(
+    return QuestionnaireChecker.isEnergyPerformance(
       this.findInQuestionnaireData(TrackId.EnergyReductionPriority, QuestionnaireDataEnum.energy_reduction_objective)
     )
   }
 
   static hasWasteTheme(): boolean {
-    return ObjectiveChecker.isWasteManagement(
+    return QuestionnaireChecker.isWasteManagement(
       this.findInQuestionnaireData(TrackId.WastesStake, QuestionnaireDataEnum.wastes_management_objective)
     )
   }
 
   static hasWaterTheme(): boolean {
-    return ObjectiveChecker.isWaterConsumption(
+    return QuestionnaireChecker.isWaterConsumption(
       this.findInQuestionnaireData(TrackId.WaterStake, QuestionnaireDataEnum.water_reduction_objective)
     )
   }
 
   static hasEcoDesignTheme(): boolean {
-    return ObjectiveChecker.isEcoDesign(
+    return QuestionnaireChecker.isEcoDesign(
       this.findInQuestionnaireData(TrackId.WastesMaterials, QuestionnaireDataEnum.wastes_materials_objective)
     )
   }
 
   static hasEnvironmentalImpactTheme(): boolean {
-    return ObjectiveChecker.isEnvironmentalImpact(this.findInQuestionnaireData(TrackId.Goals, QuestionnaireDataEnum.recently_audited))
+    return QuestionnaireChecker.isEnvironmentalImpact(this.findInQuestionnaireData(TrackId.Goals, QuestionnaireDataEnum.recently_audited))
   }
 }
