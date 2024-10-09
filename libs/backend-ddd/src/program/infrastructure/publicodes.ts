@@ -28,6 +28,7 @@ export const evaluateRule = (
 
   const evaluation = engine.evaluate(rule)
   const eligibility = evaluation.nodeValue
+
   if (typeof eligibility !== 'boolean' && typeof eligibility !== 'undefined') {
     return Result.err(new Error(`"${rule}" is expected to be a boolean or undefined`))
   }
