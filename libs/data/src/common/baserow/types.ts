@@ -57,3 +57,9 @@ export interface Program
   'Zones géographiques': LinkObject[]
   'Thèmes Ciblés': LinkObject[]
 }
+
+export interface Operator {
+  nom: string
+  tag: string
+  filtre: LinkObject[]
+}

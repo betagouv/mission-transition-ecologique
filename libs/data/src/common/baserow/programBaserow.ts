@@ -5,7 +5,6 @@ import { DataProgram, Status, DataProgramType, Operator, GeographicCoverage, Geo
 import { Theme } from '../../theme/types/domain'
 
 export class ProgramBaserow extends AbstractBaserow {
-  private readonly _operatorTableId = 314410
   private readonly _geographicCoverageTableId = 314470
   private readonly _geographicAreasTableId = 314474
   private readonly _programTableId = 314437
