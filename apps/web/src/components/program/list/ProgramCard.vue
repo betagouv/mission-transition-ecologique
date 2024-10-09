@@ -41,14 +41,14 @@
 
 <script setup lang="ts">
 import Config from '@/config'
-import { ProgramAidType, type ProgramData, RouteName } from '@/types'
+import { ProgramAidType, type ProgramType, RouteName } from '@/types'
 import { consolidateAmounts } from '@/utils/helpers'
 import Translation from '@/utils/translation'
 import { DsfrCard } from '@gouvminint/vue-dsfr'
 import type { RouteLocationRaw } from 'vue-router'
 import { useNavigationStore } from '@/stores/navigation'
 
-const { program } = defineProps<{ program: ProgramData }>()
+const { program } = defineProps<{ program: ProgramType }>()
 
 const publicPath = Config.publicPath
 
@@ -83,6 +83,7 @@ const getCostInfos = () => {
       text = program["montant de l'avantage fiscal"]
       break
   }
+  if (!text) text = ''
   // Translate prefix
   prefix = Translation.t(prefix)
 

@@ -34,7 +34,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { Color, Project, type ProgramData as ProgramType } from '@/types'
+import { Color, Project, ProgramType } from '@/types'
 import { RouteName } from '@/types/routeType'
 import Contact from '@/utils/contact'
 import { useNavigationStore } from '@/stores/navigation'

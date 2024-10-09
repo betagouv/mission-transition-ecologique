@@ -2,27 +2,27 @@ import {
   ProgramAidType,
   Region,
   ProgramOperatorType,
-  type ProgramData,
   type programFiltersType,
   type ValueOf,
   ThemeId,
-  FiltersKeys
+  FiltersKeys,
+  ProgramType
 } from '@/types'
 
 export default class ProgramFilter {
-  static byAidType(program: ProgramData, programAidTypesSelected: ProgramAidType[]) {
+  static byAidType(program: ProgramType, programAidTypesSelected: ProgramAidType[]) {
     if (!this.isValidFilterValues(programAidTypesSelected)) {
       return true
     }
 
-    return programAidTypesSelected.includes(program["nature de l'aide"])
+    return programAidTypesSelected.includes(program["nature de l'aide"] as ProgramAidType)
   }
 
-  static byRegion(program: ProgramData, regionsSelected: Region[]) {
+  static byRegion(program: ProgramType, regionsSelected: Region[]) {
     if (!this.isValidFilterValues(regionsSelected)) {
       return true
     }
-    const geoSectors = program["conditions d'éligibilité"]['secteur géographique']
+    const geoSectors = (program["conditions d'éligibilité"] as { [k: string]: string[] })['secteur géographique']
       .map((regionString: string) => regionString.split(', '))
       .flat()
 
@@ -34,7 +34,7 @@ export default class ProgramFilter {
     return matchingRegions.length > 0
   }
 
-  static byOperator(program: ProgramData, programOperatorsSelected: ProgramOperatorType[]) {
+  static byOperator(program: ProgramType, programOperatorsSelected: ProgramOperatorType[]) {
     if (!this.isValidFilterValues(programOperatorsSelected)) {
       return true
     }
@@ -45,7 +45,7 @@ export default class ProgramFilter {
     return matchingOperators.length > 0
   }
 
-  static byTheme(program: ProgramData, themeTypeSelected: ThemeId) {
+  static byTheme(program: ProgramType, themeTypeSelected: ThemeId) {
     if (!this.isValidFilterValue(themeTypeSelected)) {
       return true
     }

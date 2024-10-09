@@ -39,7 +39,7 @@
 import { TeeDsfrTabs } from '@/components/element/TeeTabs.vue'
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
-import { BreakpointNameType, ProgramData, Project, TrackId } from '@/types'
+import { BreakpointNameType, ProgramType, Project, TrackId } from '@/types'
 import { computed, onBeforeMount } from 'vue'
 import Analytics from '@/utils/analytic/analytics'
 import { useProjectStore } from '@/stores/project'
@@ -50,7 +50,7 @@ const programStore = useProgramStore()
 const projectStore = useProjectStore()
 const { ascendant, selected } = useTabs(true, navigationStore.tabSelectedOnList)
 
-const programs = ref<ProgramData[]>()
+const programs = ref<ProgramType[]>()
 const projects = ref<Project[]>()
 const hasError = ref<boolean>(false)
 

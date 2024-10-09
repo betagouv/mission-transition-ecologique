@@ -3,3 +3,5 @@ export type WithoutNullableKeys<Type> = {
 }
 
 export type ValueOf<T> = T[keyof T]
+
+export type Override<T, NewType> = Omit<T, keyof NewType> & NewType
