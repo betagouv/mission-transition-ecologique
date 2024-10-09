@@ -1,31 +1,16 @@
 <template>
   <TeeDsfrBreadcrumb v-if="!hasSpinner" />
   <CatalogBanner>
-    <template #title> Le catalogue des aides publiques à la transition écologique </template>
+    <template #title> {{ title }} </template>
     <template #description>
-      Réalisez une recherche parmi les aides à la transition écologique des entreprises, proposées par l’ensemble des partenaires publics :
-      ADEME, Bpifrance, CCI, CMA, etc.
+      {{ description }}
     </template>
   </CatalogBanner>
-
   <div class="fr-container--fluid fr-container--fluid--no-overflow fr-mt-6v">
-    <div class="fr-grid-row fr-grid-row--center">
-      <TeeSpinner
-        v-if="hasSpinner"
-        scale="6"
-      />
-      <ResultListNoResults
-        v-else-if="showNoResultsComponent"
-        :has-error="hasError"
-        message="Aucune aide n'a pu être identifiée sur cette thématique..."
-        :has-spinner="hasSpinner"
-        :count-items="countPrograms"
-      />
-    </div>
     <div class="fr-grid-row fr-grid-row--center">
       <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
         <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-col-justify--left fr-mt-3v">
-          <ThemeFilter v-if="hasThemeFilter" />
+          <ThemeFilter />
         </div>
         <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-pr-md-2v">
           <ThemeHeaderCard
@@ -51,6 +36,17 @@
           </div>
           <div class="fr-col-12 fr-col-md-10 fr-pr-md-2v">
             <ProgramList :filtered-programs="filteredPrograms" />
+            <TeeSpinner
+              v-if="hasSpinner"
+              class="fr-col-12"
+              scale="6"
+            />
+            <TeeListNoResults
+              v-else-if="showNoResultsComponent"
+              :has-error="hasError"
+              message="Aucune aide n'a pu être identifiée sur cette thématique..."
+              :count-items="countPrograms"
+            />
           </div>
         </div>
       </div>
@@ -61,7 +57,8 @@
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
 import { type ProgramData, TrackId, ThemeId } from '@/types'
-import Matomo from '@/utils/matomo'
+import Analytics from '@/utils/analytic/analytics'
+import { MetaSeo } from '@/utils/metaSeo'
 import UsedTrack from '@/utils/track/usedTrack'
 import { computed, onBeforeMount } from 'vue'
 
@@ -70,16 +67,17 @@ const programStore = useProgramStore()
 const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)
 
+const title = 'Le catalogue des aides publiques à la transition écologique'
+const description =
+  'Réalisez une recherche parmi les aides à la transition écologique des entreprises, proposées par l’ensemble des partenaires publics :' +
+  'ADEME, Bpifrance, CCI, CMA, etc.'
+
 const filteredPrograms = computed(() => {
   return programs.value ? programStore.getProgramsByFilters(programs.value) : undefined
 })
 
 const countPrograms = computed(() => {
-  return programs.value?.length || 0
-})
-
-const havePrograms = computed(() => {
-  return countPrograms.value > 0
+  return filteredPrograms.value?.length || 0
 })
 
 const hasSpinner = computed(() => {
@@ -106,15 +104,13 @@ const showNoResultsComponent = computed(() => {
   return hasSpinner.value || hasError.value || !countPrograms.value
 })
 
-const hasThemeFilter = computed(() => {
-  return havePrograms.value && countPrograms.value > 1
-})
-
 const showThemeCard = computed(() => {
   return hasThemeCard.value && !hasSpinner.value
 })
 
 onBeforeMount(async () => {
+  useSeoMeta(MetaSeo.get(title, description))
+
   const result = await programStore.programs
   if (result.isOk) {
     programs.value = result.value
@@ -123,6 +119,10 @@ onBeforeMount(async () => {
   }
 
   // analytics / send event
-  Matomo.sendEvent(TrackId.Results, 'show_results_catalog')
+  Analytics.sendEvent(TrackId.Results, 'show_results_catalog')
+})
+
+onBeforeRouteLeave(() => {
+  useSeoMeta(MetaSeo.default())
 })
 </script>

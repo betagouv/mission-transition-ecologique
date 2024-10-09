@@ -28,10 +28,10 @@
       <div class="fr-grid-row fr-grid-row--gutters fr-mb-2v fr-mt-4v">
         <TeeFormElement
           v-for="fieldKey in Object.keys(localForm)"
-          v-show="!localForm[fieldKey].hidden"
           :key="fieldKey"
+          v-model="localForm[fieldKey]"
           :field="localForm[fieldKey]"
-          @update-field="(field) => (localForm[fieldKey] = field)"
+          @update:model-value="(field) => (localForm[fieldKey] = field)"
         />
       </div>
 
@@ -79,12 +79,11 @@
 
 <script setup lang="ts">
 import { Scroll } from '@/utils/scroll'
-import { computed, ref } from 'vue'
-import { DefaultFieldFormType, type ReqResp, TrackId, FormDataType } from '@/types'
+import { computed } from 'vue'
+import { type ReqResp, TrackId, FormDataType, InputFieldUnionType } from '@/types'
 import Translation from '@/utils/translation'
-import Opportunity from '@/utils/opportunity'
 import TeeDsfrButton from '@/components/element/button/TeeDsfrButton.vue'
-import Matomo from '@/utils/matomo'
+import Matomo from '@/utils/analytic/matomo'
 import Format from '@/utils/format'
 import OpportunityApi from '@/service/api/opportunityApi'
 import { OpportunityType } from '@tee/common'
@@ -92,7 +91,7 @@ import { useNavigationStore } from '@/stores/navigation'
 
 const navigation = useNavigationStore()
 interface Props {
-  dataId?: string
+  dataId: string
   dataSlug?: string
   formType: OpportunityType
   form: FormDataType
@@ -108,7 +107,6 @@ const formIsSent = ref<boolean>(false)
 const requestResponse = ref<ReqResp>()
 const isLoading = ref<boolean>(false)
 const localForm = ref<FormDataType>(props.form)
-
 const isFormFilled = computed(() => {
   const isFilled = []
   for (const key in localForm.value) {
@@ -129,24 +127,14 @@ const isFormValid = computed(() => {
   return isValid.every((v) => v !== false)
 })
 
-const isFieldValid = (field: DefaultFieldFormType): boolean => {
+const isFieldValid = (field: InputFieldUnionType): boolean => {
   return field.value !== undefined && field.value !== '' && field.value !== false
 }
 
 const saveForm = async () => {
   try {
     isLoading.value = true
-    let opportunity
-    if (props.dataId) {
-      opportunity = new OpportunityApi(localForm.value, props.dataId, props.dataSlug || props.dataId, props.formType)
-    } else {
-      opportunity = new OpportunityApi(
-        localForm.value,
-        Opportunity.getCustomId(localForm.value, props.formType),
-        Opportunity.getCustomSlug(localForm.value, props.formType),
-        props.formType
-      )
-    }
+    const opportunity = new OpportunityApi(localForm.value, props.dataId, props.dataSlug || props.dataId, props.formType)
     requestResponse.value = await opportunity.fetch()
 
     // analytics / send event
@@ -161,8 +149,9 @@ const getRouteName = () => {
   return `send_${props.formType}_form${navigation.isCatalogDetail() ? '_catalog' : ''}`
 }
 const scrollToFormContainer = () => {
-  if (props.formContainerRef) {
-    Scroll.to(props.formContainerRef)
+  const element = props.formContainerRef
+  if (element) {
+    Scroll.toBlockCenter(element)
   }
 }
 </script>

@@ -1,8 +1,8 @@
 <template>
   <TeeDsfrBreadcrumb />
   <CatalogBanner>
-    <template #title> Le catalogue des projets de transition écologique </template>
-    <template #description> Accédez à la liste des projets de transition écologique destinées aux entreprises. </template>
+    <template #title> {{ title }} </template>
+    <template #description> {{ description }} </template>
   </CatalogBanner>
 
   <div class="fr-container fr-mt-6v">
@@ -10,17 +10,7 @@
       class="fr-grid-row"
       :class="{ 'fr-grid-row--center': hasSpinner }"
     >
-      <TeeSpinner
-        v-if="hasSpinner"
-        class="fr-grid-row--center"
-        scale="6"
-      />
-      <TeeError
-        v-else-if="hasError"
-        :mailto="Contact.email"
-        :email="Contact.email"
-      />
-      <div v-else>
+      <div>
         <div class="fr-col-12 fr-col-justify--left fr-mt-3v">
           <ThemeFilter />
         </div>
@@ -48,9 +38,16 @@
             </div>
           </div>
         </div>
-        <TeeNoResult
-          v-else
+        <TeeSpinner
+          v-if="hasSpinner"
+          class="fr-col-12"
+          scale="6"
+        />
+        <TeeListNoResults
+          v-else-if="showNoResultsComponent"
+          :has-error="hasError"
           message="Aucun projet n'a pu être identifiée avec les critères choisis..."
+          :count-items="countProjects"
         />
       </div>
     </div>
@@ -62,10 +59,11 @@ import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
 import { useProjectStore } from '@/stores/project'
 import { type ProgramData, Project as ProjectType, TrackId, ThemeId } from '@/types'
-import Contact from '@/utils/contact'
-import Matomo from '@/utils/matomo'
+import Analytics from '@/utils/analytic/analytics'
+import { MetaSeo } from '@/utils/metaSeo'
 import { Project } from '@/utils/project/project'
 import { computed, onBeforeMount } from 'vue'
+import { Theme } from '@/utils/theme'
 
 const projectStore = useProjectStore()
 const programStore = useProgramStore()
@@ -75,9 +73,10 @@ const projects = ref<ProjectType[]>()
 const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)
 
-const theme = computed(() => {
-  return programStore.hasThemeTypeSelected() ? (programStore.programFilters.themeTypeSelected as ThemeId) : ''
-})
+const title = 'Le catalogue des projets de transition écologique'
+const description = 'Accédez à la liste des projets de transition écologique destinées aux entreprises.'
+
+const theme = Theme.getThemeFromSelectedTheme()
 
 const filteredProjects = Project.filter(projects, programs, theme)
 const sortedProjects = Project.sort(filteredProjects)
@@ -90,11 +89,21 @@ const hasThemeCard = computed(() => {
   return programStore.hasThemeTypeSelected() && !hasSpinner.value
 })
 
+const showNoResultsComponent = computed(() => {
+  return hasSpinner.value || hasError.value || !countProjects.value
+})
+
+const countProjects = computed(() => {
+  return filteredProjects.value?.length || 0
+})
+
 const hasFilteredProjects = computed(() => {
   return filteredProjects.value?.length
 })
 
 onBeforeMount(async () => {
+  useSeoMeta(MetaSeo.get(title, description))
+
   navigationStore.hasSpinner = true
   const programResult = await programStore.programs
   const projectResult = await projectStore.projects
@@ -108,6 +117,10 @@ onBeforeMount(async () => {
   navigationStore.hasSpinner = false
 
   // analytics / send event
-  Matomo.sendEvent(TrackId.Results, 'show_results_catalog_projects')
+  Analytics.sendEvent(TrackId.Results, 'show_results_catalog_projects')
+})
+
+onBeforeRouteLeave(() => {
+  useSeoMeta(MetaSeo.default())
 })
 </script>

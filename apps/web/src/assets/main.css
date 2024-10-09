@@ -2116,6 +2116,11 @@
   display: none;
 }
 
+.tee-header-menu-sub-navigation button.fr-nav__btn {
+  color: #000091;
+  font-weight: 500;
+}
+
 @media (min-width: 0) {
   .fr-radius-tl {
     border-top-left-radius: 0 !important;

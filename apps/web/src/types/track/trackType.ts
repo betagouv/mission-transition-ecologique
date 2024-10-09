@@ -7,7 +7,8 @@ import {
   TrackId,
   FieldType,
   QuestionnaireData,
-  ThemeId
+  ThemeId,
+  Color
 } from '@/types'
 import { ConditionOperators } from '@/types/conditionOperators'
 
@@ -31,13 +32,12 @@ export enum TrackCalloutType {
 
 export interface TrackCallout {
   header?: Translations
-  headerStyle?: string
   title: Translations
   titleStyle?: string
   bigTitle: boolean
   description?: Translations
   descriptionStyle?: string
-  bgColor?: string
+  bgColor?: Color
   type?: TrackCalloutType
   imageLeft?: string
   imageRight?: string
@@ -163,7 +163,6 @@ export interface Track {
   id: TrackId
   help?: string
   category?: TrackCategory
-  bgColor?: string
   imageRight?: string
   title: Translations
   label: Translations

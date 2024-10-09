@@ -1,6 +1,6 @@
 <template>
   <!-- SELECTOR -->
-  <div class="fr-select-group fr-py-4v fr-px-3v">
+  <div class="fr-select-group">
     <DsfrSelect
       :id="`${currentTrack?.id}-select`"
       v-model="value"

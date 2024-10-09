@@ -51,8 +51,8 @@
           <!-- TITLE & RESUME -->
           <div class="fr-col">
             <!-- PROGRAM TITLE -->
-            <div class="fr-col--middle fr-col-content--middle fr-text--purple fr-h6 fr-text--bold fr-mb-2v fr-mb-md-5v">
-              <div>{{ program?.titre }}</div>
+            <div class="fr-col-justify--left fr-mb-5v fr-h6 fr-text--purple">
+              <div class="fr-text-line-height--8v">{{ program?.titre }}</div>
               <TeeCopyLinkButton
                 class="fr-ml-6v fr-hidden fr-unhidden-md"
                 :tertiary="true"
@@ -64,12 +64,11 @@
 
             <!-- PROGRAM RESUME / TEXT-->
             <h2
-              :style="`color: ${blockColor}`"
+              class="fr-text--blue-france"
               v-html="program?.promesse"
             />
             <p
-              class="fr-mb-12v"
-              style="color: #000091"
+              class="fr-mb-12v fr-text--blue-france"
               v-html="program?.description"
             />
             <ProgramObjective
@@ -218,7 +217,7 @@
     <!-- PROGRAM FORM -->
     <div
       ref="TeeProgramFormContainer"
-      class="fr-bg--blue-light fr-grid-row fr-grid-row--center fr-p-4v"
+      class="fr-bg--blue-france--lightness fr-col-justify--center fr-grid-row fr-p-2w"
     >
       <TeeForm
         v-if="program"
@@ -227,7 +226,7 @@
         :phone-callback="Translation.ti(Translation.t('form.phoneContact'), { operator: program['opérateur de contact'] })"
         :form="Opportunity.getProgramFormFields(program)"
         :form-type="OpportunityType.Program"
-        :error-email-subject="Translation.t('program.program.form.errorEmail.subject', { program: program.titre })"
+        :error-email-subject="Translation.t('program.form.errorEmail.subject', { program: program.titre })"
         :hint="Translation.t('program.form.hint', { operator: program['opérateur de contact'] })"
       />
     </div>
@@ -247,7 +246,8 @@ import { useProgramStore } from '@/stores/program'
 import { OpportunityType, type ProgramData as ProgramType, Project as ProjectType } from '@/types'
 import { RouteName } from '@/types/routeType'
 import { useNavigationStore } from '@/stores/navigation'
-import Matomo from '@/utils/matomo'
+import Analytics from '@/utils/analytic/analytics'
+import { MetaSeo } from '@/utils/metaSeo'
 import Program from '@/utils/program/program'
 import { Scroll } from '@/utils/scroll'
 import Translation from '@/utils/translation'
@@ -264,7 +264,6 @@ const program = ref<ProgramType>()
 const linkedProjects = ref<ProjectType[] | undefined>([])
 const TeeProgramFormContainer = ref<HTMLElement | null | undefined>(null)
 
-const blockColor = '#000091'
 const publicPath = Config.publicPath
 
 interface Props {
@@ -282,8 +281,7 @@ const programDuration = computed(() => program.value?.[`durée de l'accompagneme
 const programLoanDuration = computed(() => program.value?.[`durée du prêt`])
 const programProvider = computed(() => program.value?.['opérateur de contact'])
 const programEndValidity = computed(() => program.value?.[`fin de validité`])
-const programPageTitle = computed(() => `Transition écologique des TPE & PME - ${program.value?.[`titre`]}`)
-const programPageMeta = computed(() => program.value?.[`description`] || ' ')
+
 const columnTiles = computed(() => {
   const infoBlocks = [
     !!programCost.value,
@@ -305,23 +303,25 @@ const isProgramAutonomous = computed(() => {
 onBeforeMount(async () => {
   useNavigationStore().hasSpinner = true
   program.value = programsStore.currentProgram
+  console.log(program.value ? Opportunity.getProgramFormFields(program.value) : '')
   const projectResult = await projectStore.projects
   if (projectResult.isOk) {
     linkedProjects.value = Program.getLinkedProjects(program.value, projectResult.value)
   }
+
+  useSeoMeta(MetaSeo.get(program.value?.titre, program.value?.description, program.value?.illustration))
+
   useNavigationStore().hasSpinner = false
   // analytics / send event
-  Matomo.sendEvent('result_detail', route.name === RouteName.CatalogProgramDetail ? 'show_detail_catalog' : 'show_detail', props.programId)
+  Analytics.sendEvent(
+    'result_detail',
+    route.name === RouteName.CatalogProgramDetail ? 'show_detail_catalog' : 'show_detail',
+    props.programId
+  )
 })
 
-useHead({
-  title: programPageTitle,
-  meta: [
-    {
-      name: 'description',
-      content: programPageMeta
-    }
-  ]
+onBeforeRouteLeave(() => {
+  useSeoMeta(MetaSeo.default())
 })
 
 const programIsAvailable = computed(() => {

@@ -48,11 +48,6 @@ export const useTrackStore = defineStore('track', () => {
     return trackTitle?.[lang]
   }
 
-  const getTrackBgColor = (trackId: TrackId): string | undefined => {
-    const track = getTrack(trackId)
-    return track?.bgColor
-  }
-
   // actions
   function setMaxDepth(depth: number) {
     maxDepth.value = depth
@@ -102,7 +97,6 @@ export const useTrackStore = defineStore('track', () => {
     setMaxDepth,
     getTrack,
     getTrackTitle,
-    getTrackBgColor,
     setCurrentTrack,
     setCurrentTrackById,
     getSelectedOptionsByTrackAndValue

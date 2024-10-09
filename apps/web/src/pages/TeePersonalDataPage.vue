@@ -6,7 +6,7 @@
       site-name="Mission Transition Écologique"
       :third-parties="thirdParties"
       :cookies="cookies"
-      cookie-consent-button=""
+      :cookie-consent-button="TeeFooterCookiesButton"
     />
   </div>
   <ContactMail />
@@ -16,6 +16,7 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`TeePersonalDataPage > FUNCTION_NAME > MSG_OR_VALUE :`)
 
+import TeeFooterCookiesButton from '@/components/TeeFooterCookiesButton.vue'
 import { RouteName } from '@/types'
 import { PrivacyPolicyPropsCookie, PrivacyPolicyPropsThirdParty, PrivacyPolicy } from '@incubateur-ademe/legal-pages-vue3'
 
@@ -32,11 +33,11 @@ const thirdParties: PrivacyPolicyPropsThirdParty[] = [
 const cookies: PrivacyPolicyPropsCookie[] = [
   {
     category: 'Mesure d’audience anonymisée',
-    name: 'Matomo',
+    name: 'Posthog',
     expiration: '13 mois',
     finalities: 'Mesure d’audience',
-    editor: 'Matomo & ADEME',
-    destination: 'France'
+    editor: 'Posthog & ADEME',
+    destination: 'Europe'
   }
 ]
 </script>

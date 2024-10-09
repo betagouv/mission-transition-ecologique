@@ -126,12 +126,6 @@ button.fr-link:hover, .tee-router-link:hover {
   aspect-ratio: 1 !important;
   /* height: 100% !important; */
 }
-.tee-text-light {
-  color: #929292;
-}
-.tee-text-blue {
-  color: #000091;
-}
 
 .tee-mb-none {
   margin-bottom: 0 !important
@@ -219,12 +213,6 @@ button.fr-link:hover, .tee-router-link:hover {
   width: 3rem !important;
 }
 
-.tee-form-input-large:focus-within {
-  outline-offset: 2px;
-  outline-width: 2px;
-  outline-color: #0a76f6;
-  outline-style: solid;
-}
 .tee-input-large:focus {
   outline-offset: unset;
   outline-width: unset;

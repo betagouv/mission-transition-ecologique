@@ -6,9 +6,40 @@
     :border-position="[BorderPosition.bottom]"
   >
     <template #content>
+      <div class="fr-container--fluid fr-px-3v">
+        <div class="fr-grid-row">
+          <div class="fr-col-12 fr-text-center">
+            <TeeSpinner
+              v-if="navigationStore.hasSpinner"
+              scale="6"
+            />
+            <TeeNoResult
+              v-else-if="!countFilteredPrograms && !hasError && !navigationStore.hasSpinner"
+              message="Aucune aide n'a pu être identifiée avec les critères choisis..."
+            />
+            <TeeError
+              v-else-if="hasError"
+              :mailto="Contact.email"
+              :email="Contact.email"
+            />
+          </div>
+          <ProjectProgramsList
+            v-if="studyPrograms.length > 0"
+            :title="Translation.t('project.studyPrograms')"
+            :programs="studyPrograms"
+            :project="project"
+          />
+          <ProjectProgramsList
+            v-if="financePrograms.length > 0"
+            :title="Translation.t('project.financePrograms')"
+            :programs="financePrograms"
+            :project="project"
+          />
+        </div>
+      </div>
       <DsfrHighlight
         v-if="isCatalogDetail"
-        class="fr-highlight-border--yellow fr-highlight-bg--yellow-light fr-m-0 fr-p-0"
+        class="fr-highlight-border--yellow fr-highlight-bg--yellow--lightness fr-m-0 fr-p-0"
         :large="true"
       >
         <template #default>
@@ -36,42 +67,9 @@
       </DsfrHighlight>
       <div
         v-else
-        class="fr-container--fluid fr-px-3v"
-      >
-        <div class="fr-grid-row">
-          <div class="fr-col-12 fr-text-center">
-            <TeeSpinner
-              v-if="hasSpinner"
-              scale="6"
-            />
-            <TeeNoResult
-              v-else-if="!countFilteredPrograms && !hasError"
-              message="Aucune aide n'a pu être identifiée avec les critères choisis..."
-            />
-            <TeeError
-              v-else-if="hasError"
-              :mailto="Contact.email"
-              :email="Contact.email"
-            />
-          </div>
-          <ProjectProgramsList
-            v-if="studyPrograms.length > 0"
-            :title="Translation.t('project.studyPrograms')"
-            :programs="studyPrograms"
-            :project="project"
-          />
-          <ProjectProgramsList
-            v-if="financePrograms.length > 0"
-            :title="Translation.t('project.financePrograms')"
-            :programs="financePrograms"
-            :project="project"
-          />
-        </div>
-      </div>
-      <div
         id="project-contact"
         ref="TeeProjectFormContainer"
-        class="fr-bg--blue-light fr-grid-row fr-grid-row--center fr-p-4v"
+        class="fr-bg--blue-france--lightness fr-col-justify--center fr-grid-row fr-p-2w"
       >
         <TeeForm
           v-if="project"
@@ -110,8 +108,6 @@ const TeeProjectFormContainer = ref<HTMLElement | null | undefined>(null)
 
 const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)
-
-const hasSpinner = navigationStore.hasSpinner
 
 const countFilteredPrograms = computed(() => {
   return filteredPrograms.value.length || 0

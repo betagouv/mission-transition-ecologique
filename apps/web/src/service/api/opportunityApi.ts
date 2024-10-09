@@ -8,7 +8,6 @@ import {
   ReqResp,
   WithoutNullableKeys,
   FormDataType,
-  Opportunity,
   OpportunityType,
   RouteName,
   ProgramData,
@@ -29,8 +28,8 @@ export default class OpportunityApi extends RequestApi {
 
   constructor(
     opportunityForm: FormDataType,
-    private _id: ProgramData['id'] | Project['id'] | string,
-    private _slug: ProgramData['id'] | Project['slug'] | string,
+    private _id: ProgramData['id'] | Project['id'],
+    private _slug: ProgramData['id'] | Project['slug'],
     private _opportunityType: OpportunityType
   ) {
     super()
@@ -62,34 +61,33 @@ export default class OpportunityApi extends RequestApi {
   }
 
   payload(): OpportunityBody {
-    const opportunity: Opportunity = {
-      type: this._opportunityType,
-      id: this._id.toString(),
-      firstName: this._opportunityForm.name.value,
-      lastName: this._opportunityForm.surname.value,
-      email: this._opportunityForm.email.value,
-      phoneNumber: this._opportunityForm.tel.value,
-      companySiret: this._opportunityForm.siret.value,
-      theme: this._opportunityForm.theme.value as ThemeId,
-      companyName: this.getFromUsedTrack(TrackId.Siret, 'denomination'),
-      companySector: TrackStructure.getSector(),
-      companySize: TrackStructure.getSize() ?? undefined,
-      message: this._opportunityForm.needs.value,
-      questionnaireRoute: this.getFromUsedTrack(
-        TrackId.QuestionnaireRoute,
-        QuestionnaireDataEnum.questionnaire_route as string
-      ) as QuestionnaireRoute, // get from usedTrack
-      otherData: this.getAllValuesFromUsedTrack(),
-      linkToPage: this._opportunityForm.linkToPage.value
-    }
-    const linkToCatalog = this._generateCatalogLink()
-    if (linkToCatalog === 'catalogLinkGenerationNotHandledForTheCurrentOpportunityType') {
-      opportunity.linkToCatalog = linkToCatalog
-    }
     return {
-      opportunity,
+      opportunity: {
+        type: this._opportunityType,
+        id: this._id.toString(),
+        firstName: this._opportunityForm.name.value,
+        lastName: this._opportunityForm.surname.value,
+        email: this._opportunityForm.email.value,
+        phoneNumber: this._opportunityForm.tel.value,
+        companySiret: this._opportunityForm.siret.value,
+        companyName: this.getFromUsedTrack(TrackId.Siret, 'denomination'),
+        companySector: TrackStructure.getSector(),
+        companySize: TrackStructure.getSize() ?? undefined,
+        message: this._opportunityForm.needs.value,
+        questionnaireRoute: this.getFromUsedTrack(
+          TrackId.QuestionnaireRoute,
+          QuestionnaireDataEnum.questionnaire_route as string
+        ) as QuestionnaireRoute, // get from usedTrack
+        otherData: this.getAllValuesFromUsedTrack(),
+        linkToPage: this._generateLinkToPage(),
+        linkToCatalog: this._generateCatalogLink()
+      },
       optIn: this._opportunityForm.cgu.value
     }
+  }
+
+  private _generateLinkToPage(): string {
+    return new URL(useRoute().fullPath, window.location.origin).href
   }
 
   private _generateCatalogLink(): string {

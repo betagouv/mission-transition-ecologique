@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import axios from 'axios'
 import fetch from 'node-fetch'
 import https from 'https'
@@ -26,7 +25,7 @@ export class LinkValidator {
       } else {
         return false
       }
-    } catch (error: any) {
+    } catch (error) {
       // mandatory linter comment
     }
     return false
@@ -44,7 +43,7 @@ export class LinkValidator {
       if (response.status < 300) {
         return true
       }
-    } catch (error: any) {
+    } catch (error) {
       // mandatory linter comment
     }
     return false

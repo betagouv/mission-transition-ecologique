@@ -1,15 +1,15 @@
 titre: Entreprises engagées pour la nature
 promesse: Initiez un plan d'action pour la biodiversité
 description: >-
-  Le programme "Entreprises engagées pour la nature" vous accompagne pour mettre
-  faire émerger et valoriser des plans d'actions en faveur de la biodiversité.
-  Grâce à un parcours en trois étapes – adhésion, engagement, et évaluation –
-  vous pourrez mesurer l'impact de votre activité sur la nature et mettre en
-  œuvre des actions concrètes, mesurables et ayant un effet positif sur la
-  biodiversité. Les entreprises engagées pour la nature peuvent valoriser leur
-  "tampon" auprès du grand public et bénéficient d'une mise en lumière par
-  l'Office Français de la Biodiversité lors de salons dédiés au monde de
-  l'entreprise et de la biodiversité.
+  Le programme "Entreprises engagées pour la nature" de l'Office français de la
+  biodiversité vous accompagne pour mettre faire émerger et valoriser des plans
+  d'actions en faveur de la biodiversité. Grâce à un parcours en trois étapes –
+  adhésion, engagement, et évaluation – vous pourrez mesurer l'impact de votre
+  activité sur la nature et mettre en œuvre des actions concrètes, mesurables et
+  ayant un effet positif sur la biodiversité. Les entreprises engagées pour la
+  nature peuvent valoriser leur "tampon" auprès du grand public et bénéficient
+  d'une mise en lumière par l'Office français de la biodiversité lors de salons
+  dédiés au monde de l'entreprise et de la biodiversité.
 illustration: images/TEE_ampoule.png
 opérateur de contact: Office Française de la Biodiversité
 url: https://engagespourlanature.ofb.fr/entreprises
@@ -20,8 +20,10 @@ activable en autonomie: oui
 objectifs:
   - description: >-
       Adhérez au programme via la signature d'une charte contenant les 10
-      principes communs de l'initiative "Engagé pour la nature".
+      principes communs de l'initiative "Entreprises engagées pour la nature".
     liens:
+      - lien: https://engagespourlanature.ofb.fr/entreprises/rejoindre-le-programme
+        texte: Le programme
       - lien: >-
           https://engagespourlanature.ofb.fr/sites/default/files/2021-12/EEN_Les%20_10_principes_communs_%C3%A0_signer.pdf
         texte: Signer la charte
@@ -64,7 +66,7 @@ conditions d'éligibilité:
     - Toutes tailles
     - Éligible aux micro-entreprises
   secteur géographique:
-    - France et territoires d'outre-mer
+    - Provence-Alpes-Côte d'Azur
   secteur d'activité:
     - Tous secteurs d'activité
   nombre d'années d'activité:
@@ -72,8 +74,12 @@ conditions d'éligibilité:
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
+      - est éligible
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est A
@@ -99,3 +105,6 @@ publicodes:
   entreprise . a un objectif ciblé:
     une de ces conditions:
       - questionnaire . objectif prioritaire . est préserver la biodiversité
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Provence-Alpes-Côte d'Azur
