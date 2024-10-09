@@ -1,20 +1,20 @@
 @use '@gouvfr/dsfr/module/color/variable/static' as color;
 @forward '@gouvfr/dsfr/module/color/variable/static';
 
-$styles: (
+$border-styles: (
   solid,
   dashed,
   dotted
 );
 
-$positions: (
+$border-positions: (
   "t": top,
   "r": right,
   "b": bottom,
   "l": left
 );
 
-$widths: (
+$border-widths: (
   thin,
   medium,
   thick

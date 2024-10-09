@@ -3,11 +3,11 @@
 
 @each $color, $properties in setting.$colors {
   .fr-border {
-    @each $name, $position in setting.$positions {
+    @each $name, $position in setting.$border-positions {
       &-#{$name} {
-        @each $width in setting.$widths {
+        @each $width in setting.$border-widths {
           &--#{$width} {
-            @each $style, $style-value in setting.$styles {
+            @each $style, $style-value in setting.$border-styles {
               &--#{$style} {
                 @include tool.border-color-with-position($color, $properties, $position: $position, $width: $width, $style: $style-value);
               }
@@ -19,9 +19,9 @@
       }
     }
 
-    @each $width in setting.$widths {
+    @each $width in setting.$border-widths {
       &--#{$width} {
-        @each $style, $style-value in setting.$styles {
+        @each $style, $style-value in setting.$border-styles {
           &--#{$style} {
             @include tool.border-color($color, $properties, $width: $width, $style: $style-value);
           }
