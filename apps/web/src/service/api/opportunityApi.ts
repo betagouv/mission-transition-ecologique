@@ -7,7 +7,7 @@ import {
   OpportunityBody,
   ReqResp,
   WithoutNullableKeys,
-  OpportunityFormType,
+  FormDataType,
   OpportunityType,
   RouteName,
   ProgramData,
@@ -23,16 +23,16 @@ export default class OpportunityApi extends RequestApi {
     'content-type': 'application/json'
   }
   private _usedTrackStore = useUsedTrackStore()
-  private _opportunityForm: WithoutNullableKeys<OpportunityFormType>
+  private _opportunityForm: WithoutNullableKeys<FormDataType>
 
   constructor(
-    opportunityForm: OpportunityFormType,
+    opportunityForm: FormDataType,
     private _id: ProgramData['id'] | Project['id'],
     private _slug: ProgramData['id'] | Project['slug'],
     private _opportunityType: OpportunityType
   ) {
     super()
-    this._opportunityForm = opportunityForm as WithoutNullableKeys<OpportunityFormType>
+    this._opportunityForm = opportunityForm as WithoutNullableKeys<FormDataType>
   }
 
   async fetch() {
@@ -78,11 +78,15 @@ export default class OpportunityApi extends RequestApi {
           QuestionnaireDataEnum.questionnaire_route as string
         ) as QuestionnaireRoute, // get from usedTrack
         otherData: this.getAllValuesFromUsedTrack(),
-        linkToPage: this._opportunityForm.linkToPage.value,
+        linkToPage: this._generateLinkToPage(),
         linkToCatalog: this._generateCatalogLink()
       },
       optIn: this._opportunityForm.cgu.value
     }
+  }
+
+  private _generateLinkToPage(): string {
+    return new URL(useRoute().fullPath, window.location.origin).href
   }
 
   private _generateCatalogLink(): string {
