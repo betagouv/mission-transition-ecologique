@@ -3,7 +3,7 @@ import { OperatorFeatures } from './operators/operatorFeatures'
 console.log('Start the Operator generation')
 
 new OperatorFeatures()
-  .createOperatorsJson()
+  .updateOperatorsData()
   .then(() => {
     console.log('OperatorJson generated')
   })

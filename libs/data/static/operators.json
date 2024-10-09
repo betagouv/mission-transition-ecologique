@@ -391,5 +391,9 @@
     "filterCategories": [
       "Autres opérateurs nationaux"
     ]
+  },
+  {
+    "operator": "TEE",
+    "filterCategories": []
   }
 ]
