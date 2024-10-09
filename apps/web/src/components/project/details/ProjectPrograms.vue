@@ -87,7 +87,7 @@ import { RouteName } from '@/types/routeType'
 import { type RouteLocationRaw } from 'vue-router'
 import { useNavigationStore } from '@/stores/navigation'
 import Translation from '@/utils/translation'
-import CompanyData from '@/utils/storage/companyData'
+import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
 interface Props {
   project: Project
@@ -97,7 +97,7 @@ const props = defineProps<Props>()
 const programStore = useProgramStore()
 const navigationStore = useNavigationStore()
 const isCatalogDetail = navigationStore.isCatalogProjectDetail()
-const hasCompanyData = CompanyData.hasData()
+const hasCompanyData = CompanyDataStorage.hasData()
 
 const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)

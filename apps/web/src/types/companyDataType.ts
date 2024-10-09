@@ -7,7 +7,7 @@ export type CompanyDataType = {
 //TODO: se baser sur l'enum TrackId
 export enum CompanyDataId {
   Siret = 'siret',
-  Size = 'effectif'
+  Size = 'structure_size'
 }
 
 export type QuestionnaireDataKey = keyof QuestionnaireData

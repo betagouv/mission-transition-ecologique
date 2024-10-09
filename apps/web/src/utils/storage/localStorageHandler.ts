@@ -1,8 +1,7 @@
-import { CompanyDataId, CompanyDataType, QuestionnaireDataKey } from '@/types/companyDataType'
 import { StorageHandlerInterface } from '@/utils/storage/StorageHandlerInterface'
 
 export class LocalStorageHandler implements StorageHandlerInterface {
-  setItem(key: CompanyDataId, value: CompanyDataType[QuestionnaireDataKey]): void {
+  setItem(key: string, value: string): void {
     try {
       localStorage.setItem(key, JSON.stringify(value))
     } catch (e) {
@@ -10,7 +9,7 @@ export class LocalStorageHandler implements StorageHandlerInterface {
     }
   }
 
-  getItem(key: CompanyDataId): CompanyDataType[QuestionnaireDataKey] | null {
+  getItem(key: string): string | null {
     try {
       const item = localStorage.getItem(key)
       return item ? JSON.parse(item) : null
@@ -20,7 +19,7 @@ export class LocalStorageHandler implements StorageHandlerInterface {
     }
   }
 
-  removeItem(key: CompanyDataId): void {
+  removeItem(key: string): void {
     localStorage.removeItem(key)
   }
 
@@ -28,7 +27,7 @@ export class LocalStorageHandler implements StorageHandlerInterface {
     localStorage.clear()
   }
 
-  getAll(): { [k in QuestionnaireDataKey]: CompanyDataType[QuestionnaireDataKey] } | null {
+  getAll(): { [k: string]: string } | null {
     try {
       return this.__parseLocalStorage()
     } catch (e) {
@@ -37,9 +36,9 @@ export class LocalStorageHandler implements StorageHandlerInterface {
     }
   }
 
-  __parseLocalStorage(): { [k in QuestionnaireDataKey]: CompanyDataType[QuestionnaireDataKey] } | null {
+  __parseLocalStorage(): { [k: string]: string } | null {
     return Object.fromEntries(Object.entries(localStorage).map(([key, value]) => [key, JSON.parse(value)])) as {
-      [k in QuestionnaireDataKey]: CompanyDataType[QuestionnaireDataKey]
+      [k: string]: string
     }
   }
 }
