@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [ '20.x' ]
+        node-version: ['20.x']
 
     steps:
       - uses: actions/checkout@v4
@@ -27,11 +27,12 @@ jobs:
       - run: npm clean-install --foreground-scripts
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
+
       - run: npm run generate:program
 
       - name: Generate projects
         env:
-          BASEROW_TOKEN: "${{secrets.BASEROW_TOKEN}}"
+          BASEROW_TOKEN: '${{secrets.BASEROW_TOKEN}}'
         run: npm run generate:projects
 
       - name: Read Log File
@@ -41,14 +42,13 @@ jobs:
           cat libs/data/projectGeneration.log >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
 
-
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
         with:
           base: main
           branch: chore/update_projects
-          commit-message: "chore: update projects"
-          title: "chore: update projects"
+          commit-message: 'chore: update projects'
+          title: 'chore: update projects'
           body: |
             Cette pull request a été crée automatiquement pour mettre à jour les projets.
 
@@ -71,7 +71,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [ '20.x' ]
+        node-version: ['20.x']
 
     steps:
       - uses: actions/checkout@v4
@@ -87,7 +87,7 @@ jobs:
 
       - name: Generate programs yamls
         env:
-          BASEROW_TOKEN: "${{secrets.BASEROW_TOKEN}}"
+          BASEROW_TOKEN: '${{secrets.BASEROW_TOKEN}}'
         run: npm run generate:program-yaml
 
       - name: Read Log File
@@ -102,8 +102,8 @@ jobs:
         with:
           base: main
           branch: chore/update_programs
-          commit-message: "chore: update programs"
-          title: "chore: update programs"
+          commit-message: 'chore: update programs'
+          title: 'chore: update programs'
           body: |
             Cette pull request a été crée automatiquement pour mettre à jour les dispositifs.
 
@@ -117,8 +117,6 @@ jobs:
             :fire: :fire:  important
             :fire: mineur
             :warning:  info
-            Cette pull request a été crée automatiquement pour mettre à jour les dispositifs.
-
 
             ${{ env.log_content }}
           draft: false

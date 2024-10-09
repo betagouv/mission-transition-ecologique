@@ -66,6 +66,12 @@ const closePersonalize = () => {
     modal.classList.remove('fr-modal--opened')
   }
 }
+const closeBaseConsent = () => {
+  const element = document.getElementById('tee-consent-popup')
+  if (element && !element.classList.contains('fr-hidden')) {
+    element.classList.add('fr-hidden')
+  }
+}
 onMounted(() => {
   cookies.value = JSON.parse(JSON.stringify(Cookie.cookies.value))
 })
@@ -77,9 +83,11 @@ const updateCookieStatus = (status: boolean, cookie: CookieValue) => {
 }
 
 const saveConsent = () => {
-  if (cookies.value) {
+  const hasChanged = Cookie.hasChanged(cookies.value)
+  if (cookies.value && (hasChanged || !Cookie.areCookiesSet())) {
     Cookie.saveCookies(cookies.value)
-    closePersonalize()
   }
+  closePersonalize()
+  closeBaseConsent()
 }
 </script>

@@ -32,6 +32,7 @@
 </template>
 <script setup lang="ts">
 import { Project, Color, ThemeId } from '@/types'
+import { MetaSeo } from '@/utils/metaSeo'
 import { Theme } from '@/utils/theme'
 import { useProjectStore } from '@/stores/project'
 import { onBeforeMount } from 'vue'
@@ -61,5 +62,11 @@ onBeforeMount(async () => {
 
     themeColor.value = Theme.getColorById(themeId as ThemeId)
   }
+
+  useSeoMeta(MetaSeo.get(project.value?.title, project.value?.shortDescription, project.value?.image))
+})
+
+onBeforeRouteLeave(() => {
+  useSeoMeta(MetaSeo.default())
 })
 </script>
