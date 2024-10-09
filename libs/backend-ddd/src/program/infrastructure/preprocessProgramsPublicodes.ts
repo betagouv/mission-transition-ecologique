@@ -1,7 +1,6 @@
 import { type ProgramType, ThemeId } from '@tee/data'
 import { type PublicodesInputData, PublicodesQuestionnaireRoute, SectorToNAFSection, NAF1Letters } from './types'
 import {
-  BuildingProperty,
   ObjectiveChecker,
   PublicodeObjective,
   PublicodesKeys,
@@ -115,10 +114,9 @@ const setObjectives = (publicodesData: PublicodesInputData, questionnaireData: Q
 
     publicodesData[PublicodeObjective.Biodiversity] = YesNo.Yes
 
-    publicodesData[PublicodesKeys.BuildingOwner] =
-      questionnaireData.building_property == BuildingProperty.Rents || questionnaireData.building_property == BuildingProperty.No
-        ? YesNo.No
-        : YesNo.Yes
+    publicodesData[PublicodesKeys.BuildingOwner] = ObjectiveChecker.isBuildingProperty(questionnaireData.building_property)
+      ? YesNo.Yes
+      : YesNo.No
   }
 }
 const setQuestionnaireRoute = (publicodesData: PublicodesInputData, questionnaireData: QuestionnaireData) => {

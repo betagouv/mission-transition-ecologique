@@ -15,8 +15,8 @@ export class ObjectiveChecker {
     )
   }
 
-  static isBuildingProperty(buildingStatus: BuildingProperty) {
-    return buildingStatus === BuildingProperty.Owns || buildingStatus === BuildingProperty.OwnsAndRents
+  static isBuildingProperty(buildingStatus: BuildingProperty | undefined) {
+    return buildingStatus === BuildingProperty.Owns || buildingStatus === BuildingProperty.OwnsAndRents || buildingStatus === undefined
   }
 
   static isWaterConsumption(waterReduction: YesNo | undefined) {
