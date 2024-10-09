@@ -19,6 +19,7 @@
     "generate:program": "nx run @tee/data:generate-program",
     "generate:program-yaml": "nx run @tee/data:generate-program-yaml",
     "generate:projects": "nx run @tee/data:generate-projects",
+    "generate:operators": "nx run @tee/data:generate-operators",
     "generate:seo": "nx run @tee/web:generate-seo",
     "test": "nx run-many -t test -p @tee/data @tee/backend-ddd --verbose",
     "lint": "nx run-many -t lint --verbose",

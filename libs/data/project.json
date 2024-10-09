@@ -17,7 +17,10 @@
       "executor": "nx:run-commands",
       "options": {
         "cwd": "libs/data",
-        "commands": ["npx ts-node src/generateProgramType.ts", "npx ts-node src/buildProgramJson.ts"],
+        "commands": [
+          "npx ts-node src/generateProgramType.ts",
+          "npx ts-node src/buildProgramJson.ts"
+        ],
         "parallel": false
       }
     },
@@ -25,14 +28,27 @@
       "executor": "nx:run-commands",
       "options": {
         "cwd": "libs/data",
-        "commands": ["npx ts-node src/generateProjectsJson.ts"]
+        "commands": [
+          "npx ts-node src/generateProjectsJson.ts"
+        ]
       }
     },
     "generate-program-yaml": {
       "executor": "nx:run-commands",
       "options": {
         "cwd": "libs/data",
-        "commands": ["npx ts-node src/generateProgramYaml.ts"]
+        "commands": [
+          "npx ts-node src/generateProgramYaml.ts"
+        ]
+      }
+    },
+    "generate-operators": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/data",
+        "commands": [
+          "npx ts-node src/generateOperatorsJson.ts"
+        ]
       }
     }
   }

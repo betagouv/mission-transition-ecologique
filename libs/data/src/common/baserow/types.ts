@@ -59,7 +59,7 @@ export interface Program
 }
 
 export interface Operator {
-  nom: string
-  tag: string
-  filtre: LinkObject[]
+  Nom: string
+  Tag: string
+  Filtre: LinkObject[]
 }
