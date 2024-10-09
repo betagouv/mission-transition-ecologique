@@ -257,17 +257,13 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     })
 
     if (CompanyDataStorage.hasData() && !useNavigationStore().isByRouteName([RouteName.Questionnaire, RouteName.QuestionnaireResult])) {
-      const companyData = CompanyDataStorage.getData().value as { [k: string]: any }
+      const companyData = CompanyDataStorage.getData()
       Object.entries(companyData).forEach(([key, value]) => {
         if (typeof value === 'string') {
-          if (questionnaireData[key] === undefined) {
-            questionnaireData[key] = value
-          }
+          questionnaireData[key] ??= value
         } else {
           Object.entries(value).forEach(([subKey, subValue]) => {
-            if (questionnaireData[subKey] === undefined) {
-              questionnaireData[subKey] = subValue
-            }
+            questionnaireData[subKey] ??= subValue
           })
         }
       })

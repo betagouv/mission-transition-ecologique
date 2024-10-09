@@ -1,11 +1,18 @@
 import { CompanyDataId, QuestionnaireDataKey } from '@/types/companyDataType'
 import { LocalStorageHandler } from '@/utils/storage/localStorageHandler'
+import { StorageDataType } from '@/types/storageType'
 
 export default class CompanyDataStorage {
   private static readonly _storageHandler = new LocalStorageHandler()
 
+  private static readonly _data = ref<StorageDataType>(this._storageHandler.getAll() || {})
+
   static getData() {
-    return computed(() => this._storageHandler.getAll())
+    return this._data
+  }
+
+  static hasData() {
+    return this._data ? Object.entries(this._data).some((datum) => datum !== null) : false
   }
 
   static setSiret(value: any) {
@@ -18,6 +25,7 @@ export default class CompanyDataStorage {
 
   static setItem(key: QuestionnaireDataKey, value: string): void {
     this._storageHandler.setItem(key, value)
+    this._updateData()
   }
 
   static getItem(key: QuestionnaireDataKey): string | null {
@@ -32,8 +40,7 @@ export default class CompanyDataStorage {
     this._storageHandler.clear()
   }
 
-  static hasData() {
-    const data = this.getData()
-    return data ? Object.entries(data).some((datum) => datum !== null) : false
+  private static _updateData() {
+    this._data.value = this._storageHandler.getAll() || {}
   }
 }
