@@ -29,6 +29,7 @@
         <TeeFormElement
           v-for="fieldKey in Object.keys(localForm)"
           :key="fieldKey"
+          v-model="localForm[fieldKey]"
           :field="localForm[fieldKey]"
           @update:model-value="(field) => (localForm[fieldKey] = field)"
         />

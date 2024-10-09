@@ -34,9 +34,7 @@ interface Props {
   field: InputFieldUnionType
 }
 const props = defineProps<Props>()
-const emit = defineEmits<{
-  'update:modelValue': [payload: InputFieldUnionType]
-}>()
+
 const fieldValueModel = ref<DefaultFieldFormType['value']>(props.field.value)
 
 const localField = ref<DefaultFieldFormType>(props.field)
@@ -52,7 +50,6 @@ const validateFormField = (fieldValue: InputFieldUnionType['value']): void => {
   } else {
     localField.value.isValid = isFieldValid()
   }
-  emit('update:modelValue', localField.value)
 }
 
 const getErrorMessage = (): string => {
