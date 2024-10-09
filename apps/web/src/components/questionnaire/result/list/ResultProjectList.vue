@@ -17,7 +17,7 @@
     >
       <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
         <div class="fr-col-12 fr-col-offset-md-2 fr-col-md-10 fr-pl-md-2v fr-pr-md-6v">
-          <ResultListNoResults
+          <TeeListNoResults
             :has-error="hasError"
             message="Aucune idée d’action n’a pu être identifiée sur cette thématique..."
             :count-items="countProjects"

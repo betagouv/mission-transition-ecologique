@@ -11,7 +11,7 @@
             </div>
           </div>
           <div class="fr-col-12 fr-col-md-10 fr-pl-md-2v fr-pr-md-6v">
-            <ResultListNoResults
+            <TeeListNoResults
               v-if="showNoResultsComponent"
               :has-error="hasError"
               message="Aucune aide n'a pu être identifiée sur cette thématique..."

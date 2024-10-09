@@ -7,7 +7,6 @@
       ADEME, Bpifrance, CCI, CMA, etc.
     </template>
   </CatalogBanner>
-
   <div class="fr-container--fluid fr-container--fluid--no-overflow fr-mt-6v">
     <div class="fr-grid-row fr-grid-row--center">
       <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
@@ -40,9 +39,10 @@
             <ProgramList :filtered-programs="filteredPrograms" />
             <TeeSpinner
               v-if="hasSpinner"
+              class="fr-col-12"
               scale="6"
             />
-            <ResultListNoResults
+            <TeeListNoResults
               v-else-if="showNoResultsComponent"
               :has-error="hasError"
               message="Aucune aide n'a pu être identifiée sur cette thématique..."
