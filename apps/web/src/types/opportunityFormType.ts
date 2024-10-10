@@ -10,6 +10,7 @@ export interface FormDataType {
   siret: ValidatedStringFieldInputType
   needs: StringFieldInputType
   cgu: BooleanFieldInputType
+  theme: SelectFieldInputType
 }
 
 export type DefaultFieldFormType = {

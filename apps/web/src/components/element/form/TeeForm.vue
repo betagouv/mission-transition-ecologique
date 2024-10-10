@@ -85,13 +85,14 @@ import Translation from '@/utils/translation'
 import TeeDsfrButton from '@/components/element/button/TeeDsfrButton.vue'
 import Matomo from '@/utils/analytic/matomo'
 import Format from '@/utils/format'
+import Opportunity from '@/utils/opportunity'
 import OpportunityApi from '@/service/api/opportunityApi'
 import { OpportunityType } from '@tee/common'
 import { useNavigationStore } from '@/stores/navigation'
 
 const navigation = useNavigationStore()
 interface Props {
-  dataId: string
+  dataId?: string
   dataSlug?: string
   formType: OpportunityType
   form: FormDataType
@@ -134,7 +135,17 @@ const isFieldValid = (field: InputFieldUnionType): boolean => {
 const saveForm = async () => {
   try {
     isLoading.value = true
-    const opportunity = new OpportunityApi(localForm.value, props.dataId, props.dataSlug || props.dataId, props.formType)
+    let opportunity
+    if (props.dataId) {
+      opportunity = new OpportunityApi(localForm.value, props.dataId, props.dataSlug || props.dataId, props.formType)
+    } else {
+      opportunity = new OpportunityApi(
+        localForm.value,
+        Opportunity.getCustomId(localForm.value, props.formType),
+        Opportunity.getCustomSlug(localForm.value, props.formType),
+        props.formType
+      )
+    }
     requestResponse.value = await opportunity.fetch()
 
     // analytics / send event

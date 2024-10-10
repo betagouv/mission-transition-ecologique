@@ -2,7 +2,7 @@
   <div
     id="project-contact"
     ref="TeeOtherProjectFormContainer"
-    class="fr-bg--blue-light fr-grid-row fr-grid-row--center fr-p-4v"
+    class="fr-bg--blue-france--lightness fr-col-justify--center fr-grid-row fr-p-2w fr-mt-2v"
   >
     <TeeForm
       :form-container-ref="TeeOtherProjectFormContainer"

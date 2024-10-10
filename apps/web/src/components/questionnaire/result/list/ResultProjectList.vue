@@ -23,15 +23,32 @@
             :count-items="countProjects"
           />
         </div>
-        <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-col-justify--center">
-          <OtherProjectForm />
-        </div>
       </div>
     </div>
     <ProjectList
       v-else
       :sorted-projects="sortedProjects"
     />
+    <transition
+      name="fade"
+      type="transition"
+      :duration="250"
+    >
+      <div
+        v-if="!showNoResults"
+        class="fr-grid-row fr-grid-row--center"
+      >
+        <div class="fr-container">
+          <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2">
+            <OtherProjectCta
+              v-if="!otherProjectForm"
+              @click="openOtherProjectForm"
+            />
+            <OtherProjectForm v-else />
+          </div>
+        </div>
+      </div>
+    </transition>
   </div>
 </template>
 
