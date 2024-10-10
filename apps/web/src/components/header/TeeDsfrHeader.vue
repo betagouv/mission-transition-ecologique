@@ -96,9 +96,6 @@
               v-if="quickLinks?.length || languageSelector"
               class="fr-header__tools-links"
             >
-              <div>
-                {{ siret }}
-              </div>
               <TeeDsfrHeaderMenuLinks
                 v-if="!menuOpened"
                 :links="quickLinks"
@@ -206,9 +203,6 @@ import { DsfrLanguageSelector, DsfrLogo, DsfrSearchBar } from '@gouvminint/vue-d
 
 import type { DsfrLanguageSelectorElement } from '@gouvminint/vue-dsfr/types/components/DsfrLanguageSelector/DsfrLanguageSelector.vue'
 import type { DsfrHeaderProps } from '@gouvminint/vue-dsfr/types/components/DsfrHeader/DsfrHeader.vue'
-import CompanyDataStorage from '@/utils/storage/companyDataStorage'
-import { CompanyDataId } from '@/types/companyDataType'
-import { StorageDataType } from '@/types/storageType'
 
 export type { DsfrHeaderProps }
 
@@ -240,12 +234,6 @@ const emit = defineEmits<{
   (e: 'language-select', payload: DsfrLanguageSelectorElement): void
 }>()
 
-const companyData = CompanyDataStorage.getData()
-const siret = ref((companyData.value[CompanyDataId.Siret] as StorageDataType).siret)
-
-watchEffect(() => {
-  siret.value = (CompanyDataStorage.getData().value[CompanyDataId.Siret] as StorageDataType).siret
-})
 const languageSelector = toRef(props, 'languageSelector')
 
 const menuOpened = ref(false)
