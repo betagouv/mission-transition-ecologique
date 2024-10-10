@@ -1,4 +1,4 @@
-import { ThemeId, ProgramOperatorType, ProgramAidType, FiltersKeys } from '@/types'
+import { ThemeId, ProgramAidType, FiltersKeys } from '@/types'
 
 interface ProgramObjectiveLink {
   lien: string
@@ -20,7 +20,7 @@ export interface ProgramData {
   'fin de validité'?: string
   illustration: string
   objectifs: ProgramObjective[]
-  'opérateur de contact': ProgramOperatorType
+  'opérateur de contact': string
   'autres opérateurs'?: string[]
   "nature de l'aide": ProgramAidType
   'activable en autonomie'?: string
