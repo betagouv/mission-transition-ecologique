@@ -58,8 +58,7 @@
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
 import { useProjectStore } from '@/stores/project'
-import { type ProgramData, Project as ProjectType, TrackId, ThemeId } from '@/types'
-import Analytics from '@/utils/analytic/analytics'
+import { type ProgramData, Project as ProjectType, ThemeId } from '@/types'
 import { MetaSeo } from '@/utils/metaSeo'
 import { Project } from '@/utils/project/project'
 import { computed, onBeforeMount } from 'vue'
@@ -115,9 +114,6 @@ onBeforeMount(async () => {
   }
 
   navigationStore.hasSpinner = false
-
-  // analytics / send event
-  Analytics.sendEvent(TrackId.Results, 'show_results_catalog_projects')
 })
 
 onBeforeRouteLeave(() => {
