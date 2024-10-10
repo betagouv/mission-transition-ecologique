@@ -246,7 +246,6 @@ import { useProgramStore } from '@/stores/program'
 import { OpportunityType, type ProgramData as ProgramType, Project as ProjectType } from '@/types'
 import { RouteName } from '@/types/routeType'
 import { useNavigationStore } from '@/stores/navigation'
-import Analytics from '@/utils/analytic/analytics'
 import { MetaSeo } from '@/utils/metaSeo'
 import Program from '@/utils/program/program'
 import { Scroll } from '@/utils/scroll'
@@ -259,7 +258,6 @@ const projectStore = useProjectStore()
 const programsStore = useProgramStore()
 const navigationStore = useNavigationStore()
 
-const route = useRoute()
 const program = ref<ProgramType>()
 const linkedProjects = ref<ProjectType[] | undefined>([])
 const TeeProgramFormContainer = ref<HTMLElement | null | undefined>(null)
@@ -270,7 +268,7 @@ interface Props {
   programId: string
   projectSlug?: string
 }
-const props = defineProps<Props>()
+defineProps<Props>()
 
 // computed
 const programCost = computed(() => program.value?.[`coût de l'accompagnement`])
@@ -312,12 +310,6 @@ onBeforeMount(async () => {
   useSeoMeta(MetaSeo.get(program.value?.titre, program.value?.description, program.value?.illustration))
 
   useNavigationStore().hasSpinner = false
-  // analytics / send event
-  Analytics.sendEvent(
-    'result_detail',
-    route.name === RouteName.CatalogProgramDetail ? 'show_detail_catalog' : 'show_detail',
-    props.programId
-  )
 })
 
 onBeforeRouteLeave(() => {
