@@ -83,11 +83,11 @@ import { computed } from 'vue'
 import { type ReqResp, TrackId, FormDataType, InputFieldUnionType } from '@/types'
 import Translation from '@/utils/translation'
 import TeeDsfrButton from '@/components/element/button/TeeDsfrButton.vue'
-import Matomo from '@/utils/analytic/matomo'
 import Format from '@/utils/format'
 import OpportunityApi from '@/service/api/opportunityApi'
 import { OpportunityType } from '@tee/common'
 import { useNavigationStore } from '@/stores/navigation'
+import Analytics from '@/utils/analytic/analytics'
 
 const navigation = useNavigationStore()
 interface Props {
@@ -138,7 +138,7 @@ const saveForm = async () => {
     requestResponse.value = await opportunity.fetch()
 
     // analytics / send event
-    Matomo.sendEvent(TrackId.Results, getRouteName())
+    Analytics.sendEvent(TrackId.Results, getRouteName())
   } finally {
     isLoading.value = false
     formIsSent.value = true

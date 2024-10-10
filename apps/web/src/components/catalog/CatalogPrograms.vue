@@ -56,8 +56,7 @@
 
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
-import { type ProgramData, TrackId, ThemeId } from '@/types'
-import Analytics from '@/utils/analytic/analytics'
+import { type ProgramData, ThemeId } from '@/types'
 import { MetaSeo } from '@/utils/metaSeo'
 import UsedTrack from '@/utils/track/usedTrack'
 import { computed, onBeforeMount } from 'vue'
@@ -117,9 +116,6 @@ onBeforeMount(async () => {
   } else {
     hasError.value = true
   }
-
-  // analytics / send event
-  Analytics.sendEvent(TrackId.Results, 'show_results_catalog')
 })
 
 onBeforeRouteLeave(() => {
