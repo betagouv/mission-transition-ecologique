@@ -217,12 +217,17 @@
     <!-- PROGRAM FORM -->
     <div
       ref="TeeProgramFormContainer"
-      class="fr-bg--blue-france--lightness fr-col-justify--center fr-p-2w"
+      class="fr-bg--blue-france--lightness fr-col-justify--center fr-grid-row fr-p-2w"
     >
-      <ProgramForm
+      <TeeForm
         v-if="program"
-        :program="program"
         :form-container-ref="TeeProgramFormContainer"
+        :data-id="program.id"
+        :phone-callback="Translation.ti(Translation.t('form.phoneContact'), { operator: program['opérateur de contact'] })"
+        :form="Opportunity.getProgramFormFields(program)"
+        :form-type="OpportunityType.Program"
+        :error-email-subject="Translation.t('program.form.errorEmail.subject', { program: program.titre })"
+        :hint="Translation.t('program.form.hint', { operator: program['opérateur de contact'] })"
       />
     </div>
   </div>
@@ -234,12 +239,11 @@
 
 import ProgramAccordion from '@/components/program/detail/ProgramAccordion.vue'
 import ProgramEligibility from '@/components/program/detail/ProgramEligibility.vue'
-import ProgramForm from '@/components/program/detail/ProgramForm.vue'
 import ProgramLongDescription from '@/components/program/detail/ProgramLongDescription.vue'
 import ProgramTile from '@/components/program/detail/ProgramTile.vue'
 import Config from '@/config'
 import { useProgramStore } from '@/stores/program'
-import { type ProgramData as ProgramType, Project as ProjectType } from '@/types'
+import { OpportunityType, type ProgramData as ProgramType, Project as ProjectType } from '@/types'
 import { RouteName } from '@/types/routeType'
 import { useNavigationStore } from '@/stores/navigation'
 import Analytics from '@/utils/analytic/analytics'
@@ -249,6 +253,7 @@ import { Scroll } from '@/utils/scroll'
 import Translation from '@/utils/translation'
 import { computed, onBeforeMount, ref } from 'vue'
 import { useProjectStore } from '@/stores/project'
+import Opportunity from '@/utils/opportunity'
 
 const projectStore = useProjectStore()
 const programsStore = useProgramStore()
@@ -298,6 +303,7 @@ const isProgramAutonomous = computed(() => {
 onBeforeMount(async () => {
   useNavigationStore().hasSpinner = true
   program.value = programsStore.currentProgram
+  console.log(program.value ? Opportunity.getProgramFormFields(program.value) : '')
   const projectResult = await projectStore.projects
   if (projectResult.isOk) {
     linkedProjects.value = Program.getLinkedProjects(program.value, projectResult.value)

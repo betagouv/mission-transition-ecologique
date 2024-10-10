@@ -67,11 +67,18 @@
       <div
         v-else
         id="project-contact"
-        class="fr-bg--blue-france--lightness fr-col-justify--center fr-p-2w"
+        ref="TeeProjectFormContainer"
+        class="fr-bg--blue-france--lightness fr-col-justify--center fr-grid-row fr-p-2w"
       >
-        <ProjectForm
+        <TeeForm
           v-if="project"
-          :project="project"
+          :form-container-ref="TeeProjectFormContainer"
+          :form-type="OpportunityType.Project"
+          :form="Opportunity.getProjectFormFields(project)"
+          :data-id="project.id.toString()"
+          :data-slug="project.slug"
+          :hint="Translation.t('project.form.hint')"
+          :error-email-subject="Translation.t('project.form.errorEmail.subject', { titre: props.project.title })"
         />
       </div>
     </template>
@@ -80,12 +87,13 @@
 <script setup lang="ts">
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { useProgramStore } from '@/stores/program'
-import { ProgramAidType, type ProgramData, Project, QuestionnaireRoute, TrackId } from '@/types'
+import { ProgramAidType, type ProgramData, Project, QuestionnaireRoute, TrackId, OpportunityType } from '@/types'
 import Contact from '@/utils/contact'
 import { RouteName } from '@/types/routeType'
 import { type RouteLocationRaw } from 'vue-router'
 import { useNavigationStore } from '@/stores/navigation'
 import Translation from '@/utils/translation'
+import Opportunity from '@/utils/opportunity'
 
 interface Props {
   project: Project
@@ -95,6 +103,7 @@ const props = defineProps<Props>()
 const programStore = useProgramStore()
 const navigationStore = useNavigationStore()
 const isCatalogDetail = navigationStore.isCatalogProjectDetail()
+const TeeProjectFormContainer = ref<HTMLElement | null | undefined>(null)
 
 const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)

@@ -1,6 +1,9 @@
 <template>
   <ThemeFiltersAndCard id="tab-content-header" />
-  <ResultProjectList :filtered-projects="filteredProjects" />
+  <ResultProjectList
+    :filtered-projects="filteredProjects"
+    :has-error="hasError"
+  />
 </template>
 
 <script setup lang="ts">

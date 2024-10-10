@@ -30,7 +30,10 @@
       :selected="selected === 1"
       :asc="ascendant"
     >
-      <ResultProgramList :filtered-programs="filteredPrograms" />
+      <ResultProgramList
+        :filtered-programs="filteredPrograms"
+        :has-error="hasError"
+      />
     </DsfrTabContent>
   </TeeTabs>
 </template>
