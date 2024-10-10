@@ -6,23 +6,44 @@ export default defineNuxtConfig({
   workspaceDir: '../../',
   srcDir: 'src',
   devtools: { enabled: true },
+
   devServer: {
     host: 'localhost',
     port: 4200
   },
+
   typescript: {
     typeCheck: true,
     tsConfig: {
       extends: '../tsconfig.app.json' // Nuxt copies this string as-is to the `./.nuxt/tsconfig.json`, therefore it needs to be relative to that directory
     }
   },
+
   imports: {
     autoImport: true
   },
 
-  css: ['~/assets/css/styles.scss'],
-
+  css: [
+    '@gouvfr/dsfr/dist/dsfr.min.css',           // Le CSS minimal du DSFR
+    '@gouvfr/dsfr/dist/utility/icons/icons.min.css', // Styles de tous les composants du DSFR
+    '@gouvminint/vue-dsfr/styles',                        // Styles des composants VueDsfr
+    '~/assets/custom.css',
+    '~/assets/main.scss',
+  ],
   vite: {
     plugins: [nxViteTsPaths()]
-  }
+  },
+
+  modules: ['@pinia/nuxt', 'vue-dsfr-nuxt-module'],
+  compatibilityDate: '2024-10-09',
+  components: [
+    {
+      path: '~/components',
+      pathPrefix: false,
+    },
+  ],
+  experimental: {
+    renderJsonPayloads: false,
+  },
+
 })

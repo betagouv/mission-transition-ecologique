@@ -1,10 +1,15 @@
 {
-  "extends": ["@nuxt/eslint-config", "../../.eslintrc.json"],
-  "ignorePatterns": ["!**/*", ".nuxt/**", ".output/**", "node_modules"],
+  "extends": ["@nuxt/eslint-config", "../../.eslintrc.json", "@vue/eslint-config-prettier/skip-formatting"],
+  "ignorePatterns": ["!**/*", ".nuxt/**", ".output/**", "node_modules", "nuxt.config.ts"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx", "*.vue"],
-      "rules": {}
+      "rules": {
+        "vue/multi-word-component-names": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "vue/no-v-html": "off",
+        "@typescript-eslint/no-unused-vars": "off"
+      }
     }
   ]
 }

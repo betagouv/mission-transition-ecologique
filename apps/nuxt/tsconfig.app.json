@@ -1,7 +1,17 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "composite": true
+    "composite": true,
+    "paths": {
+      "@/*": ["apps/nuxt/src/*"],
+      "@tee/backend-ddd": ["libs/backend-ddd/src/index.ts"],
+      "@tee/common": ["libs/common/src/index.ts"],
+      "@tee/data": ["libs/data/src/index.ts"],
+      "@tee/data/references": ["libs/data/references/index.ts"],
+      "@tee/data/generated": ["libs/data/generated/index.ts"],
+      "@tee/data/static": ["libs/data/static/index.ts"]
+    },
+    "types": ["vite/client", "node", "jsdom", "./src/env.d.ts"]
   },
   "include": [".nuxt/nuxt.d.ts", "src/**/*"],
   "exclude": [
