@@ -108,6 +108,7 @@
                 />
               </template>
             </div>
+            <RegisterCTA />
             <div
               v-if="showSearch"
               class="fr-header__search fr-modal"
