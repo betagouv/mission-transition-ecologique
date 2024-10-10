@@ -6,6 +6,8 @@ const projectFrDict = {
       resume: 'Voici les actions par lesquelles commencer pour votre {effectif} du secteur {secteur} :'
     },
     form: {
+      hint: '👋 Expliquez nous votre projet, nous vous mettrons en relation avec un conseiller compétent pour votre demande sur votre territoire.',
+
       needs: `Bonjour,
 
 Mon entreprise a une activité de type "{secteur}".
