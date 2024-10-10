@@ -16,11 +16,8 @@
   }
 }
 
-@mixin border-color-with-position($color, $properties, $position, $width: thin, $style: solid, $lightness: 0%) {
-  @if $position {
-    @include get-border-color-by-lightness($properties, $width, $style, $lightness, $position);
-    @include border-color($color, $properties, $position: $position, $width: $width, $style: $style, $lightness: $lightness);
-  }
+@mixin border-with-position-and-style($position, $width: thin, $style: solid) {
+  @include get-border-color-by-lightness(setting.$black, $width, $style, 0%, $position);
 }
 
 @mixin get-border-color-by-lightness($properties, $width, $style, $lightness: 0%, $position: null) {

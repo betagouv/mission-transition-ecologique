@@ -1,34 +1,18 @@
 @use 'setting';
 @use 'tool';
 
-@each $color, $properties in setting.$colors {
-  .fr-border {
-    @each $name, $position in setting.$border-positions {
-      &-#{$name} {
-        @each $width in setting.$border-widths {
-          &--#{$width} {
-            @each $style, $style-value in setting.$border-styles {
-              &--#{$style} {
-                @include tool.border-color-with-position($color, $properties, $position: $position, $width: $width, $style: $style-value);
-              }
-            }
-          }
-        }
+.fr-border {
+  @each $name, $position in setting.$border-positions {
+    &-#{$name} {
+      @include tool.border-with-position-and-style($position: $position);
 
-        @include tool.border-color-with-position($color, $properties, $position: $position);
+      @each $color, $properties in setting.$colors {
+        @include tool.border-color($color, $properties, $position: $position);
       }
     }
+  }
 
-    @each $width in setting.$border-widths {
-      &--#{$width} {
-        @each $style, $style-value in setting.$border-styles {
-          &--#{$style} {
-            @include tool.border-color($color, $properties, $width: $width, $style: $style-value);
-          }
-        }
-      }
-    }
-
+  @each $color, $properties in setting.$colors {
     @include tool.border-color($color, $properties);
   }
 }
