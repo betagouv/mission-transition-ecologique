@@ -138,14 +138,14 @@ const saveForm = async () => {
     requestResponse.value = await opportunity.fetch()
 
     // analytics / send event
-    Analytics.sendEvent(TrackId.Results, getRouteName())
+    Analytics.sendEvent(TrackId.Results, getEventName())
   } finally {
     isLoading.value = false
     formIsSent.value = true
     scrollToFormContainer()
   }
 }
-const getRouteName = () => {
+const getEventName = () => {
   return `send_${props.formType}_form${navigation.isCatalogDetail() ? '_catalog' : ''}`
 }
 const scrollToFormContainer = () => {
