@@ -4,29 +4,32 @@ export interface Id {
   id: number
 }
 
+export enum SectorKeys {
+  A = 'A',
+  B = 'B',
+  C = 'C',
+  D = 'D',
+  E = 'E',
+  F = 'F',
+  G = 'G',
+  H = 'H',
+  I = 'I',
+  J = 'J',
+  K = 'K',
+  L = 'L',
+  M = 'M',
+  N = 'N',
+  O = 'O',
+  P = 'P',
+  Q = 'Q',
+  R = 'R',
+  S = 'S',
+  T = 'T',
+  U = 'U'
+}
+
 export type Sectors = {
-  [K in
-    | 'A'
-    | 'B'
-    | 'C'
-    | 'D'
-    | 'E'
-    | 'F'
-    | 'G'
-    | 'H'
-    | 'I'
-    | 'J'
-    | 'K'
-    | 'L'
-    | 'M'
-    | 'N'
-    | 'O'
-    | 'P'
-    | 'Q'
-    | 'R'
-    | 'S'
-    | 'T'
-    | 'U']: boolean
+  [K in SectorKeys]: boolean
 }
 
 export interface Project extends Id, Sectors {

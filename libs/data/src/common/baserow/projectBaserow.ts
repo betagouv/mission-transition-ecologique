@@ -1,7 +1,7 @@
 import path from 'path'
 import { AbstractBaserow } from './abstractBaserow'
 import { RawProject } from '../../project/types/domain'
-import { LinkObject, Project, Sectors } from './types'
+import { LinkObject, Project, SectorKeys, Sectors } from './types'
 import { Theme } from '../../theme/types/domain'
 import { ImageBaserow } from './imageBaserow'
 import { Logger } from '../logger/logger'
@@ -118,6 +118,8 @@ export class ProjectBaserow extends AbstractBaserow {
   }
 
   private _generateSectors(sectors: Sectors): string[] {
-    return (Object.keys(sectors) as Array<keyof Sectors>).filter((key) => sectors[key as keyof Sectors] === true)
+    return Object.values(SectorKeys)
+      .filter((key) => sectors[key])
+      .map((key) => key.toString())
   }
 }
