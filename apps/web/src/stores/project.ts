@@ -23,7 +23,12 @@ export const useProjectStore = defineStore('project', () => {
     return await new ProjectApi().get()
   }
 
-  function getProjectsByThemeAndEligibility(projects: Project[], themeType?: ThemeId, filteredPrograms?: ProgramData[]): Project[] {
+  function getProjectsByThemeAndEligibility(
+    projects: Project[],
+    themeType?: ThemeId,
+    // TODO just to get a link to the method
+    filteredPrograms?: ProgramData[]
+  ): Project[] {
     return projects.filter((project: Project) => {
       const hasTheme = themeType
         ? ProjectFilter.byTheme(project, themeType)

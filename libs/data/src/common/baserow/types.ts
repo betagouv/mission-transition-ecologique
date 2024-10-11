@@ -4,7 +4,32 @@ export interface Id {
   id: number
 }
 
-export interface Project extends Id {
+export type Sectors = {
+  [K in
+    | 'A'
+    | 'B'
+    | 'C'
+    | 'D'
+    | 'E'
+    | 'F'
+    | 'G'
+    | 'H'
+    | 'I'
+    | 'J'
+    | 'K'
+    | 'L'
+    | 'M'
+    | 'N'
+    | 'O'
+    | 'P'
+    | 'Q'
+    | 'R'
+    | 'S'
+    | 'T'
+    | 'U']: boolean
+}
+
+export interface Project extends Id, Sectors {
   order: string
   Nom: string
   'Description courte': string
