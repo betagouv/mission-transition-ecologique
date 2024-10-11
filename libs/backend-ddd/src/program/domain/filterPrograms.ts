@@ -27,6 +27,7 @@ export const filterPrograms = (
 
   for (const program of programs) {
     const evaluation = rulesService.evaluate(FILTERING_RULE_NAME, program, inputData, currentDate)
+    console.log('Evaluation:', evaluation)
 
     if (evaluation.isErr) {
       return Result.err(addErrorDetails(evaluation.error, program.id))
