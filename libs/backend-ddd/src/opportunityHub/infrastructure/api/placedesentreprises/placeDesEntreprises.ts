@@ -129,6 +129,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     [Objective.TrainOrRecruit]: Subject.BilanRSE,
     [Objective.MakeSavings]: Subject.DemarcheEcologie,
     [Objective.DurablyInvest]: Subject.DemarcheEcologie,
+    [Objective.Biodiversity]: Subject.DemarcheEcologie,
     [Objective.UnknownYet]: Subject.DemarcheEcologie
   }
 
@@ -168,6 +169,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     [ThemeId.RH]: Subject.BilanRSE,
     [ThemeId.Environmental]: Subject.DemarcheEcologie,
     [ThemeId.Building]: Subject.DemarcheEcologie,
+    [ThemeId.Biodiversity]: Subject.DemarcheEcologie,
     [ThemeId.EcoDesign]: Subject.DemarcheEcologie
   }
 

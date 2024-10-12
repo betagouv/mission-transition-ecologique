@@ -2,50 +2,44 @@
 @forward '@gouvfr/dsfr/module/color/variable/static';
 
 $opacities: (
-  --light: -50%,
-  --lightness: -75%
+  --light: 70%,
+  --lightness: 90%
 );
 
 // !!!important!! New color added need to be added to the typescript enum `packages/web/src/types/color.ts`
-$base-blue: #6672f8;
-$base-blue-light: #e8edff;
-$base-green: #1ebe8e;
-$base-purple: #6a62f4;
-$base-red: #fca081;
-$base-yellow: #facf35;
-$base-yellow-light: #fef7da;
+$yellow: #facf35;
+$red: #fca081;
+$purple: #6a62f4;
+$green: #1ebe8e;
+$blue-france: #001891;
+$grey: #777;
+$blue-france-inverted: var(--text-inverted-blue-france);
+
 $colors: (
   "white": color.$white,
   "black": color.$black,
   "yellow": (
-    "color": $base-yellow,
-    "color-with-background": var(--text-action-high-blue-france)
-  ),
-  "yellow-light": (
-    "color": $base-yellow-light,
-    "color-with-background": var(--text-action-high-blue-france)
-  ),
-  "green": (
-    "color": $base-green,
-    "color-with-background": var(--text-action-high-blue-france)
-  ),
-  "blue": (
-    "color": $base-blue,
-    "color-with-background": var(--text-inverted-blue-france),
-    "is-inverted": true,
-  ),
-  "blue-light": (
-    "color": $base-blue-light,
-    "color-with-background": var(--text-action-high-blue-france)
+    "color": $yellow,
+    "color-with-background": color.$blue-france
   ),
   "red": (
-    "color": $base-red,
-    "color-with-background": var(--text-action-high-blue-france)
+    "color": $red,
+    "color-with-background": color.$blue-france
   ),
-  "purple" : $base-purple,
+  "purple" : (
+    "color": $purple,
+    "color-with-background": $blue-france-inverted
+  ),
+  "green": (
+    "color": $green,
+    "color-with-background": $blue-france-inverted
+  ),
   "blue-france": (
-    "color-with-background": var(--text-inverted-blue-france),
-    "color": color.$blue-france,
-    "is-inverted": true
-  )
+    "color": $blue-france,
+    "color-with-background": $blue-france-inverted,
+  ),
+  "grey": (
+    "color": $grey,
+    "color-with-background": color.$blue-france
+  ),
 );

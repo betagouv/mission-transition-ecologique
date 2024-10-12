@@ -1,0 +1,109 @@
+titre: Chèque Transition Bioéthanol
+promesse: Bénéficiez d'une aide à la conversion au bioéthanol de vos véhicules
+description: >-
+  Vous avez un véhicule de société ou de fonction à motorisation essence ? Vous
+  pouvez bénéficiez d'une prime pour le convertir en véhicule modulable essence
+  et bioéthanol (E85). Cette prime concerne la fourniture et la pose d'un
+  dispositif de conversion homologué par un installateur habilité. Cette mesure
+  vise à réduire les émissions de CO2 et de particules fines générées par les
+  véhicules à motorisation essence, contribuant ainsi à la lutte contre le
+  réchauffement climatique.
+description longue: >-
+  Cette aide est valable pour :
+
+  - les entreprises et les indépendants propriétaires d’une voiture particulière
+  (VP) de société ou de fonction et dont le siège social ou l’établissement de
+  rattachement du véhicule est situé sur le territoire régional.
+
+  - la conversion d'un véhicule à motorisation essence en motorisation modulable
+  essence et superéthanol E85 (85% de bioéthanol dans le carburant contre 5 à 10
+  % pour l'essence SP98-E5 et le SP95-E10).
+
+  - la fourniture et la pose, par un installateur habilité, d'un dispositif de
+  conversion homologué au sens de l'arrêté du 30 novembre 2017. Les prestations
+  de type décalaminage, bougies, filtres, pré-visite, frais de dossiers ou
+  d’immatriculation, révisions, carburant... ne sont pas prises en charge.
+
+  - la conversion de 10 véhicules maximum.
+illustration: images/TEE_eolienne.png
+opérateur de contact: Région Sud
+url: https://www.maregionsud.fr/vos-aides/detail/le-cheque-transition-bioethanol
+nature de l'aide: financement
+montant du financement: Jusqu'à 50% du coût dans un maximum de 500 € HT
+activable en autonomie: oui
+objectifs:
+  - description: >-
+      Trouvez un installateur agréé en parcourant les sites internet des
+      fabricants de dispositifs de conversion homologués.
+    liens:
+      - lien: >-
+          https://www.bioethanolcarburant.com/comment-rouler-au-superethanol-e85/les-installateurs-agrees-de-boitiers-bioethanol/
+        texte: Les fabricants homologués
+  - description: Faites poser un kit bioéthanol avec l'installateur agréé.
+  - description: >-
+      Lors de la pose, demandez une facture comportant la date de la pose du kit
+      bioéthanol avec la mention acquittée ainsi que le tampon de l'installateur
+      agréé.
+  - description: >-
+      Après l'installation, mettez à jour votre certificat d'immatriculation sur
+      le site de l'ANTS.
+    liens:
+      - lien: https://moncompte.ants.gouv.fr/connexion
+        texte: Mettre à jour votre carte grise
+  - description: >-
+      Déposez votre demande de subvention dans un délai maximum de 3 mois après
+      la pose du kit bioéthanol. Pour cela, créez ou connectez-vous à votre
+      compte Région Sud pour créer un dossier et joindre vos pièces
+      justificatives.
+    liens:
+      - lien: >-
+          https://sudconnect.maregionsud.fr/auth/realms/citoyen/protocol/openid-connect/auth?client_id=usager-mgdis-portail&response_type=code&redirect_uri=https%3A%2F%2Faidesenligne.maregionsud.fr%2Faccount-management%2Fcrsud-demandeurs%2Foidc%2FMoncompteRegionSud%2Fcode&state=2df62338-8d1c-4c0a-ba31-ef237bc497d4&scope=email+profile+openid+donnees_personnelles
+        texte: Déposer ma demande
+  - description: Si votre dossier est accepté, recevez le montant de votre aide.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Provence-Alpes-Côte d'Azur
+  secteur d'activité:
+    - Tous secteurs d'activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est la mobilité durable
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Provence-Alpes-Côte d'Azur

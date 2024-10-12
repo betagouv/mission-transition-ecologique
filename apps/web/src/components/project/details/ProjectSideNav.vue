@@ -34,7 +34,7 @@ const scrollTo = (id: string) => {
 const allMenuItems = [
   {
     id: 'project',
-    to: `project-details-title`,
+    to: `project-description-details-title`,
     text: "Qu'est ce que c'est ?",
     condition: props.project.longDescription.length > 0
   },
@@ -45,7 +45,7 @@ const allMenuItems = [
     condition: props.project.moreDescription.length > 0
   },
   { id: 'aids', to: `project-aids-title`, text: 'Mes aides' },
-  { id: 'contact', to: `project-form-title`, text: 'Contact' },
+  { id: 'contact', to: `form-title`, text: 'Contact' },
   {
     id: 'linked-project',
     to: `project-linked-projects-title`,

@@ -52,7 +52,7 @@ export interface Solicitation {
   phone_number: string
   siret: string
   location: string
-  api_calling_url: string
+  api_calling_url?: string
   questions_additionnelles: AdditionalQuestion[]
 }
 

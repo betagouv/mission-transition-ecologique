@@ -3,22 +3,17 @@ promesse: >-
   Restaurateurs & hébergeurs, équipez votre établissement pour rejoindre le
   référentiel Accueil vélo©
 description: >-
-  Vous aimeriez que votre établissement devienne 'Accueil Vélo©' pour mieux
-  adresser votre clientèle cycliste ? L'ADEME vous aide à financer les
-  équipements nécéssaires pour être réferencé auprès de la marque.
+  Vous aimeriez que votre établissement devienne Accueil Vélo© pour développer
+  le vélotourisme et gagner en visibilité ? L'ADEME vous aide à financer les
+  équipements nécessaires pour être référencé auprès de la marque. Ainsi, mettez
+  en place des emplacements de stationnement vélo, des bornes de recharges pour
+  vélos à assistance électrique, des bornes de gonflage et de réparation, ainsi
+  que des consignes à bagages sécurisées.
 description longue: >-
-  Accueil Vélo©' est une
+  Accueil Vélo© est une marque nationale qui garantit un accueil,
 
-  marque nationale qui
-
-  garantit un accueil,
-
-  des services et des
-
-  équipements spécifiques adaptés aux besoins des touristes à vélo le long des
-  itinéraires cyclables
-
-  en France.
+  des services et des équipements spécifiques adaptés aux besoins des touristes
+  à vélo le long des itinéraires cyclables en France.
 
 
   Le volet 1 du programme "Développer le vélotourisme" de l'ADEME a pour
@@ -26,49 +21,26 @@ description longue: >-
   hébergements touristiques classés et restaurateurs.
 
 
-  Exemples de critères à respecter pour devenir Accueil Vélo : 
+  L'ADEME vous finance les équipements et services attendus au sein du
+  référentiel de la marque Accueil Vélo :
 
-  - Être à moins de 5 km d’un itinéraire cyclable.
+  - des emplacements de stationnement vélo (à minima 5 pour être Accueil Vélo)
 
-  - Disposer d’un équipement adapté pour les cyclistes :
+  - des bornes de recharge VAE
 
-  abri vélo sécurisé, kit de réparation, espace d’entretien pour vélo
+  - des bornes de gonflage
 
-  dont possibilité de recharger un VAE.
+  - des bornes de réparation
 
-  - Disposer des informations ou proposer des services adaptés aux cyclistes :
+  - des bornes multifonction
 
-  transfert des bagages, lavage et séchage du linge, location de cycles,lavage
-  des vélos.
-
-  - Accueillir chaleureusement le voyageur à vélo avec un temps d‘échange
-
-  privilégié : mise en sécurité du vélo, rafraîchissement offert à l’arrivée,
-  temps d’échanges sur l’étape du lendemain : indications du meilleur
-
-  itinéraire cyclable pour rejoindre l’itinéraire principal, conseils utiles
-
-  pour le ravitaillement, curiosités touristiques, point météo.
-
-  - Proposer un petit déjeuner adapté à l’effort.
+  - des consignes à bagages sécurisées
 
 
-  Les aménagements qui peuvent être financés par cette aide sont : 
-
-  - Les arceaux de stationnement ;
-
-  - Un abri avec toit comprenant des supports d'attaches libre d'accès ;
-
-  - Une consigne à babage avec ou sans possibilité de recharges. 
-
-  - Un support d'attache libre accès, équipé pour recharge VAE ; 
-
-  - Un stationnement sécurisé (consigne individuelle ou collective)
-
-  - La recharge éléctrique de différents matériels (batterie, VAE, GPS,
-  tablette) au niveau des consignes, arceaux et supports d'attaches.
-début de validité: 01/01/2023
-fin de validité: 31/12/2023
+  Le projet devra présenter une demande d’aide totale minimum de 400€ pour être
+  recevable.
+début de validité: 01/09/2024
+fin de validité: 31/01/2025
 illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
 url: >-
@@ -77,24 +49,36 @@ nature de l'aide: financement
 montant du financement: Jusqu’à 55 % des coûts d'investissement
 objectifs:
   - description: >-
-      Commencez par vérifier l'éligibilité de votre projet auprès du référent de
-      la marque 'Accueil Vélo©' de votre territoire.
-  - description: >-
-      Créez votre compte, complétez les documents en ligne puis téléchargez-les
-      pour constituer votre dossier.
+      Prenez contact avec le référent Accueil Vélo de votre territoire pour vous
+      assurer de la correspondance entre votre projet d’investissement et les
+      attendus de la marque Accueil Vélo©.
     liens:
-      - lien: https://developper-velotourisme.ademe.fr/signup
-        texte: créer un compte
+      - lien: http://www.francevelotourisme.com/contact/devenir_accueil_velo
+        texte: Prendre contact
   - description: >-
-      Déposez votre demande d'aide sur le site de l'ADEME : informations
-      administratives, description du projet, détails techniques et financiers,
-      demande d'aide, etc. A ce stade, vos investissements ne doivent pas avoir
-      été realisé !
+      Remplissez une demande d'aide et réaliser le calcul prévisionnel de l'aide
+      mobilisable sur l'outil en ligne. Vous pourrez ensuite télécharger un
+      justificatif à joindre à votre dossier.
+    liens:
+      - lien: https://developper-velotourisme.ademe.fr/connexion
+        texte: Remplir une demande d'aide
+  - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
+    liens:
+      - lien: https://agirpourlatransition.ademe.fr/user/register
+        texte: Créer mon compte ADEME
+  - description: >-
+      Prenez connaissance de l'ensemble des pièces justificatives à fournir sur
+      le site de l'ADEME puis déposez votre dossier pour le projet "déployer la
+      marque Accueil Vélo".
+    liens:
+      - lien: >-
+          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/20240725/developper-velotourisme?cible=79
+        texte: Déposer mon dossier
   - description: >-
       L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
       recevez un contrat de financement précisant le montant d’aide maximum, les
       conditions et les modalités de versement.
-  - description: Réalisez vos investissements.
+  - description: Réalisez la mise en place des équipements.
 conditions d'éligibilité:
   taille de l'entreprise:
     - Toutes tailles
@@ -102,7 +86,12 @@ conditions d'éligibilité:
   secteur géographique:
     - France et territoires d'outre-mer
   secteur d'activité:
-    - Hébergements touristiques et restaurateurs
+    - >-
+      Votre établissement est classé Hôtel de tourisme, Camping et Parc
+      résidentiel de loisirs, Résidence de tourisme, Village de vacances,
+      Auberge collective, selon les normes nationales du référentiel de
+      classement porté par Atout France (Article L311-6 du livre III du code du
+      tourisme).
     - >-
       Les structures suivantes ne sont pas éligibles : les loueurs et
       réparateurs de vélos, les équipements ét établissements thermaux et
@@ -115,11 +104,13 @@ conditions d'éligibilité:
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
   autres critères d'éligibilité:
+    - Votre établissement est situé à moins de 5 km d'un itinéraire cyclable.
+    - Vous implantez au minimum 5 emplacements vélo.
     - >-
-      L'opération pour laquelle vous sollicitez une aide financière ne doit pas
-      avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes
-      (sous quelque forme que ce soit : marché signé, commande signée, devis
-      accepté…)
+      La période d'ouverture de votre établissement est d'au moins 8 mois dans
+      l'année.
+    - Vous êtes ouvert de 11h30 à 14h30.
+    - Vous êtes en mesure de proposer une formule rapide.
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
@@ -135,6 +126,7 @@ publicodes:
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est G
       - code NAF niveau 1 . est I
       - code NAF niveau 1 . est O
   entreprise . a un objectif ciblé:

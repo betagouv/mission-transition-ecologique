@@ -7,14 +7,16 @@ import {
   OpportunityBody,
   ReqResp,
   WithoutNullableKeys,
-  OpportunityFormType,
+  FormDataType,
   OpportunityType,
+  Opportunity,
   RouteName,
   ProgramData,
   Project
 } from '@/types'
 import RequestApi from '@/service/api/requestApi'
 import TrackStructure from '@/utils/track/trackStructure'
+import { ThemeId } from '@tee/data'
 
 export default class OpportunityApi extends RequestApi {
   protected readonly url = '/api/opportunities'
@@ -23,16 +25,16 @@ export default class OpportunityApi extends RequestApi {
     'content-type': 'application/json'
   }
   private _usedTrackStore = useUsedTrackStore()
-  private _opportunityForm: WithoutNullableKeys<OpportunityFormType>
+  private _opportunityForm: WithoutNullableKeys<FormDataType>
 
   constructor(
-    opportunityForm: OpportunityFormType,
+    opportunityForm: FormDataType,
     private _id: ProgramData['id'] | Project['id'],
     private _slug: ProgramData['id'] | Project['slug'],
     private _opportunityType: OpportunityType
   ) {
     super()
-    this._opportunityForm = opportunityForm as WithoutNullableKeys<OpportunityFormType>
+    this._opportunityForm = opportunityForm as WithoutNullableKeys<FormDataType>
   }
 
   async fetch() {
@@ -60,29 +62,38 @@ export default class OpportunityApi extends RequestApi {
   }
 
   payload(): OpportunityBody {
+    const opportunity: Opportunity = {
+      type: this._opportunityType,
+      id: this._id.toString(),
+      firstName: this._opportunityForm.name.value,
+      lastName: this._opportunityForm.surname.value,
+      email: this._opportunityForm.email.value,
+      phoneNumber: this._opportunityForm.tel.value,
+      theme: this._opportunityForm.theme.value as ThemeId,
+      companySiret: this._opportunityForm.siret.value,
+      companyName: this.getFromUsedTrack(TrackId.Siret, 'denomination'),
+      companySector: TrackStructure.getSector(),
+      companySize: TrackStructure.getSize() ?? undefined,
+      message: this._opportunityForm.needs.value,
+      questionnaireRoute: this.getFromUsedTrack(
+        TrackId.QuestionnaireRoute,
+        QuestionnaireDataEnum.questionnaire_route as string
+      ) as QuestionnaireRoute, // get from usedTrack
+      otherData: this.getAllValuesFromUsedTrack(),
+      linkToPage: this._generateLinkToPage()
+    }
+    const linkToCatalog = this._generateCatalogLink()
+    if (linkToCatalog !== 'catalogLinkGenerationNotHandledForTheCurrentOpportunityType') {
+      opportunity.linkToCatalog = linkToCatalog
+    }
     return {
-      opportunity: {
-        type: this._opportunityType,
-        id: this._id.toString(),
-        firstName: this._opportunityForm.name.value,
-        lastName: this._opportunityForm.surname.value,
-        email: this._opportunityForm.email.value,
-        phoneNumber: this._opportunityForm.tel.value,
-        companySiret: this._opportunityForm.siret.value,
-        companyName: this.getFromUsedTrack(TrackId.Siret, 'denomination'),
-        companySector: TrackStructure.getSector(),
-        companySize: TrackStructure.getSize() ?? undefined,
-        message: this._opportunityForm.needs.value,
-        questionnaireRoute: this.getFromUsedTrack(
-          TrackId.QuestionnaireRoute,
-          QuestionnaireDataEnum.questionnaire_route as string
-        ) as QuestionnaireRoute, // get from usedTrack
-        otherData: this.getAllValuesFromUsedTrack(),
-        linkToPage: this._opportunityForm.linkToPage.value,
-        linkToCatalog: this._generateCatalogLink()
-      },
+      opportunity,
       optIn: this._opportunityForm.cgu.value
     }
+  }
+
+  private _generateLinkToPage(): string {
+    return new URL(useRoute().fullPath, window.location.origin).href
   }
 
   private _generateCatalogLink(): string {

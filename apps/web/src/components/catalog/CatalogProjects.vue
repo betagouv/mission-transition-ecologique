@@ -1,8 +1,8 @@
 <template>
   <TeeDsfrBreadcrumb />
   <CatalogBanner>
-    <template #title> Le catalogue des projets de transition écologique </template>
-    <template #description> Accédez à la liste des projets de transition écologique destinées aux entreprises. </template>
+    <template #title> {{ title }} </template>
+    <template #description> {{ description }} </template>
   </CatalogBanner>
 
   <div class="fr-container fr-mt-6v">
@@ -10,24 +10,14 @@
       class="fr-grid-row"
       :class="{ 'fr-grid-row--center': hasSpinner }"
     >
-      <TeeSpinner
-        v-if="hasSpinner"
-        class="fr-grid-row--center"
-        scale="6"
-      />
-      <TeeError
-        v-else-if="hasError"
-        :mailto="Contact.email"
-        :email="Contact.email"
-      />
-      <div v-else>
+      <div>
         <div class="fr-col-12 fr-col-justify--left fr-mt-3v">
           <ThemeFilter />
         </div>
         <ThemeHeaderCard
           v-if="hasThemeCard"
           class="fr-col-12"
-          :objective="objective as Objective"
+          :theme="theme as ThemeId"
           radius-corner="tr"
           radius-size="2-5v"
         />
@@ -36,23 +26,28 @@
             <TeeCounterResult :to-count="filteredProjects" />
           </div>
           <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--left fr-mt-0">
-            <router-link
-              v-for="project in filteredProjects"
-              :id="project.slug"
+            <div
+              v-for="project in sortedProjects"
               :key="project.id"
-              :to="getRouteToProjectDetail(project)"
               class="fr-col-12 fr-col-sm-6 fr-col-md-6 fr-col-lg-4 no-outline"
             >
               <ProjectCard
                 :project="project"
-                class="fr-radius-a--1v fr-card--shadow"
+                class="fr-radius-a--1v fr-card--shadow fr-enlarge-link"
               />
-            </router-link>
+            </div>
           </div>
         </div>
-        <TeeNoResult
-          v-else
+        <TeeSpinner
+          v-if="hasSpinner"
+          class="fr-col-12"
+          scale="6"
+        />
+        <TeeListNoResults
+          v-else-if="showNoResultsComponent"
+          :has-error="hasError"
           message="Aucun projet n'a pu être identifiée avec les critères choisis..."
+          :count-items="countProjects"
         />
       </div>
     </div>
@@ -63,12 +58,12 @@
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
 import { useProjectStore } from '@/stores/project'
-import { Objective, type ProgramData, Project as ProjectType, RouteName, TrackId } from '@/types'
-import Contact from '@/utils/contact'
-import Matomo from '@/utils/matomo'
+import { type ProgramData, Project as ProjectType, TrackId, ThemeId } from '@/types'
+import Analytics from '@/utils/analytic/analytics'
+import { MetaSeo } from '@/utils/metaSeo'
 import { Project } from '@/utils/project/project'
 import { computed, onBeforeMount } from 'vue'
-import type { RouteLocationRaw } from 'vue-router'
+import { Theme } from '@/utils/theme'
 
 const projectStore = useProjectStore()
 const programStore = useProgramStore()
@@ -78,32 +73,37 @@ const projects = ref<ProjectType[]>()
 const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)
 
-const objective = computed(() => {
-  return programStore.hasObjectiveTypeSelected() ? (programStore.programFilters.objectiveTypeSelected as Objective) : ''
-})
+const title = 'Le catalogue des projets de transition écologique'
+const description = 'Accédez à la liste des projets de transition écologique destinées aux entreprises.'
 
-const filteredProjects = Project.filter(projects, programs, objective)
+const theme = Theme.getThemeFromSelectedTheme()
+
+const filteredProjects = Project.filter(projects, programs, theme)
+const sortedProjects = Project.sort(filteredProjects)
 
 const hasSpinner = computed(() => {
   return navigationStore.hasSpinner
 })
 
 const hasThemeCard = computed(() => {
-  return programStore.hasObjectiveTypeSelected() && !hasSpinner.value
+  return programStore.hasThemeTypeSelected() && !hasSpinner.value
+})
+
+const showNoResultsComponent = computed(() => {
+  return hasSpinner.value || hasError.value || !countProjects.value
+})
+
+const countProjects = computed(() => {
+  return filteredProjects.value?.length || 0
 })
 
 const hasFilteredProjects = computed(() => {
   return filteredProjects.value?.length
 })
 
-const getRouteToProjectDetail = (project: ProjectType): RouteLocationRaw => {
-  return {
-    name: RouteName.CatalogProjectDetail,
-    params: { projectSlug: project.slug }
-  }
-}
-
 onBeforeMount(async () => {
+  useSeoMeta(MetaSeo.get(title, description))
+
   navigationStore.hasSpinner = true
   const programResult = await programStore.programs
   const projectResult = await projectStore.projects
@@ -117,6 +117,10 @@ onBeforeMount(async () => {
   navigationStore.hasSpinner = false
 
   // analytics / send event
-  Matomo.sendEvent(TrackId.Results, 'show_results_catalog_projects')
+  Analytics.sendEvent(TrackId.Results, 'show_results_catalog_projects')
+})
+
+onBeforeRouteLeave(() => {
+  useSeoMeta(MetaSeo.default())
 })
 </script>

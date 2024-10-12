@@ -2,8 +2,8 @@
   <div class="fr-grid-row fr-grid-row--gutters">
     <div class="fr-col-12">
       <TeeDsfrTags
-        :tags="objectiveTypeTags"
-        @update:model-value="updateObjectiveTypeSelected"
+        :tags="themeTypeTags"
+        @update:model-value="updateThemeTypeSelected"
       />
     </div>
   </div>
@@ -13,14 +13,14 @@
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
 import { useUsedTrackStore } from '@/stores/usedTrack'
-import { ThemeType, type programFiltersType, Objective, TrackId } from '@/types'
+import { ThemeType, type programFiltersType, TrackId, ThemeId } from '@/types'
 import { Theme } from '@/utils/theme'
 import { TeeDsfrTagProps } from '@/components/element/tag/TeeDsfrTag.vue'
 import UsedTrack from '@/utils/track/usedTrack'
 import { computed, onBeforeMount } from 'vue'
 
 interface Props {
-  objective?: Objective | ''
+  theme?: ThemeId
 }
 const props = defineProps<Props>()
 
@@ -30,12 +30,12 @@ const usedTrackStore = useUsedTrackStore()
 const programFilters: programFiltersType = programStore.programFilters
 let hasAllTag = true
 
-const objectiveTypeTags = computed<TeeDsfrTagProps[]>((): TeeDsfrTagProps[] => {
+const themeTypeTags = computed<TeeDsfrTagProps[]>((): TeeDsfrTagProps[] => {
   const allTag: TeeDsfrTagProps = {
     label: 'Tous',
     tagName: 'button',
     value: '',
-    ariaPressed: programFilters.objectiveTypeSelected === ''
+    ariaPressed: programFilters.themeTypeSelected === ''
   }
 
   const tags: TeeDsfrTagProps[] = []
@@ -46,12 +46,12 @@ const objectiveTypeTags = computed<TeeDsfrTagProps[]>((): TeeDsfrTagProps[] => {
       tagName: 'button',
       ariaPressed: isActive(tag),
       color: isActive(tag) && 'color' in tag ? tag.color : undefined,
-      value: tag.value as string
+      value: tag.id
     })
   }
 
   if (tags.length === 1) {
-    programStore.setObjectiveTypeSelected((tags.shift() as TeeDsfrTagProps).value as string)
+    programStore.setThemeTypeSelected((tags.shift() as TeeDsfrTagProps).value as string)
   } else if (tags.length > 1 && hasAllTag) {
     tags.unshift(allTag)
   }
@@ -60,20 +60,20 @@ const objectiveTypeTags = computed<TeeDsfrTagProps[]>((): TeeDsfrTagProps[] => {
 })
 
 function isActive(tag: ThemeType) {
-  return Theme.getTags().length === 1 || programFilters.objectiveTypeSelected === (tag.value as string)
+  return Theme.getTags().length === 1 || programFilters.themeTypeSelected === (tag.id as string)
 }
 
-const updateObjectiveTypeSelected = async (value: string | number) => {
-  programStore.setObjectiveTypeSelected(value as string)
-  if (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityObjective()) {
+const updateThemeTypeSelected = async (value: string | number) => {
+  programStore.setThemeTypeSelected(value as string)
+  if (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityTheme()) {
     await usedTrackStore.updateByTrackIdAndValue(TrackId.Goals, value as string)
     useNavigationStore().replaceBrowserHistory()
   }
 }
 
 onBeforeMount(() => {
-  if (props.objective) {
-    programFilters.objectiveTypeSelected = props.objective
+  if (props.theme) {
+    programFilters.themeTypeSelected = props.theme
   }
 
   if (UsedTrack.isSpecificGoal()) {

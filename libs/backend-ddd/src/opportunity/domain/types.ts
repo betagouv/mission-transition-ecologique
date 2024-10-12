@@ -10,7 +10,7 @@ export type OpportunityWithOperatorContact = Opportunity & { programContactOpera
 
 export type OpportunityWithOperatorContactAndContactId = OpportunityWithContactId & OpportunityWithOperatorContact
 
-export type OpportunityDetailsShort = Omit<OpportunityDetails, 'linkToPage' | 'linkToCatalog' | 'message' | 'type'> & {
+export type OpportunityDetailsShort = Omit<OpportunityDetails, 'linkToPage' | 'linkToCatalog' | 'message' | 'type' | 'theme'> & {
   programContactOperator?: Operators
 }
 

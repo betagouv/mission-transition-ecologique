@@ -5,8 +5,10 @@ import {
   FormOptions,
   PropertyPath,
   TrackId,
+  FieldType,
   QuestionnaireData,
-  Objective
+  ThemeId,
+  Color
 } from '@/types'
 import { ConditionOperators } from '@/types/conditionOperators'
 
@@ -30,13 +32,12 @@ export enum TrackCalloutType {
 
 export interface TrackCallout {
   header?: Translations
-  headerStyle?: string
   title: Translations
   titleStyle?: string
   bigTitle: boolean
   description?: Translations
   descriptionStyle?: string
-  bgColor?: string
+  bgColor?: Color
   type?: TrackCalloutType
   imageLeft?: string
   imageRight?: string
@@ -67,20 +68,7 @@ export interface TrackOptionsField {
   label: Translations
   hint?: Translations
   required?: boolean
-  type: TrackFieldType
-}
-
-export enum TrackFieldType {
-  Text = 'text',
-  Number = 'number',
-  Select = 'select',
-  Radio = 'radio',
-  Checkbox = 'checkbox',
-  Textarea = 'textarea',
-  Email = 'email',
-  Tel = 'tel',
-  Date = 'date',
-  Search = 'search'
+  type: FieldType
 }
 
 export interface TrackNext {
@@ -100,10 +88,10 @@ export interface NextTrackRule extends FormCallbackDataMapping {
 }
 
 export enum HasInputOptions {
-  Number = TrackFieldType.Number,
-  Date = TrackFieldType.Date,
-  Text = TrackFieldType.Text,
-  Search = TrackFieldType.Search
+  Number = FieldType.Number,
+  Date = FieldType.Date,
+  Text = FieldType.Text,
+  Search = FieldType.Search
 }
 
 export interface TrackOptions {
@@ -174,8 +162,7 @@ export type TrackOptionItem = {
 export interface Track {
   id: TrackId
   help?: string
-  category?: string
-  bgColor?: string
+  category?: TrackCategory
   imageRight?: string
   title: Translations
   label: Translations
@@ -183,7 +170,7 @@ export interface Track {
   hint?: Translations
   resume?: Translations
   callout?: TrackCallout
-  objective?: Objective
+  theme?: ThemeId
   interface?: TrackInterface
   behavior?: TrackBehavior
   config?: TrackResultsConfig
@@ -192,39 +179,28 @@ export interface Track {
   form?: FormOptions
 }
 
-export interface TracksList {
-  programs: Track[]
-}
-
 export interface UsedTrack {
   id: TrackId
   component: TrackComponent
-  category?: string
+  category?: TrackCategory
   final?: boolean
   completed: boolean
-  // updating: boolean,
   step: number
-  // values: any[] | null,
-  // titles?: Translations[],
-  // val: any[] | null,
-  // data: object,
   selected: TrackOptionsUnion[]
   next?: TrackNext
 }
 
-// FOR TRACKS - COMPONENTS
-
-export interface TrackOpt {
-  value: string
-  [name: string]: any
-}
-
-export interface TrackChoice {
-  id: string | number
-  step: number
-  values: string[] | object[]
-  // val: object[],
-  data?: object | object[]
+export enum TrackCategory {
+  MyEntreprise = 'myEntreprise',
+  OurHelp = 'ourHelp',
+  MyEnergy = 'myEnergy',
+  MyBuildings = 'myBuildings',
+  MyTransport = 'myTransport',
+  MyWastes = 'myWastes',
+  MyWater = 'myWater',
+  MyStrategy = 'myStrategy',
+  MyMobility = 'myMobility',
+  MyProject = 'myProject'
 }
 
 // FOR TRACK RESULTS

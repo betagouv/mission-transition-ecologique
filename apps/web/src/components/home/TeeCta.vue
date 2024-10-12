@@ -6,10 +6,7 @@
     <div class="fr-col fr-col-md-8 fr-col-lg-8">
       <div class="fr-grid-row fr-grid-row--gutters fr-p-5v fr-p-sm-8v fr-p-md-20v">
         <div class="fr-col-12 fr-mb-4v fr-mx-0 fr-px-2v tee-home-cta-text">
-          <div
-            class="fr-px-2v"
-            style="background-color: transparent"
-          >
+          <div class="fr-px-2v">
             <div class="tee-track-callout fr-grid-row fr-grid-row--gutters">
               <div class="fr-col">
                 <h2 class="tee-track-callout-header">TPE, PME</h2>

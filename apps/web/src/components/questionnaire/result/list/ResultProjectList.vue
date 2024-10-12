@@ -2,21 +2,7 @@
   <!-- PROGRAMS AS LIST OF CARDS -->
   <div class="fr-container--fluid fr-container--fluid--no-overflow">
     <div
-      v-if="showNoResults"
-      class="fr-grid-row fr-grid-row--center"
-    >
-      <div class="fr-container fr-mt-3v">
-        <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-col-justify--center">
-          <ResultListNoResults
-            :has-error="hasError"
-            message="Aucune idée d’action n’a pu être identifiée sur cette thématique..."
-            :count-items="countProjects"
-          />
-        </div>
-      </div>
-    </div>
-    <div
-      v-if="showProjectListComponent"
+      v-if="isSpecificGoal"
       class="fr-grid-row fr-grid-row--center"
     >
       <div class="fr-container fr-mb-2v">
@@ -25,7 +11,44 @@
         </div>
       </div>
     </div>
-    <ProjectList :sorted-projects="sortedProjects" />
+    <div
+      v-if="showNoResults"
+      class="fr-grid-row fr-grid-row--center"
+    >
+      <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
+        <div class="fr-col-12 fr-col-offset-md-2 fr-col-md-10 fr-pl-md-2v fr-pr-md-6v">
+          <TeeListNoResults
+            :has-error="hasError"
+            message="Aucune idée d’action n’a pu être identifiée sur cette thématique..."
+            :count-items="countProjects"
+          />
+        </div>
+      </div>
+    </div>
+    <ProjectList
+      v-else
+      :sorted-projects="sortedProjects"
+    />
+    <transition
+      name="fade"
+      type="transition"
+      :duration="250"
+    >
+      <div
+        v-if="!showNoResults"
+        class="fr-grid-row fr-grid-row--center"
+      >
+        <div class="fr-container">
+          <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2">
+            <OtherProjectCta
+              v-if="!otherProjectForm"
+              @click="openOtherProjectForm"
+            />
+            <OtherProjectForm v-else />
+          </div>
+        </div>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -34,15 +57,22 @@ import { Project } from '@/types'
 import { computed } from 'vue'
 import UsedTrack from '@/utils/track/usedTrack'
 import { useProgramStore } from '@/stores/program'
+import { Project as UtilsProject } from '@/utils/project/project'
 
 interface ProjectListProps {
   filteredProjects?: Project[]
+  hasError: boolean
 }
 const props = defineProps<ProjectListProps>()
+const otherProjectForm = ref<boolean>(false)
 
+watch(
+  () => props.filteredProjects,
+  () => {
+    otherProjectForm.value = false
+  }
+)
 const programStore = useProgramStore()
-
-const hasError = ref<boolean>(false)
 
 const hasProjects = computed(() => {
   return countProjects.value > 0
@@ -52,21 +82,21 @@ const countProjects = computed(() => {
   return props.filteredProjects?.length || 0
 })
 
-const hasObjectiveCard = computed(() => {
-  return programStore.hasObjectiveTypeSelected() || (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityObjective())
+const hasThemeCard = computed(() => {
+  return programStore.hasThemeTypeSelected() || (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityTheme())
 })
 
-const sortedProjects = computed(() => {
-  return props.filteredProjects
-    ? (props.filteredProjects as unknown as Project[]).sort((a, b) => (a.priority && b.priority ? a.priority - b.priority : 0))
-    : undefined
-})
+const openOtherProjectForm = () => {
+  otherProjectForm.value = true
+}
+
+const sortedProjects = UtilsProject.sort(computed(() => props.filteredProjects))
 
 const showNoResults = computed(() => {
-  return hasError.value || (!countProjects.value && props.filteredProjects !== undefined)
+  return props.hasError || (!countProjects.value && props.filteredProjects !== undefined)
 })
 
-const showProjectListComponent = computed(() => {
-  return hasObjectiveCard.value && UsedTrack.isSpecificGoal() && hasProjects.value
+const isSpecificGoal = computed(() => {
+  return hasThemeCard.value && UsedTrack.isSpecificGoal() && hasProjects.value
 })
 </script>

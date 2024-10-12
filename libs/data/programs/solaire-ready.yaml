@@ -1,0 +1,119 @@
+titre: Plan Solaire Ready
+promesse: >-
+  Financez vos travaux de toiture en préparation à l’installation de panneaux
+  solaires
+description: >-
+  Vous avez pour projet l’installation d’équipements photovoltaïques sur vos
+  toitures mais vos bâtiments ne sont pas encore aptes à recevoir des
+  installations dans le respect des contraintes techniques ? La région Sud
+  soutient financièrement les travaux nécessaires pour rendre vos bâtiments «
+  solarisables » : désamiantage, renforcement de structure, étanchéité,
+  structure de soutien des panneaux, etc.
+description longue: >-
+  Les dépenses éligibles sont les dépenses d’investissement liées aux travaux, à
+  savoir les coûts suivants : 
+
+
+  • Désamiantage de la toiture, y compris diagnostic préalable (sur l’ensemble
+  des pans de toiture)
+
+  • Renforcement de la toiture. 
+
+  • Couverture permettant l’installation solaire et/ou reprise de l’étanchéité
+  et/ou de l’isolation (hors coûts de l’installation photovoltaïque). 
+
+  • Structure de soutien des panneaux, type ombrière, etc. 
+
+  • Coût de raccordement amont au projet : rénovation des colonnes montantes de
+  bâtiment pour le passage de gaines électriques, viabilisation de parcelle,
+  etc. 
+
+  • Toutes missions de bureau de contrôles et bureau d’étude (diagnostics
+  préalables, étude sol, étude structure, ERP, EDVV13, etc.). 
+
+  • Dispositifs de protection foudre et de sécurisation des toitures. 
+
+
+  Les opérations citées ci-dessus ne seront éligibles que si elles ont pour
+  objet l’installation ultérieure d’équipements photovoltaïques. De plus, les
+  projets où le maître d’ouvrage s’engage à porter lui-même le financement de la
+  future installation photovoltaïque seront priorisés.
+illustration: images/TEE_eolienne.png
+opérateur de contact: Région Sud
+url: >-
+  https://www.maregionsud.fr/vos-aides/detail/plan-solaire-dispositif-solaire-ready
+nature de l'aide: financement
+montant du financement: Jusqu'à 40% des dépenses éligibles, dans un maximum de 200 000 € HT par site
+objectifs:
+  - description: >-
+      Prenez contact avec un conseiller afin de vérifier l'éligibilité de votre
+      projet.
+  - description: >-
+      Préparez vos devis, estimatifs des travaux envisagés. Attention, les
+      travaux pour laquelle vous sollicitez une aide financière ne doivent pas
+      avoir commencé.
+  - description: >-
+      Faites une demande de subvention en ligne sur le site de la Région en
+      joignant les devis ou estimatifs des travaux envisagés.
+    liens:
+      - lien: http://subventionsenligne.maregionsud.fr
+        texte: Faire une demande de subvention
+  - description: Une fois votre subvention validée, réalisez vos travaux.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Provence-Alpes-Côte d'Azur
+  secteur d'activité:
+    - Tous secteurs d'activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - >-
+      Pour tous travaux sur toiture, le ratio surface couverte en photovoltaïque
+      par rapport à la surface traitée fera partie des critères d’analyse des
+      projets et devra être au moins supérieur à 35% minimum
+    - >-
+      Le projet global doit se caractériser par un temps de retour brut
+      supérieur à 10 ans et un taux de rentabilité interne sur 20 ans positif et
+      inférieur à 5% pour le projet et 15% pour les fonds propres.
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est rénover mon bâtiment
+      - questionnaire . objectif prioritaire . est ma performance énergétique
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Provence-Alpes-Côte d'Azur

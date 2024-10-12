@@ -3,7 +3,7 @@
     ref="tabs"
     class="fr-col-12"
     tab-list-name="Liste d’onglet"
-    :tab-titles="tabTitles"
+    :tab-titles="titles"
     :initial-selected-index="selected"
     @select-tab="onSelectedTabChange"
   >
@@ -30,19 +30,22 @@
       :selected="selected === 1"
       :asc="ascendant"
     >
-      <ResultProgramList :filtered-programs="filteredPrograms" />
+      <ResultProgramList
+        :filtered-programs="filteredPrograms"
+        :has-error="hasError"
+      />
     </DsfrTabContent>
   </TeeTabs>
 </template>
 
 <script setup lang="ts">
+import { TeeDsfrTabs } from '@/components/element/TeeTabs.vue'
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
-import { ProgramData, Objective, TrackId, Project } from '@/types'
+import { BreakpointNameType, ProgramData, Project, TrackId } from '@/types'
 import { computed, onBeforeMount } from 'vue'
-import Matomo from '@/utils/matomo'
+import Analytics from '@/utils/analytic/analytics'
 import { useProjectStore } from '@/stores/project'
-import UsedTrack from '@/utils/track/usedTrack'
 import { Theme } from '@/utils/theme'
 
 const navigationStore = useNavigationStore()
@@ -54,7 +57,10 @@ const programs = ref<ProgramData[]>()
 const projects = ref<Project[]>()
 const hasError = ref<boolean>(false)
 
-const tabTitles = [{ title: "Des idées d'actions à mettre en place" }, { title: 'Vos aides financières' }]
+const titles: TeeDsfrTabs['tabTitles'] = [
+  { title: [{ title: "Des idées d'actions à mettre en place", size: BreakpointNameType.sm }, { title: "Idées d'actions" }] },
+  { title: [{ title: 'Vos aides financières', size: BreakpointNameType.sm }, { title: 'Aides financières' }] }
+]
 
 const filteredPrograms = computed(() => {
   return programs.value ? programStore.getProgramsByFilters(programs.value) : undefined
@@ -70,18 +76,12 @@ const filteredProjects = computed(() => {
     return undefined
   }
 
-  return projectStore.getProjectsByObjectiveAndEligibility(
+  return projectStore.getProjectsByThemeAndEligibility(
     projects.value,
-    getObjectiveForProjectFiltering(),
+    Theme.getThemeFromSelectedOrPriorityTheme().value,
     filteredPrograms.value ?? undefined
   )
 })
-
-const getObjectiveForProjectFiltering = () => {
-  return programStore.programFilters.objectiveTypeSelected !== ''
-    ? (programStore.programFilters.objectiveTypeSelected as Objective)
-    : Theme.getObjectiveByValue(UsedTrack.getPriorityObjective())
-}
 
 onBeforeMount(async () => {
   navigationStore.hasSpinner = true
@@ -96,6 +96,6 @@ onBeforeMount(async () => {
   navigationStore.hasSpinner = false
 
   // analytics / send event
-  Matomo.sendEvent(TrackId.Results, 'show_results')
+  Analytics.sendEvent(TrackId.Results, 'show_results')
 })
 </script>
