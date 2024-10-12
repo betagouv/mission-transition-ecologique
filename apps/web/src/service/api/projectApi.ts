@@ -1,5 +1,5 @@
 import RequestApi from '@/service/api/requestApi'
-import type { Project } from '@/types'
+import type { Project, ProjectFilterQuery, QuestionnaireData } from '@/types'
 import { projects } from '@tee/data/static'
 import { Result } from 'true-myth'
 
@@ -8,6 +8,27 @@ export default class ProjectApi extends RequestApi {
 
   constructor() {
     super()
+  }
+
+  buildQuery(payload: ProjectFilterQuery): string {
+    const queryString: { [key: string]: string } = {}
+    Object.entries(payload).forEach(([key, value]: [string, string | string[] | undefined | null]) => {
+      if (value !== undefined && value !== null) {
+        queryString[key] = value.toString()
+      }
+    })
+    return new URLSearchParams(queryString).toString()
+  }
+
+  async getFiltered(questionnaireData: QuestionnaireData): Promise<Result<Project[], Error>> {
+    const { codeNAF1, sector } = questionnaireData
+    const filteredData: ProjectFilterQuery = {
+      ...(codeNAF1 && { codeNAF1 }),
+      ...(sector && { sector })
+    }
+
+    this.query = this.buildQuery(filteredData)
+    return super.getJson<Project[]>()
   }
 
   async get(): Promise<Result<Project[], Error>> {

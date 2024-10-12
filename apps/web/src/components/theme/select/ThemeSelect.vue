@@ -22,7 +22,6 @@ import { Project } from '@tee/data'
 import { useProjectStore } from '@/stores/project'
 import { useProgramStore } from '@/stores/program'
 import { useNavigationStore } from '@/stores/navigation'
-import ProgramFilter from '@/utils/program/programFilter'
 
 const currentTrack = useTrackStore().current
 const emit = defineEmits(['updateSelection'])
@@ -41,10 +40,6 @@ export interface ThemeOption {
   moreThanThree: boolean
 }
 
-const filterPrograms = (theme: ThemeId) => {
-  return programs.value?.filter((program) => ProgramFilter.byTheme(program, theme))
-}
-
 const options = computed<ThemeOption[]>(() => {
   const options: ThemeOption[] = []
   if (!currentTrack?.options) {
@@ -53,7 +48,7 @@ const options = computed<ThemeOption[]>(() => {
   for (const option of currentTrack.options) {
     const theme = Theme.getById(option.questionnaireData?.priority_objective)
     if (theme && projects.value) {
-      const themeProjects = projectStore.getProjectsByThemeAndEligibility(projects.value, theme.id, filterPrograms(theme.id))
+      const themeProjects = projectStore.getProjectsByTheme(projects.value, theme.id)
       const projectsInfos: { projects: Project[]; moreThanThree: boolean } = Theme.getPriorityProjects(themeProjects)
       options.push({
         value: option.questionnaireData?.priority_objective,
@@ -89,7 +84,7 @@ const hasError = ref<boolean>(false)
 
 onBeforeMount(async () => {
   useNavigationStore().hasSpinner = true
-  const projectResult = await projectStore.projects
+  const projectResult = await projectStore.eligibleProjects
   const programResult = await programStore.programsByUsedTracks
   if (programResult.isOk && projectResult.isOk) {
     projects.value = projectResult.value

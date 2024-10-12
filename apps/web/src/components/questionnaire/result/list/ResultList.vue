@@ -32,7 +32,7 @@ const filteredProjects = Project.filter(projects, filteredPrograms, Theme.getThe
 onBeforeMount(async () => {
   navigationStore.hasSpinner = true
   const programResult = await programStore.programsByUsedTracks
-  const projectResult = await projectStore.projects
+  const projectResult = await projectStore.eligibleProjects
   if (programResult.isOk && projectResult.isOk) {
     programs.value = programResult.value
     projects.value = projectResult.value
