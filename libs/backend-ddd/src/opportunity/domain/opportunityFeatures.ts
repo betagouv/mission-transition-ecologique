@@ -1,5 +1,5 @@
 import { Maybe, Result } from 'true-myth'
-import { OpportunityObject } from './programOrProject'
+import { OpportunityObject } from './opportunityObject'
 import type { ContactRepository, MailerManager, OpportunityRepository } from './spi'
 import { OpportunityId, OpportunityWithContactId, OpportunityDetailsShort, OpportunityWithOperatorContactAndContactId } from './types'
 import OpportunityHubFeatures from '../../opportunityHub/domain/opportunityHubFeatures'

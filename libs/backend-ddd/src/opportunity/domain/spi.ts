@@ -1,5 +1,5 @@
 import type { Maybe, Result } from 'true-myth'
-import { OpportunityObject } from './programOrProject'
+import { OpportunityObject } from './opportunityObject'
 import {
   ContactId,
   OpportunityId,

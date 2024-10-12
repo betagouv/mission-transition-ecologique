@@ -10,8 +10,8 @@ import { ProgramService } from '../../../../program/application/programService'
 import OpportunityService from '../../../../opportunity/application/opportunityService'
 import { Operators, ProgramType, ThemeId } from '@tee/data'
 import { Objective, Opportunity, OpportunityType } from '@tee/common'
-import { Project } from '@tee/data'
 import Monitor from '../../../../common/domain/monitoring/monitor'
+import { OpportunityObject } from '../../../../opportunity/domain/opportunityObject'
 
 export class PlaceDesEntreprises extends OpportunityHubAbstract {
   protected readonly _baseUrl = Config.PDE_API_BASEURL
@@ -32,33 +32,37 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     return new Error('Operator List non valid for Place des entreprises')
   }
 
-  override support = (program: ProgramType) => {
-    const validOperator = (program['opérateur de contact'] as Operators) !== 'Bpifrance'
-    const notAutonomous = !program['activable en autonomie']
-    return validOperator && notAutonomous
+  override support = (opportunityData: OpportunityObject) => {
+    if (opportunityData.isProgram()) {
+      const validOperator = (opportunityData.opportunityObject['opérateur de contact'] as Operators) !== 'Bpifrance'
+      const notAutonomous = !opportunityData.opportunityObject['activable en autonomie']
+      return validOperator && notAutonomous
+    }
+    return true
   }
 
-  override shouldTransmit = async (opportunity: OpportunityWithContactId, program: ProgramType) => {
-    if (!this.support(program)) {
+  override shouldTransmit = async (opportunity: OpportunityWithContactId, opportunityData: OpportunityObject) => {
+    if (!this.support(opportunityData)) {
       return false
     }
     const reachTransmissionLimit = await this.reachedDailyContactTransmissionLimit(opportunity.contactId)
     return !reachTransmissionLimit
   }
 
-  public transmitOpportunity = async (opportunity: Opportunity, programOrProject: ProgramType | Project): Promise<Maybe<Error>> => {
+  public transmitOpportunity = async (opportunity: Opportunity, opportunityData: OpportunityObject): Promise<Maybe<Error>> => {
     let maybePayload
-    switch (opportunity.type) {
-      case OpportunityType.Program:
-        maybePayload = this._createProgramRequestBody(opportunity, programOrProject as ProgramType)
-        break
-      case OpportunityType.Project:
-      case OpportunityType.CustomProject:
-        maybePayload = this._createProjectRequestBody(opportunity, programOrProject as Project)
-        break
-
-      default:
-        return Maybe.of(Error("Canno't tranmist to PDE an opportunity of type" + opportunity.type))
+    if (opportunityData.isProgram()) {
+      maybePayload = this._createProgramRequestBody(opportunity, opportunityData.opportunityObject)
+    } else if (opportunityData.isProject()) {
+      maybePayload = this._createProjectRequestBody(
+        opportunity,
+        opportunityData.opportunityObject.title,
+        opportunityData.opportunityObject.mainTheme
+      )
+    } else if (opportunityData.isCustomProject()) {
+      maybePayload = this._createProjectRequestBody(opportunity, opportunityData.opportunityObject.title)
+    } else {
+      return Maybe.of(Error("Canno't transmit to PDE an opportunity of type" + opportunity.type))
     }
     if (maybePayload.isErr) {
       return Maybe.of(maybePayload.error)
@@ -98,7 +102,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     let transmissiblePrograms = 0
     for (const prevOpportunity of previousDailyOpportunities.value) {
       const prevProgram = new ProgramService().getById(prevOpportunity.id)
-      if (prevProgram && this.support(prevProgram)) {
+      if (prevProgram && this.support(new OpportunityObject(OpportunityType.Program, prevProgram))) {
         transmissiblePrograms += 1
       } else {
         // this loop account for both projects and CustomProjects
@@ -173,12 +177,19 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     [ThemeId.EcoDesign]: Subject.DemarcheEcologie
   }
 
-  private _createProjectRequestBody(opportunity: Opportunity, project: Project): Result<CreateSolicitationApiBody, Error> {
+  private _createProjectRequestBody(
+    opportunity: Opportunity,
+    title: string,
+    mainTheme?: ThemeId
+  ): Result<CreateSolicitationApiBody, Error> {
+    const landingId = mainTheme
+      ? subjectToIdMapping[this._themeToPdeSubjectMapping[mainTheme]]
+      : subjectToIdMapping[Subject.DemarcheEcologie]
     return Result.ok({
       solicitation: {
         landing_id: this._pdeLanding,
-        landing_subject_id: subjectToIdMapping[this._themeToPdeSubjectMapping[project.mainTheme]],
-        description: 'Demande via le projet ' + project.title + '\n\n' + opportunity.message,
+        landing_subject_id: landingId,
+        description: 'Demande via le projet ' + title + '\n\n' + opportunity.message,
         full_name: opportunity.firstName + ' ' + opportunity.lastName,
         email: opportunity.email,
         phone_number: opportunity.phoneNumber,

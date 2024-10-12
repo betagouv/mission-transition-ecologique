@@ -1,6 +1,6 @@
 import { SendSmtpEmail, TransactionalEmailsApi, TransactionalEmailsApiApiKeys } from '@getbrevo/brevo'
 import { Maybe } from 'true-myth'
-import { OpportunityObject } from '../../../domain/programOrProject'
+import { OpportunityObject } from '../../../domain/opportunityObject'
 import Config from '../../../../config'
 import { MailerManager } from '../../../domain/spi'
 import { ProgramType, Program, Project } from '@tee/data'

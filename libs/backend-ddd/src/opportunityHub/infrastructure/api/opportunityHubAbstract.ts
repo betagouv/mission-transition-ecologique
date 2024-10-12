@@ -1,27 +1,33 @@
-import { Operators, ProgramType, Project } from '@tee/data'
+import { Operators } from '@tee/data'
 import { AxiosInstance } from 'axios'
 import { OpportunityHubRepository } from '../../domain/spi'
-import { OpportunityObjectDetails, OpportunityWithContactId } from '../../../opportunity/domain/types'
+import { OpportunityWithContactId } from '../../../opportunity/domain/types'
 import { Maybe } from 'true-myth'
 import { Opportunity } from '@tee/common'
+import { OpportunityObject } from '../../../opportunity/domain/opportunityObject'
 
 export default abstract class OpportunityHubAbstract implements OpportunityHubRepository {
   protected abstract _axios: AxiosInstance
   protected abstract readonly _baseUrl: string
   protected abstract readonly _operatorNames: Operators[]
 
-  support = (opportunityObject: OpportunityObjectDetails) => {
-    if ()
+  support = (opportunityData: OpportunityObject) => {
     if (this.operatorNames instanceof Error) {
       return false
     }
-    return this.operatorNames.includes(program['opérateur de contact'] as Operators)
-  }
-  shouldTransmit = async (_: OpportunityWithContactId, program: OpportunityObjectDetails) => {
-    return Promise.resolve(this.support(program))
+    if (opportunityData.isProgram()) {
+      return this.operatorNames.includes(opportunityData.opportunityObject['opérateur de contact'] as Operators)
+    }
+    // only program are handled by this abstract class
+    // other opportunity types are handled by PlaceDesEntreprise which overwrite this method
+    return false
   }
 
-  public abstract transmitOpportunity: (opportunity: Opportunity, programOrProject: OpportunityObjectDetails) => Promise<Maybe<Error>>
+  shouldTransmit = async (_: OpportunityWithContactId, opportunityAssociatedData: OpportunityObject) => {
+    return Promise.resolve(this.support(opportunityAssociatedData))
+  }
+
+  public abstract transmitOpportunity: (opportunity: Opportunity, opportunityAssociatedData: OpportunityObject) => Promise<Maybe<Error>>
 
   get operatorNames(): Operators[] | Error {
     return this._operatorNames

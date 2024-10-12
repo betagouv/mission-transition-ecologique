@@ -29,5 +29,5 @@ export interface OpportunityId {
 export type OpportunityObjectDetails = ProgramType | Project | CustomProject
 
 export interface CustomProject {
-  titre: string
+  title: string
 }

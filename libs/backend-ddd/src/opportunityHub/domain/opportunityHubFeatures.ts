@@ -1,8 +1,9 @@
 import { OpportunityHubRepository } from './spi'
-import { OpportunityObjectDetails, OpportunityWithContactId } from '../../opportunity/domain/types'
+import { OpportunityWithContactId } from '../../opportunity/domain/types'
 import { Maybe } from 'true-myth'
 import { PlaceDesEntreprises } from '../infrastructure/api/placedesentreprises/placeDesEntreprises'
 import { OpportunityType } from '@tee/common'
+import { OpportunityObject } from '../../opportunity/domain/opportunityObject'
 
 export default class OpportunityHubFeatures {
   private readonly _opportunityHubRepositories: OpportunityHubRepository[]
@@ -12,13 +13,13 @@ export default class OpportunityHubFeatures {
 
   public async maybeTransmitOpportunity(
     opportunity: OpportunityWithContactId,
-    programOrProject: OpportunityObjectDetails
+    opportunityObject: OpportunityObject
   ): Promise<Maybe<Error> | false> {
     switch (opportunity.type) {
       case OpportunityType.Program:
         for (const opportunityHubRepository of this._opportunityHubRepositories) {
-          if (await opportunityHubRepository.shouldTransmit(opportunity, programOrProject)) {
-            return await opportunityHubRepository.transmitOpportunity(opportunity, programOrProject)
+          if (await opportunityHubRepository.shouldTransmit(opportunity, opportunityObject)) {
+            return await opportunityHubRepository.transmitOpportunity(opportunity, opportunityObject)
           }
         }
         return false
@@ -27,14 +28,13 @@ export default class OpportunityHubFeatures {
         for (const opportunityHubRepository of this._opportunityHubRepositories) {
           if (opportunityHubRepository instanceof PlaceDesEntreprises) {
             if (!(await opportunityHubRepository.reachedDailyContactTransmissionLimit(opportunity.contactId))) {
-              return await opportunityHubRepository.transmitOpportunity(opportunity, programOrProject)
+              return await opportunityHubRepository.transmitOpportunity(opportunity, opportunityObject)
             }
           }
         }
-
         return false
       default:
-        break
+        return false
     }
   }
 }

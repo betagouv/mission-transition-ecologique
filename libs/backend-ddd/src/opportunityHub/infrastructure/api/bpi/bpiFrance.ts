@@ -6,9 +6,10 @@ import AxiosHeaders from '../../../../common/infrastructure/api/axiosHeaders'
 import { ensureError, handleException } from '../../../../common/domain/error/errors'
 import opportunityPayloadDTO from './opportunityPayloadDTO'
 import Config from '../../../../config'
-import { Operators, ProgramType, Project } from '@tee/data'
-import { Opportunity, OpportunityType } from '@tee/common'
+import { Operators } from '@tee/data'
+import { Opportunity } from '@tee/common'
 import Monitor from '../../../../common/domain/monitoring/monitor'
+import { OpportunityObject } from '../../../../opportunity/domain/opportunityObject'
 
 export class BpiFrance extends OpportunityHubAbstract {
   protected _axios: AxiosInstance
@@ -44,11 +45,11 @@ export class BpiFrance extends OpportunityHubAbstract {
     }
   }
 
-  public transmitOpportunity = async (opportunity: Opportunity, programOrProject: ProgramType | Project): Promise<Maybe<Error>> => {
-    if (opportunity.type === OpportunityType.Project) {
-      return Maybe.of(Error("BPI shouldn't transfer be transfered Project type opportunities."))
+  public transmitOpportunity = async (opportunity: Opportunity, opportunityData: OpportunityObject): Promise<Maybe<Error>> => {
+    if (!opportunityData.isProgram()) {
+      return Maybe.of(Error('BPI should only be transfered opportunities that are of type Program.'))
     }
-    const contactPayloadDTO = new opportunityPayloadDTO(opportunity, programOrProject as ProgramType).getPayload()
+    const contactPayloadDTO = new opportunityPayloadDTO(opportunity, opportunityData.opportunityObject).getPayload()
     try {
       const tokenResult = await this._getToken()
       if (tokenResult.isErr) {
