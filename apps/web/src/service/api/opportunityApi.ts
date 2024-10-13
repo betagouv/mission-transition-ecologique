@@ -65,6 +65,7 @@ export default class OpportunityApi extends RequestApi {
     const opportunity: Opportunity = {
       type: this._opportunityType,
       id: this._id.toString(),
+      // titleMessage: this._opportunityForm. ????
       firstName: this._opportunityForm.name.value,
       lastName: this._opportunityForm.surname.value,
       email: this._opportunityForm.email.value,
@@ -80,12 +81,10 @@ export default class OpportunityApi extends RequestApi {
         QuestionnaireDataEnum.questionnaire_route as string
       ) as QuestionnaireRoute, // get from usedTrack
       otherData: this.getAllValuesFromUsedTrack(),
-      linkToPage: this._generateLinkToPage()
+      linkToPage: this._generateLinkToPage(),
+      linkToCatalog: this._generateCatalogLink()
     }
-    const linkToCatalog = this._generateCatalogLink()
-    if (linkToCatalog !== 'catalogLinkGenerationNotHandledForTheCurrentOpportunityType') {
-      opportunity.linkToCatalog = linkToCatalog
-    }
+
     return {
       opportunity,
       optIn: this._opportunityForm.cgu.value
@@ -96,7 +95,7 @@ export default class OpportunityApi extends RequestApi {
     return new URL(useRoute().fullPath, window.location.origin).href
   }
 
-  private _generateCatalogLink(): string {
+  private _generateCatalogLink(): string | undefined {
     if (this._opportunityType == OpportunityType.Program) {
       return (
         useNavigationStore().getAbsoluteUrlByRouteName(RouteName.CatalogProgramDetail, {
@@ -111,8 +110,7 @@ export default class OpportunityApi extends RequestApi {
         }) ?? ''
       )
     }
-    console.error('catalog Link Generation Not Handled For The Current Opportunity Type')
-    return 'catalogLinkGenerationNotHandledForTheCurrentOpportunityType'
+    return undefined
   }
 
   private getFromUsedTrack(trackId: TrackId, key: string) {

@@ -14,13 +14,6 @@ export interface ContactDetails {
   companySize?: StructureSize
 }
 
-// ajouter custom project
-export enum OpportunityType {
-  Program = 'program',
-  Project = 'project',
-  CustomProject = 'customProject'
-}
-
 export interface OpportunityDetails {
   type: OpportunityType
   id: string
@@ -32,6 +25,12 @@ export interface OpportunityDetails {
   priorityObjectives?: PublicodeObjective[]
   otherData?: string
   theme: ThemeId
+}
+
+export enum OpportunityType {
+  Program = 'program',
+  Project = 'project',
+  CustomProject = 'customProject'
 }
 
 export interface OpportunityBody {

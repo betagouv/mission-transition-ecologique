@@ -2,11 +2,11 @@ import { OpportunityWithContactId } from '../../opportunity/domain/types'
 import { Maybe } from 'true-myth'
 import { Operators } from '@tee/data'
 import { Opportunity } from '@tee/common'
-import { OpportunityObject } from '../../opportunity/domain/opportunityObject'
+import { OpportunityAssociatedData } from '../../opportunity/domain/opportunityAssociatedData'
 
 export interface OpportunityHubRepository {
   get operatorNames(): Operators[] | Error
-  transmitOpportunity: (opportunity: Opportunity, opportunityObject: OpportunityObject) => Promise<Maybe<Error>>
-  support: (opportunityObject: OpportunityObject) => boolean
-  shouldTransmit: (opportunity: OpportunityWithContactId, opportunityObject: OpportunityObject) => Promise<boolean>
+  transmitOpportunity: (opportunity: Opportunity, opportunityObject: OpportunityAssociatedData) => Promise<Maybe<Error>>
+  support: (opportunityObject: OpportunityAssociatedData) => boolean
+  shouldTransmit: (opportunity: OpportunityWithContactId, opportunityObject: OpportunityAssociatedData) => Promise<boolean>
 }

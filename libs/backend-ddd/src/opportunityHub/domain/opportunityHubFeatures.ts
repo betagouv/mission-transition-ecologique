@@ -3,7 +3,7 @@ import { OpportunityWithContactId } from '../../opportunity/domain/types'
 import { Maybe } from 'true-myth'
 import { PlaceDesEntreprises } from '../infrastructure/api/placedesentreprises/placeDesEntreprises'
 import { OpportunityType } from '@tee/common'
-import { OpportunityObject } from '../../opportunity/domain/opportunityObject'
+import { OpportunityAssociatedData } from '../../opportunity/domain/opportunityAssociatedData'
 
 export default class OpportunityHubFeatures {
   private readonly _opportunityHubRepositories: OpportunityHubRepository[]
@@ -13,7 +13,7 @@ export default class OpportunityHubFeatures {
 
   public async maybeTransmitOpportunity(
     opportunity: OpportunityWithContactId,
-    opportunityObject: OpportunityObject
+    opportunityObject: OpportunityAssociatedData
   ): Promise<Maybe<Error> | false> {
     switch (opportunity.type) {
       case OpportunityType.Program:
