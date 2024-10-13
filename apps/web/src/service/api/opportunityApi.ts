@@ -65,7 +65,7 @@ export default class OpportunityApi extends RequestApi {
     const opportunity: Opportunity = {
       type: this._opportunityType,
       id: this._id.toString(),
-      // titleMessage: this._opportunityForm. ????
+      titleMessage: 'random value',
       firstName: this._opportunityForm.name.value,
       lastName: this._opportunityForm.surname.value,
       email: this._opportunityForm.email.value,

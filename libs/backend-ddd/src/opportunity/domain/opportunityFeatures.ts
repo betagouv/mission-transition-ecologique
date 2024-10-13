@@ -45,39 +45,28 @@ export default class OpportunityFeatures {
       return Result.err(contactIdResult.error)
     }
 
-    console.log('ici 1 ')
-
     const opportunityWithContactId = this._addContactIdToOpportunity(opportunity, contactIdResult.value.id)
     const opportunityWithOperatorAndContact = this._addContactOperatorToOpportunity(opportunityWithContactId)
-
-    console.log('ici 2 ')
 
     const maybeError = this._defineOpportunityDatabaseId(opportunityWithOperatorAndContact)
     if (maybeError.isJust) {
       return Result.err(maybeError.value)
     }
 
-    console.log('ici 3 ')
-
     const opportunityResult = await this._opportunityRepository.create(opportunityWithOperatorAndContact)
     if (opportunityResult.isErr) {
       Monitor.error('Error during Opportunity Creation', { error: opportunityResult.error })
       return opportunityResult
     }
-    console.log('ici 4 ')
 
     const opportunityAssociatedObject = this._createOpportunityAssociatedObject(opportunityWithOperatorAndContact)
     if (opportunityAssociatedObject.isErr) {
       Monitor.error('Error during the creation of the Opportunity Associated Object', { error: opportunityAssociatedObject.error })
       return opportunityResult
     }
-    console.log('ici 4 ')
 
     this._sendReturnReceipt(opportunity, opportunityAssociatedObject.value)
-    console.log('ici 45 ')
-
     this._transmitOpportunityToHubs(opportunityResult.value, opportunityWithOperatorAndContact, opportunityAssociatedObject.value)
-    console.log('ici 5 ')
 
     return opportunityResult
   }
