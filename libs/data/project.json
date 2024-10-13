@@ -38,17 +38,10 @@
       "options": {
         "cwd": "libs/data",
         "commands": [
+          "npx ts-node src/generateOperatorsJson.ts",
           "npx ts-node src/generateProgramYaml.ts"
-        ]
-      }
-    },
-    "generate-operators": {
-      "executor": "nx:run-commands",
-      "options": {
-        "cwd": "libs/data",
-        "commands": [
-          "npx ts-node src/generateOperatorsJson.ts"
-        ]
+        ],
+        "parallel": false
       }
     }
   }
