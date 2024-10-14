@@ -1,0 +1,31 @@
+@use 'sass:color';
+@use 'sass:map';
+@use 'sass:meta';
+@use '../setting';
+@use "color" as tool;
+
+@mixin border-color($color, $properties, $position: null, $width: thin, $style: solid, $lightness: 0%) {
+  &--#{$color} {
+    @include get-border-color-by-lightness($properties, $width, $style, $lightness, $position);
+
+    @each $name, $lightness in setting.$opacities {
+      &#{$name} {
+        @include get-border-color-by-lightness($properties, $width, $style, $lightness, $position);
+      }
+    }
+  }
+}
+
+@mixin border-with-position-and-style($position, $width: thin, $style: solid) {
+  @include get-border-color-by-lightness(setting.$black, $width, $style, 0%, $position);
+}
+
+@mixin get-border-color-by-lightness($properties, $width, $style, $lightness: 0%, $position: null) {
+  $values: if(meta.type-of($properties) == map, map.get($properties, "color"), $properties);
+
+  @if $position {
+    border-#{$position}: $width $style tool.scaleLightness($values, $lightness);
+  } @else {
+    border: $width $style tool.scaleLightness($values, $lightness);
+  }
+}

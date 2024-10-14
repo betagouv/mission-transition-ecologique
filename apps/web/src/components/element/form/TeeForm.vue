@@ -84,11 +84,11 @@ import { computed } from 'vue'
 import { type ReqResp, TrackId, FormDataType, InputFieldUnionType, Project } from '@/types'
 import Translation from '@/utils/translation'
 import TeeDsfrButton from '@/components/element/button/TeeDsfrButton.vue'
-import Matomo from '@/utils/analytic/matomo'
 import Format from '@/utils/format'
 import OpportunityApi from '@/service/api/opportunityApi'
 import { OpportunityType } from '@tee/common'
 import { useNavigationStore } from '@/stores/navigation'
+import Analytics from '@/utils/analytic/analytics'
 import { ProgramType } from '@tee/data'
 
 const navigation = useNavigationStore()
@@ -140,14 +140,14 @@ const saveForm = async () => {
     requestResponse.value = await opportunity.fetch()
 
     // analytics / send event
-    Matomo.sendEvent(TrackId.Results, getRouteName())
+    Analytics.sendEvent(TrackId.Results, getEventName())
   } finally {
     isLoading.value = false
     formIsSent.value = true
     scrollToFormContainer()
   }
 }
-const getRouteName = () => {
+const getEventName = () => {
   return `send_${props.formType}_form${navigation.isCatalogDetail() ? '_catalog' : ''}`
 }
 const scrollToFormContainer = () => {
