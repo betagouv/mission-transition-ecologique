@@ -94,7 +94,7 @@ export default class OpportunityFeatures {
         return Result.ok(new OpportunityAssociatedData(OpportunityType.Project, associatedProject))
       }
       case OpportunityType.CustomProject:
-        return Result.ok(new OpportunityAssociatedData(OpportunityType.CustomProject, { title: opportunity.id }))
+        return Result.ok(new OpportunityAssociatedData(OpportunityType.CustomProject, { title: opportunity.titleMessage || 'No title' }))
       default:
         return Result.err(new Error('Opportunity type not handled in _createOpportunityAssociatedObject'))
     }

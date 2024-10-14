@@ -17,6 +17,7 @@ import {
 import RequestApi from '@/service/api/requestApi'
 import TrackStructure from '@/utils/track/trackStructure'
 import { ThemeId } from '@tee/data'
+import { router } from '../../router'
 
 export default class OpportunityApi extends RequestApi {
   protected readonly url = '/api/opportunities'
@@ -29,8 +30,8 @@ export default class OpportunityApi extends RequestApi {
 
   constructor(
     opportunityForm: FormDataType,
-    private _id: ProgramData['id'] | Project['id'],
-    private _slug: ProgramData['id'] | Project['slug'],
+    private _id: string | undefined,
+    private _slug: string | undefined,
     private _opportunityType: OpportunityType
   ) {
     super()
@@ -64,8 +65,8 @@ export default class OpportunityApi extends RequestApi {
   payload(): OpportunityBody {
     const opportunity: Opportunity = {
       type: this._opportunityType,
-      id: this._id.toString(),
-      titleMessage: 'random value',
+      id: this._getId(),
+      titleMessage: this.getTitleMessage(),
       firstName: this._opportunityForm.name.value,
       lastName: this._opportunityForm.surname.value,
       email: this._opportunityForm.email.value,
@@ -84,33 +85,47 @@ export default class OpportunityApi extends RequestApi {
       linkToPage: this._generateLinkToPage(),
       linkToCatalog: this._generateCatalogLink()
     }
-
     return {
       opportunity,
       optIn: this._opportunityForm.cgu.value
     }
   }
 
+  private _getId(): string {
+    if (this._opportunityType === OpportunityType.CustomProject) {
+      return this._opportunityForm.projectTitle.value as string
+    }
+    return this._id?.toString() as string
+  }
+
   private _generateLinkToPage(): string {
-    return new URL(useRoute().fullPath, window.location.origin).href
+    const { fullPath } = router.currentRoute.value
+    return new URL(fullPath, window.location.origin).href
   }
 
   private _generateCatalogLink(): string | undefined {
     if (this._opportunityType == OpportunityType.Program) {
       return (
         useNavigationStore().getAbsoluteUrlByRouteName(RouteName.CatalogProgramDetail, {
-          programId: this._slug
+          programId: this._slug as ProgramData['id']
         }) ?? ''
       )
     }
     if (this._opportunityType == OpportunityType.Project) {
       return (
         useNavigationStore().getAbsoluteUrlByRouteName(RouteName.CatalogProjectDetail, {
-          projectSlug: this._slug
+          projectSlug: this._slug as Project['slug']
         }) ?? ''
       )
     }
     return undefined
+  }
+
+  private getTitleMessage(): string {
+    if (this._opportunityType === OpportunityType.Project || this._opportunityType === OpportunityType.CustomProject) {
+      return this._opportunityForm.projectTitle.value as string
+    }
+    return this._slug as string
   }
 
   private getFromUsedTrack(trackId: TrackId, key: string) {
