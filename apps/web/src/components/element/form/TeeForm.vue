@@ -153,7 +153,7 @@ const getRouteName = () => {
 const scrollToFormContainer = () => {
   const element = props.formContainerRef
   if (element) {
-    Scroll.toBlockCenter(element)
+    Scroll.to(element)
   }
 }
 </script>
