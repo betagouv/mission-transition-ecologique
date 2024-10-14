@@ -1,6 +1,6 @@
 import { Result } from 'true-myth'
 import { RulesManager } from './spi'
-import { ProgramType } from '@tee/data'
+import { ProgramEligibilityType, ProgramType, ProgramTypeWithEligibility } from '@tee/data'
 import { QuestionnaireData } from '@tee/common'
 
 /** Expected rule to evaluate if a program should be displayed to the user or
@@ -22,8 +22,8 @@ export const filterPrograms = (
   inputData: QuestionnaireData,
   currentDate: string,
   rulesService: RulesManager
-): Result<ProgramType[], Error> => {
-  const filteredPrograms: ProgramType[] = []
+): Result<ProgramTypeWithEligibility[], Error> => {
+  const filteredPrograms: ProgramTypeWithEligibility[] = []
 
   for (const program of programs) {
     const evaluation = rulesService.evaluate(FILTERING_RULE_NAME, program, inputData, currentDate)
@@ -32,8 +32,8 @@ export const filterPrograms = (
       return Result.err(addErrorDetails(evaluation.error, program.id))
     }
 
-    if (shouldKeepProgram(evaluation)) {
-      filteredPrograms.push(program)
+    if (shouldKeepProgram(evaluation) || inputData.onlyEligible === undefined || !inputData.onlyEligible) {
+      filteredPrograms.push(setEligibility(program, shouldKeepProgram(evaluation)))
     }
   }
 
@@ -51,4 +51,18 @@ const shouldKeepProgram = (evaluation: Result<boolean | undefined, Error>): bool
   const isUndefined = evaluation.isOk && typeof evaluation.value === 'undefined'
 
   return isPositive || isUndefined
+}
+
+const setEligibility = (program: ProgramType, isEligible: boolean): ProgramTypeWithEligibility => {
+  let eligibility: ProgramEligibilityType
+
+  if (isEligible && program["conditions d'éligibilité"]["autres critères d'éligibilité"]) {
+    eligibility = ProgramEligibilityType.PartiallyEligible
+  } else if (isEligible) {
+    eligibility = ProgramEligibilityType.Eligible
+  } else {
+    eligibility = ProgramEligibilityType.NotEligible
+  }
+
+  return { ...program, eligibility }
 }

@@ -1,5 +1,5 @@
 import { Result } from 'true-myth'
-import { ProgramType } from '@tee/data'
+import { ProgramType, ProgramTypeWithEligibility } from '@tee/data'
 import ProgramFeatures from '../domain/programFeatures'
 import ProgramsJson from '../infrastructure/programsJson'
 import { currentDateService } from '../infrastructure/currentDate'
@@ -22,7 +22,7 @@ export class ProgramService {
     return this._program.getById(id)
   }
 
-  public getFilteredPrograms(questionnaireData: QuestionnaireData): Result<ProgramType[], Error> {
+  public getFilteredPrograms(questionnaireData: QuestionnaireData): Result<ProgramTypeWithEligibility[], Error> {
     return this._program.getFilteredBy(questionnaireData)
   }
 

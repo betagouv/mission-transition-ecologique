@@ -2,7 +2,7 @@ import { CurrentDateProvider, ProgramRepository, RulesManager } from './spi'
 import { filterPrograms } from './filterPrograms'
 import { sortPrograms } from './sortPrograms'
 import { Result } from 'true-myth'
-import { ProgramType } from '@tee/data'
+import { ProgramType, ProgramTypeWithEligibility } from '@tee/data'
 import { Objective, QuestionnaireData } from '@tee/common'
 
 export default class ProgramFeatures {
@@ -24,7 +24,7 @@ export default class ProgramFeatures {
     return this._programRepository.getById(id)
   }
 
-  public getFilteredBy(questionnaireData: QuestionnaireData): Result<ProgramType[], Error> {
+  public getFilteredBy(questionnaireData: QuestionnaireData): Result<ProgramTypeWithEligibility[], Error> {
     const allPrograms = this._programRepository.getAll()
     if (!this._currentDateService || !this._rulesService) {
       return Result.err(new Error('currentDateService and rulesService should be defined to filter programs'))
