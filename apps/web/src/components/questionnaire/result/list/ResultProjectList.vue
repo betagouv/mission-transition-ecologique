@@ -29,26 +29,24 @@
       v-else
       :sorted-projects="sortedProjects"
     />
-    <transition
-      name="fade"
-      type="transition"
-      :duration="250"
-    >
-      <div
-        v-if="!showNoResults"
-        class="fr-grid-row fr-grid-row--center"
-      >
-        <div class="fr-container">
-          <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2">
+
+    <div class="fr-grid-row fr-grid-row--center">
+      <div class="fr-container">
+        <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2">
+          <transition
+            name="fade"
+            type="transition"
+            :duration="250"
+          >
             <OtherProjectCta
-              v-if="!otherProjectForm"
+              v-if="!otherProjectForm && !showNoResults && !navigationStore.hasSpinner"
               @click="openOtherProjectForm"
             />
             <OtherProjectForm v-else />
-          </div>
+          </transition>
         </div>
       </div>
-    </transition>
+    </div>
   </div>
 </template>
 
@@ -58,6 +56,7 @@ import { computed } from 'vue'
 import UsedTrack from '@/utils/track/usedTrack'
 import { useProgramStore } from '@/stores/program'
 import { Project as UtilsProject } from '@/utils/project/project'
+import { useNavigationStore } from '@/stores/navigation'
 
 interface ProjectListProps {
   filteredProjects?: Project[]
@@ -65,6 +64,7 @@ interface ProjectListProps {
 }
 const props = defineProps<ProjectListProps>()
 const otherProjectForm = ref<boolean>(false)
+const navigationStore = useNavigationStore()
 
 watch(
   () => props.filteredProjects,
