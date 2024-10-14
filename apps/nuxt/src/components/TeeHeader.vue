@@ -31,14 +31,14 @@ const quickLinks: TeeDsfrHeaderMenuLinkProps[] = [
     label: 'Catalogue',
     links: [
       {
-        id: RouteName.CatalogPrograms,
+        id: useId(),
         text: 'Catalogue des aides',
         to: {
           name: RouteName.CatalogPrograms
         }
       },
       {
-        id: RouteName.CatalogProjects,
+        id: useId(),
         text: 'Catalogue des projets',
         to: {
           name: RouteName.CatalogProjects

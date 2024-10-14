@@ -8,7 +8,7 @@
         <div class="fr-card__img">
           <img
             class="fr-responsive-img"
-            :src="`${Config.publicPath}${option.imageTop}`"
+            :src="option.imageTop"
             :alt="`image / ${option.label}`"
           />
         </div>
@@ -64,7 +64,6 @@
 </template>
 
 <script setup lang="ts">
-import Config from '@/config'
 import { type TrackOptionsUnion } from '@/types'
 import Translation from '@/tools/translation'
 

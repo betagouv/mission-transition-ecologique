@@ -27,9 +27,9 @@ onMounted(async () => {
 </script>
 
 <template>
-  <TeeDsfrConsent />
-  <TeeDsfrPersonalizeConsent />
   <div>
+    <TeeDsfrConsent />
+    <TeeDsfrPersonalizeConsent />
     <TeeHeader />
 <!--      <TeeMatomo />-->
       <NuxtPage/>

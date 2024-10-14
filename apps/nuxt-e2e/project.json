@@ -1,8 +1,8 @@
 {
-  "name": "nuxt-e2e",
+  "name": "@tee/nuxt-e2e",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/nuxt-e2e/src",
-  "implicitDependencies": ["nuxt"],
+  "implicitDependencies": ["@tee/nuxt"],
   "// targets": "to see all targets run: nx show project nuxt-e2e --web",
   "targets": {}
 }

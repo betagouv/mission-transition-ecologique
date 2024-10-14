@@ -15,6 +15,7 @@
         />
         <template v-else>
           <DsfrNavigation
+            :id="idNav"
             class="fr-hidden fr-unhidden-lg fr-mr-2w fr-mr-lg-0"
             :nav-items="[{ title: 'Catalogue', links: quickLink.links }]"
             aria-label="Sous Menu secondaire"
@@ -22,6 +23,7 @@
           <ul>
             <li
               v-for="(link, indexLink) in quickLink.links"
+              :id="link.id"
               :key="indexLink"
             >
               <DsfrHeaderMenuLink
@@ -40,6 +42,8 @@
 <script lang="ts" setup>
 import type { OhVueIcon as VIcon } from 'oh-vue-icons'
 import { DsfrHeaderMenuLink, DsfrNavigation, DsfrNavigationMenuLinkProps } from '@gouvminint/vue-dsfr'
+
+const idNav = useId()
 
 export type TeeDsfrHeaderMenuLinkProps = {
   button?: boolean

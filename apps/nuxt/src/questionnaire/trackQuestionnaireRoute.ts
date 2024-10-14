@@ -11,7 +11,7 @@ export const questionnaireRoute: Track = {
     bgColor: Color.yellow,
     title: { fr: 'En avant !' },
     bigTitle: false,
-    imageLeft: 'images/TEE-onboarding.png',
+    imageLeft: '/images/TEE-onboarding.png',
     description: {
       fr: 'Nous allons vous poser quelques questions pour pouvoir identifier les accompagnements et les financements dont vous pouvez bénéficier.'
     },
@@ -38,7 +38,7 @@ export const questionnaireRoute: Track = {
       },
       hintImage: { fr: '5 min. chrono !' },
       hintImageIcon: 'fr-icon-timer-line',
-      imageTop: 'images/tracks/je-ne-sais-pas-par-ou-commencer.svg',
+      imageTop: '/images/tracks/je-ne-sais-pas-par-ou-commencer.svg',
       next: {
         default: TrackId.Siret
       }
@@ -55,7 +55,7 @@ export const questionnaireRoute: Track = {
       },
       hintImage: { fr: '2 min. chrono !' },
       hintImageIcon: 'fr-icon-timer-line',
-      imageTop: 'images/tracks/j-ai-un-obectif.svg',
+      imageTop: '/images/tracks/j-ai-un-obectif.svg',
       next: {
         default: TrackId.Siret
       }

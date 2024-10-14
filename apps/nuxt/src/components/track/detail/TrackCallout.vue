@@ -13,7 +13,7 @@
         >
           <img
             class="fr-responsive-img"
-            :src="`${publicPath}${track.callout.imageLeft}`"
+            :src="track.callout.imageLeft"
             :alt="`image / callout`"
           />
         </div>
@@ -72,7 +72,7 @@
         >
           <img
             class="fr-responsive-img"
-            :src="`${publicPath}${track.callout.imageRight}`"
+            :src="track.callout.imageRight"
             :alt="`image / callout`"
           />
         </div>
@@ -82,7 +82,6 @@
 </template>
 
 <script setup lang="ts">
-import Config from '@/config'
 import type { Track } from '@/types'
 import Translation from '@/tools/translation'
 
@@ -90,6 +89,4 @@ interface Props {
   track: Track
 }
 defineProps<Props>()
-
-const publicPath = Config.publicPath
 </script>

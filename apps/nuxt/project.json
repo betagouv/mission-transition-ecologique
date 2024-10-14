@@ -1,14 +1,14 @@
 {
-  "name": "nuxt",
+  "name": "@tee/nuxt",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "sourceRoot": "apps/nuxt/src",
-  "// targets": "to see all targets run: nx show project nuxt --web",
+  "// targets": "to see all targets run: nx show project @tee/nuxt --web",
   "targets": {
     "sass-watch": {
       "executor": "nx:run-commands",
       "options": {
-        "cwd": "apps/web",
+        "cwd": "apps/nuxt",
         "commands": [
           "sass --pkg-importer=node --load-path=../../node_modules --watch src/assets/main.scss:src/assets/main.css"
         ]
@@ -17,7 +17,7 @@
     "sass-lint": {
       "executor": "nx:run-commands",
       "options": {
-        "cwd": "apps/web",
+        "cwd": "apps/nuxt",
         "commands": [
           "stylelint \"**/*.{scss,vue}\""
         ]
