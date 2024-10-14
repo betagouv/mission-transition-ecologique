@@ -1,4 +1,4 @@
-import { ProgramType, ThemeId } from '@tee/data'
+import { ProgramType } from '@tee/data'
 import { PublicodeObjective, QuestionnaireRoute, StructureSize } from '../questionnaire/types/types'
 
 export type Opportunity = ContactDetails & OpportunityDetails
@@ -26,7 +26,7 @@ export interface OpportunityDetailsBase {
   questionnaireRoute?: QuestionnaireRoute
   priorityObjectives?: PublicodeObjective[]
   otherData?: string
-  theme: ThemeId
+  theme: string
 }
 export enum OpportunityType {
   Program = 'program',

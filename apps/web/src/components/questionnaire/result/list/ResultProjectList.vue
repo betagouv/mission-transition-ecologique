@@ -30,7 +30,10 @@
       :sorted-projects="sortedProjects"
     />
 
-    <div class="fr-grid-row fr-grid-row--center">
+    <div
+      v-if="!navigationStore.hasSpinner"
+      class="fr-grid-row fr-grid-row--center"
+    >
       <div class="fr-container">
         <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2">
           <transition
@@ -39,7 +42,7 @@
             :duration="250"
           >
             <OtherProjectCta
-              v-if="!otherProjectForm && !showNoResults && !navigationStore.hasSpinner"
+              v-if="!otherProjectForm && !showNoResults"
               @click="openOtherProjectForm"
             />
             <OtherProjectForm v-else />
