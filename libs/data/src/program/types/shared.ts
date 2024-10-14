@@ -23,5 +23,6 @@ export enum ProgramOperatorType {
 export enum ProgramEligibilityType {
   Eligible = 'eligible',
   PartiallyEligible = 'partially-eligible',
-  NotEligible = 'not-eligible'
+  NotEligible = 'not-eligible',
+  Unknown = 'unknown'
 }

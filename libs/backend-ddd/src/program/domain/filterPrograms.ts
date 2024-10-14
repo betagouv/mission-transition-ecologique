@@ -23,17 +23,23 @@ export const filterPrograms = (
   currentDate: string,
   rulesService: RulesManager
 ): Result<ProgramTypeWithEligibility[], Error> => {
+  console.log('questionnaireData', inputData)
   const filteredPrograms: ProgramTypeWithEligibility[] = []
 
   for (const program of programs) {
+    console.log('program', program.id)
     const evaluation = rulesService.evaluate(FILTERING_RULE_NAME, program, inputData, currentDate)
 
     if (evaluation.isErr) {
       return Result.err(addErrorDetails(evaluation.error, program.id))
     }
 
-    if (shouldKeepProgram(evaluation) || inputData.onlyEligible === undefined || !inputData.onlyEligible) {
-      filteredPrograms.push(setEligibility(program, shouldKeepProgram(evaluation)))
+    console.log('evaluation', evaluation.value)
+
+    const programWithElibibility = setEligibility(program, evaluation.value)
+
+    if (shouldKeepProgram(programWithElibibility.eligibility, inputData.onlyEligible)) {
+      filteredPrograms.push()
     }
   }
 
@@ -46,17 +52,20 @@ const addErrorDetails = (err: Error, programName: string): Error => {
   })
 }
 
-const shouldKeepProgram = (evaluation: Result<boolean | undefined, Error>): boolean => {
-  const isPositive = evaluation.isOk && evaluation.value
-  const isUndefined = evaluation.isOk && typeof evaluation.value === 'undefined'
+const shouldKeepProgram = (programEligibility: ProgramEligibilityType, onlyEligible: boolean | undefined): boolean => {
+  if (!onlyEligible || typeof onlyEligible === 'undefined') {
+    return true
+  }
 
-  return isPositive || isUndefined
+  return programEligibility === ProgramEligibilityType.Eligible || programEligibility === ProgramEligibilityType.PartiallyEligible
 }
 
-const setEligibility = (program: ProgramType, isEligible: boolean): ProgramTypeWithEligibility => {
+const setEligibility = (program: ProgramType, isEligible: boolean | undefined): ProgramTypeWithEligibility => {
   let eligibility: ProgramEligibilityType
 
-  if (isEligible && program["conditions d'éligibilité"]["autres critères d'éligibilité"]) {
+  if (typeof isEligible === 'undefined') {
+    eligibility = ProgramEligibilityType.Unknown
+  } else if (isEligible && program["conditions d'éligibilité"]["autres critères d'éligibilité"]) {
     eligibility = ProgramEligibilityType.PartiallyEligible
   } else if (isEligible) {
     eligibility = ProgramEligibilityType.Eligible
