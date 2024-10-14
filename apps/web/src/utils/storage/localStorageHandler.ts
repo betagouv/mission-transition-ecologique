@@ -1,8 +1,9 @@
 import { StorageHandlerInterface } from '@/utils/storage/StorageHandlerInterface'
 import { StorageDataType } from '@/types/storageType'
+import { EstablishmentFront } from '@tee/common'
 
 export class LocalStorageHandler implements StorageHandlerInterface {
-  setItem(key: string, value: string): void {
+  setItem(key: string, value: string | EstablishmentFront): void {
     try {
       localStorage.setItem(key, JSON.stringify(value))
     } catch (e) {

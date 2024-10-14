@@ -1,46 +1,55 @@
-import { CompanyDataId, QuestionnaireDataKey } from '@/types/companyDataType'
+import { CompanyDataStorageKey } from '@/types/companyDataType'
 import { LocalStorageHandler } from '@/utils/storage/localStorageHandler'
+import { EstablishmentFront, StructureSize } from '@tee/common'
 import { StorageDataType } from '@/types/storageType'
 
 export default class CompanyDataStorage {
   private static readonly _storageHandler = new LocalStorageHandler()
 
-  private static readonly _data = ref<StorageDataType>(this._storageHandler.getAll() || {})
+  private static readonly _data = ref(this._updateData())
 
   static getData() {
     return this._data
   }
 
   static hasData() {
-    return this._data ? Object.entries(this._data).some((datum) => datum !== null) : false
+    return this._data.value ? Object.entries(this._data.value).some((datum) => datum !== null) : false
   }
 
-  static setSiret(value: any) {
-    this.setItem(CompanyDataId.Siret, value)
+  static setSiret(value: EstablishmentFront) {
+    this.setItem(CompanyDataStorageKey.Siret, value)
   }
 
-  static setSize(value: string) {
-    this.setItem(CompanyDataId.Size, value)
+  static setSize(value: StructureSize) {
+    this.setItem(CompanyDataStorageKey.Size, value)
   }
 
-  static setItem(key: QuestionnaireDataKey, value: string): void {
+  static setItem(key: CompanyDataStorageKey, value: string | EstablishmentFront): void {
     this._storageHandler.setItem(key, value)
     this._updateData()
   }
 
-  static getItem(key: QuestionnaireDataKey): string | null {
+  static getItem(key: CompanyDataStorageKey): string | EstablishmentFront | null {
     return this._storageHandler.getItem(key)
   }
 
-  static removeItem(key: QuestionnaireDataKey): void {
+  static removeItem(key: CompanyDataStorageKey): void {
     this._storageHandler.removeItem(key)
   }
 
-  static clear(): void {
-    this._storageHandler.clear()
-  }
+  private static _updateData(): Ref<StorageDataType> {
+    const siret = this.getItem(CompanyDataStorageKey.Siret)
+    const size = this.getItem(CompanyDataStorageKey.Size)
+    const data: Ref<StorageDataType> = ref({})
 
-  private static _updateData() {
-    this._data.value = this._storageHandler.getAll() || {}
+    if (siret) {
+      data.value[CompanyDataStorageKey.Siret] = siret
+    }
+
+    if (size) {
+      data.value[CompanyDataStorageKey.Size] = size
+    }
+
+    return data
   }
 }

@@ -17,7 +17,7 @@ export default class TrackSiret {
     forceKeep = false
   ): TrackOptionItem {
     if (questionnaireData) {
-      TrackSiret.saveData(option, questionnaireData)
+      this.saveData(option, questionnaireData)
     }
 
     return {
@@ -34,7 +34,7 @@ export default class TrackSiret {
   static saveData(option: TrackOptionsUnion, questionnaireData?: EstablishmentFront) {
     const data = questionnaireData || option.questionnaireData
 
-    CompanyDataStorage.setSiret(data)
+    CompanyDataStorage.setSiret(data as EstablishmentFront)
   }
 
   static async getOptionBySiret(track: Track, siret: string): Promise<TrackOptionsUnion | undefined> {

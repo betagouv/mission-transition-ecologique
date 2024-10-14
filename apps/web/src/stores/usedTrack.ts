@@ -4,6 +4,7 @@ import {
   type NextTrackRuleSet,
   type QuestionnaireData,
   RouteName,
+  StructureSize,
   type Track,
   TrackComponent,
   TrackId,
@@ -109,7 +110,7 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
         useNavigationStore().updateSearchParam({ name: current.value.id, value: value })
 
         if (current.value.id === TrackId.StructureWorkforce) {
-          CompanyDataStorage.setSize(value as string)
+          CompanyDataStorage.setSize(value as StructureSize)
         }
       }
     }

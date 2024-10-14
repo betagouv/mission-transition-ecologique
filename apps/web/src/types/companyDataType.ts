@@ -1,8 +1,4 @@
-import { QuestionnaireData } from '@tee/common'
-
-export enum CompanyDataId {
+export enum CompanyDataStorageKey {
   Siret = 'siret',
   Size = 'structure_size'
 }
-
-export type QuestionnaireDataKey = keyof QuestionnaireData
