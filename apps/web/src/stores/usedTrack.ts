@@ -250,6 +250,9 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
       })
     })
 
+    if (!useNavigationStore().isCatalog()) {
+      questionnaireData.onlyEligible = true
+    }
     return questionnaireData
   }
 

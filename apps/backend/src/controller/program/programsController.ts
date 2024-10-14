@@ -1,6 +1,5 @@
 import { Controller, Get, Path, Queries, Res, Route, SuccessResponse, TsoaResponse } from 'tsoa'
 import { OpenAPISafeProgram } from './types'
-import { Err } from 'true-myth/dist/es/result'
 import { QuestionnaireData } from '@tee/common'
 import { ErrorJSON, Monitor, ProgramService } from '@tee/backend-ddd'
 @SuccessResponse('200', 'OK')
@@ -25,7 +24,7 @@ export class ProgramsController extends Controller {
 
     if (programsResult.isErr) {
       Monitor.error('Error in get programs', { questionnaireData, error: programsResult.error })
-      this.throwErrorResponse(programsResult, requestFailedResponse)
+      this.throwErrorResponse(programsResult.error, requestFailedResponse)
       return
     }
 
@@ -40,22 +39,27 @@ export class ProgramsController extends Controller {
    * @summary Get relevant programs given input data
    */
   @Get('{programId}')
-  public getOne(@Path() programId: string, @Res() notFoundResponse: TsoaResponse<404, ErrorJSON>): OpenAPISafeProgram {
+  public getOne(
+    @Path() programId: string,
+    @Queries() questionnaireData: QuestionnaireData,
+    @Res() requestFailedResponse: TsoaResponse<500, ErrorJSON>
+  ): OpenAPISafeProgram | void {
     this.setStatus(200)
     const programService = new ProgramService()
-    const program = programService.getById(programId)
+    const program = programService.getOneWithEligiblity(programId, questionnaireData)
 
-    if (!program) {
+    if (program.isErr) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-      Monitor.error('Error in get Program id', { programId })
-      return notFoundResponse(404, { message: `Program with id "${programId}" could not be found` })
+      Monitor.error('Error in getOne Program', { questionnaireData, error: program.error })
+      this.throwErrorResponse(program.error, requestFailedResponse)
+      return
     }
 
-    return programService.convertDomainToFront(program)
+    return programService.convertDomainToFront(program.value)
   }
 
-  private throwErrorResponse(programsResult: Err<OpenAPISafeProgram[], Error>, requestFailedResponse: TsoaResponse<500, ErrorJSON>) {
-    const err = programsResult.error
+  private throwErrorResponse(error: Error, requestFailedResponse: TsoaResponse<500, ErrorJSON>) {
+    const err = error
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return requestFailedResponse(500, { message: `Server internal error: ${err.message}` })

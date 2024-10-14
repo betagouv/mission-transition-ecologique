@@ -4,6 +4,7 @@ import { sortPrograms } from './sortPrograms'
 import { Result } from 'true-myth'
 import { ProgramType, ProgramTypeWithEligibility } from '@tee/data'
 import { Objective, QuestionnaireData } from '@tee/common'
+import { Monitor } from '../../common'
 
 export default class ProgramFeatures {
   private _programRepository: ProgramRepository
@@ -24,13 +25,32 @@ export default class ProgramFeatures {
     return this._programRepository.getById(id)
   }
 
+  public getOneWithEligibility(id: string, questionnaireData: QuestionnaireData): Result<ProgramTypeWithEligibility, Error> {
+    const program = this.getById(id)
+    if (!program) {
+      Monitor.warning('Requested Program Id unknown', { id })
+      return Result.err(new Error('program Id Inconnu'))
+    }
+
+    questionnaireData.onlyEligible = false
+    const filterResult = this.filterProgramsArray(questionnaireData, [program])
+    if (filterResult.isErr) {
+      return Result.err(filterResult.error)
+    }
+    return Result.ok(filterResult.value[0])
+  }
+
   public getFilteredBy(questionnaireData: QuestionnaireData): Result<ProgramTypeWithEligibility[], Error> {
     const allPrograms = this._programRepository.getAll()
+    return this.filterProgramsArray(questionnaireData, allPrograms)
+  }
+
+  private filterProgramsArray(questionnaireData: QuestionnaireData, programs: ProgramType[]): Result<ProgramTypeWithEligibility[], Error> {
     if (!this._currentDateService || !this._rulesService) {
       return Result.err(new Error('currentDateService and rulesService should be defined to filter programs'))
     }
 
-    let filteredPrograms = filterPrograms(allPrograms, questionnaireData, this._currentDateService.get(), this._rulesService)
+    let filteredPrograms = filterPrograms(programs, questionnaireData, this._currentDateService.get(), this._rulesService)
     const route = questionnaireData.questionnaire_route
     if (route) {
       filteredPrograms = filteredPrograms.map((programs) => sortPrograms(programs, route))

@@ -22,11 +22,15 @@ export class ProgramService {
     return this._program.getById(id)
   }
 
+  public getOneWithEligiblity(id: string, questionnaireData: QuestionnaireData): Result<ProgramTypeWithEligibility, Error> {
+    return this._program.getOneWithEligibility(id, questionnaireData)
+  }
+
   public getFilteredPrograms(questionnaireData: QuestionnaireData): Result<ProgramTypeWithEligibility[], Error> {
     return this._program.getFilteredBy(questionnaireData)
   }
 
-  public convertDomainToFront(program: ProgramType) {
+  public convertDomainToFront(program: ProgramTypeWithEligibility) {
     return new FrontConverter().convertDomainToFront(program)
   }
 
