@@ -10,17 +10,7 @@
       class="fr-grid-row"
       :class="{ 'fr-grid-row--center': hasSpinner }"
     >
-      <TeeSpinner
-        v-if="hasSpinner"
-        class="fr-grid-row--center"
-        scale="6"
-      />
-      <TeeError
-        v-else-if="hasError"
-        :mailto="Contact.email"
-        :email="Contact.email"
-      />
-      <div v-else>
+      <div>
         <div class="fr-col-12 fr-col-justify--left fr-mt-3v">
           <ThemeFilter />
         </div>
@@ -48,9 +38,16 @@
             </div>
           </div>
         </div>
-        <TeeNoResult
-          v-else
+        <TeeSpinner
+          v-if="hasSpinner"
+          class="fr-col-12"
+          scale="6"
+        />
+        <TeeListNoResults
+          v-else-if="showNoResultsComponent"
+          :has-error="hasError"
           message="Aucun projet n'a pu être identifiée avec les critères choisis..."
+          :count-items="countProjects"
         />
       </div>
     </div>
@@ -61,9 +58,7 @@
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
 import { useProjectStore } from '@/stores/project'
-import { type ProgramData, Project as ProjectType, TrackId, ThemeId } from '@/types'
-import Contact from '@/utils/contact'
-import Analytics from '@/utils/analytic/analytics'
+import { type ProgramData, Project as ProjectType, ThemeId } from '@/types'
 import { MetaSeo } from '@/utils/metaSeo'
 import { Project } from '@/utils/project/project'
 import { computed, onBeforeMount } from 'vue'
@@ -93,6 +88,14 @@ const hasThemeCard = computed(() => {
   return programStore.hasThemeTypeSelected() && !hasSpinner.value
 })
 
+const showNoResultsComponent = computed(() => {
+  return hasSpinner.value || hasError.value || !countProjects.value
+})
+
+const countProjects = computed(() => {
+  return filteredProjects.value?.length || 0
+})
+
 const hasFilteredProjects = computed(() => {
   return filteredProjects.value?.length
 })
@@ -111,9 +114,6 @@ onBeforeMount(async () => {
   }
 
   navigationStore.hasSpinner = false
-
-  // analytics / send event
-  Analytics.sendEvent(TrackId.Results, 'show_results_catalog_projects')
 })
 
 onBeforeRouteLeave(() => {
