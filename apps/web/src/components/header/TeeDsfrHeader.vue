@@ -111,7 +111,7 @@
                 />
               </template>
             </div>
-            <div class="fr-my-auto fr-ml-2v fr-hidden fr-unhidden-lg">
+            <div class="fr-my-auto fr-px-4v fr-hidden fr-unhidden-lg">
               <RegisterCTA />
             </div>
             <div

@@ -51,7 +51,7 @@ const companyName = 'La meilleure entreprise de France'
 #register-text {
   text-overflow: ellipsis;
   overflow: hidden;
-  max-width: 100px;
+  max-width: 150px;
   font-size: 0.875rem;
   display: inherit;
   white-space: nowrap;
@@ -59,8 +59,9 @@ const companyName = 'La meilleure entreprise de France'
 
 .register-badge {
   display: flex;
-  height: 0.8rem;
-  width: 0.8rem;
+  height: 1rem;
+  width: 1rem;
+  padding: 0.1rem;
   position: absolute;
   align-items: center;
 }
@@ -70,8 +71,8 @@ const companyName = 'La meilleure entreprise de France'
 }
 
 #badge-mobile {
-  right: 14px;
-  top: 4px;
+  right: 12px;
+  top: 2px;
 }
 
 #base-badge {
