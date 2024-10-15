@@ -262,7 +262,7 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
       Object.entries(companyData).forEach(([key, value]) => {
         if (typeof value === 'string') {
           questionnaireData[key] ??= value
-        } else {
+        } else if (value !== null) {
           Object.entries(value).forEach(([subKey, subValue]) => {
             questionnaireData[subKey] ??= subValue
           })

@@ -1,9 +1,8 @@
 import { StorageHandlerInterface } from '@/utils/storage/StorageHandlerInterface'
 import { StorageDataType } from '@/types/storageType'
-import { EstablishmentFront } from '@tee/common'
 
 export class LocalStorageHandler implements StorageHandlerInterface {
-  setItem(key: string, value: string | EstablishmentFront): void {
+  setItem(key: string, value: unknown): void {
     try {
       localStorage.setItem(key, JSON.stringify(value))
     } catch (e) {
@@ -11,12 +10,11 @@ export class LocalStorageHandler implements StorageHandlerInterface {
     }
   }
 
-  getItem(key: string): string | null {
+  getItem(key: string): unknown {
     try {
       const item = localStorage.getItem(key)
       return item ? JSON.parse(item) : null
     } catch (e) {
-      console.log('Error while retrieving localStorage item', e)
       return null
     }
   }
@@ -33,7 +31,6 @@ export class LocalStorageHandler implements StorageHandlerInterface {
     try {
       return this.__parseLocalStorage()
     } catch (e) {
-      console.log('Error while retrieving all localStorage items', e)
       return null
     }
   }
