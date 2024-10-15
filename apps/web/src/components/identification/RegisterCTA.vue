@@ -34,10 +34,13 @@
       />
     </template>
   </TeeDsfrButton>
+  <RegisterModal />
 </template>
 <script setup lang="ts">
 const isIdentified = ref<boolean>(false)
+const modalStatus = ref<boolean>(false)
 const openModal = () => {
+  modalStatus.value = !modalStatus.value
   isIdentified.value = !isIdentified.value
 }
 const companyName = 'La meilleure entreprise de France'
