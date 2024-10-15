@@ -255,11 +255,6 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
         })
       })
     })
-
-    if (!('structure_size' in questionnaireData)) {
-      questionnaireData.structure_size = StructureSize.EI
-    }
-
     return questionnaireData
   }
 
