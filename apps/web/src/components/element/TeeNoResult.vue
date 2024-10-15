@@ -1,15 +1,15 @@
 <template>
-  <div class="fr-grid-row fr-grid-row--center fr-my-10v">
-    <div class="fr-col-5">
+  <div class="fr-grid-row fr-grid-row--center fr-my-md-10v">
+    <div class="fr-col-5 fr-col-sm-12">
       <img
-        class="fr-responsive-img"
+        class="fr-responsive-img no-result-img"
         src="/images/tracks/no-results.png"
         :alt="`image / pas de résultat`"
       />
     </div>
     <div
       v-if="message"
-      class="fr-col-8"
+      class="fr-col-12 fr-col-sm-5 fr-px-4v"
     >
       <p class="fr-text-center fr-h5 fr-text--blue-france fr-mt-6v">
         {{ message }}
@@ -27,3 +27,9 @@ interface Props {
 }
 defineProps<Props>()
 </script>
+<style lang="scss" scoped>
+.no-result-img {
+  max-height: 200px;
+  object-fit: contain;
+}
+</style>
