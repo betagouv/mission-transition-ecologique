@@ -24,7 +24,7 @@
           >
             <TeeButtonLink
               v-if="link.isButton"
-              :to="getRouteToUrl(link.url)"
+              :to="getRouteToUrl(link.url as RouteName)"
               size="sm"
               secondary
               class="fr-ml-sm-2v"
@@ -66,7 +66,7 @@ export interface TeeEligibilityBarMessage {
 }
 
 export interface TeeEligibilityBarLink {
-  url: string
+  url: string | RouteName
   label: string
   isButton: boolean
 }
