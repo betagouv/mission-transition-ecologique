@@ -73,6 +73,7 @@ const companyName = 'La meilleure entreprise de France'
   right: 14px;
   top: 4px;
 }
+
 #base-badge {
   bottom: 16px;
   left: 13px;
