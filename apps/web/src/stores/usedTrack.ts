@@ -3,7 +3,6 @@ import { useTrackStore } from '@/stores/track'
 import {
   type NextTrackRuleSet,
   type QuestionnaireData,
-  RouteName,
   StructureSize,
   type Track,
   TrackComponent,
@@ -257,17 +256,8 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
       })
     })
 
-    if (CompanyDataStorage.hasData() && !useNavigationStore().isByRouteName([RouteName.Questionnaire, RouteName.QuestionnaireResult])) {
-      const companyData = CompanyDataStorage.getData().value
-      Object.entries(companyData).forEach(([key, value]) => {
-        if (typeof value === 'string') {
-          questionnaireData[key] ??= value
-        } else if (value !== null) {
-          Object.entries(value).forEach(([subKey, subValue]) => {
-            questionnaireData[subKey] ??= subValue
-          })
-        }
-      })
+    if (!('structure_size' in questionnaireData)) {
+      questionnaireData.structure_size = StructureSize.EI
     }
 
     return questionnaireData

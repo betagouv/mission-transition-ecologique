@@ -38,7 +38,7 @@
         </div>
       </div>
       <DsfrHighlight
-        v-if="isCatalogDetail && !hasCompanyData"
+        v-if="isCatalogDetail"
         class="fr-highlight-border--yellow fr-highlight-bg--yellow--lightness fr-m-0 fr-p-0"
         :large="true"
       >
@@ -94,7 +94,6 @@ import { RouteName } from '@/types/routeType'
 import { type RouteLocationRaw } from 'vue-router'
 import { useNavigationStore } from '@/stores/navigation'
 import Translation from '@/utils/translation'
-import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 import Opportunity from '@/utils/opportunity'
 
 interface Props {
@@ -106,7 +105,6 @@ const programStore = useProgramStore()
 const navigationStore = useNavigationStore()
 const isCatalogDetail = navigationStore.isCatalogProjectDetail()
 const TeeProjectFormContainer = ref<HTMLElement | null | undefined>(null)
-const hasCompanyData = CompanyDataStorage.hasData()
 
 const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)

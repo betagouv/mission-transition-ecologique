@@ -13,7 +13,7 @@ export default class CompanyDataStorage {
   }
 
   static hasData() {
-    return this._data.value ? Object.entries(this._data.value).some((datum) => datum !== null) : false
+    return this._data.value[CompanyDataStorageKey.Siret] !== null || this._data.value[CompanyDataStorageKey.Size] !== null
   }
 
   static setSiret(value: EstablishmentFront) {
