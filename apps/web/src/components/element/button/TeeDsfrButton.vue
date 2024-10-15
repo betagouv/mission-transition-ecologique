@@ -17,7 +17,7 @@ const props = defineProps<DsfrButtonPropsWithLoading>()
 
 const iconComputed = computed<string | Record<string, string> | undefined>(() => {
   if (props.loading) {
-    return { name: 'ri-loader-4-line', animation: 'spin' }
+    return { name: 'fr-icon-refresh-line', animation: 'spin' }
   }
 
   return props?.icon as string | Record<string, string> | undefined

@@ -6,7 +6,7 @@
     tertiary
     no-outline
     icon-only
-    icon="ri-arrow-left-line"
+    icon="fr-icon-arrow-left-line"
     @click="formIsSent = !formIsSent"
   />
   <!-- FORM -->
@@ -48,7 +48,7 @@
           <TeeDsfrButton
             :label="Translation.t('send')"
             :disabled="!isFormFilled || !isFormValid"
-            icon="ri-arrow-right-line"
+            icon="fr-icon-arrow-right-line"
             icon-right
             :loading="isLoading"
             @click="saveForm()"
