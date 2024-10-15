@@ -34,7 +34,7 @@
       />
     </template>
   </TeeDsfrButton>
-  <RegisterModal />
+  <RegisterModal v-show="modalStatus" />
 </template>
 <script setup lang="ts">
 const isIdentified = ref<boolean>(false)
