@@ -14,20 +14,8 @@ const props = defineProps<{
   program: ProgramType | undefined
 }>()
 
-const getProgramEligibility: ComputedRef<ProgramEligibilityType> = computed(() => {
-  const conditions = props.program?.["conditions d'éligibilité"]
-
-  if (conditions) {
-    if (conditions["autres critères d'éligibilité"]) {
-      return ProgramEligibilityType.PartiallyEligible
-    }
-    return ProgramEligibilityType.Eligible
-  }
-  return ProgramEligibilityType.NotEligible
-})
-
 const getEligibilityMessage: ComputedRef<TeeEligibilityBarMessage> = computed(() => {
-  switch (getProgramEligibility.value) {
+  switch (props.program?.eligibility) {
     case ProgramEligibilityType.Eligible:
       return {
         default: 'Votre entreprise remplit les critères pour bénéficier de cette aide.',
@@ -51,11 +39,11 @@ const getEligibilityMessage: ComputedRef<TeeEligibilityBarMessage> = computed(()
 })
 
 const getEligibilityColor: ComputedRef<Color> = computed(() => {
-  return getProgramEligibility.value === ProgramEligibilityType.NotEligible ? Color.red : Color.greenLightnessed
+  return props.program?.eligibility === ProgramEligibilityType.NotEligible ? Color.red : Color.greenLightnessed
 })
 
 const getEligibilityLink: ComputedRef<TeeEligibilityBarLink | undefined> = computed(() => {
-  switch (getProgramEligibility.value) {
+  switch (props.program?.eligibility) {
     case ProgramEligibilityType.PartiallyEligible:
       return {
         url: 'program-details-accordion-group',
