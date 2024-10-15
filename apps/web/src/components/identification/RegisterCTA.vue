@@ -1,38 +1,80 @@
 <template>
+  <DsfrButton
+    :class="isIdentified ? 'fr-btn--tertiary-no-outline' : 'fr-text--yellow'"
+    class="fr-hidden fr-unhidden-lg"
+    @click="openModal"
+  >
+    <template #default>
+      <span
+        v-if="isIdentified"
+        class="fr-icon-account-circle-fill register-icon-profile"
+      >
+        <span
+          id="base-badge"
+          class="fr-text--blue-france fr-radius-a--2v fr-bg--green fr-icon-check-line register-badge"
+        />
+      </span>
+
+      <span
+        id="register-text"
+        class="fr-pl-2v"
+        >{{ isIdentified ? companyName : 'Vous êtes...?' }}
+      </span>
+    </template>
+  </DsfrButton>
   <TeeDsfrButton
-    class="fr-text--yellow fr-hidden fr-unhidden-md"
-    label="Vous êtes...?"
-  />
-  <TeeDsfrButton
-    id="register-mobile-button"
-    class="fr-icon-account-circle-fill fr-p-0 fr-btn--lg fr-btn--tertiary-no-outline fr-hidden-md"
+    class="register-icon-profile fr-icon-account-circle-fill fr-p-0 fr-btn--lg fr-btn--tertiary-no-outline fr-hidden-lg"
+    @click="openModal"
   >
     <template #badge>
       <span
-        id="register-mobile-badge"
+        id="badge-mobile"
         :class="isIdentified ? 'fr-bg--green fr-icon-check-line' : 'fr-bg--yellow fr-icon-question-mark'"
-        class="fr-text--blue-france fr-icon--sm fr-radius-a--2v"
+        class="fr-text--blue-france fr-radius-a--2v register-badge"
       />
     </template>
   </TeeDsfrButton>
 </template>
 <script setup lang="ts">
-const isIdentified = computed(() => {
-  return true
-})
+const isIdentified = ref<boolean>(false)
+const openModal = () => {
+  isIdentified.value = !isIdentified.value
+}
+const companyName = 'La meilleure entreprise de France'
 </script>
 <style lang="scss" scoped>
-#register-mobile-button {
+.register-icon-profile {
   position: relative;
+  float: left;
 }
 
-#register-mobile-badge {
+#register-text {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 100px;
+  font-size: 0.875rem;
+  display: inherit;
+  white-space: nowrap;
+}
+
+.register-badge {
   display: flex;
-  height: 1rem;
-  width: 1rem;
+  height: 0.8rem;
+  width: 0.8rem;
   position: absolute;
-  right: 8px;
   align-items: center;
-  top: 3px;
+}
+
+.register-badge::before {
+  width: 0.8rem;
+}
+
+#badge-mobile {
+  right: 14px;
+  top: 4px;
+}
+#base-badge {
+  bottom: 16px;
+  left: 13px;
 }
 </style>

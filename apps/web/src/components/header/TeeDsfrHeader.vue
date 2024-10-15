@@ -42,7 +42,7 @@
                   :data-fr-opened="searchModalOpened"
                   @click.prevent.stop="showSearchModal()"
                 />
-                <div class="fr-hidden-md">
+                <div class="fr-hidden-lg">
                   <RegisterCTA />
                 </div>
                 <button
@@ -111,7 +111,7 @@
                 />
               </template>
             </div>
-            <div class="fr-my-auto fr-ml-2v fr-hidden fr-unhidden-md">
+            <div class="fr-my-auto fr-ml-2v fr-hidden fr-unhidden-lg">
               <RegisterCTA />
             </div>
             <div

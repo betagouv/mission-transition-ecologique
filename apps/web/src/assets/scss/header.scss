@@ -11,6 +11,8 @@
     button.fr-nav__btn {
       color: setting.$blue-france;
       font-weight: 500;
+      min-height: 2rem;
+      padding: 0.5rem 1rem;
     }
 
     .fr-menu {

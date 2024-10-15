@@ -11,7 +11,7 @@
         <li>
           <DsfrHeaderMenuLink
             v-if="!quickLink.links"
-            class="fr-mr-md-2w fr-p-md-2w"
+            class="fr-mr-md-2w fr-p-2v"
             v-bind="quickLink"
             @click="handleClick($event, quickLink)"
           />
