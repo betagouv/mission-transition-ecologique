@@ -307,6 +307,20 @@ onBeforeMount(async () => {
     linkedProjects.value = Program.getLinkedProjects(program.value, projectResult.value)
   }
 
+  if (program.value) {
+    if (navigationStore.isByRouteName(RouteName.CatalogProgramFromCatalogProjectDetail)) {
+      useHead({
+        link: [
+          {
+            rel: 'canonical',
+            href: navigationStore.getAbsoluteUrlByRouteName(RouteName.CatalogProgramDetail, {
+              programId: program.value.id
+            })
+          }
+        ]
+      })
+    }
+  }
   useSeoMeta(MetaSeo.get(program.value?.titre, program.value?.description, program.value?.illustration))
 
   useNavigationStore().hasSpinner = false
