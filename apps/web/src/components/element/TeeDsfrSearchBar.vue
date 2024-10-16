@@ -9,7 +9,7 @@
     </label>
     <span
       v-if="option.hintLabel"
-      class="fr-hint-text fr-text--white fr-mb-2v"
+      class="fr-hint-text fr-mb-2v"
     >
       {{ option?.hintLabel?.[Translation.lang] }}
     </span>

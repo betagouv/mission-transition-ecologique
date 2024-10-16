@@ -8,7 +8,7 @@ export const frDict = {
   close: 'Fermer',
   send: 'Envoyer',
   modify: 'modifier',
-  or: 'Ou',
+  or: 'ou',
   footer: {
     thisApplicationAndIts: 'Cette application et son',
     sourceCode: 'code source',
