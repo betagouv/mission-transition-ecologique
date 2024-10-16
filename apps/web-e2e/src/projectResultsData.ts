@@ -113,7 +113,7 @@ export const tests = [
   {
     id: 2,
     url: 'questionnaire/resultat?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=78893947800020&locaux=locataire&mobilite=oui&matieres-premieres=oui&tri-dechets=oui&dechets=oui&gestion-eau=oui&energie=oui&audit=non#questionnaire-resultat',
-    count: 66,
+    count: 64,
     value: [
       'Diagnostic à 360° sur la transition écologique',
       'Sensibilisation des équipes',
@@ -132,7 +132,6 @@ export const tests = [
       'Recrutement',
       'Tri des déchets',
       "Acquisition d'un véhicule propre",
-      'Eclairage LED',
       'Récupérateur d’eau de pluie',
       'Plan d’adaptation au dérèglement climatique',
       'Pompe à chaleur',
@@ -165,7 +164,6 @@ export const tests = [
       'Recrutement',
       'Tri des déchets',
       "Acquisition d'un véhicule propre",
-      'Eclairage LED',
       'Récupérateur d’eau de pluie',
       'Plan d’adaptation au dérèglement climatique',
       'Pompe à chaleur',
