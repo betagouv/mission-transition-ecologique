@@ -1,6 +1,6 @@
 <template>
   <div
-    id="eligibility-criteria-bar"
+    id="eligibility-bar"
     ref="eligibilityCriteria"
     :class="bgClass"
   >
@@ -29,13 +29,13 @@
               secondary
               class="fr-ml-sm-2v"
             >
-              {{ link.label }}
+              {{ getLinkLabel() }}
             </TeeButtonLink>
             <a
               v-else
               :href="link.url"
               @click.prevent="scrollTo(link.url)"
-              >{{ getLinkLabel }}</a
+              >{{ getLinkLabel() }}</a
             >
           </span>
         </div>
@@ -103,10 +103,9 @@ const bgClass = computed(() => {
 })
 
 const scrollTo = (id: string) => {
-  console.log(id)
   const element = document.getElementById(id)
   if (element) {
-    Scroll.to(element) //TODO: prendre en compte la height de la EligiibilityBar
+    Scroll.toWithTopBarOffset(element)
   }
 }
 
