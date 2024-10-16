@@ -15,8 +15,8 @@
           @select-establishment="updateEstablishment"
         />
         <RegisterDetailsInfos
-          v-if="registerStep === 2 && profileData.company"
-          :company="profileData.company"
+          v-if="registerStep === 2 && establishment"
+          :company="establishment"
         />
       </div>
     </div>
@@ -26,14 +26,10 @@
 import Translation from '@/utils/translation'
 import { EstablishmentFront } from '@/types'
 
-interface ProfileData {
-  company: EstablishmentFront | undefined
-}
-
-const profileData: ProfileData = { company: undefined }
+const establishment = ref<EstablishmentFront | undefined>()
 const registerStep = ref<number>(1)
 const updateEstablishment = (selectedEstablishment: EstablishmentFront) => {
-  profileData.company = selectedEstablishment
+  establishment.value = selectedEstablishment
   registerStep.value = 2
 }
 </script>
