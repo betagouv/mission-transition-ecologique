@@ -8,7 +8,6 @@
 <script setup lang="ts">
 import { Color, type ProgramData as ProgramType, ProgramEligibilityType, RouteName } from '@/types'
 import { TeeEligibilityBarLink, TeeEligibilityBarMessage } from '@/components/program/eligibility/TeeEligibilityBar.vue'
-import Breakpoint from '@/utils/breakpoints'
 
 const props = defineProps<{
   program: ProgramType | undefined
@@ -47,13 +46,15 @@ const getEligibilityLink: ComputedRef<TeeEligibilityBarLink | undefined> = compu
     case ProgramEligibilityType.PartiallyEligible:
       return {
         url: 'program-details-accordion-group',
-        label: Breakpoint.isMobile() ? 'Vérifier les critères' : 'Voir les autres critères à respecter',
+        label: 'Voir les autres critères à respecter',
+        labelMobile: 'Vérifier les critères',
         isButton: false
       }
     case ProgramEligibilityType.NotEligible:
       return {
         url: RouteName.CatalogPrograms,
-        label: Breakpoint.isMobile() ? 'Voir les aides éligibles' : 'Voir les aides pour mon entreprise',
+        label: 'Voir les aides pour mon entreprise',
+        labelMobile: 'Voir les aides éligibles',
         isButton: true
       }
     case ProgramEligibilityType.Eligible:

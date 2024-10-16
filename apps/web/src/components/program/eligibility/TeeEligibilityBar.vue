@@ -35,7 +35,7 @@
               v-else
               :href="link.url"
               @click.prevent="scrollTo(link.url)"
-              >{{ link.label }}</a
+              >{{ getLinkLabel }}</a
             >
           </span>
         </div>
@@ -68,6 +68,7 @@ export interface TeeEligibilityBarMessage {
 export interface TeeEligibilityBarLink {
   url: string | RouteName
   label: string
+  labelMobile?: string
   isButton: boolean
 }
 
@@ -111,6 +112,10 @@ const scrollTo = (id: string) => {
 
 const getMessage = () => {
   return props.message?.mobile && Breakpoint.isMobile() ? props.message.mobile : props.message?.default
+}
+
+const getLinkLabel = () => {
+  return props.link?.labelMobile && Breakpoint.isMobile() ? props.link.labelMobile : props.link?.label
 }
 
 const getRouteToUrl = (routeName: RouteName): RouteLocationRaw => {
