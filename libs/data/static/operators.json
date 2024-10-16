@@ -257,23 +257,21 @@
   {
     "operator": "France Rénov'",
     "filterCategories": [
-      "Autres opérateurs nationaux"
+      "Opérateurs nationaux"
     ]
   },
   {
     "operator": "InvestEU",
-    "filterCategories": [
-      "Autres opérateurs nationaux"
-    ]
+    "filterCategories": []
   },
   {
     "operator": "La Poste",
     "filterCategories": [
-      "Autres opérateurs nationaux"
+      "Opérateurs nationaux"
     ]
   },
   {
-    "operator": "Ministère de la Transition Écologique et Solidaire",
+    "operator": "Ministère de la Transition Écologique",
     "filterCategories": [
       "État"
     ]
@@ -349,13 +347,13 @@
   {
     "operator": "PROREFEI",
     "filterCategories": [
-      "Autres opérateurs nationaux"
+      "Opérateurs nationaux"
     ]
   },
   {
     "operator": "PRO-SMEn",
     "filterCategories": [
-      "Autres opérateurs nationaux"
+      "Opérateurs nationaux"
     ]
   },
   {
@@ -383,13 +381,13 @@
   {
     "operator": "Agence Régionale Biodiversité et Environnement",
     "filterCategories": [
-      "ARB - Agences régionales de la biodiversité"
+      "OFB/ARB"
     ]
   },
   {
     "operator": "Office Française de la Biodiversité",
     "filterCategories": [
-      "Autres opérateurs nationaux"
+      "Opérateurs nationaux"
     ]
   },
   {
