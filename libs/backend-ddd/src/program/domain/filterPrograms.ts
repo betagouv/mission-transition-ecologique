@@ -35,7 +35,7 @@ export const filterPrograms = (
     // since publicodes return a single boolean or undefined value and we want to know if ineligible programs
     // are ineligible because of the inputData of because of their EOL, we need an other publicodes evaluation for this specific question
     let dateEvaluation: Result<boolean | undefined, Error> = Result.ok(true)
-    if (inputData.onlyEligible === false) {
+    if (inputData.onlyEligible !== true) {
       dateEvaluation = rulesService.evaluate(FILTERING_RULE_NAME, program, {}, currentDate)
     }
     if (dateEvaluation.isErr) {
@@ -63,7 +63,7 @@ const shouldKeepProgram = (programEligibility: ProgramEligibilityType, onlyEligi
     return false
   }
 
-  if (!onlyEligible || typeof onlyEligible === 'undefined') {
+  if (onlyEligible === false) {
     return true
   }
 
