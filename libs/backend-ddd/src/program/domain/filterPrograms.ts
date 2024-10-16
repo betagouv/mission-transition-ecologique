@@ -32,7 +32,17 @@ export const filterPrograms = (
       return Result.err(addErrorDetails(evaluation.error, program.id))
     }
 
-    const programWithElibibility = setEligibility(program, evaluation.value)
+    // since publicodes return a single boolean or undefined value and we want to know if ineligible programs
+    // are ineligible because of the inputData of because of their EOL, we need an other publicodes evaluation for this specific question
+    let dateEvaluation: Result<boolean | undefined, Error> = Result.ok(true)
+    if (inputData.onlyEligible === false) {
+      dateEvaluation = rulesService.evaluate(FILTERING_RULE_NAME, program, {}, currentDate)
+    }
+    if (dateEvaluation.isErr) {
+      return Result.err(addErrorDetails(dateEvaluation.error, program.id))
+    }
+
+    const programWithElibibility = setEligibility(program, evaluation.value, dateEvaluation.value)
 
     if (shouldKeepProgram(programWithElibibility.eligibility, inputData.onlyEligible)) {
       filteredPrograms.push(programWithElibibility)
@@ -49,6 +59,10 @@ const addErrorDetails = (err: Error, programName: string): Error => {
 }
 
 const shouldKeepProgram = (programEligibility: ProgramEligibilityType, onlyEligible: boolean | undefined): boolean => {
+  if (programEligibility === ProgramEligibilityType.ProgramEol) {
+    return false
+  }
+
   if (!onlyEligible || typeof onlyEligible === 'undefined') {
     return true
   }
@@ -56,8 +70,17 @@ const shouldKeepProgram = (programEligibility: ProgramEligibilityType, onlyEligi
   return programEligibility !== ProgramEligibilityType.NotEligible
 }
 
-const setEligibility = (program: ProgramType, evaluationValue: boolean | undefined): ProgramTypeWithEligibility => {
+const setEligibility = (
+  program: ProgramType,
+  evaluationValue: boolean | undefined,
+  dateEvaluation: boolean | undefined
+): ProgramTypeWithEligibility => {
   let eligibility: ProgramEligibilityType
+
+  if (dateEvaluation === false) {
+    eligibility = ProgramEligibilityType.ProgramEol
+    return { ...program, eligibility }
+  }
 
   const isEligible = typeof evaluationValue === 'undefined' || evaluationValue
   // if (typeof evaluationValue === 'undefined') {
