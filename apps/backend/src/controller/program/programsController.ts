@@ -50,7 +50,7 @@ export class ProgramsController extends Controller {
 
     if (program.isErr) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-      Monitor.error('Error in getOne Program', { questionnaireData, error: program.error })
+      Monitor.warning('Error in get Program id', { programId })
       this.throwErrorResponse(program.error, requestFailedResponse)
       return
     }
