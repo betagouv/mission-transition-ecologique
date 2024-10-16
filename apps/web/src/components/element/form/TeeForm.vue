@@ -47,7 +47,7 @@
         <div class="fr-col-12 fr-col-justify--right">
           <TeeDsfrButton
             :label="Translation.t('send')"
-            :disabled="!isFormFilled || !isFormValid"
+            :disabled="!isFormFilled || !isFormValid || isLoading"
             icon="fr-icon-arrow-right-line"
             icon-right
             :loading="isLoading"
