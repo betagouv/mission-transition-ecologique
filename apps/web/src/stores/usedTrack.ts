@@ -3,6 +3,7 @@ import { useTrackStore } from '@/stores/track'
 import {
   type NextTrackRuleSet,
   type QuestionnaireData,
+  StructureSize,
   type Track,
   TrackComponent,
   TrackId,
@@ -17,6 +18,7 @@ import { remapItem } from '@/utils/helpers'
 import Translation from '@/utils/translation'
 import { acceptHMRUpdate, defineStore } from 'pinia'
 import { computed, ref, toRaw } from 'vue'
+import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
 export const useUsedTrackStore = defineStore('usedTrack', () => {
   const current = ref<UsedTrack | undefined>()
@@ -105,6 +107,10 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
 
       if (value) {
         useNavigationStore().updateSearchParam({ name: current.value.id, value: value })
+
+        if (current.value.id === TrackId.StructureWorkforce) {
+          CompanyDataStorage.setSize(value as StructureSize)
+        }
       }
     }
   }
@@ -249,7 +255,6 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
         })
       })
     })
-
     return questionnaireData
   }
 
