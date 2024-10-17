@@ -42,6 +42,9 @@
                   :data-fr-opened="searchModalOpened"
                   @click.prevent.stop="showSearchModal()"
                 />
+                <div class="fr-hidden-lg">
+                  <RegisterCTA />
+                </div>
                 <button
                   v-if="isWithSlotNav || quickLinks?.length"
                   id="button-menu"
@@ -107,6 +110,9 @@
                   @select="emit('language-select', $event)"
                 />
               </template>
+            </div>
+            <div class="fr-my-auto fr-px-4v fr-hidden fr-unhidden-lg">
+              <RegisterCTA />
             </div>
             <div
               v-if="showSearch"

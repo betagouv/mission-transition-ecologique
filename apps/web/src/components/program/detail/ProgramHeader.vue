@@ -1,12 +1,5 @@
 <template>
   <TeeDsfrBreadcrumb :links="links" />
-  <TeeEligibilityCriteriaBar
-    v-if="!isCatalogDetail"
-    :bg-color="Color.greenLightnessed"
-    :bg-bar-color="Color.greenLighted"
-    message="Cette aide correspond à vos critères d’éligibilité"
-    message-icon="fr-icon-checkbox-circle-fill"
-  />
   <div class="fr-container fr-mt-0 fr-mt-md-3v">
     <div class="fr-grid-row fr-grid-row-gutters">
       <div
@@ -34,7 +27,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { Color, Project, type ProgramData as ProgramType } from '@/types'
+import { Project, type ProgramData as ProgramType } from '@/types'
 import { RouteName } from '@/types/routeType'
 import Contact from '@/utils/contact'
 import { useNavigationStore } from '@/stores/navigation'

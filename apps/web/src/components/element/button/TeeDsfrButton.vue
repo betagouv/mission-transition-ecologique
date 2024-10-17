@@ -2,7 +2,11 @@
   <DsfrButton
     v-bind="props"
     :icon="iconComputed"
-  />
+  >
+    <template #default>
+      <slot name="badge"></slot>
+    </template>
+  </DsfrButton>
 </template>
 
 <script setup lang="ts">
