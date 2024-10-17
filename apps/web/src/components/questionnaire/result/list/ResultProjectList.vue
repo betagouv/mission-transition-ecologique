@@ -29,6 +29,27 @@
       v-else
       :sorted-projects="sortedProjects"
     />
+
+    <div
+      v-if="!navigationStore.hasSpinner"
+      class="fr-grid-row fr-grid-row--center"
+    >
+      <div class="fr-container">
+        <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2">
+          <transition
+            name="fade"
+            type="transition"
+            :duration="250"
+          >
+            <OtherProjectCta
+              v-if="!otherProjectForm && !showNoResults"
+              @click="openOtherProjectForm"
+            />
+            <OtherProjectForm v-else />
+          </transition>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -38,13 +59,22 @@ import { computed } from 'vue'
 import UsedTrack from '@/utils/track/usedTrack'
 import { useProgramStore } from '@/stores/program'
 import { Project as UtilsProject } from '@/utils/project/project'
+import { useNavigationStore } from '@/stores/navigation'
 
 interface ProjectListProps {
   filteredProjects?: Project[]
   hasError: boolean
 }
 const props = defineProps<ProjectListProps>()
+const otherProjectForm = ref<boolean>(false)
+const navigationStore = useNavigationStore()
 
+watch(
+  () => props.filteredProjects,
+  () => {
+    otherProjectForm.value = false
+  }
+)
 const programStore = useProgramStore()
 
 const hasProjects = computed(() => {
@@ -58,6 +88,10 @@ const countProjects = computed(() => {
 const hasThemeCard = computed(() => {
   return programStore.hasThemeTypeSelected() || (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityTheme())
 })
+
+const openOtherProjectForm = () => {
+  otherProjectForm.value = true
+}
 
 const sortedProjects = UtilsProject.sort(computed(() => props.filteredProjects))
 

@@ -1,4 +1,5 @@
 import { ContactDetails, Opportunity, OpportunityDetails, OpportunityType } from '@tee/common'
+import { ThemeId } from '@tee/data'
 
 export const fakeContact = (): ContactDetails => {
   return {
@@ -16,7 +17,8 @@ export const fakeOpportunityDetails = (): OpportunityDetails => {
     id: 'accelerateur-decarbonation',
     message: 'Bonjour monde !',
     linkToPage: 'https://localhost',
-    linkToCatalog: 'https://localhost'
+    linkToCatalog: 'https://localhost',
+    theme: ThemeId.Building
   }
 }
 
