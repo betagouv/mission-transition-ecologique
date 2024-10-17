@@ -13,6 +13,9 @@ tests.forEach((singleTest) => {
     }
     const elementsLocal = await page.$$eval('.teste2e-project-target h3 a', (els) => els.map((el) => el.innerHTML.trim()))
 
+    // console.warn(singleTest.value)
+    // console.warn(elementsLocal)
+
     expect(elementsLocal.length).toBe(singleTest.count)
     for (let i = 0; i < elementsLocal.length; i++) {
       expect(elementsLocal[i]).toBe(singleTest.value[i])
