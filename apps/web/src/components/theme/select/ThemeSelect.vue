@@ -17,18 +17,15 @@ import { useUsedTrackStore } from '@/stores/usedTrack'
 import type { TrackOptionItem } from '@/types'
 import { computed } from 'vue'
 import { Theme } from '@/utils/theme'
-import { ProgramData, Color } from '@/types'
+import { Color } from '@/types'
 import { Project } from '@tee/data'
 import { useProjectStore } from '@/stores/project'
-import { useProgramStore } from '@/stores/program'
 import { useNavigationStore } from '@/stores/navigation'
 
 const currentTrack = useTrackStore().current
 const emit = defineEmits(['updateSelection'])
 const projectStore = useProjectStore()
 const projects = ref<Project[]>()
-const programs = ref<ProgramData[]>()
-const programStore = useProgramStore()
 
 export interface ThemeOption {
   value: string | undefined
@@ -85,10 +82,8 @@ const hasError = ref<boolean>(false)
 onBeforeMount(async () => {
   useNavigationStore().hasSpinner = true
   const projectResult = await projectStore.eligibleProjects
-  const programResult = await programStore.programsByUsedTracks
-  if (programResult.isOk && projectResult.isOk) {
+  if (projectResult.isOk) {
     projects.value = projectResult.value
-    programs.value = programResult.value
   } else {
     hasError.value = true
   }

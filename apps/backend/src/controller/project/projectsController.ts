@@ -15,7 +15,7 @@ export class ProjectsController extends Controller {
     @Queries() filterData: ProjectFilterQuery,
     @Res() requestFailedResponse: TsoaResponse<500, ErrorJSON>
   ): Promise<Project[]> {
-    const projectResults = await new ProjectService().getFiltered(filterData)
+    const projectResults = new ProjectService().getFiltered(filterData)
 
     if (projectResults.isErr) {
       const err = projectResults.error
