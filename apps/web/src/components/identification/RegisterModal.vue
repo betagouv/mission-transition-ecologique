@@ -8,8 +8,8 @@
       class="fr-container fr-mt-8v"
     >
       <div class="fr-grid-row fr-grid-row--center">
-        <div class="fr-h1 fr-col-12 fr-col-justify--left fr-py-4v fr-text--yellow">{{ Translation.t('registration.mainTitle') }}</div>
-        <div class="fr-text--yellow fr-col-justify--left fr-pb-8v fr-col-12">{{ Translation.t('registration.description') }}</div>
+        <div class="fr-h1 fr-col-12 fr-col-justify--left fr-py-4v fr-text--yellow">{{ Translation.t('register.mainTitle') }}</div>
+        <div class="fr-text--yellow fr-col-justify--left fr-pb-8v fr-col-12">{{ Translation.t('register.description') }}</div>
         <RegisterSiret
           v-if="registerStep === 1"
           @select-establishment="updateEstablishment"

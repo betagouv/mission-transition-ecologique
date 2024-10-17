@@ -29,7 +29,6 @@ declare module 'vue' {
     DsfrSelect: typeof import('@gouvminint/vue-dsfr')['DsfrSelect']
     DsfrSideMenu: typeof import('@gouvminint/vue-dsfr')['DsfrSideMenu']
     DsfrTabContent: typeof import('@gouvminint/vue-dsfr')['DsfrTabContent']
-    DsfrTag: typeof import('@gouvminint/vue-dsfr')['DsfrTag']
     LinkedProjects: typeof import('./components/project/details/LinkedProjects.vue')['default']
     ProgramAccordion: typeof import('./components/program/detail/ProgramAccordion.vue')['default']
     ProgramCard: typeof import('./components/program/list/ProgramCard.vue')['default']

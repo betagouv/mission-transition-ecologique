@@ -15,12 +15,12 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { RegistrationDetailElement, FieldType } from '@/types'
+import { RegisterDetails, FieldType } from '@/types'
 import RegisterDetailSelectSize from './RegisterDetailSelectSize.vue'
 import RegisterDetailTag from './RegisterDetailTag.vue'
 
 interface Props {
-  detailInfos: RegistrationDetailElement
+  detailInfos: RegisterDetails
 }
 const props = defineProps<Props>()
 

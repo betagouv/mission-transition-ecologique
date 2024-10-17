@@ -1,10 +1,12 @@
 <template>
+  <span class="fr-hint-text fr-text--white tee-font-style--italic">
+    {{ selectOptions.description }}
+  </span>
   <DsfrSelect
+    id="select-company-size"
     v-model="selection"
-    :description="selectOptions.description"
+    :error-message="selection ? '' : selectOptions.errorMessage"
     :options="selectOptions.options"
-    :required="true"
-    :error-message="selectOptions.errorMessage"
   />
 </template>
 <script lang="ts" setup>
@@ -16,3 +18,8 @@ interface Props {
 }
 defineProps<Props>()
 </script>
+<style lang="scss" scoped>
+#select-company-size {
+  width: 30%;
+}
+</style>

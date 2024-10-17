@@ -1,9 +1,19 @@
 <template>
-  <DsfrTag :label="label" />
+  <p class="fr-tag">
+    {{ label }}
+    <span
+      v-if="editable"
+      class="fr-icon-close-line"
+    />
+  </p>
 </template>
 <script lang="ts" setup>
+import { RegisterDetailType } from '@/types'
+
 interface Props {
   label: string
+  field: RegisterDetailType
+  editable: boolean
 }
 defineProps<Props>()
 </script>
