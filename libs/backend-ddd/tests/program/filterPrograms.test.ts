@@ -1,13 +1,13 @@
 import { type Rules, makeProgramHelper, mockCurrentDateService, makeProgramsRepository } from './testing'
 import { FILTERING_RULE_NAME } from '../../src/program/domain/filterPrograms'
-import type { ProgramType } from '@tee/data'
+import { ProgramEligibilityType, ProgramTypeWithEligibility, type ProgramType } from '@tee/data'
 import { expectToBeOk } from '../testing'
 import ProgramFeatures from '../../src/program/domain/programFeatures'
 import { type Result } from 'true-myth'
 import { PublicodesService } from '../../src/program/infrastructure/publicodesService'
 import { QuestionnaireRoute, QuestionnaireData } from '@tee/common'
 
-const defaultFilterPrograms = (programs: ProgramType[], inputData: Record<string, number>): Result<ProgramType[], Error> => {
+const defaultFilterPrograms = (programs: ProgramType[], inputData: Record<string, number>): Result<ProgramTypeWithEligibility[], Error> => {
   PublicodesService.init(programs)
   const programService = new ProgramFeatures(makeProgramsRepository(programs), mockCurrentDateService, PublicodesService.getInstance())
   const questionnaireData: QuestionnaireData = {
@@ -18,6 +18,13 @@ const defaultFilterPrograms = (programs: ProgramType[], inputData: Record<string
   }
 
   return programService.getFilteredBy(questionnaireData)
+}
+
+const addEligibility = (programs: ProgramType[]): ProgramTypeWithEligibility[] => {
+  return programs.map((program) => ({
+    ...program,
+    eligibility: ProgramEligibilityType.Eligible
+  }))
 }
 
 const rulesBoilerplate = {
@@ -124,13 +131,14 @@ EXPECT that the filtering only keeps programs that are eligible (rule
 
       const result = defaultFilterPrograms(programs, tc.inputData)
 
+      const programWithElibibility = addEligibility(programs)
       expectToBeOk(result)
 
       const filteredPrograms = result.value
       expect(filteredPrograms.length).toBe(tc.expectedProgramIndexes.length)
 
       tc.expectedProgramIndexes.forEach((expectedProgramIndex, index) => {
-        expect(filteredPrograms[index]).toBe(programs[expectedProgramIndex])
+        expect(filteredPrograms[index]).toStrictEqual(programWithElibibility[expectedProgramIndex])
       })
     })
   })

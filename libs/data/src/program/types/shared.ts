@@ -19,3 +19,11 @@ export enum ProgramOperatorType {
   BREIZHFAB = 'Breizh Fab',
   ECOCO2 = 'EcoCO2'
 }
+
+export enum ProgramEligibilityType {
+  Eligible = 'eligible',
+  PartiallyEligible = 'partially-eligible',
+  NotEligible = 'not-eligible',
+  ProgramEol = 'program-end-of-life',
+  Unknown = 'unknown'
+}
