@@ -8,7 +8,7 @@
       v-if="hasSpinner"
       class="fr-grid-row fr-grid-row--center"
     >
-      <TeeSpinner scale="6" />
+      <TeeSpinner />
     </div>
     <div v-else>
       <div class="fr-container">
