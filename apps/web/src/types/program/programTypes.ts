@@ -32,6 +32,7 @@ export interface ProgramData {
   'durée du prêt'?: string
   'taux du prêt'?: string
   url?: string
+  eligibility: string
 
   "conditions d'éligibilité": {
     "taille de l'entreprise": string[]

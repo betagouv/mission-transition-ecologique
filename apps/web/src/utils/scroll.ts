@@ -2,7 +2,7 @@ export class Scroll {
   private static readonly _defaultOptions: ScrollOptions = { behavior: 'smooth' }
 
   static toWithTopBarOffset(element: HTMLElement) {
-    const topBar = document.getElementById('eligibility-criteria-bar')
+    const topBar = document.getElementById('eligibility-bar')
     if (topBar) {
       const top = element.getBoundingClientRect().top + window.scrollY - topBar.offsetHeight
       window.scrollTo({ top: top, ...this._defaultOptions })
