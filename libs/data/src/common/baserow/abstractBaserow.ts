@@ -8,6 +8,7 @@ export abstract class AbstractBaserow {
   private readonly _apiToken = this._setBaserowToken()
   private readonly _baseUrl = 'https://api.baserow.io/api'
   protected readonly _themeTableId = 305258
+  protected readonly _operatorTableId = 314410
 
   private readonly _axiosHeader = {
     headers: {

@@ -3,9 +3,9 @@ import { AbstractBaserow } from './abstractBaserow'
 import { Program } from './types'
 import { DataProgram, Status, DataProgramType, Operator, GeographicCoverage, GeographicAreas } from '../../program/types/domain'
 import { Theme } from '../../theme/types/domain'
+import { FileManager } from '../fileManager'
 
 export class ProgramBaserow extends AbstractBaserow {
-  private readonly _operatorTableId = 314410
   private readonly _geographicCoverageTableId = 314470
   private readonly _geographicAreasTableId = 314474
   private readonly _programTableId = 314437
@@ -14,9 +14,8 @@ export class ProgramBaserow extends AbstractBaserow {
   async getPrograms(useLocalRawData: boolean): Promise<DataProgram[]> {
     if (useLocalRawData) {
       try {
-        const data = fs.readFileSync('program_tmp.json', 'utf-8')
         console.log('Using cached Baserow data')
-        return JSON.parse(data) as DataProgram[]
+        return FileManager.readJson<DataProgram[]>('program_tmp.json')
       } catch {
         console.log('Attempting to use cached baserow data but no cached data has been found.')
       }
