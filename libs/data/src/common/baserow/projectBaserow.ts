@@ -1,7 +1,7 @@
 import path from 'path'
 import { AbstractBaserow } from './abstractBaserow'
 import { RawProject } from '../../project/types/domain'
-import { LinkObject, Project } from './types'
+import { LinkObject, Project, SectorKeys, Sectors } from './types'
 import { Theme } from '../../theme/types/domain'
 import { ImageBaserow } from './imageBaserow'
 import { Logger } from '../logger/logger'
@@ -73,7 +73,8 @@ export class ProjectBaserow extends AbstractBaserow {
       mainTheme: this._generateMainTheme(baserowProject['Thématique principale'], baserowThemes),
       programs: this._generateProgramList(baserowProject.Dispositifs),
       linkedProjects: this._generateLinkedProjectList(baserowProject['Projets complémentaires']),
-      priority: baserowProject.Prio
+      priority: baserowProject.Prio,
+      sectors: this._generateSectors(baserowProject as Sectors)
     }
   }
 
@@ -114,5 +115,11 @@ export class ProjectBaserow extends AbstractBaserow {
     return projects.map((project) => {
       return project.id
     })
+  }
+
+  private _generateSectors(sectors: Sectors): string[] {
+    return Object.values(SectorKeys)
+      .filter((key) => sectors[key])
+      .map((key) => key.toString())
   }
 }

@@ -1,10 +1,11 @@
 import { DataProgram } from '../../program/types/domain'
+import { Sectors } from '../../project/types/shared'
 
 export interface Id {
   id: number
 }
 
-export interface Project extends Id {
+export interface Project extends Id, Sectors {
   order: string
   Nom: string
   'Description courte': string

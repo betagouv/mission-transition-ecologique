@@ -302,7 +302,12 @@ onBeforeMount(async () => {
   useNavigationStore().hasSpinner = true
   program.value = programsStore.currentProgram
   console.log(program.value ? Opportunity.getProgramFormFields(program.value) : '')
-  const projectResult = await projectStore.projects
+  let projectResult
+  if (useNavigationStore().isCatalogProgramDetail()) {
+    projectResult = await projectStore.projects
+  } else {
+    projectResult = await projectStore.eligibleProjects
+  }
   if (projectResult.isOk) {
     linkedProjects.value = Program.getLinkedProjects(program.value, projectResult.value)
   }

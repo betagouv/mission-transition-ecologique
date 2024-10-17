@@ -13,7 +13,7 @@ export class Project {
         return undefined
       }
 
-      return useProjectStore().getProjectsByThemeAndEligibility(projects.value, theme.value ?? undefined, programs.value ?? undefined)
+      return useProjectStore().getProjectsByTheme(projects.value, theme.value ?? undefined)
     })
   }
 
