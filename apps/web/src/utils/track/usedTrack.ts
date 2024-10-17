@@ -1,6 +1,6 @@
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { MobilityStatus, ThemeId, QuestionnaireDataEnum, QuestionnaireRoute, TrackId, WasteManagementStatus, YesNo } from '@/types'
-import { ObjectiveChecker } from '@tee/common'
+import { QuestionnaireChecker, BuildingProperty } from '@tee/common'
 
 type QuestionnaireDataReturnType = {
   [QuestionnaireDataEnum.questionnaire_route]: QuestionnaireRoute
@@ -11,6 +11,7 @@ type QuestionnaireDataReturnType = {
   [QuestionnaireDataEnum.water_reduction_objective]: YesNo | undefined
   [QuestionnaireDataEnum.wastes_materials_objective]: YesNo | undefined
   [QuestionnaireDataEnum.recently_audited]: YesNo | undefined
+  [QuestionnaireDataEnum.building_property]: BuildingProperty
 }
 
 export default class UsedTrack {
@@ -32,45 +33,55 @@ export default class UsedTrack {
     )
   }
 
+  static checkBuildingPropertyStatus(propertyStatus: BuildingProperty): boolean {
+    return this.findInQuestionnaireData(TrackId.BuildingProperty, QuestionnaireDataEnum.building_property) === propertyStatus
+  }
+
   static getPriorityTheme(): ThemeId {
     return this.findInQuestionnaireData(TrackId.Goals, QuestionnaireDataEnum.priority_objective)
+  }
+
+  static hasBuildingProperty(): boolean {
+    return QuestionnaireChecker.isBuildingProperty(
+      this.findInQuestionnaireData(TrackId.BuildingProperty, QuestionnaireDataEnum.building_property)
+    )
   }
 
   static hasPriorityTheme(): boolean {
     return this.findInQuestionnaireData(TrackId.Goals, QuestionnaireDataEnum.priority_objective) !== undefined
   }
 
-  static isMobilityTheme(): boolean {
-    return ObjectiveChecker.isSustainableMobility(
+  static hasMobilityTheme(): boolean {
+    return QuestionnaireChecker.isSustainableMobility(
       this.findInQuestionnaireData(TrackId.MobilityWishes, QuestionnaireDataEnum.sustainable_mobility_objective)
     )
   }
 
-  static isEnergyTheme(): boolean {
-    return ObjectiveChecker.isEnergyPerformance(
+  static hasEnergyTheme(): boolean {
+    return QuestionnaireChecker.isEnergyPerformance(
       this.findInQuestionnaireData(TrackId.EnergyReductionPriority, QuestionnaireDataEnum.energy_reduction_objective)
     )
   }
 
-  static isWasteTheme(): boolean {
-    return ObjectiveChecker.isWasteManagement(
+  static hasWasteTheme(): boolean {
+    return QuestionnaireChecker.isWasteManagement(
       this.findInQuestionnaireData(TrackId.WastesStake, QuestionnaireDataEnum.wastes_management_objective)
     )
   }
 
-  static isWaterTheme(): boolean {
-    return ObjectiveChecker.isWaterConsumption(
+  static hasWaterTheme(): boolean {
+    return QuestionnaireChecker.isWaterConsumption(
       this.findInQuestionnaireData(TrackId.WaterStake, QuestionnaireDataEnum.water_reduction_objective)
     )
   }
 
-  static isEcoDesignTheme(): boolean {
-    return ObjectiveChecker.isEcoDesign(
+  static hasEcoDesignTheme(): boolean {
+    return QuestionnaireChecker.isEcoDesign(
       this.findInQuestionnaireData(TrackId.WastesMaterials, QuestionnaireDataEnum.wastes_materials_objective)
     )
   }
 
-  static isEnvironmentalImpactTheme(): boolean {
-    return ObjectiveChecker.isEnvironmentalImpact(this.findInQuestionnaireData(TrackId.Goals, QuestionnaireDataEnum.recently_audited))
+  static hasEnvironmentalImpactTheme(): boolean {
+    return QuestionnaireChecker.isEnvironmentalImpact(this.findInQuestionnaireData(TrackId.Goals, QuestionnaireDataEnum.recently_audited))
   }
 }

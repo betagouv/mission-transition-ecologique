@@ -30,7 +30,10 @@
       :selected="selected === 1"
       :asc="ascendant"
     >
-      <ResultProgramList :filtered-programs="filteredPrograms" />
+      <ResultProgramList
+        :filtered-programs="filteredPrograms"
+        :has-error="hasError"
+      />
     </DsfrTabContent>
   </TeeTabs>
 </template>
@@ -39,9 +42,8 @@
 import { TeeDsfrTabs } from '@/components/element/TeeTabs.vue'
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
-import { BreakpointNameType, ProgramData, Project, TrackId } from '@/types'
+import { BreakpointNameType, ProgramData, Project } from '@/types'
 import { computed, onBeforeMount } from 'vue'
-import Analytics from '@/utils/analytic/analytics'
 import { useProjectStore } from '@/stores/project'
 import { Theme } from '@/utils/theme'
 
@@ -91,8 +93,5 @@ onBeforeMount(async () => {
     hasError.value = true
   }
   navigationStore.hasSpinner = false
-
-  // analytics / send event
-  Analytics.sendEvent(TrackId.Results, 'show_results')
 })
 </script>

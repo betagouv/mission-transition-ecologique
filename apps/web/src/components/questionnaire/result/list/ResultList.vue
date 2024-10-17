@@ -1,15 +1,17 @@
 <template>
   <ThemeFiltersAndCard id="tab-content-header" />
-  <ResultProjectList :filtered-projects="filteredProjects" />
+  <ResultProjectList
+    :filtered-projects="filteredProjects"
+    :has-error="hasError"
+  />
 </template>
 
 <script setup lang="ts">
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
-import { ProgramData, TrackId, Project as ProjectType } from '@/types'
+import { ProgramData, Project as ProjectType } from '@/types'
 import { Project } from '@/utils/project/project'
 import { computed, onBeforeMount } from 'vue'
-import Analytics from '@/utils/analytic/analytics'
 import { useProjectStore } from '@/stores/project'
 import { Theme } from '@/utils/theme'
 
@@ -39,7 +41,5 @@ onBeforeMount(async () => {
   }
 
   navigationStore.hasSpinner = false
-  // analytics / send event
-  Analytics.sendEvent(TrackId.Results, 'show_results')
 })
 </script>
