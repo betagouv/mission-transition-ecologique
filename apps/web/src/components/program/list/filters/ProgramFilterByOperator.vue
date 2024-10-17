@@ -9,20 +9,18 @@
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
 import { DsfrCheckboxSetProps } from '@gouvminint/vue-dsfr'
-import { type programFiltersType } from '@/types'
+import { OperatorFilter, type programFiltersType } from '@/types'
 
 import { enrichedOperators } from '@tee/data/static'
 
 const programFilters: programFiltersType = useProgramStore().programFilters
 
-const allOperatorsOptionsArray = enrichedOperators.map((enrichedOperators) => enrichedOperators.filterCategories).flat()
-const operatorsOptionsSet = new Set(allOperatorsOptionsArray)
-const operatorsOptionsArray = Array.from(operatorsOptionsSet)
-const programOperatorOptions: DsfrCheckboxSetProps['options'] = operatorsOptionsArray
+const operatorsOptions = [...new Set(enrichedOperators.flatMap((enrichedOperators) => enrichedOperators.filterCategories))]
+const programOperatorOptions: DsfrCheckboxSetProps['options'] = operatorsOptions
   .map((programOperator) => getItem(programOperator))
   .sort((a, b) => a.label.localeCompare(b.label))
 
-function getItem(programOperator: string) {
+function getItem(programOperator: OperatorFilter) {
   return { label: programOperator, name: programOperator, id: programOperator }
 }
 </script>

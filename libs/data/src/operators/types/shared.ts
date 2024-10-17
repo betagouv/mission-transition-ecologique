@@ -1,4 +1,7 @@
+import { OperatorFilter } from './generatedShared'
+import { Operators } from '../../generated/program'
+
 export interface EnrichedOperator {
-  operator: string
-  filterCategories: string[]
+  operator: Operators
+  filterCategories: OperatorFilter[]
 }

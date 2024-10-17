@@ -1,4 +1,13 @@
-import { ProgramAidType, Region, type ProgramData, type programFiltersType, type ValueOf, ThemeId, FiltersKeys } from '@/types'
+import {
+  ProgramAidType,
+  Region,
+  type ProgramData,
+  type programFiltersType,
+  type ValueOf,
+  ThemeId,
+  FiltersKeys,
+  OperatorFilter
+} from '@/types'
 import { enrichedOperators } from '@tee/data/static'
 
 export default class ProgramFilter {
@@ -26,7 +35,7 @@ export default class ProgramFilter {
     return matchingRegions.length > 0
   }
 
-  static byOperator(program: ProgramData, programOperatorsSelected: string[]) {
+  static byOperator(program: ProgramData, programOperatorsSelected: OperatorFilter[]) {
     if (!this.isValidFilterValues(programOperatorsSelected)) {
       return true
     }
