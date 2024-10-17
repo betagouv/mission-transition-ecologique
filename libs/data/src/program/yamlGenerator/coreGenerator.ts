@@ -10,6 +10,7 @@ import { setOperators } from './operatorsGenerator'
 import { PublicodesGenerator } from './publicodesGenerator'
 import { setObjectives } from './objectiveGenerator'
 import { setEligibility } from './eligibilityGenerator'
+import { ConditionalDataGenerator } from './conditionalDataGenerator'
 
 export class CoreGenerator {
   valid = true
@@ -42,6 +43,7 @@ export class CoreGenerator {
     setObjectives(this)
     setEligibility(this)
     this.yamlContent['publicodes'] = new PublicodesGenerator(this.program).generatePublicodes()
+    new ConditionalDataGenerator(this.program).generate(this.yamlContent)
   }
 
   public get generatedData(): { [key: string]: unknown } {

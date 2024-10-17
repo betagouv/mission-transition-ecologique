@@ -4,6 +4,7 @@ import { sortPrograms } from './sortPrograms'
 import { Result } from 'true-myth'
 import { ProgramType } from '@tee/data'
 import { Objective, QuestionnaireData } from '@tee/common'
+import ProgramCustomizer from './programCustomizer'
 
 export default class ProgramFeatures {
   private _programRepository: ProgramRepository
@@ -25,9 +26,15 @@ export default class ProgramFeatures {
   }
 
   public getFilteredBy(questionnaireData: QuestionnaireData): Result<ProgramType[], Error> {
-    const allPrograms = this._programRepository.getAll()
     if (!this._currentDateService || !this._rulesService) {
       return Result.err(new Error('currentDateService and rulesService should be defined to filter programs'))
+    }
+    let allPrograms
+    if (new ProgramCustomizer().shouldRewritePrograms(questionnaireData)) {
+      const editablePrograms = this._programRepository.getEditablePrograms()
+      allPrograms = new ProgramCustomizer().getAllPersonalizedPrograms(editablePrograms, questionnaireData)
+    } else {
+      allPrograms = this._programRepository.getAll()
     }
 
     let filteredPrograms = filterPrograms(allPrograms, questionnaireData, this._currentDateService.get(), this._rulesService)

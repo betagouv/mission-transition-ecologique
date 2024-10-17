@@ -65,3 +65,18 @@ publicodes:
   entreprise . a un objectif ciblé:
     une de ces conditions:
       - questionnaire . objectif prioritaire . est l'écoconception
+champs conditionnels:
+  - toutes ces conditions:
+      - effectif >= 0
+      - effectif <= 49
+    Montant du dispositif: 5 400€ HT  après subvention de 70%
+    Eligibilité taille: Jusqu'à 50 salariés
+    autres critères d'éligibilité:
+      - Avoir réalisé moins de 10M€ de CA ou de total de bilan
+  - toutes ces conditions:
+      - effectif >= 50
+      - effectif <= 249
+    Montant du dispositif: 7 200 € HT après subvention de 60%
+    Eligibilité taille: De 50 à 250 salariés
+    autres critères d'éligibilité:
+      - Avoir réalisé moins de 50M€ de CA ou moins de 43M€ de bilan total

@@ -58,6 +58,7 @@ export interface DataProgram {
   étape6: string
   "Nature de l'aide": DataProgramType
   Statuts: Status[]
+  conditionalData?: ConditionalValues[]
 }
 
 export enum Publicodes {
@@ -115,4 +116,28 @@ export enum Status {
   TaxAdvantage = 'Data valid',
   ReadyForProd = 'Prêt pour la prod',
   InProd = 'En prod'
+}
+
+export type ConditionalValues = CompanySizeCondition | RegionCondition
+
+export interface CompanySizeCondition extends ModifiableFields {
+  'Type de condition': 'nombre de salariés'
+  'Condition: nb min salaries': number
+  'Condition: nb max salaries': number
+}
+
+export interface RegionCondition extends ModifiableFields {
+  'Type de condition': 'géographique'
+  'valeur de la condition géographique': GeographicAreas[]
+}
+
+interface ModifiableFields {
+  'Dispositif concerné': string
+  'Opérateur de contact': Operator[]
+  'Autres opérateurs': Operator[]
+  'URL externe': string
+  "Montant de l'aide ou coût": string
+  "Durée de l'aide": string
+  'Eligibilité taille': string
+  'Eligibilité Spécifique': string
 }

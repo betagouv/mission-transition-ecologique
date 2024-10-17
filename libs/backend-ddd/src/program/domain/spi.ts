@@ -7,6 +7,7 @@ export type CurrentDateProvider = {
 }
 
 export interface ProgramRepository {
+  getEditablePrograms(): ProgramType[]
   getById: (id: string) => ProgramType | undefined
   getAll: () => ProgramType[]
 }

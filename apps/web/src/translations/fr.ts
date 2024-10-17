@@ -66,7 +66,6 @@ export const frDict = {
     aid: 'Montant du financement',
     aidPrefix: "Montant de l'aide",
     loan: 'Montant du prêt',
-    loanRate: 'Taux du prêt',
     taxAdvantage: 'Avantage fiscal'
   },
   programResults: {

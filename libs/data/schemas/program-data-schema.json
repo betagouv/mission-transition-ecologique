@@ -187,11 +187,6 @@
       "description": "Uniquement si l'aide est de type \"prêt\". Mêmes règles de formulation que le champ \"durée de l'accompagnement\"",
       "type": "string"
     },
-    "taux du prêt": {
-      "title": "Taux du prêt",
-      "description": "Uniquement si l'aide est de type \"prêt\".",
-      "type": "string"
-    },
     "conditions d'éligibilité": {
       "title": "Détail des conditions d'éligibilité",
       "description": "Les conditions d'éligibilité sont réparties en plusieurs catégories : secteur d'activité, secteur géographique, taille de l'entreprise, nombre d'années d'activité, et autres.",

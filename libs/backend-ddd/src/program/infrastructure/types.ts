@@ -1,5 +1,5 @@
 import { PublicodesKeys, Sector, PublicodeObjective } from '@tee/common'
-import { PublicodesCondition } from '@tee/data'
+import { Operators, PublicodesCondition } from '@tee/data'
 export interface PublicodesInputData {
   [PublicodesKeys.CodeNAF]?: string
   [PublicodesKeys.CodeNAF1]?: string
@@ -31,4 +31,16 @@ export const NAF1Letters = [...'ABCDEFGHIJKLMNOPQRSTU'] as const
 
 export type ObjectivePublicodeData = {
   [key in PublicodesCondition]: PublicodeObjective[]
+}
+
+export type ConditionalYaml = {
+  'une de ces conditions'?: string[]
+  'toutes ces conditions'?: string[]
+  'opérateur de contact': Operators
+  'autres opérateurs': Operators[]
+  url: string
+  'Montant du dispositif': string
+  'Durée du dispositif': string
+  'Eligibilité taille': string
+  "autres critères d'éligibilité": string[]
 }

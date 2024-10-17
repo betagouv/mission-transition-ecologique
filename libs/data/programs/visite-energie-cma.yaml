@@ -60,3 +60,42 @@ publicodes:
   entreprise . a un objectif ciblé:
     une de ces conditions:
       - questionnaire . objectif prioritaire . est ma performance énergétique
+champs conditionnels:
+  - une de ces conditions:
+      - région = Auvergne-Rhône-Alpes
+    autres opérateurs:
+      - CMA Auvergne-Rhône-Alpes
+    url: >-
+      https://www.cma-auvergnerhonealpes.fr/sites/crma-auvergne/files/visite_energie.pdf
+    Durée du dispositif: 2 jours de prestation répartis sur 12 mois
+  - une de ces conditions:
+      - région = Bourgogne-Franche-Comté
+    autres opérateurs:
+      - CMA Bourgogne-Franche-Comté
+    url: >-
+      https://www.artisanat-bfc.fr/detail-offre/je-maitrise-mes-consommations-et-mes-factures-denergie
+    Durée du dispositif: 2 jours de prestation répartis sur 6 à 12 mois
+  - une de ces conditions:
+      - région = Bretagne
+    autres opérateurs:
+      - CMA Bretagne
+    url: https://www.cma-bretagne.fr/accompagnement-energie/
+    Durée du dispositif: 1 journée de prestation répartie sur 3 mois
+  - une de ces conditions:
+      - région = Grand Est
+    autres opérateurs:
+      - CMA Grand-Est
+    url: >-
+      https://cma-grandest.fr/wp-content/uploads/2022/10/2022-pass-durable-fiche-cle-energie.pdf
+  - une de ces conditions:
+      - région = Île-de-France
+    autres opérateurs:
+      - CMA Ile-de-France
+    url: >-
+      https://www.cma-idf.fr/fr/appui-aux-entreprises/developpement-durable/maitrise-de-l-energie.html
+    Durée du dispositif: 2 jours de prestation répartis sur 12 mois
+  - une de ces conditions:
+      - région = Provence-Alpes-Côte d'Azur
+    autres opérateurs:
+      - CMA Provence-Alpes-Côte-D'Azur
+    Durée du dispositif: 2 jours de prestation répartis sur 12 mois
