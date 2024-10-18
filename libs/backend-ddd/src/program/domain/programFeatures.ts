@@ -55,7 +55,6 @@ export default class ProgramFeatures {
 
   public getFilteredBy(questionnaireData: QuestionnaireData): Result<ProgramTypeWithEligibility[], Error> {
     const allPrograms = this._programRepository.getAll()
-
     if (!this._currentDateService || !this._rulesService) {
       return Result.err(new Error('currentDateService and rulesService should be defined to filter programs'))
     }
