@@ -1,7 +1,7 @@
 import path from 'path'
 import fs from 'fs'
 import { ProjectBaserow } from '../common/baserow/projectBaserow'
-import { RawProject } from './types/domain'
+import { DataProject } from './types/domain'
 import { jsonPrograms } from '../../generated/index'
 import { ProgramType } from '../index'
 import { ThemeId } from '../theme/types/shared'
@@ -33,8 +33,8 @@ export class ProjectFeatures {
     return
   }
 
-  private async _validateData(rawProjects: RawProject[]) {
-    const validProjects: RawProject[] = []
+  private async _validateData(rawProjects: DataProject[]) {
+    const validProjects: DataProject[] = []
     for (const project of rawProjects) {
       this._validateThemes(project)
       this._validateLinkedProjects(project, rawProjects)
@@ -48,7 +48,7 @@ export class ProjectFeatures {
     return validProjects
   }
 
-  private _validateSlug(project: RawProject) {
+  private _validateSlug(project: DataProject) {
     if (!SlugValidator.validate(project.slug)) {
       this._logger.log(
         LogLevel.Critic,
@@ -62,7 +62,7 @@ export class ProjectFeatures {
     return true
   }
 
-  private _validateThemes(project: RawProject) {
+  private _validateThemes(project: DataProject) {
     const validThemeIds = Object.values(ThemeId)
 
     project.themes = project.themes.filter((themeId) => {
@@ -74,7 +74,7 @@ export class ProjectFeatures {
     })
   }
 
-  private _validateLinkedProjects(project: RawProject, rawProjects: RawProject[]) {
+  private _validateLinkedProjects(project: DataProject, rawProjects: DataProject[]) {
     project.linkedProjects = project.linkedProjects.filter((projectId) => {
       const projectFound = rawProjects.some((proj) => proj['id'] === projectId)
       if (!projectFound) {
@@ -90,7 +90,7 @@ export class ProjectFeatures {
     })
   }
 
-  private _validatePrograms(project: RawProject, programs: ProgramType[]) {
+  private _validatePrograms(project: DataProject, programs: ProgramType[]) {
     project.programs = project.programs.filter((programId) => {
       const programFound = programs.some((program) => program.id === programId)
       if (!programFound) {
@@ -106,7 +106,7 @@ export class ProjectFeatures {
     })
   }
 
-  private async _validateLinks(project: RawProject) {
+  private async _validateLinks(project: DataProject) {
     const markdownText = project.moreDescription
     const linkRegex = /\[.*?\]\((https?:\/\/[^\s]+)\)|\bhttps?:\/\/[^\s]+/g
     const links = [...markdownText.matchAll(linkRegex)].map((match) => match[1] || match[0])
@@ -123,7 +123,7 @@ export class ProjectFeatures {
     }
   }
 
-  private _writeJson(rawProjects: RawProject[]) {
+  private _writeJson(rawProjects: DataProject[]) {
     const projectJson = JSON.stringify(rawProjects, null, 2)
     const fullPath = path.join(this._outputDirectory, 'projects.json')
     fs.writeFile(fullPath, projectJson, (err) => {

@@ -1,8 +1,7 @@
-import { SectorKeys, Sectors } from '../../project/types/shared'
 import path from 'path'
 import { AbstractBaserow } from './abstractBaserow'
-import { RawProject } from '../../project/types/domain'
-import { LinkObject, Project } from './types'
+import { DataProject } from '../../project/types/domain'
+import { LinkObject, BaserowProject, BaserowSectors, SectorKeys } from './types'
 import { Theme } from '../../theme/types/domain'
 import { ImageBaserow } from './imageBaserow'
 import { Logger } from '../logger/logger'
@@ -23,18 +22,18 @@ export class ProjectBaserow extends AbstractBaserow {
     this._imageDownloader = new ImageBaserow(imageDirectory, this._logPath)
   }
 
-  async getValidProjects(): Promise<RawProject[]> {
-    const baserowProjects = await this._getTableData<Project>(this._projectTableId)
+  async getValidProjects(): Promise<DataProject[]> {
+    const baserowProjects = await this._getTableData<BaserowProject>(this._projectTableId)
     const validBaserowProjects = baserowProjects.filter((value) => {
       return value.Publié
     })
 
     const baserowThemes = await this._getTableData<Theme>(this._themeTableId)
 
-    const projects: RawProject[] = []
+    const projects: DataProject[] = []
     for (const project of validBaserowProjects) {
       try {
-        const result = await this._convertToRawProjectType(project, baserowThemes)
+        const result = await this._convertToDataProjectType(project, baserowThemes)
         projects.push(result)
         console.info(`successfully loaded project ${project.id}`)
         await this._delay(100)
@@ -46,7 +45,7 @@ export class ProjectBaserow extends AbstractBaserow {
     return projects
   }
 
-  private async _convertToRawProjectType(baserowProject: Project, baserowThemes: Theme[]): Promise<RawProject> {
+  private async _convertToDataProjectType(baserowProject: BaserowProject, baserowThemes: Theme[]): Promise<DataProject> {
     const maybeImageName = await this._imageDownloader.handleImage(baserowProject.Image)
     let imageName
     if (maybeImageName.isErr) {
@@ -75,7 +74,7 @@ export class ProjectBaserow extends AbstractBaserow {
       programs: this._generateProgramList(baserowProject.Dispositifs),
       linkedProjects: this._generateLinkedProjectList(baserowProject['Projets complémentaires']),
       priority: baserowProject.Prio,
-      sectors: this._generateSectors(baserowProject as Sectors)
+      sectors: this._generateSectors(baserowProject as BaserowSectors)
     }
   }
 
@@ -118,9 +117,18 @@ export class ProjectBaserow extends AbstractBaserow {
     })
   }
 
-  private _generateSectors(sectors: Sectors): string[] {
-    return Object.values(SectorKeys)
-      .filter((key) => sectors[key])
-      .map((key) => key.toString())
+  private _generateSectors(sectors: BaserowSectors): string[] {
+    const result: string[] = []
+    Object.keys(sectors).forEach((key) => {
+      const sectorKey = key as keyof BaserowSectors
+      if (sectors[sectorKey]) {
+        const sectorValue = SectorKeys[sectorKey as keyof typeof SectorKeys]
+        if (sectorValue) {
+          result.push(sectorValue)
+        }
+      }
+    })
+
+    return result
   }
 }
