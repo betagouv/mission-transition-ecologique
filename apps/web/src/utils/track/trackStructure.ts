@@ -88,6 +88,10 @@ export default class TrackStructure {
     return useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'ville') as string
   }
 
+  static getTheme() {
+    return useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(TrackId.Goals, 'priority_objective')
+  }
+
   static getRegion(): string {
     return this.has(TrackId.Siret, 'region')
       ? (useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'region') as string)

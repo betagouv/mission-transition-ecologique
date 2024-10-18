@@ -115,7 +115,6 @@ interface ProjectListProps {
 const props = defineProps<ProjectListProps>()
 
 const programStore = useProgramStore()
-
 const resume: string = Translation.t('project.result.resume', {
   effectif: Translation.t('enterprise.structureSize.' + TrackStructure.getSize()),
   secteur: TrackStructure.getSectorShortLabel()

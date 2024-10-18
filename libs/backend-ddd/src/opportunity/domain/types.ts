@@ -1,5 +1,6 @@
 import { Opportunity, OpportunityDetails } from '@tee/common'
 import { Operators } from '@tee/data'
+import { ProgramType, Project } from '@tee/data'
 
 export type OpportunityWithContactId = Opportunity & {
   contactId: number
@@ -7,7 +8,9 @@ export type OpportunityWithContactId = Opportunity & {
 
 export type OpportunityWithOperatorContact = Opportunity & { programContactOperator?: Operators }
 
-export type OpportunityDetailsShort = Omit<OpportunityDetails, 'linkToPage' | 'linkToCatalog' | 'message' | 'type'> & {
+export type OpportunityWithOperatorContactAndContactId = OpportunityWithContactId & OpportunityWithOperatorContact
+
+export type OpportunityDetailsShort = Omit<OpportunityDetails, 'linkToPage' | 'linkToCatalog' | 'message' | 'type' | 'theme'> & {
   programContactOperator?: Operators
 }
 
@@ -21,4 +24,10 @@ export interface ContactId {
 
 export interface OpportunityId {
   id: string
+}
+
+export type OpportunityObjectDetails = ProgramType | Project | CustomProject
+
+export interface CustomProject {
+  title: string
 }
