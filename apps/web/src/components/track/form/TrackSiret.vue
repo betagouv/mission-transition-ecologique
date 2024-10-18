@@ -15,11 +15,11 @@
     class="fr-mt-n2w"
   >
     <div v-if="requestResponses.resultCount < 4">
-      <span class="result-number">{{ requestResponses.resultCount }} résultats trouvés</span>
+      <span class="fr-text--blue-france tee-font-style--italic">{{ requestResponses.resultCount }} résultats trouvés</span>
       <h6 class="fr-mt-3v">Sélectionnez votre entreprise :</h6>
     </div>
     <div v-else>
-      <span class="result-number">3 résultats affichés sur {{ requestResponses.resultCount }} trouvés</span>
+      <span class="fr-text--blue-france tee-font-style--italic">3 résultats affichés sur {{ requestResponses.resultCount }} trouvés</span>
 
       <h6 class="fr-mt-3v">Sélectionnez votre entreprise ou précisez votre recherche</h6>
     </div>
@@ -31,15 +31,15 @@
     <div
       v-for="(response, i) in requestResponses.establishments"
       :key="`resp-input-${i}`"
-      class="fr-card fr-card-result fr-card--no-arrow fr-mb-2v fr-card--shadow custom-border"
-      :class="{ 'is-selected': isSelected(i) }"
+      class="fr-card fr-card-result fr-card--no-arrow fr-mb-2v fr-card--shadow"
+      :class="isSelected(i) ? 'fr-bg--grey--lightness fr-text--blue-france fr-border--blue-france' : 'fr-border--grey--light'"
       @click="selectItem(i)"
     >
       <div class="fr-card__body">
         <div class="fr-card__content fr-py-2v fr-px-4v">
           <div
             class="fr-card__title"
-            :class="{ 'is-title-selected': isSelected(i) }"
+            :class="{ 'fr-text--blue-france': isSelected(i) }"
           >
             <div class="fr-hidden fr-unhidden-md">
               {{ response.denomination || 'Entreprise individuelle' }}
@@ -209,28 +209,7 @@ function createData(): TrackOptionItem {
 </script>
 
 <style lang="scss" scoped>
-@use '@/assets/scss/setting';
-
-.custom-border {
-  border: solid thin #c4c4c4;
-}
-
-.is-selected {
-  border: solid thin setting.$blue-france;
-  color: setting.$blue-france;
-  background-color: #f5f5f5;
-}
-
-.is-title-selected {
-  color: setting.$blue-france;
-}
-
 .thinner-text {
   font-weight: normal;
-}
-
-.result-number {
-  font-style: italic;
-  color: setting.$blue-france;
 }
 </style>

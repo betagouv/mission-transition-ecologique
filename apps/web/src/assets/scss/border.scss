@@ -1,0 +1,18 @@
+@use 'setting';
+@use 'tool';
+
+.fr-border {
+  @each $name, $position in setting.$border-positions {
+    &-#{$name} {
+      @include tool.border-with-position-and-style($position: $position);
+
+      @each $color, $properties in setting.$colors {
+        @include tool.border-color($color, $properties, $position: $position);
+      }
+    }
+  }
+
+  @each $color, $properties in setting.$colors {
+    @include tool.border-color($color, $properties);
+  }
+}

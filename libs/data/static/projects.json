@@ -1400,6 +1400,8 @@
     "mainTheme": "environmental",
     "programs": [
       "diagnostic-changement-climatique",
+      "diagnostic-rse",
+      "diagnostic-transition-ecologique",
       "fonds-tourisme-durable",
       "diag-eco-flux",
       "performa-environnement",

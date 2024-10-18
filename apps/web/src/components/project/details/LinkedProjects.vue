@@ -1,9 +1,8 @@
 <template>
   <TeeContentBlock
     id="project-linked-projects-title"
-    class="fr-pt-3v fr-pb-4v"
+    class="fr-pt-3v fr-pb-4v fr-border-b--grey--light"
     title="Projets complémentaires"
-    :border-position="[BorderPosition.bottom]"
   >
     <template #content>
       <div class="fr-grid-row fr-grid-row--center fr-grid-row-md--left">
@@ -24,7 +23,7 @@
 </template>
 <script setup lang="ts">
 import { useProjectStore } from '@/stores/project'
-import { BorderPosition, Color, Project } from '@/types'
+import { Color, Project } from '@/types'
 
 interface Props {
   project: Project

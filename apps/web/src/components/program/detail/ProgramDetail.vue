@@ -301,7 +301,6 @@ const isProgramAutonomous = computed(() => {
 onBeforeMount(async () => {
   useNavigationStore().hasSpinner = true
   program.value = programsStore.currentProgram
-  console.log(program.value ? Opportunity.getProgramFormFields(program.value) : '')
   let projectResult
   if (useNavigationStore().isCatalogProgramDetail()) {
     projectResult = await projectStore.projects
@@ -310,6 +309,19 @@ onBeforeMount(async () => {
   }
   if (projectResult.isOk) {
     linkedProjects.value = Program.getLinkedProjects(program.value, projectResult.value)
+  }
+
+  if (program.value && navigationStore.isByRouteName(RouteName.CatalogProgramFromCatalogProjectDetail)) {
+    useHead({
+      link: [
+        {
+          rel: 'canonical',
+          href: navigationStore.getAbsoluteUrlByRouteName(RouteName.CatalogProgramDetail, {
+            programId: program.value.id
+          })
+        }
+      ]
+    })
   }
 
   useSeoMeta(MetaSeo.get(program.value?.titre, program.value?.description, program.value?.illustration))

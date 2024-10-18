@@ -60,6 +60,12 @@ export interface Program
   'Thèmes Ciblés': LinkObject[]
 }
 
+export interface Operator {
+  Nom: string
+  Tag: string
+  Filtre: LinkObject[]
+}
+
 export enum SectorKeys {
   'AAgriculture, sylviculture et pêche' = 'A',
   'BIndustries extractives' = 'B',
