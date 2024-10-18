@@ -47,18 +47,17 @@ const getEligibilityLink: ComputedRef<TeeEligibilityBarLink | undefined> = compu
       return {
         url: 'program-details-accordion-group',
         label: 'Voir les autres critères à respecter',
-        labelMobile: 'Vérifier les critères',
-        isButton: false
+        labelMobile: 'Vérifier les critères'
       }
     case ProgramEligibilityType.NotEligible:
+    default:
       return {
         url: RouteName.CatalogPrograms,
         label: 'Voir les aides pour mon entreprise',
         labelMobile: 'Voir les aides éligibles',
-        isButton: true
+        isButtonLink: true
       }
     case ProgramEligibilityType.Eligible:
-    default:
       return undefined
   }
 })

@@ -19,11 +19,10 @@
           {{ getMessage() }}
           <span
             v-if="link"
-            :class="{ 'btn btn-outline': link.isButton }"
             class="fr-ml-2v"
           >
             <TeeButtonLink
-              v-if="link.isButton"
+              v-if="link.isButtonLink"
               :to="getRouteToUrl(link.url as RouteName)"
               size="sm"
               secondary
@@ -69,7 +68,7 @@ export interface TeeEligibilityBarLink {
   url: string | RouteName
   label: string
   labelMobile?: string
-  isButton: boolean
+  isButtonLink?: boolean
 }
 
 const props = defineProps<Props>()
