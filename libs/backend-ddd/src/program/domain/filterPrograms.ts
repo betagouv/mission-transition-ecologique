@@ -1,6 +1,6 @@
 import { Result } from 'true-myth'
 import { RulesManager } from './spi'
-import { ProgramType } from '@tee/data'
+import { ProgramEligibilityType, ProgramType, ProgramTypeWithEligibility } from '@tee/data'
 import { QuestionnaireData } from '@tee/common'
 
 /** Expected rule to evaluate if a program should be displayed to the user or
@@ -22,22 +22,48 @@ export const filterPrograms = (
   inputData: QuestionnaireData,
   currentDate: string,
   rulesService: RulesManager
-): Result<ProgramType[], Error> => {
-  const filteredPrograms: ProgramType[] = []
+): Result<ProgramTypeWithEligibility[], Error> => {
+  const filteredPrograms: ProgramTypeWithEligibility[] = []
 
   for (const program of programs) {
-    const evaluation = rulesService.evaluate(FILTERING_RULE_NAME, program, inputData, currentDate)
-
-    if (evaluation.isErr) {
-      return Result.err(addErrorDetails(evaluation.error, program.id))
+    const programWithElibibility = evaluateProgramEligibility(program, inputData, currentDate, rulesService)
+    if (programWithElibibility.isErr) {
+      return Result.err(addErrorDetails(programWithElibibility.error, program.id))
     }
 
-    if (shouldKeepProgram(evaluation)) {
-      filteredPrograms.push(program)
+    if (shouldKeepProgram(programWithElibibility.value.eligibility, inputData.onlyEligible)) {
+      filteredPrograms.push(programWithElibibility.value)
     }
   }
 
   return Result.ok(filteredPrograms)
+}
+
+export const evaluateProgramEligibility = (
+  program: ProgramType,
+  inputData: QuestionnaireData,
+  currentDate: string,
+  rulesService: RulesManager
+): Result<ProgramTypeWithEligibility, Error> => {
+  const evaluation = rulesService.evaluate(FILTERING_RULE_NAME, program, inputData, currentDate)
+
+  if (evaluation.isErr) {
+    return Result.err(addErrorDetails(evaluation.error, program.id))
+  }
+
+  // since publicodes return a single boolean or undefined value and we want to know if ineligible programs
+  // are ineligible because of the inputData of because of their EOL, we need an other publicodes evaluation for this specific question
+  let dateEvaluation: Result<boolean | undefined, Error> = Result.ok(true)
+  if (inputData.onlyEligible !== true) {
+    dateEvaluation = rulesService.evaluate(FILTERING_RULE_NAME, program, {}, currentDate)
+  }
+  if (dateEvaluation.isErr) {
+    return Result.err(addErrorDetails(dateEvaluation.error, program.id))
+  }
+
+  const programWithElibibility = setEligibility(program, evaluation.value, dateEvaluation.value)
+
+  return Result.ok(programWithElibibility)
 }
 
 const addErrorDetails = (err: Error, programName: string): Error => {
@@ -46,9 +72,43 @@ const addErrorDetails = (err: Error, programName: string): Error => {
   })
 }
 
-const shouldKeepProgram = (evaluation: Result<boolean | undefined, Error>): boolean => {
-  const isPositive = evaluation.isOk && evaluation.value
-  const isUndefined = evaluation.isOk && typeof evaluation.value === 'undefined'
+const shouldKeepProgram = (programEligibility: ProgramEligibilityType, onlyEligible: boolean | undefined): boolean => {
+  if (programEligibility === ProgramEligibilityType.ProgramEol) {
+    return false
+  }
 
-  return isPositive || isUndefined
+  if (onlyEligible === false) {
+    return true
+  }
+
+  return programEligibility !== ProgramEligibilityType.NotEligible
+}
+
+const setEligibility = (
+  program: ProgramType,
+  evaluationValue: boolean | undefined,
+  dateEvaluation: boolean | undefined
+): ProgramTypeWithEligibility => {
+  let eligibility: ProgramEligibilityType
+
+  if (dateEvaluation === false) {
+    eligibility = ProgramEligibilityType.ProgramEol
+    return { ...program, eligibility }
+  }
+
+  const isEligible = typeof evaluationValue === 'undefined' || evaluationValue
+  // if (typeof evaluationValue === 'undefined') {
+  //   eligibility = ProgramEligibilityType.Unknown
+  // }
+  // TODO, analyse the undefined returns from publicodes
+  // there are a dozen of programs that return 'undefined' values.
+  if (isEligible && program["conditions d'éligibilité"]["autres critères d'éligibilité"]) {
+    eligibility = ProgramEligibilityType.PartiallyEligible
+  } else if (isEligible) {
+    eligibility = ProgramEligibilityType.Eligible
+  } else {
+    eligibility = ProgramEligibilityType.NotEligible
+  }
+
+  return { ...program, eligibility }
 }
