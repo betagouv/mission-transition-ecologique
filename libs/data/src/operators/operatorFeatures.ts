@@ -29,20 +29,31 @@ export class OperatorFeatures {
 
   private _generateOperatorsFiltersCategoryType(operators: RawOperator[]) {
     const filterOptions = [...new Set(operators.flatMap((operator) => operator.filterCategories))]
-    const typeDeclaration = this.generateTypeDeclaration(filterOptions)
+    const typeDeclaration = this.generateEnumDeclaration(filterOptions)
     FileManager.writeRaw(this._outputTypeFilePath, typeDeclaration, 'OperatorFilter type updated')
   }
 
-  generateTypeDeclaration(data: string[]) {
-    let declaration = `export type OperatorFilter =\n`
-    for (const value of data) {
-      if (value.includes("'")) {
-        declaration += `  | "${value}"\n`
-      } else {
-        declaration += `  | '${value}'\n`
-      }
-    }
+  generateEnumDeclaration(data: string[]) {
+    let declaration = `export enum OperatorFilter {\n`
+    data.forEach((value, index) => {
+      const formattedKey = this.toCamelCase(value)
+      const formattedValue = value.includes("'") ? `"${value}"` : `'${value}'`
 
+      if (index === data.length - 1) {
+        declaration += `  ${formattedKey} = ${formattedValue}\n`
+      } else {
+        declaration += `  ${formattedKey} = ${formattedValue},\n`
+      }
+    })
+    declaration += `}\n`
     return declaration
+  }
+
+  toCamelCase(value: string) {
+    return value
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^a-zA-Z0-9]+(.)/g, (_, chr) => chr.toUpperCase())
+      .replace(/^[a-z]/, (chr) => chr.toUpperCase())
   }
 }
