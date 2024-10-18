@@ -23,7 +23,30 @@
       "cedre-premier-pas"
     ],
     "linkedProjects": [],
-    "priority": "40"
+    "priority": "40",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 2,
@@ -45,7 +68,30 @@
       "cedre-investissement"
     ],
     "linkedProjects": [],
-    "priority": "220"
+    "priority": "220",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 5,
@@ -69,7 +115,30 @@
       "solaire-ready"
     ],
     "linkedProjects": [],
-    "priority": "340"
+    "priority": "340",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 3,
@@ -93,7 +162,30 @@
       "charte-zero-dechet-plastique"
     ],
     "linkedProjects": [],
-    "priority": "100"
+    "priority": "100",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 6,
@@ -117,7 +209,30 @@
       "pret-vert"
     ],
     "linkedProjects": [],
-    "priority": "400"
+    "priority": "400",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 7,
@@ -141,7 +256,30 @@
       "pret-vert"
     ],
     "linkedProjects": [],
-    "priority": "900"
+    "priority": "900",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 1,
@@ -166,7 +304,30 @@
       32,
       33
     ],
-    "priority": "110"
+    "priority": "110",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 8,
@@ -190,7 +351,30 @@
       "pret-vert"
     ],
     "linkedProjects": [],
-    "priority": "610"
+    "priority": "610",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 9,
@@ -212,7 +396,30 @@
       "pret-vert"
     ],
     "linkedProjects": [],
-    "priority": "910"
+    "priority": "910",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 10,
@@ -234,7 +441,30 @@
       "pret-vert"
     ],
     "linkedProjects": [],
-    "priority": "320"
+    "priority": "320",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 11,
@@ -243,7 +473,7 @@
     "nameTag": "💦 énergie hydraulique",
     "shortDescription": "L'énergie hydraulique permet de fabriquer de l'électricité grâce à la force de l'eau.",
     "image": "/images/projet/energie-hydraulique.webp",
-    "longDescription": "L'énergie hydraulique, renouvelable, permet de produire de l'électricité grâce à la force motrice de l’eau provenant d’une rivière, d’un lac ou des eaux captées par gravitation (turbinage).\\\nL’hydroélectricité est la première source d’électricité renouvelable en France, et la deuxième source de production électrique derrière l'énergie nucléaire.\n\nLes projets de production hydroélectrique peuvent prendre la forme d'un nouvel aménagement, de la remise en service ou de l'optimisation d'un équipement préalablement existant.\\\nRéalisez une étude de faisabilité et mettez en place votre projet à fort impact écologique.",
+    "longDescription": "L'énergie hydraulique, renouvelable, permet de produire de l'électricité grâce à la force motrice de l’eau provenant d’une rivière, d’un lac ou des eaux captées par gravitation (turbinage).\\\nL’hydroélectricité est la première source d’électricité renouvelable en France, et la deuxième source de production électrique derrière l'énergie nucléaire.\n\nLes projets de production hydroélectrique peuvent prendre la forme d'un nouvel aménagement, de la remise en service ou de l'optimisation d'un équipement préalablement existant. \\\nRéalisez une étude de faisabilité et mettez en place votre projet à fort impact écologique.",
     "moreDescription": "- [**La filière hydroélectrique**](https://agirpourlatransition.ademe.fr/collectivites/amenager-territoire/energies-renouvelables-sobriete/hydroelectricite), décryptée par l'ADEME.",
     "themes": [
       "energy"
@@ -253,7 +483,30 @@
       "etude-hydroelectricite"
     ],
     "linkedProjects": [],
-    "priority": "980"
+    "priority": "980",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 12,
@@ -277,7 +530,30 @@
       "investissement-geothermie-profonde"
     ],
     "linkedProjects": [],
-    "priority": "950"
+    "priority": "950",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 13,
@@ -299,7 +575,30 @@
       "pret-economies-d-energie-pee"
     ],
     "linkedProjects": [],
-    "priority": "500"
+    "priority": "500",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 14,
@@ -323,7 +622,30 @@
       "cedre-premier-pas"
     ],
     "linkedProjects": [],
-    "priority": "140"
+    "priority": "140",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 15,
@@ -351,7 +673,30 @@
       "solaire-ready"
     ],
     "linkedProjects": [],
-    "priority": "150"
+    "priority": "150",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 16,
@@ -374,7 +719,30 @@
     "linkedProjects": [
       19
     ],
-    "priority": "50"
+    "priority": "50",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 17,
@@ -395,7 +763,30 @@
       "pret-vert"
     ],
     "linkedProjects": [],
-    "priority": "550"
+    "priority": "550",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 18,
@@ -422,7 +813,30 @@
       "recharge-vehicule-electrique"
     ],
     "linkedProjects": [],
-    "priority": "190"
+    "priority": "190",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 19,
@@ -446,7 +860,30 @@
       "sites-touristiques-exemplaires"
     ],
     "linkedProjects": [],
-    "priority": "140"
+    "priority": "140",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 20,
@@ -468,7 +905,30 @@
       "cedre-premier-pas"
     ],
     "linkedProjects": [],
-    "priority": "60"
+    "priority": "60",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 21,
@@ -490,7 +950,30 @@
       "charte-zero-dechet-plastique"
     ],
     "linkedProjects": [],
-    "priority": "90"
+    "priority": "90",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 22,
@@ -512,7 +995,30 @@
       "tremplin"
     ],
     "linkedProjects": [],
-    "priority": "800"
+    "priority": "800",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 23,
@@ -533,7 +1039,30 @@
       "cedre-investissement"
     ],
     "linkedProjects": [],
-    "priority": "180"
+    "priority": "180",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 24,
@@ -559,7 +1088,30 @@
       "pret-vert"
     ],
     "linkedProjects": [],
-    "priority": "330"
+    "priority": "330",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 25,
@@ -580,7 +1132,30 @@
       "investissement-contre-le-gaspillage-alimentaire"
     ],
     "linkedProjects": [],
-    "priority": "440"
+    "priority": "440",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 26,
@@ -600,7 +1175,30 @@
       "investour"
     ],
     "linkedProjects": [],
-    "priority": "20"
+    "priority": "20",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 27,
@@ -623,7 +1221,30 @@
       "sud-pret-climat"
     ],
     "linkedProjects": [],
-    "priority": "170"
+    "priority": "170",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 28,
@@ -647,7 +1268,30 @@
       "sud-pret-climat"
     ],
     "linkedProjects": [],
-    "priority": "160"
+    "priority": "160",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 29,
@@ -666,7 +1310,30 @@
       "etude-projet-de-recherche"
     ],
     "linkedProjects": [],
-    "priority": "890"
+    "priority": "890",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 30,
@@ -693,7 +1360,30 @@
       31,
       32
     ],
-    "priority": "770"
+    "priority": "770",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 31,
@@ -723,7 +1413,30 @@
       20,
       21
     ],
-    "priority": "10"
+    "priority": "10",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 32,
@@ -753,7 +1466,30 @@
       1,
       33
     ],
-    "priority": "660"
+    "priority": "660",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 33,
@@ -779,7 +1515,30 @@
       1,
       32
     ],
-    "priority": "310"
+    "priority": "310",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 35,
@@ -811,7 +1570,30 @@
       27,
       31
     ],
-    "priority": "380"
+    "priority": "380",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 36,
@@ -838,7 +1620,30 @@
       3,
       22
     ],
-    "priority": "150"
+    "priority": "150",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 71,
@@ -865,7 +1670,30 @@
       20,
       72
     ],
-    "priority": "290"
+    "priority": "290",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 72,
@@ -890,7 +1718,30 @@
       20,
       71
     ],
-    "priority": "120"
+    "priority": "120",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 137,
@@ -911,7 +1762,30 @@
       "cedre-investissement"
     ],
     "linkedProjects": [],
-    "priority": "190"
+    "priority": "190",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 138,
@@ -935,7 +1809,30 @@
       "cedre-investissement"
     ],
     "linkedProjects": [],
-    "priority": "240"
+    "priority": "240",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 139,
@@ -956,7 +1853,30 @@
       "cedre-investissement"
     ],
     "linkedProjects": [],
-    "priority": "210"
+    "priority": "210",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 140,
@@ -977,7 +1897,30 @@
       "cedre-investissement"
     ],
     "linkedProjects": [],
-    "priority": "120"
+    "priority": "120",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 141,
@@ -997,7 +1940,30 @@
       "nature-ta-ville"
     ],
     "linkedProjects": [],
-    "priority": "230"
+    "priority": "230",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 142,
@@ -1017,7 +1983,30 @@
       "cedre-investissement"
     ],
     "linkedProjects": [],
-    "priority": "130"
+    "priority": "130",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 143,
@@ -1026,7 +2015,7 @@
     "nameTag": "🚲 abris vélos",
     "shortDescription": "Il permet de conserver les vélos de vos collaborateurs et de vos clients à l'abri des intempéries.",
     "image": "/images/projet/abris-velos.webp",
-    "longDescription": "La construction d'un abri à vélo muni d'emplacements sécurisés encourage les mobilités vertes de vos collaborateurs, et favorise l'accueil des cyclo-touristes.\n\nS'il est équipé de panneaux photovoltaïques, l'abri à vélo peut vous permettre de produire l'électricité nécessaire à la recharge des vélos à assistance électrique.",
+    "longDescription": "La construction d'un abri à vélo muni d'emplacements sécurisés encourage les mobilités vertes de vos collaborateurs, et favorise l'accueil des cyclo-touristes.\n\nS'il est équipé de panneaux photovoltaïques, l'abri à vélo peut vous permettre de produire l'électricité nécessaire à la recharge des vélos à assistance électrique.\n\nUn abris à vélo peut être équipé :\n\n\\- de bornes de recharge pour vélo à assistance électrique (VAE)\n\n\\- de bornes de gonflage\n\n\\- de bornes de réparation\n\n\\- de bornes multifonction\n\n\\- de consignes à bagages sécurisées",
     "moreDescription": "- [**Mon entreprise à l'heure des mobilités durables**](https://www.ecologie.gouv.fr/sites/default/files/documents/22061-3_Mobilite%20durable%20entrepriseA4_web.pdf)**,** les obligations et dispositifs de soutien dans le secteur privé.",
     "themes": [
       "mobility"
@@ -1038,7 +2027,30 @@
       "sites-touristiques-exemplaires"
     ],
     "linkedProjects": [],
-    "priority": "250"
+    "priority": "250",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 144,
@@ -1048,7 +2060,7 @@
     "shortDescription": "Comprendre et minimiser les impacts de l'activité de votre entreprise sur la faune et la flore.",
     "image": "/images/projet/biodiversite.webp",
     "longDescription": "La Stratégie nationale biodiversité 2030 promeut les initiatives pour faire progresser la prise en compte de la biodiversité dans les stratégies des entreprises. Il s'agit à la fois de minimiser l'impact des entreprises sur les écosystèmes et de renforcer la résilience de leur activité au changement climatique. \\\nLa préservation ou la restauration d'espèces en danger, de faune et de flore, réduire les pollutions, ramener de la nature en ville... sont autant de propositions qui visent à renforcer les liens avec les écosystèmes.",
-    "moreDescription": "- [**Entreprises engagées pour la nature**](https://biodiversite.gouv.fr/sites/default/files/2024-03/OFB_GUIDE_EEN_2023.pdf), un guide gouvernemental.\n- [**9 mesures de la Stratégie nationale biodiversité 2030**](https://biodiversite.gouv.fr/les-mesures-de-la-snb?field_target%5B196%5D=196&op=) pour les entreprises.",
+    "moreDescription": "- [**Entreprises engagées pour la nature** **de l'OFB**](https://biodiversite.gouv.fr/sites/default/files/2024-03/OFB_GUIDE_EEN_2023.pdf), un guide gouvernemental.\n- [**9 mesures de la Stratégie nationale biodiversité 2030**](https://biodiversite.gouv.fr/les-mesures-de-la-snb?field_target%5B196%5D=196&op=) pour les entreprises.",
     "themes": [
       "biodiversite"
     ],
@@ -1063,7 +2075,30 @@
       "mecenaturel"
     ],
     "linkedProjects": [],
-    "priority": "200"
+    "priority": "200",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 145,
@@ -1083,7 +2118,30 @@
       "cedre-investissement"
     ],
     "linkedProjects": [],
-    "priority": "130"
+    "priority": "130",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 146,
@@ -1109,6 +2167,29 @@
       "cedre-investissement"
     ],
     "linkedProjects": [],
-    "priority": "130"
+    "priority": "130",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   }
 ]
