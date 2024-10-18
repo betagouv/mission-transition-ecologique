@@ -21,7 +21,7 @@ export const useProgramStore = defineStore('program', () => {
   })
 
   const programs = computed(async () => {
-    const result = await getPrograms({ onlyEligible: false })
+    const result = await getPrograms()
 
     if (result.isOk) {
       hasPrograms.value = result.value.length > 0

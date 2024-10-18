@@ -46,7 +46,7 @@ export class ProgramsController extends Controller {
   ): OpenAPISafeProgram | void {
     this.setStatus(200)
     const programService = new ProgramService()
-    const program = programService.getOneWithEligiblity(programId, questionnaireData)
+    const program = programService.getOneMaybeWithEligibility(programId, questionnaireData)
 
     if (program.isErr) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-return

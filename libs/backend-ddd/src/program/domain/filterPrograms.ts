@@ -26,30 +26,44 @@ export const filterPrograms = (
   const filteredPrograms: ProgramTypeWithEligibility[] = []
 
   for (const program of programs) {
-    const evaluation = rulesService.evaluate(FILTERING_RULE_NAME, program, inputData, currentDate)
-
-    if (evaluation.isErr) {
-      return Result.err(addErrorDetails(evaluation.error, program.id))
+    const programWithElibibility = evaluateProgramEligibility(program, inputData, currentDate, rulesService)
+    if (programWithElibibility.isErr) {
+      return Result.err(addErrorDetails(programWithElibibility.error, program.id))
     }
 
-    // since publicodes return a single boolean or undefined value and we want to know if ineligible programs
-    // are ineligible because of the inputData of because of their EOL, we need an other publicodes evaluation for this specific question
-    let dateEvaluation: Result<boolean | undefined, Error> = Result.ok(true)
-    if (inputData.onlyEligible !== true) {
-      dateEvaluation = rulesService.evaluate(FILTERING_RULE_NAME, program, {}, currentDate)
-    }
-    if (dateEvaluation.isErr) {
-      return Result.err(addErrorDetails(dateEvaluation.error, program.id))
-    }
-
-    const programWithElibibility = setEligibility(program, evaluation.value, dateEvaluation.value)
-
-    if (shouldKeepProgram(programWithElibibility.eligibility, inputData.onlyEligible)) {
-      filteredPrograms.push(programWithElibibility)
+    if (shouldKeepProgram(programWithElibibility.value.eligibility, inputData.onlyEligible)) {
+      filteredPrograms.push(programWithElibibility.value)
     }
   }
 
   return Result.ok(filteredPrograms)
+}
+
+export const evaluateProgramEligibility = (
+  program: ProgramType,
+  inputData: QuestionnaireData,
+  currentDate: string,
+  rulesService: RulesManager
+): Result<ProgramTypeWithEligibility, Error> => {
+  const evaluation = rulesService.evaluate(FILTERING_RULE_NAME, program, inputData, currentDate)
+
+  if (evaluation.isErr) {
+    return Result.err(addErrorDetails(evaluation.error, program.id))
+  }
+
+  // since publicodes return a single boolean or undefined value and we want to know if ineligible programs
+  // are ineligible because of the inputData of because of their EOL, we need an other publicodes evaluation for this specific question
+  let dateEvaluation: Result<boolean | undefined, Error> = Result.ok(true)
+  if (inputData.onlyEligible !== true) {
+    dateEvaluation = rulesService.evaluate(FILTERING_RULE_NAME, program, {}, currentDate)
+  }
+  if (dateEvaluation.isErr) {
+    return Result.err(addErrorDetails(dateEvaluation.error, program.id))
+  }
+
+  const programWithElibibility = setEligibility(program, evaluation.value, dateEvaluation.value)
+
+  return Result.ok(programWithElibibility)
 }
 
 const addErrorDetails = (err: Error, programName: string): Error => {

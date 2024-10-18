@@ -22,8 +22,8 @@ export class ProgramService {
     return this._program.getById(id)
   }
 
-  public getOneWithEligiblity(id: string, questionnaireData: QuestionnaireData): Result<ProgramTypeWithEligibility, Error> {
-    return this._program.getOneWithEligibility(id, questionnaireData)
+  public getOneMaybeWithEligibility(id: string, questionnaireData: QuestionnaireData): Result<ProgramTypeWithEligibility, Error> {
+    return this._program.getOneMaybeWithEligibility(id, questionnaireData)
   }
 
   public getFilteredPrograms(questionnaireData: QuestionnaireData): Result<ProgramTypeWithEligibility[], Error> {
