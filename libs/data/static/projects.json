@@ -710,6 +710,8 @@
     "mainTheme": "environmental",
     "programs": [
       "diagnostic-changement-climatique",
+      "diagnostic-rse",
+      "diagnostic-transition-ecologique",
       "fonds-tourisme-durable",
       "diag-eco-flux",
       "performa-environnement",
@@ -1026,7 +1028,7 @@
     "nameTag": "🚲 abris vélos",
     "shortDescription": "Il permet de conserver les vélos de vos collaborateurs et de vos clients à l'abri des intempéries.",
     "image": "/images/projet/abris-velos.webp",
-    "longDescription": "La construction d'un abri à vélo muni d'emplacements sécurisés encourage les mobilités vertes de vos collaborateurs, et favorise l'accueil des cyclo-touristes.\n\nS'il est équipé de panneaux photovoltaïques, l'abri à vélo peut vous permettre de produire l'électricité nécessaire à la recharge des vélos à assistance électrique.",
+    "longDescription": "La construction d'un abri à vélo muni d'emplacements sécurisés encourage les mobilités vertes de vos collaborateurs, et favorise l'accueil des cyclo-touristes.\n\nS'il est équipé de panneaux photovoltaïques, l'abri à vélo peut vous permettre de produire l'électricité nécessaire à la recharge des vélos à assistance électrique.\n\nUn abris à vélo peut être équipé :\n\n\\- de bornes de recharge pour vélo à assistance électrique (VAE)\n\n\\- de bornes de gonflage\n\n\\- de bornes de réparation\n\n\\- de bornes multifonction\n\n\\- de consignes à bagages sécurisées",
     "moreDescription": "- [**Mon entreprise à l'heure des mobilités durables**](https://www.ecologie.gouv.fr/sites/default/files/documents/22061-3_Mobilite%20durable%20entrepriseA4_web.pdf)**,** les obligations et dispositifs de soutien dans le secteur privé.",
     "themes": [
       "mobility"
@@ -1048,7 +1050,7 @@
     "shortDescription": "Comprendre et minimiser les impacts de l'activité de votre entreprise sur la faune et la flore.",
     "image": "/images/projet/biodiversite.webp",
     "longDescription": "La Stratégie nationale biodiversité 2030 promeut les initiatives pour faire progresser la prise en compte de la biodiversité dans les stratégies des entreprises. Il s'agit à la fois de minimiser l'impact des entreprises sur les écosystèmes et de renforcer la résilience de leur activité au changement climatique. \\\nLa préservation ou la restauration d'espèces en danger, de faune et de flore, réduire les pollutions, ramener de la nature en ville... sont autant de propositions qui visent à renforcer les liens avec les écosystèmes.",
-    "moreDescription": "- [**Entreprises engagées pour la nature**](https://biodiversite.gouv.fr/sites/default/files/2024-03/OFB_GUIDE_EEN_2023.pdf), un guide gouvernemental.\n- [**9 mesures de la Stratégie nationale biodiversité 2030**](https://biodiversite.gouv.fr/les-mesures-de-la-snb?field_target%5B196%5D=196&op=) pour les entreprises.",
+    "moreDescription": "- [**Entreprises engagées pour la nature** **de l'OFB**](https://biodiversite.gouv.fr/sites/default/files/2024-03/OFB_GUIDE_EEN_2023.pdf), un guide gouvernemental.\n- [**9 mesures de la Stratégie nationale biodiversité 2030**](https://biodiversite.gouv.fr/les-mesures-de-la-snb?field_target%5B196%5D=196&op=) pour les entreprises.",
     "themes": [
       "biodiversite"
     ],

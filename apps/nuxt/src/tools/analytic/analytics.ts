@@ -7,7 +7,7 @@ export default class Analytics {
   static sendEvent(action: string, name: string | null = null, value?: string | number | object | Record<string, string | number>) {
     const posthogCookie = Cookie.getCookieByValue(CookieValue.Posthog)
     if (posthogCookie?.accepted) {
-      Posthog.captureEvent(name ? name : 'unnamed event', action, value)
+      Posthog.captureEvent(action, name ? name : 'unnamed event', value)
     }
     if (import.meta.client) {
       Matomo.sendEvent(action, name, JSON.stringify(value))

@@ -47,7 +47,7 @@ export class ProgramsController extends Controller {
 
     if (!program) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-      Monitor.error('Error in get Program id', { programId })
+      Monitor.warning('Error in get Program id', { programId })
       return notFoundResponse(404, { message: `Program with id "${programId}" could not be found` })
     }
 

@@ -111,7 +111,6 @@ import {
   type UsedTrack
 } from '@/types'
 import { RouteName } from '@/types/routeType'
-import Analytics from '@/tools/analytic/analytics'
 import Navigation from '@/tools/navigation'
 import { Scroll } from '@/tools/scroll'
 import TrackColOption from '@/tools/track/TrackColOption'
@@ -168,11 +167,6 @@ const updateSelection = async (option: TrackOptionsUnion, index: number, forceRe
   if ((!isActive && !forceRemove) || forceKeep) {
     selectedOptionsIndexes.value = allowMultiple ? [...selectedOptionsIndexes.value, index] : [index]
     selectedOptions.value = allowMultiple ? [...selectedOptions.value, option] : [option]
-
-    if (option.value) {
-      // analytics / track event / only if positive choice
-      Analytics.sendEvent(usedTrack.id, usedTrack.id, option.value)
-    }
   } else {
     // remove from selection because is already active
     selectedOptionsIndexes.value = allowMultiple

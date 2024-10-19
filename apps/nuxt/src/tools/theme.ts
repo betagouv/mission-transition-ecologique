@@ -91,14 +91,14 @@ export class Theme {
     const tags = []
 
     if (UsedTrack.isNoSpecificGoal()) {
-      UsedTrack.isEnergyTheme() ? tags.push(this.getById(ThemeId.Energy) as ThemeType) : undefined
-      tags.push(this.getById(ThemeId.Building) as ThemeType)
-      UsedTrack.isMobilityTheme() ? tags.push(this.getById(ThemeId.Mobility) as ThemeType) : undefined
-      UsedTrack.isWaterTheme() ? tags.push(this.getById(ThemeId.Water) as ThemeType) : undefined
-      UsedTrack.isEcoDesignTheme() ? tags.push(this.getById(ThemeId.EcoDesign) as ThemeType) : undefined
-      UsedTrack.isWasteTheme() ? tags.push(this.getById(ThemeId.Waste) as ThemeType) : undefined
+      UsedTrack.hasEnergyTheme() ? tags.push(this.getById(ThemeId.Energy) as ThemeType) : undefined
+      UsedTrack.hasBuildingProperty() ? tags.push(this.getById(ThemeId.Building) as ThemeType) : undefined
+      UsedTrack.hasMobilityTheme() ? tags.push(this.getById(ThemeId.Mobility) as ThemeType) : undefined
+      UsedTrack.hasWaterTheme() ? tags.push(this.getById(ThemeId.Water) as ThemeType) : undefined
+      UsedTrack.hasEcoDesignTheme() ? tags.push(this.getById(ThemeId.EcoDesign) as ThemeType) : undefined
+      UsedTrack.hasWasteTheme() ? tags.push(this.getById(ThemeId.Waste) as ThemeType) : undefined
       tags.push(this.getById(ThemeId.RH) as ThemeType)
-      UsedTrack.isEnvironmentalImpactTheme() ? tags.push(this.getById(ThemeId.Environmental) as ThemeType) : undefined
+      UsedTrack.hasEnvironmentalImpactTheme() ? tags.push(this.getById(ThemeId.Environmental) as ThemeType) : undefined
 
       return tags
     }
