@@ -12,6 +12,7 @@ export default class Posthog {
       this._posthog = posthog.init(Config.posthogApiKey, {
         api_host: 'https://eu.i.posthog.com',
         capture_pageview: false,
+        capture_pageleave: false,
         person_profiles: 'always'
       })
     }
@@ -35,6 +36,12 @@ export default class Posthog {
       if (posthogCookie?.accepted) {
         this._posthog.capture('$pageview', { path: to.fullPath })
       }
+    }
+  }
+
+  static capturePageLeave(from: RouteLocationNormalized) {
+    if (this._posthog) {
+      this._posthog.capture('$pageleave', { $current_url: window.location.host + from.fullPath, path: from.fullPath })
     }
   }
 
