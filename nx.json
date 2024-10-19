@@ -26,6 +26,9 @@
     },
     "type-check": {
       "dependsOn": ["@tee/data:generate-program"]
+    },
+    "start": {
+      "dependsOn": []
     }
   },
   "plugins": [

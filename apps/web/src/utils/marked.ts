@@ -12,7 +12,6 @@ export class Marked {
 
   private static _extension = (): MarkedExtension => {
     return {
-      useNewRenderer: true,
       renderer: {
         link(token: Tokens.Link) {
           const text = this.parser.parseInline(token.tokens)
