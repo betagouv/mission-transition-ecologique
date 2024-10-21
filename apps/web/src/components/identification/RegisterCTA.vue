@@ -1,11 +1,11 @@
 <template>
   <TeeDsfrButton
-    :class="isIdentified ? 'fr-btn--tertiary-no-outline' : ''"
-    @click="changeModalStatus"
+    :class="registrationStatus ? 'fr-btn--tertiary-no-outline' : ''"
+    @click="emit('click')"
   >
     <template #text>
       <span
-        v-if="isIdentified || Breakpoint.isSmallScreen()"
+        v-if="registrationStatus || Breakpoint.isSmallScreen()"
         :class="Breakpoint.isSmallScreen() ? 'fr-icon--lg' : 'fr-pr-2w'"
         class="fr-icon-account-circle-fill register-icon-profile"
       >
@@ -13,14 +13,15 @@
           :id="Breakpoint.isSmallScreen() ? 'badge-mobile' : 'base-badge'"
           :class="badgeIcon"
           class="fr-text--blue-france fr-radius-a--2v register-badge"
-        />
+        >
+        </span>
       </span>
 
       <span
         v-if="!Breakpoint.isSmallScreen()"
         id="register-text"
-        :class="isIdentified ? '' : 'fr-text--yellow'"
-        >{{ isIdentified ? companyName : 'Vous êtes...?' }}
+        :class="registrationStatus ? '' : 'fr-text--yellow'"
+        >{{ registrationStatus ? companyName : 'Vous êtes...?' }}
       </span>
     </template>
   </TeeDsfrButton>
@@ -28,19 +29,19 @@
 <script setup lang="ts">
 import Breakpoint from '@/utils/breakpoints'
 
-const isIdentified = ref<boolean>(false)
+interface Props {
+  registrationStatus: boolean
+}
+const props = defineProps<Props>()
+const emit = defineEmits(['click'])
 
 const badgeIcon = computed(() => {
-  if (Breakpoint.isSmallScreen() && !isIdentified.value) {
+  if (Breakpoint.isSmallScreen() && !props.registrationStatus) {
     return 'fr-bg--yellow fr-icon-question-mark'
   } else {
     return 'fr-bg--green fr-icon-check-line'
   }
 })
-
-const changeModalStatus = () => {
-  isIdentified.value = !isIdentified.value
-}
 const companyName = 'La meilleure entreprise de France'
 </script>
 <style lang="scss" scoped>
