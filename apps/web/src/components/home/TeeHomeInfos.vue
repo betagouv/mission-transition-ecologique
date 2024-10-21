@@ -57,7 +57,7 @@
         <TeeDsfrButton
           label="Je me lance"
           aria-disabled="false"
-          icon="ri-arrow-right-line"
+          icon="fr-icon-arrow-right-line"
           icon-right
           class="fr-text--bold fr-btn--tertiary-no-outline"
           @click="launchQuestionnaire"

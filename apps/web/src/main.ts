@@ -8,12 +8,9 @@ import { type App, type Component, createApp } from 'vue'
 import { createPinia } from 'pinia'
 import { router } from './router'
 import WebApp from './WebApp.vue'
-import { addIcons } from './plugin/icons'
 import Sentry from './plugin/sentry'
 import { createHead } from '@unhead/vue'
 import posthogPlugin from './plugin/postHogPlugin'
-
-addIcons()
 
 const store = createPinia()
 

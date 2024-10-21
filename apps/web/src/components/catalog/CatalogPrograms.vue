@@ -34,13 +34,9 @@
               <ProgramFiltersAccordion />
             </div>
           </div>
-          <div class="fr-col-12 fr-col-md-10 fr-pr-md-2v">
+          <div class="fr-col-12 fr-col-md-10 fr-pr-md-2v fr-col-justify--center">
             <ProgramList :filtered-programs="filteredPrograms" />
-            <TeeSpinner
-              v-if="hasSpinner"
-              class="fr-col-12"
-              scale="6"
-            />
+            <TeeSpinner v-if="hasSpinner" />
             <TeeListNoResults
               v-else-if="showNoResultsComponent"
               :has-error="hasError"
