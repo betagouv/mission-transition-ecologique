@@ -2,11 +2,12 @@
   <DsfrButton
     v-bind="props"
     :icon="iconComputed"
-  />
+  >
+    <slot name="default"></slot>
+  </DsfrButton>
 </template>
 
 <script setup lang="ts">
-import type { DsfrButton } from '@gouvminint/vue-dsfr/types'
 import { computed } from 'vue'
 import type { DsfrButtonProps } from '@gouvminint/vue-dsfr/types/components/DsfrButton/DsfrButton.vue'
 

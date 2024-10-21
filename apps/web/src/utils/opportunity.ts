@@ -1,12 +1,25 @@
 import { PhoneValidator, EmailValidator, SiretValidator } from '@tee/common'
-import { FieldType, RouteName, type ProgramData as ProgramType, Project, FormDataType } from '@/types'
+import { FieldType, RouteName, type ProgramData as ProgramType, Project, FormDataType, ThemeType, ThemeId } from '@/types'
+
 import TrackStructure from '@/utils/track/trackStructure'
 import { CalloutType } from '@/types/elementsPropsTypes'
 import Translation from '@/utils/translation'
+import { Theme } from '@/utils/theme'
 
 export default class Opportunity {
   static getBaseOpportunityFormFields(): FormDataType {
+    const selectedThemeId = TrackStructure.getTheme()
+    const selectedTheme = Theme.getById(selectedThemeId as ThemeId)
     return {
+      theme: {
+        required: true,
+        hidden: true,
+        options: Theme.themes.map((theme: ThemeType) => theme.title),
+        value: selectedTheme?.title,
+        label: 'Thématique',
+        isValid: true,
+        type: FieldType.Select
+      },
       name: { required: true, colSize: 6, type: FieldType.Text, value: undefined, label: 'Prénom', isValid: undefined },
       surname: { required: true, colSize: 6, type: FieldType.Text, value: undefined, label: 'Nom', isValid: undefined },
       email: {
@@ -79,6 +92,22 @@ export default class Opportunity {
         value: project.title,
         label: 'Quel est votre projet?',
         isValid: true,
+        type: FieldType.Text
+      },
+      ...baseFields
+    }
+  }
+  static getOtherProjectFormFields(): FormDataType {
+    const baseFields = this.getBaseOpportunityFormFields()
+    baseFields.needs.label = 'Quel est votre projet ?'
+    baseFields.needs.value = Translation.t('otherProject.form.needs', { secteur: TrackStructure.getSectorShortLabel() })
+    baseFields.theme.hidden = false
+    return {
+      projectTitle: {
+        required: true,
+        value: undefined,
+        label: 'Quel est le nom de votre projet?',
+        isValid: undefined,
         type: FieldType.Text
       },
       ...baseFields

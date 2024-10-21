@@ -28,6 +28,7 @@
       <div class="fr-grid-row fr-grid-row--gutters fr-mb-2v fr-mt-4v">
         <TeeFormElement
           v-for="fieldKey in Object.keys(localForm)"
+          v-show="!localForm[fieldKey].hidden"
           :key="fieldKey"
           v-model="localForm[fieldKey]"
           :field="localForm[fieldKey]"
@@ -80,7 +81,7 @@
 <script setup lang="ts">
 import { Scroll } from '@/utils/scroll'
 import { computed } from 'vue'
-import { type ReqResp, TrackId, FormDataType, InputFieldUnionType } from '@/types'
+import { type ReqResp, TrackId, FormDataType, InputFieldUnionType, Project } from '@/types'
 import Translation from '@/utils/translation'
 import TeeDsfrButton from '@/components/element/button/TeeDsfrButton.vue'
 import Format from '@/utils/format'
@@ -88,11 +89,12 @@ import OpportunityApi from '@/service/api/opportunityApi'
 import { OpportunityType } from '@tee/common'
 import { useNavigationStore } from '@/stores/navigation'
 import Analytics from '@/utils/analytic/analytics'
+import { ProgramType } from '@tee/data'
 
 const navigation = useNavigationStore()
 interface Props {
-  dataId: string
-  dataSlug?: string
+  dataId?: string
+  dataSlug?: ProgramType['id'] | Project['slug']
   formType: OpportunityType
   form: FormDataType
   hint: string
@@ -134,7 +136,7 @@ const isFieldValid = (field: InputFieldUnionType): boolean => {
 const saveForm = async () => {
   try {
     isLoading.value = true
-    const opportunity = new OpportunityApi(localForm.value, props.dataId, props.dataSlug || props.dataId, props.formType)
+    const opportunity = new OpportunityApi(localForm.value, props.dataId, props.dataSlug || props.dataId?.toString(), props.formType)
     requestResponse.value = await opportunity.fetch()
 
     // analytics / send event
@@ -151,7 +153,7 @@ const getEventName = () => {
 const scrollToFormContainer = () => {
   const element = props.formContainerRef
   if (element) {
-    Scroll.toBlockCenter(element)
+    Scroll.to(element)
   }
 }
 </script>
