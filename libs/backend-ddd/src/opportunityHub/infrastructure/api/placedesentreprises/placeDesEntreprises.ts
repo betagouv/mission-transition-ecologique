@@ -56,7 +56,6 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     } else if (opportunityData.isProject()) {
       maybePayload = this._createProjectRequestBody(opportunity, opportunityData.data.title, opportunityData.data.mainTheme)
     } else if (opportunityData.isCustomProject()) {
-      opportunity.linkToCatalog = 'https://mission-transition-ecologique.beta.gouv.fr/custom'
       maybePayload = this._createProjectRequestBody(opportunity, opportunityData.data.title)
     } else {
       return Maybe.of(Error("Canno't transmit to PDE an opportunity of type" + opportunity.type))

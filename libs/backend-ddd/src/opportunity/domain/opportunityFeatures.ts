@@ -6,7 +6,7 @@ import OpportunityHubFeatures from '../../opportunityHub/domain/opportunityHubFe
 import { OpportunityHubRepository } from '../../opportunityHub/domain/spi'
 import { ProgramRepository } from '../../program/domain/spi'
 import ProgramFeatures from '../../program/domain/programFeatures'
-import { Operators, ProgramType } from '@tee/data'
+import { Operators, ProgramType, ThemeId } from '@tee/data'
 import { ContactDetails, Opportunity, OpportunityType, SiretValidator } from '@tee/common'
 import EstablishmentService from '../../establishment/application/establishmentService'
 import Monitor from '../../common/domain/monitoring/monitor'
@@ -94,7 +94,12 @@ export default class OpportunityFeatures {
         return Result.ok(new OpportunityAssociatedData(OpportunityType.Project, associatedProject))
       }
       case OpportunityType.CustomProject:
-        return Result.ok(new OpportunityAssociatedData(OpportunityType.CustomProject, { title: opportunity.titleMessage || 'No title' }))
+        return Result.ok(
+          new OpportunityAssociatedData(OpportunityType.CustomProject, {
+            title: opportunity.titleMessage || 'No title',
+            theme: opportunity.theme as ThemeId
+          })
+        )
       default:
         return Result.err(new Error('Opportunity type not handled in _createOpportunityAssociatedObject'))
     }

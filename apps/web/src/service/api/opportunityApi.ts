@@ -118,6 +118,9 @@ export default class OpportunityApi extends RequestApi {
         }) ?? ''
       )
     }
+    if (this._opportunityType == OpportunityType.CustomProject) {
+      return 'https://mission-transition-ecologique.beta.gouv.fr/custom'
+    }
     return undefined
   }
 
