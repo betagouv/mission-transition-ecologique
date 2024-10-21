@@ -301,10 +301,22 @@ const isProgramAutonomous = computed(() => {
 onBeforeMount(async () => {
   useNavigationStore().hasSpinner = true
   program.value = programsStore.currentProgram
-  console.log(program.value ? Opportunity.getProgramFormFields(program.value) : '')
   const projectResult = await projectStore.projects
   if (projectResult.isOk) {
     linkedProjects.value = Program.getLinkedProjects(program.value, projectResult.value)
+  }
+
+  if (program.value && navigationStore.isByRouteName(RouteName.CatalogProgramFromCatalogProjectDetail)) {
+    useHead({
+      link: [
+        {
+          rel: 'canonical',
+          href: navigationStore.getAbsoluteUrlByRouteName(RouteName.CatalogProgramDetail, {
+            programId: program.value.id
+          })
+        }
+      ]
+    })
   }
 
   useSeoMeta(MetaSeo.get(program.value?.titre, program.value?.description, program.value?.illustration))
