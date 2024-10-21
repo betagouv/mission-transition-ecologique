@@ -6,8 +6,6 @@
 export {}
 declare global {
   const EffectScope: typeof import('vue')['EffectScope']
-  const OhVueIcon: typeof import('oh-vue-icons')['OhVueIcon']
-  const addIcons: typeof import('oh-vue-icons')['addIcons']
   const computed: typeof import('vue')['computed']
   const createApp: typeof import('vue')['createApp']
   const customRef: typeof import('vue')['customRef']

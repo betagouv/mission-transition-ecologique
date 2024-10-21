@@ -19,8 +19,7 @@
               :icon="tabTitle.icon"
               :panel-id="tabTitle.panelId || `${getIdFromIndex(index)}-panel`"
               :tab-id="tabTitle.tabId || getIdFromIndex(index)"
-              :selected="selected === index"
-              @click="selectIndex(index)"
+              @click="activeTab = index"
               @next="selectNext()"
               @previous="selectPrevious()"
               @first="selectFirst()"
@@ -38,12 +37,8 @@
       :key="index"
       :panel-id="titles?.[index]?.panelId || `${getIdFromIndex(index)}-panel`"
       :tab-id="titles?.[index]?.tabId || getIdFromIndex(index)"
-      :selected="selected === index"
-      :asc="ascendant"
     >
-      <p>
-        {{ tabContent }}
-      </p>
+      {{ tabContent }}
     </DsfrTabContent>
 
     <slot name="tab-content-header" />
@@ -54,57 +49,65 @@
 <script lang="ts" setup>
 import { BreakpointNameType } from '@/types'
 import Breakpoint from '@/utils/breakpoints'
-import { DsfrTabItem, DsfrTabContent, type DsfrTabsProps, getRandomId, DsfrTabs } from '@gouvminint/vue-dsfr'
-
-export interface TeeDsfrTabsProps extends Omit<DsfrTabsProps, 'tabTitles'> {
-  tabTitles?: { title: TitleTab[] }[]
-}
+import { DsfrTabItem, DsfrTabContent, type DsfrTabsProps, getRandomId, DsfrTabs, registerTabKey } from '@gouvminint/vue-dsfr'
+import { DsfrTabItemProps } from '@gouvminint/vue-dsfr/types/components/DsfrTabs/DsfrTabs.types'
 
 interface TitleTab {
   title: string
-  icon?: string
   size?: BreakpointNameType
-  panelId?: string
-  tabId?: string
+}
+
+export interface TeeDsfrTabsProps extends Omit<DsfrTabsProps, 'tabTitles'> {
+  tabTitles?: (DsfrTabItemProps & { title: TitleTab[] })[]
 }
 
 const props = withDefaults(defineProps<TeeDsfrTabsProps>(), {
   tabContents: () => [],
   tabTitles: () => [],
-  initialSelectedIndex: 0,
-  tabListName: ''
+  modelValue: 0
 })
 
-const { ascendant, selected } = useTabs(true, props.initialSelectedIndex || 0)
+const emit = defineEmits<{ 'update:modelValue': [tabIndex: number] }>()
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const emit = defineEmits<{ (e: 'selectTab', payload: number): void }>()
+const asc = ref(false)
+const activeTab = computed({
+  get: () => props.modelValue,
+  set(tabIndex: number) {
+    emit('update:modelValue', tabIndex)
+  }
+})
 
-const dsfrTabs = ref<InstanceType<typeof DsfrTabs> | null>(null)
-const generatedIds: Record<string, string> = reactive({})
-const resizeObserver = ref<ResizeObserver | null>(null)
+const tabs = ref(new Map<number, string>())
+const currentIndex = ref(0)
+provide(registerTabKey, (tabId: Ref<string>) => {
+  const asc = ref(true)
+  watch(activeTab, (newIndex, lastIndex) => {
+    asc.value = newIndex > lastIndex
+  })
+
+  if ([...tabs.value.values()].includes(tabId.value)) {
+    return { isVisible: computed(() => tabs.value.get(activeTab.value) === tabId.value), asc }
+  }
+  const myIndex = currentIndex.value++
+  tabs.value.set(myIndex, tabId.value)
+
+  const isVisible = computed(() => myIndex === activeTab.value)
+
+  watch(tabId, () => {
+    tabs.value.set(myIndex, tabId.value)
+  })
+
+  onUnmounted(() => {
+    tabs.value.delete(myIndex)
+  })
+
+  return { isVisible }
+})
+
 const $el = ref<HTMLElement | null>(null)
 const tablist = ref<HTMLUListElement | null>(null)
-const titles = computed(() => {
-  const filteredTitles =
-    props.tabTitles?.map((tab) => {
-      return tab.title.filter((titleItem) => {
-        if (typeof titleItem !== 'string') {
-          return (titleItem.size && Breakpoint.isLargerOrEqual(titleItem.size)) || (!titleItem.size && Breakpoint.isMobile())
-        }
-      })
-    }) || []
 
-  return filteredTitles.flat()
-})
-/*
- * Need to reimplement tab-height calc
- * @see https://github.com/GouvernementFR/dsfr/blob/main/src/component/tab/script/tab/tabs-group.js#L117
- */
-const renderTabs = () => {
-  dsfrTabs.value?.renderTabs()
-}
-
+const generatedIds: Record<string, string> = reactive({})
 const getIdFromIndex = (idx: number) => {
   if (generatedIds[idx]) {
     return generatedIds[idx]
@@ -114,42 +117,47 @@ const getIdFromIndex = (idx: number) => {
   return id
 }
 
-const scrollToTabItem = (idx: number, previousIdx: number) => {
-  const parent = tablist.value
+const selectPrevious = async () => {
+  const newIndex = activeTab.value === 0 ? props.tabTitles.length - 1 : activeTab.value - 1
+  asc.value = false
+  activeTab.value = newIndex
+}
+const selectNext = async () => {
+  const newIndex = activeTab.value === props.tabTitles.length - 1 ? 0 : activeTab.value + 1
+  asc.value = true
+  activeTab.value = newIndex
+}
+const selectFirst = async () => {
+  activeTab.value = 0
+}
+const selectLast = async () => {
+  activeTab.value = props.tabTitles.length - 1
+}
 
-  if (!parent) {
-    return
-  }
+/*
+ * Use metgods from DsfrTabs component to render tabs which are exposed
+ */
+const renderTabs = () => {
+  dsfrTabs.value?.renderTabs()
+}
 
-  const previousTab = parent.children[previousIdx] as HTMLElement
+const dsfrTabs = ref<InstanceType<typeof DsfrTabs> | null>(null)
+const resizeObserver = ref<ResizeObserver | null>(null)
 
-  if (idx > previousIdx) {
-    parent.scrollLeft += previousTab.offsetWidth
-  } else {
-    parent.scrollLeft -= previousTab.offsetWidth
-  }
-}
-const selectIndex = (idx: number) => {
-  const previousIdx = selected.value
-  ascendant.value = idx > selected.value
-  selected.value = idx
-  scrollToTabItem(idx, previousIdx)
-  emit('selectTab', idx)
-}
-const selectPrevious = () => {
-  const newIndex = selected.value === 0 ? props.tabTitles.length - 1 : selected.value - 1
-  selectIndex(newIndex)
-}
-const selectNext = () => {
-  const newIndex = selected.value === props.tabTitles.length - 1 ? 0 : selected.value + 1
-  selectIndex(newIndex)
-}
-const selectFirst = () => {
-  selectIndex(0)
-}
-const selectLast = () => {
-  selectIndex(props.tabTitles.length - 1)
-}
+const titles = computed(() => {
+  const filteredTitles =
+    props.tabTitles?.map((tab) => {
+      return {
+        ...tab,
+        title: tab.title
+          .filter((titleItem) => {
+            return (titleItem.size && Breakpoint.isLargerOrEqual(titleItem.size)) || (!titleItem.size && Breakpoint.isMobile())
+          })
+          .find(() => true)?.title
+      }
+    }) || []
+  return filteredTitles.flat()
+})
 
 onMounted(() => {
   /*
@@ -179,8 +187,9 @@ onUnmounted(() => {
 
 defineExpose({
   renderTabs,
-  selectIndex,
   selectFirst,
-  selectLast
+  selectLast,
+  selectNext,
+  selectPrevious
 })
 </script>
