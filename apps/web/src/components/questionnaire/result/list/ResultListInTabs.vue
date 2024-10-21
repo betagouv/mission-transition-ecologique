@@ -1,5 +1,5 @@
 <template>
-  <TeeTabs
+  <TeeDsfrTabs
     ref="tabs"
     class="fr-col-12"
     tab-list-name="Liste d’onglet"
@@ -35,11 +35,11 @@
         :has-error="hasError"
       />
     </DsfrTabContent>
-  </TeeTabs>
+  </TeeDsfrTabs>
 </template>
 
 <script setup lang="ts">
-import { TeeDsfrTabs } from '@/components/element/TeeTabs.vue'
+import { TeeDsfrTabsProps } from '@/components/element/vueDsfr/dsfrTabs/TeeDsfrTabs.vue'
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
 import { BreakpointNameType, ProgramData, Project } from '@/types'
@@ -56,7 +56,7 @@ const programs = ref<ProgramData[]>()
 const projects = ref<Project[]>()
 const hasError = ref<boolean>(false)
 
-const titles: TeeDsfrTabs['tabTitles'] = [
+const titles: TeeDsfrTabsProps['tabTitles'] = [
   { title: [{ title: "Des idées d'actions à mettre en place", size: BreakpointNameType.sm }, { title: "Idées d'actions" }] },
   { title: [{ title: 'Vos aides financières', size: BreakpointNameType.sm }, { title: 'Aides financières' }] }
 ]

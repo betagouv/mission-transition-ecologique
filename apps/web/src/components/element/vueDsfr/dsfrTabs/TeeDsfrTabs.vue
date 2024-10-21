@@ -56,7 +56,7 @@ import { BreakpointNameType } from '@/types'
 import Breakpoint from '@/utils/breakpoints'
 import { DsfrTabItem, DsfrTabContent, type DsfrTabsProps, getRandomId, DsfrTabs } from '@gouvminint/vue-dsfr'
 
-export interface TeeDsfrTabs extends Omit<DsfrTabsProps, 'tabTitles'> {
+export interface TeeDsfrTabsProps extends Omit<DsfrTabsProps, 'tabTitles'> {
   tabTitles?: { title: TitleTab[] }[]
 }
 
@@ -68,7 +68,7 @@ interface TitleTab {
   tabId?: string
 }
 
-const props = withDefaults(defineProps<TeeDsfrTabs>(), {
+const props = withDefaults(defineProps<TeeDsfrTabsProps>(), {
   tabContents: () => [],
   tabTitles: () => [],
   initialSelectedIndex: 0,
