@@ -1,6 +1,12 @@
 import { Maybe, Result } from 'true-myth'
 import { OpportunityRepository } from '../../../domain/spi'
-import { OpportunityId, OpportunityUpdateAttributes, OpportunityDetailsShort, OpportunityWithOperatorContact } from '../../../domain/types'
+import {
+  OpportunityId,
+  OpportunityUpdateAttributes,
+  OpportunityDetailsShort,
+  OpportunityWithOperatorContact,
+  OpportunityWithOperatorContactAndContactId
+} from '../../../domain/types'
 import BrevoAPI from './brevoAPI'
 import {
   DealAttributes,
@@ -18,15 +24,14 @@ import Monitor from '../../../../common/domain/monitoring/monitor'
 // "Opportunities" are called "Deals" in Brevo
 
 const addBrevoDeal: OpportunityRepository['create'] = async (
-  contactId: number,
-  domainOpportunity: OpportunityWithOperatorContact
+  domainOpportunity: OpportunityWithOperatorContactAndContactId
 ): Promise<Result<OpportunityId, Error>> => {
   const brevoDeal = convertDomainToBrevoDeal(domainOpportunity)
 
   const dealId = await requestCreateDeal(domainOpportunity.id, brevoDeal)
 
   if (!dealId.isErr) {
-    const maybeError = await associateBrevoDealToContact(dealId.value, contactId)
+    const maybeError = await associateBrevoDealToContact(dealId.value, domainOpportunity.contactId)
     if (maybeError.isJust)
       return Result.err(new Error('Something went wrong while attaching contact to opportunity', { cause: maybeError.value }))
   }
