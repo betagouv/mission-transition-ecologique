@@ -4,7 +4,7 @@
     :icon="iconComputed"
   >
     <template #default>
-      <slot name="badge"></slot>
+      <slot name="text"></slot>
     </template>
   </DsfrButton>
 </template>
