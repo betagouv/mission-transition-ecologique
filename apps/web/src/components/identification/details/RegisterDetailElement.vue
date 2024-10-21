@@ -10,12 +10,15 @@
     <component
       :is="currentComponent"
       :label="detailInfos.tagLabel"
+      :editable="detailInfos.editable"
+      :type="detailInfos.type"
       :select-options="detailInfos.selectOptions"
+      @modify-field="emit('modifyField', detailInfos.type)"
     />
   </div>
 </template>
 <script lang="ts" setup>
-import { RegisterDetails, FieldType } from '@/types'
+import { RegisterDetails, FieldType, RegisterDetailType } from '@/types'
 import RegisterDetailSelectSize from './RegisterDetailSelectSize.vue'
 import RegisterDetailTag from './RegisterDetailTag.vue'
 
@@ -23,7 +26,9 @@ interface Props {
   detailInfos: RegisterDetails
 }
 const props = defineProps<Props>()
-
+const emit = defineEmits<{
+  modifyField: [RegisterDetailType]
+}>()
 const currentComponent = computed(() => {
   switch (props.detailInfos.fieldType) {
     case FieldType.Tag:

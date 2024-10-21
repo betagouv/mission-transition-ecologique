@@ -4,6 +4,7 @@
     <span
       v-if="editable"
       class="fr-icon-close-line"
+      @click="modifyValue"
     />
   </p>
 </template>
@@ -12,8 +13,14 @@ import { RegisterDetailType } from '@/types'
 
 interface Props {
   label: string
-  field: RegisterDetailType
   editable: boolean
+  type: RegisterDetailType
 }
-defineProps<Props>()
+const props = defineProps<Props>()
+const emit = defineEmits<{
+  modifyField: [RegisterDetailType]
+}>()
+const modifyValue = () => {
+  emit('modifyField', props.type)
+}
 </script>

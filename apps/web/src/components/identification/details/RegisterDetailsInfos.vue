@@ -5,6 +5,7 @@
       :key="detail.title"
       class="fr-pb-8v"
       :detail-infos="detail"
+      @modify-field="openModifyField"
       @update:model-value="updateSizeInfo"
     />
     <TeeDsfrButton
@@ -21,9 +22,16 @@ interface Props {
 }
 const props = defineProps<Props>()
 const profileData = ref<RegisterProfile>({ establishment: props.company, size: undefined })
+const emit = defineEmits(['modifySiret'])
 
 const updateSizeInfo = (size: StructureSize) => {
   profileData.value.size = size
+}
+
+const openModifyField = (type: RegisterDetailType) => {
+  if (type === RegisterDetailType.Siret) {
+    emit('modifySiret')
+  }
 }
 
 const details: RegisterDetails[] = [
@@ -33,7 +41,7 @@ const details: RegisterDetails[] = [
     type: RegisterDetailType.Siret,
     tagLabel: `${props.company.denomination} - SIRET ${props.company.siret} `,
     fieldType: FieldType.Tag,
-    editable: false
+    editable: true
   },
   {
     title: 'Localisation',

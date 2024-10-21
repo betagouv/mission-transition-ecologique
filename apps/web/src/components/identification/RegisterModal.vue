@@ -17,6 +17,7 @@
         <RegisterDetailsInfos
           v-if="registerStep === 2 && establishment"
           :company="establishment"
+          @modify-siret="registerStep = 1"
         />
       </div>
     </div>
