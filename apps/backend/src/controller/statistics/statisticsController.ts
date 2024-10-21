@@ -1,9 +1,10 @@
 import { ErrorJSON, Monitor, StatisticsService } from '@tee/backend-ddd'
-import { Controller, Get, Res, Route, SuccessResponse, TsoaResponse } from 'tsoa'
+import { Controller, Get, Res, Route, SuccessResponse, Tags, TsoaResponse } from 'tsoa'
 import { StatsData } from '@tee/common'
 
 @SuccessResponse('200', 'OK')
 @Route('statistics')
+@Tags('statistics')
 export class StatisticsController extends Controller {
   /**
    * Request statistics about the opportunities and programs

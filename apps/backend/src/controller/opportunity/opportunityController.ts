@@ -1,10 +1,11 @@
 import { OpportunityBody } from '@tee/common'
-import { Body, Controller, Example, Post, Res, Route, SuccessResponse, TsoaResponse } from 'tsoa'
+import { Body, Controller, Example, Post, Res, Route, SuccessResponse, Tags, TsoaResponse } from 'tsoa'
 import { Err } from 'true-myth/dist/es/result'
 import { ErrorJSON, OpportunityId, OpportunityService, ValidateErrorJSON, ServiceNotFoundError, Monitor } from '@tee/backend-ddd'
 
 @SuccessResponse('200', 'OK')
 @Route('opportunities')
+@Tags('opportunities')
 export class OpportunityController extends Controller {
   /**
    * Create an opportunity of a company interested in a given program.
