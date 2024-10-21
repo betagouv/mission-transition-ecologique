@@ -206,7 +206,7 @@
 </template>
 <script lang="ts" setup>
 import { computed, onMounted, onUnmounted, ref, toRef, useSlots } from 'vue'
-import { DsfrLanguageSelector, DsfrLogo, DsfrSearchBar } from '@gouvminint/vue-dsfr'
+import { DsfrLanguageSelector, DsfrLogo, DsfrSearchBar, registerNavigationLinkKey } from '@gouvminint/vue-dsfr'
 
 import type { DsfrLanguageSelectorElement } from '@gouvminint/vue-dsfr/types/components/DsfrLanguageSelector/DsfrLanguageSelector.vue'
 import type { DsfrHeaderProps } from '@gouvminint/vue-dsfr/types/components/DsfrHeader/DsfrHeader.vue'
@@ -280,4 +280,7 @@ const onQuickLinkClick = hideModal
 const slots = useSlots()
 const isWithSlotOperator = computed(() => Boolean(slots.operator?.().length) || !!props.operatorImgSrc)
 const isWithSlotNav = computed(() => Boolean(slots.mainnav))
+provide(registerNavigationLinkKey, () => {
+  return hideModal
+})
 </script>
