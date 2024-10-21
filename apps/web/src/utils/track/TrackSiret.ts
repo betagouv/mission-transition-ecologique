@@ -1,7 +1,8 @@
 import EstablishmentApi from '@/service/api/establishmentApi'
-import { EstablishmentFront, SiretValue } from '@/types'
 import type { Track, TrackOptionItem, TrackOptionsUnion } from '@/types'
+import { EstablishmentFront, SiretValue } from '@/types'
 import { SiretValidator } from '@tee/common'
+import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
 export default class TrackSiret {
   static async search(query: string) {
@@ -15,6 +16,10 @@ export default class TrackSiret {
     remove = false,
     forceKeep = false
   ): TrackOptionItem {
+    if (questionnaireData) {
+      this.saveData(option, questionnaireData)
+    }
+
     return {
       option: {
         ...option,
@@ -24,6 +29,12 @@ export default class TrackSiret {
       remove: remove,
       forceKeep: forceKeep
     }
+  }
+
+  static saveData(option: TrackOptionsUnion, questionnaireData?: EstablishmentFront) {
+    const data = questionnaireData || option.questionnaireData
+
+    CompanyDataStorage.setSiret(data as EstablishmentFront)
   }
 
   static async getOptionBySiret(track: Track, siret: string): Promise<TrackOptionsUnion | undefined> {
