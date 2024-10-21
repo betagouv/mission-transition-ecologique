@@ -1,23 +1,21 @@
 <template>
-  <DsfrAccordionsGroup>
+  <DsfrAccordionsGroup v-model="activeAccordion">
     <template
       v-for="filter in filters"
       :key="filter.id"
     >
-      <li v-if="filter.if === undefined || filter.if">
-        <DsfrAccordion
-          :class="[props.accordionClass, filter.accordionClass]"
-          :title="filter.title"
-          :expanded-id="expandedId"
-          @expand="expandFilter"
-        >
-          <component
-            :is="filter.component"
-            :class="filter.componentClass"
-            legend=""
-          />
-        </DsfrAccordion>
-      </li>
+      <DsfrAccordion
+        v-if="filter.if === undefined || filter.if"
+        :id="filter.id"
+        :class="[props.accordionClass, filter.accordionClass]"
+        :title="filter.title"
+      >
+        <component
+          :is="filter.component"
+          :class="filter.componentClass"
+          legend=""
+        />
+      </DsfrAccordion>
     </template>
   </DsfrAccordionsGroup>
 </template>
@@ -27,13 +25,7 @@ import TeeEligibilityCriteriaAccordion from '@/components/program/eligibilityCri
 import ProgramFilterByAidType from './ProgramFilterByAidType.vue'
 import ProgramFilterByOperator from './ProgramFilterByOperator.vue'
 import ProgramFilterByRegion from './ProgramFilterByRegion.vue'
-import { ref } from 'vue'
 
-const expandedId = ref<string | undefined>()
-
-const expandFilter = (id: string | undefined) => {
-  expandedId.value = id
-}
 interface Props {
   accordionClass?: string
 }
@@ -47,6 +39,8 @@ interface FilterItem {
   componentClass?: string
   if?: boolean
 }
+
+const activeAccordion = ref<number>()
 
 const filters: FilterItem[] = [
   {
