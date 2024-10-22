@@ -24,7 +24,13 @@
     &--#{$decoration} {
       text-decoration: $decoration;
     }   
-  }  
+  }
+  
+ @each $weight in setting.$font-weight {
+  &-weight--#{$weight} {
+    font-weight: $weight;
+  }   
+ }  
 }
 
 .tee-font {

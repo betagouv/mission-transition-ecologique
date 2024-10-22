@@ -18,6 +18,7 @@ const selection = ref()
 interface Props {
   selectOptions: DsfrSelectProps
   editable: boolean
+  manual: boolean
   type: RegisterDetailType
   label: string | undefined
 }

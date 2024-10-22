@@ -14,6 +14,7 @@ import { RegisterDetailType } from '@/types'
 interface Props {
   label: string
   editable: boolean
+  manual: boolean
   type: RegisterDetailType
 }
 const props = defineProps<Props>()

@@ -57,6 +57,7 @@ declare module 'vue' {
     ProjectSideNav: typeof import('./components/project/details/ProjectSideNav.vue')['default']
     RegisterCTA: typeof import('./components/identification/RegisterCTA.vue')['default']
     RegisterDetailElement: typeof import('./components/identification/details/RegisterDetailElement.vue')['default']
+    RegisterDetailManual: typeof import('./components/identification/details/RegisterDetailManual.vue')['default']
     RegisterDetailSelectSize: typeof import('./components/identification/details/RegisterDetailSelectSize.vue')['default']
     RegisterDetailsInfos: typeof import('./components/identification/details/RegisterDetailsInfos.vue')['default']
     RegisterDetailTag: typeof import('./components/identification/details/RegisterDetailTag.vue')['default']

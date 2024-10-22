@@ -11,6 +11,7 @@
       :is="currentComponent"
       :label="detailInfos.tagLabel"
       :editable="detailInfos.editable"
+      :manual="manual"
       :type="detailInfos.type"
       :select-options="detailInfos.selectOptions"
       @modify-field="emit('modifyField', detailInfos.type)"
@@ -24,6 +25,7 @@ import RegisterDetailTag from './RegisterDetailTag.vue'
 
 interface Props {
   detailInfos: RegisterDetails
+  manual: boolean
 }
 const props = defineProps<Props>()
 const emit = defineEmits<{

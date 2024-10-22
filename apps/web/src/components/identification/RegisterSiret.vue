@@ -26,7 +26,7 @@
               <div class="fr-card__title">
                 <div class="fr-text--blue-france">
                   {{ response.denomination || 'Entreprise individuelle' }}
-                  <span> - {{ response.siret }} </span>
+                  <span class="fr-text-weight--normal"> - SIRET {{ response.siret }} </span>
                 </div>
               </div>
               <div class="fr-card__desc fr-pl-2v">
@@ -45,21 +45,21 @@
     </div>
 
     <!-- WILDCARD -->
-    <p class="fr-text--sm fr-col-justify--left fr-text--white">
-      {{ Translation.t('or') }}
-      <a
-        class="fr-link fr-text--white fr-pl-1v fr-text--underline fr-text--sm"
-        :href="Navigation.hashByRouteName(RouteName.Questionnaire)"
+    <p class="fr-col-justify--left">
+      <TeeDsfrButton
+        class="fr-btn--tertiary-no-outline fr-p-0 fr-text--white fr-text--sm"
+        @click="doManualRegister"
       >
-        je complète les informations manuellement
-      </a>
+        <template #default>
+          {{ Translation.t('or') }}
+          <span class="fr-text--underline">je complète les informations manuellement</span>
+        </template>
+      </TeeDsfrButton>
     </p>
   </div>
 </template>
 
 <script setup lang="ts">
-import { RouteName } from '@/types/routeType'
-import Navigation from '@/utils/navigation'
 import TrackSiret from '@/utils/track/TrackSiret'
 import Translation from '@/utils/translation'
 import { SiretValidator } from '@tee/common'
@@ -78,6 +78,7 @@ const errorMessage = ref<string>()
 
 const emit = defineEmits<{
   selectEstablishment: [EstablishmentFront]
+  manualRegister: []
 }>()
 
 const resetSelection = () => {
@@ -89,6 +90,10 @@ const selectItem = (establishment: EstablishmentFront) => {
   selection.value = establishment
   console.log(selection.value)
   emit('selectEstablishment', selection.value)
+}
+
+const doManualRegister = () => {
+  emit('manualRegister')
 }
 
 const processInput = async () => {

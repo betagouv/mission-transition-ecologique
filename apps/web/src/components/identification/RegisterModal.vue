@@ -17,7 +17,9 @@
         <RegisterDetailsInfos
           v-if="registerStep === 2 && establishment"
           :company="establishment"
+          :manual="manualRegistration"
           @modify-siret="registerStep = 1"
+          @manual-register="setManualRegister"
         />
       </div>
     </div>
@@ -29,8 +31,13 @@ import { EstablishmentFront } from '@/types'
 
 const establishment = ref<EstablishmentFront | undefined>()
 const registerStep = ref<number>(1)
+const manualRegistration = ref<boolean>(false)
 const updateEstablishment = (selectedEstablishment: EstablishmentFront) => {
   establishment.value = selectedEstablishment
+  registerStep.value = 2
+}
+const setManualRegister = () => {
+  manualRegistration.value = true
   registerStep.value = 2
 }
 </script>

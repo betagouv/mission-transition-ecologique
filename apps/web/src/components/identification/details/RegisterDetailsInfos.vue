@@ -4,6 +4,7 @@
       v-for="detail in details"
       :key="detail.title"
       class="fr-pb-8v"
+      :manual="manual"
       :detail-infos="detail"
       @modify-field="openModifyField"
       @update:model-value="updateSizeInfo"
@@ -19,6 +20,7 @@ import { EstablishmentFront, RegisterDetailType, RegisterDetails, FieldType, Str
 
 interface Props {
   company: EstablishmentFront
+  manual: boolean
 }
 const props = defineProps<Props>()
 const profileData = ref<RegisterProfile>({ establishment: props.company, size: undefined })
