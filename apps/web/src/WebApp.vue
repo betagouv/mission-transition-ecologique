@@ -2,7 +2,11 @@
   <TeeDsfrConsent />
   <TeeDsfrPersonalizeConsent />
   <div>
-    <TeeHeader />
+    <TeeHeader @open-register="openRegisterModal" />
+    <TeeRegisterModal
+      v-if="registerModal"
+      @close-register="closeRegisterModal"
+    />
     <TeeMatomo />
     <router-view v-if="isReady" />
     <template v-else>
@@ -36,10 +40,17 @@ import Cookie from './utils/cookies'
 const navigationStore = useNavigationStore()
 const router = useRouter()
 const route = useRoute()
-
+const registerModal = ref<boolean>(false)
 const isReady = computed<boolean>(() => {
   return navigationStore.isReady
 })
+
+const openRegisterModal = () => {
+  registerModal.value = true
+}
+const closeRegisterModal = () => {
+  registerModal.value = false
+}
 
 onBeforeMount(() => {
   Translation.setLocale('fr')

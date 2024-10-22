@@ -1,7 +1,7 @@
 <template>
-  <div class="fr-col-12">
+  <div class="fr-col-9 fr-col-offset-sm-3">
     <h4 class="fr-mb-0 fr-col-justify--left fr-py-2v fr-text--white">Quelle est votre entreprise ?</h4>
-    <RegisterSiretBar
+    <TeeRegisterSiretBar
       v-model.trim="queryValue"
       :is-loading="isLoading"
       :error-message="errorMessage"

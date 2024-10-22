@@ -43,9 +43,9 @@
                   @click.prevent.stop="showSearchModal()"
                 />
                 <div class="fr-hidden-lg">
-                  <RegisterCTA
+                  <TeeRegisterCTA
                     :registration-status="registrationStatus"
-                    @click="updateStatus"
+                    @click="openRegisterModal"
                   />
                 </div>
                 <button
@@ -115,9 +115,9 @@
               </template>
             </div>
             <div class="fr-my-auto fr-px-4v fr-hidden fr-unhidden-lg">
-              <RegisterCTA
+              <TeeRegisterCTA
                 :registration-status="registrationStatus"
-                @click="updateStatus"
+                @click="openRegisterModal"
               />
             </div>
             <div
@@ -240,13 +240,12 @@ const props = withDefaults(defineProps<DsfrHeaderProps>(), {
   homeLabel: 'Accueil'
 })
 const registrationStatus = ref<boolean>(false)
-const updateStatus = () => {
-  registrationStatus.value = !registrationStatus.value
-}
+
 const emit = defineEmits<{
   (e: 'update:modelValue', payload: string): void
   (e: 'search', payload: string): void
   (e: 'language-select', payload: DsfrLanguageSelectorElement): void
+  (e: 'openRegister'): void
 }>()
 
 const languageSelector = toRef(props, 'languageSelector')
@@ -254,6 +253,11 @@ const languageSelector = toRef(props, 'languageSelector')
 const menuOpened = ref(false)
 const searchModalOpened = ref(false)
 const modalOpened = ref(false)
+
+const openRegisterModal = () => {
+  registrationStatus.value = !registrationStatus.value
+  emit('openRegister')
+}
 
 const hideModal = () => {
   modalOpened.value = false

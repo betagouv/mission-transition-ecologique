@@ -11,7 +11,6 @@
     </span>
     <DsfrSelect
       v-model="selectedActivity"
-      :error-message="selectedActivity ? '' : errorMessage"
       :options="sectorOptions"
     />
   </div>
@@ -23,7 +22,6 @@ interface Props {
   infos: RegisterDetails
   manual: boolean
 }
-const errorMessage = "La sélection de l'activité est nécessaire"
 const sectorOptions = [
   {
     value: Sector.Craftsmanship,

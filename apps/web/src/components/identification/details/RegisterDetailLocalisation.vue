@@ -11,7 +11,6 @@
     </span>
     <DsfrSelect
       v-model="selectedRegion"
-      :error-message="selectedRegion ? '' : errorMessage"
       :options="regionsOptions"
     />
   </div>
@@ -25,7 +24,6 @@ interface Props {
   manual: boolean
 }
 const selectedRegion = ref()
-const errorMessage = 'La sélection de la région est nécessaire'
 
 const regionsOptions = Object.values(Region).map((regionName) => {
   return {

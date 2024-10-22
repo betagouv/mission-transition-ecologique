@@ -1,5 +1,5 @@
 <template>
-  <div class="fr-col-12 fr-text-left">
+  <div class="fr-col-9 fr-text-left fr-col-offset-sm-3">
     <div v-show="manual">
       <h4 class="fr-mb-0 fr-col-justify--left fr-py-2v fr-text--white">Quelle est votre entreprise ?</h4>
       <TeeDsfrButton
@@ -13,7 +13,7 @@
       v-for="detail in details"
       v-show="detail.if !== false"
       :key="detail.title"
-      class="fr-pb-8v register-element"
+      class="fr-pb-8v fr-col-sm-8 fr-col-md-6 fr-col-12"
       :manual="manual"
       :detail-infos="detail"
       @modify-siret="openSiretStep"
@@ -74,8 +74,3 @@ const details: RegisterDetails[] = [
   }
 ]
 </script>
-<style lang="scss" scoped>
-.register-element {
-  width: 30%;
-}
-</style>
