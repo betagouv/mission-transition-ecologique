@@ -50,7 +50,7 @@
         class="fr-btn--tertiary-no-outline fr-p-0 fr-text--white fr-text--sm"
         @click="doManualRegister"
       >
-        <template #default>
+        <template #text>
           {{ Translation.t('or') }}
           <span class="fr-text--underline">je complète les informations manuellement</span>
         </template>

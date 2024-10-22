@@ -1,7 +1,7 @@
 <template>
   <TeeDsfrButton
     :class="registrationStatus ? 'fr-btn--tertiary-no-outline' : ''"
-    @click="emit('click')"
+    @click="showModal"
   >
     <template #text>
       <span
@@ -34,8 +34,13 @@ interface Props {
   registrationStatus: boolean
 }
 const props = defineProps<Props>()
+const modalStatus = ref<boolean>(false)
 const emit = defineEmits(['click'])
 
+const showModal = () => {
+  modalStatus.value = true
+  emit('click')
+}
 const badgeIcon = computed(() => {
   if (Breakpoint.isSmallScreen() && !props.registrationStatus) {
     return 'fr-bg--yellow fr-icon-question-mark'

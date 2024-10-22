@@ -13,13 +13,13 @@
         <RegisterSiret
           v-if="registerStep === 1"
           @select-establishment="updateEstablishment"
+          @manual-register="setManualRegister"
         />
         <RegisterDetailsInfos
-          v-if="registerStep === 2 && establishment"
+          v-if="registerStep === 2"
           :company="establishment"
           :manual="manualRegistration"
           @modify-siret="registerStep = 1"
-          @manual-register="setManualRegister"
         />
       </div>
     </div>

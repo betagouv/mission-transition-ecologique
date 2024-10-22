@@ -9,19 +9,18 @@
     </div>
     <component
       :is="currentComponent"
-      :label="detailInfos.tagLabel"
-      :editable="detailInfos.editable"
+      :infos="detailInfos"
       :manual="manual"
-      :type="detailInfos.type"
-      :select-options="detailInfos.selectOptions"
-      @modify-field="emit('modifyField', detailInfos.type)"
+      @modify-siret="emit('modifySiret')"
     />
   </div>
 </template>
 <script lang="ts" setup>
-import { RegisterDetails, FieldType, RegisterDetailType } from '@/types'
-import RegisterDetailSelectSize from './RegisterDetailSelectSize.vue'
-import RegisterDetailTag from './RegisterDetailTag.vue'
+import { RegisterDetails, RegisterDetailType } from '@/types'
+import RegisterDetailSize from './RegisterDetailSize.vue'
+import RegisterDetailSiret from './RegisterDetailSiret.vue'
+import RegisterDetailActivity from './RegisterDetailActivity.vue'
+import RegisterDetailLocalisation from './RegisterDetailLocalisation.vue'
 
 interface Props {
   detailInfos: RegisterDetails
@@ -29,14 +28,18 @@ interface Props {
 }
 const props = defineProps<Props>()
 const emit = defineEmits<{
-  modifyField: [RegisterDetailType]
+  modifySiret: []
 }>()
 const currentComponent = computed(() => {
-  switch (props.detailInfos.fieldType) {
-    case FieldType.Tag:
-      return RegisterDetailTag
-    case FieldType.Select:
-      return RegisterDetailSelectSize
+  switch (props.detailInfos.type) {
+    case RegisterDetailType.Siret:
+      return RegisterDetailSiret
+    case RegisterDetailType.Localisation:
+      return RegisterDetailLocalisation
+    case RegisterDetailType.Activity:
+      return RegisterDetailActivity
+    case RegisterDetailType.Size:
+      return RegisterDetailSize
     default:
       return '<div></div>'
   }

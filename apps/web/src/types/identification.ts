@@ -1,5 +1,4 @@
-import { FieldType, EstablishmentFront, StructureSize } from '@/types'
-import type { DsfrSelectProps } from '@gouvminint/vue-dsfr/types'
+import { EstablishmentFront, StructureSize } from '@/types'
 export enum RegisterDetailType {
   Siret = 'siret',
   Localisation = 'localisation',
@@ -10,14 +9,13 @@ export enum RegisterDetailType {
 export type RegisterDetails = {
   icon: string
   title: string
+  description?: string
+  if?: boolean
   type: RegisterDetailType
   tagLabel?: string
-  editable: boolean
-  fieldType: FieldType
-  selectOptions?: DsfrSelectProps
 }
 
 export type RegisterProfile = {
-  establishment: EstablishmentFront
+  establishment: EstablishmentFront | undefined
   size: StructureSize | undefined
 }
