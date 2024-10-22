@@ -1,48 +1,48 @@
 <template>
-  <DsfrButton
-    :class="isIdentified ? 'fr-btn--tertiary-no-outline' : 'fr-text--yellow'"
-    class="fr-hidden fr-unhidden-lg"
-    @click="openModal"
+  <TeeDsfrButton
+    :class="registrationStatus ? 'fr-btn--tertiary-no-outline' : ''"
+    @click="emit('click')"
   >
-    <template #default>
+    <template #text>
       <span
-        v-if="isIdentified"
+        v-if="registrationStatus || Breakpoint.isSmallScreen()"
+        :class="Breakpoint.isSmallScreen() ? 'fr-icon--lg' : 'fr-pr-2w'"
         class="fr-icon-account-circle-fill register-icon-profile"
       >
         <span
-          id="base-badge"
-          class="fr-text--blue-france fr-radius-a--2v fr-bg--green fr-icon-check-line register-badge"
-        />
+          :id="Breakpoint.isSmallScreen() ? 'badge-mobile' : 'base-badge'"
+          :class="badgeIcon"
+          class="fr-text--blue-france fr-radius-a--2v register-badge"
+        >
+        </span>
       </span>
 
       <span
+        v-if="!Breakpoint.isSmallScreen()"
         id="register-text"
-        class="fr-pl-2v"
-        >{{ isIdentified ? companyName : 'Vous êtes...?' }}
+        :class="registrationStatus ? '' : 'fr-text--yellow'"
+        >{{ registrationStatus ? companyName : 'Vous êtes...?' }}
       </span>
-    </template>
-  </DsfrButton>
-  <TeeDsfrButton
-    class="register-icon-profile fr-icon-account-circle-fill fr-p-0 fr-btn--lg fr-btn--tertiary-no-outline fr-hidden-lg"
-    @click="openModal"
-  >
-    <template #badge>
-      <span
-        id="badge-mobile"
-        :class="isIdentified ? 'fr-bg--green fr-icon-check-line' : 'fr-bg--yellow fr-icon-question-mark'"
-        class="fr-text--blue-france fr-radius-a--2v register-badge"
-      />
     </template>
   </TeeDsfrButton>
   <RegisterModal v-show="modalStatus" />
 </template>
 <script setup lang="ts">
-const isIdentified = ref<boolean>(false)
-const modalStatus = ref<boolean>(false)
-const openModal = () => {
-  modalStatus.value = !modalStatus.value
-  isIdentified.value = !isIdentified.value
+import Breakpoint from '@/utils/breakpoints'
+
+interface Props {
+  registrationStatus: boolean
 }
+const props = defineProps<Props>()
+const emit = defineEmits(['click'])
+
+const badgeIcon = computed(() => {
+  if (Breakpoint.isSmallScreen() && !props.registrationStatus) {
+    return 'fr-bg--yellow fr-icon-question-mark'
+  } else {
+    return 'fr-bg--green fr-icon-check-line'
+  }
+})
 const companyName = 'La meilleure entreprise de France'
 </script>
 <style lang="scss" scoped>
@@ -74,8 +74,8 @@ const companyName = 'La meilleure entreprise de France'
 }
 
 #badge-mobile {
-  right: 12px;
-  top: 2px;
+  right: -0.2px;
+  top: -4px;
 }
 
 #base-badge {
