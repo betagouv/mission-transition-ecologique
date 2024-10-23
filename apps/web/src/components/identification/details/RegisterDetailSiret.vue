@@ -15,9 +15,9 @@ interface Props {
 }
 defineProps<Props>()
 const emit = defineEmits<{
-  modifySiret: []
+  'update:siret': []
 }>()
 const modifySiret = () => {
-  emit('modifySiret')
+  emit('update:siret')
 }
 </script>

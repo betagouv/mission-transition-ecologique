@@ -23,7 +23,7 @@ interface Props {
   infos: RegisterDetails
   manual: boolean
 }
-const selectedRegion = ref()
+const selectedRegion = defineModel<Region>()
 
 const regionsOptions = Object.values(Region).map((regionName) => {
   return {

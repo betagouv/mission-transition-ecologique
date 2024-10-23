@@ -17,10 +17,10 @@
         </TeeDsfrButton>
       </div>
 
-      <div class="fr-h1 fr-col-offset-sm-3 fr-col-9 fr-col-justify--left fr-py-md-4v fr-mb-md-2v fr-mb-0 fr-text--yellow">
+      <div class="fr-h1 fr-col-offset-sm-2 fr-col-10 fr-col-justify--left fr-py-md-4v fr-mb-md-2v fr-mb-0 fr-text--yellow">
         {{ Translation.t('register.mainTitle') }}
       </div>
-      <div class="fr-text--yellow fr-pb-md-8v fr-pb-2v fr-col-offset-sm-3 fr-col-justify--left fr-pb-8v fr-col-9">
+      <div class="fr-text--yellow fr-pb-md-4v fr-pb-2v fr-col-offset-sm-2 fr-col-justify--left fr-pb-8v fr-col-10">
         {{ Translation.t('register.description') }}
       </div>
       <RegisterSiret

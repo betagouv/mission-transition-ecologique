@@ -16,12 +16,13 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { RegisterDetails, Sector } from '@/types'
+import { RegisterDetailActivity, Sector } from '@/types'
 
 interface Props {
-  infos: RegisterDetails
+  infos: RegisterDetailActivity
   manual: boolean
 }
+const selectedActivity = defineModel<Sector>()
 const sectorOptions = [
   {
     value: Sector.Craftsmanship,
@@ -48,8 +49,5 @@ const sectorOptions = [
     text: "Je suis dans un autre secteur d'activité"
   }
 ]
-
-const selectedActivity = ref()
-
 defineProps<Props>()
 </script>

@@ -9,11 +9,11 @@
   />
 </template>
 <script lang="ts" setup>
-import { RegisterDetails, StructureSize } from '@/types'
+import { RegisterDetailSize, StructureSize } from '@/types'
 
-const selectedSize = ref()
+const selectedSize = defineModel<StructureSize>()
 interface Props {
-  infos: RegisterDetails
+  infos: RegisterDetailSize
   manual: boolean
 }
 const errorMessage = "La sélection de l'effectif est nécessaire"
