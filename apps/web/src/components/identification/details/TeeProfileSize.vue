@@ -1,12 +1,24 @@
 <template id="select-company-size">
-  <span class="fr-hint-text fr-text--white tee-font-style--italic">
-    {{ infos.description }}
-  </span>
-  <DsfrSelect
-    v-model="selectedSize"
-    :error-message="selectedSize ? '' : errorMessage"
-    :options="sizeOptions"
-  />
+  <div v-if="!infos.value || modifySize">
+    <span class="fr-hint-text fr-text--white tee-font-style--italic">
+      {{ infos.description }}
+    </span>
+    <DsfrSelect
+      v-model="selectedSize"
+      :error-message="selectedSize ? '' : errorMessage"
+      :options="sizeOptions"
+    />
+  </div>
+  <p
+    v-else
+    class="fr-tag"
+  >
+    {{ sizeText }}
+    <span
+      class="fr-icon-close-line"
+      @click="resetSize"
+    />
+  </p>
 </template>
 <script lang="ts" setup>
 import { RegisterDetailSize, StructureSize } from '@/types'
@@ -16,7 +28,13 @@ interface Props {
   infos: RegisterDetailSize
   manual: boolean
 }
+const props = defineProps<Props>()
 const errorMessage = "La sélection de l'effectif est nécessaire"
+const sizeText = computed(() => {
+  const sizeOption = sizeOptions.find((el: { value: StructureSize; text: string }) => el.value === props.infos.value)
+  return sizeOption?.text
+})
+const modifySize = ref<boolean>(false)
 const sizeOptions = [
   {
     value: StructureSize.EI,
@@ -39,5 +57,7 @@ const sizeOptions = [
     text: '👫👭👫👫 Plus de 250 employés'
   }
 ]
-defineProps<Props>()
+const resetSize = () => {
+  modifySize.value = true
+}
 </script>

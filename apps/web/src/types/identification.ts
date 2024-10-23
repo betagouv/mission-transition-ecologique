@@ -23,7 +23,9 @@ export type RegisterDetail = {
   tagLabel?: string
 }
 
-export type RegisterDetailSize = Omit<RegisterDetail, 'value'> & { value: StructureSize | undefined }
+export type RegisterDetailSize = Omit<RegisterDetail, 'value'> & {
+  value: StructureSize | undefined | null
+}
 export type RegisterDetailActivity = Omit<RegisterDetail, 'value'> & { value: Sector | undefined }
 export type RegisterDetailUnion = RegisterDetail | RegisterDetailSize | RegisterDetailActivity
 export type RegisterProfile = {

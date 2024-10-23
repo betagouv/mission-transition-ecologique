@@ -30,9 +30,11 @@
       />
       <TeeProfileDetails
         v-if="registerStep === 2"
-        :company="establishment"
+        :company="company"
+        :company-size="registeredData.structure_size"
         :manual="manualRegistration"
-        @modify-siret="registerStep = 1"
+        @modify-siret="resetSiret"
+        @close-register="closeRegisterModal"
       />
     </div>
   </div>
@@ -41,21 +43,35 @@
 import Translation from '@/utils/translation'
 import { EstablishmentFront } from '@/types'
 import Breakpoint from '@/utils/breakpoints'
+import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
-const establishment = ref<EstablishmentFront | undefined>()
-const registerStep = ref<number>(1)
+const registeredData = CompanyDataStorage.getData()
+console.log(registeredData)
+const company = ref<EstablishmentFront | null>(registeredData.value.siret)
+
 const manualRegistration = ref<boolean>(false)
+
+const registerStep = computed<number>(() => {
+  if (company.value || manualRegistration.value) {
+    return 2
+  }
+  return 1
+})
 const emit = defineEmits<{
   closeRegister: []
 }>()
 const updateEstablishment = (selectedEstablishment: EstablishmentFront) => {
-  establishment.value = selectedEstablishment
+  company.value = selectedEstablishment
   manualRegistration.value = false
-  registerStep.value = 2
 }
+const resetSiret = () => {
+  console.log('resetSiret')
+  company.value = null
+  manualRegistration.value = false
+}
+
 const setManualRegister = () => {
   manualRegistration.value = true
-  registerStep.value = 2
 }
 const closeRegisterModal = () => {
   emit('closeRegister')

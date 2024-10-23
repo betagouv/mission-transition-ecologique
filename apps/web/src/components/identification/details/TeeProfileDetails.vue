@@ -29,14 +29,16 @@
   </div>
 </template>
 <script setup lang="ts">
-import { EstablishmentFront, RegisterDetailType, RegisterDetailUnion, RegisterDetails, Sector } from '@/types'
+import { EstablishmentFront, RegisterDetailType, RegisterDetailUnion, RegisterDetails, Sector, StructureSize } from '@/types'
+import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
 interface Props {
-  company: EstablishmentFront | undefined
+  company: EstablishmentFront | null
+  companySize: StructureSize | null
   manual: boolean
 }
 const props = defineProps<Props>()
-const emit = defineEmits(['modifySiret'])
+const emit = defineEmits(['modifySiret', 'closeRegister'])
 
 const openSiretStep = () => {
   emit('modifySiret')
@@ -69,7 +71,7 @@ const profile = ref<RegisterDetails>({
   size: {
     title: 'Effectif',
     icon: 'fr-icon-team-line',
-    value: undefined,
+    value: props.companySize,
     type: RegisterDetailType.Size,
     description: 'Choisissez la tranche correspondant à votre effectif'
   }
@@ -79,7 +81,11 @@ const isSaveDisabled = computed(() => {
   return props.manual ? !localisation.value || !activity.value || !size.value : !size.value
 })
 const saveProfile = () => {
+  if (!props.manual && props.company && profile.value.size.value) {
+    CompanyDataStorage.setSiret(props.company)
+    CompanyDataStorage.setSize(profile.value.size.value)
+  }
+  emit('closeRegister')
   console.log('profile', profile.value)
-  //plug api
 }
 </script>

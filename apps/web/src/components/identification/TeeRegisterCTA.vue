@@ -1,11 +1,11 @@
 <template>
   <TeeDsfrButton
-    :class="registrationStatus ? 'fr-btn--tertiary-no-outline' : ''"
+    :class="registeredData ? 'fr-btn--tertiary-no-outline' : ''"
     @click="showModal"
   >
     <template #text>
       <span
-        v-if="registrationStatus || Breakpoint.isSmallScreen()"
+        v-if="registeredData || Breakpoint.isSmallScreen()"
         :class="Breakpoint.isSmallScreen() ? 'fr-icon--lg' : 'fr-pr-2w'"
         class="fr-icon-account-circle-fill register-icon-profile"
       >
@@ -20,34 +20,45 @@
       <span
         v-if="!Breakpoint.isSmallScreen()"
         id="register-text"
-        :class="registrationStatus ? '' : 'fr-text--yellow'"
-        >{{ registrationStatus ? companyName : 'Vous êtes...?' }}
+        :class="registeredData ? '' : 'fr-text--yellow'"
+        >{{ registeredData ? companyName : 'Vous êtes...?' }}
       </span>
     </template>
   </TeeDsfrButton>
 </template>
 <script setup lang="ts">
 import Breakpoint from '@/utils/breakpoints'
+import CompanyDataStorage from '@/utils/storage/companyDataStorage'
+import { CompanyDataType } from '@/types/companyDataType'
 
-interface Props {
-  registrationStatus: boolean
-}
-const props = defineProps<Props>()
 const modalStatus = ref<boolean>(false)
-const emit = defineEmits(['click'])
+const registeredInfos = ref<CompanyDataType | null>()
+const registeredData = CompanyDataStorage.getData()
 
+watch(
+  registeredData,
+  (newRegisteredData) => {
+    registeredData.value = newRegisteredData
+  },
+  { deep: true }
+)
+
+const emit = defineEmits(['click'])
+const companyName = computed<string | undefined>(() => {
+  return registeredData.value?.siret?.denomination
+})
 const showModal = () => {
   modalStatus.value = true
   emit('click')
 }
+
 const badgeIcon = computed(() => {
-  if (Breakpoint.isSmallScreen() && !props.registrationStatus) {
+  if (Breakpoint.isSmallScreen() && !registeredInfos.value) {
     return 'fr-bg--yellow fr-icon-question-mark'
   } else {
     return 'fr-bg--green fr-icon-check-line'
   }
 })
-const companyName = 'La meilleure entreprise de France'
 </script>
 <style lang="scss" scoped>
 .register-icon-profile {
