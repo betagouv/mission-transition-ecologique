@@ -74,6 +74,7 @@ const closeRegisterModal = () => {
   background-repeat: no-repeat;
   background-position: bottom;
 }
+
 .register-modal-xs {
   background-image: url('/images/TEE-modal-bottom-mobile.svg');
   height: 100vh;

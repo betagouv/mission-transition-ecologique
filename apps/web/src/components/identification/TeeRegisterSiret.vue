@@ -123,11 +123,11 @@ const processInput = async () => {
 .custom-border {
   border: solid thin #c4c4c4;
 }
+
 #siret-response {
   text-align: left;
   width: calc(100% - 40px);
   max-height: 250px;
-  overflow-x: hidden;
-  overflow-y: scroll;
+  overflow: hidden scroll;
 }
 </style>
