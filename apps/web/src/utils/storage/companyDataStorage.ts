@@ -26,7 +26,7 @@ export default class CompanyDataStorage {
 
   static setItem(key: CompanyDataStorageKey, value: string | EstablishmentFront | StructureSize): void {
     this._storageHandler.setItem(key, value)
-    this._updateData()
+    this.updateData()
   }
 
   static getItem(key: CompanyDataStorageKey): unknown {
@@ -45,7 +45,7 @@ export default class CompanyDataStorage {
     this._storageHandler.removeItem(key)
   }
 
-  private static _updateData(): void {
+  static updateData(): void {
     this._data.value[CompanyDataStorageKey.Siret] = this.getSiret()
     this._data.value[CompanyDataStorageKey.Size] = this.getSize()
   }

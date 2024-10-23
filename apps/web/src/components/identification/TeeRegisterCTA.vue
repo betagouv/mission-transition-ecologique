@@ -29,10 +29,8 @@
 <script setup lang="ts">
 import Breakpoint from '@/utils/breakpoints'
 import CompanyDataStorage from '@/utils/storage/companyDataStorage'
-import { CompanyDataType } from '@/types/companyDataType'
 
 const modalStatus = ref<boolean>(false)
-const registeredInfos = ref<CompanyDataType | null>()
 const registeredData = CompanyDataStorage.getData()
 
 watch(
@@ -53,7 +51,7 @@ const showModal = () => {
 }
 
 const badgeIcon = computed(() => {
-  if (Breakpoint.isSmallScreen() && !registeredInfos.value) {
+  if (Breakpoint.isSmallScreen() && !registeredData.value) {
     return 'fr-bg--yellow fr-icon-question-mark'
   } else {
     return 'fr-bg--green fr-icon-check-line'

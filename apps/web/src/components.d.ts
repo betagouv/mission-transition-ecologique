@@ -100,6 +100,7 @@ declare module 'vue' {
     TeeProfileActivity: typeof import('./components/identification/details/TeeProfileActivity.vue')['default']
     TeeProfileDetailElement: typeof import('./components/identification/details/TeeProfileDetailElement.vue')['default']
     TeeProfileDetails: typeof import('./components/identification/details/TeeProfileDetails.vue')['default']
+    TeeProfileElement: typeof import('./components/identification/details/TeeProfileElement.vue')['default']
     TeeProfileLocalisation: typeof import('./components/identification/details/TeeProfileLocalisation.vue')['default']
     TeeProfileSiret: typeof import('./components/identification/details/TeeProfileSiret.vue')['default']
     TeeProfileSize: typeof import('./components/identification/details/TeeProfileSize.vue')['default']

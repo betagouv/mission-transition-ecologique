@@ -9,7 +9,7 @@
         @click="openSiretStep"
       />
     </div>
-    <TeeProfileDetailElement
+    <TeeProfileElement
       v-for="detailKey in Object.keys(profile)"
       v-show="profile[detailKey].if !== false"
       :key="profile[detailKey].title"

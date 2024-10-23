@@ -36,6 +36,7 @@ import { useNavigationStore } from './stores/navigation'
 import TeeFooter from './components/TeeFooter.vue'
 import Translation from './utils/translation'
 import Cookie from './utils/cookies'
+import CompanyDataStorage from './utils/storage/companyDataStorage'
 
 const navigationStore = useNavigationStore()
 const router = useRouter()
@@ -55,6 +56,7 @@ const closeRegisterModal = () => {
 onBeforeMount(() => {
   Translation.setLocale('fr')
   Cookie.setCookies()
+  CompanyDataStorage.updateData()
 })
 
 onMounted(async () => {
