@@ -23,12 +23,12 @@
       <div class="fr-text--yellow fr-pb-md-4v fr-pb-2v fr-col-offset-sm-2 fr-col-justify--left fr-pb-8v fr-col-10">
         {{ Translation.t('register.description') }}
       </div>
-      <RegisterSiret
+      <TeeRegisterSiret
         v-if="registerStep === 1"
         @select-establishment="updateEstablishment"
         @manual-register="setManualRegister"
       />
-      <RegisterDetailsInfos
+      <TeeProfileDetails
         v-if="registerStep === 2"
         :company="establishment"
         :manual="manualRegistration"

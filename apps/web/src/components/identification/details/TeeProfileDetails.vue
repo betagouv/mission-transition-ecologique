@@ -9,7 +9,7 @@
         @click="openSiretStep"
       />
     </div>
-    <RegisterDetailElement
+    <TeeProfileDetailElement
       v-for="detailKey in Object.keys(profile)"
       v-show="profile[detailKey].if !== false"
       :key="profile[detailKey].title"
@@ -23,6 +23,7 @@
     <TeeDsfrButton
       class="fr-bg--yellow fr-text--blue-france"
       label="Enregistrer et fermer"
+      :disabled="isSaveDisabled"
       @click="saveProfile"
     />
   </div>
@@ -39,9 +40,6 @@ const emit = defineEmits(['modifySiret'])
 
 const openSiretStep = () => {
   emit('modifySiret')
-}
-const saveProfile = () => {
-  console.log('details', profile.value)
 }
 const profile = ref<RegisterDetails>({
   siret: {
@@ -76,4 +74,12 @@ const profile = ref<RegisterDetails>({
     description: 'Choisissez la tranche correspondant à votre effectif'
   }
 })
+const isSaveDisabled = computed(() => {
+  const { localisation, activity, size } = profile.value
+  return props.manual ? !localisation.value || !activity.value || !size.value : !size.value
+})
+const saveProfile = () => {
+  console.log('profile', profile.value)
+  //plug api
+}
 </script>

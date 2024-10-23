@@ -19,10 +19,10 @@
 </template>
 <script lang="ts" setup>
 import { RegisterDetailUnion, RegisterDetailType, Sector, StructureSize } from '@/types'
-import RegisterDetailSize from './RegisterDetailSize.vue'
-import RegisterDetailSiret from './RegisterDetailSiret.vue'
-import RegisterDetailActivity from './RegisterDetailActivity.vue'
-import RegisterDetailLocalisation from './RegisterDetailLocalisation.vue'
+import TeeProfileSize from './TeeProfileSize.vue'
+import TeeProfileSiret from './TeeProfileSiret.vue'
+import TeeProfileActivity from './TeeProfileActivity.vue'
+import TeeProfileLocalisation from './TeeProfileLocalisation.vue'
 
 interface Props {
   detailInfos: RegisterDetailUnion
@@ -43,13 +43,13 @@ const updateValue = (v: string) => {
 const currentComponent = computed(() => {
   switch (props.detailInfos.type) {
     case RegisterDetailType.Siret:
-      return RegisterDetailSiret
+      return TeeProfileSiret
     case RegisterDetailType.Localisation:
-      return RegisterDetailLocalisation
+      return TeeProfileLocalisation
     case RegisterDetailType.Activity:
-      return RegisterDetailActivity
+      return TeeProfileActivity
     case RegisterDetailType.Size:
-      return RegisterDetailSize
+      return TeeProfileSize
     default:
       return '<div></div>'
   }

@@ -88,7 +88,6 @@ const resetSelection = () => {
 
 const selectItem = (establishment: EstablishmentFront) => {
   selection.value = establishment
-  console.log(selection.value)
   emit('selectEstablishment', selection.value)
 }
 
