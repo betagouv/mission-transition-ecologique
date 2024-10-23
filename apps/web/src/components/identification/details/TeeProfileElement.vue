@@ -18,7 +18,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { RegisterDetailUnion, RegisterDetailType, Sector, StructureSize } from '@/types'
+import { RegisterDetailUnion, RegisterDetailType } from '@/types'
 import TeeProfileSize from './TeeProfileSize.vue'
 import TeeProfileSiret from './TeeProfileSiret.vue'
 import TeeProfileActivity from './TeeProfileActivity.vue'
@@ -30,7 +30,7 @@ interface Props {
 }
 
 const props = defineProps<Props>()
-const detailModel = ref<string | undefined | Sector | StructureSize>(props.detailInfos.value)
+const detailModel = ref(props.detailInfos.value)
 const localDetail = ref<RegisterDetailUnion>(props.detailInfos)
 const emit = defineEmits<{
   'update:siret': []
