@@ -18,7 +18,7 @@
         <TeeProfileDetails
           v-if="registerStep === 2"
           :company="company"
-          :company-size="registeredData.structure_size"
+          :company-size="companySize"
           :manual="manualRegistration"
           @modify-siret="resetSiret"
           @close-register="closeRegisterModal"
@@ -38,13 +38,13 @@
 </template>
 <script setup lang="ts">
 import Translation from '@/utils/translation'
-import { EstablishmentFront } from '@/types'
+import { EstablishmentFront, StructureSize } from '@/types'
 import Breakpoint from '@/utils/breakpoints'
 import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
 const registeredData = CompanyDataStorage.getData()
 const company = ref<EstablishmentFront | null>(registeredData.value.siret)
-
+const companySize = ref<StructureSize | null>(registeredData.value.structure_size)
 const manualRegistration = ref<boolean>(false)
 
 const registerStep = computed<number>(() => {
@@ -61,8 +61,8 @@ const updateEstablishment = (selectedEstablishment: EstablishmentFront) => {
   manualRegistration.value = false
 }
 const resetSiret = () => {
-  console.log('resetSiret')
   company.value = null
+  companySize.value = null
   manualRegistration.value = false
 }
 

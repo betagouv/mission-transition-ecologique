@@ -1,5 +1,8 @@
 <template>
-  <div v-show="manual">
+  <div
+    v-show="manual"
+    class="fr-col-sm-8 fr-col-md-5 fr-col-offset-md-2 fr-col-12"
+  >
     <h4 class="fr-mb-0 fr-py-2v fr-text--white">Quelle est votre entreprise ?</h4>
     <TeeDsfrButton
       class="fr-btn--tertiary-no-outline fr-p-0 fr-text--white fr-btn-bg fr-text--sm fr-text--underline"
@@ -15,7 +18,7 @@
     v-show="profile[detailKey].if !== false"
     :key="profile[detailKey].title"
     v-model="profile[detailKey]"
-    class="fr-pb-4v fr-col-sm-8 fr-col-md-7 fr-col-offset-md-2 fr-col-12"
+    class="fr-pb-4v fr-col-sm-8 fr-col-md-5 fr-col-offset-md-2 fr-col-12"
     :manual="manual"
     :detail-infos="profile[detailKey]"
     @update:model-value="(v: RegisterDetailUnion) => (profile[detailKey] = v)"
