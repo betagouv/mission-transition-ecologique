@@ -46,7 +46,6 @@ import Breakpoint from '@/utils/breakpoints'
 import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
 const registeredData = CompanyDataStorage.getData()
-console.log(registeredData)
 const company = ref<EstablishmentFront | null>(registeredData.value.siret)
 
 const manualRegistration = ref<boolean>(false)
@@ -87,11 +86,8 @@ const closeRegisterModal = () => {
 <style lang="scss" scoped>
 #register-modal-overlay {
   position: fixed;
-  left: 0;
-  right: 0;
+  inset: 0;
   z-index: 1000;
-  bottom: 0;
-  top: 0;
 }
 
 #register-modal {

@@ -3,11 +3,13 @@
     <div v-show="manual">
       <h4 class="fr-mb-0 fr-col-justify--left fr-py-2v fr-text--white">Quelle est votre entreprise ?</h4>
       <TeeDsfrButton
-        label="je complète les informations avec mon SIRET"
-        icon="fr-icon-arrow-left-line"
         class="fr-btn--tertiary-no-outline fr-p-0 fr-text--white fr-btn-bg fr-text--sm fr-text--underline"
         @click="openSiretStep"
-      />
+      >
+        <template #text>
+          <span class="fr-icon--lg fr-pr-2v fr-icon-arrow-left-line" /><span>je complète les informations avec mon SIRET</span>
+        </template>
+      </TeeDsfrButton>
     </div>
     <TeeProfileElement
       v-for="detailKey in Object.keys(profile)"

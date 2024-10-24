@@ -1,5 +1,8 @@
 <template>
-  <DsfrInputGroup :error-message="errorMessage">
+  <DsfrInputGroup
+    :error-message="errorMessage"
+    class="fr-mb-0"
+  >
     <span class="fr-hint-text fr-text--white fr-col-justify--left fr-mb-2v">
       ex : "Fromagerie Sanzot Angers" ou N° SIRET "130 025 265 00013"
     </span>
@@ -13,6 +16,7 @@
         name="register-siret-input"
         :disabled="isLoading"
         type="search"
+        class="fr-mb-0"
         @keyup.enter="onClick"
       />
       <DsfrButton

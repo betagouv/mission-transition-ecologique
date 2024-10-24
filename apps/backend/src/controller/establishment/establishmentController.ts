@@ -38,7 +38,7 @@ export class SireneController extends Controller {
   /**
    * Retrieve establishments informations used in front end
    * for a single establishment using the SIRENE API if search by SIRET
-   * or for up to 3 establishments using the Recherche-entreprise API otherwise.
+   * or for up to 9 establishments using the Recherche-entreprise API otherwise.
    * Also return the number of matches found
    *
    * @summary Search for establishments from a query
