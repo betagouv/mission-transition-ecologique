@@ -5,6 +5,7 @@
       v-model.trim="queryValue"
       :is-loading="isLoading"
       :error-message="errorMessage"
+      @update:model-value="handleUpdateModelValue"
       @on-click="processInput"
       @on-clear="resetSelection"
     />
@@ -55,16 +56,17 @@
         </div>
       </div>
     </div>
-
-    <TeeDsfrButton
-      class="fr-btn--tertiary-no-outline fr-p-0 fr-btn-bg fr-text--white fr-text--sm"
-      @click="doManualRegister"
-    >
-      <template #text>
-        {{ Translation.t('or') }}
-        <span class="fr-text--underline">je complète les informations manuellement</span>
-      </template>
-    </TeeDsfrButton>
+    <div :class="requestResponses.establishments.length ? '' : 'fr-mt-n6v'">
+      <TeeDsfrButton
+        class="fr-btn--tertiary-no-outline fr-p-0 fr-btn-bg fr-text--white fr-text--sm"
+        @click="doManualRegister"
+      >
+        <template #text>
+          {{ Translation.t('or') }}
+          <span class="fr-text--underline">je complète les informations manuellement</span>
+        </template>
+      </TeeDsfrButton>
+    </div>
   </div>
 </template>
 
@@ -73,13 +75,20 @@ import TrackSiret from '@/utils/track/TrackSiret'
 import Translation from '@/utils/translation'
 import { SiretValidator } from '@tee/common'
 import { EstablishmentSearch, EstablishmentFront } from '@/types'
+import { useDebounce } from '@vueuse/core'
 
 const defaultSearchValue = {
   establishments: [],
   resultCount: -1
 }
 
-const queryValue = ref<string>()
+const queryValue = ref<string | undefined>()
+const debouncedQueryValue = useDebounce(queryValue, 1000)
+watch(debouncedQueryValue, (newValue) => {
+  if (newValue) {
+    processInput()
+  }
+})
 const isLoading = ref<boolean>(false)
 const requestResponses = ref<EstablishmentSearch>(defaultSearchValue)
 const selection = ref<EstablishmentFront>()
@@ -103,7 +112,9 @@ const selectItem = (establishment: EstablishmentFront) => {
 const doManualRegister = () => {
   emit('manualRegister')
 }
-
+const handleUpdateModelValue = (value: string | undefined) => {
+  queryValue.value = value
+}
 const processInput = async () => {
   isLoading.value = true
   errorMessage.value = undefined
@@ -121,7 +132,6 @@ const processInput = async () => {
       errorMessage.value = Translation.t('enterprise.noStructureFound')
     } else {
       requestResponses.value = searchResult.value
-      console.log(requestResponses)
       selection.value = undefined
     }
   }
@@ -137,7 +147,7 @@ const processInput = async () => {
 #siret-response {
   text-align: left;
   width: calc(100% - 40px);
-  max-height: 250px;
+  max-height: 210px;
   overflow: hidden auto;
 }
 </style>
