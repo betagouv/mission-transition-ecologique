@@ -6,7 +6,10 @@ import { ref, Ref } from 'vue'
 export default class CompanyDataStorage {
   private static readonly _storageHandler = new LocalStorageHandler()
 
-  private static readonly _data: Ref<CompanyDataType> = ref({ [CompanyDataStorageKey.Siret]: null, [CompanyDataStorageKey.Size]: null })
+  private static readonly _data: Ref<CompanyDataType> = ref({
+    [CompanyDataStorageKey.Siret]: this.getSiret(),
+    [CompanyDataStorageKey.Size]: this.getSize()
+  })
 
   static getData(): Ref<CompanyDataType> {
     return this._data
@@ -14,6 +17,14 @@ export default class CompanyDataStorage {
 
   static hasData() {
     return this._data.value[CompanyDataStorageKey.Siret] !== null || this._data.value[CompanyDataStorageKey.Size] !== null
+  }
+
+  static hasSiret() {
+    return this._data.value[CompanyDataStorageKey.Siret] !== null
+  }
+
+  static hasSize() {
+    return this._data.value[CompanyDataStorageKey.Size] !== null
   }
 
   static setSiret(value: EstablishmentFront) {

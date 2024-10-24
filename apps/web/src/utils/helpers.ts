@@ -1,20 +1,23 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`utils.helpers > FUNCTION_NAME > MSG_OR_VALUE :`)
-import type {
+import {
   Cleaner,
   CleanerDefaultIfNull,
   CleanerFromDict,
   CleanerInjectInObject,
+  CleanerOperations,
   CleanerReplaceAll,
+  DataMappingFrom,
   FormCallbackDataMapping,
   NextTrackRule,
   PropertyPath,
   ReqResp,
   ResultsMapping
 } from '@/types'
-import { CleanerOperations, DataMappingFrom } from '@/types'
 import type { ImportMetaEnv } from '../env'
 import Config from '@/config'
+import CompanyDataStorage from '@/utils/storage/companyDataStorage'
+import { CompanyDataStorageKey } from '@/types/companyDataType'
 
 // GENERIC HELPERS
 
@@ -188,6 +191,9 @@ export const remapItem = (
     switch (dataMapping.from) {
       case DataMappingFrom.Env:
         value = metaEnv[dataMapping.id]
+        break
+      case DataMappingFrom.CompanyData:
+        value = CompanyDataStorage.getItem(dataMapping.id as CompanyDataStorageKey)
         break
       case DataMappingFrom.FormData:
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
