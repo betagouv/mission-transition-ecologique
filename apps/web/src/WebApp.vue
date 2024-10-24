@@ -48,9 +48,11 @@ const isReady = computed<boolean>(() => {
 
 const openRegisterModal = () => {
   registerModal.value = true
+  document.body.style.overflow = 'hidden'
 }
 const closeRegisterModal = () => {
   registerModal.value = false
+  document.body.style.overflow = ''
 }
 
 onBeforeMount(() => {

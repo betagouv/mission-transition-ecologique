@@ -5,15 +5,12 @@
   >
     {{ infos.tagLabel }}
   </p>
-  <div v-else>
-    <span class="fr-hint-text fr-text--white tee-font-style--italic">
-      {{ infos.description }}
-    </span>
-    <DsfrSelect
-      v-model="selectedActivity"
-      :options="sectorOptions"
-    />
-  </div>
+  <DsfrSelect
+    v-else
+    v-model="selectedActivity"
+    :options="sectorOptions"
+    :default-unselected-text="infos.description"
+  />
 </template>
 <script lang="ts" setup>
 import { RegisterDetailActivity, Sector } from '@/types'

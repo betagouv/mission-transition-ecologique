@@ -5,22 +5,19 @@
   >
     {{ infos.tagLabel }}
   </p>
-  <div v-else>
-    <span class="fr-hint-text fr-text--white tee-font-style--italic">
-      {{ infos.description }}
-    </span>
-    <DsfrSelect
-      v-model="selectedRegion"
-      :options="regionsOptions"
-    />
-  </div>
+  <DsfrSelect
+    v-else
+    v-model="selectedRegion"
+    :default-unselected-text="infos.description"
+    :options="regionsOptions"
+  />
 </template>
 <script lang="ts" setup>
-import { RegisterDetails } from '@/types'
+import { RegisterDetail } from '@/types'
 import { Region } from '@/types'
 
 interface Props {
-  infos: RegisterDetails
+  infos: RegisterDetail
   manual: boolean
 }
 const selectedRegion = defineModel<Region>()

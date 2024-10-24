@@ -1,14 +1,11 @@
 <template id="select-company-size">
-  <div v-if="!infos.value || modifySize">
-    <span class="fr-hint-text fr-text--white tee-font-style--italic">
-      {{ infos.description }}
-    </span>
-    <DsfrSelect
-      v-model="selectedSize"
-      :error-message="selectedSize ? '' : errorMessage"
-      :options="sizeOptions"
-    />
-  </div>
+  <DsfrSelect
+    v-if="!infos.value || modifySize"
+    v-model="selectedSize"
+    :default-unselected-text="infos.description"
+    :error-message="selectedSize ? '' : errorMessage"
+    :options="sizeOptions"
+  />
   <p
     v-else
     class="fr-tag"

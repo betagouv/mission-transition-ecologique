@@ -1,41 +1,41 @@
 <template>
-  <div
-    id="register-modal"
-    :class="Breakpoint.isMobile() ? 'register-modal-xs' : 'register-modal-sm'"
-    class="fr-bg--blue-france fr-pt-2v"
-  >
-    <div class="fr-container fr-grid-row fr-grid-row--center fr-grid-row--top">
-      <div class="fr-col-12 fr-col-justify--right">
-        <TeeDsfrButton
-          size="sm"
-          class="fr-bg--blue-france--lightness fr-p-0 fr-text--blue-france fr-radius-a--2v"
-          @click="closeRegisterModal"
-        >
-          <template #text>
-            <span class="fr-icon-close-line fr-icon--lg"></span>
-          </template>
-        </TeeDsfrButton>
-      </div>
+  <div id="register-modal-overlay">
+    <div
+      id="register-modal"
+      :class="imgClass"
+      class="fr-bg--blue-france"
+    >
+      <div class="fr-container fr-grid-row fr-grid-row--left fr-grid-row--top">
+        <div class="fr-col-12 fr-col-justify--right">
+          <TeeDsfrButton
+            size="sm"
+            class="fr-bg--blue-france--lightness fr-p-0 fr-text--blue-france fr-radius-a--2v"
+            @click="closeRegisterModal"
+          >
+            <template #text>
+              <span class="fr-icon-close-line fr-icon--lg"></span>
+            </template>
+          </TeeDsfrButton>
+        </div>
 
-      <div class="fr-h1 fr-col-offset-sm-2 fr-col-10 fr-col-justify--left fr-py-md-4v fr-mb-md-2v fr-mb-0 fr-text--yellow">
-        {{ Translation.t('register.mainTitle') }}
+        <div class="fr-col-12 fr-col-md-7 fr-col-offset-md-2 fr-col-10 fr-py-md-4v fr-mb-4v fr-text--yellow">
+          <div class="fr-h1 fr-mb-0 fr-text--yellow">{{ Translation.t('register.mainTitle') }}</div>
+          <div>{{ Translation.t('register.description') }}</div>
+        </div>
+        <TeeRegisterSiret
+          v-if="registerStep === 1"
+          @select-establishment="updateEstablishment"
+          @manual-register="setManualRegister"
+        />
+        <TeeProfileDetails
+          v-if="registerStep === 2"
+          :company="company"
+          :company-size="registeredData.structure_size"
+          :manual="manualRegistration"
+          @modify-siret="resetSiret"
+          @close-register="closeRegisterModal"
+        />
       </div>
-      <div class="fr-text--yellow fr-pb-md-4v fr-pb-2v fr-col-offset-sm-2 fr-col-justify--left fr-pb-8v fr-col-10">
-        {{ Translation.t('register.description') }}
-      </div>
-      <TeeRegisterSiret
-        v-if="registerStep === 1"
-        @select-establishment="updateEstablishment"
-        @manual-register="setManualRegister"
-      />
-      <TeeProfileDetails
-        v-if="registerStep === 2"
-        :company="company"
-        :company-size="registeredData.structure_size"
-        :manual="manualRegistration"
-        @modify-siret="resetSiret"
-        @close-register="closeRegisterModal"
-      />
     </div>
   </div>
 </template>
@@ -70,6 +70,13 @@ const resetSiret = () => {
   manualRegistration.value = false
 }
 
+const imgClass = computed<string>(() => {
+  if (Breakpoint.isSmallScreen()) {
+    return `register-modal-sm ${Breakpoint.isMobile() ? 'mobile-modal-img' : ''} `
+  }
+  return 'register-modal-lg'
+})
+
 const setManualRegister = () => {
   manualRegistration.value = true
 }
@@ -78,27 +85,35 @@ const closeRegisterModal = () => {
 }
 </script>
 <style lang="scss" scoped>
-#register-modal {
+#register-modal-overlay {
   position: fixed;
   left: 0;
   right: 0;
-  bottom: 0;
-  display: flex;
   z-index: 1000;
+  bottom: 0;
+  top: 0;
+}
+
+#register-modal {
+  display: flex;
   align-items: flex-start;
-  background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom;
 }
 
-.register-modal-xs {
-  background-image: url('/images/TEE-modal-bottom-mobile.svg');
+.register-modal-sm {
   height: 100vh;
+  background-image: url('/images/TEE-modal-bottom.svg');
+  background-size: contain;
 }
 
-.register-modal-sm {
+.mobile-modal-img {
+  background-image: url('/images/TEE-modal-bottom-mobile.svg');
+}
+
+.register-modal-lg {
   background-image: url('/images/TEE-modal-bottom.svg');
+  margin-top: 120px;
   height: calc(100vh - 120px);
-  top: 120px;
 }
 </style>

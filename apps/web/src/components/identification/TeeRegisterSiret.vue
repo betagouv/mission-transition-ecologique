@@ -1,6 +1,6 @@
 <template>
-  <div class="fr-col-10 fr-col-offset-sm-2">
-    <h4 class="fr-mb-0 fr-col-justify--left fr-py-2v fr-text--white">Quelle est votre entreprise ?</h4>
+  <div class="fr-col-12 fr-col-md-7 fr-col-offset-md-2">
+    <h4 class="fr-mb-0 fr-py-2v fr-text--white">Quelle est votre entreprise ?</h4>
     <TeeRegisterSiretBar
       v-model.trim="queryValue"
       :is-loading="isLoading"
@@ -11,51 +11,60 @@
 
     <!-- RESPONSES -->
     <div
+      v-if="requestResponses.establishments.length"
       id="siret-response"
       class="fr-bg--white fr-mt-n6v"
     >
-      <div v-if="requestResponses.establishments.length">
-        <div
-          v-for="(response, i) in requestResponses.establishments"
-          :key="`resp-input-${i}`"
-          class="fr-card fr-card-result fr-card--no-arrow fr-card--shadow custom-border"
-          @click="selectItem(response)"
-        >
-          <div class="fr-card__body">
-            <div class="fr-card__content fr-py-2v fr-px-4v fr-text--blue-france">
-              <div class="fr-card__title">
-                <div class="fr-text--blue-france">
-                  {{ response.denomination || 'Entreprise individuelle' }}
-                  <span class="fr-text-weight--normal"> - SIRET {{ response.siret }} </span>
-                </div>
-              </div>
-              <div class="fr-card__desc fr-pl-2v">
-                <div>
-                  <span
-                    class="fr-icon-briefcase-line fr-mr-8v"
-                    aria-hidden="true"
-                  />
-                  <span>{{ response.secteur || 'Non Renseigné' }}</span>
-                </div>
-              </div>
+      <div
+        v-for="(response, i) in requestResponses.establishments"
+        :key="`resp-input-${i}`"
+        class="fr-card fr-card-result fr-card--no-arrow fr-card--shadow custom-border"
+        @click="selectItem(response)"
+      >
+        <div class="fr-card__body">
+          <div class="fr-card__content fr-py-1v fr-px-4v fr-text--blue-france">
+            <div class="fr-text--blue-france">
+              <span class="fr-text-weight--bold">{{ response.denomination || 'Entreprise individuelle' }}</span>
+              - SIRET {{ response.siret }}
             </div>
+            <div class="fr-card__desc fr-mt-1v">
+              <span
+                class="fr-icon-briefcase-line fr-icon--lg fr-mr-2v"
+                aria-hidden="true"
+              />
+              <span>{{ response.secteur || 'Non Renseigné' }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        v-if="requestResponses.resultCount > 9"
+        class="fr-card fr-card-result fr-card--no-arrow fr-card--shadow custom-border"
+      >
+        <div class="fr-card__body">
+          <div class="fr-mb-0 fr-py-1v fr-px-4v fr-text--blue-france fr-text--sm">
+            <span>Votre entreprise n'est pas affichée ?</span>
+            <a
+              href="https://annuaire-entreprises.data.gouv.fr/"
+              class="no-outline fr-text--underline"
+              target="_blank"
+            >
+              Cliquez ici
+            </a>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- WILDCARD -->
-    <p class="fr-col-justify--left">
-      <TeeDsfrButton
-        class="fr-btn--tertiary-no-outline fr-p-0 fr-text--white fr-text--sm"
-        @click="doManualRegister"
-      >
-        <template #text>
-          {{ Translation.t('or') }}
-          <span class="fr-text--underline">je complète les informations manuellement</span>
-        </template>
-      </TeeDsfrButton>
-    </p>
+    <TeeDsfrButton
+      class="fr-btn--tertiary-no-outline fr-p-0 fr-btn-bg fr-text--white fr-text--sm"
+      @click="doManualRegister"
+    >
+      <template #text>
+        {{ Translation.t('or') }}
+        <span class="fr-text--underline">je complète les informations manuellement</span>
+      </template>
+    </TeeDsfrButton>
   </div>
 </template>
 
@@ -112,6 +121,7 @@ const processInput = async () => {
       errorMessage.value = Translation.t('enterprise.noStructureFound')
     } else {
       requestResponses.value = searchResult.value
+      console.log(requestResponses)
       selection.value = undefined
     }
   }
@@ -128,6 +138,6 @@ const processInput = async () => {
   text-align: left;
   width: calc(100% - 40px);
   max-height: 250px;
-  overflow: hidden scroll;
+  overflow: hidden auto;
 }
 </style>
