@@ -1,5 +1,5 @@
 <template>
-  <p class="fr-tag">
+  <p class="fr-tag fr-bg--blue-france--lightness">
     {{ infos.tagLabel }}
     <span
       class="fr-icon-close-line"

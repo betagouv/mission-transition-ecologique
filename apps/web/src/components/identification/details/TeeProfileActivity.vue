@@ -1,7 +1,7 @@
 <template>
   <p
     v-if="!manual"
-    class="fr-tag"
+    class="fr-tag fr-bg--blue-france--lightness"
   >
     {{ infos.tagLabel }}
   </p>

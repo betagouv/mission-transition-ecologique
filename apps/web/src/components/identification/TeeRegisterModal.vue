@@ -3,22 +3,10 @@
     <div
       id="register-modal"
       :class="imgClass"
-      class="fr-bg--blue-france"
+      class="fr-bg--blue-france fr-px-md-32v fr-px-2v"
     >
       <div class="fr-container fr-grid-row fr-grid-row--left fr-grid-row--top">
-        <div class="fr-col-12 fr-col-justify--right">
-          <TeeDsfrButton
-            size="sm"
-            class="fr-bg--blue-france--lightness fr-p-0 fr-text--blue-france fr-radius-a--2v"
-            @click="closeRegisterModal"
-          >
-            <template #text>
-              <span class="fr-icon-close-line fr-icon--lg"></span>
-            </template>
-          </TeeDsfrButton>
-        </div>
-
-        <div class="fr-col-12 fr-col-md-7 fr-col-offset-md-2 fr-col-10 fr-py-md-4v fr-mb-4v fr-text--yellow">
+        <div class="fr-col-12 fr-col-md-7 fr-col-offset-md-2 fr-col-10 fr-pb-md-4v fr-pt-8v fr-mb-4v fr-text--yellow">
           <div class="fr-h1 fr-mb-0 fr-text--yellow">{{ Translation.t('register.mainTitle') }}</div>
           <div>{{ Translation.t('register.description') }}</div>
         </div>
@@ -36,6 +24,15 @@
           @close-register="closeRegisterModal"
         />
       </div>
+      <TeeDsfrButton
+        size="sm"
+        class="fr-bg--blue-france--lightness fr-mt-8v fr-p-0 fr-text--blue-france fr-radius-a--2v"
+        @click="closeRegisterModal"
+      >
+        <template #text>
+          <span class="fr-icon-close-line fr-icon--lg"></span>
+        </template>
+      </TeeDsfrButton>
     </div>
   </div>
 </template>
@@ -94,13 +91,13 @@ const closeRegisterModal = () => {
   display: flex;
   align-items: flex-start;
   background-repeat: no-repeat;
+  background-size: contain;
   background-position: bottom;
 }
 
 .register-modal-sm {
   height: 100vh;
   background-image: url('/images/TEE-modal-bottom.svg');
-  background-size: contain;
 }
 
 .mobile-modal-img {

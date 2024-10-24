@@ -8,7 +8,7 @@
   />
   <p
     v-else
-    class="fr-tag"
+    class="fr-tag fr-bg--blue-france--lightness"
   >
     {{ sizeText }}
     <span
