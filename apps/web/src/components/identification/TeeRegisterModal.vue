@@ -3,7 +3,7 @@
     <div
       id="register-modal"
       :class="imgClass"
-      class="fr-bg--blue-france fr-px-md-32v fr-px-2v"
+      class="fr-bg--blue-france fr-px-md-32v fr-px-2v fr-pb-md-24v fr-pb-32v"
     >
       <div class="fr-container fr-grid-row fr-grid-row--left fr-grid-row--top">
         <div class="fr-col-12 fr-col-md-7 fr-col-offset-md-2 fr-col-10 fr-pb-md-4v fr-pt-8v fr-mb-4v fr-text--yellow">
@@ -84,6 +84,7 @@ const closeRegisterModal = () => {
 #register-modal-overlay {
   position: fixed;
   inset: 0;
+  overflow: hidden scroll;
   z-index: 1000;
 }
 
@@ -91,13 +92,14 @@ const closeRegisterModal = () => {
   display: flex;
   align-items: flex-start;
   background-repeat: no-repeat;
-  background-size: contain;
   background-position: bottom;
+  background-size: contain;
+  background-attachment: scroll;
 }
 
 .register-modal-sm {
-  height: 100vh;
   background-image: url('/images/TEE-modal-bottom.svg');
+  min-height: 100vh;
 }
 
 .mobile-modal-img {
@@ -107,6 +109,6 @@ const closeRegisterModal = () => {
 .register-modal-lg {
   background-image: url('/images/TEE-modal-bottom.svg');
   margin-top: 120px;
-  height: calc(100vh - 120px);
+  min-height: calc(100vh - 120px);
 }
 </style>

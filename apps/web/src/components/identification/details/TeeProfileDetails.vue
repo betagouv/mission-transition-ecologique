@@ -1,27 +1,27 @@
 <template>
-  <div class="fr-col-10 fr-col-offset-md-2">
-    <div v-show="manual">
-      <h4 class="fr-mb-0 fr-col-justify--left fr-py-2v fr-text--white">Quelle est votre entreprise ?</h4>
-      <TeeDsfrButton
-        class="fr-btn--tertiary-no-outline fr-p-0 fr-text--white fr-btn-bg fr-text--sm fr-text--underline"
-        @click="openSiretStep"
-      >
-        <template #text>
-          <span class="fr-icon--lg fr-pr-2v fr-icon-arrow-left-line" /><span>je complète les informations avec mon SIRET</span>
-        </template>
-      </TeeDsfrButton>
-    </div>
-    <TeeProfileElement
-      v-for="detailKey in Object.keys(profile)"
-      v-show="profile[detailKey].if !== false"
-      :key="profile[detailKey].title"
-      v-model="profile[detailKey]"
-      class="fr-pb-4v fr-col-sm-8 fr-col-md-6 fr-col-12"
-      :manual="manual"
-      :detail-infos="profile[detailKey]"
-      @update:model-value="(v: RegisterDetailUnion) => (profile[detailKey] = v)"
-      @update:siret="openSiretStep"
-    />
+  <div v-show="manual">
+    <h4 class="fr-mb-0 fr-py-2v fr-text--white">Quelle est votre entreprise ?</h4>
+    <TeeDsfrButton
+      class="fr-btn--tertiary-no-outline fr-p-0 fr-text--white fr-btn-bg fr-text--sm fr-text--underline"
+      @click="openSiretStep"
+    >
+      <template #text>
+        <span class="fr-icon--lg fr-pr-2v fr-icon-arrow-left-line" /><span>je complète les informations avec mon SIRET</span>
+      </template>
+    </TeeDsfrButton>
+  </div>
+  <TeeProfileElement
+    v-for="detailKey in Object.keys(profile)"
+    v-show="profile[detailKey].if !== false"
+    :key="profile[detailKey].title"
+    v-model="profile[detailKey]"
+    class="fr-pb-4v fr-col-sm-8 fr-col-md-7 fr-col-offset-md-2 fr-col-12"
+    :manual="manual"
+    :detail-infos="profile[detailKey]"
+    @update:model-value="(v: RegisterDetailUnion) => (profile[detailKey] = v)"
+    @update:siret="openSiretStep"
+  />
+  <div class="fr-col-sm-8 fr-col-md-7 fr-col-offset-md-2 fr-col-12">
     <TeeDsfrButton
       class="fr-bg--yellow fr-text--blue-france"
       label="Enregistrer et fermer"
