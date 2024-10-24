@@ -19,6 +19,7 @@ import Translation from '@/utils/translation'
 import { acceptHMRUpdate, defineStore } from 'pinia'
 import { computed, ref, toRaw } from 'vue'
 import CompanyDataStorage from '@/utils/storage/companyDataStorage'
+import { CompanyDataStorageKey } from '@/types/companyDataType'
 
 export const useUsedTrackStore = defineStore('usedTrack', () => {
   const current = ref<UsedTrack | undefined>()
@@ -57,12 +58,22 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
   })
 
   const completedQuestionnaireData = computed<(string | number | object | undefined)[]>(() => {
-    return completedUsedTracks.value
+    const data = completedUsedTracks.value
       .map((usedTrack: UsedTrack) => {
         return usedTrack.selected?.map((optionSelected) => toRaw(optionSelected.questionnaireData))
       })
       .filter((questionnaireDatum) => questionnaireDatum?.length)
       .flat(1)
+
+    if (CompanyDataStorage.hasSiret()) {
+      data.push(CompanyDataStorage.getSiret() as QuestionnaireData)
+    }
+
+    if (CompanyDataStorage.hasSize()) {
+      data.push({ [CompanyDataStorageKey.Size]: CompanyDataStorage.getSize() } as QuestionnaireData)
+    }
+
+    return data
   })
 
   const usedTracksValuesPairs = computed<UsedTrackValuePair[]>(() => {
