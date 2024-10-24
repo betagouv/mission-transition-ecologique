@@ -186,12 +186,6 @@ button.fr-link:hover, .tee-router-link:hover {
   line-height: 1.2em;
 }
 
-/* TRACK INPUT */
-.tee-resp-info-block {
-  text-indent: -3.5rem;
-  padding-left: 3.5rem;
-}
-
 /* CUSTOM BUTTON INPUT */
 .tee-btn-next {
   justify-content: end;

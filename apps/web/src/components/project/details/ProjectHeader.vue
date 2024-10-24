@@ -1,10 +1,5 @@
 <template>
   <TeeDsfrBreadcrumb :links="links" />
-  <TeeEligibilityCriteriaBar
-    v-if="!navigationStore.isCatalogProjectDetail()"
-    :bg-color="Color.purpleLightnessed"
-    :bg-bar-color="Color.purpleLighted"
-  />
   <TeeBanner
     :bg-color="themeColor"
     :has-gradient="true"
@@ -23,15 +18,12 @@
 <script setup lang="ts">
 import { Color, Project } from '@/types'
 import type { DsfrBreadcrumbProps } from '@gouvminint/vue-dsfr'
-import { useNavigationStore } from '@/stores/navigation'
 
 interface Props {
   project: Project
   themeColor?: Color
 }
 const props = defineProps<Props>()
-
-const navigationStore = useNavigationStore()
 
 const links = ref<DsfrBreadcrumbProps['links']>([{ text: props.project.title }])
 </script>

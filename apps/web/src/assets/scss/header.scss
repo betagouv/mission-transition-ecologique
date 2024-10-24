@@ -1,10 +1,19 @@
 @use 'setting';
 
 .fr-header {
+  .fr-header__tools {
+    align-items: flex-end;
+    flex-direction: row;
+    display: flex;
+    justify-content: flex-end;
+  } 
+
   .fr-nav {
     button.fr-nav__btn {
       color: setting.$blue-france;
       font-weight: 500;
+      min-height: 2rem;
+      padding: 0.5rem 1rem;
     }
 
     .fr-menu {

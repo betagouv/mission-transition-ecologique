@@ -22,4 +22,9 @@ export default class Breakpoint {
     const currentBreakpoint = this.getCurrentBreakpoint()
     return currentBreakpoint.value === BreakpointNameType.xs
   }
+
+  static isSmallScreen() {
+    const currentBreakpoint = this.getCurrentBreakpoint()
+    return [BreakpointNameType.xs, BreakpointNameType.sm, BreakpointNameType.md].includes(currentBreakpoint.value as BreakpointNameType)
+  }
 }
