@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test'
 import { tests } from './projectResultsData'
 
 tests.forEach((singleTest) => {
-  test(`Verify content and elements for query ${singleTest.url}`, async ({ page }) => {
+  test(`Test id ${singleTest.id} - Verify content and elements for query ${singleTest.url}`, async ({ page }) => {
     await page.goto(singleTest.url)
     try {
       await page.waitForSelector('.teste2e-project-target', { timeout: 3000 })
@@ -13,12 +13,12 @@ tests.forEach((singleTest) => {
     }
     const elementsLocal = await page.$$eval('.teste2e-project-target h3 a', (els) => els.map((el) => el.innerHTML.trim()))
 
-    // console.warn(singleTest.value)
+    // console.warn(singleTest.values)
     // console.warn(elementsLocal)
 
-    expect(elementsLocal.length).toBe(singleTest.count)
+    expect(elementsLocal.length).toBe(singleTest.count ?? singleTest.values.length)
     for (let i = 0; i < elementsLocal.length; i++) {
-      expect(elementsLocal[i]).toBe(singleTest.value[i])
+      expect(elementsLocal[i]).toBe(singleTest.values[i])
     }
   })
 })
