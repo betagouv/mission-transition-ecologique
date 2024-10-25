@@ -32,8 +32,8 @@
             </TeeButtonLink>
             <a
               v-else
-              :href="link.url"
-              @click.prevent="scrollTo(link.url)"
+              :href="link.hash"
+              @click.prevent="scrollTo(link.hash)"
             >
               {{ getLinkLabel() }}
             </a>
