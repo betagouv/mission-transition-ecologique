@@ -34,8 +34,9 @@
               v-else
               :href="link.url"
               @click.prevent="scrollTo(link.url)"
-              >{{ getLinkLabel() }}</a
             >
+              {{ getLinkLabel() }}
+            </a>
           </span>
         </div>
       </div>
@@ -64,11 +65,20 @@ export interface TeeEligibilityBarMessage {
   icon?: string
 }
 
-export interface TeeEligibilityBarLink {
-  url: string | RouteName
+export type TeeEligibilityBarLink = TeeEligibilityBarLinkButton | TeeEligibilityBarLinkHash
+
+export interface TeeEligibilityBarLinkButton {
+  url: RouteName
   label: string
   labelMobile?: string
-  isButtonLink?: boolean
+  isButtonLink: true
+}
+
+export interface TeeEligibilityBarLinkHash {
+  hash: string
+  label: string
+  labelMobile?: string
+  isButtonLink?: false
 }
 
 const props = defineProps<Props>()
@@ -119,7 +129,7 @@ const getLinkLabel = () => {
 const getRouteToUrl = (routeName: RouteName): RouteLocationRaw => {
   return {
     name: routeName,
-    query: undefined //TODO: brancher aux data entreprises sauvegardée
+    query: undefined //TODO: redirect vers catalog filtré
   }
 }
 </script>

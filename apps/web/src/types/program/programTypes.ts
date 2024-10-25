@@ -1,4 +1,4 @@
-import { ThemeId, ProgramOperatorType, ProgramAidType, FiltersKeys } from '@/types'
+import { ThemeId, ProgramOperatorType, ProgramAidType, FiltersKeys, ProgramEligibilityType } from '@/types'
 
 interface ProgramObjectiveLink {
   lien: string
@@ -32,7 +32,7 @@ export interface ProgramData {
   'durée du prêt'?: string
   'taux du prêt'?: string
   url?: string
-  eligibility: string
+  eligibility: ProgramEligibilityType
 
   "conditions d'éligibilité": {
     "taille de l'entreprise": string[]

@@ -8,13 +8,13 @@
 <script setup lang="ts">
 import { Color, type ProgramData as ProgramType, ProgramEligibilityType, RouteName } from '@/types'
 import { TeeEligibilityBarLink, TeeEligibilityBarMessage } from '@/components/program/eligibility/TeeEligibilityBar.vue'
+import { useProgramStore } from '@/stores/program'
+import { ref } from 'vue'
 
-const props = defineProps<{
-  program: ProgramType | undefined
-}>()
+const program = ref<ProgramType>()
 
 const getEligibilityMessage: ComputedRef<TeeEligibilityBarMessage> = computed(() => {
-  switch (props.program?.eligibility) {
+  switch (program.value?.eligibility) {
     case ProgramEligibilityType.Eligible:
       return {
         default: 'Votre entreprise remplit les critères pour bénéficier de cette aide.',
@@ -38,19 +38,18 @@ const getEligibilityMessage: ComputedRef<TeeEligibilityBarMessage> = computed(()
 })
 
 const getEligibilityColor: ComputedRef<Color> = computed(() => {
-  return props.program?.eligibility === ProgramEligibilityType.NotEligible ? Color.red : Color.greenLightnessed
+  return program.value?.eligibility === ProgramEligibilityType.NotEligible ? Color.red : Color.greenLightnessed
 })
 
 const getEligibilityLink: ComputedRef<TeeEligibilityBarLink | undefined> = computed(() => {
-  switch (props.program?.eligibility) {
+  switch (program.value?.eligibility) {
     case ProgramEligibilityType.PartiallyEligible:
       return {
-        url: 'program-details-accordion-group',
+        hash: 'program-details-accordion-group',
         label: 'Voir les autres critères à respecter',
         labelMobile: 'Vérifier les critères'
       }
     case ProgramEligibilityType.NotEligible:
-    default:
       return {
         url: RouteName.CatalogPrograms,
         label: 'Voir les aides pour mon entreprise',
@@ -58,7 +57,12 @@ const getEligibilityLink: ComputedRef<TeeEligibilityBarLink | undefined> = compu
         isButtonLink: true
       }
     case ProgramEligibilityType.Eligible:
+    default:
       return undefined
   }
+})
+
+onBeforeMount(() => {
+  program.value = useProgramStore().currentProgram
 })
 </script>
