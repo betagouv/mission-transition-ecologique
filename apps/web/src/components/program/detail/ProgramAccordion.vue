@@ -1,31 +1,34 @@
 <template>
-  <DsfrAccordion
-    :id="`accordion-${accordionId}`"
-    :title="title"
-    :expanded-id="expandedId"
-    @expand="expandedId = $event"
-  >
-    <template #title>
-      <h3 class="fr-text-line-height--15v">{{ title }}</h3>
-    </template>
-    <slot />
-  </DsfrAccordion>
+  <DsfrAccordionsGroup v-model="activeAccordion">
+    <DsfrAccordion
+      :id="`accordion-${accordionId}`"
+      :title="title"
+    >
+      <template #title>
+        <h3 class="fr-text-line-height--15v">{{ title }}</h3>
+      </template>
+      <slot />
+    </DsfrAccordion>
+  </DsfrAccordionsGroup>
 </template>
 
 <script setup lang="ts">
+import { BreakpointNameType } from '@/types'
+import Breakpoint from '@/utils/breakpoints'
 import { DsfrAccordion } from '@gouvminint/vue-dsfr'
-import { ref, onBeforeMount } from 'vue'
+import { onBeforeMount, ref } from 'vue'
+
 interface Props {
   accordionId: string
   title: string
 }
-const props = defineProps<Props>()
+defineProps<Props>()
 
-const expandedId = ref<string>()
+const activeAccordion = ref<number>()
 
 onBeforeMount(() => {
-  if (window.innerWidth > 767) {
-    expandedId.value = `accordion-${props.accordionId}`
+  if (Breakpoint.isLargerOrEqual(BreakpointNameType.md)) {
+    activeAccordion.value = 0
   }
 })
 </script>
