@@ -82,7 +82,13 @@
     },
     "nature de l'aide": {
       "description": "Précise s'il s'agit d'une aide financière, d'une étude, ou d'un prêt.",
-      "enum": ["étude", "formation", "financement", "avantage fiscal", "prêt"]
+      "enum": [
+        "étude",
+        "formation",
+        "financement",
+        "avantage fiscal",
+        "prêt"
+      ]
     },
     "activable en autonomie": {
       "description": "Précise s'il s'agit d'un dispositif en autonomie ou s'il y aura des interactions avec l'opérateur.",
@@ -156,7 +162,12 @@
           "minItems": 1
         }
       },
-      "required": ["taille de l'entreprise", "secteur géographique", "secteur d'activité", "nombre d'années d'activité"]
+      "required": [
+        "taille de l'entreprise",
+        "secteur géographique",
+        "secteur d'activité",
+        "nombre d'années d'activité"
+      ]
     },
     "publicodes": {
       "description": "Mécanismes publicodes (https://publi.codes/) associés au dispositif. Doit être en langage publicodes valide. Les données nécessaires à l'évaluation des règles (contrat d'interface) sont matérialisés par des clés sans valeurs.",
@@ -164,7 +175,10 @@
       "properties": {
         "entreprise . est ciblée": {
           "description": "Mécanisme pour évaluer si un dispositif doit être affiché à un utilisateur ou non. Est souvent plus restrictive que les mécanismes d'éligibilité",
-          "type": ["object", "string"]
+          "type": [
+            "object",
+            "string"
+          ]
         },
         "entreprise . a un objectif ciblé": {
           "description": "Le nombre d'objectifs prioritaires auquel répond le dispositif.",
@@ -179,44 +193,71 @@
           }
         }
       },
-      "required": ["entreprise . est ciblée"]
+      "required": [
+        "entreprise . est ciblée"
+      ]
     }
   },
   "oneOf": [
     {
       "properties": {
-        "nature de l'aide": { "const": "formation" }
+        "nature de l'aide": {
+          "const": "formation"
+        }
       },
-      "required": ["coût de l'accompagnement", "durée de l'accompagnement"]
+      "required": [
+        "coût de l'accompagnement",
+        "durée de l'accompagnement"
+      ]
     },
     {
       "properties": {
-        "nature de l'aide": { "const": "financement" }
+        "nature de l'aide": {
+          "const": "financement"
+        }
       },
-      "required": ["montant du financement"]
+      "required": [
+        "montant du financement"
+      ]
     },
     {
       "properties": {
-        "nature de l'aide": { "const": "avantage fiscal" }
+        "nature de l'aide": {
+          "const": "avantage fiscal"
+        }
       },
-      "required": ["montant de l'avantage fiscal"]
+      "required": [
+        "montant de l'avantage fiscal"
+      ]
     },
     {
       "properties": {
-        "nature de l'aide": { "const": "prêt" }
+        "nature de l'aide": {
+          "const": "prêt"
+        }
       },
-      "required": ["durée du prêt", "montant du prêt"]
+      "required": [
+        "durée du prêt",
+        "montant du prêt"
+      ]
     },
     {
       "properties": {
-        "nature de l'aide": { "const": "étude" }
+        "nature de l'aide": {
+          "const": "étude"
+        }
       },
       "anyOf": [
         {
-          "required": ["coût de l'accompagnement", "durée de l'accompagnement"]
+          "required": [
+            "coût de l'accompagnement",
+            "durée de l'accompagnement"
+          ]
         },
         {
-          "required": ["montant du financement"]
+          "required": [
+            "montant du financement"
+          ]
         }
       ]
     }
@@ -232,7 +273,6 @@
     "publicodes"
   ],
   "additionalProperties": false,
-
   "$defs": {
     "operators": {
       "enum": [
@@ -282,7 +322,7 @@
         "France Rénov'",
         "InvestEU",
         "La Poste",
-        "Ministère de la Transition Écologique et Solidaire",
+        "Ministère de la Transition Écologique",
         "ORACE en Pays de la Loire",
         "Organisations professionnelles",
         "Région Bretagne",
@@ -290,10 +330,22 @@
         "Suez",
         "UIMM",
         "Véolia Eau",
-        "TEE",
-        "Agence Régionale Biodiversité et Environnement",
+        "ATEE",
+        "CMA Corse",
+        "CMA Ile-de-France",
+        "CMA Occitanie",
+        "CMA Pays-de-la-Loire",
+        "DGE",
+        "ORACE",
+        "PROREFEI",
+        "PRO-SMEn",
+        "Voies Navigables de France",
+        "CCI PdL",
+        "région PdL",
         "Région Sud",
-        "Office Française de la Biodiversité"
+        "Agence Régionale Biodiversité et Environnement",
+        "Office français de la biodiversité",
+        "TEE"
       ]
     }
   }
