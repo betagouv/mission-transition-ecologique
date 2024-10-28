@@ -1,5 +1,4 @@
 import path from 'path'
-import fs from 'fs'
 import { ProjectBaserow } from '../common/baserow/projectBaserow'
 import { RawProject } from './types/domain'
 import { jsonPrograms } from '../../generated/index'
@@ -9,9 +8,10 @@ import { SlugValidator } from '../common/validators/slugValidator'
 import { LinkValidator } from '../common/validators/linkValidator'
 import { Logger } from '../common/logger/logger'
 import { LoggerType, LogLevel } from '../common/logger/types'
+import { FileManager } from '../common/fileManager'
 
 export class ProjectFeatures {
-  private readonly _outputDirectory: string = path.join(__dirname, '../../static/')
+  private readonly _outputFilePath: string = path.join(__dirname, '../../static/projects.json')
   private readonly _outputImageDirectory: string = path.join(__dirname, '../../../../apps/web/public/images/projet')
   private _programs: ProgramType[] = []
   private _logger: Logger
@@ -27,7 +27,7 @@ export class ProjectFeatures {
 
     console.log(`Baserow Data sucessfully downloaded.\n\nStarting to validate the project data and generating the project JSON.`)
     const validProjects = await this._validateData(projects)
-    this._writeJson(validProjects)
+    FileManager.writeJson(this._outputFilePath, validProjects, 'projects.json updated')
     this._logger.write('projectGeneration.log')
 
     return
@@ -121,17 +121,5 @@ export class ProjectFeatures {
         )
       }
     }
-  }
-
-  private _writeJson(rawProjects: RawProject[]) {
-    const projectJson = JSON.stringify(rawProjects, null, 2)
-    const fullPath = path.join(this._outputDirectory, 'projects.json')
-    fs.writeFile(fullPath, projectJson, (err) => {
-      if (err) {
-        console.log('Error writing file:', err)
-      } else {
-        console.log('Successfully wrote file')
-      }
-    })
   }
 }

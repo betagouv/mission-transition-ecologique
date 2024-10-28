@@ -1,5 +1,5 @@
 <template>
-  <div class="fr-col-9 fr-text-center">
+  <div class="fr-text-center">
     <TeeNoResult
       v-if="!countItems && !hasError"
       message="Aucune aide n'a pu être identifiée avec les critères choisis..."

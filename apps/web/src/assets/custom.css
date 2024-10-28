@@ -758,11 +758,6 @@ code {
     height: auto;
     max-width: 100%;
   }
-
-  .fr-tee-form-arrow-back {
-    position: absolute;
-    left: 1em;
-  }
 }
 
 /*! media more than md */
@@ -772,11 +767,6 @@ code {
     width: auto;
     height: auto;
     max-width: 100%;
-  }
-
-  .fr-tee-form-arrow-back {
-    position: absolute;
-    left: 8em;
   }
 }
 

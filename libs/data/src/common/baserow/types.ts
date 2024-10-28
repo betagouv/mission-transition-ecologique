@@ -58,6 +58,12 @@ export interface Program
   'Thèmes Ciblés': LinkObject[]
 }
 
+export interface Operator {
+  Nom: string
+  Tag: string
+  Filtre: LinkObject[]
+}
+
 export interface ConditionalValues
   extends Omit<
     DomainConditionalValues,

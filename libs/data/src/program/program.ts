@@ -1,4 +1,4 @@
-import { ProgramAidType } from './types/shared'
+import { ProgramAidType, ProgramEligibilityType } from './types/shared'
 
 export class Program {
   public static getPrefixedProgramName(program: ProgramType) {
@@ -24,6 +24,12 @@ export class Program {
 import type { Dispositif as ProgramWithoutId } from '../generated/program'
 
 export type { ProgramWithoutId }
-export type ProgramType = ProgramWithoutId & { id: string }
+export type ProgramType = ProgramWithoutId & {
+  id: string
+}
+
+export type ProgramTypeWithEligibility = ProgramType & {
+  eligibility: ProgramEligibilityType
+}
 
 export type ConditionalYaml = Required<ProgramType['champs conditionnels'][]>[number][number]
