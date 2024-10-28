@@ -8,15 +8,20 @@ export default class ProgramCustomizer {
     return !!questionnaireData.structure_size && !!questionnaireData.region
   }
 
-  public getAllPersonalizedPrograms(programs: ProgramType[], questionnaireData: QuestionnaireData): ProgramType[] {
-    programs.forEach((program) => {
-      if (program['champs conditionnels']) {
-        for (const conditionalChange of program['champs conditionnels']) {
-          if (this._isConditionalValid(conditionalChange as ConditionalYaml, questionnaireData)) {
-            this._rewriteProgramProperties(program, conditionalChange as ConditionalYaml)
-          }
+  public rewriteOneProgram(program: ProgramType, questionnaireData: QuestionnaireData): ProgramType {
+    if (program['champs conditionnels']) {
+      for (const conditionalChange of program['champs conditionnels']) {
+        if (this._isConditionalValid(conditionalChange as ConditionalYaml, questionnaireData)) {
+          this._rewriteProgramProperties(program, conditionalChange as ConditionalYaml)
         }
       }
+    }
+    return program
+  }
+
+  public getAllPersonalizedPrograms(programs: ProgramType[], questionnaireData: QuestionnaireData): ProgramType[] {
+    programs.forEach((program) => {
+      this.rewriteOneProgram(program, questionnaireData)
     })
     return programs
   }

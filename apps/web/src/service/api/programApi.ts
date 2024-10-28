@@ -15,16 +15,7 @@ export default class ProgramApi extends RequestApi {
   }
 
   async getOne(id: string): Promise<Result<ProgramData, Error>> {
-    const url: string = this.url + '/' + id
-    try {
-      const response = await fetch(url)
-      if (response.status === 404) {
-        throw new Error('Program not found')
-      }
-      return Result.ok((await response.json()) as ProgramData)
-    } catch (error: unknown) {
-      return Result.err(error as Error)
-    }
+    return super.getJson<ProgramData>(this.url + '/' + id)
   }
 
   get buildQuery(): string {

@@ -68,7 +68,7 @@ export const useProgramStore = defineStore('program', () => {
       return Result.err(result.error)
     }
 
-    const result = await new ProgramApi().getOne(id)
+    const result = await new ProgramApi(useUsedTrackStore().getQuestionnaireData()).getOne(id)
     if (result.isOk) {
       currentProgram.value = result.value
     }

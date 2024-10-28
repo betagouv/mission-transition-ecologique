@@ -27,10 +27,14 @@ export default class ProgramFeatures {
   }
 
   public getOneWithMaybeEligibility(id: string, questionnaireData: QuestionnaireData): Result<ProgramTypeWithEligibility, Error> {
-    const program = this.getById(id)
+    let program = this.getById(id)
     if (!program) {
       Monitor.warning('Requested Program Id unknown', { id })
       return Result.err(new Error('program Id Inconnu'))
+    }
+    if (new ProgramCustomizer().shouldRewritePrograms(questionnaireData)) {
+      program = JSON.parse(JSON.stringify(program)) as ProgramType // deep copy before modification
+      program = new ProgramCustomizer().rewriteOneProgram(program, questionnaireData)
     }
 
     if (Object.keys(questionnaireData).length === 0) {
