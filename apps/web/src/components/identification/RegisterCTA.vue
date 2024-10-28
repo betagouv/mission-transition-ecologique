@@ -3,7 +3,7 @@
     :class="registrationStatus ? 'fr-btn--tertiary-no-outline' : ''"
     @click="emit('click')"
   >
-    <template #text>
+    <template #default>
       <span
         v-if="registrationStatus || Breakpoint.isSmallScreen()"
         :class="Breakpoint.isSmallScreen() ? 'fr-icon--lg' : 'fr-pr-2w'"

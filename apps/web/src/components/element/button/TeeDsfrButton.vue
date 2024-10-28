@@ -3,9 +3,7 @@
     v-bind="props"
     :icon="iconComputed"
   >
-    <template #default>
-      <slot name="text"></slot>
-    </template>
+    <slot name="default"></slot>
   </DsfrButton>
 </template>
 
