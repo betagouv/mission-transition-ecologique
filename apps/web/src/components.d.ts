@@ -103,11 +103,9 @@ declare module 'vue' {
     TeeQuestionnaire: typeof import('./components/questionnaire/TeeQuestionnaire.vue')['default']
     TeeQuestionnaireResult: typeof import('./components/questionnaire/TeeQuestionnaireResult.vue')['default']
     TeeSpinner: typeof import('./components/element/TeeSpinner.vue')['default']
-    ThemeCard: typeof import('./components/theme/select/ThemeCard.vue')['default']
     ThemeFilter: typeof import('./components/theme/ThemeFilter.vue')['default']
     ThemeFiltersAndCard: typeof import('./components/questionnaire/result/list/ThemeFiltersAndCard.vue')['default']
     ThemeHeaderCard: typeof import('./components/theme/ThemeHeaderCard.vue')['default']
-    ThemeSelect: typeof import('./components/theme/select/ThemeSelect.vue')['default']
     TrackCallout: typeof import('./components/track/detail/TrackCallout.vue')['default']
     TrackCard: typeof import('./components/track/form/TrackCard.vue')['default']
     TrackContent: typeof import('./components/track/TrackContent.vue')['default']
@@ -121,5 +119,7 @@ declare module 'vue' {
     TrackSimpleButton: typeof import('./components/track/form/TrackSimpleButton.vue')['default']
     TrackSiret: typeof import('./components/track/form/TrackSiret.vue')['default']
     TrackSubmitButton: typeof import('./components/track/form/TrackSubmitButton.vue')['default']
+    TrackThemeCard: typeof import('./components/track/form/theme/TrackThemeCard.vue')['default']
+    TrackThemeCards: typeof import('./components/track/form/theme/TrackThemeCards.vue')['default']
   }
 }
