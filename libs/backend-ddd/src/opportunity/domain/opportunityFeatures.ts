@@ -96,7 +96,7 @@ export default class OpportunityFeatures {
       case OpportunityType.CustomProject:
         return Result.ok(
           new OpportunityAssociatedData(OpportunityType.CustomProject, {
-            title: opportunity.titleMessage || 'No title',
+            title: opportunity.titleMessage || 'Untitled',
             theme: opportunity.theme as ThemeId
           })
         )
