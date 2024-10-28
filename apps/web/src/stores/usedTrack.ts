@@ -284,7 +284,7 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     if (CompanyDataStorage.hasData()) {
       const companyData: CompanyDataType = CompanyDataStorage.getData().value
       Object.entries(companyData).forEach(([key, value]) => {
-        if (questionnaireData[key] === undefined && value !== undefined && value !== null) {
+        if (value !== null) {
           if (Object.values(StructureSize).includes(value as StructureSize)) {
             questionnaireData[key] = value
           } else if (typeof value === 'object' && !Array.isArray(value)) {

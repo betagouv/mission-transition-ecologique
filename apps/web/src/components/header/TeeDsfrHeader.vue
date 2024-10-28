@@ -91,6 +91,17 @@
               </p>
             </div>
           </div>
+          <div>
+            {{ size }}
+            <input
+              v-model="size"
+              type="text"
+            />
+            <input
+              type="submit"
+              @click="updateSize(size)"
+            />
+          </div>
           <div class="fr-header__tools">
             <div
               v-if="quickLinks?.length || languageSelector"
@@ -203,6 +214,9 @@ import { DsfrLanguageSelector, DsfrLogo, DsfrSearchBar } from '@gouvminint/vue-d
 
 import type { DsfrLanguageSelectorElement } from '@gouvminint/vue-dsfr/types/components/DsfrLanguageSelector/DsfrLanguageSelector.vue'
 import type { DsfrHeaderProps } from '@gouvminint/vue-dsfr/types/components/DsfrHeader/DsfrHeader.vue'
+import CompanyDataStorage from '@/utils/storage/companyDataStorage'
+import { StructureSize } from '@tee/common'
+import { CompanyDataStorageKey } from '@/types/companyDataType'
 
 export type { DsfrHeaderProps }
 
@@ -233,6 +247,18 @@ const emit = defineEmits<{
   (e: 'search', payload: string): void
   (e: 'language-select', payload: DsfrLanguageSelectorElement): void
 }>()
+
+const companyData = CompanyDataStorage.getData()
+const size = ref(companyData.value[CompanyDataStorageKey.Size])
+
+const updateSize = (size: StructureSize) => {
+  CompanyDataStorage.setSize(size)
+}
+
+watchEffect(() => {
+  console.log('Change size')
+  size.value = CompanyDataStorage.getData().value[CompanyDataStorageKey.Size]
+})
 
 const languageSelector = toRef(props, 'languageSelector')
 

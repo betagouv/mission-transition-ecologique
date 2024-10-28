@@ -82,7 +82,7 @@ const filteredProjects = computed(() => {
   )
 })
 
-onBeforeMount(async () => {
+const getProgramsAndProjects = async () => {
   navigationStore.hasSpinner = true
   const programResult = await programStore.programsByUsedTracks
   const projectResult = await projectStore.projects
@@ -93,5 +93,14 @@ onBeforeMount(async () => {
     hasError.value = true
   }
   navigationStore.hasSpinner = false
+}
+
+onBeforeMount(async () => {
+  await getProgramsAndProjects()
+})
+
+watchEffect(async () => {
+  console.log('registeredData changed: UPDATE PROGRAMS')
+  await getProgramsAndProjects()
 })
 </script>
