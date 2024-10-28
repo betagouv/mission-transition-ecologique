@@ -90,6 +90,7 @@ const closeRegisterModal = () => {
   overflow: hidden scroll;
   z-index: 1000;
 }
+
 .register-modal-overlay-lg {
   top: 120px !important;
 }
