@@ -19,7 +19,7 @@ import Translation from '@/utils/translation'
 import { acceptHMRUpdate, defineStore } from 'pinia'
 import { computed, ref, toRaw } from 'vue'
 import CompanyDataStorage from '@/utils/storage/companyDataStorage'
-import { CompanyDataStorageKey } from '@/types/companyDataType'
+import { CompanyDataStorageKey, CompanyDataType } from '@/types/companyDataType'
 
 export const useUsedTrackStore = defineStore('usedTrack', () => {
   const current = ref<UsedTrack | undefined>()
@@ -123,6 +123,20 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
           CompanyDataStorage.setSize(value as StructureSize)
         }
       }
+    }
+
+    if (CompanyDataStorage.hasSiret()) {
+      useNavigationStore().updateSearchParam({
+        name: TrackId.Siret,
+        value: CompanyDataStorage.getSiret()?.siret
+      })
+    }
+
+    if (CompanyDataStorage.hasSize()) {
+      useNavigationStore().updateSearchParam({
+        name: TrackId.StructureWorkforce,
+        value: CompanyDataStorage.getSize()
+      })
     }
   }
 
@@ -266,6 +280,22 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
         })
       })
     })
+
+    if (CompanyDataStorage.hasData()) {
+      const companyData: CompanyDataType = CompanyDataStorage.getData().value
+      Object.entries(companyData).forEach(([key, value]) => {
+        if (questionnaireData[key] === undefined && value !== undefined && value !== null) {
+          if (Object.values(StructureSize).includes(value as StructureSize)) {
+            questionnaireData[key] = value
+          } else if (typeof value === 'object' && !Array.isArray(value)) {
+            Object.entries(value).forEach(([k, v]) => {
+              questionnaireData[k] = v
+            })
+          }
+        }
+      })
+    }
+
     return questionnaireData
   }
 
