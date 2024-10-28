@@ -16,10 +16,11 @@ const router = createRouter({
   routes: routes
 })
 
-router.afterEach((to, _, failure) => {
+router.afterEach((to, from, failure) => {
   if (!failure) {
     nextTick(() => {
       Posthog.capturePageView(to)
+      Posthog.capturePageLeave(from)
     })
   }
 })
