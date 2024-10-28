@@ -18,8 +18,8 @@ import { SelectFieldInputType } from '@/types'
 interface Props {
   field: SelectFieldInputType
   publicPath: string
-  getErrorMessage: () => ''
-  getValidMessage: () => ''
+  getErrorMessage: () => string
+  getValidMessage: () => string
 }
 
 defineProps<Props>()
