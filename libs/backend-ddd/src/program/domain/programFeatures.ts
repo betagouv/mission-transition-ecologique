@@ -25,7 +25,7 @@ export default class ProgramFeatures {
     return this._programRepository.getById(id)
   }
 
-  public getOneMaybeWithEligibility(id: string, questionnaireData: QuestionnaireData): Result<ProgramTypeWithEligibility, Error> {
+  public getOneWithMaybeEligibility(id: string, questionnaireData: QuestionnaireData): Result<ProgramTypeWithEligibility, Error> {
     const program = this.getById(id)
     if (!program) {
       Monitor.warning('Requested Program Id unknown', { id })
