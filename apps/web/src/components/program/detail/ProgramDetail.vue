@@ -187,29 +187,31 @@
             />
           </div>
         </div>
-        <DsfrAccordionsGroup>
-          <ProgramAccordion
-            v-if="program && program['conditions d\'éligibilité']"
-            :accordion-id="`${program.id}-eligibility`"
-            :title="Translation.t('program.programAmIEligible')"
-          >
-            <ProgramEligibility :program="program" />
-          </ProgramAccordion>
-          <ProgramAccordion
-            v-if="program && linkedProjects && linkedProjects.length > 0"
-            :accordion-id="`${program.id}-linked-projects`"
-            :title="Translation.t('program.projectExamples')"
-          >
-            <ProgramProjects :linked-projects="linkedProjects" />
-          </ProgramAccordion>
-          <ProgramAccordion
-            v-if="program && program['description longue']"
-            :accordion-id="`${program.id}-long-description`"
-            :title="Translation.t('program.programKnowMore')"
-          >
-            <ProgramLongDescription :program="program" />
-          </ProgramAccordion>
-        </DsfrAccordionsGroup>
+        <div id="program-details-accordion-group">
+          <DsfrAccordionsGroup>
+            <ProgramAccordion
+              v-if="program && program['conditions d\'éligibilité']"
+              :accordion-id="`${program.id}-eligibility`"
+              :title="Translation.t('program.programAmIEligible')"
+            >
+              <ProgramEligibility :program="program" />
+            </ProgramAccordion>
+            <ProgramAccordion
+              v-if="program && linkedProjects && linkedProjects.length > 0"
+              :accordion-id="`${program.id}-linked-projects`"
+              :title="Translation.t('program.projectExamples')"
+            >
+              <ProgramProjects :linked-projects="linkedProjects" />
+            </ProgramAccordion>
+            <ProgramAccordion
+              v-if="program && program['description longue']"
+              :accordion-id="`${program.id}-long-description`"
+              :title="Translation.t('program.programKnowMore')"
+            >
+              <ProgramLongDescription :program="program" />
+            </ProgramAccordion>
+          </DsfrAccordionsGroup>
+        </div>
         <hr class="fr-mb-9v fr-pb-1v" />
       </div>
     </div>
@@ -246,7 +248,6 @@ import { useProgramStore } from '@/stores/program'
 import { OpportunityType, type ProgramData as ProgramType, Project as ProjectType } from '@/types'
 import { RouteName } from '@/types/routeType'
 import { useNavigationStore } from '@/stores/navigation'
-import Analytics from '@/utils/analytic/analytics'
 import { MetaSeo } from '@/utils/metaSeo'
 import Program from '@/utils/program/program'
 import { Scroll } from '@/utils/scroll'
@@ -259,7 +260,6 @@ const projectStore = useProjectStore()
 const programsStore = useProgramStore()
 const navigationStore = useNavigationStore()
 
-const route = useRoute()
 const program = ref<ProgramType>()
 const linkedProjects = ref<ProjectType[] | undefined>([])
 const TeeProgramFormContainer = ref<HTMLElement | null | undefined>(null)
@@ -270,7 +270,7 @@ interface Props {
   programId: string
   projectSlug?: string
 }
-const props = defineProps<Props>()
+defineProps<Props>()
 
 // computed
 const programCost = computed(() => program.value?.[`coût de l'accompagnement`])
@@ -312,12 +312,6 @@ onBeforeMount(async () => {
   useSeoMeta(MetaSeo.get(program.value?.titre, program.value?.description, program.value?.illustration))
 
   useNavigationStore().hasSpinner = false
-  // analytics / send event
-  Analytics.sendEvent(
-    'result_detail',
-    route.name === RouteName.CatalogProgramDetail ? 'show_detail_catalog' : 'show_detail',
-    props.programId
-  )
 })
 
 onBeforeRouteLeave(() => {
