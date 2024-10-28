@@ -17,10 +17,9 @@
       class="fr-text-center"
     >
       <p class="fr-text--blue-france">
-        <v-icon
-          name="ri-checkbox-circle-fill"
+        <span
+          class="fr-icon-checkbox-circle-fill fr-icon--lg"
           aria-hidden="true"
-          scale="3"
         />
       </p>
       <h3 class="fr-text--blue-france">
@@ -59,7 +58,7 @@ const getMailTo = (): string => {
     return Contact.getMailtoUrl(
       props.errorEmailSubject,
       `${needsValue}
-  
+
   ${nameValue} ${surnameValue}
   ${telValue}
   SIRET : ${siretValue}`

@@ -14,7 +14,7 @@
     </div>
 
     <div class="fr-col">
-      <div :class="`fr-pl-4v fr-grid-row ${useUsedTrackStore().currentIsFirst ? 'fr-grid-row--gutters' : ''}`">
+      <div :class="`fr-grid-row ${useUsedTrackStore().currentIsFirst ? 'fr-grid-row--gutters' : ''}`">
         <TrackLabel :track="track" />
         <TrackInfo :track="track" />
         <TrackHint :track="track" />
@@ -27,28 +27,19 @@
             :key="`track-${usedTrack.step}-${usedTrack.id}-option-${idx}`"
             :class="`${currentColumnWidth()} tee-track-choice`"
           >
+            <TrackRadioButtonRich
+              v-if="TrackComponent.isButtons(usedTrack)"
+              :is-active="isActiveChoice(idx)"
+              :index="idx"
+              :option="option as TrackOptionsInput"
+              @update-selection="updateSelection(option, idx)"
+            />
+
             <TrackCard
               v-if="TrackComponent.isCards(usedTrack)"
               :option="option"
               :is-active="isActiveChoice(idx)"
               @click="updateSelection(option, idx)"
-            />
-
-            <TrackButton
-              v-if="TrackComponent.isButtons(usedTrack)"
-              :option="option"
-              :is-active="isActiveChoice(idx)"
-              :is-checkbox="allowMultiple"
-              @click="updateSelection(option, idx)"
-            />
-
-            <TrackButtonInput
-              v-if="TrackComponent.isButtonInput(usedTrack, option)"
-              :is-active="isActiveChoice(idx)"
-              :is-checkbox="allowMultiple"
-              :option="option as TrackOptionsInput"
-              @update-selection="updateSelection($event.option, idx, $event.remove)"
-              @update-value="updateSelectionValueFromButtonInput"
             />
 
             <TrackSimpleButton
@@ -71,7 +62,7 @@
           @update-selection="updateSelection($event.option, $event.index, $event.remove)"
         />
 
-        <ThemeSelect
+        <TrackThemeCards
           v-if="TrackComponent.isThemeInterface(usedTrack)"
           @update-selection="updateAndSave($event.option, $event.index, $event.remove)"
         />
@@ -79,7 +70,7 @@
 
       <div
         v-if="hasSubmitButton"
-        class="fr-grid-row fr-grid-row--gutters fr-pt-8v fr-px-4v fr-px-md-0v"
+        class="fr-grid-row fr-grid-row--gutters fr-pt-8v fr-px-md-0v"
         style="justify-content: start"
       >
         <!-- BTN PREVIOUS -->
@@ -105,7 +96,6 @@ import {
   type Track,
   TrackComponent as TrackComponentType,
   TrackId,
-  type TrackOptionItem,
   type TrackOptionsInput,
   type TrackOptionsUnion,
   type UsedTrack
@@ -181,23 +171,6 @@ const updateSelection = async (option: TrackOptionsUnion, index: number, forceRe
   if (!allowMultiple && directToNext.includes(trackStore.currentComponent)) {
     await saveSelection(remove)
   }
-}
-
-const updateSelectionValueFromButtonInput = (trackOptionItem: TrackOptionItem) => {
-  const option = trackOptionItem.option as TrackOptionsInput
-  const inputField: string = option.inputField as string
-  selectedOptions.value = selectedOptions.value.map((selectedOption) => {
-    const selectedOptionClone = { ...selectedOption }
-    const objValues = { ...(selectedOptionClone.value as object) } as Record<string, unknown>
-
-    if (Object.keys(objValues).includes(inputField)) {
-      const value = option.value as Record<string, string | number>
-      objValues[inputField] = value[inputField]
-    }
-
-    selectedOptionClone.value = objValues
-    return selectedOptionClone
-  })
 }
 
 const updateAndSave = async (option: TrackOptionsUnion, index: number, needRemove = false) => {
