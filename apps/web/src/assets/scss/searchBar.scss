@@ -21,3 +21,13 @@ input[type="search"] {
     color: var(--text-disabled-grey);
   }
 }
+
+.fr-search-bar {
+  &-big {
+    .fr-input {
+      max-height: 3rem;
+      line-height: 3rem;
+    }
+  } 
+  
+} 

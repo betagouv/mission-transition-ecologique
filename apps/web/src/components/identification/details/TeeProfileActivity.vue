@@ -1,14 +1,20 @@
 <template>
   <p
-    v-if="!manual"
+    v-if="infos.value"
     class="fr-tag fr-bg--blue-france--lightness"
   >
-    {{ infos.tagLabel }}
+    {{ infos.tagLabel || activityText }}
+    <span
+      v-if="manual"
+      class="fr-icon-close-line"
+      @click="modifyActivity"
+    />
   </p>
   <DsfrSelect
-    v-else
+    v-else-if="manual"
     v-model="selectedActivity"
     :options="sectorOptions"
+    :error-message="showError ? errorMessage : ''"
     :default-unselected-text="infos.description"
   />
 </template>
@@ -18,8 +24,14 @@ import { RegisterDetailActivity, Sector } from '@/types'
 interface Props {
   infos: RegisterDetailActivity
   manual: boolean
+  showError: boolean
 }
 const selectedActivity = defineModel<Sector>()
+const errorMessage = "La sélection de la taille de l'entreprise est nécessaire"
+const modifyActivity = () => {
+  selectedActivity.value = undefined
+}
+const props = defineProps<Props>()
 const sectorOptions = [
   {
     value: Sector.Craftsmanship,
@@ -46,5 +58,8 @@ const sectorOptions = [
     text: "Je suis dans un autre secteur d'activité"
   }
 ]
-defineProps<Props>()
+const activityText = computed(() => {
+  const activityOption = sectorOptions.find((el: { value: Sector; text: string }) => el.value === props.infos.value)
+  return activityOption?.text
+})
 </script>

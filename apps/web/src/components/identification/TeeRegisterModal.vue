@@ -1,5 +1,8 @@
 <template>
-  <div id="register-modal-overlay">
+  <div
+    id="register-modal-overlay"
+    :class="!Breakpoint.isSmallScreen() ? 'register-modal-overlay-lg' : ''"
+  >
     <div
       id="register-modal"
       :class="imgClass"
@@ -38,15 +41,15 @@
 </template>
 <script setup lang="ts">
 import Translation from '@/utils/translation'
-import { EstablishmentFront, StructureSize } from '@/types'
+import { EstablishmentFront } from '@/types'
 import Breakpoint from '@/utils/breakpoints'
 import CompanyDataStorage from '@/utils/storage/companyDataStorage'
+import { CompanyDataStorageKey, CompanyDataType } from '@/types/companyDataType'
 
 const registeredData = CompanyDataStorage.getData()
-const company = ref<EstablishmentFront | null>(registeredData.value.siret)
-const companySize = ref<StructureSize | null>(registeredData.value.structure_size)
-const manualRegistration = ref<boolean>(false)
-
+const company = ref<CompanyDataType[CompanyDataStorageKey.Company]>(registeredData.value[CompanyDataStorageKey.Company])
+const companySize = ref<CompanyDataType[CompanyDataStorageKey.Size]>(registeredData.value[CompanyDataStorageKey.Size])
+const manualRegistration = ref<boolean>(!!(company.value && !('siret' in company.value)))
 const registerStep = computed<number>(() => {
   if (company.value || manualRegistration.value) {
     return 2
@@ -87,6 +90,9 @@ const closeRegisterModal = () => {
   overflow: hidden scroll;
   z-index: 1000;
 }
+.register-modal-overlay-lg {
+  top: 120px !important;
+}
 
 #register-modal {
   display: flex;
@@ -108,7 +114,6 @@ const closeRegisterModal = () => {
 
 .register-modal-lg {
   background-image: url('/images/TEE-modal-bottom.svg');
-  margin-top: 120px;
   min-height: calc(100vh - 120px);
 }
 </style>

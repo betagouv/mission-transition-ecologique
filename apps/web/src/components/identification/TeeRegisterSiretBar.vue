@@ -5,10 +5,11 @@
     </span>
     <div
       id="header-search"
-      class="fr-search-bar"
+      class="fr-search-bar fr-search-bar-big"
       role="search"
     >
       <DsfrInput
+        ref="siretSearchBar"
         v-model="model"
         name="register-siret-input"
         :disabled="isLoading"
@@ -33,6 +34,7 @@
 // console.log(`TeeDsfrSearchBar > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import Translation from '@/utils/translation'
+import { onClickOutside } from '@vueuse/core'
 
 interface Props {
   isLoading?: boolean
@@ -44,7 +46,7 @@ withDefaults(defineProps<Props>(), {
 })
 
 const model = defineModel<string | undefined>()
-
+const siretSearchBar = ref(null)
 const emit = defineEmits<{
   onClick: []
   onClear: []
@@ -53,11 +55,14 @@ const emit = defineEmits<{
 const onClick = () => {
   emit('onClick')
 }
+onClickOutside(siretSearchBar, () => emit('onClear'))
 </script>
 <style lang="scss" scoped>
 @use '@/assets/scss/setting';
 
 #siret-search {
   box-shadow: inset 0 -2px 0 0 setting.$blue-france;
+  max-height: 3rem;
+  line-height: 3rem;
 }
 </style>

@@ -27,6 +27,7 @@
   </TeeDsfrButton>
 </template>
 <script setup lang="ts">
+import { CompanyDataStorageKey } from '@/types/companyDataType'
 import Breakpoint from '@/utils/breakpoints'
 import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
@@ -43,7 +44,7 @@ watch(
 
 const emit = defineEmits(['click'])
 const companyName = computed<string | undefined>(() => {
-  return registeredData.value?.siret?.denomination
+  return registeredData.value[CompanyDataStorageKey.Company]?.denomination || ''
 })
 const showModal = () => {
   modalStatus.value = true

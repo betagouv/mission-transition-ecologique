@@ -20,31 +20,32 @@
     v-model="profile[detailKey]"
     class="fr-pb-4v fr-col-sm-8 fr-col-md-5 fr-col-offset-md-2 fr-col-12"
     :manual="manual"
+    :show-error="showError"
     :detail-infos="profile[detailKey]"
-    @update:model-value="(v: RegisterDetailUnion) => (profile[detailKey] = v)"
+    @update:model-value="(v: RegisterDetailUnion) => updateValue(v, detailKey)"
     @update:siret="openSiretStep"
   />
   <div class="fr-col-sm-8 fr-col-md-7 fr-col-offset-md-2 fr-col-12">
     <TeeDsfrButton
       class="fr-bg--yellow fr-text--blue-france"
       label="Enregistrer et fermer"
-      :disabled="isSaveDisabled"
       @click="saveProfile"
     />
   </div>
 </template>
 <script setup lang="ts">
-import { EstablishmentFront, RegisterDetailType, RegisterDetailUnion, RegisterDetails, Sector, StructureSize } from '@/types'
+import { RegisterDetailType, RegisterDetailUnion, RegisterDetails, Sector } from '@/types'
+import { CompanyDataStorageKey, CompanyDataType } from '@/types/companyDataType'
 import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
 interface Props {
-  company: EstablishmentFront | null
-  companySize: StructureSize | null
+  company: CompanyDataType[CompanyDataStorageKey.Company]
+  companySize: CompanyDataType[CompanyDataStorageKey.Size]
   manual: boolean
 }
 const props = defineProps<Props>()
 const emit = defineEmits(['modifySiret', 'closeRegister'])
-
+const showError = ref<boolean>(false)
 const openSiretStep = () => {
   emit('modifySiret')
 }
@@ -53,9 +54,9 @@ const profile = ref<RegisterDetails>({
     title: 'Votre SIRET',
     if: !props.manual,
     icon: 'fr-icon-account-pin-circle-line',
-    value: props.company?.siret,
+    value: props.company && 'siret' in props.company ? props.company.siret : undefined,
     type: RegisterDetailType.Siret,
-    tagLabel: props.company ? `${props.company.denomination} - SIRET ${props.company.siret}` : ''
+    tagLabel: props.company?.denomination
   },
   localisation: {
     title: 'Localisation',
@@ -63,7 +64,7 @@ const profile = ref<RegisterDetails>({
     description: "Renseignez la région de votre lieu d'activités",
     value: props.company?.region,
     type: RegisterDetailType.Localisation,
-    tagLabel: props.company ? `${props.company.codePostal} ${props.company.ville}` : ''
+    tagLabel: props.manual && props.company && 'siret' in props.company ? `${props.company.codePostal} ${props.company.ville}` : ''
   },
   activity: {
     title: 'Activité',
@@ -71,7 +72,7 @@ const profile = ref<RegisterDetails>({
     icon: 'fr-icon-briefcase-line',
     value: props.company?.secteur as Sector,
     type: RegisterDetailType.Activity,
-    tagLabel: props.company ? `${props.company.secteur} (${props.company.codeNAF})` : ''
+    tagLabel: props.company && props.company && 'siret' in props.company ? `${props.company.secteur} (${props.company.codeNAF})` : ''
   },
   size: {
     title: 'Effectif',
@@ -81,16 +82,25 @@ const profile = ref<RegisterDetails>({
     description: 'Choisissez la tranche correspondant à votre effectif'
   }
 })
-const isSaveDisabled = computed(() => {
-  const { localisation, activity, size } = profile.value
-  return props.manual ? !localisation.value || !activity.value || !size.value : !size.value
-})
 const saveProfile = () => {
-  if (!props.manual && props.company && profile.value.size.value) {
-    CompanyDataStorage.setSiret(props.company)
+  showError.value = false
+  if (profile.value.size.value) {
+    const company = props.manual
+      ? ({
+          region: profile.value.localisation.value,
+          secteur: profile.value.activity.value,
+          denomination: `Entreprise : ${profile.value.activity.value} - ${profile.value.localisation.value}`
+        } as CompanyDataType[CompanyDataStorageKey.Company])
+      : props.company
+    CompanyDataStorage.setCompany(company)
     CompanyDataStorage.setSize(profile.value.size.value)
+    emit('closeRegister')
+  } else {
+    showError.value = true
   }
-  emit('closeRegister')
-  console.log('profile', profile.value)
+}
+const updateValue = (v: RegisterDetailUnion, detailKey: string) => {
+  profile.value[detailKey] = v
+  showError.value = false
 }
 </script>

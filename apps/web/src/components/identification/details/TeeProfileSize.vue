@@ -1,13 +1,6 @@
 <template id="select-company-size">
-  <DsfrSelect
-    v-if="!infos.value || modifySize"
-    v-model="selectedSize"
-    :default-unselected-text="infos.description"
-    :error-message="selectedSize ? '' : errorMessage"
-    :options="sizeOptions"
-  />
   <p
-    v-else
+    v-if="infos.value"
     class="fr-tag fr-bg--blue-france--lightness"
   >
     {{ sizeText }}
@@ -16,6 +9,13 @@
       @click="resetSize"
     />
   </p>
+  <DsfrSelect
+    v-else
+    v-model="selectedSize"
+    :default-unselected-text="infos.description"
+    :error-message="showError ? errorMessage : ''"
+    :options="sizeOptions"
+  />
 </template>
 <script lang="ts" setup>
 import { RegisterDetailSize, StructureSize } from '@/types'
@@ -24,6 +24,7 @@ const selectedSize = defineModel<StructureSize>()
 interface Props {
   infos: RegisterDetailSize
   manual: boolean
+  showError: boolean
 }
 const props = defineProps<Props>()
 const errorMessage = "La sélection de l'effectif est nécessaire"
@@ -31,7 +32,6 @@ const sizeText = computed(() => {
   const sizeOption = sizeOptions.find((el: { value: StructureSize; text: string }) => el.value === props.infos.value)
   return sizeOption?.text
 })
-const modifySize = ref<boolean>(false)
 const sizeOptions = [
   {
     value: StructureSize.EI,
@@ -55,6 +55,6 @@ const sizeOptions = [
   }
 ]
 const resetSize = () => {
-  modifySize.value = true
+  selectedSize.value = undefined
 }
 </script>

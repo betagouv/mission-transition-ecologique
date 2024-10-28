@@ -12,6 +12,7 @@
       v-model="detailModel"
       :infos="detailInfos"
       :manual="manual"
+      :show-error="showError"
       @update:model-value="updateValue"
       @update:siret="emit('update:siret')"
     />
@@ -27,6 +28,7 @@ import TeeProfileLocalisation from './TeeProfileLocalisation.vue'
 interface Props {
   detailInfos: RegisterDetailUnion
   manual: boolean
+  showError: boolean
 }
 
 const props = defineProps<Props>()
