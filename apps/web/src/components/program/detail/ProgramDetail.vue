@@ -187,29 +187,27 @@
             />
           </div>
         </div>
-        <DsfrAccordionsGroup>
-          <ProgramAccordion
-            v-if="program && program['conditions d\'éligibilité']"
-            :accordion-id="`${program.id}-eligibility`"
-            :title="Translation.t('program.programAmIEligible')"
-          >
-            <ProgramEligibility :program="program" />
-          </ProgramAccordion>
-          <ProgramAccordion
-            v-if="program && linkedProjects && linkedProjects.length > 0"
-            :accordion-id="`${program.id}-linked-projects`"
-            :title="Translation.t('program.projectExamples')"
-          >
-            <ProgramProjects :linked-projects="linkedProjects" />
-          </ProgramAccordion>
-          <ProgramAccordion
-            v-if="program && program['description longue']"
-            :accordion-id="`${program.id}-long-description`"
-            :title="Translation.t('program.programKnowMore')"
-          >
-            <ProgramLongDescription :program="program" />
-          </ProgramAccordion>
-        </DsfrAccordionsGroup>
+        <ProgramAccordion
+          v-if="program && program['conditions d\'éligibilité']"
+          :accordion-id="`${program.id}-eligibility`"
+          :title="Translation.t('program.programAmIEligible')"
+        >
+          <ProgramEligibility :program="program" />
+        </ProgramAccordion>
+        <ProgramAccordion
+          v-if="program && linkedProjects && linkedProjects.length > 0"
+          :accordion-id="`${program.id}-linked-projects`"
+          :title="Translation.t('program.projectExamples')"
+        >
+          <ProgramProjects :linked-projects="linkedProjects" />
+        </ProgramAccordion>
+        <ProgramAccordion
+          v-if="program && program['description longue']"
+          :accordion-id="`${program.id}-long-description`"
+          :title="Translation.t('program.programKnowMore')"
+        >
+          <ProgramLongDescription :program="program" />
+        </ProgramAccordion>
         <hr class="fr-mb-9v fr-pb-1v" />
       </div>
     </div>

@@ -18,18 +18,18 @@
           <template v-else>
             <!-- DROPDOWN MENU ITEM - DISPLAY WIDER THAN MD -->
             <DsfrNavigation
-              class="fr-hidden fr-unhidden-lg fr-mr-2w fr-mr-lg-0"
+              class="fr-hidden fr-unhidden-lg fr-pr-2w fr-pr-lg-0"
               :nav-items="[{ title: 'Catalogue', links: quickLink.links }]"
               aria-label="Sous Menu secondaire"
             />
             <!-- DROPDOWN MENU ITEM - DISPLAY SMALLER THAN MD -->
-            <ul>
+            <ul class="fr-hidden-lg">
               <li
                 v-for="(childLink, childIndex) in quickLink.links"
                 :key="childIndex"
               >
                 <DsfrHeaderMenuLink
-                  class="fr-hidden-lg fr-p-md-2w"
+                  class="fr-p-md-2w"
                   v-bind="childLink"
                   @click="handleClick($event, childLink)"
                 />
@@ -43,19 +43,9 @@
 </template>
 
 <script lang="ts" setup>
-import type { OhVueIcon as VIcon } from 'oh-vue-icons'
-import { DsfrHeaderMenuLink, DsfrNavigation, DsfrNavigationMenuLinkProps } from '@gouvminint/vue-dsfr'
+import { DsfrHeaderMenuLink, DsfrHeaderMenuLinkProps, DsfrNavigation, DsfrNavigationMenuLinkProps } from '@gouvminint/vue-dsfr'
 
-export type TeeDsfrHeaderMenuLinkProps = {
-  button?: boolean
-  icon?: string | InstanceType<typeof VIcon>['$props']
-  iconAttrs?: InstanceType<typeof VIcon>['$props'] & import('vue').HTMLAttributes
-  iconRight?: boolean
-  label?: string
-  target?: string
-  onClick?: ($event: MouseEvent) => void
-  to?: import('vue-router').RouteLocationRaw
-  href?: string
+export interface TeeDsfrHeaderMenuLinkProps extends DsfrHeaderMenuLinkProps {
   links?: DsfrNavigationMenuLinkProps[]
 }
 
@@ -70,9 +60,9 @@ withDefaults(
   }
 )
 
-function handleClick($event: MouseEvent, link: TeeDsfrHeaderMenuLinkProps) {
+function handleClick($event: MouseEvent, quickLink: TeeDsfrHeaderMenuLinkProps) {
   emit('linkClick', $event)
-  link.onClick?.($event)
+  quickLink.onClick?.($event)
 }
 
 const emit = defineEmits<{ linkClick: [event: MouseEvent] }>()
