@@ -1,4 +1,3 @@
-import { ProgramType } from '@tee/data'
 import { PublicodeObjective, QuestionnaireRoute, StructureSize } from '../questionnaire/types/types'
 
 export type Opportunity = ContactDetails & OpportunityDetails
@@ -14,7 +13,7 @@ export interface ContactDetails {
   companySize?: StructureSize
 }
 export interface OpportunityDetails extends OpportunityDetailsBase {
-  id: ProgramType['id'] | string
+  id: string
 }
 
 export interface OpportunityDetailsBase {
