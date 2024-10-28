@@ -224,7 +224,11 @@ see [scalingo manifest](https://doc.scalingo.com/platform/app/app-manifest) for 
   - Product owner: Jean-Baptiste Le Dévéhat
   - Coaching: Julien Rayneau
   - Designers: Coline Lebaratoux
-  - Maintainers:
+  - Business Developers:
+    - Céline Bagault
+    - Manon Piffault 
+    - Rodolphe GAGETTA
+  - Maintainers - Developers:
     - [Yohann Valentin](https://yohannvalentin.com)
     - [Thibaut Tezenas Du Montcel](https://ttdm.github.io)
     - [Dorian Lemoine](https://dorianlemoine.fr)
