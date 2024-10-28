@@ -234,5 +234,5 @@ see [scalingo manifest](https://doc.scalingo.com/platform/app/app-manifest) for 
     - [Dorian Lemoine](https://dorianlemoine.fr)
     - [Oumeima El Isbihani](https://multi.coop)
   - Old team members:
-    - [Pierre Camilleri](https://multi.coop) (Maintainer)
-    - [Julien Paris](https://multi.coop) (Maintainer)
+    - [Pierre Camilleri](https://multi.coop) (Maintainer - Developer)
+    - [Julien Paris](https://multi.coop) (Maintainer - Developer)
