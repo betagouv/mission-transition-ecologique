@@ -9,7 +9,7 @@
       :form-type="OpportunityType.CustomProject"
       :form="Opportunity.getOtherProjectFormFields()"
       :hint="Translation.t('otherProject.form.hint')"
-      :error-email-subject="Translation.t('form.errorEmail.subject', { titre: '' })"
+      :error-email-subject="Translation.t('otherProject.form.errorEmail.subject', { titre: '' })"
     />
   </div>
 </template>

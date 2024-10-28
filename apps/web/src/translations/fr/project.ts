@@ -7,7 +7,9 @@ const projectFrDict = {
     },
     form: {
       hint: '👋 Expliquez nous votre projet, nous vous mettrons en relation avec un conseiller compétent pour votre demande sur votre territoire.',
-
+      errorEmail: {
+        subject: "[france-transition] Demande d'informations concernant le projet {titre}"
+      },
       needs: `Bonjour,
 
 Mon entreprise a une activité de type "{secteur}".

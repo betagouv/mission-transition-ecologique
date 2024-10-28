@@ -1,14 +1,15 @@
 import { PhoneValidator, EmailValidator, SiretValidator } from '@tee/common'
 import { FieldType, RouteName, type ProgramData as ProgramType, Project, FormDataType, ThemeType, ThemeId } from '@/types'
 
-import TrackStructure from '@/utils/track/trackStructure'
+import usedTrack from '@/utils/track/usedTrack'
 import { CalloutType } from '@/types/elementsPropsTypes'
+import TrackStructure from '@/utils/track/trackStructure'
 import Translation from '@/utils/translation'
 import { Theme } from '@/utils/theme'
 
 export default class Opportunity {
   static getBaseOpportunityFormFields(): FormDataType {
-    const selectedThemeId = TrackStructure.getTheme()
+    const selectedThemeId = usedTrack.getPriorityTheme()
     const selectedTheme = Theme.getById(selectedThemeId as ThemeId)
     return {
       theme: {

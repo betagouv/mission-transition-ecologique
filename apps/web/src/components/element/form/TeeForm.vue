@@ -27,12 +27,10 @@
       <!-- FIELDS -->
       <div class="fr-grid-row fr-grid-row--gutters fr-mb-2v fr-mt-4v">
         <TeeFormElement
-          v-for="fieldKey in Object.keys(localForm)"
-          v-show="!localForm[fieldKey].hidden"
+          v-for="fieldKey in Object.keys(localForm).filter((fieldKey) => !localForm[fieldKey].hidden)"
           :key="fieldKey"
           v-model="localForm[fieldKey]"
           :field="localForm[fieldKey]"
-          @update:model-value="(field) => (localForm[fieldKey] = field)"
         />
       </div>
 
@@ -136,7 +134,7 @@ const isFieldValid = (field: InputFieldUnionType): boolean => {
 const saveForm = async () => {
   try {
     isLoading.value = true
-    const opportunity = new OpportunityApi(localForm.value, props.dataId, props.dataSlug || props.dataId?.toString(), props.formType)
+    const opportunity = new OpportunityApi(localForm.value, props.dataId, props.dataSlug || props.dataId, props.formType)
     requestResponse.value = await opportunity.fetch()
 
     // analytics / send event
