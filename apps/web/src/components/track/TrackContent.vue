@@ -62,7 +62,7 @@
           @update-selection="updateSelection($event.option, $event.index, $event.remove)"
         />
 
-        <ThemeSelect
+        <TrackThemeCards
           v-if="TrackComponent.isThemeInterface(usedTrack)"
           @update-selection="updateAndSave($event.option, $event.index, $event.remove)"
         />
