@@ -50,11 +50,22 @@
   </div>
 </template>
 <script setup lang="ts">
-import { ThemeOption } from './ThemeSelect.vue'
 import Breakpoint from '@/tools/breakpoints'
+import { Color } from '@/types'
+import { Project } from '@tee/data'
+
+export interface TrackThemeOptionProps {
+  value: string | undefined
+  title: string
+  imgSrc: string
+  altImg: string
+  highlightProjects: Project[]
+  color: Color
+  moreThanThree: boolean
+}
 
 interface Props {
-  option: ThemeOption
+  option: TrackThemeOptionProps
 }
 defineProps<Props>()
 </script>

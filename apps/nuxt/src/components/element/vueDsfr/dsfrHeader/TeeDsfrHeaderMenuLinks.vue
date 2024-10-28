@@ -6,7 +6,8 @@
     <ul class="fr-btns-group">
       <li
         v-for="(quickLink, index) in links"
-        :key="index">
+        :key="index"
+      >
         <DsfrHeaderMenuLink
           v-if="!quickLink.links"
           class="fr-mr-md-2w fr-p-md-2w"
@@ -14,20 +15,22 @@
           @click="handleClick($event, quickLink)"
         />
         <template v-else>
+          <!-- DROPDOWN MENU ITEM - DISPLAY WIDER THAN MD -->
           <DsfrNavigation
             :id="idNav"
-            class="fr-hidden fr-unhidden-lg fr-mr-2w fr-mr-lg-0"
+            class="fr-hidden fr-unhidden-lg fr-pr-2w fr-pr-lg-0"
             :nav-items="[{ title: 'Catalogue', links: quickLink.links }]"
             aria-label="Sous Menu secondaire"
           />
-          <ul>
+          <!-- DROPDOWN MENU ITEM - DISPLAY SMALLER THAN MD -->
+          <ul class="fr-hidden-lg">
             <li
               v-for="(link, indexLink) in quickLink.links"
               :id="link.id"
               :key="indexLink"
             >
               <DsfrHeaderMenuLink
-                class="fr-hidden-lg fr-p-md-2w"
+                class="fr-p-md-2w"
                 v-bind="link"
                 @click="handleClick($event, link)"
               />
@@ -40,21 +43,9 @@
 </template>
 
 <script lang="ts" setup>
-import type { OhVueIcon as VIcon } from 'oh-vue-icons'
-import { DsfrHeaderMenuLink, DsfrNavigation, DsfrNavigationMenuLinkProps } from '@gouvminint/vue-dsfr'
+import { DsfrHeaderMenuLink, DsfrHeaderMenuLinkProps, DsfrNavigation, DsfrNavigationMenuLinkProps } from '@gouvminint/vue-dsfr'
 
-const idNav = useId()
-
-export type TeeDsfrHeaderMenuLinkProps = {
-  button?: boolean
-  icon?: string | InstanceType<typeof VIcon>['$props']
-  iconAttrs?: InstanceType<typeof VIcon>['$props'] & import('vue').HTMLAttributes
-  iconRight?: boolean
-  label?: string
-  target?: string
-  onClick?: ($event: MouseEvent) => void
-  to?: import('vue-router').RouteLocationRaw
-  href?: string
+export interface TeeDsfrHeaderMenuLinkProps extends DsfrHeaderMenuLinkProps {
   links?: DsfrNavigationMenuLinkProps[]
 }
 
@@ -69,9 +60,11 @@ withDefaults(
   }
 )
 
-function handleClick($event: MouseEvent, link: TeeDsfrHeaderMenuLinkProps) {
+const idNav = useId()
+
+function handleClick($event: MouseEvent, quickLink: TeeDsfrHeaderMenuLinkProps) {
   emit('linkClick', $event)
-  link.onClick?.($event)
+  quickLink.onClick?.($event)
 }
 
 const emit = defineEmits<{ linkClick: [event: MouseEvent] }>()

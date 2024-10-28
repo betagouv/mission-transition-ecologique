@@ -15,7 +15,6 @@ import {
 } from '@/types'
 import RequestApi from '@/service/api/requestApi'
 import TrackStructure from '@/tools/track/trackStructure'
-import { router } from '../../router'
 
 export default class OpportunityApi extends RequestApi {
   protected readonly url = '/api/opportunities'
@@ -87,8 +86,13 @@ export default class OpportunityApi extends RequestApi {
   }
 
   private _generateLinkToPage(): string {
-    const { fullPath } = router.currentRoute.value
-    return new URL(fullPath, window.location.origin).href
+    const router = useNavigationStore().router
+    if (router) {
+      const { fullPath } = router.currentRoute.value
+      return new URL(fullPath, window.location.origin).href
+    }
+
+    return ''
   }
 
   private _generateCatalogLink(): string {

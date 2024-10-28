@@ -38,11 +38,12 @@
             </div>
           </div>
         </div>
-        <TeeSpinner
+        <div
           v-if="hasSpinner"
-          class="fr-col-12"
-          scale="6"
-        />
+          class="fr-col-12 fr-col-justify--center"
+        >
+          <TeeSpinner />
+        </div>
         <TeeListNoResults
           v-else-if="showNoResultsComponent"
           :has-error="hasError"

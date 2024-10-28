@@ -8,10 +8,7 @@
       <div class="fr-container--fluid fr-px-3v">
         <div class="fr-grid-row">
           <div class="fr-col-12 fr-text-center">
-            <TeeSpinner
-              v-if="navigationStore.hasSpinner"
-              scale="6"
-            />
+            <TeeSpinner v-if="navigationStore.hasSpinner" />
             <TeeNoResult
               v-else-if="!countFilteredPrograms && !hasError && !navigationStore.hasSpinner"
               message="Aucune aide n'a pu être identifiée avec les critères choisis..."

@@ -1,14 +1,23 @@
 import { sortPrograms } from '../../src/program/domain/sortPrograms'
 import { QuestionnaireRoute } from '@tee/common'
-import { ProgramType, ProgramAidType } from '@tee/data'
+import { ProgramType, ProgramAidType, ProgramEligibilityType, ProgramTypeWithEligibility } from '@tee/data'
 import { makeProgramHelper } from './testing'
 
-const makeProgram = (id: string, nature: ProgramAidType, cost = '') =>
-  makeProgramHelper({
+const makeProgram = (id: string, nature: ProgramAidType, cost = '') => ({
+  ...makeProgramHelper({
     id: id,
     nature: nature,
     cost: cost
-  })
+  }),
+  eligibility: ProgramEligibilityType.Eligible
+})
+
+const addEligibility = (programs: ProgramType[]): ProgramTypeWithEligibility[] => {
+  return programs.map((program) => ({
+    ...program,
+    eligibility: ProgramEligibilityType.Eligible
+  }))
+}
 
 type TestCase = {
   name: string
@@ -153,7 +162,7 @@ EXPECT that the programs respect a set of given rules
 
   allTestCases.map((tc) => {
     test(`${tc.questionnaireRoute}: ${tc.name}`, () => {
-      const sortedPrograms = sortPrograms(tc.programs, tc.questionnaireRoute!)
+      const sortedPrograms = sortPrograms(addEligibility(tc.programs), tc.questionnaireRoute)
       expect(sortedPrograms).toHaveLength(tc.expectedIdOrder.length)
 
       const expectedSortedPrograms = tc.expectedIdOrder.map((id) => {

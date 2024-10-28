@@ -3,7 +3,7 @@
     <DsfrButton
       class="fr-btn-fullwidth fr-btn-sm-fullwidth"
       :label="Translation.t('previous')"
-      icon="ri-arrow-left-line"
+      icon="fr-icon-arrow-left-line"
       secondary
       @click="previous"
     />
@@ -12,10 +12,10 @@
   <div class="fr-col-6 fr-col-md-5 fr-col-lg-4 fr-col-xl-3">
     <DsfrButton
       v-if="showNextButton"
-      class="fr-btn-fullwidth fr-btn-sm-fullwidth"
+      class="fr-btn-fullwidth fr-btn-sm-fullwidth fr-col-justify--right"
       :label="Translation.t('next')"
       :disabled="selectedOptions.length === 0"
-      icon="ri-arrow-right-line"
+      icon="fr-icon-arrow-right-line"
       icon-right
       @click="next"
     />
