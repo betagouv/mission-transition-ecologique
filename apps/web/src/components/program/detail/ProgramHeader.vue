@@ -1,4 +1,5 @@
 <template>
+  <ProgramEligibilityBar />
   <TeeDsfrBreadcrumb :links="links" />
   <div class="fr-container fr-mt-0 fr-mt-md-3v">
     <div class="fr-grid-row fr-grid-row-gutters">
@@ -67,6 +68,7 @@ const links = computed<DsfrBreadcrumbProps['links']>(() => {
   }
   return [...links, { text: props.program?.titre || '' }]
 })
+
 onBeforeMount(() => {
   project.value = projectStore.currentProject
 })

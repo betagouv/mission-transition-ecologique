@@ -23,6 +23,7 @@
 </template>
 <script setup lang="ts">
 import { useNavigationStore } from '@/stores/navigation'
+import TeeEligibilityCriteriaAccordion from '@/components/program/eligibility/TeeEligibilityCriteriaAccordion.vue'
 import ProgramFilterByAidType from './ProgramFilterByAidType.vue'
 import ProgramFilterByOperator from './ProgramFilterByOperator.vue'
 import ProgramFilterByRegion from './ProgramFilterByRegion.vue'
