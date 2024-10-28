@@ -99,7 +99,7 @@
             />
             <input
               type="submit"
-              @click="updateSize(size)"
+              @click="updateSize(size as StructureSize)"
             />
           </div>
           <div class="fr-header__tools">
