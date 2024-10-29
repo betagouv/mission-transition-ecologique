@@ -30,9 +30,4 @@ export default class Breakpoint {
       [BreakpointNameType.xs, BreakpointNameType.sm, BreakpointNameType.md].includes(currentBreakpoint.value as BreakpointNameType)
     )
   }
-
-  static isSmallScreen() {
-    const currentBreakpoint = this.getCurrentBreakpoint()
-    return [BreakpointNameType.xs, BreakpointNameType.sm, BreakpointNameType.md].includes(currentBreakpoint.value as BreakpointNameType)
-  }
 }
