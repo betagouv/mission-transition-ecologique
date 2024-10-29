@@ -103,12 +103,12 @@ const closeRegisterModal = () => {
   background-repeat: no-repeat;
   background-position: bottom;
   background-attachment: scroll;
+  background-size: 100%;
 }
 
 .register-modal-sm {
   background-image: url('/images/TEE-modal-bottom.svg');
   min-height: 100vh;
-  background-size: contain;
 }
 
 .mobile-modal-img {
