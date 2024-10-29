@@ -15,12 +15,20 @@ export default class Breakpoint {
 
   static isLargerOrEqual(size: BreakpointNameType) {
     const currentBreakpoint = this.getCurrentBreakpoint()
-    return currentBreakpoint.value === size || this._breakpoints.isGreater(size)
+    return currentBreakpoint.value && (currentBreakpoint.value === size || this._breakpoints.isGreater(size))
   }
 
   static isMobile() {
     const currentBreakpoint = this.getCurrentBreakpoint()
-    return currentBreakpoint.value === BreakpointNameType.xs
+    return !currentBreakpoint.value || currentBreakpoint.value === BreakpointNameType.xs
+  }
+
+  static isSmallScreen() {
+    const currentBreakpoint = this.getCurrentBreakpoint()
+    return (
+      !currentBreakpoint.value ||
+      [BreakpointNameType.xs, BreakpointNameType.sm, BreakpointNameType.md].includes(currentBreakpoint.value as BreakpointNameType)
+    )
   }
 
   static isSmallScreen() {
