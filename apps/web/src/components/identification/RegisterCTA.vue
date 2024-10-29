@@ -3,27 +3,25 @@
     :class="registrationStatus ? 'fr-btn--tertiary-no-outline' : ''"
     @click="emit('click')"
   >
-    <template #default>
+    <span
+      v-if="registrationStatus || Breakpoint.isSmallScreen()"
+      :class="Breakpoint.isSmallScreen() ? 'fr-icon--lg' : 'fr-pr-2w'"
+      class="fr-icon-account-circle-fill register-icon-profile"
+    >
       <span
-        v-if="registrationStatus || Breakpoint.isSmallScreen()"
-        :class="Breakpoint.isSmallScreen() ? 'fr-icon--lg' : 'fr-pr-2w'"
-        class="fr-icon-account-circle-fill register-icon-profile"
+        :id="Breakpoint.isSmallScreen() ? 'badge-mobile' : 'base-badge'"
+        :class="badgeIcon"
+        class="fr-text--blue-france fr-radius-a--2v register-badge"
       >
-        <span
-          :id="Breakpoint.isSmallScreen() ? 'badge-mobile' : 'base-badge'"
-          :class="badgeIcon"
-          class="fr-text--blue-france fr-radius-a--2v register-badge"
-        >
-        </span>
       </span>
+    </span>
 
-      <span
-        v-if="!Breakpoint.isSmallScreen()"
-        id="register-text"
-        :class="registrationStatus ? '' : 'fr-text--yellow'"
-        >{{ registrationStatus ? companyName : 'Vous êtes...?' }}
-      </span>
-    </template>
+    <span
+      v-if="!Breakpoint.isSmallScreen()"
+      id="register-text"
+      :class="registrationStatus ? '' : 'fr-text--yellow'"
+      >{{ registrationStatus ? companyName : 'Vous êtes...?' }}
+    </span>
   </TeeDsfrButton>
 </template>
 <script setup lang="ts">
