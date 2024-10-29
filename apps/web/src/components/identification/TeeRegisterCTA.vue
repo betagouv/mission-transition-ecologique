@@ -8,52 +8,48 @@
       class="fr-btn--tertiary-no-outline"
       @click="showModal"
     >
-      <template #text>
+      <span
+        v-if="hasData || Breakpoint.isSmallScreen()"
+        :class="Breakpoint.isSmallScreen() ? 'fr-icon--lg' : 'fr-pr-2w'"
+        class="fr-icon-account-circle-fill register-icon-profile"
+      >
         <span
-          v-if="hasData || Breakpoint.isSmallScreen()"
-          :class="Breakpoint.isSmallScreen() ? 'fr-icon--lg' : 'fr-pr-2w'"
-          class="fr-icon-account-circle-fill register-icon-profile"
+          :id="Breakpoint.isSmallScreen() ? 'badge-mobile' : 'base-badge'"
+          :class="badgeIcon"
+          class="fr-text--blue-france fr-radius-a--2v register-badge"
         >
-          <span
-            :id="Breakpoint.isSmallScreen() ? 'badge-mobile' : 'base-badge'"
-            :class="badgeIcon"
-            class="fr-text--blue-france fr-radius-a--2v register-badge"
-          >
-          </span>
         </span>
+      </span>
 
-        <span
-          v-if="!Breakpoint.isSmallScreen()"
-          id="register-text"
-          >{{ companyName }}
-        </span>
-      </template>
+      <span
+        v-if="!Breakpoint.isSmallScreen()"
+        id="register-text"
+        >{{ companyName }}
+      </span>
     </TeeDsfrButton>
     <TeeDsfrButton
       v-else
       @click="showModal"
     >
-      <template #text>
+      <span
+        v-if="Breakpoint.isSmallScreen()"
+        :class="Breakpoint.isSmallScreen() ? 'fr-icon--lg' : 'fr-pr-2w'"
+        class="fr-icon-account-circle-fill register-icon-profile"
+      >
         <span
-          v-if="Breakpoint.isSmallScreen()"
-          :class="Breakpoint.isSmallScreen() ? 'fr-icon--lg' : 'fr-pr-2w'"
-          class="fr-icon-account-circle-fill register-icon-profile"
+          :id="Breakpoint.isSmallScreen() ? 'badge-mobile' : 'base-badge'"
+          :class="badgeIcon"
+          class="fr-text--blue-france fr-radius-a--2v register-badge"
         >
-          <span
-            :id="Breakpoint.isSmallScreen() ? 'badge-mobile' : 'base-badge'"
-            :class="badgeIcon"
-            class="fr-text--blue-france fr-radius-a--2v register-badge"
-          >
-          </span>
         </span>
+      </span>
 
-        <span
-          v-if="!Breakpoint.isSmallScreen()"
-          id="register-text"
-          class="fr-text--yellow"
-          >Vous êtes...?
-        </span>
-      </template>
+      <span
+        v-if="!Breakpoint.isSmallScreen()"
+        id="register-text"
+        class="fr-text--yellow"
+        >Vous êtes...?
+      </span>
     </TeeDsfrButton>
   </Transition>
 </template>
