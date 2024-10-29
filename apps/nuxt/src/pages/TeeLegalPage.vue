@@ -1,5 +1,5 @@
 <template>
-  <TeeDsfrBreadcrumb :links="[{ text: 'Mentions légales', to: RouteName.Legal }]" />
+  <TeeDsfrBreadcrumb :links="[{ text: 'Mentions légales', to: { name: RouteName.Legal } }]" />
   <div class="fr-container fr-my-4w">
     <LegalNotice
       licence-url="https://github.com/betagouv/mission-transition-ecologique/blob/main/LICENSE"
@@ -22,11 +22,14 @@
 </template>
 
 <script setup lang="ts">
-// CONSOLE LOG TEMPLATE
-// console.log(`TeeLegalPage > FUNCTION_NAME > MSG_OR_VALUE :`)
 import { RouteName } from '@/types/routeType'
 import Contact from '@/tools/contact'
 import { LegalNoticePropsThirdParty, LegalNotice } from '@incubateur-ademe/legal-pages-vue3'
+
+definePageMeta({
+  path: '/mentions-legales',
+  name: RouteName.Legal
+})
 
 const privacyPolicy = new URL(useRouter().resolve({ name: RouteName.PersonalData }).href, window.location.origin).href
 const siteUrl = new URL(useRouter().resolve({ name: RouteName.Homepage }).href, window.location.origin).href

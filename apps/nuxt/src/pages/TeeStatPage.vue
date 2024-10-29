@@ -103,6 +103,11 @@ import Chart from 'chart.js/auto'
 import StatsApi from '@/service/api/statsApi'
 import { CalloutType, RouteName, StatsData } from '@/types'
 
+definePageMeta({
+  path: '/stats',
+  name: RouteName.Statistics
+})
+
 const statsData = ref<StatsData | null>(null)
 const chartCanvas = ref<HTMLCanvasElement | null>(null)
 

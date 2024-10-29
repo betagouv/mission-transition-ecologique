@@ -114,10 +114,12 @@
 </template>
 
 <script setup lang="ts">
-// CONSOLE LOG TEMPLATE
-// console.log(`TeeAccessibilityPage > FUNCTION_NAME > MSG_OR_VALUE :`)
-
 import ContactMail from '@/components/contact/ContactMail.vue'
 import { RouteName } from '@/types'
 import Contact from '@/tools/contact'
+
+definePageMeta({
+  path: '/accessibilite',
+  name: RouteName.Accessibility
+})
 </script>

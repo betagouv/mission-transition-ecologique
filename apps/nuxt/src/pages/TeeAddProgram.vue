@@ -7,9 +7,13 @@
 </template>
 
 <script setup lang="ts">
-// CONSOLE LOG TEMPLATE
-// console.log(`TeeAddProgram > FUNCTION_NAME > MSG_OR_VALUE :`)
+import { RouteName } from '@/types'
 import { onMounted, onBeforeUnmount } from 'vue'
+
+definePageMeta({
+  path: '/ajouter-une-aide-entreprises',
+  name: RouteName.AddProgram
+})
 
 const typeformScript = document.createElement('script')
 typeformScript.async = true

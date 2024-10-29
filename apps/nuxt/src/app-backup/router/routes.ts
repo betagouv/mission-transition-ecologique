@@ -1,5 +1,4 @@
 import type { Component } from 'vue'
-import TeeHomePage from '@/pages/TeeHomePage.vue'
 import TeeQuestionnairePage from '@/pages/TeeQuestionnairePage.vue'
 import TeeCatalogPage from '@/pages/TeeCatalogPage.vue'
 import TeeAddProgram from '@/pages/TeeAddProgram.vue'
@@ -8,9 +7,9 @@ import TeeAccessibilityPage from '@/pages/TeeAccessibilityPage.vue'
 import TeePersonalDataPage from '@/pages/TeePersonalDataPage.vue'
 import ChatAdvisorPage from '@/pages/ChatAdvisorPage.vue'
 import { RouteName } from '@/types/routeType'
-import { redirections } from '@/app/router/redirection'
+import { redirections } from '@/app-backup/router/redirection'
 import { TrackId } from '@/types'
-import Hook from '@/app/router/hook'
+import Hook from '@/app-backup/router/hook'
 import TeeQuestionnaire from '@/components/questionnaire/TeeQuestionnaire.vue'
 import TeeQuestionnaireResult from '@/components/questionnaire/TeeQuestionnaireResult.vue'
 import ProgramDetail from '@/components/program/detail/ProgramDetail.vue'
@@ -23,11 +22,6 @@ import CatalogProjects from '@/components/catalog/CatalogProjects.vue'
 // that you don't want to be listed in the sitemap
 
 export const routes = [
-  {
-    path: '/',
-    name: RouteName.Homepage,
-    component: TeeHomePage as Component
-  },
   {
     path: '/questionnaire',
     component: TeeQuestionnairePage as Component,

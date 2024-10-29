@@ -31,13 +31,11 @@ onMounted(async () => {
     <TeeDsfrConsent />
     <TeeDsfrPersonalizeConsent />
     <TeeHeader />
-<!--      <TeeMatomo />-->
-      <NuxtPage/>
+    <!--      <TeeMatomo />-->
+    <NuxtPage />
 
     <div class="fr-mt-0v">
       <TeeFooter />
     </div>
   </div>
 </template>
-
-

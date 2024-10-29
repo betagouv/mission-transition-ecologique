@@ -22,10 +22,12 @@
 </template>
 
 <script setup lang="ts">
+import { MiddlewareName } from '@/middleware/type/middlewareName'
 import { RouteName } from '@/types'
 
 definePageMeta({
   path: '/',
-  name: RouteName.Homepage
+  name: RouteName.Homepage,
+  middleware: [MiddlewareName.resetUsedTrackStore]
 })
 </script>
