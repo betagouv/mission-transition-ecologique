@@ -285,11 +285,13 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
       const companyData: CompanyDataType = CompanyDataStorage.getData().value
       Object.entries(companyData).forEach(([key, value]) => {
         if (value !== null) {
-          if (Object.values(StructureSize).includes(value as StructureSize)) {
+          if (Object.values(StructureSize).includes(value as StructureSize) && questionnaireData[key] !== value) {
             questionnaireData[key] = value
           } else if (typeof value === 'object' && !Array.isArray(value)) {
             Object.entries(value).forEach(([k, v]) => {
-              questionnaireData[k] = v
+              if (questionnaireData[k] !== v) {
+                questionnaireData[k] = v
+              }
             })
           }
         }
@@ -310,6 +312,10 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
 
       const value = useNavigationStore().query[trackId] as string | string[]
       const selectedOptions: TrackOptionsUnion[] = await useTrackStore().getSelectedOptionsByTrackAndValue(track, value)
+
+      if (trackId === TrackId.StructureWorkforce) {
+        CompanyDataStorage.setSize(value as StructureSize)
+      }
 
       if (selectedOptions.length === 0) {
         useNavigationStore().deleteSearchParam(trackId)
