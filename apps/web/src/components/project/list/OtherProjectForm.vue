@@ -6,6 +6,8 @@
   >
     <TeeForm
       :form-container-ref="TeeOtherProjectFormContainer"
+      hint-class="fr-col-lg-7 fr-text--bold"
+      :show-title="false"
       :form-type="OpportunityType.CustomProject"
       :form="Opportunity.getOtherProjectFormFields()"
       :hint="Translation.t('otherProject.form.hint')"

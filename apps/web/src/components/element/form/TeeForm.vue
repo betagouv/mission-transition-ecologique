@@ -17,13 +17,19 @@
     <div class="fr-col-12">
       <!-- FORM LABEL -->
       <div
+        v-if="showTitle"
         id="form-title"
         class="fr-h3 fr-col-12 fr-text-center"
       >
         {{ Format.capitalize(Translation.t('form.label') || '') }}
       </div>
       <!-- FORM HINT -->
-      <p class="fr-col-12 fr-text-center">{{ hint }}</p>
+      <p
+        :class="hintClass"
+        class="fr-col-12 fr-m-auto fr-text-center"
+      >
+        {{ hint }}
+      </p>
       <!-- FIELDS -->
       <div class="fr-grid-row fr-grid-row--gutters fr-mb-2v fr-mt-4v">
         <TeeFormElement
@@ -92,16 +98,24 @@ import { ProgramType } from '@tee/data'
 const navigation = useNavigationStore()
 interface Props {
   dataId?: string
+  showTitle?: boolean
   dataSlug?: ProgramType['id'] | Project['slug']
   formType: OpportunityType
   form: FormDataType
   hint: string
+  hintClass?: string
   errorEmailSubject: string
   phoneCallback?: string
   formContainerRef: HTMLElement | null | undefined
 }
 
-const props = defineProps<Props>()
+const props = withDefaults(defineProps<Props>(), {
+  dataId: undefined,
+  dataSlug: undefined,
+  showTitle: true,
+  hintClass: '',
+  phoneCallback: undefined
+})
 
 const formIsSent = ref<boolean>(false)
 const requestResponse = ref<ReqResp>()

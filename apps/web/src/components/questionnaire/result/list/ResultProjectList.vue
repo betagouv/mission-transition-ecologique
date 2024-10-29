@@ -36,12 +36,14 @@
     >
       <div class="fr-container">
         <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2">
-          <Transition name="fade">
-            <OtherProjectCta
-              v-if="!otherProjectForm && !showNoResults"
+          <Transition
+            name="fade"
+            mode="out-in"
+          >
+            <component
+              :is="otherProjectComponent"
               @click="openOtherProjectForm"
             />
-            <OtherProjectForm v-else />
           </Transition>
         </div>
       </div>
@@ -56,6 +58,8 @@ import UsedTrack from '@/utils/track/usedTrack'
 import { useProgramStore } from '@/stores/program'
 import { Project as UtilsProject } from '@/utils/project/project'
 import { useNavigationStore } from '@/stores/navigation'
+import OtherProjectCta from '@/components/project/list/OtherProjectCta.vue'
+import OtherProjectForm from '@/components/project/list/OtherProjectForm.vue'
 
 interface ProjectListProps {
   filteredProjects?: Project[]
@@ -97,5 +101,12 @@ const showNoResults = computed(() => {
 
 const isSpecificGoal = computed(() => {
   return hasThemeCard.value && UsedTrack.isSpecificGoal() && hasProjects.value
+})
+const otherProjectComponent = computed(() => {
+  if (!otherProjectForm.value && !showNoResults.value) {
+    return OtherProjectCta
+  } else {
+    return OtherProjectForm
+  }
 })
 </script>
