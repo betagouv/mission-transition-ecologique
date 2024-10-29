@@ -1,5 +1,8 @@
 <template>
-  <div class="fr-col-12 fr-col-md-7 fr-col-offset-md-2">
+  <div
+    class="fr-col-12 fr-col-md-7 fr-col-offset-md-2"
+    style="position: relative"
+  >
     <h4 class="fr-mb-0 fr-py-2v fr-text--white">Quelle est votre entreprise ?</h4>
     <TeeRegisterSiretBar
       v-model.trim="queryValue"
@@ -25,8 +28,8 @@
         <div class="fr-card__body">
           <div class="fr-card__content fr-py-1v fr-px-4v fr-text--blue-france">
             <div class="fr-text--blue-france">
-              <span class="fr-text-weight--bold">{{ response.denomination || 'Entreprise individuelle' }}</span>
-              - SIRET {{ response.siret }}
+              <div class="fr-text-weight--bold">{{ response.denomination || 'Entreprise individuelle' }}</div>
+              SIRET {{ response.siret }}
             </div>
             <div class="fr-card__desc fr-mt-1v">
               <span
@@ -146,8 +149,10 @@ const processInput = async () => {
 
 #siret-response {
   text-align: left;
-  width: calc(100% - 40px);
-  max-height: 210px;
+  max-height: calc(100vh - 600px);
+  position: absolute;
+  min-height: 20vh;
   overflow: hidden auto;
+  width: calc(100% - 40px);
 }
 </style>

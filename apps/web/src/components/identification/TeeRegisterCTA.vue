@@ -1,30 +1,61 @@
 <template>
-  <TeeDsfrButton
-    :class="registeredData ? 'fr-btn--tertiary-no-outline' : ''"
-    @click="showModal"
+  <Transition
+    name="fade"
+    mode="out-in"
   >
-    <template #text>
-      <span
-        v-if="registeredData || Breakpoint.isSmallScreen()"
-        :class="Breakpoint.isSmallScreen() ? 'fr-icon--lg' : 'fr-pr-2w'"
-        class="fr-icon-account-circle-fill register-icon-profile"
-      >
+    <TeeDsfrButton
+      v-if="hasData"
+      class="fr-btn--tertiary-no-outline"
+      @click="showModal"
+    >
+      <template #text>
         <span
-          :id="Breakpoint.isSmallScreen() ? 'badge-mobile' : 'base-badge'"
-          :class="badgeIcon"
-          class="fr-text--blue-france fr-radius-a--2v register-badge"
+          v-if="hasData || Breakpoint.isSmallScreen()"
+          :class="Breakpoint.isSmallScreen() ? 'fr-icon--lg' : 'fr-pr-2w'"
+          class="fr-icon-account-circle-fill register-icon-profile"
         >
+          <span
+            :id="Breakpoint.isSmallScreen() ? 'badge-mobile' : 'base-badge'"
+            :class="badgeIcon"
+            class="fr-text--blue-france fr-radius-a--2v register-badge"
+          >
+          </span>
         </span>
-      </span>
 
-      <span
-        v-if="!Breakpoint.isSmallScreen()"
-        id="register-text"
-        :class="registeredData ? '' : 'fr-text--yellow'"
-        >{{ registeredData ? companyName : 'Vous êtes...?' }}
-      </span>
-    </template>
-  </TeeDsfrButton>
+        <span
+          v-if="!Breakpoint.isSmallScreen()"
+          id="register-text"
+          >{{ companyName }}
+        </span>
+      </template>
+    </TeeDsfrButton>
+    <TeeDsfrButton
+      v-else
+      @click="showModal"
+    >
+      <template #text>
+        <span
+          v-if="Breakpoint.isSmallScreen()"
+          :class="Breakpoint.isSmallScreen() ? 'fr-icon--lg' : 'fr-pr-2w'"
+          class="fr-icon-account-circle-fill register-icon-profile"
+        >
+          <span
+            :id="Breakpoint.isSmallScreen() ? 'badge-mobile' : 'base-badge'"
+            :class="badgeIcon"
+            class="fr-text--blue-france fr-radius-a--2v register-badge"
+          >
+          </span>
+        </span>
+
+        <span
+          v-if="!Breakpoint.isSmallScreen()"
+          id="register-text"
+          class="fr-text--yellow"
+          >Vous êtes...?
+        </span>
+      </template>
+    </TeeDsfrButton>
+  </Transition>
 </template>
 <script setup lang="ts">
 import { CompanyDataStorageKey } from '@/types/companyDataType'
@@ -33,7 +64,6 @@ import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
 const modalStatus = ref<boolean>(false)
 const registeredData = CompanyDataStorage.getData()
-
 watch(
   registeredData,
   (newRegisteredData) => {
@@ -46,13 +76,16 @@ const emit = defineEmits(['click'])
 const companyName = computed<string | undefined>(() => {
   return registeredData.value[CompanyDataStorageKey.Company]?.denomination || ''
 })
+const hasData = computed<boolean>(() => {
+  return !!registeredData.value[CompanyDataStorageKey.Company]
+})
 const showModal = () => {
   modalStatus.value = true
   emit('click')
 }
 
 const badgeIcon = computed(() => {
-  if (Breakpoint.isSmallScreen() && !registeredData.value) {
+  if (Breakpoint.isSmallScreen() && !hasData.value) {
     return 'fr-bg--yellow fr-icon-question-mark'
   } else {
     return 'fr-bg--green fr-icon-check-line'

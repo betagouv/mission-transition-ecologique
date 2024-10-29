@@ -43,6 +43,7 @@ export default class CompanyDataStorage {
 
   static removeItem(key: CompanyDataStorageKey): void {
     this._storageHandler.removeItem(key)
+    this.updateData()
   }
 
   static updateData(): void {

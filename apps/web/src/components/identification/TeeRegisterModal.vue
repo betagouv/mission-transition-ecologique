@@ -67,6 +67,8 @@ const resetSiret = () => {
   company.value = null
   companySize.value = null
   manualRegistration.value = false
+  CompanyDataStorage.removeItem(CompanyDataStorageKey.Company)
+  CompanyDataStorage.removeItem(CompanyDataStorageKey.Size)
 }
 
 const imgClass = computed<string>(() => {
@@ -100,13 +102,13 @@ const closeRegisterModal = () => {
   align-items: flex-start;
   background-repeat: no-repeat;
   background-position: bottom;
-  background-size: contain;
   background-attachment: scroll;
 }
 
 .register-modal-sm {
   background-image: url('/images/TEE-modal-bottom.svg');
   min-height: 100vh;
+  background-size: contain;
 }
 
 .mobile-modal-img {

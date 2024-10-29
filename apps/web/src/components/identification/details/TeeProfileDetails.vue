@@ -22,10 +22,10 @@
     :manual="manual"
     :show-error="showError"
     :detail-infos="profile[detailKey]"
-    @update:model-value="(v: RegisterDetailUnion) => updateValue(v, detailKey)"
+    @update:model-value="updateValue"
     @update:siret="openSiretStep"
   />
-  <div class="fr-col-sm-8 fr-col-md-7 fr-col-offset-md-2 fr-col-12">
+  <div class="fr-col-sm-8 fr-pt-4v fr-mt-4v fr-col-md-7 fr-col-offset-md-2 fr-col-12">
     <TeeDsfrButton
       class="fr-bg--yellow fr-text--blue-france"
       label="Enregistrer et fermer"
@@ -34,7 +34,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { RegisterDetailType, RegisterDetailUnion, RegisterDetails, Sector } from '@/types'
+import { RegisterDetailType, RegisterDetails, Sector } from '@/types'
 import { CompanyDataStorageKey, CompanyDataType } from '@/types/companyDataType'
 import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
@@ -79,7 +79,7 @@ const profile = ref<RegisterDetails>({
     icon: 'fr-icon-team-line',
     value: props.companySize,
     type: RegisterDetailType.Size,
-    description: 'Choisissez la tranche correspondant à votre effectif'
+    description: 'Combien êtes-vous dans votre entreprise ?'
   }
 })
 const saveProfile = () => {
@@ -99,8 +99,7 @@ const saveProfile = () => {
     showError.value = true
   }
 }
-const updateValue = (v: RegisterDetailUnion, detailKey: string) => {
-  profile.value[detailKey] = v
+const updateValue = () => {
   showError.value = false
 }
 </script>
