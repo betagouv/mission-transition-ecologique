@@ -37,8 +37,8 @@
         </div>
       </div>
       <DsfrHighlight
-        v-if="isCatalogDetail"
-        class="fr-highlight-border--yellow fr-highlight-bg--yellow--lightness fr-m-0 fr-p-0"
+        v-if="!CompanyDataStorage.hasData()"
+        class="fr-mx-3v fr-highlight-border--yellow fr-highlight-bg--yellow--lightness fr-m-0 fr-p-0"
         :large="true"
       >
         <template #default>
@@ -50,15 +50,11 @@
                 alt="image / ecriture"
               />
               <div class="fr-col-9 fr-col-xs-8">
-                <div class="fr-pb-2v">Complétez votre profil en 2 minutes et accédez aux aides éligibles pour votre entreprise.</div>
-                <TeeButtonLink
-                  :to="trackSiretTo()"
-                  size="sm"
-                  secondary
-                  @click="onTrackSiretTo()"
-                >
-                  Compléter mon profil
-                </TeeButtonLink>
+                <p class="fr-mb-2v">Vous voulez uniquement voir les aides éligibles pour votre entreprise ?</p>
+                <TeeDsfrButton
+                  class="fr-text--yellow fr-text--bold"
+                  label="Je complète mon profil"
+                />
               </div>
             </div>
           </div>
@@ -85,15 +81,13 @@
   </TeeContentBlock>
 </template>
 <script setup lang="ts">
-import { useUsedTrackStore } from '@/stores/usedTrack'
 import { useProgramStore } from '@/stores/program'
-import { ProgramAidType, type ProgramData, Project, QuestionnaireRoute, TrackId, OpportunityType } from '@/types'
+import { ProgramAidType, type ProgramData, Project, OpportunityType } from '@/types'
 import Contact from '@/utils/contact'
-import { RouteName } from '@/types/routeType'
-import { type RouteLocationRaw } from 'vue-router'
 import { useNavigationStore } from '@/stores/navigation'
 import Translation from '@/utils/translation'
 import Opportunity from '@/utils/opportunity'
+import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
 interface Props {
   project: Project
@@ -102,7 +96,6 @@ const props = defineProps<Props>()
 
 const programStore = useProgramStore()
 const navigationStore = useNavigationStore()
-const isCatalogDetail = navigationStore.isCatalogProjectDetail()
 const TeeProjectFormContainer = ref<HTMLElement | null | undefined>(null)
 
 const programs = ref<ProgramData[]>()
@@ -138,18 +131,4 @@ onBeforeMount(async () => {
   }
   navigationStore.hasSpinner = false
 })
-
-const trackSiretTo = (): RouteLocationRaw => {
-  if (navigationStore.isByRouteName(RouteName.CatalogProjectDetail)) {
-    navigationStore.updateSearchParam({ name: TrackId.QuestionnaireRoute, value: QuestionnaireRoute.SpecificGoal })
-  }
-
-  return navigationStore.routeByTrackId(TrackId.Siret)
-}
-
-function onTrackSiretTo() {
-  if (navigationStore.isByRouteName(RouteName.CatalogProjectDetail)) {
-    useUsedTrackStore().updateByTrackIdAndValue(TrackId.QuestionnaireRoute, QuestionnaireRoute.SpecificGoal)
-  }
-}
 </script>
