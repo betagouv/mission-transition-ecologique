@@ -64,10 +64,8 @@
         class="fr-btn--tertiary-no-outline fr-p-0 fr-btn-bg fr-text--white fr-text--sm"
         @click="doManualRegister"
       >
-        <template #text>
-          {{ Translation.t('or') }}
-          <span class="fr-text--underline">je complète les informations manuellement</span>
-        </template>
+        {{ Translation.t('or') }}
+        <span class="fr-text--underline">je complète les informations manuellement</span>
       </TeeDsfrButton>
     </div>
   </div>

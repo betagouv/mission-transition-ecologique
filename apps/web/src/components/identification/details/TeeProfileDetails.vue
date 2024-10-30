@@ -8,9 +8,7 @@
       class="fr-btn--tertiary-no-outline fr-p-0 fr-text--white fr-btn-bg fr-text--sm fr-text--underline"
       @click="openSiretStep"
     >
-      <template #text>
-        <span class="fr-icon--lg fr-pr-2v fr-icon-arrow-left-line" /><span>je complète les informations avec mon SIRET</span>
-      </template>
+      <span class="fr-icon--lg fr-pr-2v fr-icon-arrow-left-line" /><span>je complète les informations avec mon SIRET</span>
     </TeeDsfrButton>
   </div>
   <TeeProfileElement
