@@ -92,7 +92,7 @@ const closeRegisterModal = () => {
 }
 
 .register-modal-overlay-lg {
-  top: 120px !important;
+  top: 118px !important;
 }
 
 #register-modal {
@@ -115,6 +115,6 @@ const closeRegisterModal = () => {
 
 .register-modal-lg {
   background-image: url('/images/TEE-modal-bottom.svg');
-  min-height: calc(100vh - 120px);
+  min-height: calc(100vh - 118px);
 }
 </style>
