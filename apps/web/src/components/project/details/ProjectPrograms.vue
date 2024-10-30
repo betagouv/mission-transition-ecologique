@@ -36,30 +36,11 @@
           />
         </div>
       </div>
-      <DsfrHighlight
+      <TeeRegisterHighlight
         v-if="!CompanyDataStorage.hasData()"
-        class="fr-mx-3v fr-highlight-border--yellow fr-highlight-bg--yellow--lightness fr-m-0 fr-p-0"
-        :large="true"
-      >
-        <template #default>
-          <div class="fr-container--fluid fr-p-4v">
-            <div class="fr-grid-row fr-grid-row--middle">
-              <img
-                class="fr-col-2 fr-col-xs-2 fr-mr-8v"
-                src="/images/tracks/ecriture.svg"
-                alt="image / ecriture"
-              />
-              <div class="fr-col-9 fr-col-xs-8">
-                <p class="fr-mb-2v">Vous voulez uniquement voir les aides éligibles pour votre entreprise ?</p>
-                <TeeDsfrButton
-                  class="fr-text--yellow fr-text--bold"
-                  label="Je complète mon profil"
-                />
-              </div>
-            </div>
-          </div>
-        </template>
-      </DsfrHighlight>
+        class="fr-mx-3v"
+        text="Vous voulez uniquement voir les aides éligibles pour votre entreprise ?"
+      />
       <div
         v-else
         id="project-contact"

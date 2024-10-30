@@ -103,6 +103,7 @@ declare module 'vue' {
     TeeProjectButton: typeof import('./components/project/TeeProjectButton.vue')['default']
     TeeQuestionnaire: typeof import('./components/questionnaire/TeeQuestionnaire.vue')['default']
     TeeQuestionnaireResult: typeof import('./components/questionnaire/TeeQuestionnaireResult.vue')['default']
+    TeeRegisterHighlight: typeof import('./components/identification/TeeRegisterHighlight.vue')['default']
     TeeSpinner: typeof import('./components/element/TeeSpinner.vue')['default']
     TeeTabs: typeof import('./components/element/TeeTabs.vue')['default']
     ThemeCard: typeof import('./components/theme/select/ThemeCard.vue')['default']
