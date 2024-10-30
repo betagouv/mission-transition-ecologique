@@ -1,7 +1,7 @@
 <template>
   <div
-    ref="registerModal"
     id="register-modal-overlay"
+    ref="registerModal"
     :class="!Breakpoint.isSmallScreen() ? 'register-modal-overlay-lg' : ''"
   >
     <div
