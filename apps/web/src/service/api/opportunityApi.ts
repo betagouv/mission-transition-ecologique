@@ -30,8 +30,8 @@ export default class OpportunityApi extends RequestApi {
 
   constructor(
     opportunityForm: FormDataType,
-    private _id: string | undefined,
-    private _slug: string | undefined,
+    private _id: ProgramData['id'] | Project['id'] | undefined,
+    private _slug: ProgramData['id'] | Project['slug'] | undefined,
     private _opportunityType: OpportunityType
   ) {
     super()

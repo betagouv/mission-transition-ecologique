@@ -1,11 +1,11 @@
 <template>
   <div
     id="project-contact"
-    ref="TeeOtherProjectFormContainer"
+    ref="teeOtherProjectFormContainer"
     class="fr-bg--blue-france--lightness fr-col-justify--center fr-grid-row fr-p-2w fr-mt-2v"
   >
     <TeeForm
-      :form-container-ref="TeeOtherProjectFormContainer"
+      :form-container-ref="teeOtherProjectFormContainer"
       hint-class="fr-col-lg-7 fr-text--bold"
       :show-title="false"
       :form-type="OpportunityType.CustomProject"
@@ -21,5 +21,5 @@ import Opportunity from '@/utils/opportunity'
 import Translation from '@/utils/translation'
 
 // ajouter custom project
-const TeeOtherProjectFormContainer = ref<HTMLElement | null | undefined>(null)
+const teeOtherProjectFormContainer = ref<HTMLElement | null | undefined>(null)
 </script>

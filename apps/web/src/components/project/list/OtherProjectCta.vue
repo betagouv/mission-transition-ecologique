@@ -4,10 +4,9 @@
   >
     <div>
       <img
-        class=""
         src="/images/cross.svg"
         height="50px"
-        :alt="`image / pas de résultat`"
+        alt="image / autre projet"
       />
     </div>
 
