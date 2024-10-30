@@ -1,12 +1,12 @@
 <template>
   <div
-    id="project-contact"
+    id="other-project-contact"
     ref="teeOtherProjectFormContainer"
-    class="fr-bg--blue-france--lightness fr-col-justify--center fr-grid-row fr-p-2w fr-mt-2v"
+    class="fr-bg--blue-france--lightness fr-col-justify--center fr-grid-row fr-p-2w fr-mt-5v"
   >
     <TeeForm
       :form-container-ref="teeOtherProjectFormContainer"
-      hint-class="fr-col-lg-7 fr-text--bold"
+      hint-class="fr-col-lg-9 fr-text--bold fr-h6 fr-pt-4v"
       :show-title="false"
       :form-type="OpportunityType.CustomProject"
       :form="Opportunity.getOtherProjectFormFields()"
