@@ -6,7 +6,7 @@
     <TeeDsfrButton
       v-if="hasData"
       class="fr-btn--tertiary-no-outline"
-      @click="openModal"
+      @click="toggleRegisterModal"
     >
       <span
         v-if="hasData || Breakpoint.isSmallScreen()"
@@ -29,7 +29,7 @@
     </TeeDsfrButton>
     <TeeDsfrButton
       v-else
-      @click="openModal"
+      @click="toggleRegisterModal"
     >
       <span
         v-if="Breakpoint.isSmallScreen()"
@@ -59,7 +59,7 @@ import Breakpoint from '@/utils/breakpoints'
 import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
 const registeredData = CompanyDataStorage.getData()
-const openModal = inject<() => void>('openModal')
+const toggleRegisterModal = inject<() => void>('toggleRegisterModal')
 watch(
   registeredData,
   (newRegisteredData) => {

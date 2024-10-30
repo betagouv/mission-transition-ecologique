@@ -1,5 +1,6 @@
 <template>
   <div
+    ref="registerModal"
     id="register-modal-overlay"
     :class="!Breakpoint.isSmallScreen() ? 'register-modal-overlay-lg' : ''"
   >
@@ -24,13 +25,12 @@
           :company-size="companySize"
           :manual="manualRegistration"
           @modify-siret="resetSiret"
-          @close-register="closeRegisterModal"
         />
       </div>
       <TeeDsfrButton
         size="sm"
         class="fr-bg--blue-france--lightness fr-mt-8v fr-p-0 fr-text--blue-france fr-radius-a--2v"
-        @click="closeRegisterModal"
+        @click="toggleRegisterModal"
       >
         <span class="fr-icon-close-line fr-icon--lg"></span>
       </TeeDsfrButton>
@@ -43,20 +43,25 @@ import { EstablishmentFront } from '@/types'
 import Breakpoint from '@/utils/breakpoints'
 import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 import { CompanyDataStorageKey, CompanyDataType } from '@/types/companyDataType'
+import { onClickOutside } from '@vueuse/core'
 
+const registerModal = ref(null)
 const registeredData = CompanyDataStorage.getData()
 const company = ref<CompanyDataType[CompanyDataStorageKey.Company]>(registeredData.value[CompanyDataStorageKey.Company])
 const companySize = ref<CompanyDataType[CompanyDataStorageKey.Size]>(registeredData.value[CompanyDataStorageKey.Size])
 const manualRegistration = ref<boolean>(!!(company.value && !('siret' in company.value)))
+const toggleRegisterModal = inject<() => void>('toggleRegisterModal')
+onClickOutside(registerModal, () => {
+  if (toggleRegisterModal) {
+    toggleRegisterModal()
+  }
+})
 const registerStep = computed<number>(() => {
   if (company.value || manualRegistration.value) {
     return 2
   }
   return 1
 })
-const emit = defineEmits<{
-  closeRegister: []
-}>()
 const updateEstablishment = (selectedEstablishment: EstablishmentFront) => {
   company.value = selectedEstablishment
   manualRegistration.value = false
@@ -79,16 +84,13 @@ const imgClass = computed<string>(() => {
 const setManualRegister = () => {
   manualRegistration.value = true
 }
-const closeRegisterModal = () => {
-  emit('closeRegister')
-}
 </script>
 <style lang="scss" scoped>
 #register-modal-overlay {
   position: fixed;
   inset: 0;
   overflow: hidden scroll;
-  z-index: 1000;
+  z-index: 500;
 }
 
 .register-modal-overlay-lg {

@@ -43,6 +43,7 @@ interface Props {
 }
 const props = defineProps<Props>()
 const emit = defineEmits(['modifySiret', 'closeRegister'])
+const toggleRegisterModal = inject<() => void>('toggleRegisterModal')
 const showError = ref<boolean>(false)
 const openSiretStep = () => {
   emit('modifySiret')
@@ -92,7 +93,9 @@ const saveProfile = () => {
       : props.company
     CompanyDataStorage.setCompany(company)
     CompanyDataStorage.setSize(profile.value.size.value)
-    emit('closeRegister')
+    if (toggleRegisterModal) {
+      toggleRegisterModal()
+    }
   } else {
     showError.value = true
   }

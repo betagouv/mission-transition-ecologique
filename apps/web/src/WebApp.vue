@@ -3,10 +3,7 @@
   <TeeDsfrPersonalizeConsent />
   <div>
     <TeeHeader />
-    <TeeRegisterModal
-      v-if="registerModal"
-      @close-register="closeRegisterModal"
-    />
+    <TeeRegisterModal v-if="registerModal" />
     <TeeMatomo />
     <router-view v-if="isReady" />
     <template v-else>
@@ -46,17 +43,11 @@ const isReady = computed<boolean>(() => {
   return navigationStore.isReady
 })
 
-const openRegisterModal = () => {
-  if (!registerModal.value) {
-    registerModal.value = true
-    document.body.style.overflow = 'hidden'
-  }
+const toggleRegisterModal = (forceStatus: boolean | undefined) => {
+  registerModal.value = forceStatus || !registerModal.value
+  document.body.style.overflow = registerModal.value ? '' : 'hidden'
 }
-provide('openModal', openRegisterModal)
-const closeRegisterModal = () => {
-  registerModal.value = false
-  document.body.style.overflow = ''
-}
+provide('toggleRegisterModal', toggleRegisterModal)
 
 onBeforeMount(() => {
   Translation.setLocale('fr')
