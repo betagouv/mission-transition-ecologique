@@ -2,7 +2,7 @@
   <TeeDsfrConsent />
   <TeeDsfrPersonalizeConsent />
   <div>
-    <TeeHeader @open-register="openRegisterModal" />
+    <TeeHeader />
     <TeeRegisterModal
       v-if="registerModal"
       @close-register="closeRegisterModal"
@@ -47,9 +47,12 @@ const isReady = computed<boolean>(() => {
 })
 
 const openRegisterModal = () => {
-  registerModal.value = true
-  document.body.style.overflow = 'hidden'
+  if (!registerModal.value) {
+    registerModal.value = true
+    document.body.style.overflow = 'hidden'
+  }
 }
+provide('openModal', openRegisterModal)
 const closeRegisterModal = () => {
   registerModal.value = false
   document.body.style.overflow = ''

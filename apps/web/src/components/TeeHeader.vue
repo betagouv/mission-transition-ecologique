@@ -10,7 +10,6 @@
     :operator-img-src="`/images/logos/mission-transition-logo-alone.png`"
     operator-img-alt="Transition Ecologique des Entreprises - ADEME"
     operator-img-style="width:3.5rem;"
-    @open-register="emit('openRegister')"
   />
 </template>
 
@@ -21,9 +20,6 @@
 import { RouteName } from '@/types/routeType'
 import { TeeDsfrHeaderMenuLinkProps } from '@/components/header/TeeDsfrHeaderMenuLinks.vue'
 
-const emit = defineEmits<{
-  openRegister: []
-}>()
 const quickLinks: TeeDsfrHeaderMenuLinkProps[] = [
   {
     label: 'Accueil',

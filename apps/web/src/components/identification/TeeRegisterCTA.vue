@@ -6,7 +6,7 @@
     <TeeDsfrButton
       v-if="hasData"
       class="fr-btn--tertiary-no-outline"
-      @click="showModal"
+      @click="openModal"
     >
       <span
         v-if="hasData || Breakpoint.isSmallScreen()"
@@ -29,7 +29,7 @@
     </TeeDsfrButton>
     <TeeDsfrButton
       v-else
-      @click="showModal"
+      @click="openModal"
     >
       <span
         v-if="Breakpoint.isSmallScreen()"
@@ -58,8 +58,8 @@ import { CompanyDataStorageKey } from '@/types/companyDataType'
 import Breakpoint from '@/utils/breakpoints'
 import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
-const modalStatus = ref<boolean>(false)
 const registeredData = CompanyDataStorage.getData()
+const openModal = inject<() => void>('openModal')
 watch(
   registeredData,
   (newRegisteredData) => {
@@ -68,17 +68,12 @@ watch(
   { deep: true }
 )
 
-const emit = defineEmits(['click'])
 const companyName = computed<string | undefined>(() => {
   return registeredData.value[CompanyDataStorageKey.Company]?.denomination || ''
 })
 const hasData = computed<boolean>(() => {
   return !!registeredData.value[CompanyDataStorageKey.Company]
 })
-const showModal = () => {
-  modalStatus.value = true
-  emit('click')
-}
 
 const badgeIcon = computed(() => {
   if (Breakpoint.isSmallScreen() && !hasData.value) {

@@ -43,10 +43,7 @@
                   @click.prevent.stop="showSearchModal()"
                 />
                 <div class="fr-hidden-lg">
-                  <TeeRegisterCTA
-                    :registration-status="registrationStatus"
-                    @click="openRegisterModal"
-                  />
+                  <TeeRegisterCTA />
                 </div>
                 <button
                   v-if="isWithSlotNav || quickLinks?.length"
@@ -115,10 +112,7 @@
               </template>
             </div>
             <div class="fr-my-auto fr-px-4v fr-hidden fr-unhidden-lg">
-              <TeeRegisterCTA
-                :registration-status="registrationStatus"
-                @click="openRegisterModal"
-              />
+              <TeeRegisterCTA />
             </div>
             <div
               v-if="showSearch"
@@ -239,7 +233,6 @@ const props = withDefaults(defineProps<DsfrHeaderProps>(), {
   closeMenuModalLabel: 'Fermer',
   homeLabel: 'Accueil'
 })
-const registrationStatus = ref<boolean>(false)
 
 const emit = defineEmits<{
   (e: 'update:modelValue', payload: string): void
@@ -253,11 +246,6 @@ const languageSelector = toRef(props, 'languageSelector')
 const menuOpened = ref(false)
 const searchModalOpened = ref(false)
 const modalOpened = ref(false)
-
-const openRegisterModal = () => {
-  registrationStatus.value = !registrationStatus.value
-  emit('openRegister')
-}
 
 const hideModal = () => {
   modalOpened.value = false
