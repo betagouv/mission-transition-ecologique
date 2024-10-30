@@ -33,10 +33,12 @@
       <!-- FIELDS -->
       <div class="fr-grid-row fr-grid-row--gutters fr-mb-2v fr-mt-4v">
         <TeeFormElement
-          v-for="fieldKey in Object.keys(localForm).filter((fieldKey) => !localForm[fieldKey].hidden)"
+          v-for="fieldKey in Object.keys(localForm).filter(
+            (fieldKey) => !(localForm as Record<string, InputFieldUnionType>)[fieldKey].hidden
+          )"
           :key="fieldKey"
-          v-model="localForm[fieldKey]"
-          :field="localForm[fieldKey]"
+          v-model="(localForm as Record<string, InputFieldUnionType>)[fieldKey]"
+          :field="(localForm as Record<string, InputFieldUnionType>)[fieldKey]"
         />
       </div>
 
@@ -123,9 +125,10 @@ const isLoading = ref<boolean>(false)
 const localForm = ref<FormDataType>(props.form)
 const isFormFilled = computed(() => {
   const isFilled = []
-  for (const key in localForm.value) {
-    if (localForm.value[key].required) {
-      isFilled.push(isFieldValid(localForm.value[key]))
+  for (const key of Object.keys(localForm.value) as Array<keyof typeof localForm.value>) {
+    const field: InputFieldUnionType = localForm.value[key]
+    if (field.required) {
+      isFilled.push(isFieldValid(field))
     }
   }
   return isFilled.every((v) => v)
@@ -133,9 +136,10 @@ const isFormFilled = computed(() => {
 
 const isFormValid = computed(() => {
   const isValid = []
-  for (const key in localForm.value) {
-    if (localForm.value[key].required) {
-      isValid.push(localForm.value[key].isValid)
+  for (const key of Object.keys(localForm.value) as Array<keyof typeof localForm.value>) {
+    const field: InputFieldUnionType = localForm.value[key]
+    if (field.required) {
+      isValid.push(field.isValid)
     }
   }
   return isValid.every((v) => v !== false)
