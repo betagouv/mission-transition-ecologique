@@ -1,7 +1,8 @@
 import { Controller, Get, Path, Queries, Res, Route, SuccessResponse, TsoaResponse } from 'tsoa'
 import { OpenAPISafeProgram } from './types'
 import { QuestionnaireData } from '@tee/common'
-import { ErrorJSON, Monitor, ProgramErrorType, ProgramService } from '@tee/backend-ddd'
+import { ErrorJSON, EstablishmentNotFoundError, Monitor, ProgramService } from '@tee/backend-ddd'
+
 @SuccessResponse('200', 'OK')
 @Route('programs')
 export class ProgramsController extends Controller {
@@ -50,10 +51,9 @@ export class ProgramsController extends Controller {
     const program = programService.getOneWithMaybeEligibility(programId, questionnaireData)
 
     if (program.isErr) {
-      if (program.error.message === ProgramErrorType.UnknownId) {
-        Monitor.warning('Unknownn Program id', { programId })
+      if (program.error instanceof EstablishmentNotFoundError) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-        return notFoundResponse(404, { message: `Program not found` })
+        return notFoundResponse(404, { message: 'Program not found' })
       }
       Monitor.error('Error in get Program id', { programId })
       this.throwErrorResponse(program.error, requestFailedResponse)

@@ -6,7 +6,7 @@ import { ProgramEligibilityType, ProgramType, ProgramTypeWithEligibility } from 
 import { Objective, QuestionnaireData } from '@tee/common'
 import { Monitor } from '../../common'
 import ProgramCustomizer from './programCustomizer'
-import { ProgramErrorType } from '../application/types'
+import { ProgramNotFoundError } from './types'
 
 export default class ProgramFeatures {
   private _programRepository: ProgramRepository
@@ -31,7 +31,7 @@ export default class ProgramFeatures {
     let program = this.getById(id)
     if (!program) {
       Monitor.warning('Requested Program Id unknown', { id })
-      return Result.err(new Error(ProgramErrorType.UnknownId))
+      return Result.err(new ProgramNotFoundError())
     }
     if (new ProgramCustomizer().shouldRewritePrograms(questionnaireData)) {
       program = JSON.parse(JSON.stringify(program)) as ProgramType // deep copy before modification

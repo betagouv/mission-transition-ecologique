@@ -1,2 +1,2 @@
 export * from './application/programService'
-export * from './application/types'
+export * from './domain/types'
