@@ -2,7 +2,9 @@
   <DsfrButton
     v-bind="props"
     :icon="iconComputed"
-  />
+  >
+    <slot name="default"></slot>
+  </DsfrButton>
 </template>
 
 <script setup lang="ts">

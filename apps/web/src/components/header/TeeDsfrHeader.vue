@@ -42,6 +42,12 @@
                   :data-fr-opened="searchModalOpened"
                   @click.prevent.stop="showSearchModal()"
                 />
+                <div class="fr-hidden-lg">
+                  <RegisterCTA
+                    :registration-status="registrationStatus"
+                    @click="updateStatus"
+                  />
+                </div>
                 <button
                   v-if="isWithSlotNav || quickLinks?.length"
                   id="button-menu"
@@ -118,6 +124,12 @@
                   @select="emit('language-select', $event)"
                 />
               </template>
+            </div>
+            <div class="fr-my-auto fr-px-4v fr-hidden fr-unhidden-lg">
+              <RegisterCTA
+                :registration-status="registrationStatus"
+                @click="updateStatus"
+              />
             </div>
             <div
               v-if="showSearch"
@@ -241,7 +253,10 @@ const props = withDefaults(defineProps<DsfrHeaderProps>(), {
   closeMenuModalLabel: 'Fermer',
   homeLabel: 'Accueil'
 })
-
+const registrationStatus = ref<boolean>(false)
+const updateStatus = () => {
+  registrationStatus.value = !registrationStatus.value
+}
 const emit = defineEmits<{
   (e: 'update:modelValue', payload: string): void
   (e: 'search', payload: string): void
