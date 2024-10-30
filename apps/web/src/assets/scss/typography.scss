@@ -19,12 +19,6 @@
       @include tool.line-height($size)
     }
   }
-
-  @each $weight in setting.$font-weights {
-    &--#{$weight} {
-      font-weight: $weight;
-    }
-  } 
 }
 
 .tee-font {
