@@ -30,7 +30,7 @@
       <TeeDsfrButton
         size="sm"
         class="fr-bg--blue-france--lightness fr-mt-8v fr-p-0 fr-text--blue-france fr-radius-a--2v"
-        @click="toggleRegisterModal"
+        @click="closeModal"
       >
         <span class="fr-icon-close-line fr-icon--lg"></span>
       </TeeDsfrButton>
@@ -50,7 +50,7 @@ const registeredData = CompanyDataStorage.getData()
 const company = ref<CompanyDataType[CompanyDataStorageKey.Company]>(registeredData.value[CompanyDataStorageKey.Company])
 const companySize = ref<CompanyDataType[CompanyDataStorageKey.Size]>(registeredData.value[CompanyDataStorageKey.Size])
 const manualRegistration = ref<boolean>(!!(company.value && !('siret' in company.value)))
-const toggleRegisterModal = inject<() => void>('toggleRegisterModal')
+const toggleRegisterModal = inject<(stat?: undefined | boolean) => void>('toggleRegisterModal')
 onClickOutside(registerModal, () => {
   if (toggleRegisterModal) {
     toggleRegisterModal()
@@ -83,6 +83,12 @@ const imgClass = computed<string>(() => {
 
 const setManualRegister = () => {
   manualRegistration.value = true
+}
+
+const closeModal = () => {
+  if (toggleRegisterModal) {
+    toggleRegisterModal(false)
+  }
 }
 </script>
 <style lang="scss" scoped>
