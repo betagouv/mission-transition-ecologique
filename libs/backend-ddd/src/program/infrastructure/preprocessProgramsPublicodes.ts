@@ -7,17 +7,9 @@ import {
   QuestionnaireData,
   QuestionnaireRoute,
   Sector,
-  StructureSize,
+  SizeToWorkforce,
   YesNo
 } from '@tee/common'
-
-const SizeToWorkforce: { [key in StructureSize]: number } = {
-  [StructureSize.EI]: 1,
-  [StructureSize.TPE]: 19,
-  [StructureSize.PE]: 49,
-  [StructureSize.ME]: 249,
-  [StructureSize.ETI_GE]: 251
-}
 
 /** preprocesses the data gathered from the questionnaire into variables
  * needed by publicodes */

@@ -31,3 +31,5 @@ export type ProgramType = ProgramWithoutId & {
 export type ProgramTypeWithEligibility = ProgramType & {
   eligibility: ProgramEligibilityType
 }
+
+export type ConditionalYaml = Required<ProgramType['champs conditionnels'][]>[number][number]

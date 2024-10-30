@@ -20,8 +20,9 @@ export default abstract class RequestApi {
     return url.replace('{' + placeholderName + '}', placeholderData)
   }
 
-  public async getJson<T>(): Promise<Result<T, Error>> {
-    const url: string = this.query ? `${this.url}?${this.query}` : this.url
+  public async getJson<T>(baseUrl: string | undefined = undefined): Promise<Result<T, Error>> {
+    baseUrl = baseUrl ?? this.url
+    const url: string = this.query ? `${baseUrl}?${this.query}` : baseUrl
     try {
       const response = await fetch(url)
       return Result.ok((await response.json()) as T)
