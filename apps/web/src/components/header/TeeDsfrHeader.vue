@@ -98,14 +98,21 @@
             </div>
           </div>
           <div>
-            {{ size }}
             <input
               v-model="size"
               type="text"
             />
             <input
               type="submit"
+              value="Save"
               @click="updateSize(size as StructureSize)"
+            />
+          </div>
+          <div>
+            <input
+              type="submit"
+              value="Clear Storage"
+              @click="clearCompanyDataStorage()"
             />
           </div>
           <div class="fr-header__tools">
@@ -268,6 +275,10 @@ const size = ref(companyData.value[CompanyDataStorageKey.Size])
 
 const updateSize = (size: StructureSize) => {
   CompanyDataStorage.setSize(size)
+}
+
+const clearCompanyDataStorage = () => {
+  CompanyDataStorage.removeData()
 }
 
 watchEffect(() => {

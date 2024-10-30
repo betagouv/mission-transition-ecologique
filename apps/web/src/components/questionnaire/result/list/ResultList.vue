@@ -3,6 +3,7 @@
   <ResultProjectList
     :filtered-projects="filteredProjects"
     :has-error="hasError"
+    :has-registered-data="hasRegisteredData"
   />
 </template>
 
@@ -14,6 +15,7 @@ import { Project } from '@/utils/project/project'
 import { computed, onBeforeMount } from 'vue'
 import { useProjectStore } from '@/stores/project'
 import { Theme } from '@/utils/theme'
+import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
 const programStore = useProgramStore()
 const projectStore = useProjectStore()
@@ -22,6 +24,8 @@ const navigationStore = useNavigationStore()
 const programs = ref<ProgramData[]>([])
 const projects = ref<ProjectType[]>()
 const hasError = ref<boolean>(false)
+
+const hasRegisteredData = ref(CompanyDataStorage.hasData())
 
 const filteredPrograms = computed(() => {
   return programs.value ? programStore.getProgramsByFilters(programs.value) : undefined
@@ -47,7 +51,7 @@ onBeforeMount(async () => {
 })
 
 watchEffect(async () => {
-  console.log('registeredData changed: UPDATE PROGRAMS')
+  hasRegisteredData.value = CompanyDataStorage.hasData()
   await getProgramsAndProjects()
 })
 </script>

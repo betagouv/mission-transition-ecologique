@@ -52,6 +52,12 @@ export default class CompanyDataStorage {
     return (this.getItem(CompanyDataStorageKey.Size) as StructureSize) || null
   }
 
+  static removeData(): void {
+    this._storageHandler.removeItem(CompanyDataStorageKey.Siret)
+    this._storageHandler.removeItem(CompanyDataStorageKey.Size)
+    this._updateData()
+  }
+
   static removeItem(key: CompanyDataStorageKey): void {
     this._storageHandler.removeItem(key)
     this._updateData()

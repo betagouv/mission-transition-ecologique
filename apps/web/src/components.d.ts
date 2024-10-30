@@ -97,6 +97,7 @@ declare module 'vue' {
     TeeHeader: typeof import('./components/TeeHeader.vue')['default']
     TeeHomeInfos: typeof import('./components/home/TeeHomeInfos.vue')['default']
     TeeHomeSteps: typeof import('./components/home/TeeHomeSteps.vue')['default']
+    TeeListNoRegisteredData: typeof import('./components/TeeListNoRegisteredData.vue')['default']
     TeeListNoResults: typeof import('./components/element/TeeListNoResults.vue')['default']
     TeeMatomo: typeof import('./components/TeeMatomo.vue')['default']
     TeeNoResult: typeof import('./components/element/TeeNoResult.vue')['default']

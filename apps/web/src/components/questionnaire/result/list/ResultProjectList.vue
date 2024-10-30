@@ -2,7 +2,7 @@
   <!-- PROGRAMS AS LIST OF CARDS -->
   <div class="fr-container--fluid fr-container--fluid--no-overflow">
     <div
-      v-if="isSpecificGoal"
+      v-if="isSpecificGoal && hasRegisteredData"
       class="fr-grid-row fr-grid-row--center"
     >
       <div class="fr-container fr-mb-2v">
@@ -25,6 +25,19 @@
         </div>
       </div>
     </div>
+    <div
+      v-if="!hasRegisteredData"
+      class="fr-grid-row fr-grid-row--center"
+    >
+      <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
+        <div class="fr-col-12 fr-col-offset-md-2 fr-col-md-10 fr-pl-md-2v fr-pr-md-6v">
+          <TeeNoResult
+            message="Oups ! Il nous manque quelques informations sur votre entreprise pour pouvoir afficher vos résultats."
+            cta-label="Je complète mon profil"
+          />
+        </div>
+      </div>
+    </div>
     <ProjectList
       v-else
       :sorted-projects="sortedProjects"
@@ -42,6 +55,7 @@ import { Project as UtilsProject } from '@/utils/project/project'
 interface ProjectListProps {
   filteredProjects?: Project[]
   hasError: boolean
+  hasRegisteredData: boolean
 }
 const props = defineProps<ProjectListProps>()
 
