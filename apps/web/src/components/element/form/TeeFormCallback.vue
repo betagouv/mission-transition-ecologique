@@ -50,7 +50,7 @@ const hasValidResponse = computed(() => {
 })
 
 const getMailTo = (): string => {
-  if (props.form.value) {
+  if (props.form) {
     const needsValue = props.form.needs.value ? props.form.needs.value : ''
     const nameValue = props.form.name.value ? props.form.name.value : ''
     const surnameValue = props.form.surname.value ? props.form.surname.value : ''

@@ -12,6 +12,7 @@ import {
   Opportunity,
   RouteName,
   ProgramData,
+  isProjectFormDataType,
   Project
 } from '@/types'
 import RequestApi from '@/service/api/requestApi'
@@ -46,7 +47,6 @@ export default class OpportunityApi extends RequestApi {
         headers: this._headers,
         body: JSON.stringify(this.payload())
       })
-
       resp = (await response.json()) as ReqResp
       resp.ok = response.ok
       resp.status = response.status
@@ -92,7 +92,7 @@ export default class OpportunityApi extends RequestApi {
   }
 
   private _getId(): string {
-    if (this._opportunityType === OpportunityType.CustomProject) {
+    if (isProjectFormDataType(this._opportunityForm)) {
       return this._opportunityForm.projectTitle.value as string
     }
     return this._id?.toString() as string
@@ -125,7 +125,7 @@ export default class OpportunityApi extends RequestApi {
   }
 
   private getTitleMessage(): string {
-    if (this._opportunityType === OpportunityType.Project || this._opportunityType === OpportunityType.CustomProject) {
+    if (isProjectFormDataType(this._opportunityForm)) {
       return this._opportunityForm.projectTitle.value as string
     }
     return this._slug as string

@@ -1,8 +1,8 @@
-import { CalloutType, FieldType } from '@/types'
+import { CalloutType, FieldType, WithoutNullableKeys } from '@/types'
 import { RouteName } from '@/types/routeType'
 
-export interface FormDataType {
-  [key: string]: InputFieldUnionType
+export type FormDataType = ProjectFormDataType | BaseFormDataType
+export interface BaseFormDataType {
   name: StringFieldInputType
   surname: StringFieldInputType
   tel: ValidatedStringFieldInputType
@@ -11,6 +11,10 @@ export interface FormDataType {
   needs: StringFieldInputType
   cgu: BooleanFieldInputType
   theme: SelectFieldInputType
+}
+
+export interface ProjectFormDataType extends BaseFormDataType {
+  projectTitle: StringFieldInputType
 }
 
 export type DefaultFieldFormType = {
@@ -51,6 +55,10 @@ export type InputFieldUnionType =
 
 export const isValidatedStringFieldInputType = (field: InputFieldUnionType): field is ValidatedStringFieldInputType => {
   return 'validation' in field
+}
+
+export function isProjectFormDataType(formData: WithoutNullableKeys<FormDataType>): formData is WithoutNullableKeys<ProjectFormDataType> {
+  return 'projectTitle' in formData
 }
 
 export type InputCalloutType = {
