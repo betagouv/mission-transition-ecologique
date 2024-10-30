@@ -28,7 +28,7 @@
         <div class="fr-card__body">
           <div class="fr-card__content fr-py-1v fr-px-4v fr-text--blue-france">
             <div class="fr-text--blue-france">
-              <div class="fr-text-weight--bold">{{ response.denomination || 'Entreprise individuelle' }}</div>
+              <div class="fr-text--bold">{{ response.denomination || 'Entreprise individuelle' }}</div>
               SIRET {{ response.siret }}
             </div>
             <div class="fr-card__desc fr-mt-1v">

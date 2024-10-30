@@ -32,9 +32,7 @@
         class="fr-bg--blue-france--lightness fr-mt-8v fr-p-0 fr-text--blue-france fr-radius-a--2v"
         @click="closeRegisterModal"
       >
-        <template #text>
-          <span class="fr-icon-close-line fr-icon--lg"></span>
-        </template>
+        <span class="fr-icon-close-line fr-icon--lg"></span>
       </TeeDsfrButton>
     </div>
   </div>
