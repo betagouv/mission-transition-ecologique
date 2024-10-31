@@ -1,7 +1,7 @@
 <template>
   <div
+    id="register-siret"
     class="fr-col-12 fr-col-md-7 fr-col-offset-md-2"
-    style="position: relative"
   >
     <h4 class="fr-mb-0 fr-py-2v fr-text--white">Quelle est votre entreprise ?</h4>
     <TeeRegisterSiretBar
@@ -152,5 +152,8 @@ const processInput = async () => {
   min-height: 20vh;
   overflow: hidden auto;
   width: calc(100% - 40px);
+}
+#register-siret {
+  position: relative;
 }
 </style>
