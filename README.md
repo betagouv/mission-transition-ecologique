@@ -221,7 +221,7 @@ see [scalingo manifest](https://doc.scalingo.com/platform/app/app-manifest) for 
 ## Credits
 
 - Team
-  - Product owner: [Jean-Baptiste Le Dévéhat](jbledevehat.fr)
+  - Product owner: [Jean-Baptiste Le Dévéhat](https://jbledevehat.fr)
   - Coaching: Julien Rayneau
   - Designers: Coline Lebaratoux
   - Business Developers:
