@@ -62,11 +62,11 @@ export default class Hook {
     }
   }
 
-  private static readonly hasQuery = (route: RouteLocationNormalized) => {
+  static readonly hasQuery = (route: RouteLocationNormalized) => {
     return Object.keys(route.query).length
   }
 
-  private static hasNameRoute(from: RouteLocationNormalized) {
+  static hasNameRoute(from: RouteLocationNormalized) {
     return from.name !== undefined
   }
 }

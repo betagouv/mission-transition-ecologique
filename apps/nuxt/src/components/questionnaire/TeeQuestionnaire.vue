@@ -40,8 +40,8 @@
 </template>
 
 <script setup lang="ts">
-import TrackContent from '@/components/track/TrackContent.vue'
-import TrackSidebar from '@/components/track/TrackSidebar.vue'
+import TrackContent from '@/components/questionnaire/track/TrackContent.vue'
+import TrackSidebar from '@/components/questionnaire/track/TrackSidebar.vue'
 import { useDebugStore } from '@/stores/debug'
 // import { useNavigationStore } from '@/stores/navigation'
 import { useTrackStore } from '@/stores/track'

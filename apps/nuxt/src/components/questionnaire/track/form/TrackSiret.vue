@@ -100,7 +100,7 @@
     <a
       class="fr-link tee-input-wildcard fr-text--sm"
       :href="Navigation.hashByRouteName(RouteName.Questionnaire)"
-      @click="goToNextTrack"
+      @click.prevent="goToNextTrack"
     >
       {{ option.wildcard.label[Translation.lang] }}
     </a>

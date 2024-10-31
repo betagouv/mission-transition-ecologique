@@ -200,3 +200,14 @@ It's still recommended to test the production build with `test:e2e` before deplo
 npm run build
 npm run test:e2e
 ```
+
+
+#### Debug nuxt - ssr
+
+###### Debugging the server
+
+```ts
+if (import.meta.server) {
+  console.log()
+}
+```

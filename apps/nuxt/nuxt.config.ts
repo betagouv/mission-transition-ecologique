@@ -5,11 +5,17 @@ import { defineNuxtConfig } from 'nuxt/config'
 export default defineNuxtConfig({
   workspaceDir: '../../',
   srcDir: 'src',
-  devtools: { enabled: true },
+  devtools: {
+    enabled: true,
+
+    timeline: {
+      enabled: true,
+    },
+  },
 
   devServer: {
     host: 'localhost',
-    port: 4200
+    port: 4242
   },
 
   typescript: {
@@ -24,9 +30,9 @@ export default defineNuxtConfig({
   },
 
   css: [
-    '@gouvfr/dsfr/dist/dsfr.min.css',           // Le CSS minimal du DSFR
+    '@gouvfr/dsfr/dist/dsfr.min.css',                // Le CSS minimal du DSFR
     '@gouvfr/dsfr/dist/utility/icons/icons.min.css', // Styles de tous les composants du DSFR
-    '@gouvminint/vue-dsfr/styles',                        // Styles des composants VueDsfr
+    '@gouvminint/vue-dsfr/styles',                   // Styles des composants VueDsfr
     '~/assets/custom.css',
     '~/assets/main.scss',
   ],
@@ -45,5 +51,9 @@ export default defineNuxtConfig({
   experimental: {
     renderJsonPayloads: false,
   },
-
+  nitro: {
+    experimental: {
+      openAPI: true,
+    }
+  }
 })

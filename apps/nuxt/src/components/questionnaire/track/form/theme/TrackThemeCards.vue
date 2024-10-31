@@ -17,7 +17,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { TrackThemeOptionProps } from '@/components/track/form/theme/TrackThemeCard.vue'
+import { TrackThemeOptionProps } from '@/components/questionnaire/track/form/theme/TrackThemeCard.vue'
 import { useTrackStore } from '@/stores/track'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import type { TrackOptionItem } from '@/types'

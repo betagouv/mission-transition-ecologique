@@ -10,11 +10,13 @@
 
 <script setup lang="ts">
 import ContactHelp from '@/components/contact/ContactHelp.vue'
+import { MiddlewareName } from '@/middleware/type/middlewareName'
 import { useNavigationStore } from '@/stores/navigation'
 import { TrackId } from '@/types'
 import { RouteName } from '@/types/routeType'
 
 definePageMeta({
-  name: RouteName.QuestionnaireStart
+  name: RouteName.QuestionnaireStart,
+  middleware: [MiddlewareName.resetUsedTrackStore, MiddlewareName.resetQueries, MiddlewareName.resetProgramFilters]
 })
 </script>
