@@ -9,7 +9,10 @@
       :class="imgClass"
       class="fr-bg--blue-france fr-px-md-32v fr-px-2v fr-pb-md-24v fr-pb-32v"
     >
-      <div class="fr-container fr-grid-row fr-grid-row--left fr-grid-row--top">
+      <div
+        id="register-modal-content"
+        class="fr-container fr-grid-row fr-grid-row--left fr-grid-row--top"
+      >
         <div class="fr-col-12 fr-col-md-7 fr-col-offset-md-2 fr-pb-md-4v fr-pt-8v fr-mb-4v fr-text--yellow">
           <div>
             <div class="fr-h1 fr-mb-0 fr-text--yellow">{{ Translation.t('register.mainTitle') }}</div>
@@ -94,6 +97,10 @@ const closeModal = () => {
 }
 </script>
 <style lang="scss" scoped>
+#register-modal-content {
+  position: relative;
+}
+
 #close-register-modal {
   position: absolute;
   right: 0;
