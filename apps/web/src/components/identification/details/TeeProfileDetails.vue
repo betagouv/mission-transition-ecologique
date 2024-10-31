@@ -27,11 +27,10 @@
   <div class="fr-col-sm-8 fr-pt-4v fr-mt-4v fr-col-md-7 fr-col-offset-md-2 fr-col-12">
     <TeeDsfrButton
       :class="Breakpoint.isMobile() ? 'fr-btn-fullwidth' : ''"
-      class="fr-bg--yellow fr-text--blue-france"
+      class="fr-bg--yellow fr-text--blue-france fr-col-justify--center"
+      label="Enregistrer et fermer"
       @click="saveProfile"
-    >
-      <span class="fr-text--center">Enregistrer et fermer </span>
-    </TeeDsfrButton>
+    />
   </div>
 </template>
 <script setup lang="ts">
