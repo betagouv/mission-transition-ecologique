@@ -3,13 +3,14 @@
     v-show="manual"
     class="fr-col-sm-8 fr-col-md-5 fr-col-offset-md-2 fr-col-12"
   >
-    <h4 class="fr-mb-0 fr-py-2v fr-text--white">Quelle est votre entreprise ?</h4>
     <TeeDsfrButton
+      size="small"
       class="fr-btn--tertiary-no-outline fr-p-0 fr-text--white fr-btn-bg fr-text--sm fr-text--underline"
       @click="openSiretStep"
     >
-      <span class="fr-icon--lg fr-pr-2v fr-icon-arrow-left-line" /><span>je complète les informations avec mon SIRET</span>
+      <span class="fr-pr-2v fr-icon-arrow-left-line" /><span>je complète les informations avec mon SIRET</span>
     </TeeDsfrButton>
+    <h4 class="fr-mb-0 fr-py-2v fr-text--white">Quelle est votre entreprise ?</h4>
   </div>
   <TeeProfileElement
     v-for="detailKey in Object.keys(profile)"
@@ -32,8 +33,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { RegisterDetailType, RegisterDetails, Sector } from '@/types'
-import { CompanyDataStorageKey, CompanyDataType } from '@/types/companyDataType'
+import { RegisterDetailType, RegisterDetails, Sector, CompanyDataStorageKey, CompanyDataType } from '@/types'
 import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
 interface Props {

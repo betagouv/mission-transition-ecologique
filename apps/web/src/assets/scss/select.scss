@@ -2,4 +2,7 @@
 
 .fr-select {
     background-color: setting.$white;
+    option:first-child {
+    font-style: italic;
+    }
 } 

@@ -48,15 +48,17 @@
         v-if="!Breakpoint.isSmallScreen()"
         id="register-text"
         class="fr-text--yellow"
-        >Vous êtes...?
+      >
+        {{ Translation.t('register.mainTitle') }}
       </span>
     </TeeDsfrButton>
   </Transition>
 </template>
 <script setup lang="ts">
-import { CompanyDataStorageKey } from '@/types/companyDataType'
+import { CompanyDataStorageKey } from '@/types'
 import Breakpoint from '@/utils/breakpoints'
 import CompanyDataStorage from '@/utils/storage/companyDataStorage'
+import Translation from '@/utils/translation'
 
 const registeredData = CompanyDataStorage.getData()
 const toggleRegisterModal = inject<() => void>('toggleRegisterModal')

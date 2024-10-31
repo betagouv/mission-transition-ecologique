@@ -15,7 +15,7 @@
     :error-message="showError && !localisationInput ? errorMessage : ''"
   >
     <div
-      class="fr-search-bar"
+      class="fr-search-bar fr-search-bar--yellow"
       role="search"
     >
       <DsfrInput
@@ -27,8 +27,7 @@
         @keyup.enter="searchLocalisation"
       />
       <DsfrButton
-        id="siret-search"
-        class="fr-bg--yellow"
+        class="fr-bg--yellow search-button"
         tertiary
         no-outline
         @click="searchLocalisation"

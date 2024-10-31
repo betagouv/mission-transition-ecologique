@@ -1,3 +1,7 @@
+@use "setting";
+@use 'sass:meta';
+@use 'sass:map';
+
 input[type="search"] {
   &::-webkit-search-decoration,
   &::-webkit-search-cancel-button,
@@ -23,11 +27,21 @@ input[type="search"] {
 }
 
 .fr-search-bar {
-  &-big {
-    .fr-input {
+  &-lg {
+    .fr-input, .search-button {
       max-height: 3rem;
       line-height: 3rem;
     }
-  } 
-  
+  }
+  @each $color, $properties in setting.$colors {
+    &--#{$color} {
+      .fr-input, .search-button {
+        @if meta.type-of($properties) == map {
+          box-shadow: inset 0 -2px 0 0 map.get($properties, "color");
+        } @else {
+          box-shadow: inset 0 -2px 0 0 $properties;
+        }
+      }
+    }
+  }
 } 

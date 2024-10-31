@@ -5,7 +5,7 @@
     </span>
     <div
       id="header-search"
-      class="fr-search-bar fr-search-bar-big"
+      class="fr-search-bar fr-search-bar-lg fr-search-bar--yellow"
       role="search"
     >
       <DsfrInput
@@ -17,8 +17,7 @@
         @keyup.enter="onClick"
       />
       <DsfrButton
-        id="siret-search"
-        class="fr-bg--yellow"
+        class="fr-bg--yellow search-button"
         tertiary
         no-outline
         :disabled="isLoading"
@@ -57,12 +56,3 @@ const onClick = () => {
 }
 onClickOutside(siretSearchBar, () => emit('onClear'))
 </script>
-<style lang="scss" scoped>
-@use '@/assets/scss/setting';
-
-#siret-search {
-  box-shadow: inset 0 -2px 0 0 setting.$blue-france;
-  max-height: 3rem;
-  line-height: 3rem;
-}
-</style>

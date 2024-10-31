@@ -1,4 +1,4 @@
-import { CompanyDataStorageKey, CompanyDataType } from '@/types/companyDataType'
+import { CompanyDataStorageKey, CompanyDataType } from '@/types'
 import { LocalStorageHandler } from '@/utils/storage/localStorageHandler'
 import { StructureSize } from '@tee/common'
 import { ref, Ref } from 'vue'

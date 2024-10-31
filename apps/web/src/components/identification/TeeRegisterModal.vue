@@ -10,7 +10,7 @@
       class="fr-bg--blue-france fr-px-md-32v fr-px-2v fr-pb-md-24v fr-pb-32v"
     >
       <div class="fr-container fr-grid-row fr-grid-row--left fr-grid-row--top">
-        <div class="fr-col-12 fr-col-md-7 fr-col-offset-md-2 fr-col-10 fr-pb-md-4v fr-pt-8v fr-mb-4v fr-text--yellow">
+        <div class="fr-col-12 fr-col-md-7 fr-col-offset-md-2 fr-pb-md-4v fr-pt-8v fr-mb-4v fr-text--yellow">
           <div class="fr-h1 fr-mb-0 fr-text--yellow">{{ Translation.t('register.mainTitle') }}</div>
           <div>{{ Translation.t('register.description') }}</div>
         </div>
@@ -39,10 +39,9 @@
 </template>
 <script setup lang="ts">
 import Translation from '@/utils/translation'
-import { EstablishmentFront } from '@/types'
+import { EstablishmentFront, CompanyDataStorageKey, CompanyDataType } from '@/types'
 import Breakpoint from '@/utils/breakpoints'
 import CompanyDataStorage from '@/utils/storage/companyDataStorage'
-import { CompanyDataStorageKey, CompanyDataType } from '@/types/companyDataType'
 import { onClickOutside } from '@vueuse/core'
 
 const registerModal = ref(null)

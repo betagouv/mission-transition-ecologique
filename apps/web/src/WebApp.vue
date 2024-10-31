@@ -45,7 +45,7 @@ const isReady = computed<boolean>(() => {
 
 const toggleRegisterModal = (forceStatus: boolean | undefined) => {
   registerModal.value = forceStatus || !registerModal.value
-  document.body.style.overflow = registerModal.value ? '' : 'hidden'
+  document.body.style.overflow = registerModal.value ? 'hidden' : ''
 }
 provide('toggleRegisterModal', toggleRegisterModal)
 
