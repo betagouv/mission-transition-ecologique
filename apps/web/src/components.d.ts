@@ -124,5 +124,6 @@ declare module 'vue' {
     TrackSubmitButton: typeof import('./components/track/form/TrackSubmitButton.vue')['default']
     TrackThemeCard: typeof import('./components/track/form/theme/TrackThemeCard.vue')['default']
     TrackThemeCards: typeof import('./components/track/form/theme/TrackThemeCards.vue')['default']
+    VIcon: typeof import('oh-vue-icons')['OhVueIcon']
   }
 }
