@@ -33,6 +33,7 @@ input[type="search"] {
       line-height: 3rem;
     }
   }
+
   @each $color, $properties in setting.$colors {
     &--#{$color} {
       .fr-input, .search-button {
