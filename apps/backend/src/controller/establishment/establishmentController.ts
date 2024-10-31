@@ -47,14 +47,15 @@ export class SireneController extends Controller {
    */
 
   @Example<Establishment>(exampleEstablishment)
-  @Get('{query}')
+  @Get('{query}/{resultCount}')
   public async getEstablishmentBySiret(
     @Path() query: string,
+    @Path() resultCount: number,
     @Res() requestFailedResponse: TsoaResponse<500, ErrorJSON>,
     @Res() _validationFailedResponse: TsoaResponse<422, ValidateErrorJSON>,
     @Res() notFoundResponse: TsoaResponse<404, EstablishmentNotFoundErrorJSON>
   ): Promise<EstablishmentSearch> {
-    const establishmentResult = await new EstablishmentService().search(query)
+    const establishmentResult = await new EstablishmentService().search(query, resultCount)
 
     if (establishmentResult.isErr) {
       const err = establishmentResult.error

@@ -7,8 +7,8 @@ import { RechercheEntrepriseEstablishment, RechercheEntrepriseSearch } from './t
 import Monitor from '../../../../common/domain/monitoring/monitor'
 
 export class RechercheEntreprise {
-  public searchEstablishment: EstablishmentRepository['search'] = async (query) => {
-    const api_url = `https://recherche-entreprises.api.gouv.fr/search?q=${query}&per_page=9&etat_administratif=A`
+  public searchEstablishment: EstablishmentRepository['search'] = async (query: string, resultCount: number) => {
+    const api_url = `https://recherche-entreprises.api.gouv.fr/search?q=${query}&per_page=${resultCount}&etat_administratif=A`
 
     try {
       const response: AxiosResponse<RechercheEntrepriseSearch> = await axios.get(api_url)

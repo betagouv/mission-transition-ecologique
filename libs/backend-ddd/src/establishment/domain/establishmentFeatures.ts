@@ -14,7 +14,7 @@ export default class EstablishmentFeatures {
     this._nafMapping = nafMapping
   }
 
-  public async search(query: string): Promise<Result<EstablishmentSearch, Error>> {
+  public async search(query: string, resultCount: number): Promise<Result<EstablishmentSearch, Error>> {
     if (SiretValidator.validate(query)) {
       const bySiretResult = await this._searchBySiret(query)
       if (bySiretResult.isOk) {
@@ -22,7 +22,7 @@ export default class EstablishmentFeatures {
       }
     }
 
-    return await this._searchByQuery(query)
+    return await this._searchByQuery(query, resultCount)
   }
 
   public async getBySiret(siret: Siret): Promise<Result<Establishment, Error>> {
@@ -48,8 +48,8 @@ export default class EstablishmentFeatures {
     return Result.ok(establishmentSearch)
   }
 
-  private async _searchByQuery(query: string): Promise<Result<EstablishmentSearch, Error>> {
-    const results = await this._establishmentRepository.search(query)
+  private async _searchByQuery(query: string, resultCount: number): Promise<Result<EstablishmentSearch, Error>> {
+    const results = await this._establishmentRepository.search(query, resultCount)
     if (results.isOk) {
       const establishmentsSearch = this._enrichAndConvertToEstablishmentSearch(results.value)
       return Result.ok(establishmentsSearch)

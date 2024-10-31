@@ -5,8 +5,8 @@ import { SiretValidator } from '@tee/common'
 import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
 export default class TrackSiret {
-  static async search(query: string) {
-    return await new EstablishmentApi().getByQuery(query)
+  static async search(query: string, resultCount?: number) {
+    return await new EstablishmentApi().getByQuery(query, resultCount || 3)
   }
 
   static createData(

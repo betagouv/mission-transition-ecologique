@@ -126,7 +126,7 @@ const processInput = async () => {
   } else if (SiretValidator.isValidSiretFormat(queryValue.value) && !SiretValidator.isValidSiretNumber(queryValue.value)) {
     errorMessage.value = "Le numéro SIRET n'est pas valide"
   } else {
-    const searchResult = await TrackSiret.search(queryValue.value)
+    const searchResult = await TrackSiret.search(queryValue.value, 9)
     if (searchResult.isErr) {
       errorMessage.value = Translation.t('enterprise.apiError')
     } else if (searchResult.value.resultCount == 0) {
