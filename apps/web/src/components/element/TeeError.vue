@@ -1,10 +1,9 @@
 <template>
   <div class="fr-text-center">
     <p class="fr-text--red fr-text--md fr-m-0">
-      <v-icon
-        name="ri-close-circle-fill"
+      <span
+        class="fr-icon-close-circle-fill fr-icon--lg"
         aria-hidden="true"
-        scale="3"
       />
     </p>
     <h4 class="fr-text--red fr-m-0 fr-mb-2v">

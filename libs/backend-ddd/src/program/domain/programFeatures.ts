@@ -1,9 +1,12 @@
 import { CurrentDateProvider, ProgramRepository, RulesManager } from './spi'
-import { filterPrograms } from './filterPrograms'
+import { evaluateProgramEligibility, filterPrograms } from './filterPrograms'
 import { sortPrograms } from './sortPrograms'
 import { Result } from 'true-myth'
-import { ProgramType } from '@tee/data'
+import { ProgramEligibilityType, ProgramType, ProgramTypeWithEligibility } from '@tee/data'
 import { Objective, QuestionnaireData } from '@tee/common'
+import { Monitor } from '../../common'
+import ProgramCustomizer from './programCustomizer'
+import { ProgramNotFoundError } from './types'
 
 export default class ProgramFeatures {
   private _programRepository: ProgramRepository
@@ -24,10 +27,48 @@ export default class ProgramFeatures {
     return this._programRepository.getById(id)
   }
 
-  public getFilteredBy(questionnaireData: QuestionnaireData): Result<ProgramType[], Error> {
-    const allPrograms = this._programRepository.getAll()
+  public getOneWithMaybeEligibility(id: string, questionnaireData: QuestionnaireData): Result<ProgramTypeWithEligibility, Error> {
+    let program = this.getById(id)
+    if (!program) {
+      Monitor.warning('Requested Program Id unknown', { id })
+      return Result.err(new ProgramNotFoundError())
+    }
+    if (new ProgramCustomizer().shouldRewritePrograms(questionnaireData)) {
+      program = JSON.parse(JSON.stringify(program)) as ProgramType // deep copy before modification
+      program = new ProgramCustomizer().rewriteOneProgram(program, questionnaireData)
+    }
+
+    if (Object.keys(questionnaireData).length === 0) {
+      return Result.ok({ ...program, eligibility: ProgramEligibilityType.Unknown })
+    }
+
+    if (!this._currentDateService || !this._rulesService) {
+      return Result.err(new Error('currentDateService and rulesService should be defined to evaluate a program'))
+    }
+
+    const programWithEligibility = evaluateProgramEligibility(
+      program,
+      questionnaireData,
+      this._currentDateService.get(),
+      this._rulesService
+    )
+    if (programWithEligibility.isErr) {
+      return Result.err(programWithEligibility.error)
+    }
+
+    return Result.ok(programWithEligibility.value)
+  }
+
+  public getFilteredBy(questionnaireData: QuestionnaireData): Result<ProgramTypeWithEligibility[], Error> {
     if (!this._currentDateService || !this._rulesService) {
       return Result.err(new Error('currentDateService and rulesService should be defined to filter programs'))
+    }
+    let allPrograms
+    if (new ProgramCustomizer().shouldRewritePrograms(questionnaireData)) {
+      const editablePrograms = this._programRepository.getEditablePrograms()
+      allPrograms = new ProgramCustomizer().getAllPersonalizedPrograms(editablePrograms, questionnaireData)
+    } else {
+      allPrograms = this._programRepository.getAll()
     }
 
     let filteredPrograms = filterPrograms(allPrograms, questionnaireData, this._currentDateService.get(), this._rulesService)

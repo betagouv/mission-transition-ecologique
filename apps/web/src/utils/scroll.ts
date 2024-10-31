@@ -6,6 +6,8 @@ export class Scroll {
     if (topBar) {
       const top = element.getBoundingClientRect().top + window.scrollY - topBar.offsetHeight
       window.scrollTo({ top: top, ...this._defaultOptions })
+    } else {
+      this.to(element)
     }
   }
 
