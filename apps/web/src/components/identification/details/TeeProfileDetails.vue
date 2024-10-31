@@ -5,7 +5,7 @@
   >
     <TeeDsfrButton
       size="small"
-      class="fr-btn--tertiary-no-outline fr-p-0 fr-text--white fr-btn-bg fr-text--sm fr-text--underline"
+      class="fr-btn--tertiary-no-outline fr-text-left fr-p-0 fr-text--white fr-btn-bg fr-text--sm fr-text--underline"
       @click="openSiretStep"
     >
       <span class="fr-pr-2v fr-icon-arrow-left-line" /><span>je complète les informations avec mon SIRET</span>
@@ -26,14 +26,17 @@
   />
   <div class="fr-col-sm-8 fr-pt-4v fr-mt-4v fr-col-md-7 fr-col-offset-md-2 fr-col-12">
     <TeeDsfrButton
+      :class="Breakpoint.isMobile() ? 'fr-btn-fullwidth' : ''"
       class="fr-bg--yellow fr-text--blue-france"
-      label="Enregistrer et fermer"
       @click="saveProfile"
-    />
+    >
+      <span class="fr-text--center">Enregistrer et fermer </span>
+    </TeeDsfrButton>
   </div>
 </template>
 <script setup lang="ts">
 import { RegisterDetailType, RegisterDetails, Sector, CompanyDataStorageKey, CompanyDataType } from '@/types'
+import Breakpoint from '@/utils/breakpoints'
 import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
 interface Props {

@@ -11,7 +11,17 @@
     >
       <div class="fr-container fr-grid-row fr-grid-row--left fr-grid-row--top">
         <div class="fr-col-12 fr-col-md-7 fr-col-offset-md-2 fr-pb-md-4v fr-pt-8v fr-mb-4v fr-text--yellow">
-          <div class="fr-h1 fr-mb-0 fr-text--yellow">{{ Translation.t('register.mainTitle') }}</div>
+          <div>
+            <div class="fr-h1 fr-mb-0 fr-text--yellow">{{ Translation.t('register.mainTitle') }}</div>
+            <TeeDsfrButton
+              id="close-register-modal"
+              size="sm"
+              class="fr-bg--blue-france--lightness fr-mr-4v fr-mt-8v fr-p-0 fr-text--blue-france fr-radius-a--2v"
+              @click="closeModal"
+            >
+              <span class="fr-icon-close-line fr-icon--lg"></span>
+            </TeeDsfrButton>
+          </div>
           <div>{{ Translation.t('register.description') }}</div>
         </div>
         <TeeRegisterSiret
@@ -27,13 +37,6 @@
           @modify-siret="resetSiret"
         />
       </div>
-      <TeeDsfrButton
-        size="sm"
-        class="fr-bg--blue-france--lightness fr-mt-8v fr-p-0 fr-text--blue-france fr-radius-a--2v"
-        @click="closeModal"
-      >
-        <span class="fr-icon-close-line fr-icon--lg"></span>
-      </TeeDsfrButton>
     </div>
   </div>
 </template>
@@ -91,6 +94,12 @@ const closeModal = () => {
 }
 </script>
 <style lang="scss" scoped>
+#close-register-modal {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
 #register-modal-overlay {
   position: fixed;
   inset: 0;
