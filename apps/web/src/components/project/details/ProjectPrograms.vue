@@ -39,7 +39,7 @@
       <TeeRegisterHighlight
         v-if="!CompanyDataStorage.hasData()"
         class="fr-mx-3v"
-        text="Vous voulez uniquement voir les aides éligibles pour votre entreprise ?"
+        :text="Translation.t('project.projectRegisterHighlightText')"
       />
       <div
         v-else
