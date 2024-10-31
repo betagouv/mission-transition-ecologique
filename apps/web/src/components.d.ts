@@ -110,6 +110,7 @@ declare module 'vue' {
     TeeQuestionnaire: typeof import('./components/questionnaire/TeeQuestionnaire.vue')['default']
     TeeQuestionnaireResult: typeof import('./components/questionnaire/TeeQuestionnaireResult.vue')['default']
     TeeRegisterCTA: typeof import('./components/identification/TeeRegisterCTA.vue')['default']
+    TeeRegisterHighlight: typeof import('./components/identification/TeeRegisterHighlight.vue')['default']
     TeeRegisterModal: typeof import('./components/identification/TeeRegisterModal.vue')['default']
     TeeRegisterSiret: typeof import('./components/identification/TeeRegisterSiret.vue')['default']
     TeeRegisterSiretBar: typeof import('./components/identification/TeeRegisterSiretBar.vue')['default']
