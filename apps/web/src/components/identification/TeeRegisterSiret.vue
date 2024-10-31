@@ -153,6 +153,7 @@ const processInput = async () => {
   overflow: hidden auto;
   width: calc(100% - 40px);
 }
+
 #register-siret {
   position: relative;
 }
