@@ -5,6 +5,8 @@ import { Result } from 'true-myth'
 import { ProgramEligibilityType, ProgramType, ProgramTypeWithEligibility } from '@tee/data'
 import { Objective, QuestionnaireData } from '@tee/common'
 import { Monitor } from '../../common'
+import ProgramCustomizer from './programCustomizer'
+import { ProgramNotFoundError } from './types'
 
 export default class ProgramFeatures {
   private _programRepository: ProgramRepository
@@ -26,10 +28,14 @@ export default class ProgramFeatures {
   }
 
   public getOneWithMaybeEligibility(id: string, questionnaireData: QuestionnaireData): Result<ProgramTypeWithEligibility, Error> {
-    const program = this.getById(id)
+    let program = this.getById(id)
     if (!program) {
       Monitor.warning('Requested Program Id unknown', { id })
-      return Result.err(new Error('program Id Inconnu'))
+      return Result.err(new ProgramNotFoundError())
+    }
+    if (new ProgramCustomizer().shouldRewritePrograms(questionnaireData)) {
+      program = JSON.parse(JSON.stringify(program)) as ProgramType // deep copy before modification
+      program = new ProgramCustomizer().rewriteOneProgram(program, questionnaireData)
     }
 
     if (Object.keys(questionnaireData).length === 0) {
@@ -54,9 +60,15 @@ export default class ProgramFeatures {
   }
 
   public getFilteredBy(questionnaireData: QuestionnaireData): Result<ProgramTypeWithEligibility[], Error> {
-    const allPrograms = this._programRepository.getAll()
     if (!this._currentDateService || !this._rulesService) {
       return Result.err(new Error('currentDateService and rulesService should be defined to filter programs'))
+    }
+    let allPrograms
+    if (new ProgramCustomizer().shouldRewritePrograms(questionnaireData)) {
+      const editablePrograms = this._programRepository.getEditablePrograms()
+      allPrograms = new ProgramCustomizer().getAllPersonalizedPrograms(editablePrograms, questionnaireData)
+    } else {
+      allPrograms = this._programRepository.getAll()
     }
 
     let filteredPrograms = filterPrograms(allPrograms, questionnaireData, this._currentDateService.get(), this._rulesService)

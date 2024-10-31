@@ -28,6 +28,14 @@ export enum StructureSize {
   ETI_GE = 'ETI_GE'
 }
 
+export const SizeToWorkforce: { [key in StructureSize]: number } = {
+  [StructureSize.EI]: 1,
+  [StructureSize.TPE]: 19,
+  [StructureSize.PE]: 49,
+  [StructureSize.ME]: 249,
+  [StructureSize.ETI_GE]: 251
+}
+
 export enum LegalCategory {
   EI = '1000'
 }
