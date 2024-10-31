@@ -231,7 +231,7 @@ see [scalingo manifest](https://doc.scalingo.com/platform/app/app-manifest) for 
   - Maintainers - Developers:
     - [Yohann Valentin](https://yohannvalentin.com)
     - [Thibaut Tezenas Du Montcel](https://ttdm.github.io)
-    - [Dorian Lemoine](https://dorianlemoine.fr)
+    - [Dorian Lemoine](https://github.com/dolemoine)
     - [Oumeima El Isbihani](https://multi.coop)
   - Old team members:
     - [Pierre Camilleri](https://multi.coop) (Maintainer - Developer)
