@@ -111,7 +111,7 @@ const closeModal = () => {
   position: fixed;
   inset: 0;
   overflow: hidden scroll;
-  z-index: 1000;
+  z-index: 2000;
 }
 
 .register-modal-overlay-lg {

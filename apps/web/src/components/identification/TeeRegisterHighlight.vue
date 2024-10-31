@@ -16,6 +16,7 @@
             <TeeDsfrButton
               class="fr-text--yellow fr-text--bold"
               label="Je complète mon profil"
+              @click="toggleRegisterModal"
             />
           </div>
         </div>
@@ -28,4 +29,5 @@ interface Props {
   text: string
 }
 defineProps<Props>()
+const toggleRegisterModal = inject<() => void>('toggleRegisterModal')
 </script>

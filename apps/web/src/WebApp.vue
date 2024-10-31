@@ -46,6 +46,12 @@ const isReady = computed<boolean>(() => {
 const toggleRegisterModal = (forceStatus: boolean | undefined) => {
   registerModal.value = forceStatus || !registerModal.value
   document.body.style.overflow = registerModal.value ? 'hidden' : ''
+  if (registerModal.value) {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+  }
 }
 provide('toggleRegisterModal', toggleRegisterModal)
 
