@@ -1,6 +1,7 @@
 import { useNavigationStore } from '@/stores/navigation'
 import { useTrackStore } from '@/stores/track'
 import {
+  LegalCategory,
   type NextTrackRuleSet,
   type QuestionnaireData,
   StructureSize,
@@ -278,27 +279,39 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
         Object.entries(questionnaireDatum).forEach(([key, value]) => {
           questionnaireData[key] = value as unknown
         })
+
+        if (usedTrack.id === TrackId.Siret && questionnaireDatum.legalCategory === LegalCategory.EI) {
+          questionnaireData.structure_size = StructureSize.EI
+        }
       })
     })
 
+    if (!useNavigationStore().isCatalog() && !useNavigationStore().isProgramDetail()) {
+      questionnaireData.onlyEligible = true
+    }
+
     if (CompanyDataStorage.hasData()) {
-      const companyData: CompanyDataType = CompanyDataStorage.getData().value
-      Object.entries(companyData).forEach(([key, value]) => {
-        if (value !== null) {
-          if (Object.values(StructureSize).includes(value as StructureSize) && questionnaireData[key] !== value) {
-            questionnaireData[key] = value
-          } else if (typeof value === 'object' && !Array.isArray(value)) {
-            Object.entries(value).forEach(([k, v]) => {
-              if (questionnaireData[k] !== v) {
-                questionnaireData[k] = v
-              }
-            })
-          }
-        }
-      })
+      _getCompanyDataFromStorage(questionnaireData)
     }
 
     return questionnaireData
+  }
+
+  function _getCompanyDataFromStorage(questionnaireData: { [k: string]: any }) {
+    const companyData: CompanyDataType = CompanyDataStorage.getData().value
+    Object.entries(companyData).forEach(([key, value]) => {
+      if (value !== null) {
+        if (Object.values(StructureSize).includes(value as StructureSize) && questionnaireData[key] !== value) {
+          questionnaireData[key] = value
+        } else if (typeof value === 'object' && !Array.isArray(value)) {
+          Object.entries(value).forEach(([k, v]) => {
+            if (questionnaireData[k] !== v) {
+              questionnaireData[k] = v
+            }
+          })
+        }
+      }
+    })
   }
 
   async function setFromNavigation() {

@@ -610,7 +610,7 @@
     "shortDescription": "Recruter un profil sur des missions de transition écologique et énergétique.",
     "image": "/images/projet/recrutement.webp",
     "longDescription": "Les bénéfices d'un recrutement d'une personne dédiée aux sujets sociaux et environnementaux sont nombreux. Elle peut vous aider à élaborer et à mettre en œuvre des mesures visant à réduire l'empreinte environnementale dans le respect des obligations légales. A terme, investir dans ce type de poste permet d'améliorer la résilience de votre entreprise aux risques environnementaux, de construire un business plan durable et de renforcer votre rôle d'employeur responsable.",
-    "moreDescription": "- [**Responsable RSE**](https://www.apec.fr/tous-nos-metiers/ressources-humaines/responsable-rse.html), une fiche de poste proposée par l'APEC.\n- [**Les missions du référent énergie**](https://librairie.ademe.fr/ged/2528/sme-fiche-regerent-energie-2015.pdf), une fiche technique des missions et activités du référent énergie en entreprise.",
+    "moreDescription": "- [**Responsable RSE**](https://www.apec.fr/tous-nos-metiers/ressources-humaines/responsable-rse.html), une fiche de poste proposée par l'APEC.\n- [**Les missions du référent énergie**](https://atee.fr/system/files/2019-12/2015-MDE-%20Fiche%20Fonction%20des%20R%C3%A9f%C3%A9rents%20Energie.pdf#:~:text=Le%20r%C3%A9f%C3%A9rent%20%C3%A9nergie%20doit%20%C3%AAtre%20capable%20de%20%3A,prestations%20%C3%A9nerg%C3%A9tiques.%20Suivre%20la%20r%C3%A9alisation%20d%E2%80%99un%20audit%20%C3%A9nerg%C3%A9tique.), une fiche technique des missions et activités du référent énergie en entreprise.",
     "themes": [
       "rh"
     ],
@@ -710,6 +710,7 @@
     "mainTheme": "environmental",
     "programs": [
       "diagnostic-changement-climatique",
+      "diagnostic-transition-ecologique",
       "fonds-tourisme-durable",
       "diag-eco-flux",
       "performa-environnement",
@@ -965,7 +966,7 @@
     "nameTag": "🚿 arrosage",
     "shortDescription": "Un système d'irrigation performant peut vous faire économiser l'eau.",
     "image": "/images/projet/arrosage.webp",
-    "longDescription": "Terrasses, jardins et potagers sont gourmands en arrosage. Certains équipements limiteront votre consommation d'eau, comme par exemple :\n\n- un arrosage au goutte-à-goutte\n\n- un système de récupération d'eau de pluie\n\n- le paillage (qui limite l'évaporation)\n\n- la culture d’espèces peu gourmandes en eau et adaptées au climat local\n\n- le raccordement à un puits existant.",
+    "longDescription": "Terrasses, jardins et potagers sont gourmands en arrosage. Certains équipements limiteront votre consommation d'eau, comme par exemple :\n\n- un arrosage au goutte-à-goutte\n- un système de récupération d'eau de pluie\n- le paillage (qui limite l'évaporation)\n- la culture d’espèces peu gourmandes en eau et adaptées au climat local\n- le raccordement à un puits existant.",
     "moreDescription": "- [**Un jardin au naturel**](https://agirpourlatransition.ademe.fr/particuliers/entreprises/maison/jardin-naturel), un guide de l'ADEME\n- [**Comment bien pailler au jardin**](https://librairie.ademe.fr/dechets-economie-circulaire/5486-comment-bien-pailler-au-jardin-.html), une fiche technique.",
     "themes": [
       "water"
@@ -1026,7 +1027,7 @@
     "nameTag": "🚲 abris vélos",
     "shortDescription": "Il permet de conserver les vélos de vos collaborateurs et de vos clients à l'abri des intempéries.",
     "image": "/images/projet/abris-velos.webp",
-    "longDescription": "La construction d'un abri à vélo muni d'emplacements sécurisés encourage les mobilités vertes de vos collaborateurs, et favorise l'accueil des cyclo-touristes.\n\nS'il est équipé de panneaux photovoltaïques, l'abri à vélo peut vous permettre de produire l'électricité nécessaire à la recharge des vélos à assistance électrique.",
+    "longDescription": "La construction d'un abri à vélo muni d'emplacements sécurisés encourage les mobilités vertes de vos collaborateurs, et favorise l'accueil des cyclo-touristes.\n\nS'il est équipé de panneaux photovoltaïques, l'abri à vélo peut vous permettre de produire l'électricité nécessaire à la recharge des vélos à assistance électrique.\n\nUn abris à vélo peut être équipé :\n\n\\- de bornes de recharge pour vélo à assistance électrique (VAE)\n\n\\- de bornes de gonflage\n\n\\- de bornes de réparation\n\n\\- de bornes multifonction\n\n\\- de consignes à bagages sécurisées",
     "moreDescription": "- [**Mon entreprise à l'heure des mobilités durables**](https://www.ecologie.gouv.fr/sites/default/files/documents/22061-3_Mobilite%20durable%20entrepriseA4_web.pdf)**,** les obligations et dispositifs de soutien dans le secteur privé.",
     "themes": [
       "mobility"
@@ -1043,12 +1044,12 @@
   {
     "id": 144,
     "slug": "biodiversite",
-    "title": "Biodiversité",
-    "nameTag": "🌳 biodiversité",
+    "title": "Empreinte biodiversité",
+    "nameTag": "🦋 biodiversité",
     "shortDescription": "Comprendre et minimiser les impacts de l'activité de votre entreprise sur la faune et la flore.",
     "image": "/images/projet/biodiversite.webp",
     "longDescription": "La Stratégie nationale biodiversité 2030 promeut les initiatives pour faire progresser la prise en compte de la biodiversité dans les stratégies des entreprises. Il s'agit à la fois de minimiser l'impact des entreprises sur les écosystèmes et de renforcer la résilience de leur activité au changement climatique. \\\nLa préservation ou la restauration d'espèces en danger, de faune et de flore, réduire les pollutions, ramener de la nature en ville... sont autant de propositions qui visent à renforcer les liens avec les écosystèmes.",
-    "moreDescription": "- [**Entreprises engagées pour la nature**](https://biodiversite.gouv.fr/sites/default/files/2024-03/OFB_GUIDE_EEN_2023.pdf), un guide gouvernemental.\n- [**9 mesures de la Stratégie nationale biodiversité 2030**](https://biodiversite.gouv.fr/les-mesures-de-la-snb?field_target%5B196%5D=196&op=) pour les entreprises.",
+    "moreDescription": "- [**Entreprises engagées pour la nature** **de l'OFB**](https://biodiversite.gouv.fr/sites/default/files/2024-03/OFB_GUIDE_EEN_2023.pdf), un guide gouvernemental.\n- [**9 mesures de la Stratégie nationale biodiversité 2030**](https://biodiversite.gouv.fr/les-mesures-de-la-snb?field_target%5B196%5D=196&op=) pour les entreprises.",
     "themes": [
       "biodiversite"
     ],
