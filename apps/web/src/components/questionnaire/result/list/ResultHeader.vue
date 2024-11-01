@@ -22,9 +22,9 @@ import UsedTrack from '@/utils/track/usedTrack'
 import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
 const resume: string = Translation.t('programResults.resume', {
-  effectif: Translation.t('enterprise.structureSize.' + TrackStructure.getSize()),
-  secteur: TrackStructure.getSectorShortLabel(),
-  region: TrackStructure.getRegion()
+  effectif: Translation.t('enterprise.structureSize.' + (TrackStructure.getSize() ?? CompanyDataStorage.getSize() ?? '')),
+  secteur: TrackStructure.getSectorShortLabel() ?? CompanyDataStorage.getSiret()?.secteur ?? '',
+  region: TrackStructure.getRegion() ?? CompanyDataStorage.getSiret()?.region ?? ''
 })
 
 const hasRegisteredData = ref(CompanyDataStorage.hasData())
