@@ -1,5 +1,5 @@
 <template>
-  <ProgramEligibilityBar />
+  <ProgramEligibilityBar v-if="hasRegisteredData" />
   <TeeDsfrBreadcrumb :links="links" />
   <div class="fr-container fr-mt-0 fr-mt-md-3v">
     <div class="fr-grid-row fr-grid-row-gutters">
@@ -35,6 +35,7 @@ import { useNavigationStore } from '@/stores/navigation'
 import { useProjectStore } from '@/stores/project'
 import type { DsfrBreadcrumbProps } from '@gouvminint/vue-dsfr'
 import Translation from '@/utils/translation'
+import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
 interface Props {
   programId: string
@@ -48,6 +49,8 @@ const projectStore = useProjectStore()
 const navigationStore = useNavigationStore()
 const isCatalogDetail = navigationStore.isCatalogProgramDetail()
 const router = useRouter()
+
+const hasRegisteredData = ref(CompanyDataStorage.hasData())
 
 const routeToResults = {
   name: isCatalogDetail ? RouteName.CatalogPrograms : RouteName.QuestionnaireResult,
@@ -71,5 +74,9 @@ const links = computed<DsfrBreadcrumbProps['links']>(() => {
 
 onBeforeMount(() => {
   project.value = projectStore.currentProject
+})
+
+watchEffect(async () => {
+  hasRegisteredData.value = CompanyDataStorage.hasData()
 })
 </script>
