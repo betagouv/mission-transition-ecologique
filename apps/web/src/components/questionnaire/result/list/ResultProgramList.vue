@@ -17,6 +17,11 @@
               message="Aucune aide n'a pu être identifiée sur cette thématique..."
               :count-items="countPrograms"
             />
+            <TeeNoResult
+              v-if="!hasRegisteredData"
+              message="Oups ! Il nous manque quelques informations sur votre entreprise pour pouvoir afficher vos résultats."
+              cta-label="Je complète mon profil"
+            />
             <ProgramList
               v-else
               :filtered-programs="filteredPrograms"
@@ -36,6 +41,7 @@ import ProgramFiltersAccordion from '@/components/program/list/filters/ProgramFi
 interface ProgramListProps {
   filteredPrograms?: ProgramData[]
   hasError: boolean
+  hasRegisteredData: boolean
 }
 
 const props = defineProps<ProgramListProps>()

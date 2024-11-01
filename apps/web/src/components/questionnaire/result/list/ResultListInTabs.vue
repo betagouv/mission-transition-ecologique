@@ -19,7 +19,8 @@
     >
       <ResultProjectList
         :filtered-projects="filteredProjects"
-        :has-error="hasError || !hasRegisteredData"
+        :has-error="hasError"
+        :has-registered-data="hasRegisteredData"
       />
     </DsfrTabContent>
 
@@ -32,7 +33,8 @@
     >
       <ResultProgramList
         :filtered-programs="filteredPrograms"
-        :has-error="hasError || !hasRegisteredData"
+        :has-error="hasError"
+        :has-registered-data="hasRegisteredData"
       />
     </DsfrTabContent>
   </TeeTabs>
