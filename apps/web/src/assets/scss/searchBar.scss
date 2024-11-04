@@ -45,10 +45,12 @@ input[type="search"] {
       }
     }
   }
+
   &--loading {
     .fr-btn {
       width: 2.5rem;
-      &:before {
+
+      &::before {
         content: "";        
         border: 3px solid setting.$blue-france;
         border-top-color: transparent;
@@ -58,6 +60,7 @@ input[type="search"] {
         background: none !important;
         animation: spin 0.8s linear infinite;
       }
+
       @keyframes spin {
         to {
           transform: rotate(360deg);
