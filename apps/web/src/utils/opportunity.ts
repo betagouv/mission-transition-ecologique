@@ -15,8 +15,8 @@ export default class Opportunity {
       theme: {
         required: true,
         hidden: true,
-        options: Theme.themes.map((theme: ThemeType) => theme.title),
-        value: selectedTheme?.title,
+        options: Theme.themes.map((theme: ThemeType) => theme.tagLabel),
+        value: selectedTheme?.tagLabel,
         label: 'Thématique',
         isValid: true,
         type: FieldType.Select
