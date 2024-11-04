@@ -31,6 +31,7 @@
           :key="fieldKey"
           v-model="localForm[fieldKey]"
           :field="localForm[fieldKey]"
+          :data-test-id="fieldKey"
           @update:model-value="(field) => (localForm[fieldKey] = field)"
         />
       </div>

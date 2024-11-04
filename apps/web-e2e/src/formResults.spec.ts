@@ -8,7 +8,8 @@ tests.forEach((singleTest) => {
   test(`Test id ${singleTest.id} - Verify form ${singleTest.url}`, async ({ page }) => {
     await page.goto(singleTest.url)
     try {
-      await page.waitForSelector('.teste2e-program-target', { timeout: 3000 })
+      
+      await page.locator('[data-testid="nom"]').fill('John Doe');
     } catch (error) {
       // this is an expected error what can happen
       // - if the number of results is 0
