@@ -12,21 +12,25 @@ export interface ContactDetails {
   companySector?: string
   companySize?: StructureSize
 }
-
-export enum OpportunityType {
-  Program = 'program',
-  Project = 'project'
+export interface OpportunityDetails extends OpportunityDetailsBase {
+  id: string
 }
 
-export interface OpportunityDetails {
+export interface OpportunityDetailsBase {
   type: OpportunityType
-  id: string
   linkToPage: string
-  linkToCatalog: string
+  titleMessage?: string
+  linkToCatalog?: string
   message: string
   questionnaireRoute?: QuestionnaireRoute
   priorityObjectives?: PublicodeObjective[]
   otherData?: string
+  theme: string
+}
+export enum OpportunityType {
+  Program = 'program',
+  Project = 'project',
+  CustomProject = 'customProject'
 }
 
 export interface OpportunityBody {
