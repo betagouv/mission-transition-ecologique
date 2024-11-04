@@ -221,10 +221,18 @@ see [scalingo manifest](https://doc.scalingo.com/platform/app/app-manifest) for 
 ## Credits
 
 - Team
-  - Product owner: Jean-Baptiste Le Dévéhat
+  - Product owner: [Jean-Baptiste Le Dévéhat](https://jbledevehat.fr)
   - Coaching: Julien Rayneau
   - Designers: Coline Lebaratoux
-  - Maintainers:
-    - Pierre Camilleri
-    - Julien Paris
-    - Yohann Valentin
+  - Business Developers:
+    - Céline Bagault
+    - Manon Piffault 
+    - Rodolphe GAGETTA
+  - Maintainers - Developers:
+    - [Yohann Valentin](https://yohannvalentin.com)
+    - [Thibaut Tezenas Du Montcel](https://ttdm.github.io)
+    - [Dorian Lemoine](https://github.com/dolemoine)
+    - [Oumeima El Isbihani](https://multi.coop)
+  - Old team members:
+    - [Pierre Camilleri](https://multi.coop) (Maintainer - Developer)
+    - [Julien Paris](https://multi.coop) (Maintainer - Developer)
