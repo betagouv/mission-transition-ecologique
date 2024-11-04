@@ -6,7 +6,7 @@
     <TeeDsfrButton
       v-if="hasData"
       class="fr-btn--tertiary-no-outline"
-      @click="toggleRegisterModal"
+      @click="openModal"
     >
       <span
         v-if="hasData || Breakpoint.isSmallScreen()"
@@ -29,7 +29,7 @@
     </TeeDsfrButton>
     <TeeDsfrButton
       v-else
-      @click="toggleRegisterModal"
+      @click="openModal"
     >
       <span
         v-if="Breakpoint.isSmallScreen()"
@@ -61,7 +61,8 @@ import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 import Translation from '@/utils/translation'
 
 const registeredData = CompanyDataStorage.getData()
-const toggleRegisterModal = inject<() => void>('toggleRegisterModal')
+const toggleRegisterModal = inject<(v?: boolean) => void>('toggleRegisterModal')
+
 watch(
   registeredData,
   (newRegisteredData) => {
@@ -76,6 +77,11 @@ const companyName = computed<string | undefined>(() => {
 const hasData = computed<boolean>(() => {
   return !!registeredData.value[CompanyDataStorageKey.Company]
 })
+const openModal = () => {
+  if (toggleRegisterModal) {
+    toggleRegisterModal()
+  }
+}
 
 const badgeIcon = computed(() => {
   if (Breakpoint.isSmallScreen() && !hasData.value) {

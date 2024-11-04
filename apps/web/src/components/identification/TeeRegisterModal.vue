@@ -58,7 +58,7 @@ const manualRegistration = ref<boolean>(!!(company.value && !('siret' in company
 const toggleRegisterModal = inject<(stat?: undefined | boolean) => void>('toggleRegisterModal')
 onClickOutside(registerModal, () => {
   if (toggleRegisterModal) {
-    toggleRegisterModal()
+    toggleRegisterModal(false)
   }
 })
 const registerStep = computed<number>(() => {

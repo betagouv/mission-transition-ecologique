@@ -149,7 +149,6 @@ const processInput = async () => {
   text-align: left;
   max-height: calc(100vh - 600px);
   position: absolute;
-  min-height: 20vh;
   overflow: hidden auto;
   width: calc(100% - 40px);
 }

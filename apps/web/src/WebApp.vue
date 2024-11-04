@@ -43,7 +43,7 @@ const isReady = computed<boolean>(() => {
   return navigationStore.isReady
 })
 
-const toggleRegisterModal = (forceStatus: boolean | undefined) => {
+const toggleRegisterModal = (forceStatus: boolean) => {
   registerModal.value = forceStatus || !registerModal.value
   document.body.style.overflow = registerModal.value ? 'hidden' : ''
   if (registerModal.value) {
@@ -54,7 +54,6 @@ const toggleRegisterModal = (forceStatus: boolean | undefined) => {
   }
 }
 provide('toggleRegisterModal', toggleRegisterModal)
-
 onBeforeMount(() => {
   Translation.setLocale('fr')
   Cookie.setCookies()

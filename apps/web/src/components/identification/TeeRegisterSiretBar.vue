@@ -6,6 +6,7 @@
     <div
       id="header-search"
       class="fr-search-bar fr-search-bar-lg fr-search-bar--yellow"
+      :class="isLoading ? 'fr-search-bar--loading' : ''"
       role="search"
     >
       <DsfrInput
@@ -16,7 +17,7 @@
         type="search"
         @keyup.enter="onClick"
       />
-      <DsfrButton
+      <TeeDsfrButton
         class="fr-bg--yellow search-button"
         tertiary
         no-outline
@@ -43,7 +44,6 @@ withDefaults(defineProps<Props>(), {
   isLoading: false,
   errorMessage: undefined
 })
-
 const model = defineModel<string | undefined>()
 const siretSearchBar = ref(null)
 const emit = defineEmits<{
