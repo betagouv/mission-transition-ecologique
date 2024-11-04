@@ -147,7 +147,7 @@ const processInput = async () => {
 
 #siret-response {
   text-align: left;
-  max-height: calc(100vh - 600px);
+  max-height: calc(100vh - 450px);
   position: absolute;
   overflow: hidden auto;
   width: calc(100% - 40px);
