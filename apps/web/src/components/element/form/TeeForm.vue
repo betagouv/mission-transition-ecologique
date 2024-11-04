@@ -2,7 +2,7 @@
   <!-- BACK TO FORM BTN -->
   <TeeDsfrButton
     v-show="formIsSent"
-    class="fr-btn fr-btn--tertiary-no-outline fr-col-10 fr-mb-3v fr-link"
+    class="fr-btn fr-btn--tertiary-no-outline fr-col-10 fr-mb-3v"
     tertiary
     no-outline
     icon-only
