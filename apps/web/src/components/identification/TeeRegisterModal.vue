@@ -56,8 +56,9 @@ const company = ref<CompanyDataType[CompanyDataStorageKey.Company]>(registeredDa
 const companySize = ref<CompanyDataType[CompanyDataStorageKey.Size]>(registeredData.value[CompanyDataStorageKey.Size])
 const manualRegistration = ref<boolean>(!!(company.value && !('siret' in company.value)))
 const toggleRegisterModal = inject<(stat?: undefined | boolean) => void>('toggleRegisterModal')
-onClickOutside(registerModal, () => {
-  if (toggleRegisterModal) {
+onClickOutside(registerModal, (ev: MouseEvent) => {
+  const target = ev.target as HTMLInputElement
+  if (toggleRegisterModal && target && !target.classList.contains('ignore-modal-click')) {
     toggleRegisterModal(false)
   }
 })

@@ -5,18 +5,18 @@
   >
     <TeeDsfrButton
       v-if="hasData"
-      class="fr-btn--tertiary-no-outline"
+      class="fr-btn--tertiary-no-outline ignore-modal-click"
       @click="openModal"
     >
       <span
         v-if="hasData || Breakpoint.isSmallScreen()"
         :class="Breakpoint.isSmallScreen() ? 'fr-icon--lg' : 'fr-pr-2w'"
-        class="fr-icon-account-circle-fill register-icon-profile"
+        class="fr-icon-account-circle-fill register-icon-profile ignore-modal-click"
       >
         <span
           :id="Breakpoint.isSmallScreen() ? 'badge-mobile' : 'base-badge'"
           :class="badgeIcon"
-          class="fr-text--blue-france fr-radius-a--2v register-badge"
+          class="fr-text--blue-france fr-radius-a--2v ignore-modal-click register-badge"
         >
         </span>
       </span>
@@ -29,17 +29,18 @@
     </TeeDsfrButton>
     <TeeDsfrButton
       v-else
+      class="ignore-modal-click"
       @click="openModal"
     >
       <span
         v-if="Breakpoint.isSmallScreen()"
         :class="Breakpoint.isSmallScreen() ? 'fr-icon--lg' : 'fr-pr-2w'"
-        class="fr-icon-account-circle-fill register-icon-profile"
+        class="fr-icon-account-circle-fill register-icon-profile ignore-modal-click"
       >
         <span
           :id="Breakpoint.isSmallScreen() ? 'badge-mobile' : 'base-badge'"
           :class="badgeIcon"
-          class="fr-text--blue-france fr-radius-a--2v register-badge"
+          class="fr-text--blue-france fr-radius-a--2v register-badge ignore-modal-click"
         >
         </span>
       </span>
@@ -47,7 +48,7 @@
       <span
         v-if="!Breakpoint.isSmallScreen()"
         id="register-text"
-        class="fr-text--yellow"
+        class="fr-text--yellow ignore-modal-click"
       >
         {{ Translation.t('register.mainTitle') }}
       </span>
