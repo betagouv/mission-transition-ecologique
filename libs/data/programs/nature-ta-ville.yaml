@@ -59,6 +59,8 @@ conditions d'éligibilité:
     - Tous secteurs d'activité
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - être en zone urbaine
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
