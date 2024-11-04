@@ -1,6 +1,7 @@
 @use 'setting';
 @use 'sass:meta';
 @use 'sass:map';
+@use 'tool';
 
 .fr-btn {
   &-bg {
@@ -8,6 +9,21 @@
     &:active {
       background-color: rgb(0 0 0 / 5%) !important;
     }
+
+    @each $color, $properties in setting.$colors {
+      &--#{$color} {
+        @include tool.get-background-color-by-opacity($properties);
+
+        @each $name, $opacity in setting.$opacities {
+          &#{$name} {
+            &:hover,
+            &:active {
+              @include tool.get-background-color-by-opacity($properties, $opacity);
+            }
+          } 
+        }
+      }
+    } 
   }
 
   &--secondary {
