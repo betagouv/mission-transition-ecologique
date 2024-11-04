@@ -71,10 +71,7 @@
     :request-response="requestResponse"
     class="fr-mt-5v fr-grid-row fr-grid-row--center fr-grid-row--middle"
   >
-    <template
-      v-if="formType === OpportunityType.Program"
-      #phoneContact
-    >
+    <template #phoneContact>
       <p class="fr-mb-15v">
         <span>
           {{ phoneCallback }}

@@ -71,6 +71,7 @@
           v-if="project"
           :form-container-ref="TeeProjectFormContainer"
           :form-type="OpportunityType.Project"
+          :phone-callback="Translation.ti(Translation.t('form.phoneContact'), { operator: ' ' })"
           :form="Opportunity.getProjectFormFields(project)"
           :data-id="project.id.toString()"
           :data-slug="project.slug"
