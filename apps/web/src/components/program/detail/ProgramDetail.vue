@@ -195,6 +195,10 @@
               :title="Translation.t('program.programAmIEligible')"
             >
               <ProgramEligibility :program="program" />
+              <TeeRegisterHighlight
+                v-if="!CompanyDataStorage.hasData()"
+                :text="Translation.t('program.programRegisterHighlightText')"
+              />
             </ProgramAccordion>
             <ProgramAccordion
               v-if="program && linkedProjects && linkedProjects.length > 0"
@@ -212,12 +216,12 @@
             </ProgramAccordion>
           </DsfrAccordionsGroup>
         </div>
-        <hr class="fr-mb-9v fr-pb-1v" />
       </div>
     </div>
 
     <!-- PROGRAM FORM -->
     <div
+      v-if="!CompanyDataStorage.hasData()"
       ref="TeeProgramFormContainer"
       class="fr-bg--blue-france--lightness fr-col-justify--center fr-grid-row fr-p-2w"
     >
@@ -255,6 +259,7 @@ import Translation from '@/utils/translation'
 import { computed, onBeforeMount, ref } from 'vue'
 import { useProjectStore } from '@/stores/project'
 import Opportunity from '@/utils/opportunity'
+import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
 const projectStore = useProjectStore()
 const programsStore = useProgramStore()
