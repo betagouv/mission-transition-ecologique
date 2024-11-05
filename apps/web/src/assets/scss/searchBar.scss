@@ -1,3 +1,7 @@
+@use "setting";
+@use 'sass:meta';
+@use 'sass:map';
+
 input[type="search"] {
   &::-webkit-search-decoration,
   &::-webkit-search-cancel-button,
@@ -21,3 +25,47 @@ input[type="search"] {
     color: var(--text-disabled-grey);
   }
 }
+
+.fr-search-bar {
+  &-lg {
+    .fr-input, .search-button {
+      max-height: 3rem;
+      line-height: 3rem;
+    }
+  }
+
+  @each $color, $properties in setting.$colors {
+    &--#{$color} {
+      .fr-input, .search-button {
+        @if meta.type-of($properties) == map {
+          box-shadow: inset 0 -2px 0 0 map.get($properties, "color");
+        } @else {
+          box-shadow: inset 0 -2px 0 0 $properties;
+        }
+      }
+    }
+  }
+
+  &--loading {
+    .fr-btn {
+      width: 2.5rem;
+
+      &::before {
+        content: "";        
+        border: 2px solid setting.$blue-france;
+        border-top-color: transparent;
+        border-radius: 50%;
+        position: absolute;
+        mask-image: none !important;
+        background: none !important;
+        animation: spin 0.8s linear infinite;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    } 
+  } 
+} 

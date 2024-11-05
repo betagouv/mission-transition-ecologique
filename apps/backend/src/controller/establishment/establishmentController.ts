@@ -38,7 +38,7 @@ export class SireneController extends Controller {
   /**
    * Retrieve establishments informations used in front end
    * for a single establishment using the SIRENE API if search by SIRET
-   * or for up to 3 establishments using the Recherche-entreprise API otherwise.
+   * or for up to 9 establishments using the Recherche-entreprise API otherwise.
    * Also return the number of matches found
    *
    * @summary Search for establishments from a query
@@ -47,14 +47,15 @@ export class SireneController extends Controller {
    */
 
   @Example<Establishment>(exampleEstablishment)
-  @Get('{query}')
+  @Get('{query}/{resultCount}')
   public async getEstablishmentBySiret(
     @Path() query: string,
+    @Path() resultCount: number,
     @Res() requestFailedResponse: TsoaResponse<500, ErrorJSON>,
     @Res() _validationFailedResponse: TsoaResponse<422, ValidateErrorJSON>,
     @Res() notFoundResponse: TsoaResponse<404, EstablishmentNotFoundErrorJSON>
   ): Promise<EstablishmentSearch> {
-    const establishmentResult = await new EstablishmentService().search(query)
+    const establishmentResult = await new EstablishmentService().search(query, resultCount)
 
     if (establishmentResult.isErr) {
       const err = establishmentResult.error
