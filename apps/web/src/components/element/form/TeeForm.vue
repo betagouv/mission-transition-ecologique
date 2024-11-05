@@ -69,7 +69,7 @@
     :form="form"
     :error-email-subject="errorEmailSubject"
     :request-response="requestResponse"
-    class="fr-mt-5v fr-grid-row fr-grid-row--center fr-grid-row--middle"
+    class="fr-mt-5v fr-mx-auto fr-grid-row fr-grid-row--center fr-grid-row--middle"
   >
     <template #phoneContact>
       <p class="fr-mb-15v">
