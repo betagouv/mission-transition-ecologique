@@ -9,11 +9,11 @@ const commonRules: NextTrackRuleSet[] = [
     rules: [
       {
         from: DataMappingFrom.CompanyData,
-        id: CompanyDataStorageKey.Siret,
-        dataField: CompanyDataStorageKey.Siret,
+        id: CompanyDataStorageKey.Company,
+        dataField: CompanyDataStorageKey.Company,
         conditions: [
           {
-            type: CompanyDataStorageKey.Siret,
+            type: CompanyDataStorageKey.Company,
             operator: ConditionOperators.exists
           }
         ]
@@ -38,11 +38,11 @@ const commonRules: NextTrackRuleSet[] = [
     rules: [
       {
         from: DataMappingFrom.CompanyData,
-        id: CompanyDataStorageKey.Siret,
-        dataField: CompanyDataStorageKey.Siret,
+        id: CompanyDataStorageKey.Company,
+        dataField: CompanyDataStorageKey.Company,
         conditions: [
           {
-            type: CompanyDataStorageKey.Siret,
+            type: CompanyDataStorageKey.Company,
             operator: ConditionOperators.exists
           }
         ]
