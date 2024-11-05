@@ -45,7 +45,7 @@
     />
 
     <div
-      v-if="!navigationStore.hasSpinner && hasRegisteredData"
+      v-if="!showNoResults && hasRegisteredData"
       class="fr-grid-row fr-grid-row--center"
     >
       <div class="fr-container">
