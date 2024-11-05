@@ -54,7 +54,7 @@ const hasRegisteredData = ref(CompanyDataStorage.hasData())
 
 const routeToResults = {
   name: isCatalogDetail ? RouteName.CatalogPrograms : RouteName.QuestionnaireResult,
-  hash: '#' + props.programId,
+  hash: '#' + props.programId, //TODO get from program
   query: isCatalogDetail ? undefined : navigationStore.query
 }
 

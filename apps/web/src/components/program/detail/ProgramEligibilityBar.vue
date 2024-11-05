@@ -6,12 +6,12 @@
   />
 </template>
 <script setup lang="ts">
-import { Color, type ProgramData as ProgramType, ProgramEligibilityType, RouteName } from '@/types'
+import { Color, ProgramEligibilityType, RouteName } from '@/types'
 import { TeeEligibilityBarLink, TeeEligibilityBarMessage } from '@/components/program/eligibility/TeeEligibilityBar.vue'
 import { useProgramStore } from '@/stores/program'
-import { ref } from 'vue'
+import { storeToRefs } from 'pinia'
 
-const program = ref<ProgramType>()
+const { currentProgram: program } = storeToRefs(useProgramStore())
 
 const getEligibilityMessage: ComputedRef<TeeEligibilityBarMessage> = computed(() => {
   switch (program.value?.eligibility) {
@@ -60,9 +60,5 @@ const getEligibilityLink: ComputedRef<TeeEligibilityBarLink | undefined> = compu
     default:
       return undefined
   }
-})
-
-onBeforeMount(() => {
-  program.value = useProgramStore().currentProgram
 })
 </script>
