@@ -34,6 +34,7 @@
           <TeeNoResult
             message="Oups ! Il nous manque quelques informations sur votre entreprise pour pouvoir afficher vos résultats."
             cta-label="Je complète mon profil"
+            @cta-click="toggleRegisterModal"
           />
         </div>
       </div>
@@ -44,7 +45,7 @@
     />
 
     <div
-      v-if="!navigationStore.hasSpinner"
+      v-if="!navigationStore.hasSpinner && hasRegisteredData"
       class="fr-grid-row fr-grid-row--center"
     >
       <div class="fr-container">
@@ -82,6 +83,8 @@ interface ProjectListProps {
 const props = defineProps<ProjectListProps>()
 const otherProjectForm = ref<boolean>(false)
 const navigationStore = useNavigationStore()
+
+const toggleRegisterModal = inject<() => void>('toggleRegisterModal')
 
 watch(
   () => props.filteredProjects,

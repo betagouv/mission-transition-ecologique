@@ -21,6 +21,7 @@
               v-if="!hasRegisteredData"
               message="Oups ! Il nous manque quelques informations sur votre entreprise pour pouvoir afficher vos résultats."
               cta-label="Je complète mon profil"
+              @cta-click="toggleRegisterModal"
             />
             <ProgramList
               v-else
@@ -45,6 +46,8 @@ interface ProgramListProps {
 }
 
 const props = defineProps<ProgramListProps>()
+
+const toggleRegisterModal = inject<() => void>('toggleRegisterModal')
 
 const countPrograms = computed(() => {
   return props.filteredPrograms?.length || 0

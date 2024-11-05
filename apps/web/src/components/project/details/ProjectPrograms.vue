@@ -79,6 +79,8 @@ const TeeProjectFormContainer = ref<HTMLElement | null | undefined>(null)
 const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)
 
+const registeredData = CompanyDataStorage.getData()
+
 const countFilteredPrograms = computed(() => {
   return filteredPrograms.value.length || 0
 })
@@ -99,7 +101,7 @@ const financePrograms = computed(() => {
   )
 })
 
-onBeforeMount(async () => {
+const getPrograms = async () => {
   navigationStore.hasSpinner = true
   const result = await programStore.programsByUsedTracks
   if (result.isOk) {
@@ -108,5 +110,13 @@ onBeforeMount(async () => {
     hasError.value = true
   }
   navigationStore.hasSpinner = false
+}
+
+onBeforeMount(async () => {
+  await getPrograms()
+})
+
+watch(registeredData.value, async () => {
+  await getPrograms()
 })
 </script>
