@@ -71,7 +71,6 @@ import { computed } from 'vue'
 import UsedTrack from '@/utils/track/usedTrack'
 import { useProgramStore } from '@/stores/program'
 import { Project as UtilsProject } from '@/utils/project/project'
-import { useNavigationStore } from '@/stores/navigation'
 import OtherProjectCta from '@/components/project/list/OtherProjectCta.vue'
 import OtherProjectForm from '@/components/project/list/OtherProjectForm.vue'
 
@@ -82,7 +81,6 @@ interface ProjectListProps {
 }
 const props = defineProps<ProjectListProps>()
 const otherProjectForm = ref<boolean>(false)
-const navigationStore = useNavigationStore()
 
 const toggleRegisterModal = inject<() => void>('toggleRegisterModal')
 
