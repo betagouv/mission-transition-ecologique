@@ -51,7 +51,7 @@ input[type="search"] {
       width: 2.5rem;
 
       &::before {
-        content: "";        
+        content: "";
         border: 2px solid setting.$blue-france;
         border-top-color: transparent;
         border-radius: 50%;
@@ -66,6 +66,6 @@ input[type="search"] {
           transform: rotate(360deg);
         }
       }
-    } 
-  } 
-} 
+    }
+  }
+}
