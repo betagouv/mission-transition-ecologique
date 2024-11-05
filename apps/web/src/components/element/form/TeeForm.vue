@@ -38,6 +38,7 @@
           )"
           :key="fieldKey"
           v-model="(localForm as Record<string, InputFieldUnionType>)[fieldKey]"
+          :data-testid="fieldKey"
           :field="(localForm as Record<string, InputFieldUnionType>)[fieldKey]"
         />
       </div>
