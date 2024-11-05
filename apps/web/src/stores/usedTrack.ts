@@ -1,6 +1,7 @@
 import { useNavigationStore } from '@/stores/navigation'
 import { useTrackStore } from '@/stores/track'
 import {
+  EstablishmentFront,
   LegalCategory,
   type NextTrackRuleSet,
   type QuestionnaireData,
@@ -66,8 +67,8 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
       .filter((questionnaireDatum) => questionnaireDatum?.length)
       .flat(1)
 
-    if (CompanyDataStorage.hasSiret()) {
-      data.push(CompanyDataStorage.getSiret() as QuestionnaireData)
+    if (CompanyDataStorage.hasCompanyData()) {
+      data.push(CompanyDataStorage.getCompanyData() as QuestionnaireData)
     }
 
     if (CompanyDataStorage.hasSize()) {
@@ -126,10 +127,10 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
       }
     }
 
-    if (CompanyDataStorage.hasSiret()) {
+    if (CompanyDataStorage.hasCompanyData()) {
       useNavigationStore().updateSearchParam({
         name: TrackId.Siret,
-        value: CompanyDataStorage.getSiret()?.siret
+        value: (CompanyDataStorage.getCompanyData() as EstablishmentFront)?.siret
       })
     }
 

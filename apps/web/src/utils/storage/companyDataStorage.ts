@@ -19,7 +19,7 @@ export default class CompanyDataStorage {
     return this._data.value[CompanyDataStorageKey.Company] !== null || this._data.value[CompanyDataStorageKey.Size] !== null
   }
 
-  static hasSiret() {
+  static hasCompanyData() {
     return this._data.value[CompanyDataStorageKey.Company] !== null
   }
 

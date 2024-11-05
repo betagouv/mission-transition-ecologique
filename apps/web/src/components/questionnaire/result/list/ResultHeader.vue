@@ -23,8 +23,8 @@ import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
 const resume: string = Translation.t('programResults.resume', {
   effectif: Translation.t('enterprise.structureSize.' + (TrackStructure.getSize() ?? CompanyDataStorage.getSize() ?? '')),
-  secteur: TrackStructure.getSectorShortLabel() ?? CompanyDataStorage.getSiret()?.secteur ?? '',
-  region: TrackStructure.getRegion() ?? CompanyDataStorage.getSiret()?.region ?? ''
+  secteur: TrackStructure.getSectorShortLabel() ?? CompanyDataStorage.getCompanyData()?.secteur ?? '',
+  region: TrackStructure.getRegion() ?? CompanyDataStorage.getCompanyData()?.region ?? ''
 })
 
 const hasRegisteredData = ref(CompanyDataStorage.hasData())
