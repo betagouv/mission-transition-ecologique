@@ -20,6 +20,7 @@
       <ResultProjectList
         :filtered-projects="filteredProjects"
         :has-error="hasError"
+        :has-registered-data="hasRegisteredData"
       />
     </DsfrTabContent>
 
@@ -33,6 +34,7 @@
       <ResultProgramList
         :filtered-programs="filteredPrograms"
         :has-error="hasError"
+        :has-registered-data="hasRegisteredData"
       />
     </DsfrTabContent>
   </TeeTabs>
@@ -46,6 +48,7 @@ import { BreakpointNameType, ProgramData, Project } from '@/types'
 import { computed, onBeforeMount } from 'vue'
 import { useProjectStore } from '@/stores/project'
 import { Theme } from '@/utils/theme'
+import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
 const navigationStore = useNavigationStore()
 const programStore = useProgramStore()
@@ -55,6 +58,8 @@ const { ascendant, selected } = useTabs(true, navigationStore.tabSelectedOnList)
 const programs = ref<ProgramData[]>()
 const projects = ref<Project[]>()
 const hasError = ref<boolean>(false)
+
+const hasRegisteredData = ref(CompanyDataStorage.hasData())
 
 const titles: TeeDsfrTabs['tabTitles'] = [
   { title: [{ title: "Des idées d'actions à mettre en place", size: BreakpointNameType.sm }, { title: "Idées d'actions" }] },
@@ -82,7 +87,7 @@ const filteredProjects = computed(() => {
   )
 })
 
-onBeforeMount(async () => {
+const getProgramsAndProjects = async () => {
   navigationStore.hasSpinner = true
   const programResult = await programStore.programsByUsedTracks
   const projectResult = await projectStore.projects
@@ -93,5 +98,14 @@ onBeforeMount(async () => {
     hasError.value = true
   }
   navigationStore.hasSpinner = false
+}
+
+onBeforeMount(async () => {
+  await getProgramsAndProjects()
+})
+
+watchEffect(async () => {
+  hasRegisteredData.value = CompanyDataStorage.hasData()
+  await getProgramsAndProjects()
 })
 </script>

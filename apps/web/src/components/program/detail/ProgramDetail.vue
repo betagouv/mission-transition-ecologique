@@ -196,7 +196,7 @@
             >
               <ProgramEligibility :program="program" />
               <TeeRegisterHighlight
-                v-if="!CompanyDataStorage.hasData()"
+                v-if="!hasRegisteredData"
                 :text="Translation.t('program.programRegisterHighlightText')"
               />
             </ProgramAccordion>
@@ -221,7 +221,7 @@
 
     <!-- PROGRAM FORM -->
     <div
-      v-if="!CompanyDataStorage.hasData()"
+      v-if="hasRegisteredData && programIsEligible"
       ref="TeeProgramFormContainer"
       class="fr-bg--blue-france--lightness fr-col-justify--center fr-grid-row fr-p-2w"
     >
@@ -249,7 +249,7 @@ import ProgramLongDescription from '@/components/program/detail/ProgramLongDescr
 import ProgramTile from '@/components/program/detail/ProgramTile.vue'
 import Config from '@/config'
 import { useProgramStore } from '@/stores/program'
-import { OpportunityType, type ProgramData as ProgramType, Project as ProjectType } from '@/types'
+import { OpportunityType, Project as ProjectType } from '@/types'
 import { RouteName } from '@/types/routeType'
 import { useNavigationStore } from '@/stores/navigation'
 import { MetaSeo } from '@/utils/metaSeo'
@@ -260,16 +260,20 @@ import { computed, onBeforeMount, ref } from 'vue'
 import { useProjectStore } from '@/stores/project'
 import Opportunity from '@/utils/opportunity'
 import CompanyDataStorage from '@/utils/storage/companyDataStorage'
+import { storeToRefs } from 'pinia'
 
 const projectStore = useProjectStore()
 const programsStore = useProgramStore()
 const navigationStore = useNavigationStore()
 
-const program = ref<ProgramType>()
+const { currentProgram: program } = storeToRefs(programsStore)
 const linkedProjects = ref<ProjectType[] | undefined>([])
 const TeeProgramFormContainer = ref<HTMLElement | null | undefined>(null)
 
 const publicPath = Config.publicPath
+
+const hasRegisteredData = ref(CompanyDataStorage.hasData())
+const registeredData = CompanyDataStorage.getData()
 
 interface Props {
   programId: string
@@ -305,9 +309,10 @@ const isProgramAutonomous = computed(() => {
   return program.value?.[`activable en autonomie`] == 'oui'
 })
 
+const programIsEligible = ref(false)
+
 onBeforeMount(async () => {
   useNavigationStore().hasSpinner = true
-  program.value = programsStore.currentProgram
   const projectResult = await projectStore.projects
   if (projectResult.isOk) {
     linkedProjects.value = Program.getLinkedProjects(program.value, projectResult.value)
@@ -333,6 +338,12 @@ onBeforeMount(async () => {
 
 onBeforeRouteLeave(() => {
   useSeoMeta(MetaSeo.default())
+})
+
+watch(registeredData.value, async () => {
+  if (program.value) {
+    await programsStore.getProgramById(program.value.id)
+  }
 })
 
 const programIsAvailable = computed(() => {

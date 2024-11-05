@@ -110,7 +110,7 @@ const getRouteToProgramDetail = (programId: string): RouteLocationRaw => {
   return {
     name: getRouteName(),
     params: { programId },
-    query: isCatalog || navigationStore.isCatalogProjectDetail() ? undefined : navigationStore.query
+    query: navigationStore.query
   }
 }
 </script>

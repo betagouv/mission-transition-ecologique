@@ -20,6 +20,7 @@ import Translation from '@/utils/translation'
 import { acceptHMRUpdate, defineStore } from 'pinia'
 import { computed, ref, toRaw } from 'vue'
 import CompanyDataStorage from '@/utils/storage/companyDataStorage'
+import { CompanyDataStorageKey, CompanyDataType } from '@/types/companyDataType'
 
 export const useUsedTrackStore = defineStore('usedTrack', () => {
   const current = ref<UsedTrack | undefined>()
@@ -58,12 +59,22 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
   })
 
   const completedQuestionnaireData = computed<(string | number | object | undefined)[]>(() => {
-    return completedUsedTracks.value
+    const data = completedUsedTracks.value
       .map((usedTrack: UsedTrack) => {
         return usedTrack.selected?.map((optionSelected) => toRaw(optionSelected.questionnaireData))
       })
       .filter((questionnaireDatum) => questionnaireDatum?.length)
       .flat(1)
+
+    if (CompanyDataStorage.hasSiret()) {
+      data.push(CompanyDataStorage.getSiret() as QuestionnaireData)
+    }
+
+    if (CompanyDataStorage.hasSize()) {
+      data.push({ [CompanyDataStorageKey.Size]: CompanyDataStorage.getSize() } as QuestionnaireData)
+    }
+
+    return data
   })
 
   const usedTracksValuesPairs = computed<UsedTrackValuePair[]>(() => {
@@ -113,6 +124,20 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
           CompanyDataStorage.setSize(value as StructureSize)
         }
       }
+    }
+
+    if (CompanyDataStorage.hasSiret()) {
+      useNavigationStore().updateSearchParam({
+        name: TrackId.Siret,
+        value: CompanyDataStorage.getSiret()?.siret
+      })
+    }
+
+    if (CompanyDataStorage.hasSize()) {
+      useNavigationStore().updateSearchParam({
+        name: TrackId.StructureWorkforce,
+        value: CompanyDataStorage.getSize()
+      })
     }
   }
 
@@ -264,7 +289,29 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     if (!useNavigationStore().isCatalog() && !useNavigationStore().isProgramDetail()) {
       questionnaireData.onlyEligible = true
     }
+
+    if (CompanyDataStorage.hasData()) {
+      _getCompanyDataFromStorage(questionnaireData)
+    }
+
     return questionnaireData
+  }
+
+  function _getCompanyDataFromStorage(questionnaireData: { [k: string]: any }) {
+    const companyData: CompanyDataType = CompanyDataStorage.getData().value
+    Object.entries(companyData).forEach(([key, value]) => {
+      if (value !== null) {
+        if (Object.values(StructureSize).includes(value as StructureSize) && questionnaireData[key] !== value) {
+          questionnaireData[key] = value
+        } else if (typeof value === 'object' && !Array.isArray(value)) {
+          Object.entries(value).forEach(([k, v]) => {
+            if (questionnaireData[k] !== v) {
+              questionnaireData[k] = v
+            }
+          })
+        }
+      }
+    })
   }
 
   async function setFromNavigation() {
@@ -278,6 +325,10 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
 
       const value = useNavigationStore().query[trackId] as string | string[]
       const selectedOptions: TrackOptionsUnion[] = await useTrackStore().getSelectedOptionsByTrackAndValue(track, value)
+
+      if (trackId === TrackId.StructureWorkforce) {
+        CompanyDataStorage.setSize(value as StructureSize)
+      }
 
       if (selectedOptions.length === 0) {
         useNavigationStore().deleteSearchParam(trackId)
