@@ -5,19 +5,15 @@
   >
     <CatalogProjects />
   </div>
-  <ContactHelp v-if="isCatalog" />
+  <ContactHelp />
 </template>
 
 <script setup lang="ts">
-import { useNavigationStore } from '@/stores/navigation'
+import { MiddlewareName } from '@/middleware/type/middlewareName'
 import { RouteName } from '@/types'
 
 definePageMeta({
-  name: RouteName.CatalogProjects
-})
-
-const navigationStore = useNavigationStore()
-const isCatalog = computed(() => {
-  return navigationStore.isCatalogList()
+  name: RouteName.CatalogProjects,
+  middleware: [MiddlewareName.resetUsedTrackStore, MiddlewareName.resetQueries, MiddlewareName.resetProgramFilters]
 })
 </script>
