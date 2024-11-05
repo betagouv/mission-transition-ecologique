@@ -8,7 +8,7 @@
       class="fr-btn--tertiary-no-outline fr-text-left fr-p-0 fr-text--white fr-btn-bg fr-text--sm fr-text--underline"
       @click="openSiretStep"
     >
-      <span class="fr-pr-2v fr-icon-arrow-left-line" /><span>je complète les informations avec mon SIRET</span>
+      <span class="fr-pr-2v fr-icon-arrow-left-line" /><span>je renseigne mon SIRET</span>
     </TeeDsfrButton>
     <h4 class="fr-mb-0 fr-py-2v fr-text--white">Quelle est votre entreprise ?</h4>
   </div>
@@ -83,9 +83,13 @@ const profile = ref<RegisterDetails>({
     description: 'Combien êtes-vous dans votre entreprise ?'
   }
 })
+const canBeSaved = computed(() => {
+  return props.manual ? profile.value.activity.value && profile.value.localisation.value && profile.value.size : profile.value.size.value
+})
+
 const saveProfile = () => {
   showError.value = false
-  if (profile.value.size.value) {
+  if (canBeSaved.value && profile.value.size.value) {
     const company = props.manual
       ? ({
           region: profile.value.localisation.value,
