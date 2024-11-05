@@ -166,7 +166,7 @@ function buildHeaders() {
       "font-src 'self';" +
       "img-src 'self' data:;" +
       "object-src 'self';" +
-      `connect-src 'self' https://conseillers-entreprises.service-public.fr https://stats.beta.gouv.fr ${
+      `connect-src 'self' https://geo.api.gouv.fr/communes https://conseillers-entreprises.service-public.fr https://stats.beta.gouv.fr ${
         sentryData?.domain ? sentryData.domain : ''
       } https://embed.typeform.com https://eu.i.posthog.com https://api.typeform.com;` +
       "worker-src 'self' blob:;" +

@@ -20,7 +20,7 @@
     >
       <DsfrInput
         v-model="localisationInput"
-        class="fr-input--sm"
+        class="fr-input-sm"
         name="manual-register-localisation"
         type="search"
         :placeholder="infos.description"
@@ -29,6 +29,7 @@
       />
       <DsfrButton
         class="fr-bg--yellow search-button"
+        :class="isLoading ? 'fr-search-bar--loading' : ''"
         tertiary
         no-outline
         @click="searchLocalisation"
@@ -37,18 +38,18 @@
   </DsfrInputGroup>
   <div
     v-if="localisationResults.length && !infos.value"
-    id="region-response"
+    id="localisation-response"
     class="fr-bg--white fr-mt-n6v"
   >
     <div
-      v-for="region in localisationResults"
-      :key="`resp-input-${region}`"
+      v-for="localisation in localisationResults"
+      :key="`resp-input-${localisation}`"
       class="fr-card fr-card-result fr-card--no-arrow fr-card--shadow"
-      @click="selectRegion(region)"
+      @click="selectLocalisation(localisation)"
     >
       <div class="fr-card__body">
         <div class="fr-card__content fr-py-1v fr-px-4v fr-text--blue-france">
-          <div class="fr-text--blue-france">{{ region }}</div>
+          <div class="fr-text--blue-france">{{ `${localisation.nom}( ${localisation.codesPostaux.join()} ) ` }}</div>
         </div>
       </div>
     </div>
@@ -57,6 +58,7 @@
 <script lang="ts" setup>
 import { RegisterDetail } from '@/types'
 import { Region } from '@/types'
+import LocalisationApi from '@/service/api/localisationApi'
 import { useDebounce } from '@vueuse/core'
 
 interface Props {
@@ -67,7 +69,9 @@ interface Props {
 defineProps<Props>()
 const selectedLocalisation = defineModel<Region>()
 const localisationInput = ref<string | undefined>()
-const localisationResults = ref<Region[]>([])
+const localisationResults = ref<{ nom: string; codesPostaux: string[] }[]>([])
+const isLoading = ref<boolean>(false)
+const localisationApi = new LocalisationApi()
 const errorMessage = 'La sélection de la localisation est nécessaire'
 const debouncedRegionInput = useDebounce(localisationInput, 500)
 watch(debouncedRegionInput, (newValue) => {
@@ -75,14 +79,18 @@ watch(debouncedRegionInput, (newValue) => {
     searchLocalisation()
   }
 })
-const searchLocalisation = () => {
-  localisationResults.value = Object.values(Region).filter((region) => region.toLowerCase().includes(localisationInput.value as string))
+const searchLocalisation = async () => {
+  if (localisationInput.value) {
+    isLoading.value = true
+    localisationResults.value = await localisationApi.fetchCommunes(localisationInput.value)
+    isLoading.value = false
+  }
 }
 const updateSearchValue = (value: string | undefined) => {
   localisationInput.value = value
 }
-const selectRegion = (region: Region) => {
-  selectedLocalisation.value = region
+const selectLocalisation = (localisation:{ nom: string; codesPostaux: string[] }) => {
+  selectedLocalisation.value = localisation
 }
 const modifyLocalisation = () => {
   selectedLocalisation.value = undefined
@@ -91,7 +99,7 @@ const modifyLocalisation = () => {
 }
 </script>
 <style lang="scss" scoped>
-#region-response {
+#localisation-response {
   text-align: left;
   width: calc(100% - 40px);
   max-height: 128px;
