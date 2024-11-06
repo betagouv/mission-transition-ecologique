@@ -15,7 +15,7 @@
             <p class="fr-mb-4v">{{ text }}</p>
             <TeeDsfrButton
               class="fr-text--yellow fr-text--bold"
-              label="Je complète mon profil"
+              :label="Translation.t('results.noResultCTA')"
               @click="toggleRegisterModal"
             />
           </div>
@@ -25,6 +25,8 @@
   </DsfrHighlight>
 </template>
 <script setup lang="ts">
+import Translation from '@/utils/translation'
+
 interface Props {
   text: string
 }

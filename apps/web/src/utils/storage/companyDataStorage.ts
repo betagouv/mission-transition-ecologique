@@ -27,6 +27,10 @@ export default class CompanyDataStorage {
     return this._data.value[CompanyDataStorageKey.Size] !== null
   }
 
+  static hasItem(key: CompanyDataStorageKey): boolean {
+    return this._storageHandler.getItem(key) !== null
+  }
+
   static setCompany(value: CompanyDataType[CompanyDataStorageKey.Company]) {
     this.setItem(CompanyDataStorageKey.Company, value)
   }
@@ -53,8 +57,9 @@ export default class CompanyDataStorage {
   }
 
   static removeData(): void {
-    this._storageHandler.removeItem(CompanyDataStorageKey.Company)
-    this._storageHandler.removeItem(CompanyDataStorageKey.Size)
+    Object.values(CompanyDataStorageKey).forEach((key) => {
+      this._storageHandler.removeItem(key)
+    })
     this.updateData()
   }
 
