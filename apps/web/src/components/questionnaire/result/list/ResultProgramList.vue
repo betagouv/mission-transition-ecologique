@@ -22,7 +22,7 @@
               :count-items="countPrograms"
             />
             <TeeNoResult
-              v-if="!hasRegisteredData"
+              v-if="!hasRegisteredData && !hasSpinner"
               :message="Translation.t('results.alertNoDataNoResults')"
               :cta-label="Translation.t('results.noResultCTA')"
               @cta-click="openModal"

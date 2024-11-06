@@ -38,7 +38,7 @@
       </div>
     </div>
     <div
-      v-if="!hasRegisteredData"
+      v-if="!hasRegisteredData && !hasSpinner"
       class="fr-grid-row fr-grid-row--center"
     >
       <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
