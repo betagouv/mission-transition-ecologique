@@ -1,9 +1,10 @@
-export const tests = [
+import { ResultsDataType } from './resultDataType'
+
+export const tests: ResultsDataType = [
   {
     id: 0,
     url: 'projets-entreprise',
-    count: 47,
-    value: [
+    values: [
       'Diagnostic à 360° sur la transition écologique',
       'Sensibilisation des équipes',
       'Plan d’action économies d’énergie',
@@ -56,8 +57,7 @@ export const tests = [
   {
     id: 1,
     url: 'questionnaire/resultat?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=83014132100034&effectif=TPE&locaux=proprietaire&mobilite=oui&matieres-premieres=oui&tri-dechets=non&dechets=oui&gestion-eau=oui&energie=non&audit=non#questionnaire-resultat',
-    count: 50,
-    value: [
+    values: [
       'Diagnostic à 360° sur la transition écologique',
       'Sensibilisation des équipes',
       'Plan d’action eau',
@@ -113,8 +113,7 @@ export const tests = [
   {
     id: 2,
     url: 'questionnaire/resultat?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=78893947800020&locaux=locataire&mobilite=oui&matieres-premieres=oui&tri-dechets=oui&dechets=oui&gestion-eau=oui&energie=oui&audit=non#questionnaire-resultat',
-    count: 66,
-    value: [
+    values: [
       'Diagnostic à 360° sur la transition écologique',
       'Sensibilisation des équipes',
       'Plan d’action économies d’énergie',
@@ -132,7 +131,6 @@ export const tests = [
       'Recrutement',
       'Tri des déchets',
       "Acquisition d'un véhicule propre",
-      'Eclairage LED',
       'Récupérateur d’eau de pluie',
       'Plan d’adaptation au dérèglement climatique',
       'Pompe à chaleur',
@@ -165,7 +163,6 @@ export const tests = [
       'Recrutement',
       'Tri des déchets',
       "Acquisition d'un véhicule propre",
-      'Eclairage LED',
       'Récupérateur d’eau de pluie',
       'Plan d’adaptation au dérèglement climatique',
       'Pompe à chaleur',
@@ -186,8 +183,7 @@ export const tests = [
   {
     id: 3,
     url: 'questionnaire/resultat?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=82141193100016&effectif=ME&locaux=proprietaire&mobilite=oui&matieres-premieres=oui&tri-dechets=non&dechets=oui&gestion-eau=oui&energie=oui&audit=oui&selection-audit=consommation-energie&selection-audit=eau&selection-audit=performance-energetique&selection-audit=bilan-carbone&selection-audit=certification&selection-audit=matieres-premieres&selection-audit=dechets#questionnaire-resultat',
-    count: 80,
-    value: [
+    values: [
       'Diagnostic à 360° sur la transition écologique',
       'Sensibilisation des équipes',
       'Plan d’action économies d’énergie',
@@ -273,8 +269,7 @@ export const tests = [
   {
     id: 4,
     url: 'questionnaire/resultat?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=21490007800012&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non#questionnaire-resultat',
-    count: 14,
-    value: [
+    values: [
       'Sensibilisation des équipes',
       'Isolation thermique',
       'Formation environnement',

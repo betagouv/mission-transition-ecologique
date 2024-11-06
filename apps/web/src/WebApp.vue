@@ -10,7 +10,7 @@
       <div class="fr-grid-row--center fr-my-10v">
         <div class="fr-col-12">
           <div class="fr-text-center">
-            <TeeSpinner scale="6" />
+            <TeeSpinner />
           </div>
         </div>
       </div>

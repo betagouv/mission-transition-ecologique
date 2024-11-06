@@ -69,3 +69,14 @@ publicodes:
         d'eau
       - questionnaire . objectif prioritaire . est ma performance énergétique
       - questionnaire . objectif prioritaire . est l'écoconception
+champs conditionnels:
+  - toutes ces conditions:
+      - effectif >= 20
+      - effectif <= 49
+    Montant du dispositif: 2 000 € HT après subvention de 50%
+    Eligibilité taille: De 20 à 49 salariés
+  - toutes ces conditions:
+      - effectif >= 50
+      - effectif <= 249
+    Montant du dispositif: 3 000 € HT après subvention de 50%
+    Eligibilité taille: De 50 à 250 salariés

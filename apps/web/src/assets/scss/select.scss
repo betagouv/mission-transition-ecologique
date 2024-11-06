@@ -1,5 +1,11 @@
 @use 'setting';
 
+.fr-select-group {
+    select {
+        background-color: setting.$white;
+    } 
+} @use 'setting';
+
 .fr-select {
     background-color: setting.$white;
 } 

@@ -29,6 +29,25 @@
       v-else
       :sorted-projects="sortedProjects"
     />
+
+    <div
+      v-if="!navigationStore.hasSpinner"
+      class="fr-grid-row fr-grid-row--center"
+    >
+      <div class="fr-container">
+        <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2">
+          <Transition
+            name="fade"
+            mode="out-in"
+          >
+            <component
+              :is="otherProjectComponent"
+              @click="openOtherProjectForm"
+            />
+          </Transition>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -38,13 +57,24 @@ import { computed } from 'vue'
 import UsedTrack from '@/utils/track/usedTrack'
 import { useProgramStore } from '@/stores/program'
 import { Project as UtilsProject } from '@/utils/project/project'
+import { useNavigationStore } from '@/stores/navigation'
+import OtherProjectCta from '@/components/project/list/OtherProjectCta.vue'
+import OtherProjectForm from '@/components/project/list/OtherProjectForm.vue'
 
 interface ProjectListProps {
   filteredProjects?: Project[]
   hasError: boolean
 }
 const props = defineProps<ProjectListProps>()
+const otherProjectForm = ref<boolean>(false)
+const navigationStore = useNavigationStore()
 
+watch(
+  () => props.filteredProjects,
+  () => {
+    otherProjectForm.value = false
+  }
+)
 const programStore = useProgramStore()
 
 const hasProjects = computed(() => {
@@ -59,6 +89,10 @@ const hasThemeCard = computed(() => {
   return programStore.hasThemeTypeSelected() || (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityTheme())
 })
 
+const openOtherProjectForm = () => {
+  otherProjectForm.value = true
+}
+
 const sortedProjects = UtilsProject.sort(computed(() => props.filteredProjects))
 
 const showNoResults = computed(() => {
@@ -67,5 +101,12 @@ const showNoResults = computed(() => {
 
 const isSpecificGoal = computed(() => {
   return hasThemeCard.value && UsedTrack.isSpecificGoal() && hasProjects.value
+})
+const otherProjectComponent = computed(() => {
+  if (!otherProjectForm.value && !showNoResults.value) {
+    return OtherProjectCta
+  } else {
+    return OtherProjectForm
+  }
 })
 </script>

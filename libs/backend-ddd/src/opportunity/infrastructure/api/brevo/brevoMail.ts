@@ -1,11 +1,13 @@
 import { SendSmtpEmail, TransactionalEmailsApi, TransactionalEmailsApiApiKeys } from '@getbrevo/brevo'
 import { Maybe } from 'true-myth'
+import { OpportunityAssociatedData } from '../../../domain/opportunityAssociatedData'
 import Config from '../../../../config'
 import { MailerManager } from '../../../domain/spi'
 import { ProgramType, Program, Project } from '@tee/data'
-import { Opportunity, OpportunityType } from '@tee/common'
+import { Opportunity } from '@tee/common'
 import Monitor from '../../../../common/domain/monitoring/monitor'
 import { ensureError } from '../../../../common/domain/error/errors'
+import { CustomProject } from '../../../domain/types'
 
 export default class BrevoMail {
   private readonly _programTemplateReceipt = 11
@@ -18,31 +20,28 @@ export default class BrevoMail {
 
   sendReturnReceipt: MailerManager['sendReturnReceipt'] = async (
     opportunity: Opportunity,
-    programOrProject: ProgramType | Project
+    associatedData: OpportunityAssociatedData
   ): Promise<Maybe<Error> | void> => {
     try {
-      await this._api.sendTransacEmail(this._email(opportunity, programOrProject))
+      await this._api.sendTransacEmail(this._email(opportunity, associatedData))
     } catch (err: unknown) {
       const error = ensureError(err)
-      Monitor.exception(error, { email: this._email(opportunity, programOrProject) })
+      Monitor.exception(error, { email: this._email(opportunity, associatedData) })
       return Maybe.just(error)
     }
   }
 
-  private _email(opportunity: Opportunity, programOrProject: ProgramType | Project) {
+  private _email(opportunity: Opportunity, associatedData: OpportunityAssociatedData) {
     const email = new SendSmtpEmail()
 
-    switch (opportunity.type) {
-      case OpportunityType.Program:
-        email.templateId = this._programTemplateReceipt
-        email.params = this._paramsProgram(opportunity, programOrProject as ProgramType)
-        break
-      case OpportunityType.Project:
-        email.templateId = this._projectTemplateReceipt
-        email.params = this._paramsProject(opportunity, programOrProject as Project)
-        break
-      default:
-        throw new Error(`Unsupported Opportunity Type in brevo mail receipt`)
+    if (associatedData.isProgram()) {
+      email.templateId = this._programTemplateReceipt
+      email.params = this._paramsProgram(opportunity, associatedData.data)
+    } else if (associatedData.isProject() || associatedData.isCustomProject()) {
+      email.templateId = this._projectTemplateReceipt
+      email.params = this._paramsProject(opportunity, associatedData.data)
+    } else {
+      throw new Error(`Unsupported Opportunity Type in brevo mail receipt`)
     }
     email.sender = { id: Config.BREVO_SENDER_ID }
     email.to = [{ email: opportunity.email, name: this._getFullName(opportunity) }]
@@ -68,9 +67,9 @@ export default class BrevoMail {
     }
   }
 
-  private _paramsProject(opportunity: Opportunity, project: Project) {
+  private _paramsProject(opportunity: Opportunity, data: Project | CustomProject) {
     return {
-      projectName: project.title,
+      projectName: data.title,
       needs: opportunity.message,
       firstname: opportunity.firstName,
       lastname: opportunity.lastName,
