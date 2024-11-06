@@ -1,4 +1,4 @@
-import { PhoneValidator, EmailValidator, SiretValidator } from '@tee/common'
+import { PhoneValidator, EmailValidator, SiretValidator, OpportunityType } from '@tee/common'
 import { FieldType, RouteName, type ProgramData as ProgramType, Project, FormDataType, ThemeType, ThemeId } from '@/types'
 
 import { useProgramStore } from '@/stores/program'
@@ -121,5 +121,9 @@ export default class Opportunity {
       titreAide: program.titre
     })
     return baseFields
+  }
+
+  static isCustomProject(opportunityType: OpportunityType): boolean {
+    return opportunityType === OpportunityType.CustomProject
   }
 }
