@@ -11,19 +11,22 @@ input[type="search"] {
   }
 }
 
-.fr-search-bar {
-  .search-clear {
+.search-clear {
+  background-color: var(--background-contrast-grey);
+  border-radius: 0;
+
+  &::before {
+    mask-image: url("@gouvfr/dsfr/dist/icons/system/close-line.svg") !important;
+  }
+
+  &:disabled {
     background-color: var(--background-contrast-grey);
-    border-radius: 0;
-    &::before {
-      mask-image: url("@gouvfr/dsfr/dist/icons/system/close-line.svg") !important;
-    }
-    &:disabled {
-      background-color: var(--background-contrast-grey);
-      box-shadow: inset 0 -2px 0 0 var(--border-disabled-grey);
-      color: var(--text-disabled-grey);
-    }
-  } 
+    box-shadow: inset 0 -2px 0 0 var(--border-disabled-grey);
+    color: var(--text-disabled-grey);
+  }
+} 
+
+.fr-search-bar {
   &-lg {
     .fr-input, .search-button, .search-clear {
       max-height: 3rem !important;

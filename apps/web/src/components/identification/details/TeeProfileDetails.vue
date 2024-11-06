@@ -36,6 +36,7 @@
 import { RegisterDetailType, RegisterDetails, Sector, CompanyDataStorageKey, CompanyDataType } from '@/types'
 import Breakpoint from '@/utils/breakpoints'
 import CompanyDataStorage from '@/utils/storage/companyDataStorage'
+import Navigation from '@/utils/navigation'
 
 interface Props {
   company: CompanyDataType[CompanyDataStorageKey.Company]
@@ -44,7 +45,6 @@ interface Props {
 }
 const props = defineProps<Props>()
 const emit = defineEmits(['modifySiret', 'closeRegister'])
-const toggleRegisterModal = inject<() => void>('toggleRegisterModal')
 const showError = ref<boolean>(false)
 const openSiretStep = () => {
   emit('modifySiret')
@@ -98,9 +98,7 @@ const saveProfile = () => {
       : props.company
     CompanyDataStorage.setCompany(company)
     CompanyDataStorage.setSize(profile.value.size.value)
-    if (toggleRegisterModal) {
-      toggleRegisterModal()
-    }
+    Navigation.toggleRegisterModal(false)
   } else {
     showError.value = true
   }

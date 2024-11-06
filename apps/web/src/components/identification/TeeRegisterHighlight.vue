@@ -16,7 +16,7 @@
             <TeeDsfrButton
               class="fr-text--yellow fr-text--bold"
               :label="Translation.t('results.noResultCTA')"
-              @click="toggleRegisterModal"
+              @click="openModal"
             />
           </div>
         </div>
@@ -27,9 +27,13 @@
 <script setup lang="ts">
 import Translation from '@/utils/translation'
 
+import Navigation from '@/utils/navigation'
+
 interface Props {
   text: string
 }
 defineProps<Props>()
-const toggleRegisterModal = inject<() => void>('toggleRegisterModal')
+const openModal = () => {
+  Navigation.toggleRegisterModal()
+}
 </script>
