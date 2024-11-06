@@ -22,6 +22,7 @@
       <DsfrInput
         v-model="localisationInput"
         name="manual-register-localisation"
+        class="fr-input--white"
         type="search"
         :placeholder="infos.description"
         @update:model-value="searchLocalisation"
