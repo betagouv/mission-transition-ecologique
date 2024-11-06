@@ -64,14 +64,6 @@ import Translation from '@/utils/translation'
 const registeredData = CompanyDataStorage.getData()
 const toggleRegisterModal = inject<(v?: boolean) => void>('toggleRegisterModal')
 
-watch(
-  registeredData,
-  (newRegisteredData) => {
-    registeredData.value = newRegisteredData
-  },
-  { deep: true }
-)
-
 const companyName = computed<string | undefined>(() => {
   return registeredData.value[CompanyDataStorageKey.Company]?.denomination || ''
 })
