@@ -1,6 +1,5 @@
 import { test, expect } from '@playwright/test'
 import { tests } from './formResultsData'
-import { FormDataType } from '@/types'
 
 /**
  * Test the number of programs proposed as a result of a list of queries and their order.
@@ -9,9 +8,8 @@ tests.forEach((singleTest) => {
   test(`Test id ${singleTest.id} - Verify form ${singleTest.url}`, async ({ page }) => {
     await page.goto(singleTest.url)
     try {
-      Object.keys(FormDataType).forEach((fieldKey) => {
-        await page.locator(`[data-testid="${fieldKey}"]`).fill('John Doe');
-
+      Object.keys(singleTest.values).forEach((fieldKey) => {
+        page.locator(`[data-testid="${fieldKey}"]`).fill(singleTest.values[fieldKey]);
       })
     } catch (error) {
       // this is an expected error what can happen

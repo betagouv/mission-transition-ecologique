@@ -6,3 +6,5 @@ export type ResultDataType = {
 }
 
 export type ResultsDataType = ResultDataType[]
+
+export type FormResultDataType = Omit<ResultDataType, 'values'> & {values:{[key:string]: string } }

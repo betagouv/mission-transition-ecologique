@@ -1,20 +1,36 @@
-import { ResultsDataType } from './resultDataType'
+import { FormResultDataType } from './resultDataType'
 
 /* cas de formulaire : 
 - 'j'ai un projet en tete' : projet simple / aide depuis projet
 - catalog aide 
 - 'je ne sais pas par ou commencer' : projet simple / aide / aide depuis projet
 */
-export const tests: ResultsDataType = [
+export const tests: FormResultDataType[]  = [
   {
     id: 1,
     url: 'questionnaire/resultat/projet/isolation-thermique?choix-du-parcours=j-ai-un-projet&siret=83014132100034&effectif=TPE&objectifs=building',
-    values: ['John', 'Doe', "test@test.fr", '83014132100034' ]
+    values: {
+      projectTitle: 'Isolation thermique',
+      name: 'test',
+      surname: 'test',
+      tel: '012345678',
+      email: 'test@test.fr',
+      siret: '83014132100034',
+      needs: ''
+    } 
   },
   {
     id: 2,
     url: 'questionnaire/resultat/projet/isolation-thermique/renovation-petit-tertiaire-prive?choix-du-parcours=j-ai-un-projet&siret=83014132100034&effectif=TPE&objectifs=building',
-    values: ['Formation ADEME']
+    values: {
+      projectTitle: 'Isolation thermique',
+      name: 'test',
+      surname: 'test',
+      tel: '012345678',
+      email: 'test@test.fr',
+      siret: '83014132100034',
+      needs: ''
+    } 
   },
   {
     id: 3,
