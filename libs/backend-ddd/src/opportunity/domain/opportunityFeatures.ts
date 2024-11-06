@@ -94,6 +94,7 @@ export default class OpportunityFeatures {
         return Result.ok(new OpportunityAssociatedData(OpportunityType.Project, associatedProject))
       }
       case OpportunityType.CustomProject:
+        opportunity.id = opportunity.titleMessage || 'Projet sans Titre'
         return Result.ok(
           new OpportunityAssociatedData(OpportunityType.CustomProject, {
             title: opportunity.titleMessage || 'Untitled',
