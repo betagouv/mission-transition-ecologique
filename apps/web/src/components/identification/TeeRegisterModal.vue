@@ -49,17 +49,17 @@ import { EstablishmentFront, CompanyDataStorageKey, CompanyDataType, LegalCatego
 import Breakpoint from '@/utils/breakpoints'
 import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 import { onClickOutside } from '@vueuse/core'
+import Navigation from '@/utils/navigation'
 
 const registerModal = ref(null)
 const registeredData = CompanyDataStorage.getData()
 const company = ref<CompanyDataType[CompanyDataStorageKey.Company]>(registeredData.value[CompanyDataStorageKey.Company])
 const companySize = ref<CompanyDataType[CompanyDataStorageKey.Size]>(registeredData.value[CompanyDataStorageKey.Size])
 const manualRegistration = ref<boolean>(!!(company.value && !('siret' in company.value)))
-const toggleRegisterModal = inject<(stat?: undefined | boolean) => void>('toggleRegisterModal')
 onClickOutside(registerModal, (ev: MouseEvent) => {
   const target = ev.target as HTMLInputElement
-  if (toggleRegisterModal && target && !target.classList.contains('ignore-modal-click')) {
-    toggleRegisterModal(false)
+  if (target && !target.classList.contains('ignore-modal-click')) {
+    Navigation.toggleRegisterModal(false)
   }
 })
 const registerStep = computed<number>(() => {
@@ -95,9 +95,7 @@ const setManualRegister = () => {
 }
 
 const closeModal = () => {
-  if (toggleRegisterModal) {
-    toggleRegisterModal(false)
-  }
+  Navigation.toggleRegisterModal(false)
 }
 </script>
 <style lang="scss" scoped>

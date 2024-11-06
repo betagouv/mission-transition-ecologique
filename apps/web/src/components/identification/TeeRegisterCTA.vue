@@ -60,10 +60,9 @@ import { CompanyDataStorageKey } from '@/types'
 import Breakpoint from '@/utils/breakpoints'
 import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 import Translation from '@/utils/translation'
+import Navigation from '@/utils/navigation'
 
 const registeredData = CompanyDataStorage.getData()
-const toggleRegisterModal = inject<(v?: boolean) => void>('toggleRegisterModal')
-
 const companyName = computed<string | undefined>(() => {
   return registeredData.value[CompanyDataStorageKey.Company]?.denomination || ''
 })
@@ -71,9 +70,7 @@ const hasData = computed<boolean>(() => {
   return !!registeredData.value[CompanyDataStorageKey.Company]
 })
 const openModal = () => {
-  if (toggleRegisterModal) {
-    toggleRegisterModal()
-  }
+  Navigation.toggleRegisterModal()
 }
 
 const badgeIcon = computed(() => {
