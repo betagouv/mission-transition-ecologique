@@ -3,7 +3,7 @@
   <TeeDsfrPersonalizeConsent />
   <div>
     <TeeHeader />
-    <TeeRegisterModal v-if="registerModal" />
+    <TeeRegisterModal v-if="useNavigationStore().hasRegisterModal" />
     <TeeMatomo />
     <router-view v-if="isReady" />
     <template v-else>
@@ -38,22 +38,9 @@ import CompanyDataStorage from './utils/storage/companyDataStorage'
 const navigationStore = useNavigationStore()
 const router = useRouter()
 const route = useRoute()
-const registerModal = ref<boolean>(false)
 const isReady = computed<boolean>(() => {
   return navigationStore.isReady
 })
-
-const toggleRegisterModal = (forceStatus: boolean) => {
-  registerModal.value = forceStatus || !registerModal.value
-  document.body.style.overflow = registerModal.value ? 'hidden' : ''
-  if (registerModal.value) {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    })
-  }
-}
-provide('toggleRegisterModal', toggleRegisterModal)
 onBeforeMount(() => {
   Translation.setLocale('fr')
   Cookie.setCookies()

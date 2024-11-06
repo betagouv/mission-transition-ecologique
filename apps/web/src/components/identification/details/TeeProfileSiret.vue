@@ -3,9 +3,9 @@
     id="tag-siret"
     class="fr-tag fr-bg--blue-france--lightness"
   >
-    {{ siretTagLabel }}
+    <span v-html="siretTagLabel" />
     <span
-      class="fr-icon-close-line"
+      class="fr-icon-close-line fr-pl-4v"
       @click="modifySiret"
     />
   </p>
@@ -21,7 +21,7 @@ interface Props {
 const props = defineProps<Props>()
 const siretTagLabel = computed(() => {
   if (Breakpoint.isMobile()) {
-    return `${props.infos.tagLabel} \n SIRET ${props.infos.value}`
+    return `${props.infos.tagLabel} <br> SIRET ${props.infos.value}`
   }
   return `${props.infos.tagLabel} - SIRET ${props.infos.value} `
 })

@@ -1,4 +1,4 @@
-import { Controller, Route, SuccessResponse, TsoaResponse, Res, Example, Get, Path } from 'tsoa'
+import { Controller, Route, SuccessResponse, TsoaResponse, Res, Example, Get, Path, Query } from 'tsoa'
 import { ErrorJSON, Establishment, EstablishmentNotFoundError, EstablishmentService, ValidateErrorJSON, Monitor } from '@tee/backend-ddd'
 import { EstablishmentSearch } from '@tee/common'
 
@@ -47,10 +47,10 @@ export class SireneController extends Controller {
    */
 
   @Example<Establishment>(exampleEstablishment)
-  @Get('{query}/{resultCount}')
+  @Get('{query}')
   public async getEstablishmentBySiret(
     @Path() query: string,
-    @Path() resultCount: number,
+    @Query() resultCount = 3,
     @Res() requestFailedResponse: TsoaResponse<500, ErrorJSON>,
     @Res() _validationFailedResponse: TsoaResponse<422, ValidateErrorJSON>,
     @Res() notFoundResponse: TsoaResponse<404, EstablishmentNotFoundErrorJSON>

@@ -45,21 +45,21 @@
 </template>
 <script setup lang="ts">
 import Translation from '@/utils/translation'
-import { EstablishmentFront, CompanyDataStorageKey, CompanyDataType } from '@/types'
+import { EstablishmentFront, CompanyDataStorageKey, CompanyDataType, LegalCategory, StructureSize } from '@/types'
 import Breakpoint from '@/utils/breakpoints'
 import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 import { onClickOutside } from '@vueuse/core'
+import Navigation from '@/utils/navigation'
 
 const registerModal = ref(null)
 const registeredData = CompanyDataStorage.getData()
 const company = ref<CompanyDataType[CompanyDataStorageKey.Company]>(registeredData.value[CompanyDataStorageKey.Company])
 const companySize = ref<CompanyDataType[CompanyDataStorageKey.Size]>(registeredData.value[CompanyDataStorageKey.Size])
 const manualRegistration = ref<boolean>(!!(company.value && !('siret' in company.value)))
-const toggleRegisterModal = inject<(stat?: undefined | boolean) => void>('toggleRegisterModal')
 onClickOutside(registerModal, (ev: MouseEvent) => {
   const target = ev.target as HTMLInputElement
-  if (toggleRegisterModal && target && !target.classList.contains('ignore-modal-click')) {
-    toggleRegisterModal(false)
+  if (target && !target.classList.contains('ignore-modal-click')) {
+    Navigation.toggleRegisterModal(false)
   }
 })
 const registerStep = computed<number>(() => {
@@ -70,6 +70,9 @@ const registerStep = computed<number>(() => {
 })
 const updateEstablishment = (selectedEstablishment: EstablishmentFront) => {
   company.value = selectedEstablishment
+  if (company.value.legalCategory === LegalCategory.EI) {
+    companySize.value = StructureSize.EI
+  }
   manualRegistration.value = false
 }
 const resetSiret = () => {
@@ -92,9 +95,7 @@ const setManualRegister = () => {
 }
 
 const closeModal = () => {
-  if (toggleRegisterModal) {
-    toggleRegisterModal(false)
-  }
+  Navigation.toggleRegisterModal(false)
 }
 </script>
 <style lang="scss" scoped>
@@ -116,7 +117,7 @@ const closeModal = () => {
 }
 
 .register-modal-overlay-lg {
-  top: 118px !important;
+  top: var(--header-height) !important;
 }
 
 #register-modal {
@@ -139,6 +140,6 @@ const closeModal = () => {
 
 .register-modal-lg {
   background-image: url('/images/TEE-modal-bottom.svg');
-  min-height: calc(100vh - 118px);
+  min-height: calc(100vh - var(--header-height));
 }
 </style>

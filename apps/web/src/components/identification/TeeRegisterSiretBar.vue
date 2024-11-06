@@ -5,17 +5,28 @@
     </span>
     <div
       id="header-search"
+      ref="siretSearchBar"
       class="fr-search-bar fr-search-bar-lg fr-search-bar--yellow"
       :class="isLoading ? 'fr-search-bar--loading' : ''"
       role="search"
     >
       <DsfrInput
-        ref="siretSearchBar"
         v-model="model"
+        class="fr-input--white"
         name="register-siret-input"
         :disabled="isLoading"
         type="search"
         @keyup.enter="onClick"
+      />
+      <DsfrButton
+        v-if="model"
+        class="search-clear"
+        icon="fr-icon-close-line"
+        icon-only
+        no-outline
+        tertiary
+        :disabled="isLoading"
+        @click="onClear"
       />
       <TeeDsfrButton
         class="fr-bg--yellow search-button"
@@ -53,6 +64,10 @@ const emit = defineEmits<{
 
 const onClick = () => {
   emit('onClick')
+}
+const onClear = () => {
+  model.value = undefined
+  emit('onClear')
 }
 onClickOutside(siretSearchBar, () => emit('onClear'))
 </script>

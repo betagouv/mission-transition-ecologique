@@ -21,7 +21,8 @@
     </div>
     <div
       id="header-search"
-      class="fr-search-bar"
+      :class="isLoading ? 'fr-search-bar--loading' : ''"
+      class="fr-search-bar fr-search-bar--blue-france fr-search-bar-lg"
       role="search"
     >
       <DsfrInput
@@ -30,13 +31,12 @@
         :name="`input-${option.id}`"
         :disabled="isLoading"
         :hint="option?.placeholder?.[Translation.lang]"
-        class="fr-input tee-input-large"
         type="search"
         @keyup.enter="onClick"
       />
       <DsfrButton
         v-if="model"
-        class="tee-btn-input-large tee-btn-input-clear-btn"
+        class="search-clear"
         icon="fr-icon-close-line"
         icon-only
         no-outline
@@ -45,7 +45,7 @@
         @click="onClear"
       />
       <DsfrButton
-        class="tee-btn-input-large"
+        class="search-button"
         :disabled="isLoading"
         :title="Translation.t('input.search')"
         @click="onClick"

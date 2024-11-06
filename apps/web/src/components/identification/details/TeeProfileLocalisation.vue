@@ -6,7 +6,7 @@
     {{ infos.tagLabel || infos.value }}
     <span
       v-if="manual"
-      class="fr-icon-close-line"
+      class="fr-icon-close-line fr-pl-4v"
       @click="modifyLocalisation"
     />
   </p>
@@ -15,16 +15,17 @@
     :error-message="showError && !localisationInput ? errorMessage : ''"
   >
     <div
+      ref="localisationSearchBar"
       class="fr-search-bar fr-search-bar--yellow"
       role="search"
     >
       <DsfrInput
         v-model="localisationInput"
-        class="fr-input-sm"
         name="manual-register-localisation"
+        class="fr-input--white"
         type="search"
         :placeholder="infos.description"
-        @update:model-value="updateSearchValue"
+        @update:model-value="searchLocalisation"
         @keyup.enter="searchLocalisation"
       />
       <DsfrButton
@@ -60,6 +61,7 @@ import { RegisterDetail } from '@/types'
 import { Region } from '@/types'
 import LocalisationApi from '@/service/api/localisationApi'
 import { useDebounce } from '@vueuse/core'
+import { onClickOutside } from '@vueuse/core'
 
 interface Props {
   infos: RegisterDetail
@@ -73,21 +75,10 @@ const localisationResults = ref<{ nom: string; codesPostaux: string[] }[]>([])
 const isLoading = ref<boolean>(false)
 const localisationApi = new LocalisationApi()
 const errorMessage = 'La sélection de la localisation est nécessaire'
-const debouncedRegionInput = useDebounce(localisationInput, 500)
-watch(debouncedRegionInput, (newValue) => {
-  if (newValue) {
-    searchLocalisation()
-  }
-})
-const searchLocalisation = async () => {
-  if (localisationInput.value) {
-    isLoading.value = true
-    localisationResults.value = await localisationApi.fetchCommunes(localisationInput.value)
-    isLoading.value = false
-  }
-}
-const updateSearchValue = (value: string | undefined) => {
-  localisationInput.value = value
+const localisationSearchBar = ref(null)
+
+const searchLocalisation = () => {
+  localisationResults.value = Object.values(Region).filter((region) => region.toLowerCase().includes(localisationInput.value as string))
 }
 const selectLocalisation = (localisation:{ nom: string; codesPostaux: string[] }) => {
   selectedLocalisation.value = localisation
@@ -97,6 +88,7 @@ const modifyLocalisation = () => {
   localisationInput.value = undefined
   localisationResults.value = []
 }
+onClickOutside(localisationSearchBar, () => modifyLocalisation())
 </script>
 <style lang="scss" scoped>
 #localisation-response {

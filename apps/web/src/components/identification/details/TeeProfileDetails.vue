@@ -13,8 +13,7 @@
     <h4 class="fr-mb-0 fr-py-2v fr-text--white">Quelle est votre entreprise ?</h4>
   </div>
   <TeeProfileElement
-    v-for="detailKey in Object.keys(profile)"
-    v-show="profile[detailKey].if !== false"
+    v-for="detailKey in Object.keys(profile).filter((detailK) => profile[detailK].if !== false)"
     :key="profile[detailKey].title"
     v-model="profile[detailKey]"
     class="fr-pb-4v fr-col-sm-8 fr-col-md-5 fr-col-offset-md-2 fr-col-12"
@@ -37,6 +36,7 @@
 import { RegisterDetailType, RegisterDetails, Sector, CompanyDataStorageKey, CompanyDataType } from '@/types'
 import Breakpoint from '@/utils/breakpoints'
 import CompanyDataStorage from '@/utils/storage/companyDataStorage'
+import Navigation from '@/utils/navigation'
 
 interface Props {
   company: CompanyDataType[CompanyDataStorageKey.Company]
@@ -45,7 +45,6 @@ interface Props {
 }
 const props = defineProps<Props>()
 const emit = defineEmits(['modifySiret', 'closeRegister'])
-const toggleRegisterModal = inject<() => void>('toggleRegisterModal')
 const showError = ref<boolean>(false)
 const openSiretStep = () => {
   emit('modifySiret')
@@ -62,14 +61,14 @@ const profile = ref<RegisterDetails>({
   localisation: {
     title: 'Localisation',
     icon: 'fr-icon-map-pin-2-line',
-    description: 'Dans quelle ville se situe votre activité ?',
+    description: 'Quelle est votre région ?',
     value: props.company?.region,
     type: RegisterDetailType.Localisation,
     tagLabel: props.manual && props.company && 'siret' in props.company ? `${props.company.codePostal} ${props.company.ville}` : ''
   },
   activity: {
     title: 'Activité',
-    description: "Choisissez le secteur d'activité de votre entreprise",
+    description: "Quel est votre secteur d'activités ?",
     icon: 'fr-icon-briefcase-line',
     value: props.company?.secteur as Sector,
     type: RegisterDetailType.Activity,
@@ -99,9 +98,7 @@ const saveProfile = () => {
       : props.company
     CompanyDataStorage.setCompany(company)
     CompanyDataStorage.setSize(profile.value.size.value)
-    if (toggleRegisterModal) {
-      toggleRegisterModal()
-    }
+    Navigation.toggleRegisterModal(false)
   } else {
     showError.value = true
   }
