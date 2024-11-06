@@ -58,9 +58,7 @@
 </template>
 <script lang="ts" setup>
 import { RegisterDetail } from '@/types'
-import { Region } from '@/types'
 import LocalisationApi from '@/service/api/localisationApi'
-import { useDebounce } from '@vueuse/core'
 import { onClickOutside } from '@vueuse/core'
 
 interface Props {
@@ -69,7 +67,7 @@ interface Props {
   showError: boolean
 }
 defineProps<Props>()
-const selectedLocalisation = defineModel<Region>()
+const selectedLocalisation = defineModel<{ nom: string; codesPostaux: string[] }>()
 const localisationInput = ref<string | undefined>()
 const localisationResults = ref<{ nom: string; codesPostaux: string[] }[]>([])
 const isLoading = ref<boolean>(false)
@@ -77,10 +75,12 @@ const localisationApi = new LocalisationApi()
 const errorMessage = 'La sélection de la localisation est nécessaire'
 const localisationSearchBar = ref(null)
 
-const searchLocalisation = () => {
-  localisationResults.value = Object.values(Region).filter((region) => region.toLowerCase().includes(localisationInput.value as string))
+const searchLocalisation = async () => {
+  isLoading.value = true
+  localisationResults.value = await localisationApi.fetchCommunes(localisationInput.value)
+  isLoading.value = false
 }
-const selectLocalisation = (localisation:{ nom: string; codesPostaux: string[] }) => {
+const selectLocalisation = (localisation: { nom: string; codesPostaux: string[] }) => {
   selectedLocalisation.value = localisation
 }
 const modifyLocalisation = () => {

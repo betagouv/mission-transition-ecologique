@@ -12,9 +12,11 @@ export default class LocalisationApi extends RequestApi {
    * @param searchTerm - The search term, either a name or a postal code.
    * @returns A list of communes matching the search criteria.
    */
-  async fetchCommunes(searchTerm: string) {
+  async fetchCommunes(searchTerm: string | undefined) {
     let resp: any[] = [] // Adjust the type to match the API's response structure
-
+    if (!searchTerm) {
+      return []
+    }
     try {
       const urlWithParams = new URL(this.url)
 
