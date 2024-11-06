@@ -272,7 +272,7 @@ const TeeProgramFormContainer = ref<HTMLElement | null | undefined>(null)
 
 const publicPath = Config.publicPath
 
-const hasRegisteredData = ref(CompanyDataStorage.hasData())
+const hasRegisteredData = computed(() => CompanyDataStorage.hasData())
 const registeredData = CompanyDataStorage.getData()
 
 interface Props {
