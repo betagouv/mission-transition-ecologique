@@ -223,7 +223,7 @@
     <div
       v-if="!CompanyDataStorage.hasData()"
       ref="TeeProgramFormContainer"
-      class="fr-bg--blue-france--lightness fr-col-justify--center fr-grid-row fr-p-2w"
+      class="fr-bg--blue-france--lightness fr-grid-row fr-p-2w"
     >
       <TeeForm
         v-if="program"
