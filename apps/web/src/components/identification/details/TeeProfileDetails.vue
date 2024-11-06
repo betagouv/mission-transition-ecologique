@@ -62,11 +62,13 @@ const profile = ref<RegisterDetails>({
     title: 'Localisation',
     icon: 'fr-icon-map-pin-2-line',
     description: 'Quelle est votre ville ?',
-    value: {
-      ville: props.company?.ville,
-      region: props.company?.region as Region,
-      codePostal: props.company?.codePostal
-    },
+    value: props.company
+      ? {
+          ville: props.company.ville,
+          region: props.company.region as Region,
+          codePostal: props.company.codePostal
+        }
+      : undefined,
     type: RegisterDetailType.Localisation,
     tagLabel: props.company && 'siret' in props.company ? `${props.company.codePostal} ${props.company.ville}` : ''
   },
