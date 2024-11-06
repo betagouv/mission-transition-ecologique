@@ -7,12 +7,12 @@
       <div class="fr-container--fluid fr-p-4v">
         <div class="fr-grid-row fr-grid-row--middle">
           <img
-            class="fr-col-2 fr-col-xs-2 fr-mr-8v"
+            class="fr-col-2 fr-col-xs-2 fr-hidden fr-unhidden-sm fr-mr-8v"
             src="/images/tracks/ecriture.svg"
             alt="image / ecriture"
           />
-          <div class="fr-col-9 fr-col-xs-8">
-            <p class="fr-mb-2v">{{ text }}</p>
+          <div class="fr-col-9 fr-col-xs-12">
+            <p class="fr-mb-4v">{{ text }}</p>
             <TeeDsfrButton
               class="fr-text--yellow fr-text--bold"
               label="Je complète mon profil"
