@@ -27,9 +27,5 @@ const resume: string = Translation.t('programResults.resume', {
   region: TrackStructure.getRegion() ?? CompanyDataStorage.getSiret()?.region ?? ''
 })
 
-const hasRegisteredData = ref(CompanyDataStorage.hasData())
-
-watchEffect(() => {
-  hasRegisteredData.value = CompanyDataStorage.hasData()
-})
+const hasRegisteredData = computed(() => CompanyDataStorage.hasData())
 </script>

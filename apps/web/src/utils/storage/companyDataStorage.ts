@@ -27,6 +27,10 @@ export default class CompanyDataStorage {
     return this._data.value[CompanyDataStorageKey.Size] !== null
   }
 
+  static hasItem(key: CompanyDataStorageKey): boolean {
+    return this._storageHandler.getItem(key) !== null
+  }
+
   static setSiret(value: EstablishmentFront) {
     this.setItem(CompanyDataStorageKey.Siret, value)
   }
@@ -53,8 +57,9 @@ export default class CompanyDataStorage {
   }
 
   static removeData(): void {
-    this._storageHandler.removeItem(CompanyDataStorageKey.Siret)
-    this._storageHandler.removeItem(CompanyDataStorageKey.Size)
+    Object.values(CompanyDataStorageKey).forEach((key) => {
+      this._storageHandler.removeItem(key)
+    })
     this._updateData()
   }
 

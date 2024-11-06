@@ -249,7 +249,7 @@ import ProgramLongDescription from '@/components/program/detail/ProgramLongDescr
 import ProgramTile from '@/components/program/detail/ProgramTile.vue'
 import Config from '@/config'
 import { useProgramStore } from '@/stores/program'
-import { OpportunityType, Project as ProjectType } from '@/types'
+import { OpportunityType, ProgramEligibilityType, Project as ProjectType } from '@/types'
 import { RouteName } from '@/types/routeType'
 import { useNavigationStore } from '@/stores/navigation'
 import { MetaSeo } from '@/utils/metaSeo'
@@ -309,7 +309,12 @@ const isProgramAutonomous = computed(() => {
   return program.value?.[`activable en autonomie`] == 'oui'
 })
 
-const programIsEligible = ref(false)
+const programIsEligible = computed(() => {
+  return (
+    program.value?.eligibility === ProgramEligibilityType.Eligible ||
+    program.value?.eligibility === ProgramEligibilityType.PartiallyEligible
+  )
+})
 
 onBeforeMount(async () => {
   useNavigationStore().hasSpinner = true

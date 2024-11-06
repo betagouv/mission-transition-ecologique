@@ -48,11 +48,13 @@ export const frDict = {
     alertTitle: 'Merci, voici vos résultats',
     alertTitleNoResults: 'Pas de résultats',
     alertNoResults: "Désolé, nous n'avons pas trouvé de dispositif adapté à votre situation et vos demandes",
+    alertNoDataNoResults: 'Oups ! Il nous manque quelques informations sur votre entreprise pour pouvoir afficher vos résultats.',
     alertDescription: 'Vous pouvez également nous envoyer un mail via le formulaire ci-après pour être mis en contact avec des conseillers',
     yourResults: 'Vos résultats',
     fittingPrograms: 'Les aides correspondant à vos choix',
     filterSelect: 'Filtrer par {fieldLabel}',
-    resetSelect: '(réinitialiser)'
+    resetSelect: '(réinitialiser)',
+    noResultCTA: 'Je complète mon profil'
   },
   errors: {
     error: 'Erreur'

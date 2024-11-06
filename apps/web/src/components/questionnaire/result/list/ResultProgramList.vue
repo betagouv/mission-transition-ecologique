@@ -19,8 +19,8 @@
             />
             <TeeNoResult
               v-if="!hasRegisteredData"
-              message="Oups ! Il nous manque quelques informations sur votre entreprise pour pouvoir afficher vos résultats."
-              cta-label="Je complète mon profil"
+              :message="Translation.t('results.alertNoDataNoResults')"
+              :cta-label="Translation.t('results.noResultCTA')"
             />
             <ProgramList
               v-else
@@ -37,6 +37,7 @@
 import { type ProgramData } from '@/types'
 import { computed } from 'vue'
 import ProgramFiltersAccordion from '@/components/program/list/filters/ProgramFiltersAccordion.vue'
+import Translation from '@/utils/translation'
 
 interface ProgramListProps {
   filteredPrograms?: ProgramData[]

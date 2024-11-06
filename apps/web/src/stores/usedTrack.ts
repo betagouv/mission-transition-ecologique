@@ -66,14 +66,15 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
       .filter((questionnaireDatum) => questionnaireDatum?.length)
       .flat(1)
 
-    if (CompanyDataStorage.hasSiret()) {
+    if (_canUseCompanyData(data, CompanyDataStorageKey.Siret)) {
       data.push(CompanyDataStorage.getSiret() as QuestionnaireData)
     }
 
-    if (CompanyDataStorage.hasSize()) {
+    if (_canUseCompanyData(data, CompanyDataStorageKey.Size)) {
       data.push({ [CompanyDataStorageKey.Size]: CompanyDataStorage.getSize() } as QuestionnaireData)
     }
 
+    console.log(data)
     return data
   })
 
@@ -295,6 +296,19 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     }
 
     return questionnaireData
+  }
+
+  function _canUseCompanyData(data: (QuestionnaireData | undefined)[], key: CompanyDataStorageKey): boolean {
+    if (CompanyDataStorage.hasItem(key)) {
+      const storageItem = CompanyDataStorage.getItem(key)
+
+      return (
+        CompanyDataStorage.hasItem(key) &&
+        !data.some((item) => item?.[key] === (typeof storageItem === 'string' ? storageItem : (storageItem as QuestionnaireData)?.[key]))
+      )
+    }
+
+    return false
   }
 
   function _getCompanyDataFromStorage(questionnaireData: { [k: string]: any }) {

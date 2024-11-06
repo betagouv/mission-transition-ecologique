@@ -50,7 +50,7 @@ const navigationStore = useNavigationStore()
 const isCatalogDetail = navigationStore.isCatalogProgramDetail()
 const router = useRouter()
 
-const hasRegisteredData = ref(CompanyDataStorage.hasData())
+const hasRegisteredData = computed(() => CompanyDataStorage.hasData())
 
 const routeToResults = {
   name: isCatalogDetail ? RouteName.CatalogPrograms : RouteName.QuestionnaireResult,
@@ -74,9 +74,5 @@ const links = computed<DsfrBreadcrumbProps['links']>(() => {
 
 onBeforeMount(() => {
   project.value = projectStore.currentProject
-})
-
-watchEffect(async () => {
-  hasRegisteredData.value = CompanyDataStorage.hasData()
 })
 </script>

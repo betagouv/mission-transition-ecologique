@@ -1,6 +1,6 @@
 <template>
   <div class="fr-grid-row fr-grid-row--center fr-my-md-10v">
-    <div class="fr-col-12 fr-col-sm-5">
+    <div class="fr-col-5 fr-col-sm-12">
       <img
         class="fr-responsive-img no-result-img"
         src="/images/tracks/no-results.png"
