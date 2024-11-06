@@ -19,6 +19,7 @@
       class="fr-search-bar fr-search-bar--yellow"
       :class="isLoading ? 'fr-search-bar--loading' : ''"
       role="search"
+      @click="getAllCities"
     >
       <DsfrInput
         v-model="localisationInput"
@@ -26,7 +27,6 @@
         class="fr-input--white"
         type="search"
         :placeholder="infos.description"
-        @click="getAllCities"
         @update:model-value="searchLocalisation"
         @keyup.enter="searchLocalisation"
       />
@@ -96,10 +96,13 @@ const searchLocalisation = async () => {
   isLoading.value = false
 }
 const selectLocalisation = (localisation: ConvertedGeoResult) => {
-  console.log(localisation)
   selectedLocalisation.value = CompanyDataStorage.convertLocalisation(localisation)
 }
-const getAllCities = () => {}
+const getAllCities = async () => {
+  isLoading.value = true
+  localisationResults.value = await localisationApi.fetchCommunes('')
+  isLoading.value = false
+}
 const modifyLocalisation = () => {
   selectedLocalisation.value = undefined
   localisationInput.value = ''
