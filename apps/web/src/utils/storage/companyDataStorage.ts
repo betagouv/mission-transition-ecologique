@@ -1,4 +1,4 @@
-import { CompanyDataStorageKey, CompanyDataType } from '@/types'
+import { CompanyDataStorageKey, CompanyDataType, ConvertedGeoResult, RegisterDetails, CompanyLocalisationType, Region } from '@/types'
 import { LocalStorageHandler } from '@/utils/storage/localStorageHandler'
 import { StructureSize } from '@tee/common'
 import { ref, Ref } from 'vue'
@@ -39,6 +39,22 @@ export default class CompanyDataStorage {
 
   static getSize(): StructureSize | null {
     return (this.getItem(CompanyDataStorageKey.Size) as StructureSize) || null
+  }
+
+  static convertLocalisation(geoInfos: ConvertedGeoResult): CompanyLocalisationType {
+    return {
+      region: geoInfos.codeRegion as Region,
+      ville: geoInfos.nom,
+      codePostal: geoInfos.codePostal
+    }
+  }
+
+  static getManualCompanyData(profileData: RegisterDetails): CompanyDataType[CompanyDataStorageKey.Company] {
+    return {
+      ...profileData.localisation.value,
+      secteur: profileData.activity.value,
+      denomination: `Entreprise : ${profileData.activity.value} - ${profileData.localisation.value?.codePostal}`
+    } as CompanyDataType[CompanyDataStorageKey.Company]
   }
 
   static removeItem(key: CompanyDataStorageKey): void {

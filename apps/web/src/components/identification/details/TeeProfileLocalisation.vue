@@ -3,7 +3,7 @@
     v-if="infos.value"
     class="fr-tag fr-bg--blue-france--lightness"
   >
-    {{ infos.tagLabel || infos.value }}
+    {{ localisationLabel }}
     <span
       v-if="manual"
       class="fr-icon-close-line fr-pl-4v"
@@ -12,11 +12,12 @@
   </p>
   <DsfrInputGroup
     v-else
-    :error-message="showError && !localisationInput ? errorMessage : ''"
+    :error-message="errorMsg"
   >
     <div
       ref="localisationSearchBar"
       class="fr-search-bar fr-search-bar--yellow"
+      :class="isLoading ? 'fr-search-bar--loading' : ''"
       role="search"
     >
       <DsfrInput
@@ -25,12 +26,12 @@
         class="fr-input--white"
         type="search"
         :placeholder="infos.description"
+        @click="getAllCities"
         @update:model-value="searchLocalisation"
         @keyup.enter="searchLocalisation"
       />
       <DsfrButton
         class="fr-bg--yellow search-button"
-        :class="isLoading ? 'fr-search-bar--loading' : ''"
         tertiary
         no-outline
         @click="searchLocalisation"
@@ -38,7 +39,7 @@
     </div>
   </DsfrInputGroup>
   <div
-    v-if="localisationResults.length && !infos.value"
+    v-if="localisationResults.length && !infos.value && !isLoading"
     id="localisation-response"
     class="fr-bg--white fr-mt-n6v"
   >
@@ -50,42 +51,58 @@
     >
       <div class="fr-card__body">
         <div class="fr-card__content fr-py-1v fr-px-4v fr-text--blue-france">
-          <div class="fr-text--blue-france">{{ `${localisation.nom}( ${localisation.codesPostaux.join()} ) ` }}</div>
+          <div class="fr-text--blue-france">{{ `${localisation.nom} (${localisation.codePostal}) ` }}</div>
         </div>
       </div>
     </div>
   </div>
 </template>
 <script lang="ts" setup>
-import { RegisterDetail } from '@/types'
+import { RegisterDetailLocalisation, ConvertedGeoResult, CompanyLocalisationType } from '@/types'
 import LocalisationApi from '@/service/api/localisationApi'
 import { onClickOutside } from '@vueuse/core'
+import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
 interface Props {
-  infos: RegisterDetail
+  infos: RegisterDetailLocalisation
   manual: boolean
   showError: boolean
 }
-defineProps<Props>()
-const selectedLocalisation = defineModel<{ nom: string; codesPostaux: string[] }>()
-const localisationInput = ref<string | undefined>()
-const localisationResults = ref<{ nom: string; codesPostaux: string[] }[]>([])
+const props = defineProps<Props>()
+const selectedLocalisation = defineModel<CompanyLocalisationType>()
+const localisationInput = ref<string>('')
+const localisationResults = ref<ConvertedGeoResult[]>([])
 const isLoading = ref<boolean>(false)
 const localisationApi = new LocalisationApi()
-const errorMessage = 'La sélection de la localisation est nécessaire'
+const errorMsg = computed<string>(() => {
+  if (props.showError && !localisationInput.value) {
+    return 'La sélection de la ville est nécessaire.'
+  } else if (localisationResults.value.length === 0 && localisationInput.value) {
+    return "Aucune ville n'a été trouvée."
+  }
+  return ''
+})
 const localisationSearchBar = ref(null)
 
+const localisationLabel = computed<string>(() => {
+  if (props.infos.tagLabel) {
+    return props.infos.tagLabel
+  }
+  return `${props.infos.value?.codePostal} ${props.infos.value?.ville}`
+})
 const searchLocalisation = async () => {
   isLoading.value = true
   localisationResults.value = await localisationApi.fetchCommunes(localisationInput.value)
   isLoading.value = false
 }
-const selectLocalisation = (localisation: { nom: string; codesPostaux: string[] }) => {
-  selectedLocalisation.value = localisation
+const selectLocalisation = (localisation: ConvertedGeoResult) => {
+  console.log(localisation)
+  selectedLocalisation.value = CompanyDataStorage.convertLocalisation(localisation)
 }
+const getAllCities = () => {}
 const modifyLocalisation = () => {
   selectedLocalisation.value = undefined
-  localisationInput.value = undefined
+  localisationInput.value = ''
   localisationResults.value = []
 }
 onClickOutside(localisationSearchBar, () => modifyLocalisation())

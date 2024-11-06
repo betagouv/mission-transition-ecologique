@@ -33,7 +33,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { RegisterDetailType, RegisterDetails, Sector, CompanyDataStorageKey, CompanyDataType } from '@/types'
+import { RegisterDetailType, RegisterDetails, Sector, CompanyDataStorageKey, CompanyDataType, Region } from '@/types'
 import Breakpoint from '@/utils/breakpoints'
 import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 import Navigation from '@/utils/navigation'
@@ -61,10 +61,14 @@ const profile = ref<RegisterDetails>({
   localisation: {
     title: 'Localisation',
     icon: 'fr-icon-map-pin-2-line',
-    description: 'Quelle est votre région ?',
-    value: props.company?.region,
+    description: 'Quelle est votre ville ?',
+    value: {
+      ville: props.company?.ville,
+      region: props.company?.region as Region,
+      codePostal: props.company?.codePostal
+    },
     type: RegisterDetailType.Localisation,
-    tagLabel: props.manual && props.company && 'siret' in props.company ? `${props.company.codePostal} ${props.company.ville}` : ''
+    tagLabel: props.company && 'siret' in props.company ? `${props.company.codePostal} ${props.company.ville}` : ''
   },
   activity: {
     title: 'Activité',
@@ -89,13 +93,7 @@ const canBeSaved = computed(() => {
 const saveProfile = () => {
   showError.value = false
   if (canBeSaved.value && profile.value.size.value) {
-    const company = props.manual
-      ? ({
-          region: profile.value.localisation.value,
-          secteur: profile.value.activity.value,
-          denomination: `Entreprise : ${profile.value.activity.value} - ${profile.value.localisation.value}`
-        } as CompanyDataType[CompanyDataStorageKey.Company])
-      : props.company
+    const company = props.manual ? CompanyDataStorage.getManualCompanyData(profile.value) : props.company
     CompanyDataStorage.setCompany(company)
     CompanyDataStorage.setSize(profile.value.size.value)
     Navigation.toggleRegisterModal(false)
