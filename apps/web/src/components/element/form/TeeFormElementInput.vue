@@ -48,8 +48,8 @@ import { StringFieldUnionType } from '@/types'
 interface Props {
   field: StringFieldUnionType
   publicPath: string
-  getErrorMessage: () => ''
-  getValidMessage: () => ''
+  getErrorMessage: () => string
+  getValidMessage: () => string
 }
 defineProps<Props>()
 const model = defineModel<StringFieldUnionType['value']>()

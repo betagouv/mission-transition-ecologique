@@ -17,21 +17,28 @@
     <div class="fr-col-12">
       <!-- FORM LABEL -->
       <div
+        v-if="showTitle"
         id="form-title"
         class="fr-h3 fr-col-12 fr-text-center"
       >
         {{ Format.capitalize(Translation.t('form.label') || '') }}
       </div>
       <!-- FORM HINT -->
-      <p class="fr-col-12 fr-text-center">{{ hint }}</p>
+      <p
+        :class="hintClass"
+        class="fr-col-12 fr-m-auto fr-text-center"
+      >
+        {{ hint }}
+      </p>
       <!-- FIELDS -->
       <div class="fr-grid-row fr-grid-row--gutters fr-mb-2v fr-mt-4v">
         <TeeFormElement
-          v-for="fieldKey in Object.keys(localForm)"
+          v-for="fieldKey in Object.keys(localForm).filter(
+            (fieldKey) => !(localForm as Record<string, InputFieldUnionType>)[fieldKey].hidden
+          )"
           :key="fieldKey"
-          v-model="localForm[fieldKey]"
-          :field="localForm[fieldKey]"
-          @update:model-value="(field) => (localForm[fieldKey] = field)"
+          v-model="(localForm as Record<string, InputFieldUnionType>)[fieldKey]"
+          :field="(localForm as Record<string, InputFieldUnionType>)[fieldKey]"
         />
       </div>
 
@@ -80,7 +87,7 @@
 <script setup lang="ts">
 import { Scroll } from '@/utils/scroll'
 import { computed } from 'vue'
-import { type ReqResp, TrackId, FormDataType, InputFieldUnionType } from '@/types'
+import { type ReqResp, TrackId, FormDataType, InputFieldUnionType, Project } from '@/types'
 import Translation from '@/utils/translation'
 import TeeDsfrButton from '@/components/element/button/TeeDsfrButton.vue'
 import Format from '@/utils/format'
@@ -88,20 +95,29 @@ import OpportunityApi from '@/service/api/opportunityApi'
 import { OpportunityType } from '@tee/common'
 import { useNavigationStore } from '@/stores/navigation'
 import Analytics from '@/utils/analytic/analytics'
+import { ProgramType } from '@tee/data'
 
 const navigation = useNavigationStore()
 interface Props {
-  dataId: string
-  dataSlug?: string
+  dataId?: string
+  showTitle?: boolean
+  dataSlug?: ProgramType['id'] | Project['slug']
   formType: OpportunityType
   form: FormDataType
   hint: string
+  hintClass?: string
   errorEmailSubject: string
   phoneCallback?: string
   formContainerRef: HTMLElement | null | undefined
 }
 
-const props = defineProps<Props>()
+const props = withDefaults(defineProps<Props>(), {
+  dataId: undefined,
+  dataSlug: undefined,
+  showTitle: true,
+  hintClass: '',
+  phoneCallback: undefined
+})
 
 const formIsSent = ref<boolean>(false)
 const requestResponse = ref<ReqResp>()
@@ -109,9 +125,10 @@ const isLoading = ref<boolean>(false)
 const localForm = ref<FormDataType>(props.form)
 const isFormFilled = computed(() => {
   const isFilled = []
-  for (const key in localForm.value) {
-    if (localForm.value[key].required) {
-      isFilled.push(isFieldValid(localForm.value[key]))
+  for (const key of Object.keys(localForm.value) as Array<keyof typeof localForm.value>) {
+    const field: InputFieldUnionType = localForm.value[key]
+    if (field.required) {
+      isFilled.push(isFieldValid(field))
     }
   }
   return isFilled.every((v) => v)
@@ -119,9 +136,10 @@ const isFormFilled = computed(() => {
 
 const isFormValid = computed(() => {
   const isValid = []
-  for (const key in localForm.value) {
-    if (localForm.value[key].required) {
-      isValid.push(localForm.value[key].isValid)
+  for (const key of Object.keys(localForm.value) as Array<keyof typeof localForm.value>) {
+    const field: InputFieldUnionType = localForm.value[key]
+    if (field.required) {
+      isValid.push(field.isValid)
     }
   }
   return isValid.every((v) => v !== false)
@@ -151,7 +169,7 @@ const getEventName = () => {
 const scrollToFormContainer = () => {
   const element = props.formContainerRef
   if (element) {
-    Scroll.toBlockCenter(element)
+    Scroll.to(element)
   }
 }
 </script>
