@@ -67,7 +67,7 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
       .filter((questionnaireDatum) => questionnaireDatum?.length)
       .flat(1)
 
-    if (_canUseCompanyData(data, CompanyDataStorageKey.Company)) {
+    if (_canUseCompanyData(data, CompanyDataStorageKey.Company as keyof QuestionnaireData)) {
       data.push(CompanyDataStorage.getCompanyData() as QuestionnaireData)
     }
 
@@ -298,13 +298,13 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     return questionnaireData
   }
 
-  function _canUseCompanyData(data: (QuestionnaireData | undefined)[], key: CompanyDataStorageKey): boolean {
-    if (CompanyDataStorage.hasItem(key)) {
-      const storageItem = CompanyDataStorage.getItem(key)
+  function _canUseCompanyData(data: (QuestionnaireData | undefined)[], key: keyof QuestionnaireData): boolean {
+    if (CompanyDataStorage.hasItem(key as CompanyDataStorageKey)) {
+      const storageItem = CompanyDataStorage.getItem(key as CompanyDataStorageKey) as QuestionnaireData | string
 
       return (
-        CompanyDataStorage.hasItem(key) &&
-        !data.some((item) => item?.[key] === (typeof storageItem === 'string' ? storageItem : (storageItem as QuestionnaireData)?.[key]))
+        CompanyDataStorage.hasItem(key as CompanyDataStorageKey) &&
+        !data.some((item) => item?.[key] === (typeof storageItem === 'string' ? storageItem : storageItem?.[key]))
       )
     }
 
