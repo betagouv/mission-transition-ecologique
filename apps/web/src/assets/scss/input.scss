@@ -1,10 +1,12 @@
+@use "setting";
+
 // override DsfrInput and DsfrInputGroup valid class
 .fr-input-group--valid::before, .fr-valid-text::before {
   display: none;
 }
 
 .fr-input {
-  &--sm::placeholder {
-    font-size: 0.8em;
+  &--white {
+    background-color: setting.$white;
   } 
-}
+} 

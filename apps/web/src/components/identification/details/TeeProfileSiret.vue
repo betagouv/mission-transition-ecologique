@@ -5,7 +5,7 @@
   >
     {{ siretTagLabel }}
     <span
-      class="fr-icon-close-line"
+      class="fr-icon-close-line fr-pl-4v"
       @click="modifySiret"
     />
   </p>

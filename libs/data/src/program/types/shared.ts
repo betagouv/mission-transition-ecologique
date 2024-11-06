@@ -13,9 +13,3 @@ export enum ProgramEligibilityType {
   ProgramEol = 'program-end-of-life',
   Unknown = 'unknown'
 }
-
-export enum ProgramEligibilityType {
-  Eligible = 'eligible',
-  PartiallyEligible = 'partially-eligible',
-  NotEligible = 'not-eligible'
-}
