@@ -42,12 +42,13 @@
         v-else
         id="project-contact"
         ref="TeeProjectFormContainer"
-        class="fr-bg--blue-france--lightness fr-col-justify--center fr-grid-row fr-p-2w"
+        class="fr-bg--blue-france--lightness fr-grid-row fr-p-2w"
       >
         <TeeForm
           v-if="project"
           :form-container-ref="TeeProjectFormContainer"
           :form-type="OpportunityType.Project"
+          :phone-callback="Translation.ti(Translation.t('form.phoneContact'), { operator: ' ' })"
           :form="Opportunity.getProjectFormFields(project)"
           :data-id="project.id.toString()"
           :data-slug="project.slug"
