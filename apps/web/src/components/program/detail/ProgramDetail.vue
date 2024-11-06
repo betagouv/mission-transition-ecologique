@@ -76,7 +76,7 @@
               :program="program"
             />
             <DsfrButton
-              v-if="!isProgramAutonomous"
+              v-if="!isProgramAutonomous && programIsEligible"
               size="lg"
               icon="fr-icon-mail-line"
               class="fr-ml-md-3v"
