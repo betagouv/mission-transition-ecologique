@@ -229,7 +229,7 @@
         v-if="program"
         :form-container-ref="TeeProgramFormContainer"
         :data-id="program.id"
-        :phone-callback="Translation.ti(Translation.t('form.phoneContact'), { operator: program['opérateur de contact'] })"
+        :phone-callback="Translation.t('form.phoneContact', { operator: program['opérateur de contact'] })"
         :form="Opportunity.getProgramFormFields(program)"
         :form-type="OpportunityType.Program"
         :error-email-subject="Translation.t('program.form.errorEmail.subject', { program: program.titre })"
