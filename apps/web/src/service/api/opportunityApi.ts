@@ -9,13 +9,14 @@ import {
   WithoutNullableKeys,
   FormDataType,
   OpportunityType,
-  Opportunity,
+  Opportunity as OpportunityFormType,
   RouteName,
   ProgramData,
   isProjectFormDataType,
   Project
 } from '@/types'
 import RequestApi from '@/service/api/requestApi'
+import Opportunity from '@/utils/opportunity'
 import TrackStructure from '@/utils/track/trackStructure'
 import { ThemeId } from '@tee/data'
 import { router } from '../../router'
@@ -63,7 +64,7 @@ export default class OpportunityApi extends RequestApi {
   }
 
   payload(): OpportunityBody {
-    const opportunity: Opportunity = {
+    const opportunity: OpportunityFormType = {
       type: this._opportunityType,
       id: this._getId(),
       titleMessage: this.getTitleMessage(),
@@ -92,7 +93,7 @@ export default class OpportunityApi extends RequestApi {
   }
 
   private _getId(): string {
-    if (isProjectFormDataType(this._opportunityForm)) {
+    if (Opportunity.isCustomProject(this._opportunityType) && isProjectFormDataType(this._opportunityForm)) {
       return this._opportunityForm.projectTitle.value as string
     }
     return this._id?.toString() as string
