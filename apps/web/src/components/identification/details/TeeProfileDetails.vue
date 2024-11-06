@@ -13,8 +13,7 @@
     <h4 class="fr-mb-0 fr-py-2v fr-text--white">Quelle est votre entreprise ?</h4>
   </div>
   <TeeProfileElement
-    v-for="detailKey in Object.keys(profile)"
-    v-show="profile[detailKey].if !== false"
+    v-for="detailKey in Object.keys(profile).filter((detailK) => profile[detailK].if !== false)"
     :key="profile[detailKey].title"
     v-model="profile[detailKey]"
     class="fr-pb-4v fr-col-sm-8 fr-col-md-5 fr-col-offset-md-2 fr-col-12"
@@ -62,14 +61,14 @@ const profile = ref<RegisterDetails>({
   localisation: {
     title: 'Localisation',
     icon: 'fr-icon-map-pin-2-line',
-    description: "Renseignez la région de votre lieu d'activités",
+    description: 'Quelle est votre région ?',
     value: props.company?.region,
     type: RegisterDetailType.Localisation,
     tagLabel: props.manual && props.company && 'siret' in props.company ? `${props.company.codePostal} ${props.company.ville}` : ''
   },
   activity: {
     title: 'Activité',
-    description: "Choisissez le secteur d'activité de votre entreprise",
+    description: "Quel est votre secteur d'activités ?",
     icon: 'fr-icon-briefcase-line',
     value: props.company?.secteur as Sector,
     type: RegisterDetailType.Activity,

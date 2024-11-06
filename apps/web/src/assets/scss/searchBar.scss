@@ -11,32 +11,29 @@ input[type="search"] {
   }
 }
 
-.tee-btn-input-clear-btn {
-  background-color: var(--background-contrast-grey);
-  box-shadow: inset 0 -2px 0 0 var(--border-action-high-blue-france);
-
-  &::before {
-    mask-image: url("@gouvfr/dsfr/dist/icons/system/close-line.svg") !important;
-  }
-
-  &:disabled {
-    background-color: var(--background-contrast-grey);
-    box-shadow: inset 0 -2px 0 0 var(--border-disabled-grey);
-    color: var(--text-disabled-grey);
-  }
-}
-
 .fr-search-bar {
+  .search-clear {
+    background-color: var(--background-contrast-grey);
+    border-radius: 0;
+    &::before {
+      mask-image: url("@gouvfr/dsfr/dist/icons/system/close-line.svg") !important;
+    }
+    &:disabled {
+      background-color: var(--background-contrast-grey);
+      box-shadow: inset 0 -2px 0 0 var(--border-disabled-grey);
+      color: var(--text-disabled-grey);
+    }
+  } 
   &-lg {
-    .fr-input, .search-button {
-      max-height: 3rem;
+    .fr-input, .search-button, .search-clear {
+      max-height: 3rem !important;
       line-height: 3rem;
     }
   }
 
   @each $color, $properties in setting.$colors {
     &--#{$color} {
-      .fr-input, .search-button {
+      .fr-input, .search-button, .search-clear {
         @if meta.type-of($properties) == map {
           box-shadow: inset 0 -2px 0 0 map.get($properties, "color");
         } @else {
@@ -47,7 +44,7 @@ input[type="search"] {
   }
 
   &--loading {
-    .fr-btn {
+    .search-button {
       width: 2.5rem;
 
       &::before {

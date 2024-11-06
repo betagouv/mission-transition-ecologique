@@ -6,7 +6,7 @@
     {{ infos.tagLabel || activityText }}
     <span
       v-if="manual"
-      class="fr-icon-close-line"
+      class="fr-icon-close-line fr-pl-4v"
       @click="modifyActivity"
     />
   </p>

@@ -6,7 +6,7 @@
     {{ infos.tagLabel || infos.value }}
     <span
       v-if="manual"
-      class="fr-icon-close-line"
+      class="fr-icon-close-line fr-pl-4v"
       @click="modifyLocalisation"
     />
   </p>
@@ -15,16 +15,16 @@
     :error-message="showError && !localisationInput ? errorMessage : ''"
   >
     <div
+      ref="localisationSearchBar"
       class="fr-search-bar fr-search-bar--yellow"
       role="search"
     >
       <DsfrInput
         v-model="localisationInput"
-        class="fr-input--sm"
         name="manual-register-localisation"
         type="search"
         :placeholder="infos.description"
-        @update:model-value="updateSearchValue"
+        @update:model-value="searchLocalisation"
         @keyup.enter="searchLocalisation"
       />
       <DsfrButton
@@ -57,7 +57,7 @@
 <script lang="ts" setup>
 import { RegisterDetail } from '@/types'
 import { Region } from '@/types'
-import { useDebounce } from '@vueuse/core'
+import { onClickOutside } from '@vueuse/core'
 
 interface Props {
   infos: RegisterDetail
@@ -69,17 +69,10 @@ const selectedLocalisation = defineModel<Region>()
 const localisationInput = ref<string | undefined>()
 const localisationResults = ref<Region[]>([])
 const errorMessage = 'La sélection de la localisation est nécessaire'
-const debouncedRegionInput = useDebounce(localisationInput, 500)
-watch(debouncedRegionInput, (newValue) => {
-  if (newValue) {
-    searchLocalisation()
-  }
-})
+const localisationSearchBar = ref(null)
+
 const searchLocalisation = () => {
   localisationResults.value = Object.values(Region).filter((region) => region.toLowerCase().includes(localisationInput.value as string))
-}
-const updateSearchValue = (value: string | undefined) => {
-  localisationInput.value = value
 }
 const selectRegion = (region: Region) => {
   selectedLocalisation.value = region
@@ -89,6 +82,7 @@ const modifyLocalisation = () => {
   localisationInput.value = undefined
   localisationResults.value = []
 }
+onClickOutside(localisationSearchBar, () => modifyLocalisation())
 </script>
 <style lang="scss" scoped>
 #region-response {

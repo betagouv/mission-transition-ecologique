@@ -116,7 +116,7 @@ const closeModal = () => {
 }
 
 .register-modal-overlay-lg {
-  top: 118px !important;
+  top: var(--header-height) !important;
 }
 
 #register-modal {
@@ -139,6 +139,6 @@ const closeModal = () => {
 
 .register-modal-lg {
   background-image: url('/images/TEE-modal-bottom.svg');
-  min-height: calc(100vh - 118px);
+  min-height: calc(100vh - var(--header-height));
 }
 </style>

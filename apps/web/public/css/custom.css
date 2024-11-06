@@ -193,30 +193,9 @@ button.fr-link:hover, .tee-router-link:hover {
 .tee-form-input-large {
   display: flex;
 }
-.tee-input-large {
-  font-size: 1.1rem;
-  height: 4rem !important;
-  max-height: 4rem !important;
-  border-radius: .25rem 0 0 0;
-}
-.tee-input-large::placeholder {
-  font-size: 1rem;
-}
-.tee-btn-input-large {
-  max-height: 4rem !important;
-  max-width: 4rem !important;
-}
 .tee-btn-input-large::before {
   width: 3rem !important;
 }
-
-.tee-input-large:focus {
-  outline-offset: unset;
-  outline-width: unset;
-  outline-color: unset;
-  outline-style: none;
-}
-
 .tee-input-hint {
   color: #000091;
 }

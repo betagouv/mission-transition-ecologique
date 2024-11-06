@@ -5,28 +5,35 @@
   >
     {{ sizeText }}
     <span
-      class="fr-icon-close-line"
+      class="fr-icon-close-line fr-pl-4v"
       @click="resetSize"
     />
   </p>
   <DsfrSelect
     v-else
     v-model="selectedSize"
-    :default-unselected-text="infos.description"
+    :default-unselected-text="defaultUnselectedText"
     :error-message="showError ? errorMessage : ''"
     :options="sizeOptions"
   />
 </template>
 <script lang="ts" setup>
 import { RegisterDetailSize, StructureSize } from '@/types'
+import Breakpoint from '@/utils/breakpoints'
 
-const selectedSize = defineModel<StructureSize>()
 interface Props {
   infos: RegisterDetailSize
   manual: boolean
   showError: boolean
 }
 const props = defineProps<Props>()
+const selectedSize = defineModel<StructureSize>()
+const defaultUnselectedText = computed(() => {
+  if (Breakpoint.isSmallScreen()) {
+    return 'Combien êtes vous ?'
+  }
+  return props.infos.description
+})
 const errorMessage = "La sélection de l'effectif est nécessaire"
 const sizeText = computed(() => {
   const sizeOption = sizeOptions.find((el: { value: StructureSize; text: string }) => el.value === props.infos.value)

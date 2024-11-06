@@ -45,7 +45,7 @@
         v-if="requestResponses.resultCount > 9"
         class="fr-card fr-card-result fr-card--no-arrow fr-card--shadow custom-border"
       >
-        <div class="fr-card__body">
+        <div class="fr-card__body fr-p-0">
           <div class="fr-mb-0 fr-py-1v fr-px-4v fr-text--blue-france fr-text--sm">
             <span>Votre entreprise n'est pas affichée ?</span>
             <a
@@ -53,7 +53,7 @@
               class="no-outline fr-text--underline"
               target="_blank"
             >
-              Cliquez ici
+              trouver mon SIRET
             </a>
           </div>
         </div>
@@ -84,7 +84,7 @@ const defaultSearchValue = {
 }
 
 const queryValue = ref<string | undefined>()
-const debouncedQueryValue = useDebounce(queryValue, 1000)
+const debouncedQueryValue = useDebounce(queryValue, 500)
 watch(debouncedQueryValue, (newValue) => {
   if (newValue) {
     processInput()
@@ -141,8 +141,10 @@ const processInput = async () => {
 </script>
 
 <style lang="scss" scoped>
+@use '@/assets/scss/setting';
+
 .custom-border {
-  border: solid thin #c4c4c4;
+  border: solid thin rgba(setting.$grey, 0.2);
 }
 
 #siret-response {

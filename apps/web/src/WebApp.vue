@@ -46,6 +46,11 @@ const isReady = computed<boolean>(() => {
 const toggleRegisterModal = (forceStatus: boolean) => {
   registerModal.value = forceStatus || !registerModal.value
   document.body.style.overflow = registerModal.value ? 'hidden' : ''
+  const header = document.getElementById('tee-header')
+  if (header) {
+    const headerHeight = header.offsetHeight + 'px'
+    document.documentElement.style.setProperty('--header-height', headerHeight)
+  }
   if (registerModal.value) {
     window.scrollTo({
       top: 0,
