@@ -10,16 +10,15 @@
       @click="modifyLocalisation"
     />
   </p>
-  <DsfrInputGroup
+  <div
     v-else
-    :error-message="errorMsg"
+    id="register-localisation"
   >
     <div
       ref="localisationSearchBar"
       class="fr-search-bar fr-search-bar--yellow"
       :class="isLoading ? 'fr-search-bar--loading' : ''"
       role="search"
-      @click="getAllCities"
     >
       <DsfrInput
         v-model="localisationInput"
@@ -37,24 +36,27 @@
         @click="searchLocalisation"
       />
     </div>
-  </DsfrInputGroup>
-  <div
-    v-if="localisationResults.length && !infos.value && !isLoading"
-    id="localisation-response"
-    class="fr-bg--white fr-mt-n6v"
-  >
     <div
-      v-for="localisation in localisationResults"
-      :key="`resp-input-${localisation}`"
-      class="fr-card fr-card-result fr-card--no-arrow fr-card--shadow"
-      @click="selectLocalisation(localisation)"
+      v-if="localisationResults.length && !infos.value && !isLoading"
+      id="localisation-response"
+      class="fr-bg--white"
     >
-      <div class="fr-card__body">
-        <div class="fr-card__content fr-py-1v fr-px-4v fr-text--blue-france">
-          <div class="fr-text--blue-france">{{ `${localisation.nom} (${localisation.codePostal}) ` }}</div>
+      <div
+        v-for="localisation in localisationResults"
+        :key="`resp-input-${localisation}`"
+        class="fr-card fr-card-result fr-card--no-arrow fr-card--shadow"
+        @click="selectLocalisation(localisation)"
+      >
+        <div class="fr-card__body">
+          <div class="fr-card__content fr-py-1v fr-px-4v fr-text--blue-france">
+            <div class="fr-text--blue-france">{{ `${localisation.nom} (${localisation.codePostal}) ` }}</div>
+          </div>
         </div>
       </div>
     </div>
+    <p :class="errorMsg ? 'fr-error-text' : ''">
+      {{ errorMsg }}
+    </p>
   </div>
 </template>
 <script lang="ts" setup>
@@ -75,9 +77,9 @@ const localisationResults = ref<ConvertedGeoResult[]>([])
 const isLoading = ref<boolean>(false)
 const localisationApi = new LocalisationApi()
 const errorMsg = computed<string>(() => {
-  if (props.showError && !localisationInput.value) {
+  if (props.showError && !localisationInput.value && !isLoading.value) {
     return 'La sélection de la ville est nécessaire.'
-  } else if (localisationResults.value.length === 0 && localisationInput.value) {
+  } else if (localisationResults.value.length === 0 && localisationInput.value && !isLoading.value) {
     return "Aucune ville n'a été trouvée."
   }
   return ''
@@ -98,11 +100,6 @@ const searchLocalisation = async () => {
 const selectLocalisation = (localisation: ConvertedGeoResult) => {
   selectedLocalisation.value = CompanyDataStorage.convertLocalisation(localisation)
 }
-const getAllCities = async () => {
-  isLoading.value = true
-  localisationResults.value = await localisationApi.fetchCommunes('')
-  isLoading.value = false
-}
 const modifyLocalisation = () => {
   selectedLocalisation.value = undefined
   localisationInput.value = ''
@@ -115,6 +112,12 @@ onClickOutside(localisationSearchBar, () => modifyLocalisation())
   text-align: left;
   width: calc(100% - 40px);
   max-height: 128px;
+  z-index: 2000;
+  position: absolute;
   overflow: hidden auto;
+}
+#register-localisation {
+  position: relative;
+  margin-bottom: 0;
 }
 </style>
