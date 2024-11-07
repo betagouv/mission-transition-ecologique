@@ -38,7 +38,7 @@
           )"
           :key="fieldKey"
           v-model="(localForm as Record<string, InputFieldUnionType>)[fieldKey]"
-          :data-testid="fieldKey"
+          :teste2e-selector="`${fieldKey}-${(localForm as Record<string, InputFieldUnionType>)[fieldKey].type} `"
           :field="(localForm as Record<string, InputFieldUnionType>)[fieldKey]"
         />
       </div>
@@ -58,6 +58,7 @@
             :disabled="!isFormFilled || !isFormValid || isLoading"
             icon="fr-icon-arrow-right-line"
             icon-right
+            teste2e-selector="send-contact-form"
             :loading="isLoading"
             @click="saveForm()"
           />
@@ -67,6 +68,7 @@
   </div>
   <TeeFormCallback
     v-if="formIsSent"
+    teste2e-selector="callback-contact-form"
     :form="form"
     :error-email-subject="errorEmailSubject"
     :request-response="requestResponse"
