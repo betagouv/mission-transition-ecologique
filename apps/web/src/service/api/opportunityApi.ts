@@ -108,7 +108,7 @@ export default class OpportunityApi extends RequestApi {
     if (this._opportunityType == OpportunityType.Program) {
       return (
         useNavigationStore().getAbsoluteUrlByRouteName(RouteName.CatalogProgramDetail, {
-          programId: this._slug as ProgramData['id']
+          programId: this._slug as ProgramType['id']
         }) ?? ''
       )
     }
