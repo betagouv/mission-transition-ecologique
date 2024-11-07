@@ -14,32 +14,34 @@
     v-else
     id="register-localisation"
   >
-    <div
-      ref="localisationSearchBar"
-      class="fr-search-bar fr-search-bar--yellow"
-      :class="isLoading ? 'fr-search-bar--loading' : ''"
-      role="search"
-    >
-      <DsfrInput
-        v-model="localisationInput"
-        name="manual-register-localisation"
-        class="fr-input--white"
-        type="search"
-        :placeholder="infos.description"
-        @update:model-value="searchLocalisation"
-        @keyup.enter="searchLocalisation"
-      />
-      <DsfrButton
-        class="fr-bg--yellow search-button"
-        tertiary
-        no-outline
-        @click="searchLocalisation"
-      />
-    </div>
+    <DsfrInputGroup :error-message="errorMsg">
+      <div
+        ref="localisationSearchBar"
+        class="fr-search-bar fr-search-bar--yellow"
+        :class="isLoading ? 'fr-search-bar--loading' : ''"
+        role="search"
+      >
+        <DsfrInput
+          v-model="localisationInput"
+          name="manual-register-localisation"
+          class="fr-input--white"
+          type="search"
+          :placeholder="infos.description"
+          @update:model-value="searchLocalisation"
+          @keyup.enter="searchLocalisation"
+        />
+        <DsfrButton
+          class="fr-bg--yellow search-button"
+          tertiary
+          no-outline
+          @click="searchLocalisation"
+        />
+      </div>
+    </DsfrInputGroup>
     <div
       v-if="localisationResults.length && !infos.value && !isLoading"
       id="localisation-response"
-      class="fr-bg--white"
+      class="fr-bg--white fr-mt-n6v"
     >
       <div
         v-for="localisation in localisationResults"
@@ -54,9 +56,6 @@
         </div>
       </div>
     </div>
-    <p :class="errorMsg ? 'fr-error-text' : ''">
-      {{ errorMsg }}
-    </p>
   </div>
 </template>
 <script lang="ts" setup>
