@@ -68,7 +68,6 @@
   </div>
   <TeeFormCallback
     v-if="formIsSent"
-    teste2e-selector="callback-contact-form"
     :form="form"
     :error-email-subject="errorEmailSubject"
     :request-response="requestResponse"

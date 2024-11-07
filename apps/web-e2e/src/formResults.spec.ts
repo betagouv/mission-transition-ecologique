@@ -27,6 +27,10 @@ tests.forEach((singleTest) => {
       } 
     }
     await page.click('[teste2e-selector="send-contact-form"]')
-    await expect(page.locator('[teste2e-selector="callback-contact-form"]')).toBeVisible()
+    if (singleTest.valid) {
+      await expect(page.locator('[teste2e-selector="success-callback-contact-form"]')).toBeVisible()
+    } else {
+      await expect(page.locator('[teste2e-selector="error-callback-contact-form"]')).toBeVisible()
+    } 
   })
 })

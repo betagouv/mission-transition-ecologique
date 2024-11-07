@@ -3,6 +3,7 @@
     <!-- MESSAGE IF ERROR-->
     <TeeError
       v-if="!hasValidResponse"
+      teste2e-selector="error-callback-contact-form"
       :mailto="getMailTo()"
       :email="Contact.email"
     >
@@ -14,6 +15,7 @@
     <!-- MESSAGE IF 200 -->
     <div
       v-if="hasValidResponse"
+      teste2e-selector="success-callback-contact-form"
       class="fr-text-center"
     >
       <p class="fr-text--blue-france">

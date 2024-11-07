@@ -21,6 +21,7 @@ import { FormResultDataType } from './resultDataType'
 export const tests: FormResultDataType[]  = [
   {
     id: 1,
+    valid: true,
     type: 'project',
     url: 'questionnaire/resultat/projet/isolation-thermique?choix-du-parcours=j-ai-un-projet&siret=83014132100034&effectif=TPE&objectifs=building',
     values: {
@@ -36,6 +37,7 @@ export const tests: FormResultDataType[]  = [
   },
   {
     id: 2,
+    valid: true,
     type: 'program',
     url: 'questionnaire/resultat/projet/isolation-thermique/renovation-petit-tertiaire-prive?choix-du-parcours=j-ai-un-projet&siret=83014132100034&effectif=TPE&objectifs=building',
     values: {
@@ -50,6 +52,7 @@ export const tests: FormResultDataType[]  = [
   },
   {
     id: 3,
+    valid: true,
     type: 'program',
     url: 'aides-entreprise/act-pas-a-pas',
     values: {
@@ -64,6 +67,7 @@ export const tests: FormResultDataType[]  = [
   },
   {
     id: 4,
+    valid: true,
     type: 'project',
     url: 'questionnaire/resultat/projet/sensibilisation-equipes?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=21490007800012&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non',
     values: {
@@ -79,6 +83,7 @@ export const tests: FormResultDataType[]  = [
   }, 
   {
     id: 5,
+    valid: true,
     type: 'program',
     url: 'questionnaire/resultat/formation-engager-entreprise-transition-ecologique?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=21490007800012&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non',
     values: {
@@ -93,6 +98,7 @@ export const tests: FormResultDataType[]  = [
   },
   {
     id: 6,
+    valid: true,
     type: 'program',
     url: 'questionnaire/resultat/projet/sensibilisation-equipes/formation-engager-entreprise-transition-ecologique?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=21490007800012&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non',
     values: {
@@ -107,6 +113,7 @@ export const tests: FormResultDataType[]  = [
   },
   {
     id: 7,
+    valid: true,
     type: 'custom-project',
     url: 'questionnaire/resultat?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=21490007800012&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non',
     values: {
@@ -123,6 +130,7 @@ export const tests: FormResultDataType[]  = [
   },
   {
     id: 8,
+    valid: true,
     type: 'custom-project',
     url: 'questionnaire/resultat?choix-du-parcours=j-ai-un-projet&siret=83014132100034&effectif=TPE&objectifs=building',
     values: {
@@ -139,6 +147,7 @@ export const tests: FormResultDataType[]  = [
   },
   {
     id: 9,
+    valid: false,
     type: 'project',
     url: 'questionnaire/resultat/projet/isolation-thermique?choix-du-parcours=j-ai-un-projet&siret=83014132100034&effectif=TPE&objectifs=building',
     values: {
@@ -154,6 +163,7 @@ export const tests: FormResultDataType[]  = [
   },
   {
     id: 10,
+    valid: false,
     type: 'custom-project',
     url: 'questionnaire/resultat?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=21490007800012&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non',
     values: {
@@ -171,6 +181,7 @@ export const tests: FormResultDataType[]  = [
   {
     id: 11,
     type: 'program',
+    valid: false,
     url: 'questionnaire/resultat/formation-engager-entreprise-transition-ecologique?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=21490007800012&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non',
     values: {
       name: {value: 'test', type: 'text'},
@@ -184,6 +195,7 @@ export const tests: FormResultDataType[]  = [
   },
   {
     id: 12,
+    valid: false,
     type: 'project',
     url: 'questionnaire/resultat/projet/sensibilisation-equipes?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=21490007800012&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non',
     values: {

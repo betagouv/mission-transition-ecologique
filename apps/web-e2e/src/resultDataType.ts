@@ -7,4 +7,4 @@ export type ResultDataType = {
 
 export type ResultsDataType = ResultDataType[]
 
-export type FormResultDataType = Omit<ResultDataType, 'values'> & {type: string, values:{[key:string]:{value: string|undefined|boolean, type: string} } }
+export type FormResultDataType = Omit<ResultDataType, 'values'> & {type: string, valid: boolean, values:{[key:string]:{value: string|undefined|boolean, type: string} } }
