@@ -53,7 +53,6 @@
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
 import { type ProgramType, ThemeId } from '@/types'
-import Analytics from '@/utils/analytic/analytics'
 import { MetaSeo } from '@/utils/metaSeo'
 import UsedTrack from '@/utils/track/usedTrack'
 import { computed, onBeforeMount } from 'vue'

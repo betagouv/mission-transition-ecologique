@@ -12,7 +12,7 @@ import {
   Opportunity as OpportunityFormType,
   RouteName,
   ProgramType,
-  isProjectFormDataType
+  isProjectFormDataType,
   Project
 } from '@/types'
 import RequestApi from '@/service/api/requestApi'
