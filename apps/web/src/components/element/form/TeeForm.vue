@@ -38,7 +38,7 @@
           )"
           :key="fieldKey"
           v-model="(localForm as Record<string, InputFieldUnionType>)[fieldKey]"
-          :teste2e-selector="`${fieldKey}-${(localForm as Record<string, InputFieldUnionType>)[fieldKey].type} `"
+          :teste2e-selector="`${fieldKey}-${(localForm as Record<string, InputFieldUnionType>)[fieldKey].type}`"
           :field="(localForm as Record<string, InputFieldUnionType>)[fieldKey]"
         />
       </div>
