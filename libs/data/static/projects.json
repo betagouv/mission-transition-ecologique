@@ -66,7 +66,8 @@
       "fonds-tourisme-durable",
       "pret-action-climat",
       "pret-vert",
-      "solaire-ready"
+      "solaire-ready",
+      "pret-tourisme"
     ],
     "linkedProjects": [],
     "priority": "340"
@@ -114,7 +115,8 @@
       "investissement-solaire-thermique-outre-mer",
       "tremplin",
       "pret-economies-d-energie-pee",
-      "pret-vert"
+      "pret-vert",
+      "pret-tourisme"
     ],
     "linkedProjects": [],
     "priority": "400"
@@ -138,7 +140,8 @@
       "fonds-tourisme-durable",
       "investissement-reseaux-de-chaleur-ou-de-froid",
       "pret-economies-d-energie-pee",
-      "pret-vert"
+      "pret-vert",
+      "pret-tourisme"
     ],
     "linkedProjects": [],
     "priority": "900"
@@ -187,7 +190,8 @@
       "fonds-tourisme-durable",
       "investissement-chaleur-bois",
       "pret-action-climat",
-      "pret-vert"
+      "pret-vert",
+      "pret-tourisme"
     ],
     "linkedProjects": [],
     "priority": "610"
@@ -209,7 +213,8 @@
       "etude-recuperation-de-chaleur-fatale",
       "investissement-recuperation-de-chaleur-fatale",
       "pret-economies-d-energie-pee",
-      "pret-vert"
+      "pret-vert",
+      "pret-tourisme"
     ],
     "linkedProjects": [],
     "priority": "910"
@@ -231,7 +236,8 @@
       "etude-geothermie-de-surface-et-d-aerothermie",
       "fonds-tourisme-durable",
       "pret-economies-d-energie-pee",
-      "pret-vert"
+      "pret-vert",
+      "pret-tourisme"
     ],
     "linkedProjects": [],
     "priority": "320"
@@ -348,7 +354,8 @@
       "cedre-investissement",
       "investour",
       "sites-touristiques-exemplaires",
-      "solaire-ready"
+      "solaire-ready",
+      "pret-tourisme"
     ],
     "linkedProjects": [],
     "priority": "150"
@@ -392,7 +399,8 @@
     "programs": [
       "pret-action-climat",
       "retrofit-electrique",
-      "pret-vert"
+      "pret-vert",
+      "pret-tourisme"
     ],
     "linkedProjects": [],
     "priority": "550"
@@ -419,7 +427,8 @@
       "pret-vert",
       "sites-touristiques-exemplaires",
       "cheque-transition-bioethanol",
-      "recharge-vehicule-electrique"
+      "recharge-vehicule-electrique",
+      "pret-tourisme"
     ],
     "linkedProjects": [],
     "priority": "190"
@@ -556,7 +565,8 @@
       "performa-environnement",
       "pret-action-climat",
       "tremplin",
-      "pret-vert"
+      "pret-vert",
+      "pret-tourisme"
     ],
     "linkedProjects": [],
     "priority": "330"
@@ -620,7 +630,8 @@
       "pret-action-climat",
       "pret-vert",
       "investour",
-      "sud-pret-climat"
+      "sud-pret-climat",
+      "pret-tourisme"
     ],
     "linkedProjects": [],
     "priority": "170"
@@ -644,7 +655,8 @@
       "formations-du-cfde",
       "formations-tee",
       "investour",
-      "sud-pret-climat"
+      "sud-pret-climat",
+      "mooc-biodiversite-entreprise"
     ],
     "linkedProjects": [],
     "priority": "160"
@@ -770,9 +782,9 @@
     ],
     "mainTheme": "environmental",
     "programs": [
-      "act-pas-a-pas",
       "climadiag-expert",
       "diagnostic-changement-climatique",
+      "performa-environnement",
       "programme-breizh-fab",
       "cedre-premier-pas"
     ],
@@ -806,7 +818,8 @@
       "repar-acteurs",
       "tremplin",
       "cedre-premier-pas",
-      "entreprises-engagees-nature"
+      "entreprises-engagees-nature",
+      "audit-clef-verte-sud"
     ],
     "linkedProjects": [
       27,
@@ -822,7 +835,7 @@
     "shortDescription": "Réduire les impacts de votre produit ou service à toutes les étapes de son cycle de vie.",
     "image": "/images/projet/ecoconception.webp",
     "longDescription": "La démarche d'écoconception (ou conception écologique) est une approche de développement des produits et services respectueuse de l'environnement.\n\nElle consiste à analyser l'ensemble du cycle de vie d'un produit ou d'un service pour identifier comment diminuer son impact environnemental : extraction des matières premières, fabrication, utilisation, rejet dans les milieux naturels en fin de vie, etc.\n\nUne approche d'écoconception est nécessaire pour se questionner sur la fin de vie de vos produits et réorienter judicieusement vos choix de conception. Cela peut passer par exemple par un choix de matières premières plus robustes pour allonger la durée de vie de vos produits, anticiper la réparation ou la revalorisation des matières.\n\nIl s'agit d'une démarche encouragée par la loi anti-gaspillage pour une économie circulaire (AGEC) pour permettre aux entreprises de faire évoluer leur modèle de production.",
-    "moreDescription": "- [**Gagnez en performance avec l’écoconception**](https://agirpourlatransition.ademe.fr/entreprises/ecoconception), une fiche ressource proposée par l’ADEME.\n- [**Les lignes directrices à suivre pour la réalisation d’un diagnostic d’éco-conception**](https://librairie.ademe.fr/dechets-economie-circulaire/4169-lignes-directrices-diagnostic-ecoconception.html)**.**\n- [**Analyse du cycle de vie**](https://bigmedia.bpifrance.fr/nos-dossiers/analyse-du-cycle-de-vie-definition-objectifs-etapes-de-realisation) : définition, objectifs, étapes de réalisation.",
+    "moreDescription": "- [**Gagnez en performance avec l’écoconception**](https://agirpourlatransition.ademe.fr/entreprises/ecoconception), une fiche ressource proposée par l’ADEME.\n- [**Les lignes directrices à suivre pour la réalisation d’un diagnostic d’éco-conception**](https://librairie.ademe.fr/dechets-economie-circulaire/4169-lignes-directrices-diagnostic-ecoconception.html)**.**\n- [**Analyse du cycle de vie**](https://bigmedia.bpifrance.fr/nos-dossiers/analyse-du-cycle-de-vie-definition-objectifs-etapes-de-realisation) : définition, objectifs, étapes de réalisation.\n- [**Valorisez votre démarche d'écoconception avec l'Écolabel européen**](https://agirpourlatransition.ademe.fr/entreprises/ecoconception/affichez-difference-lecolabel-europeen)**.**",
     "themes": [
       "eco-design"
     ],
@@ -860,7 +873,8 @@
       "programme-ecod-o",
       "pret-vert",
       "cedre-investissement",
-      "sites-touristiques-exemplaires"
+      "sites-touristiques-exemplaires",
+      "pret-tourisme"
     ],
     "linkedProjects": [
       20,
@@ -885,7 +899,8 @@
       "fonds-tourisme-durable",
       "pret-action-climat",
       "programme-ecod-o",
-      "pret-vert"
+      "pret-vert",
+      "pret-tourisme"
     ],
     "linkedProjects": [
       20,
@@ -1061,7 +1076,8 @@
       "cedre-premier-pas",
       "entreprises-engagees-nature",
       "charte-zero-dechet-plastique",
-      "mecenaturel"
+      "mecenaturel",
+      "mooc-biodiversite-entreprise"
     ],
     "linkedProjects": [],
     "priority": "200"
