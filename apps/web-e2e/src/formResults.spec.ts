@@ -14,15 +14,14 @@ tests.forEach((singleTest) => {
       const selector = `[teste2e-selector="${fieldKey}-${value.type}"]`
       await page.waitForSelector(selector, { timeout: 3000 })
       if (value.type === 'text') {
-        await page.fill(selector, value.value as string)
+        await page.locator(`${selector}`).locator('input[type="text"]').fill(value.value as string)
       } else if (value.type === 'select') {
-        // Sélectionner une option dans un champ de type select
-        await page.selectOption(selector, { label: value.value as string });
+        await page.locator(`${selector}`).locator('select').selectOption({ label: value.value as string })
       } else if (value.type === 'checkbox') {
         if (value.value) {
-          await page.check(selector)
+          await page.locator(`${selector}`).locator('input[type="checkbox"]').check()
         } else {
-          await page.uncheck(selector)
+          await page.locator(`${selector}`).locator('input[type="checkbox"]').uncheck()
         }
       } 
     }
