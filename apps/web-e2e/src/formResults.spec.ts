@@ -19,13 +19,16 @@ tests.forEach((singleTest) => {
         await page.locator(`${selector}`).locator('select').selectOption({ label: value.value as string })
       } else if (value.type === 'checkbox') {
         if (value.value) {
-          await page.locator(`${selector}`).locator('input[type="checkbox"]').check()
-        } else {
-          await page.locator(`${selector}`).locator('input[type="checkbox"]').uncheck()
+          await page.locator(`${selector} label`).click();
         }
       } 
     }
-    await page.click('[teste2e-selector="send-contact-form"]')
+    const submitButton = page.locator('[teste2e-selector="send-contact-form"]')
+    await submitButton.waitFor({ state: 'attached', timeout: 5000 })
+    await expect(submitButton).not.toBeDisabled()
+  
+    // Une fois que le bouton est activé, cliquer dessus
+    await submitButton.click()
     if (singleTest.valid) {
       await expect(page.locator('[teste2e-selector="success-callback-contact-form"]')).toBeVisible()
     } else {
