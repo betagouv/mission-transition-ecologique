@@ -116,6 +116,7 @@ onClickOutside(localisationSearchBar, () => modifyLocalisation())
   position: absolute;
   overflow: hidden auto;
 }
+
 #register-localisation {
   position: relative;
   margin-bottom: 0;
