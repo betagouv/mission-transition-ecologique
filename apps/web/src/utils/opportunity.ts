@@ -1,4 +1,4 @@
-import { PhoneValidator, EmailValidator, SiretValidator } from '@tee/common'
+import { PhoneValidator, EmailValidator, SiretValidator, OpportunityType } from '@tee/common'
 import { FieldType, RouteName, type ProgramData as ProgramType, Project, FormDataType, ThemeType, ThemeId } from '@/types'
 
 import { useProgramStore } from '@/stores/program'
@@ -9,11 +9,10 @@ import { Theme } from '@/utils/theme'
 
 export default class Opportunity {
   static getBaseOpportunityFormFields(): FormDataType {
-    const selectedThemeId = useProgramStore().getThemeTypeSelected()
-    const selectedTheme = Theme.getById(selectedThemeId as ThemeId)
+    const selectedTheme = Theme.getById(useProgramStore().getThemeTypeSelected() as ThemeId)
     return {
       theme: {
-        required: true,
+        required: false,
         hidden: true,
         options: Theme.themes.map((theme: ThemeType) => theme.tagLabel),
         value: selectedTheme?.tagLabel,
@@ -87,6 +86,7 @@ export default class Opportunity {
   static getProjectFormFields(project: Project): FormDataType {
     const baseFields = this.getBaseOpportunityFormFields()
     baseFields.needs.value = Translation.t('project.form.needs', { secteur: TrackStructure.getSectorShortLabel() })
+    baseFields.theme.required = true
     return {
       projectTitle: {
         required: true,
@@ -102,7 +102,7 @@ export default class Opportunity {
     const baseFields = this.getBaseOpportunityFormFields()
     baseFields.needs.label = 'Quel est votre projet ?'
     baseFields.needs.value = Translation.t('otherProject.form.needs', { secteur: TrackStructure.getSectorShortLabel() })
-    baseFields.theme.hidden = false
+    baseFields.theme = { ...baseFields.theme, hidden: false, required: true }
     return {
       projectTitle: {
         required: true,
@@ -121,5 +121,9 @@ export default class Opportunity {
       titreAide: program.titre
     })
     return baseFields
+  }
+
+  static isCustomProject(opportunityType: OpportunityType): boolean {
+    return opportunityType === OpportunityType.CustomProject
   }
 }

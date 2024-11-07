@@ -14,7 +14,7 @@
       {{ Translation.t('form.nowWhat') }}
     </h6>
     <p class="fr-text--blue-france fr-mb-15v">
-      <span v-html="Translation.ti(Translation.t('form.errorMsg'), { mailto: mailto, email: email })" />
+      <span v-html="Translation.t('form.errorMsg', { mailto: mailto, email: email })" />
     </p>
   </div>
 </template>

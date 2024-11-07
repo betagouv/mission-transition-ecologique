@@ -2,7 +2,7 @@
   <!-- BACK TO FORM BTN -->
   <TeeDsfrButton
     v-show="formIsSent"
-    class="fr-btn fr-btn--tertiary-no-outline fr-col-10 fr-mb-3v fr-link"
+    class="fr-btn fr-btn--tertiary-no-outline fr-col-10 fr-mb-3v"
     tertiary
     no-outline
     icon-only
@@ -70,12 +70,9 @@
     :form="form"
     :error-email-subject="errorEmailSubject"
     :request-response="requestResponse"
-    class="fr-mt-5v fr-grid-row fr-grid-row--center fr-grid-row--middle"
+    class="fr-mt-5v fr-mx-auto fr-grid-row fr-grid-row--center fr-grid-row--middle"
   >
-    <template
-      v-if="formType === OpportunityType.Program"
-      #phoneContact
-    >
+    <template #phoneContact>
       <p class="fr-mb-15v">
         <span>
           {{ phoneCallback }}
