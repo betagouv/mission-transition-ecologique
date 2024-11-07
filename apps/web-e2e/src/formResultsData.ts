@@ -2,20 +2,19 @@ import { FormResultDataType } from './resultDataType'
 
 /*
 ----- cas de formulaire success (1-7): 
-- j'ai un projet en tete > projet
-- j'ai un projet en tete > projet > program
-- catalogue > aide 
-- je ne sais pas par ou commencer > projet
-- je ne sais pas par ou commencer > aide
-- je ne sais pas par ou commencer > projet > aide
-- j'ai un projet en tete > projet custom
-- je ne sais pas par ou commencer > projet custom
+- 1: j'ai un projet en tete > projet
+- 2: j'ai un projet en tete > projet > program
+- 3: catalogue > aide 
+- 4: je ne sais pas par ou commencer > projet
+- 5: je ne sais pas par ou commencer > projet > aide
+- 6: j'ai un projet en tete > projet custom
+- 7: je ne sais pas par ou commencer > projet custom
 
 ----- cas de formulaire fail: 
-- j'ai un projet en tete > projet sans titre 
-- j'ai un projet en tete > projet custom siret invalide
-- je ne sais pas par ou commencer > aide cgu pas sélectionné 
-- je ne sais pas par ou commencer > projet mail invalide
+- 8: j'ai un projet en tete > projet sans titre 
+- 9: j'ai un projet en tete > projet custom siret invalide
+- 10: je ne sais pas par ou commencer > projet > aide cgu pas sélectionné 
+- 11: je ne sais pas par ou commencer > projet mail invalide
 
 */
 export const tests: FormResultDataType[]  = [
@@ -128,5 +127,61 @@ export const tests: FormResultDataType[]  = [
       needs: {value: 'test', type: 'text'},
       cgu: {value: true, type: 'checkbox'}
     }   
+  },
+  {
+    id: 8,
+    url: 'questionnaire/resultat/projet/isolation-thermique?choix-du-parcours=j-ai-un-projet&siret=83014132100034&effectif=TPE&objectifs=building',
+    values: {
+      projectTitle: {value: undefined, type: 'text'},
+      name: {value: 'test', type: 'text'},
+      surname: {value: 'test', type: 'text'},
+      tel: {value: '0123456789', type: 'tel'},
+      email: {value: 'test@test.fr', type: 'email'},
+      siret: {value: '83014132100034', type: 'text'},
+      needs: {value: 'test', type: 'text'},
+      cgu: {value: true, type: 'checkbox'}
+    } 
+  },
+  {
+    id: 9,
+    url: 'questionnaire/resultat?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=21490007800012&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non',
+    values: {
+      projectTitle: {value: 'test', type: 'text'},
+      theme: {value: '⚡️ énergie', type: 'select'},
+      name: {value: 'test', type: 'text'},
+      surname: {value: 'test', type: 'text'},
+      tel: {value: '0123456789', type: 'tel'},
+      email: {value: 'test@test.fr', type: 'email'},
+      siret: {value: '21490012', type: 'text'},
+      needs: {value: 'test', type: 'text'},
+      cgu: {value: true, type: 'checkbox'}
+    }   
+  },
+  {
+    id: 10,
+    url: 'questionnaire/resultat/formation-engager-entreprise-transition-ecologique?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=21490007800012&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non',
+    values: {
+      name: {value: 'test', type: 'text'},
+      surname: {value: 'test', type: 'text'},
+      tel: {value: '0123456789', type: 'tel'},
+      email: {value: 'test@test.fr', type: 'email'},
+      siret: {value: '21490007800012', type: 'text'},
+      needs: {value: 'test', type: 'text'},
+      cgu: {value: false, type: 'checkbox'}
+    }   
+  },
+  {
+    id: 4,
+    url: 'questionnaire/resultat/projet/sensibilisation-equipes?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=21490007800012&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non',
+    values: {
+      projectTitle: {value: 'Sensibilisation des équipes', type: 'text'},
+      name: {value: 'test', type: 'text'},
+      surname: {value: 'test', type: 'text'},
+      tel: {value: '0123456789', type: 'tel'},
+      email: {value: 'test@', type: 'email'},
+      siret: {value: '21490007800012', type: 'text'},
+      needs: {value: 'test', type: 'text'},
+      cgu: {value: true, type: 'checkbox'}
+    } 
   }
 ]
