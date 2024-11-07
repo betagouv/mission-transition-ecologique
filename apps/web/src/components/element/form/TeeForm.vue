@@ -123,9 +123,11 @@ const localForm = ref<FormDataType>(props.form)
 const isFormFilled = computed(() => {
   const isFilled = []
   for (const key of Object.keys(localForm.value) as Array<keyof typeof localForm.value>) {
+    console.log(key, localForm.value[key])
     const field: InputFieldUnionType = localForm.value[key]
     if (field.required) {
       isFilled.push(isFieldValid(field))
+      console.log(isFilled)
     }
   }
   return isFilled.every((v) => v)
