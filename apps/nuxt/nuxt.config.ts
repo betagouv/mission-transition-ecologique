@@ -1,8 +1,7 @@
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
-import { dsnFromString } from '@sentry/utils'
 import { defineNuxtConfig } from 'nuxt/config'
-import ConfigCommon from '../../libs/common/src/config/configCommon'
-import { Options as SentryOptions } from "@sentry/bundler-plugin-core";
+import { NuxtSecurityConfig } from './nuxt.security.config'
+import { NuxtSentryConfig } from './nuxt.sentry.config'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -43,7 +42,7 @@ export default defineNuxtConfig({
     plugins: [nxViteTsPaths()]
   },
 
-  modules: ['@pinia/nuxt', 'vue-dsfr-nuxt-module', '@sentry/nuxt/module'],
+  modules: ['@pinia/nuxt', 'vue-dsfr-nuxt-module', '@sentry/nuxt/module', 'nuxt-security'],
   compatibilityDate: '2024-10-09',
   components: [
     {
@@ -60,41 +59,8 @@ export default defineNuxtConfig({
     }
   },
 
-  sentry: sentryConfig(),
+  sentry: NuxtSentryConfig.getConfig(),
+  security: {
+    headers: NuxtSecurityConfig.getHeaderConfig(),
+  }
 })
-
-function sentryConfig(): SentryOptions {
-  if (ConfigCommon.isProduction()) {
-    const sentryData = getSentryData()
-    const token = process.env.SENTRY_AUTH_TOKEN
-
-    if (token) {
-      return {
-        authToken: process.env.SENTRY_AUTH_TOKEN,
-        org: "betagouv",
-        project: "tee-frontend-vue",
-        url: sentryData?.domain,
-        sourcemaps: {
-          filesToDeleteAfterUpload: [
-            "../../dist/apps/web/**/*.js.map",
-          ]
-        }
-      }
-    }
-
-    return {}
-  }
-}
-
-function getSentryData(): { domain: string; url: string } | undefined {
-  const dsnComponents = dsnFromString(process.env.VITE_SENTRY_DSN ?? '')
-  if (dsnComponents === undefined) {
-    return undefined
-  }
-
-  const { host, path, projectId } = dsnComponents
-  return {
-    domain: `https://${host}${path}`,
-    url: `https://${host}${path}/api/${projectId}/security/?sentry_key=${dsnComponents.publicKey}`
-  }
-}
