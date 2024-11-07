@@ -1,34 +1,41 @@
+import { QuestionnaireRoute } from '@tee/common'
+import { Operators } from '@tee/data'
 import { Maybe, Result } from 'true-myth'
+import Monitor from '../../../../common/domain/monitoring/monitor'
+import Config from '../../../../config'
+import { OpportunityAssociatedData } from '../../../domain/opportunityAssociatedData'
 import { OpportunityRepository } from '../../../domain/spi'
 import {
+  OpportunityDetailsShort,
   OpportunityId,
   OpportunityUpdateAttributes,
-  OpportunityDetailsShort,
   OpportunityWithOperatorContact,
   OpportunityWithOperatorContactAndContactId
 } from '../../../domain/types'
 import BrevoAPI from './brevoAPI'
 import {
-  DealAttributes,
-  BrevoQuestionnaireRoute,
-  DealUpdateAttributes,
-  BrevoPostDealPayload,
+  BrevoDealItem,
   BrevoDealResponse,
-  BrevoDealItem
+  BrevoPostDealPayload,
+  BrevoQuestionnaireRoute,
+  DealAttributes,
+  DealUpdateAttributes
 } from './types'
-import Config from '../../../../config'
-import { QuestionnaireRoute } from '@tee/common'
-import { Operators } from '@tee/data'
-import Monitor from '../../../../common/domain/monitoring/monitor'
 
 // "Opportunities" are called "Deals" in Brevo
 
 const addBrevoDeal: OpportunityRepository['create'] = async (
-  domainOpportunity: OpportunityWithOperatorContactAndContactId
+  domainOpportunity: OpportunityWithOperatorContactAndContactId,
+  opportunityAssociatedObject: OpportunityAssociatedData
 ): Promise<Result<OpportunityId, Error>> => {
   const brevoDeal = convertDomainToBrevoDeal(domainOpportunity)
 
-  const dealId = await requestCreateDeal(domainOpportunity.id, brevoDeal)
+  let name = domainOpportunity.id
+  if (opportunityAssociatedObject.isProject()) {
+    name = opportunityAssociatedObject.data.title
+  }
+
+  const dealId = await requestCreateDeal(name, brevoDeal)
 
   if (!dealId.isErr) {
     const maybeError = await associateBrevoDealToContact(dealId.value, domainOpportunity.contactId)
@@ -54,8 +61,7 @@ const requestCreateDeal = async (name: string, attributes: DealAttributes): Prom
     return Result.err(responseResult.error)
   }
 
-  const dealId = responseResult.map((r) => r.data as OpportunityId)
-  return dealId
+  return responseResult.map((r) => r.data as OpportunityId)
 }
 
 const updateBrevoDeal: OpportunityRepository['update'] = async (
