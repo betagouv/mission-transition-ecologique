@@ -18,6 +18,7 @@ export const frDict = {
     selected: 'Sélectionné'
   },
   form: {
+    label: 'Contactez un conseiller',
     mandatory: 'Champs obligatoires',
     sent: 'Votre message a bien été envoyé !',
     sorryError: 'Nous sommes désolés, une erreur est survenue.',
@@ -27,10 +28,7 @@ export const frDict = {
     advisors: 'Nous allons identifier le bon conseiller près de chez vous',
     phoneContact:
       'Un conseiller {operator} vous contactera prochainement par mail ou par téléphone pour échanger sur votre besoin et répondre à vos questions',
-    errorMsg: 'Vous avez la possibilité de nous transmettre votre demande par mail à <a target="_blank" href="{mailto}">{email}</a>.',
-    errorEmail: {
-      subject: "[france-transition] Demande d'informations concernant le dispositif {program}"
-    }
+    errorMsg: 'Vous avez la possibilité de nous transmettre votre demande par mail à <a target="_blank" href="{mailto}">{email}</a>.'
   },
   select: {
     selectOption: 'Sélectionnez une option'
@@ -65,7 +63,6 @@ export const frDict = {
     aid: 'Montant du financement',
     aidPrefix: "Montant de l'aide",
     loan: 'Montant du prêt',
-    loanRate: 'Taux du prêt',
     taxAdvantage: 'Avantage fiscal'
   },
   programResults: {

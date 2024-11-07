@@ -6,25 +6,11 @@
       {{ description }}
     </template>
   </CatalogBanner>
-
   <div class="fr-container--fluid fr-container--fluid--no-overflow fr-mt-6v">
-    <div class="fr-grid-row fr-grid-row--center">
-      <TeeSpinner
-        v-if="hasSpinner"
-        scale="6"
-      />
-      <ResultListNoResults
-        v-else-if="showNoResultsComponent"
-        :has-error="hasError"
-        message="Aucune aide n'a pu être identifiée sur cette thématique..."
-        :has-spinner="hasSpinner"
-        :count-items="countPrograms"
-      />
-    </div>
     <div class="fr-grid-row fr-grid-row--center">
       <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
         <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-col-justify--left fr-mt-3v">
-          <ThemeFilter v-if="hasThemeFilter" />
+          <ThemeFilter />
         </div>
         <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-pr-md-2v">
           <ThemeHeaderCard
@@ -48,8 +34,15 @@
               <ProgramFiltersAccordion />
             </div>
           </div>
-          <div class="fr-col-12 fr-col-md-10 fr-pr-md-2v">
+          <div class="fr-col-12 fr-col-md-10 fr-pr-md-2v fr-col-justify--center">
             <ProgramList :filtered-programs="filteredPrograms" />
+            <TeeSpinner v-if="hasSpinner" />
+            <TeeListNoResults
+              v-else-if="showNoResultsComponent"
+              :has-error="hasError"
+              message="Aucune aide n'a pu être identifiée sur cette thématique..."
+              :count-items="countPrograms"
+            />
           </div>
         </div>
       </div>
@@ -59,10 +52,10 @@
 
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
+import { type ProgramType, ThemeId } from '@/types'
 import Analytics from '@/utils/analytic/analytics'
 import { MetaSeo } from '@/utils/metaSeo'
 import UsedTrack from '@/utils/track/usedTrack'
-import { type ProgramType, TrackId, ThemeId } from '@/types'
 import { computed, onBeforeMount } from 'vue'
 
 const programStore = useProgramStore()
@@ -80,11 +73,7 @@ const filteredPrograms = computed(() => {
 })
 
 const countPrograms = computed(() => {
-  return programs.value?.length || 0
-})
-
-const havePrograms = computed(() => {
-  return countPrograms.value > 0
+  return filteredPrograms.value?.length || 0
 })
 
 const hasSpinner = computed(() => {
@@ -111,10 +100,6 @@ const showNoResultsComponent = computed(() => {
   return hasSpinner.value || hasError.value || !countPrograms.value
 })
 
-const hasThemeFilter = computed(() => {
-  return havePrograms.value && countPrograms.value > 1
-})
-
 const showThemeCard = computed(() => {
   return hasThemeCard.value && !hasSpinner.value
 })
@@ -128,9 +113,6 @@ onBeforeMount(async () => {
   } else {
     hasError.value = true
   }
-
-  // analytics / send event
-  Analytics.sendEvent(TrackId.Results, 'show_results_catalog')
 })
 
 onBeforeRouteLeave(() => {

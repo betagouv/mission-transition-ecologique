@@ -2,14 +2,6 @@
   <!-- PROGRAMS AS LIST OF CARDS -->
   <div class="fr-container--fluid fr-container--fluid--no-overflow">
     <div class="fr-grid-row fr-grid-row--center">
-      <ResultListNoResults
-        v-if="showNoResultsComponent"
-        :has-error="hasError"
-        message="Aucune aide n'a pu être identifiée sur cette thématique..."
-        :count-items="countPrograms"
-      />
-    </div>
-    <div class="fr-grid-row fr-grid-row--center">
       <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
         <div class="fr-grid-row fr-grid-row--center">
           <div class="fr-col-2 fr-col-hidden fr-col-unhidden-md">
@@ -19,7 +11,16 @@
             </div>
           </div>
           <div class="fr-col-12 fr-col-md-10 fr-pl-md-2v fr-pr-md-6v">
-            <ProgramList :filtered-programs="filteredPrograms" />
+            <TeeListNoResults
+              v-if="showNoResultsComponent"
+              :has-error="hasError"
+              message="Aucune aide n'a pu être identifiée sur cette thématique..."
+              :count-items="countPrograms"
+            />
+            <ProgramList
+              v-else
+              :filtered-programs="filteredPrograms"
+            />
           </div>
         </div>
       </div>
@@ -34,17 +35,16 @@ import ProgramFiltersAccordion from '@/components/program/list/filters/ProgramFi
 
 interface ProgramListProps {
   filteredPrograms?: ProgramType[]
+  hasError: boolean
 }
 
 const props = defineProps<ProgramListProps>()
-
-const hasError = ref<boolean>(false)
 
 const countPrograms = computed(() => {
   return props.filteredPrograms?.length || 0
 })
 
 const showNoResultsComponent = computed(() => {
-  return hasError.value || !countPrograms.value
+  return props.hasError || !countPrograms.value
 })
 </script>

@@ -1,13 +1,14 @@
 import {
   ProgramAidType,
   Region,
-  ProgramOperatorType,
+  type ProgramType,
   type programFiltersType,
   type ValueOf,
   ThemeId,
   FiltersKeys,
-  ProgramType
+  OperatorFilter
 } from '@/types'
+import { enrichedOperators } from '@tee/data/static'
 
 export default class ProgramFilter {
   static byAidType(program: ProgramType, programAidTypesSelected: ProgramAidType[]) {
@@ -34,15 +35,26 @@ export default class ProgramFilter {
     return matchingRegions.length > 0
   }
 
-  static byOperator(program: ProgramType, programOperatorsSelected: ProgramOperatorType[]) {
+  static byOperator(program: ProgramType, programOperatorsSelected: OperatorFilter[]) {
     if (!this.isValidFilterValues(programOperatorsSelected)) {
       return true
     }
-    const matchingOperators = programOperatorsSelected.filter((operator: ProgramOperatorType) =>
-      program['opérateur de contact'].includes(operator)
-    )
 
-    return matchingOperators.length > 0
+    const allProgramOperators = [program['opérateur de contact'], ...(program['autres opérateurs'] || [])]
+
+    for (const programOperator of allProgramOperators) {
+      const matchingOperator = enrichedOperators.find((enrichedOperator) => enrichedOperator.operator === programOperator)
+      if (!matchingOperator) {
+        continue
+      }
+
+      const { filterCategories } = matchingOperator
+      const hasMatch = filterCategories.some((category) => programOperatorsSelected.includes(category))
+      if (hasMatch) {
+        return true
+      }
+    }
+    return false
   }
 
   static byTheme(program: ProgramType, themeTypeSelected: ThemeId) {

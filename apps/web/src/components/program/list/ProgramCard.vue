@@ -99,6 +99,8 @@ const isCatalog = navigationStore.isCatalogPrograms()
 const getRouteName = () => {
   if (isCatalog) {
     return RouteName.CatalogProgramDetail
+  } else if (navigationStore.isByRouteName(RouteName.ProjectResultDetail)) {
+    return RouteName.ProgramFromProjectDetail
   } else if (navigationStore.isCatalogProjectDetail()) {
     return RouteName.CatalogProgramFromCatalogProjectDetail
   }

@@ -1,21 +1,20 @@
 <template>
   <div class="fr-text-center">
-    <p class="tee-form-response tee-form-response-error">
-      <v-icon
-        name="ri-close-circle-fill"
+    <p class="fr-text--red fr-text--md fr-m-0">
+      <span
+        class="fr-icon-close-circle-fill fr-icon--lg"
         aria-hidden="true"
-        scale="3"
       />
     </p>
-    <h3 class="tee-form-response tee-form-response-error fr-mb-2v">
+    <h4 class="fr-text--red fr-m-0 fr-mb-2v">
       {{ Translation.t(`form.sorryError`) }}
-    </h3>
+    </h4>
     <slot />
-    <h6 class="tee-form-response-blue fr-mt-15v fr-mb-3v">
+    <h6 class="fr-text--blue-france fr-mt-15v fr-mb-3v">
       {{ Translation.t('form.nowWhat') }}
     </h6>
-    <p class="tee-form-response-blue fr-mb-15v">
-      <span v-html="Translation.ti(Translation.t('form.errorMsg'), { mailto: mailto, email: email })" />
+    <p class="fr-text--blue-france fr-mb-15v">
+      <span v-html="Translation.t('form.errorMsg', { mailto: mailto, email: email })" />
     </p>
   </div>
 </template>

@@ -217,12 +217,17 @@
     <!-- PROGRAM FORM -->
     <div
       ref="TeeProgramFormContainer"
-      class="fr-bg--blue-france--lightness fr-col-justify--center fr-p-2w"
+      class="fr-bg--blue-france--lightness fr-grid-row fr-p-2w"
     >
-      <ProgramForm
+      <TeeForm
         v-if="program"
-        :program="program"
         :form-container-ref="TeeProgramFormContainer"
+        :data-id="program.id"
+        :phone-callback="Translation.t('form.phoneContact', { operator: program['opérateur de contact'] })"
+        :form="Opportunity.getProgramFormFields(program)"
+        :form-type="OpportunityType.Program"
+        :error-email-subject="Translation.t('program.form.errorEmail.subject', { program: program.titre })"
+        :hint="Translation.t('program.form.hint', { operator: program['opérateur de contact'] })"
       />
     </div>
   </div>
@@ -234,27 +239,25 @@
 
 import ProgramAccordion from '@/components/program/detail/ProgramAccordion.vue'
 import ProgramEligibility from '@/components/program/detail/ProgramEligibility.vue'
-import ProgramForm from '@/components/program/detail/ProgramForm.vue'
 import ProgramLongDescription from '@/components/program/detail/ProgramLongDescription.vue'
 import ProgramTile from '@/components/program/detail/ProgramTile.vue'
 import Config from '@/config'
 import { useProgramStore } from '@/stores/program'
-import { ProgramType, Project as ProjectType } from '@/types'
+import { OpportunityType, type ProgramType, Project as ProjectType } from '@/types'
 import { RouteName } from '@/types/routeType'
 import { useNavigationStore } from '@/stores/navigation'
-import Analytics from '@/utils/analytic/analytics'
 import { MetaSeo } from '@/utils/metaSeo'
 import Program from '@/utils/program/program'
 import { Scroll } from '@/utils/scroll'
 import Translation from '@/utils/translation'
 import { computed, onBeforeMount, ref } from 'vue'
 import { useProjectStore } from '@/stores/project'
+import Opportunity from '@/utils/opportunity'
 
 const projectStore = useProjectStore()
 const programsStore = useProgramStore()
 const navigationStore = useNavigationStore()
 
-const route = useRoute()
 const program = ref<ProgramType>()
 const linkedProjects = ref<ProjectType[] | undefined>([])
 const TeeProgramFormContainer = ref<HTMLElement | null | undefined>(null)
@@ -265,7 +268,7 @@ interface Props {
   programId: string
   projectSlug?: string
 }
-const props = defineProps<Props>()
+defineProps<Props>()
 
 // computed
 const programCost = computed(() => program.value?.[`coût de l'accompagnement`])
@@ -303,15 +306,22 @@ onBeforeMount(async () => {
     linkedProjects.value = Program.getLinkedProjects(program.value, projectResult.value)
   }
 
+  if (program.value && navigationStore.isByRouteName(RouteName.CatalogProgramFromCatalogProjectDetail)) {
+    useHead({
+      link: [
+        {
+          rel: 'canonical',
+          href: navigationStore.getAbsoluteUrlByRouteName(RouteName.CatalogProgramDetail, {
+            programId: program.value.id
+          })
+        }
+      ]
+    })
+  }
+
   useSeoMeta(MetaSeo.get(program.value?.titre, program.value?.description, program.value?.illustration))
 
   useNavigationStore().hasSpinner = false
-  // analytics / send event
-  Analytics.sendEvent(
-    'result_detail',
-    route.name === RouteName.CatalogProgramDetail ? 'show_detail_catalog' : 'show_detail',
-    props.programId
-  )
 })
 
 onBeforeRouteLeave(() => {
@@ -324,7 +334,8 @@ const programIsAvailable = computed(() => {
 
 const scrollToProgramForm = () => {
   if (TeeProgramFormContainer.value) {
-    navigationStore.isByRouteName(RouteName.CatalogProgramDetail)
+    navigationStore.isByRouteName(RouteName.CatalogProgramDetail) ||
+    navigationStore.isByRouteName(RouteName.CatalogProgramFromCatalogProjectDetail)
       ? Scroll.to(TeeProgramFormContainer.value)
       : Scroll.toWithTopBarOffset(TeeProgramFormContainer.value)
   }

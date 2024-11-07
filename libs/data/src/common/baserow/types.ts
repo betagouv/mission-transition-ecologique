@@ -1,4 +1,4 @@
-import { DataProgram } from '../../program/types/domain'
+import { ConditionalValues as DomainConditionalValues, DataProgram } from '../../program/types/domain'
 
 export interface Id {
   id: number
@@ -56,4 +56,24 @@ export interface Program
   'Couverture géographique': LinkObject[]
   'Zones géographiques': LinkObject[]
   'Thèmes Ciblés': LinkObject[]
+}
+
+export interface Operator {
+  Nom: string
+  Tag: string
+  Filtre: LinkObject[]
+}
+
+export interface ConditionalValues
+  extends Omit<
+    DomainConditionalValues,
+    'Dispositif concerné' | 'Type de condition' | 'valeur de la condition géographique' | 'Opérateur de contact' | 'Autres opérateurs'
+  > {
+  'Dispositif concerné': LinkObject[]
+  'Type de condition': LinkObject
+  'valeur de la condition géographique': LinkObject[]
+  'Opérateur de contact': LinkObject[]
+  'Autres opérateurs': LinkObject[]
+  'Condition: nb min salaries': number
+  'Condition: nb max salaries': number
 }

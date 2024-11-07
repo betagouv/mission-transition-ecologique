@@ -1,7 +1,7 @@
 titre: INVESTour
 promesse: >-
-  Bénéficiez d'un prêt pour votre projet contribuant à la création ou maintien
-  d’emplois pérennes
+  Bénéficiez d'un prêt de la Région Sud pour votre projet de développement
+  durable dans le tourisme
 description: >-
   Vous êtes une entreprise du tourisme et vous avez un projet de développement :
   diversification de votre activité, rénovation ou extension, modernisation,
@@ -39,6 +39,7 @@ description longue: >-
   - Les investissements immatériels (acquisition de logiciels, dépenses de
   publicité et de formation des salariés, etc.) et corporels (outil de
   production, matériels, etc.).
+fin de validité: 01/11/2025
 illustration: images/TEE_ampoule.png
 opérateur de contact: Région Sud
 url: https://entreprises.maregionsud.fr/financement/sud-entreprises/investour
@@ -86,6 +87,7 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:

@@ -1,24 +1,15 @@
 import { type ProgramType, ThemeId } from '@tee/data'
 import { type PublicodesInputData, PublicodesQuestionnaireRoute, SectorToNAFSection, NAF1Letters } from './types'
 import {
-  BuildingProperty,
-  ObjectiveChecker,
+  QuestionnaireChecker,
   PublicodeObjective,
   PublicodesKeys,
   QuestionnaireData,
   QuestionnaireRoute,
   Sector,
-  StructureSize,
+  SizeToWorkforce,
   YesNo
 } from '@tee/common'
-
-const SizeToWorkforce: { [key in StructureSize]: number } = {
-  [StructureSize.EI]: 1,
-  [StructureSize.TPE]: 19,
-  [StructureSize.PE]: 49,
-  [StructureSize.ME]: 249,
-  [StructureSize.ETI_GE]: 251
-}
 
 /** preprocesses the data gathered from the questionnaire into variables
  * needed by publicodes */
@@ -85,29 +76,33 @@ const setObjectives = (publicodesData: PublicodesInputData, questionnaireData: Q
     }
   } else {
     // "Je ne sais pas par où commencer"
-    publicodesData[PublicodeObjective.EnvironmentalImpact] = ObjectiveChecker.isEnvironmentalImpact(questionnaireData.recently_audited)
+    publicodesData[PublicodeObjective.EnvironmentalImpact] = QuestionnaireChecker.isEnvironmentalImpact(questionnaireData.recently_audited)
       ? YesNo.Yes
       : YesNo.No
 
-    publicodesData[PublicodeObjective.EcoDesign] = ObjectiveChecker.isEcoDesign(questionnaireData.wastes_materials_objective)
+    publicodesData[PublicodeObjective.EcoDesign] = QuestionnaireChecker.isEcoDesign(questionnaireData.wastes_materials_objective)
       ? YesNo.Yes
       : YesNo.No
 
-    publicodesData[PublicodeObjective.WasteManagement] = ObjectiveChecker.isWasteManagement(questionnaireData.wastes_management_objective)
+    publicodesData[PublicodeObjective.WasteManagement] = QuestionnaireChecker.isWasteManagement(
+      questionnaireData.wastes_management_objective
+    )
       ? YesNo.Yes
       : YesNo.No
 
-    publicodesData[PublicodeObjective.WaterConsumption] = ObjectiveChecker.isWaterConsumption(questionnaireData.water_reduction_objective)
+    publicodesData[PublicodeObjective.WaterConsumption] = QuestionnaireChecker.isWaterConsumption(
+      questionnaireData.water_reduction_objective
+    )
       ? YesNo.Yes
       : YesNo.No
 
-    publicodesData[PublicodeObjective.SustainableMobility] = ObjectiveChecker.isSustainableMobility(
+    publicodesData[PublicodeObjective.SustainableMobility] = QuestionnaireChecker.isSustainableMobility(
       questionnaireData.sustainable_mobility_objective
     )
       ? YesNo.Yes
       : YesNo.No
 
-    publicodesData[PublicodeObjective.EnergyPerformance] = ObjectiveChecker.isEnergyPerformance(
+    publicodesData[PublicodeObjective.EnergyPerformance] = QuestionnaireChecker.isEnergyPerformance(
       questionnaireData.energy_reduction_objective
     )
       ? YesNo.Yes
@@ -115,10 +110,9 @@ const setObjectives = (publicodesData: PublicodesInputData, questionnaireData: Q
 
     publicodesData[PublicodeObjective.Biodiversity] = YesNo.Yes
 
-    publicodesData[PublicodesKeys.BuildingOwner] =
-      questionnaireData.building_property == BuildingProperty.Rents || questionnaireData.building_property == BuildingProperty.No
-        ? YesNo.No
-        : YesNo.Yes
+    publicodesData[PublicodesKeys.BuildingOwner] = QuestionnaireChecker.isBuildingProperty(questionnaireData.building_property)
+      ? YesNo.Yes
+      : YesNo.No
   }
 }
 const setQuestionnaireRoute = (publicodesData: PublicodesInputData, questionnaireData: QuestionnaireData) => {

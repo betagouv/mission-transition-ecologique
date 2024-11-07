@@ -7,7 +7,7 @@ import ProgramFilter from '@/utils/program/programFilter'
 import { Result } from 'true-myth'
 import { computed, ref } from 'vue'
 import { acceptHMRUpdate, defineStore } from 'pinia'
-import { type programFiltersType, ProgramAidType, ProgramOperatorType, ThemeId, Region, QuestionnaireData, ProgramType } from '@/types'
+import { type programFiltersType, ProgramAidType, ThemeId, Region, type ProgramType, QuestionnaireData, OperatorFilter } from '@/types'
 
 export const useProgramStore = defineStore('program', () => {
   const currentProgram = ref<ProgramType>()
@@ -44,7 +44,7 @@ export const useProgramStore = defineStore('program', () => {
       return (
         ProgramFilter.byAidType(program, programFilters.value.programAidTypesSelected as ProgramAidType[]) &&
         ProgramFilter.byTheme(program, programFilters.value.themeTypeSelected as ThemeId) &&
-        ProgramFilter.byOperator(program, programFilters.value.operatorAidSelected as ProgramOperatorType[]) &&
+        ProgramFilter.byOperator(program, programFilters.value.operatorAidSelected as OperatorFilter[]) &&
         ProgramFilter.byRegion(program, programFilters.value.regionAidSelected as Region[])
       )
     })
@@ -68,7 +68,7 @@ export const useProgramStore = defineStore('program', () => {
       return Result.err(result.error)
     }
 
-    const result = await new ProgramApi().getOne(id)
+    const result = await new ProgramApi(useUsedTrackStore().getQuestionnaireData()).getOne(id)
     if (result.isOk) {
       currentProgram.value = result.value
     }
