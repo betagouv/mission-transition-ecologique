@@ -66,6 +66,7 @@ This repository is a monorepo, based on [npm workspaces](https://docs.npmjs.com/
 - the ["web" workspace](apps/web/README.md) contains the front-end implementations.
 - the ["backend" workspace](./packages/backend/README.md) contains the back-end implementations.
 - the ["data" workspace](./packages/data/README.md) contains the datasets and common files for datasets builds.
+- the ["web-e2e" workspace](apps/web-e2e/README.md) contains the front-end end to end testing.
 
 ## Getting started
 
