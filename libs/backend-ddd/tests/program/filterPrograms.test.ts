@@ -23,8 +23,15 @@ const defaultFilterPrograms = (programs: ProgramType[], inputData: Record<string
 const addEligibility = (programs: ProgramType[]): ProgramTypeWithEligibility[] => {
   return programs.map((program) => ({
     ...program,
-    eligibility: ProgramEligibilityType.Eligible
+    eligibility: _isPartiallyEligible(program) ? ProgramEligibilityType.PartiallyEligible : ProgramEligibilityType.Eligible
   }))
+}
+
+const _isPartiallyEligible = (program: ProgramType) => {
+  return (
+    program["conditions d'éligibilité"]["autres critères d'éligibilité"] ||
+    !program["conditions d'éligibilité"]["nombre d'années d'activité"].includes('Éligible à toutes les entreprises')
+  )
 }
 
 const rulesBoilerplate = {
