@@ -32,7 +32,7 @@ const addBrevoDeal: OpportunityRepository['create'] = async (
 
   let name = domainOpportunity.id
   if (opportunityAssociatedObject.isProject()) {
-    name = opportunityAssociatedObject.data.title
+    name = opportunityAssociatedObject.data.slug
   }
 
   const dealId = await requestCreateDeal(name, brevoDeal)
