@@ -102,13 +102,22 @@ const setEligibility = (
   // }
   // TODO, analyse the undefined returns from publicodes
   // there are a dozen of programs that return 'undefined' values.
-  if (isEligible && program["conditions d'éligibilité"]["autres critères d'éligibilité"]) {
-    eligibility = ProgramEligibilityType.PartiallyEligible
-  } else if (isEligible) {
-    eligibility = ProgramEligibilityType.Eligible
+  if (isEligible) {
+    if (_isPartiallyEligible(program)) {
+      eligibility = ProgramEligibilityType.PartiallyEligible
+    } else {
+      eligibility = ProgramEligibilityType.Eligible
+    }
   } else {
     eligibility = ProgramEligibilityType.NotEligible
   }
 
   return { ...program, eligibility }
+}
+
+const _isPartiallyEligible = (program: ProgramType) => {
+  return (
+    program["conditions d'éligibilité"]["autres critères d'éligibilité"] ||
+    !program["conditions d'éligibilité"]["nombre d'années d'activité"].includes('Éligible à toutes les entreprises')
+  )
 }
