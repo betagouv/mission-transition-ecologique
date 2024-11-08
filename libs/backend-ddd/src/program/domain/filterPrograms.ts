@@ -103,11 +103,7 @@ const setEligibility = (
   // TODO, analyse the undefined returns from publicodes
   // there are a dozen of programs that return 'undefined' values.
   if (isEligible) {
-    if (_isPartiallyEligible(program)) {
-      eligibility = ProgramEligibilityType.PartiallyEligible
-    } else {
-      eligibility = ProgramEligibilityType.Eligible
-    }
+    eligibility = _isPartiallyEligible(program) ? ProgramEligibilityType.PartiallyEligible : ProgramEligibilityType.Eligible
   } else {
     eligibility = ProgramEligibilityType.NotEligible
   }
