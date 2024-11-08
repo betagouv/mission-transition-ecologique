@@ -5,8 +5,10 @@ import { NuxtSentryConfig } from './nuxt.sentry.config'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  telemetry: false,
   workspaceDir: '../../',
   srcDir: 'src',
+  sourcemap: true,
   devtools: {
     enabled: true,
 
@@ -39,7 +41,7 @@ export default defineNuxtConfig({
     '~/assets/main.scss',
   ],
   vite: {
-    plugins: [nxViteTsPaths()]
+    plugins: [nxViteTsPaths()],
   },
 
   modules: ['@pinia/nuxt', 'vue-dsfr-nuxt-module', '@sentry/nuxt/module', 'nuxt-security'],
@@ -56,7 +58,8 @@ export default defineNuxtConfig({
   nitro: {
     experimental: {
       openAPI: true,
-    }
+    },
+    telemetry: false,
   },
 
   sentry: NuxtSentryConfig.getConfig(),

@@ -5,6 +5,26 @@
   "sourceRoot": "apps/nuxt/src",
   "// targets": "to see all targets run: nx show project @tee/nuxt --web",
   "targets": {
+    "ci": {
+      "executor": "nx:noop",
+      "dependsOn": [
+        "lint",
+        "type-check",
+        "sass-lint"
+      ]
+    },
+    "build": {
+      "dependsOn": [
+        "generate-seo"
+      ]
+    },
+    "type-check": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/nuxt",
+        "command": "vue-tsc --noEmit -p tsconfig.app.json --composite false"
+      }
+    },
     "sass-watch": {
       "executor": "nx:run-commands",
       "options": {
@@ -12,6 +32,22 @@
         "commands": [
           "sass --pkg-importer=node --load-path=../../node_modules --watch src/assets/main.scss:src/assets/main.css"
         ]
+      }
+    },
+    "generate-seo": {
+      "executor": "nx:run-commands",
+      "dependsOn": [
+        {
+          "target": "generate-program",
+          "projects": "@tee/data"
+        }
+      ],
+      "options": {
+        "cwd": "apps/nuxt",
+        "commands": [
+          "npx tsx plugin/SEO/index.ts"
+        ],
+        "parallel": false
       }
     },
     "sass-lint": {

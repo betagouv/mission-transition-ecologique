@@ -18,7 +18,6 @@
     }
   },
   "files": [],
-  "types": ["node", "jsdom", "./src/env.d.ts"],
   "include": [".nuxt/nuxt.d.ts"],
   "references": [
     {

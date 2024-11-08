@@ -48,7 +48,8 @@
         "testTargetName": "test",
         "serveTargetName": "serve",
         "previewTargetName": "start",
-        "serveStaticTargetName": "serve-static"
+        "serveStaticTargetName": "serve-static",
+        "typecheckTargetName": "type-check"
       }
     },
     {

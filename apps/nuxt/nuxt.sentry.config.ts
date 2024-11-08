@@ -15,7 +15,7 @@ export class NuxtSentryConfig {
           project: 'tee-frontend-vue',
           url: sentryData?.domain,
           sourcemaps: {
-            filesToDeleteAfterUpload: ['../../dist/apps/web/**/*.js.map']
+            filesToDeleteAfterUpload: ['../../dist/apps/nuxt/**/*.js.map']
           }
         }
       }

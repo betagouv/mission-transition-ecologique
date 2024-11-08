@@ -24,7 +24,6 @@ function invalidPath(path: string): boolean {
 
 function generateOnePathXML(path: string, changeFreq: ChangeFreq, priority: Priority): string {
   const lastModified = new Date().toISOString()
-  dotenv.config()
   const VITE_DEPLOY_URL = process.env['VITE_DEPLOY_URL']
 
   return `  <url>
@@ -100,10 +99,13 @@ function generateSitemapXML(): string {
 }
 
 export default function generateSitemap() {
+  dotenv.config()
+  const basePath = resolve(process.cwd(), 'src', 'public')
   const sitemapXML = generateSitemapXML()
-  const inFilePath = resolve(process.cwd(), 'public', 'sitemap.placeholder.xml')
+  const inFilePath = resolve(basePath, 'sitemap.placeholder.xml')
+  console.log('inFilePath', inFilePath)
   const fileContent = readFileSync(inFilePath, 'utf8')
   const newContent = fileContent.replace(/__SITEMAP_PLACEHOLDER__generation_in_plugin_SEO__/g, sitemapXML)
-  const outFilePath = resolve(process.cwd(), 'public', 'sitemap.xml')
+  const outFilePath = resolve(basePath, 'sitemap.xml')
   writeFileSync(outFilePath, newContent, 'utf8')
 }
