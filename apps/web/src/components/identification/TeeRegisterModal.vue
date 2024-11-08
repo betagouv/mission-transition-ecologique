@@ -70,8 +70,8 @@ const registerStep = computed<number>(() => {
 })
 const updateEstablishment = (selectedEstablishment: EstablishmentFront) => {
   company.value = selectedEstablishment
-  if (company.value.legalCategory === LegalCategory.EI) {
-    companySize.value = StructureSize.EI
+  if (company.value.structure_size) {
+    companySize.value = company.value.structure_size
   }
   manualRegistration.value = false
 }
