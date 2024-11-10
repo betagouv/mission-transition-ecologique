@@ -11,10 +11,6 @@ export default defineNuxtConfig({
   sourcemap: true,
   devtools: {
     enabled: true,
-
-    timeline: {
-      enabled: true,
-    },
   },
 
   devServer: {
@@ -44,7 +40,7 @@ export default defineNuxtConfig({
     plugins: [nxViteTsPaths()],
   },
 
-  modules: ['@pinia/nuxt', 'vue-dsfr-nuxt-module', '@sentry/nuxt/module', 'nuxt-security', "@nuxtjs/sitemap"],
+  modules: ['@nuxt/devtools', '@pinia/nuxt', 'vue-dsfr-nuxt-module', '@sentry/nuxt/module', 'nuxt-security', "@nuxtjs/sitemap"],
   compatibilityDate: '2024-10-09',
   components: [
     {
@@ -63,7 +59,4 @@ export default defineNuxtConfig({
   },
 
   sentry: NuxtSentryConfig.getConfig(),
-  security: {
-    headers: NuxtSecurityConfig.getHeaderConfig(),
-  }
 })

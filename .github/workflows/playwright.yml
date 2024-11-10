@@ -25,7 +25,7 @@ jobs:
       run: npx playwright install --with-deps
     - name: Run Playwright tests
       env:
-        TEST: true
+        DATA_TEST: true
       run: npm run e2e
     - uses: actions/upload-artifact@v4
       if: always()

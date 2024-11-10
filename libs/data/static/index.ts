@@ -6,7 +6,7 @@ import operatorsJson from './operators.json'
 
 let projects = projectsJson as unknown as Project[]
 
-if (process.env['TEST'] === 'true') {
+if (process.env['DATA_TEST'] === 'true') {
   projects = projectsTestsJson as unknown as Project[]
 }
 export { projects }

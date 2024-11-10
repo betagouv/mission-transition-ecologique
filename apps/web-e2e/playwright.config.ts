@@ -61,7 +61,7 @@ export default defineConfig({
   /* Run your local dev server before starting the tests */
   webServer: {
     env: {
-      TEST: 'true'
+      DATA_TEST: 'true'
     },
     command: 'npm run dev:build:start',
     url: 'http://localhost:4242',

@@ -29,7 +29,7 @@
     "type:check:vue": "nx run @tee/web:type-check --verbose",
     "ci": "nx run-many -t ci --verbose --parallel=false",
     "sass:watch": "nx run @tee/nuxt:sass-watch",
-    "e2e": "TEST=true npx playwright test --config=apps/web-e2e/playwright.config.ts"
+    "e2e": "DATA_TEST=true npx playwright test --config=apps/web-e2e/playwright.config.ts"
   },
   "engines": {
     "node": "20.x",
