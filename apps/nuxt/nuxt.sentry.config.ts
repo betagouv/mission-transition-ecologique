@@ -16,7 +16,8 @@ export class NuxtSentryConfig {
           url: sentryData?.domain,
           sourcemaps: {
             filesToDeleteAfterUpload: ['../../dist/apps/nuxt/**/*.js.map']
-          }
+          },
+          telemetry: false
         }
       }
 

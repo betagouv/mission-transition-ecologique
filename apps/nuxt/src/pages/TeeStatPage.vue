@@ -111,7 +111,9 @@ definePageMeta({
 const statsData = ref<StatsData | null>(null)
 const chartCanvas = ref<HTMLCanvasElement | null>(null)
 
-const isSmallScreen = computed(() => window.innerWidth < 768)
+const isSmallScreen = computed(() => {
+  return import.meta.client ? window.innerWidth < 768 : false
+})
 
 const drawChart = () => {
   if (statsData.value && statsData.value.demandsTimeSeries) {

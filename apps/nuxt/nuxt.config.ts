@@ -2,15 +2,23 @@ import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import { defineNuxtConfig } from 'nuxt/config'
 import { NuxtSecurityConfig } from './nuxt.security.config'
 import { NuxtSentryConfig } from './nuxt.sentry.config'
+import { ChangeFreq, Priority } from './src/types/sitemapType'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  telemetry: false,
+  compatibilityDate: '2024-10-09',
   workspaceDir: '../../',
   srcDir: 'src',
+
+  telemetry: false,
   sourcemap: true,
+
   devtools: {
     enabled: true,
+    timeline: {
+      enabled: true,
+    },
+    telemetry: false,
   },
 
   devServer: {
@@ -36,27 +44,49 @@ export default defineNuxtConfig({
     '~/assets/custom.css',
     '~/assets/main.scss',
   ],
+
   vite: {
     plugins: [nxViteTsPaths()],
   },
 
-  modules: ['@nuxt/devtools', '@pinia/nuxt', 'vue-dsfr-nuxt-module', '@sentry/nuxt/module', 'nuxt-security', "@nuxtjs/sitemap"],
-  compatibilityDate: '2024-10-09',
+  modules: ['@pinia/nuxt', 'vue-dsfr-nuxt-module', '@sentry/nuxt/module', 'nuxt-security', "@nuxtjs/sitemap"],
+
   components: [
     {
       path: '~/components',
       pathPrefix: false,
     },
   ],
-  experimental: {
-    renderJsonPayloads: false,
-  },
+
   nitro: {
     experimental: {
       openAPI: true,
     },
-    telemetry: false,
+  },
+
+  experimental: {
+    renderJsonPayloads: false,
+    inlineRouteRules: true,
+  },
+
+  security: {
+    headers: NuxtSecurityConfig.getHeaderConfig(),
   },
 
   sentry: NuxtSentryConfig.getConfig(),
+
+  sitemap: {
+    cacheMaxAgeSeconds: 2678400, // 31 days
+    debug: true,
+    credits:false,
+    autoLastmod: true,
+    defaults: {
+      changefreq: ChangeFreq.Monthly,
+      priority: Priority.Low
+    },
+    sources: [
+      '/api/__sitemap__/programs',
+      '/api/__sitemap__/projects',
+    ]
+  },
 })

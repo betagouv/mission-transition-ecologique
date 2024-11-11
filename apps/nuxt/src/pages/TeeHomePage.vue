@@ -22,12 +22,20 @@
 </template>
 
 <script setup lang="ts">
+import { defineRouteRules } from '#imports'
 import { MiddlewareName } from '@/middleware/type/middlewareName'
-import { RouteName } from '@/types'
+import { RouteName, ChangeFreq, Priority } from '@/types'
 
 definePageMeta({
   path: '/',
   name: RouteName.Homepage,
   middleware: [MiddlewareName.resetUsedTrackStore]
+})
+
+defineRouteRules({
+  sitemap: {
+    priority: Priority.Highest,
+    changefreq: ChangeFreq.Weekly
+  }
 })
 </script>

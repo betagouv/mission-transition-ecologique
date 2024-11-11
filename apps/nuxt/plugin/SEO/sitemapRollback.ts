@@ -2,7 +2,7 @@ import { ProgramService } from '@tee/backend-ddd'
 import dotenv from 'dotenv'
 import { readFileSync, writeFileSync } from 'fs'
 import { resolve } from 'path'
-import { ChangeFreq, type PathSettings, Priority } from './type'
+import { ChangeFreq, type PathSettings, Priority } from '../../src/types/sitemapType'
 import { ProgramType, Project } from '@tee/data'
 import { projects } from '@tee/data/static'
 

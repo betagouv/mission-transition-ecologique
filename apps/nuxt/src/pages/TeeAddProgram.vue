@@ -7,12 +7,20 @@
 </template>
 
 <script setup lang="ts">
-import { RouteName } from '@/types'
+import { defineRouteRules } from '#imports'
+import { ChangeFreq, Priority, RouteName } from '@/types'
 import { onMounted, onBeforeUnmount } from 'vue'
 
 definePageMeta({
   path: '/ajouter-une-aide-entreprises',
   name: RouteName.AddProgram
+})
+
+defineRouteRules({
+  sitemap: {
+    priority: Priority.Null,
+    changefreq: ChangeFreq.Monthly
+  }
 })
 
 if (import.meta.client) {

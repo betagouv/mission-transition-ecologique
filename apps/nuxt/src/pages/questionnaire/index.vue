@@ -9,14 +9,22 @@
 </template>
 
 <script setup lang="ts">
+import { defineRouteRules } from '#imports'
 import ContactHelp from '@/components/contact/ContactHelp.vue'
 import { MiddlewareName } from '@/middleware/type/middlewareName'
 import { useNavigationStore } from '@/stores/navigation'
-import { TrackId } from '@/types'
+import { ChangeFreq, Priority, TrackId } from '@/types'
 import { RouteName } from '@/types/routeType'
 
 definePageMeta({
   name: RouteName.QuestionnaireStart,
   middleware: [MiddlewareName.resetUsedTrackStore, MiddlewareName.resetQueries, MiddlewareName.resetProgramFilters]
+})
+
+defineRouteRules({
+  sitemap: {
+    priority: Priority.Null,
+    changefreq: ChangeFreq.Monthly
+  }
 })
 </script>

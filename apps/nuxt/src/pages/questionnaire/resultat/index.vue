@@ -17,4 +17,8 @@ definePageMeta({
   name: RouteName.QuestionnaireResult,
   middleware: [MiddlewareName.setUsedTracks, MiddlewareName.hasUsedTracks]
 })
+
+defineRouteRules({
+  sitemap: false
+})
 </script>

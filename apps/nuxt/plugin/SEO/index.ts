@@ -1,5 +1,5 @@
 import generateRobots from './robotsTxt'
-import generateSitemap from './sitemap'
+import generateSitemap from './sitemapRollback'
 
 export const PATH_FOLDER_FILE = 'public'
 

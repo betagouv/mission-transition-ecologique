@@ -18,3 +18,8 @@ export enum RouteName {
   Statistics = 'statistics',
   Accessibility = 'accessibility'
 }
+
+export enum RoutePath {
+  CatalogProgramDetail = '/aides-entreprise/:programId',
+  CatalogProjectDetail = '/projets-entreprise/:projectSlug'
+}
