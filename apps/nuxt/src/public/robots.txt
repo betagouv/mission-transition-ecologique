@@ -1,5 +1,0 @@
-User-agent: *
-Disallow: /questionnaire/
-Disallow: /ajouter-une-aide-entreprises
-
-Sitemap: http://localhost:4242/sitemap.xml

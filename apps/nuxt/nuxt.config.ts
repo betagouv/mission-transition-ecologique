@@ -49,7 +49,7 @@ export default defineNuxtConfig({
     plugins: [nxViteTsPaths()],
   },
 
-  modules: ['@pinia/nuxt', 'vue-dsfr-nuxt-module', '@sentry/nuxt/module', 'nuxt-security', "@nuxtjs/sitemap"],
+  modules: ['@pinia/nuxt', 'vue-dsfr-nuxt-module', '@sentry/nuxt/module', 'nuxt-security', '@nuxtjs/sitemap', '@nuxtjs/robots'],
 
   components: [
     {
@@ -77,9 +77,9 @@ export default defineNuxtConfig({
 
   sitemap: {
     cacheMaxAgeSeconds: 2678400, // 31 days
-    debug: true,
     credits:false,
     autoLastmod: true,
+    experimentalWarmUp: true,
     defaults: {
       changefreq: ChangeFreq.Monthly,
       priority: Priority.Low
@@ -89,4 +89,11 @@ export default defineNuxtConfig({
       '/api/__sitemap__/projects',
     ]
   },
+  robots: {
+    disallow:[
+      '/questionnaire/',
+      '/ajouter-une-aide-entreprises',
+    ],
+    credits: false
+  }
 })

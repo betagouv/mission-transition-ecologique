@@ -1,5 +1,0 @@
-User-agent: *
-Disallow: /questionnaire/
-Disallow: /ajouter-une-aide-entreprises
-
-Sitemap: __VITE_DEPLOY_URL__/sitemap.xml

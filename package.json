@@ -41,6 +41,7 @@
     "@gouvminint/vue-dsfr": "^7.0.2",
     "@incubateur-ademe/legal-pages-markdown": "^0.4.0-next.0",
     "@incubateur-ademe/legal-pages-vue3": "^0.4.0-next.0",
+    "@nuxtjs/robots": "^4.1.11",
     "@nuxtjs/sitemap": "^6.1.5",
     "@nx/eslint": "20.0.0",
     "@nx/eslint-plugin": "20.0.0",
