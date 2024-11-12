@@ -93,8 +93,6 @@ import { OpportunityType } from '@tee/common'
 import { useNavigationStore } from '@/stores/navigation'
 import Analytics from '@/utils/analytic/analytics'
 import { ProgramType } from '@tee/data'
-import Cookie from '@/utils/cookies'
-import { CookieValue } from '@/types/cookies'
 
 const navigation = useNavigationStore()
 interface Props {
@@ -154,12 +152,7 @@ const saveForm = async () => {
     const opportunity = new OpportunityApi(localForm.value, props.dataId, props.dataSlug || props.dataId, props.formType)
     requestResponse.value = await opportunity.fetch()
     // analytics / send event
-    const posthogCookie = Cookie.getCookieByValue(CookieValue.Posthog)
-    let identification = undefined
-    if (posthogCookie?.accepted) {
-      identification = { opportunityId: requestResponse.value.id }
-    }
-    Analytics.sendEvent(TrackId.Results, getEventName(), identification)
+    Analytics.sendEvent(TrackId.Results, getEventName(), { opportunityId: requestResponse.value.id })
   } finally {
     isLoading.value = false
     formIsSent.value = true

@@ -8,7 +8,7 @@ export default class Posthog {
   private static _posthog?: PostHog
 
   static install() {
-    if (!Config.isProduction()) {
+    if (Config.isProduction()) {
       this._posthog = posthog.init(Config.posthogApiKey, {
         api_host: 'https://eu.i.posthog.com',
         capture_pageview: false,
