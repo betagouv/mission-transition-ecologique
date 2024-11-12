@@ -9,7 +9,8 @@ import { Theme } from '@/utils/theme'
 
 export default class Opportunity {
   static getBaseOpportunityFormFields(): FormDataType {
-    const selectedTheme = Theme.getById(useProgramStore().getThemeTypeSelected() as ThemeId)
+    const selectedThemeId = useProgramStore().hasThemeTypeSelected() ? useProgramStore().getThemeTypeSelected() : TrackStructure.getTheme()
+    const selectedTheme = Theme.getById(selectedThemeId as ThemeId)
     return {
       theme: {
         required: false,
