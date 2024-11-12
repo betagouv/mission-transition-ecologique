@@ -23,7 +23,7 @@ tests.forEach((singleTest) => {
         continue; // Passer à l'élément suivant si le sélecteur est introuvable
       }
 
-      if (['text', 'email', 'tel'].includes(value.type)) {
+      if (['text', 'email', 'tel', 'textarea'].includes(value.type)) {
         await page.locator(`${selector}`).locator(`input[type="${value.type}"]`).fill(value.value as string)
         console.log(`selector ${selector} is filled with ${value.value}`)
       } else if (value.type === 'select') {

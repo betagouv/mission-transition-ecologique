@@ -151,7 +151,7 @@ export const tests: FormResultDataType[]  = [
     type: 'project',
     url: 'questionnaire/resultat/projet/isolation-thermique?choix-du-parcours=j-ai-un-projet&siret=83014132100034&effectif=TPE&objectifs=building',
     values: {
-      projectTitle: {value: undefined, type: 'text'},
+      projectTitle: {value: '', type: 'text'},
       name: {value: 'test', type: 'text'},
       surname: {value: 'test', type: 'text'},
       tel: {value: '0123456789', type: 'tel'},
