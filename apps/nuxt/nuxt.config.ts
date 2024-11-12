@@ -10,7 +10,6 @@ export default defineNuxtConfig({
   workspaceDir: '../../',
   srcDir: 'src',
   telemetry: false,
-  sourcemap: true,
   devtools: {
     enabled: true,
     timeline: {
@@ -52,9 +51,13 @@ export default defineNuxtConfig({
       openAPI: true,
     },
   },
+  features: {
+    inlineStyles: false,
+  },
   experimental: {
     renderJsonPayloads: false,
     inlineRouteRules: true,
+    // sharedPrerenderData: true, // interssant pour eviter de refaire plusieurs fois la meme requete (https://nuxt.com/docs/api/nuxt-config#sharedprerenderdata)
   },
 
   modules: ['@pinia/nuxt', 'vue-dsfr-nuxt-module', '@sentry/nuxt/module', 'nuxt-security', '@nuxtjs/sitemap', '@nuxtjs/robots'],
