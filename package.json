@@ -16,6 +16,7 @@
     "dev:build:start": "npm run build && npm run dev:start",
     "build": "nx run-many -t build",
     "start": "nx run-many -t start --port $PORT",
+    "build:start": "npm run build && npm run start",
     "generate:program": "nx run @tee/data:generate-program",
     "generate:program-yaml": "nx run @tee/data:generate-program-yaml",
     "generate:projects": "nx run @tee/data:generate-projects",
@@ -29,7 +30,7 @@
     "type:check:vue": "nx run @tee/web:type-check --verbose",
     "ci": "nx run-many -t ci --verbose --parallel=false",
     "sass:watch": "nx run @tee/nuxt:sass-watch",
-    "e2e": "DATA_TEST=true npx playwright test --config=apps/web-e2e/playwright.config.ts"
+    "e2e": "DATA_TEST=true nx run @tee/nuxt-e2e:e2e"
   },
   "engines": {
     "node": "20.x",

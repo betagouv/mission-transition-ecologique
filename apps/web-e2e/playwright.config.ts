@@ -14,7 +14,7 @@ export default defineConfig({
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    baseURL: 'http://localhost:4242',
+    baseURL: 'http://localhost:4243',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry'
@@ -61,10 +61,11 @@ export default defineConfig({
   /* Run your local dev server before starting the tests */
   webServer: {
     env: {
-      DATA_TEST: 'true'
+      DATA_TEST: 'true',
+      PORT: '4243'
     },
     command: 'npm run dev:build:start',
-    url: 'http://localhost:4242',
+    url: 'http://localhost:4243',
     reuseExistingServer: !process.env.CI
   }
 })

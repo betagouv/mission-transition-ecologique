@@ -1,7 +1,7 @@
 export type ResultDataType = {
-  id: number,
-  url: string,
-  count?: number,
+  id: number
+  url: string
+  count?: number
   values: string[]
 }
 
