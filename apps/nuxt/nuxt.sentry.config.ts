@@ -1,26 +1,23 @@
 import { dsnFromString } from '@sentry/utils'
-import { Options as SentryOptions } from '@sentry/bundler-plugin-core'
+import { ModuleOptions as SentryOptions } from '@sentry/nuxt/build/types/module'
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import ConfigCommon from '../../libs/common/src/config/configCommon'
 
 export class NuxtSentryConfig {
   static getConfig(): SentryOptions {
-    const options: SentryOptions = {
-      telemetry: false
-    }
+    const options: SentryOptions = {}
     if (ConfigCommon.isProduction()) {
-      const sentryData = this.getSentryData()
+      // const sentryData = this.getSentryData()
       const token = process.env.SENTRY_AUTH_TOKEN
 
       if (token) {
         return {
           ...options,
-          authToken: process.env.SENTRY_AUTH_TOKEN,
-          org: 'betagouv',
-          project: 'tee-frontend-vue',
-          url: sentryData?.domain,
-          sourcemaps: {
-            filesToDeleteAfterUpload: ['../../dist/apps/nuxt/**/*.js.map']
+          sourceMapsUploadOptions: {
+            telemetry: false,
+            authToken: token,
+            org: 'betagouv',
+            project: 'tee-frontend-vue'
           }
         }
       }

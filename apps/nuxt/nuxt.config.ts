@@ -10,6 +10,7 @@ export default defineNuxtConfig({
   workspaceDir: '../../',
   srcDir: 'src',
   telemetry: false,
+  sourcemap: { client: true },
   devtools: {
     enabled: true,
     timeline: {
