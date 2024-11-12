@@ -64,7 +64,7 @@ jobs:
           cache: 'npm'
       - run: npm clean-install --foreground-scripts
 
-      - run: npx nx run @tee/web:sass-lint -f github
+      - run: npx nx run @tee/nuxt:sass-lint -f github
 
 
   type-check:
