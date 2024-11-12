@@ -23,8 +23,8 @@ tests.forEach((singleTest) => {
         continue; // Passer à l'élément suivant si le sélecteur est introuvable
       }
 
-      if (value.type === 'text') {
-        await page.locator(`${selector}`).locator('input[type="text"]').fill(value.value as string)
+      if (['text', 'email', 'tel'].includes(value.type)) {
+        await page.locator(`${selector}`).locator(`input[type="${value.type}"]`).fill(value.value as string)
         console.log(`selector ${selector} is filled with ${value.value}`)
       } else if (value.type === 'select') {
         await page.locator(`${selector}`).locator('select').selectOption({ label: value.value as string })
