@@ -18,8 +18,8 @@
 </template>
 <script setup lang="ts">
 import { OpportunityType } from '@/types'
-import Opportunity from '@/utils/opportunity'
-import Translation from '@/utils/translation'
+import Opportunity from '@/tools/opportunity'
+import Translation from '@/tools/translation'
 
 // ajouter custom project
 const teeOtherProjectFormContainer = ref<HTMLElement | null | undefined>(null)
