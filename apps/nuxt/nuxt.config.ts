@@ -61,6 +61,9 @@ export default defineNuxtConfig({
   },
 
   modules: ['@pinia/nuxt', 'vue-dsfr-nuxt-module', '@sentry/nuxt/module', 'nuxt-security', '@nuxtjs/sitemap', '@nuxtjs/robots'],
+  // Modules who need to have a look:
+  // - nuxt-purgecss
+  // - @nuxtjs/critters
   security: {
     headers: NuxtSecurityConfig.getHeaderConfig(),
   },

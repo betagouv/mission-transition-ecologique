@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TeeDsfrBreadcrumb :links="[{ text: 'Accessibilité', to: RouteName.Accessibility }]" />
+    <TeeDsfrBreadcrumb :links="[{ text: 'Accessibilité', to: { name: RouteName.Accessibility } }]" />
     <div
       id="simple-page"
       class="fr-container fr-mb-8w"

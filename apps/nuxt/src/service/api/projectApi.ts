@@ -11,7 +11,7 @@ export default class ProjectApi extends RequestApi {
   }
 
   async get(): Promise<Result<Project[], Error>> {
-    let projectsData: Project[] = []
+    let projectsData: Project[] = projects
     if (import.meta.env.VITE_DATA_TEST === 'true') {
       projectsData = projectsTest
     }
