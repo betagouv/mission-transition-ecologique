@@ -45,7 +45,7 @@
 </template>
 <script setup lang="ts">
 import Translation from '@/utils/translation'
-import { EstablishmentFront, CompanyDataStorageKey, CompanyDataType, LegalCategory, StructureSize } from '@/types'
+import { EstablishmentFront, CompanyDataStorageKey, CompanyDataType } from '@/types'
 import Breakpoint from '@/utils/breakpoints'
 import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 import { onClickOutside } from '@vueuse/core'
