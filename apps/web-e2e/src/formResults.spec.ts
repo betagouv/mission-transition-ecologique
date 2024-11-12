@@ -34,6 +34,7 @@ tests.forEach((singleTest) => {
 
     const submitButton = page.locator('[teste2e-selector="send-contact-form"]');
     await submitButton.waitFor({ state: 'attached', timeout: 5000 })
+    await page.waitForTimeout(1000);
     if (singleTest.valid) {
       await expect(submitButton).not.toBeDisabled()
 
