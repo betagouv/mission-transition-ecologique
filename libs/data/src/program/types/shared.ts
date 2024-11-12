@@ -13,3 +13,7 @@ export enum ProgramEligibilityType {
   ProgramEol = 'program-end-of-life',
   Unknown = 'unknown'
 }
+
+export const isSizeEligibleForAll = (field: [string, ...string[]]) => {
+  return 'Éligible à toutes les entreprises' in field
+}
