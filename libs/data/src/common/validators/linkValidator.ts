@@ -1,9 +1,10 @@
 import axios from 'axios'
-import fetch from 'node-fetch'
 import https from 'https'
 import { chromium } from 'playwright'
+import { RequestInit as NodeFetchRequestInit } from 'node-fetch'
 
 export class LinkValidator {
+  static fetch = (url: URL, init?: NodeFetchRequestInit) => import('node-fetch').then(({ default: fetch }) => fetch(url, init))
   public static async isValidLink(link: string) {
     let result = await this._fetchValidation(link)
     await new Promise((resolve) => setTimeout(resolve, 50))
@@ -19,7 +20,7 @@ export class LinkValidator {
 
   private static async _fetchValidation(link: string) {
     try {
-      const fetchResponse = await fetch(link, { method: 'GET', redirect: 'follow', signal: AbortSignal.timeout(2000) })
+      const fetchResponse = await fetch(new URL(link), { method: 'GET', redirect: 'follow', signal: AbortSignal.timeout(2000) })
       if (fetchResponse.ok) {
         return true
       } else {

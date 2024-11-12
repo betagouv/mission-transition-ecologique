@@ -1,32 +1,44 @@
-import { Maybe, Result } from 'true-myth'
-import { OpportunityRepository } from '../../../domain/spi'
-import { OpportunityId, OpportunityUpdateAttributes, OpportunityDetailsShort, OpportunityWithOperatorContact } from '../../../domain/types'
-import BrevoAPI from './brevoAPI'
-import {
-  DealAttributes,
-  BrevoQuestionnaireRoute,
-  DealUpdateAttributes,
-  BrevoPostDealPayload,
-  BrevoDealResponse,
-  BrevoDealItem
-} from './types'
-import Config from '../../../../config'
 import { QuestionnaireRoute } from '@tee/common'
 import { Operators } from '@tee/data'
+import { Maybe, Result } from 'true-myth'
 import Monitor from '../../../../common/domain/monitoring/monitor'
+import Config from '../../../../config'
+import { OpportunityAssociatedData } from '../../../domain/opportunityAssociatedData'
+import { OpportunityRepository } from '../../../domain/spi'
+import {
+  OpportunityDetailsShort,
+  OpportunityId,
+  OpportunityUpdateAttributes,
+  OpportunityWithOperatorContact,
+  OpportunityWithOperatorContactAndContactId
+} from '../../../domain/types'
+import BrevoAPI from './brevoAPI'
+import {
+  BrevoDealItem,
+  BrevoDealResponse,
+  BrevoPostDealPayload,
+  BrevoQuestionnaireRoute,
+  DealAttributes,
+  DealUpdateAttributes
+} from './types'
 
 // "Opportunities" are called "Deals" in Brevo
 
 const addBrevoDeal: OpportunityRepository['create'] = async (
-  contactId: number,
-  domainOpportunity: OpportunityWithOperatorContact
+  domainOpportunity: OpportunityWithOperatorContactAndContactId,
+  opportunityAssociatedObject: OpportunityAssociatedData
 ): Promise<Result<OpportunityId, Error>> => {
   const brevoDeal = convertDomainToBrevoDeal(domainOpportunity)
 
-  const dealId = await requestCreateDeal(domainOpportunity.id, brevoDeal)
+  let name = domainOpportunity.id
+  if (opportunityAssociatedObject.isProject()) {
+    name = opportunityAssociatedObject.data.slug
+  }
+
+  const dealId = await requestCreateDeal(name, brevoDeal)
 
   if (!dealId.isErr) {
-    const maybeError = await associateBrevoDealToContact(dealId.value, contactId)
+    const maybeError = await associateBrevoDealToContact(dealId.value, domainOpportunity.contactId)
     if (maybeError.isJust)
       return Result.err(new Error('Something went wrong while attaching contact to opportunity', { cause: maybeError.value }))
   }
@@ -49,8 +61,7 @@ const requestCreateDeal = async (name: string, attributes: DealAttributes): Prom
     return Result.err(responseResult.error)
   }
 
-  const dealId = responseResult.map((r) => r.data as OpportunityId)
-  return dealId
+  return responseResult.map((r) => r.data as OpportunityId)
 }
 
 const updateBrevoDeal: OpportunityRepository['update'] = async (

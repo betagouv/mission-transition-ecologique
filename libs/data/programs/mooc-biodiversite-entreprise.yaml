@@ -1,0 +1,99 @@
+titre: MOOC Entreprise et biodiversité
+promesse: Sensibilisez votre entreprise aux enjeux de la préservation de la biodiversité
+description: >-
+  Le MOOC Entreprises & Biodiversité est une formation qui a pour objectif de
+  donner toutes les clés aux entreprises pour agir en faveur de la préservation
+  de la biodiversité. Cette formation en ligne est découpée en trois temps :
+  comprendre, imaginer des solutions puis agir. Elle est composée de modules
+  e-learning, d'infographies, d'exercices interactifs, et interviews réalisés
+  avec des experts.
+description longue: >-
+  Ce MOOC est développé par LPO, association d’utilité publique qui a pour objet
+  d'agir ou de favoriser les actions en faveur de la nature et de la
+  biodiversité, en partenariat avec le Mouvement des entreprises de France et le
+  soutien financier de l’Office français de la biodiversité. 
+
+
+  Programme : 
+
+  - Séquence 1 - COMPRENDRE : Quels sont les risques pour l’entreprise, pourquoi
+  y a-t-il urgence pour agir face à l’érosion du vivant ?
+
+  - Séquence 2 - IMAGINER DES SOLUTIONS : Comment une entreprise peut-elle agir,
+  que ce soit dans son cœur de métier, sur son site d’activités ou dans son
+  fonctionnement quotidien ?
+
+  - Séquence 3 - AGIR : Comment s’y prendre pour passer à l’action, par quelles
+  étapes faut-il passer pour réussir ?
+
+
+  Vous êtes une entreprise de moins de 10 salariés ? En participant au MOOC,
+  vous bénéficiez désormais d’un accès simplifié vers le programme "Entreprises
+  engagées pour la nature" de l’OFB. En reprenant vos réponses aux activités
+  proposées en fin de chaque séquence, vous aurez rempli la majeure partie du
+  dossier d'adhésion. Le programme vous permettra ensuite de vous inscrire dans
+  une dynamique reconnue et visible à l’échelle nationale et de créer de
+  nouvelles synergies pour préserver la biodiversité.
+illustration: images/TEE_energie_verte.png
+opérateur de contact: Office français de la biodiversité
+nature de l'aide: formation
+coût de l'accompagnement: Gratuit
+durée de l'accompagnement: De 6h à 9h
+activable en autonomie: oui
+objectifs:
+  - description: Créez votre compte sur la plateforme MOOC de l'association LPO.
+    liens:
+      - lien: https://mooc.formation.lpo.fr/login/index.php
+        texte: Plateforme de LPO
+  - description: >-
+      Une fois connecté, inscrivez-vous à la formation Entreprise et
+      biodiversité
+    liens:
+      - lien: https://mooc.formation.lpo.fr/enrol/synopsis/index.php?id=4
+        texte: S'inscrire au MOOC Entreprise et biodiversité
+  - description: >-
+      Visionnez la formation à votre rythme et en toute autonomie. Elle peut
+      prendre la forme de modules e-learning, d'infographies, d'exercices
+      interactifs, ou interviews réalisés avec des experts.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - Tous secteurs d’activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est former ou recruter
+      - questionnaire . objectif prioritaire . est préserver la biodiversité

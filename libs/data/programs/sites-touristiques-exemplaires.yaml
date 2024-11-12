@@ -10,17 +10,18 @@ description: >-
   Ces sites nécessitent souvent une amélioration de leur offre globale en termes
 
   d’aménagements et de services, pour permettre aux visiteurs de profiter des
-  services offerts
+  services offerts sur place ou dans les environs immédiats, qu’il s’agisse
+  d’accueil, de sentiers aménagés, de prestations d’accompagnement, etc. 
 
-  sur place ou dans les environs immédiats, qu’il s’agisse d’accueil, de
-  sentiers aménagés, de
-
-  prestations d’accompagnement, etc. 
-
-  La Région Sud souhaite soutenir financièrement les investissements qui visent
-  à améliorer l'accueil du public sur ses sites touristiques dans le respect de
-  la préservation des patrimoines naturels régionaux.
+  Cette aide soutient les projets de sites emblématiques forts ou à fort
+  potentiel de développement, permettant à la fois l’amélioration des conditions
+  d’accueil et d’information des visiteurs, leur sensibilisation et la
+  régulation des flux dans l’optique d’un développement durable. Il se décline
+  en deux volets : soutien à des aménagements et soutien à des solutions
+  technologiques de gestion des flux.
 description longue: >-
+  Volet 1 : soutien à des aménagements 
+
   Vous devrez présenter une réflexion globale incluant, lorsque cela s’avère
   pertinent, des actions de promotion, de sensibilisation à la préservation des
   territoires, voire des offres alternatives vers d’autres sites
@@ -72,7 +73,27 @@ description longue: >-
   énergétique, confort d’été, utilisation d’éco-matériaux) ainsi que
   l’aménagement des
 
-  espaces (végétalisation, gestion des eaux pluviales).
+  espaces (végétalisation, gestion des eaux pluviales). 
+
+
+  Volet 2 : soutien à des solutions technologiques de gestion des flux 
+
+  Les projets devront être intégrés dans une réflexion globale intégrant les
+  quatre composantes essentielles que sont la gouvernance d’ensemble, la mesure
+  et le pilotage par les données, la mobilité sur le territoire concerné et
+  l’aménagement du site. Une réflexion relative à la capacité de charges des
+  sites concernés sera appréciée.
+
+
+  Dépenses éligibles : 
+
+  • les aménagements, équipements pour la mise en place de services, d’outils et
+  services numériques de pilotage des flux : mesure de flux, collecte,
+  traitement (temps-réel et/ou prédictif) et visualisation de données,
+  interaction avec les usagers (applications mobiles, bornes d’information,
+  signalétique, etc.) ;
+
+  • les études préalables à ces investissements.
 illustration: images/TEE_ampoule.png
 opérateur de contact: Région Sud
 url: https://www.maregionsud.fr/vos-aides/detail/sites-touristiques-exemplaires
@@ -103,7 +124,8 @@ conditions d'éligibilité:
   autres critères d'éligibilité:
     - >-
       être gestionnaire d'un grand site touristique emblématique ou d'un site
-      "alternatif" de la région.
+      "alternatif" de la région ;
+    - avoir une approche globale.
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
