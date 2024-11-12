@@ -1,12 +1,25 @@
-import { PhoneValidator, EmailValidator, SiretValidator } from '@tee/common'
-import { FieldType, RouteName, type ProgramData as ProgramType, Project, FormDataType } from '@/types'
-import TrackStructure from '@/utils/track/trackStructure'
+import { PhoneValidator, EmailValidator, SiretValidator, OpportunityType } from '@tee/common'
+import { FieldType, RouteName, type ProgramData as ProgramType, Project, FormDataType, ThemeType, ThemeId } from '@/types'
+
+import { useProgramStore } from '@/stores/program'
 import { CalloutType } from '@/types/elementsPropsTypes'
+import TrackStructure from '@/utils/track/trackStructure'
 import Translation from '@/utils/translation'
+import { Theme } from '@/utils/theme'
 
 export default class Opportunity {
   static getBaseOpportunityFormFields(): FormDataType {
+    const selectedTheme = Theme.getById(useProgramStore().getThemeTypeSelected() as ThemeId)
     return {
+      theme: {
+        required: false,
+        hidden: true,
+        options: Theme.themes.map((theme: ThemeType) => theme.tagLabel),
+        value: selectedTheme?.tagLabel,
+        label: 'Thématique',
+        isValid: true,
+        type: FieldType.Select
+      },
       name: { required: true, colSize: 6, type: FieldType.Text, value: undefined, label: 'Prénom', isValid: undefined },
       surname: { required: true, colSize: 6, type: FieldType.Text, value: undefined, label: 'Nom', isValid: undefined },
       email: {
@@ -73,12 +86,29 @@ export default class Opportunity {
   static getProjectFormFields(project: Project): FormDataType {
     const baseFields = this.getBaseOpportunityFormFields()
     baseFields.needs.value = Translation.t('project.form.needs', { secteur: TrackStructure.getSectorShortLabel() })
+    baseFields.theme.required = true
     return {
       projectTitle: {
         required: true,
         value: project.title,
         label: 'Quel est votre projet?',
         isValid: true,
+        type: FieldType.Text
+      },
+      ...baseFields
+    }
+  }
+  static getOtherProjectFormFields(): FormDataType {
+    const baseFields = this.getBaseOpportunityFormFields()
+    baseFields.needs.label = 'Quel est votre projet ?'
+    baseFields.needs.value = Translation.t('otherProject.form.needs', { secteur: TrackStructure.getSectorShortLabel() })
+    baseFields.theme = { ...baseFields.theme, hidden: false, required: true }
+    return {
+      projectTitle: {
+        required: true,
+        value: undefined,
+        label: 'Quel est le nom de votre projet?',
+        isValid: undefined,
         type: FieldType.Text
       },
       ...baseFields
@@ -91,5 +121,9 @@ export default class Opportunity {
       titreAide: program.titre
     })
     return baseFields
+  }
+
+  static isCustomProject(opportunityType: OpportunityType): boolean {
+    return opportunityType === OpportunityType.CustomProject
   }
 }
