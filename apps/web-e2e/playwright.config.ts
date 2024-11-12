@@ -61,7 +61,7 @@ export default defineConfig({
   /* Run your local dev server before starting the tests */
   webServer: {
     env: {
-      DATA_TEST: 'true',
+      VITE_DATA_TEST: 'true',
       PORT: '4243'
     },
     command: 'npm run dev:build:start',

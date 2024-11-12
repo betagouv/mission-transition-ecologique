@@ -48,7 +48,6 @@ declare module 'vue' {
     ProgramObjective: typeof import('./components/program/detail/ProgramObjective.vue')['default']
     ProgramProjects: typeof import('./components/program/detail/ProgramProjects.vue')['default']
     ProgramTile: typeof import('./components/program/detail/ProgramTile.vue')['default']
-    ProjectButton: typeof import('./components/project/ProjectButton.vue')['default']
     ProjectCard: typeof import('./components/project/list/ProjectCard.vue')['default']
     ProjectDescription: typeof import('./components/project/details/ProjectDescription.vue')['default']
     ProjectDetail: typeof import('./components/project/details/ProjectDetail.vue')['default']

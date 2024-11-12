@@ -9,10 +9,6 @@ const navigationStore = useNavigationStore()
 const router = useRouter()
 const route = useRoute()
 
-const isReady = computed<boolean>(() => {
-  return navigationStore.isReady
-})
-
 onBeforeMount(() => {
   Translation.setLocale('fr')
   Cookie.setCookies()

@@ -1,24 +1,26 @@
 <template>
-  <TeeDsfrBreadcrumb :links="[{ text: 'Mentions légales', to: { name: RouteName.Legal } }]" />
-  <div class="fr-container fr-my-4w">
-    <LegalNotice
-      licence-url="https://github.com/betagouv/mission-transition-ecologique/blob/main/LICENSE"
-      :privacy-policy-url="privacyPolicy"
-      :site-url="siteUrl"
-      :site-host="{
-        address: '13 rue Jacques Peirotes 67000 Strasbourg',
-        country: 'France',
-        email: 'hello@scalingo.com',
-        name: 'Scalingo'
-      }"
-      site-name="Mission Transition Écologique"
-      date="17/06/2024"
-      :third-parties="thirdParties"
-      :contact-email="Contact.email"
-      :include-beta-gouv="true"
-    />
+  <div>
+    <TeeDsfrBreadcrumb :links="[{ text: 'Mentions légales', to: { name: RouteName.Legal } }]" />
+    <div class="fr-container fr-my-4w">
+      <LegalNotice
+        licence-url="https://github.com/betagouv/mission-transition-ecologique/blob/main/LICENSE"
+        :privacy-policy-url="privacyPolicy"
+        :site-url="siteUrl"
+        :site-host="{
+          address: '13 rue Jacques Peirotes 67000 Strasbourg',
+          country: 'France',
+          email: 'hello@scalingo.com',
+          name: 'Scalingo'
+        }"
+        site-name="Mission Transition Écologique"
+        date="17/06/2024"
+        :third-parties="thirdParties"
+        :contact-email="Contact.email"
+        :include-beta-gouv="true"
+      />
+    </div>
+    <ContactMail />
   </div>
-  <ContactMail />
 </template>
 
 <script setup lang="ts">

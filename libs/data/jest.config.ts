@@ -1,3 +1,4 @@
+import type { Config } from 'jest'
 /* eslint-disable */
 export default {
   displayName: '@tee/data',
@@ -8,5 +9,5 @@ export default {
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
   coverageDirectory: '../../coverage/libs/data',
-  roots: ['./tests']
-};
+  roots: ['./tests'],
+} as Config;

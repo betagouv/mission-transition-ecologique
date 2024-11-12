@@ -1,15 +1,17 @@
 <template>
-  <TeeDsfrBreadcrumb :links="[{ text: 'Données personnelles', to: RouteName.PersonalData }]" />
-  <div class="fr-container fr-my-4w">
-    <PrivacyPolicy
-      date="17/06/2024"
-      site-name="Mission Transition Écologique"
-      :third-parties="thirdParties"
-      :cookies="cookies"
-      :cookie-consent-button="TeeFooterCookiesButton"
-    />
+  <div>
+    <TeeDsfrBreadcrumb :links="[{ text: 'Données personnelles', to: RouteName.PersonalData }]" />
+    <div class="fr-container fr-my-4w">
+      <PrivacyPolicy
+        date="17/06/2024"
+        site-name="Mission Transition Écologique"
+        :third-parties="thirdParties"
+        :cookies="cookies"
+        :cookie-consent-button="TeeFooterCookiesButton"
+      />
+    </div>
+    <ContactMail />
   </div>
-  <ContactMail />
 </template>
 
 <script setup lang="ts">

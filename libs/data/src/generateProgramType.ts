@@ -1,7 +1,7 @@
 // requiring path and fs modules
-import * as path from 'path'
-import * as fs from 'fs'
+import fs from 'fs'
 import { compileFromFile } from 'json-schema-to-typescript'
+import path from 'path'
 import { createFolderIfNotExists } from './helpers'
 
 /** generates a .d.ts typescript type for a Program object, from its

@@ -33,7 +33,7 @@
     "type:check:vue": "nx run @tee/web:type-check --verbose",
     "ci": "nx run-many -t ci --verbose --parallel=false",
     "sass:watch": "nx run @tee/nuxt:sass-watch",
-    "e2e": "DATA_TEST=true nx run @tee/nuxt-e2e:e2e"
+    "e2e": "VITE_DATA_TEST=true nx run @tee/nuxt-e2e:e2e"
   },
   "engines": {
     "node": "20.x",

@@ -1,6 +1,6 @@
 import RequestApi from '@/service/api/requestApi'
 import type { Project } from '@/types'
-import { projects } from '@tee/data/static'
+import { projects, projectsTest } from '@tee/data/static'
 import { Result } from 'true-myth'
 
 export default class ProjectApi extends RequestApi {
@@ -11,10 +11,14 @@ export default class ProjectApi extends RequestApi {
   }
 
   async get(): Promise<Result<Project[], Error>> {
+    let projectsData: Project[] = []
+    if (import.meta.env.VITE_DATA_TEST === 'true') {
+      projectsData = projectsTest
+    }
     //TODO replace with api call once the endpoint is available
     return new Promise((resolve, reject) => {
-      if (!projects) reject(new Error('No project data'))
-      else resolve(Result.ok(projects))
+      if (!projectsData) reject(new Error('No project data'))
+      else resolve(Result.ok(projectsData))
     })
   }
 

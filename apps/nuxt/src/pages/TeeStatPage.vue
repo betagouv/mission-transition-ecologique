@@ -1,100 +1,102 @@
 <template>
-  <TeeDsfrBreadcrumb :links="[{ text: 'Statistiques', to: RouteName.Statistics }]" />
-  <div class="fr-container fr-mb-8w">
-    <div class="fr-mb-5w">
-      <h1 class="fr-mb-3w">Statistiques d'usage</h1>
-      <p>
-        Vous trouverez ici les statistiques d'utilisation du site Transition écologique des entreprises. Ces données nous permettent de
-        suivre les évolutions d'usage de la plateforme dans le temps mais également de mieux comprendre vos besoins et d'orienter nos
-        actions pour améliorer ce service.
-      </p>
-      <p>
-        Ces données étant en cours de construction, elles peuvent, dans certains cas, être incomplètes. Nous vous remercions de votre
-        compréhension.
-      </p>
-    </div>
+  <div>
+    <TeeDsfrBreadcrumb :links="[{ text: 'Statistiques', to: RouteName.Statistics }]" />
+    <div class="fr-container fr-mb-8w">
+      <div class="fr-mb-5w">
+        <h1 class="fr-mb-3w">Statistiques d'usage</h1>
+        <p>
+          Vous trouverez ici les statistiques d'utilisation du site Transition écologique des entreprises. Ces données nous permettent de
+          suivre les évolutions d'usage de la plateforme dans le temps mais également de mieux comprendre vos besoins et d'orienter nos
+          actions pour améliorer ce service.
+        </p>
+        <p>
+          Ces données étant en cours de construction, elles peuvent, dans certains cas, être incomplètes. Nous vous remercions de votre
+          compréhension.
+        </p>
+      </div>
 
-    <h2>Nombre de mises en relation</h2>
-    <div class="fr-grid-row fr-grid-row--center">
-      <div class="fr-col-md-6">
-        <h4>Depuis le lancement</h4>
-        <TeeCallout
-          :title="statsData ? statsData.countOpportunitiesTotal || undefined : undefined"
-          class="fr-mr-md-3v"
-        >
-          Demandes d'entreprises mises en relations avec un opérateur public sur un sujet de transition écologique depuis le lancement (été
-          2023).
-        </TeeCallout>
-      </div>
-      <div class="fr-col-md-6 fr-mt-3w fr-mt-md-0 extend-shorter-content-container">
-        <h4 class="fr-ml-md-3v">Sur les 30 derniers jours</h4>
-        <TeeCallout
-          :title="statsData ? statsData.countOpportunities30Days || undefined : undefined"
-          class="fr-ml-md-3v extend-vertically"
-        >
-          Demandes d'entreprises mises en relations avec un opérateur public sur un sujet de transition écologique sur les 30 derniers
-          jours.
-        </TeeCallout>
-      </div>
-    </div>
-    <div class="fr-col-12 fr-mt-3w fr-mt-md-4w fr-mb-md-8w">
-      <h4>Demandes cumulées ces derniers mois</h4>
-      <canvas
-        ref="chartCanvas"
-        width="1200"
-        :height="isSmallScreen ? 700 : 450"
-      />
-    </div>
-    <div class="fr-mt-5w fr-mt-md-0 fr-mb-5w">
-      <h2>Nombre de dispositifs d'aide activés</h2>
-      <div class="fr-col-md-6">
-        <TeeCallout
-          :type="CalloutType.Warning"
-          img="/images/TEE-missingData.svg"
-          class="fr-mr-md-3v"
-        >
-          Nous travaillons actuellement sur cette mesure.<br /><br />
-          Cette information sera disponible prochainement.
-        </TeeCallout>
-      </div>
-    </div>
-    <div class="fr-mb-5w">
-      <h2>Nombre de dispositifs d'aide listés sur la plateforme</h2>
-      <div class="fr-grid-row fr-grid-row--center fr-mb-5w">
+      <h2>Nombre de mises en relation</h2>
+      <div class="fr-grid-row fr-grid-row--center">
         <div class="fr-col-md-6">
           <h4>Depuis le lancement</h4>
           <TeeCallout
-            :title="statsData ? statsData.countProgramsTotal || undefined : undefined"
+            :title="statsData ? statsData.countOpportunitiesTotal || undefined : undefined"
             class="fr-mr-md-3v"
           >
-            Dispositifs d’aides référencés sur la plateforme depuis le lancement (été 2023).
+            Demandes d'entreprises mises en relations avec un opérateur public sur un sujet de transition écologique depuis le lancement
+            (été 2023).
           </TeeCallout>
         </div>
-        <div class="fr-col-12 fr-col-md-6 fr-mt-3w fr-mt-md-0 extend-shorter-content-container">
-          <h4 class="fr-ml-md-3v">Actifs</h4>
+        <div class="fr-col-md-6 fr-mt-3w fr-mt-md-0 extend-shorter-content-container">
+          <h4 class="fr-ml-md-3v">Sur les 30 derniers jours</h4>
           <TeeCallout
-            :title="statsData ? statsData.countProgramsNow || undefined : undefined"
-            class="fr-ml-md-3v extend-vertically extend-hor"
+            :title="statsData ? statsData.countOpportunities30Days || undefined : undefined"
+            class="fr-ml-md-3v extend-vertically"
           >
-            Dispositifs d’aides actuellement référencés sur la plateforme.
+            Demandes d'entreprises mises en relations avec un opérateur public sur un sujet de transition écologique sur les 30 derniers
+            jours.
+          </TeeCallout>
+        </div>
+      </div>
+      <div class="fr-col-12 fr-mt-3w fr-mt-md-4w fr-mb-md-8w">
+        <h4>Demandes cumulées ces derniers mois</h4>
+        <canvas
+          ref="chartCanvas"
+          width="1200"
+          :height="isSmallScreen ? 700 : 450"
+        />
+      </div>
+      <div class="fr-mt-5w fr-mt-md-0 fr-mb-5w">
+        <h2>Nombre de dispositifs d'aide activés</h2>
+        <div class="fr-col-md-6">
+          <TeeCallout
+            :type="CalloutType.Warning"
+            img="/images/TEE-missingData.svg"
+            class="fr-mr-md-3v"
+          >
+            Nous travaillons actuellement sur cette mesure.<br /><br />
+            Cette information sera disponible prochainement.
+          </TeeCallout>
+        </div>
+      </div>
+      <div class="fr-mb-5w">
+        <h2>Nombre de dispositifs d'aide listés sur la plateforme</h2>
+        <div class="fr-grid-row fr-grid-row--center fr-mb-5w">
+          <div class="fr-col-md-6">
+            <h4>Depuis le lancement</h4>
+            <TeeCallout
+              :title="statsData ? statsData.countProgramsTotal || undefined : undefined"
+              class="fr-mr-md-3v"
+            >
+              Dispositifs d’aides référencés sur la plateforme depuis le lancement (été 2023).
+            </TeeCallout>
+          </div>
+          <div class="fr-col-12 fr-col-md-6 fr-mt-3w fr-mt-md-0 extend-shorter-content-container">
+            <h4 class="fr-ml-md-3v">Actifs</h4>
+            <TeeCallout
+              :title="statsData ? statsData.countProgramsNow || undefined : undefined"
+              class="fr-ml-md-3v extend-vertically extend-hor"
+            >
+              Dispositifs d’aides actuellement référencés sur la plateforme.
+            </TeeCallout>
+          </div>
+        </div>
+      </div>
+      <div class="fr-mb-5w">
+        <h2>Trafic web</h2>
+        <div class="fr-col-md-6">
+          <TeeCallout
+            class="fr-mr-md-3v"
+            link="https://stats.beta.gouv.fr/index.php?module=CoreHome&action=index&idSite=23&period=day&date=yesterday#?period=day&date=yesterday&category=Dashboard_Dashboard&subcategory=1&idSite=23"
+            link-text="Tableau de bord Matomo"
+          >
+            Consultez toutes les statistiques de notre site sur le tableau de bord de notre outil de suivi Matomo.
           </TeeCallout>
         </div>
       </div>
     </div>
-    <div class="fr-mb-5w">
-      <h2>Trafic web</h2>
-      <div class="fr-col-md-6">
-        <TeeCallout
-          class="fr-mr-md-3v"
-          link="https://stats.beta.gouv.fr/index.php?module=CoreHome&action=index&idSite=23&period=day&date=yesterday#?period=day&date=yesterday&category=Dashboard_Dashboard&subcategory=1&idSite=23"
-          link-text="Tableau de bord Matomo"
-        >
-          Consultez toutes les statistiques de notre site sur le tableau de bord de notre outil de suivi Matomo.
-        </TeeCallout>
-      </div>
-    </div>
+    <ContactMail />
   </div>
-  <ContactMail />
 </template>
 
 <script setup lang="ts">

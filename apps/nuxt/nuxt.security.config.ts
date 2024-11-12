@@ -1,5 +1,6 @@
 import { SecurityHeaders } from 'nuxt-security'
 import { NuxtSentryConfig } from './nuxt.sentry.config'
+// eslint-disable-next-line @nx/enforce-module-boundaries
 import ConfigCommon from '../../libs/common/src/config/configCommon'
 
 export class NuxtSecurityConfig {

@@ -17,6 +17,7 @@ export interface ImportMetaEnv {
   readonly PROD: boolean
   readonly SSR: boolean
   readonly VITE_POSTHOG_API_KEY: string
+  readonly VITE_DATA_TEST: string
   // more env variables...
 }
 

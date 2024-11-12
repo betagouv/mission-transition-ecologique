@@ -5,11 +5,12 @@ import { default as projectsTestsJson } from './projects_tests.json'
 import operatorsJson from './operators.json'
 
 let projects = projectsJson as unknown as Project[]
+const projectsTest = projectsTestsJson as unknown as Project[]
 
 if (process.env['DATA_TEST'] === 'true') {
-  projects = projectsTestsJson as unknown as Project[]
+  projects = projectsTest
 }
-export { projects }
+export { projects, projectsTest }
 
 const enrichedOperators: EnrichedOperator[] = operatorsJson as unknown as EnrichedOperator[]
 export { enrichedOperators }

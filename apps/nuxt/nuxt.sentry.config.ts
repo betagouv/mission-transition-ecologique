@@ -1,5 +1,6 @@
 import { dsnFromString } from '@sentry/utils'
 import { Options as SentryOptions } from '@sentry/bundler-plugin-core'
+// eslint-disable-next-line @nx/enforce-module-boundaries
 import ConfigCommon from '../../libs/common/src/config/configCommon'
 
 export class NuxtSentryConfig {

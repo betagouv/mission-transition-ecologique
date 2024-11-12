@@ -24,7 +24,7 @@
       "executor": "nx:run-commands",
       "options": {
         "cwd": "apps/nuxt",
-        "command": "vue-tsc --noEmit -p tsconfig.app.json --composite false"
+        "command": "vue-tsc --noEmit -p tsconfig.json --composite false"
       }
     },
     "sass-watch": {
