@@ -1,7 +1,5 @@
 import posthog, { PostHog } from 'posthog-js'
 import Config from '@/config'
-import Cookie from '@/utils/cookies'
-import { CookieValue } from '@/types/cookies'
 import { RouteLocationNormalized } from 'vue-router'
 
 export default class Posthog {
@@ -33,10 +31,7 @@ export default class Posthog {
 
   static capturePageView(to: RouteLocationNormalized) {
     if (this._posthog) {
-      const posthogCookie = Cookie.getCookieByValue(CookieValue.Posthog)
-      if (posthogCookie?.accepted) {
-        this._posthog.capture('$pageview', { path: to.fullPath })
-      }
+      this._posthog.capture('$pageview', { path: to.fullPath })
     }
   }
 
