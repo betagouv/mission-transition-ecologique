@@ -8,11 +8,12 @@ export default class Posthog {
   private static _posthog?: PostHog
 
   static install() {
-    if (Config.isProduction()) {
+    if (!Config.isProduction()) {
       this._posthog = posthog.init(Config.posthogApiKey, {
         api_host: 'https://eu.i.posthog.com',
         capture_pageview: false,
         capture_pageleave: false,
+        persistence: 'memory',
         person_profiles: 'always'
       })
     }
@@ -20,13 +21,13 @@ export default class Posthog {
 
   static activatePosthogCookie() {
     if (this._posthog) {
-      this._posthog.opt_in_capturing()
+      this._posthog.set_config({ persistence: 'localStorage+cookie' })
     }
   }
 
   static deactivatePosthogCookie() {
     if (this._posthog) {
-      this._posthog.opt_out_capturing()
+      this._posthog.set_config({ persistence: 'memory' })
     }
   }
 
@@ -45,9 +46,9 @@ export default class Posthog {
     }
   }
 
-  static captureEvent(action: string, name: string | null = null, value?: string | number | object | Record<string, string | number>) {
+  static captureEvent(name: string | null = null, value?: object) {
     if (this._posthog) {
-      this._posthog.capture(name ? name : 'unnamed event', { action: action, value: value })
+      this._posthog.capture(name ? name : 'unnamed event', value)
     }
   }
 }
