@@ -25,10 +25,13 @@ tests.forEach((singleTest) => {
 
       if (value.type === 'text') {
         await page.locator(`${selector}`).locator('input[type="text"]').fill(value.value as string)
+        console.log(`selector ${selector} is filled with ${value.value}`)
       } else if (value.type === 'select') {
         await page.locator(`${selector}`).locator('select').selectOption({ label: value.value as string })
+        console.log(`selector ${selector} is filled with ${value.value}`)
       } else if (value.type === 'checkbox' && value.value) {
         await page.locator(`${selector} label`).click()
+        console.log(`selector ${selector} is filled with ${value.value}`)
       }
     }
 
