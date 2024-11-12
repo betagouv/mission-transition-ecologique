@@ -1,5 +1,6 @@
 import { ThemeId } from '@tee/data'
 import { z } from 'zod'
+import { stringBoolean } from '../validator'
 import {
   BuildingProperty,
   MobilityStatus,
@@ -48,3 +49,5 @@ export const questionnaireDataSchema = z.object({
   creationDate: z.string().optional(),
   onlyEligible: z.boolean().optional()
 })
+
+export const serverQuestionnaireDataSchema = questionnaireDataSchema.setKey('onlyEligible', stringBoolean.optional())

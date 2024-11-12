@@ -7,12 +7,12 @@ const querySchema = z.object({
 })
 
 export default defineEventHandler(async (event) => {
-  const query = await getValidatedRouterParams(event, querySchema.parse)
-  const establishmentResult = await new EstablishmentService().search(query.query)
+  const params = await getValidatedRouterParams(event, querySchema.parse)
+  const establishmentResult = await new EstablishmentService().search(params.query)
 
   if (establishmentResult.isErr) {
     const err = establishmentResult.error
-    Monitor.error('Error in getEstablishmentBySiret', { query, error: err })
+    Monitor.error('Error in getEstablishmentBySiret', { query: params, error: err })
 
     if (err instanceof EstablishmentNotFoundError) {
       throw createError({

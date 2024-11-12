@@ -9,10 +9,8 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-10-09',
   workspaceDir: '../../',
   srcDir: 'src',
-
   telemetry: false,
   sourcemap: true,
-
   devtools: {
     enabled: true,
     timeline: {
@@ -20,23 +18,19 @@ export default defineNuxtConfig({
     },
     telemetry: false,
   },
-
   devServer: {
     host: 'localhost',
     port: 4242
   },
-
   typescript: {
     typeCheck: true,
     tsConfig: {
       extends: '../tsconfig.app.json', // Nuxt copies this string as-is to the `./.nuxt/tsconfig.json`, therefore it needs to be relative to that directory
     }
   },
-
   imports: {
     autoImport: true
   },
-
   css: [
     '@gouvfr/dsfr/dist/dsfr.min.css',                // Le CSS minimal du DSFR
     '@gouvfr/dsfr/dist/utility/icons/icons.min.css', // Styles de tous les composants du DSFR
@@ -44,37 +38,30 @@ export default defineNuxtConfig({
     '~/assets/custom.css',
     '~/assets/main.scss',
   ],
-
   vite: {
     plugins: [nxViteTsPaths()],
   },
-
-  modules: ['@pinia/nuxt', 'vue-dsfr-nuxt-module', '@sentry/nuxt/module', 'nuxt-security', '@nuxtjs/sitemap', '@nuxtjs/robots'],
-
   components: [
     {
       path: '~/components',
       pathPrefix: false,
     },
   ],
-
   nitro: {
     experimental: {
       openAPI: true,
     },
   },
-
   experimental: {
     renderJsonPayloads: false,
     inlineRouteRules: true,
   },
 
+  modules: ['@pinia/nuxt', 'vue-dsfr-nuxt-module', '@sentry/nuxt/module', 'nuxt-security', '@nuxtjs/sitemap', '@nuxtjs/robots'],
   security: {
     headers: NuxtSecurityConfig.getHeaderConfig(),
   },
-
   sentry: NuxtSentryConfig.getConfig(),
-
   sitemap: {
     cacheMaxAgeSeconds: 2678400, // 31 days
     credits:false,
