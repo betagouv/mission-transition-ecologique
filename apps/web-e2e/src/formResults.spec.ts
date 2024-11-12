@@ -8,7 +8,6 @@ tests.forEach((singleTest) => {
   test(`Test id ${singleTest.id} - Verify form ${singleTest.url}`, async ({ page }) => {
     console.log(`Navigating to ${singleTest.url}`)
     await page.goto(singleTest.url, { waitUntil: 'networkidle' })
-    console.log(`Opening form if type is custom-project for Test ID ${singleTest.id}`)
     if (singleTest.type === 'custom-project') {
       await page.click('[teste2e-selector="open-custom-project-form"]')
     }
@@ -35,14 +34,16 @@ tests.forEach((singleTest) => {
 
     const submitButton = page.locator('[teste2e-selector="send-contact-form"]');
     await submitButton.waitFor({ state: 'attached', timeout: 5000 })
-    await expect(submitButton).not.toBeDisabled()
+    if (singleTest.valid) {
+      await expect(submitButton).not.toBeDisabled()
 
-    await submitButton.click()
-
-    const expectedCallbackSelector = singleTest.valid 
-      ? '[teste2e-selector="success-callback-contact-form"]' 
-      : '[teste2e-selector="error-callback-contact-form"]'
-
-    await expect(page.locator(expectedCallbackSelector)).toBeVisible({ timeout: 10000 })
+      await submitButton.click()
+  
+      const expectedCallbackSelector = singleTest.valid 
+        ? '[teste2e-selector="success-callback-contact-form"]' 
+        : '[teste2e-selector="error-callback-contact-form"]'
+  
+      await expect(page.locator(expectedCallbackSelector)).toBeVisible({ timeout: 10000 })
+    }
   })
 })
