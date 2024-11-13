@@ -1,6 +1,6 @@
 import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 import { useNavigationStore } from '@/stores/navigation'
-import { StructureSize, TrackId } from '@/types'
+import { EstablishmentFront, StructureSize, TrackId } from '@/types'
 import { CompanyDataType } from '@/types/companyDataType'
 
 export class CompanyDataStorageHandler {
@@ -24,10 +24,10 @@ export class CompanyDataStorageHandler {
   }
 
   static updateSearchParamFromStorage() {
-    if (CompanyDataStorage.hasSiret()) {
+    if (CompanyDataStorage.hasCompanyData()) {
       useNavigationStore().updateSearchParam({
         name: TrackId.Siret,
-        value: CompanyDataStorage.getSiret()?.siret
+        value: (CompanyDataStorage.getCompanyData() as EstablishmentFront)?.siret
       })
     }
 
