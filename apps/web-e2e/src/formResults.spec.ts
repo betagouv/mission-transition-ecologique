@@ -48,6 +48,8 @@ tests.forEach((singleTest) => {
         : '[teste2e-selector="error-callback-contact-form"]'
   
       await expect(page.locator(expectedCallbackSelector)).toBeVisible({ timeout: 10000 })
-    }
+    } else {
+      await expect(submitButton).toBeDisabled()
+    } 
   })
 })
