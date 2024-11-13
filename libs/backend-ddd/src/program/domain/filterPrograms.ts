@@ -1,6 +1,6 @@
 import { Result } from 'true-myth'
 import { RulesManager } from './spi'
-import { ProgramEligibilityType, ProgramType, ProgramTypeWithEligibility } from '@tee/data'
+import { isSizeEligibleForAll, ProgramEligibilityType, ProgramType, ProgramTypeWithEligibility } from '@tee/data'
 import { QuestionnaireData } from '@tee/common'
 
 /** Expected rule to evaluate if a program should be displayed to the user or
@@ -114,6 +114,6 @@ const setEligibility = (
 const _isPartiallyEligible = (program: ProgramType) => {
   return (
     program["conditions d'éligibilité"]["autres critères d'éligibilité"] ||
-    !program["conditions d'éligibilité"]["nombre d'années d'activité"].includes('Éligible à toutes les entreprises')
+    !isSizeEligibleForAll(program["conditions d'éligibilité"]["nombre d'années d'activité"])
   )
 }
