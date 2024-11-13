@@ -87,7 +87,6 @@ export default class Opportunity {
   static getProjectFormFields(project: Project): FormDataType {
     const baseFields = this.getBaseOpportunityFormFields()
     baseFields.needs.value = Translation.t('project.form.needs', { secteur: TrackStructure.getSectorShortLabel() })
-    baseFields.theme.required = true
     return {
       projectTitle: {
         required: true,
