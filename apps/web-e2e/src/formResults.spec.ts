@@ -10,7 +10,6 @@ tests.forEach((singleTest) => {
     page.on('response', async (response) => {
       if (response.url().includes('/api/opportunities')) {
         if (response.status() === 200) {
-          console.log('success during opportunityApiCall')
           await expect(page.locator('[teste2e-selector="success-callback-contact-form"]')).toBeVisible({ timeout: 1000 })
         } else {
           console.log('error during opportunityApiCall')
@@ -18,7 +17,7 @@ tests.forEach((singleTest) => {
         }
       }
     });
-    console.log(`Navigating to ${singleTest.url}`)
+    console.log(`Navigating to ${singleTest.type} ${singleTest.id} ${singleTest.valid}`)
     await page.goto(singleTest.url, { waitUntil: 'load' })
     if (singleTest.type === 'custom-project') {
       await page.click('[teste2e-selector="open-custom-project-form"]')
