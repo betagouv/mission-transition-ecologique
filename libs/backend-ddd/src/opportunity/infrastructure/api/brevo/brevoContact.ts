@@ -1,3 +1,4 @@
+import { Config } from '../../../../config'
 import { ContactId } from '../../../domain/types'
 import axios from 'axios'
 import { Result } from 'true-myth'
@@ -10,6 +11,10 @@ import Monitor from '../../../../common/domain/monitoring/monitor'
 const DEBUG_BREVO_LIST_ID = '4'
 
 export const addBrevoContact: ContactRepository['createOrUpdate'] = async (contact: ContactDetails, optIn: true) => {
+  if (!Config.BREVO_API_ENABLED) {
+    return Result.ok(0 as unknown as ContactId)
+  }
+
   const defaultListId = DEBUG_BREVO_LIST_ID
   const rawlistIds: string = process.env['BREVO_LIST_IDS'] || defaultListId
   const listIds = parseListIds(rawlistIds)
