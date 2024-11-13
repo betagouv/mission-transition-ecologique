@@ -41,11 +41,11 @@ tests.forEach((singleTest) => {
 
       await submitButton.click()
   
-      /* const expectedCallbackSelector = singleTest.valid 
+      const expectedCallbackSelector = singleTest.valid 
         ? '[teste2e-selector="success-callback-contact-form"]' 
         : '[teste2e-selector="error-callback-contact-form"]'
   
-      await expect(page.locator(expectedCallbackSelector)).toBeVisible({ timeout: 1000 }) */
+      await expect(page.locator(expectedCallbackSelector)).toBeVisible({ timeout: 1000 })
     } else {
       await expect(submitButton).toBeDisabled()
     } 
