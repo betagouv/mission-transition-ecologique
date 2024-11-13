@@ -22,6 +22,7 @@ description longue: >-
   • des opérations de transmission (y compris croissance externe) par achat de
   titres ou de fonds de commerce permettant d’être au moins majoritaire à
   l’issue de l’opération
+fin de validité: 07/11/2024
 illustration: images/TEE_energie_verte.png
 opérateur de contact: Bpifrance
 url: https://www.bpifrance.fr/catalogue-offres/pret-tourisme
@@ -58,6 +59,7 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - a un effectif éligible
   entreprise . a un effectif éligible:
