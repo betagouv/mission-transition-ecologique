@@ -24,6 +24,7 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
+      run: echo "PDE_API_BASEURL=${{ secrets.PDE_API_BASEURL }}"
       env:
         TEST: true
         PDE_API_BASEURL: '${{secrets.PDE_API_BASEURL}}'
