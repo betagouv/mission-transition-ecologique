@@ -23,7 +23,7 @@ import { acceptHMRUpdate, defineStore } from 'pinia'
 import { computed, ref, toRaw } from 'vue'
 import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 import { CompanyDataStorageKey } from '@/types/companyDataType'
-import { CompanyDataStorageHandler } from '@/utils/storage/CompanyDataStorageHandler'
+import { CompanyDataStorageHandler } from '@/utils/storage/companyDataStorageHandler'
 
 export const useUsedTrackStore = defineStore('usedTrack', () => {
   const current = ref<UsedTrack | undefined>()
