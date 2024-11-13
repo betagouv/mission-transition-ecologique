@@ -61,7 +61,6 @@ export const tests: FormResultDataType[]  = [
       tel: {value: '0123456789', type: 'tel'},
       email: {value: 'test@test.fr', type: 'email'},
       siret: {value: '83014132100034', type: 'text'},
-      needs: {value: 'test', type: 'textarea'},
       cgu: {value: true, type: 'checkbox'}
     } 
   },
@@ -77,7 +76,6 @@ export const tests: FormResultDataType[]  = [
       tel: {value: '0123456789', type: 'tel'},
       email: {value: 'test@test.fr', type: 'email'},
       siret: {value: '21490007800012', type: 'text'},
-      needs: {value: 'test', type: 'textarea'},
       cgu: {value: true, type: 'checkbox'}
     } 
   }, 
@@ -92,7 +90,6 @@ export const tests: FormResultDataType[]  = [
       tel: {value: '0123456789', type: 'tel'},
       email: {value: 'test@test.fr', type: 'email'},
       siret: {value: '21490007800012', type: 'text'},
-      needs: {value: 'test', type: 'textarea'},
       cgu: {value: true, type: 'checkbox'}
     }   
   },
@@ -107,7 +104,6 @@ export const tests: FormResultDataType[]  = [
       tel: {value: '0123456789', type: 'tel'},
       email: {value: 'test@test.fr', type: 'email'},
       siret: {value: '21490007800012', type: 'text'},
-      needs: {value: 'test', type: 'textarea'},
       cgu: {value: true, type: 'checkbox'}
     }   
   },
@@ -124,7 +120,6 @@ export const tests: FormResultDataType[]  = [
       tel: {value: '0123456789', type: 'tel'},
       email: {value: 'test@test.fr', type: 'email'},
       siret: {value: '21490007800012', type: 'text'},
-      needs: {value: 'test', type: 'textarea'},
       cgu: {value: true, type: 'checkbox'}
     }   
   },
@@ -141,7 +136,6 @@ export const tests: FormResultDataType[]  = [
       tel: {value: '0123456789', type: 'tel'},
       email: {value: 'test@test.fr', type: 'email'},
       siret: {value: '83014132100034', type: 'text'},
-      needs: {value: 'test', type: 'textarea'},
       cgu: {value: true, type: 'checkbox'}
     }   
   },
@@ -157,7 +151,6 @@ export const tests: FormResultDataType[]  = [
       tel: {value: '0123456789', type: 'tel'},
       email: {value: 'test@test.fr', type: 'email'},
       siret: {value: '83014132100034', type: 'text'},
-      needs: {value: 'test', type: 'textarea'},
       cgu: {value: true, type: 'checkbox'}
     } 
   },
@@ -174,7 +167,6 @@ export const tests: FormResultDataType[]  = [
       tel: {value: '0123456789', type: 'tel'},
       email: {value: 'test@test.fr', type: 'email'},
       siret: {value: '21490012', type: 'text'},
-      needs: {value: 'test', type: 'textarea'},
       cgu: {value: true, type: 'checkbox'}
     }   
   },
@@ -189,7 +181,6 @@ export const tests: FormResultDataType[]  = [
       tel: {value: '0123456789', type: 'tel'},
       email: {value: 'test@test.fr', type: 'email'},
       siret: {value: '21490007800012', type: 'text'},
-      needs: {value: 'test', type: 'textarea'},
       cgu: {value: false, type: 'checkbox'}
     }   
   },
@@ -205,7 +196,6 @@ export const tests: FormResultDataType[]  = [
       tel: {value: '0123456789', type: 'tel'},
       email: {value: 'test@', type: 'email'},
       siret: {value: '21490007800012', type: 'text'},
-      needs: {value: 'test', type: 'textarea'},
       cgu: {value: true, type: 'checkbox'}
     } 
   }
