@@ -36,7 +36,7 @@
           <div class="fr-col-md-4 fr-col-lg-3 fr-col-xl-3 fr-col-sm-12 fr-text-right fr-tee-program-detail-img">
             <img
               class="fr-responsive-img"
-              :src="`${publicPath}${program?.illustration}`"
+              :src="`/${program?.illustration}`"
               :alt="`image / ${program?.titre}`"
             />
 
@@ -97,7 +97,7 @@
             <ProgramTile
               class="tee-no-hover"
               :title="Translation.t('programCosts.cost')"
-              :image-path="`${publicPath}images/TEE-cout-02.svg`"
+              image-path="/images/TEE-cout-02.svg"
               :description="`${programCost}`"
             />
           </div>
@@ -109,7 +109,7 @@
             <ProgramTile
               class="tee-no-hover"
               :title="Translation.t('programCosts.aid')"
-              :image-path="`${publicPath}images/TEE-cout-02.svg`"
+              image-path="/images/TEE-cout-02.svg"
               :description="`${programAidAmount}`"
             />
           </div>
@@ -121,7 +121,7 @@
             <ProgramTile
               class="tee-no-hover"
               :title="Translation.t('programCosts.taxAdvantage')"
-              :image-path="`${publicPath}images/TEE-cout-02.svg`"
+              image-path="/images/TEE-cout-02.svg"
               :description="`${programTaxAdvantage}`"
             />
           </div>
@@ -133,7 +133,7 @@
             <ProgramTile
               class="tee-no-hover"
               :title="Translation.t('programCosts.loan')"
-              :image-path="`${publicPath}images/TEE-cout-02.svg`"
+              image-path="/images/TEE-cout-02.svg"
               :description="`${programLoan}`"
             />
           </div>
@@ -146,7 +146,7 @@
             <ProgramTile
               class="tee-no-hover"
               :title="Translation.t('program.programDuration')"
-              :image-path="`${publicPath}images/TEE-duree.svg`"
+              image-path="/images/TEE-duree.svg"
               :description="programDuration"
             />
           </div>
@@ -157,7 +157,7 @@
             <ProgramTile
               class="tee-no-hover"
               :title="Translation.t('program.programLoanDuration')"
-              :image-path="`${publicPath}images/TEE-duree.svg`"
+              image-path="/images/TEE-duree.svg"
               :description="programLoanDuration"
             />
           </div>
@@ -168,7 +168,7 @@
               v-if="programProvider"
               class="tee-no-hover"
               :title="Translation.t('program.programProviders')"
-              :image-path="`${publicPath}images/TEE-porteur.svg`"
+              image-path="/images/TEE-porteur.svg"
               :description="Translation.to(programProvider)"
             />
           </div>
@@ -178,7 +178,7 @@
             <ProgramTile
               class="tee-no-hover"
               :title="Translation.t('program.programEndValidity')"
-              :image-path="`${publicPath}images/TEE-date-fin.svg`"
+              image-path="/images/TEE-date-fin.svg"
               :description="
                 programEndValidity
                   ? Translation.t(Translation.t('program.programAvailableUntil'), { date: programEndValidity })
@@ -241,6 +241,7 @@ import ProgramLongDescription from '@/components/program/detail/ProgramLongDescr
 import ProgramTile from '@/components/program/detail/ProgramTile.vue'
 import Config from '@/config'
 import { useProgramStore } from '@/stores/program'
+import ProgramApi from '@/tools/api/programApi'
 import { OpportunityType, type ProgramData as ProgramType, Project as ProjectType } from '@/types'
 import { RouteName } from '@/types/routeType'
 import { useNavigationStore } from '@/stores/navigation'
@@ -266,7 +267,27 @@ interface Props {
   programId: string
   projectSlug?: string
 }
-defineProps<Props>()
+const props = defineProps<Props>()
+
+const programDataResult = await new ProgramApi().getOne(props.programId as string)
+if (programDataResult.isOk) {
+  programsStore.currentProgram = programDataResult.value
+  program.value = programDataResult.value
+  if (program.value && navigationStore.isByRouteName(RouteName.CatalogProgramFromCatalogProjectDetail)) {
+    useHead({
+      link: [
+        {
+          rel: 'canonical',
+          href: navigationStore.getAbsoluteUrlByRouteName(RouteName.CatalogProgramDetail, {
+            programId: program.value.id
+          })
+        }
+      ]
+    })
+  }
+
+  useSeoMeta(MetaSeo.get(program.value?.titre, program.value?.description, program.value?.illustration))
+}
 
 // computed
 const programCost = computed(() => program.value?.[`coût de l'accompagnement`])
@@ -303,21 +324,6 @@ onBeforeMount(async () => {
   if (projectResult.isOk) {
     linkedProjects.value = Program.getLinkedProjects(program.value, projectResult.value)
   }
-
-  if (program.value && navigationStore.isByRouteName(RouteName.CatalogProgramFromCatalogProjectDetail)) {
-    useHead({
-      link: [
-        {
-          rel: 'canonical',
-          href: navigationStore.getAbsoluteUrlByRouteName(RouteName.CatalogProgramDetail, {
-            programId: program.value.id
-          })
-        }
-      ]
-    })
-  }
-
-  useSeoMeta(MetaSeo.get(program.value?.titre, program.value?.description, program.value?.illustration))
 
   useNavigationStore().hasSpinner = false
 })

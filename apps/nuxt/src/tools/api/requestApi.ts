@@ -24,11 +24,7 @@ export default abstract class RequestApi {
     baseUrl = baseUrl ?? this.url
     const url: string = this.query ? `${baseUrl}?${this.query}` : baseUrl
     try {
-      const response = await fetch(url)
-      if (!response.ok) {
-        throw new Error(JSON.stringify({ statut: response.status, message: response.body }))
-      }
-      return Result.ok((await response.json()) as T)
+      return Result.ok(await $fetch(url))
     } catch (error: unknown) {
       return Result.err(error as Error)
     }

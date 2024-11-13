@@ -1,7 +1,7 @@
 import { SitemapUrlInput } from '#sitemap/types'
 import { RoutePath } from '@/types'
 import { UrlBuilder } from '~/server/utils/UrlBuilder'
-import ProjectApi from '~/service/api/projectApi'
+import ProjectApi from '~/tools/api/projectApi'
 import { ChangeFreq, Priority } from '~/types/sitemapType'
 
 export default defineSitemapEventHandler(async () => {

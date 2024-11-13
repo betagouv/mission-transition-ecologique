@@ -1,4 +1,4 @@
-import RequestApi from '@/service/api/requestApi'
+import RequestApi from '@/tools/api/requestApi'
 import { StatsData } from '@tee/common'
 import { Result } from 'true-myth'
 

@@ -1,7 +1,7 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`store.programs > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import ProgramApi from '@/service/api/programApi'
+import ProgramApi from '@/tools/api/programApi'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import ProgramFilter from '@/tools/program/programFilter'
 import { Result } from 'true-myth'

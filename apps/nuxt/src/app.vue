@@ -14,12 +14,9 @@ onBeforeMount(() => {
   Cookie.setCookies()
 })
 
-onMounted(async () => {
-  // cf: https://stackoverflow.com/questions/69495211/vue3-route-query-empty
-  await router.isReady()
-  navigationStore.setRouter(router)
-  navigationStore.setRoute(route)
-})
+// cf: https://stackoverflow.com/questions/69495211/vue3-route-query-empty
+navigationStore.setRouter(router)
+navigationStore.setRoute(route)
 </script>
 
 <template>

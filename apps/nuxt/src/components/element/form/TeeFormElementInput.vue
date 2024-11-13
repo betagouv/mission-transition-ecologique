@@ -32,7 +32,7 @@
         <TeeCallout
           class="custom-callout fr-bg--purple fr-text--white fr-px-2v fr-pt-2v fr-pb-0 fr-mb-0 fr-text--bold"
           :type="field.callOut.type"
-          :img="`${publicPath}${field.callOut.img}`"
+          :img="field.callOut.img"
           :img-container-class="'fr-col-xl-2 fr-hidden fr-unhidden-lg'"
           :content-class="'fr-pb-2v fr-px-3v fr-px-lg-0'"
         >

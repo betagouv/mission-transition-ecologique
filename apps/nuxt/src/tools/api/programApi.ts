@@ -1,4 +1,4 @@
-import RequestApi from '@/service/api/requestApi'
+import RequestApi from '@/tools/api/requestApi'
 import type { ProgramData, QuestionnaireData } from '@/types'
 import { Result } from 'true-myth'
 
@@ -15,7 +15,10 @@ export default class ProgramApi extends RequestApi {
   }
 
   async getOne(id: string): Promise<Result<ProgramData, Error>> {
-    return super.getJson<ProgramData>(this.url + '/' + id)
+    const { data: programDataResult } = await useAsyncData(`program-id-${id}`, () => {
+      return super.getJson<ProgramData>(this.url + '/' + id)
+    })
+    return programDataResult.value || Result.err(new Error('Program not found'))
   }
 
   get buildQuery(): string {

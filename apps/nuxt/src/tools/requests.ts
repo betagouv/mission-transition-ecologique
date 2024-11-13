@@ -1,7 +1,7 @@
 import { CallbackMethods, type FormCallback, type ReqResp } from '@/types'
 import { remapItem } from './helpers'
 import Translation from '@/tools/translation'
-import RequestApi from '@/service/api/requestApi'
+import RequestApi from '@/tools/api/requestApi'
 
 export const buildHeaders = (callback: FormCallback) => {
   return { ...callback.headers }

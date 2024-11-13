@@ -88,7 +88,7 @@ import { type ReqResp, TrackId, FormDataType, InputFieldUnionType, Project } fro
 import Translation from '@/tools/translation'
 import TeeDsfrButton from '@/components/element/button/TeeDsfrButton.vue'
 import Format from '@/tools/format'
-import OpportunityApi from '@/service/api/opportunityApi'
+import OpportunityApi from '@/tools/api/opportunityApi'
 import { OpportunityType } from '@tee/common'
 import { useNavigationStore } from '@/stores/navigation'
 import Analytics from '@/tools/analytic/analytics'

@@ -1,4 +1,4 @@
-import RequestApi from '@/service/api/requestApi'
+import RequestApi from '@/tools/api/requestApi'
 import type { Project } from '@/types'
 import { projects, projectsTest } from '@tee/data/static'
 import { Result } from 'true-myth'

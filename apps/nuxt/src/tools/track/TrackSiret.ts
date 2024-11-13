@@ -1,4 +1,4 @@
-import EstablishmentApi from '@/service/api/establishmentApi'
+import EstablishmentApi from '@/tools/api/establishmentApi'
 import { EstablishmentFront, SiretValue } from '@/types'
 import type { Track, TrackOptionItem, TrackOptionsUnion } from '@/types'
 import { SiretValidator } from '@tee/common'

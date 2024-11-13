@@ -1,4 +1,4 @@
-import ProjectApi from '@/service/api/projectApi'
+import ProjectApi from '@/tools/api/projectApi'
 import ProjectFilter from '@/tools/project/projectFilter'
 import { defineStore } from 'pinia'
 import { Result } from 'true-myth'

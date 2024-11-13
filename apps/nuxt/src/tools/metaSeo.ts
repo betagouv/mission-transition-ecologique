@@ -25,7 +25,7 @@ export class MetaSeo {
 
   private static readonly _image = (image?: string) => {
     image = image?.charAt(0) === '/' ? image : `/${image}`
-    return location.origin + (image ?? this._defaultImage)
+    return image ?? this._defaultImage
   }
 
   private static _buildMeta(title: string, image: string, description?: string): UseSeoMetaInput {

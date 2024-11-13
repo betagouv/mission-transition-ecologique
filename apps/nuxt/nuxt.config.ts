@@ -54,6 +54,7 @@ export default defineNuxtConfig({
   },
   features: {
     inlineStyles: false,
+    devLogs: true,
   },
   experimental: {
     renderJsonPayloads: false,

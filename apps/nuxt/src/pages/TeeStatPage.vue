@@ -102,7 +102,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import Chart from 'chart.js/auto'
-import StatsApi from '@/service/api/statsApi'
+import StatsApi from '@/tools/api/statsApi'
 import { CalloutType, RouteName, StatsData } from '@/types'
 
 definePageMeta({
