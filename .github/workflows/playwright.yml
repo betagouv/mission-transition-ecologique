@@ -24,10 +24,9 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
-      env:
-        TEST: true
       run: npm run e2e
       env:
+        TEST: true
         PDE_API_BASEURL: '${{secrets.PDE_API_BASEURL}}'
         BREVO_DEAL_PIPELINE: '${{secrets.BREVO_DEAL_PIPELINE}}'
     - uses: actions/upload-artifact@v4
