@@ -127,7 +127,6 @@ const isFormFilled = computed(() => {
   for (const key of Object.keys(localForm.value) as Array<keyof typeof localForm.value>) {
     const field: InputFieldUnionType = localForm.value[key]
     if (field.required) {
-      console.log(field)
       isFilled.push(isFieldValid(field))
     }
   }
