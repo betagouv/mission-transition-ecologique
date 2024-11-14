@@ -6,7 +6,7 @@
     {{ infos.tagLabel || infos.value }}
     <span
       v-if="manual"
-      class="fr-icon-close-line fr-pl-4v"
+      class="fr-icon-close-line fr-pl-4v hover-effect"
       @click="modifyLocalisation"
     />
   </p>

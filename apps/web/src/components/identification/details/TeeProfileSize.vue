@@ -5,7 +5,7 @@
   >
     {{ sizeText }}
     <span
-      class="fr-icon-close-line fr-pl-4v"
+      class="fr-icon-close-line fr-pl-4v hover-effect"
       @click="resetSize"
     />
   </p>

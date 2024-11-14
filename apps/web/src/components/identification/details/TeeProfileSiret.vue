@@ -5,7 +5,7 @@
   >
     <span v-html="siretTagLabel" />
     <span
-      class="fr-icon-close-line fr-pl-4v"
+      class="fr-icon-close-line fr-pl-4v hover-effect"
       @click="modifySiret"
     />
   </p>
