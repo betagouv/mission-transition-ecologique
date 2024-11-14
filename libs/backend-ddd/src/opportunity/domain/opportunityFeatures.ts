@@ -48,20 +48,20 @@ export default class OpportunityFeatures {
     const opportunityWithContactId = this._addContactIdToOpportunity(opportunity, contactIdResult.value.id)
     const opportunityWithOperatorAndContact = this._addContactOperatorToOpportunity(opportunityWithContactId)
 
-    const maybeError = this._defineOpportunityDatabaseId(opportunityWithOperatorAndContact)
-    if (maybeError.isJust) {
-      return Result.err(maybeError.value)
-    }
-
-    const opportunityResult = await this._opportunityRepository.create(opportunityWithOperatorAndContact)
-    if (opportunityResult.isErr) {
-      Monitor.error('Error during Opportunity Creation', { error: opportunityResult.error })
-      return opportunityResult
-    }
+    // const maybeError = this._defineOpportunityDatabaseId(opportunityWithOperatorAndContact)
+    // if (maybeError.isJust) {
+    //   return Result.err(maybeError.value)
+    // }
 
     const opportunityAssociatedObject = this._createOpportunityAssociatedObject(opportunityWithOperatorAndContact)
     if (opportunityAssociatedObject.isErr) {
       Monitor.error('Error during the creation of the Opportunity Associated Object', { error: opportunityAssociatedObject.error })
+      return Result.err(opportunityAssociatedObject.error)
+    }
+
+    const opportunityResult = await this._opportunityRepository.create(opportunityWithOperatorAndContact, opportunityAssociatedObject.value)
+    if (opportunityResult.isErr) {
+      Monitor.error('Error during Opportunity Creation', { error: opportunityResult.error })
       return opportunityResult
     }
 
@@ -82,18 +82,19 @@ export default class OpportunityFeatures {
       case OpportunityType.Program: {
         const associatedProgram = this._getProgramById(opportunity.id)
         if (!associatedProgram) {
-          return Result.err(new Error('Program Opportunity of unknown id'))
+          return Result.err(new Error('Program with id ' + opportunity.id + 'not found'))
         }
         return Result.ok(new OpportunityAssociatedData(OpportunityType.Program, associatedProgram))
       }
       case OpportunityType.Project: {
         const associatedProject = new ProjectService().getById(+opportunity.id)
         if (!associatedProject) {
-          return Result.err(new Error('Project Opportunity of unknown id'))
+          return Result.err(new Error('Project with id ' + opportunity.id + 'not found'))
         }
         return Result.ok(new OpportunityAssociatedData(OpportunityType.Project, associatedProject))
       }
       case OpportunityType.CustomProject:
+        opportunity.id = opportunity.titleMessage || 'Projet sans Titre'
         return Result.ok(
           new OpportunityAssociatedData(OpportunityType.CustomProject, {
             title: opportunity.titleMessage || 'Untitled',
@@ -144,7 +145,7 @@ export default class OpportunityFeatures {
       if (!project) {
         return Maybe.just(new Error('Project with id ' + opportunity.id + 'not found'))
       }
-      opportunity.id = project.slug
+      // opportunity.id = project.slug
     }
     if (opportunity.type === OpportunityType.CustomProject) {
       opportunity.id = opportunity.titleMessage || 'Projet sans Titre'
