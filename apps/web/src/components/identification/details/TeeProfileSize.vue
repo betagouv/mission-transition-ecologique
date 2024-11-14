@@ -3,9 +3,9 @@
     v-if="infos.value"
     class="fr-tag fr-bg--blue-france--lightness"
   >
-    {{ sizeText }}
+    <span class="fr-pr-4v">{{ sizeText }}</span>
     <span
-      class="fr-icon-close-line fr-pl-4v hover-effect"
+      class="fr-icon-close-line fr-radius-a--2v fr-btn-bg"
       @click="resetSize"
     />
   </p>

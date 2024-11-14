@@ -3,10 +3,10 @@
     v-if="infos.value"
     class="fr-tag fr-bg--blue-france--lightness"
   >
-    {{ infos.tagLabel || infos.value }}
+    <span class="fr-pr-4v">{{ infos.tagLabel || infos.value }}</span>
     <span
       v-if="manual"
-      class="fr-icon-close-line fr-pl-4v hover-effect"
+      class="fr-icon-close-line fr-radius-a--2v fr-btn-bg"
       @click="modifyLocalisation"
     />
   </p>
@@ -45,7 +45,9 @@
       v-for="region in localisationResults"
       :key="`resp-input-${region}`"
       class="fr-card fr-card-result fr-card--no-arrow fr-card--shadow"
+      tabindex="0"
       @click="selectRegion(region)"
+      @keyup.enter="selectRegion(region)"
     >
       <div class="fr-card__body">
         <div class="fr-card__content fr-py-1v fr-px-4v fr-text--blue-france">

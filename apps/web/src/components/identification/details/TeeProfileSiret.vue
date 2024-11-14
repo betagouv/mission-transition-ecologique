@@ -3,9 +3,12 @@
     id="tag-siret"
     class="fr-tag fr-bg--blue-france--lightness"
   >
-    <span v-html="siretTagLabel" />
     <span
-      class="fr-icon-close-line fr-pl-4v hover-effect"
+      class="fr-pr-4v"
+      v-html="siretTagLabel"
+    />
+    <span
+      class="fr-icon-close-line fr-radius-a--2v fr-btn-bg"
       @click="modifySiret"
     />
   </p>
