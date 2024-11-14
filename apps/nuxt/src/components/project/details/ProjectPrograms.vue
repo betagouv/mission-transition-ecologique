@@ -85,6 +85,7 @@
 <script setup lang="ts">
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { useProgramStore } from '@/stores/program'
+import Navigation from '@/tools/navigation'
 import { ProgramAidType, type ProgramData, Project, QuestionnaireRoute, TrackId, OpportunityType } from '@/types'
 import Contact from '@/tools/contact'
 import { RouteName } from '@/types/routeType'
@@ -100,7 +101,8 @@ const props = defineProps<Props>()
 
 const programStore = useProgramStore()
 const navigationStore = useNavigationStore()
-const isCatalogDetail = navigationStore.isCatalogProjectDetail()
+
+const isCatalogDetail = new Navigation().isCatalogProjectDetail()
 const TeeProjectFormContainer = ref<HTMLElement | null | undefined>(null)
 
 const programs = ref<ProgramData[]>()
@@ -128,13 +130,11 @@ const financePrograms = computed(() => {
 
 onBeforeMount(async () => {
   navigationStore.hasSpinner = true
-  if (import.meta.client && !isCatalogDetail) {
-    const result = await programStore.programsByUsedTracks
-    if (result.isOk) {
-      programs.value = result.value
-    } else {
-      hasError.value = true
-    }
+  const result = await programStore.programsByUsedTracks
+  if (result.isOk) {
+    programs.value = result.value
+  } else {
+    hasError.value = true
   }
   navigationStore.hasSpinner = false
 })

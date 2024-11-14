@@ -11,14 +11,17 @@ export default class ProgramApi extends RequestApi {
   }
 
   async get(): Promise<Result<ProgramData[], Error>> {
-    return super.getJson<ProgramData[]>()
+    const { data: programsResult } = await useAsyncData(`program-${this.query}`, () => {
+      return super.getJson<ProgramData[]>()
+    })
+    return programsResult.value || Result.err(new Error('Programs not found'))
   }
 
   async getOne(id: string): Promise<Result<ProgramData, Error>> {
-    const { data: programDataResult } = await useAsyncData(`program-id-${id}`, () => {
+    const { data: programResult } = await useAsyncData(`program-id-${id}`, () => {
       return super.getJson<ProgramData>(this.url + '/' + id)
     })
-    return programDataResult.value || Result.err(new Error('Program not found'))
+    return programResult.value || Result.err(new Error('Program not found'))
   }
 
   get buildQuery(): string {

@@ -34,6 +34,7 @@
   </div>
 </template>
 <script setup lang="ts">
+import Navigation from '@/tools/navigation'
 import { Color, Project, type ProgramData as ProgramType } from '@/types'
 import { RouteName } from '@/types/routeType'
 import Contact from '@/tools/contact'
@@ -52,8 +53,8 @@ const project = ref<Project>()
 const projectStore = useProjectStore()
 
 const navigationStore = useNavigationStore()
-const isCatalogDetail = navigationStore.isCatalogProgramDetail()
 const router = useRouter()
+const isCatalogDetail = new Navigation().isCatalogProgramDetail()
 
 const routeToResults = {
   name: isCatalogDetail ? RouteName.CatalogPrograms : RouteName.QuestionnaireResult,
