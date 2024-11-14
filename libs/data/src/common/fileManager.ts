@@ -20,4 +20,15 @@ export class FileManager {
       }
     })
   }
+
+  static createFolderIfNotExists(folderName: string): void {
+    try {
+      if (!fs.existsSync(folderName)) {
+        console.log('📁 Output folder does not exist. Creating...')
+        fs.mkdirSync(folderName)
+      }
+    } catch (err) {
+      console.error(err)
+    }
+  }
 }
