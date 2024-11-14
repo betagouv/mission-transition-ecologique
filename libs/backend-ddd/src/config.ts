@@ -43,4 +43,8 @@ export default class Config extends ConfigCommon {
       return undefined
     }
   }
+
+  public static get BREVO_API_ENABLED(): boolean {
+    return !(this.getEnvValue('TIERS_API_ENABLE', 'true') !== 'true' && this.getEnvValue('BREVO_API_ENABLED', 'true') !== 'true')
+  }
 }
