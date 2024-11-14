@@ -1,4 +1,5 @@
 export * from './color'
+export * from './companyDataType'
 export * from './conditionOperators'
 export * from './elementsPropsTypes'
 export * from './formTypes'

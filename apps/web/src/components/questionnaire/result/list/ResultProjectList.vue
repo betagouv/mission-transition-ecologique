@@ -73,14 +73,16 @@ import { Project as UtilsProject } from '@/utils/project/project'
 import OtherProjectCta from '@/components/project/list/OtherProjectCta.vue'
 import OtherProjectForm from '@/components/project/list/OtherProjectForm.vue'
 import Translation from '@/utils/translation'
+import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
 interface ProjectListProps {
   filteredProjects?: Project[]
   hasError: boolean
-  hasRegisteredData: boolean
 }
 const props = defineProps<ProjectListProps>()
 const otherProjectForm = ref<boolean>(false)
+
+const hasRegisteredData = computed(() => CompanyDataStorage.hasData())
 
 watch(
   () => props.filteredProjects,

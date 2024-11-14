@@ -20,7 +20,6 @@
       <ResultProjectList
         :filtered-projects="filteredProjects"
         :has-error="hasError"
-        :has-registered-data="hasRegisteredData"
       />
     </DsfrTabContent>
 
