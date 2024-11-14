@@ -1,4 +1,4 @@
-import { StorageHandlerInterface } from '@/utils/storage/StorageHandlerInterface'
+import { StorageHandlerInterface } from '@/utils/storage/storageHandlerInterface'
 import { StorageDataType } from '@/types/storageType'
 
 export class LocalStorageHandler implements StorageHandlerInterface {
