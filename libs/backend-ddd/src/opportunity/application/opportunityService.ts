@@ -2,17 +2,29 @@ import Config from '../../config'
 import { OpportunityDetailsShort, OpportunityId } from '../domain/types'
 import OpportunityFeatures from '../domain/opportunityFeatures'
 import { Result } from 'true-myth'
+
 import { brevoRepository } from '../infrastructure/api/brevo/brevoDeal'
+import { brevoRepositoryTest } from '../infrastructure/api/brevo/mock/brevoDeal'
+
 import { addBrevoContact } from '../infrastructure/api/brevo/brevoContact'
+import { addBrevoContactTest } from '../infrastructure/api/brevo/mock/brevoContact'
+
 import { OpportunityHubRepository } from '../../opportunityHub/domain/spi'
+
 import { BpiFrance } from '../../opportunityHub/infrastructure/api/bpi/bpiFrance'
+import { BpiFranceTest } from '../../opportunityHub/infrastructure/api/mock/bpiFrance'
+
 import { ContactRepository, MailerManager, OpportunityRepository } from '../domain/spi'
 import { ProgramRepository } from '../../program/domain/spi'
 import ProgramsJson from '../../program/infrastructure/programsJson'
+
 import BrevoMail from '../infrastructure/api/brevo/brevoMail'
+import BrevoMailTest from '../infrastructure/api/brevo/mock/brevoMail'
+
 import { PlaceDesEntreprises } from '../../opportunityHub/infrastructure/api/placedesentreprises/placeDesEntreprises'
+import { PlaceDesEntreprisesTest } from '../../opportunityHub/infrastructure/api/mock/placeDesEntreprises'
+
 import { Opportunity } from '@tee/common'
-import { addBrevoContactTest } from '../infrastructure/api/brevo/mock/brevoContact'
 
 export default class OpportunityService {
   private _opportunityFeatures: OpportunityFeatures
@@ -45,11 +57,14 @@ export default class OpportunityService {
   }
 
   private _getOpportunityRepository(): OpportunityRepository {
-    return brevoRepository
+    return Config.BREVO_API_ENABLED ? brevoRepository : brevoRepositoryTest
   }
 
   private _getOpportunityHubRepositories(): OpportunityHubRepository[] {
-    return [new PlaceDesEntreprises(), new BpiFrance()]
+    return [
+      Config.PDE_API_ENABLED ? new PlaceDesEntreprises() : new PlaceDesEntreprisesTest(),
+      Config.BPI_API_ENABLED ? new BpiFrance() : new BpiFranceTest()
+    ]
   }
 
   private _getProgramRepository(): ProgramRepository {
@@ -57,6 +72,6 @@ export default class OpportunityService {
   }
 
   private _getMailRepository(): MailerManager {
-    return { sendReturnReceipt: new BrevoMail().sendReturnReceipt }
+    return { sendReturnReceipt: Config.BREVO_API_ENABLED ? new BrevoMail().sendReturnReceipt : new BrevoMailTest().sendReturnReceipt }
   }
 }
