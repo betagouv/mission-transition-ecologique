@@ -239,7 +239,6 @@ import ProgramAccordion from '@/components/program/detail/ProgramAccordion.vue'
 import ProgramEligibility from '@/components/program/detail/ProgramEligibility.vue'
 import ProgramLongDescription from '@/components/program/detail/ProgramLongDescription.vue'
 import ProgramTile from '@/components/program/detail/ProgramTile.vue'
-import Config from '@/config'
 import { useProgramStore } from '@/stores/program'
 import ProgramApi from '@/tools/api/programApi'
 import { OpportunityType, type ProgramData as ProgramType, Project as ProjectType } from '@/types'
@@ -261,18 +260,16 @@ const program = ref<ProgramType>()
 const linkedProjects = ref<ProjectType[] | undefined>([])
 const TeeProgramFormContainer = ref<HTMLElement | null | undefined>(null)
 
-const publicPath = Config.publicPath
-
 interface Props {
   programId: string
   projectSlug?: string
 }
 const props = defineProps<Props>()
 
-const programDataResult = await new ProgramApi().getOne(props.programId as string)
-if (programDataResult.isOk) {
-  programsStore.currentProgram = programDataResult.value
-  program.value = programDataResult.value
+const programResult = await new ProgramApi().getOne(props.programId)
+if (programResult.isOk) {
+  programsStore.currentProgram = programResult.value
+  program.value = programResult.value
   if (program.value && navigationStore.isByRouteName(RouteName.CatalogProgramFromCatalogProjectDetail)) {
     useHead({
       link: [

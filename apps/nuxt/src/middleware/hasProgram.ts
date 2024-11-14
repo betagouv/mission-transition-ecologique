@@ -6,9 +6,10 @@ export default defineNuxtRouteMiddleware(async (to) => {
   if (!to.params.programId) {
     navigateTo(redirectTo)
   }
-  const programDataResult = await new ProgramApi().getOne(to.params.programId as string)
 
-  if (!programDataResult.isOk) {
-    navigateTo(to.name === RouteName.QuestionnaireResultDetail ? { name: RouteName.QuestionnaireStart } : { name: RouteName.Homepage })
+  const programResult = await new ProgramApi().getOne(to.params.programId as string)
+
+  if (!programResult.isOk) {
+    navigateTo(redirectTo)
   }
 })

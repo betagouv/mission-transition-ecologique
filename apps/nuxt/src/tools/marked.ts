@@ -18,7 +18,8 @@ export class Marked {
           if (token.href === undefined) {
             return `${text}`
           }
-          const localLink = token.href.startsWith(`${location.protocol}//${location.hostname}`)
+          // const localLink = token.href.startsWith(`${location.protocol}//${location.hostname}`) // disable because of SSR and not url with mission-transition-ecologique
+          const localLink = false
           const target = localLink ? '' : ' target="_blank" rel="noreferrer noopener nofollow"'
           return `<a href="${token.href}"${target}>${text}</a>`
         }

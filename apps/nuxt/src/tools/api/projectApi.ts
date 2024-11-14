@@ -25,9 +25,12 @@ export default class ProjectApi extends RequestApi {
   async getOne(slug: string): Promise<Result<Project, Error>> {
     // TO DO : api to get projects when backend is ready
     // const url: string = this.url + '/' + slug
-    const project = projects.find((project) => project.slug === slug)
-    if (project) {
-      return Result.ok(project)
+    const { data: project } = await useAsyncData(`project-id-${slug}`, async () => {
+      return projects.find((project) => project.slug === slug)
+    })
+
+    if (project.value) {
+      return Result.ok(project.value)
     }
 
     return Result.err(new Error('Project not found'))

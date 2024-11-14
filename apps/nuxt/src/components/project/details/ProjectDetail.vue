@@ -31,6 +31,7 @@
   </div>
 </template>
 <script setup lang="ts">
+import ProjectApi from '@/tools/api/projectApi'
 import { Project, Color, ThemeId } from '@/types'
 import { MetaSeo } from '@/tools/metaSeo'
 import { Theme } from '@/tools/theme'
@@ -47,11 +48,15 @@ interface Props {
 }
 const props = defineProps<Props>()
 
-onBeforeMount(async () => {
-  if (props.projectSlug !== projectStore.currentProject?.slug) {
-    await projectStore.getProjectBySlug(props.projectSlug)
-  }
+const projectResult = await new ProjectApi().getOne(props.projectSlug)
+if (projectResult.isOk) {
+  projectStore.currentProject = projectResult.value
+  project.value = projectResult.value
 
+  useSeoMeta(MetaSeo.get(project.value?.title, project.value?.shortDescription, project.value?.image))
+}
+
+onBeforeMount(async () => {
   project.value = projectStore.currentProject
 
   const selectedThemeId = Theme.getThemeFromSelectedOrPriorityTheme()
