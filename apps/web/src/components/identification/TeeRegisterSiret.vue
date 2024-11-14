@@ -86,7 +86,7 @@ const defaultSearchValue = {
 }
 
 const queryValue = ref<string | undefined>()
-const debouncedQueryValue = useDebounce(queryValue, 500)
+const debouncedQueryValue = useDebounce(queryValue, 2000)
 watch(debouncedQueryValue, (newValue) => {
   if (newValue) {
     processInput()
