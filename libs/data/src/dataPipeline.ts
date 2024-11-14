@@ -2,8 +2,8 @@ import * as dotenv from 'dotenv'
 import * as path from 'path'
 import * as fs from 'fs'
 import * as yaml from 'js-yaml'
-import { createFolderIfNotExists } from './helpers'
 import { ProgramType, ProgramWithoutId } from './program/program'
+import { FileManager } from './common/fileManager'
 
 dotenv.config()
 
@@ -74,7 +74,7 @@ export const buildProgramJson = (programs: ProgramType[]): void => {
 
   const dataBuiltOutputDir: string = path.join(__dirname, OUTPUT_FOLDER_PATH)
 
-  createFolderIfNotExists(dataBuiltOutputDir)
+  FileManager.createFolderIfNotExists(dataBuiltOutputDir)
 
   const dataOutPath = `${dataBuiltOutputDir}/${OUTPUT_FILENAME}`
   fs.writeFileSync(dataOutPath, dataAsJson)
