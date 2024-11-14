@@ -1,3 +1,4 @@
+import Config from '../../config'
 import { OpportunityDetailsShort, OpportunityId } from '../domain/types'
 import OpportunityFeatures from '../domain/opportunityFeatures'
 import { Result } from 'true-myth'
@@ -11,6 +12,7 @@ import ProgramsJson from '../../program/infrastructure/programsJson'
 import BrevoMail from '../infrastructure/api/brevo/brevoMail'
 import { PlaceDesEntreprises } from '../../opportunityHub/infrastructure/api/placedesentreprises/placeDesEntreprises'
 import { Opportunity } from '@tee/common'
+import { addBrevoContactTest } from '../infrastructure/api/brevo/mock/brevoContact'
 
 export default class OpportunityService {
   private _opportunityFeatures: OpportunityFeatures
@@ -38,7 +40,7 @@ export default class OpportunityService {
 
   private _getContactRepository(): ContactRepository {
     return {
-      createOrUpdate: addBrevoContact
+      createOrUpdate: Config.BREVO_API_ENABLED ? addBrevoContact : addBrevoContactTest
     }
   }
 
