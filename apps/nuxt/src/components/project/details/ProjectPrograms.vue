@@ -128,11 +128,13 @@ const financePrograms = computed(() => {
 
 onBeforeMount(async () => {
   navigationStore.hasSpinner = true
-  const result = await programStore.programsByUsedTracks
-  if (result.isOk) {
-    programs.value = result.value
-  } else {
-    hasError.value = true
+  if (import.meta.client && !isCatalogDetail) {
+    const result = await programStore.programsByUsedTracks
+    if (result.isOk) {
+      programs.value = result.value
+    } else {
+      hasError.value = true
+    }
   }
   navigationStore.hasSpinner = false
 })
