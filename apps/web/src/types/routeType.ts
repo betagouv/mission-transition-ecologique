@@ -1,5 +1,6 @@
 export enum RouteName {
   Homepage = 'homepage',
+  Budget = 'budget',
   CatalogPrograms = 'catalogPrograms',
   CatalogProjects = 'catalogProjects',
   CatalogProgramDetail = 'catalog-program-detail',

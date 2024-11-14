@@ -18,6 +18,7 @@ import ProjectDetail from '@/components/project/details/ProjectDetail.vue'
 import TeeStatPage from '@/pages/TeeStatPage.vue'
 import CatalogPrograms from '@/components/catalog/CatalogPrograms.vue'
 import CatalogProjects from '@/components/catalog/CatalogProjects.vue'
+import TeeBudgetPage from '@/pages/TeeBudgetPage.vue'
 
 export enum Path {
   ProgramCatalog = '/aides-entreprise',
@@ -154,6 +155,11 @@ export const routes = [
     path: '/stats',
     name: RouteName.Statistics,
     component: TeeStatPage as Component
+  },
+  {
+    path: '/budget',
+    name: RouteName.Budget,
+    component: TeeBudgetPage as Component
   },
   {
     path: '/:pathMatch(.*)*',

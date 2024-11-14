@@ -191,6 +191,10 @@ const mainLinks = [
     to: { name: RouteName.Statistics }
   },
   {
+    label: 'Budget',
+    to: { name: RouteName.Budget }
+  },
+  {
     label: 'Ajouter une aide',
     to: { name: RouteName.AddProgram }
   },
