@@ -8,7 +8,6 @@ const programIdSchema = z.object({
 })
 
 export default defineEventHandler(async (event) => {
-  console.log('event', event.context.params)
   const params = await getValidatedRouterParams(event, programIdSchema.parse)
   const questionnaireData = await getValidatedQuery(event, serverQuestionnaireDataSchema.parse)
 
