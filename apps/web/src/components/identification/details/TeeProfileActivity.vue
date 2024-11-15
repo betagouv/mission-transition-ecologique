@@ -27,7 +27,7 @@ interface Props {
   showError: boolean
 }
 const selectedActivity = defineModel<Sector>()
-const errorMessage = "La sélection de la taille de l'entreprise est nécessaire"
+const errorMessage = "La sélection de votre secteur d'activité est nécessaire"
 const modifyActivity = () => {
   selectedActivity.value = undefined
 }
