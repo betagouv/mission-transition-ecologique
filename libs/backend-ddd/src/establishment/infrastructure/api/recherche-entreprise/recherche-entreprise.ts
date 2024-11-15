@@ -51,7 +51,8 @@ export class RechercheEntreprise {
         zipCode: result.siege.code_postal,
         cityLabel: result.siege.libelle_commune,
         cityCode: result.siege.commune
-      }
+      },
+      workforceRange: result.tranche_effectif_salarie
     }))
     return {
       establishments: establishmentList,
