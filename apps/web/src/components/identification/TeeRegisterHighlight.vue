@@ -16,6 +16,7 @@
             <TeeDsfrButton
               class="fr-text--yellow fr-text--bold"
               label="Je complète mon profil"
+              @click="openModal"
             />
           </div>
         </div>
@@ -24,8 +25,13 @@
   </DsfrHighlight>
 </template>
 <script setup lang="ts">
+import Navigation from '@/utils/navigation'
+
 interface Props {
   text: string
 }
 defineProps<Props>()
+const openModal = () => {
+  Navigation.toggleRegisterModal()
+}
 </script>

@@ -1,4 +1,4 @@
-import { Controller, Route, SuccessResponse, TsoaResponse, Res, Example, Get, Path } from 'tsoa'
+import { Controller, Route, SuccessResponse, TsoaResponse, Res, Example, Get, Path, Query } from 'tsoa'
 import { ErrorJSON, Establishment, EstablishmentNotFoundError, EstablishmentService, ValidateErrorJSON, Monitor } from '@tee/backend-ddd'
 import { EstablishmentSearch } from '@tee/common'
 
@@ -38,7 +38,7 @@ export class SireneController extends Controller {
   /**
    * Retrieve establishments informations used in front end
    * for a single establishment using the SIRENE API if search by SIRET
-   * or for up to 3 establishments using the Recherche-entreprise API otherwise.
+   * or for up to 9 establishments using the Recherche-entreprise API otherwise.
    * Also return the number of matches found
    *
    * @summary Search for establishments from a query
@@ -50,11 +50,12 @@ export class SireneController extends Controller {
   @Get('{query}')
   public async getEstablishmentBySiret(
     @Path() query: string,
+    @Query() resultCount = 3,
     @Res() requestFailedResponse: TsoaResponse<500, ErrorJSON>,
     @Res() _validationFailedResponse: TsoaResponse<422, ValidateErrorJSON>,
     @Res() notFoundResponse: TsoaResponse<404, EstablishmentNotFoundErrorJSON>
   ): Promise<EstablishmentSearch> {
-    const establishmentResult = await new EstablishmentService().search(query)
+    const establishmentResult = await new EstablishmentService().search(query, resultCount)
 
     if (establishmentResult.isErr) {
       const err = establishmentResult.error
