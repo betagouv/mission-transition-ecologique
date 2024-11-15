@@ -27,5 +27,5 @@ const resume: string = Translation.t('programResults.resume', {
   region: TrackStructure.getRegion() ?? CompanyDataStorage.getSiret()?.region ?? ''
 })
 
-const hasRegisteredData = computed(() => CompanyDataStorage.hasData())
+const hasRegisteredData = CompanyDataStorage.hasData()
 </script>

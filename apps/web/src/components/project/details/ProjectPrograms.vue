@@ -80,7 +80,7 @@ const TeeProjectFormContainer = ref<HTMLElement | null | undefined>(null)
 const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)
 
-const hasRegisteredData = computed(() => CompanyDataStorage.hasData())
+const hasRegisteredData = CompanyDataStorage.hasData()
 const registeredData = CompanyDataStorage.getData()
 
 const countFilteredPrograms = computed(() => {

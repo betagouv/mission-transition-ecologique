@@ -3,7 +3,6 @@
   <ResultProjectList
     :filtered-projects="filteredProjects"
     :has-error="hasError"
-    :has-registered-data="hasRegisteredData"
   />
 </template>
 
@@ -25,7 +24,7 @@ const programs = ref<ProgramData[]>([])
 const projects = ref<ProjectType[]>()
 const hasError = ref<boolean>(false)
 
-const hasRegisteredData = ref(CompanyDataStorage.hasData())
+const registeredData = CompanyDataStorage.getData()
 
 const filteredPrograms = computed(() => {
   return programs.value ? programStore.getProgramsByFilters(programs.value) : undefined
@@ -50,8 +49,7 @@ onBeforeMount(async () => {
   await getProgramsAndProjects()
 })
 
-watchEffect(async () => {
-  hasRegisteredData.value = CompanyDataStorage.hasData()
+watch(registeredData.value, async () => {
   await getProgramsAndProjects()
 })
 </script>

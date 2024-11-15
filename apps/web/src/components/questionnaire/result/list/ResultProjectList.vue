@@ -82,7 +82,7 @@ interface ProjectListProps {
 const props = defineProps<ProjectListProps>()
 const otherProjectForm = ref<boolean>(false)
 
-const hasRegisteredData = computed(() => CompanyDataStorage.hasData())
+const hasRegisteredData = CompanyDataStorage.hasData()
 
 watch(
   () => props.filteredProjects,

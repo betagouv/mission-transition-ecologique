@@ -24,7 +24,7 @@ export class CompanyDataStorageHandler {
   }
 
   static populateQuestionnaireData(questionnaireData: { [k: string]: any }) {
-    if (CompanyDataStorage.hasData()) {
+    if (CompanyDataStorage.hasData().value) {
       // TODO : should not add size if EI
       const companyData: CompanyDataType = CompanyDataStorage.getData().value
       Object.entries(companyData).forEach(([key, value]) => {

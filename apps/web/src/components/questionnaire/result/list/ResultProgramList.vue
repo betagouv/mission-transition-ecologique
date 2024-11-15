@@ -38,12 +38,14 @@ import { type ProgramData } from '@/types'
 import { computed } from 'vue'
 import ProgramFiltersAccordion from '@/components/program/list/filters/ProgramFiltersAccordion.vue'
 import Translation from '@/utils/translation'
+import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
 interface ProgramListProps {
   filteredPrograms?: ProgramData[]
   hasError: boolean
-  hasRegisteredData: boolean
 }
+
+const hasRegisteredData = CompanyDataStorage.hasData()
 
 const props = defineProps<ProgramListProps>()
 
