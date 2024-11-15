@@ -20,7 +20,6 @@
       <ResultProjectList
         :filtered-projects="filteredProjects"
         :has-error="hasError"
-        :has-registered-data="hasRegisteredData"
       />
     </DsfrTabContent>
 
@@ -34,7 +33,6 @@
       <ResultProgramList
         :filtered-programs="filteredPrograms"
         :has-error="hasError"
-        :has-registered-data="hasRegisteredData"
       />
     </DsfrTabContent>
   </TeeTabs>
@@ -59,7 +57,7 @@ const programs = ref<ProgramData[]>()
 const projects = ref<Project[]>()
 const hasError = ref<boolean>(false)
 
-const hasRegisteredData = ref(CompanyDataStorage.hasData())
+const registeredData = CompanyDataStorage.getData()
 
 const titles: TeeDsfrTabs['tabTitles'] = [
   { title: [{ title: "Des idées d'actions à mettre en place", size: BreakpointNameType.sm }, { title: "Idées d'actions" }] },
@@ -104,8 +102,7 @@ onBeforeMount(async () => {
   await getProgramsAndProjects()
 })
 
-watchEffect(async () => {
-  hasRegisteredData.value = CompanyDataStorage.hasData()
+watch(registeredData.value, async () => {
   await getProgramsAndProjects()
 })
 </script>

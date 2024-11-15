@@ -1,11 +1,9 @@
 import { useNavigationStore } from '@/stores/navigation'
 import { useTrackStore } from '@/stores/track'
 import {
-  EstablishmentFront,
   LegalCategory,
   type NextTrackRuleSet,
   type QuestionnaireData,
-  SiretValue,
   StructureSize,
   type Track,
   TrackComponent,
@@ -21,8 +19,6 @@ import { remapItem } from '@/utils/helpers'
 import Translation from '@/utils/translation'
 import { acceptHMRUpdate, defineStore } from 'pinia'
 import { computed, ref, toRaw } from 'vue'
-import CompanyDataStorage from '@/utils/storage/companyDataStorage'
-import { CompanyDataStorageKey } from '@/types/companyDataType'
 import { CompanyDataStorageHandler } from '@/utils/storage/companyDataStorageHandler'
 
 export const useUsedTrackStore = defineStore('usedTrack', () => {
@@ -69,13 +65,7 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
       .filter((questionnaireDatum) => questionnaireDatum?.length)
       .flat(1)
 
-    if (_canUseCompanyData(data, CompanyDataStorageKey.Company as keyof QuestionnaireData)) {
-      data.push(CompanyDataStorage.getCompanyData() as QuestionnaireData)
-    }
-
-    if (_canUseCompanyData(data, CompanyDataStorageKey.Size)) {
-      data.push({ [CompanyDataStorageKey.Size]: CompanyDataStorage.getSize() } as QuestionnaireData)
-    }
+    CompanyDataStorageHandler.populateCompletedQuestionnaire(data)
 
     return data
   })
@@ -123,13 +113,7 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
       if (value) {
         useNavigationStore().updateSearchParam({ name: current.value.id, value: value })
 
-        if (current.value.id === TrackId.Siret && value !== SiretValue.Wildcard) {
-          CompanyDataStorage.setCompany(selectedOptions[0].questionnaireData as EstablishmentFront)
-        }
-
-        if (current.value.id === TrackId.StructureWorkforce) {
-          CompanyDataStorage.setSize(value as StructureSize)
-        }
+        CompanyDataStorageHandler.setDataFromTrack(current.value.id, value, selectedOptions)
       }
     }
 
@@ -277,7 +261,6 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
 
         if (usedTrack.id === TrackId.Siret && questionnaireDatum.legalCategory === LegalCategory.EI) {
           questionnaireData.structure_size = StructureSize.EI
-          CompanyDataStorage.setSize(StructureSize.EI)
         }
       })
     })
@@ -286,22 +269,9 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
       questionnaireData.onlyEligible = true
     }
 
-    CompanyDataStorageHandler.populateFromStorage(questionnaireData)
+    CompanyDataStorageHandler.populateQuestionnaireData(questionnaireData)
 
     return questionnaireData
-  }
-
-  function _canUseCompanyData(data: (QuestionnaireData | undefined)[], key: keyof QuestionnaireData): boolean {
-    if (CompanyDataStorage.hasItem(key as CompanyDataStorageKey)) {
-      const storageItem = CompanyDataStorage.getItem(key as CompanyDataStorageKey) as QuestionnaireData | string
-
-      return (
-        CompanyDataStorage.hasItem(key as CompanyDataStorageKey) &&
-        !data.some((item) => item?.[key] === (typeof storageItem === 'string' ? storageItem : storageItem?.[key]))
-      )
-    }
-
-    return false
   }
 
   async function setFromNavigation() {
@@ -316,13 +286,7 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
       const value = useNavigationStore().query[trackId] as string | string[]
       const selectedOptions: TrackOptionsUnion[] = await useTrackStore().getSelectedOptionsByTrackAndValue(track, value)
 
-      if (trackId === TrackId.Siret && selectedOptions.length > 0) {
-        CompanyDataStorage.setCompany(selectedOptions[0].questionnaireData as EstablishmentFront)
-      }
-
-      if (trackId === TrackId.StructureWorkforce) {
-        CompanyDataStorage.setSize(value as StructureSize)
-      }
+      CompanyDataStorageHandler.setDataFromTrack(trackId as TrackId, value, selectedOptions)
 
       if (selectedOptions.length === 0) {
         useNavigationStore().deleteSearchParam(trackId)

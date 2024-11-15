@@ -87,14 +87,16 @@ import OtherProjectCta from '@/components/project/list/OtherProjectCta.vue'
 import OtherProjectForm from '@/components/project/list/OtherProjectForm.vue'
 import Translation from '@/utils/translation'
 import Navigation from '@/utils/navigation'
+import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
 interface ProjectListProps {
   filteredProjects?: Project[]
   hasError: boolean
-  hasRegisteredData: boolean
 }
 const props = defineProps<ProjectListProps>()
 const otherProjectForm = ref<boolean>(false)
+
+const hasRegisteredData = CompanyDataStorage.hasData()
 
 const openModal = () => {
   Navigation.toggleRegisterModal()

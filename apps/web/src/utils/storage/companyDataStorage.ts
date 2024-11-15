@@ -11,59 +11,63 @@ export default class CompanyDataStorage {
     [CompanyDataStorageKey.Size]: this.getSize()
   })
 
-  static getData(): Ref<CompanyDataType> {
+  private static readonly _hasData: ComputedRef<boolean> = computed(() => {
+    return this._data.value[CompanyDataStorageKey.Company] !== null || this._data.value[CompanyDataStorageKey.Size] !== null
+  })
+
+  public static getData(): Ref<CompanyDataType> {
     return this._data
   }
 
-  static hasData() {
-    return this._data.value[CompanyDataStorageKey.Company] !== null || this._data.value[CompanyDataStorageKey.Size] !== null
+  public static hasData() {
+    return this._hasData
   }
 
-  static hasCompanyData() {
+  public static hasCompanyData() {
     return this._data.value[CompanyDataStorageKey.Company] !== null
   }
 
-  static hasSize() {
+  public static hasSize() {
     return this._data.value[CompanyDataStorageKey.Size] !== null
   }
 
-  static hasItem(key: CompanyDataStorageKey): boolean {
+  public static hasItem(key: CompanyDataStorageKey): boolean {
     return this._storageHandler.getItem(key) !== null
   }
 
-  static setCompany(value: CompanyDataType[CompanyDataStorageKey.Company]) {
+  public static setSiret(value: CompanyDataType[CompanyDataStorageKey.Company]) {
     this.setItem(CompanyDataStorageKey.Company, value)
   }
 
-  static setSize(value: StructureSize) {
+  public static setSize(value: StructureSize) {
     this.setItem(CompanyDataStorageKey.Size, value)
   }
 
-  static setItem(key: CompanyDataStorageKey, value: CompanyDataType[CompanyDataStorageKey.Company] | StructureSize): void {
+  public static setItem(key: CompanyDataStorageKey, value: CompanyDataType[CompanyDataStorageKey.Company] | StructureSize): void {
     this._storageHandler.setItem(key, value)
     this.updateData()
   }
 
-  static getItem(key: CompanyDataStorageKey): unknown {
+  public static getItem(key: CompanyDataStorageKey): unknown {
     return this._storageHandler.getItem(key)
   }
 
-  static getCompanyData(): CompanyDataType[CompanyDataStorageKey.Company] | null {
+  public static getCompanyData(): CompanyDataType[CompanyDataStorageKey.Company] | null {
     return (this.getItem(CompanyDataStorageKey.Company) as CompanyDataType[CompanyDataStorageKey.Company]) || null
   }
 
-  static getSize(): StructureSize | null {
+  public static getSize(): StructureSize | null {
     return (this.getItem(CompanyDataStorageKey.Size) as StructureSize) || null
   }
 
-  static removeData(): void {
+  public static removeData(): void {
     Object.values(CompanyDataStorageKey).forEach((key) => {
       this._storageHandler.removeItem(key)
     })
     this.updateData()
   }
 
-  static removeItem(key: CompanyDataStorageKey): void {
+  public static removeItem(key: CompanyDataStorageKey): void {
     this._storageHandler.removeItem(key)
     this.updateData()
   }
