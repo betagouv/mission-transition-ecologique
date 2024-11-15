@@ -19,7 +19,6 @@ import { remapItem } from '@/utils/helpers'
 import Translation from '@/utils/translation'
 import { acceptHMRUpdate, defineStore } from 'pinia'
 import { computed, ref, toRaw } from 'vue'
-import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 import { CompanyDataStorageHandler } from '@/utils/storage/companyDataStorageHandler'
 
 export const useUsedTrackStore = defineStore('usedTrack', () => {
@@ -262,7 +261,6 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
 
         if (usedTrack.id === TrackId.Siret && questionnaireDatum.legalCategory === LegalCategory.EI) {
           questionnaireData.structure_size = StructureSize.EI
-          CompanyDataStorage.setSize(StructureSize.EI)
         }
       })
     })

@@ -3,6 +3,7 @@ import { useNavigationStore } from '@/stores/navigation'
 import {
   CompanyDataStorageKey,
   EstablishmentFront,
+  LegalCategory,
   type QuestionnaireData,
   SiretValue,
   StructureSize,
@@ -24,10 +25,11 @@ export class CompanyDataStorageHandler {
 
   static populateQuestionnaireData(questionnaireData: { [k: string]: any }) {
     if (CompanyDataStorage.hasData()) {
+      // TODO : should not add size if EI
       const companyData: CompanyDataType = CompanyDataStorage.getData().value
       Object.entries(companyData).forEach(([key, value]) => {
         if (value !== null) {
-          if (Object.values(StructureSize).includes(value as StructureSize) && questionnaireData[key] !== value) {
+          if (this._canAddSizeToStorage(value as StructureSize, questionnaireData, key)) {
             questionnaireData[key] = value
           } else if (typeof value === 'object' && !Array.isArray(value)) {
             Object.entries(value).forEach(([k, v]) => {
@@ -49,7 +51,7 @@ export class CompanyDataStorageHandler {
       })
     }
 
-    if (CompanyDataStorage.hasSize()) {
+    if (CompanyDataStorage.hasSize() && CompanyDataStorage.getSize() !== StructureSize.EI) {
       useNavigationStore().updateSearchParam({
         name: TrackId.StructureWorkforce,
         value: CompanyDataStorage.getSize()
@@ -72,11 +74,19 @@ export class CompanyDataStorageHandler {
 
   static setDataFromTrack(trackId: TrackId, value: string | string[], selectedOptions: TrackOptionsUnion[]) {
     if (trackId === TrackId.Siret && value !== SiretValue.Wildcard && selectedOptions.length > 0) {
-      CompanyDataStorage.setSiret(selectedOptions[0].questionnaireData as EstablishmentFront)
+      const questionnaireData = selectedOptions[0].questionnaireData as EstablishmentFront
+      CompanyDataStorage.setSiret(questionnaireData)
+      if (questionnaireData.legalCategory === LegalCategory.EI) {
+        CompanyDataStorage.setSize(StructureSize.EI)
+      }
     }
 
     if (trackId === TrackId.StructureWorkforce) {
       CompanyDataStorage.setSize(value as StructureSize)
     }
+  }
+
+  private static _canAddSizeToStorage(size: StructureSize, questionnaireData: { [k: string]: any }, key: string) {
+    return Object.values(StructureSize).includes(size) && questionnaireData[key] !== size && size !== StructureSize.EI
   }
 }
