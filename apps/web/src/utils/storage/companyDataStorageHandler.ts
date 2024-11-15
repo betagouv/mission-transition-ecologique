@@ -14,7 +14,7 @@ import { CompanyDataType } from '@/types/companyDataType'
 
 export class CompanyDataStorageHandler {
   static populateCompletedQuestionnaire(data: FlatArray<((QuestionnaireData | undefined)[] | undefined)[], 1>[]) {
-    if (this.canUseCompanyData(data, CompanyDataStorageKey.Company)) {
+    if (this.canUseCompanyData(data, CompanyDataStorageKey.Company as keyof QuestionnaireData)) {
       data.push(CompanyDataStorage.getCompanyData() as QuestionnaireData)
     }
 
@@ -59,12 +59,12 @@ export class CompanyDataStorageHandler {
     }
   }
 
-  static canUseCompanyData(data: (QuestionnaireData | undefined)[], key: CompanyDataStorageKey): boolean {
-    if (CompanyDataStorage.hasItem(key)) {
-      const storageItem = CompanyDataStorage.getItem(key)
+  static canUseCompanyData(data: (QuestionnaireData | undefined)[], key: keyof QuestionnaireData): boolean {
+    if (CompanyDataStorage.hasItem(key as CompanyDataStorageKey)) {
+      const storageItem = CompanyDataStorage.getItem(key as CompanyDataStorageKey)
 
       return (
-        CompanyDataStorage.hasItem(key) &&
+        CompanyDataStorage.hasItem(key as CompanyDataStorageKey) &&
         !data.some((item) => item?.[key] === (typeof storageItem === 'string' ? storageItem : (storageItem as QuestionnaireData)?.[key]))
       )
     }
