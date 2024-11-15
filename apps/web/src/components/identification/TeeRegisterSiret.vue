@@ -23,7 +23,9 @@
         v-for="(response, i) in requestResponses.establishments"
         :key="`resp-input-${i}`"
         class="fr-card fr-card-result fr-card--no-arrow fr-card--shadow custom-border"
+        tabindex="0"
         @click="selectItem(response)"
+        @keydown.enter="selectItem(response)"
       >
         <div class="fr-card__body">
           <div class="fr-card__content fr-py-1v fr-px-4v fr-text--blue-france">
@@ -84,7 +86,7 @@ const defaultSearchValue = {
 }
 
 const queryValue = ref<string | undefined>()
-const debouncedQueryValue = useDebounce(queryValue, 500)
+const debouncedQueryValue = useDebounce(queryValue, 2000)
 watch(debouncedQueryValue, (newValue) => {
   if (newValue) {
     processInput()

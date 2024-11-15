@@ -3,10 +3,10 @@
     v-if="infos.value"
     class="fr-tag fr-bg--blue-france--lightness"
   >
-    {{ infos.tagLabel || activityText }}
+    <span class="fr-pr-4v">{{ infos.tagLabel || activityText }}</span>
     <span
       v-if="manual"
-      class="fr-icon-close-line fr-pl-4v"
+      class="fr-icon-close-line fr-radius-a--2v fr-btn-bg"
       @click="modifyActivity"
     />
   </p>
