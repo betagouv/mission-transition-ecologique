@@ -137,7 +137,7 @@ const showNoResults = computed(() => {
 })
 
 const showOtherProjectForm = computed(() => {
-  return !showNoResults.value && props.hasRegisteredData
+  return !showNoResults.value && hasRegisteredData.value
 })
 
 const isSpecificGoal = computed(() => {

@@ -75,7 +75,7 @@ export class CompanyDataStorageHandler {
   static setDataFromTrack(trackId: TrackId, value: string | string[], selectedOptions: TrackOptionsUnion[]) {
     if (trackId === TrackId.Siret && value !== SiretValue.Wildcard && selectedOptions.length > 0) {
       const questionnaireData = selectedOptions[0].questionnaireData as EstablishmentFront
-      CompanyDataStorage.setSiret(questionnaireData)
+      CompanyDataStorage.setCompany(questionnaireData)
       if (questionnaireData.legalCategory === LegalCategory.EI) {
         CompanyDataStorage.setSize(StructureSize.EI)
       }
