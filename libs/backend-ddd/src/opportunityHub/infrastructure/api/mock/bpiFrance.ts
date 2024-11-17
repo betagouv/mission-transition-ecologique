@@ -5,7 +5,7 @@ import { Operators } from '@tee/data'
 
 export class BpiFranceTest extends OpportunityHubAbstract {
   protected _axios: AxiosInstance
-  protected readonly _baseUrl = 'https://bpifrance.my.salesforce.com/services'
+  protected readonly _baseUrl = ''
   protected readonly _operatorNames: Operators[] = ['Bpifrance']
 
   constructor() {

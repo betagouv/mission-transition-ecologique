@@ -2,7 +2,6 @@ import { Maybe } from 'true-myth'
 import { MailerManager } from '../../../../domain/spi'
 
 export default class BrevoMailTest {
-  sendReturnReceipt: MailerManager['sendReturnReceipt'] = async (): Promise<Maybe<Error> | void> => {
-    console.log('send email')
-  }
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  sendReturnReceipt: MailerManager['sendReturnReceipt'] = async (): Promise<Maybe<Error> | void> => {}
 }

@@ -2,12 +2,11 @@ import { Operators } from '@tee/data'
 import { Objective } from '@tee/common'
 import { Maybe } from 'true-myth'
 import { AxiosInstance } from 'axios'
-import Config from '../../../../config'
 import { Subject, subjectToIdMapping } from '../placedesentreprises/types'
 import OpportunityHubAbstract from '../opportunityHubAbstract'
 
 export class PlaceDesEntreprisesTest extends OpportunityHubAbstract {
-  protected readonly _baseUrl = Config.PDE_API_BASEURL
+  protected readonly _baseUrl = ''
   protected _axios: AxiosInstance
   protected readonly _operatorNames = [] // warning, invalid but never used since we override all possible external uses of this value right below
   constructor() {
