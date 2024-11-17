@@ -59,7 +59,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { RegisterDetailLocalisation, ConvertedGeoResult, CompanyLocalisationType } from '@/types'
+import { RegisterDetailLocalisation, ConvertedCommune, CompanyLocalisationType } from '@/types'
 import LocalisationApi from '@/service/api/localisationApi'
 import { onClickOutside } from '@vueuse/core'
 import CompanyDataStorage from '@/utils/storage/companyDataStorage'
@@ -72,7 +72,7 @@ interface Props {
 const props = defineProps<Props>()
 const selectedLocalisation = defineModel<CompanyLocalisationType>()
 const localisationInput = ref<string>('')
-const localisationResults = ref<ConvertedGeoResult[]>([])
+const localisationResults = ref<ConvertedCommune[]>([])
 const isLoading = ref<boolean>(false)
 const localisationApi = new LocalisationApi()
 const errorMsg = computed<string>(() => {
@@ -93,10 +93,13 @@ const localisationLabel = computed<string>(() => {
 })
 const searchLocalisation = async () => {
   isLoading.value = true
-  localisationResults.value = await localisationApi.fetchCommunes(localisationInput.value)
+  const results = await localisationApi.searchCities(localisationInput.value)
+  if (results.isOk) {
+    localisationResults.value = results.value
+  }
   isLoading.value = false
 }
-const selectLocalisation = (localisation: ConvertedGeoResult) => {
+const selectLocalisation = (localisation: ConvertedCommune) => {
   selectedLocalisation.value = CompanyDataStorage.convertLocalisation(localisation)
 }
 const modifyLocalisation = () => {

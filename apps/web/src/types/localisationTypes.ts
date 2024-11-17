@@ -27,18 +27,3 @@ export enum Region {
   TerresAustralesEtAntarctiquesFrancaises = 'Terres australes et antarctiques françaises',
   WallisEtFutuna = 'Wallis et Futuna'
 }
-
-export type GeoResult = {
-  code: string
-  codeDepartement: string
-  codeEpci: string
-  codeRegion: string
-  codesPostaux: string[]
-  nom: string
-  population: number
-  siren: string
-}
-
-export type ConvertedGeoResult = Omit<GeoResult, 'codesPostaux'> & {
-  codePostal: string
-}
