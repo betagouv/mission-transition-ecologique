@@ -92,12 +92,16 @@ const localisationLabel = computed<string>(() => {
   return `${props.infos.value?.codePostal} ${props.infos.value?.ville}`
 })
 const searchLocalisation = async () => {
-  isLoading.value = true
-  const results = await localisationApi.searchCities(localisationInput.value)
-  if (results.isOk) {
-    localisationResults.value = results.value
+  if (localisationInput.value) {
+    isLoading.value = true
+    const results = await localisationApi.searchCities(localisationInput.value)
+    if (results.isOk) {
+      localisationResults.value = results.value
+    }
+    isLoading.value = false
+  } else {
+    localisationResults.value = []
   }
-  isLoading.value = false
 }
 const selectLocalisation = (localisation: ConvertedCommune) => {
   selectedLocalisation.value = CompanyDataStorage.convertLocalisation(localisation)
