@@ -19,7 +19,7 @@ export default class Posthog {
 
   static activatePosthogCookie() {
     if (this._posthog) {
-      this._posthog.set_config({ persistence: 'localStorage+cookie' })
+      this._posthog.set_config({ persistence: 'cookie' })
     }
   }
 
