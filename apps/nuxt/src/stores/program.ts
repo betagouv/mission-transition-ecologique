@@ -6,7 +6,6 @@ import { useUsedTrackStore } from '@/stores/usedTrack'
 import ProgramFilter from '@/tools/program/programFilter'
 import { Result } from 'true-myth'
 import { computed, ref } from 'vue'
-import { acceptHMRUpdate, defineStore } from 'pinia'
 import { type programFiltersType, ProgramAidType, ThemeId, Region, type ProgramData, QuestionnaireData, OperatorFilter } from '@/types'
 
 export const useProgramStore = defineStore('program', () => {
@@ -23,8 +22,8 @@ export const useProgramStore = defineStore('program', () => {
   const programs = computed(async () => {
     const result = await getPrograms()
 
-    if (result.isOk) {
-      hasPrograms.value = result.value.length > 0
+    if (result.isOk()) {
+      hasPrograms.value = result.data.length > 0
     }
 
     return result
@@ -55,8 +54,8 @@ export const useProgramStore = defineStore('program', () => {
 
     if (hasPrograms.value) {
       const result = await programs.value
-      if (result.isOk) {
-        const program = result.value.find((program) => program.id === id)
+      if (result.isOk()) {
+        const program = result.data.find((program) => program.id === id)
         if (program) {
           currentProgram.value = program
           return Result.ok(currentProgram.value)
@@ -65,15 +64,16 @@ export const useProgramStore = defineStore('program', () => {
         return Result.err(new Error('Program not found'))
       }
 
-      return Result.err(result.error)
+      return Result.err(new Error(result.error?.message))
     }
 
     const result = await new ProgramApi(useUsedTrackStore().getQuestionnaireData()).getOne(id)
-    if (result.isOk) {
-      currentProgram.value = result.value
+    if (result.isOk()) {
+      currentProgram.value = result.data
+      return Result.ok(result.data)
     }
 
-    return result
+    return Result.err(new Error(result.error?.message))
   }
 
   function hasThemeTypeSelected() {
@@ -103,6 +103,7 @@ export const useProgramStore = defineStore('program', () => {
     programFilters,
     programsByUsedTracks,
     getProgramsByFilters,
+    getPrograms,
     getProgramById,
     hasThemeTypeSelected,
     setThemeTypeSelected,

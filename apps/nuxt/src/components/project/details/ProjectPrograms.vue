@@ -102,11 +102,20 @@ const props = defineProps<Props>()
 const programStore = useProgramStore()
 const navigationStore = useNavigationStore()
 
-const isCatalogDetail = new Navigation().isCatalogProjectDetail()
 const TeeProjectFormContainer = ref<HTMLElement | null | undefined>(null)
-
 const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)
+
+const isCatalogDetail = new Navigation().isCatalogProjectDetail()
+
+navigationStore.hasSpinner = true
+const programsResult = await programStore.programsByUsedTracks
+if (programsResult.isOk()) {
+  programs.value = programsResult.data
+} else {
+  hasError.value = true
+}
+navigationStore.hasSpinner = false
 
 const countFilteredPrograms = computed(() => {
   return filteredPrograms.value.length || 0
@@ -126,17 +135,6 @@ const financePrograms = computed(() => {
   return filteredPrograms.value.filter((program: ProgramData) =>
     [ProgramAidType.fund, ProgramAidType.loan, ProgramAidType.tax].includes(program["nature de l'aide"])
   )
-})
-
-onBeforeMount(async () => {
-  navigationStore.hasSpinner = true
-  const result = await programStore.programsByUsedTracks
-  if (result.isOk) {
-    programs.value = result.value
-  } else {
-    hasError.value = true
-  }
-  navigationStore.hasSpinner = false
 })
 
 const trackSiretTo = (): RouteLocationRaw => {

@@ -267,8 +267,8 @@ interface Props {
 const props = defineProps<Props>()
 
 const programResult = await new ProgramApi().getOne(props.programId)
-if (programResult.isOk) {
-  programsStore.currentProgram = programResult.value
+if (programResult.isOk()) {
+  programsStore.currentProgram = programResult.data
   program.value = programResult.value
   if (program.value && navigationStore.isByRouteName(RouteName.CatalogProgramFromCatalogProjectDetail)) {
     useHead({

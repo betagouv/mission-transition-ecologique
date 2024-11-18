@@ -1,4 +1,6 @@
-import { Result } from 'true-myth'
+import { ResultApi } from '@/tools/api/resultApi'
+import { NuxtError } from 'nuxt/app'
+import { _AsyncData } from 'nuxt/dist/app/composables/asyncData'
 
 export default abstract class RequestApi {
   protected abstract url: string
@@ -20,13 +22,13 @@ export default abstract class RequestApi {
     return url.replace('{' + placeholderName + '}', placeholderData)
   }
 
-  public async getJson<T>(baseUrl: string | undefined = undefined): Promise<Result<T, Error>> {
+  public async getJson<T>(baseUrl: string | undefined = undefined): Promise<ResultApi<T>> {
     baseUrl = baseUrl ?? this.url
     const url: string = this.query ? `${baseUrl}?${this.query}` : baseUrl
-    try {
-      return Result.ok(await $fetch(url))
-    } catch (error: unknown) {
-      return Result.err(error as Error)
-    }
+    const result = await useAsyncData<T>(url, () => {
+      return $fetch(url)
+    })
+
+    return new ResultApi<T>(result as _AsyncData<T | null, NuxtError<unknown> | null>)
   }
 }

@@ -39,7 +39,7 @@ import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
 import { BreakpointNameType, ProgramData, Project } from '@/types'
 import { storeToRefs } from 'pinia'
-import { computed, onBeforeMount } from 'vue'
+import { computed } from 'vue'
 import { useProjectStore } from '@/stores/project'
 import { Theme } from '@/tools/theme'
 
@@ -64,6 +64,17 @@ const titles: TeeDsfrTabsProps['tabTitles'] = [
   }
 ]
 
+navigationStore.hasSpinner = true
+const programResult = await programStore.programsByUsedTracks
+const projectResult = await projectStore.projects
+if (programResult.isOk() && projectResult.isOk) {
+  programs.value = programResult.data
+  projects.value = projectResult.value
+} else {
+  hasError.value = true
+}
+navigationStore.hasSpinner = false
+
 const filteredPrograms = computed(() => {
   return programs.value ? programStore.getProgramsByFilters(programs.value) : undefined
 })
@@ -78,18 +89,5 @@ const filteredProjects = computed(() => {
     Theme.getThemeFromSelectedOrPriorityTheme().value,
     filteredPrograms.value ?? undefined
   )
-})
-
-onBeforeMount(async () => {
-  navigationStore.hasSpinner = true
-  const programResult = await programStore.programsByUsedTracks
-  const projectResult = await projectStore.projects
-  if (programResult.isOk && projectResult.isOk) {
-    programs.value = programResult.value
-    projects.value = projectResult.value
-  } else {
-    hasError.value = true
-  }
-  navigationStore.hasSpinner = false
 })
 </script>

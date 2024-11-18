@@ -29,7 +29,7 @@
         >
           <div
             v-if="trackElement && usedTrackStore.current && trackStore.current"
-            :class="`fr-p-0 fr-mb-${debugStore.is ? '12v' : '0'}`"
+            class="fr-p-0 fr-mb-0"
           >
             <TrackContent :track-element="trackElement" />
           </div>
@@ -42,14 +42,11 @@
 <script setup lang="ts">
 import TrackContent from '@/components/questionnaire/track/TrackContent.vue'
 import TrackSidebar from '@/components/questionnaire/track/TrackSidebar.vue'
-import { useDebugStore } from '@/stores/debug'
-// import { useNavigationStore } from '@/stores/navigation'
 import { useTrackStore } from '@/stores/track'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { TrackId } from '@/types'
 import { RouteName } from '@/types/routeType'
-import { computed, onBeforeMount, onMounted, ref } from 'vue'
-import { useRouter } from 'vue-router'
+import { computed, onBeforeMount, ref } from 'vue'
 
 interface Props {
   trackId: TrackId
@@ -60,9 +57,6 @@ const trackElement = ref<HTMLElement | null>(null)
 
 const trackStore = useTrackStore()
 const usedTrackStore = useUsedTrackStore()
-// const nav = useNavigationStore()
-const debugStore = useDebugStore()
-const router = useRouter()
 
 const needSidebar = computed(() => {
   return trackStore.currentId !== TrackId.QuestionnaireRoute
@@ -70,11 +64,5 @@ const needSidebar = computed(() => {
 
 onBeforeMount(() => {
   usedTrackStore.add(props.trackId, props.trackId)
-})
-
-onMounted(async () => {
-  // cf: https://stackoverflow.com/questions/69495211/vue3-route-query-empty
-  await router.isReady()
-  // await setupFromUrl()
 })
 </script>

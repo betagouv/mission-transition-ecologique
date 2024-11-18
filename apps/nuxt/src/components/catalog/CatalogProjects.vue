@@ -62,7 +62,7 @@ import { useProjectStore } from '@/stores/project'
 import { type ProgramData, Project as ProjectType, ThemeId } from '@/types'
 import { MetaSeo } from '@/tools/metaSeo'
 import { Project } from '@/tools/project/project'
-import { computed, onBeforeMount } from 'vue'
+import { computed } from 'vue'
 import { Theme } from '@/tools/theme'
 
 const projectStore = useProjectStore()
@@ -75,6 +75,20 @@ const hasError = ref<boolean>(false)
 
 const title = 'Le catalogue des projets de transition écologique'
 const description = 'Accédez à la liste des projets de transition écologique destinées aux entreprises.'
+
+useSeoMeta(MetaSeo.get(title, description))
+
+navigationStore.hasSpinner = true
+const programResult = await programStore.programs
+const projectResult = await projectStore.projects
+if (programResult.isOk() && projectResult.isOk) {
+  programs.value = programResult.data
+  projects.value = projectResult.value
+} else {
+  hasError.value = true
+}
+
+navigationStore.hasSpinner = false
 
 const theme = Theme.getThemeFromSelectedTheme()
 
@@ -99,22 +113,6 @@ const countProjects = computed(() => {
 
 const hasFilteredProjects = computed(() => {
   return filteredProjects.value?.length
-})
-
-onBeforeMount(async () => {
-  useSeoMeta(MetaSeo.get(title, description))
-
-  navigationStore.hasSpinner = true
-  const programResult = await programStore.programs
-  const projectResult = await projectStore.projects
-  if (programResult.isOk && projectResult.isOk) {
-    programs.value = programResult.value
-    projects.value = projectResult.value
-  } else {
-    hasError.value = true
-  }
-
-  navigationStore.hasSpinner = false
 })
 
 onBeforeRouteLeave(() => {

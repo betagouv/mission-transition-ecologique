@@ -1,11 +1,15 @@
 import Posthog from '@/tools/analytic/posthog'
 
-class PostHogPlugin {
-  static install() {
-    Posthog.install()
-  }
-}
+export default defineNuxtPlugin(() => {
+  Posthog.install()
 
-export default defineNuxtPlugin((nuxtApp) => {
-  nuxtApp.vueApp.use(PostHogPlugin)
+  const router = useRouter()
+  router.afterEach((to, from, failure) => {
+    if (!failure) {
+      nextTick(() => {
+        Posthog.capturePageView(to)
+        Posthog.capturePageLeave(from)
+      })
+    }
+  })
 })

@@ -55,7 +55,7 @@ import { useProgramStore } from '@/stores/program'
 import { type ProgramData, ThemeId } from '@/types'
 import { MetaSeo } from '@/tools/metaSeo'
 import UsedTrack from '@/tools/track/usedTrack'
-import { computed, onBeforeMount } from 'vue'
+import { computed } from 'vue'
 
 const programStore = useProgramStore()
 
@@ -66,6 +66,15 @@ const title = 'Le catalogue des aides publiques à la transition écologique'
 const description =
   'Réalisez une recherche parmi les aides à la transition écologique des entreprises, proposées par l’ensemble des partenaires publics :' +
   'ADEME, Bpifrance, CCI, CMA, etc.'
+
+useSeoMeta(MetaSeo.get(title, description))
+
+const result = await programStore.programs
+if (result.isOk()) {
+  programs.value = result.data
+} else {
+  hasError.value = true
+}
 
 const filteredPrograms = computed(() => {
   return programs.value ? programStore.getProgramsByFilters(programs.value) : undefined
@@ -101,17 +110,6 @@ const showNoResultsComponent = computed(() => {
 
 const showThemeCard = computed(() => {
   return hasThemeCard.value && !hasSpinner.value
-})
-
-onBeforeMount(async () => {
-  useSeoMeta(MetaSeo.get(title, description))
-
-  const result = await programStore.programs
-  if (result.isOk) {
-    programs.value = result.value
-  } else {
-    hasError.value = true
-  }
 })
 
 onBeforeRouteLeave(() => {

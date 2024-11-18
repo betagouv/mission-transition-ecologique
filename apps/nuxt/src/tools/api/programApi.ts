@@ -1,6 +1,6 @@
 import RequestApi from '@/tools/api/requestApi'
+import { ResultApi } from '@/tools/api/resultApi'
 import type { ProgramData, QuestionnaireData } from '@/types'
-import { Result } from 'true-myth'
 
 export default class ProgramApi extends RequestApi {
   protected readonly url = '/api/programs'
@@ -10,18 +10,12 @@ export default class ProgramApi extends RequestApi {
     this.query = this.buildQuery
   }
 
-  async get(): Promise<Result<ProgramData[], Error>> {
-    const { data: programsResult } = await useAsyncData(`program-${this.query}`, () => {
-      return super.getJson<ProgramData[]>()
-    })
-    return programsResult.value || Result.err(new Error('Programs not found'))
+  async get(): Promise<ResultApi<ProgramData[]>> {
+    return super.getJson<ProgramData[]>()
   }
 
-  async getOne(id: string): Promise<Result<ProgramData, Error>> {
-    const { data: programResult } = await useAsyncData(`program-id-${id}`, () => {
-      return super.getJson<ProgramData>(this.url + '/' + id)
-    })
-    return programResult.value || Result.err(new Error('Program not found'))
+  async getOne(id: string): Promise<ResultApi<ProgramData>> {
+    return super.getJson<ProgramData>(this.url + '/' + id)
   }
 
   get buildQuery(): string {
