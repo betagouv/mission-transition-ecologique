@@ -21,6 +21,7 @@ export interface EstablishmentDetails {
     // https://www.insee.fr/fr/information/2560452
     cityCode: string
   }
+  workforceRange: string
 }
 
 export interface GeographicDetails {

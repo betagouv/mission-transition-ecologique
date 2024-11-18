@@ -62,7 +62,8 @@ const parseEstablishment = (establishmentDocument: EstablishmentDocument): Estab
       zipCode: rawEstablishment.adresseEtablissement.codePostalEtablissement,
       cityLabel: rawEstablishment.adresseEtablissement.libelleCommuneEtablissement,
       cityCode: rawEstablishment.adresseEtablissement.codeCommuneEtablissement
-    }
+    },
+    workforceRange: rawEstablishment.trancheEffectifsEtablissement
   }
 }
 
