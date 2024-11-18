@@ -10,12 +10,11 @@
       :error-message="errorMessage"
       @update:model-value="handleUpdateModelValue"
       @on-click="processInput"
-      @on-clear="resetSelection"
+      @on-clear="clearSearch"
     />
 
     <!-- RESPONSES -->
     <div
-      v-if="requestResponses.establishments.length"
       id="siret-response"
       class="fr-bg--white fr-mt-n6v"
     >
@@ -87,8 +86,8 @@ const defaultSearchValue = {
 
 const queryValue = ref<string | undefined>()
 const debouncedQueryValue = useDebounce(queryValue, 2000)
-watch(debouncedQueryValue, (newValue) => {
-  if (newValue) {
+watch(debouncedQueryValue, (newValue, oldValue) => {
+  if (newValue && newValue !== oldValue && !isLoading.value) {
     processInput()
   }
 })
@@ -103,8 +102,11 @@ const emit = defineEmits<{
 }>()
 
 const resetSelection = () => {
-  requestResponses.value = defaultSearchValue
   selection.value = undefined
+}
+const clearSearch = () => {
+  resetSelection()
+  requestResponses.value = defaultSearchValue
 }
 
 const selectItem = (establishment: EstablishmentFront) => {
@@ -122,23 +124,23 @@ const processInput = async () => {
   isLoading.value = true
   errorMessage.value = undefined
   resetSelection()
-
   if (!queryValue.value || queryValue.value.length < 3) {
     errorMessage.value = Translation.t('enterprise.searchTooShort')
   } else if (SiretValidator.isValidSiretFormat(queryValue.value) && !SiretValidator.isValidSiretNumber(queryValue.value)) {
     errorMessage.value = "Le numéro SIRET n'est pas valide"
   } else {
-    const searchResult = await TrackSiret.search(queryValue.value, 9)
-    if (searchResult.isErr) {
-      errorMessage.value = Translation.t('enterprise.apiError')
-    } else if (searchResult.value.resultCount == 0) {
-      errorMessage.value = Translation.t('enterprise.noStructureFound')
-    } else {
-      requestResponses.value = searchResult.value
-      selection.value = undefined
-    }
+    TrackSiret.search(queryValue.value, 9).then((searchResult) => {
+      if (searchResult.isErr) {
+        errorMessage.value = Translation.t('enterprise.apiError')
+      } else if (searchResult.value.resultCount == 0) {
+        errorMessage.value = Translation.t('enterprise.noStructureFound')
+      } else {
+        requestResponses.value = searchResult.value
+        selection.value = undefined
+      }
+      isLoading.value = false
+    })
   }
-  isLoading.value = false
 }
 </script>
 
