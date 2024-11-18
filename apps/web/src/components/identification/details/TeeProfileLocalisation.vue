@@ -14,7 +14,10 @@
     v-else
     id="register-localisation"
   >
-    <DsfrInputGroup :error-message="errorMsg">
+    <div
+      class="fr-input-group fr-mb-0"
+      :class="errorMsg ? 'fr-input-group--error' : 'fr-input-group--valid'"
+    >
       <div
         ref="localisationSearchBar"
         class="fr-search-bar fr-search-bar--yellow"
@@ -37,11 +40,11 @@
           @click="searchLocalisation"
         />
       </div>
-    </DsfrInputGroup>
+    </div>
     <div
       v-if="localisationResults.length && !infos.value"
       id="localisation-response"
-      class="fr-bg--white fr-mt-n6v"
+      class="fr-bg--white"
     >
       <div
         v-for="localisation in localisationResults"
@@ -55,6 +58,12 @@
           </div>
         </div>
       </div>
+    </div>
+    <div
+      :class="errorMsg ? 'fr-error-text' : ''"
+      class="fr-input--empty-text fr-mt-2v"
+    >
+      {{ errorMsg }}
     </div>
   </div>
 </template>

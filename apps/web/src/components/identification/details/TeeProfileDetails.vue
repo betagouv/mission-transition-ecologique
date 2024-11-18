@@ -20,7 +20,6 @@
     :manual="manual"
     :show-error="showError"
     :detail-infos="profile[detailKey]"
-    @update:model-value="updateValue"
     @update:siret="openSiretStep"
   />
   <div class="fr-col-sm-8 fr-pt-4v fr-mt-4v fr-col-md-7 fr-col-offset-md-2 fr-col-12">
@@ -102,8 +101,5 @@ const saveProfile = () => {
   } else {
     showError.value = true
   }
-}
-const updateValue = () => {
-  showError.value = false
 }
 </script>

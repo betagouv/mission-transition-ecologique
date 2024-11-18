@@ -13,9 +13,14 @@
     v-else
     v-model="selectedSize"
     :default-unselected-text="defaultUnselectedText"
-    :error-message="showError ? errorMessage : ''"
     :options="sizeOptions"
   />
+  <div
+    :class="errorMessage ? 'fr-error-text' : ''"
+    class="fr-input--empty-text fr-mt-2v"
+  >
+    {{ errorMessage }}
+  </div>
 </template>
 <script lang="ts" setup>
 import { RegisterDetailSize, StructureSize } from '@/types'
@@ -34,7 +39,12 @@ const defaultUnselectedText = computed(() => {
   }
   return props.infos.description
 })
-const errorMessage = "La sélection de l'effectif est nécessaire"
+const errorMessage = computed<string>(() => {
+  if (props.showError && !props.infos.value) {
+    return "La sélection de l'effectif est nécessaire"
+  }
+  return ''
+})
 const sizeText = computed(() => {
   const sizeOption = sizeOptions.find((el: { value: StructureSize; text: string }) => el.value === props.infos.value)
   return sizeOption?.text

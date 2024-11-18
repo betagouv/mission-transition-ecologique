@@ -13,10 +13,16 @@
   <DsfrSelect
     v-else-if="manual"
     v-model="selectedActivity"
+    class="fr-mb-0"
     :options="sectorOptions"
-    :error-message="showError ? errorMessage : ''"
     :default-unselected-text="infos.description"
   />
+  <div
+    :class="errorMessage ? 'fr-error-text' : ''"
+    class="fr-input--empty-text fr-mt-2v"
+  >
+    {{ errorMessage }}
+  </div>
 </template>
 <script lang="ts" setup>
 import { RegisterDetailActivity, Sector } from '@/types'
@@ -27,7 +33,12 @@ interface Props {
   showError: boolean
 }
 const selectedActivity = defineModel<Sector>()
-const errorMessage = "La sélection de votre secteur d'activité est nécessaire"
+const errorMessage = computed<string>(() => {
+  if (!props.infos.value && props.showError) {
+    return "La sélection de votre secteur d'activité est nécessaire"
+  }
+  return ''
+})
 const modifyActivity = () => {
   selectedActivity.value = undefined
 }
