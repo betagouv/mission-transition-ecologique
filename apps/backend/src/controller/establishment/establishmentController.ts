@@ -1,6 +1,7 @@
 import { Controller, Route, SuccessResponse, TsoaResponse, Res, Example, Get, Path, Query } from 'tsoa'
 import { ErrorJSON, EstablishmentNotFoundError, EstablishmentService, ValidateErrorJSON, Monitor } from '@tee/backend-ddd'
 import { EstablishmentFront, EstablishmentSearch, StructureSize } from '@tee/common'
+
 interface EstablishmentNotFoundErrorJSON {
   message: 'Establishment not found'
 }
