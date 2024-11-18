@@ -16,7 +16,7 @@ export interface RechercheEntrepriseEstablishment {
   nature_juridique: string
   section_activite_principale: string // NafSectionCode
   date_creation: string
-
+  tranche_effectif_salarie: string
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any
 }

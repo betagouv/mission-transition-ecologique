@@ -1,7 +1,6 @@
 import { Controller, Route, SuccessResponse, TsoaResponse, Res, Example, Get, Path, Query } from 'tsoa'
-import { ErrorJSON, Establishment, EstablishmentNotFoundError, EstablishmentService, ValidateErrorJSON, Monitor } from '@tee/backend-ddd'
-import { EstablishmentSearch } from '@tee/common'
-
+import { ErrorJSON, EstablishmentNotFoundError, EstablishmentService, ValidateErrorJSON, Monitor } from '@tee/backend-ddd'
+import { EstablishmentFront, EstablishmentSearch, StructureSize } from '@tee/common'
 interface EstablishmentNotFoundErrorJSON {
   message: 'Establishment not found'
 }
@@ -12,24 +11,17 @@ interface EstablishmentNotFoundErrorJSON {
 export type Siret = string
 
 const exampleEstablishment = {
-  siren: '830141321',
-  nic: '00034',
-  siret: '83014132100034',
-  creationDate: '2021-12-01',
-  denomination: 'MULTI',
-  nafCode: '62.01Z',
+  codeNAF: '62.01Z',
+  codeNAF1: 'A',
+  ville: 'DALAYRAC',
+  codePostal: '94120',
   legalCategory: '5710',
-  nafSectionCode: 'A',
-  nafLabel: 'Programmation informatique',
-  address: {
-    streetNumber: '116',
-    streetType: 'RUE',
-    streetLabel: 'DALAYRAC',
-    zipCode: '94120',
-    cityLabel: 'FONTENAY-SOUS-BOIS',
-    cityCode: '94033'
-  },
-  region: 'Île-de-France'
+  region: 'Île-de-France',
+  structure_size: StructureSize.TPE,
+  denomination: 'MULTI',
+  secteur: 'Programmation informatique',
+  creationDate: '2021-12-01',
+  siret: '83014132100034'
 }
 
 @SuccessResponse('200', 'OK')
@@ -46,7 +38,7 @@ export class SireneController extends Controller {
    * @example requestBody: {"string": "siret, nom, adresse..."}
    */
 
-  @Example<Establishment>(exampleEstablishment)
+  @Example<EstablishmentFront>(exampleEstablishment)
   @Get('{query}')
   public async getEstablishmentBySiret(
     @Path() query: string,
