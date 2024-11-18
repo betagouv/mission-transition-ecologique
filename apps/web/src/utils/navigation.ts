@@ -17,7 +17,7 @@ export default class Navigation {
     if (navigationStore.hasRegisterModal) {
       window.scrollTo({
         top: 0,
-        behavior: 'smooth'
+        behavior: 'instant'
       })
     }
   }
