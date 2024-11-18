@@ -74,7 +74,7 @@ const profile = ref<RegisterDetails>({
   },
   activity: {
     title: 'Activité',
-    description: "Quel est votre secteur d'activités ?",
+    description: "Quel est votre secteur d'activité ?",
     icon: 'fr-icon-briefcase-line',
     value: props.company?.secteur as Sector,
     type: RegisterDetailType.Activity,
