@@ -1,71 +1,74 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Données de commune avec régions françaises",
-  "description": "Représentation des informations d'une commune avec son code, nom, code postal, département, et région (basée sur les régions françaises actuelles).",
-  "type": "object",
-  "properties": {
-    "codesPostaux": {
-      "type": "array",
-      "items": {
+  "title": "Liste de communes avec régions françaises",
+  "description": "Un tableau de communes, chaque commune ayant des informations sur son code, nom, code postal, département, et région.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "codesPostaux": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "nom": {
         "type": "string"
+      },
+      "code": {
+        "type": "string",
+        "description": "Code INSEE de la commune"
+      },
+      "departement": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "Code du département"
+          },
+          "nom": {
+            "type": "string",
+            "description": "Nom du département"
+          }
+        },
+        "required": ["code", "nom"]
+      },
+      "region": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "Code de la région"
+          },
+          "nom": {
+            "type": "string",
+            "description": "Nom de la région",
+            "enum": [
+              null,
+              "Auvergne-Rhône-Alpes",
+              "Bourgogne-Franche-Comté",
+              "Bretagne",
+              "Centre-Val de Loire",
+              "Corse",
+              "Grand Est",
+              "Hauts-de-France",
+              "Normandie",
+              "Nouvelle-Aquitaine",
+              "Occitanie",
+              "Provence-Alpes-Côte d'Azur",
+              "Pays de la Loire",
+              "Île-de-France",
+              "Guadeloupe",
+              "Guyane",
+              "La Réunion",
+              "Martinique",
+              "Mayotte"
+            ]
+          }
+        },
+        "required": ["code", "nom"]
       }
     },
-    "nom": {
-      "type": "string"
-    },
-    "code": {
-      "type": "string",
-      "description": "Code INSEE de la commune"
-    },
-    "departement": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "string",
-          "description": "Code du département"
-        },
-        "nom": {
-          "type": "string",
-          "description": "Nom du département"
-        }
-      },
-      "required": ["code", "nom"]
-    },
-    "region": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "string",
-          "description": "Code de la région"
-        },
-        "nom": {
-          "type": "string",
-          "description": "Nom de la région",
-          "enum": [
-            null,
-            "Auvergne-Rhône-Alpes",
-            "Bourgogne-Franche-Comté",
-            "Bretagne",
-            "Centre-Val de Loire",
-            "Corse",
-            "Grand Est",
-            "Hauts-de-France",
-            "Normandie",
-            "Nouvelle-Aquitaine",
-            "Occitanie",
-            "Provence-Alpes-Côte d'Azur",
-            "Pays de la Loire",
-            "Île-de-France",
-            "Guadeloupe",
-            "Guyane",
-            "La Réunion",
-            "Martinique",
-            "Mayotte"
-          ]
-        }
-      },
-      "required": ["code", "nom"]
-    }
-  },
-  "required": ["codesPostaux", "nom", "code", "departement", "region"]
+    "required": ["codesPostaux", "nom", "code", "departement", "region"]
+  }
 }
