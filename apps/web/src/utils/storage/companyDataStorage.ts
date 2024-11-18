@@ -1,4 +1,4 @@
-import { CompanyDataStorageKey, CompanyDataType, ConvertedGeoResult, RegisterDetails, CompanyLocalisationType, Region } from '@/types'
+import { CompanyDataStorageKey, CompanyDataType, ConvertedCommune, RegisterDetails, CompanyLocalisationType, Region } from '@/types'
 import { LocalStorageHandler } from '@/utils/storage/localStorageHandler'
 import { StructureSize } from '@tee/common'
 import { ref, Ref } from 'vue'
@@ -41,9 +41,9 @@ export default class CompanyDataStorage {
     return (this.getItem(CompanyDataStorageKey.Size) as StructureSize) || null
   }
 
-  static convertLocalisation(geoInfos: ConvertedGeoResult): CompanyLocalisationType {
+  static convertLocalisation(geoInfos: ConvertedCommune): CompanyLocalisationType {
     return {
-      region: geoInfos.codeRegion as Region,
+      region: geoInfos.region.nom as Region,
       ville: geoInfos.nom,
       codePostal: geoInfos.codePostal
     }

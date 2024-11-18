@@ -39,7 +39,7 @@
       </div>
     </DsfrInputGroup>
     <div
-      v-if="localisationResults.length && !infos.value && !isLoading"
+      v-if="localisationResults.length && !infos.value"
       id="localisation-response"
       class="fr-bg--white fr-mt-n6v"
     >
@@ -78,8 +78,10 @@ const localisationApi = new LocalisationApi()
 const errorMsg = computed<string>(() => {
   if (props.showError && !localisationInput.value && !isLoading.value) {
     return 'La sélection de la ville est nécessaire.'
-  } else if (localisationResults.value.length === 0 && localisationInput.value && !isLoading.value) {
+  } else if (localisationResults.value.length === 0 && localisationInput.value && localisationInput.value.length >= 3 && !isLoading.value) {
     return "Aucune ville n'a été trouvée."
+  } else if (localisationInput.value && localisationInput.value.length < 3) {
+    return '3 caractères minimums.'
   }
   return ''
 })
@@ -92,7 +94,7 @@ const localisationLabel = computed<string>(() => {
   return `${props.infos.value?.codePostal} ${props.infos.value?.ville}`
 })
 const searchLocalisation = async () => {
-  if (localisationInput.value) {
+  if (localisationInput.value && localisationInput.value.length >= 3) {
     isLoading.value = true
     const results = await localisationApi.searchCities(localisationInput.value)
     if (results.isOk) {

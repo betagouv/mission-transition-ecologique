@@ -28,7 +28,7 @@ export default class GeoSearchService {
     }
   }
   public searchByName(searchValue: string): ConvertedCommune[] {
-    return this._citiesByPostalCode.filter((pair: { nom: string }) => pair.nom.toLowerCase().includes(searchValue))
+    return this._citiesByPostalCode.filter((pair: { nom: string }) => pair.nom.toLowerCase().includes(searchValue.toLocaleLowerCase()))
   }
 
   public searchByCityCode(searchValue: string): ConvertedCommune[] {
