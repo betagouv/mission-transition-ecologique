@@ -25,7 +25,7 @@ export interface OpportunityDetailsBase {
   questionnaireRoute?: QuestionnaireRoute
   priorityObjectives?: PublicodeObjective[]
   otherData?: string
-  theme: string
+  theme?: string
 }
 export enum OpportunityType {
   Program = 'program',

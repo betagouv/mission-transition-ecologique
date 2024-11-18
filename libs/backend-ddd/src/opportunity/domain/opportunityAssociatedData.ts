@@ -9,11 +9,11 @@ export class OpportunityAssociatedData {
   ) {}
 
   public isProgram(): this is { data: ProgramType } {
-    return this._opportunityType === OpportunityType.Program && this._isDefined() && !this._hasTitre()
+    return this._opportunityType === OpportunityType.Program
   }
 
   public isProject(): this is { data: Project } {
-    return this._opportunityType === OpportunityType.Project && this._isDefined() && this._hasSlug()
+    return this._opportunityType === OpportunityType.Project
   }
 
   public isCustomProject(): this is { data: CustomProject } {
