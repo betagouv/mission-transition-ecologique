@@ -43,6 +43,7 @@ export default class OpportunityApi extends RequestApi {
   async fetch() {
     let resp: ReqResp = {}
     try {
+      const payload: OpportunityBody = this.payload()
       const response = await fetch(this.url, {
         method: 'POST',
         headers: this._headers,
@@ -53,6 +54,9 @@ export default class OpportunityApi extends RequestApi {
       resp.status = response.status
       resp.statusText = response.statusText
       resp.url = response.url
+      if (payload.opportunity.id) {
+        resp.id = payload.opportunity.id
+      }
     } catch (error: unknown) {
       resp.ok = false
       resp.status = 500
