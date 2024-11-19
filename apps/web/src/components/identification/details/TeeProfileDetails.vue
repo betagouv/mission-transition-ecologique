@@ -94,14 +94,10 @@ const canBeSaved = computed(() => {
 const saveProfile = () => {
   showError.value = false
   if (canBeSaved.value && profile.value.size.value) {
-    const company = props.manual
-      ? ({
-          region: profile.value.localisation.value,
-          secteur: profile.value.activity.value,
-          denomination: `Entreprise : ${profile.value.activity.value} - ${profile.value.localisation.value}`
-        } as CompanyDataType[CompanyDataStorageKey.Company])
-      : props.company
-    CompanyDataStorage.setCompanyData(company)
+    const companyData = props.manual
+      ? CompanyDataStorage.getManualCompanyData(profile.value)
+      : CompanyDataStorage.getSiretBasedCompanyData(props.company, profile.value)
+    CompanyDataStorage.setCompanyData(companyData)
     CompanyDataStorage.setSize(profile.value.size.value)
     Navigation.toggleRegisterModal(false)
   } else {

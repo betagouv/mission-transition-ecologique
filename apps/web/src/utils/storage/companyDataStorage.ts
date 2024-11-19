@@ -75,6 +75,16 @@ export default class CompanyDataStorage {
     this.updateData()
   }
 
+  static getSiretBasedCompanyData(
+    company: CompanyDataType[CompanyDataStorageKey.Company],
+    profileData: RegisterDetails
+  ): CompanyDataType[CompanyDataStorageKey.Company] {
+    return {
+      ...company,
+      ...profileData.localisation.value
+    } as CompanyDataType[CompanyDataStorageKey.Company]
+  }
+
   static getManualCompanyData(profileData: RegisterDetails): CompanyDataType[CompanyDataStorageKey.Company] {
     return {
       ...profileData.localisation.value,

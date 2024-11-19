@@ -5,7 +5,6 @@
   >
     <span class="fr-pr-4v">{{ localisationLabel }}</span>
     <span
-      v-if="manual"
       class="fr-icon-close-line fr-radius-a--2v fr-btn-bg"
       @click="modifyLocalisation"
     />
@@ -112,9 +111,6 @@ const errorMsg = computed<string>(() => {
 const localisationSearchBar = ref(null)
 
 const localisationLabel = computed<string>(() => {
-  if (props.infos.tagLabel) {
-    return props.infos.tagLabel
-  }
   return `${props.infos.value?.codePostal} ${props.infos.value?.ville}`
 })
 const searchLocalisation = async () => {

@@ -274,7 +274,6 @@ const clearCompanyDataStorage = () => {
 }
 
 watchEffect(() => {
-  console.log('Change size')
   size.value = CompanyDataStorage.getData().value[CompanyDataStorageKey.Size]
 })
 

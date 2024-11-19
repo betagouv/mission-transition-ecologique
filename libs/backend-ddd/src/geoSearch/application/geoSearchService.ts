@@ -30,7 +30,7 @@ export default class GeoSearchService {
     return results.sort((a: { nom: string }, b: { nom: string }) => a.nom.localeCompare(b.nom))
   }
   public searchByName(searchValue: string): ConvertedCommune[] {
-    return this._citiesByPostalCode.filter((pair: { nom: string }) => pair.nom.toLowerCase().includes(searchValue.toLocaleLowerCase()))
+    return this._citiesByPostalCode.filter((pair: { nom: string }) => pair.nom.toLowerCase().startsWith(searchValue.toLocaleLowerCase()))
   }
 
   public searchByCityCode(searchValue: string): ConvertedCommune[] {
