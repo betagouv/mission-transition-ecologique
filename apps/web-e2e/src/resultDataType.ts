@@ -1,10 +1,9 @@
-export type ResultDataType = {
+export type BaseResultDataType = {
   id: number,
-  url: string,
-  count?: number,
-  values: string[]
-}
+  url: string
+} 
 
-export type ResultsDataType = ResultDataType[]
+export type SearchResultDataType = BaseResultDataType & { count?: number, values: string[] } 
+export type SearchResultsDataType = SearchResultDataType[]
 
-export type FormResultDataType = Omit<ResultDataType, 'values'> & {type: string, valid: boolean, values:{[key:string]:{value: string|undefined|boolean, type: string} } }
+export type FormResultDataType = BaseResultDataType & {type: string, valid: boolean, values:{[key:string]:{value: string|undefined|boolean, type: string} } }

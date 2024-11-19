@@ -1,9 +1,6 @@
 import { test, expect } from '@playwright/test'
 import { tests } from './formResultsData'
 
-/**
- * Test the number of programs proposed as a result of a list of queries and their order.
- */
 tests.forEach((singleTest) => {
   test(`Test id ${singleTest.id} - Verify form ${singleTest.url}`, async ({ page }) => {
 
@@ -17,17 +14,21 @@ tests.forEach((singleTest) => {
         }
       }
     });
-    console.log(`Navigating to ${singleTest.type} ${singleTest.id} ${singleTest.valid}`)
+    console.log(`Navigating to ${singleTest.type} form for ${singleTest.id} supposed to be ${singleTest.valid}`)
     await page.goto(singleTest.url, { waitUntil: 'load' })
     if (singleTest.type === 'custom-project') {
       await page.click('[teste2e-selector="open-custom-project-form"]')
     }
 
-    for (const [fieldKey, value] of Object.entries(singleTest.values)) {
-      const selector = `[teste2e-selector="${fieldKey}-${value.type}"]`
-      
-      try {
-        await page.waitForSelector(selector, { timeout: 3000 })
+    const firstFieldKey = Object.keys(singleTest.values)[0]
+    const firstValue = singleTest.values[firstFieldKey]
+    const firstSelector = `[teste2e-selector="${firstFieldKey}-${firstValue.type}"]`
+
+    try {
+
+      await page.waitForSelector(firstSelector, { timeout: 3000 });
+      for (const [fieldKey, value] of Object.entries(singleTest.values)) {
+        const selector = `[teste2e-selector="${fieldKey}-${value.type}"]`
         if (['text', 'email', 'tel'].includes(value.type)) {
           await page.locator(selector).fill(value.value as string)
         } else if (value.type === 'select') {
@@ -35,10 +36,9 @@ tests.forEach((singleTest) => {
         } else if (value.type === 'checkbox' && value.value) {
           await page.locator(selector).click()
         }
-      } catch {
-        console.warn(`Sélecteur ${selector} non trouvé pour le test id ${singleTest.id}.`)
-        continue
       }
+    } catch {
+      console.warn(`Selector ${firstSelector} not found for test id ${singleTest.id}.`)
     }
 
     const submitButton = page.locator('[teste2e-selector="send-contact-form"]');
