@@ -1,9 +1,9 @@
 <template>
   <p
     v-if="infos.value"
-    class="fr-tag fr-bg--blue-france--lightness"
+    class="fr-tag fr-mb-4v fr-bg--blue-france--lightness"
   >
-    {{ localisationLabel }}
+    <span class="fr-pr-4v">{{ localisationLabel }}</span>
     <span
       v-if="manual"
       class="fr-icon-close-line fr-radius-a--2v fr-btn-bg"
@@ -30,7 +30,7 @@
           class="fr-input--white"
           type="search"
           :placeholder="infos.description"
-          @update:model-value="searchLocalisation"
+          @update:model-value="updateModelValue"
           @keyup.enter="searchLocalisation"
         />
         <DsfrButton
@@ -72,6 +72,7 @@ import { RegisterDetailLocalisation, ConvertedCommune, CompanyLocalisationType }
 import LocalisationApi from '@/service/api/localisationApi'
 import { onClickOutside } from '@vueuse/core'
 import CompanyDataStorage from '@/utils/storage/companyDataStorage'
+import { useDebounce } from '@vueuse/core'
 
 interface Props {
   infos: RegisterDetailLocalisation
@@ -81,15 +82,29 @@ interface Props {
 const props = defineProps<Props>()
 const selectedLocalisation = defineModel<CompanyLocalisationType>()
 const localisationInput = ref<string>('')
+const debouncedLocalisationInput = useDebounce(localisationInput, 1000)
+watch(debouncedLocalisationInput, (newValue) => {
+  if (newValue) {
+    searchLocalisation()
+  }
+})
+const updateModelValue = (value: string) => {
+  localisationInput.value = value
+}
 const localisationResults = ref<ConvertedCommune[]>([])
 const isLoading = ref<boolean>(false)
 const localisationApi = new LocalisationApi()
 const errorMsg = computed<string>(() => {
-  if (props.showError && !localisationInput.value && !isLoading.value) {
+  if (props.showError && !debouncedLocalisationInput.value && !isLoading.value) {
     return 'La sélection de la ville est nécessaire.'
-  } else if (localisationResults.value.length === 0 && localisationInput.value && localisationInput.value.length >= 3 && !isLoading.value) {
+  } else if (
+    localisationResults.value.length === 0 &&
+    debouncedLocalisationInput.value &&
+    debouncedLocalisationInput.value.length >= 3 &&
+    !isLoading.value
+  ) {
     return "Aucune ville n'a été trouvée."
-  } else if (localisationInput.value && localisationInput.value.length < 3) {
+  } else if (debouncedLocalisationInput.value && debouncedLocalisationInput.value.length < 3) {
     return '3 caractères minimums.'
   }
   return ''

@@ -1,7 +1,7 @@
 <template>
   <p
     v-if="infos.value"
-    class="fr-tag fr-bg--blue-france--lightness"
+    class="fr-tag fr-mb-4v fr-bg--blue-france--lightness"
   >
     <span class="fr-pr-4v">{{ infos.tagLabel || activityText }}</span>
     <span
