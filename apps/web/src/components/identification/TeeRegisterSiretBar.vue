@@ -20,7 +20,7 @@
       />
       <DsfrButton
         v-if="model"
-        class="search-clear"
+        class="search-clear fr-radius-a--0 fr-bg--white"
         icon="fr-icon-close-line"
         icon-only
         no-outline
