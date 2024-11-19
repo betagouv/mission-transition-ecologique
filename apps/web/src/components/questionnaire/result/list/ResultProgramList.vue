@@ -17,6 +17,11 @@
               message="Aucune aide n'a pu être identifiée sur cette thématique..."
               :count-items="countPrograms"
             />
+            <TeeNoResult
+              v-if="!hasRegisteredData"
+              :message="Translation.t('results.alertNoDataNoResults')"
+              :cta-label="Translation.t('results.noResultCTA')"
+            />
             <ProgramList
               v-else
               :filtered-programs="filteredPrograms"
@@ -32,11 +37,15 @@
 import { type ProgramData } from '@/types'
 import { computed } from 'vue'
 import ProgramFiltersAccordion from '@/components/program/list/filters/ProgramFiltersAccordion.vue'
+import Translation from '@/utils/translation'
+import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
 interface ProgramListProps {
   filteredPrograms?: ProgramData[]
   hasError: boolean
 }
+
+const hasRegisteredData = CompanyDataStorage.hasData()
 
 const props = defineProps<ProgramListProps>()
 
