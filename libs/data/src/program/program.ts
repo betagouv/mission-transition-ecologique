@@ -1,4 +1,4 @@
-import { ProgramAidType, ProgramEligibilityType } from './types/shared'
+import { isYearsEligibleForAll, ProgramAidType, ProgramEligibilityType } from './types/shared'
 
 export class Program {
   public static getPrefixedProgramName(program: ProgramType) {
@@ -18,6 +18,10 @@ export class Program {
     }
 
     return `${prefix}${program["nature de l'aide"]} ${program.titre}`
+  }
+
+  public static isPartiallyEligible(program: ProgramType) {
+    return program["conditions d'éligibilité"]["autres critères d'éligibilité"] || !isYearsEligibleForAll(program)
   }
 }
 

@@ -1,3 +1,5 @@
+import { ProgramType } from '../program'
+
 export enum ProgramAidType {
   study = 'étude',
   train = 'formation',
@@ -15,6 +17,6 @@ export enum ProgramEligibilityType {
 }
 export const ELIGIBLE_FOR_ALL = 'Éligible à toutes les entreprises'
 
-export const isSizeEligibleForAll = (field: [string, ...string[]]) => {
-  return ELIGIBLE_FOR_ALL in field
+export const isYearsEligibleForAll = (program: ProgramType) => {
+  return ELIGIBLE_FOR_ALL in program["conditions d'éligibilité"]["nombre d'années d'activité"]
 }

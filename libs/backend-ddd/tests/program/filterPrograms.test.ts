@@ -1,6 +1,6 @@
 import { type Rules, makeProgramHelper, mockCurrentDateService, makeProgramsRepository } from './testing'
 import { FILTERING_RULE_NAME } from '../../src/program/domain/filterPrograms'
-import { ProgramEligibilityType, ProgramTypeWithEligibility, type ProgramType, isSizeEligibleForAll } from '@tee/data'
+import { ProgramEligibilityType, ProgramTypeWithEligibility, type ProgramType, isYearsEligibleForAll } from '@tee/data'
 import { expectToBeOk } from '../testing'
 import ProgramFeatures from '../../src/program/domain/programFeatures'
 import { type Result } from 'true-myth'
@@ -28,10 +28,7 @@ const addEligibility = (programs: ProgramType[]): ProgramTypeWithEligibility[] =
 }
 
 const _isPartiallyEligible = (program: ProgramType) => {
-  return (
-    program["conditions d'éligibilité"]["autres critères d'éligibilité"] ||
-    !isSizeEligibleForAll(program["conditions d'éligibilité"]["nombre d'années d'activité"])
-  )
+  return program["conditions d'éligibilité"]["autres critères d'éligibilité"] || !isYearsEligibleForAll(program)
 }
 
 const rulesBoilerplate = {

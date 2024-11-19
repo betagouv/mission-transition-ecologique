@@ -1,6 +1,6 @@
 import { Result } from 'true-myth'
 import { RulesManager } from './spi'
-import { isSizeEligibleForAll, ProgramEligibilityType, ProgramType, ProgramTypeWithEligibility } from '@tee/data'
+import { Program, ProgramEligibilityType, ProgramType, ProgramTypeWithEligibility } from '@tee/data'
 import { QuestionnaireData } from '@tee/common'
 
 /** Expected rule to evaluate if a program should be displayed to the user or
@@ -103,17 +103,10 @@ const setEligibility = (
   // TODO, analyse the undefined returns from publicodes
   // there are a dozen of programs that return 'undefined' values.
   if (isEligible) {
-    eligibility = _isPartiallyEligible(program) ? ProgramEligibilityType.PartiallyEligible : ProgramEligibilityType.Eligible
+    eligibility = Program.isPartiallyEligible(program) ? ProgramEligibilityType.PartiallyEligible : ProgramEligibilityType.Eligible
   } else {
     eligibility = ProgramEligibilityType.NotEligible
   }
 
   return { ...program, eligibility }
-}
-
-const _isPartiallyEligible = (program: ProgramType) => {
-  return (
-    program["conditions d'éligibilité"]["autres critères d'éligibilité"] ||
-    !isSizeEligibleForAll(program["conditions d'éligibilité"]["nombre d'années d'activité"])
-  )
 }
