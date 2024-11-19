@@ -1,7 +1,7 @@
 <template id="select-company-size">
   <p
     v-if="infos.value"
-    class="fr-tag fr-bg--blue-france--lightness"
+    class="fr-tag fr-mb-4v fr-bg--blue-france--lightness"
   >
     <span class="fr-pr-4v">{{ sizeText }}</span>
     <span
@@ -16,6 +16,7 @@
     :options="sizeOptions"
   />
   <div
+    v-if="!infos.value"
     :class="errorMessage ? 'fr-error-text' : ''"
     class="fr-input--empty-text fr-mt-2v"
   >
