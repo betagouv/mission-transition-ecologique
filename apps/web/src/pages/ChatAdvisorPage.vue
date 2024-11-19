@@ -15,7 +15,7 @@
 <script setup lang="ts">
 import Contact from '@/utils/contact'
 import type { Directive, DirectiveBinding } from 'vue'
-import { IFrameOptions, iframeResizer } from 'iframe-resizer'
+import { IFrameOptions } from 'iframe-resizer'
 // To make it global see https://github.com/davidjbradshaw/iframe-resizer/blob/master/docs/use_with/vue.md#vue3-with-typescript
 
 interface ResizableHTMLElement extends HTMLElement {
@@ -25,9 +25,9 @@ interface ResizableHTMLElement extends HTMLElement {
 }
 
 const vResize: Directive = {
-  mounted(el: HTMLElement, binding: DirectiveBinding) {
-    const options: IFrameOptions = (binding.value as IFrameOptions) || ({} as IFrameOptions)
-
+  async mounted(el: HTMLElement, binding: DirectiveBinding) {
+    const options: IFrameOptions = (binding.value as IFrameOptions) || ({ log: false } as IFrameOptions)
+    const { iframeResizer } = await import('iframe-resizer')
     el.addEventListener('load', () => iframeResizer(options, el))
   },
   unmounted(el: HTMLElement) {
