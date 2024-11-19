@@ -25,7 +25,6 @@ export class CompanyDataStorageHandler {
 
   static populateQuestionnaireData(questionnaireData: { [k: string]: any }) {
     if (CompanyDataStorage.hasData().value) {
-      // TODO : should not add size if EI
       const companyData: CompanyDataType = CompanyDataStorage.getData().value
       Object.entries(companyData).forEach(([key, value]) => {
         if (value !== null) {
@@ -75,7 +74,7 @@ export class CompanyDataStorageHandler {
   static setDataFromTrack(trackId: TrackId, value: string | string[], selectedOptions: TrackOptionsUnion[]) {
     if (trackId === TrackId.Siret && value !== SiretValue.Wildcard && selectedOptions.length > 0) {
       const questionnaireData = selectedOptions[0].questionnaireData as EstablishmentFront
-      CompanyDataStorage.setCompany(questionnaireData)
+      CompanyDataStorage.setCompanyData(questionnaireData)
       if (questionnaireData.legalCategory === LegalCategory.EI) {
         CompanyDataStorage.setSize(StructureSize.EI)
       }
