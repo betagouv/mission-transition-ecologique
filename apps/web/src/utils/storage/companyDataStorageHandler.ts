@@ -14,8 +14,8 @@ import { CompanyDataType } from '@/types/companyDataType'
 
 export class CompanyDataStorageHandler {
   static populateCompletedQuestionnaire(data: FlatArray<((QuestionnaireData | undefined)[] | undefined)[], 1>[]) {
-    if (this.canUseCompanyData(data, CompanyDataStorageKey.Siret)) {
-      data.push(CompanyDataStorage.getSiret() as QuestionnaireData)
+    if (this.canUseCompanyData(data, CompanyDataStorageKey.Company as keyof QuestionnaireData)) {
+      data.push(CompanyDataStorage.getCompanyData() as QuestionnaireData)
     }
 
     if (this.canUseCompanyData(data, CompanyDataStorageKey.Size)) {
@@ -25,7 +25,6 @@ export class CompanyDataStorageHandler {
 
   static populateQuestionnaireData(questionnaireData: { [k: string]: any }) {
     if (CompanyDataStorage.hasData().value) {
-      // TODO : should not add size if EI
       const companyData: CompanyDataType = CompanyDataStorage.getData().value
       Object.entries(companyData).forEach(([key, value]) => {
         if (value !== null) {
@@ -44,10 +43,10 @@ export class CompanyDataStorageHandler {
   }
 
   static updateSearchParamFromStorage() {
-    if (CompanyDataStorage.hasSiret()) {
+    if (CompanyDataStorage.hasCompanyData()) {
       useNavigationStore().updateSearchParam({
         name: TrackId.Siret,
-        value: CompanyDataStorage.getSiret()?.siret
+        value: (CompanyDataStorage.getCompanyData() as EstablishmentFront)?.siret
       })
     }
 
@@ -59,12 +58,12 @@ export class CompanyDataStorageHandler {
     }
   }
 
-  static canUseCompanyData(data: (QuestionnaireData | undefined)[], key: CompanyDataStorageKey): boolean {
-    if (CompanyDataStorage.hasItem(key)) {
-      const storageItem = CompanyDataStorage.getItem(key)
+  static canUseCompanyData(data: (QuestionnaireData | undefined)[], key: keyof QuestionnaireData): boolean {
+    if (CompanyDataStorage.hasItem(key as CompanyDataStorageKey)) {
+      const storageItem = CompanyDataStorage.getItem(key as CompanyDataStorageKey)
 
       return (
-        CompanyDataStorage.hasItem(key) &&
+        CompanyDataStorage.hasItem(key as CompanyDataStorageKey) &&
         !data.some((item) => item?.[key] === (typeof storageItem === 'string' ? storageItem : (storageItem as QuestionnaireData)?.[key]))
       )
     }
@@ -75,7 +74,7 @@ export class CompanyDataStorageHandler {
   static setDataFromTrack(trackId: TrackId, value: string | string[], selectedOptions: TrackOptionsUnion[]) {
     if (trackId === TrackId.Siret && value !== SiretValue.Wildcard && selectedOptions.length > 0) {
       const questionnaireData = selectedOptions[0].questionnaireData as EstablishmentFront
-      CompanyDataStorage.setSiret(questionnaireData)
+      CompanyDataStorage.setCompanyData(questionnaireData)
       if (questionnaireData.legalCategory === LegalCategory.EI) {
         CompanyDataStorage.setSize(StructureSize.EI)
       }

@@ -23,7 +23,7 @@ export default class CompanyDataStorage {
     return this._hasData
   }
 
-  public static hasCompany() {
+  public static hasCompanyData() {
     return this._data.value[CompanyDataStorageKey.Company] !== null
   }
 
@@ -35,7 +35,7 @@ export default class CompanyDataStorage {
     return this._storageHandler.getItem(key) !== null
   }
 
-  public static setCompany(value: CompanyDataType[CompanyDataStorageKey.Company]) {
+  public static setCompanyData(value: CompanyDataType[CompanyDataStorageKey.Company]) {
     this.setItem(CompanyDataStorageKey.Company, value)
   }
 

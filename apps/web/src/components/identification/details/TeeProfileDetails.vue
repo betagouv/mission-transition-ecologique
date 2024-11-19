@@ -96,7 +96,7 @@ const saveProfile = () => {
           denomination: `Entreprise : ${profile.value.activity.value} - ${profile.value.localisation.value}`
         } as CompanyDataType[CompanyDataStorageKey.Company])
       : props.company
-    CompanyDataStorage.setCompany(company)
+    CompanyDataStorage.setCompanyData(company)
     CompanyDataStorage.setSize(profile.value.size.value)
     Navigation.toggleRegisterModal(false)
   } else {
