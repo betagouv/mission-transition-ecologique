@@ -34,7 +34,7 @@
         </div>
       </div>
       <TeeRegisterHighlight
-        v-if="!CompanyDataStorage.hasData()"
+        v-if="!hasRegisteredData"
         class="fr-mx-3v"
         :text="Translation.t('project.projectRegisterHighlightText')"
       />
@@ -80,6 +80,9 @@ const TeeProjectFormContainer = ref<HTMLElement | null | undefined>(null)
 const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)
 
+const hasRegisteredData = CompanyDataStorage.hasData()
+const registeredData = CompanyDataStorage.getData()
+
 const countFilteredPrograms = computed(() => {
   return filteredPrograms.value.length || 0
 })
@@ -100,7 +103,7 @@ const financePrograms = computed(() => {
   )
 })
 
-onBeforeMount(async () => {
+const getPrograms = async () => {
   navigationStore.hasSpinner = true
   const result = await programStore.programsByUsedTracks
   if (result.isOk) {
@@ -109,5 +112,15 @@ onBeforeMount(async () => {
     hasError.value = true
   }
   navigationStore.hasSpinner = false
-})
+}
+
+watch(
+  registeredData.value,
+  async () => {
+    await getPrograms()
+  },
+  {
+    immediate: true
+  }
+)
 </script>

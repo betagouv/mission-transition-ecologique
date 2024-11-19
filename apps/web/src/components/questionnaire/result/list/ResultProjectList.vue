@@ -2,7 +2,7 @@
   <!-- PROGRAMS AS LIST OF CARDS -->
   <div class="fr-container--fluid fr-container--fluid--no-overflow">
     <div
-      v-if="isSpecificGoal"
+      v-if="isSpecificGoal && hasRegisteredData"
       class="fr-grid-row fr-grid-row--center"
     >
       <div class="fr-container fr-mb-2v">
@@ -25,13 +25,26 @@
         </div>
       </div>
     </div>
+    <div
+      v-if="!hasRegisteredData"
+      class="fr-grid-row fr-grid-row--center"
+    >
+      <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
+        <div class="fr-col-12 fr-col-offset-md-2 fr-col-md-10 fr-pl-md-2v fr-pr-md-6v">
+          <TeeNoResult
+            :message="Translation.t('results.alertNoDataNoResults')"
+            :cta-label="Translation.t('results.noResultCTA')"
+          />
+        </div>
+      </div>
+    </div>
     <ProjectList
       v-else
       :sorted-projects="sortedProjects"
     />
 
     <div
-      v-if="!navigationStore.hasSpinner"
+      v-if="!showNoResults && hasRegisteredData"
       class="fr-grid-row fr-grid-row--center"
     >
       <div class="fr-container">
@@ -57,9 +70,10 @@ import { computed } from 'vue'
 import UsedTrack from '@/utils/track/usedTrack'
 import { useProgramStore } from '@/stores/program'
 import { Project as UtilsProject } from '@/utils/project/project'
-import { useNavigationStore } from '@/stores/navigation'
 import OtherProjectCta from '@/components/project/list/OtherProjectCta.vue'
 import OtherProjectForm from '@/components/project/list/OtherProjectForm.vue'
+import Translation from '@/utils/translation'
+import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
 interface ProjectListProps {
   filteredProjects?: Project[]
@@ -67,7 +81,8 @@ interface ProjectListProps {
 }
 const props = defineProps<ProjectListProps>()
 const otherProjectForm = ref<boolean>(false)
-const navigationStore = useNavigationStore()
+
+const hasRegisteredData = CompanyDataStorage.hasData()
 
 watch(
   () => props.filteredProjects,

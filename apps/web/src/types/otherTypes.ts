@@ -50,6 +50,7 @@ export interface ReqResp extends ReqError {
   code?: string
   message?: string
   data?: any
+  id?: string
   resultsMapping?: ResultsMapping[]
   url?: string
 }
@@ -64,6 +65,7 @@ export interface EmailData {
 export enum DataMappingFrom {
   Env = 'Env',
   FormData = 'FormData',
+  CompanyData = 'CompanyData',
   UsedTracks = 'UsedTracks',
   AllUsedTracks = 'AllUsedTracks',
   SelectionValues = 'SelectionValues',

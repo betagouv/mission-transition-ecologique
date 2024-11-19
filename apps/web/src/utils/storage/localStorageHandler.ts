@@ -1,4 +1,4 @@
-import { StorageHandlerInterface } from '@/utils/storage/StorageHandlerInterface'
+import { StorageHandlerInterface } from '@/utils/storage/storageHandlerInterface'
 import { StorageDataType } from '@/types/storageType'
 
 export class LocalStorageHandler implements StorageHandlerInterface {
@@ -29,13 +29,13 @@ export class LocalStorageHandler implements StorageHandlerInterface {
 
   getAll(): StorageDataType | null {
     try {
-      return this.__parseLocalStorage()
+      return this._parseLocalStorage()
     } catch (e) {
       return null
     }
   }
 
-  __parseLocalStorage(): StorageDataType | null {
+  _parseLocalStorage(): StorageDataType | null {
     return Object.fromEntries(Object.entries(localStorage).map(([key, value]) => [key, JSON.parse(value)])) as {
       [k: string]: string
     }
