@@ -52,7 +52,7 @@ export default class CompanyDataStorage {
     return this._storageHandler.getItem(key)
   }
 
-  static getCompanyData(): CompanyDataType[CompanyDataStorageKey.Company] | null {
+  public static getCompanyData(): CompanyDataType[CompanyDataStorageKey.Company] | null {
     return (this.getItem(CompanyDataStorageKey.Company) as CompanyDataType[CompanyDataStorageKey.Company]) || null
   }
 
