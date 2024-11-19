@@ -11,7 +11,7 @@ const programFrDict = {
     CTAButton: 'Contactez un conseiller',
     programType: "Nature de l'aide",
     programEndValidity: "Date de fin de l'aide",
-    programRegisterHighlightText: "Vous souhaitez vérifier automatiquement l'éligibilité de votre entreprise à l'aide de votre siret?",
+    programRegisterHighlightText: "Vous souhaitez vérifier automatiquement l'éligibilité de votre entreprise à l'aide de votre SIRET ?",
     programAvailable: 'Aide disponible',
     programNotAvailable: "Cette aide n'est plus disponible",
     programAvailableUntil: "Disponible jusqu'au {date}",
