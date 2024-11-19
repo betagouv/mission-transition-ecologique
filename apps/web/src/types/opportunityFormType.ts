@@ -18,7 +18,7 @@ export interface ProjectFormDataType extends BaseFormDataType {
 }
 
 export type DefaultFieldFormType = {
-  required: true
+  required: boolean
   type: FieldType
   isValid: boolean | undefined
   hidden?: boolean

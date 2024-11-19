@@ -1,5 +1,6 @@
 import programFrDict from '@/translations/fr/program'
 import projectFrDict from '@/translations/fr/project'
+import registerFrDict from '@/translations/fr/register'
 
 export const frDict = {
   next: 'Suivant',
@@ -7,7 +8,7 @@ export const frDict = {
   close: 'Fermer',
   send: 'Envoyer',
   modify: 'modifier',
-  or: 'Ou',
+  or: 'ou',
   footer: {
     thisApplicationAndIts: 'Cette application et son',
     sourceCode: 'code source',
@@ -126,5 +127,6 @@ export const frDict = {
     }
   },
   ...programFrDict,
-  ...projectFrDict
+  ...projectFrDict,
+  ...registerFrDict
 }

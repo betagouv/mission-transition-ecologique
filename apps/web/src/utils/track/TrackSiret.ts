@@ -4,8 +4,8 @@ import { EstablishmentFront, SiretValue } from '@/types'
 import { SiretValidator } from '@tee/common'
 
 export default class TrackSiret {
-  static async search(query: string) {
-    return await new EstablishmentApi().getByQuery(query)
+  static async search(query: string, resultCount?: number) {
+    return await new EstablishmentApi().getByQuery(query, resultCount)
   }
 
   static createData(

@@ -1,18 +1,18 @@
-import { CompanyDataStorageKey, CompanyDataType } from '@/types/companyDataType'
+import { CompanyDataStorageKey, CompanyDataType } from '@/types'
 import { LocalStorageHandler } from '@/utils/storage/localStorageHandler'
-import { EstablishmentFront, StructureSize } from '@tee/common'
+import { StructureSize } from '@tee/common'
 import { ref, Ref } from 'vue'
 
 export default class CompanyDataStorage {
   private static readonly _storageHandler = new LocalStorageHandler()
 
   private static readonly _data: Ref<CompanyDataType> = ref({
-    [CompanyDataStorageKey.Siret]: this.getSiret(),
+    [CompanyDataStorageKey.Company]: this.getCompanyData(),
     [CompanyDataStorageKey.Size]: this.getSize()
   })
 
   private static readonly _hasData: ComputedRef<boolean> = computed(() => {
-    return this._data.value[CompanyDataStorageKey.Siret] !== null || this._data.value[CompanyDataStorageKey.Size] !== null
+    return this._data.value[CompanyDataStorageKey.Company] !== null || this._data.value[CompanyDataStorageKey.Size] !== null
   })
 
   public static getData(): Ref<CompanyDataType> {
@@ -23,8 +23,8 @@ export default class CompanyDataStorage {
     return this._hasData
   }
 
-  public static hasSiret() {
-    return this._data.value[CompanyDataStorageKey.Siret] !== null
+  public static hasCompany() {
+    return this._data.value[CompanyDataStorageKey.Company] !== null
   }
 
   public static hasSize() {
@@ -35,25 +35,25 @@ export default class CompanyDataStorage {
     return this._storageHandler.getItem(key) !== null
   }
 
-  public static setSiret(value: EstablishmentFront) {
-    this.setItem(CompanyDataStorageKey.Siret, value)
+  public static setCompany(value: CompanyDataType[CompanyDataStorageKey.Company]) {
+    this.setItem(CompanyDataStorageKey.Company, value)
   }
 
   public static setSize(value: StructureSize) {
     this.setItem(CompanyDataStorageKey.Size, value)
   }
 
-  public static setItem(key: CompanyDataStorageKey, value: string | EstablishmentFront | StructureSize): void {
+  public static setItem(key: CompanyDataStorageKey, value: CompanyDataType[CompanyDataStorageKey.Company] | StructureSize): void {
     this._storageHandler.setItem(key, value)
-    this._updateData()
+    this.updateData()
   }
 
   public static getItem(key: CompanyDataStorageKey): unknown {
     return this._storageHandler.getItem(key)
   }
 
-  public static getSiret(): EstablishmentFront | null {
-    return (this.getItem(CompanyDataStorageKey.Siret) as EstablishmentFront) || null
+  static getCompanyData(): CompanyDataType[CompanyDataStorageKey.Company] | null {
+    return (this.getItem(CompanyDataStorageKey.Company) as CompanyDataType[CompanyDataStorageKey.Company]) || null
   }
 
   public static getSize(): StructureSize | null {
@@ -64,16 +64,16 @@ export default class CompanyDataStorage {
     Object.values(CompanyDataStorageKey).forEach((key) => {
       this._storageHandler.removeItem(key)
     })
-    this._updateData()
+    this.updateData()
   }
 
   public static removeItem(key: CompanyDataStorageKey): void {
     this._storageHandler.removeItem(key)
-    this._updateData()
+    this.updateData()
   }
 
-  private static _updateData(): void {
-    this._data.value[CompanyDataStorageKey.Siret] = this.getSiret()
+  static updateData(): void {
+    this._data.value[CompanyDataStorageKey.Company] = this.getCompanyData()
     this._data.value[CompanyDataStorageKey.Size] = this.getSize()
   }
 }
