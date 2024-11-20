@@ -21,8 +21,10 @@ navigationStore.setRoute(route)
 
 <template>
   <div>
-    <TeeDsfrConsent />
-    <TeeDsfrPersonalizeConsent />
+    <ClientOnly>
+      <TeeDsfrConsent />
+      <TeeDsfrPersonalizeConsent />
+    </ClientOnly>
     <TeeHeader />
     <!--      <TeeMatomo />-->
     <NuxtPage />
