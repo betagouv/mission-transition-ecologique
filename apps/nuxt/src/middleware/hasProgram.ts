@@ -1,4 +1,3 @@
-import ProgramApi from '@/tools/api/programApi'
 import { RouteName } from '@/types'
 
 export default defineNuxtRouteMiddleware(async (to) => {
@@ -7,7 +6,7 @@ export default defineNuxtRouteMiddleware(async (to) => {
     return navigateTo(redirectTo)
   }
 
-  const programResult = await new ProgramApi().getOne(to.params.programId as string)
+  const programResult = await useProgramStore().getProgramById(to.params.programId as string)
 
   if (!programResult.isOk) {
     return navigateTo(redirectTo)

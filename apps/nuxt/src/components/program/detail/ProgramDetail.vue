@@ -240,7 +240,6 @@ import ProgramEligibility from '@/components/program/detail/ProgramEligibility.v
 import ProgramLongDescription from '@/components/program/detail/ProgramLongDescription.vue'
 import ProgramTile from '@/components/program/detail/ProgramTile.vue'
 import { useProgramStore } from '@/stores/program'
-import ProgramApi from '@/tools/api/programApi'
 import { OpportunityType, type ProgramData as ProgramType, Project as ProjectType } from '@/types'
 import { RouteName } from '@/types/routeType'
 import { useNavigationStore } from '@/stores/navigation'
@@ -266,9 +265,9 @@ interface Props {
 }
 const props = defineProps<Props>()
 
-const programResult = await new ProgramApi().getOne(props.programId)
-if (programResult.isOk()) {
-  programsStore.currentProgram = programResult.data
+const programResult = await useProgramStore().getProgramById(props.programId)
+if (programResult.isOk) {
+  programsStore.currentProgram = programResult.value
   program.value = programResult.value
   if (program.value && navigationStore.isByRouteName(RouteName.CatalogProgramFromCatalogProjectDetail)) {
     useHead({
