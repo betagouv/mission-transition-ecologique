@@ -58,14 +58,14 @@ export default class Cookie {
   static saveCookies(newCookies: Cookies) {
     if (Cookie.cookies.value) {
       Object.values(newCookies).forEach((cookie: CookieManager) => {
-        document.cookie = `${cookie.value}=${cookie.accepted}`
+        document.cookie = `${cookie.value}=${cookie.accepted}; path=/`
         if (cookie.accepted) {
           Cookie.activateCookie(cookie.value)
         } else {
           Cookie.deactivateCookie(cookie.value)
         }
       })
-      document.cookie = 'tee-accept-cookies=true'
+      document.cookie = 'tee-accept-cookies=true; path=/'
       window.location.reload()
     }
   }
