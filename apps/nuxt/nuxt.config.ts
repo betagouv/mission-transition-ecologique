@@ -1,5 +1,6 @@
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import { defineNuxtConfig } from 'nuxt/config'
+import { NuxtScriptsConfig } from './nuxt.scripts.config'
 import { NuxtSecurityConfig } from './nuxt.security.config'
 import { NuxtSentryConfig } from './nuxt.sentry.config'
 import { ChangeFreq, Priority } from './src/types/sitemapType'
@@ -10,7 +11,7 @@ export default defineNuxtConfig({
   workspaceDir: '../../',
   srcDir: 'src',
   telemetry: false,
-  sourcemap: { client: true },
+  sourcemap: { client: true, server: true },
   devtools: {
     enabled: true,
     timeline: {
@@ -24,9 +25,7 @@ export default defineNuxtConfig({
   },
   typescript: {
     typeCheck: true,
-    tsConfig: {
-      extends: '../tsconfig.app.json', // Nuxt copies this string as-is to the `./.nuxt/tsconfig.json`, therefore it needs to be relative to that directory
-    }
+    strict: true,
   },
   imports: {
     autoImport: true
@@ -62,7 +61,7 @@ export default defineNuxtConfig({
     // sharedPrerenderData: true, // interssant pour eviter de refaire plusieurs fois la meme requete (https://nuxt.com/docs/api/nuxt-config#sharedprerenderdata)
   },
 
-  modules: ['@pinia/nuxt', 'vue-dsfr-nuxt-module', '@sentry/nuxt/module', 'nuxt-security', '@nuxtjs/sitemap', '@nuxtjs/robots'],
+  modules: ['@pinia/nuxt', 'vue-dsfr-nuxt-module', '@sentry/nuxt/module', 'nuxt-security', '@nuxtjs/sitemap', '@nuxtjs/robots', '@nuxt/scripts'],
   // Modules who need to have a look:
   // - nuxt-purgecss
   // - @nuxtjs/critters
@@ -90,5 +89,23 @@ export default defineNuxtConfig({
       '/ajouter-une-aide-entreprises',
     ],
     credits: false
+  },
+  $production: {
+    scripts: {
+      registry: NuxtScriptsConfig.getRegistry(),
+    },
+    runtimeConfig: {
+      public: {
+        scripts: {
+          matomoAnalytics: {
+            matomoUrl: '',
+            siteId: '',
+            trackPageView: true,
+            enableLinkTracking: true,
+            disableCookies: true
+          }
+        }
+      }
+    }
   }
 })
