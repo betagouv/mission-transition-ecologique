@@ -6,7 +6,7 @@ export default defineNuxtPlugin(() => {
   const router = useRouter()
   router.afterEach((to, from, failure) => {
     if (!failure) {
-      nextTick(() => {
+      return nextTick(() => {
         Posthog.capturePageView(to)
         Posthog.capturePageLeave(from)
       })

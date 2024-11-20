@@ -36,7 +36,6 @@ import { Project, Color, ThemeId } from '@/types'
 import { MetaSeo } from '@/tools/metaSeo'
 import { Theme } from '@/tools/theme'
 import { useProjectStore } from '@/stores/project'
-import { onBeforeMount } from 'vue'
 
 const projectStore = useProjectStore()
 
@@ -54,10 +53,6 @@ if (projectResult.isOk) {
   project.value = projectResult.value
 
   useSeoMeta(MetaSeo.get(project.value?.title, project.value?.shortDescription, project.value?.image))
-}
-
-onBeforeMount(async () => {
-  project.value = projectStore.currentProject
 
   const selectedThemeId = Theme.getThemeFromSelectedOrPriorityTheme()
 
@@ -66,9 +61,7 @@ onBeforeMount(async () => {
 
     themeColor.value = Theme.getColorById(themeId as ThemeId)
   }
-
-  useSeoMeta(MetaSeo.get(project.value?.title, project.value?.shortDescription, project.value?.image))
-})
+}
 
 onBeforeRouteLeave(() => {
   useSeoMeta(MetaSeo.default())
