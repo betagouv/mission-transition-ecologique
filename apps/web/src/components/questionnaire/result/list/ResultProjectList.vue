@@ -2,7 +2,7 @@
   <!-- PROGRAMS AS LIST OF CARDS -->
   <div class="fr-container--fluid fr-container--fluid--no-overflow">
     <div
-      v-if="isSpecificGoal"
+      v-if="isSpecificGoal && !showNoResults"
       class="fr-grid-row fr-grid-row--center"
     >
       <div class="fr-container fr-mb-2v">

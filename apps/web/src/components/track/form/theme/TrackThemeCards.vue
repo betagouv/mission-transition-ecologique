@@ -5,6 +5,9 @@
   >
     <TeeSpinner />
   </div>
+  <div v-else-if="hasError">
+    <TeeListNoResults :has-error="hasError" />
+  </div>
   <div
     v-for="opt in options"
     v-else
