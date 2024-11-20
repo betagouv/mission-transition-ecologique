@@ -1,4 +1,4 @@
-import Hook from '@/app-backup/router/hook'
+import Hook from '@/middleware/hook/hook'
 
 export default defineNuxtRouteMiddleware(async (to, from) => {
   if (Hook.hasQuery(to) && !Hook.hasNameRoute(from)) {

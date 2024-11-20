@@ -58,7 +58,6 @@ if (projectResult.isOk) {
 
   if (project.value) {
     const themeId = selectedThemeId.value ? project.value?.themes.find((t) => t === selectedThemeId.value) : project.value?.mainTheme
-
     themeColor.value = Theme.getColorById(themeId as ThemeId)
   }
 }

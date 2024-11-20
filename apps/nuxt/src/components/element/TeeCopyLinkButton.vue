@@ -28,11 +28,13 @@ withDefaults(defineProps<Props>(), {
 const linkCopied = ref<boolean>(false)
 
 const copyUrl = async () => {
-  const pageUrl = window.location.href
-  await navigator.clipboard.writeText(pageUrl)
-  linkCopied.value = true
-  setTimeout(() => {
-    linkCopied.value = false
-  }, 2000)
+  if (import.meta.client) {
+    const pageUrl = window.location.href
+    await navigator.clipboard.writeText(pageUrl)
+    linkCopied.value = true
+    setTimeout(() => {
+      linkCopied.value = false
+    }, 2000)
+  }
 }
 </script>

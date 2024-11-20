@@ -49,12 +49,15 @@ interface Props {
   projectSlug: string | undefined
 }
 const props = defineProps<Props>()
-const project = ref<Project>()
-const projectStore = useProjectStore()
 
+const projectStore = useProjectStore()
 const navigationStore = useNavigationStore()
 const router = useRouter()
-const isCatalogDetail = new Navigation().isCatalogProgramDetail()
+const navigation = new Navigation()
+
+const project = ref<Project | undefined>(projectStore.currentProject)
+
+const isCatalogDetail = navigation.isCatalogProgramDetail()
 
 const routeToResults = {
   name: isCatalogDetail ? RouteName.CatalogPrograms : RouteName.QuestionnaireResult,
@@ -68,14 +71,14 @@ const routeToProject = {
   params: { projectSlug: props.projectSlug }
 }
 
+console.log(props.projectSlug)
+console.log(routeToProject)
+
 const links = computed<DsfrBreadcrumbProps['links']>(() => {
   const links = []
-  if (navigationStore.isProgramFromProject()) {
+  if (navigation.isProgramFromProject()) {
     links.push({ text: project.value?.title || '', to: routeToProject })
   }
   return [...links, { text: props.program?.titre || '' }]
-})
-onBeforeMount(() => {
-  project.value = projectStore.currentProject
 })
 </script>

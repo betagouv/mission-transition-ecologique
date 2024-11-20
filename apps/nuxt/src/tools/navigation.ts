@@ -1,5 +1,5 @@
 import { RouteName } from '@/types'
-import type { RouteLocationNormalizedLoaded, Router } from 'vue-router'
+import { RouteLocationNormalizedLoaded, RouteParamsGeneric, Router } from 'vue-router'
 
 export default class Navigation {
   constructor(
@@ -20,6 +20,16 @@ export default class Navigation {
 
   isCatalogProjectDetail() {
     return this.isByRouteName(RouteName.CatalogProjectDetail)
+  }
+
+  isProgramFromProject() {
+    return this.isByRouteName([RouteName.ProgramFromProjectDetail, RouteName.CatalogProgramFromCatalogProjectDetail])
+  }
+
+  getHrefByRouteName(routeName: RouteName, params: RouteParamsGeneric = {}): string | undefined {
+    if (this._router) {
+      return this._router.resolve({ name: routeName, params: params }).href
+    }
   }
 
   static hashByRouteName = (routeName: string) => {

@@ -240,6 +240,7 @@ import ProgramEligibility from '@/components/program/detail/ProgramEligibility.v
 import ProgramLongDescription from '@/components/program/detail/ProgramLongDescription.vue'
 import ProgramTile from '@/components/program/detail/ProgramTile.vue'
 import { useProgramStore } from '@/stores/program'
+import Navigation from '@/tools/navigation'
 import { OpportunityType, type ProgramData as ProgramType, Project as ProjectType } from '@/types'
 import { RouteName } from '@/types/routeType'
 import { useNavigationStore } from '@/stores/navigation'
@@ -247,7 +248,7 @@ import { MetaSeo } from '@/tools/metaSeo'
 import Program from '@/tools/program/program'
 import { Scroll } from '@/tools/scroll'
 import Translation from '@/tools/translation'
-import { computed, onBeforeMount, ref } from 'vue'
+import { computed, ref } from 'vue'
 import { useProjectStore } from '@/stores/project'
 import Opportunity from '@/tools/opportunity'
 
@@ -259,22 +260,25 @@ const program = ref<ProgramType>()
 const linkedProjects = ref<ProjectType[] | undefined>([])
 const TeeProgramFormContainer = ref<HTMLElement | null | undefined>(null)
 
+const navigation = new Navigation()
+
 interface Props {
   programId: string
   projectSlug?: string
 }
 const props = defineProps<Props>()
 
+useNavigationStore().hasSpinner = true
 const programResult = await useProgramStore().getProgramById(props.programId)
 if (programResult.isOk) {
   programsStore.currentProgram = programResult.value
   program.value = programResult.value
-  if (program.value && navigationStore.isByRouteName(RouteName.CatalogProgramFromCatalogProjectDetail)) {
+  if (program.value && navigation.isByRouteName(RouteName.CatalogProgramFromCatalogProjectDetail)) {
     useHead({
       link: [
         {
           rel: 'canonical',
-          href: navigationStore.getAbsoluteUrlByRouteName(RouteName.CatalogProgramDetail, {
+          href: navigation.getHrefByRouteName(RouteName.CatalogProgramDetail, {
             programId: program.value.id
           })
         }
@@ -283,8 +287,13 @@ if (programResult.isOk) {
   }
 
   useSeoMeta(MetaSeo.get(program.value?.titre, program.value?.description, program.value?.illustration))
-}
 
+  const projectResult = await projectStore.projects
+  if (projectResult.isOk) {
+    linkedProjects.value = Program.getLinkedProjects(program.value, projectResult.value)
+  }
+}
+useNavigationStore().hasSpinner = false
 // computed
 const programCost = computed(() => program.value?.[`coût de l'accompagnement`])
 const programAidAmount = computed(() => program.value?.[`montant du financement`])
@@ -311,17 +320,6 @@ const columnTiles = computed(() => {
 })
 const isProgramAutonomous = computed(() => {
   return program.value?.[`activable en autonomie`] == 'oui'
-})
-
-onBeforeMount(async () => {
-  useNavigationStore().hasSpinner = true
-  program.value = programsStore.currentProgram
-  const projectResult = await projectStore.projects
-  if (projectResult.isOk) {
-    linkedProjects.value = Program.getLinkedProjects(program.value, projectResult.value)
-  }
-
-  useNavigationStore().hasSpinner = false
 })
 
 onBeforeRouteLeave(() => {

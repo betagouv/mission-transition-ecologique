@@ -51,8 +51,9 @@ export const useProgramStore = defineStore('program', () => {
 
   async function getProgramById(id: string): Promise<Result<ProgramData, Error>> {
     currentProgram.value = undefined
-
+    console.log(hasPrograms.value)
     if (hasPrograms.value) {
+      console.log(await programs.value)
       const result = await programs.value
       if (result.isOk()) {
         const program = result.data.find((program) => program.id === id)
