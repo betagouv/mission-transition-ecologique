@@ -30,7 +30,19 @@ export default class GeoSearchService {
     return results.sort((a: { nom: string }, b: { nom: string }) => a.nom.localeCompare(b.nom))
   }
   public searchByName(searchValue: string): ConvertedCommune[] {
-    return this._citiesByPostalCode.filter((pair: { nom: string }) => pair.nom.toLowerCase().startsWith(searchValue.toLocaleLowerCase()))
+    const normalizeString = (str: string) =>
+      str
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/[-\s]/g, '')
+        .trim()
+    return this._citiesByPostalCode.filter((pair: { nom: string }) => {
+      const normalizedCity = normalizeString(pair.nom)
+      const normalizedSearch = normalizeString(searchValue)
+
+      return normalizedCity.startsWith(normalizedSearch)
+    })
   }
 
   public searchByCityCode(searchValue: string): ConvertedCommune[] {
