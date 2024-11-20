@@ -11,11 +11,21 @@
             </div>
           </div>
           <div class="fr-col-12 fr-col-md-10 fr-pl-md-2v fr-pr-md-6v">
+            <TeeSpinner
+              v-if="hasSpinner"
+              class="fr-mt-16w"
+            />
             <TeeListNoResults
               v-if="showNoResultsComponent"
               :has-error="hasError"
               message="Aucune aide n'a pu être identifiée sur cette thématique..."
               :count-items="countPrograms"
+            />
+            <TeeNoResult
+              v-if="!hasRegisteredData && !hasSpinner"
+              :message="Translation.t('results.alertNoDataNoResults')"
+              :cta-label="Translation.t('results.noResultCTA')"
+              @cta-click="openModal"
             />
             <ProgramList
               v-else
@@ -32,13 +42,26 @@
 import { type ProgramData } from '@/types'
 import { computed } from 'vue'
 import ProgramFiltersAccordion from '@/components/program/list/filters/ProgramFiltersAccordion.vue'
+import Translation from '@/utils/translation'
+import Navigation from '@/utils/navigation'
+import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
 interface ProgramListProps {
   filteredPrograms?: ProgramData[]
   hasError: boolean
 }
 
+const hasRegisteredData = CompanyDataStorage.hasData()
+
 const props = defineProps<ProgramListProps>()
+
+const openModal = () => {
+  Navigation.toggleRegisterModal()
+}
+
+const hasSpinner = computed(() => {
+  return !countPrograms.value && !props.hasError
+})
 
 const countPrograms = computed(() => {
   return props.filteredPrograms?.length || 0

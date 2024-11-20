@@ -6,12 +6,12 @@
   />
 </template>
 <script setup lang="ts">
-import { Color, type ProgramData as ProgramType, ProgramEligibilityType, RouteName } from '@/types'
+import { Color, ProgramEligibilityType } from '@/types'
 import { TeeEligibilityBarLink, TeeEligibilityBarMessage } from '@/components/program/eligibility/TeeEligibilityBar.vue'
 import { useProgramStore } from '@/stores/program'
-import { ref } from 'vue'
+import { storeToRefs } from 'pinia'
 
-const program = ref<ProgramType>()
+const { currentProgram: program } = storeToRefs(useProgramStore())
 
 const getEligibilityMessage: ComputedRef<TeeEligibilityBarMessage> = computed(() => {
   switch (program.value?.eligibility) {
@@ -49,20 +49,17 @@ const getEligibilityLink: ComputedRef<TeeEligibilityBarLink | undefined> = compu
         label: 'Voir les autres critères à respecter',
         labelMobile: 'Vérifier les critères'
       }
+    // TODO : uncomment once the company data filter is available on catalogs
+    // return {
+    //   url: RouteName.CatalogPrograms,
+    //   label: 'Voir les aides pour mon entreprise',
+    //   labelMobile: 'Voir les aides éligibles',
+    //   isButtonLink: true
+    // }
     case ProgramEligibilityType.NotEligible:
-      return {
-        url: RouteName.CatalogPrograms,
-        label: 'Voir les aides pour mon entreprise',
-        labelMobile: 'Voir les aides éligibles',
-        isButtonLink: true
-      }
     case ProgramEligibilityType.Eligible:
     default:
       return undefined
   }
-})
-
-onBeforeMount(() => {
-  program.value = useProgramStore().currentProgram
 })
 </script>

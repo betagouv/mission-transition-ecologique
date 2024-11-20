@@ -36,7 +36,10 @@
           </div>
           <div class="fr-col-12 fr-col-md-10 fr-pr-md-2v fr-col-justify--center">
             <ProgramList :filtered-programs="filteredPrograms" />
-            <TeeSpinner v-if="hasSpinner" />
+            <TeeSpinner
+              v-if="hasSpinner"
+              class="fr-mt-16w"
+            />
             <TeeListNoResults
               v-else-if="showNoResultsComponent"
               :has-error="hasError"

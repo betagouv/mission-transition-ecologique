@@ -17,7 +17,8 @@ const testEstablishment = {
     zipCode: '94120',
     cityLabel: 'FONTENAY-SOUS-BOIS',
     cityCode: '94033'
-  }
+  },
+  workforceRange: '03'
 }
 
 const searchResult = {

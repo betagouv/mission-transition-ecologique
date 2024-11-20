@@ -13,6 +13,7 @@ export enum FieldType {
   Number = 'number',
   Select = 'select',
   Radio = 'radio',
+  Tag = 'tag',
   Checkbox = 'checkbox',
   Textarea = 'textarea',
   Email = 'email',
