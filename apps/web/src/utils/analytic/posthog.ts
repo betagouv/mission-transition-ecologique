@@ -25,6 +25,12 @@ export default class Posthog {
 
   static deactivatePosthogCookie() {
     if (this._posthog) {
+      document.cookie.split(';').forEach((cookie) => {
+        const name = cookie.split('=')[0].trim()
+        if (name.startsWith('ph_')) {
+          document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`
+        }
+      })
       this._posthog.set_config({ persistence: 'memory' })
     }
   }
