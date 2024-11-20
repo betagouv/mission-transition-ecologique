@@ -1,6 +1,6 @@
 import { type Rules, makeProgramHelper, mockCurrentDateService, makeProgramsRepository } from './testing'
 import { FILTERING_RULE_NAME } from '../../src/program/domain/filterPrograms'
-import { ProgramEligibilityType, ProgramTypeWithEligibility, type ProgramType, isYearsEligibleForAll } from '@tee/data'
+import { ProgramEligibilityType, ProgramTypeWithEligibility, type ProgramType, ProgramEligibility } from '@tee/data'
 import { expectToBeOk } from '../testing'
 import ProgramFeatures from '../../src/program/domain/programFeatures'
 import { type Result } from 'true-myth'
@@ -23,12 +23,10 @@ const defaultFilterPrograms = (programs: ProgramType[], inputData: Record<string
 const addEligibility = (programs: ProgramType[]): ProgramTypeWithEligibility[] => {
   return programs.map((program) => ({
     ...program,
-    eligibility: _isPartiallyEligible(program) ? ProgramEligibilityType.PartiallyEligible : ProgramEligibilityType.Eligible
+    eligibility: ProgramEligibility.isPartiallyEligible(program)
+      ? ProgramEligibilityType.PartiallyEligible
+      : ProgramEligibilityType.Eligible
   }))
-}
-
-const _isPartiallyEligible = (program: ProgramType) => {
-  return program["conditions d'éligibilité"]["autres critères d'éligibilité"] || !isYearsEligibleForAll(program)
 }
 
 const rulesBoilerplate = {

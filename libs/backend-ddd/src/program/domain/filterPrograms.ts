@@ -1,7 +1,8 @@
 import { Result } from 'true-myth'
 import { RulesManager } from './spi'
-import { Program, ProgramEligibilityType, ProgramType, ProgramTypeWithEligibility } from '@tee/data'
+import { ProgramEligibilityType, ProgramType, ProgramTypeWithEligibility } from '@tee/data'
 import { QuestionnaireData } from '@tee/common'
+import { ProgramEligibility } from '@tee/data'
 
 /** Expected rule to evaluate if a program should be displayed to the user or
  * filtered out (in a program's `publicodes`
@@ -103,7 +104,9 @@ const setEligibility = (
   // TODO, analyse the undefined returns from publicodes
   // there are a dozen of programs that return 'undefined' values.
   if (isEligible) {
-    eligibility = Program.isPartiallyEligible(program) ? ProgramEligibilityType.PartiallyEligible : ProgramEligibilityType.Eligible
+    eligibility = ProgramEligibility.isPartiallyEligible(program)
+      ? ProgramEligibilityType.PartiallyEligible
+      : ProgramEligibilityType.Eligible
   } else {
     eligibility = ProgramEligibilityType.NotEligible
   }

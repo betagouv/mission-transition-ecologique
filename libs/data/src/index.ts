@@ -1,4 +1,5 @@
 export * from './program/program'
+export * from './program/programEligibility'
 export * from './program/types/shared'
 export * from './type/publicodesTypes'
 export * from './generated/program'
