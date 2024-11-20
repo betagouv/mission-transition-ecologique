@@ -13,7 +13,7 @@
         >
           <img
             class="fr-responsive-img"
-            :src="`${publicPath}${track.callout.imageLeft}`"
+            :src="`/${track.callout.imageLeft}`"
             :alt="`image / callout`"
           />
         </div>
@@ -72,7 +72,7 @@
         >
           <img
             class="fr-responsive-img"
-            :src="`${publicPath}${track.callout.imageRight}`"
+            :src="`/${track.callout.imageRight}`"
             :alt="`image / callout`"
           />
         </div>

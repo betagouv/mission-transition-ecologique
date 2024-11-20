@@ -36,7 +36,7 @@
           <div class="fr-col-md-4 fr-col-lg-3 fr-col-xl-3 fr-col-sm-12 fr-text-right fr-tee-program-detail-img">
             <img
               class="fr-responsive-img"
-              :src="`${publicPath}${program?.illustration}`"
+              :src="`/${program?.illustration}`"
               :alt="`image / ${program?.titre}`"
             />
 

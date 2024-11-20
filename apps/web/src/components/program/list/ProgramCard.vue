@@ -2,7 +2,7 @@
   <DsfrCard
     :title="''"
     :description="''"
-    :img-src="`${publicPath}${program.illustration}`"
+    :img-src="`/${program.illustration}`"
     :alt-img="`image / ${program.titre}`"
     :horizontal="true"
     :no-arrow="true"
