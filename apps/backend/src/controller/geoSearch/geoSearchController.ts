@@ -17,8 +17,7 @@ export class GeoSearchController extends Controller {
     @Res() requestFailedResponse: TsoaResponse<500, ErrorJSON>
   ): Promise<ConvertedCommune[]> {
     try {
-      const results = this.geoSearchService.searchCity(searchTerm)
-      return results
+      return this.geoSearchService.searchCity(searchTerm)
     } catch (error) {
       console.error('Error in searchCities:', error)
       return requestFailedResponse(500, { message: 'Failed to fetch search results.' })

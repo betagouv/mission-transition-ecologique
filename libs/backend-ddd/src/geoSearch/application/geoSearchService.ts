@@ -10,7 +10,7 @@ export default class GeoSearchService {
     this._citiesByPostalCode = this.separateCitiesByPostalCode()
   }
 
-  public separateCitiesByPostalCode(): ConvertedCommune[] {
+  private separateCitiesByPostalCode(): ConvertedCommune[] {
     return this._cities.flatMap((city: Commune) =>
       city.codesPostaux.map((postalCode: string) => ({
         ...city,
