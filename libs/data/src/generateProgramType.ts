@@ -2,7 +2,7 @@
 import * as path from 'path'
 import * as fs from 'fs'
 import { compileFromFile } from 'json-schema-to-typescript'
-import { createFolderIfNotExists } from './helpers'
+import { FileManager } from './common/fileManager'
 
 /** generates a .d.ts typescript type for a Program object, from its
  * json-schema specification
@@ -18,7 +18,7 @@ const generateProgramType = (): void => {
   console.log('Reading json schema at', schemaPath)
 
   const generatedTypeDir = path.join('src', 'generated')
-  createFolderIfNotExists(generatedTypeDir)
+  FileManager.createFolderIfNotExists(generatedTypeDir)
 
   compileFromFile(schemaPath)
     .then((ts: string) => fs.writeFileSync(path.join(generatedTypeDir, 'program.ts'), ts))
