@@ -82,7 +82,6 @@
 </template>
 
 <script setup lang="ts">
-import Config from '@/config'
 import type { Track } from '@/types'
 import Translation from '@/utils/translation'
 
@@ -90,6 +89,4 @@ interface Props {
   track: Track
 }
 defineProps<Props>()
-
-const publicPath = Config.publicPath
 </script>
