@@ -68,6 +68,7 @@
       "pret-action-climat",
       "pret-vert",
       "solaire-ready",
+      "smart-pv",
       "pret-tourisme"
     ],
     "linkedProjects": [],
@@ -90,6 +91,7 @@
     "programs": [
       "aides-au-reemploi-des-emballages",
       "fonds-tourisme-durable",
+      "ormat-2024",
       "tremplin",
       "cedre-investissement",
       "charte-zero-dechet-plastique"
@@ -111,6 +113,7 @@
     ],
     "mainTheme": "energy",
     "programs": [
+      "etude-rehabilitation-solaires-thermiques-collectives",
       "etude-solaire-thermique",
       "investissement-solaire-thermique",
       "investissement-solaire-thermique-outre-mer",
@@ -191,6 +194,7 @@
       "etude-chaufferie-biomasse",
       "fonds-tourisme-durable",
       "investissement-chaleur-bois",
+      "investissement-pour-l-approvisionnement-de-chaufferies-bois",
       "pret-action-climat",
       "pret-vert",
       "pret-tourisme"
@@ -237,6 +241,7 @@
     "programs": [
       "etude-geothermie-de-surface-et-d-aerothermie",
       "fonds-tourisme-durable",
+      "investissement-pac-solaire",
       "pret-economies-d-energie-pee",
       "pret-vert",
       "pret-tourisme"
@@ -324,6 +329,7 @@
     ],
     "mainTheme": "energy",
     "programs": [
+      "audit-energetique-en-industrie",
       "baisse-les-watts",
       "booster-eco-energie-tertiaire",
       "diag-perf-immo",
@@ -427,11 +433,14 @@
       "engins-moins-polluants",
       "fonds-tourisme-durable",
       "pret-action-climat",
+      "prime-a-la-conversion",
       "tremplin",
+      "vehicule-lourd-energies-propres",
       "pret-vert",
       "sites-touristiques-exemplaires",
       "cheque-transition-bioethanol",
       "recharge-vehicule-electrique",
+      "vehicules-lourds-electriques",
       "pret-tourisme"
     ],
     "linkedProjects": [],
@@ -499,6 +508,7 @@
     "mainTheme": "waste",
     "programs": [
       "diagnostic-dechets",
+      "ormat-2024",
       "tremplin",
       "cedre-premier-pas",
       "charte-zero-dechet-plastique",
@@ -543,7 +553,10 @@
     ],
     "mainTheme": "waste",
     "programs": [
+      "etude-centres-de-tri",
       "fonds-tourisme-durable",
+      "investissement-centre-de-tri",
+      "ormat-2024",
       "tremplin",
       "cedre-investissement"
     ],
@@ -613,6 +626,7 @@
     "mainTheme": "rh",
     "programs": [
       "formation-engager-entreprise-transition-ecologique",
+      "ecogestes-paca",
       "investour"
     ],
     "linkedProjects": [],
@@ -660,6 +674,7 @@
       "formation-engager-entreprise-transition-ecologique",
       "formations-du-cfde",
       "formations-tee",
+      "ecogestes-paca",
       "investour",
       "sud-pret-climat",
       "mooc-biodiversite-entreprise"
@@ -795,6 +810,7 @@
       "diagnostic-changement-climatique",
       "performa-environnement",
       "programme-breizh-fab",
+      "adaptation-bzh",
       "cedre-premier-pas",
       "cedre-ambition"
     ],
@@ -852,9 +868,12 @@
     "mainTheme": "eco-design",
     "programs": [
       "diag-ecoconception",
+      "diagnostic-eco-conception-ile-de-france",
+      "etude-economie-de-la-fonctionnalite",
       "etude-performance-produits",
       "programme-breizh-fab",
       "tremplin",
+      "ecoconception-bzh",
       "cedre-premier-pas",
       "cedre-investissement"
     ],
@@ -1133,6 +1152,8 @@
       "diag-eco-flux",
       "performa-environnement",
       "tpe-gagnantes-sur-tous-les-couts",
+      "visite-energie-cci",
+      "visite-energie-cma",
       "cedre-investissement"
     ],
     "linkedProjects": [],
