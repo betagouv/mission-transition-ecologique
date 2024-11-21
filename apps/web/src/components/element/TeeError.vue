@@ -6,7 +6,7 @@
         aria-hidden="true"
       />
     </p>
-    <h4 class="fr-text--deep-red fr-text--lg fr-m-0 fr-mb-2v">
+    <h4 class="fr-text--deep-red fr-text--lg fr-m-0">
       {{ Translation.t(`form.sorryError`) }}
     </h4>
     <slot />

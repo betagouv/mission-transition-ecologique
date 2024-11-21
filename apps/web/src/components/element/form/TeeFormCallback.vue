@@ -6,7 +6,7 @@
       :mailto="getMailTo()"
       :email="Contact.email"
     >
-      <h4 class="fr-text--deep-red fr-m-0">
+      <h4 class="fr-text--deep-red fr-text--lg fr-m-0">
         {{ Translation.t(`form.notSent`) }}
       </h4>
     </TeeError>
