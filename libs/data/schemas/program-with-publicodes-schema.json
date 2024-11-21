@@ -346,6 +346,7 @@
         "ORACE en Pays de la Loire",
         "Organisations professionnelles",
         "Région Bretagne",
+        "Région Grand Est",
         "Saur",
         "Suez",
         "UIMM",
@@ -361,11 +362,18 @@
         "PRO-SMEn",
         "Voies Navigables de France",
         "CCI PdL",
-        "région PdL",
-        "Région Sud",
+        "Région Centre-Val de Loire",
+        "Région Occitanie",
+        "Région Haut-de-France",
+        "Région Île-de-France",
+        "Région Normandie",
+        "Région Pays de la Loire",
+        "Région Sud (PACA)",
         "Agence Régionale Biodiversité et Environnement",
         "Office français de la biodiversité",
-        "TEE"
+        "TEE",
+        "Région Bourgogne-Franche-Comté",
+        "Région Auvergne-Rhône-Alpes"
       ]
     }
   }

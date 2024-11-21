@@ -83,11 +83,6 @@
               class="fr-footer__bottom-link"
             >
               {{ link.label }}
-              <span
-                v-if="link.icon"
-                :class="link.icon"
-                class="fr-icon--sm"
-              />
             </router-link>
             <a
               v-else
@@ -193,11 +188,6 @@ const mainLinks = [
   {
     label: 'Ajouter une aide',
     to: { name: RouteName.AddProgram }
-  },
-  {
-    label: 'Échanger avec un conseiller',
-    to: { name: RouteName.ChatAdvisor },
-    icon: 'fr-icon-chat-3-line'
   }
 ]
 </script>

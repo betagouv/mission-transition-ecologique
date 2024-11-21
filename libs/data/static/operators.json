@@ -291,6 +291,12 @@
     ]
   },
   {
+    "operator": "Région Grand Est",
+    "filterCategories": [
+      "Régions"
+    ]
+  },
+  {
     "operator": "Saur",
     "filterCategories": []
   },
@@ -367,13 +373,43 @@
     ]
   },
   {
-    "operator": "région PdL",
+    "operator": "Région Centre-Val de Loire",
     "filterCategories": [
       "Régions"
     ]
   },
   {
-    "operator": "Région Sud",
+    "operator": "Région Occitanie",
+    "filterCategories": [
+      "Régions"
+    ]
+  },
+  {
+    "operator": "Région Haut-de-France",
+    "filterCategories": [
+      "Régions"
+    ]
+  },
+  {
+    "operator": "Région Île-de-France",
+    "filterCategories": [
+      "Régions"
+    ]
+  },
+  {
+    "operator": "Région Normandie",
+    "filterCategories": [
+      "Régions"
+    ]
+  },
+  {
+    "operator": "Région Pays de la Loire",
+    "filterCategories": [
+      "Régions"
+    ]
+  },
+  {
+    "operator": "Région Sud (PACA)",
     "filterCategories": [
       "Régions"
     ]
@@ -393,5 +429,17 @@
   {
     "operator": "TEE",
     "filterCategories": []
+  },
+  {
+    "operator": "Région Bourgogne-Franche-Comté",
+    "filterCategories": [
+      "Régions"
+    ]
+  },
+  {
+    "operator": "Région Auvergne-Rhône-Alpes",
+    "filterCategories": [
+      "Régions"
+    ]
   }
 ]
