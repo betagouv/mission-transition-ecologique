@@ -1,9 +1,9 @@
 import { nafMapping } from '@tee/data/references'
 import { Maybe } from 'true-myth'
-import { NafMappingType } from '../../domain/spi'
+import { NafSearchType } from '../../domain/spi'
 import { CompanyActivityType } from '@tee/common'
 
-export class NafJsonMapping implements NafMappingType {
+export class NafSearch implements NafSearchType {
   private _lastNafCode = ''
   private _lastNafData: NafData | undefined
 

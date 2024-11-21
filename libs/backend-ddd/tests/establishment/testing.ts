@@ -1,5 +1,5 @@
 import { Maybe, Result } from 'true-myth'
-import { NafMappingType, type EstablishmentRepository } from '../../src/establishment/domain/spi'
+import { NafSearchType, type EstablishmentRepository } from '../../src/establishment/domain/spi'
 import { type CityToRegionMapping } from '../../src/establishment/infrastructure/json/cityToRegionMapping'
 
 const testEstablishment = {
@@ -35,7 +35,8 @@ export const nothingRegionMapping: CityToRegionMapping = {
   getRegion: () => Maybe.nothing<string>()
 }
 
-export const nothingNafMapping: NafMappingType = {
+export const nothingNafMapping: NafSearchType = {
   getLabel: () => Maybe.nothing<string>(),
-  getSectionCode: () => Maybe.nothing<string>()
+  getSectionCode: () => Maybe.nothing<string>(),
+  searchNAF: () => []
 }
