@@ -70,7 +70,7 @@ const profile = ref<RegisterDetails>({
     title: 'Activité',
     description: "Quel est votre secteur d'activité ?",
     icon: 'fr-icon-briefcase-line',
-    value: { secteur: props.company?.secteur, codeNAF: props.company?.codeNAF, codeNAF1: props.company?.codeNAF1 },
+    value: props.company ? { secteur: props.company.secteur, codeNAF: props.company.codeNAF, codeNAF1: props.company.codeNAF1 } : undefined,
     type: RegisterDetailType.Activity,
     tagLabel: props.company && props.company && 'siret' in props.company ? `${props.company.secteur} (${props.company.codeNAF})` : ''
   },
