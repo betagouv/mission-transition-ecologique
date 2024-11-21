@@ -22,11 +22,12 @@ export default class GeoSearchService {
   public searchCity(searchTerm: string): ConvertedCommune[] {
     // Automatically detect if the search term is a postal code (5 digits) or a name
     let results = []
-    if (searchTerm && /^\d{5}$/.test(searchTerm)) {
+    if (/^\d+$/.test(searchTerm)) {
       results = this.searchByCityCode(searchTerm)
     } else {
       results = this.searchByName(searchTerm)
     }
+
     return results.sort((a: { nom: string }, b: { nom: string }) => a.nom.localeCompare(b.nom))
   }
   public searchByName(searchValue: string): ConvertedCommune[] {
@@ -46,6 +47,6 @@ export default class GeoSearchService {
   }
 
   public searchByCityCode(searchValue: string): ConvertedCommune[] {
-    return this._citiesByPostalCode.filter((pair: { codePostal: string }) => pair.codePostal.includes(searchValue))
+    return this._citiesByPostalCode.filter((pair: { codePostal: string }) => pair.codePostal.startsWith(searchValue))
   }
 }
