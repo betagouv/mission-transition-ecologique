@@ -6,7 +6,6 @@ export enum RouteName {
   CatalogProjectDetail = 'catalog-project-detail',
   CatalogProgramFromCatalogProjectDetail = 'catalog-program-from-project-detail',
   AddProgram = 'add-program',
-  ChatAdvisor = 'chat-advisor',
   Legal = 'legal',
   PersonalData = 'personal-data',
   QuestionnaireStart = 'questionnaire-start',

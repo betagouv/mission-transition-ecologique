@@ -13,7 +13,6 @@ declare module 'vue' {
     ConsentElement: typeof import('./components/consent/ConsentElement.vue')['default']
     ConsentRadio: typeof import('./components/consent/ConsentRadio.vue')['default']
     ContactButton: typeof import('./components/contact/ContactButton.vue')['default']
-    ContactHelp: typeof import('./components/contact/ContactHelp.vue')['default']
     ContactMail: typeof import('./components/contact/ContactMail.vue')['default']
     DsfrAccordion: typeof import('@gouvminint/vue-dsfr')['DsfrAccordion']
     DsfrAccordionsGroup: typeof import('@gouvminint/vue-dsfr')['DsfrAccordionsGroup']
