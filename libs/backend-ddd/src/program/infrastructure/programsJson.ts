@@ -18,9 +18,14 @@ export default class ProgramsJson implements ProgramRepository {
     return ProgramsJson.instance
   }
 
+  public getEditablePrograms(): ProgramType[] {
+    return JSON.parse(JSON.stringify(this._programs)) as ProgramType[]
+  }
+
   public getAll(): ProgramType[] {
     return this._programs
   }
+
   public getById = (id: string): ProgramType | undefined => {
     return this.getAll().find((programData: ProgramType) => programData.id === id)
   }

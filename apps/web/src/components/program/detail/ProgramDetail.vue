@@ -217,13 +217,13 @@
     <!-- PROGRAM FORM -->
     <div
       ref="TeeProgramFormContainer"
-      class="fr-bg--blue-france--lightness fr-col-justify--center fr-grid-row fr-p-2w"
+      class="fr-bg--blue-france--lightness fr-grid-row fr-p-2w"
     >
       <TeeForm
         v-if="program"
         :form-container-ref="TeeProgramFormContainer"
         :data-id="program.id"
-        :phone-callback="Translation.ti(Translation.t('form.phoneContact'), { operator: program['opérateur de contact'] })"
+        :phone-callback="Translation.t('form.phoneContact', { operator: program['opérateur de contact'] })"
         :form="Opportunity.getProgramFormFields(program)"
         :form-type="OpportunityType.Program"
         :error-email-subject="Translation.t('program.form.errorEmail.subject', { program: program.titre })"
@@ -339,7 +339,8 @@ const programIsAvailable = computed(() => {
 
 const scrollToProgramForm = () => {
   if (TeeProgramFormContainer.value) {
-    navigationStore.isByRouteName(RouteName.CatalogProgramDetail)
+    navigationStore.isByRouteName(RouteName.CatalogProgramDetail) ||
+    navigationStore.isByRouteName(RouteName.CatalogProgramFromCatalogProjectDetail)
       ? Scroll.to(TeeProgramFormContainer.value)
       : Scroll.toWithTopBarOffset(TeeProgramFormContainer.value)
   }

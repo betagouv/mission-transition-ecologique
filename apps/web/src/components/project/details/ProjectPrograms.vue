@@ -8,10 +8,7 @@
       <div class="fr-container--fluid fr-px-3v">
         <div class="fr-grid-row">
           <div class="fr-col-12 fr-text-center">
-            <TeeSpinner
-              v-if="navigationStore.hasSpinner"
-              scale="6"
-            />
+            <TeeSpinner v-if="navigationStore.hasSpinner" />
             <TeeNoResult
               v-else-if="!countFilteredPrograms && !hasError && !navigationStore.hasSpinner"
               message="Aucune aide n'a pu être identifiée avec les critères choisis..."
@@ -68,12 +65,13 @@
         v-else
         id="project-contact"
         ref="TeeProjectFormContainer"
-        class="fr-bg--blue-france--lightness fr-col-justify--center fr-grid-row fr-p-2w"
+        class="fr-bg--blue-france--lightness fr-grid-row fr-p-2w"
       >
         <TeeForm
           v-if="project"
           :form-container-ref="TeeProjectFormContainer"
           :form-type="OpportunityType.Project"
+          :phone-callback="Translation.t('form.phoneContact', { operator: ' ' })"
           :form="Opportunity.getProjectFormFields(project)"
           :data-id="project.id.toString()"
           :data-slug="project.slug"

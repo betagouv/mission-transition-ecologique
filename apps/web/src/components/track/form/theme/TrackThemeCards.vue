@@ -1,51 +1,56 @@
 <template>
-  <div class="fr-grid-row fr-pt-3v">
-    <div
-      v-for="opt in options"
-      :key="opt.value"
-      class="fr-col-4 fr-col-sm-6 fr-col-md-4 fr-col-xs-12 fr-p-1v"
-      @click="selectOption(opt.value)"
-      @keydown.enter="selectOption(opt.value)"
-    >
-      <ThemeCard :option="opt" />
-    </div>
+  <div
+    v-if="navigationStore.hasSpinner"
+    class="fr-col-12 fr-text-center fr-pt-3v"
+  >
+    <TeeSpinner />
+  </div>
+  <div
+    v-for="opt in options"
+    v-else
+    :key="opt.value"
+    class="fr-col-4 fr-col-sm-6 fr-col-md-4 fr-col-xs-12 fr-p-1v fr-pt-3v"
+    @click="selectOption(opt.value)"
+    @keydown.enter="selectOption(opt.value)"
+  >
+    <TrackThemeCard :option="opt" />
   </div>
 </template>
 <script setup lang="ts">
+import { TrackThemeOptionProps } from '@/components/track/form/theme/TrackThemeCard.vue'
 import { useTrackStore } from '@/stores/track'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import type { TrackOptionItem } from '@/types'
 import { computed } from 'vue'
 import { Theme } from '@/utils/theme'
-import { Color } from '@/types'
+import { ProgramData, ThemeId } from '@/types'
 import { Project } from '@tee/data'
 import { useProjectStore } from '@/stores/project'
+import { useProgramStore } from '@/stores/program'
 import { useNavigationStore } from '@/stores/navigation'
+import ProgramFilter from '@/utils/program/programFilter'
 
 const currentTrack = useTrackStore().current
 const emit = defineEmits(['updateSelection'])
 const projectStore = useProjectStore()
 const projects = ref<Project[]>()
+const programs = ref<ProgramData[]>()
+const programStore = useProgramStore()
+const navigationStore = useNavigationStore()
 
-export interface ThemeOption {
-  value: string | undefined
-  title: string
-  imgSrc: string
-  altImg: string
-  highlightProjects: Project[]
-  color: Color
-  moreThanThree: boolean
+const filterPrograms = (theme: ThemeId) => {
+  return programs.value?.filter((program) => ProgramFilter.byTheme(program, theme))
 }
 
-const options = computed<ThemeOption[]>(() => {
-  const options: ThemeOption[] = []
+const options = computed<TrackThemeOptionProps[]>(() => {
+  const options: TrackThemeOptionProps[] = []
   if (!currentTrack?.options) {
     return options
   }
   for (const option of currentTrack.options) {
     const theme = Theme.getById(option.questionnaireData?.priority_objective)
     if (theme && projects.value) {
-      const themeProjects = projectStore.getProjectsByTheme(projects.value, theme.id)
+      const themeProjects = projectStore.getProjectsByThemeAndEligibility(projects.value, theme.id, filterPrograms(theme.id))
       const projectsInfos: { projects: Project[]; moreThanThree: boolean } = Theme.getPriorityProjects(themeProjects)
       options.push({
         value: option.questionnaireData?.priority_objective,
@@ -80,13 +85,15 @@ const selectOption = (opt: string | undefined) => {
 const hasError = ref<boolean>(false)
 
 onBeforeMount(async () => {
-  useNavigationStore().hasSpinner = true
-  const projectResult = await projectStore.eligibleProjects
-  if (projectResult.isOk) {
+  navigationStore.hasSpinner = true
+  const projectResult = await projectStore.projects
+  const programResult = await programStore.programsByUsedTracks
+  if (programResult.isOk && projectResult.isOk) {
     projects.value = projectResult.value
+    programs.value = programResult.value
   } else {
     hasError.value = true
   }
-  useNavigationStore().hasSpinner = false
+  navigationStore.hasSpinner = false
 })
 </script>

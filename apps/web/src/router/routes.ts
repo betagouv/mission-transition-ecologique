@@ -6,7 +6,6 @@ import TeeAddProgram from '../pages/TeeAddProgram.vue'
 import TeeLegalPage from '../pages/TeeLegalPage.vue'
 import TeeAccessibilityPage from '../pages/TeeAccessibilityPage.vue'
 import TeePersonalDataPage from '../pages/TeePersonalDataPage.vue'
-import ChatAdvisorPage from '@/pages/ChatAdvisorPage.vue'
 import { RouteName } from '@/types/routeType'
 import { redirections } from '@/router/redirection'
 import { TrackId } from '@/types'
@@ -68,14 +67,14 @@ export const routes = [
         path: 'resultat/projet/:projectSlug/:programId',
         component: ProgramDetail as Component,
         name: RouteName.ProgramFromProjectDetail,
-        beforeEnter: [Hook.hasProject, Hook.hasProgram, Hook.setUsedTracks, Hook.hasUsedTracks],
+        beforeEnter: [Hook.hasProject, Hook.setUsedTracks, Hook.hasUsedTracks, Hook.hasProgram],
         props: true
       },
       {
         path: 'resultat/:programId',
         name: RouteName.QuestionnaireResultDetail,
         component: ProgramDetail as Component,
-        beforeEnter: [Hook.hasProgram, Hook.setUsedTracks, Hook.hasUsedTracks],
+        beforeEnter: [Hook.setUsedTracks, Hook.hasUsedTracks, Hook.hasProgram],
         props: true
       }
     ]
@@ -129,11 +128,6 @@ export const routes = [
     path: '/ajouter-une-aide-entreprises',
     name: RouteName.AddProgram,
     component: TeeAddProgram as Component
-  },
-  {
-    path: '/echanger-avec-un-conseiller',
-    name: RouteName.ChatAdvisor,
-    component: ChatAdvisorPage as Component
   },
   {
     path: '/mentions-legales',

@@ -1,8 +1,10 @@
 import { useNavigationStore } from '@/stores/navigation'
 import { useTrackStore } from '@/stores/track'
 import {
+  LegalCategory,
   type NextTrackRuleSet,
   type QuestionnaireData,
+  StructureSize,
   type Track,
   TrackComponent,
   TrackId,
@@ -247,9 +249,16 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
         Object.entries(questionnaireDatum).forEach(([key, value]) => {
           questionnaireData[key] = value as unknown
         })
+
+        if (usedTrack.id === TrackId.Siret && questionnaireDatum.legalCategory === LegalCategory.EI) {
+          questionnaireData.structure_size = StructureSize.EI
+        }
       })
     })
 
+    if (!useNavigationStore().isCatalog() && !useNavigationStore().isProgramDetail()) {
+      questionnaireData.onlyEligible = true
+    }
     return questionnaireData
   }
 

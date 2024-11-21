@@ -2,7 +2,8 @@ titre: Diag Ecoconception
 promesse: Évaluez la performance environnementale de vos produits, procédés et services
 description: >-
   Bénéficiez des conseils d'un expert écoconception référencé par Bpifrance pour
-  évaluer la performance environnementale de vos produits, services et procédés.
+  évaluer la performance environnementale de vos produits, services et procédés
+  ou d'un accompagnement en vue de l'obtention de l'Ecolabel européen.
 illustration: images/TEE_eolienne.png
 opérateur de contact: Bpifrance
 autres opérateurs:
@@ -26,6 +27,9 @@ objectifs:
   - description: >-
       Préparer la mise en œuvre d'un plan d’actions incluant un premier
       dimensionnement technico-économique.
+  - description: >-
+      Accompagner à l'obtention de l'Ecolabel européen dans tout le processus de
+      certification.
 conditions d'éligibilité:
   taille de l'entreprise:
     - Moins de 50 salariés
@@ -65,3 +69,18 @@ publicodes:
   entreprise . a un objectif ciblé:
     une de ces conditions:
       - questionnaire . objectif prioritaire . est l'écoconception
+champs conditionnels:
+  - toutes ces conditions:
+      - effectif >= 0
+      - effectif <= 49
+    Montant du dispositif: 5 400€ HT  après subvention de 70%
+    Eligibilité taille: Jusqu'à 50 salariés
+    autres critères d'éligibilité:
+      - Avoir réalisé moins de 10M€ de CA ou de total de bilan
+  - toutes ces conditions:
+      - effectif >= 50
+      - effectif <= 249
+    Montant du dispositif: 7 200 € HT après subvention de 60%
+    Eligibilité taille: De 50 à 250 salariés
+    autres critères d'éligibilité:
+      - Avoir réalisé moins de 50M€ de CA ou moins de 43M€ de bilan total
