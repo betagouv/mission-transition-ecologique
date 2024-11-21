@@ -301,7 +301,12 @@ const isProgramAutonomous = computed(() => {
 onBeforeMount(async () => {
   useNavigationStore().hasSpinner = true
   program.value = programsStore.currentProgram
-  const projectResult = await projectStore.projects
+  let projectResult
+  if (useNavigationStore().isCatalogProgramDetail()) {
+    projectResult = await projectStore.projects
+  } else {
+    projectResult = await projectStore.eligibleProjects
+  }
   if (projectResult.isOk) {
     linkedProjects.value = Program.getLinkedProjects(program.value, projectResult.value)
   }

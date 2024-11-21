@@ -75,17 +75,13 @@ const filteredProjects = computed(() => {
     return undefined
   }
 
-  return projectStore.getProjectsByThemeAndEligibility(
-    projects.value,
-    Theme.getThemeFromSelectedOrPriorityTheme().value,
-    filteredPrograms.value ?? undefined
-  )
+  return projectStore.getProjectsByTheme(projects.value, Theme.getThemeFromSelectedOrPriorityTheme().value)
 })
 
 onBeforeMount(async () => {
   navigationStore.hasSpinner = true
   const programResult = await programStore.programsByUsedTracks
-  const projectResult = await projectStore.projects
+  const projectResult = await projectStore.eligibleProjects
   if (programResult.isOk && projectResult.isOk) {
     programs.value = programResult.value
     projects.value = projectResult.value
