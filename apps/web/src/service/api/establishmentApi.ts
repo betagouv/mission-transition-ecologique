@@ -17,4 +17,9 @@ export default class EstablishmentApi extends RequestApi {
       return Result.err(error as Error)
     }
   }
+
+  async getActivitySectors(query: string) { 
+    const urlWithParams = `${this.url}/search?searchTerm=${encodeURIComponent(searchTerm)}`
+    return super.getJson(urlWithParams)
+  } 
 }

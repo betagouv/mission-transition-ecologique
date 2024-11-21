@@ -111,6 +111,7 @@ const clearSearch = () => {
 
 const selectItem = (establishment: EstablishmentFront) => {
   selection.value = establishment
+  console.log('establishment', establishment)
   emit('selectEstablishment', selection.value)
 }
 

@@ -10,3 +10,12 @@
     background-color: setting.$white;
   } 
 } 
+
+.fr-input--empty-text {
+  height: 1.25rem;
+} 
+
+.fr-input::placeholder {
+  font-style: normal !important;
+  color: var(--text-default-grey);
+}

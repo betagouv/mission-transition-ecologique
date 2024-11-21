@@ -36,7 +36,7 @@
           class="fr-bg--yellow search-button"
           tertiary
           no-outline
-          @click="searchLocalisation"
+          @click="searchActivity"
         />
       </div>
     </div>
@@ -47,13 +47,13 @@
     >
       <div
         v-for="activity in activityResults"
-        :key="`resp-input-${activity.nom}`"
+        :key="`resp-input-${activity}`"
         class="fr-card fr-card-result fr-card--no-arrow fr-card--shadow"
         @click="selectActivity(activity)"
       >
         <div class="fr-card__body">
           <div class="fr-card__content fr-py-1v fr-px-4v fr-text--blue-france">
-            <div class="fr-text--blue-france">{{ `${activity.nom} (${activity.codePostal}) ` }}</div>
+            <div class="fr-text--blue-france">{{ activity }}</div>
           </div>
         </div>
       </div>
@@ -70,7 +70,7 @@
 import { RegisterDetailActivity, Sector } from '@/types'
 import { useDebounce } from '@vueuse/core'
 import { onClickOutside } from '@vueuse/core'
-import CompanyDataStorage from '@/utils/storage/companyDataStorage'
+//import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
 interface Props {
   infos: RegisterDetailActivity
@@ -112,8 +112,8 @@ const updateModelValue = (value: string) => {
   activityInput.value = value
 }
 
-const selectActivity = (activity) => {
-  selectedActivity.value = CompanyDataStorage.convertLocalisation(activity)
+const selectActivity = (activity: Sector) => {
+  selectedActivity.value = activity
 }
 
 const searchActivity = async () => {
