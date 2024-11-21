@@ -69,6 +69,7 @@
 <script lang="ts" setup>
 import { RegisterDetailActivity, Sector } from '@/types'
 import { useDebounce } from '@vueuse/core'
+import EstablishmentApi from '@/service/api/establishmentApi'
 import { onClickOutside } from '@vueuse/core'
 //import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
@@ -119,7 +120,7 @@ const selectActivity = (activity: Sector) => {
 const searchActivity = async () => {
   if (activityInput.value && activityInput.value.length >= 3) {
     isLoading.value = true
-    const results = await localisationApi.searchCities(activityInput.value)
+    const results = await new EstablishmentApi().searchActivities(activityInput.value)
     if (results.isOk) {
       activityResults.value = results.value
     }
