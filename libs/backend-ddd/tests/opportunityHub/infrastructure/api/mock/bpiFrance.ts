@@ -1,6 +1,6 @@
 import { Maybe } from 'true-myth'
 import { AxiosInstance } from 'axios'
-import OpportunityHubAbstract from '../opportunityHubAbstract'
+import OpportunityHubAbstract from '../../../../../src/opportunityHub/infrastructure/api/opportunityHubAbstract'
 import { Operators } from '@tee/data'
 
 export class BpiFranceTest extends OpportunityHubAbstract {

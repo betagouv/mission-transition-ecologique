@@ -1,5 +1,5 @@
 import { Maybe } from 'true-myth'
-import { MailerManager } from '../../../../domain/spi'
+import { MailerManager } from '../../../../../../src/opportunity/domain/spi'
 
 export default class BrevoMailTest {
   // eslint-disable-next-line @typescript-eslint/no-empty-function

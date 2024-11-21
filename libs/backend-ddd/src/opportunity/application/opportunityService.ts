@@ -4,25 +4,25 @@ import OpportunityFeatures from '../domain/opportunityFeatures'
 import { Result } from 'true-myth'
 
 import { brevoRepository } from '../infrastructure/api/brevo/brevoDeal'
-import { brevoRepositoryTest } from '../infrastructure/api/brevo/mock/brevoDeal'
+import { brevoRepositoryTest } from '../../../tests/opportunity/infrastructure/api/brevo/mock/brevoDeal'
 
 import { addBrevoContact } from '../infrastructure/api/brevo/brevoContact'
-import { addBrevoContactTest } from '../infrastructure/api/brevo/mock/brevoContact'
+import { addBrevoContactTest } from '../../../tests/opportunity/infrastructure/api/brevo/mock/brevoContact'
 
 import { OpportunityHubRepository } from '../../opportunityHub/domain/spi'
 
 import { BpiFrance } from '../../opportunityHub/infrastructure/api/bpi/bpiFrance'
-import { BpiFranceTest } from '../../opportunityHub/infrastructure/api/mock/bpiFrance'
+import { BpiFranceTest } from '../../../tests/opportunityHub/infrastructure/api/mock/bpiFrance'
 
 import { ContactRepository, MailerManager, OpportunityRepository } from '../domain/spi'
 import { ProgramRepository } from '../../program/domain/spi'
 import ProgramsJson from '../../program/infrastructure/programsJson'
 
 import BrevoMail from '../infrastructure/api/brevo/brevoMail'
-import BrevoMailTest from '../infrastructure/api/brevo/mock/brevoMail'
+import BrevoMailTest from '../../../tests/opportunity/infrastructure/api/brevo/mock/brevoMail'
 
 import { PlaceDesEntreprises } from '../../opportunityHub/infrastructure/api/placedesentreprises/placeDesEntreprises'
-import { PlaceDesEntreprisesTest } from '../../opportunityHub/infrastructure/api/mock/placeDesEntreprises'
+import { PlaceDesEntreprisesTest } from '../../../tests/opportunityHub/infrastructure/api/mock/placeDesEntreprises'
 
 import { Opportunity } from '@tee/common'
 

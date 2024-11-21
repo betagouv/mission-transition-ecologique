@@ -1,6 +1,6 @@
 import { Maybe, Result } from 'true-myth'
-import { OpportunityRepository } from '../../../../domain/spi'
-import { OpportunityDetailsShort, OpportunityId } from '../../../../domain/types'
+import { OpportunityRepository } from '../../../../../../src/opportunity/domain/spi'
+import { OpportunityDetailsShort, OpportunityId } from '../../../../../../src/opportunity/domain/types'
 
 // "Opportunities" are called "Deals" in Brevo
 

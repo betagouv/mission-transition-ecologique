@@ -2,8 +2,8 @@ import { Operators } from '@tee/data'
 import { Objective } from '@tee/common'
 import { Maybe } from 'true-myth'
 import { AxiosInstance } from 'axios'
-import { Subject, subjectToIdMapping } from '../placedesentreprises/types'
-import OpportunityHubAbstract from '../opportunityHubAbstract'
+import { Subject, subjectToIdMapping } from '../../../../../src/opportunityHub/infrastructure/api/placedesentreprises/types'
+import OpportunityHubAbstract from '../../../../../src/opportunityHub/infrastructure/api/opportunityHubAbstract'
 
 export class PlaceDesEntreprisesTest extends OpportunityHubAbstract {
   protected readonly _baseUrl = ''
