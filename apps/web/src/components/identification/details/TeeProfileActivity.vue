@@ -3,7 +3,7 @@
     v-if="infos.value"
     class="fr-tag fr-mb-4v fr-bg--blue-france--lightness"
   >
-    <span class="fr-pr-4v">{{ infos.tagLabel }}</span>
+    <span class="fr-pr-4v">{{ activityLabel }}</span>
     <span
       class="fr-icon-close-line fr-radius-a--2v fr-btn-bg"
       @click="modifyActivity"
@@ -85,6 +85,9 @@ const activityInput = ref<string>('')
 const isLoading = ref<boolean>(false)
 const activitySearchBar = ref(null)
 const activityResults = ref<CompanyActivityType[]>([])
+const activityLabel = computed<string>(() => {
+  return `${props.infos.value?.secteur} (${props.infos.value?.codeNAF})`
+})
 
 onClickOutside(activitySearchBar, () => modifyActivity())
 
@@ -123,7 +126,6 @@ const searchActivity = async () => {
     const results = await new EstablishmentApi().searchActivities(activityInput.value)
     if (results.isOk) {
       activityResults.value = results.value
-      console.log(activityResults.value)
     }
     isLoading.value = false
   } else {

@@ -80,7 +80,8 @@ export default class CompanyDataStorage {
   static getManualCompanyData(profileData: RegisterDetails): CompanyDataType[CompanyDataStorageKey.Company] {
     return {
       ...profileData.activity.value,
-      denomination: `Entreprise : ${profileData.activity.value} - ${profileData.localisation.value}`
+      region: profileData.localisation.value,
+      denomination: `Entreprise : ${profileData.activity.value?.secteur} - ${profileData.localisation.value}`
     } as CompanyDataType[CompanyDataStorageKey.Company]
   }
 
