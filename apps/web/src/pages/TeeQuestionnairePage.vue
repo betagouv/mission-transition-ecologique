@@ -5,15 +5,8 @@
   >
     <router-view :key="useRoute().path" />
   </div>
-  <ContactHelp v-if="useNavigationStore().isByRouteName(RouteName.QuestionnaireResult)" />
 </template>
 
 <script setup lang="ts">
-// CONSOLE LOG TEMPLATE
-// console.log(`TeeQuestionnairePage > FUNCTION_NAME > MSG_OR_VALUE :`)
-
-import ContactHelp from '@/components/contact/ContactHelp.vue'
-import { useNavigationStore } from '@/stores/navigation'
-import { RouteName } from '@/types/routeType'
 import { useRoute } from 'vue-router'
 </script>
