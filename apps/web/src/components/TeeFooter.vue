@@ -83,11 +83,6 @@
               class="fr-footer__bottom-link"
             >
               {{ link.label }}
-              <span
-                v-if="link.icon"
-                :class="link.icon"
-                class="fr-icon--sm"
-              />
             </router-link>
             <a
               v-else
