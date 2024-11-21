@@ -67,7 +67,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { RegisterDetailActivity, Sector } from '@/types'
+import { RegisterDetailActivity, CompanyActivityType } from '@/types'
 import { useDebounce } from '@vueuse/core'
 import EstablishmentApi from '@/service/api/establishmentApi'
 import { onClickOutside } from '@vueuse/core'
@@ -80,11 +80,11 @@ interface Props {
 }
 const props = defineProps<Props>()
 
-const selectedActivity = defineModel<Sector>()
+const selectedActivity = defineModel<CompanyActivityType>()
 const activityInput = ref<string>('')
 const isLoading = ref<boolean>(false)
 const activitySearchBar = ref(null)
-const activityResults = ref<Sector[]>([])
+const activityResults = ref<CompanyActivityType[]>([])
 
 onClickOutside(activitySearchBar, () => modifyActivity())
 
@@ -93,15 +93,8 @@ const debouncedActivityInput = useDebounce(activityInput, 1000)
 const errorMsg = computed<string>(() => {
   if (props.showError && !debouncedActivityInput.value && !isLoading.value) {
     return "La sélection de votre secteur d'activité est nécessaire"
-  } else if (
-    activityResults.value.length === 0 &&
-    debouncedActivityInput.value &&
-    debouncedActivityInput.value.length >= 3 &&
-    !isLoading.value
-  ) {
+  } else if (activityResults.value.length === 0 && debouncedActivityInput.value && !isLoading.value) {
     return "Aucun secteur d'activité n'a été trouvé."
-  } else if (debouncedActivityInput.value && debouncedActivityInput.value.length < 3) {
-    return '3 caractères minimums.'
   }
   return ''
 })
@@ -113,12 +106,12 @@ const updateModelValue = (value: string) => {
   activityInput.value = value
 }
 
-const selectActivity = (activity: Sector) => {
+const selectActivity = (activity: CompanyActivityType) => {
   selectedActivity.value = activity
 }
 
 const searchActivity = async () => {
-  if (activityInput.value && activityInput.value.length >= 3) {
+  if (activityInput.value) {
     isLoading.value = true
     const results = await new EstablishmentApi().searchActivities(activityInput.value)
     if (results.isOk) {
@@ -129,37 +122,6 @@ const searchActivity = async () => {
     activityResults.value = []
   }
 }
-
-const sectorOptions = [
-  {
-    value: Sector.Craftsmanship,
-    text: '👩‍🎨 J’ai une activité artisanale'
-  },
-  {
-    value: Sector.Industry,
-    text: '👩‍🔧 J’ai une activité industrielle, fabrication, production'
-  },
-  {
-    value: Sector.Tourism,
-    text: '🤵‍♂️ J’ai une activité de tourisme, restauration'
-  },
-  {
-    value: Sector.Tertiary,
-    text: '🧑‍⚖️ J’ai une activité tertiaire, de services'
-  },
-  {
-    value: Sector.Agriculture,
-    text: '👩‍🌾 J’ai une activité agricole'
-  },
-  {
-    value: Sector.Other,
-    text: "Je suis dans un autre secteur d'activité"
-  }
-]
-const activityText = computed(() => {
-  const activityOption = sectorOptions.find((el: { value: Sector; text: string }) => el.value === props.infos.value)
-  return activityOption?.text
-})
 </script>
 <style lang="scss" scoped>
 #activity-response {

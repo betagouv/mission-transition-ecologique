@@ -1,6 +1,7 @@
 import { nafMapping } from '@tee/data/references'
 import { Maybe } from 'true-myth'
 import { NafMappingType } from '../../domain/spi'
+import { CompanyActivityType } from '@tee/common'
 
 export class NafJsonMapping implements NafMappingType {
   private _lastNafCode = ''
@@ -14,6 +15,23 @@ export class NafJsonMapping implements NafMappingType {
   public getSectionCode(nafCode: string): Maybe<string> {
     const nafData = this._findNafData(nafCode)
     return Maybe.of(nafData?.NIV1)
+  }
+
+  public searchNAF(searchTerm: string): CompanyActivityType[] {
+    const normalizeString = (str: string) =>
+      str
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/[-\s]/g, '')
+        .trim()
+    
+    return nafMapping.filter((pair: { nom: string }) => {
+      const normalizedCity = normalizeString(pair.nom)
+      const normalizedSearch = normalizeString(searchValue)
+
+      return normalizedCity.startsWith(normalizedSearch)
+    })
   }
 
   private _findNafData(nafCode: string): NafData | undefined {

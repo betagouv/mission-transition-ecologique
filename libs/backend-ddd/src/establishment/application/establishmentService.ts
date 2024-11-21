@@ -6,7 +6,7 @@ import { Result } from 'true-myth'
 import { CityToRegionMapping } from '../infrastructure/json/cityToRegionMapping'
 import { NafJsonMapping } from '../infrastructure/json/nafJsonMapping'
 import { RechercheEntreprise } from '../infrastructure/api/recherche-entreprise/recherche-entreprise'
-import { EstablishmentSearch } from '@tee/common'
+import { CompanyActivityType, EstablishmentSearch } from '@tee/common'
 
 export default class EstablishmentService {
   private _establishmentFeatures: EstablishmentFeatures
@@ -25,6 +25,10 @@ export default class EstablishmentService {
 
   public getBySiret(siret: Siret): Promise<Result<Establishment, Error>> {
     return this._establishmentFeatures.getBySiret(siret)
+  }
+
+  public searchNAF(query: string): Promise<Result<CompanyActivityType, Error>> {
+    return new NafJsonMapping().searchNAF(query)
   }
 
   private _getEstablishmentRepository(): EstablishmentRepository {

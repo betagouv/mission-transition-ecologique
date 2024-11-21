@@ -1,6 +1,6 @@
 import { Controller, Route, SuccessResponse, TsoaResponse, Res, Example, Get, Path, Query } from 'tsoa'
 import { ErrorJSON, EstablishmentNotFoundError, EstablishmentService, ValidateErrorJSON, Monitor } from '@tee/backend-ddd'
-import { EstablishmentFront, EstablishmentSearch, StructureSize } from '@tee/common'
+import { EstablishmentFront, EstablishmentSearch, StructureSize, CompanyActivityType } from '@tee/common'
 
 interface EstablishmentNotFoundErrorJSON {
   message: 'Establishment not found'
@@ -64,5 +64,22 @@ export class SireneController extends Controller {
     }
 
     return establishmentResult.value
+  }
+  /**
+   * Recherche des villes par nom ou code postal.
+   * @param searchTerm - Nom ou code postal de la ville recherchée.
+   * @returns Liste des villes correspondantes.
+   */
+  @Get('/searchNAF')
+  public async searchNAF(
+    @Query() searchTerm: string,
+    @Res() requestFailedResponse: TsoaResponse<500, ErrorJSON>
+  ): Promise<CompanyActivityType[]> {
+    try {
+      return new EstablishmentService().searchNAF(searchTerm)
+    } catch (error) {
+      console.error('Error in searchNAF', error)
+      return requestFailedResponse(500, { message: 'Failed to fetch search results.' })
+    }
   }
 }

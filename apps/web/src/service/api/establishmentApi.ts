@@ -25,7 +25,7 @@ export default class EstablishmentApi extends RequestApi {
       if (!response.ok) {
         return Result.err(new Error())
       }
-      return Result.ok((await response.json()) as CompanyActivityType)
+      return Result.ok((await response.json()) as CompanyActivityType[])
     } catch (error: unknown) {
       return Result.err(error as Error)
     }
