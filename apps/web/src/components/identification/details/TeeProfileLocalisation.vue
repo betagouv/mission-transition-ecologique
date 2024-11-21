@@ -47,7 +47,7 @@
     >
       <div
         v-for="localisation in localisationResults"
-        :key="`resp-input-${localisation.nom}`"
+        :key="`resp-input-${localisation.nom}-${localisation.codePostal}`"
         class="fr-card fr-card-result fr-card--no-arrow fr-card--shadow"
         @click="selectLocalisation(localisation)"
       >

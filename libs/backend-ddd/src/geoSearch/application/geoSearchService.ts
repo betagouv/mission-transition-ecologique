@@ -37,9 +37,9 @@ export default class GeoSearchService {
         .replace(/[\u0300-\u036f]/g, '')
         .replace(/[-\s]/g, '')
         .trim()
+    const normalizedSearch = normalizeString(searchValue)
     return this._citiesByPostalCode.filter((pair: { nom: string }) => {
       const normalizedCity = normalizeString(pair.nom)
-      const normalizedSearch = normalizeString(searchValue)
 
       return normalizedCity.startsWith(normalizedSearch)
     })
