@@ -4,16 +4,17 @@ import { ConvertedCommune } from '@tee/common'
 
 export default class LocalisationApi extends RequestApi {
   protected readonly url = '/api/geoSearch'
-  private readonly _headers = {
-    accept: 'application/json',
-    'content-type': 'application/json'
-  }
-  constructor() {
-    super()
-  }
 
   async searchCities(searchTerm: string): Promise<Result<ConvertedCommune[], Error>> {
     const urlWithParams = `${this.url}/search?searchTerm=${encodeURIComponent(searchTerm)}`
-    return super.getJson(urlWithParams)
+    try {
+      const response = await fetch(urlWithParams)
+      if (!response.ok) {
+        return Result.err(new Error())
+      }
+      return Result.ok((await response.json()) as ConvertedCommune[])
+    } catch (error: unknown) {
+      return Result.err(error as Error)
+    }
   }
 }
