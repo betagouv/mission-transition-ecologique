@@ -1,4 +1,4 @@
-import { EstablishmentFront, StructureSize } from '@tee/common'
+import { EstablishmentFront, StructureSize, CompanyActivityType } from '@tee/common'
 import { Region, Sector } from '@/types'
 
 export enum CompanyDataStorageKey {
@@ -8,20 +8,12 @@ export enum CompanyDataStorageKey {
 
 export interface ManualCompanyData extends CompanyActivityType {
   region: Region
-  secteur: Sector
   denomination: string
 }
 
 export type CompanyDataType = {
   [CompanyDataStorageKey.Company]: EstablishmentFront | null | ManualCompanyData
   [CompanyDataStorageKey.Size]: StructureSize | null
-}
-
-export type CompanyActivityType = {
-  secteur: string | undefined
-  codeNAF: string | undefined
-  codeNAF1: string | undefined
-  legalCategory?: string | undefined
 }
 
 export enum RegisterDetailType {
@@ -51,7 +43,7 @@ export type RegisterDetail = {
 export type RegisterDetailSize = Omit<RegisterDetail, 'value'> & {
   value: StructureSize | undefined | null
 }
-export type RegisterDetailActivity = Omit<RegisterDetail, 'value'> & { value: CompanyActivityType | undefined }
+export type RegisterDetailActivity = Omit<RegisterDetail, 'value'> & { value: CompanyActivityType }
 export type RegisterDetailUnion = RegisterDetail | RegisterDetailSize | RegisterDetailActivity
 export type RegisterProfile = {
   establishment?: EstablishmentFront | undefined
