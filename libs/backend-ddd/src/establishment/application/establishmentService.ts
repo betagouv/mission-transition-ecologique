@@ -27,7 +27,7 @@ export default class EstablishmentService {
     return this._establishmentFeatures.getBySiret(siret)
   }
 
-  public searchNAF(query: string): Promise<Result<CompanyActivityType, Error>> {
+  public searchNAF(query: string): CompanyActivityType[] {
     return new NafJsonMapping().searchNAF(query)
   }
 

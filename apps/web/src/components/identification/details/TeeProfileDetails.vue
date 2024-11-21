@@ -16,7 +16,7 @@
     v-for="detailKey in Object.keys(profile).filter((detailK) => profile[detailK].if !== false)"
     :key="profile[detailKey].title"
     v-model="profile[detailKey]"
-    class="fr-pb-4v fr-col-sm-8 fr-col-md-5 fr-col-offset-md-2 fr-col-12"
+    class="fr-col-sm-8 fr-col-md-5 fr-col-offset-md-2 fr-col-12"
     :manual="manual"
     :show-error="showError"
     :detail-infos="profile[detailKey]"
@@ -33,7 +33,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { RegisterDetailType, RegisterDetails, Sector, CompanyDataStorageKey, CompanyDataType } from '@/types'
+import { RegisterDetailType, RegisterDetails, CompanyDataStorageKey, CompanyDataType } from '@/types'
 import Breakpoint from '@/utils/breakpoints'
 import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 import Navigation from '@/utils/navigation'
@@ -70,7 +70,7 @@ const profile = ref<RegisterDetails>({
     title: 'Activité',
     description: "Quel est votre secteur d'activité ?",
     icon: 'fr-icon-briefcase-line',
-    value: props.company?.secteur as Sector,
+    value: { secteur: props.company?.secteur, codeNAF: props.company?.codeNAF, codeNAF1: props.company?.codeNAF1 },
     type: RegisterDetailType.Activity,
     tagLabel: props.company && props.company && 'siret' in props.company ? `${props.company.secteur} (${props.company.codeNAF})` : ''
   },
@@ -89,14 +89,10 @@ const canBeSaved = computed(() => {
 const saveProfile = () => {
   showError.value = false
   if (canBeSaved.value && profile.value.size.value) {
-    const company = props.manual
-      ? ({
-          region: profile.value.localisation.value,
-          secteur: profile.value.activity.value,
-          denomination: `Entreprise : ${profile.value.activity.value} - ${profile.value.localisation.value}`
-        } as CompanyDataType[CompanyDataStorageKey.Company])
-      : props.company
-    CompanyDataStorage.setCompanyData(company)
+    const companyData = props.manual
+      ? CompanyDataStorage.getManualCompanyData(profile.value)
+      : CompanyDataStorage.getSiretBasedCompanyData(props.company, profile.value)
+    CompanyDataStorage.setCompanyData(companyData)
     CompanyDataStorage.setSize(profile.value.size.value)
     Navigation.toggleRegisterModal(false)
   } else {

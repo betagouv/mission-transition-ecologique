@@ -18,8 +18,8 @@ export default class EstablishmentApi extends RequestApi {
     }
   }
 
-  async searchActivities(query: string) {
-    const urlWithParams = `${this.url}/searchNAF?searchTerm=${encodeURIComponent(query)}`
+  async searchActivities(query: string): Promise<Result<CompanyActivityType[], Error>> {
+    const urlWithParams = `${this.url}searchNAF?searchTerm=${encodeURIComponent(query)}`
     try {
       const response = await fetch(urlWithParams)
       if (!response.ok) {

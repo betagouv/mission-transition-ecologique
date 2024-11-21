@@ -3,7 +3,7 @@
     v-if="infos.value"
     class="fr-tag fr-mb-4v fr-bg--blue-france--lightness"
   >
-    <span class="fr-pr-4v">{{ infos.tagLabel || activityText }}</span>
+    <span class="fr-pr-4v">{{ infos.tagLabel }}</span>
     <span
       class="fr-icon-close-line fr-radius-a--2v fr-btn-bg"
       @click="modifyActivity"
@@ -47,13 +47,13 @@
     >
       <div
         v-for="activity in activityResults"
-        :key="`resp-input-${activity}`"
+        :key="`resp-input-${activity.codeNAF}-${activity.codeNAF1}`"
         class="fr-card fr-card-result fr-card--no-arrow fr-card--shadow"
         @click="selectActivity(activity)"
       >
         <div class="fr-card__body">
           <div class="fr-card__content fr-py-1v fr-px-4v fr-text--blue-france">
-            <div class="fr-text--blue-france">{{ activity }}</div>
+            <div class="fr-text--blue-france">{{ `${activity.secteur} (${activity.codeNAF})` }}</div>
           </div>
         </div>
       </div>
@@ -89,6 +89,11 @@ const activityResults = ref<CompanyActivityType[]>([])
 onClickOutside(activitySearchBar, () => modifyActivity())
 
 const debouncedActivityInput = useDebounce(activityInput, 1000)
+watch(debouncedActivityInput, (newValue) => {
+  if (newValue) {
+    searchActivity()
+  }
+})
 
 const errorMsg = computed<string>(() => {
   if (props.showError && !debouncedActivityInput.value && !isLoading.value) {
@@ -100,6 +105,8 @@ const errorMsg = computed<string>(() => {
 })
 const modifyActivity = () => {
   selectedActivity.value = undefined
+  activityInput.value = ''
+  activityResults.value = []
 }
 
 const updateModelValue = (value: string) => {
@@ -116,6 +123,7 @@ const searchActivity = async () => {
     const results = await new EstablishmentApi().searchActivities(activityInput.value)
     if (results.isOk) {
       activityResults.value = results.value
+      console.log(activityResults.value)
     }
     isLoading.value = false
   } else {

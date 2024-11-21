@@ -6,7 +6,7 @@ export enum CompanyDataStorageKey {
   Size = 'structure_size'
 }
 
-export type ManualCompanyData = {
+export interface ManualCompanyData extends CompanyActivityType {
   region: Region
   secteur: Sector
   denomination: string

@@ -29,6 +29,23 @@ const exampleEstablishment = {
 @Route('establishments')
 export class SireneController extends Controller {
   /**
+   * Recherche les informations NAF
+   * @param searchTerm - code naf ou secteur
+   * @returns Liste des informations NAF correspondantes
+   */
+  @Get('/searchNAF')
+  public async searchNAF(
+    @Query() searchTerm: string,
+    @Res() requestFailedResponse: TsoaResponse<500, ErrorJSON>
+  ): Promise<CompanyActivityType[]> {
+    try {
+      return new EstablishmentService().searchNAF(searchTerm)
+    } catch (error) {
+      console.error('Error in searchNAF', error)
+      return requestFailedResponse(500, { message: 'Failed to fetch search results.' })
+    }
+  }
+  /**
    * Retrieve establishments informations used in front end
    * for a single establishment using the SIRENE API if search by SIRET
    * or for up to 9 establishments using the Recherche-entreprise API otherwise.
@@ -64,22 +81,5 @@ export class SireneController extends Controller {
     }
 
     return establishmentResult.value
-  }
-  /**
-   * Recherche des villes par nom ou code postal.
-   * @param searchTerm - Nom ou code postal de la ville recherchée.
-   * @returns Liste des villes correspondantes.
-   */
-  @Get('/searchNAF')
-  public async searchNAF(
-    @Query() searchTerm: string,
-    @Res() requestFailedResponse: TsoaResponse<500, ErrorJSON>
-  ): Promise<CompanyActivityType[]> {
-    try {
-      return new EstablishmentService().searchNAF(searchTerm)
-    } catch (error) {
-      console.error('Error in searchNAF', error)
-      return requestFailedResponse(500, { message: 'Failed to fetch search results.' })
-    }
   }
 }

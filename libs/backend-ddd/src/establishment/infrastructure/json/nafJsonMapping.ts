@@ -26,21 +26,21 @@ export class NafJsonMapping implements NafMappingType {
         .replace(/[-\s]/g, '')
         .trim()
     const normalizedSearch = normalizeString(searchTerm)
-    const regex = /\b\d{2}\.\d{2}[A-Z]?\b/
+    const regex = /^\d{1,2}(\.(\d{1,2}[A-Z]?)?)?$/
     const isNAFCodeSearch = regex.test(searchTerm)
     let results = []
     if (isNAFCodeSearch) {
-      results = nafMapping.filter((pair: { NIV5: string }) => pair.NIV5 === normalizedSearch)
+      results = nafMapping.filter((pair: { NIV5: string }) => normalizeString(pair.NIV5).startsWith(normalizedSearch))
     } else {
-      if (searchTerm.length === 1){ 
-        results = nafMapping.filter((pair: { NIV1: string }) => pair.NIV1 === normalizedSearch)
-      } 
-    } 
-    return nafMapping.filter((pair: { nom: string }) => {
-      const normalizedCity = normalizeString(pair.nom)
-
-      return normalizedCity.startsWith(normalizedSearch)
-    })
+      if (searchTerm.length === 1) {
+        results = nafMapping.filter((pair: { NIV1: string }) => normalizeString(pair.NIV1) === normalizedSearch)
+      } else {
+        results = nafMapping.filter((pair: { label_vf: string }) => normalizeString(pair.label_vf).startsWith(normalizedSearch))
+      }
+    }
+    return results
+      .sort((a: { label_vf: string }, b: { label_vf: string }) => a.label_vf.localeCompare(b.label_vf))
+      .map((result) => ({ secteur: result.label_vf, codeNAF: result.NIV5, codeNAF1: result.NIV1 }))
   }
 
   private _findNafData(nafCode: string): NafData | undefined {
