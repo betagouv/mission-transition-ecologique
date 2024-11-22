@@ -137,7 +137,7 @@
         </DsfrTable>
       </div>
 
-      <div class="fr-col-12 fr-col-lg-5 fr-flex fr-flex--center fr-col-justify--center fr-col--middle">
+      <div class="fr-col-12 fr-col-lg-5 fr-col-xl-4 fr-flex fr-flex--center fr-col-justify--center fr-col--middle">
         <canvas ref="budgetChartCanvas"></canvas>
       </div>
     </div>
@@ -191,6 +191,14 @@ const drawBudgetChart = () => {
     return budgetData[2023][index] + budgetData[2024][index]
   })
 
+  const chartColors = [
+    '#facf35', // Yellow
+    '#fca081', // Red
+    '#6a62f4', // Purple
+    '#1ebe8e', // Green
+    '#00189180' // Blue-France (with --light opacity)
+  ]
+
   new Chart(chartContext, {
     type: 'doughnut',
     data: {
@@ -198,7 +206,8 @@ const drawBudgetChart = () => {
       datasets: [
         {
           label: 'Répartition des dépenses',
-          data: totalByCategory
+          data: totalByCategory,
+          backgroundColor: chartColors
         }
       ]
     },
@@ -206,7 +215,7 @@ const drawBudgetChart = () => {
       responsive: true,
       plugins: {
         legend: {
-          position: 'top',
+          position: 'bottom',
           display: true
         },
         tooltip: {
