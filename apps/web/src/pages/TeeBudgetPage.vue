@@ -152,8 +152,6 @@ import Chart from 'chart.js/auto'
 
 const budgetChartCanvas = ref<HTMLCanvasElement | null>(null)
 
-// Data for 2023 and 2024
-
 const budgetLabels = ['Design', 'Développement et Data engineering', 'Pilotage', 'Coaching', 'BizDev']
 const budgetData = {
   2023: [83194, 164674, 154627, 48600, 10819],
@@ -191,13 +189,8 @@ const drawBudgetChart = () => {
     return budgetData[2023][index] + budgetData[2024][index]
   })
 
-  const chartColors = [
-    '#facf35', // Yellow
-    '#fca081', // Red
-    '#6a62f4', // Purple
-    '#1ebe8e', // Green
-    '#00189180' // Blue-France (with --light opacity)
-  ]
+  // const chartColors = [Color.yellow, Color.red, Color.purple, Color.green, Color.blueFrance]
+  const chartColors = ['#facf35', '#fca081', '#6a62f4', '#1ebe8e', '#001891']
 
   new Chart(chartContext, {
     type: 'doughnut',
