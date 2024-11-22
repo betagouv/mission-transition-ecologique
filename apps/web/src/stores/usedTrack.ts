@@ -117,7 +117,7 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
       if (value) {
         useNavigationStore().updateSearchParam({ name: current.value.id, value: value })
 
-        CompanyDataStorageHandler.setDataFromTrack(current.value.id, value, selectedOptions)
+        CompanyDataStorageHandler.setDataStorageFromTrack(current.value.id, value, selectedOptions)
       }
     }
 
@@ -319,7 +319,7 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
       const value = useNavigationStore().query[trackId] as string | string[]
       const selectedOptions: TrackOptionsUnion[] = await useTrackStore().getSelectedOptionsByTrackAndValue(track, value)
 
-      CompanyDataStorageHandler.setDataFromTrack(trackId as TrackId, value, selectedOptions)
+      CompanyDataStorageHandler.setDataStorageFromTrack(trackId as TrackId, value, selectedOptions)
 
       if (selectedOptions.length === 0) {
         useNavigationStore().deleteSearchParam(trackId)

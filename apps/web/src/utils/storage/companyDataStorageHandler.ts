@@ -5,6 +5,7 @@ import {
   EstablishmentFront,
   LegalCategory,
   type QuestionnaireData,
+  QuestionnaireRoute,
   SiretValue,
   StructureSize,
   TrackId,
@@ -83,7 +84,7 @@ export class CompanyDataStorageHandler {
     return false
   }
 
-  static setDataFromTrack(trackId: TrackId, value: string | string[], selectedOptions: TrackOptionsUnion[]) {
+  static setDataStorageFromTrack(trackId: TrackId, value: string | string[], selectedOptions: TrackOptionsUnion[]) {
     if (trackId === TrackId.Siret && value !== SiretValue.Wildcard && selectedOptions.length > 0) {
       const questionnaireData = selectedOptions[0].questionnaireData as EstablishmentFront
       CompanyDataStorage.setCompanyData(questionnaireData)
@@ -104,6 +105,15 @@ export class CompanyDataStorageHandler {
       case CompanyDataStorageKey.Size:
         return TrackId.StructureWorkforce
     }
+  }
+
+  static getNextTrackStorage() {
+    return CompanyDataStorage.hasSize() ? this._getQuestionnaireGoal() : TrackId.StructureWorkforce
+  }
+
+  private static _getQuestionnaireGoal() {
+    const questionnaireChoice = useUsedTrackStore().getUsedTrack(TrackId.QuestionnaireRoute)?.selected[0].value
+    return questionnaireChoice === QuestionnaireRoute.SpecificGoal ? TrackId.Goals : TrackId.BuildingProperty
   }
 
   private static _canAddSizeToStorage(size: StructureSize, questionnaireData: { [k: string]: any }, key: string) {
