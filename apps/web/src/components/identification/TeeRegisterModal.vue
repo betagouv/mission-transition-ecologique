@@ -51,6 +51,7 @@ import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 import { onClickOutside } from '@vueuse/core'
 import Navigation from '@/utils/navigation'
 import { useNavigationStore } from '@/stores/navigation'
+import { CompanyDataStorageHandler } from '@/utils/storage/companyDataStorageHandler'
 
 const registerModal = ref(null)
 const registeredData = CompanyDataStorage.getData()
@@ -86,12 +87,13 @@ const updateEstablishment = (selectedEstablishment: EstablishmentFront) => {
   }
   manualRegistration.value = false
 }
-const resetSiret = () => {
+const resetSiret = async () => {
   company.value = null
   companySize.value = null
   manualRegistration.value = false
   CompanyDataStorage.removeItem(CompanyDataStorageKey.Company)
   CompanyDataStorage.removeItem(CompanyDataStorageKey.Size)
+  CompanyDataStorageHandler.updateRouteFromStorage()
 }
 
 const imgClass = computed<string>(() => {

@@ -11,8 +11,15 @@ import {
   type TrackOptionsUnion
 } from '@/types'
 import { CompanyDataType } from '@/types/companyDataType'
+import { useUsedTrackStore } from '@/stores/usedTrack'
 
 export class CompanyDataStorageHandler {
+  static async saveCompanyDataToStorage(data: CompanyDataType) {
+    CompanyDataStorage.setCompanyData(data[CompanyDataStorageKey.Company])
+    CompanyDataStorage.setSize(data[CompanyDataStorageKey.Size] as StructureSize)
+    await useUsedTrackStore().setFromStorage()
+  }
+
   static populateCompletedQuestionnaire(data: FlatArray<((QuestionnaireData | undefined)[] | undefined)[], 1>[]) {
     if (this.canUseCompanyData(data, CompanyDataStorageKey.Company as keyof QuestionnaireData)) {
       data.push(CompanyDataStorage.getCompanyData() as QuestionnaireData)
@@ -43,19 +50,20 @@ export class CompanyDataStorageHandler {
   }
 
   static updateSearchParamFromStorage() {
-    if (CompanyDataStorage.hasCompanyData()) {
-      useNavigationStore().updateSearchParam({
-        name: TrackId.Siret,
-        value: (CompanyDataStorage.getCompanyData() as EstablishmentFront)?.siret
-      })
-    }
+    useNavigationStore().updateSearchParam({
+      name: TrackId.Siret,
+      value: (CompanyDataStorage.getCompanyData() as EstablishmentFront)?.siret
+    })
 
-    if (CompanyDataStorage.hasSize() && CompanyDataStorage.getSize() !== StructureSize.EI) {
-      useNavigationStore().updateSearchParam({
-        name: TrackId.StructureWorkforce,
-        value: CompanyDataStorage.getSize()
-      })
-    }
+    useNavigationStore().updateSearchParam({
+      name: TrackId.StructureWorkforce,
+      value: CompanyDataStorage.getSize()
+    })
+  }
+
+  static updateRouteFromStorage() {
+    this.updateSearchParamFromStorage()
+    useNavigationStore().replaceBrowserHistory()
   }
 
   static canUseCompanyData(data: (QuestionnaireData | undefined)[], key: keyof QuestionnaireData): boolean {
