@@ -35,12 +35,14 @@ const getListText = () => {
   }
 }
 const getBaseRouteName = () => {
-  if (navigationStore.isProgramFromProject() || navigationStore.isCatalogAboutProjects()) {
-    return RouteName.CatalogProjects
-  } else if (navigationStore.isCatalogAboutPrograms()) {
-    return RouteName.CatalogPrograms
-  } else {
-    return RouteName.QuestionnaireResult
+  switch (true) {
+    case navigationStore.isCatalogAboutProjects():
+      return RouteName.CatalogProjects
+    case navigationStore.isCatalogAboutPrograms():
+      return RouteName.CatalogPrograms
+    case navigationStore.isProgramFromProject():
+    default:
+      return RouteName.QuestionnaireResult
   }
 }
 
