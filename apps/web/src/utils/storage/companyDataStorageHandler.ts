@@ -11,13 +11,12 @@ import {
   type TrackOptionsUnion
 } from '@/types'
 import { CompanyDataType } from '@/types/companyDataType'
-import { useUsedTrackStore } from '@/stores/usedTrack'
 
 export class CompanyDataStorageHandler {
   static async saveCompanyDataToStorage(data: CompanyDataType) {
     CompanyDataStorage.setCompanyData(data[CompanyDataStorageKey.Company])
     CompanyDataStorage.setSize(data[CompanyDataStorageKey.Size] as StructureSize)
-    await useUsedTrackStore().setFromStorage()
+    // await useUsedTrackStore().setFromStorage()
   }
 
   static populateCompletedQuestionnaire(data: FlatArray<((QuestionnaireData | undefined)[] | undefined)[], 1>[]) {
