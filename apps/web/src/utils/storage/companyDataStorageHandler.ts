@@ -11,12 +11,17 @@ import {
   type TrackOptionsUnion
 } from '@/types'
 import { CompanyDataType } from '@/types/companyDataType'
+import { useUsedTrackStore } from '@/stores/usedTrack'
 
 export class CompanyDataStorageHandler {
-  static async saveCompanyDataToStorage(data: CompanyDataType) {
+  static saveDataToStorage(data: CompanyDataType) {
     CompanyDataStorage.setCompanyData(data[CompanyDataStorageKey.Company])
     CompanyDataStorage.setSize(data[CompanyDataStorageKey.Size] as StructureSize)
-    // await useUsedTrackStore().setFromStorage()
+  }
+
+  static saveAndSetUsedTrackStore(data: CompanyDataType) {
+    this.saveDataToStorage(data)
+    useUsedTrackStore().setFromStorage()
   }
 
   static populateCompletedQuestionnaire(data: FlatArray<((QuestionnaireData | undefined)[] | undefined)[], 1>[]) {
@@ -89,6 +94,15 @@ export class CompanyDataStorageHandler {
 
     if (trackId === TrackId.StructureWorkforce) {
       CompanyDataStorage.setSize(value as StructureSize)
+    }
+  }
+
+  static getTrackIdFromStorageKey(key: CompanyDataStorageKey): TrackId {
+    switch (key) {
+      case CompanyDataStorageKey.Company:
+        return TrackId.Siret
+      case CompanyDataStorageKey.Size:
+        return TrackId.StructureWorkforce
     }
   }
 

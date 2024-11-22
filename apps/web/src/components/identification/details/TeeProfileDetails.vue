@@ -86,7 +86,7 @@ const canBeSaved = computed(() => {
   return props.manual ? profile.value.activity.value && profile.value.localisation.value && profile.value.size : profile.value.size.value
 })
 
-const saveProfile = async () => {
+const saveProfile = () => {
   showError.value = false
   if (canBeSaved.value && profile.value.size.value) {
     const company = props.manual
@@ -97,7 +97,7 @@ const saveProfile = async () => {
         } as CompanyDataType[CompanyDataStorageKey.Company])
       : props.company
 
-    await CompanyDataStorageHandler.saveCompanyDataToStorage({
+    CompanyDataStorageHandler.saveAndSetUsedTrackStore({
       [CompanyDataStorageKey.Company]: company,
       [CompanyDataStorageKey.Size]: profile.value.size.value
     })
