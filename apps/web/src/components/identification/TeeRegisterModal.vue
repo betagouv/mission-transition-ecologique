@@ -87,7 +87,7 @@ const updateEstablishment = (selectedEstablishment: EstablishmentFront) => {
   }
   manualRegistration.value = false
 }
-const resetSiret = async () => {
+const resetSiret = () => {
   company.value = null
   companySize.value = null
   manualRegistration.value = false
