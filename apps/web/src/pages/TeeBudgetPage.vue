@@ -13,7 +13,6 @@
     <a
       href="https://beta.gouv.fr/approche/manifeste"
       target="_blank"
-      rel="noopener"
       >manifeste beta.gouv</a
     >
     dont nous rappelons les principes ici :
@@ -34,7 +33,6 @@
       <a
         href="https://beta.gouv.fr/startups/transition-ecologique-des-entreprises.html"
         target="_blank"
-        rel="noopener"
         >fiche du produit beta.gouv.fr</a
       >.
     </p>
@@ -46,7 +44,6 @@
         <a
           href="https://www.ademe.fr/"
           target="_blank"
-          rel="noopener"
           >ADEME - Agence de la transition écologique</a
         >
       </li>
@@ -54,7 +51,6 @@
         <a
           href="https://www.entreprises.gouv.fr/fr/la-direction-generale-des-entreprises-dge"
           target="_blank"
-          rel="noopener"
           >DGE - Direction Générale des Entreprises</a
         >
       </li>
@@ -62,7 +58,6 @@
         <a
           href="https://www.ecologie.gouv.fr/commissariat-general-au-developpement-durable-cgdd"
           target="_blank"
-          rel="noopener"
           >CGDD - Commissariat général au développement durable</a
         >
       </li>
@@ -70,7 +65,6 @@
         <a
           href="https://www.bpifrance.fr/"
           target="_blank"
-          rel="noopener"
           >Bpifrance - Banque publique d'investissement</a
         >
       </li>
@@ -78,21 +72,18 @@
         <a
           href="https://www.numerique.gouv.fr/services/fonds-dinvestissement-numerique-et-donnees-pour-la-planification-ecologique/"
           target="_blank"
-          rel="noopener"
           >FINDPE - Fonds d’investissement « Numérique et Données » pour la Planification écologique</a
         >
         de la
         <a
           href="https://www.numerique.gouv.fr/"
           target="_blank"
-          rel="noopener"
           >DINUM</a
         >
         &
         <a
           href="https://www.info.gouv.fr/grand-dossier/france-nation-verte/le-secretariat-general-a-la-planification-ecologique"
           target="_blank"
-          rel="noopener"
           >SGPE</a
         >
       </li>
@@ -109,43 +100,38 @@
           <thead>
             <tr>
               <th>Dépense</th>
-              <th class="text-center">2023</th>
-              <th class="text-center">2024 (prévisionnel)</th>
+              <th
+                v-for="(label, year) in yearsLabels"
+                :key="year"
+                class="text-center"
+              >
+                {{ label }}
+              </th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Design</td>
-              <td class="text-right">83 194 €</td>
-              <td class="text-right">152 552,40 €</td>
-            </tr>
-            <tr>
-              <td>
-                Développement <br />
-                et Data engineering
+            <tr
+              v-for="(label, index) in budgetLabels"
+              :key="index"
+            >
+              <td>{{ label }}</td>
+              <td
+                v-for="(_, year) in yearsLabels"
+                :key="year"
+                class="text-right"
+              >
+                {{ formatCurrency(budgetData[year][index]) }}
               </td>
-              <td class="text-right">164 674 €</td>
-              <td class="text-right">439 117,59 €</td>
-            </tr>
-            <tr>
-              <td>Pilotage</td>
-              <td lass="text-right">154 627 €</td>
-              <td class="text-right">192 628,80 €</td>
-            </tr>
-            <tr>
-              <td>Coaching</td>
-              <td class="text-right">48 600 €</td>
-              <td class="text-right">61 862,40 €</td>
-            </tr>
-            <tr>
-              <td>BizDev</td>
-              <td class="text-right">10 819 €</td>
-              <td class="text-right">172 558,18 €</td>
             </tr>
             <tr>
               <td><strong>Total TTC</strong></td>
-              <td class="text-right"><strong>461 914 €</strong></td>
-              <td class="text-right"><strong>1 018 719,37 €</strong></td>
+              <td
+                v-for="(label, year) in yearsLabels"
+                :key="year"
+                class="text-right"
+              >
+                <strong>{{ formatCurrency(yearlyTotals[year]) }}</strong>
+              </td>
             </tr>
           </tbody>
         </DsfrTable>
@@ -167,10 +153,32 @@ import Chart from 'chart.js/auto'
 const budgetChartCanvas = ref<HTMLCanvasElement | null>(null)
 
 // Data for 2023 and 2024
+
+const budgetLabels = ['Design', 'Développement et Data engineering', 'Pilotage', 'Coaching', 'BizDev']
 const budgetData = {
-  labels: ['Design', 'Développement et Data engineering', 'Pilotage', 'Coaching', 'BizDev'],
   2023: [83194, 164674, 154627, 48600, 10819],
   2024: [152552.4, 439117.59, 192628.8, 61862.4, 172558.18]
+}
+const yearsLabels = {
+  2023: 2023,
+  2024: '2024 (Prévisionnel)'
+}
+const yearlyTotals = computed(() => {
+  return Object.entries(budgetData).reduce(
+    (acc, [year, values]) => {
+      acc[Number(year)] = values.reduce((sum, value) => sum + value, 0)
+      return acc
+    },
+    {} as Record<number, number>
+  )
+})
+const formatCurrency = (value: number): string => {
+  return new Intl.NumberFormat('fr-FR', {
+    style: 'currency',
+    currency: 'EUR',
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0
+  }).format(value)
 }
 
 const drawBudgetChart = () => {
@@ -179,14 +187,14 @@ const drawBudgetChart = () => {
   const chartContext = budgetChartCanvas.value.getContext('2d')
   if (!chartContext) return
 
-  const totalByCategory = budgetData.labels.map((label, index) => {
+  const totalByCategory = budgetLabels.map((label, index) => {
     return budgetData[2023][index] + budgetData[2024][index]
   })
 
   new Chart(chartContext, {
     type: 'doughnut',
     data: {
-      labels: budgetData.labels,
+      labels: budgetLabels,
       datasets: [
         {
           label: 'Répartition des dépenses',
