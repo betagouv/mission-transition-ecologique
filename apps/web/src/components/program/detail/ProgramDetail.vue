@@ -198,7 +198,7 @@
           <ProgramAccordion
             v-if="program && linkedProjects && linkedProjects.length > 0"
             :accordion-id="`${program.id}-linked-projects`"
-            :title="Translation.t('program.projectExamples')"
+            :title="Breakpoint.isMobile() ? Translation.t('program.projectExamplesSM') : Translation.t('program.projectExamples')"
           >
             <ProgramProjects :linked-projects="linkedProjects" />
           </ProgramAccordion>
@@ -250,6 +250,7 @@ import { MetaSeo } from '@/utils/metaSeo'
 import Program from '@/utils/program/program'
 import { Scroll } from '@/utils/scroll'
 import Translation from '@/utils/translation'
+import Breakpoint from '@/utils/breakpoints'
 import { computed, onBeforeMount, ref } from 'vue'
 import { useProjectStore } from '@/stores/project'
 import Opportunity from '@/utils/opportunity'
