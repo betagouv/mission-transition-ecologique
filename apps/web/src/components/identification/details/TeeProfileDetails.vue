@@ -35,8 +35,8 @@
 <script setup lang="ts">
 import { RegisterDetailType, RegisterDetails, Sector, CompanyDataStorageKey, CompanyDataType } from '@/types'
 import Breakpoint from '@/utils/breakpoints'
-import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 import Navigation from '@/utils/navigation'
+import { CompanyDataStorageHandler } from '@/utils/storage/companyDataStorageHandler'
 
 interface Props {
   company: CompanyDataType[CompanyDataStorageKey.Company]
@@ -96,8 +96,13 @@ const saveProfile = () => {
           denomination: `Entreprise : ${profile.value.activity.value} - ${profile.value.localisation.value}`
         } as CompanyDataType[CompanyDataStorageKey.Company])
       : props.company
-    CompanyDataStorage.setCompanyData(company)
-    CompanyDataStorage.setSize(profile.value.size.value)
+
+    CompanyDataStorageHandler.saveAndSetUsedTrackStore({
+      [CompanyDataStorageKey.Company]: company,
+      [CompanyDataStorageKey.Size]: profile.value.size.value
+    })
+    CompanyDataStorageHandler.updateRouteFromStorage()
+
     Navigation.toggleRegisterModal(false)
   } else {
     showError.value = true
