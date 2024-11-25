@@ -36,7 +36,7 @@
           <div class="fr-col-md-4 fr-col-lg-3 fr-col-xl-3 fr-col-sm-12 fr-text-right fr-tee-program-detail-img">
             <img
               class="fr-responsive-img"
-              :src="`${publicPath}${program?.illustration}`"
+              :src="`/${program?.illustration}`"
               :alt="`image / ${program?.titre}`"
             />
 
@@ -76,7 +76,7 @@
               :program="program"
             />
             <DsfrButton
-              v-if="!isProgramAutonomous"
+              v-if="!isProgramAutonomous && programIsEligible"
               size="lg"
               icon="fr-icon-mail-line"
               class="fr-ml-md-3v"
@@ -193,6 +193,10 @@
           :title="Translation.t('program.programAmIEligible')"
         >
           <ProgramEligibility :program="program" />
+          <TeeRegisterHighlight
+            v-if="!hasRegisteredData"
+            :text="Translation.t('program.programRegisterHighlightText')"
+          />
         </ProgramAccordion>
         <ProgramAccordion
           v-if="program && linkedProjects && linkedProjects.length > 0"
@@ -208,20 +212,20 @@
         >
           <ProgramLongDescription :program="program" />
         </ProgramAccordion>
-        <hr class="fr-mb-9v fr-pb-1v" />
       </div>
     </div>
 
     <!-- PROGRAM FORM -->
     <div
+      v-if="hasRegisteredData && programIsEligible"
       ref="TeeProgramFormContainer"
-      class="fr-bg--blue-france--lightness fr-col-justify--center fr-grid-row fr-p-2w"
+      class="fr-bg--blue-france--lightness fr-grid-row fr-p-2w"
     >
       <TeeForm
         v-if="program"
         :form-container-ref="TeeProgramFormContainer"
         :data-id="program.id"
-        :phone-callback="Translation.ti(Translation.t('form.phoneContact'), { operator: program['opérateur de contact'] })"
+        :phone-callback="Translation.t('form.phoneContact', { operator: program['opérateur de contact'] })"
         :form="Opportunity.getProgramFormFields(program)"
         :form-type="OpportunityType.Program"
         :error-email-subject="Translation.t('program.form.errorEmail.subject', { program: program.titre })"
@@ -241,7 +245,7 @@ import ProgramLongDescription from '@/components/program/detail/ProgramLongDescr
 import ProgramTile from '@/components/program/detail/ProgramTile.vue'
 import Config from '@/config'
 import { useProgramStore } from '@/stores/program'
-import { OpportunityType, type ProgramData as ProgramType, Project as ProjectType } from '@/types'
+import { OpportunityType, ProgramEligibilityType, Project as ProjectType } from '@/types'
 import { RouteName } from '@/types/routeType'
 import { useNavigationStore } from '@/stores/navigation'
 import { MetaSeo } from '@/utils/metaSeo'
@@ -251,16 +255,21 @@ import Translation from '@/utils/translation'
 import { computed, onBeforeMount, ref } from 'vue'
 import { useProjectStore } from '@/stores/project'
 import Opportunity from '@/utils/opportunity'
+import CompanyDataStorage from '@/utils/storage/companyDataStorage'
+import { storeToRefs } from 'pinia'
 
 const projectStore = useProjectStore()
 const programsStore = useProgramStore()
 const navigationStore = useNavigationStore()
 
-const program = ref<ProgramType>()
+const { currentProgram: program } = storeToRefs(programsStore)
 const linkedProjects = ref<ProjectType[] | undefined>([])
 const TeeProgramFormContainer = ref<HTMLElement | null | undefined>(null)
 
 const publicPath = Config.publicPath
+
+const hasRegisteredData = CompanyDataStorage.hasData()
+const registeredData = CompanyDataStorage.getData()
 
 interface Props {
   programId: string
@@ -296,10 +305,22 @@ const isProgramAutonomous = computed(() => {
   return program.value?.[`activable en autonomie`] == 'oui'
 })
 
+const programIsEligible = computed(() => {
+  return (
+    program.value?.eligibility === ProgramEligibilityType.Eligible ||
+    program.value?.eligibility === ProgramEligibilityType.PartiallyEligible
+  )
+})
+
 onBeforeMount(async () => {
   useNavigationStore().hasSpinner = true
   program.value = programsStore.currentProgram
-  const projectResult = await projectStore.projects
+  let projectResult
+  if (useNavigationStore().isCatalogProgramDetail()) {
+    projectResult = await projectStore.projects
+  } else {
+    projectResult = await projectStore.eligibleProjects
+  }
   if (projectResult.isOk) {
     linkedProjects.value = Program.getLinkedProjects(program.value, projectResult.value)
   }
@@ -324,6 +345,12 @@ onBeforeMount(async () => {
 
 onBeforeRouteLeave(() => {
   useSeoMeta(MetaSeo.default())
+})
+
+watch(registeredData.value, async () => {
+  if (program.value) {
+    await programsStore.getProgramById(program.value.id)
+  }
 })
 
 const programIsAvailable = computed(() => {

@@ -49,7 +49,7 @@ publicodes:
       - a un effectif éligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
-      - effectif >= 20
+      - effectif >= 5
       - effectif <= 499
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:

@@ -1,0 +1,121 @@
+titre: CEDRE Ambition
+promesse: Faites-vous accompagner par un expert RSE dans votre transition écologique
+description: >-
+  Obtenez une subvention pour être accompagné par un expert à l’élaboration d’un
+  diagnostic puis d'un plan d’action de 3 ans portant sur la RSE et la
+  transition écologique. Bénéficiez d'un suivi semestriel par l’expert RSE avec
+  une orientation vers des dispositifs d’aides adaptés. Cet accompagnement vous
+  donne ensuite accès au dispositif "CEDRE Investissement" pour vous aider à
+  financer vos projets.
+description longue: >-
+  Les structures candidates sont notées en fonction de :
+
+  1) Votre stratégie de développement :
+
+  • Modèle économique et financier passé.
+
+  • Formalisation et cohérence de la stratégie de développement.
+
+  • Potentiel de création d’emplois.
+
+  • Stratégie de financement.
+
+  2) Vos enjeux de l’accompagnement RSE et transition écologique : 
+
+  • Enjeux territoriaux et filière.
+
+  • Niveau d’ambition de l’entreprise en RSE et transition écologique.
+
+
+  Ce dispositif est éligible au régime d'aides de minimis (cumul d’aides
+  publiques inférieur à 290 500 euros sur les 3 dernières années).
+fin de validité: 13/12/2024
+illustration: images/TEE_ampoule.png
+opérateur de contact: Région Sud (PACA)
+url: https://www.maregionsud.fr/vos-aides/detail/cedre-ambition
+nature de l'aide: étude
+montant du financement: Gratuit
+objectifs:
+  - description: >-
+      Prenez contact avec un conseiller afin de vérifier l'éligibilité de votre
+      projet.
+  - description: >-
+      Complétez le dossier et la lettre de candidature disponibles dans les
+      "ressources à télécharger" en bas de page.
+    liens:
+      - lien: >-
+          https://entreprises.maregionsud.fr/financement/sud-entreprises/gamme-cedre/cedre-ambition
+        texte: Lettre et dossier de candidature CEDRE Ambition
+  - description: "Envoyez votre dossier de candidature par mail à l’adresse [cedre@maregionsud.fr](mailto:cedre@maregionsud.fr)\_avec pour objet \"Candidature CEDRE Ambition 2025\". La date limite de réception des candidatures est fixée au 13 décembre 2024."
+  - description: >-
+      Votre projet est analysé par un comité technique composé de représentants
+      de la Région, des chambres consulaires, et d’autres parties prenantes.
+  - description: >-
+      Si votre candidature est validée, bénéficiez de l'accompagnement par un
+      expert pris en charge à 100% par la Région.
+  - description: >-
+      Intégrez la communauté des entreprises engagées en PACA via le réseau
+      PRECI, pour mutualiser vos retours d'expérience et profiter de la
+      collaboration entre pairs.
+    liens:
+      - lien: https://www.reseau-preci.org/
+        texte: Le Réseau Preci
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - TPE et PME
+    - Non éligible aux micro-entreprises
+  secteur géographique:
+    - Provence-Alpes-Côte d'Azur
+  secteur d'activité:
+    - Tous secteurs d’activité
+  nombre d'années d'activité:
+    - Au moins 2 ans d'activité
+  autres critères d'éligibilité:
+    - >-
+      Réaliser un chiffre d’affaires inférieur à 50 M€ ou un total bilan
+      inférieur à 43 M€.
+    - >-
+      Porter un projet de développement créateur d’emplois et engagé dans une
+      démarche de performance globale RSE ambitieuse, notamment sur le plan
+      environnemental.
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
+    toutes ces conditions:
+      - a un effectif éligible
+      - entreprise . est dans une zone géographique éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+      - effectif >= 1
+      - effectif <= 249
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est mon impact environnemental
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Provence-Alpes-Côte d'Azur

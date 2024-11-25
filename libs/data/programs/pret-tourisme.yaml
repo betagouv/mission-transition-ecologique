@@ -1,0 +1,74 @@
+titre: Prêt Tourisme Bpifrance
+promesse: >-
+  Obtenez un prêt à taux préférentiel pour financer vos travaux de
+  modernisation, de mise aux normes et rénovation
+description: >-
+  Le "Prêt Tourisme" est un prêt à taux préférentiel proposé par Bpifrance
+  adossé aux ressources de la Banque des Territoires. Le Prêt Tourisme soutient
+  des projets réalisés ou à venir de rénovation, modernisation ou de mise aux
+  normes de votre hébergement touristique. Il peut également financer des
+  dépenses de communication, de recrutement et de formation permettant une
+  meilleure prise en compte du développement durable dans la gestion quotidienne
+  de votre établissement.
+description longue: >-
+  Ce Prêt finance :
+
+  • des investissements immatériels
+
+  • des investissements corporels à faible valeur de gage
+
+  • l'augmentation du Besoin en Fonds de Roulement
+
+  • des opérations de transmission (y compris croissance externe) par achat de
+  titres ou de fonds de commerce permettant d’être au moins majoritaire à
+  l’issue de l’opération
+fin de validité: 07/11/2024
+illustration: images/TEE_energie_verte.png
+opérateur de contact: Bpifrance
+url: https://www.bpifrance.fr/catalogue-offres/pret-tourisme
+nature de l'aide: prêt
+montant du prêt: De 50 000 € à 5 000 000 €
+durée du prêt: de 2 à 10 ans
+objectifs:
+  - description: >-
+      Exprimez votre intérêt pour ce prêt à Bpifrance grâce au formulaire
+      ci-dessous.
+  - description: >-
+      Obtenez un rendez-vous de financement auprès d'un chargé d'affaires
+      Bpifrance.
+  - description: Bpifrance étudie votre demande de prêt.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - TPE, PME et ETI
+    - Non éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - Tourisme
+  nombre d'années d'activité:
+    - Au moins 3 ans d'activité
+  autres critères d'éligibilité:
+    - Ce prêt est obligatoirement associé à un concours bancaire du même montant
+    - >-
+      Vous devez être en mesure de recevoir une aide d’Etat relevant du régime «
+      de minimis »
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
+    toutes ces conditions:
+      - a un effectif éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+      - effectif >= 1
+      - effectif <= 4999
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est I
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est rénover mon bâtiment
