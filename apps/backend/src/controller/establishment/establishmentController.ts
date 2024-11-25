@@ -27,6 +27,7 @@ const exampleEstablishment = {
 
 @SuccessResponse('200', 'OK')
 @Route('establishments')
+@Tags('establishments')
 export class SireneController extends Controller {
   /**
    * Retrieve establishments informations used in front end

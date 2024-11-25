@@ -318,7 +318,13 @@ const programIsEligible = computed(() => {
 
 onBeforeMount(async () => {
   useNavigationStore().hasSpinner = true
-  const projectResult = await projectStore.projects
+  program.value = programsStore.currentProgram
+  let projectResult
+  if (useNavigationStore().isCatalogProgramDetail()) {
+    projectResult = await projectStore.projects
+  } else {
+    projectResult = await projectStore.eligibleProjects
+  }
   if (projectResult.isOk) {
     linkedProjects.value = Program.getLinkedProjects(program.value, projectResult.value)
   }
