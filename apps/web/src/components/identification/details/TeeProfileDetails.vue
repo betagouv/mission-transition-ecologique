@@ -33,10 +33,11 @@
   </div>
 </template>
 <script setup lang="ts">
-import { RegisterDetailType, RegisterDetails, Sector, CompanyDataStorageKey, CompanyDataType } from '@/types'
+import { RegisterDetailType, RegisterDetails, CompanyDataStorageKey, CompanyDataType } from '@/types'
 import Breakpoint from '@/utils/breakpoints'
 import Navigation from '@/utils/navigation'
 import { CompanyDataStorageHandler } from '@/utils/storage/companyDataStorageHandler'
+import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
 interface Props {
   company: CompanyDataType[CompanyDataStorageKey.Company]
@@ -90,8 +91,8 @@ const saveProfile = () => {
   showError.value = false
   if (canBeSaved.value && profile.value.size.value) {
     const companyData = props.manual
-      ? CompanyDataStorageHandler.getManualCompanyData(profile.value)
-      : CompanyDataStorageHandler.getSiretBasedCompanyData(props.company, profile.value)
+      ? CompanyDataStorage.getManualCompanyData(profile.value)
+      : CompanyDataStorage.getSiretBasedCompanyData(props.company, profile.value)
 
     CompanyDataStorageHandler.saveAndSetUsedTrackStore({
       [CompanyDataStorageKey.Company]: companyData,
