@@ -43,16 +43,19 @@ export default class Config extends ConfigCommon {
       return undefined
     }
   }
+  public static get THIRD_API_ENABLED(): boolean {
+    return this.getEnvValue('THIRD_API_ENABLED', 'true') !== 'false'
+  }
 
   public static get BREVO_API_ENABLED(): boolean {
-    return this.getEnvValue('TIERS_API_ENABLE', 'true') !== 'false' && this.getEnvValue('BREVO_API_ENABLED', 'true') !== 'true'
+    return this.THIRD_API_ENABLED && this.getEnvValue('BREVO_API_ENABLED', 'true') !== 'true'
   }
 
   public static get PDE_API_ENABLED(): boolean {
-    return this.getEnvValue('TIERS_API_ENABLE', 'true') !== 'false' && this.getEnvValue('PDE_API_ENABLED', 'true') !== 'true'
+    return this.THIRD_API_ENABLED && this.getEnvValue('PDE_API_ENABLED', 'true') !== 'true'
   }
 
   public static get BPI_API_ENABLED(): boolean {
-    return this.getEnvValue('TIERS_API_ENABLE', 'true') !== 'false' && this.getEnvValue('BPI_API_ENABLED', 'true') !== 'true'
+    return this.THIRD_API_ENABLED && this.getEnvValue('BPI_API_ENABLED', 'true') !== 'true'
   }
 }
