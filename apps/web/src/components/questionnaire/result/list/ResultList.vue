@@ -20,7 +20,6 @@ const navigationStore = useNavigationStore()
 const projects = ref<ProjectType[]>()
 const hasError = ref<boolean>(false)
 
-
 const registeredData = CompanyDataStorage.getData()
 
 const filteredProjects = Project.filter(projects, Theme.getThemeFromSelectedOrPriorityTheme())
