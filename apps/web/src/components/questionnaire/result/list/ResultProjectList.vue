@@ -7,7 +7,7 @@
     >
       <div class="fr-container fr-mb-2v">
         <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2">
-          <h2 class="fr-text--bold fr-mb-0">Quel est votre projet ?</h2>
+          <h2 class="fr-text--bold fr-mt-3v fr-mb-0">Quel est votre projet ?</h2>
         </div>
       </div>
     </div>
