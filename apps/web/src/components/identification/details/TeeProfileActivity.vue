@@ -29,6 +29,7 @@
           class="fr-input--white fr-input"
           type="search"
           :placeholder="infos.description"
+          @click="searchActivity"
           @update:model-value="updateModelValue"
           @keyup.enter="searchActivity"
         />
@@ -92,10 +93,8 @@ const activityLabel = computed<string>(() => {
 onClickOutside(activitySearchBar, () => modifyActivity())
 
 const debouncedActivityInput = useDebounce(activityInput, 1000)
-watch(debouncedActivityInput, (newValue) => {
-  if (newValue) {
-    searchActivity()
-  }
+watch(debouncedActivityInput, () => {
+  searchActivity()
 })
 
 const errorMsg = computed<string>(() => {
@@ -121,16 +120,12 @@ const selectActivity = (activity: CompanyActivityType) => {
 }
 
 const searchActivity = async () => {
-  if (activityInput.value) {
-    isLoading.value = true
-    const results = await new EstablishmentApi().searchActivities(activityInput.value)
-    if (results.isOk) {
-      activityResults.value = results.value
-    }
-    isLoading.value = false
-  } else {
-    activityResults.value = []
+  isLoading.value = true
+  const results = await new EstablishmentApi().searchActivities(activityInput.value)
+  if (results.isOk) {
+    activityResults.value = results.value
   }
+  isLoading.value = false
 }
 </script>
 <style lang="scss" scoped>
