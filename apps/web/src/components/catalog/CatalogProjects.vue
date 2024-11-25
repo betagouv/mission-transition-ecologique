@@ -40,9 +40,9 @@
         </div>
         <div
           v-if="hasSpinner"
-          class="fr-col-12 fr-col-justify--center"
+          class="fr-col-12 fr-col-justify--center fr-col-content--middle"
         >
-          <TeeSpinner />
+          <TeeSpinner class="fr-mt-16w" />
         </div>
         <TeeListNoResults
           v-else-if="showNoResultsComponent"
