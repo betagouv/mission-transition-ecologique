@@ -12,11 +12,8 @@
         <div
           class="fr-col-12 fr-mt-3v"
           :class="{
-            'fr-col-offset-md-2': !hasError,
-            'fr-col-md-10': !hasError,
-            'fr-col-md-12': hasError,
-            'fr-col-justify--left': !hasError,
-            'fr-col-justify--center': hasError
+            'fr-col-offset-md-2 fr-col-md-10 fr-col-justify--left': !hasError,
+            'fr-col-md-12 fr-col-justify--center': hasError
           }"
         >
           <ThemeFilter />
@@ -24,8 +21,7 @@
         <div
           class="fr-col-12 fr-pr-md-2v"
           :class="{
-            'fr-col-offset-md-2': !hasError,
-            'fr-col-md-10': !hasError,
+            'fr-col-offset-md-2 fr-col-md-10': !hasError,
             'fr-col-md-12': hasError
           }"
         >
@@ -56,7 +52,7 @@
             </div>
           </div>
           <div
-            class="fr-col-12 fr-col-md-10 fr-pr-md-2v fr-col-justify--center"
+            class="fr-col-12 fr-pr-md-2v fr-col-justify--center"
             :class="{
               'fr-col-md-10': !hasError,
               'fr-col-md-12': hasError
