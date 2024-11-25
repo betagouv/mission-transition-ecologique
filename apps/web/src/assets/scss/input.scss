@@ -22,7 +22,7 @@
     outline-style: none;
   }
 
-  &&::placeholder {
+  &::placeholder {
     font-style: normal !important;
     color: var(--text-default-grey);
   }
