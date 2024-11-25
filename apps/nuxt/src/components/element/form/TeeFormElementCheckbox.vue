@@ -28,7 +28,6 @@ import { BooleanFieldInputType } from '@/types'
 
 interface Props {
   field: BooleanFieldInputType
-  publicPath: string
   getErrorMessage: () => string
   getValidMessage: () => string
 }

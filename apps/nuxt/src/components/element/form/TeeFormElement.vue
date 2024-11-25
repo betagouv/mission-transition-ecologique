@@ -4,7 +4,6 @@
       :is="currentComponent"
       v-model="fieldValueModel"
       :field="localField"
-      :public-path="publicPath"
       :get-error-message="getErrorMessage"
       :get-valid-message="getValidMessage"
       @update:model-value="validateFormField"
@@ -13,12 +12,10 @@
 </template>
 <script setup lang="ts">
 import { DefaultFieldFormType, FieldType, InputFieldUnionType, isValidatedStringFieldInputType } from '@/types'
-import Config from '@/config'
 import TeeFormElementCheckbox from './TeeFormElementCheckbox.vue'
 import TeeFormElementSelect from './TeeFormElementSelect.vue'
 import TeeFormElementInput from './TeeFormElementInput.vue'
 
-const publicPath = Config.publicPath !== 'undefined/' ? Config.publicPath : '../../public/'
 const currentComponent = computed(() => {
   switch (localField.value.type) {
     case FieldType.Checkbox:

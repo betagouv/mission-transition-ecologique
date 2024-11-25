@@ -1,10 +1,9 @@
 /// <reference types="vite/client" />
 export interface ImportMetaEnv {
   readonly [key: string]: boolean | string | number
-  readonly VITE_NO_DEBUG_SWITCH: string
   readonly VITE_DEPLOY_URL: string
   readonly VITE_CONTACT_EMAIL: string
-  readonly VITE_MATOMO_DEACTIVATE: string
+  readonly VITE_MATOMO_ENABLE: string
   readonly VITE_MATOMO_URL: string
   readonly VITE_MATOMO_APP_ID: number
   readonly VITE_TEE_BACKEND_URL: string

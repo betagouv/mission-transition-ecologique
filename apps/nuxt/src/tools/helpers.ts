@@ -13,8 +13,6 @@ import type {
   ResultsMapping
 } from '@/types'
 import { CleanerOperations, DataMappingFrom } from '@/types'
-import type { ImportMetaEnv } from '../env'
-import Config from '@/config'
 
 // GENERIC HELPERS
 
@@ -180,15 +178,11 @@ export const remapItem = (
   lang = 'fr'
 ) => {
   let data = { ...dataStructure }
-  const metaEnv: ImportMetaEnv = Config.metaEnv
 
   dataMappings.forEach((dataMapping) => {
     let value: unknown = ''
     let allResponses: any
     switch (dataMapping.from) {
-      case DataMappingFrom.Env:
-        value = metaEnv[dataMapping.id]
-        break
       case DataMappingFrom.FormData:
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         value = formData?.[dataMapping.id]

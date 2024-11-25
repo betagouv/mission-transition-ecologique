@@ -21,11 +21,6 @@ La documentation des styles est disponible dans le fichier [`./style.md`](./styl
 The `env` variables you can use for deployment are listed in the `.env.example` file.
 
 ```env
-# To hide the "debug" switch
-# If this variable is set to 'true'
-# it overrides the `debug-switch` parameters to prohibit debug mode
-VITE_NO_DEBUG_SWITCH = false
-
 # To indicate built source while copying the widget
 VITE_DEPLOY_URL = https://tee-frontend.osc-fr1.scalingo.io
 
@@ -41,9 +36,6 @@ VITE_POSTHOG_API_KEY = your_key
 VITE_MATOMO_DEACTIVATE = true
 VITE_MATOMO_URL = https://stats.beta.gouv.fr
 VITE_MATOMO_APP_ID = 42
-
-# To indicate the backend url
-VITE_TEE_BACKEND_URL=https://tee-backend.osc-fr1.scalingo.io
 ```
 
 ---

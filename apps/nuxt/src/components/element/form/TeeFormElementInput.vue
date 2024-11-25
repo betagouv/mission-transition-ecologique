@@ -47,7 +47,6 @@ import { StringFieldUnionType } from '@/types'
 
 interface Props {
   field: StringFieldUnionType
-  publicPath: string
   getErrorMessage: () => string
   getValidMessage: () => string
 }

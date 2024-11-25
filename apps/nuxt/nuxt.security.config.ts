@@ -1,7 +1,6 @@
 import { SecurityHeaders } from 'nuxt-security'
 import { NuxtSentryConfig } from './nuxt.sentry.config'
-// eslint-disable-next-line @nx/enforce-module-boundaries
-import ConfigCommon from '../../libs/common/src/config/configCommon'
+import Config from './src/config'
 
 export class NuxtSecurityConfig {
   static _conseillersEntreprisesUrl = 'https://conseillers-entreprises.service-public.fr'
@@ -27,7 +26,7 @@ export class NuxtSecurityConfig {
           this._posthogAssetsUrl,
           this._typeformUrl
         ],
-        'script-src': ["'self'", "'nonce-{{nonce}}'", "'strict-dynamic'", ConfigCommon.isProduction() ? '' : "'unsafe-eval'"],
+        'script-src': ["'self'", "'nonce-{{nonce}}'", "'strict-dynamic'", Config.isProduction() ? '' : "'unsafe-eval'"],
         'worker-src': ["'self'", 'blob:'],
         'style-src': ["'self'", "'unsafe-inline'", this._typeformUrl],
         'font-src': ["'self'"],

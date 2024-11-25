@@ -1,12 +1,11 @@
 import { dsnFromString } from '@sentry/utils'
 import { ModuleOptions as SentryOptions } from '@sentry/nuxt/build/types/module'
-// eslint-disable-next-line @nx/enforce-module-boundaries
-import ConfigCommon from '../../libs/common/src/config/configCommon'
+import Config from './src/config'
 
 export class NuxtSentryConfig {
-  static getConfig(): SentryOptions {
+  static getConfig() {
     const options: SentryOptions = {}
-    if (ConfigCommon.isProduction()) {
+    if (Config.isProduction()) {
       // const sentryData = this.getSentryData()
       const token = process.env.SENTRY_AUTH_TOKEN
 

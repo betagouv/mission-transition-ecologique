@@ -25,7 +25,9 @@ export default defineNuxtConfig({
   },
   typescript: {
     typeCheck: true,
-    strict: true,
+    tsConfig: {
+      extends: '../tsconfig.app.json', // Nuxt copies this string as-is to the `./.nuxt/tsconfig.json`, therefore it needs to be relative to that directory
+    }
   },
   imports: {
     autoImport: true
@@ -61,7 +63,15 @@ export default defineNuxtConfig({
     // sharedPrerenderData: true, // interssant pour eviter de refaire plusieurs fois la meme requete (https://nuxt.com/docs/api/nuxt-config#sharedprerenderdata)
   },
 
-  modules: ['@pinia/nuxt', 'vue-dsfr-nuxt-module', '@sentry/nuxt/module', 'nuxt-security', '@nuxtjs/sitemap', '@nuxtjs/robots', '@nuxt/scripts'],
+  modules: [
+    '@pinia/nuxt',
+    'vue-dsfr-nuxt-module',
+    '@sentry/nuxt/module',
+    'nuxt-security',
+    '@nuxtjs/sitemap',
+    '@nuxtjs/robots',
+    '@nuxt/scripts'
+  ],
   // Modules who need to have a look:
   // - nuxt-purgecss
   // - @nuxtjs/critters

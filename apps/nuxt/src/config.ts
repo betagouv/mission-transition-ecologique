@@ -1,41 +1,31 @@
-import type { ImportMetaEnv } from './env'
-import { ConfigCommon, Environment } from '@tee/common'
+// @ts-expect-error relative path to import configCommon because of nuxt.config.ts .
+// eslint-disable-next-line @nx/enforce-module-boundaries
+import ConfigCommon from '../../../libs/common/src/config/configCommon'
+// eslint-disable-next-line @nx/enforce-module-boundaries
+import { Environment } from '../../../libs/common/src/config/types'
 
 export default class Config extends ConfigCommon {
-  static metaEnv: ImportMetaEnv = import.meta.env as ImportMetaEnv
-  protected static override _sentryDsn = this.metaEnv.VITE_SENTRY_DSN
-  protected static override _sentryEnvironment = this.metaEnv.VITE_SENTRY_ENVIRONMENT as Environment
+  protected static override _sentryDsn = process.env['VITE_SENTRY_DSN']
+  protected static override _sentryEnvironment = process.env['VITE_SENTRY_ENVIRONMENT'] as Environment
 
   static get isDevelopment() {
-    return this.metaEnv.DEV
-  }
-
-  static get mode() {
-    return this.metaEnv.MODE
+    return process.env['NODE_DEV'] === 'development'
   }
 
   static get deployUrl() {
-    return this.metaEnv.VITE_DEPLOY_URL
-  }
-
-  static get backendUrl() {
-    return this.metaEnv.VITE_TEE_BACKEND_URL || 'https://tee-backend.osc-fr1.scalingo.io'
-  }
-
-  static get isDebugSwitch() {
-    return this.metaEnv.VITE_NO_DEBUG_SWITCH === 'false'
+    return process.env['VITE_DEPLOY_URL']
   }
 
   static get contactEmail() {
-    return this.metaEnv.VITE_CONTACT_EMAIL ?? 'contact@mission-transition-ecologique.beta.gouv.fr'
+    return process.env['VITE_CONTACT_EMAIL'] ?? 'contact@mission-transition-ecologique.beta.gouv.fr'
   }
 
-  static get hasMatomo() {
-    return this.metaEnv.VITE_MATOMO_DEACTIVATE === 'false'
+  public static hasMatomo() {
+    return this.isProduction() || process.env['VITE_MATOMO_ENABLE'] === 'true'
   }
 
   static get baseUrl() {
-    return this.metaEnv.BASE_URL
+    return process.env['BASE_URL']
   }
 
   static get publicPath() {
@@ -43,13 +33,13 @@ export default class Config extends ConfigCommon {
   }
 
   static get posthogApiKey() {
-    return this.metaEnv.VITE_POSTHOG_API_KEY || 'fake token'
+    return process.env['VITE_POSTHOG_API_KEY'] || 'fake token'
   }
   static get matomoUrl() {
-    return this.metaEnv.VITE_MATOMO_URL
+    return process.env['VITE_MATOMO_URL']
   }
 
   static get matomoAppId() {
-    return this.metaEnv.VITE_MATOMO_APP_ID
+    return process.env['VITE_MATOMO_APP_ID']
   }
 }

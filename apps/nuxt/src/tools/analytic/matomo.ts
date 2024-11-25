@@ -2,7 +2,7 @@ import Config from '@/config'
 
 export default class Matomo {
   static scriptUniqueId = 'gov-aid-tree-matomo-script'
-  static allowAnalytics = Config.hasMatomo ?? false
+  static allowAnalytics = Config.hasMatomo() ?? false
   static server = Config.matomoUrl
   static siteId = Config.matomoAppId
   static hasTrackAllOutLinks = false

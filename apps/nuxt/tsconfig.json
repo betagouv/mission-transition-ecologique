@@ -9,7 +9,6 @@
     "isolatedModules": true,
     "useDefineForClassFields": true,
     "noImplicitThis": true,
-    "verbatimModuleSyntax": true,
     "types": [],
     "paths": {
       "@/*": ["apps/nuxt/src/*"],

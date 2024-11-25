@@ -1,10 +1,9 @@
 import { NuxtConfigScriptRegistry } from '@nuxt/scripts/dist/runtime/types'
-// eslint-disable-next-line @nx/enforce-module-boundaries
-import ConfigCommon from '../../libs/common/src/config/configCommon'
+import Config from './src/config'
 
 export class NuxtScriptsConfig {
   static getRegistry(): NuxtConfigScriptRegistry | undefined {
-    if (ConfigCommon.isProduction()) {
+    if (Config.hasMatomo()) {
       return {
         matomoAnalytics: true
       }
