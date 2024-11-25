@@ -13,6 +13,7 @@ import { useUsedTrackStore } from '@/stores/usedTrack'
 import { TrackId } from '@/types'
 import { RouteName } from '@/types/routeType'
 import { type RouteLocationRaw } from 'vue-router'
+
 interface Props {
   links?: DsfrBreadcrumbProps['links']
 }
@@ -37,12 +38,14 @@ const getListText = () => {
 const getBaseRouteName = () => {
   switch (true) {
     case navigationStore.isCatalogAboutProjects():
+    case navigationStore.isByRouteName(RouteName.CatalogProgramFromCatalogProjectDetail):
       return RouteName.CatalogProjects
-    case navigationStore.isCatalogAboutPrograms():
+    case navigationStore.isByRouteName(RouteName.CatalogProgramDetail):
       return RouteName.CatalogPrograms
-    case navigationStore.isProgramFromProject():
-    default:
+    case navigationStore.isQuestionnaireResultDetail():
       return RouteName.QuestionnaireResult
+    default:
+      return navigationStore.isCatalog() ? RouteName.CatalogPrograms : RouteName.QuestionnaireStart
   }
 }
 
