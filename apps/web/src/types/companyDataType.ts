@@ -1,5 +1,5 @@
 import { EstablishmentFront, StructureSize, CompanyActivityType } from '@tee/common'
-import { Region, Sector } from '@/types'
+import { Region } from '@/types'
 
 export enum CompanyDataStorageKey {
   Company = 'company',
@@ -49,5 +49,5 @@ export type RegisterProfile = {
   establishment?: EstablishmentFront | undefined
   size: StructureSize | undefined
   localisation: string | undefined
-  activity: Sector | string | undefined
+  activity: string | undefined
 }

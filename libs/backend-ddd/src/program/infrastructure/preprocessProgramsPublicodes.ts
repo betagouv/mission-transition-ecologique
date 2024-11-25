@@ -1,5 +1,6 @@
 import { type ProgramType, ThemeId } from '@tee/data'
-import { type PublicodesInputData, PublicodesQuestionnaireRoute, SectorToNAFSection, NAF1Letters } from './types'
+import { type PublicodesInputData, PublicodesQuestionnaireRoute } from './types'
+import { SectorToNAFSection, NAF1Letters } from '../../common/naf1'
 import {
   QuestionnaireChecker,
   PublicodeObjective,

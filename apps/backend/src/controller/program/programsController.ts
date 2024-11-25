@@ -1,10 +1,11 @@
-import { Controller, Get, Path, Queries, Res, Route, SuccessResponse, TsoaResponse } from 'tsoa'
+import { Controller, Get, Path, Queries, Res, Route, SuccessResponse, Tags, TsoaResponse } from 'tsoa'
 import { OpenAPISafeProgram } from './types'
 import { QuestionnaireData } from '@tee/common'
 import { ErrorJSON, EstablishmentNotFoundError, Monitor, ProgramService } from '@tee/backend-ddd'
 
 @SuccessResponse('200', 'OK')
 @Route('programs')
+@Tags('programs')
 export class ProgramsController extends Controller {
   /**
    * Get programs, filtered given input data, and sorted by relevance.

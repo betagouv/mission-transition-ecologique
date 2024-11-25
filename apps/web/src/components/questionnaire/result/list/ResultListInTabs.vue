@@ -43,7 +43,7 @@ import { TeeDsfrTabs } from '@/components/element/TeeTabs.vue'
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
 import { BreakpointNameType, ProgramData, Project } from '@/types'
-import { computed, onBeforeMount } from 'vue'
+import { computed } from 'vue'
 import { useProjectStore } from '@/stores/project'
 import { Theme } from '@/utils/theme'
 import CompanyDataStorage from '@/utils/storage/companyDataStorage'
@@ -78,17 +78,13 @@ const filteredProjects = computed(() => {
     return undefined
   }
 
-  return projectStore.getProjectsByThemeAndEligibility(
-    projects.value,
-    Theme.getThemeFromSelectedOrPriorityTheme().value,
-    filteredPrograms.value ?? undefined
-  )
+  return projectStore.getProjectsByTheme(projects.value, Theme.getThemeFromSelectedOrPriorityTheme().value)
 })
 
 const getProgramsAndProjects = async () => {
   navigationStore.hasSpinner = true
   const programResult = await programStore.programsByUsedTracks
-  const projectResult = await projectStore.projects
+  const projectResult = await projectStore.eligibleProjects
   if (programResult.isOk && projectResult.isOk) {
     programs.value = programResult.value
     projects.value = projectResult.value
@@ -97,12 +93,13 @@ const getProgramsAndProjects = async () => {
   }
   navigationStore.hasSpinner = false
 }
-
-onBeforeMount(async () => {
-  await getProgramsAndProjects()
-})
-
-watch(registeredData.value, async () => {
-  await getProgramsAndProjects()
-})
+watch(
+  registeredData.value,
+  async () => {
+    await getProgramsAndProjects()
+  },
+  {
+    immediate: true
+  }
+)
 </script>

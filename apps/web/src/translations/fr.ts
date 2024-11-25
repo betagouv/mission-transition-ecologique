@@ -24,7 +24,6 @@ export const frDict = {
     sent: 'Votre message a bien été envoyé !',
     sorryError: 'Nous sommes désolés, une erreur est survenue.',
     notSent: 'Votre message n’a pas pu être envoyé',
-    contactHelp: 'Merci de nous contacter à',
     nowWhat: 'Et maintenant ?',
     advisors: 'Nous allons identifier le bon conseiller près de chez vous',
     phoneContact:

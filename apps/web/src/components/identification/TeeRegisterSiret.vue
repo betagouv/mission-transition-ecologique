@@ -106,6 +106,7 @@ const resetSelection = () => {
 }
 const clearSearch = () => {
   resetSelection()
+  isLoading.value = false
   requestResponses.value = defaultSearchValue
 }
 
@@ -126,8 +127,10 @@ const processInput = async () => {
   resetSelection()
   if (!queryValue.value || queryValue.value.length < 3) {
     errorMessage.value = Translation.t('enterprise.searchTooShort')
+    clearSearch()
   } else if (SiretValidator.isValidSiretFormat(queryValue.value) && !SiretValidator.isValidSiretNumber(queryValue.value)) {
     errorMessage.value = "Le numéro SIRET n'est pas valide"
+    clearSearch()
   } else {
     TrackSiret.search(queryValue.value, 9).then((searchResult) => {
       if (searchResult.isErr) {

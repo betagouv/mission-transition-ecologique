@@ -16,7 +16,7 @@
     v-for="detailKey in Object.keys(profile).filter((detailK) => profile[detailK].if !== false)"
     :key="profile[detailKey].title"
     v-model="profile[detailKey]"
-    class="fr-col-sm-8 fr-col-md-5 fr-col-offset-md-2 fr-col-12"
+    class="fr-pb-4v fr-col-sm-8 fr-col-md-5 fr-col-offset-md-2 fr-col-12"
     :manual="manual"
     :show-error="showError"
     :detail-infos="profile[detailKey]"
@@ -33,10 +33,10 @@
   </div>
 </template>
 <script setup lang="ts">
-import { RegisterDetailType, RegisterDetails, CompanyDataStorageKey, CompanyDataType } from '@/types'
+import { RegisterDetailType, RegisterDetails, Sector, CompanyDataStorageKey, CompanyDataType } from '@/types'
 import Breakpoint from '@/utils/breakpoints'
-import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 import Navigation from '@/utils/navigation'
+import { CompanyDataStorageHandler } from '@/utils/storage/companyDataStorageHandler'
 
 interface Props {
   company: CompanyDataType[CompanyDataStorageKey.Company]
@@ -90,10 +90,15 @@ const saveProfile = () => {
   showError.value = false
   if (canBeSaved.value && profile.value.size.value) {
     const companyData = props.manual
-      ? CompanyDataStorage.getManualCompanyData(profile.value)
-      : CompanyDataStorage.getSiretBasedCompanyData(props.company, profile.value)
-    CompanyDataStorage.setCompanyData(companyData)
-    CompanyDataStorage.setSize(profile.value.size.value)
+      ? CompanyDataStorageHandler.getManualCompanyData(profile.value)
+      : CompanyDataStorageHandler.getSiretBasedCompanyData(props.company, profile.value)
+
+    CompanyDataStorageHandler.saveAndSetUsedTrackStore({
+      [CompanyDataStorageKey.Company]: companyData,
+      [CompanyDataStorageKey.Size]: profile.value.size.value
+    })
+    CompanyDataStorageHandler.updateRouteFromStorage()
+
     Navigation.toggleRegisterModal(false)
   } else {
     showError.value = true
