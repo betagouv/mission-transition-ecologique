@@ -109,10 +109,11 @@ export default class Cookie {
       Cookie.saveCookies(Cookie.cookies.value)
     }
   }
-  static removeCookie(cookieName: string) {
+  static removeCookie(cookieName: string, startsWith: boolean) {
     document.cookie.split(';').forEach((cookie) => {
       const name = cookie.split('=')[0].trim()
-      if (name.startsWith(cookieName)) {
+      const match = startsWith ? name.startsWith(cookieName) : name === cookieName
+      if (match) {
         document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`
       }
     })

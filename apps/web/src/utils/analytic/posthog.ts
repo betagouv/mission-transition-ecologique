@@ -26,7 +26,7 @@ export default class Posthog {
 
   static deactivatePosthogCookie() {
     if (this._posthog) {
-      Cookie.removeCookie('ph_')
+      Cookie.removeCookie('ph_', true)
       this._posthog.set_config({ persistence: 'memory' })
     }
   }
