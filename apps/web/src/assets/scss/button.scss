@@ -8,6 +8,7 @@
     &:hover,
     &:active {
       background-color: rgb(0 0 0 / 5%) !important;
+      cursor: pointer;
     }
 
     @each $color, $properties in setting.$colors {

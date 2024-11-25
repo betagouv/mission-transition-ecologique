@@ -6,7 +6,6 @@ import TeeAddProgram from '../pages/TeeAddProgram.vue'
 import TeeLegalPage from '../pages/TeeLegalPage.vue'
 import TeeAccessibilityPage from '../pages/TeeAccessibilityPage.vue'
 import TeePersonalDataPage from '../pages/TeePersonalDataPage.vue'
-import ChatAdvisorPage from '@/pages/ChatAdvisorPage.vue'
 import { RouteName } from '@/types/routeType'
 import { redirections } from '@/router/redirection'
 import { TrackId } from '@/types'
@@ -18,6 +17,7 @@ import ProjectDetail from '@/components/project/details/ProjectDetail.vue'
 import TeeStatPage from '@/pages/TeeStatPage.vue'
 import CatalogPrograms from '@/components/catalog/CatalogPrograms.vue'
 import CatalogProjects from '@/components/catalog/CatalogProjects.vue'
+import TeeBudgetPage from '@/pages/TeeBudgetPage.vue'
 
 export enum Path {
   ProgramCatalog = '/aides-entreprise',
@@ -131,11 +131,6 @@ export const routes = [
     component: TeeAddProgram as Component
   },
   {
-    path: '/echanger-avec-un-conseiller',
-    name: RouteName.ChatAdvisor,
-    component: ChatAdvisorPage as Component
-  },
-  {
     path: '/mentions-legales',
     name: RouteName.Legal,
     component: TeeLegalPage as Component
@@ -154,6 +149,11 @@ export const routes = [
     path: '/stats',
     name: RouteName.Statistics,
     component: TeeStatPage as Component
+  },
+  {
+    path: '/budget',
+    name: RouteName.Budget,
+    component: TeeBudgetPage as Component
   },
   {
     path: '/:pathMatch(.*)*',

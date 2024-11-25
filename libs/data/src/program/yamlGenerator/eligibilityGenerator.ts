@@ -1,6 +1,7 @@
 import { LogLevel } from '../../common/logger/types'
 import { DataProgram } from '../types/domain'
 import { CoreGenerator } from './coreGenerator'
+import { ProgramEligibility } from '../programEligibility'
 
 export function setEligibility(generator: CoreGenerator) {
   const eligibility_conditions: { [key: string]: string[] } = {
@@ -37,7 +38,7 @@ function setEligibilityYears(program: DataProgram): string[] {
   if (program['Eligibilité Existence']) {
     return [program['Eligibilité Existence']]
   }
-  return ['Éligible à toutes les entreprises']
+  return [ProgramEligibility.ELIGIBLE_FOR_ALL]
 }
 
 function setEligibilitySector(generator: CoreGenerator) {

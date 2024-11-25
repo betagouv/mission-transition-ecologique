@@ -1,4 +1,4 @@
-import { PhoneValidator, EmailValidator, SiretValidator, OpportunityType } from '@tee/common'
+import { PhoneValidator, EmailValidator, SiretValidator, OpportunityType, EstablishmentFront } from '@tee/common'
 import { FieldType, RouteName, type ProgramData as ProgramType, Project, FormDataType, ThemeType, ThemeId } from '@/types'
 
 import { useProgramStore } from '@/stores/program'
@@ -6,6 +6,7 @@ import { CalloutType } from '@/types/elementsPropsTypes'
 import TrackStructure from '@/utils/track/trackStructure'
 import Translation from '@/utils/translation'
 import { Theme } from '@/utils/theme'
+import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
 export default class Opportunity {
   static getBaseOpportunityFormFields(): FormDataType {
@@ -47,7 +48,7 @@ export default class Opportunity {
         required: true,
         type: FieldType.Text,
         isValid: undefined,
-        value: TrackStructure.getSiret(),
+        value: TrackStructure.getSiret() ?? (CompanyDataStorage.getCompanyData() as EstablishmentFront).siret ?? '',
         label: 'SIRET de votre entreprise',
         hint: 'Format attendu : 14 chiffres',
         validation: SiretValidator.validate,
