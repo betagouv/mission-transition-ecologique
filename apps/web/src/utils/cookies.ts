@@ -58,14 +58,14 @@ export default class Cookie {
   static saveCookies(newCookies: Cookies) {
     if (Cookie.cookies.value) {
       Object.values(newCookies).forEach((cookie: CookieManager) => {
-        document.cookie = `${cookie.value}=${cookie.accepted}`
+        document.cookie = `${cookie.value}=${cookie.accepted}; path=/`
         if (cookie.accepted) {
           Cookie.activateCookie(cookie.value)
         } else {
           Cookie.deactivateCookie(cookie.value)
         }
       })
-      document.cookie = 'tee-accept-cookies=true'
+      document.cookie = 'tee-accept-cookies=true; path=/'
       window.location.reload()
     }
   }
@@ -108,6 +108,15 @@ export default class Cookie {
       Cookie.cookies.value[cookieValue].accepted = false
       Cookie.saveCookies(Cookie.cookies.value)
     }
+  }
+  static removeCookie(cookieName: string, startsWith: boolean) {
+    document.cookie.split(';').forEach((cookie) => {
+      const name = cookie.split('=')[0].trim()
+      const match = startsWith ? name.startsWith(cookieName) : name === cookieName
+      if (match) {
+        document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`
+      }
+    })
   }
   static areCookiesSet() {
     const match = document.cookie.match(new RegExp('(^| )tee-accept-cookies=([^;]+)'))

@@ -57,7 +57,7 @@ const getRouteToProjectDetail = (project: Project): RouteLocationRaw => {
   return {
     name: isCatalog ? RouteName.CatalogProjectDetail : RouteName.ProjectResultDetail,
     params: { projectSlug: project.slug },
-    query: isCatalog ? undefined : navigationStore.query
+    query: navigationStore.query
   }
 }
 </script>

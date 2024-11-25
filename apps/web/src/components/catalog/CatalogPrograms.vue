@@ -59,7 +59,10 @@
             }"
           >
             <ProgramList :filtered-programs="filteredPrograms" />
-            <TeeSpinner v-if="hasSpinner" />
+            <TeeSpinner
+              v-if="hasSpinner"
+              class="fr-mt-16w"
+            />
             <TeeListNoResults
               v-else-if="showNoResultsComponent"
               :has-error="hasError"

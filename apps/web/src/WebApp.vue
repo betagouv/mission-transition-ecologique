@@ -3,6 +3,7 @@
   <TeeDsfrPersonalizeConsent />
   <div>
     <TeeHeader />
+    <TeeRegisterModal v-if="useNavigationStore().hasRegisterModal" />
     <TeeMatomo />
     <router-view v-if="isReady" />
     <template v-else>
@@ -32,18 +33,18 @@ import { useNavigationStore } from './stores/navigation'
 import TeeFooter from './components/TeeFooter.vue'
 import Translation from './utils/translation'
 import Cookie from './utils/cookies'
+import CompanyDataStorage from './utils/storage/companyDataStorage'
 
 const navigationStore = useNavigationStore()
 const router = useRouter()
 const route = useRoute()
-
 const isReady = computed<boolean>(() => {
   return navigationStore.isReady
 })
-
 onBeforeMount(() => {
   Translation.setLocale('fr')
   Cookie.setCookies()
+  CompanyDataStorage.updateData()
 })
 
 onMounted(async () => {

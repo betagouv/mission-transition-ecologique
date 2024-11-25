@@ -65,6 +65,7 @@ export interface EmailData {
 export enum DataMappingFrom {
   Env = 'Env',
   FormData = 'FormData',
+  CompanyData = 'CompanyData',
   UsedTracks = 'UsedTracks',
   AllUsedTracks = 'AllUsedTracks',
   SelectionValues = 'SelectionValues',
