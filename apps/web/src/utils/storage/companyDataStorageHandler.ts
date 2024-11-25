@@ -5,14 +5,26 @@ import {
   EstablishmentFront,
   LegalCategory,
   type QuestionnaireData,
+  QuestionnaireRoute,
   SiretValue,
   StructureSize,
   TrackId,
   type TrackOptionsUnion
 } from '@/types'
 import { CompanyDataType } from '@/types/companyDataType'
+import { useUsedTrackStore } from '@/stores/usedTrack'
 
 export class CompanyDataStorageHandler {
+  static saveDataToStorage(data: CompanyDataType) {
+    CompanyDataStorage.setCompanyData(data[CompanyDataStorageKey.Company])
+    CompanyDataStorage.setSize(data[CompanyDataStorageKey.Size] as StructureSize)
+  }
+
+  static saveAndSetUsedTrackStore(data: CompanyDataType) {
+    this.saveDataToStorage(data)
+    useUsedTrackStore().setFromStorage()
+  }
+
   static populateCompletedQuestionnaire(data: FlatArray<((QuestionnaireData | undefined)[] | undefined)[], 1>[]) {
     if (this.canUseCompanyData(data, CompanyDataStorageKey.Company as keyof QuestionnaireData)) {
       data.push(CompanyDataStorage.getCompanyData() as QuestionnaireData)
@@ -43,19 +55,24 @@ export class CompanyDataStorageHandler {
   }
 
   static updateSearchParamFromStorage() {
-    if (CompanyDataStorage.hasCompanyData()) {
-      useNavigationStore().updateSearchParam({
-        name: TrackId.Siret,
-        value: (CompanyDataStorage.getCompanyData() as EstablishmentFront)?.siret
-      })
-    }
+    useNavigationStore().updateSearchParam({
+      name: TrackId.Siret,
+      value: (CompanyDataStorage.getCompanyData() as EstablishmentFront)?.siret
+    })
 
-    if (CompanyDataStorage.hasSize() && CompanyDataStorage.getSize() !== StructureSize.EI) {
+    if (CompanyDataStorage.getSize() === StructureSize.EI) {
+      useNavigationStore().deleteSearchParam(TrackId.StructureWorkforce)
+    } else {
       useNavigationStore().updateSearchParam({
         name: TrackId.StructureWorkforce,
         value: CompanyDataStorage.getSize()
       })
     }
+  }
+
+  static updateRouteFromStorage() {
+    this.updateSearchParamFromStorage()
+    useNavigationStore().replaceBrowserHistory()
   }
 
   static canUseCompanyData(data: (QuestionnaireData | undefined)[], key: keyof QuestionnaireData): boolean {
@@ -71,7 +88,7 @@ export class CompanyDataStorageHandler {
     return false
   }
 
-  static setDataFromTrack(trackId: TrackId, value: string | string[], selectedOptions: TrackOptionsUnion[]) {
+  static setDataStorageFromTrack(trackId: TrackId, value: string | string[], selectedOptions: TrackOptionsUnion[]) {
     if (trackId === TrackId.Siret && value !== SiretValue.Wildcard && selectedOptions.length > 0) {
       const questionnaireData = selectedOptions[0].questionnaireData as EstablishmentFront
       CompanyDataStorage.setCompanyData(questionnaireData)
@@ -83,6 +100,24 @@ export class CompanyDataStorageHandler {
     if (trackId === TrackId.StructureWorkforce) {
       CompanyDataStorage.setSize(value as StructureSize)
     }
+  }
+
+  static getTrackIdFromStorageKey(key: CompanyDataStorageKey): TrackId {
+    switch (key) {
+      case CompanyDataStorageKey.Company:
+        return TrackId.Siret
+      case CompanyDataStorageKey.Size:
+        return TrackId.StructureWorkforce
+    }
+  }
+
+  static getNextTrackStorage() {
+    return CompanyDataStorage.hasSize() ? this._getQuestionnaireGoal() : TrackId.StructureWorkforce
+  }
+
+  private static _getQuestionnaireGoal() {
+    const questionnaireChoice = useUsedTrackStore().getUsedTrack(TrackId.QuestionnaireRoute)?.selected[0].value
+    return questionnaireChoice === QuestionnaireRoute.SpecificGoal ? TrackId.Goals : TrackId.BuildingProperty
   }
 
   private static _canAddSizeToStorage(size: StructureSize, questionnaireData: { [k: string]: any }, key: string) {

@@ -11,7 +11,7 @@ import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
 import { ProgramData, Project as ProjectType } from '@/types'
 import { Project } from '@/utils/project/project'
-import { computed, onBeforeMount } from 'vue'
+import { computed } from 'vue'
 import { useProjectStore } from '@/stores/project'
 import { Theme } from '@/utils/theme'
 import CompanyDataStorage from '@/utils/storage/companyDataStorage'
@@ -45,11 +45,13 @@ const getProgramsAndProjects = async () => {
   navigationStore.hasSpinner = false
 }
 
-onBeforeMount(async () => {
-  await getProgramsAndProjects()
-})
-
-watch(registeredData.value, async () => {
-  await getProgramsAndProjects()
-})
+watch(
+  registeredData.value,
+  async () => {
+    await getProgramsAndProjects()
+  },
+  {
+    immediate: true
+  }
+)
 </script>

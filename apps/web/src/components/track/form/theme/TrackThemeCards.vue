@@ -29,6 +29,7 @@ import { useProjectStore } from '@/stores/project'
 import { useProgramStore } from '@/stores/program'
 import { useNavigationStore } from '@/stores/navigation'
 import ProgramFilter from '@/utils/program/programFilter'
+import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
 const currentTrack = useTrackStore().current
 const emit = defineEmits(['updateSelection'])
@@ -37,6 +38,7 @@ const projects = ref<Project[]>()
 const programs = ref<ProgramData[]>()
 const programStore = useProgramStore()
 const navigationStore = useNavigationStore()
+const registeredData = CompanyDataStorage.getData()
 
 const filterPrograms = (theme: ThemeId) => {
   return programs.value?.filter((program) => ProgramFilter.byTheme(program, theme))
@@ -84,7 +86,7 @@ const selectOption = (opt: string | undefined) => {
 
 const hasError = ref<boolean>(false)
 
-onBeforeMount(async () => {
+const getProgramsAndProjects = async () => {
   navigationStore.hasSpinner = true
   const projectResult = await projectStore.projects
   const programResult = await programStore.programsByUsedTracks
@@ -95,5 +97,13 @@ onBeforeMount(async () => {
     hasError.value = true
   }
   navigationStore.hasSpinner = false
-})
+}
+
+watch(
+  registeredData.value,
+  async () => {
+    await getProgramsAndProjects()
+  },
+  { immediate: true }
+)
 </script>
