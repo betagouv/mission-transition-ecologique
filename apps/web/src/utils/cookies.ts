@@ -109,6 +109,14 @@ export default class Cookie {
       Cookie.saveCookies(Cookie.cookies.value)
     }
   }
+  static removeCookie(cookieName: string) {
+    document.cookie.split(';').forEach((cookie) => {
+      const name = cookie.split('=')[0].trim()
+      if (name.startsWith(cookieName)) {
+        document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`
+      }
+    })
+  }
   static areCookiesSet() {
     const match = document.cookie.match(new RegExp('(^| )tee-accept-cookies=([^;]+)'))
     const cookieValue = match && match[2]

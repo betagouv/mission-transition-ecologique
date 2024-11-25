@@ -1,6 +1,7 @@
 import posthog, { PostHog } from 'posthog-js'
 import Config from '@/config'
 import { RouteLocationNormalized } from 'vue-router'
+import Cookie from '../cookies'
 
 export default class Posthog {
   private static _posthog?: PostHog
@@ -25,12 +26,7 @@ export default class Posthog {
 
   static deactivatePosthogCookie() {
     if (this._posthog) {
-      document.cookie.split(';').forEach((cookie) => {
-        const name = cookie.split('=')[0].trim()
-        if (name.startsWith('ph_')) {
-          document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`
-        }
-      })
+      Cookie.removeCookie('ph_')
       this._posthog.set_config({ persistence: 'memory' })
     }
   }
