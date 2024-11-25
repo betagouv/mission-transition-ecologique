@@ -21,37 +21,13 @@
     outline-color: unset;
     outline-style: none;
   }
-}
 
-.fr-input {
-  outline-offset: unset;
-  outline-width: unset;
-  outline-color: unset;
-  outline-style: none;
-
-  &--white {
-    background-color: setting.$white;
+  &&::placeholder {
+    font-style: normal !important;
+    color: var(--text-default-grey);
   }
-
-  &:focus {
-    outline-offset: unset;
-    outline-width: unset;
-    outline-color: unset;
-    outline-style: none;
-  }
-}
-
-.fr-input {
-  &--white {
-    background-color: setting.$white;
-  } 
 }
 
 .fr-input--empty-text {
   height: 1.25rem;
-} 
-
-.fr-input::placeholder {
-  font-style: normal !important;
-  color: var(--text-default-grey);
 }

@@ -58,7 +58,8 @@ const profile = ref<RegisterDetails>({
     value: props.company && 'siret' in props.company ? props.company.siret : undefined,
     type: RegisterDetailType.Siret,
     tagLabel: props.company?.denomination
-    localisation: {
+  },
+  localisation: {
     title: 'Localisation',
     icon: 'fr-icon-map-pin-2-line',
     description: 'Quelle est votre ville ?',
