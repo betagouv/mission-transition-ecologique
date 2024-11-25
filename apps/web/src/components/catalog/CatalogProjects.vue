@@ -40,9 +40,9 @@
         </div>
         <div
           v-if="hasSpinner"
-          class="fr-col-12 fr-col-justify--center"
+          class="fr-col-12 fr-col-justify--center fr-col-content--middle"
         >
-          <TeeSpinner />
+          <TeeSpinner class="fr-mt-16w" />
         </div>
         <TeeListNoResults
           v-else-if="showNoResultsComponent"
@@ -59,7 +59,7 @@
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
 import { useProjectStore } from '@/stores/project'
-import { type ProgramData, Project as ProjectType, ThemeId } from '@/types'
+import { Project as ProjectType, ThemeId } from '@/types'
 import { MetaSeo } from '@/utils/metaSeo'
 import { Project } from '@/utils/project/project'
 import { computed, onBeforeMount } from 'vue'
@@ -70,7 +70,6 @@ const programStore = useProgramStore()
 const navigationStore = useNavigationStore()
 
 const projects = ref<ProjectType[]>()
-const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)
 
 const title = 'Le catalogue des projets de transition écologique'
@@ -78,7 +77,7 @@ const description = 'Accédez à la liste des projets de transition écologique 
 
 const theme = Theme.getThemeFromSelectedTheme()
 
-const filteredProjects = Project.filter(projects, programs, theme)
+const filteredProjects = Project.filter(projects, theme)
 const sortedProjects = Project.sort(filteredProjects)
 
 const hasSpinner = computed(() => {
@@ -105,10 +104,8 @@ onBeforeMount(async () => {
   useSeoMeta(MetaSeo.get(title, description))
 
   navigationStore.hasSpinner = true
-  const programResult = await programStore.programs
   const projectResult = await projectStore.projects
-  if (programResult.isOk && projectResult.isOk) {
-    programs.value = programResult.value
+  if (projectResult.isOk) {
     projects.value = projectResult.value
   } else {
     hasError.value = true

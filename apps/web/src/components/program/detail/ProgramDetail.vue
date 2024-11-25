@@ -36,7 +36,7 @@
           <div class="fr-col-md-4 fr-col-lg-3 fr-col-xl-3 fr-col-sm-12 fr-text-right fr-tee-program-detail-img">
             <img
               class="fr-responsive-img"
-              :src="`${publicPath}${program?.illustration}`"
+              :src="`/${program?.illustration}`"
               :alt="`image / ${program?.titre}`"
             />
 
@@ -76,7 +76,7 @@
               :program="program"
             />
             <DsfrButton
-              v-if="!isProgramAutonomous"
+              v-if="!isProgramAutonomous && programIsEligible"
               size="lg"
               icon="fr-icon-mail-line"
               class="fr-ml-md-3v"
@@ -318,7 +318,13 @@ const programIsEligible = computed(() => {
 
 onBeforeMount(async () => {
   useNavigationStore().hasSpinner = true
-  const projectResult = await projectStore.projects
+  program.value = programsStore.currentProgram
+  let projectResult
+  if (useNavigationStore().isCatalogProgramDetail()) {
+    projectResult = await projectStore.projects
+  } else {
+    projectResult = await projectStore.eligibleProjects
+  }
   if (projectResult.isOk) {
     linkedProjects.value = Program.getLinkedProjects(program.value, projectResult.value)
   }

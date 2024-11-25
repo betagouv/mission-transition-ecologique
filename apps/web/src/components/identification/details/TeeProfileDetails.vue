@@ -16,10 +16,11 @@
     v-for="detailKey in Object.keys(profile).filter((detailK) => profile[detailK].if !== false)"
     :key="profile[detailKey].title"
     v-model="profile[detailKey]"
-    class="fr-col-sm-8 fr-col-md-5 fr-col-offset-md-2 fr-col-12"
+    class="fr-pb-4v fr-col-sm-8 fr-col-md-5 fr-col-offset-md-2 fr-col-12"
     :manual="manual"
     :show-error="showError"
     :detail-infos="profile[detailKey]"
+    @update:model-value="updateValue"
     @update:siret="openSiretStep"
   />
   <div class="fr-col-sm-8 fr-pt-4v fr-mt-4v fr-col-md-7 fr-col-offset-md-2 fr-col-12">
@@ -34,8 +35,9 @@
 <script setup lang="ts">
 import { RegisterDetailType, RegisterDetails, Sector, CompanyDataStorageKey, CompanyDataType, Region } from '@/types'
 import Breakpoint from '@/utils/breakpoints'
-import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 import Navigation from '@/utils/navigation'
+import { CompanyDataStorageHandler } from '@/utils/storage/companyDataStorageHandler'
+import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
 interface Props {
   company: CompanyDataType[CompanyDataStorageKey.Company]
@@ -56,8 +58,7 @@ const profile = ref<RegisterDetails>({
     value: props.company && 'siret' in props.company ? props.company.siret : undefined,
     type: RegisterDetailType.Siret,
     tagLabel: props.company?.denomination
-  },
-  localisation: {
+    localisation: {
     title: 'Localisation',
     icon: 'fr-icon-map-pin-2-line',
     description: 'Quelle est votre ville ?',
@@ -97,11 +98,19 @@ const saveProfile = () => {
     const companyData = props.manual
       ? CompanyDataStorage.getManualCompanyData(profile.value)
       : CompanyDataStorage.getSiretBasedCompanyData(props.company, profile.value)
-    CompanyDataStorage.setCompanyData(companyData)
-    CompanyDataStorage.setSize(profile.value.size.value)
+
+    CompanyDataStorageHandler.saveAndSetUsedTrackStore({
+      [CompanyDataStorageKey.Company]: companyData,
+      [CompanyDataStorageKey.Size]: profile.value.size.value
+    })
+    CompanyDataStorageHandler.updateRouteFromStorage()
+
     Navigation.toggleRegisterModal(false)
   } else {
     showError.value = true
   }
+}
+const updateValue = () => {
+  showError.value = false
 }
 </script>

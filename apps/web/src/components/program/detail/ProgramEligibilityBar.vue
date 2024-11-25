@@ -49,7 +49,7 @@ const getEligibilityLink: ComputedRef<TeeEligibilityBarLink | undefined> = compu
         label: 'Voir les autres critères à respecter',
         labelMobile: 'Vérifier les critères'
       }
-    //TODO décommenter quand le filtrage du catalogue est opérationnel
+    // TODO : uncomment once the company data filter is available on catalogs
     // return {
     //   url: RouteName.CatalogPrograms,
     //   label: 'Voir les aides pour mon entreprise',

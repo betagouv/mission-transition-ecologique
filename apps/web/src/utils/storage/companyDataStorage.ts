@@ -52,14 +52,6 @@ export default class CompanyDataStorage {
     return this._storageHandler.getItem(key)
   }
 
-  static getCompanyData(): CompanyDataType[CompanyDataStorageKey.Company] | null {
-    return (this.getItem(CompanyDataStorageKey.Company) as CompanyDataType[CompanyDataStorageKey.Company]) || null
-  }
-
-  public static getSize(): StructureSize | null {
-    return (this.getItem(CompanyDataStorageKey.Size) as StructureSize) || null
-  }
-
   static convertLocalisation(geoInfos: ConvertedCommune): CompanyLocalisationType {
     return {
       region: geoInfos.region.nom as Region,
@@ -68,10 +60,23 @@ export default class CompanyDataStorage {
     }
   }
 
+  public static getCompanyData(): CompanyDataType[CompanyDataStorageKey.Company] | null {
+    return (this.getItem(CompanyDataStorageKey.Company) as CompanyDataType[CompanyDataStorageKey.Company]) || null
+  }
+
+  public static getSize(): StructureSize | null {
+    return (this.getItem(CompanyDataStorageKey.Size) as StructureSize) || null
+  }
+
   public static removeData(): void {
     Object.values(CompanyDataStorageKey).forEach((key) => {
       this._storageHandler.removeItem(key)
     })
+    this.updateData()
+  }
+
+  public static removeItem(key: CompanyDataStorageKey): void {
+    this._storageHandler.removeItem(key)
     this.updateData()
   }
 
@@ -91,11 +96,6 @@ export default class CompanyDataStorage {
       secteur: profileData.activity.value,
       denomination: `Entreprise : ${profileData.activity.value} - ${profileData.localisation.value?.codePostal}`
     } as CompanyDataType[CompanyDataStorageKey.Company]
-  }
-
-  public static removeItem(key: CompanyDataStorageKey): void {
-    this._storageHandler.removeItem(key)
-    this.updateData()
   }
 
   static updateData(): void {

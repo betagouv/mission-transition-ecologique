@@ -6,6 +6,7 @@
     <TeeDsfrButton
       v-if="hasData"
       class="fr-btn--tertiary-no-outline ignore-modal-click"
+      :title="companyName"
       @click="openModal"
     >
       <span
@@ -90,7 +91,7 @@ const badgeIcon = computed(() => {
 #register-text {
   text-overflow: ellipsis;
   overflow: hidden;
-  max-width: 150px;
+  max-width: 180px;
   font-size: 0.875rem;
   display: inherit;
   white-space: nowrap;

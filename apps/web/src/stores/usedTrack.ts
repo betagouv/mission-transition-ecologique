@@ -1,6 +1,8 @@
 import { useNavigationStore } from '@/stores/navigation'
 import { useTrackStore } from '@/stores/track'
 import {
+  CompanyDataStorageKey,
+  EstablishmentFront,
   LegalCategory,
   type NextTrackRuleSet,
   type QuestionnaireData,
@@ -20,6 +22,8 @@ import Translation from '@/utils/translation'
 import { acceptHMRUpdate, defineStore } from 'pinia'
 import { computed, ref, toRaw } from 'vue'
 import { CompanyDataStorageHandler } from '@/utils/storage/companyDataStorageHandler'
+import CompanyDataStorage from '@/utils/storage/companyDataStorage'
+import TrackSiret from '@/utils/track/TrackSiret'
 
 export const useUsedTrackStore = defineStore('usedTrack', () => {
   const current = ref<UsedTrack | undefined>()
@@ -113,7 +117,7 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
       if (value) {
         useNavigationStore().updateSearchParam({ name: current.value.id, value: value })
 
-        CompanyDataStorageHandler.setDataFromTrack(current.value.id, value, selectedOptions)
+        CompanyDataStorageHandler.setDataStorageFromTrack(current.value.id, value, selectedOptions)
       }
     }
 
@@ -199,6 +203,10 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
   function add(currentTrackId: TrackId, nextTrackId: TrackId) {
     removeFurtherUsedTracks(currentTrackId)
     const track = useTrackStore().getTrack(nextTrackId)
+    if (nextTrackId === TrackId.Goals || nextTrackId === TrackId.BuildingProperty) {
+      setFromStorage()
+    }
+
     if (track) {
       const usedTrack = createOrUpdateUsedTrack(track)
 
@@ -274,6 +282,31 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     return questionnaireData
   }
 
+  function setFromStorage() {
+    for (const [companyDataStorageKey, value] of Object.entries(CompanyDataStorage.getData().value)) {
+      if (value) {
+        let selectedOption = undefined
+        const trackId = CompanyDataStorageHandler.getTrackIdFromStorageKey(companyDataStorageKey as CompanyDataStorageKey)
+        const track = useTrackStore().getTrack(trackId)
+
+        if (track === undefined) {
+          useNavigationStore().deleteSearchParam(trackId)
+          continue
+        }
+
+        if (companyDataStorageKey === CompanyDataStorageKey.Company) {
+          selectedOption = TrackSiret.createData(
+            track.options?.find(() => true) as TrackOptionsUnion,
+            (value as EstablishmentFront).siret,
+            value as EstablishmentFront
+          ).option
+        }
+
+        createOrUpdateUsedTrack(track, [selectedOption ?? value] as unknown as TrackOptionsUnion[])
+      }
+    }
+  }
+
   async function setFromNavigation() {
     for (const trackId of Object.keys(useNavigationStore().query)) {
       const track = useTrackStore().getTrack(trackId as TrackId)
@@ -286,7 +319,7 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
       const value = useNavigationStore().query[trackId] as string | string[]
       const selectedOptions: TrackOptionsUnion[] = await useTrackStore().getSelectedOptionsByTrackAndValue(track, value)
 
-      CompanyDataStorageHandler.setDataFromTrack(trackId as TrackId, value, selectedOptions)
+      CompanyDataStorageHandler.setDataStorageFromTrack(trackId as TrackId, value, selectedOptions)
 
       if (selectedOptions.length === 0) {
         useNavigationStore().deleteSearchParam(trackId)
@@ -327,7 +360,8 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     resetUsedTracks,
     findInQuestionnaireDataByTrackIdAndKey,
     getQuestionnaireData,
-    setFromNavigation
+    setFromNavigation,
+    setFromStorage
   }
 })
 

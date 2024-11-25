@@ -1,4 +1,4 @@
-import { Controller, Route, SuccessResponse, TsoaResponse, Res, Example, Get, Path, Query } from 'tsoa'
+import { Controller, Route, SuccessResponse, TsoaResponse, Res, Example, Get, Path, Query, Tags } from 'tsoa'
 import { ErrorJSON, EstablishmentNotFoundError, EstablishmentService, ValidateErrorJSON, Monitor } from '@tee/backend-ddd'
 import { EstablishmentFront, EstablishmentSearch, StructureSize } from '@tee/common'
 
@@ -27,6 +27,7 @@ const exampleEstablishment = {
 
 @SuccessResponse('200', 'OK')
 @Route('establishments')
+@Tags('establishments')
 export class SireneController extends Controller {
   /**
    * Retrieve establishments informations used in front end

@@ -20,6 +20,7 @@
       v-if="ctaLabel"
       class="fr-text--yellow"
       :label="ctaLabel"
+      @click="emit('cta-click')"
     />
   </div>
 </template>
@@ -33,6 +34,10 @@ interface Props {
   ctaLabel?: string
 }
 defineProps<Props>()
+
+const emit = defineEmits<{
+  (e: 'cta-click'): void
+}>()
 </script>
 <style lang="scss" scoped>
 .no-result-img {
