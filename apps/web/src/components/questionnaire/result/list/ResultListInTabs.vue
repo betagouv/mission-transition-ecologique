@@ -43,9 +43,10 @@ import { TeeDsfrTabs } from '@/components/element/TeeTabs.vue'
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
 import { BreakpointNameType, ProgramData, Project } from '@/types'
-import { computed, onBeforeMount } from 'vue'
+import { computed } from 'vue'
 import { useProjectStore } from '@/stores/project'
 import { Theme } from '@/utils/theme'
+import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
 const navigationStore = useNavigationStore()
 const programStore = useProgramStore()
@@ -55,6 +56,8 @@ const { ascendant, selected } = useTabs(true, navigationStore.tabSelectedOnList)
 const programs = ref<ProgramData[]>()
 const projects = ref<Project[]>()
 const hasError = ref<boolean>(false)
+
+const registeredData = CompanyDataStorage.getData()
 
 const titles: TeeDsfrTabs['tabTitles'] = [
   { title: [{ title: "Des idées d'actions à mettre en place", size: BreakpointNameType.sm }, { title: "Idées d'actions" }] },
@@ -78,7 +81,7 @@ const filteredProjects = computed(() => {
   return projectStore.getProjectsByTheme(projects.value, Theme.getThemeFromSelectedOrPriorityTheme().value)
 })
 
-onBeforeMount(async () => {
+const getProgramsAndProjects = async () => {
   navigationStore.hasSpinner = true
   const programResult = await programStore.programsByUsedTracks
   const projectResult = await projectStore.eligibleProjects
@@ -89,5 +92,14 @@ onBeforeMount(async () => {
     hasError.value = true
   }
   navigationStore.hasSpinner = false
-})
+}
+watch(
+  registeredData.value,
+  async () => {
+    await getProgramsAndProjects()
+  },
+  {
+    immediate: true
+  }
+)
 </script>

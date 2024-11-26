@@ -19,6 +19,12 @@
       @include tool.line-height($size)
     }
   }
+
+  @each $decoration in setting.$text-decorations {
+    &--#{$decoration} {
+      text-decoration: $decoration;
+    }   
+  } 
 }
 
 .tee-font {

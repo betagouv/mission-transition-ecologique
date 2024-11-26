@@ -36,7 +36,7 @@
           <div class="fr-col-md-4 fr-col-lg-3 fr-col-xl-3 fr-col-sm-12 fr-text-right fr-tee-program-detail-img">
             <img
               class="fr-responsive-img"
-              :src="`${publicPath}${program?.illustration}`"
+              :src="`/${program?.illustration}`"
               :alt="`image / ${program?.titre}`"
             />
 
@@ -76,7 +76,7 @@
               :program="program"
             />
             <DsfrButton
-              v-if="!isProgramAutonomous"
+              v-if="!isProgramAutonomous && programIsEligible"
               size="lg"
               icon="fr-icon-mail-line"
               class="fr-ml-md-3v"
@@ -187,35 +187,41 @@
             />
           </div>
         </div>
-        <DsfrAccordionsGroup>
-          <ProgramAccordion
-            v-if="program && program['conditions d\'éligibilité']"
-            :accordion-id="`${program.id}-eligibility`"
-            :title="Translation.t('program.programAmIEligible')"
-          >
-            <ProgramEligibility :program="program" />
-          </ProgramAccordion>
-          <ProgramAccordion
-            v-if="program && linkedProjects && linkedProjects.length > 0"
-            :accordion-id="`${program.id}-linked-projects`"
-            :title="Breakpoint.isMobile() ? Translation.t('program.projectExamplesSM') : Translation.t('program.projectExamples')"
-          >
-            <ProgramProjects :linked-projects="linkedProjects" />
-          </ProgramAccordion>
-          <ProgramAccordion
-            v-if="program && program['description longue']"
-            :accordion-id="`${program.id}-long-description`"
-            :title="Translation.t('program.programKnowMore')"
-          >
-            <ProgramLongDescription :program="program" />
-          </ProgramAccordion>
-        </DsfrAccordionsGroup>
-        <hr class="fr-mb-9v fr-pb-1v" />
+        <div id="program-details-accordion-group">
+          <DsfrAccordionsGroup>
+            <ProgramAccordion
+              v-if="program && program['conditions d\'éligibilité']"
+              :accordion-id="`${program.id}-eligibility`"
+              :title="Translation.t('program.programAmIEligible')"
+            >
+              <ProgramEligibility :program="program" />
+              <TeeRegisterHighlight
+                v-if="!hasRegisteredData"
+                :text="Translation.t('program.programRegisterHighlightText')"
+              />
+            </ProgramAccordion>
+            <ProgramAccordion
+              v-if="program && linkedProjects && linkedProjects.length > 0"
+              :accordion-id="`${program.id}-linked-projects`"
+              :title="Breakpoint.isMobile() ? Translation.t('program.projectExamplesSM') : Translation.t('program.projectExamples')"
+            >
+              <ProgramProjects :linked-projects="linkedProjects" />
+            </ProgramAccordion>
+            <ProgramAccordion
+              v-if="program && program['description longue']"
+              :accordion-id="`${program.id}-long-description`"
+              :title="Translation.t('program.programKnowMore')"
+            >
+              <ProgramLongDescription :program="program" />
+            </ProgramAccordion>
+          </DsfrAccordionsGroup>
+        </div>
       </div>
     </div>
 
     <!-- PROGRAM FORM -->
     <div
+      v-if="hasRegisteredData && programIsEligible"
       ref="TeeProgramFormContainer"
       class="fr-bg--blue-france--lightness fr-grid-row fr-p-2w"
     >
@@ -243,7 +249,7 @@ import ProgramLongDescription from '@/components/program/detail/ProgramLongDescr
 import ProgramTile from '@/components/program/detail/ProgramTile.vue'
 import Config from '@/config'
 import { useProgramStore } from '@/stores/program'
-import { OpportunityType, type ProgramData as ProgramType, Project as ProjectType } from '@/types'
+import { OpportunityType, ProgramEligibilityType, Project as ProjectType } from '@/types'
 import { RouteName } from '@/types/routeType'
 import { useNavigationStore } from '@/stores/navigation'
 import { MetaSeo } from '@/utils/metaSeo'
@@ -254,16 +260,21 @@ import Breakpoint from '@/utils/breakpoints'
 import { computed, onBeforeMount, ref } from 'vue'
 import { useProjectStore } from '@/stores/project'
 import Opportunity from '@/utils/opportunity'
+import CompanyDataStorage from '@/utils/storage/companyDataStorage'
+import { storeToRefs } from 'pinia'
 
 const projectStore = useProjectStore()
 const programsStore = useProgramStore()
 const navigationStore = useNavigationStore()
 
-const program = ref<ProgramType>()
+const { currentProgram: program } = storeToRefs(programsStore)
 const linkedProjects = ref<ProjectType[] | undefined>([])
 const TeeProgramFormContainer = ref<HTMLElement | null | undefined>(null)
 
 const publicPath = Config.publicPath
+
+const hasRegisteredData = CompanyDataStorage.hasData()
+const registeredData = CompanyDataStorage.getData()
 
 interface Props {
   programId: string
@@ -299,6 +310,13 @@ const isProgramAutonomous = computed(() => {
   return program.value?.[`activable en autonomie`] == 'oui'
 })
 
+const programIsEligible = computed(() => {
+  return (
+    program.value?.eligibility === ProgramEligibilityType.Eligible ||
+    program.value?.eligibility === ProgramEligibilityType.PartiallyEligible
+  )
+})
+
 onBeforeMount(async () => {
   useNavigationStore().hasSpinner = true
   program.value = programsStore.currentProgram
@@ -332,6 +350,12 @@ onBeforeMount(async () => {
 
 onBeforeRouteLeave(() => {
   useSeoMeta(MetaSeo.default())
+})
+
+watch(registeredData.value, async () => {
+  if (program.value) {
+    await programsStore.getProgramById(program.value.id)
+  }
 })
 
 const programIsAvailable = computed(() => {
