@@ -3,7 +3,7 @@ import { EstablishmentDetails, SearchResult } from './types'
 
 export type EstablishmentRepository = {
   get: (siret: string) => Promise<Result<EstablishmentDetails, Error>>
-  search: (query: string) => Promise<Result<SearchResult, Error>>
+  search: (query: string, resultCount: number) => Promise<Result<SearchResult, Error>>
 }
 
 export type CityToRegionMappingType = {

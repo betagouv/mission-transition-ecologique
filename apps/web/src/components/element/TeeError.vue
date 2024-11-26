@@ -1,16 +1,16 @@
 <template>
   <div class="fr-text-center">
-    <p class="fr-text--red fr-text--md fr-m-0">
+    <p class="fr-text--deep-red fr-text--md fr-m-0">
       <span
         class="fr-icon-close-circle-fill fr-icon--lg"
         aria-hidden="true"
       />
     </p>
-    <h4 class="fr-text--red fr-m-0 fr-mb-2v">
+    <h4 class="fr-text--deep-red fr-text--lg fr-m-0">
       {{ Translation.t(`form.sorryError`) }}
     </h4>
     <slot />
-    <h6 class="fr-text--blue-france fr-mt-15v fr-mb-3v">
+    <h6 class="fr-text--blue-france fr-text--lg fr-mt-15v fr-mb-3v">
       {{ Translation.t('form.nowWhat') }}
     </h6>
     <p class="fr-text--blue-france fr-mb-15v">

@@ -4,17 +4,24 @@
       <img
         class="fr-responsive-img no-result-img"
         src="/images/tracks/no-results.png"
-        :alt="`image / pas de résultat`"
+        alt="pas de résultat"
       />
     </div>
     <div
       v-if="message"
-      class="fr-col-12 fr-col-sm-5 fr-px-4v"
+      class="fr-px-4v"
+      :class="ctaLabel ? 'fr-col-12 fr-col-md-10' : 'fr-col-12 fr-col-md-5'"
     >
       <p class="fr-text-center fr-h5 fr-text--blue-france fr-mt-6v">
         {{ message }}
       </p>
     </div>
+    <TeeDsfrButton
+      v-if="ctaLabel"
+      class="fr-text--yellow"
+      :label="ctaLabel"
+      @click="emit('cta-click')"
+    />
   </div>
 </template>
 
@@ -24,8 +31,13 @@
 
 interface Props {
   message?: string
+  ctaLabel?: string
 }
 defineProps<Props>()
+
+const emit = defineEmits<{
+  (e: 'cta-click'): void
+}>()
 </script>
 <style lang="scss" scoped>
 .no-result-img {

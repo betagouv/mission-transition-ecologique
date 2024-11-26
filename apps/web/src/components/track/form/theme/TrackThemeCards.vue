@@ -5,6 +5,9 @@
   >
     <TeeSpinner />
   </div>
+  <div v-else-if="hasError">
+    <TeeListNoResults :has-error="hasError" />
+  </div>
   <div
     v-for="opt in options"
     v-else
@@ -28,6 +31,7 @@ import { Project } from '@tee/data'
 import { useProjectStore } from '@/stores/project'
 import { useProgramStore } from '@/stores/program'
 import { useNavigationStore } from '@/stores/navigation'
+import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
 const currentTrack = useTrackStore().current
 const emit = defineEmits(['updateSelection'])
@@ -36,6 +40,7 @@ const projects = ref<Project[]>()
 const programs = ref<ProgramData[]>()
 const programStore = useProgramStore()
 const navigationStore = useNavigationStore()
+const registeredData = CompanyDataStorage.getData()
 
 const options = computed<TrackThemeOptionProps[]>(() => {
   const options: TrackThemeOptionProps[] = []
@@ -79,7 +84,7 @@ const selectOption = (opt: string | undefined) => {
 
 const hasError = ref<boolean>(false)
 
-onBeforeMount(async () => {
+const getProgramsAndProjects = async () => {
   navigationStore.hasSpinner = true
   const projectResult = await projectStore.eligibleProjects
   const programResult = await programStore.programsByUsedTracks
@@ -90,5 +95,13 @@ onBeforeMount(async () => {
     hasError.value = true
   }
   navigationStore.hasSpinner = false
-})
+}
+
+watch(
+  registeredData.value,
+  async () => {
+    await getProgramsAndProjects()
+  },
+  { immediate: true }
+)
 </script>

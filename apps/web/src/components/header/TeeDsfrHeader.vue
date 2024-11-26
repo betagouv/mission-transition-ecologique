@@ -42,6 +42,9 @@
                   :data-fr-opened="searchModalOpened"
                   @click.prevent.stop="showSearchModal()"
                 />
+                <div class="fr-hidden-lg">
+                  <TeeRegisterCTA />
+                </div>
                 <button
                   v-if="isWithSlotNav || quickLinks?.length"
                   id="button-menu"
@@ -107,6 +110,9 @@
                   @select="emit('language-select', $event)"
                 />
               </template>
+            </div>
+            <div class="fr-my-auto fr-px-4v fr-hidden fr-unhidden-lg">
+              <TeeRegisterCTA />
             </div>
             <div
               v-if="showSearch"
@@ -232,6 +238,7 @@ const emit = defineEmits<{
   (e: 'update:modelValue', payload: string): void
   (e: 'search', payload: string): void
   (e: 'language-select', payload: DsfrLanguageSelectorElement): void
+  (e: 'openRegister'): void
 }>()
 
 const languageSelector = toRef(props, 'languageSelector')
