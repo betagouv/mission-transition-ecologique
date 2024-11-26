@@ -1,7 +1,7 @@
 <template>
   <div class="fr-grid-row fr-text-center fr-text-left-md">
     <div class="fr-col-12">
-      <h1 class="fr-mb-4v fr-text--blue-france">Vos résultats</h1>
+      <h1 class="fr-mb-md-4v fr-m-0 fr-text--blue-france">Vos résultats</h1>
     </div>
     <div
       v-if="UsedTrack.isSpecificGoal()"
