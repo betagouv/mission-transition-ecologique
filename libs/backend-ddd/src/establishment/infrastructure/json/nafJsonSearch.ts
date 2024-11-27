@@ -23,10 +23,10 @@ export class NafSearch implements NafSearchType {
         .toLowerCase()
         .normalize('NFD')
         .replace(/[\u0300-\u036f]/g, '')
-        .replace(/[-\s]/g, '')
+        .replace(/[-\s.]/g, '')
         .trim()
     const normalizedSearch = normalizeString(searchTerm)
-    const regex = /^\d{1,2}(\.(\d{1,2}[A-Z]?)?)?$/
+    const regex = /^\d{1,2}(\.?(\d{1,2}[A-Z]?)?)?$/
     const isNAFCodeSearch = regex.test(searchTerm)
     let results = []
     if (isNAFCodeSearch) {
@@ -35,7 +35,7 @@ export class NafSearch implements NafSearchType {
       if (searchTerm.length === 1) {
         results = nafMapping.filter((pair: { NIV1: string }) => normalizeString(pair.NIV1) === normalizedSearch)
       } else {
-        results = nafMapping.filter((pair: { label_vf: string }) => normalizeString(pair.label_vf).startsWith(normalizedSearch))
+        results = nafMapping.filter((pair: { label_vf: string }) => normalizeString(pair.label_vf).includes(normalizedSearch))
       }
     }
     return results
