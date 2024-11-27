@@ -42,9 +42,9 @@
 
             <!-- PROGRAM TYPE -->
             <ul class="fr-badges-group fr-tee-program-detail-img-badge">
-              <p class="fr-badge tee-program-badge-image">
+              <li class="fr-badge fr-badge--info fr-badge--no-icon">
                 {{ program?.["nature de l'aide"] }}
-              </p>
+              </li>
             </ul>
           </div>
 
