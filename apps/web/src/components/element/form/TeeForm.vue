@@ -10,8 +10,9 @@
     @click="formIsSent = !formIsSent"
   />
   <!-- FORM -->
-  <div
+  <form
     v-if="!formIsSent"
+    :name="formType"
     class="fr-grid-row fr-px-md-4w"
   >
     <div class="fr-col-12">
@@ -55,17 +56,17 @@
         <div class="fr-col-12 fr-col-justify--right">
           <TeeDsfrButton
             :label="Translation.t('send')"
+            type="submit"
             :disabled="!isFormFilled || !isFormValid || isLoading"
             icon="fr-icon-arrow-right-line"
             icon-right
-            teste2e-selector="send-contact-form"
             :loading="isLoading"
-            @click="saveForm()"
+            @click.prevent="saveForm()"
           />
         </div>
       </div>
     </div>
-  </div>
+  </form>
   <TeeFormCallback
     v-if="formIsSent"
     :form="form"

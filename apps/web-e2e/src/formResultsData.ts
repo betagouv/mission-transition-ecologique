@@ -5,15 +5,16 @@ import { FormResultDataType } from './resultDataType'
 - 1: j'ai un projet en tete > projet
 - 2: j'ai un projet en tete > projet > program
 - 3: catalogue > aide 
-- 4: je ne sais pas par ou commencer > projet
-- 5: je ne sais par ou commencer > aide
-- 6: je ne sais pas par ou commencer > projet > aide
-- 7: je ne sais pas par ou commencer > projet custom
-- 8: j'ai un projet en tete > projet custom
-- 9: j'ai un projet en tete > projet sans titre 
+- 4: catalogue > projet
+- 5: je ne sais pas par ou commencer > projet
+- 6: je ne sais par ou commencer > aide
+- 7: je ne sais pas par ou commencer > projet > aide
+- 8: je ne sais pas par ou commencer > projet custom
+- 9: j'ai un projet en tete > projet custom
+- 10: j'ai un projet en tete > projet sans titre 
+- 11: j'ai un projet en tete > projet avec infos manuelles
 
 ----- cas de formulaire fail: 
-- 10: j'ai un projet en tete > projet custom siret invalide
 - 11: je ne sais pas par ou commencer > projet > aide cgu pas sélectionné 
 - 12: je ne sais pas par ou commencer > projet mail invalide
 
@@ -31,7 +32,7 @@ export const tests: FormResultDataType[]  = [
       tel: {value: '0123456789', type: 'tel'},
       email: {value: 'test@test.fr', type: 'email'},
       siret: {value: '83014132100034', type: 'text'},
-      needs: {value: 'test', type: 'textarea'},
+      needs: {value: '', type: 'textarea'},
       cgu: {value: true, type: 'checkbox'}
     } 
   },
@@ -46,7 +47,7 @@ export const tests: FormResultDataType[]  = [
       tel: {value: '0123456789', type: 'tel'},
       email: {value: 'test@test.fr', type: 'email'},
       siret: {value: '83014132100034', type: 'text'},
-      needs: {value: 'test', type: 'textarea'},
+      needs: {value: '', type: 'textarea'},
       cgu: {value: true, type: 'checkbox'}
     } 
   },
@@ -68,69 +69,70 @@ export const tests: FormResultDataType[]  = [
     id: 4,
     valid: true,
     type: 'project',
-    url: 'questionnaire/resultat/projet/sensibilisation-equipes?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=21490007800012&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non',
+    url: 'projets-entreprise/diag-360',
+    values: {
+      name: {value: 'test', type: 'text'},
+      surname: {value: 'test', type: 'text'},
+      tel: {value: '0123456789', type: 'tel'},
+      email: {value: 'test@test.fr', type: 'email'},
+      siret: {value: '83014132100034', type: 'text'},
+      cgu: {value: true, type: 'checkbox'}
+    } 
+  },
+  {
+    id: 5,
+    valid: true,
+    type: 'project',
+    url: 'questionnaire/resultat/projet/sensibilisation-equipes?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=83014132100034&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non',
     values: {
       projectTitle: {value: 'Sensibilisation des équipes', type: 'text'},
       name: {value: 'test', type: 'text'},
       surname: {value: 'test', type: 'text'},
+      needs: {value: '', type: 'textarea'},
       tel: {value: '0123456789', type: 'tel'},
       email: {value: 'test@test.fr', type: 'email'},
-      siret: {value: '21490007800012', type: 'text'},
+      siret: {value: '83014132100034', type: 'text'},
       cgu: {value: true, type: 'checkbox'}
     } 
   }, 
   {
-    id: 5,
-    valid: true,
-    type: 'program',
-    url: 'questionnaire/resultat/formation-engager-entreprise-transition-ecologique?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=21490007800012&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non',
-    values: {
-      name: {value: 'test', type: 'text'},
-      surname: {value: 'test', type: 'text'},
-      tel: {value: '0123456789', type: 'tel'},
-      email: {value: 'test@test.fr', type: 'email'},
-      siret: {value: '21490007800012', type: 'text'},
-      cgu: {value: true, type: 'checkbox'}
-    }   
-  },
-  {
     id: 6,
     valid: true,
     type: 'program',
-    url: 'questionnaire/resultat/projet/sensibilisation-equipes/formation-engager-entreprise-transition-ecologique?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=21490007800012&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non',
+    url: 'questionnaire/resultat/formation-engager-entreprise-transition-ecologique?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=83014132100034&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non',
     values: {
       name: {value: 'test', type: 'text'},
       surname: {value: 'test', type: 'text'},
       tel: {value: '0123456789', type: 'tel'},
+      needs: {value: '', type: 'textarea'},
       email: {value: 'test@test.fr', type: 'email'},
-      siret: {value: '21490007800012', type: 'text'},
+      siret: {value: '83014132100034', type: 'text'},
       cgu: {value: true, type: 'checkbox'}
     }   
   },
   {
     id: 7,
     valid: true,
-    type: 'custom-project',
-    url: 'questionnaire/resultat?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=21490007800012&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non',
+    type: 'program',
+    url: 'questionnaire/resultat/projet/sensibilisation-equipes/formation-engager-entreprise-transition-ecologique?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=83014132100034&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non',
     values: {
-      projectTitle: {value: 'test', type: 'text'},
-      theme: {value: '⚡️ énergie', type: 'select'},
       name: {value: 'test', type: 'text'},
       surname: {value: 'test', type: 'text'},
+      needs: {value: '', type: 'textarea'},
       tel: {value: '0123456789', type: 'tel'},
       email: {value: 'test@test.fr', type: 'email'},
-      siret: {value: '21490007800012', type: 'text'},
+      siret: {value: '83014132100034', type: 'text'},
       cgu: {value: true, type: 'checkbox'}
     }   
   },
   {
     id: 8,
     valid: true,
-    type: 'custom-project',
-    url: 'questionnaire/resultat?choix-du-parcours=j-ai-un-projet&siret=83014132100034&effectif=TPE&objectifs=building',
+    type: 'customProject',
+    url: 'questionnaire/resultat?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=83014132100034&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non',
     values: {
       projectTitle: {value: 'test', type: 'text'},
-      theme: {value: '🏢 rénovation', type: 'select'},
+      theme: {value: '⚡️ énergie', type: 'select'},
       name: {value: 'test', type: 'text'},
       surname: {value: 'test', type: 'text'},
       tel: {value: '0123456789', type: 'tel'},
@@ -141,6 +143,23 @@ export const tests: FormResultDataType[]  = [
   },
   {
     id: 9,
+    valid: true,
+    type: 'customProject',
+    url: 'questionnaire/resultat?choix-du-parcours=j-ai-un-projet&siret=83014132100034&effectif=TPE&objectifs=building',
+    values: {
+      projectTitle: {value: 'test', type: 'text'},
+      theme: {value: '🏢 rénovation', type: 'select'},
+      name: {value: 'test', type: 'text'},
+      surname: {value: 'test', type: 'text'},
+      tel: {value: '0123456789', type: 'tel'},
+      needs: {value: '', type: 'textarea'},
+      email: {value: 'test@test.fr', type: 'email'},
+      siret: {value: '83014132100034', type: 'text'},
+      cgu: {value: true, type: 'checkbox'}
+    }   
+  },
+  {
+    id: 10,
     valid: false,
     type: 'project',
     url: 'questionnaire/resultat/projet/isolation-thermique?choix-du-parcours=j-ai-un-projet&siret=83014132100034&effectif=TPE&objectifs=building',
@@ -149,53 +168,56 @@ export const tests: FormResultDataType[]  = [
       name: {value: 'test', type: 'text'},
       surname: {value: 'test', type: 'text'},
       tel: {value: '0123456789', type: 'tel'},
+      needs: {value: '', type: 'textarea'},
       email: {value: 'test@test.fr', type: 'email'},
       siret: {value: '83014132100034', type: 'text'},
       cgu: {value: true, type: 'checkbox'}
     } 
   },
   {
-    id: 10,
+    id: 11,
     valid: false,
-    type: 'custom-project',
-    url: 'questionnaire/resultat?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=21490007800012&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non',
+    manual: true,
+    type: 'project',
+    url: 'questionnaire/resultat/projet/isolation-thermique?choix-du-parcours=j-ai-un-projet&siret=83014132100034&effectif=TPE&objectifs=building',
     values: {
-      projectTitle: {value: 'test', type: 'text'},
-      theme: {value: '⚡️ énergie', type: 'select'},
+      projectTitle: {value: '', type: 'text'},
       name: {value: 'test', type: 'text'},
       surname: {value: 'test', type: 'text'},
       tel: {value: '0123456789', type: 'tel'},
+      needs: {value: '', type: 'textarea'},
       email: {value: 'test@test.fr', type: 'email'},
-      siret: {value: '21490012', type: 'text'},
+      siret: {value: '83014132100034', type: 'text'},
       cgu: {value: true, type: 'checkbox'}
-    }   
+    } 
   },
   {
-    id: 11,
+    id: 12,
     type: 'program',
     valid: false,
-    url: 'questionnaire/resultat/formation-engager-entreprise-transition-ecologique?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=21490007800012&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non',
+    url: 'questionnaire/resultat/formation-engager-entreprise-transition-ecologique?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=83014132100034&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non',
     values: {
       name: {value: 'test', type: 'text'},
       surname: {value: 'test', type: 'text'},
       tel: {value: '0123456789', type: 'tel'},
       email: {value: 'test@test.fr', type: 'email'},
-      siret: {value: '21490007800012', type: 'text'},
+      siret: {value: '83014132100034', type: 'text'},
       cgu: {value: false, type: 'checkbox'}
     }   
   },
   {
-    id: 12,
+    id: 13,
     valid: false,
     type: 'project',
-    url: 'questionnaire/resultat/projet/sensibilisation-equipes?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=21490007800012&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non',
+    url: 'questionnaire/resultat/projet/sensibilisation-equipes?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=83014132100034&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non',
     values: {
       projectTitle: {value: 'Sensibilisation des équipes', type: 'text'},
       name: {value: 'test', type: 'text'},
       surname: {value: 'test', type: 'text'},
       tel: {value: '0123456789', type: 'tel'},
+      needs: {value: '', type: 'textarea'},
       email: {value: 'test@', type: 'email'},
-      siret: {value: '21490007800012', type: 'text'},
+      siret: {value: '83014132100034', type: 'text'},
       cgu: {value: true, type: 'checkbox'}
     } 
   }

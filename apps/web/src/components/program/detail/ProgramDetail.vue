@@ -227,7 +227,7 @@
     >
       <TeeForm
         v-if="program"
-        :form-container-ref="TeeProgramFormContainer"
+        :form-container-ref="teeProgramFormContainer"
         :data-id="program.id"
         :phone-callback="Translation.t('form.phoneContact', { operator: program['opérateur de contact'] })"
         :form="Opportunity.getProgramFormFields(program)"
@@ -268,7 +268,7 @@ const navigationStore = useNavigationStore()
 
 const { currentProgram: program } = storeToRefs(programsStore)
 const linkedProjects = ref<ProjectType[] | undefined>([])
-const TeeProgramFormContainer = ref<HTMLElement | null | undefined>(null)
+const teeProgramFormContainer = ref<HTMLElement | null | undefined>(null)
 
 const publicPath = Config.publicPath
 
@@ -362,11 +362,11 @@ const programIsAvailable = computed(() => {
 })
 
 const scrollToProgramForm = () => {
-  if (TeeProgramFormContainer.value) {
+  if (teeProgramFormContainer.value) {
     navigationStore.isByRouteName(RouteName.CatalogProgramDetail) ||
     navigationStore.isByRouteName(RouteName.CatalogProgramFromCatalogProjectDetail)
-      ? Scroll.to(TeeProgramFormContainer.value)
-      : Scroll.toWithTopBarOffset(TeeProgramFormContainer.value)
+      ? Scroll.to(teeProgramFormContainer.value)
+      : Scroll.toWithTopBarOffset(teeProgramFormContainer.value)
   }
 }
 </script>

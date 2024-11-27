@@ -1,5 +1,8 @@
 <template>
-  <div class="fr-col-12 fr-col-md-8">
+  <div
+    teste2e-select="callback-contact-form"
+    class="fr-col-12 fr-col-md-8"
+  >
     <!-- MESSAGE IF ERROR-->
     <TeeError
       v-if="!hasValidResponse"

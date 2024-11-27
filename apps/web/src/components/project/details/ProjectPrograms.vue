@@ -41,12 +41,12 @@
       <div
         v-else
         id="project-contact"
-        ref="TeeProjectFormContainer"
+        ref="teeProjectFormContainer"
         class="fr-bg--blue-france--lightness fr-grid-row fr-p-2w"
       >
         <TeeForm
           v-if="project"
-          :form-container-ref="TeeProjectFormContainer"
+          :form-container-ref="teeProjectFormContainer"
           :form-type="OpportunityType.Project"
           :phone-callback="Translation.t('form.phoneContact', { operator: ' ' })"
           :form="Opportunity.getProjectFormFields(project)"
@@ -75,7 +75,7 @@ const props = defineProps<Props>()
 
 const programStore = useProgramStore()
 const navigationStore = useNavigationStore()
-const TeeProjectFormContainer = ref<HTMLElement | null | undefined>(null)
+const teeProjectFormContainer = ref<HTMLElement | null | undefined>(null)
 
 const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)
