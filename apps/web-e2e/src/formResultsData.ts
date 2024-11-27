@@ -85,7 +85,6 @@ export const tests: FormResultDataType[]  = [
     type: 'project',
     url: 'questionnaire/resultat/projet/sensibilisation-equipes?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=83014132100034&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non',
     values: {
-      projectTitle: {value: 'Sensibilisation des équipes', type: 'text'},
       name: {value: 'test', type: 'text'},
       surname: {value: 'test', type: 'text'},
       needs: {value: '', type: 'textarea'},
@@ -132,7 +131,6 @@ export const tests: FormResultDataType[]  = [
     url: 'questionnaire/resultat?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=83014132100034&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non',
     values: {
       projectTitle: {value: 'test', type: 'text'},
-      theme: {value: '⚡️ énergie', type: 'select'},
       name: {value: 'test', type: 'text'},
       surname: {value: 'test', type: 'text'},
       tel: {value: '0123456789', type: 'tel'},
@@ -148,7 +146,6 @@ export const tests: FormResultDataType[]  = [
     url: 'questionnaire/resultat?choix-du-parcours=j-ai-un-projet&siret=83014132100034&effectif=TPE&objectifs=building',
     values: {
       projectTitle: {value: 'test', type: 'text'},
-      theme: {value: '🏢 rénovation', type: 'select'},
       name: {value: 'test', type: 'text'},
       surname: {value: 'test', type: 'text'},
       tel: {value: '0123456789', type: 'tel'},

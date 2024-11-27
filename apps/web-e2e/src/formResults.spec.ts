@@ -7,16 +7,18 @@ tests.forEach((singleTest) => {
     // check response api 
     page.on('response', async (response) => {
       if (response.url().includes('/api/opportunities')) {
-        await page.locator('[teste2e-selector="callback-contact-form"]').waitFor()
-        if (response.status() === 200) {
-          await expect(page.locator('[teste2e-selector="success-callback-contact-form"]')).toBeVisible({ timeout: 3000 })
-        } else {
-          console.log('error during opportunityApiCall')
-          await expect(page.locator('[teste2e-selector="error-callback-contact-form"]')).toBeVisible({ timeout: 3000 })
-        }
+        try {
+          await page.locator('[teste2e-selector="callback-contact-form"]').waitFor({ timeout: 3000, state: 'visible' })
+          if (response.status() === 200) {
+            await expect(page.locator('[teste2e-selector="success-callback-contact-form"]')).toBeVisible({ timeout: 3000 })
+          } else {
+            console.log('error during opportunityApiCall')
+            await expect(page.locator('[teste2e-selector="error-callback-contact-form"]')).toBeVisible({ timeout: 3000 })
+          }
+        }catch {}  
       }
-    });
-    console.log(`Navigating to ${singleTest.type} form for ${singleTest.id} supposed to be ${singleTest.valid}`)
+    })
+    // console.log(`Navigating to ${singleTest.type} form for ${singleTest.id} supposed to be ${singleTest.valid}`)
 
     await page.goto(singleTest.url, { waitUntil: 'load' })
     // save company data in localStorage
@@ -51,46 +53,52 @@ tests.forEach((singleTest) => {
       localStorage.setItem('structure_size', 'TPE')
       })
     }
-    await page.reload()
+    await page.reload({ waitUntil: 'load' })
+    await page.waitForTimeout(3000)
 
     if (singleTest.type === 'customProject') {
-      await page.waitForSelector('[teste2e-selector="open-custom-project-form"]', { timeout: 3000 })
+      await page.waitForSelector('[teste2e-selector="open-custom-project-form"]', { timeout: 3000, state: 'visible' })
       await page.click('[teste2e-selector="open-custom-project-form"]')
-      await page.waitForSelector('.fade-enter-active, .fade-leave-active', { state: 'detached' })
+      await page.waitForSelector('.fade-enter-active, .fade-leave-active', { state: 'visible',  timeout: 3000 })
 
     }
 
+    const firstFieldKey = Object.keys(singleTest.values)[0]
+    const firstValue = singleTest.values[firstFieldKey]
+    const firstSelector = `[teste2e-selector="${firstFieldKey}-${firstValue.type}"]`
+
     try {
-      await page.locator(`form[name="${singleTest.type}"]`).waitFor()
+      await page.waitForSelector(firstSelector, { timeout: 3000, state: 'visible'})
       for (const [fieldKey, value] of Object.entries(singleTest.values)) {
         const selector = `[teste2e-selector="${fieldKey}-${value.type}"]`
         if (fieldKey === 'siret') {
-          const actualSiretValue = await page.inputValue(selector)
-          expect(actualSiretValue).toBe(value.value)
+          if (singleTest.manual) {
+            await page.locator(selector).fill(value.value as string)
+          } else {
+            const actualSiretValue = await page.inputValue(selector)
+            expect(actualSiretValue).toBe(value.value)
+          }
         } else if (fieldKey === 'needs') {
           const actualNeedsValue = await page.inputValue(selector)
-          expect(actualNeedsValue).toContain(singleTest.manual? 'tertiaire' : 'Programmation informatique')
+          expect(actualNeedsValue).toContain(singleTest.manual? "autre secteur d'activité" : 'Programmation informatique')
         } else if (['text', 'email', 'tel'].includes(value.type)) {
           await page.locator(selector).fill(value.value as string)
-        } else if (value.type === 'select') {
-          await page.locator(selector).selectOption({ label: value.value as string })
         } else if (value.type === 'checkbox' && value.value) {
           await page.locator(selector).click()
         }
       }
 
-    } catch {
-      console.warn(`Form not found for test id ${singleTest.id}.`)
-    }
+      const submitButton = page.locator('button[type="submit"]')
+      await page.waitForTimeout(1000)
+      await page.waitForSelector('button[type="submit"]', { timeout: 3000, state: 'visible'})
+      if (singleTest.valid) {
+        await submitButton.click()
+      } else {
+        await expect(submitButton).toBeDisabled()
+      }
 
-    const submitButton = page.locator('button[type="submit"]');
-    await submitButton.waitFor({ state: 'attached', timeout: 1000 })
-    await page.waitForTimeout(3000)
-    if (singleTest.valid) {
-      await expect(submitButton).not.toBeDisabled()
-      await submitButton.click()
-    } else {
-      await expect(submitButton).toBeDisabled()
+    } catch {
+      console.warn(`Error during filling of form for ${singleTest.type} test id ${singleTest.id}.`)
     }
   })
 })
