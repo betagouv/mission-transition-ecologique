@@ -1,0 +1,86 @@
+titre: Travaux hébergements touristiques
+promesse: >-
+  Financez vos travaux de création, renovation, modernisation de votre
+  hébergement touristique
+description: >-
+  Vous avez un projet de création, modernisation ou rénovation de votre
+  hébergement touristique ? La Région Auvergne-Rhône-Alpes vous accompagne avec
+  une aide financière pour soutenir vos travaux. Que vous souhaitiez concevoir
+  un hébergement éco-responsable ou entreprendre des rénovations énergétiques,
+  cette aide peut financer des améliorations telles que l’isolation thermique,
+  l’installation d’un chauffage performant ou le recours aux énergies
+  renouvelables. Ces travaux vous permettent de réduire vos charges mais aussi
+  de renforcer l’attractivité et la durabilité de votre établissement.
+illustration: images/TEE_eolienne.png
+opérateur de contact: Région Auvergne-Rhône-Alpes
+url: >-
+  https://www.auvergnerhonealpes.fr/aides/creer-renover-ou-moderniser-mon-hebergement-touristique
+nature de l'aide: financement
+montant du financement: Jusqu'à 30 % du coût de l'investissement
+objectifs:
+  - description: >-
+      Contacter la direction du tourisme de la région afin de vérifier
+      l'éligibilité de votre projet. Pour cela, complétez la "fiche premier
+      contact" et transmettez-la par mail à :
+      [pda.hebergement@auvergnerhonealpes.fr](mailto:pda.hebergement@auvergnerhonealpes.fr)
+    liens:
+      - lien: https://www.auvergnerhonealpes.fr/media/3118/download?inline
+        texte: Fiche premier contact (gîtes d'étapes)
+      - lien: https://www.auvergnerhonealpes.fr/media/1551/download?inline
+        texte: Fiche premier contact (autres typologies d'hébergement)
+  - description: >-
+      Si vous êtes éligible, un dossier de demande de subvention à compléter
+      vous sera transmis. Il sera à déposer auprès de la direction du tourisme.
+  - description: "Votre demande est instruite. Si elle\_est recevable ou \_sélectionnée, elle est proposée au vote des élus régionaux en Commission Permanente."
+  - description: >-
+      Si votre candidature est validée, signez l'acte attributif et transmettez
+      le à la direction du tourisme.
+  - description: >-
+      Déposez votre demande de paiement, qui sera instruite et recevez votre
+      aide.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Auvergne-Rhône-Alpes
+  secteur d'activité:
+    - >-
+      Les hébergements touristiques collectifs, l'hôtellerie indépendante, les
+      gîtes d'étapes de plus de 16 places situés sur les itinéraires d'intérêts
+      régionaux, les refuges de montagne, les hébergements hybrides (projets
+      associant hébergements et services apportant une plus-value
+      différenciante).
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - >-
+      Les travaux pour lesquels vous sollicitez l'aide ne doivent pas avoir
+      commencé ou ne doivent pas avoir donné lieu à des engagements fermes
+      (signature de devis, versement d’acompte aux entreprises qui réalisent les
+      travaux, etc) sous peine d’inéligibilité de la demande.
+    - >-
+      Un plancher de dépenses minimum de 50 000 € HT est requis (300 000 € pour
+      les hébergements hybrides (accueil de touristes associant hébergement et
+      activités et/ou services et/ou prestations)).
+    - >-
+      Les meublés de tourisme (studios, villas, appartements) et les chambres
+      d'hôtes ne sont pas éligibles à cette aide.
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est I
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est rénover mon bâtiment
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Auvergne-Rhône-Alpes
