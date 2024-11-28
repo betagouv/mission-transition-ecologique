@@ -96,6 +96,7 @@ declare module 'vue' {
     TeeFormElementSelect: typeof import('./components/element/form/TeeFormElementSelect.vue')['default']
     TeeGroupBar: typeof import('./components/element/TeeGroupBar.vue')['default']
     TeeHeader: typeof import('./components/TeeHeader.vue')['default']
+    TeeHighlight: typeof import('./components/element/TeeHighlight.vue')['default']
     TeeHomeInfos: typeof import('./components/home/TeeHomeInfos.vue')['default']
     TeeHomeSteps: typeof import('./components/home/TeeHomeSteps.vue')['default']
     TeeListNoResults: typeof import('./components/element/TeeListNoResults.vue')['default']

@@ -1,5 +1,6 @@
 <template>
   <TeeContentBlock
+    v-if="hasRegisteredData || countFilteredPrograms"
     id="project-aids-title"
     class="fr-pt-3v fr-pb-4v fr-border-b--grey--light"
     title="💰 Mes aides"
@@ -9,10 +10,6 @@
         <div class="fr-grid-row">
           <div class="fr-col-12 fr-text-center">
             <TeeSpinner v-if="navigationStore.hasSpinner" />
-            <TeeNoResult
-              v-else-if="!countFilteredPrograms && !hasError && !navigationStore.hasSpinner"
-              message="Aucune aide n'a pu être identifiée avec les critères choisis..."
-            />
             <TeeError
               v-else-if="hasError"
               :mailto="Contact.email"
@@ -35,11 +32,21 @@
       </div>
       <TeeRegisterHighlight
         v-if="!hasRegisteredData"
-        class="fr-mx-3v"
+        class="fr-mx-3v fr-highlight-border--yellow fr-highlight-bg--yellow--lightness"
         :text="Translation.t('project.projectRegisterHighlightText')"
       />
+      <TeeHighlight
+        v-if="hasRegisteredData && !countFilteredPrograms && !navigationStore.hasSpinner"
+        large
+        :text="Translation.t('project.noPrograms.title')"
+        alt-img="projet / aucune aide"
+        class="fr-highlight-border--yellow fr-highlight-bg--yellow--lightness"
+        img="/images/tracks/no-programs.svg"
+      >
+        <p class="fr-mt-n3v fr-mb-0">{{ Translation.t('project.noPrograms.subtitle') }}</p>
+      </TeeHighlight>
       <div
-        v-else
+        v-if="hasRegisteredData"
         id="project-contact"
         ref="TeeProjectFormContainer"
         class="fr-bg--blue-france--lightness fr-grid-row fr-p-2w"
