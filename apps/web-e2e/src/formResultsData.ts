@@ -12,11 +12,11 @@ import { FormResultDataType } from './resultDataType'
 - 8: je ne sais pas par ou commencer > projet custom
 - 9: j'ai un projet en tete > projet custom
 - 10: j'ai un projet en tete > projet sans titre 
-- 11: j'ai un projet en tete > projet avec infos manuelles
+- 11: catalogue > aide avec infos manuelles
 
 ----- cas de formulaire fail: 
-- 11: je ne sais pas par ou commencer > projet > aide cgu pas sélectionné 
-- 12: je ne sais pas par ou commencer > projet mail invalide
+- 12: je ne sais pas par ou commencer > projet > aide cgu pas sélectionné 
+- 13: je ne sais pas par ou commencer > projet mail invalide
 
 */
 export const tests: FormResultDataType[]  = [
@@ -131,6 +131,7 @@ export const tests: FormResultDataType[]  = [
     url: 'questionnaire/resultat?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=83014132100034&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non',
     values: {
       projectTitle: {value: 'test', type: 'text'},
+      theme: {value: '⚡️ énergie', type: 'select'},
       name: {value: 'test', type: 'text'},
       surname: {value: 'test', type: 'text'},
       tel: {value: '0123456789', type: 'tel'},
@@ -146,6 +147,7 @@ export const tests: FormResultDataType[]  = [
     url: 'questionnaire/resultat?choix-du-parcours=j-ai-un-projet&siret=83014132100034&effectif=TPE&objectifs=building',
     values: {
       projectTitle: {value: 'test', type: 'text'},
+      theme: {value: '🏢 rénovation', type: 'select'},
       name: {value: 'test', type: 'text'},
       surname: {value: 'test', type: 'text'},
       tel: {value: '0123456789', type: 'tel'},
@@ -173,12 +175,11 @@ export const tests: FormResultDataType[]  = [
   },
   {
     id: 11,
-    valid: false,
+    valid: true,
     manual: true,
-    type: 'project',
-    url: 'questionnaire/resultat/projet/isolation-thermique?choix-du-parcours=j-ai-un-projet&siret=83014132100034&effectif=TPE&objectifs=building',
+    type: 'program',
+    url: 'aides-entreprise/act-pas-a-pas?effectif=TPE',
     values: {
-      projectTitle: {value: '', type: 'text'},
       name: {value: 'test', type: 'text'},
       surname: {value: 'test', type: 'text'},
       tel: {value: '0123456789', type: 'tel'},

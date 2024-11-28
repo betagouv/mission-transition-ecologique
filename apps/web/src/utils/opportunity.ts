@@ -48,7 +48,7 @@ export default class Opportunity {
         required: true,
         type: FieldType.Text,
         isValid: undefined,
-        value: TrackStructure.getSiret() ?? (CompanyDataStorage.getCompanyData() as EstablishmentFront).siret ?? '',
+        value: CompanyDataStorage.getCompanyData() ? (CompanyDataStorage.getCompanyData() as EstablishmentFront).siret : '',
         label: 'SIRET de votre entreprise',
         hint: 'Format attendu : 14 chiffres',
         validation: SiretValidator.validate,
