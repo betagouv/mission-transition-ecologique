@@ -35,30 +35,31 @@
         <div class="fr-footer__partners-logos fr-grid-row">
           <div class="fr-footer__partners-main">
             <a
-              class="footer__partners-link fr-my-4v fr-mr-4v tee-router-link"
+              class="footer__partners-link fr-my-4v fr-mr-4v fr-bg--none"
               target="_blank"
               :href="mainPartner.href"
             >
               <img
-                class="fr-footer__logo tee-home-step-operator-logo tee-footer-operator-main fr-responsive-img"
+                class="fr-footer__logo fr-responsive-img"
                 :src="mainPartner.img"
                 :alt="mainPartner.label"
               />
             </a>
           </div>
           <div class="fr-footer__partners-sub">
-            <ul
-              v-for="operator in operators"
-              :key="operator.label"
-            >
-              <li>
+            <ul>
+              <li
+                v-for="operator in operators"
+                :key="operator.label"
+              >
                 <a
-                  class="footer__partners-link tee-router-link fr-my-4v fr-ml-4v"
+                  class="footer__partners-link fr-bg--none fr-my-4v fr-ml-4v"
                   target="_blank"
                   :href="operator.href"
+                  rel="noopener noreferrer"
                 >
                   <img
-                    class="fr-footer__logo tee-home-step-operator-logo tee-footer-operator-img"
+                    class="fr-footer__logo fr-responsive-img"
                     :src="operator.img"
                     :alt="operator.label"
                     :width="operator.width ?? undefined"
