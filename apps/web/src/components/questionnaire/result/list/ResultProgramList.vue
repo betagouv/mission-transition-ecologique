@@ -5,7 +5,7 @@
       <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
         <div class="fr-grid-row fr-grid-row--center">
           <div
-            v-if="!useNavigationStore().hasSpinner"
+            v-if="!navigationStore.hasSpinner"
             class="fr-col-2 fr-col-hidden fr-col-unhidden-md"
           >
             <div class="fr-sidemenu fr-pr-0 fr-mx-3v">
@@ -16,11 +16,11 @@
           <div
             class="fr-col-12 fr-col-md-10 fr-pl-md-2v fr-pr-md-6v"
             :class="{
-              'fr-col-offset-md-2': useNavigationStore().hasSpinner
+              'fr-col-offset-md-2': navigationStore.hasSpinner
             }"
           >
             <TeeSpinner
-              v-if="useNavigationStore().hasSpinner"
+              v-if="navigationStore.hasSpinner"
               class="fr-mt-16w"
             />
             <TeeListNoResults
@@ -30,7 +30,7 @@
               :count-items="countPrograms"
             />
             <TeeNoResult
-              v-if="!hasRegisteredData && !useNavigationStore().hasSpinner"
+              v-if="!hasRegisteredData && !navigationStore.hasSpinner"
               :message="Translation.t('results.alertNoDataNoResults')"
               :cta-label="Translation.t('results.noResultCTA')"
               @cta-click="openModal"
@@ -61,6 +61,7 @@ interface ProgramListProps {
 }
 
 const hasRegisteredData = CompanyDataStorage.hasData()
+const navigationStore = useNavigationStore()
 
 const props = defineProps<ProgramListProps>()
 
