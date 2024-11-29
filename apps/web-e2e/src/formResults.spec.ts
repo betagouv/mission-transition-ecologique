@@ -3,9 +3,7 @@ import { tests } from './formResultsData'
 
 
 tests.forEach((singleTest) => {
-  test(`Test id ${singleTest.id} - Verify form ${singleTest.url}`, async ({ browser }) => {
-    const context = await browser.newContext()
-    const page = await context.newPage()
+  test(`Test id ${singleTest.id} - Verify form ${singleTest.url}`, async ({ page }) => {
     // check response api 
     page.on('response', async (response) => {
       if (response.url().includes('/api/opportunities')) {
@@ -17,16 +15,13 @@ tests.forEach((singleTest) => {
             console.log('error during opportunityApiCall')
             await expect(page.locator('[teste2e-selector="error-callback-contact-form"]')).toBeVisible({ timeout: 3000 })
           }
-          await context.close()
         }catch {}  
       }
     })
-    // console.log(`Navigating to ${singleTest.type} form for ${singleTest.id} supposed to be ${singleTest.valid}`)
-
     await page.goto(singleTest.url, { waitUntil: 'load' })
     await page.waitForLoadState('networkidle')
     // save company data in localStorage
-    const localStorageData = await page.evaluate((singleTest) => {
+    await page.evaluate((singleTest) => {
       localStorage.clear()
       if (singleTest.manual) {
         localStorage.setItem('company', JSON.stringify(
