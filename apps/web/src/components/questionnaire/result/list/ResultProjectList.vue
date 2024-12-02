@@ -66,10 +66,11 @@
             name="fade"
             mode="out-in"
           >
-            <component
-              :is="otherProjectComponent"
+            <OtherProjectCta
+              v-if="!otherProjectForm && !showNoResults"
               @click="openOtherProjectForm"
             />
+            <OtherProjectForm v-else />
           </Transition>
         </div>
       </div>
@@ -139,12 +140,5 @@ const showOtherProjectForm = computed(() => {
 
 const isSpecificGoal = computed(() => {
   return hasThemeCard.value && UsedTrack.isSpecificGoal() && hasProjects.value
-})
-const otherProjectComponent = computed(() => {
-  if (!otherProjectForm.value && !showNoResults.value) {
-    return OtherProjectCta
-  } else {
-    return OtherProjectForm
-  }
 })
 </script>

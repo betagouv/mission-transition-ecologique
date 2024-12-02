@@ -119,7 +119,7 @@ export default class OpportunityFeatures {
       })
   }
 
-  private async _updateOpportunitySentToHub(opportunityId: OpportunityId, success: boolean): Promise<Maybe<Error>> {
+  private async _updateOpportunitySentToHub(opportunityId: OpportunityId, success: boolean): Promise<Maybe<Error | null>> {
     return await this._opportunityRepository.update(opportunityId, { sentToOpportunityHub: success })
   }
 

@@ -222,12 +222,12 @@
     <!-- PROGRAM FORM -->
     <div
       v-if="hasRegisteredData && programIsEligible"
-      ref="TeeProgramFormContainer"
+      ref="teeProgramFormContainer"
       class="fr-bg--blue-france--lightness fr-grid-row fr-p-2w"
     >
       <TeeForm
         v-if="program"
-        :form-container-ref="TeeProgramFormContainer"
+        :form-container-ref="teeProgramFormContainer"
         :data-id="program.id"
         :phone-callback="Translation.t('form.phoneContact', { operator: program['opérateur de contact'] })"
         :form="Opportunity.getProgramFormFields(program)"
@@ -257,7 +257,6 @@ import Program from '@/utils/program/program'
 import { Scroll } from '@/utils/scroll'
 import Translation from '@/utils/translation'
 import Breakpoint from '@/utils/breakpoints'
-import { computed, onBeforeMount, ref } from 'vue'
 import { useProjectStore } from '@/stores/project'
 import Opportunity from '@/utils/opportunity'
 import CompanyDataStorage from '@/utils/storage/companyDataStorage'
@@ -269,7 +268,7 @@ const navigationStore = useNavigationStore()
 
 const { currentProgram: program } = storeToRefs(programsStore)
 const linkedProjects = ref<ProjectType[] | undefined>([])
-const TeeProgramFormContainer = ref<HTMLElement | null | undefined>(null)
+const teeProgramFormContainer = useTemplateRef('teeProgramFormContainer')
 
 const publicPath = Config.publicPath
 
@@ -363,11 +362,11 @@ const programIsAvailable = computed(() => {
 })
 
 const scrollToProgramForm = () => {
-  if (TeeProgramFormContainer.value) {
+  if (teeProgramFormContainer.value) {
     navigationStore.isByRouteName(RouteName.CatalogProgramDetail) ||
     navigationStore.isByRouteName(RouteName.CatalogProgramFromCatalogProjectDetail)
-      ? Scroll.to(TeeProgramFormContainer.value)
-      : Scroll.toWithTopBarOffset(TeeProgramFormContainer.value)
+      ? Scroll.to(teeProgramFormContainer.value)
+      : Scroll.toWithTopBarOffset(teeProgramFormContainer.value)
   }
 }
 </script>
