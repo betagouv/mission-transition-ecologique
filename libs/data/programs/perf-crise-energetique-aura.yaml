@@ -1,0 +1,75 @@
+titre: Aide aux travaux de rénovation énergétique
+promesse: >-
+  Financez les travaux de rénovation énergétique de votre hébergement
+  touristique
+description: >-
+  Vous avez un projet de rénovation pour optimiser la performance énergétique de
+  votre hébergement touristique ? (isolation thermique, rénovation du système de
+  chauffage, ventilation et qualité de l'air, etc.) La Région
+  Auvergne-Rhônes-Alpes vous soutient en finançant une partie de vos travaux.
+  Ces travaux de rénovation énergétique peuvent non seulement réduire vos coûts
+  d'exploitation mais aussi améliorer l'expérience client et renforcer
+  l'attractivité écoresponsable de votre établissement.
+illustration: images/TEE_energie_verte.png
+opérateur de contact: Région Auvergne-Rhône-Alpes
+url: >-
+  https://www.auvergnerhonealpes.fr/aides/investir-pour-ameliorer-la-performance-energetique-de-mon-hebergement-dans-le-contexte-de
+nature de l'aide: financement
+montant du financement: Jusqu'à 20% des dépenses éligibles
+objectifs:
+  - description: >-
+      Contacter la direction du tourisme de la région afin de vérifier
+      l'éligibilité de votre projet. Pour cela, complétez la "fiche premier
+      contact" et transmettez-la par mail à :
+      [crise-energie-tourisme@auvergnerhonealpes.fr](https://crise-energie-tourisme@auvergnerhonealpes.fr)
+    liens:
+      - lien: https://www.auvergnerhonealpes.fr/media/3039/download?inline
+        texte: Fiche premier contact
+  - description: >-
+      Si vous êtes éligible, un dossier de demande de subvention à compléter
+      vous sera transmis. Il sera à déposer auprès de la direction du tourisme.
+  - description: "Votre demande est instruite. Si elle\_est recevable, elle est proposée au vote des élus régionaux en Commission Permanente."
+  - description: >-
+      Si votre candidature est sélectionnée, signez l'acte attributif et
+      transmettez -le à la direction du tourisme.
+  - description: >-
+      Déposez votre demande de paiement, qui sera instruite et recevez votre
+      aide.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Auvergne-Rhône-Alpes
+  secteur d'activité:
+    - >-
+      Les hébergements touristiques collectifs, l'hôtellerie indépendante, les
+      gîtes d'étapes de plus de 16 places situés sur les itinéraires d'intérêts
+      régionaux, les refuges de montagne, les hébergements hybrides (projets
+      associant hébergements et services apportant une plus-value
+      différenciante).
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - >-
+      Les meublés de tourisme (studios, villas, appartements) et les chambres
+      d'hôtes ne sont pas éligibles à cette aide.
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est I
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est rénover mon bâtiment
+      - questionnaire . objectif prioritaire . est ma performance énergétique
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Auvergne-Rhône-Alpes
