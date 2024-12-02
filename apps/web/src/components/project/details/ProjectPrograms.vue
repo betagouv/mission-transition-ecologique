@@ -75,7 +75,7 @@ const props = defineProps<Props>()
 
 const programStore = useProgramStore()
 const navigationStore = useNavigationStore()
-const teeProjectFormContainer = ref<HTMLElement | null | undefined>(null)
+const teeProjectFormContainer = useTemplateRef('teeProjectFormContainer')
 
 const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)

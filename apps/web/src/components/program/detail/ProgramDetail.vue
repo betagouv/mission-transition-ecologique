@@ -222,7 +222,7 @@
     <!-- PROGRAM FORM -->
     <div
       v-if="hasRegisteredData && programIsEligible"
-      ref="TeeProgramFormContainer"
+      ref="teeProgramFormContainer"
       class="fr-bg--blue-france--lightness fr-grid-row fr-p-2w"
     >
       <TeeForm
@@ -257,7 +257,6 @@ import Program from '@/utils/program/program'
 import { Scroll } from '@/utils/scroll'
 import Translation from '@/utils/translation'
 import Breakpoint from '@/utils/breakpoints'
-import { computed, onBeforeMount, ref } from 'vue'
 import { useProjectStore } from '@/stores/project'
 import Opportunity from '@/utils/opportunity'
 import CompanyDataStorage from '@/utils/storage/companyDataStorage'
@@ -269,7 +268,7 @@ const navigationStore = useNavigationStore()
 
 const { currentProgram: program } = storeToRefs(programsStore)
 const linkedProjects = ref<ProjectType[] | undefined>([])
-const teeProgramFormContainer = ref<HTMLElement | null | undefined>(null)
+const teeProgramFormContainer = useTemplateRef('teeProgramFormContainer')
 
 const publicPath = Config.publicPath
 
