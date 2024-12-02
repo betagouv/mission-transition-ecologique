@@ -34,6 +34,7 @@
 </template>
 <script setup lang="ts">
 import { RegisterDetailType, RegisterDetails, Sector, CompanyDataStorageKey, CompanyDataType } from '@/types'
+import Analytics from '@/utils/analytic/analytics';
 import Breakpoint from '@/utils/breakpoints'
 import Navigation from '@/utils/navigation'
 import { CompanyDataStorageHandler } from '@/utils/storage/companyDataStorageHandler'
@@ -102,7 +103,8 @@ const saveProfile = () => {
       [CompanyDataStorageKey.Size]: profile.value.size.value
     })
     CompanyDataStorageHandler.updateRouteFromStorage()
-
+    // SIRET : envoyer siret + secteur dans posthog
+    Analytics.sendEvent('fill_siret')
     Navigation.toggleRegisterModal(false)
   } else {
     showError.value = true

@@ -198,6 +198,8 @@ const goToNextTrack = () => {
 function createData(): TrackOptionItem {
   const siretValue = selection.value >= 0 ? requestResponses.value.establishments[selection.value].siret : ''
   const hasSelection = selection.value >= 0
+  // SIRET : envoyer siret + secteur dans posthog
+  Analytics.sendEvent('fill_siret')
   return TrackSiret.createData(
     props.option,
     siretValue,
