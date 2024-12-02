@@ -1,7 +1,7 @@
 import { Result } from 'true-myth'
 import type { CityToRegionMappingType, EstablishmentRepository, NafMappingType } from './spi'
 import { Establishment, EstablishmentDetails, SearchResult, Siret } from './types'
-import { EstablishmentFront, EstablishmentSearch, SiretValidator } from '@tee/common'
+import { EstablishmentFront, EstablishmentSearch, LegalCategory, SiretValidator, StructureSize } from '@tee/common'
 
 export default class EstablishmentFeatures {
   private readonly _establishmentRepository: EstablishmentRepository
@@ -14,7 +14,7 @@ export default class EstablishmentFeatures {
     this._nafMapping = nafMapping
   }
 
-  public async search(query: string): Promise<Result<EstablishmentSearch, Error>> {
+  public async search(query: string, resultCount: number): Promise<Result<EstablishmentSearch, Error>> {
     if (SiretValidator.validate(query)) {
       const bySiretResult = await this._searchBySiret(query)
       if (bySiretResult.isOk) {
@@ -22,7 +22,7 @@ export default class EstablishmentFeatures {
       }
     }
 
-    return await this._searchByQuery(query)
+    return await this._searchByQuery(query, resultCount)
   }
 
   public async getBySiret(siret: Siret): Promise<Result<Establishment, Error>> {
@@ -48,8 +48,8 @@ export default class EstablishmentFeatures {
     return Result.ok(establishmentSearch)
   }
 
-  private async _searchByQuery(query: string): Promise<Result<EstablishmentSearch, Error>> {
-    const results = await this._establishmentRepository.search(query)
+  private async _searchByQuery(query: string, resultCount: number): Promise<Result<EstablishmentSearch, Error>> {
+    const results = await this._establishmentRepository.search(query, resultCount)
     if (results.isOk) {
       const establishmentsSearch = this._enrichAndConvertToEstablishmentSearch(results.value)
       return Result.ok(establishmentsSearch)
@@ -90,7 +90,7 @@ export default class EstablishmentFeatures {
       codePostal: establishment.address.zipCode,
       region: establishment.region || '',
       legalCategory: establishment.legalCategory,
-      structure_size: undefined,
+      structure_size: this._computeBestStructureSizeGuess(establishment),
       denomination: establishment.denomination,
       secteur: establishment.nafLabel || '',
       creationDate: establishment.creationDate
@@ -111,5 +111,39 @@ export default class EstablishmentFeatures {
       return this._convertEstablishmentToFront(establishment)
     })
     return { resultCount: result.resultCount, establishments: transformedEstablishments }
+  }
+
+  private _computeBestStructureSizeGuess(establishement: Establishment): StructureSize | undefined {
+    if (establishement.legalCategory === LegalCategory.EI) {
+      return StructureSize.EI
+    }
+
+    switch (establishement.workforceRange) {
+      case '00': // 0 employee
+      case '01': // 1 to 2 employees
+      case '02': // 3 to 5 employees
+      case '03': // 6 to 9 employees
+      case '11': // 10 to 19 employees
+        return StructureSize.TPE
+
+      case '12': // 20 to 49 employees
+        return StructureSize.PE
+
+      case '21': // 50 to 99 employees
+      case '22': // 100 to 199 employees
+      case '31': // 200 to 249 employees
+        return StructureSize.ME
+
+      case '32': // 250 to 499 employees
+      case '41': // 500 to 999 employees
+      case '51': // 1 000 to 1 999 employees
+      case '52': // 2 000 to 4 999 employees
+      case '53': // 5 000 to 9 999 employees
+      case '54': // 10 000 employees or more
+        return StructureSize.ETI_GE
+
+      default:
+        return undefined
+    }
   }
 }

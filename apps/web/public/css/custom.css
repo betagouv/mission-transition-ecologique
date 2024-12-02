@@ -186,12 +186,6 @@ button.fr-link:hover, .tee-router-link:hover {
   line-height: 1.2em;
 }
 
-/* TRACK INPUT */
-.tee-resp-info-block {
-  text-indent: -3.5rem;
-  padding-left: 3.5rem;
-}
-
 /* CUSTOM BUTTON INPUT */
 .tee-btn-next {
   justify-content: end;
@@ -199,30 +193,9 @@ button.fr-link:hover, .tee-router-link:hover {
 .tee-form-input-large {
   display: flex;
 }
-.tee-input-large {
-  font-size: 1.1rem;
-  height: 4rem !important;
-  max-height: 4rem !important;
-  border-radius: .25rem 0 0 0;
-}
-.tee-input-large::placeholder {
-  font-size: 1rem;
-}
-.tee-btn-input-large {
-  max-height: 4rem !important;
-  max-width: 4rem !important;
-}
 .tee-btn-input-large::before {
   width: 3rem !important;
 }
-
-.tee-input-large:focus {
-  outline-offset: unset;
-  outline-width: unset;
-  outline-color: unset;
-  outline-style: none;
-}
-
 .tee-input-hint {
   color: #000091;
 }
@@ -269,16 +242,6 @@ button.fr-link:hover, .tee-router-link:hover {
   font-size: .8rem;
   --icon-size: 1rem;
 }
-.tee-program-badge-image {
-  text-transform: inherit;
-  color: white;
-  background-color: #000091;
-  border-radius: 1rem;
-  padding: 0 .7rem;
-}
-/* .tee-badge-image::before {
-} */
-
 /* RESULT DETAILS PAGE */
 .fr-tee-program-detail-img {
   position: relative;

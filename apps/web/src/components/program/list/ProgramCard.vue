@@ -2,21 +2,14 @@
   <DsfrCard
     :title="''"
     :description="''"
-    :img-src="`${publicPath}${program.illustration}`"
+    :img-src="`/${program.illustration}`"
     :alt-img="`image / ${program.titre}`"
     :horizontal="true"
     :no-arrow="true"
     :link="getRouteToProgramDetail(program.id)"
+    :badges="[{ label: program['nature de l\'aide'], noIcon: true, small: true }]"
   >
     <template #start-details>
-      <!-- HEADER BADGE -->
-      <div class="fr-mb-1v">
-        <DsfrBadge
-          :label="program['nature de l\'aide']"
-          :no-icon="true"
-          class="tee-program-badge-image"
-        />
-      </div>
       <!-- TITLE -->
       <p class="fr-text--purple fr-h6 fr-text--bold teste2e-program-target">
         {{ program.titre }}
@@ -40,7 +33,6 @@
 </template>
 
 <script setup lang="ts">
-import Config from '@/config'
 import { ProgramAidType, type ProgramData, RouteName } from '@/types'
 import { consolidateAmounts } from '@/utils/helpers'
 import Translation from '@/utils/translation'
@@ -49,8 +41,6 @@ import type { RouteLocationRaw } from 'vue-router'
 import { useNavigationStore } from '@/stores/navigation'
 
 const { program } = defineProps<{ program: ProgramData }>()
-
-const publicPath = Config.publicPath
 
 const getCostInfos = () => {
   let prefix: string = ''
@@ -110,15 +100,7 @@ const getRouteToProgramDetail = (programId: string): RouteLocationRaw => {
   return {
     name: getRouteName(),
     params: { programId },
-    query: isCatalog || navigationStore.isCatalogProjectDetail() ? undefined : navigationStore.query
+    query: navigationStore.query
   }
 }
 </script>
-<style lang="scss" scoped>
-.tee-program-badge-image {
-  // TODO: supprimer cette classe css et son usage après montée de version du vue-dsfr vers la v 6.0.0.
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-}
-</style>

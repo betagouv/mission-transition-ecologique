@@ -7,7 +7,7 @@
     :error-message="getErrorMessage()"
   >
     <template #label>
-      <span> {{ field.label }} <code>*</code></span>
+      <span :teste2e-selector="`${fieldKey}-${field.type}`"> {{ field.label }} <code>*</code></span>
     </template>
   </DsfrCheckbox>
   <!-- CHECKBOX HINT -->
@@ -29,6 +29,7 @@ import { BooleanFieldInputType } from '@/types'
 interface Props {
   field: BooleanFieldInputType
   publicPath: string
+  fieldKey: string
   getErrorMessage: () => string
   getValidMessage: () => string
 }

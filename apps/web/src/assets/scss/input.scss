@@ -1,6 +1,26 @@
+@use "setting";
+
 // override DsfrInput and DsfrInputGroup valid class
 .fr-input-group--valid, .fr-valid-text, .fr-checkbox-group--valid {
   &::before {
     display: none;
+  }
+}
+
+.fr-input {
+  outline-offset: unset;
+  outline-width: unset;
+  outline-color: unset;
+  outline-style: none;
+
+  &--white {
+    background-color: setting.$white;
+  }
+
+  &:focus {
+    outline-offset: unset;
+    outline-width: unset;
+    outline-color: unset;
+    outline-style: none;
   }
 }

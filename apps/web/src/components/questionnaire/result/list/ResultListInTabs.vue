@@ -39,9 +39,10 @@ import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
 import { BreakpointNameType, ProgramData, Project } from '@/types'
 import { storeToRefs } from 'pinia'
-import { computed, onBeforeMount } from 'vue'
+import { computed } from 'vue'
 import { useProjectStore } from '@/stores/project'
 import { Theme } from '@/utils/theme'
+import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
 const navigationStore = useNavigationStore()
 const programStore = useProgramStore()
@@ -50,6 +51,8 @@ const programs = ref<ProgramData[]>()
 const projects = ref<Project[]>()
 const hasError = ref<boolean>(false)
 const { tabSelectedOnList } = storeToRefs(navigationStore)
+
+const registeredData = CompanyDataStorage.getData()
 
 const titles: TeeDsfrTabsProps['tabTitles'] = [
   {
@@ -73,17 +76,13 @@ const filteredProjects = computed(() => {
     return undefined
   }
 
-  return projectStore.getProjectsByThemeAndEligibility(
-    projects.value,
-    Theme.getThemeFromSelectedOrPriorityTheme().value,
-    filteredPrograms.value ?? undefined
-  )
+  return projectStore.getProjectsByTheme(projects.value, Theme.getThemeFromSelectedOrPriorityTheme().value)
 })
 
-onBeforeMount(async () => {
+const getProgramsAndProjects = async () => {
   navigationStore.hasSpinner = true
   const programResult = await programStore.programsByUsedTracks
-  const projectResult = await projectStore.projects
+  const projectResult = await projectStore.eligibleProjects
   if (programResult.isOk && projectResult.isOk) {
     programs.value = programResult.value
     projects.value = projectResult.value
@@ -91,5 +90,14 @@ onBeforeMount(async () => {
     hasError.value = true
   }
   navigationStore.hasSpinner = false
-})
+}
+watch(
+  registeredData.value,
+  async () => {
+    await getProgramsAndProjects()
+  },
+  {
+    immediate: true
+  }
+)
 </script>

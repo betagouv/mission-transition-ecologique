@@ -1,6 +1,7 @@
+import { BaserowSectors } from '../../common/baserow/types'
 import { Theme } from '../../theme/types/domain'
 
-export interface DataProgram {
+export interface DataProgram extends BaserowSectors {
   id: number
   'Id fiche dispositif': string
   Titre: string
@@ -24,27 +25,6 @@ export interface DataProgram {
   'Eligibilité Naf': string
   'Eligibilité Sectorielle': string
   Propriétaire: string
-  AAgriculture: string
-  'BIndustries extractives': string
-  CIndustrie: string
-  "DProduction et distribution d'électricité, de gaz, de vapeur et d'air conditionné": string
-  "EProduction et distribution d'eau, assainissement, gestion des déchets et dépollution": string
-  FConstruction: string
-  "GCommerce, réparation d'automobiles et de motocycles": string
-  HTransports: string
-  IHébergement: string
-  JInformation: string
-  KActivités: string
-  LActivités: string
-  MActivités: string
-  NActivités: string
-  OAdministration: string
-  PEnseignement: string
-  QSanté: string
-  RArts: string
-  SAutres: string
-  TActivités: string
-  UActivités: string
   'Autres opérateurs': Operator[]
   'Couverture géographique': GeographicCoverage
   'Zones géographiques': GeographicAreas[]

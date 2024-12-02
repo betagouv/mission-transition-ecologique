@@ -8,10 +8,10 @@
         v-for="(quickLink, index) in links"
         :key="index"
       >
-        <li>
+        <li class="fr-px-4v">
           <DsfrHeaderMenuLink
             v-if="!quickLink.links"
-            class="fr-mr-md-2w fr-p-md-2w"
+            class="fr-py-2v fr-px-4v"
             v-bind="quickLink"
             @click="handleClick($event, quickLink)"
           />
@@ -29,7 +29,7 @@
                 :key="childIndex"
               >
                 <DsfrHeaderMenuLink
-                  class="fr-p-md-2w"
+                  class="fr-p-2v"
                   v-bind="childLink"
                   @click="handleClick($event, childLink)"
                 />
