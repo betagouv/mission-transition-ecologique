@@ -1,5 +1,7 @@
 export * from './color'
+export * from './companyDataType'
 export * from './conditionOperators'
+export * from './companyDataType'
 export * from './elementsPropsTypes'
 export * from './formTypes'
 export * from './genericTypes'

@@ -1,12 +1,6 @@
 <template>
+  <ProgramEligibilityBar v-if="hasRegisteredData" />
   <TeeDsfrBreadcrumb :links="links" />
-  <TeeEligibilityCriteriaBar
-    v-if="!isCatalogDetail"
-    :bg-color="Color.greenLightnessed"
-    :bg-bar-color="Color.greenLighted"
-    message="Cette aide correspond à vos critères d’éligibilité"
-    message-icon="fr-icon-checkbox-circle-fill"
-  />
   <div class="fr-container fr-mt-0 fr-mt-md-3v">
     <div class="fr-grid-row fr-grid-row-gutters">
       <div
@@ -35,13 +29,14 @@
 </template>
 <script setup lang="ts">
 import Navigation from '@/tools/navigation'
-import { Color, Project, type ProgramData as ProgramType } from '@/types'
+import { Project, type ProgramData as ProgramType } from '@/types'
 import { RouteName } from '@/types/routeType'
 import Contact from '@/tools/contact'
 import { useNavigationStore } from '@/stores/navigation'
 import { useProjectStore } from '@/stores/project'
 import type { DsfrBreadcrumbProps } from '@gouvminint/vue-dsfr'
 import Translation from '@/tools/translation'
+import CompanyDataStorage from '@/tools/storage/companyDataStorage'
 
 interface Props {
   programId: string
@@ -59,9 +54,11 @@ const project = ref<Project | undefined>(projectStore.currentProject)
 
 const isCatalogDetail = navigation.isCatalogProgramDetail()
 
+const hasRegisteredData = CompanyDataStorage.hasData()
+
 const routeToResults = {
   name: isCatalogDetail ? RouteName.CatalogPrograms : RouteName.QuestionnaireResult,
-  hash: '#' + props.programId,
+  hash: '#' + props.programId, //TODO get from program
   query: isCatalogDetail ? undefined : navigationStore.query
 }
 

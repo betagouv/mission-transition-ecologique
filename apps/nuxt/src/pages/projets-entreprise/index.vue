@@ -6,7 +6,6 @@
     >
       <CatalogProjects />
     </div>
-    <ContactHelp />
   </div>
 </template>
 

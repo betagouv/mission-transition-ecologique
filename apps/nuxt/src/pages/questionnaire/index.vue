@@ -4,15 +4,12 @@
     style="min-height: 800px"
   >
     <TeeQuestionnaire :track-id="TrackId.QuestionnaireRoute" />
-    <ContactHelp v-if="useNavigationStore().isByRouteName(RouteName.QuestionnaireResult)" />
   </div>
 </template>
 
 <script setup lang="ts">
 import { defineRouteRules } from '#imports'
-import ContactHelp from '@/components/contact/ContactHelp.vue'
 import { MiddlewareName } from '@/middleware/type/middlewareName'
-import { useNavigationStore } from '@/stores/navigation'
 import { ChangeFreq, Priority, TrackId } from '@/types'
 import { RouteName } from '@/types/routeType'
 

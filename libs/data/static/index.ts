@@ -10,7 +10,7 @@ const projectsTest = projectsTestsJson as unknown as Project[]
 if (process.env['DATA_TEST'] === 'true') {
   projects = projectsTest
 }
-export { projects, projectsTest }
+export { projects }
 
 const enrichedOperators: EnrichedOperator[] = operatorsJson as unknown as EnrichedOperator[]
 export { enrichedOperators }

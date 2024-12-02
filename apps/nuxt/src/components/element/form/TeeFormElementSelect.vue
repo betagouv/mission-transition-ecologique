@@ -1,6 +1,7 @@
 <template>
   <DsfrSelect
     v-model="model"
+    :teste2e-selector="`${fieldKey}-${field.type}`"
     :label="field.label"
     :error-message="getErrorMessage()"
     :valid-message="getValidMessage()"
@@ -14,6 +15,7 @@ import { SelectFieldInputType } from '@/types'
 
 interface Props {
   field: SelectFieldInputType
+  fieldKey: string
   getErrorMessage: () => string
   getValidMessage: () => string
 }

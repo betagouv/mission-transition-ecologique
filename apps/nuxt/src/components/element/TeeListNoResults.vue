@@ -2,10 +2,11 @@
   <div class="fr-text-center">
     <TeeNoResult
       v-if="!countItems && !hasError"
-      message="Aucune aide n'a pu être identifiée avec les critères choisis..."
+      :message="message"
     />
     <TeeError
       v-else-if="hasError"
+      class="fr-py-32v"
       :mailto="Contact.email"
       :email="Contact.email"
     />
@@ -18,6 +19,7 @@ import Contact from '@/tools/contact'
 interface Props {
   hasError?: boolean
   countItems?: number
+  message?: string
 }
 defineProps<Props>()
 </script>

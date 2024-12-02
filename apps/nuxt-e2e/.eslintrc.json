@@ -16,7 +16,9 @@
     },
     {
       "files": ["src/**/*.{ts,js,tsx,jsx}"],
-      "rules": {}
+      "rules": {
+        "playwright/no-networkidle": "warn"
+      }
     }
   ]
 }

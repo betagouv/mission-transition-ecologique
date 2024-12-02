@@ -4,12 +4,10 @@
     style="min-height: 800px"
   >
     <TeeQuestionnaireResult />
-    <ContactHelp />
   </div>
 </template>
 
 <script setup lang="ts">
-import ContactHelp from '@/components/contact/ContactHelp.vue'
 import { MiddlewareName } from '@/middleware/type/middlewareName'
 import { RouteName } from '@/types/routeType'
 

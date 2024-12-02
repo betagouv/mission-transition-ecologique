@@ -4,6 +4,7 @@
       :is="currentComponent"
       v-model="fieldValueModel"
       :field="localField"
+      :field-key="fieldKey"
       :get-error-message="getErrorMessage"
       :get-valid-message="getValidMessage"
       @update:model-value="validateFormField"
@@ -29,6 +30,7 @@ const currentComponent = computed(() => {
 
 interface Props {
   field: InputFieldUnionType
+  fieldKey: string
 }
 const props = defineProps<Props>()
 

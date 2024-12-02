@@ -107,6 +107,8 @@ import TrackColOption from '@/tools/track/TrackColOption'
 import TrackComponent from '@/tools/track/TrackComponent'
 import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
+import CompanyDataStorage from '@/tools/storage/companyDataStorage'
+import { CompanyDataStorageHandler } from '@/tools/storage/companyDataStorageHandler'
 
 interface Props {
   trackElement: Element
@@ -118,6 +120,7 @@ const router = useRouter()
 const trackStore = useTrackStore()
 const usedTrackStore = useUsedTrackStore()
 const navigationStore = useNavigationStore()
+const registeredData = CompanyDataStorage.getData()
 
 const selectedOptionsIndexes = ref<number[]>([])
 const selectedOptions = ref<TrackOptionsUnion[]>([])
@@ -214,4 +217,17 @@ const backToPreviousTrack = async () => {
     return await router.push(navigationStore.routeByTrackId(trackId))
   }
 }
+
+watch(registeredData.value, async () => {
+  if (!CompanyDataStorage.hasData().value) return
+
+  const next = CompanyDataStorageHandler.getNextTrackStorage()
+
+  await router.push({
+    name: RouteName.Questionnaire,
+    hash: Navigation.hashByRouteName(RouteName.Questionnaire),
+    params: { trackId: next },
+    query: navigationStore.query
+  })
+})
 </script>

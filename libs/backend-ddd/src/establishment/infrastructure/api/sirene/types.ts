@@ -5,7 +5,7 @@ export interface EstablishmentDocument {
     siret: string
     statutDiffusionEtablissement: string
     dateCreationEtablissement: string
-    trancheEffectifsEtablissement: null
+    trancheEffectifsEtablissement: string
     anneeEffectifsEtablissement: null
     activitePrincipaleRegistreMetiersEtablissement: null
     dateDernierTraitementEtablissement: string

@@ -42,6 +42,7 @@ import { storeToRefs } from 'pinia'
 import { computed } from 'vue'
 import { useProjectStore } from '@/stores/project'
 import { Theme } from '@/tools/theme'
+import CompanyDataStorage from '@/tools/storage/companyDataStorage'
 
 const navigationStore = useNavigationStore()
 const programStore = useProgramStore()
@@ -50,6 +51,8 @@ const programs = ref<ProgramData[]>()
 const projects = ref<Project[]>()
 const hasError = ref<boolean>(false)
 const { tabSelectedOnList } = storeToRefs(navigationStore)
+
+const registeredData = CompanyDataStorage.getData()
 
 const titles: TeeDsfrTabsProps['tabTitles'] = [
   {
@@ -64,17 +67,6 @@ const titles: TeeDsfrTabsProps['tabTitles'] = [
   }
 ]
 
-navigationStore.hasSpinner = true
-const programResult = await programStore.programsByUsedTracks
-const projectResult = await projectStore.projects
-if (programResult.isOk() && projectResult.isOk) {
-  programs.value = programResult.data
-  projects.value = projectResult.value
-} else {
-  hasError.value = true
-}
-navigationStore.hasSpinner = false
-
 const filteredPrograms = computed(() => {
   return programs.value ? programStore.getProgramsByFilters(programs.value) : undefined
 })
@@ -84,10 +76,28 @@ const filteredProjects = computed(() => {
     return undefined
   }
 
-  return projectStore.getProjectsByThemeAndEligibility(
-    projects.value,
-    Theme.getThemeFromSelectedOrPriorityTheme().value,
-    filteredPrograms.value ?? undefined
-  )
+  return projectStore.getProjectsByTheme(projects.value, Theme.getThemeFromSelectedOrPriorityTheme().value)
 })
+
+const getProgramsAndProjects = async () => {
+  navigationStore.hasSpinner = true
+  const programResult = await programStore.programsByUsedTracks
+  const projectResult = await projectStore.eligibleProjects
+  if (programResult.isOk() && projectResult.isOk) {
+    programs.value = programResult.data
+    projects.value = projectResult.value
+  } else {
+    hasError.value = true
+  }
+  navigationStore.hasSpinner = false
+}
+watch(
+  registeredData.value,
+  async () => {
+    await getProgramsAndProjects()
+  },
+  {
+    immediate: true
+  }
+)
 </script>

@@ -1,6 +1,118 @@
-import { Color, Track, TrackCategory } from '@/types'
+import { Color, ConditionOperators, DataMappingFrom, NextTrackRule, type NextTrackRuleSet, Track, TrackCategory } from '@/types'
 import { TrackComponent, TrackId } from '@/types'
 import { QuestionnaireRoute } from '@tee/common'
+import { CompanyDataStorageKey } from '@/types/companyDataType'
+
+const commonRules: NextTrackRuleSet[] = [
+  {
+    help: "Goes to track_goals if : siret exists AND questionnaire_route == 'specific_goal' (pro)",
+    rules: [
+      {
+        from: DataMappingFrom.CompanyData,
+        id: CompanyDataStorageKey.Company,
+        dataField: CompanyDataStorageKey.Company,
+        conditions: [
+          {
+            type: CompanyDataStorageKey.Company,
+            operator: ConditionOperators.exists
+          }
+        ]
+      },
+      {
+        from: DataMappingFrom.UsedTracks,
+        id: 'questionnaire_route',
+        dataField: 'questionnaire_route',
+        conditions: [
+          {
+            type: 'questionnaire_route',
+            operator: ConditionOperators.is,
+            value: QuestionnaireRoute.SpecificGoal
+          }
+        ]
+      }
+    ],
+    next: { default: TrackId.Goals }
+  },
+  {
+    help: "Goes to track_structure_building_property if : siret exists AND questionnaire_route == 'no_specific_goal' (newbie)",
+    rules: [
+      {
+        from: DataMappingFrom.CompanyData,
+        id: CompanyDataStorageKey.Company,
+        dataField: CompanyDataStorageKey.Company,
+        conditions: [
+          {
+            type: CompanyDataStorageKey.Company,
+            operator: ConditionOperators.exists
+          }
+        ]
+      },
+      {
+        from: DataMappingFrom.UsedTracks,
+        id: 'questionnaire_route',
+        dataField: 'questionnaire_route',
+        conditions: [
+          {
+            type: 'questionnaire_route',
+            operator: ConditionOperators.is,
+            value: QuestionnaireRoute.NoSpecificGoal
+          }
+        ]
+      }
+    ],
+    next: { default: TrackId.BuildingProperty }
+  }
+]
+
+const structureSizeRules: NextTrackRule[] = [
+  {
+    from: DataMappingFrom.CompanyData,
+    id: CompanyDataStorageKey.Size,
+    dataField: CompanyDataStorageKey.Size,
+    conditions: [
+      {
+        type: CompanyDataStorageKey.Size,
+        operator: ConditionOperators.exists
+      }
+    ]
+  },
+  {
+    from: DataMappingFrom.CompanyData,
+    id: CompanyDataStorageKey.Size,
+    dataField: CompanyDataStorageKey.Size,
+    conditions: [
+      {
+        type: CompanyDataStorageKey.Size,
+        operator: ConditionOperators.isMissing
+      }
+    ]
+  }
+]
+
+const nextTrackRuleSets: NextTrackRuleSet[] = [
+  {
+    ...commonRules[0],
+    help: "Goes to track_goals if : siret exists AND structure_size exists AND questionnaire_route == 'specific_goal' (pro)",
+    rules: [...commonRules[0].rules, structureSizeRules[0]]
+  },
+  {
+    ...commonRules[0],
+    help: "Goes to structure work force if : siret exists AND structure_size does not exist AND questionnaire_route == 'specific_goal' (pro)",
+    rules: [...commonRules[0].rules, structureSizeRules[1]],
+    next: { default: TrackId.StructureWorkforce }
+  },
+  {
+    ...commonRules[1],
+    help: "Goes to track_structure_building_property if : siret exists AND structure_size exists AND questionnaire_route == 'no_specific_goal' (newbie)",
+    rules: [...commonRules[1].rules, structureSizeRules[0]]
+  },
+  {
+    ...commonRules[1],
+    help: "Goes to track_structure_building_property if : siret exists AND structure_size does not exist AND questionnaire_route == 'no_specific_goal' (newbie)",
+    rules: [...commonRules[1].rules, structureSizeRules[1]],
+    next: { default: TrackId.StructureWorkforce }
+  }
+]
 
 export const questionnaireRoute: Track = {
   id: TrackId.QuestionnaireRoute,
@@ -25,7 +137,8 @@ export const questionnaireRoute: Track = {
     multipleChoices: false
   },
   next: {
-    default: TrackId.Results
+    default: TrackId.Results,
+    ruleSet: nextTrackRuleSets
   },
   options: [
     {
@@ -40,7 +153,8 @@ export const questionnaireRoute: Track = {
       hintImageIcon: 'fr-icon-timer-line',
       imageTop: '/images/tracks/je-ne-sais-pas-par-ou-commencer.svg',
       next: {
-        default: TrackId.Siret
+        default: TrackId.Siret,
+        ruleSet: nextTrackRuleSets
       }
     },
     {
@@ -57,7 +171,8 @@ export const questionnaireRoute: Track = {
       hintImageIcon: 'fr-icon-timer-line',
       imageTop: '/images/tracks/j-ai-un-obectif.svg',
       next: {
-        default: TrackId.Siret
+        default: TrackId.Siret,
+        ruleSet: nextTrackRuleSets
       }
     }
   ]

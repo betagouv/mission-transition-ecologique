@@ -7,6 +7,25 @@ export default class Navigation {
     private _router: Router = useRouter()
   ) {}
 
+  static toggleRegisterModal = (forceStatus?: boolean) => {
+    if (import.meta.client) {
+      const navigationStore = useNavigationStore()
+      navigationStore.hasRegisterModal = forceStatus || !navigationStore.hasRegisterModal
+      document.body.style.overflow = navigationStore.hasRegisterModal ? 'hidden' : ''
+      const header = document.getElementById('tee-header')
+      if (header) {
+        const headerHeight = header.offsetHeight + 'px'
+        document.documentElement.style.setProperty('--header-height', headerHeight)
+      }
+      if (navigationStore.hasRegisterModal) {
+        window.scrollTo({
+          top: 0,
+          behavior: 'instant'
+        })
+      }
+    }
+  }
+
   isByRouteName(routeName: string | string[]) {
     if (Array.isArray(routeName) && this._route.name) {
       return new Set(routeName).has(this._route.name as string)

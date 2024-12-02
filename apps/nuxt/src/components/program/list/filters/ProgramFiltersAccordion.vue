@@ -21,7 +21,6 @@
 </template>
 <script setup lang="ts">
 import { useNavigationStore } from '@/stores/navigation'
-import TeeEligibilityCriteriaAccordion from '@/components/program/eligibilityCriteria/TeeEligibilityCriteriaAccordion.vue'
 import ProgramFilterByAidType from './ProgramFilterByAidType.vue'
 import ProgramFilterByOperator from './ProgramFilterByOperator.vue'
 import ProgramFilterByRegion from './ProgramFilterByRegion.vue'
@@ -43,13 +42,6 @@ interface FilterItem {
 const activeAccordion = ref<number>()
 
 const filters: FilterItem[] = [
-  {
-    title: "Critères d'éligibilité",
-    id: 'eligibility-criteria',
-    component: TeeEligibilityCriteriaAccordion,
-    if: !useNavigationStore().isCatalogPrograms(),
-    accordionClass: 'fr-hidden-md'
-  },
   {
     title: "Types d'aides",
     id: 'type-aid',

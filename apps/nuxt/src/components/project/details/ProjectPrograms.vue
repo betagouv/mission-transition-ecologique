@@ -33,43 +33,20 @@
           />
         </div>
       </div>
-      <DsfrHighlight
-        v-if="isCatalogDetail"
-        class="fr-highlight-border--yellow fr-highlight-bg--yellow--lightness fr-m-0 fr-p-0"
-        :large="true"
-      >
-        <template #default>
-          <div class="fr-container--fluid fr-p-4v">
-            <div class="fr-grid-row fr-grid-row--middle">
-              <img
-                class="fr-col-2 fr-col-xs-2 fr-mr-8v"
-                src="/images/tracks/ecriture.svg"
-                alt="image / ecriture"
-              />
-              <div class="fr-col-9 fr-col-xs-8">
-                <div class="fr-pb-2v">Complétez votre profil en 2 minutes et accédez aux aides éligibles pour votre entreprise.</div>
-                <TeeButtonLink
-                  :to="trackSiretTo()"
-                  size="sm"
-                  secondary
-                  @click="onTrackSiretTo()"
-                >
-                  Compléter mon profil
-                </TeeButtonLink>
-              </div>
-            </div>
-          </div>
-        </template>
-      </DsfrHighlight>
+      <TeeRegisterHighlight
+        v-if="!hasRegisteredData"
+        class="fr-mx-3v"
+        :text="Translation.t('project.projectRegisterHighlightText')"
+      />
       <div
         v-else
         id="project-contact"
-        ref="TeeProjectFormContainer"
+        ref="teeProjectFormContainer"
         class="fr-bg--blue-france--lightness fr-grid-row fr-p-2w"
       >
         <TeeForm
           v-if="project"
-          :form-container-ref="TeeProjectFormContainer"
+          :form-container-ref="teeProjectFormContainer"
           :form-type="OpportunityType.Project"
           :phone-callback="Translation.t('form.phoneContact', { operator: ' ' })"
           :form="Opportunity.getProjectFormFields(project)"
@@ -83,16 +60,13 @@
   </TeeContentBlock>
 </template>
 <script setup lang="ts">
-import { useUsedTrackStore } from '@/stores/usedTrack'
 import { useProgramStore } from '@/stores/program'
-import Navigation from '@/tools/navigation'
-import { ProgramAidType, type ProgramData, Project, QuestionnaireRoute, TrackId, OpportunityType } from '@/types'
+import { ProgramAidType, type ProgramData, Project, OpportunityType } from '@/types'
 import Contact from '@/tools/contact'
-import { RouteName } from '@/types/routeType'
-import { type RouteLocationRaw } from 'vue-router'
 import { useNavigationStore } from '@/stores/navigation'
 import Translation from '@/tools/translation'
 import Opportunity from '@/tools/opportunity'
+import CompanyDataStorage from '@/tools/storage/companyDataStorage'
 
 interface Props {
   project: Project
@@ -101,21 +75,13 @@ const props = defineProps<Props>()
 
 const programStore = useProgramStore()
 const navigationStore = useNavigationStore()
+const teeProjectFormContainer = useTemplateRef('teeProjectFormContainer')
 
-const TeeProjectFormContainer = ref<HTMLElement | null | undefined>(null)
 const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)
 
-const isCatalogDetail = new Navigation().isCatalogProjectDetail()
-
-navigationStore.hasSpinner = true
-const programsResult = await programStore.programsByUsedTracks
-if (programsResult.isOk()) {
-  programs.value = programsResult.data
-} else {
-  hasError.value = true
-}
-navigationStore.hasSpinner = false
+const hasRegisteredData = CompanyDataStorage.hasData()
+const registeredData = CompanyDataStorage.getData()
 
 const countFilteredPrograms = computed(() => {
   return filteredPrograms.value.length || 0
@@ -137,17 +103,24 @@ const financePrograms = computed(() => {
   )
 })
 
-const trackSiretTo = (): RouteLocationRaw => {
-  if (navigationStore.isByRouteName(RouteName.CatalogProjectDetail)) {
-    navigationStore.updateSearchParam({ name: TrackId.QuestionnaireRoute, value: QuestionnaireRoute.SpecificGoal })
+const getPrograms = async () => {
+  navigationStore.hasSpinner = true
+  const programsResult = await programStore.programsByUsedTracks
+  if (programsResult.isOk()) {
+    programs.value = programsResult.data
+  } else {
+    hasError.value = true
   }
-
-  return navigationStore.routeByTrackId(TrackId.Siret)
+  navigationStore.hasSpinner = false
 }
 
-function onTrackSiretTo() {
-  if (navigationStore.isByRouteName(RouteName.CatalogProjectDetail)) {
-    useUsedTrackStore().updateByTrackIdAndValue(TrackId.QuestionnaireRoute, QuestionnaireRoute.SpecificGoal)
+watch(
+  registeredData.value,
+  async () => {
+    await getPrograms()
+  },
+  {
+    immediate: true
   }
-}
+)
 </script>

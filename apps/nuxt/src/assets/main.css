@@ -1032,6 +1032,10 @@
     background-color: rgb(241.4, 241.4, 241.4) !important;
   }
 }
+.fr-badge.fr-badge--info {
+  color: #001891;
+}
+
 .fr-banner {
   position: relative;
 }
@@ -1425,6 +1429,7 @@
 
 .fr-btn-bg:hover, .fr-btn-bg:active {
   background-color: rgba(0, 0, 0, 0.05) !important;
+  cursor: pointer;
 }
 .fr-btn-bg--white {
   /* Wrong parsing on function name from stylelint, so next line is disable */
@@ -2185,12 +2190,17 @@
   z-index: 1000;
 }
 
-.fr-header .fr-btns-group .fr-btn {
-  margin: 0;
+.fr-header .fr-header__tools {
+  align-items: flex-end;
+  flex-direction: row;
+  display: flex;
+  justify-content: flex-end;
 }
 .fr-header .fr-nav button.fr-nav__btn {
   color: #001891;
   font-weight: 500;
+  min-height: 2rem;
+  padding: 0.5rem 1rem;
 }
 .fr-header .fr-nav .fr-menu {
   position: absolute;
@@ -2311,6 +2321,22 @@
 
 .fr-input-group--valid::before, .fr-valid-text::before, .fr-checkbox-group--valid::before {
   display: none;
+}
+
+.fr-input {
+  outline-offset: unset;
+  outline-width: unset;
+  outline-color: unset;
+  outline-style: none;
+}
+.fr-input--white {
+  background-color: #fff;
+}
+.fr-input:focus {
+  outline-offset: unset;
+  outline-width: unset;
+  outline-color: unset;
+  outline-style: none;
 }
 
 @media (min-width: 0) {
@@ -3692,20 +3718,71 @@ input[type=search]::-webkit-search-decoration, input[type=search]::-webkit-searc
   display: none;
 }
 
-.tee-btn-input-clear-btn {
+.search-clear {
   background-color: var(--background-contrast-grey);
-  box-shadow: inset 0 -2px 0 0 var(--border-action-high-blue-france);
+  border-radius: 0;
 }
-.tee-btn-input-clear-btn::before {
+.search-clear::before {
   mask-image: url("@gouvfr/dsfr/dist/icons/system/close-line.svg") !important;
 }
-.tee-btn-input-clear-btn:disabled {
+.search-clear:disabled {
   background-color: var(--background-contrast-grey);
   box-shadow: inset 0 -2px 0 0 var(--border-disabled-grey);
   color: var(--text-disabled-grey);
 }
 
+.fr-search-bar-lg .fr-input, .fr-search-bar-lg .search-button, .fr-search-bar-lg .search-clear {
+  max-height: 3rem !important;
+  line-height: 3rem;
+}
+.fr-search-bar--white .fr-input, .fr-search-bar--white .search-button, .fr-search-bar--white .search-clear {
+  box-shadow: inset 0 -2px 0 0 #fff;
+}
+.fr-search-bar--black .fr-input, .fr-search-bar--black .search-button, .fr-search-bar--black .search-clear {
+  box-shadow: inset 0 -2px 0 0 #161616;
+}
+.fr-search-bar--yellow .fr-input, .fr-search-bar--yellow .search-button, .fr-search-bar--yellow .search-clear {
+  box-shadow: inset 0 -2px 0 0 #facf35;
+}
+.fr-search-bar--red .fr-input, .fr-search-bar--red .search-button, .fr-search-bar--red .search-clear {
+  box-shadow: inset 0 -2px 0 0 #fca081;
+}
+.fr-search-bar--purple .fr-input, .fr-search-bar--purple .search-button, .fr-search-bar--purple .search-clear {
+  box-shadow: inset 0 -2px 0 0 #6a62f4;
+}
+.fr-search-bar--green .fr-input, .fr-search-bar--green .search-button, .fr-search-bar--green .search-clear {
+  box-shadow: inset 0 -2px 0 0 #1ebe8e;
+}
+.fr-search-bar--blue-france .fr-input, .fr-search-bar--blue-france .search-button, .fr-search-bar--blue-france .search-clear {
+  box-shadow: inset 0 -2px 0 0 #001891;
+}
+.fr-search-bar--grey .fr-input, .fr-search-bar--grey .search-button, .fr-search-bar--grey .search-clear {
+  box-shadow: inset 0 -2px 0 0 #777;
+}
+.fr-search-bar--loading .search-button {
+  width: 2.5rem;
+}
+.fr-search-bar--loading .search-button::before {
+  content: "";
+  border: 2px solid #001891;
+  border-top-color: transparent;
+  border-radius: 50%;
+  position: absolute;
+  mask-image: none !important;
+  background: none !important;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .fr-select-group select {
+  background-color: #fff;
+}
+
+.fr-select {
   background-color: #fff;
 }
 
@@ -3820,6 +3897,9 @@ a.fr-tag[aria-pressed=true].fr-tag--grey.fr-tag--sm, button.fr-tag[aria-pressed=
 }
 .fr-text-line-height--15v {
   line-height: 3.75rem;
+}
+.fr-text--underline {
+  text-decoration: underline;
 }
 
 .tee-font-style--italic {

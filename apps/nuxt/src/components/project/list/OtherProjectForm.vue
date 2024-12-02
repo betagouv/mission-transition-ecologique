@@ -22,5 +22,5 @@ import Opportunity from '@/tools/opportunity'
 import Translation from '@/tools/translation'
 
 // ajouter custom project
-const teeOtherProjectFormContainer = ref<HTMLElement | null | undefined>(null)
+const teeOtherProjectFormContainer = useTemplateRef('teeOtherProjectFormContainer')
 </script>

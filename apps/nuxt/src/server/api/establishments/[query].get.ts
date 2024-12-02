@@ -2,17 +2,21 @@ import { defineEventHandler } from 'h3'
 import { EstablishmentService, Monitor, EstablishmentNotFoundError } from '@tee/backend-ddd'
 import { z } from 'zod'
 
-const querySchema = z.object({
+const routeParamsSchema = z.object({
   query: z.string()
+})
+const queriesSchema = z.object({
+  count: z.number().optional().default(3)
 })
 
 export default defineEventHandler(async (event) => {
-  const params = await getValidatedRouterParams(event, querySchema.parse)
-  const establishmentResult = await new EstablishmentService().search(params.query)
+  const routeParams = await getValidatedRouterParams(event, routeParamsSchema.parse)
+  const queries = await getValidatedQuery(event, queriesSchema.parse)
+  const establishmentResult = await new EstablishmentService().search(routeParams.query, queries.count)
 
   if (establishmentResult.isErr) {
     const err = establishmentResult.error
-    Monitor.error('Error in getEstablishmentBySiret', { query: params, error: err })
+    Monitor.error('Error in getEstablishmentBySiret', { query: routeParams, error: err })
 
     if (err instanceof EstablishmentNotFoundError) {
       throw createError({

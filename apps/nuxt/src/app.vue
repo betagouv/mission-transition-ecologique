@@ -24,6 +24,7 @@ navigationStore.setRoute(route)
     <ClientOnly>
       <TeeDsfrConsent />
       <TeeDsfrPersonalizeConsent />
+      <TeeRegisterModal v-if="navigationStore.hasRegisterModal" />
     </ClientOnly>
     <TeeHeader />
     <!--      <TeeMatomo />-->

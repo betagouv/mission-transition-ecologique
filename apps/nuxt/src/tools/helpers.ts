@@ -1,18 +1,21 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`utils.helpers > FUNCTION_NAME > MSG_OR_VALUE :`)
-import type {
+import {
   Cleaner,
   CleanerDefaultIfNull,
   CleanerFromDict,
   CleanerInjectInObject,
+  CleanerOperations,
   CleanerReplaceAll,
+  DataMappingFrom,
   FormCallbackDataMapping,
   NextTrackRule,
   PropertyPath,
   ReqResp,
   ResultsMapping
 } from '@/types'
-import { CleanerOperations, DataMappingFrom } from '@/types'
+import CompanyDataStorage from '@/tools/storage/companyDataStorage'
+import { CompanyDataStorageKey } from '@/types/companyDataType'
 
 // GENERIC HELPERS
 
@@ -183,6 +186,9 @@ export const remapItem = (
     let value: unknown = ''
     let allResponses: any
     switch (dataMapping.from) {
+      case DataMappingFrom.CompanyData:
+        value = CompanyDataStorage.getItem(dataMapping.id as CompanyDataStorageKey)
+        break
       case DataMappingFrom.FormData:
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         value = formData?.[dataMapping.id]

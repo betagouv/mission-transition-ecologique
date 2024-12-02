@@ -1,14 +1,16 @@
-import { PhoneValidator, EmailValidator, SiretValidator, OpportunityType } from '@tee/common'
+import { PhoneValidator, EmailValidator, SiretValidator, OpportunityType, EstablishmentFront } from '@tee/common'
 import { FieldType, RouteName, type ProgramData as ProgramType, Project, FormDataType, ThemeType, ThemeId } from '@/types'
 import { useProgramStore } from '@/stores/program'
 import TrackStructure from '@/tools/track/trackStructure'
 import { CalloutType } from '@/types/elementsPropsTypes'
 import Translation from '@/tools/translation'
 import { Theme } from '@/tools/theme'
+import CompanyDataStorage from '@/tools/storage/companyDataStorage'
 
 export default class Opportunity {
   static getBaseOpportunityFormFields(): FormDataType {
-    const selectedTheme = Theme.getById(useProgramStore().getThemeTypeSelected() as ThemeId)
+    const selectedThemeId = useProgramStore().hasThemeTypeSelected() ? useProgramStore().getThemeTypeSelected() : TrackStructure.getTheme()
+    const selectedTheme = Theme.getById(selectedThemeId as ThemeId)
     return {
       theme: {
         required: false,
@@ -45,7 +47,7 @@ export default class Opportunity {
         required: true,
         type: FieldType.Text,
         isValid: undefined,
-        value: TrackStructure.getSiret(),
+        value: CompanyDataStorage.getCompanyData() ? (CompanyDataStorage.getCompanyData() as EstablishmentFront).siret : '',
         label: 'SIRET de votre entreprise',
         hint: 'Format attendu : 14 chiffres',
         validation: SiretValidator.validate,
@@ -85,7 +87,6 @@ export default class Opportunity {
   static getProjectFormFields(project: Project): FormDataType {
     const baseFields = this.getBaseOpportunityFormFields()
     baseFields.needs.value = Translation.t('project.form.needs', { secteur: TrackStructure.getSectorShortLabel() })
-    baseFields.theme.required = true
     return {
       projectTitle: {
         required: true,

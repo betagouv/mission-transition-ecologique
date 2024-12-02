@@ -51,22 +51,21 @@ export const useProgramStore = defineStore('program', () => {
 
   async function getProgramById(id: string): Promise<Result<ProgramData, Error>> {
     currentProgram.value = undefined
-    console.log(hasPrograms.value)
-    if (hasPrograms.value) {
-      console.log(await programs.value)
-      const result = await programs.value
-      if (result.isOk()) {
-        const program = result.data.find((program) => program.id === id)
-        if (program) {
-          currentProgram.value = program
-          return Result.ok(currentProgram.value)
-        }
 
-        return Result.err(new Error('Program not found'))
-      }
-
-      return Result.err(new Error(result.error?.message))
-    }
+    // if (hasPrograms.value) {
+    //   const result = await programs.value
+    //   if (result.isOk) {
+    //     const program = result.data.find((program) => program.id === id)
+    //     if (program) {
+    //       currentProgram.value = program
+    //       return Result.ok(currentProgram.value)
+    //     }
+    //
+    //     return Result.err(new Error('Program not found'))
+    //   }
+    //
+    //   return Result.err(result.error)
+    // }
 
     const result = await new ProgramApi(useUsedTrackStore().getQuestionnaireData()).getOne(id)
     if (result.isOk()) {

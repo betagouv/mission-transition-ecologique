@@ -5,7 +5,7 @@
       :title="title"
     >
       <template #title>
-        <h3 class="fr-text-line-height--15v">{{ title }}</h3>
+        <h4 class="fr-my-2v">{{ title }}</h4>
       </template>
       <slot />
     </DsfrAccordion>

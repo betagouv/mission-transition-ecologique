@@ -20,10 +20,34 @@
       "tpe-gagnantes-sur-tous-les-couts",
       "visite-energie-cci",
       "visite-energie-cma",
-      "cedre-premier-pas"
+      "cedre-premier-pas",
+      "cedre-ambition"
     ],
     "linkedProjects": [],
-    "priority": "40"
+    "priority": "40",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 2,
@@ -45,7 +69,30 @@
       "cedre-investissement"
     ],
     "linkedProjects": [],
-    "priority": "220"
+    "priority": "220",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 5,
@@ -67,10 +114,34 @@
       "pret-action-climat",
       "pret-vert",
       "solaire-ready",
+      "smart-pv",
       "pret-tourisme"
     ],
     "linkedProjects": [],
-    "priority": "340"
+    "priority": "340",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 3,
@@ -89,12 +160,23 @@
     "programs": [
       "aides-au-reemploi-des-emballages",
       "fonds-tourisme-durable",
+      "ormat-2024",
       "tremplin",
       "cedre-investissement",
       "charte-zero-dechet-plastique"
     ],
     "linkedProjects": [],
-    "priority": "100"
+    "priority": "100",
+    "sectors": [
+      "A",
+      "C",
+      "D",
+      "F",
+      "G",
+      "H",
+      "I",
+      "M"
+    ]
   },
   {
     "id": 6,
@@ -110,6 +192,7 @@
     ],
     "mainTheme": "energy",
     "programs": [
+      "etude-rehabilitation-solaires-thermiques-collectives",
       "etude-solaire-thermique",
       "investissement-solaire-thermique",
       "investissement-solaire-thermique-outre-mer",
@@ -119,7 +202,30 @@
       "pret-tourisme"
     ],
     "linkedProjects": [],
-    "priority": "400"
+    "priority": "400",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 7,
@@ -144,7 +250,30 @@
       "pret-tourisme"
     ],
     "linkedProjects": [],
-    "priority": "900"
+    "priority": "900",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 1,
@@ -163,13 +292,37 @@
       "diag-decarbon-action",
       "programme-breizh-fab",
       "tremplin",
-      "cedre-premier-pas"
+      "cedre-premier-pas",
+      "cedre-ambition"
     ],
     "linkedProjects": [
       32,
       33
     ],
-    "priority": "110"
+    "priority": "110",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 8,
@@ -189,12 +342,36 @@
       "etude-chaufferie-biomasse",
       "fonds-tourisme-durable",
       "investissement-chaleur-bois",
+      "investissement-pour-l-approvisionnement-de-chaufferies-bois",
       "pret-action-climat",
       "pret-vert",
       "pret-tourisme"
     ],
     "linkedProjects": [],
-    "priority": "610"
+    "priority": "610",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 9,
@@ -217,7 +394,30 @@
       "pret-tourisme"
     ],
     "linkedProjects": [],
-    "priority": "910"
+    "priority": "910",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 10,
@@ -235,12 +435,36 @@
     "programs": [
       "etude-geothermie-de-surface-et-d-aerothermie",
       "fonds-tourisme-durable",
+      "investissement-pac-solaire",
       "pret-economies-d-energie-pee",
       "pret-vert",
       "pret-tourisme"
     ],
     "linkedProjects": [],
-    "priority": "320"
+    "priority": "320",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 11,
@@ -259,7 +483,30 @@
       "etude-hydroelectricite"
     ],
     "linkedProjects": [],
-    "priority": "980"
+    "priority": "980",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 12,
@@ -283,7 +530,30 @@
       "investissement-geothermie-profonde"
     ],
     "linkedProjects": [],
-    "priority": "950"
+    "priority": "950",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 13,
@@ -305,7 +575,13 @@
       "pret-economies-d-energie-pee"
     ],
     "linkedProjects": [],
-    "priority": "500"
+    "priority": "500",
+    "sectors": [
+      "A",
+      "C",
+      "G",
+      "L"
+    ]
   },
   {
     "id": 14,
@@ -322,14 +598,39 @@
     ],
     "mainTheme": "energy",
     "programs": [
+      "audit-energetique-en-industrie",
       "baisse-les-watts",
       "booster-eco-energie-tertiaire",
       "diag-perf-immo",
       "renovation-petit-tertiaire-prive",
-      "cedre-premier-pas"
+      "cedre-premier-pas",
+      "cedre-ambition"
     ],
     "linkedProjects": [],
-    "priority": "140"
+    "priority": "140",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 15,
@@ -358,7 +659,30 @@
       "pret-tourisme"
     ],
     "linkedProjects": [],
-    "priority": "150"
+    "priority": "150",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 16,
@@ -376,12 +700,36 @@
     "programs": [
       "fresque-de-la-mobilite",
       "plan-de-mobilite",
-      "cedre-premier-pas"
+      "cedre-premier-pas",
+      "cedre-ambition"
     ],
     "linkedProjects": [
       19
     ],
-    "priority": "50"
+    "priority": "50",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 17,
@@ -403,7 +751,30 @@
       "pret-tourisme"
     ],
     "linkedProjects": [],
-    "priority": "550"
+    "priority": "550",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 18,
@@ -423,15 +794,41 @@
       "engins-moins-polluants",
       "fonds-tourisme-durable",
       "pret-action-climat",
+      "prime-a-la-conversion",
       "tremplin",
+      "vehicule-lourd-energies-propres",
       "pret-vert",
       "sites-touristiques-exemplaires",
       "cheque-transition-bioethanol",
       "recharge-vehicule-electrique",
+      "vehicules-lourds-electriques",
       "pret-tourisme"
     ],
     "linkedProjects": [],
-    "priority": "190"
+    "priority": "190",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 19,
@@ -455,7 +852,30 @@
       "sites-touristiques-exemplaires"
     ],
     "linkedProjects": [],
-    "priority": "140"
+    "priority": "140",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 20,
@@ -474,10 +894,34 @@
       "diag-eco-flux",
       "programme-ecod-o",
       "tpe-gagnantes-sur-tous-les-couts",
-      "cedre-premier-pas"
+      "cedre-premier-pas",
+      "cedre-ambition"
     ],
     "linkedProjects": [],
-    "priority": "60"
+    "priority": "60",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 21,
@@ -494,12 +938,37 @@
     "mainTheme": "waste",
     "programs": [
       "diagnostic-dechets",
+      "ormat-2024",
       "tremplin",
       "cedre-premier-pas",
-      "charte-zero-dechet-plastique"
+      "charte-zero-dechet-plastique",
+      "cedre-ambition"
     ],
     "linkedProjects": [],
-    "priority": "90"
+    "priority": "90",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 22,
@@ -521,7 +990,30 @@
       "tremplin"
     ],
     "linkedProjects": [],
-    "priority": "800"
+    "priority": "800",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 23,
@@ -537,12 +1029,38 @@
     ],
     "mainTheme": "waste",
     "programs": [
+      "etude-centres-de-tri",
       "fonds-tourisme-durable",
+      "investissement-centre-de-tri",
+      "ormat-2024",
       "tremplin",
       "cedre-investissement"
     ],
     "linkedProjects": [],
-    "priority": "180"
+    "priority": "180",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 24,
@@ -569,7 +1087,30 @@
       "pret-tourisme"
     ],
     "linkedProjects": [],
-    "priority": "330"
+    "priority": "330",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 25,
@@ -590,7 +1131,30 @@
       "investissement-contre-le-gaspillage-alimentaire"
     ],
     "linkedProjects": [],
-    "priority": "440"
+    "priority": "440",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 26,
@@ -607,10 +1171,34 @@
     "mainTheme": "rh",
     "programs": [
       "formation-engager-entreprise-transition-ecologique",
+      "ecogestes-paca",
       "investour"
     ],
     "linkedProjects": [],
-    "priority": "20"
+    "priority": "20",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 27,
@@ -634,7 +1222,30 @@
       "pret-tourisme"
     ],
     "linkedProjects": [],
-    "priority": "170"
+    "priority": "170",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 28,
@@ -654,12 +1265,36 @@
       "formation-engager-entreprise-transition-ecologique",
       "formations-du-cfde",
       "formations-tee",
+      "ecogestes-paca",
       "investour",
       "sud-pret-climat",
       "mooc-biodiversite-entreprise"
     ],
     "linkedProjects": [],
-    "priority": "160"
+    "priority": "160",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 29,
@@ -678,7 +1313,30 @@
       "etude-projet-de-recherche"
     ],
     "linkedProjects": [],
-    "priority": "890"
+    "priority": "890",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 30,
@@ -698,14 +1356,38 @@
       "diagnostic-rse",
       "enviroveille",
       "mission-conseil-rse",
-      "cedre-premier-pas"
+      "cedre-premier-pas",
+      "cedre-ambition"
     ],
     "linkedProjects": [
       27,
       31,
       32
     ],
-    "priority": "770"
+    "priority": "770",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 31,
@@ -728,7 +1410,8 @@
       "performa-environnement",
       "programme-breizh-fab",
       "tpe-gagnantes-sur-tous-les-couts",
-      "cedre-premier-pas"
+      "cedre-premier-pas",
+      "cedre-ambition"
     ],
     "linkedProjects": [
       4,
@@ -736,7 +1419,30 @@
       20,
       21
     ],
-    "priority": "10"
+    "priority": "10",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 32,
@@ -760,13 +1466,37 @@
       "programme-eve",
       "tremplin",
       "cedre-premier-pas",
-      "sud-pret-climat"
+      "sud-pret-climat",
+      "cedre-ambition"
     ],
     "linkedProjects": [
       1,
       33
     ],
-    "priority": "660"
+    "priority": "660",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 33,
@@ -786,13 +1516,38 @@
       "diagnostic-changement-climatique",
       "performa-environnement",
       "programme-breizh-fab",
-      "cedre-premier-pas"
+      "adaptation-bzh",
+      "cedre-premier-pas",
+      "cedre-ambition"
     ],
     "linkedProjects": [
       1,
       32
     ],
-    "priority": "310"
+    "priority": "310",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 35,
@@ -825,7 +1580,30 @@
       27,
       31
     ],
-    "priority": "380"
+    "priority": "380",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 36,
@@ -842,9 +1620,12 @@
     "mainTheme": "eco-design",
     "programs": [
       "diag-ecoconception",
+      "diagnostic-eco-conception-ile-de-france",
+      "etude-economie-de-la-fonctionnalite",
       "etude-performance-produits",
       "programme-breizh-fab",
       "tremplin",
+      "ecoconception-bzh",
       "cedre-premier-pas",
       "cedre-investissement"
     ],
@@ -852,7 +1633,29 @@
       3,
       22
     ],
-    "priority": "150"
+    "priority": "150",
+    "sectors": [
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 71,
@@ -880,7 +1683,30 @@
       20,
       72
     ],
-    "priority": "290"
+    "priority": "290",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 72,
@@ -906,7 +1732,30 @@
       20,
       71
     ],
-    "priority": "120"
+    "priority": "120",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 137,
@@ -927,7 +1776,12 @@
       "cedre-investissement"
     ],
     "linkedProjects": [],
-    "priority": "190"
+    "priority": "190",
+    "sectors": [
+      "I",
+      "Q",
+      "T"
+    ]
   },
   {
     "id": 138,
@@ -951,7 +1805,15 @@
       "cedre-investissement"
     ],
     "linkedProjects": [],
-    "priority": "240"
+    "priority": "240",
+    "sectors": [
+      "A",
+      "C",
+      "G",
+      "I",
+      "Q",
+      "S"
+    ]
   },
   {
     "id": 139,
@@ -972,7 +1834,11 @@
       "cedre-investissement"
     ],
     "linkedProjects": [],
-    "priority": "210"
+    "priority": "210",
+    "sectors": [
+      "G",
+      "I"
+    ]
   },
   {
     "id": 140,
@@ -993,7 +1859,30 @@
       "cedre-investissement"
     ],
     "linkedProjects": [],
-    "priority": "120"
+    "priority": "120",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 141,
@@ -1013,7 +1902,30 @@
       "nature-ta-ville"
     ],
     "linkedProjects": [],
-    "priority": "230"
+    "priority": "230",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 142,
@@ -1033,7 +1945,30 @@
       "cedre-investissement"
     ],
     "linkedProjects": [],
-    "priority": "130"
+    "priority": "130",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 143,
@@ -1054,7 +1989,30 @@
       "sites-touristiques-exemplaires"
     ],
     "linkedProjects": [],
-    "priority": "250"
+    "priority": "250",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 144,
@@ -1080,7 +2038,30 @@
       "mooc-biodiversite-entreprise"
     ],
     "linkedProjects": [],
-    "priority": "200"
+    "priority": "200",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 145,
@@ -1100,7 +2081,30 @@
       "cedre-investissement"
     ],
     "linkedProjects": [],
-    "priority": "130"
+    "priority": "130",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   },
   {
     "id": 146,
@@ -1123,9 +2127,34 @@
       "diag-eco-flux",
       "performa-environnement",
       "tpe-gagnantes-sur-tous-les-couts",
+      "visite-energie-cci",
+      "visite-energie-cma",
       "cedre-investissement"
     ],
     "linkedProjects": [],
-    "priority": "130"
+    "priority": "130",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
   }
 ]

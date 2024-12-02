@@ -3,7 +3,6 @@ import { NuxtSentryConfig } from './nuxt.sentry.config'
 import Config from './src/config'
 
 export class NuxtSecurityConfig {
-  static _conseillersEntreprisesUrl = 'https://conseillers-entreprises.service-public.fr'
   static _statsBetaGouvFrUrl = 'https://stats.beta.gouv.fr'
   static _typeformUrl = 'https://embed.typeform.com'
   static _typeformApiUrl = 'https://api.typeform.com'
@@ -34,7 +33,6 @@ export class NuxtSecurityConfig {
         'img-src': ["'self'", 'data:'],
         'connect-src': [
           "'self'",
-          this._conseillersEntreprisesUrl,
           this._statsBetaGouvFrUrl,
           this._typeformUrl,
           this._typeformApiUrl,
@@ -43,8 +41,8 @@ export class NuxtSecurityConfig {
           this._sentryData?.domain ? this._sentryData.domain : ''
         ],
         'base-uri': ["'self'"],
-        'frame-ancestors': ["'self'", this._conseillersEntreprisesUrl],
-        'frame-src': ["'self'", this._conseillersEntreprisesUrl, this._typeformFormUrl],
+        'frame-ancestors': ["'self'"],
+        'frame-src': ["'self'", this._typeformFormUrl],
         'default-src': ["'none'"]
       }
       // Missing headers:
